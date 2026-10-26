@@ -1,6 +1,6 @@
 # Handoff
 
-Layer in progress: 1
+Layer in progress: 2
 
 The precise state of the build, kept current at every checkpoint so an interrupted session resumes rather than
 restarts. Read `CLAUDE.md` and the owner's package in `docs/` first.
@@ -10,9 +10,11 @@ restarts. Read `CLAUDE.md` and the owner's package in `docs/` first.
 - Branch `claude/new-slate-build`, off `main` at `c919279`. Nothing is merged; nothing is deployed.
 - Layer 0 (the repository and the gate) is proven: the full gate green in a fresh clone of the branch at
   `2ff094d439ad`, recorded in `registry/layers.json`.
-- Layer 1 (the core) is built and awaiting its proof: all six engines are in `src/core/`, each declared in
-  `registry/engines.json` with its coverage matrix, and the full gate (mutation included) is run on them before the
-  proof is recorded. Layers 2 to 7 wait on it.
+- Layer 1 (the core) is proven: the full gate green in a fresh clone of the branch at `dd447a897c68`, recorded in
+  `registry/layers.json`.
+- Layer 2 (the world) is next. Its first piece, the gazetteer, waits on the owner's answer about the count of places
+  (Questions for the owner); the gate refuses code in `src/world/` until layer 1's proof is in the ledger, which it
+  now is.
 
 What layer 1 holds:
 
@@ -81,15 +83,16 @@ What layer 0 holds:
 
 ## Next step
 
-1. Commit layer 1's remaining engines (frame, text, persistence) with the mutation fixes, after the full gate.
-2. Prove layer 1: `npm ci` and `npm run gate:full` in a fresh clone of the branch; record the proof in
-   `registry/layers.json` and here; push; read the CI run of the full gate on GitHub.
-3. Layer 2, the world: the gazetteer and the map (252 countries and territories, every first-level region, 170,911
-   places with zone, country and coordinates), coverage matrix A by country, the clock as the player meets it, the
-   weather from researched normals, holidays, prices.
+1. Push the proof and read the CI run of the full gate on GitHub.
+2. Layer 2, the world, starting with the gazetteer: GeoNames' country list (252 entries, read 2026-10-26), its
+   first-level subdivisions and its populated places of a thousand people or more, vendored and pinned by SHA-256 and
+   compiled by a tool as tzdb is; the map's outlines from Natural Earth 1:110m. Then coverage matrix A by country,
+   the clock as the player meets it, the weather from each country's published normals, holidays, prices.
 
 ## Verification evidence
 
+- Layer 1's proof: `npm ci` then `npm run gate:full` in a fresh clone of the branch at `dd447a897c68`, green in
+  605 s: the same checks as below, with 4,479 of 4,479 mutants killed (the frame's slice-name rule added six).
 - Layer 1, before its proof: `npm run gate:full` green in the working tree on 2026-10-26 in 595 s: toolchain (19
   packages), owner-docs (54), build-order (19 source files), text-inventory (19 lines, all placeholder),
   research-register (31), typecheck, lint, 1,124 of 1,124 tests, feature-matrix, coverage (6 engines, 0 rows
@@ -169,5 +172,14 @@ What layer 0 holds:
 
 ## Questions for the owner
 
-None at layer 0. The four that are the owner's (the premise's detail, home on the first morning, the start date,
-Sleep as a clock action) are asked when the build reaches them, not before.
+1. **The count of places on the map.** The package holds the map to 170,911 places, the first SLATE's count of
+   GeoNames' populated places of a thousand people or more. GeoNames changes daily: its `cities1000` today
+   (2026-10-26, last modified 02:48 UT) holds 171,654, and its country list the same 252 entries. The snapshot the
+   first SLATE used isn't in the package (`public/geo/` wasn't copied), the Internet Archive can't be reached from this
+   session, and reading the first SLATE's repository (`montrealroots/1221`) to recover it was refused by this
+   session's permissions. Two ways on: allow this session to read `montrealroots/1221`, so the build uses the first
+   SLATE's exact snapshot and the 170,911 holds; or take today's GeoNames release, pinned by its hash, and the map's
+   count becomes 171,654 (the owner's rule, every place on the map covered, holds either way). The recommendation is
+   today's release: it is current, citable and reproducible, and the 743 more places are real towns.
+2. The four the package leaves to the owner (the premise's detail, home on the first morning, the start date, Sleep
+   as a clock action) are asked when the build reaches them.
