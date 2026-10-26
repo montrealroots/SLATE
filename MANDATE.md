@@ -49,6 +49,10 @@ tutorial and the manual are out of the first build; and no merge or deployment w
 8. **The voice.** Natural, coherent and realistic in every word the game says, with the engine's vocabulary kept
    out of the player's sight (`KEEP.md`, entry 2).
 
+9. **One agent.** One agent does all the work, in one session, until the owner says otherwise: no workflows, no
+   subagents, no review panels. The owner's words (2026-10-26): "It doesn't need a workflow or a bunch of subagents.
+   One agent doing the work is just as good, and this applies for everything until said otherwise." Permanent.
+
 ## What the owner decides
 
 The premise (what the life is a life of), home on the first morning, the start date, whether Sleep stays as a clock

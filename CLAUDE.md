@@ -38,5 +38,9 @@ The owner decides: the premise's detail (what the life is a life of, beyond "an 
 on the first morning, the start date, whether Sleep stays as a clock action, the final wording of every screen. Ask
 only when a reading would change the work materially; otherwise decide and report.
 
+**One agent does the work (permanent, from 2026-10-26, until the owner says otherwise).** No workflows, no fan-out of
+subagents, no independent-reviewer panels: one agent, in one session, reads, decides, builds, tests and verifies,
+end to end. The owner has said one agent's work is as good, and this applies to everything in this repository.
+
 Git: commit messages say what was decided and why; never force-push; no merge to `main` and no deployment without
 the owner's explicit word.
