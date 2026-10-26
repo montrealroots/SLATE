@@ -1,6 +1,6 @@
 # Handoff
 
-Layer in progress: 0
+Layer in progress: 1
 
 The precise state of the build, kept current at every checkpoint so an interrupted session resumes rather than
 restarts. Read `CLAUDE.md` and the owner's package in `docs/` first.
@@ -8,9 +8,10 @@ restarts. Read `CLAUDE.md` and the owner's package in `docs/` first.
 ## Where the build stands
 
 - Branch `claude/new-slate-build`, off `main` at `c919279`. Nothing is merged; nothing is deployed.
-- Layer 0 (the repository and the gate) is built. It is proven when a green full gate (`npm run gate:full`) on a
-  committed tree is recorded in `registry/layers.json` (layer, commit, date, evidence) in the commit after it.
-- Layers 1 to 7 have not started. The gate refuses code in a layer until every layer under it is recorded proven.
+- Layer 0 (the repository and the gate) is proven: the full gate green in a fresh clone of the branch at
+  `2ff094d439ad`, recorded in `registry/layers.json`.
+- Layer 1 (the core) is next and has not started; layers 2 to 7 wait on it. The gate refuses code in a layer until
+  every layer under it is recorded proven.
 
 What layer 0 holds:
 
@@ -51,10 +52,8 @@ What layer 0 holds:
 
 ## Next step
 
-1. Commit layer 0, run `npm run gate:full` on the clean committed tree, and record the proof in
-   `registry/layers.json` and this file (layer 1 then in progress).
-2. Push the branch and read the CI run of the full gate in a clean clone.
-3. Layer 1, the core, in `docs/BUILD-ORDER.md`'s order: time (instants, zones, calendar arithmetic, DST, sunrise and
+1. Push the branch and read the CI run of the full gate on GitHub.
+2. Layer 1, the core, in `docs/BUILD-ORDER.md`'s order: time (instants, zones, calendar arithmetic, DST, sunrise and
    sunset; proven against the IANA tz rules for every zone family, cited in the register), deterministic randomness
    keyed by seed and named decider, money in integer minor units with ISO 4217 currencies (cited), the simulation
    frame (state, commands, scheduled items, passages, notices, each command's reader registered where declared), and
@@ -65,8 +64,9 @@ What layer 0 holds:
 
 ## Verification evidence
 
-- Fast gate green on the working tree: toolchain, owner-docs, build-order, text-inventory, research-register,
-  typecheck, lint, 202 tests, feature-matrix, coverage, handoff, generated.
+- Layer 0's proof: `npm ci` then `npm run gate:full` in a fresh clone of the branch at `2ff094d439ad`, green in 289 s:
+  toolchain (18 packages), owner-docs (54 documents), build-order, text-inventory, research-register, typecheck,
+  lint, 202 of 202 tests, feature-matrix, coverage, handoff, mutation 100.00%, generated.
 - Mutation testing over the gate (gate/**/*.ts, the lint plugin, the falsify helper), static mutants included:
   2,167 killed, 0 survived, 0 without coverage, 13 excluded by in-line `Stryker disable` comments, each stating why
   the mutant can't change an outcome (a fallback for a file just listed, an empty catch that returns undefined just

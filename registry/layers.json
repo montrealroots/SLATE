@@ -1,13 +1,15 @@
 {
   "layers": [
-    { "n": 0, "name": "The repository and the gate", "dirs": ["gate", "registry", "research", "coverage"] },
-    { "n": 1, "name": "The core", "dirs": ["src/core"], "holdsEngines": true },
-    { "n": 2, "name": "The world", "dirs": ["src/world"], "holdsEngines": true },
-    { "n": 3, "name": "The person's papers and money", "dirs": ["src/papers", "src/money"], "holdsEngines": true },
-    { "n": 4, "name": "The person", "dirs": ["src/person"], "holdsEngines": true },
-    { "n": 5, "name": "The screens", "dirs": ["src/ui", "src/app"] },
-    { "n": 6, "name": "The voice", "dirs": [] },
-    { "n": 7, "name": "Verification, end to end", "dirs": [] }
+    {"n": 0, "name": "The repository and the gate", "dirs": ["gate", "registry", "research", "coverage"]},
+    {"n": 1, "name": "The core", "dirs": ["src/core"], "holdsEngines": true},
+    {"n": 2, "name": "The world", "dirs": ["src/world"], "holdsEngines": true},
+    {"n": 3, "name": "The person's papers and money", "dirs": ["src/papers", "src/money"], "holdsEngines": true},
+    {"n": 4, "name": "The person", "dirs": ["src/person"], "holdsEngines": true},
+    {"n": 5, "name": "The screens", "dirs": ["src/ui", "src/app"]},
+    {"n": 6, "name": "The voice", "dirs": []},
+    {"n": 7, "name": "Verification, end to end", "dirs": []}
   ],
-  "proven": []
+  "proven": [
+    {"layer": 0, "commit": "2ff094d439ad65ac7e4da34cd47b96c02a4492d2", "date": "2026-10-26", "evidence": "npm run gate:full green in a fresh clone of the branch at this commit, after npm ci: toolchain, owner-docs (54), build-order, text-inventory, research-register, typecheck, lint, 202 of 202 tests, feature-matrix, coverage, handoff, mutation 100.00% (2,167 of 2,167 killed, static mutants included), generated; 289 s."}
+  ]
 }
