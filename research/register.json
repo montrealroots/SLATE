@@ -1692,45 +1692,6 @@
    ]
   },
   {
-   "id": "R-0046",
-   "fact": "world.weather.blocked.TW",
-   "sought": "Taiwan's days with at least 1 mm of precipitation, month by month, at any station, as a normal",
-   "status": "blocked",
-   "attempts": [
-    {
-     "method": "institution",
-     "tried": "CWA Climate Statistics, Monthly Mean, in English and Chinese (https://www.cwa.gov.tw/V8/E/C/Statistics/monthlymean.html, https://www.cwa.gov.tw/V8/C/C/Statistics/monthlymean.html): every item offered",
-     "result": "The only count of rain days is 'Number of Days with Precipitation >=0.1mm' (降水量>=0.1mm日數); none of at least 1 mm.",
-     "date": "2026-10-26"
-    },
-    {
-     "method": "official-register",
-     "tried": "The WMO's normals as NCEI holds them: the 1991-2020 composite files, the 1961-1990 ALLNORMS.DAT and the 1981-2010 Members' folders; the Deutscher Wetterdienst's worldwide normals; and the World Weather Information Service's city list",
-     "result": "No Taiwan station in the WMO's sets (Taiwan isn't a WMO Member) and no Taiwan city in the World Weather Information Service; the Deutscher Wetterdienst's normals have two Taiwan stations (temperature, precipitation and sunshine) and hold no count of days.",
-     "date": "2026-10-26"
-    },
-    {
-     "method": "web-search",
-     "tried": "'Taiwan Central Weather Administration climate normals 1991-2020 \"number of days\" precipitation \"1 mm\"' and '中央氣象署 氣候平均值 1991-2020 降水日數 ≥1.0mm 測站 月平均'",
-     "result": "Only the 0.1 mm count (as the CWA and Taipei City's statistics give it); the TCCIP platform's 1 mm wet-day index is a yearly count of projections, not a monthly normal.",
-     "date": "2026-10-26"
-    },
-    {
-     "method": "trade-press",
-     "tried": "'氣象署 \"降雨日數\" \"1毫米\" 平均 臺北 測站 新聞' (Taiwan News, PTS, Taipei City's statistics weekly quoting the CWA)",
-     "result": "The press quoting the CWA says a rain day is one with at least 0.1 mm; no 1 mm count.",
-     "date": "2026-10-26"
-    },
-    {
-     "method": "archive",
-     "tried": "web.archive.org (the CWB's former Monthly Mean page) and archive.ph",
-     "result": "Neither could be read from this environment: web.archive.org's connection was reset, archive.ph answered 429. To be tried again where they can be reached.",
-     "date": "2026-10-26"
-    }
-   ],
-   "notModeled": "weather.borrowed-part"
-  },
-  {
    "id": "R-0048",
    "fact": "world.weather.normals-metoffice",
    "sought": "Guernsey's and Jersey's normals the WMO's sets lack (their days of at least 1 mm and their sunshine): the averages the Met Office publishes for its climate stations there",
@@ -1813,45 +1774,6 @@
    ]
   },
   {
-   "id": "R-0050",
-   "fact": "world.weather.blocked.MO",
-   "sought": "Macao's days with at least 1 mm of precipitation, month by month, as a normal",
-   "status": "blocked",
-   "attempts": [
-    {
-     "method": "institution",
-     "tried": "SMG, Climate Normal (https://www.smg.gov.mo/en/subpage/224/report/climate-normal), rendered in a browser, and the menu it loads (https://cms.smg.gov.mo/en/api/menu/climate-normal, also zh_TW and pt)",
-     "result": "The page shows no table or document, and its menu answers an empty list in all three languages.",
-     "date": "2026-10-26"
-    },
-    {
-     "method": "official-register",
-     "tried": "The WMO's normals as NCEI holds them (1991-2020, 1961-1990, 1981-2010), the Deutscher Wetterdienst's worldwide normals and the World Weather Information Service's cities, for Macao",
-     "result": "The WMO's 1991-2020 composite files: 1 station (mean daily maximum 1, mean daily minimum 1, precipitation 1, sunshine 1), none with days of at least 1 mm; 1961-1990 (ALLNORMS.DAT): no station of Macao; 1981-2010: no submission from Macao; the Deutscher Wetterdienst's worldwide normals (1961-1990 and 1991-2020, which hold no count of days): no station of Macao; the World Weather Information Service: 1 city (mean daily maximum 1, mean daily minimum 1, precipitation 1), none with days of at least 1 mm.",
-     "date": "2026-10-26"
-    },
-    {
-     "method": "web-search",
-     "tried": "'SMG Macao climate normals 1991-2020 number of days with precipitation ≥ 1.0 mm monthly'; 'smg.gov.mo climate normal 1991-2020 \"number of days\" rain \"≥ 1.0\" Taipa Grande'; '\"smg.gov.mo\" climate normal pdf 1991-2020 Macao monthly mean rain days'",
-     "result": "The Macao Yearbook (DSEC) gives the 1991-2020 annual and monthly precipitation, not the days; commercial sites give counts of no stated source or period.",
-     "date": "2026-10-26"
-    },
-    {
-     "method": "trade-press",
-     "tried": "Macao News, gov.mo news and the Yearbook (2017 to 2024 editions) quoting the SMG",
-     "result": "Precipitation totals, hot days and extremes; no count of days of at least 1 mm as a normal.",
-     "date": "2026-10-26"
-    },
-    {
-     "method": "archive",
-     "tried": "web.archive.org and archive.ph for the SMG's Climate Normal page",
-     "result": "Neither could be read from this environment: web.archive.org's connection was reset, archive.ph answered 429. To be tried again where they can be reached.",
-     "date": "2026-10-26"
-    }
-   ],
-   "notModeled": "weather.borrowed-part"
-  },
-  {
    "id": "R-0051",
    "fact": "world.weather.blocked.CC",
    "sought": "The Cocos (Keeling) Islands's monthly hours of sunshine, as a normal",
@@ -1865,8 +1787,8 @@
     },
     {
      "method": "official-register",
-     "tried": "The WMO's normals as NCEI holds them (1991-2020, 1961-1990, 1981-2010), the Deutscher Wetterdienst's worldwide normals and the World Weather Information Service's cities, for the Cocos (Keeling) Islands",
-     "result": "The WMO's 1991-2020 composite files: 1 station (mean daily maximum 1, mean daily minimum 1, precipitation 1, days of at least 1 mm 1), none with sunshine; 1961-1990 (ALLNORMS.DAT): 1 station (mean daily maximum 1, mean daily minimum 1, precipitation 1), none with sunshine; 1981-2010: no submission from the Cocos (Keeling) Islands; the Deutscher Wetterdienst's worldwide normals (1961-1990 and 1991-2020, which hold no count of days): 2 stations (mean daily maximum 2, mean daily minimum 2, precipitation 2), none with sunshine; the World Weather Information Service: 1 city (mean daily maximum 1, mean daily minimum 1, precipitation 1), none with sunshine.",
+     "tried": "The WMO's normals as NCEI holds them (1991-2020, 1961-1990, 1981-2010), the Deutscher Wetterdienst's worldwide normals and Klimatafeln, and the World Weather Information Service's cities, for the Cocos (Keeling) Islands",
+     "result": "The WMO's 1991-2020 composite files: 1 station (mean daily maximum 1, mean daily minimum 1, precipitation 1, days of at least 1 mm 1), none with sunshine; 1961-1990 (ALLNORMS.DAT): 1 station (mean daily maximum 1, mean daily minimum 1, precipitation 1), none with sunshine; 1981-2010: no submission from the Cocos (Keeling) Islands; the Deutscher Wetterdienst's worldwide normals (1961-1990 and 1991-2020, which hold no count of days): 2 stations (mean daily maximum 2, mean daily minimum 2, precipitation 2), none with sunshine; its Klimatafeln (each station's table, with the days of at least 1 mm): 1 station (mean daily maximum 1, mean daily minimum 1, precipitation 1), none with sunshine; the World Weather Information Service: 1 city (mean daily maximum 1, mean daily minimum 1, precipitation 1), none with sunshine.",
      "date": "2026-10-26"
     },
     {
@@ -1904,8 +1826,8 @@
     },
     {
      "method": "official-register",
-     "tried": "The WMO's normals as NCEI holds them (1991-2020, 1961-1990, 1981-2010), the Deutscher Wetterdienst's worldwide normals and the World Weather Information Service's cities, for Christmas Island",
-     "result": "The WMO's 1991-2020 composite files: 1 station (mean daily maximum 1, mean daily minimum 1, precipitation 1, days of at least 1 mm 1), none with sunshine; 1961-1990 (ALLNORMS.DAT): no station of Christmas Island; 1981-2010: no submission from Christmas Island; the Deutscher Wetterdienst's worldwide normals (1961-1990 and 1991-2020, which hold no count of days): 2 stations (mean daily maximum 2, mean daily minimum 2, precipitation 2), none with sunshine; the World Weather Information Service: 1 city (mean daily maximum 1, mean daily minimum 1, precipitation 1), none with sunshine.",
+     "tried": "The WMO's normals as NCEI holds them (1991-2020, 1961-1990, 1981-2010), the Deutscher Wetterdienst's worldwide normals and Klimatafeln, and the World Weather Information Service's cities, for Christmas Island",
+     "result": "The WMO's 1991-2020 composite files: 1 station (mean daily maximum 1, mean daily minimum 1, precipitation 1, days of at least 1 mm 1), none with sunshine; 1961-1990 (ALLNORMS.DAT): no station of Christmas Island; 1981-2010: no submission from Christmas Island; the Deutscher Wetterdienst's worldwide normals (1961-1990 and 1991-2020, which hold no count of days): 2 stations (mean daily maximum 2, mean daily minimum 2, precipitation 2), none with sunshine; its Klimatafeln (each station's table, with the days of at least 1 mm): no station of Christmas Island; the World Weather Information Service: 1 city (mean daily maximum 1, mean daily minimum 1, precipitation 1), none with sunshine.",
      "date": "2026-10-26"
     },
     {
@@ -1943,8 +1865,8 @@
     },
     {
      "method": "official-register",
-     "tried": "The WMO's normals as NCEI holds them (1991-2020, 1961-1990, 1981-2010), the Deutscher Wetterdienst's worldwide normals and the World Weather Information Service's cities, for Aruba",
-     "result": "The WMO's 1991-2020 composite files: no station of Aruba; 1961-1990 (ALLNORMS.DAT): no station of Aruba; 1981-2010: no submission from Aruba; the Deutscher Wetterdienst's worldwide normals (1961-1990 and 1991-2020, which hold no count of days): no station of Aruba; the World Weather Information Service: 1 city (mean daily maximum 1, mean daily minimum 1, precipitation 1, days of at least 1 mm 1), none with sunshine.",
+     "tried": "The WMO's normals as NCEI holds them (1991-2020, 1961-1990, 1981-2010), the Deutscher Wetterdienst's worldwide normals and Klimatafeln, and the World Weather Information Service's cities, for Aruba",
+     "result": "The WMO's 1991-2020 composite files: no station of Aruba; 1961-1990 (ALLNORMS.DAT): no station of Aruba; 1981-2010: no submission from Aruba; the Deutscher Wetterdienst's worldwide normals (1961-1990 and 1991-2020, which hold no count of days): no station of Aruba; its Klimatafeln (each station's table, with the days of at least 1 mm): no station of Aruba; the World Weather Information Service: 1 city (mean daily maximum 1, mean daily minimum 1, precipitation 1, days of at least 1 mm 1), none with sunshine.",
      "date": "2026-10-26"
     },
     {
@@ -1962,45 +1884,6 @@
     {
      "method": "archive",
      "tried": "web.archive.org and archive.ph for Meteo Aruba's Climate Data page",
-     "result": "Neither could be read from this environment: web.archive.org's connection was reset, archive.ph answered 429. To be tried again where they can be reached.",
-     "date": "2026-10-26"
-    }
-   ],
-   "notModeled": "weather.borrowed-part"
-  },
-  {
-   "id": "R-0054",
-   "fact": "world.weather.blocked.GT",
-   "sought": "Guatemala's monthly hours of sunshine, as a normal",
-   "status": "blocked",
-   "attempts": [
-    {
-     "method": "institution",
-     "tried": "INSIVUMEH, Climatología (https://insivumeh.gob.gt/climatologia/): its map of the variables each conventional station reports (https://insivumeh.gob.gt/img/variables_clima/index.html), Datos mensuales and Boletines climáticos",
-     "result": "Some stations list BRILLO SOLAR among the variables they measure daily; the section offers monthly data and bulletins, but no normal of sunshine (nor of any variable) by station.",
-     "date": "2026-10-26"
-    },
-    {
-     "method": "official-register",
-     "tried": "The WMO's normals as NCEI holds them (1991-2020, 1961-1990, 1981-2010), the Deutscher Wetterdienst's worldwide normals and the World Weather Information Service's cities, for Guatemala",
-     "result": "The WMO's 1991-2020 composite files: 34 stations (mean daily maximum 31, mean daily minimum 31, precipitation 34, days of at least 1 mm 34), none with sunshine; 1961-1990 (ALLNORMS.DAT): no station of Guatemala; 1981-2010: no submission from Guatemala; the Deutscher Wetterdienst's worldwide normals (1961-1990 and 1991-2020, which hold no count of days): 2 stations (precipitation 2), none with sunshine; the World Weather Information Service: 1 city (mean daily maximum 1, mean daily minimum 1, precipitation 1), none with sunshine.",
-     "date": "2026-10-26"
-    },
-    {
-     "method": "web-search",
-     "tried": "'INSIVUMEH promedios climáticos brillo solar horas estación mensual normales'",
-     "result": "Panama's INEC sunshine tables and a CONAP summary of INSIVUMEH's temperatures and rainfall; no Guatemalan sunshine normal.",
-     "date": "2026-10-26"
-    },
-    {
-     "method": "trade-press",
-     "tried": "'INSIVUMEH horas de sol promedio anual Guatemala brillo solar noticia' (Prensa Libre, AGN, Emisoras Unidas, Prensa Latina)",
-     "result": "INSIVUMEH's warnings of UV and solar radiation; no sunshine average.",
-     "date": "2026-10-26"
-    },
-    {
-     "method": "archive",
-     "tried": "web.archive.org and archive.ph for INSIVUMEH's Climatología pages",
      "result": "Neither could be read from this environment: web.archive.org's connection was reset, archive.ph answered 429. To be tried again where they can be reached.",
      "date": "2026-10-26"
     }
@@ -2078,8 +1961,8 @@
     },
     {
      "method": "official-register",
-     "tried": "The WMO's normals as NCEI holds them (1991-2020, 1961-1990, 1981-2010), the Deutscher Wetterdienst's worldwide normals and the World Weather Information Service's cities, for the U.S. Virgin Islands",
-     "result": "The WMO's 1991-2020 composite files: 2 stations (mean daily maximum 2, mean daily minimum 2, precipitation 2, days of at least 1 mm 2), none with sunshine; 1961-1990 (ALLNORMS.DAT): no station of the U.S. Virgin Islands; 1981-2010: no submission from the U.S. Virgin Islands; the Deutscher Wetterdienst's worldwide normals (1961-1990 and 1991-2020, which hold no count of days): no station of the U.S. Virgin Islands; the World Weather Information Service: no station of the U.S. Virgin Islands.",
+     "tried": "The WMO's normals as NCEI holds them (1991-2020, 1961-1990, 1981-2010), the Deutscher Wetterdienst's worldwide normals and Klimatafeln, and the World Weather Information Service's cities, for the U.S. Virgin Islands",
+     "result": "The WMO's 1991-2020 composite files: 2 stations (mean daily maximum 2, mean daily minimum 2, precipitation 2, days of at least 1 mm 2), none with sunshine; 1961-1990 (ALLNORMS.DAT): no station of the U.S. Virgin Islands; 1981-2010: no submission from the U.S. Virgin Islands; the Deutscher Wetterdienst's worldwide normals (1961-1990 and 1991-2020, which hold no count of days): no station of the U.S. Virgin Islands; its Klimatafeln (each station's table, with the days of at least 1 mm): no station of the U.S. Virgin Islands; the World Weather Information Service: no station of the U.S. Virgin Islands.",
      "date": "2026-10-26"
     },
     {
@@ -2111,14 +1994,14 @@
    "attempts": [
     {
      "method": "institution",
-     "tried": "NOAA NCEI, U.S. Climate Normals 1991-2020 (https://www.ncei.noaa.gov/products/land-based-station/us-climate-normals), and NWS San Juan's monthly climate reports (https://www.weather.gov/media/sju/climo/monthly_reports/)",
-     "result": "The U.S. normals give temperature, precipitation, snowfall, degree days and other statistics; no sunshine. The San Juan reports give daily temperature and rainfall.",
+     "tried": "NOAA NCEI, U.S. Climate Normals 1991-2020 (https://www.ncei.noaa.gov/products/land-based-station/us-climate-normals), and NWS Guam's climate pages (https://www.weather.gov/gum/, its NOWData at https://www.weather.gov/wrh/Climate?wfo=gum, which reads the ACIS data service, https://data.rcc-acis.org/)",
+     "result": "The U.S. normals give temperature, precipitation, snowfall, degree days and other statistics; no sunshine. NOWData gives daily and monthly temperature, precipitation and snow; ACIS, which it reads, holds no element for sunshine (a request for 'tsun' or 'psun' at Saipan's stations is refused as a bad argument).",
      "date": "2026-10-26"
     },
     {
      "method": "official-register",
-     "tried": "The WMO's normals as NCEI holds them (1991-2020, 1961-1990, 1981-2010), the Deutscher Wetterdienst's worldwide normals and the World Weather Information Service's cities, for the Northern Mariana Islands",
-     "result": "The WMO's 1991-2020 composite files: 1 station (mean daily maximum 1, mean daily minimum 1, precipitation 1, days of at least 1 mm 1), none with sunshine; 1961-1990 (ALLNORMS.DAT): no station of the Northern Mariana Islands; 1981-2010: no submission from the Northern Mariana Islands; the Deutscher Wetterdienst's worldwide normals (1961-1990 and 1991-2020, which hold no count of days): no station of the Northern Mariana Islands; the World Weather Information Service: no station of the Northern Mariana Islands.",
+     "tried": "The WMO's normals as NCEI holds them (1991-2020, 1961-1990, 1981-2010), the Deutscher Wetterdienst's worldwide normals and Klimatafeln, and the World Weather Information Service's cities, for the Northern Mariana Islands",
+     "result": "The WMO's 1991-2020 composite files: 1 station (mean daily maximum 1, mean daily minimum 1, precipitation 1, days of at least 1 mm 1), none with sunshine; 1961-1990 (ALLNORMS.DAT): no station of the Northern Mariana Islands; 1981-2010: no submission from the Northern Mariana Islands; the Deutscher Wetterdienst's worldwide normals (1961-1990 and 1991-2020, which hold no count of days): no station of the Northern Mariana Islands; its Klimatafeln (each station's table, with the days of at least 1 mm): no station of the Northern Mariana Islands; the World Weather Information Service: no station of the Northern Mariana Islands.",
      "date": "2026-10-26"
     },
     {
@@ -2206,8 +2089,8 @@
     },
     {
      "method": "official-register",
-     "tried": "The WMO's normals as NCEI holds them (1991-2020, 1961-1990, 1981-2010), the Deutscher Wetterdienst's worldwide normals and the World Weather Information Service's cities, for Monaco",
-     "result": "The WMO's 1991-2020 composite files: no station of Monaco; 1961-1990 (ALLNORMS.DAT): no station of Monaco; 1981-2010: no submission from Monaco; the Deutscher Wetterdienst's worldwide normals (1961-1990 and 1991-2020, which hold no count of days): no station of Monaco; the World Weather Information Service: no station of Monaco.",
+     "tried": "The WMO's normals as NCEI holds them (1991-2020, 1961-1990, 1981-2010), the Deutscher Wetterdienst's worldwide normals and Klimatafeln, and the World Weather Information Service's cities, for Monaco",
+     "result": "The WMO's 1991-2020 composite files: no station of Monaco; 1961-1990 (ALLNORMS.DAT): no station of Monaco; 1981-2010: no submission from Monaco; the Deutscher Wetterdienst's worldwide normals (1961-1990 and 1991-2020, which hold no count of days): no station of Monaco; its Klimatafeln (each station's table, with the days of at least 1 mm): no station of Monaco; the World Weather Information Service: no station of Monaco.",
      "date": "2026-10-26"
     },
     {
@@ -2265,6 +2148,431 @@
      "title": "Deutscher Wetterdienst, stations_list_CLIMAT_data.txt",
      "read": "2026-10-26",
      "said": "4,700 stations: WMO station id, name, latitude, longitude, height and country; seventeen named 'unknown', with no place."
+    }
+   ]
+  },
+  {
+   "id": "R-0063",
+   "fact": "world.weather.normals-dwd-klimatafeln",
+   "sought": "For what the sets before them lack, each station's climate table as the Deutscher Wetterdienst publishes it for stations abroad, with its days of at least 1 mm",
+   "status": "found",
+   "value": {
+    "file": "research/sources/dwd-klimatafeln.json",
+    "sha256": "13c7692ba29277bc3564ee4366516eabc8824a32d366bf9596660394c666aff6",
+    "tables": 1939,
+    "rows": {
+     "Mittl. tägl. Maximum [°C]": "tmax",
+     "Mittl. tägl. Minimum [°C]": "tmin",
+     "Mittl. Monats-/Jahressumme [mm]": "prcp",
+     "Zahl der Tage mit ≥ 1,0 mm Niederschlag": "wet",
+     "Mittl. Tagessumme [Std.] (Sonnenschein), times the month's days (February 28.25)": "sun"
+    },
+    "notes": "Each table's text is pdftotext's (-layout) of the PDF, whose SHA-256 is kept beside it. A row's period is its own 'von' and 'bis'. Tables published blank (no place) are left out. A station's country is its index page's (COUNTRIES_KT) and, among several, the nearest town's; Macao's (WMO 45011) is placed in Macao, the nearest town to its place given to the minute being in Zhuhai."
+   },
+   "sources": [
+    {
+     "kind": "primary",
+     "url": "https://www.dwd.de/DE/leistungen/klimadatenwelt/klimadatenwelt_node.html",
+     "title": "Deutscher Wetterdienst, Klimadaten weltweit: the index of Klimatafeln by continent, letter and country",
+     "read": "2026-10-26",
+     "said": "For each country a page linking its stations' Klimatafeln (ak_<WMO number and a digit>_kt.pdf): 177 country pages, 1,939 tables."
+    },
+    {
+     "kind": "primary",
+     "url": "https://www.dwd.de/DWD/klima/beratung/ak/ak_084950_kt.pdf",
+     "title": "Deutscher Wetterdienst, Klimatafel von Gibraltar / Großbritannien (each station's table alike)",
+     "read": "2026-10-26",
+     "said": "Koordinaten 36° 09' N, 5° 21' W, Stationshöhe 3 m über NHN; Mittl. tägl. Maximum and Minimum [°C] 1961-1990; Mittl. Monats-/Jahressumme [mm] 1961-1990; Zahl der Tage mit ≥ 1,0 mm Niederschlag 1968-1990; Sonnenschein, Mittl. Tagessumme [Std.] 1978-1990; each row's twelve months, the year and the years it covers."
+    }
+   ]
+  },
+  {
+   "id": "R-0064",
+   "fact": "world.weather.blocked.CU",
+   "sought": "Cuba's monthly hours of sunshine, as a normal",
+   "status": "blocked",
+   "attempts": [
+    {
+     "method": "institution",
+     "tried": "INSMET, the Instituto de Meteorología (http://www.insmet.cu/ and https://www.insmet.cu/, its climate pages)",
+     "result": "The site couldn't be reached from this environment: its name doesn't resolve. To be tried again where it can be.",
+     "date": "2026-10-26"
+    },
+    {
+     "method": "official-register",
+     "tried": "The WMO's normals as NCEI holds them (1991-2020, 1961-1990, 1981-2010), the Deutscher Wetterdienst's worldwide normals and Klimatafeln, and the World Weather Information Service's cities, for Cuba",
+     "result": "The WMO's 1991-2020 composite files: no station of Cuba; 1961-1990 (ALLNORMS.DAT): 1 station (mean daily maximum 1, mean daily minimum 1, precipitation 1, days of at least 1 mm 1), none with sunshine; 1981-2010: no submission from Cuba; the Deutscher Wetterdienst's worldwide normals (1961-1990 and 1991-2020, which hold no count of days): 1 station (mean daily maximum 1, mean daily minimum 1, precipitation 1), none with sunshine; its Klimatafeln (each station's table, with the days of at least 1 mm): 1 station (mean daily maximum 1, mean daily minimum 1, days of at least 1 mm 1, precipitation 1), none with sunshine; the World Weather Information Service: 8 cities (mean daily maximum 1, mean daily minimum 1, precipitation 1, days of at least 1 mm 1), none with sunshine.",
+     "date": "2026-10-26"
+    },
+    {
+     "method": "web-search",
+     "tried": "'INSMET Cuba insolación horas de sol promedio mensual normales climatológicas estación'",
+     "result": "A paper of INSMET's own authors (Rev Cubana Hig Epidemiol 2017;55(2):4-12) on 1981-2013 sunshine at 53 points: its text refers to a table of descriptors the published PDF doesn't hold, and its map gives annual means only; commercial sites otherwise.",
+     "date": "2026-10-26"
+    },
+    {
+     "method": "trade-press",
+     "tried": "Cubanet's reports quoting INSMET (record heat, the annual mean temperature since 1951)",
+     "result": "Monthly heat and anomalies; no sunshine normal.",
+     "date": "2026-10-26"
+    },
+    {
+     "method": "archive",
+     "tried": "web.archive.org and archive.ph for INSMET's climate pages",
+     "result": "Neither could be read from this environment: web.archive.org's connection was reset, archive.ph answered 429. To be tried again where they can be reached.",
+     "date": "2026-10-26"
+    }
+   ],
+   "notModeled": "weather.borrowed-part"
+  },
+  {
+   "id": "R-0065",
+   "fact": "world.weather.blocked.XK",
+   "sought": "Kosovo's monthly hours of sunshine, as a normal",
+   "status": "blocked",
+   "attempts": [
+    {
+     "method": "institution",
+     "tried": "IHMK (Kosovo Hydrometeorological Institute), Kosovo Hydrometeorological YearBook 2024 (https://ammk-rks.net/assets/cms/uploads/files/Kosovo%20Hydrometeorological%20YearBook%202024.pdf)",
+     "result": "The year's daily, monthly and annual observations at nine stations, insolation among them, for 2024 alone; no normal.",
+     "date": "2026-10-26"
+    },
+    {
+     "method": "official-register",
+     "tried": "The WMO's normals as NCEI holds them (1991-2020, 1961-1990, 1981-2010), the Deutscher Wetterdienst's worldwide normals and Klimatafeln, and the World Weather Information Service's cities, for Kosovo",
+     "result": "The WMO's 1991-2020 composite files: no station of Kosovo; 1961-1990 (ALLNORMS.DAT): no station of Kosovo; 1981-2010: no submission from Kosovo; the Deutscher Wetterdienst's worldwide normals (1961-1990 and 1991-2020, which hold no count of days): no station of Kosovo; its Klimatafeln (each station's table, with the days of at least 1 mm): no station of Kosovo; the World Weather Information Service: 1 city (mean daily maximum 1, mean daily minimum 1, precipitation 1, days of at least 1 mm 1), none with sunshine.",
+     "date": "2026-10-26"
+    },
+    {
+     "method": "web-search",
+     "tried": "'Kosovo Hydrometeorological Institute IHMK sunshine hours monthly average Prishtina climate normals'",
+     "result": "IHMK's yearbook (2024 only), Wikipedia's annual total of no named source, and commercial year-by-year figures; no IHMK sunshine normal.",
+     "date": "2026-10-26"
+    },
+    {
+     "method": "trade-press",
+     "tried": "'Kosova orë me diell mesatarja vjetore Prishtinë IHMK lajme diell orë' (Koha and others quoting IHMK)",
+     "result": "Daily forecasts quoting IHMK's temperatures and wind; no sunshine normal.",
+     "date": "2026-10-26"
+    },
+    {
+     "method": "archive",
+     "tried": "web.archive.org and archive.ph for IHMK's yearbooks",
+     "result": "Neither could be read from this environment: web.archive.org's connection was reset, archive.ph answered 429. To be tried again where they can be reached.",
+     "date": "2026-10-26"
+    }
+   ],
+   "notModeled": "weather.borrowed-part"
+  },
+  {
+   "id": "R-0066",
+   "fact": "world.weather.blocked.AG",
+   "sought": "Antigua and Barbuda's monthly hours of sunshine, as a normal",
+   "status": "blocked",
+   "attempts": [
+    {
+     "method": "institution",
+     "tried": "Antigua and Barbuda Meteorological Service, Climate Products (https://antiguamet.com/climate-products/): its Monthly Climate Summaries (e.g. https://antiguamet.com/Climate_Files/Climate_Summary_July_2025.pdf); and its 1991-2020 normals as submitted to the WMO",
+     "result": "The summaries give temperature, rainfall and drought against their normals, no sunshine. NCEI's copy of the Member's own 1991-2020 station file (VCBirdInternationalAirportVCBIA_78862.csv) leaves Total_Number_of_Hours_of_Sunshine empty.",
+     "date": "2026-10-26"
+    },
+    {
+     "method": "official-register",
+     "tried": "The WMO's normals as NCEI holds them (1991-2020, 1961-1990, 1981-2010), the Deutscher Wetterdienst's worldwide normals and Klimatafeln, and the World Weather Information Service's cities, for Antigua and Barbuda",
+     "result": "The WMO's 1991-2020 composite files: 1 station (mean daily maximum 1, mean daily minimum 1, precipitation 1, days of at least 1 mm 1), none with sunshine; 1961-1990 (ALLNORMS.DAT): no station of Antigua and Barbuda; 1981-2010: no submission from Antigua and Barbuda; the Deutscher Wetterdienst's worldwide normals (1961-1990 and 1991-2020, which hold no count of days): no station of Antigua and Barbuda; its Klimatafeln (each station's table, with the days of at least 1 mm): no station of Antigua and Barbuda; the World Weather Information Service: 1 city (mean daily maximum 1, mean daily minimum 1, precipitation 1, days of at least 1 mm 1), none with sunshine.",
+     "date": "2026-10-26"
+    },
+    {
+     "method": "web-search",
+     "tried": "'Antigua and Barbuda Meteorological Service climatology sunshine hours V.C. Bird monthly normals'",
+     "result": "CIMH's 1981-2010 temperature charts for V.C. Bird and commercial sites; no sunshine normal.",
+     "date": "2026-10-26"
+    },
+    {
+     "method": "trade-press",
+     "tried": "'\"hours of sunshine\" average Antigua OR Grenada OR \"Cayman Islands\" meteorological service Cayman Compass OR \"Antigua Observer\" OR \"NOW Grenada\"'",
+     "result": "Travel and commercial climate guides of no stated source, disagreeing with each other; no press quoting a national service's sunshine normal.",
+     "date": "2026-10-26"
+    },
+    {
+     "method": "archive",
+     "tried": "web.archive.org and archive.ph for the Meteorological Service's climate products",
+     "result": "Neither could be read from this environment: web.archive.org's connection was reset, archive.ph answered 429. To be tried again where they can be reached.",
+     "date": "2026-10-26"
+    }
+   ],
+   "notModeled": "weather.borrowed-part"
+  },
+  {
+   "id": "R-0067",
+   "fact": "world.weather.blocked.GD",
+   "sought": "Grenada's monthly hours of sunshine, as a normal",
+   "status": "blocked",
+   "attempts": [
+    {
+     "method": "institution",
+     "tried": "Grenada's 1991-2020 normals as its Meteorological Service submitted them to the WMO (NCEI, Region-4-WMO-Normals-9120/Grenada), and CIMH's Country Profile of Grenada (https://rcc.cimh.edu.bb/files/2018/06/Country-Profile-Grenada.pdf)",
+     "result": "The profile gives temperature and rainfall at Maurice Bishop International Airport. NCEI's copy of the Member's own 1991-2020 station file (MauriceBishopIntlAirport_78958.csv) leaves Total_Number_of_Hours_of_Sunshine empty.",
+     "date": "2026-10-26"
+    },
+    {
+     "method": "official-register",
+     "tried": "The WMO's normals as NCEI holds them (1991-2020, 1961-1990, 1981-2010), the Deutscher Wetterdienst's worldwide normals and Klimatafeln, and the World Weather Information Service's cities, for Grenada",
+     "result": "The WMO's 1991-2020 composite files: 1 station (mean daily maximum 1, mean daily minimum 1, precipitation 1, days of at least 1 mm 1), none with sunshine; 1961-1990 (ALLNORMS.DAT): no station of Grenada; 1981-2010: no submission from Grenada; the Deutscher Wetterdienst's worldwide normals (1961-1990 and 1991-2020, which hold no count of days): no station of Grenada; its Klimatafeln (each station's table, with the days of at least 1 mm): no station of Grenada; the World Weather Information Service: no station of Grenada.",
+     "date": "2026-10-26"
+    },
+    {
+     "method": "web-search",
+     "tried": "'Grenada Meteorological Service Maurice Bishop airport climatology sunshine hours monthly normals'",
+     "result": "The statistics office's 2013-2021 rainfall and temperature tables and the CIMH profile; no sunshine normal.",
+     "date": "2026-10-26"
+    },
+    {
+     "method": "trade-press",
+     "tried": "'\"hours of sunshine\" average Antigua OR Grenada OR \"Cayman Islands\" meteorological service Cayman Compass OR \"Antigua Observer\" OR \"NOW Grenada\"'",
+     "result": "Travel and commercial climate guides of no stated source, disagreeing with each other; no press quoting a national service's sunshine normal.",
+     "date": "2026-10-26"
+    },
+    {
+     "method": "archive",
+     "tried": "web.archive.org and archive.ph for CIMH's Country Profile of Grenada",
+     "result": "Neither could be read from this environment: web.archive.org's connection was reset, archive.ph answered 429. To be tried again where they can be reached.",
+     "date": "2026-10-26"
+    }
+   ],
+   "notModeled": "weather.borrowed-part"
+  },
+  {
+   "id": "R-0068",
+   "fact": "world.weather.blocked.KY",
+   "sought": "The Cayman Islands' monthly hours of sunshine, as a normal",
+   "status": "blocked",
+   "attempts": [
+    {
+     "method": "institution",
+     "tried": "Cayman Islands National Weather Service, Grand Cayman climate page (https://www.weather.gov.ky/grand-cayman), rendered in a browser, with its 'Sunshine Monitor'; and NCEI's copy of its 1991-2020 station file (OwenRobertIntlAirport_78384.csv)",
+     "result": "The page's 1991-2020 averages at Owen Roberts are of temperature, rainfall, humidity and the year's days of clear (25), partly cloudy (233) and cloudy (105) sky; no hours of sunshine. The station file has no sunshine parameter.",
+     "date": "2026-10-26"
+    },
+    {
+     "method": "official-register",
+     "tried": "The WMO's normals as NCEI holds them (1991-2020, 1961-1990, 1981-2010), the Deutscher Wetterdienst's worldwide normals and Klimatafeln, and the World Weather Information Service's cities, for the Cayman Islands",
+     "result": "The WMO's 1991-2020 composite files: 1 station (mean daily maximum 1, mean daily minimum 1, precipitation 1, days of at least 1 mm 1), none with sunshine; 1961-1990 (ALLNORMS.DAT): no station of the Cayman Islands; 1981-2010: no submission from the Cayman Islands; the Deutscher Wetterdienst's worldwide normals (1961-1990 and 1991-2020, which hold no count of days): 1 station (mean daily maximum 1, mean daily minimum 1, precipitation 1), none with sunshine; its Klimatafeln (each station's table, with the days of at least 1 mm): 1 station (mean daily maximum 1, mean daily minimum 1, precipitation 1, days of at least 1 mm 1), none with sunshine; the World Weather Information Service: 1 city (mean daily maximum 1, mean daily minimum 1, precipitation 1), none with sunshine.",
+     "date": "2026-10-26"
+    },
+    {
+     "method": "web-search",
+     "tried": "'Cayman Islands National Weather Service climatology sunshine hours Owen Roberts monthly average'",
+     "result": "The Weather Service's page and its daily report; commercial estimates from daylight and modelled cloud; no sunshine normal.",
+     "date": "2026-10-26"
+    },
+    {
+     "method": "trade-press",
+     "tried": "'\"hours of sunshine\" average Antigua OR Grenada OR \"Cayman Islands\" meteorological service Cayman Compass OR \"Antigua Observer\" OR \"NOW Grenada\"'",
+     "result": "Travel and commercial climate guides of no stated source, disagreeing with each other; no press quoting a national service's sunshine normal.",
+     "date": "2026-10-26"
+    },
+    {
+     "method": "archive",
+     "tried": "web.archive.org and archive.ph for the Weather Service's Grand Cayman page",
+     "result": "Neither could be read from this environment: web.archive.org's connection was reset, archive.ph answered 429. To be tried again where they can be reached.",
+     "date": "2026-10-26"
+    }
+   ],
+   "notModeled": "weather.borrowed-part"
+  },
+  {
+   "id": "R-0069",
+   "fact": "world.weather.blocked.BT",
+   "sought": "Bhutan's monthly hours of sunshine, as a normal",
+   "status": "blocked",
+   "attempts": [
+    {
+     "method": "institution",
+     "tried": "National Center for Hydrology and Meteorology (https://www.nchm.gov.bt/)",
+     "result": "The site couldn't be reached from this environment (the connection was reset on each try). To be tried again where it can be.",
+     "date": "2026-10-26"
+    },
+    {
+     "method": "official-register",
+     "tried": "The WMO's normals as NCEI holds them (1991-2020, 1961-1990, 1981-2010), the Deutscher Wetterdienst's worldwide normals and Klimatafeln, and the World Weather Information Service's cities, for Bhutan",
+     "result": "The WMO's 1991-2020 composite files: no station of Bhutan; 1961-1990 (ALLNORMS.DAT): no station of Bhutan; 1981-2010: no submission from Bhutan; the Deutscher Wetterdienst's worldwide normals (1961-1990 and 1991-2020, which hold no count of days): no station of Bhutan; its Klimatafeln (each station's table, with the days of at least 1 mm): no station of Bhutan; the World Weather Information Service: 8 cities (mean daily maximum 8, mean daily minimum 8, precipitation 8, days of at least 1 mm 4), none with sunshine.",
+     "date": "2026-10-26"
+    },
+    {
+     "method": "web-search",
+     "tried": "'NCHM Bhutan sunshine hours climate data monthly normal station Paro Thimphu National Center for Hydrology and Meteorology'",
+     "result": "Commercial climate sites, disagreeing; no NCHM sunshine normal.",
+     "date": "2026-10-26"
+    },
+    {
+     "method": "trade-press",
+     "tried": "'\"sunshine hours\" average Bhutan OR Cambodia OR Rwanda OR \"Solomon Islands\" meteorology department news Kuensel OR \"Khmer Times\" OR \"New Times\" OR \"Solomon Star\"'",
+     "result": "No press quoting a national service's sunshine normal for any of the four; an undated commercial guide for Honiara.",
+     "date": "2026-10-26"
+    },
+    {
+     "method": "archive",
+     "tried": "web.archive.org and archive.ph for NCHM's climate data pages",
+     "result": "Neither could be read from this environment: web.archive.org's connection was reset, archive.ph answered 429. To be tried again where they can be reached.",
+     "date": "2026-10-26"
+    }
+   ],
+   "notModeled": "weather.borrowed-part"
+  },
+  {
+   "id": "R-0070",
+   "fact": "world.weather.blocked.KH",
+   "sought": "Cambodia's monthly hours of sunshine, as a normal",
+   "status": "blocked",
+   "attempts": [
+    {
+     "method": "institution",
+     "tried": "Ministry of Water Resources and Meteorology (https://mowram.gov.kh/) and its meteorology site (http://cambodiameteo.com/)",
+     "result": "The ministry's site links the meteorology site, which refused the request (403); no climate normals reached.",
+     "date": "2026-10-26"
+    },
+    {
+     "method": "official-register",
+     "tried": "The WMO's normals as NCEI holds them (1991-2020, 1961-1990, 1981-2010), the Deutscher Wetterdienst's worldwide normals and Klimatafeln, and the World Weather Information Service's cities, for Cambodia",
+     "result": "The WMO's 1991-2020 composite files: no station of Cambodia; 1961-1990 (ALLNORMS.DAT): no station of Cambodia; 1981-2010: no submission from Cambodia; the Deutscher Wetterdienst's worldwide normals (1961-1990 and 1991-2020, which hold no count of days): 1 station (mean daily maximum 1, mean daily minimum 1), none with sunshine; its Klimatafeln (each station's table, with the days of at least 1 mm): 2 stations (mean daily maximum 2, mean daily minimum 2, precipitation 2, days of at least 1 mm 2), none with sunshine; the World Weather Information Service: 25 cities (mean daily maximum 25, mean daily minimum 25, precipitation 25), none with sunshine.",
+     "date": "2026-10-26"
+    },
+    {
+     "method": "web-search",
+     "tried": "'Cambodia Ministry of Water Resources and Meteorology sunshine hours monthly average Phnom Penh climate normals'",
+     "result": "Commercial climate sites (one modelling sunshine from NASA POWER cloud cover); no ministry sunshine normal.",
+     "date": "2026-10-26"
+    },
+    {
+     "method": "trade-press",
+     "tried": "'\"sunshine hours\" average Bhutan OR Cambodia OR Rwanda OR \"Solomon Islands\" meteorology department news Kuensel OR \"Khmer Times\" OR \"New Times\" OR \"Solomon Star\"'",
+     "result": "No press quoting a national service's sunshine normal for any of the four; an undated commercial guide for Honiara.",
+     "date": "2026-10-26"
+    },
+    {
+     "method": "archive",
+     "tried": "web.archive.org and archive.ph for the Ministry's meteorology pages",
+     "result": "Neither could be read from this environment: web.archive.org's connection was reset, archive.ph answered 429. To be tried again where they can be reached.",
+     "date": "2026-10-26"
+    }
+   ],
+   "notModeled": "weather.borrowed-part"
+  },
+  {
+   "id": "R-0071",
+   "fact": "world.weather.blocked.RW",
+   "sought": "Rwanda's monthly hours of sunshine, as a normal",
+   "status": "blocked",
+   "attempts": [
+    {
+     "method": "institution",
+     "tried": "Rwanda Meteorology Agency, Climate normal (https://www.meteorwanda.gov.rw/climate-warning/climate-normal), and its Climatology Bulletin",
+     "result": "The Climate normal page holds nothing ('No news available').",
+     "date": "2026-10-26"
+    },
+    {
+     "method": "official-register",
+     "tried": "The WMO's normals as NCEI holds them (1991-2020, 1961-1990, 1981-2010), the Deutscher Wetterdienst's worldwide normals and Klimatafeln, and the World Weather Information Service's cities, for Rwanda",
+     "result": "The WMO's 1991-2020 composite files: 13 stations (mean daily maximum 12, mean daily minimum 13, precipitation 13, days of at least 1 mm 13), none with sunshine; 1961-1990 (ALLNORMS.DAT): 15 stations (precipitation 15), none with sunshine; 1981-2010: no submission from Rwanda; the Deutscher Wetterdienst's worldwide normals (1961-1990 and 1991-2020, which hold no count of days): 2 stations (mean daily maximum 1, mean daily minimum 1, precipitation 2), none with sunshine; its Klimatafeln (each station's table, with the days of at least 1 mm): 1 station (mean daily maximum 1, mean daily minimum 1, precipitation 1, days of at least 1 mm 1), none with sunshine; the World Weather Information Service: 10 cities (mean daily maximum 10, mean daily minimum 10, precipitation 10), none with sunshine.",
+     "date": "2026-10-26"
+    },
+    {
+     "method": "web-search",
+     "tried": "'Meteo Rwanda sunshine duration hours monthly normal Kigali climatology 1991-2020'",
+     "result": "The World Bank's CRU-gridded climatology and commercial sites; no Meteo Rwanda sunshine normal.",
+     "date": "2026-10-26"
+    },
+    {
+     "method": "trade-press",
+     "tried": "'\"sunshine hours\" average Bhutan OR Cambodia OR Rwanda OR \"Solomon Islands\" meteorology department news Kuensel OR \"Khmer Times\" OR \"New Times\" OR \"Solomon Star\"'",
+     "result": "No press quoting a national service's sunshine normal for any of the four; an undated commercial guide for Honiara.",
+     "date": "2026-10-26"
+    },
+    {
+     "method": "archive",
+     "tried": "web.archive.org and archive.ph for Meteo Rwanda's Climate normal page",
+     "result": "Neither could be read from this environment: web.archive.org's connection was reset, archive.ph answered 429. To be tried again where they can be reached.",
+     "date": "2026-10-26"
+    }
+   ],
+   "notModeled": "weather.borrowed-part"
+  },
+  {
+   "id": "R-0072",
+   "fact": "world.weather.blocked.SB",
+   "sought": "The Solomon Islands' monthly hours of sunshine, as a normal",
+   "status": "blocked",
+   "attempts": [
+    {
+     "method": "institution",
+     "tried": "Solomon Islands Meteorological Services, Airport Climatology (https://met.gov.sb/airport-climatology/: Henderson and Munda airport climatologies)",
+     "result": "Aerodrome climatologies of 2020-2024 (wind, visibility, cloud, weather); no sunshine and no normal.",
+     "date": "2026-10-26"
+    },
+    {
+     "method": "official-register",
+     "tried": "The WMO's normals as NCEI holds them (1991-2020, 1961-1990, 1981-2010), the Deutscher Wetterdienst's worldwide normals and Klimatafeln, and the World Weather Information Service's cities, for the Solomon Islands",
+     "result": "The WMO's 1991-2020 composite files: 3 stations (mean daily maximum 3, mean daily minimum 3, precipitation 3, days of at least 1 mm 3), none with sunshine; 1961-1990 (ALLNORMS.DAT): 1 station (precipitation 1), none with sunshine; 1981-2010: no submission from the Solomon Islands; the Deutscher Wetterdienst's worldwide normals (1961-1990 and 1991-2020, which hold no count of days): 3 stations (mean daily maximum 3, mean daily minimum 3, precipitation 3), none with sunshine; its Klimatafeln (each station's table, with the days of at least 1 mm): 1 station (mean daily maximum 1, mean daily minimum 1), none with sunshine; the World Weather Information Service: 1 city (mean daily maximum 1, mean daily minimum 1, precipitation 1, days of at least 1 mm 1), none with sunshine.",
+     "date": "2026-10-26"
+    },
+    {
+     "method": "web-search",
+     "tried": "'Solomon Islands Meteorological Service sunshine hours Honiara climate monthly averages'",
+     "result": "A travel site built on CRU, Met Office and KNMI data; no Meteorological Services sunshine normal.",
+     "date": "2026-10-26"
+    },
+    {
+     "method": "trade-press",
+     "tried": "'\"sunshine hours\" average Bhutan OR Cambodia OR Rwanda OR \"Solomon Islands\" meteorology department news Kuensel OR \"Khmer Times\" OR \"New Times\" OR \"Solomon Star\"'",
+     "result": "No press quoting a national service's sunshine normal for any of the four; an undated commercial guide for Honiara.",
+     "date": "2026-10-26"
+    },
+    {
+     "method": "archive",
+     "tried": "web.archive.org and archive.ph for the Meteorological Services' Airport Climatology page",
+     "result": "Neither could be read from this environment: web.archive.org's connection was reset, archive.ph answered 429. To be tried again where they can be reached.",
+     "date": "2026-10-26"
+    }
+   ],
+   "notModeled": "weather.borrowed-part"
+  },
+  {
+   "id": "R-0073",
+   "fact": "world.weather.normals-ghcnd",
+   "sought": "For the countries and parameters no published normal gives (the WMO's sets, the 1981-2010 normals, the national services', the Deutscher Wetterdienst's and the World Weather Information Service's): the mean daily maximum and minimum temperature, precipitation and days of at least 1 mm, as averages computed from a station's daily observations by the WMO's rules",
+   "status": "found",
+   "value": {
+    "file": "research/sources/ghcnd-daily.json",
+    "sha256": "d82ab4db4600eead59ccd2d7f3da00bbb661550b150edc09b736215e1fecc293",
+    "method": "vendor/wmo/1203/WMO-1203-Guidelines-Calculation-Climate-Normals-2017.pdf",
+    "methodSha256": "a174d873930d68c96eb9c944e27f8f0352323f916ba96e18c50d6a92785fe014",
+    "stations": "The 25 GHCN-Daily stations of Botswana, the Falkland Islands, Kuwait, Lebanon, Eswatini, Niue, Vanuatu, Suriname, Pitcairn and South Georgia with ten years or more of precipitation or temperature in 1991-2020 (by NCEI's ghcnd-inventory.txt), each placed in the country its identifier names (FIPS 10-4, by ghcnd-countries.txt); stations of other countries near them (Cumberland in South Africa, Changalane in Mozambique, Princess Juliana in Sint Maarten, East End in the U.S. Virgin Islands) left out.",
+    "rules": "WMO-No. 1203 (2017): a day counts where its quality flag is blank; a month's mean is none where 11 or more days are missing or 5 or more in a row (4.4.1 a), a month's sum none where any day is (4.4.1 c), a month's count of days of at least 1 mm a share of the days observed, none by the mean's rule (4.3.1 d, 4.4.1 d); a month's average is the mean of its valid values, a count's mean share times the month's days, February's 28.25 (4.3.2), where they are of at least 80% of the averaging period's years (4.4.2). The averaging period, an average as chapter 3 defines it (over any period), is each parameter's longest within 1991-2020 of ten years or more, from a year with a month of it to another, whose every month is averaged so; the latest of the longest.",
+    "filled": "Suriname's days of at least 1 mm (Johan A. Pengel, 2009-2020) and Pitcairn's maximum and minimum temperature (Pitcairn Island, 1991-2003); the other stations' records are too broken for an average of every month by these rules, or give what their country has from a published normal."
+   },
+   "sources": [
+    {
+     "kind": "primary",
+     "url": "https://www.ncei.noaa.gov/data/global-historical-climatology-network-daily/access/",
+     "title": "NOAA NCEI, Global Historical Climatology Network daily (GHCN-Daily), version 3: each station's file of daily observations ({id}.csv)",
+     "read": "2026-10-26",
+     "said": "A row per day: the station, date, latitude, longitude, elevation and name, then each element's value (PRCP in tenths of mm, TMAX and TMIN in tenths of °C) and its attributes (measurement, quality and source flag); a blank quality flag is a value that passed NCEI's checks."
+    },
+    {
+     "kind": "primary",
+     "url": "https://www.ncei.noaa.gov/pub/data/ghcn/daily/",
+     "title": "NOAA NCEI, GHCN-Daily: ghcnd-stations.txt, ghcnd-inventory.txt and ghcnd-countries.txt",
+     "read": "2026-10-26",
+     "said": "Each station's identifier (its first two letters the FIPS country code), place and name; for each element, its first and last year."
+    },
+    {
+     "kind": "secondary",
+     "url": "https://www.agroorbi.pt/livroagrometeorologia/DocsProg/Temas&Exerc%C3%ADciosExtraPorCap%C3%ADtulo/Cap1_Introdu%C3%A7%C3%A3o/Docs/WMO%20Guidelines%20on%20the%20Calculation%20of%20Climate%20Normals_en.pdf",
+     "title": "WMO Guidelines on the Calculation of Climate Normals, 2017 edition (WMO-No. 1203, ISBN 978-92-63-11203-3), the WMO's PDF as a copy hosts it (29 pages, made 2017-11-30); the WMO e-Library's own page answers with a check this environment can't pass",
+     "read": "2026-10-26",
+     "said": "Chapter 3: an average is the mean of monthly values over any specified period. 4.3.1-4.3.2: a count is a share of the days observed, its normal the mean share times the month's days, February's 28.25. 4.4.1: a mean is not calculated where 11 or more days are missing or 5 or more consecutive; a sum only with complete data; a count by the mean's rule. 4.4.2: a normal or average only where there are valid monthly values in at least 80% of the years of the averaging period.",
+     "quotes": "https://library.wmo.int/idurl/4/55797"
     }
    ]
   }

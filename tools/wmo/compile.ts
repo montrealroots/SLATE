@@ -67,7 +67,9 @@ export const HAND_READ: readonly { source: { file: string; sha256: string }; sta
 ];
 // Stryker restore all
 export const SOURCE_DWD = { file: 'research/sources/dwd-multi-annual.json', sha256: '185b8472b65a84cfd8b493b732cc6b551bfb45868d72e8ff3704e50fc3ee9b6d' } as const;
+export const SOURCE_KT = { file: 'research/sources/dwd-klimatafeln.json', sha256: '13c7692ba29277bc3564ee4366516eabc8824a32d366bf9596660394c666aff6' } as const;
 export const SOURCE_WWIS = { file: 'research/sources/wwis-climate.json', sha256: '145b04103a14ec2ee048df87efa03483b87ea359e7a80c378578bd62687c7651' } as const;
+export const SOURCE_GHCND = { file: 'research/sources/ghcnd-daily.json', sha256: 'd82ab4db4600eead59ccd2d7f3da00bbb661550b150edc09b736215e1fecc293' } as const;
 export const OUTPUT = 'src/world/weather/stations.json';
 
 export type Param = 'tmax' | 'tmin' | 'prcp' | 'wet' | 'sun';
@@ -237,6 +239,50 @@ export const COUNTRIES_DWD: Readonly<Record<string, readonly string[]>> = {
   'Uruguay': ['UY'], 'Uzbekistan': ['UZ'], 'Vanuatu': ['VU'], 'Venezuela': ['VE'], 'Viet Nam': ['VN'],
   'Wake Island': ['UM'], 'Wallis': ['WF'], 'Yemen': ['YE'], 'Zambia': ['ZM'], 'Zimbabwe': ['ZW'],
 };
+
+/** The Deutscher Wetterdienst's Klimatafeln, by the country page that lists them, each with the codes its stations may be in. */
+export const COUNTRIES_KT: Readonly<Record<string, readonly string[]>> = {
+  'aegypten': ['EG'], 'aequatorial_guinea': ['GQ'], 'aethopien': ['ET'], 'afghanistan': ['AF'], 'albanien': ['AL'],
+  'algerien': ['DZ'], 'angola': ['AO'], 'antillen': ['CW', 'SX', 'BQ', 'AW'], 'argentinien': ['AR'],
+  'armenien': ['AM'], 'aserbaidschan': ['AZ'], 'australien': ['AU', 'CX', 'CC', 'NF', 'HM'], 'bahamas': ['BS'],
+  'bahrain': ['BH'], 'bangladesch': ['BD'], 'belgien': ['BE'], 'belize': ['BZ'], 'benin': ['BJ'], 'bolivien': ['BO'],
+  'bosnien_herzeg': ['BA'], 'botsuana': ['BW'], 'brasilien': ['BR'], 'brunei': ['BN'], 'bulgarien': ['BG'],
+  'burkina': ['BF'], 'burundi': ['BI'], 'chile': ['CL'], 'china': ['CN', 'HK', 'MO'], 'chinataiwan': ['TW'],
+  'costarica': ['CR'], 'daenemark': ['DK', 'FO'], 'deutschland': ['DE'], 'dominikansiche': ['DO'], 'dschibuti': ['DJ'],
+  'ecuador': ['EC'], 'elfenbeinkueste': ['CI'], 'elsalvador': ['SV'], 'eritrea': ['ER'], 'estland': ['EE'],
+  'fidschi': ['FJ'], 'finnland': ['FI', 'AX'], 'frankreich': FRANCE, 'gabun': ['GA'], 'gambia': ['GM'],
+  'georgien': ['GE'], 'ghana': ['GH'], 'griechenland': ['GR'], 'groenland': ['GL'], 'grossbritannien': UNITED_KINGDOM,
+  'guatemala': ['GT'], 'guinea': ['GN'], 'guinea_bissau': ['GW'], 'guyana': ['GY'], 'honduras': ['HN'],
+  'indische_union': ['IN'], 'indonesien': ['ID'], 'irak': ['IQ'], 'iran': ['IR'], 'irland': ['IE'], 'island': ['IS'],
+  'israel': ['IL'], 'italien': ['IT'], 'jamaika': ['JM'], 'japan': ['JP'], 'jemen': ['YE'], 'jordanien': ['JO'],
+  'kambodscha': ['KH'], 'kamerun': ['CM'], 'kanada': ['CA'], 'kapverden': ['CV'], 'katar': ['QA'], 'kenia': ['KE'],
+  'kirbati': ['KI'], 'kirgisistan': ['KG'], 'kolumbien': ['CO'], 'kongo': ['CG'], 'kongo_dr': ['CD'],
+  'korea_n': ['KP'], 'korea_s': ['KR'], 'kroatien': ['HR'], 'kuba': ['CU'], 'kuwait': ['KW'], 'laos': ['LA'],
+  'lettland': ['LV'], 'libanon': ['LB'], 'liberia': ['LR'], 'libyen': ['LY'], 'litauen': ['LT'], 'luxemburg': ['LU'],
+  'madagaskar': ['MG'], 'malawi': ['MW'], 'malaysia': ['MY'], 'malediven': ['MV'], 'mali': ['ML'], 'malta': ['MT'],
+  'marokko': ['MA', 'EH'], 'marshall': ['MH'], 'mauretanien': ['MR'], 'mauritius': ['MU'], 'mazedonien': ['MK'],
+  'mexiko': ['MX'], 'mikronesien': ['FM'], 'moldawien': ['MD'], 'mongolei': ['MN'], 'montenegro': ['ME'],
+  'mosambik': ['MZ'], 'myammar': ['MM'], 'namibia': ['NA'], 'nepal': ['NP'], 'neuseeland': ['NZ', 'CK', 'NU', 'TK'],
+  'nicaragua': ['NI'], 'niederlande': ['NL'], 'niger': ['NE'], 'nigeria': ['NG'], 'norwegen': ['NO', 'SJ', 'BV'],
+  'oesterreich': ['AT'], 'oman': ['OM'], 'ost-timor': ['TL'], 'pakistan': ['PK'], 'palau': ['PW'], 'panama': ['PA'],
+  'papua-neu': ['PG'], 'paraguay': ['PY'], 'peru': ['PE'], 'philippinen': ['PH'], 'polen': ['PL'], 'portugal': ['PT'],
+  'puertorico': ['PR'], 'ruanda': ['RW'], 'rumaenien': ['RO'], 'russ_foederation': ['RU'],
+  'russische_foederation_eu': ['RU'], 'salomonen': ['SB'], 'sambia': ['ZM'], 'samoa': ['WS'], 'saotome': ['ST'],
+  'schweden': ['SE'], 'schweiz': ['CH', 'LI'], 'senegal': ['SN'], 'serbien': ['RS', 'XK'], 'seychellen': ['SC'],
+  'sierra_leone': ['SL'], 'simbabwe': ['ZW'], 'singapur': ['SG'], 'slowakei': ['SK'], 'slowenien': ['SI'],
+  'somalia': ['SO'], 'spanien': ['ES'], 'sri_lanka': ['LK'], 'sudan': ['SD', 'SS'], 'suedafrika': ['ZA'],
+  'surinam': ['SR'], 'syrien': ['SY'], 'tadschikistan': ['TJ'], 'tansania': ['TZ'], 'thailand': ['TH'], 'togo': ['TG'],
+  'trinidad_tobago': ['TT'], 'tschad': ['TD'], 'tschech_rep': ['CZ'], 'tuerkei': ['TR'], 'tunesien': ['TN'],
+  'turkmenistan': ['TM'], 'tuvalu': ['TV'], 'uganda': ['UG'], 'ukraine': ['UA'], 'ungarn': ['HU'], 'uruguay': ['UY'],
+  'usa': UNITED_STATES, 'usbekistan': ['UZ'], 'vae': ['AE'], 'venezuela': ['VE'], 'vietnam': ['VN'],
+  'weissrussland': ['BY'], 'westsahara': ['EH'], 'zentralafrika': ['CF'], 'zypern': ['CY'],
+};
+
+/**
+ * Klimatafeln whose station the nearest town would place across a border, their places given only to the minute:
+ * Macao's (WMO 45011; WMO block 45 is Hong Kong's and Macao's), which the nearest town puts in Zhuhai.
+ */
+export const KT_COUNTRY: Readonly<Record<string, string>> = { '45011': 'MO' };
 
 // Stryker restore all
 
@@ -593,19 +639,21 @@ export function parseMetOffice(json: string): SourceStation[] {
   const out: SourceStation[] = [];
   for (const st of data.stations) {
     const byPeriod = new Map<string, Partial<Record<Param, Months>>>();
-    let before = 0;
-    for (const m of st.tables.matchAll(/<table[^>]*>([\s\S]*?)<\/table>/g)) {
-      const heads = [...st.tables.slice(before, m.index).matchAll(/Station:\s*(?:<[^>]*>\s*)*[^<]*?, (\d{4}-\d{4})/g)];
-      before = m.index + m[0].length;
-      const period = heads.at(-1)?.[1];
-      if (period === undefined) continue;
-      const cells = (html: string, tag: string) => [...html.matchAll(new RegExp(`<${tag}[^>]*>([\\s\\S]*?)</${tag}>`, 'g'))].map((c) => (c[1] as string).replace(/<[^>]*>/g, '').trim());
-      const header = cells(m[1] as string, 'th');
-      const rows = [...(m[1] as string).matchAll(/<tr[^>]*>([\s\S]*?)<\/tr>/g)].map((r) => cells(r[1] as string, 'td')).filter((r) => r.length > 0);
+    // Each table's text before it, its tags taken out, names its period last: "Station: Jersey: Airport, 1981-2010".
+    const text = (html: string) => html.replace(/<[^>]*>/g, ' ');
+    const parts = st.tables.split(/<\/table>/);
+    for (const part of parts) {
+      const [before, table] = part.split(/<table\b/) as [string, string | undefined];
+      const period = [...text(before).matchAll(/Station:\s+[^,]*, (\d{4}-\d{4})/g)].at(-1)?.[1];
+      if (period === undefined || table === undefined) continue;
+      const cells = (html: string, tag: string) => [...html.matchAll(new RegExp(`<${tag}\\b[^>]*>([\\s\\S]*?)</${tag}>`, 'g'))].map((c) => text(c[1] as string).trim());
+      const header = cells(table, 'th');
+      const rows = [...table.matchAll(/<tr\b[^>]*>([\s\S]*?)<\/tr>/g)].map((r) => cells(r[1] as string, 'td')).filter((r) => r.length > 0);
       for (const [param, heading] of COLUMNS_METOFFICE) {
-        const col = header.findIndex((h) => h.replace(/&nbsp;/g, ' ').startsWith(heading));
-        if (col < 0 || [...byPeriod.values()].some((n) => n[param] !== undefined)) continue;
-        const values = rows.slice(0, 12).map((r) => (r[col] === undefined || r[col] === '–' ? NaN : Number(r[col])));
+        const col = header.findIndex((h) => h.startsWith(heading));
+        if ([...byPeriod.values()].some((n) => n[param] !== undefined)) continue;
+        // A month of "–" or nothing has none (Number reads both as no number but for "", which would read 0).
+        const values = rows.slice(0, 12).map((r) => (r[col] === '' ? NaN : Number(r[col])));
         if (values.length !== 12 || !values.every(Number.isFinite)) continue;
         const normals = byPeriod.get(period) ?? {};
         normals[param] = values.map(round1);
@@ -656,6 +704,148 @@ export function parseDwd(json: string): (SourceStation & { member: string })[] {
   return [...out.values()];
 }
 
+/** A Klimatafel's rows the stations read, by their label; its sunshine is a mean daily sum, made the month's by its days. */
+const ROWS_KT: readonly [Param, string][] = [
+  ['tmax', 'Mittl. tägl. Maximum [°C]'],
+  ['tmin', 'Mittl. tägl. Minimum [°C]'],
+  ['prcp', 'Mittl. Monats-/Jahressumme [mm]'],
+  ['wet', 'Zahl der Tage mit ≥ 1,0 mm Niederschlag'],
+  ['sun', 'Mittl. Tagessumme [Std.]'],
+];
+/** A month's mean number of days, February's over the leap years' cycle. */
+export const MONTH_DAYS = [31, 28.25, 31, 30, 31, 30, 31, 31, 30, 31, 30, 31];
+
+/** A Klimatafel's number, as 2.031,4: the point groups thousands, the comma marks decimals. */
+const ktNumber = (v: string) => (/^-?[\d.]+(,\d+)?$/.test(v) ? Number(v.replace(/\./g, '').replace(',', '.')) : NaN);
+
+/**
+ * The Deutscher Wetterdienst's Klimatafeln (R-0063), as their text: the station's name in the title ("Klimatafel von
+ * Macau (Magao) / Volksrepublik China"; some titles are empty), its place to the minute and its height, and each
+ * row's twelve months, the year and the years it covers; its country by the index page that lists it. A station is
+ * kept once for each period, with that period's rows.
+ */
+export function parseKlimatafeln(json: string): (SourceStation & { member: string })[] {
+  const data = JSON.parse(json) as { tables: { page: string; url: string; text: string }[] };
+  const out = new Map<string, SourceStation & { member: string }>();
+  for (const { page, url, text } of data.tables) {
+    const wmo = /ak_(\d+)\d_kt\.pdf$/.exec(url)?.[1];
+    const title = /^Klimatafel von (.*?)\s*$/m.exec(text);
+    const place = /Breite: (\d+)° (\d+)' ([NS]), geographische Länge: (\d+)° (\d+)' ([EW])/.exec(text);
+    if (wmo === undefined || title === null) throw new Error(`a Klimatafel the compiler can't read: ${url}`);
+    // Some tables are published blank, without even a place.
+    if (place === null) continue;
+    const member = page.split('/').at(-2) as string;
+    if (!Object.hasOwn(COUNTRIES_KT, member)) throw new Error(`a Klimatafel country the compiler doesn't know: ${member}`);
+    // The station's name is the title's first part; where the title is empty (a bare "/"), its WMO number.
+    const name = (title[1] as string).split(' / ')[0]?.replace(/^\/$/, '') || `WMO ${wmo}`;
+    const deg = (d: string, m: string, h: string, negative: string) => (h === negative ? -1 : 1) * Math.round((Number(d) + Number(m) / 60) * 1e4) / 1e4;
+    const height = /Stationshöhe: (-?\d+) m/.exec(text)?.[1];
+    for (const line of text.split(/\r?\n/).map((l) => l.trim())) {
+      // A row: its label, then twelve months, the year, and the first and last years it covers.
+      const row = ROWS_KT.find(([, label]) => line.startsWith(`${label} `));
+      if (row === undefined) continue;
+      const [param, label] = row;
+      const cells = ['', ...line.slice(label.length).trim().split(/\s+/)];
+      if (cells.length !== 16 || !/^\d{4}$/.test(cells[14] as string) || !/^\d{4}$/.test(cells[15] as string)) continue;
+      const values = cells.slice(1, 13).map(ktNumber);
+      if (!values.every(Number.isFinite)) continue;
+      const period = `${cells[14] as string}-${cells[15] as string}`;
+      const id = `kt:${wmo}:${period}`;
+      const s = out.get(id) ?? { id, name, member, country: '', latitude: deg(place[1] as string, place[2] as string, place[3] as string, 'S'), longitude: deg(place[4] as string, place[5] as string, place[6] as string, 'W'), elevation: height === undefined ? null : Number(height), period, normals: {} };
+      s.normals[param] = values.map((v, i) => round1(param === 'sun' ? v * (MONTH_DAYS[i] as number) : v));
+      out.set(id, s);
+    }
+  }
+  return [...out.values()];
+}
+
+/** The years a station's daily records are read over: 1991 to 2020, the climatological standard normal's. */
+export const YEARS_GHCND = [1991, 2020] as const;
+const DAILY_GHCND: readonly [Param, 'tmax' | 'tmin' | 'prcp'][] = [
+  ['tmax', 'tmax'],
+  ['tmin', 'tmin'],
+  ['prcp', 'prcp'],
+  ['wet', 'prcp'],
+];
+
+/**
+ * A month's value from its days' (WMO-No. 1203, 4.3.1 and 4.4.1): none where 11 or more days are missing or 5 or more
+ * in a row, and for a sum, none where any is; a mean's is the days' mean, a sum's their sum, a count's (days of at
+ * least 1 mm) the share of the days observed.
+ */
+export function monthValue(param: Param, days: readonly (number | null)[]): number | null {
+  const missing = days.filter((d) => d === null).length;
+  let run = 0;
+  let longest = 0;
+  for (const d of days) {
+    run = d === null ? run + 1 : 0;
+    longest = Math.max(longest, run);
+  }
+  if (missing >= 11 || longest >= 5 || (param === 'prcp' && missing > 0)) return null;
+  const seen = days.filter((d) => d !== null);
+  if (param === 'wet') return seen.filter((d) => d >= 1).length / seen.length;
+  const sum = seen.reduce((a, b) => a + b, 0);
+  return param === 'prcp' ? sum : sum / seen.length;
+}
+
+/**
+ * NOAA NCEI's GHCN-Daily records (R-0073), each station's days of 1991 to 2020 as "date;precipitation;flags;maximum;
+ * flags;minimum;flags" in tenths of a millimetre and of a degree, averaged by WMO-No. 1203's rules: a day counts where
+ * its quality flag (the flags' second) is blank; a month by monthValue; a month's average is the mean of its valid
+ * values (a count's mean share times the month's days, February's 28.25) where they are of at least 80% of the
+ * averaging period's years (4.3.2 and 4.4.2). Each parameter's period is the longest of at least ten years (an average,
+ * as chapter 3 defines it: over any period), from a year with a month of it to another, whose every month is averaged
+ * so, the latest of the longest; 1991-2020,
+ * the climatological standard normal, where the records allow it. A station is kept once for each period, with the
+ * parameters of that period.
+ */
+export function parseGhcnd(json: string): SourceStation[] {
+  const data = JSON.parse(json) as { stations: { id: string; country: string; name: string; latitude: number; longitude: number; elevation: number; days: string }[] };
+  const [first, last] = YEARS_GHCND;
+  // Every period of ten years or more, longest first, then latest.
+  const periods: [number, number][] = [];
+  for (let length = last - first + 1; length >= 10; length -= 1) for (let to = last; to - length + 1 >= first; to -= 1) periods.push([to - length + 1, to]);
+  const out: SourceStation[] = [];
+  for (const st of data.stations) {
+    const daily = { tmax: new Map<string, number>(), tmin: new Map<string, number>(), prcp: new Map<string, number>() };
+    for (const line of st.days.split('\n')) {
+      const [date, prcp, prcpFlags, tmax, tmaxFlags, tmin, tminFlags] = line.split(';') as string[];
+      for (const [element, value, flags] of [['prcp', prcp, prcpFlags], ['tmax', tmax, tmaxFlags], ['tmin', tmin, tminFlags]] as const) {
+        if (value !== '' && flags?.split(',')[1] === '') daily[element].set(date as string, Number(value) / 10);
+      }
+    }
+    const byPeriod = new Map<string, Partial<Record<Param, Months>>>();
+    for (const [param, element] of DAILY_GHCND) {
+      // Each month's value in each year, null where it has none.
+      const months = MONTH_DAYS.map((_, m) =>
+        Array.from({ length: last - first + 1 }, (_, i) => {
+          const year = first + i;
+          const length = new Date(Date.UTC(year, m + 1, 0)).getUTCDate();
+          return monthValue(param, Array.from({ length }, (_, d) => daily[element].get(`${year}-${String(m + 1).padStart(2, '0')}-${String(d + 1).padStart(2, '0')}`) ?? null));
+        }),
+      );
+      for (const [from, to] of periods) {
+        // A period begins and ends with a year it has a month of.
+        if (months.every((years) => years[from - first] === null) || months.every((years) => years[to - first] === null)) continue;
+        const normal = months.map((years, m) => {
+          const values = years.slice(from - first, to - first + 1).filter((v) => v !== null);
+          if (values.length * 5 < (to - from + 1) * 4) return NaN;
+          const mean = values.reduce((a, b) => a + b, 0) / values.length;
+          return round1(param === 'wet' ? mean * (MONTH_DAYS[m] as number) : mean);
+        });
+        if (!normal.every(Number.isFinite)) continue;
+        const period = `${from}-${to}`;
+        byPeriod.set(period, { ...byPeriod.get(period), [param]: normal });
+        break;
+      }
+    }
+    for (const [period, normals] of byPeriod) {
+      out.push({ id: `ghcnd:${st.id}:${period}`, name: st.name.replace(/, [A-Z]{2}$/, ''), country: st.country, latitude: st.latitude, longitude: st.longitude, elevation: st.elevation, period, normals });
+    }
+  }
+  return out;
+}
+
 /** A vendored file, checked against its pinned hash (a gzipped one's as NCEI serves it, unzipped). */
 function pinned(root: string, file: string, sha256: string, encoding: 'utf8' | 'latin1'): string {
   const raw = readFileSync(join(root, file));
@@ -672,7 +862,9 @@ export function compileStations(
   s8110: readonly SourceStation[],
   national: readonly SourceStation[],
   dwd: readonly (SourceStation & { member: string })[],
+  klimatafeln: readonly (SourceStation & { member: string })[],
   sWwis: ReturnType<typeof parseWwis>,
+  ghcnd: readonly SourceStation[],
   towns: readonly Town[],
 ): Station[] {
   const pools = new Map<readonly string[], Town[]>();
@@ -695,8 +887,9 @@ export function compileStations(
   for (const [key, s] of s6190) {
     out.push({ id: `6190:${key.trim().replace(/\s+/g, ':')}`, name: s.name, country: placed(MEMBERS_6190[s.member] as readonly string[], s.latitude, s.longitude), latitude: round4(s.latitude), longitude: round4(s.longitude), elevation: s.elevation, period: '1961-1990', normals: s.normals });
   }
-  // A 1981-2010 station, then a national service's own, then the Deutscher Wetterdienst's, then a World Weather
-  // Information Service city, stands only for what its country has from none of the sets before it.
+  // A 1981-2010 station, then a national service's own, then the Deutscher Wetterdienst's normals and its Klimatafeln,
+  // then a World Weather Information Service city, then an average of NOAA's daily records, stands only for what its
+  // country has from none of the sets before.
   const fill = (stations: readonly SourceStation[]) => {
     const has = new Set(out.flatMap((s) => Object.keys(s.normals).map((p) => `${s.country}|${p}`)));
     for (const s of stations) {
@@ -707,9 +900,11 @@ export function compileStations(
   fill(s8110);
   fill(national);
   fill(dwd.map(({ member, ...s }) => ({ ...s, country: placed(COUNTRIES_DWD[member] as readonly string[], s.latitude, s.longitude) })));
+  fill(klimatafeln.map(({ member, ...s }) => ({ ...s, country: KT_COUNTRY[s.id.split(':')[1] as string] ?? placed(COUNTRIES_KT[member] as readonly string[], s.latitude, s.longitude) })));
   fill(
     [...sWwis].map(([id, s]) => ({ id: `wwis:${id}`, name: s.name, country: placed(MEMBERS_WWIS[s.member] as readonly string[], s.latitude, s.longitude), latitude: round4(s.latitude), longitude: round4(s.longitude), elevation: null, period: s.period, normals: s.normals })),
   );
+  fill(ghcnd);
   // Each station named for the player by the town nearest it in its own country, where one is near.
   const own = new Map<string, Town[]>();
   const named = out.map((s) => {
@@ -737,7 +932,7 @@ export function readStations(root: string, towns: readonly Town[]): Station[] {
   }
   const wwis = pinned(root, SOURCE_WWIS.file, SOURCE_WWIS.sha256, 'utf8');
   const s8110 = Object.entries(SOURCES_8110).flatMap(([country, f]) => parse8110(country, pinned(root, f.file, f.sha256, 'latin1')));
-  return compileStations(parse9120(files), parse6190(normals, stations), s8110, national, parseDwd(pinned(root, SOURCE_DWD.file, SOURCE_DWD.sha256, 'utf8')), parseWwis(wwis), towns);
+  return compileStations(parse9120(files), parse6190(normals, stations), s8110, national, parseDwd(pinned(root, SOURCE_DWD.file, SOURCE_DWD.sha256, 'utf8')), parseKlimatafeln(pinned(root, SOURCE_KT.file, SOURCE_KT.sha256, 'utf8')), parseWwis(wwis), parseGhcnd(pinned(root, SOURCE_GHCND.file, SOURCE_GHCND.sha256, 'utf8')), towns);
 }
 
 /** Compact: a station per array (id, name, town, country, latitude, longitude, height, period), its parameters as twelve months or null, in PARAMS' order. */

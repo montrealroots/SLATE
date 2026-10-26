@@ -5,7 +5,7 @@ import { gzipSync } from 'node:zlib';
 import { describe, expect, it } from 'vitest';
 import { coverageOf, readTowns } from '../../tools/wmo/build.ts';
 import { MODEL, NO_PLACES, OUTPUT as COVERAGE, SETS, TESTS, TOLD, serializeCoverage, weatherCoverage } from '../../tools/wmo/coverage.ts';
-import { COMMUNES_MF, COUNTRIES_DWD, MEMBERS_6190, MEMBERS_9120, MEMBERS_WWIS, OUTPUT, SOURCES_6190, SOURCES_8110, SOURCES_9120, HAND_READ, SOURCE_CWA, SOURCE_DWD, SOURCE_METOFFICE, SOURCE_MF, SOURCE_WWIS, compileStations, countryOf, distanceKm, nearestTown, parse6190, parse8110, parse9120, parseCwa, parseDwd, parseMeteoFrance, parseMetOffice, parseWwis, readStations, serialize, TOWN_KM, townPool, type SourceStation } from '../../tools/wmo/compile.ts';
+import { COMMUNES_MF, COUNTRIES_DWD, COUNTRIES_KT, KT_COUNTRY, MONTH_DAYS, MEMBERS_6190, MEMBERS_9120, MEMBERS_WWIS, OUTPUT, SOURCES_6190, SOURCES_8110, SOURCES_9120, HAND_READ, SOURCE_CWA, SOURCE_DWD, SOURCE_KT, SOURCE_METOFFICE, SOURCE_MF, SOURCE_WWIS, SOURCE_GHCND, YEARS_GHCND, compileStations, monthValue, parseGhcnd, countryOf, distanceKm, nearestTown, parse6190, parse8110, parse9120, parseCwa, parseDwd, parseKlimatafeln, parseMeteoFrance, parseMetOffice, parseWwis, readStations, serialize, TOWN_KM, townPool, type SourceStation } from '../../tools/wmo/compile.ts';
 
 const ROOT = join(import.meta.dirname, '../..');
 /** A 1961-1990 station key: region, country, WMO number, national id and its code, 17 columns. */
@@ -89,13 +89,13 @@ describe('the station compiler', () => {
       { key: 'EC', status: 'researched', register: ['R-0038', 'R-0039', 'R-0040', 'R-0044'], tests: TESTS },
     ]);
     expect(TOLD).toBe("tests/world/weather/weather.test.ts::the weather at real towns > reads each town's nearest station of its own country, and says where it has none");
-    expect([SETS, MODEL]).toEqual([{ '9120': 'R-0037', '6190': 'R-0038', '8110': 'R-0044', mf: 'R-0043', cwa: 'R-0045', metoffice: 'R-0048', bws: 'R-0049', dhm: 'R-0057', rnsm: 'R-0060', dwd: 'R-0062', wwis: 'R-0042' }, ['R-0039', 'R-0040']]);
+    expect([SETS, MODEL]).toEqual([{ '9120': 'R-0037', '6190': 'R-0038', '8110': 'R-0044', mf: 'R-0043', cwa: 'R-0045', metoffice: 'R-0048', bws: 'R-0049', dhm: 'R-0057', rnsm: 'R-0060', dwd: 'R-0062', kt: 'R-0063', wwis: 'R-0042', ghcnd: 'R-0073' }, ['R-0039', 'R-0040']]);
     // A station is of a set by its id's start up to the colon, not by a likeness.
     expect(weatherCoverage(['FR'], new Set(['FR']), [st('9120x:1', 'FR', ['tmax', 'tmin', 'prcp', 'wet', 'sun'])], new Map())[0]).toMatchObject({ register: ['R-0039', 'R-0040'] });
     expect(serializeCoverage([{ key: 'AN', status: 'proven', tests: ['t'] }])).toBe('{\n "engine": "world.weather",\n "axis": "country",\n "rows": [\n  {\n   "key": "AN",\n   "status": "proven",\n   "tests": [\n    "t"\n   ]\n  }\n ]\n}\n');
   });
   it('knows every Member of every set, by codes the gazetteer lists', () => {
-    for (const codes of [...Object.values(MEMBERS_9120), ...Object.values(MEMBERS_6190), ...Object.values(MEMBERS_WWIS), ...Object.values(COUNTRIES_DWD), Object.values(COMMUNES_MF), Object.keys(SOURCES_8110)]) for (const c of codes) expect(COUNTRIES.has(c), c).toBe(true);
+    for (const codes of [...Object.values(MEMBERS_9120), ...Object.values(MEMBERS_6190), ...Object.values(MEMBERS_WWIS), ...Object.values(COUNTRIES_DWD), ...Object.values(COUNTRIES_KT), Object.values(KT_COUNTRY), Object.values(COMMUNES_MF), Object.keys(SOURCES_8110)]) for (const c of codes) expect(COUNTRIES.has(c), c).toBe(true);
     expect(Object.keys(MEMBERS_9120)).toHaveLength(142);
     expect(MEMBERS_6190['VN']).toEqual(['VE']);
     expect(Object.keys(MEMBERS_WWIS)).toHaveLength(190);
@@ -274,6 +274,8 @@ describe('the station compiler', () => {
     expect(parseMeteoFrance(mf({ id: '97418110', fiche: spaced }))[0]?.normals).toEqual({ tmax: Array(12).fill(30) });
     expect(one(`Date        ;${Array(12).fill('1').join(';')};    0;`)).toEqual([]);
     expect(one('            ;      30;      30;      30')).toEqual([]);
+    // A title on the fiche's last line has no row under it.
+    expect(parseMeteoFrance(mf({ id: '97418110', fiche: `${fiche({ sections: [] })}\r\nTempérature maximale (Moyenne en °C);` }))).toEqual([]);
   });
   it("reads the CWA's monthly means: each row's station the one of its name open on the period's last day", () => {
     const row = (name: string, period: string, v: string[]) => `<tr><th scope="row" headers="loc">${name}</th>${v.map((x, i) => `<td headers="m${i}">${x}</td>`).join('')}<td headers="item">0</td><td headers="period">${period}</td></tr>`;
@@ -310,6 +312,9 @@ describe('the station compiler', () => {
     expect(parseMetOffice(json(table('1991-2020', months(['1']), ['Month', 'Wind (knots)'])))).toEqual([]);
     expect(parseMetOffice(json(table('1991-2020', months(['1', '1', '1', '1', '1', '1']).slice(1))))).toEqual([]);
     expect(parseMetOffice(json(table('1991-2020', [...months(['1', '1', '1', '1', '1']).map((r, i) => (i === 4 ? r.slice(0, 2) : [...r, '1']))])))[0]?.normals).toEqual({ tmax: Array(12).fill(1) });
+    // Tags with attributes, cells padded and wrapped; an empty month is none; text after the last table is no table.
+    const dressed = `<p>Station:</p>\n <b>Jersey: Airport</b>, 1981-2010<table class="t"><thead><tr><th scope="col">Month</th><th>Sunshine (hours)</th><th>Rainfall (mm)</th></tr></thead><tbody>${Array.from({ length: 12 }, (_, i) => `<tr class="r"><td>M${i}</td><td class="c"> <span>150</span> </td><td>${i === 3 ? '' : '70'}</td></tr>`).join('')}</tbody></table><p>Station: Jersey: Airport, 1971-2000</p>`;
+    expect(parseMetOffice(json(dressed))).toEqual([{ id: 'metoffice:gbwryn0cm:1981-2010', name: 'Jersey: Airport', country: 'JE', latitude: 49.208, longitude: -2.196, elevation: null, period: '1981-2010', normals: { sun: Array(12).fill(150) } }]);
   });
   it("reads the Deutscher Wetterdienst's worldwide normals: each station by its WMO number in the list, once for each period", () => {
     const head = 'Station;Jan;Feb;Mrz;Apr;Mai;Jun;Jul;Aug;Sep;Okt;Nov;Dez';
@@ -325,6 +330,45 @@ describe('the station compiler', () => {
     expect(parseDwd(json({ sun: { '1961_1990': [`98429;${Array(11).fill('1').join(';')}`, `98444;x;${Array(11).fill('1').join(';')}`] } }, list))).toEqual([]);
     expect(() => parseDwd(json({ sun: { '1961_1990': [row('12345', '1')] } }, ['12345;X;1;1;1;Atlantis']))).toThrow("a Deutscher Wetterdienst country the compiler doesn't know: Atlantis");
     expect(COUNTRIES_DWD['Republic of China, Taiwan']).toEqual(['TW']);
+  });
+  it("reads the Deutscher Wetterdienst's Klimatafeln: each row's months and its own years, the sunshine by the month's days", () => {
+    const page = 'https://www.dwd.de/DE/leistungen/klimadatenwelt/asien/ae/china/china_node.html';
+    const row = (label: string, v: string[], from = '1961', to = '1990') => `${label}${' '.repeat(10)}${v.join('    ')}  9,9   ${from}   ${to}`;
+    const text = (rows: string[], title = 'Macau (Magao) / Volksrepublik China', place = "22° 12' N, geographische Länge: 113° 33' E", height = 'Stationshöhe: 65 m über NHN') =>
+      [`Klimatafel von ${title}`, `Koordinaten: geographische Breite: ${place}                   ${height}`, '', 'LUFTTEMPERATUR', ...rows].join('\n');
+    const json = (tables: { url?: string; page?: string; text: string }[]) => JSON.stringify({ tables: tables.map((t) => ({ url: 'https://www.dwd.de/DWD/klima/beratung/ak/ak_450110_kt.pdf', page, ...t })) });
+    const twelve = (x: string) => Array(12).fill(x) as string[];
+    const out = parseKlimatafeln(json([{ text: text([
+      row('Mittl. tägl. Maximum [°C]', twelve('17,5')),
+      row('Mittl. tägl. Minimum [°C]', twelve('-1,8')),
+      row('Mittl. Monats-/Jahressumme [mm]', ['2.031,4', ...twelve('30,2').slice(1)]),
+      row('Zahl der Tage mit ≥ 1,0 mm Niederschlag', twelve('4,0'), '1931'),
+      row('Zahl der Tage mit ≥ 0,1 mm Niederschlag', twelve('6,0')),
+      'SONNENSCHEIN',
+      row('Mittl. Tagessumme [Std.]', twelve('4'), '1978'),
+      row('Mittl. Tagesmittel [°C]', twelve('14,5')),
+    ]) }]));
+    expect(out).toEqual([
+      { id: 'kt:45011:1961-1990', name: 'Macau (Magao)', member: 'china', country: '', latitude: 22.2, longitude: 113.55, elevation: 65, period: '1961-1990', normals: { tmax: twelve('17.5').map(Number), tmin: twelve('-1.8').map(Number), prcp: [2031.4, ...Array(11).fill(30.2)] } },
+      { id: 'kt:45011:1931-1990', name: 'Macau (Magao)', member: 'china', country: '', latitude: 22.2, longitude: 113.55, elevation: 65, period: '1931-1990', normals: { wet: Array(12).fill(4) } },
+      { id: 'kt:45011:1978-1990', name: 'Macau (Magao)', member: 'china', country: '', latitude: 22.2, longitude: 113.55, elevation: 65, period: '1978-1990', normals: { sun: MONTH_DAYS.map((d) => Math.round(4 * d * 10) / 10) } },
+    ]);
+    expect(MONTH_DAYS).toEqual([31, 28.25, 31, 30, 31, 30, 31, 31, 30, 31, 30, 31]);
+    // South and west are negative; an empty title takes the WMO number; no height, none; a row missing a month, its
+    // years or a number isn't read; a blank table is no station.
+    const one = (rows: string[], ...a: Parameters<typeof text> extends [unknown, ...infer R] ? R : never) => parseKlimatafeln(json([{ text: text(rows, ...a) }]));
+    expect(one([row('Mittl. tägl. Maximum [°C]', twelve('1'))], '/', "33° 57' S, geographische Länge: 18° 36' W", 'Stationshöhe:')[0]).toMatchObject({ name: 'WMO 45011', latitude: -33.95, longitude: -18.6, elevation: null });
+    expect(one([row('Mittl. tägl. Maximum [°C]', twelve('1').slice(1))])).toEqual([]);
+    expect(one([row('Mittl. tägl. Maximum [°C]', twelve('1'), '19x1')])).toEqual([]);
+    expect(one([row('Mittl. tägl. Maximum [°C]', twelve('1'), '1961', '19')])).toEqual([]);
+    expect(one([row('Mittl. tägl. Maximum [°C]', ['--', ...twelve('1').slice(1)])])).toEqual([]);
+    expect(one([row('Mittl. tägl. Maximum [°C]', ['1,2,3', ...twelve('1').slice(1)])])).toEqual([]);
+    expect(one([`Mittl. tägl. Maximum [°C]x  ${twelve('1').join('  ')}  1  1961  1990`])).toEqual([]);
+    expect(parseKlimatafeln(json([{ text: 'Klimatafel von /\nKoordinaten: geographische Breite: , geographische Länge:' }]))).toEqual([]);
+    expect(() => parseKlimatafeln(json([{ url: 'https://www.dwd.de/x.pdf', text: text([]) }]))).toThrow("a Klimatafel the compiler can't read: https://www.dwd.de/x.pdf");
+    expect(() => parseKlimatafeln(json([{ text: 'nothing' }]))).toThrow("a Klimatafel the compiler can't read");
+    expect(() => parseKlimatafeln(json([{ page: 'https://www.dwd.de/x/atlantis/atlantis_node.html', text: text([]) }]))).toThrow("a Klimatafel country the compiler doesn't know: atlantis");
+    expect(KT_COUNTRY).toEqual({ '45011': 'MO' });
   });
   it('reads a 1981-2010 template: each station by its WMO number, its place in degrees, minutes and seconds', () => {
     const csv = [
@@ -356,26 +400,83 @@ describe('the station compiler', () => {
     const bare = ['WMO_Number , Latitude,Longitude,Station_Height', ' 84049 , 0|10|00|S ,78|00|00|E, 12 ', `84049, 1 ,Sum,4,${Array(12).fill(' 2 ').join(',')},24`].join('\n');
     expect(parse8110('EC', bare)).toEqual([{ id: '8110:EC:84049', name: '', country: 'EC', latitude: -0.1667, longitude: 78, elevation: 12, period: '1981-2010', normals: { prcp: Array(12).fill(2) } }]);
   });
+  it("makes a month's value from its days by WMO-No. 1203's rules: none where 11 are missing or 5 in a row, a sum none where any is", () => {
+    const missing = (at: number[]) => Array.from({ length: 31 }, (_, i) => (at.includes(i) ? null : 1));
+    expect(monthValue('tmax', [1, 2, null, 3])).toBe(2);
+    expect(monthValue('tmin', missing([0, 2, 4, 6, 8, 10, 12, 14, 16, 18]))).toBe(1);
+    expect(monthValue('tmin', missing([0, 2, 4, 6, 8, 10, 12, 14, 16, 18, 20]))).toBeNull();
+    expect(monthValue('tmax', missing([0, 1, 2, 3]))).toBe(1);
+    expect(monthValue('tmax', missing([0, 1, 2, 3, 4]))).toBeNull();
+    expect(monthValue('tmax', missing([26, 27, 28, 29, 30]))).toBeNull();
+    // Four in a row, then another four: no run of five.
+    expect(monthValue('tmax', missing([0, 1, 2, 3, 5, 6, 7, 8]))).toBe(1);
+    expect(monthValue('prcp', [1, 2, 3])).toBe(6);
+    expect(monthValue('prcp', [1, null, 3])).toBeNull();
+    // A count is the share of the days observed with at least 1 mm.
+    expect(monthValue('wet', [0, 1, 0.9, 2, null])).toBe(0.5);
+  });
+  it("averages NOAA's daily records: each parameter over the longest period whose every month has values of 80% of its years", () => {
+    // Each day of a span of years, a line of the record, or none.
+    const days = (from: number, to: number, day: (year: number, month: number, date: number) => string | null) => {
+      const out: string[] = [];
+      for (let t = Date.UTC(from, 0, 1); t <= Date.UTC(to, 11, 31); t += 86_400_000) {
+        const d = new Date(t);
+        const line = day(d.getUTCFullYear(), d.getUTCMonth(), d.getUTCDate());
+        if (line !== null) out.push(`${d.toISOString().slice(0, 10)};${line}`);
+      }
+      return out;
+    };
+    const station = (id: string, name: string, lines: string[]) => ({ id, country: 'PN', name, latitude: -25.067, longitude: -130.1, elevation: 265, days: lines.join('\n') });
+    expect(YEARS_GHCND).toEqual([1991, 2020]);
+    const full = days(1991, 2020, (year, month, date) => {
+      // A day's maximum flagged by the quality check counts as none.
+      if (year === 1991 && month === 0 && date === 1) return '10;,,S;9999;,G,S;0;,,S';
+      return `${date === 1 ? 9 : 10};D,,S;${(month + 10) * 10};,,S;${month * 10};,,S`;
+    });
+    // Temperatures only from 2001 to 2015; precipitation in all but six years, the most a period of thirty may lack.
+    const part = days(1991, 2020, (year) => `${year >= 1995 && year <= 2000 ? '' : '10'};,,G;${year >= 2001 && year <= 2015 ? '250' : ''};,,G;;`);
+    // Precipitation lacking seven years (1995 to 2001): 2002-2020 is the longest period that begins and ends with a year it has.
+    const gap = days(1991, 2020, (year) => (year >= 1995 && year <= 2001 ? null : '0;,,S;;;;'));
+    const json = JSON.stringify({ stations: [station('PC000919640', 'PITCAIRN ISLAND C, PC', full), station('KUM00040572', 'SOUTH DOLPHIN, KU', part), station('VQC00672551', 'VI E END', gap), station('NONE', 'NONE', days(1991, 2020, () => ';;;;;'))] });
+    const out = parseGhcnd(json);
+    expect(out.map((s) => [s.id, s.name, Object.keys(s.normals)])).toEqual([
+      ['ghcnd:PC000919640:1991-2020', 'PITCAIRN ISLAND C', ['tmax', 'tmin', 'prcp', 'wet']],
+      ['ghcnd:KUM00040572:2001-2015', 'SOUTH DOLPHIN', ['tmax']],
+      ['ghcnd:KUM00040572:1991-2020', 'SOUTH DOLPHIN', ['prcp', 'wet']],
+      ['ghcnd:VQC00672551:2002-2020', 'VI E END', ['prcp', 'wet']],
+    ]);
+    const [pn, , ku, vi] = out;
+    expect(pn).toMatchObject({ country: 'PN', latitude: -25.067, longitude: -130.1, elevation: 265, period: '1991-2020' });
+    expect(pn?.normals.tmax).toEqual([10, 11, 12, 13, 14, 15, 16, 17, 18, 19, 20, 21]);
+    expect(pn?.normals.tmin).toEqual([0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11]);
+    // Each month's sum, February's over its leap years; the first of each month's 0.9 mm isn't a day of 1 mm.
+    expect(pn?.normals.prcp).toEqual([30.9, 28.2, 30.9, 29.9, 30.9, 29.9, 30.9, 30.9, 29.9, 30.9, 29.9, 30.9]);
+    expect(pn?.normals.wet).toEqual([30, 27.3, 30, 29, 30, 29, 30, 30, 29, 30, 29, 30]);
+    expect(out[1]?.normals.tmax).toEqual(Array(12).fill(25));
+    expect(ku?.normals.wet).toEqual(MONTH_DAYS.map((d) => Math.round(d * 10) / 10));
+    expect(vi?.normals).toEqual({ prcp: Array(12).fill(0), wet: Array(12).fill(0) });
+  });
   it("fills what each country lacks in order: the WMO's sets, then 1981-2010, then a national service's, the Deutscher Wetterdienst's, and the World Weather Information Service's", () => {
     const st = (id: string, country: string, normals: SourceStation['normals']): SourceStation => ({ id, name: id, country, latitude: 0, longitude: 0, elevation: null, period: '1981-2010', normals });
     const s9120 = parse9120(files9120({ tmax: [line9120()] }));
-    const out = compileStations(s9120, new Map(), [st('8110:FR:1', 'FR', { tmax: [1], sun: [2] }), st('8110:EC:2', 'EC', { sun: [3] })], [st('mf:1', 'FR', { sun: [4], wet: [5] }), st('mf:2', 'EC', { tmin: [6] })], [{ ...st('dwd:3:1991-2020', '', { tmin: [7], prcp: [8] }), member: 'Ecuador' }], parseWwis(wwis(city({ id: 7, lat: '45.00004', lon: '5.00006' }))), []);
+    const out = compileStations(s9120, new Map(), [st('8110:FR:1', 'FR', { tmax: [1], sun: [2] }), st('8110:EC:2', 'EC', { sun: [3] })], [st('mf:1', 'FR', { sun: [4], wet: [5] }), st('mf:2', 'EC', { tmin: [6] })], [{ ...st('dwd:3:1991-2020', '', { tmin: [7], prcp: [8] }), member: 'Ecuador' }], [], parseWwis(wwis(city({ id: 7, lat: '45.00004', lon: '5.00006' }))), [st('ghcnd:9:2001-2020', 'EC', { prcp: [9], wet: [10] })], []);
     expect(out.map((s) => [s.id, s.normals])).toEqual([
       ['8110:EC:2', { sun: [3] }],
       ['8110:FR:1', { sun: [2] }],
       ['9120:00012345:0-20000-0-12345', { tmax: [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12] }],
       ['dwd:3:1991-2020', { prcp: [8] }],
+      ['ghcnd:9:2001-2020', { wet: [10] }],
       ['mf:1', { wet: [5] }],
       ['mf:2', { tmin: [6] }],
       ['wwis:7', { tmin: [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12], prcp: Array(12).fill(50) }],
     ]);
-    expect(out.at(-1)).toMatchObject({ country: 'FR', latitude: 45, longitude: 5.0001, elevation: null, period: '1991-2020', name: 'Lyon Bron', town: null });
+    expect(out.find((s) => s.id === 'wwis:7')).toMatchObject({ country: 'FR', latitude: 45, longitude: 5.0001, elevation: null, period: '1991-2020', name: 'Lyon Bron', town: null });
   });
   it('keeps every station with a normal, its country resolved and its coordinates rounded, in order of id', () => {
     const s9120 = parse9120(files9120({ tmax: [line9120()], prcp: [line9120({ id: '00000001', name: 'Empty', months: Array(12).fill('-99.9') })] }));
     const s6190 = parse6190([norm6190(), norm6190({ key: K('6UK03772'), code: '0201' })].join('\n'), [meta6190(), meta6190({ key: K('6UK03772'), lat: '4927N', lon: '00235W' })].join('\n'));
-    const stations = compileStations(s9120, s6190, [], [], [], new Map(), [{ name: 'St Peter Port', country: 'GG', latitude: 49.45, longitude: -2.55 }, { name: 'London', country: 'GB', latitude: 51.5, longitude: -0.1 }, { name: 'Lyon', country: 'FR', latitude: 45.72, longitude: 5 }]);
-    expect(compileStations(new Map(), parse6190(norm6190({ key: '6FR07480   12345A' }), meta6190({ key: '6FR07480   12345A' })), [], [], [], new Map(), [])[0]?.id).toBe('6190:6FR07480:12345A');
+    const stations = compileStations(s9120, s6190, [], [], [], [], new Map(), [], [{ name: 'St Peter Port', country: 'GG', latitude: 49.45, longitude: -2.55 }, { name: 'London', country: 'GB', latitude: 51.5, longitude: -0.1 }, { name: 'Lyon', country: 'FR', latitude: 45.72, longitude: 5 }]);
+    expect(compileStations(new Map(), parse6190(norm6190({ key: '6FR07480   12345A' }), meta6190({ key: '6FR07480   12345A' })), [], [], [], [], new Map(), [], [])[0]?.id).toBe('6190:6FR07480:12345A');
     // Each named by the town nearest it in its own country, within 50 km (the 1991-2020 Lyon is 80 km from the town).
     expect(TOWN_KM).toBe(50);
     expect(stations.map((s) => [s.id, s.country, s.period, s.town])).toEqual([
@@ -389,7 +490,7 @@ describe('the station compiler', () => {
     expect(text).toBe(`${JSON.stringify({ params: ['tmax', 'tmin', 'prcp', 'wet', 'sun'], stations: [['9120:00012345:0-20000-0-12345', 'Lyon', null, 'FR', 45, 5, 100, '1991-2020', [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12], null, null, null, null]] })}\n`);
   });
   it('refuses a file that isn\'t the one the register cites', () => {
-    const files = [...Object.values(SOURCES_9120), ...Object.values(SOURCES_6190), ...Object.values(SOURCES_8110), SOURCE_MF, SOURCE_CWA, SOURCE_METOFFICE, ...HAND_READ.map((h) => h.source), SOURCE_DWD, SOURCE_WWIS];
+    const files = [...Object.values(SOURCES_9120), ...Object.values(SOURCES_6190), ...Object.values(SOURCES_8110), SOURCE_MF, SOURCE_CWA, SOURCE_METOFFICE, ...HAND_READ.map((h) => h.source), SOURCE_DWD, SOURCE_KT, SOURCE_WWIS, SOURCE_GHCND];
     for (const target of files) {
       const root = mkdtempSync(join(tmpdir(), 'slate-wmo-'));
       for (const dir of ['vendor/wmo/9120', 'vendor/wmo/6190', 'vendor/wmo/8110', 'vendor/bws', 'vendor/dhm', 'vendor/rnsm', 'research/sources']) mkdirSync(join(root, dir), { recursive: true });

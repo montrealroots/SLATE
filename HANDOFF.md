@@ -14,10 +14,9 @@ restarts. Read `CLAUDE.md` and the owner's package in `docs/` first.
   `registry/layers.json`.
 - Layer 2 (the world) is in progress. Done: the gazetteer (`world.gazetteer`), the map (`world.map`), coverage
   matrix A, and the clock (`world.clock`). In progress: the weather (`world.weather`): the engine is built and
-  tested; its matrix has 157 countries researched, 9 blocked, 6 proven and 80 pending research (see Next step).
-  Mutation testing of `tools/wmo/compile.ts` and `coverage.ts` after the last sources was still running at this
-  checkpoint; the next commit closes its survivors. The Deutscher Wetterdienst's Klimatafeln (`tools/research/
-  dwd-klimatafeln.ts`, R-0063 to come) are being fetched as the next source. Then holidays and prices.
+  tested; its matrix has 202 countries researched, 15 blocked, 6 proven and 29 pending research (see Next step).
+  Mutation testing of `tools/wmo/compile.ts` and `coverage.ts` with the last sources (the Klimatafeln, the GHCN-Daily
+  averages) was still running at this checkpoint; the next commit closes any survivors. Then holidays and prices.
 
 What layer 2 holds so far:
 
@@ -55,7 +54,10 @@ What layer 2 holds so far:
   fiches for the overseas territories, Monaco and Andorra, R-0043; Taiwan's CWA, R-0045; the Met Office's Channel
   Islands averages, R-0048; tables read by hand from a scan or a paper, pinned to the file: Bermuda's sunshine
   R-0049, Nepal's R-0057, Saint-Barthélemy's and Saint-Martin's R-0060), then the Deutscher Wetterdienst's worldwide
-  normals (R-0062) and its Klimatafeln (R-0063), then the WMO's World Weather Information Service (R-0042). Each set
+  normals (R-0062) and its Klimatafeln (R-0063), then the WMO's World Weather Information Service (R-0042), then
+  averages computed from NOAA's GHCN-Daily records by WMO-No. 1203's rules (R-0073: a month's value only from a
+  month complete enough, an average only where 80% of its period's years have one; it fills Suriname's rain days and
+  Pitcairn's temperatures, the other stations' records too broken). Each set
   after the first stands only for what a country has from none before it. Research tools in `tools/research/` fetch
   each source into `research/sources/` (whole, with the date read); the compiler checks every file's SHA-256. A town
   takes each normal from the nearest station of its own country (1991-2020 first), or, where its country has none,
@@ -140,7 +142,9 @@ What layer 0 holds:
    a source in `tools/wmo/compile.ts` (a research tool to fetch it, a register entry, tests); where nothing is found
    after all five methods, record the blocker with `world.weather.blocked.<code>` (the coverage generator turns the
    row blocked). Every attempt is run before it is written down. Helpers used so far live outside the repository (a
-   spec-to-register script); the attempts' wording follows the existing blockers (R-0046 on). Web archives
+   spec-to-register script); the attempts' wording follows the existing blockers (R-0051 on). The GHCN-Daily records
+   have been searched for every pending country (by the FIPS code of its identifier): what they can fill is in; what
+   remains needs its own service's publications or a blocker. Sunshine has no daily source there. Web archives
    (web.archive.org, archive.ph) can't be reached from this environment: each blocker records that, to be tried
    again where they can.
 2. Then holidays by country, prices by place, and the proof of layer 2.
@@ -239,6 +243,11 @@ What layer 0 holds:
 
 ## Blockers and open issues
 
+- The tests used to leave each temporary directory they made (the gate's fixtures, the tools' changed-file checks)
+  in the system's temporary directory; with mutation runs they filled this container's disk (about 189,000
+  directories, 29 GB, under `/tmp/slate-*`). Fixed on 2026-10-26: `tests/tmp-setup.ts` gives each run one directory of
+  its own and removes it when the run ends. The leftovers from before were not removed: the session's permissions
+  don't allow a sweep of `/tmp`, and that is the owner's to allow (`rm -rf /tmp/slate-*` clears them).
 - Resolved 2026-10-26, the owner's two open issues:
   - The `qs` advisories (GHSA-q8mj-m7cp-5q26, GHSA-x5fp-wj9c-mxmx, GHSA-4mjr-xmp4-gh2g), reached through Stryker's
     `typed-rest-client`, which pins `qs` 6.15.1 exactly: fixed by overriding `qs` to 6.16.0, the first release
