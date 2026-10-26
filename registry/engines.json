@@ -78,5 +78,14 @@
    "coverage/clock-countries.json"
   ],
   "allPlacesTest": "tests/world/clock/clock.test.ts::what the clock shows > at every place on the map"
+ },
+ "world.weather": {
+  "layer": 2,
+  "dir": "src/world/weather",
+  "readsPlace": true,
+  "matrices": [
+   "coverage/weather-countries.json"
+  ],
+  "allPlacesTest": "tests/world/weather/weather.test.ts::the weather at real towns > at every place on the map"
  }
 }

@@ -1,0 +1,3198 @@
+{
+ "engine": "world.weather",
+ "axis": "country",
+ "rows": [
+  {
+   "key": "AD",
+   "status": "pending",
+   "missing": [
+    "tmax",
+    "tmin",
+    "prcp",
+    "wet",
+    "sun"
+   ]
+  },
+  {
+   "key": "AE",
+   "status": "researched",
+   "register": [
+    "R-0037",
+    "R-0038",
+    "R-0039",
+    "R-0040"
+   ],
+   "tests": [
+    "tests/tools/wmo.test.ts::the station compiler > reproduces the stations the engine reads, byte for byte, from the WMO's files",
+    "tests/world/weather/weather.test.ts::the weather at real towns > at every place on the map",
+    "tests/world/weather/weather.test.ts::a day's weather > comes back, over thirty years, to the normals it's drawn around"
+   ]
+  },
+  {
+   "key": "AF",
+   "status": "pending",
+   "missing": [
+    "wet"
+   ]
+  },
+  {
+   "key": "AG",
+   "status": "pending",
+   "missing": [
+    "sun"
+   ]
+  },
+  {
+   "key": "AI",
+   "status": "pending",
+   "missing": [
+    "tmax",
+    "tmin",
+    "prcp",
+    "wet",
+    "sun"
+   ]
+  },
+  {
+   "key": "AL",
+   "status": "pending",
+   "missing": [
+    "wet",
+    "sun"
+   ]
+  },
+  {
+   "key": "AM",
+   "status": "researched",
+   "register": [
+    "R-0037",
+    "R-0038",
+    "R-0039",
+    "R-0040",
+    "R-0062"
+   ],
+   "tests": [
+    "tests/tools/wmo.test.ts::the station compiler > reproduces the stations the engine reads, byte for byte, from the WMO's files",
+    "tests/world/weather/weather.test.ts::the weather at real towns > at every place on the map",
+    "tests/world/weather/weather.test.ts::a day's weather > comes back, over thirty years, to the normals it's drawn around"
+   ]
+  },
+  {
+   "key": "AN",
+   "status": "proven",
+   "tests": [
+    "tests/world/gazetteer/gazetteer.test.ts::places > are none in the six countries with no populated place of their own"
+   ]
+  },
+  {
+   "key": "AO",
+   "status": "pending",
+   "missing": [
+    "wet",
+    "sun"
+   ]
+  },
+  {
+   "key": "AQ",
+   "status": "proven",
+   "tests": [
+    "tests/world/gazetteer/gazetteer.test.ts::places > are none in the six countries with no populated place of their own"
+   ]
+  },
+  {
+   "key": "AR",
+   "status": "researched",
+   "register": [
+    "R-0037",
+    "R-0038",
+    "R-0039",
+    "R-0040"
+   ],
+   "tests": [
+    "tests/tools/wmo.test.ts::the station compiler > reproduces the stations the engine reads, byte for byte, from the WMO's files",
+    "tests/world/weather/weather.test.ts::the weather at real towns > at every place on the map",
+    "tests/world/weather/weather.test.ts::a day's weather > comes back, over thirty years, to the normals it's drawn around"
+   ]
+  },
+  {
+   "key": "AS",
+   "status": "researched",
+   "register": [
+    "R-0037",
+    "R-0038",
+    "R-0039",
+    "R-0040"
+   ],
+   "tests": [
+    "tests/tools/wmo.test.ts::the station compiler > reproduces the stations the engine reads, byte for byte, from the WMO's files",
+    "tests/world/weather/weather.test.ts::the weather at real towns > at every place on the map",
+    "tests/world/weather/weather.test.ts::a day's weather > comes back, over thirty years, to the normals it's drawn around"
+   ]
+  },
+  {
+   "key": "AT",
+   "status": "researched",
+   "register": [
+    "R-0037",
+    "R-0038",
+    "R-0039",
+    "R-0040"
+   ],
+   "tests": [
+    "tests/tools/wmo.test.ts::the station compiler > reproduces the stations the engine reads, byte for byte, from the WMO's files",
+    "tests/world/weather/weather.test.ts::the weather at real towns > at every place on the map",
+    "tests/world/weather/weather.test.ts::a day's weather > comes back, over thirty years, to the normals it's drawn around"
+   ]
+  },
+  {
+   "key": "AU",
+   "status": "researched",
+   "register": [
+    "R-0037",
+    "R-0038",
+    "R-0039",
+    "R-0040"
+   ],
+   "tests": [
+    "tests/tools/wmo.test.ts::the station compiler > reproduces the stations the engine reads, byte for byte, from the WMO's files",
+    "tests/world/weather/weather.test.ts::the weather at real towns > at every place on the map",
+    "tests/world/weather/weather.test.ts::a day's weather > comes back, over thirty years, to the normals it's drawn around"
+   ]
+  },
+  {
+   "key": "AW",
+   "status": "blocked",
+   "register": [
+    "R-0039",
+    "R-0040",
+    "R-0042",
+    "R-0053"
+   ],
+   "tests": [
+    "tests/tools/wmo.test.ts::the station compiler > reproduces the stations the engine reads, byte for byte, from the WMO's files",
+    "tests/world/weather/weather.test.ts::the weather at real towns > at every place on the map",
+    "tests/world/weather/weather.test.ts::a day's weather > comes back, over thirty years, to the normals it's drawn around",
+    "tests/world/weather/weather.test.ts::the weather at real towns > reads each town's nearest station of its own country, and says where it has none"
+   ]
+  },
+  {
+   "key": "AX",
+   "status": "researched",
+   "register": [
+    "R-0037",
+    "R-0039",
+    "R-0040"
+   ],
+   "tests": [
+    "tests/tools/wmo.test.ts::the station compiler > reproduces the stations the engine reads, byte for byte, from the WMO's files",
+    "tests/world/weather/weather.test.ts::the weather at real towns > at every place on the map",
+    "tests/world/weather/weather.test.ts::a day's weather > comes back, over thirty years, to the normals it's drawn around"
+   ]
+  },
+  {
+   "key": "AZ",
+   "status": "researched",
+   "register": [
+    "R-0038",
+    "R-0039",
+    "R-0040"
+   ],
+   "tests": [
+    "tests/tools/wmo.test.ts::the station compiler > reproduces the stations the engine reads, byte for byte, from the WMO's files",
+    "tests/world/weather/weather.test.ts::the weather at real towns > at every place on the map",
+    "tests/world/weather/weather.test.ts::a day's weather > comes back, over thirty years, to the normals it's drawn around"
+   ]
+  },
+  {
+   "key": "BA",
+   "status": "researched",
+   "register": [
+    "R-0037",
+    "R-0038",
+    "R-0039",
+    "R-0040"
+   ],
+   "tests": [
+    "tests/tools/wmo.test.ts::the station compiler > reproduces the stations the engine reads, byte for byte, from the WMO's files",
+    "tests/world/weather/weather.test.ts::the weather at real towns > at every place on the map",
+    "tests/world/weather/weather.test.ts::a day's weather > comes back, over thirty years, to the normals it's drawn around"
+   ]
+  },
+  {
+   "key": "BB",
+   "status": "researched",
+   "register": [
+    "R-0037",
+    "R-0039",
+    "R-0040"
+   ],
+   "tests": [
+    "tests/tools/wmo.test.ts::the station compiler > reproduces the stations the engine reads, byte for byte, from the WMO's files",
+    "tests/world/weather/weather.test.ts::the weather at real towns > at every place on the map",
+    "tests/world/weather/weather.test.ts::a day's weather > comes back, over thirty years, to the normals it's drawn around"
+   ]
+  },
+  {
+   "key": "BD",
+   "status": "researched",
+   "register": [
+    "R-0037",
+    "R-0039",
+    "R-0040"
+   ],
+   "tests": [
+    "tests/tools/wmo.test.ts::the station compiler > reproduces the stations the engine reads, byte for byte, from the WMO's files",
+    "tests/world/weather/weather.test.ts::the weather at real towns > at every place on the map",
+    "tests/world/weather/weather.test.ts::a day's weather > comes back, over thirty years, to the normals it's drawn around"
+   ]
+  },
+  {
+   "key": "BE",
+   "status": "researched",
+   "register": [
+    "R-0037",
+    "R-0038",
+    "R-0039",
+    "R-0040"
+   ],
+   "tests": [
+    "tests/tools/wmo.test.ts::the station compiler > reproduces the stations the engine reads, byte for byte, from the WMO's files",
+    "tests/world/weather/weather.test.ts::the weather at real towns > at every place on the map",
+    "tests/world/weather/weather.test.ts::a day's weather > comes back, over thirty years, to the normals it's drawn around"
+   ]
+  },
+  {
+   "key": "BF",
+   "status": "researched",
+   "register": [
+    "R-0037",
+    "R-0039",
+    "R-0040"
+   ],
+   "tests": [
+    "tests/tools/wmo.test.ts::the station compiler > reproduces the stations the engine reads, byte for byte, from the WMO's files",
+    "tests/world/weather/weather.test.ts::the weather at real towns > at every place on the map",
+    "tests/world/weather/weather.test.ts::a day's weather > comes back, over thirty years, to the normals it's drawn around"
+   ]
+  },
+  {
+   "key": "BG",
+   "status": "researched",
+   "register": [
+    "R-0037",
+    "R-0038",
+    "R-0039",
+    "R-0040"
+   ],
+   "tests": [
+    "tests/tools/wmo.test.ts::the station compiler > reproduces the stations the engine reads, byte for byte, from the WMO's files",
+    "tests/world/weather/weather.test.ts::the weather at real towns > at every place on the map",
+    "tests/world/weather/weather.test.ts::a day's weather > comes back, over thirty years, to the normals it's drawn around"
+   ]
+  },
+  {
+   "key": "BH",
+   "status": "researched",
+   "register": [
+    "R-0037",
+    "R-0038",
+    "R-0039",
+    "R-0040"
+   ],
+   "tests": [
+    "tests/tools/wmo.test.ts::the station compiler > reproduces the stations the engine reads, byte for byte, from the WMO's files",
+    "tests/world/weather/weather.test.ts::the weather at real towns > at every place on the map",
+    "tests/world/weather/weather.test.ts::a day's weather > comes back, over thirty years, to the normals it's drawn around"
+   ]
+  },
+  {
+   "key": "BI",
+   "status": "pending",
+   "missing": [
+    "wet",
+    "sun"
+   ]
+  },
+  {
+   "key": "BJ",
+   "status": "researched",
+   "register": [
+    "R-0037",
+    "R-0038",
+    "R-0039",
+    "R-0040"
+   ],
+   "tests": [
+    "tests/tools/wmo.test.ts::the station compiler > reproduces the stations the engine reads, byte for byte, from the WMO's files",
+    "tests/world/weather/weather.test.ts::the weather at real towns > at every place on the map",
+    "tests/world/weather/weather.test.ts::a day's weather > comes back, over thirty years, to the normals it's drawn around"
+   ]
+  },
+  {
+   "key": "BL",
+   "status": "researched",
+   "register": [
+    "R-0039",
+    "R-0040",
+    "R-0043",
+    "R-0060"
+   ],
+   "tests": [
+    "tests/tools/wmo.test.ts::the station compiler > reproduces the stations the engine reads, byte for byte, from the WMO's files",
+    "tests/world/weather/weather.test.ts::the weather at real towns > at every place on the map",
+    "tests/world/weather/weather.test.ts::a day's weather > comes back, over thirty years, to the normals it's drawn around"
+   ]
+  },
+  {
+   "key": "BM",
+   "status": "researched",
+   "register": [
+    "R-0037",
+    "R-0039",
+    "R-0040",
+    "R-0049"
+   ],
+   "tests": [
+    "tests/tools/wmo.test.ts::the station compiler > reproduces the stations the engine reads, byte for byte, from the WMO's files",
+    "tests/world/weather/weather.test.ts::the weather at real towns > at every place on the map",
+    "tests/world/weather/weather.test.ts::a day's weather > comes back, over thirty years, to the normals it's drawn around"
+   ]
+  },
+  {
+   "key": "BN",
+   "status": "researched",
+   "register": [
+    "R-0037",
+    "R-0038",
+    "R-0039",
+    "R-0040"
+   ],
+   "tests": [
+    "tests/tools/wmo.test.ts::the station compiler > reproduces the stations the engine reads, byte for byte, from the WMO's files",
+    "tests/world/weather/weather.test.ts::the weather at real towns > at every place on the map",
+    "tests/world/weather/weather.test.ts::a day's weather > comes back, over thirty years, to the normals it's drawn around"
+   ]
+  },
+  {
+   "key": "BO",
+   "status": "pending",
+   "missing": [
+    "wet"
+   ]
+  },
+  {
+   "key": "BQ",
+   "status": "pending",
+   "missing": [
+    "tmax",
+    "tmin",
+    "prcp",
+    "wet",
+    "sun"
+   ]
+  },
+  {
+   "key": "BR",
+   "status": "researched",
+   "register": [
+    "R-0037",
+    "R-0038",
+    "R-0039",
+    "R-0040"
+   ],
+   "tests": [
+    "tests/tools/wmo.test.ts::the station compiler > reproduces the stations the engine reads, byte for byte, from the WMO's files",
+    "tests/world/weather/weather.test.ts::the weather at real towns > at every place on the map",
+    "tests/world/weather/weather.test.ts::a day's weather > comes back, over thirty years, to the normals it's drawn around"
+   ]
+  },
+  {
+   "key": "BS",
+   "status": "researched",
+   "register": [
+    "R-0037",
+    "R-0038",
+    "R-0039",
+    "R-0040"
+   ],
+   "tests": [
+    "tests/tools/wmo.test.ts::the station compiler > reproduces the stations the engine reads, byte for byte, from the WMO's files",
+    "tests/world/weather/weather.test.ts::the weather at real towns > at every place on the map",
+    "tests/world/weather/weather.test.ts::a day's weather > comes back, over thirty years, to the normals it's drawn around"
+   ]
+  },
+  {
+   "key": "BT",
+   "status": "pending",
+   "missing": [
+    "sun"
+   ]
+  },
+  {
+   "key": "BV",
+   "status": "proven",
+   "tests": [
+    "tests/world/gazetteer/gazetteer.test.ts::places > are none in the six countries with no populated place of their own"
+   ]
+  },
+  {
+   "key": "BW",
+   "status": "pending",
+   "missing": [
+    "wet",
+    "sun"
+   ]
+  },
+  {
+   "key": "BY",
+   "status": "researched",
+   "register": [
+    "R-0037",
+    "R-0038",
+    "R-0039",
+    "R-0040"
+   ],
+   "tests": [
+    "tests/tools/wmo.test.ts::the station compiler > reproduces the stations the engine reads, byte for byte, from the WMO's files",
+    "tests/world/weather/weather.test.ts::the weather at real towns > at every place on the map",
+    "tests/world/weather/weather.test.ts::a day's weather > comes back, over thirty years, to the normals it's drawn around"
+   ]
+  },
+  {
+   "key": "BZ",
+   "status": "researched",
+   "register": [
+    "R-0037",
+    "R-0038",
+    "R-0039",
+    "R-0040"
+   ],
+   "tests": [
+    "tests/tools/wmo.test.ts::the station compiler > reproduces the stations the engine reads, byte for byte, from the WMO's files",
+    "tests/world/weather/weather.test.ts::the weather at real towns > at every place on the map",
+    "tests/world/weather/weather.test.ts::a day's weather > comes back, over thirty years, to the normals it's drawn around"
+   ]
+  },
+  {
+   "key": "CA",
+   "status": "researched",
+   "register": [
+    "R-0037",
+    "R-0038",
+    "R-0039",
+    "R-0040"
+   ],
+   "tests": [
+    "tests/tools/wmo.test.ts::the station compiler > reproduces the stations the engine reads, byte for byte, from the WMO's files",
+    "tests/world/weather/weather.test.ts::the weather at real towns > at every place on the map",
+    "tests/world/weather/weather.test.ts::a day's weather > comes back, over thirty years, to the normals it's drawn around"
+   ]
+  },
+  {
+   "key": "CC",
+   "status": "blocked",
+   "register": [
+    "R-0037",
+    "R-0038",
+    "R-0039",
+    "R-0040",
+    "R-0051"
+   ],
+   "tests": [
+    "tests/tools/wmo.test.ts::the station compiler > reproduces the stations the engine reads, byte for byte, from the WMO's files",
+    "tests/world/weather/weather.test.ts::the weather at real towns > at every place on the map",
+    "tests/world/weather/weather.test.ts::a day's weather > comes back, over thirty years, to the normals it's drawn around",
+    "tests/world/weather/weather.test.ts::the weather at real towns > reads each town's nearest station of its own country, and says where it has none"
+   ]
+  },
+  {
+   "key": "CD",
+   "status": "pending",
+   "missing": [
+    "wet",
+    "sun"
+   ]
+  },
+  {
+   "key": "CF",
+   "status": "researched",
+   "register": [
+    "R-0037",
+    "R-0039",
+    "R-0040"
+   ],
+   "tests": [
+    "tests/tools/wmo.test.ts::the station compiler > reproduces the stations the engine reads, byte for byte, from the WMO's files",
+    "tests/world/weather/weather.test.ts::the weather at real towns > at every place on the map",
+    "tests/world/weather/weather.test.ts::a day's weather > comes back, over thirty years, to the normals it's drawn around"
+   ]
+  },
+  {
+   "key": "CG",
+   "status": "pending",
+   "missing": [
+    "wet"
+   ]
+  },
+  {
+   "key": "CH",
+   "status": "researched",
+   "register": [
+    "R-0037",
+    "R-0038",
+    "R-0039",
+    "R-0040"
+   ],
+   "tests": [
+    "tests/tools/wmo.test.ts::the station compiler > reproduces the stations the engine reads, byte for byte, from the WMO's files",
+    "tests/world/weather/weather.test.ts::the weather at real towns > at every place on the map",
+    "tests/world/weather/weather.test.ts::a day's weather > comes back, over thirty years, to the normals it's drawn around"
+   ]
+  },
+  {
+   "key": "CI",
+   "status": "researched",
+   "register": [
+    "R-0037",
+    "R-0038",
+    "R-0039",
+    "R-0040"
+   ],
+   "tests": [
+    "tests/tools/wmo.test.ts::the station compiler > reproduces the stations the engine reads, byte for byte, from the WMO's files",
+    "tests/world/weather/weather.test.ts::the weather at real towns > at every place on the map",
+    "tests/world/weather/weather.test.ts::a day's weather > comes back, over thirty years, to the normals it's drawn around"
+   ]
+  },
+  {
+   "key": "CK",
+   "status": "pending",
+   "missing": [
+    "tmax",
+    "tmin",
+    "wet"
+   ]
+  },
+  {
+   "key": "CL",
+   "status": "researched",
+   "register": [
+    "R-0037",
+    "R-0038",
+    "R-0039",
+    "R-0040"
+   ],
+   "tests": [
+    "tests/tools/wmo.test.ts::the station compiler > reproduces the stations the engine reads, byte for byte, from the WMO's files",
+    "tests/world/weather/weather.test.ts::the weather at real towns > at every place on the map",
+    "tests/world/weather/weather.test.ts::a day's weather > comes back, over thirty years, to the normals it's drawn around"
+   ]
+  },
+  {
+   "key": "CM",
+   "status": "researched",
+   "register": [
+    "R-0037",
+    "R-0038",
+    "R-0039",
+    "R-0040"
+   ],
+   "tests": [
+    "tests/tools/wmo.test.ts::the station compiler > reproduces the stations the engine reads, byte for byte, from the WMO's files",
+    "tests/world/weather/weather.test.ts::the weather at real towns > at every place on the map",
+    "tests/world/weather/weather.test.ts::a day's weather > comes back, over thirty years, to the normals it's drawn around"
+   ]
+  },
+  {
+   "key": "CN",
+   "status": "researched",
+   "register": [
+    "R-0037",
+    "R-0038",
+    "R-0039",
+    "R-0040"
+   ],
+   "tests": [
+    "tests/tools/wmo.test.ts::the station compiler > reproduces the stations the engine reads, byte for byte, from the WMO's files",
+    "tests/world/weather/weather.test.ts::the weather at real towns > at every place on the map",
+    "tests/world/weather/weather.test.ts::a day's weather > comes back, over thirty years, to the normals it's drawn around"
+   ]
+  },
+  {
+   "key": "CO",
+   "status": "researched",
+   "register": [
+    "R-0037",
+    "R-0038",
+    "R-0039",
+    "R-0040"
+   ],
+   "tests": [
+    "tests/tools/wmo.test.ts::the station compiler > reproduces the stations the engine reads, byte for byte, from the WMO's files",
+    "tests/world/weather/weather.test.ts::the weather at real towns > at every place on the map",
+    "tests/world/weather/weather.test.ts::a day's weather > comes back, over thirty years, to the normals it's drawn around"
+   ]
+  },
+  {
+   "key": "CR",
+   "status": "researched",
+   "register": [
+    "R-0037",
+    "R-0038",
+    "R-0039",
+    "R-0040"
+   ],
+   "tests": [
+    "tests/tools/wmo.test.ts::the station compiler > reproduces the stations the engine reads, byte for byte, from the WMO's files",
+    "tests/world/weather/weather.test.ts::the weather at real towns > at every place on the map",
+    "tests/world/weather/weather.test.ts::a day's weather > comes back, over thirty years, to the normals it's drawn around"
+   ]
+  },
+  {
+   "key": "CS",
+   "status": "proven",
+   "tests": [
+    "tests/world/gazetteer/gazetteer.test.ts::places > are none in the six countries with no populated place of their own"
+   ]
+  },
+  {
+   "key": "CU",
+   "status": "pending",
+   "missing": [
+    "sun"
+   ]
+  },
+  {
+   "key": "CV",
+   "status": "researched",
+   "register": [
+    "R-0037",
+    "R-0038",
+    "R-0039",
+    "R-0040"
+   ],
+   "tests": [
+    "tests/tools/wmo.test.ts::the station compiler > reproduces the stations the engine reads, byte for byte, from the WMO's files",
+    "tests/world/weather/weather.test.ts::the weather at real towns > at every place on the map",
+    "tests/world/weather/weather.test.ts::a day's weather > comes back, over thirty years, to the normals it's drawn around"
+   ]
+  },
+  {
+   "key": "CW",
+   "status": "researched",
+   "register": [
+    "R-0037",
+    "R-0038",
+    "R-0039",
+    "R-0040"
+   ],
+   "tests": [
+    "tests/tools/wmo.test.ts::the station compiler > reproduces the stations the engine reads, byte for byte, from the WMO's files",
+    "tests/world/weather/weather.test.ts::the weather at real towns > at every place on the map",
+    "tests/world/weather/weather.test.ts::a day's weather > comes back, over thirty years, to the normals it's drawn around"
+   ]
+  },
+  {
+   "key": "CX",
+   "status": "blocked",
+   "register": [
+    "R-0037",
+    "R-0039",
+    "R-0040",
+    "R-0052"
+   ],
+   "tests": [
+    "tests/tools/wmo.test.ts::the station compiler > reproduces the stations the engine reads, byte for byte, from the WMO's files",
+    "tests/world/weather/weather.test.ts::the weather at real towns > at every place on the map",
+    "tests/world/weather/weather.test.ts::a day's weather > comes back, over thirty years, to the normals it's drawn around",
+    "tests/world/weather/weather.test.ts::the weather at real towns > reads each town's nearest station of its own country, and says where it has none"
+   ]
+  },
+  {
+   "key": "CY",
+   "status": "researched",
+   "register": [
+    "R-0037",
+    "R-0038",
+    "R-0039",
+    "R-0040"
+   ],
+   "tests": [
+    "tests/tools/wmo.test.ts::the station compiler > reproduces the stations the engine reads, byte for byte, from the WMO's files",
+    "tests/world/weather/weather.test.ts::the weather at real towns > at every place on the map",
+    "tests/world/weather/weather.test.ts::a day's weather > comes back, over thirty years, to the normals it's drawn around"
+   ]
+  },
+  {
+   "key": "CZ",
+   "status": "researched",
+   "register": [
+    "R-0037",
+    "R-0038",
+    "R-0039",
+    "R-0040"
+   ],
+   "tests": [
+    "tests/tools/wmo.test.ts::the station compiler > reproduces the stations the engine reads, byte for byte, from the WMO's files",
+    "tests/world/weather/weather.test.ts::the weather at real towns > at every place on the map",
+    "tests/world/weather/weather.test.ts::a day's weather > comes back, over thirty years, to the normals it's drawn around"
+   ]
+  },
+  {
+   "key": "DE",
+   "status": "researched",
+   "register": [
+    "R-0037",
+    "R-0038",
+    "R-0039",
+    "R-0040"
+   ],
+   "tests": [
+    "tests/tools/wmo.test.ts::the station compiler > reproduces the stations the engine reads, byte for byte, from the WMO's files",
+    "tests/world/weather/weather.test.ts::the weather at real towns > at every place on the map",
+    "tests/world/weather/weather.test.ts::a day's weather > comes back, over thirty years, to the normals it's drawn around"
+   ]
+  },
+  {
+   "key": "DJ",
+   "status": "pending",
+   "missing": [
+    "wet"
+   ]
+  },
+  {
+   "key": "DK",
+   "status": "researched",
+   "register": [
+    "R-0037",
+    "R-0038",
+    "R-0039",
+    "R-0040"
+   ],
+   "tests": [
+    "tests/tools/wmo.test.ts::the station compiler > reproduces the stations the engine reads, byte for byte, from the WMO's files",
+    "tests/world/weather/weather.test.ts::the weather at real towns > at every place on the map",
+    "tests/world/weather/weather.test.ts::a day's weather > comes back, over thirty years, to the normals it's drawn around"
+   ]
+  },
+  {
+   "key": "DM",
+   "status": "researched",
+   "register": [
+    "R-0037",
+    "R-0038",
+    "R-0039",
+    "R-0040"
+   ],
+   "tests": [
+    "tests/tools/wmo.test.ts::the station compiler > reproduces the stations the engine reads, byte for byte, from the WMO's files",
+    "tests/world/weather/weather.test.ts::the weather at real towns > at every place on the map",
+    "tests/world/weather/weather.test.ts::a day's weather > comes back, over thirty years, to the normals it's drawn around"
+   ]
+  },
+  {
+   "key": "DO",
+   "status": "researched",
+   "register": [
+    "R-0037",
+    "R-0038",
+    "R-0039",
+    "R-0040",
+    "R-0042"
+   ],
+   "tests": [
+    "tests/tools/wmo.test.ts::the station compiler > reproduces the stations the engine reads, byte for byte, from the WMO's files",
+    "tests/world/weather/weather.test.ts::the weather at real towns > at every place on the map",
+    "tests/world/weather/weather.test.ts::a day's weather > comes back, over thirty years, to the normals it's drawn around"
+   ]
+  },
+  {
+   "key": "DZ",
+   "status": "researched",
+   "register": [
+    "R-0037",
+    "R-0038",
+    "R-0039",
+    "R-0040"
+   ],
+   "tests": [
+    "tests/tools/wmo.test.ts::the station compiler > reproduces the stations the engine reads, byte for byte, from the WMO's files",
+    "tests/world/weather/weather.test.ts::the weather at real towns > at every place on the map",
+    "tests/world/weather/weather.test.ts::a day's weather > comes back, over thirty years, to the normals it's drawn around"
+   ]
+  },
+  {
+   "key": "EC",
+   "status": "researched",
+   "register": [
+    "R-0037",
+    "R-0038",
+    "R-0039",
+    "R-0040",
+    "R-0044"
+   ],
+   "tests": [
+    "tests/tools/wmo.test.ts::the station compiler > reproduces the stations the engine reads, byte for byte, from the WMO's files",
+    "tests/world/weather/weather.test.ts::the weather at real towns > at every place on the map",
+    "tests/world/weather/weather.test.ts::a day's weather > comes back, over thirty years, to the normals it's drawn around"
+   ]
+  },
+  {
+   "key": "EE",
+   "status": "researched",
+   "register": [
+    "R-0037",
+    "R-0038",
+    "R-0039",
+    "R-0040"
+   ],
+   "tests": [
+    "tests/tools/wmo.test.ts::the station compiler > reproduces the stations the engine reads, byte for byte, from the WMO's files",
+    "tests/world/weather/weather.test.ts::the weather at real towns > at every place on the map",
+    "tests/world/weather/weather.test.ts::a day's weather > comes back, over thirty years, to the normals it's drawn around"
+   ]
+  },
+  {
+   "key": "EG",
+   "status": "researched",
+   "register": [
+    "R-0037",
+    "R-0038",
+    "R-0039",
+    "R-0040"
+   ],
+   "tests": [
+    "tests/tools/wmo.test.ts::the station compiler > reproduces the stations the engine reads, byte for byte, from the WMO's files",
+    "tests/world/weather/weather.test.ts::the weather at real towns > at every place on the map",
+    "tests/world/weather/weather.test.ts::a day's weather > comes back, over thirty years, to the normals it's drawn around"
+   ]
+  },
+  {
+   "key": "EH",
+   "status": "researched",
+   "register": [
+    "R-0037",
+    "R-0039",
+    "R-0040",
+    "R-0062"
+   ],
+   "tests": [
+    "tests/tools/wmo.test.ts::the station compiler > reproduces the stations the engine reads, byte for byte, from the WMO's files",
+    "tests/world/weather/weather.test.ts::the weather at real towns > at every place on the map",
+    "tests/world/weather/weather.test.ts::a day's weather > comes back, over thirty years, to the normals it's drawn around"
+   ]
+  },
+  {
+   "key": "ER",
+   "status": "pending",
+   "missing": [
+    "wet"
+   ]
+  },
+  {
+   "key": "ES",
+   "status": "researched",
+   "register": [
+    "R-0037",
+    "R-0038",
+    "R-0039",
+    "R-0040"
+   ],
+   "tests": [
+    "tests/tools/wmo.test.ts::the station compiler > reproduces the stations the engine reads, byte for byte, from the WMO's files",
+    "tests/world/weather/weather.test.ts::the weather at real towns > at every place on the map",
+    "tests/world/weather/weather.test.ts::a day's weather > comes back, over thirty years, to the normals it's drawn around"
+   ]
+  },
+  {
+   "key": "ET",
+   "status": "pending",
+   "missing": [
+    "wet"
+   ]
+  },
+  {
+   "key": "FI",
+   "status": "researched",
+   "register": [
+    "R-0037",
+    "R-0038",
+    "R-0039",
+    "R-0040"
+   ],
+   "tests": [
+    "tests/tools/wmo.test.ts::the station compiler > reproduces the stations the engine reads, byte for byte, from the WMO's files",
+    "tests/world/weather/weather.test.ts::the weather at real towns > at every place on the map",
+    "tests/world/weather/weather.test.ts::a day's weather > comes back, over thirty years, to the normals it's drawn around"
+   ]
+  },
+  {
+   "key": "FJ",
+   "status": "researched",
+   "register": [
+    "R-0037",
+    "R-0038",
+    "R-0039",
+    "R-0040"
+   ],
+   "tests": [
+    "tests/tools/wmo.test.ts::the station compiler > reproduces the stations the engine reads, byte for byte, from the WMO's files",
+    "tests/world/weather/weather.test.ts::the weather at real towns > at every place on the map",
+    "tests/world/weather/weather.test.ts::a day's weather > comes back, over thirty years, to the normals it's drawn around"
+   ]
+  },
+  {
+   "key": "FK",
+   "status": "pending",
+   "missing": [
+    "tmax",
+    "tmin",
+    "wet",
+    "sun"
+   ]
+  },
+  {
+   "key": "FM",
+   "status": "researched",
+   "register": [
+    "R-0037",
+    "R-0038",
+    "R-0039",
+    "R-0040"
+   ],
+   "tests": [
+    "tests/tools/wmo.test.ts::the station compiler > reproduces the stations the engine reads, byte for byte, from the WMO's files",
+    "tests/world/weather/weather.test.ts::the weather at real towns > at every place on the map",
+    "tests/world/weather/weather.test.ts::a day's weather > comes back, over thirty years, to the normals it's drawn around"
+   ]
+  },
+  {
+   "key": "FO",
+   "status": "researched",
+   "register": [
+    "R-0037",
+    "R-0038",
+    "R-0039",
+    "R-0040"
+   ],
+   "tests": [
+    "tests/tools/wmo.test.ts::the station compiler > reproduces the stations the engine reads, byte for byte, from the WMO's files",
+    "tests/world/weather/weather.test.ts::the weather at real towns > at every place on the map",
+    "tests/world/weather/weather.test.ts::a day's weather > comes back, over thirty years, to the normals it's drawn around"
+   ]
+  },
+  {
+   "key": "FR",
+   "status": "researched",
+   "register": [
+    "R-0037",
+    "R-0038",
+    "R-0039",
+    "R-0040"
+   ],
+   "tests": [
+    "tests/tools/wmo.test.ts::the station compiler > reproduces the stations the engine reads, byte for byte, from the WMO's files",
+    "tests/world/weather/weather.test.ts::the weather at real towns > at every place on the map",
+    "tests/world/weather/weather.test.ts::a day's weather > comes back, over thirty years, to the normals it's drawn around"
+   ]
+  },
+  {
+   "key": "GA",
+   "status": "pending",
+   "missing": [
+    "wet"
+   ]
+  },
+  {
+   "key": "GB",
+   "status": "researched",
+   "register": [
+    "R-0037",
+    "R-0038",
+    "R-0039",
+    "R-0040"
+   ],
+   "tests": [
+    "tests/tools/wmo.test.ts::the station compiler > reproduces the stations the engine reads, byte for byte, from the WMO's files",
+    "tests/world/weather/weather.test.ts::the weather at real towns > at every place on the map",
+    "tests/world/weather/weather.test.ts::a day's weather > comes back, over thirty years, to the normals it's drawn around"
+   ]
+  },
+  {
+   "key": "GD",
+   "status": "pending",
+   "missing": [
+    "sun"
+   ]
+  },
+  {
+   "key": "GE",
+   "status": "researched",
+   "register": [
+    "R-0037",
+    "R-0038",
+    "R-0039",
+    "R-0040"
+   ],
+   "tests": [
+    "tests/tools/wmo.test.ts::the station compiler > reproduces the stations the engine reads, byte for byte, from the WMO's files",
+    "tests/world/weather/weather.test.ts::the weather at real towns > at every place on the map",
+    "tests/world/weather/weather.test.ts::a day's weather > comes back, over thirty years, to the normals it's drawn around"
+   ]
+  },
+  {
+   "key": "GF",
+   "status": "researched",
+   "register": [
+    "R-0038",
+    "R-0039",
+    "R-0040",
+    "R-0043"
+   ],
+   "tests": [
+    "tests/tools/wmo.test.ts::the station compiler > reproduces the stations the engine reads, byte for byte, from the WMO's files",
+    "tests/world/weather/weather.test.ts::the weather at real towns > at every place on the map",
+    "tests/world/weather/weather.test.ts::a day's weather > comes back, over thirty years, to the normals it's drawn around"
+   ]
+  },
+  {
+   "key": "GG",
+   "status": "researched",
+   "register": [
+    "R-0039",
+    "R-0040",
+    "R-0048"
+   ],
+   "tests": [
+    "tests/tools/wmo.test.ts::the station compiler > reproduces the stations the engine reads, byte for byte, from the WMO's files",
+    "tests/world/weather/weather.test.ts::the weather at real towns > at every place on the map",
+    "tests/world/weather/weather.test.ts::a day's weather > comes back, over thirty years, to the normals it's drawn around"
+   ]
+  },
+  {
+   "key": "GH",
+   "status": "researched",
+   "register": [
+    "R-0037",
+    "R-0039",
+    "R-0040"
+   ],
+   "tests": [
+    "tests/tools/wmo.test.ts::the station compiler > reproduces the stations the engine reads, byte for byte, from the WMO's files",
+    "tests/world/weather/weather.test.ts::the weather at real towns > at every place on the map",
+    "tests/world/weather/weather.test.ts::a day's weather > comes back, over thirty years, to the normals it's drawn around"
+   ]
+  },
+  {
+   "key": "GI",
+   "status": "pending",
+   "missing": [
+    "wet"
+   ]
+  },
+  {
+   "key": "GL",
+   "status": "researched",
+   "register": [
+    "R-0037",
+    "R-0038",
+    "R-0039",
+    "R-0040"
+   ],
+   "tests": [
+    "tests/tools/wmo.test.ts::the station compiler > reproduces the stations the engine reads, byte for byte, from the WMO's files",
+    "tests/world/weather/weather.test.ts::the weather at real towns > at every place on the map",
+    "tests/world/weather/weather.test.ts::a day's weather > comes back, over thirty years, to the normals it's drawn around"
+   ]
+  },
+  {
+   "key": "GM",
+   "status": "pending",
+   "missing": [
+    "sun"
+   ]
+  },
+  {
+   "key": "GN",
+   "status": "researched",
+   "register": [
+    "R-0037",
+    "R-0038",
+    "R-0039",
+    "R-0040"
+   ],
+   "tests": [
+    "tests/tools/wmo.test.ts::the station compiler > reproduces the stations the engine reads, byte for byte, from the WMO's files",
+    "tests/world/weather/weather.test.ts::the weather at real towns > at every place on the map",
+    "tests/world/weather/weather.test.ts::a day's weather > comes back, over thirty years, to the normals it's drawn around"
+   ]
+  },
+  {
+   "key": "GP",
+   "status": "researched",
+   "register": [
+    "R-0038",
+    "R-0039",
+    "R-0040"
+   ],
+   "tests": [
+    "tests/tools/wmo.test.ts::the station compiler > reproduces the stations the engine reads, byte for byte, from the WMO's files",
+    "tests/world/weather/weather.test.ts::the weather at real towns > at every place on the map",
+    "tests/world/weather/weather.test.ts::a day's weather > comes back, over thirty years, to the normals it's drawn around"
+   ]
+  },
+  {
+   "key": "GQ",
+   "status": "pending",
+   "missing": [
+    "tmax",
+    "tmin",
+    "prcp",
+    "wet",
+    "sun"
+   ]
+  },
+  {
+   "key": "GR",
+   "status": "researched",
+   "register": [
+    "R-0038",
+    "R-0039",
+    "R-0040"
+   ],
+   "tests": [
+    "tests/tools/wmo.test.ts::the station compiler > reproduces the stations the engine reads, byte for byte, from the WMO's files",
+    "tests/world/weather/weather.test.ts::the weather at real towns > at every place on the map",
+    "tests/world/weather/weather.test.ts::a day's weather > comes back, over thirty years, to the normals it's drawn around"
+   ]
+  },
+  {
+   "key": "GS",
+   "status": "pending",
+   "missing": [
+    "tmax",
+    "tmin",
+    "wet",
+    "sun"
+   ]
+  },
+  {
+   "key": "GT",
+   "status": "blocked",
+   "register": [
+    "R-0037",
+    "R-0039",
+    "R-0040",
+    "R-0054"
+   ],
+   "tests": [
+    "tests/tools/wmo.test.ts::the station compiler > reproduces the stations the engine reads, byte for byte, from the WMO's files",
+    "tests/world/weather/weather.test.ts::the weather at real towns > at every place on the map",
+    "tests/world/weather/weather.test.ts::a day's weather > comes back, over thirty years, to the normals it's drawn around",
+    "tests/world/weather/weather.test.ts::the weather at real towns > reads each town's nearest station of its own country, and says where it has none"
+   ]
+  },
+  {
+   "key": "GU",
+   "status": "researched",
+   "register": [
+    "R-0037",
+    "R-0038",
+    "R-0039",
+    "R-0040"
+   ],
+   "tests": [
+    "tests/tools/wmo.test.ts::the station compiler > reproduces the stations the engine reads, byte for byte, from the WMO's files",
+    "tests/world/weather/weather.test.ts::the weather at real towns > at every place on the map",
+    "tests/world/weather/weather.test.ts::a day's weather > comes back, over thirty years, to the normals it's drawn around"
+   ]
+  },
+  {
+   "key": "GW",
+   "status": "pending",
+   "missing": [
+    "sun"
+   ]
+  },
+  {
+   "key": "GY",
+   "status": "researched",
+   "register": [
+    "R-0037",
+    "R-0038",
+    "R-0039",
+    "R-0040"
+   ],
+   "tests": [
+    "tests/tools/wmo.test.ts::the station compiler > reproduces the stations the engine reads, byte for byte, from the WMO's files",
+    "tests/world/weather/weather.test.ts::the weather at real towns > at every place on the map",
+    "tests/world/weather/weather.test.ts::a day's weather > comes back, over thirty years, to the normals it's drawn around"
+   ]
+  },
+  {
+   "key": "HK",
+   "status": "researched",
+   "register": [
+    "R-0037",
+    "R-0038",
+    "R-0039",
+    "R-0040"
+   ],
+   "tests": [
+    "tests/tools/wmo.test.ts::the station compiler > reproduces the stations the engine reads, byte for byte, from the WMO's files",
+    "tests/world/weather/weather.test.ts::the weather at real towns > at every place on the map",
+    "tests/world/weather/weather.test.ts::a day's weather > comes back, over thirty years, to the normals it's drawn around"
+   ]
+  },
+  {
+   "key": "HM",
+   "status": "proven",
+   "tests": [
+    "tests/world/gazetteer/gazetteer.test.ts::places > are none in the six countries with no populated place of their own"
+   ]
+  },
+  {
+   "key": "HN",
+   "status": "researched",
+   "register": [
+    "R-0038",
+    "R-0039",
+    "R-0040",
+    "R-0062"
+   ],
+   "tests": [
+    "tests/tools/wmo.test.ts::the station compiler > reproduces the stations the engine reads, byte for byte, from the WMO's files",
+    "tests/world/weather/weather.test.ts::the weather at real towns > at every place on the map",
+    "tests/world/weather/weather.test.ts::a day's weather > comes back, over thirty years, to the normals it's drawn around"
+   ]
+  },
+  {
+   "key": "HR",
+   "status": "researched",
+   "register": [
+    "R-0037",
+    "R-0038",
+    "R-0039",
+    "R-0040"
+   ],
+   "tests": [
+    "tests/tools/wmo.test.ts::the station compiler > reproduces the stations the engine reads, byte for byte, from the WMO's files",
+    "tests/world/weather/weather.test.ts::the weather at real towns > at every place on the map",
+    "tests/world/weather/weather.test.ts::a day's weather > comes back, over thirty years, to the normals it's drawn around"
+   ]
+  },
+  {
+   "key": "HT",
+   "status": "pending",
+   "missing": [
+    "tmax",
+    "tmin",
+    "prcp",
+    "wet",
+    "sun"
+   ]
+  },
+  {
+   "key": "HU",
+   "status": "researched",
+   "register": [
+    "R-0037",
+    "R-0038",
+    "R-0039",
+    "R-0040"
+   ],
+   "tests": [
+    "tests/tools/wmo.test.ts::the station compiler > reproduces the stations the engine reads, byte for byte, from the WMO's files",
+    "tests/world/weather/weather.test.ts::the weather at real towns > at every place on the map",
+    "tests/world/weather/weather.test.ts::a day's weather > comes back, over thirty years, to the normals it's drawn around"
+   ]
+  },
+  {
+   "key": "ID",
+   "status": "researched",
+   "register": [
+    "R-0037",
+    "R-0039",
+    "R-0040"
+   ],
+   "tests": [
+    "tests/tools/wmo.test.ts::the station compiler > reproduces the stations the engine reads, byte for byte, from the WMO's files",
+    "tests/world/weather/weather.test.ts::the weather at real towns > at every place on the map",
+    "tests/world/weather/weather.test.ts::a day's weather > comes back, over thirty years, to the normals it's drawn around"
+   ]
+  },
+  {
+   "key": "IE",
+   "status": "researched",
+   "register": [
+    "R-0037",
+    "R-0038",
+    "R-0039",
+    "R-0040"
+   ],
+   "tests": [
+    "tests/tools/wmo.test.ts::the station compiler > reproduces the stations the engine reads, byte for byte, from the WMO's files",
+    "tests/world/weather/weather.test.ts::the weather at real towns > at every place on the map",
+    "tests/world/weather/weather.test.ts::a day's weather > comes back, over thirty years, to the normals it's drawn around"
+   ]
+  },
+  {
+   "key": "IL",
+   "status": "researched",
+   "register": [
+    "R-0037",
+    "R-0038",
+    "R-0039",
+    "R-0040"
+   ],
+   "tests": [
+    "tests/tools/wmo.test.ts::the station compiler > reproduces the stations the engine reads, byte for byte, from the WMO's files",
+    "tests/world/weather/weather.test.ts::the weather at real towns > at every place on the map",
+    "tests/world/weather/weather.test.ts::a day's weather > comes back, over thirty years, to the normals it's drawn around"
+   ]
+  },
+  {
+   "key": "IM",
+   "status": "researched",
+   "register": [
+    "R-0037",
+    "R-0039",
+    "R-0040"
+   ],
+   "tests": [
+    "tests/tools/wmo.test.ts::the station compiler > reproduces the stations the engine reads, byte for byte, from the WMO's files",
+    "tests/world/weather/weather.test.ts::the weather at real towns > at every place on the map",
+    "tests/world/weather/weather.test.ts::a day's weather > comes back, over thirty years, to the normals it's drawn around"
+   ]
+  },
+  {
+   "key": "IN",
+   "status": "researched",
+   "register": [
+    "R-0037",
+    "R-0038",
+    "R-0039",
+    "R-0040"
+   ],
+   "tests": [
+    "tests/tools/wmo.test.ts::the station compiler > reproduces the stations the engine reads, byte for byte, from the WMO's files",
+    "tests/world/weather/weather.test.ts::the weather at real towns > at every place on the map",
+    "tests/world/weather/weather.test.ts::a day's weather > comes back, over thirty years, to the normals it's drawn around"
+   ]
+  },
+  {
+   "key": "IO",
+   "status": "pending",
+   "missing": [
+    "tmax",
+    "tmin",
+    "prcp",
+    "wet",
+    "sun"
+   ]
+  },
+  {
+   "key": "IQ",
+   "status": "pending",
+   "missing": [
+    "wet",
+    "sun"
+   ]
+  },
+  {
+   "key": "IR",
+   "status": "researched",
+   "register": [
+    "R-0037",
+    "R-0038",
+    "R-0039",
+    "R-0040"
+   ],
+   "tests": [
+    "tests/tools/wmo.test.ts::the station compiler > reproduces the stations the engine reads, byte for byte, from the WMO's files",
+    "tests/world/weather/weather.test.ts::the weather at real towns > at every place on the map",
+    "tests/world/weather/weather.test.ts::a day's weather > comes back, over thirty years, to the normals it's drawn around"
+   ]
+  },
+  {
+   "key": "IS",
+   "status": "researched",
+   "register": [
+    "R-0037",
+    "R-0038",
+    "R-0039",
+    "R-0040"
+   ],
+   "tests": [
+    "tests/tools/wmo.test.ts::the station compiler > reproduces the stations the engine reads, byte for byte, from the WMO's files",
+    "tests/world/weather/weather.test.ts::the weather at real towns > at every place on the map",
+    "tests/world/weather/weather.test.ts::a day's weather > comes back, over thirty years, to the normals it's drawn around"
+   ]
+  },
+  {
+   "key": "IT",
+   "status": "researched",
+   "register": [
+    "R-0037",
+    "R-0038",
+    "R-0039",
+    "R-0040"
+   ],
+   "tests": [
+    "tests/tools/wmo.test.ts::the station compiler > reproduces the stations the engine reads, byte for byte, from the WMO's files",
+    "tests/world/weather/weather.test.ts::the weather at real towns > at every place on the map",
+    "tests/world/weather/weather.test.ts::a day's weather > comes back, over thirty years, to the normals it's drawn around"
+   ]
+  },
+  {
+   "key": "JE",
+   "status": "researched",
+   "register": [
+    "R-0039",
+    "R-0040",
+    "R-0048"
+   ],
+   "tests": [
+    "tests/tools/wmo.test.ts::the station compiler > reproduces the stations the engine reads, byte for byte, from the WMO's files",
+    "tests/world/weather/weather.test.ts::the weather at real towns > at every place on the map",
+    "tests/world/weather/weather.test.ts::a day's weather > comes back, over thirty years, to the normals it's drawn around"
+   ]
+  },
+  {
+   "key": "JM",
+   "status": "researched",
+   "register": [
+    "R-0037",
+    "R-0039",
+    "R-0040"
+   ],
+   "tests": [
+    "tests/tools/wmo.test.ts::the station compiler > reproduces the stations the engine reads, byte for byte, from the WMO's files",
+    "tests/world/weather/weather.test.ts::the weather at real towns > at every place on the map",
+    "tests/world/weather/weather.test.ts::a day's weather > comes back, over thirty years, to the normals it's drawn around"
+   ]
+  },
+  {
+   "key": "JO",
+   "status": "pending",
+   "missing": [
+    "wet"
+   ]
+  },
+  {
+   "key": "JP",
+   "status": "researched",
+   "register": [
+    "R-0037",
+    "R-0038",
+    "R-0039",
+    "R-0040"
+   ],
+   "tests": [
+    "tests/tools/wmo.test.ts::the station compiler > reproduces the stations the engine reads, byte for byte, from the WMO's files",
+    "tests/world/weather/weather.test.ts::the weather at real towns > at every place on the map",
+    "tests/world/weather/weather.test.ts::a day's weather > comes back, over thirty years, to the normals it's drawn around"
+   ]
+  },
+  {
+   "key": "KE",
+   "status": "researched",
+   "register": [
+    "R-0038",
+    "R-0039",
+    "R-0040"
+   ],
+   "tests": [
+    "tests/tools/wmo.test.ts::the station compiler > reproduces the stations the engine reads, byte for byte, from the WMO's files",
+    "tests/world/weather/weather.test.ts::the weather at real towns > at every place on the map",
+    "tests/world/weather/weather.test.ts::a day's weather > comes back, over thirty years, to the normals it's drawn around"
+   ]
+  },
+  {
+   "key": "KG",
+   "status": "researched",
+   "register": [
+    "R-0038",
+    "R-0039",
+    "R-0040",
+    "R-0062"
+   ],
+   "tests": [
+    "tests/tools/wmo.test.ts::the station compiler > reproduces the stations the engine reads, byte for byte, from the WMO's files",
+    "tests/world/weather/weather.test.ts::the weather at real towns > at every place on the map",
+    "tests/world/weather/weather.test.ts::a day's weather > comes back, over thirty years, to the normals it's drawn around"
+   ]
+  },
+  {
+   "key": "KH",
+   "status": "pending",
+   "missing": [
+    "wet",
+    "sun"
+   ]
+  },
+  {
+   "key": "KI",
+   "status": "pending",
+   "missing": [
+    "wet"
+   ]
+  },
+  {
+   "key": "KM",
+   "status": "pending",
+   "missing": [
+    "wet",
+    "sun"
+   ]
+  },
+  {
+   "key": "KN",
+   "status": "researched",
+   "register": [
+    "R-0037",
+    "R-0039",
+    "R-0040"
+   ],
+   "tests": [
+    "tests/tools/wmo.test.ts::the station compiler > reproduces the stations the engine reads, byte for byte, from the WMO's files",
+    "tests/world/weather/weather.test.ts::the weather at real towns > at every place on the map",
+    "tests/world/weather/weather.test.ts::a day's weather > comes back, over thirty years, to the normals it's drawn around"
+   ]
+  },
+  {
+   "key": "KP",
+   "status": "pending",
+   "missing": [
+    "wet"
+   ]
+  },
+  {
+   "key": "KR",
+   "status": "researched",
+   "register": [
+    "R-0037",
+    "R-0038",
+    "R-0039",
+    "R-0040"
+   ],
+   "tests": [
+    "tests/tools/wmo.test.ts::the station compiler > reproduces the stations the engine reads, byte for byte, from the WMO's files",
+    "tests/world/weather/weather.test.ts::the weather at real towns > at every place on the map",
+    "tests/world/weather/weather.test.ts::a day's weather > comes back, over thirty years, to the normals it's drawn around"
+   ]
+  },
+  {
+   "key": "KW",
+   "status": "pending",
+   "missing": [
+    "wet"
+   ]
+  },
+  {
+   "key": "KY",
+   "status": "pending",
+   "missing": [
+    "sun"
+   ]
+  },
+  {
+   "key": "KZ",
+   "status": "researched",
+   "register": [
+    "R-0037",
+    "R-0038",
+    "R-0039",
+    "R-0040"
+   ],
+   "tests": [
+    "tests/tools/wmo.test.ts::the station compiler > reproduces the stations the engine reads, byte for byte, from the WMO's files",
+    "tests/world/weather/weather.test.ts::the weather at real towns > at every place on the map",
+    "tests/world/weather/weather.test.ts::a day's weather > comes back, over thirty years, to the normals it's drawn around"
+   ]
+  },
+  {
+   "key": "LA",
+   "status": "researched",
+   "register": [
+    "R-0037",
+    "R-0038",
+    "R-0039",
+    "R-0040"
+   ],
+   "tests": [
+    "tests/tools/wmo.test.ts::the station compiler > reproduces the stations the engine reads, byte for byte, from the WMO's files",
+    "tests/world/weather/weather.test.ts::the weather at real towns > at every place on the map",
+    "tests/world/weather/weather.test.ts::a day's weather > comes back, over thirty years, to the normals it's drawn around"
+   ]
+  },
+  {
+   "key": "LB",
+   "status": "pending",
+   "missing": [
+    "tmax",
+    "tmin",
+    "wet"
+   ]
+  },
+  {
+   "key": "LC",
+   "status": "researched",
+   "register": [
+    "R-0037",
+    "R-0039",
+    "R-0040"
+   ],
+   "tests": [
+    "tests/tools/wmo.test.ts::the station compiler > reproduces the stations the engine reads, byte for byte, from the WMO's files",
+    "tests/world/weather/weather.test.ts::the weather at real towns > at every place on the map",
+    "tests/world/weather/weather.test.ts::a day's weather > comes back, over thirty years, to the normals it's drawn around"
+   ]
+  },
+  {
+   "key": "LI",
+   "status": "researched",
+   "register": [
+    "R-0037",
+    "R-0039",
+    "R-0040"
+   ],
+   "tests": [
+    "tests/tools/wmo.test.ts::the station compiler > reproduces the stations the engine reads, byte for byte, from the WMO's files",
+    "tests/world/weather/weather.test.ts::the weather at real towns > at every place on the map",
+    "tests/world/weather/weather.test.ts::a day's weather > comes back, over thirty years, to the normals it's drawn around"
+   ]
+  },
+  {
+   "key": "LK",
+   "status": "researched",
+   "register": [
+    "R-0037",
+    "R-0038",
+    "R-0039",
+    "R-0040"
+   ],
+   "tests": [
+    "tests/tools/wmo.test.ts::the station compiler > reproduces the stations the engine reads, byte for byte, from the WMO's files",
+    "tests/world/weather/weather.test.ts::the weather at real towns > at every place on the map",
+    "tests/world/weather/weather.test.ts::a day's weather > comes back, over thirty years, to the normals it's drawn around"
+   ]
+  },
+  {
+   "key": "LR",
+   "status": "pending",
+   "missing": [
+    "tmax",
+    "tmin",
+    "wet",
+    "sun"
+   ]
+  },
+  {
+   "key": "LS",
+   "status": "pending",
+   "missing": [
+    "wet",
+    "sun"
+   ]
+  },
+  {
+   "key": "LT",
+   "status": "researched",
+   "register": [
+    "R-0038",
+    "R-0039",
+    "R-0040"
+   ],
+   "tests": [
+    "tests/tools/wmo.test.ts::the station compiler > reproduces the stations the engine reads, byte for byte, from the WMO's files",
+    "tests/world/weather/weather.test.ts::the weather at real towns > at every place on the map",
+    "tests/world/weather/weather.test.ts::a day's weather > comes back, over thirty years, to the normals it's drawn around"
+   ]
+  },
+  {
+   "key": "LU",
+   "status": "researched",
+   "register": [
+    "R-0037",
+    "R-0038",
+    "R-0039",
+    "R-0040"
+   ],
+   "tests": [
+    "tests/tools/wmo.test.ts::the station compiler > reproduces the stations the engine reads, byte for byte, from the WMO's files",
+    "tests/world/weather/weather.test.ts::the weather at real towns > at every place on the map",
+    "tests/world/weather/weather.test.ts::a day's weather > comes back, over thirty years, to the normals it's drawn around"
+   ]
+  },
+  {
+   "key": "LV",
+   "status": "researched",
+   "register": [
+    "R-0037",
+    "R-0038",
+    "R-0039",
+    "R-0040"
+   ],
+   "tests": [
+    "tests/tools/wmo.test.ts::the station compiler > reproduces the stations the engine reads, byte for byte, from the WMO's files",
+    "tests/world/weather/weather.test.ts::the weather at real towns > at every place on the map",
+    "tests/world/weather/weather.test.ts::a day's weather > comes back, over thirty years, to the normals it's drawn around"
+   ]
+  },
+  {
+   "key": "LY",
+   "status": "researched",
+   "register": [
+    "R-0037",
+    "R-0039",
+    "R-0040"
+   ],
+   "tests": [
+    "tests/tools/wmo.test.ts::the station compiler > reproduces the stations the engine reads, byte for byte, from the WMO's files",
+    "tests/world/weather/weather.test.ts::the weather at real towns > at every place on the map",
+    "tests/world/weather/weather.test.ts::a day's weather > comes back, over thirty years, to the normals it's drawn around"
+   ]
+  },
+  {
+   "key": "MA",
+   "status": "researched",
+   "register": [
+    "R-0037",
+    "R-0038",
+    "R-0039",
+    "R-0040"
+   ],
+   "tests": [
+    "tests/tools/wmo.test.ts::the station compiler > reproduces the stations the engine reads, byte for byte, from the WMO's files",
+    "tests/world/weather/weather.test.ts::the weather at real towns > at every place on the map",
+    "tests/world/weather/weather.test.ts::a day's weather > comes back, over thirty years, to the normals it's drawn around"
+   ]
+  },
+  {
+   "key": "MC",
+   "status": "blocked",
+   "register": [
+    "R-0039",
+    "R-0040",
+    "R-0043",
+    "R-0061"
+   ],
+   "tests": [
+    "tests/tools/wmo.test.ts::the station compiler > reproduces the stations the engine reads, byte for byte, from the WMO's files",
+    "tests/world/weather/weather.test.ts::the weather at real towns > at every place on the map",
+    "tests/world/weather/weather.test.ts::a day's weather > comes back, over thirty years, to the normals it's drawn around",
+    "tests/world/weather/weather.test.ts::the weather at real towns > reads each town's nearest station of its own country, and says where it has none"
+   ]
+  },
+  {
+   "key": "MD",
+   "status": "researched",
+   "register": [
+    "R-0037",
+    "R-0038",
+    "R-0039",
+    "R-0040"
+   ],
+   "tests": [
+    "tests/tools/wmo.test.ts::the station compiler > reproduces the stations the engine reads, byte for byte, from the WMO's files",
+    "tests/world/weather/weather.test.ts::the weather at real towns > at every place on the map",
+    "tests/world/weather/weather.test.ts::a day's weather > comes back, over thirty years, to the normals it's drawn around"
+   ]
+  },
+  {
+   "key": "ME",
+   "status": "researched",
+   "register": [
+    "R-0037",
+    "R-0038",
+    "R-0039",
+    "R-0040"
+   ],
+   "tests": [
+    "tests/tools/wmo.test.ts::the station compiler > reproduces the stations the engine reads, byte for byte, from the WMO's files",
+    "tests/world/weather/weather.test.ts::the weather at real towns > at every place on the map",
+    "tests/world/weather/weather.test.ts::a day's weather > comes back, over thirty years, to the normals it's drawn around"
+   ]
+  },
+  {
+   "key": "MF",
+   "status": "pending",
+   "missing": [
+    "wet"
+   ]
+  },
+  {
+   "key": "MG",
+   "status": "researched",
+   "register": [
+    "R-0037",
+    "R-0038",
+    "R-0039",
+    "R-0040"
+   ],
+   "tests": [
+    "tests/tools/wmo.test.ts::the station compiler > reproduces the stations the engine reads, byte for byte, from the WMO's files",
+    "tests/world/weather/weather.test.ts::the weather at real towns > at every place on the map",
+    "tests/world/weather/weather.test.ts::a day's weather > comes back, over thirty years, to the normals it's drawn around"
+   ]
+  },
+  {
+   "key": "MH",
+   "status": "researched",
+   "register": [
+    "R-0037",
+    "R-0038",
+    "R-0039",
+    "R-0040"
+   ],
+   "tests": [
+    "tests/tools/wmo.test.ts::the station compiler > reproduces the stations the engine reads, byte for byte, from the WMO's files",
+    "tests/world/weather/weather.test.ts::the weather at real towns > at every place on the map",
+    "tests/world/weather/weather.test.ts::a day's weather > comes back, over thirty years, to the normals it's drawn around"
+   ]
+  },
+  {
+   "key": "MK",
+   "status": "researched",
+   "register": [
+    "R-0038",
+    "R-0039",
+    "R-0040"
+   ],
+   "tests": [
+    "tests/tools/wmo.test.ts::the station compiler > reproduces the stations the engine reads, byte for byte, from the WMO's files",
+    "tests/world/weather/weather.test.ts::the weather at real towns > at every place on the map",
+    "tests/world/weather/weather.test.ts::a day's weather > comes back, over thirty years, to the normals it's drawn around"
+   ]
+  },
+  {
+   "key": "ML",
+   "status": "researched",
+   "register": [
+    "R-0037",
+    "R-0038",
+    "R-0039",
+    "R-0040"
+   ],
+   "tests": [
+    "tests/tools/wmo.test.ts::the station compiler > reproduces the stations the engine reads, byte for byte, from the WMO's files",
+    "tests/world/weather/weather.test.ts::the weather at real towns > at every place on the map",
+    "tests/world/weather/weather.test.ts::a day's weather > comes back, over thirty years, to the normals it's drawn around"
+   ]
+  },
+  {
+   "key": "MM",
+   "status": "pending",
+   "missing": [
+    "sun"
+   ]
+  },
+  {
+   "key": "MN",
+   "status": "researched",
+   "register": [
+    "R-0037",
+    "R-0038",
+    "R-0039",
+    "R-0040"
+   ],
+   "tests": [
+    "tests/tools/wmo.test.ts::the station compiler > reproduces the stations the engine reads, byte for byte, from the WMO's files",
+    "tests/world/weather/weather.test.ts::the weather at real towns > at every place on the map",
+    "tests/world/weather/weather.test.ts::a day's weather > comes back, over thirty years, to the normals it's drawn around"
+   ]
+  },
+  {
+   "key": "MO",
+   "status": "blocked",
+   "register": [
+    "R-0037",
+    "R-0039",
+    "R-0040",
+    "R-0050"
+   ],
+   "tests": [
+    "tests/tools/wmo.test.ts::the station compiler > reproduces the stations the engine reads, byte for byte, from the WMO's files",
+    "tests/world/weather/weather.test.ts::the weather at real towns > at every place on the map",
+    "tests/world/weather/weather.test.ts::a day's weather > comes back, over thirty years, to the normals it's drawn around",
+    "tests/world/weather/weather.test.ts::the weather at real towns > reads each town's nearest station of its own country, and says where it has none"
+   ]
+  },
+  {
+   "key": "MP",
+   "status": "blocked",
+   "register": [
+    "R-0037",
+    "R-0039",
+    "R-0040",
+    "R-0059"
+   ],
+   "tests": [
+    "tests/tools/wmo.test.ts::the station compiler > reproduces the stations the engine reads, byte for byte, from the WMO's files",
+    "tests/world/weather/weather.test.ts::the weather at real towns > at every place on the map",
+    "tests/world/weather/weather.test.ts::a day's weather > comes back, over thirty years, to the normals it's drawn around",
+    "tests/world/weather/weather.test.ts::the weather at real towns > reads each town's nearest station of its own country, and says where it has none"
+   ]
+  },
+  {
+   "key": "MQ",
+   "status": "researched",
+   "register": [
+    "R-0038",
+    "R-0039",
+    "R-0040"
+   ],
+   "tests": [
+    "tests/tools/wmo.test.ts::the station compiler > reproduces the stations the engine reads, byte for byte, from the WMO's files",
+    "tests/world/weather/weather.test.ts::the weather at real towns > at every place on the map",
+    "tests/world/weather/weather.test.ts::a day's weather > comes back, over thirty years, to the normals it's drawn around"
+   ]
+  },
+  {
+   "key": "MR",
+   "status": "pending",
+   "missing": [
+    "tmax",
+    "tmin",
+    "wet"
+   ]
+  },
+  {
+   "key": "MS",
+   "status": "pending",
+   "missing": [
+    "tmax",
+    "tmin",
+    "prcp",
+    "wet",
+    "sun"
+   ]
+  },
+  {
+   "key": "MT",
+   "status": "researched",
+   "register": [
+    "R-0038",
+    "R-0039",
+    "R-0040"
+   ],
+   "tests": [
+    "tests/tools/wmo.test.ts::the station compiler > reproduces the stations the engine reads, byte for byte, from the WMO's files",
+    "tests/world/weather/weather.test.ts::the weather at real towns > at every place on the map",
+    "tests/world/weather/weather.test.ts::a day's weather > comes back, over thirty years, to the normals it's drawn around"
+   ]
+  },
+  {
+   "key": "MU",
+   "status": "researched",
+   "register": [
+    "R-0037",
+    "R-0038",
+    "R-0039",
+    "R-0040"
+   ],
+   "tests": [
+    "tests/tools/wmo.test.ts::the station compiler > reproduces the stations the engine reads, byte for byte, from the WMO's files",
+    "tests/world/weather/weather.test.ts::the weather at real towns > at every place on the map",
+    "tests/world/weather/weather.test.ts::a day's weather > comes back, over thirty years, to the normals it's drawn around"
+   ]
+  },
+  {
+   "key": "MV",
+   "status": "researched",
+   "register": [
+    "R-0037",
+    "R-0038",
+    "R-0039",
+    "R-0040"
+   ],
+   "tests": [
+    "tests/tools/wmo.test.ts::the station compiler > reproduces the stations the engine reads, byte for byte, from the WMO's files",
+    "tests/world/weather/weather.test.ts::the weather at real towns > at every place on the map",
+    "tests/world/weather/weather.test.ts::a day's weather > comes back, over thirty years, to the normals it's drawn around"
+   ]
+  },
+  {
+   "key": "MW",
+   "status": "pending",
+   "missing": [
+    "wet"
+   ]
+  },
+  {
+   "key": "MX",
+   "status": "researched",
+   "register": [
+    "R-0037",
+    "R-0038",
+    "R-0039",
+    "R-0040"
+   ],
+   "tests": [
+    "tests/tools/wmo.test.ts::the station compiler > reproduces the stations the engine reads, byte for byte, from the WMO's files",
+    "tests/world/weather/weather.test.ts::the weather at real towns > at every place on the map",
+    "tests/world/weather/weather.test.ts::a day's weather > comes back, over thirty years, to the normals it's drawn around"
+   ]
+  },
+  {
+   "key": "MY",
+   "status": "researched",
+   "register": [
+    "R-0037",
+    "R-0038",
+    "R-0039",
+    "R-0040"
+   ],
+   "tests": [
+    "tests/tools/wmo.test.ts::the station compiler > reproduces the stations the engine reads, byte for byte, from the WMO's files",
+    "tests/world/weather/weather.test.ts::the weather at real towns > at every place on the map",
+    "tests/world/weather/weather.test.ts::a day's weather > comes back, over thirty years, to the normals it's drawn around"
+   ]
+  },
+  {
+   "key": "MZ",
+   "status": "pending",
+   "missing": [
+    "wet",
+    "sun"
+   ]
+  },
+  {
+   "key": "NA",
+   "status": "pending",
+   "missing": [
+    "wet"
+   ]
+  },
+  {
+   "key": "NC",
+   "status": "researched",
+   "register": [
+    "R-0038",
+    "R-0039",
+    "R-0040"
+   ],
+   "tests": [
+    "tests/tools/wmo.test.ts::the station compiler > reproduces the stations the engine reads, byte for byte, from the WMO's files",
+    "tests/world/weather/weather.test.ts::the weather at real towns > at every place on the map",
+    "tests/world/weather/weather.test.ts::a day's weather > comes back, over thirty years, to the normals it's drawn around"
+   ]
+  },
+  {
+   "key": "NE",
+   "status": "researched",
+   "register": [
+    "R-0037",
+    "R-0038",
+    "R-0039",
+    "R-0040"
+   ],
+   "tests": [
+    "tests/tools/wmo.test.ts::the station compiler > reproduces the stations the engine reads, byte for byte, from the WMO's files",
+    "tests/world/weather/weather.test.ts::the weather at real towns > at every place on the map",
+    "tests/world/weather/weather.test.ts::a day's weather > comes back, over thirty years, to the normals it's drawn around"
+   ]
+  },
+  {
+   "key": "NF",
+   "status": "researched",
+   "register": [
+    "R-0037",
+    "R-0038",
+    "R-0039",
+    "R-0040"
+   ],
+   "tests": [
+    "tests/tools/wmo.test.ts::the station compiler > reproduces the stations the engine reads, byte for byte, from the WMO's files",
+    "tests/world/weather/weather.test.ts::the weather at real towns > at every place on the map",
+    "tests/world/weather/weather.test.ts::a day's weather > comes back, over thirty years, to the normals it's drawn around"
+   ]
+  },
+  {
+   "key": "NG",
+   "status": "researched",
+   "register": [
+    "R-0037",
+    "R-0038",
+    "R-0039",
+    "R-0040"
+   ],
+   "tests": [
+    "tests/tools/wmo.test.ts::the station compiler > reproduces the stations the engine reads, byte for byte, from the WMO's files",
+    "tests/world/weather/weather.test.ts::the weather at real towns > at every place on the map",
+    "tests/world/weather/weather.test.ts::a day's weather > comes back, over thirty years, to the normals it's drawn around"
+   ]
+  },
+  {
+   "key": "NI",
+   "status": "researched",
+   "register": [
+    "R-0038",
+    "R-0039",
+    "R-0040",
+    "R-0062"
+   ],
+   "tests": [
+    "tests/tools/wmo.test.ts::the station compiler > reproduces the stations the engine reads, byte for byte, from the WMO's files",
+    "tests/world/weather/weather.test.ts::the weather at real towns > at every place on the map",
+    "tests/world/weather/weather.test.ts::a day's weather > comes back, over thirty years, to the normals it's drawn around"
+   ]
+  },
+  {
+   "key": "NL",
+   "status": "researched",
+   "register": [
+    "R-0037",
+    "R-0038",
+    "R-0039",
+    "R-0040"
+   ],
+   "tests": [
+    "tests/tools/wmo.test.ts::the station compiler > reproduces the stations the engine reads, byte for byte, from the WMO's files",
+    "tests/world/weather/weather.test.ts::the weather at real towns > at every place on the map",
+    "tests/world/weather/weather.test.ts::a day's weather > comes back, over thirty years, to the normals it's drawn around"
+   ]
+  },
+  {
+   "key": "NO",
+   "status": "researched",
+   "register": [
+    "R-0037",
+    "R-0038",
+    "R-0039",
+    "R-0040"
+   ],
+   "tests": [
+    "tests/tools/wmo.test.ts::the station compiler > reproduces the stations the engine reads, byte for byte, from the WMO's files",
+    "tests/world/weather/weather.test.ts::the weather at real towns > at every place on the map",
+    "tests/world/weather/weather.test.ts::a day's weather > comes back, over thirty years, to the normals it's drawn around"
+   ]
+  },
+  {
+   "key": "NP",
+   "status": "researched",
+   "register": [
+    "R-0037",
+    "R-0039",
+    "R-0040",
+    "R-0057"
+   ],
+   "tests": [
+    "tests/tools/wmo.test.ts::the station compiler > reproduces the stations the engine reads, byte for byte, from the WMO's files",
+    "tests/world/weather/weather.test.ts::the weather at real towns > at every place on the map",
+    "tests/world/weather/weather.test.ts::a day's weather > comes back, over thirty years, to the normals it's drawn around"
+   ]
+  },
+  {
+   "key": "NR",
+   "status": "pending",
+   "missing": [
+    "tmax",
+    "tmin",
+    "prcp",
+    "wet",
+    "sun"
+   ]
+  },
+  {
+   "key": "NU",
+   "status": "pending",
+   "missing": [
+    "tmax",
+    "tmin",
+    "prcp",
+    "wet",
+    "sun"
+   ]
+  },
+  {
+   "key": "NZ",
+   "status": "researched",
+   "register": [
+    "R-0037",
+    "R-0038",
+    "R-0039",
+    "R-0040"
+   ],
+   "tests": [
+    "tests/tools/wmo.test.ts::the station compiler > reproduces the stations the engine reads, byte for byte, from the WMO's files",
+    "tests/world/weather/weather.test.ts::the weather at real towns > at every place on the map",
+    "tests/world/weather/weather.test.ts::a day's weather > comes back, over thirty years, to the normals it's drawn around"
+   ]
+  },
+  {
+   "key": "OM",
+   "status": "pending",
+   "missing": [
+    "wet"
+   ]
+  },
+  {
+   "key": "PA",
+   "status": "pending",
+   "missing": [
+    "wet",
+    "sun"
+   ]
+  },
+  {
+   "key": "PE",
+   "status": "pending",
+   "missing": [
+    "wet"
+   ]
+  },
+  {
+   "key": "PF",
+   "status": "researched",
+   "register": [
+    "R-0037",
+    "R-0038",
+    "R-0039",
+    "R-0040"
+   ],
+   "tests": [
+    "tests/tools/wmo.test.ts::the station compiler > reproduces the stations the engine reads, byte for byte, from the WMO's files",
+    "tests/world/weather/weather.test.ts::the weather at real towns > at every place on the map",
+    "tests/world/weather/weather.test.ts::a day's weather > comes back, over thirty years, to the normals it's drawn around"
+   ]
+  },
+  {
+   "key": "PG",
+   "status": "pending",
+   "missing": [
+    "wet"
+   ]
+  },
+  {
+   "key": "PH",
+   "status": "researched",
+   "register": [
+    "R-0037",
+    "R-0038",
+    "R-0039",
+    "R-0040",
+    "R-0062"
+   ],
+   "tests": [
+    "tests/tools/wmo.test.ts::the station compiler > reproduces the stations the engine reads, byte for byte, from the WMO's files",
+    "tests/world/weather/weather.test.ts::the weather at real towns > at every place on the map",
+    "tests/world/weather/weather.test.ts::a day's weather > comes back, over thirty years, to the normals it's drawn around"
+   ]
+  },
+  {
+   "key": "PK",
+   "status": "researched",
+   "register": [
+    "R-0037",
+    "R-0038",
+    "R-0039",
+    "R-0040"
+   ],
+   "tests": [
+    "tests/tools/wmo.test.ts::the station compiler > reproduces the stations the engine reads, byte for byte, from the WMO's files",
+    "tests/world/weather/weather.test.ts::the weather at real towns > at every place on the map",
+    "tests/world/weather/weather.test.ts::a day's weather > comes back, over thirty years, to the normals it's drawn around"
+   ]
+  },
+  {
+   "key": "PL",
+   "status": "researched",
+   "register": [
+    "R-0037",
+    "R-0038",
+    "R-0039",
+    "R-0040"
+   ],
+   "tests": [
+    "tests/tools/wmo.test.ts::the station compiler > reproduces the stations the engine reads, byte for byte, from the WMO's files",
+    "tests/world/weather/weather.test.ts::the weather at real towns > at every place on the map",
+    "tests/world/weather/weather.test.ts::a day's weather > comes back, over thirty years, to the normals it's drawn around"
+   ]
+  },
+  {
+   "key": "PM",
+   "status": "researched",
+   "register": [
+    "R-0039",
+    "R-0040",
+    "R-0043"
+   ],
+   "tests": [
+    "tests/tools/wmo.test.ts::the station compiler > reproduces the stations the engine reads, byte for byte, from the WMO's files",
+    "tests/world/weather/weather.test.ts::the weather at real towns > at every place on the map",
+    "tests/world/weather/weather.test.ts::a day's weather > comes back, over thirty years, to the normals it's drawn around"
+   ]
+  },
+  {
+   "key": "PN",
+   "status": "pending",
+   "missing": [
+    "tmax",
+    "tmin",
+    "prcp",
+    "wet",
+    "sun"
+   ]
+  },
+  {
+   "key": "PR",
+   "status": "researched",
+   "register": [
+    "R-0037",
+    "R-0038",
+    "R-0039",
+    "R-0040"
+   ],
+   "tests": [
+    "tests/tools/wmo.test.ts::the station compiler > reproduces the stations the engine reads, byte for byte, from the WMO's files",
+    "tests/world/weather/weather.test.ts::the weather at real towns > at every place on the map",
+    "tests/world/weather/weather.test.ts::a day's weather > comes back, over thirty years, to the normals it's drawn around"
+   ]
+  },
+  {
+   "key": "PS",
+   "status": "pending",
+   "missing": [
+    "tmax",
+    "tmin",
+    "prcp",
+    "wet",
+    "sun"
+   ]
+  },
+  {
+   "key": "PT",
+   "status": "researched",
+   "register": [
+    "R-0038",
+    "R-0039",
+    "R-0040"
+   ],
+   "tests": [
+    "tests/tools/wmo.test.ts::the station compiler > reproduces the stations the engine reads, byte for byte, from the WMO's files",
+    "tests/world/weather/weather.test.ts::the weather at real towns > at every place on the map",
+    "tests/world/weather/weather.test.ts::a day's weather > comes back, over thirty years, to the normals it's drawn around"
+   ]
+  },
+  {
+   "key": "PW",
+   "status": "researched",
+   "register": [
+    "R-0037",
+    "R-0038",
+    "R-0039",
+    "R-0040"
+   ],
+   "tests": [
+    "tests/tools/wmo.test.ts::the station compiler > reproduces the stations the engine reads, byte for byte, from the WMO's files",
+    "tests/world/weather/weather.test.ts::the weather at real towns > at every place on the map",
+    "tests/world/weather/weather.test.ts::a day's weather > comes back, over thirty years, to the normals it's drawn around"
+   ]
+  },
+  {
+   "key": "PY",
+   "status": "researched",
+   "register": [
+    "R-0037",
+    "R-0038",
+    "R-0039",
+    "R-0040",
+    "R-0062"
+   ],
+   "tests": [
+    "tests/tools/wmo.test.ts::the station compiler > reproduces the stations the engine reads, byte for byte, from the WMO's files",
+    "tests/world/weather/weather.test.ts::the weather at real towns > at every place on the map",
+    "tests/world/weather/weather.test.ts::a day's weather > comes back, over thirty years, to the normals it's drawn around"
+   ]
+  },
+  {
+   "key": "QA",
+   "status": "researched",
+   "register": [
+    "R-0038",
+    "R-0039",
+    "R-0040",
+    "R-0042"
+   ],
+   "tests": [
+    "tests/tools/wmo.test.ts::the station compiler > reproduces the stations the engine reads, byte for byte, from the WMO's files",
+    "tests/world/weather/weather.test.ts::the weather at real towns > at every place on the map",
+    "tests/world/weather/weather.test.ts::a day's weather > comes back, over thirty years, to the normals it's drawn around"
+   ]
+  },
+  {
+   "key": "RE",
+   "status": "researched",
+   "register": [
+    "R-0039",
+    "R-0040",
+    "R-0043"
+   ],
+   "tests": [
+    "tests/tools/wmo.test.ts::the station compiler > reproduces the stations the engine reads, byte for byte, from the WMO's files",
+    "tests/world/weather/weather.test.ts::the weather at real towns > at every place on the map",
+    "tests/world/weather/weather.test.ts::a day's weather > comes back, over thirty years, to the normals it's drawn around"
+   ]
+  },
+  {
+   "key": "RO",
+   "status": "researched",
+   "register": [
+    "R-0037",
+    "R-0038",
+    "R-0039",
+    "R-0040"
+   ],
+   "tests": [
+    "tests/tools/wmo.test.ts::the station compiler > reproduces the stations the engine reads, byte for byte, from the WMO's files",
+    "tests/world/weather/weather.test.ts::the weather at real towns > at every place on the map",
+    "tests/world/weather/weather.test.ts::a day's weather > comes back, over thirty years, to the normals it's drawn around"
+   ]
+  },
+  {
+   "key": "RS",
+   "status": "researched",
+   "register": [
+    "R-0037",
+    "R-0038",
+    "R-0039",
+    "R-0040"
+   ],
+   "tests": [
+    "tests/tools/wmo.test.ts::the station compiler > reproduces the stations the engine reads, byte for byte, from the WMO's files",
+    "tests/world/weather/weather.test.ts::the weather at real towns > at every place on the map",
+    "tests/world/weather/weather.test.ts::a day's weather > comes back, over thirty years, to the normals it's drawn around"
+   ]
+  },
+  {
+   "key": "RU",
+   "status": "researched",
+   "register": [
+    "R-0037",
+    "R-0038",
+    "R-0039",
+    "R-0040"
+   ],
+   "tests": [
+    "tests/tools/wmo.test.ts::the station compiler > reproduces the stations the engine reads, byte for byte, from the WMO's files",
+    "tests/world/weather/weather.test.ts::the weather at real towns > at every place on the map",
+    "tests/world/weather/weather.test.ts::a day's weather > comes back, over thirty years, to the normals it's drawn around"
+   ]
+  },
+  {
+   "key": "RW",
+   "status": "pending",
+   "missing": [
+    "sun"
+   ]
+  },
+  {
+   "key": "SA",
+   "status": "researched",
+   "register": [
+    "R-0037",
+    "R-0038",
+    "R-0039",
+    "R-0040",
+    "R-0062"
+   ],
+   "tests": [
+    "tests/tools/wmo.test.ts::the station compiler > reproduces the stations the engine reads, byte for byte, from the WMO's files",
+    "tests/world/weather/weather.test.ts::the weather at real towns > at every place on the map",
+    "tests/world/weather/weather.test.ts::a day's weather > comes back, over thirty years, to the normals it's drawn around"
+   ]
+  },
+  {
+   "key": "SB",
+   "status": "pending",
+   "missing": [
+    "sun"
+   ]
+  },
+  {
+   "key": "SC",
+   "status": "researched",
+   "register": [
+    "R-0037",
+    "R-0038",
+    "R-0039",
+    "R-0040"
+   ],
+   "tests": [
+    "tests/tools/wmo.test.ts::the station compiler > reproduces the stations the engine reads, byte for byte, from the WMO's files",
+    "tests/world/weather/weather.test.ts::the weather at real towns > at every place on the map",
+    "tests/world/weather/weather.test.ts::a day's weather > comes back, over thirty years, to the normals it's drawn around"
+   ]
+  },
+  {
+   "key": "SD",
+   "status": "researched",
+   "register": [
+    "R-0037",
+    "R-0038",
+    "R-0039",
+    "R-0040"
+   ],
+   "tests": [
+    "tests/tools/wmo.test.ts::the station compiler > reproduces the stations the engine reads, byte for byte, from the WMO's files",
+    "tests/world/weather/weather.test.ts::the weather at real towns > at every place on the map",
+    "tests/world/weather/weather.test.ts::a day's weather > comes back, over thirty years, to the normals it's drawn around"
+   ]
+  },
+  {
+   "key": "SE",
+   "status": "researched",
+   "register": [
+    "R-0037",
+    "R-0038",
+    "R-0039",
+    "R-0040"
+   ],
+   "tests": [
+    "tests/tools/wmo.test.ts::the station compiler > reproduces the stations the engine reads, byte for byte, from the WMO's files",
+    "tests/world/weather/weather.test.ts::the weather at real towns > at every place on the map",
+    "tests/world/weather/weather.test.ts::a day's weather > comes back, over thirty years, to the normals it's drawn around"
+   ]
+  },
+  {
+   "key": "SG",
+   "status": "researched",
+   "register": [
+    "R-0037",
+    "R-0038",
+    "R-0039",
+    "R-0040"
+   ],
+   "tests": [
+    "tests/tools/wmo.test.ts::the station compiler > reproduces the stations the engine reads, byte for byte, from the WMO's files",
+    "tests/world/weather/weather.test.ts::the weather at real towns > at every place on the map",
+    "tests/world/weather/weather.test.ts::a day's weather > comes back, over thirty years, to the normals it's drawn around"
+   ]
+  },
+  {
+   "key": "SH",
+   "status": "pending",
+   "missing": [
+    "wet"
+   ]
+  },
+  {
+   "key": "SI",
+   "status": "researched",
+   "register": [
+    "R-0037",
+    "R-0038",
+    "R-0039",
+    "R-0040"
+   ],
+   "tests": [
+    "tests/tools/wmo.test.ts::the station compiler > reproduces the stations the engine reads, byte for byte, from the WMO's files",
+    "tests/world/weather/weather.test.ts::the weather at real towns > at every place on the map",
+    "tests/world/weather/weather.test.ts::a day's weather > comes back, over thirty years, to the normals it's drawn around"
+   ]
+  },
+  {
+   "key": "SJ",
+   "status": "researched",
+   "register": [
+    "R-0038",
+    "R-0039",
+    "R-0040",
+    "R-0062"
+   ],
+   "tests": [
+    "tests/tools/wmo.test.ts::the station compiler > reproduces the stations the engine reads, byte for byte, from the WMO's files",
+    "tests/world/weather/weather.test.ts::the weather at real towns > at every place on the map",
+    "tests/world/weather/weather.test.ts::a day's weather > comes back, over thirty years, to the normals it's drawn around"
+   ]
+  },
+  {
+   "key": "SK",
+   "status": "researched",
+   "register": [
+    "R-0037",
+    "R-0038",
+    "R-0039",
+    "R-0040"
+   ],
+   "tests": [
+    "tests/tools/wmo.test.ts::the station compiler > reproduces the stations the engine reads, byte for byte, from the WMO's files",
+    "tests/world/weather/weather.test.ts::the weather at real towns > at every place on the map",
+    "tests/world/weather/weather.test.ts::a day's weather > comes back, over thirty years, to the normals it's drawn around"
+   ]
+  },
+  {
+   "key": "SL",
+   "status": "pending",
+   "missing": [
+    "wet"
+   ]
+  },
+  {
+   "key": "SM",
+   "status": "pending",
+   "missing": [
+    "tmax",
+    "tmin",
+    "prcp",
+    "wet",
+    "sun"
+   ]
+  },
+  {
+   "key": "SN",
+   "status": "researched",
+   "register": [
+    "R-0037",
+    "R-0038",
+    "R-0039",
+    "R-0040"
+   ],
+   "tests": [
+    "tests/tools/wmo.test.ts::the station compiler > reproduces the stations the engine reads, byte for byte, from the WMO's files",
+    "tests/world/weather/weather.test.ts::the weather at real towns > at every place on the map",
+    "tests/world/weather/weather.test.ts::a day's weather > comes back, over thirty years, to the normals it's drawn around"
+   ]
+  },
+  {
+   "key": "SO",
+   "status": "pending",
+   "missing": [
+    "wet",
+    "sun"
+   ]
+  },
+  {
+   "key": "SR",
+   "status": "pending",
+   "missing": [
+    "wet",
+    "sun"
+   ]
+  },
+  {
+   "key": "SS",
+   "status": "researched",
+   "register": [
+    "R-0038",
+    "R-0039",
+    "R-0040",
+    "R-0062"
+   ],
+   "tests": [
+    "tests/tools/wmo.test.ts::the station compiler > reproduces the stations the engine reads, byte for byte, from the WMO's files",
+    "tests/world/weather/weather.test.ts::the weather at real towns > at every place on the map",
+    "tests/world/weather/weather.test.ts::a day's weather > comes back, over thirty years, to the normals it's drawn around"
+   ]
+  },
+  {
+   "key": "ST",
+   "status": "pending",
+   "missing": [
+    "tmax",
+    "tmin",
+    "prcp",
+    "wet",
+    "sun"
+   ]
+  },
+  {
+   "key": "SV",
+   "status": "pending",
+   "missing": [
+    "sun"
+   ]
+  },
+  {
+   "key": "SX",
+   "status": "researched",
+   "register": [
+    "R-0037",
+    "R-0038",
+    "R-0039",
+    "R-0040"
+   ],
+   "tests": [
+    "tests/tools/wmo.test.ts::the station compiler > reproduces the stations the engine reads, byte for byte, from the WMO's files",
+    "tests/world/weather/weather.test.ts::the weather at real towns > at every place on the map",
+    "tests/world/weather/weather.test.ts::a day's weather > comes back, over thirty years, to the normals it's drawn around"
+   ]
+  },
+  {
+   "key": "SY",
+   "status": "researched",
+   "register": [
+    "R-0037",
+    "R-0038",
+    "R-0039",
+    "R-0040"
+   ],
+   "tests": [
+    "tests/tools/wmo.test.ts::the station compiler > reproduces the stations the engine reads, byte for byte, from the WMO's files",
+    "tests/world/weather/weather.test.ts::the weather at real towns > at every place on the map",
+    "tests/world/weather/weather.test.ts::a day's weather > comes back, over thirty years, to the normals it's drawn around"
+   ]
+  },
+  {
+   "key": "SZ",
+   "status": "pending",
+   "missing": [
+    "wet",
+    "sun"
+   ]
+  },
+  {
+   "key": "TC",
+   "status": "pending",
+   "missing": [
+    "tmax",
+    "tmin",
+    "prcp",
+    "wet",
+    "sun"
+   ]
+  },
+  {
+   "key": "TD",
+   "status": "pending",
+   "missing": [
+    "wet"
+   ]
+  },
+  {
+   "key": "TF",
+   "status": "researched",
+   "register": [
+    "R-0038",
+    "R-0039",
+    "R-0040",
+    "R-0043"
+   ],
+   "tests": [
+    "tests/tools/wmo.test.ts::the station compiler > reproduces the stations the engine reads, byte for byte, from the WMO's files",
+    "tests/world/weather/weather.test.ts::the weather at real towns > at every place on the map",
+    "tests/world/weather/weather.test.ts::a day's weather > comes back, over thirty years, to the normals it's drawn around"
+   ]
+  },
+  {
+   "key": "TG",
+   "status": "researched",
+   "register": [
+    "R-0037",
+    "R-0038",
+    "R-0039",
+    "R-0040"
+   ],
+   "tests": [
+    "tests/tools/wmo.test.ts::the station compiler > reproduces the stations the engine reads, byte for byte, from the WMO's files",
+    "tests/world/weather/weather.test.ts::the weather at real towns > at every place on the map",
+    "tests/world/weather/weather.test.ts::a day's weather > comes back, over thirty years, to the normals it's drawn around"
+   ]
+  },
+  {
+   "key": "TH",
+   "status": "researched",
+   "register": [
+    "R-0037",
+    "R-0038",
+    "R-0039",
+    "R-0040"
+   ],
+   "tests": [
+    "tests/tools/wmo.test.ts::the station compiler > reproduces the stations the engine reads, byte for byte, from the WMO's files",
+    "tests/world/weather/weather.test.ts::the weather at real towns > at every place on the map",
+    "tests/world/weather/weather.test.ts::a day's weather > comes back, over thirty years, to the normals it's drawn around"
+   ]
+  },
+  {
+   "key": "TJ",
+   "status": "researched",
+   "register": [
+    "R-0038",
+    "R-0039",
+    "R-0040",
+    "R-0042"
+   ],
+   "tests": [
+    "tests/tools/wmo.test.ts::the station compiler > reproduces the stations the engine reads, byte for byte, from the WMO's files",
+    "tests/world/weather/weather.test.ts::the weather at real towns > at every place on the map",
+    "tests/world/weather/weather.test.ts::a day's weather > comes back, over thirty years, to the normals it's drawn around"
+   ]
+  },
+  {
+   "key": "TK",
+   "status": "pending",
+   "missing": [
+    "tmax",
+    "tmin",
+    "prcp",
+    "wet",
+    "sun"
+   ]
+  },
+  {
+   "key": "TL",
+   "status": "pending",
+   "missing": [
+    "tmax",
+    "tmin",
+    "wet",
+    "sun"
+   ]
+  },
+  {
+   "key": "TM",
+   "status": "researched",
+   "register": [
+    "R-0037",
+    "R-0038",
+    "R-0039",
+    "R-0040"
+   ],
+   "tests": [
+    "tests/tools/wmo.test.ts::the station compiler > reproduces the stations the engine reads, byte for byte, from the WMO's files",
+    "tests/world/weather/weather.test.ts::the weather at real towns > at every place on the map",
+    "tests/world/weather/weather.test.ts::a day's weather > comes back, over thirty years, to the normals it's drawn around"
+   ]
+  },
+  {
+   "key": "TN",
+   "status": "researched",
+   "register": [
+    "R-0037",
+    "R-0038",
+    "R-0039",
+    "R-0040"
+   ],
+   "tests": [
+    "tests/tools/wmo.test.ts::the station compiler > reproduces the stations the engine reads, byte for byte, from the WMO's files",
+    "tests/world/weather/weather.test.ts::the weather at real towns > at every place on the map",
+    "tests/world/weather/weather.test.ts::a day's weather > comes back, over thirty years, to the normals it's drawn around"
+   ]
+  },
+  {
+   "key": "TO",
+   "status": "pending",
+   "missing": [
+    "tmax",
+    "tmin",
+    "prcp",
+    "wet",
+    "sun"
+   ]
+  },
+  {
+   "key": "TR",
+   "status": "researched",
+   "register": [
+    "R-0037",
+    "R-0038",
+    "R-0039",
+    "R-0040"
+   ],
+   "tests": [
+    "tests/tools/wmo.test.ts::the station compiler > reproduces the stations the engine reads, byte for byte, from the WMO's files",
+    "tests/world/weather/weather.test.ts::the weather at real towns > at every place on the map",
+    "tests/world/weather/weather.test.ts::a day's weather > comes back, over thirty years, to the normals it's drawn around"
+   ]
+  },
+  {
+   "key": "TT",
+   "status": "researched",
+   "register": [
+    "R-0037",
+    "R-0038",
+    "R-0039",
+    "R-0040"
+   ],
+   "tests": [
+    "tests/tools/wmo.test.ts::the station compiler > reproduces the stations the engine reads, byte for byte, from the WMO's files",
+    "tests/world/weather/weather.test.ts::the weather at real towns > at every place on the map",
+    "tests/world/weather/weather.test.ts::a day's weather > comes back, over thirty years, to the normals it's drawn around"
+   ]
+  },
+  {
+   "key": "TV",
+   "status": "pending",
+   "missing": [
+    "sun"
+   ]
+  },
+  {
+   "key": "TW",
+   "status": "blocked",
+   "register": [
+    "R-0039",
+    "R-0040",
+    "R-0045",
+    "R-0046"
+   ],
+   "tests": [
+    "tests/tools/wmo.test.ts::the station compiler > reproduces the stations the engine reads, byte for byte, from the WMO's files",
+    "tests/world/weather/weather.test.ts::the weather at real towns > at every place on the map",
+    "tests/world/weather/weather.test.ts::a day's weather > comes back, over thirty years, to the normals it's drawn around",
+    "tests/world/weather/weather.test.ts::the weather at real towns > reads each town's nearest station of its own country, and says where it has none"
+   ]
+  },
+  {
+   "key": "TZ",
+   "status": "researched",
+   "register": [
+    "R-0037",
+    "R-0038",
+    "R-0039",
+    "R-0040",
+    "R-0062"
+   ],
+   "tests": [
+    "tests/tools/wmo.test.ts::the station compiler > reproduces the stations the engine reads, byte for byte, from the WMO's files",
+    "tests/world/weather/weather.test.ts::the weather at real towns > at every place on the map",
+    "tests/world/weather/weather.test.ts::a day's weather > comes back, over thirty years, to the normals it's drawn around"
+   ]
+  },
+  {
+   "key": "UA",
+   "status": "researched",
+   "register": [
+    "R-0037",
+    "R-0038",
+    "R-0039",
+    "R-0040"
+   ],
+   "tests": [
+    "tests/tools/wmo.test.ts::the station compiler > reproduces the stations the engine reads, byte for byte, from the WMO's files",
+    "tests/world/weather/weather.test.ts::the weather at real towns > at every place on the map",
+    "tests/world/weather/weather.test.ts::a day's weather > comes back, over thirty years, to the normals it's drawn around"
+   ]
+  },
+  {
+   "key": "UG",
+   "status": "pending",
+   "missing": [
+    "sun"
+   ]
+  },
+  {
+   "key": "UM",
+   "status": "proven",
+   "tests": [
+    "tests/world/gazetteer/gazetteer.test.ts::places > are none in the six countries with no populated place of their own"
+   ]
+  },
+  {
+   "key": "US",
+   "status": "researched",
+   "register": [
+    "R-0037",
+    "R-0038",
+    "R-0039",
+    "R-0040"
+   ],
+   "tests": [
+    "tests/tools/wmo.test.ts::the station compiler > reproduces the stations the engine reads, byte for byte, from the WMO's files",
+    "tests/world/weather/weather.test.ts::the weather at real towns > at every place on the map",
+    "tests/world/weather/weather.test.ts::a day's weather > comes back, over thirty years, to the normals it's drawn around"
+   ]
+  },
+  {
+   "key": "UY",
+   "status": "researched",
+   "register": [
+    "R-0037",
+    "R-0038",
+    "R-0039",
+    "R-0040"
+   ],
+   "tests": [
+    "tests/tools/wmo.test.ts::the station compiler > reproduces the stations the engine reads, byte for byte, from the WMO's files",
+    "tests/world/weather/weather.test.ts::the weather at real towns > at every place on the map",
+    "tests/world/weather/weather.test.ts::a day's weather > comes back, over thirty years, to the normals it's drawn around"
+   ]
+  },
+  {
+   "key": "UZ",
+   "status": "researched",
+   "register": [
+    "R-0037",
+    "R-0038",
+    "R-0039",
+    "R-0040"
+   ],
+   "tests": [
+    "tests/tools/wmo.test.ts::the station compiler > reproduces the stations the engine reads, byte for byte, from the WMO's files",
+    "tests/world/weather/weather.test.ts::the weather at real towns > at every place on the map",
+    "tests/world/weather/weather.test.ts::a day's weather > comes back, over thirty years, to the normals it's drawn around"
+   ]
+  },
+  {
+   "key": "VA",
+   "status": "pending",
+   "missing": [
+    "tmax",
+    "tmin",
+    "prcp",
+    "wet",
+    "sun"
+   ]
+  },
+  {
+   "key": "VC",
+   "status": "pending",
+   "missing": [
+    "tmax",
+    "tmin",
+    "prcp",
+    "wet",
+    "sun"
+   ]
+  },
+  {
+   "key": "VE",
+   "status": "researched",
+   "register": [
+    "R-0037",
+    "R-0038",
+    "R-0039",
+    "R-0040"
+   ],
+   "tests": [
+    "tests/tools/wmo.test.ts::the station compiler > reproduces the stations the engine reads, byte for byte, from the WMO's files",
+    "tests/world/weather/weather.test.ts::the weather at real towns > at every place on the map",
+    "tests/world/weather/weather.test.ts::a day's weather > comes back, over thirty years, to the normals it's drawn around"
+   ]
+  },
+  {
+   "key": "VG",
+   "status": "pending",
+   "missing": [
+    "tmax",
+    "tmin",
+    "prcp",
+    "wet",
+    "sun"
+   ]
+  },
+  {
+   "key": "VI",
+   "status": "blocked",
+   "register": [
+    "R-0037",
+    "R-0039",
+    "R-0040",
+    "R-0058"
+   ],
+   "tests": [
+    "tests/tools/wmo.test.ts::the station compiler > reproduces the stations the engine reads, byte for byte, from the WMO's files",
+    "tests/world/weather/weather.test.ts::the weather at real towns > at every place on the map",
+    "tests/world/weather/weather.test.ts::a day's weather > comes back, over thirty years, to the normals it's drawn around",
+    "tests/world/weather/weather.test.ts::the weather at real towns > reads each town's nearest station of its own country, and says where it has none"
+   ]
+  },
+  {
+   "key": "VN",
+   "status": "pending",
+   "missing": [
+    "wet"
+   ]
+  },
+  {
+   "key": "VU",
+   "status": "pending",
+   "missing": [
+    "wet",
+    "sun"
+   ]
+  },
+  {
+   "key": "WF",
+   "status": "researched",
+   "register": [
+    "R-0039",
+    "R-0040",
+    "R-0043"
+   ],
+   "tests": [
+    "tests/tools/wmo.test.ts::the station compiler > reproduces the stations the engine reads, byte for byte, from the WMO's files",
+    "tests/world/weather/weather.test.ts::the weather at real towns > at every place on the map",
+    "tests/world/weather/weather.test.ts::a day's weather > comes back, over thirty years, to the normals it's drawn around"
+   ]
+  },
+  {
+   "key": "WS",
+   "status": "pending",
+   "missing": [
+    "sun"
+   ]
+  },
+  {
+   "key": "XK",
+   "status": "pending",
+   "missing": [
+    "sun"
+   ]
+  },
+  {
+   "key": "YE",
+   "status": "pending",
+   "missing": [
+    "tmax",
+    "tmin",
+    "wet",
+    "sun"
+   ]
+  },
+  {
+   "key": "YT",
+   "status": "researched",
+   "register": [
+    "R-0039",
+    "R-0040",
+    "R-0043"
+   ],
+   "tests": [
+    "tests/tools/wmo.test.ts::the station compiler > reproduces the stations the engine reads, byte for byte, from the WMO's files",
+    "tests/world/weather/weather.test.ts::the weather at real towns > at every place on the map",
+    "tests/world/weather/weather.test.ts::a day's weather > comes back, over thirty years, to the normals it's drawn around"
+   ]
+  },
+  {
+   "key": "ZA",
+   "status": "researched",
+   "register": [
+    "R-0037",
+    "R-0038",
+    "R-0039",
+    "R-0040"
+   ],
+   "tests": [
+    "tests/tools/wmo.test.ts::the station compiler > reproduces the stations the engine reads, byte for byte, from the WMO's files",
+    "tests/world/weather/weather.test.ts::the weather at real towns > at every place on the map",
+    "tests/world/weather/weather.test.ts::a day's weather > comes back, over thirty years, to the normals it's drawn around"
+   ]
+  },
+  {
+   "key": "ZM",
+   "status": "researched",
+   "register": [
+    "R-0037",
+    "R-0038",
+    "R-0039",
+    "R-0040"
+   ],
+   "tests": [
+    "tests/tools/wmo.test.ts::the station compiler > reproduces the stations the engine reads, byte for byte, from the WMO's files",
+    "tests/world/weather/weather.test.ts::the weather at real towns > at every place on the map",
+    "tests/world/weather/weather.test.ts::a day's weather > comes back, over thirty years, to the normals it's drawn around"
+   ]
+  },
+  {
+   "key": "ZW",
+   "status": "pending",
+   "missing": [
+    "wet"
+   ]
+  }
+ ]
+}

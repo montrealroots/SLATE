@@ -5,7 +5,13 @@ import { fill, isLine, t, type LineId } from '../../../src/core/text/text.ts';
 describe('lines', () => {
   it('are said as the catalog has them', () => {
     expect(t('life.damaged')).toBe("The file's damaged.");
-    for (const id of Object.keys(catalog) as LineId[]) expect(t(id)).toBe(catalog[id].text);
+    // Every line, its slots filled with their own names, reads as the catalog writes it.
+    for (const id of Object.keys(catalog) as LineId[]) {
+      const text = catalog[id].text;
+      const slots = Object.fromEntries([...text.matchAll(/\{([^}]*)\}/g)].map((m) => [m[1] as string, `{${m[1] as string}}`]));
+      expect(t(id, slots)).toBe(text);
+    }
+    expect(t('weather.borrowed', { country: 'Vatican', place: 'Rome', placeCountry: 'Italy' })).toBe('No averages are published from near here in Vatican, so the weather follows those measured near Rome, in Italy.');
   });
   it('are only the catalog\'s', () => {
     expect(isLine('life.damaged')).toBe(true);
