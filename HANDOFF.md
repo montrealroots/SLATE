@@ -259,6 +259,7 @@ What layer 0 holds:
 
 ## Questions for the owner
 
-None open. Answered 2026-10-26: the map's count of places is today's GeoNames release (171,654). The four the
-package leaves to the owner (the premise's detail, home on the first morning, the start date, Sleep as a clock
-action) are asked when the build reaches them.
+None open. Answered 2026-10-26: the map's count of places is today's GeoNames release (171,654); the start date
+is 1 January 2026 (the owner: "January 1st, 2026."), asked when the holidays and prices engines reached it, so
+both are researched as in force for 2026 and carried forward by their rules. Still to be asked when the build
+reaches them: the premise's detail, home on the first morning, Sleep as a clock action.
