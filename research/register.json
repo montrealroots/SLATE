@@ -1079,6 +1079,159 @@
      "said": "Object continuously above the Horizon"
     }
    ]
+  },
+  {
+   "id": "R-0024",
+   "fact": "rng.splitmix64",
+   "sought": "A reproducible 64-bit generator, its constants and reference outputs",
+   "status": "found",
+   "value": "x += 0x9e3779b97f4a7c15; z = (z ^ (z >> 30)) * 0xbf58476d1ce4e5b9; z = (z ^ (z >> 27)) * 0x94d049bb133111eb; return z ^ (z >> 31)",
+   "sources": [
+    {
+     "kind": "primary",
+     "url": "https://prng.di.unimi.it/splitmix.c",
+     "title": "splitmix.c (Sebastiano Vigna, 2015; prng.di.unimi.it/splitmix64.c redirects here)",
+     "read": "2026-10-26",
+     "said": "uint64_t z = (x += 0x9e3779b97f4a7c15); z = (z ^ (z >> 30)) * 0xbf58476d1ce4e5b9; z = (z ^ (z >> 27)) * 0x94d049bb133111eb; return z ^ (z >> 31); a fixed-increment version of Java 8's SplittableRandom, passing BigCrush."
+    },
+    {
+     "kind": "secondary",
+     "url": "https://github.com/rust-random/rngs/blob/master/rand_xoshiro/src/splitmix64.rs",
+     "quotes": "https://prng.di.unimi.it/splitmix.c",
+     "title": "rand_xoshiro, splitmix64.rs, test \"reference\"",
+     "read": "2026-10-26",
+     "said": "From state 1477776061723855037 (seed_from_u64 sets the state to the seed), 50 outputs \"produced with the reference implementation\", the first 1985237415132408290, 2979275885539914483, 13511426838097143398, the last 15419692541594102413."
+    }
+   ]
+  },
+  {
+   "id": "R-0025",
+   "fact": "rng.fnv1a64",
+   "sought": "The FNV-1a 64-bit hash, its offset basis, prime and test vectors",
+   "status": "found",
+   "value": "offset basis 0xCBF29CE484222325, prime 0x00000100000001B3; hash = (hash XOR octet) * prime mod 2^64",
+   "sources": [
+    {
+     "kind": "primary",
+     "url": "https://www.rfc-editor.org/rfc/rfc9923.txt",
+     "title": "RFC 9923, The FNV Non-Cryptographic Hash Algorithm (February 2026)",
+     "read": "2026-10-26",
+     "said": "FNV-1a: hash = offset_basis; for each octet, hash = hash XOR octet, then hash = hash * FNV_Prime mod 2**HashSize. FNV64basis 0xCBF29CE484222325, FNV64prime 0x00000100000001B3. Test64 string values: \"\" cbf29ce484222325, \"a\" af63dc4c8601ec8c, \"foobar\" 85944171f73967e8, \"Hello!\\x01\\xFF\\xED\" bd51ea7094ee6fa1."
+    }
+   ]
+  },
+  {
+   "id": "R-0026",
+   "fact": "money.iso4217.list-one",
+   "sought": "Every currency in use, its numeric code and its minor units, from the standard's maintenance agency",
+   "status": "found",
+   "value": {
+    "published": "2026-09-17",
+    "currenciesInUse": 155,
+    "file": "vendor/iso4217/list-one.xml",
+    "sha256": "33139b438657d1cee116ba737807ea71d19d6de4b90f799a09c56f0cc6a1b0ff"
+   },
+   "sources": [
+    {
+     "kind": "primary",
+     "url": "https://www.six-group.com/dam/download/financial-information/data-center/iso-currrency/lists/list-one.xml",
+     "title": "ISO 4217 list one: currency, fund and precious metal codes (SIX, the ISO 4217 Maintenance Agency)",
+     "read": "2026-10-26",
+     "said": "Published 2026-09-17; 280 entries, 178 codes. Funds are marked IsFund=\"true\" (BOV, CHE, CHW, CLF, COU, MXV, USN, UYI, UYW, XAD); the codes for no single country sit under entity names beginning \"ZZ\" (XAG, XAU, XBA, XBB, XBC, XBD, XPD, XPT, XTS, XXX); XDR, XSU and XUA have minor units \"N.A.\". The other 155 are currencies in use: 16 with 0 minor units, 132 with 2, 7 with 3."
+    }
+   ]
+  },
+  {
+   "id": "R-0027",
+   "fact": "money.iso4217.ved",
+   "sought": "What VED denotes beside VES, after Venezuela's 2021 redenomination",
+   "status": "found",
+   "value": "VED/926 represents the redenominated bolívar (1,000,000 times the old VES); VES/928 stays the valid code for the same redenominated bolívar",
+   "sources": [
+    {
+     "kind": "primary",
+     "url": "https://www.six-group.com/dam/download/financial-information/data-center/iso-currrency/amendments/dl_currency_iso_amendment_170.pdf",
+     "title": "ISO 4217 Amendment Number 170 (1 October 2021)",
+     "read": "2026-10-26",
+     "said": "The Bolívar Soberano (VES) is redenominated by removing six zeros from the denominations. A new currency code VED/926 representing the new valuation (1,000,000 times old VES/928) is introduced on 1 October 2021 for any internal needs during the redenomination process, but is not replacing VES as the official currency code. The Central Bank of Venezuela will not adopt the new codes in the local system, VES/928 remains in use. The actual currency code VES/928 remains the valid code after 1 October 2021 to use in any future transactions to indicate the redenominated Bolívar Soberano."
+    }
+   ]
+  },
+  {
+   "id": "R-0028",
+   "fact": "money.exchange.un-operational-rates.terms",
+   "sought": "Whether the UN operational rates of exchange, which rate 151 of the 155 currencies, may be quoted to the public",
+   "status": "found",
+   "value": "No: internal record-keeping of the UN only; not to be used or quoted as market rates by the general public",
+   "sources": [
+    {
+     "kind": "primary",
+     "url": "https://treasury.un.org/operationalrates/default.php",
+     "title": "United Nations Treasury, UN Operational Rates of Exchange, disclaimer",
+     "read": "2026-10-26",
+     "said": "The Operational Rates of Exchange listed herein are intended only for the internal record-keeping of the United Nations. The U.N. Operational Rates are not to be used and quoted as historic or market rates by the general public, as the U.N. Operational Rates are not bank rates nor databases of the exchange rates. They are for internal use only by the U.N. and its agencies."
+    }
+   ]
+  },
+  {
+   "id": "R-0029",
+   "fact": "money.rate.TWD",
+   "sought": "New Taiwan dollars per US dollar, from Taiwan's central bank",
+   "status": "found",
+   "value": {
+    "perUSD": "31.852",
+    "asOf": "2026-09-30",
+    "monthlyAverage": {
+     "2026-09": "31.716"
+    }
+   },
+   "sources": [
+    {
+     "kind": "primary",
+     "url": "https://cpx.cbc.gov.tw/API/DataAPI/Get?FileName=BP01D01",
+     "title": "Central Bank of the Republic of China (Taiwan), BP01 exchange rates by period (daily), last updated 2026-10-01",
+     "read": "2026-10-26",
+     "said": "新台幣NTD/USD on 20260930: 31.852 (research/sources/money/cbc-taiwan/BP01D01.json, sha256 036b383dc0124b1063d79870802dfb5a52e6de522f88d8c0a0b3f0f4d3de44f3); the monthly series BP01M01 gives 2026M09: 31.716."
+    }
+   ]
+  },
+  {
+   "id": "R-0030",
+   "fact": "money.rate.FKP",
+   "sought": "The Falkland Islands pound's value against sterling, from the Falkland Islands Government",
+   "status": "found",
+   "value": {
+    "pegged": "GBP",
+    "ratio": "1"
+   },
+   "sources": [
+    {
+     "kind": "primary",
+     "url": "https://www.gov.fk/finance/currency",
+     "title": "Falkland Islands Government, Currency (modified 2026-09-29; falklands.gov.fk/finance/currency and fig.gov.fk now lead here)",
+     "read": "2026-10-26",
+     "said": "The Falkland Islands Pound (ISO4217 currency code FKP) has parity with Sterling. Banknotes and coins of both currencies are used interchangeably within the Falkland Islands. All Falkland Islands currency has been issued by Falkland Islands Government, and is fully backed by realisable securities held in Sterling."
+    }
+   ]
+  },
+  {
+   "id": "R-0031",
+   "fact": "money.rate.SVC",
+   "sought": "The El Salvador colón's rate to the US dollar, from the law that fixed it",
+   "status": "found",
+   "value": {
+    "perUSD": "8.75",
+    "since": "2001-01-01"
+   },
+   "sources": [
+    {
+     "kind": "primary",
+     "url": "https://ssf.gob.sv/wp-content/uploads/ssf2018/Otras%20Leyes/Ley_integracion_monetaria.pdf",
+     "title": "Ley de Integración Monetaria, Decreto Legislativo No. 201 (30 November 2000), as the Superintendencia del Sistema Financiero publishes it",
+     "read": "2026-10-26",
+     "said": "Art. 1.- El tipo de cambio entre el colón y el dólar de los Estados Unidos de América será fijo e inalterable a partir de la vigencia de esta Ley, a razón de ocho colones setenta y cinco centavos por dólar de los Estados Unidos de América."
+    }
+   ]
   }
  ]
 }
