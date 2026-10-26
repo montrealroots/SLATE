@@ -69,5 +69,14 @@
    "coverage/map-countries.json"
   ],
   "allPlacesTest": "tests/world/map/map.test.ts::every place on the map > is marked on the whole world's view, where its coordinates put it"
+ },
+ "world.clock": {
+  "layer": 2,
+  "dir": "src/world/clock",
+  "readsPlace": true,
+  "matrices": [
+   "coverage/clock-countries.json"
+  ],
+  "allPlacesTest": "tests/world/clock/clock.test.ts::what the clock shows > at every place on the map"
  }
 }

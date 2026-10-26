@@ -79,7 +79,15 @@ describe('commands', () => {
   it('are declared once, and listed with what they read and write', () => {
     const c = defineCommand<S>({ id: 'test.listed', reads: ['papers'], writes: ['money', 'notices'], run: () => undefined });
     expect(commandIndex()).toContainEqual({ id: 'test.listed', reads: ['papers'], writes: ['money', 'notices'] });
-    expect(() => defineCommand<S>({ ...c })).toThrow('the command test.listed is declared twice');
+    expect(() => defineCommand<S>({ ...c, reads: ['money'] })).toThrow('the command test.listed is declared twice');
+    expect(() => defineCommand<S>({ ...c, writes: ['money'] })).toThrow('the command test.listed is declared twice');
+    expect(() => defineCommand<S>({ ...c, run: () => 1 as never })).toThrow('the command test.listed is declared twice');
+    // Declared again just as it was (a module loaded again), it replaces itself.
+    const again = defineCommand<S>({ id: 'test.listed', reads: ['papers'], writes: ['money', 'notices'], run: () => undefined });
+    expect(again).not.toBe(c);
+    expect(commandIndex().filter((x) => x.id === 'test.listed')).toHaveLength(1);
+    expect(() => dispatch(life(), c, null)).toThrow("test.listed isn't a declared command");
+    expect(() => dispatch(life(), again, null)).not.toThrow();
     expect(() => defineCommand<S>({ id: 'test.unnamed', reads: ['' as 'money'], writes: [], run: () => undefined })).toThrow("test.unnamed names a slice that isn't a name");
     expect(() => defineCommand<S>({ id: 'test.unnamed2', reads: [], writes: [3 as unknown as 'money'], run: () => undefined })).toThrow("test.unnamed2 names a slice that isn't a name");
     expect(commandIndex().map((x) => x.id)).not.toContain('test.unnamed');
@@ -190,6 +198,7 @@ describe('the schedule', () => {
   });
   it('declares each kind once', () => {
     expect(() => defineKind<S>({ kind: K().pay, wants: true })).toThrow('the kind test.pay is declared twice');
+    expect(() => defineKind<S>({ kind: K().meeting, wants: true })).not.toThrow();
     expect(() => defineKind<S>({ kind: 'test.bad', wants: false, reads: [''], writes: [], happen: () => undefined } as never)).toThrow("test.bad names a slice that isn't a name");
     expect(() => run([], ['schedule'], (_s, ctx) => void ctx.schedule('test.bad', T0))).toThrow("schedules test.bad, which isn't a declared kind");
   });
@@ -214,7 +223,7 @@ describe('notices', () => {
     expect(() => run([], ['notices'], (_s, ctx) => ctx.markRead(9), left)).toThrow(/^test\.\d+ marks notice 9 read, which there isn't$/);
   });
   it('are of declared kinds, read and changed only by what declares them', () => {
-    expect(() => defineNotice(K().note)).toThrow('the notice test.note is declared twice');
+    expect(defineNotice(K().note)).toBe('test.note');
     const fresh = defineNotice('test.fresh');
     expect(run([], ['notices'], (_s, ctx) => void ctx.notify(fresh)).frame.notices.map((x) => x.kind)).toEqual(['test.fresh']);
     expect(() => run([], ['notices'], (_s, ctx) => void ctx.notify('test.unknown'))).toThrow(/^test\.\d+ leaves a test\.unknown notice, which isn't a declared kind$/);

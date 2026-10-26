@@ -113,9 +113,17 @@ function declare<S>(what: string, access: Access<S>): void {
   for (const n of [...access.reads, ...access.writes]) if (typeof n !== 'string' || n === '') throw new TypeError(`${what} names a slice that isn't a name`);
 }
 
+/**
+ * A declaration's shape: what it names, reads and writes, and its code. A module loaded again (a hot reload in
+ * development, a test runner's) declares the same shape again, and that replaces the first; a different declaration
+ * under a name already taken is refused.
+ */
+const shape = (d: object): string => JSON.stringify(d, (_k, v: unknown) => (typeof v === 'function' ? v.toString() : v));
+
 /** Declares a command, with what it reads and writes. Its id is its own. */
 export function defineCommand<S, A extends Json = Json>(command: Command<S, A>): Command<S, A> {
-  if (commands.has(command.id)) throw new Error(`the command ${command.id} is declared twice`);
+  const held = commands.get(command.id);
+  if (held !== undefined && shape(held) !== shape(command)) throw new Error(`the command ${command.id} is declared twice`);
   declare(command.id, command);
   commands.set(command.id, command as unknown as Command<never, never>);
   return command;
@@ -123,15 +131,15 @@ export function defineCommand<S, A extends Json = Json>(command: Command<S, A>):
 
 /** Declares a kind of scheduled item. */
 export function defineKind<S>(kind: Kind<S>): Kind<S> {
-  if (kinds.has(kind.kind)) throw new Error(`the kind ${kind.kind} is declared twice`);
+  const held = kinds.get(kind.kind);
+  if (held !== undefined && shape(held) !== shape(kind)) throw new Error(`the kind ${kind.kind} is declared twice`);
   if (!kind.wants) declare(kind.kind, kind);
   kinds.set(kind.kind, kind as Kind<never>);
   return kind;
 }
 
-/** Declares a kind of notice. */
+/** Declares a kind of notice (a name and nothing more, so declaring it again is declaring it). */
 export function defineNotice(kind: string): string {
-  if (noticeKinds.has(kind)) throw new Error(`the notice ${kind} is declared twice`);
   noticeKinds.add(kind);
   return kind;
 }

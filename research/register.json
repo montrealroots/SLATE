@@ -1337,6 +1337,26 @@
      "said": "Kyrenia (146412) and Famagusta (146617) are filed under CY; Hargeysa (57289) under SO: so the map draws Northern Cyprus as Cyprus and Somaliland as Somalia, the countries their towns are listed in."
     }
    ]
+  },
+  {
+   "id": "R-0036",
+   "fact": "world.clock.seasons",
+   "sought": "The moments the seasons begin, the equinoxes and solstices, for every year the clock covers",
+   "status": "found",
+   "value": {
+    "years": "1800-2100",
+    "file": "research/sources/usno-seasons.json",
+    "computedBeyond": "2101-2200 and the December solstice of 1799, from NOAA's formulas (R-0004), within 12 min 39 s of USNO's over 1800-2100"
+   },
+   "sources": [
+    {
+     "kind": "primary",
+     "url": "https://aa.usno.navy.mil/api/seasons?year=YYYY",
+     "title": "U.S. Naval Observatory, Astronomical Applications API, Earth's seasons (apiversion 4.0.1), each year 1800 to 2100",
+     "read": "2026-10-26",
+     "said": "For each year, the March and September equinoxes and the June and December solstices in UT to the minute (with perihelion and aphelion, not kept); 2026: equinox March 20 14:46, solstice June 21 08:24, equinox September 23 00:05, solstice December 21 20:50. The service gives the years 1700 to 2100. Kept whole in research/sources/usno-seasons.json."
+    }
+   ]
   }
  ]
 }
