@@ -1,0 +1,37 @@
+name: Gate
+
+# The gate on every push (docs/BUILD-ORDER.md, layer 0): the full gate, mutation testing included, in a clean clone.
+on:
+  push:
+  pull_request:
+
+jobs:
+  gate:
+    runs-on: ubuntu-24.04
+    timeout-minutes: 60
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          # The layer ledger's proofs name commits; the gate checks this branch carries them.
+          fetch-depth: 0
+      - uses: actions/setup-node@v4
+        with:
+          node-version-file: .nvmrc
+      - run: npx -y npm@11.6.2 ci
+      - name: The full gate
+        run: |
+          set +e
+          npm run gate:full
+          code=$?
+          if [ "$code" -eq 2 ]; then
+            echo "::warning::The gate is incomplete: declared work is unfinished, so no layer can be proven on this commit."
+            exit 0
+          fi
+          exit $code
+      - uses: actions/upload-artifact@v4
+        if: always()
+        with:
+          name: gate-receipt
+          path: |
+            .gate/receipt.json
+            reports/mutation/

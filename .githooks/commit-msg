@@ -1,0 +1,5 @@
+#!/bin/sh
+# Writes the gate's verdict from the run pre-commit just made into the commit message as a trailer.
+verdict=$(node -e "const r=JSON.parse(require('fs').readFileSync('.gate/receipt.json','utf8'));const n=r.checks.flatMap(c=>c.findings).length;process.stdout.write(r.verdict+' ('+r.mode+(n?', '+n+' findings':'')+')')" 2>/dev/null)
+[ -n "$verdict" ] && git interpret-trailers --in-place --if-exists replace --trailer "Gate: $verdict" "$1"
+exit 0

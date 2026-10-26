@@ -1,0 +1,11 @@
+#!/bin/sh
+# The gate on every commit (docs/BUILD-ORDER.md, layer 0). Red stops the commit; incomplete (declared work not yet
+# done) is let through and written into the message by commit-msg, so the history says what each commit stood on.
+# It checks the working tree as it stands, so stage everything you mean to commit.
+npm run --silent gate
+code=$?
+if [ "$code" -eq 1 ]; then
+  echo "The gate is red, so the commit is stopped. Fix what it lists above."
+  exit 1
+fi
+exit 0

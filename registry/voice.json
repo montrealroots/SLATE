@@ -1,0 +1,15 @@
+{
+  "source": "docs/KEEP.md entry 2 (the voice standard, and the rules the rewrite follows); docs/MANDATE.md rule 8",
+  "banned": [
+    { "pattern": "\\bslots?\\b", "why": "a life is a life or the person's name, never a slot" },
+    { "pattern": "\\b(a|an|the|this|that|your|my|each|every) saves?\\b", "why": "a life is a life, never a save" },
+    { "pattern": "\\buniverses?\\b", "why": "a life is a life, never a universe" },
+    { "pattern": "\\bbackups?\\b", "why": "a backup is a copy" },
+    { "pattern": "\\bsave formats?\\b", "why": "the schema is never mentioned" },
+    { "pattern": "\\bschemas?\\b", "why": "the schema is never mentioned" },
+    { "pattern": "\\badapters?\\b", "why": "where lives are kept is said plainly, never as an adapter" },
+    { "pattern": "\\bvalidat(e|es|ed|ing|ion|ions)\\b", "why": "say what's wrong in the player's terms, not the checker's" },
+    { "pattern": "\\b(seeds?|deciders?|engines?|payloads?)\\b", "why": "the engine's vocabulary stays out of the player's sight" },
+    { "pattern": "\\b(undefined|null|NaN)\\b|\\[object", "why": "a value the game failed to fill in" }
+  ]
+}
