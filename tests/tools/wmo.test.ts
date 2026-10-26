@@ -5,7 +5,7 @@ import { gzipSync } from 'node:zlib';
 import { describe, expect, it } from 'vitest';
 import { coverageOf, readTowns } from '../../tools/wmo/build.ts';
 import { MODEL, NO_PLACES, OUTPUT as COVERAGE, SETS, TESTS, TOLD, serializeCoverage, weatherCoverage } from '../../tools/wmo/coverage.ts';
-import { COMMUNES_MF, COUNTRIES_DWD, COUNTRIES_KT, KT_COUNTRY, MONTH_DAYS, MEMBERS_6190, MEMBERS_9120, MEMBERS_WWIS, OUTPUT, SOURCES_6190, SOURCES_8110, SOURCES_9120, HAND_READ, SOURCE_CWA, SOURCE_DWD, SOURCE_KT, SOURCE_METOFFICE, SOURCE_MF, SOURCE_WWIS, SOURCE_GHCND, YEARS_GHCND, compileStations, monthValue, parseGhcnd, countryOf, distanceKm, nearestTown, parse6190, parse8110, parse9120, parseCwa, parseDwd, parseKlimatafeln, parseMeteoFrance, parseMetOffice, parseWwis, readStations, serialize, TOWN_KM, townPool, type SourceStation } from '../../tools/wmo/compile.ts';
+import { COMMUNES_MF, COUNTRIES_DWD, COUNTRIES_KT, KT_COUNTRY, MONTH_DAYS, MEMBERS_6190, MEMBERS_9120, MEMBERS_WWIS, OUTPUT, SOURCES_6190, SOURCES_8110, SOURCES_9120, HAND_READ, SOURCE_CWA, SOURCE_DWD, SOURCE_KT, SOURCE_METOFFICE, SOURCE_MF, SOURCE_WWIS, SOURCE_GHCND, SOURCE_ANGUILLA, SOURCE_TONGA, YEARS_GHCND, compileStations, monthValue, parseAnguilla, parseTonga, parseGhcnd, countryOf, distanceKm, nearestTown, parse6190, parse8110, parse9120, parseCwa, parseDwd, parseKlimatafeln, parseMeteoFrance, parseMetOffice, parseWwis, readStations, serialize, TOWN_KM, townPool, type SourceStation } from '../../tools/wmo/compile.ts';
 
 const ROOT = join(import.meta.dirname, '../..');
 /** A 1961-1990 station key: region, country, WMO number, national id and its code, 17 columns. */
@@ -89,7 +89,7 @@ describe('the station compiler', () => {
       { key: 'EC', status: 'researched', register: ['R-0038', 'R-0039', 'R-0040', 'R-0044'], tests: TESTS },
     ]);
     expect(TOLD).toBe("tests/world/weather/weather.test.ts::the weather at real towns > reads each town's nearest station of its own country, and says where it has none");
-    expect([SETS, MODEL]).toEqual([{ '9120': 'R-0037', '6190': 'R-0038', '8110': 'R-0044', mf: 'R-0043', cwa: 'R-0045', metoffice: 'R-0048', bws: 'R-0049', dhm: 'R-0057', rnsm: 'R-0060', dwd: 'R-0062', kt: 'R-0063', wwis: 'R-0042', ghcnd: 'R-0073' }, ['R-0039', 'R-0040']]);
+    expect([SETS, MODEL]).toEqual([{ '9120': 'R-0037', '6190': 'R-0038', '8110': 'R-0044', mf: 'R-0043', cwa: 'R-0045', metoffice: 'R-0048', bws: 'R-0049', dhm: 'R-0057', rnsm: 'R-0060', meteocw: 'R-0074', anguilla: 'R-0075', tms: 'R-0076', dwd: 'R-0062', kt: 'R-0063', wwis: 'R-0042', ghcnd: 'R-0073' }, ['R-0039', 'R-0040']]);
     // A station is of a set by its id's start up to the colon, not by a likeness.
     expect(weatherCoverage(['FR'], new Set(['FR']), [st('9120x:1', 'FR', ['tmax', 'tmin', 'prcp', 'wet', 'sun'])], new Map())[0]).toMatchObject({ register: ['R-0039', 'R-0040'] });
     expect(serializeCoverage([{ key: 'AN', status: 'proven', tests: ['t'] }])).toBe('{\n "engine": "world.weather",\n "axis": "country",\n "rows": [\n  {\n   "key": "AN",\n   "status": "proven",\n   "tests": [\n    "t"\n   ]\n  }\n ]\n}\n');
@@ -297,6 +297,45 @@ describe('the station compiler', () => {
     expect(parseCwa(json({ meantxmax: row('Taipei', '1991-2020', twelve('1')) + row('', '1991~2020', twelve('1')).replace('headers="loc">', 'headers="x">') }))).toEqual([]);
     expect(parseCwa(json({ meantxmax: row('Taipei', '1991~2020', twelve('1')).replace('<td headers="m11">1</td>', '') }))).toEqual([]);
   });
+  it("averages Anguilla's rainfall over 1991-2020: the years given, where they're 80% of the thirty, in millimetres", () => {
+    const MONTHS = ['January', 'February', 'March', 'April', 'May', 'June', 'July', 'August', 'September', 'October', 'November', 'December'];
+    // Two tables, each a column a year and its decade's average; January lacks `missing` years of 1991-2020.
+    const tables = (missing: number) => {
+      const table = (years: number[]) => [
+        ['', 'Table 3.1.1-R3'],
+        ['', 'Month', ...years.map(String), 'Avg. monthly'],
+        ...MONTHS.map((month, m) => ['', month, ...years.map((y) => (m === 0 ? (y >= 2001 && y < 2001 + missing ? '-' : y === 1990 ? '100' : '2') : m === 1 && y === 1995 ? '1.5 ' : '1')), '999']),
+        ['', 'Total', ...years.map(() => '50'), '999'],
+      ];
+      return JSON.stringify({ tables: { a: table(Array.from({ length: 16 }, (_, i) => 1990 + i)), b: table(Array.from({ length: 15 }, (_, i) => 2006 + i)) } });
+    };
+    expect(parseAnguilla(tables(6))).toEqual([
+      { id: 'anguilla:clayton-j-lloyd:1991-2020', name: 'Clayton J. Lloyd International Airport', country: 'AI', latitude: 18.21704, longitude: -63.05783, elevation: null, period: '1991-2020', normals: { prcp: [50.8, 25.8, ...Array(10).fill(25.4)] } },
+    ]);
+    expect(() => parseAnguilla(tables(7))).toThrow("Anguilla's rainfall no longer gives every month of 1991-2020");
+  });
+  it("reads Tonga's sheets: a row a month, its name before it or above it, the period the sheet ends with", () => {
+    const MONTHS = ['JANUARY', 'FEBRUARY', 'MARCH', 'APRIL', 'MAY', 'JUNE', 'JULY', 'AUGUST', 'SEPTEMBER', 'OCTOBER', 'NOVEMBER', 'DECEMBER'];
+    const sheet = (o: { heading?: string; above?: boolean; months?: number; footer?: string } = {}) =>
+      [
+        `         CLIMATOLOGICAL INFORMATION – ${o.heading ?? 'FUA’AMOTU AIRPORT'}   `,
+        '                MAXIMUM       MINIMUM           (mm)         [>0.1mm]',
+        '                (1982- 2009)   (1982- 2009)   (1980-2009)    (1990-2016)',
+        ...MONTHS.slice(0, o.months ?? 12).flatMap((m, i) => {
+          const values = `   ${(29 + i / 10).toFixed(1)}          ${(-1 - i / 10).toFixed(1)}           ${(100 + i).toFixed(1)}             17`;
+          return o.above === true ? [m, '', values] : [`${m}${values}`, ''];
+        }),
+        o.footer ?? '  Climatological information is based on monthly averages for the 30-year period 1981- 2010',
+      ].join('\n');
+    const json = (...texts: string[]) => JSON.stringify({ sheets: texts.map((text, i) => ({ wmo: `9179${i}`, latitude: -21.23, longitude: -175.15, text })) });
+    const twelve = (f: (i: number) => number) => Array.from({ length: 12 }, (_, i) => Math.round(f(i) * 10) / 10);
+    expect(parseTonga(json(sheet(), sheet({ heading: 'MATA’AHO AIRPORT', above: true, footer: 'period 1982-2009' })))).toEqual([
+      { id: 'tms:91790:1981-2010', name: 'FUA’AMOTU AIRPORT', country: 'TO', latitude: -21.23, longitude: -175.15, elevation: null, period: '1981-2010', normals: { tmax: twelve((i) => 29 + i / 10), tmin: twelve((i) => -1 - i / 10), prcp: twelve((i) => 100 + i) } },
+      { id: 'tms:91791:1982-2009', name: 'MATA’AHO AIRPORT', country: 'TO', latitude: -21.23, longitude: -175.15, elevation: null, period: '1982-2009', normals: { tmax: twelve((i) => 29 + i / 10), tmin: twelve((i) => -1 - i / 10), prcp: twelve((i) => 100 + i) } },
+    ]);
+    // A month short, no heading, no period: the sheet can't be read.
+    for (const bad of [sheet({ months: 11 }), sheet().replace('INFORMATION –', 'INFORMATION'), sheet({ footer: '' }).replace(/\(\d{4}- ?\d{4}\)/g, '')]) expect(() => parseTonga(json(bad))).toThrow("a Tonga sheet the compiler can't read: 91790");
+  });
   it("reads the Met Office's averages: each normal from the most recent period that gives every month of it", () => {
     const table = (period: string, rows: string[][], head = ['Month', 'Maximum temperature (°C)', 'Minimum temperature (°C)', 'Days of air frost (days)', 'Sunshine (hours)', 'Rainfall (mm)', 'Days of rainfall ≥1&nbsp;mm (days)']) =>
       `<h3><span>Station:</span> Jersey: Airport, ${period}</h3><p>Climate period: 1991-2020 1981-2010</p><table><thead><tr>${head.map((h) => `<th scope="col">${h}</th>`).join('')}</tr></thead><tbody>${rows.map((r) => `<tr>${r.map((c) => `<td>${c}</td>`).join('')}</tr>`).join('')}</tbody></table>`;
@@ -315,6 +354,8 @@ describe('the station compiler', () => {
     // Tags with attributes, cells padded and wrapped; an empty month is none; text after the last table is no table.
     const dressed = `<p>Station:</p>\n <b>Jersey: Airport</b>, 1981-2010<table class="t"><thead><tr><th scope="col">Month</th><th>Sunshine (hours)</th><th>Rainfall (mm)</th></tr></thead><tbody>${Array.from({ length: 12 }, (_, i) => `<tr class="r"><td>M${i}</td><td class="c"> <span>150</span> </td><td>${i === 3 ? '' : '70'}</td></tr>`).join('')}</tbody></table><p>Station: Jersey: Airport, 1971-2000</p>`;
     expect(parseMetOffice(json(dressed))).toEqual([{ id: 'metoffice:gbwryn0cm:1981-2010', name: 'Jersey: Airport', country: 'JE', latitude: 49.208, longitude: -2.196, elevation: null, period: '1981-2010', normals: { sun: Array(12).fill(150) } }]);
+    // A month of only spaces is none too; a heading's tags are no part of its words.
+    expect(parseMetOffice(json(dressed.replace('<td></td>', '<td> </td>').replace('<th>Sunshine (hours)</th>', '<th><b>Sun</b>shine (hours)</th>')))[0]?.normals).toEqual({ sun: Array(12).fill(150) });
   });
   it("reads the Deutscher Wetterdienst's worldwide normals: each station by its WMO number in the list, once for each period", () => {
     const head = 'Station;Jan;Feb;Mrz;Apr;Mai;Jun;Jul;Aug;Sep;Okt;Nov;Dez';
@@ -363,6 +404,13 @@ describe('the station compiler', () => {
     expect(one([row('Mittl. tägl. Maximum [°C]', twelve('1'), '1961', '19')])).toEqual([]);
     expect(one([row('Mittl. tägl. Maximum [°C]', ['--', ...twelve('1').slice(1)])])).toEqual([]);
     expect(one([row('Mittl. tägl. Maximum [°C]', ['1,2,3', ...twelve('1').slice(1)])])).toEqual([]);
+    // Years that aren't four digits, before or after; a cell more than a row's; a row indented as the text sets it.
+    for (const [from, to] of [['x1961', '1990'], ['19611', '1990'], ['1961', 'x1990'], ['1961', '19901']]) expect(one([row('Mittl. tägl. Maximum [°C]', twelve('1'), from, to)])).toEqual([]);
+    expect(one([`${row('Mittl. tägl. Maximum [°C]', twelve('1'))} 7`])).toEqual([]);
+    expect(one([`   ${row('Mittl. tägl. Maximum [°C]', twelve('1,25'))}`])[0]?.normals).toEqual({ tmax: Array(12).fill(1.3) });
+    // A title of one part, its spaces after it not the name's; an empty title, the WMO number.
+    expect(one([row('Mittl. tägl. Maximum [°C]', twelve('1'))], 'Lonely Island   ')[0]?.name).toBe('Lonely Island');
+    expect(one([row('Mittl. tägl. Maximum [°C]', twelve('1'))], '')[0]?.name).toBe('WMO 45011');
     expect(one([`Mittl. tägl. Maximum [°C]x  ${twelve('1').join('  ')}  1  1961  1990`])).toEqual([]);
     expect(parseKlimatafeln(json([{ text: 'Klimatafel von /\nKoordinaten: geographische Breite: , geographische Länge:' }]))).toEqual([]);
     expect(() => parseKlimatafeln(json([{ url: 'https://www.dwd.de/x.pdf', text: text([]) }]))).toThrow("a Klimatafel the compiler can't read: https://www.dwd.de/x.pdf");
@@ -490,10 +538,10 @@ describe('the station compiler', () => {
     expect(text).toBe(`${JSON.stringify({ params: ['tmax', 'tmin', 'prcp', 'wet', 'sun'], stations: [['9120:00012345:0-20000-0-12345', 'Lyon', null, 'FR', 45, 5, 100, '1991-2020', [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12], null, null, null, null]] })}\n`);
   });
   it('refuses a file that isn\'t the one the register cites', () => {
-    const files = [...Object.values(SOURCES_9120), ...Object.values(SOURCES_6190), ...Object.values(SOURCES_8110), SOURCE_MF, SOURCE_CWA, SOURCE_METOFFICE, ...HAND_READ.map((h) => h.source), SOURCE_DWD, SOURCE_KT, SOURCE_WWIS, SOURCE_GHCND];
+    const files = [...Object.values(SOURCES_9120), ...Object.values(SOURCES_6190), ...Object.values(SOURCES_8110), SOURCE_MF, SOURCE_CWA, SOURCE_METOFFICE, ...HAND_READ.map((h) => h.source), SOURCE_ANGUILLA, SOURCE_TONGA, SOURCE_DWD, SOURCE_KT, SOURCE_WWIS, SOURCE_GHCND];
     for (const target of files) {
       const root = mkdtempSync(join(tmpdir(), 'slate-wmo-'));
-      for (const dir of ['vendor/wmo/9120', 'vendor/wmo/6190', 'vendor/wmo/8110', 'vendor/bws', 'vendor/dhm', 'vendor/rnsm', 'research/sources']) mkdirSync(join(root, dir), { recursive: true });
+      for (const dir of ['vendor/wmo/9120', 'vendor/wmo/6190', 'vendor/wmo/8110', 'vendor/bws', 'vendor/dhm', 'vendor/rnsm', 'vendor/meteocw', 'research/sources']) mkdirSync(join(root, dir), { recursive: true });
       for (const f of files) copyFileSync(join(ROOT, f.file), join(root, f.file));
       writeFileSync(join(root, target.file), target.file.endsWith('.gz') ? gzipSync('changed') : 'changed');
       expect(() => readStations(root, []), target.file).toThrow(`${target.file} is not the file the register cites (sha256 `);

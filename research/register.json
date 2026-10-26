@@ -2575,6 +2575,1338 @@
      "quotes": "https://library.wmo.int/idurl/4/55797"
     }
    ]
+  },
+  {
+   "id": "R-0074",
+   "fact": "world.weather.normals-bonaire",
+   "sought": "Bonaire's mean daily maximum and minimum temperature, precipitation and days of at least 1 mm as normals, which the WMO's sets, the Deutscher Wetterdienst's and the World Weather Information Service don't give",
+   "status": "found",
+   "value": {
+    "file": "vendor/meteocw/CLIM_SUM_Bon.pdf",
+    "sha256": "7d04eb008526c584f9f4f6fda242a9644654d4063e859ba15254b27470d193f4",
+    "period": "1971-2000",
+    "Avg. Maximum Temperature (°C)": [
+     29.5,
+     29.7,
+     30.0,
+     30.4,
+     31.0,
+     31.2,
+     31.1,
+     31.6,
+     31.9,
+     31.7,
+     31.0,
+     30.0
+    ],
+    "Avg. Minimum Temperature (°C)": [
+     24.4,
+     24.5,
+     24.8,
+     25.4,
+     26.2,
+     26.4,
+     26.2,
+     26.5,
+     26.5,
+     26.3,
+     25.7,
+     25.0
+    ],
+    "Avg. Monthly Rainfall (mm)": [
+     44.4,
+     18.3,
+     13.2,
+     13.2,
+     14.8,
+     14.4,
+     36.3,
+     35.0,
+     37.0,
+     67.3,
+     95.9,
+     73.6
+    ],
+    "Avg. Days with Rain ≥ 1,0 mm (days)": [
+     9.2,
+     4.4,
+     2.5,
+     1.8,
+     1.7,
+     2.8,
+     5.6,
+     4.4,
+     5.0,
+     7.6,
+     11.5,
+     10.8
+    ],
+    "check": "Rainfall sums to 463.4 mm; the table's year is 463.3. The table's year for rain days (5.8) is the months' mean, not their sum (67.3). No sunshine row.",
+    "place": "Flamingo Airport, Bonaire, as the table heads it: 12°08'N, 68°17'W (12.1333, -68.2833); no height given."
+   },
+   "sources": [
+    {
+     "kind": "primary",
+     "url": "https://www.meteo.cw/Data_www/Climate/documents/CLIM_SUM_Bon.pdf",
+     "title": "Meteorological Department Curaçao (Meteo Curaçao), Flamingo Airport, Bonaire: Summary of Climatological Normals, Period 1971-2000",
+     "read": "2026-10-26",
+     "said": "Monthly and yearly: average, maximum and minimum air temperature, seawater temperature, air and vapour pressure, humidity, dewpoint, monthly rainfall, highest rainfall in 24 hours, days with rain ≥ 1,0 mm, hours with rainfall, wind speed and gust. Meteo Curaçao's Climatological Summaries page lists yearly summaries and the 1991-2020 averages for Hato, Curaçao only."
+    }
+   ]
+  },
+  {
+   "id": "R-0075",
+   "fact": "world.weather.normals-anguilla",
+   "sought": "Anguilla's precipitation as a normal, which the WMO's sets, the Deutscher Wetterdienst's and the World Weather Information Service don't give",
+   "status": "found",
+   "value": {
+    "file": "research/sources/anguilla-climate.json",
+    "sha256": "ff25c6805b8bde223b8eda33716b52c2a7dd05537a0ae0139ac80085200fdc75",
+    "workbookSha256": "fa1ae5fa63e063ec9f2eb7ceca3a5fabc0635e246c50f531c437e3d3a6d9e9db",
+    "period": "1991-2020",
+    "precipitation (mm), each month's mean over the years given": [
+     54.9,
+     39.2,
+     42.7,
+     60.7,
+     79.8,
+     43.6,
+     84.3,
+     80.4,
+     109.1,
+     145.9,
+     138.7,
+     81.4
+    ],
+    "rule": "Each month's rainfall of 1991 to 2020 in inches as the tables give it ('-' is none), averaged where at least 80% of the thirty years have it (WMO-No. 1203, 4.4.2), by 25.4 mm to the inch.",
+    "notRead": "The temperature tables (3.1.1-T1 to T5) give each month's 'Min.', 'Max.' and 'Mean' without saying what each is; their values aren't the mean daily extremes (February 1993: Min. 17.1 °C, Max. 28.7 °C, Mean 26.2 °C) and some are plainly mistyped (May 1997: Max. 21.1 °C), so they aren't read.",
+    "place": "The tables don't give the airport's place; the station is put at The Valley as the gazetteer places it (18.21704, -63.05783), the airport being at The Valley."
+   },
+   "sources": [
+    {
+     "kind": "primary",
+     "url": "https://statistics.gov.ai/AllDocuments/3.1.1%20Climate%20Statistics.xlsx",
+     "title": "Anguilla Statistics Department, 3.1.1 Climate Statistics (Environment and Multi-Domain Statistics; published 2026-02-02), linked from https://statistics.gov.ai/StatisticsDept/Climate3_1_1",
+     "read": "2026-10-26",
+     "said": "Tables 3.1.1-R1 to R5: Climate Characteristics - Rainfall by Month, 1973 to 2025, in inches, each year's months and a decade's average. Source: Clayton J. Lloyd International Airport ('The Meteorological department within Clayton J. Lloyd International Airport', the Data Notes)."
+    }
+   ]
+  },
+  {
+   "id": "R-0076",
+   "fact": "world.weather.normals-tonga",
+   "sought": "Tonga's mean daily maximum and minimum temperature and precipitation as normals, which the WMO's sets, the Deutscher Wetterdienst's and the World Weather Information Service don't give",
+   "status": "found",
+   "value": {
+    "file": "research/sources/tonga-climate.json",
+    "sha256": "a4a84177d234a31d4350679c88cfbcc42d45ab0f25bab9a63352332a89873b3c",
+    "sheets": {
+     "fuaamotu": {
+      "url": "https://met.gov.to/wp-content/uploads/2023/06/fuaamotu.pdf",
+      "sha256": "79e31e271b34f9f815812820b5ee9508df4718f9479e738acff2fafebb57cf6b",
+      "wmo": "91792",
+      "place": [
+       -21.23,
+       -175.15
+      ]
+     },
+     "nukualofa": {
+      "url": "https://met.gov.to/wp-content/uploads/2023/06/nukualofa.pdf",
+      "sha256": "01e30241d8e1b81aafa664ab3ecaa775416ae757825fffe2f5ee8a44a99f8e39",
+      "wmo": "91789",
+      "place": [
+       -21.13,
+       -175.18
+      ]
+     },
+     "vavau": {
+      "url": "https://met.gov.to/wp-content/uploads/2023/06/vavau.pdf",
+      "sha256": "eebcfbb950c54203694100e027071464110494ea4305e3c1089acd98464604ba",
+      "wmo": "91779",
+      "place": [
+       -18.58,
+       -173.97
+      ]
+     },
+     "haapai": {
+      "url": "https://met.gov.to/wp-content/uploads/2023/06/haapai.pdf",
+      "sha256": "624d2fe0ac7790b694b0c8aabfb19da23f2f89bfd914fef81c06c52e0d00ba45",
+      "wmo": "91784",
+      "place": [
+       -19.8,
+       -174.35
+      ]
+     },
+     "niuafoou": {
+      "url": "https://met.gov.to/wp-content/uploads/2023/06/niuafoou.pdf",
+      "sha256": "3f8e680e6cbcbe19bcf5a59b613fd1ca3e36f48e3445019548a43eec745bb98a",
+      "wmo": "91772",
+      "place": [
+       -15.57,
+       -175.62
+      ]
+     },
+     "niuatoputapu": {
+      "url": "https://met.gov.to/wp-content/uploads/2023/06/niuatoputapu.pdf",
+      "sha256": "445179bc314510c721c84562d443bd3288c13ac5ad649bdf07aeb401d1bd87b4",
+      "wmo": "91776",
+      "place": [
+       -15.95,
+       -173.77
+      ]
+     }
+    },
+    "periods": "1981-2010 for five sheets; Mata'aho (Niuatoputapu) 1982-2009 (its rainfall column 1980-2009).",
+    "notRead": "Each sheet's rain days count days of more than 0.1 mm (1990-2016), not the days of at least 1 mm the engine draws on; no sheet gives sunshine.",
+    "place": "The sheets give no place; each station's is the Bureau of Meteorology's list's for its WMO number."
+   },
+   "sources": [
+    {
+     "kind": "primary",
+     "url": "https://met.gov.to/climate/",
+     "title": "Tonga Meteorological Service, Climate: Climatological Information for Fua'amotu Airport, Nuku'alofa, Lupepau'u Airport (Vava'u), Salote Pilolevu Airport (Ha'apai), Queen Lavinia Airport (Niuafo'ou) and Mata'aho Airport (Niuatoputapu)",
+     "read": "2026-10-26",
+     "said": "Each month's mean daily maximum and minimum temperature (°C), mean total rainfall (mm) and mean number of rain days [>0.1mm]; 'Climatological information is based on monthly averages for the 30-year period 1981- 2010' (Mata'aho: 1982- 2009)."
+    },
+    {
+     "kind": "primary",
+     "url": "https://www.bom.gov.au/cgi-bin/ws/gis/ncc/pidp/picpp?service=WFS&version=1.0.0&request=GetFeature&typeName=PI-STATIONS",
+     "title": "Bureau of Meteorology, Pacific Climate Change Data Portal: its list of Pacific stations (PI-STATIONS)",
+     "read": "2026-10-26",
+     "said": "Each station's national and WMO number, name, country, latitude and longitude: Fua'amotu 91792 (-21.23, -175.15), Nuku'alofa 91789 (-21.13, -175.18), Lupepau'u 91779 (-18.58, -173.97), Haapai 91784 (-19.8, -174.35), Niuafoou 91772 (-15.57, -175.62), Keppel/Mata'aho Airport 91776 (-15.95, -173.77)."
+    }
+   ]
+  },
+  {
+   "id": "R-0077",
+   "fact": "world.weather.blocked.AD",
+   "sought": "Andorra's mean daily maximum and minimum temperature, precipitation, days of at least 1 mm and monthly hours of sunshine, as normals",
+   "status": "blocked",
+   "attempts": [
+    {
+     "method": "institution",
+     "tried": "Servei Meteorològic Nacional d'Andorra, Climatologia and its Climate Bulletins (https://www.meteo.ad/en/climatology), its article La primavera andorrana (https://meteo.ad/images/articles/la_primavera_andorrana.pdf), and Météo-France's list of stations with fiches (stations_99.geojson)",
+     "result": "The bulletins give each month's values as anomalies against the mean; the article gives FEDA's spring means in prose (1945-1984 and 1985-2024); no table of monthly normals. Météo-France lists Ordino (99130003) and Andorre (99130414), neither with a fiche.",
+     "date": "2026-10-26"
+    },
+    {
+     "method": "official-register",
+     "tried": "The WMO's normals as NCEI holds them (1991-2020, 1961-1990, 1981-2010), the Deutscher Wetterdienst's worldwide normals and Klimatafeln, and the World Weather Information Service's cities, for Andorra, and NOAA's GHCN-Daily",
+     "result": "The WMO's 1991-2020 composite files: no station of Andorra; 1961-1990 (ALLNORMS.DAT): no station of Andorra; 1981-2010: no submission from Andorra; the Deutscher Wetterdienst's worldwide normals (1961-1990 and 1991-2020, which hold no count of days): no station of Andorra; its Klimatafeln (each station's table, with the days of at least 1 mm): no station of Andorra; the World Weather Information Service: no station of Andorra. NOAA's GHCN-Daily (by the FIPS code of each station's identifier): no station of Andorra with ten years of maximum temperature or minimum temperature or precipitation in 1991-2020; no daily sunshine.",
+     "date": "2026-10-26"
+    },
+    {
+     "method": "web-search",
+     "tried": "'Andorra normals climàtiques 1991-2020 Andorra la Vella temperatura màxima mínima precipitació mensual estació'",
+     "result": "Travel sites using 2008-2020 or a station in France (Carcassonne), the World Bank's CRU grid, and a 2023 report citing FEDA's 1981-2010 reference without its table; no normal of the service's.",
+     "date": "2026-10-26"
+    },
+    {
+     "method": "trade-press",
+     "tried": "'Andorra OR \"San Marino\" OR Vatican \"media climatica\" OR \"mitjana\" temperatura precipitazioni osservatorio meteorologico notizie normale 1991-2020'",
+     "result": "No press quoting a normal of the three; travel sites using 2008-2020 for Andorra la Vella, 1991-2019 for San Marino, and an Italian station (Frontone) for San Marino's 'normals'.",
+     "date": "2026-10-26"
+    },
+    {
+     "method": "archive",
+     "tried": "Web.archive.org and archive.ph for the service's Climatology pages (https://www.meteo.ad/en/climatology)",
+     "result": "Neither could be read from this environment: web.archive.org's connection was reset, archive.ph answered 429. To be tried again where they can be reached.",
+     "date": "2026-10-26"
+    }
+   ],
+   "notModeled": "weather.borrowed"
+  },
+  {
+   "id": "R-0078",
+   "fact": "world.weather.blocked.AI",
+   "sought": "Anguilla's mean daily maximum and minimum temperature, days of at least 1 mm and monthly hours of sunshine, as normals",
+   "status": "blocked",
+   "attempts": [
+    {
+     "method": "institution",
+     "tried": "The Anguilla Statistics Department's 3.1.1 Climate Statistics (https://statistics.gov.ai/AllDocuments/3.1.1%20Climate%20Statistics.xlsx, from the Meteorological Office at Clayton J. Lloyd International Airport) and the Caribbean Institute for Meteorology and Hydrology's station page for Anguilla (https://rcc.cimh.edu.bb/caribbean-climatology/stations/anguilla/anguilla-rainfall/)",
+     "result": "The workbook gives each year's monthly rainfall (read, R-0075) and temperatures headed only 'Min.', 'Max.' and 'Mean', which aren't the mean daily extremes (February 1993: 17.1, 28.7 and 26.2 °C); no rain days, no sunshine. CIMH's page gives yearly rainfall statistics of 1993-2014 and charts.",
+     "date": "2026-10-26"
+    },
+    {
+     "method": "official-register",
+     "tried": "The WMO's normals as NCEI holds them (1991-2020, 1961-1990, 1981-2010), the Deutscher Wetterdienst's worldwide normals and Klimatafeln, and the World Weather Information Service's cities, for Anguilla, and NOAA's GHCN-Daily",
+     "result": "The WMO's 1991-2020 composite files: no station of Anguilla; 1961-1990 (ALLNORMS.DAT): no station of Anguilla; 1981-2010: no submission from Anguilla; the Deutscher Wetterdienst's worldwide normals (1961-1990 and 1991-2020, which hold no count of days): no station of Anguilla; its Klimatafeln (each station's table, with the days of at least 1 mm): no station of Anguilla; the World Weather Information Service: no station of Anguilla. NOAA's GHCN-Daily (by the FIPS code of each station's identifier): no station of Anguilla with ten years of maximum temperature or minimum temperature or precipitation in 1991-2020; no daily sunshine.",
+     "date": "2026-10-26"
+    },
+    {
+     "method": "web-search",
+     "tried": "'Anguilla Meteorological Office climate normals monthly rainfall temperature Clayton J Lloyd airport climatology'",
+     "result": "The Statistics Department's table (read) and commercial sites; no normal of temperature, rain days or sunshine.",
+     "date": "2026-10-26"
+    },
+    {
+     "method": "trade-press",
+     "tried": "'\"meteorological\" \"30-year average\" rainfall OR \"average rainfall\" Montserrat OR Anguilla OR \"Turks and Caicos\" OR \"St Vincent\" OR \"British Virgin Islands\" OR Haiti news met office says'",
+     "result": "No press quoting a service's normal; CIMH's station summary for Anguilla (1993-2014), a Turks and Caicos portal's modelled WorldClim layer and an old country study.",
+     "date": "2026-10-26"
+    },
+    {
+     "method": "archive",
+     "tried": "Web.archive.org and archive.ph for the Statistics Department's climate page (https://statistics.gov.ai/StatisticsDept/Climate3_1_1)",
+     "result": "Neither could be read from this environment: web.archive.org's connection was reset, archive.ph answered 429. To be tried again where they can be reached.",
+     "date": "2026-10-26"
+    }
+   ],
+   "notModeled": "weather.borrowed-part"
+  },
+  {
+   "id": "R-0079",
+   "fact": "world.weather.blocked.BI",
+   "sought": "Burundi's days of at least 1 mm, as a normal",
+   "status": "blocked",
+   "attempts": [
+    {
+     "method": "institution",
+     "tried": "IGEBU, the Institut Géographique du Burundi's hydrometeorological service: its Climat page and Bulletin Climatologique Annuel (https://www.igebu.bi/Services/climat/, https://www.igebu.bi/produits/bulletin-climatologique-annuel/)",
+     "result": "The pages describe ten-day, monthly and annual bulletins (with anomalies against normals); the annual bulletin's page lists no bulletin; no table of normals.",
+     "date": "2026-10-26"
+    },
+    {
+     "method": "official-register",
+     "tried": "The WMO's normals as NCEI holds them (1991-2020, 1961-1990, 1981-2010), the Deutscher Wetterdienst's worldwide normals and Klimatafeln, and the World Weather Information Service's cities, for Burundi, and NOAA's GHCN-Daily",
+     "result": "The WMO's 1991-2020 composite files: no station of Burundi; 1961-1990 (ALLNORMS.DAT): no station of Burundi; 1981-2010: no submission from Burundi; the Deutscher Wetterdienst's worldwide normals (1961-1990 and 1991-2020, which hold no count of days): no station of Burundi; its Klimatafeln (each station's table, with the days of at least 1 mm): 1 station (mean daily maximum 1, mean daily minimum 1, precipitation 1, sunshine 1), none with days of at least 1 mm; the World Weather Information Service: 7 cities (mean daily maximum 7, mean daily minimum 7, precipitation 7), none with days of at least 1 mm. NOAA's GHCN-Daily (by the FIPS code of each station's identifier): no station of Burundi with ten years of precipitation in 1991-2020; no daily sunshine.",
+     "date": "2026-10-26"
+    },
+    {
+     "method": "web-search",
+     "tried": "'Kuwait OR Lebanon OR Djibouti OR Burundi \"number of rainy days\" OR \"jours de pluie\" monthly normal meteorological department 1 mm'",
+     "result": "For Burundi, a study counting rain days of more than 0 mm from IGEBU's daily data; no normal of days of at least 1 mm.",
+     "date": "2026-10-26"
+    },
+    {
+     "method": "trade-press",
+     "tried": "'\"rainy days\" OR \"sunshine hours\" average meteorological department says Kuwait Times OR \"L'Orient\" OR \"Mmegi\" OR \"Times of Eswatini\" OR \"Lesotho Times\" OR \"La Nation\" Djibouti OR \"Al-Watwan\" OR Iwacu Burundi'",
+     "result": "No press quoting a service's rain-day or sunshine normal; Kuwait Times' reports of single rain events, and modelled averages.",
+     "date": "2026-10-26"
+    },
+    {
+     "method": "archive",
+     "tried": "Web.archive.org and archive.ph for IGEBU's Climat page (https://www.igebu.bi/Services/climat/)",
+     "result": "Neither could be read from this environment: web.archive.org's connection was reset, archive.ph answered 429. To be tried again where they can be reached.",
+     "date": "2026-10-26"
+    }
+   ],
+   "notModeled": "weather.borrowed-part"
+  },
+  {
+   "id": "R-0080",
+   "fact": "world.weather.blocked.BQ",
+   "sought": "The Caribbean Netherlands' monthly hours of sunshine, as a normal",
+   "status": "blocked",
+   "attempts": [
+    {
+     "method": "institution",
+     "tried": "Meteo Curaçao's Climatological Summaries (https://www.meteo.cw/climate_reports.php) and its Summary of Climatological Normals for Flamingo Airport, Bonaire, 1971-2000 (https://www.meteo.cw/Data_www/Climate/documents/CLIM_SUM_Bon.pdf)",
+     "result": "Bonaire's summary gives temperatures, rainfall and rain days (read, R-0074) but no sunshine row; the 1991-2020 averages with sunshine are Hato's, Curaçao's.",
+     "date": "2026-10-26"
+    },
+    {
+     "method": "official-register",
+     "tried": "The WMO's normals as NCEI holds them (1991-2020, 1961-1990, 1981-2010), the Deutscher Wetterdienst's worldwide normals and Klimatafeln, and the World Weather Information Service's cities, for the Caribbean Netherlands, and NOAA's GHCN-Daily",
+     "result": "The WMO's 1991-2020 composite files: no station of the Caribbean Netherlands; 1961-1990 (ALLNORMS.DAT): no station of the Caribbean Netherlands; 1981-2010: no submission from the Caribbean Netherlands; the Deutscher Wetterdienst's worldwide normals (1961-1990 and 1991-2020, which hold no count of days): no station of the Caribbean Netherlands; its Klimatafeln (each station's table, with the days of at least 1 mm): no station of the Caribbean Netherlands; the World Weather Information Service: no station of the Caribbean Netherlands. NOAA's GHCN-Daily holds no daily sunshine.",
+     "date": "2026-10-26"
+    },
+    {
+     "method": "web-search",
+     "tried": "'meteo.cw Bonaire Flamingo Airport climatological summary 1991-2020 normals sunshine rain days'",
+     "result": "Bonaire's 1971-2000 summary (read) and Curaçao's 1991-2020 averages; no Bonaire sunshine.",
+     "date": "2026-10-26"
+    },
+    {
+     "method": "trade-press",
+     "tried": "'\"meteorological\" \"30-year average\" rainfall OR \"average rainfall\" Montserrat OR Anguilla OR \"Turks and Caicos\" OR \"St Vincent\" OR \"British Virgin Islands\" OR Haiti news met office says'",
+     "result": "No press quoting a service's normal; CIMH's station summary for Anguilla (1993-2014), a Turks and Caicos portal's modelled WorldClim layer and an old country study.",
+     "date": "2026-10-26"
+    },
+    {
+     "method": "archive",
+     "tried": "Web.archive.org and archive.ph for Meteo Curaçao's climate page (https://www.meteo.cw/climate.php)",
+     "result": "Neither could be read from this environment: web.archive.org's connection was reset, archive.ph answered 429. To be tried again where they can be reached.",
+     "date": "2026-10-26"
+    }
+   ],
+   "notModeled": "weather.borrowed-part"
+  },
+  {
+   "id": "R-0081",
+   "fact": "world.weather.blocked.BW",
+   "sought": "Botswana's days of at least 1 mm, as a normal",
+   "status": "blocked",
+   "attempts": [
+    {
+     "method": "institution",
+     "tried": "Botswana's Department of Meteorological Services (https://www.gov.bw/environmental-management/request-climatological-data; its own domain www.dms.gov.bw doesn't resolve) and Statistics Botswana's Environment Statistics Climate Digest (September 2023)",
+     "result": "The department gives climatological data only on request, by a form; the Digest gives a season's monthly temperatures, rainfall, humidity and wind, with no count of rain days and no normal.",
+     "date": "2026-10-26"
+    },
+    {
+     "method": "official-register",
+     "tried": "The WMO's normals as NCEI holds them (1991-2020, 1961-1990, 1981-2010), the Deutscher Wetterdienst's worldwide normals and Klimatafeln, and the World Weather Information Service's cities, for Botswana, and NOAA's GHCN-Daily",
+     "result": "The WMO's 1991-2020 composite files: no station of Botswana; 1961-1990 (ALLNORMS.DAT): no station of Botswana; 1981-2010: no submission from Botswana; the Deutscher Wetterdienst's worldwide normals (1961-1990 and 1991-2020, which hold no count of days): 2 stations (precipitation 2), none with days of at least 1 mm; its Klimatafeln (each station's table, with the days of at least 1 mm): 1 station (mean daily maximum 1, mean daily minimum 1, sunshine 1), none with days of at least 1 mm; the World Weather Information Service: 6 cities (mean daily maximum 6, mean daily minimum 6, precipitation 6), none with days of at least 1 mm. NOAA's GHCN-Daily records averaged by WMO-No. 1203's rules (R-0073): five stations (Maun, Ghanzi, Francistown, Kasane, Pandamatenga), whose precipitation records are too broken for an average of every month (no period of ten years whose every month has valid values in 80% of its years); no daily sunshine.",
+     "date": "2026-10-26"
+    },
+    {
+     "method": "web-search",
+     "tried": "'Botswana Department of Meteorological Services official website climate data; Lesotho Meteorological Services website climate normals'",
+     "result": "The data-request page and Statistics Botswana's digests; no normal of days of at least 1 mm.",
+     "date": "2026-10-26"
+    },
+    {
+     "method": "trade-press",
+     "tried": "'\"rainy days\" OR \"sunshine hours\" average meteorological department says Kuwait Times OR \"L'Orient\" OR \"Mmegi\" OR \"Times of Eswatini\" OR \"Lesotho Times\" OR \"La Nation\" Djibouti OR \"Al-Watwan\" OR Iwacu Burundi'",
+     "result": "No press quoting a service's rain-day or sunshine normal; Kuwait Times' reports of single rain events, and modelled averages.",
+     "date": "2026-10-26"
+    },
+    {
+     "method": "archive",
+     "tried": "Web.archive.org and archive.ph for the department's site (https://www.dms.gov.bw/)",
+     "result": "Neither could be read from this environment: web.archive.org's connection was reset, archive.ph answered 429. To be tried again where they can be reached.",
+     "date": "2026-10-26"
+    }
+   ],
+   "notModeled": "weather.borrowed-part"
+  },
+  {
+   "id": "R-0082",
+   "fact": "world.weather.blocked.DJ",
+   "sought": "Djibouti's days of at least 1 mm, as a normal",
+   "status": "blocked",
+   "attempts": [
+    {
+     "method": "institution",
+     "tried": "Météo Djibouti, the national meteorological service (https://www.meteo.dj/)",
+     "result": "Its domain doesn't resolve from this environment; no other site of the service found. To be tried again where it can be.",
+     "date": "2026-10-26"
+    },
+    {
+     "method": "official-register",
+     "tried": "The WMO's normals as NCEI holds them (1991-2020, 1961-1990, 1981-2010), the Deutscher Wetterdienst's worldwide normals and Klimatafeln, and the World Weather Information Service's cities, for Djibouti, and NOAA's GHCN-Daily",
+     "result": "The WMO's 1991-2020 composite files: no station of Djibouti; 1961-1990 (ALLNORMS.DAT): 1 station (mean daily maximum 1, mean daily minimum 1, precipitation 1, sunshine 1), none with days of at least 1 mm; 1981-2010: no submission from Djibouti; the Deutscher Wetterdienst's worldwide normals (1961-1990 and 1991-2020, which hold no count of days): 1 station (mean daily maximum 1, mean daily minimum 1, precipitation 1, sunshine 1), none with days of at least 1 mm; its Klimatafeln (each station's table, with the days of at least 1 mm): 1 station (mean daily maximum 1, mean daily minimum 1, precipitation 1, sunshine 1), none with days of at least 1 mm; the World Weather Information Service: 1 city (mean daily maximum 1, mean daily minimum 1, precipitation 1), none with days of at least 1 mm. NOAA's GHCN-Daily (by the FIPS code of each station's identifier): no station of Djibouti with ten years of precipitation in 1991-2020; no daily sunshine.",
+     "date": "2026-10-26"
+    },
+    {
+     "method": "web-search",
+     "tried": "'Météo Djibouti site officiel normales climatologiques; ANACM Comores météorologie site climat normales Hahaya'",
+     "result": "The World Bank's CRU grid and commercial sites; no normal of the service's.",
+     "date": "2026-10-26"
+    },
+    {
+     "method": "trade-press",
+     "tried": "'\"rainy days\" OR \"sunshine hours\" average meteorological department says Kuwait Times OR \"L'Orient\" OR \"Mmegi\" OR \"Times of Eswatini\" OR \"Lesotho Times\" OR \"La Nation\" Djibouti OR \"Al-Watwan\" OR Iwacu Burundi'",
+     "result": "No press quoting a service's rain-day or sunshine normal; Kuwait Times' reports of single rain events, and modelled averages.",
+     "date": "2026-10-26"
+    },
+    {
+     "method": "archive",
+     "tried": "Web.archive.org and archive.ph for Météo Djibouti's site (https://www.meteo.dj/)",
+     "result": "Neither could be read from this environment: web.archive.org's connection was reset, archive.ph answered 429. To be tried again where they can be reached.",
+     "date": "2026-10-26"
+    }
+   ],
+   "notModeled": "weather.borrowed-part"
+  },
+  {
+   "id": "R-0083",
+   "fact": "world.weather.blocked.FK",
+   "sought": "The Falkland Islands' mean daily maximum and minimum temperature, days of at least 1 mm and monthly hours of sunshine, as normals",
+   "status": "blocked",
+   "attempts": [
+    {
+     "method": "institution",
+     "tried": "The Falkland Islands National Archives' Meteorological Records (https://www.nationalarchives.gov.fk/) and the Met Office's pages for Mount Pleasant (https://weather.metoffice.gov.uk/forecast/4wy3jy25e)",
+     "result": "The archives hold single years' tables (the British Antarctic Meteorological Service's of 1963, Stanley's summary of 1924) and a 1919 study; the Met Office's page is a forecast. No normal of temperature, rain days or sunshine.",
+     "date": "2026-10-26"
+    },
+    {
+     "method": "official-register",
+     "tried": "The WMO's normals as NCEI holds them (1991-2020, 1961-1990, 1981-2010), the Deutscher Wetterdienst's worldwide normals and Klimatafeln, and the World Weather Information Service's cities, for the Falkland Islands, and NOAA's GHCN-Daily",
+     "result": "The WMO's 1991-2020 composite files: no station of the Falkland Islands; 1961-1990 (ALLNORMS.DAT): no station of the Falkland Islands; 1981-2010: no submission from the Falkland Islands; the Deutscher Wetterdienst's worldwide normals (1961-1990 and 1991-2020, which hold no count of days): 1 station (precipitation 1), none with mean daily maximum or mean daily minimum or days of at least 1 mm or sunshine; its Klimatafeln (each station's table, with the days of at least 1 mm): no station of the Falkland Islands; the World Weather Information Service: no station of the Falkland Islands. NOAA's GHCN-Daily records averaged by WMO-No. 1203's rules (R-0073): Mount Pleasant, whose temperature and precipitation records are too broken for an average of every month (no period of ten years whose every month has valid values in 80% of its years); no daily sunshine.",
+     "date": "2026-10-26"
+    },
+    {
+     "method": "web-search",
+     "tried": "'Falkland Islands Mount Pleasant climate averages 1991-2020 mean maximum minimum temperature rain days Met Office Falklands'",
+     "result": "A Wikipedia table for Mount Pleasant of 1999-2019 and commercial sites; no Met Office normal.",
+     "date": "2026-10-26"
+    },
+    {
+     "method": "trade-press",
+     "tried": "'Falklands OR \"South Georgia\" OR \"Diego Garcia\" OR Pitcairn weather station \"long-term average\" temperature rainfall sunshine Penguin News OR \"Falklands Radio\"'",
+     "result": "No press quoting a normal; travel sites for Stanley, disagreeing, a 1919 study of Stanley's records, and nothing for South Georgia, Diego Garcia or Pitcairn.",
+     "date": "2026-10-26"
+    },
+    {
+     "method": "archive",
+     "tried": "Web.archive.org and archive.ph for the National Archives' site (https://www.nationalarchives.gov.fk/)",
+     "result": "Neither could be read from this environment: web.archive.org's connection was reset, archive.ph answered 429. To be tried again where they can be reached.",
+     "date": "2026-10-26"
+    }
+   ],
+   "notModeled": "weather.borrowed-part"
+  },
+  {
+   "id": "R-0084",
+   "fact": "world.weather.blocked.GS",
+   "sought": "South Georgia and the South Sandwich Islands' mean daily maximum and minimum temperature, days of at least 1 mm and monthly hours of sunshine, as normals",
+   "status": "blocked",
+   "attempts": [
+    {
+     "method": "institution",
+     "tried": "The Government of South Georgia and the South Sandwich Islands (https://www.gov.gs/) and the British Antarctic Survey's King Edward Point research station and data pages (https://www.bas.ac.uk/polar-operations/sites-and-facilities/facility/king-edward-point/)",
+     "result": "Neither publishes a climate normal of the station; the Survey's data pages are its data catalogue.",
+     "date": "2026-10-26"
+    },
+    {
+     "method": "official-register",
+     "tried": "The WMO's normals as NCEI holds them (1991-2020, 1961-1990, 1981-2010), the Deutscher Wetterdienst's worldwide normals and Klimatafeln, and the World Weather Information Service's cities, for South Georgia and the South Sandwich Islands, and NOAA's GHCN-Daily",
+     "result": "The WMO's 1991-2020 composite files: no station of South Georgia and the South Sandwich Islands; 1961-1990 (ALLNORMS.DAT): no station of South Georgia and the South Sandwich Islands; 1981-2010: no submission from South Georgia and the South Sandwich Islands; the Deutscher Wetterdienst's worldwide normals (1961-1990 and 1991-2020, which hold no count of days): 1 station (precipitation 1), none with mean daily maximum or mean daily minimum or days of at least 1 mm or sunshine; its Klimatafeln (each station's table, with the days of at least 1 mm): no station of South Georgia and the South Sandwich Islands; the World Weather Information Service: no station of South Georgia and the South Sandwich Islands. NOAA's GHCN-Daily records averaged by WMO-No. 1203's rules (R-0073): Grytviken, whose temperature records are too broken for an average of every month (no period of ten years whose every month has valid values in 80% of its years); no daily sunshine.",
+     "date": "2026-10-26"
+    },
+    {
+     "method": "web-search",
+     "tried": "'King Edward Point South Georgia climate monthly mean maximum minimum temperature rain days sunshine British Antarctic Survey station'",
+     "result": "A Wikipedia table of 1901-1950 (sunshine 1931-1960) from secondary sources, aggregator sites and a study of föhn winds; no normal of a service's for a recent period.",
+     "date": "2026-10-26"
+    },
+    {
+     "method": "trade-press",
+     "tried": "'Falklands OR \"South Georgia\" OR \"Diego Garcia\" OR Pitcairn weather station \"long-term average\" temperature rainfall sunshine Penguin News OR \"Falklands Radio\"'",
+     "result": "No press quoting a normal; travel sites for Stanley, disagreeing, a 1919 study of Stanley's records, and nothing for South Georgia, Diego Garcia or Pitcairn.",
+     "date": "2026-10-26"
+    },
+    {
+     "method": "archive",
+     "tried": "Web.archive.org and archive.ph for the Survey's King Edward Point page (https://www.bas.ac.uk/polar-operations/sites-and-facilities/facility/king-edward-point/)",
+     "result": "Neither could be read from this environment: web.archive.org's connection was reset, archive.ph answered 429. To be tried again where they can be reached.",
+     "date": "2026-10-26"
+    }
+   ],
+   "notModeled": "weather.borrowed-part"
+  },
+  {
+   "id": "R-0085",
+   "fact": "world.weather.blocked.HT",
+   "sought": "Haiti's mean daily maximum and minimum temperature, precipitation, days of at least 1 mm and monthly hours of sunshine, as normals",
+   "status": "blocked",
+   "attempts": [
+    {
+     "method": "institution",
+     "tried": "Unité Hydrométéorologique d'Haïti, Météo Haïti (https://www.meteo-haiti.gouv.ht/)",
+     "result": "The site gives the day's bulletin (a Word file); no climatology and no normals.",
+     "date": "2026-10-26"
+    },
+    {
+     "method": "official-register",
+     "tried": "The WMO's normals as NCEI holds them (1991-2020, 1961-1990, 1981-2010), the Deutscher Wetterdienst's worldwide normals and Klimatafeln, and the World Weather Information Service's cities, for Haiti, and NOAA's GHCN-Daily",
+     "result": "The WMO's 1991-2020 composite files: no station of Haiti; 1961-1990 (ALLNORMS.DAT): no station of Haiti; 1981-2010: no submission from Haiti; the Deutscher Wetterdienst's worldwide normals (1961-1990 and 1991-2020, which hold no count of days): no station of Haiti; its Klimatafeln (each station's table, with the days of at least 1 mm): no station of Haiti; the World Weather Information Service: 1 city (nothing complete), none with mean daily maximum or mean daily minimum or precipitation or days of at least 1 mm or sunshine. NOAA's GHCN-Daily (by the FIPS code of each station's identifier): no station of Haiti with ten years of maximum temperature or minimum temperature or precipitation in 1991-2020; no daily sunshine.",
+     "date": "2026-10-26"
+    },
+    {
+     "method": "web-search",
+     "tried": "'Haïti Unité Hydrométéorologique normales climatiques Port-au-Prince températures précipitations mensuelles moyennes'",
+     "result": "A 2019 project report on rescuing UHM's climate data and commercial sites; no normal of UHM's.",
+     "date": "2026-10-26"
+    },
+    {
+     "method": "trade-press",
+     "tried": "'\"meteorological\" \"30-year average\" rainfall OR \"average rainfall\" Montserrat OR Anguilla OR \"Turks and Caicos\" OR \"St Vincent\" OR \"British Virgin Islands\" OR Haiti news met office says'",
+     "result": "No press quoting a service's normal; CIMH's station summary for Anguilla (1993-2014), a Turks and Caicos portal's modelled WorldClim layer and an old country study.",
+     "date": "2026-10-26"
+    },
+    {
+     "method": "archive",
+     "tried": "Web.archive.org and archive.ph for Météo Haïti's site (https://www.meteo-haiti.gouv.ht/)",
+     "result": "Neither could be read from this environment: web.archive.org's connection was reset, archive.ph answered 429. To be tried again where they can be reached.",
+     "date": "2026-10-26"
+    }
+   ],
+   "notModeled": "weather.borrowed"
+  },
+  {
+   "id": "R-0086",
+   "fact": "world.weather.blocked.IO",
+   "sought": "The British Indian Ocean Territory's monthly hours of sunshine, as a normal",
+   "status": "blocked",
+   "attempts": [
+    {
+     "method": "institution",
+     "tried": "The British Indian Ocean Territory Administration (https://biot.gov.io/)",
+     "result": "No meteorological service or climate statistics; Diego Garcia's station is a military one with no published normal.",
+     "date": "2026-10-26"
+    },
+    {
+     "method": "official-register",
+     "tried": "The WMO's normals as NCEI holds them (1991-2020, 1961-1990, 1981-2010), the Deutscher Wetterdienst's worldwide normals and Klimatafeln, and the World Weather Information Service's cities, for the British Indian Ocean Territory, and NOAA's GHCN-Daily",
+     "result": "The WMO's 1991-2020 composite files: no station of the British Indian Ocean Territory; 1961-1990 (ALLNORMS.DAT): no station of the British Indian Ocean Territory; 1981-2010: no submission from the British Indian Ocean Territory; the Deutscher Wetterdienst's worldwide normals (1961-1990 and 1991-2020, which hold no count of days): no station of the British Indian Ocean Territory; its Klimatafeln (each station's table, with the days of at least 1 mm): 1 station (mean daily maximum 1, mean daily minimum 1, precipitation 1, days of at least 1 mm 1), none with sunshine; the World Weather Information Service: no station of the British Indian Ocean Territory. NOAA's GHCN-Daily holds no daily sunshine.",
+     "date": "2026-10-26"
+    },
+    {
+     "method": "web-search",
+     "tried": "'Diego Garcia sunshine hours monthly climate normal British Indian Ocean Territory weather station'",
+     "result": "Day length (12 hours) and commercial sites with eight years of readings; no sunshine normal.",
+     "date": "2026-10-26"
+    },
+    {
+     "method": "trade-press",
+     "tried": "'Falklands OR \"South Georgia\" OR \"Diego Garcia\" OR Pitcairn weather station \"long-term average\" temperature rainfall sunshine Penguin News OR \"Falklands Radio\"'",
+     "result": "No press quoting a normal; travel sites for Stanley, disagreeing, a 1919 study of Stanley's records, and nothing for South Georgia, Diego Garcia or Pitcairn.",
+     "date": "2026-10-26"
+    },
+    {
+     "method": "archive",
+     "tried": "Web.archive.org and archive.ph for the Administration's site (https://biot.gov.io/)",
+     "result": "Neither could be read from this environment: web.archive.org's connection was reset, archive.ph answered 429. To be tried again where they can be reached.",
+     "date": "2026-10-26"
+    }
+   ],
+   "notModeled": "weather.borrowed-part"
+  },
+  {
+   "id": "R-0087",
+   "fact": "world.weather.blocked.KM",
+   "sought": "The Comoros' days of at least 1 mm and monthly hours of sunshine, as normals",
+   "status": "blocked",
+   "attempts": [
+    {
+     "method": "institution",
+     "tried": "ANACM, the Agence Nationale de l'Aviation Civile et de la Météorologie of the Comoros (https://www.anacm-comores.com/)",
+     "result": "Its domain doesn't resolve from this environment (Wikipedia's link to it is an archived one of 2012); no other site of the agency found.",
+     "date": "2026-10-26"
+    },
+    {
+     "method": "official-register",
+     "tried": "The WMO's normals as NCEI holds them (1991-2020, 1961-1990, 1981-2010), the Deutscher Wetterdienst's worldwide normals and Klimatafeln, and the World Weather Information Service's cities, for the Comoros, and NOAA's GHCN-Daily",
+     "result": "The WMO's 1991-2020 composite files: no station of the Comoros; 1961-1990 (ALLNORMS.DAT): no station of the Comoros; 1981-2010: no submission from the Comoros; the Deutscher Wetterdienst's worldwide normals (1961-1990 and 1991-2020, which hold no count of days): no station of the Comoros; its Klimatafeln (each station's table, with the days of at least 1 mm): no station of the Comoros; the World Weather Information Service: 1 city (mean daily maximum 1, mean daily minimum 1, precipitation 1), none with days of at least 1 mm or sunshine. NOAA's GHCN-Daily (by the FIPS code of each station's identifier): no station of the Comoros with ten years of precipitation in 1991-2020; no daily sunshine.",
+     "date": "2026-10-26"
+    },
+    {
+     "method": "web-search",
+     "tried": "'Lesotho Maseru OR Eswatini Manzini OR Comoros Moroni sunshine hours rain days 1 mm monthly normal meteorological service'",
+     "result": "Modelled and aggregated sites (climate-data.org, climate-zone), disagreeing; no normal of the agency's.",
+     "date": "2026-10-26"
+    },
+    {
+     "method": "trade-press",
+     "tried": "'\"rainy days\" OR \"sunshine hours\" average meteorological department says Kuwait Times OR \"L'Orient\" OR \"Mmegi\" OR \"Times of Eswatini\" OR \"Lesotho Times\" OR \"La Nation\" Djibouti OR \"Al-Watwan\" OR Iwacu Burundi'",
+     "result": "No press quoting a service's rain-day or sunshine normal; Kuwait Times' reports of single rain events, and modelled averages.",
+     "date": "2026-10-26"
+    },
+    {
+     "method": "archive",
+     "tried": "Web.archive.org and archive.ph for ANACM's site (https://www.anacm-comores.com/)",
+     "result": "Neither could be read from this environment: web.archive.org's connection was reset, archive.ph answered 429. To be tried again where they can be reached.",
+     "date": "2026-10-26"
+    }
+   ],
+   "notModeled": "weather.borrowed-part"
+  },
+  {
+   "id": "R-0088",
+   "fact": "world.weather.blocked.KW",
+   "sought": "Kuwait's days of at least 1 mm, as a normal",
+   "status": "blocked",
+   "attempts": [
+    {
+     "method": "institution",
+     "tried": "The Kuwait Meteorological Center's Climate pages (https://www.met.gov.kw/Climate/climate.php, climate_stat.php, climate_hist.php)",
+     "result": "An annual rainfall report (2017-2023: each year's total, wettest month and day), daily and monthly statistics of temperature, humidity and wind, and each station's records; no count of rain days and no normal.",
+     "date": "2026-10-26"
+    },
+    {
+     "method": "official-register",
+     "tried": "The WMO's normals as NCEI holds them (1991-2020, 1961-1990, 1981-2010), the Deutscher Wetterdienst's worldwide normals and Klimatafeln, and the World Weather Information Service's cities, for Kuwait, and NOAA's GHCN-Daily",
+     "result": "The WMO's 1991-2020 composite files: no station of Kuwait; 1961-1990 (ALLNORMS.DAT): 1 station (mean daily maximum 1, mean daily minimum 1, precipitation 1, sunshine 1), none with days of at least 1 mm; 1981-2010: no submission from Kuwait; the Deutscher Wetterdienst's worldwide normals (1961-1990 and 1991-2020, which hold no count of days): 1 station (mean daily maximum 1, mean daily minimum 1, precipitation 1, sunshine 1), none with days of at least 1 mm; its Klimatafeln (each station's table, with the days of at least 1 mm): 1 station (mean daily maximum 1, mean daily minimum 1, precipitation 1, sunshine 1), none with days of at least 1 mm; the World Weather Information Service: 2 cities (mean daily maximum 2, mean daily minimum 2, precipitation 2), none with days of at least 1 mm. NOAA's GHCN-Daily records averaged by WMO-No. 1203's rules (R-0073): four stations (Kuwait International, Salmy, South Dolphin, Jahra), whose precipitation records are too broken for an average of every month (no period of ten years whose every month has valid values in 80% of its years); no daily sunshine.",
+     "date": "2026-10-26"
+    },
+    {
+     "method": "web-search",
+     "tried": "'Kuwait OR Lebanon OR Djibouti OR Burundi \"number of rainy days\" OR \"jours de pluie\" monthly normal meteorological department 1 mm'",
+     "result": "A commercial site's eight years of rain days for Kuwait International (threshold unstated); no normal of the Center's.",
+     "date": "2026-10-26"
+    },
+    {
+     "method": "trade-press",
+     "tried": "'\"rainy days\" OR \"sunshine hours\" average meteorological department says Kuwait Times OR \"L'Orient\" OR \"Mmegi\" OR \"Times of Eswatini\" OR \"Lesotho Times\" OR \"La Nation\" Djibouti OR \"Al-Watwan\" OR Iwacu Burundi'",
+     "result": "No press quoting a service's rain-day or sunshine normal; Kuwait Times' reports of single rain events, and modelled averages.",
+     "date": "2026-10-26"
+    },
+    {
+     "method": "archive",
+     "tried": "Web.archive.org and archive.ph for the Center's Climate page (https://www.met.gov.kw/Climate/climate.php)",
+     "result": "Neither could be read from this environment: web.archive.org's connection was reset, archive.ph answered 429. To be tried again where they can be reached.",
+     "date": "2026-10-26"
+    }
+   ],
+   "notModeled": "weather.borrowed-part"
+  },
+  {
+   "id": "R-0089",
+   "fact": "world.weather.blocked.LB",
+   "sought": "Lebanon's days of at least 1 mm, as a normal",
+   "status": "blocked",
+   "attempts": [
+    {
+     "method": "institution",
+     "tried": "The Lebanese Meteorological Services, Directorate of Environment and Meteorology (https://www.meteo.gov.lb/)",
+     "result": "The site gives forecasts and a sentence of the month's average temperatures for three towns; no table of normals and no count of rain days.",
+     "date": "2026-10-26"
+    },
+    {
+     "method": "official-register",
+     "tried": "The WMO's normals as NCEI holds them (1991-2020, 1961-1990, 1981-2010), the Deutscher Wetterdienst's worldwide normals and Klimatafeln, and the World Weather Information Service's cities, for Lebanon, and NOAA's GHCN-Daily",
+     "result": "The WMO's 1991-2020 composite files: no station of Lebanon; 1961-1990 (ALLNORMS.DAT): 1 station (precipitation 1), none with days of at least 1 mm; 1981-2010: no submission from Lebanon; the Deutscher Wetterdienst's worldwide normals (1961-1990 and 1991-2020, which hold no count of days): 3 stations (precipitation 3, sunshine 1), none with days of at least 1 mm; its Klimatafeln (each station's table, with the days of at least 1 mm): 1 station (mean daily maximum 1, mean daily minimum 1, precipitation 1, sunshine 1), none with days of at least 1 mm; the World Weather Information Service: 1 city (precipitation 1), none with days of at least 1 mm. NOAA's GHCN-Daily records averaged by WMO-No. 1203's rules (R-0073): four stations (Rayack, Rafic Hariri International, Houche al Oumara, Tripoli), whose precipitation records are too broken for an average of every month (no period of ten years whose every month has valid values in 80% of its years); no daily sunshine.",
+     "date": "2026-10-26"
+    },
+    {
+     "method": "web-search",
+     "tried": "'Kuwait OR Lebanon OR Djibouti OR Burundi \"number of rainy days\" OR \"jours de pluie\" monthly normal meteorological department 1 mm'",
+     "result": "Nothing for Lebanon.",
+     "date": "2026-10-26"
+    },
+    {
+     "method": "trade-press",
+     "tried": "'\"rainy days\" OR \"sunshine hours\" average meteorological department says Kuwait Times OR \"L'Orient\" OR \"Mmegi\" OR \"Times of Eswatini\" OR \"Lesotho Times\" OR \"La Nation\" Djibouti OR \"Al-Watwan\" OR Iwacu Burundi'",
+     "result": "No press quoting a service's rain-day or sunshine normal; Kuwait Times' reports of single rain events, and modelled averages.",
+     "date": "2026-10-26"
+    },
+    {
+     "method": "archive",
+     "tried": "Web.archive.org and archive.ph for the service's site (https://www.meteo.gov.lb/)",
+     "result": "Neither could be read from this environment: web.archive.org's connection was reset, archive.ph answered 429. To be tried again where they can be reached.",
+     "date": "2026-10-26"
+    }
+   ],
+   "notModeled": "weather.borrowed-part"
+  },
+  {
+   "id": "R-0090",
+   "fact": "world.weather.blocked.LS",
+   "sought": "Lesotho's days of at least 1 mm and monthly hours of sunshine, as normals",
+   "status": "blocked",
+   "attempts": [
+    {
+     "method": "institution",
+     "tried": "Lesotho Meteorological Services (https://www.lesmet.org.ls/)",
+     "result": "Its domain doesn't resolve from this environment; no other site of the service found. To be tried again where it can be.",
+     "date": "2026-10-26"
+    },
+    {
+     "method": "official-register",
+     "tried": "The WMO's normals as NCEI holds them (1991-2020, 1961-1990, 1981-2010), the Deutscher Wetterdienst's worldwide normals and Klimatafeln, and the World Weather Information Service's cities, for Lesotho, and NOAA's GHCN-Daily",
+     "result": "The WMO's 1991-2020 composite files: no station of Lesotho; 1961-1990 (ALLNORMS.DAT): no station of Lesotho; 1981-2010: no submission from Lesotho; the Deutscher Wetterdienst's worldwide normals (1961-1990 and 1991-2020, which hold no count of days): no station of Lesotho; its Klimatafeln (each station's table, with the days of at least 1 mm): no station of Lesotho; the World Weather Information Service: 13 cities (mean daily maximum 13, mean daily minimum 13, precipitation 13), none with days of at least 1 mm or sunshine. NOAA's GHCN-Daily (by the FIPS code of each station's identifier): no station of Lesotho with ten years of precipitation in 1991-2020; no daily sunshine.",
+     "date": "2026-10-26"
+    },
+    {
+     "method": "web-search",
+     "tried": "'Lesotho Maseru OR Eswatini Manzini OR Comoros Moroni sunshine hours rain days 1 mm monthly normal meteorological service'",
+     "result": "Modelled sites for Maseru (climate-data.org's sun hours and rain days of 1991-2021, a commercial site's eight years); no normal of the service's.",
+     "date": "2026-10-26"
+    },
+    {
+     "method": "trade-press",
+     "tried": "'\"rainy days\" OR \"sunshine hours\" average meteorological department says Kuwait Times OR \"L'Orient\" OR \"Mmegi\" OR \"Times of Eswatini\" OR \"Lesotho Times\" OR \"La Nation\" Djibouti OR \"Al-Watwan\" OR Iwacu Burundi'",
+     "result": "No press quoting a service's rain-day or sunshine normal; Kuwait Times' reports of single rain events, and modelled averages.",
+     "date": "2026-10-26"
+    },
+    {
+     "method": "archive",
+     "tried": "Web.archive.org and archive.ph for the service's site (https://www.lesmet.org.ls/)",
+     "result": "Neither could be read from this environment: web.archive.org's connection was reset, archive.ph answered 429. To be tried again where they can be reached.",
+     "date": "2026-10-26"
+    }
+   ],
+   "notModeled": "weather.borrowed-part"
+  },
+  {
+   "id": "R-0091",
+   "fact": "world.weather.blocked.MF",
+   "sought": "Saint-Martin's days of at least 1 mm, as a normal",
+   "status": "blocked",
+   "attempts": [
+    {
+     "method": "institution",
+     "tried": "Météo-France's fiches climatologiques (https://donneespubliques.meteofrance.fr/FichesClim/) for the stations of Saint-Martin its list of Guadeloupe's stations gives (stations_971.geojson)",
+     "result": "Three stations (97127002 Marigot Gendarmerie, 97127004 Grand-Case, 97127006 Marigot DDE), none with a fiche; the reserve's plan (R-0060) gives Marigot's precipitation, without rain days.",
+     "date": "2026-10-26"
+    },
+    {
+     "method": "official-register",
+     "tried": "The WMO's normals as NCEI holds them (1991-2020, 1961-1990, 1981-2010), the Deutscher Wetterdienst's worldwide normals and Klimatafeln, and the World Weather Information Service's cities, for Saint-Martin, and NOAA's GHCN-Daily",
+     "result": "The WMO's 1991-2020 composite files: no station of Saint-Martin; 1961-1990 (ALLNORMS.DAT): no station of Saint-Martin; 1981-2010: no submission from Saint-Martin; the Deutscher Wetterdienst's worldwide normals (1961-1990 and 1991-2020, which hold no count of days): 2 stations (mean daily maximum 1, mean daily minimum 1, precipitation 2, sunshine 2), none with days of at least 1 mm; its Klimatafeln (each station's table, with the days of at least 1 mm): no station of Saint-Martin; the World Weather Information Service: 1 city (nothing complete), none with days of at least 1 mm. NOAA's GHCN-Daily (by the FIPS code of each station's identifier): no station of Saint-Martin with ten years of precipitation in 1991-2020; no daily sunshine.",
+     "date": "2026-10-26"
+    },
+    {
+     "method": "web-search",
+     "tried": "'Saint-Martin Grand Case \"jours de pluie\" normale Météo-France OR Pitcairn Island monthly rainfall average OR Bonaire sunshine hours normal'",
+     "result": "Travel sites and the day's readings at Grand-Case; no count of rain days.",
+     "date": "2026-10-26"
+    },
+    {
+     "method": "trade-press",
+     "tried": "'\"meteorological\" \"30-year average\" rainfall OR \"average rainfall\" Montserrat OR Anguilla OR \"Turks and Caicos\" OR \"St Vincent\" OR \"British Virgin Islands\" OR Haiti news met office says'",
+     "result": "No press quoting a service's normal; CIMH's station summary for Anguilla (1993-2014), a Turks and Caicos portal's modelled WorldClim layer and an old country study.",
+     "date": "2026-10-26"
+    },
+    {
+     "method": "archive",
+     "tried": "Web.archive.org and archive.ph for Météo-France's public data site (https://donneespubliques.meteofrance.fr/)",
+     "result": "Neither could be read from this environment: web.archive.org's connection was reset, archive.ph answered 429. To be tried again where they can be reached.",
+     "date": "2026-10-26"
+    }
+   ],
+   "notModeled": "weather.borrowed-part"
+  },
+  {
+   "id": "R-0092",
+   "fact": "world.weather.blocked.MS",
+   "sought": "Montserrat's mean daily maximum and minimum temperature, precipitation, days of at least 1 mm and monthly hours of sunshine, as normals",
+   "status": "blocked",
+   "attempts": [
+    {
+     "method": "institution",
+     "tried": "The Montserrat Volcano Observatory (https://www.mvo.ms/), which keeps the island's weather station",
+     "result": "The site answered 503 (unavailable) on each try; no other publisher of Montserrat's climate data found.",
+     "date": "2026-10-26"
+    },
+    {
+     "method": "official-register",
+     "tried": "The WMO's normals as NCEI holds them (1991-2020, 1961-1990, 1981-2010), the Deutscher Wetterdienst's worldwide normals and Klimatafeln, and the World Weather Information Service's cities, for Montserrat, and NOAA's GHCN-Daily",
+     "result": "The WMO's 1991-2020 composite files: no station of Montserrat; 1961-1990 (ALLNORMS.DAT): no station of Montserrat; 1981-2010: no submission from Montserrat; the Deutscher Wetterdienst's worldwide normals (1961-1990 and 1991-2020, which hold no count of days): no station of Montserrat; its Klimatafeln (each station's table, with the days of at least 1 mm): no station of Montserrat; the World Weather Information Service: no station of Montserrat. NOAA's GHCN-Daily (by the FIPS code of each station's identifier): no station of Montserrat with ten years of maximum temperature or minimum temperature or precipitation in 1991-2020; no daily sunshine.",
+     "date": "2026-10-26"
+    },
+    {
+     "method": "web-search",
+     "tried": "'Montserrat climate data monthly rainfall temperature averages Montserrat Volcano Observatory meteorological station normals'",
+     "result": "Commercial sites, disagreeing on station and period, and pages for Montserrat in Catalonia; no normal of the Observatory's.",
+     "date": "2026-10-26"
+    },
+    {
+     "method": "trade-press",
+     "tried": "'\"meteorological\" \"30-year average\" rainfall OR \"average rainfall\" Montserrat OR Anguilla OR \"Turks and Caicos\" OR \"St Vincent\" OR \"British Virgin Islands\" OR Haiti news met office says'",
+     "result": "No press quoting a service's normal; CIMH's station summary for Anguilla (1993-2014), a Turks and Caicos portal's modelled WorldClim layer and an old country study.",
+     "date": "2026-10-26"
+    },
+    {
+     "method": "archive",
+     "tried": "Web.archive.org and archive.ph for the Observatory's site (https://www.mvo.ms/)",
+     "result": "Neither could be read from this environment: web.archive.org's connection was reset, archive.ph answered 429. To be tried again where they can be reached.",
+     "date": "2026-10-26"
+    }
+   ],
+   "notModeled": "weather.borrowed"
+  },
+  {
+   "id": "R-0093",
+   "fact": "world.weather.blocked.NR",
+   "sought": "Nauru's mean daily maximum and minimum temperature, precipitation, days of at least 1 mm and monthly hours of sunshine, as normals",
+   "status": "blocked",
+   "attempts": [
+    {
+     "method": "institution",
+     "tried": "The Bureau of Meteorology's Pacific Climate Change Data Portal (https://www.bom.gov.au/climate/pccsp/) for Nauru Arc-2 (91532), and the Government of Nauru's rainfall record of 1980-1997 in SPREP's library (https://library.sprep.org/sites/default/files/20_9.pdf)",
+     "result": "The portal shows each station's monthly series only as charts; its downloads of the series are restricted; SPREP's file refused the request (403). No normal of Nauru's.",
+     "date": "2026-10-26"
+    },
+    {
+     "method": "official-register",
+     "tried": "The WMO's normals as NCEI holds them (1991-2020, 1961-1990, 1981-2010), the Deutscher Wetterdienst's worldwide normals and Klimatafeln, and the World Weather Information Service's cities, for Nauru, and NOAA's GHCN-Daily",
+     "result": "The WMO's 1991-2020 composite files: no station of Nauru; 1961-1990 (ALLNORMS.DAT): no station of Nauru; 1981-2010: no submission from Nauru; the Deutscher Wetterdienst's worldwide normals (1961-1990 and 1991-2020, which hold no count of days): no station of Nauru; its Klimatafeln (each station's table, with the days of at least 1 mm): no station of Nauru; the World Weather Information Service: no station of Nauru. NOAA's GHCN-Daily (by the FIPS code of each station's identifier): no station of Nauru with ten years of maximum temperature or minimum temperature or precipitation in 1991-2020; no daily sunshine.",
+     "date": "2026-10-26"
+    },
+    {
+     "method": "web-search",
+     "tried": "'Nauru climate monthly mean maximum minimum temperature rainfall Bureau of Meteorology Pacific Climate Change Science Program Nauru station data'",
+     "result": "Weatherbase's table (as Wikipedia gives it), commercial sites and a chart of sea temperature; no normal of a service's.",
+     "date": "2026-10-26"
+    },
+    {
+     "method": "trade-press",
+     "tried": "'Niue OR Nauru OR Tokelau OR Tonga OR Vanuatu meteorological service \"rain days\" OR \"sunshine hours\" average month news Matangi Tonga OR \"Daily Post\" OR RNZ'",
+     "result": "No press quoting a service's rain-day or sunshine normal; aggregator sites, disagreeing (one gives Nuku'alofa no rain days in any month), and Niue Statistics' rainfall of 2000-2005.",
+     "date": "2026-10-26"
+    },
+    {
+     "method": "archive",
+     "tried": "Web.archive.org and archive.ph for the Bureau's portal (https://www.bom.gov.au/climate/pccsp/)",
+     "result": "Neither could be read from this environment: web.archive.org's connection was reset, archive.ph answered 429. To be tried again where they can be reached.",
+     "date": "2026-10-26"
+    }
+   ],
+   "notModeled": "weather.borrowed"
+  },
+  {
+   "id": "R-0094",
+   "fact": "world.weather.blocked.NU",
+   "sought": "Niue's mean daily maximum and minimum temperature, precipitation, days of at least 1 mm and monthly hours of sunshine, as normals",
+   "status": "blocked",
+   "attempts": [
+    {
+     "method": "institution",
+     "tried": "The Bureau of Meteorology's Pacific Climate Change Data Portal (https://www.bom.gov.au/climate/pccsp/) for Hanan Airport, Alofi and Liku, the Bureau's COSPPac page for Niue (https://www.bom.gov.au/cosppac/countries/niue/), and Niue Statistics' rainfall table (https://niuestatistics.nu/?p=1857)",
+     "result": "The portal shows each station's monthly series only as charts; its downloads of the series are restricted; the COSPPac page for Niue now opens the programme's general page, with no climate summary; Niue Statistics gives monthly rainfall of 2000-2005 only. No normal of Niue's.",
+     "date": "2026-10-26"
+    },
+    {
+     "method": "official-register",
+     "tried": "The WMO's normals as NCEI holds them (1991-2020, 1961-1990, 1981-2010), the Deutscher Wetterdienst's worldwide normals and Klimatafeln, and the World Weather Information Service's cities, for Niue, and NOAA's GHCN-Daily",
+     "result": "The WMO's 1991-2020 composite files: no station of Niue; 1961-1990 (ALLNORMS.DAT): no station of Niue; 1981-2010: no submission from Niue; the Deutscher Wetterdienst's worldwide normals (1961-1990 and 1991-2020, which hold no count of days): no station of Niue; its Klimatafeln (each station's table, with the days of at least 1 mm): no station of Niue; the World Weather Information Service: no station of Niue. NOAA's GHCN-Daily records averaged by WMO-No. 1203's rules (R-0073): Hanan Airport, whose records (2001-2016) are too broken for an average of every month (no period of ten years whose every month has valid values in 80% of its years); no daily sunshine.",
+     "date": "2026-10-26"
+    },
+    {
+     "method": "web-search",
+     "tried": "'Niue Meteorological Service Hanan airport climate summary monthly mean maximum minimum temperature rainfall normals'",
+     "result": "A 2014 Pacific climate factsheet with a chart (no values) and commercial sites; no normal.",
+     "date": "2026-10-26"
+    },
+    {
+     "method": "trade-press",
+     "tried": "'Niue OR Nauru OR Tokelau OR Tonga OR Vanuatu meteorological service \"rain days\" OR \"sunshine hours\" average month news Matangi Tonga OR \"Daily Post\" OR RNZ'",
+     "result": "No press quoting a service's rain-day or sunshine normal; aggregator sites, disagreeing (one gives Nuku'alofa no rain days in any month), and Niue Statistics' rainfall of 2000-2005.",
+     "date": "2026-10-26"
+    },
+    {
+     "method": "archive",
+     "tried": "Web.archive.org and archive.ph for the Bureau's portal (https://www.bom.gov.au/climate/pccsp/)",
+     "result": "Neither could be read from this environment: web.archive.org's connection was reset, archive.ph answered 429. To be tried again where they can be reached.",
+     "date": "2026-10-26"
+    }
+   ],
+   "notModeled": "weather.borrowed"
+  },
+  {
+   "id": "R-0095",
+   "fact": "world.weather.blocked.PN",
+   "sought": "The Pitcairn Islands' precipitation, days of at least 1 mm and monthly hours of sunshine, as normals",
+   "status": "blocked",
+   "attempts": [
+    {
+     "method": "institution",
+     "tried": "The Bureau of Meteorology's Pacific Climate Change Data Portal (https://www.bom.gov.au/climate/pccsp/) for Pitcairn (PCN 000001, WMO 91960, from 1913)",
+     "result": "The portal shows each station's monthly series only as charts; its downloads of the series are restricted; no normal of Pitcairn's.",
+     "date": "2026-10-26"
+    },
+    {
+     "method": "official-register",
+     "tried": "The WMO's normals as NCEI holds them (1991-2020, 1961-1990, 1981-2010), the Deutscher Wetterdienst's worldwide normals and Klimatafeln, and the World Weather Information Service's cities, for the Pitcairn Islands, and NOAA's GHCN-Daily",
+     "result": "The WMO's 1991-2020 composite files: no station of the Pitcairn Islands; 1961-1990 (ALLNORMS.DAT): no station of the Pitcairn Islands; 1981-2010: no submission from the Pitcairn Islands; the Deutscher Wetterdienst's worldwide normals (1961-1990 and 1991-2020, which hold no count of days): no station of the Pitcairn Islands; its Klimatafeln (each station's table, with the days of at least 1 mm): no station of the Pitcairn Islands; the World Weather Information Service: no station of the Pitcairn Islands. NOAA's GHCN-Daily records averaged by WMO-No. 1203's rules (R-0073): Pitcairn Island, which has no precipitation in 1991-2020 for an average of every month (no period of ten years whose every month has valid values in 80% of its years); no daily sunshine.",
+     "date": "2026-10-26"
+    },
+    {
+     "method": "web-search",
+     "tried": "'Saint-Martin Grand Case \"jours de pluie\" normale Météo-France OR Pitcairn Island monthly rainfall average OR Bonaire sunshine hours normal'",
+     "result": "Nothing for Pitcairn.",
+     "date": "2026-10-26"
+    },
+    {
+     "method": "trade-press",
+     "tried": "'Falklands OR \"South Georgia\" OR \"Diego Garcia\" OR Pitcairn weather station \"long-term average\" temperature rainfall sunshine Penguin News OR \"Falklands Radio\"'",
+     "result": "No press quoting a normal; travel sites for Stanley, disagreeing, a 1919 study of Stanley's records, and nothing for South Georgia, Diego Garcia or Pitcairn.",
+     "date": "2026-10-26"
+    },
+    {
+     "method": "archive",
+     "tried": "Web.archive.org and archive.ph for the Bureau's portal (https://www.bom.gov.au/climate/pccsp/)",
+     "result": "Neither could be read from this environment: web.archive.org's connection was reset, archive.ph answered 429. To be tried again where they can be reached.",
+     "date": "2026-10-26"
+    }
+   ],
+   "notModeled": "weather.borrowed-part"
+  },
+  {
+   "id": "R-0096",
+   "fact": "world.weather.blocked.PS",
+   "sought": "Palestine's mean daily maximum and minimum temperature, precipitation, days of at least 1 mm and monthly hours of sunshine, as normals",
+   "status": "blocked",
+   "attempts": [
+    {
+     "method": "institution",
+     "tried": "The Palestinian Meteorological Department (https://www.pmd.ps/) and the Palestinian Central Bureau of Statistics' meteorological reports (https://www.pcbs.gov.ps/Portals/_pcbs/PressRelease/arsad23E.pdf)",
+     "result": "Neither could be reached from this environment (each request: 'upstream connect error ... remote connection failure'). Search snippets of the Bureau's reports give each station's yearly averages and the year's deviations from them, not monthly normals. To be tried again where they can be.",
+     "date": "2026-10-26"
+    },
+    {
+     "method": "official-register",
+     "tried": "The WMO's normals as NCEI holds them (1991-2020, 1961-1990, 1981-2010), the Deutscher Wetterdienst's worldwide normals and Klimatafeln, and the World Weather Information Service's cities, for Palestine, and NOAA's GHCN-Daily",
+     "result": "The WMO's 1991-2020 composite files: no station of Palestine; 1961-1990 (ALLNORMS.DAT): no station of Palestine; 1981-2010: no submission from Palestine; the Deutscher Wetterdienst's worldwide normals (1961-1990 and 1991-2020, which hold no count of days): no station of Palestine; its Klimatafeln (each station's table, with the days of at least 1 mm): no station of Palestine; the World Weather Information Service: no station of Palestine. NOAA's GHCN-Daily (by the FIPS code of each station's identifier): no station of Palestine with ten years of maximum temperature or minimum temperature or precipitation in 1991-2020; no daily sunshine.",
+     "date": "2026-10-26"
+    },
+    {
+     "method": "web-search",
+     "tried": "'Palestinian Central Bureau of Statistics meteorological conditions mean maximum minimum temperature rainfall rainy days by station long-term average'",
+     "result": "The Bureau's yearly press releases (2004-2013, 2023): yearly averages by station, no monthly normals and no rain days.",
+     "date": "2026-10-26"
+    },
+    {
+     "method": "trade-press",
+     "tried": "'\"rainy days\" OR \"sunshine hours\" average meteorological department says Kuwait Times OR \"L'Orient\" OR \"Mmegi\" OR \"Times of Eswatini\" OR \"Lesotho Times\" OR \"La Nation\" Djibouti OR \"Al-Watwan\" OR Iwacu Burundi'",
+     "result": "No press quoting a service's rain-day or sunshine normal; Kuwait Times' reports of single rain events, and modelled averages.",
+     "date": "2026-10-26"
+    },
+    {
+     "method": "archive",
+     "tried": "Web.archive.org and archive.ph for the Department's site (https://www.pmd.ps/)",
+     "result": "Neither could be read from this environment: web.archive.org's connection was reset, archive.ph answered 429. To be tried again where they can be reached.",
+     "date": "2026-10-26"
+    }
+   ],
+   "notModeled": "weather.borrowed"
+  },
+  {
+   "id": "R-0097",
+   "fact": "world.weather.blocked.SM",
+   "sought": "San Marino's mean daily maximum and minimum temperature, precipitation, days of at least 1 mm and monthly hours of sunshine, as normals",
+   "status": "blocked",
+   "attempts": [
+    {
+     "method": "institution",
+     "tried": "San Marino's Ufficio Informatica, Tecnologia, Dati e Statistica (https://www.statistica.sm/): its quarterly Bollettino di Statistica and annual supplement",
+     "result": "Its statistical programme and bulletins cover population, labour, prices, traffic and the accounts; no meteorology. San Marino has no national meteorological service.",
+     "date": "2026-10-26"
+    },
+    {
+     "method": "official-register",
+     "tried": "The WMO's normals as NCEI holds them (1991-2020, 1961-1990, 1981-2010), the Deutscher Wetterdienst's worldwide normals and Klimatafeln, and the World Weather Information Service's cities, for San Marino, and NOAA's GHCN-Daily",
+     "result": "The WMO's 1991-2020 composite files: no station of San Marino; 1961-1990 (ALLNORMS.DAT): no station of San Marino; 1981-2010: no submission from San Marino; the Deutscher Wetterdienst's worldwide normals (1961-1990 and 1991-2020, which hold no count of days): no station of San Marino; its Klimatafeln (each station's table, with the days of at least 1 mm): no station of San Marino; the World Weather Information Service: no station of San Marino. NOAA's GHCN-Daily (by the FIPS code of each station's identifier): no station of San Marino with ten years of maximum temperature or minimum temperature or precipitation in 1991-2020; no daily sunshine.",
+     "date": "2026-10-26"
+    },
+    {
+     "method": "web-search",
+     "tried": "'San Marino osservatorio meteorologico normali climatiche 1991-2020 temperature massime minime precipitazioni mensili'",
+     "result": "A commercial site's 'normals' measured at Frontone, Italy, a travel site's 1991-2019 means and ISPRA's normals for Italy; no normal of San Marino's.",
+     "date": "2026-10-26"
+    },
+    {
+     "method": "trade-press",
+     "tried": "'Andorra OR \"San Marino\" OR Vatican \"media climatica\" OR \"mitjana\" temperatura precipitazioni osservatorio meteorologico notizie normale 1991-2020'",
+     "result": "No press quoting a normal of the three; travel sites using 2008-2020 for Andorra la Vella, 1991-2019 for San Marino, and an Italian station (Frontone) for San Marino's 'normals'.",
+     "date": "2026-10-26"
+    },
+    {
+     "method": "archive",
+     "tried": "Web.archive.org and archive.ph for the statistics office's site (https://www.statistica.sm/)",
+     "result": "Neither could be read from this environment: web.archive.org's connection was reset, archive.ph answered 429. To be tried again where they can be reached.",
+     "date": "2026-10-26"
+    }
+   ],
+   "notModeled": "weather.borrowed"
+  },
+  {
+   "id": "R-0098",
+   "fact": "world.weather.blocked.SZ",
+   "sought": "Eswatini's days of at least 1 mm and monthly hours of sunshine, as normals",
+   "status": "blocked",
+   "attempts": [
+    {
+     "method": "institution",
+     "tried": "The Eswatini Meteorological Service (https://www.swazimet.gov.sz/): its State of the Climate, Climate Bulletins and Data pages",
+     "result": "Seasonal reviews and bulletins; its data only on request, by a form (data_request_form.docx); no table of normals.",
+     "date": "2026-10-26"
+    },
+    {
+     "method": "official-register",
+     "tried": "The WMO's normals as NCEI holds them (1991-2020, 1961-1990, 1981-2010), the Deutscher Wetterdienst's worldwide normals and Klimatafeln, and the World Weather Information Service's cities, for Eswatini, and NOAA's GHCN-Daily",
+     "result": "The WMO's 1991-2020 composite files: no station of Eswatini; 1961-1990 (ALLNORMS.DAT): no station of Eswatini; 1981-2010: no submission from Eswatini; the Deutscher Wetterdienst's worldwide normals (1961-1990 and 1991-2020, which hold no count of days): no station of Eswatini; its Klimatafeln (each station's table, with the days of at least 1 mm): no station of Eswatini; the World Weather Information Service: 2 cities (mean daily maximum 2, mean daily minimum 2, precipitation 2), none with days of at least 1 mm or sunshine. NOAA's GHCN-Daily records averaged by WMO-No. 1203's rules (R-0073): Manzini/Matsapa, whose precipitation record is too broken for an average of every month (no period of ten years whose every month has valid values in 80% of its years); no daily sunshine.",
+     "date": "2026-10-26"
+    },
+    {
+     "method": "web-search",
+     "tried": "'Lesotho Maseru OR Eswatini Manzini OR Comoros Moroni sunshine hours rain days 1 mm monthly normal meteorological service'",
+     "result": "Nothing for Eswatini.",
+     "date": "2026-10-26"
+    },
+    {
+     "method": "trade-press",
+     "tried": "'\"rainy days\" OR \"sunshine hours\" average meteorological department says Kuwait Times OR \"L'Orient\" OR \"Mmegi\" OR \"Times of Eswatini\" OR \"Lesotho Times\" OR \"La Nation\" Djibouti OR \"Al-Watwan\" OR Iwacu Burundi'",
+     "result": "No press quoting a service's rain-day or sunshine normal; Kuwait Times' reports of single rain events, and modelled averages.",
+     "date": "2026-10-26"
+    },
+    {
+     "method": "archive",
+     "tried": "Web.archive.org and archive.ph for the service's site (https://www.swazimet.gov.sz/)",
+     "result": "Neither could be read from this environment: web.archive.org's connection was reset, archive.ph answered 429. To be tried again where they can be reached.",
+     "date": "2026-10-26"
+    }
+   ],
+   "notModeled": "weather.borrowed-part"
+  },
+  {
+   "id": "R-0099",
+   "fact": "world.weather.blocked.TC",
+   "sought": "The Turks and Caicos Islands' mean daily maximum and minimum temperature, precipitation, days of at least 1 mm and monthly hours of sunshine, as normals",
+   "status": "blocked",
+   "attempts": [
+    {
+     "method": "institution",
+     "tried": "The Turks and Caicos Islands Airports Authority's Meteorological Department (https://tciairports.com/meteorological-department), established in 2021",
+     "result": "Forecasts and advisories; no climatology and no normals.",
+     "date": "2026-10-26"
+    },
+    {
+     "method": "official-register",
+     "tried": "The WMO's normals as NCEI holds them (1991-2020, 1961-1990, 1981-2010), the Deutscher Wetterdienst's worldwide normals and Klimatafeln, and the World Weather Information Service's cities, for the Turks and Caicos Islands, and NOAA's GHCN-Daily",
+     "result": "The WMO's 1991-2020 composite files: no station of the Turks and Caicos Islands; 1961-1990 (ALLNORMS.DAT): no station of the Turks and Caicos Islands; 1981-2010: no submission from the Turks and Caicos Islands; the Deutscher Wetterdienst's worldwide normals (1961-1990 and 1991-2020, which hold no count of days): no station of the Turks and Caicos Islands; its Klimatafeln (each station's table, with the days of at least 1 mm): no station of the Turks and Caicos Islands; the World Weather Information Service: no station of the Turks and Caicos Islands. NOAA's GHCN-Daily (by the FIPS code of each station's identifier): no station of the Turks and Caicos Islands with ten years of maximum temperature or minimum temperature or precipitation in 1991-2020; no daily sunshine.",
+     "date": "2026-10-26"
+    },
+    {
+     "method": "web-search",
+     "tried": "'Turks and Caicos Islands Department of Disaster Management Meteorology climate normals Providenciales monthly rainfall temperature averages'",
+     "result": "The department's page and travel sites; no normal.",
+     "date": "2026-10-26"
+    },
+    {
+     "method": "trade-press",
+     "tried": "'\"meteorological\" \"30-year average\" rainfall OR \"average rainfall\" Montserrat OR Anguilla OR \"Turks and Caicos\" OR \"St Vincent\" OR \"British Virgin Islands\" OR Haiti news met office says'",
+     "result": "No press quoting a service's normal; CIMH's station summary for Anguilla (1993-2014), a Turks and Caicos portal's modelled WorldClim layer and an old country study.",
+     "date": "2026-10-26"
+    },
+    {
+     "method": "archive",
+     "tried": "Web.archive.org and archive.ph for the Meteorological Department's page (https://tciairports.com/meteorological-department)",
+     "result": "Neither could be read from this environment: web.archive.org's connection was reset, archive.ph answered 429. To be tried again where they can be reached.",
+     "date": "2026-10-26"
+    }
+   ],
+   "notModeled": "weather.borrowed"
+  },
+  {
+   "id": "R-0100",
+   "fact": "world.weather.blocked.TK",
+   "sought": "Tokelau's mean daily maximum and minimum temperature, precipitation, days of at least 1 mm and monthly hours of sunshine, as normals",
+   "status": "blocked",
+   "attempts": [
+    {
+     "method": "institution",
+     "tried": "The Bureau of Meteorology's Pacific Climate Change Data Portal (https://www.bom.gov.au/climate/pccsp/) for Nukunonu (91723)",
+     "result": "The portal shows each station's monthly series only as charts; its downloads of the series are restricted; Tokelau has no meteorological service of its own; no normal of Tokelau's.",
+     "date": "2026-10-26"
+    },
+    {
+     "method": "official-register",
+     "tried": "The WMO's normals as NCEI holds them (1991-2020, 1961-1990, 1981-2010), the Deutscher Wetterdienst's worldwide normals and Klimatafeln, and the World Weather Information Service's cities, for Tokelau, and NOAA's GHCN-Daily",
+     "result": "The WMO's 1991-2020 composite files: no station of Tokelau; 1961-1990 (ALLNORMS.DAT): no station of Tokelau; 1981-2010: no submission from Tokelau; the Deutscher Wetterdienst's worldwide normals (1961-1990 and 1991-2020, which hold no count of days): no station of Tokelau; its Klimatafeln (each station's table, with the days of at least 1 mm): no station of Tokelau; the World Weather Information Service: no station of Tokelau. NOAA's GHCN-Daily (by the FIPS code of each station's identifier): no station of Tokelau with ten years of maximum temperature or minimum temperature or precipitation in 1991-2020; no daily sunshine.",
+     "date": "2026-10-26"
+    },
+    {
+     "method": "web-search",
+     "tried": "'Tokelau Nukunonu Fakaofo climate station monthly rainfall temperature averages NIWA Tokelau meteorological'",
+     "result": "A 1949 report of the New Zealand Government (four years of rainfall at Nukunonu) and aggregator sites, disagreeing; no normal.",
+     "date": "2026-10-26"
+    },
+    {
+     "method": "trade-press",
+     "tried": "'Niue OR Nauru OR Tokelau OR Tonga OR Vanuatu meteorological service \"rain days\" OR \"sunshine hours\" average month news Matangi Tonga OR \"Daily Post\" OR RNZ'",
+     "result": "No press quoting a service's rain-day or sunshine normal; aggregator sites, disagreeing (one gives Nuku'alofa no rain days in any month), and Niue Statistics' rainfall of 2000-2005.",
+     "date": "2026-10-26"
+    },
+    {
+     "method": "archive",
+     "tried": "Web.archive.org and archive.ph for the Bureau's portal (https://www.bom.gov.au/climate/pccsp/)",
+     "result": "Neither could be read from this environment: web.archive.org's connection was reset, archive.ph answered 429. To be tried again where they can be reached.",
+     "date": "2026-10-26"
+    }
+   ],
+   "notModeled": "weather.borrowed"
+  },
+  {
+   "id": "R-0101",
+   "fact": "world.weather.blocked.TO",
+   "sought": "Tonga's days of at least 1 mm and monthly hours of sunshine, as normals",
+   "status": "blocked",
+   "attempts": [
+    {
+     "method": "institution",
+     "tried": "The Tonga Meteorological Service's Climate page and its six stations' Climatological Information (https://met.gov.to/climate/)",
+     "result": "Temperatures and rainfall of 1981-2010 (read, R-0076); its rain days count days of more than 0.1 mm, not of at least 1 mm; no sunshine.",
+     "date": "2026-10-26"
+    },
+    {
+     "method": "official-register",
+     "tried": "The WMO's normals as NCEI holds them (1991-2020, 1961-1990, 1981-2010), the Deutscher Wetterdienst's worldwide normals and Klimatafeln, and the World Weather Information Service's cities, for Tonga, and NOAA's GHCN-Daily",
+     "result": "The WMO's 1991-2020 composite files: no station of Tonga; 1961-1990 (ALLNORMS.DAT): no station of Tonga; 1981-2010: no submission from Tonga; the Deutscher Wetterdienst's worldwide normals (1961-1990 and 1991-2020, which hold no count of days): no station of Tonga; its Klimatafeln (each station's table, with the days of at least 1 mm): no station of Tonga; the World Weather Information Service: no station of Tonga. NOAA's GHCN-Daily (by the FIPS code of each station's identifier): no station of Tonga with ten years of precipitation in 1991-2020; no daily sunshine.",
+     "date": "2026-10-26"
+    },
+    {
+     "method": "web-search",
+     "tried": "'Tonga Meteorological Service climate normals 1991-2020 Nuku'alofa Fua'amotu monthly rainfall temperature rain days'",
+     "result": "SPREP's report and Matangi Tonga's reports of single months; no normal of days of at least 1 mm or of sunshine.",
+     "date": "2026-10-26"
+    },
+    {
+     "method": "trade-press",
+     "tried": "'Niue OR Nauru OR Tokelau OR Tonga OR Vanuatu meteorological service \"rain days\" OR \"sunshine hours\" average month news Matangi Tonga OR \"Daily Post\" OR RNZ'",
+     "result": "No press quoting a service's rain-day or sunshine normal; aggregator sites, disagreeing (one gives Nuku'alofa no rain days in any month), and Niue Statistics' rainfall of 2000-2005.",
+     "date": "2026-10-26"
+    },
+    {
+     "method": "archive",
+     "tried": "Web.archive.org and archive.ph for the service's Climate page (https://met.gov.to/climate/)",
+     "result": "Neither could be read from this environment: web.archive.org's connection was reset, archive.ph answered 429. To be tried again where they can be reached.",
+     "date": "2026-10-26"
+    }
+   ],
+   "notModeled": "weather.borrowed-part"
+  },
+  {
+   "id": "R-0102",
+   "fact": "world.weather.blocked.VA",
+   "sought": "Vatican City's mean daily maximum and minimum temperature, precipitation, days of at least 1 mm and monthly hours of sunshine, as normals",
+   "status": "blocked",
+   "attempts": [
+    {
+     "method": "institution",
+     "tried": "The Vatican Observatory (https://www.vaticanobservatory.va/)",
+     "result": "An astronomical observatory; it publishes no meteorological record. Vatican City has no meteorological service or station of its own.",
+     "date": "2026-10-26"
+    },
+    {
+     "method": "official-register",
+     "tried": "The WMO's normals as NCEI holds them (1991-2020, 1961-1990, 1981-2010), the Deutscher Wetterdienst's worldwide normals and Klimatafeln, and the World Weather Information Service's cities, for Vatican City, and NOAA's GHCN-Daily",
+     "result": "The WMO's 1991-2020 composite files: no station of Vatican City; 1961-1990 (ALLNORMS.DAT): no station of Vatican City; 1981-2010: no submission from Vatican City; the Deutscher Wetterdienst's worldwide normals (1961-1990 and 1991-2020, which hold no count of days): no station of Vatican City; its Klimatafeln (each station's table, with the days of at least 1 mm): no station of Vatican City; the World Weather Information Service: no station of Vatican City. NOAA's GHCN-Daily (by the FIPS code of each station's identifier): no station of Vatican City with ten years of maximum temperature or minimum temperature or precipitation in 1991-2020; no daily sunshine.",
+     "date": "2026-10-26"
+    },
+    {
+     "method": "web-search",
+     "tried": "'Vatican City meteorological station climate normals monthly temperature precipitation Specola Vaticana observations'",
+     "result": "Commercial sites giving Rome's stations (Ciampino) as the Vatican's; no normal of a station in the city.",
+     "date": "2026-10-26"
+    },
+    {
+     "method": "trade-press",
+     "tried": "'Andorra OR \"San Marino\" OR Vatican \"media climatica\" OR \"mitjana\" temperatura precipitazioni osservatorio meteorologico notizie normale 1991-2020'",
+     "result": "No press quoting a normal of the three; travel sites using 2008-2020 for Andorra la Vella, 1991-2019 for San Marino, and an Italian station (Frontone) for San Marino's 'normals'.",
+     "date": "2026-10-26"
+    },
+    {
+     "method": "archive",
+     "tried": "Web.archive.org and archive.ph for the Observatory's site (https://www.vaticanobservatory.va/)",
+     "result": "Neither could be read from this environment: web.archive.org's connection was reset, archive.ph answered 429. To be tried again where they can be reached.",
+     "date": "2026-10-26"
+    }
+   ],
+   "notModeled": "weather.borrowed"
+  },
+  {
+   "id": "R-0103",
+   "fact": "world.weather.blocked.VC",
+   "sought": "Saint Vincent and the Grenadines' mean daily maximum and minimum temperature, precipitation, days of at least 1 mm and monthly hours of sunshine, as normals",
+   "status": "blocked",
+   "attempts": [
+    {
+     "method": "institution",
+     "tried": "The Saint Vincent and the Grenadines Meteorological Services' Climate Data page (https://meteo.gov.vc/meteo/index.php/products-services/climate-data) and the Caribbean Institute for Meteorology and Hydrology's 1981-2010 sheets for E.T. Joshua (https://rcc.cimh.edu.bb/caribbean-climatology/1981-2010/)",
+     "result": "The service keeps hourly records of E.T. Joshua (from 1979) and Argyle (from 2017) and gives them only on request, by a form; CIMH's sheets give each month's median and terciles as charts, not a mean.",
+     "date": "2026-10-26"
+    },
+    {
+     "method": "official-register",
+     "tried": "The WMO's normals as NCEI holds them (1991-2020, 1961-1990, 1981-2010), the Deutscher Wetterdienst's worldwide normals and Klimatafeln, and the World Weather Information Service's cities, for Saint Vincent and the Grenadines, and NOAA's GHCN-Daily",
+     "result": "The WMO's 1991-2020 composite files: no station of Saint Vincent and the Grenadines; 1961-1990 (ALLNORMS.DAT): no station of Saint Vincent and the Grenadines; 1981-2010: no submission from Saint Vincent and the Grenadines; the Deutscher Wetterdienst's worldwide normals (1961-1990 and 1991-2020, which hold no count of days): no station of Saint Vincent and the Grenadines; its Klimatafeln (each station's table, with the days of at least 1 mm): no station of Saint Vincent and the Grenadines; the World Weather Information Service: no station of Saint Vincent and the Grenadines. NOAA's GHCN-Daily (by the FIPS code of each station's identifier): no station of Saint Vincent and the Grenadines with ten years of maximum temperature or minimum temperature or precipitation in 1991-2020; no daily sunshine.",
+     "date": "2026-10-26"
+    },
+    {
+     "method": "web-search",
+     "tried": "'St Vincent and the Grenadines Meteorological Services climatology Argyle E.T. Joshua monthly averages rainfall temperature normals'",
+     "result": "The service's monthly bulletins (each month against its 1991-2020 average, without the table); no normal.",
+     "date": "2026-10-26"
+    },
+    {
+     "method": "trade-press",
+     "tried": "'\"meteorological\" \"30-year average\" rainfall OR \"average rainfall\" Montserrat OR Anguilla OR \"Turks and Caicos\" OR \"St Vincent\" OR \"British Virgin Islands\" OR Haiti news met office says'",
+     "result": "No press quoting a service's normal; CIMH's station summary for Anguilla (1993-2014), a Turks and Caicos portal's modelled WorldClim layer and an old country study.",
+     "date": "2026-10-26"
+    },
+    {
+     "method": "archive",
+     "tried": "Web.archive.org and archive.ph for the service's Climate Data page (https://meteo.gov.vc/meteo/index.php/products-services/climate-data)",
+     "result": "Neither could be read from this environment: web.archive.org's connection was reset, archive.ph answered 429. To be tried again where they can be reached.",
+     "date": "2026-10-26"
+    }
+   ],
+   "notModeled": "weather.borrowed"
+  },
+  {
+   "id": "R-0104",
+   "fact": "world.weather.blocked.VG",
+   "sought": "The British Virgin Islands' mean daily maximum and minimum temperature, precipitation, days of at least 1 mm and monthly hours of sunshine, as normals",
+   "status": "blocked",
+   "attempts": [
+    {
+     "method": "institution",
+     "tried": "The British Virgin Islands' Department of Disaster Management (https://www.bviddm.com/), its risk analysis and climate adaptation pages",
+     "result": "No climatology and no normals.",
+     "date": "2026-10-26"
+    },
+    {
+     "method": "official-register",
+     "tried": "The WMO's normals as NCEI holds them (1991-2020, 1961-1990, 1981-2010), the Deutscher Wetterdienst's worldwide normals and Klimatafeln, and the World Weather Information Service's cities, for the British Virgin Islands, and NOAA's GHCN-Daily",
+     "result": "The WMO's 1991-2020 composite files: no station of the British Virgin Islands; 1961-1990 (ALLNORMS.DAT): no station of the British Virgin Islands; 1981-2010: no submission from the British Virgin Islands; the Deutscher Wetterdienst's worldwide normals (1961-1990 and 1991-2020, which hold no count of days): no station of the British Virgin Islands; its Klimatafeln (each station's table, with the days of at least 1 mm): no station of the British Virgin Islands; the World Weather Information Service: no station of the British Virgin Islands. NOAA's GHCN-Daily (by the FIPS code of each station's identifier): no station of the British Virgin Islands with ten years of maximum temperature or minimum temperature or precipitation in 1991-2020; no daily sunshine.",
+     "date": "2026-10-26"
+    },
+    {
+     "method": "web-search",
+     "tried": "'British Virgin Islands climate normals Beef Island monthly rainfall temperature Department of Disaster Management climatology'",
+     "result": "Commercial sites (2012-2021 reports at Beef Island, travel guides); no normal.",
+     "date": "2026-10-26"
+    },
+    {
+     "method": "trade-press",
+     "tried": "'\"meteorological\" \"30-year average\" rainfall OR \"average rainfall\" Montserrat OR Anguilla OR \"Turks and Caicos\" OR \"St Vincent\" OR \"British Virgin Islands\" OR Haiti news met office says'",
+     "result": "No press quoting a service's normal; CIMH's station summary for Anguilla (1993-2014), a Turks and Caicos portal's modelled WorldClim layer and an old country study.",
+     "date": "2026-10-26"
+    },
+    {
+     "method": "archive",
+     "tried": "Web.archive.org and archive.ph for the Department's site (https://www.bviddm.com/)",
+     "result": "Neither could be read from this environment: web.archive.org's connection was reset, archive.ph answered 429. To be tried again where they can be reached.",
+     "date": "2026-10-26"
+    }
+   ],
+   "notModeled": "weather.borrowed"
+  },
+  {
+   "id": "R-0105",
+   "fact": "world.weather.blocked.VU",
+   "sought": "Vanuatu's days of at least 1 mm and monthly hours of sunshine, as normals",
+   "status": "blocked",
+   "attempts": [
+    {
+     "method": "institution",
+     "tried": "The Vanuatu Meteorology and Geohazards Department's Climate pages (https://www.vmgd.gov.vu/climate) and its report Current and Future Climate of Vanuatu",
+     "result": "Outlooks, sectoral products and the report's charts; no table of rain days or sunshine.",
+     "date": "2026-10-26"
+    },
+    {
+     "method": "official-register",
+     "tried": "The WMO's normals as NCEI holds them (1991-2020, 1961-1990, 1981-2010), the Deutscher Wetterdienst's worldwide normals and Klimatafeln, and the World Weather Information Service's cities, for Vanuatu, and NOAA's GHCN-Daily",
+     "result": "The WMO's 1991-2020 composite files: no station of Vanuatu; 1961-1990 (ALLNORMS.DAT): no station of Vanuatu; 1981-2010: no submission from Vanuatu; the Deutscher Wetterdienst's worldwide normals (1961-1990 and 1991-2020, which hold no count of days): 2 stations (precipitation 2), none with days of at least 1 mm or sunshine; its Klimatafeln (each station's table, with the days of at least 1 mm): no station of Vanuatu; the World Weather Information Service: 6 cities (mean daily maximum 5, mean daily minimum 5, precipitation 5), none with days of at least 1 mm or sunshine. NOAA's GHCN-Daily records averaged by WMO-No. 1203's rules (R-0073): six stations (Pekoa, Aneityum, Sola, Lamap, Port Vila Bauerfield, Tanna), whose precipitation records are too broken for an average of every month (no period of ten years whose every month has valid values in 80% of its years); no daily sunshine.",
+     "date": "2026-10-26"
+    },
+    {
+     "method": "web-search",
+     "tried": "'Vanuatu Port Vila Bauerfield number of rain days sunshine hours climate normal VMGD climatology'",
+     "result": "Commercial sites, disagreeing, of unstated years; no normal of the Department's.",
+     "date": "2026-10-26"
+    },
+    {
+     "method": "trade-press",
+     "tried": "'Niue OR Nauru OR Tokelau OR Tonga OR Vanuatu meteorological service \"rain days\" OR \"sunshine hours\" average month news Matangi Tonga OR \"Daily Post\" OR RNZ'",
+     "result": "No press quoting a service's rain-day or sunshine normal; aggregator sites, disagreeing (one gives Nuku'alofa no rain days in any month), and Niue Statistics' rainfall of 2000-2005.",
+     "date": "2026-10-26"
+    },
+    {
+     "method": "archive",
+     "tried": "Web.archive.org and archive.ph for the Department's Climate page (https://www.vmgd.gov.vu/climate)",
+     "result": "Neither could be read from this environment: web.archive.org's connection was reset, archive.ph answered 429. To be tried again where they can be reached.",
+     "date": "2026-10-26"
+    }
+   ],
+   "notModeled": "weather.borrowed-part"
   }
  ]
 }

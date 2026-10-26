@@ -4,13 +4,17 @@
  "rows": [
   {
    "key": "AD",
-   "status": "pending",
-   "missing": [
-    "tmax",
-    "tmin",
-    "prcp",
-    "wet",
-    "sun"
+   "status": "blocked",
+   "register": [
+    "R-0039",
+    "R-0040",
+    "R-0077"
+   ],
+   "tests": [
+    "tests/tools/wmo.test.ts::the station compiler > reproduces the stations the engine reads, byte for byte, from the WMO's files",
+    "tests/world/weather/weather.test.ts::the weather at real towns > at every place on the map",
+    "tests/world/weather/weather.test.ts::a day's weather > comes back, over thirty years, to the normals it's drawn around",
+    "tests/world/weather/weather.test.ts::the weather at real towns > reads each town's nearest station of its own country, and says where it has none"
    ]
   },
   {
@@ -61,13 +65,18 @@
   },
   {
    "key": "AI",
-   "status": "pending",
-   "missing": [
-    "tmax",
-    "tmin",
-    "prcp",
-    "wet",
-    "sun"
+   "status": "blocked",
+   "register": [
+    "R-0039",
+    "R-0040",
+    "R-0075",
+    "R-0078"
+   ],
+   "tests": [
+    "tests/tools/wmo.test.ts::the station compiler > reproduces the stations the engine reads, byte for byte, from the WMO's files",
+    "tests/world/weather/weather.test.ts::the weather at real towns > at every place on the map",
+    "tests/world/weather/weather.test.ts::a day's weather > comes back, over thirty years, to the normals it's drawn around",
+    "tests/world/weather/weather.test.ts::the weather at real towns > reads each town's nearest station of its own country, and says where it has none"
    ]
   },
   {
@@ -339,9 +348,18 @@
   },
   {
    "key": "BI",
-   "status": "pending",
-   "missing": [
-    "wet"
+   "status": "blocked",
+   "register": [
+    "R-0039",
+    "R-0040",
+    "R-0063",
+    "R-0079"
+   ],
+   "tests": [
+    "tests/tools/wmo.test.ts::the station compiler > reproduces the stations the engine reads, byte for byte, from the WMO's files",
+    "tests/world/weather/weather.test.ts::the weather at real towns > at every place on the map",
+    "tests/world/weather/weather.test.ts::a day's weather > comes back, over thirty years, to the normals it's drawn around",
+    "tests/world/weather/weather.test.ts::the weather at real towns > reads each town's nearest station of its own country, and says where it has none"
    ]
   },
   {
@@ -421,13 +439,18 @@
   },
   {
    "key": "BQ",
-   "status": "pending",
-   "missing": [
-    "tmax",
-    "tmin",
-    "prcp",
-    "wet",
-    "sun"
+   "status": "blocked",
+   "register": [
+    "R-0039",
+    "R-0040",
+    "R-0074",
+    "R-0080"
+   ],
+   "tests": [
+    "tests/tools/wmo.test.ts::the station compiler > reproduces the stations the engine reads, byte for byte, from the WMO's files",
+    "tests/world/weather/weather.test.ts::the weather at real towns > at every place on the map",
+    "tests/world/weather/weather.test.ts::a day's weather > comes back, over thirty years, to the normals it's drawn around",
+    "tests/world/weather/weather.test.ts::the weather at real towns > reads each town's nearest station of its own country, and says where it has none"
    ]
   },
   {
@@ -485,9 +508,19 @@
   },
   {
    "key": "BW",
-   "status": "pending",
-   "missing": [
-    "wet"
+   "status": "blocked",
+   "register": [
+    "R-0039",
+    "R-0040",
+    "R-0062",
+    "R-0063",
+    "R-0081"
+   ],
+   "tests": [
+    "tests/tools/wmo.test.ts::the station compiler > reproduces the stations the engine reads, byte for byte, from the WMO's files",
+    "tests/world/weather/weather.test.ts::the weather at real towns > at every place on the map",
+    "tests/world/weather/weather.test.ts::a day's weather > comes back, over thirty years, to the normals it's drawn around",
+    "tests/world/weather/weather.test.ts::the weather at real towns > reads each town's nearest station of its own country, and says where it has none"
    ]
   },
   {
@@ -832,9 +865,18 @@
   },
   {
    "key": "DJ",
-   "status": "pending",
-   "missing": [
-    "wet"
+   "status": "blocked",
+   "register": [
+    "R-0038",
+    "R-0039",
+    "R-0040",
+    "R-0082"
+   ],
+   "tests": [
+    "tests/tools/wmo.test.ts::the station compiler > reproduces the stations the engine reads, byte for byte, from the WMO's files",
+    "tests/world/weather/weather.test.ts::the weather at real towns > at every place on the map",
+    "tests/world/weather/weather.test.ts::a day's weather > comes back, over thirty years, to the normals it's drawn around",
+    "tests/world/weather/weather.test.ts::the weather at real towns > reads each town's nearest station of its own country, and says where it has none"
    ]
   },
   {
@@ -1036,12 +1078,18 @@
   },
   {
    "key": "FK",
-   "status": "pending",
-   "missing": [
-    "tmax",
-    "tmin",
-    "wet",
-    "sun"
+   "status": "blocked",
+   "register": [
+    "R-0039",
+    "R-0040",
+    "R-0062",
+    "R-0083"
+   ],
+   "tests": [
+    "tests/tools/wmo.test.ts::the station compiler > reproduces the stations the engine reads, byte for byte, from the WMO's files",
+    "tests/world/weather/weather.test.ts::the weather at real towns > at every place on the map",
+    "tests/world/weather/weather.test.ts::a day's weather > comes back, over thirty years, to the normals it's drawn around",
+    "tests/world/weather/weather.test.ts::the weather at real towns > reads each town's nearest station of its own country, and says where it has none"
    ]
   },
   {
@@ -1297,12 +1345,18 @@
   },
   {
    "key": "GS",
-   "status": "pending",
-   "missing": [
-    "tmax",
-    "tmin",
-    "wet",
-    "sun"
+   "status": "blocked",
+   "register": [
+    "R-0039",
+    "R-0040",
+    "R-0062",
+    "R-0084"
+   ],
+   "tests": [
+    "tests/tools/wmo.test.ts::the station compiler > reproduces the stations the engine reads, byte for byte, from the WMO's files",
+    "tests/world/weather/weather.test.ts::the weather at real towns > at every place on the map",
+    "tests/world/weather/weather.test.ts::a day's weather > comes back, over thirty years, to the normals it's drawn around",
+    "tests/world/weather/weather.test.ts::the weather at real towns > reads each town's nearest station of its own country, and says where it has none"
    ]
   },
   {
@@ -1419,13 +1473,17 @@
   },
   {
    "key": "HT",
-   "status": "pending",
-   "missing": [
-    "tmax",
-    "tmin",
-    "prcp",
-    "wet",
-    "sun"
+   "status": "blocked",
+   "register": [
+    "R-0039",
+    "R-0040",
+    "R-0085"
+   ],
+   "tests": [
+    "tests/tools/wmo.test.ts::the station compiler > reproduces the stations the engine reads, byte for byte, from the WMO's files",
+    "tests/world/weather/weather.test.ts::the weather at real towns > at every place on the map",
+    "tests/world/weather/weather.test.ts::a day's weather > comes back, over thirty years, to the normals it's drawn around",
+    "tests/world/weather/weather.test.ts::the weather at real towns > reads each town's nearest station of its own country, and says where it has none"
    ]
   },
   {
@@ -1518,9 +1576,18 @@
   },
   {
    "key": "IO",
-   "status": "pending",
-   "missing": [
-    "sun"
+   "status": "blocked",
+   "register": [
+    "R-0039",
+    "R-0040",
+    "R-0063",
+    "R-0086"
+   ],
+   "tests": [
+    "tests/tools/wmo.test.ts::the station compiler > reproduces the stations the engine reads, byte for byte, from the WMO's files",
+    "tests/world/weather/weather.test.ts::the weather at real towns > at every place on the map",
+    "tests/world/weather/weather.test.ts::a day's weather > comes back, over thirty years, to the normals it's drawn around",
+    "tests/world/weather/weather.test.ts::the weather at real towns > reads each town's nearest station of its own country, and says where it has none"
    ]
   },
   {
@@ -1705,10 +1772,18 @@
   },
   {
    "key": "KM",
-   "status": "pending",
-   "missing": [
-    "wet",
-    "sun"
+   "status": "blocked",
+   "register": [
+    "R-0039",
+    "R-0040",
+    "R-0042",
+    "R-0087"
+   ],
+   "tests": [
+    "tests/tools/wmo.test.ts::the station compiler > reproduces the stations the engine reads, byte for byte, from the WMO's files",
+    "tests/world/weather/weather.test.ts::the weather at real towns > at every place on the map",
+    "tests/world/weather/weather.test.ts::a day's weather > comes back, over thirty years, to the normals it's drawn around",
+    "tests/world/weather/weather.test.ts::the weather at real towns > reads each town's nearest station of its own country, and says where it has none"
    ]
   },
   {
@@ -1758,9 +1833,18 @@
   },
   {
    "key": "KW",
-   "status": "pending",
-   "missing": [
-    "wet"
+   "status": "blocked",
+   "register": [
+    "R-0038",
+    "R-0039",
+    "R-0040",
+    "R-0088"
+   ],
+   "tests": [
+    "tests/tools/wmo.test.ts::the station compiler > reproduces the stations the engine reads, byte for byte, from the WMO's files",
+    "tests/world/weather/weather.test.ts::the weather at real towns > at every place on the map",
+    "tests/world/weather/weather.test.ts::a day's weather > comes back, over thirty years, to the normals it's drawn around",
+    "tests/world/weather/weather.test.ts::the weather at real towns > reads each town's nearest station of its own country, and says where it has none"
    ]
   },
   {
@@ -1811,9 +1895,20 @@
   },
   {
    "key": "LB",
-   "status": "pending",
-   "missing": [
-    "wet"
+   "status": "blocked",
+   "register": [
+    "R-0038",
+    "R-0039",
+    "R-0040",
+    "R-0062",
+    "R-0063",
+    "R-0089"
+   ],
+   "tests": [
+    "tests/tools/wmo.test.ts::the station compiler > reproduces the stations the engine reads, byte for byte, from the WMO's files",
+    "tests/world/weather/weather.test.ts::the weather at real towns > at every place on the map",
+    "tests/world/weather/weather.test.ts::a day's weather > comes back, over thirty years, to the normals it's drawn around",
+    "tests/world/weather/weather.test.ts::the weather at real towns > reads each town's nearest station of its own country, and says where it has none"
    ]
   },
   {
@@ -1876,10 +1971,18 @@
   },
   {
    "key": "LS",
-   "status": "pending",
-   "missing": [
-    "wet",
-    "sun"
+   "status": "blocked",
+   "register": [
+    "R-0039",
+    "R-0040",
+    "R-0042",
+    "R-0090"
+   ],
+   "tests": [
+    "tests/tools/wmo.test.ts::the station compiler > reproduces the stations the engine reads, byte for byte, from the WMO's files",
+    "tests/world/weather/weather.test.ts::the weather at real towns > at every place on the map",
+    "tests/world/weather/weather.test.ts::a day's weather > comes back, over thirty years, to the normals it's drawn around",
+    "tests/world/weather/weather.test.ts::the weather at real towns > reads each town's nearest station of its own country, and says where it has none"
    ]
   },
   {
@@ -2003,9 +2106,19 @@
   },
   {
    "key": "MF",
-   "status": "pending",
-   "missing": [
-    "wet"
+   "status": "blocked",
+   "register": [
+    "R-0039",
+    "R-0040",
+    "R-0060",
+    "R-0062",
+    "R-0091"
+   ],
+   "tests": [
+    "tests/tools/wmo.test.ts::the station compiler > reproduces the stations the engine reads, byte for byte, from the WMO's files",
+    "tests/world/weather/weather.test.ts::the weather at real towns > at every place on the map",
+    "tests/world/weather/weather.test.ts::a day's weather > comes back, over thirty years, to the normals it's drawn around",
+    "tests/world/weather/weather.test.ts::the weather at real towns > reads each town's nearest station of its own country, and says where it has none"
    ]
   },
   {
@@ -2161,13 +2274,17 @@
   },
   {
    "key": "MS",
-   "status": "pending",
-   "missing": [
-    "tmax",
-    "tmin",
-    "prcp",
-    "wet",
-    "sun"
+   "status": "blocked",
+   "register": [
+    "R-0039",
+    "R-0040",
+    "R-0092"
+   ],
+   "tests": [
+    "tests/tools/wmo.test.ts::the station compiler > reproduces the stations the engine reads, byte for byte, from the WMO's files",
+    "tests/world/weather/weather.test.ts::the weather at real towns > at every place on the map",
+    "tests/world/weather/weather.test.ts::a day's weather > comes back, over thirty years, to the normals it's drawn around",
+    "tests/world/weather/weather.test.ts::the weather at real towns > reads each town's nearest station of its own country, and says where it has none"
    ]
   },
   {
@@ -2410,24 +2527,32 @@
   },
   {
    "key": "NR",
-   "status": "pending",
-   "missing": [
-    "tmax",
-    "tmin",
-    "prcp",
-    "wet",
-    "sun"
+   "status": "blocked",
+   "register": [
+    "R-0039",
+    "R-0040",
+    "R-0093"
+   ],
+   "tests": [
+    "tests/tools/wmo.test.ts::the station compiler > reproduces the stations the engine reads, byte for byte, from the WMO's files",
+    "tests/world/weather/weather.test.ts::the weather at real towns > at every place on the map",
+    "tests/world/weather/weather.test.ts::a day's weather > comes back, over thirty years, to the normals it's drawn around",
+    "tests/world/weather/weather.test.ts::the weather at real towns > reads each town's nearest station of its own country, and says where it has none"
    ]
   },
   {
    "key": "NU",
-   "status": "pending",
-   "missing": [
-    "tmax",
-    "tmin",
-    "prcp",
-    "wet",
-    "sun"
+   "status": "blocked",
+   "register": [
+    "R-0039",
+    "R-0040",
+    "R-0094"
+   ],
+   "tests": [
+    "tests/tools/wmo.test.ts::the station compiler > reproduces the stations the engine reads, byte for byte, from the WMO's files",
+    "tests/world/weather/weather.test.ts::the weather at real towns > at every place on the map",
+    "tests/world/weather/weather.test.ts::a day's weather > comes back, over thirty years, to the normals it's drawn around",
+    "tests/world/weather/weather.test.ts::the weather at real towns > reads each town's nearest station of its own country, and says where it has none"
    ]
   },
   {
@@ -2584,11 +2709,18 @@
   },
   {
    "key": "PN",
-   "status": "pending",
-   "missing": [
-    "prcp",
-    "wet",
-    "sun"
+   "status": "blocked",
+   "register": [
+    "R-0039",
+    "R-0040",
+    "R-0073",
+    "R-0095"
+   ],
+   "tests": [
+    "tests/tools/wmo.test.ts::the station compiler > reproduces the stations the engine reads, byte for byte, from the WMO's files",
+    "tests/world/weather/weather.test.ts::the weather at real towns > at every place on the map",
+    "tests/world/weather/weather.test.ts::a day's weather > comes back, over thirty years, to the normals it's drawn around",
+    "tests/world/weather/weather.test.ts::the weather at real towns > reads each town's nearest station of its own country, and says where it has none"
    ]
   },
   {
@@ -2608,13 +2740,17 @@
   },
   {
    "key": "PS",
-   "status": "pending",
-   "missing": [
-    "tmax",
-    "tmin",
-    "prcp",
-    "wet",
-    "sun"
+   "status": "blocked",
+   "register": [
+    "R-0039",
+    "R-0040",
+    "R-0096"
+   ],
+   "tests": [
+    "tests/tools/wmo.test.ts::the station compiler > reproduces the stations the engine reads, byte for byte, from the WMO's files",
+    "tests/world/weather/weather.test.ts::the weather at real towns > at every place on the map",
+    "tests/world/weather/weather.test.ts::a day's weather > comes back, over thirty years, to the normals it's drawn around",
+    "tests/world/weather/weather.test.ts::the weather at real towns > reads each town's nearest station of its own country, and says where it has none"
    ]
   },
   {
@@ -2923,13 +3059,17 @@
   },
   {
    "key": "SM",
-   "status": "pending",
-   "missing": [
-    "tmax",
-    "tmin",
-    "prcp",
-    "wet",
-    "sun"
+   "status": "blocked",
+   "register": [
+    "R-0039",
+    "R-0040",
+    "R-0097"
+   ],
+   "tests": [
+    "tests/tools/wmo.test.ts::the station compiler > reproduces the stations the engine reads, byte for byte, from the WMO's files",
+    "tests/world/weather/weather.test.ts::the weather at real towns > at every place on the map",
+    "tests/world/weather/weather.test.ts::a day's weather > comes back, over thirty years, to the normals it's drawn around",
+    "tests/world/weather/weather.test.ts::the weather at real towns > reads each town's nearest station of its own country, and says where it has none"
    ]
   },
   {
@@ -3055,21 +3195,33 @@
   },
   {
    "key": "SZ",
-   "status": "pending",
-   "missing": [
-    "wet",
-    "sun"
+   "status": "blocked",
+   "register": [
+    "R-0039",
+    "R-0040",
+    "R-0042",
+    "R-0098"
+   ],
+   "tests": [
+    "tests/tools/wmo.test.ts::the station compiler > reproduces the stations the engine reads, byte for byte, from the WMO's files",
+    "tests/world/weather/weather.test.ts::the weather at real towns > at every place on the map",
+    "tests/world/weather/weather.test.ts::a day's weather > comes back, over thirty years, to the normals it's drawn around",
+    "tests/world/weather/weather.test.ts::the weather at real towns > reads each town's nearest station of its own country, and says where it has none"
    ]
   },
   {
    "key": "TC",
-   "status": "pending",
-   "missing": [
-    "tmax",
-    "tmin",
-    "prcp",
-    "wet",
-    "sun"
+   "status": "blocked",
+   "register": [
+    "R-0039",
+    "R-0040",
+    "R-0099"
+   ],
+   "tests": [
+    "tests/tools/wmo.test.ts::the station compiler > reproduces the stations the engine reads, byte for byte, from the WMO's files",
+    "tests/world/weather/weather.test.ts::the weather at real towns > at every place on the map",
+    "tests/world/weather/weather.test.ts::a day's weather > comes back, over thirty years, to the normals it's drawn around",
+    "tests/world/weather/weather.test.ts::the weather at real towns > reads each town's nearest station of its own country, and says where it has none"
    ]
   },
   {
@@ -3149,13 +3301,17 @@
   },
   {
    "key": "TK",
-   "status": "pending",
-   "missing": [
-    "tmax",
-    "tmin",
-    "prcp",
-    "wet",
-    "sun"
+   "status": "blocked",
+   "register": [
+    "R-0039",
+    "R-0040",
+    "R-0100"
+   ],
+   "tests": [
+    "tests/tools/wmo.test.ts::the station compiler > reproduces the stations the engine reads, byte for byte, from the WMO's files",
+    "tests/world/weather/weather.test.ts::the weather at real towns > at every place on the map",
+    "tests/world/weather/weather.test.ts::a day's weather > comes back, over thirty years, to the normals it's drawn around",
+    "tests/world/weather/weather.test.ts::the weather at real towns > reads each town's nearest station of its own country, and says where it has none"
    ]
   },
   {
@@ -3205,13 +3361,18 @@
   },
   {
    "key": "TO",
-   "status": "pending",
-   "missing": [
-    "tmax",
-    "tmin",
-    "prcp",
-    "wet",
-    "sun"
+   "status": "blocked",
+   "register": [
+    "R-0039",
+    "R-0040",
+    "R-0076",
+    "R-0101"
+   ],
+   "tests": [
+    "tests/tools/wmo.test.ts::the station compiler > reproduces the stations the engine reads, byte for byte, from the WMO's files",
+    "tests/world/weather/weather.test.ts::the weather at real towns > at every place on the map",
+    "tests/world/weather/weather.test.ts::a day's weather > comes back, over thirty years, to the normals it's drawn around",
+    "tests/world/weather/weather.test.ts::the weather at real towns > reads each town's nearest station of its own country, and says where it has none"
    ]
   },
   {
@@ -3374,24 +3535,32 @@
   },
   {
    "key": "VA",
-   "status": "pending",
-   "missing": [
-    "tmax",
-    "tmin",
-    "prcp",
-    "wet",
-    "sun"
+   "status": "blocked",
+   "register": [
+    "R-0039",
+    "R-0040",
+    "R-0102"
+   ],
+   "tests": [
+    "tests/tools/wmo.test.ts::the station compiler > reproduces the stations the engine reads, byte for byte, from the WMO's files",
+    "tests/world/weather/weather.test.ts::the weather at real towns > at every place on the map",
+    "tests/world/weather/weather.test.ts::a day's weather > comes back, over thirty years, to the normals it's drawn around",
+    "tests/world/weather/weather.test.ts::the weather at real towns > reads each town's nearest station of its own country, and says where it has none"
    ]
   },
   {
    "key": "VC",
-   "status": "pending",
-   "missing": [
-    "tmax",
-    "tmin",
-    "prcp",
-    "wet",
-    "sun"
+   "status": "blocked",
+   "register": [
+    "R-0039",
+    "R-0040",
+    "R-0103"
+   ],
+   "tests": [
+    "tests/tools/wmo.test.ts::the station compiler > reproduces the stations the engine reads, byte for byte, from the WMO's files",
+    "tests/world/weather/weather.test.ts::the weather at real towns > at every place on the map",
+    "tests/world/weather/weather.test.ts::a day's weather > comes back, over thirty years, to the normals it's drawn around",
+    "tests/world/weather/weather.test.ts::the weather at real towns > reads each town's nearest station of its own country, and says where it has none"
    ]
   },
   {
@@ -3411,13 +3580,17 @@
   },
   {
    "key": "VG",
-   "status": "pending",
-   "missing": [
-    "tmax",
-    "tmin",
-    "prcp",
-    "wet",
-    "sun"
+   "status": "blocked",
+   "register": [
+    "R-0039",
+    "R-0040",
+    "R-0104"
+   ],
+   "tests": [
+    "tests/tools/wmo.test.ts::the station compiler > reproduces the stations the engine reads, byte for byte, from the WMO's files",
+    "tests/world/weather/weather.test.ts::the weather at real towns > at every place on the map",
+    "tests/world/weather/weather.test.ts::a day's weather > comes back, over thirty years, to the normals it's drawn around",
+    "tests/world/weather/weather.test.ts::the weather at real towns > reads each town's nearest station of its own country, and says where it has none"
    ]
   },
   {
@@ -3453,10 +3626,19 @@
   },
   {
    "key": "VU",
-   "status": "pending",
-   "missing": [
-    "wet",
-    "sun"
+   "status": "blocked",
+   "register": [
+    "R-0039",
+    "R-0040",
+    "R-0042",
+    "R-0062",
+    "R-0105"
+   ],
+   "tests": [
+    "tests/tools/wmo.test.ts::the station compiler > reproduces the stations the engine reads, byte for byte, from the WMO's files",
+    "tests/world/weather/weather.test.ts::the weather at real towns > at every place on the map",
+    "tests/world/weather/weather.test.ts::a day's weather > comes back, over thirty years, to the normals it's drawn around",
+    "tests/world/weather/weather.test.ts::the weather at real towns > reads each town's nearest station of its own country, and says where it has none"
    ]
   },
   {

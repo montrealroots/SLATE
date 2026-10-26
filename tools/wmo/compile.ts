@@ -44,7 +44,9 @@ export const SOURCE_METOFFICE = { file: 'research/sources/metoffice-averages.jso
  * of the valley's extent and its mean height as the paper gives them; and the Plan de gestion de la Réserve Naturelle
  * Nationale de Saint-Martin (2009; R-0060), its Tableau 20's monthly means from Météo-France: insolation at Gustavia,
  * Saint-Barthélemy, 1976-1998 (summing to its 3,032 hours), and precipitation at Marigot, Saint-Martin, 1971-2000
- * (summing to its 1,159.6 mm), each at its town as the gazetteer places it, the stations' own places not given.
+ * (summing to its 1,159.6 mm), each at its town as the gazetteer places it, the stations' own places not given; and
+ * Meteo Curaçao's Summary of Climatological Normals for Flamingo Airport, Bonaire, 1971-2000 (R-0074), its mean
+ * daily maximum and minimum, monthly rainfall and days of at least 1 mm (12°08'N, 68°17'W; no height given).
  */
 // Stryker disable all: a table made as the module loads (see the Members' tables); the byte-for-byte test holds it.
 export const HAND_READ: readonly { source: { file: string; sha256: string }; station: SourceStation }[] = [
@@ -64,11 +66,17 @@ export const HAND_READ: readonly { source: { file: string; sha256: string }; sta
     source: { file: 'vendor/rnsm/plan-de-gestion-2009-pg66-113.pdf', sha256: '70d346d2db185a74ab75c6cafe809485caa844e5cc0f530488e497e32b6f67e5' },
     station: { id: 'rnsm:marigot:1971-2000', name: 'Marigot', country: 'MF', latitude: 18.0682, longitude: -63.083, elevation: null, period: '1971-2000', normals: { prcp: [68.7, 60.9, 50.3, 80.7, 103.9, 64.2, 70.4, 93.4, 143.2, 156.3, 173.9, 93.8] } },
   },
+  {
+    source: { file: 'vendor/meteocw/CLIM_SUM_Bon.pdf', sha256: '7d04eb008526c584f9f4f6fda242a9644654d4063e859ba15254b27470d193f4' },
+    station: { id: 'meteocw:flamingo:1971-2000', name: 'Flamingo Airport', country: 'BQ', latitude: 12.1333, longitude: -68.2833, elevation: null, period: '1971-2000', normals: { tmax: [29.5, 29.7, 30.0, 30.4, 31.0, 31.2, 31.1, 31.6, 31.9, 31.7, 31.0, 30.0], tmin: [24.4, 24.5, 24.8, 25.4, 26.2, 26.4, 26.2, 26.5, 26.5, 26.3, 25.7, 25.0], prcp: [44.4, 18.3, 13.2, 13.2, 14.8, 14.4, 36.3, 35.0, 37.0, 67.3, 95.9, 73.6], wet: [9.2, 4.4, 2.5, 1.8, 1.7, 2.8, 5.6, 4.4, 5.0, 7.6, 11.5, 10.8] } },
+  },
 ];
 // Stryker restore all
 export const SOURCE_DWD = { file: 'research/sources/dwd-multi-annual.json', sha256: '185b8472b65a84cfd8b493b732cc6b551bfb45868d72e8ff3704e50fc3ee9b6d' } as const;
 export const SOURCE_KT = { file: 'research/sources/dwd-klimatafeln.json', sha256: '13c7692ba29277bc3564ee4366516eabc8824a32d366bf9596660394c666aff6' } as const;
 export const SOURCE_WWIS = { file: 'research/sources/wwis-climate.json', sha256: '145b04103a14ec2ee048df87efa03483b87ea359e7a80c378578bd62687c7651' } as const;
+export const SOURCE_ANGUILLA = { file: 'research/sources/anguilla-climate.json', sha256: 'ff25c6805b8bde223b8eda33716b52c2a7dd05537a0ae0139ac80085200fdc75' } as const;
+export const SOURCE_TONGA = { file: 'research/sources/tonga-climate.json', sha256: 'a4a84177d234a31d4350679c88cfbcc42d45ab0f25bab9a63352332a89873b3c' } as const;
 export const SOURCE_GHCND = { file: 'research/sources/ghcnd-daily.json', sha256: 'd82ab4db4600eead59ccd2d7f3da00bbb661550b150edc09b736215e1fecc293' } as const;
 export const OUTPUT = 'src/world/weather/stations.json';
 
@@ -640,11 +648,11 @@ export function parseMetOffice(json: string): SourceStation[] {
   for (const st of data.stations) {
     const byPeriod = new Map<string, Partial<Record<Param, Months>>>();
     // Each table's text before it, its tags taken out, names its period last: "Station: Jersey: Airport, 1981-2010".
-    const text = (html: string) => html.replace(/<[^>]*>/g, ' ');
+    const text = (html: string) => html.replace(/<[^>]*>/g, '');
     const parts = st.tables.split(/<\/table>/);
     for (const part of parts) {
       const [before, table] = part.split(/<table\b/) as [string, string | undefined];
-      const period = [...text(before).matchAll(/Station:\s+[^,]*, (\d{4}-\d{4})/g)].at(-1)?.[1];
+      const period = [...text(before).matchAll(/Station:[^,]*, (\d{4}-\d{4})/g)].at(-1)?.[1];
       if (period === undefined || table === undefined) continue;
       const cells = (html: string, tag: string) => [...html.matchAll(new RegExp(`<${tag}\\b[^>]*>([\\s\\S]*?)</${tag}>`, 'g'))].map((c) => text(c[1] as string).trim());
       const header = cells(table, 'th');
@@ -716,7 +724,7 @@ const ROWS_KT: readonly [Param, string][] = [
 export const MONTH_DAYS = [31, 28.25, 31, 30, 31, 30, 31, 31, 30, 31, 30, 31];
 
 /** A Klimatafel's number, as 2.031,4: the point groups thousands, the comma marks decimals. */
-const ktNumber = (v: string) => (/^-?[\d.]+(,\d+)?$/.test(v) ? Number(v.replace(/\./g, '').replace(',', '.')) : NaN);
+const ktNumber = (v: string) => Number(v.replace(/\./g, '').replace(',', '.'));
 
 /**
  * The Deutscher Wetterdienst's Klimatafeln (R-0063), as their text: the station's name in the title ("Klimatafel von
@@ -728,8 +736,8 @@ export function parseKlimatafeln(json: string): (SourceStation & { member: strin
   const data = JSON.parse(json) as { tables: { page: string; url: string; text: string }[] };
   const out = new Map<string, SourceStation & { member: string }>();
   for (const { page, url, text } of data.tables) {
-    const wmo = /ak_(\d+)\d_kt\.pdf$/.exec(url)?.[1];
-    const title = /^Klimatafel von (.*?)\s*$/m.exec(text);
+    const wmo = /ak_(\d+)\d_kt\.pdf/.exec(url)?.[1];
+    const title = /Klimatafel von (.*?)\s*$/m.exec(text);
     const place = /Breite: (\d+)° (\d+)' ([NS]), geographische Länge: (\d+)° (\d+)' ([EW])/.exec(text);
     if (wmo === undefined || title === null) throw new Error(`a Klimatafel the compiler can't read: ${url}`);
     // Some tables are published blank, without even a place.
@@ -737,7 +745,8 @@ export function parseKlimatafeln(json: string): (SourceStation & { member: strin
     const member = page.split('/').at(-2) as string;
     if (!Object.hasOwn(COUNTRIES_KT, member)) throw new Error(`a Klimatafel country the compiler doesn't know: ${member}`);
     // The station's name is the title's first part; where the title is empty (a bare "/"), its WMO number.
-    const name = (title[1] as string).split(' / ')[0]?.replace(/^\/$/, '') || `WMO ${wmo}`;
+    const first = (title[1] as string).split(' / ')[0] as string;
+    const name = first === '' || first === '/' ? `WMO ${wmo}` : first;
     const deg = (d: string, m: string, h: string, negative: string) => (h === negative ? -1 : 1) * Math.round((Number(d) + Number(m) / 60) * 1e4) / 1e4;
     const height = /Stationshöhe: (-?\d+) m/.exec(text)?.[1];
     for (const line of text.split(/\r?\n/).map((l) => l.trim())) {
@@ -745,11 +754,11 @@ export function parseKlimatafeln(json: string): (SourceStation & { member: strin
       const row = ROWS_KT.find(([, label]) => line.startsWith(`${label} `));
       if (row === undefined) continue;
       const [param, label] = row;
-      const cells = ['', ...line.slice(label.length).trim().split(/\s+/)];
-      if (cells.length !== 16 || !/^\d{4}$/.test(cells[14] as string) || !/^\d{4}$/.test(cells[15] as string)) continue;
-      const values = cells.slice(1, 13).map(ktNumber);
+      const cells = line.slice(label.length).trim().split(/\s+/);
+      if (cells.length !== 15 || !/^\d{4}$/.test(cells[13] as string) || !/^\d{4}$/.test(cells[14] as string)) continue;
+      const values = cells.slice(0, 12).map(ktNumber);
       if (!values.every(Number.isFinite)) continue;
-      const period = `${cells[14] as string}-${cells[15] as string}`;
+      const period = `${cells[13] as string}-${cells[14] as string}`;
       const id = `kt:${wmo}:${period}`;
       const s = out.get(id) ?? { id, name, member, country: '', latitude: deg(place[1] as string, place[2] as string, place[3] as string, 'S'), longitude: deg(place[4] as string, place[5] as string, place[6] as string, 'W'), elevation: height === undefined ? null : Number(height), period, normals: {} };
       s.normals[param] = values.map((v, i) => round1(param === 'sun' ? v * (MONTH_DAYS[i] as number) : v));
@@ -846,6 +855,55 @@ export function parseGhcnd(json: string): SourceStation[] {
   return out;
 }
 
+const MONTHS_EN = ['January', 'February', 'March', 'April', 'May', 'June', 'July', 'August', 'September', 'October', 'November', 'December'];
+
+/**
+ * The Anguilla Statistics Department's rainfall tables (R-0075): each month's rainfall in inches, a column for each
+ * year ("-" where none), from the Meteorological Office at Clayton J. Lloyd International Airport. Its average for
+ * 1991-2020 is each month's mean over the years that have it, where they are at least 80% of the thirty (WMO-No. 1203,
+ * 4.4.2), in millimetres; the station at The Valley, as the gazetteer places it, the tables not giving its place.
+ */
+export function parseAnguilla(json: string): SourceStation[] {
+  const data = JSON.parse(json) as { tables: Record<string, string[][]> };
+  const byYear = MONTHS_EN.map(() => new Map<number, number>());
+  for (const rows of Object.values(data.tables)) {
+    const head = rows.find((r) => r[1] === 'Month') as string[];
+    for (const row of rows) {
+      const m = MONTHS_EN.indexOf(row[1] as string);
+      if (m < 0) continue;
+      head.forEach((year, col) => {
+        const value = (row[col] ?? '').trim();
+        if (/^\d{4}$/.test(year) && /^\d+(\.\d+)?$/.test(value)) (byYear[m] as Map<number, number>).set(Number(year), Number(value));
+      });
+    }
+  }
+  const prcp = byYear.map((years) => {
+    const values = [...years].filter(([year]) => year >= 1991 && year <= 2020).map(([, v]) => v);
+    return values.length * 5 < 30 * 4 ? NaN : round1((values.reduce((a, b) => a + b, 0) / values.length) * 25.4);
+  });
+  if (!prcp.every(Number.isFinite)) throw new Error('Anguilla\'s rainfall no longer gives every month of 1991-2020');
+  return [{ id: 'anguilla:clayton-j-lloyd:1991-2020', name: 'Clayton J. Lloyd International Airport', country: 'AI', latitude: 18.21704, longitude: -63.05783, elevation: null, period: '1991-2020', normals: { prcp } }];
+}
+
+/**
+ * The Tonga Meteorological Service's climatological information (R-0076), each sheet's text: its station in its
+ * heading ("CLIMATOLOGICAL INFORMATION – FUA'AMOTU AIRPORT"), a row a month of its mean daily maximum and minimum,
+ * mean total rainfall and rain days (of more than 0.1 mm, not the 1 mm the engine counts, so not read), the month's
+ * name before the row or on the line above it, and its period last; its place from the Bureau of Meteorology's list.
+ */
+export function parseTonga(json: string): SourceStation[] {
+  const data = JSON.parse(json) as { sheets: { wmo: string; latitude: number; longitude: number; text: string }[] };
+  return data.sheets.map(({ wmo, latitude, longitude, text }) => {
+    const rows = [...text.matchAll(/^\s*(?:[A-Z]+\s+)?(-?\d+\.\d)\s+(-?\d+\.\d)\s+(\d+\.\d)\s+\d+\s*$/gm)];
+    const years = [...text.matchAll(/(\d{4})- ?(\d{4})/g)].at(-1);
+    const name = /INFORMATION – (.*?)\s*$/m.exec(text)?.[1];
+    if (rows.length !== 12 || years === undefined || name === undefined) throw new Error(`a Tonga sheet the compiler can't read: ${wmo}`);
+    const period = `${years[1] as string}-${years[2] as string}`;
+    const col = (i: number) => rows.map((r) => Number(r[i]));
+    return { id: `tms:${wmo}:${period}`, name, country: 'TO', latitude, longitude, elevation: null, period, normals: { tmax: col(1), tmin: col(2), prcp: col(3) } };
+  });
+}
+
 /** A vendored file, checked against its pinned hash (a gzipped one's as NCEI serves it, unzipped). */
 function pinned(root: string, file: string, sha256: string, encoding: 'utf8' | 'latin1'): string {
   const raw = readFileSync(join(root, file));
@@ -924,7 +982,7 @@ export function readStations(root: string, towns: readonly Town[]): Station[] {
   const files = Object.fromEntries(PARAMS.map((p) => [p, pinned(root, SOURCES_9120[p].file, SOURCES_9120[p].sha256, 'utf8')])) as Record<Param, string>;
   const normals = pinned(root, SOURCES_6190.normals.file, SOURCES_6190.normals.sha256, 'latin1');
   const stations = pinned(root, SOURCES_6190.stations.file, SOURCES_6190.stations.sha256, 'latin1');
-  const national = [...parseMeteoFrance(pinned(root, SOURCE_MF.file, SOURCE_MF.sha256, 'utf8')), ...parseCwa(pinned(root, SOURCE_CWA.file, SOURCE_CWA.sha256, 'utf8')), ...parseMetOffice(pinned(root, SOURCE_METOFFICE.file, SOURCE_METOFFICE.sha256, 'utf8'))];
+  const national = [...parseMeteoFrance(pinned(root, SOURCE_MF.file, SOURCE_MF.sha256, 'utf8')), ...parseCwa(pinned(root, SOURCE_CWA.file, SOURCE_CWA.sha256, 'utf8')), ...parseMetOffice(pinned(root, SOURCE_METOFFICE.file, SOURCE_METOFFICE.sha256, 'utf8')), ...parseAnguilla(pinned(root, SOURCE_ANGUILLA.file, SOURCE_ANGUILLA.sha256, 'utf8')), ...parseTonga(pinned(root, SOURCE_TONGA.file, SOURCE_TONGA.sha256, 'utf8'))];
   // Each file read by hand is checked, though nothing is read from it here.
   for (const { source, station } of HAND_READ) {
     pinned(root, source.file, source.sha256, 'latin1');

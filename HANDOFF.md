@@ -14,9 +14,9 @@ restarts. Read `CLAUDE.md` and the owner's package in `docs/` first.
   `registry/layers.json`.
 - Layer 2 (the world) is in progress. Done: the gazetteer (`world.gazetteer`), the map (`world.map`), coverage
   matrix A, and the clock (`world.clock`). In progress: the weather (`world.weather`): the engine is built and
-  tested; its matrix has 202 countries researched, 15 blocked, 6 proven and 29 pending research (see Next step).
-  Mutation testing of `tools/wmo/compile.ts` and `coverage.ts` with the last sources (the Klimatafeln, the GHCN-Daily
-  averages) was still running at this checkpoint; the next commit closes any survivors. Then holidays and prices.
+  tested, and its matrix is complete: 202 countries researched, 44 blocked (each after all five methods, the player
+  told where the weather is borrowed from), 6 proven, none pending. Mutation testing of `tools/wmo/compile.ts` and
+  `coverage.ts` with the last sources was still running at this checkpoint (see Next step). Then holidays and prices.
 
 What layer 2 holds so far:
 
@@ -52,8 +52,10 @@ What layer 2 holds so far:
   the WMO's 1991-2020 normals (R-0037), its 1961-1990 normals (R-0038), its 1981-2010 normals where a Member's file
   gives what those lack (Ecuador's sunshine, R-0044), then national services' own publications (Météo-France's
   fiches for the overseas territories, Monaco and Andorra, R-0043; Taiwan's CWA, R-0045; the Met Office's Channel
-  Islands averages, R-0048; tables read by hand from a scan or a paper, pinned to the file: Bermuda's sunshine
-  R-0049, Nepal's R-0057, Saint-Barthélemy's and Saint-Martin's R-0060), then the Deutscher Wetterdienst's worldwide
+  Islands averages, R-0048; Anguilla's Statistics Department's rainfall by year, averaged over 1991-2020 by WMO-No.
+  1203's rule, R-0075; Tonga's Meteorological Service's station sheets, R-0076; tables read by hand from a scan or a
+  paper, pinned to the file: Bermuda's sunshine R-0049, Nepal's R-0057, Saint-Barthélemy's and Saint-Martin's R-0060,
+  Meteo Curaçao's Bonaire summary R-0074), then the Deutscher Wetterdienst's worldwide
   normals (R-0062) and its Klimatafeln (R-0063), then the WMO's World Weather Information Service (R-0042), then
   averages computed from NOAA's GHCN-Daily records by WMO-No. 1203's rules (R-0073: a month's value only from a
   month complete enough, an average only where 80% of its period's years have one; it fills Suriname's rain days and
@@ -136,17 +138,11 @@ What layer 0 holds:
 
 ## Next step
 
-1. The weather's pending countries (`coverage/weather-countries.json`, each row with what it lacks). For each: look
-   for the country's own published normals (its weather service's pages and documents, rendering script pages in
-   Chromium where needed: `require('playwright')`), then a secondary source quoting them; integrate what is found as
-   a source in `tools/wmo/compile.ts` (a research tool to fetch it, a register entry, tests); where nothing is found
-   after all five methods, record the blocker with `world.weather.blocked.<code>` (the coverage generator turns the
-   row blocked). Every attempt is run before it is written down. Helpers used so far live outside the repository (a
-   spec-to-register script); the attempts' wording follows the existing blockers (R-0051 on). The GHCN-Daily records
-   have been searched for every pending country (by the FIPS code of its identifier): what they can fill is in; what
-   remains needs its own service's publications or a blocker. Sunshine has no daily source there. Web archives
-   (web.archive.org, archive.ph) can't be reached from this environment: each blocker records that, to be tried
-   again where they can.
+1. Close the weather's mutation testing: `npx stryker run --mutate 'tools/wmo/compile.ts,tools/wmo/coverage.ts'`
+   (about an hour); kill each survivor with a test or a simpler line, as the earlier runs did. The weather's blockers
+   (`world.weather.blocked.<code>`, R-0051 on) each say what is to be tried again where it can be reached (the
+   web archives, the services whose sites didn't answer from here: Djibouti's, Lesotho's, the Comoros', Palestine's,
+   Montserrat's).
 2. Then holidays by country, prices by place, and the proof of layer 2.
 
 ## Verification evidence
