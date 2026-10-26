@@ -9,7 +9,7 @@ import type { RegisterIndex } from './register.ts';
  * The coverage matrices (MANDATE rule 3, KEEP entries 5, 6 and 19). Every engine declares one or more matrices; each
  * matrix has one row per key of its axis's universe, no more and no fewer. An engine that reads a place covers the
  * country axis (all 252 countries and territories) and names a passing test that runs it over every place of the
- * map (all 170,911).
+ * map (all 171,654, GeoNames of 2026-10-26, by the owner's word that day).
  *
  * A row is:
  * - researched: its facts cited in the register (found or secondary) and a passing test holds it;

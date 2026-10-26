@@ -12,9 +12,19 @@ restarts. Read `CLAUDE.md` and the owner's package in `docs/` first.
   `2ff094d439ad`, recorded in `registry/layers.json`.
 - Layer 1 (the core) is proven: the full gate green in a fresh clone of the branch at `dd447a897c68`, recorded in
   `registry/layers.json`.
-- Layer 2 (the world) is next. Its first piece, the gazetteer, waits on the owner's answer about the count of places
-  (Questions for the owner); the gate refuses code in `src/world/` until layer 1's proof is in the ledger, which it
-  now is.
+- Layer 2 (the world) is in progress. Done: the gazetteer (`world.gazetteer`). Next: the map, then coverage matrix A
+  by country, the clock as the player meets it, the weather, holidays, prices.
+
+What layer 2 holds so far:
+
+- `world.gazetteer` (`src/world/gazetteer/`): GeoNames' dump of 2026-10-26, as the owner chose it ("Use today's
+  GeoNames release, keep going"), vendored in `vendor/geonames/` with each file's SHA-256 pinned and compiled by
+  `tools/geonames/` (a zip reader of its own, as `tools/tzdb/` has a tar reader): 252 countries and territories,
+  3,865 first-level regions, 171,654 populated places in 246 countries (R-0032 to R-0034). Each place keeps its name,
+  its plain-letter spelling where it differs, its region, its coordinates, its IANA zone and its population; a
+  country's places are a file of their own, fetched when someone looks at that country. The town search ranks the
+  name itself, then names starting with it, then a word starting with it, then names holding it, larger places
+  first, accents and case aside. A test runs the clock and the sun at every one of the 171,654 places.
 
 What layer 1 holds:
 
@@ -83,11 +93,13 @@ What layer 0 holds:
 
 ## Next step
 
-1. Push the proof and read the CI run of the full gate on GitHub.
-2. Layer 2, the world, starting with the gazetteer: GeoNames' country list (252 entries, read 2026-10-26), its
-   first-level subdivisions and its populated places of a thousand people or more, vendored and pinned by SHA-256 and
-   compiled by a tool as tzdb is; the map's outlines from Natural Earth 1:110m. Then coverage matrix A by country,
-   the clock as the player meets it, the weather from each country's published normals, holidays, prices.
+1. Layer 2, the map: Natural Earth's 1:110m country outlines (public domain), vendored and pinned, compiled to the
+   outlines the map draws, keyed to the gazetteer's country codes; a country too small to draw at that scale stays
+   in the lists.
+2. Then coverage matrix A by country, the clock as the player meets it (real time, paused, play, advance, stops at
+   commitments, reading the real time only through the clock), the weather (climate from each country's published
+   normals; WMO's 1991-2020 normals are the first source to try), holidays by country, prices by place (the World
+   Bank's ICP price levels the first source to try). Then prove layer 2.
 
 ## Verification evidence
 
@@ -155,6 +167,19 @@ What layer 0 holds:
 - `fake-indexeddb` 6.2.5 (2025-11-07) is the only package layer 1 added, to test the IndexedDB store against real
   IndexedDB semantics in Node.
 
+- Layer 2's decisions so far:
+  - The map's count of places is 171,654 (GeoNames of 2026-10-26), by the owner's word that day; it replaces the
+    170,911 the locked package names (the first SLATE's snapshot). `registry/axes.json` records the decision, and
+    the package's documents are left as the owner wrote them.
+  - Six of the 252 have no populated place of their own: Antarctica, Bouvet Island, Heard Island and McDonald
+    Islands, the United States Minor Outlying Islands, and two states that no longer exist and GeoNames still lists,
+    Serbia and Montenegro and the Netherlands Antilles. They stay in every list (the owner's 252); the screens will
+    let a country with no towns be chosen as itself.
+  - The gazetteer takes no currency from GeoNames, whose list still gives Bulgaria the lev a year after the euro: a
+    country's currency comes from ISO 4217 (R-0026) when the money engines need it.
+  - GeoNames' licence (CC BY 4.0) asks for credit; a line saying where the places come from goes on a screen in
+    layer 5.
+
 ## Blockers and open issues
 
 - Resolved 2026-10-26, the owner's two open issues:
@@ -172,14 +197,6 @@ What layer 0 holds:
 
 ## Questions for the owner
 
-1. **The count of places on the map.** The package holds the map to 170,911 places, the first SLATE's count of
-   GeoNames' populated places of a thousand people or more. GeoNames changes daily: its `cities1000` today
-   (2026-10-26, last modified 02:48 UT) holds 171,654, and its country list the same 252 entries. The snapshot the
-   first SLATE used isn't in the package (`public/geo/` wasn't copied), the Internet Archive can't be reached from this
-   session, and reading the first SLATE's repository (`montrealroots/1221`) to recover it was refused by this
-   session's permissions. Two ways on: allow this session to read `montrealroots/1221`, so the build uses the first
-   SLATE's exact snapshot and the 170,911 holds; or take today's GeoNames release, pinned by its hash, and the map's
-   count becomes 171,654 (the owner's rule, every place on the map covered, holds either way). The recommendation is
-   today's release: it is current, citable and reproducible, and the 743 more places are real towns.
-2. The four the package leaves to the owner (the premise's detail, home on the first morning, the start date, Sleep
-   as a clock action) are asked when the build reaches them.
+None open. Answered 2026-10-26: the map's count of places is today's GeoNames release (171,654). The four the
+package leaves to the owner (the premise's detail, home on the first morning, the start date, Sleep as a clock
+action) are asked when the build reaches them.

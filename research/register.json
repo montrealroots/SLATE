@@ -1239,6 +1239,75 @@
      "said": "Art. 1.- El tipo de cambio entre el colón y el dólar de los Estados Unidos de América será fijo e inalterable a partir de la vigencia de esta Ley, a razón de ocho colones setenta y cinco centavos por dólar de los Estados Unidos de América."
     }
    ]
+  },
+  {
+   "id": "R-0032",
+   "fact": "world.gazetteer.countries",
+   "sought": "Every country and territory the map offers, by its ISO 3166 code, with its name",
+   "status": "found",
+   "value": {
+    "countries": 252,
+    "file": "vendor/geonames/countryInfo.txt",
+    "sha256": "c55f638cfaafb4fe45a9aa15120a0f1f78e8a34a8e1847d7b9320cf740fbc9ab"
+   },
+   "sources": [
+    {
+     "kind": "primary",
+     "url": "https://download.geonames.org/export/dump/countryInfo.txt",
+     "title": "GeoNames, countryInfo.txt (CC BY 4.0)",
+     "read": "2026-10-26",
+     "said": "Last modified 2026-10-26 02:54:02 GMT; 252 country lines of 19 tab-separated fields (#ISO, ISO3, ISO-Numeric, fips, Country, Capital, Area(in sq km), Population, Continent, tld, CurrencyCode, CurrencyName, Phone, Postal Code Format, Postal Code Regex, Languages, geonameid, neighbours, EquivalentFipsCode). Two of the 252 are states that no longer exist and that GeoNames keeps listed: CS Serbia and Montenegro and AN Netherlands Antilles. Its currency for Bulgaria is still BGN, which ISO 4217 list one of 2026-09-17 (R-0026) no longer lists; the gazetteer takes no currency from this file."
+    }
+   ]
+  },
+  {
+   "id": "R-0033",
+   "fact": "world.gazetteer.regions",
+   "sought": "Every first-level subdivision of every country, with its name",
+   "status": "found",
+   "value": {
+    "regions": 3865,
+    "file": "vendor/geonames/admin1CodesASCII.txt",
+    "sha256": "2e4867f5397acb056ea26377601b57af37cb4c81399770225018e9e439e91ad3"
+   },
+   "sources": [
+    {
+     "kind": "primary",
+     "url": "https://download.geonames.org/export/dump/admin1CodesASCII.txt",
+     "title": "GeoNames, admin1CodesASCII.txt (CC BY 4.0)",
+     "read": "2026-10-26",
+     "said": "Last modified 2026-10-26 02:48:44 GMT; 3,865 lines of code (\"CC.admin1\"), name, ASCII name and geonameid. The readme: most admin1 codes are FIPS codes; ISO codes for US, CH, BE and ME; \"00\" stands for general features with no specific admin1 code."
+    }
+   ]
+  },
+  {
+   "id": "R-0034",
+   "fact": "world.gazetteer.places",
+   "sought": "Every populated place the map offers, with its country, region, coordinates, time zone and population",
+   "status": "found",
+   "value": {
+    "places": 171654,
+    "countriesWithPlaces": 246,
+    "file": "vendor/geonames/cities1000.zip",
+    "sha256": "289fa72adcf173bdd3ae23b12f2e4a63d29c096877eb3eba54a595fa26abc73f",
+    "entrySha256": "1fc2d01fb7d94b140eb5d8476ff11af15bcb4069ffcb128cf4f635322c1fb2b4"
+   },
+   "sources": [
+    {
+     "kind": "primary",
+     "url": "https://download.geonames.org/export/dump/cities1000.zip",
+     "title": "GeoNames, cities1000.zip (CC BY 4.0)",
+     "read": "2026-10-26",
+     "said": "Last modified 2026-10-26 02:48:44 GMT, 11,083,154 bytes; one entry, cities1000.txt, 32,037,359 bytes, 171,654 lines of the geoname table's 19 fields. The readme: \"all cities with a population > 1000 or seats of adm div down to PPLA3 (ca 80.000)\"; 11,842 lines record a population of 0. Every line's timezone is an IANA id that tzdb 2026e (R-0001) holds, 101 of them as aliases. 383 lines carry an admin1 code that admin1CodesASCII.txt doesn't list (\"00\" or empty). Six of the 252 countries have no line: AN, AQ, BV, CS, HM, UM."
+    },
+    {
+     "kind": "primary",
+     "url": "https://download.geonames.org/export/dump/readme.txt",
+     "title": "GeoNames, readme.txt",
+     "read": "2026-10-26",
+     "said": "The geoname table's fields, in order: geonameid, name, asciiname, alternatenames, latitude, longitude, feature class, feature code, country code, cc2, admin1 code, admin2 code, admin3 code, admin4 code, population, elevation, dem, timezone, modification date. \"This work is licensed under a Creative Commons Attribution 4.0 License.\""
+    }
+   ]
   }
  ]
 }
