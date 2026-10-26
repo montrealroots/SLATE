@@ -56,8 +56,8 @@ export function formatOffset(utoff: number): string {
 
 /** A zone line's abbreviation for a type: "A/B" by daylight saving, %s the rule's letters, %z the offset. */
 export function abbreviation(format: string, letters: string, isdst: boolean, utoff: number): string {
-  const slash = format.indexOf('/');
-  if (slash >= 0) return isdst ? format.slice(slash + 1) : format.slice(0, slash);
+  const [standard, daylight] = format.split('/');
+  if (daylight !== undefined) return isdst ? daylight : (standard as string);
   return format.replace('%s', letters).replace('%z', formatOffset(utoff));
 }
 
@@ -82,64 +82,63 @@ const sameType = (a: TimeType, b: TimeType) => a.utoff === b.utoff && a.isdst ==
  */
 export function zoneHistory(data: TzData, lines: readonly TzZoneLine[]): ZoneHistory {
   const raw: Transition[] = [];
+  /** A transition, kept only inside the span the engine answers for. */
+  const add = (t: Transition) => {
+    if (t.at < LAST_YEAR_END) raw.push(t);
+  };
   let initial: TimeType | undefined;
+  /** Where the line being read starts; the first line runs from the beginning of time. */
   let start = -Infinity;
-  lines.forEach((line, i) => {
+  for (const [i, line] of lines.entries()) {
     const { stdoff, rule, format } = line;
-    const usestartAtAll = i > 0;
     if (rule.kind !== 'named') {
       const save = rule.kind === 'fixed' ? rule.save : 0;
       const isdst = rule.kind === 'fixed' && rule.isdst;
       const type = { utoff: stdoff + save, isdst, abbr: abbreviation(format, '', isdst, stdoff + save) };
-      if (usestartAtAll) raw.push({ at: start, ...type });
-      else initial = type;
+      if (i === 0) initial = type;
+      else add({ at: start, ...type });
       start = line.until === undefined ? Infinity : untilUT(line.until, stdoff, save);
-      return;
+      continue;
     }
     const rules = data.rules[rule.name];
     if (rules === undefined) throw new Error(`the rule set ${rule.name} doesn't exist`);
-    const lastYear = line.until === undefined ? LAST_YEAR : line.until.year;
     const typeOf = (r: TzRule): TimeType => ({ utoff: stdoff + r.save, isdst: r.isdst, abbr: abbreviation(format, r.letters, r.isdst, stdoff + r.save) });
 
+    // The state at the line's start is the one the last rule moment at or before it set (a moment exactly at the start
+    // and one before it come to the same transition); without one, standard time, named by the first moment after it
+    // that saves nothing.
     let save = 0;
-    let startoff = stdoff;
-    let startAbbr: string | undefined;
-    let usestart = usestartAtAll;
-    outer: for (let year = Math.min(...rules.map((r) => r.from)); year <= lastYear; year += 1) {
+    let startType: TimeType | undefined;
+    let standardAbbr: string | undefined;
+    let firstStandard: TimeType | undefined;
+    outer: for (let year = Math.min(...rules.map((r) => r.from)); year <= LAST_YEAR; year += 1) {
       const todo = rules.filter((r) => r.from <= year && (r.to === null || r.to >= year));
       while (todo.length > 0) {
         // The earliest rule left this year, its moment read with the save in effect now.
         const timed = todo.map((r) => ({ r, at: toUT(localMoment(year, r), r.atType, stdoff, save) }));
+        // Stryker disable next-line EqualityOperator: zic refuses two rules at one instant, so no two moments tie.
         const { r: next, at } = timed.reduce((a, b) => (b.at < a.at ? b : a));
         todo.splice(todo.indexOf(next), 1);
-        if (line.until !== undefined && at >= untilUT(line.until, stdoff, save)) {
-          if (startAbbr === undefined && stdoff + next.save === startoff) startAbbr = typeOf(next).abbr;
-          break outer;
-        }
+        const ends = line.until !== undefined && at >= untilUT(line.until, stdoff, save);
+        if (next.save === 0) standardAbbr ??= typeOf(next).abbr;
+        if (!next.isdst) firstStandard ??= typeOf(next);
+        if (ends) break outer;
         save = next.save;
-        if (usestart && at === start) usestart = false;
-        if (usestart) {
-          if (at < start) {
-            startoff = stdoff + save;
-            startAbbr = typeOf(next).abbr;
-            continue;
-          }
-          if (startAbbr === undefined && startoff === stdoff + save) startAbbr = typeOf(next).abbr;
-        }
-        // A zone that starts on rules is, before its first moment, in the first standard time the rules give.
-        if (initial === undefined && !next.isdst) initial = typeOf(next);
-        raw.push({ at, ...typeOf(next) });
+        if (at <= start) startType = typeOf(next);
+        else add({ at, ...typeOf(next) });
       }
     }
-    if (usestart) {
-      const isdst = startoff !== stdoff;
-      if (startAbbr === undefined && format.includes('%s')) throw new Error(`no abbreviation can be found for the start of a ${rule.name} line`);
-      raw.push({ at: start, utoff: startoff, isdst, abbr: startAbbr ?? abbreviation(format, '', isdst, startoff) });
+    // A zone that opens on rules is, before its first moment, in the first standard time they give (zic's default type).
+    if (i === 0) initial = firstStandard;
+    else {
+      if (startType === undefined && standardAbbr === undefined && format.includes('%s')) throw new Error(`no abbreviation can be found for the start of a ${rule.name} line`);
+      // Stryker disable next-line StringLiteral: a format with %s was refused above, so no letters are read here.
+      add({ at: start, ...(startType ?? { utoff: stdoff, isdst: false, abbr: standardAbbr ?? abbreviation(format, '', false, stdoff) }) });
     }
     start = line.until === undefined ? Infinity : untilUT(line.until, stdoff, save);
-  });
+  }
   if (initial === undefined) throw new Error('the zone has no standard time to start in');
-  return { initial, transitions: optimize(initial, raw.filter((t) => t.at < LAST_YEAR_END).sort((a, b) => a.at - b.at)) };
+  return { initial, transitions: optimize(initial, raw.sort((a, b) => a.at - b.at)) };
 }
 
 /**

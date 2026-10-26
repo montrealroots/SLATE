@@ -1,0 +1,163 @@
+{
+ "engine": "core.persistence",
+ "axis": "persistence-operation",
+ "universe": {
+  "keys": [
+   "versions-pinned-twice",
+   "reading-a-kept-life",
+   "gzip",
+   "indexeddb",
+   "local-storage-fallback",
+   "copy-before-every-write",
+   "unreadable-lives-and-copies",
+   "letting-a-life-go",
+   "bringing-the-copy-back",
+   "device-slots",
+   "server-checks",
+   "server-functions",
+   "server-retries-once",
+   "server-store",
+   "server-refusals-in-players-terms",
+   "where-lives-are-kept"
+  ]
+ },
+ "rows": [
+  {
+   "key": "versions-pinned-twice",
+   "status": "proven",
+   "tests": [
+    "tests/core/persistence/local.test.ts::the versions > are pinned twice, apart, and agree; the build's is the package's"
+   ]
+  },
+  {
+   "key": "reading-a-kept-life",
+   "status": "proven",
+   "tests": [
+    "tests/core/persistence/local.test.ts::a kept life's text > reads back as it was written",
+    "tests/core/persistence/local.test.ts::a kept life's text > says the file is damaged, or not a SLATE life, never the parser's words",
+    "tests/core/persistence/local.test.ts::a kept life's text > knows a life from a newer build"
+   ]
+  },
+  {
+   "key": "gzip",
+   "status": "proven",
+   "tests": [
+    "tests/core/persistence/local.test.ts::packing > gzips a life and marks it, and reads it back",
+    "tests/core/persistence/local.test.ts::packing > reads a plain life as it is, and says a damaged packed one is damaged",
+    "tests/core/persistence/local.test.ts::packing > without compression in the browser, keeps it plain, and says a packed one can't be opened"
+   ]
+  },
+  {
+   "key": "indexeddb",
+   "status": "proven",
+   "tests": [
+    "tests/core/persistence/local.test.ts::the key stores > IndexedDB: reads, writes and removes, in this build's own database",
+    "tests/core/persistence/local.test.ts::the key stores > IndexedDB: a database that won't open is tried again",
+    "tests/core/persistence/local.test.ts::the key stores > IndexedDB: a transaction that fails or is aborted rejects with its error",
+    "tests/core/persistence/local.test.ts::the key stores > the device's: IndexedDB where there is one, local storage otherwise",
+    "tests/core/persistence/local.test.ts::lives kept on this device > use the device's own store when given none"
+   ]
+  },
+  {
+   "key": "local-storage-fallback",
+   "status": "proven",
+   "tests": [
+    "tests/core/persistence/local.test.ts::the key stores > local storage: reads, writes and removes, and says when there is none",
+    "tests/core/persistence/local.test.ts::the key stores > the device's: IndexedDB where there is one, local storage otherwise"
+   ]
+  },
+  {
+   "key": "copy-before-every-write",
+   "status": "proven",
+   "tests": [
+    "tests/core/persistence/local.test.ts::lives kept on this device > keep a copy of what was there before each write",
+    "tests/core/persistence/local.test.ts::lives kept on this device > leave the place as it was when a write fails, and say why"
+   ]
+  },
+  {
+   "key": "unreadable-lives-and-copies",
+   "status": "proven",
+   "tests": [
+    "tests/core/persistence/local.test.ts::lives kept on this device > say when the storage itself can't be read",
+    "tests/core/persistence/local.test.ts::lives kept on this device > say a life that can't be read can't, and offer only a copy that can"
+   ]
+  },
+  {
+   "key": "letting-a-life-go",
+   "status": "proven",
+   "tests": [
+    "tests/core/persistence/local.test.ts::lives kept on this device > let a life go keeping it as the copy, but never write a damaged one over a good copy",
+    "tests/core/persistence/server.test.ts::the backend functions > let a life go as the copy, freeing its place for a new one"
+   ]
+  },
+  {
+   "key": "bringing-the-copy-back",
+   "status": "proven",
+   "tests": [
+    "tests/core/persistence/local.test.ts::lives kept on this device > bring the copy back as the life, the life it replaces becoming the copy",
+    "tests/core/persistence/server.test.ts::the backend functions > keep what was there as the copy, and bring the copy back by swapping the two"
+   ]
+  },
+  {
+   "key": "device-slots",
+   "status": "proven",
+   "tests": [
+    "tests/core/persistence/local.test.ts::lives kept on this device > start with three empty places and no copies",
+    "tests/core/persistence/local.test.ts::lives kept on this device > keep a life packed under its own key, and say what it holds without opening it",
+    "tests/core/persistence/local.test.ts::lives kept on this device > keep this build's lives apart from the first SLATE's saves"
+   ]
+  },
+  {
+   "key": "server-checks",
+   "status": "proven",
+   "tests": [
+    "tests/core/persistence/server.test.ts::the server's checks > take one of the three places, as a number",
+    "tests/core/persistence/server.test.ts::the server's checks > read a life's size, shape, version and place before keeping it",
+    "tests/core/persistence/server.test.ts::the server's checks > let a life go forward only, and only in a place that holds it or nothing"
+   ]
+  },
+  {
+   "key": "server-functions",
+   "status": "proven",
+   "tests": [
+    "tests/core/persistence/server.test.ts::the backend functions > answer only a player who is signed in",
+    "tests/core/persistence/server.test.ts::the backend functions > say they couldn't finish when something unforeseen fails",
+    "tests/core/persistence/server.test.ts::the backend functions > keep a life, then say what each place holds, and give it back",
+    "tests/core/persistence/server.test.ts::the backend functions > refuse a stale write, and another life where one is kept",
+    "tests/core/persistence/server.test.ts::the backend functions > list a copy with no card of its own as a copy still"
+   ]
+  },
+  {
+   "key": "server-retries-once",
+   "status": "proven",
+   "tests": [
+    "tests/core/persistence/server.test.ts::the backend functions > write a retried request once",
+    "tests/core/persistence/server.test.ts::lives kept on the server > sends each write with a key made of the life and the moment it reached"
+   ]
+  },
+  {
+   "key": "server-store",
+   "status": "proven",
+   "tests": [
+    "tests/core/persistence/server.test.ts::lives kept on the server > are listed, opened, kept, let go of and brought back through the functions, mirrored on the device",
+    "tests/core/persistence/server.test.ts::lives kept on the server > keep the device's mirror even when the server refuses, and say the server's own reason",
+    "tests/core/persistence/server.test.ts::lives kept on the server > a mirror that fails doesn't fail the write"
+   ]
+  },
+  {
+   "key": "server-refusals-in-players-terms",
+   "status": "proven",
+   "tests": [
+    "tests/core/persistence/server.test.ts::lives kept on the server > say plainly when the server can't be reached, doesn't answer, or turns something down",
+    "tests/core/persistence/server.test.ts::lives kept on the server > a failure is retried only where it may pass"
+   ]
+  },
+  {
+   "key": "where-lives-are-kept",
+   "status": "proven",
+   "tests": [
+    "tests/core/persistence/server.test.ts::where lives are kept > on the server where the deployment injects its client, on this device otherwise"
+   ]
+  }
+ ]
+}

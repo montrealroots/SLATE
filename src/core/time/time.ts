@@ -16,9 +16,9 @@ export const ZONE_IDS: readonly string[] = Object.keys(data.zones);
 
 /** The canonical zone a name stands for, following an alias to its zone; undefined for a name the database lacks. */
 export function canonicalZone(id: string): string | undefined {
-  if (id in data.zones) return id;
-  const target = data.links[id];
-  return target !== undefined && target in data.zones ? target : undefined;
+  // Every alias in the release names a zone directly (tests/core/time/time.test.ts holds this).
+  if (Object.hasOwn(data.zones, id)) return id;
+  return Object.hasOwn(data.links, id) ? data.links[id] : undefined;
 }
 
 const histories = new Map<string, ZoneHistory>();
@@ -81,19 +81,17 @@ export type Resolution = 'exact' | 'repeated' | 'skipped';
  */
 export function instantOf(id: string, date: CivilDate, seconds: number, prefer: 'earlier' | 'later' = 'earlier'): { instant: number; resolution: Resolution } {
   const local = daysFromCivil(date.year, date.month, date.day) * SECONDS_PER_DAY + seconds;
-  // The offsets that could apply: those in effect from two days before to two days after, which spans any jump.
-  const offsets = new Set<number>();
-  for (const probe of [local - 2 * SECONDS_PER_DAY, local, local + 2 * SECONDS_PER_DAY]) offsets.add(typeAt(id, probe).utoff);
-  const { transitions } = historyOf(id);
-  for (const t of transitions) if (t.at > local - 2 * SECONDS_PER_DAY && t.at < local + 2 * SECONDS_PER_DAY) offsets.add(t.utoff);
-  const fits = [...offsets].map((u) => local - u).filter((t) => typeAt(id, t).utoff === local - t).sort((a, b) => a - b);
-  if (fits.length > 1) return { instant: (prefer === 'later' ? fits.at(-1) : fits[0]) as number, resolution: 'repeated' };
+  const { initial, transitions } = historyOf(id);
+  // Any instant that shows this local time does so at one of the zone's offsets; those whose instant has that offset fit.
+  const offsets = new Set([initial.utoff, ...transitions.map((t) => t.utoff)]);
+  const fits = [...offsets].map((u) => local - u).filter((t) => typeAt(id, t).utoff === local - t);
+  if (fits.length > 1) return { instant: prefer === 'earlier' ? Math.min(...fits) : Math.max(...fits), resolution: 'repeated' };
   if (fits.length === 1) return { instant: fits[0] as number, resolution: 'exact' };
-  // Skipped: the jump whose gap holds it (local times from the jump plus the offset before it, up to the jump plus
-  // the offset after), read with the offset before.
+  // Skipped: it lies in the gap of the last jump whose gap starts at or before it; read it with the offset before.
+  let before = initial.utoff;
   for (const [i, t] of transitions.entries()) {
-    const before = i === 0 ? historyOf(id).initial.utoff : (transitions[i - 1] as TimeType).utoff;
-    if (t.at + before <= local && local < t.at + t.utoff) return { instant: local - before, resolution: 'skipped' };
+    const prior = i === 0 ? initial.utoff : (transitions[i - 1] as TimeType).utoff;
+    if (t.at + prior <= local) before = prior;
   }
-  throw new RangeError(`no instant fits ${date.year}-${date.month}-${date.day} ${seconds}s in ${id}`);
+  return { instant: local - before, resolution: 'skipped' };
 }

@@ -1,0 +1,91 @@
+{
+ "engine": "core.frame",
+ "axis": "frame-operation",
+ "universe": {
+  "keys": [
+   "a-life",
+   "plain-data",
+   "commands",
+   "declared-reads-and-writes",
+   "schedule",
+   "notices",
+   "passage",
+   "commitments"
+  ]
+ },
+ "rows": [
+  {
+   "key": "a-life",
+   "status": "proven",
+   "tests": [
+    "tests/core/frame/frame.test.ts::a life > begins at a moment, with its seed and its slices, and nothing scheduled or noticed",
+    "tests/core/frame/frame.test.ts::a life > refuses a seed, a moment or slices it could not keep"
+   ]
+  },
+  {
+   "key": "plain-data",
+   "status": "proven",
+   "tests": [
+    "tests/core/frame/frame.test.ts::plain data > is null, a boolean, a string, a finite number, and arrays and plain objects of them",
+    "tests/core/frame/frame.test.ts::plain data > is not anything else, and says where"
+   ]
+  },
+  {
+   "key": "commands",
+   "status": "proven",
+   "tests": [
+    "tests/core/frame/frame.test.ts::commands > are declared once, and listed with what they read and write",
+    "tests/core/frame/frame.test.ts::commands > run only as declared, with their own copy of plain arguments",
+    "tests/core/frame/frame.test.ts::commands > draw from the life's seed, by decider and keys"
+   ]
+  },
+  {
+   "key": "declared-reads-and-writes",
+   "status": "proven",
+   "tests": [
+    "tests/core/frame/frame.test.ts::commands > change the slices they write, leave the rest as they were, and never touch the life they were given",
+    "tests/core/frame/frame.test.ts::commands > may replace a slice they write, or start one",
+    "tests/core/frame/frame.test.ts::commands > stop at a slice they don't declare, and at any change to one they only read",
+    "tests/core/frame/frame.test.ts::commands > keep only plain data, copied clear of anything they only read",
+    "tests/core/frame/frame.test.ts::the passage of time > holds each happening to what it declares"
+   ]
+  },
+  {
+   "key": "schedule",
+   "status": "proven",
+   "tests": [
+    "tests/core/frame/frame.test.ts::the schedule > takes items of declared kinds, now or later, in the order they will happen",
+    "tests/core/frame/frame.test.ts::the schedule > refuses the past, a moment that isn't one, a kind never declared, and data it can't keep",
+    "tests/core/frame/frame.test.ts::the schedule > is read and changed only by what declares it",
+    "tests/core/frame/frame.test.ts::the schedule > lets an item be taken off, and only one that is on it",
+    "tests/core/frame/frame.test.ts::the schedule > declares each kind once"
+   ]
+  },
+  {
+   "key": "notices",
+   "status": "proven",
+   "tests": [
+    "tests/core/frame/frame.test.ts::notices > are left at the moment, unread, and marked read",
+    "tests/core/frame/frame.test.ts::notices > are of declared kinds, read and changed only by what declares them"
+   ]
+  },
+  {
+   "key": "passage",
+   "status": "proven",
+   "tests": [
+    "tests/core/frame/frame.test.ts::the passage of time > brings each thing about at its moment, in order, and ends at the moment asked",
+    "tests/core/frame/frame.test.ts::the passage of time > runs each happening at its own moment, and what it schedules happens in turn",
+    "tests/core/frame/frame.test.ts::the passage of time > ends the same in one step or in many",
+    "tests/core/frame/frame.test.ts::the passage of time > only goes forward, to a moment",
+    "tests/core/frame/frame.test.ts::the passage of time > refuses an item whose kind isn't declared"
+   ]
+  },
+  {
+   "key": "commitments",
+   "status": "proven",
+   "tests": [
+    "tests/core/frame/frame.test.ts::the passage of time > stops at a commitment that wants the player, which stays until it is dealt with"
+   ]
+  }
+ ]
+}

@@ -20,7 +20,9 @@ import {
   type CurrencyCode,
   type Rate,
 } from '../../../src/core/money/money.ts';
-import { OUTPUT, readListOne, serialize } from '../../../tools/money/compile.ts';
+import { mkdtempSync, mkdirSync, writeFileSync } from 'node:fs';
+import { tmpdir } from 'node:os';
+import { LIST_ONE, OUTPUT, parseListOne, readListOne, serialize } from '../../../tools/money/compile.ts';
 
 const ROOT = join(import.meta.dirname, '../../..');
 const usd = (minor: number) => money('USD', minor);
@@ -44,6 +46,39 @@ describe('the currencies, from ISO 4217 list one', () => {
   it('know what is a currency in use, and what is not', () => {
     expect(['USD', 'EUR', 'VES', 'VED', 'SVC', 'FKP', 'TWD'].every(isCurrency)).toBe(true);
     expect(['XAU', 'USN', 'XTS', 'XDR', 'ZZZ', 'usd', 'toString', 'constructor'].some(isCurrency)).toBe(false);
+  });
+});
+
+describe('the list\'s compiler', () => {
+  const entry = (country: string, name: string, code?: string, number = '999', units = '2', fund = false) =>
+    `<CcyNtry><CtryNm>${country}</CtryNm><CcyNm${fund ? ' IsFund="true"' : ''}>${name}</CcyNm>${code === undefined ? '' : `<Ccy>${code}</Ccy><CcyNbr>${number}</CcyNbr><CcyMnrUnts>${units}</CcyMnrUnts>`}</CcyNtry>`;
+  const list = (...entries: string[]) => `<ISO_4217 Pblshd="2026-01-02"><CcyTbl>${entries.join('\n')}</CcyTbl></ISO_4217>`;
+  it('keeps each currency in use once, sorted, and leaves out funds, the ZZ codes, units with none, and places with none', () => {
+    const parsed = parseListOne(list(
+      entry('B', 'Bee', 'BBB', '002', '0'), entry('A', ' Ay ', ' AAA ', '001', '3'), entry('C', 'Bee', 'BBB', '002', '0'),
+      entry('D', 'Fund', 'FFF', '003', '2', true), entry('E', 'Fund', 'FFF', '003'),
+      entry('ZZ01_Gold', 'Gold', 'XAU', '959', 'N.A.'), entry('ZZ07_No_Currency', 'None', 'XXX', '999', 'N.A.'),
+      entry('ZZ08_Bond', 'Bond', 'XBA', '955', '2'), entry('ZZ09_Bond', 'Bond', 'XBB', '956', '2'), entry('G', 'Bond', 'XBB', '956', '2'),
+      entry('H', 'Sucre', 'XSU', '994', 'N.A.'), entry('ANTARCTICA', 'No universal currency'),
+    ));
+    expect(parsed).toEqual({ published: '2026-01-02', currencies: {
+      AAA: { name: 'Ay', number: '001', minorUnits: 3 }, BBB: { name: 'Bee', number: '002', minorUnits: 0 }, XBB: { name: 'Bond', number: '956', minorUnits: 2 },
+    } });
+    expect(Object.keys(parseListOne(list(entry('A', 'n', 'b'), entry('A', 'n', 'B'), entry('A', 'n', 'a'))).currencies)).toEqual(['a', 'b', 'B']);
+  });
+  it('refuses a currency listed two ways, and a list with no date of publication', () => {
+    expect(() => parseListOne(list(entry('A', 'One', 'AAA'), entry('B', 'Two', 'AAA')))).toThrow('AAA is listed two ways');
+    expect(() => parseListOne(list(entry('A', 'One', 'AAA', '001'), entry('B', 'One', 'AAA', '002')))).toThrow('AAA is listed two ways');
+    expect(() => parseListOne(list(entry('A', 'One', 'AAA', '001', '2'), entry('B', 'One', 'AAA', '001', '3')))).toThrow('AAA is listed two ways');
+    for (const head of ['<ISO_4217>', '<ISO_4217 Pblshd="2026-1-02">', '<ISO_4217 Pblshd="x2026-01-02">', '<ISO_4217  Pblshd="2026-01-02">']) {
+      expect(() => parseListOne(`${head}<CcyTbl></CcyTbl></ISO_4217>`)).toThrow('the list has no publication date');
+    }
+  });
+  it('refuses a list that is not the one the register cites', () => {
+    const root = mkdtempSync(join(tmpdir(), 'slate-iso-'));
+    mkdirSync(join(root, 'vendor/iso4217'), { recursive: true });
+    writeFileSync(join(root, LIST_ONE.file), list(entry('A', 'Ay', 'AAA')));
+    expect(() => readListOne(root)).toThrow(`${LIST_ONE.file} is not the list the register cites (sha256 `);
   });
 });
 
@@ -109,6 +144,7 @@ describe('exact arithmetic', () => {
     expect(parts(5, [3, 7])).toEqual([2, 3]);
     expect(parts(5, [7, 3])).toEqual([4, 1]);
     expect(parts(7, [0, 1, 1])).toEqual([0, 4, 3]);
+    expect(parts(0, [1, 2])).toEqual([0, 0]);
     expect(parts(1000, [1, 3, 6])).toEqual([100, 300, 600]);
     for (const [m, w] of [[1_000_001, [7, 11, 13, 17]], [-999, [1, 1, 1, 1, 1, 1, 1]], [1, [5, 5]]] as const) {
       expect(parts(m, [...w]).reduce((a, b) => a + b, 0)).toBe(m);

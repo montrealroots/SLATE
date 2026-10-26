@@ -131,6 +131,12 @@ describe('a zone\'s history', () => {
     // A format without %s needs no letters.
     const plain = zone([{ stdoff: 0, rule: { kind: 'none' }, format: 'Z', until: until(2000) }, { stdoff: 0, rule: { kind: 'named', name: 'R' }, format: '%z', until: until(2001) }, { stdoff: 0, rule: { kind: 'none' }, format: 'Z' }], { R: [rule({ from: 2005 })] });
     expect(plain.transitions).toEqual([{ at: day(2000, 1, 1), utoff: 0, isdst: false, abbr: '+00' }, { at: day(2001, 1, 1), utoff: 0, isdst: false, abbr: 'Z' }]);
+    // ... and a format with a slash, its standard half.
+    const slash = zone([{ stdoff: 0, rule: { kind: 'none' }, format: 'Z', until: until(2000) }, { stdoff: 0, rule: { kind: 'named', name: 'R' }, format: 'P/Q', until: until(2001) }, { stdoff: 0, rule: { kind: 'none' }, format: 'Z' }], { R: [rule({ from: 2005 })] });
+    expect(slash.transitions[0]).toEqual({ at: day(2000, 1, 1), utoff: 0, isdst: false, abbr: 'P' });
+    // A rule before the start names the line's start itself, even when no rule saves nothing.
+    const kept = zone([{ stdoff: 0, rule: { kind: 'none' }, format: 'Z', until: until(1995) }, { stdoff: 0, rule: { kind: 'named', name: 'R' }, format: 'Y%s' }], { R: [rule({ from: 1990, to: 1990, month: 1 })] });
+    expect(kept.transitions).toEqual([{ at: day(1995, 1, 1), utoff: 3600, isdst: true, abbr: 'YD' }]);
   });
   it('refuses what it cannot answer', () => {
     expect(() => zone([{ stdoff: 0, rule: { kind: 'none' }, format: 'Z', until: until(2000) }, { stdoff: 0, rule: { kind: 'named', name: 'R' }, format: 'Y%s', until: until(2001) }, { stdoff: 0, rule: { kind: 'none' }, format: 'Z' }], { R: [rule({ from: 2005 })] })).toThrow('no abbreviation can be found for the start of a R line');
@@ -151,5 +157,9 @@ describe('a zone\'s history', () => {
     expect(FIRST_YEAR_START).toBe(day(1800, 1, 1));
     const late = zone([{ stdoff: 0, rule: { kind: 'none' }, format: 'Z', until: until(2300) }, { stdoff: 3600, rule: { kind: 'none' }, format: 'Y' }]);
     expect(late.transitions).toEqual([]);
+    // A change at the very end of 2200 is the last kept; one at the first moment of 2201 is past the span.
+    const edge = (u: NonNullable<TzZoneLine['until']>) => zone([{ stdoff: 0, rule: { kind: 'none' }, format: 'Z', until: u }, { stdoff: 3600, rule: { kind: 'none' }, format: 'Y' }]).transitions;
+    expect(edge(until(2201, { atType: 'u' }))).toEqual([]);
+    expect(edge(until(2200, { month: 12, on: { kind: 'dom', day: 31 }, at: 86_399, atType: 'u' }))).toEqual([{ at: LAST_YEAR_END - 1, utoff: 3600, isdst: false, abbr: 'Y' }]);
   });
 });

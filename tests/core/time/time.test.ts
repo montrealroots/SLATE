@@ -2,6 +2,7 @@ import { describe, expect, it } from 'vitest';
 import { civilFromDays, daysFromCivil } from '../../../src/core/time/calendar.ts';
 import { TZDB_VERSION, ZONE_IDS, canonicalZone, historyOf, instantOf, localTime, typeAt } from '../../../src/core/time/time.ts';
 import { FIRST_YEAR_START, LAST_YEAR_END } from '../../../src/core/time/zones.ts';
+import tzdb from '../../../src/core/time/tzdb.json';
 
 const utc = (y: number, m: number, d: number, h = 0, min = 0, s = 0) => daysFromCivil(y, m, d) * 86_400 + h * 3600 + min * 60 + s;
 const NY = 'America/New_York';
@@ -15,6 +16,14 @@ describe('zones by name', () => {
     expect(canonicalZone('US/Eastern')).toBe(NY);
     expect(canonicalZone('Asia/Calcutta')).toBe('Asia/Kolkata');
     expect(canonicalZone('Mars/Olympus')).toBeUndefined();
+    expect(canonicalZone('toString')).toBeUndefined();
+    expect(canonicalZone('constructor')).toBeUndefined();
+  });
+  it('every alias in the release names a zone directly', () => {
+    const links = Object.entries((tzdb as { links: Record<string, string> }).links);
+    expect(links).toHaveLength(253);
+    for (const [alias, target] of links) expect(canonicalZone(alias)).toBe(target);
+    for (const [, target] of links) expect(ZONE_IDS).toContain(target);
   });
   it('computes a zone\'s history once, by its canonical name', () => {
     expect(historyOf('US/Eastern')).toBe(historyOf(NY));
@@ -63,6 +72,17 @@ describe('the instant a local time names', () => {
     expect(instantOf(NY, day, 1.5 * 3600)).toEqual({ instant: utc(2026, 11, 1, 5, 30), resolution: 'repeated' });
     expect(instantOf(NY, day, 1.5 * 3600, 'later')).toEqual({ instant: utc(2026, 11, 1, 6, 30), resolution: 'repeated' });
     expect(instantOf('Australia/Lord_Howe', { year: 2026, month: 4, day: 5 }, 1 * 3600 + 45 * 60, 'later').instant - instantOf('Australia/Lord_Howe', { year: 2026, month: 4, day: 5 }, 1 * 3600 + 45 * 60).instant).toBe(1800);
+  });
+  it('takes the earlier of a repeated time when nothing is said', () => {
+    const day = { year: 2026, month: 11, day: 1 };
+    expect(instantOf(NY, day, 3600).instant).toBe(utc(2026, 11, 1, 5));
+    expect(instantOf(NY, day, 3600, 'earlier').instant).toBe(utc(2026, 11, 1, 5));
+    expect(instantOf(NY, day, 3600, 'later').instant).toBe(utc(2026, 11, 1, 6));
+  });
+  it('calls the very first second of a gap skipped, and the first second after it exact', () => {
+    expect(instantOf(NY, { year: 2026, month: 3, day: 8 }, 2 * 3600)).toEqual({ instant: utc(2026, 3, 8, 7), resolution: 'skipped' });
+    expect(instantOf(NY, { year: 2026, month: 3, day: 8 }, 3 * 3600)).toEqual({ instant: utc(2026, 3, 8, 7), resolution: 'exact' });
+    expect(instantOf(NY, { year: 2026, month: 3, day: 8 }, 2 * 3600 - 1)).toEqual({ instant: utc(2026, 3, 8, 6, 59, 59), resolution: 'exact' });
   });
   it('lands as far past the jump as it was into the gap when the clock goes forward', () => {
     expect(instantOf(NY, { year: 2026, month: 3, day: 8 }, 2.5 * 3600)).toEqual({ instant: utc(2026, 3, 8, 7, 30), resolution: 'skipped' });

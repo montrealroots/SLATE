@@ -21,6 +21,7 @@ export default {
     '!gate/lock-owner-docs.ts',
     '!tools/research/**',
     '!tools/tzdb/zdump-sample.ts',
+    '!tools/**/build.ts',
     '!**/*.test.ts',
   ],
   coverageAnalysis: 'perTest',

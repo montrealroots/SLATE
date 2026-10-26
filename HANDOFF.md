@@ -10,8 +10,34 @@ restarts. Read `CLAUDE.md` and the owner's package in `docs/` first.
 - Branch `claude/new-slate-build`, off `main` at `c919279`. Nothing is merged; nothing is deployed.
 - Layer 0 (the repository and the gate) is proven: the full gate green in a fresh clone of the branch at
   `2ff094d439ad`, recorded in `registry/layers.json`.
-- Layer 1 (the core) is next and has not started; layers 2 to 7 wait on it. The gate refuses code in a layer until
-  every layer under it is recorded proven.
+- Layer 1 (the core) is built and awaiting its proof: all six engines are in `src/core/`, each declared in
+  `registry/engines.json` with its coverage matrix, and the full gate (mutation included) is run on them before the
+  proof is recorded. Layers 2 to 7 wait on it.
+
+What layer 1 holds:
+
+- `core.time` (`src/core/time/`): IANA tzdb 2026e compiled as zic compiles it (`tools/tzdb/`), every zone's history
+  1800 to 2200, local time and instants with DST gaps and repeats, the calendar's arithmetic, and sunrise and
+  sunset by NOAA's method; held to the system zic and zdump, to Node's ICU, to NOAA's own spreadsheet (one part in
+  a hundred billion) and to USNO's tables (within 0.57 minutes). Register R-0001 to R-0023.
+- `core.rng` (`src/core/rng/`): SplitMix64 over FNV-1a 64 keys (seed, decider, keys), each against its reference
+  (R-0024, R-0025). No decider is registered yet: the first arrives with the weather (layer 2).
+- `core.money` (`src/core/money/`): whole minor units, the 155 currencies of ISO 4217 list one (R-0026, R-0027),
+  exact rational arithmetic, half-even rounding, largest-remainder allocation, exchange always an estimate with its
+  dated, cited rate.
+- `core.frame` (`src/core/frame/frame.ts`): a life as plain data (the frame: seed, moment, schedule, notices; and
+  each engine's slice); commands, kinds of scheduled item and kinds of notice declared once, each command and
+  happening with the slices it reads and writes, and held to them at run time (reading an undeclared slice, or
+  changing one only read, stops it; written slices are copied, the rest shared); the passage of time, which brings
+  each scheduled thing about at its moment in order and stops at a commitment that wants the player; `commandIndex()`
+  lists every command with its reads and writes for the feature matrix.
+- `core.text` (`src/core/text/`): `t()` over `catalog.json`, slots filled with words the caller supplies, never left
+  empty. 19 lines so far, all placeholder wording (the persistence and server refusals), listed in `matrix/TEXT.md`.
+- `core.persistence` (`src/core/persistence/`): the store contract; the device store (IndexedDB, local storage
+  where there is none, gzip with the `slate.gz1:` mark, a copy kept before every write, the life's key written last
+  and whole, letting a life go keeping it as the copy); the server store over the three backend functions, mirrored
+  on the device; the server's own checks and the three functions (`server/`), with the schema version pinned there a
+  second time and a test holding the two equal. APP_VERSION 0.1.0 (the package's version), SCHEMA_VERSION 1.
 
 What layer 0 holds:
 
@@ -55,18 +81,20 @@ What layer 0 holds:
 
 ## Next step
 
-1. Push the branch and read the CI run of the full gate on GitHub.
-2. Layer 1, the core, in `docs/BUILD-ORDER.md`'s order: time (instants, zones, calendar arithmetic, DST, sunrise and
-   sunset; proven against the IANA tz rules for every zone family, cited in the register), deterministic randomness
-   keyed by seed and named decider, money in integer minor units with ISO 4217 currencies (cited), the simulation
-   frame (state, commands, scheduled items, passages, notices, each command's reader registered where declared), and
-   persistence (the adapter contract, the local store with IndexedDB and the local-storage fallback, gzip, the copy
-   kept before every write, the server adapter, the schema version pinned in both places). Each engine gets its
-   directory under `src/core/`, its entry in `registry/engines.json` and its coverage matrix under `coverage/`;
-   mutation testing extends to it.
+1. Commit layer 1's remaining engines (frame, text, persistence) with the mutation fixes, after the full gate.
+2. Prove layer 1: `npm ci` and `npm run gate:full` in a fresh clone of the branch; record the proof in
+   `registry/layers.json` and here; push; read the CI run of the full gate on GitHub.
+3. Layer 2, the world: the gazetteer and the map (252 countries and territories, every first-level region, 170,911
+   places with zone, country and coordinates), coverage matrix A by country, the clock as the player meets it, the
+   weather from researched normals, holidays, prices.
 
 ## Verification evidence
 
+- Layer 1, before its proof: `npm run gate:full` green in the working tree on 2026-10-26 in 595 s: toolchain (19
+  packages), owner-docs (54), build-order (19 source files), text-inventory (19 lines, all placeholder),
+  research-register (31), typecheck, lint, 1,124 of 1,124 tests, feature-matrix, coverage (6 engines, 0 rows
+  pending), handoff, audit (0 advisories), mutation 100.00% (4,473 of 4,473 mutants killed, the gate's and the
+  core's together, static mutants included), generated. The proof itself is the same run in a fresh clone.
 - Layer 0's proof: `npm ci` then `npm run gate:full` in a fresh clone of the branch at `2ff094d439ad`, green in 289 s:
   toolchain (18 packages), owner-docs (54 documents), build-order, text-inventory, research-register, typecheck,
   lint, 202 of 202 tests, feature-matrix, coverage, handoff, mutation 100.00%, generated.
@@ -97,6 +125,32 @@ What layer 0 holds:
   a block comment and then holds code counts as a comment line.
 - The axis sources (`src/world/gazetteer/countries.json`, `place-ids.json`) are where layer 2 is expected to put the
   gazetteer; if layer 2 settles elsewhere, `registry/axes.json` moves with it.
+
+- Layer 1's decisions, each reversible and each the plainer reading of the package:
+  - This build keeps its lives under its own keys and database (`slate.life.N`, `slate.copy.N`, IndexedDB
+    `slate-lives`), not the first SLATE's (`slate.save.N`, database `slate`): those saves are of a world model this
+    build doesn't have (Yale, the career, the body), so it can't open them, and it leaves them untouched. With that,
+    the first SLATE's "moving store" (which carried its local-storage saves into IndexedDB) has nothing to move and
+    isn't carried.
+  - The first schema is the only one, so nothing is older: the "older version" branch, bringing a life forward, and
+    the copy made before it (the contract's `backup()`) arrive with the second schema version, when something calls
+    them. A life from a newer build is refused, so it stays safe.
+  - The save's meta holds the life's id, its place, the schema and app versions, the playtime, and `card` (the
+    words the slots screen shows, written by the layers that know them). The world's moment is read from the life
+    itself, not copied into the meta.
+  - A write never makes an unreadable life the copy (the first SLATE's write copied whatever was there, so a damaged
+    life could take a good copy's place); letting a life go already followed that rule.
+  - The server's checks keep the shape, size, version, place, forward-progress and once-only rules; the ledger
+    balance and the other-life-record checks come back with banking (layer 3), when a ledger exists. Timestamps
+    nothing read (`checked_at`, `deleted_at`, `applied_at`) aren't written. The three functions are written as
+    handlers over the slice of the Base44 SDK they use; the Deno entry files that wrap them are deployment, which
+    waits on the owner's word.
+  - Every refusal reaches the player as a line of the catalog, the server's included: the server answers with a
+    line id, and the app says the line.
+  - The startup screen's four stages are its engine and are built with the screen (layer 5), on this store.
+  - Each notice kind will need its line in the catalog; the gate check for that comes with the first notice.
+- `fake-indexeddb` 6.2.5 (2025-11-07) is the only package layer 1 added, to test the IndexedDB store against real
+  IndexedDB semantics in Node.
 
 ## Blockers and open issues
 

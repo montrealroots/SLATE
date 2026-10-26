@@ -35,9 +35,10 @@ export function fromMajor(currency: CurrencyCode, text: string): Money {
   const units = minorUnits(currency);
   const m = /^(-)?(\d+)(?:\.(\d+))?$/.exec(text);
   if (m === null) throw new RangeError(`"${text}" is not an amount`);
-  const [, sign, whole = '', fraction = ''] = m;
+  const [, sign, whole, fraction = ''] = m as unknown as [string, string | undefined, string, string | undefined];
   if (fraction.length > units) throw new RangeError(`${currency} has ${units} decimal places; "${text}" has more`);
-  const minor = BigInt(whole) * 10n ** BigInt(units) + BigInt(fraction.padEnd(units, '0') || '0');
+  // BigInt('') is 0n: a currency without minor units adds none.
+  const minor = BigInt(whole) * 10n ** BigInt(units) + BigInt(fraction.padEnd(units, '0'));
   return money(currency, Number(sign === '-' ? -minor : minor));
 }
 
@@ -73,7 +74,7 @@ export function compare(a: Money, b: Money): number {
 export function rational(text: string): { num: bigint; den: bigint } {
   const m = /^(-)?(\d+)(?:\.(\d+))?$/.exec(text);
   if (m === null) throw new RangeError(`"${text}" is not a decimal number`);
-  const [, sign, whole = '', fraction = ''] = m;
+  const [, sign, whole, fraction = ''] = m as unknown as [string, string | undefined, string, string | undefined];
   const num = BigInt(whole + fraction);
   return { num: sign === '-' ? -num : num, den: 10n ** BigInt(fraction.length) };
 }
@@ -81,13 +82,11 @@ export function rational(text: string): { num: bigint; den: bigint } {
 /** A fraction rounded to a whole number, half to even (so no direction is favoured over many roundings). */
 export function roundHalfEven(num: bigint, den: bigint): bigint {
   if (den <= 0n) throw new RangeError('the denominator is positive');
+  // Below zero, the mirror of the amount above it.
+  if (num < 0n) return -roundHalfEven(-num, den);
   const q = num / den;
-  const r = num % den;
-  const twice = 2n * (r < 0n ? -r : r);
-  if (twice < den) return q;
-  const away = num < 0n ? q - 1n : q + 1n;
-  if (twice > den) return away;
-  return q % 2n === 0n ? q : away;
+  const twice = 2n * (num % den);
+  return twice > den || (twice === den && q % 2n === 1n) ? q + 1n : q;
 }
 
 /** The amount times a decimal factor (an interest rate, a share), rounded half to even to a minor unit. */
@@ -102,23 +101,25 @@ export function multiply(m: Money, factor: string): Money {
  * first on a tie.
  */
 export function allocate(m: Money, weights: readonly number[]): Money[] {
-  if (weights.length === 0 || weights.some((w) => !Number.isSafeInteger(w) || w < 0) || weights.every((w) => w === 0)) {
+  // An empty list is all zero too.
+  if (weights.some((w) => !Number.isSafeInteger(w) || w < 0) || weights.every((w) => w === 0)) {
     throw new RangeError('weights are whole numbers, not negative, not all zero');
   }
+  // Below zero, the mirror of the amount above it.
+  if (m.minor < 0) return allocate(money(m.currency, -m.minor), weights).map((p) => money(p.currency, -p.minor));
   const total = BigInt(weights.reduce((a, b) => a + b, 0));
   const amount = BigInt(m.minor);
-  const sign = amount < 0n ? -1n : 1n;
-  const abs = amount * sign;
-  const shares = weights.map((w) => ({ floor: (abs * BigInt(w)) / total, rest: (abs * BigInt(w)) % total }));
-  let left = abs - shares.reduce((a, s) => a + s.floor, 0n);
-  const order = shares.map((s, i) => ({ i, rest: s.rest })).sort((a, b) => (b.rest > a.rest ? 1 : b.rest < a.rest ? -1 : a.i - b.i));
+  const shares = weights.map((w) => ({ floor: (amount * BigInt(w)) / total, rest: (amount * BigInt(w)) % total }));
+  let left = amount - shares.reduce((a, s) => a + s.floor, 0n);
+  // The sort is stable, so on a tie the earlier part comes first.
+  const order = shares.map((s, i) => ({ i, rest: s.rest })).sort((a, b) => Number(b.rest - a.rest));
   const parts = shares.map((s) => s.floor);
   for (const { i } of order) {
     if (left === 0n) break;
     parts[i] = (parts[i] as bigint) + 1n;
     left -= 1n;
   }
-  return parts.map((p) => money(m.currency, Number(p * sign)));
+  return parts.map((p) => money(m.currency, Number(p)));
 }
 
 /** A rate of exchange: how many units of each currency one US dollar buys, from where, and as of when. */

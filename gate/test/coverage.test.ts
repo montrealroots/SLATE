@@ -154,7 +154,7 @@ describe('the coverage check', () => {
     expect(own({ source: 'src/core/rng/deciders.json', pick: 'keys' }, ['x'])).toEqual([`red ${M} | the axis "decider" can't be read: src/core/rng/deciders.json is not an object`]);
     expect(own({ source: 'src/core/rng/deciders.json', pick: 'array' }, ['weather.day', 1])).toEqual([`red ${M} | the axis "decider" can't be read: src/core/rng/deciders.json is not an array of strings`]);
     expect(own({ source: 'src/core/rng/deciders.json', pick: 'array' }, { a: 1 })).toEqual([`red ${M} | the axis "decider" can't be read: src/core/rng/deciders.json is not an array of strings`]);
-    for (const pick of ['sideways', 'xfield:id', 'field:', 'field:id\nx']) {
+    for (const pick of ['sideways', 'xfield:id', 'field:', 'field:id\nx', 'xkeys:inner', 'keys:', 'keys:inner\nx']) {
       const out = own({ source: 'src/core/rng/deciders.json', pick }, [{ id: 'weather.day' }]);
       expect(out).toEqual([`red ${M} | the axis "decider" can't be read: pick "${pick}" is keys, array or field:<name>`]);
     }
