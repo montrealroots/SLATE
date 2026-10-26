@@ -60,5 +60,14 @@
    "coverage/gazetteer-countries.json"
   ],
   "allPlacesTest": "tests/world/gazetteer/gazetteer.test.ts::every place on the map > is in its country, with a region of that country or none, coordinates on the globe, and a time zone the clock and the sun answer for"
+ },
+ "world.map": {
+  "layer": 2,
+  "dir": "src/world/map",
+  "readsPlace": true,
+  "matrices": [
+   "coverage/map-countries.json"
+  ],
+  "allPlacesTest": "tests/world/map/map.test.ts::every place on the map > is marked on the whole world's view, where its coordinates put it"
  }
 }

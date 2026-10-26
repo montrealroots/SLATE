@@ -12,8 +12,8 @@ restarts. Read `CLAUDE.md` and the owner's package in `docs/` first.
   `2ff094d439ad`, recorded in `registry/layers.json`.
 - Layer 1 (the core) is proven: the full gate green in a fresh clone of the branch at `dd447a897c68`, recorded in
   `registry/layers.json`.
-- Layer 2 (the world) is in progress. Done: the gazetteer (`world.gazetteer`). Next: the map, then coverage matrix A
-  by country, the clock as the player meets it, the weather, holidays, prices.
+- Layer 2 (the world) is in progress. Done: the gazetteer (`world.gazetteer`) and the map (`world.map`). Next:
+  coverage matrix A by country, the clock as the player meets it, the weather, holidays, prices.
 
 What layer 2 holds so far:
 
@@ -25,6 +25,13 @@ What layer 2 holds so far:
   country's places are a file of their own, fetched when someone looks at that country. The town search ranks the
   name itself, then names starting with it, then a word starting with it, then names holding it, larger places
   first, accents and case aside. A test runs the clock and the sun at every one of the 171,654 places.
+- `world.map` (`src/world/map/`): Natural Earth's 1:110m countries, release 5.1.2 (R-0035; public domain), vendored and
+  pinned, compiled by `tools/naturalearth/` with the engine's own projection (equirectangular, as the first SLATE's)
+  to SVG paths and framing boxes for the 175 countries drawable at that scale; Northern Cyprus is drawn as Cyprus and
+  Somaliland as Somalia, the countries GeoNames lists their towns in. The kept arithmetic of pointing at it: the
+  wrapped longitude, framing a country with a floor and inside the world, hairline borders and markers one size at
+  any zoom, a marker found a turn either way across the antimeridian. The 77 countries too small to draw stay in the
+  lists. A test marks every one of the 171,654 places.
 
 What layer 1 holds:
 
@@ -93,13 +100,11 @@ What layer 0 holds:
 
 ## Next step
 
-1. Layer 2, the map: Natural Earth's 1:110m country outlines (public domain), vendored and pinned, compiled to the
-   outlines the map draws, keyed to the gazetteer's country codes; a country too small to draw at that scale stays
-   in the lists.
-2. Then coverage matrix A by country, the clock as the player meets it (real time, paused, play, advance, stops at
-   commitments, reading the real time only through the clock), the weather (climate from each country's published
-   normals; WMO's 1991-2020 normals are the first source to try), holidays by country, prices by place (the World
-   Bank's ICP price levels the first source to try). Then prove layer 2.
+1. Layer 2, coverage matrix A by country (BUILD-ORDER: "which every later engine fills a column of"), then the clock
+   as the player meets it (real time, paused, play, advance, stops at commitments, reading the real time only
+   through the clock), the weather (climate from each country's published normals; WMO's 1991-2020 normals are the
+   first source to try), holidays by country, prices by place (the World Bank's ICP price levels the first source to
+   try). Then prove layer 2.
 
 ## Verification evidence
 
