@@ -93,9 +93,9 @@ describe('the zip reader', () => {
 });
 
 const COUNTRY = (code: string, name: string) => [code, 'XXX', '000', 'XX', name, 'Capital', '1', '1', 'EU', '.xx', 'EUR', 'Euro', '1', '', '', 'xx', '1', '', ''].join('\t');
-const PLACE = (over: Partial<Record<'id' | 'name' | 'ascii' | 'lat' | 'lon' | 'cls' | 'cc' | 'a1' | 'pop' | 'tz', string>> = {}) => {
-  const p = { id: '1', name: 'Ville', ascii: 'Ville', lat: '45.5', lon: '-73.5', cls: 'P', cc: 'FR', a1: '11', pop: '1000', tz: 'Europe/Paris', ...over };
-  return [p.id, p.name, p.ascii, 'alt', p.lat, p.lon, p.cls, 'PPL', p.cc, '', p.a1, '', '', '', p.pop, '', '35', p.tz, '2026-01-01'].join('\t');
+const PLACE = (over: Partial<Record<'id' | 'name' | 'ascii' | 'lat' | 'lon' | 'cls' | 'cc' | 'a1' | 'pop' | 'tz' | 'elev' | 'dem', string>> = {}) => {
+  const p = { id: '1', name: 'Ville', ascii: 'Ville', lat: '45.5', lon: '-73.5', cls: 'P', cc: 'FR', a1: '11', pop: '1000', tz: 'Europe/Paris', elev: '', dem: '35', ...over };
+  return [p.id, p.name, p.ascii, 'alt', p.lat, p.lon, p.cls, 'PPL', p.cc, '', p.a1, '', '', '', p.pop, p.elev, p.dem, p.tz, '2026-01-01'].join('\t');
 };
 
 describe('the compiler', () => {
@@ -132,20 +132,24 @@ describe('the compiler', () => {
   it('reads places, keeping a plain spelling only where it differs and a region only where it\'s listed', () => {
     const countries = { FR: { name: 'France' }, DE: { name: 'Germany' } };
     const regions = { 'FR.11': { name: 'Île-de-France' } };
-    const text = [PLACE({ id: '20', name: 'Évry', ascii: 'Evry' }), PLACE({ id: '3', a1: '00' }), PLACE({ id: '100', cc: 'DE', a1: '', lat: '-90', lon: '180', pop: '0', tz: 'Europe/Berlin' })].join('\n');
+    const text = [PLACE({ id: '20', name: 'Évry', ascii: 'Evry' }), PLACE({ id: '3', a1: '00' }), PLACE({ id: '100', cc: 'DE', a1: '', lat: '-90', lon: '180', pop: '0', tz: 'Europe/Berlin', dem: '-12' })].join('\n');
     expect(parsePlaces(`${text}\n`, countries, regions)).toEqual({
       FR: [
-        { id: '3', name: 'Ville', ascii: '', region: '', latitude: '45.5', longitude: '-73.5', zone: 'Europe/Paris', population: 1000 },
-        { id: '20', name: 'Évry', ascii: 'Evry', region: 'FR.11', latitude: '45.5', longitude: '-73.5', zone: 'Europe/Paris', population: 1000 },
+        { id: '3', name: 'Ville', ascii: '', region: '', latitude: '45.5', longitude: '-73.5', zone: 'Europe/Paris', population: 1000, elevation: '35' },
+        { id: '20', name: 'Évry', ascii: 'Evry', region: 'FR.11', latitude: '45.5', longitude: '-73.5', zone: 'Europe/Paris', population: 1000, elevation: '35' },
       ],
-      DE: [{ id: '100', name: 'Ville', ascii: '', region: '', latitude: '-90', longitude: '180', zone: 'Europe/Berlin', population: 0 }],
+      DE: [{ id: '100', name: 'Ville', ascii: '', region: '', latitude: '-90', longitude: '180', zone: 'Europe/Berlin', population: 0, elevation: '-12' }],
     });
+  });
+  it('takes a place\'s height from the elevation model, or the recorded elevation where the model has none, or leaves it unknown', () => {
+    const at = (elev: string, dem: string) => parsePlaces(PLACE({ elev, dem }), { FR: { name: 'France' } }, {})['FR']?.[0]?.elevation;
+    expect([at('', '35'), at('120', '35'), at('120', '-9999'), at('', '-9999'), at('-3', '-9999')]).toEqual(['35', '35', '120', '', '-3']);
   });
   it('refuses a place it would have to guess at', () => {
     const countries = { FR: { name: 'France' } };
     const bads = [
       PLACE({ id: 'x1' }), PLACE({ id: '1x' }), PLACE({ id: '' }), PLACE({ name: '' }), PLACE({ cls: 'A' }), PLACE({ lat: '90.1' }), PLACE({ lat: '-91' }), PLACE({ lat: 'N45' }), PLACE({ lat: '45.' }),
-      PLACE({ lon: '180.5' }), PLACE({ lon: '-181' }), PLACE({ lon: '1e2' }), PLACE({ lon: '1234' }), PLACE({ pop: '-1' }), PLACE({ pop: '1.5' }), PLACE({ pop: 'x' }), PLACE({ tz: '' }),
+      PLACE({ lon: '180.5' }), PLACE({ lon: '-181' }), PLACE({ lon: '1e2' }), PLACE({ lon: '1234' }), PLACE({ pop: '-1' }), PLACE({ pop: '1.5' }), PLACE({ pop: 'x' }), PLACE({ tz: '' }), PLACE({ dem: '' }), PLACE({ dem: '1.5' }), PLACE({ dem: 'x1' }), PLACE({ elev: '1x' }), PLACE({ elev: 'x' }),
       `${PLACE()}\textra`, PLACE().split('\t').slice(0, 18).join('\t'),
     ];
     for (const bad of bads) expect(() => parsePlaces(bad, countries, {})).toThrow(`a place line the compiler doesn't know: ${bad}`);
@@ -157,14 +161,14 @@ describe('the compiler', () => {
       countries: { FR: { name: 'France' }, BE: { name: 'Belgium' } },
       regions: { 'FR.11': { name: 'Île' } },
       places: {
-        FR: [{ id: '5', name: 'A', ascii: '', region: 'FR.11', latitude: '1', longitude: '2', zone: 'Europe/Paris', population: 9 }],
-        BE: [{ id: '7', name: 'B', ascii: 'b', region: '', latitude: '3', longitude: '4', zone: 'Europe/Brussels', population: 0 }],
+        FR: [{ id: '5', name: 'A', ascii: '', region: 'FR.11', latitude: '1', longitude: '2', zone: 'Europe/Paris', population: 9, elevation: '30' }],
+        BE: [{ id: '7', name: 'B', ascii: 'b', region: '', latitude: '3', longitude: '4', zone: 'Europe/Brussels', population: 0, elevation: '' }],
       },
     });
     expect([...files.keys()]).toEqual(['countries.json', 'regions.json', 'places/BE.tsv', 'places/FR.tsv', 'place-ids.json']);
     expect(files.get('countries.json')).toBe('{\n "BE": {\n  "name": "Belgium"\n },\n "FR": {\n  "name": "France"\n }\n}\n');
-    expect(files.get('places/FR.tsv')).toBe('5\tA\t\tFR.11\t1\t2\tEurope/Paris\t9\n');
-    expect(files.get('places/BE.tsv')).toBe('7\tB\tb\t\t3\t4\tEurope/Brussels\t0\n');
+    expect(files.get('places/FR.tsv')).toBe('5\tA\t\tFR.11\t1\t2\tEurope/Paris\t9\t30\n');
+    expect(files.get('places/BE.tsv')).toBe('7\tB\tb\t\t3\t4\tEurope/Brussels\t0\t\n');
     expect(files.get('place-ids.json')).toBe('["7","5"]\n');
   });
   it('refuses a file that isn\'t the one the register cites', () => {

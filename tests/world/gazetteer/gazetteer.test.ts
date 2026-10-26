@@ -21,7 +21,7 @@ import {
 } from '../../../src/world/gazetteer/gazetteer.ts';
 
 const ROOT = join(import.meta.dirname, '../../..');
-const place = (over: Partial<Place>): Place => ({ id: '1', country: 'FR', name: 'Ville', ascii: '', region: '', latitude: 0, longitude: 0, zone: 'Europe/Paris', population: 0, ...over });
+const place = (over: Partial<Place>): Place => ({ id: '1', country: 'FR', name: 'Ville', ascii: '', region: '', latitude: 0, longitude: 0, zone: 'Europe/Paris', population: 0, elevation: null, ...over });
 
 describe('countries and regions', () => {
   it('are GeoNames\' 252, by their ISO codes, with their names', () => {
@@ -46,7 +46,7 @@ describe('places', () => {
     const us = await placesOf('US');
     expect(us).toHaveLength(17_343);
     expect(placesOf('US')).toBe(placesOf('US'));
-    expect(us[0]).toEqual({ id: '4046255', country: 'US', name: 'Bay Minette', ascii: '', region: 'US.AL', latitude: 30.88296, longitude: -87.77305, zone: 'America/Chicago', population: 9118 });
+    expect(us[0]).toEqual({ id: '4046255', country: 'US', name: 'Bay Minette', ascii: '', region: 'US.AL', latitude: 30.88296, longitude: -87.77305, zone: 'America/Chicago', population: 9118, elevation: 85 });
     expect(await findPlace('US', '5128581')).toMatchObject({ name: 'New York City', region: 'US.NY', zone: 'America/New_York' });
     expect(await findPlace('US', '0')).toBeUndefined();
   });
@@ -58,14 +58,15 @@ describe('places', () => {
     expect(COUNTRY_CODES.filter(hasPlaces)).toHaveLength(246);
   });
   it('read from their file, field by field', () => {
-    expect(readPlaces('FR', '3\tÉvry\tEvry\tFR.11\t48.6\t2.45\tEurope/Paris\t52000\n\n4\tX\t\t\t-1.5\t-2\tEurope/Paris\t0\n')).toEqual([
-      { id: '3', country: 'FR', name: 'Évry', ascii: 'Evry', region: 'FR.11', latitude: 48.6, longitude: 2.45, zone: 'Europe/Paris', population: 52_000 },
-      { id: '4', country: 'FR', name: 'X', ascii: '', region: '', latitude: -1.5, longitude: -2, zone: 'Europe/Paris', population: 0 },
+    expect(readPlaces('FR', '3\tÉvry\tEvry\tFR.11\t48.6\t2.45\tEurope/Paris\t52000\t84\n\n4\tX\t\t\t-1.5\t-2\tEurope/Paris\t0\t\n5\tY\t\t\t0\t0\tEurope/Paris\t0\t-7\n')).toEqual([
+      { id: '3', country: 'FR', name: 'Évry', ascii: 'Evry', region: 'FR.11', latitude: 48.6, longitude: 2.45, zone: 'Europe/Paris', population: 52_000, elevation: 84 },
+      { id: '4', country: 'FR', name: 'X', ascii: '', region: '', latitude: -1.5, longitude: -2, zone: 'Europe/Paris', population: 0, elevation: null },
+      { id: '5', country: 'FR', name: 'Y', ascii: '', region: '', latitude: 0, longitude: 0, zone: 'Europe/Paris', population: 0, elevation: -7 },
     ]);
   });
   it('a fetch that fails is tried again', async () => {
     let calls = 0;
-    const index = placeIndex({ './places/FR.tsv': () => (calls += 1) === 1 ? Promise.reject(new Error('offline')) : Promise.resolve('9\tA\t\t\t1\t2\tEurope/Paris\t5\n') });
+    const index = placeIndex({ './places/FR.tsv': () => (calls += 1) === 1 ? Promise.reject(new Error('offline')) : Promise.resolve('9\tA\t\t\t1\t2\tEurope/Paris\t5\t\n') });
     await expect(index.placesOf('FR')).rejects.toThrow('offline');
     expect(await index.placesOf('FR')).toEqual([place({ id: '9', name: 'A', latitude: 1, longitude: 2, population: 5 })]);
     expect(calls).toBe(2);
@@ -132,6 +133,7 @@ describe('every place on the map', () => {
         if (p.region !== '') expect(p.region.startsWith(`${code}.`) && regionName(p.region) !== undefined, p.id).toBe(true);
         expect(Math.abs(p.latitude) <= 90 && Math.abs(p.longitude) <= 180, p.id).toBe(true);
         expect(Number.isSafeInteger(p.population) && p.population >= 0, p.id).toBe(true);
+        expect(p.elevation === null || (Number.isSafeInteger(p.elevation) && p.elevation > -500 && p.elevation < 6000), p.id).toBe(true);
         expect(canonicalZone(p.zone), `${p.id} ${p.zone}`).toBeDefined();
         const start = solstice(p.zone);
         const end = instantOf(p.zone, { year: 2026, month: 6, day: 22 }, 0).instant;

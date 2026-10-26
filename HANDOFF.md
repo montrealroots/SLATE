@@ -21,7 +21,8 @@ What layer 2 holds so far:
   GeoNames release, keep going"), vendored in `vendor/geonames/` with each file's SHA-256 pinned and compiled by
   `tools/geonames/` (a zip reader of its own, as `tools/tzdb/` has a tar reader): 252 countries and territories,
   3,865 first-level regions, 171,654 populated places in 246 countries (R-0032 to R-0034). Each place keeps its name,
-  its plain-letter spelling where it differs, its region, its coordinates, its IANA zone and its population; a
+  its plain-letter spelling where it differs, its region, its coordinates, its IANA zone, its population and its
+  height (the elevation model's, or the recorded elevation where the model has none; unknown for 371 places); a
   country's places are a file of their own, fetched when someone looks at that country. The town search ranks the
   name itself, then names starting with it, then a word starting with it, then names holding it, larger places
   first, accents and case aside. A test runs the clock and the sun at every one of the 171,654 places.

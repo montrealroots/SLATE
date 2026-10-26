@@ -25,6 +25,8 @@ export interface Place {
   zone: string;
   /** Its population as GeoNames records it; 0 where none is recorded. */
   population: number;
+  /** Its height above sea level in metres, or null where none is recorded. */
+  elevation: number | null;
 }
 
 export function isCountry(code: string): code is CountryCode {
@@ -56,8 +58,8 @@ export function readPlaces(country: CountryCode, text: string): Place[] {
     .split('\n')
     .filter((l) => l !== '')
     .map((line) => {
-      const [id, name, ascii, region, lat, lon, zone, population] = line.split('\t') as [string, string, string, string, string, string, string, string];
-      return { id, country, name, ascii, region, latitude: Number(lat), longitude: Number(lon), zone, population: Number(population) };
+      const [id, name, ascii, region, lat, lon, zone, population, elevation] = line.split('\t') as [string, string, string, string, string, string, string, string, string];
+      return { id, country, name, ascii, region, latitude: Number(lat), longitude: Number(lon), zone, population: Number(population), elevation: elevation === '' ? null : Number(elevation) };
     });
 }
 

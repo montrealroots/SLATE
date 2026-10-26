@@ -11,7 +11,7 @@ import { readZip } from './zip.ts';
  *
  * What's kept of each place is what the engines read: its name (and its plain-letter spelling, where it differs,
  * for the search), its region, its coordinates (the sun, the weather, the map), its IANA time zone (the clock) and
- * its population (the order the search lists towns in). The places are written a country to a file, so the app
+ * its population (the order the search lists towns in), and its height (the weather's correction for it). The places are written a country to a file, so the app
  * fetches a country's towns only when someone looks at that country.
  */
 export const SOURCES = {
@@ -40,6 +40,8 @@ export interface Place {
   longitude: string;
   zone: string;
   population: number;
+  /** Metres above sea level: the elevation model's value, or the recorded elevation where the model has none; empty where neither is known. */
+  elevation: string;
 }
 
 export interface Gazetteer {
@@ -91,7 +93,7 @@ export function parsePlaces(text: string, countries: Record<string, Country>, re
   const seen = new Set<string>();
   for (const line of lines(text)) {
     const f = line.split('\t');
-    const [id, name, ascii, , lat, lon, featureClass, , country, , admin1, , , , population, , , zone] = f as string[];
+    const [id, name, ascii, , lat, lon, featureClass, , country, , admin1, , , , population, recorded, dem, zone] = f as string[];
     const ok =
       f.length === 19 &&
       /^\d+$/.test(id as string) &&
@@ -102,6 +104,8 @@ export function parsePlaces(text: string, countries: Record<string, Country>, re
       COORD.test(lon as string) &&
       Math.abs(Number(lon)) <= 180 &&
       /^\d+$/.test(population as string) &&
+      /^(-?\d+)?$/.test(recorded as string) &&
+      /^-?\d+$/.test(dem as string) &&
       zone !== '';
     if (!ok) throw new Error(`a place line the compiler doesn't know: ${line}`);
     if (!Object.hasOwn(countries, country as string)) throw new Error(`the place ${id} is in no listed country (${country})`);
@@ -117,6 +121,8 @@ export function parsePlaces(text: string, countries: Record<string, Country>, re
       longitude: lon as string,
       zone: zone as string,
       population: Number(population),
+      // The elevation model marks a point it has no value for with -9999 (over water, mostly).
+      elevation: dem === '-9999' ? (recorded as string) : (dem as string),
     });
   }
   for (const list of Object.values(out)) list.sort((a, b) => Number(a.id) - Number(b.id));
@@ -150,7 +156,7 @@ export function serialize(g: Gazetteer): Map<string, string> {
   for (const country of Object.keys(g.places).sort()) {
     const rows = (g.places[country] as Place[]).map((p) => {
       ids.push(p.id);
-      return [p.id, p.name, p.ascii, p.region, p.latitude, p.longitude, p.zone, String(p.population)].join('\t');
+      return [p.id, p.name, p.ascii, p.region, p.latitude, p.longitude, p.zone, String(p.population), p.elevation].join('\t');
     });
     files.set(`places/${country}.tsv`, `${rows.join('\n')}\n`);
   }
