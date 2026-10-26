@@ -1,0 +1,47 @@
+.startup {
+  position: fixed; inset: 0; display: grid; place-items: center;
+  background: radial-gradient(ellipse at 50% 42%, #191c22 0%, #0c0d10 62%);
+  z-index: 100;
+}
+.startup-inner { width: min(520px, 90vw); text-align: center; }
+
+.clapper {
+  font-size: 68px; line-height: 1; display: block;
+  margin-bottom: var(--s5);
+  animation: clapper-in 900ms cubic-bezier(.2,.8,.2,1) both;
+}
+@keyframes clapper-in {
+  0% { opacity: 0; transform: translateY(14px) rotate(-9deg) scale(.86); }
+  60% { opacity: 1; transform: translateY(0) rotate(3deg) scale(1.04); }
+  100% { opacity: 1; transform: translateY(0) rotate(0) scale(1); }
+}
+
+.wordmark {
+  font-size: 46px; font-weight: 300; letter-spacing: .42em;
+  text-indent: .42em; color: var(--text);
+  margin-bottom: var(--s2);
+}
+.wordmark-sub {
+  font-size: var(--size-xs); letter-spacing: .28em; text-transform: uppercase;
+  color: var(--text-dim); margin-bottom: var(--s7);
+}
+
+.startup-bar {
+  height: 2px; background: var(--surface-3); border-radius: 2px;
+  overflow: hidden; margin-bottom: var(--s3);
+}
+.startup-bar > span {
+  display: block; height: 100%; background: var(--accent);
+  transition: width .28s cubic-bezier(.4,0,.2,1);
+}
+.startup-status {
+  display: flex; justify-content: space-between; font-size: var(--size-xs);
+  color: var(--text-dim); font-variant-numeric: tabular-nums;
+}
+.startup-stages { margin-top: var(--s6); text-align: left; font-size: var(--size-xs); }
+.startup-stage { display: flex; gap: var(--s2); padding: 3px 0; color: var(--text-dim); }
+.startup-stage[data-state="done"] { color: var(--text-muted); }
+.startup-stage[data-state="active"] { color: var(--accent); }
+.startup-stage[data-state="failed"] { color: var(--negative); }
+
+/* ---------- Save slots ---------- */

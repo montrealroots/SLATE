@@ -1,0 +1,108 @@
+:root {
+  color-scheme: dark light;
+
+  /* Surfaces, from furthest back to nearest the reader. */
+  --bg: #0c0d10;
+  --surface: #131519;
+  --surface-2: #191c21;
+  --surface-3: #21252c;
+  --surface-hover: #262b33;
+  --overlay: rgba(6, 7, 9, 0.82);
+
+  /* Text. */
+  --text: #eceef2;
+  --text-muted: #a3aab6;
+  /* Dim text at 4.9:1 or better on every surface, WCAG AA; it was #6f7783 until 2026-09-26, 3.4:1 to 4.3:1. */
+  --text-dim: #8a929e;
+  --text-inverse: #0c0d10;
+
+  /* Lines. */
+  --line: #262a31;
+  --line-strong: #363c45;
+
+  /* The clapper gold. Used sparingly, for identity and for what matters. */
+  --accent: #d8b25f;
+  --accent-strong: #efc978;
+  --accent-dim: rgba(216, 178, 95, 0.14);
+  --accent-line: rgba(216, 178, 95, 0.32);
+
+  /* Semantic. */
+  --positive: #6db98a;
+  --positive-dim: rgba(109, 185, 138, 0.14);
+  --negative: #d97a6c;
+  --negative-dim: rgba(217, 122, 108, 0.14);
+  --warning: #dda863;
+  --warning-dim: rgba(221, 168, 99, 0.14);
+  --info: #7aa5c9;
+  --info-dim: rgba(122, 165, 201, 0.14);
+
+  /* Type. */
+  --font: ui-sans-serif, system-ui, -apple-system, "Segoe UI", Inter, Roboto, "Helvetica Neue", Arial, sans-serif;
+  --font-mono: ui-monospace, "SF Mono", SFMono-Regular, Menlo, Consolas, monospace;
+
+  --size-xs: 0.72rem;
+  --size-sm: 0.8rem;
+  --size-base: 0.875rem;
+  --size-md: 1rem;
+  --size-lg: 1.25rem;
+  --size-xl: 1.6rem;
+  --size-2xl: 2.1rem;
+  --size-3xl: 3rem;
+
+  /* Space. */
+  --s1: 4px; --s2: 8px; --s3: 12px; --s4: 16px;
+  --s5: 24px; --s6: 32px; --s7: 48px; --s8: 64px;
+
+  /* The distance from a chip's outer edge to its text: its padding plus its
+     border. Kept with the space tokens because .chip is defined from it. */
+  --chip-inset: 9px;
+
+  --radius: 10px;
+  --radius-sm: 6px;
+  --radius-lg: 16px;
+
+  --shadow: 0 1px 2px rgba(0,0,0,.3), 0 8px 24px rgba(0,0,0,.28);
+  --shadow-lg: 0 2px 6px rgba(0,0,0,.35), 0 24px 60px rgba(0,0,0,.45);
+
+  --nav-h: 56px;
+  --rail-w: 232px;
+
+  /* The map. Land has to read as land against water at a glance, which the
+     surface tokens are deliberately too close together to do. */
+  --map-sea: #10141b;
+  --map-land: #333a45;
+  --map-land-hover: #4a5361;
+  --map-land-quiet: #22272f;
+}
+:root { --ghost-pad: var(--s3); }
+/* In a card's head its words end at the content's edge, as the heading's start at the other, on the heading's baseline;
+   wrapped onto a second row, the row starts under the heading (the head's space-between puts a line's one item at its
+   start). The margin is the actions' own, on the side a ghost action ends them: on the action itself, the first version
+   of this, a head whose one action was its help took both margins, and its words ran 11 pixels past the edge. */
+.panel-actions:has(> .btn-ghost:last-child) { margin-right: calc(-1 * var(--ghost-pad)); }
+.panel-actions:has(> .btn-ghost:first-child) { margin-left: calc(-1 * var(--ghost-pad)); }
+/* A section's head (`SectionHead`): its label, and its help at the right on the label's baseline, or under it. */
+.section-head { display: flex; flex-wrap: wrap; align-items: baseline; justify-content: space-between; gap: var(--s1) var(--s3); }
+.section-head > .how-it-works { margin-inline: calc(-1 * var(--ghost-pad)); }
+/* Beneath what it explains: a row of its own, one step under it, its first words on that content's left edge. */
+.help-below { display: flex; flex-wrap: wrap; align-items: center; gap: var(--s2); margin-top: var(--s2); }
+.help-below > .btn-ghost:first-child { margin-left: calc(-1 * var(--ghost-pad)); }
+.help { display: flex; flex-direction: column; gap: var(--s3); }
+.help-trail { margin: 0; flex-wrap: wrap; }
+.help-search { display: flex; flex-direction: column; gap: var(--s1); }
+.help-list { list-style: none; margin: 0; padding: 0; display: grid; grid-template-columns: repeat(auto-fill, minmax(200px, 1fr)); gap: 2px var(--s3); }
+.help-results { list-style: none; margin: 0; padding: 0; display: flex; flex-direction: column; gap: var(--s3); }
+.help-link {
+  background: none; border: 0; padding: 2px 0; color: var(--accent-strong); cursor: pointer; text-align: left;
+  font: inherit; text-decoration: underline; text-underline-offset: 2px;
+}
+:root {
+  /* The page's gutter, one for every screen: the main column's padding, and what a drawer and the bar keep from a
+     notch. */
+  --gutter: var(--s5);
+  /* A readable line of running text, held at about 75 characters. */
+  --measure: 78ch;
+  /* The smallest a control is: a pointer's, and a finger's (WCAG 2.5.5's 44 pixels) on a touch screen. */
+  --control: 32px;
+  --control-sm: 28px;
+}

@@ -1,0 +1,48 @@
+/* ---------- Creation ---------- */
+
+.creation { max-width: 780px; margin: 0 auto; padding: var(--s6) var(--s4); }
+.creation-steps { display: flex; gap: var(--s1); margin-bottom: var(--s6); flex-wrap: wrap; }
+/* On a phone the five share the width and a long name takes two lines, so
+   every name is centered in its box and a one-line tab sits level with a
+   two-line one, and the side padding is kept small so "Dispositions &" fits
+   on its first line. With room for all five on one line, each is as wide as
+   its name and none of them wraps. */
+.creation-step {
+  flex: 1; min-width: 92px; padding: var(--s2) var(--s1);
+  border-bottom: 2px solid var(--line); font-size: var(--size-xs);
+  color: var(--text-dim); text-align: center; font-weight: 600;
+  display: flex; align-items: center; justify-content: center; line-height: 1.25;
+}
+@media (min-width: 700px) {
+  .creation-step { flex: 1 1 auto; white-space: nowrap; padding: var(--s2) var(--s3); }
+}
+.creation-step[data-state="active"] { border-bottom-color: var(--accent); color: var(--accent-strong); }
+.creation-step[data-state="done"] { border-bottom-color: var(--text-dim); color: var(--text-muted); }
+
+.trait-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(210px, 1fr)); gap: var(--s2); }
+
+/* Two traits written against each other, kept on one row so the trade-off
+   between them is visible. Narrow enough and they stack, and the pair still
+   reads as one because the space after it is twice the space inside it. */
+.trait-pair {
+  display: grid; gap: var(--s2);
+  grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+  margin-bottom: var(--s4);
+}
+
+.trait {
+  padding: var(--s3); border: 1px solid var(--line); border-radius: var(--radius-sm);
+  background: var(--surface-2); text-align: left; cursor: pointer; color: inherit; font: inherit;
+}
+.trait:hover:not(:disabled) { border-color: var(--line-strong); }
+.trait[aria-pressed="true"] { border-color: var(--accent); background: var(--accent-dim); }
+.trait:disabled { cursor: not-allowed; }
+/* A trait that can't be picked fades, all but the line saying why. */
+.trait:disabled > :not(.trait-why) { opacity: .55; }
+.trait-name { font-weight: 650; font-size: var(--size-sm); margin-bottom: 2px; }
+.trait-desc { font-size: var(--size-xs); color: var(--text-muted); line-height: 1.4; }
+/* Why a trait can't be picked, said on the trait. Left out of the fading
+   above, because it is the part that has to be read. */
+.trait-why { font-size: var(--size-xs); color: var(--warning); font-weight: 600; margin-top: var(--s1); }
+
+/* ---------- God mode ----------
