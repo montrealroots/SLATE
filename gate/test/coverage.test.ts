@@ -160,6 +160,13 @@ describe('the coverage check', () => {
     }
     expect(own({ source: 'src/core/rng/deciders.json', pick: 'field:id' }, { 'weather.day': 1 })).toEqual([`red ${M} | the axis "decider" can't be read: pick "field:id" is keys, array or field:<name>`]);
     expect(own(undefined, ['x'])).toEqual([`red ${M} | the axis "decider" is neither a declared axis nor given a universe here`]);
+    expect(own({ source: 'src/core/rng/deciders.json', pick: 'keys:inner' }, { inner: { 'weather.day': 1 } })).toEqual([]);
+    for (const data of [{ inner: ['weather.day'] }, { other: {} }, ['x']]) {
+      expect(own({ source: 'src/core/rng/deciders.json', pick: 'keys:inner' }, data)).toEqual([`red ${M} | the axis "decider" can't be read: src/core/rng/deciders.json has no object "inner"`]);
+    }
+    expect(own({ keys: ['weather.day'] }, 'unread')).toEqual([]);
+    expect(own({ keys: ['weather.day', 'other.one'] }, 'unread')).toEqual([`red ${M} | 1 keys of the axis "decider" have no row (first: other.one)`]);
+    for (const keys of [[], ['a', 3], 'a']) expect(own({ keys }, 'unread')).toEqual([`red ${M} | the axis "decider" is neither a declared axis nor given a universe here`]);
     expect(own({ source: 'src/core/rng/deciders.json' }, ['x'])).toEqual([`red ${M} | the axis "decider" is neither a declared axis nor given a universe here`]);
     expect(own({ source: 'src/core/rng/none.json', pick: 'keys' }, ['x'])).toEqual([`red ${M} | the axis "decider" can't be read: src/core/rng/none.json is missing`]);
   });

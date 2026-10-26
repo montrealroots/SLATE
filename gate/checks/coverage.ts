@@ -21,16 +21,20 @@ import type { RegisterIndex } from './register.ts';
 export const ROW_STATUSES = ['researched', 'proven', 'blocked', 'game', 'pending'] as const;
 type RowStatus = (typeof ROW_STATUSES)[number];
 
-interface Universe {
-  source: string;
-  pick: string;
-}
+/**
+ * Where an axis's keys come from: a file (`keys` of its object, `keys:<field>` of an object inside it, an `array` of
+ * strings, or each item's `field:<name>`), or, for an axis that is the engine's own declared scope, the keys listed.
+ */
+type Universe = { source: string; pick: string } | { keys: string[] };
 
 function readUniverse(repo: Repo, u: Universe): { ok: true; keys: string[] } | { ok: false; why: string } {
+  if ('keys' in u) return { ok: true, keys: u.keys };
   const raw = readJson(repo, u.source);
   if (!raw.ok) return raw;
   const v = raw.value;
   if (u.pick === 'keys') return isRecord(v) ? { ok: true, keys: Object.keys(v) } : { ok: false, why: `${u.source} is not an object` };
+  const inner = /^keys:(.+)$/.exec(u.pick)?.[1];
+  if (inner !== undefined) return isRecord(v) && isRecord(v[inner]) ? { ok: true, keys: Object.keys(v[inner]) } : { ok: false, why: `${u.source} has no object "${inner}"` };
   if (u.pick === 'array') return Array.isArray(v) && v.every((k) => typeof k === 'string') ? { ok: true, keys: v as string[] } : { ok: false, why: `${u.source} is not an array of strings` };
   const field = /^field:(.+)$/.exec(u.pick)?.[1];
   if (field !== undefined && Array.isArray(v)) {
@@ -40,7 +44,11 @@ function readUniverse(repo: Repo, u: Universe): { ok: true; keys: string[] } | {
   return { ok: false, why: `pick "${u.pick}" is keys, array or field:<name>` };
 }
 
-const asUniverse = (v: unknown): Universe | undefined => (isRecord(v) && isNonEmptyString(v['source']) && isNonEmptyString(v['pick']) ? { source: v['source'], pick: v['pick'] } : undefined);
+const asUniverse = (v: unknown): Universe | undefined => {
+  if (!isRecord(v)) return undefined;
+  if (Array.isArray(v['keys']) && v['keys'].length > 0 && v['keys'].every(isNonEmptyString)) return { keys: v['keys'] as string[] };
+  return isNonEmptyString(v['source']) && isNonEmptyString(v['pick']) ? { source: v['source'], pick: v['pick'] } : undefined;
+};
 
 export function checkCoverage(repo: Repo, ledger: LayerLedger | undefined, register: RegisterIndex, tests: TestRun): CheckResult {
   const r = result('coverage');
@@ -110,7 +118,7 @@ export function checkCoverage(repo: Repo, ledger: LayerLedger | undefined, regis
         continue;
       }
       if (declared !== undefined && typeof declared['count'] === 'number' && keys.keys.length !== declared['count']) {
-        r.red(`the axis "${axisName}" holds ${keys.keys.length} keys, but the owner's count is ${declared['count']} (${String(declared['decidedIn'])})`, universe.source);
+        r.red(`the axis "${axisName}" holds ${keys.keys.length} keys, but the owner's count is ${declared['count']} (${String(declared['decidedIn'])})`, 'source' in universe ? universe.source : PATHS.axes);
       }
       if (axisName === 'country') coversCountries = true;
       const want = new Set(keys.keys);

@@ -128,10 +128,13 @@ describe('the gate, end to end on a fixture', () => {
     const out = runGate(opts(root));
     expect(out.results.flatMap((r) => all(r).map((f) => `${r.check}: ${f}`))).toEqual(['build-order: red registry/layers.json | the ledger needs "layers" and "proven" arrays']);
   });
-  it('passes on this repository, every check but the tools and the matrices they feed', () => {
-    // The matrices are held by the gate's own run, after the tests; mid-run they're legitimately being rewritten.
+  it('passes on this repository, every check but what only the real test run can show', () => {
+    // A test can't run the suite it belongs to, so here no test has passed: the claims that cite passing tests (and the
+    // matrices written from them) are held by the gate's own run instead. Everything else must hold now.
     const out = runGate(opts(ROOT));
-    expect(out.results.filter((r) => r.check !== 'generated').flatMap((r) => all(r).map((f) => `${r.check}: ${f}`))).toEqual([]);
+    const runOnly = /^(the row's test didn't pass in this run|no passing test falsifies|the engine reads a place, so a passing test)/;
+    const findings = out.results.filter((r) => r.check !== 'generated').flatMap((r) => r.findings.filter((f) => !runOnly.test(f.message)).map((f) => `${r.check}: ${f.message}`));
+    expect(findings).toEqual([]);
   });
 });
 

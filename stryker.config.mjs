@@ -7,8 +7,22 @@
 export default {
   testRunner: 'vitest',
   plugins: ['@stryker-mutator/vitest-runner'],
-  vitest: { configFile: 'vitest.config.ts' },
-  mutate: ['gate/**/*.ts', 'gate/eslint/plugin.js', 'tests/support/falsify-core.ts', '!gate/test/**', '!gate/cli.ts', '!gate/lock-owner-docs.ts'],
+  vitest: { configFile: 'vitest.stryker.config.ts' },
+  // The gate, the app and the tools that make its data; not the scripts that only fetch research or run other tools.
+  mutate: [
+    'gate/**/*.ts',
+    'gate/eslint/plugin.js',
+    'tests/support/falsify-core.ts',
+    'src/**/*.ts',
+    'src/**/*.tsx',
+    'tools/**/*.ts',
+    '!gate/test/**',
+    '!gate/cli.ts',
+    '!gate/lock-owner-docs.ts',
+    '!tools/research/**',
+    '!tools/tzdb/zdump-sample.ts',
+    '!**/*.test.ts',
+  ],
   coverageAnalysis: 'perTest',
   // Stryker would write a type-check-disabling header into every file it copies, the owner's kept source included,
   // which the owner-documents lock rightly calls a change. Vitest doesn't type-check, so nothing needs it.

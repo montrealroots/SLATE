@@ -1,0 +1,45 @@
+{
+ "engine": "core.time",
+ "axis": "local-time-operation",
+ "universe": {
+  "keys": [
+   "type-at",
+   "local-time",
+   "instant-of",
+   "zone-names"
+  ]
+ },
+ "rows": [
+  {
+   "key": "type-at",
+   "status": "proven",
+   "tests": [
+    "tests/core/time/time.test.ts::the type in effect at an instant > changes at the transition, to the second",
+    "tests/core/time/time.test.ts::the type in effect at an instant > finds the right transition in a long history"
+   ]
+  },
+  {
+   "key": "local-time",
+   "status": "proven",
+   "tests": [
+    "tests/core/time/time.test.ts::local time > is the date, the seconds since midnight, the weekday and the type"
+   ]
+  },
+  {
+   "key": "instant-of",
+   "status": "proven",
+   "tests": [
+    "tests/core/time/time.test.ts::the instant a local time names > round-trips every instant near every transition from 1990 to 2030, in every zone",
+    "tests/core/time/time.test.ts::the instant a local time names > is the earlier of two when the clock goes back, or the later when asked",
+    "tests/core/time/time.test.ts::the instant a local time names > lands as far past the jump as it was into the gap when the clock goes forward"
+   ]
+  },
+  {
+   "key": "zone-names",
+   "status": "proven",
+   "tests": [
+    "tests/core/time/time.test.ts::zones by name > holds the release's 344 zones, and follows an alias to its zone"
+   ]
+  }
+ ]
+}

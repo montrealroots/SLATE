@@ -1,3 +1,1084 @@
 {
-  "entries": []
+ "entries": [
+  {
+   "id": "R-0001",
+   "fact": "tzdb.release",
+   "sought": "The current release of the IANA time zone database, as published, to compile every zone from",
+   "status": "found",
+   "value": "2026e",
+   "sources": [
+    {
+     "kind": "primary",
+     "url": "https://data.iana.org/time-zones/tzdb/version",
+     "title": "IANA tz database: current version",
+     "read": "2026-10-26",
+     "said": "2026e"
+    },
+    {
+     "kind": "primary",
+     "url": "https://data.iana.org/time-zones/releases/tzdata2026e.tar.gz",
+     "title": "tzdata2026e.tar.gz",
+     "read": "2026-10-26",
+     "said": "Release 2026e, 2026-09-29 17:14:38 -0700 (NEWS). SHA-256 b26882805f26aac59d5b222978e6580484b834ccdc98be89df2f05a6dc53a652. Its OpenPGP signature (tzdata2026e.tar.gz.asc) is good from Paul Eggert, key 7E3792A9D8ACF7D633BC1588ED97E90E62AA7E34, the key keys.openpgp.org holds for him. 344 zones, 253 links, 135 rule sets in africa, antarctica, asia, australasia, europe, northamerica, southamerica, etcetera, backward."
+    }
+   ]
+  },
+  {
+   "id": "R-0002",
+   "fact": "calendar.algorithms",
+   "sought": "Exact integer algorithms for the proleptic Gregorian calendar: a date to a day count, back, and the weekday",
+   "status": "found",
+   "value": "days_from_civil, civil_from_days, weekday_from_days",
+   "sources": [
+    {
+     "kind": "primary",
+     "url": "http://howardhinnant.github.io/date_algorithms.html",
+     "title": "chrono-Compatible Low-Level Date Algorithms (Howard Hinnant)",
+     "read": "2026-10-26",
+     "said": "days_from_civil: y -= m <= 2; era = (y >= 0 ? y : y-399) / 400; yoe = y - era*400; doy = (153*(m > 2 ? m-3 : m+9) + 2)/5 + d-1; doe = yoe*365 + yoe/4 - yoe/100 + doy; return era*146097 + doe - 719468. civil_from_days is its inverse; weekday_from_days counts from Thursday 1970-01-01."
+    },
+    {
+     "kind": "primary",
+     "url": "https://tc39.es/ecma262/#sec-time-values-and-time-range",
+     "title": "ECMA-262, Time Values and Time Range",
+     "read": "2026-10-26",
+     "said": "Time values count milliseconds from 1970-01-01 UTC on the proleptic Gregorian calendar, the calendar the tests read Date against."
+    }
+   ]
+  },
+  {
+   "id": "R-0003",
+   "fact": "tzdb.zic-semantics",
+   "sought": "How zic turns rules and zone lines into transitions, to compute them the same way",
+   "status": "found",
+   "value": "outzone (rules taken in UT order, a wall-clock moment read with the save in effect; a line ends at its until read with the save then; the start type from the last rule before it or the first standard-time rule after) and writezone's optimize pass",
+   "sources": [
+    {
+     "kind": "primary",
+     "url": "https://github.com/eggert/tz/blob/2026e/zic.c",
+     "title": "zic.c, tz release 2026e (the tz development repository IANA names at data.iana.org/time-zones/tz-link.html)",
+     "read": "2026-10-26",
+     "said": "outzone, lines 3415 to 3725: per zone line, save = 0; for each year, the untried rule with the earliest jtime = r_temp - (r_todisut ? 0 : stdoff) - (r_todisstd ? 0 : save); stop when ktime >= untiltime (until less stdoff and save by its kind); rules before starttime set startoff and the start abbreviation; at the end, starttime = until less save and stdoff. writezone, lines 2691 to 2732: a transition whose local time (at + previous type's offset) is not later than the previous transition's (at + the type before it) replaces it, or removes it when it returns to that type; a transition to the same offset, isdst and abbreviation is dropped."
+    },
+    {
+     "kind": "primary",
+     "url": "https://data.iana.org/time-zones/tzdb/NEWS",
+     "title": "tz NEWS",
+     "read": "2026-10-26",
+     "said": "2026b: zic versions 2023d through 2026a can mishandle a last transition to a new time type in slim output; use zic -b fat. 2026a: zic no longer generates a no-op transition when simultaneous Rule and Zone changes cancel each other out (Asia/Tbilisi, 1997-03-30)."
+    }
+   ]
+  },
+  {
+   "id": "R-0004",
+   "fact": "sun.noaa-method",
+   "sought": "A published method for sunrise and sunset by latitude, longitude and date, with its accuracy",
+   "status": "found",
+   "value": "NOAA GML solar calculator: Meeus's equations; 0.833° below the horizon; accurate to within a minute between 72°N and 72°S, within ten minutes beyond",
+   "sources": [
+    {
+     "kind": "primary",
+     "url": "https://gml.noaa.gov/grad/solcalc/calcdetails.html",
+     "title": "NOAA GML, Solar Calculation Details",
+     "read": "2026-10-26",
+     "said": "The calculations are based on equations from Astronomical Algorithms, by Jean Meeus. The sunrise and sunset results are theoretically accurate to within a minute for locations between +/- 72° latitude, and within 10 minutes outside of those latitudes. For sunrise and sunset calculations, we assume 0.833° of atmospheric refraction. The calculator is no longer actively supported or maintained."
+    },
+    {
+     "kind": "primary",
+     "url": "https://gml.noaa.gov/grad/solcalc/main.js",
+     "title": "NOAA GML solar calculator, main.js",
+     "read": "2026-10-26",
+     "said": "calcGeomMeanLongSun, calcGeomMeanAnomalySun, calcEccentricityEarthOrbit, calcSunEqOfCenter, calcSunApparentLong, calcMeanObliquityOfEcliptic, calcObliquityCorrection, calcSunDeclination, calcEquationOfTime, calcHourAngleSunrise (cos 90.833°), calcSunriseSetUTC: timeUTC = 720 - 4*(longitude + hourAngle) - eqTime, refined once at JD + timeUTC/1440."
+    }
+   ]
+  },
+  {
+   "id": "R-0005",
+   "fact": "tzdb.changes-since-2025b",
+   "sought": "Why the ICU time zones in Node (tz 2025b) differ from the 2026e release for some zones",
+   "status": "found",
+   "value": "Canada 2026 (BC, Alberta, NWT, Manitoba), Morocco and Western Sahara 2026, Moldova since 2022, Baja California 1953 and 1961-1975, Iran 1979, Colombia 1992",
+   "sources": [
+    {
+     "kind": "primary",
+     "url": "https://data.iana.org/time-zones/tzdb/NEWS",
+     "title": "tz NEWS, releases 2025c to 2026e",
+     "read": "2026-10-26",
+     "said": "2026e: Manitoba moves to permanent -05 (modelled from 2026-11-01 02:00). 2026d: the Northwest Territories stay on -06; Colombia's 1992-05-02 and Iran's 1979-05-26 spring forwards were at 00:00, not 24:00. 2026c: Alberta moved to permanent -06; Morocco moves to permanent +00 on 2026-09-20, also Western Sahara. 2026b: British Columbia moved to permanent -07 (modelled from 2026-11-01). 2026a: Moldova has used EU transition times since 2022. 2025c: Baja California agreed with California's DST rules in 1953 and in 1961 through 1975."
+    }
+   ]
+  },
+  {
+   "id": "R-0006",
+   "fact": "sun.usno.latitude.-85",
+   "sought": "Sunrise and sunset at latitude -85°, on six dates from 1926 to 2099, from an authority independent of NOAA",
+   "status": "found",
+   "value": {
+    "file": "research/sources/usno-sun.json",
+    "observations": 6
+   },
+   "sources": [
+    {
+     "kind": "primary",
+     "url": "https://aa.usno.navy.mil/api/rstt/oneday?date=2026-03-20&coords=-85,-180&tz=0",
+     "title": "U.S. Naval Observatory, rstt/oneday 2026-03-20 at -85, -180 (API 4.0.1)",
+     "read": "2026-10-26",
+     "said": "Rise 17:31 UT, Set 06:52 UT"
+    },
+    {
+     "kind": "primary",
+     "url": "https://aa.usno.navy.mil/api/rstt/oneday?date=2026-06-21&coords=-85,-119&tz=0",
+     "title": "U.S. Naval Observatory, rstt/oneday 2026-06-21 at -85, -119 (API 4.0.1)",
+     "read": "2026-10-26",
+     "said": "Object continuously below the Horizon"
+    },
+    {
+     "kind": "primary",
+     "url": "https://aa.usno.navy.mil/api/rstt/oneday?date=2026-09-23&coords=-85,-58&tz=0",
+     "title": "U.S. Naval Observatory, rstt/oneday 2026-09-23 at -85, -58 (API 4.0.1)",
+     "read": "2026-10-26",
+     "said": "Rise 08:59 UT, Set 22:40 UT"
+    },
+    {
+     "kind": "primary",
+     "url": "https://aa.usno.navy.mil/api/rstt/oneday?date=2026-12-21&coords=-85,3&tz=0",
+     "title": "U.S. Naval Observatory, rstt/oneday 2026-12-21 at -85, 3 (API 4.0.1)",
+     "read": "2026-10-26",
+     "said": "Object continuously above the Horizon"
+    },
+    {
+     "kind": "primary",
+     "url": "https://aa.usno.navy.mil/api/rstt/oneday?date=1926-02-14&coords=-85,64&tz=0",
+     "title": "U.S. Naval Observatory, rstt/oneday 1926-02-14 at -85, 64 (API 4.0.1)",
+     "read": "2026-10-26",
+     "said": "Object continuously above the Horizon"
+    },
+    {
+     "kind": "primary",
+     "url": "https://aa.usno.navy.mil/api/rstt/oneday?date=2099-08-30&coords=-85,125&tz=0",
+     "title": "U.S. Naval Observatory, rstt/oneday 2099-08-30 at -85, 125 (API 4.0.1)",
+     "read": "2026-10-26",
+     "said": "Object continuously below the Horizon"
+    }
+   ]
+  },
+  {
+   "id": "R-0007",
+   "fact": "sun.usno.latitude.-75",
+   "sought": "Sunrise and sunset at latitude -75°, on six dates from 1926 to 2099, from an authority independent of NOAA",
+   "status": "found",
+   "value": {
+    "file": "research/sources/usno-sun.json",
+    "observations": 6
+   },
+   "sources": [
+    {
+     "kind": "primary",
+     "url": "https://aa.usno.navy.mil/api/rstt/oneday?date=2026-03-20&coords=-75,-133&tz=0",
+     "title": "U.S. Naval Observatory, rstt/oneday 2026-03-20 at -75, -133 (API 4.0.1)",
+     "read": "2026-10-26",
+     "said": "Rise 14:47 UT, Set 03:15 UT"
+    },
+    {
+     "kind": "primary",
+     "url": "https://aa.usno.navy.mil/api/rstt/oneday?date=2026-06-21&coords=-75,-72&tz=0",
+     "title": "U.S. Naval Observatory, rstt/oneday 2026-06-21 at -75, -72 (API 4.0.1)",
+     "read": "2026-10-26",
+     "said": "Object continuously below the Horizon"
+    },
+    {
+     "kind": "primary",
+     "url": "https://aa.usno.navy.mil/api/rstt/oneday?date=2026-09-23&coords=-75,-11&tz=0",
+     "title": "U.S. Naval Observatory, rstt/oneday 2026-09-23 at -75, -11 (API 4.0.1)",
+     "read": "2026-10-26",
+     "said": "Rise 06:22 UT, Set 18:54 UT"
+    },
+    {
+     "kind": "primary",
+     "url": "https://aa.usno.navy.mil/api/rstt/oneday?date=2026-12-21&coords=-75,50&tz=0",
+     "title": "U.S. Naval Observatory, rstt/oneday 2026-12-21 at -75, 50 (API 4.0.1)",
+     "read": "2026-10-26",
+     "said": "Object continuously above the Horizon"
+    },
+    {
+     "kind": "primary",
+     "url": "https://aa.usno.navy.mil/api/rstt/oneday?date=1926-02-14&coords=-75,111&tz=0",
+     "title": "U.S. Naval Observatory, rstt/oneday 1926-02-14 at -75, 111 (API 4.0.1)",
+     "read": "2026-10-26",
+     "said": "Rise 18:20 UT, Set 15:23 UT"
+    },
+    {
+     "kind": "primary",
+     "url": "https://aa.usno.navy.mil/api/rstt/oneday?date=2099-08-30&coords=-75,172&tz=0",
+     "title": "U.S. Naval Observatory, rstt/oneday 2099-08-30 at -75, 172 (API 4.0.1)",
+     "read": "2026-10-26",
+     "said": "Rise 20:35 UT, Set 04:26 UT"
+    }
+   ]
+  },
+  {
+   "id": "R-0008",
+   "fact": "sun.usno.latitude.-65",
+   "sought": "Sunrise and sunset at latitude -65°, on six dates from 1926 to 2099, from an authority independent of NOAA",
+   "status": "found",
+   "value": {
+    "file": "research/sources/usno-sun.json",
+    "observations": 6
+   },
+   "sources": [
+    {
+     "kind": "primary",
+     "url": "https://aa.usno.navy.mil/api/rstt/oneday?date=2026-03-20&coords=-65,-86&tz=0",
+     "title": "U.S. Naval Observatory, rstt/oneday 2026-03-20 at -65, -86 (API 4.0.1)",
+     "read": "2026-10-26",
+     "said": "Rise 11:43 UT, Set 00:02 UT"
+    },
+    {
+     "kind": "primary",
+     "url": "https://aa.usno.navy.mil/api/rstt/oneday?date=2026-06-21&coords=-65,-25&tz=0",
+     "title": "U.S. Naval Observatory, rstt/oneday 2026-06-21 at -65, -25 (API 4.0.1)",
+     "read": "2026-10-26",
+     "said": "Rise 11:55 UT, Set 15:29 UT"
+    },
+    {
+     "kind": "primary",
+     "url": "https://aa.usno.navy.mil/api/rstt/oneday?date=2026-09-23&coords=-65,36&tz=0",
+     "title": "U.S. Naval Observatory, rstt/oneday 2026-09-23 at -65, 36 (API 4.0.1)",
+     "read": "2026-10-26",
+     "said": "Rise 03:20 UT, Set 15:38 UT"
+    },
+    {
+     "kind": "primary",
+     "url": "https://aa.usno.navy.mil/api/rstt/oneday?date=2026-12-21&coords=-65,97&tz=0",
+     "title": "U.S. Naval Observatory, rstt/oneday 2026-12-21 at -65, 97 (API 4.0.1)",
+     "read": "2026-10-26",
+     "said": "Rise 18:29 UT, Set 16:31 UT"
+    },
+    {
+     "kind": "primary",
+     "url": "https://aa.usno.navy.mil/api/rstt/oneday?date=1926-02-14&coords=-65,158&tz=0",
+     "title": "U.S. Naval Observatory, rstt/oneday 1926-02-14 at -65, 158 (API 4.0.1)",
+     "read": "2026-10-26",
+     "said": "Rise 17:33 UT, Set 09:53 UT"
+    },
+    {
+     "kind": "primary",
+     "url": "https://aa.usno.navy.mil/api/rstt/oneday?date=2099-08-30&coords=-65,-141&tz=0",
+     "title": "U.S. Naval Observatory, rstt/oneday 2099-08-30 at -65, -141 (API 4.0.1)",
+     "read": "2026-10-26",
+     "said": "Rise 16:33 UT, Set 02:15 UT"
+    }
+   ]
+  },
+  {
+   "id": "R-0009",
+   "fact": "sun.usno.latitude.-55",
+   "sought": "Sunrise and sunset at latitude -55°, on six dates from 1926 to 2099, from an authority independent of NOAA",
+   "status": "found",
+   "value": {
+    "file": "research/sources/usno-sun.json",
+    "observations": 6
+   },
+   "sources": [
+    {
+     "kind": "primary",
+     "url": "https://aa.usno.navy.mil/api/rstt/oneday?date=2026-03-20&coords=-55,-39&tz=0",
+     "title": "U.S. Naval Observatory, rstt/oneday 2026-03-20 at -55, -39 (API 4.0.1)",
+     "read": "2026-10-26",
+     "said": "Rise 08:37 UT, Set 20:49 UT"
+    },
+    {
+     "kind": "primary",
+     "url": "https://aa.usno.navy.mil/api/rstt/oneday?date=2026-06-21&coords=-55,22&tz=0",
+     "title": "U.S. Naval Observatory, rstt/oneday 2026-06-21 at -55, 22 (API 4.0.1)",
+     "read": "2026-10-26",
+     "said": "Rise 06:59 UT, Set 14:09 UT"
+    },
+    {
+     "kind": "primary",
+     "url": "https://aa.usno.navy.mil/api/rstt/oneday?date=2026-09-23&coords=-55,83&tz=0",
+     "title": "U.S. Naval Observatory, rstt/oneday 2026-09-23 at -55, 83 (API 4.0.1)",
+     "read": "2026-10-26",
+     "said": "Rise 00:15 UT, Set 12:27 UT"
+    },
+    {
+     "kind": "primary",
+     "url": "https://aa.usno.navy.mil/api/rstt/oneday?date=2026-12-21&coords=-55,144&tz=0",
+     "title": "U.S. Naval Observatory, rstt/oneday 2026-12-21 at -55, 144 (API 4.0.1)",
+     "read": "2026-10-26",
+     "said": "Rise 17:41 UT, Set 11:03 UT"
+    },
+    {
+     "kind": "primary",
+     "url": "https://aa.usno.navy.mil/api/rstt/oneday?date=1926-02-14&coords=-55,-155&tz=0",
+     "title": "U.S. Naval Observatory, rstt/oneday 1926-02-14 at -55, -155 (API 4.0.1)",
+     "read": "2026-10-26",
+     "said": "Rise 15:10 UT, Set 05:59 UT"
+    },
+    {
+     "kind": "primary",
+     "url": "https://aa.usno.navy.mil/api/rstt/oneday?date=2099-08-30&coords=-55,-94&tz=0",
+     "title": "U.S. Naval Observatory, rstt/oneday 2099-08-30 at -55, -94 (API 4.0.1)",
+     "read": "2026-10-26",
+     "said": "Rise 13:01 UT, Set 23:33 UT"
+    }
+   ]
+  },
+  {
+   "id": "R-0010",
+   "fact": "sun.usno.latitude.-45",
+   "sought": "Sunrise and sunset at latitude -45°, on six dates from 1926 to 2099, from an authority independent of NOAA",
+   "status": "found",
+   "value": {
+    "file": "research/sources/usno-sun.json",
+    "observations": 6
+   },
+   "sources": [
+    {
+     "kind": "primary",
+     "url": "https://aa.usno.navy.mil/api/rstt/oneday?date=2026-03-20&coords=-45,8&tz=0",
+     "title": "U.S. Naval Observatory, rstt/oneday 2026-03-20 at -45, 8 (API 4.0.1)",
+     "read": "2026-10-26",
+     "said": "Rise 05:30 UT, Set 17:40 UT"
+    },
+    {
+     "kind": "primary",
+     "url": "https://aa.usno.navy.mil/api/rstt/oneday?date=2026-06-21&coords=-45,69&tz=0",
+     "title": "U.S. Naval Observatory, rstt/oneday 2026-06-21 at -45, 69 (API 4.0.1)",
+     "read": "2026-10-26",
+     "said": "Rise 03:03 UT, Set 11:49 UT"
+    },
+    {
+     "kind": "primary",
+     "url": "https://aa.usno.navy.mil/api/rstt/oneday?date=2026-09-23&coords=-45,130&tz=0",
+     "title": "U.S. Naval Observatory, rstt/oneday 2026-09-23 at -45, 130 (API 4.0.1)",
+     "read": "2026-10-26",
+     "said": "Rise 21:06 UT, Set 09:18 UT"
+    },
+    {
+     "kind": "primary",
+     "url": "https://aa.usno.navy.mil/api/rstt/oneday?date=2026-12-21&coords=-45,-169&tz=0",
+     "title": "U.S. Naval Observatory, rstt/oneday 2026-12-21 at -45, -169 (API 4.0.1)",
+     "read": "2026-10-26",
+     "said": "Rise 15:26 UT, Set 07:02 UT"
+    },
+    {
+     "kind": "primary",
+     "url": "https://aa.usno.navy.mil/api/rstt/oneday?date=1926-02-14&coords=-45,-108&tz=0",
+     "title": "U.S. Naval Observatory, rstt/oneday 1926-02-14 at -45, -108 (API 4.0.1)",
+     "read": "2026-10-26",
+     "said": "Rise 12:27 UT, Set 02:26 UT"
+    },
+    {
+     "kind": "primary",
+     "url": "https://aa.usno.navy.mil/api/rstt/oneday?date=2099-08-30&coords=-45,-47&tz=0",
+     "title": "U.S. Naval Observatory, rstt/oneday 2099-08-30 at -45, -47 (API 4.0.1)",
+     "read": "2026-10-26",
+     "said": "Rise 09:39 UT, Set 20:38 UT"
+    }
+   ]
+  },
+  {
+   "id": "R-0011",
+   "fact": "sun.usno.latitude.-35",
+   "sought": "Sunrise and sunset at latitude -35°, on six dates from 1926 to 2099, from an authority independent of NOAA",
+   "status": "found",
+   "value": {
+    "file": "research/sources/usno-sun.json",
+    "observations": 6
+   },
+   "sources": [
+    {
+     "kind": "primary",
+     "url": "https://aa.usno.navy.mil/api/rstt/oneday?date=2026-03-20&coords=-35,55&tz=0",
+     "title": "U.S. Naval Observatory, rstt/oneday 2026-03-20 at -35, 55 (API 4.0.1)",
+     "read": "2026-10-26",
+     "said": "Rise 02:23 UT, Set 14:31 UT"
+    },
+    {
+     "kind": "primary",
+     "url": "https://aa.usno.navy.mil/api/rstt/oneday?date=2026-06-21&coords=-35,116&tz=0",
+     "title": "U.S. Naval Observatory, rstt/oneday 2026-06-21 at -35, 116 (API 4.0.1)",
+     "read": "2026-10-26",
+     "said": "Rise 23:24 UT, Set 09:12 UT"
+    },
+    {
+     "kind": "primary",
+     "url": "https://aa.usno.navy.mil/api/rstt/oneday?date=2026-09-23&coords=-35,177&tz=0",
+     "title": "U.S. Naval Observatory, rstt/oneday 2026-09-23 at -35, 177 (API 4.0.1)",
+     "read": "2026-10-26",
+     "said": "Rise 17:59 UT, Set 06:09 UT"
+    },
+    {
+     "kind": "primary",
+     "url": "https://aa.usno.navy.mil/api/rstt/oneday?date=2026-12-21&coords=-35,-122&tz=0",
+     "title": "U.S. Naval Observatory, rstt/oneday 2026-12-21 at -35, -122 (API 4.0.1)",
+     "read": "2026-10-26",
+     "said": "Rise 12:51 UT, Set 03:21 UT"
+    },
+    {
+     "kind": "primary",
+     "url": "https://aa.usno.navy.mil/api/rstt/oneday?date=1926-02-14&coords=-35,-61&tz=0",
+     "title": "U.S. Naval Observatory, rstt/oneday 1926-02-14 at -35, -61 (API 4.0.1)",
+     "read": "2026-10-26",
+     "said": "Rise 09:36 UT, Set 23:00 UT"
+    },
+    {
+     "kind": "primary",
+     "url": "https://aa.usno.navy.mil/api/rstt/oneday?date=2099-08-30&coords=-35,0&tz=0",
+     "title": "U.S. Naval Observatory, rstt/oneday 2099-08-30 at -35, 0 (API 4.0.1)",
+     "read": "2026-10-26",
+     "said": "Rise 06:22 UT, Set 17:40 UT"
+    }
+   ]
+  },
+  {
+   "id": "R-0012",
+   "fact": "sun.usno.latitude.-25",
+   "sought": "Sunrise and sunset at latitude -25°, on six dates from 1926 to 2099, from an authority independent of NOAA",
+   "status": "found",
+   "value": {
+    "file": "research/sources/usno-sun.json",
+    "observations": 6
+   },
+   "sources": [
+    {
+     "kind": "primary",
+     "url": "https://aa.usno.navy.mil/api/rstt/oneday?date=2026-03-20&coords=-25,102&tz=0",
+     "title": "U.S. Naval Observatory, rstt/oneday 2026-03-20 at -25, 102 (API 4.0.1)",
+     "read": "2026-10-26",
+     "said": "Rise 23:16 UT, Set 11:23 UT"
+    },
+    {
+     "kind": "primary",
+     "url": "https://aa.usno.navy.mil/api/rstt/oneday?date=2026-06-21&coords=-25,163&tz=0",
+     "title": "U.S. Naval Observatory, rstt/oneday 2026-06-21 at -25, 163 (API 4.0.1)",
+     "read": "2026-10-26",
+     "said": "Rise 19:52 UT, Set 06:27 UT"
+    },
+    {
+     "kind": "primary",
+     "url": "https://aa.usno.navy.mil/api/rstt/oneday?date=2026-09-23&coords=-25,-136&tz=0",
+     "title": "U.S. Naval Observatory, rstt/oneday 2026-09-23 at -25, -136 (API 4.0.1)",
+     "read": "2026-10-26",
+     "said": "Rise 14:52 UT, Set 03:00 UT"
+    },
+    {
+     "kind": "primary",
+     "url": "https://aa.usno.navy.mil/api/rstt/oneday?date=2026-12-21&coords=-25,-75&tz=0",
+     "title": "U.S. Naval Observatory, rstt/oneday 2026-12-21 at -25, -75 (API 4.0.1)",
+     "read": "2026-10-26",
+     "said": "Rise 10:07 UT, Set 23:49 UT"
+    },
+    {
+     "kind": "primary",
+     "url": "https://aa.usno.navy.mil/api/rstt/oneday?date=1926-02-14&coords=-25,-14&tz=0",
+     "title": "U.S. Naval Observatory, rstt/oneday 1926-02-14 at -25, -14 (API 4.0.1)",
+     "read": "2026-10-26",
+     "said": "Rise 06:41 UT, Set 19:39 UT"
+    },
+    {
+     "kind": "primary",
+     "url": "https://aa.usno.navy.mil/api/rstt/oneday?date=2099-08-30&coords=-25,47&tz=0",
+     "title": "U.S. Naval Observatory, rstt/oneday 2099-08-30 at -25, 47 (API 4.0.1)",
+     "read": "2026-10-26",
+     "said": "Rise 03:06 UT, Set 14:40 UT"
+    }
+   ]
+  },
+  {
+   "id": "R-0013",
+   "fact": "sun.usno.latitude.-15",
+   "sought": "Sunrise and sunset at latitude -15°, on six dates from 1926 to 2099, from an authority independent of NOAA",
+   "status": "found",
+   "value": {
+    "file": "research/sources/usno-sun.json",
+    "observations": 6
+   },
+   "sources": [
+    {
+     "kind": "primary",
+     "url": "https://aa.usno.navy.mil/api/rstt/oneday?date=2026-03-20&coords=-15,149&tz=0",
+     "title": "U.S. Naval Observatory, rstt/oneday 2026-03-20 at -15, 149 (API 4.0.1)",
+     "read": "2026-10-26",
+     "said": "Rise 20:08 UT, Set 08:15 UT"
+    },
+    {
+     "kind": "primary",
+     "url": "https://aa.usno.navy.mil/api/rstt/oneday?date=2026-06-21&coords=-15,-150&tz=0",
+     "title": "U.S. Naval Observatory, rstt/oneday 2026-06-21 at -15, -150 (API 4.0.1)",
+     "read": "2026-10-26",
+     "said": "Rise 16:25 UT, Set 03:39 UT"
+    },
+    {
+     "kind": "primary",
+     "url": "https://aa.usno.navy.mil/api/rstt/oneday?date=2026-09-23&coords=-15,-89&tz=0",
+     "title": "U.S. Naval Observatory, rstt/oneday 2026-09-23 at -15, -89 (API 4.0.1)",
+     "read": "2026-10-26",
+     "said": "Rise 11:45 UT, Set 23:52 UT"
+    },
+    {
+     "kind": "primary",
+     "url": "https://aa.usno.navy.mil/api/rstt/oneday?date=2026-12-21&coords=-15,-28&tz=0",
+     "title": "U.S. Naval Observatory, rstt/oneday 2026-12-21 at -15, -28 (API 4.0.1)",
+     "read": "2026-10-26",
+     "said": "Rise 07:19 UT, Set 20:21 UT"
+    },
+    {
+     "kind": "primary",
+     "url": "https://aa.usno.navy.mil/api/rstt/oneday?date=1926-02-14&coords=-15,33&tz=0",
+     "title": "U.S. Naval Observatory, rstt/oneday 1926-02-14 at -15, 33 (API 4.0.1)",
+     "read": "2026-10-26",
+     "said": "Rise 03:44 UT, Set 16:20 UT"
+    },
+    {
+     "kind": "primary",
+     "url": "https://aa.usno.navy.mil/api/rstt/oneday?date=2099-08-30&coords=-15,94&tz=0",
+     "title": "U.S. Naval Observatory, rstt/oneday 2099-08-30 at -15, 94 (API 4.0.1)",
+     "read": "2026-10-26",
+     "said": "Rise 23:50 UT, Set 11:39 UT"
+    }
+   ]
+  },
+  {
+   "id": "R-0014",
+   "fact": "sun.usno.latitude.-5",
+   "sought": "Sunrise and sunset at latitude -5°, on six dates from 1926 to 2099, from an authority independent of NOAA",
+   "status": "found",
+   "value": {
+    "file": "research/sources/usno-sun.json",
+    "observations": 6
+   },
+   "sources": [
+    {
+     "kind": "primary",
+     "url": "https://aa.usno.navy.mil/api/rstt/oneday?date=2026-03-20&coords=-5,-164&tz=0",
+     "title": "U.S. Naval Observatory, rstt/oneday 2026-03-20 at -5, -164 (API 4.0.1)",
+     "read": "2026-10-26",
+     "said": "Rise 17:00 UT, Set 05:07 UT"
+    },
+    {
+     "kind": "primary",
+     "url": "https://aa.usno.navy.mil/api/rstt/oneday?date=2026-06-21&coords=-5,-103&tz=0",
+     "title": "U.S. Naval Observatory, rstt/oneday 2026-06-21 at -5, -103 (API 4.0.1)",
+     "read": "2026-10-26",
+     "said": "Rise 12:59 UT, Set 00:49 UT"
+    },
+    {
+     "kind": "primary",
+     "url": "https://aa.usno.navy.mil/api/rstt/oneday?date=2026-09-23&coords=-5,-42&tz=0",
+     "title": "U.S. Naval Observatory, rstt/oneday 2026-09-23 at -5, -42 (API 4.0.1)",
+     "read": "2026-10-26",
+     "said": "Rise 08:37 UT, Set 20:44 UT"
+    },
+    {
+     "kind": "primary",
+     "url": "https://aa.usno.navy.mil/api/rstt/oneday?date=2026-12-21&coords=-5,19&tz=0",
+     "title": "U.S. Naval Observatory, rstt/oneday 2026-12-21 at -5, 19 (API 4.0.1)",
+     "read": "2026-10-26",
+     "said": "Rise 04:30 UT, Set 16:55 UT"
+    },
+    {
+     "kind": "primary",
+     "url": "https://aa.usno.navy.mil/api/rstt/oneday?date=1926-02-14&coords=-5,80&tz=0",
+     "title": "U.S. Naval Observatory, rstt/oneday 1926-02-14 at -5, 80 (API 4.0.1)",
+     "read": "2026-10-26",
+     "said": "Rise 00:46 UT, Set 13:02 UT"
+    },
+    {
+     "kind": "primary",
+     "url": "https://aa.usno.navy.mil/api/rstt/oneday?date=2099-08-30&coords=-5,141&tz=0",
+     "title": "U.S. Naval Observatory, rstt/oneday 2099-08-30 at -5, 141 (API 4.0.1)",
+     "read": "2026-10-26",
+     "said": "Rise 20:36 UT, Set 08:37 UT"
+    }
+   ]
+  },
+  {
+   "id": "R-0015",
+   "fact": "sun.usno.latitude.5",
+   "sought": "Sunrise and sunset at latitude 5°, on six dates from 1926 to 2099, from an authority independent of NOAA",
+   "status": "found",
+   "value": {
+    "file": "research/sources/usno-sun.json",
+    "observations": 6
+   },
+   "sources": [
+    {
+     "kind": "primary",
+     "url": "https://aa.usno.navy.mil/api/rstt/oneday?date=2026-03-20&coords=5,-117&tz=0",
+     "title": "U.S. Naval Observatory, rstt/oneday 2026-03-20 at 5, -117 (API 4.0.1)",
+     "read": "2026-10-26",
+     "said": "Rise 13:52 UT, Set 01:59 UT"
+    },
+    {
+     "kind": "primary",
+     "url": "https://aa.usno.navy.mil/api/rstt/oneday?date=2026-06-21&coords=5,-56&tz=0",
+     "title": "U.S. Naval Observatory, rstt/oneday 2026-06-21 at 5, -56 (API 4.0.1)",
+     "read": "2026-10-26",
+     "said": "Rise 09:33 UT, Set 21:58 UT"
+    },
+    {
+     "kind": "primary",
+     "url": "https://aa.usno.navy.mil/api/rstt/oneday?date=2026-09-23&coords=5,5&tz=0",
+     "title": "U.S. Naval Observatory, rstt/oneday 2026-09-23 at 5, 5 (API 4.0.1)",
+     "read": "2026-10-26",
+     "said": "Rise 05:29 UT, Set 17:36 UT"
+    },
+    {
+     "kind": "primary",
+     "url": "https://aa.usno.navy.mil/api/rstt/oneday?date=2026-12-21&coords=5,66&tz=0",
+     "title": "U.S. Naval Observatory, rstt/oneday 2026-12-21 at 5, 66 (API 4.0.1)",
+     "read": "2026-10-26",
+     "said": "Rise 01:39 UT, Set 13:29 UT"
+    },
+    {
+     "kind": "primary",
+     "url": "https://aa.usno.navy.mil/api/rstt/oneday?date=1926-02-14&coords=5,127&tz=0",
+     "title": "U.S. Naval Observatory, rstt/oneday 1926-02-14 at 5, 127 (API 4.0.1)",
+     "read": "2026-10-26",
+     "said": "Rise 21:48 UT, Set 09:45 UT"
+    },
+    {
+     "kind": "primary",
+     "url": "https://aa.usno.navy.mil/api/rstt/oneday?date=2099-08-30&coords=5,-172&tz=0",
+     "title": "U.S. Naval Observatory, rstt/oneday 2099-08-30 at 5, -172 (API 4.0.1)",
+     "read": "2026-10-26",
+     "said": "Rise 17:22 UT, Set 05:35 UT"
+    }
+   ]
+  },
+  {
+   "id": "R-0016",
+   "fact": "sun.usno.latitude.15",
+   "sought": "Sunrise and sunset at latitude 15°, on six dates from 1926 to 2099, from an authority independent of NOAA",
+   "status": "found",
+   "value": {
+    "file": "research/sources/usno-sun.json",
+    "observations": 6
+   },
+   "sources": [
+    {
+     "kind": "primary",
+     "url": "https://aa.usno.navy.mil/api/rstt/oneday?date=2026-03-20&coords=15,-70&tz=0",
+     "title": "U.S. Naval Observatory, rstt/oneday 2026-03-20 at 15, -70 (API 4.0.1)",
+     "read": "2026-10-26",
+     "said": "Rise 10:44 UT, Set 22:51 UT"
+    },
+    {
+     "kind": "primary",
+     "url": "https://aa.usno.navy.mil/api/rstt/oneday?date=2026-06-21&coords=15,-9&tz=0",
+     "title": "U.S. Naval Observatory, rstt/oneday 2026-06-21 at 15, -9 (API 4.0.1)",
+     "read": "2026-10-26",
+     "said": "Rise 06:07 UT, Set 19:08 UT"
+    },
+    {
+     "kind": "primary",
+     "url": "https://aa.usno.navy.mil/api/rstt/oneday?date=2026-09-23&coords=15,52&tz=0",
+     "title": "U.S. Naval Observatory, rstt/oneday 2026-09-23 at 15, 52 (API 4.0.1)",
+     "read": "2026-10-26",
+     "said": "Rise 02:21 UT, Set 14:28 UT"
+    },
+    {
+     "kind": "primary",
+     "url": "https://aa.usno.navy.mil/api/rstt/oneday?date=2026-12-21&coords=15,113&tz=0",
+     "title": "U.S. Naval Observatory, rstt/oneday 2026-12-21 at 15, 113 (API 4.0.1)",
+     "read": "2026-10-26",
+     "said": "Rise 22:49 UT, Set 10:03 UT"
+    },
+    {
+     "kind": "primary",
+     "url": "https://aa.usno.navy.mil/api/rstt/oneday?date=1926-02-14&coords=15,174&tz=0",
+     "title": "U.S. Naval Observatory, rstt/oneday 1926-02-14 at 15, 174 (API 4.0.1)",
+     "read": "2026-10-26",
+     "said": "Rise 18:49 UT, Set 06:27 UT"
+    },
+    {
+     "kind": "primary",
+     "url": "https://aa.usno.navy.mil/api/rstt/oneday?date=2099-08-30&coords=15,-125&tz=0",
+     "title": "U.S. Naval Observatory, rstt/oneday 2099-08-30 at 15, -125 (API 4.0.1)",
+     "read": "2026-10-26",
+     "said": "Rise 14:08 UT, Set 02:34 UT"
+    }
+   ]
+  },
+  {
+   "id": "R-0017",
+   "fact": "sun.usno.latitude.25",
+   "sought": "Sunrise and sunset at latitude 25°, on six dates from 1926 to 2099, from an authority independent of NOAA",
+   "status": "found",
+   "value": {
+    "file": "research/sources/usno-sun.json",
+    "observations": 6
+   },
+   "sources": [
+    {
+     "kind": "primary",
+     "url": "https://aa.usno.navy.mil/api/rstt/oneday?date=2026-03-20&coords=25,-23&tz=0",
+     "title": "U.S. Naval Observatory, rstt/oneday 2026-03-20 at 25, -23 (API 4.0.1)",
+     "read": "2026-10-26",
+     "said": "Rise 07:36 UT, Set 19:43 UT"
+    },
+    {
+     "kind": "primary",
+     "url": "https://aa.usno.navy.mil/api/rstt/oneday?date=2026-06-21&coords=25,38&tz=0",
+     "title": "U.S. Naval Observatory, rstt/oneday 2026-06-21 at 25, 38 (API 4.0.1)",
+     "read": "2026-10-26",
+     "said": "Rise 02:39 UT, Set 16:21 UT"
+    },
+    {
+     "kind": "primary",
+     "url": "https://aa.usno.navy.mil/api/rstt/oneday?date=2026-09-23&coords=25,99&tz=0",
+     "title": "U.S. Naval Observatory, rstt/oneday 2026-09-23 at 25, 99 (API 4.0.1)",
+     "read": "2026-10-26",
+     "said": "Rise 23:13 UT, Set 11:20 UT"
+    },
+    {
+     "kind": "primary",
+     "url": "https://aa.usno.navy.mil/api/rstt/oneday?date=2026-12-21&coords=25,160&tz=0",
+     "title": "U.S. Naval Observatory, rstt/oneday 2026-12-21 at 25, 160 (API 4.0.1)",
+     "read": "2026-10-26",
+     "said": "Rise 20:01 UT, Set 06:35 UT"
+    },
+    {
+     "kind": "primary",
+     "url": "https://aa.usno.navy.mil/api/rstt/oneday?date=1926-02-14&coords=25,-139&tz=0",
+     "title": "U.S. Naval Observatory, rstt/oneday 1926-02-14 at 25, -139 (API 4.0.1)",
+     "read": "2026-10-26",
+     "said": "Rise 15:52 UT, Set 03:09 UT"
+    },
+    {
+     "kind": "primary",
+     "url": "https://aa.usno.navy.mil/api/rstt/oneday?date=2099-08-30&coords=25,-78&tz=0",
+     "title": "U.S. Naval Observatory, rstt/oneday 2099-08-30 at 25, -78 (API 4.0.1)",
+     "read": "2026-10-26",
+     "said": "Rise 10:52 UT, Set 23:32 UT"
+    }
+   ]
+  },
+  {
+   "id": "R-0018",
+   "fact": "sun.usno.latitude.35",
+   "sought": "Sunrise and sunset at latitude 35°, on six dates from 1926 to 2099, from an authority independent of NOAA",
+   "status": "found",
+   "value": {
+    "file": "research/sources/usno-sun.json",
+    "observations": 6
+   },
+   "sources": [
+    {
+     "kind": "primary",
+     "url": "https://aa.usno.navy.mil/api/rstt/oneday?date=2026-03-20&coords=35,24&tz=0",
+     "title": "U.S. Naval Observatory, rstt/oneday 2026-03-20 at 35, 24 (API 4.0.1)",
+     "read": "2026-10-26",
+     "said": "Rise 04:28 UT, Set 16:36 UT"
+    },
+    {
+     "kind": "primary",
+     "url": "https://aa.usno.navy.mil/api/rstt/oneday?date=2026-06-21&coords=35,85&tz=0",
+     "title": "U.S. Naval Observatory, rstt/oneday 2026-06-21 at 35, 85 (API 4.0.1)",
+     "read": "2026-10-26",
+     "said": "Rise 23:07 UT, Set 13:37 UT"
+    },
+    {
+     "kind": "primary",
+     "url": "https://aa.usno.navy.mil/api/rstt/oneday?date=2026-09-23&coords=35,146&tz=0",
+     "title": "U.S. Naval Observatory, rstt/oneday 2026-09-23 at 35, 146 (API 4.0.1)",
+     "read": "2026-10-26",
+     "said": "Rise 20:05 UT, Set 08:12 UT"
+    },
+    {
+     "kind": "primary",
+     "url": "https://aa.usno.navy.mil/api/rstt/oneday?date=2026-12-21&coords=35,-153&tz=0",
+     "title": "U.S. Naval Observatory, rstt/oneday 2026-12-21 at 35, -153 (API 4.0.1)",
+     "read": "2026-10-26",
+     "said": "Rise 17:16 UT, Set 03:04 UT"
+    },
+    {
+     "kind": "primary",
+     "url": "https://aa.usno.navy.mil/api/rstt/oneday?date=1926-02-14&coords=35,-92&tz=0",
+     "title": "U.S. Naval Observatory, rstt/oneday 1926-02-14 at 35, -92 (API 4.0.1)",
+     "read": "2026-10-26",
+     "said": "Rise 12:56 UT, Set 23:49 UT"
+    },
+    {
+     "kind": "primary",
+     "url": "https://aa.usno.navy.mil/api/rstt/oneday?date=2099-08-30&coords=35,-31&tz=0",
+     "title": "U.S. Naval Observatory, rstt/oneday 2099-08-30 at 35, -31 (API 4.0.1)",
+     "read": "2026-10-26",
+     "said": "Rise 07:36 UT, Set 20:33 UT"
+    }
+   ]
+  },
+  {
+   "id": "R-0019",
+   "fact": "sun.usno.latitude.45",
+   "sought": "Sunrise and sunset at latitude 45°, on six dates from 1926 to 2099, from an authority independent of NOAA",
+   "status": "found",
+   "value": {
+    "file": "research/sources/usno-sun.json",
+    "observations": 6
+   },
+   "sources": [
+    {
+     "kind": "primary",
+     "url": "https://aa.usno.navy.mil/api/rstt/oneday?date=2026-03-20&coords=45,71&tz=0",
+     "title": "U.S. Naval Observatory, rstt/oneday 2026-03-20 at 45, 71 (API 4.0.1)",
+     "read": "2026-10-26",
+     "said": "Rise 01:20 UT, Set 13:28 UT"
+    },
+    {
+     "kind": "primary",
+     "url": "https://aa.usno.navy.mil/api/rstt/oneday?date=2026-06-21&coords=45,132&tz=0",
+     "title": "U.S. Naval Observatory, rstt/oneday 2026-06-21 at 45, 132 (API 4.0.1)",
+     "read": "2026-10-26",
+     "said": "Rise 19:25 UT, Set 11:02 UT"
+    },
+    {
+     "kind": "primary",
+     "url": "https://aa.usno.navy.mil/api/rstt/oneday?date=2026-09-23&coords=45,-167&tz=0",
+     "title": "U.S. Naval Observatory, rstt/oneday 2026-09-23 at 45, -167 (API 4.0.1)",
+     "read": "2026-10-26",
+     "said": "Rise 16:57 UT, Set 05:05 UT"
+    },
+    {
+     "kind": "primary",
+     "url": "https://aa.usno.navy.mil/api/rstt/oneday?date=2026-12-21&coords=45,-106&tz=0",
+     "title": "U.S. Naval Observatory, rstt/oneday 2026-12-21 at 45, -106 (API 4.0.1)",
+     "read": "2026-10-26",
+     "said": "Rise 14:39 UT, Set 23:25 UT"
+    },
+    {
+     "kind": "primary",
+     "url": "https://aa.usno.navy.mil/api/rstt/oneday?date=1926-02-14&coords=45,-45&tz=0",
+     "title": "U.S. Naval Observatory, rstt/oneday 1926-02-14 at 45, -45 (API 4.0.1)",
+     "read": "2026-10-26",
+     "said": "Rise 10:04 UT, Set 20:26 UT"
+    },
+    {
+     "kind": "primary",
+     "url": "https://aa.usno.navy.mil/api/rstt/oneday?date=2099-08-30&coords=45,16&tz=0",
+     "title": "U.S. Naval Observatory, rstt/oneday 2099-08-30 at 45, 16 (API 4.0.1)",
+     "read": "2026-10-26",
+     "said": "Rise 04:16 UT, Set 17:36 UT"
+    }
+   ]
+  },
+  {
+   "id": "R-0020",
+   "fact": "sun.usno.latitude.55",
+   "sought": "Sunrise and sunset at latitude 55°, on six dates from 1926 to 2099, from an authority independent of NOAA",
+   "status": "found",
+   "value": {
+    "file": "research/sources/usno-sun.json",
+    "observations": 6
+   },
+   "sources": [
+    {
+     "kind": "primary",
+     "url": "https://aa.usno.navy.mil/api/rstt/oneday?date=2026-03-20&coords=55,118&tz=0",
+     "title": "U.S. Naval Observatory, rstt/oneday 2026-03-20 at 55, 118 (API 4.0.1)",
+     "read": "2026-10-26",
+     "said": "Rise 22:09 UT, Set 10:21 UT"
+    },
+    {
+     "kind": "primary",
+     "url": "https://aa.usno.navy.mil/api/rstt/oneday?date=2026-06-21&coords=55,179&tz=0",
+     "title": "U.S. Naval Observatory, rstt/oneday 2026-06-21 at 55, 179 (API 4.0.1)",
+     "read": "2026-10-26",
+     "said": "Rise 15:25 UT, Set 08:47 UT"
+    },
+    {
+     "kind": "primary",
+     "url": "https://aa.usno.navy.mil/api/rstt/oneday?date=2026-09-23&coords=55,-120&tz=0",
+     "title": "U.S. Naval Observatory, rstt/oneday 2026-09-23 at 55, -120 (API 4.0.1)",
+     "read": "2026-10-26",
+     "said": "Rise 13:48 UT, Set 01:58 UT"
+    },
+    {
+     "kind": "primary",
+     "url": "https://aa.usno.navy.mil/api/rstt/oneday?date=2026-12-21&coords=55,-59&tz=0",
+     "title": "U.S. Naval Observatory, rstt/oneday 2026-12-21 at 55, -59 (API 4.0.1)",
+     "read": "2026-10-26",
+     "said": "Rise 12:19 UT, Set 19:29 UT"
+    },
+    {
+     "kind": "primary",
+     "url": "https://aa.usno.navy.mil/api/rstt/oneday?date=1926-02-14&coords=55,2&tz=0",
+     "title": "U.S. Naval Observatory, rstt/oneday 1926-02-14 at 55, 2 (API 4.0.1)",
+     "read": "2026-10-26",
+     "said": "Rise 07:19 UT, Set 16:55 UT"
+    },
+    {
+     "kind": "primary",
+     "url": "https://aa.usno.navy.mil/api/rstt/oneday?date=2099-08-30&coords=55,63&tz=0",
+     "title": "U.S. Naval Observatory, rstt/oneday 2099-08-30 at 55, 63 (API 4.0.1)",
+     "read": "2026-10-26",
+     "said": "Rise 00:51 UT, Set 14:45 UT"
+    }
+   ]
+  },
+  {
+   "id": "R-0021",
+   "fact": "sun.usno.latitude.65",
+   "sought": "Sunrise and sunset at latitude 65°, on six dates from 1926 to 2099, from an authority independent of NOAA",
+   "status": "found",
+   "value": {
+    "file": "research/sources/usno-sun.json",
+    "observations": 6
+   },
+   "sources": [
+    {
+     "kind": "primary",
+     "url": "https://aa.usno.navy.mil/api/rstt/oneday?date=2026-03-20&coords=65,165&tz=0",
+     "title": "U.S. Naval Observatory, rstt/oneday 2026-03-20 at 65, 165 (API 4.0.1)",
+     "read": "2026-10-26",
+     "said": "Rise 18:59 UT, Set 07:14 UT"
+    },
+    {
+     "kind": "primary",
+     "url": "https://aa.usno.navy.mil/api/rstt/oneday?date=2026-06-21&coords=65,-134&tz=0",
+     "title": "U.S. Naval Observatory, rstt/oneday 2026-06-21 at 65, -134 (API 4.0.1)",
+     "read": "2026-10-26",
+     "said": "Rise 09:57 UT, Set 07:59 UT"
+    },
+    {
+     "kind": "primary",
+     "url": "https://aa.usno.navy.mil/api/rstt/oneday?date=2026-09-23&coords=65,-73&tz=0",
+     "title": "U.S. Naval Observatory, rstt/oneday 2026-09-23 at 65, -73 (API 4.0.1)",
+     "read": "2026-10-26",
+     "said": "Rise 10:38 UT, Set 22:49 UT"
+    },
+    {
+     "kind": "primary",
+     "url": "https://aa.usno.navy.mil/api/rstt/oneday?date=2026-12-21&coords=65,-12&tz=0",
+     "title": "U.S. Naval Observatory, rstt/oneday 2026-12-21 at 65, -12 (API 4.0.1)",
+     "read": "2026-10-26",
+     "said": "Rise 10:59 UT, Set 14:34 UT"
+    },
+    {
+     "kind": "primary",
+     "url": "https://aa.usno.navy.mil/api/rstt/oneday?date=1926-02-14&coords=65,49&tz=0",
+     "title": "U.S. Naval Observatory, rstt/oneday 1926-02-14 at 65, 49 (API 4.0.1)",
+     "read": "2026-10-26",
+     "said": "Rise 04:51 UT, Set 13:07 UT"
+    },
+    {
+     "kind": "primary",
+     "url": "https://aa.usno.navy.mil/api/rstt/oneday?date=2099-08-30&coords=65,110&tz=0",
+     "title": "U.S. Naval Observatory, rstt/oneday 2099-08-30 at 65, 110 (API 4.0.1)",
+     "read": "2026-10-26",
+     "said": "Rise 21:16 UT, Set 12:06 UT"
+    }
+   ]
+  },
+  {
+   "id": "R-0022",
+   "fact": "sun.usno.latitude.75",
+   "sought": "Sunrise and sunset at latitude 75°, on six dates from 1926 to 2099, from an authority independent of NOAA",
+   "status": "found",
+   "value": {
+    "file": "research/sources/usno-sun.json",
+    "observations": 6
+   },
+   "sources": [
+    {
+     "kind": "primary",
+     "url": "https://aa.usno.navy.mil/api/rstt/oneday?date=2026-03-20&coords=75,-148&tz=0",
+     "title": "U.S. Naval Observatory, rstt/oneday 2026-03-20 at 75, -148 (API 4.0.1)",
+     "read": "2026-10-26",
+     "said": "Rise 15:46 UT, Set 04:10 UT"
+    },
+    {
+     "kind": "primary",
+     "url": "https://aa.usno.navy.mil/api/rstt/oneday?date=2026-06-21&coords=75,-87&tz=0",
+     "title": "U.S. Naval Observatory, rstt/oneday 2026-06-21 at 75, -87 (API 4.0.1)",
+     "read": "2026-10-26",
+     "said": "Object continuously above the Horizon"
+    },
+    {
+     "kind": "primary",
+     "url": "https://aa.usno.navy.mil/api/rstt/oneday?date=2026-09-23&coords=75,-26&tz=0",
+     "title": "U.S. Naval Observatory, rstt/oneday 2026-09-23 at 75, -26 (API 4.0.1)",
+     "read": "2026-10-26",
+     "said": "Rise 07:25 UT, Set 19:44 UT"
+    },
+    {
+     "kind": "primary",
+     "url": "https://aa.usno.navy.mil/api/rstt/oneday?date=2026-12-21&coords=75,35&tz=0",
+     "title": "U.S. Naval Observatory, rstt/oneday 2026-12-21 at 75, 35 (API 4.0.1)",
+     "read": "2026-10-26",
+     "said": "Object continuously below the Horizon"
+    },
+    {
+     "kind": "primary",
+     "url": "https://aa.usno.navy.mil/api/rstt/oneday?date=1926-02-14&coords=75,96&tz=0",
+     "title": "U.S. Naval Observatory, rstt/oneday 1926-02-14 at 75, 96 (API 4.0.1)",
+     "read": "2026-10-26",
+     "said": "Rise 03:32 UT, Set 08:10 UT"
+    },
+    {
+     "kind": "primary",
+     "url": "https://aa.usno.navy.mil/api/rstt/oneday?date=2099-08-30&coords=75,157&tz=0",
+     "title": "U.S. Naval Observatory, rstt/oneday 2099-08-30 at 75, 157 (API 4.0.1)",
+     "read": "2026-10-26",
+     "said": "Rise 16:57 UT, Set 10:10 UT"
+    }
+   ]
+  },
+  {
+   "id": "R-0023",
+   "fact": "sun.usno.latitude.85",
+   "sought": "Sunrise and sunset at latitude 85°, on six dates from 1926 to 2099, from an authority independent of NOAA",
+   "status": "found",
+   "value": {
+    "file": "research/sources/usno-sun.json",
+    "observations": 6
+   },
+   "sources": [
+    {
+     "kind": "primary",
+     "url": "https://aa.usno.navy.mil/api/rstt/oneday?date=2026-03-20&coords=85,-101&tz=0",
+     "title": "U.S. Naval Observatory, rstt/oneday 2026-03-20 at 85, -101 (API 4.0.1)",
+     "read": "2026-10-26",
+     "said": "Rise 12:15 UT, Set 01:20 UT"
+    },
+    {
+     "kind": "primary",
+     "url": "https://aa.usno.navy.mil/api/rstt/oneday?date=2026-06-21&coords=85,-40&tz=0",
+     "title": "U.S. Naval Observatory, rstt/oneday 2026-06-21 at 85, -40 (API 4.0.1)",
+     "read": "2026-10-26",
+     "said": "Object continuously above the Horizon"
+    },
+    {
+     "kind": "primary",
+     "url": "https://aa.usno.navy.mil/api/rstt/oneday?date=2026-09-23&coords=85,21&tz=0",
+     "title": "U.S. Naval Observatory, rstt/oneday 2026-09-23 at 85, 21 (API 4.0.1)",
+     "read": "2026-10-26",
+     "said": "Rise 03:53 UT, Set 16:54 UT"
+    },
+    {
+     "kind": "primary",
+     "url": "https://aa.usno.navy.mil/api/rstt/oneday?date=2026-12-21&coords=85,82&tz=0",
+     "title": "U.S. Naval Observatory, rstt/oneday 2026-12-21 at 85, 82 (API 4.0.1)",
+     "read": "2026-10-26",
+     "said": "Object continuously below the Horizon"
+    },
+    {
+     "kind": "primary",
+     "url": "https://aa.usno.navy.mil/api/rstt/oneday?date=1926-02-14&coords=85,143&tz=0",
+     "title": "U.S. Naval Observatory, rstt/oneday 1926-02-14 at 85, 143 (API 4.0.1)",
+     "read": "2026-10-26",
+     "said": "Object continuously below the Horizon"
+    },
+    {
+     "kind": "primary",
+     "url": "https://aa.usno.navy.mil/api/rstt/oneday?date=2099-08-30&coords=85,-156&tz=0",
+     "title": "U.S. Naval Observatory, rstt/oneday 2099-08-30 at 85, -156 (API 4.0.1)",
+     "read": "2026-10-26",
+     "said": "Object continuously above the Horizon"
+    }
+   ]
+  }
+ ]
 }
