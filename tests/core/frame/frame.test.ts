@@ -58,6 +58,7 @@ describe('a life', () => {
     expect(() => begin('xyz', T0, {})).toThrow('not a seed: "xyz"');
     for (const bad of [1.5, Number.NaN, 2 ** 53]) expect(() => begin(SEED, bad, {})).toThrow(`a moment is a whole number of seconds (${bad})`);
     expect(() => begin(SEED, T0, { a: { b: undefined } })).toThrow('slices.a.b is not plain data');
+    for (const part of ['schedule', 'notices']) expect(() => begin(SEED, T0, { [part]: {} })).toThrow(`a slice can't be called ${part}: the frame has its own`);
   });
 });
 

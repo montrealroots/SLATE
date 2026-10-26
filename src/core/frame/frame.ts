@@ -146,6 +146,8 @@ export function begin<S extends object>(seed: string, now: number, slices: S): L
   seedFromText(seed);
   if (!isTime(now)) throw new RangeError(`a moment is a whole number of seconds (${now})`);
   assertJson(slices, 'slices');
+  // A slice can't share a name with the frame's own parts, which declarations name beside the slices.
+  for (const part of ['schedule', 'notices']) if (Object.hasOwn(slices, part)) throw new Error(`a slice can't be called ${part}: the frame has its own`);
   return { frame: { seed, now, next: 1, schedule: [], notices: [] }, slices: structuredClone(slices) };
 }
 
