@@ -5,13 +5,14 @@ package in the order it gives, then `HANDOFF.md` for where the build stands.
 
 ## Running it
 
-Node 22.22.0 (`.nvmrc`). Install with `npm ci`. Adding or changing a dependency needs npm 11.6.2 (`packageManager`):
-`npx -y npm@11.6.2 install -E <package>@<version>`, since npm 10's resolver crashes on this tree.
+Node 22.22.0 (`.nvmrc`). Install with `npm ci`; npm 10 and npm 11 both resolve this tree, and the lockfile is kept
+with npm 11.6.2 (`packageManager`). Add a dependency at an exact version: `npm install -E <package>@<version>`.
 
 - `npm run gate`: the gate, as every commit runs it: the toolchain pins, the owner's documents, the build order,
   the text inventory, the research register, the typecheck, the lint, the tests, the feature-to-effect matrix, the
   coverage matrices and the handoff. Exit 0 green, 1 red (a rule broken), 2 incomplete (declared work unfinished).
-- `npm run gate:full`: the same plus mutation testing; a layer is proven only on a green full gate.
+- `npm run gate:full`: the same plus `npm audit` (any known advisory is red) and mutation testing; a layer is
+  proven only on a green full gate.
 - `npm run gate:write`: rewrites the generated matrices in `matrix/` from what the checks find.
 - `npm run lock:owner-docs`: re-locks the owner's documents; only with a change the owner made.
 

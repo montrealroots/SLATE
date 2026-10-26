@@ -52,6 +52,15 @@ describe('the toolchain check', () => {
     expect(all(check(pkg({ dependencies: undefined })))).toEqual([`red ${P} | react is missing from dependencies`, `red ${P} | react-dom is missing from dependencies`]);
     expect(all(check(pkg({ devDependencies: undefined })))).toEqual(['typescript', 'vite', 'vitest', 'eslint', '@vitejs/plugin-react'].map((t) => `red ${P} | ${t} is missing from devDependencies`));
   });
+  it('holds overrides exact, and an override of a direct dependency to its pin', () => {
+    expect(all(check(pkg({ overrides: { qs: '6.16.0', vitest: '4.1.11' } })))).toEqual([]);
+    expect(all(check(pkg({ overrides: { qs: '^6.16.0', vitest: '4.1.12', react: '$react' } })))).toEqual([
+      `red ${P} | the override of qs is not an exact version (^6.16.0)`,
+      `red ${P} | the override of vitest (4.1.12) differs from its pin (4.1.11)`,
+      `red ${P} | the override of react is not an exact version ($react)`,
+    ]);
+    expect(all(check(pkg({ overrides: ['qs'] })))).toEqual([`red ${P} | overrides is not an object`]);
+  });
   it('fails a group that is not an object', () => {
     expect(all(check(pkg({ dependencies: ['react'] })))).toEqual([`red ${P} | dependencies is not an object`, `red ${P} | react is missing from dependencies`, `red ${P} | react-dom is missing from dependencies`]);
   });

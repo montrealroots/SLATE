@@ -19,7 +19,9 @@ What layer 0 holds:
   in `registry/owner-docs.lock.json` with `CLAUDE.md` (54 files). `CLAUDE.md`'s paths were updated for the move;
   none of its rules changed.
 - The toolchain, pinned exactly and matched in the lockfile: TypeScript 6.0.3, React 19.3.0, Vite 8.3.4, Vitest
-  4.1.11, ESLint 10.12.0 with typescript-eslint 8.71.1, Stryker 10.0.0, tsx 4.23.15; Node 22.22.0; npm 11.6.2.
+  4.1.12, ESLint 10.12.0 with typescript-eslint 8.71.1, Stryker 10.0.0, tsx 4.23.15; Node 22.22.0; npm 11.6.2 keeps
+  the lockfile, npm 10 resolves it too. Overrides: `qs` 6.16.0 (security) and `vitest` 4.1.12 (its own pin, so
+  every peer request for Vitest resolves to it).
 - The gate (`gate/`), run as `npm run gate` (fast: every commit, by `.githooks/pre-commit`; red stops the commit;
   `.githooks/commit-msg` writes the verdict into the message as a `Gate:` trailer), `npm run gate:full` (adds
   mutation testing; proves a layer; CI runs it on every push), and `npm run gate:write` (rewrites `matrix/`).
@@ -48,6 +50,7 @@ What layer 0 holds:
     held by a passing test, or pending (incomplete). Generated at `matrix/COVERAGE.md`.
   - handoff: this file's sections, and the layer it names agreeing with the ledger.
   - generated: everything in `matrix/` exactly what the checks produce.
+  - audit (full gate only): `npm audit`; any known advisory in the installed tree is red, named by its page.
   - mutation (full gate only): Stryker over the gate's own code, static constants included; break threshold 100%.
 
 ## Next step
@@ -83,7 +86,7 @@ What layer 0 holds:
   reads it, with its paths updated. The first SLATE's exact tool versions aren't in the package, so the toolchain is
   the newest release of each tool that was at least two weeks old on 2026-10-26 and compatible with the rest:
   TypeScript 6 (typescript-eslint doesn't support 7), Vitest 4 (Stryker supports Vitest 5 only from 10.1.0,
-  released 2026-10-23).
+  released 2026-10-23). A security fix outranks the two-week rule: Vitest 4.1.12 (2026-10-15) is in for that.
 - jsdom and Testing Library are left out until layer 5 needs them (jsdom 30 needs Node 22.22.2; this machine has
   22.22.0): a tool nothing uses isn't installed.
 - "Every commit runs it; a red gate blocks the next layer": a red gate stops the commit; an incomplete one (declared
@@ -97,12 +100,16 @@ What layer 0 holds:
 
 ## Blockers and open issues
 
-- `npm audit`: 2 moderate advisories in `qs` (GHSA-q8mj-m7cp-5q26, GHSA-x5fp-wj9c-mxmx, GHSA-4mjr-xmp4-gh2g),
-  reached only through Stryker's dashboard reporter (`typed-rest-client`), a development tool that this build never
-  runs against untrusted input; no Stryker release at least two weeks old fixes it. Recheck at the next toolchain
-  update.
-- npm 10.9.4 crashes resolving this tree (`Cannot read properties of null (reading 'edgesOut')`); `npm ci` from the
-  lockfile works under it, and changing dependencies uses npm 11.6.2.
+- Resolved 2026-10-26, the owner's two open issues:
+  - The `qs` advisories (GHSA-q8mj-m7cp-5q26, GHSA-x5fp-wj9c-mxmx, GHSA-4mjr-xmp4-gh2g), reached through Stryker's
+    `typed-rest-client`, which pins `qs` 6.15.1 exactly: fixed by overriding `qs` to 6.16.0, the first release
+    outside all three ranges. The audit then also named two in Vitest 4.1.11's `@vitest/mocker`
+    (GHSA-qxg6-89mg-rqv8, GHSA-xp26-3454-mjgp), fixed by Vitest 4.1.12. `npm audit`: 0 vulnerabilities, and the full
+    gate now runs it, so a new advisory turns the gate red.
+  - npm 10's crash (`Cannot read properties of null (reading 'edgesOut')`): its cause was Vite 8's optional peer
+    `@vitejs/devtools`, whose own peers ask for Vitest; with no lockfile, npm 10 reached for Vitest 5 there and
+    crashed in its peer-set resolver. Overriding `vitest` to its own pin ties every such request to 4.1.12; a fresh
+    `npm install` with no lockfile now succeeds under npm 10.9.4, as do `npm ci` and adding a package.
 - Stryker 10.0.0 reports a mutant that breaks a test file at load as surviving rather than killed (fixed in 10.1.0);
   `gate/test/eslint-plugin.test.ts` asserts the plugin's shape apart from the rule cases so such mutants are caught.
 

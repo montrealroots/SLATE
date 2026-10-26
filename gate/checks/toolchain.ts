@@ -45,6 +45,15 @@ export function checkToolchain(repo: Repo): CheckResult {
     }
   }
 
+  // An override forces a version deep in the tree (a security fix, a resolver's peer); it's pinned exactly, and one
+  // naming a direct dependency is that dependency's own pin, so a version is never written two ways.
+  const overrides = p['overrides'];
+  if (overrides !== undefined && !isRecord(overrides)) r.red('overrides is not an object', PATHS.packageJson);
+  for (const [name, spec] of Object.entries(isRecord(overrides) ? overrides : {})) {
+    if (!EXACT.test(String(spec))) r.red(`the override of ${name} is not an exact version (${String(spec)})`, PATHS.packageJson);
+    else if (pinned.has(name) && pinned.get(name) !== spec) r.red(`the override of ${name} (${String(spec)}) differs from its pin (${String(pinned.get(name))})`, PATHS.packageJson);
+  }
+
   const lock = readJson(repo, PATHS.lockfile);
   if (!lock.ok || !isRecord(lock.value)) {
     r.red(lock.ok ? 'package-lock.json is not an object' : lock.why, PATHS.lockfile);

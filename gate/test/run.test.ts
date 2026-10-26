@@ -74,8 +74,8 @@ describe('the gate, end to end on a fixture', () => {
     const spy = (cmd: string, args: string[]) => (calls.push(`${cmd} ${args[0] ?? ''}`), { code: 0, output: '' });
     const { testRun: _t, ...withoutTests } = opts(root, { full: true, run: spy });
     const out = runGate(withoutTests);
-    expect(calls).toEqual(['npx tsc', 'npx eslint', 'npx vitest', 'npx stryker']);
-    expect(out.results.map((r) => r.check)).toEqual(['toolchain', 'owner-docs', 'build-order', 'text-inventory', 'research-register', 'typecheck', 'lint', 'tests', 'feature-matrix', 'coverage', 'handoff', 'mutation', 'generated']);
+    expect(calls).toEqual(['npx tsc', 'npx eslint', 'npx vitest', 'npm audit', 'npx stryker']);
+    expect(out.results.map((r) => r.check)).toEqual(['toolchain', 'owner-docs', 'build-order', 'text-inventory', 'research-register', 'typecheck', 'lint', 'tests', 'feature-matrix', 'coverage', 'handoff', 'audit', 'mutation', 'generated']);
     expect(all(named(out.results, 'tests'))).toEqual(['red - | the test run left no report']);
   });
   it('feeds what the test run said into the feature matrix and the coverage', () => {

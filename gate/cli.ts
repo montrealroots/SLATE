@@ -12,7 +12,7 @@ const write = args.has('--write');
 
 const run: Runner = (cmd, cmdArgs, env) => {
   const out = spawnSync(cmd, cmdArgs, { cwd: root, encoding: 'utf8', env: { ...process.env, ...env }, maxBuffer: 256 * 1024 * 1024 });
-  return { code: out.status ?? 1, output: `${out.stdout ?? ''}${out.stderr ?? ''}` };
+  return { code: out.status ?? 1, output: `${out.stdout ?? ''}${out.stderr ?? ''}`, stdout: out.stdout ?? '' };
 };
 const git = {
   isAncestorOfHead(commit: string) {

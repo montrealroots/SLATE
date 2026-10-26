@@ -5,7 +5,7 @@ import { result, type CheckResult } from '../lib/types.ts';
 import type { FalsifierRecord, TestRun } from './features.ts';
 
 /** Runs a command; injected so the checks' handling of each outcome is testable without running the tools. */
-export type Runner = (cmd: string, args: string[], env?: Record<string, string>) => { code: number; output: string };
+export type Runner = (cmd: string, args: string[], env?: Record<string, string>) => { code: number; output: string; stdout?: string };
 
 const tail = (s: string, n = 40) => s.trim().split('\n').slice(-n).join('\n');
 
@@ -55,11 +55,14 @@ export function passedTests(root: string, report: unknown): Set<string> {
   return passed;
 }
 
-/** The test run's JSON report, or undefined when there's none or it can't be read. */
-function readReport(path: string): unknown {
+/** JSON a tool wrote, or undefined when it isn't JSON. */
+function parseJson(text: string): unknown {
   // Stryker disable next-line BlockStatement: an empty catch returns undefined just the same.
-  try { return JSON.parse(readFileSync(path, 'utf8')) as unknown; } catch { return undefined; }
+  try { return JSON.parse(text) as unknown; } catch { return undefined; }
 }
+
+/** The test run's JSON report, or undefined when there's none or it can't be read. */
+const readReport = (path: string): unknown => (existsSync(path) ? parseJson(String(readFileSync(path))) : undefined);
 
 export function checkTests(root: string, run: Runner): CheckResult & { run: TestRun; falsifiers: FalsifierRecord[] } {
   const r = result('tests');
@@ -77,6 +80,30 @@ export function checkTests(root: string, run: Runner): CheckResult & { run: Test
   const total = isRecord(report) && typeof report['numTotalTests'] === 'number' ? report['numTotalTests'] : 0;
   r.note(`${passed.size} of ${total} tests passed`);
   return Object.assign(r, { run: { passed }, falsifiers: readLedger(ledgerDir) });
+}
+
+/**
+ * Known advisories (the full gate, which has the network): any vulnerability npm's audit knows of in the installed
+ * tree is red, named by its advisory, until it's fixed by an update or an override.
+ */
+export function checkAudit(run: Runner): CheckResult {
+  const r = result('audit');
+  const out = run('npm', ['audit', '--json']);
+  // The JSON is on stdout; a warning npm prints to stderr mustn't spoil it.
+  const report = parseJson(out.stdout ?? out.output);
+  const vulnerabilities = isRecord(report) && isRecord(report['vulnerabilities']) ? report['vulnerabilities'] : undefined;
+  if (vulnerabilities === undefined) {
+    r.red(`the audit couldn't be read:\n${tail(out.output)}`);
+    return r;
+  }
+  // A package's "via" names either an advisory (an object) or the package it's vulnerable through (a name).
+  const advisories = new Map<string, string>();
+  for (const via of Object.values(vulnerabilities).filter(isRecord).flatMap((v) => v['via']).filter(isRecord)) {
+    advisories.set(String(via['url']), `${String(via['severity'])}: ${String(via['name'])} ${String(via['range'])}, ${String(via['title'])}`);
+  }
+  for (const [url, what] of [...advisories].sort()) r.red(`a known advisory: ${what}`, url);
+  r.note(`${Object.keys(vulnerabilities).length} vulnerable packages, ${advisories.size} advisories`);
+  return r;
 }
 
 /** Mutation testing (the full gate): Stryker's own break threshold decides; the score goes in the receipt. */

@@ -1,7 +1,7 @@
 import { existsSync, mkdirSync, writeFileSync } from 'node:fs';
 import { join } from 'node:path';
 import { describe, expect, it } from 'vitest';
-import { checkLint, checkMutation, checkTests, checkTypecheck, passedTests, readLedger, type Runner } from '../checks/tools.ts';
+import { checkAudit, checkLint, checkMutation, checkTests, checkTypecheck, passedTests, readLedger, type Runner } from '../checks/tools.ts';
 import { all, fixture } from './fixture.ts';
 
 const ok: Runner = () => ({ code: 0, output: 'fine' });
@@ -98,6 +98,41 @@ describe('the test run', () => {
     expect(existsSync(join(root, '.gate', 'vitest.json'))).toBe(false);
     expect(all(checkTests(root, runWith(0, '{ broken', '')))).toEqual(['red - | the test run left no report']);
     expect(checkTests(root, runWith(0, { testResults: [] }, '')).notes).toEqual(['0 of 0 tests passed']);
+  });
+});
+
+describe('the audit', () => {
+  const audit = (report: unknown) => {
+    const calls: string[] = [];
+    const r = checkAudit((cmd, args) => (calls.push([cmd, ...args].join(' ')), { code: 1, output: typeof report === 'string' ? report : JSON.stringify(report) }));
+    return { r, calls };
+  };
+  it('runs npm audit and passes a tree with no known advisory', () => {
+    const { r, calls } = audit({ auditReportVersion: 2, vulnerabilities: {} });
+    expect(calls).toEqual(['npm audit --json']);
+    expect(r.check).toBe('audit');
+    expect(all(r)).toEqual([]);
+    expect(r.notes).toEqual(['0 vulnerable packages, 0 advisories']);
+  });
+  it('names each advisory once, sorted by its page, and skips what only points at another package', () => {
+    const qs = { name: 'qs', severity: 'moderate', range: '<6.16.0', title: 'qs: DoS', url: 'https://github.com/advisories/GHSA-b' };
+    const mocker = { name: '@vitest/mocker', severity: 'high', range: '<4.1.12', title: 'Code injection', url: 'https://github.com/advisories/GHSA-a' };
+    const { r } = audit({ vulnerabilities: { qs: { via: [qs] }, 'typed-rest-client': { via: ['qs'] }, '@vitest/mocker': { via: [mocker, qs] }, odd: { via: 'x' }, odder: 'x', oddest: null } });
+    expect(all(r)).toEqual([
+      'red https://github.com/advisories/GHSA-a | a known advisory: high: @vitest/mocker <4.1.12, Code injection',
+      'red https://github.com/advisories/GHSA-b | a known advisory: moderate: qs <6.16.0, qs: DoS',
+    ]);
+    expect(r.notes).toEqual(['6 vulnerable packages, 2 advisories']);
+  });
+  it('reads the report from stdout alone when the runner gives it apart', () => {
+    const r = checkAudit(() => ({ code: 0, output: '{"vulnerabilities":{}}\nnpm warn something', stdout: '{"vulnerabilities":{}}' }));
+    expect(all(r)).toEqual([]);
+  });
+  it("fails when the audit can't be read", () => {
+    for (const bad of ['npm error network', { error: 'x' }, { vulnerabilities: [] }, 'null']) {
+      expect(all(audit(bad).r)[0]).toMatch(/^red - \| the audit couldn't be read:\n/);
+    }
+    expect(all(audit('npm error network').r)).toEqual(["red - | the audit couldn't be read:\nnpm error network"]);
   });
 });
 

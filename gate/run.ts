@@ -8,7 +8,7 @@ import { checkOwnerDocs } from './checks/owner-docs.ts';
 import { checkRegister } from './checks/register.ts';
 import { checkText } from './checks/text.ts';
 import { checkToolchain } from './checks/toolchain.ts';
-import { checkLint, checkMutation, checkTests, checkTypecheck, type Runner } from './checks/tools.ts';
+import { checkAudit, checkLint, checkMutation, checkTests, checkTypecheck, type Runner } from './checks/tools.ts';
 import { PATHS } from './lib/paths.ts';
 import { openRepo, readJson } from './lib/repo.ts';
 import { result, verdictOf, type CheckResult, type Verdict } from './lib/types.ts';
@@ -66,7 +66,10 @@ export function runGate(o: GateOptions): GateOutcome {
   results.push(checkFeatures(repo, tests.falsifiers, tests.run));
   results.push(checkCoverage(repo, ledger, register.index, tests.run));
   results.push(checkHandoff(repo, current));
-  if (o.full) results.push(checkMutation(o.root, o.run));
+  if (o.full) {
+    results.push(checkAudit(o.run));
+    results.push(checkMutation(o.root, o.run));
+  }
 
   // The generated matrices: written on request, otherwise held to what the checks just found.
   const gen = result('generated');
