@@ -90,7 +90,7 @@ a place fills a column; a cell is the row's status in that engine's matrix, or b
 | GG | Guernsey | researched | researched | researched | researched | blocked |
 | GH | Ghana | researched | researched | researched | researched | researched |
 | GI | Gibraltar | researched | researched | researched | researched | researched |
-| GL | Greenland | researched | researched | researched | researched | pending |
+| GL | Greenland | researched | researched | researched | researched | researched |
 | GM | Gambia | researched | researched | researched | researched | blocked |
 | GN | Guinea | researched | researched | researched | researched | researched |
 | GP | Guadeloupe | researched | researched | researched | researched | researched |

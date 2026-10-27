@@ -493,6 +493,11 @@ What layer 0 holds:
    - FO: done 2026-10-27: the eleven church halgidagar of Kongelig Anordning nr. 441 af 21. november 1923 (named by
      the Løgting's 2010 motion), as Starvsfelagið's handbook lists them (logir.fo, the law collection, renders blank
      to a headless browser). Ólavsøka, the eves and Flaggdagur are collective-agreement days, not law: not kept.
+   - GL: done 2026-10-27: helligdagsloven (lovbkg. 1023/2012, nalunaarutit.gl, in force there) protects "folkekirkens
+     helligdage" without listing them; Greenland keeps Denmark's list (borger.dk, as the DK row) plus Store bededag,
+     which Naalakkersuisut says the Danish abolition doesn't reach (§ 37 answer 019/2023). Open: the National Day, 21
+     June, which the alcohol act (Inatsisartutlov om alkohol, § 2 stk. 7) defines as a helligdag for alcohol sales,
+     with the eves and Epiphany, and which Info Norden (Cloudflare) calls a day off by agreement: not kept.
    - MW: blocked 2026-10-27: the Act's Schedule is read only as consolidated at 31 December 2014 (commons.laws.africa
      /akn/mw/act/1967/11/eng@2014-12-31.pdf); the Gazette orders since (Africa Day, Chakufwa Chihana Day, Eid al-Adha?)
      and 2026's orders are unread. Laws.Africa's commons host also serves other LIIs' consolidations past their bot
