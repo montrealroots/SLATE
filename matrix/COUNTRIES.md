@@ -236,7 +236,7 @@ a place fills a column; a cell is the row's status in that engine's matrix, or b
 | TV | Tuvalu | researched | researched | researched | researched | pending |
 | TW | Taiwan | researched | researched | researched | researched | researched |
 | TZ | Tanzania | researched | researched | researched | researched | pending |
-| UA | Ukraine | researched | researched | researched | researched | pending |
+| UA | Ukraine | researched | researched | researched | researched | researched |
 | UG | Uganda | researched | researched | researched | researched | pending |
 | UM | United States Minor Outlying Islands | researched | researched | proven | proven | proven |
 | US | United States | researched | researched | researched | researched | researched |

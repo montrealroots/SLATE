@@ -57,7 +57,7 @@ describe('the holidays of every country kept', () => {
         }
       }
     }
-    expect(read).toBe(303);
+    expect(read).toBe(304);
   });
   it('are each a country of the map with its lists, their regions its own, their substitutes the engine reckons', () => {
     expect(Object.keys(RULES).sort()).toEqual(LISTS.map((l) => l.country).sort());
@@ -287,7 +287,10 @@ describe('the holidays', () => {
         const key = `${p.country} ${p.region}`;
         if (!seen.has(key)) {
           const hs = holidaysOf(p.country, 2026, p.region === '' ? undefined : p.region);
-          expect(keepsHolidays(p.country) ? hs.length > 0 : hs.length === 0, key).toBe(true);
+          // Ukraine's martial law makes 2026 a year without days off (its law's come back after): its rules still give days.
+          const none = p.country === 'UA';
+          expect(keepsHolidays(p.country) && !none ? hs.length > 0 : hs.length === 0, key).toBe(true);
+          if (none) expect(holidaysOf(p.country, 2027).length, key).toBeGreaterThan(0);
           expect(hs.every((h) => civilFromDays(h.day).year === 2026), key).toBe(true);
           expect(aboutHolidays(p.country, 2026) === undefined, key).toBe(keepsHolidays(p.country));
           seen.set(key, hs.map((h) => h.name).join());
