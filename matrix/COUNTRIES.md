@@ -151,7 +151,7 @@ a place fills a column; a cell is the row's status in that engine's matrix, or b
 | MG | Madagascar | researched | researched | researched | researched | pending |
 | MH | Marshall Islands | researched | researched | researched | researched | researched |
 | MK | North Macedonia | researched | researched | researched | researched | researched |
-| ML | Mali | researched | researched | researched | researched | pending |
+| ML | Mali | researched | researched | researched | researched | researched |
 | MM | Myanmar | researched | researched | researched | researched | pending |
 | MN | Mongolia | researched | researched | researched | researched | researched |
 | MO | Macao | researched | researched | researched | researched | researched |
