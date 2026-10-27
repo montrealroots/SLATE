@@ -18,8 +18,8 @@ restarts. Read `CLAUDE.md` and the owner's package in `docs/` first.
   told where the weather is borrowed from), 6 proven, none pending. `tools/wmo/compile.ts` and `coverage.ts` are at
   100% mutation score with the last sources (1,559 mutants; the survivors of that run killed by tests or simpler
   lines, and the two equivalent ones disabled with their reasons). The
-  holidays (`world.holidays`): the engine, its reckonings and its gate wiring are built and tested; 122 countries
-  researched (491 official lists matched day for day), 6 proven, 108 pending, and 16 blocked: the Isle of Man,
+  holidays (`world.holidays`): the engine, its reckonings and its gate wiring are built and tested; 123 countries
+  researched (502 official lists matched day for day), 6 proven, 107 pending, and 16 blocked: the Isle of Man,
   Tanzania, Palau, the British Indian Ocean Territory, the French Southern Lands, the Cook Islands, Tokelau,
   Vanuatu, Micronesia and Tuvalu whole, and six for some of their regions (Canada's Prince Edward Island and Yukon, India's four, Australia's
   South Australia, Guernsey's Alderney, Argentina's Formosa, Bosnia's Brčko); its code at 100% mutation score (532 mutants, with the regions'
@@ -249,6 +249,8 @@ What layer 0 holds:
    - NR: done 2026-10-27 from the 2026 Gazettes (nauru.gov.nr/government-information-office/government-gazette:
      G.N. 28/2026's schedule and each day's declaration; text searched over all 2026 issues). Read 2027's schedule
      (G.N. early January 2027) for Eigigu and Remembrance Days' dates.
+   - SB: done 2026-10-27 from Gazette No. 157 of 2025 (Notice 805) and No. 114 of 2026 (Notice 689): the gazette PDFs under
+     solomons.gov.sb/wp-content/uploads answer though the site's pages are behind Sucuri; find them by web search.
    - BR: done 2026-10-27: national laws in every state, each state's own from the courts' and prosecutors' 2026
      calendars (the AASP tracker at aasp.org.br/produtos-servicos/expediente-forense/feriados-forenses-2026/ links each
      court's act). Acre announced to 2026 (Lei 2.126/2009 moves some days by a rule not read). Rio's Carnival Tuesday,
