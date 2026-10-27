@@ -308,10 +308,11 @@ What layer 0 holds:
      are left out (Ordino's 5-6 July and 16 September "a Ordino" read as the village). Announced to 2026.
    - CX, CC: blocked 2026-10-27: the Administrator's 2026 bulletins (infrastructure.gov.au community-bulletin-ci- and
      -cki-public-holidays-2026.pdf, A20 and A21/2025) exist but the host resets; retry them first.
-   - BD: lead 2026-10-27: the Daily Star prints the Ministry of Public Administration's 2026 notification (general
-     holidays for all, executive-order ones for government offices only); its "14 general holidays" list shows 13
-     (Pahela Baishakh under executive order?). Read the gazette (mopa.gov.bd; tokyo.mofa.gov.bd fails TLS) and the
-     moon-sighted Eid dates before modeling. CW: gobiernu.cw and centralbank.cw answer 403.
+   - BD: lead 2026-10-27: the MoPA's 2026 list (issued 9 November 2025) read through the Daily Star Bangla
+     (news-712741): 14 general holidays (21 Feb, 20-21 Mar, 26 Mar, 1 May, 28 May, 5 Aug, 26 Aug, 4 Sep, 21 Oct, 16
+     Dec, 25 Dec; Buddha Purnima on 1 May) and 14 by executive order (government offices only: leave out). Open: the
+     changes after the February 2026 election (mopa.gov.bd has a 2026 notice making 7 November a general holiday:
+     /pages/go-ultimates/6ac5e76d9594596dad446b72; check 5 August), the moon days as kept, election days.
    - DZ: done 2026-10-27 from APS's reports of the joint Labour/Civil Service communiqués (found with aps.dz/fr/search
      ?q=chômée et payée) and Legal Doctrine's text of Loi 63-278. 1 Moharam 1448 (16 June) derived from Achoura's
      notice; read its own communiqué if found. Announced to 2026.
@@ -374,6 +375,15 @@ What layer 0 holds:
      1246's holy days (no bishops' conference, so none moved); the Pope's days are Leo XIV's (8 May, 17 September).
    - AO: done 2026-10-27: Lei 10/11 and Lei 11/18 at lex.ao (its llms.txt indexes 2020-2026 diplomas: no later
      holiday law; presidential tolerâncias de ponto would be added by decree when found there).
+   - GY: lead 2026-10-27 (cont.): moha.gov.gy WP category 27 ("Public Holidays") has 2026's notices as images;
+     dpi.gov.gy: Phagwah kept Tue 3 March, Eid al-Adha Wed 27 May. Still needed: Republic Day's 2026 notice, and
+     whether Independence (26 May) and Emancipation (1 Aug) come by s. 6 notices (the 2012 Act's s. 3 omits them).
+   - MZ: lead 2026-10-27: the holiday article of the Labour Law (Lei 13/2023) not found online; 2026's "tolerâncias
+     de ponto" (jornalnoticias.co.mz WP API) are the civil service's only. A Sunday holiday moves to Monday (DLA
+     Piper on Lei 23/2007).
+   - CV: lead 2026-10-27: national days by Decreto-Lei 18/84 (per aggregators; unread); each concelho (the map's
+     regions) keeps a municipal day set by its assembly (boe.incv.cv Boletim Oficial). governo.cv's tolerâncias are
+     the public administration's only.
    - SN: done 2026-10-27: loi 74-52 (read in the Assembly's file at vie-publique.sn), Tamxarit from loi 83-54 (the
      scan read as an image), 1 February gone by loi 89-41, the Grand Magal by loi 2013-10 (Dakaractu); 2026's
      Islamic days are CONACOC's through APS; 19 January the President's day off. Announced to 2026.
