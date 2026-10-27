@@ -169,7 +169,7 @@ a place fills a column; a cell is the row's status in that engine's matrix, or b
 | NA | Namibia | researched | researched | researched | researched | researched |
 | NC | New Caledonia | researched | researched | researched | researched | researched |
 | NE | Niger | researched | researched | researched | researched | researched |
-| NF | Norfolk Island | researched | researched | researched | researched | pending |
+| NF | Norfolk Island | researched | researched | researched | researched | researched |
 | NG | Nigeria | researched | researched | researched | researched | researched |
 | NI | Nicaragua | researched | researched | researched | researched | researched |
 | NL | The Netherlands | researched | researched | researched | researched | researched |
