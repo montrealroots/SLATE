@@ -42,11 +42,12 @@ export function holidaysCoverage(countries: readonly string[], withPlaces: Reado
     const lists = facts.get(`world.holidays.${key}`);
     const own = rules[key];
     // A country keeping another's holidays cites that one's lists and reckonings too.
-    const kept = own !== undefined && 'of' in own ? rules[own.of] : own;
+    const of = own !== undefined && 'of' in own ? own.of : undefined;
+    const kept = of === undefined ? own : rules[of];
     if (kept !== undefined && 'holidays' in kept && lists !== undefined) {
-      const of = own !== undefined && 'of' in own ? [facts.get(`world.holidays.${own.of}`) as string] : [];
+      const others = of === undefined ? [] : [facts.get(`world.holidays.${of}`) as string];
       const regions = [...facts].filter(([fact]) => fact.startsWith(`world.holidays.blocked.${key}.`)).map(([, id]) => id);
-      const register = new Set([lists, ...of, ...regions, ...kept.holidays.flatMap((r) => reckonings(r.when, r.shift !== undefined))]);
+      const register = new Set([lists, ...others, ...regions, ...kept.holidays.flatMap((r) => reckonings(r.when, r.shift !== undefined))]);
       return regions.length > 0 ? { key, status: 'blocked', register: [...register].sort(), tests: [...TESTS, TOLD_REGION] } : { key, status: 'researched', register: [...register].sort(), tests: TESTS };
     }
     const blocker = facts.get(`world.holidays.blocked.${key}`);

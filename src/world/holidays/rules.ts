@@ -158,6 +158,7 @@ function insteadOf(rule: Rule, year: number): number | undefined {
 
 /** The days a country's rules give in a Gregorian year, in a region of it or nationwide, before any substitute, each with its rule. */
 function ruleDays(rules: CountryRules, year: number, region?: string): [Holiday, Rule][] {
+  // Stryker disable next-line ArrayDeclaration: an entry that is no holiday's day falls out with the year's filter.
   const out: [Holiday, Rule][] = [];
   for (const rule of rules.holidays) {
     if (year < (rule.from ?? -Infinity) || year > (rule.until ?? Infinity) || rule.except?.includes(year) === true) continue;
