@@ -43,7 +43,7 @@ a place fills a column; a cell is the row's status in that engine's matrix, or b
 | BW | Botswana | researched | researched | researched | blocked | pending |
 | BY | Belarus | researched | researched | researched | researched | pending |
 | BZ | Belize | researched | researched | researched | researched | pending |
-| CA | Canada | researched | researched | researched | researched | pending |
+| CA | Canada | researched | researched | researched | researched | blocked |
 | CC | Cocos Islands | researched | researched | researched | blocked | pending |
 | CD | Democratic Republic of the Congo | researched | researched | researched | researched | pending |
 | CF | Central African Republic | researched | researched | researched | researched | pending |
@@ -163,7 +163,7 @@ a place fills a column; a cell is the row's status in that engine's matrix, or b
 | MU | Mauritius | researched | researched | researched | researched | pending |
 | MV | Maldives | researched | researched | researched | researched | pending |
 | MW | Malawi | researched | researched | researched | researched | pending |
-| MX | Mexico | researched | researched | researched | researched | pending |
+| MX | Mexico | researched | researched | researched | researched | researched |
 | MY | Malaysia | researched | researched | researched | researched | pending |
 | MZ | Mozambique | researched | researched | researched | researched | pending |
 | NA | Namibia | researched | researched | researched | researched | pending |
@@ -239,7 +239,7 @@ a place fills a column; a cell is the row's status in that engine's matrix, or b
 | UA | Ukraine | researched | researched | researched | researched | pending |
 | UG | Uganda | researched | researched | researched | researched | pending |
 | UM | United States Minor Outlying Islands | researched | researched | proven | proven | proven |
-| US | United States | researched | researched | researched | researched | pending |
+| US | United States | researched | researched | researched | researched | researched |
 | UY | Uruguay | researched | researched | researched | researched | pending |
 | UZ | Uzbekistan | researched | researched | researched | researched | pending |
 | VA | Vatican | researched | researched | researched | blocked | pending |

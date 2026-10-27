@@ -98,6 +98,8 @@ export interface Substitute {
   on: number[];
   to: 'next' | 'previous';
   as?: 'well';
+  /** The day may be another holiday's: each is kept by its own date (the United States': a Saturday's is the Friday before, whatever else falls on it). */
+  shared?: true;
 }
 
 export interface CountryRules {
@@ -110,6 +112,11 @@ export interface CountryRules {
   announcedTo?: number;
   /** The same, for a first-level region whose own holidays are set year by year (Georgia's, by its governor). */
   regionsAnnouncedTo?: Record<string, number>;
+  /**
+   * The first-level regions that keep their own law's days in place of the country's (Canada's provinces and
+   * territories, each by its employment standards law); any other region keeps the country's.
+   */
+  regional?: string[];
   /** A day between two holidays (not substitutes) is one too, by this name (Japan's Act on National Holidays, article 3(3)). */
   between?: string;
 }
@@ -149,19 +156,20 @@ function insteadOf(rule: Rule, year: number): number | undefined {
   return weekdayFromDays(d) === rule.instead.weekday ? d : undefined;
 }
 
-/** The days a country's rules give in a Gregorian year, in a region of it or nationwide, before any substitute. */
-function ruleDays(rules: CountryRules, year: number, region?: string): Holiday[] {
-  const out: Holiday[] = [];
+/** The days a country's rules give in a Gregorian year, in a region of it or nationwide, before any substitute, each with its rule. */
+function ruleDays(rules: CountryRules, year: number, region?: string): [Holiday, Rule][] {
+  const out: [Holiday, Rule][] = [];
   for (const rule of rules.holidays) {
     if (year < (rule.from ?? -Infinity) || year > (rule.until ?? Infinity) || rule.except?.includes(year) === true) continue;
     if (rule.cycle !== undefined && (year - rule.cycle[1]) % rule.cycle[0] !== 0) continue;
     if (rule.regions?.includes(region as string) === false) continue;
+    if (rule.regions === undefined && rules.regional?.includes(region as string) === true) continue;
     if (rule.when_ !== undefined && rule.when_.weekdays.includes(weekdayFromDays(daysFromCivil(year, ...rule.when_.on))) === (rule.when_.not === true)) continue;
     const instead = insteadOf(rule, year);
     const days = instead === undefined ? daysOf(rule.when, year) : [instead];
     for (const d of days) {
       const shifted = rule.shift !== undefined && d - easter(year) >= rule.shift.easter[0] && d - easter(year) <= rule.shift.easter[1] ? rule.shift.plus : 0;
-      out.push({ day: d + (rule.plus ?? 0) + shifted, name: rule.name });
+      out.push([{ day: d + (rule.plus ?? 0) + shifted, name: rule.name }, rule]);
     }
   }
   return out;
@@ -174,16 +182,17 @@ function ruleDays(rules: CountryRules, year: number, region?: string): Holiday[]
 export function holidaysIn(rules: CountryRules, year: number, region?: string): Holiday[] {
   // The years either side too: a substitute may cross into this one (the United States' Saturday 1 January, kept on
   // the 31 December before).
-  const out = [year - 1, year, year + 1].flatMap((y) => ruleDays(rules, y, region));
+  const days = [year - 1, year, year + 1].flatMap((y) => ruleDays(rules, y, region));
+  const out = days.map(([h]) => h);
   const taken = new Set(out.map((h) => h.day));
-  // Substitutes, in order of the holidays they stand for, each taking the first day free of the weekdays and of holidays.
-  for (const h of [...out].sort((a, b) => a.day - b.day)) {
-    const rule = rules.holidays.find((r) => r.name === h.name) as Rule;
+  // Substitutes, in order of the holidays they stand for, each taking the first day free of the weekdays and (unless
+  // shared) of holidays.
+  for (const [h, rule] of days.sort((a, b) => a[0].day - b[0].day)) {
     const sub = (rule.move ?? rules.substitute)?.find((s) => s.on.includes(weekdayFromDays(h.day)));
     if (sub === undefined || rule.fixed === true) continue;
     const step = sub.to === 'next' ? 1 : -1;
     let d = h.day + step;
-    while (sub.on.includes(weekdayFromDays(d)) || taken.has(d)) d += step;
+    while (sub.on.includes(weekdayFromDays(d)) || (taken.has(d) && sub.shared !== true)) d += step;
     taken.add(d);
     if (sub.as === undefined) h.moved = true;
     out.push({ day: d, name: h.name, substitute: true });

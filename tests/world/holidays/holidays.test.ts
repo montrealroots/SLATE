@@ -9,6 +9,7 @@ import {
   FIRST_YEAR,
   LAST_YEAR,
   LOCAL_LINE,
+  REGION_UNKEPT_LINE,
   UNANNOUNCED_LINE,
   UNKEPT_LINE,
   aboutHolidays,
@@ -56,7 +57,7 @@ describe('the holidays of every country kept', () => {
         }
       }
     }
-    expect(read).toBe(146);
+    expect(read).toBe(224);
   });
   it('are each a country of the map with its lists, their regions its own', () => {
     expect(Object.keys(RULES).sort()).toEqual(LISTS.map((l) => l.country).sort());
@@ -68,7 +69,7 @@ describe('the holidays of every country kept', () => {
         expect(holidaysOf(country as CountryCode, 2026)).toEqual(holidaysOf(r.of as CountryCode, 2026));
         continue;
       }
-      for (const region of r.holidays.flatMap((h) => h.regions ?? [])) expect(region.startsWith(`${country}.`) && regionName(region) !== undefined, region).toBe(true);
+      for (const region of [...r.holidays.flatMap((h) => h.regions ?? []), ...(r.regional ?? [])]) expect(region.startsWith(`${country}.`) && regionName(region) !== undefined, region).toBe(true);
     }
     expect(keepsHolidays('AQ')).toBe(false);
   });
@@ -195,7 +196,7 @@ describe('a rule', () => {
     expect(one(r({ when: { nth: [4, 4, 1] }, shift: { easter: [-6, -4], plus: 7 } }))).toEqual(['2026-04-02']);
     expect(one(r({ when: { nth: [4, 4, 1] }, shift: { easter: [-3, 1], plus: 7 } }))).toEqual(['2026-04-09']);
   });
-  it("is moved off the country's weekdays to the first day free, unless it's fixed or has its own", () => {
+  it("is moved off the country's weekdays to the first day free (or shared), unless it's fixed or has its own", () => {
     // 2026-12-26 is a Saturday, 2026-12-27 a Sunday; 2027-12-25 a Saturday, 2027-12-26 a Sunday.
     const weekend: Substitute = { on: [6, 0], to: 'next' };
     const christmas = (over: Partial<Rule> = {}): Rule[] => [r({ name: 'Christmas', when: { fixed: [12, 25] }, ...over }), r({ name: 'Boxing', when: { fixed: [12, 26] } })];
@@ -211,6 +212,10 @@ describe('a rule', () => {
     // A substitute that falls in the next year isn't this year's: 2028-12-31 is a Sunday.
     expect(at({ holidays: [r({ name: 'Eve', when: { fixed: [12, 31] } })], substitute: [weekend] }, 2028)).toEqual(['2028-12-31 Eve (moved)']);
     expect(at({ holidays: [r({ name: 'Eve', when: { fixed: [12, 31] } })], substitute: [{ on: [0], to: 'previous' }] }, 2028)).toEqual(['2028-12-30 Eve (instead)', '2028-12-31 Eve (moved)']);
+    // Onto another holiday's day, where each is kept by its own date: 2026-06-20 is a Saturday, its Friday a holiday too.
+    const june = (shared?: true): CountryRules => ({ holidays: [r({ name: 'A', when: { fixed: [6, 19] } }), r({ name: 'B', when: { fixed: [6, 20] } })], substitute: [{ on: [6, 0], to: 'previous', ...(shared && { shared }) }] });
+    expect(at(june(true), 2026)).toEqual(['2026-06-19 A', '2026-06-19 B (instead)', '2026-06-20 B (moved)']);
+    expect(at(june(), 2026)).toEqual(['2026-06-18 B (instead)', '2026-06-19 A', '2026-06-20 B (moved)']);
   });
   it("makes a day between two holidays one too, by the country's name for it", () => {
     const hs: Rule[] = [r({ name: 'A', when: { fixed: [9, 21] } }), r({ name: 'B', when: { fixed: [9, 23] } }), r({ name: 'C', when: { fixed: [9, 25] } })];
@@ -221,6 +226,18 @@ describe('a rule', () => {
     expect(holidaysIn(subbed, 2027).map((h) => `${iso(h.day)} ${h.name}`)).toEqual(['2027-09-25 A', '2027-09-27 A', '2027-09-28 B']);
     const taken: CountryRules = { holidays: [r({ name: 'A', when: { fixed: [9, 21] } }), r({ name: 'B', when: { fixed: [9, 22] } }), r({ name: 'C', when: { fixed: [9, 23] } })], between: 'Between' };
     expect(holidaysIn(taken, 2026).map((h) => h.name)).toEqual(['A', 'B', 'C']);
+  });
+  it("keeps a region's own days in place of the country's, where the region keeps its own law's", () => {
+    // 2026-01-01 is a Thursday. Each day is moved by its own rule, though two have one name.
+    const ca: CountryRules = { regional: ['XX.01', 'XX.03'], holidays: [r({ name: 'A', when: { fixed: [1, 1] } }), r({ name: 'A', when: { fixed: [1, 1] }, regions: ['XX.01'], move: [{ on: [4], to: 'next' }] }), r({ name: 'B', when: { fixed: [3, 1] }, regions: ['XX.01'] })] };
+    const at = (rs: CountryRules, region?: string) => holidaysIn(rs, 2026, region).map((h) => `${iso(h.day)} ${h.name}${h.substitute === true ? ' (instead)' : ''}${h.moved === true ? ' (moved)' : ''}`);
+    expect(at(ca)).toEqual(['2026-01-01 A']);
+    expect(at(ca, 'XX.01')).toEqual(['2026-01-01 A (moved)', '2026-01-02 A (instead)', '2026-03-01 B']);
+    // A region not among them keeps the country's; one among them with none of its own, none.
+    expect(at(ca, 'XX.02')).toEqual(['2026-01-01 A']);
+    expect(at(ca, 'XX.03')).toEqual([]);
+    expect(at({ holidays: ca.holidays }, 'XX.01')).toEqual(['2026-01-01 A', '2026-01-01 A (moved)', '2026-01-02 A (instead)', '2026-03-01 B']);
+    expect(at({ holidays: ca.holidays }, 'XX.02')).toEqual(['2026-01-01 A']);
   });
   it('holds every so many years, counted from a year it holds in', () => {
     const election = r({ when: { after: [11, 2, 2] }, cycle: [2, 2026] });
@@ -301,6 +318,22 @@ describe('the holidays', () => {
     expect(aboutHolidays('ES', 2028)).toBe("Spain hasn't announced its holidays after 2027 yet, so the calendar keeps only those its law fixes.");
     expect(aboutHolidays('FR', 2100)).toBeUndefined();
     expect(aboutHolidays('ES', 2028, 'ES.51')).toBe(t(UNANNOUNCED_LINE, { place: 'Spain', year: '2027' }));
+    // A region whose own are set year by year is told by its own name and year; the country's others by the country's.
+    expect(aboutHolidays('US', 2028, 'US.GA')).toBe("Georgia hasn't announced its holidays after 2027 yet, so the calendar keeps only those its law fixes.");
+    expect(aboutHolidays('US', 2027, 'US.GA')).toBeUndefined();
+    expect(aboutHolidays('US', 2028, 'US.CA')).toBeUndefined();
+    expect(aboutHolidays('US', 2028)).toBeUndefined();
+  });
+  it("tell the player where a region's own aren't kept", () => {
+    expect(REGION_UNKEPT_LINE).toBe('holidays.region-unkept');
+    // Prince Edward Island's own aren't read (the register's blocker), so it keeps Canada's; Quebec keeps its own law's.
+    expect(aboutHolidays('CA', 2026, 'CA.09')).toBe(t(REGION_UNKEPT_LINE, { region: 'Prince Edward Island', country: 'Canada' }));
+    expect(aboutHolidays('CA', 2026, 'CA.09')).toBe("Prince Edward Island's own holidays aren't on this calendar yet, so it keeps Canada's national ones.");
+    expect(holidaysOf('CA', 2026, 'CA.09')).toEqual(holidaysOf('CA', 2026));
+    expect(aboutHolidays('CA', 2026, 'CA.10')).toBeUndefined();
+    expect(aboutHolidays('CA', 2026)).toBeUndefined();
+    expect(aboutHolidays('US', 2026, 'US.CA')).toBeUndefined();
+    expect(isLine(REGION_UNKEPT_LINE)).toBe(true);
   });
   it("tell the player a town's own aren't kept", () => {
     expect(LOCAL_LINE).toBe('holidays.local');

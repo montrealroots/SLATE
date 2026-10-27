@@ -198,7 +198,18 @@
   },
   {
    "key": "CA",
-   "status": "pending"
+   "status": "blocked",
+   "register": [
+    "R-0107",
+    "R-0149",
+    "R-0150",
+    "R-0151"
+   ],
+   "tests": [
+    "tests/world/holidays/holidays.test.ts::the holidays of every country kept > are the days its official lists name, list by list",
+    "tests/world/holidays/holidays.test.ts::the holidays > at every place on the map",
+    "tests/world/holidays/holidays.test.ts::the holidays > tell the player where a region's own aren't kept"
+   ]
   },
   {
    "key": "CC",
@@ -876,7 +887,14 @@
   },
   {
    "key": "MX",
-   "status": "pending"
+   "status": "researched",
+   "register": [
+    "R-0152"
+   ],
+   "tests": [
+    "tests/world/holidays/holidays.test.ts::the holidays of every country kept > are the days its official lists name, list by list",
+    "tests/world/holidays/holidays.test.ts::the holidays > at every place on the map"
+   ]
   },
   {
    "key": "MY",
@@ -1255,7 +1273,15 @@
   },
   {
    "key": "US",
-   "status": "pending"
+   "status": "researched",
+   "register": [
+    "R-0107",
+    "R-0148"
+   ],
+   "tests": [
+    "tests/world/holidays/holidays.test.ts::the holidays of every country kept > are the days its official lists name, list by list",
+    "tests/world/holidays/holidays.test.ts::the holidays > at every place on the map"
+   ]
   },
   {
    "key": "UY",

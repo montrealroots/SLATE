@@ -4,7 +4,8 @@ import type { When } from '../../src/world/holidays/rules.ts';
 /**
  * The holidays' coverage matrix (coverage/holidays-countries.json), from the rules and the register: a country whose
  * rules are kept and whose official lists the register holds (world.holidays.<code>) is researched, citing those and
- * the reckonings its rules stand on (the calendars, the two Easters, the clock's equinoxes); one without is blocked where the
+ * the reckonings its rules stand on (the calendars, the two Easters, the clock's equinoxes); such a country with a region
+ * whose own the register couldn't find (world.holidays.blocked.<region>) is blocked, citing that blocker too; one without is blocked where the
  * register holds its blocker (world.holidays.blocked.<code>), else pending; a country with no place of its own is
  * proven by the gazetteer's test that it has none.
  */
@@ -17,6 +18,8 @@ const T = 'tests/world/holidays/holidays.test.ts';
 export const TESTS = [`${T}::the holidays of every country kept > are the days its official lists name, list by list`, `${T}::the holidays > at every place on the map`];
 /** And a blocked row's: the test that shows the player told its holidays aren't kept. */
 export const TOLD = `${T}::the holidays > tell the player where a country's aren't kept`;
+/** And the row's of a country with a region blocked (world.holidays.blocked.<region>): the test that shows the player told. */
+export const TOLD_REGION = `${T}::the holidays > tell the player where a region's own aren't kept`;
 export const NO_PLACES = 'tests/world/gazetteer/gazetteer.test.ts::places > are none in the six countries with no populated place of their own';
 
 export type Row =
@@ -42,8 +45,9 @@ export function holidaysCoverage(countries: readonly string[], withPlaces: Reado
     const kept = own !== undefined && 'of' in own ? rules[own.of] : own;
     if (kept !== undefined && 'holidays' in kept && lists !== undefined) {
       const of = own !== undefined && 'of' in own ? [facts.get(`world.holidays.${own.of}`) as string] : [];
-      const register = new Set([lists, ...of, ...kept.holidays.flatMap((r) => reckonings(r.when, r.shift !== undefined))]);
-      return { key, status: 'researched', register: [...register].sort(), tests: TESTS };
+      const regions = [...facts].filter(([fact]) => fact.startsWith(`world.holidays.blocked.${key}.`)).map(([, id]) => id);
+      const register = new Set([lists, ...of, ...regions, ...kept.holidays.flatMap((r) => reckonings(r.when, r.shift !== undefined))]);
+      return regions.length > 0 ? { key, status: 'blocked', register: [...register].sort(), tests: [...TESTS, TOLD_REGION] } : { key, status: 'researched', register: [...register].sort(), tests: TESTS };
     }
     const blocker = facts.get(`world.holidays.blocked.${key}`);
     return blocker === undefined ? { key, status: 'pending' } : { key, status: 'blocked', register: [blocker], tests: [...TESTS, TOLD] };

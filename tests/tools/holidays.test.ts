@@ -5,7 +5,7 @@ import { daysFromCivil } from '../../src/core/time/calendar.ts';
 import { icuDay } from '../../tools/calendars/build.ts';
 import { CALENDARS, compileCalendars, FROM, OUTPUT, serialize, TO, type CalendarDay } from '../../tools/calendars/compile.ts';
 import { coverageOf } from '../../tools/holidays/build.ts';
-import { holidaysCoverage, NO_PLACES, OUTPUT as COVERAGE, RECKONINGS, serializeCoverage, TESTS, TOLD } from '../../tools/holidays/coverage.ts';
+import { holidaysCoverage, NO_PLACES, OUTPUT as COVERAGE, RECKONINGS, serializeCoverage, TESTS, TOLD, TOLD_REGION } from '../../tools/holidays/coverage.ts';
 import type { Kept } from '../../src/world/holidays/holidays.ts';
 
 const ROOT = join(import.meta.dirname, '../..');
@@ -47,7 +47,7 @@ describe('the holidays\' coverage', () => {
     expect(coverageOf(ROOT)).toBe(readFileSync(join(ROOT, COVERAGE), 'utf8'));
     expect(COVERAGE).toBe('coverage/holidays-countries.json');
   });
-  it('cites a country\'s lists and the reckonings its rules stand on; else its blocker; else it is pending', () => {
+  it('cites a country\'s lists and the reckonings its rules stand on, and a region\'s blocker; else its blocker; else it is pending', () => {
     expect(RECKONINGS).toEqual({ lunar: 'R-0106', easter: 'R-0107', orthodox: 'R-0108', equinox: 'R-0036' });
     const rules: Record<string, Kept> = {
       II: { of: 'BB' },
@@ -55,6 +55,7 @@ describe('the holidays\' coverage', () => {
       BB: { holidays: [{ name: 'a', when: { easter: 1 } }, { name: 'b', when: { easter: 0, orthodox: true } }, { name: 'c', when: { lunar: ['hebrew', 'Nisan', 15] } }, { name: 'd', when: { equinox: [3, 540] } }] },
       CC: { holidays: [{ name: 'a', when: { nth: [4, 4, 1] }, shift: { easter: [-7, 1], plus: 7 } }] },
       DD: { holidays: [] },
+      JJ: { holidays: [{ name: 'a', when: { fixed: [1, 1] } }], regional: ['JJ.01'] },
     };
     const facts = new Map([
       ['world.holidays.AA', 'R-1'],
@@ -64,9 +65,12 @@ describe('the holidays\' coverage', () => {
       ['world.holidays.blocked.EE', 'R-5'],
       ['world.holidays.FF', 'R-6'],
       ['world.holidays.II', 'R-7'],
+      ['world.holidays.JJ', 'R-8'],
+      ['world.holidays.blocked.JJ.02', 'R-9'],
+      ['world.holidays.blocked.JJA', 'R-10'],
     ]);
-    const rows = holidaysCoverage(['AA', 'BB', 'CC', 'DD', 'EE', 'FF', 'GG', 'HH', 'II'], new Set(['AA', 'BB', 'CC', 'DD', 'EE', 'FF', 'GG', 'II']), rules, facts);
-    expect(rows).toEqual([
+    const rows = holidaysCoverage(['AA', 'BB', 'CC', 'DD', 'EE', 'FF', 'GG', 'HH', 'II', 'JJ'], new Set(['AA', 'BB', 'CC', 'DD', 'EE', 'FF', 'GG', 'II', 'JJ']), rules, facts);
+    expect(rows).toStrictEqual([
       { key: 'AA', status: 'researched', register: ['R-1'], tests: TESTS },
       { key: 'BB', status: 'researched', register: ['R-0036', 'R-0106', 'R-0107', 'R-0108', 'R-2'], tests: TESTS },
       { key: 'CC', status: 'researched', register: ['R-0107', 'R-3'], tests: TESTS },
@@ -77,12 +81,15 @@ describe('the holidays\' coverage', () => {
       { key: 'HH', status: 'proven', tests: [NO_PLACES] },
       // Keeping another's holidays, citing its own lists, the other's and the other's reckonings.
       { key: 'II', status: 'researched', register: ['R-0036', 'R-0106', 'R-0107', 'R-0108', 'R-2', 'R-7'], tests: TESTS },
+      // Its lists found, but a region's own not: blocked, citing both, and the test that tells the player.
+      { key: 'JJ', status: 'blocked', register: ['R-8', 'R-9'], tests: [...TESTS, TOLD_REGION] },
     ]);
     expect(TESTS).toEqual([
       'tests/world/holidays/holidays.test.ts::the holidays of every country kept > are the days its official lists name, list by list',
       'tests/world/holidays/holidays.test.ts::the holidays > at every place on the map',
     ]);
     expect(TOLD).toBe("tests/world/holidays/holidays.test.ts::the holidays > tell the player where a country's aren't kept");
+    expect(TOLD_REGION).toBe("tests/world/holidays/holidays.test.ts::the holidays > tell the player where a region's own aren't kept");
     expect(NO_PLACES).toBe('tests/world/gazetteer/gazetteer.test.ts::places > are none in the six countries with no populated place of their own');
     expect(serializeCoverage([{ key: 'HH', status: 'pending' }])).toBe('{\n "engine": "world.holidays",\n "axis": "country",\n "rows": [\n  {\n   "key": "HH",\n   "status": "pending"\n  }\n ]\n}\n');
   });

@@ -38,17 +38,20 @@ export function holidayOn(country: CountryCode, day: number, region?: string): H
 
 export const UNANNOUNCED_LINE = 'holidays.unannounced';
 export const UNKEPT_LINE = 'holidays.unkept';
+export const REGION_UNKEPT_LINE = 'holidays.region-unkept';
 
 /**
  * What the player is told about a country's holidays in a year, or a region's: where the game doesn't keep them, that
- * every day there is an ordinary one; past the last year its government has announced (Spain's communities choose
+ * every day there is an ordinary one; in a region whose own law's days the game hasn't read where the others' are
+ * (Canada's), that it keeps the country's; past the last year its government has announced (Spain's communities choose
  * theirs year by year, Georgia's governor its own), that only those its law fixes are kept. Nothing where they're all
  * kept.
  */
 export function aboutHolidays(country: CountryCode, year: number, region?: string): string | undefined {
   const rules = rulesOf(country);
   if (rules === undefined) return t(UNKEPT_LINE, { country: countryName(country) });
-  const own = region === undefined ? undefined : rules.regionsAnnouncedTo?.[region];
+  if (region !== undefined && rules.regional?.includes(region) === false) return t(REGION_UNKEPT_LINE, { region: regionName(region) as string, country: countryName(country) });
+  const own = rules.regionsAnnouncedTo?.[region as string];
   const last = own ?? rules.announcedTo ?? LAST_YEAR;
   const place = own === undefined ? countryName(country) : (regionName(region as string) as string);
   return year > last ? t(UNANNOUNCED_LINE, { place, year: String(last) }) : undefined;
