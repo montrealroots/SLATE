@@ -113,7 +113,7 @@ a place fills a column; a cell is the row's status in that engine's matrix, or b
 | IM | Isle of Man | researched | researched | researched | researched | blocked |
 | IN | India | researched | researched | researched | researched | blocked |
 | IO | British Indian Ocean Territory | researched | researched | researched | blocked | blocked |
-| IQ | Iraq | researched | researched | researched | researched | pending |
+| IQ | Iraq | researched | researched | researched | researched | blocked |
 | IR | Iran | researched | researched | researched | researched | pending |
 | IS | Iceland | researched | researched | researched | researched | researched |
 | IT | Italy | researched | researched | researched | researched | researched |

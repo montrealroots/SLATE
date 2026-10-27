@@ -14132,6 +14132,45 @@
     }
    ],
    "notModeled": "holidays.unkept"
+  },
+  {
+   "id": "R-0328",
+   "fact": "world.holidays.blocked.IQ",
+   "sought": "Iraq's official holidays under the Official Holidays Law No. 12 of 2024 (its article 1's list), and the 2026 days the Council of Ministers set for the Islamic ones; the Kurdistan Region's own",
+   "status": "blocked",
+   "attempts": [
+    {
+     "method": "institution",
+     "tried": "The Council of Ministers' General Secretariat (cabinet.iq), the Prime Minister's Office (pmo.iq), the Iraqi News Agency (ina.iq)",
+     "result": "cabinet.iq answers with an empty shell; pmo.iq and ina.iq refuse with 403.",
+     "date": "2026-10-27"
+    },
+    {
+     "method": "official-register",
+     "tried": "The Iraqi Legal Database (iraqld.hjc.iq), the Ministry of Justice's Al-Waqa'i al-Iraqiya (moj.gov.iq), the Council of Representatives (parliament.iq)",
+     "result": "The legal database and the parliament refuse with 403; the ministry's site does not answer.",
+     "date": "2026-10-27"
+    },
+    {
+     "method": "web-search",
+     "tried": "'قانون العطل الرسمية رقم 12 لسنة 2024 العراق نص المادة 1 العطل الرسمية الوقائع العراقية', 'Iraq official holidays law 2024 parliament approved list of holidays Eid al-Ghadir Nowruz Army Day Shafaq News full list'",
+     "result": "Only the article's subsection for the Mawlid is cited in a news item; the list itself appears in Tech4Peace's fact-check (behind Cloudflare, below) and in aggregators that disagree with it.",
+     "date": "2026-10-27"
+    },
+    {
+     "method": "trade-press",
+     "tried": "Tech4Peace (t4p.co), its article on the law's list (10 July 2024); Shafaq News on the Ghadir debate",
+     "result": "t4p.co answers with a Cloudflare block (not circumvented); Shafaq's report predates the law.",
+     "date": "2026-10-27"
+    },
+    {
+     "method": "archive",
+     "tried": "The Wayback Machine's availability index for the Tech4Peace article and iraqld.hjc.iq",
+     "result": "The article is archived (16 February 2025); not fetched, pending the owner's ruling on snapshots.",
+     "date": "2026-10-27"
+    }
+   ],
+   "notModeled": "holidays.unkept"
   }
  ]
 }
