@@ -13976,6 +13976,45 @@
     }
    ],
    "notModeled": "holidays.unkept"
+  },
+  {
+   "id": "R-0324",
+   "fact": "world.holidays.blocked.SL",
+   "sought": "Sierra Leone's public holidays: the law that names them (the Public Holidays Act or Order) with its rule for one on a weekend, and the 2026 days the government declared (the Eids, Maulid, any day in place of one on a weekend)",
+   "status": "blocked",
+   "attempts": [
+    {
+     "method": "institution",
+     "tried": "State House (statehouse.gov.sl: its WordPress API and its site search for 'public holiday'); the Ministry of Information (mic.gov.sl); the Bank of Sierra Leone (bsl.gov.sl)",
+     "result": "State House's API and search return nothing; the ministry's and the bank's sites do not answer.",
+     "date": "2026-10-27"
+    },
+    {
+     "method": "official-register",
+     "tried": "SierraLII (sierralii.gov.sl), its search for 'public holidays', fetched and rendered in a browser",
+     "result": "The search page is rendered by script; the browser render is refused with 403 and the bot check isn't passed.",
+     "date": "2026-10-27"
+    },
+    {
+     "method": "web-search",
+     "tried": "'Sierra Leone Public Holidays Act sierralii akn public holidays list Armed Forces Day 18 February'",
+     "result": "Only Wikipedia and calendar aggregators, none citing the law or a 2026 notice.",
+     "date": "2026-10-27"
+    },
+    {
+     "method": "trade-press",
+     "tried": "The Sierra Leone Telegraph and The Calabash (their WordPress APIs: 'public holiday', 'Eid holiday', 'holiday 2026', 'national holiday'); Awoko and SLBC",
+     "result": "No 2026 holiday notice in either archive; Awoko's and SLBC's sites do not answer.",
+     "date": "2026-10-27"
+    },
+    {
+     "method": "archive",
+     "tried": "The Wayback Machine's availability index for sierralii.gov.sl, statehouse.gov.sl and bsl.gov.sl/public-holidays",
+     "result": "The two home pages are archived (October 2026), the bank's page isn't; snapshots were not fetched.",
+     "date": "2026-10-27"
+    }
+   ],
+   "notModeled": "holidays.unkept"
   }
  ]
 }
