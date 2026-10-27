@@ -251,7 +251,7 @@ a place fills a column; a cell is the row's status in that engine's matrix, or b
 | VU | Vanuatu | researched | researched | researched | blocked | blocked |
 | WF | Wallis and Futuna | researched | researched | researched | researched | blocked |
 | WS | Samoa | researched | researched | researched | researched | researched |
-| XK | Kosovo | researched | researched | researched | blocked | pending |
+| XK | Kosovo | researched | researched | researched | blocked | researched |
 | YE | Yemen | researched | researched | researched | researched | pending |
 | YT | Mayotte | researched | researched | researched | researched | researched |
 | ZA | South Africa | researched | researched | researched | researched | researched |
