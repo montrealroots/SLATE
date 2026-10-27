@@ -201,7 +201,7 @@ a place fills a column; a cell is the row's status in that engine's matrix, or b
 | RW | Rwanda | researched | researched | researched | blocked | researched |
 | SA | Saudi Arabia | researched | researched | researched | researched | researched |
 | SB | Solomon Islands | researched | researched | researched | blocked | researched |
-| SC | Seychelles | researched | researched | researched | researched | pending |
+| SC | Seychelles | researched | researched | researched | researched | researched |
 | SD | Sudan | researched | researched | researched | researched | pending |
 | SE | Sweden | researched | researched | researched | researched | researched |
 | SG | Singapore | researched | researched | researched | researched | researched |
