@@ -476,6 +476,10 @@ What layer 0 holds:
    - MR: done 2026-10-27: loi 92-018 (the Fonction publique ministry's legal texts page, /ar/techriye), the National
      Moon Committee's 2026 dates and the Presidency's compensation-day decrees (ami.mr WP API); from 2027 the Hijri
      days by Umm al-Qura. 1 January isn't in the law (2 January 2026 was decreed "following" it): not kept.
+   - UG: done 2026-10-27 from the Public Holidays Act's Schedule 2 (Cap. 174, 2023 revision; Laws.Africa's commons
+     host, commons.laws.africa/akn/ug/act/1965/23/eng@2023-12-31.pdf, past ULII's Cloudflare). Hijri days by Umm al-Qura.
+     Open: the President's s. 2(2) days for 2026 (NRM Liberation Day 26 January and the 15 January election day are
+     reported by aggregators only).
    - TN: done 2026-10-27: décret présidentiel 2021-223 (legislation-securite.tn's JORT text) and the 2026 Islamic
      days as the Mufti and the Prime Minister's office announced them (Kapitalis WP API). 2027: the same announcements.
    - BQ: Regeling feestdagen ambtenaren BES (stcrt-2019-63152, read): Bonaire 30 Apr Dia di Rincon, 6 Sep Dia di
