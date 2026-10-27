@@ -176,7 +176,7 @@ a place fills a column; a cell is the row's status in that engine's matrix, or b
 | NO | Norway | researched | researched | researched | researched | researched |
 | NP | Nepal | researched | researched | researched | researched | researched |
 | NR | Nauru | researched | researched | researched | blocked | pending |
-| NU | Niue | researched | researched | researched | blocked | pending |
+| NU | Niue | researched | researched | researched | blocked | researched |
 | NZ | New Zealand | researched | researched | researched | researched | researched |
 | OM | Oman | researched | researched | researched | researched | researched |
 | PA | Panama | researched | researched | researched | researched | researched |
