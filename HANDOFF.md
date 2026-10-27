@@ -19,7 +19,7 @@ restarts. Read `CLAUDE.md` and the owner's package in `docs/` first.
   100% mutation score with the last sources (1,559 mutants; the survivors of that run killed by tests or simpler
   lines, and the two equivalent ones disabled with their reasons). The
   holidays (`world.holidays`): the engine, its reckonings and its gate wiring are built and tested; 111 countries
-  researched (380 official lists matched day for day), 6 proven, 132 pending, and Canada blocked for two of its
+  researched (401 official lists matched day for day), 6 proven, 131 pending, and Canada blocked for two of its
   regions (Prince Edward Island's and Yukon's own); its code at 100% mutation score (532 mutants, with the regions'
   and the shared substitutes' rules). Then prices.
 
@@ -328,10 +328,8 @@ What layer 0 holds:
      csc.gov.kw has no list found. Read the Labour Law (6/2010) art. 67 and each Cabinet decision.
    - Gulf sites with incomplete chains (qcb.gov.qa, kln.gov.my): completed from the certificate's own issuer URL
      (scratchpad aia.sh), verification on.
-   - GG: ready: the Ordinance's rules in the ten parishes (regional), Good Friday and Christmas Day region-less
-     (customary), checked against gov.gg's 2026 and 2027 lists with no mismatch (2026-10-27). Before committing,
-     Alderney (GG.8989934) needs its blocker after all five methods: alderney.gov.gg does not answer (2026-10-27),
-     gov.gg/alderney 404; the web search and trade press for Alderney's 2026 bank holidays remain to be tried.
+   - GG: done 2026-10-27; Alderney blocked (alderney.gov.gg not answering, Guernsey Legal Resources behind Cloudflare):
+     retry for its list (first Monday of August, Homecoming Day 15 December, no Liberation Day per the press).
    - IM: gov.im's bank holidays page and legislation.gov.im answer "Request Rejected" (not circumvented); the Bank
      Holidays Act 1989 and the Treasury's yearly notice (TT Bank Holiday, Tynwald Day). Retry.
    - AD: national days read (govern.ad's notes of the 2026 and 2027 labour-calendar decrees: 14 days, none moved;
