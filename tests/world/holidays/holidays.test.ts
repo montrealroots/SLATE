@@ -57,7 +57,7 @@ describe('the holidays of every country kept', () => {
         }
       }
     }
-    expect(read).toBe(278);
+    expect(read).toBe(279);
   });
   it('are each a country of the map with its lists, their regions its own, their substitutes the engine reckons', () => {
     expect(Object.keys(RULES).sort()).toEqual(LISTS.map((l) => l.country).sort());
@@ -71,8 +71,10 @@ describe('the holidays of every country kept', () => {
       }
       for (const region of [...r.holidays.flatMap((h) => h.regions ?? []), ...(r.regional ?? [])]) expect(region.startsWith(`${country}.`) && regionName(region) !== undefined, region).toBe(true);
       // A substitute goes to the next day or the one before, from days of the week: the JSON isn't held to the type.
+      // It must leave some weekday to land on, or the search for its day never ends (its skip is its own days unless given).
       for (const s of [...(r.substitute ?? []), ...r.holidays.flatMap((h) => h.move ?? [])]) {
         expect(['next', 'previous'].includes(s.to) && [s.on, s.skip ?? []].every((ds) => ds.every((d) => Number.isInteger(d) && d >= 0 && d <= 6)), country).toBe(true);
+        expect(new Set(s.skip ?? s.on).size < 7, country).toBe(true);
       }
     }
     expect(keepsHolidays('AQ')).toBe(false);
