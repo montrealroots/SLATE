@@ -19,8 +19,8 @@ restarts. Read `CLAUDE.md` and the owner's package in `docs/` first.
   100% mutation score with the last sources (1,559 mutants; the survivors of that run killed by tests or simpler
   lines, and the two equivalent ones disabled with their reasons). The
   holidays (`world.holidays`): the engine, its reckonings and its gate wiring are built and tested; 118 countries
-  researched (487 official lists matched day for day), 6 proven, 121 pending, and 7 blocked: the Isle of Man
-  whole, and six for some of their regions (Canada's Prince Edward Island and Yukon, India's four, Australia's
+  researched (487 official lists matched day for day), 6 proven, 119 pending, and 9 blocked: the Isle of Man,
+  Tanzania and Palau whole, and six for some of their regions (Canada's Prince Edward Island and Yukon, India's four, Australia's
   South Australia, Guernsey's Alderney, Argentina's Formosa, Bosnia's Brčko); its code at 100% mutation score (532 mutants, with the regions'
   and the shared substitutes' rules). Then prices.
 
@@ -233,6 +233,9 @@ What layer 0 holds:
    - GH: done 2026-10-27 from the Interior Ministry's 2026 statements and the Executive Instruments as GNA, Citi and
      others report them (mint.gov.gh needs a script; Graphic answers 406). Boxing Day 2026 is a Saturday: if an E.I.
      adds Monday 28 December, add it. Read Act 601 and Act 1142's Schedules when reachable (judy.legal is paywalled).
+   - TZ, PW: blocked 2026-10-27. TZ: the Act's days are on BoT's 2025 list; 2026's Eid el-Fitr (20 or 21 March), Eid
+     el-Hajj and Maulid as announced are not found (TanzLII documents behind Cloudflare). PW: 1 PNC § 701 read (RPPL
+     10-15's scan on palaugov.pw); whether 1 June and 1 October are legal holidays, and by what act, not found.
    - BR: done 2026-10-27: national laws in every state, each state's own from the courts' and prosecutors' 2026
      calendars (the AASP tracker at aasp.org.br/produtos-servicos/expediente-forense/feriados-forenses-2026/ links each
      court's act). Acre announced to 2026 (Lei 2.126/2009 moves some days by a rule not read). Rio's Carnival Tuesday,

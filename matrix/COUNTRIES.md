@@ -191,7 +191,7 @@ a place fills a column; a cell is the row's status in that engine's matrix, or b
 | PR | Puerto Rico | researched | researched | researched | researched | researched |
 | PS | Palestinian Territory | researched | researched | researched | blocked | pending |
 | PT | Portugal | researched | researched | researched | researched | researched |
-| PW | Palau | researched | researched | researched | researched | pending |
+| PW | Palau | researched | researched | researched | researched | blocked |
 | PY | Paraguay | researched | researched | researched | researched | researched |
 | QA | Qatar | researched | researched | researched | researched | researched |
 | RE | Reunion | researched | researched | researched | researched | researched |
@@ -235,7 +235,7 @@ a place fills a column; a cell is the row's status in that engine's matrix, or b
 | TT | Trinidad and Tobago | researched | researched | researched | researched | researched |
 | TV | Tuvalu | researched | researched | researched | researched | pending |
 | TW | Taiwan | researched | researched | researched | researched | researched |
-| TZ | Tanzania | researched | researched | researched | researched | pending |
+| TZ | Tanzania | researched | researched | researched | researched | blocked |
 | UA | Ukraine | researched | researched | researched | researched | researched |
 | UG | Uganda | researched | researched | researched | researched | pending |
 | UM | United States Minor Outlying Islands | researched | researched | proven | proven | proven |
