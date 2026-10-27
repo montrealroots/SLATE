@@ -18,8 +18,8 @@ restarts. Read `CLAUDE.md` and the owner's package in `docs/` first.
   told where the weather is borrowed from), 6 proven, none pending. `tools/wmo/compile.ts` and `coverage.ts` are at
   100% mutation score with the last sources (1,559 mutants; the survivors of that run killed by tests or simpler
   lines, and the two equivalent ones disabled with their reasons). The
-  holidays (`world.holidays`): the engine, its reckonings and its gate wiring are built and tested; 120 countries
-  researched (489 official lists matched day for day), 6 proven, 112 pending, and 14 blocked: the Isle of Man,
+  holidays (`world.holidays`): the engine, its reckonings and its gate wiring are built and tested; 121 countries
+  researched (490 official lists matched day for day), 6 proven, 111 pending, and 14 blocked: the Isle of Man,
   Tanzania, Palau, the British Indian Ocean Territory, the French Southern Lands, the Cook Islands, Tokelau and
   Vanuatu whole, and six for some of their regions (Canada's Prince Edward Island and Yukon, India's four, Australia's
   South Australia, Guernsey's Alderney, Argentina's Formosa, Bosnia's Brčko); its code at 100% mutation score (532 mutants, with the regions'
@@ -244,6 +244,8 @@ What layer 0 holds:
      2026 is a Saturday: add the December circular's day in lieu if it gives one. The Public Holidays law unread.
    - VU: lead: gov.vu/index.php/events/holidays lists the national days and the six provinces' own days (Shefa 18
      Jun, Penama 16 Sep, Sanma 24 Sep, Torba 2 Oct, Tafea 8 Oct, Malampa 10 Oct) but for 2020; no 2026 order found.
+   - MH: done 2026-10-27 from the Public Holidays Act 1988 version 2 (rmiparliament.org legislation, by title); the
+     Public Service Commission may direct otherwise (s. 902): read the Chief Secretary's yearly memo when found.
    - BR: done 2026-10-27: national laws in every state, each state's own from the courts' and prosecutors' 2026
      calendars (the AASP tracker at aasp.org.br/produtos-servicos/expediente-forense/feriados-forenses-2026/ links each
      court's act). Acre announced to 2026 (Lei 2.126/2009 moves some days by a rule not read). Rio's Carnival Tuesday,
