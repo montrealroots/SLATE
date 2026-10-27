@@ -18,8 +18,8 @@ restarts. Read `CLAUDE.md` and the owner's package in `docs/` first.
   told where the weather is borrowed from), 6 proven, none pending. `tools/wmo/compile.ts` and `coverage.ts` are at
   100% mutation score with the last sources (1,559 mutants; the survivors of that run killed by tests or simpler
   lines, and the two equivalent ones disabled with their reasons). The
-  holidays (`world.holidays`): the engine, its reckonings and its gate wiring are built and tested; 156 countries
-  researched (548 official lists matched day for day), 6 proven, 69 pending, and 21 blocked: the Isle of Man,
+  holidays (`world.holidays`): the engine, its reckonings and its gate wiring are built and tested; 157 countries
+  researched (549 official lists matched day for day), 6 proven, 68 pending, and 21 blocked: the Isle of Man,
   Tanzania, Palau, the British Indian Ocean Territory, the French Southern Lands, the Cook Islands, Tokelau,
   Vanuatu, Micronesia, Tuvalu,
   Saint-Pierre-and-Miquelon, Wallis and Futuna, Christmas Island and the Cocos (Keeling) Islands whole, and seven for some of their regions (Canada's Prince Edward Island and Yukon, India's four, Australia's
@@ -385,6 +385,8 @@ What layer 0 holds:
    - UG: lead 2026-10-27: the Public Holidays Act (Cap. 174, revised 2023) is on ULII (Cloudflare; old.ulii resets;
      commons.laws.africa 404); 2026's election days 15-16 January (s. 2(2), chimpreports.com WP API). Open: Schedule
      2's list, a Sunday rule, and the Idds' 2026 dates.
+   - KW: done 2026-10-27: Law 6/2010 art. 68's private-sector days (WageIndicator's quotation) on the Cabinet's
+     2026 dates (timeskuwait.com WP API); public-sector extra days left out. Announced to 2026.
    - SN: done 2026-10-27: loi 74-52 (read in the Assembly's file at vie-publique.sn), Tamxarit from loi 83-54 (the
      scan read as an image), 1 February gone by loi 89-41, the Grand Magal by loi 2013-10 (Dakaractu); 2026's
      Islamic days are CONACOC's through APS; 19 January the President's day off. Announced to 2026.
@@ -479,10 +481,6 @@ What layer 0 holds:
      the Montserrat Gazette.
    - MH, PW, FM: MH's Public Holidays Act 1988 on PacLII (403; the austlii mirror resets) and the Register-IRI list
      (TLS chain fails, not bypassed); PW and FM only aggregators (FM's states keep their own days). Retry.
-   - KW: the Cabinet sets each holiday's days yearly, often in two moon scenarios (2026: Isra Mi'raj moved to Sun 18
-     Jan, Prophet's birthday to Thu 27 Aug per the Malaysian embassy's page kln.gov.my/web/kwt_kuwait/holidays;
-     Arafah and Adha 26-29 May per Kuwait Times; Fitr and Hijri New Year final days unread). kuna.net.kw resets,
-     csc.gov.kw has no list found. Read the Labour Law (6/2010) art. 67 and each Cabinet decision.
    - Gulf sites with incomplete chains (qcb.gov.qa, kln.gov.my): completed from the certificate's own issuer URL
      (scratchpad aia.sh), verification on.
    - GG: done 2026-10-27; Alderney blocked (alderney.gov.gg not answering, Guernsey Legal Resources behind Cloudflare):
