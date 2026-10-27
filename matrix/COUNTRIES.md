@@ -107,7 +107,7 @@ a place fills a column; a cell is the row's status in that engine's matrix, or b
 | HR | Croatia | researched | researched | researched | researched | researched |
 | HT | Haiti | researched | researched | researched | blocked | pending |
 | HU | Hungary | researched | researched | researched | researched | researched |
-| ID | Indonesia | researched | researched | researched | researched | pending |
+| ID | Indonesia | researched | researched | researched | researched | researched |
 | IE | Ireland | researched | researched | researched | researched | researched |
 | IL | Israel | researched | researched | researched | researched | researched |
 | IM | Isle of Man | researched | researched | researched | researched | pending |
