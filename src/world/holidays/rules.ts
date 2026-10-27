@@ -126,7 +126,7 @@ export function daysOf(when: When, year: number): number[] {
   if ('easter' in when) return [easter(year, when.orthodox === true) + when.easter];
   if ('nth' in when) {
     const [month, weekday, n] = when.nth;
-    return [n < 0 ? lastWeekdayOfMonth(year, month, weekday) : weekdayOnOrAfter(year, month, 1, weekday) + 7 * (n - 1)];
+    return [n === -1 ? lastWeekdayOfMonth(year, month, weekday) : weekdayOnOrAfter(year, month, 1, weekday) + 7 * (n - 1)];
   }
   if ('after' in when) return [weekdayOnOrAfter(year, ...when.after)];
   if ('before' in when) return [weekdayOnOrBefore(year, ...when.before)];
@@ -138,6 +138,13 @@ export function daysOf(when: When, year: number): number[] {
   return when.dates.map((d) => daysFromCivil(Number(d.slice(0, 4)), Number(d.slice(5, 7)), Number(d.slice(8, 10)))).filter((d) => civilFromDays(d).year === year);
 }
 
+/** The day of the month a rule gives instead, in a year it falls on its weekday (Ireland's 1 February on a Friday). */
+function insteadOf(rule: Rule, year: number): number | undefined {
+  if (rule.instead === undefined) return undefined;
+  const d = daysFromCivil(year, ...rule.instead.on);
+  return weekdayFromDays(d) === rule.instead.weekday ? d : undefined;
+}
+
 /**
  * A country's holidays in a Gregorian year, in a region of it or nationwide (no region), in order of day: each rule's
  * days, then its substitutes and the days between.
@@ -145,11 +152,11 @@ export function daysOf(when: When, year: number): number[] {
 export function holidaysIn(rules: CountryRules, year: number, region?: string): Holiday[] {
   const out: Holiday[] = [];
   for (const rule of rules.holidays) {
-    if ((rule.from !== undefined && year < rule.from) || (rule.until !== undefined && year > rule.until) || rule.except?.includes(year) === true) continue;
-    if (rule.regions !== undefined && (region === undefined || !rule.regions.includes(region))) continue;
+    if (year < (rule.from ?? -Infinity) || year > (rule.until ?? Infinity) || rule.except?.includes(year) === true) continue;
+    if (rule.regions?.includes(region as string) === false) continue;
     if (rule.when_ !== undefined && rule.when_.weekdays.includes(weekdayFromDays(daysFromCivil(year, ...rule.when_.on))) === (rule.when_.not === true)) continue;
-    const instead = rule.instead === undefined ? undefined : daysFromCivil(year, ...rule.instead.on);
-    const days = instead !== undefined && weekdayFromDays(instead) === rule.instead?.weekday ? [instead] : daysOf(rule.when, year);
+    const instead = insteadOf(rule, year);
+    const days = instead === undefined ? daysOf(rule.when, year) : [instead];
     for (const d of days) {
       const shifted = rule.shift !== undefined && d - easter(year) >= rule.shift.easter[0] && d - easter(year) <= rule.shift.easter[1] ? rule.shift.plus : 0;
       out.push({ day: d + (rule.plus ?? 0) + shifted, name: rule.name });

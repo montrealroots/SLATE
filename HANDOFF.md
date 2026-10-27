@@ -18,7 +18,8 @@ restarts. Read `CLAUDE.md` and the owner's package in `docs/` first.
   told where the weather is borrowed from), 6 proven, none pending. Mutation testing of `tools/wmo/compile.ts` and
   `coverage.ts` with the last sources was cut off by a container restart and is to run again (see Next step). The
   holidays (`world.holidays`): the engine, its reckonings and its gate wiring are built and tested; 25 countries
-  researched (112 official lists matched day for day), 6 proven, 221 pending. Then prices.
+  researched (112 official lists matched day for day), 6 proven, 221 pending; its code at 100% mutation score
+  (447 mutants). Then prices.
 
 What layer 2 holds so far:
 
@@ -163,9 +164,7 @@ What layer 0 holds:
    (`world.weather.blocked.<code>`, R-0051 on) each say what is to be tried again where it can be reached (the
    web archives, the services whose sites didn't answer from here: Djibouti's, Lesotho's, the Comoros', Palestine's,
    Montserrat's).
-2. Mutation testing of the holidays: `src/world/holidays/*.ts`, `tools/calendars/compile.ts`,
-   `tools/holidays/coverage.ts`, to 100%.
-3. The holidays of the 221 pending countries, each from its law or its government's own list, fetched and read
+2. The holidays of the 221 pending countries, each from its law or its government's own list, fetched and read
    (never a search summary), with first-level regions where they keep their own (Germany's Länder, Austria's,
    Portugal's autonomous regions, the United States', Canada's, Australia's, Brazil's, India's, Mexico's,
    Malaysia's ...). Islamic feasts: the announced dates where announced, Umm al-Qura with `announcedTo` beyond.
@@ -173,7 +172,7 @@ What layer 0 holds:
    sources can't be reached, a blocker after all five methods. Leads still open: Austria (RIS bot check; Vienna's
    page timed out), Luxembourg (Code du travail L.232-2 on Legilux), Finland (sources behind Cloudflare), Portugal's
    regions (Azores: Whit Monday; Madeira: 1 July and 26 December).
-4. Then prices by place, and the proof of layer 2.
+3. Then prices by place, and the proof of layer 2.
 
 ## Verification evidence
 

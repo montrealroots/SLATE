@@ -31,6 +31,8 @@ describe('the calendar compiler', () => {
     expect(() => compileCalendars((cal, days) => ({ ...tens(cal, days + 3) }))).not.toThrow();
     expect(() => compileCalendars((cal, days) => (days === FROM + 5 ? { year: '1', month: '0', day: 7 } : tens(cal, days)))).toThrow('islamic-umalqura: 2000-1-6 is day 7 of 1/0, after day 5 of 1/0');
     expect(() => compileCalendars((cal, days) => (days === FROM + 10 ? { year: '1', month: '1', day: 2 } : tens(cal, days)))).toThrow('islamic-umalqura: 2000-1-11 is day 2 of 1/1, after day 10 of 1/0');
+    // The last day is walked too: a month beginning on it is kept.
+    expect(compileCalendars((cal, days) => (days === TO ? { year: '2', month: 'x', day: 1 } : tens(cal, days))).ethiopic['2/x']).toBe(TO);
     // A month of eleven days, then ten-day months again, a day later.
     const longer = compileCalendars((cal, days) => (cal !== 'dangi' ? tens(cal, days) : days <= FROM + 10 ? { year: '1', month: '0', day: days - FROM + 1 } : tens(cal, days - 1)));
     expect(Object.entries(longer.dangi).slice(0, 2)).toEqual([['1/0', FROM], ['1/1', FROM + 11]]);

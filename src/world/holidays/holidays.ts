@@ -41,8 +41,8 @@ export const UNKEPT_LINE = 'holidays.unkept';
 export function aboutHolidays(country: CountryCode, year: number): string | undefined {
   const rules = RULES[country];
   if (rules === undefined) return t(UNKEPT_LINE, { country: countryName(country) });
-  const last = rules.announcedTo;
-  return last !== undefined && year > last ? t(UNANNOUNCED_LINE, { country: countryName(country), year: String(last) }) : undefined;
+  const last = rules.announcedTo ?? LAST_YEAR;
+  return year > last ? t(UNANNOUNCED_LINE, { country: countryName(country), year: String(last) }) : undefined;
 }
 
 export const LOCAL_LINE = 'holidays.local';

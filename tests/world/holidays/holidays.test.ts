@@ -4,7 +4,7 @@ import { describe, expect, it } from 'vitest';
 import { civilFromDays, daysFromCivil } from '../../../src/core/time/calendar.ts';
 import { isLine, t } from '../../../src/core/text/text.ts';
 import { COUNTRY_CODES, isCountry, placesOf, regionName, type CountryCode } from '../../../src/world/gazetteer/gazetteer.ts';
-import { CALENDAR_FROM, CALENDAR_TO, daysIn } from '../../../src/world/holidays/calendars.ts';
+import { CALENDAR_FROM, CALENDAR_TO, daysIn, monthIndex } from '../../../src/world/holidays/calendars.ts';
 import {
   FIRST_YEAR,
   LAST_YEAR,
@@ -85,6 +85,18 @@ describe('the reckonings', () => {
     expect(Object.keys(easters.orthodox)).toHaveLength(38);
     for (const [year, text] of Object.entries(easters.orthodox)) expect(easter(Number(year), true), year).toBe(dated(Number(year), text));
   });
+  it('put Easter where the anonymous Gregorian computus (Meeus, Jones, Butcher) does, every year from 1583 to 9999', () => {
+    for (let year = 1583; year <= 9999; year += 1) {
+      const a = year % 19;
+      const b = Math.floor(year / 100);
+      const c = year % 100;
+      const h = (19 * a + b - Math.floor(b / 4) - Math.floor((b - Math.floor((b + 8) / 25) + 1) / 3) + 15) % 30;
+      const l = (32 + 2 * (b % 4) + 2 * Math.floor(c / 4) - h - (c % 4)) % 7;
+      const m = Math.floor((a + 11 * h + 22 * l) / 451);
+      const month = Math.floor((h + l - 7 * m + 114) / 31);
+      expect(easter(year), String(year)).toBe(daysFromCivil(year, month, ((h + l - 7 * m + 114) % 31) + 1));
+    }
+  });
   it('carry a Julian date to the Gregorian calendar', () => {
     expect([julianToDays(2026, 4, 12), julianToDays(2000, 1, 1), julianToDays(2100, 2, 29), julianToDays(2026, 12, 25)].map(iso)).toEqual(['2026-04-25', '2000-01-14', '2100-03-14', '2027-01-07']);
   });
@@ -102,7 +114,15 @@ describe('the reckonings', () => {
     expect(daysIn('dangi', '1', 1, 2026).map(iso)).toEqual(['2026-02-17']);
     expect(daysIn('persian', '1', 1, 2026).map(iso)).toEqual(['2026-03-21']);
     expect(daysIn('ethiopic', '1', 1, 2026).map(iso)).toEqual(['2026-09-11']);
-    expect(daysIn('chinese', '13', 1, 2026)).toEqual([]);
+    expect(() => daysIn('chinese', '13', 1, 2026)).toThrow(new RangeError('the chinese calendar has no month 13'));
+  });
+  it("index a calendar's months by name, each to the day before the next's first, the last to the table's end", () => {
+    expect(monthIndex({ '1/a': 10, '1/b': 20, '2/a': 30 }, 39)).toEqual(
+      new Map([
+        ['a', [{ first: 10, last: 19 }, { first: 30, last: 39 }]],
+        ['b', [{ first: 20, last: 29 }]],
+      ]),
+    );
   });
   it('end the last month compiled where the table ends', () => {
     expect([CALENDAR_FROM, CALENDAR_TO].map(iso)).toEqual(['2000-01-01', '2150-12-31']);
@@ -164,6 +184,7 @@ describe('a rule', () => {
     const fahrt = r({ when: { nth: [4, 4, 1] }, shift: { easter: [-7, 1], plus: 7 } });
     expect([one(fahrt), one(fahrt, 2027), one(fahrt, 2029)]).toEqual([['2026-04-09'], ['2027-04-01'], ['2029-04-05']]);
     expect(one(r({ when: { nth: [4, 4, 1] }, shift: { easter: [-7, -3], plus: 7 } }))).toEqual(['2026-04-09']);
+    expect(one(r({ when: { nth: [4, 4, 1] }, shift: { easter: [-2, 1], plus: 7 } }))).toEqual(['2026-04-02']);
     expect(one(r({ when: { nth: [4, 4, 1] }, shift: { easter: [-6, -4], plus: 7 } }))).toEqual(['2026-04-02']);
     expect(one(r({ when: { nth: [4, 4, 1] }, shift: { easter: [-3, 1], plus: 7 } }))).toEqual(['2026-04-09']);
   });
@@ -177,6 +198,8 @@ describe('a rule', () => {
     expect(at({ holidays: christmas(), substitute: [{ on: [0], to: 'next', as: 'well' }] }, 2027)).toEqual(['2027-12-25 Christmas', '2027-12-26 Boxing', '2027-12-27 Boxing (instead)']);
     expect(at({ holidays: christmas({ move: [{ on: [6], to: 'previous' }] }) }, 2027)).toEqual(['2027-12-24 Christmas (instead)', '2027-12-25 Christmas (moved)', '2027-12-26 Boxing']);
     expect(at({ holidays: christmas({ move: [{ on: [6], to: 'previous' }] }), substitute: [{ on: [0], to: 'next' }] }, 2027)).toEqual(['2027-12-24 Christmas (instead)', '2027-12-25 Christmas (moved)', '2027-12-26 Boxing (moved)', '2027-12-27 Boxing (instead)']);
+    // In order of the days they stand for, whatever the order of the rules.
+    expect(at({ holidays: christmas().reverse(), substitute: [weekend] }, 2027)).toEqual(['2027-12-25 Christmas (moved)', '2027-12-26 Boxing (moved)', '2027-12-27 Christmas (instead)', '2027-12-28 Boxing (instead)']);
     expect(at({ holidays: christmas(), substitute: [weekend] }, 2026)).toEqual(['2026-12-25 Christmas', '2026-12-26 Boxing (moved)', '2026-12-28 Boxing (instead)']);
     // A substitute that falls in the next year isn't this year's: 2028-12-31 is a Sunday.
     expect(at({ holidays: [r({ name: 'Eve', when: { fixed: [12, 31] } })], substitute: [weekend] }, 2028)).toEqual(['2028-12-31 Eve (moved)']);
