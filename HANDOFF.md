@@ -18,8 +18,8 @@ restarts. Read `CLAUDE.md` and the owner's package in `docs/` first.
   told where the weather is borrowed from), 6 proven, none pending. `tools/wmo/compile.ts` and `coverage.ts` are at
   100% mutation score with the last sources (1,559 mutants; the survivors of that run killed by tests or simpler
   lines, and the two equivalent ones disabled with their reasons). The
-  holidays (`world.holidays`): the engine, its reckonings and its gate wiring are built and tested; 110 countries
-  researched (379 official lists matched day for day), 6 proven, 133 pending, and Canada blocked for two of its
+  holidays (`world.holidays`): the engine, its reckonings and its gate wiring are built and tested; 111 countries
+  researched (380 official lists matched day for day), 6 proven, 132 pending, and Canada blocked for two of its
   regions (Prince Edward Island's and Yukon's own); its code at 100% mutation score (532 mutants, with the regions'
   and the shared substitutes' rules). Then prices.
 
@@ -367,6 +367,14 @@ What layer 0 holds:
      bulletin-ci-public-holidays-2026.pdf, -cki-, and the 2027 ones A14 and A15 of 2026) exist, but the host resets
      every connection here (as fairwork.gov.au does); Norfolk's under the Norfolk Island Continued Laws (Public
      Holidays) Ordinance 2016. Retry.
+   - KI: 2026 done from the Beretitenti's order of 18 December 2025 (president.gov.ki Gazettes & Instruments);
+     announced to 2026. Read the Public Holidays Ordinance (Cap. 81) s. 2 (PacLII refuses) to keep its own days
+     after, and add each year's order (published each December).
+   - Attempts by country this session (for their blockers when every method has failed) are in the scratch log
+     summarised here: MN (law read at legalinfo.mn art. 4.1; Düichen and Chinggis Khaan's day 2026 unconfirmed),
+     NU (gov.nu circulars read to October; its law not found), AG (portal out of date; Act needed), SN (1974 law
+     only), ZW and MW (LII documents behind Cloudflare), VI (court's § 171(a) list read; weekend rule unread),
+     CL, IQ, LY, PM, BY, BT, EG, TL, MA, CX, CC, NF: sites refuse or hold no list.
    - Two sources found: a page's own public data list read as the page reads it (Mauritius's SharePoint list, Qatar's
      Ministry of Justice API) is fine; an API that needs a key embedded in a site's script (Andorra's BOPA) is not.
 3. Then prices by place, and the proof of layer 2.

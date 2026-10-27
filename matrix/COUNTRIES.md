@@ -124,7 +124,7 @@ a place fills a column; a cell is the row's status in that engine's matrix, or b
 | KE | Kenya | researched | researched | researched | researched | pending |
 | KG | Kyrgyzstan | researched | researched | researched | researched | pending |
 | KH | Cambodia | researched | researched | researched | blocked | researched |
-| KI | Kiribati | researched | researched | researched | researched | pending |
+| KI | Kiribati | researched | researched | researched | researched | researched |
 | KM | Comoros | researched | researched | researched | blocked | pending |
 | KN | Saint Kitts and Nevis | researched | researched | researched | researched | pending |
 | KP | North Korea | researched | researched | researched | researched | pending |
