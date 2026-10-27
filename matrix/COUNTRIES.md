@@ -137,7 +137,7 @@ a place fills a column; a cell is the row's status in that engine's matrix, or b
 | LC | Saint Lucia | researched | researched | researched | researched | researched |
 | LI | Liechtenstein | researched | researched | researched | researched | researched |
 | LK | Sri Lanka | researched | researched | researched | researched | researched |
-| LR | Liberia | researched | researched | researched | researched | pending |
+| LR | Liberia | researched | researched | researched | researched | blocked |
 | LS | Lesotho | researched | researched | researched | blocked | blocked |
 | LT | Lithuania | researched | researched | researched | researched | researched |
 | LU | Luxembourg | researched | researched | researched | researched | researched |
