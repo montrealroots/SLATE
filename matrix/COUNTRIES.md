@@ -162,7 +162,7 @@ a place fills a column; a cell is the row's status in that engine's matrix, or b
 | MT | Malta | researched | researched | researched | researched | researched |
 | MU | Mauritius | researched | researched | researched | researched | researched |
 | MV | Maldives | researched | researched | researched | researched | researched |
-| MW | Malawi | researched | researched | researched | researched | pending |
+| MW | Malawi | researched | researched | researched | researched | blocked |
 | MX | Mexico | researched | researched | researched | researched | researched |
 | MY | Malaysia | researched | researched | researched | researched | blocked |
 | MZ | Mozambique | researched | researched | researched | researched | pending |

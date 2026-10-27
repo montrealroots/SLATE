@@ -207,7 +207,7 @@ What layer 0 holds:
      snapshot fetch on 2026-10-27 and hasn't ruled on them; ask before fetching. ST: visitsaotomeprincipe.st/pt/
      feriados (16 June 2026, Lei 8/2025's sixteen days); HT: Le Relief's Carnival article (10 May 2026); IQ: t4p.co's
      article on Law 12/2024's list (16 February 2025); IR: calendar.ut.ac.ir (12 July 2026; no .ir host answers here).
-   - HT, SL, ST, CV, SO, IQ, IR, LA, MM, AF, KP: blocked 2026-10-27 (R-0322 on); retry each blocker's sources. TJ: deferred (the
+   - HT, SL, ST, CV, SO, IQ, IR, LA, MM, AF, KP, MW: blocked 2026-10-27 (R-0322 on); retry each blocker's sources. TJ: deferred (the
      law's current text, ncz.tj, doesn't answer; its 2012 text and the Labour Code are read, see below).
    - AT: RIS bot-check; wien.gv.at times out -> retry
    - LU: guichet page moved; try legilux Code du travail L.232-2
@@ -480,6 +480,10 @@ What layer 0 holds:
      host, commons.laws.africa/akn/ug/act/1965/23/eng@2023-12-31.pdf, past ULII's Cloudflare). Hijri days by Umm al-Qura.
      Open: the President's s. 2(2) days for 2026 (NRM Liberation Day 26 January and the 15 January election day are
      reported by aggregators only).
+   - MW: blocked 2026-10-27: the Act's Schedule is read only as consolidated at 31 December 2014 (commons.laws.africa
+     /akn/mw/act/1967/11/eng@2014-12-31.pdf); the Gazette orders since (Africa Day, Chakufwa Chihana Day, Eid al-Adha?)
+     and 2026's orders are unread. Laws.Africa's commons host also serves other LIIs' consolidations past their bot
+     checks (Uganda's 2023 revision): try it for each African country before blocking.
    - TN: done 2026-10-27: décret présidentiel 2021-223 (legislation-securite.tn's JORT text) and the 2026 Islamic
      days as the Mufti and the Prime Minister's office announced them (Kapitalis WP API). 2027: the same announcements.
    - BQ: Regeling feestdagen ambtenaren BES (stcrt-2019-63152, read): Bonaire 30 Apr Dia di Rincon, 6 Sep Dia di
