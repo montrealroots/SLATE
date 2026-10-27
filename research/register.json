@@ -14054,6 +14054,45 @@
     }
    ],
    "notModeled": "holidays.unkept"
+  },
+  {
+   "id": "R-0326",
+   "fact": "world.holidays.blocked.CV",
+   "sought": "Cabo Verde's national holidays, the law that names them, and each concelho's municipal day",
+   "status": "blocked",
+   "attempts": [
+    {
+     "method": "institution",
+     "tried": "Governo de Cabo Verde (governo.cv, its WordPress API: 'feriado', 'feriados nacionais', 'tolerância de ponto'); the Embassy in Berlin (embassy-capeverde.de/holidays.html); the Consulate-General in the Netherlands (conscv.nl/pt/consulado-geral/feriados)",
+     "result": "The government posts only the civil service's tolerâncias de ponto; the two missions' lists disagree (Berlin has 1 June and no Good Friday, the Netherlands Good Friday and no 1 June), and neither cites the law.",
+     "date": "2026-10-27"
+    },
+    {
+     "method": "official-register",
+     "tried": "The Boletim Oficial (boe.incv.cv/Bulletins, free text search: 'feriados nacionais', '\"fixa os feriados\"', '\"feriados obrigatórios\"', '\"são feriados nacionais\"'); the Código Laboral (BO of 16 October 2007, correios.cv's copy)",
+     "result": "No diploma naming the holidays among the results; the Código Laboral refers to 'feriados fixados por lei' without listing them.",
+     "date": "2026-10-27"
+    },
+    {
+     "method": "web-search",
+     "tried": "'Cabo Verde feriados nacionais lei decreto-lei lista \"13 de janeiro\" \"20 de janeiro\" \"5 de julho\" \"1 de novembro\" Boletim Oficial feriados obrigatórios Código Laboral artigo'",
+     "result": "Lei n.º 106/VIII/2016 (as amended by Lei n.º 4/IX/2016) concerns how the national holidays are commemorated, not which they are; calendar sites mix national, municipal and movable days.",
+     "date": "2026-10-27"
+    },
+    {
+     "method": "trade-press",
+     "tried": "Inforpress (inforpress.cv) and Expresso das Ilhas (expressodasilhas.cv), for a 2026 holiday list",
+     "result": "Neither site has a searchable archive from here (no WordPress API; Inforpress is a script-rendered app).",
+     "date": "2026-10-27"
+    },
+    {
+     "method": "archive",
+     "tried": "The Wayback Machine's availability index for governo.cv and the Berlin embassy's page",
+     "result": "No snapshot of a government holiday page; snapshots were not fetched in any case.",
+     "date": "2026-10-27"
+    }
+   ],
+   "notModeled": "holidays.unkept"
   }
  ]
 }
