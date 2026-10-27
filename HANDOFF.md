@@ -223,7 +223,11 @@ What layer 0 holds:
      and Sarawak's Cap. 8 rules (PDFs on the same page), states' own added days.
    - XK: law read 2026-10-27 (gzk.rks-gov.net ActID=2539, form post for the PDF: arts. 2 and 4); the Ministry of
      Internal Affairs' 2026 calendar not found (BQK hosted 2024's and 2025's). MK: official sites reset or fail TLS.
-     MD: legis.md behind Cloudflare. GE: matsne.gov.ge denies access.
+     MD: legis.md behind Cloudflare; 2026 lead: diez.md (1 Jan 2026) lists the 13 days (1 Jan, 7-8 Jan, 8 Mar,
+     Easter Sunday and Monday, Paștele Blajinilor, 1 May, 9 May, 1 Jun, 27 and 31 Aug, 25 Dec); radiomoldova.md
+     says 1 and 2 June 2026 "vor fi declarate libere": find that Government decision (gov.md, monitorul.md answer)
+     and read Codul muncii art. 111 from a copy that isn't legis.md. Hram days are local (below region): left out.
+     GE: matsne.gov.ge denies access.
    - ME: done 2026-10-27 from the 2022 consolidated law (data.gov.me); the 2023 amendments (Njegoš Day two days, a
      state holiday) through the press: retry sluzbenilist.me (504) for 3/23 and 30/23.
    - BA: done 2026-10-27 for the Federation (SFRJ law, Government decisions: announced to 2026) and Srpska (its Law on
