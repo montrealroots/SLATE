@@ -351,6 +351,13 @@ What layer 0 holds:
      with décrets 2025-1974 (2 January) and 2026-2212 (25 September). Missing: the Eids' dates (2424.mg: Eid al-Fitr
      20 March), the Taombaovao Malagasy and national culture day dates (art. 2, 3), and the 24 July mourning decree
      (2424.mg). 8 March is for women only (one group).
+   - CM: lead 2026-10-27: loi 73-5 of 7 December 1973 as amended by loi 76-08 (Cameroon Tribune article 53913
+     quotes arts. 2 to 4: civil 1 January, 11 February, 1 May, 20 May; religious Ascension, Good Friday, 15 August,
+     25 December, both Eids; art. 4 presidential bridge days by decree); Eid al-Fitr 20 March 2026 (237online
+     quoting the CNCL). Missing: 2026's Eid al-Adha date and any bridge decrees (prc.cm, lebledparle 403s).
+   - CG: lead 2026-10-27: loi 2-94 of 1 March 1994 cited by the ministry (aci.cg WP API: Whit Monday 25 May; 16 April
+     2026 investiture day off, arrêté in JO 2026-16 at sgg.cg/JO/2026/). The law's article 1 list isn't online
+     (sgg.cg JO from 1994 absent); find it to finish.
    - SN: done 2026-10-27: loi 74-52 (read in the Assembly's file at vie-publique.sn), Tamxarit from loi 83-54 (the
      scan read as an image), 1 February gone by loi 89-41, the Grand Magal by loi 2013-10 (Dakaractu); 2026's
      Islamic days are CONACOC's through APS; 19 January the President's day off. Announced to 2026.
