@@ -4871,6 +4871,176 @@
    }
   ]
  },
+ "CI": {
+  "holidays": [
+   {
+    "name": "Jour de l’an",
+    "when": {
+     "fixed": [
+      1,
+      1
+     ]
+    }
+   },
+   {
+    "name": "Lendemain de la Nuit du Destin",
+    "when": {
+     "lunar": [
+      "islamic-umalqura",
+      "9",
+      27
+     ]
+    }
+   },
+   {
+    "name": "Fête de fin du Ramadan (Aïd el-Fitr)",
+    "when": {
+     "lunar": [
+      "islamic-umalqura",
+      "10",
+      1
+     ]
+    },
+    "move": [
+     {
+      "on": [
+       0
+      ],
+      "to": "next",
+      "as": "well"
+     }
+    ]
+   },
+   {
+    "name": "Lundi de Pâques",
+    "when": {
+     "easter": 1
+    }
+   },
+   {
+    "name": "Fête du Travail",
+    "when": {
+     "fixed": [
+      5,
+      1
+     ]
+    },
+    "move": [
+     {
+      "on": [
+       0
+      ],
+      "to": "next",
+      "as": "well"
+     }
+    ]
+   },
+   {
+    "name": "Ascension",
+    "when": {
+     "easter": 39
+    }
+   },
+   {
+    "name": "Lundi de Pentecôte",
+    "when": {
+     "easter": 50
+    }
+   },
+   {
+    "name": "Fête de la Tabaski (Aïd el-Kébir)",
+    "when": {
+     "lunar": [
+      "islamic-umalqura",
+      "12",
+      10
+     ]
+    },
+    "move": [
+     {
+      "on": [
+       0
+      ],
+      "to": "next",
+      "as": "well"
+     }
+    ]
+   },
+   {
+    "name": "Fête nationale",
+    "when": {
+     "fixed": [
+      8,
+      7
+     ]
+    },
+    "move": [
+     {
+      "on": [
+       0
+      ],
+      "to": "next",
+      "as": "well"
+     }
+    ]
+   },
+   {
+    "name": "Assomption",
+    "when": {
+     "fixed": [
+      8,
+      15
+     ]
+    }
+   },
+   {
+    "name": "Lendemain du Maouloud",
+    "when": {
+     "lunar": [
+      "islamic-umalqura",
+      "3",
+      12
+     ]
+    }
+   },
+   {
+    "name": "Toussaint",
+    "when": {
+     "fixed": [
+      11,
+      1
+     ]
+    }
+   },
+   {
+    "name": "Journée nationale de la Paix",
+    "when": {
+     "fixed": [
+      11,
+      15
+     ]
+    }
+   },
+   {
+    "name": "Noël",
+    "when": {
+     "fixed": [
+      12,
+      25
+     ]
+    },
+    "move": [
+     {
+      "on": [
+       0
+      ],
+      "to": "next",
+      "as": "well"
+     }
+    ]
+   }
+  ]
+ },
  "CN": {
   "regional": [
    "CN.01",
