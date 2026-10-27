@@ -19,7 +19,7 @@ restarts. Read `CLAUDE.md` and the owner's package in `docs/` first.
   100% mutation score with the last sources (1,559 mutants; the survivors of that run killed by tests or simpler
   lines, and the two equivalent ones disabled with their reasons). The
   holidays (`world.holidays`): the engine, its reckonings and its gate wiring are built and tested; 111 countries
-  researched (401 official lists matched day for day), 6 proven, 131 pending, and Canada blocked for two of its
+  researched (401 official lists matched day for day), 6 proven, 130 pending, and Canada blocked for two of its
   regions (Prince Edward Island's and Yukon's own); its code at 100% mutation score (532 mutants, with the regions'
   and the shared substitutes' rules). Then prices.
 
@@ -330,8 +330,8 @@ What layer 0 holds:
      (scratchpad aia.sh), verification on.
    - GG: done 2026-10-27; Alderney blocked (alderney.gov.gg not answering, Guernsey Legal Resources behind Cloudflare):
      retry for its list (first Monday of August, Homecoming Day 15 December, no Liberation Day per the press).
-   - IM: gov.im's bank holidays page and legislation.gov.im answer "Request Rejected" (not circumvented); the Bank
-     Holidays Act 1989 and the Treasury's yearly notice (TT Bank Holiday, Tynwald Day). Retry.
+   - IM: blocked 2026-10-27 (gov.im and legislation.gov.im reject requests, tynwald.org.im 403): retry gov.im's
+     bank holidays page and the Bank Holidays Act 1989.
    - AD: national days read (govern.ad's notes of the 2026 and 2027 labour-calendar decrees: 14 days, none moved;
      Llei 31/2018 art. 62). Each comú (the 7 parishes, AD's regions) adds up to 4 days a year by edict in the BOPA
      (2024's are linked from govern.ad's "Salaris i festius"); the 2026 edicts aren't found, and the BOPA's search
