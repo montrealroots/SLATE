@@ -18,8 +18,8 @@ restarts. Read `CLAUDE.md` and the owner's package in `docs/` first.
   told where the weather is borrowed from), 6 proven, none pending. `tools/wmo/compile.ts` and `coverage.ts` are at
   100% mutation score with the last sources (1,559 mutants; the survivors of that run killed by tests or simpler
   lines, and the two equivalent ones disabled with their reasons). The
-  holidays (`world.holidays`): the engine, its reckonings and its gate wiring are built and tested; 131 countries
-  researched (511 official lists matched day for day), 6 proven, 97 pending, and 18 blocked: the Isle of Man,
+  holidays (`world.holidays`): the engine, its reckonings and its gate wiring are built and tested; 132 countries
+  researched (512 official lists matched day for day), 6 proven, 96 pending, and 18 blocked: the Isle of Man,
   Tanzania, Palau, the British Indian Ocean Territory, the French Southern Lands, the Cook Islands, Tokelau,
   Vanuatu, Micronesia, Tuvalu,
   Saint-Pierre-and-Miquelon and Wallis and Futuna whole, and six for some of their regions (Canada's Prince Edward Island and Yukon, India's four, Australia's
@@ -288,6 +288,13 @@ What layer 0 holds:
      read 2027's Novruz/Ramazan/Qurban decision (nk.gov.az, December 2026).
    - BY: done 2026-10-27 from ilex.by's summary of Decree No. 157 and resolution No. 397 (pravo.by, government.by,
      mintrud.gov.by refuse). Announced to 2026: read 2027's transfer resolution when the Council of Ministers adopts it.
+   - TJ: lead 2026-10-27: the Law on holidays as of 2012 (icnl.org copy: art. 3 non-working 1 Jan, 8 Mar, 21-24 Mar,
+     1 May, 9 May, 27 Jun, 9 Sep, 6 Nov, Ramazon and Qurbon by the religious authority) and the Labour Code art. 89.5
+     (a weekend day on a holiday moves to the next working day; continent-online.com) read. Open: the current text
+     (ncz.tj, amended to 17.06.2026, answers 503), 2026's Ramazon date and any Government transfers (khovar.tj 410,
+     adlia.tj 503); Qurbon 27 May 2026 per the Council of Ulema through Avesta.
+   - TM: done 2026-10-27 from the Labour Code art. 81 (mejlis.gov.tm/single-code/12) and the President's 2026 decrees
+     (turkmenistan.gov.tm, found with its /ru/poisk?key= search). Announced to 2026: read 2027's bayram decrees there.
    - BR: done 2026-10-27: national laws in every state, each state's own from the courts' and prosecutors' 2026
      calendars (the AASP tracker at aasp.org.br/produtos-servicos/expediente-forense/feriados-forenses-2026/ links each
      court's act). Acre announced to 2026 (Lei 2.126/2009 moves some days by a rule not read). Rio's Carnival Tuesday,

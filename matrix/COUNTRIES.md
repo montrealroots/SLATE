@@ -228,7 +228,7 @@ a place fills a column; a cell is the row's status in that engine's matrix, or b
 | TJ | Tajikistan | researched | researched | researched | researched | pending |
 | TK | Tokelau | researched | researched | researched | blocked | blocked |
 | TL | Timor Leste | researched | researched | researched | researched | pending |
-| TM | Turkmenistan | researched | researched | researched | researched | pending |
+| TM | Turkmenistan | researched | researched | researched | researched | researched |
 | TN | Tunisia | researched | researched | researched | researched | pending |
 | TO | Tonga | researched | researched | researched | blocked | researched |
 | TR | Turkey | researched | researched | researched | researched | researched |
