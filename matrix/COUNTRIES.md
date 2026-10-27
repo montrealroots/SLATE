@@ -64,7 +64,7 @@ a place fills a column; a cell is the row's status in that engine's matrix, or b
 | CY | Cyprus | researched | researched | researched | researched | researched |
 | CZ | Czechia | researched | researched | researched | researched | researched |
 | DE | Germany | researched | researched | researched | researched | researched |
-| DJ | Djibouti | researched | researched | researched | blocked | pending |
+| DJ | Djibouti | researched | researched | researched | blocked | researched |
 | DK | Denmark | researched | researched | researched | researched | researched |
 | DM | Dominica | researched | researched | researched | researched | researched |
 | DO | Dominican Republic | researched | researched | researched | researched | researched |
