@@ -18,8 +18,8 @@ restarts. Read `CLAUDE.md` and the owner's package in `docs/` first.
   told where the weather is borrowed from), 6 proven, none pending. `tools/wmo/compile.ts` and `coverage.ts` are at
   100% mutation score with the last sources (1,559 mutants; the survivors of that run killed by tests or simpler
   lines, and the two equivalent ones disabled with their reasons). The
-  holidays (`world.holidays`): the engine, its reckonings and its gate wiring are built and tested; 125 countries
-  researched (505 official lists matched day for day), 6 proven, 103 pending, and 18 blocked: the Isle of Man,
+  holidays (`world.holidays`): the engine, its reckonings and its gate wiring are built and tested; 126 countries
+  researched (506 official lists matched day for day), 6 proven, 102 pending, and 18 blocked: the Isle of Man,
   Tanzania, Palau, the British Indian Ocean Territory, the French Southern Lands, the Cook Islands, Tokelau,
   Vanuatu, Micronesia, Tuvalu,
   Saint-Pierre-and-Miquelon and Wallis and Futuna whole, and six for some of their regions (Canada's Prince Edward Island and Yukon, India's four, Australia's
@@ -255,6 +255,14 @@ What layer 0 holds:
    - NC: done 2026-10-27 from the DTENC's AIT art. 74 list and CPME's 2026 calendar (Lp. 232-1 itself unread; juridoc moved).
    - JM: done 2026-10-27 from the Holidays (Public General) Act's Schedule (mlss.gov.jm PDF); Good Friday and
      Christmas Day through the Gleaner's reading of the Act (laws.moj.gov.jm answers 503): read the Act's text there.
+   - MS: done 2026-10-27 from the Public Holidays Act 2024 (parliament.ms) and 2026's proclamations (gov.ms, the
+     AG's Chambers' S.R.O. list). Announced to 2026: read 2027's birthday proclamation there.
+   - BS: lead 2026-10-27: Ch. 36 (LRO 1/2017, laws.bahamas.gov.bs/cms/images/LEGISLATION/PRINCIPAL/1938/1938-0015/
+     1938-0015_2.pdf) read: only a Sunday holiday moves (to the next day); its Schedule still says 12 October. Open:
+     the National Heroes Act 2007 (second Monday in October?), and whether 10 Jan and 26 Dec 2026 (Saturdays) moved
+     by order (aggregators say Mondays 12 Jan, 28 Dec); 2026's posted Gazettes (84) have no holiday order.
+   - BW: lead 2026-10-27: gov.bw/public-holidays (expired TLS; read through the fetcher) lists 2026 without 2 January;
+     Cap. 03:07's text not read (botswanalaws.com members only, its 2006 Act PDF 404, NATLEX 403).
    - BR: done 2026-10-27: national laws in every state, each state's own from the courts' and prosecutors' 2026
      calendars (the AASP tracker at aasp.org.br/produtos-servicos/expediente-forense/feriados-forenses-2026/ links each
      court's act). Acre announced to 2026 (Lei 2.126/2009 moves some days by a rule not read). Rio's Carnival Tuesday,
