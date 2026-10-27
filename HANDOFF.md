@@ -17,8 +17,8 @@ restarts. Read `CLAUDE.md` and the owner's package in `docs/` first.
   tested, and its matrix is complete: 202 countries researched, 44 blocked (each after all five methods, the player
   told where the weather is borrowed from), 6 proven, none pending. Mutation testing of `tools/wmo/compile.ts` and
   `coverage.ts` with the last sources was cut off by a container restart and is to run again (see Next step). The
-  holidays (`world.holidays`): the engine, its reckonings and its gate wiring are built and tested; 36 countries
-  researched (144 official lists matched day for day), 6 proven, 210 pending; its code at 100% mutation score
+  holidays (`world.holidays`): the engine, its reckonings and its gate wiring are built and tested; 38 countries
+  researched (146 official lists matched day for day), 6 proven, 208 pending; its code at 100% mutation score
   (447 mutants). Then prices.
 
 What layer 2 holds so far:

@@ -1,7 +1,7 @@
 import { civilFromDays } from '../../core/time/calendar.ts';
 import { t } from '../../core/text/text.ts';
 import { USNO_SEASONS } from '../clock/clock.ts';
-import { countryName, type CountryCode } from '../gazetteer/gazetteer.ts';
+import { countryName, regionName, type CountryCode } from '../gazetteer/gazetteer.ts';
 import data from './countries.json' with { type: 'json' };
 import { holidaysIn, type CountryRules, type Holiday } from './rules.ts';
 
@@ -40,15 +40,18 @@ export const UNANNOUNCED_LINE = 'holidays.unannounced';
 export const UNKEPT_LINE = 'holidays.unkept';
 
 /**
- * What the player is told about a country's holidays in a year: where the game doesn't keep them, that every day there
- * is an ordinary one; past the last year its government has announced (Spain's communities choose theirs year by
- * year), that only those its law fixes are kept. Nothing where they're all kept.
+ * What the player is told about a country's holidays in a year, or a region's: where the game doesn't keep them, that
+ * every day there is an ordinary one; past the last year its government has announced (Spain's communities choose
+ * theirs year by year, Georgia's governor its own), that only those its law fixes are kept. Nothing where they're all
+ * kept.
  */
-export function aboutHolidays(country: CountryCode, year: number): string | undefined {
+export function aboutHolidays(country: CountryCode, year: number, region?: string): string | undefined {
   const rules = rulesOf(country);
   if (rules === undefined) return t(UNKEPT_LINE, { country: countryName(country) });
-  const last = rules.announcedTo ?? LAST_YEAR;
-  return year > last ? t(UNANNOUNCED_LINE, { country: countryName(country), year: String(last) }) : undefined;
+  const own = region === undefined ? undefined : rules.regionsAnnouncedTo?.[region];
+  const last = own ?? rules.announcedTo ?? LAST_YEAR;
+  const place = own === undefined ? countryName(country) : (regionName(region as string) as string);
+  return year > last ? t(UNANNOUNCED_LINE, { place, year: String(last) }) : undefined;
 }
 
 export const LOCAL_LINE = 'holidays.local';

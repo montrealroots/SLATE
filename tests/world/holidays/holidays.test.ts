@@ -56,7 +56,7 @@ describe('the holidays of every country kept', () => {
         }
       }
     }
-    expect(read).toBe(144);
+    expect(read).toBe(146);
   });
   it('are each a country of the map with its lists, their regions its own', () => {
     expect(Object.keys(RULES).sort()).toEqual(LISTS.map((l) => l.country).sort());
@@ -222,6 +222,22 @@ describe('a rule', () => {
     const taken: CountryRules = { holidays: [r({ name: 'A', when: { fixed: [9, 21] } }), r({ name: 'B', when: { fixed: [9, 22] } }), r({ name: 'C', when: { fixed: [9, 23] } })], between: 'Between' };
     expect(holidaysIn(taken, 2026).map((h) => h.name)).toEqual(['A', 'B', 'C']);
   });
+  it('holds every so many years, counted from a year it holds in', () => {
+    const election = r({ when: { after: [11, 2, 2] }, cycle: [2, 2026] });
+    expect([one(election), one(election, 2027), one(election, 2028), one(election, 2025)]).toEqual([['2026-11-03'], [], ['2028-11-07'], []]);
+    expect(one(r({ when: { fixed: [1, 2] }, cycle: [3, 2026] }), 2029)).toEqual(['2029-01-02']);
+    expect(one(r({ when: { fixed: [1, 2] }, cycle: [3, 2026] }), 2028)).toEqual([]);
+  });
+  it('takes a substitute across the year: a Saturday 1 January kept on the 31 December before, a 31 December Sunday on the 1 January after', () => {
+    // 2022-01-01 and 2028-01-01 are Saturdays; 2028-12-31 a Sunday.
+    const us: CountryRules = { holidays: [r({ name: 'New Year', when: { fixed: [1, 1] } })], substitute: [{ on: [6], to: 'previous' }, { on: [0], to: 'next' }] };
+    expect(holidaysIn(us, 2021).map((h) => `${iso(h.day)}${h.substitute === true ? ' (instead)' : ''}`)).toEqual(['2021-01-01', '2021-12-31 (instead)']);
+    expect(holidaysIn(us, 2022).map((h) => `${iso(h.day)}${h.moved === true ? ' (moved)' : ''}`)).toEqual(['2022-01-01 (moved)']);
+    const eve: CountryRules = { holidays: [r({ name: 'Eve', when: { fixed: [12, 31] } })], substitute: [{ on: [0], to: 'next' }] };
+    expect(holidaysIn(eve, 2029).map((h) => `${iso(h.day)} ${h.name}${h.substitute === true ? ' (instead)' : ''}`)).toEqual(['2029-01-01 Eve (instead)', '2029-12-31 Eve']);
+    // And a day after a holiday at the year's end lands in the next.
+    expect(one(r({ when: { fixed: [12, 31] }, plus: 1 }))).toEqual(['2026-01-01']);
+  });
   it('orders two holidays on one day by name', () => {
     expect(holidaysIn({ holidays: [r({ name: 'B', when: { fixed: [5, 1] } }), r({ name: 'A', when: { fixed: [5, 1] } })] }, 2026).map((h) => h.name)).toEqual(['A', 'B']);
   });
@@ -281,9 +297,10 @@ describe('the holidays', () => {
   it('tell the player where only the law\'s are kept, past the last year announced', () => {
     expect(UNANNOUNCED_LINE).toBe('holidays.unannounced');
     expect(aboutHolidays('ES', 2027)).toBeUndefined();
-    expect(aboutHolidays('ES', 2028)).toBe(t(UNANNOUNCED_LINE, { country: 'Spain', year: '2027' }));
+    expect(aboutHolidays('ES', 2028)).toBe(t(UNANNOUNCED_LINE, { place: 'Spain', year: '2027' }));
     expect(aboutHolidays('ES', 2028)).toBe("Spain hasn't announced its holidays after 2027 yet, so the calendar keeps only those its law fixes.");
     expect(aboutHolidays('FR', 2100)).toBeUndefined();
+    expect(aboutHolidays('ES', 2028, 'ES.51')).toBe(t(UNANNOUNCED_LINE, { place: 'Spain', year: '2027' }));
   });
   it("tell the player a town's own aren't kept", () => {
     expect(LOCAL_LINE).toBe('holidays.local');

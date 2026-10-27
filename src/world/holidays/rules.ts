@@ -80,6 +80,8 @@ export interface Rule {
   until?: number;
   /** Years it doesn't hold in, by a transitional law (Slovakia's 8 May and 15 September in 2026). */
   except?: number[];
+  /** Held only every so many years, counted from a year it holds in (Illinois' general election day: every 2 from 2026). */
+  cycle?: [every: number, year: number];
   /** Not moved off a weekend, where the country's rule would move others. */
   fixed?: true;
   /** Its own rule for falling on given weekdays, in place of the country's (the Netherlands' King's Day: a Sunday's is the Saturday before). */
@@ -106,6 +108,8 @@ export interface CountryRules {
    * by decree): later years have only the holidays the law fixes.
    */
   announcedTo?: number;
+  /** The same, for a first-level region whose own holidays are set year by year (Georgia's, by its governor). */
+  regionsAnnouncedTo?: Record<string, number>;
   /** A day between two holidays (not substitutes) is one too, by this name (Japan's Act on National Holidays, article 3(3)). */
   between?: string;
 }
@@ -145,14 +149,12 @@ function insteadOf(rule: Rule, year: number): number | undefined {
   return weekdayFromDays(d) === rule.instead.weekday ? d : undefined;
 }
 
-/**
- * A country's holidays in a Gregorian year, in a region of it or nationwide (no region), in order of day: each rule's
- * days, then its substitutes and the days between.
- */
-export function holidaysIn(rules: CountryRules, year: number, region?: string): Holiday[] {
+/** The days a country's rules give in a Gregorian year, in a region of it or nationwide, before any substitute. */
+function ruleDays(rules: CountryRules, year: number, region?: string): Holiday[] {
   const out: Holiday[] = [];
   for (const rule of rules.holidays) {
     if (year < (rule.from ?? -Infinity) || year > (rule.until ?? Infinity) || rule.except?.includes(year) === true) continue;
+    if (rule.cycle !== undefined && (year - rule.cycle[1]) % rule.cycle[0] !== 0) continue;
     if (rule.regions?.includes(region as string) === false) continue;
     if (rule.when_ !== undefined && rule.when_.weekdays.includes(weekdayFromDays(daysFromCivil(year, ...rule.when_.on))) === (rule.when_.not === true)) continue;
     const instead = insteadOf(rule, year);
@@ -162,6 +164,17 @@ export function holidaysIn(rules: CountryRules, year: number, region?: string): 
       out.push({ day: d + (rule.plus ?? 0) + shifted, name: rule.name });
     }
   }
+  return out;
+}
+
+/**
+ * A country's holidays in a Gregorian year, in a region of it or nationwide (no region), in order of day: each rule's
+ * days, then its substitutes and the days between.
+ */
+export function holidaysIn(rules: CountryRules, year: number, region?: string): Holiday[] {
+  // The years either side too: a substitute may cross into this one (the United States' Saturday 1 January, kept on
+  // the 31 December before).
+  const out = [year - 1, year, year + 1].flatMap((y) => ruleDays(rules, y, region));
   const taken = new Set(out.map((h) => h.day));
   // Substitutes, in order of the holidays they stand for, each taking the first day free of the weekdays and of holidays.
   for (const h of [...out].sort((a, b) => a.day - b.day)) {
