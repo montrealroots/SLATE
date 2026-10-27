@@ -192,7 +192,7 @@ a place fills a column; a cell is the row's status in that engine's matrix, or b
 | PS | Palestinian Territory | researched | researched | researched | blocked | pending |
 | PT | Portugal | researched | researched | researched | researched | researched |
 | PW | Palau | researched | researched | researched | researched | pending |
-| PY | Paraguay | researched | researched | researched | researched | pending |
+| PY | Paraguay | researched | researched | researched | researched | researched |
 | QA | Qatar | researched | researched | researched | researched | researched |
 | RE | Reunion | researched | researched | researched | researched | researched |
 | RO | Romania | researched | researched | researched | researched | researched |

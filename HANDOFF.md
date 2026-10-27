@@ -18,8 +18,8 @@ restarts. Read `CLAUDE.md` and the owner's package in `docs/` first.
   told where the weather is borrowed from), 6 proven, none pending. `tools/wmo/compile.ts` and `coverage.ts` are at
   100% mutation score with the last sources (1,559 mutants; the survivors of that run killed by tests or simpler
   lines, and the two equivalent ones disabled with their reasons). The
-  holidays (`world.holidays`): the engine, its reckonings and its gate wiring are built and tested; 113 countries
-  researched (479 official lists matched day for day), 6 proven, 127 pending, and 6 blocked: the Isle of Man
+  holidays (`world.holidays`): the engine, its reckonings and its gate wiring are built and tested; 114 countries
+  researched (480 official lists matched day for day), 6 proven, 126 pending, and 6 blocked: the Isle of Man
   whole, and five for some of their regions (Canada's Prince Edward Island and Yukon, India's four, Australia's
   South Australia, Guernsey's Alderney, Argentina's Formosa); its code at 100% mutation score (532 mutants, with the regions'
   and the shared substitutes' rules). Then prices.
@@ -211,6 +211,17 @@ What layer 0 holds:
      Santiago del Estero, Tierra del Fuego from their texts; Catamarca from FeriadosAR, its digest behind Cloudflare).
      No laborables left out (national and provincial). Formosa blocked (jusformosa.gob.ar 503; try again). La Rioja's
      4 Aug and 12 Nov have no law found: retry Ley 6886's amendments. Jujuy's Ley 5005/1987 unread.
+   - PY: done 2026-10-27 from Ley 7544/2025 (bacn.gov.py) and the 2026 decrees (6215's scan; the 1 Mar, 29 Sep and
+     30 Jun World Cup decrees through ABC Color and Récord; presidencia.gov.py does not answer). Announced to 2026:
+     the executive may still add up to two days in 2026.
+   - MY: lead 2026-10-27: kabinet.gov.my/hari-kelepasan-am has HKA-2026.pdf and HKA_2027.pdf (16 columns: KL,
+     Labuan, Putrajaya, Johor, Kedah, Kelantan, Melaka, N. Sembilan, Pahang, Perak, Perlis, Penang, Sabah, Sarawak,
+     Selangor, Terengganu), P.U.(B) 111/112 of 2026 (20 March added), Act 369 s. 3 (a holiday on the weekly holiday
+     moves to the next day). Open: the Friday-weekend states' practice (Kedah's 1 May to Sunday 3 May), Sabah's Cap. 56
+     and Sarawak's Cap. 8 rules (PDFs on the same page), states' own added days.
+   - XK: law read 2026-10-27 (gzk.rks-gov.net ActID=2539, form post for the PDF: arts. 2 and 4); the Ministry of
+     Internal Affairs' 2026 calendar not found (BQK hosted 2024's and 2025's). MK: official sites reset or fail TLS.
+     MD: legis.md behind Cloudflare. GE: matsne.gov.ge denies access.
    - BR: done 2026-10-27: national laws in every state, each state's own from the courts' and prosecutors' 2026
      calendars (the AASP tracker at aasp.org.br/produtos-servicos/expediente-forense/feriados-forenses-2026/ links each
      court's act). Acre announced to 2026 (Lei 2.126/2009 moves some days by a rule not read). Rio's Carnival Tuesday,
