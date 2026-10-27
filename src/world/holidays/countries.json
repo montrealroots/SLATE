@@ -3434,6 +3434,248 @@
    }
   ]
  },
+ "DO": {
+  "holidays": [
+   {
+    "name": "Año Nuevo",
+    "when": {
+     "fixed": [
+      1,
+      1
+     ]
+    }
+   },
+   {
+    "name": "Día de los Santos Reyes",
+    "when": {
+     "fixed": [
+      1,
+      6
+     ]
+    },
+    "move": [
+     {
+      "on": [
+       2,
+       3
+      ],
+      "to": "previous",
+      "skip": [
+       2,
+       3,
+       4,
+       5,
+       6,
+       0
+      ],
+      "shared": true
+     },
+     {
+      "on": [
+       4,
+       5
+      ],
+      "to": "next",
+      "skip": [
+       2,
+       3,
+       4,
+       5,
+       6,
+       0
+      ],
+      "shared": true
+     }
+    ]
+   },
+   {
+    "name": "Día de Nuestra Señora de la Altagracia",
+    "when": {
+     "fixed": [
+      1,
+      21
+     ]
+    }
+   },
+   {
+    "name": "Natalicio de Juan Pablo Duarte",
+    "when": {
+     "fixed": [
+      1,
+      26
+     ]
+    },
+    "move": [
+     {
+      "on": [
+       2,
+       3
+      ],
+      "to": "previous",
+      "skip": [
+       2,
+       3,
+       4,
+       5,
+       6,
+       0
+      ],
+      "shared": true
+     },
+     {
+      "on": [
+       4,
+       5
+      ],
+      "to": "next",
+      "skip": [
+       2,
+       3,
+       4,
+       5,
+       6,
+       0
+      ],
+      "shared": true
+     }
+    ]
+   },
+   {
+    "name": "Día de la Independencia Nacional",
+    "when": {
+     "fixed": [
+      2,
+      27
+     ]
+    }
+   },
+   {
+    "name": "Viernes Santo",
+    "when": {
+     "easter": -2
+    }
+   },
+   {
+    "name": "Día del Trabajo",
+    "when": {
+     "fixed": [
+      5,
+      1
+     ]
+    },
+    "move": [
+     {
+      "on": [
+       2,
+       3
+      ],
+      "to": "previous",
+      "skip": [
+       2,
+       3,
+       4,
+       5,
+       6,
+       0
+      ],
+      "shared": true
+     },
+     {
+      "on": [
+       4,
+       5
+      ],
+      "to": "next",
+      "skip": [
+       2,
+       3,
+       4,
+       5,
+       6,
+       0
+      ],
+      "shared": true
+     }
+    ]
+   },
+   {
+    "name": "Corpus Christi",
+    "when": {
+     "easter": 60
+    }
+   },
+   {
+    "name": "Día de la Restauración",
+    "when": {
+     "fixed": [
+      8,
+      16
+     ]
+    }
+   },
+   {
+    "name": "Día de Nuestra Señora de las Mercedes",
+    "when": {
+     "fixed": [
+      9,
+      24
+     ]
+    }
+   },
+   {
+    "name": "Día de la Constitución",
+    "when": {
+     "fixed": [
+      11,
+      6
+     ]
+    },
+    "move": [
+     {
+      "on": [
+       2,
+       3
+      ],
+      "to": "previous",
+      "skip": [
+       2,
+       3,
+       4,
+       5,
+       6,
+       0
+      ],
+      "shared": true
+     },
+     {
+      "on": [
+       4,
+       5
+      ],
+      "to": "next",
+      "skip": [
+       2,
+       3,
+       4,
+       5,
+       6,
+       0
+      ],
+      "shared": true
+     }
+    ]
+   },
+   {
+    "name": "Día de Navidad",
+    "when": {
+     "fixed": [
+      12,
+      25
+     ]
+    }
+   }
+  ]
+ },
  "EE": {
   "holidays": [
    {
