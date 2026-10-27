@@ -18,8 +18,8 @@ restarts. Read `CLAUDE.md` and the owner's package in `docs/` first.
   told where the weather is borrowed from), 6 proven, none pending. `tools/wmo/compile.ts` and `coverage.ts` are at
   100% mutation score with the last sources (1,559 mutants; the survivors of that run killed by tests or simpler
   lines, and the two equivalent ones disabled with their reasons). The
-  holidays (`world.holidays`): the engine, its reckonings and its gate wiring are built and tested; 152 countries
-  researched (544 official lists matched day for day), 6 proven, 73 pending, and 21 blocked: the Isle of Man,
+  holidays (`world.holidays`): the engine, its reckonings and its gate wiring are built and tested; 153 countries
+  researched (545 official lists matched day for day), 6 proven, 72 pending, and 21 blocked: the Isle of Man,
   Tanzania, Palau, the British Indian Ocean Territory, the French Southern Lands, the Cook Islands, Tokelau,
   Vanuatu, Micronesia, Tuvalu,
   Saint-Pierre-and-Miquelon, Wallis and Futuna, Christmas Island and the Cocos (Keeling) Islands whole, and seven for some of their regions (Canada's Prince Edward Island and Yukon, India's four, Australia's
@@ -271,9 +271,6 @@ What layer 0 holds:
      (s. 6, 6 July), Youman Nabi (25 Aug) and Deepavali (8 Nov, and Monday 9 Nov) notices; Republic Day, Phagwah,
      Independence, Eid-ul-Azha, Emancipation and Christmas notices for 2026 not found (officialgazette.gov.gy is a
      script app; DPI has no notice).
-   - KN: lead 2026-10-27: Cap. 23.23 (revised to 2002, lawcommission.gov.kn Act02and09TOC/Ch-23_23-Public-Holidays-Act.pdf)
-     read; Carnival Day (2 Jan), Culturama Day and the Sovereign's birthday are proclaimed yearly: 2026's S.R.O.s are
-     not online (annual laws end at 2025).
    - MN: done 2026-10-27 from the holidays law (legalinfo.mn lawId=399, art. 4.1), the Government's 2026 moves
      (mlsp.gov.mn: Bituun 17 Feb; cabinet.gov.mn: 16-17 July) and Zindaa for the lunar days' 2026 dates. Announced
      to 2026: the Mongolian lunar calendar isn't in the engine; 2027's Tsagaan Sar, Düichen and Chinggis days and
@@ -370,6 +367,9 @@ What layer 0 holds:
      Chief Secretary's 2026 and 2027 notices, found through sainthelena.gov.sh/wp-json/wp/v2/media?search=holidays;
      the country's days are those Ascension's Ordinance shares. Ascension (SH.01) and Tristan (SH.03) blocked: no
      2026 notice or list (ascension.gov.ac resets; tristandc.com reports King's Day, Anniversary Day, Ratting Day).
+   - KN: done 2026-10-27: Cap. 23.23 (revised 2002) and the Nevis Island Administration's 2026 list
+     (nia.gov.kn/public-holidays/) for the proclaimed Carnival and Culturama days. Announced to 2026; Buckley's
+     Uprising day is to be added from 2027 (SKNIS, 29 January 2026).
    - SN: done 2026-10-27: loi 74-52 (read in the Assembly's file at vie-publique.sn), Tamxarit from loi 83-54 (the
      scan read as an image), 1 February gone by loi 89-41, the Grand Magal by loi 2013-10 (Dakaractu); 2026's
      Islamic days are CONACOC's through APS; 19 January the President's day off. Announced to 2026.
