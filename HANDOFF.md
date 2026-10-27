@@ -18,8 +18,8 @@ restarts. Read `CLAUDE.md` and the owner's package in `docs/` first.
   told where the weather is borrowed from), 6 proven, none pending. `tools/wmo/compile.ts` and `coverage.ts` are at
   100% mutation score with the last sources (1,559 mutants; the survivors of that run killed by tests or simpler
   lines, and the two equivalent ones disabled with their reasons). The
-  holidays (`world.holidays`): the engine, its reckonings and its gate wiring are built and tested; 138 countries
-  researched (526 official lists matched day for day), 6 proven, 88 pending, and 20 blocked: the Isle of Man,
+  holidays (`world.holidays`): the engine, its reckonings and its gate wiring are built and tested; 139 countries
+  researched (528 official lists matched day for day), 6 proven, 87 pending, and 20 blocked: the Isle of Man,
   Tanzania, Palau, the British Indian Ocean Territory, the French Southern Lands, the Cook Islands, Tokelau,
   Vanuatu, Micronesia, Tuvalu,
   Saint-Pierre-and-Miquelon, Wallis and Futuna, Christmas Island and the Cocos (Keeling) Islands whole, and six for some of their regions (Canada's Prince Edward Island and Yukon, India's four, Australia's
@@ -315,9 +315,10 @@ What layer 0 holds:
      court's act). Acre announced to 2026 (Lei 2.126/2009 moves some days by a rule not read). Rio's Carnival Tuesday,
      Corpus Christi, Paraíba's 5 August, Santa Catarina's Sunday Data Magna and Tocantins's 2026 move rest on the
      press: read their laws (alerj, tjpb, alesc, diariooficial.to.gov.br) when reachable.
-   - CL: gob.cl/feriados Cloudflare 403; bcn.cl/leychile 401; diariooficial 403; dt.gob.cl reachable (find its
-     feriados page). Regional: Arica y Parinacota 7 Jun, Ñuble 20 Aug; moving rules (San Pedro, Encuentro de Dos
-     Mundos, Evangélicas, Pueblos Indígenas solstice). Retry.
+   - CL: done 2026-10-27: Leyes 19.668, 20.148, 20.299 (BCN texts via docs.chile.justia.com; 2.977, 20.663 and
+     21.357 answer 403 there), the DT's consults (art. 35 ter's 17/20 September), Meganoticias' 2026 list; the
+     solstice day is the clock's at UTC-4 (listed to 2100). Arica y Parinacota's 7 June kept; Chillán's 20 August
+     (two communes) left out. Election days (Ley 18.700 art. 169) are holidays: add them for 2027+ when called.
    - EC: official calendar (Viceministerio de Turismo, 2025-2030) and Decreto Ejecutivo 249 (2 Jan 2026) not yet
      found on turismo.gob.ec / trabajo.gob.ec; Ley Orgánica de Servicio Público art. 2016 traslado rules to read.
      Retry.
