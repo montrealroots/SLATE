@@ -18,8 +18,8 @@ restarts. Read `CLAUDE.md` and the owner's package in `docs/` first.
   told where the weather is borrowed from), 6 proven, none pending. `tools/wmo/compile.ts` and `coverage.ts` are at
   100% mutation score with the last sources (1,559 mutants; the survivors of that run killed by tests or simpler
   lines, and the two equivalent ones disabled with their reasons). The
-  holidays (`world.holidays`): the engine, its reckonings and its gate wiring are built and tested; 146 countries
-  researched (535 official lists matched day for day), 6 proven, 80 pending, and 20 blocked: the Isle of Man,
+  holidays (`world.holidays`): the engine, its reckonings and its gate wiring are built and tested; 147 countries
+  researched (536 official lists matched day for day), 6 proven, 79 pending, and 20 blocked: the Isle of Man,
   Tanzania, Palau, the British Indian Ocean Territory, the French Southern Lands, the Cook Islands, Tokelau,
   Vanuatu, Micronesia, Tuvalu,
   Saint-Pierre-and-Miquelon, Wallis and Futuna, Christmas Island and the Cocos (Keeling) Islands whole, and six for some of their regions (Canada's Prince Edward Island and Yukon, India's four, Australia's
@@ -336,6 +336,8 @@ What layer 0 holds:
    - GA: done 2026-10-27: décret 00727/1998 as amended in 2004 (its text not online; its days are the Labour
      ministry's communiqués citing it, through agpgabon.ga's and gabonmediatime.com's WP APIs) and 30 August from
      décret 0096/2024. Announced to 2026.
+   - BJ: done 2026-10-27: loi 90-019 (La Nouvelle Tribune quoting it) and the ministry's communiqués through
+     beninwebtv.bj's WP API; the traditional religions' days 8 and 9 January 2026 by communiqué. Announced to 2026.
    - SN: done 2026-10-27: loi 74-52 (read in the Assembly's file at vie-publique.sn), Tamxarit from loi 83-54 (the
      scan read as an image), 1 February gone by loi 89-41, the Grand Magal by loi 2013-10 (Dakaractu); 2026's
      Islamic days are CONACOC's through APS; 19 January the President's day off. Announced to 2026.

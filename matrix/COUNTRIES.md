@@ -30,7 +30,7 @@ a place fills a column; a cell is the row's status in that engine's matrix, or b
 | BG | Bulgaria | researched | researched | researched | researched | researched |
 | BH | Bahrain | researched | researched | researched | researched | researched |
 | BI | Burundi | researched | researched | researched | blocked | pending |
-| BJ | Benin | researched | researched | researched | researched | pending |
+| BJ | Benin | researched | researched | researched | researched | researched |
 | BL | Saint Barthelemy | researched | researched | researched | researched | researched |
 | BM | Bermuda | researched | researched | researched | researched | researched |
 | BN | Brunei | researched | researched | researched | researched | pending |
