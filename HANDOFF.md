@@ -18,8 +18,8 @@ restarts. Read `CLAUDE.md` and the owner's package in `docs/` first.
   told where the weather is borrowed from), 6 proven, none pending. `tools/wmo/compile.ts` and `coverage.ts` are at
   100% mutation score with the last sources (1,559 mutants; the survivors of that run killed by tests or simpler
   lines, and the two equivalent ones disabled with their reasons). The
-  holidays (`world.holidays`): the engine, its reckonings and its gate wiring are built and tested; 143 countries
-  researched (532 official lists matched day for day), 6 proven, 83 pending, and 20 blocked: the Isle of Man,
+  holidays (`world.holidays`): the engine, its reckonings and its gate wiring are built and tested; 144 countries
+  researched (533 official lists matched day for day), 6 proven, 82 pending, and 20 blocked: the Isle of Man,
   Tanzania, Palau, the British Indian Ocean Territory, the French Southern Lands, the Cook Islands, Tokelau,
   Vanuatu, Micronesia, Tuvalu,
   Saint-Pierre-and-Miquelon, Wallis and Futuna, Christmas Island and the Cocos (Keeling) Islands whole, and six for some of their regions (Canada's Prince Edward Island and Yukon, India's four, Australia's
@@ -323,9 +323,13 @@ What layer 0 holds:
    - EG: done 2026-10-27 from the 2026 decrees as Amwal Al Ghad and Arab Finance report them (en.amwalalghad.com's
      /wp-json/wp/v2/posts?search= finds each). Announced to 2026. Read Ministerial Decree 294 of 2025's list (for
      Sinai Liberation Day and the private sector's Eid al-Fitr length) when found.
-   - MR: lead 2026-10-27: ami.mr's /wp-json/wp/v2/posts?search=عطلة finds the Presidency's 2026 notices (Friday
-     2 January and the two days after Eid al-Adha as "عطلة معوضة", made up later); the law or decree listing the
-     fêtes légales not found yet.
+   - MR: lead 2026-10-27: ami.mr's WP API (slow; allow 150 s) gives the Presidency's 2026 decrees (2 January; 28
+     and 29 May "عطلة معوضة") and the crescent committee's dates (Eid al-Fitr Fri 20 March; Dhu al-Hijja 1 = 18 May,
+     Eid al-Adha 27 May; 1 Muharram Wed 17 June; Mawlid Wed 26 August). Missing: the decree listing the fêtes
+     légales (whether 25 May and each Eid's length); Japan's embassy calendar (mr.emb-japan.go.jp/files/100941532.pdf)
+     answers 403.
+   - BF: done 2026-10-27: loi 001-2026/ALT of 9 January 2026 (Burkina24 quoting the minister), 3 January under the
+     2015 law, and 2026's FAIB dates and ministry communiqués through burkina24.com's WP API. Announced to 2026.
    - SN: done 2026-10-27: loi 74-52 (read in the Assembly's file at vie-publique.sn), Tamxarit from loi 83-54 (the
      scan read as an image), 1 February gone by loi 89-41, the Grand Magal by loi 2013-10 (Dakaractu); 2026's
      Islamic days are CONACOC's through APS; 19 January the President's day off. Announced to 2026.
