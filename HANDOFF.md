@@ -354,6 +354,17 @@ What layer 0 holds:
      2025 and 2026; S.R.O. 2/2026 gives Carriacou and Petite Martinique (GD.10) 16 February 2026. Retry.
    - VN, ID, PK and others read through the press where the ministry's own page is unreachable: their sources say
      which.
+   - NG: Boxing Day isn't in the Act's Schedule; the Minister declares it yearly, and 2026's wasn't declared by
+     2026-10-27. Add it when it is.
+   - ET: Proclamation 1334/2024 read (metaappz.com's text: Enkutatash, Adwa, 1 and 5 May; Meskel, Genna on 7 January,
+     Timket, Good Friday, Easter, Mawlid and both Eids; the Ethiopic days shift before a Gregorian leap year).
+     2026's Eid al-Fitr (20 March) confirmed through the state agency; Eid al-Adha and Mawlid not found. Retry ENA.
+   - IR: calendar.ut.ac.ir, president.ir and rc.majlis.ir don't answer. MA: no official 2026 list (bkam.ma has
+     none). CK: no official list (island Gospel Days are regional). CW, SX: the governments' lists not found. BS:
+     bahamas.gov.bs answers 403. SC: no official list. SJ: whether Norway's holiday law applies on Svalbard is
+     unconfirmed. Retry each.
+   - Two sources found: a page's own public data list read as the page reads it (Mauritius's SharePoint list, Qatar's
+     Ministry of Justice API) is fine; an API that needs a key embedded in a site's script (Andorra's BOPA) is not.
 3. Then prices by place, and the proof of layer 2.
 
 ## Verification evidence
