@@ -111,6 +111,142 @@
  "AX": {
   "of": "FI"
  },
+ "BB": {
+  "substitute": [
+   {
+    "on": [
+     0
+    ],
+    "to": "next"
+   }
+  ],
+  "holidays": [
+   {
+    "name": "New Year’s Day",
+    "when": {
+     "fixed": [
+      1,
+      1
+     ]
+    }
+   },
+   {
+    "name": "Errol Barrow Day",
+    "when": {
+     "fixed": [
+      1,
+      21
+     ]
+    }
+   },
+   {
+    "name": "Good Friday",
+    "when": {
+     "easter": -2
+    }
+   },
+   {
+    "name": "Easter Monday",
+    "when": {
+     "easter": 1
+    }
+   },
+   {
+    "name": "National Heroes Day",
+    "when": {
+     "fixed": [
+      4,
+      28
+     ]
+    }
+   },
+   {
+    "name": "Labour Day",
+    "when": {
+     "fixed": [
+      5,
+      1
+     ]
+    }
+   },
+   {
+    "name": "Whit Monday",
+    "when": {
+     "easter": 50
+    }
+   },
+   {
+    "name": "Emancipation Day",
+    "when": {
+     "fixed": [
+      8,
+      1
+     ]
+    },
+    "move": [
+     {
+      "on": [
+       0
+      ],
+      "to": "next"
+     },
+     {
+      "on": [
+       1
+      ],
+      "to": "next",
+      "as": "well"
+     }
+    ]
+   },
+   {
+    "name": "Kadooment Day",
+    "when": {
+     "nth": [
+      8,
+      1,
+      1
+     ]
+    }
+   },
+   {
+    "name": "Independence Day",
+    "when": {
+     "fixed": [
+      11,
+      30
+     ]
+    }
+   },
+   {
+    "name": "Christmas Day",
+    "when": {
+     "fixed": [
+      12,
+      25
+     ]
+    },
+    "move": [
+     {
+      "on": [
+       0
+      ],
+      "to": "next",
+      "as": "well"
+     }
+    ]
+   },
+   {
+    "name": "Boxing Day",
+    "when": {
+     "fixed": [
+      12,
+      26
+     ]
+    }
+   }
+  ]
+ },
  "BE": {
   "holidays": [
    {
