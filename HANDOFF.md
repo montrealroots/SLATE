@@ -329,6 +329,12 @@ What layer 0 holds:
      read.
    - MH, PW, FM: MH's Public Holidays Act 1988 on PacLII (403; the austlii mirror resets) and the Register-IRI list
      (TLS chain fails, not bypassed); PW and FM only aggregators (FM's states keep their own days). Retry.
+   - KW: the Cabinet sets each holiday's days yearly, often in two moon scenarios (2026: Isra Mi'raj moved to Sun 18
+     Jan, Prophet's birthday to Thu 27 Aug per the Malaysian embassy's page kln.gov.my/web/kwt_kuwait/holidays;
+     Arafah and Adha 26-29 May per Kuwait Times; Fitr and Hijri New Year final days unread). kuna.net.kw resets,
+     csc.gov.kw has no list found. Read the Labour Law (6/2010) art. 67 and each Cabinet decision.
+   - Gulf sites with incomplete chains (qcb.gov.qa, kln.gov.my): completed from the certificate's own issuer URL
+     (scratchpad aia.sh), verification on.
 3. Then prices by place, and the proof of layer 2.
 
 ## Verification evidence
