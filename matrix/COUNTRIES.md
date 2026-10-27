@@ -41,7 +41,7 @@ a place fills a column; a cell is the row's status in that engine's matrix, or b
 | BT | Bhutan | researched | researched | researched | blocked | pending |
 | BV | Bouvet Island | researched | researched | proven | proven | proven |
 | BW | Botswana | researched | researched | researched | blocked | pending |
-| BY | Belarus | researched | researched | researched | researched | pending |
+| BY | Belarus | researched | researched | researched | researched | researched |
 | BZ | Belize | researched | researched | researched | researched | researched |
 | CA | Canada | researched | researched | researched | researched | blocked |
 | CC | Cocos Islands | researched | researched | researched | blocked | pending |
