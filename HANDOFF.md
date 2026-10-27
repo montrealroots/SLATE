@@ -184,6 +184,133 @@ What layer 0 holds:
    sources can't be reached, a blocker after all five methods. Leads still open: Austria (RIS bot check; Vienna's
    page timed out), Luxembourg (Code du travail L.232-2 on Legilux), Finland (sources behind Cloudflare), Portugal's
    regions (Azores: Whit Monday; Madeira: 1 July and 26 December).
+   How a country is added: its rules into `src/world/holidays/countries.json` (the `Rule` and `Substitute` types of
+   `rules.ts`); its sources and the lists they name into `research/sources/holidays/<CC>.json` (`country`, `sources`
+   with `url`, `title`, `read`, `said`, and `kind: 'secondary'` with `quotes` where not the institution's own, and
+   `lists` of `{regions?, year, days: [[iso, name]]}`, a day twice where two holidays share it, years from 2026); its
+   register entry `world.holidays.<CC>` (`found` if any source is primary, else `secondary`; `value` the file, its
+   sha256, the lists and years); then `npx tsx tools/holidays/build.ts` for the coverage, the list count in the
+   holidays test's `expect(read)`, and the gate. A blocker is `world.holidays.blocked.<CC>` (or `.<region>`) with
+   the five methods' attempts, as R-0149.
+   Where each pending country stands (read, blocked, still to read), dated 2026-10-27:
+   - AT: RIS bot-check; wien.gv.at times out -> retry
+   - LU: guichet page moved; try legilux Code du travail L.232-2
+   - PT: regional days (Azores Pentecost Monday; Madeira 1 July, 26 December) need the regional decrees
+   - FI: tyosuojelu bot-check; finlex new URLs; church act + Independence Day law
+   - FO: logir.fo Anordning 441/1923 is about peace, not days off; no official day-off list found (school calendar
+     only). Retry: frítíðarlóg 30/1986, gov.fo, Vinnuhúsið; then blocker.
+   - GL, SJ: deferred (Danish/Norwegian law extent).
+   - US.NH: nh.gov (DAS, courts, employee portal, education), gc.nh.gov and Justia all refuse (403) on 2026-10-27;
+     state employees' day after Thanksgiving unread. US.TN: tn.gov 403.
+   - PR: OATRH ME 14-2025 (2026 list) 404 since the site moved; secondary lists (camarapr.org chamber calendar,
+     Microjuris) read; open: whether Sunday 22 March 2026 (Abolición, Código Político art. 387 Sunday->Monday) is
+     kept on Monday 23; José Celso Barbosa's rule. Retry.
+   - AR: national read 2026-10-27: Ley 27.399 text (argentina.gob.ar/normativa/nacional/ley-27399-281835/texto),
+     2026 list JSON (argentina.gob.ar/sites/default/files/holidays-2026-es.json; 2027 404), Res. 139/2025
+     (norma-417061, Decreto 614/25 weekend trasladables movable by JGM), Pope visit decree (norma-430580: 9 Nov
+     national, 10 Nov Córdoba+CABA, 11 Nov Prov. Buenos Aires). Exclude no laborables (Jueves Santo, religious,
+     turísticos). Provinces' own holidays (Jujuy, Salta, Tucumán, Mendoza ...) still to read before AR is
+     researched.
+   - BR: national read: Lei 662/1949 (10.607/2002), Lei 6.802/1980, Lei 14.759/2023, Lei 9.093/1995 (state data
+     magna; Good Friday municipal); Portaria MGI 11.460/2025 (DOU 502 / reset). States' data magna laws still to
+     read.
+   - CL: gob.cl/feriados Cloudflare 403; bcn.cl/leychile 401; diariooficial 403; dt.gob.cl reachable (find its
+     feriados page). Regional: Arica y Parinacota 7 Jun, Ñuble 20 Aug; moving rules (San Pedro, Encuentro de Dos
+     Mundos, Evangélicas, Pueblos Indígenas solstice). Retry.
+   - EC: official calendar (Viceministerio de Turismo, 2025-2030) and Decreto Ejecutivo 249 (2 Jan 2026) not yet
+     found on turismo.gob.ec / trabajo.gob.ec; Ley Orgánica de Servicio Público art. 2016 traslado rules to read.
+     Retry.
+   - VE: LOTTT art. 184 text not yet read from an official copy (Gaceta Oficial 6.076 Ext., 2012); decrees add
+     days (non-working by decree). Retry.
+   - PY: Ley 7544/2025 read (bacn.gov.py); 2026 decrees: Jun 20->22 (Decreto 6215, PDF on grupovierci CDN), Mar
+     1->2 (ABC Nov 2025, decree unread), Sep 29 unresolved; Presidencia/Gaceta to read. Retry.
+   - AU: read 2026-10-27: NSW (nsw.gov.au/about-nsw/public-holidays: 2026, 2027; Bank Holiday not a public
+     holiday; additional days as well; Australia Day moved), QLD (qld.gov.au/recreation/travel/holidays/public:
+     2026-2029; Ekka Brisbane only (local); Christmas Eve 6pm part-day (not a day off); Anzac Sunday->Monday
+     moved). To read: FW Act s115 (legislation.gov.au text page is TOC only), fairwork.gov.au (503), VIC
+     (business.vic.gov.au 403), SA (safework 403), WA, TAS, ACT, NT. Model: regional, national = FW Act s115 list.
+   - CN: national read: 2024 放假办法 (news.cn 2024-11-12: 元旦1, 春节4 (除夕+初一至初三), 清明1, 劳动节2 (5/1-2), 端午1, 中秋1, 国庆3
+     (10/1-3); art. 7 调休), 2026 notice (news.cn 2025-11-04: Jan 1-3; Feb 15-23; Apr 4-6; May 1-5; Jun 19-21; Sep
+     25-27; Oct 1-7). Regions to read: Guangxi 三月三 (2026: Apr 17-20 per press; official 广西办公厅 notice 2026-03-04
+     unread; 少数民族习惯节日放假办法 令98号), Xinjiang (肉孜节/古尔邦节 2026 notice unread), Ningxia (2026 notice unread; 2025:
+     宁政办发〔2024〕54号), Tibet (藏历新年/雪顿节 2026 unread). Qingming from HKO Bright & Clear.
+   - NC: holidays by Code du travail NC art. Lp. 232-1 and arrêté n°3893-T du 2 mai 1991 (pacificdata 403; juridoc
+     code PDF moved 404); Fête de la Citoyenneté 24 Sept. Retry juridoc for the current code PDF.
+   - PM: whether the French Code du travail L3133-1 (and any local day) applies in Saint-Pierre-et-Miquelon
+     unconfirmed (service-public F2405 doesn't mention SPM); check Légifrance territorial scope / DCSTEP SPM. WF:
+     only secondary lists (28 Apr St Pierre Chanel, 29 Jul Fête du Territoire?, 29 Jun?). Retry.
+   - JM: no official list reached 2026-10-27: laws.moj.gov.jm TLS chain fails (curl 60; not bypassed), jis.gov.jm
+     403, BOJ holiday page not found; secondaries agree: Labour Day 23 May weekend->Monday, Emancipation 1 Aug
+     Sunday->Monday, Heroes 3rd Mon Oct, Ash Wednesday. Retry: Holidays (Public General) Act text, BOJ.
+   - RU: federal read 2026-10-27: TK art. 112
+     (consultant.ru/document/cons_doc_LAW_34683/98ef2900507766e70ff29c0b9d8e2353ea80a1cf/: Jan 1-6, 8 Новогодние
+     каникулы; Jan 7; Feb 23; Mar 8; May 1; May 9; Jun 12; Nov 4; weekend coinciding -> next working day after the
+     holiday, except Jan 1-8's, two of which the Government moves); decrees from publication.pravo.gov.ru (scanned
+     PDFs, read as images): 1466 of 24.09.2025 (2026: Sat 3 Jan -> Fri 9 Jan; Sun 4 Jan -> Thu 31 Dec), eoNumber
+     0001202509240023; 1187 of 17.09.2026 (2027: Sat 2 Jan -> Fri 5 Nov; Sun 3 Jan -> Fri 31 Dec; Sat 20 Feb ->
+     Mon 22 Feb (20 Feb a working Saturday: make-up, not modeled)), eoNumber 0001202609180037. Model: Jan days
+     fixed, others substitute as well [SAT,SUN] next; decree days D lists; announced 2027. Regions (TK art. 6)
+     still to read: Tatarstan, Bashkortostan, Chechnya, Dagestan, Ingushetia, KBR, KChR, Adygea, Buryatia, Tuva,
+     Sakha, Kalmykia, Altai Rep., Chuvashia, N. Ossetia ... (each republic's law and its annual decrees for
+     Uraza/Kurban, Sagaalgan, Shagaa).
+   - ME: law read at paragraf.me (text as of 2021: Jan 1, May 1, May 21, Jul 13, each two days; Sunday rules art.
+     3); Njegošev dan 13 Nov added end of 2021 (RSE, N1) - the current consolidated text (Službeni list CG) not
+     yet read; 2022 Sunday dispute (government: Monday working). No 2026/2027 ministry list found (gov.me search
+     JS, mfa.gr 403). Retry: sluzbenilist.me, gov.me Ministarstvo rada notices.
+   - IN: RBI holiday matrix (rbi.org.in/Scripts/HolidayMatrixDisplay.aspx, POST drRegionalOffice/drMonth=0/drYear)
+     fetched for 2026, 34 offices (refetch: POST the form once per office); per office the NI Act days, but each
+     day's description is the union of all states' names (pick the state's own); exclude 1 April (banks' closing
+     of accounts) and the 2nd/4th Saturdays; offices -> states (Belapur/Mumbai/Nagpur MH; Kanpur/Lucknow UP;
+     Jammu/Srinagar JK; ...); no office for Puducherry, A&N, Lakshadweep, DNH&DD, Ladakh (state gazettes).
+     National: Republic Day, Independence Day, Gandhi Jayanti fixed; others D lists announced 2026.
+   - MD: legis.md 403; art. 111 CM text not read (monitorul.fisc.md editorial paywalled); 1 June status disputed
+     (Ombudsman 2021, particip.gov.md 2023: Government declares 1-2 June days off by decision); retry legis.md,
+     bnm.md calendar, cancelaria.gov.md decisions.
+   - MY: kabinet.gov.my/hari-kelepasan-am/ PDFs read: storage/2025/08/HKA-2026.pdf, storage/2026/08/HKA_2027.pdf
+     (6 pages: federal table, state table with -/√ in 16 columns, combined). Column order (checked by state-only
+     days): KL, Labuan, Putrajaya, Johor, Kedah, Kelantan, Melaka, N.Sembilan, Pahang, Perak, Perlis, P.Pinang,
+     Sabah, Sarawak, Selangor, Terengganu. Still to read: replacement-day rules (Holidays Act 1951 (Act 369) s.3;
+     Kedah/Kelantan/Terengganu Fri-Sat weekend; Johor back to Sat-Sun 2025; Sabah/Sarawak ordinances), days added
+     after the PDF (20 Mar 2026 Raya extra day reported; Selangor 25-26 Oct 2026 Sultan's jubilee), Islamic dates
+     as JAKIM confirms them.
+   - MY (cont.): replacement rule contested: Holidays Act s.3 read by PM in 2022 to move Labour Day to Wednesday
+     (focusmalaysia); Cabinet office: no automatic replacement for overlapping holidays (NST 2024); Sabah Holidays
+     Ordinance amended Apr 2026 (Borneo Post) to give the following day when the next is already a holiday. Read
+     Act 369 (lom.agc.gov.my) and each state's enactment before modeling replacements.
+   - BW: gov.bw/public-holidays has the 2026 list but its TLS cert is expired / name-mismatched (not bypassed);
+     Bank of Botswana page not found; BSE notice (bse.co.bw/wp-content/uploads/2026/05/120526-PUBLIC-
+     NOTICE_FRIDAY-15-MAY-2026-DECLARED-PUBLIC-HOLIDAY-AND-NON-TRADING-DAY-ON-THE-BSE.pdf): 15 May 2026 declared
+     (Mogae memorial). Read the Public Holidays Act (Cap. 03:07) text: Jan 2?, Holy Saturday, President's Day +
+     Tuesday, Botswana Day + 1 Oct, Sunday rules.
+   - RW: gov.rw/holidays read 2026-10-27 (2026: 1 Jan, 2 Feb (Heroes, 1 Feb a Sunday), 3 Apr, 6 Apr, 7 Apr, 1 May,
+     1 Jul, 4 Jul (Sat), 1 Aug (Sat, Umuganura), 15 Aug (Sat), 25 Dec, 26 Dec (Sat); no Eid listed, no Saturday
+     replacements). Presidential Order 54/01 of 24/02/2017 (policyvault.africa RWA416.pdf: connection reset
+     upstream x4) still to read: Eid al-Fitr/Adha dates announced, weekend rule (secondary: weekend -> next
+     working day, except 7 Apr), Umuganura (first Friday of August?).
+   - ZM: no official 2026 list found (Ministry of Labour, gazette); Public Holidays Act Cap. 272 + Kenneth Kaunda
+     Day 28 Apr (2022); 2026 election-year extras (1 Sep swearing-in?) need gazette notices. Retry:
+     parliament.gov.zm acts, zambialii, boz.zm.
+   - AS: no ASG 2026 holiday schedule found (americansamoa.gov); Samoa News: government closed 1-2 Jan 2026 by
+     governor's announcement. Read A.S.C.A. § 1.0501 (legal holidays: Flag Day 17 Apr, White Sunday Monday?,
+     Manu'a Cession Day 16 Jul?) and the governor's notices. Retry.
+   - VI: no official 2026 list found (vi.gov covers the 2025-26 season's administrative leave only); V.I.C. tit. 1
+     § 171 to read; Transfer Day 31 Mar, Emancipation 3 Jul, Liberty Day 1 Nov, Christmas Second Day 26 Dec,
+     Carnival days (St Thomas/St Croix) by proclamation. Retry.
+   - MK: mtsp.gov.mk, vlada.mk, slvesnik.com.mk no answer; nbrm.mk 403 (2026-10-27). Law on holidays + government
+     decision per year (Ramazan Bajram for all; 11 Oct Sunday -> 12 Oct). Retry; try mfa.bg embassy Skopje page.
+   - XK: Law 03/L-064 (art. 4: holiday on Sat/Sun -> following working day(s)); MPB calendars hosted by BQK: 2024
+     (bqk-kos.org/wp-content/uploads/2024/11/Kalendari-festave-zyrtare-_-2024.pdf), 2025 (.../2025/01/Kalendari-i-
+     festave-2025.pdf, read: both Easters 20 Apr 2025 -> one rest day 21 Apr: two holidays on one day give ONE
+     substitute, which the engine can't express yet; Bajrami i Madh = Fitr, Bajrami i Vogel = Kurban). 2026
+     calendar not found (guessed URLs 404). Retry kryeministri.rks-gov.net / mpb.
+   - AM: law HO-200 of 24.06.2001 on holidays and memorial days (arlis.am DocumentView id not found); Citizen's
+     Day last Sat of April (2019); government decisions move non-working days yearly. Retry arlis search, gov.am
+     decisions, cba.am holidays.
+   - BQ: Regeling feestdagen ambtenaren BES (stcrt-2019-63152, read): Bonaire 30 Apr Dia di Rincon, 6 Sep Dia di
+     Himno y Bandera; Statia: day after carnival parade, 16 Nov Statia Day; Saba: day after carnival parade, first
+     Friday of December Saba Day. Base list = Rechtspositiebesluit ambtenaren BES art. 37(j) (wetten.overheid.nl
+     HTTP/2 error; Stb 2019-458 removed the carnival day from 37j) - for civil servants; the general rule for all
+     workers (Arbeidswet BES? / Rijksdienst CN yearly list) still to read; carnival dates per island per year.
 3. Then prices by place, and the proof of layer 2.
 
 ## Verification evidence
