@@ -444,11 +444,11 @@ What layer 0 holds:
    - RW: done 2026-10-27 from Presidential Order No. 54 of 2017 (RwandaLII) and gov.rw's 2026 list (which omits
      2 January, the Eids and Saturday substitutes; the Order rules). Eids are Umm al-Qura's: read the Rwanda Muslims'
      Association's yearly announcements when found.
-   - ZM: lead 2026-10-27: the National Assembly committee's report on the Public Holidays (Amendment) Bill N.A.B. 76
-     of 2026 (parliament.gov.zm, read with scratchpad aia.sh's completed chain): Cap. 272's Schedule has 11 categories
-     with the Sunday rule (s. 2(2)); Women's Day, Kenneth Kaunda Day, Easter Monday and the National Day of Prayer are
-     declared yearly by statutory notice (s. 3). Open: the Schedule's text, 2026's notices (and the 13 August 2026
-     election day), and whether the Bill passed (it removes the Monday substitute).
+   - ZM: done 2026-10-27: Cap. 272's Schedule and Sunday rule (Laws.Africa's 1996 consolidation), SI 33/2007 (Women's
+     Day), the committee report on N.A.B. 76 of 2026 (parliament.gov.zm: its certificate chain is incomplete; completed
+     from the leaf's AIA link, cacerts.rapidssl.com, verification kept) naming the s. 3 days, and 2026's declared days
+     (News Diggers). Open: whether N.A.B. 76 passed (it drops the Monday for a Sunday); KK Day's and Easter Monday's
+     own notices; the 2027 days.
    - AS: no ASG 2026 holiday schedule found (americansamoa.gov); Samoa News: government closed 1-2 Jan 2026 by
      governor's announcement. Read A.S.C.A. § 1.0501 (legal holidays: Flag Day 17 Apr, White Sunday Monday?,
      Manu'a Cession Day 16 Jul?) and the governor's notices. Retry.
