@@ -27,7 +27,7 @@ a place fills a column; a cell is the row's status in that engine's matrix, or b
 | BD | Bangladesh | researched | researched | researched | researched | pending |
 | BE | Belgium | researched | researched | researched | researched | researched |
 | BF | Burkina Faso | researched | researched | researched | researched | pending |
-| BG | Bulgaria | researched | researched | researched | researched | pending |
+| BG | Bulgaria | researched | researched | researched | researched | researched |
 | BH | Bahrain | researched | researched | researched | researched | pending |
 | BI | Burundi | researched | researched | researched | blocked | pending |
 | BJ | Benin | researched | researched | researched | researched | pending |
