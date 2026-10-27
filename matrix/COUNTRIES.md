@@ -181,7 +181,7 @@ a place fills a column; a cell is the row's status in that engine's matrix, or b
 | OM | Oman | researched | researched | researched | researched | pending |
 | PA | Panama | researched | researched | researched | researched | pending |
 | PE | Peru | researched | researched | researched | researched | researched |
-| PF | French Polynesia | researched | researched | researched | researched | pending |
+| PF | French Polynesia | researched | researched | researched | researched | researched |
 | PG | Papua New Guinea | researched | researched | researched | researched | pending |
 | PH | Philippines | researched | researched | researched | researched | pending |
 | PK | Pakistan | researched | researched | researched | researched | pending |
