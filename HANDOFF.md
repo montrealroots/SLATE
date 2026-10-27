@@ -490,6 +490,9 @@ What layer 0 holds:
      of that date) and its morrow. The New Year 1448 and the Maoulid by Umm al-Qura (16 June, 25 August): open, since
      the New Year address is dated 16 June and 2025's holiday fell the day after its celebration, so 17 June may be the
      day kept. Art. 3's bridge days are declared one by one: not kept.
+   - FO: done 2026-10-27: the eleven church halgidagar of Kongelig Anordning nr. 441 af 21. november 1923 (named by
+     the Løgting's 2010 motion), as Starvsfelagið's handbook lists them (logir.fo, the law collection, renders blank
+     to a headless browser). Ólavsøka, the eves and Flaggdagur are collective-agreement days, not law: not kept.
    - MW: blocked 2026-10-27: the Act's Schedule is read only as consolidated at 31 December 2014 (commons.laws.africa
      /akn/mw/act/1967/11/eng@2014-12-31.pdf); the Gazette orders since (Africa Day, Chakufwa Chihana Day, Eid al-Adha?)
      and 2026's orders are unread. Laws.Africa's commons host also serves other LIIs' consolidations past their bot

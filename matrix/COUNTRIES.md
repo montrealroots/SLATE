@@ -80,7 +80,7 @@ a place fills a column; a cell is the row's status in that engine's matrix, or b
 | FJ | Fiji | researched | researched | researched | researched | researched |
 | FK | Falkland Islands | researched | researched | researched | blocked | researched |
 | FM | Micronesia | researched | researched | researched | researched | blocked |
-| FO | Faroe Islands | researched | researched | researched | researched | pending |
+| FO | Faroe Islands | researched | researched | researched | researched | researched |
 | FR | France | researched | researched | researched | researched | researched |
 | GA | Gabon | researched | researched | researched | researched | researched |
 | GB | United Kingdom | researched | researched | researched | researched | researched |
