@@ -119,7 +119,7 @@ a place fills a column; a cell is the row's status in that engine's matrix, or b
 | IT | Italy | researched | researched | researched | researched | researched |
 | JE | Jersey | researched | researched | researched | researched | researched |
 | JM | Jamaica | researched | researched | researched | researched | pending |
-| JO | Jordan | researched | researched | researched | researched | pending |
+| JO | Jordan | researched | researched | researched | researched | researched |
 | JP | Japan | researched | researched | researched | researched | researched |
 | KE | Kenya | researched | researched | researched | researched | pending |
 | KG | Kyrgyzstan | researched | researched | researched | researched | pending |

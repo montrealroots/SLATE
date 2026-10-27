@@ -57,7 +57,7 @@ describe('the holidays of every country kept', () => {
         }
       }
     }
-    expect(read).toBe(298);
+    expect(read).toBe(299);
   });
   it('are each a country of the map with its lists, their regions its own, their substitutes the engine reckons', () => {
     expect(Object.keys(RULES).sort()).toEqual(LISTS.map((l) => l.country).sort());
