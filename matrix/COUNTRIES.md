@@ -7,7 +7,7 @@ a place fills a column; a cell is the row's status in that engine's matrix, or b
 |---|---|---|---|---|---|---|
 | AD | Andorra | researched | researched | researched | blocked | researched |
 | AE | United Arab Emirates | researched | researched | researched | researched | researched |
-| AF | Afghanistan | researched | researched | researched | researched | pending |
+| AF | Afghanistan | researched | researched | researched | researched | blocked |
 | AG | Antigua and Barbuda | researched | researched | researched | blocked | researched |
 | AI | Anguilla | researched | researched | researched | blocked | researched |
 | AL | Albania | researched | researched | researched | researched | researched |
@@ -127,7 +127,7 @@ a place fills a column; a cell is the row's status in that engine's matrix, or b
 | KI | Kiribati | researched | researched | researched | researched | researched |
 | KM | Comoros | researched | researched | researched | blocked | pending |
 | KN | Saint Kitts and Nevis | researched | researched | researched | researched | researched |
-| KP | North Korea | researched | researched | researched | researched | pending |
+| KP | North Korea | researched | researched | researched | researched | blocked |
 | KR | South Korea | researched | researched | researched | researched | researched |
 | KW | Kuwait | researched | researched | researched | blocked | researched |
 | KY | Cayman Islands | researched | researched | researched | blocked | researched |

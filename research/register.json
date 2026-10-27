@@ -14317,6 +14317,84 @@
     }
    ],
    "notModeled": "holidays.unkept"
+  },
+  {
+   "fact": "world.holidays.blocked.AF",
+   "sought": "Afghanistan's official holidays under the present authorities (which days, the Islamic ones' 2026 dates, and the anniversaries of 15 and 31 August), from the Ministry of Labour and Social Affairs or a decree",
+   "status": "blocked",
+   "attempts": [
+    {
+     "method": "institution",
+     "tried": "The Ministry of Labour and Social Affairs (molsa.gov.af: its site search for 'رخصتی', 'تعطیل', 'holiday'); the Presidency (president.gov.af); Bakhtar News Agency (bakhtarnews.af)",
+     "result": "The ministry answers but its search finds nothing; the Presidency does not answer and Bakhtar refuses with 403.",
+     "date": "2026-10-27"
+    },
+    {
+     "method": "official-register",
+     "tried": "The Ministry of Justice (moj.gov.af), which publishes the Official Gazette: its site search for 'رخصتی'",
+     "result": "The ministry answers; its search finds nothing, and no gazette issue naming the holidays was found.",
+     "date": "2026-10-27"
+    },
+    {
+     "method": "web-search",
+     "tried": "'Islamic Emirate of Afghanistan official public holidays list 2026 Ministry of Labour announcement 15 August 31 August Eid days off government offices closed'",
+     "result": "Only calendar aggregators, which disagree on the Eids, the Mawlid and the August anniversaries and cite no announcement.",
+     "date": "2026-10-27"
+    },
+    {
+     "method": "trade-press",
+     "tried": "Pajhwok (WordPress API: 'holiday', 'public holidays', 'Eid holiday', 'رخصتی'); TOLOnews",
+     "result": "Pajhwok reports the Eid holidays' traffic accidents, not the days declared; TOLOnews refuses with 403.",
+     "date": "2026-10-27"
+    },
+    {
+     "method": "archive",
+     "tried": "The Wayback Machine's availability index for molsa.gov.af",
+     "result": "Archived (June 2026); not fetched, pending the owner's ruling on snapshots.",
+     "date": "2026-10-27"
+    }
+   ],
+   "notModeled": "holidays.unkept",
+   "id": "R-0333"
+  },
+  {
+   "fact": "world.holidays.blocked.KP",
+   "sought": "North Korea's public holidays: the state's list of national holidays and days off, as KCNA or the state's own publications give it",
+   "status": "blocked",
+   "attempts": [
+    {
+     "method": "institution",
+     "tried": "KCNA (kcna.kp), Naenara (naenara.com.kp), Rodong Sinmun (rodong.rep.kp)",
+     "result": "None answers from here (connection failures, 503).",
+     "date": "2026-10-27"
+    },
+    {
+     "method": "official-register",
+     "tried": "The DPRK's laws as its state portals publish them (Naenara's law section), for the Labour Law's holiday provisions or a holidays decree",
+     "result": "Naenara does not answer (503); no copy of a holidays decree was found elsewhere.",
+     "date": "2026-10-27"
+    },
+    {
+     "method": "web-search",
+     "tried": "'North Korea public holidays law list DPRK national holidays non-working days Day of the Sun February 16 official KCNA list'",
+     "result": "Only Wikipedia and calendar aggregators, none citing a state source for the days off.",
+     "date": "2026-10-27"
+    },
+    {
+     "method": "trade-press",
+     "tried": "KCNA Watch (kcnawatch.org) and NCNK (ncnk.org)",
+     "result": "KCNA Watch answers but holds no holiday list readable without a subscription; NCNK refuses with 403.",
+     "date": "2026-10-27"
+    },
+    {
+     "method": "archive",
+     "tried": "The Wayback Machine's availability index for kcna.kp",
+     "result": "Archived (October 2026); not fetched, pending the owner's ruling on snapshots.",
+     "date": "2026-10-27"
+    }
+   ],
+   "notModeled": "holidays.unkept",
+   "id": "R-0334"
   }
  ]
 }
