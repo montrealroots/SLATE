@@ -94,7 +94,7 @@ a place fills a column; a cell is the row's status in that engine's matrix, or b
 | GM | Gambia | researched | researched | researched | researched | blocked |
 | GN | Guinea | researched | researched | researched | researched | researched |
 | GP | Guadeloupe | researched | researched | researched | researched | researched |
-| GQ | Equatorial Guinea | researched | researched | researched | researched | pending |
+| GQ | Equatorial Guinea | researched | researched | researched | researched | blocked |
 | GR | Greece | researched | researched | researched | researched | researched |
 | GS | South Georgia and the South Sandwich Islands | researched | researched | researched | blocked | researched |
 | GT | Guatemala | researched | researched | researched | researched | researched |

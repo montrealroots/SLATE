@@ -206,8 +206,8 @@ What layer 0 holds:
    - Archive snapshots that would likely unblock a country, not fetched: the owner stopped a web.archive.org
      snapshot fetch on 2026-10-27 and hasn't ruled on them; ask before fetching. ST: visitsaotomeprincipe.st/pt/
      feriados (16 June 2026, Lei 8/2025's sixteen days); HT: Le Relief's Carnival article (10 May 2026); IQ: t4p.co's
-     article on Law 12/2024's list (16 February 2025); IR: calendar.ut.ac.ir (12 July 2026; no .ir host answers here).
-   - HT, SL, ST, CV, SO, IQ, IR, LA, MM, AF, KP, MW, SZ, LS, LR, GM, SS, CF: blocked 2026-10-27 (R-0322 on); retry each blocker's sources. TJ: deferred (the
+     article on Law 12/2024's list (16 February 2025); IR: calendar.ut.ac.ir (12 July 2026; no .ir host answers here); GQ: Ahora EG's article quoting Decreto 9/2007 (17 April 2025).
+   - HT, SL, ST, CV, SO, IQ, IR, LA, MM, AF, KP, MW, SZ, LS, LR, GM, SS, CF, GQ: blocked 2026-10-27 (R-0322 on); retry each blocker's sources. TJ: deferred (the
      law's current text, ncz.tj, doesn't answer; its 2012 text and the Labour Code are read, see below).
    - AT: RIS bot-check; wien.gv.at times out -> retry
    - LU: guichet page moved; try legilux Code du travail L.232-2
