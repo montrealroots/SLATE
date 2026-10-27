@@ -16,7 +16,7 @@ a place fills a column; a cell is the row's status in that engine's matrix, or b
 | AO | Angola | researched | researched | researched | researched | researched |
 | AQ | Antarctica | researched | researched | proven | proven | proven |
 | AR | Argentina | researched | researched | researched | researched | blocked |
-| AS | American Samoa | researched | researched | researched | researched | pending |
+| AS | American Samoa | researched | researched | researched | researched | researched |
 | AT | Austria | researched | researched | researched | researched | researched |
 | AU | Australia | researched | researched | researched | researched | blocked |
 | AW | Aruba | researched | researched | researched | blocked | researched |
