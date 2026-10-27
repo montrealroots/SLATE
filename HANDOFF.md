@@ -18,8 +18,8 @@ restarts. Read `CLAUDE.md` and the owner's package in `docs/` first.
   told where the weather is borrowed from), 6 proven, none pending. `tools/wmo/compile.ts` and `coverage.ts` are at
   100% mutation score with the last sources (1,559 mutants; the survivors of that run killed by tests or simpler
   lines, and the two equivalent ones disabled with their reasons). The
-  holidays (`world.holidays`): the engine, its reckonings and its gate wiring are built and tested; 155 countries
-  researched (547 official lists matched day for day), 6 proven, 70 pending, and 21 blocked: the Isle of Man,
+  holidays (`world.holidays`): the engine, its reckonings and its gate wiring are built and tested; 156 countries
+  researched (548 official lists matched day for day), 6 proven, 69 pending, and 21 blocked: the Isle of Man,
   Tanzania, Palau, the British Indian Ocean Territory, the French Southern Lands, the Cook Islands, Tokelau,
   Vanuatu, Micronesia, Tuvalu,
   Saint-Pierre-and-Miquelon, Wallis and Futuna, Christmas Island and the Cocos (Keeling) Islands whole, and seven for some of their regions (Canada's Prince Edward Island and Yukon, India's four, Australia's
@@ -308,11 +308,6 @@ What layer 0 holds:
      are left out (Ordino's 5-6 July and 16 September "a Ordino" read as the village). Announced to 2026.
    - CX, CC: blocked 2026-10-27: the Administrator's 2026 bulletins (infrastructure.gov.au community-bulletin-ci- and
      -cki-public-holidays-2026.pdf, A20 and A21/2025) exist but the host resets; retry them first.
-   - BD: lead 2026-10-27: the MoPA's 2026 list (issued 9 November 2025) read through the Daily Star Bangla
-     (news-712741): 14 general holidays (21 Feb, 20-21 Mar, 26 Mar, 1 May, 28 May, 5 Aug, 26 Aug, 4 Sep, 21 Oct, 16
-     Dec, 25 Dec; Buddha Purnima on 1 May) and 14 by executive order (government offices only: leave out). Open: the
-     changes after the February 2026 election (mopa.gov.bd has a 2026 notice making 7 November a general holiday:
-     /pages/go-ultimates/6ac5e76d9594596dad446b72; check 5 August), the moon days as kept, election days.
    - DZ: done 2026-10-27 from APS's reports of the joint Labour/Civil Service communiqués (found with aps.dz/fr/search
      ?q=chômée et payée) and Legal Doctrine's text of Loi 63-278. 1 Moharam 1448 (16 June) derived from Achoura's
      notice; read its own communiqué if found. Announced to 2026.
@@ -384,6 +379,9 @@ What layer 0 holds:
    - CV: lead 2026-10-27: national days by Decreto-Lei 18/84 (per aggregators; unread); each concelho (the map's
      regions) keeps a municipal day set by its assembly (boe.incv.cv Boletim Oficial). governo.cv's tolerâncias are
      the public administration's only.
+   - BD: done 2026-10-27: MoPA's 2026 list (general holidays only) through the Daily Star Bangla; 2026's later
+     notices at mopa.gov.bd (/pages/go-ultimates?page=N&page_size=100; PDFs in a legacy font, read as images):
+     election days 11-12 Feb for private offices too, 7 November yearly. Eids per bdnews24. Announced to 2026.
    - SN: done 2026-10-27: loi 74-52 (read in the Assembly's file at vie-publique.sn), Tamxarit from loi 83-54 (the
      scan read as an image), 1 February gone by loi 89-41, the Grand Magal by loi 2013-10 (Dakaractu); 2026's
      Islamic days are CONACOC's through APS; 19 January the President's day off. Announced to 2026.

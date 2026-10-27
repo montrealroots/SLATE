@@ -24,7 +24,7 @@ a place fills a column; a cell is the row's status in that engine's matrix, or b
 | AZ | Azerbaijan | researched | researched | researched | researched | researched |
 | BA | Bosnia and Herzegovina | researched | researched | researched | researched | blocked |
 | BB | Barbados | researched | researched | researched | researched | researched |
-| BD | Bangladesh | researched | researched | researched | researched | pending |
+| BD | Bangladesh | researched | researched | researched | researched | researched |
 | BE | Belgium | researched | researched | researched | researched | researched |
 | BF | Burkina Faso | researched | researched | researched | researched | researched |
 | BG | Bulgaria | researched | researched | researched | researched | researched |
