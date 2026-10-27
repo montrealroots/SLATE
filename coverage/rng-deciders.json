@@ -1,0 +1,38 @@
+{
+ "engine": "core.rng",
+ "axis": "decider",
+ "universe": {
+  "source": "src/core/rng/deciders.json",
+  "pick": "keys"
+ },
+ "rows": [
+  {
+   "key": "weather.cloud",
+   "status": "proven",
+   "tests": [
+    "tests/world/weather/weather.test.ts::a day's weather > is the same for the same seed, station and day, and differs otherwise"
+   ]
+  },
+  {
+   "key": "weather.forecast",
+   "status": "proven",
+   "tests": [
+    "tests/world/weather/weather.test.ts::the forecast > gives the next five days, off by an error that grows with the days ahead"
+   ]
+  },
+  {
+   "key": "weather.rain",
+   "status": "proven",
+   "tests": [
+    "tests/world/weather/weather.test.ts::a day's weather > is the same for the same seed, station and day, and differs otherwise"
+   ]
+  },
+  {
+   "key": "weather.temperature",
+   "status": "proven",
+   "tests": [
+    "tests/world/weather/weather.test.ts::a day's weather > is the same for the same seed, station and day, and differs otherwise"
+   ]
+  }
+ ]
+}

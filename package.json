@@ -1,0 +1,51 @@
+{
+  "name": "slate",
+  "version": "0.1.0",
+  "private": true,
+  "description": "SLATE: an actor/actress life simulator.",
+  "type": "module",
+  "engines": {
+    "node": ">=22.13.0 <23"
+  },
+  "scripts": {
+    "prepare": "git config core.hooksPath .githooks || true",
+    "dev": "vite",
+    "build": "tsc -p tsconfig.json && vite build",
+    "typecheck": "tsc -p tsconfig.json --pretty false",
+    "lint": "eslint --max-warnings 0 .",
+    "test": "vitest run",
+    "mutate": "stryker run",
+    "gate": "tsx gate/cli.ts",
+    "gate:write": "tsx gate/cli.ts --write",
+    "gate:full": "tsx gate/cli.ts --full",
+    "lock:owner-docs": "tsx gate/lock-owner-docs.ts"
+  },
+  "dependencies": {
+    "react": "19.3.0",
+    "react-dom": "19.3.0"
+  },
+  "devDependencies": {
+    "@eslint/js": "10.0.1",
+    "@stryker-mutator/core": "10.0.0",
+    "@stryker-mutator/vitest-runner": "10.0.0",
+    "@types/node": "22.20.4",
+    "@types/react": "19.3.0",
+    "@types/react-dom": "19.3.0",
+    "@vitejs/plugin-react": "6.1.2",
+    "@vitest/coverage-v8": "4.1.12",
+    "eslint": "10.12.0",
+    "eslint-plugin-react-hooks": "7.1.1",
+    "fake-indexeddb": "6.2.5",
+    "globals": "17.13.0",
+    "tsx": "4.23.15",
+    "typescript": "6.0.3",
+    "typescript-eslint": "8.71.1",
+    "vite": "8.3.4",
+    "vitest": "4.1.12"
+  },
+  "packageManager": "npm@11.6.2",
+  "overrides": {
+    "qs": "6.16.0",
+    "vitest": "4.1.12"
+  }
+}

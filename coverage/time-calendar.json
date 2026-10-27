@@ -1,0 +1,65 @@
+{
+ "engine": "core.time",
+ "axis": "calendar-operation",
+ "universe": {
+  "keys": [
+   "days-from-civil",
+   "civil-from-days",
+   "weekday",
+   "leap-years-and-month-lengths",
+   "weekday-rules"
+  ]
+ },
+ "rows": [
+  {
+   "key": "days-from-civil",
+   "status": "researched",
+   "register": [
+    "R-0002"
+   ],
+   "tests": [
+    "tests/core/time/calendar.test.ts::the calendar, against ECMAScript Date for every day from 1600 to 2400 > days-from-civil: a date gives the day count Date gives"
+   ]
+  },
+  {
+   "key": "civil-from-days",
+   "status": "researched",
+   "register": [
+    "R-0002"
+   ],
+   "tests": [
+    "tests/core/time/calendar.test.ts::the calendar, against ECMAScript Date for every day from 1600 to 2400 > civil-from-days: a day count gives the date Date gives"
+   ]
+  },
+  {
+   "key": "weekday",
+   "status": "researched",
+   "register": [
+    "R-0002"
+   ],
+   "tests": [
+    "tests/core/time/calendar.test.ts::the calendar, against ECMAScript Date for every day from 1600 to 2400 > weekday: every day falls on the weekday Date gives"
+   ]
+  },
+  {
+   "key": "leap-years-and-month-lengths",
+   "status": "researched",
+   "register": [
+    "R-0002"
+   ],
+   "tests": [
+    "tests/core/time/calendar.test.ts::the calendar, against ECMAScript Date for every day from 1600 to 2400 > leap years and month lengths: as Date counts them"
+   ]
+  },
+  {
+   "key": "weekday-rules",
+   "status": "researched",
+   "register": [
+    "R-0002"
+   ],
+   "tests": [
+    "tests/core/time/calendar.test.ts::the calendar, against ECMAScript Date for every day from 1600 to 2400 > weekday rules: the last, the first on or after, and the last on or before a day, across month ends"
+   ]
+  }
+ ]
+}

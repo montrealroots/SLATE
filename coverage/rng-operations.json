@@ -1,0 +1,74 @@
+{
+ "engine": "core.rng",
+ "axis": "rng-operation",
+ "universe": {
+  "keys": [
+   "splitmix64",
+   "fnv1a64",
+   "keyed-stream",
+   "float",
+   "below",
+   "pick",
+   "seed"
+  ]
+ },
+ "rows": [
+  {
+   "key": "splitmix64",
+   "status": "researched",
+   "register": [
+    "R-0024"
+   ],
+   "tests": [
+    "tests/core/rng/rng.test.ts::the generator and the hash, against their references > splitmix64: the 50 reference outputs"
+   ]
+  },
+  {
+   "key": "fnv1a64",
+   "status": "researched",
+   "register": [
+    "R-0025"
+   ],
+   "tests": [
+    "tests/core/rng/rng.test.ts::the generator and the hash, against their references > fnv1a64: RFC 9923's test strings"
+   ]
+  },
+  {
+   "key": "keyed-stream",
+   "status": "proven",
+   "tests": [
+    "tests/core/rng/rng.test.ts::keyed streams > give the same draws for the same seed, decider and keys, and others otherwise",
+    "tests/core/rng/rng.test.ts::keyed streams > refuse a seed that isn't 64 bits, and a key that holds the separator"
+   ]
+  },
+  {
+   "key": "float",
+   "status": "proven",
+   "tests": [
+    "tests/core/rng/rng.test.ts::keyed streams > make a float in [0, 1) from the top 53 bits"
+   ]
+  },
+  {
+   "key": "below",
+   "status": "proven",
+   "tests": [
+    "tests/core/rng/rng.test.ts::keyed streams > draw a whole number below n without bias, drawing again above the last whole multiple"
+   ]
+  },
+  {
+   "key": "pick",
+   "status": "proven",
+   "tests": [
+    "tests/core/rng/rng.test.ts::keyed streams > pick each item as often"
+   ]
+  },
+  {
+   "key": "seed",
+   "status": "proven",
+   "tests": [
+    "tests/core/rng/rng.test.ts::seeds > come from the platform's cryptographic source, 64 bits from two words",
+    "tests/core/rng/rng.test.ts::seeds > are kept as sixteen hex digits, and read back"
+   ]
+  }
+ ]
+}

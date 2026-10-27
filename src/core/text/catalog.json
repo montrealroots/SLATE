@@ -1,0 +1,137 @@
+{
+  "life.damaged": {
+    "text": "The file's damaged.",
+    "where": "the slots screen, under a life that can't be read",
+    "status": "placeholder"
+  },
+  "life.not-slate": {
+    "text": "This isn't a SLATE life.",
+    "where": "the slots screen, under a life that can't be read",
+    "status": "placeholder"
+  },
+  "life.storage-unreadable": {
+    "text": "Your browser couldn't read its storage just now. Reload and try again.",
+    "where": "the slots screen, under a life that can't be read",
+    "status": "placeholder"
+  },
+  "life.compressed": {
+    "text": "This life was kept compressed, and this browser can't open it. Try a newer one.",
+    "where": "the slots screen, under a life that can't be read",
+    "status": "placeholder"
+  },
+  "life.no-storage": {
+    "text": "This browser won't let SLATE keep anything, so no life can be kept here. Check that the site is allowed to store data.",
+    "where": "the slots screen, when keeping a life fails",
+    "status": "placeholder"
+  },
+  "life.device-full": {
+    "text": "There isn't room on this device to keep this life, so nothing changed. Free some space, or let go of a life you don't need, then try again.",
+    "where": "the slots screen, when keeping a life fails",
+    "status": "placeholder"
+  },
+  "life.device-refused": {
+    "text": "This device wouldn't keep the life just now, so nothing changed. Try again in a moment.",
+    "where": "the slots screen, when keeping a life fails",
+    "status": "placeholder"
+  },
+  "server.unreachable": {
+    "text": "SLATE couldn't reach the server. Check your connection, then try again.",
+    "where": "the slots screen, when the server turns something down",
+    "status": "placeholder"
+  },
+  "server.no-answer": {
+    "text": "The server didn't answer. Try again in a moment.",
+    "where": "the slots screen, when the server turns something down",
+    "status": "placeholder"
+  },
+  "server.refused": {
+    "text": "The server turned that down without saying why. Try again in a moment.",
+    "where": "the slots screen, when the server turns something down",
+    "status": "placeholder"
+  },
+  "server.failed": {
+    "text": "The server couldn't finish that. Try again in a moment.",
+    "where": "the slots screen, when the server turns something down",
+    "status": "placeholder"
+  },
+  "server.signed-out": {
+    "text": "You're not signed in.",
+    "where": "the slots screen, when the server turns something down",
+    "status": "placeholder"
+  },
+  "server.bad-request": {
+    "text": "SLATE sent the server something it couldn't use. Reload and try again.",
+    "where": "the slots screen, when the server turns something down",
+    "status": "placeholder"
+  },
+  "server.too-big": {
+    "text": "This life has grown too big for the server to keep.",
+    "where": "the slots screen, when the server turns something down",
+    "status": "placeholder"
+  },
+  "server.damaged": {
+    "text": "The server couldn't read this life, so it didn't keep it.",
+    "where": "the slots screen, when the server turns something down",
+    "status": "placeholder"
+  },
+  "server.newer": {
+    "text": "This SLATE is newer than the server, so the server won't keep this life rather than risk damaging it.",
+    "where": "the slots screen, when the server turns something down",
+    "status": "placeholder"
+  },
+  "server.behind": {
+    "text": "The server has a later point in this life than this one, so it kept that. Reload to pick it up.",
+    "where": "the slots screen, when the server turns something down",
+    "status": "placeholder"
+  },
+  "server.other-life": {
+    "text": "Another life is already kept there. Let it go before starting a new one in its place.",
+    "where": "the slots screen, when the server turns something down",
+    "status": "placeholder"
+  },
+  "server.no-copy": {
+    "text": "The server has no copy of this life to bring back.",
+    "where": "the slots screen, when the server turns something down",
+    "status": "placeholder"
+  },
+  "weather.model": {
+    "text": "Day to day, the weather here is SLATE's own, drawn around the official averages measured near {place} from {years}.",
+    "where": "Home, under the weather",
+    "status": "placeholder"
+  },
+  "weather.model-undated": {
+    "text": "Day to day, the weather here is SLATE's own, drawn around the official averages measured near {place}.",
+    "where": "Home, under the weather, where the averages don't say the years they cover",
+    "status": "placeholder"
+  },
+  "weather.borrowed": {
+    "text": "No averages are published from near here in {country}, so the weather follows those measured near {place}, in {placeCountry}.",
+    "where": "Home, under the weather, where the town's own country publishes none",
+    "status": "placeholder"
+  },
+  "weather.borrowed-part": {
+    "text": "Not every average is published from near here in {country}, so for those the weather follows the ones measured near {place}, in {placeCountry}.",
+    "where": "Home, under the weather, where the town's own country publishes some averages and not others",
+    "status": "placeholder"
+  },
+  "holidays.unannounced": {
+    "text": "{place} hasn't announced its holidays after {year} yet, so the calendar keeps only those its law fixes.",
+    "where": "the calendar, on a year past the last a country has announced",
+    "status": "placeholder"
+  },
+  "holidays.unkept": {
+    "text": "{country}'s public holidays aren't on this calendar, so every day there is kept as an ordinary one.",
+    "where": "the calendar, in a country whose holidays the game doesn't keep",
+    "status": "placeholder"
+  },
+  "holidays.region-unkept": {
+    "text": "{region}'s own holidays aren't on this calendar yet, so it keeps {country}'s national ones.",
+    "where": "the calendar, in a region whose own law's holidays the game hasn't read, where its country's other regions keep theirs",
+    "status": "placeholder"
+  },
+  "holidays.local": {
+    "text": "Holidays kept only by a town or a district aren't on this calendar; its country's and its region's are.",
+    "where": "the calendar, under a town's holidays",
+    "status": "placeholder"
+  }
+}

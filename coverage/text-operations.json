@@ -1,0 +1,28 @@
+{
+ "engine": "core.text",
+ "axis": "text-operation",
+ "universe": {
+  "keys": [
+   "saying-a-line",
+   "filling-slots"
+  ]
+ },
+ "rows": [
+  {
+   "key": "saying-a-line",
+   "status": "proven",
+   "tests": [
+    "tests/core/text/text.test.ts::lines > are said as the catalog has them",
+    "tests/core/text/text.test.ts::lines > are only the catalog's"
+   ]
+  },
+  {
+   "key": "filling-slots",
+   "status": "proven",
+   "tests": [
+    "tests/core/text/text.test.ts::a line's slots > are filled with the words given, each where it stands",
+    "tests/core/text/text.test.ts::a line's slots > are never left empty, and take nothing they have no place for"
+   ]
+  }
+ ]
+}

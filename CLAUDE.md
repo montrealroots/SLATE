@@ -1,9 +1,11 @@
 # CLAUDE.md — SLATE (the rebuild)
 
-This repository is the new SLATE, built from the package in its root. The package is the instruction.
+This repository is the new SLATE, built from the package in `docs/` (moved there from the root on 2026-10-26, as
+`docs/BUILD-ORDER.md` layer 0 asks). The package is the instruction.
 
-Before any work, read `MANDATE.md`, then `BUILD-ORDER.md`, then `SCREENS.md`, then `KEEP.md`. They are the owner's
-decisions, dated and in the owner's words, and they outrank any assumption carried from the first SLATE.
+Before any work, read `docs/MANDATE.md`, then `docs/BUILD-ORDER.md`, then `docs/SCREENS.md`, then `docs/KEEP.md`.
+They are the owner's decisions, dated and in the owner's words, and they outrank any assumption carried from the
+first SLATE. Then read `HANDOFF.md`, which says where the build stands and what comes next.
 
 The rules in one place:
 
@@ -20,7 +22,7 @@ The rules in one place:
   archived copies). A fact not found is a blocker named by date, never a guess, and the game says what isn't modeled.
 - **No stopping until done.** Done is the whole matrix covered and the gate green end to end. Checkpoint so an
   interruption resumes.
-- **Built in order.** `BUILD-ORDER.md`: the repository and the gate, the core, the world, papers and money, the
+- **Built in order.** `docs/BUILD-ORDER.md`: the repository and the gate, the core, the world, papers and money, the
   person, the screens, the voice, verification. Nothing built on a layer not yet proven.
 - **Connected and cohesive.** One model of the world; every system reads the same state through the same engines;
   no second copy of a fact; dates, money, places, papers and history never contradict, and a test holds each
@@ -28,9 +30,9 @@ The rules in one place:
 - **The voice.** Natural, coherent and realistic in every word the game says; the engine's vocabulary stays out of
   the player's sight.
 - **The look.** The first SLATE's tokens, type, spacing, dark field and gold accent are the starting standard
-  (`kept/01-startup-and-persistence/tokens.css`), refined, never cluttered.
+  (`docs/kept/01-startup-and-persistence/tokens.css`), refined, never cluttered.
 
-Out of the first build, by the owner's rulings (KEEP.md, entries 8, 10, 11, 16 to 19): Yale and the School, the
+Out of the first build, by the owner's rulings (`docs/KEEP.md`, entries 8, 10, 11, 16 to 19): Yale and the School, the
 career engine, the attributes, dispositions and traits, the tutorial and the manual, the body, meals and nourishment,
 energy and stress, readiness, the earlier residence, the free-text background.
 

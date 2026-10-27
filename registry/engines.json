@@ -1,0 +1,100 @@
+{
+ "core.time": {
+  "layer": 1,
+  "dir": "src/core/time",
+  "readsPlace": false,
+  "matrices": [
+   "coverage/time-zones.json",
+   "coverage/time-calendar.json",
+   "coverage/time-sun.json",
+   "coverage/time-local.json"
+  ]
+ },
+ "core.rng": {
+  "layer": 1,
+  "dir": "src/core/rng",
+  "readsPlace": false,
+  "matrices": [
+   "coverage/rng-operations.json",
+   "coverage/rng-deciders.json"
+  ]
+ },
+ "core.money": {
+  "layer": 1,
+  "dir": "src/core/money",
+  "readsPlace": false,
+  "matrices": [
+   "coverage/money-currencies.json",
+   "coverage/money-operations.json"
+  ]
+ },
+ "core.frame": {
+  "layer": 1,
+  "dir": "src/core/frame",
+  "readsPlace": false,
+  "matrices": [
+   "coverage/frame-operations.json"
+  ]
+ },
+ "core.text": {
+  "layer": 1,
+  "dir": "src/core/text",
+  "readsPlace": false,
+  "matrices": [
+   "coverage/text-operations.json"
+  ]
+ },
+ "core.persistence": {
+  "layer": 1,
+  "dir": "src/core/persistence",
+  "readsPlace": false,
+  "matrices": [
+   "coverage/persistence-operations.json"
+  ]
+ },
+ "world.gazetteer": {
+  "layer": 2,
+  "dir": "src/world/gazetteer",
+  "readsPlace": true,
+  "matrices": [
+   "coverage/gazetteer-countries.json"
+  ],
+  "allPlacesTest": "tests/world/gazetteer/gazetteer.test.ts::every place on the map > is in its country, with a region of that country or none, coordinates on the globe, and a time zone the clock and the sun answer for"
+ },
+ "world.map": {
+  "layer": 2,
+  "dir": "src/world/map",
+  "readsPlace": true,
+  "matrices": [
+   "coverage/map-countries.json"
+  ],
+  "allPlacesTest": "tests/world/map/map.test.ts::every place on the map > is marked on the whole world's view, where its coordinates put it"
+ },
+ "world.clock": {
+  "layer": 2,
+  "dir": "src/world/clock",
+  "readsPlace": true,
+  "matrices": [
+   "coverage/clock-countries.json"
+  ],
+  "allPlacesTest": "tests/world/clock/clock.test.ts::what the clock shows > at every place on the map"
+ },
+ "world.weather": {
+  "layer": 2,
+  "dir": "src/world/weather",
+  "readsPlace": true,
+  "matrices": [
+   "coverage/weather-countries.json"
+  ],
+  "allPlacesTest": "tests/world/weather/weather.test.ts::the weather at real towns > at every place on the map"
+ },
+ "world.holidays": {
+  "layer": 2,
+  "dir": "src/world/holidays",
+  "readsPlace": true,
+  "matrices": [
+   "coverage/holidays-countries.json"
+  ],
+  "allPlacesTest": "tests/world/holidays/holidays.test.ts::the holidays > at every place on the map"
+ }
+}

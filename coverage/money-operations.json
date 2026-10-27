@@ -1,0 +1,69 @@
+{
+ "engine": "core.money",
+ "axis": "money-operation",
+ "universe": {
+  "keys": [
+   "amounts",
+   "major-units",
+   "same-currency-arithmetic",
+   "rounding",
+   "multiply",
+   "allocate",
+   "exchange"
+  ]
+ },
+ "rows": [
+  {
+   "key": "amounts",
+   "status": "proven",
+   "tests": [
+    "tests/core/money/money.test.ts::amounts > are whole numbers of minor units, in a currency in use"
+   ]
+  },
+  {
+   "key": "major-units",
+   "status": "proven",
+   "tests": [
+    "tests/core/money/money.test.ts::amounts > read from major units, with no more decimals than the currency has",
+    "tests/core/money/money.test.ts::amounts > write in major units, with exactly the currency's decimals"
+   ]
+  },
+  {
+   "key": "same-currency-arithmetic",
+   "status": "proven",
+   "tests": [
+    "tests/core/money/money.test.ts::amounts > add, subtract and compare only within one currency"
+   ]
+  },
+  {
+   "key": "rounding",
+   "status": "proven",
+   "tests": [
+    "tests/core/money/money.test.ts::exact arithmetic > reads a decimal exactly",
+    "tests/core/money/money.test.ts::exact arithmetic > rounds half to even, both signs"
+   ]
+  },
+  {
+   "key": "multiply",
+   "status": "proven",
+   "tests": [
+    "tests/core/money/money.test.ts::exact arithmetic > multiplies by a decimal factor, rounding half to even to the minor unit"
+   ]
+  },
+  {
+   "key": "allocate",
+   "status": "proven",
+   "tests": [
+    "tests/core/money/money.test.ts::exact arithmetic > allocates exactly, the leftover minor units to the parts that lost the most"
+   ]
+  },
+  {
+   "key": "exchange",
+   "status": "proven",
+   "tests": [
+    "tests/core/money/money.test.ts::exchange > goes through the dollar, at each currency's minor units, and is always an estimate",
+    "tests/core/money/money.test.ts::exchange > refuses a rate for another currency, or one that is not more than zero"
+   ]
+  }
+ ]
+}
