@@ -188,7 +188,7 @@ a place fills a column; a cell is the row's status in that engine's matrix, or b
 | PL | Poland | researched | researched | researched | researched | researched |
 | PM | Saint Pierre and Miquelon | researched | researched | researched | researched | pending |
 | PN | Pitcairn | researched | researched | researched | blocked | researched |
-| PR | Puerto Rico | researched | researched | researched | researched | pending |
+| PR | Puerto Rico | researched | researched | researched | researched | researched |
 | PS | Palestinian Territory | researched | researched | researched | blocked | pending |
 | PT | Portugal | researched | researched | researched | researched | researched |
 | PW | Palau | researched | researched | researched | researched | pending |

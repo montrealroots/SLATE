@@ -18,8 +18,8 @@ restarts. Read `CLAUDE.md` and the owner's package in `docs/` first.
   told where the weather is borrowed from), 6 proven, none pending. `tools/wmo/compile.ts` and `coverage.ts` are at
   100% mutation score with the last sources (1,559 mutants; the survivors of that run killed by tests or simpler
   lines, and the two equivalent ones disabled with their reasons). The
-  holidays (`world.holidays`): the engine, its reckonings and its gate wiring are built and tested; 109 countries
-  researched (378 official lists matched day for day), 6 proven, 134 pending, and Canada blocked for two of its
+  holidays (`world.holidays`): the engine, its reckonings and its gate wiring are built and tested; 110 countries
+  researched (379 official lists matched day for day), 6 proven, 133 pending, and Canada blocked for two of its
   regions (Prince Edward Island's and Yukon's own); its code at 100% mutation score (532 mutants, with the regions'
   and the shared substitutes' rules). Then prices.
 
@@ -202,9 +202,8 @@ What layer 0 holds:
    - GL, SJ: deferred (Danish/Norwegian law extent).
    - US.NH: nh.gov (DAS, courts, employee portal, education), gc.nh.gov and Justia all refuse (403) on 2026-10-27;
      state employees' day after Thanksgiving unread. US.TN: tn.gov 403.
-   - PR: OATRH ME 14-2025 (2026 list) 404 since the site moved; secondary lists (camarapr.org chamber calendar,
-     Microjuris) read; open: whether Sunday 22 March 2026 (Abolición, Código Político art. 387 Sunday->Monday) is
-     kept on Monday 23; José Celso Barbosa's rule. Retry.
+   - PR: done 2026-10-27 from OATRH's Memorando Especial 12-2026 (2027's list; docs.pr.gov/files/OATRH/...) and
+     art. 387's Sunday rule. 2026's memo (ME 14-2025?) not found on the moved site: hold 2026 to it when found.
    - AR: national read 2026-10-27: Ley 27.399 text (argentina.gob.ar/normativa/nacional/ley-27399-281835/texto),
      2026 list JSON (argentina.gob.ar/sites/default/files/holidays-2026-es.json; 2027 404), Res. 139/2025
      (norma-417061, Decreto 614/25 weekend trasladables movable by JGM), Pope visit decree (norma-430580: 9 Nov
