@@ -186,7 +186,7 @@ a place fills a column; a cell is the row's status in that engine's matrix, or b
 | PH | Philippines | researched | researched | researched | researched | researched |
 | PK | Pakistan | researched | researched | researched | researched | researched |
 | PL | Poland | researched | researched | researched | researched | researched |
-| PM | Saint Pierre and Miquelon | researched | researched | researched | researched | pending |
+| PM | Saint Pierre and Miquelon | researched | researched | researched | researched | blocked |
 | PN | Pitcairn | researched | researched | researched | blocked | researched |
 | PR | Puerto Rico | researched | researched | researched | researched | researched |
 | PS | Palestinian Territory | researched | researched | researched | blocked | pending |
@@ -249,7 +249,7 @@ a place fills a column; a cell is the row's status in that engine's matrix, or b
 | VI | U.S. Virgin Islands | researched | researched | researched | blocked | pending |
 | VN | Vietnam | researched | researched | researched | researched | researched |
 | VU | Vanuatu | researched | researched | researched | blocked | blocked |
-| WF | Wallis and Futuna | researched | researched | researched | researched | pending |
+| WF | Wallis and Futuna | researched | researched | researched | researched | blocked |
 | WS | Samoa | researched | researched | researched | researched | researched |
 | XK | Kosovo | researched | researched | researched | blocked | pending |
 | YE | Yemen | researched | researched | researched | researched | pending |
