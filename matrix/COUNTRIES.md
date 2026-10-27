@@ -219,7 +219,7 @@ a place fills a column; a cell is the row's status in that engine's matrix, or b
 | SV | El Salvador | researched | researched | researched | researched | researched |
 | SX | Sint Maarten | researched | researched | researched | researched | pending |
 | SY | Syria | researched | researched | researched | researched | researched |
-| SZ | Eswatini | researched | researched | researched | blocked | pending |
+| SZ | Eswatini | researched | researched | researched | blocked | blocked |
 | TC | Turks and Caicos Islands | researched | researched | researched | blocked | researched |
 | TD | Chad | researched | researched | researched | researched | researched |
 | TF | French Southern Territories | researched | researched | researched | researched | blocked |

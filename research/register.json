@@ -14743,6 +14743,45 @@
    ],
    "notModeled": "holidays.unkept",
    "id": "R-0343"
+  },
+  {
+   "id": "R-0344",
+   "fact": "world.holidays.blocked.SZ",
+   "sought": "Eswatini's public holidays as the Public Holidays Act's Schedule stands in 2026 (amended by Gazette notices since 1998), with the 2026 dates of the Umhlanga and Incwala days and any day the Government declared",
+   "status": "blocked",
+   "attempts": [
+    {
+     "method": "institution",
+     "tried": "The Government of Eswatini's portal (gov.sz)",
+     "result": "Answers 503 over http and does not answer over https.",
+     "date": "2026-10-27"
+    },
+    {
+     "method": "official-register",
+     "tried": "EswatiniLII (eswatinilii.org/akn/sz/act/1938/71) and Laws.Africa's commons host for the Act's consolidations",
+     "result": "EswatiniLII refuses with 403; the commons host has only the version at 1 December 1998 (read: its Schedule still names Commonwealth Day and a fixed 1991 Umhlanga date), later dates 404.",
+     "date": "2026-10-27"
+    },
+    {
+     "method": "web-search",
+     "tried": "'eswatinilii.org public holidays act akn sz act Public Holidays'",
+     "result": "The Act and Gazette entries citing it, without the current Schedule or 2026 notices.",
+     "date": "2026-10-27"
+    },
+    {
+     "method": "trade-press",
+     "tried": "The Times of Eswatini (WordPress API and site search: 'public holiday'); the Eswatini Observer",
+     "result": "No 2026 holiday notice in the Times; the Observer does not answer.",
+     "date": "2026-10-27"
+    },
+    {
+     "method": "archive",
+     "tried": "The Wayback Machine's availability index for gov.sz",
+     "result": "Archived (16 September 2026); not fetched, pending the owner's ruling on snapshots.",
+     "date": "2026-10-27"
+    }
+   ],
+   "notModeled": "holidays.unkept"
   }
  ]
 }
