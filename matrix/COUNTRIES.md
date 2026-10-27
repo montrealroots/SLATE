@@ -256,4 +256,4 @@ a place fills a column; a cell is the row's status in that engine's matrix, or b
 | YT | Mayotte | researched | researched | researched | researched | researched |
 | ZA | South Africa | researched | researched | researched | researched | researched |
 | ZM | Zambia | researched | researched | researched | researched | pending |
-| ZW | Zimbabwe | researched | researched | researched | researched | pending |
+| ZW | Zimbabwe | researched | researched | researched | researched | researched |
