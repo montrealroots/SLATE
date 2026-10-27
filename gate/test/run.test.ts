@@ -132,7 +132,8 @@ describe('the gate, end to end on a fixture', () => {
     // A test can't run the suite it belongs to, so here no test has passed: the claims that cite passing tests (and the
     // matrices written from them) are held by the gate's own run instead. Everything else must hold now; work declared
     // and not yet done (incomplete, such as pending research) is the gate's to report, not a break.
-    const out = runGate(opts(ROOT));
+    // The repository's sources are dated as read, so it is held to the day the suite runs, as the gate's own run is.
+    const out = runGate(opts(ROOT, { today: new Date().toISOString().slice(0, 10) }));
     const runOnly = /^(the row's test didn't pass in this run|no passing test falsifies|the engine reads a place, so a passing test)/;
     const findings = out.results
       .filter((r) => r.check !== 'generated')

@@ -17,7 +17,7 @@ a place fills a column; a cell is the row's status in that engine's matrix, or b
 | AQ | Antarctica | researched | researched | proven | proven | proven |
 | AR | Argentina | researched | researched | researched | researched | pending |
 | AS | American Samoa | researched | researched | researched | researched | pending |
-| AT | Austria | researched | researched | researched | researched | pending |
+| AT | Austria | researched | researched | researched | researched | researched |
 | AU | Australia | researched | researched | researched | researched | pending |
 | AW | Aruba | researched | researched | researched | blocked | pending |
 | AX | Aland Islands | researched | researched | researched | researched | pending |
@@ -63,7 +63,7 @@ a place fills a column; a cell is the row's status in that engine's matrix, or b
 | CX | Christmas Island | researched | researched | researched | blocked | pending |
 | CY | Cyprus | researched | researched | researched | researched | pending |
 | CZ | Czechia | researched | researched | researched | researched | researched |
-| DE | Germany | researched | researched | researched | researched | pending |
+| DE | Germany | researched | researched | researched | researched | researched |
 | DJ | Djibouti | researched | researched | researched | blocked | pending |
 | DK | Denmark | researched | researched | researched | researched | researched |
 | DM | Dominica | researched | researched | researched | researched | pending |
@@ -76,7 +76,7 @@ a place fills a column; a cell is the row's status in that engine's matrix, or b
 | ER | Eritrea | researched | researched | researched | researched | pending |
 | ES | Spain | researched | researched | researched | researched | researched |
 | ET | Ethiopia | researched | researched | researched | researched | pending |
-| FI | Finland | researched | researched | researched | researched | pending |
+| FI | Finland | researched | researched | researched | researched | researched |
 | FJ | Fiji | researched | researched | researched | researched | pending |
 | FK | Falkland Islands | researched | researched | researched | blocked | pending |
 | FM | Micronesia | researched | researched | researched | researched | pending |
@@ -140,7 +140,7 @@ a place fills a column; a cell is the row's status in that engine's matrix, or b
 | LR | Liberia | researched | researched | researched | researched | pending |
 | LS | Lesotho | researched | researched | researched | blocked | pending |
 | LT | Lithuania | researched | researched | researched | researched | pending |
-| LU | Luxembourg | researched | researched | researched | researched | pending |
+| LU | Luxembourg | researched | researched | researched | researched | researched |
 | LV | Latvia | researched | researched | researched | researched | pending |
 | LY | Libya | researched | researched | researched | researched | pending |
 | MA | Morocco | researched | researched | researched | researched | pending |
