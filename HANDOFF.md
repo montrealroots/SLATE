@@ -18,8 +18,8 @@ restarts. Read `CLAUDE.md` and the owner's package in `docs/` first.
   told where the weather is borrowed from), 6 proven, none pending. `tools/wmo/compile.ts` and `coverage.ts` are at
   100% mutation score with the last sources (1,559 mutants; the survivors of that run killed by tests or simpler
   lines, and the two equivalent ones disabled with their reasons). The
-  holidays (`world.holidays`): the engine, its reckonings and its gate wiring are built and tested; 89 countries
-  researched (299 official lists matched day for day), 6 proven, 156 pending, and Canada blocked for two of its
+  holidays (`world.holidays`): the engine, its reckonings and its gate wiring are built and tested; 90 countries
+  researched (300 official lists matched day for day), 6 proven, 155 pending, and Canada blocked for two of its
   regions (Prince Edward Island's and Yukon's own); its code at 100% mutation score (532 mutants, with the regions'
   and the shared substitutes' rules). Then prices.
 
@@ -335,6 +335,15 @@ What layer 0 holds:
      csc.gov.kw has no list found. Read the Labour Law (6/2010) art. 67 and each Cabinet decision.
    - Gulf sites with incomplete chains (qcb.gov.qa, kln.gov.my): completed from the certificate's own issuer URL
      (scratchpad aia.sh), verification on.
+   - GG: gov.gg/holidaydates read (Public Holidays Ordinance 2009; 2026 and 2027 lists; Liberation Day 9 May left on
+     a weekend). Alderney (GG.8989934) keeps its own days (no Liberation Day; first Monday of August; Homecoming Day
+     15 December?), unread: alderney.gov.gg resets. Park until Alderney is read.
+   - IM: gov.im's bank holidays page and legislation.gov.im answer "Request Rejected" (not circumvented); the Bank
+     Holidays Act 1989 and the Treasury's yearly notice (TT Bank Holiday, Tynwald Day). Retry.
+   - AD: national days read (govern.ad's notes of the 2026 and 2027 labour-calendar decrees: 14 days, none moved;
+     Llei 31/2018 art. 62). Each comú (the 7 parishes, AD's regions) adds up to 4 days a year by edict in the BOPA
+     (2024's are linked from govern.ad's "Salaris i festius"); the 2026 edicts aren't found, and the BOPA's search
+     API needs a key embedded in its site, which isn't used. Retry the comuns' sites and the BOPA issues of late 2025.
 3. Then prices by place, and the proof of layer 2.
 
 ## Verification evidence

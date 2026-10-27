@@ -144,7 +144,7 @@ a place fills a column; a cell is the row's status in that engine's matrix, or b
 | LV | Latvia | researched | researched | researched | researched | researched |
 | LY | Libya | researched | researched | researched | researched | pending |
 | MA | Morocco | researched | researched | researched | researched | pending |
-| MC | Monaco | researched | researched | researched | blocked | pending |
+| MC | Monaco | researched | researched | researched | blocked | researched |
 | MD | Moldova | researched | researched | researched | researched | pending |
 | ME | Montenegro | researched | researched | researched | researched | pending |
 | MF | Saint Martin | researched | researched | researched | blocked | researched |
