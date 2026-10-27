@@ -9658,6 +9658,105 @@
     }
    ],
    "notModeled": "holidays.unkept"
+  },
+  {
+   "id": "R-0247",
+   "fact": "world.holidays.blocked.IO",
+   "sought": "The British Indian Ocean Territory's public holidays (the days its law or the Commissioner's notice makes public holidays on Diego Garcia)",
+   "status": "blocked",
+   "attempts": [
+    {
+     "method": "institution",
+     "tried": "BIOT Administration (biot.gov.io: governance, the site search for \"holiday\")",
+     "result": "No list of public holidays or notice of them is published.",
+     "date": "2026-10-27"
+    },
+    {
+     "method": "official-register",
+     "tried": "BIOT's revised ordinances and regulations and its Gazettes 2025 and 2026 (biot.gov.io/governance/legislation): the Interpretation & General Provisions Ordinance 1993 (A.7) and the Employment Ordinance 1984 (G.5) read",
+     "result": "The Interpretation Ordinance uses \"public holiday\" (s. 13) without defining or listing any; no holidays ordinance is among the revised ordinances, and the gazettes' titles name none.",
+     "date": "2026-10-27"
+    },
+    {
+     "method": "web-search",
+     "tried": "'British Indian Ocean Territory public holidays ordinance BIOT Diego Garcia legislation holidays'",
+     "result": "Only the 2026 Diego Garcia bill and general accounts of the Territory.",
+     "date": "2026-10-27"
+    },
+    {
+     "method": "trade-press",
+     "tried": "Accounts of the Territory and the Diego Garcia Military Base and British Indian Ocean Territory Bill (bills.parliament.uk)",
+     "result": "None names its public holidays.",
+     "date": "2026-10-27"
+    },
+    {
+     "method": "archive",
+     "tried": "web.archive.org for the pages above",
+     "result": "This environment cannot reach web.archive.org (the connection resets).",
+     "date": "2026-10-27"
+    }
+   ],
+   "notModeled": "holidays.unkept"
+  },
+  {
+   "id": "R-0248",
+   "fact": "world.holidays.blocked.TF",
+   "sought": "The French Southern and Antarctic Lands' public holidays (whether the Code du travail's art. L3133-1 days, or which, are days off in the TAAF's districts, under its rule of legislative speciality)",
+   "status": "blocked",
+   "attempts": [
+    {
+     "method": "institution",
+     "tried": "Administration supérieure des TAAF (taaf.fr: its documentation space and site search for 'jours fériés')",
+     "result": "No list, decree or note on holidays; the documentation space returns no documents.",
+     "date": "2026-10-27"
+    },
+    {
+     "method": "official-register",
+     "tried": "Légifrance (the Code du travail's territorial application) and the Journal officiel des TAAF",
+     "result": "Légifrance answers 403 to this environment; the TAAF's journal isn't found on its site.",
+     "date": "2026-10-27"
+    },
+    {
+     "method": "web-search",
+     "tried": "'Terres australes et antarctiques françaises jours fériés droit applicable code du travail TAAF Kerguelen Crozet personnel jours fériés'",
+     "result": "Only metropolitan France's rules and a guide that does not cite a TAAF text.",
+     "date": "2026-10-27"
+    },
+    {
+     "method": "trade-press",
+     "tried": "Labour-law publishers (Éditions Tissot, Legisocial) and the districts' blogs linked from taaf.fr",
+     "result": "None addresses the TAAF.",
+     "date": "2026-10-27"
+    },
+    {
+     "method": "archive",
+     "tried": "web.archive.org for the pages above",
+     "result": "This environment cannot reach web.archive.org (the connection resets).",
+     "date": "2026-10-27"
+    }
+   ],
+   "notModeled": "holidays.unkept"
+  },
+  {
+   "id": "R-0249",
+   "fact": "world.holidays.GS",
+   "sought": "South Georgia and the South Sandwich Islands's public holidays, the days off its law or its government's list names, nationally and in each first-level region that keeps its own",
+   "status": "found",
+   "value": {
+    "file": "research/sources/holidays/GS.json",
+    "sha256": "90384bfce0fb1d0913f722739b1694162297e9c040d279fb986d1a85074327bf",
+    "lists": 1,
+    "years": "2026"
+   },
+   "sources": [
+    {
+     "kind": "primary",
+     "url": "https://laws.gov.gs/wp-content/uploads/2026/01/SGSSI-Gazette-No-1-dated-27-January-2026.pdf",
+     "title": "South Georgia and the South Sandwich Islands Gazette No. 1 (27 January 2026), Notice No. 4 (23 January 2026): Public Holidays 2026",
+     "read": "2026-10-27",
+     "said": "In accordance with section 73 of the Interpretation and General Clauses Ordinance 1977, I declare that the following dates will be public holidays for South Georgia and the South Sandwich Islands during 2026:- 1 January New Year’s Day 19 January Possession Day (in lieu of 17 January) 3 April Good Friday 27 April Liberation Day (in lieu of 25 April) 20 May Shackleton Day 22 June Mid-winter Day (in lieu of 21 June) 30 October Environment Day 25 December Christmas Day 28 December Boxing Day (in lieu of 26 December). Dated 23 January 2026 C. MARTIN-REYNOLDS C.M.G., Commissioner."
+    }
+   ]
   }
  ]
 }

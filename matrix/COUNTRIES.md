@@ -96,7 +96,7 @@ a place fills a column; a cell is the row's status in that engine's matrix, or b
 | GP | Guadeloupe | researched | researched | researched | researched | researched |
 | GQ | Equatorial Guinea | researched | researched | researched | researched | pending |
 | GR | Greece | researched | researched | researched | researched | researched |
-| GS | South Georgia and the South Sandwich Islands | researched | researched | researched | blocked | pending |
+| GS | South Georgia and the South Sandwich Islands | researched | researched | researched | blocked | researched |
 | GT | Guatemala | researched | researched | researched | researched | researched |
 | GU | Guam | researched | researched | researched | researched | researched |
 | GW | Guinea-Bissau | researched | researched | researched | researched | pending |
@@ -112,7 +112,7 @@ a place fills a column; a cell is the row's status in that engine's matrix, or b
 | IL | Israel | researched | researched | researched | researched | researched |
 | IM | Isle of Man | researched | researched | researched | researched | blocked |
 | IN | India | researched | researched | researched | researched | blocked |
-| IO | British Indian Ocean Territory | researched | researched | researched | blocked | pending |
+| IO | British Indian Ocean Territory | researched | researched | researched | blocked | blocked |
 | IQ | Iraq | researched | researched | researched | researched | pending |
 | IR | Iran | researched | researched | researched | researched | pending |
 | IS | Iceland | researched | researched | researched | researched | researched |
@@ -222,7 +222,7 @@ a place fills a column; a cell is the row's status in that engine's matrix, or b
 | SZ | Eswatini | researched | researched | researched | blocked | pending |
 | TC | Turks and Caicos Islands | researched | researched | researched | blocked | researched |
 | TD | Chad | researched | researched | researched | researched | pending |
-| TF | French Southern Territories | researched | researched | researched | researched | pending |
+| TF | French Southern Territories | researched | researched | researched | researched | blocked |
 | TG | Togo | researched | researched | researched | researched | pending |
 | TH | Thailand | researched | researched | researched | researched | researched |
 | TJ | Tajikistan | researched | researched | researched | researched | pending |
