@@ -157,7 +157,7 @@ a place fills a column; a cell is the row's status in that engine's matrix, or b
 | MO | Macao | researched | researched | researched | researched | researched |
 | MP | Northern Mariana Islands | researched | researched | researched | blocked | researched |
 | MQ | Martinique | researched | researched | researched | researched | researched |
-| MR | Mauritania | researched | researched | researched | researched | pending |
+| MR | Mauritania | researched | researched | researched | researched | researched |
 | MS | Montserrat | researched | researched | researched | blocked | researched |
 | MT | Malta | researched | researched | researched | researched | researched |
 | MU | Mauritius | researched | researched | researched | researched | researched |

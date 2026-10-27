@@ -473,6 +473,9 @@ What layer 0 holds:
      a holiday on a Friday or on another holiday (the next day that is neither). Open: the weekend (Friday only in the
      law; Friday-Saturday in practice since 2013? unconfirmed), and the Sanaa authorities' own days in the governorates
      they hold (not modeled: the law of the Republic is kept everywhere).
+   - MR: done 2026-10-27: loi 92-018 (the Fonction publique ministry's legal texts page, /ar/techriye), the National
+     Moon Committee's 2026 dates and the Presidency's compensation-day decrees (ami.mr WP API); from 2027 the Hijri
+     days by Umm al-Qura. 1 January isn't in the law (2 January 2026 was decreed "following" it): not kept.
    - TN: done 2026-10-27: décret présidentiel 2021-223 (legislation-securite.tn's JORT text) and the 2026 Islamic
      days as the Mufti and the Prime Minister's office announced them (Kapitalis WP API). 2027: the same announcements.
    - BQ: Regeling feestdagen ambtenaren BES (stcrt-2019-63152, read): Bonaire 30 Apr Dia di Rincon, 6 Sep Dia di
