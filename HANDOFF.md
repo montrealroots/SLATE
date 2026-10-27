@@ -480,6 +480,10 @@ What layer 0 holds:
      host, commons.laws.africa/akn/ug/act/1965/23/eng@2023-12-31.pdf, past ULII's Cloudflare). Hijri days by Umm al-Qura.
      Open: the President's s. 2(2) days for 2026 (NRM Liberation Day 26 January and the 15 January election day are
      reported by aggregators only).
+   - BI: done 2026-10-27 from décret 100/150 of 7 June 2021 (the 2006 list as amended, presidence.gov.bi WP API; a
+     scan, read by eye). Aïd el-Adha 27 May 2026 is the Presidency's own report; Aïd el-Fitr by Umm al-Qura. Art. 4's
+     Sunday move is discretionary ("lorsqu'il paraîtra inopportun") and no moved day is found among the Presidency's
+     decrees (2025's 6 April and 8 June fell on Sundays): not kept. Open: whether Monday 2 November 2026 is given.
    - MW: blocked 2026-10-27: the Act's Schedule is read only as consolidated at 31 December 2014 (commons.laws.africa
      /akn/mw/act/1967/11/eng@2014-12-31.pdf); the Gazette orders since (Africa Day, Chakufwa Chihana Day, Eid al-Adha?)
      and 2026's orders are unread. Laws.Africa's commons host also serves other LIIs' consolidations past their bot
