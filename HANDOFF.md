@@ -462,6 +462,12 @@ What layer 0 holds:
      21 days, a Sunday's the Monday, no Saturday rule) and vi.gov's 2025-26 proclamation; open: whether Juneteenth
      (Bill 35-0009, Senate 2023) became law, and § 171's current text (Justia behind Cloudflare). Carnival and
      festival days are administrative leave for government staff only.
+     2026-10-27: vi.gov's WP API (/wp-json/wp/v2/posts?search=holiday) has the Governor's 2025-26 schedule (§ 171
+     days named: 25-26 Dec, 1 Jan, 6 Jan) and 2026's Easter (Holy Thursday, Good Friday, Easter Monday) and Juneteenth
+     (offices closed Fri 19 June) notices; whether Juneteenth is now in § 171 is still open.
+   - GL: lead 2026-10-27: no Greenlandic holiday act found; an Inatsisartut § 37 question (ina.gl 019_2023) calls
+     21 June the only national holiday; Info Norden's page is behind Cloudflare. MY: Act 369's text not reachable
+     (lom.agc.gov.my lists by script); the Sabah Holidays Ordinance was amended in April 2026 (Borneo Post).
    - TN: lead 2026-10-27: tap.info.tn and legislation.tn don't answer; pm.gov.tn's search (/ar/recherche?
      search_api_fulltext=) finds older communiqués only (عطلة عيد الفطر ...). Find 2026's.
    - BQ: Regeling feestdagen ambtenaren BES (stcrt-2019-63152, read): Bonaire 30 Apr Dia di Rincon, 6 Sep Dia di
