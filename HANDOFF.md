@@ -476,9 +476,8 @@ What layer 0 holds:
    - KE: done 2026-10-27 through the press (Kenya Law's Act behind an AWS WAF check; interior.go.ke's TLS chain
      fails): both 2026 Idds by Gazette notice (Standard, Star), s. 4's Sunday rule (kenyans.co.ke), the 2024 Mazingira
      Day (president.go.ke). Read the Act's Schedule from Kenya Law when it answers.
-   - NI: Ley 185 Código del Trabajo art. 66 (ten days; 8 Dec disputed vs the 1980 text);
-     legislacion.asamblea.gob.ni 403, mitrab.gob.ni no answer, laprensani.com challenge (not circumvented), BCN
-     calendar not found. Managua's Santo Domingo days (1, 10 Aug) local. Retry.
+   - NI: done 2026-10-27: art. 66 of Ley 185 as reformed on 18 January 2026 (fourteen days), as Confidencial quotes
+     it (asamblea.gob.ni 403). Art. 67's local asuetos (Managua 1 and 10 August) are a town's, not kept.
    - MS: no official 2026 list found (gov.ms site search empty; only aggregators). Retry gov.ms press releases and
      the Montserrat Gazette.
    - MH, PW, FM: MH's Public Holidays Act 1988 on PacLII (403; the austlii mirror resets) and the Register-IRI list
