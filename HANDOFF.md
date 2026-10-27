@@ -310,6 +310,10 @@ What layer 0 holds:
      are left out (Ordino's 5-6 July and 16 September "a Ordino" read as the village). Announced to 2026.
    - CX, CC: blocked 2026-10-27: the Administrator's 2026 bulletins (infrastructure.gov.au community-bulletin-ci- and
      -cki-public-holidays-2026.pdf, A20 and A21/2025) exist but the host resets; retry them first.
+   - BD: lead 2026-10-27: the Daily Star prints the Ministry of Public Administration's 2026 notification (general
+     holidays for all, executive-order ones for government offices only); its "14 general holidays" list shows 13
+     (Pahela Baishakh under executive order?). Read the gazette (mopa.gov.bd; tokyo.mofa.gov.bd fails TLS) and the
+     moon-sighted Eid dates before modeling. CW: gobiernu.cw and centralbank.cw answer 403.
    - BR: done 2026-10-27: national laws in every state, each state's own from the courts' and prosecutors' 2026
      calendars (the AASP tracker at aasp.org.br/produtos-servicos/expediente-forense/feriados-forenses-2026/ links each
      court's act). Acre announced to 2026 (Lei 2.126/2009 moves some days by a rule not read). Rio's Carnival Tuesday,
@@ -319,9 +323,11 @@ What layer 0 holds:
      21.357 answer 403 there), the DT's consults (art. 35 ter's 17/20 September), Meganoticias' 2026 list; the
      solstice day is the clock's at UTC-4 (listed to 2100). Arica y Parinacota's 7 June kept; Chillán's 20 August
      (two communes) left out. Election days (Ley 18.700 art. 169) are holidays: add them for 2027+ when called.
-   - EC: official calendar (Viceministerio de Turismo, 2025-2030) and Decreto Ejecutivo 249 (2 Jan 2026) not yet
-     found on turismo.gob.ec / trabajo.gob.ec; Ley Orgánica de Servicio Público art. 2016 traslado rules to read.
-     Retry.
+   - EC: lead 2026-10-27: RO 906 (esacc.corteconstitucional) and the Código del Trabajo art. 65 (2023 codification,
+     ambienteyenergia.gob.ec) read: national days and moves known. Open: each province's provincialización day
+     (region-level local days by special laws; Decreto 346 moved Cotopaxi's 2026 day to 2 April) and the 2026
+     decrees (249, 507: 20 Nov non-working). The SRI's monthly lists (sri.gob.ec ... Feriados mes actual.pdf) time
+     out here; try again, they name each province's days.
    - VE: LOTTT art. 184 text not yet read from an official copy (Gaceta Oficial 6.076 Ext., 2012); decrees add
      days (non-working by decree). Retry.
    - AU: done 2026-10-27, each state's own Act in its region; South Australia blocked (its sites, AustLII and the
@@ -366,9 +372,11 @@ What layer 0 holds:
    - RW: done 2026-10-27 from Presidential Order No. 54 of 2017 (RwandaLII) and gov.rw's 2026 list (which omits
      2 January, the Eids and Saturday substitutes; the Order rules). Eids are Umm al-Qura's: read the Rwanda Muslims'
      Association's yearly announcements when found.
-   - ZM: no official 2026 list found (Ministry of Labour, gazette); Public Holidays Act Cap. 272 + Kenneth Kaunda
-     Day 28 Apr (2022); 2026 election-year extras (1 Sep swearing-in?) need gazette notices. Retry:
-     parliament.gov.zm acts, zambialii, boz.zm.
+   - ZM: lead 2026-10-27: the National Assembly committee's report on the Public Holidays (Amendment) Bill N.A.B. 76
+     of 2026 (parliament.gov.zm, read with scratchpad aia.sh's completed chain): Cap. 272's Schedule has 11 categories
+     with the Sunday rule (s. 2(2)); Women's Day, Kenneth Kaunda Day, Easter Monday and the National Day of Prayer are
+     declared yearly by statutory notice (s. 3). Open: the Schedule's text, 2026's notices (and the 13 August 2026
+     election day), and whether the Bill passed (it removes the Monday substitute).
    - AS: no ASG 2026 holiday schedule found (americansamoa.gov); Samoa News: government closed 1-2 Jan 2026 by
      governor's announcement. Read A.S.C.A. § 1.0501 (legal holidays: Flag Day 17 Apr, White Sunday Monday?,
      Manu'a Cession Day 16 Jul?) and the governor's notices. Retry.
@@ -417,13 +425,6 @@ What layer 0 holds:
      retry for its list (first Monday of August, Homecoming Day 15 December, no Liberation Day per the press).
    - IM: blocked 2026-10-27 (gov.im and legislation.gov.im reject requests, tynwald.org.im 403): retry gov.im's
      bank holidays page and the Bank Holidays Act 1989.
-   - AD: national days read (govern.ad's notes of the 2026 and 2027 labour-calendar decrees: 14 days, none moved;
-     Llei 31/2018 art. 62). Each comú (the 7 parishes, AD's regions) adds up to 4 days a year by edict in the BOPA
-     (2024's are linked from govern.ad's "Salaris i festius"); the 2026 edicts aren't found, and the BOPA's search
-     API needs a key embedded in its site, which isn't used. Retry the comuns' sites and the BOPA issues of late 2025.
-   - GE: matsne.gov.ge answers "Access Denied" (Labour Code art. 27's list). Retry.
-   - BD: the Ministry of Public Administration's notification of 9 November 2025 (28 days: 14 general, 14 by
-     executive order) not reached; the press gives summaries only. Optional days per faith are excluded. Retry.
    - GD: Bank Holidays Act Cap. 25 read with Acts 2/2017 and 11/2025 (grenadaparliament.gd); open: whether the 2023
      bill making Carnival Tuesday a full day passed, and whether 19 October (National Heroes Day) was proclaimed for
      2025 and 2026; S.R.O. 2/2026 gives Carriacou and Petite Martinique (GD.10) 16 February 2026. Retry.
