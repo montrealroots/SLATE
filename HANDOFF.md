@@ -18,8 +18,8 @@ restarts. Read `CLAUDE.md` and the owner's package in `docs/` first.
   told where the weather is borrowed from), 6 proven, none pending. `tools/wmo/compile.ts` and `coverage.ts` are at
   100% mutation score with the last sources (1,559 mutants; the survivors of that run killed by tests or simpler
   lines, and the two equivalent ones disabled with their reasons). The
-  holidays (`world.holidays`): the engine, its reckonings and its gate wiring are built and tested; 141 countries
-  researched (530 official lists matched day for day), 6 proven, 85 pending, and 20 blocked: the Isle of Man,
+  holidays (`world.holidays`): the engine, its reckonings and its gate wiring are built and tested; 142 countries
+  researched (531 official lists matched day for day), 6 proven, 84 pending, and 20 blocked: the Isle of Man,
   Tanzania, Palau, the British Indian Ocean Territory, the French Southern Lands, the Cook Islands, Tokelau,
   Vanuatu, Micronesia, Tuvalu,
   Saint-Pierre-and-Miquelon, Wallis and Futuna, Christmas Island and the Cocos (Keeling) Islands whole, and six for some of their regions (Canada's Prince Edward Island and Yukon, India's four, Australia's
@@ -320,6 +320,9 @@ What layer 0 holds:
    - MA: done 2026-10-27 from mmsp.gov.ma's table of décret 2-77-169, the Fête de l'Unité decrees (MAP) and the Habous
      ministry's 2026 announcements through MAP (mapexpress.ma/?s= search). Announced to 2026. EH (Western Sahara):
      not yet decided which law the map applies there; the owner may want to rule.
+   - EG: done 2026-10-27 from the 2026 decrees as Amwal Al Ghad and Arab Finance report them (en.amwalalghad.com's
+     /wp-json/wp/v2/posts?search= finds each). Announced to 2026. Read Ministerial Decree 294 of 2025's list (for
+     Sinai Liberation Day and the private sector's Eid al-Fitr length) when found.
    - BR: done 2026-10-27: national laws in every state, each state's own from the courts' and prosecutors' 2026
      calendars (the AASP tracker at aasp.org.br/produtos-servicos/expediente-forense/feriados-forenses-2026/ links each
      court's act). Acre announced to 2026 (Lei 2.126/2009 moves some days by a rule not read). Rio's Carnival Tuesday,
@@ -386,16 +389,12 @@ What layer 0 holds:
    - AS: no ASG 2026 holiday schedule found (americansamoa.gov); Samoa News: government closed 1-2 Jan 2026 by
      governor's announcement. Read A.S.C.A. § 1.0501 (legal holidays: Flag Day 17 Apr, White Sunday Monday?,
      Manu'a Cession Day 16 Jul?) and the governor's notices. Retry.
-   - VI: no official 2026 list found (vi.gov covers the 2025-26 season's administrative leave only); V.I.C. tit. 1
-     § 171 to read; Transfer Day 31 Mar, Emancipation 3 Jul, Liberty Day 1 Nov, Christmas Second Day 26 Dec,
-     Carnival days (St Thomas/St Croix) by proclamation. Retry.
-   - MK: mtsp.gov.mk, vlada.mk, slvesnik.com.mk no answer; nbrm.mk 403 (2026-10-27). Law on holidays + government
-     decision per year (Ramazan Bajram for all; 11 Oct Sunday -> 12 Oct). Retry; try mfa.bg embassy Skopje page.
-   - XK: Law 03/L-064 (art. 4: holiday on Sat/Sun -> following working day(s)); MPB calendars hosted by BQK: 2024
-     (bqk-kos.org/wp-content/uploads/2024/11/Kalendari-festave-zyrtare-_-2024.pdf), 2025 (.../2025/01/Kalendari-i-
-     festave-2025.pdf, read: both Easters 20 Apr 2025 -> one rest day 21 Apr: two holidays on one day give ONE
-     substitute, which the engine can't express yet; Bajrami i Madh = Fitr, Bajrami i Vogel = Kurban). 2026
-     calendar not found (guessed URLs 404). Retry kryeministri.rks-gov.net / mpb.
+   - VI: lead 2026-10-27: the § 171(a) list read in the Division of Personnel's 2020 Employee Handbook (dopusvi.org;
+     21 days, a Sunday's the Monday, no Saturday rule) and vi.gov's 2025-26 proclamation; open: whether Juneteenth
+     (Bill 35-0009, Senate 2023) became law, and § 171's current text (Justia behind Cloudflare). Carnival and
+     festival days are administrative leave for government staff only.
+   - TN: lead 2026-10-27: tap.info.tn and legislation.tn don't answer; pm.gov.tn's search (/ar/recherche?
+     search_api_fulltext=) finds older communiqués only (عطلة عيد الفطر ...). Find 2026's.
    - AM: law HO-200 of 24.06.2001 on holidays and memorial days (arlis.am DocumentView id not found); Citizen's
      Day last Sat of April (2019); government decisions move non-working days yearly. Retry arlis search, gov.am
      decisions, cba.am holidays.

@@ -71,7 +71,7 @@ a place fills a column; a cell is the row's status in that engine's matrix, or b
 | DZ | Algeria | researched | researched | researched | researched | researched |
 | EC | Ecuador | researched | researched | researched | researched | pending |
 | EE | Estonia | researched | researched | researched | researched | researched |
-| EG | Egypt | researched | researched | researched | researched | pending |
+| EG | Egypt | researched | researched | researched | researched | researched |
 | EH | Western Sahara | researched | researched | researched | researched | pending |
 | ER | Eritrea | researched | researched | researched | researched | pending |
 | ES | Spain | researched | researched | researched | researched | researched |
