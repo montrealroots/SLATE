@@ -328,9 +328,10 @@ What layer 0 holds:
      csc.gov.kw has no list found. Read the Labour Law (6/2010) art. 67 and each Cabinet decision.
    - Gulf sites with incomplete chains (qcb.gov.qa, kln.gov.my): completed from the certificate's own issuer URL
      (scratchpad aia.sh), verification on.
-   - GG: gov.gg/holidaydates read (Public Holidays Ordinance 2009; 2026 and 2027 lists; Liberation Day 9 May left on
-     a weekend). Alderney (GG.8989934) keeps its own days (no Liberation Day; first Monday of August; Homecoming Day
-     15 December?), unread: alderney.gov.gg resets. Park until Alderney is read.
+   - GG: ready: the Ordinance's rules in the ten parishes (regional), Good Friday and Christmas Day region-less
+     (customary), checked against gov.gg's 2026 and 2027 lists with no mismatch (2026-10-27). Before committing,
+     Alderney (GG.8989934) needs its blocker after all five methods: alderney.gov.gg does not answer (2026-10-27),
+     gov.gg/alderney 404; the web search and trade press for Alderney's 2026 bank holidays remain to be tried.
    - IM: gov.im's bank holidays page and legislation.gov.im answer "Request Rejected" (not circumvented); the Bank
      Holidays Act 1989 and the Treasury's yearly notice (TT Bank Holiday, Tynwald Day). Retry.
    - AD: national days read (govern.ad's notes of the 2026 and 2027 labour-calendar decrees: 14 days, none moved;
@@ -375,6 +376,10 @@ What layer 0 holds:
      NU (gov.nu circulars read to October; its law not found), AG (portal out of date; Act needed), SN (1974 law
      only), ZW and MW (LII documents behind Cloudflare), VI (court's § 171(a) list read; weekend rule unread),
      CL, IQ, LY, PM, BY, BT, EG, TL, MA, CX, CC, NF: sites refuse or hold no list.
+   - TV: the Public Holidays Act (Cap. 4.50, 2022 Revised Edition) read at tuvalu-legislation.tv
+     (/cms/images/LEGISLATION/PRINCIPAL/1937/1937-0005/1937-0005_2.pdf): Schedule and s. 2's weekend rules; National
+     Children's Day is the 1st Monday after White Sunday, whose date in Tuvalu no source found gives. SB: Sucuri JS
+     challenge (not circumvented).
    - Two sources found: a page's own public data list read as the page reads it (Mauritius's SharePoint list, Qatar's
      Ministry of Justice API) is fine; an API that needs a key embedded in a site's script (Andorra's BOPA) is not.
 3. Then prices by place, and the proof of layer 2.
