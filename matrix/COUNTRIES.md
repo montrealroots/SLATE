@@ -75,7 +75,7 @@ a place fills a column; a cell is the row's status in that engine's matrix, or b
 | EH | Western Sahara | researched | researched | researched | researched | pending |
 | ER | Eritrea | researched | researched | researched | researched | pending |
 | ES | Spain | researched | researched | researched | researched | researched |
-| ET | Ethiopia | researched | researched | researched | researched | pending |
+| ET | Ethiopia | researched | researched | researched | researched | researched |
 | FI | Finland | researched | researched | researched | researched | researched |
 | FJ | Fiji | researched | researched | researched | researched | researched |
 | FK | Falkland Islands | researched | researched | researched | blocked | researched |

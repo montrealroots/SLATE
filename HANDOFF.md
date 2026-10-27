@@ -18,8 +18,8 @@ restarts. Read `CLAUDE.md` and the owner's package in `docs/` first.
   told where the weather is borrowed from), 6 proven, none pending. `tools/wmo/compile.ts` and `coverage.ts` are at
   100% mutation score with the last sources (1,559 mutants; the survivors of that run killed by tests or simpler
   lines, and the two equivalent ones disabled with their reasons). The
-  holidays (`world.holidays`): the engine, its reckonings and its gate wiring are built and tested; 151 countries
-  researched (540 official lists matched day for day), 6 proven, 75 pending, and 20 blocked: the Isle of Man,
+  holidays (`world.holidays`): the engine, its reckonings and its gate wiring are built and tested; 152 countries
+  researched (541 official lists matched day for day), 6 proven, 74 pending, and 20 blocked: the Isle of Man,
   Tanzania, Palau, the British Indian Ocean Territory, the French Southern Lands, the Cook Islands, Tokelau,
   Vanuatu, Micronesia, Tuvalu,
   Saint-Pierre-and-Miquelon, Wallis and Futuna, Christmas Island and the Cocos (Keeling) Islands whole, and six for some of their regions (Canada's Prince Edward Island and Yukon, India's four, Australia's
@@ -358,6 +358,13 @@ What layer 0 holds:
    - CG: lead 2026-10-27: loi 2-94 of 1 March 1994 cited by the ministry (aci.cg WP API: Whit Monday 25 May; 16 April
      2026 investiture day off, arrêté in JO 2026-16 at sgg.cg/JO/2026/). The law's article 1 list isn't online
      (sgg.cg JO from 1994 absent); find it to finish.
+   - ET: done 2026-10-27: Proclamation 1334/2024 (MetaAppz's English text), the Ethiopic days computed from the
+     Ethiopic calendar, Orthodox Easter, and 2026's Islamic days from Fana (fanamc.com/english/?s=, its WP API is
+     closed). Announced to 2026.
+   - CD: lead 2026-10-27: ordonnance 23/042 of 30 March 2023 (list not read; acp.cd is bot-blocked). 2026 from the
+     ministry's communiqués through congoprofond.net: 1 January, 3 January (for Sunday 4 January), 16 and 19 January
+     (17th a Saturday), 1 April (World Cup), 6 April, 1 May, 30 June, 1 August. Weekend moves vary by communiqué;
+     find 17 May's and 2 August's (both Sundays), Christmas's, and the ordinance's list.
    - SN: done 2026-10-27: loi 74-52 (read in the Assembly's file at vie-publique.sn), Tamxarit from loi 83-54 (the
      scan read as an image), 1 February gone by loi 89-41, the Grand Magal by loi 2013-10 (Dakaractu); 2026's
      Islamic days are CONACOC's through APS; 19 January the President's day off. Announced to 2026.
@@ -472,9 +479,6 @@ What layer 0 holds:
      which.
    - NG: Boxing Day isn't in the Act's Schedule; the Minister declares it yearly, and 2026's wasn't declared by
      2026-10-27. Add it when it is.
-   - ET: Proclamation 1334/2024 read (metaappz.com's text: Enkutatash, Adwa, 1 and 5 May; Meskel, Genna on 7 January,
-     Timket, Good Friday, Easter, Mawlid and both Eids; the Ethiopic days shift before a Gregorian leap year).
-     2026's Eid al-Fitr (20 March) confirmed through the state agency; Eid al-Adha and Mawlid not found. Retry ENA.
    - IR: calendar.ut.ac.ir, president.ir and rc.majlis.ir don't answer. CK: no official list (island Gospel Days are regional). CW, SX: the governments' lists not found. BS:
      bahamas.gov.bs answers 403. SC: no official list. SJ: whether Norway's holiday law applies on Svalbard is
      unconfirmed. Retry each.
