@@ -13,7 +13,7 @@ a place fills a column; a cell is the row's status in that engine's matrix, or b
 | AL | Albania | researched | researched | researched | researched | researched |
 | AM | Armenia | researched | researched | researched | researched | researched |
 | AN | Netherlands Antilles | researched | researched | proven | proven | proven |
-| AO | Angola | researched | researched | researched | researched | pending |
+| AO | Angola | researched | researched | researched | researched | researched |
 | AQ | Antarctica | researched | researched | proven | proven | proven |
 | AR | Argentina | researched | researched | researched | researched | blocked |
 | AS | American Samoa | researched | researched | researched | researched | pending |

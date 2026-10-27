@@ -18,8 +18,8 @@ restarts. Read `CLAUDE.md` and the owner's package in `docs/` first.
   told where the weather is borrowed from), 6 proven, none pending. `tools/wmo/compile.ts` and `coverage.ts` are at
   100% mutation score with the last sources (1,559 mutants; the survivors of that run killed by tests or simpler
   lines, and the two equivalent ones disabled with their reasons). The
-  holidays (`world.holidays`): the engine, its reckonings and its gate wiring are built and tested; 154 countries
-  researched (546 official lists matched day for day), 6 proven, 71 pending, and 21 blocked: the Isle of Man,
+  holidays (`world.holidays`): the engine, its reckonings and its gate wiring are built and tested; 155 countries
+  researched (547 official lists matched day for day), 6 proven, 70 pending, and 21 blocked: the Isle of Man,
   Tanzania, Palau, the British Indian Ocean Territory, the French Southern Lands, the Cook Islands, Tokelau,
   Vanuatu, Micronesia, Tuvalu,
   Saint-Pierre-and-Miquelon, Wallis and Futuna, Christmas Island and the Cocos (Keeling) Islands whole, and seven for some of their regions (Canada's Prince Edward Island and Yukon, India's four, Australia's
@@ -372,6 +372,8 @@ What layer 0 holds:
      Uprising day is to be added from 2027 (SKNIS, 29 January 2026).
    - VA: done 2026-10-27: the Curia personnel regulation's art. 52 (press.vatican.va, in force 2026) with canon
      1246's holy days (no bishops' conference, so none moved); the Pope's days are Leo XIV's (8 May, 17 September).
+   - AO: done 2026-10-27: Lei 10/11 and Lei 11/18 at lex.ao (its llms.txt indexes 2020-2026 diplomas: no later
+     holiday law; presidential tolerâncias de ponto would be added by decree when found there).
    - SN: done 2026-10-27: loi 74-52 (read in the Assembly's file at vie-publique.sn), Tamxarit from loi 83-54 (the
      scan read as an image), 1 February gone by loi 89-41, the Grand Magal by loi 2013-10 (Dakaractu); 2026's
      Islamic days are CONACOC's through APS; 19 January the President's day off. Announced to 2026.
