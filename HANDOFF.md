@@ -19,11 +19,12 @@ restarts. Read `CLAUDE.md` and the owner's package in `docs/` first.
   100% mutation score with the last sources (1,559 mutants; the survivors of that run killed by tests or simpler
   lines, and the two equivalent ones disabled with their reasons). The
   holidays (`world.holidays`): the engine, its reckonings and its gate wiring are built and tested; 152 countries
-  researched (541 official lists matched day for day), 6 proven, 74 pending, and 20 blocked: the Isle of Man,
+  researched (544 official lists matched day for day), 6 proven, 73 pending, and 21 blocked: the Isle of Man,
   Tanzania, Palau, the British Indian Ocean Territory, the French Southern Lands, the Cook Islands, Tokelau,
   Vanuatu, Micronesia, Tuvalu,
-  Saint-Pierre-and-Miquelon, Wallis and Futuna, Christmas Island and the Cocos (Keeling) Islands whole, and six for some of their regions (Canada's Prince Edward Island and Yukon, India's four, Australia's
-  South Australia, Guernsey's Alderney, Argentina's Formosa, Bosnia's Brčko); its code at 100% mutation score (532 mutants, with the regions'
+  Saint-Pierre-and-Miquelon, Wallis and Futuna, Christmas Island and the Cocos (Keeling) Islands whole, and seven for some of their regions (Canada's Prince Edward Island and Yukon, India's four, Australia's
+  South Australia, Guernsey's Alderney, Argentina's Formosa, Bosnia's Brčko, Saint Helena's Ascension and Tristan da
+  Cunha); its code at 100% mutation score (532 mutants, with the regions'
   and the shared substitutes' rules). Then prices.
 
 What layer 2 holds so far:
@@ -365,6 +366,10 @@ What layer 0 holds:
      ministry's communiqués through congoprofond.net: 1 January, 3 January (for Sunday 4 January), 16 and 19 January
      (17th a Saturday), 1 April (World Cup), 6 April, 1 May, 30 June, 1 August. Weekend moves vary by communiqué;
      find 17 May's and 2 August's (both Sundays), Christmas's, and the ordinance's list.
+   - SH: done 2026-10-27 for Saint Helena island (SH.02): its Ordinance (2016 revision, 2024 amendment) and the
+     Chief Secretary's 2026 and 2027 notices, found through sainthelena.gov.sh/wp-json/wp/v2/media?search=holidays;
+     the country's days are those Ascension's Ordinance shares. Ascension (SH.01) and Tristan (SH.03) blocked: no
+     2026 notice or list (ascension.gov.ac resets; tristandc.com reports King's Day, Anniversary Day, Ratting Day).
    - SN: done 2026-10-27: loi 74-52 (read in the Assembly's file at vie-publique.sn), Tamxarit from loi 83-54 (the
      scan read as an image), 1 February gone by loi 89-41, the Grand Magal by loi 2013-10 (Dakaractu); 2026's
      Islamic days are CONACOC's through APS; 19 January the President's day off. Announced to 2026.
@@ -455,11 +460,6 @@ What layer 0 holds:
      Holidays Act: Phagwah, Eid ul-Adha, Youman Nabi, Deepavali fixed by gazette yearly; Sunday -> Monday. Retry.
    - MS: no official 2026 list found (gov.ms site search empty; only aggregators). Retry gov.ms press releases and
      the Montserrat Gazette.
-   - SH: the Public and Government Holidays 2027 notice read
-     (sainthelena.gov.sh/app/uploads/2026/08/PN-Public-Holidays-2027.pdf; Christmas on Sat/Sun -> following
-     Tuesday by the Public Holidays Ordinance 1945 s.2(2)); the 2026 notice not found. Ascension (SH.01) and Tristan
-     (SH.03) keep their own days, unread. Engine need: a region that keeps the country's days while its own aren't
-     read.
    - MH, PW, FM: MH's Public Holidays Act 1988 on PacLII (403; the austlii mirror resets) and the Register-IRI list
      (TLS chain fails, not bypassed); PW and FM only aggregators (FM's states keep their own days). Retry.
    - KW: the Cabinet sets each holiday's days yearly, often in two moon scenarios (2026: Isra Mi'raj moved to Sun 18

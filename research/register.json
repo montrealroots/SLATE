@@ -12119,6 +12119,140 @@
      "quotes": "https://www.fanamc.com/english/"
     }
    ]
+  },
+  {
+   "id": "R-0292",
+   "fact": "world.holidays.blocked.SH.01",
+   "sought": "Ascension's own public holidays for 2026: the King's official birthday and Ascension Day as its Governor fixes them, and any weekend day moved by proclamation (Public Holidays (Ascension) Ordinance, 1945, First Schedule and s. 2(3))",
+   "status": "blocked",
+   "attempts": [
+    {
+     "method": "web-search",
+     "tried": "\"Ascension Island public holidays 2026 notice Ascension Island Government King's Birthday Ascension Day\"",
+     "result": "Only aggregators and a Wikipedia table (King's Birthday on the third Friday in November); no Ascension Island Government notice for 2026.",
+     "date": "2026-10-27"
+    },
+    {
+     "method": "institution",
+     "tried": "Ascension Island Government (ascension.gov.ac)",
+     "result": "The connection resets.",
+     "date": "2026-10-27"
+    },
+    {
+     "method": "official-register",
+     "tried": "St Helena Government media library (sainthelena.gov.sh/wp-json/wp/v2/media?search=Ascension), where the Ascension proclamations are published",
+     "result": "Only the 2019 Boxing Day proclamation (EX-GAZ-No-97) and the Ordinance; no 2026 notice or proclamation.",
+     "date": "2026-10-27"
+    },
+    {
+     "method": "trade-press",
+     "tried": "Search for Ascension's 2026 King's Birthday holiday in island press reports",
+     "result": "None found.",
+     "date": "2026-10-27"
+    },
+    {
+     "method": "archive",
+     "tried": "web.archive.org for the pages above",
+     "result": "This environment cannot reach web.archive.org (the connection resets).",
+     "date": "2026-10-27"
+    }
+   ],
+   "notModeled": "holidays.region-unkept"
+  },
+  {
+   "id": "R-0293",
+   "fact": "world.holidays.blocked.SH.03",
+   "sought": "Tristan da Cunha's own public holidays: its holiday law's list and the 2026 days (King's Day, Anniversary Day 14 August, Ratting Day)",
+   "status": "blocked",
+   "attempts": [
+    {
+     "method": "web-search",
+     "tried": "\"Tristan da Cunha public holidays Ratting Day Anniversary Day Queen's Birthday tristandc.com holidays list\"",
+     "result": "Wikipedia and aggregators only; no law or government list.",
+     "date": "2026-10-27"
+    },
+    {
+     "method": "institution",
+     "tried": "Tristan da Cunha Government website (tristandc.com: calendar.php, newsqueens.php, newsanniversaryday.php, newsratting.php)",
+     "result": "Reports call King's Day (14 November 2025) and Anniversary Day public holidays and give Ratting Day 2026 as 12 June, but no list of the island's public holidays or the law fixing them.",
+     "date": "2026-10-27"
+    },
+    {
+     "method": "official-register",
+     "tried": "St Helena Government Gazette and media library (sainthelena.gov.sh) for a Tristan da Cunha holidays ordinance",
+     "result": "None found.",
+     "date": "2026-10-27"
+    },
+    {
+     "method": "trade-press",
+     "tried": "Tristan da Cunha Association newsletters (tristandc.com/assoc/newsletter-2026-02.php, -08)",
+     "result": "Island news; no holiday list.",
+     "date": "2026-10-27"
+    },
+    {
+     "method": "archive",
+     "tried": "web.archive.org for the pages above",
+     "result": "This environment cannot reach web.archive.org (the connection resets).",
+     "date": "2026-10-27"
+    }
+   ],
+   "notModeled": "holidays.region-unkept"
+  },
+  {
+   "id": "R-0294",
+   "fact": "world.holidays.SH",
+   "sought": "Saint Helena's public holidays, the days off its law or its government's list names, nationally and in each first-level region that keeps its own",
+   "status": "found",
+   "value": {
+    "file": "research/sources/holidays/SH.json",
+    "sha256": "716c5a7d01164ffbba52137271c7feee8b26bf87db3e709428aa0f5544c460dd",
+    "lists": 3,
+    "years": "2026-2027"
+   },
+   "sources": [
+    {
+     "kind": "primary",
+     "url": "https://www.sainthelena.gov.sh/documents/Public-Holidays-Ordinance.pdf",
+     "title": "Public Holidays Ordinance, 1945 (St Helena, Revised Edition of the Laws 2016)",
+     "read": "2026-10-27",
+     "said": "2. (1) The several days specified in the First Schedule are to be public holidays. (2) If Christmas Day falls on a Saturday or Sunday, the following Tuesday is to be observed as a public holiday. (3) If a Public Holiday other than Christmas Day falls on a Saturday or Sunday, the Governor must, by Proclamation, direct that either the preceding Friday or the following Monday is to be observed as a Public Holiday in lieu of that Saturday or Sunday. … FIRST SCHEDULE … Public Holidays Good Friday Easter Monday The official birthday of Her Majesty the Queen St Helena Day, the 21st day of May Christmas Day Boxing Day, the 26th day of December"
+    },
+    {
+     "kind": "primary",
+     "url": "https://www.sainthelena.gov.sh/app/uploads/gazette/ORD-2-Public-Holidays-Amendment-Ordinance-2024.pdf",
+     "title": "Public Holidays (Amendment) Ordinance, 2024 (No. 2 of 2024)",
+     "read": "2026-10-27",
+     "said": "4. The principal Ordinance is amended in the First Schedule by repealing the words “The official birthday of Her Majesty the Queen” and substituting the words “Friday following Remembrance Day to celebrate the official birthday of His Majesty the King”."
+    },
+    {
+     "kind": "primary",
+     "url": "https://www.sainthelena.gov.sh/app/uploads/gazette/LN-9-Public-Holidays-Commencement-Order-2024.pdf",
+     "title": "Legal Notice No. 9 of 2024, Public Holidays (Amendment) Ordinance, 2024 (Commencement) Order, 2024",
+     "read": "2026-10-27",
+     "said": "2. The Public Holidays (Amendment) Ordinance, 2024 comes into force on the 31st day of May, 2024."
+    },
+    {
+     "kind": "primary",
+     "url": "https://www.sainthelena.gov.sh/documents/Public-Holidays-Asc-Ordinance.pdf",
+     "title": "Public Holidays (Ascension) Ordinance, 1945 (Revised Edition of the Laws, 2017)",
+     "read": "2026-10-27",
+     "said": "2. (1) The several days specified in the First Schedule , hereinafter referred to as “public holidays”, are to be kept as close holidays in all undertakings and establishments specified in the Second Schedule. (2) If Christmas Day falls on a Saturday or Sunday, the following Tuesday is to be observed as a public holiday. … FIRST SCHEDULE … Public Holidays Good Friday Easter Monday The official birthday of Her Majesty the Queen Ascension Day Christmas Day Boxing Day, the 26th day of December"
+    },
+    {
+     "kind": "primary",
+     "url": "https://www.sainthelena.gov.sh/app/uploads/2025/11/Public-Notice-Public-Holidays-2026.pdf",
+     "title": "Public Notice, Public and Government Holidays 2026 (Chief Secretary, 7 August 2025)",
+     "read": "2026-10-27",
+     "said": "Thursday, January 1st New Year’s Day – Government Holiday Friday, April 3rd Good Friday Monday, April 6th Easter Monday Thursday, May 21st St Helena Day Monday, May 25th Whit Monday – Government Holiday Monday, August 31st August Bank Holiday- Government Holiday Friday, November 13th His Majesty King Charles III Birthday Friday, December 25th Christmas Day Saturday, December 26th Boxing Day Monday, December 28th Public Holiday - in lieu of Boxing Day"
+    },
+    {
+     "kind": "primary",
+     "url": "https://www.sainthelena.gov.sh/app/uploads/2026/08/PN-Public-Holidays-2027.pdf",
+     "title": "Public Notice, Public and Government Holidays 2027 (Chief Secretary)",
+     "read": "2026-10-27",
+     "said": "Friday, January 1st New Year’s Day – Government Holiday Friday, March 26th Good Friday Monday, March 29th Easter Monday Monday, May 17th Whit Monday – Government Holiday Friday, May 21st St Helena Day Monday, August 30th August Bank Holiday- Government Holiday Friday, November 12th His Majesty King Charles III Birthday Monday, December 27th Public Holiday – in lieu of Boxing Day Tuesday, December 28th Public Holiday - in lieu of Christmas Day … In accordance with section 2(3) of the Public Holidays Ordinance, 1945, His Excellency the Governor has directed by Proclamation, that Monday 27th December 2027 is to be observed as a Public Holiday in lieu of Boxing Day."
+    }
+   ]
   }
  ]
 }
