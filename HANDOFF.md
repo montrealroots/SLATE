@@ -224,11 +224,9 @@ What layer 0 holds:
      days (non-working by decree). Retry.
    - PY: Ley 7544/2025 read (bacn.gov.py); 2026 decrees: Jun 20->22 (Decreto 6215, PDF on grupovierci CDN), Mar
      1->2 (ABC Nov 2025, decree unread), Sep 29 unresolved; Presidencia/Gaceta to read. Retry.
-   - AU: read 2026-10-27: NSW (nsw.gov.au/about-nsw/public-holidays: 2026, 2027; Bank Holiday not a public
-     holiday; additional days as well; Australia Day moved), QLD (qld.gov.au/recreation/travel/holidays/public:
-     2026-2029; Ekka Brisbane only (local); Christmas Eve 6pm part-day (not a day off); Anzac Sunday->Monday
-     moved). To read: FW Act s115 (legislation.gov.au text page is TOC only), fairwork.gov.au (503), VIC
-     (business.vic.gov.au 403), SA (safework 403), WA, TAS, ACT, NT. Model: regional, national = FW Act s115 list.
+   - AU: done 2026-10-27, each state's own Act in its region; South Australia blocked (its sites, AustLII and the
+     Fair Work Ombudsman refuse this environment): retry legislation.sa.gov.au's Public Holidays Act 2023. Victoria's
+     2027 Grand Final Friday, WA's 2028 King's Birthday and the ACT's and NSW's declarations for 2028: add when set.
    - CN: national read: 2024 放假办法 (news.cn 2024-11-12: 元旦1, 春节4 (除夕+初一至初三), 清明1, 劳动节2 (5/1-2), 端午1, 中秋1, 国庆3
      (10/1-3); art. 7 调休), 2026 notice (news.cn 2025-11-04: Jan 1-3; Feb 15-23; Apr 4-6; May 1-5; Jun 19-21; Sep
      25-27; Oct 1-7). Regions to read: Guangxi 三月三 (2026: Apr 17-20 per press; official 广西办公厅 notice 2026-03-04
@@ -257,12 +255,9 @@ What layer 0 holds:
      3); Njegošev dan 13 Nov added end of 2021 (RSE, N1) - the current consolidated text (Službeni list CG) not
      yet read; 2022 Sunday dispute (government: Monday working). No 2026/2027 ministry list found (gov.me search
      JS, mfa.gr 403). Retry: sluzbenilist.me, gov.me Ministarstvo rada notices.
-   - IN: RBI holiday matrix (rbi.org.in/Scripts/HolidayMatrixDisplay.aspx, POST drRegionalOffice/drMonth=0/drYear)
-     fetched for 2026, 34 offices (refetch: POST the form once per office); per office the NI Act days, but each
-     day's description is the union of all states' names (pick the state's own); exclude 1 April (banks' closing
-     of accounts) and the 2nd/4th Saturdays; offices -> states (Belapur/Mumbai/Nagpur MH; Kanpur/Lucknow UP;
-     Jammu/Srinagar JK; ...); no office for Puducherry, A&N, Lakshadweep, DNH&DD, Ladakh (state gazettes).
-     National: Republic Day, Independence Day, Gandhi Jayanti fixed; others D lists announced 2026.
+   - IN: done 2026-10-27 from the RBI matrix (refetch: POST the form once per office) and three territories' own
+     orders; Haryana, Punjab, Andaman and Nicobar and Ladakh blocked (their sites don't answer): retry each. 2027:
+     the RBI's matrix and the states' notifications when issued.
    - MD: legis.md 403; art. 111 CM text not read (monitorul.fisc.md editorial paywalled); 1 June status disputed
      (Ombudsman 2021, particip.gov.md 2023: Government declares 1-2 June days off by decision); retry legis.md,
      bnm.md calendar, cancelaria.gov.md decisions.
@@ -363,6 +358,13 @@ What layer 0 holds:
      none). CK: no official list (island Gospel Days are regional). CW, SX: the governments' lists not found. BS:
      bahamas.gov.bs answers 403. SC: no official list. SJ: whether Norway's holiday law applies on Svalbard is
      unconfirmed. Retry each.
+   - BG: justice.government.bg, gli.government.bg answer 503; the Council of Ministers made 31 December 2025 and
+     2 January 2026 days off (GLI node 13797). Retry.
+   - PH: national read (Proc 1006 for 2026, Proc 1427 for 2027; the Eids by Proc 1189 and 1264); BARMM's own
+     (Bangsamoro Holidays Act 2023, 2026's proclamations) to read from the official texts, then write.
+   - BN: no official 2026 list (jpm.gov.bn has no holiday circular; the gazette not found). AZ: Cabinet decision 362
+     (2 December 2025, nk.gov.az) read for Novruz and the Eids; the Labour Code's art. 105 unread (e-qanun.az html
+     403). KH: 2027's sub-decree (16 September 2026) reported, its list not read: add when read.
    - Two sources found: a page's own public data list read as the page reads it (Mauritius's SharePoint list, Qatar's
      Ministry of Justice API) is fine; an API that needs a key embedded in a site's script (Andorra's BOPA) is not.
 3. Then prices by place, and the proof of layer 2.
