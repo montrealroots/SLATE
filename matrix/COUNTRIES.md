@@ -130,7 +130,7 @@ a place fills a column; a cell is the row's status in that engine's matrix, or b
 | KP | North Korea | researched | researched | researched | researched | pending |
 | KR | South Korea | researched | researched | researched | researched | researched |
 | KW | Kuwait | researched | researched | researched | blocked | pending |
-| KY | Cayman Islands | researched | researched | researched | blocked | pending |
+| KY | Cayman Islands | researched | researched | researched | blocked | researched |
 | KZ | Kazakhstan | researched | researched | researched | researched | pending |
 | LA | Laos | researched | researched | researched | researched | pending |
 | LB | Lebanon | researched | researched | researched | blocked | pending |
