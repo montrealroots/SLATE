@@ -463,6 +463,9 @@ What layer 0 holds:
      21 June the only national holiday; Info Norden's page is behind Cloudflare.
    - DJ: done 2026-10-27: arrêté 77-347 as amended (77-609, 78-0226, 80-0931), read at journalofficiel.dj (WP: the
      texte-juridique type, /wp-json/wp/v2/search), and 2026's Islamic days as La Nation reports them (WP API).
+   - LY: done 2026-10-27 from Law 5/2012's table (the gazette scan at security-legislation.ly), Hijri days by Umm
+     al-Qura. Open: the Prime Minister's 2026 decisions (lawsociety.ly, behind Cloudflare: 55 for 17 February, 117 for
+     Eid al-Fitr with a fourth day for public employees) and Libya's own sighting dates.
    - TN: done 2026-10-27: décret présidentiel 2021-223 (legislation-securite.tn's JORT text) and the 2026 Islamic
      days as the Mufti and the Prime Minister's office announced them (Kapitalis WP API). 2027: the same announcements.
    - BQ: Regeling feestdagen ambtenaren BES (stcrt-2019-63152, read): Bonaire 30 Apr Dia di Rincon, 6 Sep Dia di
