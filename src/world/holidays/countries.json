@@ -1343,6 +1343,183 @@
    }
   ]
  },
+ "BZ": {
+  "substitute": [
+   {
+    "on": [
+     0
+    ],
+    "to": "next"
+   }
+  ],
+  "holidays": [
+   {
+    "name": "New Year’s Day",
+    "when": {
+     "fixed": [
+      1,
+      1
+     ]
+    }
+   },
+   {
+    "name": "George Price Day",
+    "when": {
+     "fixed": [
+      1,
+      15
+     ]
+    }
+   },
+   {
+    "name": "National Heroes and Benefactors Day",
+    "when": {
+     "fixed": [
+      3,
+      9
+     ]
+    },
+    "move": [
+     {
+      "on": [
+       2,
+       3,
+       4
+      ],
+      "to": "previous"
+     },
+     {
+      "on": [
+       0
+      ],
+      "to": "next"
+     }
+    ]
+   },
+   {
+    "name": "Good Friday",
+    "when": {
+     "easter": -2
+    }
+   },
+   {
+    "name": "Holy Saturday",
+    "when": {
+     "easter": -1
+    }
+   },
+   {
+    "name": "Easter Monday",
+    "when": {
+     "easter": 1
+    }
+   },
+   {
+    "name": "Labour Day",
+    "when": {
+     "fixed": [
+      5,
+      1
+     ]
+    }
+   },
+   {
+    "name": "Emancipation Day",
+    "when": {
+     "fixed": [
+      8,
+      1
+     ]
+    },
+    "move": [
+     {
+      "on": [
+       2,
+       3,
+       4
+      ],
+      "to": "previous"
+     },
+     {
+      "on": [
+       0
+      ],
+      "to": "next"
+     }
+    ]
+   },
+   {
+    "name": "St. George’s Caye Day",
+    "when": {
+     "fixed": [
+      9,
+      10
+     ]
+    }
+   },
+   {
+    "name": "Independence Day",
+    "when": {
+     "fixed": [
+      9,
+      21
+     ]
+    }
+   },
+   {
+    "name": "Indigenous People’s Resistance Day",
+    "when": {
+     "fixed": [
+      10,
+      12
+     ]
+    },
+    "move": [
+     {
+      "on": [
+       2,
+       3,
+       4
+      ],
+      "to": "previous"
+     },
+     {
+      "on": [
+       0
+      ],
+      "to": "next"
+     }
+    ]
+   },
+   {
+    "name": "Garifuna Settlement Day",
+    "when": {
+     "fixed": [
+      11,
+      19
+     ]
+    }
+   },
+   {
+    "name": "Christmas Day",
+    "when": {
+     "fixed": [
+      12,
+      25
+     ]
+    }
+   },
+   {
+    "name": "Boxing Day",
+    "when": {
+     "fixed": [
+      12,
+      26
+     ]
+    }
+   }
+  ]
+ },
  "CA": {
   "regional": [
    "CA.01",
