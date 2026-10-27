@@ -3911,21 +3911,32 @@
   {
    "id": "R-0106",
    "fact": "world.holidays.calendars",
-   "sought": "The months of the calendars holidays are kept in other than the Gregorian (the Umm al-Qura Islamic, the Hebrew, the Chinese, the Korean, the Persian and the Ethiopian), 2000 to 2150",
+   "sought": "The months of the calendars holidays are kept in other than the Gregorian (the Umm al-Qura Islamic, the Hebrew, the Chinese, the Korean, the Persian and the Ethiopian), 2000 to 2100",
    "status": "found",
    "value": {
     "file": "src/world/holidays/calendars.json",
-    "sha256": "1757695ade1db26e6a5a43127c9e9ddd58a33b2582e62be1f80609715497380c",
+    "sha256": "fe0e47565d1488bf8ec0c18f6907e7006516de2e8a755475f8eeabc14652370a",
     "compiler": "tools/calendars/compile.ts",
-    "icu": "77.1 (Node.js 22.22.0)"
+    "icu": "77.1 (Node.js 22.22.0)",
+    "hko": {
+     "file": "research/sources/hko-lunar.json",
+     "sha256": "d614dad9ca7717501867fa6c746e06f1143051b0b6ea9f1717d41fdf37d5fd50"
+    }
    },
    "sources": [
     {
      "kind": "primary",
      "url": "https://github.com/unicode-org/icu/tree/release-77-1/icu4c/source/i18n",
-     "title": "ICU 77.1 (International Components for Unicode), its calendars as Node.js 22.22.0 ships them: islamcal.cpp (Umm al-Qura, its month lengths the Kingdom of Saudi Arabia's), hebrwcal.cpp, chnsecal.cpp, dangical.cpp, persncal.cpp, ethpccal.cpp",
+     "title": "ICU 77.1 (International Components for Unicode), its calendars as Node.js 22.22.0 ships them (all but the Chinese): islamcal.cpp (Umm al-Qura, its month lengths the Kingdom of Saudi Arabia's), hebrwcal.cpp, dangical.cpp, persncal.cpp, ethpccal.cpp",
      "read": "2026-10-26",
      "said": "Intl.DateTimeFormat with the calendars islamic-umalqura, hebrew, chinese, dangi, persian and ethiopic gives each day's year, month and day; 2026's: 1 Shawwal 1447 = 20 March, 10 Dhu al-Hijjah 1447 = 27 May, 1 Tishri 5787 = 12 September, 15 Nisan 5786 = 2 April, Chinese and Korean New Year = 17 February, 1 Farvardin 1405 = 21 March, 1 Meskerem 2019 = 11 September."
+    },
+    {
+     "kind": "primary",
+     "url": "https://www.hko.gov.hk/en/gts/time/conversion1_text.htm",
+     "title": "Hong Kong Observatory, Gregorian-Lunar Calendar Conversion Tables, 1999 to 2100 (https://www.hko.gov.hk/en/gts/time/calendar/text/files/T{year}e.txt), the Chinese calendar's",
+     "read": "2026-10-27",
+     "said": "A row a day: '2027/2/6  1st Lunar Month  Saturday' (Chinese New Year 2027), '2030/2/3  1st Lunar Month  Sunday'; a month whose number repeats is the leap month ('2025/6/25  6th Lunar Month', '2025/7/25  6th Lunar Month'). ICU 77.1's Chinese calendar begins six months a day off these tables in 2000-2100 (2012-08-18, 2018-11-07, 2027-02-07, 2030-02-02, 2057-09-29, 2070-03-13), so the tables are kept, not ICU. The 2069 table leaves out 2069/12/30, between 16 (12/29) and 18 (12/31) of one month: kept as 17."
     }
    ]
   },
@@ -6046,6 +6057,83 @@
      "read": "2026-10-27",
      "said": "인사혁신처는 28일 국무회의에서 노동절과 제헌절을 공휴일로 지정하는 관공서의 공휴일에 관한 규정 일부개정령안이 의결됐다고 밝혔다. 이는 지난 1월과 3월 제헌절과 노동절을 공휴일로 지정하는 공휴일에 관한 법률 개정에 따른 후속 조치다. 노동절·제헌절 올해부터 공휴일.",
      "quotes": "https://www.law.go.kr/LSW/lsInfoP.do?lsiSeq=285779&efYd=20260511"
+    }
+   ]
+  },
+  {
+   "id": "R-0159",
+   "fact": "world.holidays.NZ",
+   "sought": "New Zealand's public holidays, the days off its law or its government's list names, nationally and in each first-level region that keeps its own",
+   "status": "found",
+   "value": {
+    "file": "research/sources/holidays/NZ.json",
+    "sha256": "17437d7ce0b0f7a3d8755239e8a9be075cf7de48991023a0d6db3fafb6718880",
+    "lists": 2,
+    "years": "2026-2027"
+   },
+   "sources": [
+    {
+     "kind": "primary",
+     "url": "https://www.employment.govt.nz/leave-and-holidays/public-holidays/public-holidays-and-anniversary-dates",
+     "title": "Employment New Zealand (MBIE), Public holidays and anniversary dates",
+     "read": "2026-10-27",
+     "said": "2026: New Year's Day Thursday 1 January; Day after New Year's Day Friday 2 January; Waitangi Day Friday 6 February; Good Friday Friday 3 April; Easter Monday Monday 6 April; Anzac Day Saturday 25 April or Monday 27 April; King's Birthday (1st Monday in June) Monday 1 June; Matariki Friday 10 July; Labour Day (4th Monday in October) Monday 26 October; Christmas Day Friday 25 December; Boxing Day Saturday 26 December or Monday 28 December. 2027: New Year's Day Friday 1 January; Day after New Year's Day Saturday 2 January or Monday 4 January; Waitangi Day Saturday 6 February or Monday 8 February; Good Friday Friday 26 March; Easter Monday Monday 29 March; ANZAC Day Saturday 25 April or Monday 26 April; King's Birthday Monday 7 June; Matariki Friday 25 June; Labour Day Monday 25 October; Christmas Day Saturday 25 December or Monday 27 December; Boxing Day Sunday 26 December or Tuesday 28 December. Regional anniversary days by province (Auckland, Taranaki, Hawke's Bay, Wellington, Marlborough, Nelson, Canterbury, Canterbury (South), Westland, Otago, Southland, Chatham Islands)."
+    },
+    {
+     "kind": "primary",
+     "url": "https://www.mbie.govt.nz/assets/matariki-dates-2022-to-2052-matariki-advisory-group.pdf",
+     "title": "Matariki Advisory Committee (Professor Rangi Matamua), Matariki Dates 2022 - 2052, Final Report V2, 21 May 2021 (MBIE; legislation.govt.nz refuses this environment)",
+     "read": "2026-10-27",
+     "said": "Public holiday dates: 2026 10 July; 2027 25 June; 2028 14 July; 2029 6 July; 2030 21 June; 2031 11 July; 2032 2 July; 2033 24 June; 2034 7 July; 2035 29 June; 2036 18 July; 2037 10 July; 2038 25 June; 2039 15 July; 2040 6 July; 2041 19 July; 2042 11 July; 2043 3 July; 2044 24 June; 2045 7 July; 2046 29 June; 2047 19 July; 2048 3 July; 2049 25 June; 2050 15 July; 2051 30 June; 2052 21 June."
+    }
+   ]
+  },
+  {
+   "id": "R-0160",
+   "fact": "world.holidays.SG",
+   "sought": "Singapore's public holidays, the days off its law or its government's list names, nationally and in each first-level region that keeps its own",
+   "status": "found",
+   "value": {
+    "file": "research/sources/holidays/SG.json",
+    "sha256": "25e75e69e2c8a94e828b01729bab18d2011a74a8b91c59ee81efb0355b18be22",
+    "lists": 2,
+    "years": "2026-2027"
+   },
+   "sources": [
+    {
+     "kind": "primary",
+     "url": "https://www.mom.gov.sg/employment-practices/public-holidays",
+     "title": "Ministry of Manpower, Singapore, Public holidays",
+     "read": "2026-10-27",
+     "said": "2026: New Year's Day 1 January 2026 Thursday; Chinese New Year 17–18 February 2026 Tuesday–Wednesday; Hari Raya Puasa 21 March 2026 Saturday; Good Friday 3 April 2026 Friday; Labour Day 1 May 2026 Friday; Hari Raya Haji 27 May 2026 Wednesday; Vesak Day 31 May 2026 Sunday; National Day 9 August 2026 Sunday; Deepavali 8 November 2026 Sunday; Christmas Day 25 December 2026 Friday. 2027: New Year's Day 1 January 2027 Friday; Chinese New Year 6–7 February 2027 Saturday–Sunday; Hari Raya Puasa 10 March 2027 Wednesday; Good Friday 26 March 2027 Friday; Labour Day 1 May 2027 Saturday; Hari Raya Haji 17 May 2027 Monday; Vesak Day 20 May 2027 Thursday; National Day 9 August 2027 Monday; Deepavali 28 October 2027 Thursday; Christmas Day 25 December 2027 Saturday. Monday, 1 June 2026, will be a public holiday if your rest day falls on 31 May 2026; Monday, 10 August 2026 ... on 9 August 2026; Monday, 9 November 2026 ... on 8 November 2026; Monday, 8 February 2027 ... on 7 February 2027."
+    }
+   ]
+  },
+  {
+   "id": "R-0161",
+   "fact": "world.holidays.ZA",
+   "sought": "South Africa's public holidays, the days off its law or its government's list names, nationally and in each first-level region that keeps its own",
+   "status": "found",
+   "value": {
+    "file": "research/sources/holidays/ZA.json",
+    "sha256": "f2b9ac0348a935ef64e19ae0d5975694ea1ceaeac2ca6d9077243169d892704f",
+    "lists": 1,
+    "years": "2026"
+   },
+   "sources": [
+    {
+     "kind": "primary",
+     "url": "https://www.gov.za/about-sa/public-holidays",
+     "title": "South African Government, Public holidays",
+     "read": "2026-10-27",
+     "said": "2026: 1 January New Year's Day; 21 March Human Rights Day; 3 April Good Friday; 6 April Family Day; 27 April Freedom Day; 1 May Workers' Day; 16 June Youth Day; 9 August National Women's Day; 10 August Public holiday National Women's Day observed; 24 September Heritage Day; 16 December Day of Reconciliation; 25 December Christmas Day; 26 December Day of Goodwill. 2027: 1 January New Year's Day; 21 March Human Rights Day; 22 March Public holiday Human Rights Day observed; 26 March Good Friday; 29 March Family Day; 27 April Freedom Day; 1 May Workers' Day; 16 June Youth Day; 9 August National Women's Day; 24 September Heritage Day; 16 December Day of Reconciliation; 25 December Christmas Day; 26 December Day of Goodwill. The Act determines whenever any public holiday falls on a Sunday, the Monday following on it shall be a public holiday. (The 2027 list leaves out Monday 27 December, which that rule gives for the Sunday Day of Goodwill, so it isn't held to the rules.)"
+    },
+    {
+     "kind": "primary",
+     "url": "https://www.sanews.gov.za/node/84344",
+     "title": "SAnews (Government Communication and Information System), LGE: President Ramaphosa declares 4 November as a public holiday (15 September 2026)",
+     "read": "2026-10-27",
+     "said": "President Cyril Ramaphosa, in terms of Section 2A of the Public Holidays Act of 1994, has declared Wednesday, 4 November 2026 – the date for Local Government Elections – as a public holiday throughout the country."
     }
    ]
   }

@@ -18,8 +18,8 @@ restarts. Read `CLAUDE.md` and the owner's package in `docs/` first.
   told where the weather is borrowed from), 6 proven, none pending. `tools/wmo/compile.ts` and `coverage.ts` are at
   100% mutation score with the last sources (1,559 mutants; the survivors of that run killed by tests or simpler
   lines, and the two equivalent ones disabled with their reasons). The
-  holidays (`world.holidays`): the engine, its reckonings and its gate wiring are built and tested; 46 countries
-  researched (232 official lists matched day for day), 6 proven, 199 pending, and Canada blocked for two of its
+  holidays (`world.holidays`): the engine, its reckonings and its gate wiring are built and tested; 49 countries
+  researched (237 official lists matched day for day), 6 proven, 196 pending, and Canada blocked for two of its
   regions (Prince Edward Island's and Yukon's own); its code at 100% mutation score (532 mutants, with the regions'
   and the shared substitutes' rules). Then prices.
 
@@ -81,8 +81,9 @@ What layer 2 holds so far:
   (`countries.json`, typed in `rules.ts`) give a day by date, by Easter (the Western by Oudin's algorithm, held to
   the Naval Observatory for 2000 to 2150, R-0107; the Orthodox by the Julian computus, held to the American
   Carpatho-Russian Orthodox Diocese for 2000 to 2037, R-0108), by the nth or last weekday, the weekday on or after
-  or before a day, a day of another calendar (Umm al-Qura, Hebrew, Chinese, Korean, Persian, Ethiopian: ICU 77.1
-  compiled to each month's first day, 2000 to 2150, by `tools/calendars/`, R-0106), the day of an equinox at an
+  or before a day, a day of another calendar (Umm al-Qura, Hebrew, Korean, Persian, Ethiopian: ICU 77.1; Chinese: the Hong Kong
+  Observatory's tables, ICU's being a day off at six month starts, Chinese New Year 2027 and 2030 among them; compiled to
+  each month's first day, 2000 to 2100, by `tools/calendars/`, R-0106), the day of an equinox at an
   offset (the clock's, R-0036), or the dates a government announced; with years from and until, years excepted,
   regions, a weekday's alternative day, a condition on another day's weekday, a shift by Easter, and the country's
   substitute days (next or previous free day, or off as well, as Japan's, or onto another holiday's day where

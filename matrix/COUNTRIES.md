@@ -177,7 +177,7 @@ a place fills a column; a cell is the row's status in that engine's matrix, or b
 | NP | Nepal | researched | researched | researched | researched | pending |
 | NR | Nauru | researched | researched | researched | blocked | pending |
 | NU | Niue | researched | researched | researched | blocked | pending |
-| NZ | New Zealand | researched | researched | researched | researched | pending |
+| NZ | New Zealand | researched | researched | researched | researched | researched |
 | OM | Oman | researched | researched | researched | researched | pending |
 | PA | Panama | researched | researched | researched | researched | pending |
 | PE | Peru | researched | researched | researched | researched | researched |
@@ -204,7 +204,7 @@ a place fills a column; a cell is the row's status in that engine's matrix, or b
 | SC | Seychelles | researched | researched | researched | researched | pending |
 | SD | Sudan | researched | researched | researched | researched | pending |
 | SE | Sweden | researched | researched | researched | researched | researched |
-| SG | Singapore | researched | researched | researched | researched | pending |
+| SG | Singapore | researched | researched | researched | researched | researched |
 | SH | Saint Helena | researched | researched | researched | researched | pending |
 | SI | Slovenia | researched | researched | researched | researched | researched |
 | SJ | Svalbard and Jan Mayen | researched | researched | researched | researched | pending |
@@ -254,6 +254,6 @@ a place fills a column; a cell is the row's status in that engine's matrix, or b
 | XK | Kosovo | researched | researched | researched | blocked | pending |
 | YE | Yemen | researched | researched | researched | researched | pending |
 | YT | Mayotte | researched | researched | researched | researched | researched |
-| ZA | South Africa | researched | researched | researched | researched | pending |
+| ZA | South Africa | researched | researched | researched | researched | researched |
 | ZM | Zambia | researched | researched | researched | researched | pending |
 | ZW | Zimbabwe | researched | researched | researched | researched | pending |

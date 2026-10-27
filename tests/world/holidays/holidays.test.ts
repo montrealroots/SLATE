@@ -57,7 +57,7 @@ describe('the holidays of every country kept', () => {
         }
       }
     }
-    expect(read).toBe(232);
+    expect(read).toBe(237);
   });
   it('are each a country of the map with its lists, their regions its own', () => {
     expect(Object.keys(RULES).sort()).toEqual(LISTS.map((l) => l.country).sort());
@@ -133,15 +133,15 @@ describe('the reckonings', () => {
     );
   });
   it('end the last month compiled where the table ends', () => {
-    expect([CALENDAR_FROM, CALENDAR_TO].map(iso)).toEqual(['2000-01-01', '2150-12-31']);
+    expect([CALENDAR_FROM, CALENDAR_TO].map(iso)).toEqual(['2000-01-01', '2100-12-31']);
     expect(daysIn('islamic-umalqura', '1', 1, 1999)).toEqual([]);
     const lastFirst = Math.max(...Object.values(compiled.calendars.ethiopic));
     const [key] = Object.entries(compiled.calendars.ethiopic).find(([, d]) => d === lastFirst) as [string, number];
     const month = key.split('/')[1] as string;
     const length = CALENDAR_TO - lastFirst + 1;
-    expect(daysIn('ethiopic', month, length, 2150).map(iso)).toEqual(['2150-12-31']);
-    // The same month a year before reaches into 2150 by that day; this year's doesn't reach past the table.
-    expect(daysIn('ethiopic', month, length + 1, 2150).every((d) => d < lastFirst)).toBe(true);
+    expect(daysIn('ethiopic', month, length, 2100).map(iso)).toEqual(['2100-12-31']);
+    // The same month a year before reaches into 2100 by that day; this year's doesn't reach past the table.
+    expect(daysIn('ethiopic', month, length + 1, 2100).every((d) => d < lastFirst)).toBe(true);
   });
   it("give the day of an equinox at an offset from Universal Time, the clock's", () => {
     // 2026's March equinox is 14:46 UT, its September 00:05 on the 23rd (the Naval Observatory's, R-0036).

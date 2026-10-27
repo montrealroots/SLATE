@@ -1,9 +1,10 @@
-import { readFileSync } from 'node:fs';
+import { mkdirSync, mkdtempSync, readFileSync, writeFileSync } from 'node:fs';
+import { tmpdir } from 'node:os';
 import { join } from 'node:path';
 import { describe, expect, it } from 'vitest';
 import { daysFromCivil } from '../../src/core/time/calendar.ts';
-import { icuDay } from '../../tools/calendars/build.ts';
-import { CALENDARS, compileCalendars, FROM, OUTPUT, serialize, TO, type CalendarDay } from '../../tools/calendars/compile.ts';
+import { calendarDay, HKO } from '../../tools/calendars/build.ts';
+import { CALENDARS, compileCalendars, FROM, hkoChinese, OUTPUT, serialize, TO, type CalendarDay } from '../../tools/calendars/compile.ts';
 import { coverageOf } from '../../tools/holidays/build.ts';
 import { holidaysCoverage, NO_PLACES, OUTPUT as COVERAGE, RECKONINGS, serializeCoverage, TESTS, TOLD, TOLD_REGION } from '../../tools/holidays/coverage.ts';
 import type { Kept } from '../../src/world/holidays/holidays.ts';
@@ -11,14 +12,40 @@ import type { Kept } from '../../src/world/holidays/holidays.ts';
 const ROOT = join(import.meta.dirname, '../..');
 
 describe('the calendar compiler', () => {
-  it('reproduces the calendars the engine reads, byte for byte, from ICU', () => {
+  it("reproduces the calendars the engine reads, byte for byte, from ICU and the Hong Kong Observatory's tables", () => {
     expect(process.versions.icu).toBe('77.1');
-    expect(serialize(compileCalendars(icuDay()))).toBe(readFileSync(join(ROOT, OUTPUT), 'utf8'));
+    expect(HKO).toBe('research/sources/hko-lunar.json');
+    expect(serialize(compileCalendars(calendarDay(ROOT)))).toBe(readFileSync(join(ROOT, OUTPUT), 'utf8'));
   }, 120_000);
-  it('keeps the calendars of the holidays, 2000 to 2150', () => {
+  it("refuses Observatory tables that aren't the file the register cites", () => {
+    const root = mkdtempSync(join(tmpdir(), 'hko-'));
+    mkdirSync(join(root, 'research/sources'), { recursive: true });
+    writeFileSync(join(root, HKO), readFileSync(join(ROOT, HKO), 'utf8').replace('Saturday', 'Sunday'));
+    writeFileSync(join(root, 'research/register.json'), readFileSync(join(ROOT, 'research/register.json')));
+    expect(() => calendarDay(root)).toThrow("research/sources/hko-lunar.json isn't the file R-0106 cites");
+    writeFileSync(join(root, 'research/register.json'), JSON.stringify({ entries: [] }));
+    expect(() => calendarDay(root)).toThrow("research/sources/hko-lunar.json isn't the file R-0106 cites");
+  });
+  it('keeps the calendars of the holidays, 2000 to 2100', () => {
     expect(CALENDARS).toEqual(['islamic-umalqura', 'hebrew', 'chinese', 'dangi', 'persian', 'ethiopic']);
-    expect([FROM, TO]).toEqual([daysFromCivil(2000, 1, 1), daysFromCivil(2150, 12, 31)]);
+    expect([FROM, TO]).toEqual([daysFromCivil(2000, 1, 1), daysFromCivil(2100, 12, 31)]);
     expect(OUTPUT).toBe('src/world/holidays/calendars.json');
+  });
+  it("reads the Chinese calendar from the Observatory's tables: a month where it begins, a repeated one its leap month", () => {
+    const tables = {
+      1999: 'Gregorian date    Lunar date    Day-of-week\n2000/1/1      29     Saturday\n2000/1/2          12th Lunar month   Sunday\n2000/01/03     2     Monday\n',
+      2000: '2000/1/4  1st Lunar Month  Tuesday\n2000/1/5  2  Wednesday\n2000/1/6  1st Lunar Month  Thursday\n2000/1/8  3  Saturday\n2000/1/9  2nd Lunar Month  Sunday\n2000/1/11  3rd Lunar Month  Tuesday\n2000/1/12  2  Wednesday\n2000/1/14  5  Friday\n',
+    };
+    const days = hkoChinese(tables);
+    const at = (d: number) => days.get(daysFromCivil(2000, 1, d));
+    // Before a month's first day, none; the months before the first first month are the year before's.
+    expect(at(1)).toBeUndefined();
+    expect([at(2), at(3), at(4), at(5)]).toStrictEqual([{ year: '1999', month: '12', day: 1 }, { year: '1999', month: '12', day: 2 }, { year: '2000', month: '1', day: 1 }, { year: '2000', month: '1', day: 2 }]);
+    // A month repeated is the leap month; a day left out between two of one month is the day between; then a new month.
+    expect([at(6), at(7), at(8), at(9)]).toStrictEqual([{ year: '2000', month: '1bis', day: 1 }, { year: '2000', month: '1bis', day: 2 }, { year: '2000', month: '1bis', day: 3 }, { year: '2000', month: '2', day: 1 }]);
+    // Not between two months, nor where the days around it aren't two apart.
+    expect([at(10), at(13)]).toStrictEqual([undefined, undefined]);
+    expect(days.size).toBe(11);
   });
   it("keeps each month's first day, and stops where a day doesn't follow the one before", () => {
     // A calendar of ten-day months counted from FROM.

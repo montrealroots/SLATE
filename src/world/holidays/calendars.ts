@@ -2,7 +2,7 @@ import { civilFromDays } from '../../core/time/calendar.ts';
 import data from './calendars.json' with { type: 'json' };
 
 export type CalendarId = 'islamic-umalqura' | 'hebrew' | 'chinese' | 'dangi' | 'persian' | 'ethiopic';
-/** The first and last days the calendars are compiled for, as days from 1970-01-01 (2000-01-01 and 2150-12-31). */
+/** The first and last days the calendars are compiled for, as days from 1970-01-01 (2000-01-01 and 2100-12-31). */
 export const CALENDAR_FROM: number = data.from;
 export const CALENDAR_TO: number = data.to;
 
