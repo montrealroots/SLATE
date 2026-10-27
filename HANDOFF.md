@@ -18,8 +18,8 @@ restarts. Read `CLAUDE.md` and the owner's package in `docs/` first.
   told where the weather is borrowed from), 6 proven, none pending. `tools/wmo/compile.ts` and `coverage.ts` are at
   100% mutation score with the last sources (1,559 mutants; the survivors of that run killed by tests or simpler
   lines, and the two equivalent ones disabled with their reasons). The
-  holidays (`world.holidays`): the engine, its reckonings and its gate wiring are built and tested; 142 countries
-  researched (531 official lists matched day for day), 6 proven, 84 pending, and 20 blocked: the Isle of Man,
+  holidays (`world.holidays`): the engine, its reckonings and its gate wiring are built and tested; 143 countries
+  researched (532 official lists matched day for day), 6 proven, 83 pending, and 20 blocked: the Isle of Man,
   Tanzania, Palau, the British Indian Ocean Territory, the French Southern Lands, the Cook Islands, Tokelau,
   Vanuatu, Micronesia, Tuvalu,
   Saint-Pierre-and-Miquelon, Wallis and Futuna, Christmas Island and the Cocos (Keeling) Islands whole, and six for some of their regions (Canada's Prince Edward Island and Yukon, India's four, Australia's
@@ -323,6 +323,12 @@ What layer 0 holds:
    - EG: done 2026-10-27 from the 2026 decrees as Amwal Al Ghad and Arab Finance report them (en.amwalalghad.com's
      /wp-json/wp/v2/posts?search= finds each). Announced to 2026. Read Ministerial Decree 294 of 2025's list (for
      Sinai Liberation Day and the private sector's Eid al-Fitr length) when found.
+   - MR: lead 2026-10-27: ami.mr's /wp-json/wp/v2/posts?search=عطلة finds the Presidency's 2026 notices (Friday
+     2 January and the two days after Eid al-Adha as "عطلة معوضة", made up later); the law or decree listing the
+     fêtes légales not found yet.
+   - SN: done 2026-10-27: loi 74-52 (read in the Assembly's file at vie-publique.sn), Tamxarit from loi 83-54 (the
+     scan read as an image), 1 February gone by loi 89-41, the Grand Magal by loi 2013-10 (Dakaractu); 2026's
+     Islamic days are CONACOC's through APS; 19 January the President's day off. Announced to 2026.
    - BR: done 2026-10-27: national laws in every state, each state's own from the courts' and prosecutors' 2026
      calendars (the AASP tracker at aasp.org.br/produtos-servicos/expediente-forense/feriados-forenses-2026/ links each
      court's act). Acre announced to 2026 (Lei 2.126/2009 moves some days by a rule not read). Rio's Carnival Tuesday,
@@ -458,10 +464,9 @@ What layer 0 holds:
      announced to 2026. Read the Public Holidays Ordinance (Cap. 81) s. 2 (PacLII refuses) to keep its own days
      after, and add each year's order (published each December).
    - Attempts by country this session (for their blockers when every method has failed) are in the scratch log
-     summarised here: MN (law read at legalinfo.mn art. 4.1; Düichen and Chinggis Khaan's day 2026 unconfirmed),
-     NU (gov.nu circulars read to October; its law not found), AG (portal out of date; Act needed), SN (1974 law
-     only), ZW and MW (LII documents behind Cloudflare), VI (court's § 171(a) list read; weekend rule unread),
-     CL, IQ, LY, PM, BY, BT, EG, TL, MA, CX, CC, NF: sites refuse or hold no list.
+     summarised here: NU (gov.nu circulars read to October; its law not found), AG (portal out of date; Act
+     needed), ZW and MW (LII documents behind Cloudflare), VI (court's § 171(a) list read; weekend rule unread),
+     IQ, LY, BT, TL, NF: sites refuse or hold no list.
    - TV: the Public Holidays Act (Cap. 4.50, 2022 Revised Edition) read at tuvalu-legislation.tv
      (/cms/images/LEGISLATION/PRINCIPAL/1937/1937-0005/1937-0005_2.pdf): Schedule and s. 2's weekend rules; National
      Children's Day is the 1st Monday after White Sunday, whose date in Tuvalu no source found gives. SB: Sucuri JS
