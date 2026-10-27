@@ -353,14 +353,14 @@ What layer 0 holds:
      found for 2026.
    - CG: done 2026-10-27: loi 2-94's nine days as WageIndicator cites §1er (the law's own text isn't online; the
      ministry's 2026 Whit Monday communiqué cites art. 1), and the 2026 arrêtés found in all 43 Journal officiel
-     issues at sgg.cg/JO/2026/ (2 January, 16 April). Retry the law's text; the arrêtés for later 2026 issues.
+     issues at sgg.cg/JO/2026/ (2 January, 16 April). Retry the law's text (its rule for a day on a Sunday, if any, is
+     unread: none is kept); the arrêtés for later 2026 issues.
    - ET: done 2026-10-27: Proclamation 1334/2024 (MetaAppz's English text), the Ethiopic days computed from the
      Ethiopic calendar, Orthodox Easter, and 2026's Islamic days from Fana (fanamc.com/english/?s=, its WP API is
      closed). Announced to 2026.
-   - CD: lead 2026-10-27: ordonnance 23/042 of 30 March 2023 (list not read; acp.cd is bot-blocked). 2026 from the
-     ministry's communiqués through congoprofond.net: 1 January, 3 January (for Sunday 4 January), 16 and 19 January
-     (17th a Saturday), 1 April (World Cup), 6 April, 1 May, 30 June, 1 August. Weekend moves vary by communiqué;
-     find 17 May's and 2 August's (both Sundays), Christmas's, and the ordinance's list.
+   - CD: done 2026-10-27: ordonnance 23-042 (droitcongolais.info's copy of the J.O. text; art. 2: a Sunday's day is
+     the Saturday before) and the ministry's 2026 communiqués as Congo Profond reports them (3 January, 19 January for
+     Saturday 17 January, 1 April). 17 May 2026's communiqué not found: kept by art. 2 on Saturday 16 May.
    - SH: done 2026-10-27 for Saint Helena island (SH.02): its Ordinance (2016 revision, 2024 amendment) and the
      Chief Secretary's 2026 and 2027 notices, found through sainthelena.gov.sh/wp-json/wp/v2/media?search=holidays;
      the country's days are those Ascension's Ordinance shares. Ascension (SH.01) and Tristan (SH.03) blocked: no

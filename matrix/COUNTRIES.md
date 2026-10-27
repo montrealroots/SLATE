@@ -45,7 +45,7 @@ a place fills a column; a cell is the row's status in that engine's matrix, or b
 | BZ | Belize | researched | researched | researched | researched | researched |
 | CA | Canada | researched | researched | researched | researched | blocked |
 | CC | Cocos Islands | researched | researched | researched | blocked | blocked |
-| CD | Democratic Republic of the Congo | researched | researched | researched | researched | pending |
+| CD | Democratic Republic of the Congo | researched | researched | researched | researched | researched |
 | CF | Central African Republic | researched | researched | researched | researched | pending |
 | CG | Republic of the Congo | researched | researched | researched | researched | researched |
 | CH | Switzerland | researched | researched | researched | researched | researched |
