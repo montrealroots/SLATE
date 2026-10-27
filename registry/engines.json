@@ -87,5 +87,14 @@
    "coverage/weather-countries.json"
   ],
   "allPlacesTest": "tests/world/weather/weather.test.ts::the weather at real towns > at every place on the map"
+ },
+ "world.holidays": {
+  "layer": 2,
+  "dir": "src/world/holidays",
+  "readsPlace": true,
+  "matrices": [
+   "coverage/holidays-countries.json"
+  ],
+  "allPlacesTest": "tests/world/holidays/holidays.test.ts::the holidays > at every place on the map"
  }
 }

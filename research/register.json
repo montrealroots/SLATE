@@ -3907,6 +3907,707 @@
     }
    ],
    "notModeled": "weather.borrowed-part"
+  },
+  {
+   "id": "R-0106",
+   "fact": "world.holidays.calendars",
+   "sought": "The months of the calendars holidays are kept in other than the Gregorian (the Umm al-Qura Islamic, the Hebrew, the Chinese, the Korean, the Persian and the Ethiopian), 2000 to 2150",
+   "status": "found",
+   "value": {
+    "file": "src/world/holidays/calendars.json",
+    "sha256": "1757695ade1db26e6a5a43127c9e9ddd58a33b2582e62be1f80609715497380c",
+    "compiler": "tools/calendars/compile.ts",
+    "icu": "77.1 (Node.js 22.22.0)"
+   },
+   "sources": [
+    {
+     "kind": "primary",
+     "url": "https://github.com/unicode-org/icu/tree/release-77-1/icu4c/source/i18n",
+     "title": "ICU 77.1 (International Components for Unicode), its calendars as Node.js 22.22.0 ships them: islamcal.cpp (Umm al-Qura, its month lengths the Kingdom of Saudi Arabia's), hebrwcal.cpp, chnsecal.cpp, dangical.cpp, persncal.cpp, ethpccal.cpp",
+     "read": "2026-10-26",
+     "said": "Intl.DateTimeFormat with the calendars islamic-umalqura, hebrew, chinese, dangi, persian and ethiopic gives each day's year, month and day; 2026's: 1 Shawwal 1447 = 20 March, 10 Dhu al-Hijjah 1447 = 27 May, 1 Tishri 5787 = 12 September, 15 Nisan 5786 = 2 April, Chinese and Korean New Year = 17 February, 1 Farvardin 1405 = 21 March, 1 Meskerem 2019 = 11 September."
+    }
+   ]
+  },
+  {
+   "id": "R-0107",
+   "fact": "world.holidays.easter",
+   "sought": "The date of Easter in the Western churches, by the Gregorian computus",
+   "status": "found",
+   "value": {
+    "file": "research/sources/easter.json",
+    "sha256": "4a0a2d7d1667d3d8a252c983980785c47e5f48d6546dac08e185b7c561825508",
+    "algorithm": "J.-M. Oudin (1940), as the Naval Observatory gives it",
+    "years": "2000-2150, each year's as the Observatory publishes it, held by the tests"
+   },
+   "sources": [
+    {
+     "kind": "primary",
+     "url": "https://aa.usno.navy.mil/faq/easter",
+     "title": "U.S. Naval Observatory, The Date of Easter",
+     "read": "2026-10-26",
+     "said": "c = y / 100; n = y - 19 * ( y / 19 ); k = ( c - 17 ) / 25; i = c - c / 4 - ( c - k ) / 3 + 19 * n + 15; i = i - 30 * ( i / 30 ); i = i - ( i / 28 ) * ( 1 - ( i / 28 ) * ( 29 / ( i + 1 ) ) * ( ( 21 - n ) / 11 ) ); j = y + y / 4 + i + 2 - c + c / 4; j = j - 7 * ( j / 7 ); l = i - j; m = 3 + ( l + 40 ) / 44; d = l + 28 - 31 * ( m / 4 ). The algorithm is due to J.-M. Oudin (1940)."
+    },
+    {
+     "kind": "primary",
+     "url": "https://aa.usno.navy.mil/calculated/observances/christian?year={year}",
+     "title": "U.S. Naval Observatory, Selected Christian Observances, each year 2000-2150",
+     "read": "2026-10-26",
+     "said": "2026: Easter April 5."
+    }
+   ]
+  },
+  {
+   "id": "R-0108",
+   "fact": "world.holidays.easter-orthodox",
+   "sought": "The date of Easter (Pascha) in the Orthodox churches, by the Julian computus carried to the Gregorian calendar",
+   "status": "found",
+   "value": {
+    "file": "research/sources/easter.json",
+    "sha256": "4a0a2d7d1667d3d8a252c983980785c47e5f48d6546dac08e185b7c561825508",
+    "years": "2000-2037 as the Diocese publishes them, held by the tests; later years by the same computus"
+   },
+   "sources": [
+    {
+     "kind": "primary",
+     "url": "https://www.acrod.org/prayercorner/movablefeasts/?pc_year={year}",
+     "title": "American Carpatho-Russian Orthodox Diocese of North America (Ecumenical Patriarchate of Constantinople), Listing of Movable Feasts",
+     "read": "2026-10-26",
+     "said": "Pascha / Easter: 2026 Apr 12, 2027 May 02, 2028 Apr 16, 2029 Apr 08. Sorry, but we are unable to display information for any date in 2038 or later."
+    }
+   ]
+  },
+  {
+   "id": "R-0110",
+   "fact": "world.holidays.BE",
+   "sought": "Belgium's public holidays, the days off its law or its government's list names, nationally and in each first-level region that keeps its own",
+   "status": "found",
+   "value": {
+    "file": "research/sources/holidays/BE.json",
+    "sha256": "0ebd610e9f92338e50171a4b12830ea78331482c022e7f52cd780e4bca46cddb",
+    "lists": 1,
+    "years": "2026"
+   },
+   "sources": [
+    {
+     "kind": "primary",
+     "url": "https://emploi.belgique.be/fr/themes/jours-feries-et-conges/jours-feries",
+     "title": "SPF Emploi, Travail et Concertation sociale, Jours fériés",
+     "read": "2026-10-26",
+     "said": "Quels sont les jours fériés légaux ? Le 1er janvier, le lundi de Pâques, le 1er mai (Fête du travail), l’Ascension, le lundi de Pentecôte, le 21 juillet (Fête nationale), le 15 août (l’Assomption), le 1er novembre (la Toussaint), le 11 novembre (l’Armistice), le 25 décembre (Noël). Si ce jour coïncide avec un dimanche ou un jour habituel d’inactivité dans l’entreprise, ce « jour de remplacement » sera nécessairement fixé sur un jour habituel d’activité dans l’entreprise."
+    }
+   ]
+  },
+  {
+   "id": "R-0111",
+   "fact": "world.holidays.BL",
+   "sought": "Saint Barthelemy's public holidays, the days off its law or its government's list names, nationally and in each first-level region that keeps its own",
+   "status": "found",
+   "value": {
+    "file": "research/sources/holidays/BL.json",
+    "sha256": "ab6a109e3763d0f9954bcb553d2510e7e6882b1540768a57d1d4294b48ddd4b8",
+    "lists": 2,
+    "years": "2026-2027"
+   },
+   "sources": [
+    {
+     "kind": "primary",
+     "url": "https://www.service-public.fr/particuliers/vosdroits/F2405",
+     "title": "Service Public (Direction de l’information légale et administrative, Premier ministre), Jours fériés et ponts dans le secteur privé (vérifié le 01 janvier 2026)",
+     "read": "2026-10-26",
+     "said": "Tableau - Dates des fêtes légales en 2026 (cas général): Jour de l’An jeudi 1er janvier; Lundi de Pâques lundi 6 avril; Journée internationale des travailleurs vendredi 1er mai; Victoire 1945 vendredi 8 mai; Ascension jeudi 14 mai; Lundi de Pentecôte lundi 25 mai; Fête nationale mardi 14 juillet; Assomption samedi 15 août; Toussaint dimanche 1er novembre; Armistice 1918 mercredi 11 novembre; Noël vendredi 25 décembre. 2027: 1er janvier, 29 mars, 1er mai, 6 mai, 8 mai, 17 mai, 14 juillet, 15 août, 1er novembre, 11 novembre, 25 décembre. Un jour férié chômé peut tomber un jour habituellement non travaillé (le dimanche, par exemple); le jour de repos hebdomadaire (généralement le dimanche). Outre-mer: le jour de la commémoration de l’abolition de l’esclavage est un jour férié dans les Drom, à Saint-Barthélemy et à Saint-Martin: Saint-Barthélemy 9 octobre."
+    }
+   ]
+  },
+  {
+   "id": "R-0112",
+   "fact": "world.holidays.CH",
+   "sought": "Switzerland's public holidays, the days off its law or its government's list names, nationally and in each first-level region that keeps its own",
+   "status": "found",
+   "value": {
+    "file": "research/sources/holidays/CH.json",
+    "sha256": "ecf5ee0d4abda03e13c2631b3e750f0a047530350f4c0c8dfd16d4784dd7a563",
+    "lists": 26,
+    "years": "2026"
+   },
+   "sources": [
+    {
+     "kind": "primary",
+     "url": "https://www.bj.admin.ch/dam/de/sd-web/MW4dthCLc4Nv/kant-feiertage.pdf",
+     "title": "Bundesamt für Justiz, Gesetzliche Feiertage und Tage, die in der Schweiz wie gesetzliche Feiertage behandelt werden (Verzeichnis gestützt auf Artikel 11 des Europäischen Übereinkommens vom 16. Mai 1972 über die Berechnung von Fristen), Stand: 1. Januar 2011",
+     "read": "2026-10-26",
+     "said": "Vorbemerkungen: 1. In der Schweiz werden die gesetzlichen Feiertage und die Tage, die wie gesetzliche Feiertage behandelt werden, mit Ausnahme des 1. August, durch die Kantone bestimmt. 3. Ohne anderslautende Hinweise gelten die aufgeführten Feiertage für das ganze Gebiet des betreffenden Kantons. 5. Nicht aufgeführt werden jene Feiertage, die auf einen Sonntag fallen. A. Bundesrechtliche Feiertage: Bundesfeiertag, 1. August. B. Kantonalrechtliche Feiertage, a. gesetzlich anerkannte Feiertage and b. Tage, die wie gesetzliche Feiertage behandelt werden, for each canton (Stand: 1. Januar 2011). Uri, Appenzell A. Rh. and I. Rh.: Der Stephanstag wird nicht gefeiert, wenn der Weihnachtstag auf einen Montag oder Freitag fällt. Neuchâtel: Le 2 janvier et le 26 décembre seulement lorsque le 1er janvier et le 25 décembre sont des dimanches. Days of single communes, districts or a canton’s part (Solothurn’s Josephstag and patron days and its 1. Mai ab 12.00 Uhr, Appenzell I. Rh.’s Mauritiustag im inneren Landesteil, Neuchâtel’s Fête-Dieu at Le Landeron, Fribourg’s exceptions in the district du Lac) are local and not kept."
+    },
+    {
+     "kind": "primary",
+     "url": "https://www.gl.ch/public-newsroom.html/31/newsroomnews/14237/title/n%C3%A4felser-fahrt",
+     "title": "Kanton Glarus, Näfelser Fahrt 2026",
+     "read": "2026-10-26",
+     "said": "Jeweils am ersten Donnerstag im April gedenkt das Glarnervolk den Gefallenen in der Schlacht bei Näfels. Wenn der erste Donnerstag allerdings in die Karwoche fällt, wie 2026, wird die Feier um eine Woche verschoben. Näfelser Fahrt vom 9. April 2026."
+    }
+   ]
+  },
+  {
+   "id": "R-0113",
+   "fact": "world.holidays.CZ",
+   "sought": "Czechia's public holidays, the days off its law or its government's list names, nationally and in each first-level region that keeps its own",
+   "status": "secondary",
+   "value": {
+    "file": "research/sources/holidays/CZ.json",
+    "sha256": "072ef632538488a95abbd6c5008367ee3db10439a137ffaf11054e34198dc796",
+    "lists": 1,
+    "years": "2026"
+   },
+   "sources": [
+    {
+     "kind": "secondary",
+     "url": "https://www.zakonyprolidi.cz/cs/2000-245",
+     "title": "Zákon č. 245/2000 Sb., o státních svátcích, o ostatních svátcích, o významných dnech a o dnech pracovního klidu, as Zákony pro lidi reproduces the consolidated text (the official e-Sbírka, https://www.e-sbirka.cz/sb/2000/245, is a script application this environment can’t read)",
+     "read": "2026-10-26",
+     "said": "§ 1: 1. leden - Den obnovy samostatného českého státu, 8. květen - Den vítězství, 5. červenec - Den slovanských věrozvěstů Cyrila a Metoděje, 6. červenec - Den upálení mistra Jana Husa, 28. září - Den české státnosti, 28. říjen - Den vzniku samostatného československého státu a 17. listopad - Den boje za svobodu a demokracii a Mezinárodní den studentstva se prohlašují za státní svátky. § 2: Ostatními svátky jsou 1. leden - Nový rok, Velký pátek, Velikonoční pondělí, 1. květen - Svátek práce, 24. prosinec - Štědrý den, 25. prosinec - 1. svátek vánoční a 26. prosinec - 2. svátek vánoční. § 3: Státní svátky a ostatní svátky jsou dny pracovního klidu. (Act 59/2026 Sb., in force 13 May 2026, adds only 30 March, Den české vlajky, to the significant days of § 4, which are working days.)",
+     "quotes": "https://www.e-sbirka.cz/sb/2000/245"
+    },
+    {
+     "kind": "secondary",
+     "url": "https://www.zakonyprolidi.cz/cs/2026-59",
+     "title": "Zákon č. 59/2026 Sb., kterým se mění zákon č. 245/2000 Sb.",
+     "read": "2026-10-26",
+     "said": "Čl. I: v § 4 odst. 1 se za slova „28. březen - Den narození Jana Ámose Komenského,“ vkládají slova „30. březen - Den české vlajky,“.",
+     "quotes": "https://www.e-sbirka.cz/sb/2026/59"
+    }
+   ]
+  },
+  {
+   "id": "R-0114",
+   "fact": "world.holidays.DK",
+   "sought": "Denmark's public holidays, the days off its law or its government's list names, nationally and in each first-level region that keeps its own",
+   "status": "found",
+   "value": {
+    "file": "research/sources/holidays/DK.json",
+    "sha256": "8b0e79bfde4cc55e0a6429c3becb31db2ac319a4ae36ddd56cad438dd49ca974",
+    "lists": 1,
+    "years": "2026"
+   },
+   "sources": [
+    {
+     "kind": "primary",
+     "url": "https://www.borger.dk/arbejde-dagpenge-ferie/Oversigt-ferie/loenmodtager-og-ferie",
+     "title": "borger.dk, Lønmodtager og ferie: Er der dage, hvor jeg ikke kan holde ferie?",
+     "read": "2026-10-26",
+     "said": "Følgende helligdage er dage, hvor du ikke kan holde ferie: Nytårsdag (den 1. januar), Skærtorsdag, Lang fredag, 2. påskedag, Kristi himmelfartsdag, 2. pinsedag, 1. og 2. juledag. Den 1. maj, den 5. juni (Grundlovsdag), den 24. og den 31. december er ikke helligdage i Danmark. Du kan ikke holde ferie på det ugentlige fridøgn, som for de fleste lønmodtagere er søndag."
+    }
+   ]
+  },
+  {
+   "id": "R-0115",
+   "fact": "world.holidays.EE",
+   "sought": "Estonia's public holidays, the days off its law or its government's list names, nationally and in each first-level region that keeps its own",
+   "status": "found",
+   "value": {
+    "file": "research/sources/holidays/EE.json",
+    "sha256": "80a16d7498cd8eb67eb9e054ff9af3c11b5889d3eeff2b8feb4f4a0f5a135fff",
+    "lists": 1,
+    "years": "2026"
+   },
+   "sources": [
+    {
+     "kind": "primary",
+     "url": "https://riigikantselei.ee/riiklikud-sumbolid-preemiad-ja-tahtpaevad/puhad-ja-tahtpaevad/riigipuhad",
+     "title": "Riigikantselei (Government Office of Estonia), Rahvus- ja riigipühad",
+     "read": "2026-10-26",
+     "said": "Eestis on üks rahvuspüha – vabariigi aastapäev ja 11 riigipüha ning pühadel on üldiselt vaba päev ja tööd ei tehta. Uusaasta - 1. jaanuar; Suur reede - liikuv; 1. ülestõusmispüha - liikuv; Kevadpüha - 1. mai; Nelipühade 1. püha - liikuv; Võidupüha - 23. juuni; Jaanipäev - 24. juuni; Taasiseseisvumispäev - 20. august; Jõulupühad - 24., 25. ja 26. detsember."
+    },
+    {
+     "kind": "primary",
+     "url": "https://riigikantselei.ee/riiklikud-sumbolid-preemiad-ja-tahtpaevad/puhad-ja-tahtpaevad/rahvuspuha",
+     "title": "Riigikantselei, Rahvuspüha",
+     "read": "2026-10-26",
+     "said": "Eestis on üks rahvuspüha – vabariigi aastapäev. Vabariigi aastapäev, iseseisvuspäev - 24. veebruar."
+    }
+   ]
+  },
+  {
+   "id": "R-0116",
+   "fact": "world.holidays.ES",
+   "sought": "Spain's public holidays, the days off its law or its government's list names, nationally and in each first-level region that keeps its own",
+   "status": "found",
+   "value": {
+    "file": "research/sources/holidays/ES.json",
+    "sha256": "0123de46c6bb29935d7e637aa4d550d093c23c30a5f73739f7579f1e32ecd4b3",
+    "lists": 38,
+    "years": "2026-2027"
+   },
+   "sources": [
+    {
+     "kind": "primary",
+     "url": "https://www.boe.es/diario_boe/txt.php?id=BOE-A-2025-21667",
+     "title": "Resolución de 17 de octubre de 2025, de la Dirección General de Trabajo, por la que se publica la relación de fiestas laborales para el año 2026 (BOE-A-2025-21667), anexo",
+     "read": "2026-10-26",
+     "said": "The table of the 2026 holidays, a column for each Comunidad Autónoma and for Ceuta and Melilla: * fiesta nacional no sustituible, ** fiesta nacional respecto de la que no se ha ejercido la facultad de sustitución, *** fiesta de Comunidad Autónoma. (1) Canarias and (2) Cataluña add island and Arán days. Hasta dos fiestas locales de cada municipio se publican en los boletines de las Comunidades Autónomas o de las provincias. Fundamentos de Derecho, primero: el artículo 45.1 del Real Decreto 2001/1983 enumera las fiestas laborales de ámbito nacional, distinguiendo entre las señaladas en los apartados a), b) y c), que tienen el carácter de nacional no sustituibles por las Comunidades Autónomas, y las reflejadas en el apartado d), respecto de las cuales las Comunidades Autónomas pueden optar. Segundo: las Comunidades Autónomas pueden sustituir el descanso del lunes siguiente a las fiestas nacionales que coinciden en domingo. The days marked * in every column: 2026, 1 enero, 3 abril, 1 mayo, 15 agosto, 12 octubre, 8 y 25 diciembre (1 noviembre and 6 diciembre fall on a Sunday); 2027, 1 enero, 26 marzo, 1 mayo, 12 octubre, 1 noviembre, 6, 8 y 25 diciembre (15 agosto falls on a Sunday)."
+    },
+    {
+     "kind": "primary",
+     "url": "https://www.boe.es/diario_boe/txt.php?id=BOE-A-2026-21254",
+     "title": "Resolución de 8 de octubre de 2026, de la Dirección General de Trabajo, por la que se publica relación de fiestas laborales para el año 2027 (BOE-A-2026-21254), anexo",
+     "read": "2026-10-26",
+     "said": "The same table for 2027."
+    }
+   ]
+  },
+  {
+   "id": "R-0117",
+   "fact": "world.holidays.FR",
+   "sought": "France's public holidays, the days off its law or its government's list names, nationally and in each first-level region that keeps its own",
+   "status": "found",
+   "value": {
+    "file": "research/sources/holidays/FR.json",
+    "sha256": "120477a2e9d1f50559a9f7d353cf946e83f8745ebb2179794e83d6109a6abe09",
+    "lists": 2,
+    "years": "2026-2027"
+   },
+   "sources": [
+    {
+     "kind": "primary",
+     "url": "https://www.service-public.fr/particuliers/vosdroits/F2405",
+     "title": "Service Public (Direction de l’information légale et administrative, Premier ministre), Jours fériés et ponts dans le secteur privé (vérifié le 01 janvier 2026)",
+     "read": "2026-10-26",
+     "said": "Tableau - Dates des fêtes légales en 2026 (cas général): Jour de l’An jeudi 1er janvier; Lundi de Pâques lundi 6 avril; Journée internationale des travailleurs vendredi 1er mai; Victoire 1945 vendredi 8 mai; Ascension jeudi 14 mai; Lundi de Pentecôte lundi 25 mai; Fête nationale mardi 14 juillet; Assomption samedi 15 août; Toussaint dimanche 1er novembre; Armistice 1918 mercredi 11 novembre; Noël vendredi 25 décembre. 2027: 1er janvier, 29 mars, 1er mai, 6 mai, 8 mai, 17 mai, 14 juillet, 15 août, 1er novembre, 11 novembre, 25 décembre. Un jour férié chômé peut tomber un jour habituellement non travaillé (le dimanche, par exemple); le jour de repos hebdomadaire (généralement le dimanche)."
+    }
+   ]
+  },
+  {
+   "id": "R-0118",
+   "fact": "world.holidays.GB",
+   "sought": "United Kingdom's public holidays, the days off its law or its government's list names, nationally and in each first-level region that keeps its own",
+   "status": "found",
+   "value": {
+    "file": "research/sources/holidays/GB.json",
+    "sha256": "9cd71f6259c8d806b2478f830716ae24a09dade63b07065cf8e97e72c987fece",
+    "lists": 9,
+    "years": "2026-2028"
+   },
+   "sources": [
+    {
+     "kind": "primary",
+     "url": "https://www.gov.uk/bank-holidays.json",
+     "title": "GOV.UK, UK bank holidays (England and Wales, Scotland, Northern Ireland), as its JSON gives them",
+     "read": "2026-10-26",
+     "said": "Its lists for 2026 to 2028, by part of the kingdom; GB.ENG/GB.WLS 2026: 2026-01-01 New Year’s Day; 2026-04-03 Good Friday; 2026-04-06 Easter Monday; 2026-05-04 Early May bank holiday; 2026-05-25 Spring bank holiday; 2026-08-31 Summer bank holiday; 2026-12-25 Christmas Day; 2026-12-28 Boxing Day | GB.SCT 2026: 2026-01-01 New Year’s Day; 2026-01-02 2nd January; 2026-04-03 Good Friday; 2026-05-04 Early May bank holiday; 2026-05-25 Spring bank holiday; 2026-06-15 World Cup bank holiday; 2026-08-03 Summer bank holiday; 2026-11-30 St Andrew’s Day; 2026-12-25 Christmas Day; 2026-12-28 Boxing Day | GB.NIR 2026: 2026-01-01 New Year’s Day; 2026-03-17 St Patrick’s Day; 2026-04-03 Good Friday; 2026-04-06 Easter Monday; 2026-05-04 Early May bank holiday; 2026-05-25 Spring bank holiday; 2026-07-13 Battle of the Boyne (Orangemen’s Day); 2026-08-31 Summer bank holiday; 2026-12-25 Christmas Day; 2026-12-28 Boxing Day."
+    },
+    {
+     "kind": "primary",
+     "url": "https://www.gov.uk/bank-holidays",
+     "title": "GOV.UK, UK bank holidays",
+     "read": "2026-10-26",
+     "said": "If a bank holiday is on a weekend, a ‘substitute’ weekday becomes a bank holiday, normally the following Monday."
+    }
+   ]
+  },
+  {
+   "id": "R-0119",
+   "fact": "world.holidays.GF",
+   "sought": "French Guiana's public holidays, the days off its law or its government's list names, nationally and in each first-level region that keeps its own",
+   "status": "found",
+   "value": {
+    "file": "research/sources/holidays/GF.json",
+    "sha256": "432457a7884a68f8e5602044d93fad1f25cd4114ef876ce915cce1f0b6083701",
+    "lists": 2,
+    "years": "2026-2027"
+   },
+   "sources": [
+    {
+     "kind": "primary",
+     "url": "https://www.service-public.fr/particuliers/vosdroits/F2405",
+     "title": "Service Public (Direction de l’information légale et administrative, Premier ministre), Jours fériés et ponts dans le secteur privé (vérifié le 01 janvier 2026)",
+     "read": "2026-10-26",
+     "said": "Tableau - Dates des fêtes légales en 2026 (cas général): Jour de l’An jeudi 1er janvier; Lundi de Pâques lundi 6 avril; Journée internationale des travailleurs vendredi 1er mai; Victoire 1945 vendredi 8 mai; Ascension jeudi 14 mai; Lundi de Pentecôte lundi 25 mai; Fête nationale mardi 14 juillet; Assomption samedi 15 août; Toussaint dimanche 1er novembre; Armistice 1918 mercredi 11 novembre; Noël vendredi 25 décembre. 2027: 1er janvier, 29 mars, 1er mai, 6 mai, 8 mai, 17 mai, 14 juillet, 15 août, 1er novembre, 11 novembre, 25 décembre. Un jour férié chômé peut tomber un jour habituellement non travaillé (le dimanche, par exemple); le jour de repos hebdomadaire (généralement le dimanche). Outre-mer: le jour de la commémoration de l’abolition de l’esclavage est un jour férié dans les Drom, à Saint-Barthélemy et à Saint-Martin: Guyane 10 juin."
+    }
+   ]
+  },
+  {
+   "id": "R-0120",
+   "fact": "world.holidays.GP",
+   "sought": "Guadeloupe's public holidays, the days off its law or its government's list names, nationally and in each first-level region that keeps its own",
+   "status": "found",
+   "value": {
+    "file": "research/sources/holidays/GP.json",
+    "sha256": "9e571ba37c4b1975b05a82111bae4472a5fb237225a3d725240e32b5f3c5ce45",
+    "lists": 2,
+    "years": "2026-2027"
+   },
+   "sources": [
+    {
+     "kind": "primary",
+     "url": "https://www.service-public.fr/particuliers/vosdroits/F2405",
+     "title": "Service Public (Direction de l’information légale et administrative, Premier ministre), Jours fériés et ponts dans le secteur privé (vérifié le 01 janvier 2026)",
+     "read": "2026-10-26",
+     "said": "Tableau - Dates des fêtes légales en 2026 (cas général): Jour de l’An jeudi 1er janvier; Lundi de Pâques lundi 6 avril; Journée internationale des travailleurs vendredi 1er mai; Victoire 1945 vendredi 8 mai; Ascension jeudi 14 mai; Lundi de Pentecôte lundi 25 mai; Fête nationale mardi 14 juillet; Assomption samedi 15 août; Toussaint dimanche 1er novembre; Armistice 1918 mercredi 11 novembre; Noël vendredi 25 décembre. 2027: 1er janvier, 29 mars, 1er mai, 6 mai, 8 mai, 17 mai, 14 juillet, 15 août, 1er novembre, 11 novembre, 25 décembre. Un jour férié chômé peut tomber un jour habituellement non travaillé (le dimanche, par exemple); le jour de repos hebdomadaire (généralement le dimanche). Outre-mer: le jour de la commémoration de l’abolition de l’esclavage est un jour férié dans les Drom, à Saint-Barthélemy et à Saint-Martin: Guadeloupe 27 mai."
+    }
+   ]
+  },
+  {
+   "id": "R-0121",
+   "fact": "world.holidays.IE",
+   "sought": "Ireland's public holidays, the days off its law or its government's list names, nationally and in each first-level region that keeps its own",
+   "status": "found",
+   "value": {
+    "file": "research/sources/holidays/IE.json",
+    "sha256": "cf397ead0166216215d655df42a7571a6ad552cc3d885ba124ea8c0c9fef2878",
+    "lists": 1,
+    "years": "2026"
+   },
+   "sources": [
+    {
+     "kind": "primary",
+     "url": "https://www.workplacerelations.ie/en/what_you_should_know/public-holidays/",
+     "title": "Workplace Relations Commission, Public Holidays",
+     "read": "2026-10-26",
+     "said": "In Ireland there are ten public holidays each year. From 2023, there is a public holiday on the first Monday in February, except where 1st February falls on a Friday in which case that Friday 1st February will be the public holiday. Public holidays are: New Year’s Day (1st January); First Monday in February; St. Patrick’s Day (17th March); Easter Monday; First Monday in May; First Monday in June; First Monday in August; Last Monday in October; Christmas Day (25th December); St. Stephen’s Day (26th December). Good Friday is not a public holiday and is a normal working day. In 2026 the dates of these public holidays are as follows: 01 January, 02 February, 17 March, 06 April, 04 May, 01 June, 03 August, 26 October, 25 December, 26 December 2026."
+    }
+   ]
+  },
+  {
+   "id": "R-0122",
+   "fact": "world.holidays.IT",
+   "sought": "Italy's public holidays, the days off its law or its government's list names, nationally and in each first-level region that keeps its own",
+   "status": "found",
+   "value": {
+    "file": "research/sources/holidays/IT.json",
+    "sha256": "ac2ab58db6888ae7f1f8dd53070c36dab2450b14d71dafb14c38729ab47cbc48",
+    "lists": 1,
+    "years": "2026"
+   },
+   "sources": [
+    {
+     "kind": "primary",
+     "url": "https://www.normattiva.it/uri-res/N2Ls?urn:nir:stato:legge:1949-05-27;260~art2!vig=",
+     "title": "Normattiva, Legge 27 maggio 1949, n. 260, art. 2 (testo in vigore dal 1-1-2026)",
+     "read": "2026-10-26",
+     "said": "Sono considerati giorni festivi, oltre al giorno della festa nazionale, i giorni seguenti: tutte le domeniche; il primo giorno dell’anno; il giorno dell’Epifania; il giorno della festa di San Giuseppe; il 25 aprile: anniversario della liberazione; il giorno di lunedì dopo Pasqua; il giorno dell’Ascensione; il giorno del Corpus Domini; il 1 maggio: festa del lavoro; il giorno della festa dei santi Apostoli Pietro e Paolo; il giorno dell’Assunzione della B. V. Maria; il 4 ottobre: festa nazionale di San Francesco d’Assisi, patrono d’Italia; il giorno di Ognissanti; il 4 novembre: giorno dell’unità nazionale; il giorno della festa dell’Immacolata Concezione; il giorno di Natale; il giorno 26 dicembre."
+    },
+    {
+     "kind": "primary",
+     "url": "https://www.normattiva.it/uri-res/N2Ls?urn:nir:stato:legge:1949-05-27;260~art1!vig=",
+     "title": "Normattiva, Legge 27 maggio 1949, n. 260, art. 1",
+     "read": "2026-10-26",
+     "said": "Il giorno 2 giugno, data di fondazione della Repubblica, è dichiarato festa nazionale."
+    },
+    {
+     "kind": "primary",
+     "url": "https://www.normattiva.it/uri-res/N2Ls?urn:nir:stato:legge:1977-03-05;54",
+     "title": "Normattiva, Legge 5 marzo 1977, n. 54, art. 1",
+     "read": "2026-10-26",
+     "said": "I seguenti giorni cessano di essere considerati festivi agli effetti civili: Epifania; S. Giuseppe; Ascensione; Corpus Domini; SS. Apostoli Pietro e Paolo. A decorrere dal 1977 la celebrazione della festa nazionale della Repubblica e quella della festa dell’Unità nazionale hanno luogo rispettivamente nella prima domenica di giugno e nella prima domenica di novembre. Cessano pertanto di essere considerati festivi i giorni 2 giugno e 4 novembre."
+    },
+    {
+     "kind": "primary",
+     "url": "https://www.normattiva.it/uri-res/N2Ls?urn:nir:presidente.repubblica:decreto:1985-12-28;792",
+     "title": "Normattiva, D.P.R. 28 dicembre 1985, n. 792, art. 1",
+     "read": "2026-10-26",
+     "said": "Sono festività religiose, ai sensi dell’art. 6 dell’accordo tra la Repubblica italiana e la Santa Sede: tutte le domeniche; il 1 gennaio; il 6 gennaio, Epifania del Signore; il 15 agosto; il 1 novembre; l’8 dicembre; il 25 dicembre; il 29 giugno, SS. Pietro e Paolo, per il comune di Roma."
+    },
+    {
+     "kind": "primary",
+     "url": "https://www.normattiva.it/uri-res/N2Ls?urn:nir:stato:legge:2000-11-20;336",
+     "title": "Normattiva, Legge 20 novembre 2000, n. 336, art. 1",
+     "read": "2026-10-26",
+     "said": "A decorrere dal 2001 la celebrazione della festa nazionale della Repubblica ha nuovamente luogo il 2 giugno di ciascun anno, che pertanto viene ripristinato come giorno festivo."
+    },
+    {
+     "kind": "primary",
+     "url": "https://www.normattiva.it/uri-res/N2Ls?urn:nir:stato:legge:2025-10-08;151",
+     "title": "Normattiva, Legge 8 ottobre 2025, n. 151, art. 1",
+     "read": "2026-10-26",
+     "said": "È istituita la festa nazionale di San Francesco d’Assisi, da celebrare il 4 ottobre di ogni anno. All’articolo 2 della legge 27 maggio 1949, n. 260, è inserito: «il 4 ottobre: festa nazionale di San Francesco d’Assisi, patrono d’Italia;»."
+    }
+   ]
+  },
+  {
+   "id": "R-0123",
+   "fact": "world.holidays.JP",
+   "sought": "Japan's public holidays, the days off its law or its government's list names, nationally and in each first-level region that keeps its own",
+   "status": "found",
+   "value": {
+    "file": "research/sources/holidays/JP.json",
+    "sha256": "bcd74db737a40fc5e9b4d9c6c940db997143d02f4a961a778f1e12576a7403fe",
+    "lists": 2,
+    "years": "2026-2027"
+   },
+   "sources": [
+    {
+     "kind": "primary",
+     "url": "https://www8.cao.go.jp/chosei/shukujitsu/syukujitsu.csv",
+     "title": "内閣府 (Cabinet Office), 国民の祝日 (national holidays and the days off they give), 昭和30年から令和9年",
+     "read": "2026-10-26",
+     "said": "Each day and its name, 1955 to 2027 (国民の祝日・休日月日,国民の祝日・休日名称); 2026: 2026-01-01 元日; 2026-01-12 成人の日; 2026-02-11 建国記念の日; 2026-02-23 天皇誕生日; 2026-03-20 春分の日; 2026-04-29 昭和の日; 2026-05-03 憲法記念日; 2026-05-04 みどりの日; 2026-05-05 こどもの日; 2026-05-06 休日; 2026-07-20 海の日; 2026-08-11 山の日; 2026-09-21 敬老の日; 2026-09-22 休日; 2026-09-23 秋分の日; 2026-10-12 スポーツの日; 2026-11-03 文化の日; 2026-11-23 勤労感謝の日."
+    },
+    {
+     "kind": "primary",
+     "url": "https://www8.cao.go.jp/chosei/shukujitsu/gaiyou.html",
+     "title": "内閣府, 「国民の祝日」について (the Act on National Holidays, articles 2 and 3)",
+     "read": "2026-10-26",
+     "said": "第3条 「国民の祝日」は、休日とする。2.「国民の祝日」が日曜日に当たるときは、その日後においてその日に最も近い「国民の祝日」でない日を休日とする。3.その前日及び翌日が「国民の祝日」である日（「国民の祝日」でない日に限る。）は、休日とする。「春分の日」及び「秋分の日」については、国立天文台が、毎年2月に翌年の「春分の日」、「秋分の日」を官報で公表しています。"
+    }
+   ]
+  },
+  {
+   "id": "R-0124",
+   "fact": "world.holidays.MF",
+   "sought": "Saint Martin's public holidays, the days off its law or its government's list names, nationally and in each first-level region that keeps its own",
+   "status": "found",
+   "value": {
+    "file": "research/sources/holidays/MF.json",
+    "sha256": "4691e5d091a6d78590e6cc5cdf0bb6a7df9c8dd257fea51171db7f6d3afc2a45",
+    "lists": 2,
+    "years": "2026-2027"
+   },
+   "sources": [
+    {
+     "kind": "primary",
+     "url": "https://www.service-public.fr/particuliers/vosdroits/F2405",
+     "title": "Service Public (Direction de l’information légale et administrative, Premier ministre), Jours fériés et ponts dans le secteur privé (vérifié le 01 janvier 2026)",
+     "read": "2026-10-26",
+     "said": "Tableau - Dates des fêtes légales en 2026 (cas général): Jour de l’An jeudi 1er janvier; Lundi de Pâques lundi 6 avril; Journée internationale des travailleurs vendredi 1er mai; Victoire 1945 vendredi 8 mai; Ascension jeudi 14 mai; Lundi de Pentecôte lundi 25 mai; Fête nationale mardi 14 juillet; Assomption samedi 15 août; Toussaint dimanche 1er novembre; Armistice 1918 mercredi 11 novembre; Noël vendredi 25 décembre. 2027: 1er janvier, 29 mars, 1er mai, 6 mai, 8 mai, 17 mai, 14 juillet, 15 août, 1er novembre, 11 novembre, 25 décembre. Un jour férié chômé peut tomber un jour habituellement non travaillé (le dimanche, par exemple); le jour de repos hebdomadaire (généralement le dimanche). Outre-mer: le jour de la commémoration de l’abolition de l’esclavage est un jour férié dans les Drom, à Saint-Barthélemy et à Saint-Martin: Saint-Martin 27 mai."
+    }
+   ]
+  },
+  {
+   "id": "R-0125",
+   "fact": "world.holidays.MQ",
+   "sought": "Martinique's public holidays, the days off its law or its government's list names, nationally and in each first-level region that keeps its own",
+   "status": "found",
+   "value": {
+    "file": "research/sources/holidays/MQ.json",
+    "sha256": "8bde8dc67e24cb8bac2f2f9caa0a9b92498dbbce64a1545d3912ad5d00aec606",
+    "lists": 2,
+    "years": "2026-2027"
+   },
+   "sources": [
+    {
+     "kind": "primary",
+     "url": "https://www.service-public.fr/particuliers/vosdroits/F2405",
+     "title": "Service Public (Direction de l’information légale et administrative, Premier ministre), Jours fériés et ponts dans le secteur privé (vérifié le 01 janvier 2026)",
+     "read": "2026-10-26",
+     "said": "Tableau - Dates des fêtes légales en 2026 (cas général): Jour de l’An jeudi 1er janvier; Lundi de Pâques lundi 6 avril; Journée internationale des travailleurs vendredi 1er mai; Victoire 1945 vendredi 8 mai; Ascension jeudi 14 mai; Lundi de Pentecôte lundi 25 mai; Fête nationale mardi 14 juillet; Assomption samedi 15 août; Toussaint dimanche 1er novembre; Armistice 1918 mercredi 11 novembre; Noël vendredi 25 décembre. 2027: 1er janvier, 29 mars, 1er mai, 6 mai, 8 mai, 17 mai, 14 juillet, 15 août, 1er novembre, 11 novembre, 25 décembre. Un jour férié chômé peut tomber un jour habituellement non travaillé (le dimanche, par exemple); le jour de repos hebdomadaire (généralement le dimanche). Outre-mer: le jour de la commémoration de l’abolition de l’esclavage est un jour férié dans les Drom, à Saint-Barthélemy et à Saint-Martin: Martinique 22 mai."
+    }
+   ]
+  },
+  {
+   "id": "R-0126",
+   "fact": "world.holidays.NL",
+   "sought": "The Netherlands's public holidays, the days off its law or its government's list names, nationally and in each first-level region that keeps its own",
+   "status": "found",
+   "value": {
+    "file": "research/sources/holidays/NL.json",
+    "sha256": "b0616a54034f51012d1e5493c990d9bf84ea2844f46cd28f3da0386cfe664d7d",
+    "lists": 2,
+    "years": "2026-2027"
+   },
+   "sources": [
+    {
+     "kind": "primary",
+     "url": "https://www.rijksoverheid.nl/onderwerpen/arbeidsovereenkomst-en-cao/vraag-en-antwoord/officiele-feestdagen",
+     "title": "Rijksoverheid, Wanneer zijn de officiële feestdagen in Nederland?",
+     "read": "2026-10-26",
+     "said": "Feestdagen 2026: Nieuwjaarsdag donderdag 1 januari; Goede Vrijdag vrijdag 3 april; Pasen zondag 5 april en maandag 6 april; Koningsdag maandag 27 april; Bevrijdingsdag dinsdag 5 mei; Hemelvaartsdag donderdag 14 mei; Pinksteren zondag 24 mei en maandag 25 mei; Kerstmis vrijdag 25 december en zaterdag 26 december 2026. Feestdagen 2027: 1 januari; 26 maart; 28 en 29 maart; Koningsdag dinsdag 27 april; 5 mei; 6 mei; 16 en 17 mei; 25 en 26 december. Er is geen wet die heeft vastgelegd dat bepaalde feestdagen vrije dagen zijn voor werknemers."
+    },
+    {
+     "kind": "primary",
+     "url": "https://wetten.overheid.nl/BWBR0032908",
+     "title": "Besluit vaststelling en aanduiding zevenentwintigste april als Koningsdag (wetten.overheid.nl), artikel 1",
+     "read": "2026-10-26",
+     "said": "Met ingang van 1 januari 2014 wordt de zevenentwintigste april in het vervolg aangeduid als Koningsdag, behoudens uitzonderingen in verband met zondagen."
+    },
+    {
+     "kind": "primary",
+     "url": "https://www.koninklijkhuis.nl/onderwerpen/koningsdag",
+     "title": "Het Koninklijk Huis, Koningsdag",
+     "read": "2026-10-26",
+     "said": "Als 27 april op een zondag valt, wordt Koningsdag de dag ervoor gevierd."
+    }
+   ]
+  },
+  {
+   "id": "R-0127",
+   "fact": "world.holidays.NO",
+   "sought": "Norway's public holidays, the days off its law or its government's list names, nationally and in each first-level region that keeps its own",
+   "status": "found",
+   "value": {
+    "file": "research/sources/holidays/NO.json",
+    "sha256": "906dc0e24810f903a8fd24bf9b4b77fc94127b5edc335664decd67117c798d86",
+    "lists": 1,
+    "years": "2026"
+   },
+   "sources": [
+    {
+     "kind": "primary",
+     "url": "https://lovdata.no/dokument/NL/lov/1995-02-24-12",
+     "title": "Lovdata, Lov om helligdager og helligdagsfred (LOV-1995-02-24-12), § 2",
+     "read": "2026-10-26",
+     "said": "Følgende dager er helligdag: a. vanlige søndager, b. nyttårsdag (1. januar), c. skjærtorsdag (siste torsdag før første påskedag), d. langfredag (siste fredag før første påskedag), e. første påskedag, f. annen påskedag, g. Kristi Himmelfartsdag (sjette torsdag etter første påskedag), h. første pinsedag (sjuende søndag etter første påskedag), i. annen pinsedag, j. første juledag (25. desember), k. annen juledag (26. desember)."
+    },
+    {
+     "kind": "primary",
+     "url": "https://lovdata.no/dokument/NL/lov/1947-04-26-1",
+     "title": "Lovdata, Lov om 1 og 17 mai som høgtidsdager (LOV-1947-04-26-1), § 1",
+     "read": "2026-10-26",
+     "said": "1. og 17. mai er høgtidsdager og skal være jamstelt med søndager, men ikke når det gjelder føresegner om kirkelige handlinger eller helligdagsfreden."
+    }
+   ]
+  },
+  {
+   "id": "R-0128",
+   "fact": "world.holidays.PL",
+   "sought": "Poland's public holidays, the days off its law or its government's list names, nationally and in each first-level region that keeps its own",
+   "status": "found",
+   "value": {
+    "file": "research/sources/holidays/PL.json",
+    "sha256": "34b02ab6c2710486a9a44a85ff3ee7011fcf7db9d12affe4bc4ba5499bee96a3",
+    "lists": 1,
+    "years": "2026"
+   },
+   "sources": [
+    {
+     "kind": "primary",
+     "url": "https://api.sejm.gov.pl/eli/acts/DU/2025/296/text.pdf",
+     "title": "Obwieszczenie Marszałka Sejmu w sprawie ogłoszenia jednolitego tekstu ustawy o dniach wolnych od pracy (Dz. U. 2025 poz. 296), art. 1",
+     "read": "2026-10-26",
+     "said": "Dniami wolnymi od pracy są: 1) dni niżej wymienione: a) 1 stycznia – Nowy Rok, b) 6 stycznia – Święto Trzech Króli, c) pierwszy dzień Wielkiej Nocy, d) drugi dzień Wielkiej Nocy, e) 1 maja – Święto Państwowe, f) 3 maja – Święto Narodowe Trzeciego Maja, g) pierwszy dzień Zielonych Świątek, h) dzień Bożego Ciała, i) 15 sierpnia – Wniebowzięcie Najświętszej Maryi Panny, j) 1 listopada – Wszystkich Świętych, k) 11 listopada – Narodowe Święto Niepodległości, ka) 24 grudnia – Wigilia Bożego Narodzenia (dodana przez ustawę z dnia 6 grudnia 2024 r.), l) 25 grudnia – pierwszy dzień Bożego Narodzenia, m) 26 grudnia – drugi dzień Bożego Narodzenia; 2) niedziele."
+    }
+   ]
+  },
+  {
+   "id": "R-0129",
+   "fact": "world.holidays.PT",
+   "sought": "Portugal's public holidays, the days off its law or its government's list names, nationally and in each first-level region that keeps its own",
+   "status": "found",
+   "value": {
+    "file": "research/sources/holidays/PT.json",
+    "sha256": "e1be0342dc837803534d9e7041715e6b2d11e4fca69e4d2b11850c7f98899968",
+    "lists": 1,
+    "years": "2026"
+   },
+   "sources": [
+    {
+     "kind": "primary",
+     "url": "https://diariodarepublica.pt/dr/legislacao-consolidada/lei/2009-34546475-73982045",
+     "title": "Diário da República, Código do Trabalho, artigo 234.º (Feriados obrigatórios), versão consolidada (alterado pela Lei n.º 8/2016)",
+     "read": "2026-10-26",
+     "said": "1 - São feriados obrigatórios os dias 1 de janeiro, de Sexta-Feira Santa, de Domingo de Páscoa, 25 de abril, 1 de maio, de Corpo de Deus, 10 de junho, 15 de agosto, 5 de outubro, 1 de novembro, 1, 8 e 25 de dezembro. 2 - O feriado de Sexta-Feira Santa pode ser observado em outro dia com significado local no período da Páscoa."
+    }
+   ]
+  },
+  {
+   "id": "R-0130",
+   "fact": "world.holidays.RE",
+   "sought": "Reunion's public holidays, the days off its law or its government's list names, nationally and in each first-level region that keeps its own",
+   "status": "found",
+   "value": {
+    "file": "research/sources/holidays/RE.json",
+    "sha256": "7c98b6f988856562fadf88c7d1f3ac05cff1abea2d3a41b81768f98a7d68f69d",
+    "lists": 2,
+    "years": "2026-2027"
+   },
+   "sources": [
+    {
+     "kind": "primary",
+     "url": "https://www.service-public.fr/particuliers/vosdroits/F2405",
+     "title": "Service Public (Direction de l’information légale et administrative, Premier ministre), Jours fériés et ponts dans le secteur privé (vérifié le 01 janvier 2026)",
+     "read": "2026-10-26",
+     "said": "Tableau - Dates des fêtes légales en 2026 (cas général): Jour de l’An jeudi 1er janvier; Lundi de Pâques lundi 6 avril; Journée internationale des travailleurs vendredi 1er mai; Victoire 1945 vendredi 8 mai; Ascension jeudi 14 mai; Lundi de Pentecôte lundi 25 mai; Fête nationale mardi 14 juillet; Assomption samedi 15 août; Toussaint dimanche 1er novembre; Armistice 1918 mercredi 11 novembre; Noël vendredi 25 décembre. 2027: 1er janvier, 29 mars, 1er mai, 6 mai, 8 mai, 17 mai, 14 juillet, 15 août, 1er novembre, 11 novembre, 25 décembre. Un jour férié chômé peut tomber un jour habituellement non travaillé (le dimanche, par exemple); le jour de repos hebdomadaire (généralement le dimanche). Outre-mer: le jour de la commémoration de l’abolition de l’esclavage est un jour férié dans les Drom, à Saint-Barthélemy et à Saint-Martin: La Réunion 20 décembre."
+    }
+   ]
+  },
+  {
+   "id": "R-0131",
+   "fact": "world.holidays.SE",
+   "sought": "Sweden's public holidays, the days off its law or its government's list names, nationally and in each first-level region that keeps its own",
+   "status": "found",
+   "value": {
+    "file": "research/sources/holidays/SE.json",
+    "sha256": "601f6975da171c41aeed5aa3e0643fa8083c1d8382f817552e82179201b43587",
+    "lists": 1,
+    "years": "2026"
+   },
+   "sources": [
+    {
+     "kind": "primary",
+     "url": "https://www.riksdagen.se/sv/dokument-och-lagar/dokument/svensk-forfattningssamling/lag-1989253-om-allmanna-helgdagar_sfs-1989-253/",
+     "title": "Sveriges riksdag, Lag (1989:253) om allmänna helgdagar, 1-2 §§",
+     "read": "2026-10-26",
+     "said": "1 § Med allmän helgdag avses söndagar, däribland påskdagen och pingstdagen, nyårsdagen, trettondedag jul, första maj, juldagen och annandag jul, även när de inte infaller på en söndag, långfredagen, annandag påsk, Kristi himmelsfärdsdag, nationaldagen, midsommardagen och alla helgons dag. 2 § nyårsdagen den 1 januari; trettondedag jul den 6 januari; långfredagen fredagen närmast före påskdagen; annandag påsk dagen efter påskdagen; Kristi himmelsfärdsdag sjätte torsdagen efter påskdagen; pingstdagen sjunde söndagen efter påskdagen; nationaldagen den 6 juni; midsommardagen den lördag som infaller under tiden den 20-26 juni; alla helgons dag den lördag som infaller under tiden den 31 oktober-6 november; juldagen den 25 december; annandag jul den 26 december."
+    }
+   ]
+  },
+  {
+   "id": "R-0132",
+   "fact": "world.holidays.SI",
+   "sought": "Slovenia's public holidays, the days off its law or its government's list names, nationally and in each first-level region that keeps its own",
+   "status": "found",
+   "value": {
+    "file": "research/sources/holidays/SI.json",
+    "sha256": "262a2fe25654696d8feca15dc2d3f044be5189cc46c289b27234aacba8850fb5",
+    "lists": 5,
+    "years": "2026-2030"
+   },
+   "sources": [
+    {
+     "kind": "primary",
+     "url": "https://podatki.gov.si/dataset/ada88e06-14a2-49c4-8748-3311822e3585/resource/eb8b25ea-5c00-4817-a670-26e1023677c6/download/seznampraznikovindelaprostihdni20002030.csv",
+     "title": "OPSI (podatki.gov.si), Seznam praznikov in dela prostih dni 2000-2030 (Vlada Republike Slovenije), the days marked DELA_PROST_DAN = da",
+     "read": "2026-10-26",
+     "said": "DATUM;IME_PRAZNIKA;DAN_V_TEDNU;DELA_PROST_DAN;DAN;MESEC;LETO — 2026: 1. in 2. januar novo leto; 8. februar Prešernov dan; 5. april velika noč; 6. april velikonočni ponedeljek; 27. april dan boja proti okupatorju; 1. in 2. maj praznik dela; 24. maj binkoštna nedelja; 25. junij dan državnosti; 15. avgust Marijino vnebovzetje; 31. oktober dan reformacije; 1. november dan spomina na mrtve; 25. december božič; 26. december dan samostojnosti in enotnosti (dela prost dan: da); dan Primoža Trubarja, združitev prekmurskih Slovencev, vrnitev Primorske, dan suverenosti, dan Rudolfa Maistra (ne)."
+    }
+   ]
+  },
+  {
+   "id": "R-0133",
+   "fact": "world.holidays.SK",
+   "sought": "Slovakia's public holidays, the days off its law or its government's list names, nationally and in each first-level region that keeps its own",
+   "status": "found",
+   "value": {
+    "file": "research/sources/holidays/SK.json",
+    "sha256": "037707f2da6194b3337cc4a1bd3a403ca89ae9779beeab63d354499c63a9dd53",
+    "lists": 1,
+    "years": "2026"
+   },
+   "sources": [
+    {
+     "kind": "primary",
+     "url": "https://www.vlada.gov.sk/slovensko/statne-sviatky/",
+     "title": "Úrad vlády Slovenskej republiky, Štátne sviatky (aktualizované 12.01.2026)",
+     "read": "2026-10-26",
+     "said": "Štátne sviatky: 1. január Deň vzniku Slovenskej republiky; 5. júl Sviatok svätého Cyrila a Metoda; 29. august Výročie SNP; 1. september Deň Ústavy (nie je dňom pracovného pokoja); 28. október (nie je dňom pracovného pokoja); 17. november (nie je dňom pracovného pokoja). Dni pracovného pokoja: 6. január; Veľký piatok; Veľkonočný pondelok; 1. máj; 8. máj, ak § 4b zákona č. 241/1993 Z. z. neustanovuje inak; 15. september, ak § 4b neustanovuje inak; 1. november; 24. december; 25. december; 26. december."
+    },
+    {
+     "kind": "primary",
+     "url": "https://www.ip.gov.sk/aktuality/sviatky-8-maj-15-september-2026-z-pohladu-pracovneho-prava.html",
+     "title": "Národný inšpektorát práce, Sviatky 8. máj a 15. september 2026 z pohľadu pracovného práva",
+     "read": "2026-10-26",
+     "said": "V zmysle prechodných ustanovení sviatky 8. máj (Deň víťazstva nad fašizmom) a 15. september (Sedembolestná Panna Mária) nie sú v roku 2026 dňami pracovného pokoja."
+    }
+   ]
+  },
+  {
+   "id": "R-0134",
+   "fact": "world.holidays.YT",
+   "sought": "Mayotte's public holidays, the days off its law or its government's list names, nationally and in each first-level region that keeps its own",
+   "status": "found",
+   "value": {
+    "file": "research/sources/holidays/YT.json",
+    "sha256": "b72510c57970a817488d413e5d60b3a012942b796b7592e0fc270a6b76be7c89",
+    "lists": 2,
+    "years": "2026-2027"
+   },
+   "sources": [
+    {
+     "kind": "primary",
+     "url": "https://www.service-public.fr/particuliers/vosdroits/F2405",
+     "title": "Service Public (Direction de l’information légale et administrative, Premier ministre), Jours fériés et ponts dans le secteur privé (vérifié le 01 janvier 2026)",
+     "read": "2026-10-26",
+     "said": "Tableau - Dates des fêtes légales en 2026 (cas général): Jour de l’An jeudi 1er janvier; Lundi de Pâques lundi 6 avril; Journée internationale des travailleurs vendredi 1er mai; Victoire 1945 vendredi 8 mai; Ascension jeudi 14 mai; Lundi de Pentecôte lundi 25 mai; Fête nationale mardi 14 juillet; Assomption samedi 15 août; Toussaint dimanche 1er novembre; Armistice 1918 mercredi 11 novembre; Noël vendredi 25 décembre. 2027: 1er janvier, 29 mars, 1er mai, 6 mai, 8 mai, 17 mai, 14 juillet, 15 août, 1er novembre, 11 novembre, 25 décembre. Un jour férié chômé peut tomber un jour habituellement non travaillé (le dimanche, par exemple); le jour de repos hebdomadaire (généralement le dimanche). Outre-mer: le jour de la commémoration de l’abolition de l’esclavage est un jour férié dans les Drom, à Saint-Barthélemy et à Saint-Martin: Mayotte 27 avril."
+    }
+   ]
   }
  ]
 }
