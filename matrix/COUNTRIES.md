@@ -8,7 +8,7 @@ a place fills a column; a cell is the row's status in that engine's matrix, or b
 | AD | Andorra | researched | researched | researched | blocked | researched |
 | AE | United Arab Emirates | researched | researched | researched | researched | researched |
 | AF | Afghanistan | researched | researched | researched | researched | pending |
-| AG | Antigua and Barbuda | researched | researched | researched | blocked | pending |
+| AG | Antigua and Barbuda | researched | researched | researched | blocked | researched |
 | AI | Anguilla | researched | researched | researched | blocked | researched |
 | AL | Albania | researched | researched | researched | researched | researched |
 | AM | Armenia | researched | researched | researched | researched | researched |
