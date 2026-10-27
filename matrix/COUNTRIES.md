@@ -68,7 +68,7 @@ a place fills a column; a cell is the row's status in that engine's matrix, or b
 | DK | Denmark | researched | researched | researched | researched | researched |
 | DM | Dominica | researched | researched | researched | researched | researched |
 | DO | Dominican Republic | researched | researched | researched | researched | researched |
-| DZ | Algeria | researched | researched | researched | researched | pending |
+| DZ | Algeria | researched | researched | researched | researched | researched |
 | EC | Ecuador | researched | researched | researched | researched | pending |
 | EE | Estonia | researched | researched | researched | researched | researched |
 | EG | Egypt | researched | researched | researched | researched | pending |
