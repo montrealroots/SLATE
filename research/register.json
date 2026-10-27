@@ -14395,6 +14395,90 @@
    ],
    "notModeled": "holidays.unkept",
    "id": "R-0334"
+  },
+  {
+   "fact": "world.holidays.blocked.VE.states",
+   "sought": "Venezuela's states' and municipalities' own holidays (LOTTT art. 184 d: up to three a year between the National Government, the states and the municipalities)",
+   "status": "blocked",
+   "attempts": [
+    {
+     "method": "institution",
+     "tried": "The state governments (zulia.gob.ve, carabobo.gob.ve, lara.gob.ve) and the labour ministry (minpptrass.gob.ve)",
+     "result": "None answers from here.",
+     "date": "2026-10-27"
+    },
+    {
+     "method": "official-register",
+     "tried": "The Gaceta Oficial (gacetaoficial.gob.ve, its search of the summaries) and the Supreme Court's Gaceta archive (tsj.gob.ve)",
+     "result": "The national Gaceta holds the national declarations only (18 March 2026); the states' own gazettes are not in it, and the TSJ answers 503.",
+     "date": "2026-10-27"
+    },
+    {
+     "method": "web-search",
+     "tried": "'Venezuela feriado regional estado 2026 decreto gobernación día festivo estado Zulia Lara Carabobo feriado regional'",
+     "result": "Only national calendars (El Diario, Bloomberg Línea, SUDEBAN's banking calendar); no state or municipal decree.",
+     "date": "2026-10-27"
+    },
+    {
+     "method": "trade-press",
+     "tried": "El Diario's 2026 holiday list (2 December 2025) and Bloomberg Línea's 2026 calendars",
+     "result": "They give the national and banking days only.",
+     "date": "2026-10-27"
+    },
+    {
+     "method": "archive",
+     "tried": "The Wayback Machine's availability index for zulia.gob.ve and tsj.gob.ve",
+     "result": "Archived (2019 and February 2026); not fetched, pending the owner's ruling on snapshots.",
+     "date": "2026-10-27"
+    }
+   ],
+   "notModeled": "holidays.region-unkept",
+   "id": "R-0335"
+  },
+  {
+   "fact": "world.holidays.VE",
+   "sought": "Venezuela's public holidays, the days off its law or its government's list names, nationally and in each first-level region that keeps its own",
+   "status": "found",
+   "value": {
+    "file": "research/sources/holidays/VE.json",
+    "sha256": "cdeb95af50cdc9a06290184afceb5d8487ed7ddefb6a4151d512fdd1d882c354",
+    "lists": 1,
+    "years": "2026"
+   },
+   "sources": [
+    {
+     "kind": "secondary",
+     "url": "https://accesoalajusticia.org/glossary/dias-festivos/",
+     "title": "Acceso a la Justicia, glossary: Días festivos, quoting article 184 of the Ley Orgánica del Trabajo, los Trabajadores y las Trabajadoras (G.O.E. N° 6.076 of 7 May 2012)",
+     "read": "2026-10-27",
+     "quotes": "http://www.imprentanacional.gob.ve/",
+     "said": "Artículo 184 ... Son días feriados, a los efectos de esta Ley: a) Los domingos; b) El 1º de enero; lunes y martes de carnaval; el Jueves y el Viernes Santos; el 1º de mayo y el 24, 25 y el 31 de diciembre; c) Los señalados en la Ley de Fiestas Nacionales; y d) Los que se hayan declarado o se declaren festivos por el Gobierno Nacional, por los Estados o por las Municipalidades, hasta un límite total de tres por año."
+    },
+    {
+     "kind": "secondary",
+     "url": "https://venezuela.justia.com/federales/leyes/ley-de-fiestas-nacionales/gdoc",
+     "title": "Justia Venezuela, Ley de Fiestas Nacionales (Gaceta Oficial N° 29.541 of 22 June 1971, as the Servicio Autónomo de Información Legislativa supplied it)",
+     "read": "2026-10-27",
+     "quotes": "http://www.imprentanacional.gob.ve/",
+     "said": "Artículo 1º.- Son días de Fiesta Nacional el 19 de abril, el 24 de junio, el 5 de julio, el 24 de julio y el 12 de octubre de cada año."
+    },
+    {
+     "kind": "secondary",
+     "url": "https://eldiario.com/2025/12/02/dias-feriados-bancarios-2026-en-venezuela/",
+     "title": "El Diario, Estos son los días feriados y bancarios de 2026 en Venezuela (2 December 2025)",
+     "read": "2026-10-27",
+     "quotes": "http://www.imprentanacional.gob.ve/",
+     "said": "Ley Orgánica del Trabajo: Jueves 1° de enero; Lunes 16 y martes 17 de febrero; Jueves 2 y viernes 3 de abril; Viernes 1° de mayo; Miércoles 24 de junio; Viernes 24 de julio; Lunes 12 de octubre; Jueves 24 de diciembre; Viernes 25 de diciembre; Jueves 31 de diciembre ... Domingo 19 de abril; Domingo 5 de julio. (The bank-only Mondays it lists besides are the banking law's, not the LOTTT's.)"
+    },
+    {
+     "kind": "primary",
+     "url": "http://www.gacetaoficial.gob.ve/storage/2026/6998-2026-03-17-EXTRAORDINARIA.pdf",
+     "title": "Gaceta Oficial de la República Bolivariana de Venezuela N° 6.998 Extraordinario (17 March 2026): Decreto N° 5.276",
+     "read": "2026-10-27",
+     "said": "Decreto Nº 5.276, mediante el cual se declara día de júbilo nacional, No laborable, el día 18 de marzo de 2026, a los fines de que los venezolanos y las venezolanas, a lo largo de todo el territorio nacional, puedan incorporarse a las actividades de celebración de la conquista histórica del campeonato del Clásico Mundial de Béisbol. (The Gaceta's summaries searched for 2025-2026: 'feriado', 'no laborable', 'no laborables', 'júbilo', 'duelo nacional', 'asueto', 'se declara día': no other non-working day; the seven days of national mourning of January 2026, Decreto N° 5.206, are not days off.)"
+    }
+   ],
+   "id": "R-0336"
   }
  ]
 }

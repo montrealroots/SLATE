@@ -409,10 +409,10 @@ What layer 0 holds:
      (region-level local days by special laws; Decreto 346 moved Cotopaxi's 2026 day to 2 April) and the 2026
      decrees (249, 507: 20 Nov non-working). The SRI's monthly lists (sri.gob.ec ... Feriados mes actual.pdf) time
      out here; try again, they name each province's days.
-   - VE: lead 2026-10-27: LOTTT art. 184 read (Acceso a la Justicia's transcription, G.O.E. 6.076): Sundays,
-     1 Jan, Carnival Mon-Tue, Holy Thu-Fri, 1 May, 24, 25, 31 Dec, the Ley de Fiestas Nacionales' days (unread), and up
-     to three a year declared by the nation, states or municipalities. Open: that law's text, 2026's decrees, and the
-     states' own days (regions).
+   - VE: done 2026-10-27: LOTTT art. 184 (Acceso a la Justicia's transcription), the Ley de Fiestas Nacionales
+     (Justia, from SAIL) and the national Gaceta's 2026 decrees (gacetaoficial.gob.ve: its advanced search,
+     /gacetas/filtro-avanzado?texto=, finds Decreto 5.276, 18 March non-working). The states' and municipalities' own
+     days (art. 184 d) blocked (world.holidays.blocked.VE.states): every state keeps the national ones, told so.
    - AU: done 2026-10-27, each state's own Act in its region; South Australia blocked (its sites, AustLII and the
      Fair Work Ombudsman refuse this environment): retry legislation.sa.gov.au's Public Holidays Act 2023. Victoria's
      2027 Grand Final Friday, WA's 2028 King's Birthday and the ACT's and NSW's declarations for 2028: add when set.

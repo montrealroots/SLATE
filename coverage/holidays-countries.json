@@ -2594,7 +2594,17 @@
   },
   {
    "key": "VE",
-   "status": "pending"
+   "status": "blocked",
+   "register": [
+    "R-0107",
+    "R-0335",
+    "R-0336"
+   ],
+   "tests": [
+    "tests/world/holidays/holidays.test.ts::the holidays of every country kept > are the days its official lists name, list by list",
+    "tests/world/holidays/holidays.test.ts::the holidays > at every place on the map",
+    "tests/world/holidays/holidays.test.ts::the holidays > tell the player where a region's own aren't kept"
+   ]
   },
   {
    "key": "VG",
