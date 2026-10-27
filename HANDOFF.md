@@ -19,8 +19,9 @@ restarts. Read `CLAUDE.md` and the owner's package in `docs/` first.
   100% mutation score with the last sources (1,559 mutants; the survivors of that run killed by tests or simpler
   lines, and the two equivalent ones disabled with their reasons). The
   holidays (`world.holidays`): the engine, its reckonings and its gate wiring are built and tested; 120 countries
-  researched (489 official lists matched day for day), 6 proven, 115 pending, and 11 blocked: the Isle of Man,
-  Tanzania, Palau, the British Indian Ocean Territory and the French Southern Lands whole, and six for some of their regions (Canada's Prince Edward Island and Yukon, India's four, Australia's
+  researched (489 official lists matched day for day), 6 proven, 112 pending, and 14 blocked: the Isle of Man,
+  Tanzania, Palau, the British Indian Ocean Territory, the French Southern Lands, the Cook Islands, Tokelau and
+  Vanuatu whole, and six for some of their regions (Canada's Prince Edward Island and Yukon, India's four, Australia's
   South Australia, Guernsey's Alderney, Argentina's Formosa, Bosnia's Brčko); its code at 100% mutation score (532 mutants, with the regions'
   and the shared substitutes' rules). Then prices.
 

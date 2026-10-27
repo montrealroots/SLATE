@@ -50,7 +50,7 @@ a place fills a column; a cell is the row's status in that engine's matrix, or b
 | CG | Republic of the Congo | researched | researched | researched | researched | pending |
 | CH | Switzerland | researched | researched | researched | researched | researched |
 | CI | Ivory Coast | researched | researched | researched | researched | researched |
-| CK | Cook Islands | researched | researched | researched | researched | pending |
+| CK | Cook Islands | researched | researched | researched | researched | blocked |
 | CL | Chile | researched | researched | researched | researched | pending |
 | CM | Cameroon | researched | researched | researched | researched | pending |
 | CN | China | researched | researched | researched | researched | researched |
@@ -226,7 +226,7 @@ a place fills a column; a cell is the row's status in that engine's matrix, or b
 | TG | Togo | researched | researched | researched | researched | pending |
 | TH | Thailand | researched | researched | researched | researched | researched |
 | TJ | Tajikistan | researched | researched | researched | researched | pending |
-| TK | Tokelau | researched | researched | researched | blocked | pending |
+| TK | Tokelau | researched | researched | researched | blocked | blocked |
 | TL | Timor Leste | researched | researched | researched | researched | pending |
 | TM | Turkmenistan | researched | researched | researched | researched | pending |
 | TN | Tunisia | researched | researched | researched | researched | pending |
@@ -248,7 +248,7 @@ a place fills a column; a cell is the row's status in that engine's matrix, or b
 | VG | British Virgin Islands | researched | researched | researched | blocked | researched |
 | VI | U.S. Virgin Islands | researched | researched | researched | blocked | pending |
 | VN | Vietnam | researched | researched | researched | researched | researched |
-| VU | Vanuatu | researched | researched | researched | blocked | pending |
+| VU | Vanuatu | researched | researched | researched | blocked | blocked |
 | WF | Wallis and Futuna | researched | researched | researched | researched | pending |
 | WS | Samoa | researched | researched | researched | researched | researched |
 | XK | Kosovo | researched | researched | researched | blocked | pending |
