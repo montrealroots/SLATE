@@ -55,7 +55,7 @@ a place fills a column; a cell is the row's status in that engine's matrix, or b
 | CM | Cameroon | researched | researched | researched | researched | pending |
 | CN | China | researched | researched | researched | researched | pending |
 | CO | Colombia | researched | researched | researched | researched | researched |
-| CR | Costa Rica | researched | researched | researched | researched | pending |
+| CR | Costa Rica | researched | researched | researched | researched | researched |
 | CS | Serbia and Montenegro | researched | researched | proven | proven | proven |
 | CU | Cuba | researched | researched | researched | blocked | pending |
 | CV | Cabo Verde | researched | researched | researched | researched | pending |
