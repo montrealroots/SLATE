@@ -382,6 +382,9 @@ What layer 0 holds:
    - BD: done 2026-10-27: MoPA's 2026 list (general holidays only) through the Daily Star Bangla; 2026's later
      notices at mopa.gov.bd (/pages/go-ultimates?page=N&page_size=100; PDFs in a legacy font, read as images):
      election days 11-12 Feb for private offices too, 7 November yearly. Eids per bdnews24. Announced to 2026.
+   - UG: lead 2026-10-27: the Public Holidays Act (Cap. 174, revised 2023) is on ULII (Cloudflare; old.ulii resets;
+     commons.laws.africa 404); 2026's election days 15-16 January (s. 2(2), chimpreports.com WP API). Open: Schedule
+     2's list, a Sunday rule, and the Idds' 2026 dates.
    - SN: done 2026-10-27: loi 74-52 (read in the Assembly's file at vie-publique.sn), Tamxarit from loi 83-54 (the
      scan read as an image), 1 February gone by loi 89-41, the Grand Magal by loi 2013-10 (Dakaractu); 2026's
      Islamic days are CONACOC's through APS; 19 January the President's day off. Announced to 2026.
@@ -399,8 +402,10 @@ What layer 0 holds:
      (region-level local days by special laws; Decreto 346 moved Cotopaxi's 2026 day to 2 April) and the 2026
      decrees (249, 507: 20 Nov non-working). The SRI's monthly lists (sri.gob.ec ... Feriados mes actual.pdf) time
      out here; try again, they name each province's days.
-   - VE: LOTTT art. 184 text not yet read from an official copy (Gaceta Oficial 6.076 Ext., 2012); decrees add
-     days (non-working by decree). Retry.
+   - VE: lead 2026-10-27: LOTTT art. 184 read (Acceso a la Justicia's transcription, G.O.E. 6.076): Sundays,
+     1 Jan, Carnival Mon-Tue, Holy Thu-Fri, 1 May, 24, 25, 31 Dec, the Ley de Fiestas Nacionales' days (unread), and up
+     to three a year declared by the nation, states or municipalities. Open: that law's text, 2026's decrees, and the
+     states' own days (regions).
    - AU: done 2026-10-27, each state's own Act in its region; South Australia blocked (its sites, AustLII and the
      Fair Work Ombudsman refuse this environment): retry legislation.sa.gov.au's Public Holidays Act 2023. Victoria's
      2027 Grand Final Friday, WA's 2028 King's Birthday and the ACT's and NSW's declarations for 2028: add when set.
