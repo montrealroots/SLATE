@@ -207,7 +207,7 @@ a place fills a column; a cell is the row's status in that engine's matrix, or b
 | SG | Singapore | researched | researched | researched | researched | researched |
 | SH | Saint Helena | researched | researched | researched | researched | blocked |
 | SI | Slovenia | researched | researched | researched | researched | researched |
-| SJ | Svalbard and Jan Mayen | researched | researched | researched | researched | pending |
+| SJ | Svalbard and Jan Mayen | researched | researched | researched | researched | blocked |
 | SK | Slovakia | researched | researched | researched | researched | researched |
 | SL | Sierra Leone | researched | researched | researched | researched | blocked |
 | SM | San Marino | researched | researched | researched | blocked | researched |
