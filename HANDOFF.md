@@ -18,8 +18,8 @@ restarts. Read `CLAUDE.md` and the owner's package in `docs/` first.
   told where the weather is borrowed from), 6 proven, none pending. `tools/wmo/compile.ts` and `coverage.ts` are at
   100% mutation score with the last sources (1,559 mutants; the survivors of that run killed by tests or simpler
   lines, and the two equivalent ones disabled with their reasons). The
-  holidays (`world.holidays`): the engine, its reckonings and its gate wiring are built and tested; 97 countries
-  researched (308 official lists matched day for day), 6 proven, 148 pending, and Canada blocked for two of its
+  holidays (`world.holidays`): the engine, its reckonings and its gate wiring are built and tested; 98 countries
+  researched (309 official lists matched day for day), 6 proven, 147 pending, and Canada blocked for two of its
   regions (Prince Edward Island's and Yukon's own); its code at 100% mutation score (532 mutants, with the regions'
   and the shared substitutes' rules). Then prices.
 
@@ -344,6 +344,16 @@ What layer 0 holds:
      Llei 31/2018 art. 62). Each comú (the 7 parishes, AD's regions) adds up to 4 days a year by edict in the BOPA
      (2024's are linked from govern.ad's "Salaris i festius"); the 2026 edicts aren't found, and the BOPA's search
      API needs a key embedded in its site, which isn't used. Retry the comuns' sites and the BOPA issues of late 2025.
+   - KZ: adilet.zan.kz and egov.kz are JavaScript apps (no text without it). Law "On holidays" (Z010000267_), Labour
+     Code art. 85(3) (the Government moves days off); 2026's days only in the press. Retry.
+   - GE: matsne.gov.ge answers "Access Denied" (Labour Code art. 27's list). Retry.
+   - BD: the Ministry of Public Administration's notification of 9 November 2025 (28 days: 14 general, 14 by
+     executive order) not reached; the press gives summaries only. Optional days per faith are excluded. Retry.
+   - GD: Bank Holidays Act Cap. 25 read with Acts 2/2017 and 11/2025 (grenadaparliament.gd); open: whether the 2023
+     bill making Carnival Tuesday a full day passed, and whether 19 October (National Heroes Day) was proclaimed for
+     2025 and 2026; S.R.O. 2/2026 gives Carriacou and Petite Martinique (GD.10) 16 February 2026. Retry.
+   - VN, ID, PK and others read through the press where the ministry's own page is unreachable: their sources say
+     which.
 3. Then prices by place, and the proof of layer 2.
 
 ## Verification evidence

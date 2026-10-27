@@ -160,7 +160,7 @@ a place fills a column; a cell is the row's status in that engine's matrix, or b
 | MR | Mauritania | researched | researched | researched | researched | pending |
 | MS | Montserrat | researched | researched | researched | blocked | pending |
 | MT | Malta | researched | researched | researched | researched | researched |
-| MU | Mauritius | researched | researched | researched | researched | pending |
+| MU | Mauritius | researched | researched | researched | researched | researched |
 | MV | Maldives | researched | researched | researched | researched | researched |
 | MW | Malawi | researched | researched | researched | researched | pending |
 | MX | Mexico | researched | researched | researched | researched | researched |
