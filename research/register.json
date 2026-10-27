@@ -14015,6 +14015,45 @@
     }
    ],
    "notModeled": "holidays.unkept"
+  },
+  {
+   "id": "R-0325",
+   "fact": "world.holidays.blocked.ST",
+   "sought": "São Tomé and Príncipe's public holidays under Lei n.º 8/2025 of 29 December 2025 (Diário da República n.º 56), which kept some days, added others (Ash Wednesday, the São Tomé Family Day) and dropped some",
+   "status": "blocked",
+   "attempts": [
+    {
+     "method": "institution",
+     "tried": "Governo de São Tomé e Príncipe (gov.st), fetched and rendered in a browser",
+     "result": "The portal renders no news or legal text naming the law's days.",
+     "date": "2026-10-27"
+    },
+    {
+     "method": "official-register",
+     "tried": "The Diário da República of São Tomé and Príncipe, n.º 56 of 29 December 2025",
+     "result": "No online copy of the Diário was found.",
+     "date": "2026-10-27"
+    },
+    {
+     "method": "web-search",
+     "tried": "'São Tomé e Príncipe \"Lei n.º 8/2025\" feriados nacionais Diário da República 29 de Dezembro 2025 lista'",
+     "result": "Visit São Tomé e Príncipe (the tourism board) cites the Diário and sixteen holidays, but its page does not resolve from here (DNS failure); aggregators give the 1990 law's list.",
+     "date": "2026-10-27"
+    },
+    {
+     "method": "trade-press",
+     "tried": "STP-Press (stp-press.st, its WordPress API: 'feriado', 'feriados', 'feriado nacional', 'lei dos feriados', 'tolerância de ponto'); Téla Nón",
+     "result": "STP-Press quotes article 2 (Ash Wednesday, a movable holiday, the Family Day) and no other day; Téla Nón's API refuses without a login.",
+     "date": "2026-10-27"
+    },
+    {
+     "method": "archive",
+     "tried": "The Wayback Machine's availability index for visitsaotomeprincipe.st/pt/feriados and gov.st",
+     "result": "The tourism board's page is archived (16 June 2026), gov.st too; snapshots were not fetched.",
+     "date": "2026-10-27"
+    }
+   ],
+   "notModeled": "holidays.unkept"
   }
  ]
 }

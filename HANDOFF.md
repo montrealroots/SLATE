@@ -203,6 +203,10 @@ What layer 0 holds:
    holidays test's `expect(read)`, and the gate. A blocker is `world.holidays.blocked.<CC>` (or `.<region>`) with
    the five methods' attempts, as R-0149.
    Where each pending country stands (read, blocked, still to read), dated 2026-10-27:
+   - Archive snapshots that would likely unblock a country, not fetched: the owner stopped a web.archive.org
+     snapshot fetch on 2026-10-27 and hasn't ruled on them; ask before fetching. ST: visitsaotomeprincipe.st/pt/
+     feriados (16 June 2026, Lei 8/2025's sixteen days); HT: Le Relief's Carnival article (10 May 2026).
+   - HT, SL, ST: blocked 2026-10-27 (R-0322 on); retry each blocker's sources.
    - AT: RIS bot-check; wien.gv.at times out -> retry
    - LU: guichet page moved; try legilux Code du travail L.232-2
    - PT: regional days (Azores Pentecost Monday; Madeira 1 July, 26 December) need the regional decrees
