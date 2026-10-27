@@ -18,8 +18,8 @@ restarts. Read `CLAUDE.md` and the owner's package in `docs/` first.
   told where the weather is borrowed from), 6 proven, none pending. `tools/wmo/compile.ts` and `coverage.ts` are at
   100% mutation score with the last sources (1,559 mutants; the survivors of that run killed by tests or simpler
   lines, and the two equivalent ones disabled with their reasons). The
-  holidays (`world.holidays`): the engine, its reckonings and its gate wiring are built and tested; 112 countries
-  researched (427 official lists matched day for day), 6 proven, 129 pending, and Canada blocked for two of its
+  holidays (`world.holidays`): the engine, its reckonings and its gate wiring are built and tested; 113 countries
+  researched (455 official lists matched day for day), 6 proven, 128 pending, and Canada blocked for two of its
   regions (Prince Edward Island's and Yukon's own); its code at 100% mutation score (532 mutants, with the regions'
   and the shared substitutes' rules). Then prices.
 
@@ -210,9 +210,11 @@ What layer 0 holds:
      national, 10 Nov Córdoba+CABA, 11 Nov Prov. Buenos Aires). Exclude no laborables (Jueves Santo, religious,
      turísticos). Provinces' own holidays (Jujuy, Salta, Tucumán, Mendoza ...) still to read before AR is
      researched.
-   - BR: national read: Lei 662/1949 (10.607/2002), Lei 6.802/1980, Lei 14.759/2023, Lei 9.093/1995 (state data
-     magna; Good Friday municipal); Portaria MGI 11.460/2025 (DOU 502 / reset). States' data magna laws still to
-     read.
+   - BR: done 2026-10-27: national laws in every state, each state's own from the courts' and prosecutors' 2026
+     calendars (the AASP tracker at aasp.org.br/produtos-servicos/expediente-forense/feriados-forenses-2026/ links each
+     court's act). Acre announced to 2026 (Lei 2.126/2009 moves some days by a rule not read). Rio's Carnival Tuesday,
+     Corpus Christi, Paraíba's 5 August, Santa Catarina's Sunday Data Magna and Tocantins's 2026 move rest on the
+     press: read their laws (alerj, tjpb, alesc, diariooficial.to.gov.br) when reachable.
    - CL: gob.cl/feriados Cloudflare 403; bcn.cl/leychile 401; diariooficial 403; dt.gob.cl reachable (find its
      feriados page). Regional: Arica y Parinacota 7 Jun, Ñuble 20 Aug; moving rules (San Pedro, Encuentro de Dos
      Mundos, Evangélicas, Pueblos Indígenas solstice). Retry.
