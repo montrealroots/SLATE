@@ -19,8 +19,9 @@ restarts. Read `CLAUDE.md` and the owner's package in `docs/` first.
   100% mutation score with the last sources (1,559 mutants; the survivors of that run killed by tests or simpler
   lines, and the two equivalent ones disabled with their reasons). The
   holidays (`world.holidays`): the engine, its reckonings and its gate wiring are built and tested; 113 countries
-  researched (455 official lists matched day for day), 6 proven, 128 pending, and Canada blocked for two of its
-  regions (Prince Edward Island's and Yukon's own); its code at 100% mutation score (532 mutants, with the regions'
+  researched (479 official lists matched day for day), 6 proven, 127 pending, and 6 blocked: the Isle of Man
+  whole, and five for some of their regions (Canada's Prince Edward Island and Yukon, India's four, Australia's
+  South Australia, Guernsey's Alderney, Argentina's Formosa); its code at 100% mutation score (532 mutants, with the regions'
   and the shared substitutes' rules). Then prices.
 
 What layer 2 holds so far:
@@ -204,12 +205,12 @@ What layer 0 holds:
      state employees' day after Thanksgiving unread. US.TN: tn.gov 403.
    - PR: done 2026-10-27 from OATRH's Memorando Especial 12-2026 (2027's list; docs.pr.gov/files/OATRH/...) and
      art. 387's Sunday rule. 2026's memo (ME 14-2025?) not found on the moved site: hold 2026 to it when found.
-   - AR: national read 2026-10-27: Ley 27.399 text (argentina.gob.ar/normativa/nacional/ley-27399-281835/texto),
-     2026 list JSON (argentina.gob.ar/sites/default/files/holidays-2026-es.json; 2027 404), Res. 139/2025
-     (norma-417061, Decreto 614/25 weekend trasladables movable by JGM), Pope visit decree (norma-430580: 9 Nov
-     national, 10 Nov Córdoba+CABA, 11 Nov Prov. Buenos Aires). Exclude no laborables (Jueves Santo, religious,
-     turísticos). Provinces' own holidays (Jujuy, Salta, Tucumán, Mendoza ...) still to read before AR is
-     researched.
+   - AR: done 2026-10-27: Ley 27.399 (art. 6 moves the four movable days), Decreto 1103/2026 (the Pope's visit:
+     9 Nov national, 10 Nov Córdoba and CABA, 11 Nov Provincia de Buenos Aires), and each province's own days its law
+     calls a holiday for the whole province (Jujuy, La Rioja, Mendoza, Salta, San Juan, San Luis, Santa Cruz,
+     Santiago del Estero, Tierra del Fuego from their texts; Catamarca from FeriadosAR, its digest behind Cloudflare).
+     No laborables left out (national and provincial). Formosa blocked (jusformosa.gob.ar 503; try again). La Rioja's
+     4 Aug and 12 Nov have no law found: retry Ley 6886's amendments. Jujuy's Ley 5005/1987 unread.
    - BR: done 2026-10-27: national laws in every state, each state's own from the courts' and prosecutors' 2026
      calendars (the AASP tracker at aasp.org.br/produtos-servicos/expediente-forense/feriados-forenses-2026/ links each
      court's act). Acre announced to 2026 (Lei 2.126/2009 moves some days by a rule not read). Rio's Carnival Tuesday,
