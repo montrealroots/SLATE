@@ -101,7 +101,7 @@ a place fills a column; a cell is the row's status in that engine's matrix, or b
 | GU | Guam | researched | researched | researched | researched | pending |
 | GW | Guinea-Bissau | researched | researched | researched | researched | pending |
 | GY | Guyana | researched | researched | researched | researched | pending |
-| HK | Hong Kong | researched | researched | researched | researched | pending |
+| HK | Hong Kong | researched | researched | researched | researched | researched |
 | HM | Heard Island and McDonald Islands | researched | researched | proven | proven | proven |
 | HN | Honduras | researched | researched | researched | researched | pending |
 | HR | Croatia | researched | researched | researched | researched | pending |
@@ -234,7 +234,7 @@ a place fills a column; a cell is the row's status in that engine's matrix, or b
 | TR | Turkey | researched | researched | researched | researched | pending |
 | TT | Trinidad and Tobago | researched | researched | researched | researched | pending |
 | TV | Tuvalu | researched | researched | researched | researched | pending |
-| TW | Taiwan | researched | researched | researched | researched | pending |
+| TW | Taiwan | researched | researched | researched | researched | researched |
 | TZ | Tanzania | researched | researched | researched | researched | pending |
 | UA | Ukraine | researched | researched | researched | researched | pending |
 | UG | Uganda | researched | researched | researched | researched | pending |
