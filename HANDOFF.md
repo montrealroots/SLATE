@@ -18,8 +18,8 @@ restarts. Read `CLAUDE.md` and the owner's package in `docs/` first.
   told where the weather is borrowed from), 6 proven, none pending. `tools/wmo/compile.ts` and `coverage.ts` are at
   100% mutation score with the last sources (1,559 mutants; the survivors of that run killed by tests or simpler
   lines, and the two equivalent ones disabled with their reasons). The
-  holidays (`world.holidays`): the engine, its reckonings and its gate wiring are built and tested; 83 countries
-  researched (293 official lists matched day for day), 6 proven, 162 pending, and Canada blocked for two of its
+  holidays (`world.holidays`): the engine, its reckonings and its gate wiring are built and tested; 84 countries
+  researched (294 official lists matched day for day), 6 proven, 161 pending, and Canada blocked for two of its
   regions (Prince Edward Island's and Yukon's own); its code at 100% mutation score (532 mutants, with the regions'
   and the shared substitutes' rules). Then prices.
 
@@ -318,6 +318,17 @@ What layer 0 holds:
    - NI: Ley 185 Código del Trabajo art. 66 (ten days; 8 Dec disputed vs the 1980 text);
      legislacion.asamblea.gob.ni 403, mitrab.gob.ni no answer, laprensani.com challenge (not circumvented), BCN
      calendar not found. Managua's Santo Domingo days (1, 10 Aug) local. Retry.
+   - GY: no official 2026 dates read (officialgazette.gov.gy is a JS app; dpi.gov.gy notices not found); Public
+     Holidays Act: Phagwah, Eid ul-Adha, Youman Nabi, Deepavali fixed by gazette yearly; Sunday -> Monday. Retry.
+   - MS: no official 2026 list found (gov.ms site search empty; only aggregators). Retry gov.ms press releases and
+     the Montserrat Gazette.
+   - SH: the Public and Government Holidays 2027 notice read
+     (sainthelena.gov.sh/app/uploads/2026/08/PN-Public-Holidays-2027.pdf; Christmas on Sat/Sun -> following
+     Tuesday by the Public Holidays Ordinance 1945 s.2(2)); the 2026 notice not found. Ascension (SH.01) and Tristan
+     (SH.03) keep their own days, unread. Engine need: a region that keeps the country's days while its own aren't
+     read.
+   - MH, PW, FM: MH's Public Holidays Act 1988 on PacLII (403; the austlii mirror resets) and the Register-IRI list
+     (TLS chain fails, not bypassed); PW and FM only aggregators (FM's states keep their own days). Retry.
 3. Then prices by place, and the proof of layer 2.
 
 ## Verification evidence
