@@ -18,8 +18,8 @@ restarts. Read `CLAUDE.md` and the owner's package in `docs/` first.
   told where the weather is borrowed from), 6 proven, none pending. `tools/wmo/compile.ts` and `coverage.ts` are at
   100% mutation score with the last sources (1,559 mutants; the survivors of that run killed by tests or simpler
   lines, and the two equivalent ones disabled with their reasons). The
-  holidays (`world.holidays`): the engine, its reckonings and its gate wiring are built and tested; 115 countries
-  researched (484 official lists matched day for day), 6 proven, 124 pending, and 7 blocked: the Isle of Man
+  holidays (`world.holidays`): the engine, its reckonings and its gate wiring are built and tested; 116 countries
+  researched (485 official lists matched day for day), 6 proven, 123 pending, and 7 blocked: the Isle of Man
   whole, and six for some of their regions (Canada's Prince Edward Island and Yukon, India's four, Australia's
   South Australia, Guernsey's Alderney, Argentina's Formosa, Bosnia's Brčko); its code at 100% mutation score (532 mutants, with the regions'
   and the shared substitutes' rules). Then prices.
@@ -227,6 +227,9 @@ What layer 0 holds:
    - BA: done 2026-10-27 for the Federation (SFRJ law, Government decisions: announced to 2026) and Srpska (its Law on
      Holidays, the Day of the Republic by decision), through Paragraf Lex BA and FENA (fbihvlada.gov.ba answers;
      its decisions not found there). Brčko blocked: the act behind its faiths' days for all not found.
+   - KZ: done 2026-10-27 from old.adilet.zan.kz (the Law on Holidays as amended 11.06.2026, the Labour Code art. 84;
+     the new adilet.zan.kz is a script page) and the Labour Ministry's word that 2026 has no transfers. Later years'
+     transfers are the Ministry's (Labour Code art. 85(3)): announced to 2026.
    - BR: done 2026-10-27: national laws in every state, each state's own from the courts' and prosecutors' 2026
      calendars (the AASP tracker at aasp.org.br/produtos-servicos/expediente-forense/feriados-forenses-2026/ links each
      court's act). Acre announced to 2026 (Lei 2.126/2009 moves some days by a rule not read). Rio's Carnival Tuesday,
