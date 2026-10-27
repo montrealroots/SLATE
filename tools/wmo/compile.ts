@@ -685,8 +685,7 @@ export function parseDwd(json: string): (SourceStation & { member: string })[] {
   const data = JSON.parse(json) as { files: Record<string, Record<string, string>>; stations: string };
   const list = new Map(
     data.stations
-      .split(/\r?\n/)
-      .slice(1)
+      .split('\n')
       .map((l) => l.split(';').map((f) => f.trim()))
       .filter((f) => f.length === 6 && f[2] !== '' && f[3] !== '')
       .map((f) => [f[0] as string, f]),
@@ -695,7 +694,7 @@ export function parseDwd(json: string): (SourceStation & { member: string })[] {
   for (const param of ['tmax', 'tmin', 'prcp', 'sun'] as const) {
     for (const [file, text] of Object.entries(data.files[param] as Record<string, string>)) {
       const period = file.replace('_', '-');
-      for (const row of text.split(/\r?\n/).slice(1)) {
+      for (const row of text.split('\n')) {
         const f = row.split(';').map((x) => x.trim());
         const st = list.get(f[0] as string);
         const values = f.slice(1, 13);
@@ -812,15 +811,17 @@ export function parseGhcnd(json: string): SourceStation[] {
   const data = JSON.parse(json) as { stations: { id: string; country: string; name: string; latitude: number; longitude: number; elevation: number; days: string }[] };
   const [first, last] = YEARS_GHCND;
   // Every period of ten years or more, longest first, then latest.
+  // Stryker disable next-line ArrayDeclaration: an entry that is no period of the years is skipped as one no record fills.
   const periods: [number, number][] = [];
+  // Stryker disable next-line ArithmeticOperator: a longer first length only adds lengths no period of the years can have.
   for (let length = last - first + 1; length >= 10; length -= 1) for (let to = last; to - length + 1 >= first; to -= 1) periods.push([to - length + 1, to]);
   const out: SourceStation[] = [];
   for (const st of data.stations) {
     const daily = { tmax: new Map<string, number>(), tmin: new Map<string, number>(), prcp: new Map<string, number>() };
     for (const line of st.days.split('\n')) {
-      const [date, prcp, prcpFlags, tmax, tmaxFlags, tmin, tminFlags] = line.split(';') as string[];
+      const [date, prcp, prcpFlags, tmax, tmaxFlags, tmin, tminFlags] = line.split(';') as [string, string, string, string, string, string, string];
       for (const [element, value, flags] of [['prcp', prcp, prcpFlags], ['tmax', tmax, tmaxFlags], ['tmin', tmin, tminFlags]] as const) {
-        if (value !== '' && flags?.split(',')[1] === '') daily[element].set(date as string, Number(value) / 10);
+        if (value !== '' && flags.split(',')[1] === '') daily[element].set(date, Number(value) / 10);
       }
     }
     const byPeriod = new Map<string, Partial<Record<Param, Months>>>();
@@ -872,8 +873,9 @@ export function parseAnguilla(json: string): SourceStation[] {
       const m = MONTHS_EN.indexOf(row[1] as string);
       if (m < 0) continue;
       head.forEach((year, col) => {
-        const value = (row[col] ?? '').trim();
-        if (/^\d{4}$/.test(year) && /^\d+(\.\d+)?$/.test(value)) (byYear[m] as Map<number, number>).set(Number(year), Number(value));
+        // A cell the row lacks, or one not a number ("-"), is no value; a column not a year's is outside 1991-2020.
+        const value = String(row[col]).trim();
+        if (value !== '' && Number.isFinite(Number(value))) (byYear[m] as Map<number, number>).set(Number(year), Number(value));
       });
     }
   }
@@ -894,7 +896,7 @@ export function parseAnguilla(json: string): SourceStation[] {
 export function parseTonga(json: string): SourceStation[] {
   const data = JSON.parse(json) as { sheets: { wmo: string; latitude: number; longitude: number; text: string }[] };
   return data.sheets.map(({ wmo, latitude, longitude, text }) => {
-    const rows = [...text.matchAll(/^\s*(?:[A-Z]+\s+)?(-?\d+\.\d)\s+(-?\d+\.\d)\s+(\d+\.\d)\s+\d+\s*$/gm)];
+    const rows = [...text.matchAll(/^[A-Z]+\s+(-?\d+\.\d)\s+(-?\d+\.\d)\s+(\d+\.\d)\s+\d+\s*$/gm)];
     const years = [...text.matchAll(/(\d{4})- ?(\d{4})/g)].at(-1);
     const name = /INFORMATION – (.*?)\s*$/m.exec(text)?.[1];
     if (rows.length !== 12 || years === undefined || name === undefined) throw new Error(`a Tonga sheet the compiler can't read: ${wmo}`);

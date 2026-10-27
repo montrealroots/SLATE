@@ -299,12 +299,12 @@ describe('the station compiler', () => {
   });
   it("averages Anguilla's rainfall over 1991-2020: the years given, where they're 80% of the thirty, in millimetres", () => {
     const MONTHS = ['January', 'February', 'March', 'April', 'May', 'June', 'July', 'August', 'September', 'October', 'November', 'December'];
-    // Two tables, each a column a year and its decade's average; January lacks `missing` years of 1991-2020.
+    // Two tables, each a column a year and its decade's average; January lacks `missing` years of 1991-2020 ("-", empty or blank).
     const tables = (missing: number) => {
       const table = (years: number[]) => [
         ['', 'Table 3.1.1-R3'],
         ['', 'Month', ...years.map(String), 'Avg. monthly'],
-        ...MONTHS.map((month, m) => ['', month, ...years.map((y) => (m === 0 ? (y >= 2001 && y < 2001 + missing ? '-' : y === 1990 ? '100' : '2') : m === 1 && y === 1995 ? '1.5 ' : '1')), '999']),
+        ...MONTHS.map((month, m) => ['', month, ...years.map((y) => (m === 0 ? (y >= 2001 && y < 2001 + missing ? ['-', '', ' '][y % 3] : y === 1990 ? '100' : '2') : m === 1 && y === 1995 ? '1.5 ' : '1')), '999']),
         ['', 'Total', ...years.map(() => '50'), '999'],
       ];
       return JSON.stringify({ tables: { a: table(Array.from({ length: 16 }, (_, i) => 1990 + i)), b: table(Array.from({ length: 15 }, (_, i) => 2006 + i)) } });
@@ -322,16 +322,19 @@ describe('the station compiler', () => {
         '                MAXIMUM       MINIMUM           (mm)         [>0.1mm]',
         '                (1982- 2009)   (1982- 2009)   (1980-2009)    (1990-2016)',
         ...MONTHS.slice(0, o.months ?? 12).flatMap((m, i) => {
-          const values = `   ${(29 + i / 10).toFixed(1)}          ${(-1 - i / 10).toFixed(1)}           ${(100 + i).toFixed(1)}             17`;
+          const values = `   ${(29 + i / 10).toFixed(1)}          ${(-1 - i / 10).toFixed(1)}           ${(100 + i).toFixed(1)}             17   `;
           return o.above === true ? [m, '', values] : [`${m}${values}`, ''];
         }),
+        // Lines of numbers that are no month's: indented, or ending in words.
+        '  ANNUAL MEAN   25.0   1.0   100.0   17',
+        'TOTAL   25.0   1.0   100.0   17 days in all',
         o.footer ?? '  Climatological information is based on monthly averages for the 30-year period 1981- 2010',
       ].join('\n');
     const json = (...texts: string[]) => JSON.stringify({ sheets: texts.map((text, i) => ({ wmo: `9179${i}`, latitude: -21.23, longitude: -175.15, text })) });
     const twelve = (f: (i: number) => number) => Array.from({ length: 12 }, (_, i) => Math.round(f(i) * 10) / 10);
-    expect(parseTonga(json(sheet(), sheet({ heading: 'MATA’AHO AIRPORT', above: true, footer: 'period 1982-2009' })))).toEqual([
+    expect(parseTonga(json(sheet(), sheet({ heading: 'MATA’AHO AIRPORT', above: true, footer: 'period 1983-2008' })))).toEqual([
       { id: 'tms:91790:1981-2010', name: 'FUA’AMOTU AIRPORT', country: 'TO', latitude: -21.23, longitude: -175.15, elevation: null, period: '1981-2010', normals: { tmax: twelve((i) => 29 + i / 10), tmin: twelve((i) => -1 - i / 10), prcp: twelve((i) => 100 + i) } },
-      { id: 'tms:91791:1982-2009', name: 'MATA’AHO AIRPORT', country: 'TO', latitude: -21.23, longitude: -175.15, elevation: null, period: '1982-2009', normals: { tmax: twelve((i) => 29 + i / 10), tmin: twelve((i) => -1 - i / 10), prcp: twelve((i) => 100 + i) } },
+      { id: 'tms:91791:1983-2008', name: 'MATA’AHO AIRPORT', country: 'TO', latitude: -21.23, longitude: -175.15, elevation: null, period: '1983-2008', normals: { tmax: twelve((i) => 29 + i / 10), tmin: twelve((i) => -1 - i / 10), prcp: twelve((i) => 100 + i) } },
     ]);
     // A month short, no heading, no period: the sheet can't be read.
     for (const bad of [sheet({ months: 11 }), sheet().replace('INFORMATION –', 'INFORMATION'), sheet({ footer: '' }).replace(/\(\d{4}- ?\d{4}\)/g, '')]) expect(() => parseTonga(json(bad))).toThrow("a Tonga sheet the compiler can't read: 91790");
@@ -361,8 +364,8 @@ describe('the station compiler', () => {
     const head = 'Station;Jan;Feb;Mrz;Apr;Mai;Jun;Jul;Aug;Sep;Okt;Nov;Dez';
     const row = (id: string, v: string) => `${id};${Array(12).fill(v).join(';')}`;
     const json = (files: Record<string, Record<string, string[]>>, stations: string[]) => JSON.stringify({ files: Object.fromEntries(['tmax', 'tmin', 'prcp', 'sun'].map((p) => [p, Object.fromEntries(Object.entries(files[p] ?? {}).map(([k, rows]) => [k, [head, ...rows, ''].join('\r\n')]))])), stations: ['WMO-StationID;StationName;Latitude;Longitude;Height;Country', ...stations].join('\r\n') });
-    const list = ['98429;Manila;14.52;121.0;15;Philippines', '98444;Legazpi;13.13;123.73;;Philippines', '42293;unknown;;;;', '99999;Nowhere;10;;5;Philippines'];
-    const out = parseDwd(json({ sun: { '1961_1990': [row('98429', '200.04'), row('98444', '180'), row('42293', '1'), row('99999', '1'), row('11111', '1')], '1991_2020': [row('98429', '210'), `98444;${Array(11).fill('1').join(';')};`] }, tmax: { '1961_1990': [row(' 98429 ', '30')] } }, list));
+    const list = ['98429;Manila;14.52;121.0;15;Philippines', '98444;Legazpi;13.13;123.73;;Philippines', '42293;unknown;;;;', '99999;Nowhere;10;;5;Philippines', '55555;Short;1;1;1', '77777;NoLatitude;;5;1;Philippines'];
+    const out = parseDwd(json({ sun: { '1961_1990': [row('98429', '200.04'), row('98444', '180'), row('42293', '1'), row('99999', '1'), row('11111', '1'), row('55555', '1'), row('77777', '1')], '1991_2020': [row('98429', '210'), `98444;${Array(11).fill('1').join(';')};`] }, tmax: { '1961_1990': [row(' 98429 ', '30')] } }, list));
     expect(out).toEqual([
       { id: 'dwd:98429:1961-1990', name: 'Manila', member: 'Philippines', country: '', latitude: 14.52, longitude: 121, elevation: 15, period: '1961-1990', normals: { tmax: Array(12).fill(30), sun: Array(12).fill(200) } },
       { id: 'dwd:98444:1961-1990', name: 'Legazpi', member: 'Philippines', country: '', latitude: 13.13, longitude: 123.73, elevation: null, period: '1961-1990', normals: { sun: Array(12).fill(180) } },
@@ -485,13 +488,16 @@ describe('the station compiler', () => {
     const part = days(1991, 2020, (year) => `${year >= 1995 && year <= 2000 ? '' : '10'};,,G;${year >= 2001 && year <= 2015 ? '250' : ''};,,G;;`);
     // Precipitation lacking seven years (1995 to 2001): 2002-2020 is the longest period that begins and ends with a year it has.
     const gap = days(1991, 2020, (year) => (year >= 1995 && year <= 2001 ? null : '0;,,S;;;;'));
-    const json = JSON.stringify({ stations: [station('PC000919640', 'PITCAIRN ISLAND C, PC', full), station('KUM00040572', 'SOUTH DOLPHIN, KU', part), station('VQC00672551', 'VI E END', gap), station('NONE', 'NONE', days(1991, 2020, () => ';;;;;'))] });
+    // A maximum only from 2011 to 2020: the shortest period kept, ten years.
+    const ten = days(2011, 2020, () => ';,,S;250;,,S;;');
+    const json = JSON.stringify({ stations: [station('PC000919640', 'PITCAIRN ISLAND C, PC', full), station('KUM00040572', 'SOUTH DOLPHIN, KU', part), station('VQC00672551', 'VI E END, ST CROIX, VQ', gap), station('NONE', 'NONE', days(1991, 2020, () => ';;;;;')), station('TEN', 'TEN', ten)] });
     const out = parseGhcnd(json);
     expect(out.map((s) => [s.id, s.name, Object.keys(s.normals)])).toEqual([
       ['ghcnd:PC000919640:1991-2020', 'PITCAIRN ISLAND C', ['tmax', 'tmin', 'prcp', 'wet']],
       ['ghcnd:KUM00040572:2001-2015', 'SOUTH DOLPHIN', ['tmax']],
       ['ghcnd:KUM00040572:1991-2020', 'SOUTH DOLPHIN', ['prcp', 'wet']],
-      ['ghcnd:VQC00672551:2002-2020', 'VI E END', ['prcp', 'wet']],
+      ['ghcnd:VQC00672551:2002-2020', 'VI E END, ST CROIX', ['prcp', 'wet']],
+      ['ghcnd:TEN:2011-2020', 'TEN', ['tmax']],
     ]);
     const [pn, , ku, vi] = out;
     expect(pn).toMatchObject({ country: 'PN', latitude: -25.067, longitude: -130.1, elevation: 265, period: '1991-2020' });
