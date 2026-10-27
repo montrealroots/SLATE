@@ -18,8 +18,8 @@ restarts. Read `CLAUDE.md` and the owner's package in `docs/` first.
   told where the weather is borrowed from), 6 proven, none pending. `tools/wmo/compile.ts` and `coverage.ts` are at
   100% mutation score with the last sources (1,559 mutants; the survivors of that run killed by tests or simpler
   lines, and the two equivalent ones disabled with their reasons). The
-  holidays (`world.holidays`): the engine, its reckonings and its gate wiring are built and tested; 128 countries
-  researched (508 official lists matched day for day), 6 proven, 100 pending, and 18 blocked: the Isle of Man,
+  holidays (`world.holidays`): the engine, its reckonings and its gate wiring are built and tested; 129 countries
+  researched (509 official lists matched day for day), 6 proven, 99 pending, and 18 blocked: the Isle of Man,
   Tanzania, Palau, the British Indian Ocean Territory, the French Southern Lands, the Cook Islands, Tokelau,
   Vanuatu, Micronesia, Tuvalu,
   Saint-Pierre-and-Miquelon and Wallis and Futuna whole, and six for some of their regions (Canada's Prince Edward Island and Yukon, India's four, Australia's
@@ -280,6 +280,9 @@ What layer 0 holds:
      posts (found through mlsp.gov.kg/wp-json/wp/v2/posts?search=); Kurman Ait through 24.kg. Announced to 2026: the
      2027 calendar (order No. 197 of 20.08.2026) counts 8 non-working January days against its list's 7; read the
      Labour Code (cbd.minjust.gov.kg resets) or a Cabinet transfer to settle it.
+   - AM: done 2026-10-27 from arlis.am: the holidays law (ՀՕ-200 as restated by ՀՕ-345-Ն, 24 July 2026; the January
+     2026 text after ՀՕ-1-Ն), Labour Code arts. 156-157, and decision N 109-Ն (4 May 2026). Other 2026 Government
+     non-working days (law art. 39) not found by search: list arlis's 2026 decisions if a way to query them is found.
    - BR: done 2026-10-27: national laws in every state, each state's own from the courts' and prosecutors' 2026
      calendars (the AASP tracker at aasp.org.br/produtos-servicos/expediente-forense/feriados-forenses-2026/ links each
      court's act). Acre announced to 2026 (Lei 2.126/2009 moves some days by a rule not read). Rio's Carnival Tuesday,
