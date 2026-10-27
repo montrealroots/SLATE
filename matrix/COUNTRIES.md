@@ -212,7 +212,7 @@ a place fills a column; a cell is the row's status in that engine's matrix, or b
 | SL | Sierra Leone | researched | researched | researched | researched | blocked |
 | SM | San Marino | researched | researched | researched | blocked | researched |
 | SN | Senegal | researched | researched | researched | researched | researched |
-| SO | Somalia | researched | researched | researched | researched | pending |
+| SO | Somalia | researched | researched | researched | researched | blocked |
 | SR | Suriname | researched | researched | researched | researched | pending |
 | SS | South Sudan | researched | researched | researched | researched | pending |
 | ST | Sao Tome and Principe | researched | researched | researched | researched | blocked |
