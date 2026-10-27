@@ -15,10 +15,11 @@ restarts. Read `CLAUDE.md` and the owner's package in `docs/` first.
 - Layer 2 (the world) is in progress. Done: the gazetteer (`world.gazetteer`), the map (`world.map`), coverage
   matrix A, and the clock (`world.clock`). In progress: the weather (`world.weather`): the engine is built and
   tested, and its matrix is complete: 202 countries researched, 44 blocked (each after all five methods, the player
-  told where the weather is borrowed from), 6 proven, none pending. Mutation testing of `tools/wmo/compile.ts` and
-  `coverage.ts` with the last sources was cut off by a container restart and is to run again (see Next step). The
-  holidays (`world.holidays`): the engine, its reckonings and its gate wiring are built and tested; 40 countries
-  researched (224 official lists matched day for day), 6 proven, 205 pending, and Canada blocked for two of its
+  told where the weather is borrowed from), 6 proven, none pending. `tools/wmo/compile.ts` and `coverage.ts` are at
+  100% mutation score with the last sources (1,559 mutants; the survivors of that run killed by tests or simpler
+  lines, and the two equivalent ones disabled with their reasons). The
+  holidays (`world.holidays`): the engine, its reckonings and its gate wiring are built and tested; 45 countries
+  researched (230 official lists matched day for day), 6 proven, 200 pending, and Canada blocked for two of its
   regions (Prince Edward Island's and Yukon's own); its code was at 100% mutation score (447 mutants) before the
   regions' and the shared substitutes' rules, and is to be run again. Then prices.
 
@@ -168,8 +169,7 @@ What layer 0 holds:
 
 ## Next step
 
-1. Close the weather's mutation testing: `npx stryker run --mutate 'tools/wmo/compile.ts,tools/wmo/coverage.ts'`
-   (about an hour); kill each survivor with a test or a simpler line, as the earlier runs did. The weather's blockers
+1. The weather's blockers
    (`world.weather.blocked.<code>`, R-0051 on) each say what is to be tried again where it can be reached (the
    web archives, the services whose sites didn't answer from here: Djibouti's, Lesotho's, the Comoros', Palestine's,
    Montserrat's).
