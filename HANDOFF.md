@@ -172,6 +172,11 @@ What layer 0 holds:
   - generated: everything in `matrix/` exactly what the checks produce.
   - audit (full gate only): `npm audit`; any known advisory in the installed tree is red, named by its page.
   - mutation (full gate only): Stryker over the gate's own code, static constants included; break threshold 100%.
+- Development tools, set up 2026-10-27 at the owner's request: Graphify (CLI, project skill, hooks, a local code
+  graph in `graphify-out/`, not committed) and the plugins Superpowers, Agent Skills, Impeccable, Caveman and
+  Ponytail. `tools/setup/README.md` says what persists and how; `.claude/rules/dev-tools.md` says which rules win
+  where theirs overlap the owner's (the owner's always do). `bash tools/setup/verify.sh` checks a session. They
+  persist only once the owner pastes `tools/setup/cloud-setup.sh` into the environment's Setup script.
 
 ## Next step
 
@@ -627,7 +632,9 @@ What layer 0 holds:
   in the system's temporary directory; with mutation runs they filled this container's disk (about 189,000
   directories, 29 GB, under `/tmp/slate-*`). Fixed on 2026-10-26: `tests/tmp-setup.ts` gives each run one directory of
   its own and removes it when the run ends. The leftovers from before were not removed: the session's permissions
-  don't allow a sweep of `/tmp`, and that is the owner's to allow (`rm -rf /tmp/slate-*` clears them).
+  don't allow a sweep of `/tmp`, and that is the owner's to allow (`rm -rf /tmp/slate-*` clears them). On
+  2026-10-27 they left 443 MB free and a gate run failed for want of disk (ENOSPC); deleting the session's own
+  scratch files brought it to 843 MB, and the sweep was refused again.
 - Resolved 2026-10-26, the owner's two open issues:
   - The `qs` advisories (GHSA-q8mj-m7cp-5q26, GHSA-x5fp-wj9c-mxmx, GHSA-4mjr-xmp4-gh2g), reached through Stryker's
     `typed-rest-client`, which pins `qs` 6.15.1 exactly: fixed by overriding `qs` to 6.16.0, the first release
