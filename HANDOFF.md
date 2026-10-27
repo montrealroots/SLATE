@@ -18,8 +18,8 @@ restarts. Read `CLAUDE.md` and the owner's package in `docs/` first.
   told where the weather is borrowed from), 6 proven, none pending. `tools/wmo/compile.ts` and `coverage.ts` are at
   100% mutation score with the last sources (1,559 mutants; the survivors of that run killed by tests or simpler
   lines, and the two equivalent ones disabled with their reasons). The
-  holidays (`world.holidays`): the engine, its reckonings and its gate wiring are built and tested; 114 countries
-  researched (480 official lists matched day for day), 6 proven, 126 pending, and 6 blocked: the Isle of Man
+  holidays (`world.holidays`): the engine, its reckonings and its gate wiring are built and tested; 115 countries
+  researched (481 official lists matched day for day), 6 proven, 125 pending, and 6 blocked: the Isle of Man
   whole, and five for some of their regions (Canada's Prince Edward Island and Yukon, India's four, Australia's
   South Australia, Guernsey's Alderney, Argentina's Formosa); its code at 100% mutation score (532 mutants, with the regions'
   and the shared substitutes' rules). Then prices.
@@ -222,6 +222,8 @@ What layer 0 holds:
    - XK: law read 2026-10-27 (gzk.rks-gov.net ActID=2539, form post for the PDF: arts. 2 and 4); the Ministry of
      Internal Affairs' 2026 calendar not found (BQK hosted 2024's and 2025's). MK: official sites reset or fail TLS.
      MD: legis.md behind Cloudflare. GE: matsne.gov.ge denies access.
+   - ME: done 2026-10-27 from the 2022 consolidated law (data.gov.me); the 2023 amendments (Njegoš Day two days, a
+     state holiday) through the press: retry sluzbenilist.me (504) for 3/23 and 30/23.
    - BR: done 2026-10-27: national laws in every state, each state's own from the courts' and prosecutors' 2026
      calendars (the AASP tracker at aasp.org.br/produtos-servicos/expediente-forense/feriados-forenses-2026/ links each
      court's act). Acre announced to 2026 (Lei 2.126/2009 moves some days by a rule not read). Rio's Carnival Tuesday,
