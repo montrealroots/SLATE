@@ -103,7 +103,7 @@ a place fills a column; a cell is the row's status in that engine's matrix, or b
 | GY | Guyana | researched | researched | researched | researched | pending |
 | HK | Hong Kong | researched | researched | researched | researched | researched |
 | HM | Heard Island and McDonald Islands | researched | researched | proven | proven | proven |
-| HN | Honduras | researched | researched | researched | researched | pending |
+| HN | Honduras | researched | researched | researched | researched | researched |
 | HR | Croatia | researched | researched | researched | researched | researched |
 | HT | Haiti | researched | researched | researched | blocked | pending |
 | HU | Hungary | researched | researched | researched | researched | researched |
