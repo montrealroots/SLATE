@@ -311,6 +311,13 @@ What layer 0 holds:
      Friday of December Saba Day. Base list = Rechtspositiebesluit ambtenaren BES art. 37(j) (wetten.overheid.nl
      HTTP/2 error; Stb 2019-458 removed the carnival day from 37j) - for civil servants; the general rule for all
      workers (Arbeidswet BES? / Rijksdienst CN yearly list) still to read; carnival dates per island per year.
+   - KE: new.kenyalaw.org answers 202 with no body (a challenge; not circumvented); interior.go.ke TLS self-signed
+     chain (not bypassed); policyvault.africa connection reset. Public Holidays Act Cap. 110: s.4 Sunday -> first
+     succeeding non-holiday day; Idd dates by Gazette notice (s. 2(1)); 10 Oct (Utamaduni / Mazingira?) status.
+     Retry.
+   - NI: Ley 185 Código del Trabajo art. 66 (ten days; 8 Dec disputed vs the 1980 text);
+     legislacion.asamblea.gob.ni 403, mitrab.gob.ni no answer, laprensani.com challenge (not circumvented), BCN
+     calendar not found. Managua's Santo Domingo days (1, 10 Aug) local. Retry.
 3. Then prices by place, and the proof of layer 2.
 
 ## Verification evidence
