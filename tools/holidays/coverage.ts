@@ -1,4 +1,5 @@
-import type { CountryRules, When } from '../../src/world/holidays/rules.ts';
+import type { Kept } from '../../src/world/holidays/holidays.ts';
+import type { When } from '../../src/world/holidays/rules.ts';
 
 /**
  * The holidays' coverage matrix (coverage/holidays-countries.json), from the rules and the register: a country whose
@@ -32,13 +33,16 @@ function reckonings(when: When, shifted: boolean): string[] {
   return out;
 }
 
-export function holidaysCoverage(countries: readonly string[], withPlaces: ReadonlySet<string>, rules: Readonly<Record<string, CountryRules>>, facts: ReadonlyMap<string, string>): Row[] {
+export function holidaysCoverage(countries: readonly string[], withPlaces: ReadonlySet<string>, rules: Readonly<Record<string, Kept>>, facts: ReadonlyMap<string, string>): Row[] {
   return countries.map((key): Row => {
     if (!withPlaces.has(key)) return { key, status: 'proven', tests: [NO_PLACES] };
     const lists = facts.get(`world.holidays.${key}`);
-    const kept = rules[key];
-    if (kept !== undefined && lists !== undefined) {
-      const register = new Set([lists, ...kept.holidays.flatMap((r) => reckonings(r.when, r.shift !== undefined))]);
+    const own = rules[key];
+    // A country keeping another's holidays cites that one's lists and reckonings too.
+    const kept = own !== undefined && 'of' in own ? rules[own.of] : own;
+    if (kept !== undefined && 'holidays' in kept && lists !== undefined) {
+      const of = own !== undefined && 'of' in own ? [facts.get(`world.holidays.${own.of}`) as string] : [];
+      const register = new Set([lists, ...of, ...kept.holidays.flatMap((r) => reckonings(r.when, r.shift !== undefined))]);
       return { key, status: 'researched', register: [...register].sort(), tests: TESTS };
     }
     const blocker = facts.get(`world.holidays.blocked.${key}`);

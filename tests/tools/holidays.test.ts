@@ -6,7 +6,7 @@ import { icuDay } from '../../tools/calendars/build.ts';
 import { CALENDARS, compileCalendars, FROM, OUTPUT, serialize, TO, type CalendarDay } from '../../tools/calendars/compile.ts';
 import { coverageOf } from '../../tools/holidays/build.ts';
 import { holidaysCoverage, NO_PLACES, OUTPUT as COVERAGE, RECKONINGS, serializeCoverage, TESTS, TOLD } from '../../tools/holidays/coverage.ts';
-import type { CountryRules } from '../../src/world/holidays/rules.ts';
+import type { Kept } from '../../src/world/holidays/holidays.ts';
 
 const ROOT = join(import.meta.dirname, '../..');
 
@@ -49,7 +49,8 @@ describe('the holidays\' coverage', () => {
   });
   it('cites a country\'s lists and the reckonings its rules stand on; else its blocker; else it is pending', () => {
     expect(RECKONINGS).toEqual({ lunar: 'R-0106', easter: 'R-0107', orthodox: 'R-0108', equinox: 'R-0036' });
-    const rules: Record<string, CountryRules> = {
+    const rules: Record<string, Kept> = {
+      II: { of: 'BB' },
       AA: { holidays: [{ name: 'a', when: { fixed: [1, 1] } }] },
       BB: { holidays: [{ name: 'a', when: { easter: 1 } }, { name: 'b', when: { easter: 0, orthodox: true } }, { name: 'c', when: { lunar: ['hebrew', 'Nisan', 15] } }, { name: 'd', when: { equinox: [3, 540] } }] },
       CC: { holidays: [{ name: 'a', when: { nth: [4, 4, 1] }, shift: { easter: [-7, 1], plus: 7 } }] },
@@ -62,8 +63,9 @@ describe('the holidays\' coverage', () => {
       ['world.holidays.blocked.DD', 'R-4'],
       ['world.holidays.blocked.EE', 'R-5'],
       ['world.holidays.FF', 'R-6'],
+      ['world.holidays.II', 'R-7'],
     ]);
-    const rows = holidaysCoverage(['AA', 'BB', 'CC', 'DD', 'EE', 'FF', 'GG', 'HH'], new Set(['AA', 'BB', 'CC', 'DD', 'EE', 'FF', 'GG']), rules, facts);
+    const rows = holidaysCoverage(['AA', 'BB', 'CC', 'DD', 'EE', 'FF', 'GG', 'HH', 'II'], new Set(['AA', 'BB', 'CC', 'DD', 'EE', 'FF', 'GG', 'II']), rules, facts);
     expect(rows).toEqual([
       { key: 'AA', status: 'researched', register: ['R-1'], tests: TESTS },
       { key: 'BB', status: 'researched', register: ['R-0036', 'R-0106', 'R-0107', 'R-0108', 'R-2'], tests: TESTS },
@@ -73,6 +75,8 @@ describe('the holidays\' coverage', () => {
       { key: 'FF', status: 'pending' },
       { key: 'GG', status: 'pending' },
       { key: 'HH', status: 'proven', tests: [NO_PLACES] },
+      // Keeping another's holidays, citing its own lists, the other's and the other's reckonings.
+      { key: 'II', status: 'researched', register: ['R-0036', 'R-0106', 'R-0107', 'R-0108', 'R-2', 'R-7'], tests: TESTS },
     ]);
     expect(TESTS).toEqual([
       'tests/world/holidays/holidays.test.ts::the holidays of every country kept > are the days its official lists name, list by list',

@@ -16,6 +16,7 @@ import {
   holidayOn,
   holidaysOf,
   keepsHolidays,
+  type Kept,
 } from '../../../src/world/holidays/holidays.ts';
 import { daysOf, easter, holidaysIn, julianToDays, type CountryRules, type Rule, type Substitute } from '../../../src/world/holidays/rules.ts';
 import rules from '../../../src/world/holidays/countries.json';
@@ -41,7 +42,7 @@ interface Lists {
 const LISTS: Lists[] = readdirSync(join(ROOT, 'research/sources/holidays'))
   .filter((f) => f.endsWith('.json'))
   .map((f) => JSON.parse(readFileSync(join(ROOT, 'research/sources/holidays', f), 'utf8')) as Lists);
-const RULES = rules as unknown as Record<string, CountryRules>;
+const RULES = rules as unknown as Record<string, Kept>;
 
 describe('the holidays of every country kept', () => {
   it('are the days its official lists name, list by list', () => {
@@ -55,12 +56,18 @@ describe('the holidays of every country kept', () => {
         }
       }
     }
-    expect(read).toBe(136);
+    expect(read).toBe(139);
   });
   it('are each a country of the map with its lists, their regions its own', () => {
     expect(Object.keys(RULES).sort()).toEqual(LISTS.map((l) => l.country).sort());
     for (const [country, r] of Object.entries(RULES)) {
       expect(isCountry(country) && keepsHolidays(country), country).toBe(true);
+      if ('of' in r) {
+        // A country keeping another's keeps that one's days, which has its own rules and no regions of its own to name.
+        expect(RULES[r.of] !== undefined && 'holidays' in (RULES[r.of] as Kept), country).toBe(true);
+        expect(holidaysOf(country as CountryCode, 2026)).toEqual(holidaysOf(r.of as CountryCode, 2026));
+        continue;
+      }
       for (const region of r.holidays.flatMap((h) => h.regions ?? [])) expect(region.startsWith(`${country}.`) && regionName(region) !== undefined, region).toBe(true);
     }
     expect(keepsHolidays('AQ')).toBe(false);

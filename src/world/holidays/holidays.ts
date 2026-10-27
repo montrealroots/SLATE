@@ -13,14 +13,20 @@ import { holidaysIn, type CountryRules, type Holiday } from './rules.ts';
  */
 export const FIRST_YEAR = 2026;
 export const LAST_YEAR = USNO_SEASONS.last;
-const RULES = data as unknown as Record<string, CountryRules>;
+/** A country keeps its own rules, or another's (Åland, Finland's). */
+export type Kept = CountryRules | { of: string };
+const KEPT = data as unknown as Record<string, Kept>;
+const rulesOf = (country: string): CountryRules | undefined => {
+  const kept = KEPT[country];
+  return kept !== undefined && 'of' in kept ? (KEPT[kept.of] as CountryRules) : kept;
+};
 
 /** Whether the game keeps a country's holidays. */
-export const keepsHolidays = (country: CountryCode) => Object.hasOwn(RULES, country);
+export const keepsHolidays = (country: CountryCode) => Object.hasOwn(KEPT, country);
 
 /** A country's holidays (and, given one, a region's) in a year, in order of day; none for a country not kept or a year outside the game's. */
 export function holidaysOf(country: CountryCode, year: number, region?: string): Holiday[] {
-  const rules = RULES[country];
+  const rules = rulesOf(country);
   if (rules === undefined || year < FIRST_YEAR || year > LAST_YEAR) return [];
   return holidaysIn(rules, year, region);
 }
@@ -39,7 +45,7 @@ export const UNKEPT_LINE = 'holidays.unkept';
  * year), that only those its law fixes are kept. Nothing where they're all kept.
  */
 export function aboutHolidays(country: CountryCode, year: number): string | undefined {
-  const rules = RULES[country];
+  const rules = rulesOf(country);
   if (rules === undefined) return t(UNKEPT_LINE, { country: countryName(country) });
   const last = rules.announcedTo ?? LAST_YEAR;
   return year > last ? t(UNANNOUNCED_LINE, { country: countryName(country), year: String(last) }) : undefined;

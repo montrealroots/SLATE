@@ -20,7 +20,7 @@ a place fills a column; a cell is the row's status in that engine's matrix, or b
 | AT | Austria | researched | researched | researched | researched | researched |
 | AU | Australia | researched | researched | researched | researched | pending |
 | AW | Aruba | researched | researched | researched | blocked | pending |
-| AX | Aland Islands | researched | researched | researched | researched | pending |
+| AX | Aland Islands | researched | researched | researched | researched | researched |
 | AZ | Azerbaijan | researched | researched | researched | researched | pending |
 | BA | Bosnia and Herzegovina | researched | researched | researched | researched | pending |
 | BB | Barbados | researched | researched | researched | researched | pending |
@@ -115,7 +115,7 @@ a place fills a column; a cell is the row's status in that engine's matrix, or b
 | IO | British Indian Ocean Territory | researched | researched | researched | blocked | pending |
 | IQ | Iraq | researched | researched | researched | researched | pending |
 | IR | Iran | researched | researched | researched | researched | pending |
-| IS | Iceland | researched | researched | researched | researched | pending |
+| IS | Iceland | researched | researched | researched | researched | researched |
 | IT | Italy | researched | researched | researched | researched | researched |
 | JE | Jersey | researched | researched | researched | researched | pending |
 | JM | Jamaica | researched | researched | researched | researched | pending |
