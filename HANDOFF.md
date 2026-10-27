@@ -18,8 +18,8 @@ restarts. Read `CLAUDE.md` and the owner's package in `docs/` first.
   told where the weather is borrowed from), 6 proven, none pending. `tools/wmo/compile.ts` and `coverage.ts` are at
   100% mutation score with the last sources (1,559 mutants; the survivors of that run killed by tests or simpler
   lines, and the two equivalent ones disabled with their reasons). The
-  holidays (`world.holidays`): the engine, its reckonings and its gate wiring are built and tested; 105 countries
-  researched (368 official lists matched day for day), 6 proven, 138 pending, and Canada blocked for two of its
+  holidays (`world.holidays`): the engine, its reckonings and its gate wiring are built and tested; 106 countries
+  researched (372 official lists matched day for day), 6 proven, 137 pending, and Canada blocked for two of its
   regions (Prince Edward Island's and Yukon's own); its code at 100% mutation score (532 mutants, with the regions'
   and the shared substitutes' rules). Then prices.
 
@@ -227,11 +227,10 @@ What layer 0 holds:
    - AU: done 2026-10-27, each state's own Act in its region; South Australia blocked (its sites, AustLII and the
      Fair Work Ombudsman refuse this environment): retry legislation.sa.gov.au's Public Holidays Act 2023. Victoria's
      2027 Grand Final Friday, WA's 2028 King's Birthday and the ACT's and NSW's declarations for 2028: add when set.
-   - CN: national read: 2024 放假办法 (news.cn 2024-11-12: 元旦1, 春节4 (除夕+初一至初三), 清明1, 劳动节2 (5/1-2), 端午1, 中秋1, 国庆3
-     (10/1-3); art. 7 调休), 2026 notice (news.cn 2025-11-04: Jan 1-3; Feb 15-23; Apr 4-6; May 1-5; Jun 19-21; Sep
-     25-27; Oct 1-7). Regions to read: Guangxi 三月三 (2026: Apr 17-20 per press; official 广西办公厅 notice 2026-03-04
-     unread; 少数民族习惯节日放假办法 令98号), Xinjiang (肉孜节/古尔邦节 2026 notice unread), Ningxia (2026 notice unread; 2025:
-     宁政办发〔2024〕54号), Tibet (藏历新年/雪顿节 2026 unread). Qingming from HKO Bright & Clear.
+   - CN: done 2026-10-27 (the State Council's 2026 notice; the 2024 measures from 2027); Xinjiang's, Ningxia's and
+     Guangxi's own 2026 days. 2027: the State Council's notice (due about November 2026) and the three regions'
+     notices; Xinjiang's (令174号), Ningxia's and Guangxi's (令98号) measures, to keep their days past the notices;
+     whether Hainan's 三月三 or Qinghai's ethnic days are given to all of a province (none found).
    - NC: holidays by Code du travail NC art. Lp. 232-1 and arrêté n°3893-T du 2 mai 1991 (pacificdata 403; juridoc
      code PDF moved 404); Fête de la Citoyenneté 24 Sept. Retry juridoc for the current code PDF.
    - PM: whether the French Code du travail L3133-1 (and any local day) applies in Saint-Pierre-et-Miquelon
@@ -365,6 +364,10 @@ What layer 0 holds:
    - BN: no official 2026 list (jpm.gov.bn has no holiday circular; the gazette not found). AZ: Cabinet decision 362
      (2 December 2025, nk.gov.az) read for Novruz and the Eids; the Labour Code's art. 105 unread (e-qanun.az html
      403). KH: 2027's sub-decree (16 September 2026) reported, its list not read: add when read.
+   - CX, CC, NF: the Administrator's bulletins (infrastructure.gov.au/sites/default/files/documents/community-
+     bulletin-ci-public-holidays-2026.pdf, -cki-, and the 2027 ones A14 and A15 of 2026) exist, but the host resets
+     every connection here (as fairwork.gov.au does); Norfolk's under the Norfolk Island Continued Laws (Public
+     Holidays) Ordinance 2016. Retry.
    - Two sources found: a page's own public data list read as the page reads it (Mauritius's SharePoint list, Qatar's
      Ministry of Justice API) is fine; an API that needs a key embedded in a site's script (Andorra's BOPA) is not.
 3. Then prices by place, and the proof of layer 2.
