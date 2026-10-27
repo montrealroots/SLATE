@@ -18,8 +18,8 @@ restarts. Read `CLAUDE.md` and the owner's package in `docs/` first.
   told where the weather is borrowed from), 6 proven, none pending. `tools/wmo/compile.ts` and `coverage.ts` are at
   100% mutation score with the last sources (1,559 mutants; the survivors of that run killed by tests or simpler
   lines, and the two equivalent ones disabled with their reasons). The
-  holidays (`world.holidays`): the engine, its reckonings and its gate wiring are built and tested; 133 countries
-  researched (514 official lists matched day for day), 6 proven, 95 pending, and 18 blocked: the Isle of Man,
+  holidays (`world.holidays`): the engine, its reckonings and its gate wiring are built and tested; 134 countries
+  researched (515 official lists matched day for day), 6 proven, 94 pending, and 18 blocked: the Isle of Man,
   Tanzania, Palau, the British Indian Ocean Territory, the French Southern Lands, the Cook Islands, Tokelau,
   Vanuatu, Micronesia, Tuvalu,
   Saint-Pierre-and-Miquelon and Wallis and Futuna whole, and six for some of their regions (Canada's Prince Edward Island and Yukon, India's four, Australia's
@@ -223,7 +223,7 @@ What layer 0 holds:
      and Sarawak's Cap. 8 rules (PDFs on the same page), states' own added days.
    - XK: law read 2026-10-27 (gzk.rks-gov.net ActID=2539, form post for the PDF: arts. 2 and 4); the Ministry of
      Internal Affairs' 2026 calendar not found (BQK hosted 2024's and 2025's). MK: official sites reset or fail TLS.
-     MD: done 2026-10-27 (see below). GE: matsne.gov.ge denies access.
+     MD, GE: done 2026-10-27 (see below).
    - ME: done 2026-10-27 from the 2022 consolidated law (data.gov.me); the 2023 amendments (Njegoš Day two days, a
      state holiday) through the press: retry sluzbenilist.me (504) for 3/23 and 30/23.
    - BA: done 2026-10-27 for the Federation (SFRJ law, Government decisions: announced to 2026) and Srpska (its Law on
@@ -299,6 +299,8 @@ What layer 0 holds:
      the 2026 lists (diez.md, Radio Moldova), and Gagauzia's four days (gagauzia.md, guogagauzii.md, LAF). Government
      transfers bind only public bodies (left out); hram days are local. Transnistria keeps the Republic's days. Read
      art. 111 itself and the People's Assembly's current resolution (halktoplushu.md) when reachable.
+   - GE: done 2026-10-27 from the Labour Code art. 30 as Relocation.ge lists it (matsne.gov.ge and parliament.ge
+     refuse); read art. 30 itself when matsne answers. Government ordinances bind administrative bodies only.
    - BR: done 2026-10-27: national laws in every state, each state's own from the courts' and prosecutors' 2026
      calendars (the AASP tracker at aasp.org.br/produtos-servicos/expediente-forense/feriados-forenses-2026/ links each
      court's act). Acre announced to 2026 (Lei 2.126/2009 moves some days by a rule not read). Rio's Carnival Tuesday,
