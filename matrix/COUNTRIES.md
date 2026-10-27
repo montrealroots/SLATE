@@ -9,7 +9,7 @@ a place fills a column; a cell is the row's status in that engine's matrix, or b
 | AE | United Arab Emirates | researched | researched | researched | researched | pending |
 | AF | Afghanistan | researched | researched | researched | researched | pending |
 | AG | Antigua and Barbuda | researched | researched | researched | blocked | pending |
-| AI | Anguilla | researched | researched | researched | blocked | pending |
+| AI | Anguilla | researched | researched | researched | blocked | researched |
 | AL | Albania | researched | researched | researched | researched | researched |
 | AM | Armenia | researched | researched | researched | researched | pending |
 | AN | Netherlands Antilles | researched | researched | proven | proven | proven |
@@ -220,7 +220,7 @@ a place fills a column; a cell is the row's status in that engine's matrix, or b
 | SX | Sint Maarten | researched | researched | researched | researched | pending |
 | SY | Syria | researched | researched | researched | researched | pending |
 | SZ | Eswatini | researched | researched | researched | blocked | pending |
-| TC | Turks and Caicos Islands | researched | researched | researched | blocked | pending |
+| TC | Turks and Caicos Islands | researched | researched | researched | blocked | researched |
 | TD | Chad | researched | researched | researched | researched | pending |
 | TF | French Southern Territories | researched | researched | researched | researched | pending |
 | TG | Togo | researched | researched | researched | researched | pending |
