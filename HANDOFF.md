@@ -272,12 +272,10 @@ What layer 0 holds:
      by order (aggregators say Mondays 12 Jan, 28 Dec); 2026's posted Gazettes (84) have no holiday order.
    - BW: lead 2026-10-27: gov.bw/public-holidays (expired TLS; read through the fetcher) lists 2026 without 2 January;
      Cap. 03:07's text not read (botswanalaws.com members only, its 2006 Act PDF 404, NATLEX 403).
-   - GY: lead 2026-10-27: Cap. 19:07 (L.R.O. 1/2012, mola.gov.gy Volume 6) read: Sunday days move to Monday; Republic,
-     Phagwah, Deepavali, Eid-ul-Azha and Youman Nabi by yearly notice; other days by s. 6 notices. moha.gov.gy's
-     "Public Holidays" category has 2026's Good Friday/Easter Monday, Labour Day, Arrival Day (s. 6), CARICOM Day
-     (s. 6, 6 July), Youman Nabi (25 Aug) and Deepavali (8 Nov, and Monday 9 Nov) notices; Republic Day, Phagwah,
-     Independence, Eid-ul-Azha, Emancipation and Christmas notices for 2026 not found (officialgazette.gov.gy is a
-     script app; DPI has no notice).
+   - GY: done 2026-10-27 from Cap. 19:07 (L.R.O. 1/2012) and the Minister's 2026 notifications: the e-Gazette
+     (officialegazette.gov.gy, a JS app: search in a browser render, files at /api/pdf/<id>, the notices in each
+     week's Legal Supplement B, the last page) and moha.gov.gy. Commonwealth Day (s. 3, first Monday of August)
+     appears in no 2026 notice and isn't kept. 2027: the notices as they're published.
    - MN: done 2026-10-27 from the holidays law (legalinfo.mn lawId=399, art. 4.1), the Government's 2026 moves
      (mlsp.gov.mn: Bituun 17 Feb; cabinet.gov.mn: 16-17 July) and Zindaa for the lunar days' 2026 dates. Announced
      to 2026: the Mongolian lunar calendar isn't in the engine; 2027's Tsagaan Sar, Düichen and Chinggis days and
@@ -347,15 +345,12 @@ What layer 0 holds:
      from the ministry's communiqués (guineenews.org, woulanews.com WP APIs). Announced to 2026.
    - TG: done 2026-10-27: the government portal republicoftogo.com (/content/search?searchText=) reports each
      day as a public holiday; the law's own list not found. Announced to 2026.
-   - MG: lead 2026-10-27: décret 2026-006 of 8 January 2026 read at cnlegis.gov.mg (search POST to
-     /page_find_direct_mots_texte/ then /page_data_result_direct_mots_texte; PDFs at /uploads/D2026-006-VF.pdf),
-     with décrets 2025-1974 (2 January) and 2026-2212 (25 September). Missing: the Eids' dates (2424.mg: Eid al-Fitr
-     20 March), the Taombaovao Malagasy and national culture day dates (art. 2, 3), and the 24 July mourning decree
-     (2424.mg). 8 March is for women only (one group).
-   - CM: lead 2026-10-27: loi 73-5 of 7 December 1973 as amended by loi 76-08 (Cameroon Tribune article 53913
-     quotes arts. 2 to 4: civil 1 January, 11 February, 1 May, 20 May; religious Ascension, Good Friday, 15 August,
-     25 December, both Eids; art. 4 presidential bridge days by decree); Eid al-Fitr 20 March 2026 (237online
-     quoting the CNCL). Missing: 2026's Eid al-Adha date and any bridge decrees (prc.cm, lebledparle 403s).
+   - MG: done 2026-10-27 from décret 2026-006 and the added days (2025-1974, 2026-1822, 2026-2212); Eids from the
+     press. Open: the national culture day's date (art. 3, set by the Ministère de la Communication et de la Culture;
+     not found at CNLEGIS or in Les Nouvelles) and the Taombaovao date when the Concertation Nationale fixes one.
+   - CM: done 2026-10-27 from loi 73/5 as amended (Cameroon Tribune 53913, le360 quoting art. 2) and the BVMAC's 2026
+     notices (bvm-ac.org WP API). Presidential decrees (art. 4) for religious days on a Sunday and bridge days: none
+     found for 2026.
    - CG: lead 2026-10-27: loi 2-94 of 1 March 1994 cited by the ministry (aci.cg WP API: Whit Monday 25 May; 16 April
      2026 investiture day off, arrêté in JO 2026-16 at sgg.cg/JO/2026/). The law's article 1 list isn't online
      (sgg.cg JO from 1994 absent); find it to finish.
@@ -377,9 +372,6 @@ What layer 0 holds:
      1246's holy days (no bishops' conference, so none moved); the Pope's days are Leo XIV's (8 May, 17 September).
    - AO: done 2026-10-27: Lei 10/11 and Lei 11/18 at lex.ao (its llms.txt indexes 2020-2026 diplomas: no later
      holiday law; presidential tolerâncias de ponto would be added by decree when found there).
-   - GY: lead 2026-10-27 (cont.): moha.gov.gy WP category 27 ("Public Holidays") has 2026's notices as images;
-     dpi.gov.gy: Phagwah kept Tue 3 March, Eid al-Adha Wed 27 May. Still needed: Republic Day's 2026 notice, and
-     whether Independence (26 May) and Emancipation (1 Aug) come by s. 6 notices (the 2012 Act's s. 3 omits them).
    - MZ: lead 2026-10-27: the holiday article of the Labour Law (Lei 13/2023) not found online; 2026's "tolerâncias
      de ponto" (jornalnoticias.co.mz WP API) are the civil service's only. A Sunday holiday moves to Monday (DLA
      Piper on Lei 23/2007).
@@ -476,8 +468,6 @@ What layer 0 holds:
    - NI: Ley 185 Código del Trabajo art. 66 (ten days; 8 Dec disputed vs the 1980 text);
      legislacion.asamblea.gob.ni 403, mitrab.gob.ni no answer, laprensani.com challenge (not circumvented), BCN
      calendar not found. Managua's Santo Domingo days (1, 10 Aug) local. Retry.
-   - GY: no official 2026 dates read (officialgazette.gov.gy is a JS app; dpi.gov.gy notices not found); Public
-     Holidays Act: Phagwah, Eid ul-Adha, Youman Nabi, Deepavali fixed by gazette yearly; Sunday -> Monday. Retry.
    - MS: no official 2026 list found (gov.ms site search empty; only aggregators). Retry gov.ms press releases and
      the Montserrat Gazette.
    - MH, PW, FM: MH's Public Holidays Act 1988 on PacLII (403; the austlii mirror resets) and the Register-IRI list

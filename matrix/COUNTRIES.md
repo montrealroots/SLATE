@@ -52,7 +52,7 @@ a place fills a column; a cell is the row's status in that engine's matrix, or b
 | CI | Ivory Coast | researched | researched | researched | researched | researched |
 | CK | Cook Islands | researched | researched | researched | researched | blocked |
 | CL | Chile | researched | researched | researched | researched | researched |
-| CM | Cameroon | researched | researched | researched | researched | pending |
+| CM | Cameroon | researched | researched | researched | researched | researched |
 | CN | China | researched | researched | researched | researched | researched |
 | CO | Colombia | researched | researched | researched | researched | researched |
 | CR | Costa Rica | researched | researched | researched | researched | researched |
