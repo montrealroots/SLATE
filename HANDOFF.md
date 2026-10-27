@@ -469,6 +469,10 @@ What layer 0 holds:
    - SY: done 2026-10-27: Decree 188/2025's list (Asharq quoting SANA's text; sana.sy doesn't answer), Eid al-Adha
      2026 from the Presidency's notice (Al-Ain: 26-30 May), the other Hijri days by Umm al-Qura. Open: the 2026 Eid
      al-Fitr notice; the north-east's administration keeps its own (not modeled).
+   - YE: done 2026-10-27 from Law 2/2000 (Mohamah.net's text): its feasts by Umm al-Qura, art. 4's day in place of
+     a holiday on a Friday or on another holiday (the next day that is neither). Open: the weekend (Friday only in the
+     law; Friday-Saturday in practice since 2013? unconfirmed), and the Sanaa authorities' own days in the governorates
+     they hold (not modeled: the law of the Republic is kept everywhere).
    - TN: done 2026-10-27: décret présidentiel 2021-223 (legislation-securite.tn's JORT text) and the 2026 Islamic
      days as the Mufti and the Prime Minister's office announced them (Kapitalis WP API). 2027: the same announcements.
    - BQ: Regeling feestdagen ambtenaren BES (stcrt-2019-63152, read): Bonaire 30 Apr Dia di Rincon, 6 Sep Dia di
