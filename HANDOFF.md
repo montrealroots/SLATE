@@ -18,8 +18,8 @@ restarts. Read `CLAUDE.md` and the owner's package in `docs/` first.
   told where the weather is borrowed from), 6 proven, none pending. `tools/wmo/compile.ts` and `coverage.ts` are at
   100% mutation score with the last sources (1,559 mutants; the survivors of that run killed by tests or simpler
   lines, and the two equivalent ones disabled with their reasons). The
-  holidays (`world.holidays`): the engine, its reckonings and its gate wiring are built and tested; 111 countries
-  researched (401 official lists matched day for day), 6 proven, 130 pending, and Canada blocked for two of its
+  holidays (`world.holidays`): the engine, its reckonings and its gate wiring are built and tested; 112 countries
+  researched (427 official lists matched day for day), 6 proven, 129 pending, and Canada blocked for two of its
   regions (Prince Edward Island's and Yukon's own); its code at 100% mutation score (532 mutants, with the regions'
   and the shared substitutes' rules). Then prices.
 
@@ -238,17 +238,10 @@ What layer 0 holds:
    - JM: no official list reached 2026-10-27: laws.moj.gov.jm TLS chain fails (curl 60; not bypassed), jis.gov.jm
      403, BOJ holiday page not found; secondaries agree: Labour Day 23 May weekend->Monday, Emancipation 1 Aug
      Sunday->Monday, Heroes 3rd Mon Oct, Ash Wednesday. Retry: Holidays (Public General) Act text, BOJ.
-   - RU: federal read 2026-10-27: TK art. 112
-     (consultant.ru/document/cons_doc_LAW_34683/98ef2900507766e70ff29c0b9d8e2353ea80a1cf/: Jan 1-6, 8 Новогодние
-     каникулы; Jan 7; Feb 23; Mar 8; May 1; May 9; Jun 12; Nov 4; weekend coinciding -> next working day after the
-     holiday, except Jan 1-8's, two of which the Government moves); decrees from publication.pravo.gov.ru (scanned
-     PDFs, read as images): 1466 of 24.09.2025 (2026: Sat 3 Jan -> Fri 9 Jan; Sun 4 Jan -> Thu 31 Dec), eoNumber
-     0001202509240023; 1187 of 17.09.2026 (2027: Sat 2 Jan -> Fri 5 Nov; Sun 3 Jan -> Fri 31 Dec; Sat 20 Feb ->
-     Mon 22 Feb (20 Feb a working Saturday: make-up, not modeled)), eoNumber 0001202609180037. Model: Jan days
-     fixed, others substitute as well [SAT,SUN] next; decree days D lists; announced 2027. Regions (TK art. 6)
-     still to read: Tatarstan, Bashkortostan, Chechnya, Dagestan, Ingushetia, KBR, KChR, Adygea, Buryatia, Tuva,
-     Sakha, Kalmykia, Altai Rep., Chuvashia, N. Ossetia ... (each republic's law and its annual decrees for
-     Uraza/Kurban, Sagaalgan, Shagaa).
+   - RU: done 2026-10-27: art. 112, decrees 1466 (2026) and 1187 (2027), and 24 regions' own days from ConsultantPlus's
+     table for 2026 (kontur-extern.ru, document 41/250002). 2027: the regions' yearly acts (Islamic days, Radonitsa,
+     Sagaalgan, Shagaa, Naadym ...) and Kalmykia's Zul for 2026; read the new year's table when ConsultantPlus issues
+     it.
    - ME: law read at paragraf.me (text as of 2021: Jan 1, May 1, May 21, Jul 13, each two days; Sunday rules art.
      3); Njegošev dan 13 Nov added end of 2021 (RSE, N1) - the current consolidated text (Službeni list CG) not
      yet read; 2022 Sunday dispute (government: Monday working). No 2026/2027 ministry list found (gov.me search
