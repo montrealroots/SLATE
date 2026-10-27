@@ -182,7 +182,7 @@ a place fills a column; a cell is the row's status in that engine's matrix, or b
 | PA | Panama | researched | researched | researched | researched | researched |
 | PE | Peru | researched | researched | researched | researched | researched |
 | PF | French Polynesia | researched | researched | researched | researched | researched |
-| PG | Papua New Guinea | researched | researched | researched | researched | pending |
+| PG | Papua New Guinea | researched | researched | researched | researched | researched |
 | PH | Philippines | researched | researched | researched | researched | researched |
 | PK | Pakistan | researched | researched | researched | researched | pending |
 | PL | Poland | researched | researched | researched | researched | researched |
@@ -230,7 +230,7 @@ a place fills a column; a cell is the row's status in that engine's matrix, or b
 | TL | Timor Leste | researched | researched | researched | researched | pending |
 | TM | Turkmenistan | researched | researched | researched | researched | pending |
 | TN | Tunisia | researched | researched | researched | researched | pending |
-| TO | Tonga | researched | researched | researched | blocked | pending |
+| TO | Tonga | researched | researched | researched | blocked | researched |
 | TR | Turkey | researched | researched | researched | researched | pending |
 | TT | Trinidad and Tobago | researched | researched | researched | researched | researched |
 | TV | Tuvalu | researched | researched | researched | researched | pending |
