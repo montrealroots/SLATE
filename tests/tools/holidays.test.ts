@@ -34,7 +34,7 @@ describe('the calendar compiler', () => {
   it("reads the Chinese calendar from the Observatory's tables: a month where it begins, a repeated one its leap month", () => {
     const tables = {
       1999: 'Gregorian date    Lunar date    Day-of-week\n2000/1/1      29     Saturday\n2000/1/2          12th Lunar month   Sunday\n2000/01/03     2     Monday\n',
-      2000: '2000/1/4  1st Lunar Month  Tuesday\n2000/1/5  2  Wednesday\n2000/1/6  1st Lunar Month  Thursday\n2000/1/8  3  Saturday\n2000/1/9  2nd Lunar Month  Sunday\n2000/1/11  3rd Lunar Month  Tuesday\n2000/1/12  2  Wednesday\n2000/1/14  5  Friday\n',
+      2000: '2000/1/4  1st Lunar Month  Tuesday\n2000/1/5  2  Wednesday\n2000/1/6  1st Lunar Month  Thursday\n2000/1/8  3  Saturday\n2000/1/9  2nd Lunar Month  Sunday\n2000/1/11  3rd Lunar Month  Tuesday\n2000/1/12  2  Wednesday\n2000/1/14  5  Friday\nprinted 2000/1/20  9  Thursday\n',
     };
     const days = hkoChinese(tables);
     const at = (d: number) => days.get(daysFromCivil(2000, 1, d));
@@ -43,8 +43,8 @@ describe('the calendar compiler', () => {
     expect([at(2), at(3), at(4), at(5)]).toStrictEqual([{ year: '1999', month: '12', day: 1 }, { year: '1999', month: '12', day: 2 }, { year: '2000', month: '1', day: 1 }, { year: '2000', month: '1', day: 2 }]);
     // A month repeated is the leap month; a day left out between two of one month is the day between; then a new month.
     expect([at(6), at(7), at(8), at(9)]).toStrictEqual([{ year: '2000', month: '1bis', day: 1 }, { year: '2000', month: '1bis', day: 2 }, { year: '2000', month: '1bis', day: 3 }, { year: '2000', month: '2', day: 1 }]);
-    // Not between two months, nor where the days around it aren't two apart.
-    expect([at(10), at(13)]).toStrictEqual([undefined, undefined]);
+    // Not between two months, nor where the days around it aren't two apart; a date not at a row's start is no row.
+    expect([at(10), at(13), at(20)]).toStrictEqual([undefined, undefined, undefined]);
     expect(days.size).toBe(11);
   });
   it("keeps each month's first day, and stops where a day doesn't follow the one before", () => {

@@ -56,25 +56,25 @@ export function compileCalendars(dayIn: (calendar: CalendarId, days: number) => 
 export function hkoChinese(tables: Readonly<Record<string, string>>): Map<number, CalendarDay> {
   const out = new Map<number, CalendarDay>();
   let year: number | undefined;
-  let month: number | undefined;
-  let leap = false;
+  let number: number | undefined;
+  let month: string | undefined;
   for (const text of Object.values(tables)) {
     for (const [, y, m, d, first, day] of text.matchAll(/^(\d{4})\/(\d{1,2})\/(\d{1,2})\s+(?:(\d+)(?:st|nd|rd|th) Lunar [Mm]onth|(\d+))\s/gm)) {
       if (first !== undefined) {
         const n = Number(first);
-        leap = n === month;
-        month = n;
+        month = n === number ? `${n}bis` : String(n);
+        number = n;
         year = n === 1 ? Number(y) : (year ?? Number(y) - 1);
       }
       // Days before the first month's beginning have no month to be in.
       if (month === undefined) continue;
-      out.set(daysFromCivil(Number(y), Number(m), Number(d)), { year: String(year), month: `${month}${leap ? 'bis' : ''}`, day: first === undefined ? Number(day) : 1 });
+      out.set(daysFromCivil(Number(y), Number(m), Number(d)), { year: String(year), month, day: first === undefined ? Number(day) : 1 });
     }
   }
   // A day a table leaves out between two days of one month is the day between them (2069's 30 December).
   for (const [days, before] of [...out]) {
     const after = out.get(days + 2);
-    if (!out.has(days + 1) && after?.year === before.year && after.month === before.month && after.day === before.day + 2) out.set(days + 1, { ...before, day: before.day + 1 });
+    if (after?.month === before.month && after.day === before.day + 2) out.set(days + 1, { ...before, day: before.day + 1 });
   }
   return out;
 }
