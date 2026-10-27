@@ -18,8 +18,8 @@ restarts. Read `CLAUDE.md` and the owner's package in `docs/` first.
   told where the weather is borrowed from), 6 proven, none pending. `tools/wmo/compile.ts` and `coverage.ts` are at
   100% mutation score with the last sources (1,559 mutants; the survivors of that run killed by tests or simpler
   lines, and the two equivalent ones disabled with their reasons). The
-  holidays (`world.holidays`): the engine, its reckonings and its gate wiring are built and tested; 126 countries
-  researched (506 official lists matched day for day), 6 proven, 102 pending, and 18 blocked: the Isle of Man,
+  holidays (`world.holidays`): the engine, its reckonings and its gate wiring are built and tested; 127 countries
+  researched (507 official lists matched day for day), 6 proven, 101 pending, and 18 blocked: the Isle of Man,
   Tanzania, Palau, the British Indian Ocean Territory, the French Southern Lands, the Cook Islands, Tokelau,
   Vanuatu, Micronesia, Tuvalu,
   Saint-Pierre-and-Miquelon and Wallis and Futuna whole, and six for some of their regions (Canada's Prince Edward Island and Yukon, India's four, Australia's
@@ -263,6 +263,19 @@ What layer 0 holds:
      by order (aggregators say Mondays 12 Jan, 28 Dec); 2026's posted Gazettes (84) have no holiday order.
    - BW: lead 2026-10-27: gov.bw/public-holidays (expired TLS; read through the fetcher) lists 2026 without 2 January;
      Cap. 03:07's text not read (botswanalaws.com members only, its 2006 Act PDF 404, NATLEX 403).
+   - GY: lead 2026-10-27: Cap. 19:07 (L.R.O. 1/2012, mola.gov.gy Volume 6) read: Sunday days move to Monday; Republic,
+     Phagwah, Deepavali, Eid-ul-Azha and Youman Nabi by yearly notice; other days by s. 6 notices. moha.gov.gy's
+     "Public Holidays" category has 2026's Good Friday/Easter Monday, Labour Day, Arrival Day (s. 6), CARICOM Day
+     (s. 6, 6 July), Youman Nabi (25 Aug) and Deepavali (8 Nov, and Monday 9 Nov) notices; Republic Day, Phagwah,
+     Independence, Eid-ul-Azha, Emancipation and Christmas notices for 2026 not found (officialgazette.gov.gy is a
+     script app; DPI has no notice).
+   - KN: lead 2026-10-27: Cap. 23.23 (revised to 2002, lawcommission.gov.kn Act02and09TOC/Ch-23_23-Public-Holidays-Act.pdf)
+     read; Carnival Day (2 Jan), Culturama Day and the Sovereign's birthday are proclaimed yearly: 2026's S.R.O.s are
+     not online (annual laws end at 2025).
+   - MN: done 2026-10-27 from the holidays law (legalinfo.mn lawId=399, art. 4.1), the Government's 2026 moves
+     (mlsp.gov.mn: Bituun 17 Feb; cabinet.gov.mn: 16-17 July) and Zindaa for the lunar days' 2026 dates. Announced
+     to 2026: the Mongolian lunar calendar isn't in the engine; 2027's Tsagaan Sar, Düichen and Chinggis days and
+     any moves need reading then.
    - BR: done 2026-10-27: national laws in every state, each state's own from the courts' and prosecutors' 2026
      calendars (the AASP tracker at aasp.org.br/produtos-servicos/expediente-forense/feriados-forenses-2026/ links each
      court's act). Acre announced to 2026 (Lei 2.126/2009 moves some days by a rule not read). Rio's Carnival Tuesday,
