@@ -18,8 +18,8 @@ restarts. Read `CLAUDE.md` and the owner's package in `docs/` first.
   told where the weather is borrowed from), 6 proven, none pending. `tools/wmo/compile.ts` and `coverage.ts` are at
   100% mutation score with the last sources (1,559 mutants; the survivors of that run killed by tests or simpler
   lines, and the two equivalent ones disabled with their reasons). The
-  holidays (`world.holidays`): the engine, its reckonings and its gate wiring are built and tested; 137 countries
-  researched (525 official lists matched day for day), 6 proven, 91 pending, and 18 blocked: the Isle of Man,
+  holidays (`world.holidays`): the engine, its reckonings and its gate wiring are built and tested; 138 countries
+  researched (526 official lists matched day for day), 6 proven, 90 pending, and 18 blocked: the Isle of Man,
   Tanzania, Palau, the British Indian Ocean Territory, the French Southern Lands, the Cook Islands, Tokelau,
   Vanuatu, Micronesia, Tuvalu,
   Saint-Pierre-and-Miquelon and Wallis and Futuna whole, and six for some of their regions (Canada's Prince Edward Island and Yukon, India's four, Australia's
@@ -333,9 +333,6 @@ What layer 0 holds:
    - PM: whether the French Code du travail L3133-1 (and any local day) applies in Saint-Pierre-et-Miquelon
      unconfirmed (service-public F2405 doesn't mention SPM); check Légifrance territorial scope / DCSTEP SPM. WF:
      only secondary lists (28 Apr St Pierre Chanel, 29 Jul Fête du Territoire?, 29 Jun?). Retry.
-   - JM: no official list reached 2026-10-27: laws.moj.gov.jm TLS chain fails (curl 60; not bypassed), jis.gov.jm
-     403, BOJ holiday page not found; secondaries agree: Labour Day 23 May weekend->Monday, Emancipation 1 Aug
-     Sunday->Monday, Heroes 3rd Mon Oct, Ash Wednesday. Retry: Holidays (Public General) Act text, BOJ.
    - RU: done 2026-10-27: art. 112, decrees 1466 (2026) and 1187 (2027), and 24 regions' own days from ConsultantPlus's
      table for 2026 (kontur-extern.ru, document 41/250002). 2027: the regions' yearly acts (Islamic days, Radonitsa,
      Sagaalgan, Shagaa, Naadym ...) and Kalmykia's Zul for 2026; read the new year's table when ConsultantPlus issues
@@ -347,9 +344,6 @@ What layer 0 holds:
    - IN: done 2026-10-27 from the RBI matrix (refetch: POST the form once per office) and three territories' own
      orders; Haryana, Punjab, Andaman and Nicobar and Ladakh blocked (their sites don't answer): retry each. 2027:
      the RBI's matrix and the states' notifications when issued.
-   - MD: legis.md 403; art. 111 CM text not read (monitorul.fisc.md editorial paywalled); 1 June status disputed
-     (Ombudsman 2021, particip.gov.md 2023: Government declares 1-2 June days off by decision); retry legis.md,
-     bnm.md calendar, cancelaria.gov.md decisions.
    - MY: kabinet.gov.my/hari-kelepasan-am/ PDFs read: storage/2025/08/HKA-2026.pdf, storage/2026/08/HKA_2027.pdf
      (6 pages: federal table, state table with -/√ in 16 columns, combined). Column order (checked by state-only
      days): KL, Labuan, Putrajaya, Johor, Kedah, Kelantan, Melaka, N.Sembilan, Pahang, Perak, Perlis, P.Pinang,
@@ -366,11 +360,9 @@ What layer 0 holds:
      NOTICE_FRIDAY-15-MAY-2026-DECLARED-PUBLIC-HOLIDAY-AND-NON-TRADING-DAY-ON-THE-BSE.pdf): 15 May 2026 declared
      (Mogae memorial). Read the Public Holidays Act (Cap. 03:07) text: Jan 2?, Holy Saturday, President's Day +
      Tuesday, Botswana Day + 1 Oct, Sunday rules.
-   - RW: gov.rw/holidays read 2026-10-27 (2026: 1 Jan, 2 Feb (Heroes, 1 Feb a Sunday), 3 Apr, 6 Apr, 7 Apr, 1 May,
-     1 Jul, 4 Jul (Sat), 1 Aug (Sat, Umuganura), 15 Aug (Sat), 25 Dec, 26 Dec (Sat); no Eid listed, no Saturday
-     replacements). Presidential Order 54/01 of 24/02/2017 (policyvault.africa RWA416.pdf: connection reset
-     upstream x4) still to read: Eid al-Fitr/Adha dates announced, weekend rule (secondary: weekend -> next
-     working day, except 7 Apr), Umuganura (first Friday of August?).
+   - RW: done 2026-10-27 from Presidential Order No. 54 of 2017 (RwandaLII) and gov.rw's 2026 list (which omits
+     2 January, the Eids and Saturday substitutes; the Order rules). Eids are Umm al-Qura's: read the Rwanda Muslims'
+     Association's yearly announcements when found.
    - ZM: no official 2026 list found (Ministry of Labour, gazette); Public Holidays Act Cap. 272 + Kenneth Kaunda
      Day 28 Apr (2022); 2026 election-year extras (1 Sep swearing-in?) need gazette notices. Retry:
      parliament.gov.zm acts, zambialii, boz.zm.
