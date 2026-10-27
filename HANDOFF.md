@@ -18,8 +18,8 @@ restarts. Read `CLAUDE.md` and the owner's package in `docs/` first.
   told where the weather is borrowed from), 6 proven, none pending. `tools/wmo/compile.ts` and `coverage.ts` are at
   100% mutation score with the last sources (1,559 mutants; the survivors of that run killed by tests or simpler
   lines, and the two equivalent ones disabled with their reasons). The
-  holidays (`world.holidays`): the engine, its reckonings and its gate wiring are built and tested; 45 countries
-  researched (230 official lists matched day for day), 6 proven, 200 pending, and Canada blocked for two of its
+  holidays (`world.holidays`): the engine, its reckonings and its gate wiring are built and tested; 46 countries
+  researched (232 official lists matched day for day), 6 proven, 199 pending, and Canada blocked for two of its
   regions (Prince Edward Island's and Yukon's own); its code at 100% mutation score (532 mutants, with the regions'
   and the shared substitutes' rules). Then prices.
 
@@ -86,7 +86,8 @@ What layer 2 holds so far:
   offset (the clock's, R-0036), or the dates a government announced; with years from and until, years excepted,
   regions, a weekday's alternative day, a condition on another day's weekday, a shift by Easter, and the country's
   substitute days (next or previous free day, or off as well, as Japan's, or onto another holiday's day where
-  each is kept by its own date, as the United States') or the holiday's own; a rule may hold every so many years
+  each is kept by its own date, as the United States'; or for one on another's weekday, passing over given weekdays,
+  as South Korea's) or the holiday's own; a rule may hold every so many years
   (election days). Japan's days between two holidays are kept. Spain's communities choose theirs year by year:
   `announcedTo` keeps only the law's fixed days after the last year announced, and the player is told
   (`holidays.unannounced`); a region set year by year has its own (`regionsAnnouncedTo`: Georgia's governor,

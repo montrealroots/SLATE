@@ -100,6 +100,10 @@ export interface Substitute {
   as?: 'well';
   /** The day may be another holiday's: each is kept by its own date (the United States': a Saturday's is the Friday before, whatever else falls on it). */
   shared?: true;
+  /** Only for a holiday falling on another's day, on these weekdays (South Korea's: one on a weekday that's already a holiday). */
+  over?: true;
+  /** The weekdays the day off passes over, where not those it's for (South Korea's Sunday Chuseok: the next weekday). */
+  skip?: number[];
 }
 
 export interface CountryRules {
@@ -187,13 +191,17 @@ export function holidaysIn(rules: CountryRules, year: number, region?: string): 
   const out = days.map(([h]) => h);
   const taken = new Set(out.map((h) => h.day));
   // Substitutes, in order of the holidays they stand for, each taking the first day free of the weekdays and (unless
-  // shared) of holidays.
+  // shared) of holidays; a holiday on a day an earlier one already holds is over it.
+  const held = new Set<number>();
   for (const [h, rule] of days.sort((a, b) => a[0].day - b[0].day)) {
-    const sub = (rule.move ?? rules.substitute)?.find((s) => s.on.includes(weekdayFromDays(h.day)));
+    const over = held.has(h.day);
+    held.add(h.day);
+    const sub = (rule.move ?? rules.substitute)?.find((s) => s.on.includes(weekdayFromDays(h.day)) && (s.over !== true || over));
     if (sub === undefined || rule.fixed === true) continue;
     const step = sub.to === 'next' ? 1 : -1;
+    const skip = sub.skip ?? sub.on;
     let d = h.day + step;
-    while (sub.on.includes(weekdayFromDays(d)) || (taken.has(d) && sub.shared !== true)) d += step;
+    while (skip.includes(weekdayFromDays(d)) || (taken.has(d) && sub.shared !== true)) d += step;
     taken.add(d);
     if (sub.as === undefined) h.moved = true;
     out.push({ day: d, name: h.name, substitute: true });

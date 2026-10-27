@@ -5364,6 +5364,590 @@
    }
   ]
  },
+ "KR": {
+  "announcedTo": 2027,
+  "holidays": [
+   {
+    "name": "1월 1일",
+    "when": {
+     "fixed": [
+      1,
+      1
+     ]
+    }
+   },
+   {
+    "name": "설날 전날",
+    "when": {
+     "lunar": [
+      "dangi",
+      "1",
+      1
+     ]
+    },
+    "plus": -1,
+    "move": [
+     {
+      "on": [
+       0
+      ],
+      "to": "next",
+      "as": "well",
+      "skip": [
+       6,
+       0
+      ]
+     },
+     {
+      "on": [
+       1,
+       2,
+       3,
+       4,
+       5
+      ],
+      "to": "next",
+      "as": "well",
+      "over": true,
+      "skip": [
+       6,
+       0
+      ]
+     }
+    ]
+   },
+   {
+    "name": "설날",
+    "when": {
+     "lunar": [
+      "dangi",
+      "1",
+      1
+     ]
+    },
+    "move": [
+     {
+      "on": [
+       0
+      ],
+      "to": "next",
+      "as": "well",
+      "skip": [
+       6,
+       0
+      ]
+     },
+     {
+      "on": [
+       1,
+       2,
+       3,
+       4,
+       5
+      ],
+      "to": "next",
+      "as": "well",
+      "over": true,
+      "skip": [
+       6,
+       0
+      ]
+     }
+    ]
+   },
+   {
+    "name": "설날 다음 날",
+    "when": {
+     "lunar": [
+      "dangi",
+      "1",
+      1
+     ]
+    },
+    "plus": 1,
+    "move": [
+     {
+      "on": [
+       0
+      ],
+      "to": "next",
+      "as": "well",
+      "skip": [
+       6,
+       0
+      ]
+     },
+     {
+      "on": [
+       1,
+       2,
+       3,
+       4,
+       5
+      ],
+      "to": "next",
+      "as": "well",
+      "over": true,
+      "skip": [
+       6,
+       0
+      ]
+     }
+    ]
+   },
+   {
+    "name": "3·1절",
+    "when": {
+     "fixed": [
+      3,
+      1
+     ]
+    },
+    "move": [
+     {
+      "on": [
+       6,
+       0
+      ],
+      "to": "next",
+      "as": "well"
+     },
+     {
+      "on": [
+       1,
+       2,
+       3,
+       4,
+       5
+      ],
+      "to": "next",
+      "as": "well",
+      "over": true,
+      "skip": [
+       6,
+       0
+      ]
+     }
+    ]
+   },
+   {
+    "name": "부처님 오신 날",
+    "when": {
+     "lunar": [
+      "dangi",
+      "4",
+      8
+     ]
+    },
+    "move": [
+     {
+      "on": [
+       6,
+       0
+      ],
+      "to": "next",
+      "as": "well"
+     },
+     {
+      "on": [
+       1,
+       2,
+       3,
+       4,
+       5
+      ],
+      "to": "next",
+      "as": "well",
+      "over": true,
+      "skip": [
+       6,
+       0
+      ]
+     }
+    ]
+   },
+   {
+    "name": "노동절",
+    "when": {
+     "fixed": [
+      5,
+      1
+     ]
+    },
+    "move": [
+     {
+      "on": [
+       6,
+       0
+      ],
+      "to": "next",
+      "as": "well"
+     },
+     {
+      "on": [
+       1,
+       2,
+       3,
+       4,
+       5
+      ],
+      "to": "next",
+      "as": "well",
+      "over": true,
+      "skip": [
+       6,
+       0
+      ]
+     }
+    ]
+   },
+   {
+    "name": "어린이날",
+    "when": {
+     "fixed": [
+      5,
+      5
+     ]
+    },
+    "move": [
+     {
+      "on": [
+       6,
+       0
+      ],
+      "to": "next",
+      "as": "well"
+     },
+     {
+      "on": [
+       1,
+       2,
+       3,
+       4,
+       5
+      ],
+      "to": "next",
+      "as": "well",
+      "over": true,
+      "skip": [
+       6,
+       0
+      ]
+     }
+    ]
+   },
+   {
+    "name": "현충일",
+    "when": {
+     "fixed": [
+      6,
+      6
+     ]
+    }
+   },
+   {
+    "name": "제헌절",
+    "when": {
+     "fixed": [
+      7,
+      17
+     ]
+    },
+    "from": 2026,
+    "move": [
+     {
+      "on": [
+       6,
+       0
+      ],
+      "to": "next",
+      "as": "well"
+     },
+     {
+      "on": [
+       1,
+       2,
+       3,
+       4,
+       5
+      ],
+      "to": "next",
+      "as": "well",
+      "over": true,
+      "skip": [
+       6,
+       0
+      ]
+     }
+    ]
+   },
+   {
+    "name": "광복절",
+    "when": {
+     "fixed": [
+      8,
+      15
+     ]
+    },
+    "move": [
+     {
+      "on": [
+       6,
+       0
+      ],
+      "to": "next",
+      "as": "well"
+     },
+     {
+      "on": [
+       1,
+       2,
+       3,
+       4,
+       5
+      ],
+      "to": "next",
+      "as": "well",
+      "over": true,
+      "skip": [
+       6,
+       0
+      ]
+     }
+    ]
+   },
+   {
+    "name": "추석 전날",
+    "when": {
+     "lunar": [
+      "dangi",
+      "8",
+      14
+     ]
+    },
+    "move": [
+     {
+      "on": [
+       0
+      ],
+      "to": "next",
+      "as": "well",
+      "skip": [
+       6,
+       0
+      ]
+     },
+     {
+      "on": [
+       1,
+       2,
+       3,
+       4,
+       5
+      ],
+      "to": "next",
+      "as": "well",
+      "over": true,
+      "skip": [
+       6,
+       0
+      ]
+     }
+    ]
+   },
+   {
+    "name": "추석",
+    "when": {
+     "lunar": [
+      "dangi",
+      "8",
+      15
+     ]
+    },
+    "move": [
+     {
+      "on": [
+       0
+      ],
+      "to": "next",
+      "as": "well",
+      "skip": [
+       6,
+       0
+      ]
+     },
+     {
+      "on": [
+       1,
+       2,
+       3,
+       4,
+       5
+      ],
+      "to": "next",
+      "as": "well",
+      "over": true,
+      "skip": [
+       6,
+       0
+      ]
+     }
+    ]
+   },
+   {
+    "name": "추석 다음 날",
+    "when": {
+     "lunar": [
+      "dangi",
+      "8",
+      16
+     ]
+    },
+    "move": [
+     {
+      "on": [
+       0
+      ],
+      "to": "next",
+      "as": "well",
+      "skip": [
+       6,
+       0
+      ]
+     },
+     {
+      "on": [
+       1,
+       2,
+       3,
+       4,
+       5
+      ],
+      "to": "next",
+      "as": "well",
+      "over": true,
+      "skip": [
+       6,
+       0
+      ]
+     }
+    ]
+   },
+   {
+    "name": "개천절",
+    "when": {
+     "fixed": [
+      10,
+      3
+     ]
+    },
+    "move": [
+     {
+      "on": [
+       6,
+       0
+      ],
+      "to": "next",
+      "as": "well"
+     },
+     {
+      "on": [
+       1,
+       2,
+       3,
+       4,
+       5
+      ],
+      "to": "next",
+      "as": "well",
+      "over": true,
+      "skip": [
+       6,
+       0
+      ]
+     }
+    ]
+   },
+   {
+    "name": "한글날",
+    "when": {
+     "fixed": [
+      10,
+      9
+     ]
+    },
+    "move": [
+     {
+      "on": [
+       6,
+       0
+      ],
+      "to": "next",
+      "as": "well"
+     },
+     {
+      "on": [
+       1,
+       2,
+       3,
+       4,
+       5
+      ],
+      "to": "next",
+      "as": "well",
+      "over": true,
+      "skip": [
+       6,
+       0
+      ]
+     }
+    ]
+   },
+   {
+    "name": "기독탄신일",
+    "when": {
+     "fixed": [
+      12,
+      25
+     ]
+    },
+    "move": [
+     {
+      "on": [
+       6,
+       0
+      ],
+      "to": "next",
+      "as": "well"
+     },
+     {
+      "on": [
+       1,
+       2,
+       3,
+       4,
+       5
+      ],
+      "to": "next",
+      "as": "well",
+      "over": true,
+      "skip": [
+       6,
+       0
+      ]
+     }
+    ]
+   },
+   {
+    "name": "전국동시지방선거",
+    "when": {
+     "dates": [
+      "2026-06-03"
+     ]
+    }
+   }
+  ]
+ },
  "LT": {
   "holidays": [
    {

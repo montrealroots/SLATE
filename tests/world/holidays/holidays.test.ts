@@ -57,7 +57,7 @@ describe('the holidays of every country kept', () => {
         }
       }
     }
-    expect(read).toBe(230);
+    expect(read).toBe(232);
   });
   it('are each a country of the map with its lists, their regions its own', () => {
     expect(Object.keys(RULES).sort()).toEqual(LISTS.map((l) => l.country).sort());
@@ -216,6 +216,15 @@ describe('a rule', () => {
     const june = (shared?: true): CountryRules => ({ holidays: [r({ name: 'A', when: { fixed: [6, 19] } }), r({ name: 'B', when: { fixed: [6, 20] } })], substitute: [{ on: [6, 0], to: 'previous', ...(shared && { shared }) }] });
     expect(at(june(true), 2026)).toEqual(['2026-06-19 A', '2026-06-19 B (instead)', '2026-06-20 B (moved)']);
     expect(at(june(), 2026)).toEqual(['2026-06-18 B (instead)', '2026-06-19 A', '2026-06-20 B (moved)']);
+    // Over another's day on a weekday, the later rule's off the next free day as well; one alone isn't. 2026-05-05 is a Tuesday.
+    const weekdays: Substitute = { on: [1, 2, 3, 4, 5], to: 'next', as: 'well', over: true, skip: [6, 0] };
+    const may = (...days: number[]): CountryRules => ({ holidays: days.map((d, i) => r({ name: 'AB'[i] as string, when: { fixed: [5, d] } })), substitute: [{ on: [6, 0], to: 'next', as: 'well' }, weekdays] });
+    expect(at(may(5, 5), 2026)).toEqual(['2026-05-05 A', '2026-05-05 B', '2026-05-06 B (instead)']);
+    expect(at(may(5, 6), 2026)).toEqual(['2026-05-05 A', '2026-05-06 B']);
+    // Passing over weekdays besides those it's for: 2026-03-01 is a Sunday, the Saturday before passed over too.
+    const sunday = (skip?: number[]): CountryRules => ({ holidays: [r({ name: 'A', when: { fixed: [3, 1] } })], substitute: [{ on: [0], to: 'previous', ...(skip && { skip }) }] });
+    expect(at(sunday([6, 0]), 2026)).toEqual(['2026-02-27 A (instead)', '2026-03-01 A (moved)']);
+    expect(at(sunday(), 2026)).toEqual(['2026-02-28 A (instead)', '2026-03-01 A (moved)']);
   });
   it("makes a day between two holidays one too, by the country's name for it", () => {
     const hs: Rule[] = [r({ name: 'A', when: { fixed: [9, 21] } }), r({ name: 'B', when: { fixed: [9, 23] } }), r({ name: 'C', when: { fixed: [9, 25] } })];
