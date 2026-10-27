@@ -14782,6 +14782,45 @@
     }
    ],
    "notModeled": "holidays.unkept"
+  },
+  {
+   "fact": "world.holidays.blocked.LS",
+   "sought": "Lesotho's public holidays: the Public Holidays Act 1995 as amended (the King's birthday moved with the reign, Boxing Day added by decree) and any 2026 declarations",
+   "status": "blocked",
+   "attempts": [
+    {
+     "method": "institution",
+     "tried": "The Government of Lesotho (gov.ls, its WordPress API: 'public holiday', 'public holidays 2026', 'Moshoeshoe', 'King's birthday holiday', 'holiday', 'Independence Day')",
+     "result": "News only; no holiday notice or list.",
+     "date": "2026-10-27"
+    },
+    {
+     "method": "official-register",
+     "tried": "LesLII (lesotholii.org): its legislation listing (both pages, 91 acts) and its search (script-rendered; the browser render is refused with 403)",
+     "result": "The Public Holidays Act isn't among the listed acts; the search couldn't be run.",
+     "date": "2026-10-27"
+    },
+    {
+     "method": "web-search",
+     "tried": "'lesotholii.org Public Holidays Act akn ls act', 'Lesotho Public Holidays Act 1995 text schedule \"Moshoeshoe's Day\" \"Heroes Day\" \"King's Birthday\" legal notice amendment'",
+     "result": "Only aggregators and blogs, which describe the 1995 Act and later decrees without their text.",
+     "date": "2026-10-27"
+    },
+    {
+     "method": "trade-press",
+     "tried": "The Post (thepost.co.ls, WordPress API: 'public holiday'); the Lesotho Times",
+     "result": "No holiday notice in The Post; the Lesotho Times doesn't answer.",
+     "date": "2026-10-27"
+    },
+    {
+     "method": "archive",
+     "tried": "The Wayback Machine's availability index for gov.ls",
+     "result": "Not fetched, pending the owner's ruling on snapshots.",
+     "date": "2026-10-27"
+    }
+   ],
+   "notModeled": "holidays.unkept",
+   "id": "R-0345"
   }
  ]
 }
