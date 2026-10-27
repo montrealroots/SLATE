@@ -351,9 +351,9 @@ What layer 0 holds:
    - CM: done 2026-10-27 from loi 73/5 as amended (Cameroon Tribune 53913, le360 quoting art. 2) and the BVMAC's 2026
      notices (bvm-ac.org WP API). Presidential decrees (art. 4) for religious days on a Sunday and bridge days: none
      found for 2026.
-   - CG: lead 2026-10-27: loi 2-94 of 1 March 1994 cited by the ministry (aci.cg WP API: Whit Monday 25 May; 16 April
-     2026 investiture day off, arrêté in JO 2026-16 at sgg.cg/JO/2026/). The law's article 1 list isn't online
-     (sgg.cg JO from 1994 absent); find it to finish.
+   - CG: done 2026-10-27: loi 2-94's nine days as WageIndicator cites §1er (the law's own text isn't online; the
+     ministry's 2026 Whit Monday communiqué cites art. 1), and the 2026 arrêtés found in all 43 Journal officiel
+     issues at sgg.cg/JO/2026/ (2 January, 16 April). Retry the law's text; the arrêtés for later 2026 issues.
    - ET: done 2026-10-27: Proclamation 1334/2024 (MetaAppz's English text), the Ethiopic days computed from the
      Ethiopic calendar, Orthodox Easter, and 2026's Islamic days from Fana (fanamc.com/english/?s=, its WP API is
      closed). Announced to 2026.

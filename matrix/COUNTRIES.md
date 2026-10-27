@@ -47,7 +47,7 @@ a place fills a column; a cell is the row's status in that engine's matrix, or b
 | CC | Cocos Islands | researched | researched | researched | blocked | blocked |
 | CD | Democratic Republic of the Congo | researched | researched | researched | researched | pending |
 | CF | Central African Republic | researched | researched | researched | researched | pending |
-| CG | Republic of the Congo | researched | researched | researched | researched | pending |
+| CG | Republic of the Congo | researched | researched | researched | researched | researched |
 | CH | Switzerland | researched | researched | researched | researched | researched |
 | CI | Ivory Coast | researched | researched | researched | researched | researched |
 | CK | Cook Islands | researched | researched | researched | researched | blocked |
