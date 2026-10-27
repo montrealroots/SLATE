@@ -44,7 +44,7 @@ a place fills a column; a cell is the row's status in that engine's matrix, or b
 | BY | Belarus | researched | researched | researched | researched | researched |
 | BZ | Belize | researched | researched | researched | researched | researched |
 | CA | Canada | researched | researched | researched | researched | blocked |
-| CC | Cocos Islands | researched | researched | researched | blocked | pending |
+| CC | Cocos Islands | researched | researched | researched | blocked | blocked |
 | CD | Democratic Republic of the Congo | researched | researched | researched | researched | pending |
 | CF | Central African Republic | researched | researched | researched | researched | pending |
 | CG | Republic of the Congo | researched | researched | researched | researched | pending |
@@ -60,7 +60,7 @@ a place fills a column; a cell is the row's status in that engine's matrix, or b
 | CU | Cuba | researched | researched | researched | blocked | researched |
 | CV | Cabo Verde | researched | researched | researched | researched | pending |
 | CW | Curacao | researched | researched | researched | researched | pending |
-| CX | Christmas Island | researched | researched | researched | blocked | pending |
+| CX | Christmas Island | researched | researched | researched | blocked | blocked |
 | CY | Cyprus | researched | researched | researched | researched | researched |
 | CZ | Czechia | researched | researched | researched | researched | researched |
 | DE | Germany | researched | researched | researched | researched | researched |
