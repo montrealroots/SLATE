@@ -15044,6 +15044,45 @@
     }
    ],
    "notModeled": "holidays.unkept"
+  },
+  {
+   "id": "R-0352",
+   "fact": "world.holidays.blocked.GW",
+   "sought": "Guinea-Bissau's public holidays: the law or decree that lists them, and the 2026 days the Government declared",
+   "status": "blocked",
+   "attempts": [
+    {
+     "method": "institution",
+     "tried": "The Presidency (presidencia.gw: its pages, 'Perfil da Guiné-Bissau' and 'Notas Informativas', rendered in a browser), the National People's Assembly (parlamento.gw, its own search: 'feriados', 'feriado') and the Government (gov.gw)",
+     "result": "The Presidency's site holds no holiday list or notice; the Assembly's search finds no law on holidays; gov.gw doesn't answer from here.",
+     "date": "2026-10-27"
+    },
+    {
+     "method": "official-register",
+     "tried": "The Boletim Oficial (boletimoficial.gw) and the law's text by web search",
+     "result": "No online Boletim Oficial answers or is indexed; no law or decree on public holidays is found by number or name.",
+     "date": "2026-10-27"
+    },
+    {
+     "method": "web-search",
+     "tried": "'Guiné-Bissau feriados nacionais 2026 decreto lista dias feriados lei'; '\"Guiné-Bissau\" feriado \"tolerância de ponto\" 2026 governo decreta OR \"Lei dos Feriados\" OR \"dias feriados\"'; 'Guinea-Bissau public holidays law decree \"3 de Agosto\" \"Pidjiguiti\" \"20 de Janeiro\" \"24 de Setembro\" feriados oficiais Boletim Oficial'; 'BCEAO jours fériés 2026 Guinée-Bissau'",
+     "result": "Only aggregators, which disagree on the days, and nothing from the Government or the BCEAO.",
+     "date": "2026-10-27"
+    },
+    {
+     "method": "trade-press",
+     "tried": "e-Global (WordPress API: 'feriado', 'tolerância de ponto', since June 2025); Rádio Sol Mansi, O Democrata, ANG and Gbissau.com",
+     "result": "e-Global reports no Bissau-Guinean holiday; the other four have no search the game can read (no API, or a firewall's refusal).",
+     "date": "2026-10-27"
+    },
+    {
+     "method": "archive",
+     "tried": "The Wayback Machine's availability index for gov.gw and boletimoficial.gw",
+     "result": "None for the Boletim Oficial; a snapshot of gov.gw's home page (13 May 2026) exists but wasn't fetched, pending the owner's ruling on snapshots.",
+     "date": "2026-10-27"
+    }
+   ],
+   "notModeled": "holidays.unkept"
   }
  ]
 }

@@ -99,7 +99,7 @@ a place fills a column; a cell is the row's status in that engine's matrix, or b
 | GS | South Georgia and the South Sandwich Islands | researched | researched | researched | blocked | researched |
 | GT | Guatemala | researched | researched | researched | researched | researched |
 | GU | Guam | researched | researched | researched | researched | researched |
-| GW | Guinea-Bissau | researched | researched | researched | researched | pending |
+| GW | Guinea-Bissau | researched | researched | researched | researched | blocked |
 | GY | Guyana | researched | researched | researched | researched | researched |
 | HK | Hong Kong | researched | researched | researched | researched | researched |
 | HM | Heard Island and McDonald Islands | researched | researched | proven | proven | proven |
