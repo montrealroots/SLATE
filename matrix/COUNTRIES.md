@@ -5,7 +5,7 @@ a place fills a column; a cell is the row's status in that engine's matrix, or b
 
 | Code | Country | `world.gazetteer` | `world.map` | `world.clock` | `world.weather` | `world.holidays` |
 |---|---|---|---|---|---|---|
-| AD | Andorra | researched | researched | researched | blocked | pending |
+| AD | Andorra | researched | researched | researched | blocked | researched |
 | AE | United Arab Emirates | researched | researched | researched | researched | researched |
 | AF | Afghanistan | researched | researched | researched | researched | pending |
 | AG | Antigua and Barbuda | researched | researched | researched | blocked | pending |

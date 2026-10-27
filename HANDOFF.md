@@ -18,8 +18,8 @@ restarts. Read `CLAUDE.md` and the owner's package in `docs/` first.
   told where the weather is borrowed from), 6 proven, none pending. `tools/wmo/compile.ts` and `coverage.ts` are at
   100% mutation score with the last sources (1,559 mutants; the survivors of that run killed by tests or simpler
   lines, and the two equivalent ones disabled with their reasons). The
-  holidays (`world.holidays`): the engine, its reckonings and its gate wiring are built and tested; 136 countries
-  researched (517 official lists matched day for day), 6 proven, 92 pending, and 18 blocked: the Isle of Man,
+  holidays (`world.holidays`): the engine, its reckonings and its gate wiring are built and tested; 137 countries
+  researched (525 official lists matched day for day), 6 proven, 91 pending, and 18 blocked: the Isle of Man,
   Tanzania, Palau, the British Indian Ocean Territory, the French Southern Lands, the Cook Islands, Tokelau,
   Vanuatu, Micronesia, Tuvalu,
   Saint-Pierre-and-Miquelon and Wallis and Futuna whole, and six for some of their regions (Canada's Prince Edward Island and Yukon, India's four, Australia's
@@ -305,6 +305,9 @@ What layer 0 holds:
    - MK: done 2026-10-27 from the Law on Holidays' 2026 list as Makfax and Duma print it (vlada.mk, mtsp.gov.mk reset;
      slvesnik.com.mk fails TLS). Faith and community days left out. Ramazan Bayram from 2027 is Umm al-Qura's:
      replace with the Government's yearly list when read.
+   - AD: done 2026-10-27 from the Government's 2026 calendar notice (govern.ad), La Massana's page and La Vall
+     Associats' list of the comuns' 2026 edicts (BOPA uses keyed APIs). Whole-parish days only; one village's days
+     are left out (Ordino's 5-6 July and 16 September "a Ordino" read as the village). Announced to 2026.
    - BR: done 2026-10-27: national laws in every state, each state's own from the courts' and prosecutors' 2026
      calendars (the AASP tracker at aasp.org.br/produtos-servicos/expediente-forense/feriados-forenses-2026/ links each
      court's act). Acre announced to 2026 (Lei 2.126/2009 moves some days by a rule not read). Rio's Carnival Tuesday,
