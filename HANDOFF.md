@@ -18,8 +18,8 @@ restarts. Read `CLAUDE.md` and the owner's package in `docs/` first.
   told where the weather is borrowed from), 6 proven, none pending. `tools/wmo/compile.ts` and `coverage.ts` are at
   100% mutation score with the last sources (1,559 mutants; the survivors of that run killed by tests or simpler
   lines, and the two equivalent ones disabled with their reasons). The
-  holidays (`world.holidays`): the engine, its reckonings and its gate wiring are built and tested; 92 countries
-  researched (302 official lists matched day for day), 6 proven, 153 pending, and Canada blocked for two of its
+  holidays (`world.holidays`): the engine, its reckonings and its gate wiring are built and tested; 93 countries
+  researched (303 official lists matched day for day), 6 proven, 152 pending, and Canada blocked for two of its
   regions (Prince Edward Island's and Yukon's own); its code at 100% mutation score (532 mutants, with the regions'
   and the shared substitutes' rules). Then prices.
 
