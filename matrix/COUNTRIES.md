@@ -59,7 +59,7 @@ a place fills a column; a cell is the row's status in that engine's matrix, or b
 | CS | Serbia and Montenegro | researched | researched | proven | proven | proven |
 | CU | Cuba | researched | researched | researched | blocked | researched |
 | CV | Cabo Verde | researched | researched | researched | researched | pending |
-| CW | Curacao | researched | researched | researched | researched | pending |
+| CW | Curacao | researched | researched | researched | researched | researched |
 | CX | Christmas Island | researched | researched | researched | blocked | blocked |
 | CY | Cyprus | researched | researched | researched | researched | researched |
 | CZ | Czechia | researched | researched | researched | researched | researched |
