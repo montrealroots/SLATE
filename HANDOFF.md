@@ -455,8 +455,8 @@ What layer 0 holds:
      (offices closed Fri 19 June) notices; whether Juneteenth is now in § 171 is still open.
    - GL: lead 2026-10-27: no Greenlandic holiday act found; an Inatsisartut § 37 question (ina.gl 019_2023) calls
      21 June the only national holiday; Info Norden's page is behind Cloudflare.
-   - TN: lead 2026-10-27: tap.info.tn and legislation.tn don't answer; pm.gov.tn's search (/ar/recherche?
-     search_api_fulltext=) finds older communiqués only (عطلة عيد الفطر ...). Find 2026's.
+   - TN: done 2026-10-27: décret présidentiel 2021-223 (legislation-securite.tn's JORT text) and the 2026 Islamic
+     days as the Mufti and the Prime Minister's office announced them (Kapitalis WP API). 2027: the same announcements.
    - BQ: Regeling feestdagen ambtenaren BES (stcrt-2019-63152, read): Bonaire 30 Apr Dia di Rincon, 6 Sep Dia di
      Himno y Bandera; Statia: day after carnival parade, 16 Nov Statia Day; Saba: day after carnival parade, first
      Friday of December Saba Day. Base list = Rechtspositiebesluit ambtenaren BES art. 37(j) (wetten.overheid.nl
