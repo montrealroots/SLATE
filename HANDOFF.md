@@ -18,8 +18,8 @@ restarts. Read `CLAUDE.md` and the owner's package in `docs/` first.
   told where the weather is borrowed from), 6 proven, none pending. `tools/wmo/compile.ts` and `coverage.ts` are at
   100% mutation score with the last sources (1,559 mutants; the survivors of that run killed by tests or simpler
   lines, and the two equivalent ones disabled with their reasons). The
-  holidays (`world.holidays`): the engine, its reckonings and its gate wiring are built and tested; 116 countries
-  researched (485 official lists matched day for day), 6 proven, 123 pending, and 7 blocked: the Isle of Man
+  holidays (`world.holidays`): the engine, its reckonings and its gate wiring are built and tested; 117 countries
+  researched (486 official lists matched day for day), 6 proven, 122 pending, and 7 blocked: the Isle of Man
   whole, and six for some of their regions (Canada's Prince Edward Island and Yukon, India's four, Australia's
   South Australia, Guernsey's Alderney, Argentina's Formosa, Bosnia's Brčko); its code at 100% mutation score (532 mutants, with the regions'
   and the shared substitutes' rules). Then prices.
@@ -243,8 +243,6 @@ What layer 0 holds:
      Retry.
    - VE: LOTTT art. 184 text not yet read from an official copy (Gaceta Oficial 6.076 Ext., 2012); decrees add
      days (non-working by decree). Retry.
-   - PY: Ley 7544/2025 read (bacn.gov.py); 2026 decrees: Jun 20->22 (Decreto 6215, PDF on grupovierci CDN), Mar
-     1->2 (ABC Nov 2025, decree unread), Sep 29 unresolved; Presidencia/Gaceta to read. Retry.
    - AU: done 2026-10-27, each state's own Act in its region; South Australia blocked (its sites, AustLII and the
      Fair Work Ombudsman refuse this environment): retry legislation.sa.gov.au's Public Holidays Act 2023. Victoria's
      2027 Grand Final Friday, WA's 2028 King's Birthday and the ACT's and NSW's declarations for 2028: add when set.
@@ -319,10 +317,9 @@ What layer 0 holds:
      Friday of December Saba Day. Base list = Rechtspositiebesluit ambtenaren BES art. 37(j) (wetten.overheid.nl
      HTTP/2 error; Stb 2019-458 removed the carnival day from 37j) - for civil servants; the general rule for all
      workers (Arbeidswet BES? / Rijksdienst CN yearly list) still to read; carnival dates per island per year.
-   - KE: new.kenyalaw.org answers 202 with no body (a challenge; not circumvented); interior.go.ke TLS self-signed
-     chain (not bypassed); policyvault.africa connection reset. Public Holidays Act Cap. 110: s.4 Sunday -> first
-     succeeding non-holiday day; Idd dates by Gazette notice (s. 2(1)); 10 Oct (Utamaduni / Mazingira?) status.
-     Retry.
+   - KE: done 2026-10-27 through the press (Kenya Law's Act behind an AWS WAF check; interior.go.ke's TLS chain
+     fails): both 2026 Idds by Gazette notice (Standard, Star), s. 4's Sunday rule (kenyans.co.ke), the 2024 Mazingira
+     Day (president.go.ke). Read the Act's Schedule from Kenya Law when it answers.
    - NI: Ley 185 Código del Trabajo art. 66 (ten days; 8 Dec disputed vs the 1980 text);
      legislacion.asamblea.gob.ni 403, mitrab.gob.ni no answer, laprensani.com challenge (not circumvented), BCN
      calendar not found. Managua's Santo Domingo days (1, 10 Aug) local. Retry.
@@ -351,8 +348,6 @@ What layer 0 holds:
      Llei 31/2018 art. 62). Each comú (the 7 parishes, AD's regions) adds up to 4 days a year by edict in the BOPA
      (2024's are linked from govern.ad's "Salaris i festius"); the 2026 edicts aren't found, and the BOPA's search
      API needs a key embedded in its site, which isn't used. Retry the comuns' sites and the BOPA issues of late 2025.
-   - KZ: adilet.zan.kz and egov.kz are JavaScript apps (no text without it). Law "On holidays" (Z010000267_), Labour
-     Code art. 85(3) (the Government moves days off); 2026's days only in the press. Retry.
    - GE: matsne.gov.ge answers "Access Denied" (Labour Code art. 27's list). Retry.
    - BD: the Ministry of Public Administration's notification of 9 November 2025 (28 days: 14 general, 14 by
      executive order) not reached; the press gives summaries only. Optional days per faith are excluded. Retry.
