@@ -18,8 +18,8 @@ restarts. Read `CLAUDE.md` and the owner's package in `docs/` first.
   told where the weather is borrowed from), 6 proven, none pending. `tools/wmo/compile.ts` and `coverage.ts` are at
   100% mutation score with the last sources (1,559 mutants; the survivors of that run killed by tests or simpler
   lines, and the two equivalent ones disabled with their reasons). The
-  holidays (`world.holidays`): the engine, its reckonings and its gate wiring are built and tested; 140 countries
-  researched (529 official lists matched day for day), 6 proven, 86 pending, and 20 blocked: the Isle of Man,
+  holidays (`world.holidays`): the engine, its reckonings and its gate wiring are built and tested; 141 countries
+  researched (530 official lists matched day for day), 6 proven, 85 pending, and 20 blocked: the Isle of Man,
   Tanzania, Palau, the British Indian Ocean Territory, the French Southern Lands, the Cook Islands, Tokelau,
   Vanuatu, Micronesia, Tuvalu,
   Saint-Pierre-and-Miquelon, Wallis and Futuna, Christmas Island and the Cocos (Keeling) Islands whole, and six for some of their regions (Canada's Prince Edward Island and Yukon, India's four, Australia's
@@ -317,6 +317,9 @@ What layer 0 holds:
    - DZ: done 2026-10-27 from APS's reports of the joint Labour/Civil Service communiqués (found with aps.dz/fr/search
      ?q=chômée et payée) and Legal Doctrine's text of Loi 63-278. 1 Moharam 1448 (16 June) derived from Achoura's
      notice; read its own communiqué if found. Announced to 2026.
+   - MA: done 2026-10-27 from mmsp.gov.ma's table of décret 2-77-169, the Fête de l'Unité decrees (MAP) and the Habous
+     ministry's 2026 announcements through MAP (mapexpress.ma/?s= search). Announced to 2026. EH (Western Sahara):
+     not yet decided which law the map applies there; the owner may want to rule.
    - BR: done 2026-10-27: national laws in every state, each state's own from the courts' and prosecutors' 2026
      calendars (the AASP tracker at aasp.org.br/produtos-servicos/expediente-forense/feriados-forenses-2026/ links each
      court's act). Acre announced to 2026 (Lei 2.126/2009 moves some days by a rule not read). Rio's Carnival Tuesday,
@@ -438,8 +441,7 @@ What layer 0 holds:
    - ET: Proclamation 1334/2024 read (metaappz.com's text: Enkutatash, Adwa, 1 and 5 May; Meskel, Genna on 7 January,
      Timket, Good Friday, Easter, Mawlid and both Eids; the Ethiopic days shift before a Gregorian leap year).
      2026's Eid al-Fitr (20 March) confirmed through the state agency; Eid al-Adha and Mawlid not found. Retry ENA.
-   - IR: calendar.ut.ac.ir, president.ir and rc.majlis.ir don't answer. MA: no official 2026 list (bkam.ma has
-     none). CK: no official list (island Gospel Days are regional). CW, SX: the governments' lists not found. BS:
+   - IR: calendar.ut.ac.ir, president.ir and rc.majlis.ir don't answer. CK: no official list (island Gospel Days are regional). CW, SX: the governments' lists not found. BS:
      bahamas.gov.bs answers 403. SC: no official list. SJ: whether Norway's holiday law applies on Svalbard is
      unconfirmed. Retry each.
    - BG: justice.government.bg, gli.government.bg answer 503; the Council of Ministers made 31 December 2025 and
