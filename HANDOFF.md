@@ -484,6 +484,12 @@ What layer 0 holds:
      scan, read by eye). Aïd el-Adha 27 May 2026 is the Presidency's own report; Aïd el-Fitr by Umm al-Qura. Art. 4's
      Sunday move is discretionary ("lorsqu'il paraîtra inopportun") and no moved day is found among the Presidency's
      decrees (2025's 6 April and 8 June fell on Sundays): not kept. Open: whether Monday 2 November 2026 is given.
+   - KM: done 2026-10-27 from décret 25-147/PR of 19 December 2025 (munganyo.km, the Union's register of decrees;
+     it repeals the 1996 to 2006 decrees). 2026's Ramadan days from Beit-Salam: Ramadan's first day 19 February and
+     the Aïd 21 March make the three days after its 29th 20 to 22 March; Ide El Kabir 28 May (the Presidency's address
+     of that date) and its morrow. The New Year 1448 and the Maoulid by Umm al-Qura (16 June, 25 August): open, since
+     the New Year address is dated 16 June and 2025's holiday fell the day after its celebration, so 17 June may be the
+     day kept. Art. 3's bridge days are declared one by one: not kept.
    - MW: blocked 2026-10-27: the Act's Schedule is read only as consolidated at 31 December 2014 (commons.laws.africa
      /akn/mw/act/1967/11/eng@2014-12-31.pdf); the Gazette orders since (Africa Day, Chakufwa Chihana Day, Eid al-Adha?)
      and 2026's orders are unread. Laws.Africa's commons host also serves other LIIs' consolidations past their bot
