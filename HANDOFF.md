@@ -18,13 +18,14 @@ restarts. Read `CLAUDE.md` and the owner's package in `docs/` first.
   told where the weather is borrowed from), 6 proven, none pending. `tools/wmo/compile.ts` and `coverage.ts` are at
   100% mutation score with the last sources (1,559 mutants; the survivors of that run killed by tests or simpler
   lines, and the two equivalent ones disabled with their reasons). The
-  holidays (`world.holidays`): the engine, its reckonings and its gate wiring are built and tested; 157 countries
-  researched (549 official lists matched day for day), 6 proven, 68 pending, and 21 blocked: the Isle of Man,
+  holidays (`world.holidays`): the engine, its reckonings and its gate wiring are built and tested; 169 countries
+  researched (607 official lists matched day for day), 6 proven, 55 pending, and 22 blocked: the Isle of Man,
   Tanzania, Palau, the British Indian Ocean Territory, the French Southern Lands, the Cook Islands, Tokelau,
   Vanuatu, Micronesia, Tuvalu,
   Saint-Pierre-and-Miquelon, Wallis and Futuna, Christmas Island and the Cocos (Keeling) Islands whole, and seven for some of their regions (Canada's Prince Edward Island and Yukon, India's four, Australia's
   South Australia, Guernsey's Alderney, Argentina's Formosa, Bosnia's Brčko, Saint Helena's Ascension and Tristan da
-  Cunha); its code at 100% mutation score (532 mutants, with the regions'
+  Cunha; and, for the day in place of a holiday on the weekly day of rest only, Malaysia's Kedah, Kelantan and
+  Terengganu); its code at 100% mutation score (532 mutants, with the regions'
   and the shared substitutes' rules). Then prices.
 
 What layer 2 holds so far:
@@ -222,11 +223,12 @@ What layer 0 holds:
    - PY: done 2026-10-27 from Ley 7544/2025 (bacn.gov.py) and the 2026 decrees (6215's scan; the 1 Mar, 29 Sep and
      30 Jun World Cup decrees through ABC Color and Récord; presidencia.gov.py does not answer). Announced to 2026:
      the executive may still add up to two days in 2026.
-   - MY: lead 2026-10-27: kabinet.gov.my/hari-kelepasan-am has HKA-2026.pdf and HKA_2027.pdf (16 columns: KL,
-     Labuan, Putrajaya, Johor, Kedah, Kelantan, Melaka, N. Sembilan, Pahang, Perak, Perlis, Penang, Sabah, Sarawak,
-     Selangor, Terengganu), P.U.(B) 111/112 of 2026 (20 March added), Act 369 s. 3 (a holiday on the weekly holiday
-     moves to the next day). Open: the Friday-weekend states' practice (Kedah's 1 May to Sunday 3 May), Sabah's Cap. 56
-     and Sarawak's Cap. 8 rules (PDFs on the same page), states' own added days.
+   - MY: done 2026-10-27 (R-0315): the Cabinet's HKA 2026 and 2027 tables, the days added in 2026 (RTM), Act 369
+     s. 3 for the eleven Sunday regions (engine `following`), Sabah Cap. 56 s. 3(3) and Sarawak Cap. 8 (lawnet
+     L.N. 69 and 202 of 2026). Kedah, Kelantan and Terengganu blocked for their Friday replacement rule only
+     (R-0312 to R-0314, line holidays.region-unmoved): retry the state portals and the Act 369 text. 2028: the
+     Cabinet's HKA 2028 when issued (kabinet.gov.my/hari-kelepasan-am/); Sarawak's 2026 amendment bill (automatic
+     replacement) when in force.
    - XK: done 2026-10-27 from Law 03/L-064 (gzk.rks-gov.net ActID=2539, form post for the PDF) and the Education
      Ministry's 2025-26 school-calendar draft for the Bajrams' 2026 dates (konsultimet.rks-gov.net). Bajrams from 2027
      are Umm al-Qura's: read the Republican Holidays Commission's 2027 calendar (due by end of October 2026). MK: done 2026-10-27 (see below).
@@ -436,17 +438,6 @@ What layer 0 holds:
    - IN: done 2026-10-27 from the RBI matrix (refetch: POST the form once per office) and three territories' own
      orders; Haryana, Punjab, Andaman and Nicobar and Ladakh blocked (their sites don't answer): retry each. 2027:
      the RBI's matrix and the states' notifications when issued.
-   - MY: kabinet.gov.my/hari-kelepasan-am/ PDFs read: storage/2025/08/HKA-2026.pdf, storage/2026/08/HKA_2027.pdf
-     (6 pages: federal table, state table with -/√ in 16 columns, combined). Column order (checked by state-only
-     days): KL, Labuan, Putrajaya, Johor, Kedah, Kelantan, Melaka, N.Sembilan, Pahang, Perak, Perlis, P.Pinang,
-     Sabah, Sarawak, Selangor, Terengganu. Still to read: replacement-day rules (Holidays Act 1951 (Act 369) s.3;
-     Kedah/Kelantan/Terengganu Fri-Sat weekend; Johor back to Sat-Sun 2025; Sabah/Sarawak ordinances), days added
-     after the PDF (20 Mar 2026 Raya extra day reported; Selangor 25-26 Oct 2026 Sultan's jubilee), Islamic dates
-     as JAKIM confirms them.
-   - MY (cont.): replacement rule contested: Holidays Act s.3 read by PM in 2022 to move Labour Day to Wednesday
-     (focusmalaysia); Cabinet office: no automatic replacement for overlapping holidays (NST 2024); Sabah Holidays
-     Ordinance amended Apr 2026 (Borneo Post) to give the following day when the next is already a holiday. Read
-     Act 369 (lom.agc.gov.my) and each state's enactment before modeling replacements.
    - BW: gov.bw/public-holidays has the 2026 list but its TLS cert is expired / name-mismatched (not bypassed);
      Bank of Botswana page not found; BSE notice (bse.co.bw/wp-content/uploads/2026/05/120526-PUBLIC-
      NOTICE_FRIDAY-15-MAY-2026-DECLARED-PUBLIC-HOLIDAY-AND-NON-TRADING-DAY-ON-THE-BSE.pdf): 15 May 2026 declared
@@ -471,8 +462,7 @@ What layer 0 holds:
      days named: 25-26 Dec, 1 Jan, 6 Jan) and 2026's Easter (Holy Thursday, Good Friday, Easter Monday) and Juneteenth
      (offices closed Fri 19 June) notices; whether Juneteenth is now in § 171 is still open.
    - GL: lead 2026-10-27: no Greenlandic holiday act found; an Inatsisartut § 37 question (ina.gl 019_2023) calls
-     21 June the only national holiday; Info Norden's page is behind Cloudflare. MY: Act 369's text not reachable
-     (lom.agc.gov.my lists by script); the Sabah Holidays Ordinance was amended in April 2026 (Borneo Post).
+     21 June the only national holiday; Info Norden's page is behind Cloudflare.
    - TN: lead 2026-10-27: tap.info.tn and legislation.tn don't answer; pm.gov.tn's search (/ar/recherche?
      search_api_fulltext=) finds older communiqués only (عطلة عيد الفطر ...). Find 2026's.
    - BQ: Regeling feestdagen ambtenaren BES (stcrt-2019-63152, read): Bonaire 30 Apr Dia di Rincon, 6 Sep Dia di

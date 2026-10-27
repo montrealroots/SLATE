@@ -10,6 +10,7 @@ import {
   LAST_YEAR,
   LOCAL_LINE,
   REGION_UNKEPT_LINE,
+  REGION_UNMOVED_LINE,
   UNANNOUNCED_LINE,
   UNKEPT_LINE,
   aboutHolidays,
@@ -57,7 +58,7 @@ describe('the holidays of every country kept', () => {
         }
       }
     }
-    expect(read).toBe(573);
+    expect(read).toBe(607);
   });
   it('are each a country of the map with its lists, their regions its own, their substitutes the engine reckons', () => {
     expect(Object.keys(RULES).sort()).toEqual(LISTS.map((l) => l.country).sort());
@@ -231,6 +232,13 @@ describe('a rule', () => {
     const sunday = (skip?: number[]): CountryRules => ({ holidays: [r({ name: 'A', when: { fixed: [3, 1] } })], substitute: [{ on: [0], to: 'previous', ...(skip && { skip }) }] });
     expect(at(sunday([6, 0]), 2026)).toEqual(['2026-02-27 A (instead)', '2026-03-01 A (moved)']);
     expect(at(sunday(), 2026)).toEqual(['2026-02-28 A (instead)', '2026-03-01 A (moved)']);
+    // The day after only, and none where it's already a holiday (Malaysia's): 2026-02-01 and 2026-05-31 are Sundays.
+    const following = (only?: true): CountryRules => ({
+      holidays: [r({ name: 'A', when: { fixed: [2, 1] } }), r({ name: 'B', when: { fixed: [2, 1] } }), r({ name: 'C', when: { fixed: [5, 31] } }), r({ name: 'D', when: { fixed: [6, 1] } })],
+      substitute: [{ on: [0], to: 'next', as: 'well', ...(only && { following: only }) }],
+    });
+    expect(at(following(true), 2026)).toEqual(['2026-02-01 A', '2026-02-01 B', '2026-02-02 A (instead)', '2026-05-31 C', '2026-06-01 D']);
+    expect(at(following(), 2026)).toEqual(['2026-02-01 A', '2026-02-01 B', '2026-02-02 A (instead)', '2026-02-03 B (instead)', '2026-05-31 C', '2026-06-01 D', '2026-06-02 C (instead)']);
   });
   it("makes a day between two holidays one too, by the country's name for it", () => {
     const hs: Rule[] = [r({ name: 'A', when: { fixed: [9, 21] } }), r({ name: 'B', when: { fixed: [9, 23] } }), r({ name: 'C', when: { fixed: [9, 25] } })];
@@ -352,6 +360,17 @@ describe('the holidays', () => {
     expect(aboutHolidays('CA', 2026)).toBeUndefined();
     expect(aboutHolidays('US', 2026, 'US.CA')).toBeUndefined();
     expect(isLine(REGION_UNKEPT_LINE)).toBe(true);
+  });
+  it("tell the player where a region's days off in place of its holidays aren't kept", () => {
+    expect(REGION_UNMOVED_LINE).toBe('holidays.region-unmoved');
+    // Kelantan's own days are kept, but not its rule for one on its weekly holiday, Friday (the register's blocker); Selangor's is.
+    expect(aboutHolidays('MY', 2026, 'MY.03')).toBe(t(REGION_UNMOVED_LINE, { region: 'Kelantan' }));
+    expect(aboutHolidays('MY', 2026, 'MY.03')).toBe("When a holiday in Kelantan falls on its weekly day of rest, the day off given in its place isn't on this calendar.");
+    expect(holidaysOf('MY', 2026, 'MY.03').some((h) => h.name === 'Hari Keputeraan Sultan Kelantan')).toBe(true);
+    expect(aboutHolidays('MY', 2026, 'MY.12')).toBeUndefined();
+    expect(aboutHolidays('MY', 2028, 'MY.03')).toBe(t(UNANNOUNCED_LINE, { place: 'Malaysia', year: '2027' }));
+    expect(aboutHolidays('MY', 2026)).toBeUndefined();
+    expect(isLine(REGION_UNMOVED_LINE)).toBe(true);
   });
   it("tell the player a town's own aren't kept", () => {
     expect(LOCAL_LINE).toBe('holidays.local');
