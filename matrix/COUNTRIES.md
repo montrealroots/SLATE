@@ -223,7 +223,7 @@ a place fills a column; a cell is the row's status in that engine's matrix, or b
 | TC | Turks and Caicos Islands | researched | researched | researched | blocked | researched |
 | TD | Chad | researched | researched | researched | researched | researched |
 | TF | French Southern Territories | researched | researched | researched | researched | blocked |
-| TG | Togo | researched | researched | researched | researched | pending |
+| TG | Togo | researched | researched | researched | researched | researched |
 | TH | Thailand | researched | researched | researched | researched | researched |
 | TJ | Tajikistan | researched | researched | researched | researched | pending |
 | TK | Tokelau | researched | researched | researched | blocked | blocked |

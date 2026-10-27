@@ -18,8 +18,8 @@ restarts. Read `CLAUDE.md` and the owner's package in `docs/` first.
   told where the weather is borrowed from), 6 proven, none pending. `tools/wmo/compile.ts` and `coverage.ts` are at
   100% mutation score with the last sources (1,559 mutants; the survivors of that run killed by tests or simpler
   lines, and the two equivalent ones disabled with their reasons). The
-  holidays (`world.holidays`): the engine, its reckonings and its gate wiring are built and tested; 150 countries
-  researched (539 official lists matched day for day), 6 proven, 76 pending, and 20 blocked: the Isle of Man,
+  holidays (`world.holidays`): the engine, its reckonings and its gate wiring are built and tested; 151 countries
+  researched (540 official lists matched day for day), 6 proven, 75 pending, and 20 blocked: the Isle of Man,
   Tanzania, Palau, the British Indian Ocean Territory, the French Southern Lands, the Cook Islands, Tokelau,
   Vanuatu, Micronesia, Tuvalu,
   Saint-Pierre-and-Miquelon, Wallis and Futuna, Christmas Island and the Cocos (Keeling) Islands whole, and six for some of their regions (Canada's Prince Edward Island and Yukon, India's four, Australia's
@@ -344,6 +344,13 @@ What layer 0 holds:
      Labour ministry's 2026 communiqués through bamada.net's WP API. Announced to 2026.
    - GN: done 2026-10-27: décret D/2022/0526 (Guinéenews's report lists all twelve days and art. 2's moves), 2026
      from the ministry's communiqués (guineenews.org, woulanews.com WP APIs). Announced to 2026.
+   - TG: done 2026-10-27: the government portal republicoftogo.com (/content/search?searchText=) reports each
+     day as a public holiday; the law's own list not found. Announced to 2026.
+   - MG: lead 2026-10-27: décret 2026-006 of 8 January 2026 read at cnlegis.gov.mg (search POST to
+     /page_find_direct_mots_texte/ then /page_data_result_direct_mots_texte; PDFs at /uploads/D2026-006-VF.pdf),
+     with décrets 2025-1974 (2 January) and 2026-2212 (25 September). Missing: the Eids' dates (2424.mg: Eid al-Fitr
+     20 March), the Taombaovao Malagasy and national culture day dates (art. 2, 3), and the 24 July mourning decree
+     (2424.mg). 8 March is for women only (one group).
    - SN: done 2026-10-27: loi 74-52 (read in the Assembly's file at vie-publique.sn), Tamxarit from loi 83-54 (the
      scan read as an image), 1 February gone by loi 89-41, the Grand Magal by loi 2013-10 (Dakaractu); 2026's
      Islamic days are CONACOC's through APS; 19 January the President's day off. Announced to 2026.
