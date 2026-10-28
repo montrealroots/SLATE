@@ -48,6 +48,47 @@
    }
   ]
  },
+ "AL": {
+  "currency": "ALL",
+  "routes": [
+   {
+    "id": "home",
+    "where": "home",
+    "speed": "standard",
+    "within": {
+     "n": 14,
+     "unit": "day"
+    }
+   },
+   {
+    "id": "fast",
+    "where": "home",
+    "speed": "urgent",
+    "within": {
+     "n": 3,
+     "unit": "day"
+    }
+   }
+  ],
+  "bands": [
+   {
+    "validYears": 10,
+    "pay": {
+     "home": 750000,
+     "fast": 1800000
+    },
+    "from": 16
+   },
+   {
+    "validYears": 5,
+    "pay": {
+     "home": 750000,
+     "fast": 1800000
+    },
+    "under": 16
+   }
+  ]
+ },
  "AM": {
   "currency": "AMD",
   "routes": [
@@ -1461,6 +1502,47 @@
      "home": 7500
     },
     "under": 16
+   }
+  ]
+ },
+ "DO": {
+  "currency": "DOP",
+  "routes": [
+   {
+    "id": "home",
+    "where": "home",
+    "speed": "standard",
+    "within": {
+     "n": 72,
+     "unit": "hour"
+    }
+   },
+   {
+    "id": "urgent",
+    "where": "home",
+    "speed": "urgent",
+    "within": {
+     "n": 1,
+     "unit": "working day"
+    }
+   }
+  ],
+  "bands": [
+   {
+    "validYears": 10,
+    "pay": {
+     "home": 670000,
+     "urgent": 1070000
+    },
+    "from": 18
+   },
+   {
+    "validYears": 5,
+    "pay": {
+     "home": 670000,
+     "urgent": 1070000
+    },
+    "under": 18
    }
   ]
  },

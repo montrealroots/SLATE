@@ -10,7 +10,7 @@ a place fills a column; a cell is the row's status in that engine's matrix, or b
 | AF | Afghanistan | researched | researched | researched | researched | blocked | researched | pending |
 | AG | Antigua and Barbuda | researched | researched | researched | blocked | researched | researched | blocked |
 | AI | Anguilla | researched | researched | researched | blocked | researched | researched | researched |
-| AL | Albania | researched | researched | researched | researched | researched | researched | pending |
+| AL | Albania | researched | researched | researched | researched | researched | researched | researched |
 | AM | Armenia | researched | researched | researched | researched | researched | researched | researched |
 | AN | Netherlands Antilles | researched | researched | proven | proven | proven | proven | proven |
 | AO | Angola | researched | researched | researched | researched | researched | researched | pending |
@@ -67,7 +67,7 @@ a place fills a column; a cell is the row's status in that engine's matrix, or b
 | DJ | Djibouti | researched | researched | researched | blocked | researched | researched | blocked |
 | DK | Denmark | researched | researched | researched | researched | researched | researched | researched |
 | DM | Dominica | researched | researched | researched | researched | researched | researched | researched |
-| DO | Dominican Republic | researched | researched | researched | researched | researched | researched | pending |
+| DO | Dominican Republic | researched | researched | researched | researched | researched | researched | researched |
 | DZ | Algeria | researched | researched | researched | researched | researched | researched | researched |
 | EC | Ecuador | researched | researched | researched | researched | researched | researched | researched |
 | EE | Estonia | researched | researched | researched | researched | researched | researched | researched |
