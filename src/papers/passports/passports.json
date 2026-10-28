@@ -124,6 +124,25 @@
    }
   ]
  },
+ "AO": {
+  "currency": "AOA",
+  "routes": [
+   {
+    "id": "home",
+    "where": "home",
+    "speed": "standard",
+    "within": null
+   }
+  ],
+  "bands": [
+   {
+    "validYears": null,
+    "pay": {
+     "home": 3050000
+    }
+   }
+  ]
+ },
  "AR": {
   "currency": "ARS",
   "routes": [
@@ -4369,6 +4388,33 @@
    }
   ]
  },
+ "NA": {
+  "currency": "NAD",
+  "routes": [
+   {
+    "id": "home",
+    "where": "home",
+    "speed": "standard",
+    "within": null
+   },
+   {
+    "id": "abroad",
+    "where": "abroad",
+    "speed": "standard",
+    "within": null
+   }
+  ],
+  "bands": [
+   {
+    "validYears": 10,
+    "pay": {
+     "home": 40000,
+     "abroad": null
+    },
+    "pages": 47
+   }
+  ]
+ },
  "NC": {
   "currency": "XPF",
   "routes": [
@@ -5865,6 +5911,32 @@
      "express": 180000
     },
     "under": 14
+   }
+  ]
+ },
+ "TZ": {
+  "currency": "TZS",
+  "routes": [
+   {
+    "id": "home",
+    "where": "home",
+    "speed": "standard",
+    "within": null
+   },
+   {
+    "id": "abroad",
+    "where": "abroad",
+    "speed": "standard",
+    "within": null
+   }
+  ],
+  "bands": [
+   {
+    "validYears": null,
+    "pay": {
+     "home": 15000000,
+     "abroad": null
+    }
    }
   ]
  },

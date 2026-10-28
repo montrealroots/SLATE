@@ -13,7 +13,7 @@ a place fills a column; a cell is the row's status in that engine's matrix, or b
 | AL | Albania | researched | researched | researched | researched | researched | researched | researched |
 | AM | Armenia | researched | researched | researched | researched | researched | researched | researched |
 | AN | Netherlands Antilles | researched | researched | proven | proven | proven | proven | proven |
-| AO | Angola | researched | researched | researched | researched | researched | researched | pending |
+| AO | Angola | researched | researched | researched | researched | researched | researched | researched |
 | AQ | Antarctica | researched | researched | proven | proven | proven | proven | proven |
 | AR | Argentina | researched | researched | researched | researched | blocked | researched | researched |
 | AS | American Samoa | researched | researched | researched | researched | researched | blocked | researched |
@@ -166,7 +166,7 @@ a place fills a column; a cell is the row's status in that engine's matrix, or b
 | MX | Mexico | researched | researched | researched | researched | researched | researched | researched |
 | MY | Malaysia | researched | researched | researched | researched | blocked | researched | researched |
 | MZ | Mozambique | researched | researched | researched | researched | researched | researched | pending |
-| NA | Namibia | researched | researched | researched | researched | researched | researched | pending |
+| NA | Namibia | researched | researched | researched | researched | researched | researched | researched |
 | NC | New Caledonia | researched | researched | researched | researched | researched | researched | researched |
 | NE | Niger | researched | researched | researched | researched | researched | researched | researched |
 | NF | Norfolk Island | researched | researched | researched | researched | researched | researched | researched |
@@ -235,7 +235,7 @@ a place fills a column; a cell is the row's status in that engine's matrix, or b
 | TT | Trinidad and Tobago | researched | researched | researched | researched | researched | researched | researched |
 | TV | Tuvalu | researched | researched | researched | researched | blocked | researched | blocked |
 | TW | Taiwan | researched | researched | researched | researched | researched | researched | researched |
-| TZ | Tanzania | researched | researched | researched | researched | blocked | researched | pending |
+| TZ | Tanzania | researched | researched | researched | researched | blocked | researched | researched |
 | UA | Ukraine | researched | researched | researched | researched | researched | researched | researched |
 | UG | Uganda | researched | researched | researched | researched | researched | researched | researched |
 | UM | United States Minor Outlying Islands | researched | researched | proven | proven | proven | proven | proven |
