@@ -664,6 +664,26 @@
    }
   ]
  },
+ "BJ": {
+  "document": "Carte nationale d'identité biométrique (CNIB)",
+  "currency": "XOF",
+  "routes": [
+   {
+    "id": "anip",
+    "where": "home",
+    "speed": "standard",
+    "within": null
+   }
+  ],
+  "bands": [
+   {
+    "validYears": 5,
+    "pay": {
+     "anip": 6000
+    }
+   }
+  ]
+ },
  "BL": {
   "issuedBy": "FR"
  },
@@ -1033,6 +1053,37 @@
      "office": 2500
     },
     "from": 16
+   }
+  ]
+ },
+ "CV": {
+  "document": "Cartão Nacional de Identificação (CNI)",
+  "currency": "CVE",
+  "routes": [
+   {
+    "id": "normal",
+    "where": "home",
+    "speed": "standard",
+    "within": null
+   },
+   {
+    "id": "urgent",
+    "where": "home",
+    "speed": "urgent",
+    "within": {
+     "n": 7,
+     "unit": "day"
+    }
+   }
+  ],
+  "bands": [
+   {
+    "validYears": null,
+    "pay": {
+     "normal": 139500,
+     "urgent": 179500
+    },
+    "from": 4
    }
   ]
  },
@@ -1718,6 +1769,27 @@
      "emergency": null
     },
     "from": 65
+   }
+  ]
+ },
+ "GN": {
+  "document": "Carte nationale d'identité",
+  "currency": "GNF",
+  "routes": [
+   {
+    "id": "office",
+    "where": "home",
+    "speed": "standard",
+    "within": null
+   }
+  ],
+  "bands": [
+   {
+    "validYears": 5,
+    "pay": {
+     "office": 15000
+    },
+    "from": 15
    }
   ]
  },
@@ -2697,6 +2769,30 @@
    }
   ]
  },
+ "ML": {
+  "document": "Carte nationale d'identité",
+  "currency": "XOF",
+  "routes": [
+   {
+    "id": "police",
+    "where": "home",
+    "speed": "standard",
+    "within": {
+     "n": 24,
+     "unit": "hour"
+    }
+   }
+  ],
+  "bands": [
+   {
+    "validYears": 3,
+    "pay": {
+     "police": 1700
+    },
+    "from": 18
+   }
+  ]
+ },
  "MO": {
   "document": "Bilhete de Identidade de Residente (BIR), Macao SAR Resident Identity Card",
   "currency": "MOP",
@@ -2745,6 +2841,27 @@
  },
  "MQ": {
   "issuedBy": "FR"
+ },
+ "MR": {
+  "document": "Carte nationale d'identité (biometric)",
+  "currency": "MRU",
+  "routes": [
+   {
+    "id": "centre",
+    "where": "home",
+    "speed": "standard",
+    "within": null
+   }
+  ],
+  "bands": [
+   {
+    "validYears": 10,
+    "pay": {
+     "centre": null
+    },
+    "from": 16
+   }
+  ]
  },
  "MT": {
   "document": "e-ID card",
@@ -3849,6 +3966,27 @@
  "TF": {
   "issuedBy": "FR"
  },
+ "TG": {
+  "document": "Carte nationale d'identité (CNI)",
+  "currency": "XOF",
+  "routes": [
+   {
+    "id": "commissariat",
+    "where": "home",
+    "speed": "standard",
+    "within": null
+   }
+  ],
+  "bands": [
+   {
+    "validYears": null,
+    "pay": {
+     "commissariat": 5000
+    },
+    "from": 18
+   }
+  ]
+ },
  "TH": {
   "document": "บัตรประจำตัวประชาชน (identity card)",
   "currency": "THB",
@@ -4171,6 +4309,28 @@
      "office": 0
     },
     "from": 16
+   }
+  ]
+ },
+ "ZM": {
+  "document": "National Registration Card (NRC)",
+  "currency": "ZMW",
+  "routes": [
+   {
+    "id": "office",
+    "where": "home",
+    "speed": "standard",
+    "within": null
+   }
+  ],
+  "bands": [
+   {
+    "validYears": null,
+    "pay": {
+     "office": 0
+    },
+    "from": 16,
+    "permanent": true
    }
   ]
  }
