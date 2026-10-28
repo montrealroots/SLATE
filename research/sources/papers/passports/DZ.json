@@ -1,0 +1,72 @@
+{
+ "country": "DZ",
+ "office": "the Ministry of the Interior at home; Algeria's consulates abroad",
+ "currency": "DZD",
+ "routes": [
+  {
+   "id": "home",
+   "where": "home",
+   "speed": "standard",
+   "within": null,
+   "label": "in Algeria"
+  },
+  {
+   "id": "abroad",
+   "where": "abroad",
+   "speed": "standard",
+   "within": null,
+   "label": "at a consulate, paid in foreign currency at the year's rate"
+  },
+  {
+   "id": "abroad-fast",
+   "where": "abroad",
+   "speed": "urgent",
+   "within": {
+    "n": 5,
+    "unit": "day"
+   },
+   "label": "at a consulate, accelerated, within five days"
+  }
+ ],
+ "passports": [
+  {
+   "for": "any",
+   "pages": 28,
+   "validYears": null,
+   "pay": {
+    "home": "6000",
+    "abroad": "6000",
+    "abroad-fast": "25000"
+   }
+  },
+  {
+   "for": "any",
+   "pages": 48,
+   "validYears": null,
+   "pay": {
+    "home": null,
+    "abroad": "9000",
+    "abroad-fast": "45000"
+   }
+  }
+ ],
+ "note": "The stamp duty on the passport. Abroad, the Finance Law 2026 (in force 1 January 2026) sets it at the foreign-currency equivalent of 6,000 DA for 28 pages and 9,000 DA for 48 pages, or 25,000 DA and 45,000 DA by the accelerated procedure within five days of filing, as TSA reported the law's text. At home the 28-page biometric passport costs 6,000 DA, as Algérie Eco reported; the 48-page fee at home was not read and is left unpaid. Minors and students pay less (3,000 DA and 4,500 DA abroad, 12,000 DA and 22,500 DA accelerated; not modelled, since the age bound was not read), and a passport replacing a lost or damaged one carries a further 10,000 DA (not modelled). Validity and the time at home are leads; the Journal officiel and the tax administration's site were not read.",
+ "sources": [
+  {
+   "kind": "secondary",
+   "url": "https://www.tsa-algerie.com/tarifs-du-passeport-algerien-ce-qui-change-pour-la-diaspora/",
+   "quotes": "https://www.joradp.dz/",
+   "title": "TSA Algérie, Tarifs du passeport algérien : ce qui change pour la diaspora (8 January 2026)",
+   "read": "2026-10-28",
+   "said": "le droit de timbre pour la délivrance du passeport de 28 pages aux Algériens de l’étranger est fixé à l’équivalent en devises à la somme de 6.000 DA. Celui du passeport biométrique de 48 pages est fixé à l’équivalent de 9.000 DA. ... « Le passeport est délivré à la demande aux ressortissants établis à l’étranger, suivant la procédure accélérée dans un délai, maximum, de cinq jours de la date du dépôt de la demande, contre le paiement d’un droit de timbre de 25.000 DA pour le livret de 28 pages et 45.000 DA pour le livret de 48 pages », précise le texte de loi."
+  },
+  {
+   "kind": "secondary",
+   "url": "https://algerie-eco.com/2025/12/16/diaspora-algerienne-le-cout-du-passeport-revu-a-la-baisse/",
+   "quotes": "https://www.joradp.dz/",
+   "title": "Algérie Eco, Diaspora algérienne : le coût du passeport revu à la baisse (16 December 2025)",
+   "read": "2026-10-28",
+   "said": "Jusqu’à présent, le passeport biométrique de 28 pages est facturé 6 000 dinars en Algérie"
+  }
+ ]
+}

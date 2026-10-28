@@ -1143,6 +1143,33 @@
    }
   ]
  },
+ "CU": {
+  "currency": "CUP",
+  "routes": [
+   {
+    "id": "home",
+    "where": "home",
+    "speed": "standard",
+    "within": null
+   }
+  ],
+  "bands": [
+   {
+    "validYears": 10,
+    "pay": {
+     "home": 250000
+    },
+    "from": 16
+   },
+   {
+    "validYears": 5,
+    "pay": {
+     "home": 250000
+    },
+    "under": 16
+   }
+  ]
+ },
  "CV": {
   "currency": "CVE",
   "routes": [
@@ -1415,6 +1442,52 @@
      "home": 7500
     },
     "under": 16
+   }
+  ]
+ },
+ "DZ": {
+  "currency": "DZD",
+  "routes": [
+   {
+    "id": "home",
+    "where": "home",
+    "speed": "standard",
+    "within": null
+   },
+   {
+    "id": "abroad",
+    "where": "abroad",
+    "speed": "standard",
+    "within": null
+   },
+   {
+    "id": "abroad-fast",
+    "where": "abroad",
+    "speed": "urgent",
+    "within": {
+     "n": 5,
+     "unit": "day"
+    }
+   }
+  ],
+  "bands": [
+   {
+    "validYears": null,
+    "pay": {
+     "home": 600000,
+     "abroad": 600000,
+     "abroad-fast": 2500000
+    },
+    "pages": 28
+   },
+   {
+    "validYears": null,
+    "pay": {
+     "home": null,
+     "abroad": 900000,
+     "abroad-fast": 4500000
+    },
+    "pages": 48
    }
   ]
  },
