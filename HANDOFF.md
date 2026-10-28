@@ -506,6 +506,11 @@ What layer 0 holds:
    - GD: done 2026-10-28 from the Cabinet Office's "Grenada's Public Holidays - 2026" (gov.gd, September 2025), with its
      rule that a holiday on a Sunday is observed on the Monday after; Carnival Monday and Tuesday are set yearly: dates.
      The Public Holidays Act on laws.gov.gd sits behind a cookie challenge (a bot check): not read.
+   - EC: done 2026-10-28 from the Viceministerio de Turismo's calendar 2025-2030 (Expreso's copy; turismo.gob.ec
+     doesn't answer), announcedTo 2030: its moves (Tue to Mon, Wed/Thu to Fri, Sat to Fri, Sun to Mon; 1 January,
+     Carnival, Good Friday and Christmas unmoved) and the 2-3 November pair's, checked year by year against it, plus
+     Decreto Ejecutivo 249's 2 January 2026. Its 2030 Pichincha line is wrong (24 May 2030 is a Friday). Open: the
+     pair's rule where 2 November is a Wednesday (2033), which the calendar doesn't show; the LOSEP's text is unread.
    - MW: blocked 2026-10-27: the Act's Schedule is read only as consolidated at 31 December 2014 (commons.laws.africa
      /akn/mw/act/1967/11/eng@2014-12-31.pdf); the Gazette orders since (Africa Day, Chakufwa Chihana Day, Eid al-Adha?)
      and 2026's orders are unread. Laws.Africa's commons host also serves other LIIs' consolidations past their bot

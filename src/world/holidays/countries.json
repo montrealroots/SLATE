@@ -14611,6 +14611,180 @@
    }
   ]
  },
+ "EC": {
+  "announcedTo": 2030,
+  "substitute": [
+   {
+    "on": [
+     2
+    ],
+    "to": "previous"
+   },
+   {
+    "on": [
+     3,
+     4
+    ],
+    "to": "next"
+   },
+   {
+    "on": [
+     6
+    ],
+    "to": "previous"
+   },
+   {
+    "on": [
+     0
+    ],
+    "to": "next"
+   }
+  ],
+  "holidays": [
+   {
+    "name": "Año Nuevo",
+    "when": {
+     "fixed": [
+      1,
+      1
+     ]
+    },
+    "fixed": true
+   },
+   {
+    "name": "Puente de Año Nuevo",
+    "when": {
+     "dates": [
+      "2026-01-02"
+     ]
+    },
+    "fixed": true
+   },
+   {
+    "name": "Carnaval",
+    "when": {
+     "easter": -48
+    },
+    "fixed": true
+   },
+   {
+    "name": "Carnaval",
+    "when": {
+     "easter": -47
+    },
+    "fixed": true
+   },
+   {
+    "name": "Viernes Santo",
+    "when": {
+     "easter": -2
+    },
+    "fixed": true
+   },
+   {
+    "name": "Día del Trabajo",
+    "when": {
+     "fixed": [
+      5,
+      1
+     ]
+    }
+   },
+   {
+    "name": "Batalla del Pichincha",
+    "when": {
+     "fixed": [
+      5,
+      24
+     ]
+    }
+   },
+   {
+    "name": "Primer Grito de la Independencia",
+    "when": {
+     "fixed": [
+      8,
+      10
+     ]
+    }
+   },
+   {
+    "name": "Independencia de Guayaquil",
+    "when": {
+     "fixed": [
+      10,
+      9
+     ]
+    }
+   },
+   {
+    "name": "Día de los Difuntos",
+    "when": {
+     "fixed": [
+      11,
+      2
+     ]
+    },
+    "move": [
+     {
+      "on": [
+       6
+      ],
+      "to": "previous"
+     },
+     {
+      "on": [
+       0
+      ],
+      "to": "next"
+     }
+    ]
+   },
+   {
+    "name": "Independencia de Cuenca",
+    "when": {
+     "fixed": [
+      11,
+      3
+     ]
+    },
+    "move": [
+     {
+      "on": [
+       3
+      ],
+      "to": "previous",
+      "skip": [
+       2,
+       3
+      ]
+     },
+     {
+      "on": [
+       6
+      ],
+      "to": "previous"
+     },
+     {
+      "on": [
+       0
+      ],
+      "to": "next"
+     }
+    ]
+   },
+   {
+    "name": "Navidad",
+    "when": {
+     "fixed": [
+      12,
+      25
+     ]
+    },
+    "fixed": true
+   }
+  ]
+ },
  "EE": {
   "holidays": [
    {
