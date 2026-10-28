@@ -737,8 +737,7 @@ What layer 0 holds:
    norway.no a Cloudflare challenge), Bulgaria (the April 2026 reform's tariff not found), Lithuania (a JS app),
    Turkey (the yearly duties tariff), Indonesia (PP 45/2024, partly replaced by PP 30/2026), Thailand. Also: Cyprus
    (an Azure WAF), Morocco (its certificate chain fails verification), the UAE (ICP's page under maintenance when
-   rendered), New Zealand's legislation site (a 202 with an empty body), Vietnam and Russia (only secondary sources
-   found), Ukraine, the Dominican Republic and Costa Rica. The scratch log of every attempt is to be carried into the
+   rendered), New Zealand's legislation site (a 202 with an empty body), Vietnam (only secondary sources found), the Dominican Republic and Costa Rica. The scratch log of every attempt is to be carried into the
    blockers. Then ID, visas, residence and work permissions, and the banks. A question the engine will need settled:
    which countries issue passports of their own (Hong Kong does; most territories use their sovereign's), recorded
    with each file.
