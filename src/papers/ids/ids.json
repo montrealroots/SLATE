@@ -2432,6 +2432,35 @@
    }
   ]
  },
+ "KG": {
+  "document": "ID card (passport of a citizen of the Kyrgyz Republic)",
+  "currency": "KGS",
+  "routes": [
+   {
+    "id": "centre",
+    "where": "home",
+    "speed": "standard",
+    "within": null
+   }
+  ],
+  "bands": [
+   {
+    "validYears": 10,
+    "pay": {
+     "centre": 110300
+    },
+    "from": 16,
+    "under": 26
+   },
+   {
+    "validYears": 10,
+    "pay": {
+     "centre": 186800
+    },
+    "from": 26
+   }
+  ]
+ },
  "KH": {
   "document": "Khmer Nationality Identity Card",
   "currency": "KHR",
@@ -3042,6 +3071,43 @@
      "police": 1700
     },
     "from": 18
+   }
+  ]
+ },
+ "MN": {
+  "document": "Citizen's identity card (иргэний үнэмлэх)",
+  "currency": "MNT",
+  "routes": [
+   {
+    "id": "office",
+    "where": "home",
+    "speed": "standard",
+    "within": null
+   },
+   {
+    "id": "mission",
+    "where": "abroad",
+    "speed": "standard",
+    "within": null
+   }
+  ],
+  "bands": [
+   {
+    "validYears": null,
+    "pay": {
+     "office": 1830000,
+     "mission": 1830000
+    },
+    "from": 16,
+    "under": 25
+   },
+   {
+    "validYears": null,
+    "pay": {
+     "office": null,
+     "mission": null
+    },
+    "from": 25
    }
   ]
  },
@@ -4375,8 +4441,54 @@
    }
   ]
  },
+ "TJ": {
+  "document": "Passport of a citizen of the Republic of Tajikistan (identity card)",
+  "currency": "USD",
+  "routes": [
+   {
+    "id": "service",
+    "where": "home",
+    "speed": "standard",
+    "within": {
+     "n": 15,
+     "unit": "day"
+    }
+   }
+  ],
+  "bands": [
+   {
+    "validYears": null,
+    "pay": {
+     "service": 1000
+    }
+   }
+  ]
+ },
  "TK": {
   "issuedBy": "NZ"
+ },
+ "TM": {
+  "document": "Passport of a citizen of Turkmenistan",
+  "currency": "TMT",
+  "routes": [
+   {
+    "id": "mvd",
+    "where": "home",
+    "speed": "standard",
+    "within": {
+     "n": 7,
+     "unit": "working day"
+    }
+   }
+  ],
+  "bands": [
+   {
+    "validYears": null,
+    "pay": {
+     "mvd": null
+    }
+   }
+  ]
  },
  "TR": {
   "document": "Türkiye Cumhuriyeti kimlik kartı",
@@ -4543,6 +4655,66 @@
      "office": 45600
     },
     "from": 10
+   }
+  ]
+ },
+ "UZ": {
+  "document": "ID card (passport) of a citizen of the Republic of Uzbekistan",
+  "currency": "UZS",
+  "routes": [
+   {
+    "id": "online",
+    "where": "home",
+    "speed": "standard",
+    "within": {
+     "n": 1,
+     "unit": "working day"
+    }
+   },
+   {
+    "id": "office",
+    "where": "home",
+    "speed": "standard",
+    "within": {
+     "n": 1,
+     "unit": "working day"
+    }
+   },
+   {
+    "id": "consulate",
+    "where": "abroad",
+    "speed": "standard",
+    "within": null
+   }
+  ],
+  "bands": [
+   {
+    "validYears": 2,
+    "pay": {
+     "online": 33001200,
+     "office": 36668000,
+     "consulate": 36668000
+    },
+    "under": 1
+   },
+   {
+    "validYears": 5,
+    "pay": {
+     "online": 33001200,
+     "office": 36668000,
+     "consulate": 36668000
+    },
+    "from": 1,
+    "under": 16
+   },
+   {
+    "validYears": 10,
+    "pay": {
+     "online": 33001200,
+     "office": 36668000,
+     "consulate": 36668000
+    },
+    "from": 16
    }
   ]
  },
