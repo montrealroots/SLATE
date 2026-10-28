@@ -676,6 +676,32 @@
    }
   ]
  },
+ "BH": {
+  "currency": "BHD",
+  "routes": [
+   {
+    "id": "home",
+    "where": "home",
+    "speed": "standard",
+    "within": null
+   },
+   {
+    "id": "fast",
+    "where": "home",
+    "speed": "urgent",
+    "within": null
+   }
+  ],
+  "bands": [
+   {
+    "validYears": null,
+    "pay": {
+     "home": 10000,
+     "fast": 20000
+    }
+   }
+  ]
+ },
  "BJ": {
   "currency": "XOF",
   "routes": [
@@ -1994,6 +2020,25 @@
    }
   ]
  },
+ "GM": {
+  "currency": "GMD",
+  "routes": [
+   {
+    "id": "home",
+    "where": "home",
+    "speed": "standard",
+    "within": null
+   }
+  ],
+  "bands": [
+   {
+    "validYears": null,
+    "pay": {
+     "home": 510000
+    }
+   }
+  ]
+ },
  "GP": {
   "issuedBy": "FR",
   "onlyRoutes": [
@@ -3163,6 +3208,63 @@
      "urgent": 2000000
     },
     "under": 16
+   }
+  ]
+ },
+ "LR": {
+  "currency": "USD",
+  "routes": [
+   {
+    "id": "home",
+    "where": "home",
+    "speed": "standard",
+    "within": {
+     "n": 10,
+     "unit": "working day"
+    }
+   }
+  ],
+  "bands": [
+   {
+    "validYears": null,
+    "pay": {
+     "home": 5000
+    }
+   }
+  ]
+ },
+ "LS": {
+  "currency": "LSL",
+  "routes": [
+   {
+    "id": "home",
+    "where": "home",
+    "speed": "standard",
+    "within": null
+   },
+   {
+    "id": "emergency",
+    "where": "home",
+    "speed": "urgent",
+    "within": null
+   }
+  ],
+  "bands": [
+   {
+    "validYears": null,
+    "pay": {
+     "home": 13000,
+     "emergency": 63000
+    },
+    "pages": 32
+   },
+   {
+    "validYears": null,
+    "pay": {
+     "home": 30000,
+     "emergency": 80000
+    },
+    "pages": 64
    }
   ]
  },

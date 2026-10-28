@@ -28,7 +28,7 @@ a place fills a column; a cell is the row's status in that engine's matrix, or b
 | BE | Belgium | researched | researched | researched | researched | researched | researched | researched |
 | BF | Burkina Faso | researched | researched | researched | researched | researched | researched | researched |
 | BG | Bulgaria | researched | researched | researched | researched | researched | researched | pending |
-| BH | Bahrain | researched | researched | researched | researched | researched | researched | pending |
+| BH | Bahrain | researched | researched | researched | researched | researched | researched | researched |
 | BI | Burundi | researched | researched | researched | blocked | researched | researched | pending |
 | BJ | Benin | researched | researched | researched | researched | researched | researched | researched |
 | BL | Saint Barthelemy | researched | researched | researched | researched | researched | researched | pending |
@@ -91,7 +91,7 @@ a place fills a column; a cell is the row's status in that engine's matrix, or b
 | GH | Ghana | researched | researched | researched | researched | researched | researched | researched |
 | GI | Gibraltar | researched | researched | researched | researched | researched | researched | researched |
 | GL | Greenland | researched | researched | researched | researched | researched | researched | pending |
-| GM | Gambia | researched | researched | researched | researched | blocked | researched | pending |
+| GM | Gambia | researched | researched | researched | researched | blocked | researched | researched |
 | GN | Guinea | researched | researched | researched | researched | researched | researched | pending |
 | GP | Guadeloupe | researched | researched | researched | researched | researched | researched | researched |
 | GQ | Equatorial Guinea | researched | researched | researched | researched | blocked | researched | pending |
@@ -137,8 +137,8 @@ a place fills a column; a cell is the row's status in that engine's matrix, or b
 | LC | Saint Lucia | researched | researched | researched | researched | researched | researched | researched |
 | LI | Liechtenstein | researched | researched | researched | researched | researched | researched | researched |
 | LK | Sri Lanka | researched | researched | researched | researched | researched | researched | researched |
-| LR | Liberia | researched | researched | researched | researched | blocked | researched | pending |
-| LS | Lesotho | researched | researched | researched | blocked | blocked | researched | pending |
+| LR | Liberia | researched | researched | researched | researched | blocked | researched | researched |
+| LS | Lesotho | researched | researched | researched | blocked | blocked | researched | researched |
 | LT | Lithuania | researched | researched | researched | researched | researched | researched | pending |
 | LU | Luxembourg | researched | researched | researched | researched | researched | researched | researched |
 | LV | Latvia | researched | researched | researched | researched | researched | researched | researched |
