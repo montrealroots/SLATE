@@ -1,0 +1,51 @@
+{
+ "country": "SV",
+ "document": "Documento Único de Identidad (DUI)",
+ "office": "the Registro Nacional de las Personas Naturales (RNPN), at its DUIcentros",
+ "currency": "USD",
+ "routes": [
+  {
+   "id": "duicentro",
+   "where": "home",
+   "speed": "standard",
+   "within": null,
+   "label": "in person at a DUIcentro in El Salvador"
+  },
+  {
+   "id": "abroad",
+   "where": "abroad",
+   "speed": "standard",
+   "within": null,
+   "label": "at an RNPN office abroad"
+  }
+ ],
+ "cards": [
+  {
+   "for": "anyone",
+   "validYears": null,
+   "pay": {
+    "duicentro": "0",
+    "abroad": null
+   }
+  }
+ ],
+ "note": "The RNPN's fees as Diario El Mundo reported them: the DUI costs USD 10.31 in El Salvador and USD 35 abroad, for a renewal, replacement or update; a first issue is free (and must be in person, El Diario de Hoy reports, for the fingerprints). Whether the first issue abroad is free too isn't stated, so that fee is null. The DUI's term, the age it.s issued from and the time aren't modelled; the RNPN's own site (dui.sv) refused this session.",
+ "sources": [
+  {
+   "url": "https://diario.elmundo.sv/politica/estos-son-los-43-lugares-para-tramitar-el-dui-en-el-salvador-y-en-el-extranjero",
+   "title": "Diario El Mundo (El Salvador), Estos son los 43 lugares para tramitar el DUI en El Salvador y en el extranjero",
+   "read": "2026-10-28",
+   "kind": "secondary",
+   "quotes": "https://www.rnpn.gob.sv/",
+   "said": "Para emitir el DUI en el exterior, los connacionales deben pagar $35 mientras que en el territorio nacional tiene un costo de $10.31 ... Los salvadoreños pueden realizar cuatro trámites con el DUI: renovarlo, reponerlo, actualizarlos y emitirlo por primera vez, este último es gratuito."
+  },
+  {
+   "url": "https://www.elsalvador.com/noticias/nacional/dui-digital-el-salvador/1284664/2026/",
+   "title": "El Diario de Hoy, DUI digital en El Salvador (2026)",
+   "read": "2026-10-28",
+   "kind": "secondary",
+   "quotes": "https://www.rnpn.gob.sv/",
+   "said": "Entre los casos que continúan requiriendo la presencia del ciudadano se encuentran la emisión del DUI por primera vez, debido a la captura de información biométrica adicional, como las huellas dactilares."
+  }
+ ]
+}

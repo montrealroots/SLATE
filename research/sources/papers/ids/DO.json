@@ -1,0 +1,48 @@
+{
+ "country": "DO",
+ "document": "Cédula de Identidad y Electoral",
+ "office": "the Junta Central Electoral (JCE), Dirección Nacional de Cedulación",
+ "currency": "DOP",
+ "routes": [
+  {
+   "id": "centre",
+   "where": "home",
+   "speed": "standard",
+   "within": null,
+   "label": "at a JCE cedulation centre, by appointment"
+  },
+  {
+   "id": "abroad",
+   "where": "abroad",
+   "speed": "standard",
+   "within": null,
+   "label": "at a JCE office abroad (OSE)"
+  }
+ ],
+ "cards": [
+  {
+   "for": "from 16",
+   "from": 16,
+   "validYears": null,
+   "pay": {
+    "centre": null,
+    "abroad": "0"
+   }
+  }
+ ],
+ "note": "The JCE's requirements page: a first cédula from 16 (with a parent at 16 and 17). Its tariff for offices abroad (2025): a first cédula and a renewal cost nothing, a mobile cedulation USD 50 or 80 and a reprint 15 (not modelled). The JCE's domestic tariff page loads by script and gave no figure this session, so the fee at home is null; the card's term and the time aren't stated.",
+ "sources": [
+  {
+   "url": "https://jce.gob.do/Servicios-y-Requisitos-de-Cedulacion",
+   "title": "Junta Central Electoral, Servicios y Requisitos de Cedulación",
+   "read": "2026-10-28",
+   "said": "Tipo de solicitud: Nuevo Inscrito (menor de Edad, 16 a 17 años) Tener 16 o 17 años."
+  },
+  {
+   "url": "http://jce.gob.do/Portals/0/TasasServiciosOSE2025.pdf",
+   "title": "Junta Central Electoral, Tasas por Servicios, Oficinas de Servicios en el Exterior (2025)",
+   "read": "2026-10-28",
+   "said": "12 Expedición de cédula por primera vez (nuevo inscrito) 0.00 ... 14 Renovación de cédula 0.00"
+  }
+ ]
+}

@@ -1,0 +1,49 @@
+{
+ "country": "GT",
+ "document": "Documento Personal de Identificación (DPI)",
+ "office": "the Registro Nacional de las Personas (RENAP)",
+ "currency": "GTQ",
+ "routes": [
+  {
+   "id": "office",
+   "where": "home",
+   "speed": "standard",
+   "within": null,
+   "label": "at a RENAP office, collected there"
+  },
+  {
+   "id": "delivery-capital",
+   "where": "home",
+   "speed": "standard",
+   "within": null,
+   "label": "delivered home in the department of Guatemala: Q40 more"
+  },
+  {
+   "id": "delivery",
+   "where": "home",
+   "speed": "standard",
+   "within": null,
+   "label": "delivered home in the other departments: Q60 more"
+  }
+ ],
+ "cards": [
+  {
+   "for": "anyone",
+   "validYears": null,
+   "pay": {
+    "office": "100",
+    "delivery-capital": "140",
+    "delivery": "160"
+   }
+  }
+ ],
+ "note": "RENAP's tariff (Board agreement 15-2020 and its amendments): the DPI costs Q100, home delivery Q40 more in the department of Guatemala and Q60 in the others; abroad it costs USD 15 (not modelled: one currency per file); paid by card online, 25% more (not modelled). The DPI's term, the age it's issued from and the time aren't in the tariff, and RENAP's service pages load their text by script, so the term and time are null and the DPI is offered at any age.",
+ "sources": [
+  {
+   "url": "https://www.renap.gob.gt/sites/default/files/Comunicacion-Social/pdf/tarifario-renap.pdf",
+   "title": "Registro Nacional de las Personas, Tarifario de los servicios que presta el RENAP (Acuerdo de Directorio 15-2020 y sus reformas)",
+   "read": "2026-10-28",
+   "said": "Documento Personal de Identificación -DPI- Q100.00 ... Entrega a domicilio del Documento Personal de Identificación -DPI- en el ... Q.40.00 ... departamento de Guatemala ... Q.60.00 ... Documento Personal de Identificación -DPI- US$15.00"
+  }
+ ]
+}

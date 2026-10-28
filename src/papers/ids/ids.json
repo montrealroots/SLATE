@@ -429,6 +429,26 @@
    }
   ]
  },
+ "BB": {
+  "document": "Trident ID (national identification card)",
+  "currency": "BBD",
+  "routes": [
+   {
+    "id": "office",
+    "where": "home",
+    "speed": "standard",
+    "within": null
+   }
+  ],
+  "bands": [
+   {
+    "validYears": null,
+    "pay": {
+     "office": 0
+    }
+   }
+  ]
+ },
  "BE": {
   "document": "carte d'identité électronique (eID)",
   "currency": "EUR",
@@ -605,6 +625,26 @@
  },
  "BL": {
   "issuedBy": "FR"
+ },
+ "BO": {
+  "document": "Cédula de Identidad",
+  "currency": "BOB",
+  "routes": [
+   {
+    "id": "office",
+    "where": "home",
+    "speed": "standard",
+    "within": null
+   }
+  ],
+  "bands": [
+   {
+    "validYears": null,
+    "pay": {
+     "office": 1700
+    }
+   }
+  ]
  },
  "BQ": {
   "document": "Nederlandse identiteitskaart",
@@ -808,6 +848,61 @@
    }
   ]
  },
+ "CO": {
+  "document": "Cédula de ciudadanía digital",
+  "currency": "COP",
+  "routes": [
+   {
+    "id": "office",
+    "where": "home",
+    "speed": "standard",
+    "within": null
+   }
+  ],
+  "bands": [
+   {
+    "validYears": 10,
+    "pay": {
+     "office": 0
+    },
+    "from": 18
+   }
+  ]
+ },
+ "CR": {
+  "document": "Cédula de identidad",
+  "currency": "CRC",
+  "routes": [
+   {
+    "id": "central",
+    "where": "home",
+    "speed": "standard",
+    "within": {
+     "n": 2,
+     "unit": "hour"
+    }
+   },
+   {
+    "id": "regional",
+    "where": "home",
+    "speed": "standard",
+    "within": {
+     "n": 5,
+     "unit": "day"
+    }
+   }
+  ],
+  "bands": [
+   {
+    "validYears": 10,
+    "pay": {
+     "central": 0,
+     "regional": 0
+    },
+    "from": 18
+   }
+  ]
+ },
  "CW": {
   "document": "Nederlandse identiteitskaart",
   "currency": "USD",
@@ -996,6 +1091,34 @@
     "validYears": 10,
     "pay": {
      "borgerservice": 15000
+    },
+    "from": 16
+   }
+  ]
+ },
+ "DO": {
+  "document": "Cédula de Identidad y Electoral",
+  "currency": "DOP",
+  "routes": [
+   {
+    "id": "centre",
+    "where": "home",
+    "speed": "standard",
+    "within": null
+   },
+   {
+    "id": "abroad",
+    "where": "abroad",
+    "speed": "standard",
+    "within": null
+   }
+  ],
+  "bands": [
+   {
+    "validYears": null,
+    "pay": {
+     "centre": null,
+     "abroad": 0
     },
     "from": 16
    }
@@ -1468,6 +1591,40 @@
  "GS": {
   "issuedBy": "GB"
  },
+ "GT": {
+  "document": "Documento Personal de Identificación (DPI)",
+  "currency": "GTQ",
+  "routes": [
+   {
+    "id": "office",
+    "where": "home",
+    "speed": "standard",
+    "within": null
+   },
+   {
+    "id": "delivery-capital",
+    "where": "home",
+    "speed": "standard",
+    "within": null
+   },
+   {
+    "id": "delivery",
+    "where": "home",
+    "speed": "standard",
+    "within": null
+   }
+  ],
+  "bands": [
+   {
+    "validYears": null,
+    "pay": {
+     "office": 10000,
+     "delivery-capital": 14000,
+     "delivery": 16000
+    }
+   }
+  ]
+ },
  "GU": {
   "issuedBy": "US"
  },
@@ -1488,6 +1645,27 @@
     "pay": {
      "rop": 0
     }
+   }
+  ]
+ },
+ "HN": {
+  "document": "Documento Nacional de Identificación (DNI)",
+  "currency": "HNL",
+  "routes": [
+   {
+    "id": "office",
+    "where": "home",
+    "speed": "standard",
+    "within": null
+   }
+  ],
+  "bands": [
+   {
+    "validYears": null,
+    "pay": {
+     "office": 0
+    },
+    "from": 18
    }
   ]
  },
@@ -1774,6 +1952,34 @@
  },
  "JE": {
   "issuedBy": "GB"
+ },
+ "JM": {
+  "document": "National Identification Card (NIDS)",
+  "currency": "JMD",
+  "routes": [
+   {
+    "id": "nira",
+    "where": "home",
+    "speed": "standard",
+    "within": null
+   }
+  ],
+  "bands": [
+   {
+    "validYears": 5,
+    "pay": {
+     "nira": 0
+    },
+    "under": 18
+   },
+   {
+    "validYears": 10,
+    "pay": {
+     "nira": 0
+    },
+    "from": 18
+   }
+  ]
  },
  "JP": {
   "document": "個人番号カード (My Number Card)",
@@ -2513,6 +2719,27 @@
    }
   ]
  },
+ "NI": {
+  "document": "Cédula de identidad ciudadana",
+  "currency": "NIO",
+  "routes": [
+   {
+    "id": "office",
+    "where": "home",
+    "speed": "standard",
+    "within": null
+   }
+  ],
+  "bands": [
+   {
+    "validYears": null,
+    "pay": {
+     "office": 0
+    },
+    "from": 16
+   }
+  ]
+ },
  "NL": {
   "document": "Nederlandse identiteitskaart",
   "currency": "EUR",
@@ -2593,6 +2820,34 @@
  },
  "NZ": {
   "none": true
+ },
+ "PA": {
+  "document": "Cédula de identidad personal",
+  "currency": "PAB",
+  "routes": [
+   {
+    "id": "office",
+    "where": "home",
+    "speed": "standard",
+    "within": null
+   }
+  ],
+  "bands": [
+   {
+    "validYears": null,
+    "pay": {
+     "office": 0
+    },
+    "under": 18
+   },
+   {
+    "validYears": null,
+    "pay": {
+     "office": 0
+    },
+    "from": 18
+   }
+  ]
  },
  "PE": {
   "document": "Documento Nacional de Identidad electrónico (DNIe 3.0)",
@@ -3226,6 +3481,33 @@
    }
   ]
  },
+ "SV": {
+  "document": "Documento Único de Identidad (DUI)",
+  "currency": "USD",
+  "routes": [
+   {
+    "id": "duicentro",
+    "where": "home",
+    "speed": "standard",
+    "within": null
+   },
+   {
+    "id": "abroad",
+    "where": "abroad",
+    "speed": "standard",
+    "within": null
+   }
+  ],
+  "bands": [
+   {
+    "validYears": null,
+    "pay": {
+     "duicentro": 0,
+     "abroad": null
+    }
+   }
+  ]
+ },
  "SX": {
   "document": "Nederlandse identiteitskaart",
   "currency": "USD",
@@ -3304,6 +3586,27 @@
     "pay": {
      "nufus": 22000
     }
+   }
+  ]
+ },
+ "TT": {
+  "document": "National Identification Card",
+  "currency": "TTD",
+  "routes": [
+   {
+    "id": "office",
+    "where": "home",
+    "speed": "standard",
+    "within": null
+   }
+  ],
+  "bands": [
+   {
+    "validYears": 10,
+    "pay": {
+     "office": 0
+    },
+    "from": 15
    }
   ]
  },
@@ -3431,6 +3734,34 @@
      "office": 45600
     },
     "from": 10
+   }
+  ]
+ },
+ "VE": {
+  "document": "Cédula de identidad",
+  "currency": "VES",
+  "routes": [
+   {
+    "id": "office",
+    "where": "home",
+    "speed": "standard",
+    "within": null
+   },
+   {
+    "id": "consulate",
+    "where": "abroad",
+    "speed": "standard",
+    "within": null
+   }
+  ],
+  "bands": [
+   {
+    "validYears": 10,
+    "pay": {
+     "office": 0,
+     "consulate": 0
+    },
+    "from": 9
    }
   ]
  },
