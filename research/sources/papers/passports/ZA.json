@@ -2,14 +2,70 @@
  "country": "ZA",
  "office": "the Department of Home Affairs",
  "currency": "ZAR",
- "passports": [
-  {"for": "adult", "from": 16, "pages": 32, "validYears": 10, "fees": {"first issue, or the last expired or valid under six months": "600", "the last still valid six months or more": "1200"}},
-  {"for": "adult", "from": 16, "pages": 48, "validYears": 10, "fees": {"first issue, or the last expired or valid under six months": "1200", "the last still valid six months or more": "2400"}},
-  {"for": "minor", "under": 16, "validYears": 5, "fees": {"first issue, or the last expired or valid under six months": "600", "the last still valid six months or more": "1200"}}
+ "routes": [
+  {
+   "id": "home-adult",
+   "where": "home",
+   "speed": "standard",
+   "within": {
+    "n": 13,
+    "unit": "working day"
+   },
+   "label": "in South Africa, 16 or over"
+  },
+  {
+   "id": "home-minor",
+   "where": "home",
+   "speed": "standard",
+   "within": {
+    "n": 18,
+    "unit": "working day"
+   },
+   "label": "in South Africa, under 16"
+  },
+  {
+   "id": "abroad",
+   "where": "abroad",
+   "speed": "standard",
+   "within": {
+    "n": 8,
+    "unit": "month"
+   },
+   "label": "at an embassy or consulate"
+  }
  ],
- "standard": {"within": "13 working days (adult), 18 working days (minor)"},
- "abroad": {"within": "at least six to eight months"},
- "note": "Applied for in person, at a Home Affairs office with live capture, a participating bank or eHomeAffairs; abroad at an embassy or consulate.",
+ "passports": [
+  {
+   "for": "adult",
+   "from": 16,
+   "pages": 32,
+   "validYears": 10,
+   "pay": {
+    "home-adult": "600",
+    "abroad": null
+   }
+  },
+  {
+   "for": "adult",
+   "from": 16,
+   "pages": 48,
+   "validYears": 10,
+   "pay": {
+    "home-adult": "1200",
+    "abroad": null
+   }
+  },
+  {
+   "for": "minor",
+   "under": 16,
+   "validYears": 5,
+   "pay": {
+    "home-minor": "600",
+    "abroad": null
+   }
+  }
+ ],
+ "note": "The fee is the tariff for a first issue, or where the previous passport has expired or is valid for less than six months; where it is still valid six months or longer the tariff doubles (R1 200, or R2 400 for the 48-page passport), which isn't modelled. Applied for in person, at a Home Affairs office with live capture, a participating bank or eHomeAffairs; abroad at an embassy or consulate, taking at least six to eight months (the longest is taken), at a fee the page doesn't give.",
  "sources": [
   {
    "url": "https://www.dha.gov.za/index.php/civic-services/travel-documents",

@@ -240,7 +240,7 @@ a place fills a column; a cell is the row's status in that engine's matrix, or b
 | UG | Uganda | researched | researched | researched | researched | researched | researched | researched |
 | UM | United States Minor Outlying Islands | researched | researched | proven | proven | proven | proven | proven |
 | US | United States | researched | researched | researched | researched | researched | researched | researched |
-| UY | Uruguay | researched | researched | researched | researched | researched | researched | pending |
+| UY | Uruguay | researched | researched | researched | researched | researched | researched | researched |
 | UZ | Uzbekistan | researched | researched | researched | researched | researched | researched | pending |
 | VA | Vatican | researched | researched | researched | blocked | researched | researched | pending |
 | VC | Saint Vincent and the Grenadines | researched | researched | researched | blocked | blocked | researched | pending |
@@ -254,6 +254,6 @@ a place fills a column; a cell is the row's status in that engine's matrix, or b
 | XK | Kosovo | researched | researched | researched | blocked | researched | researched | pending |
 | YE | Yemen | researched | researched | researched | researched | researched | blocked | pending |
 | YT | Mayotte | researched | researched | researched | researched | researched | researched | researched |
-| ZA | South Africa | researched | researched | researched | researched | researched | researched | pending |
+| ZA | South Africa | researched | researched | researched | researched | researched | researched | researched |
 | ZM | Zambia | researched | researched | researched | researched | researched | researched | pending |
 | ZW | Zimbabwe | researched | researched | researched | researched | researched | blocked | pending |

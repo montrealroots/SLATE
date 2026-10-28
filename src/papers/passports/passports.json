@@ -4126,6 +4126,47 @@
    }
   ]
  },
+ "UY": {
+  "currency": "UYU",
+  "routes": [
+   {
+    "id": "common",
+    "where": "home",
+    "speed": "standard",
+    "within": {
+     "n": 15,
+     "unit": "working day"
+    }
+   },
+   {
+    "id": "urgent",
+    "where": "home",
+    "speed": "urgent",
+    "within": {
+     "n": 5,
+     "unit": "working day"
+    }
+   }
+  ],
+  "bands": [
+   {
+    "validYears": 5,
+    "pay": {
+     "common": 563000,
+     "urgent": 1211400
+    },
+    "from": 18
+   },
+   {
+    "validYears": 5,
+    "pay": {
+     "common": 545500,
+     "urgent": 1071200
+    },
+    "under": 18
+   }
+  ]
+ },
  "VI": {
   "issuedBy": "US"
  },
@@ -4134,6 +4175,66 @@
   "onlyRoutes": [
    "france",
    "abroad"
+  ]
+ },
+ "ZA": {
+  "currency": "ZAR",
+  "routes": [
+   {
+    "id": "home-adult",
+    "where": "home",
+    "speed": "standard",
+    "within": {
+     "n": 13,
+     "unit": "working day"
+    }
+   },
+   {
+    "id": "home-minor",
+    "where": "home",
+    "speed": "standard",
+    "within": {
+     "n": 18,
+     "unit": "working day"
+    }
+   },
+   {
+    "id": "abroad",
+    "where": "abroad",
+    "speed": "standard",
+    "within": {
+     "n": 8,
+     "unit": "month"
+    }
+   }
+  ],
+  "bands": [
+   {
+    "validYears": 10,
+    "pay": {
+     "home-adult": 60000,
+     "abroad": null
+    },
+    "from": 16,
+    "pages": 32
+   },
+   {
+    "validYears": 10,
+    "pay": {
+     "home-adult": 120000,
+     "abroad": null
+    },
+    "from": 16,
+    "pages": 48
+   },
+   {
+    "validYears": 5,
+    "pay": {
+     "home-minor": 60000,
+     "abroad": null
+    },
+    "under": 16
+   }
   ]
  }
 }
