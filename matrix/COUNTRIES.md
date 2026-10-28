@@ -79,7 +79,7 @@ a place fills a column; a cell is the row's status in that engine's matrix, or b
 | FI | Finland | researched | researched | researched | researched | researched | researched | researched |
 | FJ | Fiji | researched | researched | researched | researched | researched | researched | researched |
 | FK | Falkland Islands | researched | researched | researched | blocked | researched | blocked | pending |
-| FM | Micronesia | researched | researched | researched | researched | blocked | researched | pending |
+| FM | Micronesia | researched | researched | researched | researched | blocked | researched | researched |
 | FO | Faroe Islands | researched | researched | researched | researched | blocked | researched | researched |
 | FR | France | researched | researched | researched | researched | researched | researched | researched |
 | GA | Gabon | researched | researched | researched | researched | researched | researched | pending |
@@ -149,7 +149,7 @@ a place fills a column; a cell is the row's status in that engine's matrix, or b
 | ME | Montenegro | researched | researched | researched | researched | researched | researched | researched |
 | MF | Saint Martin | researched | researched | researched | blocked | researched | researched | pending |
 | MG | Madagascar | researched | researched | researched | researched | researched | researched | pending |
-| MH | Marshall Islands | researched | researched | researched | researched | researched | blocked | pending |
+| MH | Marshall Islands | researched | researched | researched | researched | researched | blocked | researched |
 | MK | North Macedonia | researched | researched | researched | researched | researched | researched | researched |
 | ML | Mali | researched | researched | researched | researched | researched | researched | pending |
 | MM | Myanmar | researched | researched | researched | researched | blocked | blocked | pending |
@@ -182,7 +182,7 @@ a place fills a column; a cell is the row's status in that engine's matrix, or b
 | PA | Panama | researched | researched | researched | researched | researched | researched | pending |
 | PE | Peru | researched | researched | researched | researched | researched | researched | researched |
 | PF | French Polynesia | researched | researched | researched | researched | researched | researched | researched |
-| PG | Papua New Guinea | researched | researched | researched | researched | researched | researched | pending |
+| PG | Papua New Guinea | researched | researched | researched | researched | researched | researched | researched |
 | PH | Philippines | researched | researched | researched | researched | researched | researched | researched |
 | PK | Pakistan | researched | researched | researched | researched | researched | researched | researched |
 | PL | Poland | researched | researched | researched | researched | researched | researched | researched |
