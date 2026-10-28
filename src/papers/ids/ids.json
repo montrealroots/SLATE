@@ -1,4 +1,48 @@
 {
+ "AL": {
+  "document": "Letërnjoftim Elektronik (Kartë Identiteti)",
+  "currency": "ALL",
+  "routes": [
+   {
+    "id": "standard",
+    "where": "home",
+    "speed": "standard",
+    "within": {
+     "n": 14,
+     "unit": "day"
+    }
+   },
+   {
+    "id": "fast",
+    "where": "home",
+    "speed": "urgent",
+    "within": {
+     "n": 3,
+     "unit": "day"
+    }
+   }
+  ],
+  "bands": [
+   {
+    "validYears": 10,
+    "pay": {
+     "standard": 150000,
+     "fast": 300000
+    },
+    "from": 16,
+    "under": 76
+   },
+   {
+    "validYears": null,
+    "pay": {
+     "standard": 150000,
+     "fast": 300000
+    },
+    "from": 76,
+    "permanent": true
+   }
+  ]
+ },
  "AS": {
   "issuedBy": "US"
  },
@@ -165,6 +209,44 @@
      "express-online": 9800
     },
     "from": 18
+   }
+  ]
+ },
+ "BA": {
+  "document": "lična karta",
+  "currency": "BAM",
+  "routes": [
+   {
+    "id": "mup",
+    "where": "home",
+    "speed": "standard",
+    "within": null
+   }
+  ],
+  "bands": [
+   {
+    "validYears": 2,
+    "pay": {
+     "mup": null
+    },
+    "from": 15,
+    "under": 18
+   },
+   {
+    "validYears": 10,
+    "pay": {
+     "mup": null
+    },
+    "from": 18,
+    "under": 61
+   },
+   {
+    "validYears": null,
+    "pay": {
+     "mup": null
+    },
+    "from": 61,
+    "permanent": true
    }
   ]
  },
@@ -803,6 +885,57 @@
  "GF": {
   "issuedBy": "FR"
  },
+ "GG": {
+  "issuedBy": "GB"
+ },
+ "GI": {
+  "document": "Gibraltar identity card",
+  "currency": "GBP",
+  "routes": [
+   {
+    "id": "standard",
+    "where": "home",
+    "speed": "standard",
+    "within": null
+   },
+   {
+    "id": "emergency",
+    "where": "home",
+    "speed": "urgent",
+    "within": {
+     "n": 24,
+     "unit": "hour"
+    }
+   }
+  ],
+  "bands": [
+   {
+    "validYears": null,
+    "pay": {
+     "standard": 3700,
+     "emergency": 10550
+    },
+    "under": 15
+   },
+   {
+    "validYears": 10,
+    "pay": {
+     "standard": 3700,
+     "emergency": 10550
+    },
+    "from": 15,
+    "under": 65
+   },
+   {
+    "validYears": 10,
+    "pay": {
+     "standard": 0,
+     "emergency": null
+    },
+    "from": 65
+   }
+  ]
+ },
  "GP": {
   "issuedBy": "FR"
  },
@@ -955,6 +1088,9 @@
  "IE": {
   "none": true
  },
+ "IM": {
+  "issuedBy": "GB"
+ },
  "IS": {
   "document": "nafnskírteini",
   "currency": "ISK",
@@ -1041,6 +1177,9 @@
     "from": 18
    }
   ]
+ },
+ "JE": {
+  "issuedBy": "GB"
  },
  "LI": {
   "document": "Identitätskarte",
@@ -1198,8 +1337,199 @@
    }
   ]
  },
+ "MC": {
+  "document": "carte d'identité monégasque",
+  "currency": "EUR",
+  "routes": [
+   {
+    "id": "mairie",
+    "where": "home",
+    "speed": "standard",
+    "within": null
+   }
+  ],
+  "bands": [
+   {
+    "validYears": 3,
+    "pay": {
+     "mairie": 0
+    },
+    "under": 3
+   },
+   {
+    "validYears": 5,
+    "pay": {
+     "mairie": 0
+    },
+    "from": 3
+   }
+  ]
+ },
+ "MD": {
+  "document": "carte de identitate",
+  "currency": "MDL",
+  "routes": [
+   {
+    "id": "ten-days",
+    "where": "home",
+    "speed": "standard",
+    "within": {
+     "n": 10,
+     "unit": "working day"
+    }
+   },
+   {
+    "id": "five-days",
+    "where": "home",
+    "speed": "urgent",
+    "within": {
+     "n": 5,
+     "unit": "day"
+    }
+   },
+   {
+    "id": "one-day",
+    "where": "home",
+    "speed": "urgent",
+    "within": {
+     "n": 1,
+     "unit": "working day"
+    }
+   },
+   {
+    "id": "same-day",
+    "where": "home",
+    "speed": "urgent",
+    "within": {
+     "n": 1,
+     "unit": "day"
+    }
+   }
+  ],
+  "bands": [
+   {
+    "validYears": 4,
+    "pay": {
+     "ten-days": 51000,
+     "five-days": 73000,
+     "one-day": 94000,
+     "same-day": 116000
+    },
+    "under": 7
+   },
+   {
+    "validYears": 7,
+    "pay": {
+     "ten-days": 51000,
+     "five-days": 73000,
+     "one-day": 94000,
+     "same-day": 116000
+    },
+    "from": 7,
+    "under": 14
+   },
+   {
+    "validYears": 10,
+    "pay": {
+     "ten-days": 51000,
+     "five-days": 73000,
+     "one-day": 94000,
+     "same-day": 116000
+    },
+    "from": 14,
+    "under": 70
+   },
+   {
+    "validYears": null,
+    "pay": {
+     "ten-days": 51000,
+     "five-days": 73000,
+     "one-day": 94000,
+     "same-day": 116000
+    },
+    "from": 70,
+    "permanent": true
+   }
+  ]
+ },
+ "ME": {
+  "document": "lična karta",
+  "currency": "EUR",
+  "routes": [
+   {
+    "id": "mup",
+    "where": "home",
+    "speed": "standard",
+    "within": null
+   }
+  ],
+  "bands": [
+   {
+    "validYears": 4,
+    "pay": {
+     "mup": 500
+    },
+    "under": 4
+   },
+   {
+    "validYears": 10,
+    "pay": {
+     "mup": 500
+    },
+    "from": 4,
+    "under": 66
+   },
+   {
+    "validYears": 40,
+    "pay": {
+     "mup": 500
+    },
+    "from": 66
+   }
+  ]
+ },
  "MF": {
   "issuedBy": "FR"
+ },
+ "MK": {
+  "document": "лична карта",
+  "currency": "MKD",
+  "routes": [
+   {
+    "id": "regular",
+    "where": "home",
+    "speed": "standard",
+    "within": null
+   },
+   {
+    "id": "two-days",
+    "where": "home",
+    "speed": "urgent",
+    "within": {
+     "n": 2,
+     "unit": "working day"
+    }
+   }
+  ],
+  "bands": [
+   {
+    "validYears": null,
+    "pay": {
+     "regular": 31000,
+     "two-days": null
+    },
+    "under": 66
+   },
+   {
+    "validYears": null,
+    "pay": {
+     "regular": 31000,
+     "two-days": null
+    },
+    "from": 66,
+    "permanent": true
+   }
+  ]
  },
  "MP": {
   "issuedBy": "US"
@@ -1508,6 +1838,30 @@
    }
   ]
  },
+ "RS": {
+  "document": "lična karta",
+  "currency": "RSD",
+  "routes": [
+   {
+    "id": "police",
+    "where": "home",
+    "speed": "standard",
+    "within": {
+     "n": 15,
+     "unit": "day"
+    }
+   }
+  ],
+  "bands": [
+   {
+    "validYears": null,
+    "pay": {
+     "police": null
+    },
+    "from": 10
+   }
+  ]
+ },
  "SE": {
   "document": "nationellt id-kort",
   "currency": "SEK",
@@ -1715,6 +2069,34 @@
    }
   ]
  },
+ "SM": {
+  "document": "carta d'identità",
+  "currency": "EUR",
+  "routes": [
+   {
+    "id": "office",
+    "where": "home",
+    "speed": "standard",
+    "within": null
+   }
+  ],
+  "bands": [
+   {
+    "validYears": 3,
+    "pay": {
+     "office": 1500
+    },
+    "under": 6
+   },
+   {
+    "validYears": 5,
+    "pay": {
+     "office": 3000
+    },
+    "from": 6
+   }
+  ]
+ },
  "SX": {
   "document": "Nederlandse identiteitskaart",
   "currency": "USD",
@@ -1749,6 +2131,38 @@
  "TF": {
   "issuedBy": "FR"
  },
+ "UA": {
+  "document": "паспорт громадянина України у формі картки (ID-картка)",
+  "currency": "UAH",
+  "routes": [
+   {
+    "id": "first",
+    "where": "home",
+    "speed": "standard",
+    "within": {
+     "n": 7,
+     "unit": "working day"
+    }
+   }
+  ],
+  "bands": [
+   {
+    "validYears": 4,
+    "pay": {
+     "first": 0
+    },
+    "from": 14,
+    "under": 18
+   },
+   {
+    "validYears": 10,
+    "pay": {
+     "first": 0
+    },
+    "from": 18
+   }
+  ]
+ },
  "US": {
   "none": true
  },
@@ -1757,6 +2171,40 @@
  },
  "WF": {
   "issuedBy": "FR"
+ },
+ "XK": {
+  "document": "letërnjoftim",
+  "currency": "EUR",
+  "routes": [
+   {
+    "id": "regular",
+    "where": "home",
+    "speed": "standard",
+    "within": {
+     "n": 15,
+     "unit": "day"
+    }
+   },
+   {
+    "id": "accelerated",
+    "where": "home",
+    "speed": "urgent",
+    "within": {
+     "n": 72,
+     "unit": "hour"
+    }
+   }
+  ],
+  "bands": [
+   {
+    "validYears": null,
+    "pay": {
+     "regular": 1000,
+     "accelerated": 6000
+    },
+    "from": 16
+   }
+  ]
  },
  "YT": {
   "issuedBy": "FR"

@@ -1,0 +1,62 @@
+{
+ "country": "MK",
+ "document": "лична карта",
+ "office": "the competent unit of the Ministry of Internal Affairs at the place of residence or stay",
+ "currency": "MKD",
+ "routes": [
+  {
+   "id": "regular",
+   "where": "home",
+   "speed": "standard",
+   "within": null,
+   "label": "at the Ministry's unit"
+  },
+  {
+   "id": "two-days",
+   "where": "home",
+   "speed": "urgent",
+   "within": {
+    "n": 2,
+    "unit": "working day"
+   },
+   "label": "on written request, within two working days, when the residence or address hasn't changed"
+  }
+ ],
+ "cards": [
+  {
+   "for": "up to 65",
+   "under": 66,
+   "validYears": null,
+   "pay": {
+    "regular": "310",
+    "two-days": null
+   }
+  },
+  {
+   "for": "over 65",
+   "from": 66,
+   "validYears": "permanent",
+   "pay": {
+    "regular": "310",
+    "two-days": null
+   }
+  }
+ ],
+ "note": "The Ministry lists the card at 310 denars, all for the form, with no administrative tax. The 2023 amendment of the Law on the Identity Card issues a citizen over 65 a card that never expires, and on written request issues the card within two working days when the residence hasn't changed (whether that costs more isn't stated, so it's null). The card's term below 65, and the ages from which it is issued, are in parts of the law not read, so the term is null and every age is offered.",
+ "sources": [
+  {
+   "url": "https://mvr.gov.mk/mk-MK/uslugi/gragjanski-postapki",
+   "title": "Министерство за внатрешни работи, Граѓански постапки (tariff of individual services)",
+   "read": "2026-10-28",
+   "said": "ЛИЧНА КАРТА 1. Лична карта • 310 денари за образецот • 0 денари административна такса ВКУПНО 310 денари"
+  },
+  {
+   "url": "https://mchamber.mk/Upload/Documents/%D0%97%D0%B0%D0%BA%D0%BE%D0%BD_%D0%B7%D0%B0_%D0%B8%D0%B7%D0%BC%D0%B5%D0%BD%D1%83%D0%B2%D0%B0%D1%9A%D0%B5_%D0%B8_%D0%B4%D0%BE%D0%BF%D0%BE%D0%BB%D0%BD%D1%83%D0%B2%D0%B0%D1%9A%D0%B5_%D0%BD%D0%B0_%D0%97%D0%B0%D0%BA%D0%BE%D0%BD%D0%BE%D1%82_%D0%B7%D0%B0_%D0%BB%D0%B8%D1%87%D0%BD%D0%B0%D1%82%D0%B0_%D0%BA%D0%B0%D1%80%D1%82%D0%B0.pdf",
+   "title": "Economic Chamber of North Macedonia (copy of the Služben vesnik text), Закон за изменување и дополнување на Законот за личната карта (adopted 3 October 2023)",
+   "read": "2026-10-28",
+   "kind": "secondary",
+   "quotes": "https://www.slvesnik.com.mk/",
+   "said": "„На граѓанин над 65 години живот му се издава лична карта со трајно важење.“. ... „По исклучок од ставот 1 на овој член, на писмено барање на граѓанинот кој бара издавање лична карта, личната карта му се издава најдоцна во рок од два ра- ботни дена од денот на поднесување на барањето за из- давање лична карта, во случај кога нема промена на живеалиште или адреса на стан.“."
+  }
+ ]
+}
