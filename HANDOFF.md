@@ -714,33 +714,38 @@ What layer 0 holds:
    `research/sources/papers/passports/<CC>.json` (`papers.passports.<CC>`, R-0451 on): the ordinary passport's fees
    by age and channel in the country's currency, its validity, the standard processing time and the urgent services,
    from the passport office's own pages or, where those refuse this client, the law or regulation that sets them.
-   Each file is in the engine's form described under layer 3 above. 87 so far (2026-10-28), territories included: AR,
-   AS, AT, AU, AW, BA, BB, BE, BM, BQ, BR, BS, BW, BZ, CA, CH, CL, CN, CO, CW, CZ, DE, DK, EC, EE, ES, FI, FJ, FR,
-   GB, GE, GF, GG, GH, GI, GR, GT, GU, GY, HK, HR, HU, IE, IM, IN, IS, IT, JM, JP, KR, KY, LC, LU, MD, MO, MP, MT,
-   MV, MX, MY, NG, NL, NP, PE, PK, PL, PR, PT, PY, RO, RS, RW, SE, SG, SH, SI, SK, SV, SX, TT, TW, UA, UG, US, UY,
-   VI, ZA (Uruguay's fees are in indexed units, UI, whose peso value is still to be read; Australia's are the 2024
-   amounts with the determination's yearly indexation rule, 2026's to be computed from the ABS CPI once the reference
-   period is settled, as its note says; Nigeria's are read through the state broadcaster's report of the Immigration
-   Service's announcement, the Service's site refusing this client, and so stand as secondary; Paraguay's office
-   still shows the fee its 2022 resolution replaced, so the 2022 amount is taken from the press report of it); some
-   with a part still open, said in the file's note (Spain's and Slovenia's fees, Bosnia's fee, Ireland's, Greece's,
-   Romania's, Brazil's, Taiwan's, Nepal's, Barbados', the Bahamas', Belize's, Fiji's, Uganda's, Botswana's,
-   Ecuador's, Macao's and Croatia's validity, Georgia's minors, Peru's fee, Finland's pending ten-year law, most
-   processing times). The attempts for the rest, to become blockers after all five methods, are being logged: Armenia
-   (only consular fees found), Kazakhstan (only secondary sources), Montenegro and Albania (only old or secondary
-   figures found), North Macedonia (mvr.gov.mk resets the connection), Bangladesh (epassport.gov.bd 403; dip.gov.bd's
-   certificate fails verification), Mauritius (its pages give no fee), Tanzania (a JS page that renders empty),
-   Namibia (its certificate fails verification), Zambia, Oman, Brunei, Bhutan (connection reset), Honduras
+   Each file is in the engine's form described under layer 3 above. 91 so far (2026-10-28), territories included: AE,
+   AR, AS, AT, AU, AW, BA, BB, BE, BM, BQ, BR, BS, BW, BZ, CA, CH, CL, CN, CO, CW, CZ, DE, DK, EC, EE, ES, FI, FJ,
+   FR, GB, GE, GF, GG, GH, GI, GR, GT, GU, GY, HK, HR, HU, IE, IM, IN, IS, IT, JM, JO, JP, KR, KY, LB, LC, LU, MD,
+   MO, MP, MT, MV, MX, MY, NG, NL, NP, PE, PK, PL, PR, PT, PY, RO, RS, RU, RW, SE, SG, SH, SI, SK, SV, SX, TT, TW,
+   UA, UG, US, UY, VI, ZA (Uruguay's fees are in indexed units, UI, whose peso value is still to be read; Australia's
+   are the 2024 amounts with the determination's yearly indexation rule, 2026's to be computed from the ABS CPI once
+   the reference period is settled, as its note says; Nigeria's are read through the state broadcaster's report of
+   the Immigration Service's announcement, the Service's site refusing this client, and so stand as secondary;
+   Paraguay's office still shows the fee its 2022 resolution replaced, so the 2022 amount is taken from the press
+   report of it); some with a part still open, said in the file's note (Spain's and Slovenia's fees, Bosnia's fee,
+   Ireland's, Greece's, Romania's, Brazil's, Taiwan's, Nepal's, Barbados', the Bahamas', Belize's, Fiji's, Uganda's,
+   Botswana's, Ecuador's, Macao's and Croatia's validity, Georgia's minors, Peru's fee, Finland's pending ten-year
+   law, most processing times). The attempts for the rest, to become blockers after all five methods, are being
+   logged: Armenia (only consular fees found), Kazakhstan (only secondary sources), Montenegro and Albania (only old
+   or secondary figures found), North Macedonia (mvr.gov.mk resets the connection), Bangladesh (epassport.gov.bd 403;
+   dip.gov.bd's certificate fails verification), Mauritius (its pages give no fee), Tanzania (a JS page that renders
+   empty), Namibia (its certificate fails verification), Zambia, Oman, Brunei, Bhutan (connection reset), Honduras
    (no amounts on its page), Panama (its host fails at the proxy), Bolivia, New Zealand, Ireland's site, Israel
    (Cloudflare), the Philippines (403), Latvia (connection closed), Kenya (its certificate chain fails verification;
    TLS checks stay on), Norway (the fee is in the pass- og ID-kortforskriften § 7-1; lovdata.no answers 405 and
-   norway.no a Cloudflare challenge), Bulgaria (the April 2026 reform's tariff not found), Lithuania (a JS app),
-   Turkey (the yearly duties tariff), Indonesia (PP 45/2024, partly replaced by PP 30/2026), Thailand. Also: Cyprus
-   (an Azure WAF), Morocco (its certificate chain fails verification), the UAE (ICP's page under maintenance when
-   rendered), New Zealand's legislation site (a 202 with an empty body), Vietnam (only secondary sources found), the Dominican Republic and Costa Rica. The scratch log of every attempt is to be carried into the
-   blockers. Then ID, visas, residence and work permissions, and the banks. A question the engine will need settled:
-   which countries issue passports of their own (Hong Kong does; most territories use their sovereign's), recorded
-   with each file.
+   norway.no a Cloudflare challenge), Bulgaria (the April 2026 reform's tariff not found), Lithuania (its rendered
+   site gives only the consular fee, EUR 140, for a passport or ID card), Turkey (the 2026 duties are in Harçlar
+   Kanunu Genel Tebliği No. 98, RG 33124; the Resmi Gazete times out and the NVI resets), Indonesia (PP 45/2024,
+   partly replaced by PP 30/2026), Thailand. Also: Cyprus (an Azure WAF), Morocco (its certificate chain fails
+   verification), the UAE (ICP's page under maintenance when rendered), New Zealand's legislation site (a 202 with an
+   empty body), Vietnam (only secondary sources found), the Dominican Republic, Costa Rica, Egypt and Algeria (press
+   only), Kazakhstan, Bahrain and Qatar (old or secondary figures), Indonesia (PP 45/2024 not read in an official
+   text), Thailand (embassy tables only), Greenland and the Faroe Islands, Jersey (a WAF block page), Anguilla, the
+   British Virgin Islands, the Turks and Caicos, Antigua, Grenada (a cookie challenge, not worked around) and Saint
+   Vincent. The scratch log of every attempt is to be carried into the blockers. Then ID, visas, residence and work
+   permissions, and the banks. A question the engine will need settled: which countries issue passports of their own
+   (Hong Kong does; most territories use their sovereign's), recorded with each file.
 
 ## Verification evidence
 
