@@ -514,6 +514,12 @@ What layer 0 holds:
    - MZ: done 2026-10-28 from Lei n.º 13/2023 (Lei do Trabalho), art. 105, in the Boletim da República the Tribunal
      Supremo hosts (ts.gov.mz): nine days, a Sunday's day off deferred to the next day. Art. 106's tolerâncias de ponto
      are granted one by one by the Minister: not kept.
+   - LB: done 2026-10-28 from décret 15215/2005 as amended (the Prime Minister's office's holiday table, pcm.gov.lb,
+     plain http) and its 2026 memos (read through the memo list's own pager): both Easters' Good Friday and Easter
+     Monday (memos 7/2026 and 14/2025), 4 August by décret 8007/2021, the Hijri days as the memos closed them (Fitr 20
+     to 23 March, Adha 27 to 29 May, Ashura 26 June) and declared closures (9 April, 25 May). From 2027 the Hijri days
+     by Umm al-Qura. Saturday closures for special-schedule offices (14 February, 15 August, the Easters' coinciding
+     Saturday) aren't days off: not kept.
    - MW: blocked 2026-10-27: the Act's Schedule is read only as consolidated at 31 December 2014 (commons.laws.africa
      /akn/mw/act/1967/11/eng@2014-12-31.pdf); the Gazette orders since (Africa Day, Chakufwa Chihana Day, Eid al-Adha?)
      and 2026's orders are unread. Laws.Africa's commons host also serves other LIIs' consolidations past their bot
