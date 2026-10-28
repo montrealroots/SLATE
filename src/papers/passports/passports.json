@@ -1406,6 +1406,44 @@
  "CX": {
   "issuedBy": "AU"
  },
+ "CY": {
+  "currency": "EUR",
+  "routes": [
+   {
+    "id": "standard",
+    "where": "home",
+    "speed": "standard",
+    "within": {
+     "n": 10,
+     "unit": "working day"
+    }
+   },
+   {
+    "id": "expedited",
+    "where": "home",
+    "speed": "urgent",
+    "within": null
+   }
+  ],
+  "bands": [
+   {
+    "validYears": 10,
+    "pay": {
+     "standard": 7000,
+     "expedited": 12000
+    },
+    "from": 18
+   },
+   {
+    "validYears": 5,
+    "pay": {
+     "standard": 4500,
+     "expedited": 9500
+    },
+    "under": 18
+   }
+  ]
+ },
  "CZ": {
   "currency": "CZK",
   "routes": [
@@ -1947,6 +1985,43 @@
    }
   ]
  },
+ "FK": {
+  "currency": "FKP",
+  "routes": [
+   {
+    "id": "home",
+    "where": "home",
+    "speed": "standard",
+    "within": null
+   }
+  ],
+  "bands": [
+   {
+    "validYears": null,
+    "pay": {
+     "home": 15530
+    },
+    "from": 16,
+    "pages": 34
+   },
+   {
+    "validYears": null,
+    "pay": {
+     "home": 16930
+    },
+    "from": 16,
+    "pages": 50
+   },
+   {
+    "validYears": 5,
+    "pay": {
+     "home": 11430
+    },
+    "under": 16,
+    "pages": 34
+   }
+  ]
+ },
  "FM": {
   "currency": "USD",
   "routes": [
@@ -2100,6 +2175,12 @@
      "n": 4,
      "unit": "hour"
     }
+   },
+   {
+    "id": "abroad-online",
+    "where": "abroad",
+    "speed": "standard",
+    "within": null
    }
   ],
   "bands": [
@@ -2109,7 +2190,8 @@
      "online": 10200,
      "paper": 11550,
      "fast-track": 19200,
-     "premium": 23950
+     "premium": 23950,
+     "abroad-online": 13082
     },
     "from": 16,
     "pages": 34
@@ -2120,7 +2202,8 @@
      "online": 11600,
      "paper": 12950,
      "fast-track": 20600,
-     "premium": 25350
+     "premium": 25350,
+     "abroad-online": 14482
     },
     "from": 16,
     "pages": 54
@@ -2130,7 +2213,8 @@
     "pay": {
      "online": 6650,
      "paper": 8000,
-     "fast-track": 15650
+     "fast-track": 15650,
+     "abroad-online": 8982
     },
     "under": 16,
     "pages": 34
@@ -2140,7 +2224,8 @@
     "pay": {
      "online": 8050,
      "paper": 9400,
-     "fast-track": 17050
+     "fast-track": 17050,
+     "abroad-online": 10382
     },
     "under": 16,
     "pages": 54
@@ -2902,6 +2987,12 @@
     "under": 18,
     "pages": 36
    }
+  ]
+ },
+ "IO": {
+  "issuedBy": "GB",
+  "onlyRoutes": [
+   "abroad-online"
   ]
  },
  "IS": {
@@ -5094,6 +5185,12 @@
     },
     "under": 18
    }
+  ]
+ },
+ "PN": {
+  "issuedBy": "GB",
+  "onlyRoutes": [
+   "abroad-online"
   ]
  },
  "PR": {
