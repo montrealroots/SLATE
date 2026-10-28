@@ -2,7 +2,7 @@ import { copyFileSync, cpSync, mkdirSync, mkdtempSync, readdirSync, readFileSync
 import { tmpdir } from 'node:os';
 import { dirname, join } from 'node:path';
 import { describe, expect, it } from 'vitest';
-import { BENCHMARK, CARRIED_TO, carryForward, compileLevels, currencyUnits, decimal, FROM, icpBenchmark, INDICES, mean, OUTPUT, PLACES, readLevels, sameCurrency, serialize, SOURCES, threeLetterCodes, UNIT_WORDS, US_INDEX, withCarried, type Indices } from '../../tools/prices/compile.ts';
+import { BENCHMARK, CARRIED_TO, carryForward, relativeLevel, compileLevels, currencyUnits, decimal, FROM, icpBenchmark, INDICES, mean, OUTPUT, PLACES, readLevels, sameCurrency, serialize, SOURCES, threeLetterCodes, UNIT_WORDS, US_INDEX, withCarried, type Indices } from '../../tools/prices/compile.ts';
 import { CARRIED_FACTS, COVERAGE, coverageOf, CURRENCY_FACTS, NO_PLACES, pricesCoverage, serializeCoverage, TESTS, TOLD } from '../../tools/prices/coverage.ts';
 
 const ROOT = join(import.meta.dirname, '../..');
@@ -20,8 +20,8 @@ const UNITS = new Map([
   ['XD', 'U.S. dollar'],
 ]);
 const CURRENCIES = { US: 'USD', JP: 'JPY', XD: 'USD' };
-/** The countries carried from the benchmark: one index file each, besides the United States'. */
-const CARRIED = readdirSync(join(ROOT, INDICES)).length - 1;
+/** The countries carried from the benchmark or priced against another: one file each, besides the indices others are carried against. */
+const CARRIED = readdirSync(join(ROOT, INDICES)).filter((f) => /^[A-Z]{2}\.json$/.test(f)).length;
 const year = (y: number, ...values: string[]) => ({ year: y, values });
 const indices = (from: string[], to: string[]): Indices => ({ from: year(2021, ...from), to: year(2025, ...to) });
 
@@ -51,6 +51,8 @@ describe('the price levels compiler', () => {
       { ppp: '2.75548696215787', year: 2024 },
     ]);
     // Argentina's 2021 level carried by INDEC's index (means 490.554858.. and 8966.166533..) over the CPI-U's (270.96975 and 321.943).
+    // Guadeloupe, priced against France: France's 0.732501 euros x INSEE's 2022 gap (1.158), carried by the two indices.
+    expect(levels['GP']).toEqual({ ppp: '0.848586213156', year: 2025 });
     expect([levels['AR'], levels['AD']]).toEqual([
       { ppp: '661.287794234474', year: 2025 },
       { ppp: '0.636851408291', year: 2025 },
@@ -153,21 +155,40 @@ describe('the price levels compiler', () => {
     expect(() => carryForward('2', { from: year(2021, '1'), to: year(2026, '1') }, us, 'SN')).toThrow("SN's index is carried to 2026, not a year from 2024 to 2025");
     expect(() => carryForward('2', indices(['1'], ['1']), { from: year(2021, '1'), to: year(2024, '1') }, 'SN')).toThrow("the United States' index has no 2025");
   });
+  it("prices a country against another's level by the gap a survey measured, carried by the two indices", () => {
+    const rel = { to: 'FR', gap: '1.1', year: 2022, index: 'fr-cpi' };
+    const fr = { from: year(2022, '100'), to: year(2025, '110') };
+    const own = { from: year(2022, '50', '150'), to: year(2025, '121') };
+    // 0.8 x 1.1 x (121 / 100) / (110 / 100) = 0.968
+    expect(relativeLevel({ ppp: '0.8', year: 2025 }, own, rel, fr, 'GP')).toStrictEqual({ ppp: '0.968', year: 2025 });
+    expect(relativeLevel({ ppp: '0.8', year: 2024 }, { ...own, to: year(2024, '110') }, rel, { ...fr, to: year(2024, '100') }, 'GP')).toStrictEqual({ ppp: '0.968', year: 2024 });
+    expect(() => relativeLevel(undefined, own, rel, fr, 'GP')).toThrow("GP is priced against FR, which the World Bank doesn't price from 2024 on");
+    expect(() => relativeLevel({ ppp: '0.8', year: 2025 }, own, rel, undefined, 'GP')).toThrow("GP is carried by fr-cpi, which isn't among the indices");
+    expect(() => relativeLevel({ ppp: '0.8', year: 2025 }, { ...own, from: year(2021, '1') }, rel, fr, 'GP')).toThrow("GP's index is for 2021, not 2022");
+    expect(() => relativeLevel({ ppp: '0.8', year: 2025 }, own, rel, { ...fr, from: year(2021, '1') }, 'GP')).toThrow("FR's index is for 2021, not 2022");
+    expect(() => relativeLevel({ ppp: '0.8', year: 2024 }, own, rel, fr, 'GP')).toThrow("GP's index is for 2025, not 2024");
+    expect(() => relativeLevel({ ppp: '0.8', year: 2024 }, { ...own, to: year(2024, '1') }, rel, fr, 'GP')).toThrow("FR's index is for 2025, not 2024");
+    // Through the levels: against the World Bank's own level, in the same currency only.
+    const levels = { FR: { ppp: '0.8', year: 2025 } };
+    const relative = { ...own, relative: rel };
+    expect(withCarried(levels, [], { 'fr-cpi': fr }, { GP: relative }, new Map(), { FR: 'EUR', GP: 'EUR' })).toStrictEqual({ FR: { ppp: '0.8', year: 2025 }, GP: { ppp: '0.968', year: 2025 } });
+    expect(() => withCarried(levels, [], { 'fr-cpi': fr }, { GP: relative }, new Map(), { FR: 'EUR', GP: 'USD' })).toThrow("GP is priced against FR, whose currency isn't its own");
+  });
   it('adds the carried levels to the World Bank\'s, refusing a country it prices already, one without a benchmark, or one in another currency', () => {
     const us = indices(['100'], ['110']);
     const kept = { US: { ppp: '1', year: 2025 } };
     const benchmark = [row('JP', '2020', 90), row('JP', '2021', 100), row('US', '2021', 1)];
-    expect(withCarried(kept, benchmark, us, { JP: indices(['100'], ['121']) }, UNITS, CURRENCIES)).toStrictEqual({ JP: { ppp: '110', year: 2025 }, US: { ppp: '1', year: 2025 } });
-    expect(Object.keys(withCarried({ ZZ: { ppp: '1', year: 2025 } }, benchmark, us, { JP: indices(['100'], ['121']) }, UNITS, CURRENCIES))).toEqual(['JP', 'ZZ']);
-    expect(withCarried(kept, benchmark, us, {}, UNITS, CURRENCIES)).toStrictEqual(kept);
+    expect(withCarried(kept, benchmark, { [US_INDEX]: us }, { JP: indices(['100'], ['121']) }, UNITS, CURRENCIES)).toStrictEqual({ JP: { ppp: '110', year: 2025 }, US: { ppp: '1', year: 2025 } });
+    expect(Object.keys(withCarried({ ZZ: { ppp: '1', year: 2025 } }, benchmark, { [US_INDEX]: us }, { JP: indices(['100'], ['121']) }, UNITS, CURRENCIES))).toEqual(['JP', 'ZZ']);
+    expect(withCarried(kept, benchmark, { [US_INDEX]: us }, {}, UNITS, CURRENCIES)).toStrictEqual(kept);
     // Where two benchmarks price a country, the first is taken (the World Bank's indicators' own, before the Program's).
-    expect(withCarried(kept, [...benchmark, row('JP', '2021', 50)], us, { JP: indices(['100'], ['121']) }, UNITS, CURRENCIES).JP).toStrictEqual({ ppp: '110', year: 2025 });
-    expect(() => withCarried(kept, benchmark, us, { US: us }, UNITS, CURRENCIES)).toThrow("the World Bank prices US from 2024 on; its own index isn't needed");
-    expect(() => withCarried(kept, [row('JP', '2020', 90)], us, { JP: us }, UNITS, CURRENCIES)).toThrow('the World Bank has no 2021 level for JP');
-    expect(() => withCarried(kept, [row('JP', '2021', null)], us, { JP: us }, UNITS, CURRENCIES)).toThrow('the World Bank has no 2021 level for JP');
-    expect(() => withCarried(kept, benchmark, us, { JP: us }, UNITS, { JP: 'USD' })).toThrow('the World Bank prices JP in Japanese yen, not USD');
-    expect(() => withCarried(kept, benchmark, us, { JP: us }, new Map(), CURRENCIES)).toThrow('the World Bank prices JP in no currency it names, not JPY');
-    expect(() => withCarried(kept, benchmark, us, { JP: us }, UNITS, {})).toThrow('the World Bank prices JP in Japanese yen, not none');
+    expect(withCarried(kept, [...benchmark, row('JP', '2021', 50)], { [US_INDEX]: us }, { JP: indices(['100'], ['121']) }, UNITS, CURRENCIES).JP).toStrictEqual({ ppp: '110', year: 2025 });
+    expect(() => withCarried(kept, benchmark, { [US_INDEX]: us }, { US: us }, UNITS, CURRENCIES)).toThrow("the World Bank prices US from 2024 on; its own index isn't needed");
+    expect(() => withCarried(kept, [row('JP', '2020', 90)], { [US_INDEX]: us }, { JP: us }, UNITS, CURRENCIES)).toThrow('the World Bank has no 2021 level for JP');
+    expect(() => withCarried(kept, [row('JP', '2021', null)], { [US_INDEX]: us }, { JP: us }, UNITS, CURRENCIES)).toThrow('the World Bank has no 2021 level for JP');
+    expect(() => withCarried(kept, benchmark, { [US_INDEX]: us }, { JP: us }, UNITS, { JP: 'USD' })).toThrow('the World Bank prices JP in Japanese yen, not USD');
+    expect(() => withCarried(kept, benchmark, { [US_INDEX]: us }, { JP: us }, new Map(), CURRENCIES)).toThrow('the World Bank prices JP in no currency it names, not JPY');
+    expect(() => withCarried(kept, benchmark, { [US_INDEX]: us }, { JP: us }, UNITS, {})).toThrow('the World Bank prices JP in Japanese yen, not none');
   });
   it("reads GeoNames' three-letter codes, its comments and blank lines left out", () => {
     expect([...threeLetterCodes('#ISO\tISO3\n\nTW\tTWN\tx\nAI\tAIA\n')]).toEqual([
@@ -209,20 +230,23 @@ describe("the prices' coverage", () => {
     ['world.prices.ppp-2021', 'R-0004'],
     ['world.prices.us-cpi', 'R-0005'],
     ['world.prices.AR', 'R-0006'],
+    ['world.prices.GP', 'R-0007'],
+    ['world.prices.fr-metro-cpi', 'R-0008'],
   ]);
   it('is researched where a level is kept, blocked where the register holds why not, pending otherwise, and proven where no place is', () => {
-    const rows = pricesCoverage(['US', 'AR', 'KP', 'TW', 'AQ'], new Set(['US', 'AR', 'KP', 'TW']), new Set(['US', 'AR', 'AQ']), facts);
+    const rows = pricesCoverage(['US', 'AR', 'GP', 'KP', 'TW', 'AQ'], new Set(['US', 'AR', 'GP', 'KP', 'TW']), new Set(['US', 'AR', 'GP', 'AQ']), facts, new Map([['GP', 'fr-metro-cpi']]));
     expect(rows).toStrictEqual([
       { key: 'US', status: 'researched', register: ['R-0001', 'R-0002', 'R-0003'], tests: TESTS },
       { key: 'AR', status: 'researched', register: ['R-0001', 'R-0002', 'R-0004', 'R-0005', 'R-0006'], tests: TESTS },
+      { key: 'GP', status: 'researched', register: ['R-0001', 'R-0002', 'R-0003', 'R-0007', 'R-0008'], tests: TESTS },
       { key: 'KP', status: 'blocked', register: ['R-0009'], tests: [...TESTS, TOLD] },
       { key: 'TW', status: 'pending' },
       { key: 'AQ', status: 'proven', tests: [NO_PLACES] },
     ]);
     // Without the levels' register entry, a level isn't researched.
-    expect(pricesCoverage(['US'], new Set(['US']), new Set(['US']), new Map())).toStrictEqual([{ key: 'US', status: 'pending' }]);
+    expect(pricesCoverage(['US'], new Set(['US']), new Set(['US']), new Map(), new Map())).toStrictEqual([{ key: 'US', status: 'pending' }]);
     // Nor a country whose own index the register cites, without a level.
-    expect(pricesCoverage(['AR'], new Set(['AR']), new Set(), facts)).toStrictEqual([{ key: 'AR', status: 'pending' }]);
+    expect(pricesCoverage(['AR'], new Set(['AR']), new Set(), facts, new Map())).toStrictEqual([{ key: 'AR', status: 'pending' }]);
     expect(CURRENCY_FACTS).toEqual(['world.gazetteer.countries', 'money.iso4217.list-one']);
     expect(CARRIED_FACTS).toEqual(['world.prices.ppp-2021', 'world.prices.us-cpi']);
     expect(TESTS).toEqual(["tests/world/prices/prices.test.ts::the prices > are the World Bank's levels, or carried from its benchmark, in each country's own currency", 'tests/world/prices/prices.test.ts::the prices > at every place on the map']);

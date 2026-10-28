@@ -26,7 +26,7 @@ restarts. Read `CLAUDE.md` and the owner's package in `docs/` first.
   Kedah, Kelantan and Terengganu); Western Sahara keeps Morocco's days by the owner's ruling of 2026-10-28; its code
   at 100% mutation score (532 mutants, with the regions' and the shared substitutes' rules). The prices
   (`world.prices`): the engine is built and tested, at 100% mutation score; 172 countries researched from the World
-  Bank's levels and 21 carried from the 2021 benchmark, 6 proven, 53 pending (the next step).
+  Bank's levels, 21 carried from the 2021 benchmark and 4 priced against France, 6 proven, 49 pending (the next step).
 
 What layer 2 holds so far:
 
@@ -141,7 +141,14 @@ What layer 2 holds so far:
   metadata), vendored and pinned with R-0374; where both price an economy the indicators' value is taken (the two
   agree outside the Eurostat-OECD programme). Bonaire is in the Program but is only a part of the Caribbean
   Netherlands (BQ), so it isn't used for BQ as a whole. Anguilla (the Statistics Department's workbook, quarters)
-  and Montserrat (its monthly workbooks) are carried from the Program's level.
+  and Montserrat (its monthly workbooks) are carried from the Program's level. A country the Program doesn't price
+  but a spatial survey does is priced against the country it was compared with (`relative` in its file): that
+  country's World Bank level times the survey's gap, carried from the survey's year by the two indices. Done so:
+  Guadeloupe, Martinique, Guyane and La Réunion, from INSEE's 2022 spatial price survey (Insee Première n° 1958,
+  Fisher gaps to metropolitan France of 15.8, 13.8, 13.7 and 8.9%), their monthly indices from INSEE's December 2025
+  Flash workbooks and metropolitan France's annual index from INSEE's BDM (`fr-metro-cpi`). France's level is for
+  France as a whole (the departments are about 3% of it). Mayotte's gap (10.3%) excludes rents and its index is on a
+  base of its own (December 2021) with no 2022 months in its workbook: still to do.
 
 What layer 1 holds:
 

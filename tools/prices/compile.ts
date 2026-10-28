@@ -127,6 +127,15 @@ export interface Indices {
   to: Year;
   /** Other years the index is carried to (the United States', for a country whose own stops before CARRIED_TO). */
   also?: Year[];
+  /** For a country the Program doesn't price, its price gap to one the World Bank does, measured in a year by a spatial survey. */
+  relative?: Relative;
+}
+export interface Relative {
+  /** The country priced against, its gap (its prices over that country's, as a factor), the survey's year, and that country's index file. */
+  to: string;
+  gap: string;
+  year: number;
+  index: string;
 }
 
 /** A year's mean, exactly; a year that isn't the one wanted, or a value that isn't a decimal above zero, is refused. */
@@ -167,18 +176,37 @@ export function carryForward(ppp: string, own: Indices, us: Indices, code: strin
 }
 
 /**
- * The levels with the carried ones added: each country with indices of its own, its benchmark level carried forward. A country the World Bank already prices from FROM on, or one without a benchmark, is refused, as is a
+ * A level measured against another country's: that country's level times the gap a spatial survey measured in its
+ * year, carried to the level's year by the country's own index over the other's.
+ */
+export function relativeLevel(parent: Level | undefined, own: Indices, relative: Relative, parentIndex: Indices | undefined, code: string): Level {
+  if (parent === undefined) throw new Error(`${code} is priced against ${relative.to}, which the World Bank doesn't price from ${FROM} on`);
+  if (parentIndex === undefined) throw new Error(`${code} is carried by ${relative.index}, which isn't among the indices`);
+  const [p, g] = [rational(parent.ppp), rational(relative.gap)];
+  const [of, ot, pf, pt] = [mean(own.from, relative.year, code), mean(own.to, parent.year, code), mean(parentIndex.from, relative.year, relative.to), mean(parentIndex.to, parent.year, relative.to)];
+  return { ppp: decimal(p.num * g.num * ot.num * of.den * pf.num * pt.den, p.den * g.den * ot.den * of.num * pf.den * pt.num), year: parent.year };
+}
+
+/**
+ * The levels with the carried ones added: each country with indices of its own, its benchmark level carried forward,
+ * or, for one priced against another, its level relative to that one's. A country the World Bank already prices from FROM on, or one without a benchmark, is refused, as is a
  * benchmark in a currency not the country's.
  */
-export function withCarried(levels: Readonly<Record<string, Level>>, benchmark: readonly Row[], us: Indices, own: Readonly<Record<string, Indices>>, units: ReadonlyMap<string, string>, currencies: Readonly<Record<string, string>>): Record<string, Level> {
+export function withCarried(levels: Readonly<Record<string, Level>>, benchmark: readonly Row[], shared: Readonly<Record<string, Indices>>, own: Readonly<Record<string, Indices>>, units: ReadonlyMap<string, string>, currencies: Readonly<Record<string, string>>): Record<string, Level> {
   const out: Record<string, Level> = { ...levels };
   for (const [code, indices] of Object.entries(own)) {
     if (Object.hasOwn(levels, code)) throw new Error(`the World Bank prices ${code} from ${FROM} on; its own index isn't needed`);
+    const rel = indices.relative;
+    if (rel !== undefined) {
+      if (currencies[code] !== currencies[rel.to]) throw new Error(`${code} is priced against ${rel.to}, whose currency isn't its own`);
+      out[code] = relativeLevel(levels[rel.to], indices, rel, shared[rel.index], code);
+      continue;
+    }
     const value = benchmark.find((r) => r.country.id === code && r.date === String(BENCHMARK))?.value ?? null;
     if (value === null) throw new Error(`the World Bank has no ${BENCHMARK} level for ${code}`);
     const unit = units.get(code) ?? '';
     if (!sameCurrency(unit, String(currencies[code]))) throw new Error(`the World Bank prices ${code} in ${unit === '' ? 'no currency it names' : unit}, not ${currencies[code] ?? 'none'}`);
-    out[code] = carryForward(String(value), indices, us, code);
+    out[code] = carryForward(String(value), indices, shared[US_INDEX] as Indices, code);
   }
   return Object.fromEntries(Object.keys(out).sort().map((code) => [code, out[code] as Level]));
 }
@@ -245,9 +273,10 @@ export function readLevels(root: string): { levels: Record<string, Level>; unmap
     JSON.parse(pinned(root, SOURCES.icpMetadata.file, SOURCES.icpMetadata.sha256)) as IcpMetadata,
     threeLetterCodes(pinned(root, SOURCES.geonames.file, SOURCES.geonames.sha256)),
   );
-  const codes = readdirSync(join(root, INDICES)).map((f) => basename(f, '.json')).filter((n) => n !== US_INDEX);
-  const own = Object.fromEntries(codes.map((code) => [code, cited(root, code, `world.prices.${code}`, register)]));
-  return { levels: withCarried(levels, [...benchmark[1], ...icp.rows], cited(root, US_INDEX, 'world.prices.us-cpi', register), own, new Map([...icp.units, ...units]), currencies), unmapped };
+  // A country's file is named by its code; an index others are carried against (the United States', France's) by a lower-case name.
+  const names = readdirSync(join(root, INDICES)).map((f) => basename(f, '.json'));
+  const read = (shared: boolean) => Object.fromEntries(names.filter((n) => /[a-z]/.test(n) === shared).map((n) => [n, cited(root, n, `world.prices.${n}`, register)]));
+  return { levels: withCarried(levels, [...benchmark[1], ...icp.rows], read(true), read(false), new Map([...icp.units, ...units]), currencies), unmapped };
 }
 
 export const serialize = (levels: Readonly<Record<string, Level>>) => `${JSON.stringify(levels, null, 1)}\n`;

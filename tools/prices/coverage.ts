@@ -4,8 +4,9 @@ import { join } from 'node:path';
 /**
  * The prices' coverage matrix (coverage/prices-countries.json), from the levels and the register: a country with a
  * level is researched, citing the World Bank's levels (world.prices.ppp), or, for one carried from the 2021 benchmark,
- * its own index (world.prices.<code>), the benchmark and the United States' index, and the currency the gazetteer and
- * ISO 4217 give it; one without is blocked where the register holds its blocker (world.prices.blocked.<code>), else pending; a
+ * its own index (world.prices.<code>), the benchmark and the United States' index, or, for one priced against
+ * another, its own file, the World Bank's levels and the other's index; and the currency the gazetteer and ISO 4217
+ * give it; one without is blocked where the register holds its blocker (world.prices.blocked.<code>), else pending; a
  * country with no place of its own is proven by the gazetteer's test that it has none.
  */
 export const COVERAGE = 'coverage/prices-countries.json';
@@ -25,11 +26,17 @@ export type Row =
   | { key: string; status: 'pending' }
   | { key: string; status: 'proven'; tests: string[] };
 
-export function pricesCoverage(countries: readonly string[], withPlaces: ReadonlySet<string>, levels: ReadonlySet<string>, facts: ReadonlyMap<string, string>): Row[] {
+/**
+ * `relatives` names, for a country priced against another, the index its gap is carried against: it cites its own
+ * file, that index and the World Bank's levels (the other country's).
+ */
+export function pricesCoverage(countries: readonly string[], withPlaces: ReadonlySet<string>, levels: ReadonlySet<string>, facts: ReadonlyMap<string, string>, relatives: ReadonlyMap<string, string>): Row[] {
   return countries.map((key): Row => {
     if (!withPlaces.has(key)) return { key, status: 'proven', tests: [NO_PLACES] };
     const own = facts.get(`world.prices.${key}`);
-    const cited = own === undefined ? ['world.prices.ppp'] : [`world.prices.${key}`, ...CARRIED_FACTS];
+    const index = relatives.get(key);
+    const carried = index === undefined ? CARRIED_FACTS : ['world.prices.ppp', `world.prices.${index}`];
+    const cited = own === undefined ? ['world.prices.ppp'] : [`world.prices.${key}`, ...carried];
     if (levels.has(key) && facts.has(cited[0] as string)) return { key, status: 'researched', register: [...cited, ...CURRENCY_FACTS].map((f) => facts.get(f) as string).sort(), tests: TESTS };
     const blocker = facts.get(`world.prices.blocked.${key}`);
     return blocker === undefined ? { key, status: 'pending' } : { key, status: 'blocked', register: [blocker], tests: [...TESTS, TOLD] };
@@ -45,5 +52,8 @@ export function coverageOf(root: string): string {
   const withPlaces = new Set(readdirSync(join(root, 'src/world/gazetteer/places')).map((f) => f.slice(0, 2)));
   const levels = new Set(Object.keys(read('src/world/prices/levels.json') as object));
   const facts = new Map((read('research/register.json') as { entries: { id: string; fact: string }[] }).entries.map((e) => [e.fact, e.id] as const));
-  return serializeCoverage(pricesCoverage(countries, withPlaces, levels, facts));
+  // A country with a file of its own (world.prices.<code>) may be priced against another.
+  const own = countries.filter((c) => facts.has(`world.prices.${c}`));
+  const relatives = new Map(own.flatMap((c) => { const r = (read(`research/sources/prices/${c}.json`) as { relative?: { index: string } }).relative; return r === undefined ? [] : [[c, r.index] as const]; }));
+  return serializeCoverage(pricesCoverage(countries, withPlaces, levels, facts, relatives));
 }
