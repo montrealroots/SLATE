@@ -974,6 +974,26 @@
    }
   ]
  },
+ "EC": {
+  "document": "Cédula de identidad",
+  "currency": "USD",
+  "routes": [
+   {
+    "id": "office",
+    "where": "home",
+    "speed": "standard",
+    "within": null
+   }
+  ],
+  "bands": [
+   {
+    "validYears": 10,
+    "pay": {
+     "office": null
+    }
+   }
+  ]
+ },
  "EE": {
   "document": "ID-kaart",
   "currency": "EUR",
@@ -2332,6 +2352,47 @@
    }
   ]
  },
+ "PE": {
+  "document": "Documento Nacional de Identidad electrónico (DNIe 3.0)",
+  "currency": "PEN",
+  "routes": [
+   {
+    "id": "office",
+    "where": "home",
+    "speed": "standard",
+    "within": {
+     "n": 10,
+     "unit": "working day"
+    }
+   },
+   {
+    "id": "web",
+    "where": "home",
+    "speed": "standard",
+    "within": null
+   }
+  ],
+  "bands": [
+   {
+    "validYears": 10,
+    "pay": {
+     "office": 4100,
+     "web": 4100
+    },
+    "from": 17,
+    "under": 60
+   },
+   {
+    "validYears": null,
+    "pay": {
+     "office": 4100,
+     "web": 4100
+    },
+    "from": 60,
+    "permanent": true
+   }
+  ]
+ },
  "PF": {
   "issuedBy": "FR"
  },
@@ -3032,6 +3093,46 @@
  },
  "US": {
   "none": true
+ },
+ "UY": {
+  "document": "Documento Nacional de Identidad (cédula de identidad)",
+  "currency": "UYU",
+  "routes": [
+   {
+    "id": "child",
+    "where": "home",
+    "speed": "standard",
+    "within": {
+     "n": 1,
+     "unit": "day"
+    }
+   },
+   {
+    "id": "office",
+    "where": "home",
+    "speed": "standard",
+    "within": {
+     "n": 5,
+     "unit": "working day"
+    }
+   }
+  ],
+  "bands": [
+   {
+    "validYears": null,
+    "pay": {
+     "child": 45600
+    },
+    "under": 10
+   },
+   {
+    "validYears": null,
+    "pay": {
+     "office": 45600
+    },
+    "from": 10
+   }
+  ]
  },
  "VI": {
   "issuedBy": "US"
