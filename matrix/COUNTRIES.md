@@ -5,7 +5,7 @@ a place fills a column; a cell is the row's status in that engine's matrix, or b
 
 | Code | Country | `world.gazetteer` | `world.map` | `world.clock` | `world.weather` | `world.holidays` | `world.prices` |
 |---|---|---|---|---|---|---|---|
-| AD | Andorra | researched | researched | researched | blocked | researched | pending |
+| AD | Andorra | researched | researched | researched | blocked | researched | researched |
 | AE | United Arab Emirates | researched | researched | researched | researched | researched | researched |
 | AF | Afghanistan | researched | researched | researched | researched | blocked | researched |
 | AG | Antigua and Barbuda | researched | researched | researched | blocked | researched | researched |
@@ -15,7 +15,7 @@ a place fills a column; a cell is the row's status in that engine's matrix, or b
 | AN | Netherlands Antilles | researched | researched | proven | proven | proven | proven |
 | AO | Angola | researched | researched | researched | researched | researched | researched |
 | AQ | Antarctica | researched | researched | proven | proven | proven | proven |
-| AR | Argentina | researched | researched | researched | researched | blocked | pending |
+| AR | Argentina | researched | researched | researched | researched | blocked | researched |
 | AS | American Samoa | researched | researched | researched | researched | researched | pending |
 | AT | Austria | researched | researched | researched | researched | researched | researched |
 | AU | Australia | researched | researched | researched | researched | blocked | researched |

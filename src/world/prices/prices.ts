@@ -6,9 +6,10 @@ import data from './levels.json' with { type: 'json' };
 /**
  * Prices by country (src/world/prices/levels.json): each country's price level for what households buy, as the
  * International Comparison Program measures it and the World Bank carries it to later years (register R-0373), in the
- * country's own currency per US dollar spent in the United States. A thing's price in a country is its price in the
- * United States times that level, in the currency the gazetteer gives the country. A country without a level from
- * 2024 on has none here, and the player is told.
+ * country's own currency per US dollar spent in the United States; where the World Bank stops at the 2021 benchmark,
+ * carried to 2025 the same way by the country's own consumer price index (R-0374 on). A thing's price in a country is
+ * its price in the United States times that level, in the currency the gazetteer gives the country. A country
+ * without a level has none here, and the player is told.
  */
 export interface Level {
   /** Units of the country's currency that buy what a US dollar buys in the United States, as a decimal written out. */

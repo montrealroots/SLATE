@@ -1,25 +1,38 @@
 import { createHash } from 'node:crypto';
-import { readFileSync } from 'node:fs';
-import { join } from 'node:path';
+import { readdirSync, readFileSync } from 'node:fs';
+import { basename, join } from 'node:path';
 import money from '../../src/core/money/currencies.json' with { type: 'json' };
+import { rational, roundHalfEven } from '../../src/core/money/money.ts';
 
 /**
  * Compiles the price levels the prices engine reads (src/world/prices/levels.json) from the World Bank's World
  * Development Indicators as last updated on 2026-10-08 (register R-0373): the PPP conversion factor for households'
  * final consumption (PA.NUS.PRVT.PP), in a country's own currency per international dollar, which the International
  * Comparison Program measured for 2021 and the World Bank carries to later years. A country's level is its latest
- * year from 2024 on; a country with none since is left to research of its own. Each file is checked against its
- * pinned SHA-256 before a byte of it is read.
+ * year from 2024 on. A country the World Bank last priced at the Program's 2021 benchmark has its level carried from
+ * that benchmark to 2025 as the World Bank carries its own (R-0374): by its consumer price index's change against the
+ * United States' over the same years, the index read from its own statistics office (research/sources/prices/,
+ * world.prices.<code>) and the United States' from the Bureau of Labor Statistics (R-0375). Each file is checked
+ * against its pinned SHA-256, or the one the register cites, before a byte of it is read.
  */
 export const SOURCES = {
   ppp: { file: 'vendor/worldbank/PA.NUS.PRVT.PP.json', sha256: '475c4daef315d46d208e212d630ed8a163087520b6a09e068e44080e6fb72af8' },
   economies: { file: 'vendor/worldbank/countries.json', sha256: 'c9acf3932785191a649cbc04c3056af4cf64a236e5c3b49d49be25ddb0440bce' },
   metadata: { file: 'vendor/worldbank/country-metadata.json', sha256: '8c5d4e28e2e368999d1e16301b19cef7b9be1a7d8cf81c75602d14f481ebcf71' },
+  benchmark: { file: 'vendor/worldbank/PA.NUS.PRVT.PP-2021.json', sha256: 'ce5f050f50ca4dec3c2943bd62df76008fe872c05f9445ddd700d40292ac2f6c' },
 } as const;
+/** The indices a level is carried by: each country's file, and the United States'. */
+export const INDICES = 'research/sources/prices';
+export const US_INDEX = 'us-cpi';
 
 export const OUTPUT = 'src/world/prices/levels.json';
 /** The first year a level is kept from: older ones are too far behind the prices the game opens on (2026). */
 export const FROM = 2024;
+/** The International Comparison Program's last benchmark, and the year a level from it is carried to (the World Bank's latest). */
+export const BENCHMARK = 2021;
+export const CARRIED_TO = 2025;
+/** The places a carried level is written to (the World Bank's own run to fifteen digits). */
+export const PLACES = 12;
 
 /** The World Bank's word for a currency where it isn't ISO 4217's last (the same currency, spelled another way). */
 export const UNIT_WORDS: Record<string, string> = { XOF: 'cfa franc', XAF: 'cfa franc', BYN: 'rubel', CNY: 'yuan', ILS: 'shekel', NIO: 'cordoba', QAR: 'riyal', UYU: 'peso', UZS: 'som' };
@@ -99,20 +112,90 @@ export function compileLevels(rows: readonly Row[], economies: readonly Economy[
   return { levels: Object.fromEntries(Object.keys(levels).sort().map((code) => [code, levels[code] as Level])), unmapped: [...unmapped].sort() };
 }
 
+/** A price index's values in a year as its office publishes them (its months, its quarters, or its annual average alone). */
+export interface Year {
+  year: number;
+  values: string[];
+}
+export interface Indices {
+  from: Year;
+  to: Year;
+}
+
+/** A year's mean, exactly; a year that isn't the one wanted, or a value that isn't a decimal above zero, is refused. */
+export function mean(y: Year, year: number, what: string): { num: bigint; den: bigint } {
+  if (y.year !== year) throw new Error(`${what}'s index is for ${y.year}, not ${year}`);
+  if (y.values.length === 0) throw new Error(`${what}'s index for ${year} has no values`);
+  let num = 0n;
+  let den = 1n;
+  for (const v of y.values) {
+    const r = rational(v);
+    if (r.num <= 0n) throw new Error(`${what}'s index for ${year} has ${v}, not above zero`);
+    num = num * r.den + r.num * den;
+    den *= r.den;
+  }
+  return { num, den: den * BigInt(y.values.length) };
+}
+
+/** A decimal written out to PLACES places, half to even, without trailing zeros. */
+export function decimal(num: bigint, den: bigint): string {
+  const digits = roundHalfEven(num * 10n ** BigInt(PLACES), den).toString().padStart(PLACES + 1, '0');
+  const fraction = digits.slice(-PLACES).replace(/0+$/, '');
+  return `${digits.slice(0, -PLACES)}${fraction === '' ? '' : `.${fraction}`}`;
+}
+
+/** A benchmark level carried forward: times the country's index's change, over the United States'. */
+export function carryForward(ppp: string, own: Indices, us: Indices, code: string): string {
+  const p = rational(ppp);
+  const [of, ot, uf, ut] = [mean(own.from, BENCHMARK, code), mean(own.to, CARRIED_TO, code), mean(us.from, BENCHMARK, 'US'), mean(us.to, CARRIED_TO, 'US')];
+  return decimal(p.num * ot.num * of.den * uf.num * ut.den, p.den * ot.den * of.num * uf.den * ut.num);
+}
+
+/**
+ * The levels with the carried ones added: each country with indices of its own, its benchmark level carried to
+ * CARRIED_TO. A country the World Bank already prices from FROM on, or one without a benchmark, is refused, as is a
+ * benchmark in a currency not the country's.
+ */
+export function withCarried(levels: Readonly<Record<string, Level>>, benchmark: readonly Row[], us: Indices, own: Readonly<Record<string, Indices>>, units: ReadonlyMap<string, string>, currencies: Readonly<Record<string, string>>): Record<string, Level> {
+  const out: Record<string, Level> = { ...levels };
+  for (const [code, indices] of Object.entries(own)) {
+    if (Object.hasOwn(levels, code)) throw new Error(`the World Bank prices ${code} from ${FROM} on; its own index isn't needed`);
+    const value = benchmark.find((r) => r.country.id === code && r.date === String(BENCHMARK))?.value ?? null;
+    if (value === null) throw new Error(`the World Bank has no ${BENCHMARK} level for ${code}`);
+    const unit = units.get(code) ?? '';
+    if (!sameCurrency(unit, String(currencies[code]))) throw new Error(`the World Bank prices ${code} in ${unit === '' ? 'no currency it names' : unit}, not ${currencies[code] ?? 'none'}`);
+    out[code] = { ppp: carryForward(String(value), indices, us, code), year: CARRIED_TO };
+  }
+  return Object.fromEntries(Object.keys(out).sort().map((code) => [code, out[code] as Level]));
+}
+
 function pinned(root: string, file: string, sha256: string): string {
   const bytes = readFileSync(join(root, file));
   if (createHash('sha256').update(bytes).digest('hex') !== sha256) throw new Error(`${file} isn't the file the register cites`);
   return bytes.toString('utf8');
 }
 
-/** The levels from the vendored files and the gazetteer's currencies. */
+/** An index file of research/sources/prices/, checked against the SHA-256 the register's entry for its fact cites. */
+function cited(root: string, name: string, fact: string, register: readonly { fact: string; value: { sha256?: string } }[]): Indices {
+  const file = `${INDICES}/${name}.json`;
+  const sha256 = register.find((e) => e.fact === fact)?.value.sha256;
+  return JSON.parse(pinned(root, file, sha256 ?? '')) as Indices;
+}
+
+/** The levels from the vendored files, the indices the register cites, and the gazetteer's currencies. */
 export function readLevels(root: string): { levels: Record<string, Level>; unmapped: string[] } {
   const ppp = JSON.parse(pinned(root, SOURCES.ppp.file, SOURCES.ppp.sha256)) as [unknown, Row[]];
   const economies = JSON.parse(pinned(root, SOURCES.economies.file, SOURCES.economies.sha256)) as [unknown, Economy[]];
   const metadata = JSON.parse(pinned(root, SOURCES.metadata.file, SOURCES.metadata.sha256)) as MetadataPage[];
+  const benchmark = JSON.parse(pinned(root, SOURCES.benchmark.file, SOURCES.benchmark.sha256)) as [unknown, Row[]];
   const gazetteer = JSON.parse(readFileSync(join(root, 'src/world/gazetteer/countries.json'), 'utf8')) as Record<string, { currency: string }>;
+  const register = (JSON.parse(readFileSync(join(root, 'research/register.json'), 'utf8')) as { entries: { fact: string; value: { sha256?: string } }[] }).entries;
   const currencies = Object.fromEntries(Object.entries(gazetteer).map(([code, c]) => [code, c.currency]));
-  return compileLevels(ppp[1], economies[1], currencyUnits(metadata), currencies);
+  const units = currencyUnits(metadata);
+  const { levels, unmapped } = compileLevels(ppp[1], economies[1], units, currencies);
+  const codes = readdirSync(join(root, INDICES)).map((f) => basename(f, '.json')).filter((n) => n !== US_INDEX);
+  const own = Object.fromEntries(codes.map((code) => [code, cited(root, code, `world.prices.${code}`, register)]));
+  return { levels: withCarried(levels, benchmark[1], cited(root, US_INDEX, 'world.prices.us-cpi', register), own, units, currencies), unmapped };
 }
 
 export const serialize = (levels: Readonly<Record<string, Level>>) => `${JSON.stringify(levels, null, 1)}\n`;

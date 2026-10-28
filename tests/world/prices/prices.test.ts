@@ -6,7 +6,7 @@ import { aboutPrices, keepsPrices, priceIn, priceLevel, UNKEPT_LINE } from '../.
 import levels from '../../../src/world/prices/levels.json';
 
 describe('the prices', () => {
-  it("are the World Bank's levels, in each country's own currency", () => {
+  it("are the World Bank's levels, or carried from its benchmark, in each country's own currency", () => {
     expect(COUNTRY_CODES.filter(keepsPrices)).toEqual(Object.keys(levels));
     expect(priceLevel('US')).toEqual({ ppp: '1', year: 2025 });
     expect(priceLevel('QA')).toEqual({ ppp: '2.75548696215787', year: 2024 });
@@ -19,6 +19,9 @@ describe('the prices', () => {
     expect(priceIn('KW', '10')).toEqual(money('KWD', 1832));
     expect(priceIn('BG', '12.5')).toEqual(money('EUR', 518));
     expect(priceIn('CH', '1000')).toEqual(money('CHF', 106554));
+    // Carried from the benchmark: Argentina's 661.287794234474 pesos to the dollar.
+    expect(priceLevel('AR')).toEqual({ ppp: '661.287794234474', year: 2025 });
+    expect(priceIn('AR', '10')).toEqual(money('ARS', 661288));
     // Half a cent goes to the even cent.
     expect([priceIn('US', '0.005'), priceIn('US', '0.015'), priceIn('US', '0')]).toEqual([money('USD', 0), money('USD', 2), money('USD', 0)]);
     expect(priceIn('TW', '10')).toBeUndefined();

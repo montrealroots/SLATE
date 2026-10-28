@@ -26,7 +26,7 @@ restarts. Read `CLAUDE.md` and the owner's package in `docs/` first.
   Kedah, Kelantan and Terengganu); Western Sahara keeps Morocco's days by the owner's ruling of 2026-10-28; its code
   at 100% mutation score (532 mutants, with the regions' and the shared substitutes' rules). The prices
   (`world.prices`): the engine is built and tested, at 100% mutation score; 172 countries researched from the World
-  Bank's levels, 6 proven, 74 pending (the next step).
+  Bank's levels and 2 carried from its 2021 benchmark, 6 proven, 72 pending (the next step).
 
 What layer 2 holds so far:
 
@@ -118,7 +118,13 @@ What layer 2 holds so far:
   gazetteer's (GeoNames' CurrencyCode held to ISO 4217 list one, R-0032 and R-0026: Bulgaria's the euro, the
   Netherlands Antilles none), checked against the World Bank's own name for each economy's currency unit. The World
   Bank's files are vendored in `vendor/worldbank/` with their SHA-256 pinned and compiled by `tools/prices/`, which
-  also writes the coverage (`coverage/prices-countries.json`): 172 researched, 6 proven, 74 pending.
+  also writes the coverage (`coverage/prices-countries.json`). A country the World Bank last priced at the 2021
+  benchmark is carried to 2025 as the World Bank carries its own (its help desk, R-0374): the benchmark level times
+  the change in the country's consumer price index (annual means of its published months or quarters, from its own
+  statistics office, `research/sources/prices/<code>.json`, `world.prices.<code>`) over the CPI-U's (R-0375: the
+  Bureau of Labor Statistics' months; October 2025 wasn't collected, so 2025's mean is of eleven, 321.943, the
+  Bureau's own annual average), to twelve places. Done so: Argentina (INDEC), Andorra (the Departament
+  d'Estadística's monthly A142 releases on sig.govern.ad; estadistica.ad's portal blocks a browser).
 
 What layer 1 holds:
 
@@ -601,16 +607,19 @@ What layer 0 holds:
      challenge (not circumvented).
    - Two sources found: a page's own public data list read as the page reads it (Mauritius's SharePoint list, Qatar's
      Ministry of Justice API) is fine; an API that needs a key embedded in a site's script (Andorra's BOPA) is not.
-3. Prices: the 74 countries with places and no World Bank level from 2024 on are pending
+3. Prices: the countries with places and no World Bank level from 2024 on are pending
    (`coverage/prices-countries.json`). Each is to be researched from its own statistics office or blocked after all
    five methods (`world.prices.blocked.<code>`, the player told by `prices.unkept`). Two kinds. The 35 the World Bank
-   last priced before 2024 (its 2021 benchmark only: American Samoa, Andorra, Argentina, Aruba, Barbados, Bermuda,
+   last priced before 2024 (its 2021 benchmark only; Andorra and Argentina done: American Samoa, Aruba, Barbados, Bermuda,
    the British Virgin Islands, the Cayman Islands, DR Congo, Curaçao, Eritrea, Eswatini, the Faroes, French
    Polynesia, Greenland, Guam, the Marshall Islands, Myanmar, Nauru, New Caledonia, the Northern Marianas, Puerto
    Rico, Sint Maarten, Somalia, South Sudan, Syria, Turkmenistan, Turks and Caicos, Tuvalu, the US Virgin Islands,
    Zimbabwe; to 2022: Kosovo, Micronesia, Sudan; to 2023: Saint Kitts and Nevis), whose level can be carried forward
-   by the national consumer price index against the United States' (the extrapolation the World Bank itself makes),
-   each index from its own office. And the 39 it never priced: Anguilla, Åland, Saint Barthélemy, Bonaire, Cocos,
+   by the national consumer price index against the United States' (the extrapolation the World Bank itself makes,
+   now built: add the index file, its register entry, and rebuild with `npx tsx tools/prices/build.ts`), each index
+   from its own office; where an office gives only its index's yearly change, the change is not enough unless it is
+   the change of annual means, and that is said in the file's note. Leads: ILOSTAT's CPI (rplumber.ilo.org) holds a
+   few of them as a check (Argentina's means matched), not as the source. And the 39 it never priced: Anguilla, Åland, Saint Barthélemy, Bonaire, Cocos,
    the Cook Islands, Cuba, Christmas Island, Western Sahara, the Falklands, French Guiana, Guernsey, Gibraltar,
    Guadeloupe, South Georgia, the Isle of Man, the British Indian Ocean Territory, Jersey, North Korea,
    Liechtenstein, Monaco, Saint Martin, Martinique, Montserrat, Norfolk Island, Niue, Saint Pierre and Miquelon,

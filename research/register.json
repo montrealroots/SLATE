@@ -15922,6 +15922,178 @@
      "said": "5,823 fields; each economy's 2-alphacode and CurrencyUnit, e.g. Bulgaria: Euro; Bhutan: Bhutanese ngultrum; Tonga: Tongan pa'anga."
     }
    ]
+  },
+  {
+   "id": "R-0374",
+   "fact": "world.prices.ppp-2021",
+   "sought": "Every country's price level for what households buy at the International Comparison Program's last benchmark (2021), and how the World Bank carries a benchmark level to later years",
+   "status": "found",
+   "value": {
+    "file": "vendor/worldbank/PA.NUS.PRVT.PP-2021.json",
+    "sha256": "ce5f050f50ca4dec3c2943bd62df76008fe872c05f9445ddd700d40292ac2f6c",
+    "indicator": "PA.NUS.PRVT.PP",
+    "year": 2021,
+    "lastUpdated": "2026-10-08"
+   },
+   "sources": [
+    {
+     "kind": "primary",
+     "url": "https://api.worldbank.org/v2/country/all/indicator/PA.NUS.PRVT.PP?date=2021&format=json&per_page=1000",
+     "title": "World Bank, World Development Indicators: PPP conversion factor, households and NPISHs Final consumption expenditure (LCU per international $), 2021",
+     "read": "2026-10-28",
+     "said": "lastupdated 2026-10-08; 266 rows for 2021. Argentina 42.9862403869629; Andorra 0.639068841934204; United States 1; Zimbabwe 0.0289887770676613; Kosovo 0.393713235388517; Saint Kitts and Nevis 2.26982140541077."
+    },
+    {
+     "kind": "primary",
+     "url": "https://datahelpdesk.worldbank.org/knowledgebase/articles/665452-how-do-you-extrapolate-the-ppp-conversion-factors",
+     "title": "World Bank Data Help Desk, How do you extrapolate the PPP conversion factors estimated by the ICP?",
+     "read": "2026-10-28",
+     "said": "The International Comparison Program (ICP) provides PPP conversion factors for the three most recent ICP benchmark years (2011, 2017 and 2021) and years in between the benchmarks (2012-2016 and 2018-2020). For years before 2011 and after 2021, PPPs provided by the ICP are extrapolated to create a time series from 1990 to the latest year available. The method used is to apply the difference between the rate of inflation observed in the country over each period from 2011 (for years before 2011) and 2021 (for years after 2021) compared with inflation in the United States over the same period to the benchmark PPP estimates. ... Extrapolation for private consumption uses the change in the consumer price index (CPI). For example, let's say Senegal's CPI in 2022 divided by its CPI in 2021 is 1.096 ... and the ratio for the US over the same period is 1.081 ... We can take Senegal's private consumption PPP conversion factor in 2021, which was 226.6, and multiply it by 1.096/1.081 to get a 2022 conversion factor estimate of 229.7."
+    }
+   ]
+  },
+  {
+   "id": "R-0375",
+   "fact": "world.prices.us-cpi",
+   "sought": "The United States' consumer price index in 2021 and 2025, the one a benchmark level is carried against",
+   "status": "found",
+   "value": {
+    "file": "research/sources/prices/us-cpi.json",
+    "sha256": "c985db4d96145d0eb2d7f316ae8f3bfe1d78f0989d163e75dfd56e97d3fbc364",
+    "mean2021": "270.96975",
+    "mean2025": "321.943"
+   },
+   "sources": [
+    {
+     "kind": "primary",
+     "url": "https://data.bls.gov/timeseries/CUUR0000SA0?years_option=specific_years&from_year=2021&to_year=2025",
+     "title": "U.S. Bureau of Labor Statistics, CPI-U, series CUUR0000SA0",
+     "read": "2026-10-28",
+     "said": "Series Id: CUUR0000SA0 Not Seasonally Adjusted Series Title: All items in U.S. city average, all urban consumers, not seasonally adjusted ... Base Period: 1982-84=100 ... 2021 261.582 263.014 264.877 267.054 269.195 271.696 273.003 273.567 274.310 276.589 277.948 278.802 ... 2025 317.671 319.082 319.799 320.795 321.465 322.561 323.048 323.976 324.800 -(X) 324.122 324.054 ... X : Data unavailable due to the 2025 lapse in appropriations"
+    },
+    {
+     "kind": "primary",
+     "url": "https://api.bls.gov/publicAPI/v1/timeseries/data/CUUR0000SA0",
+     "title": "U.S. Bureau of Labor Statistics, Public Data API, series CUUR0000SA0",
+     "read": "2026-10-28",
+     "said": "2025 M13 (annual average) 321.943; 2024 M13 313.689"
+    }
+   ]
+  },
+  {
+   "id": "R-0376",
+   "fact": "world.prices.AR",
+   "sought": "Argentina's consumer price index in 2021 and 2025, from its statistics office",
+   "status": "found",
+   "value": {
+    "file": "research/sources/prices/AR.json",
+    "sha256": "9e540b402b3e992b681d072de9293cf76adba3661d5c20bb14e4e45967aa19c3"
+   },
+   "sources": [
+    {
+     "kind": "primary",
+     "url": "https://www.indec.gob.ar/ftp/cuadros/economia/serie_ipc_divisiones.csv",
+     "title": "INDEC (Instituto Nacional de Estad\u00edstica y Censos), IPC: serie de \u00edndices por divisiones y regiones",
+     "read": "2026-10-28",
+     "said": "Codigo;Descripcion;Clasificador;Periodo;Indice_IPC;v_m_IPC;v_i_a_IPC;Region ... 0;NIVEL GENERAL;Nivel general y divisiones COICOP;201612;100;...;Nacional ... 2021 (202101 to 202112): 401,5071 415,8595 435,8657 453,6503 468,725 483,6049 498,0987 510,3942 528,4968 547,0802 560,9184 582,4575 ... 2025 (202501 to 202512): 7864,1257 8052,9927 8353,3158 8585,6078 8714,4871 8855,5681 9023,973 9193,2441 9384,0922 9603,8623 9841,3581 10121,3715"
+    }
+   ]
+  },
+  {
+   "id": "R-0377",
+   "fact": "world.prices.AD",
+   "sought": "Andorra's consumer price index in 2021 and 2025, from its statistics office",
+   "status": "found",
+   "value": {
+    "file": "research/sources/prices/AD.json",
+    "sha256": "eb3fb84b4c600c52893f6177afb145afc9e8d8864c6e580d80e1dc6aa59a8a13"
+   },
+   "sources": [
+    {
+     "kind": "primary",
+     "url": "https://sig.govern.ad/SIGDDE.Public/Files/Documents/Notes_premsa_noticies/A142_20260114.pdf",
+     "title": "Govern d'Andorra, Departament d'Estad\u00edstica, A142. \u00cdndex de Preus de Consum d'Andorra (base 2021). Desembre 2025 (14/01/2026)",
+     "read": "2026-10-28",
+     "said": "\u00cdndex general 120,02 ... Coeficient de reescala: valor que multiplicant la mitjana aritm\u00e8tica simple dels \u00edndexs mensuals publicats de l'any base amb base anterior sigui igual a 100. En el cas d'Andorra, el valor que multiplicant la mitjana aritm\u00e8tica simple dels \u00edndexs mensuals de l'any 2021 amb base 2018 sigui igual a 100."
+    },
+    {
+     "kind": "primary",
+     "url": "https://sig.govern.ad/SIGDDE.Public/Files/Documents/Notes_premsa_noticies/A142_20250217.pdf",
+     "title": "Govern d'Andorra, Departament d'Estad\u00edstica, A142. \u00cdndex de Preus de Consum d'Andorra (base 2021), gener 2025",
+     "read": "2026-10-28",
+     "said": "\u00cdndex general 116,48"
+    },
+    {
+     "kind": "primary",
+     "url": "https://sig.govern.ad/SIGDDE.Public/Files/Documents/Notes_premsa_noticies/A142_20250317.pdf",
+     "title": "Govern d'Andorra, Departament d'Estad\u00edstica, A142. \u00cdndex de Preus de Consum d'Andorra (base 2021), febrer 2025",
+     "read": "2026-10-28",
+     "said": "\u00cdndex general 116,59"
+    },
+    {
+     "kind": "primary",
+     "url": "https://sig.govern.ad/SIGDDE.Public/Files/Documents/Notes_premsa_noticies/A142_20250414.pdf",
+     "title": "Govern d'Andorra, Departament d'Estad\u00edstica, A142. \u00cdndex de Preus de Consum d'Andorra (base 2021), mar\u00e7 2025",
+     "read": "2026-10-28",
+     "said": "\u00cdndex general 117,83"
+    },
+    {
+     "kind": "primary",
+     "url": "https://sig.govern.ad/SIGDDE.Public/Files/Documents/Notes_premsa_noticies/A142_20250519.pdf",
+     "title": "Govern d'Andorra, Departament d'Estad\u00edstica, A142. \u00cdndex de Preus de Consum d'Andorra (base 2021), abril 2025",
+     "read": "2026-10-28",
+     "said": "\u00cdndex general 118,35"
+    },
+    {
+     "kind": "primary",
+     "url": "https://sig.govern.ad/SIGDDE.Public/Files/Documents/Notes_premsa_noticies/A142_20250616.pdf",
+     "title": "Govern d'Andorra, Departament d'Estad\u00edstica, A142. \u00cdndex de Preus de Consum d'Andorra (base 2021), maig 2025",
+     "read": "2026-10-28",
+     "said": "\u00cdndex general 118,25"
+    },
+    {
+     "kind": "primary",
+     "url": "https://sig.govern.ad/SIGDDE.Public/Files/Documents/Notes_premsa_noticies/A142_20250714.pdf",
+     "title": "Govern d'Andorra, Departament d'Estad\u00edstica, A142. \u00cdndex de Preus de Consum d'Andorra (base 2021), juny 2025",
+     "read": "2026-10-28",
+     "said": "\u00cdndex general 118,48"
+    },
+    {
+     "kind": "primary",
+     "url": "https://sig.govern.ad/SIGDDE.Public/Files/Documents/Notes_premsa_noticies/A142_20250818.pdf",
+     "title": "Govern d'Andorra, Departament d'Estad\u00edstica, A142. \u00cdndex de Preus de Consum d'Andorra (base 2021), juliol 2025",
+     "read": "2026-10-28",
+     "said": "\u00cdndex general 117,88"
+    },
+    {
+     "kind": "primary",
+     "url": "https://sig.govern.ad/SIGDDE.Public/Files/Documents/Notes_premsa_noticies/A142_20250915.pdf",
+     "title": "Govern d'Andorra, Departament d'Estad\u00edstica, A142. \u00cdndex de Preus de Consum d'Andorra (base 2021), agost 2025",
+     "read": "2026-10-28",
+     "said": "\u00cdndex general 117,92"
+    },
+    {
+     "kind": "primary",
+     "url": "https://sig.govern.ad/SIGDDE.Public/Files/Documents/Notes_premsa_noticies/A142_20251013.pdf",
+     "title": "Govern d'Andorra, Departament d'Estad\u00edstica, A142. \u00cdndex de Preus de Consum d'Andorra (base 2021), setembre 2025",
+     "read": "2026-10-28",
+     "said": "\u00cdndex general 119,41"
+    },
+    {
+     "kind": "primary",
+     "url": "https://sig.govern.ad/SIGDDE.Public/Files/Documents/Notes_premsa_noticies/A142_20251117.pdf",
+     "title": "Govern d'Andorra, Departament d'Estad\u00edstica, A142. \u00cdndex de Preus de Consum d'Andorra (base 2021), octubre 2025",
+     "read": "2026-10-28",
+     "said": "\u00cdndex general 119,59"
+    },
+    {
+     "kind": "primary",
+     "url": "https://sig.govern.ad/SIGDDE.Public/Files/Documents/Notes_premsa_noticies/A142_20251215.pdf",
+     "title": "Govern d'Andorra, Departament d'Estad\u00edstica, A142. \u00cdndex de Preus de Consum d'Andorra (base 2021), novembre 2025",
+     "read": "2026-10-28",
+     "said": "\u00cdndex general 119,99"
+    }
+   ]
   }
  ]
 }
