@@ -32,7 +32,7 @@ a place fills a column; a cell is the row's status in that engine's matrix, or b
 | BI | Burundi | researched | researched | researched | blocked | researched | researched | pending |
 | BJ | Benin | researched | researched | researched | researched | researched | researched | pending |
 | BL | Saint Barthelemy | researched | researched | researched | researched | researched | researched | pending |
-| BM | Bermuda | researched | researched | researched | researched | researched | researched | pending |
+| BM | Bermuda | researched | researched | researched | researched | researched | researched | researched |
 | BN | Brunei | researched | researched | researched | researched | blocked | researched | pending |
 | BO | Bolivia | researched | researched | researched | researched | researched | researched | pending |
 | BQ | Bonaire, Saint Eustatius and Saba  | researched | researched | researched | blocked | researched | researched | researched |
@@ -89,7 +89,7 @@ a place fills a column; a cell is the row's status in that engine's matrix, or b
 | GF | French Guiana | researched | researched | researched | researched | researched | researched | researched |
 | GG | Guernsey | researched | researched | researched | researched | blocked | researched | researched |
 | GH | Ghana | researched | researched | researched | researched | researched | researched | researched |
-| GI | Gibraltar | researched | researched | researched | researched | researched | researched | pending |
+| GI | Gibraltar | researched | researched | researched | researched | researched | researched | researched |
 | GL | Greenland | researched | researched | researched | researched | researched | researched | pending |
 | GM | Gambia | researched | researched | researched | researched | blocked | researched | pending |
 | GN | Guinea | researched | researched | researched | researched | researched | researched | pending |
@@ -130,7 +130,7 @@ a place fills a column; a cell is the row's status in that engine's matrix, or b
 | KP | North Korea | researched | researched | researched | researched | blocked | blocked | pending |
 | KR | South Korea | researched | researched | researched | researched | researched | researched | researched |
 | KW | Kuwait | researched | researched | researched | blocked | researched | researched | pending |
-| KY | Cayman Islands | researched | researched | researched | blocked | researched | researched | pending |
+| KY | Cayman Islands | researched | researched | researched | blocked | researched | researched | researched |
 | KZ | Kazakhstan | researched | researched | researched | researched | researched | researched | pending |
 | LA | Laos | researched | researched | researched | researched | blocked | researched | pending |
 | LB | Lebanon | researched | researched | researched | blocked | researched | researched | pending |
