@@ -674,7 +674,22 @@ What layer 0 holds:
    publishes them) are open research for after the countries. Prices move with the years: the levels are the World
    Bank's for 2025 (2024 for four), and the game opens in 2026; carrying them forward by inflation is open (the
    World Bank's CPI series is sparse past 2024).
-4. Then the proof of layer 2.
+4. Then the proof of layer 2: `npm ci` and `npm run gate:full` in a fresh clone, recorded in `registry/layers.json`.
+   A full mutation run takes about 85 minutes here (464 static mutants rerun the whole suite; 8,284 tested), inside
+   this environment's two-hour limit for a command and CI's 180 minutes (`.github/workflows/gate.yml`, raised from 60
+   on 2026-10-28: every run since the world engines grew had been cancelled at 60).
+5. Layer 3's research, begun 2026-10-28 while layer 2's proof runs (its code waits for that proof, as the build order
+   and the gate's build-order check hold): passports by issuing country, each in
+   `research/sources/papers/passports/<CC>.json` (`papers.passports.<CC>`, R-0451 on): the ordinary passport's fees
+   by age and channel in the country's currency, its validity, the standard processing time and the urgent services,
+   from the passport office's own pages or, where those refuse this client, the regulation that sets the fees. Done:
+   the United Kingdom (GOV.UK), France (Service Public), the United States (22 CFR 22.1 and 51.4 on eCFR;
+   travel.state.gov answers with a Cloudflare challenge, so its processing times aren't read) and Canada (SOR/2012-253
+   on Justice Laws; canada.ca closes the connection). Leads: Australia's fees are the Australian Passports
+   (Application Fees) Determination 2015's base amounts indexed each calendar year by its section 7 (compilation
+   F2024C01230; passports.gov.au closes the connection), so the year's fee is to be computed from the ABS CPI as the
+   determination says or read from DFAT; Ireland's and New Zealand's offices answer 403; Germany's Passverordnung
+   isn't at the address tried on gesetze-im-internet.de. Then ID, visas, residence and work permissions, and the banks.
 
 ## Verification evidence
 
@@ -793,7 +808,10 @@ What layer 0 holds:
   took 217 s, and each static mutant reruns all of it. The runs over every place of the map (about 45 s of the 70 s
   suite) moved to `*.places.test.ts` files, which the gate's test step runs on every commit and mutation testing leaves
   out, as it does the zone oracles (`vitest.stryker.config.ts`); the coverage rows and `registry/engines.json` cite
-  them by their new names.
+  them by their new names. The full run without them took 83.5 minutes and left four
+  mutants in `src/world/weather/weather.ts` that only the every-place run had caught, by timing out: the pool cache
+  and the nearest-station search's early stop, which change speed, not results. Two unit tests now hold them (the
+  same pool comes back; a thousand stations are found from fewer than twenty looked at).
 - Stryker 10.0.0 reports a mutant that breaks a test file at load as surviving rather than killed (fixed in 10.1.0);
   `gate/test/eslint-plugin.test.ts` asserts the plugin's shape apart from the rule cases so such mutants are caught.
 
