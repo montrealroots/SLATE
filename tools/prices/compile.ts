@@ -121,6 +121,11 @@ export function compileLevels(rows: readonly Row[], economies: readonly Economy[
 export interface Year {
   year: number;
   values: string[];
+  /**
+   * Where its office gives this year only through the next, across a change of method (Mayotte's 2022): `values` are
+   * the next year's, and `changes` each one's change in percent over the same month of this year at constant method.
+   */
+  changes?: string[];
 }
 export interface Indices {
   from: Year;
@@ -149,15 +154,26 @@ export interface Relative {
   index: string;
 }
 
-/** A year's mean, exactly; a year that isn't the one wanted, or a value that isn't a decimal above zero, is refused. */
+/**
+ * A year's mean, exactly; a year that isn't the one wanted, or a value that isn't a decimal above zero, is refused. A
+ * year given through the next (`changes`) takes each value over one plus its change, which is to be above -100%.
+ */
 export function mean(y: Year, year: number, what: string): { num: bigint; den: bigint } {
   if (y.year !== year) throw new Error(`${what}'s index is for ${y.year}, not ${year}`);
   if (y.values.length === 0) throw new Error(`${what}'s index for ${year} has no values`);
+  if (y.changes !== undefined && y.changes.length !== y.values.length) throw new Error(`${what}'s index for ${year} has ${y.values.length} values and ${y.changes.length} changes`);
   let num = 0n;
   let den = 1n;
-  for (const v of y.values) {
+  for (const [i, v] of y.values.entries()) {
     const r = rational(v);
     if (r.num <= 0n) throw new Error(`${what}'s index for ${year} has ${v}, not above zero`);
+    const change = y.changes?.[i];
+    if (change !== undefined) {
+      const c = rational(change);
+      if (100n * c.den + c.num <= 0n) throw new Error(`${what}'s index for ${year} has a change of ${change}%, not above -100%`);
+      r.num *= 100n * c.den;
+      r.den *= 100n * c.den + c.num;
+    }
     num = num * r.den + r.num * den;
     den *= r.den;
   }

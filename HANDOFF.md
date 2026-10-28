@@ -26,10 +26,9 @@ restarts. Read `CLAUDE.md` and the owner's package in `docs/` first.
   Kedah, Kelantan and Terengganu); Western Sahara keeps Morocco's days by the owner's ruling of 2026-10-28; its code
   at 100% mutation score (532 mutants, with the regions' and the shared substitutes' rules). The prices
   (`world.prices`): the engine is built and tested, at 100% mutation score; 172 countries researched from the World
-  Bank's levels, 21 carried from the 2021 benchmark, 4 priced against France and 25 territories kept at another's
+  Bank's levels, 21 carried from the 2021 benchmark, 5 priced against France and 25 territories kept at another's
   level by the owner's ruling, and the Caribbean Netherlands from Bonaire's ICP level; 6 proven, 22 blocked, each
-  after all five methods (R-0428 to R-0449; the next step names them and what to try again), and 1 pending, Mayotte
-  (the next step).
+  after all five methods (R-0428 to R-0449; the next step names them and what to try again), none pending.
 
 What layer 2 holds so far:
 
@@ -150,8 +149,11 @@ What layer 2 holds so far:
   Guadeloupe, Martinique, Guyane and La Réunion, from INSEE's 2022 spatial price survey (Insee Première n° 1958,
   Fisher gaps to metropolitan France of 15.8, 13.8, 13.7 and 8.9%), their monthly indices from INSEE's December 2025
   Flash workbooks and metropolitan France's annual index from INSEE's BDM (`fr-metro-cpi`). France's level is for
-  France as a whole (the departments are about 3% of it). Mayotte's gap (10.3%) excludes rents and its index is on a
-  base of its own (December 2021) with no 2022 months in its workbook: still to do. By the owner's ruling of
+  France as a whole (the departments are about 3% of it). Mayotte (R-0450) likewise, from the survey's gap for it
+  (10.3%, its only measure, which leaves rents out); its index changed method in January 2023 (base December 2021,
+  INSEE's BDM idbank 010760786), the new method having run in parallel through 2022, so its 2022 is given through
+  2023 (`changes` in its `from`: each 2023 month over one plus INSEE's year-on-year change at constant method), not
+  by INSEE's junction series, which is the old method's movement. By the owner's ruling of
   2026-10-28, a territory with no price-level measure of its own keeps the level of the country whose currency and
   market it shares (`of` in its file; `peg` where its pound is at par with another's, cited from its own law or
   government): Liechtenstein (Switzerland's), Monaco, Saint Barthélemy, Saint Martin, Saint Pierre and Miquelon and
@@ -648,11 +650,7 @@ What layer 0 holds:
      challenge (not circumvented).
    - Two sources found: a page's own public data list read as the page reads it (Mauritius's SharePoint list, Qatar's
      Ministry of Justice API) is fine; an API that needs a key embedded in a site's script (Andorra's BOPA) is not.
-3. Prices: Mayotte is the one country pending (`coverage/prices-countries.json`). INSEE's 2022 spatial survey gives
-   its gap to metropolitan France (10.3%) excluding rents, and its index changed method in January 2023 (base
-   December 2021 before; INSEE's note 6958766 has the 2022 parallel run and `my_cp_2024_ipc.pdf` the re-expressed
-   series): to be priced against France (`relative` in its file) once the gap's scope and an index consistent
-   across the break are read, or blocked after all five methods. The 22 blocked (`world.prices.blocked.<code>`,
+3. Prices: no country is pending (2026-10-28; `coverage/prices-countries.json`). The 22 blocked (`world.prices.blocked.<code>`,
    R-0428 to R-0449, the player told by `prices.unkept`), each with what to try again: those no programme prices and
    no survey compares (Cuba, North Korea, Venezuela, Yemen: the ICP's next round, ESCWA's work on Yemen); those whose
    office publishes no index or can't be reached (Eritrea, Turkmenistan, Nauru, Sudan, Syria, Eswatini (gov.sz

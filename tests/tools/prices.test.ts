@@ -55,6 +55,8 @@ describe('the price levels compiler', () => {
     expect(levels['GP']).toEqual({ ppp: '0.848586213156', year: 2025 });
     // The Caribbean Netherlands, from the Program's level for Bonaire (part of it) carried by Bonaire's index.
     expect(levels['BQ']).toEqual({ ppp: '0.734067268186', year: 2025 });
+    // Mayotte's 2022 is given through 2023, across its change of method.
+    expect(levels['YT']).toEqual({ ppp: '0.81394825101', year: 2025 });
     expect([levels['AR'], levels['AD']]).toEqual([
       { ppp: '661.287794234474', year: 2025 },
       { ppp: '0.636851408291', year: 2025 },
@@ -131,6 +133,16 @@ describe('the price levels compiler', () => {
     expect(() => mean(year(2021, '1', '0'), 2021, 'AD')).toThrow("AD's index for 2021 has 0, not above zero");
     expect(() => mean(year(2021, '-1'), 2021, 'AD')).toThrow("AD's index for 2021 has -1, not above zero");
     expect(() => mean(year(2021, '1e3'), 2021, 'AD')).toThrow('"1e3" is not a decimal number');
+  });
+  it('takes a year given through the next as each value over one plus its change, and refuses changes not matching or not above -100%', () => {
+    const through = (values: string[], changes: string[]) => mean({ year: 2022, values, changes }, 2022, 'YT');
+    expect(through(['105.6', '103'], ['5.6', '3'])).toStrictEqual({ num: 217536000n, den: 2175360n });
+    expect(decimal(...(Object.values(through(['99', '201.99'], ['-1', '-99.99'])) as [bigint, bigint]))).toBe('1010000');
+    expect(() => through(['100'], ['-100'])).toThrow("YT's index for 2022 has a change of -100%, not above -100%");
+    expect(() => through(['100'], ['-100.5'])).toThrow("YT's index for 2022 has a change of -100.5%, not above -100%");
+    expect(() => through(['100', '101'], ['1'])).toThrow("YT's index for 2022 has 2 values and 1 changes");
+    expect(() => through(['100'], ['1', '2'])).toThrow("YT's index for 2022 has 1 values and 2 changes");
+    expect(() => through(['100'], ['x'])).toThrow('"x" is not a decimal number');
   });
   it('writes a level to twelve places, half to even, without trailing zeros', () => {
     expect(decimal(1n, 3n)).toBe('0.333333333333');
