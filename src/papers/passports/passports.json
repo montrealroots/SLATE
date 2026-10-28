@@ -2490,6 +2490,40 @@
    }
   ]
  },
+ "HN": {
+  "currency": "USD",
+  "routes": [
+   {
+    "id": "home",
+    "where": "home",
+    "speed": "standard",
+    "within": null
+   }
+  ],
+  "bands": [
+   {
+    "validYears": 5,
+    "pay": {
+     "home": 3500
+    },
+    "from": 21
+   },
+   {
+    "validYears": 10,
+    "pay": {
+     "home": 5000
+    },
+    "from": 21
+   },
+   {
+    "validYears": null,
+    "pay": {
+     "home": null
+    },
+    "under": 21
+   }
+  ]
+ },
  "HR": {
   "currency": "EUR",
   "routes": [
@@ -4388,6 +4422,32 @@
    }
   ]
  },
+ "MZ": {
+  "currency": "MZN",
+  "routes": [
+   {
+    "id": "home",
+    "where": "home",
+    "speed": "standard",
+    "within": null
+   },
+   {
+    "id": "urgent",
+    "where": "home",
+    "speed": "urgent",
+    "within": null
+   }
+  ],
+  "bands": [
+   {
+    "validYears": null,
+    "pay": {
+     "home": 240000,
+     "urgent": 277500
+    }
+   }
+  ]
+ },
  "NA": {
   "currency": "NAD",
   "routes": [
@@ -6089,6 +6149,56 @@
      "urgent": 1071200
     },
     "under": 18
+   }
+  ]
+ },
+ "VE": {
+  "currency": "USD",
+  "routes": [
+   {
+    "id": "home",
+    "where": "home",
+    "speed": "standard",
+    "within": {
+     "n": 15,
+     "unit": "working day"
+    }
+   },
+   {
+    "id": "habilitado",
+    "where": "home",
+    "speed": "urgent",
+    "within": {
+     "n": 48,
+     "unit": "hour"
+    }
+   }
+  ],
+  "bands": [
+   {
+    "validYears": null,
+    "pay": {
+     "home": 10800,
+     "habilitado": 29000
+    },
+    "under": 3
+   },
+   {
+    "validYears": null,
+    "pay": {
+     "home": 16200,
+     "habilitado": 31000
+    },
+    "from": 3,
+    "under": 18
+   },
+   {
+    "validYears": null,
+    "pay": {
+     "home": 21600,
+     "habilitado": 35000
+    },
+    "from": 18
    }
   ]
  },

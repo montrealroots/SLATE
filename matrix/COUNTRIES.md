@@ -103,7 +103,7 @@ a place fills a column; a cell is the row's status in that engine's matrix, or b
 | GY | Guyana | researched | researched | researched | researched | researched | researched | researched |
 | HK | Hong Kong | researched | researched | researched | researched | researched | researched | researched |
 | HM | Heard Island and McDonald Islands | researched | researched | proven | proven | proven | proven | proven |
-| HN | Honduras | researched | researched | researched | researched | researched | researched | pending |
+| HN | Honduras | researched | researched | researched | researched | researched | researched | researched |
 | HR | Croatia | researched | researched | researched | researched | researched | researched | researched |
 | HT | Haiti | researched | researched | researched | blocked | blocked | researched | pending |
 | HU | Hungary | researched | researched | researched | researched | researched | researched | researched |
@@ -165,7 +165,7 @@ a place fills a column; a cell is the row's status in that engine's matrix, or b
 | MW | Malawi | researched | researched | researched | researched | blocked | researched | researched |
 | MX | Mexico | researched | researched | researched | researched | researched | researched | researched |
 | MY | Malaysia | researched | researched | researched | researched | blocked | researched | researched |
-| MZ | Mozambique | researched | researched | researched | researched | researched | researched | pending |
+| MZ | Mozambique | researched | researched | researched | researched | researched | researched | researched |
 | NA | Namibia | researched | researched | researched | researched | researched | researched | researched |
 | NC | New Caledonia | researched | researched | researched | researched | researched | researched | researched |
 | NE | Niger | researched | researched | researched | researched | researched | researched | researched |
@@ -244,7 +244,7 @@ a place fills a column; a cell is the row's status in that engine's matrix, or b
 | UZ | Uzbekistan | researched | researched | researched | researched | researched | researched | blocked |
 | VA | Vatican | researched | researched | researched | blocked | researched | researched | pending |
 | VC | Saint Vincent and the Grenadines | researched | researched | researched | blocked | blocked | researched | pending |
-| VE | Venezuela | researched | researched | researched | researched | blocked | blocked | pending |
+| VE | Venezuela | researched | researched | researched | researched | blocked | blocked | researched |
 | VG | British Virgin Islands | researched | researched | researched | blocked | researched | blocked | researched |
 | VI | U.S. Virgin Islands | researched | researched | researched | blocked | researched | blocked | researched |
 | VN | Vietnam | researched | researched | researched | researched | researched | researched | researched |
