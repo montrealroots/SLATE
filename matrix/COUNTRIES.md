@@ -109,7 +109,7 @@ a place fills a column; a cell is the row's status in that engine's matrix, or b
 | HU | Hungary | researched | researched | researched | researched | researched | researched | researched |
 | ID | Indonesia | researched | researched | researched | researched | researched | researched | researched |
 | IE | Ireland | researched | researched | researched | researched | researched | researched | researched |
-| IL | Israel | researched | researched | researched | researched | researched | researched | pending |
+| IL | Israel | researched | researched | researched | researched | researched | researched | researched |
 | IM | Isle of Man | researched | researched | researched | researched | blocked | researched | researched |
 | IN | India | researched | researched | researched | researched | blocked | researched | researched |
 | IO | British Indian Ocean Territory | researched | researched | researched | blocked | blocked | researched | researched |
@@ -139,7 +139,7 @@ a place fills a column; a cell is the row's status in that engine's matrix, or b
 | LK | Sri Lanka | researched | researched | researched | researched | researched | researched | researched |
 | LR | Liberia | researched | researched | researched | researched | blocked | researched | researched |
 | LS | Lesotho | researched | researched | researched | blocked | blocked | researched | researched |
-| LT | Lithuania | researched | researched | researched | researched | researched | researched | pending |
+| LT | Lithuania | researched | researched | researched | researched | researched | researched | researched |
 | LU | Luxembourg | researched | researched | researched | researched | researched | researched | researched |
 | LV | Latvia | researched | researched | researched | researched | researched | researched | researched |
 | LY | Libya | researched | researched | researched | researched | researched | researched | pending |
@@ -229,7 +229,7 @@ a place fills a column; a cell is the row's status in that engine's matrix, or b
 | TK | Tokelau | researched | researched | researched | blocked | blocked | researched | researched |
 | TL | Timor Leste | researched | researched | researched | researched | researched | researched | pending |
 | TM | Turkmenistan | researched | researched | researched | researched | researched | blocked | pending |
-| TN | Tunisia | researched | researched | researched | researched | researched | researched | pending |
+| TN | Tunisia | researched | researched | researched | researched | researched | researched | blocked |
 | TO | Tonga | researched | researched | researched | blocked | researched | researched | blocked |
 | TR | Turkey | researched | researched | researched | researched | researched | researched | researched |
 | TT | Trinidad and Tobago | researched | researched | researched | researched | researched | researched | researched |

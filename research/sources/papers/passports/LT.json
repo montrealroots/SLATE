@@ -1,0 +1,32 @@
+{
+ "country": "LT",
+ "office": "the Migration Department, at the territorial office of your choice, or a Lithuanian embassy or consulate abroad",
+ "currency": "EUR",
+ "routes": [
+  {"id": "standard", "where": "home", "speed": "standard", "within": {"n": 1, "unit": "month"}, "label": "within a month"},
+  {"id": "urgent", "where": "home", "speed": "urgent", "within": {"n": 5, "unit": "working day"}, "label": "urgent, within 5 working days"},
+  {"id": "same-day", "where": "home", "speed": "urgent", "within": {"n": 1, "unit": "working day"}, "label": "urgent, the same working day"},
+  {"id": "abroad", "where": "abroad", "speed": "standard", "within": {"n": 2, "unit": "month"}, "label": "through a consulate or its service provider abroad, within 2 months"}
+ ],
+ "passports": [
+  {"for": "child under 5", "under": 5, "validYears": 2, "pay": {"standard": "25.00", "urgent": "100.00", "same-day": "200.00", "abroad": "140.00"}},
+  {"for": "child", "from": 5, "under": 16, "validYears": 5, "pay": {"standard": "25.00", "urgent": "100.00", "same-day": "200.00", "abroad": "140.00"}},
+  {"for": "minor", "from": 16, "under": 18, "validYears": 10, "pay": {"standard": "25.00", "urgent": "100.00", "same-day": "200.00", "abroad": "140.00"}},
+  {"for": "adult", "from": 18, "validYears": 10, "pay": {"standard": "50.00", "urgent": "100.00", "same-day": "200.00", "abroad": "140.00"}}
+ ],
+ "note": "The Migration Department's MIGRIS service pages: 50 euros within a month, 100 within 5 working days, 200 the same working day; children under 18 pay half on the one-month route for one document of their choice, taken here as the passport. Abroad, a passport or identity card through a consulate costs 140 euros within 2 months. Citizens of old-age pension age pay 80% less on the one-month route, which isn't modelled (the pension age isn't read here), nor are the exemptions for social assistance, guardianship and disability.",
+ "sources": [
+  {
+   "url": "https://www.migracija.lt/service/pilieciams#ad-lrp-lietuvos-respublikos-pasas",
+   "title": "Migracijos departamentas, MIGRIS, Lietuvos Respublikos pasas (with its questions on validity and on relief from the state fee)",
+   "read": "2026-10-28",
+   "said": "Pasas išduodamas bet kokio amžiaus Lietuvos Respublikos piliečiui, gyvenančiam Lietuvos Respublikoje arba užsienio valstybėje. ... Prašymo nagrinėjimo terminai ir valstybės rinkliava Bendra tvarka Per 1 mėnesį 50,00 Eur Skubos tvarka Per 5 darbo dienas 100,00 Eur Skubos tvarka Tą pačią darbo dieną 200,00 Eur ... Pasas galioja: išduotas piliečiui iki 5 metų – 2 metus; išduotas piliečiui nuo 5 metų iki 16 metų – 5 metus; išduotas piliečiui nuo 16 metų – 10 metų; ... Vaikams iki 18 m. valstybės rinkliava už vieno iš asmens dokumentų (pasirinktinai) išdavimą ar keitimą bendra tvarka per 1 mėn. yra sumažinama 50%, o piliečiams, kuriems sukako senatvės pensijos amžius, nustatytas Lietuvos Respublikos valstybinių socialinio draudimo pensijų įstatyme, valstybės rinkliava už vieno iš asmens dokumentų (pasirinktinai) išdavimą ar keitimą bendra tvarka per 1 mėn. yra sumažinama 80 %."
+  },
+  {
+   "url": "https://www.migracija.lt/service/pilieciams#ad-lietuvos-respublikos-pasas-asmens-tapatybes-kortele-gyvenantiems-uzsienyje",
+   "title": "Migracijos departamentas, MIGRIS, Lietuvos Respublikos pasas, asmens tapatybės kortelė (gyvenantiems užsienyje)",
+   "read": "2026-10-28",
+   "said": "Pilietis, gyvenantis užsienyje, dokumentus dėl asmens tapatybės kortelės ir paso gavimo Lietuvos Respublikos konsulinei įstaigai gali pateikti per išorės paslaugų teikėjo (IPT) biurą arba tiesiogiai. ... Prašymo nagrinėjimo terminai ir valstybės rinkliava Bendra tvarka iki 2 mėn. 140,00 Eur"
+  }
+ ]
+}

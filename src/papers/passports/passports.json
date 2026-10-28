@@ -2911,6 +2911,53 @@
    }
   ]
  },
+ "IL": {
+  "currency": "ILS",
+  "routes": [
+   {
+    "id": "bureau",
+    "where": "home",
+    "speed": "standard",
+    "within": {
+     "n": 6,
+     "unit": "week"
+    }
+   },
+   {
+    "id": "online-winter",
+    "where": "home",
+    "speed": "standard",
+    "within": {
+     "n": 6,
+     "unit": "week"
+    },
+    "months": [
+     11,
+     12,
+     1,
+     2
+    ]
+   }
+  ],
+  "bands": [
+   {
+    "validYears": null,
+    "pay": {
+     "bureau": 30000,
+     "online-winter": 17500
+    },
+    "from": 18
+   },
+   {
+    "validYears": null,
+    "pay": {
+     "bureau": 16000,
+     "online-winter": 10500
+    },
+    "under": 18
+   }
+  ]
+ },
  "IM": {
   "currency": "GBP",
   "routes": [
@@ -3838,6 +3885,91 @@
      "emergency": 80000
     },
     "pages": 64
+   }
+  ]
+ },
+ "LT": {
+  "currency": "EUR",
+  "routes": [
+   {
+    "id": "standard",
+    "where": "home",
+    "speed": "standard",
+    "within": {
+     "n": 1,
+     "unit": "month"
+    }
+   },
+   {
+    "id": "urgent",
+    "where": "home",
+    "speed": "urgent",
+    "within": {
+     "n": 5,
+     "unit": "working day"
+    }
+   },
+   {
+    "id": "same-day",
+    "where": "home",
+    "speed": "urgent",
+    "within": {
+     "n": 1,
+     "unit": "working day"
+    }
+   },
+   {
+    "id": "abroad",
+    "where": "abroad",
+    "speed": "standard",
+    "within": {
+     "n": 2,
+     "unit": "month"
+    }
+   }
+  ],
+  "bands": [
+   {
+    "validYears": 2,
+    "pay": {
+     "standard": 2500,
+     "urgent": 10000,
+     "same-day": 20000,
+     "abroad": 14000
+    },
+    "under": 5
+   },
+   {
+    "validYears": 5,
+    "pay": {
+     "standard": 2500,
+     "urgent": 10000,
+     "same-day": 20000,
+     "abroad": 14000
+    },
+    "from": 5,
+    "under": 16
+   },
+   {
+    "validYears": 10,
+    "pay": {
+     "standard": 2500,
+     "urgent": 10000,
+     "same-day": 20000,
+     "abroad": 14000
+    },
+    "from": 16,
+    "under": 18
+   },
+   {
+    "validYears": 10,
+    "pay": {
+     "standard": 5000,
+     "urgent": 10000,
+     "same-day": 20000,
+     "abroad": 14000
+    },
+    "from": 18
    }
   ]
  },
