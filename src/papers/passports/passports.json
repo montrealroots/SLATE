@@ -297,6 +297,59 @@
    }
   ]
  },
+ "AZ": {
+  "currency": "AZN",
+  "routes": [
+   {
+    "id": "home",
+    "where": "home",
+    "speed": "standard",
+    "within": null
+   },
+   {
+    "id": "abroad",
+    "where": "abroad",
+    "speed": "standard",
+    "within": null
+   }
+  ],
+  "bands": [
+   {
+    "validYears": 10,
+    "pay": {
+     "home": 6000,
+     "abroad": null
+    },
+    "from": 18
+   },
+   {
+    "validYears": 5,
+    "pay": {
+     "home": 3500,
+     "abroad": null
+    },
+    "from": 3,
+    "under": 18
+   },
+   {
+    "validYears": 3,
+    "pay": {
+     "home": 2500,
+     "abroad": null
+    },
+    "from": 1,
+    "under": 3
+   },
+   {
+    "validYears": 1,
+    "pay": {
+     "home": 1500,
+     "abroad": null
+    },
+    "under": 1
+   }
+  ]
+ },
  "BA": {
   "currency": "BAM",
   "routes": [
