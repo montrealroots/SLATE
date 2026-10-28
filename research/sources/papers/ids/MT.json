@@ -1,0 +1,74 @@
+{
+ "country": "MT",
+ "document": "e-ID card",
+ "office": "Identità's Identity Cards Unit (collected there, or at a Servizz.gov hub)",
+ "currency": "EUR",
+ "routes": [
+  {
+   "id": "unit",
+   "where": "home",
+   "speed": "standard",
+   "within": {
+    "n": 6,
+    "unit": "working day"
+   },
+   "label": "at the Identity Cards Unit: collected after six working days (ten days at a Servizz.gov hub)"
+  },
+  {
+   "id": "urgent",
+   "where": "home",
+   "speed": "urgent",
+   "within": {
+    "n": 1,
+    "unit": "working day"
+   },
+   "label": "urgent: processed within one working day"
+  }
+ ],
+ "cards": [
+  {
+   "for": "14 and 15",
+   "from": 14,
+   "under": 16,
+   "validYears": 2,
+   "pay": {
+    "unit": "0",
+    "urgent": "40"
+   }
+  },
+  {
+   "for": "16 and 17",
+   "from": 16,
+   "under": 18,
+   "validYears": 2,
+   "pay": {
+    "unit": "0",
+    "urgent": "40"
+   }
+  },
+  {
+   "for": "18 and over",
+   "from": 18,
+   "validYears": 10,
+   "pay": {
+    "unit": "0",
+    "urgent": "40"
+   }
+  }
+ ],
+ "note": "Every Maltese citizen over 14 must hold one, applying within a month of the 14th birthday. A first card and a renewal are free; the urgent issue costs 40 euros. A card issued at 14 expires a month after the 16th birthday, one issued at 16 a month after the 18th (two years, about); from 18, ten years.",
+ "sources": [
+  {
+   "url": "https://identita.gov.mt/identity-cards-unit/applicable-fees/",
+   "title": "Identità, Identity Cards Unit, Applicable Fees",
+   "read": "2026-10-28",
+   "said": "First time applications Free Change in name/surname/address/renewal Free ... Applications for the urgent issuance of an identity card €40.00"
+  },
+  {
+   "url": "https://identita.gov.mt/identity-cards-unit/faqs/",
+   "title": "Identità, Identity Cards Unit, FAQs",
+   "read": "2026-10-28",
+   "said": "every Maltese Citizen over the age of fourteen years shall be in possession of a valid Identity Card. They need to apply for an ID Card not later than one month after their fourteenth birthday. ... ID Cards issued to 14-year-old applicants expire one month after their 16th birthday. ID Cards issued to 16-year-old applicants expire one month after their 18th birthday. All other ID Cards are valid for 10 years. ... E-ID cards can be collected from the Identity Cards Unit after six working days. Applicants who choose to collect their eID Card from Servizz.gov hubs may collect their eID Card within ten days. ... Yes – processed within one working day against a fee of €40"
+  }
+ ]
+}

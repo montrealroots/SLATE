@@ -1,0 +1,80 @@
+{
+ "country": "HR",
+ "document": "osobna iskaznica (eOI)",
+ "office": "a police administration or police station",
+ "currency": "EUR",
+ "routes": [
+  {
+   "id": "regular",
+   "where": "home",
+   "speed": "standard",
+   "within": {
+    "n": 30,
+    "unit": "day"
+   },
+   "label": "regular procedure: within 30 days"
+  },
+  {
+   "id": "accelerated",
+   "where": "home",
+   "speed": "urgent",
+   "within": {
+    "n": 10,
+    "unit": "day"
+   },
+   "label": "accelerated procedure: within 10 days"
+  },
+  {
+   "id": "urgent",
+   "where": "home",
+   "speed": "urgent",
+   "within": {
+    "n": 3,
+    "unit": "working day"
+   },
+   "label": "urgent procedure: within three working days"
+  }
+ ],
+ "cards": [
+  {
+   "for": "under 18",
+   "under": 18,
+   "validYears": 5,
+   "pay": {
+    "regular": "0",
+    "accelerated": "25.88",
+    "urgent": "66.36"
+   }
+  },
+  {
+   "for": "18 to 69",
+   "from": 18,
+   "under": 70,
+   "validYears": 5,
+   "pay": {
+    "regular": "13.27",
+    "accelerated": "25.88",
+    "urgent": "66.36"
+   }
+  },
+  {
+   "for": "70 and over",
+   "from": 70,
+   "validYears": 40,
+   "pay": {
+    "regular": "13.27",
+    "accelerated": "25.88",
+    "urgent": "66.36"
+   }
+  }
+ ],
+ "note": "Valid five years; issued at 70 or over, forty. A first card for a resident under 18 in the regular procedure is paid by the state budget (a later one costs 13.27 euros, not modelled). From 70 a card without certificates costs 9.29 euros in the regular procedure (the card with certificates is taken).",
+ "sources": [
+  {
+   "url": "https://gov.hr/hr/rokovi-i-cijene-izdavanja-osobne-iskaznice/364",
+   "title": "gov.hr, Rokovi i cijene izdavanja osobne iskaznice",
+   "read": "2026-10-28",
+   "said": "Elektronička osobna iskaznica u redovnom postupku izdaje se u roku od 30 dana od dana podnošenja zahtjeva u policijskoj upravi odnosno policijskoj postaji gdje se i preuzima: cijena eOI koje sadrže jedan ili dva certifikata je 13,27 EUR cijena eOI koje se izdaju osobama s navršenih 70 godina koje ne sadrže certifikate je 9,29 EUR Elektronička osobna iskaznica u ubrzanom postupku za sve podnositelje zahtjeva izdaje se u roku od 10 dana od dana podnošenja zahtjeva po cijeni od 25,88 EUR. Elektronička osobna iskaznica u žurnom postupku za sve podnositelje zahtjeva izdaje se u roku od tri radna dana od dana podnošenja zahtjeva po cijeni od 66,36 EUR. Troškovi izdavanja prve osobne iskaznice za osobe mlađe od 18 godina, ako imaju prebivalište u Hrvatskoj i ako se ta osobna iskaznica izdaje u redovnom postupku (rok izdavanja 30 dana od podnošenja zahtjeva) podmirit će se iz Državnog proračuna ... Rok važenja osobnih iskaznica i certifikata koje sadrži je pet godina. Iznimno, osobna iskaznica koja je izdana osobi s navršenih 70 godina ima rok važenja od 40 godina."
+  }
+ ]
+}

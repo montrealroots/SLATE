@@ -234,6 +234,114 @@
    }
   ]
  },
+ "BG": {
+  "document": "лична карта",
+  "currency": "EUR",
+  "routes": [
+   {
+    "id": "ordinary",
+    "where": "home",
+    "speed": "standard",
+    "within": null
+   },
+   {
+    "id": "fast",
+    "where": "home",
+    "speed": "urgent",
+    "within": {
+     "n": 3,
+     "unit": "working day"
+    }
+   },
+   {
+    "id": "express",
+    "where": "home",
+    "speed": "urgent",
+    "within": {
+     "n": 8,
+     "unit": "hour"
+    }
+   },
+   {
+    "id": "consulate",
+    "where": "abroad",
+    "speed": "standard",
+    "within": {
+     "n": 45,
+     "unit": "day"
+    }
+   },
+   {
+    "id": "consulate-fast",
+    "where": "abroad",
+    "speed": "urgent",
+    "within": {
+     "n": 30,
+     "unit": "day"
+    }
+   }
+  ],
+  "bands": [
+   {
+    "validYears": 4,
+    "pay": {
+     "ordinary": 0,
+     "fast": null,
+     "express": null,
+     "consulate": 0,
+     "consulate-fast": null
+    },
+    "from": 14,
+    "under": 16
+   },
+   {
+    "validYears": 4,
+    "pay": {
+     "ordinary": 1074,
+     "fast": 2148,
+     "express": 5370,
+     "consulate": 1074,
+     "consulate-fast": 2148
+    },
+    "from": 16,
+    "under": 18
+   },
+   {
+    "validYears": 10,
+    "pay": {
+     "ordinary": 1534,
+     "fast": 3068,
+     "express": 7670,
+     "consulate": 1534,
+     "consulate-fast": 3068
+    },
+    "from": 18,
+    "under": 70
+   },
+   {
+    "validYears": 10,
+    "pay": {
+     "ordinary": 0,
+     "fast": null,
+     "express": null,
+     "consulate": 0,
+     "consulate-fast": null
+    },
+    "from": 70
+   },
+   {
+    "validYears": 30,
+    "pay": {
+     "ordinary": 0,
+     "fast": null,
+     "express": null,
+     "consulate": 0,
+     "consulate-fast": null
+    },
+    "from": 70
+   }
+  ]
+ },
  "BL": {
   "issuedBy": "FR"
  },
@@ -332,6 +440,42 @@
  },
  "CX": {
   "issuedBy": "AU"
+ },
+ "CY": {
+  "document": "δελτίο ταυτότητας (identity card)",
+  "currency": "EUR",
+  "routes": [
+   {
+    "id": "standard",
+    "where": "home",
+    "speed": "standard",
+    "within": null
+   },
+   {
+    "id": "abroad",
+    "where": "abroad",
+    "speed": "standard",
+    "within": null
+   }
+  ],
+  "bands": [
+   {
+    "validYears": 5,
+    "pay": {
+     "standard": 2000,
+     "abroad": 2000
+    },
+    "under": 18
+   },
+   {
+    "validYears": 10,
+    "pay": {
+     "standard": 3000,
+     "abroad": 3000
+    },
+    "from": 18
+   }
+  ]
  },
  "CZ": {
   "document": "občanský průkaz",
@@ -662,8 +806,151 @@
  "GP": {
   "issuedBy": "FR"
  },
+ "GR": {
+  "document": "δελτίο ταυτότητας",
+  "currency": "EUR",
+  "routes": [
+   {
+    "id": "police",
+    "where": "home",
+    "speed": "standard",
+    "within": null
+   }
+  ],
+  "bands": [
+   {
+    "validYears": 10,
+    "pay": {
+     "police": 1000
+    },
+    "from": 12
+   }
+  ]
+ },
  "GU": {
   "issuedBy": "US"
+ },
+ "HR": {
+  "document": "osobna iskaznica (eOI)",
+  "currency": "EUR",
+  "routes": [
+   {
+    "id": "regular",
+    "where": "home",
+    "speed": "standard",
+    "within": {
+     "n": 30,
+     "unit": "day"
+    }
+   },
+   {
+    "id": "accelerated",
+    "where": "home",
+    "speed": "urgent",
+    "within": {
+     "n": 10,
+     "unit": "day"
+    }
+   },
+   {
+    "id": "urgent",
+    "where": "home",
+    "speed": "urgent",
+    "within": {
+     "n": 3,
+     "unit": "working day"
+    }
+   }
+  ],
+  "bands": [
+   {
+    "validYears": 5,
+    "pay": {
+     "regular": 0,
+     "accelerated": 2588,
+     "urgent": 6636
+    },
+    "under": 18
+   },
+   {
+    "validYears": 5,
+    "pay": {
+     "regular": 1327,
+     "accelerated": 2588,
+     "urgent": 6636
+    },
+    "from": 18,
+    "under": 70
+   },
+   {
+    "validYears": 40,
+    "pay": {
+     "regular": 1327,
+     "accelerated": 2588,
+     "urgent": 6636
+    },
+    "from": 70
+   }
+  ]
+ },
+ "HU": {
+  "document": "személyazonosító igazolvány",
+  "currency": "HUF",
+  "routes": [
+   {
+    "id": "kormanyablak",
+    "where": "home",
+    "speed": "standard",
+    "within": null
+   }
+  ],
+  "bands": [
+   {
+    "validYears": 3,
+    "pay": {
+     "kormanyablak": 0
+    },
+    "under": 12
+   },
+   {
+    "validYears": 3,
+    "pay": {
+     "kormanyablak": 0
+    },
+    "from": 12,
+    "under": 14
+   },
+   {
+    "validYears": 3,
+    "pay": {
+     "kormanyablak": 770000
+    },
+    "from": 14,
+    "under": 18
+   },
+   {
+    "validYears": 6,
+    "pay": {
+     "kormanyablak": 770000
+    },
+    "from": 18,
+    "under": 70
+   },
+   {
+    "validYears": 6,
+    "pay": {
+     "kormanyablak": 0
+    },
+    "from": 70
+   },
+   {
+    "validYears": 10,
+    "pay": {
+     "kormanyablak": 0
+    },
+    "from": 70
+   }
+  ]
  },
  "IE": {
   "none": true
@@ -920,6 +1207,58 @@
  "MQ": {
   "issuedBy": "FR"
  },
+ "MT": {
+  "document": "e-ID card",
+  "currency": "EUR",
+  "routes": [
+   {
+    "id": "unit",
+    "where": "home",
+    "speed": "standard",
+    "within": {
+     "n": 6,
+     "unit": "working day"
+    }
+   },
+   {
+    "id": "urgent",
+    "where": "home",
+    "speed": "urgent",
+    "within": {
+     "n": 1,
+     "unit": "working day"
+    }
+   }
+  ],
+  "bands": [
+   {
+    "validYears": 2,
+    "pay": {
+     "unit": 0,
+     "urgent": 4000
+    },
+    "from": 14,
+    "under": 16
+   },
+   {
+    "validYears": 2,
+    "pay": {
+     "unit": 0,
+     "urgent": 4000
+    },
+    "from": 16,
+    "under": 18
+   },
+   {
+    "validYears": 10,
+    "pay": {
+     "unit": 0,
+     "urgent": 4000
+    },
+    "from": 18
+   }
+  ]
+ },
  "NC": {
   "issuedBy": "FR"
  },
@@ -1115,6 +1454,59 @@
  },
  "RE": {
   "issuedBy": "FR"
+ },
+ "RO": {
+  "document": "carte electronică de identitate (CEI)",
+  "currency": "RON",
+  "routes": [
+   {
+    "id": "spclep",
+    "where": "home",
+    "speed": "standard",
+    "within": null
+   }
+  ],
+  "bands": [
+   {
+    "validYears": 2,
+    "pay": {
+     "spclep": 6700
+    },
+    "under": 2
+   },
+   {
+    "validYears": 4,
+    "pay": {
+     "spclep": 6700
+    },
+    "from": 2,
+    "under": 14
+   },
+   {
+    "validYears": 5,
+    "pay": {
+     "spclep": 0
+    },
+    "from": 14,
+    "under": 18
+   },
+   {
+    "validYears": 10,
+    "pay": {
+     "spclep": 0
+    },
+    "from": 18,
+    "under": 70
+   },
+   {
+    "validYears": null,
+    "pay": {
+     "spclep": 0
+    },
+    "from": 70,
+    "permanent": true
+   }
+  ]
  },
  "SE": {
   "document": "nationellt id-kort",

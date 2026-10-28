@@ -1,0 +1,135 @@
+{
+ "country": "BG",
+ "document": "лична карта",
+ "office": "the Ministry of Interior's offices; abroad, a Bulgarian consular service",
+ "currency": "EUR",
+ "routes": [
+  {
+   "id": "ordinary",
+   "where": "home",
+   "speed": "standard",
+   "within": null,
+   "label": "ordinary service"
+  },
+  {
+   "id": "fast",
+   "where": "home",
+   "speed": "urgent",
+   "within": {
+    "n": 3,
+    "unit": "working day"
+   },
+   "label": "fast service: within 3 working days, at twice the fee"
+  },
+  {
+   "id": "express",
+   "where": "home",
+   "speed": "urgent",
+   "within": {
+    "n": 8,
+    "unit": "hour"
+   },
+   "label": "express service: within 8 working hours, at five times the fee"
+  },
+  {
+   "id": "consulate",
+   "where": "abroad",
+   "speed": "standard",
+   "within": {
+    "n": 45,
+    "unit": "day"
+   },
+   "label": "at a consular service abroad: up to 45 days, plus delivery"
+  },
+  {
+   "id": "consulate-fast",
+   "where": "abroad",
+   "speed": "urgent",
+   "within": {
+    "n": 30,
+    "unit": "day"
+   },
+   "label": "fast, at a consular service abroad: up to 30 days, at twice the fee"
+  }
+ ],
+ "cards": [
+  {
+   "for": "14 and 15, first card",
+   "from": 14,
+   "under": 16,
+   "validYears": 4,
+   "pay": {
+    "ordinary": "0",
+    "fast": null,
+    "express": null,
+    "consulate": "0",
+    "consulate-fast": null
+   }
+  },
+  {
+   "for": "16 and 17",
+   "from": 16,
+   "under": 18,
+   "validYears": 4,
+   "pay": {
+    "ordinary": "10.74",
+    "fast": "21.48",
+    "express": "53.70",
+    "consulate": "10.74",
+    "consulate-fast": "21.48"
+   }
+  },
+  {
+   "for": "18 to 69",
+   "from": 18,
+   "under": 70,
+   "validYears": 10,
+   "pay": {
+    "ordinary": "15.34",
+    "fast": "30.68",
+    "express": "76.70",
+    "consulate": "15.34",
+    "consulate-fast": "30.68"
+   }
+  },
+  {
+   "for": "70 and over, ten years",
+   "from": 70,
+   "validYears": 10,
+   "pay": {
+    "ordinary": "0",
+    "fast": null,
+    "express": null,
+    "consulate": "0",
+    "consulate-fast": null
+   }
+  },
+  {
+   "for": "70 and over, thirty years",
+   "from": 70,
+   "validYears": 30,
+   "pay": {
+    "ordinary": "0",
+    "fast": null,
+    "express": null,
+    "consulate": "0",
+    "consulate-fast": null
+   }
+  }
+ ],
+ "note": "Fees from 1 January 2026 under Tariff No. 4 to the State Fees Act (art. 32), in euros; the fast and express services multiply the fee by two and five (art. 35), and a consulate's fast service by two (art. 36). A first card between 14 and 16 and any card from 70 are free (art. 33); what the faster services cost then isn't stated, so it's null. An identity card is issued from 14. The ordinary service's time in Bulgaria isn't read; abroad, the 45 or 30 days don't include delivery to the consulate.",
+ "sources": [
+  {
+   "url": "https://mfa.bg/upload/159291/%D0%A2%D0%B0%D1%80%D0%B8%D1%84%D0%B0%204%20last.pdf",
+   "title": "Ministry of Foreign Affairs of Bulgaria, Тарифа № 4 за таксите, които се събират в системата на МВР по Закона за държавните такси (Ciela text as of 27 May 2026), arts. 32 to 36",
+   "read": "2026-10-28",
+   "said": "със срок на валидност 4 години на лице от 14- до 18-годишна възраст - 10,74 евро; ... срок на валидност 10 години на лице от 18- до 70-годишна възраст - 15,34 евро; ... Освобождават се от заплащане на такса при издаване на първа лична карта лицата от 14- до ... (2) Освобождават се от заплащане на такса за издаване на лична карта лицата, навършили 70-годишна възраст. ... съответната такса се заплаща с увеличение два пъти, когато по искане на лицето услугата се извършва в срок до 3 работни дни. ... съответната такса се заплаща с увеличение пет пъти, когато по искане на лицето услугата се извършва в срок до 8 работни часа. ... България в чужбина и по искане на лицето услугата се извършва в срок до 30 дни, съответната такса се заплаща с увеличение два пъти."
+  },
+  {
+   "url": "https://mfa.bg/bg/uslugi-patuvania/konsulski-uslugi/zad-granica/izdavane-lichna-karta",
+   "title": "Ministry of Foreign Affairs of Bulgaria, Издаване на лична карта",
+   "read": "2026-10-28",
+   "said": "Срочни лични карти се издават на лица от 14 до 18-годишна възраст със срок на валидност 4 години и на лица от 18 до 70-годишна възраст със срок на валидност 10 години. На лицата, навършили 70-годишна възраст, се издават лични карти със срок на валидност 10 години или 30 години. ... Срокът за издаване на лична карта, заявлението за която е подадено в консулска служба на Република България в чужбина, е до 45 дни за обикновена услуга и до 30 дни за бърза услуга."
+  }
+ ]
+}
