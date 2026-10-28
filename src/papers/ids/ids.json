@@ -515,6 +515,26 @@
    }
   ]
  },
+ "BF": {
+  "document": "Carte nationale d'identité burkinabè (CNIB)",
+  "currency": "XOF",
+  "routes": [
+   {
+    "id": "office",
+    "where": "home",
+    "speed": "standard",
+    "within": null
+   }
+  ],
+  "bands": [
+   {
+    "validYears": null,
+    "pay": {
+     "office": 2500
+    }
+   }
+  ]
+ },
  "BG": {
   "document": "лична карта",
   "currency": "EUR",
@@ -620,6 +640,27 @@
      "consulate-fast": null
     },
     "from": 70
+   }
+  ]
+ },
+ "BI": {
+  "document": "Carte nationale d'identité (CNI)",
+  "currency": "BIF",
+  "routes": [
+   {
+    "id": "commune",
+    "where": "home",
+    "speed": "standard",
+    "within": null
+   }
+  ],
+  "bands": [
+   {
+    "validYears": null,
+    "pay": {
+     "commune": 500
+    },
+    "from": 16
    }
   ]
  },
@@ -738,6 +779,35 @@
    }
   ]
  },
+ "BZ": {
+  "document": "Social Security card (the de facto national ID)",
+  "currency": "BZD",
+  "routes": [
+   {
+    "id": "office",
+    "where": "home",
+    "speed": "standard",
+    "within": null
+   }
+  ],
+  "bands": [
+   {
+    "validYears": null,
+    "pay": {
+     "office": 500
+    },
+    "under": 14
+   },
+   {
+    "validYears": null,
+    "pay": {
+     "office": 500
+    },
+    "from": 14,
+    "permanent": true
+   }
+  ]
+ },
  "CA": {
   "none": true
  },
@@ -772,6 +842,27 @@
    }
   ]
  },
+ "CI": {
+  "document": "Carte nationale d'identité (CNI)",
+  "currency": "XOF",
+  "routes": [
+   {
+    "id": "office",
+    "where": "home",
+    "speed": "standard",
+    "within": null
+   }
+  ],
+  "bands": [
+   {
+    "validYears": 10,
+    "pay": {
+     "office": 5000
+    },
+    "from": 5
+   }
+  ]
+ },
  "CK": {
   "issuedBy": "NZ"
  },
@@ -800,6 +891,27 @@
      "office": 3820
     },
     "from": 80
+   }
+  ]
+ },
+ "CM": {
+  "document": "Carte nationale d'identité (CNI)",
+  "currency": "XAF",
+  "routes": [
+   {
+    "id": "post",
+    "where": "home",
+    "speed": "standard",
+    "within": null
+   }
+  ],
+  "bands": [
+   {
+    "validYears": 10,
+    "pay": {
+     "post": null
+    },
+    "from": 18
    }
   ]
  },
@@ -900,6 +1012,27 @@
      "regional": 0
     },
     "from": 18
+   }
+  ]
+ },
+ "CU": {
+  "document": "Carné de identidad",
+  "currency": "CUP",
+  "routes": [
+   {
+    "id": "office",
+    "where": "home",
+    "speed": "standard",
+    "within": null
+   }
+  ],
+  "bands": [
+   {
+    "validYears": null,
+    "pay": {
+     "office": 2500
+    },
+    "from": 16
    }
   ]
  },
@@ -1411,6 +1544,30 @@
  "GB": {
   "none": true
  },
+ "GD": {
+  "document": "Voter's Identification Card",
+  "currency": "XCD",
+  "routes": [
+   {
+    "id": "constituency",
+    "where": "home",
+    "speed": "standard",
+    "within": {
+     "n": 2,
+     "unit": "week"
+    }
+   }
+  ],
+  "bands": [
+   {
+    "validYears": null,
+    "pay": {
+     "constituency": 0
+    },
+    "from": 18
+   }
+  ]
+ },
  "GE": {
   "document": "electronic identity card",
   "currency": "GEL",
@@ -1628,6 +1785,30 @@
  "GU": {
   "issuedBy": "US"
  },
+ "GY": {
+  "document": "National Identification Card",
+  "currency": "GYD",
+  "routes": [
+   {
+    "id": "office",
+    "where": "home",
+    "speed": "standard",
+    "within": {
+     "n": 6,
+     "unit": "week"
+    }
+   }
+  ],
+  "bands": [
+   {
+    "validYears": null,
+    "pay": {
+     "office": null
+    },
+    "from": 14
+   }
+  ]
+ },
  "HK": {
   "document": "Hong Kong Identity Card",
   "currency": "HKD",
@@ -1729,6 +1910,27 @@
      "urgent": 6636
     },
     "from": 70
+   }
+  ]
+ },
+ "HT": {
+  "document": "Carte d'identification nationale (CIN)",
+  "currency": "HTG",
+  "routes": [
+   {
+    "id": "office",
+    "where": "home",
+    "speed": "standard",
+    "within": null
+   }
+  ],
+  "bands": [
+   {
+    "validYears": 10,
+    "pay": {
+     "office": 0
+    },
+    "from": 18
    }
   ]
  },
@@ -2048,6 +2250,41 @@
      "standard": 86500
     },
     "from": 16
+   }
+  ]
+ },
+ "LC": {
+  "document": "Voter identification card (Electoral Department)",
+  "currency": "XCD",
+  "routes": [
+   {
+    "id": "elector",
+    "where": "home",
+    "speed": "standard",
+    "within": null
+   },
+   {
+    "id": "non-elector",
+    "where": "home",
+    "speed": "standard",
+    "within": null
+   }
+  ],
+  "bands": [
+   {
+    "validYears": null,
+    "pay": {
+     "non-elector": 2000
+    },
+    "under": 18
+   },
+   {
+    "validYears": null,
+    "pay": {
+     "elector": null,
+     "non-elector": 2000
+    },
+    "from": 18
    }
   ]
  },
@@ -3060,6 +3297,26 @@
    }
   ]
  },
+ "PY": {
+  "document": "Cédula de Identidad Civil",
+  "currency": "PYG",
+  "routes": [
+   {
+    "id": "office",
+    "where": "home",
+    "speed": "standard",
+    "within": null
+   }
+  ],
+  "bands": [
+   {
+    "validYears": null,
+    "pay": {
+     "office": 0
+    }
+   }
+  ]
+ },
  "RE": {
   "issuedBy": "FR"
  },
@@ -3478,6 +3735,56 @@
      "office": 3000
     },
     "from": 6
+   }
+  ]
+ },
+ "SN": {
+  "document": "Carte d'identité biométrique CEDEAO",
+  "currency": "XOF",
+  "routes": [
+   {
+    "id": "office",
+    "where": "home",
+    "speed": "standard",
+    "within": null
+   }
+  ],
+  "bands": [
+   {
+    "validYears": 10,
+    "pay": {
+     "office": null
+    },
+    "from": 5
+   }
+  ]
+ },
+ "SR": {
+  "document": "Id-kaart",
+  "currency": "SRD",
+  "routes": [
+   {
+    "id": "office",
+    "where": "home",
+    "speed": "standard",
+    "within": null
+   }
+  ],
+  "bands": [
+   {
+    "validYears": 10,
+    "pay": {
+     "office": 0
+    },
+    "from": 16,
+    "under": 17
+   },
+   {
+    "validYears": 10,
+    "pay": {
+     "office": 7500
+    },
+    "from": 17
    }
   ]
  },

@@ -1,0 +1,50 @@
+{
+ "country": "LC",
+ "document": "Voter identification card (Electoral Department)",
+ "office": "the Electoral Department",
+ "currency": "XCD",
+ "routes": [
+  {
+   "id": "elector",
+   "where": "home",
+   "speed": "standard",
+   "within": null,
+   "label": "registration as an elector, which issues the voter identification card"
+  },
+  {
+   "id": "non-elector",
+   "where": "home",
+   "speed": "standard",
+   "within": null,
+   "label": "a new non-elector identification card"
+  }
+ ],
+ "cards": [
+  {
+   "for": "under 18",
+   "under": 18,
+   "validYears": null,
+   "pay": {
+    "non-elector": "20"
+   }
+  },
+  {
+   "for": "18 and over",
+   "from": 18,
+   "validYears": null,
+   "pay": {
+    "elector": null,
+    "non-elector": "20"
+   }
+  }
+ ],
+ "note": "The Elections Act's schedule of fees (Revised Laws of Saint Lucia 2023, not yet authenticated by commencement order): a new non-elector identification card costs EC$20; a lost voter card EC$100 to replace, a defaced one EC$10 (not modelled). No line charges for an elector's first card, so that fee is null, as are the card's term (the Commission sets it) and the time. 18 is kept as the age of an elector.",
+ "sources": [
+  {
+   "url": "https://attorneygeneralchambers.com/laws-of-saint-lucia/elections-act/schedule-01",
+   "title": "Attorney General's Chambers (Saint Lucia), Elections Act, Schedule 1 (fees)",
+   "read": "2026-10-28",
+   "said": "Voters Identification Cards: Fee EC$ (a) Replacement cost for lost voter identification cards $100 per card (b) Replacement cost for defaced or mutilated identification cards $10 per card ... New applications for non-elector identification cards $20.00"
+  }
+ ]
+}
