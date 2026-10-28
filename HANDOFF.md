@@ -26,7 +26,7 @@ restarts. Read `CLAUDE.md` and the owner's package in `docs/` first.
   Kedah, Kelantan and Terengganu); Western Sahara keeps Morocco's days by the owner's ruling of 2026-10-28; its code
   at 100% mutation score (532 mutants, with the regions' and the shared substitutes' rules). The prices
   (`world.prices`): the engine is built and tested, at 100% mutation score; 172 countries researched from the World
-  Bank's levels and 6 carried from its 2021 benchmark, 6 proven, 68 pending (the next step).
+  Bank's levels and 11 carried from its 2021 benchmark, 6 proven, 63 pending (the next step).
 
 What layer 2 holds so far:
 
@@ -128,7 +128,9 @@ What layer 2 holds so far:
   HICP, PxWeb), Aruba (CBS's December releases, the months placed by their chart positions), Curaçao (CBS's series
   since 1970, 2023 = 100) and Sint Maarten (STAT's quarters); for these two the World Bank's guilder level stands in
   Caribbean guilders, replaced one for one on 31 March 2025 (the central bank, quoted by the Curaçao Chronicle; its
-  own site answers with a Cloudflare challenge).
+  own site answers with a Cloudflare challenge); Bermuda (the Department of Statistics' December reports), the
+  Cayman Islands (the ESO's quarters), Barbados (the Statistical Service's rebased RPI, February 2021 uncollected),
+  the Faroes (Hagstova's quarters) and Greenland (its half-years).
 
 What layer 1 holds:
 
@@ -613,23 +615,20 @@ What layer 0 holds:
      Ministry of Justice API) is fine; an API that needs a key embedded in a site's script (Andorra's BOPA) is not.
 3. Prices: the countries with places and no World Bank level from 2024 on are pending
    (`coverage/prices-countries.json`). Each is to be researched from its own statistics office or blocked after all
-   five methods (`world.prices.blocked.<code>`, the player told by `prices.unkept`). Two kinds. The 35 the World Bank
-   last priced before 2024 (its 2021 benchmark only; Andorra, Argentina, Aruba, Curaçao, Sint Maarten and Kosovo done: American Samoa, Barbados, Bermuda,
-   the British Virgin Islands, the Cayman Islands, DR Congo, Curaçao, Eritrea, Eswatini, the Faroes, French
-   Polynesia, Greenland, Guam, the Marshall Islands, Myanmar, Nauru, New Caledonia, the Northern Marianas, Puerto
-   Rico, Sint Maarten, Somalia, South Sudan, Syria, Turkmenistan, Turks and Caicos, Tuvalu, the US Virgin Islands,
-   Zimbabwe; to 2022: Kosovo, Micronesia, Sudan; to 2023: Saint Kitts and Nevis), whose level can be carried forward
-   by the national consumer price index against the United States' (the extrapolation the World Bank itself makes,
-   now built: add the index file, its register entry, and rebuild with `npx tsx tools/prices/build.ts`), each index
-   from its own office; where an office gives only its index's yearly change, the change is not enough unless it is
-   the change of annual means, and that is said in the file's note. Leads: ILOSTAT's CPI (rplumber.ilo.org) holds a
-   few of them as a check (Argentina's means matched), not as the source. And the 39 it never priced: Anguilla, Åland, Saint Barthélemy, Bonaire, Cocos,
-   the Cook Islands, Cuba, Christmas Island, Western Sahara, the Falklands, French Guiana, Guernsey, Gibraltar,
-   Guadeloupe, South Georgia, the Isle of Man, the British Indian Ocean Territory, Jersey, North Korea,
-   Liechtenstein, Monaco, Saint Martin, Martinique, Montserrat, Norfolk Island, Niue, Saint Pierre and Miquelon,
-   Pitcairn, Réunion, Saint Helena, Svalbard, the French Southern Territories, Tokelau, Taiwan, the Vatican,
-   Venezuela, Wallis and Futuna, Yemen, Mayotte (leads, not yet read: INSEE's comparisons of the French overseas
-   departments' prices with France's; the Asian Development Bank's ICP Asia-Pacific reports for Taiwan). Where a territory has no
+   five methods (`world.prices.blocked.<code>`, the player told by `prices.unkept`). Two kinds (the matrix's
+   pending rows name them). Those the World Bank last priced at its 2021 benchmark (35 at first), whose level is
+   carried forward by the national consumer price index against the United States' (the extrapolation the World
+   Bank itself makes, now built: add the index file, its register entry, and rebuild with `npx tsx
+   tools/prices/build.ts`), each index from its own office; an office's quarters or half-years serve as its months
+   do (the mean of what it publishes for the year), and a month it didn't collect is left out as it leaves it out.
+   And the 39 it never priced (the French overseas departments and collectivities, the Crown
+   dependencies, Taiwan, Cuba, North Korea, Venezuela, Yemen, the smallest islands; leads, not yet read: INSEE's
+   comparisons of the overseas departments' prices with France's; the Asian Development Bank's ICP Asia-Pacific
+   reports for Taiwan; Statistics Greenland's price level index against Denmark, 2014-2016, as a model of such
+   a comparison). Attempts so far for the blockers: the British Virgin Islands (gov.vg's statistics pages empty
+   since its move; only 2015-2017 reports found), the Turks and Caicos (its Statistics Authority's site answers
+   with a Sucuri firewall), Saint Kitts and Nevis (its office's tables stop at 2023 and 2024; the ECCB's
+   statistics refuse with 403). Where a territory has no
    measure of its own but uses another country's prices by law or market, that is an owner's ruling, as Western
    Sahara's holidays were, not an assumption. Sub-national levels (the US Bureau of Economic Analysis' regional price
    parities, and others where a country publishes them) are open research for after the countries. Prices move with
