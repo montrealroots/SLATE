@@ -24159,6 +24159,124 @@
      "said": "Payment Information: All payments for Consular Services should be made via money order or Bank draft. Please make the payment payable to \u201cConsulate of Eritrea.\u201d NEW/RENEWAL/LOST PASSPORT ... NEW PASSPORT FEE: $300.00 MONEY-ORDER: PAYABLE TO CONSULATE OF ERITREA. PASSPORT RENEWAL FEE $150.00. PASSPORT MUST BE ISSUED AFTER 2010 ... UNDER_AGE REQUIREMENTS ... PASSPORT FEE: $225.00 MONEY ORDER ... PASSPORT REPLACEMENT FEE $115.00. PASSPORT MUST BE ISSUED AFTER 2010"
     }
    ]
+  },
+  {
+   "id": "R-0683",
+   "fact": "papers.passports.blocked.IR",
+   "sought": "Iran's ordinary passport: its fee in rials, time and validity",
+   "status": "blocked",
+   "attempts": [
+    {
+     "method": "institution",
+     "tried": "The police's e-services (epolice.ir, police-man.ir), named by search as where applications are registered",
+     "result": "Iranian hosts tried from this environment reset the connection or don't answer; no page could be read.",
+     "date": "2026-10-28"
+    },
+    {
+     "method": "official-register",
+     "tried": "Search for the year 1405 passport tariff and for an Iranian embassy's consular fee list (mfa.ir)",
+     "result": "No tariff instrument or embassy fee list was returned; the fee lists found are other countries' missions in Tehran.",
+     "date": "2026-10-28"
+    },
+    {
+     "method": "web-search",
+     "tried": "'\u0647\u0632\u06cc\u0646\u0647 \u0635\u062f\u0648\u0631 \u06af\u0630\u0631\u0646\u0627\u0645\u0647 \u06f1\u06f4\u06f0\u06f5 \u062a\u0648\u0645\u0627\u0646 \u067e\u0644\u06cc\u0633 \u06af\u0630\u0631\u0646\u0627\u0645\u0647 \u062a\u0639\u0631\u0641\u0647 \u06af\u0630\u0631\u0646\u0627\u0645\u0647 \u0632\u06cc\u0631 \u06f1\u06f8 \u0633\u0627\u0644' and 'Iranian embassy consular section passport issuance fee euro passport fee list mfa.ir consular services Iranian nationals'",
+     "result": "Only undated or 1404 guide figures from Iranian sites, not readable here, and foreign missions' fees.",
+     "date": "2026-10-28"
+    },
+    {
+     "method": "trade-press",
+     "tried": "Rokna's 1404 passport price table, SNN, Taadol, Jame Jam and Zoomit articles named by search",
+     "result": "Every host resets the connection or doesn't answer from this environment.",
+     "date": "2026-10-28"
+    },
+    {
+     "method": "archive",
+     "tried": "The Wayback Machine's availability API for epolice.ir",
+     "result": "The closest snapshot is of 7 October 2011, far too old for a current fee; this environment's egress policy refuses web.archive.org in any case (403).",
+     "date": "2026-10-28"
+    }
+   ],
+   "notModeled": "passports.unkept"
+  },
+  {
+   "id": "R-0684",
+   "fact": "papers.passports.IQ",
+   "sought": "Iraq's electronic passport fee, from Shafaq News's report of 15 October 2026",
+   "status": "secondary",
+   "value": {
+    "file": "research/sources/papers/passports/IQ.json",
+    "sha256": "202554f8d4e6648f956bd129602b2abf0be4846731330ff4c2c3d7575ed7eea1"
+   },
+   "sources": [
+    {
+     "kind": "secondary",
+     "url": "https://shafaq.com/en/society/New-exchange-rate-lifts-Iraqi-passport-costs",
+     "title": "Shafaq News, New exchange rate lifts Iraqi passport costs (15 October 2026)",
+     "read": "2026-10-28",
+     "said": "Iraq has raised the fee for an electronic passport to 101,000 dinars ($66.45), up from 91,000 dinars ($59.87), a security source told Shafaq News on Thursday. The increase reflects a recent rise in the official US dollar exchange rate against the Iraqi dinar, according to the source, who said payments must be made exclusively through electronic channels, with the proceeds deposited into official federal government accounts.",
+     "quotes": "https://moi.gov.iq/"
+    }
+   ]
+  },
+  {
+   "id": "R-0685",
+   "fact": "papers.passports.MM",
+   "sought": "Myanmar's passport fee, from Burma News International's 2023 report",
+   "status": "secondary",
+   "value": {
+    "file": "research/sources/papers/passports/MM.json",
+    "sha256": "59906b6409e2f4e36febeaeb364bb1ce8963555f6938ea70fa576b5254692992"
+   },
+   "sources": [
+    {
+     "kind": "secondary",
+     "url": "https://www.bnionline.net/en/node/97868",
+     "title": "Burma News International (Than Lwin Times), Myanmar's passport services return with technical hitch (27 February 2023)",
+     "read": "2026-10-28",
+     "said": "Online reservation queue for Myanmar passport application was resumed on 24 February, but the system has not fully recovered with some delays. Although the 24-hour booking is allowed on www.passport.gov.mm ... Authorities charged K35,000 for application of new Myanmar passport, K75,000 for a damaged or lost passport.",
+     "quotes": "https://www.passport.gov.mm/"
+    }
+   ]
+  },
+  {
+   "id": "R-0686",
+   "fact": "papers.passports.blocked.PS",
+   "sought": "The Palestinian passport: its fee, time and validity",
+   "status": "blocked",
+   "attempts": [
+    {
+     "method": "institution",
+     "tried": "The Ministry of the Interior (https://www.moi.pna.ps/ and https://www.moi.gov.ps/), its e-services portal Hukumati (https://www.hukumati.ps/) and the General Delegation in Canada (https://palestinegd.ca/passport-issuance%2Frenewal)",
+     "result": "The ministry's pages answer but hold no passport fee and send to the Cabinet's service guide; Hukumati omits an intermediate certificate and, completed from its AIA URL, loops on redirects; the Canadian delegation resets the connection.",
+     "date": "2026-10-28"
+    },
+    {
+     "method": "official-register",
+     "tried": "The Council of Ministers' government services guide for the Ministry of the Interior (http://www.palestinecabinet.gov.ps/portal/GovService/25)",
+     "result": "Answers 503 over HTTP and resets the connection over HTTPS.",
+     "date": "2026-10-28"
+    },
+    {
+     "method": "web-search",
+     "tried": "'Palestinian passport fee shekels Ministry of Interior Palestine passport issuance fee 2025 \u0631\u0633\u0648\u0645 \u062c\u0648\u0627\u0632 \u0627\u0644\u0633\u0641\u0631 \u0627\u0644\u0641\u0644\u0633\u0637\u064a\u0646\u064a \u0648\u0632\u0627\u0631\u0629 \u0627\u0644\u062f\u0627\u062e\u0644\u064a\u0629 \u0634\u064a\u0643\u0644'",
+     "result": "Only a user-edited wiki (not a source), Wikipedia, and foreign missions' fees.",
+     "date": "2026-10-28"
+    },
+    {
+     "method": "trade-press",
+     "tried": "'\u0648\u0641\u0627 \u0631\u0633\u0648\u0645 \u0625\u0635\u062f\u0627\u0631 \u062c\u0648\u0627\u0632 \u0627\u0644\u0633\u0641\u0631 \u0627\u0644\u0641\u0644\u0633\u0637\u064a\u0646\u064a \u0634\u064a\u0643\u0644 \u0627\u0644\u0623\u062d\u0648\u0627\u0644 \u0627\u0644\u0645\u062f\u0646\u064a\u0629 \u062a\u062c\u062f\u064a\u062f \u062c\u0648\u0627\u0632 \u0627\u0644\u0633\u0641\u0631 \u0631\u0633\u0648\u0645 2024 OR 2025'",
+     "result": "No WAFA or other report of the fee in shekels was returned.",
+     "date": "2026-10-28"
+    },
+    {
+     "method": "archive",
+     "tried": "The Wayback Machine's availability API for the Cabinet's guide (palestinecabinet.gov.ps/portal/GovService/25)",
+     "result": "A snapshot of 2 November 2025 exists (20251102222934), but this environment's egress policy refuses web.archive.org (403), so it couldn't be read.",
+     "date": "2026-10-28"
+    }
+   ],
+   "notModeled": "passports.unkept"
   }
  ]
 }
