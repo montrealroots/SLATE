@@ -43,6 +43,60 @@
    }
   ]
  },
+ "AM": {
+  "document": "identification card",
+  "currency": "AMD",
+  "routes": [
+   {
+    "id": "standard",
+    "where": "home",
+    "speed": "standard",
+    "within": {
+     "n": 15,
+     "unit": "working day"
+    }
+   },
+   {
+    "id": "five-days",
+    "where": "home",
+    "speed": "urgent",
+    "within": {
+     "n": 5,
+     "unit": "working day"
+    }
+   },
+   {
+    "id": "three-days",
+    "where": "home",
+    "speed": "urgent",
+    "within": {
+     "n": 3,
+     "unit": "working day"
+    }
+   },
+   {
+    "id": "one-day",
+    "where": "home",
+    "speed": "urgent",
+    "within": {
+     "n": 1,
+     "unit": "working day"
+    }
+   }
+  ],
+  "bands": [
+   {
+    "validYears": 10,
+    "pay": {
+     "standard": 300000,
+     "five-days": 800000,
+     "three-days": 1300000,
+     "one-day": 2300000
+    },
+    "from": 16
+   }
+  ]
+ },
  "AS": {
   "issuedBy": "US"
  },
@@ -209,6 +263,45 @@
      "express-online": 9800
     },
     "from": 18
+   }
+  ]
+ },
+ "AZ": {
+  "document": "şəxsiyyət vəsiqəsi",
+  "currency": "AZN",
+  "routes": [
+   {
+    "id": "asan",
+    "where": "home",
+    "speed": "standard",
+    "within": {
+     "n": 10,
+     "unit": "day"
+    }
+   }
+  ],
+  "bands": [
+   {
+    "validYears": null,
+    "pay": {
+     "asan": 500
+    },
+    "under": 5
+   },
+   {
+    "validYears": null,
+    "pay": {
+     "asan": 500
+    },
+    "from": 5,
+    "under": 15
+   },
+   {
+    "validYears": null,
+    "pay": {
+     "asan": 500
+    },
+    "from": 15
    }
   ]
  },
@@ -882,6 +975,69 @@
  "GB": {
   "none": true
  },
+ "GE": {
+  "document": "electronic identity card",
+  "currency": "GEL",
+  "routes": [
+   {
+    "id": "ten-days",
+    "where": "home",
+    "speed": "standard",
+    "within": {
+     "n": 10,
+     "unit": "working day"
+    }
+   },
+   {
+    "id": "five-days",
+    "where": "home",
+    "speed": "urgent",
+    "within": {
+     "n": 5,
+     "unit": "working day"
+    }
+   },
+   {
+    "id": "three-days",
+    "where": "home",
+    "speed": "urgent",
+    "within": {
+     "n": 3,
+     "unit": "working day"
+    }
+   },
+   {
+    "id": "two-days",
+    "where": "home",
+    "speed": "urgent",
+    "within": {
+     "n": 2,
+     "unit": "working day"
+    }
+   },
+   {
+    "id": "same-day",
+    "where": "home",
+    "speed": "urgent",
+    "within": {
+     "n": 1,
+     "unit": "day"
+    }
+   }
+  ],
+  "bands": [
+   {
+    "validYears": null,
+    "pay": {
+     "ten-days": 6000,
+     "five-days": 8000,
+     "three-days": 10000,
+     "two-days": 12000,
+     "same-day": 15000
+    }
+   }
+  ]
+ },
  "GF": {
   "issuedBy": "FR"
  },
@@ -1180,6 +1336,27 @@
  },
  "JE": {
   "issuedBy": "GB"
+ },
+ "KZ": {
+  "document": "удостоверение личности гражданина Республики Казахстан",
+  "currency": "KZT",
+  "routes": [
+   {
+    "id": "standard",
+    "where": "home",
+    "speed": "standard",
+    "within": null
+   }
+  ],
+  "bands": [
+   {
+    "validYears": 10,
+    "pay": {
+     "standard": 86500
+    },
+    "from": 16
+   }
+  ]
  },
  "LI": {
   "document": "Identitätskarte",
@@ -1862,6 +2039,47 @@
    }
   ]
  },
+ "RU": {
+  "document": "паспорт гражданина Российской Федерации (internal passport)",
+  "currency": "RUB",
+  "routes": [
+   {
+    "id": "mvd",
+    "where": "home",
+    "speed": "standard",
+    "within": {
+     "n": 5,
+     "unit": "working day"
+    }
+   }
+  ],
+  "bands": [
+   {
+    "validYears": null,
+    "pay": {
+     "mvd": 30000
+    },
+    "from": 14,
+    "under": 20
+   },
+   {
+    "validYears": null,
+    "pay": {
+     "mvd": 30000
+    },
+    "from": 20,
+    "under": 45
+   },
+   {
+    "validYears": null,
+    "pay": {
+     "mvd": 30000
+    },
+    "from": 45,
+    "permanent": true
+   }
+  ]
+ },
  "SE": {
   "document": "nationellt id-kort",
   "currency": "SEK",
@@ -2130,6 +2348,26 @@
  },
  "TF": {
   "issuedBy": "FR"
+ },
+ "TR": {
+  "document": "Türkiye Cumhuriyeti kimlik kartı",
+  "currency": "TRY",
+  "routes": [
+   {
+    "id": "nufus",
+    "where": "home",
+    "speed": "standard",
+    "within": null
+   }
+  ],
+  "bands": [
+   {
+    "validYears": null,
+    "pay": {
+     "nufus": 22000
+    }
+   }
+  ]
  },
  "UA": {
   "document": "паспорт громадянина України у формі картки (ID-картка)",

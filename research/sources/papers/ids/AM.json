@@ -1,0 +1,70 @@
+{
+ "country": "AM",
+ "document": "identification card",
+ "office": "a subdivision of the Ministry of Internal Affairs' Passport and Visa Department (Migration and Citizenship Service)",
+ "currency": "AMD",
+ "routes": [
+  {
+   "id": "standard",
+   "where": "home",
+   "speed": "standard",
+   "within": {
+    "n": 15,
+    "unit": "working day"
+   },
+   "label": "issued on the 15th working day"
+  },
+  {
+   "id": "five-days",
+   "where": "home",
+   "speed": "urgent",
+   "within": {
+    "n": 5,
+    "unit": "working day"
+   },
+   "label": "on the 5th working day, for 5,000 drams more"
+  },
+  {
+   "id": "three-days",
+   "where": "home",
+   "speed": "urgent",
+   "within": {
+    "n": 3,
+    "unit": "working day"
+   },
+   "label": "on the 3rd working day, for 10,000 drams more"
+  },
+  {
+   "id": "one-day",
+   "where": "home",
+   "speed": "urgent",
+   "within": {
+    "n": 1,
+    "unit": "working day"
+   },
+   "label": "1 working day after, for 20,000 drams more"
+  }
+ ],
+ "cards": [
+  {
+   "for": "16 and over",
+   "from": 16,
+   "validYears": 10,
+   "pay": {
+    "standard": "3000",
+    "five-days": "8000",
+    "three-days": "13000",
+    "one-day": "23000"
+   }
+  }
+ ],
+ "note": "Voluntary from 16, for use within Armenia; valid ten years. The faster terms add their charge to the 3,000 drams, summed here.",
+ "sources": [
+  {
+   "url": "https://migration.mia.gov.am/en/acquiring-an-identification-card",
+   "title": "Ministry of Internal Affairs of Armenia, Migration and Citizenship Service, Acquiring an Identification Card",
+   "read": "2026-10-28",
+   "said": "After turning 16, RA citizens may voluntarily acquire an identification card, which serves as a document confirming their identity and citizenship and is intended for use within the territory of the Republic of Armenia. The identification card is issued with a validity period of 10 years. ... To acquire an identification card, a fee of 3,000 AMD shall be paid. ... The identification card is issued on the 15th working day following the submission of the application. ... 3,000 + 20,000 AMD – if the card is to be received 1 working day after submission, 3,000 + 10,000 AMD – if the card is to be received on the 3rd working day after submission, 3,000 + 5,000 AMD – if the card is to be received on the 5th working day after submission."
+  }
+ ]
+}
