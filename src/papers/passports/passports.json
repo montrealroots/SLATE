@@ -2924,6 +2924,33 @@
    }
   ]
  },
+ "MW": {
+  "currency": "MWK",
+  "routes": [
+   {
+    "id": "home",
+    "where": "home",
+    "speed": "standard",
+    "within": null
+   }
+  ],
+  "bands": [
+   {
+    "validYears": 10,
+    "pay": {
+     "home": null
+    },
+    "from": 10
+   },
+   {
+    "validYears": 5,
+    "pay": {
+     "home": null
+    },
+    "under": 10
+   }
+  ]
+ },
  "MX": {
   "currency": "MXN",
   "routes": [
@@ -3605,6 +3632,35 @@
      "first": 25000
     },
     "under": 16
+   }
+  ]
+ },
+ "SC": {
+  "currency": "SCR",
+  "routes": [
+   {
+    "id": "home",
+    "where": "home",
+    "speed": "standard",
+    "within": {
+     "n": 3,
+     "unit": "working day"
+    }
+   },
+   {
+    "id": "embassy",
+    "where": "abroad",
+    "speed": "standard",
+    "within": null
+   }
+  ],
+  "bands": [
+   {
+    "validYears": null,
+    "pay": {
+     "home": 75000,
+     "embassy": 175000
+    }
    }
   ]
  },
