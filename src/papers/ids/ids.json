@@ -582,6 +582,51 @@
    }
   ]
  },
+ "CN": {
+  "document": "居民身份证 (resident identity card)",
+  "currency": "CNY",
+  "routes": [
+   {
+    "id": "police",
+    "where": "home",
+    "speed": "standard",
+    "within": null
+   }
+  ],
+  "bands": [
+   {
+    "validYears": 5,
+    "pay": {
+     "police": 2000
+    },
+    "under": 16
+   },
+   {
+    "validYears": 10,
+    "pay": {
+     "police": 2000
+    },
+    "from": 16,
+    "under": 26
+   },
+   {
+    "validYears": 20,
+    "pay": {
+     "police": 2000
+    },
+    "from": 26,
+    "under": 46
+   },
+   {
+    "validYears": null,
+    "pay": {
+     "police": 2000
+    },
+    "from": 46,
+    "permanent": true
+   }
+  ]
+ },
  "CW": {
   "document": "Nederlandse identiteitskaart",
   "currency": "USD",
@@ -1119,6 +1164,26 @@
  "GU": {
   "issuedBy": "US"
  },
+ "HK": {
+  "document": "Hong Kong Identity Card",
+  "currency": "HKD",
+  "routes": [
+   {
+    "id": "rop",
+    "where": "home",
+    "speed": "standard",
+    "within": null
+   }
+  ],
+  "bands": [
+   {
+    "validYears": null,
+    "pay": {
+     "rop": 0
+    }
+   }
+  ]
+ },
  "HR": {
   "document": "osobna iskaznica (eOI)",
   "currency": "EUR",
@@ -1336,6 +1401,55 @@
  },
  "JE": {
   "issuedBy": "GB"
+ },
+ "JP": {
+  "document": "個人番号カード (My Number Card)",
+  "currency": "JPY",
+  "routes": [
+   {
+    "id": "municipality",
+    "where": "home",
+    "speed": "standard",
+    "within": null
+   }
+  ],
+  "bands": [
+   {
+    "validYears": 5,
+    "pay": {
+     "municipality": 0
+    },
+    "under": 18
+   },
+   {
+    "validYears": 10,
+    "pay": {
+     "municipality": 0
+    },
+    "from": 18
+   }
+  ]
+ },
+ "KR": {
+  "document": "주민등록증 (resident registration card)",
+  "currency": "KRW",
+  "routes": [
+   {
+    "id": "centre",
+    "where": "home",
+    "speed": "standard",
+    "within": null
+   }
+  ],
+  "bands": [
+   {
+    "validYears": null,
+    "pay": {
+     "centre": 0
+    },
+    "from": 17
+   }
+  ]
  },
  "KZ": {
   "document": "удостоверение личности гражданина Республики Казахстан",
@@ -1705,6 +1819,49 @@
     },
     "from": 66,
     "permanent": true
+   }
+  ]
+ },
+ "MO": {
+  "document": "Bilhete de Identidade de Residente (BIR), Macao SAR Resident Identity Card",
+  "currency": "MOP",
+  "routes": [
+   {
+    "id": "normal",
+    "where": "home",
+    "speed": "standard",
+    "within": {
+     "n": 15,
+     "unit": "working day"
+    }
+   },
+   {
+    "id": "express",
+    "where": "home",
+    "speed": "urgent",
+    "within": {
+     "n": 10,
+     "unit": "working day"
+    }
+   },
+   {
+    "id": "special",
+    "where": "home",
+    "speed": "urgent",
+    "within": {
+     "n": 3,
+     "unit": "working day"
+    }
+   }
+  ],
+  "bands": [
+   {
+    "validYears": null,
+    "pay": {
+     "normal": 9000,
+     "express": 24000,
+     "special": 34000
+    }
    }
   ]
  },
@@ -2366,6 +2523,30 @@
     "pay": {
      "nufus": 22000
     }
+   }
+  ]
+ },
+ "TW": {
+  "document": "國民身分證 (National Identification Card)",
+  "currency": "TWD",
+  "routes": [
+   {
+    "id": "office",
+    "where": "home",
+    "speed": "standard",
+    "within": {
+     "n": 30,
+     "unit": "minute"
+    }
+   }
+  ],
+  "bands": [
+   {
+    "validYears": null,
+    "pay": {
+     "office": 5000
+    },
+    "permanent": true
    }
   ]
  },
