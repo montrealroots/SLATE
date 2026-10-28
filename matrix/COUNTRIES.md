@@ -24,7 +24,7 @@ a place fills a column; a cell is the row's status in that engine's matrix, or b
 | AZ | Azerbaijan | researched | researched | researched | researched | researched | researched | researched |
 | BA | Bosnia and Herzegovina | researched | researched | researched | researched | blocked | researched | researched |
 | BB | Barbados | researched | researched | researched | researched | researched | researched | researched |
-| BD | Bangladesh | researched | researched | researched | researched | researched | researched | pending |
+| BD | Bangladesh | researched | researched | researched | researched | researched | researched | researched |
 | BE | Belgium | researched | researched | researched | researched | researched | researched | researched |
 | BF | Burkina Faso | researched | researched | researched | researched | researched | researched | pending |
 | BG | Bulgaria | researched | researched | researched | researched | researched | researched | pending |
@@ -75,7 +75,7 @@ a place fills a column; a cell is the row's status in that engine's matrix, or b
 | EH | Western Sahara | researched | researched | researched | researched | researched | researched | pending |
 | ER | Eritrea | researched | researched | researched | researched | blocked | blocked | pending |
 | ES | Spain | researched | researched | researched | researched | researched | researched | researched |
-| ET | Ethiopia | researched | researched | researched | researched | researched | researched | pending |
+| ET | Ethiopia | researched | researched | researched | researched | researched | researched | researched |
 | FI | Finland | researched | researched | researched | researched | researched | researched | researched |
 | FJ | Fiji | researched | researched | researched | researched | researched | researched | researched |
 | FK | Falkland Islands | researched | researched | researched | blocked | researched | blocked | pending |

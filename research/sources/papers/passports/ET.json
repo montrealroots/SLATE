@@ -1,0 +1,56 @@
+{
+ "country": "ET",
+ "office": "the Immigration and Citizenship Service (ICS)",
+ "currency": "ETB",
+ "routes": [
+  {
+   "id": "standard",
+   "where": "home",
+   "speed": "standard",
+   "within": null,
+   "label": "new booklet or renewal"
+  },
+  {
+   "id": "five-day",
+   "where": "home",
+   "speed": "urgent",
+   "within": {
+    "n": 5,
+    "unit": "day"
+   },
+   "label": "urgent, five-day delivery"
+  },
+  {
+   "id": "two-day",
+   "where": "home",
+   "speed": "urgent",
+   "within": {
+    "n": 2,
+    "unit": "day"
+   },
+   "label": "urgent, two-day delivery"
+  }
+ ],
+ "passports": [
+  {
+   "for": "any",
+   "validYears": null,
+   "pay": {
+    "standard": "5000",
+    "five-day": "20000",
+    "two-day": "25000"
+   }
+  }
+ ],
+ "note": "The ICS's fees from August 2024 as Addis Fortune reported them (the ICS's site doesn't answer this client); no later revision was found, the e-passport of February 2025 being reported at no extra cost (not read). Validity, the standard time and fees abroad are leads.",
+ "sources": [
+  {
+   "kind": "secondary",
+   "quotes": "https://www.ics.gov.et/",
+   "url": "https://addisfortune.news/passport-fees-soar-amidst-economic-twists",
+   "title": "Addis Fortune, Passport Fees Soar Amidst Economic Twists (11 August 2024)",
+   "read": "2026-10-28",
+   "said": "Ethiopian citizens are facing higher costs for passport services following a recent fee hike implemented by the Immigration & Citizenship Services (ICS). The price of obtaining a new booklet or renewal has doubled from 2,000 Br to 5,000 Br. Urgent passport services have experienced even more dramatic increases, with two-day delivery now costing a hefty 25,000 Br, while a five-day delivery is priced at 20,000 Br."
+  }
+ ]
+}

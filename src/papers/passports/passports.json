@@ -449,6 +449,76 @@
    }
   ]
  },
+ "BD": {
+  "currency": "BDT",
+  "routes": [
+   {
+    "id": "regular",
+    "where": "home",
+    "speed": "standard",
+    "within": {
+     "n": 21,
+     "unit": "day"
+    }
+   },
+   {
+    "id": "express",
+    "where": "home",
+    "speed": "urgent",
+    "within": {
+     "n": 10,
+     "unit": "day"
+    }
+   },
+   {
+    "id": "super-express",
+    "where": "home",
+    "speed": "urgent",
+    "within": {
+     "n": 2,
+     "unit": "working day"
+    }
+   }
+  ],
+  "bands": [
+   {
+    "validYears": 5,
+    "pay": {
+     "regular": 402500,
+     "express": 632500,
+     "super-express": 862500
+    },
+    "pages": 48
+   },
+   {
+    "validYears": 5,
+    "pay": {
+     "regular": 632500,
+     "express": 862500,
+     "super-express": 1207500
+    },
+    "pages": 64
+   },
+   {
+    "validYears": 10,
+    "pay": {
+     "regular": 575000,
+     "express": 805000,
+     "super-express": 1035000
+    },
+    "pages": 48
+   },
+   {
+    "validYears": 10,
+    "pay": {
+     "regular": 805000,
+     "express": 1035000,
+     "super-express": 1380000
+    },
+    "pages": 64
+   }
+  ]
+ },
  "BE": {
   "currency": "EUR",
   "routes": [
@@ -1255,6 +1325,45 @@
     },
     "under": 5,
     "pages": 32
+   }
+  ]
+ },
+ "ET": {
+  "currency": "ETB",
+  "routes": [
+   {
+    "id": "standard",
+    "where": "home",
+    "speed": "standard",
+    "within": null
+   },
+   {
+    "id": "five-day",
+    "where": "home",
+    "speed": "urgent",
+    "within": {
+     "n": 5,
+     "unit": "day"
+    }
+   },
+   {
+    "id": "two-day",
+    "where": "home",
+    "speed": "urgent",
+    "within": {
+     "n": 2,
+     "unit": "day"
+    }
+   }
+  ],
+  "bands": [
+   {
+    "validYears": null,
+    "pay": {
+     "standard": 500000,
+     "five-day": 2000000,
+     "two-day": 2500000
+    }
    }
   ]
  },
