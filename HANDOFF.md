@@ -682,14 +682,22 @@ What layer 0 holds:
    and the gate's build-order check hold): passports by issuing country, each in
    `research/sources/papers/passports/<CC>.json` (`papers.passports.<CC>`, R-0451 on): the ordinary passport's fees
    by age and channel in the country's currency, its validity, the standard processing time and the urgent services,
-   from the passport office's own pages or, where those refuse this client, the regulation that sets the fees. Done:
-   the United Kingdom (GOV.UK), France (Service Public), the United States (22 CFR 22.1 and 51.4 on eCFR;
-   travel.state.gov answers with a Cloudflare challenge, so its processing times aren't read) and Canada (SOR/2012-253
-   on Justice Laws; canada.ca closes the connection). Leads: Australia's fees are the Australian Passports
-   (Application Fees) Determination 2015's base amounts indexed each calendar year by its section 7 (compilation
-   F2024C01230; passports.gov.au closes the connection), so the year's fee is to be computed from the ABS CPI as the
-   determination says or read from DFAT; Ireland's and New Zealand's offices answer 403; Germany's Passverordnung
-   isn't at the address tried on gesetze-im-internet.de. Then ID, visas, residence and work permissions, and the banks.
+   from the passport office's own pages or, where those refuse this client, the law or regulation that sets them.
+   The file's shape (`passports` by age band with `validYears` and `fees`, `standard`, `urgent`, `note`, `sources`)
+   is the research's, to be settled with the engine. 32 so far (2026-10-28): AT, BE, BR, CA, CH, CN, CZ, DE, DK,
+   EE, ES, FR, GB, GR, HK, HU, IE, IN, IT, JP, KR, MY, NL, PE, PL, RO, SE, SG, SI, TW, US, ZA; some with a part
+   still open, said in the file's note (Spain's and Slovenia's fees, Ireland's, Greece's, Romania's, Brazil's and
+   Taiwan's validity, Peru's fee, most processing times). The attempts for the rest, to become blockers after all
+   five methods, are being logged: Australia (fees are the 2015 determination's base amounts indexed yearly by its
+   s. 7, to compute from the ABS CPI or read from DFAT; passports.gov.au closes the connection), New Zealand,
+   Ireland's site, Finland, Mexico (a challenge page), Israel (Cloudflare), Colombia (Cloudflare), Chile (a WAF),
+   the Philippines (403), Portugal (its WAF blocks the rendered page), Latvia (connection closed), Kenya (its
+   certificate chain fails verification; TLS checks stay on), Norway (fees in the Storting's budget decisions),
+   Bulgaria (the April 2026 reform's tariff not found), Croatia (only a draft found), Lithuania (a JS app), Turkey
+   (the yearly duties tariff), Indonesia (PP 45/2024, partly replaced by PP 30/2026), Thailand, Argentina
+   (Disposición 106/2026 found; its fee annex is on a Boletín Oficial PDF that reset the connection). Then ID,
+   visas, residence and work permissions, and the banks. A question the engine will need settled: which countries
+   issue passports of their own (Hong Kong does; most territories use their sovereign's), recorded with each file.
 
 ## Verification evidence
 
