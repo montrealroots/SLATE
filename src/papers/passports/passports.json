@@ -2513,6 +2513,52 @@
    }
   ]
  },
+ "GL": {
+  "currency": "DKK",
+  "routes": [
+   {
+    "id": "home",
+    "where": "home",
+    "speed": "standard",
+    "within": {
+     "n": 4,
+     "unit": "week"
+    }
+   }
+  ],
+  "bands": [
+   {
+    "validYears": null,
+    "pay": {
+     "home": 11500
+    },
+    "under": 12
+   },
+   {
+    "validYears": null,
+    "pay": {
+     "home": 14600
+    },
+    "from": 12,
+    "under": 18
+   },
+   {
+    "validYears": null,
+    "pay": {
+     "home": 43100
+    },
+    "from": 18,
+    "under": 63
+   },
+   {
+    "validYears": null,
+    "pay": {
+     "home": 18100
+    },
+    "from": 63
+   }
+  ]
+ },
  "GM": {
   "currency": "GMD",
   "routes": [
@@ -6166,6 +6212,62 @@
    }
   ]
  },
+ "SR": {
+  "currency": "EUR",
+  "routes": [
+   {
+    "id": "home",
+    "where": "home",
+    "speed": "standard",
+    "within": null
+   }
+  ],
+  "bands": [
+   {
+    "validYears": 10,
+    "pay": {
+     "home": 5000
+    },
+    "from": 18
+   },
+   {
+    "validYears": 5,
+    "pay": {
+     "home": 5000
+    },
+    "under": 18
+   }
+  ]
+ },
+ "ST": {
+  "currency": "STN",
+  "routes": [
+   {
+    "id": "normal",
+    "where": "home",
+    "speed": "standard",
+    "within": null
+   },
+   {
+    "id": "urgent",
+    "where": "home",
+    "speed": "urgent",
+    "within": {
+     "n": 24,
+     "unit": "hour"
+    }
+   }
+  ],
+  "bands": [
+   {
+    "validYears": null,
+    "pay": {
+     "normal": 150000,
+     "urgent": 175000
+    }
+   }
+  ]
+ },
  "SV": {
   "currency": "USD",
   "routes": [
@@ -6342,6 +6444,32 @@
  },
  "TK": {
   "issuedBy": "NZ"
+ },
+ "TL": {
+  "currency": "USD",
+  "routes": [
+   {
+    "id": "home",
+    "where": "home",
+    "speed": "standard",
+    "within": null
+   },
+   {
+    "id": "abroad",
+    "where": "abroad",
+    "speed": "standard",
+    "within": null
+   }
+  ],
+  "bands": [
+   {
+    "validYears": null,
+    "pay": {
+     "home": null,
+     "abroad": 10000
+    }
+   }
+  ]
  },
  "TR": {
   "currency": "TRY",
