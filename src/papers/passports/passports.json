@@ -2815,6 +2815,55 @@
    }
   ]
  },
+ "LK": {
+  "currency": "LKR",
+  "routes": [
+   {
+    "id": "normal",
+    "where": "home",
+    "speed": "standard",
+    "within": {
+     "n": 30,
+     "unit": "working day"
+    }
+   },
+   {
+    "id": "urgent",
+    "where": "home",
+    "speed": "urgent",
+    "within": {
+     "n": 1,
+     "unit": "day"
+    }
+   }
+  ],
+  "bands": [
+   {
+    "validYears": null,
+    "pay": {
+     "normal": 1000000,
+     "urgent": 2000000
+    },
+    "from": 16
+   },
+   {
+    "validYears": 3,
+    "pay": {
+     "normal": 300000,
+     "urgent": 900000
+    },
+    "under": 16
+   },
+   {
+    "validYears": 10,
+    "pay": {
+     "normal": 1000000,
+     "urgent": 2000000
+    },
+    "under": 16
+   }
+  ]
+ },
  "LU": {
   "currency": "EUR",
   "routes": [
