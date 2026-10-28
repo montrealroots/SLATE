@@ -3053,6 +3053,33 @@
    }
   ]
  },
+ "ME": {
+  "currency": "EUR",
+  "routes": [
+   {
+    "id": "home",
+    "where": "home",
+    "speed": "standard",
+    "within": null
+   }
+  ],
+  "bands": [
+   {
+    "validYears": null,
+    "pay": {
+     "home": 3300
+    },
+    "from": 21
+   },
+   {
+    "validYears": null,
+    "pay": {
+     "home": 800
+    },
+    "under": 21
+   }
+  ]
+ },
  "MK": {
   "currency": "MKD",
   "routes": [
@@ -4880,6 +4907,44 @@
      "home": null
     },
     "under": 15
+   }
+  ]
+ },
+ "XK": {
+  "currency": "EUR",
+  "routes": [
+   {
+    "id": "standard",
+    "where": "home",
+    "speed": "standard",
+    "within": null
+   },
+   {
+    "id": "expedited",
+    "where": "home",
+    "speed": "urgent",
+    "within": {
+     "n": 3,
+     "unit": "working day"
+    }
+   }
+  ],
+  "bands": [
+   {
+    "validYears": null,
+    "pay": {
+     "standard": 3000,
+     "expedited": 8000
+    },
+    "from": 18
+   },
+   {
+    "validYears": null,
+    "pay": {
+     "standard": 2000,
+     "expedited": 7000
+    },
+    "under": 18
    }
   ]
  },
