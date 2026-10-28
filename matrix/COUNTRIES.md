@@ -80,7 +80,7 @@ a place fills a column; a cell is the row's status in that engine's matrix, or b
 | FJ | Fiji | researched | researched | researched | researched | researched | researched | researched |
 | FK | Falkland Islands | researched | researched | researched | blocked | researched | blocked | pending |
 | FM | Micronesia | researched | researched | researched | researched | blocked | researched | pending |
-| FO | Faroe Islands | researched | researched | researched | researched | blocked | researched | pending |
+| FO | Faroe Islands | researched | researched | researched | researched | blocked | researched | researched |
 | FR | France | researched | researched | researched | researched | researched | researched | researched |
 | GA | Gabon | researched | researched | researched | researched | researched | researched | pending |
 | GB | United Kingdom | researched | researched | researched | researched | researched | researched | researched |
@@ -173,7 +173,7 @@ a place fills a column; a cell is the row's status in that engine's matrix, or b
 | NG | Nigeria | researched | researched | researched | researched | researched | researched | researched |
 | NI | Nicaragua | researched | researched | researched | researched | researched | researched | pending |
 | NL | The Netherlands | researched | researched | researched | researched | researched | researched | researched |
-| NO | Norway | researched | researched | researched | researched | researched | researched | pending |
+| NO | Norway | researched | researched | researched | researched | researched | researched | researched |
 | NP | Nepal | researched | researched | researched | researched | researched | researched | researched |
 | NR | Nauru | researched | researched | researched | blocked | researched | blocked | pending |
 | NU | Niue | researched | researched | researched | blocked | researched | researched | pending |
@@ -207,7 +207,7 @@ a place fills a column; a cell is the row's status in that engine's matrix, or b
 | SG | Singapore | researched | researched | researched | researched | researched | researched | researched |
 | SH | Saint Helena | researched | researched | researched | researched | blocked | researched | researched |
 | SI | Slovenia | researched | researched | researched | researched | researched | researched | researched |
-| SJ | Svalbard and Jan Mayen | researched | researched | researched | researched | blocked | researched | pending |
+| SJ | Svalbard and Jan Mayen | researched | researched | researched | researched | blocked | researched | researched |
 | SK | Slovakia | researched | researched | researched | researched | researched | researched | researched |
 | SL | Sierra Leone | researched | researched | researched | researched | blocked | researched | pending |
 | SM | San Marino | researched | researched | researched | blocked | researched | researched | pending |

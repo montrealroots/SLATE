@@ -1460,6 +1460,49 @@
    }
   ]
  },
+ "FO": {
+  "currency": "DKK",
+  "routes": [
+   {
+    "id": "home",
+    "where": "home",
+    "speed": "standard",
+    "within": null
+   }
+  ],
+  "bands": [
+   {
+    "validYears": null,
+    "pay": {
+     "home": 63000
+    },
+    "from": 18,
+    "under": 67
+   },
+   {
+    "validYears": null,
+    "pay": {
+     "home": 38000
+    },
+    "from": 67
+   },
+   {
+    "validYears": null,
+    "pay": {
+     "home": 14500
+    },
+    "from": 12,
+    "under": 18
+   },
+   {
+    "validYears": null,
+    "pay": {
+     "home": 11500
+    },
+    "under": 12
+   }
+  ]
+ },
  "FR": {
   "currency": "EUR",
   "routes": [
@@ -3458,6 +3501,49 @@
    }
   ]
  },
+ "NO": {
+  "currency": "NOK",
+  "routes": [
+   {
+    "id": "home",
+    "where": "home",
+    "speed": "standard",
+    "within": null
+   }
+  ],
+  "bands": [
+   {
+    "validYears": 10,
+    "pay": {
+     "home": 84000
+    },
+    "from": 16
+   },
+   {
+    "validYears": 5,
+    "pay": {
+     "home": 51000
+    },
+    "from": 10,
+    "under": 16
+   },
+   {
+    "validYears": 3,
+    "pay": {
+     "home": 51000
+    },
+    "from": 5,
+    "under": 10
+   },
+   {
+    "validYears": 2,
+    "pay": {
+     "home": 51000
+    },
+    "under": 5
+   }
+  ]
+ },
  "NP": {
   "currency": "NPR",
   "routes": [
@@ -4143,6 +4229,52 @@
      "standard": null
     },
     "under": 3
+   }
+  ]
+ },
+ "SJ": {
+  "currency": "NOK",
+  "routes": [
+   {
+    "id": "svalbard",
+    "where": "home",
+    "speed": "standard",
+    "within": {
+     "n": 5,
+     "unit": "week"
+    }
+   }
+  ],
+  "bands": [
+   {
+    "validYears": 10,
+    "pay": {
+     "svalbard": null
+    },
+    "from": 16
+   },
+   {
+    "validYears": 5,
+    "pay": {
+     "svalbard": null
+    },
+    "from": 10,
+    "under": 16
+   },
+   {
+    "validYears": 3,
+    "pay": {
+     "svalbard": null
+    },
+    "from": 5,
+    "under": 10
+   },
+   {
+    "validYears": 2,
+    "pay": {
+     "svalbard": null
+    },
+    "under": 5
    }
   ]
  },
