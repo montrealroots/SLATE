@@ -48,6 +48,41 @@
    }
   ]
  },
+ "AM": {
+  "currency": "AMD",
+  "routes": [
+   {
+    "id": "home",
+    "where": "home",
+    "speed": "standard",
+    "within": null
+   },
+   {
+    "id": "abroad",
+    "where": "abroad",
+    "speed": "standard",
+    "within": null
+   }
+  ],
+  "bands": [
+   {
+    "validYears": 10,
+    "pay": {
+     "home": null,
+     "abroad": 6500000
+    },
+    "from": 16
+   },
+   {
+    "validYears": null,
+    "pay": {
+     "home": null,
+     "abroad": 3000000
+    },
+    "under": 16
+   }
+  ]
+ },
  "AR": {
   "currency": "ARS",
   "routes": [
@@ -4081,6 +4116,28 @@
      "urgent": 39100
     },
     "under": 16
+   }
+  ]
+ },
+ "PA": {
+  "currency": "PAB",
+  "routes": [
+   {
+    "id": "home",
+    "where": "home",
+    "speed": "standard",
+    "within": {
+     "n": 10,
+     "unit": "working day"
+    }
+   }
+  ],
+  "bands": [
+   {
+    "validYears": 5,
+    "pay": {
+     "home": 10000
+    }
    }
   ]
  },

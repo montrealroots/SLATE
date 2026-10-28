@@ -11,7 +11,7 @@ a place fills a column; a cell is the row's status in that engine's matrix, or b
 | AG | Antigua and Barbuda | researched | researched | researched | blocked | researched | researched | pending |
 | AI | Anguilla | researched | researched | researched | blocked | researched | researched | researched |
 | AL | Albania | researched | researched | researched | researched | researched | researched | pending |
-| AM | Armenia | researched | researched | researched | researched | researched | researched | pending |
+| AM | Armenia | researched | researched | researched | researched | researched | researched | researched |
 | AN | Netherlands Antilles | researched | researched | proven | proven | proven | proven | proven |
 | AO | Angola | researched | researched | researched | researched | researched | researched | pending |
 | AQ | Antarctica | researched | researched | proven | proven | proven | proven | proven |
@@ -179,7 +179,7 @@ a place fills a column; a cell is the row's status in that engine's matrix, or b
 | NU | Niue | researched | researched | researched | blocked | researched | researched | researched |
 | NZ | New Zealand | researched | researched | researched | researched | researched | researched | researched |
 | OM | Oman | researched | researched | researched | researched | researched | researched | pending |
-| PA | Panama | researched | researched | researched | researched | researched | researched | pending |
+| PA | Panama | researched | researched | researched | researched | researched | researched | researched |
 | PE | Peru | researched | researched | researched | researched | researched | researched | researched |
 | PF | French Polynesia | researched | researched | researched | researched | researched | researched | researched |
 | PG | Papua New Guinea | researched | researched | researched | researched | researched | researched | researched |
