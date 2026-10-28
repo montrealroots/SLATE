@@ -27,8 +27,9 @@ restarts. Read `CLAUDE.md` and the owner's package in `docs/` first.
   at 100% mutation score (532 mutants, with the regions' and the shared substitutes' rules). The prices
   (`world.prices`): the engine is built and tested, at 100% mutation score; 172 countries researched from the World
   Bank's levels, 21 carried from the 2021 benchmark, 4 priced against France and 25 territories kept at another's
-  level by the owner's ruling, and the Caribbean Netherlands from Bonaire's ICP level; 6 proven, 23 pending (the
-  next step).
+  level by the owner's ruling, and the Caribbean Netherlands from Bonaire's ICP level; 6 proven, 22 blocked, each
+  after all five methods (R-0428 to R-0449; the next step names them and what to try again), and 1 pending, Mayotte
+  (the next step).
 
 What layer 2 holds so far:
 
@@ -647,35 +648,34 @@ What layer 0 holds:
      challenge (not circumvented).
    - Two sources found: a page's own public data list read as the page reads it (Mauritius's SharePoint list, Qatar's
      Ministry of Justice API) is fine; an API that needs a key embedded in a site's script (Andorra's BOPA) is not.
-3. Prices: the countries with places and no World Bank level from 2024 on are pending
-   (`coverage/prices-countries.json`). Each is to be researched from its own statistics office or blocked after all
-   five methods (`world.prices.blocked.<code>`, the player told by `prices.unkept`). Two kinds (the matrix's
-   pending rows name them). Those the World Bank last priced at its 2021 benchmark (35 at first), whose level is
-   carried forward by the national consumer price index against the United States' (the extrapolation the World
-   Bank itself makes, now built: add the index file, its register entry, and rebuild with `npx tsx
-   tools/prices/build.ts`), each index from its own office; an office's quarters or half-years serve as its months
-   do (the mean of what it publishes for the year), and a month it didn't collect is left out as it leaves it out.
-   And the 39 it never priced (the French overseas departments and collectivities, the Crown
-   dependencies, Taiwan, Cuba, North Korea, Venezuela, Yemen, the smallest islands; leads, not yet read: INSEE's
-   comparisons of the overseas departments' prices with France's; the Asian Development Bank's ICP Asia-Pacific
-   reports for Taiwan; Statistics Greenland's price level index against Denmark, 2014-2016, as a model of such
-   a comparison). Attempts so far for the blockers: the British Virgin Islands (gov.vg's statistics pages empty
-   since its move; only 2015-2017 reports found), the Turks and Caicos (its Statistics Authority's site answers
-   with a Sucuri firewall), Saint Kitts and Nevis (its office's tables stop at 2023 and 2024; the ECCB's
-   statistics refuse with 403; its annual table's 2024 is dated 12/04/2024, so perhaps not a full year), the US
-   Virgin Islands (the Bureau of Economic Research's reviews reach 2024, but its 2023 and 2024 reviews give December
-   2023 as 140.6 and 142.7 with no base stated, so 2021 and 2024 aren't on one footing), South Sudan (its bureau's
-   releases run to May 2025 and don't reach back to 2021), Somalia (its new CPI, from 2025, is a different series
-   from the Mogadishu index of December 2014 = 100; carrying it needs the two linked at an overlap), Eswatini (gov.sz
-   resets the connection from here), the Marshall Islands (EPPSO's file listing answers with a "humans_" cookie
-   script; SPC's Pacific Data Hub has only annual inflation to 2024), Nauru (its bureau's host doesn't resolve;
-   SPC as for the Marshalls), American Samoa (Commerce's Wix folders don't open; its Q3 2021 newsletter gives 2021's
-   first three quarters; SPC's series starts in 2022) and the Northern Marianas (SPC's series is 2022 to 2024). Where a territory has no
-   measure of its own but uses another country's prices by law or market, that is an owner's ruling, as Western
-   Sahara's holidays were, not an assumption. Sub-national levels (the US Bureau of Economic Analysis' regional price
-   parities, and others where a country publishes them) are open research for after the countries. Prices move with
-   the years: the levels are the World Bank's for 2025 (2024 for four), and the game opens in 2026; carrying them
-   forward by inflation is open (the World Bank's CPI series is sparse past 2024).
+3. Prices: Mayotte is the one country pending (`coverage/prices-countries.json`). INSEE's 2022 spatial survey gives
+   its gap to metropolitan France (10.3%) excluding rents, and its index changed method in January 2023 (base
+   December 2021 before; INSEE's note 6958766 has the 2022 parallel run and `my_cp_2024_ipc.pdf` the re-expressed
+   series): to be priced against France (`relative` in its file) once the gap's scope and an index consistent
+   across the break are read, or blocked after all five methods. The 22 blocked (`world.prices.blocked.<code>`,
+   R-0428 to R-0449, the player told by `prices.unkept`), each with what to try again: those no programme prices and
+   no survey compares (Cuba, North Korea, Venezuela, Yemen: the ICP's next round, ESCWA's work on Yemen); those whose
+   office publishes no index or can't be reached (Eritrea, Turkmenistan, Nauru, Sudan, Syria, Eswatini (gov.sz
+   resets the connection; its 2026 inflation reports exist), the Turks and Caicos (a Sucuri firewall), the British
+   Virgin Islands (no CPI on gov.vg since its move)); those whose index doesn't span 2021 to 2025 on one footing
+   (American Samoa: its folders don't open, Q4 2021 unread; the Northern Marianas: SPC's series is 2022 to 2024;
+   the Marshall Islands: EPPSO's listing answers with a "humans_" cookie script, latest Q4 2023; Myanmar: the CSO's
+   2012 = 100 index to June 2022 only; Saint Kitts and Nevis: the annual table's 2024 is dated 12/04/2024 and the
+   ECCB answers 403; the US Virgin Islands: no 2025 review, December 2023 given on two unstated bases; South Sudan:
+   releases January 2023 to May 2025; Somalia: the new CPI from 2025 isn't linked to the Mogadishu index; Zimbabwe:
+   the ZWG index from April 2024 isn't linked to the ZWL series); and the Falklands, whose pound's parity with
+   sterling is on falklands.gov.fk, which this environment's network doesn't allow (the owner can add it under the
+   environment's Network access, Allowed domains; with it the Falklands keep the United Kingdom's level by the
+   owner's ruling, as Saint Helena does). Snapshots that exist in the Internet Archive for 16 of them (AS, FK, KN,
+   MM, MP, SD, SO, SS, SY, TC, TM, VE, VG, VI, YE, ZW; each named in its blocker) await the owner's ruling on archive
+   snapshots. The rules for adding a country stand: an index from the country's own office (`research/sources/
+   prices/<CC>.json`, its register entry, then `npx tsx tools/prices/build.ts`); an office's quarters or half-years
+   serve as its months do, and a month it didn't collect is left out as it leaves it out; a territory using
+   another's prices by law or market keeps that country's level only by the owner's ruling (given 2026-10-28).
+   Sub-national levels (the US Bureau of Economic Analysis' regional price parities, and others where a country
+   publishes them) are open research for after the countries. Prices move with the years: the levels are the World
+   Bank's for 2025 (2024 for four), and the game opens in 2026; carrying them forward by inflation is open (the
+   World Bank's CPI series is sparse past 2024).
 4. Then the proof of layer 2.
 
 ## Verification evidence

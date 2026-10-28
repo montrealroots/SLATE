@@ -17332,6 +17332,864 @@
      "said": "GM9001 (Bonaire), T001112 (All items), Consumer price index (CPI): 2021KW01 101.59, 2021KW02 103.28, 2021KW03 104.4, 2021KW04 106.33, 2021JJ00 103.9; 2025KW01 126.96, 2025KW02 127.58, 2025KW03 126.55, 2025KW04 125.3, 2025JJ00 126.6"
     }
    ]
+  },
+  {
+   "id": "R-0428",
+   "fact": "world.prices.blocked.AS",
+   "sought": "American Samoa's price level for 2024 or 2025: the World Bank's, or its 2021 benchmark carried by its own consumer price index",
+   "status": "blocked",
+   "attempts": [
+    {
+     "method": "institution",
+     "tried": "The Department of Commerce's statistics page (doc.as.gov/stats): its CPI section, opened in a browser (the page answers plainly but needs JavaScript)",
+     "result": "The section lists folders by year (CPI 2016 to 2026) that don't open; the one file it links is the Q3 2021 newsletter (all items 2021 Q1 105.1, Q2 106.9, Q3 108.9). 2021's fourth quarter and 2025 aren't read.",
+     "date": "2026-10-28"
+    },
+    {
+     "method": "official-register",
+     "tried": "SPC's Pacific Data Hub (DF_CPI, quarterly, sourced from American Samoa's Department of Commerce); ILOSTAT and the World Bank's CPI",
+     "result": "SPC's series starts in 2022 (2025: 127.2, 129.5, 128.6, 127.8), so 2021 isn't on it; ILOSTAT and the World Bank have no 2021 or 2025.",
+     "date": "2026-10-28"
+    },
+    {
+     "method": "web-search",
+     "tried": "'American Samoa Department of Commerce Statistics consumer price index 2021 quarterly CPI report'; 'Samoa News American Samoa consumer price index 4th quarter 2021 all items index points'",
+     "result": "No Q4 2021 index found.",
+     "date": "2026-10-28"
+    },
+    {
+     "method": "trade-press",
+     "tried": "Samoa News on the CPI (samoanews.com)",
+     "result": "Its Q2 2021 report gives 106.9 points; no Q4 2021 figure.",
+     "date": "2026-10-28"
+    },
+    {
+     "method": "archive",
+     "tried": "The Wayback Machine's availability API for doc.as.gov/stats (archive.org/wayback/available, the API only)",
+     "result": "A snapshot of http://web.archive.org/web/20251116213434/https://www.doc.as.gov/stats (2025-11-16) exists; it isn't fetched while the owner's ruling on archive snapshots is open.",
+     "date": "2026-10-28"
+    }
+   ],
+   "notModeled": "prices.unkept"
+  },
+  {
+   "id": "R-0429",
+   "fact": "world.prices.blocked.CU",
+   "sought": "Cuba's price level: a World Bank or ICP level, or a spatial survey against a priced country",
+   "status": "blocked",
+   "attempts": [
+    {
+     "method": "institution",
+     "tried": "The World Bank's indicators (PA.NUS.PRVT.PP) and the ICP 2021 database (source 90, its 207 economies)",
+     "result": "Neither prices Cuba.",
+     "date": "2026-10-28"
+    },
+    {
+     "method": "official-register",
+     "tried": "The ONEI's consumer price index (onei.gob.cu), as the trade press reports it",
+     "result": "ONEI publishes a CPI for the formal market only (2025: 15.41% year on year in October), but no price level against another country; onei.gob.cu doesn't answer here.",
+     "date": "2026-10-28"
+    },
+    {
+     "method": "web-search",
+     "tried": "'Cuba purchasing power parity price level household consumption ICP; ONEI \u00edndice de precios al consumidor 2025'",
+     "result": "No PPP or price level for Cuba found.",
+     "date": "2026-10-28"
+    },
+    {
+     "method": "trade-press",
+     "tried": "EFE (via Swissinfo), Cubanet and Diario de Cuba on ONEI's index",
+     "result": "Year-on-year rates only, and economists' estimates of informal-market inflation; no level.",
+     "date": "2026-10-28"
+    },
+    {
+     "method": "archive",
+     "tried": "The Wayback Machine's availability API for www.onei.gob.cu (archive.org/wayback/available, the API only)",
+     "result": "No snapshot.",
+     "date": "2026-10-28"
+    }
+   ],
+   "notModeled": "prices.unkept"
+  },
+  {
+   "id": "R-0430",
+   "fact": "world.prices.blocked.ER",
+   "sought": "Eritrea's price level for 2024 or 2025: the World Bank's, or its 2021 benchmark carried by its own consumer price index",
+   "status": "blocked",
+   "attempts": [
+    {
+     "method": "institution",
+     "tried": "Eritrea's National Statistics Office (ecss.gov.er)",
+     "result": "No site answers; no consumer price index is published online.",
+     "date": "2026-10-28"
+    },
+    {
+     "method": "official-register",
+     "tried": "ILOSTAT's CPI series (rplumber.ilo.org, CPI_XCPI_COI_RT_A, 2021 to 2025) and the World Bank's CPI (FP.CPI.TOTL, 2021 to 2025)",
+     "result": "Neither has an index for Eritrea after 2021.",
+     "date": "2026-10-28"
+    },
+    {
+     "method": "web-search",
+     "tried": "'Turkmenistan consumer price index official 2025 State Committee statistics; Eritrea consumer price index National Statistics Office 2025'",
+     "result": "No Eritrean index found.",
+     "date": "2026-10-28"
+    },
+    {
+     "method": "trade-press",
+     "tried": "Trade press and aggregators (Trading Economics)",
+     "result": "No published index.",
+     "date": "2026-10-28"
+    },
+    {
+     "method": "archive",
+     "tried": "The Wayback Machine's availability API for www.ecss.gov.er (archive.org/wayback/available, the API only)",
+     "result": "No snapshot.",
+     "date": "2026-10-28"
+    }
+   ],
+   "notModeled": "prices.unkept"
+  },
+  {
+   "id": "R-0431",
+   "fact": "world.prices.blocked.FK",
+   "sought": "The Falkland Islands pound's parity with sterling, by which the islands keep the United Kingdom's level (the owner's ruling of 2026-10-28)",
+   "status": "blocked",
+   "attempts": [
+    {
+     "method": "institution",
+     "tried": "The Falkland Islands Government's currency page (falklands.gov.fk/finance/currency) and its Currency Ordinance 1987",
+     "result": "falklands.gov.fk is outside this environment's allowed network (the proxy refuses it and a fetcher can't resolve it).",
+     "date": "2026-10-28"
+    },
+    {
+     "method": "official-register",
+     "tried": "ISO 4217 list one (R-0026) and the Falklands' legislation",
+     "result": "ISO lists FKP without a rate; the legislation is on the same host.",
+     "date": "2026-10-28"
+    },
+    {
+     "method": "web-search",
+     "tried": "'Falkland Islands pound parity sterling Falkland Islands Government currency'; 'MercoPress Falkland Islands pound \"parity\" sterling Falkland Islands Government banknotes'",
+     "result": "Only Wikipedia and dealers' pages, which aren't a primary source or press quoting one.",
+     "date": "2026-10-28"
+    },
+    {
+     "method": "trade-press",
+     "tried": "MercoPress",
+     "result": "Only a reader's comment on a 2013 article.",
+     "date": "2026-10-28"
+    },
+    {
+     "method": "archive",
+     "tried": "The Wayback Machine's availability API for falklands.gov.fk/finance/currency (archive.org/wayback/available, the API only)",
+     "result": "A snapshot of http://web.archive.org/web/20260217204524/https://www.falklands.gov.fk/finance/currency (2026-02-17) exists; it isn't fetched while the owner's ruling on archive snapshots is open.",
+     "date": "2026-10-28"
+    }
+   ],
+   "notModeled": "prices.unkept"
+  },
+  {
+   "id": "R-0432",
+   "fact": "world.prices.blocked.KN",
+   "sought": "Saint Kitts and Nevis' price level for 2024 or 2025: the World Bank's, or its 2021 benchmark carried by its own consumer price index",
+   "status": "blocked",
+   "attempts": [
+    {
+     "method": "institution",
+     "tried": "The Department of Statistics (stats.gov.kn): its CPI pages and its WordPress search and media list",
+     "result": "Monthly indices to 2023 and annual averages to 2024 (Jan 2010 = 100; 2021 105.90, 2024 113.86), but the annual table is dated 12/04/2024, so its 2024 may not be a full year; no 2025.",
+     "date": "2026-10-28"
+    },
+    {
+     "method": "official-register",
+     "tried": "The Eastern Caribbean Central Bank's statistics (eccb-centralbank.org); ILOSTAT",
+     "result": "The ECCB answers 403; ILOSTAT has annual figures (2021 105.9, 2025 114.94) without its source's 2025 being read.",
+     "date": "2026-10-28"
+    },
+    {
+     "method": "web-search",
+     "tried": "'ECCB Eastern Caribbean Central Bank statistics consumer price index St Kitts and Nevis 2025 annual average CPI'",
+     "result": "Trading Economics (ECCB data): December 2025 116.21; no official 2025 average read.",
+     "date": "2026-10-28"
+    },
+    {
+     "method": "trade-press",
+     "tried": "Trading Economics, quoting the ECCB",
+     "result": "An aggregator, not press quoting the office's figure for the year.",
+     "date": "2026-10-28"
+    },
+    {
+     "method": "archive",
+     "tried": "The Wayback Machine's availability API for www.stats.gov.kn/topics/economic-statistics/consumer-price-index/ (archive.org/wayback/available, the API only)",
+     "result": "A snapshot of http://web.archive.org/web/20260106083442/https://www.stats.gov.kn/topics/economic-statistics/consumer-price-index/ (2026-01-06) exists; it isn't fetched while the owner's ruling on archive snapshots is open.",
+     "date": "2026-10-28"
+    }
+   ],
+   "notModeled": "prices.unkept"
+  },
+  {
+   "id": "R-0433",
+   "fact": "world.prices.blocked.KP",
+   "sought": "North Korea's price level: a World Bank or ICP level, or a spatial survey against a priced country",
+   "status": "blocked",
+   "attempts": [
+    {
+     "method": "institution",
+     "tried": "The World Bank's indicators and the ICP 2021 database",
+     "result": "Neither prices North Korea.",
+     "date": "2026-10-28"
+    },
+    {
+     "method": "official-register",
+     "tried": "ILOSTAT and the World Bank's CPI",
+     "result": "No consumer price index for North Korea.",
+     "date": "2026-10-28"
+    },
+    {
+     "method": "web-search",
+     "tried": "'North Korea consumer price index official statistics price level purchasing power parity'",
+     "result": "No official index or price level; IMF and World Bank figures aren't available.",
+     "date": "2026-10-28"
+    },
+    {
+     "method": "trade-press",
+     "tried": "Trade press",
+     "result": "No figure.",
+     "date": "2026-10-28"
+    },
+    {
+     "method": "archive",
+     "tried": "The Wayback Machine's availability API for www.mofa.gov.kp (archive.org/wayback/available, the API only)",
+     "result": "No snapshot.",
+     "date": "2026-10-28"
+    }
+   ],
+   "notModeled": "prices.unkept"
+  },
+  {
+   "id": "R-0434",
+   "fact": "world.prices.blocked.MH",
+   "sought": "the Marshall Islands' price level for 2024 or 2025: the World Bank's, or its 2021 benchmark carried by its own consumer price index",
+   "status": "blocked",
+   "attempts": [
+    {
+     "method": "institution",
+     "tried": "EPPSO (rmieppso.org): its CPI page and its WordPress search",
+     "result": "The reports are in a file plugin whose listing answers with a 'humans_' cookie script (a bot check, not circumvented); the latest post is Q4 2023.",
+     "date": "2026-10-28"
+    },
+    {
+     "method": "official-register",
+     "tried": "SPC's Pacific Data Hub (DF_CPI); ILOSTAT and the World Bank's CPI",
+     "result": "SPC has only annual inflation, 2021 to 2024; the others nothing for 2025.",
+     "date": "2026-10-28"
+    },
+    {
+     "method": "web-search",
+     "tried": "'Marshall Islands EPPSO consumer price index 2025 quarterly CPI Majuro release'",
+     "result": "An IMF technical-assistance report (2024) on rebasing; no 2025 index.",
+     "date": "2026-10-28"
+    },
+    {
+     "method": "trade-press",
+     "tried": "Trade press",
+     "result": "No 2025 index.",
+     "date": "2026-10-28"
+    },
+    {
+     "method": "archive",
+     "tried": "The Wayback Machine's availability API for rmieppso.org/economics/consumer-price-index/ (archive.org/wayback/available, the API only)",
+     "result": "No snapshot.",
+     "date": "2026-10-28"
+    }
+   ],
+   "notModeled": "prices.unkept"
+  },
+  {
+   "id": "R-0435",
+   "fact": "world.prices.blocked.MM",
+   "sought": "Myanmar's price level for 2024 or 2025: the World Bank's, or its 2021 benchmark carried by its own consumer price index",
+   "status": "blocked",
+   "attempts": [
+    {
+     "method": "institution",
+     "tried": "The Central Statistical Organization (csostat.gov.mm): Price Analysis, table 3.1 (p3.1MA02.xlsx)",
+     "result": "CPI (Union), 2012 = 100, June 2021 to June 2022 only.",
+     "date": "2026-10-28"
+    },
+    {
+     "method": "official-register",
+     "tried": "ILOSTAT's CPI series (rplumber.ilo.org, CPI_XCPI_COI_RT_A, 2021 to 2025) and the World Bank's CPI (FP.CPI.TOTL, 2021 to 2025)",
+     "result": "Neither has 2025.",
+     "date": "2026-10-28"
+    },
+    {
+     "method": "web-search",
+     "tried": "'Myanmar Central Statistical Organization consumer price index 2025 monthly CPI (2021=100) Union'",
+     "result": "CEIC reports a 2017 = 100 series from 2023, which the CSO's pages don't carry; no 2025 level found.",
+     "date": "2026-10-28"
+    },
+    {
+     "method": "trade-press",
+     "tried": "Trade press",
+     "result": "No 2025 index.",
+     "date": "2026-10-28"
+    },
+    {
+     "method": "archive",
+     "tried": "The Wayback Machine's availability API for www.csostat.gov.mm/MonthlyPublication/PriceAnalysis (archive.org/wayback/available, the API only)",
+     "result": "A snapshot of http://web.archive.org/web/20251206003939/https://csostat.gov.mm/MonthlyPublication/PriceAnalysis (2025-12-06) exists; it isn't fetched while the owner's ruling on archive snapshots is open.",
+     "date": "2026-10-28"
+    }
+   ],
+   "notModeled": "prices.unkept"
+  },
+  {
+   "id": "R-0436",
+   "fact": "world.prices.blocked.MP",
+   "sought": "the Northern Mariana Islands' price level for 2024 or 2025: the World Bank's, or its 2021 benchmark carried by its own consumer price index",
+   "status": "blocked",
+   "attempts": [
+    {
+     "method": "institution",
+     "tried": "The Department of Commerce's Central Statistics Division report hub (ver1.cnmicommerce.com)",
+     "result": "Island indices (Saipan, Rota, Tinian) as quarterly changes; Saipan's table to Q1 2023; no territory-wide 2021 level or 2025.",
+     "date": "2026-10-28"
+    },
+    {
+     "method": "official-register",
+     "tried": "SPC's Pacific Data Hub (DF_CPI, sourced from CNMI Commerce)",
+     "result": "2022 Q1 to 2024 Q4 only.",
+     "date": "2026-10-28"
+    },
+    {
+     "method": "web-search",
+     "tried": "'Northern Mariana Islands Commerce Central Statistics Division consumer price index 2025 fourth quarter CPI'",
+     "result": "The hub's '2024 4th Qtr CNMI CPI index tables' named, not found on it.",
+     "date": "2026-10-28"
+    },
+    {
+     "method": "trade-press",
+     "tried": "Trade press",
+     "result": "No index.",
+     "date": "2026-10-28"
+    },
+    {
+     "method": "archive",
+     "tried": "The Wayback Machine's availability API for ver1.cnmicommerce.com/divisions/central-statistics/report-hub/ (archive.org/wayback/available, the API only)",
+     "result": "A snapshot of http://web.archive.org/web/20251213115738/https://ver1.cnmicommerce.com/divisions/central-statistics/report-hub/ (2025-12-13) exists; it isn't fetched while the owner's ruling on archive snapshots is open.",
+     "date": "2026-10-28"
+    }
+   ],
+   "notModeled": "prices.unkept"
+  },
+  {
+   "id": "R-0437",
+   "fact": "world.prices.blocked.NR",
+   "sought": "Nauru's price level for 2024 or 2025: the World Bank's, or its 2021 benchmark carried by its own consumer price index",
+   "status": "blocked",
+   "attempts": [
+    {
+     "method": "institution",
+     "tried": "The Nauru Bureau of Statistics (nbs.gov.nr) and the government's site (nauru.gov.nr)",
+     "result": "nbs.gov.nr doesn't resolve from here; the government's site links no CPI.",
+     "date": "2026-10-28"
+    },
+    {
+     "method": "official-register",
+     "tried": "SPC's Pacific Data Hub (DF_CPI); ILOSTAT",
+     "result": "SPC has only annual inflation, 2021 to 2024.",
+     "date": "2026-10-28"
+    },
+    {
+     "method": "web-search",
+     "tried": "'Nauru Bureau of Statistics consumer price index 2025'",
+     "result": "No 2025 index found.",
+     "date": "2026-10-28"
+    },
+    {
+     "method": "trade-press",
+     "tried": "Trade press",
+     "result": "No index.",
+     "date": "2026-10-28"
+    },
+    {
+     "method": "archive",
+     "tried": "The Wayback Machine's availability API for nbs.gov.nr (archive.org/wayback/available, the API only)",
+     "result": "No snapshot.",
+     "date": "2026-10-28"
+    }
+   ],
+   "notModeled": "prices.unkept"
+  },
+  {
+   "id": "R-0438",
+   "fact": "world.prices.blocked.SD",
+   "sought": "Sudan's price level for 2024 or 2025: the World Bank's, or its 2021 benchmark carried by its own consumer price index",
+   "status": "blocked",
+   "attempts": [
+    {
+     "method": "institution",
+     "tried": "The Central Bureau of Statistics (cbs.gov.sd)",
+     "result": "It doesn't answer from here.",
+     "date": "2026-10-28"
+    },
+    {
+     "method": "official-register",
+     "tried": "ILOSTAT's CPI series (rplumber.ilo.org, CPI_XCPI_COI_RT_A, 2021 to 2025) and the World Bank's CPI (FP.CPI.TOTL, 2021 to 2025)",
+     "result": "Neither has 2025.",
+     "date": "2026-10-28"
+    },
+    {
+     "method": "web-search",
+     "tried": "'Sudan Central Bureau of Statistics consumer price index 2025 inflation report CPI index December 2025'",
+     "result": "Year-on-year rates by month (November 2025: 74%) and February 2025's index (382533.02); no 2021 or full 2025 levels.",
+     "date": "2026-10-28"
+    },
+    {
+     "method": "trade-press",
+     "tried": "Sudan Tribune and Dabanga, quoting the Bureau",
+     "result": "Monthly rates and one index level; not a year's levels.",
+     "date": "2026-10-28"
+    },
+    {
+     "method": "archive",
+     "tried": "The Wayback Machine's availability API for cbs.gov.sd (archive.org/wayback/available, the API only)",
+     "result": "A snapshot of http://web.archive.org/web/20230407013158/https://www.cbs.gov.sd/ (2023-04-07) exists; it isn't fetched while the owner's ruling on archive snapshots is open.",
+     "date": "2026-10-28"
+    }
+   ],
+   "notModeled": "prices.unkept"
+  },
+  {
+   "id": "R-0439",
+   "fact": "world.prices.blocked.SO",
+   "sought": "Somalia's price level for 2024 or 2025: the World Bank's, or its 2021 benchmark carried by its own consumer price index",
+   "status": "blocked",
+   "attempts": [
+    {
+     "method": "institution",
+     "tried": "The Somalia National Bureau of Statistics (nbs.gov.so): its CPI posts and reports (WordPress media list)",
+     "result": "From January 2025 a new CPI (index reference 2022, all states, COICOP 2018) replaces the Mogadishu index (December 2014 = 100), which ran to December 2024; no link between the two is published, so 2021 and 2025 aren't on one series.",
+     "date": "2026-10-28"
+    },
+    {
+     "method": "official-register",
+     "tried": "ILOSTAT's CPI series (rplumber.ilo.org, CPI_XCPI_COI_RT_A, 2021 to 2025) and the World Bank's CPI (FP.CPI.TOTL, 2021 to 2025)",
+     "result": "ILOSTAT has 2021 95.62 and 2025 113.96, from the two series without a stated link.",
+     "date": "2026-10-28"
+    },
+    {
+     "method": "web-search",
+     "tried": "'Somalia National Bureau of Statistics consumer price index 2025 annual CPI December 2025 base'",
+     "result": "The new CPI's methodological note isn't yet published.",
+     "date": "2026-10-28"
+    },
+    {
+     "method": "trade-press",
+     "tried": "Trade press",
+     "result": "No link found.",
+     "date": "2026-10-28"
+    },
+    {
+     "method": "archive",
+     "tried": "The Wayback Machine's availability API for nbs.gov.so/consumer-price-index-cpi-december-2025/ (archive.org/wayback/available, the API only)",
+     "result": "A snapshot of http://web.archive.org/web/20260224193111/https://nbs.gov.so/consumer-price-index-cpi-december-2025/ (2026-02-24) exists; it isn't fetched while the owner's ruling on archive snapshots is open.",
+     "date": "2026-10-28"
+    }
+   ],
+   "notModeled": "prices.unkept"
+  },
+  {
+   "id": "R-0440",
+   "fact": "world.prices.blocked.SS",
+   "sought": "South Sudan's price level for 2024 or 2025: the World Bank's, or its 2021 benchmark carried by its own consumer price index",
+   "status": "blocked",
+   "attempts": [
+    {
+     "method": "institution",
+     "tried": "The National Bureau of Statistics (nbs.gov.ss): its Consumer Price Index page",
+     "result": "Releases from January 2023 to May 2025; 2021 and June to December 2025 aren't there.",
+     "date": "2026-10-28"
+    },
+    {
+     "method": "official-register",
+     "tried": "ILOSTAT's CPI series (rplumber.ilo.org, CPI_XCPI_COI_RT_A, 2021 to 2025) and the World Bank's CPI (FP.CPI.TOTL, 2021 to 2025)",
+     "result": "ILOSTAT has 2021 (49.37) but not 2025.",
+     "date": "2026-10-28"
+    },
+    {
+     "method": "web-search",
+     "tried": "'South Sudan National Bureau of Statistics CPI 2025'",
+     "result": "No later release found.",
+     "date": "2026-10-28"
+    },
+    {
+     "method": "trade-press",
+     "tried": "Trade press",
+     "result": "No index.",
+     "date": "2026-10-28"
+    },
+    {
+     "method": "archive",
+     "tried": "The Wayback Machine's availability API for www.nbs.gov.ss/statistics/Consumer_Price_Index.php (archive.org/wayback/available, the API only)",
+     "result": "A snapshot of http://web.archive.org/web/20260124153407/https://nbs.gov.ss/statistics/Consumer_Price_Index.php (2026-01-24) exists; it isn't fetched while the owner's ruling on archive snapshots is open.",
+     "date": "2026-10-28"
+    }
+   ],
+   "notModeled": "prices.unkept"
+  },
+  {
+   "id": "R-0441",
+   "fact": "world.prices.blocked.SY",
+   "sought": "Syria's price level for 2024 or 2025: the World Bank's, or its 2021 benchmark carried by its own consumer price index",
+   "status": "blocked",
+   "attempts": [
+    {
+     "method": "institution",
+     "tried": "The Central Bureau of Statistics (cbssyr.sy)",
+     "result": "It answers 503 or nothing.",
+     "date": "2026-10-28"
+    },
+    {
+     "method": "official-register",
+     "tried": "ILOSTAT's CPI series (rplumber.ilo.org, CPI_XCPI_COI_RT_A, 2021 to 2025) and the World Bank's CPI (FP.CPI.TOTL, 2021 to 2025)",
+     "result": "Neither has 2025.",
+     "date": "2026-10-28"
+    },
+    {
+     "method": "web-search",
+     "tried": "'Syria Central Bureau of Statistics consumer price index 2025 monthly CPI cbssyr.sy 2021 annual average'",
+     "result": "Trading Economics' official index stops in 2021 (December 5141.19, 2010 = 100); 2025 only as rates, and the SCPR's own index.",
+     "date": "2026-10-28"
+    },
+    {
+     "method": "trade-press",
+     "tried": "The Syrian Observer and Trading Economics",
+     "result": "Rates, and a research centre's index, not the Bureau's.",
+     "date": "2026-10-28"
+    },
+    {
+     "method": "archive",
+     "tried": "The Wayback Machine's availability API for www.cbssyr.sy (archive.org/wayback/available, the API only)",
+     "result": "A snapshot of http://web.archive.org/web/20251111003058/http://cbssyr.sy/ (2025-11-11) exists; it isn't fetched while the owner's ruling on archive snapshots is open.",
+     "date": "2026-10-28"
+    }
+   ],
+   "notModeled": "prices.unkept"
+  },
+  {
+   "id": "R-0442",
+   "fact": "world.prices.blocked.SZ",
+   "sought": "Eswatini's price level for 2024 or 2025: the World Bank's, or its 2021 benchmark carried by its own consumer price index",
+   "status": "blocked",
+   "attempts": [
+    {
+     "method": "institution",
+     "tried": "The Central Statistical Office's monthly inflation reports on gov.sz (planningministry) and the Central Bank of Eswatini (centralbank.org.sz)",
+     "result": "gov.sz resets the connection from here and a fetcher gets 503; the central bank's statistics page resets too.",
+     "date": "2026-10-28"
+    },
+    {
+     "method": "official-register",
+     "tried": "ILOSTAT's CPI series (rplumber.ilo.org, CPI_XCPI_COI_RT_A, 2021 to 2025) and the World Bank's CPI (FP.CPI.TOTL, 2021 to 2025)",
+     "result": "Neither has 2021 and 2025.",
+     "date": "2026-10-28"
+    },
+    {
+     "method": "web-search",
+     "tried": "'Eswatini Central Statistical Office consumer price index December 2025 CPI release index annual average'",
+     "result": "The reports exist (May to July 2026 found); their values unread.",
+     "date": "2026-10-28"
+    },
+    {
+     "method": "trade-press",
+     "tried": "The Eswatini Observer",
+     "result": "No index levels.",
+     "date": "2026-10-28"
+    },
+    {
+     "method": "archive",
+     "tried": "The Wayback Machine's availability API for www.gov.sz/images/planningministry/KINGDOM%20OF%20ESWATINI%20INFLATION%20REPORT_JULY%202026.pdf (archive.org/wayback/available, the API only)",
+     "result": "No snapshot.",
+     "date": "2026-10-28"
+    }
+   ],
+   "notModeled": "prices.unkept"
+  },
+  {
+   "id": "R-0443",
+   "fact": "world.prices.blocked.TC",
+   "sought": "the Turks and Caicos Islands' price level for 2024 or 2025: the World Bank's, or its 2021 benchmark carried by its own consumer price index",
+   "status": "blocked",
+   "attempts": [
+    {
+     "method": "institution",
+     "tried": "The Statistics Authority (gov.tc/stats)",
+     "result": "It answers with a Sucuri firewall page (not circumvented); stats.gov.tc's certificate doesn't match.",
+     "date": "2026-10-28"
+    },
+    {
+     "method": "official-register",
+     "tried": "ILOSTAT's CPI series (rplumber.ilo.org, CPI_XCPI_COI_RT_A, 2021 to 2025) and the World Bank's CPI (FP.CPI.TOTL, 2021 to 2025)",
+     "result": "Neither has the islands.",
+     "date": "2026-10-28"
+    },
+    {
+     "method": "web-search",
+     "tried": "'Turks and Caicos Islands Department of Statistics consumer price index 2025'; the Statistics Authority's CPI",
+     "result": "Only its 2025 inflation (2.5%) as a headline; no index.",
+     "date": "2026-10-28"
+    },
+    {
+     "method": "trade-press",
+     "tried": "GlobalData and aggregators",
+     "result": "Estimates, not the Authority's index.",
+     "date": "2026-10-28"
+    },
+    {
+     "method": "archive",
+     "tried": "The Wayback Machine's availability API for www.gov.tc/stats/ (archive.org/wayback/available, the API only)",
+     "result": "A snapshot of http://web.archive.org/web/20251224032532/https://www.gov.tc/stats/ (2025-12-24) exists; it isn't fetched while the owner's ruling on archive snapshots is open.",
+     "date": "2026-10-28"
+    }
+   ],
+   "notModeled": "prices.unkept"
+  },
+  {
+   "id": "R-0444",
+   "fact": "world.prices.blocked.TM",
+   "sought": "Turkmenistan's price level for 2024 or 2025: the World Bank's, or its 2021 benchmark carried by its own consumer price index",
+   "status": "blocked",
+   "attempts": [
+    {
+     "method": "institution",
+     "tried": "The State Committee of Turkmenistan on Statistics (stat.gov.tm)",
+     "result": "No consumer price index published.",
+     "date": "2026-10-28"
+    },
+    {
+     "method": "official-register",
+     "tried": "ILOSTAT's CPI series (rplumber.ilo.org, CPI_XCPI_COI_RT_A, 2021 to 2025) and the World Bank's CPI (FP.CPI.TOTL, 2021 to 2025)",
+     "result": "Neither has an index for Turkmenistan.",
+     "date": "2026-10-28"
+    },
+    {
+     "method": "web-search",
+     "tried": "'Turkmenistan consumer price index official 2025 State Committee statistics'",
+     "result": "None found.",
+     "date": "2026-10-28"
+    },
+    {
+     "method": "trade-press",
+     "tried": "Trade press",
+     "result": "None.",
+     "date": "2026-10-28"
+    },
+    {
+     "method": "archive",
+     "tried": "The Wayback Machine's availability API for www.stat.gov.tm (archive.org/wayback/available, the API only)",
+     "result": "A snapshot of http://web.archive.org/web/20260101175432/https://www.stat.gov.tm/ (2026-01-01) exists; it isn't fetched while the owner's ruling on archive snapshots is open.",
+     "date": "2026-10-28"
+    }
+   ],
+   "notModeled": "prices.unkept"
+  },
+  {
+   "id": "R-0445",
+   "fact": "world.prices.blocked.VE",
+   "sought": "Venezuela's price level: a World Bank or ICP level, or a spatial survey against a priced country",
+   "status": "blocked",
+   "attempts": [
+    {
+     "method": "institution",
+     "tried": "The World Bank's indicators and the ICP 2021 database",
+     "result": "Neither prices Venezuela.",
+     "date": "2026-10-28"
+    },
+    {
+     "method": "official-register",
+     "tried": "The Banco Central de Venezuela (bcv.org.ve)",
+     "result": "It publishes a CPI but no price level against another country.",
+     "date": "2026-10-28"
+    },
+    {
+     "method": "web-search",
+     "tried": "'Venezuela Yemen not participating ICP 2021 purchasing power parity household consumption price level'",
+     "result": "No ICP level for Venezuela.",
+     "date": "2026-10-28"
+    },
+    {
+     "method": "trade-press",
+     "tried": "Trade press",
+     "result": "None.",
+     "date": "2026-10-28"
+    },
+    {
+     "method": "archive",
+     "tried": "The Wayback Machine's availability API for www.bcv.org.ve (archive.org/wayback/available, the API only)",
+     "result": "A snapshot of http://web.archive.org/web/20260103071556/https://www.bcv.org.ve/ (2026-01-03) exists; it isn't fetched while the owner's ruling on archive snapshots is open.",
+     "date": "2026-10-28"
+    }
+   ],
+   "notModeled": "prices.unkept"
+  },
+  {
+   "id": "R-0446",
+   "fact": "world.prices.blocked.VG",
+   "sought": "the British Virgin Islands' price level for 2024 or 2025: the World Bank's, or its 2021 benchmark carried by its own consumer price index",
+   "status": "blocked",
+   "attempts": [
+    {
+     "method": "institution",
+     "tried": "The Central Statistics Office (gov.vg/central-statistics-office, gov.vg/statistics, bvi.gov.vg)",
+     "result": "The office's page links no CPI; the statistics listing is empty; bvi.gov.vg's old pages answer 404.",
+     "date": "2026-10-28"
+    },
+    {
+     "method": "official-register",
+     "tried": "ILOSTAT's CPI series (rplumber.ilo.org, CPI_XCPI_COI_RT_A, 2021 to 2025) and the World Bank's CPI (FP.CPI.TOTL, 2021 to 2025)",
+     "result": "Neither has the islands.",
+     "date": "2026-10-28"
+    },
+    {
+     "method": "web-search",
+     "tried": "'British Virgin Islands Central Statistics Office consumer price index 2025 quarterly CPI release' (standard and extended)",
+     "result": "Only the 2015 to 2017 CPI reports.",
+     "date": "2026-10-28"
+    },
+    {
+     "method": "trade-press",
+     "tried": "Trade press",
+     "result": "None.",
+     "date": "2026-10-28"
+    },
+    {
+     "method": "archive",
+     "tried": "The Wayback Machine's availability API for gov.vg/central-statistics-office (archive.org/wayback/available, the API only)",
+     "result": "A snapshot of http://web.archive.org/web/20251113111734/https://gov.vg/central-statistics-office (2025-11-13) exists; it isn't fetched while the owner's ruling on archive snapshots is open.",
+     "date": "2026-10-28"
+    }
+   ],
+   "notModeled": "prices.unkept"
+  },
+  {
+   "id": "R-0447",
+   "fact": "world.prices.blocked.VI",
+   "sought": "the US Virgin Islands' price level for 2024 or 2025: the World Bank's, or its 2021 benchmark carried by its own consumer price index",
+   "status": "blocked",
+   "attempts": [
+    {
+     "method": "institution",
+     "tried": "The Bureau of Economic Research (usviber.org): its annual CPI reviews (WordPress search and media list)",
+     "result": "Reviews to 2024; no 2025 review. The 2023 and 2024 reviews give December 2023 as 140.6 and 142.7 with no base stated, so 2021's (2019 = 100) and 2024's aren't on one footing.",
+     "date": "2026-10-28"
+    },
+    {
+     "method": "official-register",
+     "tried": "ILOSTAT's CPI series (rplumber.ilo.org, CPI_XCPI_COI_RT_A, 2021 to 2025) and the World Bank's CPI (FP.CPI.TOTL, 2021 to 2025)",
+     "result": "Neither has the territory.",
+     "date": "2026-10-28"
+    },
+    {
+     "method": "web-search",
+     "tried": "'U.S. Virgin Islands consumer price index 2025 Bureau of Economic Research'",
+     "result": "No 2025 review.",
+     "date": "2026-10-28"
+    },
+    {
+     "method": "trade-press",
+     "tried": "Trade press",
+     "result": "None.",
+     "date": "2026-10-28"
+    },
+    {
+     "method": "archive",
+     "tried": "The Wayback Machine's availability API for usviber.org/document-category/newsletters-consumer-price-index-gross-domestic-product/ (archive.org/wayback/available, the API only)",
+     "result": "A snapshot of http://web.archive.org/web/20260207165806/https://usviber.org/document-category/newsletters-consumer-price-index-gross-domestic-product/ (2026-02-07) exists; it isn't fetched while the owner's ruling on archive snapshots is open.",
+     "date": "2026-10-28"
+    }
+   ],
+   "notModeled": "prices.unkept"
+  },
+  {
+   "id": "R-0448",
+   "fact": "world.prices.blocked.YE",
+   "sought": "Yemen's price level: a World Bank or ICP level, or a spatial survey against a priced country",
+   "status": "blocked",
+   "attempts": [
+    {
+     "method": "institution",
+     "tried": "The World Bank's indicators and the ICP 2021 database",
+     "result": "Neither prices Yemen; ESCWA's 2024 presentation lists it as not yet in the ICP.",
+     "date": "2026-10-28"
+    },
+    {
+     "method": "official-register",
+     "tried": "Yemen's Central Statistical Organization (cso-yemen.com)",
+     "result": "No price level against another country.",
+     "date": "2026-10-28"
+    },
+    {
+     "method": "web-search",
+     "tried": "'Venezuela Yemen not participating ICP 2021 purchasing power parity household consumption price level'",
+     "result": "ESCWA: Yemen's participation was under consideration; a 2024 workshop prepared its integration.",
+     "date": "2026-10-28"
+    },
+    {
+     "method": "trade-press",
+     "tried": "Trade press",
+     "result": "None.",
+     "date": "2026-10-28"
+    },
+    {
+     "method": "archive",
+     "tried": "The Wayback Machine's availability API for www.cso-yemen.com (archive.org/wayback/available, the API only)",
+     "result": "A snapshot of http://web.archive.org/web/20260121181612/https://cso-yemen.com/ (2026-01-21) exists; it isn't fetched while the owner's ruling on archive snapshots is open.",
+     "date": "2026-10-28"
+    }
+   ],
+   "notModeled": "prices.unkept"
+  },
+  {
+   "id": "R-0449",
+   "fact": "world.prices.blocked.ZW",
+   "sought": "Zimbabwe's price level for 2024 or 2025: the World Bank's, or its 2021 benchmark carried by its own consumer price index",
+   "status": "blocked",
+   "attempts": [
+    {
+     "method": "institution",
+     "tried": "ZimStat (zimstat.co.zw): its monthly CPI releases",
+     "result": "The ZWG CPI starts in April 2024 (= 100); 2021 is in the withdrawn ZWL series, and no link between the two is published in what was read.",
+     "date": "2026-10-28"
+    },
+    {
+     "method": "official-register",
+     "tried": "ILOSTAT's CPI series (rplumber.ilo.org, CPI_XCPI_COI_RT_A, 2021 to 2025) and the World Bank's CPI (FP.CPI.TOTL, 2021 to 2025)",
+     "result": "ILOSTAT has 2021 (103.28) but not 2025.",
+     "date": "2026-10-28"
+    },
+    {
+     "method": "web-search",
+     "tried": "'Zimbabwe ZIMSTAT consumer price index ZWG 2025 annual average CPI base February 2025=100 monthly'",
+     "result": "2025's months on the ZWG base only.",
+     "date": "2026-10-28"
+    },
+    {
+     "method": "trade-press",
+     "tried": "Trade press",
+     "result": "No link.",
+     "date": "2026-10-28"
+    },
+    {
+     "method": "archive",
+     "tried": "The Wayback Machine's availability API for www.zimstat.co.zw (archive.org/wayback/available, the API only)",
+     "result": "A snapshot of http://web.archive.org/web/20260102000309/https://zimstat.co.zw/ (2026-01-02) exists; it isn't fetched while the owner's ruling on archive snapshots is open.",
+     "date": "2026-10-28"
+    }
+   ],
+   "notModeled": "prices.unkept"
   }
  ]
 }
