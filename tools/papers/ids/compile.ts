@@ -9,9 +9,8 @@ import { band, overlap, route, type Band, type Route } from '../passports/compil
  * Compiles the national identity documents the papers engine reads (src/papers/ids/ids.json) from the research's
  * files, one per country (research/sources/papers/ids/<CC>.json, register fact papers.ids.<CC>), each checked against
  * the SHA-256 its register entry cites before a byte of it is read. A country that issues a national identity
- * document names it (`document`), says from what age holding one is compulsory (`compulsory`: `{ from }`, `false`
- * where it isn't, `null` where the research hasn't read it), and gives the ways the office takes an application
- * (`routes`, the passports' form) and, by age band, the total paid for each (`cards`, the passports' bands). A country
+ * document names it (`document`) and gives the ways the office takes an application (`routes`, the passports' form)
+ * and, by age band, the total paid for each and the years it is valid (`cards`, the passports' bands). A country
  * that issues none says so (`none`); a territory whose people hold another country's says whose (`issuedBy`), with
  * the routes open to it where not all are (`onlyRoutes`).
  */
@@ -20,8 +19,6 @@ export const OUTPUT = 'src/papers/ids/ids.json';
 
 export interface Card {
   document: string;
-  /** The age from which holding one is compulsory, false where it isn't, null where the game doesn't know. */
-  compulsory: { from: number } | false | null;
   currency: string;
   routes: Route[];
   bands: Band[];
@@ -46,12 +43,8 @@ function checkCountry(code: string, file: Record<string, unknown>): void {
 /** One country's identity document, checked through. */
 export function compileCard(code: string, file: Record<string, unknown>): Card {
   checkCountry(code, file);
-  const { document, compulsory } = file;
+  const { document } = file;
   if (typeof document !== 'string' || document === '') throw new Error(`${code}'s identity document needs its name`);
-  const from = (compulsory as { from?: unknown } | undefined)?.from;
-  if (compulsory !== null && compulsory !== false && !(Number.isSafeInteger(from) && (from as number) >= 0)) {
-    throw new Error(`${code}'s identity document is compulsory from a whole age, or false, or null`);
-  }
   const currency = String(file['currency']);
   if (!isCurrency(currency)) throw new Error(`${code}'s fees are in ${currency}, not a currency in use`);
   if (!Array.isArray(file['routes']) || file['routes'].length === 0) throw new Error(`${code} has no routes`);
@@ -70,7 +63,7 @@ export function compileCard(code: string, file: Record<string, unknown>): Card {
   bands.forEach((a, i) => bands.slice(i + 1).forEach((b, j) => {
     if (overlap(a, b)) throw new Error(`${code}'s cards ${i} and ${i + 1 + j} meet the same applicant`);
   }));
-  return { document, compulsory: compulsory === null || compulsory === false ? compulsory : { from: from as number }, currency, routes, bands };
+  return { document, currency, routes, bands };
 }
 
 /** A country that issues no national identity document, checked through. */

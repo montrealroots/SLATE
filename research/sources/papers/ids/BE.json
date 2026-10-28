@@ -1,0 +1,102 @@
+{
+ "country": "BE",
+ "document": "carte d'identité électronique (eID)",
+ "office": "the population service of the commune; abroad, the career consulate where the Belgian is registered",
+ "currency": "EUR",
+ "routes": [
+  {
+   "id": "commune",
+   "where": "home",
+   "speed": "standard",
+   "within": {
+    "n": 3,
+    "unit": "week"
+   },
+   "label": "at the commune: generally available three weeks after the order"
+  },
+  {
+   "id": "urgent",
+   "where": "home",
+   "speed": "urgent",
+   "within": null,
+   "label": "urgent procedure, delivered to the commune"
+  },
+  {
+   "id": "super-urgent",
+   "where": "home",
+   "speed": "urgent",
+   "within": null,
+   "label": "super-urgent procedure, collected at the FPS Interior in Brussels"
+  },
+  {
+   "id": "consulate",
+   "where": "abroad",
+   "speed": "standard",
+   "within": null,
+   "label": "at the Belgian career consulate where the applicant is registered"
+  }
+ ],
+ "cards": [
+  {
+   "for": "Kids-ID, under 12",
+   "under": 12,
+   "validYears": 3,
+   "pay": {
+    "commune": "8.10",
+    "urgent": "110.60",
+    "super-urgent": "149.40",
+    "consulate": "10"
+   }
+  },
+  {
+   "for": "12 to 17",
+   "from": 12,
+   "under": 18,
+   "validYears": 6,
+   "pay": {
+    "commune": "20.10",
+    "urgent": "122.60",
+    "super-urgent": "161.40",
+    "consulate": "20"
+   }
+  },
+  {
+   "for": "18 and over",
+   "from": 18,
+   "validYears": 10,
+   "pay": {
+    "commune": "20.10",
+    "urgent": "122.60",
+    "super-urgent": "161.40",
+    "consulate": "20"
+   }
+  }
+ ],
+ "note": "The amounts in Belgium are the FPS Interior's 2026 tariffs, which the commune owes for each card; the commune adds a tax of its own (not included, and different in each commune). Under 12 the card is the Kids-ID, valid three years; from 12 to 17 the eID is valid six years, from 18 ten (since 31 March 2026 no 30-year card is issued). The consulates charge 20 euros for an eID and 10 for a Kids-ID. The times of the urgent procedures and of the consulates aren't stated in what was read.",
+ "sources": [
+  {
+   "url": "https://www.ibz.rrn.fgov.be/sites/default/files/documents/fr/documents-d-identite/Tarifs_2026_FR.pdf",
+   "title": "SPF Intérieur, Tarifs des eID, Kids-ID et Cartes électroniques pour étrangers pour l'année 2026",
+   "read": "2026-10-28",
+   "said": "eID: Cartes d’identité électroniques pour les Belges, visées à l’article 1er, alinéa 1er, 1° (note 2) 20,10 euro ... Kids-ID: Documents d’identité électroniques pour les enfants belges de moins de douze ans, visés à l’article 1er, 8,10 euro ... Livraison à la commune des cartes d'identité électroniques et des 122,60 euro ... Kids-ID: Livraison à la commune des documents d’identité électroniques et des codes Pin/Puk pour les enfants 110,60 euro ... des cartes d’identité électroniques et des codes Pin/Puk pour les Belges, visées à l’article 1er, alinéa 1er, 1° ... 161,40 euro ... 149,40 euro ... (1) Taxe communale NON incluse"
+  },
+  {
+   "url": "https://www.rijksregister.fgov.be/sites/default/files/documents/fr/documents-d-identite/eid/instructions/IG-eID-FR-30042026.pdf",
+   "title": "SPF Intérieur, Instructions générales relatives aux cartes d'identité électroniques, version coordonnée du 30 avril 2026",
+   "read": "2026-10-28",
+   "said": "La carte d’identité électronique, délivrée aux citoyens belges, reste valable dix ans à partir de la date de commande de la carte par le citoyen. ... la carte d’identité électronique délivrée aux mineurs d’âge belges de douze ans accomplis et de moins de dix-huit ans est valable six ans à partir de la date de commande de la carte. ... La carte d’identité électronique est généralement disponible à la commune dans un délai de trois semaines après l’envoi du document de base électronique à la société ZETES CARDS."
+  },
+  {
+   "url": "https://diplomatie.belgium.be/fr/pour-les-belges-letranger/carte-identite",
+   "title": "SPF Affaires étrangères, Carte d'identité pour les Belges à l'étranger",
+   "read": "2026-10-28",
+   "said": "Moins chères qu’un passeport : 20 € pour une eID, 10 € pour une Kids-ID"
+  },
+  {
+   "url": "https://diplomatie.belgium.be/fr/pour-les-belges-letranger/carte-identite/kids-id",
+   "title": "SPF Affaires étrangères, Carte d'identité pour enfants de moins de 12 ans (Kids-ID)",
+   "read": "2026-10-28",
+   "said": "Une Kids-ID est valable 3 ans, même en cas de déménagement (vers un autre poste ou vers la Belgique)."
+  }
+ ]
+}

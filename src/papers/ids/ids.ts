@@ -6,9 +6,8 @@ import data from './ids.json' with { type: 'json' };
 
 /**
  * National identity documents by country (src/papers/ids/ids.json, compiled by tools/papers/ids from the research,
- * register facts papers.ids.<CC>): the document's name, from what age holding one is compulsory, the ways the office
- * takes an application and, by age, the total paid for each way and how many years the document is valid, in the
- * passports' form. A country that issues none says so; a territory may hold another country's. A country whose
+ * register facts papers.ids.<CC>): the document's name, the ways the office takes an application and, by age, the
+ * total paid for each way and how many years the document is valid, in the passports' form. A country that issues none says so; a territory may hold another country's. A country whose
  * documents aren't kept has none here, and the player is told; what the research hasn't read is null, and the player
  * is told that too.
  */
@@ -21,7 +20,6 @@ interface Band {
 
 interface Card {
   readonly document: string;
-  readonly compulsory: { readonly from: number } | false | null;
   readonly currency: string;
   readonly routes: readonly Route[];
   readonly bands: readonly Band[];
@@ -50,11 +48,11 @@ export const idIssuer = (country: CountryCode): CountryCode | undefined => {
 /** The issuer's own entry (the compile holds every issuer as a country in its own right). */
 const own = (country: CountryCode) => IDS[idIssuer(country) ?? country] as Card | None | undefined;
 
-/** The identity document a country's people hold: its name and from what age it is compulsory; 'none' where none is issued. */
-export function idDocument(country: CountryCode): { name: string; compulsory: { from: number } | false | null } | 'none' | undefined {
+/** The name of the identity document a country's people hold; 'none' where none is issued. */
+export function idDocument(country: CountryCode): string | undefined {
   const entry = own(country);
   if (entry === undefined) return undefined;
-  return 'none' in entry ? 'none' : { name: entry.document, compulsory: entry.compulsory };
+  return 'none' in entry ? 'none' : entry.document;
 }
 
 const fits = (b: Band, age: number) => (b.from ?? 0) <= age && age < (b.under ?? Infinity);
@@ -80,17 +78,15 @@ export function idOffers(country: CountryCode, age: number): Offer[] | undefined
 
 export const UNKEPT_LINE = 'ids.unkept';
 export const NONE_LINE = 'ids.none';
-export const COMPULSORY_UNKNOWN_LINE = 'ids.compulsory-unknown';
 export const FEE_UNKNOWN_LINE = 'ids.fee-unknown';
 export const VALIDITY_UNKNOWN_LINE = 'ids.validity-unknown';
 export const TIME_UNKNOWN_LINE = 'ids.time-unknown';
 
-/** What the player is told about a country's identity documents: not kept, none issued, or whether holding one is compulsory unknown. Nothing otherwise. */
+/** What the player is told about a country's identity documents: that the game doesn't keep them, or that none is issued. Nothing otherwise. */
 export function aboutIds(country: CountryCode): string | undefined {
   const doc = idDocument(country);
   if (doc === undefined) return t(UNKEPT_LINE, { country: countryName(country) });
-  if (doc === 'none') return t(NONE_LINE, { country: countryName(country) });
-  return doc.compulsory === null ? t(COMPULSORY_UNKNOWN_LINE, { document: doc.name }) : undefined;
+  return doc === 'none' ? t(NONE_LINE, { country: countryName(country) }) : undefined;
 }
 
 /** What the player is told about an offer the game doesn't fully know: its fee, its validity, its time, in that order. */

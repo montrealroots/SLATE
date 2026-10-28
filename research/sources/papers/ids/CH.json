@@ -1,0 +1,42 @@
+{
+ "country": "CH",
+ "document": "Identitätskarte",
+ "office": "the residents' office of the municipality in most cantons",
+ "currency": "CHF",
+ "routes": [
+  {
+   "id": "home",
+   "where": "home",
+   "speed": "standard",
+   "within": null,
+   "label": "at the municipality's residents' office"
+  }
+ ],
+ "cards": [
+  {
+   "for": "18 and over",
+   "from": 18,
+   "validYears": 10,
+   "pay": {
+    "home": "70"
+   }
+  },
+  {
+   "for": "under 18",
+   "under": 18,
+   "validYears": 5,
+   "pay": {
+    "home": "35"
+   }
+  }
+ ],
+ "note": "Read from the municipality of Vaz/Obervaz (Graubünden), whose residents' office takes the card at the federal fee: CHF 70 from 18, valid ten years, CHF 35 under 18, valid five. The delivery time it gives (10 to 15 working days) is the passport's. Applying abroad isn't modelled: the Federal Department of Foreign Affairs' pages answer 403; the federal ordinance (VAwG, SR 143.11) wasn't reached either (Fedlex returns its 404 page).",
+ "sources": [
+  {
+   "url": "https://www.vazobervaz.ch/assets/Verwaltung/Einwohnerdienste/Infoblatt-Schweizer-Identitaetskarte-und-Schweizer-Pass.pdf",
+   "title": "Gemeinde Vaz/Obervaz, Infoblatt Schweizer Identitätskarte und Schweizer Pass",
+   "read": "2026-10-28",
+   "said": "Eine Identitätskarte kann nach wie vor am Schalter der Einwohnerkontrolle in Lenzerheide beantragt werden. ... Erwachsene ab 18 Jahren 10 Jahre CHF 70.– Kinder bis 18. Altersjahr 5 Jahre CHF 35.–"
+  }
+ ]
+}

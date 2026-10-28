@@ -2,14 +2,334 @@
  "AS": {
   "issuedBy": "US"
  },
+ "AT": {
+  "document": "Personalausweis",
+  "currency": "EUR",
+  "routes": [
+   {
+    "id": "home",
+    "where": "home",
+    "speed": "standard",
+    "within": null
+   },
+   {
+    "id": "abroad",
+    "where": "abroad",
+    "speed": "standard",
+    "within": null
+   },
+   {
+    "id": "honorary",
+    "where": "abroad",
+    "speed": "standard",
+    "within": null
+   }
+  ],
+  "bands": [
+   {
+    "validYears": 2,
+    "pay": {
+     "home": 0,
+     "abroad": 0,
+     "honorary": 3000
+    },
+    "under": 2
+   },
+   {
+    "validYears": 5,
+    "pay": {
+     "home": 3900,
+     "abroad": 3900,
+     "honorary": 6900
+    },
+    "from": 2,
+    "under": 12
+   },
+   {
+    "validYears": 10,
+    "pay": {
+     "home": 3900,
+     "abroad": 3900,
+     "honorary": 6900
+    },
+    "from": 12,
+    "under": 16
+   },
+   {
+    "validYears": 10,
+    "pay": {
+     "home": 9100,
+     "abroad": 9100,
+     "honorary": 12100
+    },
+    "from": 16
+   }
+  ]
+ },
+ "AU": {
+  "none": true
+ },
+ "AW": {
+  "document": "Nederlandse identiteitskaart",
+  "currency": "USD",
+  "routes": [
+   {
+    "id": "standard",
+    "where": "home",
+    "speed": "standard",
+    "within": {
+     "n": 2,
+     "unit": "week"
+    }
+   }
+  ],
+  "bands": [
+   {
+    "validYears": 10,
+    "pay": {
+     "standard": 12650
+    },
+    "from": 18
+   },
+   {
+    "validYears": 5,
+    "pay": {
+     "standard": 8375
+    },
+    "under": 18
+   }
+  ]
+ },
+ "BE": {
+  "document": "carte d'identité électronique (eID)",
+  "currency": "EUR",
+  "routes": [
+   {
+    "id": "commune",
+    "where": "home",
+    "speed": "standard",
+    "within": {
+     "n": 3,
+     "unit": "week"
+    }
+   },
+   {
+    "id": "urgent",
+    "where": "home",
+    "speed": "urgent",
+    "within": null
+   },
+   {
+    "id": "super-urgent",
+    "where": "home",
+    "speed": "urgent",
+    "within": null
+   },
+   {
+    "id": "consulate",
+    "where": "abroad",
+    "speed": "standard",
+    "within": null
+   }
+  ],
+  "bands": [
+   {
+    "validYears": 3,
+    "pay": {
+     "commune": 810,
+     "urgent": 11060,
+     "super-urgent": 14940,
+     "consulate": 1000
+    },
+    "under": 12
+   },
+   {
+    "validYears": 6,
+    "pay": {
+     "commune": 2010,
+     "urgent": 12260,
+     "super-urgent": 16140,
+     "consulate": 2000
+    },
+    "from": 12,
+    "under": 18
+   },
+   {
+    "validYears": 10,
+    "pay": {
+     "commune": 2010,
+     "urgent": 12260,
+     "super-urgent": 16140,
+     "consulate": 2000
+    },
+    "from": 18
+   }
+  ]
+ },
  "BL": {
   "issuedBy": "FR"
  },
+ "BQ": {
+  "document": "Nederlandse identiteitskaart",
+  "currency": "USD",
+  "routes": [
+   {
+    "id": "standard",
+    "where": "home",
+    "speed": "standard",
+    "within": {
+     "n": 2,
+     "unit": "week"
+    }
+   }
+  ],
+  "bands": [
+   {
+    "validYears": 10,
+    "pay": {
+     "standard": 12650
+    },
+    "from": 18
+   },
+   {
+    "validYears": 5,
+    "pay": {
+     "standard": 8375
+    },
+    "under": 18
+   }
+  ]
+ },
+ "CC": {
+  "issuedBy": "AU"
+ },
+ "CH": {
+  "document": "Identitätskarte",
+  "currency": "CHF",
+  "routes": [
+   {
+    "id": "home",
+    "where": "home",
+    "speed": "standard",
+    "within": null
+   }
+  ],
+  "bands": [
+   {
+    "validYears": 10,
+    "pay": {
+     "home": 7000
+    },
+    "from": 18
+   },
+   {
+    "validYears": 5,
+    "pay": {
+     "home": 3500
+    },
+    "under": 18
+   }
+  ]
+ },
+ "CW": {
+  "document": "Nederlandse identiteitskaart",
+  "currency": "USD",
+  "routes": [
+   {
+    "id": "standard",
+    "where": "home",
+    "speed": "standard",
+    "within": {
+     "n": 2,
+     "unit": "week"
+    }
+   }
+  ],
+  "bands": [
+   {
+    "validYears": 10,
+    "pay": {
+     "standard": 12650
+    },
+    "from": 18
+   },
+   {
+    "validYears": 5,
+    "pay": {
+     "standard": 8375
+    },
+    "under": 18
+   }
+  ]
+ },
+ "CX": {
+  "issuedBy": "AU"
+ },
+ "CZ": {
+  "document": "občanský průkaz",
+  "currency": "CZK",
+  "routes": [
+   {
+    "id": "standard",
+    "where": "home",
+    "speed": "standard",
+    "within": {
+     "n": 30,
+     "unit": "day"
+    }
+   },
+   {
+    "id": "five-days",
+    "where": "home",
+    "speed": "urgent",
+    "within": {
+     "n": 5,
+     "unit": "working day"
+    }
+   },
+   {
+    "id": "next-day",
+    "where": "home",
+    "speed": "urgent",
+    "within": {
+     "n": 24,
+     "unit": "hour"
+    }
+   }
+  ],
+  "bands": [
+   {
+    "validYears": 5,
+    "pay": {
+     "standard": 10000,
+     "five-days": 30000,
+     "next-day": 50000
+    },
+    "under": 15
+   },
+   {
+    "validYears": 10,
+    "pay": {
+     "standard": 0,
+     "five-days": 50000,
+     "next-day": 100000
+    },
+    "from": 15,
+    "under": 70
+   },
+   {
+    "validYears": 35,
+    "pay": {
+     "standard": 0,
+     "five-days": 50000,
+     "next-day": 100000
+    },
+    "from": 70
+   }
+  ]
+ },
  "DE": {
   "document": "Personalausweis",
-  "compulsory": {
-   "from": 16
-  },
   "currency": "EUR",
   "routes": [
    {
@@ -44,9 +364,52 @@
    }
   ]
  },
+ "ES": {
+  "document": "Documento Nacional de Identidad (DNI)",
+  "currency": "EUR",
+  "routes": [
+   {
+    "id": "police",
+    "where": "home",
+    "speed": "standard",
+    "within": null
+   }
+  ],
+  "bands": [
+   {
+    "validYears": 2,
+    "pay": {
+     "police": 1200
+    },
+    "under": 5
+   },
+   {
+    "validYears": 5,
+    "pay": {
+     "police": 1200
+    },
+    "from": 5,
+    "under": 30
+   },
+   {
+    "validYears": 10,
+    "pay": {
+     "police": 1200
+    },
+    "from": 30,
+    "under": 70
+   },
+   {
+    "validYears": null,
+    "pay": {
+     "police": 1200
+    },
+    "from": 70
+   }
+  ]
+ },
  "FR": {
   "document": "carte nationale d'identité",
-  "compulsory": false,
   "currency": "EUR",
   "routes": [
    {
@@ -84,6 +447,153 @@
  "GU": {
   "issuedBy": "US"
  },
+ "IE": {
+  "none": true
+ },
+ "IT": {
+  "document": "Carta di Identità Elettronica (CIE)",
+  "currency": "EUR",
+  "routes": [
+   {
+    "id": "comune",
+    "where": "home",
+    "speed": "standard",
+    "within": {
+     "n": 6,
+     "unit": "working day"
+    }
+   }
+  ],
+  "bands": [
+   {
+    "validYears": 3,
+    "pay": {
+     "comune": 1679
+    },
+    "under": 3
+   },
+   {
+    "validYears": 5,
+    "pay": {
+     "comune": 1679
+    },
+    "from": 3,
+    "under": 18
+   },
+   {
+    "validYears": 10,
+    "pay": {
+     "comune": 1679
+    },
+    "from": 18
+   }
+  ]
+ },
+ "LI": {
+  "document": "Identitätskarte",
+  "currency": "CHF",
+  "routes": [
+   {
+    "id": "home",
+    "where": "home",
+    "speed": "standard",
+    "within": null
+   }
+  ],
+  "bands": [
+   {
+    "validYears": 5,
+    "pay": {
+     "home": 3000
+    },
+    "under": 12
+   },
+   {
+    "validYears": 10,
+    "pay": {
+     "home": 3000
+    },
+    "from": 12,
+    "under": 18
+   },
+   {
+    "validYears": 10,
+    "pay": {
+     "home": 6500
+    },
+    "from": 18
+   }
+  ]
+ },
+ "LU": {
+  "document": "carte d'identité",
+  "currency": "EUR",
+  "routes": [
+   {
+    "id": "normal",
+    "where": "home",
+    "speed": "standard",
+    "within": {
+     "n": 10,
+     "unit": "working day"
+    }
+   },
+   {
+    "id": "accelerated",
+    "where": "home",
+    "speed": "urgent",
+    "within": {
+     "n": 3,
+     "unit": "working day"
+    }
+   },
+   {
+    "id": "mission",
+    "where": "abroad",
+    "speed": "standard",
+    "within": null
+   },
+   {
+    "id": "mission-accelerated",
+    "where": "abroad",
+    "speed": "urgent",
+    "within": null
+   }
+  ],
+  "bands": [
+   {
+    "validYears": 2,
+    "pay": {
+     "normal": 500,
+     "accelerated": 4500,
+     "mission": 2500,
+     "mission-accelerated": 4500
+    },
+    "under": 4
+   },
+   {
+    "validYears": 5,
+    "pay": {
+     "normal": 1000,
+     "accelerated": 4500,
+     "mission": 3000,
+     "mission-accelerated": 4500
+    },
+    "from": 4,
+    "under": 16
+   },
+   {
+    "validYears": 10,
+    "pay": {
+     "normal": 1400,
+     "accelerated": 4500,
+     "mission": 3400,
+     "mission-accelerated": 4500
+    },
+    "from": 16
+   }
+  ]
+ },
  "MF": {
   "issuedBy": "FR"
  },
@@ -96,8 +606,70 @@
  "NC": {
   "issuedBy": "FR"
  },
+ "NF": {
+  "issuedBy": "AU"
+ },
+ "NL": {
+  "document": "Nederlandse identiteitskaart",
+  "currency": "EUR",
+  "routes": [
+   {
+    "id": "municipality",
+    "where": "home",
+    "speed": "standard",
+    "within": {
+     "n": 8,
+     "unit": "week"
+    }
+   }
+  ],
+  "bands": [
+   {
+    "validYears": 10,
+    "pay": {
+     "municipality": 8010
+    },
+    "from": 18
+   },
+   {
+    "validYears": 5,
+    "pay": {
+     "municipality": 4320
+    },
+    "under": 18
+   }
+  ]
+ },
  "PF": {
   "issuedBy": "FR"
+ },
+ "PL": {
+  "document": "dowód osobisty",
+  "currency": "PLN",
+  "routes": [
+   {
+    "id": "gmina",
+    "where": "home",
+    "speed": "standard",
+    "within": null
+   }
+  ],
+  "bands": [
+   {
+    "validYears": 5,
+    "pay": {
+     "gmina": 0
+    },
+    "under": 12
+   },
+   {
+    "validYears": 10,
+    "pay": {
+     "gmina": 0
+    },
+    "from": 12
+   }
+  ]
  },
  "PM": {
   "issuedBy": "FR"
@@ -105,8 +677,114 @@
  "PR": {
   "issuedBy": "US"
  },
+ "PT": {
+  "document": "Cartão de Cidadão",
+  "currency": "EUR",
+  "routes": [
+   {
+    "id": "normal",
+    "where": "home",
+    "speed": "standard",
+    "within": {
+     "n": 9,
+     "unit": "working day"
+    }
+   },
+   {
+    "id": "urgent",
+    "where": "home",
+    "speed": "urgent",
+    "within": {
+     "n": 5,
+     "unit": "day"
+    }
+   },
+   {
+    "id": "same-day",
+    "where": "home",
+    "speed": "urgent",
+    "within": {
+     "n": 1,
+     "unit": "working day"
+    }
+   },
+   {
+    "id": "abroad",
+    "where": "abroad",
+    "speed": "standard",
+    "within": {
+     "n": 11,
+     "unit": "working day"
+    }
+   },
+   {
+    "id": "abroad-urgent",
+    "where": "abroad",
+    "speed": "urgent",
+    "within": {
+     "n": 7,
+     "unit": "day"
+    }
+   }
+  ],
+  "bands": [
+   {
+    "validYears": 5,
+    "pay": {
+     "normal": 1500,
+     "urgent": 3000,
+     "same-day": 5000,
+     "abroad": 2000,
+     "abroad-urgent": 4500
+    },
+    "under": 25
+   },
+   {
+    "validYears": 10,
+    "pay": {
+     "normal": 1800,
+     "urgent": 3300,
+     "same-day": 5300,
+     "abroad": 2300,
+     "abroad-urgent": 4800
+    },
+    "from": 25
+   }
+  ]
+ },
  "RE": {
   "issuedBy": "FR"
+ },
+ "SX": {
+  "document": "Nederlandse identiteitskaart",
+  "currency": "USD",
+  "routes": [
+   {
+    "id": "standard",
+    "where": "home",
+    "speed": "standard",
+    "within": {
+     "n": 2,
+     "unit": "week"
+    }
+   }
+  ],
+  "bands": [
+   {
+    "validYears": 10,
+    "pay": {
+     "standard": 12650
+    },
+    "from": 18
+   },
+   {
+    "validYears": 5,
+    "pay": {
+     "standard": 8375
+    },
+    "under": 18
+   }
+  ]
  },
  "TF": {
   "issuedBy": "FR"

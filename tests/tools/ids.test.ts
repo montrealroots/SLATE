@@ -13,7 +13,6 @@ const route = (id: string, extra: Record<string, unknown> = {}) => ({ id, where:
 const file = (over: Record<string, unknown> = {}) => ({
   country: 'DE',
   document: 'Personalausweis',
-  compulsory: { from: 16 },
   currency: 'EUR',
   routes: [route('home'), route('abroad', { where: 'abroad', within: { n: 3, unit: 'week' } })],
   cards: [
@@ -26,11 +25,10 @@ const file = (over: Record<string, unknown> = {}) => ({
 });
 
 describe('the identity documents compile', () => {
-  it("takes a card to its name, compulsory age, routes and bands in minor units", () => {
+  it("takes a card to its name, routes and bands in minor units", () => {
     expect([SOURCES, OUTPUT]).toEqual(['research/sources/papers/ids', 'src/papers/ids/ids.json']);
     expect(compileCard('DE', file())).toStrictEqual({
       document: 'Personalausweis',
-      compulsory: { from: 16 },
       currency: 'EUR',
       routes: [
         { id: 'home', where: 'home', speed: 'standard', within: null },
@@ -41,18 +39,12 @@ describe('the identity documents compile', () => {
         { under: 24, validYears: 6, pay: { home: 2760, abroad: null } },
       ],
     });
-    expect(compileCard('DE', file({ compulsory: { from: 0, at: 'birth' } })).compulsory).toStrictEqual({ from: 0 });
-    expect(compileCard('DE', file({ compulsory: false })).compulsory).toBe(false);
-    expect(compileCard('DE', file({ compulsory: null })).compulsory).toBeNull();
   });
 
   it('refuses a card that is not what it says it is', () => {
     expect(() => compileCard('XX', file())).toThrow('XX is not a country on the map');
     expect(() => compileCard('FR', file())).toThrow("FR's file is for DE");
     for (const document of [undefined, '', 7]) expect(() => compileCard('DE', file({ document }))).toThrow("DE's identity document needs its name");
-    for (const compulsory of [undefined, true, 16, {}, { from: -1 }, { from: 1.5 }, { from: '16' }, []]) {
-      expect(() => compileCard('DE', file({ compulsory })), JSON.stringify(compulsory)).toThrow("DE's identity document is compulsory from a whole age, or false, or null");
-    }
     expect(() => compileCard('DE', file({ currency: 'XXX' }))).toThrow("DE's fees are in XXX, not a currency in use");
     expect(() => compileCard('DE', file({ routes: [] }))).toThrow('DE has no routes');
     expect(() => compileCard('DE', file({ routes: 'none' }))).toThrow('DE has no routes');
