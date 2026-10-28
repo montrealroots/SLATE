@@ -2,13 +2,17 @@
  "country": "MV",
  "office": "Maldives Immigration",
  "currency": "MVR",
- "passports": [
-  {"for": "10 to 65", "from": 10, "under": 66, "validYears": 5, "fees": {"electronic, 32 pages": "1000", "electronic, 48 pages": "1500"}},
-  {"for": "child", "under": 10, "validYears": 5, "fees": {"non-electronic, 32 pages": "600"}},
-  {"for": "senior", "from": 65, "validYears": 5, "fees": {"non-electronic, 32 pages": "600"}}
+ "routes": [
+  {"id": "electronic", "where": "home", "speed": "standard", "within": null, "label": "electronic passport, collected in person at an Immigration office"},
+  {"id": "non-electronic", "where": "home", "speed": "standard", "within": null, "label": "non-electronic passport"}
  ],
- "standard": {"within": null, "said": "not on the page"},
- "note": "The electronic passport is for citizens aged 10 to 65, collected in person at an Immigration office; the non-electronic passport (MVR 600, 32 pages) is for children below 10, applicants 65 and over, applicants residing abroad and people with an illness, disability or medical condition. The page gives 'aged 10 to 65' and '65 years and above', so a 65-year-old falls in both; the bands here follow the page as written. Processing time is a lead.",
+ "passports": [
+  {"for": "10 to 65", "from": 10, "under": 66, "pages": 32, "validYears": 5, "pay": {"electronic": "1000"}},
+  {"for": "10 to 65", "from": 10, "under": 66, "pages": 48, "validYears": 5, "pay": {"electronic": "1500"}},
+  {"for": "child", "under": 10, "pages": 32, "validYears": 5, "pay": {"non-electronic": "600"}},
+  {"for": "senior", "from": 66, "pages": 32, "validYears": 5, "pay": {"non-electronic": "600"}}
+ ],
+ "note": "The electronic passport is for citizens aged 10 to 65, collected in person at an Immigration office; the non-electronic passport (MVR 600, 32 pages) is for children below 10, applicants 65 and over, applicants residing abroad and people with an illness, disability or medical condition. The page gives 'aged 10 to 65' and '65 years and above', so at 65 both are offered; the game gives a 65-year-old the electronic passport, and the non-electronic one from 66. Processing time is a lead.",
  "sources": [
   {
    "url": "https://immigration.gov.mv/passport/",

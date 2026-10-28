@@ -2,19 +2,20 @@
  "country": "GB",
  "office": "HM Passport Office",
  "currency": "GBP",
+ "routes": [
+  {"id": "online", "where": "home", "speed": "standard", "within": {"n": 3, "unit": "week"}, "label": "online, in the UK: 3 weeks"},
+  {"id": "paper", "where": "home", "speed": "standard", "within": {"n": 3, "unit": "week"}, "label": "paper form, in the UK: 3 weeks"},
+  {"id": "fast-track", "where": "home", "speed": "urgent", "within": {"n": 1, "unit": "week"}, "label": "1 week fast track: delivered 1 week after an appointment, at the earliest the day after applying"},
+  {"id": "premium", "where": "home", "speed": "urgent", "within": {"n": 4, "unit": "hour"}, "label": "1 day premium (adult renewals): ready 4 hours after an appointment, at the earliest 2 days after applying"}
+ ],
  "passports": [
-  {"for": "adult", "from": 16, "pages": 34, "validYears": 10, "fees": {"online": "102", "paper": "115.50"}},
-  {"for": "adult", "from": 16, "pages": 54, "validYears": 10, "fees": {"online": "116", "paper": "129.50"}},
-  {"for": "child", "under": 16, "pages": 34, "validYears": 5, "fees": {"online": "66.50", "paper": "80"}},
-  {"for": "child", "under": 16, "pages": 54, "validYears": 5, "fees": {"online": "80.50", "paper": "94"}}
+  {"for": "adult", "from": 16, "pages": 34, "validYears": 10, "pay": {"online": "102", "paper": "115.50", "fast-track": "192", "premium": "239.50"}},
+  {"for": "adult", "from": 16, "pages": 54, "validYears": 10, "pay": {"online": "116", "paper": "129.50", "fast-track": "206", "premium": "253.50"}},
+  {"for": "child", "under": 16, "pages": 34, "validYears": 5, "pay": {"online": "66.50", "paper": "80", "fast-track": "156.50"}},
+  {"for": "child", "under": 16, "pages": 54, "validYears": 5, "pay": {"online": "80.50", "paper": "94", "fast-track": "170.50"}}
  ],
  "free": "a British national born on or before 2 September 1929",
- "standard": {"within": "3 weeks"},
- "urgent": [
-  {"service": "1 day premium", "renewal": "adult only", "ready": "4 hours after an appointment at least 2 days after applying", "fees": {"adult 34 pages": "239.50", "adult 54 pages": "253.50"}},
-  {"service": "1 week fast track", "ready": "delivered 1 week after an appointment at least the next day after applying", "fees": {"adult 34 pages": "192", "adult 54 pages": "206", "child 34 pages": "156.50", "child 54 pages": "170.50"}}
- ],
- "note": "Applying in the United Kingdom. HM Passport Office's service page says a paper form costs an extra £16.00; its fees page gives £13.50 more (£115.50 against £102): the fees page, the one for fees, is taken. Applying from abroad has other fees and times, not read here.",
+ "note": "Applying in the United Kingdom. HM Passport Office's service page says a paper form costs an extra £16.00; its fees page gives £13.50 more (£115.50 against £102): the fees page, the one for fees, is taken. Applying from abroad has other fees and times, not read here. The fast track and premium times count from the appointment, not the application.",
  "sources": [
   {
    "url": "https://www.gov.uk/passport-fees",

@@ -2,14 +2,14 @@
  "country": "IS",
  "office": "the district commissioners (sýslumenn)",
  "currency": "ISK",
- "passports": [
-  {"for": "adult", "from": 18, "under": 67, "validYears": 10, "fees": {"ordinary": "19000", "express": "39200"}},
-  {"for": "senior", "from": 67, "validYears": 10, "fees": {"ordinary": "7000", "express": "14000"}},
-  {"for": "child", "under": 18, "validYears": 5, "fees": {"ordinary": "7000", "express": "14000"}}
+ "routes": [
+  {"id": "ordinary", "where": "home", "speed": "standard", "within": {"n": 4, "unit": "day"}, "label": "almenn afgreiðsla: delivered within 4 days of the photograph"},
+  {"id": "express", "where": "home", "speed": "urgent", "within": {"n": 2, "unit": "day"}, "label": "hraðafgreiðsla: delivered within 2 days of the photograph"}
  ],
- "standard": {"within": "4 days from the photograph at the district commissioner's"},
- "urgent": [
-  {"service": "express, within 2 days", "fee": "39200 (adult) or 14000"}
+ "passports": [
+  {"for": "adult", "from": 18, "under": 67, "validYears": 10, "pay": {"ordinary": "19000", "express": "39200"}},
+  {"for": "senior", "from": 67, "validYears": 10, "pay": {"ordinary": "7000", "express": "14000"}},
+  {"for": "child", "under": 18, "validYears": 5, "pay": {"ordinary": "7000", "express": "14000"}}
  ],
  "note": "The page gives the adult fee for ages 18 to 66 and the reduced fee for children, the elderly and people with a disability (öryrkjar), who also pay the reduced fee as adults; the senior band from 67 is read from '18 til 66 ára'. Validity runs from the application date. Delivery outside the capital area adds posting time.",
  "sources": [

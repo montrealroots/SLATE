@@ -30,6 +30,25 @@ restarts. Read `CLAUDE.md` and the owner's package in `docs/` first.
   Bank's levels, 21 carried from the 2021 benchmark, 5 priced against France and 25 territories kept at another's
   level by the owner's ruling, and the Caribbean Netherlands from Bonaire's ICP level; 6 proven, 22 blocked, each
   after all five methods (R-0428 to R-0449; the next step names them and what to try again), none pending.
+- Layer 3 (the person's papers and money) is in progress. Built: the passports engine (`papers.passports`,
+  `src/papers/passports/`), compiled by `tools/papers/passports/` from the research files once they are in the
+  engine's form, at 100% mutation score (406 mutants). Its matrix (`coverage/passports-countries.json`) is mostly
+  pending: the countries whose files are compiled are researched; the rest wait for their files to be migrated or
+  written, or for blockers. Next: migrate the remaining files, research the rest, then ID, visas, residence and
+  work permissions, and the banks (step 5 below).
+
+The passports' form (decided 2026-10-28, the engine's reader being the Papers page: apply, pay, wait, hold a
+passport valid so many years). Each research file has `routes`, one per way the office takes an application: `id`,
+`where` (`home` or `abroad`), `speed` (`standard` or `urgent`), `within` (the longest it takes as the office
+publishes it, a whole number of minutes, hours, days, working days or weeks, or null where it publishes none; where
+it differs by office, the longest), optional `months` (a route offered only in some months, as Malta's seasonal fee),
+and `label` (the office's own words, not compiled). Each passport band has `from`/`under` ages, optional `pages`,
+`validYears` (or null) and `pay`: by route, the total the applicant pays in the currency (components summed, as
+Luxembourg's chancery tax or Trinidad's expedite surcharge), or null where it isn't known. Two bands may meet the
+same applicant only with different pages or validity (Guatemala's five or ten years, Pakistan's 36 or 72 pages). A
+file in the research's own words (a `fees` map) or with fees in a unit that isn't a currency (Uruguay's UI) isn't
+compiled and stays pending; South Africa's (the fee depends on how long the old passport has left) waits for the
+form to take that condition. The game says what it doesn't know: a country not kept, a fee, a validity, a time.
 
 What layer 2 holds so far:
 

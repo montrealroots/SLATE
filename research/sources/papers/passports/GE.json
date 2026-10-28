@@ -2,12 +2,18 @@
  "country": "GE",
  "office": "the Public Service Development Agency (territorial offices, Public Service Halls; abroad, Georgia's diplomatic and consular offices)",
  "currency": "GEL",
- "passports": [
-  {"for": "adult", "from": 18, "validYears": 10, "fees": {"10th working day": "150", "5th working day": "180", "3rd working day": "225", "24 hours": "300", "same day": "350"}},
-  {"for": "minor 16 to 18", "from": 16, "under": 18, "validYears": 3, "fees": null},
-  {"for": "child", "under": 16, "validYears": null, "fees": null}
+ "routes": [
+  {"id": "10", "where": "home", "speed": "standard", "within": {"n": 10, "unit": "working day"}, "label": "by the 10th working day"},
+  {"id": "5", "where": "home", "speed": "urgent", "within": {"n": 5, "unit": "working day"}, "label": "by the 5th working day"},
+  {"id": "3", "where": "home", "speed": "urgent", "within": {"n": 3, "unit": "working day"}, "label": "by the 3rd working day"},
+  {"id": "24h", "where": "home", "speed": "urgent", "within": {"n": 24, "unit": "hour"}, "label": "within 24 hours"},
+  {"id": "0", "where": "home", "speed": "urgent", "within": {"n": 0, "unit": "day"}, "label": "the same day"}
  ],
- "standard": {"within": "the 10th working day"},
+ "passports": [
+  {"for": "adult", "from": 18, "validYears": 10, "pay": {"10": "150", "5": "180", "3": "225", "24h": "300", "0": "350"}},
+  {"for": "minor 16 to 18", "from": 16, "under": 18, "validYears": 3, "pay": {"10": null, "5": null, "3": null, "24h": null, "0": null}},
+  {"for": "child", "under": 16, "validYears": null, "pay": {"10": null, "5": null, "3": null, "24h": null, "0": null}}
+ ],
  "note": "The fees by speed are the adult's; the minors' fees and the under-16 validity aren't on the page (leads). A photo taken at the Agency costs GEL 5.",
  "sources": [
   {

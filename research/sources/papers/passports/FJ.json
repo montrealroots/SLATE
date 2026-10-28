@@ -2,13 +2,13 @@
  "country": "FJ",
  "office": "the Ministry of Immigration",
  "currency": "FJD",
- "passports": [
-  {"for": "any", "validYears": null, "fees": {"ordinary, 10 working days": "206.50", "urgent, 3 working days": "283.85", "urgent, weekend or public holiday": "627.60"}}
+ "routes": [
+  {"id": "ordinary", "where": "home", "speed": "standard", "within": {"n": 10, "unit": "working day"}, "label": "ordinary, 10 working days"},
+  {"id": "urgent", "where": "home", "speed": "urgent", "within": {"n": 3, "unit": "working day"}, "label": "urgent, 3 working days"},
+  {"id": "weekend", "where": "home", "speed": "urgent", "within": null, "label": "urgent, on a weekend or public holiday"}
  ],
- "standard": {"within": "10 working days"},
- "urgent": [
-  {"service": "3 working days", "fee": "283.85"},
-  {"service": "weekend or public holiday", "fee": "627.60"}
+ "passports": [
+  {"for": "any", "validYears": null, "pay": {"ordinary": "206.50", "urgent": "283.85", "weekend": "627.60"}}
  ],
  "note": "One fee for a new passport or a renewal, at any age (the page gives no age bands; children below 10 need no biometrics). Replacing a valid passport lost or damaged costs FJD 412.90 (536.75 urgent). Validity is a lead.",
  "sources": [

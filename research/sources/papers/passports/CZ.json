@@ -2,17 +2,17 @@
  "country": "CZ",
  "office": "the municipal offices of municipalities with extended powers (in Prague, the city district offices 1 to 22), and the Ministry of the Interior for reduced periods",
  "currency": "CZK",
+ "routes": [
+  {"id": "30", "where": "home", "speed": "standard", "within": {"n": 30, "unit": "day"}, "label": "within 30 days"},
+  {"id": "5", "where": "home", "speed": "urgent", "within": {"n": 5, "unit": "working day"}, "label": "within 5 working days, at the Ministry of the Interior"},
+  {"id": "24h", "where": "home", "speed": "urgent", "within": {"n": 24, "unit": "hour"}, "label": "within 24 hours of a working day, at the Ministry of the Interior"},
+  {"id": "embassy", "where": "abroad", "speed": "standard", "within": {"n": 120, "unit": "day"}, "label": "at an embassy, within 120 days"}
+ ],
  "passports": [
-  {"for": "adult", "from": 15, "validYears": 10, "fees": {"within 30 days": "600", "within 5 working days, at the Ministry of the Interior": "3000", "within 24 hours of a working day, at the Ministry of the Interior": "6000"}},
-  {"for": "child", "under": 15, "validYears": 5, "fees": {"within 30 days": "100", "within 5 working days, at the Ministry of the Interior": "1000", "within 24 hours of a working day, at the Ministry of the Interior": "2000"}}
+  {"for": "adult", "from": 15, "validYears": 10, "pay": {"30": "600", "5": "3000", "24h": "6000", "embassy": null}},
+  {"for": "child", "under": 15, "validYears": 5, "pay": {"30": "100", "5": "1000", "24h": "2000", "embassy": null}}
  ],
- "standard": {"within": "30 days"},
- "abroad": {"within": "120 days, at an embassy"},
- "urgent": [
-  {"service": "within 5 working days"},
-  {"service": "within 24 hours of a working day, collected at the Ministry of the Interior"}
- ],
- "note": "Collecting a 30-day passport at another authority than the one applied to costs CZK 100 more. A reduced-period application at a municipal authority with collection at the Ministry is paid in two parts (CZK 4,000 and 2,000 for 24 hours; 2,000 and 1,000 for 5 working days).",
+ "note": "Collecting a 30-day passport at another authority than the one applied to costs CZK 100 more. A reduced-period application at a municipal authority with collection at the Ministry is paid in two parts (CZK 4,000 and 2,000 for 24 hours; 2,000 and 1,000 for 5 working days). The fee at an embassy is not on the page read.",
  "sources": [
   {
    "url": "https://portal.gov.cz/en/sluzby-vs/vydani-cestovniho-pasu-S315",

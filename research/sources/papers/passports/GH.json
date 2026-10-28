@@ -2,11 +2,13 @@
  "country": "GH",
  "office": "the Ministry of Foreign Affairs (Ghana Passport Services)",
  "currency": "GHS",
- "passports": [
-  {"for": "any", "validYears": null, "fees": {"passport": "350", "24-hour premium service": "2000"}}
+ "routes": [
+  {"id": "standard", "where": "home", "speed": "standard", "within": {"n": 15, "unit": "working day"}, "label": "15 working days"},
+  {"id": "premium", "where": "home", "speed": "urgent", "within": {"n": 24, "unit": "hour"}, "label": "24-hour premium service"}
  ],
- "standard": {"within": "15 working days"},
- "urgent": [{"service": "24-hour premium service", "ready": "within 24 hours", "fees": {"any": "2000"}}],
+ "passports": [
+  {"for": "any", "validYears": null, "pay": {"standard": "350", "premium": "2000"}}
+ ],
  "note": "The portal's front page gives one fee, reduced from GHS 500 to GHS 350, without saying which booklet or age it is for; validity isn't given there (a lead). Fees are non-refundable once an application is submitted.",
  "sources": [
   {

@@ -2,16 +2,17 @@
  "country": "RS",
  "office": "the police administration or police station of the registered residence, or the competent diplomatic or consular mission",
  "currency": "RSD",
+ "routes": [
+  {"id": "police", "where": "home", "speed": "standard", "within": {"n": 30, "unit": "day"}, "label": "decided within 30 days at the police"},
+  {"id": "urgent", "where": "home", "speed": "urgent", "within": {"n": 48, "unit": "hour"}, "label": "within 48 hours, in exceptionally urgent cases with written proof"},
+  {"id": "mission", "where": "abroad", "speed": "standard", "within": {"n": 60, "unit": "day"}, "label": "decided within 60 days at a diplomatic or consular mission"}
+ ],
  "passports": [
-  {"for": "adult", "from": 14, "validYears": 10, "fees": {"ordinary": "4500"}},
-  {"for": "child", "from": 3, "under": 14, "validYears": 5, "fees": {"ordinary": "4500"}},
-  {"for": "infant", "under": 3, "validYears": 3, "fees": {"ordinary": "4500"}}
+  {"for": "adult", "from": 14, "validYears": 10, "pay": {"police": "4500", "urgent": null, "mission": null}},
+  {"for": "child", "from": 3, "under": 14, "validYears": 5, "pay": {"police": "4500", "urgent": null, "mission": null}},
+  {"for": "infant", "under": 3, "validYears": 3, "pay": {"police": "4500", "urgent": null, "mission": null}}
  ],
- "standard": {"within": "30 days (police); 60 days (diplomatic or consular mission)"},
- "urgent": [
-  {"service": "within 48 hours, in exceptionally urgent cases with written proof of the reason"}
- ],
- "note": "Fee from 21 March 2026 (decree in Službeni glasnik 24/2026): RSD 3,900 for the form and 600 for technical production, paid by a slip generated on eUprava; the page gives no separate fee by age. The fee 'in accordance with article 33(2) of the Law on Travel Documents' became RSD 5,100; which applications that article covers is a lead. Whether the urgent 48-hour issue costs more is not on the page (a lead). A person who loses or damages two or more passports in five years gets a passport valid one year.",
+ "note": "Fee from 21 March 2026 (decree in Službeni glasnik 24/2026): RSD 3,900 for the form and 600 for technical production, paid by a slip generated on eUprava; the page gives no separate fee by age. The fee 'in accordance with article 33(2) of the Law on Travel Documents' became RSD 5,100; which applications that article covers is a lead. Whether the urgent 48-hour issue costs more is not on the page (a lead). A person who loses or damages two or more passports in five years gets a passport valid one year. The fee at a mission (perhaps the article 33(2) amount) is left unknown until that article is read.",
  "sources": [
   {
    "url": "https://www.mup.gov.rs/wps/portal/sr/gradjani/dokumenta/putne%20isprave/biometrijski%20pasos/!ut/p/z1/fczBCgIhFEDRX5mhdTxHarCltBAqCXKRuRleYNNrSkVtvr_5gpYXDhccWHABZxqxUgz4Xvrm-uG8032nGD-KDeuY7KUSbCs4Mx2YkoeLGVYnrAEO4P7rZcez3usRXML6XFN4RLDpW4NvqKSMswd7p_jxNdOrTNQkLLFAmtRVyrb9AVYWgbk!/",

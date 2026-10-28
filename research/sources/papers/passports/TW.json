@@ -2,12 +2,14 @@
  "country": "TW",
  "office": "the Bureau of Consular Affairs, Ministry of Foreign Affairs (外交部領事事務局)",
  "currency": "TWD",
- "passports": [
-  {"for": "adult", "from": 14, "validYears": null, "fees": {"ordinary": "1300", "express (collected 9 working days earlier)": "2200"}},
-  {"for": "child", "under": 14, "validYears": null, "fees": {"ordinary": "900", "express (collected 9 working days earlier)": "1800"}}
+ "routes": [
+  {"id": "ordinary", "where": "home", "speed": "standard", "within": {"n": 10, "unit": "working day"}, "label": "ordinary: 10 working days from acceptance"},
+  {"id": "express", "where": "home", "speed": "urgent", "within": {"n": 1, "unit": "working day"}, "label": "express (速件): collected 9 working days earlier"}
  ],
- "standard": {"within": "10 working days from acceptance (11 for a replacement after loss)"},
- "urgent": [{"service": "express (速件)", "ready": "9 working days earlier", "fees": {"surcharge": "900"}}],
+ "passports": [
+  {"for": "adult", "from": 14, "validYears": null, "pay": {"ordinary": "1300", "express": "2200"}},
+  {"for": "child", "under": 14, "validYears": null, "pay": {"ordinary": "900", "express": "1800"}}
+ ],
  "note": "The child's fee is lower because the child's passport is valid for a shorter time, as the Bureau says; the periods themselves aren't on this page (a lead: the Passport Act's rules).",
  "sources": [
   {

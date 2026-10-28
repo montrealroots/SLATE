@@ -2,15 +2,17 @@
  "country": "PK",
  "office": "the Directorate General of Immigration & Passports (regional passport offices; foreign missions abroad)",
  "currency": "PKR",
- "passports": [
-  {"for": "15 or older", "from": 15, "pages": 36, "validYears": 5, "fees": {"normal": "9000", "urgent": "15000"}},
-  {"for": "15 or older", "from": 15, "pages": 36, "validYears": 10, "fees": {"normal": "13500", "urgent": "22500"}},
-  {"for": "15 or older", "from": 15, "pages": 72, "validYears": 5, "fees": {"normal": "16500", "urgent": "27000"}},
-  {"for": "15 or older", "from": 15, "pages": 72, "validYears": 10, "fees": {"normal": "24750", "urgent": "40500"}},
-  {"for": "child", "under": 15, "pages": 36, "validYears": 5, "fees": {"normal": "9000", "urgent": "15000"}}
+ "routes": [
+  {"id": "normal", "where": "home", "speed": "standard", "within": {"n": 21, "unit": "working day"}, "label": "normal: 21 working days, courier time not included"},
+  {"id": "urgent", "where": "home", "speed": "urgent", "within": {"n": 5, "unit": "working day"}, "label": "urgent: 5 working days"}
  ],
- "standard": {"within": "21 working days (courier time not included)"},
- "urgent": [{"service": "urgent", "ready": "5 working days"}],
+ "passports": [
+  {"for": "15 or older", "from": 15, "pages": 36, "validYears": 5, "pay": {"normal": "9000", "urgent": "15000"}},
+  {"for": "15 or older", "from": 15, "pages": 36, "validYears": 10, "pay": {"normal": "13500", "urgent": "22500"}},
+  {"for": "15 or older", "from": 15, "pages": 72, "validYears": 5, "pay": {"normal": "16500", "urgent": "27000"}},
+  {"for": "15 or older", "from": 15, "pages": 72, "validYears": 10, "pay": {"normal": "24750", "urgent": "40500"}},
+  {"for": "child", "under": 15, "pages": 36, "validYears": 5, "pay": {"normal": "9000", "urgent": "15000"}}
+ ],
  "note": "The ordinary e-passport's fees; the validity (five or ten years) follows the fee paid, and a child under 15 gets five years only. Fast track (2 working days) isn't available for the e-passport. The child's fee is the 36-page five-year one, the page naming no other.",
  "sources": [
   {

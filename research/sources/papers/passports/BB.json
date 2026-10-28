@@ -2,16 +2,16 @@
  "country": "BB",
  "office": "the Immigration Department; abroad, Barbados' diplomatic and consular missions, at fees of their own",
  "currency": "BBD",
+ "routes": [
+  {"id": "ordinary", "where": "home", "speed": "standard", "within": null, "label": "ordinary"},
+  {"id": "urgent-5", "where": "home", "speed": "urgent", "within": {"n": 5, "unit": "day"}, "label": "urgent, required in 2-5 days"},
+  {"id": "urgent-1", "where": "home", "speed": "urgent", "within": {"n": 1, "unit": "day"}, "label": "urgent, required in 1 day"}
+ ],
  "passports": [
-  {"for": "adult", "from": 16, "validYears": null, "fees": {"ordinary": "150", "businessman's passport": "225", "urgent, required in 1 day": "300", "urgent, required in 2-5 days": "225"}},
-  {"for": "minor", "under": 16, "validYears": null, "fees": {"ordinary": "100"}}
+  {"for": "adult", "from": 16, "validYears": null, "pay": {"ordinary": "150", "urgent-5": "225", "urgent-1": "300"}},
+  {"for": "minor", "under": 16, "validYears": null, "pay": {"ordinary": "100", "urgent-5": null, "urgent-1": null}}
  ],
- "standard": {"within": null, "said": "not on the Department's page"},
- "urgent": [
-  {"service": "required in 1 day", "fee": "300"},
-  {"service": "required in 2-5 days", "fee": "225"}
- ],
- "note": "Fees effective 1 December 2010, still those both government pages publish on the date read. Whether the urgent fees replace the ordinary fee or are added to it, and whether a minor pays the same urgent fees, the page doesn't say. A lost passport's replacement costs BBD 300. Validity and the ordinary processing time are leads.",
+ "note": "Fees effective 1 December 2010, still those both government pages publish on the date read. Whether the urgent fees replace the ordinary fee or are added to it, and whether a minor pays the same urgent fees, the page doesn't say. A lost passport's replacement costs BBD 300. Validity and the ordinary processing time are leads. The urgent amounts are taken as the urgent passport's price, as the table lists them among the passport types; a minor's urgent fee isn't given. The businessman's passport (BBD 225) isn't modelled.",
  "sources": [
   {
    "url": "https://immigration.gov.bb/pages/Passport.aspx",

@@ -2,12 +2,18 @@
  "country": "JM",
  "office": "the Passport, Immigration and Citizenship Agency (PICA); abroad, Jamaica's diplomatic missions and consulates",
  "currency": "JMD",
- "passports": [
-  {"for": "adult", "from": 18, "validYears": 10, "fees": {"regular": "6500", "rush, 3 working days": "9500", "rush, next day": "11500", "rush, same day": "16500"}},
-  {"for": "minor", "under": 18, "validYears": 5, "fees": {"regular": "4000", "rush, 3 working days": "6000", "rush, next day": "7000", "rush, same day": "9000"}}
+ "routes": [
+  {"id": "regular", "where": "home", "speed": "standard", "within": {"n": 14, "unit": "working day"}, "label": "regular: 7 working days in Kingston, 11 to 14 elsewhere; the longest is taken"},
+  {"id": "rush-3", "where": "home", "speed": "urgent", "within": {"n": 3, "unit": "working day"}, "label": "rush, 3 working days"},
+  {"id": "rush-1", "where": "home", "speed": "urgent", "within": {"n": 1, "unit": "day"}, "label": "rush, next day"},
+  {"id": "rush-0", "where": "home", "speed": "urgent", "within": {"n": 0, "unit": "day"}, "label": "rush, same day"},
+  {"id": "overseas", "where": "abroad", "speed": "standard", "within": {"n": 20, "unit": "working day"}, "label": "overseas: 20 working days from receipt in Kingston"}
  ],
- "standard": {"within": "7 working days (Kingston); 14 (Montego Bay); 11 and 14 (Portmore and May Pen tax offices); 20 overseas from receipt in Kingston"},
- "note": "PICA's fee page gives the schedule effective Monday, 1 June 2015 as current; no later change was found on PICA's pages (a commercial site gives higher 2024 figures, not used). Replacement passports cost more (J$11,500 adult, J$7,000 minor).",
+ "passports": [
+  {"for": "adult", "from": 18, "validYears": 10, "pay": {"regular": "6500", "rush-3": "9500", "rush-1": "11500", "rush-0": "16500", "overseas": null}},
+  {"for": "minor", "under": 18, "validYears": 5, "pay": {"regular": "4000", "rush-3": "6000", "rush-1": "7000", "rush-0": "9000", "overseas": null}}
+ ],
+ "note": "PICA's fee page gives the schedule effective Monday, 1 June 2015 as current; no later change was found on PICA's pages (a commercial site gives higher 2024 figures, not used). Replacement passports cost more (J$11,500 adult, J$7,000 minor). The fee overseas is not on PICA's page read.",
  "sources": [
   {
    "url": "https://www.pica.gov.jm/passport/fees",

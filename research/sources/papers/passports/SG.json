@@ -2,14 +2,17 @@
  "country": "SG",
  "office": "the Immigration & Checkpoints Authority (ICA)",
  "currency": "SGD",
+ "routes": [
+  {"id": "online", "where": "home", "speed": "standard", "within": {"n": 2, "unit": "week"}, "label": "online: around one to two weeks from ICA's receipt"},
+  {"id": "counter", "where": "home", "speed": "standard", "within": {"n": 2, "unit": "week"}, "label": "over the counter: around one to two weeks from ICA's receipt"},
+  {"id": "abroad", "where": "abroad", "speed": "standard", "within": {"n": 6, "unit": "week"}, "label": "abroad: around four to six weeks"}
+ ],
  "passports": [
-  {"for": "adult", "from": 16, "validYears": 10, "fees": {"online": "70", "over the counter": "80"}},
-  {"for": "child", "under": 16, "validYears": 5, "fees": {"online": "70", "over the counter": "80"}}
+  {"for": "adult", "from": 16, "validYears": 10, "pay": {"online": "70", "counter": "80", "abroad": null}},
+  {"for": "child", "under": 16, "validYears": 5, "pay": {"online": "70", "counter": "80", "abroad": null}}
  ],
  "free": "a newborn citizen's first passport applied for online on or before the first birthday",
- "standard": {"within": "around one to two weeks from ICA's receipt (up to four weeks if the photograph doesn't meet the requirements or the name changes)"},
- "abroad": {"within": "around four to six weeks"},
- "note": "The same fee for a child's: the page names no other. A lost or damaged passport adds a penalty of S$50 the first time and S$100 after.",
+ "note": "The same fee for a child's: the page names no other. A lost or damaged passport adds a penalty of S$50 the first time and S$100 after. The fee abroad is not on the page read.",
  "sources": [
   {
    "url": "https://www.ica.gov.sg/documents/passport/apply",

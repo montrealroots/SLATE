@@ -2,42 +2,15 @@
  "country": "TT",
  "office": "the Immigration Division",
  "currency": "TTD",
- "passports": [
-  {
-   "for": "adult",
-   "from": 16,
-   "validYears": 10,
-   "fees": {
-    "32 pages": "500",
-    "48 pages": "700"
-   }
-  },
-  {
-   "for": "child",
-   "from": 2,
-   "under": 16,
-   "validYears": 5,
-   "fees": {
-    "32 pages": "500"
-   }
-  },
-  {
-   "for": "infant",
-   "under": 2,
-   "validYears": 5,
-   "fees": {
-    "32 pages": "0"
-   }
-  }
+ "routes": [
+  {"id": "standard", "where": "home", "speed": "standard", "within": {"n": 4, "unit": "week"}, "label": "4 weeks"},
+  {"id": "expedited", "where": "home", "speed": "urgent", "within": {"n": 7, "unit": "working day"}, "label": "expedited: 3 to 7 business days, TTD 600 on top"}
  ],
- "standard": {
-  "within": "4 weeks"
- },
- "urgent": [
-  {
-   "service": "expedited, 3 to 7 business days",
-   "fee": "600 more"
-  }
+ "passports": [
+  {"for": "adult", "from": 16, "pages": 32, "validYears": 10, "pay": {"standard": "500", "expedited": "1100"}},
+  {"for": "adult", "from": 16, "pages": 48, "validYears": 10, "pay": {"standard": "700", "expedited": "1300"}},
+  {"for": "child", "from": 2, "under": 16, "pages": 32, "validYears": 5, "pay": {"standard": "500", "expedited": "1100"}},
+  {"for": "infant", "under": 2, "pages": 32, "validYears": 5, "pay": {"standard": "0", "expedited": "600"}}
  ],
  "note": "Fees from 1 January 2026 (Legal Notice No. 493 of 2025). The government's service portal adds that citizens over 60 pay no fee and that the under-two exemption is for a first issue only; the regulation giving the over-60 exemption is a lead. Replacing a valid passport lost or misplaced costs TTD 2,000 (an adult's or a child's), a damaged adult's TTD 2,000, an expired one lost or a stolen one TTD 500.",
  "sources": [

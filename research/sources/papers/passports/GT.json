@@ -2,12 +2,15 @@
  "country": "GT",
  "office": "the Instituto Guatemalteco de Migración's passport centres",
  "currency": "USD",
- "passports": [
-  {"for": "adult", "from": 18, "validYears": 5, "fees": {"in Guatemala": "50.00", "abroad": "65.00"}},
-  {"for": "adult", "from": 18, "validYears": 10, "fees": {"in Guatemala": "85.00", "abroad": "100.00"}},
-  {"for": "minor", "under": 18, "validYears": 5, "fees": {"in Guatemala": "50.00", "abroad": "65.00"}}
+ "routes": [
+  {"id": "home", "where": "home", "speed": "standard", "within": {"n": 0, "unit": "day"}, "label": "in Guatemala: delivered the same day, about 25 minutes"},
+  {"id": "abroad", "where": "abroad", "speed": "standard", "within": null, "label": "abroad"}
  ],
- "standard": {"within": "the same day as the application, about 25 minutes"},
+ "passports": [
+  {"for": "adult", "from": 18, "validYears": 5, "pay": {"home": "50.00", "abroad": "65.00"}},
+  {"for": "adult", "from": 18, "validYears": 10, "pay": {"home": "85.00", "abroad": "100.00"}},
+  {"for": "minor", "under": 18, "validYears": 5, "pay": {"home": "50.00", "abroad": "65.00"}}
+ ],
  "note": "The tariff is set in US dollars and paid at an authorised bank (Banrural) in Guatemala. Minors can only have the five-year passport.",
  "sources": [
   {

@@ -2,13 +2,13 @@
  "country": "BZ",
  "office": "the Nationality and Passports Department",
  "currency": "BZD",
- "passports": [
-  {"for": "adult", "from": 16, "validYears": 10, "fees": {"regular": "200", "24 hours, at the Belmopan headquarters": "500"}},
-  {"for": "child", "under": 16, "validYears": 5, "fees": {"regular": "150", "24 hours, at the Belmopan headquarters": "450"}}
+ "routes": [
+  {"id": "regular", "where": "home", "speed": "standard", "within": null, "label": "regular"},
+  {"id": "24h", "where": "home", "speed": "urgent", "within": {"n": 24, "unit": "hour"}, "label": "24 hours, at the Belmopan headquarters only"}
  ],
- "standard": {"within": null, "said": "not on the fees page for an application in Belize; 6-8 weeks from overseas"},
- "urgent": [
-  {"service": "24 hours, at the Belmopan headquarters only", "fee": "300 more"}
+ "passports": [
+  {"for": "adult", "from": 16, "validYears": 10, "pay": {"regular": "200", "24h": "500"}},
+  {"for": "child", "under": 16, "validYears": 5, "pay": {"regular": "150", "24h": "450"}}
  ],
  "note": "A lost passport adds BZD 200. A medical emergency passport (BZD 100, five working days) is at the office's discretion. Applying overseas, the fees include shipping and handling and differ by mission. The ordinary processing time in Belize is a lead.",
  "sources": [

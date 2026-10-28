@@ -2,10 +2,12 @@
  "country": "SV",
  "office": "the Dirección General de Migración y Extranjería's branches",
  "currency": "USD",
- "passports": [
-  {"for": "any", "validYears": 6, "fees": {"first issue or renewal": "25.00"}}
+ "routes": [
+  {"id": "branch", "where": "home", "speed": "standard", "within": {"n": 20, "unit": "minute"}, "label": "at a branch: about 20 minutes"}
  ],
- "standard": {"within": "about 20 minutes at a branch"},
+ "passports": [
+  {"for": "any", "validYears": 6, "pay": {"branch": "25.00"}}
+ ],
  "note": "Paid only at the cashiers inside the branches, in cash or by card. A lost passport's replacement costs USD 25; a second consecutive loss costs triple (USD 75) plus the passport's USD 25.",
  "sources": [
   {

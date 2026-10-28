@@ -2,15 +2,16 @@
  "country": "SK",
  "office": "the documents department (oddelenie dokladov) at the place of permanent or temporary residence or where the citizen is staying; abroad, the Slovak Republic's embassy",
  "currency": "EUR",
- "passports": [
-  {"for": "adult", "from": 16, "validYears": 10, "fees": {"within 30 days": "50", "within 10 working days": "100", "within 2 working days": "150", "issued abroad": "60"}},
-  {"for": "child", "from": 6, "under": 16, "validYears": 5, "fees": {"within 30 days": "20", "within 10 working days": "40", "within 2 working days": "60", "issued abroad": "22"}},
-  {"for": "child", "under": 6, "validYears": 2, "fees": {"within 30 days": "12", "within 10 working days": "24", "within 2 working days": "36", "issued abroad": "14"}}
+ "routes": [
+  {"id": "standard", "where": "home", "speed": "standard", "within": {"n": 30, "unit": "day"}, "label": "within 30 days"},
+  {"id": "urgent-10", "where": "home", "speed": "urgent", "within": {"n": 10, "unit": "working day"}, "label": "within 10 working days"},
+  {"id": "urgent-2", "where": "home", "speed": "urgent", "within": {"n": 2, "unit": "working day"}, "label": "within 2 working days"},
+  {"id": "abroad", "where": "abroad", "speed": "standard", "within": null, "label": "issued abroad"}
  ],
- "standard": {"within": "30 days"},
- "urgent": [
-  {"service": "within 10 working days"},
-  {"service": "within 2 working days"}
+ "passports": [
+  {"for": "adult", "from": 16, "validYears": 10, "pay": {"standard": "50", "urgent-10": "100", "urgent-2": "150", "abroad": "60"}},
+  {"for": "child", "from": 6, "under": 16, "validYears": 5, "pay": {"standard": "20", "urgent-10": "40", "urgent-2": "60", "abroad": "22"}},
+  {"for": "child", "under": 6, "validYears": 2, "pay": {"standard": "12", "urgent-10": "24", "urgent-2": "36", "abroad": "14"}}
  ],
  "note": "Fees in force from 1 April 2024, paid by eKolok when applying. A replacement for a valid passport lost, damaged or stolen costs double the fee the first time, five times the second within 2 years and ten times the third within 2 years. The fee page writes the reduced periods as 'Do 10 dní' and 'Do 2 dní', the travel documents page as working days. A one-year passport costs EUR 12, 24 or 36 under 16 and EUR 45, 90 or 135 from 16.",
  "sources": [

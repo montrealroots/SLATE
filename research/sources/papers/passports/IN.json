@@ -2,13 +2,15 @@
  "country": "IN",
  "office": "the Ministry of External Affairs (the Chief Passport Officer and the passport offices)",
  "currency": "INR",
- "passports": [
-  {"for": "adult", "from": 18, "pages": 36, "validYears": 10, "fees": {"normal": "2500", "tatkaal (normal fee included)": "5000"}},
-  {"for": "adult", "from": 18, "pages": 60, "validYears": 10, "fees": {"normal": "3500", "tatkaal (normal fee included)": "6000"}},
-  {"for": "minor", "under": 18, "pages": 36, "validYears": 5, "fees": {"normal": "1750", "tatkaal (normal fee included)": "4250"}}
+ "routes": [
+  {"id": "normal", "where": "home", "speed": "standard", "within": null, "label": "normal"},
+  {"id": "tatkaal", "where": "home", "speed": "urgent", "within": null, "label": "Tatkaal, the normal fee included"}
  ],
- "standard": {"within": null, "said": "not in the rules"},
- "urgent": [{"service": "Tatkaal"}],
+ "passports": [
+  {"for": "adult", "from": 18, "pages": 36, "validYears": 10, "pay": {"normal": "2500", "tatkaal": "5000"}},
+  {"for": "adult", "from": 18, "pages": 60, "validYears": 10, "pay": {"normal": "3500", "tatkaal": "6000"}},
+  {"for": "minor", "under": 18, "pages": 36, "validYears": 5, "pay": {"normal": "1750", "tatkaal": "4250"}}
+ ],
  "note": "Fees in India from 1 July 2026. A minor of 15 to 18 may apply as an adult, for ten years; a minor's passport is valid five years or until 18, whichever comes first, and an adult's at most ten. Fresh applications (not reissues) for children up to 8 and people over 60 get 10% off. A lost or damaged passport costs more (5000 or 6000; a minor's 4250).",
  "sources": [
   {

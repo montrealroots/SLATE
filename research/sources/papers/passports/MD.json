@@ -2,18 +2,18 @@
  "country": "MD",
  "office": "the Public Services Agency's subdivisions; abroad, Moldova's diplomatic missions and consular offices",
  "currency": "MDL",
- "passports": [
-  {"for": "adult", "from": 16, "validYears": 10, "fees": {"20 working days": "790", "10 working days": "1500", "5 working days": "1740", "1 working day": "2050", "the day of application": "2530"}},
-  {"for": "minor", "from": 12, "under": 16, "validYears": 7, "fees": {"20 working days": "790", "10 working days": "1500", "5 working days": "1740", "1 working day": "2050", "the day of application": "2530"}},
-  {"for": "child", "from": 7, "under": 12, "validYears": 7, "fees": {"20 working days": "790", "10 working days": "1190", "5 working days": "1380", "1 working day": "1580", "the day of application": "1980"}},
-  {"for": "infant", "under": 7, "validYears": 4, "fees": {"20 working days": "790", "10 working days": "1190", "5 working days": "1380", "1 working day": "1580", "the day of application": "1980"}}
+ "routes": [
+  {"id": "20", "where": "home", "speed": "standard", "within": {"n": 20, "unit": "working day"}, "label": "20 working days"},
+  {"id": "10", "where": "home", "speed": "urgent", "within": {"n": 10, "unit": "working day"}, "label": "10 working days"},
+  {"id": "5", "where": "home", "speed": "urgent", "within": {"n": 5, "unit": "working day"}, "label": "5 working days"},
+  {"id": "1", "where": "home", "speed": "urgent", "within": {"n": 1, "unit": "working day"}, "label": "1 working day"},
+  {"id": "0", "where": "home", "speed": "urgent", "within": {"n": 0, "unit": "day"}, "label": "the day of application"}
  ],
- "standard": {"within": "20 working days"},
- "urgent": [
-  {"service": "10 working days"},
-  {"service": "5 working days"},
-  {"service": "1 working day"},
-  {"service": "the day of application"}
+ "passports": [
+  {"for": "adult", "from": 16, "validYears": 10, "pay": {"20": "790", "10": "1500", "5": "1740", "1": "2050", "0": "2530"}},
+  {"for": "minor", "from": 12, "under": 16, "validYears": 7, "pay": {"20": "790", "10": "1500", "5": "1740", "1": "2050", "0": "2530"}},
+  {"for": "child", "from": 7, "under": 12, "validYears": 7, "pay": {"20": "790", "10": "1190", "5": "1380", "1": "1580", "0": "1980"}},
+  {"for": "infant", "under": 7, "validYears": 4, "pay": {"20": "790", "10": "1190", "5": "1380", "1": "1580", "0": "1980"}}
  ],
  "note": "The tariffs on the Agency's page as read; the date they took effect isn't on it (the press dates the rise from 650 lei to 1 September 2026, not read in the decision). The fees for a child under 12 are those for a passport without fingerprints, which also apply to anyone whose fingerprints can't be taken. Some categories get the 20-day passport free (Government Decision 966/2020, annex 3, pt. 4). An application within a month of reaching the next age band gets that band's validity.",
  "sources": [

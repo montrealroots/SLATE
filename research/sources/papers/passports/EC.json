@@ -2,11 +2,13 @@
  "country": "EC",
  "office": "the Registro Civil",
  "currency": "USD",
- "passports": [
-  {"for": "adult", "from": 18, "validYears": null, "fees": {"first issue or renewal": "90.00"}},
-  {"for": "minor", "under": 18, "validYears": null, "fees": {"first issue or renewal": "90.00"}}
+ "routes": [
+  {"id": "agency", "where": "home", "speed": "standard", "within": {"n": 12, "unit": "working day"}, "label": "1 to 5 working days at most agencies, the same day at three, 12 working days at Santa Cruz and San Cristóbal: the longest is taken"}
  ],
- "standard": {"within": "the same day at the Matriz Iñaquito, Gobierno Zonal de Guayaquil and San Blas Cuenca agencies; 1 to 5 working days from enrolment at agencies in cities without a production centre; 12 working days at Santa Cruz and San Cristóbal"},
+ "passports": [
+  {"for": "adult", "from": 18, "validYears": null, "pay": {"agency": "90.00"}},
+  {"for": "minor", "under": 18, "validYears": null, "pay": {"agency": "90.00"}}
+ ],
  "note": "No VAT. An adult of the 'tercera edad' pays half; a person with a disability of 30% or more, validated with CONADIS, pays nothing. Validity is a lead (not on these pages).",
  "sources": [
   {
