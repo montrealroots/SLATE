@@ -53,6 +53,8 @@ describe('the price levels compiler', () => {
     // Argentina's 2021 level carried by INDEC's index (means 490.554858.. and 8966.166533..) over the CPI-U's (270.96975 and 321.943).
     // Guadeloupe, priced against France: France's 0.732501 euros x INSEE's 2022 gap (1.158), carried by the two indices.
     expect(levels['GP']).toEqual({ ppp: '0.848586213156', year: 2025 });
+    // The Caribbean Netherlands, from the Program's level for Bonaire (part of it) carried by Bonaire's index.
+    expect(levels['BQ']).toEqual({ ppp: '0.734067268186', year: 2025 });
     expect([levels['AR'], levels['AD']]).toEqual([
       { ppp: '661.287794234474', year: 2025 },
       { ppp: '0.636851408291', year: 2025 },

@@ -129,6 +129,8 @@ export interface Indices {
   also?: Year[];
   /** For a country the Program doesn't price, its price gap to one the World Bank does, measured in a year by a spatial survey. */
   relative?: Relative;
+  /** For a country the Program prices only in part, the economy whose benchmark it takes (the Caribbean Netherlands, Bonaire's). */
+  benchmark?: string;
 }
 /**
  * A territory with no price measure of its own, which keeps the level of the country whose currency and market it
@@ -292,15 +294,18 @@ export function readLevels(root: string): { levels: Record<string, Level>; unmap
   const currencies = Object.fromEntries(Object.entries(gazetteer).map(([code, c]) => [code, c.currency]));
   const units = currencyUnits(metadata);
   const { levels, unmapped } = compileLevels(ppp[1], economies[1], units, currencies);
-  const icp = icpBenchmark(
-    JSON.parse(pinned(root, SOURCES.icp.file, SOURCES.icp.sha256)) as IcpData,
-    JSON.parse(pinned(root, SOURCES.icpMetadata.file, SOURCES.icpMetadata.sha256)) as IcpMetadata,
-    threeLetterCodes(pinned(root, SOURCES.geonames.file, SOURCES.geonames.sha256)),
-  );
   // A country's file is named by its code; an index others are carried against (the United States', France's) by a lower-case name.
   const names = readdirSync(join(root, INDICES)).map((f) => basename(f, '.json'));
   const read = (shared: boolean) => Object.fromEntries(names.filter((n) => /[a-z]/.test(n) === shared).map((n) => [n, cited(root, n, `world.prices.${n}`, register)]));
-  return { levels: withCarried(levels, [...benchmark[1], ...icp.rows], read(true), read(false) as Record<string, Indices | Kept>, new Map([...icp.units, ...units]), currencies), unmapped };
+  const own = read(false) as Record<string, Indices | Kept>;
+  // An economy the Program prices as a part of a country (Bonaire) stands for the country whose file names it.
+  const parts = Object.entries(own).map(([code, f]) => [(f as Indices).benchmark, code] as [string, string]);
+  const icp = icpBenchmark(
+    JSON.parse(pinned(root, SOURCES.icp.file, SOURCES.icp.sha256)) as IcpData,
+    JSON.parse(pinned(root, SOURCES.icpMetadata.file, SOURCES.icpMetadata.sha256)) as IcpMetadata,
+    new Map([...threeLetterCodes(pinned(root, SOURCES.geonames.file, SOURCES.geonames.sha256)), ...parts]),
+  );
+  return { levels: withCarried(levels, [...benchmark[1], ...icp.rows], read(true), own, new Map([...icp.units, ...units]), currencies), unmapped };
 }
 
 export const serialize = (levels: Readonly<Record<string, Level>>) => `${JSON.stringify(levels, null, 1)}\n`;

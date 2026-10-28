@@ -27,7 +27,8 @@ restarts. Read `CLAUDE.md` and the owner's package in `docs/` first.
   at 100% mutation score (532 mutants, with the regions' and the shared substitutes' rules). The prices
   (`world.prices`): the engine is built and tested, at 100% mutation score; 172 countries researched from the World
   Bank's levels, 21 carried from the 2021 benchmark, 4 priced against France and 25 territories kept at another's
-  level by the owner's ruling; 6 proven, 24 pending (the next step).
+  level by the owner's ruling, and the Caribbean Netherlands from Bonaire's ICP level; 6 proven, 23 pending (the
+  next step).
 
 What layer 2 holds so far:
 
@@ -161,8 +162,9 @@ What layer 2 holds so far:
   Ocean Territory (the United States': its currency is the dollar and its settlement a US base). The last four
   parents were the agent's reading of the ruling, reported to the owner. The Falklands wait: their pound's parity
   is in the Falkland Islands Government's pages and Currency Ordinance 1987, and falklands.gov.fk is outside this
-  environment's allowed network. The Caribbean Netherlands wait too: the ICP prices Bonaire, most of BQ, so its
-  level should come from that, carried by CBS's Bonaire index, rather than from a parent.
+  environment's allowed network. The Caribbean Netherlands take the ICP's level for Bonaire (household consumption,
+  in US dollars; `benchmark` in the file names the Program's economy), most of BQ's people, carried by CBS's Bonaire
+  index (84046ENG): a measure the ruling's premise didn't know of, so used in place of a parent's.
 
 What layer 1 holds:
 
