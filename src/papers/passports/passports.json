@@ -4474,6 +4474,38 @@
    }
   ]
  },
+ "SB": {
+  "currency": "SBD",
+  "routes": [
+   {
+    "id": "home",
+    "where": "home",
+    "speed": "standard",
+    "within": {
+     "n": 14,
+     "unit": "working day"
+    }
+   },
+   {
+    "id": "fast",
+    "where": "home",
+    "speed": "urgent",
+    "within": {
+     "n": 5,
+     "unit": "working day"
+    }
+   }
+  ],
+  "bands": [
+   {
+    "validYears": 10,
+    "pay": {
+     "home": 100000,
+     "fast": 130000
+    }
+   }
+  ]
+ },
  "SC": {
   "currency": "SCR",
   "routes": [
@@ -5337,6 +5369,47 @@
      "home": null
     },
     "under": 15
+   }
+  ]
+ },
+ "WS": {
+  "currency": "WST",
+  "routes": [
+   {
+    "id": "home",
+    "where": "home",
+    "speed": "standard",
+    "within": {
+     "n": 5,
+     "unit": "working day"
+    }
+   },
+   {
+    "id": "urgent",
+    "where": "home",
+    "speed": "urgent",
+    "within": {
+     "n": 2,
+     "unit": "working day"
+    }
+   }
+  ],
+  "bands": [
+   {
+    "validYears": null,
+    "pay": {
+     "home": 20000,
+     "urgent": 24000
+    },
+    "from": 17
+   },
+   {
+    "validYears": null,
+    "pay": {
+     "home": 10000,
+     "urgent": 14000
+    },
+    "under": 17
    }
   ]
  },

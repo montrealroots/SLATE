@@ -1,0 +1,58 @@
+{
+ "country": "SB",
+ "office": "the Passport Unit of the Immigration Division (Ministry of Commerce, Industry, Labour and Immigration), in person in the Solomon Islands",
+ "currency": "SBD",
+ "routes": [
+  {
+   "id": "home",
+   "where": "home",
+   "speed": "standard",
+   "within": {
+    "n": 14,
+    "unit": "working day"
+   },
+   "label": "collected after 14 working days"
+  },
+  {
+   "id": "fast",
+   "where": "home",
+   "speed": "urgent",
+   "within": {
+    "n": 5,
+    "unit": "working day"
+   },
+   "label": "fast processing within 5 working days"
+  }
+ ],
+ "passports": [
+  {
+   "for": "any",
+   "validYears": 10,
+   "pay": {
+    "home": "1000.00",
+    "fast": "1300.00"
+   }
+  }
+ ],
+ "note": "The ordinary passport's fee under Legal Notice No. 27 of 13 March 2018, in force from 19 April 2018: $1,000.00 for a new or renewed passport, plus a fast processing fee of $300.00 for processing within 5 working days (summed here). A lost or damaged passport costs $1,300.00 (not modelled). The Ministry's pages write the fee without a currency sign beyond $; the currency of the Solomon Islands is the dollar (SBD). Applications must be made in person in the Solomon Islands, so no route abroad is modelled; Travel Identity Documents for citizens abroad who lost their passport are not modelled.",
+ "sources": [
+  {
+   "url": "https://commerce.gov.sb/download/passport-fees/?wpdmdl=5814",
+   "title": "Immigration Division, Public Notice of 19 March 2018 on new passport application fees (linked from the Ministry's Fees and Penalties page as \"Passport Fees\")",
+   "read": "2026-10-28",
+   "said": "PURSUANT TO LEGAL NOTICE NO. 27 DATED 13TH MARCH 2018, THE IMMIGRATION DIVISION WILL ENFORCE THE FOLLOWING NEW PASSPORT APPLICATION FEES AS OF 19TH APRIL 2018. ... NEW PASSPORT $1,000.00 ... RENEWED PASSPORT $1,000.00 ... IF AN APPLICANT WISHES TO HAVE HIS/HER PASSPORT PROCESSED WITHIN 5 WORKING DAYS, A FAST PROCESSING FEE OF $300.00 WILL BE CHARGED."
+  },
+  {
+   "url": "https://commerce.gov.sb/immigration/",
+   "title": "Ministry of Commerce, Industry, Labour and Immigration, Immigration (frequent questions)",
+   "read": "2026-10-28",
+   "said": "Ordinary passport valid for 10 years for general citizens for travel abroad. ($1000.00) ... Collect your passport after 14 working days (or sooner for express fees)"
+  },
+  {
+   "url": "https://commerce.gov.sb/issue-passport-book-to-citizens/",
+   "title": "Ministry of Commerce, Industry, Labour and Immigration, Passports and Travel Documents",
+   "read": "2026-10-28",
+   "said": "Solomon Islanders applying for an ePassport must appear in person before an Immigration Officer at the Passports Unit for processing. Applications must be made in person in the Solomon Islands."
+  }
+ ]
+}

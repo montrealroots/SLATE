@@ -1,0 +1,68 @@
+{
+ "country": "WS",
+ "office": "the Immigration Division of the Ministry of the Prime Minister and Cabinet, Apia",
+ "currency": "WST",
+ "routes": [
+  {
+   "id": "home",
+   "where": "home",
+   "speed": "standard",
+   "within": {
+    "n": 5,
+    "unit": "working day"
+   },
+   "label": "standard processing, 5 working days"
+  },
+  {
+   "id": "urgent",
+   "where": "home",
+   "speed": "urgent",
+   "within": {
+    "n": 2,
+    "unit": "working day"
+   },
+   "label": "urgent processing, 2 working days"
+  }
+ ],
+ "passports": [
+  {
+   "for": "adult",
+   "from": 17,
+   "validYears": null,
+   "pay": {
+    "home": "200.00",
+    "urgent": "240.00"
+   }
+  },
+  {
+   "for": "child",
+   "under": 17,
+   "validYears": null,
+   "pay": {
+    "home": "100.00",
+    "urgent": "140.00"
+   }
+  }
+ ],
+ "note": "The Ministry's fees for a new Samoan passport, written SAT$ (the tala). A child is \"16 years and under\", so the child's fee runs to the 17th birthday. Replacing a lost or damaged passport costs SAT$400.00 for an adult and SAT$200.00 for a child (urgent SAT$440.00 and SAT$240.00), not modelled; the urgent fee is waived where the urgency is a funeral or medical treatment (not modelled). Embassies abroad pass applications to the Immigration Office in Samoa and charge their own fees in local currency (the Embassy in Japan asks ¥20,000 for an adult), which are not modelled. The validity is a lead: neither the Ministry's pages nor the form state it.",
+ "sources": [
+  {
+   "url": "https://mpmc.gov.ws/divisions/immigration/passports/",
+   "title": "Ministry of the Prime Minister and Cabinet (Samoa), Immigration: Passports",
+   "read": "2026-10-28",
+   "said": "Application for a NEW passport Adult Child (16 years and under) Standard processing SAT$200.00 SAT$100.00 Urgent processing SAT$240.00 SAT$140.00 ... *Standard processing time = 5 working days *Urgent processing time = 2"
+  },
+  {
+   "url": "https://mpmc.gov.ws/wp-content/uploads/2022/02/ppt-form.mpmc300-2.pdf",
+   "title": "Ministry of the Prime Minister and Cabinet (Samoa), Passport application form MPMC 300",
+   "read": "2026-10-28",
+   "said": "Urgent Passport 2 day Processing Adult $240 Child (16 years and under) $140 ... (No additional fee for urgent processing where urgency is due to a funeral or medical treatment."
+  },
+  {
+   "url": "https://www.samoaembassyjapan.jp/?p=40",
+   "title": "Embassy of the Independent State of Samoa in Japan, Consular Services",
+   "read": "2026-10-28",
+   "said": "All passport applications are processed and issued upon approval by the Immigration Office in Samoa. ... application & administration fee for each application of ¥20,000 for Adults"
+  }
+ ]
+}
