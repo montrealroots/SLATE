@@ -684,18 +684,23 @@ What layer 0 holds:
    by age and channel in the country's currency, its validity, the standard processing time and the urgent services,
    from the passport office's own pages or, where those refuse this client, the law or regulation that sets them.
    The file's shape (`passports` by age band with `validYears` and `fees`, `standard`, `urgent`, `note`, `sources`)
-   is the research's, to be settled with the engine. 41 so far (2026-10-28): AT, AU, BE, BR, CA, CH, CN, CZ, DE,
-   DK, EE, ES, FR, GB, GE, GH, GR, HK, HU, IE, IN, IT, JM, JP, KR, LU, MT, MY, NL, NP, PE, PK, PL, RO, SE, SG, SI,
-   TW, US, UY, ZA (Uruguay's fees are in indexed units, UI, whose peso value is still to be read; Australia's are
-   the 2024 amounts with the determination's yearly indexation rule, 2026's to be computed from the ABS CPI once
-   the reference period is settled, as its note says); some with a part still open, said in the file's note
-   (Spain's and Slovenia's fees, Ireland's, Greece's, Romania's, Brazil's, Taiwan's and Nepal's validity, Georgia's
-   minors, Peru's fee, most processing times). The attempts for the rest, to become blockers after all five
-   methods, are being logged: Armenia (only consular fees found), Kazakhstan (only secondary sources), New Zealand,
-   Ireland's site, Finland, Mexico (a challenge page), Israel (Cloudflare), Colombia (Cloudflare), Chile (a WAF),
+   is the research's, to be settled with the engine. 55 so far (2026-10-28): AT, AU, BA, BB, BE, BR, BS, BW, BZ,
+   CA, CH, CN, CZ, DE, DK, EE, ES, FI, FJ, FR, GB, GE, GH, GR, HK, HU, IE, IN, IT, JM, JP, KR, LU, MD, MT, MY, NG, NL,
+   NP, PE, PK, PL, RO, RS, RW, SE, SG, SI, SK, TT, TW, UG, US, UY, ZA (Uruguay's fees are in indexed units, UI, whose
+   peso value is still to be read; Australia's are the 2024 amounts with the determination's yearly indexation rule,
+   2026's to be computed from the ABS CPI once the reference period is settled, as its note says; Nigeria's are read
+   through the state broadcaster's report of the Immigration Service's announcement, the Service's site refusing
+   this client, and so stand as secondary); some with a part still open, said in the file's note (Spain's and
+   Slovenia's fees, Bosnia's fee, Ireland's, Greece's, Romania's, Brazil's, Taiwan's, Nepal's, Barbados', the
+   Bahamas', Belize's, Fiji's, Uganda's and Botswana's validity, Georgia's minors, Peru's fee, Finland's pending
+   ten-year law, most processing times). The attempts for the rest, to become blockers after all five
+   methods, are being logged: Armenia (only consular fees found), Kazakhstan (only secondary sources), Montenegro and
+   Albania (only old or secondary figures found), North Macedonia (mvr.gov.mk resets the connection), Bangladesh
+   (epassport.gov.bd 403; dip.gov.bd's certificate fails verification), Mauritius (its pages give no fee), Tanzania
+   (a JS page that renders empty), New Zealand, Ireland's site, Mexico (a challenge page), Israel (Cloudflare), Colombia (Cloudflare), Chile (a WAF),
    the Philippines (403), Portugal (its WAF blocks the rendered page), Latvia (connection closed), Kenya (its
-   certificate chain fails verification; TLS checks stay on), Norway (fees in the Storting's budget decisions),
-   Bulgaria (the April 2026 reform's tariff not found), Croatia (only a draft found), Lithuania (a JS app), Turkey
+   certificate chain fails verification; TLS checks stay on), Norway (the fee is in the pass- og
+   ID-kortforskriften § 7-1; lovdata.no answers 405 and norway.no a Cloudflare challenge), Bulgaria (the April 2026 reform's tariff not found), Croatia (only a draft found), Lithuania (a JS app), Turkey
    (the yearly duties tariff), Indonesia (PP 45/2024, partly replaced by PP 30/2026), Thailand, Argentina
    (Disposición 106/2026 found; its fee annex is on a Boletín Oficial PDF that reset the connection). Also: Cyprus (an Azure WAF), Morocco (its certificate chain fails verification), the UAE
    (ICP's page under maintenance when rendered), New Zealand's legislation site (a 202 with an empty body), Vietnam
