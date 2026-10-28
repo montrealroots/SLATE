@@ -1,4 +1,31 @@
 {
+ "AD": {
+  "currency": "EUR",
+  "routes": [
+   {
+    "id": "home",
+    "where": "home",
+    "speed": "standard",
+    "within": null
+   }
+  ],
+  "bands": [
+   {
+    "validYears": 10,
+    "pay": {
+     "home": 4931
+    },
+    "from": 20
+   },
+   {
+    "validYears": 5,
+    "pay": {
+     "home": 3216
+    },
+    "under": 20
+   }
+  ]
+ },
  "AE": {
   "currency": "AED",
   "routes": [
@@ -870,6 +897,32 @@
      "standard": 8900
     },
     "under": 16
+   }
+  ]
+ },
+ "BN": {
+  "currency": "BND",
+  "routes": [
+   {
+    "id": "home",
+    "where": "home",
+    "speed": "standard",
+    "within": null
+   },
+   {
+    "id": "abroad",
+    "where": "abroad",
+    "speed": "standard",
+    "within": null
+   }
+  ],
+  "bands": [
+   {
+    "validYears": 5,
+    "pay": {
+     "home": 6000,
+     "abroad": 6000
+    }
    }
   ]
  },
@@ -4406,6 +4459,25 @@
    }
   ]
  },
+ "MN": {
+  "currency": "MNT",
+  "routes": [
+   {
+    "id": "home",
+    "where": "home",
+    "speed": "standard",
+    "within": null
+   }
+  ],
+  "bands": [
+   {
+    "validYears": null,
+    "pay": {
+     "home": 8250000
+    }
+   }
+  ]
+ },
  "MO": {
   "currency": "MOP",
   "routes": [
@@ -5467,6 +5539,32 @@
     "validYears": 5,
     "pay": {
      "ordinary": 240000
+    }
+   }
+  ]
+ },
+ "QA": {
+  "currency": "QAR",
+  "routes": [
+   {
+    "id": "home",
+    "where": "home",
+    "speed": "standard",
+    "within": null
+   },
+   {
+    "id": "abroad",
+    "where": "abroad",
+    "speed": "standard",
+    "within": null
+   }
+  ],
+  "bands": [
+   {
+    "validYears": null,
+    "pay": {
+     "home": null,
+     "abroad": 10000
     }
    }
   ]
