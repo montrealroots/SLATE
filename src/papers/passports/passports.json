@@ -717,6 +717,68 @@
    }
   ]
  },
+ "BG": {
+  "currency": "EUR",
+  "routes": [
+   {
+    "id": "home",
+    "where": "home",
+    "speed": "standard",
+    "within": {
+     "n": 30,
+     "unit": "day"
+    }
+   },
+   {
+    "id": "fast",
+    "where": "home",
+    "speed": "urgent",
+    "within": {
+     "n": 3,
+     "unit": "working day"
+    }
+   },
+   {
+    "id": "express",
+    "where": "home",
+    "speed": "urgent",
+    "within": {
+     "n": 1,
+     "unit": "working day"
+    }
+   }
+  ],
+  "bands": [
+   {
+    "validYears": 5,
+    "pay": {
+     "home": 700,
+     "fast": 1400,
+     "express": 3500
+    },
+    "under": 14
+   },
+   {
+    "validYears": 5,
+    "pay": {
+     "home": 2700,
+     "fast": 5400,
+     "express": 13500
+    },
+    "from": 14,
+    "under": 70
+   },
+   {
+    "validYears": 5,
+    "pay": {
+     "home": 700,
+     "fast": 1400,
+     "express": 3500
+    },
+    "from": 70
+   }
+  ]
+ },
  "BH": {
   "currency": "BHD",
   "routes": [
@@ -3008,6 +3070,49 @@
      "online": 4400
     },
     "under": 18
+   }
+  ]
+ },
+ "KE": {
+  "currency": "KES",
+  "routes": [
+   {
+    "id": "home",
+    "where": "home",
+    "speed": "standard",
+    "within": null
+   },
+   {
+    "id": "abroad",
+    "where": "abroad",
+    "speed": "standard",
+    "within": null
+   }
+  ],
+  "bands": [
+   {
+    "validYears": null,
+    "pay": {
+     "home": 750000,
+     "abroad": 755000
+    },
+    "pages": 34
+   },
+   {
+    "validYears": null,
+    "pay": {
+     "home": 950000,
+     "abroad": 955000
+    },
+    "pages": 50
+   },
+   {
+    "validYears": null,
+    "pay": {
+     "home": 1250000,
+     "abroad": 1255000
+    },
+    "pages": 66
    }
   ]
  },

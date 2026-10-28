@@ -27,7 +27,7 @@ a place fills a column; a cell is the row's status in that engine's matrix, or b
 | BD | Bangladesh | researched | researched | researched | researched | researched | researched | researched |
 | BE | Belgium | researched | researched | researched | researched | researched | researched | researched |
 | BF | Burkina Faso | researched | researched | researched | researched | researched | researched | researched |
-| BG | Bulgaria | researched | researched | researched | researched | researched | researched | pending |
+| BG | Bulgaria | researched | researched | researched | researched | researched | researched | researched |
 | BH | Bahrain | researched | researched | researched | researched | researched | researched | researched |
 | BI | Burundi | researched | researched | researched | blocked | researched | researched | pending |
 | BJ | Benin | researched | researched | researched | researched | researched | researched | researched |
@@ -121,7 +121,7 @@ a place fills a column; a cell is the row's status in that engine's matrix, or b
 | JM | Jamaica | researched | researched | researched | researched | researched | researched | researched |
 | JO | Jordan | researched | researched | researched | researched | researched | researched | researched |
 | JP | Japan | researched | researched | researched | researched | researched | researched | researched |
-| KE | Kenya | researched | researched | researched | researched | researched | researched | pending |
+| KE | Kenya | researched | researched | researched | researched | researched | researched | researched |
 | KG | Kyrgyzstan | researched | researched | researched | researched | researched | researched | blocked |
 | KH | Cambodia | researched | researched | researched | blocked | researched | researched | researched |
 | KI | Kiribati | researched | researched | researched | researched | researched | researched | blocked |
