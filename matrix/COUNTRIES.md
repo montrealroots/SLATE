@@ -15,7 +15,7 @@ a place fills a column; a cell is the row's status in that engine's matrix, or b
 | AN | Netherlands Antilles | researched | researched | proven | proven | proven | proven | proven |
 | AO | Angola | researched | researched | researched | researched | researched | researched | pending |
 | AQ | Antarctica | researched | researched | proven | proven | proven | proven | proven |
-| AR | Argentina | researched | researched | researched | researched | blocked | researched | pending |
+| AR | Argentina | researched | researched | researched | researched | blocked | researched | researched |
 | AS | American Samoa | researched | researched | researched | researched | researched | blocked | researched |
 | AT | Austria | researched | researched | researched | researched | researched | researched | researched |
 | AU | Australia | researched | researched | researched | researched | blocked | researched | pending |
@@ -51,7 +51,7 @@ a place fills a column; a cell is the row's status in that engine's matrix, or b
 | CH | Switzerland | researched | researched | researched | researched | researched | researched | researched |
 | CI | Ivory Coast | researched | researched | researched | researched | researched | researched | pending |
 | CK | Cook Islands | researched | researched | researched | researched | blocked | researched | pending |
-| CL | Chile | researched | researched | researched | researched | researched | researched | pending |
+| CL | Chile | researched | researched | researched | researched | researched | researched | researched |
 | CM | Cameroon | researched | researched | researched | researched | researched | researched | pending |
 | CN | China | researched | researched | researched | researched | researched | researched | researched |
 | CO | Colombia | researched | researched | researched | researched | researched | researched | researched |

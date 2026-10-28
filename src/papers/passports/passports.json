@@ -1,4 +1,53 @@
 {
+ "AR": {
+  "currency": "ARS",
+  "routes": [
+   {
+    "id": "regular",
+    "where": "home",
+    "speed": "standard",
+    "within": null
+   },
+   {
+    "id": "express",
+    "where": "home",
+    "speed": "urgent",
+    "within": {
+     "n": 4,
+     "unit": "working day"
+    }
+   },
+   {
+    "id": "instant",
+    "where": "home",
+    "speed": "urgent",
+    "within": {
+     "n": 6,
+     "unit": "hour"
+    }
+   }
+  ],
+  "bands": [
+   {
+    "validYears": 10,
+    "pay": {
+     "regular": 10000000,
+     "express": 20000000,
+     "instant": 33000000
+    },
+    "from": 18
+   },
+   {
+    "validYears": 5,
+    "pay": {
+     "regular": 10000000,
+     "express": 20000000,
+     "instant": 33000000
+    },
+    "under": 18
+   }
+  ]
+ },
  "AS": {
   "issuedBy": "US"
  },
@@ -572,6 +621,26 @@
      "passport": 6500
     },
     "under": 18
+   }
+  ]
+ },
+ "CL": {
+  "currency": "CLP",
+  "routes": [
+   {
+    "id": "standard",
+    "where": "home",
+    "speed": "standard",
+    "within": null
+   }
+  ],
+  "bands": [
+   {
+    "validYears": 10,
+    "pay": {
+     "standard": 69660
+    },
+    "pages": 48
    }
   ]
  },
