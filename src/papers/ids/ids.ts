@@ -15,6 +15,8 @@ interface Band {
   readonly from?: number;
   readonly under?: number;
   readonly validYears: number | null;
+  /** The card never expires (its validYears then null). */
+  readonly permanent?: true;
   readonly pay: Readonly<Record<string, number | null>>;
 }
 
@@ -35,6 +37,9 @@ interface Issued {
 }
 
 const IDS = data as unknown as Record<string, Card | None | Issued>;
+
+/** One way to get an identity document, as the applicant meets it: the passports' offer, and whether it never expires. */
+export type IdOffer = Offer & { readonly permanent?: true };
 
 /** Whether the game keeps a country's identity documents. */
 export const keepsIds = (country: CountryCode) => Object.hasOwn(IDS, country);
@@ -58,19 +63,20 @@ export function idDocument(country: CountryCode): string | undefined {
 const fits = (b: Band, age: number) => (b.from ?? 0) <= age && age < (b.under ?? Infinity);
 
 /** The ways a citizen of an age (whole years on the day of application) can get the country's identity document, one per route and band that fits; none where none is issued; undefined where the game doesn't keep it. */
-export function idOffers(country: CountryCode, age: number): Offer[] | undefined {
+export function idOffers(country: CountryCode, age: number): IdOffer[] | undefined {
   const entry = own(country);
   if (entry === undefined) return undefined;
   if ('none' in entry) return [];
   const territory = IDS[country] as Card | Issued;
   const only = 'issuedBy' in territory ? territory.onlyRoutes : undefined;
-  const offers: Offer[] = [];
+  const offers: IdOffer[] = [];
   for (const route of entry.routes) {
     if (only !== undefined && !only.includes(route.id)) continue;
     for (const b of entry.bands) {
       if (!fits(b, age) || !Object.hasOwn(b.pay, route.id)) continue;
       const minor = b.pay[route.id] as number | null;
-      offers.push({ route, fee: minor === null ? null : money(entry.currency as CurrencyCode, minor), validYears: b.validYears });
+      const offer: IdOffer = { route, fee: minor === null ? null : money(entry.currency as CurrencyCode, minor), validYears: b.validYears };
+      offers.push(b.permanent === true ? { ...offer, permanent: true } : offer);
     }
   }
   return offers;
@@ -89,11 +95,11 @@ export function aboutIds(country: CountryCode): string | undefined {
   return doc === 'none' ? t(NONE_LINE, { country: countryName(country) }) : undefined;
 }
 
-/** What the player is told about an offer the game doesn't fully know: its fee, its validity, its time, in that order. */
-export function idOfferGaps(offer: Offer): string[] {
+/** What the player is told about an offer the game doesn't fully know: its fee, its validity (unless it never expires), its time, in that order. */
+export function idOfferGaps(offer: IdOffer): string[] {
   const gaps: string[] = [];
   if (offer.fee === null) gaps.push(t(FEE_UNKNOWN_LINE));
-  if (offer.validYears === null) gaps.push(t(VALIDITY_UNKNOWN_LINE));
+  if (offer.validYears === null && offer.permanent !== true) gaps.push(t(VALIDITY_UNKNOWN_LINE));
   if (offer.route.within === null) gaps.push(t(TIME_UNKNOWN_LINE));
   return gaps;
 }

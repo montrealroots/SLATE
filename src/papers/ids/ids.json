@@ -100,6 +100,74 @@
    }
   ]
  },
+ "AX": {
+  "document": "identitetskort (Finland's henkilökortti)",
+  "currency": "EUR",
+  "routes": [
+   {
+    "id": "in-person",
+    "where": "home",
+    "speed": "standard",
+    "within": null
+   },
+   {
+    "id": "online",
+    "where": "home",
+    "speed": "standard",
+    "within": null
+   },
+   {
+    "id": "pika-in-person",
+    "where": "home",
+    "speed": "urgent",
+    "within": null
+   },
+   {
+    "id": "pika-online",
+    "where": "home",
+    "speed": "urgent",
+    "within": null
+   },
+   {
+    "id": "express-in-person",
+    "where": "home",
+    "speed": "urgent",
+    "within": null
+   },
+   {
+    "id": "express-online",
+    "where": "home",
+    "speed": "urgent",
+    "within": null
+   }
+  ],
+  "bands": [
+   {
+    "validYears": 5,
+    "pay": {
+     "in-person": 4500,
+     "online": 4100,
+     "pika-in-person": 6300,
+     "pika-online": 5900,
+     "express-in-person": 8200,
+     "express-online": 7800
+    },
+    "under": 18
+   },
+   {
+    "validYears": 5,
+    "pay": {
+     "in-person": 6500,
+     "online": 6100,
+     "pika-in-person": 8300,
+     "pika-online": 7900,
+     "express-in-person": 10200,
+     "express-online": 9800
+    },
+    "from": 18
+   }
+  ]
+ },
  "BE": {
   "document": "carte d'identité électronique (eID)",
   "currency": "EUR",
@@ -364,6 +432,88 @@
    }
   ]
  },
+ "DK": {
+  "document": "legitimationskort",
+  "currency": "DKK",
+  "routes": [
+   {
+    "id": "borgerservice",
+    "where": "home",
+    "speed": "standard",
+    "within": {
+     "n": 14,
+     "unit": "day"
+    }
+   }
+  ],
+  "bands": [
+   {
+    "validYears": 10,
+    "pay": {
+     "borgerservice": 15000
+    },
+    "from": 16
+   }
+  ]
+ },
+ "EE": {
+  "document": "ID-kaart",
+  "currency": "EUR",
+  "routes": [
+   {
+    "id": "portal",
+    "where": "home",
+    "speed": "standard",
+    "within": null
+   },
+   {
+    "id": "office",
+    "where": "home",
+    "speed": "standard",
+    "within": {
+     "n": 30,
+     "unit": "day"
+    }
+   },
+   {
+    "id": "expedited",
+    "where": "home",
+    "speed": "urgent",
+    "within": {
+     "n": 2,
+     "unit": "working day"
+    }
+   },
+   {
+    "id": "abroad",
+    "where": "abroad",
+    "speed": "standard",
+    "within": null
+   }
+  ],
+  "bands": [
+   {
+    "validYears": 5,
+    "pay": {
+     "portal": 1500,
+     "office": 2000,
+     "expedited": 25000,
+     "abroad": 4000
+    },
+    "under": 18
+   },
+   {
+    "validYears": 5,
+    "pay": {
+     "portal": 3500,
+     "office": 4500,
+     "expedited": 25000,
+     "abroad": 9500
+    },
+    "from": 18
+   }
+  ]
+ },
  "ES": {
   "document": "Documento Nacional de Identidad (DNI)",
   "currency": "EUR",
@@ -408,6 +558,74 @@
    }
   ]
  },
+ "FI": {
+  "document": "henkilökortti",
+  "currency": "EUR",
+  "routes": [
+   {
+    "id": "in-person",
+    "where": "home",
+    "speed": "standard",
+    "within": null
+   },
+   {
+    "id": "online",
+    "where": "home",
+    "speed": "standard",
+    "within": null
+   },
+   {
+    "id": "pika-in-person",
+    "where": "home",
+    "speed": "urgent",
+    "within": null
+   },
+   {
+    "id": "pika-online",
+    "where": "home",
+    "speed": "urgent",
+    "within": null
+   },
+   {
+    "id": "express-in-person",
+    "where": "home",
+    "speed": "urgent",
+    "within": null
+   },
+   {
+    "id": "express-online",
+    "where": "home",
+    "speed": "urgent",
+    "within": null
+   }
+  ],
+  "bands": [
+   {
+    "validYears": 5,
+    "pay": {
+     "in-person": 3900,
+     "online": 3300,
+     "pika-in-person": 5700,
+     "pika-online": 5100,
+     "express-in-person": 7600,
+     "express-online": 7000
+    },
+    "under": 18
+   },
+   {
+    "validYears": 5,
+    "pay": {
+     "in-person": 5900,
+     "online": 5300,
+     "pika-in-person": 7700,
+     "pika-online": 7100,
+     "express-in-person": 9600,
+     "express-online": 9000
+    },
+    "from": 18
+   }
+  ]
+ },
  "FR": {
   "document": "carte nationale d'identité",
   "currency": "EUR",
@@ -449,6 +667,54 @@
  },
  "IE": {
   "none": true
+ },
+ "IS": {
+  "document": "nafnskírteini",
+  "currency": "ISK",
+  "routes": [
+   {
+    "id": "normal",
+    "where": "home",
+    "speed": "standard",
+    "within": {
+     "n": 4,
+     "unit": "working day"
+    }
+   },
+   {
+    "id": "express",
+    "where": "home",
+    "speed": "urgent",
+    "within": null
+   }
+  ],
+  "bands": [
+   {
+    "validYears": 5,
+    "pay": {
+     "normal": 4600,
+     "express": 9200
+    },
+    "under": 18
+   },
+   {
+    "validYears": 10,
+    "pay": {
+     "normal": 9200,
+     "express": 18400
+    },
+    "from": 18,
+    "under": 67
+   },
+   {
+    "validYears": 10,
+    "pay": {
+     "normal": 4600,
+     "express": 9200
+    },
+    "from": 67
+   }
+  ]
  },
  "IT": {
   "document": "Carta di Identità Elettronica (CIE)",
@@ -594,6 +860,57 @@
    }
   ]
  },
+ "LV": {
+  "document": "personas apliecība (eID karte)",
+  "currency": "EUR",
+  "routes": [
+   {
+    "id": "ten-days",
+    "where": "home",
+    "speed": "standard",
+    "within": {
+     "n": 10,
+     "unit": "working day"
+    }
+   },
+   {
+    "id": "two-days",
+    "where": "home",
+    "speed": "urgent",
+    "within": {
+     "n": 2,
+     "unit": "working day"
+    }
+   }
+  ],
+  "bands": [
+   {
+    "validYears": 2,
+    "pay": {
+     "ten-days": 1500,
+     "two-days": null
+    },
+    "under": 5
+   },
+   {
+    "validYears": 5,
+    "pay": {
+     "ten-days": 1500,
+     "two-days": null
+    },
+    "from": 5,
+    "under": 20
+   },
+   {
+    "validYears": 10,
+    "pay": {
+     "ten-days": 3000,
+     "two-days": 4500
+    },
+    "from": 20
+   }
+  ]
+ },
  "MF": {
   "issuedBy": "FR"
  },
@@ -637,6 +954,50 @@
      "municipality": 4320
     },
     "under": 18
+   }
+  ]
+ },
+ "NO": {
+  "document": "nasjonalt ID-kort",
+  "currency": "NOK",
+  "routes": [
+   {
+    "id": "police",
+    "where": "home",
+    "speed": "standard",
+    "within": null
+   }
+  ],
+  "bands": [
+   {
+    "validYears": 2,
+    "pay": {
+     "police": 51000
+    },
+    "under": 5
+   },
+   {
+    "validYears": 3,
+    "pay": {
+     "police": 51000
+    },
+    "from": 5,
+    "under": 10
+   },
+   {
+    "validYears": 5,
+    "pay": {
+     "police": 84000
+    },
+    "from": 10,
+    "under": 16
+   },
+   {
+    "validYears": 5,
+    "pay": {
+     "police": 84000
+    },
+    "from": 16
    }
   ]
  },
@@ -754,6 +1115,213 @@
  },
  "RE": {
   "issuedBy": "FR"
+ },
+ "SE": {
+  "document": "nationellt id-kort",
+  "currency": "SEK",
+  "routes": [
+   {
+    "id": "police",
+    "where": "home",
+    "speed": "standard",
+    "within": null
+   }
+  ],
+  "bands": [
+   {
+    "validYears": 3,
+    "pay": {
+     "police": 40000
+    },
+    "under": 12
+   },
+   {
+    "validYears": 5,
+    "pay": {
+     "police": 40000
+    },
+    "from": 12
+   }
+  ]
+ },
+ "SI": {
+  "document": "osebna izkaznica",
+  "currency": "EUR",
+  "routes": [
+   {
+    "id": "unit",
+    "where": "home",
+    "speed": "standard",
+    "within": {
+     "n": 4,
+     "unit": "working day"
+    }
+   },
+   {
+    "id": "priority",
+    "where": "home",
+    "speed": "urgent",
+    "within": {
+     "n": 1,
+     "unit": "working day"
+    }
+   },
+   {
+    "id": "mission",
+    "where": "abroad",
+    "speed": "standard",
+    "within": null
+   }
+  ],
+  "bands": [
+   {
+    "validYears": 3,
+    "pay": {
+     "unit": 2340,
+     "priority": null,
+     "mission": null
+    },
+    "under": 3
+   },
+   {
+    "validYears": 5,
+    "pay": {
+     "unit": 2520,
+     "priority": null,
+     "mission": null
+    },
+    "from": 3,
+    "under": 12
+   },
+   {
+    "validYears": 5,
+    "pay": {
+     "unit": 2595,
+     "priority": null,
+     "mission": null
+    },
+    "from": 12,
+    "under": 18
+   },
+   {
+    "validYears": 10,
+    "pay": {
+     "unit": 3055,
+     "priority": null,
+     "mission": null
+    },
+    "from": 18,
+    "under": 70
+   },
+   {
+    "validYears": null,
+    "pay": {
+     "unit": 3055,
+     "priority": null,
+     "mission": null
+    },
+    "from": 70,
+    "permanent": true
+   }
+  ]
+ },
+ "SJ": {
+  "document": "nasjonalt ID-kort (Norway's)",
+  "currency": "NOK",
+  "routes": [
+   {
+    "id": "governor",
+    "where": "home",
+    "speed": "standard",
+    "within": {
+     "n": 5,
+     "unit": "week"
+    }
+   }
+  ],
+  "bands": [
+   {
+    "validYears": 2,
+    "pay": {
+     "governor": 51000
+    },
+    "under": 5
+   },
+   {
+    "validYears": 3,
+    "pay": {
+     "governor": 51000
+    },
+    "from": 5,
+    "under": 10
+   },
+   {
+    "validYears": 5,
+    "pay": {
+     "governor": 84000
+    },
+    "from": 10,
+    "under": 16
+   },
+   {
+    "validYears": 5,
+    "pay": {
+     "governor": 84000
+    },
+    "from": 16
+   }
+  ]
+ },
+ "SK": {
+  "document": "občiansky preukaz",
+  "currency": "EUR",
+  "routes": [
+   {
+    "id": "standard",
+    "where": "home",
+    "speed": "standard",
+    "within": {
+     "n": 30,
+     "unit": "day"
+    }
+   },
+   {
+    "id": "urgent",
+    "where": "home",
+    "speed": "urgent",
+    "within": {
+     "n": 2,
+     "unit": "working day"
+    }
+   }
+  ],
+  "bands": [
+   {
+    "validYears": 2,
+    "pay": {
+     "standard": null,
+     "urgent": null
+    },
+    "under": 6
+   },
+   {
+    "validYears": 5,
+    "pay": {
+     "standard": null,
+     "urgent": null
+    },
+    "from": 6,
+    "under": 15
+   },
+   {
+    "validYears": 10,
+    "pay": {
+     "standard": 0,
+     "urgent": 2000
+    },
+    "from": 15
+   }
+  ]
  },
  "SX": {
   "document": "Nederlandse identiteitskaart",

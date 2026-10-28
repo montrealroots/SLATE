@@ -1,0 +1,66 @@
+{
+ "country": "NO",
+ "document": "nasjonalt ID-kort",
+ "office": "a police passport and ID office, by appointment",
+ "currency": "NOK",
+ "routes": [
+  {
+   "id": "police",
+   "where": "home",
+   "speed": "standard",
+   "within": null,
+   "label": "at a police passport and ID office"
+  }
+ ],
+ "cards": [
+  {
+   "for": "under 5",
+   "under": 5,
+   "validYears": 2,
+   "pay": {
+    "police": "510"
+   }
+  },
+  {
+   "for": "5 to 9",
+   "from": 5,
+   "under": 10,
+   "validYears": 3,
+   "pay": {
+    "police": "510"
+   }
+  },
+  {
+   "for": "10 to 15",
+   "from": 10,
+   "under": 16,
+   "validYears": 5,
+   "pay": {
+    "police": "840"
+   }
+  },
+  {
+   "for": "16 and over",
+   "from": 16,
+   "validYears": 5,
+   "pay": {
+    "police": "840"
+   }
+  }
+ ],
+ "note": "The prices from 1 January 2026; applied for together with a passport, both fees are 20% less (not modelled). The police give no fixed delivery time.",
+ "sources": [
+  {
+   "url": "https://www.politiet.no/tjenester/pass-og-id-kort/pris-og-betaling",
+   "title": "Politiet, Priser for pass og ID-kort",
+   "read": "2026-10-28",
+   "said": "Nasjonalt ID-kort Fra 10 år: 840 kroner Under 10 år: 510 kroner Pass og nasjonalt ID-kort samtidig Hvis du søker om pass og ID-kort samtidig, reduseres søknadsgebyret med 20 %."
+  },
+  {
+   "url": "https://www.politiet.no/tjenester/pass-og-id-kort/om-pass-og-id-kort/",
+   "title": "Politiet, Om pass og ID-kort: Varighet og utløpsdato",
+   "read": "2026-10-28",
+   "said": "ID-kortet varer i barn 0 til 5 år: 2 år barn 5 til 10 år: 3 år barn 10 til 16 år: 5 år over 16 år: 5 år"
+  }
+ ]
+}

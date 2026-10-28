@@ -3,19 +3,23 @@ import { readdirSync, readFileSync } from 'node:fs';
 import { join } from 'node:path';
 import { isCurrency } from '../../../src/core/money/money.ts';
 import countries from '../../../src/world/gazetteer/countries.json' with { type: 'json' };
-import { band, overlap, route, type Band, type Route } from '../passports/compile.ts';
+import { band, overlap, route, type Band as PassportBand, type Route } from '../passports/compile.ts';
 
 /**
  * Compiles the national identity documents the papers engine reads (src/papers/ids/ids.json) from the research's
  * files, one per country (research/sources/papers/ids/<CC>.json, register fact papers.ids.<CC>), each checked against
  * the SHA-256 its register entry cites before a byte of it is read. A country that issues a national identity
  * document names it (`document`) and gives the ways the office takes an application (`routes`, the passports' form)
- * and, by age band, the total paid for each and the years it is valid (`cards`, the passports' bands). A country
+ * and, by age band, the total paid for each and the years it is valid (`cards`, the passports' bands, where a card that
+ * never expires is `"validYears": "permanent"`). A country
  * that issues none says so (`none`); a territory whose people hold another country's says whose (`issuedBy`), with
  * the routes open to it where not all are (`onlyRoutes`).
  */
 export const SOURCES = 'research/sources/papers/ids';
 export const OUTPUT = 'src/papers/ids/ids.json';
+
+/** A card's band: the passports', and `permanent` where the card never expires (its validYears then null). */
+export type Band = PassportBand & { permanent?: true };
 
 export interface Card {
   document: string;
@@ -55,7 +59,11 @@ export function compileCard(code: string, file: Record<string, unknown>): Card {
   const ids = new Set(routes.map((r) => r.id));
   if (ids.size !== routes.length) throw new Error(`${code} has two routes of one id`);
   if (!Array.isArray(file['cards']) || file['cards'].length === 0) throw new Error(`${code} has no cards`);
-  const bands = file['cards'].map((b, i) => band(b, `${code}'s card ${i}`, currency, ids));
+  const bands = file['cards'].map((b: unknown, i): Band => {
+    const permanent = (b as { validYears?: unknown } | null)?.validYears === 'permanent';
+    const out = band(permanent ? { ...(b as object), validYears: null } : b, `${code}'s card ${i}`, currency, ids);
+    return permanent ? { ...out, permanent: true } : out;
+  });
   bands.forEach((b, i) => {
     if (b.pages !== undefined) throw new Error(`${code}'s card ${i} is a card, with no pages`);
   });

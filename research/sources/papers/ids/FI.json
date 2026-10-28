@@ -1,0 +1,93 @@
+{
+ "country": "FI",
+ "document": "henkilökortti",
+ "office": "the police",
+ "currency": "EUR",
+ "routes": [
+  {
+   "id": "in-person",
+   "where": "home",
+   "speed": "standard",
+   "within": null,
+   "label": "applied for in person"
+  },
+  {
+   "id": "online",
+   "where": "home",
+   "speed": "standard",
+   "within": null,
+   "label": "applied for electronically"
+  },
+  {
+   "id": "pika-in-person",
+   "where": "home",
+   "speed": "urgent",
+   "within": null,
+   "label": "quick identity card (pikahenkilökortti), in person"
+  },
+  {
+   "id": "pika-online",
+   "where": "home",
+   "speed": "urgent",
+   "within": null,
+   "label": "quick identity card (pikahenkilökortti), electronically"
+  },
+  {
+   "id": "express-in-person",
+   "where": "home",
+   "speed": "urgent",
+   "within": null,
+   "label": "express identity card, in person"
+  },
+  {
+   "id": "express-online",
+   "where": "home",
+   "speed": "urgent",
+   "within": null,
+   "label": "express identity card, electronically"
+  }
+ ],
+ "cards": [
+  {
+   "for": "minor",
+   "under": 18,
+   "validYears": 5,
+   "pay": {
+    "in-person": "39",
+    "online": "33",
+    "pika-in-person": "57",
+    "pika-online": "51",
+    "express-in-person": "76",
+    "express-online": "70"
+   }
+  },
+  {
+   "for": "adult",
+   "from": 18,
+   "validYears": 5,
+   "pay": {
+    "in-person": "59",
+    "online": "53",
+    "pika-in-person": "77",
+    "pika-online": "71",
+    "express-in-person": "96",
+    "express-online": "90"
+   }
+  }
+ ],
+ "note": "Fees from 1 March 2026 to the end of 2026 (decree 96/2026), the Digital and Population Data Services Agency's fee included; a card issued together with a passport costs less (not modelled). The card is valid five years under the Identity Card Act as it stands; the Ministry of the Interior's draft of December 2025 would make it ten (five for a minor) from 1 January 2027, and whether it has passed is a lead. The delivery times of the ordinary, quick and express cards are leads (poliisi.fi refuses this client).",
+ "sources": [
+  {
+   "url": "https://www.finlex.fi/api/media/statute/908434/mainPdf/main.pdf",
+   "title": "Finlex, Sisäministeriön asetus 96/2026 (amending decree 1335/2025 on the police's fees in 2026), annex",
+   "read": "2026-10-28",
+   "said": "Henkilökortti (sisältää Digi- ja väestötietoviraston (DVV) maksut) 59 € Henkilökortti, sähköinen hakemus (sisältää DVV:n maksut) 53 € ... Pikahenkilökortti (sisältää DVV:n maksut) 77 € Pikahenkilökortti, sähköinen hakemus (sisältää DVV:n maksut) 71 € ... Express-henkilökortti (sisältää DVV:n maksut) 96 € Express-henkilökortti, sähköinen hakemus (sisältää DVV:n maksut) 90 € ... Alaikäisen henkilökortti 39 € Alaikäisen henkilökortti, sähköinen hakemus 33 € ... Alaikäisen pikahenkilökortti 57 € Alaikäisen pikahenkilökortti, sähköinen hakemus 51 € ... Alaikäisen express-henkilökortti 76 € Alaikäisen express-henkilökortti, sähköinen hakemus 70 €"
+  },
+  {
+   "url": "https://api.hankeikkuna.fi/asiakirjat/33facb04-ca9c-4d2a-94bd-a21e449690f7/fefb377f-32ec-4f83-8c45-ce67d68056e0/LAUSUNTOPYYNTO_20251223055415.PDF",
+   "title": "Hankeikkuna, Luonnos: Hallituksen esitys eduskunnalle passilain ja henkilökorttilain muuttamisesta",
+   "read": "2026-10-28",
+   "said": "Ehdotetut passilain ja henkilökorttilain muutokset koskisivat passin ja henkilökortin enimmäisvoimassaoloaikaa, joka pidentyisi nykyisestä viidestä vuodesta kymmeneen vuoteen. Alaikäiselle myönnettävä passi ja henkilökortti olisi voimassa kuitenkin enintään viisi vuotta. ... Lait on tarkoitettu tulemaan voimaan 1.1.2027. ... Sekä passin että henkilökortin enimmäisvoimassaoloaika on voimassa olevan lainsäädännön mukaan viisi vuotta."
+  }
+ ]
+}

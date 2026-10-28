@@ -41,6 +41,17 @@ describe('the identity documents compile', () => {
     });
   });
 
+  it('takes a card that never expires to a band marked permanent', () => {
+    const cards = [{ under: 70, validYears: 10, pay: { home: '1', abroad: '1' } }, { from: 70, validYears: 'permanent', pay: { home: '2' } }];
+    expect(compileCard('DE', file({ cards })).bands).toStrictEqual([
+      { under: 70, validYears: 10, pay: { home: 100, abroad: 100 } },
+      { from: 70, validYears: null, pay: { home: 200 }, permanent: true },
+    ]);
+    expect(() => compileCard('DE', file({ cards: [{ validYears: 'forever', pay: { home: '1', abroad: '1' } }] }))).toThrow("DE's card 0 is valid a whole number of years, or null");
+    expect(() => compileCard('DE', file({ cards: [null] }))).toThrow("DE's card 0 is not an object");
+    expect(() => compileCard('DE', file({ cards: [{ validYears: 'permanent', pay: { home: '1', abroad: '1' } }, { validYears: null, pay: { home: '1' } }] }))).toThrow("DE's cards 0 and 1 meet the same applicant");
+  });
+
   it('refuses a card that is not what it says it is', () => {
     expect(() => compileCard('XX', file())).toThrow('XX is not a country on the map');
     expect(() => compileCard('FR', file())).toThrow("FR's file is for DE");

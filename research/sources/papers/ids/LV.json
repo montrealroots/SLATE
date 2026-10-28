@@ -1,0 +1,81 @@
+{
+ "country": "LV",
+ "document": "personas apliecība (eID karte)",
+ "office": "any territorial office of the Office of Citizenship and Migration Affairs (PMLP)",
+ "currency": "EUR",
+ "routes": [
+  {
+   "id": "ten-days",
+   "where": "home",
+   "speed": "standard",
+   "within": {
+    "n": 10,
+    "unit": "working day"
+   },
+   "label": "within 10 working days"
+  },
+  {
+   "id": "two-days",
+   "where": "home",
+   "speed": "urgent",
+   "within": {
+    "n": 2,
+    "unit": "working day"
+   },
+   "label": "within 2 working days"
+  }
+ ],
+ "cards": [
+  {
+   "for": "under 5",
+   "under": 5,
+   "validYears": 2,
+   "pay": {
+    "ten-days": "15",
+    "two-days": null
+   }
+  },
+  {
+   "for": "5 to 19",
+   "from": 5,
+   "under": 20,
+   "validYears": 5,
+   "pay": {
+    "ten-days": "15",
+    "two-days": null
+   }
+  },
+  {
+   "for": "20 and over",
+   "from": 20,
+   "validYears": 10,
+   "pay": {
+    "ten-days": "30",
+    "two-days": "45"
+   }
+  }
+ ],
+ "note": "The state fee from 1 January 2026 (the Cabinet's regulations of 10 December 2024), as the official publisher's portal reports it: 30 euros in 10 working days, 45 in 2; children and young people up to 20, pensioners and people with a group I or II disability pay 15 euros in 10 days (the 2-day fee for them isn't stated, so it's null; the pensioners' age isn't given, so their concession isn't modelled). A child under 5 is issued a card for two years, or for a journey's length up to five; from 5 to 20, five years. For 20 and over, ten years: the cards issued from September 2019 were valid ten years (LSM, 2026), which is taken as the term today.",
+ "sources": [
+  {
+   "url": "https://lvportals.lv/dienaskartiba/384277-2024-gada-pienemtais-mk-lemums-par-valsts-nodevu-pakapenisku-palielinasanu-pases-un-eid-kartes-izsniegsanai-stasies-speka-2026-gada-2025",
+   "title": "LV portāls (Latvijas Vēstnesis), the Cabinet's decision on the state fees for passports and eID cards from 2026",
+   "read": "2026-10-28",
+   "said": "Personas apliecības jeb eID kartes izsniegšanai 10 darba dienu laikā valsts nodeva būs 30 eiro, savukārt divu darba dienu laikā – 45 eiro. ... Arī turpmāk tiek saglabāti visi līdzšinējie valsts nodevu atvieglojumi par personu apliecinošu dokumentu izsniegšanu bērniem un jauniešiem līdz 20 gadu vecumam, pensionāriem, kā arī personām ar I vai II grupas invaliditāti. Šīm sabiedrības grupām no 2026. gada 1. janvāra valsts nodeva par pases noformēšanu 10 darba dienu laikā būs 25 eiro, bet personas apliecības noformēšana – 15 eiro."
+  },
+  {
+   "url": "https://lvportals.lv/dienaskartiba/379312-visbiezak-uzdotie-jautajumi-par-bernu-celosanas-dokumentiem-2025",
+   "title": "LV portāls, Frequently asked questions on children's travel documents (2025)",
+   "read": "2026-10-28",
+   "said": "Bērniem līdz piecu gadu vecumam gan pasi, gan personas apliecību izdod uz diviem gadiem vai uz ceļojuma laiku, ja tas ir ilgāks par diviem gadiem, bet nepārsniedz piecus gadus. Bērniem vecumā no pieciem līdz 20 gadiem dokumentus izsniedz ar derīguma termiņu pieci gadi."
+  },
+  {
+   "url": "https://www.lsm.lv/raksts/zinas/latvija/08.06.2026-eid-karsu-problemai-ieguts-laiks-bet-ne-risinajums.a650500/",
+   "title": "LSM (Latvian Public Broadcasting), 8 June 2026, on eID cards' chips",
+   "read": "2026-10-28",
+   "kind": "secondary",
+   "quotes": "https://www.pmlp.gov.lv/",
+   "said": "Ietekmētās eID kartes lielākoties izsniegtas laikā no 2019. gada septembra līdz 2022. gada 2.jūnijam, ar derīguma termiņu uz desmit gadiem. ... Lai arī iepriekš PMLP vadītāja pieļāva, ka varētu domāt par personas apliecības derīguma termiņa saīsināšanu līdz pieciem gadiem, šobrīd, kā izriet no Rozes teiktā, šāds jautājums dienaskārtībā tomēr nav."
+  }
+ ]
+}
