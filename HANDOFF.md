@@ -511,6 +511,9 @@ What layer 0 holds:
      Carnival, Good Friday and Christmas unmoved) and the 2-3 November pair's, checked year by year against it, plus
      Decreto Ejecutivo 249's 2 January 2026. Its 2030 Pichincha line is wrong (24 May 2030 is a Friday). Open: the
      pair's rule where 2 November is a Wednesday (2033), which the calendar doesn't show; the LOSEP's text is unread.
+   - MZ: done 2026-10-28 from Lei n.º 13/2023 (Lei do Trabalho), art. 105, in the Boletim da República the Tribunal
+     Supremo hosts (ts.gov.mz): nine days, a Sunday's day off deferred to the next day. Art. 106's tolerâncias de ponto
+     are granted one by one by the Minister: not kept.
    - MW: blocked 2026-10-27: the Act's Schedule is read only as consolidated at 31 December 2014 (commons.laws.africa
      /akn/mw/act/1967/11/eng@2014-12-31.pdf); the Gazette orders since (Africa Day, Chakufwa Chihana Day, Eid al-Adha?)
      and 2026's orders are unread. Laws.Africa's commons host also serves other LIIs' consolidations past their bot
