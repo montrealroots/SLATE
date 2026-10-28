@@ -178,7 +178,7 @@ a place fills a column; a cell is the row's status in that engine's matrix, or b
 | NR | Nauru | researched | researched | researched | blocked | researched | blocked | blocked |
 | NU | Niue | researched | researched | researched | blocked | researched | researched | researched |
 | NZ | New Zealand | researched | researched | researched | researched | researched | researched | researched |
-| OM | Oman | researched | researched | researched | researched | researched | researched | blocked |
+| OM | Oman | researched | researched | researched | researched | researched | researched | researched |
 | PA | Panama | researched | researched | researched | researched | researched | researched | researched |
 | PE | Peru | researched | researched | researched | researched | researched | researched | researched |
 | PF | French Polynesia | researched | researched | researched | researched | researched | researched | researched |
@@ -202,7 +202,7 @@ a place fills a column; a cell is the row's status in that engine's matrix, or b
 | SA | Saudi Arabia | researched | researched | researched | researched | researched | researched | researched |
 | SB | Solomon Islands | researched | researched | researched | blocked | researched | researched | researched |
 | SC | Seychelles | researched | researched | researched | researched | researched | researched | researched |
-| SD | Sudan | researched | researched | researched | researched | researched | blocked | blocked |
+| SD | Sudan | researched | researched | researched | researched | researched | blocked | researched |
 | SE | Sweden | researched | researched | researched | researched | researched | researched | researched |
 | SG | Singapore | researched | researched | researched | researched | researched | researched | researched |
 | SH | Saint Helena | researched | researched | researched | researched | blocked | researched | researched |
