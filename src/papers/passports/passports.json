@@ -1174,6 +1174,28 @@
    }
   ]
  },
+ "CI": {
+  "currency": "XOF",
+  "routes": [
+   {
+    "id": "home",
+    "where": "home",
+    "speed": "standard",
+    "within": {
+     "n": 72,
+     "unit": "hour"
+    }
+   }
+  ],
+  "bands": [
+   {
+    "validYears": null,
+    "pay": {
+     "home": null
+    }
+   }
+  ]
+ },
  "CK": {
   "issuedBy": "NZ"
  },
@@ -2122,6 +2144,41 @@
     },
     "under": 16,
     "pages": 54
+   }
+  ]
+ },
+ "GD": {
+  "currency": "XCD",
+  "routes": [
+   {
+    "id": "home",
+    "where": "home",
+    "speed": "standard",
+    "within": null
+   },
+   {
+    "id": "abroad",
+    "where": "abroad",
+    "speed": "standard",
+    "within": null
+   }
+  ],
+  "bands": [
+   {
+    "validYears": 10,
+    "pay": {
+     "home": 35000,
+     "abroad": null
+    },
+    "from": 18
+   },
+   {
+    "validYears": 5,
+    "pay": {
+     "home": null,
+     "abroad": null
+    },
+    "under": 18
    }
   ]
  },
@@ -3208,6 +3265,50 @@
      "10-days": 15000,
      "1-day": 20000
     }
+   }
+  ]
+ },
+ "KN": {
+  "currency": "XCD",
+  "routes": [
+   {
+    "id": "home",
+    "where": "home",
+    "speed": "standard",
+    "within": null
+   },
+   {
+    "id": "expedited",
+    "where": "home",
+    "speed": "urgent",
+    "within": null
+   }
+  ],
+  "bands": [
+   {
+    "validYears": null,
+    "pay": {
+     "home": 15000,
+     "expedited": 25000
+    },
+    "under": 16
+   },
+   {
+    "validYears": null,
+    "pay": {
+     "home": 25000,
+     "expedited": 35000
+    },
+    "from": 16,
+    "under": 65
+   },
+   {
+    "validYears": null,
+    "pay": {
+     "home": 15000,
+     "expedited": 25000
+    },
+    "from": 65
    }
   ]
  },
@@ -5657,6 +5758,25 @@
    }
   ]
  },
+ "SN": {
+  "currency": "XOF",
+  "routes": [
+   {
+    "id": "home",
+    "where": "home",
+    "speed": "standard",
+    "within": null
+   }
+  ],
+  "bands": [
+   {
+    "validYears": null,
+    "pay": {
+     "home": 20000
+    }
+   }
+  ]
+ },
  "SV": {
   "currency": "USD",
   "routes": [
@@ -6149,6 +6269,33 @@
      "urgent": 1071200
     },
     "under": 18
+   }
+  ]
+ },
+ "VC": {
+  "currency": "XCD",
+  "routes": [
+   {
+    "id": "home",
+    "where": "home",
+    "speed": "standard",
+    "within": null
+   }
+  ],
+  "bands": [
+   {
+    "validYears": 10,
+    "pay": {
+     "home": 15000
+    },
+    "from": 16
+   },
+   {
+    "validYears": 5,
+    "pay": {
+     "home": 8000
+    },
+    "under": 16
    }
   ]
  },
