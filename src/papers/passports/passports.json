@@ -4527,6 +4527,58 @@
    }
   ]
  },
+ "TJ": {
+  "currency": "TJS",
+  "routes": [
+   {
+    "id": "15-days",
+    "where": "home",
+    "speed": "standard",
+    "within": {
+     "n": 15,
+     "unit": "working day"
+    }
+   },
+   {
+    "id": "7-days",
+    "where": "home",
+    "speed": "urgent",
+    "within": {
+     "n": 7,
+     "unit": "working day"
+    }
+   },
+   {
+    "id": "3-days",
+    "where": "home",
+    "speed": "urgent",
+    "within": {
+     "n": 3,
+     "unit": "working day"
+    }
+   }
+  ],
+  "bands": [
+   {
+    "validYears": null,
+    "pay": {
+     "15-days": null,
+     "7-days": null,
+     "3-days": null
+    },
+    "from": 16
+   },
+   {
+    "validYears": null,
+    "pay": {
+     "15-days": null,
+     "7-days": null,
+     "3-days": null
+    },
+    "under": 16
+   }
+  ]
+ },
  "TR": {
   "currency": "TRY",
   "routes": [
