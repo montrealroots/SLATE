@@ -167,7 +167,7 @@ a place fills a column; a cell is the row's status in that engine's matrix, or b
 | MY | Malaysia | researched | researched | researched | researched | blocked | researched |
 | MZ | Mozambique | researched | researched | researched | researched | researched | researched |
 | NA | Namibia | researched | researched | researched | researched | researched | researched |
-| NC | New Caledonia | researched | researched | researched | researched | researched | pending |
+| NC | New Caledonia | researched | researched | researched | researched | researched | researched |
 | NE | Niger | researched | researched | researched | researched | researched | researched |
 | NF | Norfolk Island | researched | researched | researched | researched | researched | pending |
 | NG | Nigeria | researched | researched | researched | researched | researched | researched |
@@ -181,7 +181,7 @@ a place fills a column; a cell is the row's status in that engine's matrix, or b
 | OM | Oman | researched | researched | researched | researched | researched | researched |
 | PA | Panama | researched | researched | researched | researched | researched | researched |
 | PE | Peru | researched | researched | researched | researched | researched | researched |
-| PF | French Polynesia | researched | researched | researched | researched | researched | pending |
+| PF | French Polynesia | researched | researched | researched | researched | researched | researched |
 | PG | Papua New Guinea | researched | researched | researched | researched | researched | researched |
 | PH | Philippines | researched | researched | researched | researched | researched | researched |
 | PK | Pakistan | researched | researched | researched | researched | researched | researched |
