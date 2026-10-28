@@ -15926,14 +15926,19 @@
   {
    "id": "R-0374",
    "fact": "world.prices.ppp-2021",
-   "sought": "Every country's price level for what households buy at the International Comparison Program's last benchmark (2021), and how the World Bank carries a benchmark level to later years",
+   "sought": "Every country's price level for what households buy at the International Comparison Program's last benchmark (2021), the Program's own for the economies the World Bank's indicators leave out, and how the World Bank carries a benchmark level to later years",
    "status": "found",
    "value": {
-    "file": "vendor/worldbank/PA.NUS.PRVT.PP-2021.json",
-    "sha256": "ce5f050f50ca4dec3c2943bd62df76008fe872c05f9445ddd700d40292ac2f6c",
     "indicator": "PA.NUS.PRVT.PP",
     "year": 2021,
-    "lastUpdated": "2026-10-08"
+    "lastUpdated": "2026-10-08",
+    "icpSeries": "9100000 (households and NPISHs final consumption expenditure), PPPGlob",
+    "icpLastUpdated": "2024-08-04",
+    "files": {
+     "vendor/worldbank/PA.NUS.PRVT.PP-2021.json": "ce5f050f50ca4dec3c2943bd62df76008fe872c05f9445ddd700d40292ac2f6c",
+     "vendor/worldbank/ICP2021-9100000-PPPGlob.json": "e056aa7ee4a6a359bfee5dc28da5022c0f3180f41b1915f48c10eddd3be0933f",
+     "vendor/worldbank/ICP2021-metadata.json": "97d651a60f09057ff52963f162f273d0ce3fd655ac310b7fddd2f08a8dc096af"
+    }
    },
    "sources": [
     {
@@ -15949,6 +15954,20 @@
      "title": "World Bank Data Help Desk, How do you extrapolate the PPP conversion factors estimated by the ICP?",
      "read": "2026-10-28",
      "said": "The International Comparison Program (ICP) provides PPP conversion factors for the three most recent ICP benchmark years (2011, 2017 and 2021) and years in between the benchmarks (2012-2016 and 2018-2020). For years before 2011 and after 2021, PPPs provided by the ICP are extrapolated to create a time series from 1990 to the latest year available. The method used is to apply the difference between the rate of inflation observed in the country over each period from 2011 (for years before 2011) and 2021 (for years after 2021) compared with inflation in the United States over the same period to the benchmark PPP estimates. ... Extrapolation for private consumption uses the change in the consumer price index (CPI). For example, let's say Senegal's CPI in 2022 divided by its CPI in 2021 is 1.096 ... and the ratio for the US over the same period is 1.081 ... We can take Senegal's private consumption PPP conversion factor in 2021, which was 226.6, and multiply it by 1.096/1.081 to get a 2022 conversion factor estimate of 229.7."
+    },
+    {
+     "kind": "primary",
+     "url": "https://api.worldbank.org/v2/sources/90/country/all/series/9100000/classification/PPPGlob/time/YR2021?format=json&per_page=1000",
+     "title": "World Bank, ICP 2021 database (source 90): households and NPISHs final consumption expenditure, purchasing power parity (US$ = 1), 2021",
+     "read": "2026-10-28",
+     "said": "lastupdated 2024-08-04; 207 economies and groups. Anguilla 2.43838310241699; Bonaire 0.715788066387177; Montserrat 1.70571327209473; Taiwan, China 15.7015686035156; Argentina 42.9862403869629; United States 1."
+    },
+    {
+     "kind": "primary",
+     "url": "https://api.worldbank.org/v2/sources/90/country/all/metadata?format=json&per_page=5000",
+     "title": "World Bank, ICP 2021 database (source 90): each economy's metadata",
+     "read": "2026-10-28",
+     "said": "AIA: CurrencyUnit XCD: East Caribbean Dollar; ICPParticipation ICP 2021: Full Participation (ICP surveys for full ICP classification) ... RegionalProgram ICP Latin America and the Caribbean. MSR: CurrencyUnit XCD: East Caribbean Dollar ... TWN: CurrencyUnit TWD: New Taiwan Dollar; ICPParticipation ICP 2021: Full Participation ... These metadata are specific for the 2021 International Comparison Program (Benchmark), unless otherwise stated."
     }
    ]
   },
@@ -16596,6 +16615,44 @@
      "title": "Tuvalu Central Statistics Division, CPI Q3 2026 release tables (Table 1: Indices and inflation rates)",
      "read": "2026-10-28",
      "said": "TABLE 1: INDICES AND INFLATION RATES, INDEX Total / Average: 2021 March 1034.9617895478314, June 1068.727095949174, September 1073.2429430613176, December 1098.6367443948297 (average 1068.892143238288); 2025 March 1316.6316386296614, June 1310.6862195879967, September 1322.7843504241105, December 1342 (average 1323.0255521604422); 2019 December 1000"
+    }
+   ]
+  },
+  {
+   "id": "R-0393",
+   "fact": "world.prices.CD",
+   "sought": "the Democratic Republic of the Congo's consumer price index in 2021 and 2025, from its statistics office",
+   "status": "found",
+   "value": {
+    "file": "research/sources/prices/CD.json",
+    "sha256": "1cc91cce38a9cb341a8fe5aa28c31dc811a80522318e320d7bff1569d1b3d573"
+   },
+   "sources": [
+    {
+     "kind": "primary",
+     "url": "https://www.bcc.cd/statistiques/secteur-reel/inflation",
+     "title": "Banque Centrale du Congo, Inflation / Indice des Prix \u00e0 la Consommation : Secteur r\u00e9el (series data embedded in the page)",
+     "read": "2026-10-28",
+     "said": "R\u00e9unit les mesures de prix produites par l'Institut National de la Statistique : l'indice des prix \u00e0 la consommation mensuel et son glissement annuel ... monthly inflation--indice-global: 2021-01 283.11, 2021-02 284.09, 2021-03 284.98, 2021-04 286.31, 2021-05 287.55, 2021-06 288.65, 2021-07 289.86, 2021-08 290.77, 2021-09 291.64, 2021-10 292.75, 2021-11 294.34, 2021-12 296.97; 2025-01 469.07, 2025-02 472.41, 2025-03 475.29, 2025-04 478, 2025-05 481.06, 2025-06 483.93, 2025-07 487.1, 2025-08 490.01, 2025-09 492.39 (mensuelle 0.486, glissement annuel 7.792), 2025-10 470.98 (mensuelle -4.348, glissement annuel 2.519), 2025-11 471.39, 2025-12 474.88 (glissement annuel 2.265)"
+    }
+   ]
+  },
+  {
+   "id": "R-0394",
+   "fact": "world.prices.TW",
+   "sought": "Taiwan's consumer price index in 2021 and 2025, from its statistics office",
+   "status": "found",
+   "value": {
+    "file": "research/sources/prices/TW.json",
+    "sha256": "463af2646d6704156771305ab2662e7a984abfc7c03073eb6a7561e2ac0582cc"
+   },
+   "sources": [
+    {
+     "kind": "primary",
+     "url": "https://nstatdb.dgbas.gov.tw/dgbasall/webMain.aspx?sys=210&x=2098&funid=E030101015",
+     "title": "DGBAS Macro Database, Consumer Price Indices by Basic Group (E030101015), queried yearly 2021 to 2025 through its own form",
+     "read": "2026-10-28",
+     "said": "Subject: Price Index; Topic: Consumer Price Index; Source: DGBAS ... Indices Base Period: 2021=100 ... Period, General Index: 2021 100.00; 2022 102.95; 2023 105.51; 2024 107.81; 2025 109.60"
     }
    ]
   }

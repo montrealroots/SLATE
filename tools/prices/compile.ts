@@ -9,7 +9,8 @@ import { rational, roundHalfEven } from '../../src/core/money/money.ts';
  * Development Indicators as last updated on 2026-10-08 (register R-0373): the PPP conversion factor for households'
  * final consumption (PA.NUS.PRVT.PP), in a country's own currency per international dollar, which the International
  * Comparison Program measured for 2021 and the World Bank carries to later years. A country's level is its latest
- * year from 2024 on. A country the World Bank last priced at the Program's 2021 benchmark has its level carried from
+ * year from 2024 on. A country the World Bank last priced at the Program's 2021 benchmark (or that only the Program's own
+ * database prices, R-0374) has its level carried from
  * that benchmark to 2025 as the World Bank carries its own (R-0374): by its consumer price index's change against the
  * United States' over the same years, the index read from its own statistics office (research/sources/prices/,
  * world.prices.<code>) and the United States' from the Bureau of Labor Statistics (R-0375). Each file is checked
@@ -20,6 +21,9 @@ export const SOURCES = {
   economies: { file: 'vendor/worldbank/countries.json', sha256: 'c9acf3932785191a649cbc04c3056af4cf64a236e5c3b49d49be25ddb0440bce' },
   metadata: { file: 'vendor/worldbank/country-metadata.json', sha256: '8c5d4e28e2e368999d1e16301b19cef7b9be1a7d8cf81c75602d14f481ebcf71' },
   benchmark: { file: 'vendor/worldbank/PA.NUS.PRVT.PP-2021.json', sha256: 'ce5f050f50ca4dec3c2943bd62df76008fe872c05f9445ddd700d40292ac2f6c' },
+  icp: { file: 'vendor/worldbank/ICP2021-9100000-PPPGlob.json', sha256: 'e056aa7ee4a6a359bfee5dc28da5022c0f3180f41b1915f48c10eddd3be0933f' },
+  icpMetadata: { file: 'vendor/worldbank/ICP2021-metadata.json', sha256: '97d651a60f09057ff52963f162f273d0ce3fd655ac310b7fddd2f08a8dc096af' },
+  geonames: { file: 'vendor/geonames/countryInfo.txt', sha256: 'c55f638cfaafb4fe45a9aa15120a0f1f78e8a34a8e1847d7b9320cf740fbc9ab' },
 } as const;
 /** The indices a level is carried by: each country's file, and the United States'. */
 export const INDICES = 'research/sources/prices';
@@ -169,6 +173,39 @@ export function withCarried(levels: Readonly<Record<string, Level>>, benchmark: 
   return Object.fromEntries(Object.keys(out).sort().map((code) => [code, out[code] as Level]));
 }
 
+interface IcpData {
+  source: { data: { variable: { concept: string; id: string }[]; value: number | null }[] };
+}
+interface IcpMetadata {
+  source: { concept: { variable: { id: string; metatype: { id: string; value: string }[] }[] }[] }[];
+}
+
+/** GeoNames' three-letter codes, to the two-letter ones the map keys its countries by (countryInfo.txt's first two fields). */
+export function threeLetterCodes(countryInfo: string): Map<string, string> {
+  return new Map(countryInfo.split('\n').filter((l) => l !== '' && !l.startsWith('#')).map((l) => { const [two, three] = l.split('\t'); return [three as string, two as string]; }));
+}
+
+/**
+ * The International Comparison Program's own 2021 benchmark (the World Bank's ICP 2021 database) for the economies
+ * its indicators leave out (Anguilla, Montserrat, Taiwan): their household consumption PPP as a 2021 row and their
+ * currency as the Program names it. The two agree wherever both price an economy outside the Eurostat-OECD
+ * programme, and the indicators' own come first where both do; an economy the map has no country for (Bonaire, a
+ * part of one) is left out.
+ */
+export function icpBenchmark(data: IcpData, metadata: IcpMetadata, codes: ReadonlyMap<string, string>): { rows: Row[]; units: Map<string, string> } {
+  const rows: Row[] = [];
+  const units = new Map<string, string>();
+  const named = new Map((metadata.source[0]?.concept[0]?.variable ?? []).map((v) => [v.id, v.metatype.find((t) => t.id === 'CurrencyUnit')?.value ?? ''] as const));
+  for (const d of data.source.data) {
+    const three = d.variable.find((v) => v.concept === 'Country')?.id ?? '';
+    const code = codes.get(three);
+    if (code === undefined || d.value === null) continue;
+    rows.push({ country: { id: code }, date: String(BENCHMARK), value: d.value });
+    units.set(code, named.get(three) ?? '');
+  }
+  return { rows, units };
+}
+
 function pinned(root: string, file: string, sha256: string): string {
   const bytes = readFileSync(join(root, file));
   if (createHash('sha256').update(bytes).digest('hex') !== sha256) throw new Error(`${file} isn't the file the register cites`);
@@ -193,9 +230,14 @@ export function readLevels(root: string): { levels: Record<string, Level>; unmap
   const currencies = Object.fromEntries(Object.entries(gazetteer).map(([code, c]) => [code, c.currency]));
   const units = currencyUnits(metadata);
   const { levels, unmapped } = compileLevels(ppp[1], economies[1], units, currencies);
+  const icp = icpBenchmark(
+    JSON.parse(pinned(root, SOURCES.icp.file, SOURCES.icp.sha256)) as IcpData,
+    JSON.parse(pinned(root, SOURCES.icpMetadata.file, SOURCES.icpMetadata.sha256)) as IcpMetadata,
+    threeLetterCodes(pinned(root, SOURCES.geonames.file, SOURCES.geonames.sha256)),
+  );
   const codes = readdirSync(join(root, INDICES)).map((f) => basename(f, '.json')).filter((n) => n !== US_INDEX);
   const own = Object.fromEntries(codes.map((code) => [code, cited(root, code, `world.prices.${code}`, register)]));
-  return { levels: withCarried(levels, benchmark[1], cited(root, US_INDEX, 'world.prices.us-cpi', register), own, units, currencies), unmapped };
+  return { levels: withCarried(levels, [...benchmark[1], ...icp.rows], cited(root, US_INDEX, 'world.prices.us-cpi', register), own, new Map([...icp.units, ...units]), currencies), unmapped };
 }
 
 export const serialize = (levels: Readonly<Record<string, Level>>) => `${JSON.stringify(levels, null, 1)}\n`;

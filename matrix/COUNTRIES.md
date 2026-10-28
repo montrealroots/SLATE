@@ -45,7 +45,7 @@ a place fills a column; a cell is the row's status in that engine's matrix, or b
 | BZ | Belize | researched | researched | researched | researched | researched | researched |
 | CA | Canada | researched | researched | researched | researched | blocked | researched |
 | CC | Cocos Islands | researched | researched | researched | blocked | blocked | pending |
-| CD | Democratic Republic of the Congo | researched | researched | researched | researched | researched | pending |
+| CD | Democratic Republic of the Congo | researched | researched | researched | researched | researched | researched |
 | CF | Central African Republic | researched | researched | researched | researched | blocked | researched |
 | CG | Republic of the Congo | researched | researched | researched | researched | researched | researched |
 | CH | Switzerland | researched | researched | researched | researched | researched | researched |
@@ -234,7 +234,7 @@ a place fills a column; a cell is the row's status in that engine's matrix, or b
 | TR | Turkey | researched | researched | researched | researched | researched | researched |
 | TT | Trinidad and Tobago | researched | researched | researched | researched | researched | researched |
 | TV | Tuvalu | researched | researched | researched | researched | blocked | researched |
-| TW | Taiwan | researched | researched | researched | researched | researched | pending |
+| TW | Taiwan | researched | researched | researched | researched | researched | researched |
 | TZ | Tanzania | researched | researched | researched | researched | blocked | researched |
 | UA | Ukraine | researched | researched | researched | researched | researched | researched |
 | UG | Uganda | researched | researched | researched | researched | researched | researched |

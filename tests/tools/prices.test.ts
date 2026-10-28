@@ -1,8 +1,8 @@
 import { copyFileSync, cpSync, mkdirSync, mkdtempSync, readdirSync, readFileSync, writeFileSync } from 'node:fs';
 import { tmpdir } from 'node:os';
-import { join } from 'node:path';
+import { dirname, join } from 'node:path';
 import { describe, expect, it } from 'vitest';
-import { BENCHMARK, CARRIED_TO, carryForward, compileLevels, currencyUnits, decimal, FROM, INDICES, mean, OUTPUT, PLACES, readLevels, sameCurrency, serialize, SOURCES, UNIT_WORDS, US_INDEX, withCarried, type Indices } from '../../tools/prices/compile.ts';
+import { BENCHMARK, CARRIED_TO, carryForward, compileLevels, currencyUnits, decimal, FROM, icpBenchmark, INDICES, mean, OUTPUT, PLACES, readLevels, sameCurrency, serialize, SOURCES, threeLetterCodes, UNIT_WORDS, US_INDEX, withCarried, type Indices } from '../../tools/prices/compile.ts';
 import { CARRIED_FACTS, COVERAGE, coverageOf, CURRENCY_FACTS, NO_PLACES, pricesCoverage, serializeCoverage, TESTS, TOLD } from '../../tools/prices/coverage.ts';
 
 const ROOT = join(import.meta.dirname, '../..');
@@ -28,9 +28,11 @@ const indices = (from: string[], to: string[]): Indices => ({ from: year(2021, .
 /** A copy of the files the compiler reads, to change one of them. */
 function copyRoot(): string {
   const root = mkdtempSync(join(tmpdir(), 'prices-'));
-  mkdirSync(join(root, 'vendor/worldbank'), { recursive: true });
   mkdirSync(join(root, 'src/world/gazetteer'), { recursive: true });
-  for (const s of Object.values(SOURCES)) copyFileSync(join(ROOT, s.file), join(root, s.file));
+  for (const s of Object.values(SOURCES)) {
+    mkdirSync(dirname(join(root, s.file)), { recursive: true });
+    copyFileSync(join(ROOT, s.file), join(root, s.file));
+  }
   copyFileSync(join(ROOT, 'src/world/gazetteer/countries.json'), join(root, 'src/world/gazetteer/countries.json'));
   cpSync(join(ROOT, 'research'), join(root, 'research'), { recursive: true });
   return root;
@@ -152,12 +154,40 @@ describe('the price levels compiler', () => {
     expect(withCarried(kept, benchmark, us, { JP: indices(['100'], ['121']) }, UNITS, CURRENCIES)).toStrictEqual({ JP: { ppp: '110', year: 2025 }, US: { ppp: '1', year: 2025 } });
     expect(Object.keys(withCarried({ ZZ: { ppp: '1', year: 2025 } }, benchmark, us, { JP: indices(['100'], ['121']) }, UNITS, CURRENCIES))).toEqual(['JP', 'ZZ']);
     expect(withCarried(kept, benchmark, us, {}, UNITS, CURRENCIES)).toStrictEqual(kept);
+    // Where two benchmarks price a country, the first is taken (the World Bank's indicators' own, before the Program's).
+    expect(withCarried(kept, [...benchmark, row('JP', '2021', 50)], us, { JP: indices(['100'], ['121']) }, UNITS, CURRENCIES).JP).toStrictEqual({ ppp: '110', year: 2025 });
     expect(() => withCarried(kept, benchmark, us, { US: us }, UNITS, CURRENCIES)).toThrow("the World Bank prices US from 2024 on; its own index isn't needed");
     expect(() => withCarried(kept, [row('JP', '2020', 90)], us, { JP: us }, UNITS, CURRENCIES)).toThrow('the World Bank has no 2021 level for JP');
     expect(() => withCarried(kept, [row('JP', '2021', null)], us, { JP: us }, UNITS, CURRENCIES)).toThrow('the World Bank has no 2021 level for JP');
     expect(() => withCarried(kept, benchmark, us, { JP: us }, UNITS, { JP: 'USD' })).toThrow('the World Bank prices JP in Japanese yen, not USD');
     expect(() => withCarried(kept, benchmark, us, { JP: us }, new Map(), CURRENCIES)).toThrow('the World Bank prices JP in no currency it names, not JPY');
     expect(() => withCarried(kept, benchmark, us, { JP: us }, UNITS, {})).toThrow('the World Bank prices JP in Japanese yen, not none');
+  });
+  it("reads GeoNames' three-letter codes, its comments and blank lines left out", () => {
+    expect([...threeLetterCodes('#ISO\tISO3\n\nTW\tTWN\tx\nAI\tAIA\n')]).toEqual([
+      ['TWN', 'TW'],
+      ['AIA', 'AI'],
+    ]);
+  });
+  it("takes the Program's own benchmark for an economy the World Bank's indicators leave out, with the currency it names", () => {
+    const datum = (id: string, value: number | null) => ({ variable: [{ concept: 'Time', id: 'YR2021' }, { concept: 'Country', id }], value });
+    const data = { source: { data: [datum('TWN', 15.7), datum('ARG', 43), datum('BON', 0.7), datum('AIA', null), datum('MSR', 1.7)] } };
+    const metadata = { source: [{ concept: [{ variable: [{ id: 'TWN', metatype: [{ id: 'LongName', value: 'Taiwan' }, { id: 'CurrencyUnit', value: 'TWD: New Taiwan Dollar' }] }, { id: 'MSR', metatype: [] }] }] }] };
+    const codes = new Map([
+      ['TWN', 'TW'],
+      ['ARG', 'AR'],
+      ['AIA', 'AI'],
+      ['MSR', 'MS'],
+    ]);
+    const { rows, units } = icpBenchmark(data, metadata, codes);
+    expect(rows).toStrictEqual([row('TW', '2021', 15.7), row('AR', '2021', 43), row('MS', '2021', 1.7)]);
+    expect([...units]).toEqual([
+      ['TW', 'TWD: New Taiwan Dollar'],
+      ['AR', ''],
+      ['MS', ''],
+    ]);
+    expect(icpBenchmark({ source: { data: [{ variable: [], value: 1 }] } }, { source: [] }, new Map([['', 'XX']]))).toStrictEqual({ rows: [row('XX', '2021', 1)], units: new Map([['XX', '']]) });
+    expect(icpBenchmark(data, { source: [{ concept: [] }] }, codes).units.get('TW')).toBe('');
   });
   it('writes the levels one field to a line, ending in a newline', () => {
     expect(serialize({ US: { ppp: '1', year: 2025 } })).toBe('{\n "US": {\n  "ppp": "1",\n  "year": 2025\n }\n}\n');

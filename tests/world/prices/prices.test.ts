@@ -10,7 +10,7 @@ describe('the prices', () => {
     expect(COUNTRY_CODES.filter(keepsPrices)).toEqual(Object.keys(levels));
     expect(priceLevel('US')).toEqual({ ppp: '1', year: 2025 });
     expect(priceLevel('QA')).toEqual({ ppp: '2.75548696215787', year: 2024 });
-    expect(priceLevel('TW')).toBeUndefined();
+    expect(priceLevel('KP')).toBeUndefined();
     // Every country with a level has a currency to price in.
     expect(COUNTRY_CODES.filter((c) => keepsPrices(c) && currencyOf(c) === undefined)).toEqual([]);
     expect(priceIn('US', '10')).toEqual(money('USD', 1000));
@@ -22,15 +22,18 @@ describe('the prices', () => {
     // Carried from the benchmark: Argentina's 661.287794234474 pesos to the dollar.
     expect(priceLevel('AR')).toEqual({ ppp: '661.287794234474', year: 2025 });
     expect(priceIn('AR', '10')).toEqual(money('ARS', 661288));
+    // Carried from the Program's own benchmark, which the World Bank's indicators leave out: Taiwan's.
+    expect(priceLevel('TW')?.year).toBe(2025);
+    expect(priceIn('TW', '1')?.currency).toBe('TWD');
     // Half a cent goes to the even cent.
     expect([priceIn('US', '0.005'), priceIn('US', '0.015'), priceIn('US', '0')]).toEqual([money('USD', 0), money('USD', 2), money('USD', 0)]);
-    expect(priceIn('TW', '10')).toBeUndefined();
+    expect(priceIn('KP', '10')).toBeUndefined();
     expect(priceIn('AQ', '10')).toBeUndefined();
   });
   it("tell the player where a country's aren't kept", () => {
     expect(UNKEPT_LINE).toBe('prices.unkept');
-    expect(aboutPrices('TW')).toBe(t(UNKEPT_LINE, { country: 'Taiwan' }));
-    expect(aboutPrices('TW')).toBe("What things cost in Taiwan isn't known to this game yet, so nothing there has a price.");
+    expect(aboutPrices('KP')).toBe(t(UNKEPT_LINE, { country: 'North Korea' }));
+    expect(aboutPrices('KP')).toBe("What things cost in North Korea isn't known to this game yet, so nothing there has a price.");
     expect(aboutPrices('US')).toBeUndefined();
   });
   it('at every place on the map', async () => {
