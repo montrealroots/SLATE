@@ -15296,6 +15296,45 @@
    ],
    "notModeled": "holidays.unkept",
    "id": "R-0359"
+  },
+  {
+   "id": "R-0360",
+   "fact": "world.holidays.blocked.BS",
+   "sought": "The Bahamas' public holidays: the Public Holidays Act (Ch. 352, 1938-0015) as amended, its First Schedule and its rules for a holiday on a weekend",
+   "status": "blocked",
+   "attempts": [
+    {
+     "method": "official-register",
+     "tried": "The Law Revision's site (laws.bahamas.gov.bs), whose acts list holds the Public Holidays Act (1938-0015_2.pdf) and the yearly Opening of Shops notices",
+     "result": "The site refuses this game's requests (HTTP 403); a browser's download past that refusal was ruled bot-check circumvention and not made.",
+     "date": "2026-10-28"
+    },
+    {
+     "method": "institution",
+     "tried": "The Government's portal (bahamas.gov.bs), the Office of the Prime Minister (opm.gov.bs, WordPress API: 'public holiday', 'holiday', 'Majority Rule Day') and the Bahamas Information Services (bisnews.bs)",
+     "result": "The portal refuses (HTTP 403); the Prime Minister's office holds speeches, not the list; the Information Services don't answer.",
+     "date": "2026-10-28"
+    },
+    {
+     "method": "web-search",
+     "tried": "'Bahamas Public Holidays Act chapter laws.bahamas.gov.bs schedule Majority Rule Day National Heroes Day Randol Fawkes Labour Day falls on Sunday'",
+     "result": "A hotel association's copy of the Act from 2009, before the 2013 amendments (Majority Rule Day, National Heroes Day, Randol Fawkes Labour Day), and aggregators.",
+     "date": "2026-10-28"
+    },
+    {
+     "method": "trade-press",
+     "tried": "The Tribune (its own search: '\"public holidays act\"'), The Nassau Guardian and Eyewitness News (WordPress APIs: 'public holiday', 'holiday 2026')",
+     "result": "The Tribune reports National Heroes Day's creation and Emancipation Day's shop openings, not the Schedule; the other two have no API this game can read or refuse (HTTP 403).",
+     "date": "2026-10-28"
+    },
+    {
+     "method": "archive",
+     "tried": "The Wayback Machine's availability index for the Act's PDF (1938-0015_2.pdf)",
+     "result": "A snapshot exists (18 July 2026) but wasn't fetched, pending the owner's ruling on snapshots.",
+     "date": "2026-10-28"
+    }
+   ],
+   "notModeled": "holidays.unkept"
   }
  ]
 }
