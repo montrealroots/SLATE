@@ -1495,6 +1495,28 @@
  "EH": {
   "issuedBy": "MA"
  },
+ "ER": {
+  "document": "Identity card (the new machine-readable card)",
+  "currency": "ERN",
+  "routes": [
+   {
+    "id": "branch",
+    "where": "home",
+    "speed": "standard",
+    "within": null
+   }
+  ],
+  "bands": [
+   {
+    "validYears": null,
+    "pay": {
+     "branch": 10000
+    },
+    "from": 18,
+    "permanent": true
+   }
+  ]
+ },
  "ES": {
   "document": "Documento Nacional de Identidad (DNI)",
   "currency": "EUR",
@@ -1834,6 +1856,27 @@
      "emergency": null
     },
     "from": 65
+   }
+  ]
+ },
+ "GM": {
+  "document": "Biometric National Identity Card",
+  "currency": "GMD",
+  "routes": [
+   {
+    "id": "centre",
+    "where": "home",
+    "speed": "standard",
+    "within": null
+   }
+  ],
+  "bands": [
+   {
+    "validYears": null,
+    "pay": {
+     "centre": 45000
+    },
+    "from": 18
    }
   ]
  },
@@ -2613,6 +2656,26 @@
      "one-day": 200000
     },
     "from": 15
+   }
+  ]
+ },
+ "LR": {
+  "document": "National Identification Card",
+  "currency": "USD",
+  "routes": [
+   {
+    "id": "nir",
+    "where": "home",
+    "speed": "standard",
+    "within": null
+   }
+  ],
+  "bands": [
+   {
+    "validYears": null,
+    "pay": {
+     "nir": 500
+    }
    }
   ]
  },
