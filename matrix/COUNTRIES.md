@@ -38,7 +38,7 @@ a place fills a column; a cell is the row's status in that engine's matrix, or b
 | BQ | Bonaire, Saint Eustatius and Saba  | researched | researched | researched | blocked | researched |
 | BR | Brazil | researched | researched | researched | researched | researched |
 | BS | Bahamas | researched | researched | researched | researched | blocked |
-| BT | Bhutan | researched | researched | researched | blocked | pending |
+| BT | Bhutan | researched | researched | researched | blocked | blocked |
 | BV | Bouvet Island | researched | researched | proven | proven | proven |
 | BW | Botswana | researched | researched | researched | blocked | researched |
 | BY | Belarus | researched | researched | researched | researched | researched |
