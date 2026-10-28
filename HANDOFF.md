@@ -503,6 +503,9 @@ What layer 0 holds:
      announcedTo 2028; Carnival Day, the day before the Grand Parade, is set year by year: dates). Emancipation Day's
      Sunday move from the Government's 2017 correction (Labour Regulation art. 23(3a), via St. Maarten News); Labour
      Day's from the Arbeidsregeling 2000's art. 23 (ABKennisbank). The current consolidated art. 23 is unread.
+   - GD: done 2026-10-28 from the Cabinet Office's "Grenada's Public Holidays - 2026" (gov.gd, September 2025), with its
+     rule that a holiday on a Sunday is observed on the Monday after; Carnival Monday and Tuesday are set yearly: dates.
+     The Public Holidays Act on laws.gov.gd sits behind a cookie challenge (a bot check): not read.
    - MW: blocked 2026-10-27: the Act's Schedule is read only as consolidated at 31 December 2014 (commons.laws.africa
      /akn/mw/act/1967/11/eng@2014-12-31.pdf); the Gazette orders since (Africa Day, Chakufwa Chihana Day, Eid al-Adha?)
      and 2026's orders are unread. Laws.Africa's commons host also serves other LIIs' consolidations past their bot
