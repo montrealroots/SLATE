@@ -135,13 +135,13 @@ a place fills a column; a cell is the row's status in that engine's matrix, or b
 | LA | Laos | researched | researched | researched | researched | blocked | researched | pending |
 | LB | Lebanon | researched | researched | researched | blocked | researched | researched | researched |
 | LC | Saint Lucia | researched | researched | researched | researched | researched | researched | researched |
-| LI | Liechtenstein | researched | researched | researched | researched | researched | researched | pending |
+| LI | Liechtenstein | researched | researched | researched | researched | researched | researched | researched |
 | LK | Sri Lanka | researched | researched | researched | researched | researched | researched | pending |
 | LR | Liberia | researched | researched | researched | researched | blocked | researched | pending |
 | LS | Lesotho | researched | researched | researched | blocked | blocked | researched | pending |
 | LT | Lithuania | researched | researched | researched | researched | researched | researched | pending |
 | LU | Luxembourg | researched | researched | researched | researched | researched | researched | researched |
-| LV | Latvia | researched | researched | researched | researched | researched | researched | pending |
+| LV | Latvia | researched | researched | researched | researched | researched | researched | researched |
 | LY | Libya | researched | researched | researched | researched | researched | researched | pending |
 | MA | Morocco | researched | researched | researched | researched | researched | researched | pending |
 | MC | Monaco | researched | researched | researched | blocked | researched | researched | pending |
@@ -177,7 +177,7 @@ a place fills a column; a cell is the row's status in that engine's matrix, or b
 | NP | Nepal | researched | researched | researched | researched | researched | researched | researched |
 | NR | Nauru | researched | researched | researched | blocked | researched | blocked | pending |
 | NU | Niue | researched | researched | researched | blocked | researched | researched | pending |
-| NZ | New Zealand | researched | researched | researched | researched | researched | researched | pending |
+| NZ | New Zealand | researched | researched | researched | researched | researched | researched | researched |
 | OM | Oman | researched | researched | researched | researched | researched | researched | pending |
 | PA | Panama | researched | researched | researched | researched | researched | researched | pending |
 | PE | Peru | researched | researched | researched | researched | researched | researched | researched |

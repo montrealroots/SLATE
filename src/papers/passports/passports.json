@@ -2342,6 +2342,50 @@
    }
   ]
  },
+ "LI": {
+  "currency": "CHF",
+  "routes": [
+   {
+    "id": "standard",
+    "where": "home",
+    "speed": "standard",
+    "within": null
+   },
+   {
+    "id": "urgent",
+    "where": "home",
+    "speed": "urgent",
+    "within": null
+   }
+  ],
+  "bands": [
+   {
+    "validYears": 10,
+    "pay": {
+     "standard": 14000,
+     "urgent": 24000
+    },
+    "from": 18
+   },
+   {
+    "validYears": 10,
+    "pay": {
+     "standard": 6000,
+     "urgent": 11000
+    },
+    "from": 12,
+    "under": 18
+   },
+   {
+    "validYears": 5,
+    "pay": {
+     "standard": 6000,
+     "urgent": 11000
+    },
+    "under": 12
+   }
+  ]
+ },
  "LU": {
   "currency": "EUR",
   "routes": [
@@ -2389,6 +2433,47 @@
      "urgent": 9500
     },
     "under": 4
+   }
+  ]
+ },
+ "LV": {
+  "currency": "EUR",
+  "routes": [
+   {
+    "id": "10-days",
+    "where": "home",
+    "speed": "standard",
+    "within": {
+     "n": 10,
+     "unit": "working day"
+    }
+   },
+   {
+    "id": "2-days",
+    "where": "home",
+    "speed": "urgent",
+    "within": {
+     "n": 2,
+     "unit": "working day"
+    }
+   }
+  ],
+  "bands": [
+   {
+    "validYears": null,
+    "pay": {
+     "10-days": 5000,
+     "2-days": 7500
+    },
+    "from": 20
+   },
+   {
+    "validYears": null,
+    "pay": {
+     "10-days": 2500,
+     "2-days": null
+    },
+    "under": 20
    }
   ]
  },
@@ -2902,6 +2987,44 @@
     },
     "under": 10,
     "pages": 66
+   }
+  ]
+ },
+ "NZ": {
+  "currency": "NZD",
+  "routes": [
+   {
+    "id": "standard",
+    "where": "home",
+    "speed": "standard",
+    "within": null
+   },
+   {
+    "id": "urgent",
+    "where": "home",
+    "speed": "urgent",
+    "within": {
+     "n": 3,
+     "unit": "working day"
+    }
+   }
+  ],
+  "bands": [
+   {
+    "validYears": 10,
+    "pay": {
+     "standard": 24700,
+     "urgent": 49400
+    },
+    "from": 16
+   },
+   {
+    "validYears": 5,
+    "pay": {
+     "standard": 14400,
+     "urgent": 39100
+    },
+    "under": 16
    }
   ]
  },
