@@ -1108,6 +1108,36 @@
    }
   ]
  },
+ "DM": {
+  "currency": "XCD",
+  "routes": [
+   {
+    "id": "home",
+    "where": "home",
+    "speed": "standard",
+    "within": {
+     "n": 2,
+     "unit": "week"
+    }
+   }
+  ],
+  "bands": [
+   {
+    "validYears": null,
+    "pay": {
+     "home": 15000
+    },
+    "from": 16
+   },
+   {
+    "validYears": null,
+    "pay": {
+     "home": 7500
+    },
+    "under": 16
+   }
+  ]
+ },
  "EC": {
   "currency": "USD",
   "routes": [
@@ -2864,6 +2894,33 @@
    "abroad"
   ]
  },
+ "MS": {
+  "currency": "XCD",
+  "routes": [
+   {
+    "id": "home",
+    "where": "home",
+    "speed": "standard",
+    "within": null
+   }
+  ],
+  "bands": [
+   {
+    "validYears": 10,
+    "pay": {
+     "home": 30000
+    },
+    "from": 16
+   },
+   {
+    "validYears": 5,
+    "pay": {
+     "home": 15000
+    },
+    "under": 16
+   }
+  ]
+ },
  "MT": {
   "currency": "EUR",
   "routes": [
@@ -4397,6 +4454,56 @@
  },
  "VI": {
   "issuedBy": "US"
+ },
+ "VU": {
+  "currency": "VUV",
+  "routes": [
+   {
+    "id": "normal",
+    "where": "home",
+    "speed": "standard",
+    "within": {
+     "n": 3,
+     "unit": "day"
+    }
+   },
+   {
+    "id": "urgent",
+    "where": "home",
+    "speed": "urgent",
+    "within": {
+     "n": 1,
+     "unit": "day"
+    }
+   }
+  ],
+  "bands": [
+   {
+    "validYears": null,
+    "pay": {
+     "normal": 20000,
+     "urgent": 30000
+    },
+    "from": 18,
+    "under": 66
+   },
+   {
+    "validYears": null,
+    "pay": {
+     "normal": 10000,
+     "urgent": null
+    },
+    "from": 66
+   },
+   {
+    "validYears": null,
+    "pay": {
+     "normal": 10000,
+     "urgent": null
+    },
+    "under": 18
+   }
+  ]
  },
  "WF": {
   "currency": "XPF",

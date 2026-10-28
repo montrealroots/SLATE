@@ -66,7 +66,7 @@ a place fills a column; a cell is the row's status in that engine's matrix, or b
 | DE | Germany | researched | researched | researched | researched | researched | researched | researched |
 | DJ | Djibouti | researched | researched | researched | blocked | researched | researched | pending |
 | DK | Denmark | researched | researched | researched | researched | researched | researched | researched |
-| DM | Dominica | researched | researched | researched | researched | researched | researched | pending |
+| DM | Dominica | researched | researched | researched | researched | researched | researched | researched |
 | DO | Dominican Republic | researched | researched | researched | researched | researched | researched | pending |
 | DZ | Algeria | researched | researched | researched | researched | researched | researched | pending |
 | EC | Ecuador | researched | researched | researched | researched | researched | researched | researched |
@@ -158,7 +158,7 @@ a place fills a column; a cell is the row's status in that engine's matrix, or b
 | MP | Northern Mariana Islands | researched | researched | researched | blocked | researched | blocked | researched |
 | MQ | Martinique | researched | researched | researched | researched | researched | researched | researched |
 | MR | Mauritania | researched | researched | researched | researched | researched | researched | pending |
-| MS | Montserrat | researched | researched | researched | blocked | researched | researched | pending |
+| MS | Montserrat | researched | researched | researched | blocked | researched | researched | researched |
 | MT | Malta | researched | researched | researched | researched | researched | researched | researched |
 | MU | Mauritius | researched | researched | researched | researched | researched | researched | researched |
 | MV | Maldives | researched | researched | researched | researched | researched | researched | researched |
@@ -248,7 +248,7 @@ a place fills a column; a cell is the row's status in that engine's matrix, or b
 | VG | British Virgin Islands | researched | researched | researched | blocked | researched | blocked | pending |
 | VI | U.S. Virgin Islands | researched | researched | researched | blocked | researched | blocked | researched |
 | VN | Vietnam | researched | researched | researched | researched | researched | researched | pending |
-| VU | Vanuatu | researched | researched | researched | blocked | blocked | researched | pending |
+| VU | Vanuatu | researched | researched | researched | blocked | blocked | researched | researched |
 | WF | Wallis and Futuna | researched | researched | researched | researched | blocked | researched | researched |
 | WS | Samoa | researched | researched | researched | researched | researched | researched | pending |
 | XK | Kosovo | researched | researched | researched | blocked | researched | researched | pending |
