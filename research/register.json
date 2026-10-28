@@ -22631,6 +22631,376 @@
      "said": "Article 6 : La validit\u00e9 du E-Passeport AES est de cinq (05) ans \u00e0 compter de la date de d\u00e9livrance."
     }
    ]
+  },
+  {
+   "id": "R-0629",
+   "fact": "papers.passports.MC",
+   "sought": "Monaco's passport fees and validity, from the Journal de Monaco",
+   "status": "found",
+   "value": {
+    "file": "research/sources/papers/passports/MC.json",
+    "sha256": "7429415ce4a39840835eb141c70302ed31ce2126f619ef2c22fc9b52ae2029fd"
+   },
+   "sources": [
+    {
+     "kind": "primary",
+     "url": "https://journaldemonaco.gouv.mc/Journaux/2021/Journal-8526/Ordonnance-Souveraine-n-8.459-du-15-janvier-2021-modifiant-l-Ordonnance-Souveraine-n-16.584-du-22-decembre-2004-relative-a-la-delivrance-des-passeports-modifiee",
+     "title": "Journal de Monaco n\u00b0 8526 (19 February 2021), Ordonnance Souveraine n\u00b0 8.459 du 15 janvier 2021 modifiant l'Ordonnance Souveraine n\u00b0 16.584 du 22 d\u00e9cembre 2004 relative \u00e0 la d\u00e9livrance des passeports, modifi\u00e9e",
+     "read": "2026-10-28",
+     "said": "\u00ab La dur\u00e9e de validit\u00e9 du passeport est limit\u00e9e \u00e0 dix ann\u00e9es \u00e0 compter de la date de sa d\u00e9livrance. La dur\u00e9e du passeport est r\u00e9duite \u00e0 cinq ann\u00e9es si le titulaire du passeport a moins de dix-huit ans \u00e0 la date de sa d\u00e9livrance et \u00e0 trois ans si le titulaire du passeport a moins de trois ans \u00e0 la date de sa d\u00e9livrance. Elle ne peut \u00eatre prolong\u00e9e. \u00bb. ... \u00ab La d\u00e9livrance du passeport donne lieu \u00e0 la perception d'un droit de 90 euros pour les passeports dont la dur\u00e9e de validit\u00e9 est de dix ans. Ce droit est de soixante euros (60 \u20ac) pour les passeports dont la dur\u00e9e de validit\u00e9 est de cinq ans et de trente euros (30 \u20ac) pour les passeports dont la dur\u00e9e de validit\u00e9 est de trois ans. \u00bb"
+    }
+   ]
+  },
+  {
+   "id": "R-0630",
+   "fact": "papers.passports.blocked.NR",
+   "sought": "Nauru's passport fee, time and validity for an ordinary citizen",
+   "status": "blocked",
+   "attempts": [
+    {
+     "method": "institution",
+     "tried": "Government of Nauru (www.naurugov.nr)",
+     "result": "The host did not answer this client.",
+     "date": "2026-10-28"
+    },
+    {
+     "method": "official-register",
+     "tried": "RONLAW, Nauru's online legal database (https://ronlaw.gov.nr/), fetched and rendered with a browser; PacLII's Passports Regulations 2011 (paclii.org/nr/legis/sub_leg/npa2011pr2011489)",
+     "result": "RONLAW is a script application whose page stays empty when rendered; PacLII answers this client with a Cloudflare block (not circumvented).",
+     "date": "2026-10-28"
+    },
+    {
+     "method": "web-search",
+     "tried": "'Nauru passport fee application Republic of Nauru passport office fee'",
+     "result": "Only the 2011 regulations' structure (Schedule 3: citizen investors, 48-hour processing, replacements) as indexed, and unofficial sites; no fee for an ordinary citizen read.",
+     "date": "2026-10-28"
+    },
+    {
+     "method": "trade-press",
+     "tried": "'Nauru passport fee Nauru Bulletin passport office new passport fee $ Naoero Passports Regulations'",
+     "result": "No Nauru Bulletin or press report of the fee; a 2017 gazette in PacLII (blocked) lists citizen-investor fees only.",
+     "date": "2026-10-28"
+    },
+    {
+     "method": "archive",
+     "tried": "The Wayback Machine's availability API for https://www.naurugov.nr/",
+     "result": "The API answered 429 Too Many Requests on every try this day; a snapshot, if any, could not be fetched here in any case (this environment's egress policy refuses web.archive.org, 403).",
+     "date": "2026-10-28"
+    }
+   ],
+   "notModeled": "passports.unkept"
+  },
+  {
+   "id": "R-0631",
+   "fact": "papers.passports.blocked.SZ",
+   "sought": "Eswatini's passport fee, time and validity",
+   "status": "blocked",
+   "attempts": [
+    {
+     "method": "institution",
+     "tried": "Government of Eswatini, Travel Documents and Passports (gov.sz/index.php/services-sp-22242747/travel-documents-and-passports, its www. address, and its article 313)",
+     "result": "The connection was reset each time (three requests).",
+     "date": "2026-10-28"
+    },
+    {
+     "method": "official-register",
+     "tried": "EswatiniLII's search for 'passport' (https://eswatinilii.org/search/?q=passport)",
+     "result": "The page's results are filled by a script; rendering it with a browser was refused (403), not circumvented.",
+     "date": "2026-10-28"
+    },
+    {
+     "method": "web-search",
+     "tried": "'Eswatini passport fee emalangeni Ministry of Home Affairs passport 32 pages 48 pages fee'",
+     "result": "The search index shows the Government page's figures (E150.00, E20.00 for fingerprints and a E2.00 revenue stamp, E172.00 in all) on a page this client could not read.",
+     "date": "2026-10-28"
+    },
+    {
+     "method": "trade-press",
+     "tried": "'Eswatini passport fee E150 Times of Eswatini OR Eswatini Observer new passport fees Home Affairs 2025'",
+     "result": "No press report of the fee.",
+     "date": "2026-10-28"
+    },
+    {
+     "method": "archive",
+     "tried": "The Wayback Machine's availability API for https://www.gov.sz/index.php/services-sp-22242747/travel-documents-and-passports",
+     "result": "The API answered 429 Too Many Requests on every try this day; a snapshot, if any, could not be fetched here in any case (this environment's egress policy refuses web.archive.org, 403).",
+     "date": "2026-10-28"
+    }
+   ],
+   "notModeled": "passports.unkept"
+  },
+  {
+   "id": "R-0632",
+   "fact": "papers.passports.blocked.BY",
+   "sought": "Belarus's fee in base units for the passport and the biometric passport, the base unit's value in force, and the times",
+   "status": "blocked",
+   "attempts": [
+    {
+     "method": "institution",
+     "tried": "Ministry of Internal Affairs (https://mvd.gov.by)",
+     "result": "The host did not answer this client.",
+     "date": "2026-10-28"
+    },
+    {
+     "method": "official-register",
+     "tried": "The National Legal Internet Portal (https://pravo.by), for the list of administrative procedures (Decree No. 200) and the base unit",
+     "result": "403 to this client.",
+     "date": "2026-10-28"
+    },
+    {
+     "method": "web-search",
+     "tried": "'Belarus passport for travel abroad state duty basic units 2026 biometric passport fee BYN', and in Russian 'mvd.gov.by \u0432\u044b\u0434\u0430\u0447\u0430 \u043f\u0430\u0441\u043f\u043e\u0440\u0442\u0430 \u0433\u0440\u0430\u0436\u0434\u0430\u043d\u0438\u043d\u0443 \u0420\u0435\u0441\u043f\u0443\u0431\u043b\u0438\u043a\u0438 \u0411\u0435\u043b\u0430\u0440\u0443\u0441\u044c \u0434\u043b\u044f \u0432\u044b\u0435\u0437\u0434\u0430 \u0437\u0430 \u0433\u0440\u0430\u043d\u0438\u0446\u0443 \u0431\u0438\u043e\u043c\u0435\u0442\u0440\u0438\u0447\u0435\u0441\u043a\u0438\u0439 \u043f\u0430\u0441\u043f\u043e\u0440\u0442 \u043f\u043b\u0430\u0442\u0430 \u0431\u0430\u0437\u043e\u0432\u0430\u044f \u0432\u0435\u043b\u0438\u0447\u0438\u043d\u0430 \u0441\u0440\u043e\u0447\u043d\u043e'",
+     "result": "Only the 2021 decree's figure as reported (2 base units for a biometric passport, then 29 rubles a unit) and press; no official current text.",
+     "date": "2026-10-28"
+    },
+    {
+     "method": "trade-press",
+     "tried": "Myfin.by, \u041a\u0430\u043a \u0437\u0430\u043c\u0435\u043d\u0438\u0442\u044c \u043f\u0430\u0441\u043f\u043e\u0440\u0442 \u0432 \u0411\u0435\u043b\u0430\u0440\u0443\u0441\u0438: \u0434\u043e\u043a\u0443\u043c\u0435\u043d\u0442\u044b, \u0441\u0440\u043e\u043a\u0438, \u0446\u0435\u043d\u044b, and Charter 97 (charter97.org/en/news/2026/8/19/695304/, 19 August 2026)",
+     "result": "Myfin answers 423 to this client; Charter 97 reports a citizen's account of local prices for urgent issue (two base units read online, 940 rubles quoted in Luninets) and no official schedule.",
+     "date": "2026-10-28"
+    },
+    {
+     "method": "archive",
+     "tried": "The Wayback Machine's availability API for https://mvd.gov.by/",
+     "result": "The API answered 429 Too Many Requests on every try this day; a snapshot, if any, could not be fetched here in any case (this environment's egress policy refuses web.archive.org, 403).",
+     "date": "2026-10-28"
+    }
+   ],
+   "notModeled": "passports.unkept"
+  },
+  {
+   "id": "R-0633",
+   "fact": "papers.passports.blocked.KG",
+   "sought": "Kyrgyzstan's fee for the passport for travel abroad, its time and validity",
+   "status": "blocked",
+   "attempts": [
+    {
+     "method": "institution",
+     "tried": "State Registration Service (grs.gov.kg, www.grs.gov.kg)",
+     "result": "The host did not answer this client.",
+     "date": "2026-10-28"
+    },
+    {
+     "method": "official-register",
+     "tried": "The Ministry of Justice's legal database (cbd.minjust.gov.kg), for the fee set by the antimonopoly regulator",
+     "result": "The host did not answer this client.",
+     "date": "2026-10-28"
+    },
+    {
+     "method": "web-search",
+     "tried": "'Kyrgyzstan passport fee som biometric passport ID card Tunduk 2025 cost of foreign passport'",
+     "result": "Only fees from earlier years in the press (530 soms and others); nothing for the current passport.",
+     "date": "2026-10-28"
+    },
+    {
+     "method": "trade-press",
+     "tried": "24.kg, New biometric passport introduced in Kyrgyzstan (24.kg/english/349558)",
+     "result": "Read: the new model's design and that exchange is voluntary; no fee or validity.",
+     "date": "2026-10-28"
+    },
+    {
+     "method": "archive",
+     "tried": "The Wayback Machine's availability API for https://grs.gov.kg/",
+     "result": "The API answered 429 Too Many Requests on every try this day; a snapshot, if any, could not be fetched here in any case (this environment's egress policy refuses web.archive.org, 403).",
+     "date": "2026-10-28"
+    }
+   ],
+   "notModeled": "passports.unkept"
+  },
+  {
+   "id": "R-0634",
+   "fact": "papers.passports.blocked.UZ",
+   "sought": "Uzbekistan's state duty for the passport for travel abroad, in base calculation values, and the base calculation value in force",
+   "status": "blocked",
+   "attempts": [
+    {
+     "method": "institution",
+     "tried": "The single portal of interactive public services (https://my.gov.uz) and the Ministry of Internal Affairs (iiv.uz)",
+     "result": "my.gov.uz's front page answers but shows no fee without signing in; iiv.uz did not answer.",
+     "date": "2026-10-28"
+    },
+    {
+     "method": "official-register",
+     "tried": "Lex.uz, the National Database of Legislation: its search for '\u0433\u043e\u0441\u0443\u0434\u0430\u0440\u0441\u0442\u0432\u0435\u043d\u043d\u043e\u0439 \u043f\u043e\u0448\u043b\u0438\u043d\u0435' (lex.uz/ru/search/nat), fetched and rendered",
+     "result": "The search page answers, but its results are loaded by a script and did not appear when rendered.",
+     "date": "2026-10-28"
+    },
+    {
+     "method": "web-search",
+     "tried": "'Uzbekistan biometric passport fee basic calculation value 2026 passport for travel abroad cost som', and in Russian 'lex.uz \u0437\u0430\u043a\u043e\u043d \u043e \u0433\u043e\u0441\u0443\u0434\u0430\u0440\u0441\u0442\u0432\u0435\u043d\u043d\u043e\u0439 \u043f\u043e\u0448\u043b\u0438\u043d\u0435 \u043f\u0430\u0441\u043f\u043e\u0440\u0442 \u0434\u043b\u044f \u0432\u044b\u0435\u0437\u0434\u0430 \u0437\u0430 \u0433\u0440\u0430\u043d\u0438\u0446\u0443 \u0431\u0430\u0437\u043e\u0432\u043e\u0439 \u0440\u0430\u0441\u0447\u0435\u0442\u043d\u043e\u0439 \u0432\u0435\u043b\u0438\u0447\u0438\u043d\u044b \u0440\u0430\u0437\u043c\u0435\u0440 \u043f\u043e\u0448\u043b\u0438\u043d\u044b \u0431\u0438\u043e\u043c\u0435\u0442\u0440\u0438\u0447\u0435\u0441\u043a\u0438\u0439'",
+     "result": "Only press: Spot.uz's report (January 2022) that the duty fell to one base calculation value, then 270,000 soums; no current official figure.",
+     "date": "2026-10-28"
+    },
+    {
+     "method": "trade-press",
+     "tried": "Kun.uz, How to get an international passport in Uzbekistan (17 February 2026)",
+     "result": "Read: the fee depends on age and the way of applying and is a multiple of the base calculation value (the text gives no amounts); validity ten years, five for children; up to ten working days.",
+     "date": "2026-10-28"
+    },
+    {
+     "method": "archive",
+     "tried": "The Wayback Machine's availability API for https://my.gov.uz/",
+     "result": "The API answered 429 Too Many Requests on every try this day; a snapshot, if any, could not be fetched here in any case (this environment's egress policy refuses web.archive.org, 403).",
+     "date": "2026-10-28"
+    }
+   ],
+   "notModeled": "passports.unkept"
+  },
+  {
+   "id": "R-0635",
+   "fact": "papers.passports.blocked.BO",
+   "sought": "Bolivia's electronic passport fee in bolivianos, time and validity",
+   "status": "blocked",
+   "attempts": [
+    {
+     "method": "institution",
+     "tried": "Direcci\u00f3n General de Migraci\u00f3n (https://www.migracion.gob.bo/)",
+     "result": "The server's certificate does not match its name, so the page was not read (verification kept on).",
+     "date": "2026-10-28"
+    },
+    {
+     "method": "official-register",
+     "tried": "Gaceta Oficial de Bolivia (www.gacetaoficialdebolivia.gob.bo), for the ministerial resolution setting the electronic passport's value under Decreto Supremo 3762",
+     "result": "The host did not answer this client.",
+     "date": "2026-10-28"
+    },
+    {
+     "method": "web-search",
+     "tried": "'Bolivia pasaporte electr\u00f3nico costo Bs DIGEMIG precio pasaporte 2026'",
+     "result": "Only Decreto Supremo 3762 (2018), which leaves the value to the ministries and sets six years' validity, as indexed; no fee.",
+     "date": "2026-10-28"
+    },
+    {
+     "method": "trade-press",
+     "tried": "'Bolivia costo del pasaporte electr\u00f3nico bolivianos Migraci\u00f3n 2025 Los Tiempos OR Opini\u00f3n OR El Deber precio pasaporte Bs'",
+     "result": "Only a consular price of US$85 (Bloomberg L\u00ednea, March 2023) and Los Tiempos' appointment notes, without the fee at home.",
+     "date": "2026-10-28"
+    },
+    {
+     "method": "archive",
+     "tried": "The Wayback Machine's availability API for https://www.migracion.gob.bo/",
+     "result": "The API answered 429 Too Many Requests on every try this day; a snapshot, if any, could not be fetched here in any case (this environment's egress policy refuses web.archive.org, 403).",
+     "date": "2026-10-28"
+    }
+   ],
+   "notModeled": "passports.unkept"
+  },
+  {
+   "id": "R-0636",
+   "fact": "papers.passports.blocked.AG",
+   "sought": "Antigua and Barbuda's passport fee at home in EC dollars, time and validity",
+   "status": "blocked",
+   "attempts": [
+    {
+     "method": "institution",
+     "tried": "Antigua & Barbuda Passport Office (https://passport.gov.ag/, its information page ?page_id=9) and its application forms for applicants 16 and older and under 16 (forms.gov.ag/passport/)",
+     "result": "The site lists only the forms and a contact; its information page answers 'Not found'; neither form states a fee.",
+     "date": "2026-10-28"
+    },
+    {
+     "method": "official-register",
+     "tried": "The Laws of Antigua and Barbuda (https://laws.gov.ag/), its alphabetical and statutory listings",
+     "result": "No passport act or regulation appears in the listings read.",
+     "date": "2026-10-28"
+    },
+    {
+     "method": "web-search",
+     "tried": "'Antigua and Barbuda passport fee EC$ Passport Office application fee adult child 2025', and \"ab.gov.ag passport office Antigua passport fees 'EC$' adult renewal new passport\"",
+     "result": "Only consular fees abroad (London \u00a350 and \u00a325 from 1 April 2025; New York US$90 and US$40); no fee at home.",
+     "date": "2026-10-28"
+    },
+    {
+     "method": "trade-press",
+     "tried": "'Antigua Observer passport fee increase Antigua and Barbuda passport costs EC$ Passport Office new fees'",
+     "result": "Only a 2018 report on immigration fees, not the passport's.",
+     "date": "2026-10-28"
+    },
+    {
+     "method": "archive",
+     "tried": "The Wayback Machine's availability API for https://passport.gov.ag/",
+     "result": "The API answered 429 Too Many Requests on every try this day; a snapshot, if any, could not be fetched here in any case (this environment's egress policy refuses web.archive.org, 403).",
+     "date": "2026-10-28"
+    }
+   ],
+   "notModeled": "passports.unkept"
+  },
+  {
+   "id": "R-0637",
+   "fact": "papers.passports.blocked.DJ",
+   "sought": "Djibouti's passport fee, time and validity",
+   "status": "blocked",
+   "attempts": [
+    {
+     "method": "institution",
+     "tried": "Police nationale (www.police.dj) and the Ministry of the Interior (www.interieur.gouv.dj)",
+     "result": "Neither host answered this client.",
+     "date": "2026-10-28"
+    },
+    {
+     "method": "official-register",
+     "tried": "The Journal Officiel on the Presidency's site (https://www.presidence.dj/, its Journal Officiel links), for d\u00e9cret 2017-053 and the fee",
+     "result": "The site answers; no passport fee text was reached from its pages; 'presidence.dj passeport ordinaire biom\u00e9trique d\u00e9cret 2017-053 tarif' found no text either.",
+     "date": "2026-10-28"
+    },
+    {
+     "method": "web-search",
+     "tried": "'Djibouti passeport biom\u00e9trique prix francs Djibouti 2025 Direction de la Police nationale passeport'",
+     "result": "Only a private guide (15,000 DJF 'de base') and old consular fees; no official figure.",
+     "date": "2026-10-28"
+    },
+    {
+     "method": "trade-press",
+     "tried": "La Nation (www.lanation.dj), its search for 'passeport'",
+     "result": "The connection was reset.",
+     "date": "2026-10-28"
+    },
+    {
+     "method": "archive",
+     "tried": "The Wayback Machine's availability API for https://www.police.dj/",
+     "result": "The API answered 429 Too Many Requests on every try this day; a snapshot, if any, could not be fetched here in any case (this environment's egress policy refuses web.archive.org, 403).",
+     "date": "2026-10-28"
+    }
+   ],
+   "notModeled": "passports.unkept"
+  },
+  {
+   "id": "R-0638",
+   "fact": "papers.passports.blocked.KM",
+   "sought": "The Comoros' passport fee, time and validity",
+   "status": "blocked",
+   "attempts": [
+    {
+     "method": "institution",
+     "tried": "Ministry of the Interior (www.interieur.gouv.km)",
+     "result": "The host did not answer this client.",
+     "date": "2026-10-28"
+    },
+    {
+     "method": "official-register",
+     "tried": "The Presidency (https://beit-salam.km), for decrees and the Journal officiel on the passport",
+     "result": "The site answers; nothing on the passport's fee was found on it.",
+     "date": "2026-10-28"
+    },
+    {
+     "method": "web-search",
+     "tried": "'Comores passeport biom\u00e9trique prix francs comoriens 2025 Direction de la S\u00fbret\u00e9 du Territoire'",
+     "result": "Results are about France's passport; nothing on the Comoros' fee.",
+     "date": "2026-10-28"
+    },
+    {
+     "method": "trade-press",
+     "tried": "Al-Watwan (alwatwan.net), and \"Comores passeport prix 'francs comoriens' Al-Watwan passeport biom\u00e9trique co\u00fbt nouveau passeport\"",
+     "result": "Al-Watwan's site answered 500; the search found no press report of the fee (only the EU's PRADO entry: ten years, 32 pages).",
+     "date": "2026-10-28"
+    },
+    {
+     "method": "archive",
+     "tried": "The Wayback Machine's availability API for https://www.interieur.gouv.km/",
+     "result": "The API answered 429 Too Many Requests on every try this day; a snapshot, if any, could not be fetched here in any case (this environment's egress policy refuses web.archive.org, 403).",
+     "date": "2026-10-28"
+    }
+   ],
+   "notModeled": "passports.unkept"
   }
  ]
 }

@@ -32,10 +32,10 @@ restarts. Read `CLAUDE.md` and the owner's package in `docs/` first.
   after all five methods (R-0428 to R-0449; the next step names them and what to try again), none pending.
 - Layer 3 (the person's papers and money) is in progress. Built: the passports engine (`papers.passports`,
   `src/papers/passports/`), compiled by `tools/papers/passports/` from the research files, at 100% mutation score
-  (406 mutants). Its matrix (`coverage/passports-countries.json`): 116 researched, 6 proven (no places), 130 pending
-  (2026-10-28); every research file is in the engine's form. Next: research the pending countries (step 5 below,
-  which names the attempts so far), turning each into a blocker after all five methods, then ID, visas, residence
-  and work permissions, and the banks.
+  (406 mutants). Its matrix (`coverage/passports-countries.json`): 167 researched, 21 blocked, 6 proven (no places),
+  58 pending (2026-10-28); every research file is in the engine's form. Next: research the pending countries (step 5
+  below, which names the attempts so far), turning each into a blocker after all five methods, then ID, visas,
+  residence and work permissions, and the banks.
 
 The passports' form (decided 2026-10-28, the engine's reader being the Papers page: apply, pay, wait, hold a
 passport valid so many years). Each research file has `routes`, one per way the office takes an application: `id`,
@@ -719,38 +719,43 @@ What layer 0 holds:
    `research/sources/papers/passports/<CC>.json` (`papers.passports.<CC>`, R-0451 on): the ordinary passport's fees
    by age and channel in the country's currency, its validity, the standard processing time and the urgent services,
    from the passport office's own pages or, where those refuse this client, the law or regulation that sets them.
-   Each file is in the engine's form described under layer 3 above. 116 so far (2026-10-28), territories included:
-   AE, AR, AS, AT, AU, AW, AX, AZ, BA, BB, BE, BM, BQ, BR, BS, BW, BZ, CA, CC, CH, CL, CN, CO, CW, CX, CZ, DE, DK,
-   DM, EC, EE, ES, FI, FJ, FR, GB, GE, GF, GG, GH, GI, GP, GR, GT, GU, GY, HK, HR, HU, ID, IE, IM, IN, IS, IT, JM,
-   JO, JP, KR, KW, KY, KZ, LB, LC, LI, LU, LV, MD, MO, MP, MQ, MS, MT, MU, MV, MW, MX, MY, NC, NF, NG, NL, NP, NZ,
-   PE, PF, PK, PL, PR, PT, PY, RE, RO, RS, RU, RW, SC, SE, SG, SH, SI, SK, SV, SX, TR, TT, TW, UA, UG, US, UY, VI,
-   VU, WF, YT, ZA. Secondary (the press reporting the primary, which refuses this client or wasn't found): Nigeria,
-   Paraguay's 2022 amount, Türkiye's 2026 duties (Milliyet, after the Presidential decision's 18.95%; earlier
-   articles printed estimates), Kuwait's KD 100 of October 2026 (Gulf News), New Zealand's urgent fee (1News). Parts
-   still open are said in each file's note (most processing times; validity in Latvia, Kazakhstan, Mauritius,
-   Seychelles, Dominica, Vanuatu, Kuwait and others; Malawi's fee). Ways of reading that worked where a host
-   refused: the institution's own documents on another of its hosts (Australia's fee notice on its High Commission
-   in Port Moresby; Azerbaijan's MFA), the state's legal database rendered where it answers curl but needs
-   JavaScript (Kazakhstan's adilet.zan.kz), a server that omits its intermediate certificate read with the chain
-   completed from the certificate's own AIA issuer URL, verification kept on (mfa.gov.az; passeport.ma then gives
-   an empty reply), and a site's own linked pages scanned for its fee table (Mauritius, Seychelles, Vanuatu, the
-   French collectivities). The attempts for the rest, to become blockers after all five methods, are logged:
-   Armenia (only consular fees found), Montenegro and Albania (only old or secondary figures), North Macedonia
-   (mvr.gov.mk resets the connection), Bangladesh (epassport.gov.bd 403; dip.gov.bd serves a self-signed
-   certificate), Tanzania (a JS page that renders empty), Namibia (connection reset), Zambia (only visa fees on the
-   immigration site), Oman, Brunei, Bhutan (connection reset), Honduras (no amounts on its page), Panama, Bolivia,
-   Israel (Cloudflare), the Philippines (403), Kenya (its certificate chain includes a self-signed certificate; the
-   press conflicts), Norway (lovdata.no 405, norway.no a Cloudflare challenge), Bulgaria (2026's euro tariff not
-   found), Lithuania (only the consular fee), Thailand (embassy tables only), Cyprus (an Azure WAF), Morocco (an
-   empty reply; the 2026 tax code's PDF not found), Vietnam (Circular 64/2025 only on legal sites that refuse or
-   render nothing), the Dominican Republic (its charter gives no fees), Costa Rica, Egypt (the press conflicts),
-   Algeria, Bahrain and Qatar (old or secondary figures), Greenland and the Faroe Islands, Jersey (a WAF block page),
-   Anguilla, the British Virgin Islands, the Turks and Caicos, Antigua, Grenada (a cookie challenge, not worked
-   around), Saint Vincent, Saint Kitts and Nevis (the fee form is gone, 404; the Nevis administration's page says
-   only "approximately $250"), Monaco (its English host gives an empty reply), Andorra, Uzbekistan, Mongolia,
-   Palestine, Saudi Arabia, Suriname (the 2026 decree's annexes are document models), Venezuela (fees in "Ref."
-   units of an unnamed currency), Tonga, Samoa and Palau (PacLII behind Cloudflare). The scratch log of every
-   attempt is to be carried into the blockers. Then ID, visas, residence and work permissions, and the banks.
+   Each file is in the engine's form described under layer 3 above. 167 researched (2026-10-28), territories included:
+   AE AI AM AR AS AT AU AW AX AZ BA BB BD BE BF BH BJ BM BQ BR BS BW BZ CA CC CD CH CK CL CM CN CO CR CU CV CW CX CZ
+   DE DK DM DZ EC EE ES ET FI FJ FM FO FR GB GE GF GG GH GI GM GP GR GT GU GY HK HR HU ID IE IM IN IS IT JE JM JO JP
+   KH KR KW KY KZ LA LB LC LI LK LR LS LU LV MC MD ME MF MG MH MK ML MO MP MQ MS MT MU MV MW MX MY NC NE NF NG NL NO
+   NP NU NZ PA PE PF PG PH PK PL PM PR PT PY RE RO RS RU RW SA SB SC SE SG SH SI SJ SK SM SV SX TD TF TH TJ TK TR TT
+   TW UA UG US UY VG VI VN VU WF WS XK YT ZA ZW. Where only the press carries the fee (the office refuses this client
+   or publishes none), the file cites it as secondary, naming the primary it quotes (Nigeria, Paraguay's 2022
+   amount, Türkiye, Kuwait, New Zealand's urgent fee, the Philippines, Saudi Arabia, Vietnam, Thailand, Bangladesh,
+   Cameroon, Zimbabwe, Burkina Faso, Niger, DR Congo, Chad, Laos, Cambodia, Papua New Guinea's express fee, Jersey,
+   Panama, the Gambia, Algeria, Cuba, Armenia's coming fee, Costa Rica). Parts still open are said in each file's
+   note (most processing times; many validities; fees left unpaid where in two currencies, as Costa Rica, Tajikistan
+   and Cuba abroad, or not yet in force, as Armenia's at home). Ways of reading that worked where a host refused:
+   the institution's own documents on another of its hosts (Australia's fee notice in Port Moresby; Azerbaijan's
+   MFA), the state's legal database (Kazakhstan's adilet, Madagascar's Centre National LEGIS, Mali's SGG search and
+   Journal officiel PDFs, Monaco's Journal de Monaco, Bahrain's LLOC, the FSM Congress's bill), a server missing its
+   intermediate certificate read with the chain completed from the certificate's own AIA issuer URL, verification
+   kept on (mfa.gov.az, passport.gov.ag), and a site's own linked pages scanned for its fee table.
+   21 blocked after all five methods (`papers.passports.blocked.<CC>`, R-0614 on, notModeled `passports.unkept`):
+   AG BL BO BT BY DJ KG KI KM NR OM PW SD SL SY SZ TC TO TV UZ ZM; each blocker names what to try again. The archive
+   method: archive.org's availability API answers (it rate-limits at 429 when asked often; space the calls a minute
+   apart), but fetching any web.archive.org snapshot is refused by this environment's egress policy (403, 2026-10-28),
+   so the owner's archive ruling can only be used once web.archive.org is allowed under the environment's Network
+   access. Snapshots that exist and would likely unblock: slid.gov.sl/passport-fees (2026-02-11), mfa.gov.bt/faqs
+   (2026-09-24), gov.sz's travel documents page (2026-08-15), falepilipathway.gov.au/support-tuvalu (2026-10-07).
+   58 pending: AD AF AL AO BG BI BN CF CG CI CY DO EG EH ER FK GA GD GL GN GQ GS GW HN HT IL IO IQ IR KE KN KP LT LY
+   MA MM MN MR MZ NA NI PN PS QA SN SO SR SS ST TG TL TM TN TZ VA VC VE YE. Attempts so far: Albania and Bulgaria (old
+   or secondary figures; qbz.gov.al answers, its search untried), Tanzania (a JS fee page that renders empty; search
+   snippet: TSh 130,000 + 20,000 form), Namibia (reset), Honduras (no amounts), Israel (Cloudflare), Kenya (a
+   self-signed certificate in the chain; press conflicts; new.kenyalaw.org answers), Lithuania (only the consular
+   fee; e-tar.lt 403), Cyprus (an Azure WAF), Morocco (empty reply; sgg.gov.ma answers), the Dominican Republic,
+   Egypt (press conflicts), Qatar (almeezan.qa answers, untried), Greenland (only the fingerprint fee; lovgivning.gl
+   answers, untried), Grenada (a cookie challenge, not worked around), Saint Vincent, Saint Kitts and Nevis (the fee
+   form is gone; Nevis says only "approximately $250"), Andorra (tramits.ad and govern.ad answer; the fee page not
+   found), Mongolia (legalinfo.mn answers, untried), Palestine,
+   Suriname, Venezuela (fees in "Ref." units; a search snippet of El Diario, September 2026, gives $108 to $216, unread), Togo (its
+   Journal officiel's search finds only colonial-era texts), Senegal (jo.gouv.sn does not answer), The legal registers are the method most worth trying next (they answered for Madagascar, Mali
+   and Monaco). Then ID, visas, residence and work permissions, and the banks.
    A question the engine will need settled: which countries issue passports of their own
    (Hong Kong does; most territories use their sovereign's), recorded with each file.
 
