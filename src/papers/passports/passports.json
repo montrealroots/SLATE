@@ -4613,6 +4613,43 @@
    "abroad"
   ]
  },
+ "TH": {
+  "currency": "THB",
+  "routes": [
+   {
+    "id": "normal",
+    "where": "home",
+    "speed": "standard",
+    "within": null
+   },
+   {
+    "id": "express",
+    "where": "home",
+    "speed": "urgent",
+    "within": {
+     "n": 1,
+     "unit": "day"
+    }
+   }
+  ],
+  "bands": [
+   {
+    "validYears": 5,
+    "pay": {
+     "normal": 100000,
+     "express": 300000
+    }
+   },
+   {
+    "validYears": 10,
+    "pay": {
+     "normal": 150000,
+     "express": 350000
+    },
+    "from": 20
+   }
+  ]
+ },
  "TJ": {
   "currency": "TJS",
   "routes": [
