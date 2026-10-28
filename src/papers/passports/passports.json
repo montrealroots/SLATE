@@ -2034,6 +2034,55 @@
    }
   ]
  },
+ "JO": {
+  "currency": "JOD",
+  "routes": [
+   {
+    "id": "office",
+    "where": "home",
+    "speed": "standard",
+    "within": {
+     "n": 45,
+     "unit": "minute"
+    }
+   },
+   {
+    "id": "urgent-office",
+    "where": "home",
+    "speed": "urgent",
+    "within": {
+     "n": 45,
+     "unit": "minute"
+    }
+   },
+   {
+    "id": "abroad",
+    "where": "abroad",
+    "speed": "standard",
+    "within": null
+   }
+  ],
+  "bands": [
+   {
+    "validYears": null,
+    "pay": {
+     "office": 50000,
+     "urgent-office": 75000,
+     "abroad": 100000
+    },
+    "from": 16
+   },
+   {
+    "validYears": null,
+    "pay": {
+     "office": 25000,
+     "urgent-office": 50000,
+     "abroad": 100000
+    },
+    "under": 16
+   }
+  ]
+ },
  "JP": {
   "currency": "JPY",
   "routes": [
@@ -2164,6 +2213,39 @@
      "standard": 7500
     },
     "under": 16
+   }
+  ]
+ },
+ "LB": {
+  "currency": "LBP",
+  "routes": [
+   {
+    "id": "standard",
+    "where": "home",
+    "speed": "standard",
+    "within": null
+   },
+   {
+    "id": "immediate",
+    "where": "home",
+    "speed": "urgent",
+    "within": null
+   }
+  ],
+  "bands": [
+   {
+    "validYears": 5,
+    "pay": {
+     "standard": 600000000,
+     "immediate": 1580000000
+    }
+   },
+   {
+    "validYears": 10,
+    "pay": {
+     "standard": 1000000000,
+     "immediate": 1980000000
+    }
    }
   ]
  },

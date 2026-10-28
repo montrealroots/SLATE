@@ -730,7 +730,7 @@ What layer 0 holds:
    (only consular fees found), Kazakhstan (only secondary sources), Montenegro and Albania (only old or secondary
    figures found), North Macedonia (mvr.gov.mk resets the connection), Bangladesh (epassport.gov.bd 403; dip.gov.bd's
    certificate fails verification), Mauritius (its pages give no fee), Tanzania (a JS page that renders empty),
-   Namibia (its certificate fails verification), Zambia, Jordan, Oman, Brunei, Bhutan (connection reset), Honduras
+   Namibia (its certificate fails verification), Zambia, Oman, Brunei, Bhutan (connection reset), Honduras
    (no amounts on its page), Panama (its host fails at the proxy), Bolivia, New Zealand, Ireland's site, Israel
    (Cloudflare), the Philippines (403), Latvia (connection closed), Kenya (its certificate chain fails verification;
    TLS checks stay on), Norway (the fee is in the pass- og ID-kortforskriften § 7-1; lovdata.no answers 405 and

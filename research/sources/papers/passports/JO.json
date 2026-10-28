@@ -1,0 +1,23 @@
+{
+ "country": "JO",
+ "office": "the Civil Status and Passports Department; abroad, Jordan's embassies and consulates",
+ "currency": "JOD",
+ "routes": [
+  {"id": "office", "where": "home", "speed": "standard", "within": {"n": 45, "unit": "minute"}, "label": "at a Department office: the service takes 45 minutes"},
+  {"id": "urgent-office", "where": "home", "speed": "urgent", "within": {"n": 45, "unit": "minute"}, "label": "at the urgent service office (JOD 25 more)"},
+  {"id": "abroad", "where": "abroad", "speed": "standard", "within": null, "label": "outside the country, or the equivalent in the embassy's or consulate's currency"}
+ ],
+ "passports": [
+  {"for": "adult", "from": 16, "validYears": null, "pay": {"office": "50", "urgent-office": "75", "abroad": "100"}},
+  {"for": "child", "under": 16, "validYears": null, "pay": {"office": "25", "urgent-office": "50", "abroad": "100"}}
+ ],
+ "note": "The fees on the Department's page for renewing an ordinary passport, taken as the passport's: from 16 the JOD 50 is for a passport expired or with under 180 days left; one with more left costs JOD 100, which the game doesn't model. Members of the armed forces and security services pay JOD 20. The page for a first issue reset the connection. Validity is a lead.",
+ "sources": [
+  {
+   "url": "https://www.cspd.gov.jo/AR/ListDetails/_%D8%AF%D9%84%D9%8A%D9%84__%D8%A7%D9%84%D8%AE%D8%AF%D9%85%D8%A7%D8%AA/41/29",
+   "title": "دائرة الأحوال المدنية والجوازات (cspd.gov.jo), تجديد جواز السفر العادي",
+   "read": "2026-10-28",
+   "said": "تجديد جواز السفر العادي الفئة المستفيدة المواطنون الأردنيون أماكن تقديم الخدمة مكاتب دائرة الأحوال المدنية والجوازات السفارات الأردنية والقنصليات في الخارج. ... الزمن المستغرق لتقديم الخدمة 45 دقيقة ... - يضاف 25 دينار في حال قدم في مكتب الخدمة المستعجلة الرسوم 20 دينار لأفراد القوات المسلحة الاردنية والاجهزة الامنية والدفاع المدني والمشاركين بقوات حفظ السلام وفي حالة تغيير الحالة الإجتماعية وتغيير الصفة العسكرية الى المدنية وبالعكس 25 دينار لمن هم دون السادسة عشر 20 دينار لجواز السفر الممتلئ الصفحات وساري المفعول 50 دينار لمن هم فوق سن السادسة عشر بيوم وجواز السفر منتهي او متبقي به اقل من (180) يوم 100 دينار لجواز السفر غير المنتهي أو متبقي اكثر من 180 يوم على انتهاءه 100 دينار لمن هم خارج البلاد او ما يعادلها بعملة السفارة او القنصلية"
+  }
+ ]
+}

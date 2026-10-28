@@ -119,7 +119,7 @@ a place fills a column; a cell is the row's status in that engine's matrix, or b
 | IT | Italy | researched | researched | researched | researched | researched | researched | researched |
 | JE | Jersey | researched | researched | researched | researched | researched | researched | pending |
 | JM | Jamaica | researched | researched | researched | researched | researched | researched | researched |
-| JO | Jordan | researched | researched | researched | researched | researched | researched | pending |
+| JO | Jordan | researched | researched | researched | researched | researched | researched | researched |
 | JP | Japan | researched | researched | researched | researched | researched | researched | researched |
 | KE | Kenya | researched | researched | researched | researched | researched | researched | pending |
 | KG | Kyrgyzstan | researched | researched | researched | researched | researched | researched | pending |
@@ -133,7 +133,7 @@ a place fills a column; a cell is the row's status in that engine's matrix, or b
 | KY | Cayman Islands | researched | researched | researched | blocked | researched | researched | researched |
 | KZ | Kazakhstan | researched | researched | researched | researched | researched | researched | pending |
 | LA | Laos | researched | researched | researched | researched | blocked | researched | pending |
-| LB | Lebanon | researched | researched | researched | blocked | researched | researched | pending |
+| LB | Lebanon | researched | researched | researched | blocked | researched | researched | researched |
 | LC | Saint Lucia | researched | researched | researched | researched | researched | researched | researched |
 | LI | Liechtenstein | researched | researched | researched | researched | researched | researched | pending |
 | LK | Sri Lanka | researched | researched | researched | researched | researched | researched | pending |
