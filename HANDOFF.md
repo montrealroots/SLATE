@@ -206,16 +206,17 @@ What layer 0 holds:
    - Archive snapshots that would likely unblock a country, not fetched: the owner stopped a web.archive.org
      snapshot fetch on 2026-10-27 and hasn't ruled on them; ask before fetching. ST: visitsaotomeprincipe.st/pt/
      feriados (16 June 2026, Lei 8/2025's sixteen days); HT: Le Relief's Carnival article (10 May 2026); IQ: t4p.co's
-     article on Law 12/2024's list (16 February 2025); IR: calendar.ut.ac.ir (12 July 2026; no .ir host answers here); GQ: Ahora EG's article quoting Decreto 9/2007 (17 April 2025).
-   - HT, SL, ST, CV, SO, IQ, IR, LA, MM, AF, KP, MW, SZ, LS, LR, GM, SS, CF, GQ, GW, SJ: blocked 2026-10-27 (R-0322 on); retry each blocker's sources. TJ: deferred (the
+     article on Law 12/2024's list (16 February 2025); IR: calendar.ut.ac.ir (12 July 2026; no .ir host answers here); GQ: Ahora EG's article quoting Decreto 9/2007 (17 April 2025); FO: Starvsfelagið's handbook list of the halgidagar (8 June 2026).
+   - HT, SL, ST, CV, SO, IQ, IR, LA, MM, AF, KP, MW, SZ, LS, LR, GM, SS, CF, GQ, GW, SJ, FO: blocked 2026-10-27 (R-0322 on); retry each blocker's sources. TJ: deferred (the
      law's current text, ncz.tj, doesn't answer; its 2012 text and the Labour Code are read, see below).
    - AT: RIS bot-check; wien.gv.at times out -> retry
    - LU: guichet page moved; try legilux Code du travail L.232-2
    - PT: regional days (Azores Pentecost Monday; Madeira 1 July, 26 December) need the regional decrees
    - FI: tyosuojelu bot-check; finlex new URLs; church act + Independence Day law
-   - FO: logir.fo Anordning 441/1923 is about peace, not days off; no official day-off list found (school calendar
-     only). Retry: frítíðarlóg 30/1986, gov.fo, Vinnuhúsið; then blocker.
-   - GL, SJ: deferred (Danish/Norwegian law extent).
+   - FO: blocked 2026-10-28: Anordning 441/1923's text is unread (logir.fo renders blank headless); the only list,
+     Starvsfelagið's handbook, refuses curl (HTTP 455), and the classifier rules a browser past such a refusal
+     circumvention, so it's not a source. Retry: frítíðarlóg 30/1986, gov.fo, Vinnuhúsið.
+   - GL: done; SJ: blocked (see below and the blocked list).
    - US.NH: nh.gov (DAS, courts, employee portal, education), gc.nh.gov and Justia all refuse (403) on 2026-10-27;
      state employees' day after Thanksgiving unread. US.TN: tn.gov 403.
    - PR: done 2026-10-27 from OATRH's Memorando Especial 12-2026 (2027's list; docs.pr.gov/files/OATRH/...) and
@@ -490,9 +491,6 @@ What layer 0 holds:
      of that date) and its morrow. The New Year 1448 and the Maoulid by Umm al-Qura (16 June, 25 August): open, since
      the New Year address is dated 16 June and 2025's holiday fell the day after its celebration, so 17 June may be the
      day kept. Art. 3's bridge days are declared one by one: not kept.
-   - FO: done 2026-10-27: the eleven church halgidagar of Kongelig Anordning nr. 441 af 21. november 1923 (named by
-     the Løgting's 2010 motion), as Starvsfelagið's handbook lists them (logir.fo, the law collection, renders blank
-     to a headless browser). Ólavsøka, the eves and Flaggdagur are collective-agreement days, not law: not kept.
    - GL: done 2026-10-27: helligdagsloven (lovbkg. 1023/2012, nalunaarutit.gl, in force there) protects "folkekirkens
      helligdage" without listing them; Greenland keeps Denmark's list (borger.dk, as the DK row) plus Store bededag,
      which Naalakkersuisut says the Danish abolition doesn't reach (§ 37 answer 019/2023). Open: the National Day, 21

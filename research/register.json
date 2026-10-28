@@ -15166,35 +15166,6 @@
    "notModeled": "holidays.unkept"
   },
   {
-   "id": "R-0355",
-   "fact": "world.holidays.FO",
-   "sought": "Faroe Islands' public holidays, the days off its law or its government's list names, nationally and in each first-level region that keeps its own",
-   "status": "found",
-   "value": {
-    "file": "research/sources/holidays/FO.json",
-    "sha256": "6bf160d0543c4725d94e50d22d2b2011f8beed2db2116eeaa030493979ec66c3",
-    "lists": 1,
-    "years": "2026"
-   },
-   "sources": [
-    {
-     "kind": "primary",
-     "url": "https://www.logting.fo/files/casestate/10291/012.10%20Halgidagslog-olavsokufri-Sjurdur.pdf",
-     "title": "Løgtingið, Løgtingsmál nr. 12/2010: Uppskot til samtyktar um at endurskoða halgidagslógina (13 August 2010)",
-     "read": "2026-10-27",
-     "said": "Fólkakirkjan er yvirtikin, og harvið eisini \"Kongelig Anordning nr. 441 af 21. november 1923\", sum ásetir hvørjir dagar eru at rokna sum kirkjuligir halgidagar, at danski grundlógardagurin skal vera hálvur frídagur, og hvat fyri virksemi kann fara fram hesar dagar. ... landsins tjóðardagur - ólavsøkudagur – ikki er almennur frídagur. Í staðin hava fakfeløgini hvørt sær gjørt sáttmálar um, hvussu arbeiðast skal ólavsøkuaftan og ólavsøkudag."
-    },
-    {
-     "kind": "secondary",
-     "url": "https://www.starvsfelag.fo/limahandbokin/i-starvi/fritidin/fastir-fridagar/",
-     "title": "Starvsfelagið (the public employees' union), Limahandbókin: Fastir frídagar",
-     "read": "2026-10-27",
-     "quotes": "https://www.logir.fo/",
-     "said": "Serstøku frídagarnir eru fyri tað fyrsta teir almennu halgidagarnir og harafturat teir serligu frídagarnir, sum eru ásettir í sáttmálunum hjá Starvsfelagnum. Halgidagarnir eru: Nýggjársdagur, Skírisdagur, Langi fríggjadagur, Páskadagur, 2. páskadagur, Dýri biðidagur, Kristi himmalferðardagur, Hvítusunnudagur, 2. hvítusunnudagur, Jóladagur, 2. jóladagur. ... Serstakir frídagarnir eftir sáttmálunum: Nýggjársaftan, Páskaaftan, Flaggdagur, Ólavsøkudagur, Jólaaftan. Grundlógardagur og ólavsøkuaftan eru hálvir frídagar, t.e. eftir kl. 12."
-    }
-   ]
-  },
-  {
    "id": "R-0356",
    "fact": "world.holidays.GL",
    "sought": "Greenland's public holidays, the days off its law or its government's list names, nationally and in each first-level region that keeps its own",
@@ -15286,6 +15257,45 @@
      "said": "h. de dag waarop de verjaardag van de Koningin officieel wordt gevierd; i. de Dag van de Arbeid; ... De Dag van de Arbeid wordt jaarlijks gevierd op 1 mei, tenzij die dag op een zondag valt of op die dag de verjaardag van de Koningin officieel wordt gevierd, in welke gevallen de Dag van de Arbeid op de eerst volgende werkdag wordt gevierd."
     }
    ]
+  },
+  {
+   "fact": "world.holidays.blocked.FO",
+   "sought": "The Faroe Islands' public holidays: the church holidays Kongelig Anordning nr. 441 af 21. november 1923 names (the law the Løgting's motion 12/2010 cites), and whether any day besides is one by law",
+   "status": "blocked",
+   "attempts": [
+    {
+     "method": "institution",
+     "tried": "The Løgting (logting.fo), the Government's collections (landsstyri.cdn.fo), the Folk Church (folkakirkjan.fo) and the unions' pages (Starvsfelagið, Føroya Arbeiðarafelag)",
+     "result": "The Løgting's motion 12/2010 (13 August 2010) names the 1923 ordinance as the law of the church holidays and says Ólavsøka is no public holiday, without listing the days. The other sites refuse this game's requests (HTTP 403, 455); a list held only behind such a refusal isn't read.",
+     "date": "2026-10-28"
+    },
+    {
+     "method": "official-register",
+     "tried": "Lógasavnið (logir.fo), for the 1923 ordinance and any Faroese holiday law; the Løgting's law index (tilfar.lms.fo)",
+     "result": "logir.fo's search needs a browser and renders blank to a headless one; tilfar.lms.fo's certificate doesn't match its name, so it isn't read.",
+     "date": "2026-10-28"
+    },
+    {
+     "method": "web-search",
+     "tried": "'Føroyar halgidagar lóg logir.fo \"halgidagar\" Ólavsøka frídagur løgtingslóg'; 'logir.fo halgidagsfriður OR \"halgidagar\" OR \"helligdage\" Færøerne anordning lóg'; 'løgtingslóg um halgidagar 2018 ólavsøkudagur almennur frídagur'; '\"Skírisdagur\" \"Dýri biðidagur\" \"2. hvítusunnudagur\" halgidagar sáttmáli pdf'; 'halgidagar 2026 Gjaldstovan OR TAKS OR Fíggjarmálaráðið'",
+     "result": "School calendars (saf.fo, svs.fo) and calendar sites only; no official list of the days.",
+     "date": "2026-10-28"
+    },
+    {
+     "method": "trade-press",
+     "tried": "KVF's yearly articles on the days off ('Her eru frídagarnir í 2018')",
+     "result": "Found by search only for 2018; no 2026 article and no law named.",
+     "date": "2026-10-28"
+    },
+    {
+     "method": "archive",
+     "tried": "The Wayback Machine's availability index for Starvsfelagið's handbook page and logir.fo",
+     "result": "Snapshots exist (8 June 2026; 23 October 2026) but weren't fetched, pending the owner's ruling on snapshots.",
+     "date": "2026-10-28"
+    }
+   ],
+   "notModeled": "holidays.unkept",
+   "id": "R-0359"
   }
  ]
 }
