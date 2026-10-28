@@ -71,7 +71,7 @@ a place fills a column; a cell is the row's status in that engine's matrix, or b
 | DZ | Algeria | researched | researched | researched | researched | researched | researched | researched | pending |
 | EC | Ecuador | researched | researched | researched | researched | researched | researched | researched | researched |
 | EE | Estonia | researched | researched | researched | researched | researched | researched | researched | researched |
-| EG | Egypt | researched | researched | researched | researched | researched | researched | blocked | pending |
+| EG | Egypt | researched | researched | researched | researched | researched | researched | blocked | researched |
 | EH | Western Sahara | researched | researched | researched | researched | researched | researched | researched | researched |
 | ER | Eritrea | researched | researched | researched | researched | blocked | blocked | researched | pending |
 | ES | Spain | researched | researched | researched | researched | researched | researched | researched | researched |
@@ -109,7 +109,7 @@ a place fills a column; a cell is the row's status in that engine's matrix, or b
 | HU | Hungary | researched | researched | researched | researched | researched | researched | researched | researched |
 | ID | Indonesia | researched | researched | researched | researched | researched | researched | researched | researched |
 | IE | Ireland | researched | researched | researched | researched | researched | researched | researched | researched |
-| IL | Israel | researched | researched | researched | researched | researched | researched | researched | pending |
+| IL | Israel | researched | researched | researched | researched | researched | researched | researched | researched |
 | IM | Isle of Man | researched | researched | researched | researched | blocked | researched | researched | researched |
 | IN | India | researched | researched | researched | researched | blocked | researched | researched | researched |
 | IO | British Indian Ocean Territory | researched | researched | researched | blocked | blocked | researched | researched | researched |

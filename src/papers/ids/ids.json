@@ -1079,6 +1079,70 @@
    }
   ]
  },
+ "EG": {
+  "document": "بطاقة الرقم القومي (National ID card)",
+  "currency": "EGP",
+  "routes": [
+   {
+    "id": "ordinary",
+    "where": "home",
+    "speed": "standard",
+    "within": {
+     "n": 15,
+     "unit": "day"
+    }
+   },
+   {
+    "id": "urgent",
+    "where": "home",
+    "speed": "urgent",
+    "within": {
+     "n": 3,
+     "unit": "day"
+    }
+   },
+   {
+    "id": "special",
+    "where": "home",
+    "speed": "urgent",
+    "within": {
+     "n": 24,
+     "unit": "hour"
+    }
+   },
+   {
+    "id": "vip",
+    "where": "home",
+    "speed": "urgent",
+    "within": {
+     "n": 30,
+     "unit": "minute"
+    }
+   },
+   {
+    "id": "instant",
+    "where": "home",
+    "speed": "urgent",
+    "within": {
+     "n": 1,
+     "unit": "minute"
+    }
+   }
+  ],
+  "bands": [
+   {
+    "validYears": 7,
+    "pay": {
+     "ordinary": 5000,
+     "urgent": 12500,
+     "special": 17500,
+     "vip": 51500,
+     "instant": 80000
+    },
+    "from": 15
+   }
+  ]
+ },
  "EH": {
   "issuedBy": "MA"
  },
@@ -1573,6 +1637,27 @@
  },
  "IE": {
   "none": true
+ },
+ "IL": {
+  "document": "Teudat Zehut (biometric identity card)",
+  "currency": "ILS",
+  "routes": [
+   {
+    "id": "bureau",
+    "where": "home",
+    "speed": "standard",
+    "within": null
+   }
+  ],
+  "bands": [
+   {
+    "validYears": null,
+    "pay": {
+     "bureau": 0
+    },
+    "from": 16
+   }
+  ]
  },
  "IM": {
   "issuedBy": "GB"
