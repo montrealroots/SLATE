@@ -520,6 +520,11 @@ What layer 0 holds:
      to 23 March, Adha 27 to 29 May, Ashura 26 June) and declared closures (9 April, 25 May). From 2027 the Hijri days
      by Umm al-Qura. Saturday closures for special-schedule offices (14 February, 15 August, the Easters' coinciding
      Saturday) aren't days off: not kept.
+   - SD: done 2026-10-28 from the Council of Ministers' General Secretariat's notices on the government portal
+     (sudan.gov.sd, WordPress API): 1 January, Fitr 19 to 24 March, Adha 26 to 30 May, the Hijri New Year 17 June, the
+     Mawlid 25 August. 25 December is kept as 2025's notice made it nationwide; 2026's isn't out yet (open). The
+     Eastern churches' Christmas days are the communities' own: not kept. From 2027 the Hijri days by Umm al-Qura,
+     one day each; no holidays law was found.
    - MW: blocked 2026-10-27: the Act's Schedule is read only as consolidated at 31 December 2014 (commons.laws.africa
      /akn/mw/act/1967/11/eng@2014-12-31.pdf); the Gazette orders since (Africa Day, Chakufwa Chihana Day, Eid al-Adha?)
      and 2026's orders are unread. Laws.Africa's commons host also serves other LIIs' consolidations past their bot
