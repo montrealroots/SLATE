@@ -470,6 +470,27 @@
    }
   ]
  },
+ "BD": {
+  "document": "National Identity Card (জাতীয় পরিচয়পত্র)",
+  "currency": "BDT",
+  "routes": [
+   {
+    "id": "office",
+    "where": "home",
+    "speed": "standard",
+    "within": null
+   }
+  ],
+  "bands": [
+   {
+    "validYears": 15,
+    "pay": {
+     "office": null
+    },
+    "from": 18
+   }
+  ]
+ },
  "BE": {
   "document": "carte d'identité électronique (eID)",
   "currency": "EUR",
@@ -664,6 +685,34 @@
    }
   ]
  },
+ "BH": {
+  "document": "Identity card (بطاقة الهوية)",
+  "currency": "BHD",
+  "routes": [
+   {
+    "id": "centre",
+    "where": "home",
+    "speed": "standard",
+    "within": null
+   }
+  ],
+  "bands": [
+   {
+    "validYears": 5,
+    "pay": {
+     "centre": 2000
+    },
+    "under": 70
+   },
+   {
+    "validYears": 10,
+    "pay": {
+     "centre": 2000
+    },
+    "from": 70
+   }
+  ]
+ },
  "BI": {
   "document": "Carte nationale d'identité (CNI)",
   "currency": "BIF",
@@ -814,6 +863,29 @@
     },
     "from": 60,
     "permanent": true
+   }
+  ]
+ },
+ "BT": {
+  "document": "Citizenship Identity Card (CID)",
+  "currency": "BTN",
+  "routes": [
+   {
+    "id": "dzongkhag",
+    "where": "home",
+    "speed": "standard",
+    "within": {
+     "n": 6,
+     "unit": "day"
+    }
+   }
+  ],
+  "bands": [
+   {
+    "validYears": null,
+    "pay": {
+     "dzongkhag": 10000
+    }
    }
   ]
  },
@@ -3516,11 +3588,52 @@
    }
   ]
  },
+ "NP": {
+  "document": "National Identity Card (राष्ट्रिय परिचयपत्र)",
+  "currency": "NPR",
+  "routes": [
+   {
+    "id": "station",
+    "where": "home",
+    "speed": "standard",
+    "within": null
+   }
+  ],
+  "bands": [
+   {
+    "validYears": null,
+    "pay": {
+     "station": 0
+    },
+    "from": 16
+   }
+  ]
+ },
  "NU": {
   "issuedBy": "NZ"
  },
  "NZ": {
   "none": true
+ },
+ "OM": {
+  "document": "Personal card (البطاقة الشخصية)",
+  "currency": "OMR",
+  "routes": [
+   {
+    "id": "civil-status",
+    "where": "home",
+    "speed": "standard",
+    "within": null
+   }
+  ],
+  "bands": [
+   {
+    "validYears": 10,
+    "pay": {
+     "civil-status": 10000
+    }
+   }
+  ]
  },
  "PA": {
   "document": "Cédula de identidad personal",
@@ -3802,6 +3915,34 @@
    }
   ]
  },
+ "QA": {
+  "document": "Personal card (البطاقة الشخصية)",
+  "currency": "QAR",
+  "routes": [
+   {
+    "id": "moi",
+    "where": "home",
+    "speed": "standard",
+    "within": null
+   }
+  ],
+  "bands": [
+   {
+    "validYears": 5,
+    "pay": {
+     "moi": 10000
+    },
+    "under": 16
+   },
+   {
+    "validYears": 10,
+    "pay": {
+     "moi": 10000
+    },
+    "from": 16
+   }
+  ]
+ },
  "RE": {
   "issuedBy": "FR"
  },
@@ -3944,6 +4085,38 @@
      "sector": 500
     },
     "from": 16
+   }
+  ]
+ },
+ "SA": {
+  "document": "National identity card (بطاقة الهوية الوطنية)",
+  "currency": "SAR",
+  "routes": [
+   {
+    "id": "office",
+    "where": "home",
+    "speed": "standard",
+    "within": {
+     "n": 14,
+     "unit": "day"
+    }
+   }
+  ],
+  "bands": [
+   {
+    "validYears": 10,
+    "pay": {
+     "office": 0
+    },
+    "from": 6,
+    "under": 15
+   },
+   {
+    "validYears": 10,
+    "pay": {
+     "office": 0
+    },
+    "from": 15
    }
   ]
  },
