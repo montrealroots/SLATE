@@ -277,7 +277,7 @@ What layer 0 holds:
    web archives, the services whose sites didn't answer from here: Djibouti's, Lesotho's, the Comoros', Palestine's,
    Montserrat's).
 2. Holidays: no country is pending (2026-10-28). What stays open is listed below: each blocker's sources to try
-   again, the archive snapshots awaiting the owner's ruling, and the per-country open points. Then prices (layer 2's
+   again, the archive snapshots (allowed by the owner on 2026-10-28), and the per-country open points. Then prices (layer 2's
    next engine), then proving layer 2. The notes kept from the holidays' research, for adding or revising a country:
    each from its law or its government's own list, fetched and read
    (never a search summary), with first-level regions where they keep their own (Australia's, Brazil's, India's,
@@ -297,8 +297,7 @@ What layer 0 holds:
    holidays test's `expect(read)`, and the gate. A blocker is `world.holidays.blocked.<CC>` (or `.<region>`) with
    the five methods' attempts, as R-0149.
    Where each pending country stands (read, blocked, still to read), dated 2026-10-27:
-   - Archive snapshots that would likely unblock a country, not fetched: the owner stopped a web.archive.org
-     snapshot fetch on 2026-10-27 and hasn't ruled on them; ask before fetching. ST: visitsaotomeprincipe.st/pt/
+   - Archive snapshots that would likely unblock a country, to fetch now that the owner allows them (2026-10-28); web.archive.org itself doesn't answer from this environment (every connection reset in the TLS handshake, 2026-10-28, while archive.org's availability API answers), so the owner may add it under the environment's Network access, Allowed domains. ST: visitsaotomeprincipe.st/pt/
      feriados (16 June 2026, Lei 8/2025's sixteen days); HT: Le Relief's Carnival article (10 May 2026); IQ: t4p.co's
      article on Law 12/2024's list (16 February 2025); IR: calendar.ut.ac.ir (12 July 2026; no .ir host answers here); GQ: Ahora EG's article quoting Decreto 9/2007 (17 April 2025); FO: Starvsfelagið's handbook list of the halgidagar (8 June 2026); BS: the Public Holidays Act's PDF on laws.bahamas.gov.bs (18 July 2026).
    - HT, SL, ST, CV, SO, IQ, IR, LA, MM, AF, KP, MW, SZ, LS, LR, GM, SS, CF, GQ, GW, SJ, FO, BS, VC, SR, BN, BT, ER, TJ: blocked 2026-10-27 (R-0322 on); retry each blocker's sources., TJ (2026-10-28: article 3's current
@@ -696,8 +695,8 @@ What layer 0 holds:
    sterling is on falklands.gov.fk, which this environment's network doesn't allow (the owner can add it under the
    environment's Network access, Allowed domains; with it the Falklands keep the United Kingdom's level by the
    owner's ruling, as Saint Helena does). Snapshots that exist in the Internet Archive for 16 of them (AS, FK, KN,
-   MM, MP, SD, SO, SS, SY, TC, TM, VE, VG, VI, YE, ZW; each named in its blocker) await the owner's ruling on archive
-   snapshots. The rules for adding a country stand: an index from the country's own office (`research/sources/
+   MM, MP, SD, SO, SS, SY, TC, TM, VE, VG, VI, YE, ZW; each named in its blocker) may now be read (the owner's ruling of 2026-10-28), once
+   web.archive.org answers from this environment. The rules for adding a country stand: an index from the country's own office (`research/sources/
    prices/<CC>.json`, its register entry, then `npx tsx tools/prices/build.ts`); an office's quarters or half-years
    serve as its months do, and a month it didn't collect is left out as it leaves it out; a territory using
    another's prices by law or market keeps that country's level only by the owner's ruling (given 2026-10-28).
@@ -882,8 +881,9 @@ What layer 0 holds:
 Answered 2026-10-28 (prices): a territory with no price-level measure of its own (no World Bank or ICP level, no
 spatial survey) takes the level of the country whose currency and market it shares, as is, named per territory (the
 owner chose "Parent's level as is" over carrying the parent's level by the territory's own index, or blocking them).
-Open: whether the archive snapshots listed under the next step may be fetched (the owner stopped one on 2026-10-27;
-each would likely unblock a country). Answered 2026-10-28: Western Sahara keeps Morocco's holidays everywhere. Noted
+Answered 2026-10-28 (archives): "You can use archived screenshots and also keep going." Archived copies of a
+source (the Wayback Machine's snapshots) may be read, cited with the snapshot's own URL and its capture date, the
+live page's URL in the title. Answered 2026-10-28: Western Sahara keeps Morocco's holidays everywhere. Noted
 2026-10-28: the auto-mode classifier ruled that opening in a browser a page that refuses this game's requests is
 bot-check circumvention, so no source is read that way (the Faroes' was withdrawn). Answered 2026-10-26: the map's count of places is today's GeoNames release (171,654); the start date
 is 1 January 2026 (the owner: "January 1st, 2026."), asked when the holidays and prices engines reached it, so
