@@ -1900,6 +1900,49 @@
  "EH": {
   "issuedBy": "MA"
  },
+ "ER": {
+  "currency": "CAD",
+  "routes": [
+   {
+    "id": "home",
+    "where": "home",
+    "speed": "standard",
+    "within": null
+   },
+   {
+    "id": "abroad-new",
+    "where": "abroad",
+    "speed": "standard",
+    "within": null
+   },
+   {
+    "id": "abroad-renewal",
+    "where": "abroad",
+    "speed": "standard",
+    "within": null
+   }
+  ],
+  "bands": [
+   {
+    "validYears": null,
+    "pay": {
+     "home": null,
+     "abroad-new": 30000,
+     "abroad-renewal": 15000
+    },
+    "from": 18
+   },
+   {
+    "validYears": null,
+    "pay": {
+     "home": null,
+     "abroad-new": 22500,
+     "abroad-renewal": 11500
+    },
+    "under": 18
+   }
+  ]
+ },
  "ES": {
   "currency": "EUR",
   "routes": [
@@ -2656,6 +2699,32 @@
   "onlyRoutes": [
    "france",
    "abroad"
+  ]
+ },
+ "GQ": {
+  "currency": "USD",
+  "routes": [
+   {
+    "id": "home",
+    "where": "home",
+    "speed": "standard",
+    "within": null
+   },
+   {
+    "id": "abroad",
+    "where": "abroad",
+    "speed": "standard",
+    "within": null
+   }
+  ],
+  "bands": [
+   {
+    "validYears": null,
+    "pay": {
+     "home": null,
+     "abroad": 5000
+    }
+   }
   ]
  },
  "GR": {

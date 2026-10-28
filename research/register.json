@@ -24082,6 +24082,83 @@
     }
    ],
    "notModeled": "passports.unkept"
+  },
+  {
+   "id": "R-0680",
+   "fact": "papers.passports.blocked.GW",
+   "sought": "Guinea-Bissau's ordinary passport: its fee in francs CFA, time and validity",
+   "status": "blocked",
+   "attempts": [
+    {
+     "method": "institution",
+     "tried": "The Migration and Foreigners Service (https://www.sme.gw/), the Government (https://www.gov.gw/, https://www.governo.gw/) and the Ministry of Foreign Affairs (https://www.mne.gov.gw/)",
+     "result": "None of the four hosts answers.",
+     "date": "2026-10-28"
+    },
+    {
+     "method": "official-register",
+     "tried": "The Government's site, where the Boletim Oficial would be published (https://www.governo.gw/)",
+     "result": "The host doesn't answer; no other publisher of the Boletim Oficial was found.",
+     "date": "2026-10-28"
+    },
+    {
+     "method": "web-search",
+     "tried": "'Guin\u00e9-Bissau passaporte biom\u00e9trico pre\u00e7o francos CFA 2025 2026 Servi\u00e7o de Migra\u00e7\u00e3o e Fronteiras custo passaporte' (twice, the second in Portuguese results)",
+     "result": "Only visa fees, border-control news and the DR Congo's passport price; no fee for Guinea-Bissau's passport.",
+     "date": "2026-10-28"
+    },
+    {
+     "method": "trade-press",
+     "tried": "O Democrata's search for 'passaporte' (https://www.odemocratagb.com/?s=passaporte) and its article of 13 April 2025 on passports for the diaspora (?p=51934)",
+     "result": "Articles on visa waivers, seizures and forgery; the diaspora article gives a Mauritanian residence card's cost, not the passport's.",
+     "date": "2026-10-28"
+    },
+    {
+     "method": "archive",
+     "tried": "The Wayback Machine's availability API for governo.gw",
+     "result": "No snapshot is held (and this environment's egress policy refuses web.archive.org in any case, 403).",
+     "date": "2026-10-28"
+    }
+   ],
+   "notModeled": "passports.unkept"
+  },
+  {
+   "id": "R-0681",
+   "fact": "papers.passports.GQ",
+   "sought": "Equatorial Guinea's biometric passport fee abroad, from its embassy in Washington",
+   "status": "found",
+   "value": {
+    "file": "research/sources/papers/passports/GQ.json",
+    "sha256": "d97935006bc9a60cf40cf501289b1dbcafc3f0e8cf14df2d5ddf8f7c6a738004"
+   },
+   "sources": [
+    {
+     "kind": "primary",
+     "url": "https://www.egembassydc.com/passport",
+     "title": "Embassy of the Republic of Equatorial Guinea in the United States, Consular Services: Biometric Passport Application",
+     "read": "2026-10-28",
+     "said": "BIOMETRIC PASSPORT APPLICATION OFFICIAL CNEDOGE PORTAL New biometric passport issuance and renewal for Equatoguinean citizens. Portal: CNEDOGE Fee: $50 USD Requires Registry"
+    }
+   ]
+  },
+  {
+   "id": "R-0682",
+   "fact": "papers.passports.ER",
+   "sought": "Eritrea's passport fees abroad by age, from the Consulate General in Toronto",
+   "status": "found",
+   "value": {
+    "file": "research/sources/papers/passports/ER.json",
+    "sha256": "d87482aeb6811be569474676e4a1ad7a666b0da8ce27f67da75d0dc0ae34276d"
+   },
+   "sources": [
+    {
+     "kind": "primary",
+     "url": "https://consulateoferitrea.wpcomstaging.com/eritrean-passport/",
+     "title": "The Consulate General of the State of Eritrea in Toronto, Canada, Eritrean Passport",
+     "read": "2026-10-28",
+     "said": "Payment Information: All payments for Consular Services should be made via money order or Bank draft. Please make the payment payable to \u201cConsulate of Eritrea.\u201d NEW/RENEWAL/LOST PASSPORT ... NEW PASSPORT FEE: $300.00 MONEY-ORDER: PAYABLE TO CONSULATE OF ERITREA. PASSPORT RENEWAL FEE $150.00. PASSPORT MUST BE ISSUED AFTER 2010 ... UNDER_AGE REQUIREMENTS ... PASSPORT FEE: $225.00 MONEY ORDER ... PASSPORT REPLACEMENT FEE $115.00. PASSPORT MUST BE ISSUED AFTER 2010"
+    }
+   ]
   }
  ]
 }

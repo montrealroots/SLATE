@@ -73,7 +73,7 @@ a place fills a column; a cell is the row's status in that engine's matrix, or b
 | EE | Estonia | researched | researched | researched | researched | researched | researched | researched |
 | EG | Egypt | researched | researched | researched | researched | researched | researched | pending |
 | EH | Western Sahara | researched | researched | researched | researched | researched | researched | researched |
-| ER | Eritrea | researched | researched | researched | researched | blocked | blocked | pending |
+| ER | Eritrea | researched | researched | researched | researched | blocked | blocked | researched |
 | ES | Spain | researched | researched | researched | researched | researched | researched | researched |
 | ET | Ethiopia | researched | researched | researched | researched | researched | researched | researched |
 | FI | Finland | researched | researched | researched | researched | researched | researched | researched |
@@ -94,12 +94,12 @@ a place fills a column; a cell is the row's status in that engine's matrix, or b
 | GM | Gambia | researched | researched | researched | researched | blocked | researched | researched |
 | GN | Guinea | researched | researched | researched | researched | researched | researched | researched |
 | GP | Guadeloupe | researched | researched | researched | researched | researched | researched | researched |
-| GQ | Equatorial Guinea | researched | researched | researched | researched | blocked | researched | pending |
+| GQ | Equatorial Guinea | researched | researched | researched | researched | blocked | researched | researched |
 | GR | Greece | researched | researched | researched | researched | researched | researched | researched |
 | GS | South Georgia and the South Sandwich Islands | researched | researched | researched | blocked | researched | researched | researched |
 | GT | Guatemala | researched | researched | researched | researched | researched | researched | researched |
 | GU | Guam | researched | researched | researched | researched | researched | researched | researched |
-| GW | Guinea-Bissau | researched | researched | researched | researched | blocked | researched | pending |
+| GW | Guinea-Bissau | researched | researched | researched | researched | blocked | researched | blocked |
 | GY | Guyana | researched | researched | researched | researched | researched | researched | researched |
 | HK | Hong Kong | researched | researched | researched | researched | researched | researched | researched |
 | HM | Heard Island and McDonald Islands | researched | researched | proven | proven | proven | proven | proven |
