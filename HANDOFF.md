@@ -684,8 +684,9 @@ What layer 0 holds:
    by age and channel in the country's currency, its validity, the standard processing time and the urgent services,
    from the passport office's own pages or, where those refuse this client, the law or regulation that sets them.
    The file's shape (`passports` by age band with `validYears` and `fees`, `standard`, `urgent`, `note`, `sources`)
-   is the research's, to be settled with the engine. 32 so far (2026-10-28): AT, BE, BR, CA, CH, CN, CZ, DE, DK,
-   EE, ES, FR, GB, GR, HK, HU, IE, IN, IT, JP, KR, MY, NL, PE, PL, RO, SE, SG, SI, TW, US, ZA; some with a part
+   is the research's, to be settled with the engine. 38 so far (2026-10-28): AT, BE, BR, CA, CH, CN, CZ, DE, DK,
+   EE, ES, FR, GB, GH, GR, HK, HU, IE, IN, IT, JM, JP, KR, LU, MT, MY, NL, PE, PK, PL, RO, SE, SG, SI, TW, US, UY, ZA
+   (Uruguay's fees are in indexed units, UI, whose peso value is still to be read); some with a part
    still open, said in the file's note (Spain's and Slovenia's fees, Ireland's, Greece's, Romania's, Brazil's and
    Taiwan's validity, Peru's fee, most processing times). The attempts for the rest, to become blockers after all
    five methods, are being logged: Australia (fees are the 2015 determination's base amounts indexed yearly by its
@@ -695,7 +696,10 @@ What layer 0 holds:
    certificate chain fails verification; TLS checks stay on), Norway (fees in the Storting's budget decisions),
    Bulgaria (the April 2026 reform's tariff not found), Croatia (only a draft found), Lithuania (a JS app), Turkey
    (the yearly duties tariff), Indonesia (PP 45/2024, partly replaced by PP 30/2026), Thailand, Argentina
-   (Disposición 106/2026 found; its fee annex is on a Boletín Oficial PDF that reset the connection). Then ID,
+   (Disposición 106/2026 found; its fee annex is on a Boletín Oficial PDF that reset the connection). Also: Cyprus (an Azure WAF), Morocco (its certificate chain fails verification), the UAE
+   (ICP's page under maintenance when rendered), New Zealand's legislation site (a 202 with an empty body), Vietnam
+   and Russia (only secondary sources found), Ukraine, Iceland (the fee is in a yearly act), the Dominican Republic
+   and Costa Rica. The scratch log of every attempt is to be carried into the blockers. Then ID,
    visas, residence and work permissions, and the banks. A question the engine will need settled: which countries
    issue passports of their own (Hong Kong does; most territories use their sovereign's), recorded with each file.
 
