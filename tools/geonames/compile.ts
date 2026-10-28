@@ -1,6 +1,7 @@
 import { createHash } from 'node:crypto';
 import { readFileSync } from 'node:fs';
 import { join } from 'node:path';
+import money from '../../src/core/money/currencies.json' with { type: 'json' };
 import { readZip } from './zip.ts';
 
 /**
@@ -24,7 +25,16 @@ export const OUT = 'src/world/gazetteer';
 
 export interface Country {
   name: string;
+  /** Its currency's ISO 4217 code (the one its prices are in), or empty where it has none. */
+  currency: string;
 }
+
+/**
+ * The currency in place of one GeoNames still gives but ISO 4217 has withdrawn (list one as published on 2026-09-17,
+ * R-0026): Bulgaria's lev, which its BULGARIA entry now gives as the euro (from 1 January 2026), and the Netherlands
+ * Antilles' guilder, for a country the list no longer has.
+ */
+export const CURRENCY_NOW: Record<string, string> = { BG: 'EUR', AN: '' };
 export interface Region {
   name: string;
 }
@@ -53,7 +63,7 @@ export interface Gazetteer {
 
 const lines = (text: string) => text.split('\n').filter((l) => l !== '' && !l.startsWith('#'));
 
-/** countryInfo.txt: ISO, ISO3, ISO-Numeric, fips, Country, Capital, ... (GeoNames' readme and the file's header). */
+/** countryInfo.txt: ISO, ISO3, ISO-Numeric, fips, Country, Capital, ..., CurrencyCode (the eleventh), ... (GeoNames' readme and the file's header). */
 export function parseCountries(text: string): Record<string, Country> {
   const out: Record<string, Country> = {};
   for (const line of lines(text)) {
@@ -61,7 +71,10 @@ export function parseCountries(text: string): Record<string, Country> {
     const [code, , , , name] = f;
     if (f.length !== 19 || !/^[A-Z]{2}$/.test(code as string) || !name) throw new Error(`a country line the compiler doesn't know: ${line}`);
     if (Object.hasOwn(out, code as string)) throw new Error(`the country ${code} is listed twice`);
-    out[code as string] = { name };
+    const given = f[10] as string;
+    const currency = given === '' || Object.hasOwn(money.currencies, given) ? given : (CURRENCY_NOW[code as string] ?? given);
+    if (currency !== '' && !Object.hasOwn(money.currencies, currency)) throw new Error(`the country ${code}'s currency ${given} isn't one ISO 4217 lists`);
+    out[code as string] = { name, currency };
   }
   return out;
 }

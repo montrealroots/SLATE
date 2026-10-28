@@ -3,7 +3,7 @@ import { tmpdir } from 'node:os';
 import { join } from 'node:path';
 import { crc32, deflateRawSync } from 'node:zlib';
 import { describe, expect, it } from 'vitest';
-import { OUT, SOURCES, parseCountries, parsePlaces, parseRegions, readGazetteer, serialize } from '../../tools/geonames/compile.ts';
+import { CURRENCY_NOW, OUT, SOURCES, parseCountries, parsePlaces, parseRegions, readGazetteer, serialize } from '../../tools/geonames/compile.ts';
 import { readZip } from '../../tools/geonames/zip.ts';
 
 const ROOT = join(import.meta.dirname, '../..');
@@ -92,7 +92,7 @@ describe('the zip reader', () => {
   });
 });
 
-const COUNTRY = (code: string, name: string) => [code, 'XXX', '000', 'XX', name, 'Capital', '1', '1', 'EU', '.xx', 'EUR', 'Euro', '1', '', '', 'xx', '1', '', ''].join('\t');
+const COUNTRY = (code: string, name: string, currency = 'EUR') => [code, 'XXX', '000', 'XX', name, 'Capital', '1', '1', 'EU', '.xx', currency, 'Euro', '1', '', '', 'xx', '1', '', ''].join('\t');
 const PLACE = (over: Partial<Record<'id' | 'name' | 'ascii' | 'lat' | 'lon' | 'cls' | 'cc' | 'a1' | 'pop' | 'tz' | 'elev' | 'dem', string>> = {}) => {
   const p = { id: '1', name: 'Ville', ascii: 'Ville', lat: '45.5', lon: '-73.5', cls: 'P', cc: 'FR', a1: '11', pop: '1000', tz: 'Europe/Paris', elev: '', dem: '35', ...over };
   return [p.id, p.name, p.ascii, 'alt', p.lat, p.lon, p.cls, 'PPL', p.cc, '', p.a1, '', '', '', p.pop, p.elev, p.dem, p.tz, '2026-01-01'].join('\t');
@@ -110,18 +110,32 @@ describe('the compiler', () => {
     const placed = Object.keys(g.places);
     expect([Object.keys(g.countries).length, Object.keys(g.regions).length, Object.values(g.places).flat().length, placed.length]).toEqual([252, 3865, 171_654, 246]);
     expect(Object.keys(g.countries).filter((c) => !placed.includes(c)).sort()).toEqual(['AN', 'AQ', 'BV', 'CS', 'HM', 'UM']);
-    expect(g.countries['US']).toEqual({ name: 'United States' });
+    expect(g.countries['US']).toEqual({ name: 'United States', currency: 'USD' });
+    expect([g.countries['BG']?.currency, g.countries['AN']?.currency, g.countries['AQ']?.currency, g.countries['SV']?.currency]).toEqual(['EUR', '', '', 'USD']);
     expect(g.regions['US.CA']).toEqual({ name: 'California' });
   });
   it('reads countries, refusing a line it doesn\'t know and a code listed twice', () => {
-    expect(parseCountries(`#ISO\tcomment\n${COUNTRY('FR', 'France')}\n\n${COUNTRY('DE', 'Germany')}\n`)).toEqual({ FR: { name: 'France' }, DE: { name: 'Germany' } });
+    expect(parseCountries(`#ISO\tcomment\n${COUNTRY('FR', 'France')}\n\n${COUNTRY('DE', 'Germany')}\n`)).toEqual({ FR: { name: 'France', currency: 'EUR' }, DE: { name: 'Germany', currency: 'EUR' } });
     for (const bad of [COUNTRY('F', 'France'), COUNTRY('fr', 'France'), COUNTRY('FRA', 'France'), COUNTRY('FR', ''), `${COUNTRY('FR', 'France')}\textra`, COUNTRY('FR', 'France').split('\t').slice(0, 18).join('\t')]) {
       expect(() => parseCountries(bad)).toThrow(`a country line the compiler doesn't know: ${bad}`);
     }
     expect(() => parseCountries(`${COUNTRY('FR', 'France')}\n${COUNTRY('FR', 'Francia')}`)).toThrow('the country FR is listed twice');
   });
+  it('reads a country\'s currency, ISO 4217\'s in place of one it has withdrawn, and none where GeoNames gives none', () => {
+    expect(parseCountries(COUNTRY('AQ', 'Antarctica', ''))).toEqual({ AQ: { name: 'Antarctica', currency: '' } });
+    expect(parseCountries(COUNTRY('BG', 'Bulgaria', 'BGN'))).toEqual({ BG: { name: 'Bulgaria', currency: 'EUR' } });
+    expect(parseCountries(COUNTRY('AN', 'Netherlands Antilles', 'ANG'))).toEqual({ AN: { name: 'Netherlands Antilles', currency: '' } });
+    expect(parseCountries(COUNTRY('BG', 'Bulgaria', 'EUR'))).toEqual({ BG: { name: 'Bulgaria', currency: 'EUR' } });
+    // GeoNames' own code stands while ISO 4217 lists it, and none stays none, whatever the list of withdrawn ones says.
+    expect(parseCountries(COUNTRY('BG', 'Bulgaria', 'USD'))).toEqual({ BG: { name: 'Bulgaria', currency: 'USD' } });
+    expect(parseCountries(COUNTRY('BG', 'Bulgaria', ''))).toEqual({ BG: { name: 'Bulgaria', currency: '' } });
+    expect(CURRENCY_NOW).toEqual({ BG: 'EUR', AN: '' });
+    for (const [code, cur] of [['FR', 'FRF'], ['FR', 'eur'], ['XX', 'BGN'], ['FR', 'toString']]) {
+      expect(() => parseCountries(COUNTRY(code as string, 'Somewhere', cur))).toThrow(`the country ${code as string}'s currency ${cur as string} isn't one ISO 4217 lists`);
+    }
+  });
   it('reads regions, each in a listed country, once', () => {
-    const countries = { FR: { name: 'France' } };
+    const countries = { FR: { name: 'France', currency: 'EUR' } };
     expect(parseRegions('FR.11\tÎle-de-France\tIle-de-France\t3012874\n', countries)).toEqual({ 'FR.11': { name: 'Île-de-France' } });
     for (const bad of ['FR.11\tName\tName', 'FR.11\tName\tName\t1\tx', 'FR11\tName\tName\t1', 'fr.11\tName\tName\t1', 'FR.\tName\tName\t1', 'FR.11\t\tName\t1', 'xFR.11\tName\tName\t1', 'FR.1a\tName\tName\t1', 'FR.11.2\tName\tName\t1']) {
       expect(() => parseRegions(bad, countries)).toThrow(`a region line the compiler doesn't know: ${bad}`);
@@ -130,7 +144,7 @@ describe('the compiler', () => {
     expect(() => parseRegions('FR.11\tA\tA\t1\nFR.11\tB\tB\t2', countries)).toThrow('the region FR.11 is listed twice');
   });
   it('reads places, keeping a plain spelling only where it differs and a region only where it\'s listed', () => {
-    const countries = { FR: { name: 'France' }, DE: { name: 'Germany' } };
+    const countries = { FR: { name: 'France', currency: 'EUR' }, DE: { name: 'Germany', currency: 'EUR' } };
     const regions = { 'FR.11': { name: 'Île-de-France' } };
     const text = [PLACE({ id: '20', name: 'Évry', ascii: 'Evry' }), PLACE({ id: '3', a1: '00' }), PLACE({ id: '100', cc: 'DE', a1: '', lat: '-90', lon: '180', pop: '0', tz: 'Europe/Berlin', dem: '-12' })].join('\n');
     expect(parsePlaces(`${text}\n`, countries, regions)).toEqual({
@@ -142,11 +156,11 @@ describe('the compiler', () => {
     });
   });
   it('takes a place\'s height from the elevation model, or the recorded elevation where the model has none, or leaves it unknown', () => {
-    const at = (elev: string, dem: string) => parsePlaces(PLACE({ elev, dem }), { FR: { name: 'France' } }, {})['FR']?.[0]?.elevation;
+    const at = (elev: string, dem: string) => parsePlaces(PLACE({ elev, dem }), { FR: { name: 'France', currency: 'EUR' } }, {})['FR']?.[0]?.elevation;
     expect([at('', '35'), at('120', '35'), at('120', '-9999'), at('', '-9999'), at('-3', '-9999')]).toEqual(['35', '35', '120', '', '-3']);
   });
   it('refuses a place it would have to guess at', () => {
-    const countries = { FR: { name: 'France' } };
+    const countries = { FR: { name: 'France', currency: 'EUR' } };
     const bads = [
       PLACE({ id: 'x1' }), PLACE({ id: '1x' }), PLACE({ id: '' }), PLACE({ name: '' }), PLACE({ cls: 'A' }), PLACE({ lat: '90.1' }), PLACE({ lat: '-91' }), PLACE({ lat: 'N45' }), PLACE({ lat: '45.' }),
       PLACE({ lon: '180.5' }), PLACE({ lon: '-181' }), PLACE({ lon: '1e2' }), PLACE({ lon: '1234' }), PLACE({ pop: '-1' }), PLACE({ pop: '1.5' }), PLACE({ pop: 'x' }), PLACE({ tz: '' }), PLACE({ dem: '' }), PLACE({ dem: '1.5' }), PLACE({ dem: 'x1' }), PLACE({ elev: '1x' }), PLACE({ elev: 'x' }),
@@ -158,7 +172,7 @@ describe('the compiler', () => {
   });
   it('writes each country\'s places as tab-separated lines, and the axis\'s index of every id', () => {
     const files = serialize({
-      countries: { FR: { name: 'France' }, BE: { name: 'Belgium' } },
+      countries: { FR: { name: 'France', currency: 'EUR' }, BE: { name: 'Belgium', currency: 'EUR' } },
       regions: { 'FR.11': { name: 'Île' } },
       places: {
         FR: [{ id: '5', name: 'A', ascii: '', region: 'FR.11', latitude: '1', longitude: '2', zone: 'Europe/Paris', population: 9, elevation: '30' }],
@@ -166,7 +180,7 @@ describe('the compiler', () => {
       },
     });
     expect([...files.keys()]).toEqual(['countries.json', 'regions.json', 'places/BE.tsv', 'places/FR.tsv', 'place-ids.json']);
-    expect(files.get('countries.json')).toBe('{\n "BE": {\n  "name": "Belgium"\n },\n "FR": {\n  "name": "France"\n }\n}\n');
+    expect(files.get('countries.json')).toBe('{\n "BE": {\n  "name": "Belgium",\n  "currency": "EUR"\n },\n "FR": {\n  "name": "France",\n  "currency": "EUR"\n }\n}\n');
     expect(files.get('places/FR.tsv')).toBe('5\tA\t\tFR.11\t1\t2\tEurope/Paris\t9\t30\n');
     expect(files.get('places/BE.tsv')).toBe('7\tB\tb\t\t3\t4\tEurope/Brussels\t0\t\n');
     expect(files.get('place-ids.json')).toBe('["7","5"]\n');

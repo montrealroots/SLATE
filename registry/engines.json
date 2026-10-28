@@ -96,5 +96,14 @@
    "coverage/holidays-countries.json"
   ],
   "allPlacesTest": "tests/world/holidays/holidays.test.ts::the holidays > at every place on the map"
+ },
+ "world.prices": {
+  "layer": 2,
+  "dir": "src/world/prices",
+  "readsPlace": true,
+  "matrices": [
+   "coverage/prices-countries.json"
+  ],
+  "allPlacesTest": "tests/world/prices/prices.test.ts::the prices > at every place on the map"
  }
 }

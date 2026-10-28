@@ -6,6 +6,7 @@ import { daylight } from '../../../src/core/time/sun.ts';
 import {
   COUNTRY_CODES,
   countryName,
+  currencyOf,
   findPlace,
   fold,
   hasPlaces,
@@ -20,6 +21,8 @@ import {
   type Place,
 } from '../../../src/world/gazetteer/gazetteer.ts';
 
+import { isCurrency } from '../../../src/core/money/money.ts';
+
 const ROOT = join(import.meta.dirname, '../../..');
 const place = (over: Partial<Place>): Place => ({ id: '1', country: 'FR', name: 'Ville', ascii: '', region: '', latitude: 0, longitude: 0, zone: 'Europe/Paris', population: 0, elevation: null, ...over });
 
@@ -29,6 +32,11 @@ describe('countries and regions', () => {
     expect([countryName('US'), countryName('CI'), countryName('XK')]).toEqual(['United States', 'Ivory Coast', 'Kosovo']);
     expect(['US', 'XK', 'AN', 'CS'].every(isCountry)).toBe(true);
     expect(['us', 'USA', 'ZZ', 'toString', ''].some(isCountry)).toBe(false);
+  });
+  it('give each country with places the currency its prices are in, and none to one without', () => {
+    expect([currencyOf('US'), currencyOf('BG'), currencyOf('SV'), currencyOf('BT'), currencyOf('XK'), currencyOf('AQ'), currencyOf('AN')]).toEqual(['USD', 'EUR', 'USD', 'BTN', 'EUR', undefined, undefined]);
+    expect(COUNTRY_CODES.filter((c) => hasPlaces(c) && currencyOf(c) === undefined)).toEqual([]);
+    expect(COUNTRY_CODES.every((c) => currencyOf(c) === undefined || isCurrency(currencyOf(c) as string))).toBe(true);
   });
   it('list a country\'s regions by name, and name each', () => {
     const us = regionsOf('US');

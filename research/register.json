@@ -1256,7 +1256,7 @@
      "url": "https://download.geonames.org/export/dump/countryInfo.txt",
      "title": "GeoNames, countryInfo.txt (CC BY 4.0)",
      "read": "2026-10-26",
-     "said": "Last modified 2026-10-26 02:54:02 GMT; 252 country lines of 19 tab-separated fields (#ISO, ISO3, ISO-Numeric, fips, Country, Capital, Area(in sq km), Population, Continent, tld, CurrencyCode, CurrencyName, Phone, Postal Code Format, Postal Code Regex, Languages, geonameid, neighbours, EquivalentFipsCode). Two of the 252 are states that no longer exist and that GeoNames keeps listed: CS Serbia and Montenegro and AN Netherlands Antilles. Its currency for Bulgaria is still BGN, which ISO 4217 list one of 2026-09-17 (R-0026) no longer lists; the gazetteer takes no currency from this file."
+     "said": "Last modified 2026-10-26 02:54:02 GMT; 252 country lines of 19 tab-separated fields (#ISO, ISO3, ISO-Numeric, fips, Country, Capital, Area(in sq km), Population, Continent, tld, CurrencyCode, CurrencyName, Phone, Postal Code Format, Postal Code Regex, Languages, geonameid, neighbours, EquivalentFipsCode). Two of the 252 are states that no longer exist and that GeoNames keeps listed: CS Serbia and Montenegro and AN Netherlands Antilles. Its currency for Bulgaria is still BGN, which ISO 4217 list one of 2026-09-17 (R-0026) no longer lists. The gazetteer takes each country's currency from the CurrencyCode field, held to that list: Bulgaria's is the euro (list one's BULGARIA entry), and the Netherlands Antilles, which the list no longer has, have none."
     }
    ]
   },
@@ -15869,6 +15869,57 @@
      "read": "2026-10-27",
      "said": "Le mois de Rabie-I 1448 de l’hégire débutera le vendredi 14 août 2026 et Aïd Al Mawlid Annabaoui sera célébré le mardi 25 août, a annoncé, jeudi soir, le ministère des Habous et des Affaires islamiques.",
      "quotes": "https://www.habous.gov.ma/"
+    }
+   ]
+  },
+  {
+   "id": "R-0373",
+   "fact": "world.prices.ppp",
+   "sought": "Every country's price level for what households buy, in its own currency against the US dollar, measured to one standard across countries and as recent as published",
+   "status": "found",
+   "value": {
+    "indicator": "PA.NUS.PRVT.PP",
+    "lastUpdated": "2026-10-08",
+    "levels": 172,
+    "years": {
+     "2025": 168,
+     "2024": 4
+    },
+    "files": {
+     "vendor/worldbank/PA.NUS.PRVT.PP.json": "475c4daef315d46d208e212d630ed8a163087520b6a09e068e44080e6fb72af8",
+     "vendor/worldbank/PA.NUS.PRVT.PP.indicator.json": "0ca7d8b20d67e45d95d9b6abb46f9a947c028f8698e95786be150ef410d4b952",
+     "vendor/worldbank/countries.json": "c9acf3932785191a649cbc04c3056af4cf64a236e5c3b49d49be25ddb0440bce",
+     "vendor/worldbank/country-metadata.json": "8c5d4e28e2e368999d1e16301b19cef7b9be1a7d8cf81c75602d14f481ebcf71"
+    }
+   },
+   "sources": [
+    {
+     "kind": "primary",
+     "url": "https://api.worldbank.org/v2/country/all/indicator/PA.NUS.PRVT.PP?date=2024:2025&format=json&per_page=1000",
+     "title": "World Bank, World Development Indicators: PPP conversion factor, households and NPISHs Final consumption expenditure (LCU per international $)",
+     "read": "2026-10-28",
+     "said": "lastupdated 2026-10-08; 532 rows (266 economies and aggregates, 2024 and 2025). United States 2025: 1. Bulgaria 2025: 0.414616944167498. Japan 2025: 103.33658. Afghanistan, The Gambia, Equatorial Guinea and Qatar have a value for 2024 and none for 2025."
+    },
+    {
+     "kind": "primary",
+     "url": "https://api.worldbank.org/v2/indicator/PA.NUS.PRVT.PP?format=json",
+     "title": "World Bank, the indicator's definition",
+     "read": "2026-10-28",
+     "said": "The purchasing power parity (PPP) conversion factor is a currency conversion factor and a spatial price deflator. They convert different currencies to a common currency and, in the process of conversion, equalize their purchasing power by eliminating the differences in price levels between countries ... This conversion factor is for households and NPISHs Final consumption expenditure and the base currency is the US dollar. Source organization: International Comparison Program (ICP), World Bank; the Eurostat PPP Programme; the OECD PPP Programme."
+    },
+    {
+     "kind": "primary",
+     "url": "https://api.worldbank.org/v2/country?format=json&per_page=400",
+     "title": "World Bank, its economies and aggregates",
+     "read": "2026-10-28",
+     "said": "296 entries, each with its iso2Code and region; the aggregates (regions, income groups) have the region \"Aggregates\"."
+    },
+    {
+     "kind": "primary",
+     "url": "https://api.worldbank.org/v2/sources/2/country/all/metadata?format=json&per_page=500",
+     "title": "World Bank, World Development Indicators: each economy's metadata (12 pages of 500)",
+     "read": "2026-10-28",
+     "said": "5,823 fields; each economy's 2-alphacode and CurrencyUnit, e.g. Bulgaria: Euro; Bhutan: Bhutanese ngultrum; Tonga: Tongan pa'anga."
     }
    ]
   }
