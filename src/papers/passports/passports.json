@@ -48,6 +48,42 @@
    }
   ]
  },
+ "AF": {
+  "currency": "EUR",
+  "routes": [
+   {
+    "id": "home",
+    "where": "home",
+    "speed": "standard",
+    "within": null
+   },
+   {
+    "id": "abroad",
+    "where": "abroad",
+    "speed": "standard",
+    "within": {
+     "n": 5,
+     "unit": "month"
+    }
+   }
+  ],
+  "bands": [
+   {
+    "validYears": 5,
+    "pay": {
+     "home": null,
+     "abroad": 13000
+    }
+   },
+   {
+    "validYears": 10,
+    "pay": {
+     "home": null,
+     "abroad": 23000
+    }
+   }
+  ]
+ },
  "AI": {
   "currency": "XCD",
   "routes": [
@@ -5309,6 +5345,44 @@
      "home": 20000000
     },
     "pages": 64
+   }
+  ]
+ },
+ "NI": {
+  "currency": "USD",
+  "routes": [
+   {
+    "id": "home",
+    "where": "home",
+    "speed": "standard",
+    "within": null
+   },
+   {
+    "id": "24h",
+    "where": "home",
+    "speed": "urgent",
+    "within": {
+     "n": 24,
+     "unit": "hour"
+    }
+   }
+  ],
+  "bands": [
+   {
+    "validYears": null,
+    "pay": {
+     "home": 2256,
+     "24h": 3118
+    },
+    "from": 16
+   },
+   {
+    "validYears": null,
+    "pay": {
+     "home": 1177,
+     "24h": 2039
+    },
+    "under": 16
    }
   ]
  },
