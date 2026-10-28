@@ -1306,11 +1306,53 @@
    }
   ]
  },
+ "ID": {
+  "document": "KTP-el (Kartu Tanda Penduduk elektronik)",
+  "currency": "IDR",
+  "routes": [
+   {
+    "id": "office",
+    "where": "home",
+    "speed": "standard",
+    "within": null
+   }
+  ],
+  "bands": [
+   {
+    "validYears": null,
+    "pay": {
+     "office": 0
+    },
+    "from": 17,
+    "permanent": true
+   }
+  ]
+ },
  "IE": {
   "none": true
  },
  "IM": {
   "issuedBy": "GB"
+ },
+ "IN": {
+  "document": "Aadhaar (letter and e-Aadhaar)",
+  "currency": "INR",
+  "routes": [
+   {
+    "id": "enrol",
+    "where": "home",
+    "speed": "standard",
+    "within": null
+   }
+  ],
+  "bands": [
+   {
+    "validYears": null,
+    "pay": {
+     "enrol": 0
+    }
+   }
+  ]
  },
  "IS": {
   "document": "nafnskírteini",
@@ -1923,6 +1965,76 @@
    }
   ]
  },
+ "MY": {
+  "document": "MyKad (identity card)",
+  "currency": "MYR",
+  "routes": [
+   {
+    "id": "print",
+    "where": "home",
+    "speed": "standard",
+    "within": {
+     "n": 30,
+     "unit": "minute"
+    }
+   },
+   {
+    "id": "branch",
+    "where": "home",
+    "speed": "standard",
+    "within": {
+     "n": 5,
+     "unit": "working day"
+    }
+   }
+  ],
+  "bands": [
+   {
+    "validYears": null,
+    "pay": {
+     "print": 0,
+     "branch": 0
+    },
+    "from": 12,
+    "under": 13
+   },
+   {
+    "validYears": null,
+    "pay": {
+     "print": 1000,
+     "branch": 1000
+    },
+    "from": 13,
+    "under": 16
+   },
+   {
+    "validYears": null,
+    "pay": {
+     "print": 1000,
+     "branch": 1000
+    },
+    "from": 16,
+    "under": 18
+   },
+   {
+    "validYears": null,
+    "pay": {
+     "print": 1000,
+     "branch": 1000
+    },
+    "from": 18,
+    "under": 26
+   },
+   {
+    "validYears": null,
+    "pay": {
+     "print": 1000,
+     "branch": 1000
+    },
+    "from": 26
+   }
+  ]
+ },
  "NC": {
   "issuedBy": "FR"
  },
@@ -2006,6 +2118,26 @@
  },
  "PF": {
   "issuedBy": "FR"
+ },
+ "PH": {
+  "document": "PhilID (Philippine Identification Card)",
+  "currency": "PHP",
+  "routes": [
+   {
+    "id": "register",
+    "where": "home",
+    "speed": "standard",
+    "within": null
+   }
+  ],
+  "bands": [
+   {
+    "validYears": null,
+    "pay": {
+     "register": 0
+    }
+   }
+  ]
  },
  "PL": {
   "document": "dowód osobisty",
@@ -2265,6 +2397,47 @@
    }
   ]
  },
+ "SG": {
+  "document": "National Registration Identity Card (NRIC)",
+  "currency": "SGD",
+  "routes": [
+   {
+    "id": "register",
+    "where": "home",
+    "speed": "standard",
+    "within": {
+     "n": 1,
+     "unit": "working day"
+    }
+   },
+   {
+    "id": "re-register",
+    "where": "home",
+    "speed": "standard",
+    "within": {
+     "n": 7,
+     "unit": "working day"
+    }
+   }
+  ],
+  "bands": [
+   {
+    "validYears": null,
+    "pay": {
+     "register": 1000
+    },
+    "from": 15,
+    "under": 30
+   },
+   {
+    "validYears": null,
+    "pay": {
+     "re-register": 1000
+    },
+    "from": 30
+   }
+  ]
+ },
  "SI": {
   "document": "osebna izkaznica",
   "currency": "EUR",
@@ -2506,6 +2679,30 @@
  "TF": {
   "issuedBy": "FR"
  },
+ "TH": {
+  "document": "บัตรประจำตัวประชาชน (identity card)",
+  "currency": "THB",
+  "routes": [
+   {
+    "id": "office",
+    "where": "home",
+    "speed": "standard",
+    "within": {
+     "n": 9,
+     "unit": "minute"
+    }
+   }
+  ],
+  "bands": [
+   {
+    "validYears": null,
+    "pay": {
+     "office": 0
+    },
+    "from": 7
+   }
+  ]
+ },
  "TR": {
   "document": "Türkiye Cumhuriyeti kimlik kartı",
   "currency": "TRY",
@@ -2587,6 +2784,44 @@
  },
  "VI": {
   "issuedBy": "US"
+ },
+ "VN": {
+  "document": "Thẻ căn cước (identity card)",
+  "currency": "VND",
+  "routes": [
+   {
+    "id": "office",
+    "where": "home",
+    "speed": "standard",
+    "within": null
+   }
+  ],
+  "bands": [
+   {
+    "validYears": null,
+    "pay": {
+     "office": 0
+    },
+    "from": 14,
+    "under": 16
+   },
+   {
+    "validYears": null,
+    "pay": {
+     "office": 50000
+    },
+    "from": 16,
+    "under": 60
+   },
+   {
+    "validYears": null,
+    "pay": {
+     "office": 0
+    },
+    "from": 60,
+    "permanent": true
+   }
+  ]
  },
  "WF": {
   "issuedBy": "FR"
