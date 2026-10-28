@@ -945,6 +945,25 @@
  "CC": {
   "issuedBy": "AU"
  },
+ "CD": {
+  "currency": "USD",
+  "routes": [
+   {
+    "id": "home",
+    "where": "home",
+    "speed": "standard",
+    "within": null
+   }
+  ],
+  "bands": [
+   {
+    "validYears": null,
+    "pay": {
+     "home": 7500
+    }
+   }
+  ]
+ },
  "CH": {
   "currency": "CHF",
   "routes": [
@@ -4690,6 +4709,32 @@
      "standard": 12160
     },
     "under": 18
+   }
+  ]
+ },
+ "TD": {
+  "currency": "XAF",
+  "routes": [
+   {
+    "id": "home",
+    "where": "home",
+    "speed": "standard",
+    "within": null
+   },
+   {
+    "id": "abroad",
+    "where": "abroad",
+    "speed": "standard",
+    "within": null
+   }
+  ],
+  "bands": [
+   {
+    "validYears": null,
+    "pay": {
+     "home": 60000,
+     "abroad": 60000
+    }
    }
   ]
  },
