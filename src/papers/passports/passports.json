@@ -165,6 +165,60 @@
    }
   ]
  },
+ "AX": {
+  "currency": "EUR",
+  "routes": [
+   {
+    "id": "in-person",
+    "where": "home",
+    "speed": "standard",
+    "within": null
+   },
+   {
+    "id": "online",
+    "where": "home",
+    "speed": "standard",
+    "within": null
+   },
+   {
+    "id": "pika-in-person",
+    "where": "home",
+    "speed": "urgent",
+    "within": null
+   },
+   {
+    "id": "pika-online",
+    "where": "home",
+    "speed": "urgent",
+    "within": null
+   },
+   {
+    "id": "express-in-person",
+    "where": "home",
+    "speed": "urgent",
+    "within": null
+   },
+   {
+    "id": "express-online",
+    "where": "home",
+    "speed": "urgent",
+    "within": null
+   }
+  ],
+  "bands": [
+   {
+    "validYears": 5,
+    "pay": {
+     "in-person": 5500,
+     "online": 5100,
+     "pika-in-person": 7400,
+     "pika-online": 7000,
+     "express-in-person": 9400,
+     "express-online": 9000
+    }
+   }
+  ]
+ },
  "BA": {
   "currency": "BAM",
   "routes": [
@@ -1458,6 +1512,13 @@
    }
   ]
  },
+ "GP": {
+  "issuedBy": "FR",
+  "onlyRoutes": [
+   "france",
+   "abroad"
+  ]
+ },
  "GR": {
   "currency": "EUR",
   "routes": [
@@ -2464,6 +2525,13 @@
  "MP": {
   "issuedBy": "US"
  },
+ "MQ": {
+  "issuedBy": "FR",
+  "onlyRoutes": [
+   "france",
+   "abroad"
+  ]
+ },
  "MT": {
   "currency": "EUR",
   "routes": [
@@ -3051,6 +3119,13 @@
      "ordinary": 240000
     }
    }
+  ]
+ },
+ "RE": {
+  "issuedBy": "FR",
+  "onlyRoutes": [
+   "france",
+   "abroad"
   ]
  },
  "RO": {
@@ -3715,5 +3790,12 @@
  },
  "VI": {
   "issuedBy": "US"
+ },
+ "YT": {
+  "issuedBy": "FR",
+  "onlyRoutes": [
+   "france",
+   "abroad"
+  ]
  }
 }
