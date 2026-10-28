@@ -2,13 +2,14 @@
  "country": "SE",
  "office": "the Polismyndigheten (Swedish Police Authority)",
  "currency": "SEK",
- "passports": [
-  {"for": "over 12", "from": 12, "validYears": 5, "fees": {"passport": "500"}},
-  {"for": "child", "under": 12, "validYears": 3, "fees": {"passport": "500"}}
+ "routes": [
+  {"id": "standard", "where": "home", "speed": "standard", "within": {"n": 1, "unit": "week"}, "label": "about a week from the application's approval"}
  ],
- "standard": {"within": "about a week from the application's approval"},
- "urgent": [{"service": "provisional passport", "fees": {"any": "980"}}],
- "note": "One fee for any age: the page names no other. A passport is kept at the station three months for collection.",
+ "passports": [
+  {"for": "over 12", "from": 12, "validYears": 5, "pay": {"standard": "500"}},
+  {"for": "child", "under": 12, "validYears": 3, "pay": {"standard": "500"}}
+ ],
+ "note": "One fee for any age: the page names no other. A passport is kept at the station three months for collection. The provisional passport (SEK 980) isn't modelled.",
  "sources": [
   {
    "url": "https://polisen.se/tjanster-tillstand/pass-och-nationellt-id-kort/svar-pa-vanliga-fragor-om-pass/",

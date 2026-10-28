@@ -2,13 +2,16 @@
  "country": "FI",
  "office": "the police",
  "currency": "EUR",
- "passports": [
-  {"for": "any", "validYears": 5, "fees": {"applied for in person": "48", "applied for electronically": "42", "pikapassi, in person": "67", "pikapassi, electronically": "61", "express passport, in person": "87", "express passport, electronically": "81"}}
+ "routes": [
+  {"id": "in-person", "where": "home", "speed": "standard", "within": null, "label": "applied for in person"},
+  {"id": "online", "where": "home", "speed": "standard", "within": null, "label": "applied for electronically"},
+  {"id": "pika-in-person", "where": "home", "speed": "urgent", "within": null, "label": "pikapassi, in person"},
+  {"id": "pika-online", "where": "home", "speed": "urgent", "within": null, "label": "pikapassi, electronically"},
+  {"id": "express-in-person", "where": "home", "speed": "urgent", "within": null, "label": "express passport, in person"},
+  {"id": "express-online", "where": "home", "speed": "urgent", "within": null, "label": "express passport, electronically"}
  ],
- "standard": {"within": null, "said": "not in the decree"},
- "urgent": [
-  {"service": "pikapassi"},
-  {"service": "express passport"}
+ "passports": [
+  {"for": "any", "validYears": 5, "pay": {"in-person": "48", "online": "42", "pika-in-person": "67", "pika-online": "61", "express-in-person": "87", "express-online": "81"}}
  ],
  "note": "Fees from 1 March 2026 to the end of 2026 (decree 96/2026, amending decree 1335/2025), the Digital and Population Data Services Agency's fee included; a veteran of Finland's wars pays EUR 25 or 22, a temporary passport EUR 83. Validity is five years under the Passport Act as it stands, as the Ministry of the Interior's draft government proposal of December 2025 says; that draft would lengthen it to ten years (five for minors) from 1 January 2027, and whether it has passed is a lead. The delivery times of the ordinary, pikapassi and express passports are leads (poliisi.fi refuses this client).",
  "sources": [

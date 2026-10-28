@@ -2,11 +2,13 @@
  "country": "BR",
  "office": "the Polícia Federal",
  "currency": "BRL",
- "passports": [
-  {"for": "any", "validYears": null, "fees": {"common fee, every application": "257.25"}}
+ "routes": [
+  {"id": "common", "where": "home", "speed": "standard", "within": {"n": 6, "unit": "working day"}, "label": "6 working days from the in-person appointment"},
+  {"id": "urgency", "where": "home", "speed": "urgent", "within": null, "label": "urgency or emergency passport, with documented need (R$ 77.17 more)"}
  ],
- "standard": {"within": "6 working days from the in-person appointment"},
- "urgent": [{"service": "urgency or emergency passport, with documented need", "fees": {"added to the common fee": "77.17"}}],
+ "passports": [
+  {"for": "any", "validYears": null, "pay": {"common": "257.25", "urgency": "334.42"}}
+ ],
  "note": "The urgency fee brings the total to R$ 334.42; a valid passport lost or mislaid adds R$ 257.25 (R$ 514.50 in all). A passport not collected within 90 days is cancelled, the fee lost. Validity can't be extended (Decree 5.978/2006, art. 38); the periods by age aren't on the pages read: a lead (the decree, or Instrução Normativa 173).",
  "sources": [
   {

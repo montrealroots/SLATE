@@ -2,12 +2,14 @@
  "country": "NG",
  "office": "the Nigeria Immigration Service",
  "currency": "NGN",
- "passports": [
-  {"for": "any", "pages": 32, "validYears": 5, "fees": {"applied for within Nigeria": "100000"}},
-  {"for": "any", "pages": 64, "validYears": 10, "fees": {"applied for within Nigeria": "200000"}}
+ "routes": [
+  {"id": "home", "where": "home", "speed": "standard", "within": null, "label": "applied for within Nigeria"}
  ],
- "standard": {"within": null, "said": "not in the announcement"},
- "note": "Fees from 1 September 2025 for applications made within Nigeria, as the Service announced them and Voice of Nigeria reported; abroad, USD 150 (32 pages) and 230 (64 pages). The Service's own pages refuse this client (403), so the announcement is read through the state broadcaster's report. Whether minors' passports differ, and processing times, are leads.",
+ "passports": [
+  {"for": "any", "pages": 32, "validYears": 5, "pay": {"home": "100000"}},
+  {"for": "any", "pages": 64, "validYears": 10, "pay": {"home": "200000"}}
+ ],
+ "note": "Fees from 1 September 2025 for applications made within Nigeria, as the Service announced them and Voice of Nigeria reported; abroad, USD 150 (32 pages) and 230 (64 pages). The Service's own pages refuse this client (403), so the announcement is read through the state broadcaster's report. Whether minors' passports differ, and processing times, are leads. The fees abroad are in US dollars and aren't compiled here.",
  "sources": [
   {
    "kind": "secondary",

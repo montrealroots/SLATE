@@ -2,13 +2,15 @@
  "country": "NL",
  "office": "the municipality (gemeente) where the applicant lives; in the Caribbean part of the Kingdom, the local authority",
  "currency": "EUR",
+ "routes": [
+  {"id": "municipality", "where": "home", "speed": "standard", "within": {"n": 8, "unit": "week"}, "label": "in the Netherlands: about 5 working days to collection, up to 4 weeks, 4 more in some cases: the longest is taken"}
+ ],
  "passports": [
-  {"for": "adult", "from": 18, "validYears": 10, "fees": {"in the Netherlands, 2026 maximum": "88.65"}},
-  {"for": "minor", "under": 18, "validYears": 5, "fees": {"in the Netherlands, 2026 maximum": "67.05"}}
+  {"for": "adult", "from": 18, "validYears": 10, "pay": {"municipality": "88.65"}},
+  {"for": "minor", "under": 18, "validYears": 5, "pay": {"municipality": "67.05"}}
  ],
  "caribbean": {"currency": "USD", "fees": {"18 or older": "146.55", "under 18": "121.60"}, "said": "fixed in Aruba, Curaçao and Sint Maarten; maximums in Bonaire, Sint Eustatius and Saba", "within": "usually 2 weeks"},
- "standard": {"within": "about 5 working days to collection, up to 4 weeks, 4 more in some cases"},
- "note": "The fees are the 2026 maximums: each municipality sets its own at or under them. The Caribbean fees are said to be in dollars on the page. Urgent procedures and their costs are each municipality's own.",
+ "note": "The fees are the 2026 maximums: each municipality sets its own at or under them. The Caribbean fees are said to be in dollars on the page. Urgent procedures and their costs are each municipality's own. The totals are the 2026 maximums. The Caribbean fees, in US dollars, aren't compiled here.",
  "sources": [
   {
    "url": "https://www.rijksoverheid.nl/vraag-en-antwoord/paspoort-en-identiteitskaart/wat-zijn-de-kosten-van-paspoorten-en-identiteitskaarten",

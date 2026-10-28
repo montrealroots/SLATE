@@ -2,17 +2,17 @@
  "country": "AT",
  "office": "the passport authorities (the Bezirkshauptmannschaften, and the Magistrate in the statutory cities)",
  "currency": "EUR",
+ "routes": [
+  {"id": "normal", "where": "home", "speed": "standard", "within": {"n": 5, "unit": "day"}, "label": "normal delivery: five days"},
+  {"id": "express", "where": "home", "speed": "urgent", "within": {"n": 3, "unit": "day"}, "label": "Expresspass: delivered within three days"},
+  {"id": "one-day", "where": "home", "speed": "urgent", "within": {"n": 1, "unit": "working day"}, "label": "Ein-Tages-Expresspass: delivered the next working day"}
+ ],
  "passports": [
-  {"for": "adult", "from": 12, "validYears": 10, "fees": {"normal delivery": "112", "express": "148", "one-day express": "326"}},
-  {"for": "child", "from": 2, "under": 12, "validYears": 5, "fees": {"normal delivery": "44", "express": "67", "one-day express": "245"}},
-  {"for": "infant", "under": 2, "validYears": 2, "fees": {"normal delivery, first issue": "0", "normal delivery, a further passport": "44", "express": "67", "one-day express": "245"}}
+  {"for": "adult", "from": 12, "validYears": 10, "pay": {"normal": "112", "express": "148", "one-day": "326"}},
+  {"for": "child", "from": 2, "under": 12, "validYears": 5, "pay": {"normal": "44", "express": "67", "one-day": "245"}},
+  {"for": "infant", "under": 2, "validYears": 2, "pay": {"normal": null, "express": "67", "one-day": "245"}}
  ],
- "standard": {"within": "five days (delivery)"},
- "urgent": [
-  {"service": "Expresspass", "ready": "delivered within three days"},
-  {"service": "Ein-Tages-Expresspass", "ready": "delivered the next working day"}
- ],
- "note": "A passport first issued exactly on the second birthday is valid five years. Ten years from the twelfth birthday, which is also when the fee becomes the adult one.",
+ "note": "A passport first issued exactly on the second birthday is valid five years. Ten years from the twelfth birthday, which is also when the fee becomes the adult one. Under 2, the normal passport is free on a first issue and EUR 44 for a further one; the game, which doesn't yet tell the two apart, leaves that fee unknown.",
  "sources": [
   {
    "url": "https://www.oesterreich.gv.at/themen/persoenliche_dokumente_und_bestaetigungen/reisepass/Seite.020450.html",

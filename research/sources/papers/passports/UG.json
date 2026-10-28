@@ -2,13 +2,13 @@
  "country": "UG",
  "office": "the Ministry of Internal Affairs (NCIC), at a passport centre",
  "currency": "UGX",
- "passports": [
-  {"for": "any", "pages": 48, "validYears": null, "fees": {"ordinary": "250000", "express": "400000"}},
-  {"for": "any", "pages": 64, "validYears": null, "fees": {"ordinary": "350000", "express": "500000"}}
+ "routes": [
+  {"id": "ordinary", "where": "home", "speed": "standard", "within": null, "label": "ordinary"},
+  {"id": "express", "where": "home", "speed": "urgent", "within": null, "label": "express processing, UGX 150,000 more"}
  ],
- "standard": {"within": null, "said": "not in the regulations or on the page"},
- "urgent": [
-  {"service": "express processing", "fee": "150000 more"}
+ "passports": [
+  {"for": "any", "pages": 48, "validYears": null, "pay": {"ordinary": "250000", "express": "400000"}},
+  {"for": "any", "pages": 64, "validYears": null, "pay": {"ordinary": "350000", "express": "500000"}}
  ],
  "note": "Fees by the Uganda Citizenship and Immigration Control (Fees) Regulations, 2021 (S.I. 2021 No. 12), which the immigration site still gives on the date read (UGX 250,000, express UGX 150,000 more, paid separately in a bank); a later amendment hasn't been looked for. Express is the ordinary fee plus 150,000. A lost passport's fine is UGX 100,000, a mutilated passport UGX 100,000. Validity, minors' terms and processing times are leads.",
  "sources": [

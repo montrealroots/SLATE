@@ -2,13 +2,15 @@
  "country": "NP",
  "office": "the Department of Passports (राहदानी विभाग)",
  "currency": "NPR",
- "passports": [
-  {"for": "10 or older", "from": 10, "pages": 34, "validYears": null, "fees": {"new or renewal": "12000"}},
-  {"for": "10 or older", "from": 10, "pages": 66, "validYears": null, "fees": {"new or renewal": "20000"}},
-  {"for": "minor under 10", "under": 10, "pages": 34, "validYears": null, "fees": {"new or renewal": "9500"}},
-  {"for": "minor under 10", "under": 10, "pages": 66, "validYears": null, "fees": {"new or renewal": "14500"}}
+ "routes": [
+  {"id": "standard", "where": "home", "speed": "standard", "within": null, "label": "new or renewal"}
  ],
- "standard": {"within": null, "said": "not on the fee page"},
+ "passports": [
+  {"for": "10 or older", "from": 10, "pages": 34, "validYears": null, "pay": {"standard": "12000"}},
+  {"for": "10 or older", "from": 10, "pages": 66, "validYears": null, "pay": {"standard": "20000"}},
+  {"for": "minor under 10", "under": 10, "pages": 34, "validYears": null, "pay": {"standard": "9500"}},
+  {"for": "minor under 10", "under": 10, "pages": 66, "validYears": null, "pay": {"standard": "14500"}}
+ ],
  "note": "The Department's own words: the fees 'generally' at present. Lost or damaged: Rs 17,000 or 25,000 (minors under 10: 14,500 or 19,500). Validity is a lead.",
  "sources": [
   {

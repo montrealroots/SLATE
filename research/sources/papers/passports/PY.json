@@ -2,10 +2,12 @@
  "country": "PY",
  "office": "the Policía Nacional's Departamento de Identificaciones",
  "currency": "PYG",
- "passports": [
-  {"for": "any", "validYears": 5, "fees": {"ordinary": "240000"}}
+ "routes": [
+  {"id": "ordinary", "where": "home", "speed": "standard", "within": {"n": 20, "unit": "working day"}, "label": "20 working days"}
  ],
- "standard": {"within": "20 working days"},
+ "passports": [
+  {"for": "any", "validYears": 5, "pay": {"ordinary": "240000"}}
+ ],
  "note": "Gs. 240,000 from 26 September 2022 by Resolution 689 of the Policía Nacional's Comandancia (16 September 2022), as Última Hora reported the Department's announcement; the Department's own page still shows Gs. 199,000, the amount before that rise. Whether a later resolution changed it is a lead, as is the resolution's own text. Neither source names a separate fee for minors.",
  "sources": [
   {

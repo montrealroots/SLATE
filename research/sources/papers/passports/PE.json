@@ -2,26 +2,13 @@
  "country": "PE",
  "office": "the Superintendencia Nacional de Migraciones",
  "currency": "PEN",
- "passports": [
-  {
-   "for": "adult",
-   "from": 18,
-   "validYears": 10,
-   "fees": {
-    "electronic ordinary passport, ten years": "120.90"
-   }
-  },
-  {
-   "for": "minor",
-   "under": 18,
-   "validYears": null,
-   "fees": null
-  }
+ "routes": [
+  {"id": "standard", "where": "home", "speed": "standard", "within": null, "label": "electronic ordinary passport"}
  ],
- "standard": {
-  "within": null,
-  "said": "not read"
- },
+ "passports": [
+  {"for": "adult", "from": 18, "validYears": 10, "pay": {"standard": "120.90"}},
+  {"for": "minor", "under": 18, "validYears": null, "pay": {"standard": null}}
+ ],
  "note": "Ten years for an adult from 7 May 2024 (Ley N° 31678), at S/ 120.90, as Migraciones announced it in April 2024 (the five-year passport was S/ 98.60); a later change hasn't been looked for. The minors' validity (three to five years, by the press) is a lead: Migraciones' TUPA, not yet read.",
  "sources": [
   {

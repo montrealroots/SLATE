@@ -2,12 +2,14 @@
  "country": "GR",
  "office": "the Hellenic Police (police departments; the Passports and Security Documents Directorate), and consulates abroad",
  "currency": "EUR",
+ "routes": [
+  {"id": "standard", "where": "home", "speed": "standard", "within": {"n": 5, "unit": "working day"}, "label": "5 working days from the Directorate's receipt; exceptionally 1"}
+ ],
  "passports": [
-  {"for": "over 14", "from": 14, "validYears": null, "fees": {"first issue, renewal, or after theft or loss": "80"}},
-  {"for": "child", "under": 14, "validYears": null, "fees": {"first issue, renewal, or after theft or loss": "71"}}
+  {"for": "over 14", "from": 14, "validYears": null, "pay": {"standard": "80"}},
+  {"for": "child", "under": 14, "validYears": null, "pay": {"standard": "71"}}
  ],
  "replacement": {"fees": {"for wear, full pages or changed details": "58"}},
- "standard": {"within": "5 working days from the Directorate's receipt of the application; exceptionally 1 working day"},
  "note": "Paid as an e-paravolo. Validity isn't on the procedure's page; Greek missions abroad give 10 years from 14 and 3 years under it, but their pages answer this client 403 (not read).",
  "sources": [
   {

@@ -2,12 +2,12 @@
  "country": "MO",
  "office": "the Identification Services Bureau (DSI)",
  "currency": "MOP",
- "passports": [
-  {"for": "any", "validYears": null, "fees": {"normal": "430", "urgent": "580"}}
+ "routes": [
+  {"id": "normal", "where": "home", "speed": "standard", "within": {"n": 10, "unit": "working day"}, "label": "normal: 10 working days (performance pledge)"},
+  {"id": "urgent", "where": "home", "speed": "urgent", "within": {"n": 2, "unit": "working day"}, "label": "urgent: 2 working days, MOP 150 more"}
  ],
- "standard": {"within": "10 working days (performance pledge), counted from the day after a complete application"},
- "urgent": [
-  {"service": "2 working days", "fee": "150 more"}
+ "passports": [
+  {"for": "any", "validYears": null, "pay": {"normal": "430", "urgent": "580"}}
  ],
  "note": "Replacing a passport not presented, or damaged, adds MOP 150 the first time, rising to 300, 600, 1,200 and 2,400 from the fifth. Some applicants (in poverty, unemployed, with a disability) can be exempted. Validity (by age, under the 2009 regulation) is a lead.",
  "sources": [

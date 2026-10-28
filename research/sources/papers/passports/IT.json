@@ -2,14 +2,15 @@
  "country": "IT",
  "office": "the Questura's passport office, for the Polizia di Stato",
  "currency": "EUR",
- "passports": [
-  {"for": "adult", "from": 18, "pages": 48, "validYears": 10, "fees": {"administrative contribution": "73.50", "booklet": "42.70"}},
-  {"for": "minor", "from": 3, "under": 18, "validYears": 5, "fees": {"administrative contribution": "73.50", "booklet": "42.70"}},
-  {"for": "infant", "under": 3, "validYears": 3, "fees": {"administrative contribution": "73.50", "booklet": "42.70"}}
+ "routes": [
+  {"id": "questura", "where": "home", "speed": "standard", "within": null, "label": "at the Questura: the administrative contribution and the booklet"}
  ],
- "standard": {"within": null, "said": "not given; each Questura publishes its own arrangements"},
- "extras": {"delivery by insured mail": "9.88"},
- "note": "The administrative contribution is paid as an electronic stamp (contrassegno telematico), the booklet by a separate payment: 116.20 euros in all, for an adult or a minor alike.",
+ "passports": [
+  {"for": "adult", "from": 18, "pages": 48, "validYears": 10, "pay": {"questura": "116.20"}},
+  {"for": "minor", "from": 3, "under": 18, "validYears": 5, "pay": {"questura": "116.20"}},
+  {"for": "infant", "under": 3, "validYears": 3, "pay": {"questura": "116.20"}}
+ ],
+ "note": "The administrative contribution is paid as an electronic stamp (contrassegno telematico), the booklet by a separate payment: 116.20 euros in all, for an adult or a minor alike. Delivery by insured mail (EUR 9.88) is left out.",
  "sources": [
   {
    "url": "https://poliziadistato.it/articolo/pdf/10301",

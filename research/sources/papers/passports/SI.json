@@ -2,12 +2,14 @@
  "country": "SI",
  "office": "the administrative units (upravne enote), in person only",
  "currency": "EUR",
- "passports": [
-  {"for": "adult", "from": 18, "validYears": 10, "fees": null},
-  {"for": "child", "from": 3, "under": 18, "validYears": 5, "fees": null},
-  {"for": "infant", "under": 3, "validYears": 3, "fees": null}
+ "routes": [
+  {"id": "standard", "where": "home", "speed": "standard", "within": null, "label": "passport"}
  ],
- "standard": {"within": null, "said": "not given"},
+ "passports": [
+  {"for": "adult", "from": 18, "validYears": 10, "pay": {"standard": null}},
+  {"for": "child", "from": 3, "under": 18, "validYears": 5, "pay": {"standard": null}},
+  {"for": "infant", "under": 3, "validYears": 3, "pay": {"standard": null}}
+ ],
  "note": "The fee is the administrative tax (the tariff annexed to the Zakon o upravnih taksah) and the booklet's price, set apart; neither figure is on the eUprava page's text, so fees are a lead. After a first loss, theft or damage the administrative tax is doubled, and quadrupled for each further one within five years.",
  "sources": [
   {

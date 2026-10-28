@@ -2,15 +2,17 @@
  "country": "KR",
  "office": "local government passport offices (여권민원실)",
  "currency": "KRW",
- "passports": [
-  {"for": "adult", "from": 18, "pages": 58, "validYears": 10, "fees": {"electronic multiple passport": "52000"}},
-  {"for": "adult", "from": 18, "pages": 26, "validYears": 10, "fees": {"electronic multiple passport": "49000"}},
-  {"for": "minor", "from": 8, "under": 18, "pages": 58, "validYears": 5, "fees": {"electronic multiple passport": "44000"}},
-  {"for": "minor", "from": 8, "under": 18, "pages": 26, "validYears": 5, "fees": {"electronic multiple passport": "41000"}},
-  {"for": "child", "under": 8, "pages": 58, "validYears": 5, "fees": {"electronic multiple passport": "35000"}},
-  {"for": "child", "under": 8, "pages": 26, "validYears": 5, "fees": {"electronic multiple passport": "32000"}}
+ "routes": [
+  {"id": "standard", "where": "home", "speed": "standard", "within": null, "label": "electronic multiple passport"}
  ],
- "standard": {"within": null, "said": "not on the fee page"},
+ "passports": [
+  {"for": "adult", "from": 18, "pages": 58, "validYears": 10, "pay": {"standard": "52000"}},
+  {"for": "adult", "from": 18, "pages": 26, "validYears": 10, "pay": {"standard": "49000"}},
+  {"for": "minor", "from": 8, "under": 18, "pages": 58, "validYears": 5, "pay": {"standard": "44000"}},
+  {"for": "minor", "from": 8, "under": 18, "pages": 26, "validYears": 5, "pay": {"standard": "41000"}},
+  {"for": "child", "under": 8, "pages": 58, "validYears": 5, "pay": {"standard": "35000"}},
+  {"for": "child", "under": 8, "pages": 26, "validYears": 5, "pay": {"standard": "32000"}}
+ ],
  "note": "Fees include the international exchange contribution. Since 1 May 2025 every adult of 18 or more may get a ten-year passport, those who haven't done military service included. Read from Suwon's fee page (updated 2026-02-27, an official e-government site).",
  "sources": [
   {

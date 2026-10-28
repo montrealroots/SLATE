@@ -2,13 +2,13 @@
  "country": "BS",
  "office": "the Ministry of Foreign Affairs' Passport Department",
  "currency": "BSD",
- "passports": [
-  {"for": "adult", "from": 15, "validYears": null, "fees": {"application processing": "50", "expedited, 36-48 hours": "300 more"}},
-  {"for": "minor", "under": 15, "validYears": null, "fees": {"application processing": "25", "expedited, 36-48 hours": "300 more"}}
+ "routes": [
+  {"id": "standard", "where": "home", "speed": "standard", "within": {"n": 10, "unit": "working day"}, "label": "standard service: 7 – 10 business days"},
+  {"id": "expedited", "where": "home", "speed": "urgent", "within": {"n": 48, "unit": "hour"}, "label": "expedited services: within 36 – 48 hours, BSD 300 more"}
  ],
- "standard": {"within": "7-10 business days"},
- "urgent": [
-  {"service": "expedited, 36-48 hours", "fee": "300"}
+ "passports": [
+  {"for": "adult", "from": 15, "validYears": null, "pay": {"standard": "50", "expedited": "350"}},
+  {"for": "minor", "under": 15, "validYears": null, "pay": {"standard": "25", "expedited": "325"}}
  ],
  "note": "The fees and times the Passport Department publishes on its online renewal page; whether a first-time application in person costs the same is a lead, as is validity. Since 1 November 2024 a passport collected outside The Bahamas carries a subsidized courier fee of BSD 35. The expedite fee is read as added to the processing fee ('Expedited services'), which the page doesn't state outright.",
  "sources": [

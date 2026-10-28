@@ -2,12 +2,14 @@
  "country": "RW",
  "office": "the Directorate General of Immigration and Emigration, applied for through IremboGov",
  "currency": "RWF",
- "passports": [
-  {"for": "adult", "from": 18, "validYears": 10, "fees": {"first application": "100000"}},
-  {"for": "minor", "from": 16, "under": 18, "validYears": 5, "fees": {"first application": "25000"}},
-  {"for": "child", "under": 16, "validYears": 2, "fees": {"first application": "25000"}}
+ "routes": [
+  {"id": "first", "where": "home", "speed": "standard", "within": {"n": 4, "unit": "working day"}, "label": "4 working days from submission"}
  ],
- "standard": {"within": "4 working days from submission"},
+ "passports": [
+  {"for": "adult", "from": 18, "validYears": 10, "pay": {"first": "100000"}},
+  {"for": "minor", "from": 16, "under": 18, "validYears": 5, "pay": {"first": "25000"}},
+  {"for": "child", "under": 16, "validYears": 2, "pay": {"first": "25000"}}
+ ],
  "note": "IremboGov's guide to a first e-passport application, modified 11 February 2026; it writes the youngest band as '15 years and below'. A replacement's fees, and whether there is an urgent service, are leads.",
  "sources": [
   {

@@ -2,13 +2,16 @@
  "country": "HU",
  "office": "the passport authorities",
  "currency": "HUF",
- "passports": [
-  {"for": "adult", "from": 18, "validYears": 10, "fees": {"passport": "17000", "with domestic delivery by registered post": "19000"}},
-  {"for": "minor", "from": 12, "under": 18, "validYears": 5, "fees": {"passport": "12500", "with domestic delivery by registered post": "14500"}},
-  {"for": "child", "from": 6, "under": 12, "validYears": 5, "fees": {"passport": "8500", "with domestic delivery by registered post": "10500"}},
-  {"for": "infant", "under": 6, "validYears": 3, "fees": {"passport": "8500", "with domestic delivery by registered post": "10500"}}
+ "routes": [
+  {"id": "passport", "where": "home", "speed": "standard", "within": null, "label": "collected"},
+  {"id": "post", "where": "home", "speed": "standard", "within": null, "label": "with domestic delivery by registered post"}
  ],
- "standard": {"within": null, "said": "not in the law"},
+ "passports": [
+  {"for": "adult", "from": 18, "validYears": 10, "pay": {"passport": "17000", "post": "19000"}},
+  {"for": "minor", "from": 12, "under": 18, "validYears": 5, "pay": {"passport": "12500", "post": "14500"}},
+  {"for": "child", "from": 6, "under": 12, "validYears": 5, "pay": {"passport": "8500", "post": "10500"}},
+  {"for": "infant", "under": 6, "validYears": 3, "pay": {"passport": "8500", "post": "10500"}}
+ ],
  "note": "Validity by age at application (the passport act, § 8), counted from a birthday. A child of a household raising three or more minors pays 3,000 (under 12) or 8,500 (12 to 18). Fees from the decree in force since 1 February 2025.",
  "sources": [
   {

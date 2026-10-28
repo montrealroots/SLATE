@@ -2,13 +2,18 @@
  "country": "IE",
  "office": "the Minister for Foreign Affairs (the Passport Service)",
  "currency": "EUR",
- "passports": [
-  {"for": "adult", "from": 18, "pages": 34, "validYears": null, "fees": {"online": "75", "through the postal providers": "80", "at a Passport Office counter, or a mission abroad": "95"}},
-  {"for": "adult", "from": 18, "pages": 66, "validYears": null, "fees": {"online": "105", "through the postal providers": "110", "at a Passport Office counter, or a mission abroad": "125"}},
-  {"for": "minor", "under": 18, "pages": 34, "validYears": null, "fees": {"online": "20", "through the postal providers": "30", "at a Passport Office counter, or a mission abroad": "45"}},
-  {"for": "minor", "under": 18, "pages": 66, "validYears": null, "fees": {"online": "50", "through the postal providers": "55", "at a Passport Office counter, or a mission abroad": "55"}}
+ "routes": [
+  {"id": "online", "where": "home", "speed": "standard", "within": null, "label": "online"},
+  {"id": "postal", "where": "home", "speed": "standard", "within": null, "label": "through the postal providers"},
+  {"id": "counter", "where": "home", "speed": "standard", "within": null, "label": "at a Passport Office counter"},
+  {"id": "mission", "where": "abroad", "speed": "standard", "within": null, "label": "at a mission abroad"}
  ],
- "standard": {"within": null, "said": "not read"},
+ "passports": [
+  {"for": "adult", "from": 18, "pages": 34, "validYears": null, "pay": {"online": "75", "postal": "80", "counter": "95", "mission": "95"}},
+  {"for": "adult", "from": 18, "pages": 66, "validYears": null, "pay": {"online": "105", "postal": "110", "counter": "125", "mission": "125"}},
+  {"for": "minor", "under": 18, "pages": 34, "validYears": null, "pay": {"online": "20", "postal": "30", "counter": "45", "mission": "45"}},
+  {"for": "minor", "under": 18, "pages": 66, "validYears": null, "pay": {"online": "50", "postal": "55", "counter": "55", "mission": "55"}}
+ ],
  "note": "Fees from the Diplomatic and Consular Fees (Amendment) Regulations 2019; later amendments not yet checked. Validity is prescribed by the Minister under the Passports Act 2008, s. 9, in regulations not yet found. ireland.ie answers this client with 403 and the Oireachtas site with a CAPTCHA (neither circumvented).",
  "sources": [
   {

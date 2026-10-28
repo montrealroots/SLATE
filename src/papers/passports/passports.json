@@ -1,4 +1,116 @@
 {
+ "AT": {
+  "currency": "EUR",
+  "routes": [
+   {
+    "id": "normal",
+    "where": "home",
+    "speed": "standard",
+    "within": {
+     "n": 5,
+     "unit": "day"
+    }
+   },
+   {
+    "id": "express",
+    "where": "home",
+    "speed": "urgent",
+    "within": {
+     "n": 3,
+     "unit": "day"
+    }
+   },
+   {
+    "id": "one-day",
+    "where": "home",
+    "speed": "urgent",
+    "within": {
+     "n": 1,
+     "unit": "working day"
+    }
+   }
+  ],
+  "bands": [
+   {
+    "validYears": 10,
+    "pay": {
+     "normal": 11200,
+     "express": 14800,
+     "one-day": 32600
+    },
+    "from": 12
+   },
+   {
+    "validYears": 5,
+    "pay": {
+     "normal": 4400,
+     "express": 6700,
+     "one-day": 24500
+    },
+    "from": 2,
+    "under": 12
+   },
+   {
+    "validYears": 2,
+    "pay": {
+     "normal": null,
+     "express": 6700,
+     "one-day": 24500
+    },
+    "under": 2
+   }
+  ]
+ },
+ "BA": {
+  "currency": "BAM",
+  "routes": [
+   {
+    "id": "regular",
+    "where": "home",
+    "speed": "standard",
+    "within": {
+     "n": 30,
+     "unit": "day"
+    }
+   },
+   {
+    "id": "urgent",
+    "where": "home",
+    "speed": "urgent",
+    "within": {
+     "n": 72,
+     "unit": "hour"
+    }
+   }
+  ],
+  "bands": [
+   {
+    "validYears": 10,
+    "pay": {
+     "regular": null,
+     "urgent": null
+    },
+    "from": 18
+   },
+   {
+    "validYears": 5,
+    "pay": {
+     "regular": null,
+     "urgent": null
+    },
+    "from": 3,
+    "under": 18
+   },
+   {
+    "validYears": 3,
+    "pay": {
+     "regular": null,
+     "urgent": null
+    },
+    "under": 3
+   }
+  ]
+ },
  "BB": {
   "currency": "BBD",
   "routes": [
@@ -48,6 +160,190 @@
    }
   ]
  },
+ "BE": {
+  "currency": "EUR",
+  "routes": [
+   {
+    "id": "ordinary",
+    "where": "home",
+    "speed": "standard",
+    "within": {
+     "n": 5,
+     "unit": "working day"
+    }
+   },
+   {
+    "id": "urgent",
+    "where": "home",
+    "speed": "urgent",
+    "within": {
+     "n": 1,
+     "unit": "working day"
+    }
+   },
+   {
+    "id": "very-urgent",
+    "where": "home",
+    "speed": "urgent",
+    "within": {
+     "n": 270,
+     "unit": "minute"
+    }
+   },
+   {
+    "id": "very-urgent-brussels",
+    "where": "home",
+    "speed": "urgent",
+    "within": {
+     "n": 270,
+     "unit": "minute"
+    }
+   },
+   {
+    "id": "embassy",
+    "where": "abroad",
+    "speed": "standard",
+    "within": {
+     "n": 2,
+     "unit": "week"
+    }
+   }
+  ],
+  "bands": [
+   {
+    "validYears": 7,
+    "pay": {
+     "ordinary": 6500,
+     "urgent": 24000,
+     "very-urgent": 30000,
+     "very-urgent-brussels": 35000,
+     "embassy": 7500
+    },
+    "from": 18,
+    "pages": 34
+   },
+   {
+    "validYears": 5,
+    "pay": {
+     "ordinary": 3500,
+     "urgent": 21000,
+     "very-urgent": 27000,
+     "very-urgent-brussels": 32000,
+     "embassy": 3500
+    },
+    "under": 18,
+    "pages": 34
+   }
+  ]
+ },
+ "BR": {
+  "currency": "BRL",
+  "routes": [
+   {
+    "id": "common",
+    "where": "home",
+    "speed": "standard",
+    "within": {
+     "n": 6,
+     "unit": "working day"
+    }
+   },
+   {
+    "id": "urgency",
+    "where": "home",
+    "speed": "urgent",
+    "within": null
+   }
+  ],
+  "bands": [
+   {
+    "validYears": null,
+    "pay": {
+     "common": 25725,
+     "urgency": 33442
+    }
+   }
+  ]
+ },
+ "BS": {
+  "currency": "BSD",
+  "routes": [
+   {
+    "id": "standard",
+    "where": "home",
+    "speed": "standard",
+    "within": {
+     "n": 10,
+     "unit": "working day"
+    }
+   },
+   {
+    "id": "expedited",
+    "where": "home",
+    "speed": "urgent",
+    "within": {
+     "n": 48,
+     "unit": "hour"
+    }
+   }
+  ],
+  "bands": [
+   {
+    "validYears": null,
+    "pay": {
+     "standard": 5000,
+     "expedited": 35000
+    },
+    "from": 15
+   },
+   {
+    "validYears": null,
+    "pay": {
+     "standard": 2500,
+     "expedited": 32500
+    },
+    "under": 15
+   }
+  ]
+ },
+ "BW": {
+  "currency": "BWP",
+  "routes": [
+   {
+    "id": "application",
+    "where": "home",
+    "speed": "standard",
+    "within": {
+     "n": 5,
+     "unit": "working day"
+    }
+   }
+  ],
+  "bands": [
+   {
+    "validYears": null,
+    "pay": {
+     "application": 26000
+    },
+    "from": 18
+   },
+   {
+    "validYears": null,
+    "pay": {
+     "application": 26000
+    },
+    "from": 16,
+    "under": 18
+   },
+   {
+    "validYears": null,
+    "pay": {
+     "application": 10000
+    },
+    "under": 16
+   }
+  ]
+ },
  "BZ": {
   "currency": "BZD",
   "routes": [
@@ -81,6 +377,139 @@
     "pay": {
      "regular": 15000,
      "24h": 45000
+    },
+    "under": 16
+   }
+  ]
+ },
+ "CA": {
+  "currency": "CAD",
+  "routes": [
+   {
+    "id": "in-canada",
+    "where": "home",
+    "speed": "standard",
+    "within": null
+   },
+   {
+    "id": "outside",
+    "where": "abroad",
+    "speed": "standard",
+    "within": null
+   },
+   {
+    "id": "pickup-1",
+    "where": "home",
+    "speed": "urgent",
+    "within": {
+     "n": 1,
+     "unit": "working day"
+    }
+   },
+   {
+    "id": "pickup-9",
+    "where": "home",
+    "speed": "urgent",
+    "within": {
+     "n": 9,
+     "unit": "working day"
+    }
+   },
+   {
+    "id": "pickup-later",
+    "where": "home",
+    "speed": "urgent",
+    "within": null
+   }
+  ],
+  "bands": [
+   {
+    "validYears": 10,
+    "pay": {
+     "in-canada": 13500,
+     "outside": 23500,
+     "pickup-1": 24500,
+     "pickup-9": 18500,
+     "pickup-later": 15500
+    },
+    "from": 16
+   },
+   {
+    "validYears": 5,
+    "pay": {
+     "in-canada": 9500,
+     "outside": 16500,
+     "pickup-1": 20500,
+     "pickup-9": 14500,
+     "pickup-later": 11500
+    },
+    "from": 16
+   },
+   {
+    "validYears": 5,
+    "pay": {
+     "in-canada": 5700,
+     "outside": 10000,
+     "pickup-1": 16700,
+     "pickup-9": 10700,
+     "pickup-later": 7700
+    },
+    "under": 16
+   }
+  ]
+ },
+ "CH": {
+  "currency": "CHF",
+  "routes": [
+   {
+    "id": "passport",
+    "where": "home",
+    "speed": "standard",
+    "within": null
+   }
+  ],
+  "bands": [
+   {
+    "validYears": 10,
+    "pay": {
+     "passport": 14500
+    },
+    "from": 18
+   },
+   {
+    "validYears": 5,
+    "pay": {
+     "passport": 6500
+    },
+    "under": 18
+   }
+  ]
+ },
+ "CN": {
+  "currency": "CNY",
+  "routes": [
+   {
+    "id": "standard",
+    "where": "home",
+    "speed": "standard",
+    "within": {
+     "n": 30,
+     "unit": "day"
+    }
+   }
+  ],
+  "bands": [
+   {
+    "validYears": 10,
+    "pay": {
+     "standard": 12000
+    },
+    "from": 16
+   },
+   {
+    "validYears": 5,
+    "pay": {
+     "standard": 12000
     },
     "under": 16
    }
@@ -149,6 +578,115 @@
    }
   ]
  },
+ "DE": {
+  "currency": "EUR",
+  "routes": [
+   {
+    "id": "home",
+    "where": "home",
+    "speed": "standard",
+    "within": null
+   },
+   {
+    "id": "express",
+    "where": "home",
+    "speed": "urgent",
+    "within": null
+   },
+   {
+    "id": "abroad",
+    "where": "abroad",
+    "speed": "standard",
+    "within": null
+   }
+  ],
+  "bands": [
+   {
+    "validYears": 10,
+    "pay": {
+     "home": 7000,
+     "express": 10200,
+     "abroad": 10600
+    },
+    "from": 24
+   },
+   {
+    "validYears": 10,
+    "pay": {
+     "home": 9200,
+     "express": 12400,
+     "abroad": 12800
+    },
+    "from": 24,
+    "pages": 48
+   },
+   {
+    "validYears": 6,
+    "pay": {
+     "home": 3750,
+     "express": 6950,
+     "abroad": 7350
+    },
+    "under": 24
+   },
+   {
+    "validYears": 6,
+    "pay": {
+     "home": 5950,
+     "express": 9150,
+     "abroad": 9550
+    },
+    "under": 24,
+    "pages": 48
+   }
+  ]
+ },
+ "DK": {
+  "currency": "DKK",
+  "routes": [
+   {
+    "id": "standard",
+    "where": "home",
+    "speed": "standard",
+    "within": {
+     "n": 2,
+     "unit": "week"
+    }
+   }
+  ],
+  "bands": [
+   {
+    "validYears": 10,
+    "pay": {
+     "standard": 89400
+    },
+    "from": 18
+   },
+   {
+    "validYears": 5,
+    "pay": {
+     "standard": 18200
+    },
+    "from": 12,
+    "under": 18
+   },
+   {
+    "validYears": 5,
+    "pay": {
+     "standard": 15000
+    },
+    "from": 2,
+    "under": 12
+   },
+   {
+    "validYears": 2,
+    "pay": {
+     "standard": 15000
+    },
+    "under": 2
+   }
+  ]
+ },
  "EC": {
   "currency": "USD",
   "routes": [
@@ -176,6 +714,150 @@
      "agency": 9000
     },
     "under": 18
+   }
+  ]
+ },
+ "EE": {
+  "currency": "EUR",
+  "routes": [
+   {
+    "id": "portal",
+    "where": "home",
+    "speed": "standard",
+    "within": {
+     "n": 30,
+     "unit": "day"
+    }
+   },
+   {
+    "id": "office",
+    "where": "home",
+    "speed": "standard",
+    "within": {
+     "n": 30,
+     "unit": "day"
+    }
+   },
+   {
+    "id": "expedited",
+    "where": "home",
+    "speed": "urgent",
+    "within": {
+     "n": 1,
+     "unit": "working day"
+    }
+   }
+  ],
+  "bands": [
+   {
+    "validYears": 10,
+    "pay": {
+     "portal": 5000,
+     "office": 6000,
+     "expedited": 25000
+    },
+    "from": 18
+   },
+   {
+    "validYears": 5,
+    "pay": {
+     "portal": 2000,
+     "office": 2500,
+     "expedited": null
+    },
+    "under": 18
+   }
+  ]
+ },
+ "ES": {
+  "currency": "EUR",
+  "routes": [
+   {
+    "id": "standard",
+    "where": "home",
+    "speed": "standard",
+    "within": null
+   }
+  ],
+  "bands": [
+   {
+    "validYears": 10,
+    "pay": {
+     "standard": null
+    },
+    "from": 30,
+    "pages": 32
+   },
+   {
+    "validYears": 5,
+    "pay": {
+     "standard": null
+    },
+    "from": 5,
+    "under": 30,
+    "pages": 32
+   },
+   {
+    "validYears": 2,
+    "pay": {
+     "standard": null
+    },
+    "under": 5,
+    "pages": 32
+   }
+  ]
+ },
+ "FI": {
+  "currency": "EUR",
+  "routes": [
+   {
+    "id": "in-person",
+    "where": "home",
+    "speed": "standard",
+    "within": null
+   },
+   {
+    "id": "online",
+    "where": "home",
+    "speed": "standard",
+    "within": null
+   },
+   {
+    "id": "pika-in-person",
+    "where": "home",
+    "speed": "urgent",
+    "within": null
+   },
+   {
+    "id": "pika-online",
+    "where": "home",
+    "speed": "urgent",
+    "within": null
+   },
+   {
+    "id": "express-in-person",
+    "where": "home",
+    "speed": "urgent",
+    "within": null
+   },
+   {
+    "id": "express-online",
+    "where": "home",
+    "speed": "urgent",
+    "within": null
+   }
+  ],
+  "bands": [
+   {
+    "validYears": 5,
+    "pay": {
+     "in-person": 4800,
+     "online": 4200,
+     "pika-in-person": 6700,
+     "pika-online": 6100,
+     "express-in-person": 8700,
+     "express-online": 8100
+    }
    }
   ]
  },
@@ -215,6 +897,59 @@
      "urgent": 28385,
      "weekend": 62760
     }
+   }
+  ]
+ },
+ "FR": {
+  "currency": "EUR",
+  "routes": [
+   {
+    "id": "france",
+    "where": "home",
+    "speed": "standard",
+    "within": null
+   },
+   {
+    "id": "guyane",
+    "where": "home",
+    "speed": "standard",
+    "within": null
+   },
+   {
+    "id": "abroad",
+    "where": "abroad",
+    "speed": "standard",
+    "within": null
+   }
+  ],
+  "bands": [
+   {
+    "validYears": 10,
+    "pay": {
+     "france": 8600,
+     "guyane": 4300,
+     "abroad": 9600
+    },
+    "from": 18
+   },
+   {
+    "validYears": 5,
+    "pay": {
+     "france": 4200,
+     "guyane": 2100,
+     "abroad": 5200
+    },
+    "from": 15,
+    "under": 18
+   },
+   {
+    "validYears": 5,
+    "pay": {
+     "france": 1700,
+     "guyane": 850,
+     "abroad": 2700
+    },
+    "under": 15
    }
   ]
  },
@@ -421,6 +1156,36 @@
    }
   ]
  },
+ "GR": {
+  "currency": "EUR",
+  "routes": [
+   {
+    "id": "standard",
+    "where": "home",
+    "speed": "standard",
+    "within": {
+     "n": 5,
+     "unit": "working day"
+    }
+   }
+  ],
+  "bands": [
+   {
+    "validYears": null,
+    "pay": {
+     "standard": 8000
+    },
+    "from": 14
+   },
+   {
+    "validYears": null,
+    "pay": {
+     "standard": 7100
+    },
+    "under": 14
+   }
+  ]
+ },
  "GT": {
   "currency": "USD",
   "routes": [
@@ -464,6 +1229,231 @@
      "abroad": 6500
     },
     "under": 18
+   }
+  ]
+ },
+ "HK": {
+  "currency": "HKD",
+  "routes": [
+   {
+    "id": "local",
+    "where": "home",
+    "speed": "standard",
+    "within": null
+   }
+  ],
+  "bands": [
+   {
+    "validYears": 10,
+    "pay": {
+     "local": 43000
+    },
+    "from": 16,
+    "pages": 32
+   },
+   {
+    "validYears": 10,
+    "pay": {
+     "local": 52000
+    },
+    "from": 16,
+    "pages": 48
+   },
+   {
+    "validYears": 5,
+    "pay": {
+     "local": 21500
+    },
+    "under": 16,
+    "pages": 32
+   },
+   {
+    "validYears": 5,
+    "pay": {
+     "local": 26000
+    },
+    "under": 16,
+    "pages": 48
+   }
+  ]
+ },
+ "HR": {
+  "currency": "EUR",
+  "routes": [
+   {
+    "id": "regular",
+    "where": "home",
+    "speed": "standard",
+    "within": {
+     "n": 30,
+     "unit": "day"
+    }
+   },
+   {
+    "id": "delivered",
+    "where": "home",
+    "speed": "standard",
+    "within": {
+     "n": 30,
+     "unit": "day"
+    }
+   },
+   {
+    "id": "urgent-zagreb",
+    "where": "home",
+    "speed": "urgent",
+    "within": {
+     "n": 48,
+     "unit": "hour"
+    }
+   },
+   {
+    "id": "urgent",
+    "where": "home",
+    "speed": "urgent",
+    "within": {
+     "n": 3,
+     "unit": "working day"
+    }
+   }
+  ],
+  "bands": [
+   {
+    "validYears": null,
+    "pay": {
+     "regular": 4247,
+     "delivered": 4645,
+     "urgent-zagreb": 5442,
+     "urgent": 6172
+    }
+   }
+  ]
+ },
+ "HU": {
+  "currency": "HUF",
+  "routes": [
+   {
+    "id": "passport",
+    "where": "home",
+    "speed": "standard",
+    "within": null
+   },
+   {
+    "id": "post",
+    "where": "home",
+    "speed": "standard",
+    "within": null
+   }
+  ],
+  "bands": [
+   {
+    "validYears": 10,
+    "pay": {
+     "passport": 1700000,
+     "post": 1900000
+    },
+    "from": 18
+   },
+   {
+    "validYears": 5,
+    "pay": {
+     "passport": 1250000,
+     "post": 1450000
+    },
+    "from": 12,
+    "under": 18
+   },
+   {
+    "validYears": 5,
+    "pay": {
+     "passport": 850000,
+     "post": 1050000
+    },
+    "from": 6,
+    "under": 12
+   },
+   {
+    "validYears": 3,
+    "pay": {
+     "passport": 850000,
+     "post": 1050000
+    },
+    "under": 6
+   }
+  ]
+ },
+ "IE": {
+  "currency": "EUR",
+  "routes": [
+   {
+    "id": "online",
+    "where": "home",
+    "speed": "standard",
+    "within": null
+   },
+   {
+    "id": "postal",
+    "where": "home",
+    "speed": "standard",
+    "within": null
+   },
+   {
+    "id": "counter",
+    "where": "home",
+    "speed": "standard",
+    "within": null
+   },
+   {
+    "id": "mission",
+    "where": "abroad",
+    "speed": "standard",
+    "within": null
+   }
+  ],
+  "bands": [
+   {
+    "validYears": null,
+    "pay": {
+     "online": 7500,
+     "postal": 8000,
+     "counter": 9500,
+     "mission": 9500
+    },
+    "from": 18,
+    "pages": 34
+   },
+   {
+    "validYears": null,
+    "pay": {
+     "online": 10500,
+     "postal": 11000,
+     "counter": 12500,
+     "mission": 12500
+    },
+    "from": 18,
+    "pages": 66
+   },
+   {
+    "validYears": null,
+    "pay": {
+     "online": 2000,
+     "postal": 3000,
+     "counter": 4500,
+     "mission": 4500
+    },
+    "under": 18,
+    "pages": 34
+   },
+   {
+    "validYears": null,
+    "pay": {
+     "online": 5000,
+     "postal": 5500,
+     "counter": 5500,
+     "mission": 5500
+    },
+    "under": 18,
+    "pages": 66
    }
   ]
  },
@@ -563,6 +1553,42 @@
    }
   ]
  },
+ "IT": {
+  "currency": "EUR",
+  "routes": [
+   {
+    "id": "questura",
+    "where": "home",
+    "speed": "standard",
+    "within": null
+   }
+  ],
+  "bands": [
+   {
+    "validYears": 10,
+    "pay": {
+     "questura": 11620
+    },
+    "from": 18,
+    "pages": 48
+   },
+   {
+    "validYears": 5,
+    "pay": {
+     "questura": 11620
+    },
+    "from": 3,
+    "under": 18
+   },
+   {
+    "validYears": 3,
+    "pay": {
+     "questura": 11620
+    },
+    "under": 3
+   }
+  ]
+ },
  "JM": {
   "currency": "JMD",
   "routes": [
@@ -634,6 +1660,104 @@
      "overseas": null
     },
     "under": 18
+   }
+  ]
+ },
+ "JP": {
+  "currency": "JPY",
+  "routes": [
+   {
+    "id": "prefecture",
+    "where": "home",
+    "speed": "standard",
+    "within": null
+   },
+   {
+    "id": "online",
+    "where": "home",
+    "speed": "standard",
+    "within": null
+   }
+  ],
+  "bands": [
+   {
+    "validYears": 10,
+    "pay": {
+     "prefecture": 9300,
+     "online": 8900
+    },
+    "from": 18
+   },
+   {
+    "validYears": 5,
+    "pay": {
+     "prefecture": 4800,
+     "online": 4400
+    },
+    "under": 18
+   }
+  ]
+ },
+ "KR": {
+  "currency": "KRW",
+  "routes": [
+   {
+    "id": "standard",
+    "where": "home",
+    "speed": "standard",
+    "within": null
+   }
+  ],
+  "bands": [
+   {
+    "validYears": 10,
+    "pay": {
+     "standard": 52000
+    },
+    "from": 18,
+    "pages": 58
+   },
+   {
+    "validYears": 10,
+    "pay": {
+     "standard": 49000
+    },
+    "from": 18,
+    "pages": 26
+   },
+   {
+    "validYears": 5,
+    "pay": {
+     "standard": 44000
+    },
+    "from": 8,
+    "under": 18,
+    "pages": 58
+   },
+   {
+    "validYears": 5,
+    "pay": {
+     "standard": 41000
+    },
+    "from": 8,
+    "under": 18,
+    "pages": 26
+   },
+   {
+    "validYears": 5,
+    "pay": {
+     "standard": 35000
+    },
+    "under": 8,
+    "pages": 58
+   },
+   {
+    "validYears": 5,
+    "pay": {
+     "standard": 32000
+    },
+    "under": 8,
+    "pages": 26
    }
   ]
  },
@@ -785,6 +1909,38 @@
    }
   ]
  },
+ "MO": {
+  "currency": "MOP",
+  "routes": [
+   {
+    "id": "normal",
+    "where": "home",
+    "speed": "standard",
+    "within": {
+     "n": 10,
+     "unit": "working day"
+    }
+   },
+   {
+    "id": "urgent",
+    "where": "home",
+    "speed": "urgent",
+    "within": {
+     "n": 2,
+     "unit": "working day"
+    }
+   }
+  ],
+  "bands": [
+   {
+    "validYears": null,
+    "pay": {
+     "normal": 43000,
+     "urgent": 58000
+    }
+   }
+  ]
+ },
  "MT": {
   "currency": "EUR",
   "routes": [
@@ -917,6 +2073,193 @@
    }
   ]
  },
+ "MY": {
+  "currency": "MYR",
+  "routes": [
+   {
+    "id": "standard",
+    "where": "home",
+    "speed": "standard",
+    "within": null
+   }
+  ],
+  "bands": [
+   {
+    "validYears": 5,
+    "pay": {
+     "standard": 20000
+    },
+    "from": 18,
+    "under": 60
+   },
+   {
+    "validYears": 10,
+    "pay": {
+     "standard": 35000
+    },
+    "from": 18,
+    "under": 60
+   },
+   {
+    "validYears": 5,
+    "pay": {
+     "standard": 10000
+    },
+    "from": 60
+   },
+   {
+    "validYears": 10,
+    "pay": {
+     "standard": 17500
+    },
+    "from": 60
+   },
+   {
+    "validYears": 5,
+    "pay": {
+     "standard": 20000
+    },
+    "from": 12,
+    "under": 18
+   },
+   {
+    "validYears": 5,
+    "pay": {
+     "standard": 10000
+    },
+    "under": 12
+   }
+  ]
+ },
+ "NG": {
+  "currency": "NGN",
+  "routes": [
+   {
+    "id": "home",
+    "where": "home",
+    "speed": "standard",
+    "within": null
+   }
+  ],
+  "bands": [
+   {
+    "validYears": 5,
+    "pay": {
+     "home": 10000000
+    },
+    "pages": 32
+   },
+   {
+    "validYears": 10,
+    "pay": {
+     "home": 20000000
+    },
+    "pages": 64
+   }
+  ]
+ },
+ "NL": {
+  "currency": "EUR",
+  "routes": [
+   {
+    "id": "municipality",
+    "where": "home",
+    "speed": "standard",
+    "within": {
+     "n": 8,
+     "unit": "week"
+    }
+   }
+  ],
+  "bands": [
+   {
+    "validYears": 10,
+    "pay": {
+     "municipality": 8865
+    },
+    "from": 18
+   },
+   {
+    "validYears": 5,
+    "pay": {
+     "municipality": 6705
+    },
+    "under": 18
+   }
+  ]
+ },
+ "NP": {
+  "currency": "NPR",
+  "routes": [
+   {
+    "id": "standard",
+    "where": "home",
+    "speed": "standard",
+    "within": null
+   }
+  ],
+  "bands": [
+   {
+    "validYears": null,
+    "pay": {
+     "standard": 1200000
+    },
+    "from": 10,
+    "pages": 34
+   },
+   {
+    "validYears": null,
+    "pay": {
+     "standard": 2000000
+    },
+    "from": 10,
+    "pages": 66
+   },
+   {
+    "validYears": null,
+    "pay": {
+     "standard": 950000
+    },
+    "under": 10,
+    "pages": 34
+   },
+   {
+    "validYears": null,
+    "pay": {
+     "standard": 1450000
+    },
+    "under": 10,
+    "pages": 66
+   }
+  ]
+ },
+ "PE": {
+  "currency": "PEN",
+  "routes": [
+   {
+    "id": "standard",
+    "where": "home",
+    "speed": "standard",
+    "within": null
+   }
+  ],
+  "bands": [
+   {
+    "validYears": 10,
+    "pay": {
+     "standard": 12090
+    },
+    "from": 18
+   },
+   {
+    "validYears": null,
+    "pay": {
+     "standard": null
+    },
+    "under": 18
+   }
+  ]
+ },
  "PK": {
   "currency": "PKR",
   "routes": [
@@ -987,6 +2330,85 @@
    }
   ]
  },
+ "PL": {
+  "currency": "PLN",
+  "routes": [
+   {
+    "id": "standard",
+    "where": "home",
+    "speed": "standard",
+    "within": null
+   }
+  ],
+  "bands": [
+   {
+    "validYears": 10,
+    "pay": {
+     "standard": 14000
+    },
+    "from": 12,
+    "under": 70
+   },
+   {
+    "validYears": 10,
+    "pay": {
+     "standard": 0
+    },
+    "from": 70
+   },
+   {
+    "validYears": 5,
+    "pay": {
+     "standard": 3000
+    },
+    "under": 12
+   }
+  ]
+ },
+ "PY": {
+  "currency": "PYG",
+  "routes": [
+   {
+    "id": "ordinary",
+    "where": "home",
+    "speed": "standard",
+    "within": {
+     "n": 20,
+     "unit": "working day"
+    }
+   }
+  ],
+  "bands": [
+   {
+    "validYears": 5,
+    "pay": {
+     "ordinary": 240000
+    }
+   }
+  ]
+ },
+ "RO": {
+  "currency": "RON",
+  "routes": [
+   {
+    "id": "standard",
+    "where": "home",
+    "speed": "standard",
+    "within": {
+     "n": 10,
+     "unit": "working day"
+    }
+   }
+  ],
+  "bands": [
+   {
+    "validYears": null,
+    "pay": {
+     "standard": 26500
+    }
+   }
+  ]
+ },
  "RS": {
   "currency": "RSD",
   "routes": [
@@ -1049,6 +2471,74 @@
    }
   ]
  },
+ "RW": {
+  "currency": "RWF",
+  "routes": [
+   {
+    "id": "first",
+    "where": "home",
+    "speed": "standard",
+    "within": {
+     "n": 4,
+     "unit": "working day"
+    }
+   }
+  ],
+  "bands": [
+   {
+    "validYears": 10,
+    "pay": {
+     "first": 100000
+    },
+    "from": 18
+   },
+   {
+    "validYears": 5,
+    "pay": {
+     "first": 25000
+    },
+    "from": 16,
+    "under": 18
+   },
+   {
+    "validYears": 2,
+    "pay": {
+     "first": 25000
+    },
+    "under": 16
+   }
+  ]
+ },
+ "SE": {
+  "currency": "SEK",
+  "routes": [
+   {
+    "id": "standard",
+    "where": "home",
+    "speed": "standard",
+    "within": {
+     "n": 1,
+     "unit": "week"
+    }
+   }
+  ],
+  "bands": [
+   {
+    "validYears": 5,
+    "pay": {
+     "standard": 50000
+    },
+    "from": 12
+   },
+   {
+    "validYears": 3,
+    "pay": {
+     "standard": 50000
+    },
+    "under": 12
+   }
+  ]
+ },
  "SG": {
   "currency": "SGD",
   "routes": [
@@ -1098,6 +2588,41 @@
      "abroad": null
     },
     "under": 16
+   }
+  ]
+ },
+ "SI": {
+  "currency": "EUR",
+  "routes": [
+   {
+    "id": "standard",
+    "where": "home",
+    "speed": "standard",
+    "within": null
+   }
+  ],
+  "bands": [
+   {
+    "validYears": 10,
+    "pay": {
+     "standard": null
+    },
+    "from": 18
+   },
+   {
+    "validYears": 5,
+    "pay": {
+     "standard": null
+    },
+    "from": 3,
+    "under": 18
+   },
+   {
+    "validYears": 3,
+    "pay": {
+     "standard": null
+    },
+    "under": 3
    }
   ]
  },
@@ -1294,6 +2819,76 @@
      "express": 180000
     },
     "under": 14
+   }
+  ]
+ },
+ "UG": {
+  "currency": "UGX",
+  "routes": [
+   {
+    "id": "ordinary",
+    "where": "home",
+    "speed": "standard",
+    "within": null
+   },
+   {
+    "id": "express",
+    "where": "home",
+    "speed": "urgent",
+    "within": null
+   }
+  ],
+  "bands": [
+   {
+    "validYears": null,
+    "pay": {
+     "ordinary": 250000,
+     "express": 400000
+    },
+    "pages": 48
+   },
+   {
+    "validYears": null,
+    "pay": {
+     "ordinary": 350000,
+     "express": 500000
+    },
+    "pages": 64
+   }
+  ]
+ },
+ "US": {
+  "currency": "USD",
+  "routes": [
+   {
+    "id": "in-person",
+    "where": "home",
+    "speed": "standard",
+    "within": null
+   },
+   {
+    "id": "in-person-expedited",
+    "where": "home",
+    "speed": "urgent",
+    "within": null
+   }
+  ],
+  "bands": [
+   {
+    "validYears": 10,
+    "pay": {
+     "in-person": 16500,
+     "in-person-expedited": 22500
+    },
+    "from": 16
+   },
+   {
+    "validYears": 5,
+    "pay": {
+     "in-person": 13500,
+     "in-person-expedited": 19500
+    },
+    "under": 16
    }
   ]
  }

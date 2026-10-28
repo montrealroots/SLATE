@@ -2,12 +2,15 @@
  "country": "PL",
  "office": "the voivode's passport offices",
  "currency": "PLN",
- "passports": [
-  {"for": "adult", "from": 12, "validYears": 10, "fees": {"normal": "140", "reduced 50% (pupils from 12, students to 26, pensioners and others named)": "70", "70 or older": "0"}},
-  {"for": "child", "under": 12, "validYears": 5, "fees": {"passport": "30"}}
+ "routes": [
+  {"id": "standard", "where": "home", "speed": "standard", "within": null, "label": "passport"}
  ],
- "standard": {"within": null, "said": "not given"},
- "note": "A minor of 12 or more who is a pupil pays the reduced fee for a ten-year passport. Read from a county's terrain passport point page on samorzad.gov.pl; the fees are paid to the Dolnośląski Urząd Wojewódzki.",
+ "passports": [
+  {"for": "adult", "from": 12, "under": 70, "validYears": 10, "pay": {"standard": "140"}},
+  {"for": "senior", "from": 70, "validYears": 10, "pay": {"standard": "0"}},
+  {"for": "child", "under": 12, "validYears": 5, "pay": {"standard": "30"}}
+ ],
+ "note": "A minor of 12 or more who is a pupil pays the reduced fee for a ten-year passport. Read from a county's terrain passport point page on samorzad.gov.pl; the fees are paid to the Dolnośląski Urząd Wojewódzki. Pupils from 12, students to 26, pensioners and others named pay the reduced fee (PLN 70); the game, which doesn't keep those statuses, charges the full fee.",
  "sources": [
   {
    "url": "https://samorzad.gov.pl/web/powiat-polkowicki/terenowe-biuro-paszportowe",

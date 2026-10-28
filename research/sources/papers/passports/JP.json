@@ -2,12 +2,15 @@
  "country": "JP",
  "office": "the prefectural governors, for the Minister for Foreign Affairs",
  "currency": "JPY",
- "passports": [
-  {"for": "adult", "from": 18, "validYears": 10, "fees": {"national": "7000", "prefecture (standard)": "2300", "prefecture (standard), applying online": "1900"}},
-  {"for": "minor", "under": 18, "validYears": 5, "fees": {"national": "2500", "prefecture (standard)": "2300", "prefecture (standard), applying online": "1900"}}
+ "routes": [
+  {"id": "prefecture", "where": "home", "speed": "standard", "within": null, "label": "at the prefecture, the national fee and the prefecture's standard fee"},
+  {"id": "online", "where": "home", "speed": "standard", "within": null, "label": "applying online, the national fee and the prefecture's standard online fee"}
  ],
- "standard": {"within": null, "said": "not in the law"},
- "note": "In Japan the fee is the national fee (paid in revenue stamps) and the prefecture's, which each prefecture sets by its own ordinance with the Cabinet Order's amount as the standard: 9,300 yen for ten years (8,900 online) and 4,800 for five (4,400 online) where a prefecture keeps the standard. Abroad, consulates charge in the local currency within yen bands the Order sets (9,200 to 9,400 yen for ten years). Processing times are on the Ministry's and the prefectures' sites; mofa.go.jp answers this client with 403.",
+ "passports": [
+  {"for": "adult", "from": 18, "validYears": 10, "pay": {"prefecture": "9300", "online": "8900"}},
+  {"for": "minor", "under": 18, "validYears": 5, "pay": {"prefecture": "4800", "online": "4400"}}
+ ],
+ "note": "In Japan the fee is the national fee (paid in revenue stamps) and the prefecture's, which each prefecture sets by its own ordinance with the Cabinet Order's amount as the standard: 9,300 yen for ten years (8,900 online) and 4,800 for five (4,400 online) where a prefecture keeps the standard. Abroad, consulates charge in the local currency within yen bands the Order sets (9,200 to 9,400 yen for ten years). Processing times are on the Ministry's and the prefectures' sites; mofa.go.jp answers this client with 403. The totals assume the prefecture keeps the Cabinet Order's standard fee.",
  "sources": [
   {
    "url": "https://laws.e-gov.go.jp/law/326AC0000000267",

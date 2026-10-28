@@ -2,12 +2,13 @@
  "country": "RO",
  "office": "the community public passport services (Direcția Generală de Pașapoarte, Ministerul Afacerilor Interne); abroad, Romania's diplomatic missions and consular offices",
  "currency": "RON",
- "passports": [
-  {"for": "any", "validYears": null, "fees": {"simple electronic passport, applied for in Romania": "265"}}
+ "routes": [
+  {"id": "standard", "where": "home", "speed": "standard", "within": {"n": 10, "unit": "working day"}, "label": "up to 5 working days, up to 10 in very busy periods: the longest is taken"}
  ],
- "standard": {"within": "up to 5 working days (applied for and collected in Romania); up to 10 in very busy periods"},
- "urgent": [{"service": "simple temporary passport", "ready": "within 3 working days", "fees": {"any": "265"}}],
- "note": "Since 1 August 2025 one amount, 265 lei with VAT, for any simple electronic or temporary passport applied for in Romania; there is no urgent fee. Validity by age is set by the passport law (Legea 248/2005), not yet read; the press gives 3, 5 and 10 years by age.",
+ "passports": [
+  {"for": "any", "validYears": null, "pay": {"standard": "265"}}
+ ],
+ "note": "Since 1 August 2025 one amount, 265 lei with VAT, for any simple electronic or temporary passport applied for in Romania; there is no urgent fee. Validity by age is set by the passport law (Legea 248/2005), not yet read; the press gives 3, 5 and 10 years by age. The simple temporary passport (within 3 working days, the same fee) isn't modelled.",
  "sources": [
   {
    "url": "https://pasapoarte.mai.gov.ro/category/intrebari-frecvente/",

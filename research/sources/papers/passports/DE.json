@@ -2,14 +2,18 @@
  "country": "DE",
  "office": "the passport authority (Passbehörde)",
  "currency": "EUR",
- "passports": [
-  {"for": "adult", "from": 24, "validYears": 10, "fees": {"in Germany": "70", "abroad": "106"}},
-  {"for": "young", "under": 24, "validYears": 6, "fees": {"in Germany": "37.50", "abroad": "73.50"}}
+ "routes": [
+  {"id": "home", "where": "home", "speed": "standard", "within": null, "label": "in Germany"},
+  {"id": "express", "where": "home", "speed": "urgent", "within": null, "label": "Expressverfahren, EUR 32 more"},
+  {"id": "abroad", "where": "abroad", "speed": "standard", "within": null, "label": "abroad, at a consulate or embassy (EUR 36 more)"}
  ],
- "extras": {"48 pages": "22", "express": "32", "delivery": "15", "a photograph taken by the authority": "6"},
- "standard": {"within": null, "said": "not in the law"},
- "urgent": [{"service": "Expressverfahren", "fees": {"any": "32"}, "ready": null}],
- "note": "The fees of the Passverordnung, § 27: abroad, a consulate or embassy adds 36 euros to the 70 and the 37.50 (§ 27(3)); 48 pages add 22 euros to either, express service 32. Validity from the Passgesetz, § 5. Processing times are left as a lead: the federal portal (verwaltung.bund.de) is said by the press to give three working days for express; not yet read.",
+ "passports": [
+  {"for": "adult", "from": 24, "validYears": 10, "pay": {"home": "70", "express": "102", "abroad": "106"}},
+  {"for": "adult", "from": 24, "pages": 48, "validYears": 10, "pay": {"home": "92", "express": "124", "abroad": "128"}},
+  {"for": "young", "under": 24, "validYears": 6, "pay": {"home": "37.50", "express": "69.50", "abroad": "73.50"}},
+  {"for": "young", "under": 24, "pages": 48, "validYears": 6, "pay": {"home": "59.50", "express": "91.50", "abroad": "95.50"}}
+ ],
+ "note": "The fees of the Passverordnung, § 27: abroad, a consulate or embassy adds 36 euros to the 70 and the 37.50 (§ 27(3)); 48 pages add 22 euros to either, express service 32. Validity from the Passgesetz, § 5. Processing times are left as a lead: the federal portal (verwaltung.bund.de) is said by the press to give three working days for express; not yet read. The 48-page passports add EUR 22; delivery (EUR 15) and a photograph taken by the authority (EUR 6) are left out of the totals.",
  "sources": [
   {
    "url": "https://www.gesetze-im-internet.de/passv_2007/__27.html",

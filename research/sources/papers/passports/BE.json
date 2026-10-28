@@ -2,14 +2,16 @@
  "country": "BE",
  "office": "the municipality, for the FPS Foreign Affairs",
  "currency": "EUR",
- "passports": [
-  {"for": "adult", "from": 18, "pages": 34, "validYears": 7, "fees": {"ordinary, in the municipality": "65", "urgent, in the municipality": "240", "very urgent, in the municipality": "300", "very urgent, at the Brussels counter": "350", "at an embassy or consulate": "75"}},
-  {"for": "minor", "under": 18, "pages": 34, "validYears": 5, "fees": {"ordinary, in the municipality": "35", "urgent, in the municipality": "210", "very urgent, in the municipality": "270", "very urgent, at the Brussels counter": "320", "at an embassy or consulate": "35"}}
+ "routes": [
+  {"id": "ordinary", "where": "home", "speed": "standard", "within": {"n": 5, "unit": "working day"}, "label": "ordinary, in the municipality: delivered by the 5th working day after the day of application"},
+  {"id": "urgent", "where": "home", "speed": "urgent", "within": {"n": 1, "unit": "working day"}, "label": "urgent, in the municipality: the next working day if applied for before 15:00"},
+  {"id": "very-urgent", "where": "home", "speed": "urgent", "within": {"n": 270, "unit": "minute"}, "label": "very urgent, in the municipality: within 4.5 hours if applied for Monday to Friday before 15:00"},
+  {"id": "very-urgent-brussels", "where": "home", "speed": "urgent", "within": {"n": 270, "unit": "minute"}, "label": "very urgent, at the Brussels counter"},
+  {"id": "embassy", "where": "abroad", "speed": "standard", "within": {"n": 2, "unit": "week"}, "label": "at an embassy or consulate: about 2 weeks"}
  ],
- "standard": {"within": "delivered by the 5th working day after the day of application (municipality); about 2 weeks (embassy or consulate)"},
- "urgent": [
-  {"service": "urgent", "ready": "the next working day if applied for before 15:00"},
-  {"service": "very urgent", "ready": "within 4.5 hours if applied for Monday to Friday before 15:00"}
+ "passports": [
+  {"for": "adult", "from": 18, "pages": 34, "validYears": 7, "pay": {"ordinary": "65", "urgent": "240", "very-urgent": "300", "very-urgent-brussels": "350", "embassy": "75"}},
+  {"for": "minor", "under": 18, "pages": 34, "validYears": 5, "pay": {"ordinary": "35", "urgent": "210", "very-urgent": "270", "very-urgent-brussels": "320", "embassy": "35"}}
  ],
  "note": "The amounts are what the municipality owes the FPS Foreign Affairs (an adult's includes a federal tax of 30 euros); a municipality may charge more on top. A 66-page passport is issued only in the urgent and very urgent procedures (and abroad, at 240 and 210 euros).",
  "sources": [

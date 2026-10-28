@@ -2,13 +2,15 @@
  "country": "HK",
  "office": "the Immigration Department of the Hong Kong SAR",
  "currency": "HKD",
- "passports": [
-  {"for": "adult", "from": 16, "pages": 32, "validYears": 10, "fees": {"local application": "430"}},
-  {"for": "adult", "from": 16, "pages": 48, "validYears": 10, "fees": {"local application": "520"}},
-  {"for": "child", "under": 16, "pages": 32, "validYears": 5, "fees": {"local application": "215"}},
-  {"for": "child", "under": 16, "pages": 48, "validYears": 5, "fees": {"local application": "260"}}
+ "routes": [
+  {"id": "local", "where": "home", "speed": "standard", "within": null, "label": "local application"}
  ],
- "standard": {"within": null, "said": "not on the fee table"},
+ "passports": [
+  {"for": "adult", "from": 16, "pages": 32, "validYears": 10, "pay": {"local": "430"}},
+  {"for": "adult", "from": 16, "pages": 48, "validYears": 10, "pay": {"local": "520"}},
+  {"for": "child", "under": 16, "pages": 32, "validYears": 5, "pay": {"local": "215"}},
+  {"for": "child", "under": 16, "pages": 48, "validYears": 5, "pay": {"local": "260"}}
+ ],
  "note": "Fees for a local application under the Immigration Regulations. Collecting the passport at a Chinese diplomatic or consular mission adds a delivery charge; applications made abroad are not read here.",
  "sources": [
   {

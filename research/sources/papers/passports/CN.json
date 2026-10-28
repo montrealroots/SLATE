@@ -2,11 +2,13 @@
  "country": "CN",
  "office": "the exit-entry control departments of the public security organs",
  "currency": "CNY",
- "passports": [
-  {"for": "adult", "from": 16, "validYears": 10, "fees": {"ordinary passport": "120"}},
-  {"for": "child", "under": 16, "validYears": 5, "fees": {"ordinary passport": "120"}}
+ "routes": [
+  {"id": "standard", "where": "home", "speed": "standard", "within": {"n": 30, "unit": "day"}, "label": "15 days from receipt, up to 30 in outlying areas or special circumstances: the longest is taken"}
  ],
- "standard": {"within": "15 days from receipt of the application (up to 30 in outlying areas or special circumstances)"},
+ "passports": [
+  {"for": "adult", "from": 16, "validYears": 10, "pay": {"standard": "120"}},
+  {"for": "child", "under": 16, "validYears": 5, "pay": {"standard": "120"}}
+ ],
  "note": "The fee from 1 July 2019 (NDRC and Ministry of Finance, 发改价格〔2019〕914号), read as republished by the Pingdingshan municipal government; a later change hasn't been looked for yet. The law's validity and time limit read in the English translation published on the Henan provincial government's English site (english.henan.gov.cn).",
  "sources": [
   {

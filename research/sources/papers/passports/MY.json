@@ -2,15 +2,17 @@
  "country": "MY",
  "office": "the Immigration Department of Malaysia (Jabatan Imigresen Malaysia); abroad, Malaysia's representative offices",
  "currency": "MYR",
- "passports": [
-  {"for": "adult", "from": 18, "under": 60, "validYears": 5, "fees": {"passport": "200"}},
-  {"for": "adult", "from": 18, "under": 60, "validYears": 10, "fees": {"passport": "350"}},
-  {"for": "senior", "from": 60, "validYears": 5, "fees": {"passport": "100"}},
-  {"for": "senior", "from": 60, "validYears": 10, "fees": {"passport": "175"}},
-  {"for": "minor", "from": 12, "under": 18, "validYears": 5, "fees": {"passport": "200"}},
-  {"for": "child", "under": 12, "validYears": 5, "fees": {"passport": "100"}}
+ "routes": [
+  {"id": "standard", "where": "home", "speed": "standard", "within": null, "label": "passport"}
  ],
- "standard": {"within": null, "said": "not given"},
+ "passports": [
+  {"for": "adult", "from": 18, "under": 60, "validYears": 5, "pay": {"standard": "200"}},
+  {"for": "adult", "from": 18, "under": 60, "validYears": 10, "pay": {"standard": "350"}},
+  {"for": "senior", "from": 60, "validYears": 5, "pay": {"standard": "100"}},
+  {"for": "senior", "from": 60, "validYears": 10, "pay": {"standard": "175"}},
+  {"for": "minor", "from": 12, "under": 18, "validYears": 5, "pay": {"standard": "200"}},
+  {"for": "child", "under": 12, "validYears": 5, "pay": {"standard": "100"}}
+ ],
  "note": "A ten-year passport is open from 18 only. Students under 21 on a bachelor's programme abroad and Haj pilgrims pay RM100 for five years.",
  "sources": [
   {

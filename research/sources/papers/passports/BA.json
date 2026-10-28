@@ -2,14 +2,14 @@
  "country": "BA",
  "office": "the Cantonal Ministries of Interior in the Federation of BiH, the Ministry of Interior of Republika Srpska and the Public Register of Brčko District, by place of residence; abroad, Bosnia and Herzegovina's diplomatic and consular missions",
  "currency": "BAM",
- "passports": [
-  {"for": "adult", "from": 18, "validYears": 10, "fees": null},
-  {"for": "child", "from": 3, "under": 18, "validYears": 5, "fees": null},
-  {"for": "infant", "under": 3, "validYears": 3, "fees": null}
+ "routes": [
+  {"id": "regular", "where": "home", "speed": "standard", "within": {"n": 30, "unit": "day"}, "label": "regular procedure: 30 days from the date of application"},
+  {"id": "urgent", "where": "home", "speed": "urgent", "within": {"n": 72, "unit": "hour"}, "label": "urgent procedure: within 72 hours"}
  ],
- "standard": {"within": "30 days from the date of application"},
- "urgent": [
-  {"service": "within 72 hours, under the law's conditions"}
+ "passports": [
+  {"for": "adult", "from": 18, "validYears": 10, "pay": {"regular": null, "urgent": null}},
+  {"for": "child", "from": 3, "under": 18, "validYears": 5, "pay": {"regular": null, "urgent": null}},
+  {"for": "infant", "under": 3, "validYears": 3, "pay": {"regular": null, "urgent": null}}
  ],
  "note": "The fee isn't on the Agency's page; the decision that sets it (and whether it differs by entity) is a lead.",
  "sources": [

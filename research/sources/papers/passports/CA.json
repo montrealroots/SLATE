@@ -2,17 +2,19 @@
  "country": "CA",
  "office": "the Minister of Citizenship and Immigration",
  "currency": "CAD",
+ "routes": [
+  {"id": "in-canada", "where": "home", "speed": "standard", "within": null, "label": "requested and delivered in Canada"},
+  {"id": "outside", "where": "abroad", "speed": "standard", "within": null, "label": "requested or delivered outside Canada"},
+  {"id": "pickup-1", "where": "home", "speed": "urgent", "within": {"n": 1, "unit": "working day"}, "label": "pick-up in Canada, the first working day after the request (CAD 110 more)"},
+  {"id": "pickup-9", "where": "home", "speed": "urgent", "within": {"n": 9, "unit": "working day"}, "label": "pick-up in Canada, the second to the ninth working day (CAD 50 more)"},
+  {"id": "pickup-later", "where": "home", "speed": "urgent", "within": null, "label": "pick-up in Canada, after the ninth working day (CAD 20 more)"}
+ ],
  "passports": [
-  {"for": "adult", "from": 16, "validYears": 10, "fees": {"in Canada": "135", "outside Canada": "235"}},
-  {"for": "adult", "from": 16, "validYears": 5, "fees": {"in Canada": "95", "outside Canada": "165"}},
-  {"for": "child", "under": 16, "validYears": 5, "fees": {"in Canada": "57", "outside Canada": "100"}}
+  {"for": "adult", "from": 16, "validYears": 10, "pay": {"in-canada": "135", "outside": "235", "pickup-1": "245", "pickup-9": "185", "pickup-later": "155"}},
+  {"for": "adult", "from": 16, "validYears": 5, "pay": {"in-canada": "95", "outside": "165", "pickup-1": "205", "pickup-9": "145", "pickup-later": "115"}},
+  {"for": "child", "under": 16, "validYears": 5, "pay": {"in-canada": "57", "outside": "100", "pickup-1": "167", "pickup-9": "107", "pickup-later": "77"}}
  ],
- "standard": {"within": null, "said": "not in the regulations; published by IRCC"},
- "urgent": [
-  {"service": "pick-up in Canada", "fees": {"the first working day after the request": "110", "from the second to the ninth working day": "50", "after the ninth working day": "20"}},
-  {"service": "office opened outside its hours", "fees": {"any": "335"}}
- ],
- "note": "Fees for a passport requested and delivered in Canada, or requested or delivered outside it. Processing times are published on canada.ca, which closes the connection on this client, so they aren't read.",
+ "note": "Fees for a passport requested and delivered in Canada, or requested or delivered outside it. Processing times are published on canada.ca, which closes the connection on this client, so they aren't read. The pick-up totals add the urgent service fee to the passport's fee in Canada.",
  "sources": [
   {
    "url": "https://laws-lois.justice.gc.ca/eng/regulations/SOR-2012-253/FullText.html",

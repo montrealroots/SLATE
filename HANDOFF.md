@@ -48,7 +48,11 @@ Luxembourg's chancery tax or Trinidad's expedite surcharge), or null where it is
 same applicant only with different pages or validity (Guatemala's five or ten years, Pakistan's 36 or 72 pages). A
 file in the research's own words (a `fees` map) or with fees in a unit that isn't a currency (Uruguay's UI) isn't
 compiled and stays pending; South Africa's (the fee depends on how long the old passport has left) waits for the
-form to take that condition. The game says what it doesn't know: a country not kept, a fee, a validity, a time.
+form to take that condition. 60 of the 63 files are in the form (2026-10-28); Australia (2026's indexed amounts),
+Uruguay (UI) and South Africa wait. A first issue against a renewal isn't in the form yet, so Austria's free first
+passport under 2 is left unknown and the United States' renewal by mail isn't offered; the field comes back when the
+person (layer 4) says whether the applicant already holds a passport. Reduced fees by status (Poland's pupils,
+Estonia's and Denmark's pensioners) are charged at the full fee until those statuses or ages are read. The game says what it doesn't know: a country not kept, a fee, a validity, a time.
 
 What layer 2 holds so far:
 

@@ -2,14 +2,16 @@
  "country": "DK",
  "office": "the municipal councils (borgerservice); abroad, Danish diplomatic and consular representations",
  "currency": "DKK",
- "passports": [
-  {"for": "adult", "from": 18, "validYears": 10, "fees": {"18 to the state pension age": "894", "from the state pension age": "382"}},
-  {"for": "minor", "from": 12, "under": 18, "validYears": 5, "fees": {"passport": "182"}},
-  {"for": "child", "from": 2, "under": 12, "validYears": 5, "fees": {"passport": "150"}},
-  {"for": "infant", "under": 2, "validYears": 2, "fees": {"passport": "150"}}
+ "routes": [
+  {"id": "standard", "where": "home", "speed": "standard", "within": {"n": 2, "unit": "week"}, "label": "up to about two weeks"}
  ],
- "standard": {"within": "up to about two weeks (made in one place in the country)"},
- "note": "2026 prices, including the fingerprint fee. The price doubles if the applicant can't show a valid or expired passport, or shows a damaged one, when renewing or getting a new passport within the validity period. The fee for a pensioner follows the person's own state pension age. The order on passports read is marked in force with later amendments (BEK 1120/2022, BEK 1377/2024) not read; its § 21 is as quoted.",
+ "passports": [
+  {"for": "adult", "from": 18, "validYears": 10, "pay": {"standard": "894"}},
+  {"for": "minor", "from": 12, "under": 18, "validYears": 5, "pay": {"standard": "182"}},
+  {"for": "child", "from": 2, "under": 12, "validYears": 5, "pay": {"standard": "150"}},
+  {"for": "infant", "under": 2, "validYears": 2, "pay": {"standard": "150"}}
+ ],
+ "note": "2026 prices, including the fingerprint fee. The price doubles if the applicant can't show a valid or expired passport, or shows a damaged one, when renewing or getting a new passport within the validity period. The fee for a pensioner follows the person's own state pension age. The order on passports read is marked in force with later amendments (BEK 1120/2022, BEK 1377/2024) not read; its § 21 is as quoted. From the state pension age the fee is DKK 382; the game charges the adult fee until the state pension age by birth year is read.",
  "sources": [
   {
    "url": "https://frederikshavn.dk/media/5wpghwen/ansoegning-om-pas.pdf",

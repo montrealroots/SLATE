@@ -2,12 +2,16 @@
  "country": "FR",
  "office": "the town halls equipped to take passport applications, for the Ministère de l'Intérieur (ANTS)",
  "currency": "EUR",
- "passports": [
-  {"for": "adult", "from": 18, "validYears": 10, "fees": {"in France": "86", "in Guyane": "43", "abroad": "96"}},
-  {"for": "minor", "from": 15, "under": 18, "validYears": 5, "fees": {"in France": "42", "in Guyane": "21", "abroad": "52"}},
-  {"for": "minor", "under": 15, "validYears": 5, "fees": {"in France": "17", "in Guyane": "8.50", "abroad": "27"}}
+ "routes": [
+  {"id": "france", "where": "home", "speed": "standard", "within": null, "label": "in France"},
+  {"id": "guyane", "where": "home", "speed": "standard", "within": null, "label": "in Guyane"},
+  {"id": "abroad", "where": "abroad", "speed": "standard", "within": null, "label": "abroad"}
  ],
- "standard": {"within": null, "said": "the time to make it depends on the place and the period of the application"},
+ "passports": [
+  {"for": "adult", "from": 18, "validYears": 10, "pay": {"france": "86", "guyane": "43", "abroad": "96"}},
+  {"for": "minor", "from": 15, "under": 18, "validYears": 5, "pay": {"france": "42", "guyane": "21", "abroad": "52"}},
+  {"for": "minor", "under": 15, "validYears": 5, "pay": {"france": "17", "guyane": "8.50", "abroad": "27"}}
+ ],
  "note": "The fee is a tax stamp (timbre fiscal). Service Public gives no processing time, only that it varies by place and season; the passport is made elsewhere, never issued on the spot, and is to be collected within 3 months.",
  "sources": [
   {
