@@ -79,7 +79,7 @@ a place fills a column; a cell is the row's status in that engine's matrix, or b
 | FI | Finland | researched | researched | researched | researched | researched | researched |
 | FJ | Fiji | researched | researched | researched | researched | researched | researched |
 | FK | Falkland Islands | researched | researched | researched | blocked | researched | pending |
-| FM | Micronesia | researched | researched | researched | researched | blocked | pending |
+| FM | Micronesia | researched | researched | researched | researched | blocked | researched |
 | FO | Faroe Islands | researched | researched | researched | researched | blocked | researched |
 | FR | France | researched | researched | researched | researched | researched | researched |
 | GA | Gabon | researched | researched | researched | researched | researched | researched |
@@ -98,7 +98,7 @@ a place fills a column; a cell is the row's status in that engine's matrix, or b
 | GR | Greece | researched | researched | researched | researched | researched | researched |
 | GS | South Georgia and the South Sandwich Islands | researched | researched | researched | blocked | researched | pending |
 | GT | Guatemala | researched | researched | researched | researched | researched | researched |
-| GU | Guam | researched | researched | researched | researched | researched | pending |
+| GU | Guam | researched | researched | researched | researched | researched | researched |
 | GW | Guinea-Bissau | researched | researched | researched | researched | blocked | researched |
 | GY | Guyana | researched | researched | researched | researched | researched | researched |
 | HK | Hong Kong | researched | researched | researched | researched | researched | researched |
@@ -188,7 +188,7 @@ a place fills a column; a cell is the row's status in that engine's matrix, or b
 | PL | Poland | researched | researched | researched | researched | researched | researched |
 | PM | Saint Pierre and Miquelon | researched | researched | researched | researched | blocked | pending |
 | PN | Pitcairn | researched | researched | researched | blocked | researched | pending |
-| PR | Puerto Rico | researched | researched | researched | researched | researched | pending |
+| PR | Puerto Rico | researched | researched | researched | researched | researched | researched |
 | PS | Palestinian Territory | researched | researched | researched | blocked | researched | researched |
 | PT | Portugal | researched | researched | researched | researched | researched | researched |
 | PW | Palau | researched | researched | researched | researched | blocked | researched |

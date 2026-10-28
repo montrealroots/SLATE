@@ -26,7 +26,7 @@ restarts. Read `CLAUDE.md` and the owner's package in `docs/` first.
   Kedah, Kelantan and Terengganu); Western Sahara keeps Morocco's days by the owner's ruling of 2026-10-28; its code
   at 100% mutation score (532 mutants, with the regions' and the shared substitutes' rules). The prices
   (`world.prices`): the engine is built and tested, at 100% mutation score; 172 countries researched from the World
-  Bank's levels and 13 carried from its 2021 benchmark, 6 proven, 61 pending (the next step).
+  Bank's levels and 16 carried from its 2021 benchmark, 6 proven, 58 pending (the next step).
 
 What layer 2 holds so far:
 
@@ -131,7 +131,9 @@ What layer 2 holds so far:
   own site answers with a Cloudflare challenge); Bermuda (the Department of Statistics' December reports), the
   Cayman Islands (the ESO's quarters), Barbados (the Statistical Service's rebased RPI, February 2021 uncollected),
   the Faroes (Hagstova's quarters), Greenland (its half-years), French Polynesia (the ISPF's 24 monthly notes) and
-  New Caledonia (the ISEE's workbook, base December 2021, linked back).
+  New Caledonia (the ISEE's workbook, base December 2021, linked back), Puerto Rico (the Department of Labor's
+  series, published by the Statistics Institute), Guam (the Bureau of Statistics and Plans' quarters) and Micronesia
+  (FSM Statistics' Q4 2025 workbook, the whole revised series).
 
 What layer 1 holds:
 
