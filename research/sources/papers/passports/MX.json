@@ -1,0 +1,34 @@
+{
+ "country": "MX",
+ "office": "the Secretaría de Relaciones Exteriores (its delegations in Mexico, its consulates abroad)",
+ "currency": "MXN",
+ "routes": [
+  {"id": "home", "where": "home", "speed": "standard", "within": null, "label": "issued in Mexico"}
+ ],
+ "passports": [
+  {"for": "infant", "under": 3, "validYears": 1, "pay": {"home": "920.75"}},
+  {"for": "minor", "from": 3, "under": 18, "validYears": 3, "pay": {"home": "1795.29"}},
+  {"for": "minor", "from": 3, "under": 18, "validYears": 6, "pay": {"home": "2438.63"}},
+  {"for": "adult", "from": 18, "under": 60, "validYears": 3, "pay": {"home": "1795.29"}},
+  {"for": "adult", "from": 18, "under": 60, "validYears": 6, "pay": {"home": "2438.63"}},
+  {"for": "adult", "from": 18, "under": 60, "validYears": 10, "pay": {"home": "4277.69"}},
+  {"for": "senior", "from": 60, "validYears": 3, "pay": {"home": null}},
+  {"for": "senior", "from": 60, "validYears": 6, "pay": {"home": null}},
+  {"for": "senior", "from": 60, "validYears": 10, "pay": {"home": null}}
+ ],
+ "note": "The 2026 amounts of the Ley Federal de Derechos, art. 20, as the Chamber of Deputies' consolidated text gives them (updated by the Resolución Miscelánea Fiscal of 28 December 2025). Validity by age as SRE's consulate in Saint Paul lists it: one year under 3, ten years over 18; three and six years for the rest. From 60 the law charges 50% of each amount, which leaves half-centavos the law doesn't round, so the game leaves seniors' fees unknown; the same holds for an emergency issue (30% more). Abroad the fees are in US dollars (USD 44, 101, 137, 209) and aren't compiled here. Processing time is a lead.",
+ "sources": [
+  {
+   "url": "https://www.diputados.gob.mx/LeyesBiblio/pdf/LFD.pdf",
+   "title": "Cámara de Diputados (diputados.gob.mx), Ley Federal de Derechos, texto vigente, última reforma DOF 07-11-2025, cantidades actualizadas por Resolución Miscelánea Fiscal DOF 28-12-2025",
+   "read": "2026-10-28",
+   "said": "Artículo 20.- Por la expedición de cada pasaporte o documento de identidad y viaje, se pagarán derechos conforme a las siguientes cuotas: I. Pasaportes ordinarios y documentos de identidad y viaje con validez hasta por un año ... $920.75 ... II. Pasaportes ordinarios y documentos de identidad y viaje con validez mayor a un año y hasta por tres años ... $1,795.29 ... III. Pasaportes ordinarios y documentos de identidad y viaje con validez mayor a tres años y hasta por seis años ... $2,438.63 ... IV. Pasaportes ordinarios con validez hasta por diez años ... $4,277.69 ... Tratándose de la expedición de pasaportes ordinarios que requieran ser expedidos de emergencia, se pagará un monto del 30% adicional al costo del pasaporte ordinario en términos de las fracciones anteriores, según la vigencia solicitada."
+  },
+  {
+   "url": "https://consulmex.sre.gob.mx/saintpaul/index.php/ddi/pasm/5-seccion/208-costos",
+   "title": "Consulado de Carrera de México en Saint Paul (consulmex.sre.gob.mx), Costo y tiempo de entrega del pasaporte",
+   "read": "2026-10-28",
+   "said": "Conforme a la Ley Federal de Derecho, vigente durante 2026, los costos de los pasaportes son los siguientes: Vigencia Derechos 1 año (para menores de 3 años de edad) $44 usd 3 años $101 usd 6 años $137 usd 10 años (para mayores de 18 años) $209 usd Las personas mayores de 60 años tendrán un descuento del 50% en el costo del pasaporte."
+  }
+ ]
+}
