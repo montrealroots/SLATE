@@ -1,0 +1,126 @@
+{
+ "AS": {
+  "issuedBy": "US"
+ },
+ "BL": {
+  "issuedBy": "FR"
+ },
+ "DE": {
+  "document": "Personalausweis",
+  "compulsory": {
+   "from": 16
+  },
+  "currency": "EUR",
+  "routes": [
+   {
+    "id": "home",
+    "where": "home",
+    "speed": "standard",
+    "within": null
+   },
+   {
+    "id": "abroad",
+    "where": "abroad",
+    "speed": "standard",
+    "within": null
+   }
+  ],
+  "bands": [
+   {
+    "validYears": 10,
+    "pay": {
+     "home": 4600,
+     "abroad": 8900
+    },
+    "from": 24
+   },
+   {
+    "validYears": 6,
+    "pay": {
+     "home": 2760,
+     "abroad": 7060
+    },
+    "under": 24
+   }
+  ]
+ },
+ "FR": {
+  "document": "carte nationale d'identité",
+  "compulsory": false,
+  "currency": "EUR",
+  "routes": [
+   {
+    "id": "home",
+    "where": "home",
+    "speed": "standard",
+    "within": null
+   },
+   {
+    "id": "abroad",
+    "where": "abroad",
+    "speed": "standard",
+    "within": null
+   }
+  ],
+  "bands": [
+   {
+    "validYears": 10,
+    "pay": {
+     "home": 0,
+     "abroad": 0
+    }
+   }
+  ]
+ },
+ "GB": {
+  "none": true
+ },
+ "GF": {
+  "issuedBy": "FR"
+ },
+ "GP": {
+  "issuedBy": "FR"
+ },
+ "GU": {
+  "issuedBy": "US"
+ },
+ "MF": {
+  "issuedBy": "FR"
+ },
+ "MP": {
+  "issuedBy": "US"
+ },
+ "MQ": {
+  "issuedBy": "FR"
+ },
+ "NC": {
+  "issuedBy": "FR"
+ },
+ "PF": {
+  "issuedBy": "FR"
+ },
+ "PM": {
+  "issuedBy": "FR"
+ },
+ "PR": {
+  "issuedBy": "US"
+ },
+ "RE": {
+  "issuedBy": "FR"
+ },
+ "TF": {
+  "issuedBy": "FR"
+ },
+ "US": {
+  "none": true
+ },
+ "VI": {
+  "issuedBy": "US"
+ },
+ "WF": {
+  "issuedBy": "FR"
+ },
+ "YT": {
+  "issuedBy": "FR"
+ }
+}

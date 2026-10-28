@@ -61,7 +61,7 @@ const isWhole = (v: unknown, min: number): v is number => Number.isSafeInteger(v
 /** Whether a research file is in the engine's form (it has routes, or names its issuer); one that isn't stays pending. */
 export const isCompilable = (file: Record<string, unknown>) => 'routes' in file || 'issuedBy' in file;
 
-function route(r: unknown, at: string): Route {
+export function route(r: unknown, at: string): Route {
   if (!isRecord(r)) throw new Error(`${at} is not an object`);
   const { id, where, speed, within, months } = r;
   if (typeof id !== 'string' || id === '') throw new Error(`${at} needs an id`);
@@ -80,7 +80,7 @@ function route(r: unknown, at: string): Route {
   return out;
 }
 
-function band(b: unknown, at: string, currency: string, routes: ReadonlySet<string>): Band {
+export function band(b: unknown, at: string, currency: string, routes: ReadonlySet<string>): Band {
   if (!isRecord(b)) throw new Error(`${at} is not an object`);
   const { from, under, pages, validYears, pay } = b;
   if (from !== undefined && !isWhole(from, 0)) throw new Error(`${at} starts at a whole age`);
@@ -102,7 +102,7 @@ function band(b: unknown, at: string, currency: string, routes: ReadonlySet<stri
 }
 
 /** Two bands meet the same applicant with the same passport: the same pages and validity, and ages that overlap. */
-function overlap(a: Band, b: Band): boolean {
+export function overlap(a: Band, b: Band): boolean {
   if (a.pages !== b.pages || a.validYears !== b.validYears) return false;
   return (a.from ?? 0) < (b.under ?? Infinity) && (b.from ?? 0) < (a.under ?? Infinity);
 }

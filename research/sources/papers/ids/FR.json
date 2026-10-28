@@ -1,0 +1,35 @@
+{
+ "country": "FR",
+ "document": "carte nationale d'identité",
+ "compulsory": false,
+ "office": "any town hall with a recording station; abroad, a French embassy or consulate",
+ "currency": "EUR",
+ "routes": [
+  {"id": "home", "where": "home", "speed": "standard", "within": null, "label": "at a town hall in France: several weeks"},
+  {"id": "abroad", "where": "abroad", "speed": "standard", "within": null, "label": "at a French embassy or consulate"}
+ ],
+ "cards": [
+  {"for": "anyone", "validYears": 10, "pay": {"home": "0", "abroad": "0"}}
+ ],
+ "note": "The card is free, at any age, in France or abroad, and valid ten years, for a minor too; holding one isn't compulsory (the Minister of the Interior's written answer, JO 15 January 2019). Service-Public gives no processing time but several weeks. The 25 euros for replacing a lost or stolen card aren't modelled.",
+ "sources": [
+  {
+   "url": "https://www.service-public.gouv.fr/particuliers/vosdroits/F1341",
+   "title": "Service-Public.fr, Carte d'identité d'un majeur : première demande (verified 8 April 2026)",
+   "read": "2026-10-28",
+   "said": "La procédure varie selon que la demande est faite en France ou à l'étranger et si vous avez déjà un passeport ou non. Dans tous les cas, la carte d'identité est gratuite ... Il faut compter plusieurs semaines et, à l'approche des vacances d'été, les délais peuvent s'étendre. ... La carte est valide pendant 10 ans ."
+  },
+  {
+   "url": "https://www.service-public.gouv.fr/particuliers/vosdroits/F1342",
+   "title": "Service-Public.fr, Carte d'identité d'un mineur : première demande",
+   "read": "2026-10-28",
+   "said": "Dans tous les cas, la carte d'identité est gratuite ... La carte d'identité d'un mineur est valable pendant 10 ans ."
+  },
+  {
+   "url": "https://www.assemblee-nationale.fr/dyn/15/questions/QANR5L15QE6387.pdf",
+   "title": "Assemblée nationale, written question no. 6387 and the Minister of the Interior's answer (JO 15 January 2019, p. 396)",
+   "read": "2026-10-28",
+   "said": "La carte nationale d'identité, délivrée gratuitement, et le passeport certifient de l'identité de leur titulaire. ... le Gouvernement n'envisage pas de modifier les modalités de justification de l'identité et notamment de ne pas rendre obligatoire la carte nationale d'identité."
+  }
+ ]
+}
