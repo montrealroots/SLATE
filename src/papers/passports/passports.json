@@ -21,6 +21,33 @@
    }
   ]
  },
+ "AI": {
+  "currency": "XCD",
+  "routes": [
+   {
+    "id": "home",
+    "where": "home",
+    "speed": "standard",
+    "within": null
+   }
+  ],
+  "bands": [
+   {
+    "validYears": null,
+    "pay": {
+     "home": 20000
+    },
+    "from": 16
+   },
+   {
+    "validYears": null,
+    "pay": {
+     "home": 15000
+    },
+    "under": 16
+   }
+  ]
+ },
  "AR": {
   "currency": "ARS",
   "routes": [
@@ -4525,6 +4552,13 @@
     },
     "under": 18
    }
+  ]
+ },
+ "TF": {
+  "issuedBy": "FR",
+  "onlyRoutes": [
+   "france",
+   "abroad"
   ]
  },
  "TJ": {
