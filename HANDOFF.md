@@ -26,7 +26,7 @@ restarts. Read `CLAUDE.md` and the owner's package in `docs/` first.
   Kedah, Kelantan and Terengganu); Western Sahara keeps Morocco's days by the owner's ruling of 2026-10-28; its code
   at 100% mutation score (532 mutants, with the regions' and the shared substitutes' rules). The prices
   (`world.prices`): the engine is built and tested, at 100% mutation score; 172 countries researched from the World
-  Bank's levels and 19 carried from the 2021 benchmark, 6 proven, 55 pending (the next step).
+  Bank's levels and 21 carried from the 2021 benchmark, 6 proven, 53 pending (the next step).
 
 What layer 2 holds so far:
 
@@ -139,7 +139,8 @@ What layer 2 holds so far:
   Comparison Program's own 2021 benchmark (the ICP 2021 database, source 90, with each economy's currency in its
   metadata), vendored and pinned with R-0374; where both price an economy the indicators' value is taken (the two
   agree outside the Eurostat-OECD programme). Bonaire is in the Program but is only a part of the Caribbean
-  Netherlands (BQ), so it isn't used for BQ as a whole.
+  Netherlands (BQ), so it isn't used for BQ as a whole. Anguilla (the Statistics Department's workbook, quarters)
+  and Montserrat (its monthly workbooks) are carried from the Program's level.
 
 What layer 1 holds:
 

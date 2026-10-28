@@ -9,7 +9,7 @@ a place fills a column; a cell is the row's status in that engine's matrix, or b
 | AE | United Arab Emirates | researched | researched | researched | researched | researched | researched |
 | AF | Afghanistan | researched | researched | researched | researched | blocked | researched |
 | AG | Antigua and Barbuda | researched | researched | researched | blocked | researched | researched |
-| AI | Anguilla | researched | researched | researched | blocked | researched | pending |
+| AI | Anguilla | researched | researched | researched | blocked | researched | researched |
 | AL | Albania | researched | researched | researched | researched | researched | researched |
 | AM | Armenia | researched | researched | researched | researched | researched | researched |
 | AN | Netherlands Antilles | researched | researched | proven | proven | proven | proven |
@@ -158,7 +158,7 @@ a place fills a column; a cell is the row's status in that engine's matrix, or b
 | MP | Northern Mariana Islands | researched | researched | researched | blocked | researched | pending |
 | MQ | Martinique | researched | researched | researched | researched | researched | pending |
 | MR | Mauritania | researched | researched | researched | researched | researched | researched |
-| MS | Montserrat | researched | researched | researched | blocked | researched | pending |
+| MS | Montserrat | researched | researched | researched | blocked | researched | researched |
 | MT | Malta | researched | researched | researched | researched | researched | researched |
 | MU | Mauritius | researched | researched | researched | researched | researched | researched |
 | MV | Maldives | researched | researched | researched | researched | researched | researched |
