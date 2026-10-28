@@ -674,6 +674,30 @@
    }
   ]
  },
+ "BW": {
+  "document": "National Identity Card (Omang)",
+  "currency": "BWP",
+  "routes": [
+   {
+    "id": "office",
+    "where": "home",
+    "speed": "standard",
+    "within": {
+     "n": 14,
+     "unit": "working day"
+    }
+   }
+  ],
+  "bands": [
+   {
+    "validYears": 10,
+    "pay": {
+     "office": 0
+    },
+    "from": 16
+   }
+  ]
+ },
  "CA": {
   "none": true
  },
@@ -707,6 +731,9 @@
     "under": 18
    }
   ]
+ },
+ "CK": {
+  "issuedBy": "NZ"
  },
  "CL": {
   "document": "Cédula de identidad",
@@ -1052,6 +1079,9 @@
    }
   ]
  },
+ "EH": {
+  "issuedBy": "MA"
+ },
  "ES": {
   "document": "Documento Nacional de Identidad (DNI)",
   "currency": "EUR",
@@ -1263,6 +1293,42 @@
  "GG": {
   "issuedBy": "GB"
  },
+ "GH": {
+  "document": "Ghana Card (national identity card)",
+  "currency": "GHS",
+  "routes": [
+   {
+    "id": "district",
+    "where": "home",
+    "speed": "standard",
+    "within": null
+   },
+   {
+    "id": "premium",
+    "where": "home",
+    "speed": "urgent",
+    "within": null
+   }
+  ],
+  "bands": [
+   {
+    "validYears": 10,
+    "pay": {
+     "district": 0,
+     "premium": 41000
+    },
+    "under": 25
+   },
+   {
+    "validYears": 10,
+    "pay": {
+     "district": 3000,
+     "premium": 41000
+    },
+    "from": 25
+   }
+  ]
+ },
  "GI": {
   "document": "Gibraltar identity card",
   "currency": "GBP",
@@ -1334,6 +1400,9 @@
     "from": 12
    }
   ]
+ },
+ "GS": {
+  "issuedBy": "GB"
  },
  "GU": {
   "issuedBy": "US"
@@ -1527,6 +1596,9 @@
     }
    }
   ]
+ },
+ "IO": {
+  "issuedBy": "GB"
  },
  "IS": {
   "document": "nafnskírteini",
@@ -1875,6 +1947,34 @@
    }
   ]
  },
+ "MA": {
+  "document": "Carte nationale d'identité électronique (CNIE)",
+  "currency": "MAD",
+  "routes": [
+   {
+    "id": "office",
+    "where": "home",
+    "speed": "standard",
+    "within": null
+   }
+  ],
+  "bands": [
+   {
+    "validYears": 7,
+    "pay": {
+     "office": 5000
+    },
+    "under": 12
+   },
+   {
+    "validYears": 10,
+    "pay": {
+     "office": 7500
+    },
+    "from": 12
+   }
+  ]
+ },
  "MC": {
   "document": "carte d'identité monégasque",
   "currency": "EUR",
@@ -2170,6 +2270,30 @@
    }
   ]
  },
+ "MW": {
+  "document": "National Identity Card",
+  "currency": "MWK",
+  "routes": [
+   {
+    "id": "office",
+    "where": "home",
+    "speed": "standard",
+    "within": {
+     "n": 30,
+     "unit": "day"
+    }
+   }
+  ],
+  "bands": [
+   {
+    "validYears": null,
+    "pay": {
+     "office": null
+    },
+    "from": 16
+   }
+  ]
+ },
  "MX": {
   "document": "Credencial para Votar (INE voter's card, the official identification)",
   "currency": "MXN",
@@ -2277,6 +2401,33 @@
  "NF": {
   "issuedBy": "AU"
  },
+ "NG": {
+  "document": "National Identification Number (NIN) and its slip",
+  "currency": "NGN",
+  "routes": [
+   {
+    "id": "office",
+    "where": "home",
+    "speed": "standard",
+    "within": null
+   },
+   {
+    "id": "premium",
+    "where": "home",
+    "speed": "urgent",
+    "within": null
+   }
+  ],
+  "bands": [
+   {
+    "validYears": null,
+    "pay": {
+     "office": 0,
+     "premium": 2000000
+    }
+   }
+  ]
+ },
  "NL": {
   "document": "Nederlandse identiteitskaart",
   "currency": "EUR",
@@ -2351,6 +2502,12 @@
     "from": 16
    }
   ]
+ },
+ "NU": {
+  "issuedBy": "NZ"
+ },
+ "NZ": {
+  "none": true
  },
  "PE": {
   "document": "Documento Nacional de Identidad electrónico (DNIe 3.0)",
@@ -2481,6 +2638,9 @@
  },
  "PM": {
   "issuedBy": "FR"
+ },
+ "PN": {
+  "issuedBy": "GB"
  },
  "PR": {
   "issuedBy": "US"
@@ -2678,6 +2838,30 @@
     },
     "from": 45,
     "permanent": true
+   }
+  ]
+ },
+ "RW": {
+  "document": "National identity card (Indangamuntu)",
+  "currency": "RWF",
+  "routes": [
+   {
+    "id": "sector",
+    "where": "home",
+    "speed": "standard",
+    "within": {
+     "n": 30,
+     "unit": "day"
+    }
+   }
+  ],
+  "bands": [
+   {
+    "validYears": null,
+    "pay": {
+     "sector": 500
+    },
+    "from": 16
    }
   ]
  },
@@ -3015,6 +3199,9 @@
    }
   ]
  },
+ "TK": {
+  "issuedBy": "NZ"
+ },
  "TR": {
   "document": "Türkiye Cumhuriyeti kimlik kartı",
   "currency": "TRY",
@@ -3086,6 +3273,34 @@
     "validYears": 10,
     "pay": {
      "first": 0
+    },
+    "from": 18
+   }
+  ]
+ },
+ "UG": {
+  "document": "National Identity Card",
+  "currency": "UGX",
+  "routes": [
+   {
+    "id": "office",
+    "where": "home",
+    "speed": "standard",
+    "within": null
+   }
+  ],
+  "bands": [
+   {
+    "validYears": null,
+    "pay": {
+     "office": 0
+    },
+    "under": 18
+   },
+   {
+    "validYears": null,
+    "pay": {
+     "office": null
     },
     "from": 18
    }
@@ -3214,5 +3429,26 @@
  },
  "YT": {
   "issuedBy": "FR"
+ },
+ "ZA": {
+  "document": "Smart ID card",
+  "currency": "ZAR",
+  "routes": [
+   {
+    "id": "office",
+    "where": "home",
+    "speed": "standard",
+    "within": null
+   }
+  ],
+  "bands": [
+   {
+    "validYears": null,
+    "pay": {
+     "office": 0
+    },
+    "from": 16
+   }
+  ]
  }
 }
