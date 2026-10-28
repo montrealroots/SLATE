@@ -1815,6 +1815,9 @@
    }
   ]
  },
+ "EH": {
+  "issuedBy": "MA"
+ },
  "ES": {
   "currency": "EUR",
   "routes": [
@@ -2511,6 +2514,12 @@
     },
     "under": 14
    }
+  ]
+ },
+ "GS": {
+  "issuedBy": "GB",
+  "onlyRoutes": [
+   "abroad-online"
   ]
  },
  "GT": {
@@ -3920,6 +3929,59 @@
      "2-days": null
     },
     "under": 20
+   }
+  ]
+ },
+ "MA": {
+  "currency": "MAD",
+  "routes": [
+   {
+    "id": "home",
+    "where": "home",
+    "speed": "standard",
+    "within": null
+   },
+   {
+    "id": "abroad",
+    "where": "abroad",
+    "speed": "standard",
+    "within": null
+   }
+  ],
+  "bands": [
+   {
+    "validYears": null,
+    "pay": {
+     "home": 10000,
+     "abroad": 0
+    },
+    "under": 3
+   },
+   {
+    "validYears": 5,
+    "pay": {
+     "home": 10000,
+     "abroad": 0
+    },
+    "from": 3,
+    "under": 12
+   },
+   {
+    "validYears": 5,
+    "pay": {
+     "home": null,
+     "abroad": 0
+    },
+    "from": 12,
+    "under": 18
+   },
+   {
+    "validYears": 5,
+    "pay": {
+     "home": 50000,
+     "abroad": 50000
+    },
+    "from": 18
    }
   ]
  },
@@ -6366,6 +6428,25 @@
      "urgent": 1071200
     },
     "under": 18
+   }
+  ]
+ },
+ "VA": {
+  "currency": "EUR",
+  "routes": [
+   {
+    "id": "home",
+    "where": "home",
+    "speed": "standard",
+    "within": null
+   }
+  ],
+  "bands": [
+   {
+    "validYears": null,
+    "pay": {
+     "home": null
+    }
    }
   ]
  },
