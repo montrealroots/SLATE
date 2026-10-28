@@ -130,6 +130,15 @@ export interface Indices {
   /** For a country the Program doesn't price, its price gap to one the World Bank does, measured in a year by a spatial survey. */
   relative?: Relative;
 }
+/**
+ * A territory with no price measure of its own, which keeps the level of the country whose currency and market it
+ * shares (the owner's ruling of 2026-10-28); where its currency is pegged one to one to that country's (Gibraltar's
+ * pound to sterling), `peg` gives its units per unit of the other's.
+ */
+export interface Kept {
+  of: string;
+  peg?: string;
+}
 export interface Relative {
   /** The country priced against, its gap (its prices over that country's, as a factor), the survey's year, and that country's index file. */
   to: string;
@@ -192,9 +201,14 @@ export function relativeLevel(parent: Level | undefined, own: Indices, relative:
  * or, for one priced against another, its level relative to that one's. A country the World Bank already prices from FROM on, or one without a benchmark, is refused, as is a
  * benchmark in a currency not the country's.
  */
-export function withCarried(levels: Readonly<Record<string, Level>>, benchmark: readonly Row[], shared: Readonly<Record<string, Indices>>, own: Readonly<Record<string, Indices>>, units: ReadonlyMap<string, string>, currencies: Readonly<Record<string, string>>): Record<string, Level> {
+export function withCarried(levels: Readonly<Record<string, Level>>, benchmark: readonly Row[], shared: Readonly<Record<string, Indices>>, own: Readonly<Record<string, Indices | Kept>>, units: ReadonlyMap<string, string>, currencies: Readonly<Record<string, string>>): Record<string, Level> {
   const out: Record<string, Level> = { ...levels };
+  const kept: [string, Kept][] = [];
   for (const [code, indices] of Object.entries(own)) {
+    if ('of' in indices) {
+      kept.push([code, indices]);
+      continue;
+    }
     if (Object.hasOwn(levels, code)) throw new Error(`the World Bank prices ${code} from ${FROM} on; its own index isn't needed`);
     const rel = indices.relative;
     if (rel !== undefined) {
@@ -208,7 +222,17 @@ export function withCarried(levels: Readonly<Record<string, Level>>, benchmark: 
     if (!sameCurrency(unit, String(currencies[code]))) throw new Error(`the World Bank prices ${code} in ${unit === '' ? 'no currency it names' : unit}, not ${currencies[code] ?? 'none'}`);
     out[code] = carryForward(String(value), indices, shared[US_INDEX] as Indices, code);
   }
+  // After the others, so a territory may keep a carried level (Wallis and Futuna, New Caledonia's).
+  for (const [code, k] of kept) out[code] = keptLevel(out[k.of], k, code, currencies);
   return Object.fromEntries(Object.keys(out).sort().map((code) => [code, out[code] as Level]));
+}
+
+/** A territory's level: the one it keeps, in its own currency (the same, or pegged to it). */
+export function keptLevel(other: Level | undefined, k: Kept, code: string, currencies: Readonly<Record<string, string>>): Level {
+  if (other === undefined) throw new Error(`${code} keeps ${k.of}'s level, which isn't priced`);
+  if ((currencies[code] === currencies[k.of]) === (k.peg !== undefined)) throw new Error(`${code}'s currency is ${String(currencies[code])} and ${k.of}'s ${String(currencies[k.of])}: a peg is given only between two`);
+  const [p, g] = [rational(other.ppp), rational(k.peg ?? '1')];
+  return { ppp: decimal(p.num * g.num, p.den * g.den), year: other.year };
 }
 
 interface IcpData {
@@ -276,7 +300,7 @@ export function readLevels(root: string): { levels: Record<string, Level>; unmap
   // A country's file is named by its code; an index others are carried against (the United States', France's) by a lower-case name.
   const names = readdirSync(join(root, INDICES)).map((f) => basename(f, '.json'));
   const read = (shared: boolean) => Object.fromEntries(names.filter((n) => /[a-z]/.test(n) === shared).map((n) => [n, cited(root, n, `world.prices.${n}`, register)]));
-  return { levels: withCarried(levels, [...benchmark[1], ...icp.rows], read(true), read(false), new Map([...icp.units, ...units]), currencies), unmapped };
+  return { levels: withCarried(levels, [...benchmark[1], ...icp.rows], read(true), read(false) as Record<string, Indices | Kept>, new Map([...icp.units, ...units]), currencies), unmapped };
 }
 
 export const serialize = (levels: Readonly<Record<string, Level>>) => `${JSON.stringify(levels, null, 1)}\n`;

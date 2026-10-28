@@ -30,8 +30,8 @@ export type Row =
  * `relatives` names, for a country priced against another, the index its gap is carried against: it cites its own
  * file, that index and the World Bank's levels (the other country's).
  */
-export function pricesCoverage(countries: readonly string[], withPlaces: ReadonlySet<string>, levels: ReadonlySet<string>, facts: ReadonlyMap<string, string>, relatives: ReadonlyMap<string, string>): Row[] {
-  return countries.map((key): Row => {
+export function pricesCoverage(countries: readonly string[], withPlaces: ReadonlySet<string>, levels: ReadonlySet<string>, facts: ReadonlyMap<string, string>, relatives: ReadonlyMap<string, string>, keeps: ReadonlyMap<string, string | undefined> = new Map()): Row[] {
+  const rows = countries.map((key): Row => {
     if (!withPlaces.has(key)) return { key, status: 'proven', tests: [NO_PLACES] };
     const own = facts.get(`world.prices.${key}`);
     const index = relatives.get(key);
@@ -40,6 +40,12 @@ export function pricesCoverage(countries: readonly string[], withPlaces: Readonl
     if (levels.has(key) && facts.has(cited[0] as string)) return { key, status: 'researched', register: [...cited, ...CURRENCY_FACTS].map((f) => facts.get(f) as string).sort(), tests: TESTS };
     const blocker = facts.get(`world.prices.blocked.${key}`);
     return blocker === undefined ? { key, status: 'pending' } : { key, status: 'blocked', register: [blocker], tests: [...TESTS, TOLD] };
+  });
+  // A territory keeping another's level (`keeps`) cites its own file and all the other's row cites.
+  const byKey = new Map(rows.map((r) => [r.key, r]));
+  return rows.map((r) => {
+    const of = byKey.get(keeps.get(r.key) as string);
+    return r.status === 'researched' && of !== undefined && 'register' in of ? { ...r, register: [...new Set([facts.get(`world.prices.${r.key}`) as string, ...of.register])].sort() } : r;
   });
 }
 
@@ -54,6 +60,8 @@ export function coverageOf(root: string): string {
   const facts = new Map((read('research/register.json') as { entries: { id: string; fact: string }[] }).entries.map((e) => [e.fact, e.id] as const));
   // A country with a file of its own (world.prices.<code>) may be priced against another.
   const own = countries.filter((c) => facts.has(`world.prices.${c}`));
-  const relatives = new Map(own.flatMap((c) => { const r = (read(`research/sources/prices/${c}.json`) as { relative?: { index: string } }).relative; return r === undefined ? [] : [[c, r.index] as const]; }));
-  return serializeCoverage(pricesCoverage(countries, withPlaces, levels, facts, relatives));
+  const files = own.map((c) => [c, read(`research/sources/prices/${c}.json`) as { relative?: { index: string }; of?: string }] as const);
+  const relatives = new Map(files.flatMap(([c, f]) => (f.relative === undefined ? [] : [[c, f.relative.index] as const])));
+  const keeps = new Map(files.map(([c, f]) => [c, f.of] as const));
+  return serializeCoverage(pricesCoverage(countries, withPlaces, levels, facts, relatives, keeps));
 }

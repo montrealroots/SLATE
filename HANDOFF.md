@@ -26,7 +26,8 @@ restarts. Read `CLAUDE.md` and the owner's package in `docs/` first.
   Kedah, Kelantan and Terengganu); Western Sahara keeps Morocco's days by the owner's ruling of 2026-10-28; its code
   at 100% mutation score (532 mutants, with the regions' and the shared substitutes' rules). The prices
   (`world.prices`): the engine is built and tested, at 100% mutation score; 172 countries researched from the World
-  Bank's levels, 21 carried from the 2021 benchmark and 4 priced against France, 6 proven, 49 pending (the next step).
+  Bank's levels, 21 carried from the 2021 benchmark, 4 priced against France and 25 territories kept at another's
+  level by the owner's ruling; 6 proven, 24 pending (the next step).
 
 What layer 2 holds so far:
 
@@ -148,7 +149,20 @@ What layer 2 holds so far:
   Fisher gaps to metropolitan France of 15.8, 13.8, 13.7 and 8.9%), their monthly indices from INSEE's December 2025
   Flash workbooks and metropolitan France's annual index from INSEE's BDM (`fr-metro-cpi`). France's level is for
   France as a whole (the departments are about 3% of it). Mayotte's gap (10.3%) excludes rents and its index is on a
-  base of its own (December 2021) with no 2022 months in its workbook: still to do.
+  base of its own (December 2021) with no 2022 months in its workbook: still to do. By the owner's ruling of
+  2026-10-28, a territory with no price-level measure of its own keeps the level of the country whose currency and
+  market it shares (`of` in its file; `peg` where its pound is at par with another's, cited from its own law or
+  government): Liechtenstein (Switzerland's), Monaco, Saint Barthélemy, Saint Martin, Saint Pierre and Miquelon and
+  the French Southern Territories (France's), the Vatican (Italy's), Svalbard (Norway's), Åland (Finland's), Cocos,
+  Christmas Island and Norfolk Island (Australia's), Pitcairn, the Cook Islands, Niue and Tokelau (New Zealand's),
+  Western Sahara (Morocco's), Guernsey, Jersey, the Isle of Man and South Georgia (the United Kingdom's), Gibraltar
+  and Saint Helena (the United Kingdom's, their pounds at par by the Currency Notes Act 2011 s. 6 and the St Helena
+  Government), Wallis and Futuna (New Caledonia's: the same CFP franc, supplied through Nouméa) and the British Indian
+  Ocean Territory (the United States': its currency is the dollar and its settlement a US base). The last four
+  parents were the agent's reading of the ruling, reported to the owner. The Falklands wait: their pound's parity
+  is in the Falkland Islands Government's pages and Currency Ordinance 1987, and falklands.gov.fk is outside this
+  environment's allowed network. The Caribbean Netherlands wait too: the ICP prices Bonaire, most of BQ, so its
+  level should come from that, carried by CBS's Bonaire index, rather than from a parent.
 
 What layer 1 holds:
 
@@ -778,6 +792,9 @@ What layer 0 holds:
 
 ## Questions for the owner
 
+Answered 2026-10-28 (prices): a territory with no price-level measure of its own (no World Bank or ICP level, no
+spatial survey) takes the level of the country whose currency and market it shares, as is, named per territory (the
+owner chose "Parent's level as is" over carrying the parent's level by the territory's own index, or blocking them).
 Open: whether the archive snapshots listed under the next step may be fetched (the owner stopped one on 2026-10-27;
 each would likely unblock a country). Answered 2026-10-28: Western Sahara keeps Morocco's holidays everywhere. Noted
 2026-10-28: the auto-mode classifier ruled that opening in a browser a page that refuses this game's requests is

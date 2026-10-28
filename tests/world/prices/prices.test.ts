@@ -22,6 +22,9 @@ describe('the prices', () => {
     // Carried from the benchmark: Argentina's 661.287794234474 pesos to the dollar.
     expect(priceLevel('AR')).toEqual({ ppp: '661.287794234474', year: 2025 });
     expect(priceIn('AR', '10')).toEqual(money('ARS', 661288));
+    // A territory with no level of its own keeps its neighbour's, in its own currency (the owner's ruling): Gibraltar's pound at par.
+    expect(priceLevel('LI')).toEqual(priceLevel('CH'));
+    expect(priceIn('GI', '10')).toEqual(money('GIP', Number(priceIn('GB', '10')?.minor)));
     // Carried from the Program's own benchmark, which the World Bank's indicators leave out: Taiwan's.
     expect(priceLevel('TW')?.year).toBe(2025);
     expect(priceIn('TW', '1')?.currency).toBe('TWD');

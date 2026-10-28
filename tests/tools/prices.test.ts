@@ -2,7 +2,7 @@ import { copyFileSync, cpSync, mkdirSync, mkdtempSync, readdirSync, readFileSync
 import { tmpdir } from 'node:os';
 import { dirname, join } from 'node:path';
 import { describe, expect, it } from 'vitest';
-import { BENCHMARK, CARRIED_TO, carryForward, relativeLevel, compileLevels, currencyUnits, decimal, FROM, icpBenchmark, INDICES, mean, OUTPUT, PLACES, readLevels, sameCurrency, serialize, SOURCES, threeLetterCodes, UNIT_WORDS, US_INDEX, withCarried, type Indices } from '../../tools/prices/compile.ts';
+import { BENCHMARK, CARRIED_TO, carryForward, keptLevel, relativeLevel, compileLevels, currencyUnits, decimal, FROM, icpBenchmark, INDICES, mean, OUTPUT, PLACES, readLevels, sameCurrency, serialize, SOURCES, threeLetterCodes, UNIT_WORDS, US_INDEX, withCarried, type Indices } from '../../tools/prices/compile.ts';
 import { CARRIED_FACTS, COVERAGE, coverageOf, CURRENCY_FACTS, NO_PLACES, pricesCoverage, serializeCoverage, TESTS, TOLD } from '../../tools/prices/coverage.ts';
 
 const ROOT = join(import.meta.dirname, '../..');
@@ -174,6 +174,23 @@ describe('the price levels compiler', () => {
     expect(withCarried(levels, [], { 'fr-cpi': fr }, { GP: relative }, new Map(), { FR: 'EUR', GP: 'EUR' })).toStrictEqual({ FR: { ppp: '0.8', year: 2025 }, GP: { ppp: '0.968', year: 2025 } });
     expect(() => withCarried(levels, [], { 'fr-cpi': fr }, { GP: relative }, new Map(), { FR: 'EUR', GP: 'USD' })).toThrow("GP is priced against FR, whose currency isn't its own");
   });
+  it("keeps another country's level for a territory with none of its own, in its own currency, pegged where it isn't the same", () => {
+    const ch = { ppp: '1.065544', year: 2025 };
+    expect(keptLevel(ch, { of: 'CH' }, 'LI', { LI: 'CHF', CH: 'CHF' })).toStrictEqual(ch);
+    expect(keptLevel({ ppp: '0.7', year: 2024 }, { of: 'GB', peg: '1' }, 'GI', { GI: 'GIP', GB: 'GBP' })).toStrictEqual({ ppp: '0.7', year: 2024 });
+    expect(keptLevel({ ppp: '0.7', year: 2025 }, { of: 'GB', peg: '2.5' }, 'XX', { XX: 'GIP', GB: 'GBP' })).toStrictEqual({ ppp: '1.75', year: 2025 });
+    expect(() => keptLevel(undefined, { of: 'CH' }, 'LI', { LI: 'CHF', CH: 'CHF' })).toThrow("LI keeps CH's level, which isn't priced");
+    expect(() => keptLevel(ch, { of: 'CH' }, 'LI', { LI: 'EUR', CH: 'CHF' })).toThrow("LI's currency is EUR and CH's CHF: a peg is given only between two");
+    expect(() => keptLevel(ch, { of: 'CH', peg: '1' }, 'LI', { LI: 'CHF', CH: 'CHF' })).toThrow("LI's currency is CHF and CH's CHF: a peg is given only between two");
+    // Through the levels: after the carried ones, so a territory may keep one of those.
+    const levels = { CH: ch };
+    expect(withCarried(levels, [row('NC', '2021', 100)], { [US_INDEX]: indices(['1'], ['1']) }, { WF: { of: 'NC' }, LI: { of: 'CH' }, NC: indices(['1'], ['1.1']) }, new Map([['NC', 'CFP franc']]), { CH: 'CHF', LI: 'CHF', NC: 'XPF', WF: 'XPF' })).toStrictEqual({
+      CH: ch,
+      LI: ch,
+      NC: { ppp: '110', year: 2025 },
+      WF: { ppp: '110', year: 2025 },
+    });
+  });
   it('adds the carried levels to the World Bank\'s, refusing a country it prices already, one without a benchmark, or one in another currency', () => {
     const us = indices(['100'], ['110']);
     const kept = { US: { ppp: '1', year: 2025 } };
@@ -245,6 +262,13 @@ describe("the prices' coverage", () => {
     ]);
     // Without the levels' register entry, a level isn't researched.
     expect(pricesCoverage(['US'], new Set(['US']), new Set(['US']), new Map(), new Map())).toStrictEqual([{ key: 'US', status: 'pending' }]);
+    // A territory keeping another's level cites its own file and all the other's row cites; one keeping an unpriced country's isn't priced.
+    expect(pricesCoverage(['AR', 'XX', 'YY', 'ZZ'], new Set(['AR', 'XX', 'YY', 'ZZ']), new Set(['AR', 'XX', 'YY']), new Map([...facts, ['world.prices.XX', 'R-0010'], ['world.prices.YY', 'R-0011'], ['world.prices.ZZ', 'R-0012']]), new Map(), new Map([['XX', 'AR'], ['YY', 'QQ'], ['ZZ', 'AR']]))).toStrictEqual([
+      { key: 'AR', status: 'researched', register: ['R-0001', 'R-0002', 'R-0004', 'R-0005', 'R-0006'], tests: TESTS },
+      { key: 'XX', status: 'researched', register: ['R-0001', 'R-0002', 'R-0004', 'R-0005', 'R-0006', 'R-0010'], tests: TESTS },
+      { key: 'YY', status: 'researched', register: ['R-0001', 'R-0002', 'R-0004', 'R-0005', 'R-0011'], tests: TESTS },
+      { key: 'ZZ', status: 'pending' },
+    ]);
     // Nor a country whose own index the register cites, without a level.
     expect(pricesCoverage(['AR'], new Set(['AR']), new Set(), facts, new Map())).toStrictEqual([{ key: 'AR', status: 'pending' }]);
     expect(CURRENCY_FACTS).toEqual(['world.gazetteer.countries', 'money.iso4217.list-one']);
