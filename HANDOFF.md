@@ -26,7 +26,7 @@ restarts. Read `CLAUDE.md` and the owner's package in `docs/` first.
   Kedah, Kelantan and Terengganu); Western Sahara keeps Morocco's days by the owner's ruling of 2026-10-28; its code
   at 100% mutation score (532 mutants, with the regions' and the shared substitutes' rules). The prices
   (`world.prices`): the engine is built and tested, at 100% mutation score; 172 countries researched from the World
-  Bank's levels and 16 carried from its 2021 benchmark, 6 proven, 58 pending (the next step).
+  Bank's levels and 17 carried from its 2021 benchmark, 6 proven, 57 pending (the next step).
 
 What layer 2 holds so far:
 
@@ -133,7 +133,8 @@ What layer 2 holds so far:
   the Faroes (Hagstova's quarters), Greenland (its half-years), French Polynesia (the ISPF's 24 monthly notes) and
   New Caledonia (the ISEE's workbook, base December 2021, linked back), Puerto Rico (the Department of Labor's
   series, published by the Statistics Institute), Guam (the Bureau of Statistics and Plans' quarters) and Micronesia
-  (FSM Statistics' Q4 2025 workbook, the whole revised series).
+  (FSM Statistics' Q4 2025 workbook, the whole revised series) and Tuvalu (the Central Statistics Division's
+  release tables).
 
 What layer 1 holds:
 
@@ -631,7 +632,10 @@ What layer 0 holds:
    a comparison). Attempts so far for the blockers: the British Virgin Islands (gov.vg's statistics pages empty
    since its move; only 2015-2017 reports found), the Turks and Caicos (its Statistics Authority's site answers
    with a Sucuri firewall), Saint Kitts and Nevis (its office's tables stop at 2023 and 2024; the ECCB's
-   statistics refuse with 403). Where a territory has no
+   statistics refuse with 403), the Marshall Islands (EPPSO's file listing answers with a "humans_" cookie
+   script; SPC's Pacific Data Hub has only annual inflation to 2024), Nauru (its bureau's host doesn't resolve;
+   SPC as for the Marshalls), American Samoa (Commerce's Wix folders don't open; its Q3 2021 newsletter gives 2021's
+   first three quarters; SPC's series starts in 2022) and the Northern Marianas (SPC's series is 2022 to 2024). Where a territory has no
    measure of its own but uses another country's prices by law or market, that is an owner's ruling, as Western
    Sahara's holidays were, not an assumption. Sub-national levels (the US Bureau of Economic Analysis' regional price
    parities, and others where a country publishes them) are open research for after the countries. Prices move with
