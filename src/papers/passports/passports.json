@@ -1143,6 +1143,46 @@
    }
   ]
  },
+ "CV": {
+  "currency": "CVE",
+  "routes": [
+   {
+    "id": "home",
+    "where": "home",
+    "speed": "standard",
+    "within": null
+   },
+   {
+    "id": "urgent",
+    "where": "home",
+    "speed": "urgent",
+    "within": null
+   },
+   {
+    "id": "abroad",
+    "where": "abroad",
+    "speed": "standard",
+    "within": null
+   },
+   {
+    "id": "abroad-urgent",
+    "where": "abroad",
+    "speed": "urgent",
+    "within": null
+   }
+  ],
+  "bands": [
+   {
+    "validYears": null,
+    "pay": {
+     "home": 560000,
+     "urgent": 600000,
+     "abroad": 560000,
+     "abroad-urgent": 600000
+    }
+   }
+  ]
+ },
  "CW": {
   "currency": "USD",
   "routes": [
@@ -5105,6 +5145,50 @@
      "abroad": 1400
     },
     "under": 6
+   }
+  ]
+ },
+ "SM": {
+  "currency": "EUR",
+  "routes": [
+   {
+    "id": "home",
+    "where": "home",
+    "speed": "standard",
+    "within": null
+   },
+   {
+    "id": "abroad",
+    "where": "abroad",
+    "speed": "standard",
+    "within": null
+   }
+  ],
+  "bands": [
+   {
+    "validYears": 10,
+    "pay": {
+     "home": null,
+     "abroad": 10000
+    },
+    "from": 14
+   },
+   {
+    "validYears": 5,
+    "pay": {
+     "home": null,
+     "abroad": 5000
+    },
+    "from": 3,
+    "under": 14
+   },
+   {
+    "validYears": 3,
+    "pay": {
+     "home": null,
+     "abroad": 3000
+    },
+    "under": 3
    }
   ]
  },

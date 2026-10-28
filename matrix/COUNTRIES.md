@@ -58,7 +58,7 @@ a place fills a column; a cell is the row's status in that engine's matrix, or b
 | CR | Costa Rica | researched | researched | researched | researched | researched | researched | pending |
 | CS | Serbia and Montenegro | researched | researched | proven | proven | proven | proven | proven |
 | CU | Cuba | researched | researched | researched | blocked | researched | blocked | pending |
-| CV | Cabo Verde | researched | researched | researched | researched | blocked | researched | pending |
+| CV | Cabo Verde | researched | researched | researched | researched | blocked | researched | researched |
 | CW | Curacao | researched | researched | researched | researched | researched | researched | researched |
 | CX | Christmas Island | researched | researched | researched | blocked | blocked | researched | researched |
 | CY | Cyprus | researched | researched | researched | researched | researched | researched | pending |
@@ -210,7 +210,7 @@ a place fills a column; a cell is the row's status in that engine's matrix, or b
 | SJ | Svalbard and Jan Mayen | researched | researched | researched | researched | blocked | researched | researched |
 | SK | Slovakia | researched | researched | researched | researched | researched | researched | researched |
 | SL | Sierra Leone | researched | researched | researched | researched | blocked | researched | pending |
-| SM | San Marino | researched | researched | researched | blocked | researched | researched | pending |
+| SM | San Marino | researched | researched | researched | blocked | researched | researched | researched |
 | SN | Senegal | researched | researched | researched | researched | researched | researched | pending |
 | SO | Somalia | researched | researched | researched | researched | blocked | blocked | pending |
 | SR | Suriname | researched | researched | researched | researched | blocked | researched | pending |
