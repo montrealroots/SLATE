@@ -2943,6 +2943,41 @@
    }
   ]
  },
+ "MU": {
+  "currency": "MUR",
+  "routes": [
+   {
+    "id": "home",
+    "where": "home",
+    "speed": "standard",
+    "within": null
+   }
+  ],
+  "bands": [
+   {
+    "validYears": null,
+    "pay": {
+     "home": 40000
+    },
+    "from": 55
+   },
+   {
+    "validYears": null,
+    "pay": {
+     "home": 70000
+    },
+    "from": 16,
+    "under": 55
+   },
+   {
+    "validYears": null,
+    "pay": {
+     "home": 40000
+    },
+    "under": 16
+   }
+  ]
+ },
  "MV": {
   "currency": "MVR",
   "routes": [
