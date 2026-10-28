@@ -84,6 +84,41 @@
    }
   ]
  },
+ "AG": {
+  "currency": "GBP",
+  "routes": [
+   {
+    "id": "home",
+    "where": "home",
+    "speed": "standard",
+    "within": null
+   },
+   {
+    "id": "abroad",
+    "where": "abroad",
+    "speed": "standard",
+    "within": null
+   }
+  ],
+  "bands": [
+   {
+    "validYears": null,
+    "pay": {
+     "home": null,
+     "abroad": 5000
+    },
+    "from": 16
+   },
+   {
+    "validYears": null,
+    "pay": {
+     "home": null,
+     "abroad": 2500
+    },
+    "under": 16
+   }
+  ]
+ },
  "AI": {
   "currency": "XCD",
   "routes": [
@@ -936,6 +971,12 @@
      "home": 30000
     }
    }
+  ]
+ },
+ "BL": {
+  "issuedBy": "FR",
+  "onlyRoutes": [
+   "abroad"
   ]
  },
  "BM": {
@@ -6662,6 +6703,42 @@
    }
   ]
  },
+ "SY": {
+  "currency": "USD",
+  "routes": [
+   {
+    "id": "home",
+    "where": "home",
+    "speed": "standard",
+    "within": {
+     "n": 45,
+     "unit": "day"
+    }
+   },
+   {
+    "id": "abroad",
+    "where": "abroad",
+    "speed": "standard",
+    "within": null
+   },
+   {
+    "id": "abroad-expedited",
+    "where": "abroad",
+    "speed": "urgent",
+    "within": null
+   }
+  ],
+  "bands": [
+   {
+    "validYears": null,
+    "pay": {
+     "home": null,
+     "abroad": 30000,
+     "abroad-expedited": 80000
+    }
+   }
+  ]
+ },
  "TD": {
   "currency": "XAF",
   "routes": [
@@ -6859,6 +6936,41 @@
      "home": 0
     },
     "under": 16
+   }
+  ]
+ },
+ "TN": {
+  "currency": "EUR",
+  "routes": [
+   {
+    "id": "home",
+    "where": "home",
+    "speed": "standard",
+    "within": null
+   },
+   {
+    "id": "abroad",
+    "where": "abroad",
+    "speed": "standard",
+    "within": null
+   }
+  ],
+  "bands": [
+   {
+    "validYears": null,
+    "pay": {
+     "home": null,
+     "abroad": 6000
+    },
+    "from": 18
+   },
+   {
+    "validYears": null,
+    "pay": {
+     "home": null,
+     "abroad": 2300
+    },
+    "under": 18
    }
   ]
  },
@@ -7621,6 +7733,61 @@
      "abroad": null
     },
     "under": 16
+   }
+  ]
+ },
+ "ZM": {
+  "currency": "SEK",
+  "routes": [
+   {
+    "id": "home",
+    "where": "home",
+    "speed": "standard",
+    "within": null
+   },
+   {
+    "id": "abroad",
+    "where": "abroad",
+    "speed": "standard",
+    "within": null
+   }
+  ],
+  "bands": [
+   {
+    "validYears": 10,
+    "pay": {
+     "home": null,
+     "abroad": 64000
+    },
+    "from": 16,
+    "pages": 32
+   },
+   {
+    "validYears": 10,
+    "pay": {
+     "home": null,
+     "abroad": 104000
+    },
+    "from": 16,
+    "pages": 48
+   },
+   {
+    "validYears": 5,
+    "pay": {
+     "home": null,
+     "abroad": 64000
+    },
+    "under": 16,
+    "pages": 32
+   },
+   {
+    "validYears": 5,
+    "pay": {
+     "home": null,
+     "abroad": 104000
+    },
+    "under": 16,
+    "pages": 48
    }
   ]
  },

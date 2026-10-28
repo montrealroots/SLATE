@@ -8,7 +8,7 @@ a place fills a column; a cell is the row's status in that engine's matrix, or b
 | AD | Andorra | researched | researched | researched | blocked | researched | researched | researched |
 | AE | United Arab Emirates | researched | researched | researched | researched | researched | researched | researched |
 | AF | Afghanistan | researched | researched | researched | researched | blocked | researched | researched |
-| AG | Antigua and Barbuda | researched | researched | researched | blocked | researched | researched | blocked |
+| AG | Antigua and Barbuda | researched | researched | researched | blocked | researched | researched | researched |
 | AI | Anguilla | researched | researched | researched | blocked | researched | researched | researched |
 | AL | Albania | researched | researched | researched | researched | researched | researched | researched |
 | AM | Armenia | researched | researched | researched | researched | researched | researched | researched |
@@ -31,7 +31,7 @@ a place fills a column; a cell is the row's status in that engine's matrix, or b
 | BH | Bahrain | researched | researched | researched | researched | researched | researched | researched |
 | BI | Burundi | researched | researched | researched | blocked | researched | researched | researched |
 | BJ | Benin | researched | researched | researched | researched | researched | researched | researched |
-| BL | Saint Barthelemy | researched | researched | researched | researched | researched | researched | blocked |
+| BL | Saint Barthelemy | researched | researched | researched | researched | researched | researched | researched |
 | BM | Bermuda | researched | researched | researched | researched | researched | researched | researched |
 | BN | Brunei | researched | researched | researched | researched | blocked | researched | researched |
 | BO | Bolivia | researched | researched | researched | researched | researched | researched | blocked |
@@ -218,7 +218,7 @@ a place fills a column; a cell is the row's status in that engine's matrix, or b
 | ST | Sao Tome and Principe | researched | researched | researched | researched | blocked | researched | researched |
 | SV | El Salvador | researched | researched | researched | researched | researched | researched | researched |
 | SX | Sint Maarten | researched | researched | researched | researched | researched | researched | researched |
-| SY | Syria | researched | researched | researched | researched | researched | blocked | blocked |
+| SY | Syria | researched | researched | researched | researched | researched | blocked | researched |
 | SZ | Eswatini | researched | researched | researched | blocked | blocked | blocked | blocked |
 | TC | Turks and Caicos Islands | researched | researched | researched | blocked | researched | blocked | blocked |
 | TD | Chad | researched | researched | researched | researched | researched | researched | researched |
@@ -229,7 +229,7 @@ a place fills a column; a cell is the row's status in that engine's matrix, or b
 | TK | Tokelau | researched | researched | researched | blocked | blocked | researched | researched |
 | TL | Timor Leste | researched | researched | researched | researched | researched | researched | researched |
 | TM | Turkmenistan | researched | researched | researched | researched | researched | blocked | researched |
-| TN | Tunisia | researched | researched | researched | researched | researched | researched | blocked |
+| TN | Tunisia | researched | researched | researched | researched | researched | researched | researched |
 | TO | Tonga | researched | researched | researched | blocked | researched | researched | blocked |
 | TR | Turkey | researched | researched | researched | researched | researched | researched | researched |
 | TT | Trinidad and Tobago | researched | researched | researched | researched | researched | researched | researched |
@@ -255,5 +255,5 @@ a place fills a column; a cell is the row's status in that engine's matrix, or b
 | YE | Yemen | researched | researched | researched | researched | researched | blocked | researched |
 | YT | Mayotte | researched | researched | researched | researched | researched | researched | researched |
 | ZA | South Africa | researched | researched | researched | researched | researched | researched | researched |
-| ZM | Zambia | researched | researched | researched | researched | researched | researched | blocked |
+| ZM | Zambia | researched | researched | researched | researched | researched | researched | researched |
 | ZW | Zimbabwe | researched | researched | researched | researched | researched | blocked | researched |
