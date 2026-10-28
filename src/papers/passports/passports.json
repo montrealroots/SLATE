@@ -3623,6 +3623,25 @@
    "abroad"
   ]
  },
+ "MG": {
+  "currency": "MGA",
+  "routes": [
+   {
+    "id": "home",
+    "where": "home",
+    "speed": "standard",
+    "within": null
+   }
+  ],
+  "bands": [
+   {
+    "validYears": 5,
+    "pay": {
+     "home": 11000000
+    }
+   }
+  ]
+ },
  "MH": {
   "currency": "USD",
   "routes": [
@@ -3697,6 +3716,32 @@
      "urgent": 620000
     },
     "under": 4
+   }
+  ]
+ },
+ "ML": {
+  "currency": "XOF",
+  "routes": [
+   {
+    "id": "home",
+    "where": "home",
+    "speed": "standard",
+    "within": null
+   },
+   {
+    "id": "premium",
+    "where": "home",
+    "speed": "urgent",
+    "within": null
+   }
+  ],
+  "bands": [
+   {
+    "validYears": 5,
+    "pay": {
+     "home": 45000,
+     "premium": 90000
+    }
    }
   ]
  },
