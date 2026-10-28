@@ -12,7 +12,8 @@ import countries from '../../../src/world/gazetteer/countries.json' with { type:
  * it takes as published) and, by age band, the `pay` for each route as the total the applicant pays, in the
  * country's currency or the currency the office sets it in. A file still in the research's own words (a `fees` map
  * instead of `pay`, or fees in a unit that isn't a currency, as Uruguay's indexed units) isn't compiled: its row
- * stays pending until it is.
+ * stays pending until it is. A territory whose people hold another country's passport says so (`issuedBy`), with
+ * the routes of that country's open to it where not all are (`onlyRoutes`, as French Guiana's own fee).
  */
 export const SOURCES = 'research/sources/papers/passports';
 export const OUTPUT = 'src/papers/passports/passports.json';
@@ -47,11 +48,18 @@ export interface Passport {
   bands: Band[];
 }
 
+export interface Issued {
+  issuedBy: string;
+  onlyRoutes?: string[];
+}
+
+export type Entry = Passport | Issued;
+
 const isRecord = (v: unknown): v is Record<string, unknown> => typeof v === 'object' && v !== null && !Array.isArray(v);
 const isWhole = (v: unknown, min: number): v is number => Number.isSafeInteger(v) && (v as number) >= min;
 
-/** Whether a research file is in the engine's form (it has routes); one that isn't stays pending. */
-export const isCompilable = (file: Record<string, unknown>) => 'routes' in file;
+/** Whether a research file is in the engine's form (it has routes, or names its issuer); one that isn't stays pending. */
+export const isCompilable = (file: Record<string, unknown>) => 'routes' in file || 'issuedBy' in file;
 
 function route(r: unknown, at: string): Route {
   if (!isRecord(r)) throw new Error(`${at} is not an object`);
@@ -119,14 +127,40 @@ export function compilePassport(code: string, file: Record<string, unknown>): Pa
   return { currency, routes, bands };
 }
 
+/** A territory's file naming the country whose passport its people hold, checked through (the issuer is checked against the others once all are read). */
+export function compileIssued(code: string, file: Record<string, unknown>): Issued {
+  if (!Object.hasOwn(countries, code)) throw new Error(`${code} is not a country on the map`);
+  if (file['country'] !== code) throw new Error(`${code}'s file is for ${String(file['country'])}`);
+  const issuedBy = String(file['issuedBy']);
+  const onlyRoutes = file['onlyRoutes'];
+  if (!Object.hasOwn(countries, issuedBy) || issuedBy === code) throw new Error(`${code}'s passports are issued by another country on the map, not ${issuedBy}`);
+  if ('routes' in file || 'passports' in file) throw new Error(`${code}'s passports are ${issuedBy}'s, so it has no routes or passports of its own`);
+  if (onlyRoutes === undefined) return { issuedBy };
+  if (!Array.isArray(onlyRoutes) || onlyRoutes.length === 0 || onlyRoutes.some((r) => typeof r !== 'string' || r === '') || new Set(onlyRoutes).size !== onlyRoutes.length) {
+    throw new Error(`${code} is open to distinct routes of ${issuedBy}'s by id`);
+  }
+  return { issuedBy, onlyRoutes: onlyRoutes as string[] };
+}
+
+/** Every issuer named is a country compiled in its own right, and every route a territory is open to is one of the issuer's. */
+export function checkIssuers(passports: Readonly<Record<string, Entry>>): void {
+  for (const [code, e] of Object.entries(passports)) {
+    if (!('issuedBy' in e)) continue;
+    const issuer = passports[e.issuedBy];
+    if (issuer === undefined || 'issuedBy' in issuer) throw new Error(`${code}'s passports are ${e.issuedBy}'s, which the game doesn't keep in its own right`);
+    const ids = new Set(issuer.routes.map((r) => r.id));
+    for (const r of e.onlyRoutes ?? []) if (!ids.has(r)) throw new Error(`${code} is open to a route ${e.issuedBy} has none of (${r})`);
+  }
+}
+
 /**
  * The passports of every file the register cites and checks, compiled where in the engine's form; `pending` names
  * the ones still in the research's own words.
  */
-export function readPassports(root: string): { passports: Record<string, Passport>; pending: string[] } {
+export function readPassports(root: string): { passports: Record<string, Entry>; pending: string[] } {
   const register = JSON.parse(readFileSync(join(root, 'research/register.json'), 'utf8')) as { entries: { fact: string; value?: { file?: string; sha256?: string } }[] };
   const cited = new Map(register.entries.flatMap((e) => (e.fact.startsWith('papers.passports.') && e.value?.file !== undefined ? [[e.value.file, e.value.sha256] as const] : [])));
-  const passports: Record<string, Passport> = {};
+  const passports: Record<string, Entry> = {};
   const pending: string[] = [];
   // Stryker disable next-line MethodExpression: the filesystems this runs on list a directory in name order already; the sort keeps the output the same on one that doesn't.
   for (const name of readdirSync(join(root, SOURCES)).filter((n) => n.endsWith('.json')).sort()) {
@@ -137,10 +171,12 @@ export function readPassports(root: string): { passports: Record<string, Passpor
     if (createHash('sha256').update(bytes).digest('hex') !== sha) throw new Error(`${path} isn't the file the register cites`);
     const code = name.slice(0, -'.json'.length);
     const file = JSON.parse(bytes.toString('utf8')) as Record<string, unknown>;
-    if (isCompilable(file)) passports[code] = compilePassport(code, file);
+    if ('issuedBy' in file) passports[code] = compileIssued(code, file);
+    else if (isCompilable(file)) passports[code] = compilePassport(code, file);
     else pending.push(code);
   }
+  checkIssuers(passports);
   return { passports, pending };
 }
 
-export const serialize = (passports: Record<string, Passport>) => `${JSON.stringify(passports, null, 1)}\n`;
+export const serialize = (passports: Record<string, Entry>) => `${JSON.stringify(passports, null, 1)}\n`;

@@ -3,7 +3,7 @@ import { money } from '../../../src/core/money/money.ts';
 import { t } from '../../../src/core/text/text.ts';
 import { COUNTRY_CODES } from '../../../src/world/gazetteer/gazetteer.ts';
 import data from '../../../src/papers/passports/passports.json';
-import { aboutPassports, FEE_UNKNOWN_LINE, keepsPassports, offerGaps, passportOffers, TIME_UNKNOWN_LINE, UNKEPT_LINE, VALIDITY_UNKNOWN_LINE, type Offer } from '../../../src/papers/passports/passports.ts';
+import { aboutPassports, FEE_UNKNOWN_LINE, keepsPassports, offerGaps, passportIssuer, passportOffers, TIME_UNKNOWN_LINE, UNKEPT_LINE, VALIDITY_UNKNOWN_LINE, type Offer } from '../../../src/papers/passports/passports.ts';
 
 /** An offer as the player meets it, in a few words: the route, the fee in minor units, the validity, the pages. */
 const brief = (offers: Offer[] | undefined) => offers?.map((o) => [o.route.id, o.fee === null ? null : o.fee.minor, o.validYears, o.pages]);
@@ -42,6 +42,10 @@ describe('the passports', () => {
     expect(brief(passportOffers('RS', { age: 30, month: 1 }))).toEqual([['police', 450000, 10, undefined], ['urgent', null, 10, undefined], ['mission', null, 10, undefined]]);
     expect(passportOffers('IS', { age: 30, month: 1 })?.[0]?.fee).toEqual(money('ISK', 19000));
     expect(brief(passportOffers('EC', { age: 30, month: 1 }))).toEqual([['agency', 9000, null, undefined]]);
+    // A territory's people hold another country's passport: Guam's the United States' in full, French Guiana's France's at the fee in Guyane or abroad.
+    expect(passportOffers('GU', { age: 30, month: 1 })).toStrictEqual(passportOffers('US', { age: 30, month: 1 }));
+    expect(brief(passportOffers('GF', { age: 30, month: 1 }))).toEqual([['guyane', 4300, 10, undefined], ['abroad', 9600, 10, undefined]]);
+    expect([passportIssuer('GU'), passportIssuer('GF'), passportIssuer('US'), passportIssuer('KP')]).toEqual(['US', 'FR', 'US', undefined]);
   });
 
   it("tell the player what the game doesn't know", () => {

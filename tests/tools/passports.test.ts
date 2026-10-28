@@ -3,7 +3,7 @@ import { mkdirSync, mkdtempSync, readFileSync, writeFileSync } from 'node:fs';
 import { tmpdir } from 'node:os';
 import { join, resolve } from 'node:path';
 import { describe, expect, it } from 'vitest';
-import { compilePassport, isCompilable, OUTPUT, readPassports, serialize, SOURCES, UNITS } from '../../tools/papers/passports/compile.ts';
+import { checkIssuers, compileIssued, compilePassport, isCompilable, OUTPUT, readPassports, serialize, SOURCES, UNITS } from '../../tools/papers/passports/compile.ts';
 import { COVERAGE, coverageOf, NO_PLACES, passportsCoverage, serializeCoverage, TESTS, TOLD } from '../../tools/papers/passports/coverage.ts';
 
 const ROOT = resolve(import.meta.dirname, '../..');
@@ -47,6 +47,7 @@ describe('the passports compile', () => {
     expect(yen.bands).toStrictEqual([{ validYears: 10, pay: { s: 16300 } }]);
     expect(yen.routes[0]?.within).toEqual({ n: 0, unit: 'minute' });
     expect(isCompilable({ routes: [] })).toBe(true);
+    expect(isCompilable({ issuedBy: 'US' })).toBe(true);
     expect(isCompilable({ passports: [] })).toBe(false);
   });
 
@@ -119,6 +120,24 @@ describe('the passports compile', () => {
     expect(bad({ validYears: 5, pay: { s: '1.001' } })).toThrow('EUR has 2 decimal places; "1.001" has more');
   });
 
+  it("takes a territory to the country whose passport its people hold, and holds the issuer to the others", () => {
+    expect(compileIssued('GU', { country: 'GU', issuedBy: 'US', note: 'x', sources: [] })).toStrictEqual({ issuedBy: 'US' });
+    expect(compileIssued('GF', { country: 'GF', issuedBy: 'FR', onlyRoutes: ['guyane', 'abroad'] })).toStrictEqual({ issuedBy: 'FR', onlyRoutes: ['guyane', 'abroad'] });
+    expect(() => compileIssued('XX', { country: 'XX', issuedBy: 'US' })).toThrow('XX is not a country on the map');
+    expect(() => compileIssued('GU', { country: 'PR', issuedBy: 'US' })).toThrow("GU's file is for PR");
+    for (const issuedBy of ['XX', 'GU', 7]) expect(() => compileIssued('GU', { country: 'GU', issuedBy })).toThrow(`GU's passports are issued by another country on the map, not ${String(issuedBy)}`);
+    expect(() => compileIssued('GU', { country: 'GU', issuedBy: 'US', routes: [] })).toThrow("GU's passports are US's, so it has no routes or passports of its own");
+    expect(() => compileIssued('GU', { country: 'GU', issuedBy: 'US', passports: [] })).toThrow("GU's passports are US's, so it has no routes or passports of its own");
+    for (const onlyRoutes of [[], 'guyane', [''], [3], ['a', ''], ['a', 'a']]) {
+      expect(() => compileIssued('GF', { country: 'GF', issuedBy: 'FR', onlyRoutes }), JSON.stringify(onlyRoutes)).toThrow("GF is open to distinct routes of FR's by id");
+    }
+    const sk = compilePassport('SK', file());
+    expect(() => checkIssuers({ SK: sk, CZ: { issuedBy: 'SK' }, AT: { issuedBy: 'SK', onlyRoutes: ['urgent'] } })).not.toThrow();
+    expect(() => checkIssuers({ SK: sk, CZ: { issuedBy: 'PL' } })).toThrow("CZ's passports are PL's, which the game doesn't keep in its own right");
+    expect(() => checkIssuers({ SK: sk, CZ: { issuedBy: 'SK' }, AT: { issuedBy: 'CZ' } })).toThrow("AT's passports are CZ's, which the game doesn't keep in its own right");
+    expect(() => checkIssuers({ SK: sk, CZ: { issuedBy: 'SK', onlyRoutes: ['standard', 'abroad'] } })).toThrow('CZ is open to a route SK has none of (abroad)');
+  });
+
   it('reads only files the register cites, as cited, and leaves those not in the engine\'s form pending', () => {
     const root = mkdtempSync(join(tmpdir(), 'passports-'));
     mkdirSync(join(root, SOURCES), { recursive: true });
@@ -134,17 +153,23 @@ describe('the passports compile', () => {
     const sk = write('SK.json', file());
     const uy = write('UY.json', { country: 'UY', currency: 'UYU', unit: 'UI', passports: [] });
     const ad = write('AD.json', { country: 'AD', passports: [] });
+    const at = write('AT.json', { country: 'AT', issuedBy: 'SK' });
     write('notes.txt', 'not a file');
     const cite = (code: string, sha256: string) => ({ fact: `papers.passports.${code}`, value: { file: `${SOURCES}/${code}.json`, sha256 } });
-    register([cite('ZW', zw), cite('AD', ad), cite('SK', sk), cite('UY', uy), { fact: 'papers.passports.blocked.KP' }, { fact: 'world.prices.SK', value: { file: `${SOURCES}/SK.json`, sha256: 'other' } }]);
+    register([cite('ZW', zw), cite('AD', ad), cite('AT', at), cite('SK', sk), cite('UY', uy), { fact: 'papers.passports.blocked.KP' }, { fact: 'world.prices.SK', value: { file: `${SOURCES}/SK.json`, sha256: 'other' } }]);
     const read = readPassports(root);
     expect(read.pending).toEqual(['AD', 'UY', 'ZW']);
-    expect(Object.keys(read.passports)).toEqual(['SK']);
-    expect(read.passports['SK']?.bands[0]?.pay).toEqual({ standard: 5000, urgent: 15050 });
-    register([cite('ZW', zw), cite('AD', ad), cite('SK', sk.replace(/^./, (c) => (c === '0' ? '1' : '0'))), cite('UY', uy)]);
+    expect(Object.keys(read.passports)).toEqual(['AT', 'SK']);
+    expect(read.passports['AT']).toStrictEqual({ issuedBy: 'SK' });
+    expect((read.passports['SK'] as { bands: { pay: unknown }[] } | undefined)?.bands[0]?.pay).toEqual({ standard: 5000, urgent: 15050 });
+    register([cite('ZW', zw), cite('AD', ad), cite('AT', at), cite('SK', sk.replace(/^./, (c) => (c === '0' ? '1' : '0'))), cite('UY', uy)]);
     expect(() => readPassports(root)).toThrow(`${SOURCES}/SK.json isn't the file the register cites`);
-    register([cite('ZW', zw), cite('AD', ad), cite('UY', uy)]);
+    register([cite('ZW', zw), cite('AD', ad), cite('AT', at), cite('UY', uy)]);
     expect(() => readPassports(root)).toThrow(`${SOURCES}/SK.json isn't cited by the register`);
+    // An issuer the game doesn't keep in its own right stops the read.
+    write('SK.json', { country: 'SK', passports: [] });
+    register([cite('AT', at), cite('SK', createHash('sha256').update(JSON.stringify({ country: 'SK', passports: [] })).digest('hex'))].concat([cite('ZW', zw), cite('AD', ad), cite('UY', uy)]));
+    expect(() => readPassports(root)).toThrow("AT's passports are SK's, which the game doesn't keep in its own right");
     expect(serialize({ SK: compilePassport('SK', file()) })).toBe(`${JSON.stringify({ SK: compilePassport('SK', file()) }, null, 1)}\n`);
   });
 

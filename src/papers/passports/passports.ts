@@ -35,7 +35,13 @@ interface Passport {
   readonly bands: readonly Band[];
 }
 
-const PASSPORTS = data as unknown as Record<string, Passport>;
+/** A territory whose people hold another country's passport, open to some of its routes or all. */
+interface Issued {
+  readonly issuedBy: string;
+  readonly onlyRoutes?: readonly string[];
+}
+
+const PASSPORTS = data as unknown as Record<string, Passport | Issued>;
 
 /** One way to get a passport, as the applicant meets it. */
 export interface Offer {
@@ -54,6 +60,12 @@ export interface Applicant {
   readonly month: number;
 }
 
+/** The country whose passport a country's or territory's people hold: its own, or the one it names. */
+export const passportIssuer = (country: CountryCode): CountryCode | undefined => {
+  const entry = PASSPORTS[country];
+  return entry === undefined ? undefined : 'issuedBy' in entry ? (entry.issuedBy as CountryCode) : country;
+};
+
 /** Whether the game keeps a country's passports. */
 export const keepsPassports = (country: CountryCode) => Object.hasOwn(PASSPORTS, country);
 
@@ -64,10 +76,14 @@ const fits = (b: Band, a: Applicant) => (b.from ?? 0) <= a.age && a.age < (b.und
  * that fits the applicant; none where the game doesn't keep the country's passports.
  */
 export function passportOffers(country: CountryCode, applicant: Applicant): Offer[] | undefined {
-  const p = PASSPORTS[country];
-  if (p === undefined) return undefined;
+  const entry = PASSPORTS[country];
+  if (entry === undefined) return undefined;
+  // An issuer is a country compiled in its own right (the compile holds it).
+  const p = ('issuedBy' in entry ? PASSPORTS[entry.issuedBy] : entry) as Passport;
+  const only = 'issuedBy' in entry ? entry.onlyRoutes : undefined;
   const offers: Offer[] = [];
   for (const route of p.routes) {
+    if (only !== undefined && !only.includes(route.id)) continue;
     if (route.months !== undefined && !route.months.includes(applicant.month)) continue;
     for (const b of p.bands) {
       if (!fits(b, applicant) || !Object.hasOwn(b.pay, route.id)) continue;

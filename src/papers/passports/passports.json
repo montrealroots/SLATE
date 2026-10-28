@@ -1,4 +1,7 @@
 {
+ "AS": {
+  "issuedBy": "US"
+ },
  "AT": {
   "currency": "EUR",
   "routes": [
@@ -1124,6 +1127,13 @@
    }
   ]
  },
+ "GF": {
+  "issuedBy": "FR",
+  "onlyRoutes": [
+   "guyane",
+   "abroad"
+  ]
+ },
  "GH": {
   "currency": "GHS",
   "routes": [
@@ -1231,6 +1241,9 @@
     "under": 18
    }
   ]
+ },
+ "GU": {
+  "issuedBy": "US"
  },
  "HK": {
   "currency": "HKD",
@@ -1941,6 +1954,9 @@
    }
   ]
  },
+ "MP": {
+  "issuedBy": "US"
+ },
  "MT": {
   "currency": "EUR",
   "routes": [
@@ -2364,6 +2380,9 @@
     "under": 12
    }
   ]
+ },
+ "PR": {
+  "issuedBy": "US"
  },
  "PY": {
   "currency": "PYG",
@@ -2822,6 +2841,47 @@
    }
   ]
  },
+ "UA": {
+  "currency": "UAH",
+  "routes": [
+   {
+    "id": "standard",
+    "where": "home",
+    "speed": "standard",
+    "within": {
+     "n": 20,
+     "unit": "working day"
+    }
+   },
+   {
+    "id": "urgent",
+    "where": "home",
+    "speed": "urgent",
+    "within": {
+     "n": 7,
+     "unit": "working day"
+    }
+   }
+  ],
+  "bands": [
+   {
+    "validYears": 10,
+    "pay": {
+     "standard": 114700,
+     "urgent": 178700
+    },
+    "from": 16
+   },
+   {
+    "validYears": 4,
+    "pay": {
+     "standard": 114700,
+     "urgent": 178700
+    },
+    "under": 16
+   }
+  ]
+ },
  "UG": {
   "currency": "UGX",
   "routes": [
@@ -2891,5 +2951,8 @@
     "under": 16
    }
   ]
+ },
+ "VI": {
+  "issuedBy": "US"
  }
 }

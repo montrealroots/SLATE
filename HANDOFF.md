@@ -48,7 +48,14 @@ Luxembourg's chancery tax or Trinidad's expedite surcharge), or null where it is
 same applicant only with different pages or validity (Guatemala's five or ten years, Pakistan's 36 or 72 pages). A
 file in the research's own words (a `fees` map) or with fees in a unit that isn't a currency (Uruguay's UI) isn't
 compiled and stays pending; South Africa's (the fee depends on how long the old passport has left) waits for the
-form to take that condition. 60 of the 63 files are in the form (2026-10-28); Australia (2026's indexed amounts),
+form to take that condition. A territory whose people hold another country's passport has a file naming it
+(`issuedBy`), with `onlyRoutes` where only some of the issuer's routes are open to it: Puerto Rico, the US Virgin
+Islands, Guam and the Northern Mariana Islands (United States citizens, 8 U.S.C. §§ 1402, 1406, 1407 and the
+Covenant's § 303), American Samoa (United States nationals, § 1408, who are issued its passport, 22 U.S.C. § 212),
+and French Guiana (the French people, Constitution art. 72-3, at the fee in Guyane). The other French overseas
+collectivities wait for their fee (Service Public's "En France" doesn't say whether it covers them), as do the
+British, Danish, Dutch, Australian, New Zealand and Norwegian territories. 60 of the 63 country files are in the
+form (2026-10-28); Australia (2026's indexed amounts),
 Uruguay (UI) and South Africa wait. A first issue against a renewal isn't in the form yet, so Austria's free first
 passport under 2 is left unknown and the United States' renewal by mail isn't offered; the field comes back when the
 person (layer 4) says whether the applicant already holds a passport. Reduced fees by status (Poland's pupils,
