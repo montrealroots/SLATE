@@ -1,0 +1,51 @@
+{
+ "country": "LK",
+ "document": "National Identity Card (NIC)",
+ "office": "the Department for Registration of Persons",
+ "currency": "LKR",
+ "routes": [
+  {
+   "id": "normal",
+   "where": "home",
+   "speed": "standard",
+   "within": null,
+   "label": "through the Grama Niladhari and Divisional Secretariat; the card is mailed"
+  },
+  {
+   "id": "one-day",
+   "where": "home",
+   "speed": "urgent",
+   "within": {
+    "n": 3,
+    "unit": "hour"
+   },
+   "label": "one-day service at the Department: within 3 hours of handing in the application"
+  }
+ ],
+ "cards": [
+  {
+   "for": "from 15",
+   "from": 15,
+   "validYears": null,
+   "pay": {
+    "normal": null,
+    "one-day": "2000"
+   }
+  }
+ ],
+ "note": "Every citizen of 15 or over must apply. The Department's schedule of fees lists Rs 2,000 for a card under the one-day service, Rs 200 or 500 for a revised copy and Rs 1,000 for a duplicate of a lost card (not modelled), but no line for a first card under the normal service, so that fee is null; the card's term isn't on its pages either, so it's null; the player is told.",
+ "sources": [
+  {
+   "url": "https://drp.gov.lk/en/normal.php",
+   "title": "Department for Registration of Persons, Sri Lanka, Obtaining National Identity Card for the first time",
+   "read": "2026-10-28",
+   "said": "Every person who is a citizen of Sri Lanka and who has attained or attains the age of 15 years shall apply for a National Identity card. ... For issuance of National Identity Cards under One Day Service. Rs.2000.00"
+  },
+  {
+   "url": "https://drp.gov.lk/en/faq.php",
+   "title": "Department for Registration of Persons, Sri Lanka, FAQ",
+   "read": "2026-10-28",
+   "said": "the National Identity Card can be obtained within 3 hours of handing over the application."
+  }
+ ]
+}

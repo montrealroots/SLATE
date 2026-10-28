@@ -1,0 +1,52 @@
+{
+ "country": "PK",
+ "document": "Smart National Identity Card (SNIC)",
+ "office": "the National Database and Registration Authority (NADRA)",
+ "currency": "PKR",
+ "routes": [
+  {
+   "id": "normal",
+   "where": "home",
+   "speed": "standard",
+   "within": null,
+   "label": "normal, at a NADRA registration centre"
+  },
+  {
+   "id": "urgent",
+   "where": "home",
+   "speed": "urgent",
+   "within": null,
+   "label": "urgent"
+  },
+  {
+   "id": "executive",
+   "where": "home",
+   "speed": "urgent",
+   "within": null,
+   "label": "executive"
+  }
+ ],
+ "cards": [
+  {
+   "for": "adult",
+   "from": 18,
+   "validYears": null,
+   "pay": {
+    "normal": "750",
+    "urgent": "1500",
+    "executive": "2500"
+   }
+  }
+ ],
+ "note": "NADRA's fees as ARY News reported them on 24 September 2026: the smart card Rs 750, 1,500 urgent, 2,500 executive; a first non-chip national identity card is free in the normal category (1,150 urgent, 2,150 executive), not modelled; under 18 a juvenile card (not modelled). NADRA's own site refused this session (an Akamai denial), so the card's term and the processing times, which the press reports inconsistently, are null and the player is told.",
+ "sources": [
+  {
+   "url": "https://arynews.tv/nadra-announces-new-fee-structure-for-its-services",
+   "title": "ARY News, NADRA announces new fee structure for its services (24 September 2026)",
+   "read": "2026-10-28",
+   "kind": "secondary",
+   "quotes": "https://www.nadra.gov.pk/",
+   "said": "For a Juvenile Card, the normal fee is Rs.750, the urgent fee is Rs. 1,500, and the executive fee is Rs.2,500. ... The first-time issuance of a national identity card (NIC) is free under the normal category. The urgent fee is Rs.1,150, while the executive service costs Rs.2,150. ... For a Smart National Identity Card, the normal fee is Rs.750, the urgent fee is Rs. 1,500, and the executive fee is Rs.2,500."
+  }
+ ]
+}

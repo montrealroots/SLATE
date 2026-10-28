@@ -1,4 +1,46 @@
 {
+ "AE": {
+  "document": "Emirates ID (national identity card)",
+  "currency": "AED",
+  "routes": [
+   {
+    "id": "standard",
+    "where": "home",
+    "speed": "standard",
+    "within": {
+     "n": 5,
+     "unit": "day"
+    }
+   },
+   {
+    "id": "urgent",
+    "where": "home",
+    "speed": "urgent",
+    "within": {
+     "n": 24,
+     "unit": "hour"
+    }
+   }
+  ],
+  "bands": [
+   {
+    "validYears": 5,
+    "pay": {
+     "standard": 10000,
+     "urgent": 25000
+    },
+    "under": 21
+   },
+   {
+    "validYears": 10,
+    "pay": {
+     "standard": 20000,
+     "urgent": 35000
+    },
+    "from": 21
+   }
+  ]
+ },
  "AL": {
   "document": "Letërnjoftim Elektronik (Kartë Identiteti)",
   "currency": "ALL",
@@ -94,6 +136,50 @@
      "one-day": 2300000
     },
     "from": 16
+   }
+  ]
+ },
+ "AR": {
+  "document": "Documento Nacional de Identidad (DNI)",
+  "currency": "ARS",
+  "routes": [
+   {
+    "id": "regular",
+    "where": "home",
+    "speed": "standard",
+    "within": null
+   },
+   {
+    "id": "express",
+    "where": "home",
+    "speed": "urgent",
+    "within": null
+   },
+   {
+    "id": "day",
+    "where": "home",
+    "speed": "urgent",
+    "within": {
+     "n": 24,
+     "unit": "hour"
+    }
+   },
+   {
+    "id": "instant",
+    "where": "home",
+    "speed": "urgent",
+    "within": null
+   }
+  ],
+  "bands": [
+   {
+    "validYears": null,
+    "pay": {
+     "regular": 1000000,
+     "express": 2600000,
+     "day": 4100000,
+     "instant": 5700000
+    }
    }
   ]
  },
@@ -551,6 +637,46 @@
    }
   ]
  },
+ "BR": {
+  "document": "Carteira de Identidade Nacional (CIN)",
+  "currency": "BRL",
+  "routes": [
+   {
+    "id": "state",
+    "where": "home",
+    "speed": "standard",
+    "within": null
+   }
+  ],
+  "bands": [
+   {
+    "validYears": 5,
+    "pay": {
+     "state": 0
+    },
+    "under": 12
+   },
+   {
+    "validYears": 10,
+    "pay": {
+     "state": 0
+    },
+    "from": 12,
+    "under": 60
+   },
+   {
+    "validYears": null,
+    "pay": {
+     "state": 0
+    },
+    "from": 60,
+    "permanent": true
+   }
+  ]
+ },
+ "CA": {
+  "none": true
+ },
  "CC": {
   "issuedBy": "AU"
  },
@@ -579,6 +705,34 @@
      "home": 3500
     },
     "under": 18
+   }
+  ]
+ },
+ "CL": {
+  "document": "Cédula de identidad",
+  "currency": "CLP",
+  "routes": [
+   {
+    "id": "office",
+    "where": "home",
+    "speed": "standard",
+    "within": null
+   }
+  ],
+  "bands": [
+   {
+    "validYears": 10,
+    "pay": {
+     "office": 3820
+    },
+    "under": 80
+   },
+   {
+    "validYears": 20,
+    "pay": {
+     "office": 3820
+    },
+    "from": 80
    }
   ]
  },
@@ -1550,6 +1704,37 @@
    }
   ]
  },
+ "LK": {
+  "document": "National Identity Card (NIC)",
+  "currency": "LKR",
+  "routes": [
+   {
+    "id": "normal",
+    "where": "home",
+    "speed": "standard",
+    "within": null
+   },
+   {
+    "id": "one-day",
+    "where": "home",
+    "speed": "urgent",
+    "within": {
+     "n": 3,
+     "unit": "hour"
+    }
+   }
+  ],
+  "bands": [
+   {
+    "validYears": null,
+    "pay": {
+     "normal": null,
+     "one-day": 200000
+    },
+    "from": 15
+   }
+  ]
+ },
  "LU": {
   "document": "carte d'identité",
   "currency": "EUR",
@@ -1965,6 +2150,37 @@
    }
   ]
  },
+ "MX": {
+  "document": "Credencial para Votar (INE voter's card, the official identification)",
+  "currency": "MXN",
+  "routes": [
+   {
+    "id": "module",
+    "where": "home",
+    "speed": "standard",
+    "within": null
+   },
+   {
+    "id": "consulate",
+    "where": "abroad",
+    "speed": "standard",
+    "within": {
+     "n": 5,
+     "unit": "week"
+    }
+   }
+  ],
+  "bands": [
+   {
+    "validYears": 10,
+    "pay": {
+     "module": 0,
+     "consulate": 0
+    },
+    "from": 18
+   }
+  ]
+ },
  "MY": {
   "document": "MyKad (identity card)",
   "currency": "MYR",
@@ -2136,6 +2352,41 @@
     "pay": {
      "register": 0
     }
+   }
+  ]
+ },
+ "PK": {
+  "document": "Smart National Identity Card (SNIC)",
+  "currency": "PKR",
+  "routes": [
+   {
+    "id": "normal",
+    "where": "home",
+    "speed": "standard",
+    "within": null
+   },
+   {
+    "id": "urgent",
+    "where": "home",
+    "speed": "urgent",
+    "within": null
+   },
+   {
+    "id": "executive",
+    "where": "home",
+    "speed": "urgent",
+    "within": null
+   }
+  ],
+  "bands": [
+   {
+    "validYears": null,
+    "pay": {
+     "normal": 75000,
+     "urgent": 150000,
+     "executive": 250000
+    },
+    "from": 18
    }
   ]
  },
