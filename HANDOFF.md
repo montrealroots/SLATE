@@ -123,7 +123,8 @@ What layer 2 holds so far:
   the change in the country's consumer price index (annual means of its published months or quarters, from its own
   statistics office, `research/sources/prices/<code>.json`, `world.prices.<code>`) over the CPI-U's (R-0375: the
   Bureau of Labor Statistics' months; October 2025 wasn't collected, so 2025's mean is of eleven, 321.943, the
-  Bureau's own annual average), to twelve places. Done so: Argentina (INDEC), Andorra (the Departament
+  Bureau's own annual average), to twelve places. Where an office hasn't yet published 2025 but has 2024, the level
+  is carried to 2024 against the CPI-U's 2024 (313.689), as the World Bank keeps a 2024 level where it has no 2025. Done so: Argentina (INDEC), Andorra (the Departament
   d'Estadística's monthly A142 releases on sig.govern.ad; estadistica.ad's portal blocks a browser), Kosovo (ASK's
   HICP, PxWeb), Aruba (CBS's December releases, the months placed by their chart positions), Curaçao (CBS's series
   since 1970, 2023 = 100) and Sint Maarten (STAT's quarters); for these two the World Bank's guilder level stands in
@@ -638,7 +639,12 @@ What layer 0 holds:
    a comparison). Attempts so far for the blockers: the British Virgin Islands (gov.vg's statistics pages empty
    since its move; only 2015-2017 reports found), the Turks and Caicos (its Statistics Authority's site answers
    with a Sucuri firewall), Saint Kitts and Nevis (its office's tables stop at 2023 and 2024; the ECCB's
-   statistics refuse with 403), the Marshall Islands (EPPSO's file listing answers with a "humans_" cookie
+   statistics refuse with 403; its annual table's 2024 is dated 12/04/2024, so perhaps not a full year), the US
+   Virgin Islands (the Bureau of Economic Research's reviews reach 2024, but its 2023 and 2024 reviews give December
+   2023 as 140.6 and 142.7 with no base stated, so 2021 and 2024 aren't on one footing), South Sudan (its bureau's
+   releases run to May 2025 and don't reach back to 2021), Somalia (its new CPI, from 2025, is a different series
+   from the Mogadishu index of December 2014 = 100; carrying it needs the two linked at an overlap), Eswatini (gov.sz
+   resets the connection from here), the Marshall Islands (EPPSO's file listing answers with a "humans_" cookie
    script; SPC's Pacific Data Hub has only annual inflation to 2024), Nauru (its bureau's host doesn't resolve;
    SPC as for the Marshalls), American Samoa (Commerce's Wix folders don't open; its Q3 2021 newsletter gives 2021's
    first three quarters; SPC's series starts in 2022) and the Northern Marianas (SPC's series is 2022 to 2024). Where a territory has no

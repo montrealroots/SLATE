@@ -140,12 +140,18 @@ describe('the price levels compiler', () => {
   });
   it("carries a benchmark level by the country's index over the United States', as the World Bank's own example does", () => {
     // Senegal's 226.6, its index up 9.6% where the United States' rose 8.1% (the World Bank's help desk): 229.7.
-    expect(carryForward('226.6', indices(['100'], ['109.6']), indices(['100'], ['108.1']), 'SN')).toBe('229.744310823312');
-    expect(carryForward('2', indices(['1', '3'], ['4']), indices(['5'], ['10', '20']), 'SN')).toBe('1.333333333333');
+    expect(carryForward('226.6', indices(['100'], ['109.6']), indices(['100'], ['108.1']), 'SN')).toStrictEqual({ ppp: '229.744310823312', year: 2025 });
+    expect(carryForward('2', indices(['1', '3'], ['4']), indices(['5'], ['10', '20']), 'SN')).toStrictEqual({ ppp: '1.333333333333', year: 2025 });
     expect(() => carryForward('2', { from: year(2020, '1'), to: year(2025, '1') }, indices(['1'], ['1']), 'SN')).toThrow("SN's index is for 2020, not 2021");
-    expect(() => carryForward('2', { from: year(2021, '1'), to: year(2024, '1') }, indices(['1'], ['1']), 'SN')).toThrow("SN's index is for 2024, not 2025");
     expect(() => carryForward('2', indices(['1'], ['1']), { from: year(2020, '1'), to: year(2025, '1') }, 'SN')).toThrow("US's index is for 2020, not 2021");
-    expect(() => carryForward('2', indices(['1'], ['1']), { from: year(2021, '1'), to: year(2024, '1') }, 'SN')).toThrow("US's index is for 2024, not 2025");
+    // An index that stops at 2024 is carried to 2024, against the United States' 2024; none before 2024 or after 2025.
+    const us = { ...indices(['10'], ['13']), also: [year(2023, '11'), year(2024, '12')] };
+    expect(carryForward('2', { from: year(2021, '1'), to: year(2024, '1.5') }, us, 'SN')).toStrictEqual({ ppp: '2.5', year: 2024 });
+    expect(carryForward('2', indices(['1'], ['1.3']), us, 'SN')).toStrictEqual({ ppp: '2', year: 2025 });
+    expect(() => carryForward('2', { from: year(2021, '1'), to: year(2024, '1') }, indices(['1'], ['1']), 'SN')).toThrow("the United States' index has no 2024");
+    expect(() => carryForward('2', { from: year(2021, '1'), to: year(2023, '1') }, us, 'SN')).toThrow("SN's index is carried to 2023, not a year from 2024 to 2025");
+    expect(() => carryForward('2', { from: year(2021, '1'), to: year(2026, '1') }, us, 'SN')).toThrow("SN's index is carried to 2026, not a year from 2024 to 2025");
+    expect(() => carryForward('2', indices(['1'], ['1']), { from: year(2021, '1'), to: year(2024, '1') }, 'SN')).toThrow("the United States' index has no 2025");
   });
   it('adds the carried levels to the World Bank\'s, refusing a country it prices already, one without a benchmark, or one in another currency', () => {
     const us = indices(['100'], ['110']);

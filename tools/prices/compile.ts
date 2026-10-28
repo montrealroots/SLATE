@@ -28,6 +28,7 @@ export const SOURCES = {
 /** The indices a level is carried by: each country's file, and the United States'. */
 export const INDICES = 'research/sources/prices';
 export const US_INDEX = 'us-cpi';
+const US = 'US';
 
 export const OUTPUT = 'src/world/prices/levels.json';
 /** The first year a level is kept from: older ones are too far behind the prices the game opens on (2026). */
@@ -124,6 +125,8 @@ export interface Year {
 export interface Indices {
   from: Year;
   to: Year;
+  /** Other years the index is carried to (the United States', for a country whose own stops before CARRIED_TO). */
+  also?: Year[];
 }
 
 /** A year's mean, exactly; a year that isn't the one wanted, or a value that isn't a decimal above zero, is refused. */
@@ -148,16 +151,23 @@ export function decimal(num: bigint, den: bigint): string {
   return `${digits.slice(0, -PLACES)}${fraction === '' ? '' : `.${fraction}`}`;
 }
 
-/** A benchmark level carried forward: times the country's index's change, over the United States'. */
-export function carryForward(ppp: string, own: Indices, us: Indices, code: string): string {
+/**
+ * A benchmark level carried forward to the last year the country's index reaches (CARRIED_TO, or a year from FROM on
+ * where its office hasn't published that one yet, as the World Bank keeps a 2024 level where it has no 2025): times
+ * the country's index's change, over the United States' to the same year.
+ */
+export function carryForward(ppp: string, own: Indices, us: Indices, code: string): Level {
+  const year = own.to.year;
+  if (year < FROM || year > CARRIED_TO) throw new Error(`${code}'s index is carried to ${year}, not a year from ${FROM} to ${CARRIED_TO}`);
+  const usTo = us.to.year === year ? us.to : us.also?.find((y) => y.year === year);
+  if (usTo === undefined) throw new Error(`the United States' index has no ${year}`);
   const p = rational(ppp);
-  const [of, ot, uf, ut] = [mean(own.from, BENCHMARK, code), mean(own.to, CARRIED_TO, code), mean(us.from, BENCHMARK, 'US'), mean(us.to, CARRIED_TO, 'US')];
-  return decimal(p.num * ot.num * of.den * uf.num * ut.den, p.den * ot.den * of.num * uf.den * ut.num);
+  const [of, ot, uf, ut] = [mean(own.from, BENCHMARK, code), mean(own.to, year, code), mean(us.from, BENCHMARK, US), mean(usTo, year, US)];
+  return { ppp: decimal(p.num * ot.num * of.den * uf.num * ut.den, p.den * ot.den * of.num * uf.den * ut.num), year };
 }
 
 /**
- * The levels with the carried ones added: each country with indices of its own, its benchmark level carried to
- * CARRIED_TO. A country the World Bank already prices from FROM on, or one without a benchmark, is refused, as is a
+ * The levels with the carried ones added: each country with indices of its own, its benchmark level carried forward. A country the World Bank already prices from FROM on, or one without a benchmark, is refused, as is a
  * benchmark in a currency not the country's.
  */
 export function withCarried(levels: Readonly<Record<string, Level>>, benchmark: readonly Row[], us: Indices, own: Readonly<Record<string, Indices>>, units: ReadonlyMap<string, string>, currencies: Readonly<Record<string, string>>): Record<string, Level> {
@@ -168,7 +178,7 @@ export function withCarried(levels: Readonly<Record<string, Level>>, benchmark: 
     if (value === null) throw new Error(`the World Bank has no ${BENCHMARK} level for ${code}`);
     const unit = units.get(code) ?? '';
     if (!sameCurrency(unit, String(currencies[code]))) throw new Error(`the World Bank prices ${code} in ${unit === '' ? 'no currency it names' : unit}, not ${currencies[code] ?? 'none'}`);
-    out[code] = { ppp: carryForward(String(value), indices, us, code), year: CARRIED_TO };
+    out[code] = carryForward(String(value), indices, us, code);
   }
   return Object.fromEntries(Object.keys(out).sort().map((code) => [code, out[code] as Level]));
 }
