@@ -3053,6 +3053,56 @@
    }
   ]
  },
+ "MK": {
+  "currency": "MKD",
+  "routes": [
+   {
+    "id": "regular",
+    "where": "home",
+    "speed": "standard",
+    "within": {
+     "n": 15,
+     "unit": "day"
+    }
+   },
+   {
+    "id": "urgent",
+    "where": "home",
+    "speed": "urgent",
+    "within": {
+     "n": 48,
+     "unit": "hour"
+    }
+   }
+  ],
+  "bands": [
+   {
+    "validYears": null,
+    "pay": {
+     "regular": 230000,
+     "urgent": 640000
+    },
+    "from": 27
+   },
+   {
+    "validYears": null,
+    "pay": {
+     "regular": 170000,
+     "urgent": 630000
+    },
+    "from": 4,
+    "under": 27
+   },
+   {
+    "validYears": null,
+    "pay": {
+     "regular": 160000,
+     "urgent": 620000
+    },
+    "under": 4
+   }
+  ]
+ },
  "MO": {
   "currency": "MOP",
   "routes": [
