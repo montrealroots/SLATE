@@ -1773,6 +1773,62 @@
    }
   ]
  },
+ "ID": {
+  "currency": "IDR",
+  "routes": [
+   {
+    "id": "electronic",
+    "where": "home",
+    "speed": "standard",
+    "within": null
+   },
+   {
+    "id": "electronic-same-day",
+    "where": "home",
+    "speed": "urgent",
+    "within": {
+     "n": 1,
+     "unit": "day"
+    }
+   },
+   {
+    "id": "non-electronic",
+    "where": "home",
+    "speed": "standard",
+    "within": null
+   },
+   {
+    "id": "non-electronic-same-day",
+    "where": "home",
+    "speed": "urgent",
+    "within": {
+     "n": 1,
+     "unit": "day"
+    }
+   }
+  ],
+  "bands": [
+   {
+    "validYears": 5,
+    "pay": {
+     "electronic": 65000000,
+     "electronic-same-day": 165000000,
+     "non-electronic": 35000000,
+     "non-electronic-same-day": 135000000
+    }
+   },
+   {
+    "validYears": 10,
+    "pay": {
+     "electronic": 95000000,
+     "electronic-same-day": 195000000,
+     "non-electronic": 65000000,
+     "non-electronic-same-day": 165000000
+    },
+    "from": 17
+   }
+  ]
+ },
  "IE": {
   "currency": "EUR",
   "routes": [
