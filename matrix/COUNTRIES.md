@@ -247,7 +247,7 @@ a place fills a column; a cell is the row's status in that engine's matrix, or b
 | VE | Venezuela | researched | researched | researched | researched | blocked | blocked | pending |
 | VG | British Virgin Islands | researched | researched | researched | blocked | researched | blocked | pending |
 | VI | U.S. Virgin Islands | researched | researched | researched | blocked | researched | blocked | researched |
-| VN | Vietnam | researched | researched | researched | researched | researched | researched | pending |
+| VN | Vietnam | researched | researched | researched | researched | researched | researched | researched |
 | VU | Vanuatu | researched | researched | researched | blocked | blocked | researched | researched |
 | WF | Wallis and Futuna | researched | researched | researched | researched | blocked | researched | researched |
 | WS | Samoa | researched | researched | researched | researched | researched | researched | pending |
