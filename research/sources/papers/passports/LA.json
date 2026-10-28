@@ -1,0 +1,81 @@
+{
+ "country": "LA",
+ "office": "the Consular Department of the Ministry of Foreign Affairs",
+ "currency": "USD",
+ "routes": [
+  {
+   "id": "electronic",
+   "where": "home",
+   "speed": "standard",
+   "within": {
+    "n": 10,
+    "unit": "day"
+   },
+   "label": "electronic passport, within the Passport Law's 10 days"
+  },
+  {
+   "id": "non-electronic",
+   "where": "home",
+   "speed": "standard",
+   "within": {
+    "n": 10,
+    "unit": "day"
+   },
+   "label": "non-electronic passport, within the Passport Law's 10 days"
+  },
+  {
+   "id": "express-5",
+   "where": "home",
+   "speed": "urgent",
+   "within": {
+    "n": 5,
+    "unit": "day"
+   },
+   "label": "express, 5 days"
+  },
+  {
+   "id": "express-3",
+   "where": "home",
+   "speed": "urgent",
+   "within": {
+    "n": 3,
+    "unit": "day"
+   },
+   "label": "express, 3 days"
+  },
+  {
+   "id": "express-1",
+   "where": "home",
+   "speed": "urgent",
+   "within": {
+    "n": 1,
+    "unit": "day"
+   },
+   "label": "express, 1 day"
+  }
+ ],
+ "passports": [
+  {
+   "for": "any",
+   "validYears": null,
+   "pay": {
+    "electronic": "60",
+    "non-electronic": "40",
+    "express-5": null,
+    "express-3": null,
+    "express-1": null
+   }
+  }
+ ],
+ "note": "The fees from 4 March 2024, set in US dollars and collected in kip at the Ministry of Finance's rate, as the Lao News Agency (KPL) reported the Consular Department's announcement. The express services add LAK 300,000, 500,000 or 1,000,000 per book; a fee in two currencies isn't summed, so they're null. Validity and fees abroad are leads.",
+ "sources": [
+  {
+   "kind": "secondary",
+   "quotes": "https://mofa.gov.la/",
+   "url": "https://kpl.gov.la/En/detail.aspx?id=80795",
+   "title": "KPL Lao News Agency, Laos's adjustment of fees and service charges for passport issuance (March 2024)",
+   "read": "2026-10-28",
+   "said": "the Ministry of Foreign Affairs has announced the adjustment of fees and service charges for passport issuance, effective on March 4, 2024. According to the announce ordinance and electronic passports will be priced at USD 60 per book, non-electric passports will cost USD 40 per book. Despite being set in a foreign currency, fees will be collected in the local currency, based on the exchange rate determined by the Ministry of Finance. Furthermore, the amendment will also introduce an express passport service with three processing options: 1-day, 3-day, and 5-day, priced at LAK 1 million, LAK 500,000, and LAK 300,000 per book. This expedited service is designed to assist individuals in need of passports before the stipulated 10-day period as per the Passport Law."
+  }
+ ]
+}

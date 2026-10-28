@@ -2660,6 +2660,48 @@
    }
   ]
  },
+ "KH": {
+  "currency": "USD",
+  "routes": [
+   {
+    "id": "20-days",
+    "where": "home",
+    "speed": "standard",
+    "within": {
+     "n": 20,
+     "unit": "day"
+    }
+   },
+   {
+    "id": "10-days",
+    "where": "home",
+    "speed": "urgent",
+    "within": {
+     "n": 10,
+     "unit": "day"
+    }
+   },
+   {
+    "id": "1-day",
+    "where": "home",
+    "speed": "urgent",
+    "within": {
+     "n": 1,
+     "unit": "day"
+    }
+   }
+  ],
+  "bands": [
+   {
+    "validYears": null,
+    "pay": {
+     "20-days": 10000,
+     "10-days": 15000,
+     "1-day": 20000
+    }
+   }
+  ]
+ },
  "KR": {
   "currency": "KRW",
   "routes": [
@@ -2809,6 +2851,68 @@
      "home": 5190000
     },
     "pages": 48
+   }
+  ]
+ },
+ "LA": {
+  "currency": "USD",
+  "routes": [
+   {
+    "id": "electronic",
+    "where": "home",
+    "speed": "standard",
+    "within": {
+     "n": 10,
+     "unit": "day"
+    }
+   },
+   {
+    "id": "non-electronic",
+    "where": "home",
+    "speed": "standard",
+    "within": {
+     "n": 10,
+     "unit": "day"
+    }
+   },
+   {
+    "id": "express-5",
+    "where": "home",
+    "speed": "urgent",
+    "within": {
+     "n": 5,
+     "unit": "day"
+    }
+   },
+   {
+    "id": "express-3",
+    "where": "home",
+    "speed": "urgent",
+    "within": {
+     "n": 3,
+     "unit": "day"
+    }
+   },
+   {
+    "id": "express-1",
+    "where": "home",
+    "speed": "urgent",
+    "within": {
+     "n": 1,
+     "unit": "day"
+    }
+   }
+  ],
+  "bands": [
+   {
+    "validYears": null,
+    "pay": {
+     "electronic": 6000,
+     "non-electronic": 4000,
+     "express-5": null,
+     "express-3": null,
+     "express-1": null
+    }
    }
   ]
  },
