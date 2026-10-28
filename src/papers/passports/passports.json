@@ -1427,6 +1427,31 @@
  "GU": {
   "issuedBy": "US"
  },
+ "GY": {
+  "currency": "GYD",
+  "routes": [
+   {
+    "id": "standard",
+    "where": "home",
+    "speed": "standard",
+    "within": null
+   }
+  ],
+  "bands": [
+   {
+    "validYears": 5,
+    "pay": {
+     "standard": 600000
+    }
+   },
+   {
+    "validYears": 10,
+    "pay": {
+     "standard": 1200000
+    }
+   }
+  ]
+ },
  "HK": {
   "currency": "HKD",
   "routes": [
@@ -2029,6 +2054,38 @@
      "standard": 7500
     },
     "under": 16
+   }
+  ]
+ },
+ "LC": {
+  "currency": "XCD",
+  "routes": [
+   {
+    "id": "standard",
+    "where": "home",
+    "speed": "standard",
+    "within": {
+     "n": 15,
+     "unit": "working day"
+    }
+   },
+   {
+    "id": "emergency",
+    "where": "home",
+    "speed": "urgent",
+    "within": {
+     "n": 5,
+     "unit": "working day"
+    }
+   }
+  ],
+  "bands": [
+   {
+    "validYears": null,
+    "pay": {
+     "standard": 25000,
+     "emergency": 30000
+    }
    }
   ]
  },
@@ -2865,6 +2922,33 @@
      "abroad": null
     },
     "under": 16
+   }
+  ]
+ },
+ "SH": {
+  "currency": "SHP",
+  "routes": [
+   {
+    "id": "standard",
+    "where": "home",
+    "speed": "standard",
+    "within": null
+   }
+  ],
+  "bands": [
+   {
+    "validYears": null,
+    "pay": {
+     "standard": 6000
+    },
+    "from": 17
+   },
+   {
+    "validYears": null,
+    "pay": {
+     "standard": 3000
+    },
+    "under": 17
    }
   ]
  },
