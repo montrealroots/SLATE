@@ -1,6 +1,6 @@
 # Handoff
 
-Layer in progress: 2
+Layer in progress: 3
 
 The precise state of the build, kept current at every checkpoint so an interrupted session resumes rather than
 restarts. Read `CLAUDE.md` and the owner's package in `docs/` first.
@@ -12,9 +12,10 @@ restarts. Read `CLAUDE.md` and the owner's package in `docs/` first.
   `2ff094d439ad`, recorded in `registry/layers.json`.
 - Layer 1 (the core) is proven: the full gate green in a fresh clone of the branch at `dd447a897c68`, recorded in
   `registry/layers.json`.
-- Layer 2 (the world) is in progress. Done: the gazetteer (`world.gazetteer`), the map (`world.map`), coverage
-  matrix A, and the clock (`world.clock`). In progress: the weather (`world.weather`): the engine is built and
-  tested, and its matrix is complete: 202 countries researched, 44 blocked (each after all five methods, the player
+- Layer 2 (the world) is proven: the full gate green in a fresh clone of the branch at `53f8e0227dfe`, recorded in
+  `registry/layers.json` (2026-10-28). It holds the gazetteer (`world.gazetteer`), the map (`world.map`), coverage
+  matrix A, the clock (`world.clock`), and the weather (`world.weather`): the engine is built and tested, and its
+  matrix is complete: 202 countries researched, 44 blocked (each after all five methods, the player
   told where the weather is borrowed from), 6 proven, none pending. `tools/wmo/compile.ts` and `coverage.ts` are at
   100% mutation score with the last sources (1,559 mutants; the survivors of that run killed by tests or simpler
   lines, and the two equivalent ones disabled with their reasons). The
@@ -674,43 +675,53 @@ What layer 0 holds:
    publishes them) are open research for after the countries. Prices move with the years: the levels are the World
    Bank's for 2025 (2024 for four), and the game opens in 2026; carrying them forward by inflation is open (the
    World Bank's CPI series is sparse past 2024).
-4. Then the proof of layer 2: `npm ci` and `npm run gate:full` in a fresh clone, recorded in `registry/layers.json`.
-   A full mutation run takes about 85 minutes here (464 static mutants rerun the whole suite; 8,284 tested), inside
+4. Done 2026-10-28: the proof of layer 2, `npm ci` and `npm run gate:full` in a fresh clone at `53f8e0227dfe`,
+   green in 5,717 s, recorded in `registry/layers.json`. A full mutation run takes about 85 minutes here (464 static mutants rerun the whole suite; 8,284 tested), inside
    this environment's two-hour limit for a command and CI's 180 minutes (`.github/workflows/gate.yml`, raised from 60
    on 2026-10-28: every run since the world engines grew had been cancelled at 60).
-5. Layer 3's research, begun 2026-10-28 while layer 2's proof runs (its code waits for that proof, as the build order
-   and the gate's build-order check hold): passports by issuing country, each in
+5. Layer 3's research, begun 2026-10-28 while layer 2's proof ran (layer 2 is now proven, so layer 3's code may begin
+   under the gate's build-order check): passports by issuing country, each in
    `research/sources/papers/passports/<CC>.json` (`papers.passports.<CC>`, R-0451 on): the ordinary passport's fees
    by age and channel in the country's currency, its validity, the standard processing time and the urgent services,
-   from the passport office's own pages or, where those refuse this client, the law or regulation that sets them.
-   The file's shape (`passports` by age band with `validYears` and `fees`, `standard`, `urgent`, `note`, `sources`)
-   is the research's, to be settled with the engine. 55 so far (2026-10-28): AT, AU, BA, BB, BE, BR, BS, BW, BZ,
-   CA, CH, CN, CZ, DE, DK, EE, ES, FI, FJ, FR, GB, GE, GH, GR, HK, HU, IE, IN, IT, JM, JP, KR, LU, MD, MT, MY, NG, NL,
-   NP, PE, PK, PL, RO, RS, RW, SE, SG, SI, SK, TT, TW, UG, US, UY, ZA (Uruguay's fees are in indexed units, UI, whose
-   peso value is still to be read; Australia's are the 2024 amounts with the determination's yearly indexation rule,
-   2026's to be computed from the ABS CPI once the reference period is settled, as its note says; Nigeria's are read
-   through the state broadcaster's report of the Immigration Service's announcement, the Service's site refusing
-   this client, and so stand as secondary); some with a part still open, said in the file's note (Spain's and
-   Slovenia's fees, Bosnia's fee, Ireland's, Greece's, Romania's, Brazil's, Taiwan's, Nepal's, Barbados', the
-   Bahamas', Belize's, Fiji's, Uganda's and Botswana's validity, Georgia's minors, Peru's fee, Finland's pending
-   ten-year law, most processing times). The attempts for the rest, to become blockers after all five
-   methods, are being logged: Armenia (only consular fees found), Kazakhstan (only secondary sources), Montenegro and
-   Albania (only old or secondary figures found), North Macedonia (mvr.gov.mk resets the connection), Bangladesh
-   (epassport.gov.bd 403; dip.gov.bd's certificate fails verification), Mauritius (its pages give no fee), Tanzania
-   (a JS page that renders empty), New Zealand, Ireland's site, Mexico (a challenge page), Israel (Cloudflare), Colombia (Cloudflare), Chile (a WAF),
-   the Philippines (403), Portugal (its WAF blocks the rendered page), Latvia (connection closed), Kenya (its
-   certificate chain fails verification; TLS checks stay on), Norway (the fee is in the pass- og
-   ID-kortforskriften § 7-1; lovdata.no answers 405 and norway.no a Cloudflare challenge), Bulgaria (the April 2026 reform's tariff not found), Croatia (only a draft found), Lithuania (a JS app), Turkey
-   (the yearly duties tariff), Indonesia (PP 45/2024, partly replaced by PP 30/2026), Thailand, Argentina
-   (Disposición 106/2026 found; its fee annex is on a Boletín Oficial PDF that reset the connection). Also: Cyprus (an Azure WAF), Morocco (its certificate chain fails verification), the UAE
-   (ICP's page under maintenance when rendered), New Zealand's legislation site (a 202 with an empty body), Vietnam
-   and Russia (only secondary sources found), Ukraine, Iceland (the fee is in a yearly act), the Dominican Republic
-   and Costa Rica. The scratch log of every attempt is to be carried into the blockers. Then ID,
+   from the passport office's own pages or, where those refuse this client, the law or regulation that sets them. The
+   file's shape (`passports` by age band with `validYears` and `fees`, `standard`, `urgent`, `note`, `sources`) is
+   the research's, to be settled with the engine. 63 so far (2026-10-28): AT, AU, BA, BB, BE, BR, BS, BW, BZ, CA, CH,
+   CN, CZ, DE, DK, EC, EE, ES, FI, FJ, FR, GB, GE, GH, GR, GT, HK, HR, HU, IE, IN, IS, IT, JM, JP, KR, LU, MD, MO,
+   MT, MV, MY, NG, NL, NP, PE, PK, PL, PY, RO, RS, RW, SE, SG, SI, SK, SV, TT, TW, UG, US, UY, ZA (Uruguay's fees are
+   in indexed units, UI, whose peso value is still to be read; Australia's are the 2024 amounts with the
+   determination's yearly indexation rule, 2026's to be computed from the ABS CPI once the reference period is
+   settled, as its note says; Nigeria's are read through the state broadcaster's report of the Immigration Service's
+   announcement, the Service's site refusing this client, and so stand as secondary; Paraguay's office still shows
+   the fee its 2022 resolution replaced, so the 2022 amount is taken from the press report of it); some with a part
+   still open, said in the file's note (Spain's and Slovenia's fees, Bosnia's fee, Ireland's, Greece's, Romania's,
+   Brazil's, Taiwan's, Nepal's, Barbados', the Bahamas', Belize's, Fiji's, Uganda's, Botswana's, Ecuador's, Macao's
+   and Croatia's validity, Georgia's minors, Peru's fee, Finland's pending ten-year law, most processing times). The
+   attempts for the rest, to become blockers after all five methods, are being logged: Armenia (only consular fees
+   found), Kazakhstan (only secondary sources), Montenegro and Albania (only old or secondary figures found), North
+   Macedonia (mvr.gov.mk resets the connection), Bangladesh (epassport.gov.bd 403; dip.gov.bd's certificate fails
+   verification), Mauritius (its pages give no fee), Tanzania (a JS page that renders empty), Namibia (its
+   certificate fails verification), Zambia, Jordan, Oman, Brunei, Bhutan (connection reset), Honduras (no amounts on
+   its page), Panama (its host fails at the proxy), Bolivia, New Zealand, Ireland's site, Mexico (a challenge page),
+   Israel (Cloudflare), Colombia (Cloudflare), Chile (a WAF), the Philippines (403), Portugal (its WAF blocks the
+   rendered page), Latvia (connection closed), Kenya (its certificate chain fails verification; TLS checks stay on),
+   Norway (the fee is in the pass- og ID-kortforskriften § 7-1; lovdata.no answers 405 and norway.no a Cloudflare
+   challenge), Bulgaria (the April 2026 reform's tariff not found), Lithuania (a JS app), Turkey (the yearly duties
+   tariff), Indonesia (PP 45/2024, partly replaced by PP 30/2026), Thailand, Argentina (Disposición 106/2026 found;
+   its fee annex is on a Boletín Oficial PDF that reset the connection). Also: Cyprus (an Azure WAF), Morocco (its
+   certificate chain fails verification), the UAE (ICP's page under maintenance when rendered), New Zealand's
+   legislation site (a 202 with an empty body), Vietnam and Russia (only secondary sources found), Ukraine, the
+   Dominican Republic and Costa Rica. The scratch log of every attempt is to be carried into the blockers. Then ID,
    visas, residence and work permissions, and the banks. A question the engine will need settled: which countries
    issue passports of their own (Hong Kong does; most territories use their sovereign's), recorded with each file.
 
 ## Verification evidence
 
+- Layer 2's proof: `npm ci` then `npm run gate:full` in a fresh clone of the branch at `53f8e0227dfe`, green in
+  5,717 s on 2026-10-28: toolchain (19 packages), owner-docs (54), build-order (282 source files), text-inventory
+  (29 lines), research-register (446 entries), typecheck, lint, 1,305 of 1,305 tests, feature-matrix, coverage (12
+  engines, 0 rows pending), handoff, audit (0 advisories), mutation 100.00% (8,284 of 8,284 killed, static mutants
+  included), generated. The first attempt, at `626a65a`, was red on the audit (`qs`) and was cut off by this
+  environment's one-hour limit for a background command during mutation; both are resolved below.
 - Layer 1's proof: `npm ci` then `npm run gate:full` in a fresh clone of the branch at `dd447a897c68`, green in
   605 s: the same checks as below, with 4,479 of 4,479 mutants killed (the frame's slice-name rule added six).
 - Layer 1, before its proof: `npm run gate:full` green in the working tree on 2026-10-26 in 595 s: toolchain (19
