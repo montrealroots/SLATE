@@ -951,6 +951,25 @@
    }
   ]
  },
+ "CM": {
+  "currency": "XAF",
+  "routes": [
+   {
+    "id": "home",
+    "where": "home",
+    "speed": "standard",
+    "within": null
+   }
+  ],
+  "bands": [
+   {
+    "validYears": null,
+    "pay": {
+     "home": 110000
+    }
+   }
+  ]
+ },
  "CN": {
   "currency": "CNY",
   "routes": [
@@ -5206,6 +5225,32 @@
      "abroad": null
     },
     "under": 16
+   }
+  ]
+ },
+ "ZW": {
+  "currency": "USD",
+  "routes": [
+   {
+    "id": "ordinary",
+    "where": "home",
+    "speed": "standard",
+    "within": null
+   },
+   {
+    "id": "emergency",
+    "where": "home",
+    "speed": "urgent",
+    "within": null
+   }
+  ],
+  "bands": [
+   {
+    "validYears": null,
+    "pay": {
+     "ordinary": 15000,
+     "emergency": 25000
+    }
    }
   ]
  }
