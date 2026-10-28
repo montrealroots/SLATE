@@ -12,7 +12,7 @@ import { join } from 'node:path';
 export const COVERAGE = 'coverage/prices-countries.json';
 
 const T = 'tests/world/prices/prices.test.ts';
-export const TESTS = [`${T}::the prices > are the World Bank's levels, or carried from its benchmark, in each country's own currency`, `${T}::the prices > at every place on the map`];
+export const TESTS = [`${T}::the prices > are the World Bank's levels, or carried from its benchmark, in each country's own currency`, 'tests/world/prices/prices.places.test.ts::the prices > at every place on the map'];
 /** And a blocked row's: the test that shows the player told its prices aren't kept. */
 export const TOLD = `${T}::the prices > tell the player where a country's aren't kept`;
 export const NO_PLACES = 'tests/world/gazetteer/gazetteer.test.ts::places > are none in the six countries with no populated place of their own';

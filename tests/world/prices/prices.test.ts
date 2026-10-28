@@ -1,7 +1,7 @@
 import { describe, expect, it } from 'vitest';
 import { money } from '../../../src/core/money/money.ts';
 import { t } from '../../../src/core/text/text.ts';
-import { COUNTRY_CODES, currencyOf, placesOf } from '../../../src/world/gazetteer/gazetteer.ts';
+import { COUNTRY_CODES, currencyOf } from '../../../src/world/gazetteer/gazetteer.ts';
 import { aboutPrices, keepsPrices, priceIn, priceLevel, UNKEPT_LINE } from '../../../src/world/prices/prices.ts';
 import levels from '../../../src/world/prices/levels.json';
 
@@ -39,16 +39,4 @@ describe('the prices', () => {
     expect(aboutPrices('KP')).toBe("What things cost in North Korea isn't known to this game yet, so nothing there has a price.");
     expect(aboutPrices('US')).toBeUndefined();
   });
-  it('at every place on the map', async () => {
-    let read = 0;
-    for (const code of COUNTRY_CODES) {
-      for (const p of await placesOf(code)) {
-        const price = priceIn(p.country, '1');
-        expect(price === undefined ? undefined : price.currency, p.id).toBe(keepsPrices(p.country) ? currencyOf(p.country) : undefined);
-        expect(aboutPrices(p.country) === undefined, p.id).toBe(keepsPrices(p.country));
-        read += 1;
-      }
-    }
-    expect(read).toBe(171_654);
-  }, 300_000);
 });

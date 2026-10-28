@@ -59,7 +59,7 @@
   "matrices": [
    "coverage/gazetteer-countries.json"
   ],
-  "allPlacesTest": "tests/world/gazetteer/gazetteer.test.ts::every place on the map > is in its country, with a region of that country or none, coordinates on the globe, and a time zone the clock and the sun answer for"
+  "allPlacesTest": "tests/world/gazetteer/gazetteer.places.test.ts::every place on the map > is in its country, with a region of that country or none, coordinates on the globe, and a time zone the clock and the sun answer for"
  },
  "world.map": {
   "layer": 2,
@@ -68,7 +68,7 @@
   "matrices": [
    "coverage/map-countries.json"
   ],
-  "allPlacesTest": "tests/world/map/map.test.ts::every place on the map > is marked on the whole world's view, where its coordinates put it"
+  "allPlacesTest": "tests/world/map/map.places.test.ts::every place on the map > is marked on the whole world's view, where its coordinates put it"
  },
  "world.clock": {
   "layer": 2,
@@ -77,7 +77,7 @@
   "matrices": [
    "coverage/clock-countries.json"
   ],
-  "allPlacesTest": "tests/world/clock/clock.test.ts::what the clock shows > at every place on the map"
+  "allPlacesTest": "tests/world/clock/clock.places.test.ts::what the clock shows > at every place on the map"
  },
  "world.weather": {
   "layer": 2,
@@ -86,7 +86,7 @@
   "matrices": [
    "coverage/weather-countries.json"
   ],
-  "allPlacesTest": "tests/world/weather/weather.test.ts::the weather at real towns > at every place on the map"
+  "allPlacesTest": "tests/world/weather/weather.places.test.ts::the weather at real towns > at every place on the map"
  },
  "world.holidays": {
   "layer": 2,
@@ -95,7 +95,7 @@
   "matrices": [
    "coverage/holidays-countries.json"
   ],
-  "allPlacesTest": "tests/world/holidays/holidays.test.ts::the holidays > at every place on the map"
+  "allPlacesTest": "tests/world/holidays/holidays.places.test.ts::the holidays > at every place on the map"
  },
  "world.prices": {
   "layer": 2,
@@ -104,6 +104,6 @@
   "matrices": [
    "coverage/prices-countries.json"
   ],
-  "allPlacesTest": "tests/world/prices/prices.test.ts::the prices > at every place on the map"
+  "allPlacesTest": "tests/world/prices/prices.places.test.ts::the prices > at every place on the map"
  }
 }

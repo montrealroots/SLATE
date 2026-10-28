@@ -201,7 +201,7 @@ What layer 0 holds:
   none of its rules changed.
 - The toolchain, pinned exactly and matched in the lockfile: TypeScript 6.0.3, React 19.3.0, Vite 8.3.4, Vitest
   4.1.12, ESLint 10.12.0 with typescript-eslint 8.71.1, Stryker 10.0.0, tsx 4.23.15; Node 22.22.0; npm 11.6.2 keeps
-  the lockfile, npm 10 resolves it too. Overrides: `qs` 6.16.0 (security) and `vitest` 4.1.12 (its own pin, so
+  the lockfile, npm 10 resolves it too. Overrides: `qs` 6.16.1 (security; 6.16.0 until GHSA-6pq8-jhm2-2vcw, 2026-10-28) and `vitest` 4.1.12 (its own pin, so
   every peer request for Vitest resolves to it).
 - The gate (`gate/`), run as `npm run gate` (fast: every commit, by `.githooks/pre-commit`; red stops the commit;
   `.githooks/commit-msg` writes the verdict into the message as a `Gate:` trailer), `npm run gate:full` (adds
@@ -787,6 +787,13 @@ What layer 0 holds:
     `@vitejs/devtools`, whose own peers ask for Vitest; with no lockfile, npm 10 reached for Vitest 5 there and
     crashed in its peer-set resolver. Overriding `vitest` to its own pin ties every such request to 4.1.12; a fresh
     `npm install` with no lockfile now succeeds under npm 10.9.4, as do `npm ci` and adding a package.
+- Resolved 2026-10-28, found by layer 2's first proof run: `npm audit` named GHSA-6pq8-jhm2-2vcw (`qs` up to 6.16.0,
+  a TypeError thrown by `qs.stringify` with `arrayFormat: 'comma'`), fixed by overriding `qs` to 6.16.1. The same run
+  was stopped at this environment's two-hour limit for a command with mutation testing at 82%: the suite, instrumented,
+  took 217 s, and each static mutant reruns all of it. The runs over every place of the map (about 45 s of the 70 s
+  suite) moved to `*.places.test.ts` files, which the gate's test step runs on every commit and mutation testing leaves
+  out, as it does the zone oracles (`vitest.stryker.config.ts`); the coverage rows and `registry/engines.json` cite
+  them by their new names.
 - Stryker 10.0.0 reports a mutant that breaks a test file at load as surviving rather than killed (fixed in 10.1.0);
   `gate/test/eslint-plugin.test.ts` asserts the plugin's shape apart from the rule cases so such mutants are caught.
 

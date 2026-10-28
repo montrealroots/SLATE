@@ -1,6 +1,6 @@
 import { describe, expect, it } from 'vitest';
 import { daysFromCivil, daysInMonth, SECONDS_PER_DAY } from '../../../src/core/time/calendar.ts';
-import { COUNTRY_CODES, findPlace, placesOf } from '../../../src/world/gazetteer/gazetteer.ts';
+import { findPlace } from '../../../src/world/gazetteer/gazetteer.ts';
 import { isLine, t } from '../../../src/core/text/text.ts';
 import { draws, seedFromText } from '../../../src/core/rng/rng.ts';
 import { hourAngleArg, julianCentury, julianDay, sunDeclination } from '../../../src/core/time/sun.ts';
@@ -296,19 +296,6 @@ describe('the weather at real towns', () => {
     expect(PARAMS.every((p) => vatican[p].borrowed && vatican[p].station.country === 'IT')).toBe(true);
     expect(aboutWeather(va, vatican)).toBe(t(BORROWED_LINE, { country: 'Vatican', place: vatican.wet.station.town ?? vatican.wet.station.name, placeCountry: 'Italy' }));
   });
-  it('at every place on the map', async () => {
-    const index = indexStations(await loadStations());
-    let read = 0;
-    for (const code of COUNTRY_CODES) {
-      for (const p of await placesOf(code)) {
-        const s = sourcesFor(p, index);
-        const w = weatherOn(SEED, p, s, { year: 2026, month: 8, day: 24 });
-        expect(Number.isFinite(w.high) && Number.isFinite(w.low) && w.precipitation >= 0, p.id).toBe(true);
-        read += 1;
-      }
-    }
-    expect(read).toBe(171_654);
-  }, 300_000);
 });
 
 describe('the steps of a day', () => {

@@ -3,7 +3,7 @@ import { join } from 'node:path';
 import { describe, expect, it } from 'vitest';
 import { civilFromDays, daysFromCivil } from '../../../src/core/time/calendar.ts';
 import { isLine, t } from '../../../src/core/text/text.ts';
-import { COUNTRY_CODES, isCountry, placesOf, regionName, type CountryCode } from '../../../src/world/gazetteer/gazetteer.ts';
+import { isCountry, regionName, type CountryCode } from '../../../src/world/gazetteer/gazetteer.ts';
 import { CALENDAR_FROM, CALENDAR_TO, daysIn, monthIndex } from '../../../src/world/holidays/calendars.ts';
 import {
   FIRST_YEAR,
@@ -287,29 +287,6 @@ describe('a rule', () => {
 const NATIONAL_GB = ['New Year’s Day', 'Good Friday', 'Early May bank holiday', 'Spring bank holiday', 'Christmas Day', 'Boxing Day', 'Boxing Day'];
 
 describe('the holidays', () => {
-  it('at every place on the map', async () => {
-    let read = 0;
-    const seen = new Map<string, string>();
-    for (const code of COUNTRY_CODES) {
-      for (const p of await placesOf(code)) {
-        const key = `${p.country} ${p.region}`;
-        if (!seen.has(key)) {
-          const hs = holidaysOf(p.country, 2026, p.region === '' ? undefined : p.region);
-          // Ukraine's martial law makes 2026 a year without days off (its law's come back after): its rules still give days.
-          const none = p.country === 'UA';
-          expect(keepsHolidays(p.country) && !none ? hs.length > 0 : hs.length === 0, key).toBe(true);
-          if (none) expect(holidaysOf(p.country, 2027).length, key).toBeGreaterThan(0);
-          expect(hs.every((h) => civilFromDays(h.day).year === 2026), key).toBe(true);
-          expect(aboutHolidays(p.country, 2026) === undefined, key).toBe(keepsHolidays(p.country));
-          seen.set(key, hs.map((h) => h.name).join());
-        }
-        read += 1;
-      }
-    }
-    expect(read).toBe(171_654);
-    // Each region of a country with regional holidays keeps its own and the country's.
-    expect(seen.get('CH CH.ZH')).not.toBe(seen.get('CH CH.TI'));
-  }, 300_000);
   it('keep a region of its own as the country does, and its own days besides', () => {
     expect(holidaysOf('GB', 2026, 'GB.SCT').map((h) => iso(h.day))).toContain('2026-11-30');
     expect(holidaysOf('GB', 2026, 'GB.ENG').map((h) => iso(h.day))).not.toContain('2026-11-30');

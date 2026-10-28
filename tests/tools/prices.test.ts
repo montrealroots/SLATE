@@ -287,7 +287,7 @@ describe("the prices' coverage", () => {
     expect(pricesCoverage(['AR'], new Set(['AR']), new Set(), facts, new Map())).toStrictEqual([{ key: 'AR', status: 'pending' }]);
     expect(CURRENCY_FACTS).toEqual(['world.gazetteer.countries', 'money.iso4217.list-one']);
     expect(CARRIED_FACTS).toEqual(['world.prices.ppp-2021', 'world.prices.us-cpi']);
-    expect(TESTS).toEqual(["tests/world/prices/prices.test.ts::the prices > are the World Bank's levels, or carried from its benchmark, in each country's own currency", 'tests/world/prices/prices.test.ts::the prices > at every place on the map']);
+    expect(TESTS).toEqual(["tests/world/prices/prices.test.ts::the prices > are the World Bank's levels, or carried from its benchmark, in each country's own currency", 'tests/world/prices/prices.places.test.ts::the prices > at every place on the map']);
     expect(TOLD).toBe("tests/world/prices/prices.test.ts::the prices > tell the player where a country's aren't kept");
     expect(NO_PLACES).toBe('tests/world/gazetteer/gazetteer.test.ts::places > are none in the six countries with no populated place of their own');
   });

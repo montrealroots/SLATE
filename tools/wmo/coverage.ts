@@ -16,7 +16,7 @@ export const MODEL = ['R-0039', 'R-0040'];
 const T = 'tests/world/weather/weather.test.ts';
 export const TESTS = [
   "tests/tools/wmo.test.ts::the station compiler > reproduces the stations the engine reads, byte for byte, from the WMO's files",
-  `${T}::the weather at real towns > at every place on the map`,
+  'tests/world/weather/weather.places.test.ts::the weather at real towns > at every place on the map',
   `${T}::a day's weather > comes back, over thirty years, to the normals it's drawn around`,
 ];
 /** And a blocked row's: the test that shows the player told where the weather is borrowed from. */
