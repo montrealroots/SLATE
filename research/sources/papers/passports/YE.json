@@ -1,0 +1,29 @@
+{
+ "country": "YE",
+ "office": "Yemen's General Consulate in Frankfurt, through the embassies in Europe, after approval from Yemen's main issuance center",
+ "currency": "EUR",
+ "routes": [
+  {"id": "home", "where": "home", "speed": "standard", "within": null, "label": "in Yemen"},
+  {"id": "abroad", "where": "abroad", "speed": "standard", "within": {"n": 90, "unit": "day"}, "label": "through an embassy in Europe, processed in Frankfurt: 30 to 90 days"}
+ ],
+ "passports": [
+  {"for": "child up to 8", "under": 9, "validYears": null, "pay": {"home": null, "abroad": "57"}},
+  {"for": "9 to 18", "from": 9, "under": 19, "validYears": null, "pay": {"home": null, "abroad": "87"}},
+  {"for": "above 18", "from": 19, "validYears": null, "pay": {"home": null, "abroad": "117"}}
+ ],
+ "note": "The Frankfurt consulate's fees for a first passport as the embassy in Warsaw lists them: 57 euros up to 8 years, 87 from 9 to 18, 117 above 18 (read as from 19), 42 for students (not modelled); the embassy in The Hague says applications go to Frankfurt and take 30 to 90 days, after approval from Yemen's main issuance center. The fee in Yemen and validity aren't read.",
+ "sources": [
+  {
+   "url": "https://embassy-of-yemen.pl/en/services-for-yemeni-citizens/",
+   "title": "Embassy of Yemen in Warsaw, Passports and travel documents",
+   "read": "2026-10-28",
+   "said": "FEES FOR ISSUING PASSPORTS BY THE CONSULATE IN FRANKFURT: AGE FIRST PASSPORT DAMAGED PASSPORT LOST PASSPORT up to 8 years 57 euro 92 euro 127 euro 9 - 18 years 87 euro 147 euro 197 euro above 18 years 117 euro 207 euro 287 euro students 42 euro 77 euro 102 euro"
+  },
+  {
+   "url": "https://www.yemenembassynl.org/consulate/passports-issuance",
+   "title": "Embassy of the Republic of Yemen in The Hague, Passports Issuance",
+   "read": "2026-10-28",
+   "said": "All completed passport applications from The Hague are sent to the General Consulate in Frankfurt for processing. Passports are issued only after approval from Yemen's main issuance center. The consulate is not responsible for delays due to incomplete applications. Processing takes 30 to 90 days"
+  }
+ ]
+}

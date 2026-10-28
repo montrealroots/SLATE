@@ -24277,6 +24277,119 @@
     }
    ],
    "notModeled": "passports.unkept"
+  },
+  {
+   "id": "R-0687",
+   "fact": "papers.passports.blocked.SO",
+   "sought": "Somalia's e-passport: its fee, time and validity",
+   "status": "blocked",
+   "attempts": [
+    {
+     "method": "institution",
+     "tried": "The Immigration and Citizenship Agency's services page (https://immigration.gov.so/services) and its news of 15 January 2026 (new-somali-passport-planned-for-2026); the embassy in Washington's passport page (https://usa.mfa.gov.so/consular-services/passports/)",
+     "result": "The Agency lists 'Applicable service fee' without an amount and announces a new passport in 2026; the embassy says payment is digital and covers the passport and NIRA ID together, with no amount on the page.",
+     "date": "2026-10-28"
+    },
+    {
+     "method": "official-register",
+     "tried": "Search for a fee instrument or published schedule of the Immigration and Citizenship Agency",
+     "result": "None was returned.",
+     "date": "2026-10-28"
+    },
+    {
+     "method": "web-search",
+     "tried": "'Somalia e-passport fee USD Immigration and Citizenship Agency ICA Somalia passport price 2025 2026'",
+     "result": "Only visa fees and the Agency's pages without an amount.",
+     "date": "2026-10-28"
+    },
+    {
+     "method": "trade-press",
+     "tried": "'Somali passport fee raised dollars Garowe Online OR Hiiraan OR Somali Guardian baasaboor qiimaha'",
+     "result": "No Somali press report of the fee was returned.",
+     "date": "2026-10-28"
+    },
+    {
+     "method": "archive",
+     "tried": "The Wayback Machine's availability API for immigration.gov.so/services",
+     "result": "A snapshot of 31 August 2026 exists (20260831190318), but this environment's egress policy refuses web.archive.org (403), so it couldn't be read.",
+     "date": "2026-10-28"
+    }
+   ],
+   "notModeled": "passports.unkept"
+  },
+  {
+   "id": "R-0688",
+   "fact": "papers.passports.SS",
+   "sought": "South Sudan's passport fees by age and validity, from Sudans Post's reports of the Director-General's circular and directive",
+   "status": "secondary",
+   "value": {
+    "file": "research/sources/papers/passports/SS.json",
+    "sha256": "bad3007eedbfe48fd2d99b81ed70b7a863d994e92102b14a1cc7c449f0150da6"
+   },
+   "sources": [
+    {
+     "kind": "secondary",
+     "url": "https://www.sudanspost.com/south-sudan-raises-fees-for-nationality-passports/",
+     "title": "Sudans Post, South Sudan raises fees for nationality, passports (16 December 2024)",
+     "read": "2026-10-28",
+     "said": "Simon Majur Pabek, Director-General of Civil Registry, Nationality, Passports and Immigration, announced the new fees in a circular seen by Sudans Post. ... The Financial Act will take immediate effect from December 16, 2024. All immigration visa and passport fees or charges indicated in U.S. dollars should be charged at the Central Bank\u2019s prevailing rate or its equivalent. ... An adult\u2019s regular passport now costs $100, a minor\u2019s regular passport costs $50",
+     "quotes": "https://www.nra.gov.ss/"
+    },
+    {
+     "kind": "secondary",
+     "url": "https://www.sudanspost.com/south-sudan-extends-lifespan-of-passports-to-ten-years/",
+     "title": "Sudans Post, South Sudan extends lifespan of passports to ten years (5 December 2022)",
+     "read": "2026-10-28",
+     "said": "South Sudan\u2019s ministry of interior has extended the lifespan of passports to at least ten years, according to statements by the director-general of nationality, passports, and immigration General Atem Biar Marol. ... \u201cWe gave directives to extend the validity period of the passport from five years to ten years, and I have already directed the ICT department to make amendments to the printing system,\u201d",
+     "quotes": "https://www.nra.gov.ss/"
+    }
+   ]
+  },
+  {
+   "id": "R-0689",
+   "fact": "papers.passports.YE",
+   "sought": "Yemen's passport fees abroad by age and time, from its embassies in Warsaw and The Hague",
+   "status": "found",
+   "value": {
+    "file": "research/sources/papers/passports/YE.json",
+    "sha256": "37e279258f34f3b5d067537f10db69c2066370d0656bd12f19857ed4c90fd645"
+   },
+   "sources": [
+    {
+     "kind": "primary",
+     "url": "https://embassy-of-yemen.pl/en/services-for-yemeni-citizens/",
+     "title": "Embassy of Yemen in Warsaw, Passports and travel documents",
+     "read": "2026-10-28",
+     "said": "FEES FOR ISSUING PASSPORTS BY THE CONSULATE IN FRANKFURT: AGE FIRST PASSPORT DAMAGED PASSPORT LOST PASSPORT up to 8 years 57 euro 92 euro 127 euro 9 - 18 years 87 euro 147 euro 197 euro above 18 years 117 euro 207 euro 287 euro students 42 euro 77 euro 102 euro"
+    },
+    {
+     "kind": "primary",
+     "url": "https://www.yemenembassynl.org/consulate/passports-issuance",
+     "title": "Embassy of the Republic of Yemen in The Hague, Passports Issuance",
+     "read": "2026-10-28",
+     "said": "All completed passport applications from The Hague are sent to the General Consulate in Frankfurt for processing. Passports are issued only after approval from Yemen's main issuance center. The consulate is not responsible for delays due to incomplete applications. Processing takes 30 to 90 days"
+    }
+   ]
+  },
+  {
+   "id": "R-0690",
+   "fact": "papers.passports.HT",
+   "sought": "Haiti's passport fees abroad by age, from Caribbean National Weekly's report of the foreign ministry's circular",
+   "status": "secondary",
+   "value": {
+    "file": "research/sources/papers/passports/HT.json",
+    "sha256": "2988c7f39097c7ccd754a33f09c3999179a537a61e786ebcc77688c51cae699c"
+   },
+   "sources": [
+    {
+     "kind": "secondary",
+     "url": "https://www.caribbeannationalweekly.com/posts/haiti-sets-new-passport-fees-for-citizens-applying-abroad",
+     "title": "Caribbean National Weekly, Haiti sets new passport fees for citizens applying abroad (7 October 2026)",
+     "read": "2026-10-28",
+     "said": "Haiti has set new fees for citizens applying for passports at Haitian diplomatic missions and consular posts abroad, while banning additional charges and expedited processing services. The Ministry of Foreign Affairs and Religious Affairs announced the new measures in a circular dated Oct. 1, with the changes taking effect Oct. 5. Under the new fee structure, passport applications will cost US$150 for adults and US$125 for minors. The ministry said any additional fees charged for passport applications are illegal and prohibited. It also ordered Haitian diplomatic missions and consular posts to stop offering emergency and extreme-emergency passport services.",
+     "quotes": "https://www.haiti.org/"
+    }
+   ]
   }
  ]
 }
