@@ -1539,6 +1539,26 @@
    }
   ]
  },
+ "ET": {
+  "document": "Fayda (national digital ID), with a physical card on request",
+  "currency": "ETB",
+  "routes": [
+   {
+    "id": "centre",
+    "where": "home",
+    "speed": "standard",
+    "within": null
+   }
+  ],
+  "bands": [
+   {
+    "validYears": null,
+    "pay": {
+     "centre": null
+    }
+   }
+  ]
+ },
  "FI": {
   "document": "henkilökortti",
   "currency": "EUR",
@@ -1606,6 +1626,9 @@
     "from": 18
    }
   ]
+ },
+ "FJ": {
+  "none": true
  },
  "FR": {
   "document": "carte nationale d'identité",
@@ -2465,6 +2488,29 @@
     },
     "from": 60,
     "permanent": true
+   }
+  ]
+ },
+ "LB": {
+  "document": "Identity card (بطاقة الهوية)",
+  "currency": "LBP",
+  "routes": [
+   {
+    "id": "mukhtar",
+    "where": "home",
+    "speed": "standard",
+    "within": {
+     "n": 2,
+     "unit": "month"
+    }
+   }
+  ],
+  "bands": [
+   {
+    "validYears": null,
+    "pay": {
+     "mukhtar": 500000
+    }
    }
   ]
  },
@@ -3419,6 +3465,27 @@
  "PF": {
   "issuedBy": "FR"
  },
+ "PG": {
+  "document": "National Identity (NID) card",
+  "currency": "PGK",
+  "routes": [
+   {
+    "id": "nid",
+    "where": "home",
+    "speed": "standard",
+    "within": null
+   }
+  ],
+  "bands": [
+   {
+    "validYears": null,
+    "pay": {
+     "nid": 0
+    },
+    "from": 18
+   }
+  ]
+ },
  "PH": {
   "document": "PhilID (Philippine Identification Card)",
   "currency": "PHP",
@@ -3751,6 +3818,27 @@
    }
   ]
  },
+ "SD": {
+  "document": "National ID card",
+  "currency": "SDG",
+  "routes": [
+   {
+    "id": "registry",
+    "where": "home",
+    "speed": "standard",
+    "within": null
+   }
+  ],
+  "bands": [
+   {
+    "validYears": 5,
+    "pay": {
+     "registry": null
+    },
+    "from": 16
+   }
+  ]
+ },
  "SE": {
   "document": "nationellt id-kort",
   "currency": "SEK",
@@ -4048,6 +4136,26 @@
    }
   ]
  },
+ "SO": {
+  "document": "National ID card (NIRA)",
+  "currency": "SOS",
+  "routes": [
+   {
+    "id": "centre",
+    "where": "home",
+    "speed": "standard",
+    "within": null
+   }
+  ],
+  "bands": [
+   {
+    "validYears": null,
+    "pay": {
+     "centre": 0
+    }
+   }
+  ]
+ },
  "SR": {
   "document": "Id-kaart",
   "currency": "SRD",
@@ -4132,6 +4240,27 @@
      "standard": 8375
     },
     "under": 18
+   }
+  ]
+ },
+ "SY": {
+  "document": "Identity card (البطاقة الشخصية)",
+  "currency": "SYP",
+  "routes": [
+   {
+    "id": "registry",
+    "where": "home",
+    "speed": "standard",
+    "within": null
+   }
+  ],
+  "bands": [
+   {
+    "validYears": null,
+    "pay": {
+     "registry": 100000
+    },
+    "from": 14
    }
   ]
  },
