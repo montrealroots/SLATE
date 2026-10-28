@@ -82,7 +82,7 @@ a place fills a column; a cell is the row's status in that engine's matrix, or b
 | FM | Micronesia | researched | researched | researched | researched | blocked | researched | researched |
 | FO | Faroe Islands | researched | researched | researched | researched | blocked | researched | researched |
 | FR | France | researched | researched | researched | researched | researched | researched | researched |
-| GA | Gabon | researched | researched | researched | researched | researched | researched | pending |
+| GA | Gabon | researched | researched | researched | researched | researched | researched | researched |
 | GB | United Kingdom | researched | researched | researched | researched | researched | researched | researched |
 | GD | Grenada | researched | researched | researched | blocked | researched | researched | researched |
 | GE | Georgia | researched | researched | researched | researched | researched | researched | researched |
@@ -157,7 +157,7 @@ a place fills a column; a cell is the row's status in that engine's matrix, or b
 | MO | Macao | researched | researched | researched | researched | researched | researched | researched |
 | MP | Northern Mariana Islands | researched | researched | researched | blocked | researched | blocked | researched |
 | MQ | Martinique | researched | researched | researched | researched | researched | researched | researched |
-| MR | Mauritania | researched | researched | researched | researched | researched | researched | pending |
+| MR | Mauritania | researched | researched | researched | researched | researched | researched | researched |
 | MS | Montserrat | researched | researched | researched | blocked | researched | researched | researched |
 | MT | Malta | researched | researched | researched | researched | researched | researched | researched |
 | MU | Mauritius | researched | researched | researched | researched | researched | researched | researched |
@@ -223,7 +223,7 @@ a place fills a column; a cell is the row's status in that engine's matrix, or b
 | TC | Turks and Caicos Islands | researched | researched | researched | blocked | researched | blocked | blocked |
 | TD | Chad | researched | researched | researched | researched | researched | researched | researched |
 | TF | French Southern Territories | researched | researched | researched | researched | blocked | researched | researched |
-| TG | Togo | researched | researched | researched | researched | researched | researched | pending |
+| TG | Togo | researched | researched | researched | researched | researched | researched | researched |
 | TH | Thailand | researched | researched | researched | researched | researched | researched | researched |
 | TJ | Tajikistan | researched | researched | researched | researched | blocked | researched | researched |
 | TK | Tokelau | researched | researched | researched | blocked | blocked | researched | researched |
