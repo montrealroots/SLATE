@@ -684,13 +684,14 @@ What layer 0 holds:
    by age and channel in the country's currency, its validity, the standard processing time and the urgent services,
    from the passport office's own pages or, where those refuse this client, the law or regulation that sets them.
    The file's shape (`passports` by age band with `validYears` and `fees`, `standard`, `urgent`, `note`, `sources`)
-   is the research's, to be settled with the engine. 38 so far (2026-10-28): AT, BE, BR, CA, CH, CN, CZ, DE, DK,
-   EE, ES, FR, GB, GH, GR, HK, HU, IE, IN, IT, JM, JP, KR, LU, MT, MY, NL, PE, PK, PL, RO, SE, SG, SI, TW, US, UY, ZA
-   (Uruguay's fees are in indexed units, UI, whose peso value is still to be read); some with a part
-   still open, said in the file's note (Spain's and Slovenia's fees, Ireland's, Greece's, Romania's, Brazil's and
-   Taiwan's validity, Peru's fee, most processing times). The attempts for the rest, to become blockers after all
-   five methods, are being logged: Australia (fees are the 2015 determination's base amounts indexed yearly by its
-   s. 7, to compute from the ABS CPI or read from DFAT; passports.gov.au closes the connection), New Zealand,
+   is the research's, to be settled with the engine. 41 so far (2026-10-28): AT, AU, BE, BR, CA, CH, CN, CZ, DE,
+   DK, EE, ES, FR, GB, GE, GH, GR, HK, HU, IE, IN, IT, JM, JP, KR, LU, MT, MY, NL, NP, PE, PK, PL, RO, SE, SG, SI,
+   TW, US, UY, ZA (Uruguay's fees are in indexed units, UI, whose peso value is still to be read; Australia's are
+   the 2024 amounts with the determination's yearly indexation rule, 2026's to be computed from the ABS CPI once
+   the reference period is settled, as its note says); some with a part still open, said in the file's note
+   (Spain's and Slovenia's fees, Ireland's, Greece's, Romania's, Brazil's, Taiwan's and Nepal's validity, Georgia's
+   minors, Peru's fee, most processing times). The attempts for the rest, to become blockers after all five
+   methods, are being logged: Armenia (only consular fees found), Kazakhstan (only secondary sources), New Zealand,
    Ireland's site, Finland, Mexico (a challenge page), Israel (Cloudflare), Colombia (Cloudflare), Chile (a WAF),
    the Philippines (403), Portugal (its WAF blocks the rendered page), Latvia (connection closed), Kenya (its
    certificate chain fails verification; TLS checks stay on), Norway (fees in the Storting's budget decisions),
