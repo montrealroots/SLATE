@@ -1,4 +1,7 @@
 {
+ "AD": {
+  "none": true
+ },
  "AE": {
   "document": "Emirates ID (national identity card)",
   "currency": "AED",
@@ -757,6 +760,26 @@
  "BL": {
   "issuedBy": "FR"
  },
+ "BM": {
+  "document": "Government ID card (Transport Control Department)",
+  "currency": "BMD",
+  "routes": [
+   {
+    "id": "tcd",
+    "where": "home",
+    "speed": "standard",
+    "within": null
+   }
+  ],
+  "bands": [
+   {
+    "validYears": null,
+    "pay": {
+     "tcd": null
+    }
+   }
+  ]
+ },
  "BN": {
   "document": "Kad Pengenalan Kuning (yellow smart identity card)",
   "currency": "BND",
@@ -1390,7 +1413,7 @@
     "pay": {
      "borgerservice": 15000
     },
-    "from": 16
+    "from": 15
    }
   ]
  },
@@ -1724,6 +1747,9 @@
  "FJ": {
   "none": true
  },
+ "FO": {
+  "none": true
+ },
  "FR": {
   "document": "carte nationale d'identité",
   "currency": "EUR",
@@ -1930,6 +1956,9 @@
     "from": 65
    }
   ]
+ },
+ "GL": {
+  "none": true
  },
  "GM": {
   "document": "Biometric National Identity Card",
@@ -2577,6 +2606,26 @@
    }
   ]
  },
+ "KY": {
+  "document": "Cayman Islands Identification Card (My eID)",
+  "currency": "KYD",
+  "routes": [
+   {
+    "id": "enrolment",
+    "where": "home",
+    "speed": "standard",
+    "within": null
+   }
+  ],
+  "bands": [
+   {
+    "validYears": null,
+    "pay": {
+     "enrolment": 0
+    }
+   }
+  ]
+ },
  "KZ": {
   "document": "удостоверение личности гражданина Республики Казахстан",
   "currency": "KZT",
@@ -2777,6 +2826,92 @@
     "pay": {
      "nir": 500
     }
+   }
+  ]
+ },
+ "LT": {
+  "document": "Asmens tapatybės kortelė (identity card)",
+  "currency": "EUR",
+  "routes": [
+   {
+    "id": "standard",
+    "where": "home",
+    "speed": "standard",
+    "within": {
+     "n": 1,
+     "unit": "month"
+    }
+   },
+   {
+    "id": "urgent",
+    "where": "home",
+    "speed": "urgent",
+    "within": {
+     "n": 5,
+     "unit": "working day"
+    }
+   },
+   {
+    "id": "next-day",
+    "where": "home",
+    "speed": "urgent",
+    "within": {
+     "n": 1,
+     "unit": "working day"
+    }
+   },
+   {
+    "id": "abroad",
+    "where": "abroad",
+    "speed": "standard",
+    "within": {
+     "n": 2,
+     "unit": "month"
+    }
+   }
+  ],
+  "bands": [
+   {
+    "validYears": 2,
+    "pay": {
+     "standard": 1000,
+     "urgent": 6000,
+     "next-day": 10000,
+     "abroad": 14000
+    },
+    "under": 5
+   },
+   {
+    "validYears": 5,
+    "pay": {
+     "standard": 1000,
+     "urgent": 6000,
+     "next-day": 10000,
+     "abroad": 14000
+    },
+    "from": 5,
+    "under": 16
+   },
+   {
+    "validYears": 10,
+    "pay": {
+     "standard": 1000,
+     "urgent": 6000,
+     "next-day": 10000,
+     "abroad": 14000
+    },
+    "from": 16,
+    "under": 70
+   },
+   {
+    "validYears": 30,
+    "pay": {
+     "standard": 1000,
+     "urgent": 6000,
+     "next-day": 10000,
+     "abroad": 14000
+    },
+    "from": 70
    }
   ]
  },
@@ -4566,6 +4701,26 @@
    }
   ]
  },
+ "TC": {
+  "document": "National Turks and Caicos Islander Status Card",
+  "currency": "USD",
+  "routes": [
+   {
+    "id": "department",
+    "where": "home",
+    "speed": "standard",
+    "within": null
+   }
+  ],
+  "bands": [
+   {
+    "validYears": null,
+    "pay": {
+     "department": 0
+    }
+   }
+  ]
+ },
  "TF": {
   "issuedBy": "FR"
  },
@@ -4891,6 +5046,26 @@
    }
   ]
  },
+ "VA": {
+  "document": "Tessera di riconoscimento (recognition card)",
+  "currency": "EUR",
+  "routes": [
+   {
+    "id": "governorate",
+    "where": "home",
+    "speed": "standard",
+    "within": null
+   }
+  ],
+  "bands": [
+   {
+    "validYears": null,
+    "pay": {
+     "governorate": null
+    }
+   }
+  ]
+ },
  "VE": {
   "document": "Cédula de identidad",
   "currency": "VES",
@@ -4916,6 +5091,26 @@
      "consulate": 0
     },
     "from": 9
+   }
+  ]
+ },
+ "VG": {
+  "document": "Belonger Card",
+  "currency": "USD",
+  "routes": [
+   {
+    "id": "registry",
+    "where": "home",
+    "speed": "standard",
+    "within": null
+   }
+  ],
+  "bands": [
+   {
+    "validYears": null,
+    "pay": {
+     "registry": null
+    }
    }
   ]
  },
