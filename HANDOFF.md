@@ -18,15 +18,13 @@ restarts. Read `CLAUDE.md` and the owner's package in `docs/` first.
   told where the weather is borrowed from), 6 proven, none pending. `tools/wmo/compile.ts` and `coverage.ts` are at
   100% mutation score with the last sources (1,559 mutants; the survivors of that run killed by tests or simpler
   lines, and the two equivalent ones disabled with their reasons). The
-  holidays (`world.holidays`): the engine, its reckonings and its gate wiring are built and tested; 169 countries
-  researched (607 official lists matched day for day), 6 proven, 55 pending, and 22 blocked: the Isle of Man,
-  Tanzania, Palau, the British Indian Ocean Territory, the French Southern Lands, the Cook Islands, Tokelau,
-  Vanuatu, Micronesia, Tuvalu,
-  Saint-Pierre-and-Miquelon, Wallis and Futuna, Christmas Island and the Cocos (Keeling) Islands whole, and seven for some of their regions (Canada's Prince Edward Island and Yukon, India's four, Australia's
-  South Australia, Guernsey's Alderney, Argentina's Formosa, Bosnia's Brčko, Saint Helena's Ascension and Tristan da
-  Cunha; and, for the day in place of a holiday on the weekly day of rest only, Malaysia's Kedah, Kelantan and
-  Terengganu); its code at 100% mutation score (532 mutants, with the regions'
-  and the shared substitutes' rules). Then prices.
+  holidays (`world.holidays`): the engine, its reckonings and its gate wiring are built and tested; 194 countries
+  researched (638 official lists matched day for day), 6 proven, none pending, and 52 blocked, each after all
+  five methods (the countries and regions are named in the next step's lists: whole countries such as Haiti, Iran,
+  Bhutan or the Faroe Islands, and regions such as Prince Edward Island, Yukon, India's four, South Australia, Alderney,
+  Formosa, Brčko, Ascension and Tristan da Cunha, and, for the day in place of a holiday on the weekly day of rest only,
+  Kedah, Kelantan and Terengganu); Western Sahara keeps Morocco's days by the owner's ruling of 2026-10-28; its code
+  at 100% mutation score (532 mutants, with the regions' and the shared substitutes' rules). Then prices.
 
 What layer 2 holds so far:
 
@@ -185,7 +183,10 @@ What layer 0 holds:
    (`world.weather.blocked.<code>`, R-0051 on) each say what is to be tried again where it can be reached (the
    web archives, the services whose sites didn't answer from here: Djibouti's, Lesotho's, the Comoros', Palestine's,
    Montserrat's).
-2. The holidays of the pending countries, each from its law or its government's own list, fetched and read
+2. Holidays: no country is pending (2026-10-28). What stays open is listed below: each blocker's sources to try
+   again, the archive snapshots awaiting the owner's ruling, and the per-country open points. Then prices (layer 2's
+   next engine), then proving layer 2. The notes kept from the holidays' research, for adding or revising a country:
+   each from its law or its government's own list, fetched and read
    (never a search summary), with first-level regions where they keep their own (Australia's, Brazil's, India's,
    Mexico's, Malaysia's ...); the United States' territories (Puerto Rico, Guam, the Virgin Islands, American Samoa,
    the Northern Marianas) are countries of the map of their own. Prince Edward Island's and Yukon's to be tried
@@ -520,6 +521,8 @@ What layer 0 holds:
      to 23 March, Adha 27 to 29 May, Ashura 26 June) and declared closures (9 April, 25 May). From 2027 the Hijri days
      by Umm al-Qura. Saturday closures for special-schedule offices (14 February, 15 August, the Easters' coinciding
      Saturday) aren't days off: not kept.
+   - EH: done 2026-10-28 by the owner's ruling (asked 2026-10-28, answered "Morocco's everywhere"): Western Sahara's
+     22 places, east of the berm too, keep Morocco's holidays (`{"of": "MA"}`, as Åland keeps Finland's).
    - SD: done 2026-10-28 from the Council of Ministers' General Secretariat's notices on the government portal
      (sudan.gov.sd, WordPress API): 1 January, Fitr 19 to 24 March, Adha 26 to 30 May, the Hijri New Year 17 June, the
      Mawlid 25 August. 25 December is kept as 2025's notice made it nationwide; 2026's isn't out yet (open). The
@@ -703,7 +706,10 @@ What layer 0 holds:
 
 ## Questions for the owner
 
-None open. Answered 2026-10-26: the map's count of places is today's GeoNames release (171,654); the start date
+Open: whether the archive snapshots listed under the next step may be fetched (the owner stopped one on 2026-10-27;
+each would likely unblock a country). Answered 2026-10-28: Western Sahara keeps Morocco's holidays everywhere. Noted
+2026-10-28: the auto-mode classifier ruled that opening in a browser a page that refuses this game's requests is
+bot-check circumvention, so no source is read that way (the Faroes' was withdrawn). Answered 2026-10-26: the map's count of places is today's GeoNames release (171,654); the start date
 is 1 January 2026 (the owner: "January 1st, 2026."), asked when the holidays and prices engines reached it, so
 both are researched as in force for 2026 and carried forward by their rules. Still to be asked when the build
 reaches them: the premise's detail, home on the first morning, Sleep as a clock action.
