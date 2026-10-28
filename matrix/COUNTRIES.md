@@ -117,7 +117,7 @@ a place fills a column; a cell is the row's status in that engine's matrix, or b
 | IR | Iran | researched | researched | researched | researched | blocked | researched | pending |
 | IS | Iceland | researched | researched | researched | researched | researched | researched | researched |
 | IT | Italy | researched | researched | researched | researched | researched | researched | researched |
-| JE | Jersey | researched | researched | researched | researched | researched | researched | pending |
+| JE | Jersey | researched | researched | researched | researched | researched | researched | researched |
 | JM | Jamaica | researched | researched | researched | researched | researched | researched | researched |
 | JO | Jordan | researched | researched | researched | researched | researched | researched | researched |
 | JP | Japan | researched | researched | researched | researched | researched | researched | researched |
@@ -245,7 +245,7 @@ a place fills a column; a cell is the row's status in that engine's matrix, or b
 | VA | Vatican | researched | researched | researched | blocked | researched | researched | pending |
 | VC | Saint Vincent and the Grenadines | researched | researched | researched | blocked | blocked | researched | pending |
 | VE | Venezuela | researched | researched | researched | researched | blocked | blocked | pending |
-| VG | British Virgin Islands | researched | researched | researched | blocked | researched | blocked | pending |
+| VG | British Virgin Islands | researched | researched | researched | blocked | researched | blocked | researched |
 | VI | U.S. Virgin Islands | researched | researched | researched | blocked | researched | blocked | researched |
 | VN | Vietnam | researched | researched | researched | researched | researched | researched | researched |
 | VU | Vanuatu | researched | researched | researched | blocked | blocked | researched | researched |

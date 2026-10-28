@@ -2524,6 +2524,41 @@
    }
   ]
  },
+ "JE": {
+  "currency": "GBP",
+  "routes": [
+   {
+    "id": "standard",
+    "where": "home",
+    "speed": "standard",
+    "within": null
+   },
+   {
+    "id": "express",
+    "where": "home",
+    "speed": "urgent",
+    "within": null
+   }
+  ],
+  "bands": [
+   {
+    "validYears": null,
+    "pay": {
+     "standard": 11550,
+     "express": 19200
+    },
+    "from": 16
+   },
+   {
+    "validYears": null,
+    "pay": {
+     "standard": 8000,
+     "express": 15650
+    },
+    "under": 16
+   }
+  ]
+ },
  "JM": {
   "currency": "JMD",
   "routes": [
@@ -5380,6 +5415,51 @@
      "urgent": 1071200
     },
     "under": 18
+   }
+  ]
+ },
+ "VG": {
+  "currency": "GBP",
+  "routes": [
+   {
+    "id": "home",
+    "where": "home",
+    "speed": "standard",
+    "within": null
+   }
+  ],
+  "bands": [
+   {
+    "validYears": 10,
+    "pay": {
+     "home": 13082
+    },
+    "from": 16,
+    "pages": 34
+   },
+   {
+    "validYears": 10,
+    "pay": {
+     "home": 14482
+    },
+    "from": 16,
+    "pages": 54
+   },
+   {
+    "validYears": 5,
+    "pay": {
+     "home": 8982
+    },
+    "under": 16,
+    "pages": 34
+   },
+   {
+    "validYears": 5,
+    "pay": {
+     "home": 10382
+    },
+    "under": 16,
+    "pages": 54
    }
   ]
  },

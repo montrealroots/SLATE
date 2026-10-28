@@ -1,0 +1,52 @@
+{
+ "country": "JE",
+ "office": "Jersey Customs and Immigration Service, which issues Jersey's British passports",
+ "currency": "GBP",
+ "routes": [
+  {
+   "id": "standard",
+   "where": "home",
+   "speed": "standard",
+   "within": null,
+   "label": "standard service"
+  },
+  {
+   "id": "express",
+   "where": "home",
+   "speed": "urgent",
+   "within": null,
+   "label": "express service"
+  }
+ ],
+ "passports": [
+  {
+   "for": "adult",
+   "from": 16,
+   "validYears": null,
+   "pay": {
+    "standard": "115.50",
+    "express": "192.00"
+   }
+  },
+  {
+   "for": "child",
+   "under": 16,
+   "validYears": null,
+   "pay": {
+    "standard": "80.00",
+    "express": "156.50"
+   }
+  }
+ ],
+ "note": "Fees from 1 September 2026 under the Immigration (Fees) (Jersey) Amendment Order 2026, made by the Home Affairs Minister on 20 August, as Bailiwick Express reported them (gov.je and jerseylaw.je answer this client with a firewall block page, not read). From 16 November 2026 an online application costs less, £102 for an adult and £66.50 under 16, while a paper application stays at the standard fees modelled here; the online route is not yet modelled. Temporary emergency passports (£125, or £245 out of hours) are not modelled. Validity and processing times are leads.",
+ "sources": [
+  {
+   "kind": "secondary",
+   "url": "https://www.bailiwickexpress.com/news/online-passport-applicants-to-get-discount-as-immigration-fees-rise/",
+   "quotes": "https://www.gov.je/Travel/Passports/GetAPassport/pages/passportfeesandprocessingtimes.aspx",
+   "title": "Bailiwick Express, Online passport applicants to get discount as immigration fees rise (20 August 2026)",
+   "read": "2026-10-28",
+   "said": "The changes are contained in the Immigration (Fees) (Jersey) Amendment Order 2026, which was made by Home Affairs Minister Helen Miles on 20 August. ... From 16 November, online applications will instead cost £66.50 for under-16s and £102 for adults – reductions of £7.50 and £5 respectively. Paper applications will cost £80 for children and £115.50 for adults ... passport fees will rise from 1 September, with standard applications increasing to £80 for under-16s and £115.50 for adults. Express fees will rise from £145 to £156.50 for children and from £178 to £192 for adults."
+  }
+ ]
+}
