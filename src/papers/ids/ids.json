@@ -41,6 +41,27 @@
    }
   ]
  },
+ "AF": {
+  "document": "E-tazkira (electronic national ID card)",
+  "currency": "AFN",
+  "routes": [
+   {
+    "id": "accra",
+    "where": "home",
+    "speed": "standard",
+    "within": null
+   }
+  ],
+  "bands": [
+   {
+    "validYears": null,
+    "pay": {
+     "accra": 10000
+    },
+    "permanent": true
+   }
+  ]
+ },
  "AL": {
   "document": "Letërnjoftim Elektronik (Kartë Identiteti)",
   "currency": "ALL",
@@ -686,6 +707,27 @@
  },
  "BL": {
   "issuedBy": "FR"
+ },
+ "BN": {
+  "document": "Kad Pengenalan Kuning (yellow smart identity card)",
+  "currency": "BND",
+  "routes": [
+   {
+    "id": "office",
+    "where": "home",
+    "speed": "standard",
+    "within": null
+   }
+  ],
+  "bands": [
+   {
+    "validYears": null,
+    "pay": {
+     "office": null
+    },
+    "from": 12
+   }
+  ]
  },
  "BO": {
   "document": "Cédula de Identidad",
@@ -2137,6 +2179,47 @@
  "IO": {
   "issuedBy": "GB"
  },
+ "IQ": {
+  "document": "Unified National Card (البطاقة الوطنية الموحدة)",
+  "currency": "IQD",
+  "routes": [
+   {
+    "id": "office",
+    "where": "home",
+    "speed": "standard",
+    "within": null
+   }
+  ],
+  "bands": [
+   {
+    "validYears": null,
+    "pay": {
+     "office": 5000000
+    }
+   }
+  ]
+ },
+ "IR": {
+  "document": "Kart-e melli (national smart ID card)",
+  "currency": "IRR",
+  "routes": [
+   {
+    "id": "office",
+    "where": "home",
+    "speed": "standard",
+    "within": null
+   }
+  ],
+  "bands": [
+   {
+    "validYears": null,
+    "pay": {
+     "office": null
+    },
+    "from": 15
+   }
+  ]
+ },
  "IS": {
   "document": "nafnskírteini",
   "currency": "ISK",
@@ -2283,6 +2366,29 @@
    }
   ]
  },
+ "KH": {
+  "document": "Khmer Nationality Identity Card",
+  "currency": "KHR",
+  "routes": [
+   {
+    "id": "police",
+    "where": "home",
+    "speed": "standard",
+    "within": {
+     "n": 30,
+     "unit": "working day"
+    }
+   }
+  ],
+  "bands": [
+   {
+    "validYears": 10,
+    "pay": {
+     "police": 0
+    }
+   }
+  ]
+ },
  "KR": {
   "document": "주민등록증 (resident registration card)",
   "currency": "KRW",
@@ -2322,6 +2428,43 @@
      "standard": 86500
     },
     "from": 16
+   }
+  ]
+ },
+ "LA": {
+  "document": "Digital ID card (citizen identity card)",
+  "currency": "LAK",
+  "routes": [
+   {
+    "id": "command",
+    "where": "home",
+    "speed": "standard",
+    "within": null
+   }
+  ],
+  "bands": [
+   {
+    "validYears": null,
+    "pay": {
+     "command": 3000000
+    },
+    "under": 15
+   },
+   {
+    "validYears": null,
+    "pay": {
+     "command": 3000000
+    },
+    "from": 15,
+    "under": 60
+   },
+   {
+    "validYears": null,
+    "pay": {
+     "command": 3000000
+    },
+    "from": 60,
+    "permanent": true
    }
   ]
  },
@@ -2912,6 +3055,35 @@
      "urgent": 4000
     },
     "from": 18
+   }
+  ]
+ },
+ "MV": {
+  "document": "National Identity Card",
+  "currency": "MVR",
+  "routes": [
+   {
+    "id": "dnr",
+    "where": "home",
+    "speed": "standard",
+    "within": null
+   }
+  ],
+  "bands": [
+   {
+    "validYears": 5,
+    "pay": {
+     "dnr": null
+    },
+    "from": 10,
+    "under": 40
+   },
+   {
+    "validYears": 10,
+    "pay": {
+     "dnr": null
+    },
+    "from": 40
    }
   ]
  },
