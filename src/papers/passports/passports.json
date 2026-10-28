@@ -135,6 +135,84 @@
    }
   ]
  },
+ "AU": {
+  "currency": "AUD",
+  "routes": [
+   {
+    "id": "standard",
+    "where": "home",
+    "speed": "standard",
+    "within": null
+   },
+   {
+    "id": "priority",
+    "where": "home",
+    "speed": "urgent",
+    "within": {
+     "n": 2,
+     "unit": "working day"
+    }
+   },
+   {
+    "id": "fast-track",
+    "where": "home",
+    "speed": "urgent",
+    "within": {
+     "n": 5,
+     "unit": "working day"
+    }
+   },
+   {
+    "id": "overseas",
+    "where": "abroad",
+    "speed": "standard",
+    "within": null
+   }
+  ],
+  "bands": [
+   {
+    "validYears": 10,
+    "pay": {
+     "standard": 42200,
+     "priority": 73000,
+     "fast-track": null,
+     "overseas": 61100
+    },
+    "from": 18
+   },
+   {
+    "validYears": 10,
+    "pay": {
+     "standard": 42200,
+     "priority": 73000,
+     "fast-track": null,
+     "overseas": 51400
+    },
+    "from": 16,
+    "under": 18
+   },
+   {
+    "validYears": 5,
+    "pay": {
+     "standard": 21300,
+     "priority": 52100,
+     "fast-track": null,
+     "overseas": 30500
+    },
+    "under": 16
+   },
+   {
+    "validYears": 5,
+    "pay": {
+     "standard": 21300,
+     "priority": 52100,
+     "fast-track": null,
+     "overseas": 40200
+    },
+    "from": 75
+   }
+  ]
+ },
  "AW": {
   "currency": "USD",
   "routes": [
@@ -673,6 +751,9 @@
    }
   ]
  },
+ "CC": {
+  "issuedBy": "AU"
+ },
  "CH": {
   "currency": "CHF",
   "routes": [
@@ -798,6 +879,9 @@
     "under": 18
    }
   ]
+ },
+ "CX": {
+  "issuedBy": "AU"
  },
  "CZ": {
   "currency": "CZK",
@@ -2978,6 +3062,9 @@
     "under": 12
    }
   ]
+ },
+ "NF": {
+  "issuedBy": "AU"
  },
  "NG": {
   "currency": "NGN",

@@ -1,21 +1,98 @@
 {
  "country": "AU",
- "office": "the Minister (under the Australian Passports Act 2005)",
+ "office": "the Australian Passport Office (Department of Foreign Affairs and Trade)",
  "currency": "AUD",
- "indexed": {"from": 2024, "rule": "each calendar year after 2024, the previous year's fee times that year's indexation factor (unless under 1), rounded to the nearest dollar, 50 cents up (ss. 5(1)(b), 5(4), 6(1)(b), 6(5)); the factor is the sum of the four quarterly All Groups CPI index numbers (weighted average of the 8 capital cities) for the year ending 30 September in the previous calendar year over the same sum a year earlier, to 3 decimal places, on the most recently published index reference period (s. 7)"},
+ "routes": [
+  {
+   "id": "standard",
+   "where": "home",
+   "speed": "standard",
+   "within": null,
+   "label": "in Australia"
+  },
+  {
+   "id": "priority",
+   "where": "home",
+   "speed": "urgent",
+   "within": {
+    "n": 2,
+    "unit": "working day"
+   },
+   "label": "priority processing, within 2 business days"
+  },
+  {
+   "id": "fast-track",
+   "where": "home",
+   "speed": "urgent",
+   "within": {
+    "n": 5,
+    "unit": "working day"
+   },
+   "label": "fast track, within 5 business days"
+  },
+  {
+   "id": "overseas",
+   "where": "abroad",
+   "speed": "standard",
+   "within": null,
+   "label": "overseas, with the overseas surcharge"
+  }
+ ],
  "passports": [
-  {"for": "adult", "from": 18, "validYears": 10, "fees": {"2024 amount": "398"}},
-  {"for": "child 16 or 17, ten years", "from": 16, "under": 18, "validYears": 10, "fees": {"2024 amount": "398"}},
-  {"for": "child", "under": 18, "validYears": 5, "fees": {"2024 amount": "201"}},
-  {"for": "75 or over, five years", "from": 75, "validYears": 5, "fees": {"2024 amount": "201"}}
+  {
+   "for": "adult",
+   "from": 18,
+   "validYears": 10,
+   "pay": {
+    "standard": "422",
+    "priority": "730",
+    "fast-track": null,
+    "overseas": "611"
+   }
+  },
+  {
+   "for": "16 or 17",
+   "from": 16,
+   "under": 18,
+   "validYears": 10,
+   "pay": {
+    "standard": "422",
+    "priority": "730",
+    "fast-track": null,
+    "overseas": "514"
+   }
+  },
+  {
+   "for": "child",
+   "under": 16,
+   "validYears": 5,
+   "pay": {
+    "standard": "213",
+    "priority": "521",
+    "fast-track": null,
+    "overseas": "305"
+   }
+  },
+  {
+   "for": "75 or over, optional",
+   "from": 75,
+   "validYears": 5,
+   "pay": {
+    "standard": "213",
+    "priority": "521",
+    "fast-track": null,
+    "overseas": "402"
+   }
+  }
  ],
- "urgent": [
-  {"service": "priority processing", "ready": "within 2 business days after the information requested is given", "fees": {"2024 amount": "290"}},
-  {"service": "fast track", "ready": "within 5 business days", "fees": {"2024 amount": "100"}}
- ],
- "standard": {"within": null, "said": "not in the determination"},
- "note": "The amounts are those for 2024, indexed each year after; the 2026 fee is to be computed by the rule from the ABS quarterly CPI index numbers on the reference period current when each factor was set (the series as now published, base 2025, puts 2026's factor 0.0002 from a rounding boundary, so it isn't computed here yet). 'Valid for up to' 10 and 5 years, the maximum being set by s. 17 of the Australian Passports Determination 2015. Applying overseas adds $178 (adult) or $87 (child), 2024 amounts. passports.gov.au closes the connection on this client.",
+ "note": "The fees from 1 January 2026, as the Department's notice gives them, indexed each year by the Australian Passports (Application Fees) Determination 2015; priority processing ($308, for eligible customers) is added to the passport's fee, and the overseas totals are the notice's (the surcharge is $189 for an adult or senior, $92 for a child, 16 and 17 included). The fast-track fee ($100 in 2024, indexed since) isn't in the 2026 notice, so it's null here. The determination sets no standard processing time. passports.gov.au closes the connection on this client.",
  "sources": [
+  {
+   "url": "https://png.embassy.gov.au/files/pmsb/Passport%20fee%20notice%201%20January%202026.pdf",
+   "title": "Australian High Commission, Port Moresby (Department of Foreign Affairs and Trade), Passport fees From 1 January 2026",
+   "read": "2026-10-28",
+   "said": "Passport fees From 1 January 2026 ... 10-year passport (for persons 18 and over) $422.00 $611.00 ... 10-year passport (for persons 16 or 17) $422.00 $514.00 ... 5-year passport (for children under 16) $213.00 $305.00 ... 5-year passport (optional for persons 75 and over) $213.00 $402.00 ... Priority Processing $308.00 ... Adult and Senior $189.00 $189.00 ... Child $92.00 $92.00 ... Fees are subject to annual indexation. No GST is payable on passport fees."
+  },
   {
    "url": "https://www.legislation.gov.au/F2015L01222/2024-11-26/2024-11-26/text/original/pdf",
    "title": "Federal Register of Legislation, Australian Passports (Application Fees) Determination 2015, Compilation No. 5 (compilation date 26 November 2024; Authorised Version F2024C01230), ss. 5 to 7",
