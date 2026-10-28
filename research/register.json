@@ -22098,6 +22098,494 @@
      "quotes": "https://www.minint.gob.cu/"
     }
    ]
+  },
+  {
+   "id": "R-0614",
+   "fact": "papers.passports.blocked.SL",
+   "sought": "Sierra Leone's passport fee, processing time and validity",
+   "status": "blocked",
+   "attempts": [
+    {
+     "method": "institution",
+     "tried": "Sierra Leone Immigration Department, Passport Fees (https://slid.gov.sl/passport-fees)",
+     "result": "The server answers 403 Forbidden to this client.",
+     "date": "2026-10-28"
+    },
+    {
+     "method": "official-register",
+     "tried": "Parliament of Sierra Leone, The Passport Act, 2015 (https://www.parliament.gov.sl/uploads/statutory_instruments/The Passport Act, 2015.pdf), and the National Revenue Authority's immigration charges (nra.gov.sl/node/176, as indexed)",
+     "result": "Parliament's server presents a self-signed certificate, so the act was not read (verification kept on); the NRA's indexed table (passport 100,000 Leones) predates the redenomination and was not taken as current.",
+     "date": "2026-10-28"
+    },
+    {
+     "method": "web-search",
+     "tried": "'Sierra Leone passport fee Immigration Department ECOWAS passport fee Leones 2025'",
+     "result": "Only the Immigration Department's own page (unreadable here) states the current fee: per the search index, $100 equivalent or Le 2,280, 10 working days; nothing citable was read.",
+     "date": "2026-10-28"
+    },
+    {
+     "method": "trade-press",
+     "tried": "Awoko, Immigration to negotiate passport price to adjust to the dollar (awokonewspapersl.com)",
+     "result": "The site answers with a browser challenge (not circumvented).",
+     "date": "2026-10-28"
+    },
+    {
+     "method": "archive",
+     "tried": "The Wayback Machine's availability API for slid.gov.sl/passport-fees, then the snapshot",
+     "result": "A snapshot of 2026-02-11 exists (web.archive.org/web/20260211030205/http://slid.gov.sl/passport-fees/); fetching it is refused by this environment's egress policy (403).",
+     "date": "2026-10-28"
+    }
+   ],
+   "notModeled": "passports.unkept"
+  },
+  {
+   "id": "R-0615",
+   "fact": "papers.passports.blocked.SY",
+   "sought": "Syria's passport fees, times and validity under the rules in force since the Interior Ministry's decision of 26 June 2025",
+   "status": "blocked",
+   "attempts": [
+    {
+     "method": "institution",
+     "tried": "Ministry of Interior (https://moi.gov.sy), fetched and rendered with a browser",
+     "result": "The page's text is only its title; no passport service or fee table was reached.",
+     "date": "2026-10-28"
+    },
+    {
+     "method": "official-register",
+     "tried": "The People's Assembly (www.parliament.gov.sy) and passport.gov.sy, for the decision setting the fees",
+     "result": "Neither host answered this client.",
+     "date": "2026-10-28"
+    },
+    {
+     "method": "web-search",
+     "tried": "'Syria passport fee 2025 2026 new fees Immigration and Passports Directorate', 'Syria interior ministry June 2025 decision lowers passport fees inside Syria', and in Arabic '\u0631\u0633\u0648\u0645 \u062c\u0648\u0627\u0632 \u0627\u0644\u0633\u0641\u0631 \u0627\u0644\u0633\u0648\u0631\u064a 2026 \u062f\u0627\u062e\u0644 \u0633\u0648\u0631\u064a\u0627 \u0627\u0644\u0641\u0648\u0631\u064a \u0627\u0644\u0645\u0633\u062a\u0639\u062c\u0644 \u0627\u0644\u0639\u0627\u062f\u064a'",
+     "result": "The 26 June 2025 decision is reported only by Enab Baladi (immediate passport inside Syria from about 2,000,000 to 1,600,000 pounds; abroad $400 urgent, $200 regular); no official text found.",
+     "date": "2026-10-28"
+    },
+    {
+     "method": "trade-press",
+     "tried": "Syrian Observer, Long Queues Return for Syrian Passports in Damascus (29 April 2025, citing Enab Baladi), and Enab Baladi's own reports (english.enabbaladi.net, www.enabbaladi.net)",
+     "result": "The Syrian Observer's figures (312,700, 432,700 and about 2,000,000 pounds) predate the June 2025 decision; Enab Baladi answers this client with a Cloudflare block (not circumvented).",
+     "date": "2026-10-28"
+    },
+    {
+     "method": "archive",
+     "tried": "The Wayback Machine's availability API for moi.gov.sy, then the snapshot",
+     "result": "A snapshot of 2026-10-13 exists (web.archive.org/web/20261013204311/https://moi.gov.sy/); fetching it is refused by this environment's egress policy (403).",
+     "date": "2026-10-28"
+    }
+   ],
+   "notModeled": "passports.unkept"
+  },
+  {
+   "id": "R-0616",
+   "fact": "papers.passports.blocked.SD",
+   "sought": "Sudan's passport fees, time and validity in force now",
+   "status": "blocked",
+   "attempts": [
+    {
+     "method": "institution",
+     "tried": "Ministry of Interior and Sudan Police (www.interior.gov.sd, interior.gov.sd, police.gov.sd)",
+     "result": "None of the hosts answered this client.",
+     "date": "2026-10-28"
+    },
+    {
+     "method": "official-register",
+     "tried": "Ministry of Justice (https://www.moj.gov.sd), for the passport law or fee order",
+     "result": "The site answers; its home page and library links name no passport fee order.",
+     "date": "2026-10-28"
+    },
+    {
+     "method": "web-search",
+     "tried": "'Sudan passport fee pounds 2025 electronic passport fee Port Sudan Ministry of Interior new passport price'",
+     "result": "Only press and Wikipedia figures (SDG 150,000 adult, 75,000 child); no official schedule.",
+     "date": "2026-10-28"
+    },
+    {
+     "method": "trade-press",
+     "tried": "Dabanga, Sudan passport fees hike 'blackmail' (dabangasudan.org, 3 September 2023)",
+     "result": "Read: SDG 150,000 for adults and 75,000 for children, with the Sovereignty Council's head ordering the police to review the fees; nothing later found, so the current fee is unknown.",
+     "date": "2026-10-28"
+    },
+    {
+     "method": "archive",
+     "tried": "The Wayback Machine's availability API for interior.gov.sd and police.gov.sd",
+     "result": "No snapshot of either.",
+     "date": "2026-10-28"
+    }
+   ],
+   "notModeled": "passports.unkept"
+  },
+  {
+   "id": "R-0617",
+   "fact": "papers.passports.blocked.TV",
+   "sought": "Tuvalu's passport fees, times and validity",
+   "status": "blocked",
+   "attempts": [
+    {
+     "method": "institution",
+     "tried": "Government of Tuvalu (www.gov.tv), and the Australian Government's Falepili Mobility Pathway page on getting a Tuvaluan passport (https://www.falepilipathway.gov.au/support-tuvalu)",
+     "result": "www.gov.tv did not answer; the Falepili page gave an empty reply twice and a 503 to a second fetcher.",
+     "date": "2026-10-28"
+    },
+    {
+     "method": "official-register",
+     "tried": "Tuvalu's legislation database (tuvalu-legislation.tv), for the Passports Act and its regulations",
+     "result": "403 to this client.",
+     "date": "2026-10-28"
+    },
+    {
+     "method": "web-search",
+     "tried": "'Tuvalu passport fee application Tuvalu immigration passport $ fee', and \"'Tuvalu' passport 'Immigration' fee adult child priority 'working days' gov.tv\"",
+     "result": "Only the Falepili page's figures as the search index summarises them (adult $80, child $60, priority $150 and $100 within three working days); nothing official was read.",
+     "date": "2026-10-28"
+    },
+    {
+     "method": "trade-press",
+     "tried": "'Tuvalu passport fees increase news Tuvalu government passport $80 priority'",
+     "result": "No press report on Tuvalu's passport fees.",
+     "date": "2026-10-28"
+    },
+    {
+     "method": "archive",
+     "tried": "The Wayback Machine's availability API for falepilipathway.gov.au/support-tuvalu, then the snapshot",
+     "result": "A snapshot of 2026-10-07 exists (web.archive.org/web/20261007130405/https://www.falepilipathway.gov.au/support-tuvalu); fetching it is refused by this environment's egress policy (403).",
+     "date": "2026-10-28"
+    }
+   ],
+   "notModeled": "passports.unkept"
+  },
+  {
+   "id": "R-0618",
+   "fact": "papers.passports.blocked.TO",
+   "sought": "Tonga's passport fees, times and validity",
+   "status": "blocked",
+   "attempts": [
+    {
+     "method": "institution",
+     "tried": "Ministry of Foreign Affairs (www.mofa.gov.to, mofa.gov.to) and the Government portal's Passports & Identity page (https://www.gov.to/passports-identity/)",
+     "result": "The Ministry's hosts did not answer; the portal page says to pay 'any required fees' and names none.",
+     "date": "2026-10-28"
+    },
+    {
+     "method": "official-register",
+     "tried": "PacLII, Passport (Amendment) Regulations 2011 (rms.paclii.org/to/legis/sub_leg/papr2011463.pdf), and the Attorney General's Office (ago.gov.to)",
+     "result": "PacLII answers this client with a Cloudflare block and ago.gov.to with 403; neither circumvented, and PacLII's other hosts were not used to get around the block.",
+     "date": "2026-10-28"
+    },
+    {
+     "method": "web-search",
+     "tried": "\"Tonga passport fee pa'anga Ministry of Foreign Affairs passport application fee\"",
+     "result": "Only the 2011 regulations as the search index summarises them (TOP 250 for ten years at 16 and over, TOP 150 for five, TOP 100 under 16); not read, and whether they are current is unknown.",
+     "date": "2026-10-28"
+    },
+    {
+     "method": "trade-press",
+     "tried": "\"Matangi Tonga passport fee pa'anga new passport fees Ministry of Foreign Affairs Tonga\"",
+     "result": "No press report of Tonga's passport fees.",
+     "date": "2026-10-28"
+    },
+    {
+     "method": "archive",
+     "tried": "The Wayback Machine's availability API for https://www.gov.to/passports-identity/, then the snapshot",
+     "result": "A snapshot of 2026-09-28 exists (web.archive.org/web/20260928153445/https://www.gov.to/passports-identity/); fetching it is refused by this environment's egress policy (403).",
+     "date": "2026-10-28"
+    }
+   ],
+   "notModeled": "passports.unkept"
+  },
+  {
+   "id": "R-0619",
+   "fact": "papers.passports.blocked.PW",
+   "sought": "Palau's passport fee, time and validity",
+   "status": "blocked",
+   "attempts": [
+    {
+     "method": "institution",
+     "tried": "Government of Palau (https://www.palaugov.pw)",
+     "result": "The server answers 403 Forbidden to this client.",
+     "date": "2026-10-28"
+    },
+    {
+     "method": "official-register",
+     "tried": "PacLII's Palau collection (www.paclii.org/countries/pw.html), for the Palau National Code's passport title",
+     "result": "PacLII answers this client with a block (not circumvented).",
+     "date": "2026-10-28"
+    },
+    {
+     "method": "web-search",
+     "tried": "'Palau passport application fee Bureau of Immigration passport office fee $', and \"'Republic of Palau' passport fee '$' citizens passport application Division of Immigration Palau embassy\"",
+     "result": "Only Wikipedia (USD 50) and visa sites; no official fee read.",
+     "date": "2026-10-28"
+    },
+    {
+     "method": "trade-press",
+     "tried": "'Island Times Palau passport fee Bureau of Immigration Palau passport application fee new passport'",
+     "result": "Island Times reports on renewals by mail and the e-passport project (UNESCAP), but no fee.",
+     "date": "2026-10-28"
+    },
+    {
+     "method": "archive",
+     "tried": "The Wayback Machine's availability API for https://www.palaugov.pw/, then the snapshot",
+     "result": "A snapshot of 2026-10-17 exists (web.archive.org/web/20261017101848/https://www.palaugov.pw/); fetching it is refused by this environment's egress policy (403).",
+     "date": "2026-10-28"
+    }
+   ],
+   "notModeled": "passports.unkept"
+  },
+  {
+   "id": "R-0620",
+   "fact": "papers.passports.blocked.KI",
+   "sought": "Kiribati's passport fees by processing time, and validity",
+   "status": "blocked",
+   "attempts": [
+    {
+     "method": "institution",
+     "tried": "Ministry of Foreign Affairs and Immigration (https://www.mfa.gov.ki/immigration/, https://www.mfa.gov.ki/passportapplication/ and its Passport brochure, /wp-content/uploads/2026/03/Passport-brochure.docx)",
+     "result": "Every page answers 406 Not Acceptable from the server's ModSecurity firewall (not circumvented, and no other fetcher used to get around it).",
+     "date": "2026-10-28"
+    },
+    {
+     "method": "official-register",
+     "tried": "PacLII's Kiribati legislation (paclii.org/ki/legis/sub_leg/pavr1986332, Passport and Visa Regulations)",
+     "result": "PacLII answers this client with a Cloudflare block (not circumvented).",
+     "date": "2026-10-28"
+    },
+    {
+     "method": "web-search",
+     "tried": "'Kiribati passport fee Immigration Division Kiribati passport application $ fee 2025'",
+     "result": "The search index shows the Ministry's table (1 day $112.50, 3 days $98.40, 5 days $84.40, 10 days $56.25) and a copy on kid.globalbedbank.opalstacked.com, a host that is not the Government's and was not used.",
+     "date": "2026-10-28"
+    },
+    {
+     "method": "trade-press",
+     "tried": "'Kiribati new passport fees news Kiribati Independent passport priority expedited fee Ministry of Foreign Affairs and Immigration'",
+     "result": "No press report of the fees.",
+     "date": "2026-10-28"
+    },
+    {
+     "method": "archive",
+     "tried": "The Wayback Machine's availability API for https://www.mfa.gov.ki/immigration/, then the snapshot",
+     "result": "A snapshot of 2026-07-23 exists (web.archive.org/web/20260723070716/https://www.mfa.gov.ki/immigration/); fetching it is refused by this environment's egress policy (403).",
+     "date": "2026-10-28"
+    }
+   ],
+   "notModeled": "passports.unkept"
+  },
+  {
+   "id": "R-0621",
+   "fact": "papers.passports.blocked.TC",
+   "sought": "The Turks and Caicos Islands' passport fee and time for its British Overseas Territories citizens",
+   "status": "blocked",
+   "attempts": [
+    {
+     "method": "institution",
+     "tried": "Government of the Turks and Caicos Islands: the passports pages (gov.tc/passports and its BOT Passport Application Guide, gov.tc/passports/images/forms/BOT_Passport_Application_Guide.pdf) and the Citizenship and Naturalization site (https://citizenship.gov.tc/services/travel-documents)",
+     "result": "The passports pages answer 404; the citizenship site gives only the emergency travel document ($50.00, about two days) and the temporary passport, not the passport's fee.",
+     "date": "2026-10-28"
+    },
+    {
+     "method": "official-register",
+     "tried": "The Attorney General's Chambers' laws (gov.tc/agc, www.gov.tc/agc/laws)",
+     "result": "404 at both addresses.",
+     "date": "2026-10-28"
+    },
+    {
+     "method": "web-search",
+     "tried": "'Turks and Caicos Islands passport fee BOTC passport application Passport Office TCI $'",
+     "result": "Only naturalisation fees ($900 adult, $500 minor) and the 2015 guide; no passport fee.",
+     "date": "2026-10-28"
+    },
+    {
+     "method": "trade-press",
+     "tried": "\"Turks and Caicos passport fee increase BOTC passport $ Magnetic Media OR 'TCI Weekly News' passport office fee\"",
+     "result": "No press report of the fee.",
+     "date": "2026-10-28"
+    },
+    {
+     "method": "archive",
+     "tried": "The Wayback Machine's availability API for https://gov.tc/passports/, then the snapshot",
+     "result": "A snapshot of 2026-08-30 exists (web.archive.org/web/20260830051143/https://www.gov.tc/passports/); fetching it is refused by this environment's egress policy (403).",
+     "date": "2026-10-28"
+    }
+   ],
+   "notModeled": "passports.unkept"
+  },
+  {
+   "id": "R-0622",
+   "fact": "papers.passports.blocked.BL",
+   "sought": "The passport's fee for the people of Saint-Barth\u00e9lemy, which levies its own stamp duties: France's tax stamp or the Collectivit\u00e9's own",
+   "status": "blocked",
+   "attempts": [
+    {
+     "method": "institution",
+     "tried": "Collectivit\u00e9 de Saint-Barth\u00e9lemy (https://www.comstbarth.fr/, rendered with a browser) and the State's services for Saint-Barth\u00e9lemy and Saint-Martin (https://www.saint-barth-saint-martin.gouv.fr/, whose passport link leads to Saint-Martin's Collectivit\u00e9)",
+     "result": "The Collectivit\u00e9's portal is a script application whose rendered page has no passport page; the State's site has none for Saint-Barth\u00e9lemy (its /passeport answers 404).",
+     "date": "2026-10-28"
+    },
+    {
+     "method": "official-register",
+     "tried": "\"'Saint-Barth\u00e9lemy' 'code des contributions' passeport droit de timbre\" (for the Collectivit\u00e9's tax code)",
+     "result": "The Senate's report (senat.fr/rap/l10-273) says the Collectivit\u00e9 levies its own stamp duties; no text on the passport's stamp found.",
+     "date": "2026-10-28"
+    },
+    {
+     "method": "web-search",
+     "tried": "'Saint-Barth\u00e9lemy passeport timbre fiscal Collectivit\u00e9 de Saint-Barth\u00e9lemy demande de passeport prix'",
+     "result": "Results are for communes named Saint-Barth\u00e9lemy in mainland France and a private guide; nothing for the island's fee.",
+     "date": "2026-10-28"
+    },
+    {
+     "method": "trade-press",
+     "tried": "'Journal de Saint-Barth passeport timbre Collectivit\u00e9 tarif passeport Saint-Barth\u00e9lemy mairie rendez-vous'",
+     "result": "No press report of the fee; a private guide mentions paying the stamp online, without an amount or a source.",
+     "date": "2026-10-28"
+    },
+    {
+     "method": "archive",
+     "tried": "The Wayback Machine's availability API for https://www.comstbarth.fr/, then the snapshot",
+     "result": "A snapshot of 2026-10-23 exists (web.archive.org/web/20261023062336/https://www.comstbarth.fr/); fetching it is refused by this environment's egress policy (403).",
+     "date": "2026-10-28"
+    }
+   ],
+   "notModeled": "passports.unkept"
+  },
+  {
+   "id": "R-0623",
+   "fact": "papers.passports.blocked.BT",
+   "sought": "Bhutan's passport fees, time and validity",
+   "status": "blocked",
+   "attempts": [
+    {
+     "method": "institution",
+     "tried": "Ministry of Foreign Affairs and External Trade, passport FAQs and services (https://www.mfa.gov.bt/faqs/, www.mfa.gov.bt/?p=8707) and the Department of Immigration (www.doi.gov.bt)",
+     "result": "The connection was reset three times on the Ministry's pages; the Department's host did not answer.",
+     "date": "2026-10-28"
+    },
+    {
+     "method": "official-register",
+     "tried": "Office of the Attorney General (www.oag.gov.bt) and the National Assembly (www.nab.gov.bt), for the passport rules",
+     "result": "Neither host answered this client.",
+     "date": "2026-10-28"
+    },
+    {
+     "method": "web-search",
+     "tried": "'Bhutan passport fee Nu. Department of Immigration ordinary passport fee 2025'",
+     "result": "The search index shows the Ministry's table (Nu. 1,000 adult, Nu. 800 under 18, 21 working days through its Canberra embassy) on pages this client could not read.",
+     "date": "2026-10-28"
+    },
+    {
+     "method": "trade-press",
+     "tried": "'Kuensel passport fee Nu Bhutan ordinary passport new fee Department of Immigration Ministry of Foreign Affairs passport services'",
+     "result": "No Kuensel or other press report of the fees.",
+     "date": "2026-10-28"
+    },
+    {
+     "method": "archive",
+     "tried": "The Wayback Machine's availability API for https://www.mfa.gov.bt/faqs/, then the snapshot",
+     "result": "A snapshot of 2026-09-24 exists (web.archive.org/web/20260924201310/https://www.mfa.gov.bt/faqs/); fetching it is refused by this environment's egress policy (403).",
+     "date": "2026-10-28"
+    }
+   ],
+   "notModeled": "passports.unkept"
+  },
+  {
+   "id": "R-0624",
+   "fact": "papers.passports.blocked.OM",
+   "sought": "Oman's passport fee in force now, and who receives the five-year rather than the ten-year passport",
+   "status": "blocked",
+   "attempts": [
+    {
+     "method": "institution",
+     "tried": "Royal Oman Police (https://www.rop.gov.om)",
+     "result": "The host did not answer this client.",
+     "date": "2026-10-28"
+    },
+    {
+     "method": "official-register",
+     "tried": "Qanoon.om's copy of the Official Gazette, ROP decision 71/1997 (https://qanoon.om/p/1997/rop19970071/) and ROP decision 67/2016 on its service fees (https://qanoon.om/p/2016/rop20160067/), and the Ministry of Justice and Legal Affairs (mjla.gov.om)",
+     "result": "Read: the 1997 decision sets ten rials for a ten-year and five rials for a five-year ordinary passport; the 2016 fee annex does not include the passport. Whether the 1997 fee is still in force, and who gets which passport, was not found.",
+     "date": "2026-10-28"
+    },
+    {
+     "method": "web-search",
+     "tried": "'Oman passport fee rial Royal Oman Police passport issuance fee RO', 'Omani passport renewal fee \"OMR 10\" OR \"RO 10\" ten years Royal Oman Police citizens passport', and in Arabic '\u0631\u0633\u0648\u0645 \u0625\u0635\u062f\u0627\u0631 \u062c\u0648\u0627\u0632 \u0627\u0644\u0633\u0641\u0631 \u0627\u0644\u0639\u0645\u0627\u0646\u064a \u0631\u064a\u0627\u0644 \u0639\u0645\u0627\u0646\u064a \u0634\u0631\u0637\u0629 \u0639\u0645\u0627\u0646 \u0627\u0644\u0633\u0644\u0637\u0627\u0646\u064a\u0629 \u062c\u0648\u0627\u0632 \u0627\u0644\u0633\u0641\u0631 10 \u0633\u0646\u0648\u0627\u062a \u0631\u0633\u0648\u0645'",
+     "result": "Only the ID card's fee (ROP decision 78/2025, ten rials) and foreign embassies' fees; no current passport fee.",
+     "date": "2026-10-28"
+    },
+    {
+     "method": "trade-press",
+     "tried": "'Times of Oman Omani passport fee renewal RO ROP passport issuance fee citizens 2025'",
+     "result": "Press covers the ID card and residence cards, not the passport's fee.",
+     "date": "2026-10-28"
+    },
+    {
+     "method": "archive",
+     "tried": "The Wayback Machine's availability API for https://www.rop.gov.om/, then the snapshot",
+     "result": "A snapshot of 2026-10-17 exists (web.archive.org/web/20261017044319/https://www.rop.gov.om/); fetching it is refused by this environment's egress policy (403).",
+     "date": "2026-10-28"
+    }
+   ],
+   "notModeled": "passports.unkept"
+  },
+  {
+   "id": "R-0625",
+   "fact": "papers.passports.blocked.ZM",
+   "sought": "Zambia's passport fees in kwacha, time and validity",
+   "status": "blocked",
+   "attempts": [
+    {
+     "method": "institution",
+     "tried": "Department of Immigration (zambiaimmigration.gov.zm), the Department of National Registration, Passport and Citizenship (www.dnrpc.gov.zm, dnrpc.gov.zm) and the Ministry of Home Affairs (www.mha.gov.zm)",
+     "result": "Immigration's site gives visa fees only; the other hosts did not answer this client.",
+     "date": "2026-10-28"
+    },
+    {
+     "method": "official-register",
+     "tried": "The Passports (Prescribed Fees) Regulations, 2008 (Statutory Instrument No. 18 of 2008, as published by Laws.Africa: commons.laws.africa/akn/zm/act/si/2008/18) and the National Assembly (www.parliament.gov.zm)",
+     "result": "Read: the fees are in fee units (2,777.8 for a 32-page and 5,555.6 for a 48-page Zambian passport); the fee unit's kwacha value in force and whether the 2008 schedule still stands were not found; the Assembly's host did not answer.",
+     "date": "2026-10-28"
+    },
+    {
+     "method": "web-search",
+     "tried": "'Zambia passport fee kwacha Department of National Registration Passport and Citizenship 2025 ordinary passport fee units'",
+     "result": "Only the 2008 regulations, embassies' dollar fees and an undated private listing (500 and 833 kwacha); no official kwacha figure.",
+     "date": "2026-10-28"
+    },
+    {
+     "method": "trade-press",
+     "tried": "'Zambia passport fee kwacha news Lusaka Times OR ZNBC passport now costs K new passport fee 2025'",
+     "result": "No Zambian press report of the fee.",
+     "date": "2026-10-28"
+    },
+    {
+     "method": "archive",
+     "tried": "The Wayback Machine's availability API for https://www.zambiaimmigration.gov.zm/, then the snapshot",
+     "result": "A snapshot of 2026-10-17 exists (web.archive.org/web/20261017161820/https://www.zambiaimmigration.gov.zm/); fetching it is refused by this environment's egress policy (403).",
+     "date": "2026-10-28"
+    }
+   ],
+   "notModeled": "passports.unkept"
+  },
+  {
+   "id": "R-0626",
+   "fact": "papers.passports.CR",
+   "sought": "Costa Rica's passport fee, from the DGME's account to La Naci\u00f3n",
+   "status": "secondary",
+   "value": {
+    "file": "research/sources/papers/passports/CR.json",
+    "sha256": "de2299ad2304ac2a7da781ebd4e4263d65f0cfd1efde2cb0acecf6faaa8b280b"
+   },
+   "sources": [
+    {
+     "kind": "secondary",
+     "url": "https://www.nacion.com/el-pais/servicios/migracion-explica-por-que-subio-precio-de/H3J2ZWJFUVC4VODFVYIB562TCE/story/",
+     "title": "La Naci\u00f3n, Migraci\u00f3n explica por qu\u00e9 subi\u00f3 precio de pasaporte (8 March 2022)",
+     "read": "2026-10-28",
+     "said": "Para obtener el nuevo pasaporte costarricense con tecnolog\u00eda biom\u00e9trica hay que cancelar $75 m\u00e1s \u00a2250 por timbres. ... el precio del documento se estableci\u00f3 en $45 conforme al art\u00edculo 251 de la Ley General de Migraci\u00f3n y Extranjer\u00eda ... A ese monto (al igual que con el pasaporte anterior) hay que agregar $30 del impuesto que ordena el art\u00edculo 252 de la misma normativa. ... Adem\u00e1s, se cobran \u00a2250 por timbres con base en el art\u00edculo 7 de la Ley de Creaci\u00f3n del Servicio de Parques Nacionales",
+     "quotes": "https://www.migracion.go.cr/"
+    }
+   ]
   }
  ]
 }
