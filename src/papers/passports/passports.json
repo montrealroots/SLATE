@@ -991,6 +991,9 @@
    }
   ]
  },
+ "CK": {
+  "issuedBy": "NZ"
+ },
  "CL": {
   "currency": "CLP",
   "routes": [
@@ -3309,6 +3312,13 @@
    }
   ]
  },
+ "MF": {
+  "issuedBy": "FR",
+  "onlyRoutes": [
+   "france",
+   "abroad"
+  ]
+ },
  "MH": {
   "currency": "USD",
   "routes": [
@@ -3998,6 +4008,9 @@
    }
   ]
  },
+ "NU": {
+  "issuedBy": "NZ"
+ },
  "NZ": {
   "currency": "NZD",
   "routes": [
@@ -4250,6 +4263,36 @@
      "standard": 3000
     },
     "under": 12
+   }
+  ]
+ },
+ "PM": {
+  "currency": "EUR",
+  "routes": [
+   {
+    "id": "home",
+    "where": "home",
+    "speed": "standard",
+    "within": {
+     "n": 15,
+     "unit": "day"
+    }
+   }
+  ],
+  "bands": [
+   {
+    "validYears": 10,
+    "pay": {
+     "home": 4000
+    },
+    "from": 18
+   },
+   {
+    "validYears": 5,
+    "pay": {
+     "home": 2000
+    },
+    "under": 18
    }
   ]
  },
@@ -5044,6 +5087,9 @@
     "under": 16
    }
   ]
+ },
+ "TK": {
+  "issuedBy": "NZ"
  },
  "TR": {
   "currency": "TRY",
