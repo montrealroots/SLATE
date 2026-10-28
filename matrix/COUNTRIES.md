@@ -243,7 +243,7 @@ a place fills a column; a cell is the row's status in that engine's matrix, or b
 | UY | Uruguay | researched | researched | researched | researched | researched |
 | UZ | Uzbekistan | researched | researched | researched | researched | researched |
 | VA | Vatican | researched | researched | researched | blocked | researched |
-| VC | Saint Vincent and the Grenadines | researched | researched | researched | blocked | pending |
+| VC | Saint Vincent and the Grenadines | researched | researched | researched | blocked | blocked |
 | VE | Venezuela | researched | researched | researched | researched | blocked |
 | VG | British Virgin Islands | researched | researched | researched | blocked | researched |
 | VI | U.S. Virgin Islands | researched | researched | researched | blocked | researched |
