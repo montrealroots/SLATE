@@ -1,0 +1,24 @@
+{
+ "country": "PT",
+ "office": "the passport services in Portugal (the IRN at Lisbon airport); abroad, Portugal's consular posts",
+ "currency": "EUR",
+ "routes": [
+  {"id": "normal", "where": "home", "speed": "standard", "within": {"n": 5, "unit": "working day"}, "label": "normal: available at the service on the 5th working day after the order reaches INCM"},
+  {"id": "express", "where": "home", "speed": "urgent", "within": {"n": 2, "unit": "working day"}, "label": "express, collected at the service in Portugal: the 2nd working day after (EUR 20 more)"},
+  {"id": "urgent", "where": "home", "speed": "urgent", "within": {"n": 1, "unit": "working day"}, "label": "urgent, applied for by noon, collected at the service in Portugal: the next working day (EUR 30 more)"},
+  {"id": "urgent-airport", "where": "home", "speed": "urgent", "within": {"n": 0, "unit": "day"}, "label": "urgent at Lisbon airport: the same day, from 16:30 (EUR 35 more)"},
+  {"id": "consular", "where": "abroad", "speed": "standard", "within": null, "label": "applied for at a consular post or section"}
+ ],
+ "passports": [
+  {"for": "any", "validYears": null, "pay": {"normal": "65", "express": "85", "urgent": "95", "urgent-airport": "100", "consular": "75"}}
+ ],
+ "note": "Fees and service levels of Portaria n.º 361/2023 (read in the copy the Madeira regional government publishes); a later amendment hasn't been looked for. Some islands of the autonomous regions add one to three working days. The frequent traveller's passport (EUR 100) isn't modelled. Validity isn't in the portaria (a lead: the passport decree-law).",
+ "sources": [
+  {
+   "url": "https://www.madeira.gov.pt//Portals/25/Documentos/Legislacao/Portaria%20361_2023.pdf",
+   "title": "Diário da República, 1.ª série, N.º 221, 15 de novembro de 2023, Portaria n.º 361/2023 (copy published by the Governo Regional da Madeira, madeira.gov.pt)",
+   "read": "2026-10-28",
+   "said": "1.1 — Passaporte comum — € 65; 1.2 — Passaporte comum para passageiro frequente — € 100; 1.3 — Passaporte comum quando requerido em posto ou secção consular — € 75; ... 9.1 — O passaporte comum fica disponível para entrega no serviço no 5.º dia útil seguinte ao da entrada do pedido na INCM, S. A., salvo se o titular solicitar um dos seguintes serviços especiais: ... 9.3.1.1 — Em Portugal e na Europa, no 2.º dia útil seguinte ao da entrada do pedido na INCM, S. A.; ... 9.4 — Serviço urgente — desde que o pedido seja realizado até às 12 horas: 9.4.1 — Entrega no serviço: 9.4.1.1 — No aeroporto de Lisboa, no próprio dia do pedido, a partir das 16 horas e 30 minutos, em ponto de entrega do Instituto dos Registos e do Notariado, I. P. (IRN, I. P.); 9.4.1.2 — Em Portugal e na Europa, no dia útil seguinte ao da entrada do pedido na INCM, S. A.; ... 10.1.2 — Serviço expresso com entrega no serviço ou na morada indicada pelo requerente: 10.1.2.1 — Em Portugal — € 20; ... 10.1.3 — Serviço urgente com entrega no serviço ou na morada indicada pelo requerente: 10.1.3.1 — No aeroporto de Lisboa — € 35; 10.1.3.2 — Em Portugal — € 30;"
+  }
+ ]
+}

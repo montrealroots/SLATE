@@ -605,6 +605,25 @@
    }
   ]
  },
+ "CO": {
+  "currency": "COP",
+  "routes": [
+   {
+    "id": "bogota",
+    "where": "home",
+    "speed": "standard",
+    "within": null
+   }
+  ],
+  "bands": [
+   {
+    "validYears": null,
+    "pay": {
+     "bogota": 19560000
+    }
+   }
+  ]
+ },
  "CW": {
   "currency": "USD",
   "routes": [
@@ -2779,6 +2798,65 @@
  },
  "PR": {
   "issuedBy": "US"
+ },
+ "PT": {
+  "currency": "EUR",
+  "routes": [
+   {
+    "id": "normal",
+    "where": "home",
+    "speed": "standard",
+    "within": {
+     "n": 5,
+     "unit": "working day"
+    }
+   },
+   {
+    "id": "express",
+    "where": "home",
+    "speed": "urgent",
+    "within": {
+     "n": 2,
+     "unit": "working day"
+    }
+   },
+   {
+    "id": "urgent",
+    "where": "home",
+    "speed": "urgent",
+    "within": {
+     "n": 1,
+     "unit": "working day"
+    }
+   },
+   {
+    "id": "urgent-airport",
+    "where": "home",
+    "speed": "urgent",
+    "within": {
+     "n": 0,
+     "unit": "day"
+    }
+   },
+   {
+    "id": "consular",
+    "where": "abroad",
+    "speed": "standard",
+    "within": null
+   }
+  ],
+  "bands": [
+   {
+    "validYears": null,
+    "pay": {
+     "normal": 6500,
+     "express": 8500,
+     "urgent": 9500,
+     "urgent-airport": 10000,
+     "consular": 7500
+    }
+   }
+  ]
  },
  "PY": {
   "currency": "PYG",

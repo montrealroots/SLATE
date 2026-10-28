@@ -731,8 +731,8 @@ What layer 0 holds:
    Macedonia (mvr.gov.mk resets the connection), Bangladesh (epassport.gov.bd 403; dip.gov.bd's certificate fails
    verification), Mauritius (its pages give no fee), Tanzania (a JS page that renders empty), Namibia (its
    certificate fails verification), Zambia, Jordan, Oman, Brunei, Bhutan (connection reset), Honduras (no amounts on
-   its page), Panama (its host fails at the proxy), Bolivia, New Zealand, Ireland's site, Mexico (a challenge page),
-   Israel (Cloudflare), Colombia (Cloudflare), Chile (a WAF), the Philippines (403), Portugal (its WAF blocks the
+   its page), Panama (its host fails at the proxy), Bolivia, New Zealand, Ireland's site,
+   Israel (Cloudflare), Chile (a WAF), the Philippines (403), Portugal (its WAF blocks the
    rendered page), Latvia (connection closed), Kenya (its certificate chain fails verification; TLS checks stay on),
    Norway (the fee is in the pass- og ID-kortforskriften § 7-1; lovdata.no answers 405 and norway.no a Cloudflare
    challenge), Bulgaria (the April 2026 reform's tariff not found), Lithuania (a JS app), Turkey (the yearly duties

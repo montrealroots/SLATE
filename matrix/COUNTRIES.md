@@ -54,7 +54,7 @@ a place fills a column; a cell is the row's status in that engine's matrix, or b
 | CL | Chile | researched | researched | researched | researched | researched | researched | pending |
 | CM | Cameroon | researched | researched | researched | researched | researched | researched | pending |
 | CN | China | researched | researched | researched | researched | researched | researched | researched |
-| CO | Colombia | researched | researched | researched | researched | researched | researched | pending |
+| CO | Colombia | researched | researched | researched | researched | researched | researched | researched |
 | CR | Costa Rica | researched | researched | researched | researched | researched | researched | pending |
 | CS | Serbia and Montenegro | researched | researched | proven | proven | proven | proven | proven |
 | CU | Cuba | researched | researched | researched | blocked | researched | blocked | pending |
@@ -190,7 +190,7 @@ a place fills a column; a cell is the row's status in that engine's matrix, or b
 | PN | Pitcairn | researched | researched | researched | blocked | researched | researched | pending |
 | PR | Puerto Rico | researched | researched | researched | researched | researched | researched | researched |
 | PS | Palestinian Territory | researched | researched | researched | blocked | researched | researched | pending |
-| PT | Portugal | researched | researched | researched | researched | researched | researched | pending |
+| PT | Portugal | researched | researched | researched | researched | researched | researched | researched |
 | PW | Palau | researched | researched | researched | researched | blocked | researched | pending |
 | PY | Paraguay | researched | researched | researched | researched | researched | researched | researched |
 | QA | Qatar | researched | researched | researched | researched | researched | researched | pending |
