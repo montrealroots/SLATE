@@ -26,7 +26,7 @@ restarts. Read `CLAUDE.md` and the owner's package in `docs/` first.
   Kedah, Kelantan and Terengganu); Western Sahara keeps Morocco's days by the owner's ruling of 2026-10-28; its code
   at 100% mutation score (532 mutants, with the regions' and the shared substitutes' rules). The prices
   (`world.prices`): the engine is built and tested, at 100% mutation score; 172 countries researched from the World
-  Bank's levels and 2 carried from its 2021 benchmark, 6 proven, 72 pending (the next step).
+  Bank's levels and 6 carried from its 2021 benchmark, 6 proven, 68 pending (the next step).
 
 What layer 2 holds so far:
 
@@ -124,7 +124,11 @@ What layer 2 holds so far:
   statistics office, `research/sources/prices/<code>.json`, `world.prices.<code>`) over the CPI-U's (R-0375: the
   Bureau of Labor Statistics' months; October 2025 wasn't collected, so 2025's mean is of eleven, 321.943, the
   Bureau's own annual average), to twelve places. Done so: Argentina (INDEC), Andorra (the Departament
-  d'Estadística's monthly A142 releases on sig.govern.ad; estadistica.ad's portal blocks a browser).
+  d'Estadística's monthly A142 releases on sig.govern.ad; estadistica.ad's portal blocks a browser), Kosovo (ASK's
+  HICP, PxWeb), Aruba (CBS's December releases, the months placed by their chart positions), Curaçao (CBS's series
+  since 1970, 2023 = 100) and Sint Maarten (STAT's quarters); for these two the World Bank's guilder level stands in
+  Caribbean guilders, replaced one for one on 31 March 2025 (the central bank, quoted by the Curaçao Chronicle; its
+  own site answers with a Cloudflare challenge).
 
 What layer 1 holds:
 
@@ -610,7 +614,7 @@ What layer 0 holds:
 3. Prices: the countries with places and no World Bank level from 2024 on are pending
    (`coverage/prices-countries.json`). Each is to be researched from its own statistics office or blocked after all
    five methods (`world.prices.blocked.<code>`, the player told by `prices.unkept`). Two kinds. The 35 the World Bank
-   last priced before 2024 (its 2021 benchmark only; Andorra and Argentina done: American Samoa, Aruba, Barbados, Bermuda,
+   last priced before 2024 (its 2021 benchmark only; Andorra, Argentina, Aruba, Curaçao, Sint Maarten and Kosovo done: American Samoa, Barbados, Bermuda,
    the British Virgin Islands, the Cayman Islands, DR Congo, Curaçao, Eritrea, Eswatini, the Faroes, French
    Polynesia, Greenland, Guam, the Marshall Islands, Myanmar, Nauru, New Caledonia, the Northern Marianas, Puerto
    Rico, Sint Maarten, Somalia, South Sudan, Syria, Turkmenistan, Turks and Caicos, Tuvalu, the US Virgin Islands,
