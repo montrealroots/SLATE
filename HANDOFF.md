@@ -501,6 +501,10 @@ What layer 0 holds:
    - NF: done 2026-10-27 from the Employment Act 1988 (NI), s. 9 (Compilation No. 8, 20 September 2022, Federal
      Register of Legislation). The Sovereign's Birthday steps a week where 8 June is a Saturday (its Monday is then
      Bounty Day's): those years, 2030 to 2097, are dates.
+   - SX: done 2026-10-28 from the Government's own Public Holiday Schedule (sintmaartengov.org, 2026 to 2028, so
+     announcedTo 2028; Carnival Day, the day before the Grand Parade, is set year by year: dates). Emancipation Day's
+     Sunday move from the Government's 2017 correction (Labour Regulation art. 23(3a), via St. Maarten News); Labour
+     Day's from the Arbeidsregeling 2000's art. 23 (ABKennisbank). The current consolidated art. 23 is unread.
    - MW: blocked 2026-10-27: the Act's Schedule is read only as consolidated at 31 December 2014 (commons.laws.africa
      /akn/mw/act/1967/11/eng@2014-12-31.pdf); the Gazette orders since (Africa Day, Chakufwa Chihana Day, Eid al-Adha?)
      and 2026's orders are unread. Laws.Africa's commons host also serves other LIIs' consolidations past their bot
