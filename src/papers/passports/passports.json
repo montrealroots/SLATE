@@ -3033,6 +3033,63 @@
    }
   ]
  },
+ "RU": {
+  "currency": "RUB",
+  "routes": [
+   {
+    "id": "registration-region",
+    "where": "home",
+    "speed": "standard",
+    "within": {
+     "n": 1,
+     "unit": "month"
+    }
+   },
+   {
+    "id": "elsewhere",
+    "where": "home",
+    "speed": "standard",
+    "within": {
+     "n": 3,
+     "unit": "month"
+    }
+   }
+  ],
+  "bands": [
+   {
+    "validYears": 10,
+    "pay": {
+     "registration-region": 600000,
+     "elsewhere": 600000
+    },
+    "from": 14
+   },
+   {
+    "validYears": 5,
+    "pay": {
+     "registration-region": 200000,
+     "elsewhere": 200000
+    },
+    "from": 14
+   },
+   {
+    "validYears": 10,
+    "pay": {
+     "registration-region": 300000,
+     "elsewhere": 300000
+    },
+    "under": 14
+   },
+   {
+    "validYears": 5,
+    "pay": {
+     "registration-region": 100000,
+     "elsewhere": 100000
+    },
+    "under": 14
+   }
+  ]
+ },
  "RW": {
   "currency": "RWF",
   "routes": [

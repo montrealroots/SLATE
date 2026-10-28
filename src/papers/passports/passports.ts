@@ -11,7 +11,7 @@ import data from './passports.json' with { type: 'json' };
  * country whose passports aren't kept has none here, and the player is told; a fee, a validity or a time the office
  * doesn't publish, or the research hasn't read, is null, and the player is told that too.
  */
-export type Unit = 'minute' | 'hour' | 'day' | 'working day' | 'week';
+export type Unit = 'minute' | 'hour' | 'day' | 'working day' | 'week' | 'month';
 
 export interface Route {
   readonly id: string;

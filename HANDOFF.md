@@ -40,7 +40,7 @@ restarts. Read `CLAUDE.md` and the owner's package in `docs/` first.
 The passports' form (decided 2026-10-28, the engine's reader being the Papers page: apply, pay, wait, hold a
 passport valid so many years). Each research file has `routes`, one per way the office takes an application: `id`,
 `where` (`home` or `abroad`), `speed` (`standard` or `urgent`), `within` (the longest it takes as the office
-publishes it, a whole number of minutes, hours, days, working days or weeks, or null where it publishes none; where
+publishes it, a whole number of minutes, hours, days, working days, weeks or months, or null where it publishes none; where
 it differs by office, the longest), optional `months` (a route offered only in some months, as Malta's seasonal fee),
 and `label` (the office's own words, not compiled). Each passport band has `from`/`under` ages, optional `pages`,
 `validYears` (or null) and `pay`: by route, the total the applicant pays in the currency (components summed, as

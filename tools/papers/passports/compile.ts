@@ -18,7 +18,7 @@ import countries from '../../../src/world/gazetteer/countries.json' with { type:
 export const SOURCES = 'research/sources/papers/passports';
 export const OUTPUT = 'src/papers/passports/passports.json';
 
-export const UNITS = ['minute', 'hour', 'day', 'working day', 'week'] as const;
+export const UNITS = ['minute', 'hour', 'day', 'working day', 'week', 'month'] as const;
 export type Unit = (typeof UNITS)[number];
 
 export interface Route {
@@ -68,7 +68,7 @@ function route(r: unknown, at: string): Route {
   if (where !== 'home' && where !== 'abroad') throw new Error(`${at} (${id}) is applied for at home or abroad`);
   if (speed !== 'standard' && speed !== 'urgent') throw new Error(`${at} (${id}) is standard or urgent`);
   if (within !== null && !(isRecord(within) && isWhole(within['n'], 0) && UNITS.includes(within['unit'] as Unit))) {
-    throw new Error(`${at} (${id}) takes a whole number of minutes, hours, days, working days or weeks, or null`);
+    throw new Error(`${at} (${id}) takes a whole number of minutes, hours, days, working days, weeks or months, or null`);
   }
   const out: Route = { id, where, speed, within: within === null ? null : { n: within['n'] as number, unit: within['unit'] as Unit } };
   if (months !== undefined) {

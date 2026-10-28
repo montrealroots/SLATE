@@ -24,7 +24,7 @@ const file = (over: Record<string, unknown> = {}) => ({
 
 describe('the passports compile', () => {
   it("takes a file in the engine's form to routes and bands in minor units", () => {
-    expect(UNITS).toEqual(['minute', 'hour', 'day', 'working day', 'week']);
+    expect(UNITS).toEqual(['minute', 'hour', 'day', 'working day', 'week', 'month']);
     expect([SOURCES, OUTPUT]).toEqual(['research/sources/papers/passports', 'src/papers/passports/passports.json']);
     expect(compilePassport('SK', file())).toStrictEqual({
       currency: 'EUR',
@@ -87,8 +87,8 @@ describe('the passports compile', () => {
     expect(bad({ ...route('s'), id: 3 })).toThrow("SK's route 0 needs an id");
     expect(bad(route('s', { where: 'there' }))).toThrow("SK's route 0 (s) is applied for at home or abroad");
     expect(bad(route('s', { speed: 'fast' }))).toThrow("SK's route 0 (s) is standard or urgent");
-    for (const within of [undefined, 3, { n: -1, unit: 'day' }, { n: 1.5, unit: 'day' }, { n: 1, unit: 'month' }, { unit: 'day' }, [1, 'day']]) {
-      expect(bad(route('s', { within })), JSON.stringify(within)).toThrow("SK's route 0 (s) takes a whole number of minutes, hours, days, working days or weeks, or null");
+    for (const within of [undefined, 3, { n: -1, unit: 'day' }, { n: 1.5, unit: 'day' }, { n: 1, unit: 'year' }, { unit: 'day' }, [1, 'day']]) {
+      expect(bad(route('s', { within })), JSON.stringify(within)).toThrow("SK's route 0 (s) takes a whole number of minutes, hours, days, working days, weeks or months, or null");
     }
     for (const months of [[], [0], [13], [1, 13], [1, 1], [1.5], 'May', {}]) {
       expect(bad(route('s', { months })), JSON.stringify(months)).toThrow("SK's route 0 (s) is offered in distinct months 1 to 12");

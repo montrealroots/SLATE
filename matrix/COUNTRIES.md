@@ -197,7 +197,7 @@ a place fills a column; a cell is the row's status in that engine's matrix, or b
 | RE | Reunion | researched | researched | researched | researched | researched | researched | pending |
 | RO | Romania | researched | researched | researched | researched | researched | researched | researched |
 | RS | Serbia | researched | researched | researched | researched | researched | researched | researched |
-| RU | Russia | researched | researched | researched | researched | researched | researched | pending |
+| RU | Russia | researched | researched | researched | researched | researched | researched | researched |
 | RW | Rwanda | researched | researched | researched | blocked | researched | researched | researched |
 | SA | Saudi Arabia | researched | researched | researched | researched | researched | researched | pending |
 | SB | Solomon Islands | researched | researched | researched | blocked | researched | researched | pending |
