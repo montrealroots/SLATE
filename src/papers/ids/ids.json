@@ -1021,6 +1021,26 @@
  "CD": {
   "none": true
  },
+ "CF": {
+  "document": "Carte nationale d'identité",
+  "currency": "XAF",
+  "routes": [
+   {
+    "id": "enrolment",
+    "where": "home",
+    "speed": "standard",
+    "within": null
+   }
+  ],
+  "bands": [
+   {
+    "validYears": null,
+    "pay": {
+     "enrolment": 6000
+    }
+   }
+  ]
+ },
  "CG": {
   "document": "Carte nationale d'identité informatisée, sécurisée et biométrique",
   "currency": "XAF",
@@ -2967,6 +2987,27 @@
    }
   ]
  },
+ "LS": {
+  "document": "National Identity Card",
+  "currency": "LSL",
+  "routes": [
+   {
+    "id": "nicr",
+    "where": "home",
+    "speed": "standard",
+    "within": null
+   }
+  ],
+  "bands": [
+   {
+    "validYears": 10,
+    "pay": {
+     "nicr": null
+    },
+    "from": 16
+   }
+  ]
+ },
  "LT": {
   "document": "Asmens tapatybės kortelė (identity card)",
   "currency": "EUR",
@@ -3355,6 +3396,26 @@
  "MF": {
   "issuedBy": "FR"
  },
+ "MG": {
+  "document": "Karapanondrom-pirenena (carte d'identité nationale, CIN)",
+  "currency": "MGA",
+  "routes": [
+   {
+    "id": "commune",
+    "where": "home",
+    "speed": "standard",
+    "within": null
+   }
+  ],
+  "bands": [
+   {
+    "validYears": null,
+    "pay": {
+     "commune": null
+    }
+   }
+  ]
+ },
  "MK": {
   "document": "лична карта",
   "currency": "MKD",
@@ -3578,6 +3639,27 @@
    }
   ]
  },
+ "MU": {
+  "document": "National Identity Card",
+  "currency": "MUR",
+  "routes": [
+   {
+    "id": "csd",
+    "where": "home",
+    "speed": "standard",
+    "within": null
+   }
+  ],
+  "bands": [
+   {
+    "validYears": null,
+    "pay": {
+     "csd": 0
+    },
+    "from": 18
+   }
+  ]
+ },
  "MV": {
   "document": "National Identity Card",
   "currency": "MVR",
@@ -3732,8 +3814,49 @@
    }
   ]
  },
+ "NA": {
+  "document": "Electronic identity card (e-ID)",
+  "currency": "NAD",
+  "routes": [
+   {
+    "id": "civil-registration",
+    "where": "home",
+    "speed": "standard",
+    "within": null
+   }
+  ],
+  "bands": [
+   {
+    "validYears": null,
+    "pay": {
+     "civil-registration": 0
+    }
+   }
+  ]
+ },
  "NC": {
   "issuedBy": "FR"
+ },
+ "NE": {
+  "document": "Carte d'identité biométrique AES",
+  "currency": "XOF",
+  "routes": [
+   {
+    "id": "enrolment",
+    "where": "home",
+    "speed": "standard",
+    "within": null
+   }
+  ],
+  "bands": [
+   {
+    "validYears": 5,
+    "pay": {
+     "enrolment": null
+    },
+    "from": 15
+   }
+  ]
  },
  "NF": {
   "issuedBy": "AU"
@@ -4393,6 +4516,26 @@
    }
   ]
  },
+ "SC": {
+  "document": "National Identity Card",
+  "currency": "SCR",
+  "routes": [
+   {
+    "id": "id-office",
+    "where": "home",
+    "speed": "standard",
+    "within": null
+   }
+  ],
+  "bands": [
+   {
+    "validYears": 10,
+    "pay": {
+     "id-office": 0
+    }
+   }
+  ]
+ },
  "SD": {
   "document": "National ID card",
   "currency": "SDG",
@@ -4839,6 +4982,26 @@
    }
   ]
  },
+ "SZ": {
+  "document": "National identity card",
+  "currency": "SZL",
+  "routes": [
+   {
+    "id": "service-centre",
+    "where": "home",
+    "speed": "standard",
+    "within": null
+   }
+  ],
+  "bands": [
+   {
+    "validYears": null,
+    "pay": {
+     "service-centre": null
+    }
+   }
+  ]
+ },
  "TC": {
   "document": "National Turks and Caicos Islander Status Card",
   "currency": "USD",
@@ -4855,6 +5018,26 @@
     "validYears": null,
     "pay": {
      "department": 0
+    }
+   }
+  ]
+ },
+ "TD": {
+  "document": "Carte nationale d'identité",
+  "currency": "XAF",
+  "routes": [
+   {
+    "id": "anats",
+    "where": "home",
+    "speed": "standard",
+    "within": null
+   }
+  ],
+  "bands": [
+   {
+    "validYears": 10,
+    "pay": {
+     "anats": 5000
     }
    }
   ]
