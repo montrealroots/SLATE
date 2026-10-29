@@ -44,6 +44,16 @@ describe('work', () => {
     expect([work('NZ', 'CX'), work('US', 'NF'), work('AU', 'CC')]).toStrictEqual([{ right: 'free' }, work('US', 'AU'), 'home']);
     const aruban = { right: 'permit', route: 'Vergunning tot tijdelijk verblijf met toestemming om arbeid te verrichten' };
     expect([work('NL', 'AW'), work('CW', 'AW'), work('NL', 'CW'), work('AW', 'AW')]).toStrictEqual([aruban, aruban, 'home', 'home']);
+    // A British territory asks Britain's and the other territories' passports for its permit; Montserrat keeps the OECS's
+    // free movement before its own.
+    const virgin = { right: 'permit', route: 'Work permit (Labour Code 2010)' };
+    expect([work('GB', 'VG'), work('BM', 'VG'), work('VG', 'VG'), work('DM', 'MS'), work('GB', 'MS')]).toStrictEqual([
+      virgin,
+      virgin,
+      'home',
+      { right: 'free' },
+      { right: 'permit', route: 'Work permit (Labour Department)' },
+    ]);
     // A citizen of the destination, or of the state whose nationality its people hold, is home, even where the list names
     // that state's passport (France's, in the eea list); and in a territory of their own state that the list doesn't name.
     expect([work('DE', 'DE'), work('GP', 'FR'), work('JE', 'JE'), work('GP', 'GP'), work('GU', 'US'), work('US', 'GU'), work('PR', 'GU')]).toEqual(['home', 'home', 'home', 'home', 'home', 'home', 'home']);
