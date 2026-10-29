@@ -290,7 +290,11 @@ restarts. Read `CLAUDE.md` and the owner's package in `docs/` first.
   An image-only fee document (DNB's) is read by eye and cited without a saved page. A regulator's published schedule
   of its banks' charges is a primary source for each bank in it (the Turks and Caicos FSC's, June 2026). A server that
   sends its certificate without the intermediate (Bank of Guam's) is read with that intermediate taken from the
-  issuing CA's own published copy, verification left on. Matrix (2026-10-29): 122 researched, 6 proven, 124 pending; the remaining countries are researched next by targeted search, and a country
+  issuing CA's own published copy, verification left on. A fee set in an indexed unit the game's money doesn't hold
+  (BROU's 30 UI) isn't written and another bank is taken; a fee a document gives before a tax whose rate it doesn't
+  state is written before the tax (Promerica's, Sogebank's); a law barring any fee on an account is the source for its
+  being free, beside the bank's own page naming the account (Venezuela's BCV Resolution 18-10-02). Matrix
+  (2026-10-29): 130 researched, 6 proven, 116 pending; the remaining countries are researched next by targeted search, and a country
   whose banks' fees can't be read after all five methods gets its blocker.
 
 The passports' form (decided 2026-10-28, the engine's reader being the Papers page: apply, pay, wait, hold a
