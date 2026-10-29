@@ -1,0 +1,38 @@
+{
+ "country": "CX",
+ "banks": [
+  {
+   "bank": "Westpac",
+   "account": "Westpac Choice",
+   "fees": [
+    {
+     "fee": "5.00",
+     "per": "month",
+     "waived": [
+      {
+       "deposits": "2000.00"
+      },
+      {
+       "under": 41
+      }
+     ]
+    }
+   ]
+  }
+ ],
+ "note": "Westpac, which has the island's branch (Canberra Place, BSB 036-189, in its own branch locator): the Westpac Choice everyday account costs 5 dollars a month, waived in a month with at least 2,000 dollars deposited or for a holder under 41; the waivers for a full-time tertiary student and for a customer new to Australia in the first twelve months aren't written.",
+ "sources": [
+  {
+   "url": "https://digital-api.westpac.com.au/cap/chnl/lcteus/svc/v1/prcng-svc-srch?latitude=-10.4217&longitude=105.6791&searchType=branch&format=json",
+   "title": "Westpac, branch locator (the data behind https://www.westpac.com.au/locateus/), searched at Christmas Island",
+   "read": "2026-10-29",
+   "said": "\"serviceProviderTypeName\":\"Branch\",\"name\":\"Christmas Island\" ... \"streetAddress\":\"Canberra Place\",\"suburb\":\"Christmas Island\",\"state\":\"WA\",\"postcode\":\"6798\""
+  },
+  {
+   "url": "https://www.westpac.com.au/personal-banking/bank-accounts/transaction/choice/",
+   "title": "Westpac, Westpac Choice",
+   "read": "2026-10-29",
+   "said": "Account-Keeping Fee (monthly) $5 The monthly fee is waived if you: Are under the age of 41 or a full-time tertiary student ... Deposit at least $2,000 by the close of the last business day of the month"
+  }
+ ]
+}

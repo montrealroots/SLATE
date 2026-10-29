@@ -299,7 +299,7 @@ restarts. Read `CLAUDE.md` and the owner's package in `docs/` first.
   the fetch tool is read through the fetch tool's saved copy (BSB Bank's, maib's, Santander Uruguay's). Where a fee differs for salaried and
   non-salaried customers, the non-salaried rate is taken, a performer working by engagement being one (Coris Bank's
   West African conditions). A waiver for a balance below a figure isn't written, the game's waivers being balances
-  at or above one (Nedbank Zimbabwe's). Matrix (2026-10-29): 212 researched, 6 proven, 34 pending; the remaining countries are researched next by targeted search, and a country
+  at or above one (Nedbank Zimbabwe's). Matrix (2026-10-29): 218 researched, 6 proven, 28 pending; the remaining countries are researched next by targeted search, and a country
   whose banks' fees can't be read after all five methods gets its blocker.
 
 The passports' form (decided 2026-10-28, the engine's reader being the Papers page: apply, pay, wait, hold a
