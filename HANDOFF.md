@@ -140,8 +140,11 @@ restarts. Read `CLAUDE.md` and the owner's package in `docs/` first.
   the Southern Lands need an authorisation, French citizens included. Taiwan from the Bureau of Consular Affairs
   (visa-exempt list of 17 July 2026, the eVisa list; Hong Kong and Macao residents' entry permit from the NIA, taken
   as a visa); Sri Lanka from the Department of Immigration's ETA page (everyone an ETA, free for 40 since 25 May
-  2026); Pakistan, Bangladesh, Nepal, Bhutan, the Maldives and North Korea from Wikipedia's copies. Matrix
-  (2026-10-29): 177 researched, 6 proven, 69 pending: Africa and Oceania to research next. The Wikipedia-sourced rows are to be re-read from the
+  2026); Pakistan, Bangladesh, Nepal, Bhutan, the Maldives and North Korea from Wikipedia's copies. Oceania (Fiji,
+  Papua New Guinea, the Solomons, Vanuatu, Samoa, Tonga, Kiribati, Tuvalu, Nauru, Micronesia, the Marshalls, Palau,
+  the Cook Islands, Niue, Tokelau) from Wikipedia's copies; a visitor permit given free on arrival is taken as free,
+  one applied for beforehand (Tokelau, New Zealanders included) as a visa. Matrix (2026-10-29): 192 researched,
+  6 proven, 54 pending: Africa to research next. The Wikipedia-sourced rows are to be re-read from the
   primary when it opens (each file's note says which host refused).
 
 The passports' form (decided 2026-10-28, the engine's reader being the Papers page: apply, pay, wait, hold a
