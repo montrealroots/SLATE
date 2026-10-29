@@ -65,6 +65,30 @@
    }
   ]
  },
+ "AG": {
+  "document": "Electoral Identification Card",
+  "currency": "XCD",
+  "routes": [
+   {
+    "id": "registration-unit",
+    "where": "home",
+    "speed": "standard",
+    "within": {
+     "n": 3,
+     "unit": "week"
+    }
+   }
+  ],
+  "bands": [
+   {
+    "validYears": 10,
+    "pay": {
+     "registration-unit": 0
+    },
+    "from": 18
+   }
+  ]
+ },
  "AL": {
   "document": "Letërnjoftim Elektronik (Kartë Identiteti)",
   "currency": "ALL",
@@ -160,6 +184,26 @@
      "one-day": 2300000
     },
     "from": 16
+   }
+  ]
+ },
+ "AO": {
+  "document": "Bilhete de Identidade",
+  "currency": "AOA",
+  "routes": [
+   {
+    "id": "posto",
+    "where": "home",
+    "speed": "standard",
+    "within": null
+   }
+  ],
+  "bands": [
+   {
+    "validYears": null,
+    "pay": {
+     "posto": 0
+    }
    }
   ]
  },
@@ -889,6 +933,9 @@
    }
   ]
  },
+ "BS": {
+  "none": true
+ },
  "BT": {
   "document": "Citizenship Identity Card (CID)",
   "currency": "BTN",
@@ -970,6 +1017,29 @@
  },
  "CC": {
   "issuedBy": "AU"
+ },
+ "CD": {
+  "none": true
+ },
+ "CG": {
+  "document": "Carte nationale d'identité informatisée, sécurisée et biométrique",
+  "currency": "XAF",
+  "routes": [
+   {
+    "id": "collection-centre",
+    "where": "home",
+    "speed": "standard",
+    "within": null
+   }
+  ],
+  "bands": [
+   {
+    "validYears": null,
+    "pay": {
+     "collection-centre": null
+    }
+   }
+  ]
  },
  "CH": {
   "document": "Identitätskarte",
@@ -1417,6 +1487,26 @@
    }
   ]
  },
+ "DM": {
+  "document": "Voter identification card",
+  "currency": "XCD",
+  "routes": [
+   {
+    "id": "electoral-office",
+    "where": "home",
+    "speed": "standard",
+    "within": null
+   }
+  ],
+  "bands": [
+   {
+    "validYears": null,
+    "pay": {
+     "electoral-office": null
+    }
+   }
+  ]
+ },
  "DO": {
   "document": "Cédula de Identidad y Electoral",
   "currency": "DOP",
@@ -1773,6 +1863,33 @@
     "pay": {
      "home": 0,
      "abroad": 0
+    }
+   }
+  ]
+ },
+ "GA": {
+  "document": "Carte nationale d'identité électronique (CNIE)",
+  "currency": "XAF",
+  "routes": [
+   {
+    "id": "dgdi",
+    "where": "home",
+    "speed": "standard",
+    "within": null
+   },
+   {
+    "id": "online",
+    "where": "home",
+    "speed": "standard",
+    "within": null
+   }
+  ],
+  "bands": [
+   {
+    "validYears": null,
+    "pay": {
+     "dgdi": 0,
+     "online": 0
     }
    }
   ]
@@ -2582,6 +2699,27 @@
     "pay": {
      "police": 0
     }
+   }
+  ]
+ },
+ "KN": {
+  "document": "National Identification Card",
+  "currency": "XCD",
+  "routes": [
+   {
+    "id": "electoral-office",
+    "where": "home",
+    "speed": "standard",
+    "within": null
+   }
+  ],
+  "bands": [
+   {
+    "validYears": 10,
+    "pay": {
+     "electoral-office": null
+    },
+    "from": 18
    }
   ]
  },
@@ -5063,6 +5201,30 @@
     "pay": {
      "governorate": null
     }
+   }
+  ]
+ },
+ "VC": {
+  "document": "National identification card",
+  "currency": "XCD",
+  "routes": [
+   {
+    "id": "constituency",
+    "where": "home",
+    "speed": "standard",
+    "within": {
+     "n": 2,
+     "unit": "week"
+    }
+   }
+  ],
+  "bands": [
+   {
+    "validYears": null,
+    "pay": {
+     "constituency": null
+    },
+    "from": 18
    }
   ]
  },
