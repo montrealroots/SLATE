@@ -15,7 +15,8 @@ The owner's rule from the first SLATE (`montrealroots/1221`: `src/engine/core/te
   never at its front ("The Producers Guild of America Awards", "The Globe and Mail"), and a name its owner writes in
   lower case stays so ("dm", "Pick n Pay"), verifiable on their own signage. SLATE's own labels are Title Case to
   the letter.
-- **The gate holds it.** In the first SLATE, `title-case --check` (labels in the interface) and `label-sweep` (names
-  in the content registries, which render as labels) failed the gate; it went unchecked for a while and "Delete slot
-  1" sat in a button. When this build's text catalog gains its first label, its text check holds labels to this rule,
-  with `titleCaseLabel` and `readsAsProse` ported from 1221's `src/engine/core/text.ts`.
+- **The gate holds it before the game is done.** In the first SLATE, `title-case --check` (labels in the interface)
+  and `label-sweep` (names in the content registries, which render as labels) failed the gate; it went unchecked for
+  a while and "Delete slot 1" sat in a button. The owner's word (2026-10-29): enforce it when the game is done. It is
+  item 6 of `HANDOFF.md`'s next steps; the game isn't done until the check is in the gate and green. Until then,
+  every label written follows the rule by hand.

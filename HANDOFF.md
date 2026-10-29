@@ -890,6 +890,13 @@ What layer 0 holds:
    service guide (2025-11-02), immigration.gov.so/services (2026-08-31), naenara.com.kp (2026-10-17).
    Identity cards and citizenship: done 2026-10-29 (above); the cards' null fees and citizenship's post-2024 reforms
    to try again. Next: visas, residence and work permissions (each an engine with its own matrix), then the banks.
+6. Before the game is called done (layer 7, verification), at the owner's word on 2026-10-29: the gate enforces the
+   owner's Title Case rule (`.claude/rules/title-case.md`, taken from the first SLATE, `montrealroots/1221`). Port
+   `titleCaseLabel` and `readsAsProse` from 1221's `src/engine/core/text.ts` into `src/core/text/`, and make the
+   text check fail every label (a catalog line, a heading, button, tab or title, and a name from the data shown as a
+   label) that isn't Title Case, as 1221's `tools/title-case.mjs --check` and `tools/label-sweep.mjs` did, with
+   their exceptions (prose, acronyms, internal capitals, digit-led words, real names as their owners spell them).
+   The game isn't done until this check is in the gate and green.
 
 ## Verification evidence
 
