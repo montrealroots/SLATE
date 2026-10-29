@@ -152,6 +152,29 @@ restarts. Read `CLAUDE.md` and the owner's package in `docs/` first.
   from their primaries as hosts open (each file's note and source say which), and the conditions the notes name as
   not modelled (another country's visa or residence standing in for one, age or sex limits, organised tours). The Wikipedia-sourced rows are to be re-read from the
   primary when it opens (each file's note says which host refused).
+- The work engine (`papers.work`, `src/papers/work/`, compiled by `tools/papers/work/` from
+  `research/sources/papers/work/<CC>.json` and the shared lists in `research/sources/papers/work/groups/<name>.json`,
+  register facts `papers.work.<CC>` and `papers.work.group.<name>`) is built (2026-10-29), at 100% mutation score
+  (278 mutants). Decided: one engine for residence and work, since what lets a performer live in a country is the
+  same paper that lets them work there (free movement, or the permit for the engagement); a non-working residence is
+  out until the premise needs one. `work(citizenship, destination)` gives `free` (a right to live and work with no
+  permission asked) or `permit` with the route a performer takes as the government names it, and the days a short
+  engagement may be worked without it where the law allows (`days`, `within`), or 'home', or undefined where the
+  rules aren't kept (the player told, line `work.unkept`). A shared list names its passports and may give the rule
+  for every other; a country keeping it adds its own and its own rule for every other where needed; the compile
+  merges them so the engine reads one list. Shared lists: `eea` (Directive 2004/38 arts. 7 and 24, the EEA Joint
+  Committee's Decision 158/2007, the EU–Swiss free movement agreement), `us` (the O-1 petition for everyone but the
+  Compact states' citizens, 8 CFR 214.2(o) and 274a.12(a)(8)), kept by the US, Guam, Puerto Rico, the US Virgin
+  Islands and the Northern Marianas (8 U.S.C. 1101(a)(38)). Own rules: Germany (BeschV §§ 22, 25, 30: the
+  Federal Employment Agency's approval for artistic work, 90 days in twelve months without it for festivals, guest
+  performances and foreign productions), France and its departments with Saint Martin and Saint Barthélemy (the
+  « talent – profession artistique et culturelle » card, three months without a work authorisation, Code du travail
+  D. 5221-2-1 read from the Culture Ministry's guide since Légifrance refuses this client), the United Kingdom (the
+  Temporary Work – Creative Worker visa, 30 days of permitted paid engagements, Irish citizens free). Matrix
+  (2026-10-29): 15 researched, 6 proven, 231 pending: every other country to research next, each from its own
+  immigration law or office (the performer's route, its short-engagement exemption, its free-movement partners:
+  the EEA, the CTA, Trans-Tasman, Mercosur, CARICOM, the GCC, ECOWAS, the EAC, the EAEU, the Compacts, India–Nepal
+  and India–Bhutan).
 
 The passports' form (decided 2026-10-28, the engine's reader being the Papers page: apply, pay, wait, hold a
 passport valid so many years). Each research file has `routes`, one per way the office takes an application: `id`,
