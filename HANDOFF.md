@@ -119,8 +119,11 @@ restarts. Read `CLAUDE.md` and the owner's package in `docs/` first.
   exemption ended 15 September 2026; the MFA's bilateral table), Singapore (ICA), Malaysia (Immigration), Indonesia
   (Permenimipas 10/2026 for the exemption), and, where the governments' sites refuse this client, from Wikipedia's
   copies marked secondary with the primary named: the Philippines, Vietnam, Cambodia, Laos, Myanmar, Brunei,
-  Timor-Leste, the UAE, Türkiye, Saudi Arabia, Qatar, Kuwait, Bahrain, Oman. Matrix (2026-10-29): 72 researched,
-  6 proven, 174 pending: every other country's own list to research next, and the French, Dutch and Danish
+  Timor-Leste, the UAE, Türkiye, Saudi Arabia, Qatar, Kuwait, Bahrain, Oman, the Middle East (Israel with Palestine as
+  a shared list `il`, Jordan, Lebanon, Egypt, Iraq, Iran, Syria, Yemen, Afghanistan), the Caucasus and Central Asia,
+  Russia (its ETA for the visa-exempt), Belarus, Ukraine, the Western Balkans, Moldova; Åland, Monaco, San Marino, the
+  Vatican, Andorra, the Faroes and Greenland keep the eu1806 list; Svalbard has no visa regime. Matrix (2026-10-29):
+  109 researched, 6 proven, 137 pending: every other country's own list to research next, and the French, Dutch and Danish
   territories outside Schengen, each with its own list. The Wikipedia-sourced rows are to be re-read from the
   primary when it opens (each file's note says which host refused).
 
