@@ -124,8 +124,12 @@ restarts. Read `CLAUDE.md` and the owner's package in `docs/` first.
   Russia (its ETA for the visa-exempt), Belarus, Ukraine, the Western Balkans, Moldova; Åland, Monaco, San Marino, the
   Vatican, Andorra, the Faroes and Greenland keep the eu1806 list; Svalbard has no visa regime; South and Central
   America (Argentina to Nicaragua, Costa Rica, Panama, Belize) from Wikipedia's copies with the migration authority
-  named. Matrix (2026-10-29): 127 researched, 6 proven, 119 pending: every other country's own list to research next
-  (the Caribbean, Africa, South Asia, Oceania, North Korea, Taiwan), and the French, Dutch and Danish
+  named; the Caribbean states (Cuba to Saint Vincent) likewise; `nlcarib`, the Kingdom of the Netherlands' common list
+  for Aruba, Curaçao, Sint Maarten and the Caribbean Netherlands (NetherlandsWorldwide, the government's own pages:
+  90 days in 180, US nationals 180 in 365), with each territory's differences on top (Aruba's 180 days for Schengen
+  nationals, Curaçao's Jamaicans, Sint Maarten's Guyanese). Matrix (2026-10-29): 144 researched, 6 proven,
+  102 pending: every other country's own list to research next (the British territories, Africa, South Asia,
+  Oceania, North Korea, Taiwan), and the French
   territories outside Schengen, each with its own list. The Wikipedia-sourced rows are to be re-read from the
   primary when it opens (each file's note says which host refused).
 
