@@ -1922,6 +1922,9 @@
  "FJ": {
   "none": true
  },
+ "FM": {
+  "none": true
+ },
  "FO": {
   "none": true
  },
@@ -2835,6 +2838,26 @@
    }
   ]
  },
+ "KI": {
+  "document": "National ID smartcard",
+  "currency": "AUD",
+  "routes": [
+   {
+    "id": "registration",
+    "where": "home",
+    "speed": "standard",
+    "within": null
+   }
+  ],
+  "bands": [
+   {
+    "validYears": null,
+    "pay": {
+     "registration": null
+    }
+   }
+  ]
+ },
  "KM": {
   "document": "Carte nationale d'identité comorienne numérisée biométrique",
   "currency": "KMF",
@@ -2881,6 +2904,27 @@
      "electoral-office": null
     },
     "from": 18
+   }
+  ]
+ },
+ "KP": {
+  "document": "Citizen's identity card (공민증)",
+  "currency": "KPW",
+  "routes": [
+   {
+    "id": "safety",
+    "where": "home",
+    "speed": "standard",
+    "within": null
+   }
+  ],
+  "bands": [
+   {
+    "validYears": null,
+    "pay": {
+     "safety": null
+    },
+    "from": 17
    }
   ]
  },
@@ -3557,6 +3601,26 @@
    }
   ]
  },
+ "MH": {
+  "document": "National identification card",
+  "currency": "USD",
+  "routes": [
+   {
+    "id": "registrar",
+    "where": "home",
+    "speed": "standard",
+    "within": null
+   }
+  ],
+  "bands": [
+   {
+    "validYears": null,
+    "pay": {
+     "registrar": null
+    }
+   }
+  ]
+ },
  "MK": {
   "document": "лична карта",
   "currency": "MKD",
@@ -3618,6 +3682,26 @@
      "police": 1700
     },
     "from": 18
+   }
+  ]
+ },
+ "MM": {
+  "document": "National registration card (citizenship scrutiny card)",
+  "currency": "MMK",
+  "routes": [
+   {
+    "id": "immigration",
+    "where": "home",
+    "speed": "standard",
+    "within": null
+   }
+  ],
+  "bands": [
+   {
+    "validYears": null,
+    "pay": {
+     "immigration": null
+    }
    }
   ]
  },
@@ -4166,6 +4250,9 @@
    }
   ]
  },
+ "NR": {
+  "none": true
+ },
  "NU": {
   "issuedBy": "NZ"
  },
@@ -4452,6 +4539,9 @@
    }
   ]
  },
+ "PW": {
+  "none": true
+ },
  "PY": {
   "document": "Cédula de Identidad Civil",
   "currency": "PYG",
@@ -4676,6 +4766,9 @@
     "from": 15
    }
   ]
+ },
+ "SB": {
+  "none": true
  },
  "SC": {
   "document": "National Identity Card",
@@ -5353,6 +5446,35 @@
  "TK": {
   "issuedBy": "NZ"
  },
+ "TL": {
+  "document": "Bilhete de identidade",
+  "currency": "USD",
+  "routes": [
+   {
+    "id": "registos",
+    "where": "home",
+    "speed": "standard",
+    "within": null
+   }
+  ],
+  "bands": [
+   {
+    "validYears": 5,
+    "pay": {
+     "registos": null
+    },
+    "under": 60
+   },
+   {
+    "validYears": null,
+    "pay": {
+     "registos": null
+    },
+    "from": 60,
+    "permanent": true
+   }
+  ]
+ },
  "TM": {
   "document": "Passport of a citizen of Turkmenistan",
   "currency": "TMT",
@@ -5392,6 +5514,26 @@
     "validYears": null,
     "pay": {
      "interior": null
+    }
+   }
+  ]
+ },
+ "TO": {
+  "document": "National identity card",
+  "currency": "TOP",
+  "routes": [
+   {
+    "id": "nico",
+    "where": "home",
+    "speed": "standard",
+    "within": null
+   }
+  ],
+  "bands": [
+   {
+    "validYears": null,
+    "pay": {
+     "nico": null
     }
    }
   ]
@@ -5436,6 +5578,9 @@
     "from": 15
    }
   ]
+ },
+ "TV": {
+  "none": true
  },
  "TW": {
   "document": "國民身分證 (National Identification Card)",
@@ -5778,8 +5923,31 @@
    }
   ]
  },
+ "VU": {
+  "document": "Vanuatu ID Card",
+  "currency": "VUV",
+  "routes": [
+   {
+    "id": "crim",
+    "where": "home",
+    "speed": "standard",
+    "within": null
+   }
+  ],
+  "bands": [
+   {
+    "validYears": null,
+    "pay": {
+     "crim": null
+    }
+   }
+  ]
+ },
  "WF": {
   "issuedBy": "FR"
+ },
+ "WS": {
+  "none": true
  },
  "XK": {
   "document": "letërnjoftim",
