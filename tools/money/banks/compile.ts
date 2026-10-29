@@ -13,7 +13,8 @@ import { civilFromDays, daysFromCivil } from '../../../src/core/time/calendar.ts
  * nothing to keep): each in the major units of the account's currency (the country's unless the bank names another),
  * how often it's charged (`per`: a month, two months, a quarter, half a year or a year), and the conditions any one of
  * which waives it (`waived`): money paid in over the period (`deposits`), a balance never below a figure through it
- * (`balance`), an average daily balance (`average`), or an age (`under`, `from`). A condition the game can't check
+ * (`balance`), an average daily balance (`average`), an age (`under`, `from`), or citizenship of the bank's country
+ * (`national`). A condition the game can't check
  * isn't written, and the fee is charged in full, as it would be to anyone who doesn't meet it. A price list that states
  * the fee's next figure and the day it takes effect gives it (`changes`, each a date and the figure from it, in order).
  */
@@ -23,7 +24,7 @@ export const OUTPUT = 'src/money/banks/banks.json';
 export const PERIODS = ['month', 'bimonth', 'quarter', 'half', 'year'] as const;
 export type Period = (typeof PERIODS)[number];
 
-export type Waiver = { deposits: Money } | { balance: Money } | { average: Money } | { under: number } | { from: number };
+export type Waiver = { deposits: Money } | { balance: Money } | { average: Money } | { under: number } | { from: number } | { national: true };
 
 export interface Change {
   from: string;
@@ -64,6 +65,10 @@ export function waiver(w: unknown, currency: CurrencyCode, what: string): Waiver
     const m = amount(currency, value, `${what}'s ${key}`);
     if (m.minor === 0) throw new Error(`${what}'s ${key} is above nothing`);
     return { [key]: m } as Waiver;
+  }
+  if (key === 'national') {
+    if (value !== true) throw new Error(`${what}'s national is true`);
+    return { national: true };
   }
   if ((AGES as readonly string[]).includes(key)) {
     if (!Number.isInteger(value) || (value as number) < 1 || (value as number) > 120) throw new Error(`${what}'s ${key} is an age in whole years`);

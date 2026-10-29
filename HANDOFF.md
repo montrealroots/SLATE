@@ -271,7 +271,8 @@ restarts. Read `CLAUDE.md` and the owner's package in `docs/` first.
   keep), each fee in the account's currency (the country's unless the bank prices it in another, as Rawbank its
   packs in dollars), how often it's charged (a month, two months, a quarter, half a year, a year) and the conditions
   any one of which waives it that the game can check: money paid in over the period, a balance never below a figure,
-  an average daily balance, an age under or from. A condition it can't check (a student's status, a pension paid in,
+  an average daily balance, an age under or from, citizenship of the bank's country (`national`; added for banks that
+  exempt their own nationals). A condition it can't check (a student's status, a pension paid in,
   an application, membership of a co-operative) isn't written, and the fee is charged in full, as to anyone who
   doesn't meet it; the note says so. `feeFor(fee, standing, day)` is what the ledger will read each period. Every figure
   is read from the bank's own price list, fee schedule or account page (or, in the EEA and the UK, its Fee
@@ -286,8 +287,8 @@ restarts. Read `CLAUDE.md` and the owner's package in `docs/` first.
   2027 price), `feeOn(fee, day)` reading the figure in force; an age-banded fee is charged as parts each waived by its
   band (Slovenská sporiteľňa's 7 euros, 3.50 from 62, nothing under 27); a fee waived for a period after another was
   charged is left out where the other is always charged in the game's reading (HSBC Malta's minimum balance fee).
-  An image-only fee document (DNB's) is read by eye and cited without a saved page. Matrix (2026-10-29): 87
-  researched, 6 proven, 159 pending; the remaining countries are researched next by targeted search, and a country
+  An image-only fee document (DNB's) is read by eye and cited without a saved page. Matrix (2026-10-29): 97
+  researched, 6 proven, 149 pending; the remaining countries are researched next by targeted search, and a country
   whose banks' fees can't be read after all five methods gets its blocker.
 
 The passports' form (decided 2026-10-28, the engine's reader being the Papers page: apply, pay, wait, hold a

@@ -19,6 +19,8 @@ describe('the banks compile', () => {
     expect(waiver({ under: 26 }, 'USD', 'w')).toStrictEqual({ under: 26 });
     expect(waiver({ from: 1 }, 'USD', 'w')).toStrictEqual({ from: 1 });
     expect(waiver({ from: 120 }, 'USD', 'w')).toStrictEqual({ from: 120 });
+    expect(waiver({ national: true }, 'USD', 'w')).toStrictEqual({ national: true });
+    for (const v of [false, 'true', 1]) expect(() => waiver({ national: v }, 'USD', 'w'), String(v)).toThrow("w's national is true");
   });
 
   it('refuses a condition the game can\'t check', () => {

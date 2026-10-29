@@ -18,7 +18,9 @@ export type Waiver =
   | { readonly balance: Money }
   | { readonly average: Money }
   | { readonly under: number }
-  | { readonly from: number };
+  | { readonly from: number }
+  /** The holder is a citizen of the bank's country. */
+  | { readonly national: true };
 
 export interface Fee {
   readonly fee: Money;
@@ -53,6 +55,8 @@ export interface Standing {
   readonly lowest: Money;
   /** The average of its daily balances. */
   readonly average: Money;
+  /** Whether the holder is a citizen of the bank's country. */
+  readonly national: boolean;
 }
 
 const met = (w: Waiver, s: Standing): boolean => {
@@ -60,6 +64,7 @@ const met = (w: Waiver, s: Standing): boolean => {
   if ('balance' in w) return compare(s.lowest, w.balance) >= 0;
   if ('average' in w) return compare(s.average, w.average) >= 0;
   if ('under' in w) return s.age < w.under;
+  if ('national' in w) return s.national;
   return s.age >= w.from;
 };
 
