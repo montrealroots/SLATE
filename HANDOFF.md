@@ -339,7 +339,7 @@ restarts. Read `CLAUDE.md` and the owner's package in `docs/` first.
   and IEOM for the French overseas territories), each bank's international deferred-debit card is kept, a charge card,
   their revolving credit not being in the table. A government charge the bank applies to the card each year is
   written as a yearly fee (AIB's 30-euro stamp duty). The first SLATE's card was a limit and a balance per family, with no bank behind it; its interest and fees weren't
-  researched. Matrix (2026-10-29): 81 researched, 6 proven, 165 pending.
+  researched. Matrix (2026-10-29): 82 researched, 25 blocked, 6 proven, 139 pending.
 
 The passports' form (decided 2026-10-28, the engine's reader being the Papers page: apply, pay, wait, hold a
 passport valid so many years). Each research file has `routes`, one per way the office takes an application: `id`,
