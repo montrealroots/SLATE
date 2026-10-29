@@ -115,9 +115,14 @@ restarts. Read `CLAUDE.md` and the owner's package in `docs/` first.
   exempt and their stays; others a visa on arrival), India (the e-Visa list of 174, Japan and Korea on arrival, Nepal,
   Bhutan, the Maldives free), Mexico (INM's list of visa nationalities, read from its image; Brazil's e-visa since
   5 February 2026), Brazil (Itamaraty's table of 7 October 2026; the US, Canada and Australia by e-Visa). A stay is
-  `days` (with `within`) or `months`. Matrix (2026-10-29): 54 researched, 6 proven, 192 pending: every other
-  country's own list to research next, and the French, Dutch and Danish territories outside Schengen, each with its
-  own list.
+  `days` (with `within`) or `months`. Then Thailand (TAT on the Royal Gazette of 31 August 2026, the 60-day
+  exemption ended 15 September 2026; the MFA's bilateral table), Singapore (ICA), Malaysia (Immigration), Indonesia
+  (Permenimipas 10/2026 for the exemption), and, where the governments' sites refuse this client, from Wikipedia's
+  copies marked secondary with the primary named: the Philippines, Vietnam, Cambodia, Laos, Myanmar, Brunei,
+  Timor-Leste, the UAE, Türkiye, Saudi Arabia, Qatar, Kuwait, Bahrain, Oman. Matrix (2026-10-29): 72 researched,
+  6 proven, 174 pending: every other country's own list to research next, and the French, Dutch and Danish
+  territories outside Schengen, each with its own list. The Wikipedia-sourced rows are to be re-read from the
+  primary when it opens (each file's note says which host refused).
 
 The passports' form (decided 2026-10-28, the engine's reader being the Papers page: apply, pay, wait, hold a
 passport valid so many years). Each research file has `routes`, one per way the office takes an application: `id`,
