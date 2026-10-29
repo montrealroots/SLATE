@@ -22,6 +22,8 @@ describe('visits', () => {
     expect([visit('MY', 'GU'), visit('MY', 'US'), visit('JP', 'GU'), visit('CN', 'GU')]).toStrictEqual([{ entry: 'eta', days: 45 }, { entry: 'visa' }, { entry: 'eta', days: 90 }, { entry: 'visa' }]);
     // A stay counted in months, and a list with no limit for its neighbours.
     expect([visit('US', 'GB'), visit('IE', 'GB'), visit('AU', 'NZ'), visit('NZ', 'AU')]).toStrictEqual([{ entry: 'eta', months: 6 }, { entry: 'free' }, { entry: 'free' }, { entry: 'free' }]);
+    // A territory's own citizens are home there even where its list names its state's passport (mainland China's).
+    expect([visit('HK', 'HK'), visit('CN', 'HK'), visit('MO', 'HK'), visit('HK', 'CN')]).toStrictEqual(['home', { entry: 'visa' }, { entry: 'free', days: 180 }, 'home']);
     expect(visit('US', 'AQ')).toBeUndefined();
   });
 

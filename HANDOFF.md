@@ -109,9 +109,15 @@ restarts. Read `CLAUDE.md` and the owner's package in `docs/` first.
   (IRPR ss. 7, 7.1, 183(2), 190, Sch. 1.1), New Zealand (INZ's visa waiver list; legislation.govt.nz refuses this client),
   Japan (MOFA, the Immigration Services Agency and the embassies all refuse this client, 403: MOFA's table is read from
   Wikipedia's copy, marked secondary), Korea (HiKorea's agreement and designation tables, K-ETA and its 22 exemptions to
-  31 December 2026). A stay is `days` (with `within`) or `months`. Matrix (2026-10-29): 48 researched, 6 proven, 198
-  pending: every other country's own list to research next (China, Hong Kong, Macao, India, Mexico, Brazil, then the
-  rest), and the French, Dutch and Danish territories outside Schengen, each with its own list.
+  31 December 2026), China (the Consular Department's unilateral visa-free notice, read from the official visa
+  centre's copy, Canada and the UK from 17 February 2026, Russia to 2027, the ordinary-passport mutual exemptions from
+  its own table; Taiwan residents' permit at the port), Hong Kong (ImmD's table; others 7 days), Macao (gov.mo, the 88
+  exempt and their stays; others a visa on arrival), India (the e-Visa list of 174, Japan and Korea on arrival, Nepal,
+  Bhutan, the Maldives free), Mexico (INM's list of visa nationalities, read from its image; Brazil's e-visa since
+  5 February 2026), Brazil (Itamaraty's table of 7 October 2026; the US, Canada and Australia by e-Visa). A stay is
+  `days` (with `within`) or `months`. Matrix (2026-10-29): 54 researched, 6 proven, 192 pending: every other
+  country's own list to research next, and the French, Dutch and Danish territories outside Schengen, each with its
+  own list.
 
 The passports' form (decided 2026-10-28, the engine's reader being the Papers page: apply, pay, wait, hold a
 passport valid so many years). Each research file has `routes`, one per way the office takes an application: `id`,

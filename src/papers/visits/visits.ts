@@ -42,14 +42,15 @@ const listOf = (country: CountryCode): List | undefined => {
 };
 
 /**
- * What a citizen of one country needs to visit another: 'home' where the destination is the citizen's own state, or
- * is of its nationality and its list doesn't name it; the list's rule for the citizenship itself where it names it (a
- * territory's own passport, as Bermuda's), else for the citizen's nationality, else its rule for every other passport;
- * undefined where the game doesn't keep the destination's list.
+ * What a citizen of one country needs to visit another: 'home' where the destination is the citizen's own country or
+ * state (a Hong Kong citizen in Hong Kong, though Hong Kong's list names China's passport), or is of its nationality and
+ * its list doesn't name it; the list's rule for the citizenship itself where it names it (a territory's own passport,
+ * as Bermuda's), else for the citizen's nationality, else its rule for every other passport; undefined where the game
+ * doesn't keep the destination's list.
  */
 export function visit(citizenship: CountryCode, destination: CountryCode): Visit | 'home' | undefined {
   const mine = nationality(citizenship);
-  if (mine === destination) return 'home';
+  if (citizenship === destination || mine === destination) return 'home';
   const list = listOf(destination);
   if (list === undefined) return undefined;
   const named = list.passports[citizenship] ?? list.passports[String(mine)];
