@@ -180,8 +180,7 @@ restarts. Read `CLAUDE.md` and the owner's package in `docs/` first.
   performing arts), Poland (30 days a year, the Zielona Linia), Czechia (the employee card), Slovakia (30 days a
   year, Act 5/2004 as in force from 1 August 2026), Hungary (the Hungarian Card for a performing artist, Act XC of
   2023 § 36; neither it nor Decree 35/2024 names days without it), Slovenia (performers outside the ZZSDT, art.
-  5(2)(11), with no day count of their own, so no days; the single permit without the Employment Service's consent,
-  ZTuj-2 art. 37), Croatia (OECD citizens' artists without even a work registration certificate during a short stay, Aliens
+  5(2)(11): free; a longer stay on the single permit without the Employment Service's consent, ZTuj-2 art. 37), Croatia (OECD citizens' artists without even a work registration certificate during a short stay, Aliens
   Act art. 89(6); others the residence and work permit, or a registration certificate for up to 90 days a year),
   Romania (OUG 194/2002 as amended by OUG 32/2026, which repealed OG 25/2014), Bulgaria (the single permit, from a
   2024 analysis since lex.bg refuses this client), Greece (the Migration Code's Z.2 visa for members of artistic
@@ -246,7 +245,13 @@ restarts. Read `CLAUDE.md` and the owner's package in `docs/` first.
   Kazakhstan (artists need no permit to employ foreign labour, Decree 1041 item 11: free, the stay being the visa's).
   Shared list `eaeu` (the Eurasian Economic Commission: EAEU Treaty art. 97, members' citizens work without a
   permit): Armenia, Belarus, Kazakhstan, Kyrgyzstan, Russia. Decided: `free` means no permission to work is asked;
-  a stay beyond the visit is the visa's or residence permit's, as in Svalbard and Kazakhstan. South-East Asia: the
+  a stay beyond the visit is the visa's or residence permit's, as in Svalbard and Kazakhstan. Where a law exempts
+  performers from the work permit outright, film included, they're free (Kazakhstan, Armenia, Slovenia); an
+  exemption with conditions that leave an actor's film work or employment out stays a permit (Canada's non-film
+  tours, Spain's single performances, Brazil's visit with a fee). Armenia (the Law On Foreigners exempts performers
+  for cinematography, theatre and concert tours, from a law firm's summary), Georgia (the labour permit required from
+  1 March 2026; short-term professional activity, registered, up to four months a year: 120 days within 365, from a
+  relocation firm's summary). South-East Asia: the
   Philippines (the Bureau of Immigration's Special Work Permit for artists, six months at most), Thailand (the work
   permit; the urgent-work notification for government-supported concerts, being for major events only, isn't days),
   Indonesia (the music performer visa C7A, no labour permit since 2023), Malaysia (PUSPAL and the Professional Visit
@@ -256,7 +261,7 @@ restarts. Read `CLAUDE.md` and the owner's package in `docs/` first.
   B/1 work visa for a foreign artist, from a law firm), Egypt (the Musicians Syndicate's performing licence, from a
   report). ECOWAS's and the EAC's free movement aren't modelled as shared lists yet. Blockers registered (papers.work.blocked.<CC>, five methods each, the player told by line
   `work.unkept`): Lithuania, Jersey, the Faroe Islands, Venezuela, Nicaragua, Saudi Arabia, Qatar, Bahrain. An exemption only for artists of fame or a significant event's main attraction (Belgium,
-  Denmark) isn't modelled as days open to a performer. Matrix (2026-10-29): 100 researched, 8 blocked, 6 proven, 138 pending:
+  Denmark) isn't modelled as days open to a performer. Matrix (2026-10-29): 102 researched, 8 blocked, 6 proven, 136 pending:
   every other country to research next, each from its own
   immigration law or office (the performer's route, its short-engagement exemption, its free-movement partners:
   the EEA, the CTA, Trans-Tasman, Mercosur, CARICOM, the GCC, ECOWAS, the EAC, the EAEU, the Compacts, India–Nepal
