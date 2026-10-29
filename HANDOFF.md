@@ -287,8 +287,8 @@ restarts. Read `CLAUDE.md` and the owner's package in `docs/` first.
   2027 price), `feeOn(fee, day)` reading the figure in force; an age-banded fee is charged as parts each waived by its
   band (Slovenská sporiteľňa's 7 euros, 3.50 from 62, nothing under 27); a fee waived for a period after another was
   charged is left out where the other is always charged in the game's reading (HSBC Malta's minimum balance fee).
-  An image-only fee document (DNB's) is read by eye and cited without a saved page. Matrix (2026-10-29): 97
-  researched, 6 proven, 149 pending; the remaining countries are researched next by targeted search, and a country
+  An image-only fee document (DNB's) is read by eye and cited without a saved page. Matrix (2026-10-29): 109
+  researched, 6 proven, 137 pending; the remaining countries are researched next by targeted search, and a country
   whose banks' fees can't be read after all five methods gets its blocker.
 
 The passports' form (decided 2026-10-28, the engine's reader being the Papers page: apply, pay, wait, hold a
