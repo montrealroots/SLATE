@@ -299,8 +299,22 @@ restarts. Read `CLAUDE.md` and the owner's package in `docs/` first.
   the fetch tool is read through the fetch tool's saved copy (BSB Bank's, maib's, Santander Uruguay's). Where a fee differs for salaried and
   non-salaried customers, the non-salaried rate is taken, a performer working by engagement being one (Coris Bank's
   West African conditions). A waiver for a balance below a figure isn't written, the game's waivers being balances
-  at or above one (Nedbank Zimbabwe's). Matrix (2026-10-29): 221 researched, 6 proven, 25 pending; the remaining countries are researched next by targeted search, and a country
-  whose banks' fees can't be read after all five methods gets its blocker.
+  at or above one (Nedbank Zimbabwe's), and a lower rate below a figure likewise isn't, the fee being charged in full
+  (BNU Timor's 0.30 dollars under 150). A bank's complete published list of charges with no line for keeping an
+  account is read as the account costing nothing to keep, and the note says so (the Commercial Bank of Kuwait's, the
+  Bank of Abyssinia's); a charge on turnover (per mille of debits) or per transaction isn't a fee the game counts, and
+  a savings account is taken where the current account's only charge is one (Access Bank Nigeria's). A card's yearly
+  or quarterly price belongs to the card, not the account. A place with no bank of its own takes the bank its own
+  pages show serving it (SpareBank 1 Nord-Norge for Svalbard, CommBank's agency for Nauru, Kiwibank's for Niue,
+  Westpac's branch for Christmas Island, found in Westpac's locator data, Community Bank's on Diego Garcia); where
+  none could be shown, it has a blocker (Cocos, Pitcairn, Tokelau, South Georgia, the French Southern Territories).
+  A bank's page that answers only to a rendering browser is read rendered and cited by its text (Access Bank Liberia's
+  tariff); a spreadsheet tariff is read through a dump of its cells (Kapital Bank's). Matrix (2026-10-29): complete,
+  222 researched, 24 blocked, 6 proven, none pending. Blocked: the bank's own charges couldn't be read after all five
+  methods (Cuba, North Korea, Russia, Iran, Syria, Yemen, Eritrea, Somalia, Sierra Leone, Mauritania, São Tomé, the
+  Comoros, Gabon, Congo, the Central African Republic, Western Sahara, the Falklands, the Vatican, Tuvalu and the
+  five places above); most fail because the bank's site doesn't answer, sits behind a bot check, or publishes no
+  tariff. Open: retry the blockers.
 
 The passports' form (decided 2026-10-28, the engine's reader being the Papers page: apply, pay, wait, hold a
 passport valid so many years). Each research file has `routes`, one per way the office takes an application: `id`,

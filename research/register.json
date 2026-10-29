@@ -55928,6 +55928,968 @@
      "said": "CONDITIONS G\u00c9N\u00c9RALES DE BANQUE ... APPLICABLES AU 30 SEPTEMBRE 2025 ... (PARTICULIERS) ... Ouverture de compte courant ... Frais de tenue de compte \u00e0 vue ... Gratuit"
     }
    ]
+  },
+  {
+   "id": "R-1934",
+   "fact": "money.banks.IO",
+   "sought": "The banks of British Indian Ocean Territory and what their everyday account costs, as each bank publishes it",
+   "status": "found",
+   "value": {
+    "file": "research/sources/money/banks/IO.json",
+    "sha256": "845928de0ada7120dfd799ba1d39a870115b32695592305400d9389d707cb611"
+   },
+   "sources": [
+    {
+     "kind": "primary",
+     "url": "https://www.dodcommunitybank.com/home/locations/diego_garcia",
+     "title": "Community Bank, Diego Garcia-U.S. Navy Support Facility",
+     "read": "2026-10-29",
+     "said": "Diego Garcia-U.S. Navy Support Facility ... Hours/Contact ... Diego Garcia Ships Store"
+    },
+    {
+     "kind": "primary",
+     "url": "https://www.dodcommunitybank.com/resources/Account_Miscellaneous_Schedule_of_Fees_FINAL_09_02_2026.pdf",
+     "title": "Community Bank, Account and Miscellaneous Schedule of Fees (effective 2 September 2026)",
+     "read": "2026-10-29",
+     "said": "Effective September 2, 2026, previous editions obsolete ... Regular Checking Minimum balance - $0 ... Monthly maintenance fee - $0"
+    }
+   ]
+  },
+  {
+   "id": "R-1935",
+   "fact": "money.banks.blocked.CC",
+   "sought": "The banks of Cocos Islands and what their everyday account costs, as each bank publishes it",
+   "status": "blocked",
+   "attempts": [
+    {
+     "method": "institution",
+     "tried": "Westpac's branch locator data (digital-api.westpac.com.au, searched at the islands), auspost.com.au post-office pages for Cocos (Keeling) Islands, West Island and Home Island, shire.cc",
+     "result": "The nearest Westpac branch is Christmas Island's, none on the Cocos; the post-office pages carry no Bank@Post listing; the shire's site answers 403.",
+     "date": "2026-10-29"
+    },
+    {
+     "method": "official-register",
+     "tried": "infrastructure.gov.au, Indian Ocean Territories pages",
+     "result": "The HTTP/2 stream fails (000).",
+     "date": "2026-10-29"
+    },
+    {
+     "method": "web-search",
+     "tried": "'Christmas Island bank branch 2026 OR Cocos Keeling Islands bank agency Westpac OR CommBank OR Bendigo' and 'Cocos Keeling Islands banking Bank@Post OR Commonwealth Bank agency OR no bank ...'",
+     "result": "An old parliamentary committee report (no bank, a Commonwealth Bank agent), a Wikipedia list and cruising reports; nothing current.",
+     "date": "2026-10-29"
+    },
+    {
+     "method": "trade-press",
+     "tried": "Press results among the searches named",
+     "result": "None gave a bank's own account charge.",
+     "date": "2026-10-29"
+    },
+    {
+     "method": "archive",
+     "tried": "The Wayback Machine (web.archive.org) for the bank pages named above",
+     "result": "This environment's egress refuses web.archive.org (the tunnel closes after the TLS hello); no snapshot could be read.",
+     "date": "2026-10-29"
+    }
+   ],
+   "notModeled": "banks.unkept"
+  },
+  {
+   "id": "R-1936",
+   "fact": "money.banks.blocked.CF",
+   "sought": "The banks of Central African Republic and what their everyday account costs, as each bank publishes it",
+   "status": "blocked",
+   "attempts": [
+    {
+     "method": "institution",
+     "tried": "bpmc-rca.com, cbca.cf, afrilandfirstbank.cf, bgfibankca.bgfi.com",
+     "result": "No answer (000).",
+     "date": "2026-10-29"
+    },
+    {
+     "method": "official-register",
+     "tried": "beac.int, COBAC regulations page",
+     "result": "It lists R\u00e8glement 04/19 on the TEG but not COBAC R-2020/04 on the guaranteed minimum banking service; its 2009 \"Architecture de la tarification\" is too old to use.",
+     "date": "2026-10-29"
+    },
+    {
+     "method": "web-search",
+     "tried": "'Centrafrique Bangui banque conditions de banque frais de tenue de compte particuliers Ecobank Centrafrique OR CBCA OR BPMC OR Afriland First Bank Centrafrique OR BSIC Centrafrique'",
+     "result": "Wikipedia, a blog saying no official grid is published, Financial Afrik on BANGE's planned entry; no figure.",
+     "date": "2026-10-29"
+    },
+    {
+     "method": "trade-press",
+     "tried": "Financial Afrik (August 2026)",
+     "result": "On a new bank's entry, no fee.",
+     "date": "2026-10-29"
+    },
+    {
+     "method": "archive",
+     "tried": "The Wayback Machine (web.archive.org) for the bank pages named above",
+     "result": "This environment's egress refuses web.archive.org (the tunnel closes after the TLS hello); no snapshot could be read.",
+     "date": "2026-10-29"
+    }
+   ],
+   "notModeled": "banks.unkept"
+  },
+  {
+   "id": "R-1937",
+   "fact": "money.banks.blocked.CG",
+   "sought": "The banks of Republic of the Congo and what their everyday account costs, as each bank publishes it",
+   "status": "blocked",
+   "attempts": [
+    {
+     "method": "institution",
+     "tried": "bgfibankcongo.bgfi.com, bgfibankcongo.com, creditducongo.com, lcb-bank.com, bsca.cg, ubacongo.com, congo.coris.bank",
+     "result": "No answer from any of them (000 or a reset).",
+     "date": "2026-10-29"
+    },
+    {
+     "method": "official-register",
+     "tried": "beac.int, COBAC regulations page",
+     "result": "It lists R\u00e8glement 04/19 on the TEG but not COBAC R-2020/04 on the guaranteed minimum banking service; its 2009 \"Architecture de la tarification\" is too old to use.",
+     "date": "2026-10-29"
+    },
+    {
+     "method": "web-search",
+     "tried": "'Cr\u00e9dit du Congo OR LCB Bank OR Ecobank Congo OR UBA Congo Brazzaville conditions de banque particuliers frais de tenue de compte pdf 2025 OR 2026'",
+     "result": "A consumer blog's ranges (iambeezy.app), unverified and not a bank's; sgg.cg's arr\u00eat\u00e9 on Cr\u00e9dit du Congo's management only.",
+     "date": "2026-10-29"
+    },
+    {
+     "method": "trade-press",
+     "tried": "Press results among the searches named",
+     "result": "None gave a bank's own account charge.",
+     "date": "2026-10-29"
+    },
+    {
+     "method": "archive",
+     "tried": "The Wayback Machine (web.archive.org) for the bank pages named above",
+     "result": "This environment's egress refuses web.archive.org (the tunnel closes after the TLS hello); no snapshot could be read.",
+     "date": "2026-10-29"
+    }
+   ],
+   "notModeled": "banks.unkept"
+  },
+  {
+   "id": "R-1938",
+   "fact": "money.banks.blocked.CU",
+   "sought": "The banks of Cuba and what their everyday account costs, as each bank publishes it",
+   "status": "blocked",
+   "attempts": [
+    {
+     "method": "institution",
+     "tried": "bm.cu (Banco Metropolitano), bandec.cu, bpa.cu",
+     "result": "The proxy's CONNECT fails (502): unreachable from here.",
+     "date": "2026-10-29"
+    },
+    {
+     "method": "official-register",
+     "tried": "bc.gob.cu (Banco Central de Cuba)",
+     "result": "No answer (000).",
+     "date": "2026-10-29"
+    },
+    {
+     "method": "web-search",
+     "tried": "'Banco Metropolitano Cuba tarifas cuenta de ahorro comisi\u00f3n mantenimiento CUP' and 'bm.cu tarifas servicios bancarios personas naturales'",
+     "result": "directoriocubano.info (secondary, undated, from the bank's social posts: 40 pesos maintenance on income accounts, truncated); not the bank's own tariff.",
+     "date": "2026-10-29"
+    },
+    {
+     "method": "trade-press",
+     "tried": "directoriocubano.info and cubanet",
+     "result": "The same undated item; cubanet on limits, not fees.",
+     "date": "2026-10-29"
+    },
+    {
+     "method": "archive",
+     "tried": "The Wayback Machine (web.archive.org) for the bank pages named above",
+     "result": "This environment's egress refuses web.archive.org (the tunnel closes after the TLS hello); no snapshot could be read.",
+     "date": "2026-10-29"
+    }
+   ],
+   "notModeled": "banks.unkept"
+  },
+  {
+   "id": "R-1939",
+   "fact": "money.banks.blocked.EH",
+   "sought": "The banks of Western Sahara and what their everyday account costs, as each bank publishes it",
+   "status": "blocked",
+   "attempts": [
+    {
+     "method": "institution",
+     "tried": "attijariwafabank.com agency pages and its La\u00e2youne press release, bankofafrica.ma agency finder, cihbank.ma, albaridbank.ma, gbp.ma",
+     "result": "Attijariwafa's pages sit behind a Cloudflare challenge (not passed); Bank of Africa's finder 404; CIH and Al Barid Bank don't answer; GBP 520: no bank's branch in the territory confirmed from the bank.",
+     "date": "2026-10-29"
+    },
+    {
+     "method": "official-register",
+     "tried": "bkam.ma (Bank Al-Maghrib)",
+     "result": "Answers; no per-bank branch list for the region found.",
+     "date": "2026-10-29"
+    },
+    {
+     "method": "web-search",
+     "tried": "'Attijariwafa bank agence La\u00e2youne adresse'",
+     "result": "Third-party directory listings (annuaire-gratuit.ma) and 2021 press on its Dar Al Moukawil centre in La\u00e2youne; not the bank's branch and price.",
+     "date": "2026-10-29"
+    },
+    {
+     "method": "trade-press",
+     "tried": "fnh.ma and boursenews.ma (2021)",
+     "result": "On the entrepreneurs' centre, not a branch's account price.",
+     "date": "2026-10-29"
+    },
+    {
+     "method": "archive",
+     "tried": "The Wayback Machine (web.archive.org) for the bank pages named above",
+     "result": "This environment's egress refuses web.archive.org (the tunnel closes after the TLS hello); no snapshot could be read.",
+     "date": "2026-10-29"
+    }
+   ],
+   "notModeled": "banks.unkept"
+  },
+  {
+   "id": "R-1940",
+   "fact": "money.banks.blocked.ER",
+   "sought": "The banks of Eritrea and what their everyday account costs, as each bank publishes it",
+   "status": "blocked",
+   "attempts": [
+    {
+     "method": "institution",
+     "tried": "cbe.com.er (Commercial Bank of Eritrea, the only retail bank)",
+     "result": "No answer (000).",
+     "date": "2026-10-29"
+    },
+    {
+     "method": "official-register",
+     "tried": "boe.gov.er (Bank of Eritrea), shabait.com (Ministry of Information)",
+     "result": "503 and 403.",
+     "date": "2026-10-29"
+    },
+    {
+     "method": "web-search",
+     "tried": "'Commercial Bank of Eritrea account fees charges savings account nakfa service charge'",
+     "result": "Wikipedia, an Ethiopian bank's article and an expat blog; no figure.",
+     "date": "2026-10-29"
+    },
+    {
+     "method": "trade-press",
+     "tried": "Press results among the searches named",
+     "result": "None gave a bank's own account charge.",
+     "date": "2026-10-29"
+    },
+    {
+     "method": "archive",
+     "tried": "The Wayback Machine (web.archive.org) for the bank pages named above",
+     "result": "This environment's egress refuses web.archive.org (the tunnel closes after the TLS hello); no snapshot could be read.",
+     "date": "2026-10-29"
+    }
+   ],
+   "notModeled": "banks.unkept"
+  },
+  {
+   "id": "R-1941",
+   "fact": "money.banks.blocked.FK",
+   "sought": "The banks of Falkland Islands and what their everyday account costs, as each bank publishes it",
+   "status": "blocked",
+   "attempts": [
+    {
+     "method": "institution",
+     "tried": "sc.com/fk (Standard Chartered, the islands' bank): save, current-account and savings-account pages",
+     "result": "\"No Minimum balance requirement\", free debit cards and e-statements; no account-keeping fee and no fee document linked.",
+     "date": "2026-10-29"
+    },
+    {
+     "method": "official-register",
+     "tried": "falklands.gov.fk (Falkland Islands Government)",
+     "result": "502 through this client's proxy; no bank-charges publication found.",
+     "date": "2026-10-29"
+    },
+    {
+     "method": "web-search",
+     "tried": "'Standard Chartered Falkland Islands tariff OR schedule of charges OR fees and charges current account monthly fee'",
+     "result": "Other countries' Standard Chartered price guides and a third-party review; no figure.",
+     "date": "2026-10-29"
+    },
+    {
+     "method": "trade-press",
+     "tried": "Press results among the searches named",
+     "result": "None gave a bank's own account charge.",
+     "date": "2026-10-29"
+    },
+    {
+     "method": "archive",
+     "tried": "The Wayback Machine (web.archive.org) for the bank pages named above",
+     "result": "This environment's egress refuses web.archive.org (the tunnel closes after the TLS hello); no snapshot could be read.",
+     "date": "2026-10-29"
+    }
+   ],
+   "notModeled": "banks.unkept"
+  },
+  {
+   "id": "R-1942",
+   "fact": "money.banks.blocked.GA",
+   "sought": "The banks of Gabon and what their everyday account costs, as each bank publishes it",
+   "status": "blocked",
+   "attempts": [
+    {
+     "method": "institution",
+     "tried": "bgfibankgabon.bgfi.com, orabank.ga, orabank.net/fr/gabon, bicig.ga, ubagabon.com (accounts and downloads), gabon.coris.bank (rendered, and its WordPress media), afgbank.ga, ecobank.com/ga",
+     "result": "BGFI 503; Orabank and BICIG don't answer, Orabank's group page sits behind a bot check (not passed); UBA lists no fees; Coris's \"Conditions de banque\" menu links nowhere and its media holds none; AFG's domain is parked; Ecobank redirects to the group.",
+     "date": "2026-10-29"
+    },
+    {
+     "method": "official-register",
+     "tried": "beac.int, COBAC regulations page",
+     "result": "It lists R\u00e8glement 04/19 on the TEG but not COBAC R-2020/04 on the guaranteed minimum banking service; its 2009 \"Architecture de la tarification\" is too old to use.",
+     "date": "2026-10-29"
+    },
+    {
+     "method": "web-search",
+     "tried": "'Gabon conditions de banque OR conditions tarifaires 2026 particuliers tenue de compte BGFIBank OR UBA Gabon OR Orabank Gabon OR Ecobank Gabon OR BICIG pdf' and 'BGFIBank Gabon ... frais de tenue de compte mensuel FCFA'",
+     "result": "No tariff; gabonmediatime on BGFI's Liberty savings account, without a keeping fee.",
+     "date": "2026-10-29"
+    },
+    {
+     "method": "trade-press",
+     "tried": "gabonmediatime, as above",
+     "result": "No keeping fee.",
+     "date": "2026-10-29"
+    },
+    {
+     "method": "archive",
+     "tried": "The Wayback Machine (web.archive.org) for the bank pages named above",
+     "result": "This environment's egress refuses web.archive.org (the tunnel closes after the TLS hello); no snapshot could be read.",
+     "date": "2026-10-29"
+    }
+   ],
+   "notModeled": "banks.unkept"
+  },
+  {
+   "id": "R-1943",
+   "fact": "money.banks.blocked.GS",
+   "sought": "The banks of South Georgia and the South Sandwich Islands and what their everyday account costs, as each bank publishes it",
+   "status": "blocked",
+   "attempts": [
+    {
+     "method": "institution",
+     "tried": "A bank serving South Georgia and the South Sandwich Islands: searches for one, and gov.gs (the Government's visitor pages)",
+     "result": "No bank in the territory named; visitors' pages cover permits and fees.",
+     "date": "2026-10-29"
+    },
+    {
+     "method": "official-register",
+     "tried": "gov.gs (the Government's visitor pages)",
+     "result": "No bank in the territory named; visitors' pages cover permits and fees.",
+     "date": "2026-10-29"
+    },
+    {
+     "method": "web-search",
+     "tried": "'bank OR banking on South Georgia OR Diego Garcia OR Kerguelen no bank residents personnel how to pay'",
+     "result": "Payment-processor marketing pages for South Georgia and a military bank's Diego Garcia branch; nothing on a bank in this territory.",
+     "date": "2026-10-29"
+    },
+    {
+     "method": "trade-press",
+     "tried": "Press results among the searches named",
+     "result": "None gave a bank's own account charge.",
+     "date": "2026-10-29"
+    },
+    {
+     "method": "archive",
+     "tried": "The Wayback Machine (web.archive.org) for the bank pages named above",
+     "result": "This environment's egress refuses web.archive.org (the tunnel closes after the TLS hello); no snapshot could be read.",
+     "date": "2026-10-29"
+    }
+   ],
+   "notModeled": "banks.unkept"
+  },
+  {
+   "id": "R-1944",
+   "fact": "money.banks.blocked.IR",
+   "sought": "The banks of Iran and what their everyday account costs, as each bank publishes it",
+   "status": "blocked",
+   "attempts": [
+    {
+     "method": "institution",
+     "tried": "bmi.ir (Bank Melli), banksepah.ir, bank-maskan.ir",
+     "result": "No answer (000).",
+     "date": "2026-10-29"
+    },
+    {
+     "method": "official-register",
+     "tried": "cbi.ir (Central Bank of Iran)",
+     "result": "No answer (000).",
+     "date": "2026-10-29"
+    },
+    {
+     "method": "web-search",
+     "tried": "'Iran bank account maintenance fee rial \u06a9\u0627\u0631\u0645\u0632\u062f \u0646\u06af\u0647\u062f\u0627\u0631\u06cc \u062d\u0633\u0627\u0628 \u0628\u0627\u0646\u06a9 \u0645\u0644\u06cc OR \u0628\u0627\u0646\u06a9 \u0645\u0644\u062a \u062a\u0639\u0631\u0641\u0647 \u06a9\u0627\u0631\u0645\u0632\u062f \u062e\u062f\u0645\u0627\u062a \u0628\u0627\u0646\u06a9\u06cc \u06f1\u06f4\u06f0\u06f5'",
+     "result": "Eghtesad Online (2017 to 2020) on transfer and card fees; no account-keeping fee.",
+     "date": "2026-10-29"
+    },
+    {
+     "method": "trade-press",
+     "tried": "Eghtesad Online, as above",
+     "result": "Dated, and no keeping fee.",
+     "date": "2026-10-29"
+    },
+    {
+     "method": "archive",
+     "tried": "The Wayback Machine (web.archive.org) for the bank pages named above",
+     "result": "This environment's egress refuses web.archive.org (the tunnel closes after the TLS hello); no snapshot could be read.",
+     "date": "2026-10-29"
+    }
+   ],
+   "notModeled": "banks.unkept"
+  },
+  {
+   "id": "R-1945",
+   "fact": "money.banks.blocked.KM",
+   "sought": "The banks of Comoros and what their everyday account costs, as each bank publishes it",
+   "status": "blocked",
+   "attempts": [
+    {
+     "method": "institution",
+     "tried": "bic-comores.com, bic.km, bancecom.km, bfc.km, eximbank-km.com (accounts and both current-account pages), snpsf.km",
+     "result": "Four don't answer (000); Exim Bank Comores gives interest and minimum balances (3,000 and 10,000 francs) but no fee; the SNPSF home page has no tariff.",
+     "date": "2026-10-29"
+    },
+    {
+     "method": "official-register",
+     "tried": "banque-comores.km (Banque Centrale des Comores)",
+     "result": "Its statutes and the monetary-cooperation agreement; no bank charges.",
+     "date": "2026-10-29"
+    },
+    {
+     "method": "web-search",
+     "tried": "'Comores banque frais de tenue de compte tarifs particuliers KMF BIC Comores OR Exim Bank Comores OR BFC OR Banque Centrale des Comores conditions de banque'",
+     "result": "Currency and travel pages; no fee.",
+     "date": "2026-10-29"
+    },
+    {
+     "method": "trade-press",
+     "tried": "Press results among the searches named",
+     "result": "None gave a bank's own account charge.",
+     "date": "2026-10-29"
+    },
+    {
+     "method": "archive",
+     "tried": "The Wayback Machine (web.archive.org) for the bank pages named above",
+     "result": "This environment's egress refuses web.archive.org (the tunnel closes after the TLS hello); no snapshot could be read.",
+     "date": "2026-10-29"
+    }
+   ],
+   "notModeled": "banks.unkept"
+  },
+  {
+   "id": "R-1946",
+   "fact": "money.banks.blocked.KP",
+   "sought": "The banks of North Korea and what their everyday account costs, as each bank publishes it",
+   "status": "blocked",
+   "attempts": [
+    {
+     "method": "institution",
+     "tried": "No bank of North Korea publishes on the open web; the state portals naenara.com.kp and kcna.kp",
+     "result": "Both 503.",
+     "date": "2026-10-29"
+    },
+    {
+     "method": "official-register",
+     "tried": "The same state portals",
+     "result": "503.",
+     "date": "2026-10-29"
+    },
+    {
+     "method": "web-search",
+     "tried": "'North Korea bank account fee won Foreign Trade Bank OR Central Bank of the DPRK savings account charges'",
+     "result": "AsiaPress (November 2025) on transfer fees raised to 8%, nkeconwatch citing KDI on savings interest; no account-keeping fee.",
+     "date": "2026-10-29"
+    },
+    {
+     "method": "trade-press",
+     "tried": "AsiaPress and NK News, among the same results",
+     "result": "Transfer fees and sanctions; no account-keeping fee.",
+     "date": "2026-10-29"
+    },
+    {
+     "method": "archive",
+     "tried": "The Wayback Machine (web.archive.org) for the bank pages named above",
+     "result": "This environment's egress refuses web.archive.org (the tunnel closes after the TLS hello); no snapshot could be read.",
+     "date": "2026-10-29"
+    }
+   ],
+   "notModeled": "banks.unkept"
+  },
+  {
+   "id": "R-1947",
+   "fact": "money.banks.blocked.MR",
+   "sought": "The banks of Mauritania and what their everyday account costs, as each bank publishes it",
+   "status": "blocked",
+   "attempts": [
+    {
+     "method": "institution",
+     "tried": "societegenerale.mr, attijaribank.mr, bmci.mr, bci-banque.mr, bpm.mr, bnm.mr (rendered, and its Tarification page)",
+     "result": "Four don't answer (000), BPM answers 403; the BNM's Tarification page shows \"Page introuvable\".",
+     "date": "2026-10-29"
+    },
+    {
+     "method": "official-register",
+     "tried": "bcm.mr (Banque Centrale de Mauritanie), rendered",
+     "result": "News and a presentation; no bank-charges publication.",
+     "date": "2026-10-29"
+    },
+    {
+     "method": "web-search",
+     "tried": "'Mauritanie banque conditions tarifaires particuliers frais de tenue de compte MRU Soci\u00e9t\u00e9 G\u00e9n\u00e9rale Mauritanie OR BMCI OR Attijari bank Mauritanie OR BNM pdf'",
+     "result": "Mauritius's banks (in rupees) and a trade.gov guide; no figure.",
+     "date": "2026-10-29"
+    },
+    {
+     "method": "trade-press",
+     "tried": "Press results among the searches named",
+     "result": "None gave a bank's own account charge.",
+     "date": "2026-10-29"
+    },
+    {
+     "method": "archive",
+     "tried": "The Wayback Machine (web.archive.org) for the bank pages named above",
+     "result": "This environment's egress refuses web.archive.org (the tunnel closes after the TLS hello); no snapshot could be read.",
+     "date": "2026-10-29"
+    }
+   ],
+   "notModeled": "banks.unkept"
+  },
+  {
+   "id": "R-1948",
+   "fact": "money.banks.blocked.PN",
+   "sought": "The banks of Pitcairn and what their everyday account costs, as each bank publishes it",
+   "status": "blocked",
+   "attempts": [
+    {
+     "method": "institution",
+     "tried": "A bank serving Pitcairn: searches for one, and government.pn and visitpitcairn.pn",
+     "result": "The New Zealand dollar and visitor information; no bank named.",
+     "date": "2026-10-29"
+    },
+    {
+     "method": "official-register",
+     "tried": "government.pn and visitpitcairn.pn",
+     "result": "The New Zealand dollar and visitor information; no bank named.",
+     "date": "2026-10-29"
+    },
+    {
+     "method": "web-search",
+     "tried": "'Pitcairn Island banking no bank residents bank account ... OR Tokelau banking no bank ATM residents accounts' and the territory's own name with bank",
+     "result": "Travel guides (cash preferred, no ATM) and the 1967 Tokelau Finance Regulations (government money held in New Zealand and Apia); nothing on a bank today.",
+     "date": "2026-10-29"
+    },
+    {
+     "method": "trade-press",
+     "tried": "Press results among the searches named",
+     "result": "None gave a bank's own account charge.",
+     "date": "2026-10-29"
+    },
+    {
+     "method": "archive",
+     "tried": "The Wayback Machine (web.archive.org) for the bank pages named above",
+     "result": "This environment's egress refuses web.archive.org (the tunnel closes after the TLS hello); no snapshot could be read.",
+     "date": "2026-10-29"
+    }
+   ],
+   "notModeled": "banks.unkept"
+  },
+  {
+   "id": "R-1949",
+   "fact": "money.banks.blocked.RU",
+   "sought": "The banks of Russia and what their everyday account costs, as each bank publishes it",
+   "status": "blocked",
+   "attempts": [
+    {
+     "method": "institution",
+     "tried": "tbank.ru (Tinkoff Black tariffs), alfabank.ru, vtb.ru and sberbank.ru card pages, sberbank.com tariff PDFs",
+     "result": "T-Bank's chain ends in a self-signed Russian root this client doesn't trust (not bypassed); Alfa-Bank fails in TLS; VTB and Sber don't answer (000); Sber's PDFs refuse the chain likewise, and the fetch tool returned 503.",
+     "date": "2026-10-29"
+    },
+    {
+     "method": "official-register",
+     "tried": "cbr.ru (Bank of Russia)",
+     "result": "Answers, but publishes no bank's account charges.",
+     "date": "2026-10-29"
+    },
+    {
+     "method": "web-search",
+     "tried": "'\u0421\u0431\u0435\u0440\u0431\u0430\u043d\u043a \u0421\u0431\u0435\u0440\u041a\u0430\u0440\u0442\u0430 \u043e\u0431\u0441\u043b\u0443\u0436\u0438\u0432\u0430\u043d\u0438\u0435 \u0431\u0435\u0441\u043f\u043b\u0430\u0442\u043d\u043e \u0442\u0430\u0440\u0438\u0444' and related searches (earlier today)",
+     "result": "banki.ru and vbr.ru on SberCard being free from 1 July 2025, without the tariff document's own wording.",
+     "date": "2026-10-29"
+    },
+    {
+     "method": "trade-press",
+     "tried": "banki.ru and vbr.ru as above",
+     "result": "Press reports, not the bank's tariff; not used.",
+     "date": "2026-10-29"
+    },
+    {
+     "method": "archive",
+     "tried": "The Wayback Machine (web.archive.org) for the bank pages named above",
+     "result": "This environment's egress refuses web.archive.org (the tunnel closes after the TLS hello); no snapshot could be read.",
+     "date": "2026-10-29"
+    }
+   ],
+   "notModeled": "banks.unkept"
+  },
+  {
+   "id": "R-1950",
+   "fact": "money.banks.blocked.SL",
+   "sought": "The banks of Sierra Leone and what their everyday account costs, as each bank publishes it",
+   "status": "blocked",
+   "attempts": [
+    {
+     "method": "institution",
+     "tried": "slcb.biz, rokelbank.sl, ubasierraleone.com (savings page), gtbanksl.com, sierraleone.accessbankplc.com, zenithbank.sl, vistabank.sl, unionbanksl.com",
+     "result": "Six don't answer (000); Rokel's home page links only account-opening forms; UBA's savings page lists features (a free ATM card) and no fee.",
+     "date": "2026-10-29"
+    },
+    {
+     "method": "official-register",
+     "tried": "bsl.gov.sl (Bank of Sierra Leone)",
+     "result": "No answer from its home page (000); no charges publication found in search.",
+     "date": "2026-10-29"
+    },
+    {
+     "method": "web-search",
+     "tried": "'Sierra Leone bank charges current account monthly maintenance fee Leones Rokel OR SLCB OR Ecobank OR Bank of Sierra Leone' and 'Sierra Leone banks monthly charges OR maintenance fee ... directive bank charges 2025 OR 2026'",
+     "result": "Wikipedia, trade.gov, expat blogs; no figure.",
+     "date": "2026-10-29"
+    },
+    {
+     "method": "trade-press",
+     "tried": "The same searches",
+     "result": "A 2026 blog (iambeezy.app) says no Sierra Leonean bank publishes a tariff and the Bank of Sierra Leone compiles none; it isn't a source of a figure.",
+     "date": "2026-10-29"
+    },
+    {
+     "method": "archive",
+     "tried": "The Wayback Machine (web.archive.org) for the bank pages named above",
+     "result": "This environment's egress refuses web.archive.org (the tunnel closes after the TLS hello); no snapshot could be read.",
+     "date": "2026-10-29"
+    }
+   ],
+   "notModeled": "banks.unkept"
+  },
+  {
+   "id": "R-1951",
+   "fact": "money.banks.blocked.SO",
+   "sought": "The banks of Somalia and what their everyday account costs, as each bank publishes it",
+   "status": "blocked",
+   "attempts": [
+    {
+     "method": "institution",
+     "tried": "premierbank.so (personal and saving accounts), dahabshilbank.com (personal current and saving accounts), ibsbank.so (current and everyday accounts), amalbankso.so (account pages), salaamsomalibank.com",
+     "result": "Features only (\"Free Monthly statement\", \"Activation Fees\" with no amount); no keeping fee or tariff; Salaam Somali Bank doesn't answer (000).",
+     "date": "2026-10-29"
+    },
+    {
+     "method": "official-register",
+     "tried": "centralbank.gov.so (Central Bank of Somalia)",
+     "result": "403 to this client.",
+     "date": "2026-10-29"
+    },
+    {
+     "method": "web-search",
+     "tried": "'Somalia bank account fees Premier Bank OR Dahabshil Bank OR Salaam Somali Bank OR IBS Bank account maintenance fee monthly tariff schedule of charges'",
+     "result": "A Wikipedia list of banks and other countries' tariffs; no figure.",
+     "date": "2026-10-29"
+    },
+    {
+     "method": "trade-press",
+     "tried": "Press results among the searches named",
+     "result": "None gave a bank's own account charge.",
+     "date": "2026-10-29"
+    },
+    {
+     "method": "archive",
+     "tried": "The Wayback Machine (web.archive.org) for the bank pages named above",
+     "result": "This environment's egress refuses web.archive.org (the tunnel closes after the TLS hello); no snapshot could be read.",
+     "date": "2026-10-29"
+    }
+   ],
+   "notModeled": "banks.unkept"
+  },
+  {
+   "id": "R-1952",
+   "fact": "money.banks.blocked.ST",
+   "sought": "The banks of Sao Tome and Principe and what their everyday account costs, as each bank publishes it",
+   "status": "blocked",
+   "attempts": [
+    {
+     "method": "institution",
+     "tried": "bistp.st (Banco Internacional de S\u00e3o Tom\u00e9 e Pr\u00edncipe), afrilandfirstbank.st, bgfibank.st",
+     "result": "bistp.st answers 403 and then resets the connection; the other two don't answer (000).",
+     "date": "2026-10-29"
+    },
+    {
+     "method": "official-register",
+     "tried": "bcstp.st (Banco Central de S\u00e3o Tom\u00e9 e Pr\u00edncipe), home page and its document links",
+     "result": "Laws, the governor's speech, a strategic plan and a financial-stability report; no bank charges.",
+     "date": "2026-10-29"
+    },
+    {
+     "method": "web-search",
+     "tried": "'S\u00e3o Tom\u00e9 e Pr\u00edncipe pre\u00e7\u00e1rio banco comiss\u00e3o manuten\u00e7\u00e3o conta \u00e0 ordem dobras BISTP OR Afriland First Bank OR Ecobank OR BGFIBank'",
+     "result": "Wikipedia, a trade.gov guide and an expat blog; no figure.",
+     "date": "2026-10-29"
+    },
+    {
+     "method": "trade-press",
+     "tried": "Press results among the searches named",
+     "result": "None gave a bank's own account charge.",
+     "date": "2026-10-29"
+    },
+    {
+     "method": "archive",
+     "tried": "The Wayback Machine (web.archive.org) for the bank pages named above",
+     "result": "This environment's egress refuses web.archive.org (the tunnel closes after the TLS hello); no snapshot could be read.",
+     "date": "2026-10-29"
+    }
+   ],
+   "notModeled": "banks.unkept"
+  },
+  {
+   "id": "R-1953",
+   "fact": "money.banks.blocked.SY",
+   "sought": "The banks of Syria and what their everyday account costs, as each bank publishes it",
+   "status": "blocked",
+   "attempts": [
+    {
+     "method": "institution",
+     "tried": "bemo.com.sy, sib.com.sy, bbsy.com",
+     "result": "The first two don't answer (000); bbsy.com is a domain for sale.",
+     "date": "2026-10-29"
+    },
+    {
+     "method": "official-register",
+     "tried": "cbs.gov.sy and cbsyria.com (Central Bank of Syria)",
+     "result": "No answer (000).",
+     "date": "2026-10-29"
+    },
+    {
+     "method": "web-search",
+     "tried": "'Syria bank account fees Syrian pounds Bank Audi Syria OR Bemo Saudi Fransi OR Commercial Bank of Syria OR Byblos Bank Syria tariff commissions individuals'",
+     "result": "Enab Baladi (July 2024) on a central-bank circular capping account opening at 10,000 pounds: an opening charge, not a keeping fee, and press rather than the circular.",
+     "date": "2026-10-29"
+    },
+    {
+     "method": "trade-press",
+     "tried": "Enab Baladi, as above",
+     "result": "Not a keeping fee.",
+     "date": "2026-10-29"
+    },
+    {
+     "method": "archive",
+     "tried": "The Wayback Machine (web.archive.org) for the bank pages named above",
+     "result": "This environment's egress refuses web.archive.org (the tunnel closes after the TLS hello); no snapshot could be read.",
+     "date": "2026-10-29"
+    }
+   ],
+   "notModeled": "banks.unkept"
+  },
+  {
+   "id": "R-1954",
+   "fact": "money.banks.blocked.TF",
+   "sought": "The banks of French Southern Territories and what their everyday account costs, as each bank publishes it",
+   "status": "blocked",
+   "attempts": [
+    {
+     "method": "institution",
+     "tried": "A bank serving the French Southern Territories: searches for one, and taaf.fr (the Administration's site)",
+     "result": "No bank in the territory named.",
+     "date": "2026-10-29"
+    },
+    {
+     "method": "official-register",
+     "tried": "taaf.fr (the Administration's site)",
+     "result": "No bank in the territory named.",
+     "date": "2026-10-29"
+    },
+    {
+     "method": "web-search",
+     "tried": "'bank OR banking on South Georgia OR Diego Garcia OR Kerguelen no bank residents personnel how to pay'",
+     "result": "Payment-processor marketing pages for South Georgia and a military bank's Diego Garcia branch; nothing on a bank in this territory.",
+     "date": "2026-10-29"
+    },
+    {
+     "method": "trade-press",
+     "tried": "Press results among the searches named",
+     "result": "None gave a bank's own account charge.",
+     "date": "2026-10-29"
+    },
+    {
+     "method": "archive",
+     "tried": "The Wayback Machine (web.archive.org) for the bank pages named above",
+     "result": "This environment's egress refuses web.archive.org (the tunnel closes after the TLS hello); no snapshot could be read.",
+     "date": "2026-10-29"
+    }
+   ],
+   "notModeled": "banks.unkept"
+  },
+  {
+   "id": "R-1955",
+   "fact": "money.banks.blocked.TK",
+   "sought": "The banks of Tokelau and what their everyday account costs, as each bank publishes it",
+   "status": "blocked",
+   "attempts": [
+    {
+     "method": "institution",
+     "tried": "A bank serving Tokelau: searches for one, and tokelau.org.nz (Government of Tokelau)",
+     "result": "Public notices and departments; no bank named.",
+     "date": "2026-10-29"
+    },
+    {
+     "method": "official-register",
+     "tried": "tokelau.org.nz (Government of Tokelau)",
+     "result": "Public notices and departments; no bank named.",
+     "date": "2026-10-29"
+    },
+    {
+     "method": "web-search",
+     "tried": "'Pitcairn Island banking no bank residents bank account ... OR Tokelau banking no bank ATM residents accounts' and the territory's own name with bank",
+     "result": "Travel guides (cash preferred, no ATM) and the 1967 Tokelau Finance Regulations (government money held in New Zealand and Apia); nothing on a bank today.",
+     "date": "2026-10-29"
+    },
+    {
+     "method": "trade-press",
+     "tried": "Press results among the searches named",
+     "result": "None gave a bank's own account charge.",
+     "date": "2026-10-29"
+    },
+    {
+     "method": "archive",
+     "tried": "The Wayback Machine (web.archive.org) for the bank pages named above",
+     "result": "This environment's egress refuses web.archive.org (the tunnel closes after the TLS hello); no snapshot could be read.",
+     "date": "2026-10-29"
+    }
+   ],
+   "notModeled": "banks.unkept"
+  },
+  {
+   "id": "R-1956",
+   "fact": "money.banks.blocked.TV",
+   "sought": "The banks of Tuvalu and what their everyday account costs, as each bank publishes it",
+   "status": "blocked",
+   "attempts": [
+    {
+     "method": "institution",
+     "tried": "nbt.tv (National Bank of Tuvalu)",
+     "result": "The domain is parked (it redirects to a sale page); nationalbankoftuvalu.tv 404.",
+     "date": "2026-10-29"
+    },
+    {
+     "method": "official-register",
+     "tried": "Tuvalu Government sites in search",
+     "result": "No bank-charges publication found.",
+     "date": "2026-10-29"
+    },
+    {
+     "method": "web-search",
+     "tried": "'National Bank of Tuvalu savings account fees charges OR interest rates website'",
+     "result": "Other banks' pages and a FRED series on Tuvalu's banks' margin (2008); no figure.",
+     "date": "2026-10-29"
+    },
+    {
+     "method": "trade-press",
+     "tried": "Press results among the searches named",
+     "result": "None gave a bank's own account charge.",
+     "date": "2026-10-29"
+    },
+    {
+     "method": "archive",
+     "tried": "The Wayback Machine (web.archive.org) for the bank pages named above",
+     "result": "This environment's egress refuses web.archive.org (the tunnel closes after the TLS hello); no snapshot could be read.",
+     "date": "2026-10-29"
+    }
+   ],
+   "notModeled": "banks.unkept"
+  },
+  {
+   "id": "R-1957",
+   "fact": "money.banks.blocked.VA",
+   "sought": "The banks of Vatican and what their everyday account costs, as each bank publishes it",
+   "status": "blocked",
+   "attempts": [
+    {
+     "method": "institution",
+     "tried": "ior.va (Istituto per le Opere di Religione, the Vatican's only bank)",
+     "result": "\"IOR - You have been blocked\": a block page (403), not passed.",
+     "date": "2026-10-29"
+    },
+    {
+     "method": "official-register",
+     "tried": "ior.va's published annual report and conditions",
+     "result": "Behind the same block.",
+     "date": "2026-10-29"
+    },
+    {
+     "method": "web-search",
+     "tried": "'IOR Istituto per le Opere di Religione account fees conditions charges who can open an account'",
+     "result": "A Rome college's guide (pcfroma.org: a minimum deposit of about 50 euros to avoid more charges, informal) and a 2012 commentary that only Vatican employees, Catholic institutions and clergy may hold accounts; nothing from the institute.",
+     "date": "2026-10-29"
+    },
+    {
+     "method": "trade-press",
+     "tried": "Press results among the searches named",
+     "result": "None gave a bank's own account charge.",
+     "date": "2026-10-29"
+    },
+    {
+     "method": "archive",
+     "tried": "The Wayback Machine (web.archive.org) for the bank pages named above",
+     "result": "This environment's egress refuses web.archive.org (the tunnel closes after the TLS hello); no snapshot could be read.",
+     "date": "2026-10-29"
+    }
+   ],
+   "notModeled": "banks.unkept"
+  },
+  {
+   "id": "R-1958",
+   "fact": "money.banks.blocked.YE",
+   "sought": "The banks of Yemen and what their everyday account costs, as each bank publishes it",
+   "status": "blocked",
+   "attempts": [
+    {
+     "method": "institution",
+     "tried": "tadhamonbank.com, kuraimibank.com, cacbank.com.ye, ykbank.com, sababank.com, ib-ye.com",
+     "result": "Home and account pages carry no fees or tariff; three don't answer (000).",
+     "date": "2026-10-29"
+    },
+    {
+     "method": "official-register",
+     "tried": "centralbank.gov.ye and cby-ye.com (Central Bank of Yemen)",
+     "result": "The first doesn't answer; the second has no bank-charges publication.",
+     "date": "2026-10-29"
+    },
+    {
+     "method": "web-search",
+     "tried": "'Yemen bank fees account maintenance YER Tadhamon Bank OR Yemen Kuwait Bank OR CAC Bank OR Al-Kuraimi OR Saba Islamic Bank schedule of fees'",
+     "result": "Other countries' tariffs only.",
+     "date": "2026-10-29"
+    },
+    {
+     "method": "trade-press",
+     "tried": "Press results among the searches named",
+     "result": "None gave a bank's own account charge.",
+     "date": "2026-10-29"
+    },
+    {
+     "method": "archive",
+     "tried": "The Wayback Machine (web.archive.org) for the bank pages named above",
+     "result": "This environment's egress refuses web.archive.org (the tunnel closes after the TLS hello); no snapshot could be read.",
+     "date": "2026-10-29"
+    }
+   ],
+   "notModeled": "banks.unkept"
   }
  ]
 }
