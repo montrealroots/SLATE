@@ -8,26 +8,35 @@
    "id": "office",
    "where": "home",
    "speed": "standard",
-   "within": null,
-   "label": "in person at a Registro Civil agency"
+   "within": {
+    "n": 72,
+    "unit": "hour"
+   },
+   "label": "in person at a Registro Civil agency: the same day where the agency prints cards, otherwise 24 to 72 hours"
   }
  ],
  "cards": [
   {
-   "for": "anyone",
+   "for": "a first card",
    "validYears": 10,
    "pay": {
-    "office": null
+    "office": "5"
    }
   }
  ],
- "note": "The Organic Law on the Management of Identity and Civil Data (as amended 13 March 2024), article 88: the card is valid ten years from issue; a holder must renew it within thirty days of its expiry (article 90). The fee is set by the Registro Civil's resolution, and the government's procedures page that states it (gob.ec) didn't answer this session, so it's null and the player is told; so is the time.",
+ "note": "The Organic Law on the Management of Identity and Civil Data (as amended 13 March 2024), article 88: the card is valid ten years from issue; a holder must renew it within thirty days of its expiry (article 90). The Registro Civil's procedure in the government's single register of procedures (updated 31 December 2025): a first card costs USD 5.00 and a renewal (on loss, expiry or update) USD 16.00 (not modelled), free for people with a disability of 30% or more; agencies that print cards hand it over the same day, the others in 24 to 72 hours after the data are taken.",
  "sources": [
   {
    "url": "https://www.registrocivil.gob.ec/wp-content/uploads/downloads/2024/08/2024_LEY_ORGANICA_DE_GESTION_DE_LA_IDENTIDAD_Y_DATOS_CIVILES_13-03-24.pdf",
    "title": "Registro Civil del Ecuador, Ley Orgánica de Gestión de la Identidad y Datos Civiles (consolidated to 13 March 2024), articles 88 and 90",
    "read": "2026-10-28",
    "said": "Art. 88.- Tiempo de vigencia. La cédula de identidad tendrá el tiempo de vigencia de diez años contados a partir de su expedición. ... Art. 90.- Renovación de la cédula de identidad. Cuando haya fenecido la vigencia de la cédula de identidad, su titular, en el plazo de treinta días, deberá efectuar el proceso de renovación."
+  },
+  {
+   "url": "https://www.gob.ec/sites/default/files/sign/procedure-11752-20260707222222-20114108-signed.pdf",
+   "title": "Registro Único de Trámites y Regulaciones, Emisión de cédula de identidad por primera vez o renovación para ecuatorianos (Dirección General de Registro Civil, Identificación y Cedulación; updated 31 December 2025)",
+   "read": "2026-10-29",
+   "said": "Primera vez: 5,00 USD No grava IVA (efectivo) ... Renovación: 16,00 No grava IVA (efectivo y tarjeta de crédito) ... En las agencias que cuentan con puntos de impresión de cédulas, se entregará el documento de identidad el mismo día; en el resto de las agencias, la cédula se entregará de 24 a 72 horas posterior a la toma de datos del usuario."
   }
  ]
 }

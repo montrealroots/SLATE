@@ -1210,14 +1210,17 @@
     "id": "post",
     "where": "home",
     "speed": "standard",
-    "within": null
+    "within": {
+     "n": 48,
+     "unit": "hour"
+    }
    }
   ],
   "bands": [
    {
-    "validYears": 10,
+    "validYears": 15,
     "pay": {
-     "post": null
+     "post": 10000
     },
     "from": 18
    }
@@ -1630,7 +1633,7 @@
    {
     "validYears": null,
     "pay": {
-     "centre": null,
+     "centre": 0,
      "abroad": 0
     },
     "from": 16
@@ -1689,14 +1692,17 @@
     "id": "office",
     "where": "home",
     "speed": "standard",
-    "within": null
+    "within": {
+     "n": 72,
+     "unit": "hour"
+    }
    }
   ],
   "bands": [
    {
     "validYears": 10,
     "pay": {
-     "office": null
+     "office": 500
     }
    }
   ]
@@ -3226,8 +3232,8 @@
    {
     "validYears": null,
     "pay": {
-     "normal": null,
-     "one-day": 200000
+     "normal": 20000,
+     "one-day": 220000
     },
     "from": 15
    }
@@ -4743,11 +4749,19 @@
   ],
   "bands": [
    {
-    "validYears": null,
+    "validYears": 5,
     "pay": {
-     "police": null
+     "police": 115480
     },
-    "from": 10
+    "from": 10,
+    "under": 16
+   },
+   {
+    "validYears": 10,
+    "pay": {
+     "police": 115480
+    },
+    "from": 16
    }
   ]
  },

@@ -8,21 +8,24 @@
    "id": "post",
    "where": "home",
    "speed": "standard",
-   "within": null,
-   "label": "in person at a DGSN identification post; a temporary document meanwhile"
+   "within": {
+    "n": 48,
+    "unit": "hour"
+   },
+   "label": "pre-enrolment online at idcam.cm and payment, then in person at a DGSN enrolment centre; the card in 48 hours"
   }
  ],
  "cards": [
   {
    "for": "from 18",
    "from": 18,
-   "validYears": 10,
+   "validYears": 15,
    "pay": {
-    "post": null
+    "post": "10000"
    }
   }
  ],
- "note": "The Immigration and Refugee Board of Canada's response on the new card (2016), quoting Decree 2016/375: the card is compulsory for every citizen of 18 or older and valid ten years; the applicant first pays application fees and gets a three-month temporary document. The fee for the new card isn't stated (the old card cost 1,000 francs plus photographs in 2014, not modelled), so it's null; so is the time.",
+ "note": "The Immigration and Refugee Board of Canada's response on the card (2016), quoting Decree 2016/375: compulsory for every citizen of 18 or older. Ordinance 2024/001 of 20 June 2024, amending the 2024 finance law, sets the stamp duty on a national identity card at 10,000 francs (art. 549 of the General Tax Code; it was 2,800). The Ministry of Finance, as Journal du Cameroun reported (10 July 2024), said the new cards are valid fifteen years, not ten, and made in 48 hours; the first cards made in 48 hours were issued from 3 March 2025, after pre-enrolment online at idcam.cm and payment of 10,000 francs (Digital Business Africa, 4 March 2025). The nationality certificate and certified birth certificate the application needs (3,500 and 2,000 francs, the same report) aren't modelled.",
  "sources": [
   {
    "url": "https://www.ecoi.net/en/document/1397961.html",
@@ -39,6 +42,30 @@
    "kind": "secondary",
    "quotes": "https://irb-cisr.gc.ca/",
    "said": "The cost of obtaining a national identification card is 3,000 Central African francs (XAF) [C$7 (XE 20 Mar. 2014)], which includes the fees for the card (1,000 XAF) and the photographs (2,000 XAF)"
+  },
+  {
+   "url": "https://www.digitalbusiness.africa/wp-content/uploads/2024/06/Ordonnance-N%C2%B02024001-du-20-juin-2024-Paul-BIYA-sur-la-CNI.pdf",
+   "title": "Ordonnance n°2024/001 du 20 juin 2024 modifiant et complétant certaines dispositions de la loi n°2023/019 du 19 décembre 2023 portant loi de finances pour 2024 (the signed text, as Digital Business Africa hosts it), article 549",
+   "read": "2026-10-29",
+   "kind": "secondary",
+   "quotes": "https://www.prc.cm/",
+   "said": "Les .cartes d'identité délivrées aux personnes de nationalité camerounaise, les cartes de séjour et de résident délivrées aux personnes de - nationalité étrangère, sont soumises aux droits de timbre ci-après 1) Cartes nationales d'identité: 1 O 000 F CFA."
+  },
+  {
+   "url": "https://fr.journalducameroun.com/cameroun-le-gouvernement-modifie-la-date-dexpiration-de-la-carte-nationale-didentite/",
+   "title": "Journal du Cameroun, Cameroun : le gouvernement modifie la date d'expiration de la carte nationale d'identité (10 July 2024)",
+   "read": "2026-10-29",
+   "kind": "secondary",
+   "quotes": "https://www.minfi.gov.cm/",
+   "said": "Les Camerounais peuvent désormais conserver leur carte nationale d’identité pendant plus de 10 ans. 15 ans exactement. C’est ce que dit le ministère des Finances à propos des nouvelles cartes produites dans le pays ... Outre cette réforme de la durée de validité, le délai de fabrication de la CNI ne sera plus que de 48 heures, mais son prix a augmenté."
+  },
+  {
+   "url": "https://www.digitalbusiness.africa/cameroun-cni-en-48-heures-la-fin-du-chemin-de-croix-votre-preenrolement-en-ligne-sur-https-www-idcam-cm/",
+   "title": "Digital Business Africa, Cameroun : CNI en 48 heures, la fin du chemin de croix (4 March 2025)",
+   "read": "2026-10-29",
+   "kind": "secondary",
+   "quotes": "https://www.idcam.cm/",
+   "said": "Les premières cartes nationales d’identité établies en 48 heures sont disponibles depuis le 03 mars 2025. ... Le Camerounais devrait débourser au minimum 15 500 F CFA pour obtenir sa CNI. Soit 10 000 F CFA pour le timbre, 3 500 F CFA pour le certificat de nationalité et 2 000 F CFA pour la copie certifiée de l’acte de naissance ... Le montant à payer est de 10 000 francs CFA."
   }
  ]
 }
