@@ -44066,11 +44066,11 @@
   {
    "id": "R-1562",
    "fact": "papers.work.NG",
-   "sought": "What a performer needs to live and work in Nigeria, by passport, from its own list",
+   "sought": "What a performer needs to live and work in Nigeria, by passport: the shared ecowas list it keeps",
    "status": "found",
    "value": {
     "file": "research/sources/papers/work/NG.json",
-    "sha256": "fb184f3480730e0a002af867177e6dc0bd5db8ba5733e336c6ad5d929f0e3895"
+    "sha256": "5f7ba3180863534b657daeac592a599b709e106cfcf0bba0b9c593eeb10a2fa5"
    },
    "sources": [
     {
@@ -46498,11 +46498,11 @@
   {
    "id": "R-1654",
    "fact": "papers.work.GH",
-   "sought": "What a performer needs to live and work in Ghana, by passport, from its own list",
+   "sought": "What a performer needs to live and work in Ghana, by passport: the shared ecowas list it keeps",
    "status": "found",
    "value": {
     "file": "research/sources/papers/work/GH.json",
-    "sha256": "c2598e6ff41a13440f4f724bbcefc50e7a52920b118a152d5f6ab45087b88b63"
+    "sha256": "4770f153192635a063f6bd8618213cef91fd5176e1bf727c784614a2cbe99fae"
    },
    "sources": [
     {
@@ -46847,11 +46847,11 @@
   {
    "id": "R-1669",
    "fact": "papers.work.CI",
-   "sought": "What a performer needs to live and work in Ivory Coast, by passport, from its own list",
+   "sought": "What a performer needs to live and work in Ivory Coast, by passport: the shared ecowas list it keeps",
    "status": "secondary",
    "value": {
     "file": "research/sources/papers/work/CI.json",
-    "sha256": "29084c02f95b38bb082b935de5be00bfb8c0a07bc03c1df80ba3a086f283e56a"
+    "sha256": "cc32cbc425501fa7ed7522be6a45f6cc536e2e666c5348ff920381cfac529785"
    },
    "sources": [
     {
@@ -46947,11 +46947,11 @@
   {
    "id": "R-1674",
    "fact": "papers.work.SN",
-   "sought": "What a performer needs to live and work in Senegal, by passport, from its own list",
+   "sought": "What a performer needs to live and work in Senegal, by passport: the shared ecowas list it keeps",
    "status": "secondary",
    "value": {
     "file": "research/sources/papers/work/SN.json",
-    "sha256": "782fc93b865d3913276ff759abaf933e8617dd523f46f9a95aac4a5245a61b4c"
+    "sha256": "5aa8b083b81adc8e9541fcd82110e53602b1fb261026446515e6e5479fd176c4"
    },
    "sources": [
     {
@@ -47214,6 +47214,18 @@
      "tried": "The Wayback Machine (web.archive.org) for the authority's pages",
      "result": "This environment's egress refuses web.archive.org; no snapshot could be read.",
      "date": "2026-10-29"
+    },
+    {
+     "method": "official-register",
+     "tried": "The Work Permit Act 2022 (parliament.gov.sl) and the Employment Act 2023 (read)",
+     "result": "The Employment Act has no permit provision; Parliament's server presents a self-signed certificate and the fetch tool gets 503.",
+     "date": "2026-10-29"
+    },
+    {
+     "method": "institution",
+     "tried": "National Revenue Authority, public notice on work and residence permits (nra.gov.sl/node/663)",
+     "result": "Its certificate chain doesn't verify for this client; the fetch tool gets 503. The search summary says it asks ECOWAS citizens for a work permit too.",
+     "date": "2026-10-29"
     }
    ],
    "notModeled": "work.unkept"
@@ -47409,6 +47421,18 @@
      "tried": "The Wayback Machine (web.archive.org) for the authority's pages",
      "result": "This environment's egress refuses web.archive.org; no snapshot could be read.",
      "date": "2026-10-29"
+    },
+    {
+     "method": "official-register",
+     "tried": "The Labour Code, Law 028-2008/AN, on the Ministry of Security's site (securite.gov.bf)",
+     "result": "The server resets the connection (curl, HTTP/1.1 too); the fetch tool gets 503.",
+     "date": "2026-10-29"
+    },
+    {
+     "method": "official-register",
+     "tried": "Copies on patronat.bf and Refworld",
+     "result": "patronat.bf answers 404; Refworld a bot challenge (403). The comptrasec.fr PDF is a five-page note, not the code.",
+     "date": "2026-10-29"
     }
    ],
    "notModeled": "work.unkept"
@@ -47486,6 +47510,18 @@
      "method": "archive",
      "tried": "The Wayback Machine (web.archive.org) for the authority's pages",
      "result": "This environment's egress refuses web.archive.org; no snapshot could be read.",
+     "date": "2026-10-29"
+    },
+    {
+     "method": "official-register",
+     "tried": "Droit-Afrique's copy of the Labour Code, Law 2021-012 (droit-afrique.com/uploads/Togo-Code-2021-travail.pdf)",
+     "result": "Refuses this client (403).",
+     "date": "2026-10-29"
+    },
+    {
+     "method": "web-search",
+     "tried": "'Togo loi 2021-012 code du travail pdf travailleur \u00e9tranger', '2021-012 code du travail journal officiel'",
+     "result": "No official copy of the 2021 code; the FAOLEX copies the search names are the 2006 code it repealed (not used).",
      "date": "2026-10-29"
     }
    ],
@@ -47760,6 +47796,12 @@
      "tried": "The Wayback Machine (web.archive.org) for the authority's pages",
      "result": "This environment's egress refuses web.archive.org; no snapshot could be read.",
      "date": "2026-10-29"
+    },
+    {
+     "method": "web-search",
+     "tried": "'Guin\u00e9-Bissau Lei Geral do Trabalho 2022 trabalhador estrangeiro autoriza\u00e7\u00e3o de trabalho'",
+     "result": "No text of the 2022 code; a US Department of Labor report confirms a new code entered into force in 2022.",
+     "date": "2026-10-29"
     }
    ],
    "notModeled": "work.unkept"
@@ -47905,11 +47947,11 @@
   {
    "id": "R-1701",
    "fact": "papers.work.CV",
-   "sought": "What a performer needs to live and work in Cabo Verde, by passport, from its own list",
+   "sought": "What a performer needs to live and work in Cabo Verde, by passport: the shared ecowas list it keeps",
    "status": "found",
    "value": {
     "file": "research/sources/papers/work/CV.json",
-    "sha256": "acf086a2ab7009ecf7256245b6a77111a165584699638b694eead8ef398320a3"
+    "sha256": "c97efcf1e2bdcccdae47de5a7387b495b4525ed371680ddcbd1ca7a007511127"
    },
    "sources": [
     {
@@ -47924,11 +47966,11 @@
   {
    "id": "R-1702",
    "fact": "papers.work.LR",
-   "sought": "What a performer needs to live and work in Liberia, by passport, from its own list",
+   "sought": "What a performer needs to live and work in Liberia, by passport: the shared ecowas list it keeps",
    "status": "found",
    "value": {
     "file": "research/sources/papers/work/LR.json",
-    "sha256": "57d8a32ba0fb7e8ff57424154c41f76cfb8114e166daf604d4edd3399dc9acbb"
+    "sha256": "471ae0d750e3bbd48b1b2071785766046ba059029f5723c09ae15fd5931e3c9e"
    },
    "sources": [
     {
@@ -47998,6 +48040,146 @@
     }
    ],
    "notModeled": "work.unkept"
+  },
+  {
+   "id": "R-1704",
+   "fact": "papers.work.group.ecowas",
+   "sought": "The shared list of free movement ecowas: the passports that may live and work in the countries that keep it",
+   "status": "found",
+   "value": {
+    "file": "research/sources/papers/work/groups/ecowas.json",
+    "sha256": "6d86115ffd61333251b779db55996d6bba0ef66c2af9d63d3929e23454fd75b1"
+   },
+   "sources": [
+    {
+     "kind": "primary",
+     "url": "https://www.ecowas.int/wp-content/uploads/2024/08/SU17521.pdf",
+     "title": "ECOWAS, Supplementary Protocol A/SP.1/7/86 on the Second Phase (Right of Residence) of the Protocol on Free Movement of Persons, the Right of Residence and Establishment",
+     "read": "2026-10-29",
+     "said": "each of the Member States shall grant to citizens of the Community who are nationals of other ... Member States, the right of residence in its territory for the purpose of seeking and ... carrying out income earning employment. ... to reside in one of the Member States in order to take up employment in ... accordance with the legislative and administrative provisions governing ... employment of national workers;"
+    },
+    {
+     "kind": "primary",
+     "url": "https://www.ecowas.int/member-states/",
+     "title": "ECOWAS, Member States",
+     "read": "2026-10-29",
+     "said": "Benin ... Cabo Verde ... C\u00f4te d\u2019Ivoire ... Ghana ... Guinea ... Guinea Bissau ... Liberia ... Nigeria ... Senegal ... Sierra Leone ... The Gambia ... Togo"
+    }
+   ]
+  },
+  {
+   "id": "R-1705",
+   "fact": "papers.work.BJ",
+   "sought": "What a performer needs to live and work in Benin, by passport: the shared ecowas list it keeps",
+   "status": "found",
+   "value": {
+    "file": "research/sources/papers/work/BJ.json",
+    "sha256": "1382a156f25e7d0d82442bdc28ff48b92e968fb2eaffbaea5657f2ba87190b6c"
+   },
+   "sources": [
+    {
+     "kind": "primary",
+     "url": "https://sgg.gouv.bj/doc/loi-98-004/download",
+     "title": "Loi n\u00b0 98-004 du 27 janvier 1998 portant Code du Travail en R\u00e9publique du B\u00e9nin, arts. 26\u201329 (Secr\u00e9tariat G\u00e9n\u00e9ral du Gouvernement)",
+     "read": "2026-10-29",
+     "said": "Article 27 : Le visa du contrat du travailleur \u00e9tranger ou immigrant est subordonn\u00e9 \u00e0 la pr\u00e9sentation d'un permis de travail d\u00e9livr\u00e9 par le ministre charg\u00e9 du travail."
+    }
+   ]
+  },
+  {
+   "id": "R-1706",
+   "fact": "papers.work.GM",
+   "sought": "What a performer needs to live and work in Gambia, by passport: the shared ecowas list it keeps",
+   "status": "found",
+   "value": {
+    "file": "research/sources/papers/work/GM.json",
+    "sha256": "86cff344905543d7bed0be1b191d49194cd86fd1c0d2d55bcc1ec08fe1f93506"
+   },
+   "sources": [
+    {
+     "kind": "primary",
+     "url": "https://faolex.fao.org/docs/pdf/gam231810.pdf",
+     "title": "Labour Act, 2023, ss. 2, 32, 38\u201339 (FAOLEX)",
+     "read": "2026-10-29",
+     "said": "\u201cexpatriate\u201d means a non-Gambian working in The Gambia that possess skills that are rarely available in The Gambia; ... An employer who employs an expatriate without acquiring an expatriate quota clearance or fails to renew the expatriate quota clearance allocated to the employer commits an offence"
+    }
+   ]
+  },
+  {
+   "id": "R-1707",
+   "fact": "papers.work.GN",
+   "sought": "What a performer needs to live and work in Guinea, by passport: the shared ecowas list it keeps",
+   "status": "found",
+   "value": {
+    "file": "research/sources/papers/work/GN.json",
+    "sha256": "67d0e762c70b4f06563f114f9554699e103d2bf3d2bc1a47bc7d66b67ee37363"
+   },
+   "sources": [
+    {
+     "kind": "primary",
+     "url": "https://faolex.fao.org/docs/pdf/gui212958.pdf",
+     "title": "Code du travail de la R\u00e9publique de Guin\u00e9e (Loi L/2014/072/CNT du 10 janvier 2014), arts. 131.1\u2013131.3 (FAOLEX)",
+     "read": "2026-10-29",
+     "said": "Lorsqu\u2019un employeur envisage d\u2019embaucher un travailleur \u00e9tranger, en dehors ... de l\u2019espace de la Communaut\u00e9 Economique des Etats de l\u2019Afrique de l\u2019Ouest (CEDEAO), il doit ... obtenir l\u2019autorisation pr\u00e9alable du Service public d\u2019emploi ... La d\u00e9livrance d\u2019un visa de s\u00e9jour pour un travailleur \u00e9tranger est subordonn\u00e9e \u00e0 l\u2019obtention ... pr\u00e9alable d\u2019un permis de travail d\u00e9livr\u00e9 par le service public d\u2019emploi."
+    }
+   ]
+  },
+  {
+   "id": "R-1708",
+   "fact": "papers.work.ML",
+   "sought": "What a performer needs to live and work in Mali, by passport, from its own list",
+   "status": "found",
+   "value": {
+    "file": "research/sources/papers/work/ML.json",
+    "sha256": "a327b43fc612dd65ae063bd8f2be45eb28c100d7cb686db9e1b6f029367b9758"
+   },
+   "sources": [
+    {
+     "kind": "primary",
+     "url": "https://faolex.fao.org/docs/pdf/mli220143.pdf",
+     "title": "Loi n\u00b0 92-020 du 23 septembre 1992 portant Code du Travail, arts. L.26\u2013L.29 (FAOLEX)",
+     "read": "2026-10-29",
+     "said": "Les contrats des travailleurs \u00e9trangers seront, dans tous les cas, constat\u00e9s par \u00e9crit et soumis au visa de la direction nationale du travail. ... Article L.29: La demande de visa incombe \u00e0 l\u2019employeur. Le visa devra \u00eatre obtenu avant tout commencement d\u2019ex\u00e9cution du contrat."
+    }
+   ]
+  },
+  {
+   "id": "R-1709",
+   "fact": "papers.work.MR",
+   "sought": "What a performer needs to live and work in Mauritania, by passport, from its own list",
+   "status": "found",
+   "value": {
+    "file": "research/sources/papers/work/MR.json",
+    "sha256": "7669b198baff9ac1eb0fbdad1ce306d65f38423e978e37da231569a46f8e192b"
+   },
+   "sources": [
+    {
+     "kind": "primary",
+     "url": "https://finances.gov.mr/Recueil_des_textes_relatifs_a_la_mission_du_Ministere/TEXTES/EMPLOI/Loi%202004-017%20C%20Trav.pdf",
+     "title": "Loi n\u00b0 2004-017 portant Code du Travail, art. 388 (Minist\u00e8re des Finances, recueil des textes)",
+     "read": "2026-10-29",
+     "said": "Article 388 : Conditions d\u2019emploi de la main d\u2019\u0153uvre \u00e9trang\u00e8re ... Tout \u00e9tranger qui d\u00e9sire occuper sur le territoire mauritanien un emploi salari\u00e9 de quelque nature que ce soit, doit obtenir ... un permis de travail dont la nature et les conditions d\u2019octroi sont fix\u00e9es par un d\u00e9cret"
+    }
+   ]
+  },
+  {
+   "id": "R-1710",
+   "fact": "papers.work.NE",
+   "sought": "What a performer needs to live and work in Niger, by passport, from its own list",
+   "status": "found",
+   "value": {
+    "file": "research/sources/papers/work/NE.json",
+    "sha256": "c56ed20e3c78a0b1c1e45bdbf90c744bbb6847275089dffca5f9ded19ff8a44d"
+   },
+   "sources": [
+    {
+     "kind": "primary",
+     "url": "https://faolex.fao.org/docs/pdf/Ner184162.pdf",
+     "title": "D\u00e9cret n\u00b0 2017-682/PRN/MET/PS du 10 ao\u00fbt 2017 portant partie r\u00e8glementaire du Code du Travail, arts. 120\u2013131 (FAOLEX)",
+     "read": "2026-10-29",
+     "said": "Article 121 : Les contrats de travail des travailleurs \u00e9trangers sont, en outre, obligatoirement soumis au visa du service public de l\u2019emploi ou de ses repr\u00e9sentants locaux. ... Tout employeur qui a recours \u00e0 la main-d\u2019\u0153uvre \u00e9trang\u00e8re est tenu de requ\u00e9rir le visa pr\u00e9alable du Ministre charg\u00e9 du Travail avant l\u2019entr\u00e9e du travailleur \u00e9tranger en territoire nig\u00e9rien."
+    }
+   ]
   }
  ]
 }

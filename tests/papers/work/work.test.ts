@@ -74,6 +74,16 @@ describe('work', () => {
       { right: 'free' },
       { right: 'free' },
     ]);
+    // ECOWAS's twelve work in each other's countries as nationals (the ecowas list); Niger, gone from it, asks a Nigerian
+    // for its contract visa as it asks anyone.
+    const nigerien = { right: 'permit', route: 'Visa du contrat de travail (service public de l’emploi)' };
+    expect([work('NG', 'GN'), work('GH', 'BJ'), work('US', 'GN'), work('NG', 'NE'), work('US', 'NE')]).toStrictEqual([
+      { right: 'free' },
+      { right: 'free' },
+      { right: 'permit', route: 'Permis de travail (service public d’emploi)' },
+      nigerien,
+      nigerien,
+    ]);
     // A citizen of the destination, or of the state whose nationality its people hold, is home, even where the list names
     // that state's passport (France's, in the eea list); and in a territory of their own state that the list doesn't name.
     expect([work('DE', 'DE'), work('GP', 'FR'), work('JE', 'JE'), work('GP', 'GP'), work('GU', 'US'), work('US', 'GU'), work('PR', 'GU')]).toEqual(['home', 'home', 'home', 'home', 'home', 'home', 'home']);
