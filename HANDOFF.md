@@ -203,8 +203,17 @@ restarts. Read `CLAUDE.md` and the owner's package in `docs/` first.
   Ministry of Labor's employment permit; the Mainland's, Hong Kong's and Macao's residents' own acts not read, so they
   meet the same rule), Singapore (Work Pass Exempt performances, 90 days a calendar year, notified; then a regular work
   pass). A list names the passports of its own state's nationality where they aren't home there (China's, Hong Kong's
-  and Macao's in each other's lists). An exemption only for artists of fame or a significant event's main attraction (Belgium,
-  Denmark) isn't modelled as days open to a performer. Matrix (2026-10-29): 53 researched, 6 proven, 193 pending:
+  and Macao's in each other's lists). The British Isles and Europe's small states: the Isle of Man (a work permit for
+  anyone not an Isle of Man worker, British and Irish included, with theatrical and musical productions exempt for 48
+  days a year; others the Tier 5 Creative visa as well), Guernsey (a Short Term Employment Permit for British and Irish
+  nationals, a work visa too for others), Gibraltar (EEA and Swiss free; others the Department of Employment's work
+  permit), Svalbard (free: the Immigration Act doesn't apply there), Greenland (Nordic citizens free; EU citizens as
+  everyone else, and performers excluded from the artists' three months), Åland (Finland's rules), Monaco (the
+  authorisation to hire and work permit for every hire), Andorra (the quota's residence and work authorisation, from a
+  copy of the BOPA), San Marino (the quota's temporary work permit for entertainment and the arts). Jersey and the
+  Faroe Islands are blockers (2026-10-29): gov.je, statesassembly.gov.je and jerseylaw.je refuse this client, and
+  utlendingastovan.fo answers 403 while SIRI's old Faroese pages are gone. An exemption only for artists of fame or a significant event's main attraction (Belgium,
+  Denmark) isn't modelled as days open to a performer. Matrix (2026-10-29): 62 researched, 6 proven, 184 pending:
   every other country to research next, each from its own
   immigration law or office (the performer's route, its short-engagement exemption, its free-movement partners:
   the EEA, the CTA, Trans-Tasman, Mercosur, CARICOM, the GCC, ECOWAS, the EAC, the EAEU, the Compacts, India–Nepal
