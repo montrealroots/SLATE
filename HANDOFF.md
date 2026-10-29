@@ -296,8 +296,10 @@ restarts. Read `CLAUDE.md` and the owner's package in `docs/` first.
   being free, beside the bank's own page naming the account (Venezuela's BCV Resolution 18-10-02). A fee the price list
   suspends until a day stands at nothing until its first change (Ameriabank's 1,000 drams a half-year from 1 July
   2027); the compiler takes a fee at nothing only with a change after it. A page whose server refuses curl but answers
-  the fetch tool is read through the fetch tool's saved copy (BSB Bank's, maib's, Santander Uruguay's). Matrix
-  (2026-10-29): 141 researched, 6 proven, 105 pending; the remaining countries are researched next by targeted search, and a country
+  the fetch tool is read through the fetch tool's saved copy (BSB Bank's, maib's, Santander Uruguay's). Where a fee differs for salaried and
+  non-salaried customers, the non-salaried rate is taken, a performer working by engagement being one (Coris Bank's
+  West African conditions). A waiver for a balance below a figure isn't written, the game's waivers being balances
+  at or above one (Nedbank Zimbabwe's). Matrix (2026-10-29): 155 researched, 6 proven, 91 pending; the remaining countries are researched next by targeted search, and a country
   whose banks' fees can't be read after all five methods gets its blocker.
 
 The passports' form (decided 2026-10-28, the engine's reader being the Papers page: apply, pay, wait, hold a
