@@ -1,6 +1,6 @@
 {
  "country": "MR",
- "document": "Carte nationale d'identité (biometric)",
+ "document": "Carte d'Identification (national identity card)",
  "office": "the Agence nationale du registre des populations et des titres sécurisés (ANRPTS), at its enrolment centres",
  "currency": "MRU",
  "routes": [
@@ -9,10 +9,19 @@
    "where": "home",
    "speed": "standard",
    "within": null,
-   "label": "enrolment and collection at an ANRPTS centre"
+   "label": "in person at a Centre d'Accueil des Citoyens (CAC); collected there"
   }
  ],
  "cards": [
+  {
+   "for": "6 to 15, on request",
+   "from": 6,
+   "under": 16,
+   "validYears": 10,
+   "pay": {
+    "centre": null
+   }
+  },
   {
    "for": "from 16",
    "from": 16,
@@ -22,7 +31,7 @@
    }
   }
  ],
- "note": "The Immigration and Refugee Board of Canada's response (August 2015), quoting the decree that brought the card into force: it is valid ten years and compulsory for every Mauritanian of 16 enrolled in the National Population Biometric Register. Its sources gave the fee as 1,000 ouguiya in 2012-2013; the ouguiya has been redenominated since, and no fee in today's currency was found, so it's null. The time isn't stated.",
+ "note": "Decree 2021-138 of 3 August 2021 (Journal officiel, 15 September 2021) instituting the new card: produced by the ANRPTS and valid ten years from issue (art. 2); compulsory for every Mauritanian of 16 holding a national identification number, and available from six on request (art. 3); applied for, replaced or renewed only at the Centres d'Accueil des Citoyens, in person (arts. 4 and 6). The decree sets no fee. The IRB's response (August 2015) gave the earlier card's fee as 1,000 ouguiya in 2012-2013; the ouguiya has been redenominated since, and no fee in today's currency was found, so it's null. The time isn't stated.",
  "sources": [
   {
    "url": "https://www.ecoi.net/en/document/1187051.html",
@@ -31,6 +40,14 @@
    "kind": "secondary",
    "quotes": "https://irb-cisr.gc.ca/",
    "said": "The Decree stipulates that the identity card is valid for ten years and [translation] “is mandatory for all Mauritanians who are at least sixteen (16) years of age and enrolled in the National Population Biometric Register ... a fee of 1,000 ouguiya [approximately C$5] must be paid in order to obtain the identity card"
+  },
+  {
+   "url": "https://citizenshiprightsafrica.org/wp-content/uploads/2022/12/Mauritanie-Decret-2021-138-du-03-aout-2021-carte-nationale-didentite.pdf",
+   "title": "Décret n° 2021-138 du 03 août 2021 instituant une Carte Nationale d'Identité et fixant les conditions de sa délivrance (Journal officiel de la République islamique de Mauritanie, 15 September 2021, p. 1493), as Citizenship Rights in Africa hosts it",
+   "read": "2026-10-29",
+   "kind": "secondary",
+   "quotes": "https://www.msgg.gov.mr/",
+   "said": "Elle est valable pour une période de dix (10) ans pour compter de la date de son établissement. ... La Carte d’Identification est obligatoire pour tout Mauritanien âgé de seize ans (16) au moins porteur d’un Numéro National d’Identification issu du Registre National Biométrique des Populations. Tout citoyen âgé de six (6) ans peut obtenir à sa demande une Carte d’Identification"
   }
  ]
 }

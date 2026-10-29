@@ -532,7 +532,7 @@
    {
     "validYears": 15,
     "pay": {
-     "office": null
+     "office": 0
     },
     "from": 18
    }
@@ -1218,7 +1218,7 @@
   ],
   "bands": [
    {
-    "validYears": 15,
+    "validYears": 10,
     "pay": {
      "post": 10000
     },
@@ -3879,7 +3879,7 @@
   "issuedBy": "FR"
  },
  "MR": {
-  "document": "Carte nationale d'identité (biometric)",
+  "document": "Carte d'Identification (national identity card)",
   "currency": "MRU",
   "routes": [
    {
@@ -3890,6 +3890,14 @@
    }
   ],
   "bands": [
+   {
+    "validYears": 10,
+    "pay": {
+     "centre": null
+    },
+    "from": 6,
+    "under": 16
+   },
    {
     "validYears": 10,
     "pay": {
@@ -4017,9 +4025,9 @@
   ],
   "bands": [
    {
-    "validYears": null,
+    "validYears": 10,
     "pay": {
-     "office": null
+     "office": 0
     },
     "from": 16
    }
@@ -4184,7 +4192,14 @@
    {
     "validYears": 5,
     "pay": {
-     "enrolment": null
+     "enrolment": 4500
+    },
+    "under": 15
+   },
+   {
+    "validYears": 5,
+    "pay": {
+     "enrolment": 4500
     },
     "from": 15
    }
@@ -5130,16 +5145,16 @@
    {
     "validYears": 2,
     "pay": {
-     "standard": null,
-     "urgent": null
+     "standard": 700,
+     "urgent": 2750
     },
     "under": 6
    },
    {
     "validYears": 5,
     "pay": {
-     "standard": null,
-     "urgent": null
+     "standard": 700,
+     "urgent": 2750
     },
     "from": 6,
     "under": 15
@@ -5217,7 +5232,7 @@
    {
     "validYears": 10,
     "pay": {
-     "office": null
+     "office": 10000
     },
     "from": 5
    }
@@ -5776,7 +5791,7 @@
    {
     "validYears": null,
     "pay": {
-     "office": null
+     "office": 0
     },
     "from": 18
    }
