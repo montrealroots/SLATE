@@ -145,8 +145,12 @@ restarts. Read `CLAUDE.md` and the owner's package in `docs/` first.
   the Cook Islands, Niue, Tokelau) from Wikipedia's copies; a visitor permit given free on arrival is taken as free,
   one applied for beforehand (Tokelau, New Zealanders included) as a visa. North, East and Central Africa and the
   Sahel from Wikipedia's copies; Morocco's list is shared (`ma`) with the Moroccan-administered Western Sahara (the
-  FCDO's travel advice says Morocco's border authorities control entry there). Matrix (2026-10-29): 221
-  researched, 6 proven, 25 pending: West and Southern Africa and the Indian Ocean to research next. The Wikipedia-sourced rows are to be re-read from the
+  FCDO's travel advice says Morocco's border authorities control entry there). West and Southern Africa and the
+  Indian Ocean likewise, South Africa from the Department of Home Affairs' own exemption list of 9 December 2025
+  (its ordinary-passport column; P/A as 90 days in 365). Matrix (2026-10-29): 246 researched, 6 proven, none
+  pending: every country and territory has a visitor list. Next for this engine: re-read the Wikipedia-sourced rows
+  from their primaries as hosts open (each file's note and source say which), and the conditions the notes name as
+  not modelled (another country's visa or residence standing in for one, age or sex limits, organised tours). The Wikipedia-sourced rows are to be re-read from the
   primary when it opens (each file's note says which host refused).
 
 The passports' form (decided 2026-10-28, the engine's reader being the Papers page: apply, pay, wait, hold a
