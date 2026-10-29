@@ -68,6 +68,13 @@
     ]
    }
   ],
+  "AI": [
+   {
+    "bank": "Republic Bank (Anguilla)",
+    "account": "E-Free Account",
+    "fees": []
+   }
+  ],
   "AL": [
    {
     "bank": "Raiffeisen Bank",
@@ -446,6 +453,29 @@
        "minor": 1500
       },
       "per": "month"
+     }
+    ]
+   }
+  ],
+  "BN": [
+   {
+    "bank": "Baiduri Bank",
+    "account": "Savings Account",
+    "fees": [
+     {
+      "fee": {
+       "currency": "BND",
+       "minor": 200
+      },
+      "per": "month",
+      "waived": [
+       {
+        "balance": {
+         "currency": "BND",
+         "minor": 5000
+        }
+       }
+      ]
      }
     ]
    }
@@ -1330,6 +1360,13 @@
     "fees": []
    }
   ],
+  "KW": [
+   {
+    "bank": "Commercial Bank of Kuwait",
+    "account": "Current Account",
+    "fees": []
+   }
+  ],
   "KY": [
    {
     "bank": "Butterfield",
@@ -1595,6 +1632,21 @@
     ]
    }
   ],
+  "MG": [
+   {
+    "bank": "BRED Madagasikara Banque Populaire",
+    "account": "Pack Éco",
+    "fees": [
+     {
+      "fee": {
+       "currency": "MGA",
+       "minor": 1020000
+      },
+      "per": "month"
+     }
+    ]
+   }
+  ],
   "MH": [
    {
     "bank": "Bank of the Marshall Islands",
@@ -1733,6 +1785,21 @@
         "under": 16
        }
       ]
+     }
+    ]
+   }
+  ],
+  "MU": [
+   {
+    "bank": "MCB",
+    "account": "Current Account",
+    "fees": [
+     {
+      "fee": {
+       "currency": "MUR",
+       "minor": 2500
+      },
+      "per": "month"
      }
     ]
    }
@@ -2107,6 +2174,21 @@
     ]
    }
   ],
+  "PS": [
+   {
+    "bank": "Palestine Islamic Bank",
+    "account": "Current Account",
+    "fees": [
+     {
+      "fee": {
+       "currency": "USD",
+       "minor": 200
+      },
+      "per": "month"
+     }
+    ]
+   }
+  ],
   "PT": [
    {
     "bank": "Caixa Geral de Depósitos",
@@ -2210,6 +2292,75 @@
     "bank": "BSP Solomon Islands",
     "account": "Pacific Standard Account",
     "fees": []
+   }
+  ],
+  "SC": [
+   {
+    "bank": "Seychelles Commercial Bank",
+    "account": "Savings Account",
+    "fees": [
+     {
+      "fee": {
+       "currency": "SCR",
+       "minor": 1000
+      },
+      "per": "month"
+     },
+     {
+      "fee": {
+       "currency": "SCR",
+       "minor": 1500
+      },
+      "per": "month",
+      "waived": [
+       {
+        "balance": {
+         "currency": "SCR",
+         "minor": 50000
+        }
+       }
+      ]
+     }
+    ]
+   },
+   {
+    "bank": "Absa Bank Seychelles",
+    "account": "Instant Savings Account",
+    "fees": [
+     {
+      "fee": {
+       "currency": "SCR",
+       "minor": 1500
+      },
+      "per": "month",
+      "waived": [
+       {
+        "average": {
+         "currency": "SCR",
+         "minor": 350000
+        }
+       }
+      ]
+     }
+    ]
+   },
+   {
+    "bank": "Nouvobanq",
+    "account": "Savings Account",
+    "fees": []
+   },
+   {
+    "bank": "Seychelles Credit Union",
+    "account": "Personal Current Account",
+    "fees": [
+     {
+      "fee": {
+       "currency": "SCR",
+       "minor": 1200
+      },
+      "per": "month"
+     }
+    ]
    }
   ],
   "SE": [
@@ -2550,6 +2701,21 @@
     "bank": "Santander",
     "account": "Cuenta Básica Inclusión",
     "fees": []
+   }
+  ],
+  "VC": [
+   {
+    "bank": "Bank of St Vincent and the Grenadines",
+    "account": "Savings",
+    "fees": [
+     {
+      "fee": {
+       "currency": "XCD",
+       "minor": 300
+      },
+      "per": "month"
+     }
+    ]
    }
   ],
   "VE": [
