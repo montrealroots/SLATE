@@ -212,8 +212,17 @@ restarts. Read `CLAUDE.md` and the owner's package in `docs/` first.
   authorisation to hire and work permit for every hire), Andorra (the quota's residence and work authorisation, from a
   copy of the BOPA), San Marino (the quota's temporary work permit for entertainment and the arts). Jersey and the
   Faroe Islands are blockers (2026-10-29): gov.je, statesassembly.gov.je and jerseylaw.je refuse this client, and
-  utlendingastovan.fo answers 403 while SIRI's old Faroese pages are gone. An exemption only for artists of fame or a significant event's main attraction (Belgium,
-  Denmark) isn't modelled as days open to a performer. Matrix (2026-10-29): 62 researched, 6 proven, 184 pending:
+  utlendingastovan.fo answers 403 while SIRI's old Faroese pages are gone. Latin America: Mexico (the visitor with
+  permission for paid activities, Ley de Migración), Brazil (artistic activities on a visit with a fee allowed, Lei
+  13.445 art. 13; the temporary visa for a fixed-term artistic contract), Argentina (special transitory residence for a
+  tourist's paid work, Disposición DNM 1824/2013), Chile (SERMIG's authorisation to work with transitory stay), Colombia
+  (Migración Colombia's POA, from the Film Commission's instructions), Peru (the Artística Temporal status), Uruguay
+  (temporary residence's Provisional Identity Sheet), Paraguay (Occasional Residence, Ley 6984), Bolivia (the
+  specific-purpose visa), Ecuador (the artists' temporary residence visa), Panama (the occasional workers' visa,
+  artists' kind). The Mercosur Residence Agreement's residence isn't modelled separately in any of them. Venezuela is a
+  blocker (2026-10-29): the Migration and Foreigners Law's copies (OAS, the Colombian consulate's guide) refuse this
+  client and SAIME publishes no artists' requirements found. An exemption only for artists of fame or a significant event's main attraction (Belgium,
+  Denmark) isn't modelled as days open to a performer. Matrix (2026-10-29): 73 researched, 6 proven, 173 pending:
   every other country to research next, each from its own
   immigration law or office (the performer's route, its short-engagement exemption, its free-movement partners:
   the EEA, the CTA, Trans-Tasman, Mercosur, CARICOM, the GCC, ECOWAS, the EAC, the EAEU, the Compacts, India–Nepal
