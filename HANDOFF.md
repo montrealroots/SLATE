@@ -127,9 +127,14 @@ restarts. Read `CLAUDE.md` and the owner's package in `docs/` first.
   named; the Caribbean states (Cuba to Saint Vincent) likewise; `nlcarib`, the Kingdom of the Netherlands' common list
   for Aruba, Curaçao, Sint Maarten and the Caribbean Netherlands (NetherlandsWorldwide, the government's own pages:
   90 days in 180, US nationals 180 in 365), with each territory's differences on top (Aruba's 180 days for Schengen
-  nationals, Curaçao's Jamaicans, Sint Maarten's Guyanese). Matrix (2026-10-29): 144 researched, 6 proven,
-  102 pending: every other country's own list to research next (the British territories, Africa, South Asia,
-  Oceania, North Korea, Taiwan), and the French
+  nationals, Curaçao's Jamaicans, Sint Maarten's Guyanese). The British territories: Gibraltar from the Government's
+  Technical Notice 558/2026 and its exempt list (Schengen's short-stay policy since 15 July 2026, the EU/EEA free),
+  the Caymans from Customs and Border Control's table (6 months; Peru and Venezuela a visa since 2 April 2026),
+  Bermuda from gov.bm (the Order's visa-controlled nationals need a UK, US or Canadian multi re-entry visa; the
+  Order's schedule 404s, so the visa-free list is Wikipedia's), the rest from Wikipedia's combined article; the
+  territories where every visitor needs a permit (South Georgia, BIOT) name British passports too; American Samoa
+  (its own online permit, 30 days). Matrix (2026-10-29): 157 researched, 6 proven, 89 pending: every other
+  country's own list to research next (Africa, South Asia, Oceania, North Korea, Taiwan), and the French
   territories outside Schengen, each with its own list. The Wikipedia-sourced rows are to be re-read from the
   primary when it opens (each file's note says which host refused).
 
