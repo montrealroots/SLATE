@@ -338,8 +338,8 @@ restarts. Read `CLAUDE.md` and the owner's package in `docs/` first.
   misreading (100 and 10 until Nubank's 19.99% a month). Where a regulator's observatory prices every bank's card in a place (the IEDOM
   and IEOM for the French overseas territories), each bank's international deferred-debit card is kept, a charge card,
   their revolving credit not being in the table. A government charge the bank applies to the card each year is
-  written as a yearly fee (AIB's 30-euro stamp duty). The first SLATE's card was a limit and a balance per family, with no bank behind it; its interest and fees weren't
-  researched. Matrix (2026-10-29): 83 researched, 37 blocked, 6 proven, 126 pending.
+  written as a yearly fee (AIB's 30-euro stamp duty). A debit card drawing on an overdraft limit isn't a credit card (BSP's Silver and Gold Visa Debit in the Cook Islands, Samoa and Tonga), and a card offered only to the place's residents is the one taken (First Hawaiian Bank's United card on Guam and in the CNMI). The first SLATE's card was a limit and a balance per family, with no bank behind it; its interest and fees weren't
+  researched. Matrix (2026-10-29): 86 researched, 48 blocked, 6 proven, 112 pending.
 
 The passports' form (decided 2026-10-28, the engine's reader being the Papers page: apply, pay, wait, hold a
 passport valid so many years). Each research file has `routes`, one per way the office takes an application: `id`,
