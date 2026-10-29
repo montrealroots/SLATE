@@ -170,8 +170,14 @@ restarts. Read `CLAUDE.md` and the owner's package in `docs/` first.
   performances and foreign productions), France and its departments with Saint Martin and Saint Barthélemy (the
   « talent – profession artistique et culturelle » card, three months without a work authorisation, Code du travail
   D. 5221-2-1 read from the Culture Ministry's guide since Légifrance refuses this client), the United Kingdom (the
-  Temporary Work – Creative Worker visa, 30 days of permitted paid engagements, Irish citizens free). Matrix
-  (2026-10-29): 15 researched, 6 proven, 231 pending: every other country to research next, each from its own
+  Temporary Work – Creative Worker visa, 30 days of permitted paid engagements, Irish citizens free); the
+  Netherlands (government.nl, UWV), Belgium (Flanders' page), Austria (migration.gv.at), Italy (TUI art. 27 on
+  Normattiva), Spain (LO 4/2000 art. 41, RD 1155/2024 on the BOE), Ireland (the Atypical Working Scheme; British
+  citizens free), Denmark (SIRI), Sweden (Migrationsverket, 14 days a year on an established promoter's invitation),
+  Norway (UDI, 14 days a year; British artists without a Norwegian employer 90 in 180), Finland (EnterFinland; Migri
+  refuses this client). An exemption only for artists of fame or a significant event's main attraction (Belgium,
+  Denmark) isn't modelled as days open to a performer. Matrix (2026-10-29): 25 researched, 6 proven, 221 pending:
+  every other country to research next, each from its own
   immigration law or office (the performer's route, its short-engagement exemption, its free-movement partners:
   the EEA, the CTA, Trans-Tasman, Mercosur, CARICOM, the GCC, ECOWAS, the EAC, the EAEU, the Compacts, India–Nepal
   and India–Bhutan).
