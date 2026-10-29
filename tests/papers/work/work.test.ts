@@ -54,6 +54,13 @@ describe('work', () => {
       { right: 'free' },
       { right: 'permit', route: 'Work permit (Labour Department)' },
     ]);
+    // Saint-Pierre-et-Miquelon asks even the EU's citizens for a work authorisation, a performer's three months excepted;
+    // the French are home. The TAAF ask the French too.
+    expect([work('DE', 'PM'), work('FR', 'PM'), work('RE', 'TF')]).toStrictEqual([
+      { right: 'permit', route: 'Autorisation de travail', days: 90 },
+      'home',
+      { right: 'permit', route: 'Autorisation du préfet, administrateur supérieur des TAAF' },
+    ]);
     // A citizen of the destination, or of the state whose nationality its people hold, is home, even where the list names
     // that state's passport (France's, in the eea list); and in a territory of their own state that the list doesn't name.
     expect([work('DE', 'DE'), work('GP', 'FR'), work('JE', 'JE'), work('GP', 'GP'), work('GU', 'US'), work('US', 'GU'), work('PR', 'GU')]).toEqual(['home', 'home', 'home', 'home', 'home', 'home', 'home']);
