@@ -55,11 +55,11 @@ describe('the work rules compile', () => {
       ['us', { passports: { PW: { right: 'free' as const } }, others: { right: 'permit' as const, route: 'O-1' } }],
     ]);
     const others = { right: 'permit', route: 'R' };
-    expect(compileCountry('DE', { country: 'DE', group: 'eea', others, note: 'x', sources: [] }, groups)).toStrictEqual({ group: 'eea', passports: { FR: { right: 'free' } }, others });
-    expect(compileCountry('DE', { country: 'DE', group: 'eea', rules: [{ right: 'free', passports: ['CH'] }], others }, groups)).toStrictEqual({ group: 'eea', passports: { FR: { right: 'free' }, CH: { right: 'free' } }, others });
+    expect(compileCountry('DE', { country: 'DE', group: 'eea', others, note: 'x', sources: [] }, groups)).toStrictEqual({ groups: ['eea'], passports: { FR: { right: 'free' } }, others });
+    expect(compileCountry('DE', { country: 'DE', group: 'eea', rules: [{ right: 'free', passports: ['CH'] }], others }, groups)).toStrictEqual({ groups: ['eea'], passports: { FR: { right: 'free' }, CH: { right: 'free' } }, others });
     // A shared list's rule for every other, unless the country gives its own.
-    expect(compileCountry('GU', { country: 'GU', group: 'us' }, groups)).toStrictEqual({ group: 'us', passports: { PW: { right: 'free' } }, others: { right: 'permit', route: 'O-1' } });
-    expect(compileCountry('GU', { country: 'GU', group: 'us', others }, groups)).toStrictEqual({ group: 'us', passports: { PW: { right: 'free' } }, others });
+    expect(compileCountry('GU', { country: 'GU', group: 'us' }, groups)).toStrictEqual({ groups: ['us'], passports: { PW: { right: 'free' } }, others: { right: 'permit', route: 'O-1' } });
+    expect(compileCountry('GU', { country: 'GU', group: 'us', others }, groups)).toStrictEqual({ groups: ['us'], passports: { PW: { right: 'free' } }, others });
     expect(compileCountry('US', { country: 'US', rules: [{ right: 'free', passports: ['PW'] }], others }, groups)).toStrictEqual({ passports: { PW: { right: 'free' } }, others });
     expect(compileCountry('JP', { country: 'JP', others }, groups)).toStrictEqual({ passports: {}, others });
     expect(() => compileCountry('XX', { country: 'XX', others }, groups)).toThrow('XX is not a country on the map');
@@ -70,6 +70,29 @@ describe('the work rules compile', () => {
     expect(() => compileCountry('JP', { country: 'JP' }, groups)).toThrow("JP's others is not an object");
     expect(() => compileCountry('DE', { country: 'DE', group: 'eea', rules: [{ right: 'free', passports: ['FR'] }], others }, groups)).toThrow("DE names FR's passport, which the eea list already names");
     expect(() => compileCountry('DE', { country: 'DE', rules: 'x', others }, groups)).toThrow('DE has no rules');
+  });
+
+  it('takes a country keeping several shared lists to the first naming each passport', () => {
+    const permit = { right: 'permit' as const, route: 'Skills' };
+    const groups = new Map([
+      ['oecs', { passports: { LC: { right: 'free' as const } } }],
+      ['csme', { passports: { LC: permit, JM: permit } }],
+      ['us', { passports: { PW: { right: 'free' as const } }, others: { right: 'permit' as const, route: 'O-1' } }],
+    ]);
+    const others = { right: 'permit', route: 'R' };
+    expect(compileCountry('GD', { country: 'GD', group: ['oecs', 'csme'], others }, groups)).toStrictEqual({ groups: ['oecs', 'csme'], passports: { LC: { right: 'free' }, JM: permit }, others });
+    expect(compileCountry('GD', { country: 'GD', group: ['csme', 'oecs'], rules: [{ right: 'free', passports: ['FR'] }], others }, groups)).toStrictEqual({
+      groups: ['csme', 'oecs'],
+      passports: { LC: permit, JM: permit, FR: { right: 'free' } },
+      others,
+    });
+    // The first kept list giving a rule for every other gives it.
+    expect(compileCountry('GU', { country: 'GU', group: ['oecs', 'us'] }, groups)).toStrictEqual({ groups: ['oecs', 'us'], passports: { LC: { right: 'free' }, PW: { right: 'free' } }, others: { right: 'permit', route: 'O-1' } });
+    expect(() => compileCountry('GD', { country: 'GD', group: ['oecs', 'csme'] }, groups)).toThrow('GD keeps the oecs and csme lists, which give no rule for other passports, and gives none of its own');
+    expect(() => compileCountry('GD', { country: 'GD', group: [], others }, groups)).toThrow('GD keeps no shared list by name');
+    expect(() => compileCountry('GD', { country: 'GD', group: ['oecs', 'oecs'], others }, groups)).toThrow('GD keeps the oecs list twice');
+    expect(() => compileCountry('GD', { country: 'GD', group: ['oecs', 'xx'], others }, groups)).toThrow("GD keeps a shared list the game doesn't keep (xx)");
+    expect(() => compileCountry('GD', { country: 'GD', group: ['oecs', 'csme'], rules: [{ right: 'free', passports: ['JM'] }], others }, groups)).toThrow("GD names JM's passport, which the csme list already names");
   });
 
   it('reads only files the register cites, as cited', () => {
@@ -96,7 +119,7 @@ describe('the work rules compile', () => {
     expect(Object.keys(work.countries)).toEqual(['DE', 'FR', 'JP']);
     expect(work).toStrictEqual({
       groups: { eea: { passports: { FR: { right: 'free' } } } },
-      countries: { DE: { group: 'eea', passports: { FR: { right: 'free' }, CH: { right: 'free' } }, others }, FR: { group: 'eea', passports: { FR: { right: 'free' } }, others }, JP: { passports: {}, others } },
+      countries: { DE: { groups: ['eea'], passports: { FR: { right: 'free' }, CH: { right: 'free' } }, others }, FR: { groups: ['eea'], passports: { FR: { right: 'free' } }, others }, JP: { passports: {}, others } },
     });
     register([cite('group.eea', `${GROUPS}/eea.json`, eea.replace(/^./, (c) => (c === '0' ? '1' : '0'))), ...all.slice(1)]);
     expect(() => readWork(root)).toThrow(`${GROUPS}/eea.json isn't the file the register cites`);
@@ -130,8 +153,11 @@ describe('the work rules compile', () => {
 describe('the work rules coverage', () => {
   it('is researched where compiled and cited with the list it shares, blocked where the register holds a blocker, proven where no one lives', () => {
     const facts = new Map([['papers.work.JP', 'R-1'], ['papers.work.FR', 'R-2'], ['papers.work.group.eea', 'R-3'], ['papers.work.blocked.KP', 'R-4'], ['papers.work.DE', 'R-5'], ['papers.work.blocked.DE', 'R-6']]);
-    const compiled = new Map<string, string | null>([['JP', null], ['FR', 'eea'], ['DE', 'us'], ['CZ', null]]);
-    const rows = workCoverage(['JP', 'FR', 'KP', 'IT', 'AQ', 'DE', 'CZ'], new Set(['JP', 'FR', 'KP', 'IT', 'DE', 'CZ']), compiled, facts);
+    const compiled = new Map<string, readonly string[]>([['JP', []], ['FR', ['eea']], ['DE', ['us']], ['CZ', []], ['GD', ['oecs', 'csme']]]);
+    // Cited but not compiled: not researched.
+    facts.set('papers.work.IT', 'R-10');
+    facts.set('papers.work.GD', 'R-7').set('papers.work.group.oecs', 'R-8').set('papers.work.group.csme', 'R-9');
+    const rows = workCoverage(['JP', 'FR', 'KP', 'IT', 'AQ', 'DE', 'CZ', 'GD'], new Set(['JP', 'FR', 'KP', 'IT', 'DE', 'CZ', 'GD']), compiled, facts);
     expect(rows).toEqual([
       { key: 'JP', status: 'researched', register: ['R-1'], tests: TESTS },
       { key: 'FR', status: 'researched', register: ['R-2', 'R-3'], tests: TESTS },
@@ -142,6 +168,8 @@ describe('the work rules coverage', () => {
       { key: 'DE', status: 'blocked', register: ['R-6'], tests: [...TESTS, TOLD] },
       // Compiled but not cited: not researched.
       { key: 'CZ', status: 'pending' },
+      // Every list it keeps is cited.
+      { key: 'GD', status: 'researched', register: ['R-7', 'R-8', 'R-9'], tests: TESTS },
     ]);
     expect(TESTS).toEqual(["tests/papers/work/work.test.ts::work > ask each country's own, or the list it shares, of each passport", 'tests/papers/work/work.places.test.ts::work > for every place on the map']);
     expect(TOLD).toBe("tests/papers/work/work.test.ts::work > tell the player what the game doesn't know");

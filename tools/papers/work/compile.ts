@@ -13,9 +13,9 @@ import countries from '../../../src/world/gazetteer/countries.json' with { type:
  * names it), with the days a performer may work without it where the law allows a short engagement (`days`, within a
  * period of `within` days where it counts them so). A shared list names its passports and may give the rule for every
  * other (`others`, as the United States' does for its territories); a country names the shared list it keeps
- * (`group`), with rules of its own for the passports it treats otherwise, and its own rule for every other passport
+ * (`group`, or several in order), with rules of its own for the passports it treats otherwise, and its own rule for every other passport
  * where the list gives none or it differs. The compiled country holds every passport and its rule for every other, so
- * the engine reads one list; the list it keeps is named for the coverage.
+ * the engine reads one list; the lists it keeps are named for the coverage.
  */
 export const SOURCES = 'research/sources/papers/work';
 export const GROUPS = `${SOURCES}/groups`;
@@ -80,9 +80,9 @@ export interface Group {
   others?: Rule;
 }
 
-/** A country's list: the shared list it keeps if any, every passport named (its own and the shared list's), and the rule for every other. */
+/** A country's list: the shared lists it keeps if any, every passport named (its own and the shared lists'), and the rule for every other. */
 export interface Compiled {
-  group?: string;
+  groups?: string[];
   passports: Record<string, Rule>;
   others: Rule;
 }
@@ -91,20 +91,34 @@ export interface Compiled {
 export const compileGroup = (file: Record<string, unknown>, what: string): Group =>
   'others' in file ? { passports: named(file['rules'], what), others: rule(file['others'], `${what}'s others`) } : { passports: named(file['rules'], what) };
 
-/** A country's file: its own rules, the shared list it keeps, and the rule for every passport neither names. */
+/**
+ * A country's file: its own rules, the shared list it keeps (`group`, a name, or several in order, the first naming a
+ * passport giving its rule, as the OECS's free movement before the CSME's Skills Certificate), and the rule for every
+ * passport none names: its own, else the first kept list's that gives one.
+ */
 export function compileCountry(code: string, file: Record<string, unknown>, groups: ReadonlyMap<string, Group>): Compiled {
   if (!Object.hasOwn(countries, code)) throw new Error(`${code} is not a country on the map`);
   if (file['country'] !== code) throw new Error(`${code}'s file is for ${String(file['country'])}`);
   const passports = 'rules' in file ? named(file['rules'], code) : {};
   if (!('group' in file)) return { passports, others: rule(file['others'], `${code}'s others`) };
-  const group = String(file['group']);
-  const shared = groups.get(group);
-  if (shared === undefined) throw new Error(`${code} keeps a shared list the game doesn't keep (${group})`);
-  const twice = Object.keys(passports).find((p) => Object.hasOwn(shared.passports, p));
-  if (twice !== undefined) throw new Error(`${code} names ${twice}'s passport, which the ${group} list already names`);
-  if (!('others' in file) && shared.others === undefined) throw new Error(`${code} keeps the ${group} list, which gives no rule for other passports, and gives none of its own`);
-  const others = 'others' in file ? rule(file['others'], `${code}'s others`) : (shared.others as Rule);
-  return { group, passports: { ...shared.passports, ...passports }, others };
+  const names = (Array.isArray(file['group']) ? file['group'] : [file['group']]).map(String);
+  if (names.length === 0) throw new Error(`${code} keeps no shared list by name`);
+  const kept = names.map((name, i) => {
+    const shared = groups.get(name);
+    if (shared === undefined) throw new Error(`${code} keeps a shared list the game doesn't keep (${name})`);
+    if (names.indexOf(name) !== i) throw new Error(`${code} keeps the ${name} list twice`);
+    return [name, shared] as const;
+  });
+  for (const p of Object.keys(passports)) {
+    const by = kept.find(([, shared]) => Object.hasOwn(shared.passports, p));
+    if (by !== undefined) throw new Error(`${code} names ${p}'s passport, which the ${by[0]} list already names`);
+  }
+  const listed = kept.find(([, shared]) => shared.others !== undefined);
+  if (!('others' in file) && listed === undefined) throw new Error(`${code} keeps the ${names.join(' and ')} list${names.length > 1 ? 's, which give' : ', which gives'} no rule for other passports, and gives none of its own`);
+  const others = 'others' in file ? rule(file['others'], `${code}'s others`) : (listed?.[1].others as Rule);
+  // The first list naming a passport gives its rule: the later lists are spread first.
+  const shared = Object.assign({}, ...kept.map(([, list]) => list.passports).reverse()) as Record<string, Rule>;
+  return { groups: names, passports: { ...shared, ...passports }, others };
 }
 
 interface Register {

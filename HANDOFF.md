@@ -162,7 +162,7 @@ restarts. Read `CLAUDE.md` and the owner's package in `docs/` first.
   engagement may be worked without it where the law allows (`days`, `within`), or 'home', or undefined where the
   rules aren't kept (the player told, line `work.unkept`). A shared list names its passports and may give the rule
   for every other; a country keeping it adds its own and its own rule for every other where needed; the compile
-  merges them so the engine reads one list. Shared lists: `csme` (below), `eea` (Directive 2004/38 arts. 7 and 24, the EEA Joint
+  merges them so the engine reads one list. Shared lists: `csme` and `oecs` (below), `eea` (Directive 2004/38 arts. 7 and 24, the EEA Joint
   Committee's Decision 158/2007, the EU–Swiss free movement agreement), `us` (the O-1 petition for everyone but the
   Compact states' citizens, 8 CFR 214.2(o) and 274a.12(a)(8)), kept by the US, Guam, Puerto Rico, the US Virgin
   Islands and the Northern Marianas (8 U.S.C. 1101(a)(38)). Own rules: Germany (BeschV §§ 22, 25, 30: the
@@ -229,8 +229,16 @@ restarts. Read `CLAUDE.md` and the owner's package in `docs/` first.
   list `csme` (Trinidad and Tobago's Foreign Ministry: Article 46 of the Revised Treaty of Chaguaramas, artistes and
   musicians among the approved categories): the twelve participating states' nationals work in one another on the
   CARICOM Skills Certificate; each state keeping it gives its own rule for others. Nicaragua is a blocker
-  (2026-10-29): only the 2006 tax rule on foreign artists' shows was found, not the migration rule. An exemption only for artists of fame or a significant event's main attraction (Belgium,
-  Denmark) isn't modelled as days open to a performer. Matrix (2026-10-29): 78 researched, 6 proven, 168 pending:
+  (2026-10-29): only the 2006 tax rule on foreign artists' shows was found, not the migration rule. A country may keep
+  several shared lists, in order: the first naming a passport gives its rule (decided 2026-10-29, for the OECS states,
+  whose citizens' free movement must count over the CARICOM Skills Certificate). Shared list `oecs` (the OECS
+  Commission, 16 January 2024: indefinite stay and no work permit for citizens of Antigua and Barbuda, Dominica,
+  Grenada, St Kitts and Nevis, Saint Lucia, St Vincent and the Grenadines and Montserrat). The Caribbean: Trinidad and
+  Tobago (30 days once a year without a permit, declared on entry; from a report of the minister's statement), Jamaica
+  (the Ministry of Labour's work permit), Barbados (the short-term work permit, Immigration Act s. 17), Grenada (the
+  entertainers' work permit, S.R.O. 26 of 2015), Saint Lucia (Labour Act s. 317), Dominica (the Labour Division's work
+  permit, from Invest Dominica), St Kitts and Nevis (the Ministry of National Security's work permit). An exemption only for artists of fame or a significant event's main attraction (Belgium,
+  Denmark) isn't modelled as days open to a performer. Matrix (2026-10-29): 85 researched, 6 proven, 161 pending:
   every other country to research next, each from its own
   immigration law or office (the performer's route, its short-engagement exemption, its free-movement partners:
   the EEA, the CTA, Trans-Tasman, Mercosur, CARICOM, the GCC, ECOWAS, the EAC, the EAEU, the Compacts, India–Nepal
