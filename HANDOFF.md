@@ -246,9 +246,13 @@ restarts. Read `CLAUDE.md` and the owner's package in `docs/` first.
   Kazakhstan (artists need no permit to employ foreign labour, Decree 1041 item 11: free, the stay being the visa's).
   Shared list `eaeu` (the Eurasian Economic Commission: EAEU Treaty art. 97, members' citizens work without a
   permit): Armenia, Belarus, Kazakhstan, Kyrgyzstan, Russia. Decided: `free` means no permission to work is asked;
-  a stay beyond the visit is the visa's or residence permit's, as in Svalbard and Kazakhstan. Blockers registered (papers.work.blocked.<CC>, five methods each, the player told by line
+  a stay beyond the visit is the visa's or residence permit's, as in Svalbard and Kazakhstan. South-East Asia: the
+  Philippines (the Bureau of Immigration's Special Work Permit for artists, six months at most), Thailand (the work
+  permit; the urgent-work notification for government-supported concerts, being for major events only, isn't days),
+  Indonesia (the music performer visa C7A, no labour permit since 2023), Malaysia (PUSPAL and the Professional Visit
+  Pass), Vietnam (the work permit; Decree 219/2025's exemptions name no performers). Blockers registered (papers.work.blocked.<CC>, five methods each, the player told by line
   `work.unkept`): Lithuania, Jersey, the Faroe Islands, Venezuela, Nicaragua, Saudi Arabia, Qatar, Bahrain. An exemption only for artists of fame or a significant event's main attraction (Belgium,
-  Denmark) isn't modelled as days open to a performer. Matrix (2026-10-29): 90 researched, 8 blocked, 6 proven, 148 pending:
+  Denmark) isn't modelled as days open to a performer. Matrix (2026-10-29): 95 researched, 8 blocked, 6 proven, 143 pending:
   every other country to research next, each from its own
   immigration law or office (the performer's route, its short-engagement exemption, its free-movement partners:
   the EEA, the CTA, Trans-Tasman, Mercosur, CARICOM, the GCC, ECOWAS, the EAC, the EAEU, the Compacts, India–Nepal
