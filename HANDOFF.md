@@ -162,7 +162,7 @@ restarts. Read `CLAUDE.md` and the owner's package in `docs/` first.
   engagement may be worked without it where the law allows (`days`, `within`), or 'home', or undefined where the
   rules aren't kept (the player told, line `work.unkept`). A shared list names its passports and may give the rule
   for every other; a country keeping it adds its own and its own rule for every other where needed; the compile
-  merges them so the engine reads one list. Shared lists: `eea` (Directive 2004/38 arts. 7 and 24, the EEA Joint
+  merges them so the engine reads one list. Shared lists: `csme` (below), `eea` (Directive 2004/38 arts. 7 and 24, the EEA Joint
   Committee's Decision 158/2007, the EU–Swiss free movement agreement), `us` (the O-1 petition for everyone but the
   Compact states' citizens, 8 CFR 214.2(o) and 274a.12(a)(8)), kept by the US, Guam, Puerto Rico, the US Virgin
   Islands and the Northern Marianas (8 U.S.C. 1101(a)(38)). Own rules: Germany (BeschV §§ 22, 25, 30: the
@@ -221,8 +221,16 @@ restarts. Read `CLAUDE.md` and the owner's package in `docs/` first.
   specific-purpose visa), Ecuador (the artists' temporary residence visa), Panama (the occasional workers' visa,
   artists' kind). The Mercosur Residence Agreement's residence isn't modelled separately in any of them. Venezuela is a
   blocker (2026-10-29): the Migration and Foreigners Law's copies (OAS, the Colombian consulate's guide) refuse this
-  client and SAIME publishes no artists' requirements found. An exemption only for artists of fame or a significant event's main attraction (Belgium,
-  Denmark) isn't modelled as days open to a performer. Matrix (2026-10-29): 73 researched, 6 proven, 173 pending:
+  client and SAIME publishes no artists' requirements found. Central America: Costa Rica (the DGME's work permit for
+  artists, from a 2026 report quoting it, since SCIJ refuses this client), Guatemala (the Culture Ministry's
+  authorisation of a foreign artist's presentation; the Migration Institute's status not found), El Salvador (the
+  DGME's special entry permit for artists, from a report quoting it), Honduras (the special stay permit for public
+  spectacles, from Spain's embassy), Belize (the entertainers' Temporary Employment Permit, a week or less). Shared
+  list `csme` (Trinidad and Tobago's Foreign Ministry: Article 46 of the Revised Treaty of Chaguaramas, artistes and
+  musicians among the approved categories): the twelve participating states' nationals work in one another on the
+  CARICOM Skills Certificate; each state keeping it gives its own rule for others. Nicaragua is a blocker
+  (2026-10-29): only the 2006 tax rule on foreign artists' shows was found, not the migration rule. An exemption only for artists of fame or a significant event's main attraction (Belgium,
+  Denmark) isn't modelled as days open to a performer. Matrix (2026-10-29): 78 researched, 6 proven, 168 pending:
   every other country to research next, each from its own
   immigration law or office (the performer's route, its short-engagement exemption, its free-movement partners:
   the EEA, the CTA, Trans-Tasman, Mercosur, CARICOM, the GCC, ECOWAS, the EAC, the EAEU, the Compacts, India–Nepal
