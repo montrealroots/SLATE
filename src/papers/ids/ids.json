@@ -983,6 +983,67 @@
    }
   ]
  },
+ "BY": {
+  "document": "ID-карта (identification card)",
+  "currency": "BYN",
+  "routes": [
+   {
+    "id": "standard",
+    "where": "home",
+    "speed": "standard",
+    "within": {
+     "n": 15,
+     "unit": "working day"
+    }
+   },
+   {
+    "id": "accelerated",
+    "where": "home",
+    "speed": "urgent",
+    "within": {
+     "n": 10,
+     "unit": "working day"
+    }
+   },
+   {
+    "id": "urgent",
+    "where": "home",
+    "speed": "urgent",
+    "within": {
+     "n": 5,
+     "unit": "working day"
+    }
+   },
+   {
+    "id": "consulate",
+    "where": "abroad",
+    "speed": "standard",
+    "within": null
+   }
+  ],
+  "bands": [
+   {
+    "validYears": 5,
+    "pay": {
+     "standard": 0,
+     "accelerated": null,
+     "urgent": null,
+     "consulate": null
+    },
+    "under": 14
+   },
+   {
+    "validYears": 10,
+    "pay": {
+     "standard": 6750,
+     "accelerated": null,
+     "urgent": null,
+     "consulate": null
+    },
+    "from": 14
+   }
+  ]
+ },
  "BZ": {
   "document": "Social Security card (the de facto national ID)",
   "currency": "BZD",
@@ -2946,6 +3007,26 @@
      "centre": 0
     },
     "from": 17
+   }
+  ]
+ },
+ "KW": {
+  "document": "Civil ID card (البطاقة المدنية)",
+  "currency": "KWD",
+  "routes": [
+   {
+    "id": "paci",
+    "where": "home",
+    "speed": "standard",
+    "within": null
+   }
+  ],
+  "bands": [
+   {
+    "validYears": null,
+    "pay": {
+     "paci": 5000
+    }
    }
   ]
  },

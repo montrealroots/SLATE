@@ -12,8 +12,8 @@ describe('the identity documents', () => {
   it("are each country's own, by age and route", () => {
     expect(COUNTRY_CODES.filter(keepsIds)).toEqual(Object.keys(data).sort());
     expect(keepsIds('DE')).toBe(true);
-    expect(keepsIds('BY')).toBe(false);
-    expect([idOffers('BY', 30), idDocument('BY'), idIssuer('BY')]).toEqual([undefined, undefined, undefined]);
+    expect(keepsIds('LY')).toBe(false);
+    expect([idOffers('LY', 30), idDocument('LY'), idIssuer('LY')]).toEqual([undefined, undefined, undefined]);
     // Germany: ten years from 24, six under; at home or at a mission abroad, which costs more.
     expect(idDocument('DE')).toBe('Personalausweis');
     const de = idOffers('DE', 30);
@@ -42,8 +42,8 @@ describe('the identity documents', () => {
 
   it("tell the player what the game doesn't know", () => {
     expect([UNKEPT_LINE, NONE_LINE, FEE_UNKNOWN_LINE, VALIDITY_UNKNOWN_LINE, TIME_UNKNOWN_LINE]).toEqual(['ids.unkept', 'ids.none', 'ids.fee-unknown', 'ids.validity-unknown', 'ids.time-unknown']);
-    expect(aboutIds('BY')).toBe(t(UNKEPT_LINE, { country: 'Belarus' }));
-    expect(aboutIds('BY')).toBe("Whether Belarus issues an identity card, and what one costs, aren't known to this game yet.");
+    expect(aboutIds('LY')).toBe(t(UNKEPT_LINE, { country: 'Libya' }));
+    expect(aboutIds('LY')).toBe("Whether Libya issues an identity card, and what one costs, aren't known to this game yet.");
     expect(aboutIds('GB')).toBe('United Kingdom issues no national identity card.');
     expect(aboutIds('GU')).toBe(t(NONE_LINE, { country: 'Guam' }));
     expect([aboutIds('DE'), aboutIds('FR'), aboutIds('GF')]).toEqual([undefined, undefined, undefined]);

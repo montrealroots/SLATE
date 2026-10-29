@@ -9,7 +9,7 @@ a place fills a column; a cell is the row's status in that engine's matrix, or b
 | AE | United Arab Emirates | researched | researched | researched | researched | researched | researched | researched | researched |
 | AF | Afghanistan | researched | researched | researched | researched | blocked | researched | researched | researched |
 | AG | Antigua and Barbuda | researched | researched | researched | blocked | researched | researched | researched | researched |
-| AI | Anguilla | researched | researched | researched | blocked | researched | researched | researched | pending |
+| AI | Anguilla | researched | researched | researched | blocked | researched | researched | researched | blocked |
 | AL | Albania | researched | researched | researched | researched | researched | researched | researched | researched |
 | AM | Armenia | researched | researched | researched | researched | researched | researched | researched | researched |
 | AN | Netherlands Antilles | researched | researched | proven | proven | proven | proven | proven | proven |
@@ -41,7 +41,7 @@ a place fills a column; a cell is the row's status in that engine's matrix, or b
 | BT | Bhutan | researched | researched | researched | blocked | blocked | researched | blocked | researched |
 | BV | Bouvet Island | researched | researched | proven | proven | proven | proven | proven | proven |
 | BW | Botswana | researched | researched | researched | blocked | researched | researched | researched | researched |
-| BY | Belarus | researched | researched | researched | researched | researched | researched | blocked | pending |
+| BY | Belarus | researched | researched | researched | researched | researched | researched | blocked | researched |
 | BZ | Belize | researched | researched | researched | researched | researched | researched | researched | researched |
 | CA | Canada | researched | researched | researched | researched | blocked | researched | researched | researched |
 | CC | Cocos Islands | researched | researched | researched | blocked | blocked | researched | researched | researched |
@@ -78,7 +78,7 @@ a place fills a column; a cell is the row's status in that engine's matrix, or b
 | ET | Ethiopia | researched | researched | researched | researched | researched | researched | researched | researched |
 | FI | Finland | researched | researched | researched | researched | researched | researched | researched | researched |
 | FJ | Fiji | researched | researched | researched | researched | researched | researched | researched | researched |
-| FK | Falkland Islands | researched | researched | researched | blocked | researched | blocked | researched | pending |
+| FK | Falkland Islands | researched | researched | researched | blocked | researched | blocked | researched | blocked |
 | FM | Micronesia | researched | researched | researched | researched | blocked | researched | researched | researched |
 | FO | Faroe Islands | researched | researched | researched | researched | blocked | researched | researched | researched |
 | FR | France | researched | researched | researched | researched | researched | researched | researched | researched |
@@ -94,12 +94,12 @@ a place fills a column; a cell is the row's status in that engine's matrix, or b
 | GM | Gambia | researched | researched | researched | researched | blocked | researched | researched | researched |
 | GN | Guinea | researched | researched | researched | researched | researched | researched | researched | researched |
 | GP | Guadeloupe | researched | researched | researched | researched | researched | researched | researched | researched |
-| GQ | Equatorial Guinea | researched | researched | researched | researched | blocked | researched | researched | pending |
+| GQ | Equatorial Guinea | researched | researched | researched | researched | blocked | researched | researched | blocked |
 | GR | Greece | researched | researched | researched | researched | researched | researched | researched | researched |
 | GS | South Georgia and the South Sandwich Islands | researched | researched | researched | blocked | researched | researched | researched | researched |
 | GT | Guatemala | researched | researched | researched | researched | researched | researched | researched | researched |
 | GU | Guam | researched | researched | researched | researched | researched | researched | researched | researched |
-| GW | Guinea-Bissau | researched | researched | researched | researched | blocked | researched | blocked | pending |
+| GW | Guinea-Bissau | researched | researched | researched | researched | blocked | researched | blocked | blocked |
 | GY | Guyana | researched | researched | researched | researched | researched | researched | researched | researched |
 | HK | Hong Kong | researched | researched | researched | researched | researched | researched | researched | researched |
 | HM | Heard Island and McDonald Islands | researched | researched | proven | proven | proven | proven | proven | proven |
@@ -129,7 +129,7 @@ a place fills a column; a cell is the row's status in that engine's matrix, or b
 | KN | Saint Kitts and Nevis | researched | researched | researched | researched | researched | blocked | researched | researched |
 | KP | North Korea | researched | researched | researched | researched | blocked | blocked | blocked | researched |
 | KR | South Korea | researched | researched | researched | researched | researched | researched | researched | researched |
-| KW | Kuwait | researched | researched | researched | blocked | researched | researched | researched | pending |
+| KW | Kuwait | researched | researched | researched | blocked | researched | researched | researched | researched |
 | KY | Cayman Islands | researched | researched | researched | blocked | researched | researched | researched | researched |
 | KZ | Kazakhstan | researched | researched | researched | researched | researched | researched | researched | researched |
 | LA | Laos | researched | researched | researched | researched | blocked | researched | researched | researched |
@@ -142,7 +142,7 @@ a place fills a column; a cell is the row's status in that engine's matrix, or b
 | LT | Lithuania | researched | researched | researched | researched | researched | researched | researched | researched |
 | LU | Luxembourg | researched | researched | researched | researched | researched | researched | researched | researched |
 | LV | Latvia | researched | researched | researched | researched | researched | researched | researched | researched |
-| LY | Libya | researched | researched | researched | researched | researched | researched | blocked | pending |
+| LY | Libya | researched | researched | researched | researched | researched | researched | blocked | blocked |
 | MA | Morocco | researched | researched | researched | researched | researched | researched | researched | researched |
 | MC | Monaco | researched | researched | researched | blocked | researched | researched | researched | researched |
 | MD | Moldova | researched | researched | researched | researched | researched | researched | researched | researched |
@@ -158,7 +158,7 @@ a place fills a column; a cell is the row's status in that engine's matrix, or b
 | MP | Northern Mariana Islands | researched | researched | researched | blocked | researched | blocked | researched | researched |
 | MQ | Martinique | researched | researched | researched | researched | researched | researched | researched | researched |
 | MR | Mauritania | researched | researched | researched | researched | researched | researched | researched | researched |
-| MS | Montserrat | researched | researched | researched | blocked | researched | researched | researched | pending |
+| MS | Montserrat | researched | researched | researched | blocked | researched | researched | researched | blocked |
 | MT | Malta | researched | researched | researched | researched | researched | researched | researched | researched |
 | MU | Mauritius | researched | researched | researched | researched | researched | researched | researched | researched |
 | MV | Maldives | researched | researched | researched | researched | researched | researched | researched | researched |
@@ -189,7 +189,7 @@ a place fills a column; a cell is the row's status in that engine's matrix, or b
 | PM | Saint Pierre and Miquelon | researched | researched | researched | researched | blocked | researched | researched | researched |
 | PN | Pitcairn | researched | researched | researched | blocked | researched | researched | researched | researched |
 | PR | Puerto Rico | researched | researched | researched | researched | researched | researched | researched | researched |
-| PS | Palestinian Territory | researched | researched | researched | blocked | researched | researched | blocked | pending |
+| PS | Palestinian Territory | researched | researched | researched | blocked | researched | researched | blocked | blocked |
 | PT | Portugal | researched | researched | researched | researched | researched | researched | researched | researched |
 | PW | Palau | researched | researched | researched | researched | blocked | researched | blocked | researched |
 | PY | Paraguay | researched | researched | researched | researched | researched | researched | researched | researched |
@@ -205,7 +205,7 @@ a place fills a column; a cell is the row's status in that engine's matrix, or b
 | SD | Sudan | researched | researched | researched | researched | researched | blocked | researched | researched |
 | SE | Sweden | researched | researched | researched | researched | researched | researched | researched | researched |
 | SG | Singapore | researched | researched | researched | researched | researched | researched | researched | researched |
-| SH | Saint Helena | researched | researched | researched | researched | blocked | researched | researched | pending |
+| SH | Saint Helena | researched | researched | researched | researched | blocked | researched | researched | blocked |
 | SI | Slovenia | researched | researched | researched | researched | researched | researched | researched | researched |
 | SJ | Svalbard and Jan Mayen | researched | researched | researched | researched | blocked | researched | researched | researched |
 | SK | Slovakia | researched | researched | researched | researched | researched | researched | researched | researched |

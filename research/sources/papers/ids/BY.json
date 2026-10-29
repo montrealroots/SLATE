@@ -1,0 +1,88 @@
+{
+ "country": "BY",
+ "document": "ID-карта (identification card)",
+ "office": "the citizenship and migration departments of the Ministry of Internal Affairs",
+ "currency": "BYN",
+ "routes": [
+  {
+   "id": "standard",
+   "where": "home",
+   "speed": "standard",
+   "within": {
+    "n": 15,
+    "unit": "working day"
+   },
+   "label": "at the citizenship and migration department of one's place of registration: 15 working days"
+  },
+  {
+   "id": "accelerated",
+   "where": "home",
+   "speed": "urgent",
+   "within": {
+    "n": 10,
+    "unit": "working day"
+   },
+   "label": "accelerated: 10 working days"
+  },
+  {
+   "id": "urgent",
+   "where": "home",
+   "speed": "urgent",
+   "within": {
+    "n": 5,
+    "unit": "working day"
+   },
+   "label": "urgent: 5 working days"
+  },
+  {
+   "id": "consulate",
+   "where": "abroad",
+   "speed": "standard",
+   "within": null,
+   "label": "at a Belarusian diplomatic mission or consulate abroad"
+  }
+ ],
+ "cards": [
+  {
+   "for": "under 14",
+   "under": 14,
+   "validYears": 5,
+   "pay": {
+    "standard": "0",
+    "accelerated": null,
+    "urgent": null,
+    "consulate": null
+   }
+  },
+  {
+   "for": "14 and over",
+   "from": 14,
+   "validYears": 10,
+   "pay": {
+    "standard": "67.50",
+    "accelerated": null,
+    "urgent": null,
+    "consulate": null
+   }
+  }
+ ],
+ "note": "Zerkalo (31 August 2021), on the card introduced that September: it is issued by the citizenship and migration department of one's place of registration (abroad, by a mission or consulate) in 15 working days, 10 accelerated, 5 urgent; children under 14 and those on full state support pay nothing, pensioners and disabled people of groups I and II one base unit (not modelled), everyone else 1.5 base units; the card is valid ten years, five under 14. At the base unit of 45 roubles in force from 1 January 2026 (Council of Ministers Resolution 651 of 20 November 2025, as iLex lists it), 1.5 units is 67.50 roubles; the surcharges for faster issue and the consular fees aren't known, and no later change to the 1.5-unit rate was found (the Ministry's and the legal portal's sites refuse this client).",
+ "sources": [
+  {
+   "url": "https://news.zerkalo.io/life/2301.html",
+   "title": "Zerkalo, on ID cards and biometric passports in Belarus from 1 September 2021 (31 August 2021)",
+   "read": "2026-10-28",
+   "kind": "secondary",
+   "quotes": "https://mvd.gov.by/",
+   "said": "За картой нужно обращаться в подразделение по гражданству и миграции по месту регистрации. Гражданам, находящимся за пределами страны, нужно идти в ближайшее диппредставительство или консульство Беларуси. ID-карта будет готова через 15 рабочих дней после того, как человек подал заявление. Если процедура проходит в ускоренном порядке, это займет десять рабочих дней, в срочном — пять. ... детям до 14 лет платить за ID-карту не нужно. Пенсионерам, инвалидам I и II группы она обойдется в 1 базовую (сейчас это 29 рублей), для остальных — в 1,5 базовой (43,5 рубля). ... Срок действия идентификационной карты — 10 лет. Для тех, кому 14 еще не исполнилось, — 5 лет."
+  },
+  {
+   "url": "https://ilex.by/news/bazovaya-velichina-minimalnaya-zarplata-i-bazovaya-stavka-razmery/",
+   "title": "iLex, Базовая величина, минимальная зарплата и базовая ставка: размеры-2026",
+   "read": "2026-10-28",
+   "kind": "secondary",
+   "quotes": "https://pravo.by/",
+   "said": "1. Базовая величина 45 рублей – с 01.01.2026. К базовой величине привязаны штрафы, госпошлины, ряд выплат. Постановление Совмина от 20.11.2025 № 651."
+  }
+ ]
+}
