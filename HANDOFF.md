@@ -50,10 +50,15 @@ restarts. Read `CLAUDE.md` and the owner's package in `docs/` first.
   Act 236/2017 §6, and the Pacific states without one: Micronesia, Nauru, the Solomons, Tuvalu, Samoa, Palau); a
   territory holding another's card names it (`issuedBy`), on all its routes. Where a card is due again at set
   ages rather than after a term (Singapore, Malaysia, Vietnam before 60) its validity is null. What the research
-  couldn't read is null, and the player is told so (`idOfferGaps`): 54 countries have at least one fee null (among
-  them Belarus' accelerated, urgent and consular routes, Bulgaria's and Slovenia's urgent bands, Algeria, Jordan,
-  Tunisia, Myanmar, North Korea, the Vatican, and the Pacific and Caribbean voter-card states); the next step is to
-  try those again. Every adult (30) of a country that issues a card has at least one offer (the places test).
+  couldn't read is null, and the player is told so (`idOfferGaps`). Retried on 2026-10-29 (fees found for Ecuador,
+  Serbia, Cameroon, the Dominican Republic, Sri Lanka, Niger, Malawi, Slovakia's children, Uganda, Bangladesh,
+  Senegal and Guyana; Cameroon's term corrected to the 2025 decree's ten years): 42 countries still have at least one
+  fee null, 32 of them with none at all (BA BM BN CG DM DZ ET IR JO KI KM KN KP LS MG MH MM MR MV SD SL SS SZ TL TM TN
+  TO VA VC VG VU YE); each file's note says what was tried. Every adult (30) of a country that issues a card has at
+  least one offer (the places test). The files model a first card; renewal (an expired card renewed, often at
+  another fee, as Ecuador's US$16 against US$5) is in many notes but not in the form, and is a depth pass to make for
+  identity cards and passports alike before the papers screen reads them: a `renew` fee by route on each band,
+  researched per country, the player told where it isn't known.
 
 The passports' form (decided 2026-10-28, the engine's reader being the Papers page: apply, pay, wait, hold a
 passport valid so many years). Each research file has `routes`, one per way the office takes an application: `id`,
