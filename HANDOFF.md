@@ -59,6 +59,31 @@ restarts. Read `CLAUDE.md` and the owner's package in `docs/` first.
   another fee, as Ecuador's US$16 against US$5) is in many notes but not in the form, and is a depth pass to make for
   identity cards and passports alike before the papers screen reads them: a `renew` fee by route on each band,
   researched per country, the player told where it isn't known.
+- The citizenship engine (`papers.citizenship`, `src/papers/citizenship/`, compiled by `tools/papers/citizenship/` from
+  `research/sources/papers/citizenship/<CC>.json`, register facts `papers.citizenship.<CC>`) is built (2026-10-29), at
+  100% mutation score (267 mutants), its matrix complete: 246 researched, 6 proven (no places), none pending. Its
+  reader is what a move abroad does to a life's papers: `naturalisation(country)` gives the years of residence a
+  state's ordinary naturalisation asks and whether every other citizenship must be given up ('none' where no one is
+  naturalised on residence alone: China, Kuwait, North Korea, Myanmar, Nepal, the Vatican and others), and
+  `naturalise(held, country)` the citizenships held afterwards, dropping those the new state makes the applicant
+  renounce or whose own law takes them from a citizen who takes another, and naming as unsure those whose rule isn't
+  known (`keepingUnknown`). A territory names the state whose nationality its people hold (`nationalityOf`), and that
+  state's rules are its own, except Svalbard, where living doesn't count (`residenceCounts: false`). The 190 states
+  GLOBALCIT covers start from its Citizenship Law Dataset v3.0 (EUI, 2025; laws in force on 1 January 2024; secondary,
+  each row quoted verbatim from its CSV), with the minimum residence read from each provision's own words where the
+  dataset's count is a window (Canada 3, India 12, St Kitts 15, Dominica and St Lucia 8, the Bahamas 7, Malta 5).
+  Reforms since then are read from the law itself: Germany (5 years, renunciation and loss repealed, 27 June 2024),
+  Finland (8 years, Act 474/2024), Sweden (8 years, Act 2026:447), Portugal (10 years, 7 for Portuguese-speaking and EU
+  nationals, Organic Law 1/2026); primary sources added for the Netherlands, Australia and China. Andorra, Monaco,
+  San Marino (renunciation removed, 2026), the Vatican, the Maldives, Uruguay (legal citizenship, Constitution art. 75)
+  and Palestine (Basic Law arts. 7 and 28) are read from their own texts; the territories from their states' laws
+  (France's Constitution art. 72-3; 8 U.S.C. 1101, 1401-1408; the British Nationality Act 1981 Sch. 6 and s. 50 and
+  the British Overseas Territories Act 2002 s. 3; the Kingdom Act on Dutch Nationality art. 8; New Zealand's Citizenship
+  Act s. 2; Australia's s. 3; Denmark's naturalisation form for the Faroes and Greenland; Åland's Autonomy Act; the
+  Svalbard Act and a Minister's answer to the Storting; Hong Kong's Basic Law Annex III and Macao's Government portal).
+  Still to do: a pass over the other 180 GLOBALCIT states for reforms after 1 January 2024 (each file's note says what
+  date its rule is from); the shorter periods by nationality, marriage or descent aren't modelled (Portugal's 7, the
+  Nordic 2 in Sweden), nor naturalisation by religion (the Maldives).
 
 The passports' form (decided 2026-10-28, the engine's reader being the Papers page: apply, pay, wait, hold a
 passport valid so many years). Each research file has `routes`, one per way the office takes an application: `id`,
@@ -766,8 +791,8 @@ What layer 0 holds:
    (2026-02-11), mfa.gov.bt/faqs (2026-09-24), gov.sz's travel documents page (2026-08-15),
    falepilipathway.gov.au/support-tuvalu (2026-10-07), interieur.gouv.cg (2025-12-06), the Palestinian Cabinet's
    service guide (2025-11-02), immigration.gov.so/services (2026-08-31), naenara.com.kp (2026-10-17).
-   Identity cards: done 2026-10-29 (above); their null fees to try again. Next: citizenship, visas, residence and
-   work permissions (each an engine with its own matrix), then the banks.
+   Identity cards and citizenship: done 2026-10-29 (above); the cards' null fees and citizenship's post-2024 reforms
+   to try again. Next: visas, residence and work permissions (each an engine with its own matrix), then the banks.
 
 ## Verification evidence
 

@@ -123,5 +123,14 @@
    "coverage/ids-countries.json"
   ],
   "allPlacesTest": "tests/papers/ids/ids.places.test.ts::the identity documents > for every place on the map"
+ },
+ "papers.citizenship": {
+  "layer": 3,
+  "dir": "src/papers/citizenship",
+  "readsPlace": true,
+  "matrices": [
+   "coverage/citizenship-countries.json"
+  ],
+  "allPlacesTest": "tests/papers/citizenship/citizenship.places.test.ts::citizenship > for every place on the map"
  }
 }
