@@ -82,6 +82,25 @@
     ]
    }
   ],
+  "AT": [
+   {
+    "bank": "BAWAG",
+    "card": "Kreditkarte WEISS",
+    "rate": {
+     "percent": "12.15",
+     "per": "year"
+    },
+    "fees": [
+     {
+      "fee": {
+       "currency": "EUR",
+       "minor": 206
+      },
+      "per": "month"
+     }
+    ]
+   }
+  ],
   "AU": [
    {
     "bank": "Commonwealth Bank",
@@ -114,6 +133,25 @@
       "fee": {
        "currency": "USD",
        "minor": 5000
+      },
+      "per": "year"
+     }
+    ]
+   }
+  ],
+  "AX": [
+   {
+    "bank": "Ålandsbanken",
+    "card": "Ålandsbanken Credit",
+    "rate": {
+     "percent": "11.58",
+     "per": "year"
+    },
+    "fees": [
+     {
+      "fee": {
+       "currency": "EUR",
+       "minor": 4500
       },
       "per": "year"
      }
@@ -505,6 +543,17 @@
     ]
    }
   ],
+  "CZ": [
+   {
+    "bank": "Komerční banka",
+    "card": "4U karta",
+    "rate": {
+     "percent": "22.90",
+     "per": "year"
+    },
+    "fees": []
+   }
+  ],
   "DE": [
    {
     "bank": "Deutsche Bank",
@@ -515,6 +564,22 @@
       "fee": {
        "currency": "EUR",
        "minor": 3900
+      },
+      "per": "year"
+     }
+    ]
+   }
+  ],
+  "DK": [
+   {
+    "bank": "Danske Bank",
+    "card": "Mastercard Basis",
+    "rate": "in full",
+    "fees": [
+     {
+      "fee": {
+       "currency": "DKK",
+       "minor": 25000
       },
       "per": "year"
      }
@@ -541,6 +606,52 @@
         "under": 26
        }
       ]
+     }
+    ]
+   }
+  ],
+  "ES": [
+   {
+    "bank": "CaixaBank",
+    "card": "Visa &Go",
+    "rate": {
+     "percent": "20.40",
+     "per": "year"
+    },
+    "fees": [
+     {
+      "fee": {
+       "currency": "EUR",
+       "minor": 3600
+      },
+      "per": "year",
+      "waived": [
+       {
+        "spend": {
+         "currency": "EUR",
+         "minor": 1
+        }
+       }
+      ]
+     }
+    ]
+   }
+  ],
+  "FI": [
+   {
+    "bank": "Nordea",
+    "card": "Nordea Credit",
+    "rate": {
+     "percent": "16.98",
+     "per": "year"
+    },
+    "fees": [
+     {
+      "fee": {
+       "currency": "EUR",
+       "minor": 299
+      },
+      "per": "month"
      }
     ]
    }
@@ -929,6 +1040,25 @@
     ]
    }
   ],
+  "IS": [
+   {
+    "bank": "Landsbankinn",
+    "card": "Almennt kreditkort",
+    "rate": {
+     "percent": "15.70",
+     "per": "year"
+    },
+    "fees": [
+     {
+      "fee": {
+       "currency": "ISK",
+       "minor": 3700
+      },
+      "per": "year"
+     }
+    ]
+   }
+  ],
   "IT": [
    {
     "bank": "Intesa Sanpaolo",
@@ -1052,6 +1182,25 @@
       "fee": {
        "currency": "EUR",
        "minor": 200
+      },
+      "per": "month"
+     }
+    ]
+   }
+  ],
+  "LV": [
+   {
+    "bank": "Swedbank",
+    "card": "Swedbank kredītkarte",
+    "rate": {
+     "percent": "20",
+     "per": "year"
+    },
+    "fees": [
+     {
+      "fee": {
+       "currency": "EUR",
+       "minor": 250
       },
       "per": "month"
      }
@@ -1619,6 +1768,33 @@
        "minor": 650000
       },
       "per": "year"
+     }
+    ]
+   }
+  ],
+  "PL": [
+   {
+    "bank": "PKO Bank Polski",
+    "card": "Przejrzysta karta kredytowa PKO Visa",
+    "rate": {
+     "percent": "14.50",
+     "per": "year"
+    },
+    "fees": [
+     {
+      "fee": {
+       "currency": "PLN",
+       "minor": 8000
+      },
+      "per": "year",
+      "waived": [
+       {
+        "spend": {
+         "currency": "PLN",
+         "minor": 720000
+        }
+       }
+      ]
      }
     ]
    }
