@@ -7,7 +7,8 @@ import data from './cards.json' with { type: 'json' };
 /**
  * Each country's credit cards (src/money/cards/cards.json, compiled by tools/money/cards from the research, register
  * facts money.cards.<CC>): each card as its bank names it, the interest it charges on what's owed, by the year or the
- * month as the bank states it, or none for a charge card, whose balance the bank takes from the account each month,
+ * month as the bank states it (a yearly one marked effective where the bank states only its effective rate), or none
+ * for a charge card, whose balance the bank takes from the account each month,
  * and the fees it carries, each charged and waived as an account's is
  * (src/money/banks), or waived by spending a figure on the card over the fee's period. A country whose cards the game
  * doesn't keep has none here, and the player is told.
@@ -17,6 +18,8 @@ export interface Rate {
   /** The percent as the bank writes it ("24.99"), exactly. */
   readonly percent: string;
   readonly per: 'month' | 'year';
+  /** A yearly rate the bank states as effective: a month charges the rate that, compounded twelve times, makes it. */
+  readonly effective?: true;
 }
 
 export type Waiver = AccountWaiver | { readonly spend: Money };
@@ -43,10 +46,30 @@ export const cardsIn = (country: CountryCode): readonly Card[] => DATA.countries
 /** Whether the card's balance is taken from the account in full each month, so nothing is carried on it. */
 export const paidInFull = (card: Card): boolean => card.rate === 'in full';
 
+// An effective rate's month is a twelfth root, irrational in general: it is carried to 18 decimal places, far below the
+// minor unit any balance reaches, and floored, so the same balance always gives the same interest.
+const SCALE = 10n ** 18n;
+
+/** The largest integer whose twelfth power is at most n (Newton's method, from an estimate at or above the root). */
+export function root12(n: bigint, above: bigint): bigint {
+  let x = above;
+  for (;;) {
+    const next = (11n * x + n / x ** 11n) / 12n;
+    if (next >= x) return x;
+    x = next;
+  }
+}
+
 /** The interest a month adds to what's owed on the card, rounded half to even to a minor unit; nothing on a credit. */
 export function interestFor(card: Card, owed: Money): Money {
   if (card.rate === 'in full') throw new Error(`${card.bank}'s ${card.card} carries nothing: it's paid in full each month`);
   const { num, den } = rational(card.rate.percent);
+  if (card.rate.effective === true) {
+    // (1 + rate) to SCALE, then its twelfth root to SCALE: the root of (1 + rate) * SCALE^12, less one.
+    const base = (SCALE * (den * 100n + num)) / (den * 100n);
+    const monthly = root12(base * SCALE ** 11n, base) - SCALE;
+    return money(owed.currency as CurrencyCode, Number(roundHalfEven(BigInt(Math.max(owed.minor, 0)) * monthly, SCALE)));
+  }
   // A yearly rate is charged a twelfth a month, as the banks state theirs.
   const months = card.rate.per === 'year' ? 12n : 1n;
   // A balance in the holder's favour earns nothing.

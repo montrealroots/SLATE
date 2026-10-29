@@ -3,7 +3,7 @@ import { money } from '../../../src/core/money/money.ts';
 import { t } from '../../../src/core/text/text.ts';
 import { COUNTRY_CODES } from '../../../src/world/gazetteer/gazetteer.ts';
 import data from '../../../src/money/cards/cards.json';
-import { aboutCards, cardsIn, feeFor, interestFor, keepsCards, paidInFull, UNKEPT_LINE, type Card, type Fee } from '../../../src/money/cards/cards.ts';
+import { aboutCards, cardsIn, feeFor, interestFor, keepsCards, paidInFull, root12, UNKEPT_LINE, type Card, type Fee } from '../../../src/money/cards/cards.ts';
 
 const usd = (minor: number) => money('USD', minor);
 const standing = { age: 30, deposits: usd(0), lowest: usd(0), average: usd(0), national: false, spent: usd(0) };
@@ -37,6 +37,23 @@ describe('cards', () => {
     const monthly: Card = { bank: 'B', card: 'C', rate: { percent: '3.5', per: 'month' }, fees: [] };
     expect(interestFor(monthly, money('XOF', 100_000))).toStrictEqual(money('XOF', 3500));
     expect(interestFor({ ...monthly, rate: { percent: '0', per: 'year' } }, usd(100_000))).toStrictEqual(usd(0));
+  });
+
+  it('charge an effective yearly rate as the month that, compounded twelve times, makes it', () => {
+    const effective = (percent: string): Card => ({ bank: 'B', card: 'C', rate: { percent, per: 'year', effective: true }, fees: [] });
+    // 1.02 to the twelfth is 1.2682417945625...: a month is 2%, where a twelfth of the year would be 2.235%.
+    expect(interestFor(effective('26.8241794562545'), usd(100_000))).toStrictEqual(usd(2000));
+    // 95.90% a year effective is 5.7636% a month (5,763.59 on 100,000), not the 7.99% a twelfth would charge.
+    expect(interestFor(effective('95.90'), usd(100_000))).toStrictEqual(usd(5764));
+    expect(interestFor(effective('12'), usd(123_456))).toStrictEqual(usd(1171));
+    expect(interestFor(effective('300'), usd(100_000))).toStrictEqual(usd(12_246));
+    // BBVA Perú's Cero card states only its TEA, 109.99% a year: 1,000 soles owed for a month carry 63.78.
+    const [cero] = cardsIn('PE') as [Card];
+    expect(cero.rate).toStrictEqual({ percent: '109.99', per: 'year', effective: true });
+    expect(interestFor(cero, money('PEN', 100_000))).toStrictEqual(money('PEN', 6378));
+    expect([interestFor(effective('0'), usd(100_000)), interestFor(effective('95.90'), usd(-100_000))]).toStrictEqual([usd(0), usd(0)]);
+    // The root is the largest integer whose twelfth power doesn't pass the number, from any start at or above it.
+    expect([root12(4096n, 4096n), root12(4095n, 4096n), root12(4097n, 9000n), root12(1n, 1n)]).toEqual([2n, 1n, 2n, 1n]);
   });
 
   it("waive a card's fee by what's spent on it, or as an account's is", () => {

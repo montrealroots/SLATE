@@ -325,17 +325,21 @@ restarts. Read `CLAUDE.md` and the owner's package in `docs/` first.
   at the top of the range, the game not knowing where in it the bank would put the holder (Chase's 18.49% to 27.99%);
   an introductory rate, a fee on issue or replacement, a stamp duty on interest and a cash-advance rate aren't
   written. Tax is added to a fee only where the document states its rate (BAI's 14% VAT). `interestFor(card, owed)` is
-  a month's interest (a yearly rate's twelfth), rounded half to even, nothing on a credit balance; `paidInFull(card)`
+  a month's interest (a yearly rate's twelfth, or for a yearly rate marked `effective`, where the bank states only its
+  effective annual rate, as Peru's TEA and Argentina's register do, the rate that compounded twelve times makes it, a
+  twelfth root carried to 18 places), rounded half to even, nothing on a credit balance; `paidInFull(card)`
   says a charge card carries nothing; `feeFor(fee, standing, day)` takes an account's standing and what was spent.
   A rate stated as a reference rate plus a margin is written as their sum on the day the list gives the reference (MCB
   Mauritius: its 6.90% prime lending rate plus 13.50%); a rate that differs by the security behind the card is the one
   for a card against salary, the game holding no pledged deposit (National Bank of Oman); a fee waived by a count of
   transactions is charged in full, the game not counting them (DSK Bank); where the bank publishes no card's interest,
-  another bank's card is taken (Oman). Where a regulator's observatory prices every bank's card in a place (the IEDOM
+  another bank's card is taken (Oman). A variable rate whose reference value the document doesn't give is written as
+  the bank's own stated average (BBVA México's 59.52%). The compile refuses a rate above 25% a month or 300% a year as a
+  misreading (100 and 10 until Nubank's 19.99% a month). Where a regulator's observatory prices every bank's card in a place (the IEDOM
   and IEOM for the French overseas territories), each bank's international deferred-debit card is kept, a charge card,
   their revolving credit not being in the table. A government charge the bank applies to the card each year is
   written as a yearly fee (AIB's 30-euro stamp duty). The first SLATE's card was a limit and a balance per family, with no bank behind it; its interest and fees weren't
-  researched. Matrix (2026-10-29): 70 researched, 6 proven, 176 pending.
+  researched. Matrix (2026-10-29): 72 researched, 6 proven, 174 pending.
 
 The passports' form (decided 2026-10-28, the engine's reader being the Papers page: apply, pay, wait, hold a
 passport valid so many years). Each research file has `routes`, one per way the office takes an application: `id`,

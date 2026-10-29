@@ -26,6 +26,8 @@ export interface Rate {
   /** The percent as the bank writes it ("24.99"), exactly. */
   percent: string;
   per: RatePeriod;
+  /** A yearly rate the bank states as effective (compounded monthly), not nominal. */
+  effective?: true;
 }
 
 export type Waiver = AccountWaiver | { spend: Money };
@@ -42,20 +44,23 @@ export interface Card {
 const named = (s: unknown) => typeof s === 'string' && s !== '' && s.trim() === s;
 
 /**
- * The interest a card charges: a percent by the year (at most 300) or the month (at most 25), as the bank states it;
+ * The interest a card charges: a percent by the year (at most 300) or the month (at most 25), as the bank states it,
+ * a yearly one marked `effective` where the bank states only its effective annual rate (Peru's TEA, Colombia's E.A.);
  * or `in full`, a charge card's balance being taken from the account each month.
  */
 export function rate(r: unknown, what: string): Rate | 'in full' {
   if (r === 'in full') return r;
   if (typeof r !== 'object' || r === null) throw new Error(`${what} is a percent and the period it's charged by, or in full`);
-  const { percent, per } = r as Record<string, unknown>;
+  const { percent, per, effective } = r as Record<string, unknown>;
   if (!RATE_PERIODS.includes(per as RatePeriod)) throw new Error(`${what} is charged by the month or the year, not ${String(per)}`);
   if (typeof percent !== 'string' || !/^\d+(\.\d+)?$/.test(percent)) throw new Error(`${what}'s percent is a decimal written as text`);
   const { num, den } = rational(percent);
   // Above these the figure is a misreading (a monthly rate written as a yearly one), not a price. They were 100 and 10
   // until Nubank's revolving rate (19.99% a month, Brazil, 2026-10-29) showed a real card above the monthly one.
   if (num > (per === 'year' ? 300n : 25n) * den) throw new Error(`${what}'s percent is above what a bank charges by the ${per as string}`);
-  return { percent, per: per as RatePeriod };
+  if (effective === undefined) return { percent, per: per as RatePeriod };
+  if (effective !== true || per !== 'year') throw new Error(`${what} is effective only as a yearly rate, marked true`);
+  return { percent, per, effective };
 }
 
 /** One condition that waives a card's fee: an account's, or spending a figure on the card over the fee's period. */

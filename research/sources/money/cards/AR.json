@@ -2,6 +2,25 @@
  "country": "AR",
  "cards": [
   {
+   "bank": "Banco de la Nación Argentina",
+   "card": "Visa Internacional",
+   "rate": {
+    "percent": "101.33",
+    "per": "year",
+    "effective": true
+   },
+   "fees": [
+    {
+     "fee": "10446.99",
+     "per": "month"
+    },
+    {
+     "fee": "185740.00",
+     "per": "year"
+    }
+   ]
+  },
+  {
    "bank": "BBVA Argentina",
    "card": "Visa Internacional",
    "rate": {
@@ -16,7 +35,7 @@
    ]
   }
  ],
- "note": "BBVA Argentina's card interest rates (in force October 2026): its Visa Internacional's financing rate is a nominal 66.67% a year in pesos. The central bank's transparency register (information of 9 October 2026) gives the card's maximum monthly administration and maintenance fee as 30,000 pesos, at list price, and no renewal fee. Banco de la Nación Argentina, whose account the game keeps, gives the register only an effective rate, not the nominal one this game writes.",
+ "note": "BBVA Argentina's card interest rates (in force October 2026): its Visa Internacional's financing rate is a nominal 66.67% a year in pesos. The central bank's transparency register (information of 9 October 2026) gives the card's maximum monthly administration and maintenance fee as 30,000 pesos, at list price, and no renewal fee. Banco de la Nación Argentina's Visa Internacional, from the same register: a maximum effective annual rate of 101.33% on financing, a maximum monthly administration fee of 10,446.99 pesos and a yearly renewal fee of 185,740.00, both at list price; the bank's own schedule of charges gives them, with VAT, as 10,447.00 a month and 185,740.00 a year.",
  "sources": [
   {
    "url": "https://www.bbva.com.ar/tablas/tasasTC.pdf",
@@ -28,13 +47,19 @@
    "url": "https://api.bcra.gob.ar/transparencia/v1.0/TarjetasCredito",
    "title": "Banco Central de la República Argentina, API de Régimen de Transparencia: Tarjetas de crédito",
    "read": "2026-10-29",
-   "said": "{\"comisionMaximaAdministracionMantenimiento\":30000.00,\"comisionMaximaRenovacion\":0.00,\"tasaEfectivaAnualMaximaFinanciacion\":89.68,\"tasaEfectivaAnualMaximaAdelantoEfectivo\":89.68,\"ingresoMinimoMensual\":280000,\"antiguedadLaboralMinimaMeses\":12,\"edadMaximaSolicitada\":100,\"segmento\":\"Internacional\",\"codigoEntidad\":17,\"descripcionEntidad\":\"BANCO BBVA ARGENTINA S.A.\",\"fechaInformacion\":\"2026-10-09\",\"nombreCompleto\":\"VISA INTERNACIONAL \",\"nombreCorto\":\"VI INTER \""
+   "said": "{\"comisionMaximaAdministracionMantenimiento\":10446.99,\"comisionMaximaRenovacion\":185740.00,\"tasaEfectivaAnualMaximaFinanciacion\":101.33,\"tasaEfectivaAnualMaximaAdelantoEfectivo\":101.33,\"ingresoMinimoMensual\":391200,\"antiguedadLaboralMinimaMeses\":3,\"edadMaximaSolicitada\":100,\"segmento\":\"Internacional\",\"codigoEntidad\":11,\"descripcionEntidad\":\"BANCO DE LA NACION ARGENTINA\",\"fechaInformacion\":\"2026-10-09\",\"nombreCompleto\":\"VISA INTERNACIONAL\" ... {\"comisionMaximaAdministracionMantenimiento\":30000.00,\"comisionMaximaRenovacion\":0.00,\"tasaEfectivaAnualMaximaFinanciacion\":89.68,\"tasaEfectivaAnualMaximaAdelantoEfectivo\":89.68,\"ingresoMinimoMensual\":280000,\"antiguedadLaboralMinimaMeses\":12,\"edadMaximaSolicitada\":100,\"segmento\":\"Internacional\",\"codigoEntidad\":17,\"descripcionEntidad\":\"BANCO BBVA ARGENTINA S.A.\",\"fechaInformacion\":\"2026-10-09\",\"nombreCompleto\":\"VISA INTERNACIONAL \",\"nombreCorto\":\"VI INTER \""
+  },
+  {
+   "url": "https://bna.com.ar/Downloads/ComisionesYCargosConsumo.pdf",
+   "title": "Banco de la Nación Argentina, Comisiones y cargos de servicios y productos: consumo",
+   "read": "2026-10-29",
+   "said": "MASTERCARD / VISA Denominación Período Importe precio vigente Sin IVA Con IVA Administración de Mensual $8.633,88 $ 10.447,00 ... Servicio anual. Visa Anual $153.504,13 $185.740,00 Classic Local, Mastercard Regional, Visa Internacional,"
   },
   {
    "url": "https://www.bcra.gob.ar/archivos/Catalogo/Content/files/pdf/regimen-transparencia-v1.pdf",
    "title": "Banco Central de la República Argentina, API Régimen de Transparencia v1.0 (documentation)",
    "read": "2026-10-29",
-   "said": "ComisionMaximaAdministracionMantenimiento Comisión máxima por Administración y Mantenimiento de cuenta (mensual, precio de tarifario, sin bonificaciones)."
+   "said": "ComisionMaximaAdministracionMantenimiento Comisión máxima por Administración y Mantenimiento de cuenta (mensual, precio de tarifario, sin bonificaciones). ComisionMaximaRenovacion Comisión máxima por servicio de renovación, (anual, precio de tarifario, sin"
   }
  ]
 }

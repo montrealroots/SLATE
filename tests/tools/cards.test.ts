@@ -22,6 +22,11 @@ describe('the cards compile', () => {
     expect(rate({ percent: '25.0', per: 'month' }, 'r')).toStrictEqual({ percent: '25.0', per: 'month' });
     expect(() => rate({ percent: '300.01', per: 'year' }, 'r')).toThrow("r's percent is above what a bank charges by the year");
     expect(() => rate({ percent: '25.01', per: 'month' }, 'r')).toThrow("r's percent is above what a bank charges by the month");
+    // A yearly rate the bank states only as effective is marked so; nothing else is.
+    expect(rate({ percent: '95.90', per: 'year', effective: true }, 'r')).toStrictEqual({ percent: '95.90', per: 'year', effective: true });
+    for (const r of [{ percent: '2', per: 'month', effective: true }, { percent: '9', per: 'year', effective: false }, { percent: '9', per: 'year', effective: 'true' }])
+      expect(() => rate(r, 'r'), JSON.stringify(r)).toThrow('r is effective only as a yearly rate, marked true');
+    expect(() => rate({ percent: '300.01', per: 'year', effective: true }, 'r')).toThrow("r's percent is above what a bank charges by the year");
   });
 
   it("refuses a rate that isn't one", () => {
