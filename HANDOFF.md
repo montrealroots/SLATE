@@ -237,8 +237,13 @@ restarts. Read `CLAUDE.md` and the owner's package in `docs/` first.
   Tobago (30 days once a year without a permit, declared on entry; from a report of the minister's statement), Jamaica
   (the Ministry of Labour's work permit), Barbados (the short-term work permit, Immigration Act s. 17), Grenada (the
   entertainers' work permit, S.R.O. 26 of 2015), Saint Lucia (Labour Act s. 317), Dominica (the Labour Division's work
-  permit, from Invest Dominica), St Kitts and Nevis (the Ministry of National Security's work permit). An exemption only for artists of fame or a significant event's main attraction (Belgium,
-  Denmark) isn't modelled as days open to a performer. Matrix (2026-10-29): 85 researched, 6 proven, 161 pending:
+  permit, from Invest Dominica), St Kitts and Nevis (the Ministry of National Security's work permit). The Gulf: the
+  United Arab Emirates (MOHRE's work permit for GCC citizens and the mission work permit for others, from a report of
+  MOHRE's twelve permits). South Asia: India (Nepalese nationals free under the 1950 treaty; others the Employment
+  Visa the MHA's FAQs name for engaged foreign artists, from a reproduction since the MHA, the Bureau of Immigration
+  and the missions refuse this client). Blockers registered (papers.work.blocked.<CC>, five methods each, the player told by line
+  `work.unkept`): Lithuania, Jersey, the Faroe Islands, Venezuela, Nicaragua, Saudi Arabia, Qatar, Bahrain. An exemption only for artists of fame or a significant event's main attraction (Belgium,
+  Denmark) isn't modelled as days open to a performer. Matrix (2026-10-29): 87 researched, 8 blocked, 6 proven, 151 pending:
   every other country to research next, each from its own
   immigration law or office (the performer's route, its short-engagement exemption, its free-movement partners:
   the EEA, the CTA, Trans-Tasman, Mercosur, CARICOM, the GCC, ECOWAS, the EAC, the EAEU, the Compacts, India–Nepal
