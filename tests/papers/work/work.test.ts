@@ -61,6 +61,19 @@ describe('work', () => {
       'home',
       { right: 'permit', route: 'Autorisation du préfet, administrateur supérieur des TAAF' },
     ]);
+    // Albania lets the EU's, the United States' and its neighbours' citizens work as its own; Serbia a performer 90 days in
+    // 180 without the single permit; Belarus keeps the EAEU's free labour market.
+    expect([work('FR', 'AL'), work('US', 'AL'), work('RS', 'AL'), work('IN', 'AL')]).toStrictEqual([
+      { right: 'free' },
+      { right: 'free' },
+      { right: 'free' },
+      { right: 'permit', route: 'Leje unike' },
+    ]);
+    expect([work('US', 'RS'), work('RU', 'BY'), work('DE', 'UA')]).toStrictEqual([
+      { right: 'permit', route: 'Jedinstvena dozvola', days: 90, within: 180 },
+      { right: 'free' },
+      { right: 'free' },
+    ]);
     // A citizen of the destination, or of the state whose nationality its people hold, is home, even where the list names
     // that state's passport (France's, in the eea list); and in a territory of their own state that the list doesn't name.
     expect([work('DE', 'DE'), work('GP', 'FR'), work('JE', 'JE'), work('GP', 'GP'), work('GU', 'US'), work('US', 'GU'), work('PR', 'GU')]).toEqual(['home', 'home', 'home', 'home', 'home', 'home', 'home']);
