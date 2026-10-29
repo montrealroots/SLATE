@@ -162,7 +162,7 @@ restarts. Read `CLAUDE.md` and the owner's package in `docs/` first.
   engagement may be worked without it where the law allows (`days`, `within`), or 'home', or undefined where the
   rules aren't kept (the player told, line `work.unkept`). A shared list names its passports and may give the rule
   for every other; a country keeping it adds its own and its own rule for every other where needed; the compile
-  merges them so the engine reads one list. Shared lists: `csme` and `oecs` (below), `eea` (Directive 2004/38 arts. 7 and 24, the EEA Joint
+  merges them so the engine reads one list. Shared lists: `csme`, `eaeu` and `oecs` (below), `eea` (Directive 2004/38 arts. 7 and 24, the EEA Joint
   Committee's Decision 158/2007, the EU–Swiss free movement agreement), `us` (the O-1 petition for everyone but the
   Compact states' citizens, 8 CFR 214.2(o) and 274a.12(a)(8)), kept by the US, Guam, Puerto Rico, the US Virgin
   Islands and the Northern Marianas (8 U.S.C. 1101(a)(38)). Own rules: Germany (BeschV §§ 22, 25, 30: the
@@ -241,9 +241,14 @@ restarts. Read `CLAUDE.md` and the owner's package in `docs/` first.
   United Arab Emirates (MOHRE's work permit for GCC citizens and the mission work permit for others, from a report of
   MOHRE's twelve permits). South Asia: India (Nepalese nationals free under the 1950 treaty; others the Employment
   Visa the MHA's FAQs name for engaged foreign artists, from a reproduction since the MHA, the Bureau of Immigration
-  and the missions refuse this client). Blockers registered (papers.work.blocked.<CC>, five methods each, the player told by line
+  and the missions refuse this client). Türkiye (the work permit; artists' one-month exemption is itself applied for,
+  so not days), Russia (a touring creative worker's thirty days without a permit, 115-FZ art. 13(4)(8.2)),
+  Kazakhstan (artists need no permit to employ foreign labour, Decree 1041 item 11: free, the stay being the visa's).
+  Shared list `eaeu` (the Eurasian Economic Commission: EAEU Treaty art. 97, members' citizens work without a
+  permit): Armenia, Belarus, Kazakhstan, Kyrgyzstan, Russia. Decided: `free` means no permission to work is asked;
+  a stay beyond the visit is the visa's or residence permit's, as in Svalbard and Kazakhstan. Blockers registered (papers.work.blocked.<CC>, five methods each, the player told by line
   `work.unkept`): Lithuania, Jersey, the Faroe Islands, Venezuela, Nicaragua, Saudi Arabia, Qatar, Bahrain. An exemption only for artists of fame or a significant event's main attraction (Belgium,
-  Denmark) isn't modelled as days open to a performer. Matrix (2026-10-29): 87 researched, 8 blocked, 6 proven, 151 pending:
+  Denmark) isn't modelled as days open to a performer. Matrix (2026-10-29): 90 researched, 8 blocked, 6 proven, 148 pending:
   every other country to research next, each from its own
   immigration law or office (the performer's route, its short-engagement exemption, its free-movement partners:
   the EEA, the CTA, Trans-Tasman, Mercosur, CARICOM, the GCC, ECOWAS, the EAC, the EAEU, the Compacts, India–Nepal
