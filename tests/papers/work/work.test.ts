@@ -39,6 +39,11 @@ describe('work', () => {
     // Hong Kong and Macao keep their own control: a passport of China's nationality isn't home there when the list names it.
     const macanese = { right: 'permit', route: 'Autorização de permanência na qualidade de trabalhador não residente', days: 45, within: 180 };
     expect([work('CN', 'MO'), work('HK', 'MO'), work('MO', 'HK')]).toStrictEqual([macanese, macanese, { right: 'permit', route: 'Employment visa', days: 14 }]);
+    // Australia's rules reach its external territories (the au list); Aruba asks the Kingdom's other Dutch passports for
+    // its permit, though they share the Netherlands' nationality.
+    expect([work('NZ', 'CX'), work('US', 'NF'), work('AU', 'CC')]).toStrictEqual([{ right: 'free' }, work('US', 'AU'), 'home']);
+    const aruban = { right: 'permit', route: 'Vergunning tot tijdelijk verblijf met toestemming om arbeid te verrichten' };
+    expect([work('NL', 'AW'), work('CW', 'AW'), work('NL', 'CW'), work('AW', 'AW')]).toStrictEqual([aruban, aruban, 'home', 'home']);
     // A citizen of the destination, or of the state whose nationality its people hold, is home, even where the list names
     // that state's passport (France's, in the eea list); and in a territory of their own state that the list doesn't name.
     expect([work('DE', 'DE'), work('GP', 'FR'), work('JE', 'JE'), work('GP', 'GP'), work('GU', 'US'), work('US', 'GU'), work('PR', 'GU')]).toEqual(['home', 'home', 'home', 'home', 'home', 'home', 'home']);
