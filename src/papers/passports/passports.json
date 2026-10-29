@@ -3787,6 +3787,58 @@
    }
   ]
  },
+ "KI": {
+  "currency": "AUD",
+  "routes": [
+   {
+    "id": "normal",
+    "where": "home",
+    "speed": "standard",
+    "within": {
+     "n": 10,
+     "unit": "day"
+    }
+   },
+   {
+    "id": "standard",
+    "where": "home",
+    "speed": "standard",
+    "within": {
+     "n": 5,
+     "unit": "day"
+    }
+   },
+   {
+    "id": "expedited",
+    "where": "home",
+    "speed": "urgent",
+    "within": {
+     "n": 3,
+     "unit": "day"
+    }
+   },
+   {
+    "id": "priority",
+    "where": "home",
+    "speed": "urgent",
+    "within": {
+     "n": 1,
+     "unit": "day"
+    }
+   }
+  ],
+  "bands": [
+   {
+    "validYears": null,
+    "pay": {
+     "normal": 5625,
+     "standard": 8440,
+     "expedited": 9840,
+     "priority": 11250
+    }
+   }
+  ]
+ },
  "KN": {
   "currency": "XCD",
   "routes": [

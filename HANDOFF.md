@@ -19,8 +19,8 @@ restarts. Read `CLAUDE.md` and the owner's package in `docs/` first.
   told where the weather is borrowed from), 6 proven, none pending. `tools/wmo/compile.ts` and `coverage.ts` are at
   100% mutation score with the last sources (1,559 mutants; the survivors of that run killed by tests or simpler
   lines, and the two equivalent ones disabled with their reasons). The
-  holidays (`world.holidays`): the engine, its reckonings and its gate wiring are built and tested; 194 countries
-  researched (638 official lists matched day for day), 6 proven, none pending, and 52 blocked, each after all
+  holidays (`world.holidays`): the engine, its reckonings and its gate wiring are built and tested; 195 countries
+  researched (639 official lists matched day for day; Liberia added 2026-10-29), 6 proven, none pending, and 51 blocked, each after all
   five methods (the countries and regions are named in the next step's lists: whole countries such as Haiti, Iran,
   Bhutan or the Faroe Islands, and regions such as Prince Edward Island, Yukon, India's four, South Australia, Alderney,
   Formosa, Brčko, Ascension and Tristan da Cunha, and, for the day in place of a holiday on the weekly day of rest only,
@@ -32,8 +32,8 @@ restarts. Read `CLAUDE.md` and the owner's package in `docs/` first.
   after all five methods (R-0428 to R-0449; the next step names them and what to try again), none pending.
 - Layer 3 (the person's papers and money) is in progress. Built: the passports engine (`papers.passports`,
   `src/papers/passports/`), compiled by `tools/papers/passports/` from the research files, at 100% mutation score
-  (406 mutants). Its matrix (`coverage/passports-countries.json`): 222 researched, 24 blocked, 6 proven (no places),
-  none pending (2026-10-28); every research file is in the engine's form. Next: visas, residence and work
+  (406 mutants). Its matrix (`coverage/passports-countries.json`): 223 researched, 23 blocked, 6 proven (no places),
+  none pending (2026-10-29: Kiribati from its ministry's March 2026 brochure); every research file is in the engine's form. Next: visas, residence and work
   permissions, and the banks (step 5 below), and the blocked passports again when a source opens.
 - The national identity documents engine (`papers.ids`, `src/papers/ids/`, compiled by `tools/papers/ids/` from
   `research/sources/papers/ids/<CC>.json`, register facts `papers.ids.<CC>`) is built, at 100% mutation score (308
@@ -574,7 +574,7 @@ What layer 0 holds:
    - Archive snapshots that would likely unblock a country, to fetch now that the owner allows them (2026-10-28); web.archive.org itself doesn't answer from this environment (every connection reset in the TLS handshake, 2026-10-28, while archive.org's availability API answers), so the owner may add it under the environment's Network access, Allowed domains. ST: visitsaotomeprincipe.st/pt/
      feriados (16 June 2026, Lei 8/2025's sixteen days); HT: Le Relief's Carnival article (10 May 2026); IQ: t4p.co's
      article on Law 12/2024's list (16 February 2025); IR: calendar.ut.ac.ir (12 July 2026; no .ir host answers here); GQ: Ahora EG's article quoting Decreto 9/2007 (17 April 2025); FO: Starvsfelagið's handbook list of the halgidagar (8 June 2026); BS: the Public Holidays Act's PDF on laws.bahamas.gov.bs (18 July 2026).
-   - HT, SL, ST, CV, SO, IQ, IR, LA, MM, AF, KP, MW, SZ, LS, LR, GM, SS, CF, GQ, GW, SJ, FO, BS, VC, SR, BN, BT, ER, TJ: blocked 2026-10-27 (R-0322 on); retry each blocker's sources., TJ (2026-10-28: article 3's current
+   - HT, SL, ST, CV, SO, IQ, IR, LA, MM, AF, KP, MW, SZ, LS, GM, SS, CF, GQ, GW, SJ, FO, BS, VC, SR, BN, BT, ER, TJ: blocked 2026-10-27 (R-0322 on); retry each blocker's sources., TJ (2026-10-28: article 3's current
      text and 2026's transfers unread; its 2012 text and the Labour Code are read, see below).
    - AT: RIS bot-check; wien.gv.at times out -> retry
    - LU: guichet page moved; try legilux Code du travail L.232-2
@@ -996,9 +996,9 @@ What layer 0 holds:
    Suriname's scanned Gazette read from the page image); a service registry (Bulgaria's IISDA, Lithuania's MIGRIS and
    Turkmenistan's migration service rendered, Togo's service portal, Mauritania's ANRPTS); an embassy's own fee page;
    a missing intermediate certificate completed from the certificate's AIA URL, verification kept on.
-   24 blocked after all five methods (`papers.passports.blocked.<CC>`, R-0614 on, notModeled `passports.unkept`):
-   BO BT BY CF CG DJ EG GW IR KG KI KM KP LY NR PS PW SL SO SZ TC TO TV UZ. Egypt's press gives three different 2026
-   fee sets and none cites the decision, so no fee is taken. A blocker resolved later (AG BL OM SD SY TN ZM) keeps its
+   23 blocked after all five methods (`papers.passports.blocked.<CC>`, R-0614 on, notModeled `passports.unkept`):
+   BO BT BY CF CG DJ EG GW IR KG KM KP LY NR PS PW SL SO SZ TC TO TV UZ (Kiribati resolved 2026-10-29). Egypt's press gives three different 2026
+   fee sets and none cites the decision, so no fee is taken. A blocker resolved later (AG BL KI OM SD SY TN ZM) keeps its
    entry as the record of the earlier attempts; the researched entry decides the row. Retried 2026-10-28 without
    success: Belarus's embassies (reset), Bolivia's in Vienna (502), Bhutan (every host dead), Sierra Leone (a captcha,
    not passed), Eswatini (reset), the Pacific missions and legislation hosts. The archive method: archive.org's
@@ -1008,6 +1008,14 @@ What layer 0 holds:
    (2026-02-11), mfa.gov.bt/faqs (2026-09-24), gov.sz's travel documents page (2026-08-15),
    falepilipathway.gov.au/support-tuvalu (2026-10-07), interieur.gouv.cg (2025-12-06), the Palestinian Cabinet's
    service guide (2025-11-02), immigration.gov.so/services (2026-08-31), naenara.com.kp (2026-10-17).
+   Every blocker (222 of them, all engines) was tried again on 2026-10-29 and its attempts appended in the register:
+   each host it cites probed again (those still failing recorded so), the World Bank's PPP series checked again for
+   the price levels (no new values), and each blocker's snapshot asked of web.archive.org (every connection resets:
+   the host has to be added under the environment's Network access, Allowed domains, before the owner's archive
+   ruling can be used). Resolved: Kiribati's passports (the ministry's brochure, read through the fetch tool) and
+   Liberia's holidays (the observance laws as the Ministry of Information's 2025-2026 proclamations quote them,
+   Sunday holidays kept on the Monday as proclaimed, New Year's Day and Christmas from WageIndicator citing the
+   embassy's list). Tonga's 2011 fee regulations are on PacLII, which answers with a Cloudflare block.
    Identity cards and citizenship: done 2026-10-29 (above); the cards' null fees and citizenship's post-2024 reforms
    to try again. Next: visas, residence and work permissions (each an engine with its own matrix), then the banks.
 6. Before the game is called done (layer 7, verification), at the owner's word on 2026-10-29: the gate enforces the
