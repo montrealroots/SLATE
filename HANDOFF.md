@@ -279,7 +279,12 @@ restarts. Read `CLAUDE.md` and the owner's package in `docs/` first.
   `banks-world.ts`) is not a source, and its fee sheets' URLs (`banks-world-sheets.ts`) are only leads, each fetched
   and read again. Not yet decided or built: cards, credit records, the exchange rates the life's money is estimated
   at, the family's starting means; the account number's format by country went with the residence history
-  (`docs/KEEP.md` entry 14). Matrix (2026-10-29): 29 researched, 6 proven, 217 pending.
+  (`docs/KEEP.md` entry 14). France's overseas departments (BRED's price lists) are read from MoneyVox's archived
+  copies of the bank's documents, so secondary; Wallis and Futuna from the IEOM's tariffs observatory, which names its
+  one bank. Where a bank's waiver needs two months below a minimum (BDO), the game charges after one, the stricter
+  reading. Matrix (2026-10-29): 66 researched, 6 proven, 180 pending; the remaining countries are researched next by
+  targeted search (the EEA's and the UK's Fee Information Documents first), and a country whose banks' fees can't be
+  read after all five methods gets its blocker.
 
 The passports' form (decided 2026-10-28, the engine's reader being the Papers page: apply, pay, wait, hold a
 passport valid so many years). Each research file has `routes`, one per way the office takes an application: `id`,

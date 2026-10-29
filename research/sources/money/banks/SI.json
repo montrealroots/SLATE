@@ -1,0 +1,39 @@
+{
+ "country": "SI",
+ "banks": [
+  {
+   "bank": "NLB",
+   "account": "Paket Osnovni",
+   "fees": [
+    {
+     "fee": "6.99",
+     "per": "month"
+    }
+   ]
+  },
+  {
+   "bank": "NLB",
+   "account": "Paket Digitalni",
+   "fees": [
+    {
+     "fee": "0.99",
+     "per": "month",
+     "waived": [
+      {
+       "under": 27
+      }
+     ]
+    }
+   ]
+  }
+ ],
+ "note": "NLB's tariff extract (valid from 1 August 2026): Paket Osnovni costs 6.99 euros a month, Paket Digitalni 0.99, free for adults up to 27 (the game waives it under 27). The half price on Paket Osnovni for adults up to 30, the pensioners' 20% off, and the 2 euros a month NLB charges for managing a foreigner's or non-resident's account aren't modelled.",
+ "sources": [
+  {
+   "url": "https://www.nlb.si/content/dam/nlb/pdf-files/osebne-finance/racuni-paketi/Izvlecek-iz-tarife-osebni-racun-STP.pdf.coredownload.pdf",
+   "title": "NLB, Izvleček iz tarife: osebni račun (veljavnost od 01. 08. 2026)",
+   "read": "2026-10-29",
+   "said": "Veljavnost izvlečka od 01. 08. 2026 ... NLB Paketi za prebivalstvo* Paket Osnovni 6,99 EUR/mesečno Paket Aktivni 9,99 EUR/mesečno Paket Premium 16,99 EUR/mesečno Paket Digitalni 0,99 EUR/mesečno ... *Polnoletni do 27. leta imajo 100 % popust na Paket Digitalni."
+  }
+ ]
+}
