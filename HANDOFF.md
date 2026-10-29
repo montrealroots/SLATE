@@ -179,8 +179,20 @@ restarts. Read `CLAUDE.md` and the owner's package in `docs/` first.
   lit. b, from Zurich's artists' instruction), Luxembourg (guichet.lu, 90 days a year for an intermittent of the
   performing arts), Poland (30 days a year, the Zielona Linia), Czechia (the employee card), Slovakia (30 days a
   year, Act 5/2004 as in force from 1 August 2026), Hungary (the Hungarian Card for a performing artist, Act XC of
-  2023 § 36; neither it nor Decree 35/2024 names days without it). An exemption only for artists of fame or a significant event's main attraction (Belgium,
-  Denmark) isn't modelled as days open to a performer. Matrix (2026-10-29): 32 researched, 6 proven, 214 pending:
+  2023 § 36; neither it nor Decree 35/2024 names days without it), Slovenia (performers outside the ZZSDT, art.
+  5(2)(11): the 90 days in 180 of a short stay, then the single permit without the Employment Service's consent, ZTuj-2
+  art. 37), Croatia (OECD citizens' artists without even a work registration certificate during a short stay, Aliens
+  Act art. 89(6); others the residence and work permit, or a registration certificate for up to 90 days a year),
+  Romania (OUG 194/2002 as amended by OUG 32/2026, which repealed OG 25/2014), Bulgaria (the single permit, from a
+  2024 analysis since lex.bg refuses this client), Greece (the Migration Code's Z.2 visa for members of artistic
+  companies), Cyprus (the artists' permit, from WhatPassport's copy of the old Migration Department page), Malta
+  (Identità's Single Permit), Estonia (five days in 30 without a permit, Aliens Act § 105(4)), Latvia (the right to
+  employment with the visa or residence permit, Regulation No. 55 of 2014), Iceland (artists' 90 days a calendar
+  year, notified), Liechtenstein (its own list, outside the eea one: EEA and Swiss citizens need a permit too, PFZG
+  arts. 8, 15 and 30; others the AuG's permit for qualified workers, with a service's eight days in 90). Lithuania
+  is a blocker (2026-10-29): e-tar.lt, e-seimas.lrs.lt, lrv.lt, uzt.lt and migracija.lrv.lt all serve this client a
+  bot challenge, and no copy of the Aliens Law's art. 58 was found elsewhere. An exemption only for artists of fame or a significant event's main attraction (Belgium,
+  Denmark) isn't modelled as days open to a performer. Matrix (2026-10-29): 43 researched, 6 proven, 203 pending:
   every other country to research next, each from its own
   immigration law or office (the performer's route, its short-engagement exemption, its free-movement partners:
   the EEA, the CTA, Trans-Tasman, Mercosur, CARICOM, the GCC, ECOWAS, the EAC, the EAEU, the Compacts, India–Nepal
