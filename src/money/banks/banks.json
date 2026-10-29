@@ -68,6 +68,53 @@
     ]
    }
   ],
+  "AL": [
+   {
+    "bank": "Raiffeisen Bank",
+    "account": "Raiffeisen Klasik",
+    "fees": [
+     {
+      "fee": {
+       "currency": "ALL",
+       "minor": 12500
+      },
+      "per": "month"
+     }
+    ]
+   }
+  ],
+  "AM": [
+   {
+    "bank": "Ameriabank",
+    "account": "Current account",
+    "fees": [
+     {
+      "fee": {
+       "currency": "AMD",
+       "minor": 0
+      },
+      "per": "half",
+      "waived": [
+       {
+        "average": {
+         "currency": "AMD",
+         "minor": 5000001
+        }
+       }
+      ],
+      "changes": [
+       {
+        "from": "2027-07-01",
+        "fee": {
+         "currency": "AMD",
+         "minor": 100000
+        }
+       }
+      ]
+     }
+    ]
+   }
+  ],
   "AO": [
    {
     "bank": "Banco Angolano de Investimentos",
@@ -186,6 +233,21 @@
         "under": 30
        }
       ]
+     }
+    ]
+   }
+  ],
+  "BA": [
+   {
+    "bank": "Sparkasse Bank",
+    "account": "Tekući račun",
+    "fees": [
+     {
+      "fee": {
+       "currency": "BAM",
+       "minor": 599
+      },
+      "per": "month"
      }
     ]
    }
@@ -333,6 +395,13 @@
       "per": "month"
      }
     ]
+   }
+  ],
+  "BY": [
+   {
+    "bank": "BSB Bank",
+    "account": "Текущий (расчетный) банковский счет",
+    "fees": []
    }
   ],
   "BZ": [
@@ -657,6 +726,32 @@
     ]
    }
   ],
+  "FO": [
+   {
+    "bank": "Føroya Banki",
+    "account": "Vanliga innlánskonta",
+    "fees": [
+     {
+      "fee": {
+       "currency": "DKK",
+       "minor": 2000
+      },
+      "per": "month",
+      "waived": [
+       {
+        "under": 29
+       },
+       {
+        "balance": {
+         "currency": "DKK",
+         "minor": 1000001
+        }
+       }
+      ]
+     }
+    ]
+   }
+  ],
   "FR": [
    {
     "bank": "Crédit Mutuel",
@@ -694,6 +789,21 @@
     ]
    }
   ],
+  "GE": [
+   {
+    "bank": "Terabank",
+    "account": "Multi-currency current account",
+    "fees": [
+     {
+      "fee": {
+       "currency": "GEL",
+       "minor": 100
+      },
+      "per": "month"
+     }
+    ]
+   }
+  ],
   "GF": [
    {
     "bank": "BRED Banque Populaire",
@@ -726,6 +836,32 @@
     "bank": "NatWest International",
     "account": "Select Account",
     "fees": []
+   }
+  ],
+  "GL": [
+   {
+    "bank": "Bankivik",
+    "account": "Indlånskonto",
+    "fees": [
+     {
+      "fee": {
+       "currency": "DKK",
+       "minor": 3000
+      },
+      "per": "month",
+      "waived": [
+       {
+        "under": 29
+       },
+       {
+        "balance": {
+         "currency": "DKK",
+         "minor": 1000001
+        }
+       }
+      ]
+     }
+    ]
    }
   ],
   "GP": [
@@ -1069,6 +1205,21 @@
     ]
    }
   ],
+  "LI": [
+   {
+    "bank": "LLB",
+    "account": "LLB Light",
+    "fees": [
+     {
+      "fee": {
+       "currency": "CHF",
+       "minor": 490
+      },
+      "per": "month"
+     }
+    ]
+   }
+  ],
   "LT": [
    {
     "bank": "Swedbank",
@@ -1122,6 +1273,21 @@
     ]
    }
   ],
+  "MD": [
+   {
+    "bank": "maib",
+    "account": "maib daily general",
+    "fees": [
+     {
+      "fee": {
+       "currency": "MDL",
+       "minor": 1500
+      },
+      "per": "month"
+     }
+    ]
+   }
+  ],
   "MH": [
    {
     "bank": "Bank of the Marshall Islands",
@@ -1141,6 +1307,21 @@
         }
        }
       ]
+     }
+    ]
+   }
+  ],
+  "MK": [
+   {
+    "bank": "TTK Banka",
+    "account": "Платежна сметка",
+    "fees": [
+     {
+      "fee": {
+       "currency": "MKD",
+       "minor": 6000
+      },
+      "per": "month"
      }
     ]
    }
@@ -1916,6 +2097,21 @@
        "minor": 6300
       },
       "per": "year"
+     }
+    ]
+   }
+  ],
+  "XK": [
+   {
+    "bank": "ProCredit Bank",
+    "account": "Pako Standard",
+    "fees": [
+     {
+      "fee": {
+       "currency": "EUR",
+       "minor": 200
+      },
+      "per": "month"
      }
     ]
    }

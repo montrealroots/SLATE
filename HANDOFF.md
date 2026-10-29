@@ -293,8 +293,11 @@ restarts. Read `CLAUDE.md` and the owner's package in `docs/` first.
   issuing CA's own published copy, verification left on. A fee set in an indexed unit the game's money doesn't hold
   (BROU's 30 UI) isn't written and another bank is taken; a fee a document gives before a tax whose rate it doesn't
   state is written before the tax (Promerica's, Sogebank's); a law barring any fee on an account is the source for its
-  being free, beside the bank's own page naming the account (Venezuela's BCV Resolution 18-10-02). Matrix
-  (2026-10-29): 130 researched, 6 proven, 116 pending; the remaining countries are researched next by targeted search, and a country
+  being free, beside the bank's own page naming the account (Venezuela's BCV Resolution 18-10-02). A fee the price list
+  suspends until a day stands at nothing until its first change (Ameriabank's 1,000 drams a half-year from 1 July
+  2027); the compiler takes a fee at nothing only with a change after it. A page whose server refuses curl but answers
+  the fetch tool is read through the fetch tool's saved copy (BSB Bank's, maib's, Santander Uruguay's). Matrix
+  (2026-10-29): 141 researched, 6 proven, 105 pending; the remaining countries are researched next by targeted search, and a country
   whose banks' fees can't be read after all five methods gets its blocker.
 
 The passports' form (decided 2026-10-28, the engine's reader being the Papers page: apply, pay, wait, hold a

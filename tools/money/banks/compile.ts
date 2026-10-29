@@ -16,7 +16,8 @@ import { civilFromDays, daysFromCivil } from '../../../src/core/time/calendar.ts
  * (`balance`), an average daily balance (`average`), an age (`under`, `from`), or citizenship of the bank's country
  * (`national`). A condition the game can't check
  * isn't written, and the fee is charged in full, as it would be to anyone who doesn't meet it. A price list that states
- * the fee's next figure and the day it takes effect gives it (`changes`, each a date and the figure from it, in order).
+ * the fee's next figure and the day it takes effect gives it (`changes`, each a date and the figure from it, in order);
+ * a fee the price list suspends until a day stands at nothing until its first change.
  */
 export const SOURCES = 'research/sources/money/banks';
 export const OUTPUT = 'src/money/banks/banks.json';
@@ -79,11 +80,11 @@ export function waiver(w: unknown, currency: CurrencyCode, what: string): Waiver
 
 /** A calendar date written YYYY-MM-DD, one the calendar has. */
 export function day(text: unknown, what: string): string {
-  const m = typeof text === 'string' ? /^(\d{4})-(\d{2})-(\d{2})$/.exec(text) : null;
+  const m = /^(\d{4})-(\d{2})-(\d{2})$/.exec(String(text));
   if (m === null) throw new Error(`${what} is a date written YYYY-MM-DD`);
   const [y, mo, d] = m.slice(1).map(Number) as [number, number, number];
-  const back = civilFromDays(daysFromCivil(y, mo, d));
-  if (back.month !== mo || back.day !== d) throw new Error(`${what} is a date written YYYY-MM-DD`);
+  // A day the month doesn't have (the 29th of February 2027, the 32nd) lands in another month.
+  if (civilFromDays(daysFromCivil(y, mo, d)).month !== mo) throw new Error(`${what} is a date written YYYY-MM-DD`);
   return text as string;
 }
 
@@ -105,7 +106,8 @@ export function fee(f: unknown, currency: CurrencyCode, what: string): Fee {
   if (typeof f !== 'object' || f === null) throw new Error(`${what} is not an object`);
   const { fee: figure, per, waived, changes: next } = f as Record<string, unknown>;
   const out: Fee = { fee: amount(currency, figure, what), per: per as Period };
-  if (out.fee.minor === 0) throw new Error(`${what} is above nothing`);
+  // A fee at nothing now is one the price list suspends until a later day it gives (Ameriabank's, until 1 July 2027).
+  if (out.fee.minor === 0 && next === undefined) throw new Error(`${what} is above nothing, or suspended until a change`);
   if (!PERIODS.includes(per as Period)) throw new Error(`${what} is charged by the month, two months, the quarter, the half year or the year, not ${String(per)}`);
   if (waived !== undefined) {
     if (!Array.isArray(waived) || waived.length === 0) throw new Error(`${what}'s waivers are a list of conditions`);

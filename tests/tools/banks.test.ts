@@ -39,7 +39,7 @@ describe('the banks compile', () => {
     expect(fee({ fee: '15', per: 'quarter', waived: [{ deposits: '500' }] }, 'USD', 'f').waived).toStrictEqual([{ deposits: money('USD', 50_000) }]);
     for (const f of [null, 'F']) expect(() => fee(f, 'USD', 'f'), String(f)).toThrow('f is not an object');
     for (const figure of [undefined, 1, '-1']) expect(() => fee({ fee: figure, per: 'month' }, 'USD', 'f'), String(figure)).toThrow('f is an amount written in major units');
-    expect(() => fee({ fee: '0', per: 'month' }, 'USD', 'f')).toThrow('f is above nothing');
+    expect(() => fee({ fee: '0', per: 'month' }, 'USD', 'f')).toThrow('f is above nothing, or suspended until a change');
     for (const per of [undefined, 'week', 'Month']) expect(() => fee({ fee: '1', per }, 'USD', 'f'), String(per)).toThrow(`f is charged by the month, two months, the quarter, the half year or the year, not ${String(per)}`);
     for (const waived of [[], {}, 'x']) expect(() => fee({ fee: '1', per: 'month', waived }, 'USD', 'f'), JSON.stringify(waived)).toThrow("f's waivers are a list of conditions");
     expect(() => fee({ fee: '1', per: 'month', waived: [{ from: 60 }, { x: 1 }] }, 'USD', 'f')).toThrow("f's waiver 1 names a condition the game doesn't check (x)");
@@ -47,7 +47,7 @@ describe('the banks compile', () => {
 
   it('takes a fee to the figures its price list gives from later days', () => {
     expect([day('2027-01-01', 'd'), day('2024-02-29', 'd')]).toEqual(['2027-01-01', '2024-02-29']);
-    for (const d of ['2027-02-29', '2027-13-01', '2027-00-10', '2027-1-1', ' 2027-01-01', 20270101, undefined]) expect(() => day(d, 'd'), String(d)).toThrow('d is a date written YYYY-MM-DD');
+    for (const d of ['2027-02-29', '2027-04-31', '2027-01-32', '2027-13-01', '2027-00-10', '2027-1-1', ' 2027-01-01', '2027-01-011', 20270101, undefined]) expect(() => day(d, 'd'), String(d)).toThrow('d is a date written YYYY-MM-DD');
     expect(changes([{ from: '2027-01-01', fee: '46.11' }, { from: '2028-01-01', fee: '0' }], 'EUR', 'c')).toStrictEqual([{ from: '2027-01-01', fee: money('EUR', 4611) }, { from: '2028-01-01', fee: money('EUR', 0) }]);
     for (const list of [[], {}, undefined]) expect(() => changes(list, 'EUR', 'c'), JSON.stringify(list)).toThrow('c are a list of dates and figures');
     expect(() => changes([{ from: '2027-01-01', fee: '1' }, { from: '2027-01-01', fee: '2' }], 'EUR', 'c')).toThrow('c are in order of their dates');
@@ -56,6 +56,8 @@ describe('the banks compile', () => {
     expect(() => changes([null], 'EUR', 'c')).toThrow("c' 0 is a date written YYYY-MM-DD");
     expect(fee({ fee: '44.68', per: 'quarter', changes: [{ from: '2027-01-01', fee: '46.11' }] }, 'EUR', 'f')).toStrictEqual({ fee: money('EUR', 4468), per: 'quarter', changes: [{ from: '2027-01-01', fee: money('EUR', 4611) }] });
     expect(() => fee({ fee: '1', per: 'month', changes: 'x' }, 'EUR', 'f')).toThrow("f's changes are a list of dates and figures");
+    // A fee suspended until a day: nothing now, its figure from the change.
+    expect(fee({ fee: '0', per: 'half', changes: [{ from: '2027-07-01', fee: '1000' }] }, 'AMD', 'f')).toStrictEqual({ fee: money('AMD', 0), per: 'half', changes: [{ from: '2027-07-01', fee: money('AMD', 100_000) }] });
   });
 
   it("takes a bank to its account and its fees, in the country's currency or its own", () => {
@@ -74,7 +76,7 @@ describe('the banks compile', () => {
     for (const account of [undefined, '', 'A ', 7]) expect(() => bank({ bank: 'B', account, fees: [] }, 'USD', 'b'), String(account)).toThrow('b names the account the bank sells');
     for (const currency of ['XXX', 7, null]) expect(() => bank({ bank: 'B', account: 'A', currency, fees: [] }, 'USD', 'b'), String(currency)).toThrow(`b's currency is not one in use (${String(currency)})`);
     for (const fees of [undefined, '0', {}]) expect(() => bank({ bank: 'B', account: 'A', fees }, 'USD', 'b'), String(fees)).toThrow("b's fees are a list, empty where the account costs nothing");
-    expect(() => bank({ bank: 'B', account: 'A', fees: [{ fee: '1', per: 'month' }, { fee: '0', per: 'month' }] }, 'USD', 'b')).toThrow("b's fee 1 is above nothing");
+    expect(() => bank({ bank: 'B', account: 'A', fees: [{ fee: '1', per: 'month' }, { fee: '0', per: 'month' }] }, 'USD', 'b')).toThrow("b's fee 1 is above nothing, or suspended until a change");
     expect(() => bank({ bank: 'B', account: 'A', currency: 'JPY', fees: [{ fee: '1.5', per: 'month' }] }, 'USD', 'b')).toThrow();
   });
 
