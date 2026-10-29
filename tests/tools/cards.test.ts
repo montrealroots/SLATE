@@ -18,10 +18,10 @@ describe('the cards compile', () => {
     expect(rate({ percent: '0', per: 'year' }, 'r')).toStrictEqual({ percent: '0', per: 'year' });
     expect(rate('in full', 'r')).toBe('in full');
     // The ceilings themselves are figures a bank can state; above them, a misreading.
-    expect(rate({ percent: '100', per: 'year' }, 'r')).toStrictEqual({ percent: '100', per: 'year' });
-    expect(rate({ percent: '10.0', per: 'month' }, 'r')).toStrictEqual({ percent: '10.0', per: 'month' });
-    expect(() => rate({ percent: '100.01', per: 'year' }, 'r')).toThrow("r's percent is above what a bank charges by the year");
-    expect(() => rate({ percent: '10.01', per: 'month' }, 'r')).toThrow("r's percent is above what a bank charges by the month");
+    expect(rate({ percent: '300', per: 'year' }, 'r')).toStrictEqual({ percent: '300', per: 'year' });
+    expect(rate({ percent: '25.0', per: 'month' }, 'r')).toStrictEqual({ percent: '25.0', per: 'month' });
+    expect(() => rate({ percent: '300.01', per: 'year' }, 'r')).toThrow("r's percent is above what a bank charges by the year");
+    expect(() => rate({ percent: '25.01', per: 'month' }, 'r')).toThrow("r's percent is above what a bank charges by the month");
   });
 
   it("refuses a rate that isn't one", () => {

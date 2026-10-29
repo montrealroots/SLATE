@@ -1,0 +1,40 @@
+{
+ "country": "AR",
+ "cards": [
+  {
+   "bank": "BBVA Argentina",
+   "card": "Visa Internacional",
+   "rate": {
+    "percent": "66.67",
+    "per": "year"
+   },
+   "fees": [
+    {
+     "fee": "30000.00",
+     "per": "month"
+    }
+   ]
+  }
+ ],
+ "note": "BBVA Argentina's card interest rates (in force October 2026): its Visa Internacional's financing rate is a nominal 66.67% a year in pesos. The central bank's transparency register (information of 9 October 2026) gives the card's maximum monthly administration and maintenance fee as 30,000 pesos, at list price, and no renewal fee. Banco de la Nación Argentina, whose account the game keeps, gives the register only an effective rate, not the nominal one this game writes.",
+ "sources": [
+  {
+   "url": "https://www.bbva.com.ar/tablas/tasasTC.pdf",
+   "title": "BBVA Argentina, Tasas de Interés: Tarjetas de Crédito (vigencia octubre 2026)",
+   "read": "2026-10-29",
+   "said": "Tasas de Interés Tarjetas de Crédito ... Vigencia OCT-2026 ... Tarjeta Visa Internacional TNA Pesos TEA Pesos CFTNA $ TNA u$s TEA u$s CFTNA u$s Interés de Financiación 66,67% 89,68% 80,67%"
+  },
+  {
+   "url": "https://api.bcra.gob.ar/transparencia/v1.0/TarjetasCredito",
+   "title": "Banco Central de la República Argentina, API de Régimen de Transparencia: Tarjetas de crédito",
+   "read": "2026-10-29",
+   "said": "{\"comisionMaximaAdministracionMantenimiento\":30000.00,\"comisionMaximaRenovacion\":0.00,\"tasaEfectivaAnualMaximaFinanciacion\":89.68,\"tasaEfectivaAnualMaximaAdelantoEfectivo\":89.68,\"ingresoMinimoMensual\":280000,\"antiguedadLaboralMinimaMeses\":12,\"edadMaximaSolicitada\":100,\"segmento\":\"Internacional\",\"codigoEntidad\":17,\"descripcionEntidad\":\"BANCO BBVA ARGENTINA S.A.\",\"fechaInformacion\":\"2026-10-09\",\"nombreCompleto\":\"VISA INTERNACIONAL \",\"nombreCorto\":\"VI INTER \""
+  },
+  {
+   "url": "https://www.bcra.gob.ar/archivos/Catalogo/Content/files/pdf/regimen-transparencia-v1.pdf",
+   "title": "Banco Central de la República Argentina, API Régimen de Transparencia v1.0 (documentation)",
+   "read": "2026-10-29",
+   "said": "ComisionMaximaAdministracionMantenimiento Comisión máxima por Administración y Mantenimiento de cuenta (mensual, precio de tarifario, sin bonificaciones)."
+  }
+ ]
+}

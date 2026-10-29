@@ -42,7 +42,7 @@ export interface Card {
 const named = (s: unknown) => typeof s === 'string' && s !== '' && s.trim() === s;
 
 /**
- * The interest a card charges: a percent by the year (at most 100) or the month (at most 10), as the bank states it;
+ * The interest a card charges: a percent by the year (at most 300) or the month (at most 25), as the bank states it;
  * or `in full`, a charge card's balance being taken from the account each month.
  */
 export function rate(r: unknown, what: string): Rate | 'in full' {
@@ -52,8 +52,9 @@ export function rate(r: unknown, what: string): Rate | 'in full' {
   if (!RATE_PERIODS.includes(per as RatePeriod)) throw new Error(`${what} is charged by the month or the year, not ${String(per)}`);
   if (typeof percent !== 'string' || !/^\d+(\.\d+)?$/.test(percent)) throw new Error(`${what}'s percent is a decimal written as text`);
   const { num, den } = rational(percent);
-  // Above these the figure is a misreading (a monthly rate written as a yearly one), not a price.
-  if (num > (per === 'year' ? 100n : 10n) * den) throw new Error(`${what}'s percent is above what a bank charges by the ${per as string}`);
+  // Above these the figure is a misreading (a monthly rate written as a yearly one), not a price. They were 100 and 10
+  // until Nubank's revolving rate (19.99% a month, Brazil, 2026-10-29) showed a real card above the monthly one.
+  if (num > (per === 'year' ? 300n : 25n) * den) throw new Error(`${what}'s percent is above what a bank charges by the ${per as string}`);
   return { percent, per: per as RatePeriod };
 }
 
