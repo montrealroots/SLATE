@@ -132,5 +132,14 @@
    "coverage/citizenship-countries.json"
   ],
   "allPlacesTest": "tests/papers/citizenship/citizenship.places.test.ts::citizenship > for every place on the map"
+ },
+ "papers.visits": {
+  "layer": 3,
+  "dir": "src/papers/visits",
+  "readsPlace": true,
+  "matrices": [
+   "coverage/visits-countries.json"
+  ],
+  "allPlacesTest": "tests/papers/visits/visits.places.test.ts::visits > for every place on the map"
  }
 }

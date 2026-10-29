@@ -84,6 +84,24 @@ restarts. Read `CLAUDE.md` and the owner's package in `docs/` first.
   Still to do: a pass over the other 180 GLOBALCIT states for reforms after 1 January 2024 (each file's note says what
   date its rule is from); the shorter periods by nationality, marriage or descent aren't modelled (Portugal's 7, the
   Nordic 2 in Sweden), nor naturalisation by religion (the Maldives).
+- The visitors engine (`papers.visits`, `src/papers/visits/`, compiled by `tools/papers/visits/` from
+  `research/sources/papers/visits/<CC>.json` and the shared lists in `research/sources/papers/visits/groups/<name>.json`,
+  register facts `papers.visits.<CC>` and `papers.visits.group.<name>`) is built (2026-10-29), at 100% mutation score
+  (237 mutants). Its reader is the move abroad: `visit(citizenship, destination)` gives what the visitor's passport
+  meets at the destination's border, `free`, `eta` (an electronic travel authorisation), `evisa`, `arrival` (a visa at
+  the border) or `visa`, with the days a stay may last and the period they're counted in where the list sets them, or
+  'home' for the destination's own citizens and those of the state whose nationality its people hold. A list names
+  rules by passport (a territory's own where it's treated apart, as Bermuda's, else its state's) and a rule for every
+  other passport. Shared lists: `eu1806`, the EU's common visa list (Regulation 2018/1806 as consolidated on
+  30 December 2025, read from CELLAR since EUR-Lex answers this client with a bot challenge), kept by the 26 Member
+  States bound by it and Iceland, Norway, Switzerland and Liechtenstein, with free movement for EU/EEA/Swiss citizens
+  (Directive 2004/38 art. 5) and ETIAS left out until it starts; `us`, the United States' (the 42 Visa Waiver Program
+  countries from the official ESTA site, 90 days, 8 U.S.C. 1187; Canada, Bermuda and the three Compact states free;
+  the Bahamas, the Caymans, Turks and Caicos and the British Virgin Islands free on conditions not modelled; the other
+  British territories' passports a visa, by the 2024 rule's footnote that the United Kingdom means British citizens),
+  kept by the fifty states, Puerto Rico and the US Virgin Islands, and by Guam and the Northern Marianas with the
+  Guam-CNMI waiver's own rules on top (Malaysia, Nauru, Papua New Guinea, Hong Kong: 45 days with an ETA). Matrix:
+  35 researched, 6 proven, 211 pending: Ireland and every other country's own list to research next.
 
 The passports' form (decided 2026-10-28, the engine's reader being the Papers page: apply, pay, wait, hold a
 passport valid so many years). Each research file has `routes`, one per way the office takes an application: `id`,
