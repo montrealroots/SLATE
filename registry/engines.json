@@ -150,5 +150,14 @@
    "coverage/work-countries.json"
   ],
   "allPlacesTest": "tests/papers/work/work.places.test.ts::work > for every place on the map"
+ },
+ "money.banks": {
+  "layer": 3,
+  "dir": "src/money/banks",
+  "readsPlace": true,
+  "matrices": [
+   "coverage/banks-countries.json"
+  ],
+  "allPlacesTest": "tests/money/banks/banks.places.test.ts::banks > for every place on the map"
  }
 }

@@ -264,6 +264,22 @@ restarts. Read `CLAUDE.md` and the owner's package in `docs/` first.
   Denmark) isn't modelled as days open to a performer. Matrix (2026-10-29): complete, 188 researched, 58 blocked, 6 proven, none pending. Open: retry the blockers (most
   are sites that refuse this client), and decide the EAC's free movement and the GCC's, neither of which a primary
   source found here states as a right to work without a permit.
+- The banks engine (`money.banks`, `src/money/banks/`, compiled by `tools/money/banks/` from
+  `research/sources/money/banks/<CC>.json`, register facts `money.banks.<CC>`, blockers `money.banks.blocked.<CC>`,
+  notModeled `banks.unkept`), begun 2026-10-29. Decided: a country's banks are named as each names itself, each with
+  the everyday account it sells as it names it and the fees that account carries (none where it costs nothing to
+  keep), each fee in the account's currency (the country's unless the bank prices it in another, as Rawbank its
+  packs in dollars), how often it's charged (a month, two months, a quarter, half a year, a year) and the conditions
+  any one of which waives it that the game can check: money paid in over the period, a balance never below a figure,
+  an average daily balance, an age under or from. A condition it can't check (a student's status, a pension paid in,
+  an application, membership of a co-operative) isn't written, and the fee is charged in full, as to anyone who
+  doesn't meet it; the note says so. `feeFor(fee, standing)` is what the ledger will read each period. Every figure
+  is read from the bank's own price list, fee schedule or account page (or, in the EEA and the UK, its Fee
+  Information Document); the first SLATE's world bank list (Wikipedia-sourced, `montrealroots/1221`
+  `banks-world.ts`) is not a source, and its fee sheets' URLs (`banks-world-sheets.ts`) are only leads, each fetched
+  and read again. Not yet decided or built: cards, credit records, the exchange rates the life's money is estimated
+  at, the family's starting means; the account number's format by country went with the residence history
+  (`docs/KEEP.md` entry 14). Matrix (2026-10-29): 29 researched, 6 proven, 217 pending.
 
 The passports' form (decided 2026-10-28, the engine's reader being the Papers page: apply, pay, wait, hold a
 passport valid so many years). Each research file has `routes`, one per way the office takes an application: `id`,
