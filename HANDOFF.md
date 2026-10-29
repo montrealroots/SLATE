@@ -339,7 +339,7 @@ restarts. Read `CLAUDE.md` and the owner's package in `docs/` first.
   and IEOM for the French overseas territories), each bank's international deferred-debit card is kept, a charge card,
   their revolving credit not being in the table. A government charge the bank applies to the card each year is
   written as a yearly fee (AIB's 30-euro stamp duty). A debit card drawing on an overdraft limit isn't a credit card (BSP's Silver and Gold Visa Debit in the Cook Islands, Samoa and Tonga), and a card offered only to the place's residents is the one taken (First Hawaiian Bank's United card on Guam and in the CNMI). A rate stated only as a floor is written at the floor, the bank naming no higher one (Swedbank Latvia's 'from 20%'); a fee that falls in steps with spending is charged in full below the step that waives it (PKO's 80 zlotys, 40 from 6,000 spent, none from 7,200). The first SLATE's card was a limit and a balance per family, with no bank behind it; its interest and fees weren't
-  researched. Matrix (2026-10-29): 112 researched, 53 blocked, 6 proven, 81 pending.
+  researched. Matrix (2026-10-29): 116 researched, 62 blocked, 6 proven, 68 pending.
 
 The passports' form (decided 2026-10-28, the engine's reader being the Papers page: apply, pay, wait, hold a
 passport valid so many years). Each research file has `routes`, one per way the office takes an application: `id`,
