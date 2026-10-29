@@ -1555,6 +1555,50 @@
    }
   ]
  },
+ "DZ": {
+  "document": "Carte nationale d'identité biométrique électronique (CNIBE)",
+  "currency": "DZD",
+  "routes": [
+   {
+    "id": "commune",
+    "where": "home",
+    "speed": "standard",
+    "within": null
+   },
+   {
+    "id": "online",
+    "where": "home",
+    "speed": "standard",
+    "within": null
+   },
+   {
+    "id": "consulate",
+    "where": "abroad",
+    "speed": "standard",
+    "within": null
+   }
+  ],
+  "bands": [
+   {
+    "validYears": 5,
+    "pay": {
+     "commune": null,
+     "online": null,
+     "consulate": null
+    },
+    "under": 19
+   },
+   {
+    "validYears": 10,
+    "pay": {
+     "commune": null,
+     "online": null,
+     "consulate": null
+    },
+    "from": 19
+   }
+  ]
+ },
  "EC": {
   "document": "Cédula de identidad",
   "currency": "USD",
@@ -2667,6 +2711,26 @@
      "municipality": 0
     },
     "from": 18
+   }
+  ]
+ },
+ "KE": {
+  "document": "National identity card",
+  "currency": "KES",
+  "routes": [
+   {
+    "id": "registration",
+    "where": "home",
+    "speed": "standard",
+    "within": null
+   }
+  ],
+  "bands": [
+   {
+    "validYears": null,
+    "pay": {
+     "registration": 0
+    }
    }
   ]
  },
@@ -3814,6 +3878,26 @@
    }
   ]
  },
+ "MZ": {
+  "document": "Bilhete de Identidade (BI)",
+  "currency": "MZN",
+  "routes": [
+   {
+    "id": "dnic",
+    "where": "home",
+    "speed": "standard",
+    "within": null
+   }
+  ],
+  "bands": [
+   {
+    "validYears": null,
+    "pay": {
+     "dnic": 0
+    }
+   }
+  ]
+ },
  "NA": {
   "document": "Electronic identity card (e-ID)",
   "currency": "NAD",
@@ -4805,6 +4889,26 @@
    }
   ]
  },
+ "SL": {
+  "document": "National identity card",
+  "currency": "SLE",
+  "routes": [
+   {
+    "id": "ncra",
+    "where": "home",
+    "speed": "standard",
+    "within": null
+   }
+  ],
+  "bands": [
+   {
+    "validYears": null,
+    "pay": {
+     "ncra": null
+    }
+   }
+  ]
+ },
  "SM": {
   "document": "carta d'identità",
   "currency": "EUR",
@@ -4900,6 +5004,26 @@
      "office": 7500
     },
     "from": 17
+   }
+  ]
+ },
+ "SS": {
+  "document": "National identity card",
+  "currency": "SSP",
+  "routes": [
+   {
+    "id": "directorate",
+    "where": "home",
+    "speed": "standard",
+    "within": null
+   }
+  ],
+  "bands": [
+   {
+    "validYears": null,
+    "pay": {
+     "directorate": null
+    }
    }
   ]
  },
@@ -5139,6 +5263,26 @@
    }
   ]
  },
+ "TN": {
+  "document": "Carte d'identité nationale (CIN)",
+  "currency": "TND",
+  "routes": [
+   {
+    "id": "interior",
+    "where": "home",
+    "speed": "standard",
+    "within": null
+   }
+  ],
+  "bands": [
+   {
+    "validYears": null,
+    "pay": {
+     "interior": null
+    }
+   }
+  ]
+ },
  "TR": {
   "document": "Türkiye Cumhuriyeti kimlik kartı",
   "currency": "TRY",
@@ -5199,6 +5343,27 @@
     "validYears": null,
     "pay": {
      "office": 5000
+    },
+    "permanent": true
+   }
+  ]
+ },
+ "TZ": {
+  "document": "National identity card (kitambulisho cha Taifa)",
+  "currency": "TZS",
+  "routes": [
+   {
+    "id": "nida",
+    "where": "home",
+    "speed": "standard",
+    "within": null
+   }
+  ],
+  "bands": [
+   {
+    "validYears": null,
+    "pay": {
+     "nida": 0
     },
     "permanent": true
    }
@@ -5580,6 +5745,35 @@
     },
     "from": 16,
     "permanent": true
+   }
+  ]
+ },
+ "ZW": {
+  "document": "National identity document (metal or synthetic polythene identity card)",
+  "currency": "USD",
+  "routes": [
+   {
+    "id": "registry",
+    "where": "home",
+    "speed": "standard",
+    "within": null
+   }
+  ],
+  "bands": [
+   {
+    "validYears": null,
+    "pay": {
+     "registry": 0
+    },
+    "from": 16,
+    "under": 19
+   },
+   {
+    "validYears": null,
+    "pay": {
+     "registry": 200
+    },
+    "from": 19
    }
   ]
  }
