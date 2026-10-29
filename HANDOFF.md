@@ -327,8 +327,12 @@ restarts. Read `CLAUDE.md` and the owner's package in `docs/` first.
   written. Tax is added to a fee only where the document states its rate (BAI's 14% VAT). `interestFor(card, owed)` is
   a month's interest (a yearly rate's twelfth), rounded half to even, nothing on a credit balance; `paidInFull(card)`
   says a charge card carries nothing; `feeFor(fee, standing, day)` takes an account's standing and what was spent.
-  The first SLATE's card was a limit and a balance per family, with no bank behind it; its interest and fees weren't
-  researched. Matrix (2026-10-29): 13 researched, 6 proven, 233 pending.
+  A rate stated as a reference rate plus a margin is written as their sum on the day the list gives the reference (MCB
+  Mauritius: its 6.90% prime lending rate plus 13.50%); a rate that differs by the security behind the card is the one
+  for a card against salary, the game holding no pledged deposit (National Bank of Oman); a fee waived by a count of
+  transactions is charged in full, the game not counting them (DSK Bank); where the bank publishes no card's interest,
+  another bank's card is taken (Oman). The first SLATE's card was a limit and a balance per family, with no bank behind it; its interest and fees weren't
+  researched. Matrix (2026-10-29): 36 researched, 6 proven, 210 pending.
 
 The passports' form (decided 2026-10-28, the engine's reader being the Papers page: apply, pay, wait, hold a
 passport valid so many years). Each research file has `routes`, one per way the office takes an application: `id`,
