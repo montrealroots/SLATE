@@ -331,8 +331,11 @@ restarts. Read `CLAUDE.md` and the owner's package in `docs/` first.
   Mauritius: its 6.90% prime lending rate plus 13.50%); a rate that differs by the security behind the card is the one
   for a card against salary, the game holding no pledged deposit (National Bank of Oman); a fee waived by a count of
   transactions is charged in full, the game not counting them (DSK Bank); where the bank publishes no card's interest,
-  another bank's card is taken (Oman). The first SLATE's card was a limit and a balance per family, with no bank behind it; its interest and fees weren't
-  researched. Matrix (2026-10-29): 36 researched, 6 proven, 210 pending.
+  another bank's card is taken (Oman). Where a regulator's observatory prices every bank's card in a place (the IEDOM
+  and IEOM for the French overseas territories), each bank's international deferred-debit card is kept, a charge card,
+  their revolving credit not being in the table. A government charge the bank applies to the card each year is
+  written as a yearly fee (AIB's 30-euro stamp duty). The first SLATE's card was a limit and a balance per family, with no bank behind it; its interest and fees weren't
+  researched. Matrix (2026-10-29): 60 researched, 6 proven, 186 pending.
 
 The passports' form (decided 2026-10-28, the engine's reader being the Papers page: apply, pay, wait, hold a
 passport valid so many years). Each research file has `routes`, one per way the office takes an application: `id`,
