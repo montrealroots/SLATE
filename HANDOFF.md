@@ -137,8 +137,11 @@ restarts. Read `CLAUDE.md` and the owner's package in `docs/` first.
   Wikipedia's copy; Légifrance answers this client with a bot challenge): `fromdom` (the five departments, Saint
   Barthélemy, Saint Martin, Saint Pierre and Miquelon: 90 days in 180) and `frompac` (New Caledonia, French Polynesia,
   Wallis and Futuna: 3 months), EU/EFTA/Andorra/Monaco/San Marino free, each territory's extra exemptions on top;
-  the Southern Lands need an authorisation, French citizens included. Matrix (2026-10-29): 169 researched,
-  6 proven, 77 pending: Africa, South Asia, Oceania, North Korea and Taiwan to research next. The Wikipedia-sourced rows are to be re-read from the
+  the Southern Lands need an authorisation, French citizens included. Taiwan from the Bureau of Consular Affairs
+  (visa-exempt list of 17 July 2026, the eVisa list; Hong Kong and Macao residents' entry permit from the NIA, taken
+  as a visa); Sri Lanka from the Department of Immigration's ETA page (everyone an ETA, free for 40 since 25 May
+  2026); Pakistan, Bangladesh, Nepal, Bhutan, the Maldives and North Korea from Wikipedia's copies. Matrix
+  (2026-10-29): 177 researched, 6 proven, 69 pending: Africa and Oceania to research next. The Wikipedia-sourced rows are to be re-read from the
   primary when it opens (each file's note says which host refused).
 
 The passports' form (decided 2026-10-28, the engine's reader being the Papers page: apply, pay, wait, hold a
