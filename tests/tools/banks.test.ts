@@ -4,7 +4,7 @@ import { tmpdir } from 'node:os';
 import { join, resolve } from 'node:path';
 import { describe, expect, it } from 'vitest';
 import { money } from '../../src/core/money/money.ts';
-import { bank, compileCountry, fee, OUTPUT, PERIODS, readBanks, serialize, SOURCES, waiver } from '../../tools/money/banks/compile.ts';
+import { bank, changes, compileCountry, day, fee, OUTPUT, PERIODS, readBanks, serialize, SOURCES, waiver } from '../../tools/money/banks/compile.ts';
 import { banksCoverage, COVERAGE, coverageOf, serializeCoverage, TESTS, TOLD } from '../../tools/money/banks/coverage.ts';
 import { NO_PLACES } from '../../tools/papers/passports/coverage.ts';
 
@@ -41,6 +41,19 @@ describe('the banks compile', () => {
     for (const per of [undefined, 'week', 'Month']) expect(() => fee({ fee: '1', per }, 'USD', 'f'), String(per)).toThrow(`f is charged by the month, two months, the quarter, the half year or the year, not ${String(per)}`);
     for (const waived of [[], {}, 'x']) expect(() => fee({ fee: '1', per: 'month', waived }, 'USD', 'f'), JSON.stringify(waived)).toThrow("f's waivers are a list of conditions");
     expect(() => fee({ fee: '1', per: 'month', waived: [{ from: 60 }, { x: 1 }] }, 'USD', 'f')).toThrow("f's waiver 1 names a condition the game doesn't check (x)");
+  });
+
+  it('takes a fee to the figures its price list gives from later days', () => {
+    expect([day('2027-01-01', 'd'), day('2024-02-29', 'd')]).toEqual(['2027-01-01', '2024-02-29']);
+    for (const d of ['2027-02-29', '2027-13-01', '2027-00-10', '2027-1-1', ' 2027-01-01', 20270101, undefined]) expect(() => day(d, 'd'), String(d)).toThrow('d is a date written YYYY-MM-DD');
+    expect(changes([{ from: '2027-01-01', fee: '46.11' }, { from: '2028-01-01', fee: '0' }], 'EUR', 'c')).toStrictEqual([{ from: '2027-01-01', fee: money('EUR', 4611) }, { from: '2028-01-01', fee: money('EUR', 0) }]);
+    for (const list of [[], {}, undefined]) expect(() => changes(list, 'EUR', 'c'), JSON.stringify(list)).toThrow('c are a list of dates and figures');
+    expect(() => changes([{ from: '2027-01-01', fee: '1' }, { from: '2027-01-01', fee: '2' }], 'EUR', 'c')).toThrow('c are in order of their dates');
+    expect(() => changes([{ from: '2027-01-02', fee: '1' }, { from: '2027-01-01', fee: '2' }], 'EUR', 'c')).toThrow('c are in order of their dates');
+    expect(() => changes([{ from: '2027-01-01', fee: '-1' }], 'EUR', 'c')).toThrow("c' 0 is an amount written in major units");
+    expect(() => changes([null], 'EUR', 'c')).toThrow("c' 0 is a date written YYYY-MM-DD");
+    expect(fee({ fee: '44.68', per: 'quarter', changes: [{ from: '2027-01-01', fee: '46.11' }] }, 'EUR', 'f')).toStrictEqual({ fee: money('EUR', 4468), per: 'quarter', changes: [{ from: '2027-01-01', fee: money('EUR', 4611) }] });
+    expect(() => fee({ fee: '1', per: 'month', changes: 'x' }, 'EUR', 'f')).toThrow("f's changes are a list of dates and figures");
   });
 
   it("takes a bank to its account and its fees, in the country's currency or its own", () => {

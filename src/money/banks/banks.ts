@@ -25,6 +25,8 @@ export interface Fee {
   readonly per: Period;
   /** Any one of these waives the fee for the period. */
   readonly waived?: readonly Waiver[];
+  /** The figures the price list gives the fee from later days (YYYY-MM-DD), in order. */
+  readonly changes?: readonly { readonly from: string; readonly fee: Money }[];
 }
 
 export interface Bank {
@@ -61,9 +63,12 @@ const met = (w: Waiver, s: Standing): boolean => {
   return s.age >= w.from;
 };
 
-/** What a fee charges for a period the holder stood so in: nothing where any waiver is met. */
-export const feeFor = (charge: Fee, standing: Standing): Money =>
-  charge.waived?.some((w) => met(w, standing)) === true ? money(charge.fee.currency as CurrencyCode, 0) : charge.fee;
+/** The figure a fee stands at on a day (YYYY-MM-DD): the last change from that day or before, else its first. */
+export const feeOn = (charge: Fee, on: string): Money => charge.changes?.filter((c) => c.from <= on).at(-1)?.fee ?? charge.fee;
+
+/** What a fee charges on a day for a period the holder stood so in: nothing where any waiver is met. */
+export const feeFor = (charge: Fee, standing: Standing, on: string): Money =>
+  charge.waived?.some((w) => met(w, standing)) === true ? money(charge.fee.currency as CurrencyCode, 0) : feeOn(charge, on);
 
 export const UNKEPT_LINE = 'banks.unkept';
 

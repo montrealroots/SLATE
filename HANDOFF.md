@@ -273,7 +273,7 @@ restarts. Read `CLAUDE.md` and the owner's package in `docs/` first.
   any one of which waives it that the game can check: money paid in over the period, a balance never below a figure,
   an average daily balance, an age under or from. A condition it can't check (a student's status, a pension paid in,
   an application, membership of a co-operative) isn't written, and the fee is charged in full, as to anyone who
-  doesn't meet it; the note says so. `feeFor(fee, standing)` is what the ledger will read each period. Every figure
+  doesn't meet it; the note says so. `feeFor(fee, standing, day)` is what the ledger will read each period. Every figure
   is read from the bank's own price list, fee schedule or account page (or, in the EEA and the UK, its Fee
   Information Document); the first SLATE's world bank list (Wikipedia-sourced, `montrealroots/1221`
   `banks-world.ts`) is not a source, and its fee sheets' URLs (`banks-world-sheets.ts`) are only leads, each fetched
@@ -282,9 +282,13 @@ restarts. Read `CLAUDE.md` and the owner's package in `docs/` first.
   (`docs/KEEP.md` entry 14). France's overseas departments (BRED's price lists) are read from MoneyVox's archived
   copies of the bank's documents, so secondary; Wallis and Futuna from the IEOM's tariffs observatory, which names its
   one bank. Where a bank's waiver needs two months below a minimum (BDO), the game charges after one, the stricter
-  reading. Matrix (2026-10-29): 66 researched, 6 proven, 180 pending; the remaining countries are researched next by
-  targeted search (the EEA's and the UK's Fee Information Documents first), and a country whose banks' fees can't be
-  read after all five methods gets its blocker.
+  reading. A price list that gives the fee's next figure and the day it takes effect is kept as a change (Oberbank's
+  2027 price), `feeOn(fee, day)` reading the figure in force; an age-banded fee is charged as parts each waived by its
+  band (Slovenská sporiteľňa's 7 euros, 3.50 from 62, nothing under 27); a fee waived for a period after another was
+  charged is left out where the other is always charged in the game's reading (HSBC Malta's minimum balance fee).
+  An image-only fee document (DNB's) is read by eye and cited without a saved page. Matrix (2026-10-29): 87
+  researched, 6 proven, 159 pending; the remaining countries are researched next by targeted search, and a country
+  whose banks' fees can't be read after all five methods gets its blocker.
 
 The passports' form (decided 2026-10-28, the engine's reader being the Papers page: apply, pay, wait, hold a
 passport valid so many years). Each research file has `routes`, one per way the office takes an application: `id`,

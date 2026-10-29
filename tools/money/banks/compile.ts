@@ -3,6 +3,7 @@ import { readdirSync, readFileSync } from 'node:fs';
 import { join } from 'node:path';
 import countries from '../../../src/world/gazetteer/countries.json' with { type: 'json' };
 import { fromMajor, isCurrency, type CurrencyCode, type Money } from '../../../src/core/money/money.ts';
+import { civilFromDays, daysFromCivil } from '../../../src/core/time/calendar.ts';
 
 /**
  * Compiles the banks of each country and what their everyday account costs (src/money/banks/banks.json), from the
@@ -13,7 +14,8 @@ import { fromMajor, isCurrency, type CurrencyCode, type Money } from '../../../s
  * how often it's charged (`per`: a month, two months, a quarter, half a year or a year), and the conditions any one of
  * which waives it (`waived`): money paid in over the period (`deposits`), a balance never below a figure through it
  * (`balance`), an average daily balance (`average`), or an age (`under`, `from`). A condition the game can't check
- * isn't written, and the fee is charged in full, as it would be to anyone who doesn't meet it.
+ * isn't written, and the fee is charged in full, as it would be to anyone who doesn't meet it. A price list that states
+ * the fee's next figure and the day it takes effect gives it (`changes`, each a date and the figure from it, in order).
  */
 export const SOURCES = 'research/sources/money/banks';
 export const OUTPUT = 'src/money/banks/banks.json';
@@ -23,10 +25,16 @@ export type Period = (typeof PERIODS)[number];
 
 export type Waiver = { deposits: Money } | { balance: Money } | { average: Money } | { under: number } | { from: number };
 
+export interface Change {
+  from: string;
+  fee: Money;
+}
+
 export interface Fee {
   fee: Money;
   per: Period;
   waived?: Waiver[];
+  changes?: Change[];
 }
 
 export interface Bank {
@@ -64,16 +72,41 @@ export function waiver(w: unknown, currency: CurrencyCode, what: string): Waiver
   throw new Error(`${what} names a condition the game doesn't check (${key})`);
 }
 
+/** A calendar date written YYYY-MM-DD, one the calendar has. */
+export function day(text: unknown, what: string): string {
+  const m = typeof text === 'string' ? /^(\d{4})-(\d{2})-(\d{2})$/.exec(text) : null;
+  if (m === null) throw new Error(`${what} is a date written YYYY-MM-DD`);
+  const [y, mo, d] = m.slice(1).map(Number) as [number, number, number];
+  const back = civilFromDays(daysFromCivil(y, mo, d));
+  if (back.month !== mo || back.day !== d) throw new Error(`${what} is a date written YYYY-MM-DD`);
+  return text as string;
+}
+
+/** A fee's next figures, each from the day the price list gives, in order. */
+export function changes(list: unknown, currency: CurrencyCode, what: string): Change[] {
+  if (!Array.isArray(list) || list.length === 0) throw new Error(`${what} are a list of dates and figures`);
+  const out = list.map((c: unknown, i) => {
+    const { from, fee: figure } = (c ?? {}) as Record<string, unknown>;
+    return { from: day(from, `${what}' ${i}`), fee: amount(currency, figure, `${what}' ${i}`) };
+  });
+  out.forEach((c, i) => {
+    if (i > 0 && c.from <= (out[i - 1] as Change).from) throw new Error(`${what} are in order of their dates`);
+  });
+  return out;
+}
+
 /** One fee an account carries, in its currency. */
 export function fee(f: unknown, currency: CurrencyCode, what: string): Fee {
   if (typeof f !== 'object' || f === null) throw new Error(`${what} is not an object`);
-  const { fee: figure, per, waived } = f as Record<string, unknown>;
+  const { fee: figure, per, waived, changes: next } = f as Record<string, unknown>;
   const out: Fee = { fee: amount(currency, figure, what), per: per as Period };
   if (out.fee.minor === 0) throw new Error(`${what} is above nothing`);
   if (!PERIODS.includes(per as Period)) throw new Error(`${what} is charged by the month, two months, the quarter, the half year or the year, not ${String(per)}`);
-  if (waived === undefined) return out;
-  if (!Array.isArray(waived) || waived.length === 0) throw new Error(`${what}'s waivers are a list of conditions`);
-  out.waived = waived.map((w, i) => waiver(w, currency, `${what}'s waiver ${i}`));
+  if (waived !== undefined) {
+    if (!Array.isArray(waived) || waived.length === 0) throw new Error(`${what}'s waivers are a list of conditions`);
+    out.waived = waived.map((w, i) => waiver(w, currency, `${what}'s waiver ${i}`));
+  }
+  if (next !== undefined) out.changes = changes(next, currency, `${what}'s changes`);
   return out;
 }
 
