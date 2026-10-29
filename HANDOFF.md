@@ -122,8 +122,10 @@ restarts. Read `CLAUDE.md` and the owner's package in `docs/` first.
   Timor-Leste, the UAE, Türkiye, Saudi Arabia, Qatar, Kuwait, Bahrain, Oman, the Middle East (Israel with Palestine as
   a shared list `il`, Jordan, Lebanon, Egypt, Iraq, Iran, Syria, Yemen, Afghanistan), the Caucasus and Central Asia,
   Russia (its ETA for the visa-exempt), Belarus, Ukraine, the Western Balkans, Moldova; Åland, Monaco, San Marino, the
-  Vatican, Andorra, the Faroes and Greenland keep the eu1806 list; Svalbard has no visa regime. Matrix (2026-10-29):
-  109 researched, 6 proven, 137 pending: every other country's own list to research next, and the French, Dutch and Danish
+  Vatican, Andorra, the Faroes and Greenland keep the eu1806 list; Svalbard has no visa regime; South and Central
+  America (Argentina to Nicaragua, Costa Rica, Panama, Belize) from Wikipedia's copies with the migration authority
+  named. Matrix (2026-10-29): 127 researched, 6 proven, 119 pending: every other country's own list to research next
+  (the Caribbean, Africa, South Asia, Oceania, North Korea, Taiwan), and the French, Dutch and Danish
   territories outside Schengen, each with its own list. The Wikipedia-sourced rows are to be re-read from the
   primary when it opens (each file's note says which host refused).
 
