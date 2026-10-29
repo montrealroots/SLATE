@@ -1483,6 +1483,27 @@
    }
   ]
  },
+ "DJ": {
+  "document": "Carte d'identité numérique (national identity card)",
+  "currency": "DJF",
+  "routes": [
+   {
+    "id": "population",
+    "where": "home",
+    "speed": "standard",
+    "within": null
+   }
+  ],
+  "bands": [
+   {
+    "validYears": 10,
+    "pay": {
+     "population": 2000
+    },
+    "from": 18
+   }
+  ]
+ },
  "DK": {
   "document": "legitimationskort",
   "currency": "DKK",
@@ -2686,6 +2707,34 @@
    }
   ]
  },
+ "JO": {
+  "document": "Smart civil status card (بطاقة الأحوال المدنية الذكية)",
+  "currency": "JOD",
+  "routes": [
+   {
+    "id": "cspd",
+    "where": "home",
+    "speed": "standard",
+    "within": null
+   }
+  ],
+  "bands": [
+   {
+    "validYears": null,
+    "pay": {
+     "cspd": null
+    },
+    "under": 16
+   },
+   {
+    "validYears": null,
+    "pay": {
+     "cspd": null
+    },
+    "from": 16
+   }
+  ]
+ },
  "JP": {
   "document": "個人番号カード (My Number Card)",
   "currency": "JPY",
@@ -2783,6 +2832,34 @@
     "pay": {
      "police": 0
     }
+   }
+  ]
+ },
+ "KM": {
+  "document": "Carte nationale d'identité comorienne numérisée biométrique",
+  "currency": "KMF",
+  "routes": [
+   {
+    "id": "interior",
+    "where": "home",
+    "speed": "standard",
+    "within": null
+   }
+  ],
+  "bands": [
+   {
+    "validYears": 10,
+    "pay": {
+     "interior": null
+    },
+    "under": 15
+   },
+   {
+    "validYears": 10,
+    "pay": {
+     "interior": null
+    },
+    "from": 15
    }
   ]
  },
@@ -5027,6 +5104,42 @@
    }
   ]
  },
+ "ST": {
+  "document": "Bilhete de Identidade (BI)",
+  "currency": "STN",
+  "routes": [
+   {
+    "id": "registos",
+    "where": "home",
+    "speed": "standard",
+    "within": null
+   }
+  ],
+  "bands": [
+   {
+    "validYears": null,
+    "pay": {
+     "registos": null
+    },
+    "under": 18
+   },
+   {
+    "validYears": null,
+    "pay": {
+     "registos": 0
+    },
+    "from": 18,
+    "under": 19
+   },
+   {
+    "validYears": null,
+    "pay": {
+     "registos": null
+    },
+    "from": 19
+   }
+  ]
+ },
  "SV": {
   "document": "Documento Único de Identidad (DUI)",
   "currency": "USD",
@@ -5697,6 +5810,27 @@
     "pay": {
      "regular": 1000,
      "accelerated": 6000
+    },
+    "from": 16
+   }
+  ]
+ },
+ "YE": {
+  "document": "National identity card (البطاقة الشخصية)",
+  "currency": "YER",
+  "routes": [
+   {
+    "id": "civil-registry",
+    "where": "home",
+    "speed": "standard",
+    "within": null
+   }
+  ],
+  "bands": [
+   {
+    "validYears": 10,
+    "pay": {
+     "civil-registry": null
     },
     "from": 16
    }
