@@ -11,7 +11,7 @@ import countries from '../../../src/world/gazetteer/countries.json' with { type:
  * byte of it is read. A list gives, by the passport the visitor carries (the country whose passport it is, as the
  * passports engine names it), what entry asks: nothing (`free`), an electronic travel authorisation (`eta`), a visa
  * applied for online (`evisa`), one given at the border (`arrival`), or one applied for beforehand (`visa`), with the
- * days a stay may last where the source sets them (`days`, and the period they're counted in, `within`); every
+ * stay it allows where the source sets one (`days`, and the period they're counted in, `within`; or `months`); every
  * passport the list doesn't name meets its `others` rule. A country keeping a shared list names it (`group`), with
  * rules of its own for the passports it treats otherwise (Guam's waiver on top of the United States').
  */
@@ -26,6 +26,7 @@ export interface Rule {
   entry: Entry;
   days?: number;
   within?: number;
+  months?: number;
 }
 
 export interface List {
@@ -34,19 +35,28 @@ export interface List {
   others: Rule;
 }
 
-/** One rule: its entry, and the days a stay may last within a period, where the source sets them. */
+const whole = (n: unknown) => Number.isInteger(n) && (n as number) > 0;
+
+/** One rule: its entry, and the stay it allows where the source sets one, in days (within a period of days) or months. */
 export function rule(r: unknown, what: string): Rule {
   if (typeof r !== 'object' || r === null) throw new Error(`${what} is not an object`);
-  const { entry, days, within } = r as Record<string, unknown>;
+  const { entry, days, within, months } = r as Record<string, unknown>;
   if (!ENTRIES.includes(entry as Entry)) throw new Error(`${what} asks free, eta, evisa, arrival or visa, not ${String(entry)}`);
   const out: Rule = { entry: entry as Entry };
-  if (days !== undefined) {
-    if (!Number.isInteger(days) || (days as number) <= 0) throw new Error(`${what}'s days are a whole number above 0`);
-    if (entry === 'visa') throw new Error(`${what} asks a visa, whose stay is the visa's, not the list's`);
-    out.days = days as number;
+  if (days === undefined && months === undefined) {
+    if (within !== undefined) throw new Error(`${what}'s days are counted within a whole number of days above them`);
+    return out;
   }
+  if (entry === 'visa') throw new Error(`${what} asks a visa, whose stay is the visa's, not the list's`);
+  if (months !== undefined) {
+    if (days !== undefined || within !== undefined) throw new Error(`${what}'s stay is in days or in months, not both`);
+    if (!whole(months)) throw new Error(`${what}'s months are a whole number above 0`);
+    return { ...out, months: months as number };
+  }
+  if (!whole(days)) throw new Error(`${what}'s days are a whole number above 0`);
+  out.days = days as number;
   if (within !== undefined) {
-    if (out.days === undefined || !Number.isInteger(within) || (within as number) <= out.days) throw new Error(`${what}'s days are counted within a whole number of days above them`);
+    if (!Number.isInteger(within) || (within as number) <= out.days) throw new Error(`${what}'s days are counted within a whole number of days above them`);
     out.within = within as number;
   }
   return out;

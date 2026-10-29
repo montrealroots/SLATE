@@ -100,8 +100,18 @@ restarts. Read `CLAUDE.md` and the owner's package in `docs/` first.
   the Bahamas, the Caymans, Turks and Caicos and the British Virgin Islands free on conditions not modelled; the other
   British territories' passports a visa, by the 2024 rule's footnote that the United Kingdom means British citizens),
   kept by the fifty states, Puerto Rico and the US Virgin Islands, and by Guam and the Northern Marianas with the
-  Guam-CNMI waiver's own rules on top (Malaysia, Nauru, Papua New Guinea, Hong Kong: 45 days with an ETA). Matrix:
-  35 researched, 6 proven, 211 pending: Ireland and every other country's own list to research next.
+  Guam-CNMI waiver's own rules on top (Malaysia, Nauru, Papua New Guinea, Hong Kong: 45 days with an ETA); `gb`, the
+  United Kingdom's Immigration Rules (Appendix Visitor: Visa National List and Appendix ETA National List, 6 months,
+  Irish citizens free by the 1971 Act s. 3ZA), kept by the UK, Jersey, Guernsey and the Isle of Man (each with its own
+  ETA since 23 April 2026; gov.je refuses this client, so Jersey is read from the Jersey Evening Post quoting it); `au`
+  (ETA 601 and eVisitor 651, 3 months; New Zealanders free), kept by Australia, Christmas Island, the Cocos Islands and
+  Norfolk Island (Migration Act s. 7). Own lists: Ireland (S.I. 473/2014 Sch. 1 as amended to S.I. 242/2026), Canada
+  (IRPR ss. 7, 7.1, 183(2), 190, Sch. 1.1), New Zealand (INZ's visa waiver list; legislation.govt.nz refuses this client),
+  Japan (MOFA, the Immigration Services Agency and the embassies all refuse this client, 403: MOFA's table is read from
+  Wikipedia's copy, marked secondary), Korea (HiKorea's agreement and designation tables, K-ETA and its 22 exemptions to
+  31 December 2026). A stay is `days` (with `within`) or `months`. Matrix (2026-10-29): 48 researched, 6 proven, 198
+  pending: every other country's own list to research next (China, Hong Kong, Macao, India, Mexico, Brazil, then the
+  rest), and the French, Dutch and Danish territories outside Schengen, each with its own list.
 
 The passports' form (decided 2026-10-28, the engine's reader being the Papers page: apply, pay, wait, hold a
 passport valid so many years). Each research file has `routes`, one per way the office takes an application: `id`,

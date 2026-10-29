@@ -20,6 +20,8 @@ describe('visits', () => {
     expect(visit('GL', 'US')).toStrictEqual(visit('DK', 'US'));
     // Guam keeps the United States' list with its own waiver on top.
     expect([visit('MY', 'GU'), visit('MY', 'US'), visit('JP', 'GU'), visit('CN', 'GU')]).toStrictEqual([{ entry: 'eta', days: 45 }, { entry: 'visa' }, { entry: 'eta', days: 90 }, { entry: 'visa' }]);
+    // A stay counted in months, and a list with no limit for its neighbours.
+    expect([visit('US', 'GB'), visit('IE', 'GB'), visit('AU', 'NZ'), visit('NZ', 'AU')]).toStrictEqual([{ entry: 'eta', months: 6 }, { entry: 'free' }, { entry: 'free' }, { entry: 'free' }]);
     expect(visit('US', 'AQ')).toBeUndefined();
   });
 

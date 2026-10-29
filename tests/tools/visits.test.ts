@@ -17,6 +17,8 @@ describe('the visitor rules compile', () => {
     expect(rule({ entry: 'free', days: 90, within: 180 }, 'r')).toStrictEqual({ entry: 'free', days: 90, within: 180 });
     expect(rule({ entry: 'eta', days: 1, within: 2 }, 'r')).toStrictEqual({ entry: 'eta', days: 1, within: 2 });
     expect(rule({ entry: 'arrival', days: 30 }, 'r')).toStrictEqual({ entry: 'arrival', days: 30 });
+    expect(rule({ entry: 'eta', months: 6 }, 'r')).toStrictEqual({ entry: 'eta', months: 6 });
+    expect(rule({ entry: 'free', months: 1 }, 'r')).toStrictEqual({ entry: 'free', months: 1 });
   });
 
   it('refuses a rule that is not one', () => {
@@ -24,6 +26,11 @@ describe('the visitor rules compile', () => {
     for (const entry of ['none', undefined, 'Visa']) expect(() => rule({ entry }, 'r'), String(entry)).toThrow(`r asks free, eta, evisa, arrival or visa, not ${String(entry)}`);
     for (const days of [0, -1, 2.5, '90', null]) expect(() => rule({ entry: 'free', days }, 'r'), String(days)).toThrow("r's days are a whole number above 0");
     expect(() => rule({ entry: 'visa', days: 30 }, 'r')).toThrow("r asks a visa, whose stay is the visa's, not the list's");
+    expect(() => rule({ entry: 'visa', months: 3 }, 'r')).toThrow("r asks a visa, whose stay is the visa's, not the list's");
+    for (const months of [0, -1, 2.5, '6', null]) expect(() => rule({ entry: 'free', months }, 'r'), String(months)).toThrow("r's months are a whole number above 0");
+    for (const extra of [{ days: 90 }, { within: 180 }, { days: 90, within: 180 }]) {
+      expect(() => rule({ entry: 'free', months: 6, ...extra }, 'r'), JSON.stringify(extra)).toThrow("r's stay is in days or in months, not both");
+    }
     for (const within of [90, 89, 180.5, '180', null]) expect(() => rule({ entry: 'free', days: 90, within }, 'r'), String(within)).toThrow("r's days are counted within a whole number of days above them");
     expect(() => rule({ entry: 'free', within: 180 }, 'r')).toThrow("r's days are counted within a whole number of days above them");
   });

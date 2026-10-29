@@ -7,7 +7,7 @@ import data from './visits.json' with { type: 'json' };
  * What a visitor needs to enter each country (src/papers/visits/visits.json, compiled by tools/papers/visits from the
  * research, register facts papers.visits.<CC> and papers.visits.group.<name>): by the visitor's citizenship, nothing
  * (`free`), an electronic travel authorisation (`eta`), a visa applied for online (`evisa`), one given at the border
- * (`arrival`), or one applied for beforehand (`visa`), with the days a stay may last where the list sets them. A
+ * (`arrival`), or one applied for beforehand (`visa`), with the stay it allows where the list sets one. A
  * country keeps its own list or a shared one (the EU's common visa list), with rules of its own where it treats a
  * passport otherwise (Guam's waiver on top of the United States'). A country whose list the game doesn't keep has
  * none here, and the player is told.
@@ -19,6 +19,8 @@ export interface Visit {
   /** The days a stay may last, within a period of `within` days where the list counts them so. */
   readonly days?: number;
   readonly within?: number;
+  /** Or the months it may last, where the list counts it so. */
+  readonly months?: number;
 }
 
 interface List {
