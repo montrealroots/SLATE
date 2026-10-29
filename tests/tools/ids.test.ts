@@ -81,22 +81,17 @@ describe('the identity documents compile', () => {
       expect(() => compileNone('GB', { country: 'GB', none: true, [key]: [] }), key).toThrow('GB issues no identity document, so it has no routes, cards or name');
     }
     expect(compileIssued('GU', { country: 'GU', issuedBy: 'US', note: 'x', sources: [] })).toStrictEqual({ issuedBy: 'US' });
-    expect(compileIssued('GF', { country: 'GF', issuedBy: 'FR', onlyRoutes: ['home', 'abroad'] })).toStrictEqual({ issuedBy: 'FR', onlyRoutes: ['home', 'abroad'] });
     expect(() => compileIssued('XX', { country: 'XX', issuedBy: 'US' })).toThrow('XX is not a country on the map');
     expect(() => compileIssued('GU', { country: 'PR', issuedBy: 'US' })).toThrow("GU's file is for PR");
     for (const issuedBy of ['XX', 'GU', 7]) expect(() => compileIssued('GU', { country: 'GU', issuedBy })).toThrow(`GU's identity documents are issued by another country on the map, not ${String(issuedBy)}`);
-    for (const key of ['routes', 'cards']) {
-      expect(() => compileIssued('GU', { country: 'GU', issuedBy: 'US', [key]: [] }), key).toThrow("GU's identity documents are US's, so it has no routes or cards of its own");
-    }
-    for (const onlyRoutes of [[], 'home', [''], [3], ['a', ''], ['a', 'a']]) {
-      expect(() => compileIssued('GF', { country: 'GF', issuedBy: 'FR', onlyRoutes }), JSON.stringify(onlyRoutes)).toThrow("GF is open to distinct routes of FR's by id");
+    // No territory's card is limited to some of its issuer's routes, so a file can't say so.
+    for (const key of ['routes', 'cards', 'onlyRoutes']) {
+      expect(() => compileIssued('GU', { country: 'GU', issuedBy: 'US', [key]: [] }), key).toThrow("GU's identity documents are US's, on all its routes, so it has no routes, cards or route limits of its own");
     }
     const de = compileCard('DE', file());
-    expect(() => checkIssuers({ DE: de, GB: { none: true }, AT: { issuedBy: 'DE' }, CH: { issuedBy: 'DE', onlyRoutes: ['abroad'] }, GU: { issuedBy: 'GB' } })).not.toThrow();
+    expect(() => checkIssuers({ DE: de, GB: { none: true }, AT: { issuedBy: 'DE' }, GU: { issuedBy: 'GB' } })).not.toThrow();
     expect(() => checkIssuers({ DE: de, AT: { issuedBy: 'PL' } })).toThrow("AT's identity documents are PL's, which the game doesn't keep in its own right");
     expect(() => checkIssuers({ DE: de, AT: { issuedBy: 'DE' }, CH: { issuedBy: 'AT' } })).toThrow("CH's identity documents are AT's, which the game doesn't keep in its own right");
-    expect(() => checkIssuers({ GB: { none: true }, GU: { issuedBy: 'GB', onlyRoutes: ['home'] } })).toThrow("GU is open to routes of GB's, which issues none");
-    expect(() => checkIssuers({ DE: de, CH: { issuedBy: 'DE', onlyRoutes: ['home', 'post'] } })).toThrow('CH is open to a route DE has none of (post)');
   });
 
   it('reads only files the register cites, as cited', () => {

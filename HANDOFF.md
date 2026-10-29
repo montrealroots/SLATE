@@ -33,22 +33,27 @@ restarts. Read `CLAUDE.md` and the owner's package in `docs/` first.
 - Layer 3 (the person's papers and money) is in progress. Built: the passports engine (`papers.passports`,
   `src/papers/passports/`), compiled by `tools/papers/passports/` from the research files, at 100% mutation score
   (406 mutants). Its matrix (`coverage/passports-countries.json`): 222 researched, 24 blocked, 6 proven (no places),
-  none pending (2026-10-28); every research file is in the engine's form. Next: ID, visas, residence and work
+  none pending (2026-10-28); every research file is in the engine's form. Next: visas, residence and work
   permissions, and the banks (step 5 below), and the blocked passports again when a source opens.
 - The national identity documents engine (`papers.ids`, `src/papers/ids/`, compiled by `tools/papers/ids/` from
-  `research/sources/papers/ids/<CC>.json`, register facts `papers.ids.<CC>`) is built and in research: 103 countries
-  and territories kept as of commit 86a7ae5 (2026-10-28), the rest pending in `coverage/ids-countries.json`. The form
+  `research/sources/papers/ids/<CC>.json`, register facts `papers.ids.<CC>`) is built, at 100% mutation score (308
+  mutants, 2026-10-29; the territories' route limits, which no territory uses, removed rather than kept untested),
+  and its matrix
+  (`coverage/ids-countries.json`) is complete as of commit 966df41 (2026-10-29): 238 researched, 6 proven, 8 blocked
+  (Anguilla, the Falklands, Saint Helena, Montserrat, Libya, Palestine, Equatorial Guinea, Guinea-Bissau; R-0940 to
+  R-0947, each after all five methods: none was found to issue a card, and none was found to state that it doesn't),
+  none pending. The form
   is the passports' (`routes`, and `cards` for the bands, without `pages` or seasonal `months`), with
   `"validYears": "permanent"` for a card that never expires (Slovenia from 70, Taiwan, Indonesia, Brazil and Vietnam
-  from 60, Peru over 60); a country that issues none is `none: true` (the United States, the United Kingdom, Canada);
-  a territory holding another's card names it (`issuedBy`, optional `onlyRoutes`). Where a card is due again at set
-  ages rather than after a term (Singapore, Malaysia, Vietnam before 60) its validity is null. Still to research, in
-  order: the rest of Asia and the Middle East, the Americas from Paraguay, Africa, Oceania, then the retry list:
-  Lithuania (MIGRIS), the Faroes, Greenland, Andorra, the Vatican, the British Overseas Territories, Turkmenistan,
-  Tajikistan, Belarus, Uzbekistan, Kyrgyzstan, Bangladesh (ecs.gov.bd 403), Nepal (FAQ in a legacy font), Bahrain
-  (AWS WAF), Qatar, Kuwait, Oman and Saudi Arabia (resets, 403, policy denial), Paraguay (no fee on its page); and the
-  null fields of Serbia, Bosnia, North Macedonia, Georgia, Azerbaijan, Turkey, Thailand, Pakistan, Argentina, Uruguay
-  and Ecuador. Every adult (30) of a country that issues a card must have at least one offer (the places test).
+  from 60, Peru over 60, Tanzania, Timor-Leste from 60); a country that issues none is `none: true` (the United
+  States, the United Kingdom, Canada, Andorra, the Bahamas, the DR Congo, the Faroes and Greenland under the Danish
+  Act 236/2017 §6, and the Pacific states without one: Micronesia, Nauru, the Solomons, Tuvalu, Samoa, Palau); a
+  territory holding another's card names it (`issuedBy`), on all its routes. Where a card is due again at set
+  ages rather than after a term (Singapore, Malaysia, Vietnam before 60) its validity is null. What the research
+  couldn't read is null, and the player is told so (`idOfferGaps`): 54 countries have at least one fee null (among
+  them Belarus' accelerated, urgent and consular routes, Bulgaria's and Slovenia's urgent bands, Algeria, Jordan,
+  Tunisia, Myanmar, North Korea, the Vatican, and the Pacific and Caribbean voter-card states); the next step is to
+  try those again. Every adult (30) of a country that issues a card has at least one offer (the places test).
 
 The passports' form (decided 2026-10-28, the engine's reader being the Papers page: apply, pay, wait, hold a
 passport valid so many years). Each research file has `routes`, one per way the office takes an application: `id`,
@@ -756,7 +761,8 @@ What layer 0 holds:
    (2026-02-11), mfa.gov.bt/faqs (2026-09-24), gov.sz's travel documents page (2026-08-15),
    falepilipathway.gov.au/support-tuvalu (2026-10-07), interieur.gouv.cg (2025-12-06), the Palestinian Cabinet's
    service guide (2025-11-02), immigration.gov.so/services (2026-08-31), naenara.com.kp (2026-10-17).
-   Next: citizenship, ID, visas, residence and work permissions (each an engine with its own matrix), then the banks.
+   Identity cards: done 2026-10-29 (above); their null fees to try again. Next: citizenship, visas, residence and
+   work permissions (each an engine with its own matrix), then the banks.
 
 ## Verification evidence
 

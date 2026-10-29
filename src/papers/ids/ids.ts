@@ -33,7 +33,6 @@ interface None {
 
 interface Issued {
   readonly issuedBy: string;
-  readonly onlyRoutes?: readonly string[];
 }
 
 const IDS = data as unknown as Record<string, Card | None | Issued>;
@@ -67,11 +66,8 @@ export function idOffers(country: CountryCode, age: number): IdOffer[] | undefin
   const entry = own(country);
   if (entry === undefined) return undefined;
   if ('none' in entry) return [];
-  const territory = IDS[country] as Card | Issued;
-  const only = 'issuedBy' in territory ? territory.onlyRoutes : undefined;
   const offers: IdOffer[] = [];
   for (const route of entry.routes) {
-    if (only !== undefined && !only.includes(route.id)) continue;
     for (const b of entry.bands) {
       if (!fits(b, age) || !Object.hasOwn(b.pay, route.id)) continue;
       const minor = b.pay[route.id] as number | null;

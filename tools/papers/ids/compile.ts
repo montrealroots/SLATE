@@ -12,8 +12,8 @@ import { band, overlap, route, type Band as PassportBand, type Route } from '../
  * document names it (`document`) and gives the ways the office takes an application (`routes`, the passports' form)
  * and, by age band, the total paid for each and the years it is valid (`cards`, the passports' bands, where a card that
  * never expires is `"validYears": "permanent"`). A country
- * that issues none says so (`none`); a territory whose people hold another country's says whose (`issuedBy`), with
- * the routes open to it where not all are (`onlyRoutes`).
+ * that issues none says so (`none`); a territory whose people hold another country's says whose (`issuedBy`), on all
+ * of that country's routes (no territory's card is limited to some, as French Guiana's passport fee is).
  */
 export const SOURCES = 'research/sources/papers/ids';
 export const OUTPUT = 'src/papers/ids/ids.json';
@@ -34,7 +34,6 @@ export interface None {
 
 export interface Issued {
   issuedBy: string;
-  onlyRoutes?: string[];
 }
 
 export type Entry = Card | None | Issued;
@@ -86,26 +85,17 @@ export function compileNone(code: string, file: Record<string, unknown>): None {
 export function compileIssued(code: string, file: Record<string, unknown>): Issued {
   checkCountry(code, file);
   const issuedBy = String(file['issuedBy']);
-  const onlyRoutes = file['onlyRoutes'];
   if (!Object.hasOwn(countries, issuedBy) || issuedBy === code) throw new Error(`${code}'s identity documents are issued by another country on the map, not ${issuedBy}`);
-  if ('routes' in file || 'cards' in file) throw new Error(`${code}'s identity documents are ${issuedBy}'s, so it has no routes or cards of its own`);
-  if (onlyRoutes === undefined) return { issuedBy };
-  if (!Array.isArray(onlyRoutes) || onlyRoutes.length === 0 || onlyRoutes.some((r) => typeof r !== 'string' || r === '') || new Set(onlyRoutes).size !== onlyRoutes.length) {
-    throw new Error(`${code} is open to distinct routes of ${issuedBy}'s by id`);
-  }
-  return { issuedBy, onlyRoutes: onlyRoutes as string[] };
+  if ('routes' in file || 'cards' in file || 'onlyRoutes' in file) throw new Error(`${code}'s identity documents are ${issuedBy}'s, on all its routes, so it has no routes, cards or route limits of its own`);
+  return { issuedBy };
 }
 
-/** Every issuer named is compiled in its own right, and every route a territory is open to is one of the issuer's. */
+/** Every issuer named is compiled in its own right. */
 export function checkIssuers(ids: Readonly<Record<string, Entry>>): void {
   for (const [code, e] of Object.entries(ids)) {
     if (!('issuedBy' in e)) continue;
     const issuer = ids[e.issuedBy];
     if (issuer === undefined || 'issuedBy' in issuer) throw new Error(`${code}'s identity documents are ${e.issuedBy}'s, which the game doesn't keep in its own right`);
-    if (e.onlyRoutes === undefined) continue;
-    if ('none' in issuer) throw new Error(`${code} is open to routes of ${e.issuedBy}'s, which issues none`);
-    const routes = new Set(issuer.routes.map((r) => r.id));
-    for (const r of e.onlyRoutes) if (!routes.has(r)) throw new Error(`${code} is open to a route ${e.issuedBy} has none of (${r})`);
   }
 }
 
