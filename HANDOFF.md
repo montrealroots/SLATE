@@ -175,8 +175,12 @@ restarts. Read `CLAUDE.md` and the owner's package in `docs/` first.
   Normattiva), Spain (LO 4/2000 art. 41, RD 1155/2024 on the BOE), Ireland (the Atypical Working Scheme; British
   citizens free), Denmark (SIRI), Sweden (Migrationsverket, 14 days a year on an established promoter's invitation),
   Norway (UDI, 14 days a year; British artists without a Norwegian employer 90 in 180), Finland (EnterFinland; Migri
-  refuses this client). An exemption only for artists of fame or a significant event's main attraction (Belgium,
-  Denmark) isn't modelled as days open to a performer. Matrix (2026-10-29): 25 researched, 6 proven, 221 pending:
+  refuses this client), Portugal (gov.pt's performing-arts visa), Switzerland (the eea list; VZAE art. 19 para. 4
+  lit. b, from Zurich's artists' instruction), Luxembourg (guichet.lu, 90 days a year for an intermittent of the
+  performing arts), Poland (30 days a year, the Zielona Linia), Czechia (the employee card), Slovakia (30 days a
+  year, Act 5/2004 as in force from 1 August 2026), Hungary (the Hungarian Card for a performing artist, Act XC of
+  2023 § 36; neither it nor Decree 35/2024 names days without it). An exemption only for artists of fame or a significant event's main attraction (Belgium,
+  Denmark) isn't modelled as days open to a performer. Matrix (2026-10-29): 32 researched, 6 proven, 214 pending:
   every other country to research next, each from its own
   immigration law or office (the performer's route, its short-engagement exemption, its free-movement partners:
   the EEA, the CTA, Trans-Tasman, Mercosur, CARICOM, the GCC, ECOWAS, the EAC, the EAEU, the Compacts, India–Nepal
