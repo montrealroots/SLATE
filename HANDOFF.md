@@ -133,9 +133,12 @@ restarts. Read `CLAUDE.md` and the owner's package in `docs/` first.
   Bermuda from gov.bm (the Order's visa-controlled nationals need a UK, US or Canadian multi re-entry visa; the
   Order's schedule 404s, so the visa-free list is Wikipedia's), the rest from Wikipedia's combined article; the
   territories where every visitor needs a permit (South Georgia, BIOT) name British passports too; American Samoa
-  (its own online permit, 30 days). Matrix (2026-10-29): 157 researched, 6 proven, 89 pending: every other
-  country's own list to research next (Africa, South Asia, Oceania, North Korea, Taiwan), and the French
-  territories outside Schengen, each with its own list. The Wikipedia-sourced rows are to be re-read from the
+  (its own online permit, 30 days). Overseas France as two shared lists from the ministerial orders (read from
+  Wikipedia's copy; Légifrance answers this client with a bot challenge): `fromdom` (the five departments, Saint
+  Barthélemy, Saint Martin, Saint Pierre and Miquelon: 90 days in 180) and `frompac` (New Caledonia, French Polynesia,
+  Wallis and Futuna: 3 months), EU/EFTA/Andorra/Monaco/San Marino free, each territory's extra exemptions on top;
+  the Southern Lands need an authorisation, French citizens included. Matrix (2026-10-29): 169 researched,
+  6 proven, 77 pending: Africa, South Asia, Oceania, North Korea and Taiwan to research next. The Wikipedia-sourced rows are to be re-read from the
   primary when it opens (each file's note says which host refused).
 
 The passports' form (decided 2026-10-28, the engine's reader being the Papers page: apply, pay, wait, hold a
