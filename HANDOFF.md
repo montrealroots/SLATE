@@ -278,7 +278,7 @@ restarts. Read `CLAUDE.md` and the owner's package in `docs/` first.
   is read from the bank's own price list, fee schedule or account page (or, in the EEA and the UK, its Fee
   Information Document); the first SLATE's world bank list (Wikipedia-sourced, `montrealroots/1221`
   `banks-world.ts`) is not a source, and its fee sheets' URLs (`banks-world-sheets.ts`) are only leads, each fetched
-  and read again. Not yet decided or built: cards, credit records, the exchange rates the life's money is estimated
+  and read again. Not yet decided or built: credit records, the exchange rates the life's money is estimated
   at, the family's starting means; the account number's format by country went with the residence history
   (`docs/KEEP.md` entry 14). France's overseas departments (BRED's price lists) are read from MoneyVox's archived
   copies of the bank's documents, so secondary; Wallis and Futuna from the IEOM's tariffs observatory, which names its
@@ -315,6 +315,20 @@ restarts. Read `CLAUDE.md` and the owner's package in `docs/` first.
   Comoros, Gabon, Congo, the Central African Republic, Western Sahara, the Falklands, the Vatican, Tuvalu and the
   five places above); most fail because the bank's site doesn't answer, sits behind a bot check, or publishes no
   tariff. Open: retry the blockers.
+- **Cards** (`money.cards`, built 2026-10-29): each country's credit cards from the bank's own price list, pricing and
+  terms, or card page (research/sources/money/cards/<CC>.json, register facts money.cards.<CC>), compiled by
+  `tools/money/cards` into `src/money/cards/cards.json`. A card is named as its bank names it, with its currency (the
+  country's unless the bank names another), its interest (`rate`: a percent by the year or by the month as the bank
+  states it, or `in full` for a charge card, whose balance the bank takes from the account each month, Deutsche Bank's
+  Mastercard being one) and its fees, read as an account's are (`tools/money/banks`) and waivable also by spending a
+  figure on the card over the fee's period (`spend`). A rate the bank gives as a range set by creditworthiness is written
+  at the top of the range, the game not knowing where in it the bank would put the holder (Chase's 18.49% to 27.99%);
+  an introductory rate, a fee on issue or replacement, a stamp duty on interest and a cash-advance rate aren't
+  written. Tax is added to a fee only where the document states its rate (BAI's 14% VAT). `interestFor(card, owed)` is
+  a month's interest (a yearly rate's twelfth), rounded half to even, nothing on a credit balance; `paidInFull(card)`
+  says a charge card carries nothing; `feeFor(fee, standing, day)` takes an account's standing and what was spent.
+  The first SLATE's card was a limit and a balance per family, with no bank behind it; its interest and fees weren't
+  researched. Matrix (2026-10-29): 4 researched (US, GB, DE, AO), 6 proven, 242 pending.
 
 The passports' form (decided 2026-10-28, the engine's reader being the Papers page: apply, pay, wait, hold a
 passport valid so many years). Each research file has `routes`, one per way the office takes an application: `id`,

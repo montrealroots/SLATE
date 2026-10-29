@@ -59,7 +59,8 @@ export interface Standing {
   readonly national: boolean;
 }
 
-const met = (w: Waiver, s: Standing): boolean => {
+/** Whether the holder's standing over the period meets a waiver. */
+export const waives = (w: Waiver, s: Standing): boolean => {
   if ('deposits' in w) return compare(s.deposits, w.deposits) >= 0;
   if ('balance' in w) return compare(s.lowest, w.balance) >= 0;
   if ('average' in w) return compare(s.average, w.average) >= 0;
@@ -69,11 +70,11 @@ const met = (w: Waiver, s: Standing): boolean => {
 };
 
 /** The figure a fee stands at on a day (YYYY-MM-DD): the last change from that day or before, else its first. */
-export const feeOn = (charge: Fee, on: string): Money => charge.changes?.filter((c) => c.from <= on).at(-1)?.fee ?? charge.fee;
+export const feeOn = (charge: Pick<Fee, 'fee' | 'changes'>, on: string): Money => charge.changes?.filter((c) => c.from <= on).at(-1)?.fee ?? charge.fee;
 
 /** What a fee charges on a day for a period the holder stood so in: nothing where any waiver is met. */
 export const feeFor = (charge: Fee, standing: Standing, on: string): Money =>
-  charge.waived?.some((w) => met(w, standing)) === true ? money(charge.fee.currency as CurrencyCode, 0) : feeOn(charge, on);
+  charge.waived?.some((w) => waives(w, standing)) === true ? money(charge.fee.currency as CurrencyCode, 0) : feeOn(charge, on);
 
 export const UNKEPT_LINE = 'banks.unkept';
 
