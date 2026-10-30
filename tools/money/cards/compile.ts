@@ -73,6 +73,7 @@ export const LIMIT_WHEN = ['issue', 'year', 'raise'] as const;
 export interface Card {
   bank: string;
   card: string;
+  currency: CurrencyCode;
   rate: Rate | 'in full' | { steps: Steps };
   fees: Fee[];
   issue?: Money;
@@ -220,7 +221,7 @@ export function card(c: unknown, home: CurrencyCode, what: string): Card {
   if (!isCurrency(currency as string)) throw new Error(`${what}'s currency is not one in use (${String(currency)})`);
   const cur = currency as CurrencyCode;
   if (!Array.isArray(fees)) throw new Error(`${what}'s fees are a list, empty where the card costs nothing to hold`);
-  const out: Card = { bank: bank as string, card: name as string, rate: rate(r, cur, `${what}'s rate`), fees: fees.map((f, i) => fee(f, cur, `${what}'s fee ${i}`)) };
+  const out: Card = { bank: bank as string, card: name as string, currency: cur, rate: rate(r, cur, `${what}'s rate`), fees: fees.map((f, i) => fee(f, cur, `${what}'s fee ${i}`)) };
   if (o['issue'] !== undefined) out.issue = amount(o['issue'], cur, `${what}'s issue`);
   if (o['limitFees'] !== undefined) {
     const list = o['limitFees'];

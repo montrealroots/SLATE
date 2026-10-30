@@ -49,6 +49,7 @@ export interface Charge {
 export interface Card {
   readonly bank: string;
   readonly card: string;
+  readonly currency: CurrencyCode;
   /** `in full`: a charge card, whose balance the bank takes from the account each month. */
   readonly rate: Rate | 'in full' | { readonly steps: Steps };
   /** None where the card costs nothing to hold. */

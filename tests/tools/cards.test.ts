@@ -98,8 +98,8 @@ describe('the cards compile', () => {
   });
 
   it("takes a card to its bank, its rate and its fees, in the country's currency or its own", () => {
-    expect(card({ bank: 'B', card: 'C', rate: { percent: '24', per: 'year' }, fees: [] }, 'GBP', 'c')).toStrictEqual({ bank: 'B', card: 'C', rate: { percent: '24', per: 'year' }, fees: [] });
-    expect(card({ bank: 'B', card: 'C', currency: 'USD', rate: 'in full', fees: [{ fee: '25', per: 'year' }] }, 'KHR', 'c')).toStrictEqual({ bank: 'B', card: 'C', rate: 'in full', fees: [{ fee: money('USD', 2500), per: 'year' }] });
+    expect(card({ bank: 'B', card: 'C', rate: { percent: '24', per: 'year' }, fees: [] }, 'GBP', 'c')).toStrictEqual({ bank: 'B', card: 'C', currency: 'GBP', rate: { percent: '24', per: 'year' }, fees: [] });
+    expect(card({ bank: 'B', card: 'C', currency: 'USD', rate: 'in full', fees: [{ fee: '25', per: 'year' }] }, 'KHR', 'c')).toStrictEqual({ bank: 'B', card: 'C', currency: 'USD', rate: 'in full', fees: [{ fee: money('USD', 2500), per: 'year' }] });
     for (const c of [null, 'C', []]) expect(() => card(c, 'USD', 'c'), String(c)).toThrow('c is not an object');
     for (const bank of [undefined, '', ' B', 7]) expect(() => card({ bank, card: 'C', rate: 'in full', fees: [] }, 'USD', 'c'), String(bank)).toThrow('c names the bank');
     for (const name of [undefined, '', 'C ', 7]) expect(() => card({ bank: 'B', card: name, rate: 'in full', fees: [] }, 'USD', 'c'), String(name)).toThrow('c names the card the bank sells');
@@ -112,7 +112,7 @@ describe('the cards compile', () => {
 
   it('takes every other term a bank publishes, in the card\'s currency', () => {
     const base = { bank: 'B', card: 'C', currency: 'USD', rate: { percent: '24', per: 'year' }, fees: [] };
-    const out = { bank: 'B', card: 'C', rate: { percent: '24', per: 'year' }, fees: [] };
+    const out = { bank: 'B', card: 'C', currency: 'USD', rate: { percent: '24', per: 'year' }, fees: [] };
     const full = card(
       {
         ...base,
@@ -135,7 +135,7 @@ describe('the cards compile', () => {
     );
     const usd = (minor: number) => money('USD', minor);
     expect(full).toStrictEqual({
-      bank: 'B', card: 'C', rate: { percent: '24', per: 'year' }, fees: [],
+      bank: 'B', card: 'C', currency: 'USD', rate: { percent: '24', per: 'year' }, fees: [],
       issue: usd(2500),
       limitFees: [{ percent: '1', when: 'issue' }, { percent: '1', when: 'year' }, { percent: '0.5', when: 'raise' }],
       intro: { percent: '0', per: 'month', months: 12 },
@@ -198,7 +198,7 @@ describe('the cards compile', () => {
   });
 
   it("takes a country's file to its cards, in its currency, none named twice", () => {
-    expect(compileCountry('DE', { country: 'DE', cards: [{ bank: 'B', card: 'C', rate: 'in full', fees: [{ fee: '39', per: 'year' }] }], note: 'x', sources: [] })).toStrictEqual([{ bank: 'B', card: 'C', rate: 'in full', fees: [{ fee: money('EUR', 3900), per: 'year' }] }]);
+    expect(compileCountry('DE', { country: 'DE', cards: [{ bank: 'B', card: 'C', rate: 'in full', fees: [{ fee: '39', per: 'year' }] }], note: 'x', sources: [] })).toStrictEqual([{ bank: 'B', card: 'C', currency: 'EUR', rate: 'in full', fees: [{ fee: money('EUR', 3900), per: 'year' }] }]);
     expect(() => compileCountry('XX', { country: 'XX', cards: [] })).toThrow('XX is not a country on the map');
     expect(() => compileCountry('DE', { country: 'FR', cards: [] })).toThrow("DE's file is for FR");
     for (const cards of [undefined, [], 'x']) expect(() => compileCountry('DE', { country: 'DE', cards }), JSON.stringify(cards)).toThrow('DE names no card');
@@ -219,7 +219,7 @@ describe('the cards compile', () => {
     const register = (entries: unknown[]) => writeFileSync(join(root, 'research/register.json'), JSON.stringify({ entries }));
     mkdirSync(join(root, 'research'), { recursive: true });
     register([{ fact: 'money.cards.GB', value: { file: `${SOURCES}/GB.json`, sha256: sha } }]);
-    expect(readCards(root)).toStrictEqual({ countries: { GB: [{ bank: 'B', card: 'C', rate: 'in full', fees: [] }] } });
+    expect(readCards(root)).toStrictEqual({ countries: { GB: [{ bank: 'B', card: 'C', currency: 'GBP', rate: 'in full', fees: [] }] } });
     register([{ fact: 'money.cards.GB', value: { file: `${SOURCES}/GB.json`, sha256: '0'.repeat(64) } }]);
     expect(() => readCards(root)).toThrow(`${SOURCES}/GB.json isn't the file the register cites`);
     register([{ fact: 'money.banks.GB', value: { file: `${SOURCES}/GB.json`, sha256: sha } }, { fact: 'money.cards.blocked.FR' }]);

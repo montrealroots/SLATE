@@ -15,7 +15,7 @@ describe('cards', () => {
     expect(cardsIn('AQ')).toEqual([]);
     // Chase's Freedom Unlimited: no annual fee, 27.99% a year at the top of its range, a twelfth a month.
     const [chase] = cardsIn('US') as [Card];
-    expect(chase).toStrictEqual({ bank: 'Chase', card: 'Chase Freedom Unlimited', rate: { percent: '27.99', per: 'year' }, fees: [] });
+    expect(chase).toStrictEqual({ bank: 'Chase', card: 'Chase Freedom Unlimited', currency: 'USD', rate: { percent: '27.99', per: 'year' }, fees: [] });
     expect(paidInFull(chase)).toBe(false);
     // 1,000 dollars at 27.99% a year is 23.325 a month, rounded half to even.
     expect(interestFor(chase, usd(100_000))).toStrictEqual(usd(2332));
@@ -27,20 +27,20 @@ describe('cards', () => {
     expect(interestFor(amazon, money('GBP', 100_000))).toStrictEqual(money('GBP', 2408));
     // Deutsche Bank's Mastercard: 39 euros a year, its balance taken from the account each month.
     const [db] = cardsIn('DE') as [Card];
-    expect(db).toStrictEqual({ bank: 'Deutsche Bank', card: 'Mastercard oder VISA', rate: 'in full', fees: [{ fee: money('EUR', 3900), per: 'year' }] });
+    expect(db).toStrictEqual({ bank: 'Deutsche Bank', card: 'Mastercard oder VISA', currency: 'EUR', rate: 'in full', fees: [{ fee: money('EUR', 3900), per: 'year' }] });
     expect(paidInFull(db)).toBe(true);
     expect(() => interestFor(db, money('EUR', 100))).toThrow("Deutsche Bank's Mastercard oder VISA carries nothing: it's paid in full each month");
     expect(feeFor(db.fees[0] as Fee, { ...standing, age: 70, spent: money('EUR', 9_999_999) }, '2026-11-01')).toStrictEqual(money('EUR', 3900));
   });
 
   it('charge interest by the month where the bank states it so', () => {
-    const monthly: Card = { bank: 'B', card: 'C', rate: { percent: '3.5', per: 'month' }, fees: [] };
+    const monthly: Card = { bank: 'B', card: 'C', currency: 'USD', rate: { percent: '3.5', per: 'month' }, fees: [] };
     expect(interestFor(monthly, money('XOF', 100_000))).toStrictEqual(money('XOF', 3500));
     expect(interestFor({ ...monthly, rate: { percent: '0', per: 'year' } }, usd(100_000))).toStrictEqual(usd(0));
   });
 
   it('charge an effective yearly rate as the month that, compounded twelve times, makes it', () => {
-    const effective = (percent: string): Card => ({ bank: 'B', card: 'C', rate: { percent, per: 'year', effective: true }, fees: [] });
+    const effective = (percent: string): Card => ({ bank: 'B', card: 'C', currency: 'USD', rate: { percent, per: 'year', effective: true }, fees: [] });
     // 1.02 to the twelfth is 1.2682417945625...: a month is 2%, where a twelfth of the year would be 2.235%.
     expect(interestFor(effective('26.8241794562545'), usd(100_000))).toStrictEqual(usd(2000));
     // 95.90% a year effective is 5.7636% a month (5,763.59 on 100,000), not the 7.99% a twelfth would charge.
@@ -84,32 +84,32 @@ describe('cards', () => {
     expect(priced(flat, 700)).toBe(flat);
     for (const s of [-1, 1001, 1.5]) expect(() => priced(range, s), String(s)).toThrow(`a standing is a whole number from 0 to 1000 (${s})`);
     expect(() => priced(flat, 1001)).toThrow('a standing is a whole number from 0 to 1000 (1001)');
-    const card: Card = { bank: 'B', card: 'C', rate: range, fees: [] };
+    const card: Card = { bank: 'B', card: 'C', currency: 'USD', rate: range, fees: [] };
     // 1,000 owed a month: 29% a twelfth (24.17), 18% (15.00).
     expect([interestFor(card, usd(100_000)), interestFor(card, usd(100_000), 1000)]).toStrictEqual([usd(2417), usd(1500)]);
   });
 
   it('charge an introductory rate for its months, a penalty rate after a late payment, and steps for each part of a balance', () => {
-    const card: Card = { bank: 'B', card: 'C', rate: { percent: '24', per: 'year' }, fees: [], intro: { percent: '0', per: 'month', months: 6 }, penalty: { percent: '36', per: 'year' } };
+    const card: Card = { bank: 'B', card: 'C', currency: 'USD', rate: { percent: '24', per: 'year' }, fees: [], intro: { percent: '0', per: 'month', months: 6 }, penalty: { percent: '36', per: 'year' } };
     expect([1, 6, 7].map((m) => interestFor(card, usd(100_000), 0, m))).toStrictEqual([usd(0), usd(0), usd(2000)]);
     // A late payment ends the introductory rate and brings the penalty rate.
     expect([interestFor(card, usd(100_000), 0, 1, true), interestFor(card, usd(100_000), 0, 7, true)]).toStrictEqual([usd(3000), usd(3000)]);
-    const plain: Card = { bank: 'B', card: 'C', rate: { percent: '24', per: 'year' }, fees: [] };
+    const plain: Card = { bank: 'B', card: 'C', currency: 'USD', rate: { percent: '24', per: 'year' }, fees: [] };
     expect(interestFor(plain, usd(100_000), 0, 1, true)).toStrictEqual(usd(2000));
-    const birbank: Card = { bank: 'Kapital Bank', card: 'Birbank Star', rate: { steps: { fee: money('AZN', 1000), each: money('AZN', 50_000) } }, fees: [] };
+    const birbank: Card = { bank: 'Kapital Bank', card: 'Birbank Star', currency: 'AZN', rate: { steps: { fee: money('AZN', 1000), each: money('AZN', 50_000) } }, fees: [] };
     // 10 manat for each 500 begun: 1 manat carried is one step, 500 one, 500.01 two, 1,200 three.
     expect([1, 50_000, 50_001, 120_000, 0, -5].map((m) => interestFor(birbank, money('AZN', m)))).toStrictEqual([1000, 1000, 2000, 3000, 0, 0].map((m) => money('AZN', m)));
     expect(stepped({ fee: usd(1000), each: usd(50_000) }, usd(100_000))).toStrictEqual(usd(2000));
   });
 
   it('charge cash advances their own rate and fee, and spending abroad its share', () => {
-    const card: Card = { bank: 'B', card: 'C', rate: { percent: '24', per: 'year' }, fees: [], cash: { rate: { percent: '3', per: 'month' }, fee: { percent: '5', min: usd(1000) } }, fx: '2.75' };
+    const card: Card = { bank: 'B', card: 'C', currency: 'USD', rate: { percent: '24', per: 'year' }, fees: [], cash: { rate: { percent: '3', per: 'month' }, fee: { percent: '5', min: usd(1000) } }, fx: '2.75' };
     expect(cashInterestFor(card, usd(100_000))).toStrictEqual(usd(3000));
     expect([cashFee(card, usd(10_000)), cashFee(card, usd(100_000))]).toStrictEqual([usd(1000), usd(5000)]);
     expect(fxFee(card, usd(10_000))).toStrictEqual(usd(275));
     const ranged: Card = { ...card, cash: { rate: { percent: '36', per: 'year', from: '24' } } };
     expect([cashInterestFor(ranged, usd(100_000)), cashInterestFor(ranged, usd(100_000), 1000)]).toStrictEqual([usd(3000), usd(2000)]);
-    const plain: Card = { bank: 'B', card: 'C', rate: { percent: '24', per: 'year', from: '12' }, fees: [] };
+    const plain: Card = { bank: 'B', card: 'C', currency: 'USD', rate: { percent: '24', per: 'year', from: '12' }, fees: [] };
     expect([cashInterestFor(plain, usd(100_000)), cashInterestFor(plain, usd(100_000), 1000)]).toStrictEqual([usd(2000), usd(1000)]);
     expect([cashFee(plain, usd(10_000)), fxFee(plain, usd(10_000))]).toStrictEqual([usd(0), usd(0)]);
     expect(cashFee({ ...card, cash: { rate: { percent: '3', per: 'month' } } }, usd(10_000))).toStrictEqual(usd(0));
@@ -130,7 +130,7 @@ describe('cards', () => {
 
   it("charge a late payment, a balance over the limit, and a statement's minimum as the bank sets them", () => {
     const st = { minimum: usd(5000), balance: usd(100_000), unpaid: usd(3000) };
-    const card = (late?: Card['late'], overLimit?: Card['overLimit']): Card => ({ bank: 'B', card: 'C', rate: { percent: '24', per: 'year' }, fees: [], ...(late ? { late } : {}), ...(overLimit ? { overLimit } : {}) });
+    const card = (late?: Card['late'], overLimit?: Card['overLimit']): Card => ({ bank: 'B', card: 'C', currency: 'USD', rate: { percent: '24', per: 'year' }, fees: [], ...(late ? { late } : {}), ...(overLimit ? { overLimit } : {}) });
     expect(lateFee(card({ fixed: usd(4000) }), st)).toStrictEqual(usd(4000));
     expect(lateFee(card({ percent: '10', of: 'minimum' }), st)).toStrictEqual(usd(500));
     expect(lateFee(card({ percent: '1', of: 'balance' }), st)).toStrictEqual(usd(1000));
@@ -144,7 +144,7 @@ describe('cards', () => {
     expect(overLimitFee(card(undefined, { fixed: usd(2500) }), { ...o, excess: usd(0) })).toStrictEqual(usd(0));
     expect(overLimitFee(card(undefined, { fixed: usd(2500) }), { ...o, excess: usd(1) })).toStrictEqual(usd(2500));
     expect(overLimitFee(card(undefined), o)).toStrictEqual(usd(0));
-    const m: Card = { bank: 'B', card: 'C', rate: { percent: '24', per: 'year' }, fees: [], minimum: { percent: '5', floor: usd(2500), interest: true } };
+    const m: Card = { bank: 'B', card: 'C', currency: 'USD', rate: { percent: '24', per: 'year' }, fees: [], minimum: { percent: '5', floor: usd(2500), interest: true } };
     expect(minimumDue(m, usd(100_000), usd(2000))).toStrictEqual(usd(7000));
     expect(minimumDue(m, usd(10_000), usd(0))).toStrictEqual(usd(2500));
     expect(minimumDue(m, usd(2400), usd(0))).toStrictEqual(usd(2400));
@@ -153,13 +153,13 @@ describe('cards', () => {
     expect(minimumDue({ ...m, minimum: { percent: '5' } }, usd(1), usd(0))).toStrictEqual(usd(0));
     expect([minimumDue(m, usd(0), usd(0)), minimumDue(m, usd(-100), usd(0))]).toStrictEqual([usd(0), usd(0)]);
     // A card that publishes no minimum asks the balance.
-    expect(minimumDue({ bank: 'B', card: 'C', rate: 'in full', fees: [] }, usd(12_345), usd(0))).toStrictEqual(usd(12_345));
+    expect(minimumDue({ bank: 'B', card: 'C', currency: 'USD', rate: 'in full', fees: [] }, usd(12_345), usd(0))).toStrictEqual(usd(12_345));
   });
 
   it('add the tax a bank states on its interest and its fees, and the fees set as a share of the limit', () => {
-    const card: Card = { bank: 'B', card: 'C', rate: { percent: '24', per: 'year' }, fees: [], tax: { interest: '3.5', fees: '16' }, limitFees: [{ percent: '1', when: 'issue' }, { percent: '0.5', when: 'issue' }, { percent: '1', when: 'year' }] };
+    const card: Card = { bank: 'B', card: 'C', currency: 'USD', rate: { percent: '24', per: 'year' }, fees: [], tax: { interest: '3.5', fees: '16' }, limitFees: [{ percent: '1', when: 'issue' }, { percent: '0.5', when: 'issue' }, { percent: '1', when: 'year' }] };
     expect([taxOnInterest(card, usd(10_000)), taxOnFees(card, usd(10_000))]).toStrictEqual([usd(350), usd(1600)]);
-    const plain: Card = { bank: 'B', card: 'C', rate: { percent: '24', per: 'year' }, fees: [] };
+    const plain: Card = { bank: 'B', card: 'C', currency: 'USD', rate: { percent: '24', per: 'year' }, fees: [] };
     expect([taxOnInterest(plain, usd(10_000)), taxOnFees(plain, usd(10_000))]).toStrictEqual([usd(0), usd(0)]);
     expect([taxOnInterest({ ...card, tax: { fees: '16' } }, usd(10_000)), taxOnFees({ ...card, tax: { interest: '3.5' } }, usd(10_000))]).toStrictEqual([usd(0), usd(0)]);
     expect([limitFee(card, usd(100_000), 'issue'), limitFee(card, usd(100_000), 'year'), limitFee(card, usd(100_000), 'raise'), limitFee(plain, usd(100_000), 'issue')]).toStrictEqual([usd(1500), usd(1000), usd(0), usd(0)]);

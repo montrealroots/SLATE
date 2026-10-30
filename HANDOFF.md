@@ -315,6 +315,31 @@ restarts. Read `CLAUDE.md` and the owner's package in `docs/` first.
   Comoros, Gabon, Congo, the Central African Republic, Western Sahara, the Falklands, the Vatican, Tuvalu and the
   five places above); most fail because the bank's site doesn't answer, sits behind a bot check, or publishes no
   tariff. Open: retry the blockers.
+- **Card accounts** (`src/money/cards/account.ts`, built 2026-10-30, the owner's "each feature fully fleshed out"): a
+  card held runs on its bank's terms as they stood when it opened (`terms`). `card.open` asks a limit, held to the
+  bank's multiple of income where it states one, and charges the issue fee and any share of the limit at issue, with
+  the tax on fees; `card.spend` adds a purchase (the foreign share on spending in another currency) or a cash advance
+  with its fee, nothing past the limit; `card.pay` clears what's past due first, the cash before the purchases. Each
+  month on the day it opened (the 28th at most) `card.statement` charges interest once a statement wasn't paid in full
+  by its due date (introductory, then priced by the record, the penalty rate once a minimum was missed; steps where the
+  bank charges them), cash at its own rate with no grace, each holding fee at the start of its period (a month's with
+  each statement) waived as the bank waives it, the yearly share of the limit after the first year, the over-limit
+  fee, the tax on interest and fees, and asks its minimum less what's past due (a charge card, all of it). The due date
+  is the grace less thirty days after the statement, or the next statement where no grace is published (`card.due`):
+  short of the minimum, the late fee and the penalty rate, and a check (`card.report`) as many days on as the country's
+  bureaus wait to report, which marks the record if still short. 1221's card and credit systems (`systems/credit.ts`,
+  `content/cards.ts`, `latefees.ts`, `revolving.ts`) were read for the shape; its US score scale isn't carried over.
+  Interest is on the statement day's balance, not the average daily balance (a shortcut, noted in the code, until the
+  accounts' ledger keeps daily balances). 100% mutation, 221 mutants.
+- **Credit records** (`money.credit`, built 2026-10-30): each country's bureau or registry, the days after a due date a
+  late payment is reported (`report`), and the years it stays (`keep`), from the law, the regulator or the bureau
+  (research/sources/money/credit/<CC>.json, register facts money.credit.<CC>), compiled by `tools/money/credit`. A late
+  payment marks the record for the country's years; the record's standing is the game's reading, said as the game's: 1000
+  less 250 for each mark still kept, down to 0, which prices a card's range (`priced`). Matrix (2026-10-30): 2
+  researched (US: FCRA 15 U.S.C. 1681c(a)(5), seven years, Experian's 30 days; GB: the ICO's arrears principles,
+  reported at the next monthly update, Experian's six years), 6 proven, 244 pending. Sources already read for the next:
+  Australia (OAIC: missed after 14 days, kept 2 years), Ireland (CCPC: the Central Credit Register monthly, five years),
+  Germany (BDSG § 31: two written reminders, the first four weeks before), in the scratchpad's dl/cr.
 - **Cards** (`money.cards`, built 2026-10-29): each country's credit cards from the bank's own price list, pricing and
   terms, or card page (research/sources/money/cards/<CC>.json, register facts money.cards.<CC>), compiled by
   `tools/money/cards` into `src/money/cards/cards.json`. A card is named as its bank names it, with its currency (the
