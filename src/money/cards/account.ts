@@ -2,7 +2,7 @@ import { defineCommand, defineKind, defineNotice, type Context, type Item, type 
 import { add, compare, fromMajor, money, multiply, type CurrencyCode, type Money } from '../../core/money/money.ts';
 import { civilFromDays, daysFromCivil, SECONDS_PER_DAY } from '../../core/time/calendar.ts';
 import type { CountryCode } from '../../world/gazetteer/gazetteer.ts';
-import { record, reportAfter, standingOf, type CreditSlice } from '../credit/credit.ts';
+import { clear, record, reportAfter, standingOf, type CreditSlice } from '../credit/credit.ts';
 import { cardsIn, cashFee, cashInterestFor, feeFor, fxFee, interestFor, lateFee, limitFee, minimumDue, overLimitFee, paidInFull, taxOnFees, taxOnInterest, type Card } from './cards.ts';
 
 /**
@@ -24,7 +24,8 @@ import { cardsIn, cashFee, cashInterestFor, feeFor, fxFee, interestFor, lateFee,
  *
  * A minimum not paid by its due date brings the late fee and the penalty rate, and is owed beside what's due after; a
  * payment clears what's past due first. One still short as many days after its due date as the country's bureaus wait to
- * report a late payment is marked on the holder's credit record (src/money/credit), which prices every card held after.
+ * report a late payment is marked on the holder's credit record (src/money/credit), which prices every card held after;
+ * where the record lifts a late payment once paid, paying what was past due lifts it.
  *
  * The interest is worked on the balance on the statement's day, not day by day: shortcut: no daily balances; when the
  * accounts' ledger keeps each day's balance, interest moves to the average daily balance most banks state.
@@ -179,7 +180,7 @@ export function spend(s: Holding, a: SpendArgs): void {
  * Pays toward a held card: what's past due first, oldest first, then toward the statement; the cash carried is paid
  * down before the purchases, its rate having no grace.
  */
-export function pay(s: Holding, a: { card: number; amount: string }): void {
+export function pay(s: Holding, a: { card: number; amount: string }, c: Context): void {
   const h = heldAt(s, a.card);
   let left = sum(h.currency as CurrencyCode, a.amount, 'a payment').minor;
   const paid = left;
@@ -190,6 +191,7 @@ export function pay(s: Holding, a: { card: number; amount: string }): void {
     const cleared = Math.min(left, p.short);
     p.short -= cleared;
     left -= cleared;
+    if (p.short === 0) clear(s.credit, `${a.card}:${p.due}`, c.now);
   }
   h.past = h.past.filter((p) => p.short > 0);
   if (h.statement !== null) h.statement.paid += left;
@@ -260,7 +262,7 @@ export function dueDate(s: Holding, item: Item, c: Context): void {
 /** A minimum still short as long after its due date as the country's bureaus wait: a mark on the credit record. */
 export function report(s: Holding, item: Item, c: Context): void {
   const { card: i, due } = item.data as { card: number; due: number };
-  if (heldAt(s, i).past.some((p) => p.due === due)) record(s.credit, heldAt(s, i).country, c.now);
+  if (heldAt(s, i).past.some((p) => p.due === due)) record(s.credit, heldAt(s, i).country, c.now, `${i}:${due}`);
 }
 
 // Stryker disable all: a mutant of a declaration made as the module loads changes its shape, so the module loaded
@@ -277,5 +279,5 @@ defineKind<Holding>({ kind: DUE_KIND, wants: false, reads: [], writes: ['cards',
 defineKind<Holding>({ kind: REPORT_KIND, wants: false, reads: ['cards'], writes: ['credit'], happen: report });
 export const openCard = defineCommand<Holding, OpenArgs>({ id: 'card.open', reads: [], writes: ['cards', 'schedule'], run: open });
 export const spendOnCard = defineCommand<Holding, SpendArgs>({ id: 'card.spend', reads: [], writes: ['cards'], run: spend });
-export const payCard = defineCommand<Holding, { card: number; amount: string }>({ id: 'card.pay', reads: [], writes: ['cards'], run: pay });
+export const payCard = defineCommand<Holding, { card: number; amount: string }>({ id: 'card.pay', reads: [], writes: ['cards', 'credit'], run: pay });
 // Stryker restore all

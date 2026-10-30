@@ -138,15 +138,20 @@ describe('a card held', () => {
     h.cash = 10_000;
     h.past = [{ due: 1, short: 3000 }, { due: 2, short: 2000 }];
     h.statement = { balance: 60_000, minimum: 4000, due: 3, paid: 0 };
-    pay(s, { card: 0, amount: '40' });
+    // Where the record lifts a late payment once paid (Honduras: 90 days after), paying one off lifts its mark.
+    const lift = 90 * DAY;
+    s.credit.marks = [{ country: 'HN', at: 0, until: 10 ** 9, debt: '0:1', lift }, { country: 'HN', at: 0, until: 10 ** 9, debt: '0:2', lift }];
+    pay(s, { card: 0, amount: '40' }, ctx(500).c);
     expect([h.cash, h.purchases, h.past, h.statement.paid]).toStrictEqual([6000, 50_000, [{ due: 2, short: 1000 }], 0]);
-    pay(s, { card: 0, amount: '100' });
+    expect(s.credit.marks.map((m) => m.until)).toStrictEqual([500 + lift, 10 ** 9]);
+    pay(s, { card: 0, amount: '100' }, ctx(800).c);
     expect([h.cash, h.purchases, h.past, h.statement.paid]).toStrictEqual([0, 46_000, [], 9000]);
+    expect(s.credit.marks.map((m) => m.until)).toStrictEqual([500 + lift, 800 + lift]);
     const { s: s2, h: h2 } = opened(plain);
     h2.purchases = 1000;
-    pay(s2, { card: 0, amount: '5' });
+    pay(s2, { card: 0, amount: '5' }, ctx(0).c);
     expect([h2.purchases, h2.statement]).toStrictEqual([500, null]);
-    expect(() => pay(s2, { card: 0, amount: '-5' })).toThrow('a payment is an amount above nothing, written in major units');
+    expect(() => pay(s2, { card: 0, amount: '-5' }, ctx(0).c)).toThrow('a payment is an amount above nothing, written in major units');
   });
 
   it("cuts a statement: interest once one isn't paid in full, its fees as they come due, tax, the over-limit fee and the minimum", () => {
@@ -163,7 +168,7 @@ describe('a card held', () => {
       { kind: STATEMENT_KIND, at: at(2026, 3, 15), data: { card: 0, ...holder } },
     ]);
     // Paid in part by its due date: the purchases carry from here.
-    pay(s, { card: 0, amount: '100' });
+    pay(s, { card: 0, amount: '100' }, ctx(0).c);
     dueDate(s, item(DUE_KIND, at(2026, 3, 12), { card: 0 }), ctx(at(2026, 3, 12)).c);
     expect([h.carrying, h.late, h.past]).toStrictEqual([true, false, []]);
     stated(s, at(2026, 3, 15));
@@ -322,9 +327,14 @@ describe('a card held', () => {
     // Another due date's shortfall doesn't mark this one.
     report(s, item(REPORT_KIND, at(2026, 4, 14), { card: 0, due: at(2026, 2, 15) }), ctx(at(2026, 4, 14)).c);
     expect(s.credit.marks).toHaveLength(1);
-    pay(s, { card: 0, amount: '40' });
+    pay(s, { card: 0, amount: '40' }, ctx(0).c);
     report(s, item(REPORT_KIND, at(2026, 4, 14), { card: 0, due: at(2026, 3, 15) }), ctx(at(2026, 4, 14)).c);
     expect(s.credit.marks).toHaveLength(1);
+    // Where the record lifts a paid late payment (Honduras), the mark is tied to its card and due date.
+    const { s: hn, h: hh } = opened(card, at(2026, 1, 15), '1000', 'HN');
+    hh.past = [{ due: at(2026, 3, 15), short: 100 }];
+    report(hn, item(REPORT_KIND, at(2026, 4, 14), { card: 0, due: at(2026, 3, 15) }), ctx(at(2026, 4, 14)).c);
+    expect(hn.credit.marks[0]?.debt).toBe(`0:${at(2026, 3, 15)}`);
     // The minimum paid: nothing but the carrying; paid in full: not even that.
     const { s: p, h: q } = opened(card);
     q.statement = { balance: 30_000, minimum: 5000, due: 1, paid: 5000 };
@@ -346,7 +356,7 @@ describe('a card held', () => {
     expect(commands).toStrictEqual([
       { id: 'card.open', reads: [], writes: ['cards', 'schedule'] },
       { id: 'card.spend', reads: [], writes: ['cards'] },
-      { id: 'card.pay', reads: [], writes: ['cards'] },
+      { id: 'card.pay', reads: [], writes: ['cards', 'credit'] },
     ]);
     let life = begin('0123456789abcdef', at(2026, 1, 15), { cards: CARDS_START, credit: CREDIT_START });
     life = dispatch(life, openCard, { country: 'US', bank: 'Chase', card: 'Chase Freedom Unlimited', limit: '5000', income: '4000', ...holder });

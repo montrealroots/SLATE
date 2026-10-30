@@ -10,7 +10,8 @@ import data from './credit.json' with { type: 'json' };
  * the country whose bureau keeps it and until the day its keeping ends. Where no source states the days to report, they
  * are the game's reading, the bureau's next monthly update, and marked so (`game`). A country where no bureau or
  * registry keeps a record (`none`) marks nothing, and the player is told so; one whose records the game doesn't know
- * marks nothing either, and the player is told that.
+ * marks nothing either, and the player is told that. Where the record lifts a late payment once it's paid, its mark
+ * lifts the country's days after the payment (`clears`), and stays its years while unpaid.
  *
  * What a lender makes of a record is its own: no bureau or bank publishes how it scores one. The game's reading, said to
  * the player as the game's: a record with nothing on it stands at 1000, the best, and each late payment still kept takes
@@ -23,6 +24,8 @@ export interface Kept {
   readonly keep: number;
   /** The days to report are the game's reading (the bureau's next monthly update), no source stating them. */
   readonly game?: true;
+  /** The days after a late payment is paid that its mark lifts, where the record lifts it then. */
+  readonly clears?: number;
 }
 
 /** A country where no bureau or registry keeps a person's record of credit. */
@@ -33,7 +36,8 @@ export interface None {
 export type Record = Kept | None;
 
 export interface CreditSlice {
-  marks: { country: string; at: number; until: number }[];
+  /** Each late payment marked: where the record lifts it once paid, the debt it's for and how long after paying it lifts. */
+  marks: { country: string; at: number; until: number; debt?: string; lift?: number }[];
 }
 
 export const CREDIT_START: CreditSlice = { marks: [] };
@@ -58,11 +62,20 @@ export const reportAfter = (country: string): number | undefined => kept(country
 /** What one late payment kept on the record takes from the best standing, the game's reading. */
 export const MARK = 250;
 
-/** Marks a late payment on the record, kept the country's years from now; nothing where no bureau keeps one, or the game doesn't know. */
-export function record(credit: CreditSlice, country: string, at: number): void {
+/**
+ * Marks a late payment on the record, kept the country's years from now, and, where the record lifts it once paid,
+ * tied to its debt; nothing where no bureau keeps one, or the game doesn't know.
+ */
+export function record(credit: CreditSlice, country: string, at: number, debt: string): void {
   const keeping = kept(country);
   if (keeping === undefined) return;
-  credit.marks.push({ country, at, until: at + Math.round(keeping.keep * 365.25 * SECONDS_PER_DAY) });
+  const until = at + Math.round(keeping.keep * 365.25 * SECONDS_PER_DAY);
+  credit.marks.push(keeping.clears === undefined ? { country, at, until } : { country, at, until, debt, lift: keeping.clears * SECONDS_PER_DAY });
+}
+
+/** A late payment paid: its mark lifts as many days later as the record says, where the record lifts it once paid. */
+export function clear(credit: CreditSlice, debt: string, at: number): void {
+  for (const m of credit.marks) if (m.debt === debt) m.until = Math.min(m.until, at + (m.lift as number));
 }
 
 /** The record's standing at a moment, from 0 to 1000: 1000 less a mark's worth for each still kept, the game's reading. */

@@ -336,16 +336,18 @@ restarts. Read `CLAUDE.md` and the owner's package in `docs/` first.
   (research/sources/money/credit/<CC>.json, register facts money.credit.<CC>), compiled by `tools/money/credit`. A late
   payment marks the record for the country's years; the record's standing is the game's reading, said as the game's: 1000
   less 250 for each mark still kept, down to 0, which prices a card's range (`priced`).
-  Matrix (2026-10-30): 113 researched (US, GB, CA, AU, IE, DE, FR, ES, IT, NL, BE, FI, JP, CN, SE, DK, MX, BR, PL,
+  Matrix (2026-10-30): 116 researched (US, GB, CA, AU, IE, DE, FR, ES, IT, NL, BE, FI, JP, CN, SE, DK, MX, BR, PL,
   AT, HU, CH, RO, SI, HR, GR, NO, CZ, BG, SK, LT, LV, EE, PT, LU, IS, IN, KR, SG, MY, TW, PH, TH, PK, VN, AR, UY,
   CO, PE, SV, DO, PY, EC, IL, TR, SA, XK, KE, ZA, UG, TZ, GY, RW, JM, BB, AG, DM, GD, KN, LC, VC, AI, MS, RU, NZ,
-  BJ, BF, CI, GW, ML, NE, SN, TG, NA, MU, KZ, GE, AM, RS, AL, MD, UZ, MN, AZ, LK, KH, BH; PR, GU, VI, AS, MP under
-  the FCRA, whose "State" takes in every territory; GF, GP, MQ, RE, YT, BL, MF, PM through the IEDOM and NC, PF, WF
-  through the IEOM, on the FICP's rules), 6 proven, 133 pending.
+  BJ, BF, CI, GW, ML, NE, SN, TG, NA, MU, KZ, GE, AM, RS, AL, MD, UZ, MN, AZ, LK, KH, BH, OM, NI, HN; PR, GU, VI,
+  AS, MP under the FCRA, whose "State" takes in every territory; GF, GP, MQ, RE, YT, BL, MF, PM through the IEDOM
+  and NC, PF, WF through the IEOM, on the FICP's rules), 6 proven, 130 pending.
   Where the country's own regulator or law shows no bureau
   or registry keeps a person's record of credit, the file says so (`none: true`, nothing else), a late payment there
   marks nothing, and the player is told so (`credit.none`): Luxembourg, whose central bank says it has no register of
-  consumer credit. A rule of "more than 90 days" is written as 91, the first day past it (Hungary,
+  consumer credit. Where the record lifts a late payment once it's paid, the file says how many days after paying it
+  lifts (`clears`), `keep` being the years it stays unpaid; the mark is tied to its card and due date, and paying what
+  was past due lifts it (Honduras: 90 days after). A rule of "more than 90 days" is written as 91, the first day past it (Hungary,
   Slovenia). Bulgaria's ordinance was read in a legal database, bnb.bg answering with its web firewall's refusal, and is
   registered as secondary. Where no
   source states the days after a due date a late payment is reported, the file marks them the game's (`reportGame`):
