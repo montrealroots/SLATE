@@ -642,6 +642,25 @@
     "fees": []
    }
   ],
+  "CV": [
+   {
+    "bank": "Banco Comercial do Atlântico",
+    "card": "BCA Visa Classic",
+    "rate": {
+     "percent": "18.250",
+     "per": "year"
+    },
+    "fees": [
+     {
+      "fee": {
+       "currency": "CVE",
+       "minor": 414000
+      },
+      "per": "year"
+     }
+    ]
+   }
+  ],
   "CW": [
    {
     "bank": "RBC Royal Bank",
@@ -1344,6 +1363,22 @@
     ]
    }
   ],
+  "IL": [
+   {
+    "bank": "Isracard",
+    "card": "Isracard",
+    "rate": "in full",
+    "fees": [
+     {
+      "fee": {
+       "currency": "ILS",
+       "minor": 1790
+      },
+      "per": "month"
+     }
+    ]
+   }
+  ],
   "IN": [
    {
     "bank": "SBI Card",
@@ -1436,6 +1471,17 @@
     ]
    }
   ],
+  "JO": [
+   {
+    "bank": "Reflect by Arab Bank",
+    "card": "Reflect Credit Card",
+    "rate": {
+     "percent": "1.5",
+     "per": "month"
+    },
+    "fees": []
+   }
+  ],
   "JP": [
    {
     "bank": "三菱UFJニコス",
@@ -1460,6 +1506,25 @@
       "fee": {
        "currency": "KES",
        "minor": 350000
+      },
+      "per": "year"
+     }
+    ]
+   }
+  ],
+  "KR": [
+   {
+    "bank": "BC Card",
+    "card": "신세계 BC 바로 아시아나 플러스",
+    "rate": {
+     "percent": "19.9",
+     "per": "year"
+    },
+    "fees": [
+     {
+      "fee": {
+       "currency": "KRW",
+       "minor": 10000
       },
       "per": "year"
      }
@@ -1927,6 +1992,25 @@
     ]
    }
   ],
+  "MV": [
+   {
+    "bank": "Bank of Maldives",
+    "card": "Classic Credit Card",
+    "rate": {
+     "percent": "2.85",
+     "per": "month"
+    },
+    "fees": [
+     {
+      "fee": {
+       "currency": "MVR",
+       "minor": 45000
+      },
+      "per": "year"
+     }
+    ]
+   }
+  ],
   "MX": [
    {
     "bank": "BBVA México",
@@ -2105,6 +2189,25 @@
      "per": "year"
     },
     "fees": []
+   }
+  ],
+  "NP": [
+   {
+    "bank": "Nepal Bank Limited",
+    "card": "NBL Visa Credit Card",
+    "rate": {
+     "percent": "2",
+     "per": "month"
+    },
+    "fees": [
+     {
+      "fee": {
+       "currency": "NPR",
+       "minor": 75000
+      },
+      "per": "year"
+     }
+    ]
    }
   ],
   "NU": [
@@ -2346,6 +2449,25 @@
      "per": "year"
     },
     "fees": []
+   }
+  ],
+  "PS": [
+   {
+    "bank": "Bank of Palestine",
+    "card": "Classic Card",
+    "rate": {
+     "percent": "2",
+     "per": "month"
+    },
+    "fees": [
+     {
+      "fee": {
+       "currency": "USD",
+       "minor": 1250
+      },
+      "per": "year"
+     }
+    ]
    }
   ],
   "PT": [
@@ -2820,6 +2942,33 @@
     ]
    }
   ],
+  "TW": [
+   {
+    "bank": "Standard Chartered Bank (Taiwan)",
+    "card": "渣打信用卡 普卡",
+    "rate": {
+     "percent": "14.98",
+     "per": "year"
+    },
+    "fees": [
+     {
+      "fee": {
+       "currency": "TWD",
+       "minor": 120000
+      },
+      "per": "year",
+      "waived": [
+       {
+        "spend": {
+         "currency": "TWD",
+         "minor": 1200000
+        }
+       }
+      ]
+     }
+    ]
+   }
+  ],
   "UA": [
    {
     "bank": "monobank",
@@ -3014,6 +3163,32 @@
        "minor": 4760
       },
       "per": "year"
+     }
+    ]
+   }
+  ],
+  "ZA": [
+   {
+    "bank": "Nedbank",
+    "card": "Nedbank Gold Credit Card",
+    "rate": {
+     "percent": "21.25",
+     "per": "year"
+    },
+    "fees": [
+     {
+      "fee": {
+       "currency": "ZAR",
+       "minor": 4200
+      },
+      "per": "month"
+     },
+     {
+      "fee": {
+       "currency": "ZAR",
+       "minor": 6900
+      },
+      "per": "month"
      }
     ]
    }
