@@ -321,7 +321,17 @@ restarts. Read `CLAUDE.md` and the owner's package in `docs/` first.
   country's unless the bank names another), its interest (`rate`: a percent by the year or by the month as the bank
   states it, or `in full` for a charge card, whose balance the bank takes from the account each month, Deutsche Bank's
   Mastercard being one) and its fees, read as an account's are (`tools/money/banks`) and waivable also by spending a
-  figure on the card over the fee's period (`spend`). A rate the bank gives as a range set by creditworthiness is written
+  figure on the card over the fee's period (`spend`). From 2026-10-30 (the owner: "each feature fully fleshed out covering
+  every basis") the form holds every term a holder meets, each with the engine function that charges it, at 100% mutation
+  (785 mutants): a range's lowest (`rate.from`, priced by the holder's record, `priced`), a fixed sum per step of balance
+  instead of interest (`rate.steps`, `stepped`), a fee waived for its first periods (`first`), the issue fee (`issue`),
+  fees as a share of the limit (`limitFees`, `limitFee`), an introductory rate (`intro`), the cash advance's rate and fee
+  (`cash`, `cashInterestFor`, `cashFee`), the share on spending in another currency (`fx`, `fxFee`), the minimum
+  (`minimum`, `minimumDue`), the grace (`grace`), the late and over-limit fees as a fixed sum or a share of a named base
+  within a floor and ceiling (`late`, `overLimit`, `lateFee`, `overLimitFee`), a returned payment (`returned`), the
+  penalty rate (`penalty`), tax on interest and fees (`tax`, `taxOnInterest`, `taxOnFees`), and the limit as a multiple
+  of income (`limit`). The 158 files written before then hold their rate and fees only, and are read again for the rest
+  in the main-bank pass (task 18). A rate the bank gives as a range set by creditworthiness is written
   at the top of the range, the game not knowing where in it the bank would put the holder (Chase's 18.49% to 27.99%);
   an introductory rate, a fee on issue or replacement, a stamp duty on interest and a cash-advance rate aren't
   written. Tax is added to a fee only where the document states its rate (BAI's 14% VAT). `interestFor(card, owed)` is
