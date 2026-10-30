@@ -1288,5 +1288,17 @@ live page's URL in the title. Answered 2026-10-28: Western Sahara keeps Morocco'
 2026-10-28: the auto-mode classifier ruled that opening in a browser a page that refuses this game's requests is
 bot-check circumvention, so no source is read that way (the Faroes' was withdrawn). Answered 2026-10-26: the map's count of places is today's GeoNames release (171,654); the start date
 is 1 January 2026 (the owner: "January 1st, 2026."), asked when the holidays and prices engines reached it, so
-both are researched as in force for 2026 and carried forward by their rules. Still to be asked when the build
-reaches them: the premise's detail, home on the first morning, Sleep as a clock action.
+both are researched as in force for 2026 and carried forward by their rules. Answered 2026-10-30 (the premise, in part): the life is a writer's, producer's and director's as well as a
+performer's. The owner: "I would like to not only add just my character being an actor or actress like it will be but
+I also want the 'Writer, Producer, and Director' title as what they essentially are before I decide whether they're an
+actor or actress ... So when I pick the gender and gives me what they are it should read, 'Writer, Producer, Director,
+and Actor or Actress'." So the character is always Writer, Producer and Director, and Billed As (settled by the
+pronouns, a choice under they/them, `docs/KEEP.md` entry 3) adds Actor or Actress last: "Writer, Producer, Director,
+and Actor" or "... and Actress". Where it shows: the line under the name on Identity once Billed As is settled, Ready
+To Begin, the slot card's title line and the Profile (screens, layer 5). Read, bite, downstream holds for each of the
+four: each role needs an engine that reads it and changes an outcome the player meets (writing, producing, directing
+and acting work), built when the premise's detail names those outcomes; until then none is shown that nothing reads.
+The title-case rule (`.claude/rules/title-case.md`) would capitalise the owner's "and" in a label ("And Actor");
+the owner's wording is kept as given until the owner rules on it.
+Still to be asked when the build reaches them: the rest of the premise's detail (what the four roles' work is and
+what it changes), home on the first morning, Sleep as a clock action.
