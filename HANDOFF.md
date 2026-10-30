@@ -833,6 +833,19 @@ consumer anchor and a falsifier (`tests/money/effects.test.ts`); the weather sta
 - Citizenship: 181 files' changes after 1 January 2024 (GLOBALCIT's coding date) unchecked; Palestine has no
   `atBirth`; Japan's naturalisation blocked (moj.go.jp 403).
 
+Wave 7 (2026-10-30, eight research subagents): every blocker of layers 2 and 3 retried by all five methods, today's
+attempts appended to each entry (`bin/appendblk.py` in the session's scratchpad; earlier attempts kept). Resolved: five
+price levels (AS, FK, SD, SZ, SO), eight credit records (PA, CL, HK, BA, KG, CC, CX, NF), sixteen work routes, three
+passports (UZ, BY, KG), North Korea's won (the UN's operational rate, 110 to the dollar from 15 January 2026, so the won
+has no rate before that day), Russia's bank. Withdrawn by the lead: Rwanda's card (I&M's "Base Rate +/-" read with the
+loans' margin). Still blocked, each saying what was tried: weather 44, holidays 51 (leads in their attempts: Kelantan's
+23 March 2026, Brčko's three holidays, Eswatini's 24 April), prices 17, passports 20, IDs 8, work 42, banks 23 (the
+banks' form has no `none` for a place with no bank), cards 72, credit 98. The new papers engines filled further:
+numbers 100 researched (many from the governments' own tax-number sheets on the OECD portal), residence 66, licences
+every US state and DC, seven Canadian provinces, two Australian states and seven countries; formats 105. Pending:
+numbers 145, residence 179, licences 239 countries (a country by regions counts once all its regions are in), formats
+141.
+
 The owner's ruling of 2026-10-30 on prices: "Yes, use the IMF-linked series for Somalia." The IMF's CPI series for
 Somalia (2022 = 100, 2020 to 2026) links the Mogadishu index to the new national CPI without saying who made the link;
 it stands as Somalia's 2021-to-2025 index, marked secondary, quoting the national bureau's CPI.
