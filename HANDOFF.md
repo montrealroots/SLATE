@@ -278,8 +278,7 @@ restarts. Read `CLAUDE.md` and the owner's package in `docs/` first.
   is read from the bank's own price list, fee schedule or account page (or, in the EEA and the UK, its Fee
   Information Document); the first SLATE's world bank list (Wikipedia-sourced, `montrealroots/1221`
   `banks-world.ts`) is not a source, and its fee sheets' URLs (`banks-world-sheets.ts`) are only leads, each fetched
-  and read again. Not yet decided or built: the family's starting means (credit records and the exchange rates were
-  built 2026-10-30, below); the account number's format by country went with the residence history
+  and read again. Credit records, the exchange rates and the family's starting means were built 2026-10-30, below; the account number's format by country went with the residence history
   (`docs/KEEP.md` entry 14). France's overseas departments (BRED's price lists) are read from MoneyVox's archived
   copies of the bank's documents, so secondary; Wallis and Futuna from the IEOM's tariffs observatory, which names its
   one bank. Where a bank's waiver needs two months below a minimum (BDO), the game charges after one, the stricter
@@ -410,6 +409,32 @@ restarts. Read `CLAUDE.md` and the owner's package in `docs/` first.
   operational rate (110 won a dollar from 15 January 2026) is the UN's own accounting rate, kept as a lead, not a
   source. Matrix by country (2026-10-30): 229 researched, 22 proven (dollar countries by the unit's test, and those with
   no place), 1 blocked, none pending. Mutation 100% (compile, coverage, engine).
+- **Family means** (`money.means`, built 2026-10-30, the owner's choice that day: researched per country, not the first
+  SLATE's typed euro figures): what the family a life is born into gives it on the first morning (`meansOf(country,
+  family)`): a month of its band's average post-tax disposable income per adult in checking, and its band's average
+  net personal wealth per adult, where above nothing, in savings, in the figures' currency and year. The bands are the
+  game's reading, said as the game's: Nothing the bottom fifth of the country's adults, Scraping By the next fifth,
+  Modest the middle, Comfortable the 60th to 90th percentiles, Wealthy the 90th to 99th, Inherited the top 1 percent;
+  each band's average is read from the database's averages of the bottom shares below its edges. Source: the World
+  Inequality Database's bulk download of 15 October 2026 (ahwealj992, adiincj992: equal-split adults over 20), 2024
+  figures, one research file per country (research/sources/money/means/<CC>.json, register facts money.means.<CC>),
+  each quoting its rows and its currency from the database's own files. Where the figures are in a currency since
+  replaced (Bulgaria's lev at the Council's 1.95583 a euro, the ECB; the Antillean guilder at par with the Caribbean
+  guilder, the Centrale Bank's own site), the file names it and the issuer's fixed rate (`replaced`), and they are
+  carried into the new. Every country's figures were checked against the database's own 2024 rate to the dollar
+  (xlcusxi999) and the Treasury's: where the metadata names an old currency but the database's own rates show the new
+  one (Croatia in euros, Sierra Leone in new leones, Palestine in US dollars though labelled shekels), the file reads
+  the figures in the currency the rates show and quotes those rows; Cuba, Iran and Somalia differ only in the rate
+  the database uses (market, not official), their figures being in their own currencies. Matrix (2026-10-30): 211
+  researched, 35 blocked, 6 proven, none pending. Blocked (money.means.blocked.<CC>, all five methods, by a research
+  subagent): the places the database has no figures for (the French overseas places, the US territories, Åland, the
+  Faroes, Svalbard, Kosovo, the Pacific and Atlantic territories, Western Sahara, the Vatican and the unpeopled ones)
+  and Venezuela, Guernsey, Jersey and the Caribbean Netherlands, whose figures' currency the database doesn't settle;
+  their own statistics offices publish income bands at most, never wealth. Liberia's and Zimbabwe's figures are in US
+  dollars, as the database gives them, for the exchange rates to carry. The figures are 2024's; the start is 2026,
+  and no inflation is added. What a family gives that the first SLATE also set (the card's limit and balance, the
+  credit score) isn't this engine's: the card's limit is the cards engine's, where a bank states its rule, and a
+  record starts with no late payment. Mutation 100% (compile, coverage, engine).
 - **Cards** (`money.cards`, built 2026-10-29): each country's credit cards from the bank's own price list, pricing and
   terms, or card page (research/sources/money/cards/<CC>.json, register facts money.cards.<CC>), compiled by
   `tools/money/cards` into `src/money/cards/cards.json`. A card is named as its bank names it, with its currency (the
