@@ -5,21 +5,33 @@
  "licence": {
   "name": "driver's license",
   "from": 17,
-  "fee": "30",
-  "validYears": 6
+  "fee": null,
+  "validYears": null,
+  "terms": [
+   {
+    "years": 6,
+    "fee": "30",
+    "under": 65
+   },
+   {
+    "years": 4,
+    "fee": "20",
+    "from": 65
+   }
+  ]
  },
  "card": {
   "name": "nondriver identification card",
   "fee": "5",
   "validYears": 6
  },
- "note": "The Maine Revised Statutes, Title 29-A, on legislature.maine.gov (read 2026-10-30): § 1406-A has a noncommercial licence issued under 65 expire on the sixth birthday after issue and charges $30 for it ($55 under § 1260, REAL ID); § 1304 issues a learner's permit from 15 and lets someone under 21 apply for a licence only 6 months after it, and § 1311 restricts a licence issued under 18 for 270 days, so a full licence is kept from 17 (about 16¼ rounded up). § 1410 issues a nondriver identification card for $5, expiring on the sixth birthday after issue; no age is held for it. The Bureau's fee page refused the request (403).",
+ "note": "The Maine Revised Statutes, Title 29-A, on legislature.maine.gov (read 2026-10-30): § 1406-A has a noncommercial licence issued under 65 expire on the sixth birthday after issue and charges $30 for it ($55 under § 1260, REAL ID); § 1304 issues a learner's permit from 15 and lets someone under 21 apply for a licence only 6 months after it, and § 1311 restricts a licence issued under 18 for 270 days, so a full licence is kept from 17 (about 16¼ rounded up). § 1410 issues a nondriver identification card for $5, expiring on the sixth birthday after issue; no age is held for it. The Bureau's fee page refused the request (403). On 2026-10-30 the licence was rewritten with the terms set by the holder's age, from § 1406-A: 6 years at $30 under 65 and 4 years at $20 from 65; until then it held the 6-year licence only.",
  "sources": [
   {
    "url": "https://legislature.maine.gov/statutes/29-A/title29-Asec1406-A.html",
    "title": "29-A M.R.S. § 1406-A, Expiration",
    "read": "2026-10-30",
-   "said": "a noncommercial driver's license to operate a motor vehicle issued to a person under 65 years of age expires at midnight on the license holder's 6th birthday following the date of issuance. ... The fee for the 6-year noncommercial driver's license is $30."
+   "said": "a noncommercial driver's license to operate a motor vehicle issued to a person under 65 years of age expires at midnight on the license holder's 6th birthday following the date of issuance. ... The fee for the 6-year noncommercial driver's license is $30. ... A noncommercial or commercial driver's license to operate a motor vehicle issued to a person 65 years of age or older at the date of issuance expires at midnight on the license holder's 4th birthday following the date of issuance. ... The fee for the 4-year noncommercial driver's license is $20."
   },
   {
    "url": "https://legislature.maine.gov/statutes/29-A/title29-Asec1304.html",

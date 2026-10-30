@@ -24,6 +24,9 @@ describe('the index units compile', () => {
     for (const values of [undefined, [], 'x']) expect(() => compileUnit('UMA', { ...UMA, values }), JSON.stringify(values)).toThrow('UMA gives at least one value');
     for (const values of [[{ from: '2026-2-1', value: '1' }], [{ from: 'x2026-02-01', value: '1' }], [{ from: '2026-02-01x', value: '1' }], [{ from: '2026-02-01', value: '1' }, { from: '2026-02-01', value: '2' }], [{ from: '2026-02-01', value: '1' }, { from: '2025-02-01', value: '2' }]])
       expect(() => compileUnit('UMA', { ...UMA, values }), JSON.stringify(values)).toThrow("UMA's values are each from a day (YYYY-MM-DD), in order");
+    // A law's own rounding down, a decimal above 0 (the Northern Territory's whole dollar).
+    expect(compileUnit('UMA', { ...UMA, roundDown: '1' }).roundDown).toBe('1');
+    for (const roundDown of ['0', 1, 'x']) expect(() => compileUnit('UMA', { ...UMA, roundDown }), String(roundDown)).toThrow('UMA rounds a fee down to a multiple of a decimal above 0');
     for (const value of ['0', '-1', 1, 'x']) expect(() => compileUnit('UMA', { ...UMA, values: [{ from: '2026-02-01', value }] }), String(value)).toThrow("UMA's value from 2026-02-01 is a decimal above 0");
   });
 

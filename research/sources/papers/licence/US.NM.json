@@ -5,10 +5,20 @@
  "licence": {
   "name": "driver license",
   "from": 17,
-  "fee": "18",
-  "validYears": 4
+  "fee": null,
+  "validYears": null,
+  "terms": [
+   {
+    "years": 4,
+    "fee": "18"
+   },
+   {
+    "years": 8,
+    "fee": "34"
+   }
+  ]
  },
- "note": "The MVD's driver's license page (read 2026-10-30) gives $18 for a four-year licence ($34 for eight; the four-year one is held, with $15 more once for the DWI records check of drivers moving from another state, not held). Its learner's permit page says a teen gets a provisional licence from 15½ and must hold it 12 months before a regular licence, so a full licence is kept from 17 (16½ rounded up). The ID card page's content loads by script and gave no fee or term, so no card is held.",
+ "note": "The MVD's driver's license page (read 2026-10-30) gives $18 for a four-year licence and $34 for an eight-year one, both held as terms the holder chooses (with $15 more once for the DWI records check of drivers moving from another state, not held). Its learner's permit page says a teen gets a provisional licence from 15½ and must hold it 12 months before a regular licence, so a full licence is kept from 17 (16½ rounded up). The ID card page's content loads by script and gave no fee or term, so no card is held. On 2026-10-30 the file was rewritten with the terms the holder chooses among: until then it held the four-year licence at $18 only.",
  "sources": [
   {
    "url": "https://www.mvd.newmexico.gov/nm-drivers-licenses-ids/drivers-license/",

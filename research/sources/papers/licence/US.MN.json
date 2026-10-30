@@ -10,16 +10,29 @@
  },
  "card": {
   "name": "identification card",
-  "fee": "35.50",
-  "validYears": 4
+  "fee": null,
+  "validYears": null,
+  "terms": [
+   {
+    "years": 4,
+    "fee": "35.50",
+    "from": 21,
+    "under": 65
+   },
+   {
+    "forLife": true,
+    "fee": "32",
+    "from": 65
+   }
+  ]
  },
- "note": "The DVS fee page (read 2026-10-30) gives a Class D licence at $46 and an ID card under 65 at $35.50. The renewal page gives standard licences and ID cards, 21 and older, four years (under 21, to the 21st birthday). DVS has a page for new drivers 18 and older, who get a Class D licence without the provisional phase that new drivers under 18 go through, so a full licence is kept from 18 (a provisional licence holder may move up earlier, under Minnesota Statutes 171.055, which isn't held). An ID card is issued under 16 too (valid to the 21st birthday), so the card has no age. Not held: the provisional licence, the under-21 terms, enhanced cards, the 65-and-older card.",
+ "note": "The DVS fee page (read 2026-10-30) gives a Class D licence at $46 and an ID card under 65 at $35.50. The renewal page gives standard licences and ID cards, 21 and older, four years (under 21, to the 21st birthday). DVS has a page for new drivers 18 and older, who get a Class D licence without the provisional phase that new drivers under 18 go through, so a full licence is kept from 18 (a provisional licence holder may move up earlier, under Minnesota Statutes 171.055, which isn't held). An ID card is issued under 16 too (valid to the 21st birthday), so the card has no age. Not held: the provisional licence, the under-21 terms (to the 21st birthday, not a term in years), enhanced cards. On 2026-10-30 the card was rewritten with the terms set by the holder's age, from the ID card page's expiration table (the standard card's column) and the fee page: 4 years at $35.50 from 21 to 64, and a card that doesn't expire, at $32, from 65; a card under 21 runs to the 21st birthday and isn't held, so a holder under 21 has no card term here. Until then the file held the 4-year card only.",
  "sources": [
   {
    "url": "https://dps.mn.gov/divisions/dvs/license-and-id/dl-and-id-card-fees",
    "title": "Minnesota DVS, Driver's license and ID card fees",
    "read": "2026-10-30",
-   "said": "Class D ​$46 ... Under age 65​​​​​ ​$35.50"
+   "said": "Class D ​$46 ... Under age 65​​​​​ ​$35.50 ... Age 65 and older ​$32"
   },
   {
    "url": "https://dps.mn.gov/divisions/dvs/license-and-id/common-transactions-all-dl-and-id-card-types/renew-your-dl-id-card",
@@ -37,7 +50,7 @@
    "url": "https://dps.mn.gov/divisions/dvs/license-and-id/dl-and-id-card-information/id-id-card",
    "title": "Minnesota DVS, ID card",
    "read": "2026-10-30",
-   "said": "Under 16 valid until 21 st birthday"
+   "said": "Under 16 valid until 21 st birthday ... 21-64 every 4 years every 4 years every 4 years 65 and older does not expire every 8 years every 4 years"
   }
  ]
 }

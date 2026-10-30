@@ -10,16 +10,28 @@
  },
  "card": {
   "name": "non-driver ID card",
-  "fee": "20",
-  "validYears": 8
+  "fee": null,
+  "validYears": null,
+  "terms": [
+   {
+    "years": 8,
+    "fee": "20",
+    "under": 65
+   },
+   {
+    "years": 8,
+    "fee": "0",
+    "from": 65
+   }
+  ]
  },
- "note": "DC DMV's fee page (read 2026-10-30) gives a driver licence, first-time and renewal, at $47 for 8 years and a non-driver ID card at $20 for 8 years (free from 65). The full licence page says a full licence with conditions is had from 17 and lists restrictions for drivers under 18 only, so an unrestricted licence is kept from 18. No youngest age for the card was read.",
+ "note": "DC DMV's fee page (read 2026-10-30) gives a driver licence, first-time and renewal, at $47 for 8 years and a non-driver ID card at $20 for 8 years (free from 65). The full licence page says a full licence with conditions is had from 17 and lists restrictions for drivers under 18 only, so an unrestricted licence is kept from 18. No youngest age for the card was read. On 2026-10-30 the card was rewritten with the terms set by the holder's age, from the same page: 8 years at $20 under 65, and 8 years free from 65; until then it held the $20 card for any age.",
  "sources": [
   {
    "url": "https://dmv.dc.gov/book/dmv-fees/driver-license-fees",
    "title": "DC DMV, Driver License Fees",
    "read": "2026-10-30",
-   "said": "Driver License (First-Time and Renewal) $47/8 years ... Non-Driver ID Card (First-Time and Renewal) $20/8 years"
+   "said": "Driver License (First-Time and Renewal) $47/8 years ... Non-Driver ID Card (First-Time and Renewal) $20/8 years ... Non-Driver ID Card for Seniors (65 years and older) Free of Charge/8 years"
   },
   {
    "url": "https://dmv.dc.gov/service/full-license-conditions",

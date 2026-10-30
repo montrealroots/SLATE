@@ -13,10 +13,12 @@ import { amount, checkIssuers, compileIssued, currencyIn, isRecord, isWhole, onl
  * States' states and DC, Canada's provinces, Australia's states), a region's, by the gazetteer's key for it
  * (<CC>.<region>.json, as US.CA.json); a country is kept one way or the other, never both. Each names its issuer and
  * gives the full licence (its name, the age it is held from, its fee (a non-citizen's too where it differs, and whether
- * it's charged by the year), the years it lasts and the age it ends at, where one is set, or that it lasts for life)
- * and the identity card the office issues to someone who doesn't drive, either or both, with the licences it exchanges
- * without a test. A fee or a term the research hasn't read is null. A territory whose licences are another country's
- * says whose (`issuedBy`). No file was written when the engine was built (2026-10-30); then nothing is compiled.
+ * it's charged by the year), the years it lasts and the age it ends at (or the ages, at the first of which the holder
+ * reaches it ends), where one is set, or that it lasts for life, or the terms the holder chooses among, each with its
+ * own fee) and the identity card the office issues to someone who doesn't drive, either or both, with the licences it
+ * exchanges without a test. A fee or a term the research hasn't read is null. A territory whose licences are another
+ * country's says whose (`issuedBy`), a region's where that country keeps its licences by region (Christmas Island's are
+ * Western Australia's). No file was written when the engine was built (2026-10-30); then nothing is compiled.
  */
 export const SOURCES = 'research/sources/papers/licence';
 export const OUTPUT = 'src/papers/licence/licence.json';
@@ -47,6 +49,26 @@ export function feeOf(f: unknown, currency: string, what: string): Fee {
   return out;
 }
 
+export interface Term {
+  /** Its years; or none where it lasts for life, or to an age (Arizona's to 65, its fee falling with the holder's age). */
+  years?: number;
+  forLife?: true;
+  untilAge?: number;
+  fee: Fee;
+  /** What a non-citizen pays for it, where the office charges one more (Cayman's CI$750 for ten years). */
+  foreignFee?: Fee;
+  /** Whom alone it's sold to, where the office limits it so (Tamaulipas's permanent licence not to foreigners). */
+  for?: 'citizens' | 'foreigners';
+  /** Its fee is charged for each of its years (Iowa's $4 a year), so the term costs its years times the fee. */
+  perYear?: true;
+  /**
+   * The ages it's sold to, from `from` and under `under`, where the office limits it (New South Wales's ten years to
+   * holders of 21 to 44; Argentina's five years to 17 to 65, three to 66 to 70).
+   */
+  from?: number;
+  under?: number;
+}
+
 export interface Document {
   /** As the office names it. */
   name: string;
@@ -59,8 +81,20 @@ export interface Document {
   /** The fee is charged for each year the licence is held for (Malaysia's, bought for one to five years). */
   perYear?: true;
   validYears: number | null;
-  /** The age at which it ends, whichever comes first with its years (Taiwan's runs to 70, Slovakia's to 70 at most). */
-  untilAge?: number;
+  /**
+   * The age at which it ends, whichever comes first with its years (Taiwan's runs to 70, Slovakia's to 70 at most); or
+   * the ages, in order, at the first of which the holder reaches it ends (San Marino's at 30, 40, 50 ...; Macau's at
+   * 40, 50, 60, 65 and 70).
+   */
+  untilAge?: number | number[];
+  /**
+   * The terms the licence is sold for, each with its own fee and, where the office limits it, the ages it's sold to;
+   * a holder chooses among those their age allows (Papua New Guinea's one to five years), and where only one does,
+   * that one is theirs (Argentina's by age). In order of their first age, then shortest first, a term for life last
+   * where one is sold (Mexico City's permanent licence); the licence's years and fee are then null, each term holding
+   * its own.
+   */
+  terms?: Term[];
   /** It never ends, where its source says so (Benin's "indéterminée", Pitcairn's for life); its years are then null. */
   forLife?: true;
 }
@@ -79,8 +113,8 @@ const onMap = (key: unknown) => Object.hasOwn(countries, key as PropertyKey) || 
 
 function document(d: unknown, at: string, currency: () => string, needsAge: boolean): Document {
   if (!isRecord(d)) throw new Error(`${at} is not an object`);
-  only(d, ['name', 'from', 'fee', 'foreignFee', 'perYear', 'validYears', 'untilAge', 'forLife'], at);
-  const { name, from, fee, foreignFee, perYear, validYears, untilAge, forLife } = d;
+  only(d, ['name', 'from', 'fee', 'foreignFee', 'perYear', 'validYears', 'untilAge', 'forLife', 'terms'], at);
+  const { name, from, fee, foreignFee, perYear, validYears, untilAge, forLife, terms } = d;
   if (typeof name !== 'string' || name === '') throw new Error(`${at} needs its name`);
   if (from === undefined ? needsAge : !isWhole(from, 0)) throw new Error(`${at} is issued from a whole age`);
   if (validYears !== null && !isWhole(validYears, 1)) throw new Error(`${at} is valid a whole number of years, or null`);
@@ -94,14 +128,70 @@ function document(d: unknown, at: string, currency: () => string, needsAge: bool
     out.perYear = true;
   }
   if (untilAge !== undefined) {
-    if (!isWhole(untilAge, 1) || untilAge <= ((from as number | undefined) ?? 0)) throw new Error(`${at} ends at a whole age above the one it's issued from`);
-    out.untilAge = untilAge;
+    const ages = Array.isArray(untilAge) ? untilAge : [untilAge];
+    const above = (from as number | undefined) ?? 0;
+    if (ages.length === 0 || !ages.every((a, i) => isWhole(a, 1) && (a as number) > (i === 0 ? above : (ages[i - 1] as number))))
+      throw new Error(`${at} ends at a whole age above the one it's issued from, or at ages in order above it`);
+    out.untilAge = untilAge as number | number[];
+  }
+  if (terms !== undefined) {
+    // A non-citizen's fee and a fee by the year each stand beside a fee, which terms leave null, so neither is
+    // checked here; a non-citizen's fee for a term is the term's own.
+    if (!Array.isArray(terms) || terms.length < 2 || out.fee !== null || validYears !== null)
+      throw new Error(`${at} gives two or more terms to choose among, each with its fee, its own years and fee then null`);
+    out.terms = terms.map((t: unknown, i) => term(t, currency, `${at}'s term ${i}`));
+    // In order of first age, then years, a term for life (no years) after any with years at the same first age.
+    const key = (t: Term) => [t.from ?? 0, t.years ?? Infinity] as const;
+    out.terms.forEach((t, i, all) => {
+      const [a, b] = [key(all[i - 1] ?? { fee: t.fee, from: -1 }), key(t)];
+      if (b[0] < a[0] || (b[0] === a[0] && b[1] <= a[1])) throw new Error(`${at}'s terms are in order of the ages they're sold to, then shortest first`);
+    });
   }
   if (forLife !== undefined) {
     if (forLife !== true || validYears !== null || untilAge !== undefined) throw new Error(`${at} lasts for life only as forLife: true, with no years and no age it ends at`);
     out.forLife = true;
   }
   return from === undefined ? out : { ...out, from: from as number };
+}
+
+/**
+ * A term the licence is sold for: its years or for life, its fee (a non-citizen's too where it differs), and whom and
+ * the ages it's sold to where limited.
+ */
+function term(t: unknown, currency: () => string, at: string): Term {
+  if (!isRecord(t)) throw new Error(`${at} is not an object`);
+  only(t, ['years', 'forLife', 'untilAge', 'fee', 'foreignFee', 'for', 'perYear', 'from', 'under'], at);
+  if (t['fee'] === null || t['fee'] === undefined) throw new Error(`${at} gives its fee`);
+  const fee = feeOf(t['fee'], currency(), `${at}'s fee`);
+  const ages: Pick<Term, 'foreignFee' | 'for' | 'perYear' | 'from' | 'under'> = {};
+  if (t['foreignFee'] !== undefined) ages.foreignFee = feeOf(t['foreignFee'], currency(), `${at}'s foreign fee`);
+  if (t['for'] !== undefined) {
+    if (t['for'] !== 'citizens' && t['for'] !== 'foreigners') throw new Error(`${at} is sold to citizens or foreigners alone, or to anyone`);
+    ages.for = t['for'];
+  }
+  if (t['from'] !== undefined) {
+    if (!isWhole(t['from'], 0)) throw new Error(`${at} is sold from a whole age`);
+    ages.from = t['from'] as number;
+  }
+  if (t['under'] !== undefined) {
+    if (!isWhole(t['under'], 1) || (t['under'] as number) <= (ages.from ?? 0)) throw new Error(`${at} is sold under a whole age above the one it's sold from`);
+    ages.under = t['under'] as number;
+  }
+  if (t['perYear'] !== undefined) {
+    if (t['perYear'] !== true || t['years'] === undefined) throw new Error(`${at}'s fee is by the year only as perYear: true, for a term of years`);
+    ages.perYear = true;
+  }
+  if (t['untilAge'] !== undefined) {
+    if (!isWhole(t['untilAge'], 1) || (t['untilAge'] as number) <= (ages.from ?? 0) || t['years'] !== undefined || t['forLife'] !== undefined)
+      throw new Error(`${at} lasts to a whole age above the ones it's sold to, with no years and not for life`);
+    return { untilAge: t['untilAge'] as number, fee, ...ages };
+  }
+  if (t['forLife'] !== undefined) {
+    if (t['forLife'] !== true || t['years'] !== undefined) throw new Error(`${at} lasts for life only as forLife: true, with no years`);
+    return { forLife: true, fee, ...ages };
+  }
+  if (!isWhole(t['years'], 1)) throw new Error(`${at} lasts a whole number of years, for life, or to an age`);
+  return { years: t['years'] as number, fee, ...ages };
 }
 
 /** One country's or region's licence and card, checked through. */
@@ -138,7 +228,7 @@ export function checkLicences(entries: Readonly<Record<string, Entry>>): void {
 /** The licences and cards of every file the register cites and checks. */
 export function readLicences(root: string): Record<string, Entry> {
   const out: Record<string, Entry> = {};
-  for (const [key, file] of readCited(root, SOURCES, 'papers.licence.')) out[key] = 'issuedBy' in file ? compileIssued(key, file, 'licences') : compileLicence(key, file);
+  for (const [key, file] of readCited(root, SOURCES, 'papers.licence.')) out[key] = 'issuedBy' in file ? compileIssued(key, file, 'licences', regions) : compileLicence(key, file);
   checkLicences(out);
   return out;
 }

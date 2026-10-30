@@ -5,8 +5,18 @@
  "licence": {
   "name": "driver's licence (Class C)",
   "from": 19,
-  "fee": "172.00",
-  "validYears": 5
+  "fee": null,
+  "validYears": null,
+  "terms": [
+   {
+    "years": 1,
+    "fee": "49.40"
+   },
+   {
+    "years": 5,
+    "fee": "172.00"
+   }
+  ]
  },
  "card": {
   "name": "WA Photo Card",
@@ -111,13 +121,13 @@
   "SE",
   "CH"
  ],
- "note": "DTMI's licensing pages (read 2026-10-30): a learner's permit from 16; the practical driving assessment from 17 after six months on the permit; then a provisional licence for 2 years (red P plates 6 months, green 18) before a full licence: a full licence is kept from 19. A standard licence renews for 1 or 5 years, the 5-year fee $172.00 (1 year $49.40). The WA Photo Card, for those 16 or over, is valid for five years and costs $49.70 to apply for. The moving-from-overseas page's licence check carries its jurisdictions in the page's script (the payload saved as wa-overseas-list.json beside the page): recognitionStatus 1 with no further text is 'a recognised jurisdiction with no extra conditions required for conversion'; those held are the United States (its 50 states and DC), the other Australian states and territories, Canada (its provinces and territories), Austria, Belgium, Croatia, Denmark, the United Kingdom (England, Scotland, Wales, Northern Ireland), Finland, France, Germany, Gibraltar, Greece, Guernsey (listed under the code GI, held as GG), Ireland, Italy, Japan, Jersey, Luxembourg, the Netherlands, New Zealand, Norway, Portugal, Singapore, Spain, Sweden and Switzerland. Bosnia and Herzegovina, the Isle of Man and Malta are 'experienced driver recognised', with age-based conditions, and the 14 jurisdictions newly recognised from 31 October 2026 (Bulgaria, Czechia, Estonia, Hungary, Latvia, Lithuania, Poland, Cyprus, Serbia, Romania, Slovakia, Slovenia, South Korea, Taiwan) are not yet so on the day read; none of them is held.",
+ "note": "DTMI's licensing pages (read 2026-10-30): a learner's permit from 16; the practical driving assessment from 17 after six months on the permit; then a provisional licence for 2 years (red P plates 6 months, green 18) before a full licence: a full licence is kept from 19. A standard licence is had for 1 or 5 years, depending on which fee the holder pays, $49.40 or $172.00: both are held as terms the holder chooses. The WA Photo Card, for those 16 or over, is valid for five years and costs $49.70 to apply for. The moving-from-overseas page's licence check carries its jurisdictions in the page's script (the payload saved as wa-overseas-list.json beside the page): recognitionStatus 1 with no further text is 'a recognised jurisdiction with no extra conditions required for conversion'; those held are the United States (its 50 states and DC), the other Australian states and territories, Canada (its provinces and territories), Austria, Belgium, Croatia, Denmark, the United Kingdom (England, Scotland, Wales, Northern Ireland), Finland, France, Germany, Gibraltar, Greece, Guernsey (listed under the code GI, held as GG), Ireland, Italy, Japan, Jersey, Luxembourg, the Netherlands, New Zealand, Norway, Portugal, Singapore, Spain, Sweden and Switzerland. Bosnia and Herzegovina, the Isle of Man and Malta are 'experienced driver recognised', with age-based conditions, and the 14 jurisdictions newly recognised from 31 October 2026 (Bulgaria, Czechia, Estonia, Hungary, Latvia, Lithuania, Poland, Cyprus, Serbia, Romania, Slovakia, Slovenia, South Korea, Taiwan) are not yet so on the day read; none of them is held. On 2026-10-30 the file was rewritten with the terms the holder chooses among: until then it held the 5-year licence at $172.00 only.",
  "sources": [
   {
    "url": "https://www.transport.wa.gov.au/licensing/drivers-licence/renew/standard",
    "title": "DTMI, Renew your driver's licence (standard)",
    "read": "2026-10-30",
-   "said": "Your Western Australian (WA) driver's licence will expire after 1 or 5 years, depending on which licence fee you paid. ... 5 years $172.00"
+   "said": "Your Western Australian (WA) driver's licence will expire after 1 or 5 years, depending on which licence fee you paid. ... 1 year $49.40 5 years $172.00"
   },
   {
    "url": "https://www.transport.wa.gov.au/licensing/drivers-licence/get-a-licence/car/get-learners-permit",

@@ -1,4 +1,4 @@
-import { add, type Money } from '../../core/money/money.ts';
+import { add, money, type Money } from '../../core/money/money.ts';
 import { inUnits } from '../../money/units/units.ts';
 import { t } from '../../core/text/text.ts';
 import { countryName, regionName, type Place } from '../../world/gazetteer/gazetteer.ts';
@@ -29,8 +29,23 @@ export interface LicenceDocument {
   readonly foreignFee?: Money | UnitFee;
   readonly perYear?: true;
   readonly validYears: number | null;
-  /** The age at which it ends, whichever comes first with its years. */
-  readonly untilAge?: number;
+  /** The age at which it ends, whichever comes first with its years; or the ages, in order, at the first of which the holder reaches it ends. */
+  readonly untilAge?: number | readonly number[];
+  /**
+   * The terms it's sold for, each with its fee and the ages it's sold to where limited; a holder chooses among those
+   * their age allows. Its years and fee are then null.
+   */
+  readonly terms?: readonly {
+    readonly years?: number;
+    readonly forLife?: true;
+    readonly untilAge?: number;
+    readonly fee: Money | UnitFee;
+    readonly foreignFee?: Money | UnitFee;
+    readonly for?: 'citizens' | 'foreigners';
+    readonly perYear?: true;
+    readonly from?: number;
+    readonly under?: number;
+  }[];
   /** It never ends; its years are then null. */
   readonly forLife?: true;
 }
@@ -50,6 +65,15 @@ export function feeOn(fee: Money | UnitFee | null | undefined, day: string): Mon
   return value === undefined || fee.plus === undefined ? value : add(value, fee.plus);
 }
 
+/**
+ * What a term comes to on a day: its fee (a non-citizen's where `foreign` and the term charges one), times its years
+ * where the fee is by the year; none where the fee isn't known that day.
+ */
+export function termFeeOn(term: NonNullable<LicenceDocument['terms']>[number], day: string, foreign = false): Money | undefined {
+  const fee = feeOn(foreign ? (term.foreignFee ?? term.fee) : term.fee, day);
+  return fee === undefined || term.perYear !== true ? fee : money(fee.currency, fee.minor * (term.years as number));
+}
+
 type Where = Pick<Place, 'country' | 'region'>;
 
 const LICENCES = data as unknown as Record<string, Licence | { readonly issuedBy: string }>;
@@ -58,7 +82,8 @@ const LICENCES = data as unknown as Record<string, Licence | { readonly issuedBy
 export function licenceAt({ country, region }: Where): Licence | undefined {
   const entry = LICENCES[country] ?? LICENCES[region];
   if (entry === undefined) return undefined;
-  // The compile holds every issuer named as a country kept whole in its own right.
+  // The compile holds every issuer named as a place kept in its own right: a country kept whole, or a region
+  // (Christmas Island's licences are Western Australia's).
   return 'issuedBy' in entry ? (LICENCES[entry.issuedBy] as Licence) : entry;
 }
 

@@ -5,8 +5,23 @@
  "licence": {
   "name": "driver license (Class C)",
   "from": 18,
-  "fee": "52",
-  "validYears": 8
+  "fee": null,
+  "validYears": null,
+  "terms": [
+   {
+    "years": 8,
+    "fee": "6.50",
+    "from": 18,
+    "under": 66,
+    "perYear": true
+   },
+   {
+    "years": 5,
+    "fee": "6.50",
+    "from": 66,
+    "perYear": true
+   }
+  ]
  },
  "card": {
   "name": "state ID card",
@@ -14,13 +29,13 @@
   "fee": "0",
   "validYears": null
  },
- "note": "The NC Driver Handbook (read 2026-10-30; its fees are those of the quadrennial adjustment of 1 July 2024) gives the Class C licence at $6.50 a year and its duration as 8 years when issued at 18 to 65, so the licence is kept as 8 years at $52 ($6.50 times 8, a product of the handbook's figures). It says drivers under 18 are provisional licensees and that at 18 an eligible driver may upgrade to a regular Class C licence, so a full licence is kept from 18. The state ID page gives the card free from 17 ($16.75 under 17), so the card is kept from 17 at no fee; its term wasn't read and is null. Not held: the 5-year licence from 66.",
+ "note": "The NC Driver Handbook (read 2026-10-30; its fees are those of the quadrennial adjustment of 1 July 2024) gives the Class C licence at $6.50 a year and its duration as 8 years when issued at 18 to 65, so the licence was kept as 8 years at $52 ($6.50 times 8, a product of the handbook's figures). It says drivers under 18 are provisional licensees and that at 18 an eligible driver may upgrade to a regular Class C licence, so a full licence is kept from 18. The state ID page gives the card free from 17 ($16.75 under 17), so the card is kept from 17 at no fee; its term wasn't read and is null. On 2026-10-30 the licence was rewritten with the terms set by the holder's age, from the handbook's duration table: 8 years at $52 from 18 to 65 and 5 years at $32.50 from 66 ($6.50 times 5, a product of the handbook's figures); until then it held the 8-year licence only. Later on 2026-10-30 both terms were rewritten to hold the handbook's rate, $6.50 for each year of the term, charged for each of its years, in place of the products worked out here ($52 and $32.50), which the file held until then.",
  "sources": [
   {
    "url": "https://www.ncdot.gov/dmv/license-id/driver-licenses/new-drivers/Documents/nc-driver-handbook.pdf",
    "title": "North Carolina Driver Handbook (NCDMV)",
    "read": "2026-10-30",
-   "said": "Class C....................................................................................................$6.50/year ... Age at Time of Issuance Duration ... 18–65 8 years ... At age 18, eligible drivers may upgrade to a regular Class C license online. ... Drivers under age 18 are provisional licensees."
+   "said": "Class C....................................................................................................$6.50/year ... Age at Time of Issuance Duration ... 18–65 8 years ... At age 18, eligible drivers may upgrade to a regular Class C license online. ... Drivers under age 18 are provisional licensees. ... 66 and older 5 years"
   },
   {
    "url": "https://www.ncdot.gov/dmv/license-id/identification/Pages/default.aspx",

@@ -10,16 +10,28 @@
  },
  "card": {
   "name": "identification card",
-  "fee": "40",
-  "validYears": 6
+  "fee": null,
+  "validYears": null,
+  "terms": [
+   {
+    "years": 6,
+    "fee": "40",
+    "under": 62
+   },
+   {
+    "years": 8,
+    "fee": "0",
+    "from": 62
+   }
+  ]
  },
- "note": "The DMV's licensing fees page (read 2026-10-30) gives the Class C original application fee, $46, and the regular ID card's, $40 (no fee from 62, $11 reduced). Its renewal page says an original licence expires on the fifth birthday after the application, so it is kept as 5 years; the ID card page says a standard card is valid for six birthdates (kept as 6) and that an ID card is issued at any age, so the card has no age. The handbook says a licence issued under 18 is provisional, with restrictions, so a full licence is held from 18 (a provisional one from 16). Not held: the senior and reduced-fee cards, a limited-term licence that ends with the holder's identity document, and the REAL ID marking, which costs nothing more.",
+ "note": "The DMV's licensing fees page (read 2026-10-30) gives the Class C original application fee, $46, and the regular ID card's, $40 (no fee from 62, $11 reduced). Its renewal page says an original licence expires on the fifth birthday after the application, so it is kept as 5 years; the ID card page says a standard card is valid for six birthdates (kept as 6) and that an ID card is issued at any age, so the card has no age; until 2026-10-30 the card was the standard one at $40 for 6 years, for any age. The handbook says a licence issued under 18 is provisional, with restrictions, so a full licence is held from 18 (a provisional one from 16). Not held: the reduced-fee card, a limited-term licence that ends with the holder's identity document, and the REAL ID marking, which costs nothing more. On 2026-10-30 the card was rewritten with the terms set by the holder's age: the standard card, 6 years at $40, under 62, and the no-fee senior citizen ID card, valid for eight birthdates (held as 8 years), from 62.",
  "sources": [
   {
    "url": "https://www.dmv.ca.gov/portal/driver-licenses-identification-cards/licensing-fees/",
    "title": "California DMV, Licensing Fees",
    "read": "2026-10-30",
-   "said": "Class C Application – Original – Renewal – Adding a motorcycle license (Class M1/M2) Fee $46 ... Regular ID card Application – Original – Renewal – Replacement (lost or stolen) – Change DL/ID Information – Emancipated minor Fee $40"
+   "said": "Class C Application – Original – Renewal – Adding a motorcycle license (Class M1/M2) Fee $46 ... Regular ID card Application – Original – Renewal – Replacement (lost or stolen) – Change DL/ID Information – Emancipated minor Fee $40 ... ID Senior Citizen (age 62 or older) ID card ... Change DL/ID Information Fee No fee"
   },
   {
    "url": "https://www.dmv.ca.gov/portal/driver-licenses-identification-cards/dl-renewal/",
@@ -31,7 +43,7 @@
    "url": "https://www.dmv.ca.gov/portal/driver-licenses-identification-cards/identification-id-cards/",
    "title": "California DMV, Identification (ID) Cards",
    "read": "2026-10-30",
-   "said": "In California, DMV may issue an ID card to a person of any age. ... Standard ID cards are valid for six birthdates after the application date."
+   "said": "In California, DMV may issue an ID card to a person of any age. ... Standard ID cards are valid for six birthdates after the application date. ... Seniors 62 years old or older are eligible for a no-fee senior citizen ID card. Valid for eight birthdates after the application date."
   },
   {
    "url": "https://www.dmv.ca.gov/portal/handbook/california-driver-handbook/getting-an-instruction-permit-and-drivers-license/",

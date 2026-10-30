@@ -1039,6 +1039,30 @@ Wave 13 (2026-10-30, the units engine and six research subagents):
   from the examination's; residence on secondary copies (Nicaragua, Benin, The Gambia, Gabon); Burkina Faso's tax
   number's letter in any place.
 
+Wave 14 (2026-10-30, the licence form and six research subagents rewriting from saved pages):
+
+- The licence form's three gaps of wave 13 are closed, and the ones found in closing them. A territory may hold a
+  region's licence (`issuedBy` a region where the country keeps its licences by region; Christmas Island's and Cocos's
+  turned out to be their own: Western Australia's page has their licences transferred to a WA one, so both are blocked,
+  not pointed at WA). `untilAge` may be a list, the licence ending at the first age the holder reaches (San Marino's 30,
+  40, 50, 60, 65, 70; Macau's 40, 50, 60, 65, 70; Portugal's 60, 65, 70 beside its 15 years). `terms` holds the terms a
+  licence is sold for, each with its fee, and where the office sets them: a non-citizen's fee (Cayman's), the ages it's
+  sold to (`from`, `under`: New South Wales's ten years to 21-44; Missouri's, Illinois's, Iowa's by age; Guatemala's
+  longer terms from 18), whom alone (`for`: Tamaulipas's permanent licence to citizens; Chiapas's year to foreigners), a
+  fee by the year (`perYear`: Iowa's, North Carolina's, Virginia's rate, never a product typed), and a term to an age
+  (Arizona's to 65, its fee falling with age); a holder chooses among those their age allows. `termFeeOn` gives a term's
+  fee on a day. Files rewritten from their saved pages: 18 Mexican states, 26 US, Canadian and Australian regions, nine
+  countries, and Victoria's and the Northern Territory's fees in their units. Kept single where no source says the
+  holder chooses: the ACT and Victoria (ten years at 19.15 fee units), Anguilla (its one-year licence runs to 31
+  December, not a year). Guerrero stays null (its unnamed added taxes).
+- The units engine holds Victoria's fee unit (seven values from 1 July 2020, the Treasurer's gazetted notices) and the
+  Northern Territory's revenue unit (eight from 1 July 2018, the NT Gazette's notices; 2020-21 held at $1.21 by the 2020
+  amending Act, backdated), and a unit's own rounding where its law sets one (`roundDown`: the NT's fee rounded down to
+  the dollar, Revenue Units Act s 3(2)). Every change is mutation-tested at 100%.
+- Readings kept, to check: the terms read as the holder's choice where two are sold side by side (Mississippi,
+  Washington, New York's card), Victoria's 4-year licence as the probationary P2, Nevada's card under 18 and Kansas's
+  licence under 21 with no term, the senior card's fees by age (Kansas, Nevada, Texas, DC, California).
+
 The older next steps below are kept as they were written.
 
 1. The weather's blockers

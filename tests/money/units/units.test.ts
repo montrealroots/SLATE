@@ -19,6 +19,15 @@ describe('units', () => {
     expect(inUnits('1', 'UR', '2023-12-31')).toBeUndefined();
   });
 
+  it('round as the unit\'s own law says where it says', () => {
+    // The Northern Territory's 10 revenue units at 2026-27's $1.49 are $14.90, rounded down to the dollar (s 3(2)).
+    expect(inUnits('10', 'NTRU', '2026-10-30')).toStrictEqual(money('AUD', 1400));
+    expect(inUnits('100', 'NTRU', '2026-10-30')).toStrictEqual(money('AUD', 14_900));
+    expect(inUnits('141', 'NTRU', '2026-10-30')).toStrictEqual(money('AUD', 21_000));
+    // Victoria's fee unit has no rounding of its own: 19.15 units at $17.27 is $330.7205, to the cent half to even.
+    expect(inUnits('19.15', 'VFU', '2026-10-30')).toStrictEqual(money('AUD', 33_072));
+  });
+
   it("give nothing for a unit the game doesn't hold", () => {
     expect([knowsUnit('UF'), unitCurrency('UF'), inUnits('1', 'UF', '2026-10-30')]).toEqual([false, undefined, undefined]);
     expect(knowsUnit('toString')).toBe(false);

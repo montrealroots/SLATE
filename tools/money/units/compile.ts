@@ -29,6 +29,11 @@ export interface Unit {
   name: string;
   currency: CurrencyCode;
   values: Step[];
+  /**
+   * The amount a fee worked from it is rounded down to a multiple of, where its law sets one (the Northern Territory's
+   * whole dollar).
+   */
+  roundDown?: string;
 }
 
 const DECIMAL = /^\d+(\.\d+)?$/;
@@ -39,8 +44,8 @@ export const positive = (s: unknown): s is string => typeof s === 'string' && DE
 /** A unit's file: its name, its currency and its values in day order. */
 export function compileUnit(key: string, file: { [key: string]: unknown }): Unit {
   if (!/^[A-Z]{2,4}$/.test(key) || file['unit'] !== key) throw new Error(`${key}'s file is for ${String(file['unit'])}`);
-  for (const k of Object.keys(file)) if (!['unit', 'name', 'currency', 'values', 'note', 'sources'].includes(k)) throw new Error(`${key}'s file has no term ${k}`);
-  const { name, currency, values } = file;
+  for (const k of Object.keys(file)) if (!['unit', 'name', 'currency', 'values', 'roundDown', 'note', 'sources'].includes(k)) throw new Error(`${key}'s file has no term ${k}`);
+  const { name, currency, values, roundDown } = file;
   if (typeof name !== 'string' || name === '') throw new Error(`${key} is named as its publisher names it`);
   if (typeof currency !== 'string' || !isCurrency(currency)) throw new Error(`${key} is worth an amount of a currency`);
   if (!Array.isArray(values) || values.length === 0) throw new Error(`${key} gives at least one value`);
@@ -51,7 +56,12 @@ export function compileUnit(key: string, file: { [key: string]: unknown }): Unit
     last = v.from as string;
     return { from: last, value: v.value };
   });
-  return { fact: `money.units.${key}`, name, currency, values: steps };
+  const out: Unit = { fact: `money.units.${key}`, name, currency, values: steps };
+  if (roundDown !== undefined) {
+    if (!positive(roundDown)) throw new Error(`${key} rounds a fee down to a multiple of a decimal above 0`);
+    out.roundDown = roundDown;
+  }
+  return out;
 }
 
 interface Register {

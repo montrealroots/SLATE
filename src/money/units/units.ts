@@ -6,8 +6,9 @@ import data from './units.json' with { type: 'json' };
  * register facts money.units.<UNIT>): what one unit is worth in its currency, from the day its publisher says each
  * value applies, each holding until the next (Mexico's UMA from INEGI, Uruguay's UR, set by the Banco Hipotecario, from
  * its INE). A fee of so many units is worth their value on the day it's paid, worked exactly and rounded once to the
- * currency's smallest amount, half to even, as every product of the game's money is; a fiscal code's own rounding to
- * the whole peso, where it sets one, isn't held.
+ * currency's smallest amount, half to even, as every product of the game's money is; or, where the unit's own law sets
+ * its rounding (the Northern Territory's, down to the whole dollar), by that; a Mexican state's fiscal code's own
+ * rounding to the peso isn't held.
  */
 
 interface Unit {
@@ -15,6 +16,7 @@ interface Unit {
   readonly name: string;
   readonly currency: CurrencyCode;
   readonly values: readonly { readonly from: string; readonly value: string }[];
+  readonly roundDown?: string;
 }
 
 const DATA = data as unknown as { units: { readonly [unit: string]: Unit } };
@@ -31,6 +33,12 @@ export function inUnits(count: string, unit: string, day: string): Money | undef
   const step = u?.values.findLast((s) => s.from <= day);
   if (step === undefined) return undefined;
   const [c, v] = [rational(count), rational(step.value)];
-  const currency = (u as Unit).currency;
-  return money(currency, Number(roundHalfEven(10n ** BigInt(minorUnits(currency)) * c.num * v.num, c.den * v.den)));
+  const { currency, roundDown } = u as Unit;
+  const scale = 10n ** BigInt(minorUnits(currency));
+  const [num, den] = [scale * c.num * v.num, c.den * v.den];
+  if (roundDown === undefined) return money(currency, Number(roundHalfEven(num, den)));
+  // The law's own rounding: down to a multiple of its step, worked on the exact amount.
+  const r = rational(roundDown);
+  const multiple = (scale * r.num) / r.den;
+  return money(currency, Number((num / (den * multiple)) * multiple));
 }

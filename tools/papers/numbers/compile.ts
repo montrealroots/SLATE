@@ -164,11 +164,16 @@ export function compileNone(code: string, file: Record<string, unknown>): None {
   return { none: true };
 }
 
-/** A territory's file naming the country whose papers its people hold (its `what`: numbers, permits, licences). */
-export function compileIssued(code: string, file: Record<string, unknown>, what: string): Issued {
+/**
+ * A territory's file naming the country whose papers its people hold (its `what`: numbers, permits, licences), or,
+ * where `regions` is given (licences, which a country may keep by region), a region of another country (Christmas
+ * Island's licences are Western Australia's).
+ */
+export function compileIssued(code: string, file: Record<string, unknown>, what: string, regions?: Readonly<Record<string, unknown>>): Issued {
   checkCountry(code, file);
   const issuedBy = String(file['issuedBy']);
-  if (!Object.hasOwn(countries, issuedBy) || issuedBy === code) throw new Error(`${code}'s ${what} are given by another country on the map, not ${issuedBy}`);
+  const onMap = Object.hasOwn(countries, issuedBy) || (regions !== undefined && Object.hasOwn(regions, issuedBy));
+  if (!onMap || issuedBy.slice(0, 2) === code) throw new Error(`${code}'s ${what} are given by another country${regions === undefined ? '' : ' or region'} on the map, not ${issuedBy}`);
   only(file, ['country', 'issuedBy', 'note', 'sources'], `${code}, whose ${what} are ${issuedBy}'s,`);
   return { issuedBy };
 }

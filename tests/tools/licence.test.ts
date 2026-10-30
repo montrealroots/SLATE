@@ -4,6 +4,8 @@ import { tmpdir } from 'node:os';
 import { join, resolve } from 'node:path';
 import { describe, expect, it } from 'vitest';
 import { checkLicences, compileLicence, feeOf, OUTPUT, readLicences, serialize, SOURCES } from '../../tools/papers/licence/compile.ts';
+import { compileIssued } from '../../tools/papers/numbers/compile.ts';
+import regions from '../../src/world/gazetteer/regions.json' with { type: 'json' };
 import { COVERAGE, coverageOf, licenceCoverage, TESTS, TOLD } from '../../tools/papers/licence/coverage.ts';
 import { NO_PLACES } from '../../tools/papers/passports/coverage.ts';
 
@@ -57,6 +59,59 @@ describe('the licences compile', () => {
     const card = (untilAge: unknown) => compileLicence('DE', de({ licence: undefined, currency: 'EUR', card: { name: 'c', fee: null, validYears: null, untilAge } })).card;
     expect(card(1)?.untilAge).toBe(1);
     expect(() => card(0)).toThrow("DE's card ends at a whole age above the one it's issued from");
+    // The ages, in order, at the first of which the holder reaches it ends.
+    expect(my({ untilAge: [40, 50, 60, 65, 70] })?.untilAge).toStrictEqual([40, 50, 60, 65, 70]);
+    for (const untilAge of [[], [40, 40], [50, 40], [18, 30], [30, 40.5], [30, '40']])
+      expect(() => my({ untilAge }), JSON.stringify(untilAge)).toThrow("DE's licence ends at a whole age above the one it's issued from, or at ages in order above it");
+    expect(my({ untilAge: [19] })?.untilAge).toStrictEqual([19]);
+    // Terms the holder chooses among, each with its fee, shortest first, for life last; its own years and fee null.
+    const terms = [{ years: 1, fee: '70' }, { years: 5, fee: { count: '2', unit: 'UMA' } }, { forLife: true, fee: '280' }];
+    const chosen = (over: Record<string, unknown>) => compileLicence('MX.09', { country: 'MX', region: 'MX.09', issuer: 'i', licence: { name: 'x', from: 18, fee: null, validYears: null, ...over } }).licence;
+    expect(chosen({ terms })?.terms).toStrictEqual([{ years: 1, fee: { currency: 'MXN', minor: 7000 } }, { years: 5, fee: { count: '2', unit: 'UMA' } }, { forLife: true, fee: { currency: 'MXN', minor: 28_000 } }]);
+    for (const over of [{ terms: [terms[0]] }, { terms: 'x' }, { terms, fee: '1' }, { terms, validYears: 3 }])
+      expect(() => chosen(over), JSON.stringify(over)).toThrow("MX.09's licence gives two or more terms to choose among, each with its fee, its own years and fee then null");
+    expect(() => chosen({ terms: [terms[0], 'x'] })).toThrow("MX.09's licence's term 1 is not an object");
+    expect(() => chosen({ terms: [terms[0], { years: 2, fee: '1', label: 'x' }] })).toThrow("MX.09's licence's term 1 has no term label");
+    for (const fee of [null, undefined]) expect(() => chosen({ terms: [terms[0], { years: 2, fee }] }), String(fee)).toThrow("MX.09's licence's term 1 gives its fee");
+    expect(() => chosen({ terms: [terms[0], { years: 2, fee: 'x' }] })).toThrow("MX.09's licence's term 1's fee is an amount written out in major units");
+    for (const t of [{ forLife: true, years: 2, fee: '1' }, { forLife: 'yes', fee: '1' }]) expect(() => chosen({ terms: [terms[0], t] }), JSON.stringify(t)).toThrow("MX.09's licence's term 1 lasts for life only as forLife: true, with no years");
+    expect(() => chosen({ terms: [{ forLife: true, fee: '1' }, terms[0]] })).toThrow("MX.09's licence's terms are in order of the ages they're sold to, then shortest first");
+    for (const years of [0, 1.5, '2', undefined]) expect(() => chosen({ terms: [terms[0], { years, fee: '1' }] }), String(years)).toThrow("MX.09's licence's term 1 lasts a whole number of years, for life, or to an age");
+    for (const later of [{ years: 1, fee: '1' }, { years: 3, fee: '1' }]) expect(() => chosen({ terms: [{ years: 3, fee: '1' }, later] }), JSON.stringify(later)).toThrow("MX.09's licence's terms are in order of the ages they're sold to, then shortest first");
+    expect(chosen({ terms: [{ years: 2, fee: '1' }, { years: 3, fee: '2' }] })?.terms?.length).toBe(2);
+    // Terms sold to some ages only: Argentina's by age (five years to 17-65, three to 66-70), New South Wales's ten years to 21-44.
+    expect(chosen({ terms: [{ years: 5, fee: '1', from: 17, under: 66 }, { years: 3, fee: '1', from: 66, under: 71 }] })?.terms).toStrictEqual([
+      { years: 5, fee: { currency: 'MXN', minor: 100 }, from: 17, under: 66 },
+      { years: 3, fee: { currency: 'MXN', minor: 100 }, from: 66, under: 71 },
+    ]);
+    expect(chosen({ terms: [{ years: 5, fee: '1' }, { years: 10, fee: '2', from: 21, under: 45 }] })?.terms?.[1]).toStrictEqual({ years: 10, fee: { currency: 'MXN', minor: 200 }, from: 21, under: 45 });
+    expect(chosen({ terms: [{ years: 5, fee: '1', under: 66 }, { forLife: true, fee: '2', from: 0 }] })?.terms?.[1]).toStrictEqual({ forLife: true, fee: { currency: 'MXN', minor: 200 }, from: 0 });
+    expect(chosen({ terms: [{ years: 5, fee: '1', from: 17 }, { years: 3, fee: '1', from: 66 }, { forLife: true, fee: '1', from: 66 }] })?.terms?.length).toBe(3);
+    expect(() => chosen({ terms: [{ years: 3, fee: '1', from: 66 }, { years: 5, fee: '1', from: 17 }] })).toThrow("MX.09's licence's terms are in order of the ages they're sold to, then shortest first");
+    expect(() => chosen({ terms: [{ years: 5, fee: '1', from: 17 }, { forLife: true, fee: '1', from: 17 }, { years: 6, fee: '1', from: 17 }] })).toThrow('terms are in order');
+    for (const from of [-1, 1.5, '17']) expect(() => chosen({ terms: [terms[0], { years: 2, fee: '1', from }] }), String(from)).toThrow("MX.09's licence's term 1 is sold from a whole age");
+    for (const [from, under] of [[17, 17], [17, 10], [undefined, 0], [0, 0.5]] as const)
+      expect(() => chosen({ terms: [terms[0], { years: 2, fee: '1', from, under }] }), `${String(from)} ${String(under)}`).toThrow("MX.09's licence's term 1 is sold under a whole age above the one it's sold from");
+    expect(chosen({ terms: [terms[0], { years: 2, fee: '1', under: 1 }] })?.terms?.[1]?.under).toBe(1);
+    // A term's own non-citizen fee (Cayman's).
+    expect(chosen({ terms: [{ years: 1, fee: '25', foreignFee: '75' }, terms[1]] })?.terms?.[0]).toStrictEqual({ years: 1, fee: { currency: 'MXN', minor: 2500 }, foreignFee: { currency: 'MXN', minor: 7500 } });
+    expect(() => chosen({ terms: [{ years: 1, fee: '25', foreignFee: 'x' }, terms[1]] })).toThrow("MX.09's licence's term 0's foreign fee is an amount written out in major units");
+    // A term sold to citizens or foreigners alone (Tamaulipas's permanent licence, Chiapas's year for foreigners).
+    expect(chosen({ terms: [terms[0], { forLife: true, fee: '1', for: 'citizens' }] })?.terms?.[1]).toStrictEqual({ forLife: true, fee: { currency: 'MXN', minor: 100 }, for: 'citizens' });
+    expect(chosen({ terms: [{ years: 1, fee: '1', for: 'foreigners' }, terms[1]] })?.terms?.[0]?.for).toBe('foreigners');
+    // A term to an age (Arizona's to 65, its fee by the holder's age).
+    expect(chosen({ terms: [{ untilAge: 65, fee: '25', under: 40 }, { untilAge: 65, fee: '10', from: 50 }] })?.terms).toStrictEqual([
+      { untilAge: 65, fee: { currency: 'MXN', minor: 2500 }, under: 40 },
+      { untilAge: 65, fee: { currency: 'MXN', minor: 1000 }, from: 50 },
+    ]);
+    for (const t of [{ untilAge: 50, fee: '1', from: 50 }, { untilAge: 0, fee: '1' }, { untilAge: 65.5, fee: '1' }, { untilAge: 65, years: 5, fee: '1' }, { untilAge: 65, forLife: true, fee: '1' }])
+      expect(() => chosen({ terms: [terms[0], t] }), JSON.stringify(t)).toThrow("MX.09's licence's term 1 lasts to a whole age above the ones it's sold to, with no years and not for life");
+    expect(() => chosen({ terms: [terms[0], { untilAge: 65, fee: '1', perYear: true }] })).toThrow("MX.09's licence's term 1's fee is by the year only as perYear: true, for a term of years");
+    // A term's fee by the year (Iowa's $4 a year); never for a term for life.
+    expect(chosen({ terms: [{ years: 2, fee: '4', perYear: true }, { years: 8, fee: '4', perYear: true }] })?.terms?.[1]).toStrictEqual({ years: 8, fee: { currency: 'MXN', minor: 400 }, perYear: true });
+    for (const t of [{ years: 2, fee: '4', perYear: false }, { years: 2, fee: '4', perYear: 'yes' }, { forLife: true, fee: '4', perYear: true }])
+      expect(() => chosen({ terms: [terms[0], t] }), JSON.stringify(t)).toThrow("MX.09's licence's term 1's fee is by the year only as perYear: true, for a term of years");
+    for (const who of ['residents', true]) expect(() => chosen({ terms: [terms[0], { years: 2, fee: '1', for: who }] }), String(who)).toThrow("MX.09's licence's term 1 is sold to citizens or foreigners alone, or to anyone");
     // For life: no years, no age it ends at.
     expect(my({ forLife: true })?.forLife).toBe(true);
     for (const bad of [{ forLife: false }, { forLife: 'yes' }, { forLife: true, validYears: 10 }, { forLife: true, untilAge: 70 }])
@@ -92,6 +147,17 @@ describe('the licences compile', () => {
     expect(() => checkLicences({ 'US.NY': us, DE: compileLicence('DE', de()), AT: { issuedBy: 'DE' } })).not.toThrow();
     expect(() => checkLicences({ US: us, 'US.NY': us })).toThrow('US is kept whole and by its regions (US.NY)');
     expect(() => checkLicences({ AT: { issuedBy: 'DE' } })).toThrow("AT's licences are DE's, which the game doesn't keep in its own right");
+    // A territory may hold a region's licences where that country keeps them by region; never its own country's region.
+    expect(compileIssued('CX', { country: 'CX', issuedBy: 'AU.08' }, 'licences', regions)).toStrictEqual({ issuedBy: 'AU.08' });
+    expect(compileIssued('CX', { country: 'CX', issuedBy: 'AU' }, 'licences', regions)).toStrictEqual({ issuedBy: 'AU' });
+    for (const issuedBy of ['AU.99', 'CX', 'XX'])
+      expect(() => compileIssued('CX', { country: 'CX', issuedBy }, 'licences', regions), issuedBy).toThrow(`CX's licences are given by another country or region on the map, not ${issuedBy}`);
+    expect(() => compileIssued('AU', { country: 'AU', issuedBy: 'AU.08' }, 'licences', regions)).toThrow("AU's licences are given by another country or region on the map, not AU.08");
+    // Without regions (the numbers, the permits), a region isn't an issuer.
+    expect(() => compileIssued('CX', { country: 'CX', issuedBy: 'AU.08' }, 'numbers')).toThrow("CX's numbers are given by another country on the map, not AU.08");
+    const wa = compileLicence('AU.08', { country: 'AU', region: 'AU.08', issuer: 'i', licence: { name: 'x', from: 19, fee: null, validYears: 5 } });
+    expect(() => checkLicences({ 'AU.08': wa, CX: { issuedBy: 'AU.08' } })).not.toThrow();
+    expect(() => checkLicences({ CX: { issuedBy: 'AU.08' } })).toThrow("CX's licences are AU.08's, which the game doesn't keep in its own right");
   });
 
   it('reads only files the register cites, a region by its key', () => {

@@ -5,21 +5,40 @@
  "licence": {
   "name": "driver license (Class F)",
   "from": 18,
-  "fee": "33",
-  "validYears": 6
+  "fee": null,
+  "validYears": null,
+  "terms": [
+   {
+    "years": 3,
+    "fee": "16.50",
+    "from": 18,
+    "under": 21
+   },
+   {
+    "years": 6,
+    "fee": "33",
+    "from": 21,
+    "under": 70
+   },
+   {
+    "years": 3,
+    "fee": "16.50",
+    "from": 70
+   }
+  ]
  },
  "card": {
   "name": "nondriver ID (Class ND)",
   "fee": "24",
   "validYears": 6
  },
- "note": "The Department of Revenue's licence page (read 2026-10-30) gives the Class F licence, minimum age 18, at $33 for up to 6 years ($16.50 for 3), the intermediate Class F licence from 16, and the nondriver ID, no minimum age, at $24. The card's term is read from the same table's 6-year column, where its $24 sits; this is a reading of the table's layout, worth checking. Not held: the 3-year licence, the 75-and-older terms, the free ID for voting.",
+ "note": "The Department of Revenue's licence page (read 2026-10-30) gives the Class F licence, minimum age 18, at $33 for up to 6 years ($16.50 for 3), the intermediate Class F licence from 16, and the nondriver ID, no minimum age, at $24. The card's term is read from the same table's 6-year column, where its $24 sits; this is a reading of the table's layout, worth checking. Not held: the 75-and-older skills test, the free ID for voting. On 2026-10-30 the licence was rewritten with the terms set by the holder's age, from the same page's expiration table: 3 years at $16.50 from 18 to 20, 6 years at $33 from 21 to 69, and 3 years at $16.50 from 70 (each band's fee the table's 3-year or 6-year column); until then it held the 6-year licence only. The card is as it was: the table gives the nondriver ID three figures of $24 under four columns (3 years, 6 years, non-expiring, duplicate), and the non-expiring card of 70 and over isn't held for that.",
  "sources": [
   {
    "url": "https://dor.mo.gov/driver-license/resources/license.html",
    "title": "Missouri DOR, Driver License: Permit/Driver License/Nondriver ID Fees",
    "read": "2026-10-30",
-   "said": "Valid up to 3 years Valid up to 6 years ... Intermediate License Class F Minimum age: 16 ... Class F Minimum age: 18 $16.50 $33 ... Nondriver ID Class ND No minimum age $24"
+   "said": "Valid up to 3 years Valid up to 6 years ... Intermediate License Class F Minimum age: 16 ... Class F Minimum age: 18 $16.50 $33 ... Nondriver ID Class ND No minimum age $24 ... A driver who is 18-20 years of age will receive a 3-year* driver license ... A driver who is 21-69 years of age will receive a 6-year* driver license ... A driver who is age 70 or over will receive a 3-year* driver license"
   }
  ]
 }

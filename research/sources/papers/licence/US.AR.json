@@ -5,27 +5,57 @@
  "licence": {
   "name": "driver's license (Class D)",
   "from": 21,
-  "fee": "40.00",
-  "validYears": 8
+  "fee": null,
+  "validYears": null,
+  "terms": [
+   {
+    "years": 8,
+    "fee": "40.00",
+    "from": 21
+   },
+   {
+    "years": 4,
+    "fee": "20.00",
+    "from": 70
+   }
+  ]
  },
  "card": {
   "name": "identification card",
-  "fee": "5.00",
-  "validYears": 4
+  "fee": null,
+  "validYears": null,
+  "terms": [
+   {
+    "years": 2,
+    "fee": "5.00",
+    "from": 5,
+    "under": 15
+   },
+   {
+    "years": 4,
+    "fee": "5.00",
+    "from": 15
+   },
+   {
+    "forLife": true,
+    "fee": "5.00",
+    "from": 60
+   }
+  ]
  },
- "note": "Driver Services' non-commercial licence page (read 2026-10-30) gives the Class D licence, ages 21 and over, at $40.00 for 8 years (ages 18 to 21, prorated to a month past the 21st birthday); it is kept from 21, the youngest age it is issued at. The identification page gives an ID, ages 21 to 59, at $5.00 for 4 years (non-expiring from 60 if not REAL ID). No youngest age for the card was read.",
+ "note": "Driver Services' non-commercial licence page (read 2026-10-30) gives the Class D licence, ages 21 and over, at $40.00 for 8 years (ages 18 to 21, prorated to a month past the 21st birthday); it is kept from 21, the youngest age it is issued at. The identification page gives an ID, ages 21 to 59, at $5.00 for 4 years (non-expiring from 60 if not REAL ID). No youngest age for the card was read. On 2026-10-30 the file was rewritten with the terms set by the holder's age, from the same pages. The licence: 8 years at $40.00 from 21, and from 70 a 4-year licence at $20.00 beside it (the page's 'Class D (Ages 70) *Optional', held as 70 and over, a reading). The card: 2 years at $5.00 from 5 to 14, 4 years at $5.00 from 15 (to 20 in a vertical format, from 21 to 59, and as a REAL ID from 60), and from 60 a non-expiring card at $5.00 that isn't a REAL ID. Until then the file held the 8-year licence and the 4-year card only.",
  "sources": [
   {
    "url": "https://www.dfa.arkansas.gov/office/driver-services/licenses-ids-permits/non-commercial-information-ncl/",
    "title": "Arkansas DFA Driver Services, Non-Commercial Information (NCL)",
    "read": "2026-10-30",
-   "said": "Class D (Ages 18-21) Prorated 1 month past the licensee’s 21 st birthday ... Class D (Ages 21+) $40.00 8 years"
+   "said": "Class D (Ages 18-21) Prorated 1 month past the licensee’s 21 st birthday ... Class D (Ages 21+) $40.00 8 years ... Class D (Ages 70) *Optional $20.00 or $40.00 4 years or 8 years"
   },
   {
    "url": "https://www.dfa.arkansas.gov/office/driver-services/licenses-ids-permits/identification-only/",
    "title": "Arkansas DFA Driver Services, Identification Only",
    "read": "2026-10-30",
-   "said": "ID (Ages 21-59) $5.00 4 Years"
+   "said": "ID (Ages 21-59) $5.00 4 Years ... ID (Ages 60+) $5.00 NonReal ID – Nonexpiring Real ID- 4 Years ... ID (Ages 5-14) $5.00 2 Years ... ID (Ages 15-20) *Vertical Format $5.00 4 Years"
   }
  ]
 }

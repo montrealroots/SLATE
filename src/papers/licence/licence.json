@@ -318,20 +318,62 @@
   "issuer": "Transport for NSW, through Service NSW",
   "licence": {
    "name": "unrestricted driver licence (Class C)",
-   "fee": {
-    "currency": "AUD",
-    "minor": 23400
-   },
-   "validYears": 5,
+   "fee": null,
+   "validYears": null,
+   "terms": [
+    {
+     "years": 1,
+     "fee": {
+      "currency": "AUD",
+      "minor": 7400
+     }
+    },
+    {
+     "years": 3,
+     "fee": {
+      "currency": "AUD",
+      "minor": 17200
+     }
+    },
+    {
+     "years": 5,
+     "fee": {
+      "currency": "AUD",
+      "minor": 23400
+     }
+    },
+    {
+     "years": 10,
+     "fee": {
+      "currency": "AUD",
+      "minor": 43400
+     },
+     "from": 21,
+     "under": 45
+    }
+   ],
    "from": 20
   },
   "card": {
    "name": "NSW Photo Card",
-   "fee": {
-    "currency": "AUD",
-    "minor": 6800
-   },
-   "validYears": 5,
+   "fee": null,
+   "validYears": null,
+   "terms": [
+    {
+     "years": 5,
+     "fee": {
+      "currency": "AUD",
+      "minor": 6800
+     }
+    },
+    {
+     "years": 10,
+     "fee": {
+      "currency": "AUD",
+      "minor": 12200
+     }
+    }
+   ],
    "from": 16
   }
  },
@@ -340,7 +382,85 @@
   "licence": {
    "name": "driver licence (Class C)",
    "fee": null,
-   "validYears": 10,
+   "validYears": null,
+   "terms": [
+    {
+     "years": 1,
+     "fee": {
+      "count": "27",
+      "unit": "NTRU"
+     }
+    },
+    {
+     "years": 2,
+     "fee": {
+      "count": "41",
+      "unit": "NTRU"
+     }
+    },
+    {
+     "years": 3,
+     "fee": {
+      "count": "16.4",
+      "unit": "NTRU"
+     },
+     "perYear": true
+    },
+    {
+     "years": 4,
+     "fee": {
+      "count": "16.4",
+      "unit": "NTRU"
+     },
+     "perYear": true
+    },
+    {
+     "years": 5,
+     "fee": {
+      "count": "82",
+      "unit": "NTRU"
+     }
+    },
+    {
+     "years": 6,
+     "fee": {
+      "count": "14.1",
+      "unit": "NTRU"
+     },
+     "perYear": true
+    },
+    {
+     "years": 7,
+     "fee": {
+      "count": "14.1",
+      "unit": "NTRU"
+     },
+     "perYear": true
+    },
+    {
+     "years": 8,
+     "fee": {
+      "count": "14.1",
+      "unit": "NTRU"
+     },
+     "perYear": true
+    },
+    {
+     "years": 9,
+     "fee": {
+      "count": "14.1",
+      "unit": "NTRU"
+     },
+     "perYear": true
+    },
+    {
+     "years": 10,
+     "fee": {
+      "count": "141",
+      "unit": "NTRU"
+     }
+    }
+   ],
    "from": 19
   }
  },
@@ -348,11 +468,45 @@
   "issuer": "the Queensland Department of Transport and Main Roads (TMR)",
   "licence": {
    "name": "open driver licence (Class C)",
-   "fee": {
-    "currency": "AUD",
-    "minor": 21200
-   },
-   "validYears": 5,
+   "fee": null,
+   "validYears": null,
+   "terms": [
+    {
+     "years": 1,
+     "fee": {
+      "currency": "AUD",
+      "minor": 9465
+     }
+    },
+    {
+     "years": 2,
+     "fee": {
+      "currency": "AUD",
+      "minor": 13200
+     }
+    },
+    {
+     "years": 3,
+     "fee": {
+      "currency": "AUD",
+      "minor": 16325
+     }
+    },
+    {
+     "years": 4,
+     "fee": {
+      "currency": "AUD",
+      "minor": 18895
+     }
+    },
+    {
+     "years": 5,
+     "fee": {
+      "currency": "AUD",
+      "minor": 21200
+     }
+    }
+   ],
    "from": 20
   },
   "card": {
@@ -368,7 +522,10 @@
   "issuer": "the Secretary to the Department of Transport and Planning (VicRoads)",
   "licence": {
    "name": "full driver licence (car)",
-   "fee": null,
+   "fee": {
+    "count": "19.15",
+    "unit": "VFU"
+   },
    "validYears": 10,
    "from": 22
   }
@@ -377,11 +534,24 @@
   "issuer": "the Western Australian Department of Transport and Major Infrastructure (DTMI)",
   "licence": {
    "name": "driver's licence (Class C)",
-   "fee": {
-    "currency": "AUD",
-    "minor": 17200
-   },
-   "validYears": 5,
+   "fee": null,
+   "validYears": null,
+   "terms": [
+    {
+     "years": 1,
+     "fee": {
+      "currency": "AUD",
+      "minor": 4940
+     }
+    },
+    {
+     "years": 5,
+     "fee": {
+      "currency": "AUD",
+      "minor": 17200
+     }
+    }
+   ],
    "from": 19
   },
   "card": {
@@ -1295,11 +1465,58 @@
   "issuer": "the Government of the Northwest Territories, Department of Infrastructure, Driver and Vehicle Services",
   "licence": {
    "name": "Class 5 driver's licence",
-   "fee": {
-    "currency": "CAD",
-    "minor": 11000
-   },
-   "validYears": 5,
+   "fee": null,
+   "validYears": null,
+   "terms": [
+    {
+     "years": 1,
+     "fee": {
+      "currency": "CAD",
+      "minor": 4600
+     },
+     "under": 60
+    },
+    {
+     "years": 3,
+     "fee": {
+      "currency": "CAD",
+      "minor": 8400
+     },
+     "under": 60
+    },
+    {
+     "years": 5,
+     "fee": {
+      "currency": "CAD",
+      "minor": 11000
+     },
+     "under": 60
+    },
+    {
+     "years": 1,
+     "fee": {
+      "currency": "CAD",
+      "minor": 2300
+     },
+     "from": 60
+    },
+    {
+     "years": 3,
+     "fee": {
+      "currency": "CAD",
+      "minor": 4300
+     },
+     "from": 60
+    },
+    {
+     "years": 5,
+     "fee": {
+      "currency": "CAD",
+      "minor": 5400
+     },
+     "from": 60
+    }
+   ],
    "from": 17
   },
   "card": {
@@ -2050,11 +2267,49 @@
   "issuer": "the Departamento de Tránsito of the Policía Nacional Civil, at its licence centres (Maycom)",
   "licence": {
    "name": "licencia de conducir tipo C",
-   "fee": {
-    "currency": "GTQ",
-    "minor": 10000
-   },
-   "validYears": 1,
+   "fee": null,
+   "validYears": null,
+   "terms": [
+    {
+     "years": 1,
+     "fee": {
+      "currency": "GTQ",
+      "minor": 10000
+     }
+    },
+    {
+     "years": 2,
+     "fee": {
+      "currency": "GTQ",
+      "minor": 18500
+     },
+     "from": 18
+    },
+    {
+     "years": 3,
+     "fee": {
+      "currency": "GTQ",
+      "minor": 26000
+     },
+     "from": 18
+    },
+    {
+     "years": 4,
+     "fee": {
+      "currency": "GTQ",
+      "minor": 32000
+     },
+     "from": 18
+    },
+    {
+     "years": 5,
+     "fee": {
+      "currency": "GTQ",
+      "minor": 39000
+     },
+     "from": 18
+    }
+   ],
    "from": 16
   }
  },
@@ -2134,11 +2389,24 @@
   "issuer": "the Dirección Nacional de Vialidad y Transporte (DNVT) of the National Police",
   "licence": {
    "name": "licencia de conducir liviana (tipo B)",
-   "fee": {
-    "currency": "HNL",
-    "minor": 60000
-   },
-   "validYears": 5,
+   "fee": null,
+   "validYears": null,
+   "terms": [
+    {
+     "years": 2,
+     "fee": {
+      "currency": "HNL",
+      "minor": 25000
+     }
+    },
+    {
+     "years": 5,
+     "fee": {
+      "currency": "HNL",
+      "minor": 60000
+     }
+    }
+   ],
    "from": 18
   }
  },
@@ -2272,15 +2540,54 @@
   "issuer": "the Department of Vehicle and Drivers' Licensing (DVDL)",
   "licence": {
    "name": "full driver's licence (groups 0–3)",
-   "fee": {
-    "currency": "KYD",
-    "minor": 20000
-   },
-   "validYears": 10,
-   "foreignFee": {
-    "currency": "KYD",
-    "minor": 75000
-   },
+   "fee": null,
+   "validYears": null,
+   "terms": [
+    {
+     "years": 1,
+     "fee": {
+      "currency": "KYD",
+      "minor": 2500
+     },
+     "foreignFee": {
+      "currency": "KYD",
+      "minor": 7500
+     }
+    },
+    {
+     "years": 3,
+     "fee": {
+      "currency": "KYD",
+      "minor": 6800
+     },
+     "foreignFee": {
+      "currency": "KYD",
+      "minor": 22500
+     }
+    },
+    {
+     "years": 5,
+     "fee": {
+      "currency": "KYD",
+      "minor": 10600
+     },
+     "foreignFee": {
+      "currency": "KYD",
+      "minor": 37500
+     }
+    },
+    {
+     "years": 10,
+     "fee": {
+      "currency": "KYD",
+      "minor": 20000
+     },
+     "foreignFee": {
+      "currency": "KYD",
+      "minor": 75000
+     }
+    }
+   ],
    "from": 17
   }
  },
@@ -2372,7 +2679,13 @@
     "minor": 0
    },
    "validYears": null,
-   "untilAge": 40,
+   "untilAge": [
+    40,
+    50,
+    60,
+    65,
+    70
+   ],
    "from": 18
   }
  },
@@ -2445,11 +2758,31 @@
   "issuer": "the Secretaría de Seguridad Pública of the State of Aguascalientes",
   "licence": {
    "name": "licencia de conducir de automovilista",
-   "fee": {
-    "currency": "MXN",
-    "minor": 60500
-   },
-   "validYears": 2,
+   "fee": null,
+   "validYears": null,
+   "terms": [
+    {
+     "years": 2,
+     "fee": {
+      "currency": "MXN",
+      "minor": 60500
+     }
+    },
+    {
+     "years": 4,
+     "fee": {
+      "currency": "MXN",
+      "minor": 98000
+     }
+    },
+    {
+     "years": 6,
+     "fee": {
+      "currency": "MXN",
+      "minor": 138000
+     }
+    }
+   ],
    "from": 18
   }
  },
@@ -2457,11 +2790,24 @@
   "issuer": "Baja California's Secretaría de Hacienda del Estado (its revenue offices)",
   "licence": {
    "name": "Licencia de conducir de automovilista",
-   "fee": {
-    "currency": "MXN",
-    "minor": 109562
-   },
-   "validYears": 3,
+   "fee": null,
+   "validYears": null,
+   "terms": [
+    {
+     "years": 3,
+     "fee": {
+      "currency": "MXN",
+      "minor": 109562
+     }
+    },
+    {
+     "years": 5,
+     "fee": {
+      "currency": "MXN",
+      "minor": 146083
+     }
+    }
+   ],
    "from": 18
   }
  },
@@ -2481,11 +2827,64 @@
   "issuer": "the Chiapas Secretaría de Finanzas (Subsecretaría de Ingresos), after the driving test before the traffic police",
   "licence": {
    "name": "licencia de automovilista",
-   "fee": {
-    "currency": "MXN",
-    "minor": 127200
-   },
-   "validYears": 2,
+   "fee": null,
+   "validYears": null,
+   "terms": [
+    {
+     "years": 1,
+     "fee": {
+      "currency": "MXN",
+      "minor": 86400
+     },
+     "from": 16,
+     "under": 18
+    },
+    {
+     "years": 1,
+     "fee": {
+      "currency": "MXN",
+      "minor": 86400
+     },
+     "for": "foreigners",
+     "from": 18
+    },
+    {
+     "years": 2,
+     "fee": {
+      "currency": "MXN",
+      "minor": 127200
+     },
+     "for": "citizens",
+     "from": 18
+    },
+    {
+     "years": 3,
+     "fee": {
+      "currency": "MXN",
+      "minor": 133000
+     },
+     "for": "citizens",
+     "from": 18
+    },
+    {
+     "years": 4,
+     "fee": {
+      "currency": "MXN",
+      "minor": 173800
+     },
+     "for": "citizens",
+     "from": 18
+    },
+    {
+     "years": 5,
+     "fee": {
+      "currency": "MXN",
+      "minor": 208800
+     },
+     "for": "citizens",
+     "from": 18
+    }
+   ],
    "from": 16
   }
  },
@@ -2493,11 +2892,31 @@
   "issuer": "Chihuahua's Secretaría de Seguridad Pública",
   "licence": {
    "name": "Licencia de conducir de automovilista",
-   "fee": {
-    "currency": "MXN",
-    "minor": 55900
-   },
-   "validYears": 1,
+   "fee": null,
+   "validYears": null,
+   "terms": [
+    {
+     "years": 1,
+     "fee": {
+      "currency": "MXN",
+      "minor": 55900
+     }
+    },
+    {
+     "years": 3,
+     "fee": {
+      "currency": "MXN",
+      "minor": 140200
+     }
+    },
+    {
+     "years": 6,
+     "fee": {
+      "currency": "MXN",
+      "minor": 187800
+     }
+    }
+   ],
    "from": 18
   }
  },
@@ -2505,11 +2924,24 @@
   "issuer": "the Secretaría de Infraestructura, Desarrollo Urbano y Movilidad of Coahuila",
   "licence": {
    "name": "licencia para conducir tipo A, chofer particular",
-   "fee": {
-    "currency": "MXN",
-    "minor": 68400
-   },
-   "validYears": 2,
+   "fee": null,
+   "validYears": null,
+   "terms": [
+    {
+     "years": 2,
+     "fee": {
+      "currency": "MXN",
+      "minor": 68400
+     }
+    },
+    {
+     "years": 4,
+     "fee": {
+      "currency": "MXN",
+      "minor": 97200
+     }
+    }
+   ],
    "from": 18
   }
  },
@@ -2529,11 +2961,24 @@
   "issuer": "the Secretaría de Movilidad (SEMOVI) of Mexico City",
   "licence": {
    "name": "licencia tipo A",
-   "fee": {
-    "currency": "MXN",
-    "minor": 114200
-   },
-   "validYears": 3,
+   "fee": null,
+   "validYears": null,
+   "terms": [
+    {
+     "years": 3,
+     "fee": {
+      "currency": "MXN",
+      "minor": 114200
+     }
+    },
+    {
+     "forLife": true,
+     "fee": {
+      "currency": "MXN",
+      "minor": 150000
+     }
+    }
+   ],
    "from": 18
   }
  },
@@ -2550,11 +2995,31 @@
   "issuer": "the Secretaría de Seguridad y Paz of the State of Guanajuato",
   "licence": {
    "name": "licencia para conducir tipo A (automovilista)",
-   "fee": {
-    "currency": "MXN",
-    "minor": 93600
-   },
-   "validYears": 2,
+   "fee": null,
+   "validYears": null,
+   "terms": [
+    {
+     "years": 2,
+     "fee": {
+      "currency": "MXN",
+      "minor": 93600
+     }
+    },
+    {
+     "years": 3,
+     "fee": {
+      "currency": "MXN",
+      "minor": 118900
+     }
+    },
+    {
+     "years": 5,
+     "fee": {
+      "currency": "MXN",
+      "minor": 142000
+     }
+    }
+   ],
    "from": 18
   }
  },
@@ -2592,11 +3057,38 @@
   "issuer": "Michoacán's state transit authority (the Dirección de Seguridad Pública y Tránsito, as the transit law names it)",
   "licence": {
    "name": "Licencia de automovilista",
-   "fee": {
-    "currency": "MXN",
-    "minor": 121600
-   },
-   "validYears": 2,
+   "fee": null,
+   "validYears": null,
+   "terms": [
+    {
+     "years": 2,
+     "fee": {
+      "currency": "MXN",
+      "minor": 121600
+     }
+    },
+    {
+     "years": 4,
+     "fee": {
+      "currency": "MXN",
+      "minor": 178000
+     }
+    },
+    {
+     "years": 5,
+     "fee": {
+      "currency": "MXN",
+      "minor": 205900
+     }
+    },
+    {
+     "forLife": true,
+     "fee": {
+      "currency": "MXN",
+      "minor": 288700
+     }
+    }
+   ],
    "from": 18
   }
  },
@@ -2604,11 +3096,38 @@
   "issuer": "the Coordinación General de Movilidad y Transporte of the State of Morelos",
   "licence": {
    "name": "licencia de conducir tipo A, automovilista",
-   "fee": {
-    "count": "4.90",
-    "unit": "UMA"
-   },
-   "validYears": 1,
+   "fee": null,
+   "validYears": null,
+   "terms": [
+    {
+     "years": 1,
+     "fee": {
+      "count": "4.90",
+      "unit": "UMA"
+     }
+    },
+    {
+     "years": 3,
+     "fee": {
+      "count": "6.40",
+      "unit": "UMA"
+     }
+    },
+    {
+     "years": 5,
+     "fee": {
+      "count": "7.90",
+      "unit": "UMA"
+     }
+    },
+    {
+     "forLife": true,
+     "fee": {
+      "count": "12.30",
+      "unit": "UMA"
+     }
+    }
+   ],
    "from": 18
   }
  },
@@ -2637,11 +3156,24 @@
   "issuer": "the Secretaría de Movilidad y Transporte of the State of Puebla",
   "licence": {
    "name": "licencia de automovilista",
-   "fee": {
-    "currency": "MXN",
-    "minor": 89500
-   },
-   "validYears": 3,
+   "fee": null,
+   "validYears": null,
+   "terms": [
+    {
+     "years": 3,
+     "fee": {
+      "currency": "MXN",
+      "minor": 89500
+     }
+    },
+    {
+     "years": 5,
+     "fee": {
+      "currency": "MXN",
+      "minor": 138500
+     }
+    }
+   ],
    "from": 18
   }
  },
@@ -2658,11 +3190,38 @@
   "issuer": "the Instituto de Movilidad del Estado de Quintana Roo (IMOVEQROO)",
   "licence": {
    "name": "licencia de automovilista",
-   "fee": {
-    "count": "5.18",
-    "unit": "UMA"
-   },
-   "validYears": 2,
+   "fee": null,
+   "validYears": null,
+   "terms": [
+    {
+     "years": 2,
+     "fee": {
+      "count": "5.18",
+      "unit": "UMA"
+     }
+    },
+    {
+     "years": 3,
+     "fee": {
+      "count": "7.77",
+      "unit": "UMA"
+     }
+    },
+    {
+     "years": 4,
+     "fee": {
+      "count": "10.36",
+      "unit": "UMA"
+     }
+    },
+    {
+     "years": 5,
+     "fee": {
+      "count": "12.95",
+      "unit": "UMA"
+     }
+    }
+   ],
    "from": 18
   }
  },
@@ -2692,11 +3251,45 @@
   "issuer": "Sonora's Secretaría de Hacienda",
   "licence": {
    "name": "Licencia de automovilista",
-   "fee": {
-    "currency": "MXN",
-    "minor": 41000
-   },
-   "validYears": 1,
+   "fee": null,
+   "validYears": null,
+   "terms": [
+    {
+     "years": 1,
+     "fee": {
+      "currency": "MXN",
+      "minor": 41000
+     }
+    },
+    {
+     "years": 2,
+     "fee": {
+      "currency": "MXN",
+      "minor": 70100
+     }
+    },
+    {
+     "years": 3,
+     "fee": {
+      "currency": "MXN",
+      "minor": 95200
+     }
+    },
+    {
+     "years": 4,
+     "fee": {
+      "currency": "MXN",
+      "minor": 119500
+     }
+    },
+    {
+     "years": 5,
+     "fee": {
+      "currency": "MXN",
+      "minor": 177300
+     }
+    }
+   ],
    "from": 18
   }
  },
@@ -2704,11 +3297,31 @@
   "issuer": "the Dirección General de la Policía Estatal de Caminos of Tabasco",
   "licence": {
    "name": "licencia de conducir de automovilista",
-   "fee": {
-    "count": "7.0",
-    "unit": "UMA"
-   },
-   "validYears": 2,
+   "fee": null,
+   "validYears": null,
+   "terms": [
+    {
+     "years": 2,
+     "fee": {
+      "count": "7.0",
+      "unit": "UMA"
+     }
+    },
+    {
+     "years": 5,
+     "fee": {
+      "count": "16.0",
+      "unit": "UMA"
+     }
+    },
+    {
+     "years": 10,
+     "fee": {
+      "count": "30.0",
+      "unit": "UMA"
+     }
+    }
+   ],
    "from": 18
   }
  },
@@ -2716,11 +3329,25 @@
   "issuer": "Tamaulipas's Secretaría de Finanzas (its tax offices)",
   "licence": {
    "name": "Licencia de conducir de automovilista",
-   "fee": {
-    "currency": "MXN",
-    "minor": 93800
-   },
-   "validYears": 2,
+   "fee": null,
+   "validYears": null,
+   "terms": [
+    {
+     "years": 2,
+     "fee": {
+      "currency": "MXN",
+      "minor": 93800
+     }
+    },
+    {
+     "forLife": true,
+     "fee": {
+      "currency": "MXN",
+      "minor": 164200
+     },
+     "for": "citizens"
+    }
+   ],
    "from": 18
   }
  },
@@ -2730,6 +3357,22 @@
    "name": "licencia de automovilista (tipo C)",
    "fee": null,
    "validYears": null,
+   "terms": [
+    {
+     "years": 2,
+     "fee": {
+      "count": "4.5",
+      "unit": "UMA"
+     }
+    },
+    {
+     "years": 5,
+     "fee": {
+      "count": "12.5",
+      "unit": "UMA"
+     }
+    }
+   ],
    "from": 18
   }
  },
@@ -2737,11 +3380,31 @@
   "issuer": "the Secretaría de Seguridad Pública of the State of Yucatán",
   "licence": {
    "name": "licencia de conducir de automovilista",
-   "fee": {
-    "currency": "MXN",
-    "minor": 84500
-   },
-   "validYears": 2,
+   "fee": null,
+   "validYears": null,
+   "terms": [
+    {
+     "years": 2,
+     "fee": {
+      "currency": "MXN",
+      "minor": 84500
+     }
+    },
+    {
+     "years": 3,
+     "fee": {
+      "currency": "MXN",
+      "minor": 126700
+     }
+    },
+    {
+     "years": 5,
+     "fee": {
+      "currency": "MXN",
+      "minor": 225200
+     }
+    }
+   ],
    "from": 18
   }
  },
@@ -2749,11 +3412,38 @@
   "issuer": "Zacatecas's Secretaría de Seguridad Pública",
   "licence": {
    "name": "Licencia de conducir de automovilista",
-   "fee": {
-    "currency": "MXN",
-    "minor": 23000
-   },
-   "validYears": 1,
+   "fee": null,
+   "validYears": null,
+   "terms": [
+    {
+     "years": 1,
+     "fee": {
+      "currency": "MXN",
+      "minor": 23000
+     }
+    },
+    {
+     "years": 2,
+     "fee": {
+      "currency": "MXN",
+      "minor": 45200
+     }
+    },
+    {
+     "years": 4,
+     "fee": {
+      "currency": "MXN",
+      "minor": 82100
+     }
+    },
+    {
+     "years": 6,
+     "fee": {
+      "currency": "MXN",
+      "minor": 98600
+     }
+    }
+   ],
    "from": 18
   }
  },
@@ -2796,11 +3486,24 @@
   "issuer": "the Federal Road Safety Corps (FRSC), the National Driver's Licence, with testing by the state's Vehicle Inspection Office and payment registered at the state Board of Internal Revenue",
   "licence": {
    "name": "National Driver's Licence, class B (motor vehicle, private)",
-   "fee": {
-    "currency": "NGN",
-    "minor": 2100000
-   },
-   "validYears": 5,
+   "fee": null,
+   "validYears": null,
+   "terms": [
+    {
+     "years": 3,
+     "fee": {
+      "currency": "NGN",
+      "minor": 1500000
+     }
+    },
+    {
+     "years": 5,
+     "fee": {
+      "currency": "NGN",
+      "minor": 2100000
+     }
+    }
+   ],
    "from": 18
   }
  },
@@ -2897,6 +3600,43 @@
    "name": "full driver's licence, Class 1",
    "fee": null,
    "validYears": null,
+   "terms": [
+    {
+     "years": 1,
+     "fee": {
+      "currency": "PGK",
+      "minor": 7000
+     }
+    },
+    {
+     "years": 2,
+     "fee": {
+      "currency": "PGK",
+      "minor": 13000
+     }
+    },
+    {
+     "years": 3,
+     "fee": {
+      "currency": "PGK",
+      "minor": 18000
+     }
+    },
+    {
+     "years": 4,
+     "fee": {
+      "currency": "PGK",
+      "minor": 23000
+     }
+    },
+    {
+     "years": 5,
+     "fee": {
+      "currency": "PGK",
+      "minor": 28000
+     }
+    }
+   ],
    "from": 19
   }
  },
@@ -2970,6 +3710,11 @@
    "name": "carta de condução (categoria B)",
    "fee": null,
    "validYears": 15,
+   "untilAge": [
+    60,
+    65,
+    70
+   ],
    "from": 18
   }
  },
@@ -3106,6 +3851,14 @@
    "name": "patente di guida, categoria B",
    "fee": null,
    "validYears": null,
+   "untilAge": [
+    30,
+    40,
+    50,
+    60,
+    65,
+    70
+   ],
    "from": 18
   }
  },
@@ -3177,11 +3930,31 @@
   "issuer": "the Uganda Driver Licensing System (UDLS), for the Ministry of Works and Transport",
   "licence": {
    "name": "driving licence (full)",
-   "fee": {
-    "currency": "UGX",
-    "minor": 330000
-   },
-   "validYears": 5,
+   "fee": null,
+   "validYears": null,
+   "terms": [
+    {
+     "years": 1,
+     "fee": {
+      "currency": "UGX",
+      "minor": 135000
+     }
+    },
+    {
+     "years": 3,
+     "fee": {
+      "currency": "UGX",
+      "minor": 230000
+     }
+    },
+    {
+     "years": 5,
+     "fee": {
+      "currency": "UGX",
+      "minor": 330000
+     }
+    }
+   ],
    "from": 18
   }
  },
@@ -3229,31 +4002,103 @@
   "issuer": "the Arkansas Department of Finance and Administration, Office of Driver Services",
   "licence": {
    "name": "driver's license (Class D)",
-   "fee": {
-    "currency": "USD",
-    "minor": 4000
-   },
-   "validYears": 8,
+   "fee": null,
+   "validYears": null,
+   "terms": [
+    {
+     "years": 8,
+     "fee": {
+      "currency": "USD",
+      "minor": 4000
+     },
+     "from": 21
+    },
+    {
+     "years": 4,
+     "fee": {
+      "currency": "USD",
+      "minor": 2000
+     },
+     "from": 70
+    }
+   ],
    "from": 21
   },
   "card": {
    "name": "identification card",
-   "fee": {
-    "currency": "USD",
-    "minor": 500
-   },
-   "validYears": 4
+   "fee": null,
+   "validYears": null,
+   "terms": [
+    {
+     "years": 2,
+     "fee": {
+      "currency": "USD",
+      "minor": 500
+     },
+     "from": 5,
+     "under": 15
+    },
+    {
+     "years": 4,
+     "fee": {
+      "currency": "USD",
+      "minor": 500
+     },
+     "from": 15
+    },
+    {
+     "forLife": true,
+     "fee": {
+      "currency": "USD",
+      "minor": 500
+     },
+     "from": 60
+    }
+   ]
   }
  },
  "US.AZ": {
   "issuer": "the Arizona Department of Transportation, Motor Vehicle Division (MVD)",
   "licence": {
    "name": "class D driver license",
-   "fee": {
-    "currency": "USD",
-    "minor": 2500
-   },
+   "fee": null,
    "validYears": null,
+   "terms": [
+    {
+     "untilAge": 65,
+     "fee": {
+      "currency": "USD",
+      "minor": 2500
+     },
+     "under": 40
+    },
+    {
+     "untilAge": 65,
+     "fee": {
+      "currency": "USD",
+      "minor": 2000
+     },
+     "from": 40,
+     "under": 45
+    },
+    {
+     "untilAge": 65,
+     "fee": {
+      "currency": "USD",
+      "minor": 1500
+     },
+     "from": 45,
+     "under": 50
+    },
+    {
+     "untilAge": 65,
+     "fee": {
+      "currency": "USD",
+      "minor": 1000
+     },
+     "from": 50
+    }
+   ],
    "from": 18
   },
   "card": {
@@ -3275,11 +4120,26 @@
   },
   "card": {
    "name": "identification card",
-   "fee": {
-    "currency": "USD",
-    "minor": 4000
-   },
-   "validYears": 6
+   "fee": null,
+   "validYears": null,
+   "terms": [
+    {
+     "years": 6,
+     "fee": {
+      "currency": "USD",
+      "minor": 4000
+     },
+     "under": 62
+    },
+    {
+     "years": 8,
+     "fee": {
+      "currency": "USD",
+      "minor": 0
+     },
+     "from": 62
+    }
+   ]
   }
  },
  "US.CO": {
@@ -3335,11 +4195,26 @@
   },
   "card": {
    "name": "non-driver ID card",
-   "fee": {
-    "currency": "USD",
-    "minor": 2000
-   },
-   "validYears": 8
+   "fee": null,
+   "validYears": null,
+   "terms": [
+    {
+     "years": 8,
+     "fee": {
+      "currency": "USD",
+      "minor": 2000
+     },
+     "under": 65
+    },
+    {
+     "years": 8,
+     "fee": {
+      "currency": "USD",
+      "minor": 0
+     },
+     "from": 65
+    }
+   ]
   }
  },
  "US.DE": {
@@ -3426,11 +4301,88 @@
   "issuer": "the Iowa Department of Transportation, Motor Vehicle Division",
   "licence": {
    "name": "operator's license (Class C)",
-   "fee": {
-    "currency": "USD",
-    "minor": 3200
-   },
-   "validYears": 8,
+   "fee": null,
+   "validYears": null,
+   "terms": [
+    {
+     "years": 2,
+     "fee": {
+      "currency": "USD",
+      "minor": 400
+     },
+     "under": 18,
+     "perYear": true
+    },
+    {
+     "years": 8,
+     "fee": {
+      "currency": "USD",
+      "minor": 400
+     },
+     "from": 18,
+     "under": 73,
+     "perYear": true
+    },
+    {
+     "years": 7,
+     "fee": {
+      "currency": "USD",
+      "minor": 400
+     },
+     "from": 73,
+     "under": 74,
+     "perYear": true
+    },
+    {
+     "years": 6,
+     "fee": {
+      "currency": "USD",
+      "minor": 400
+     },
+     "from": 74,
+     "under": 75,
+     "perYear": true
+    },
+    {
+     "years": 5,
+     "fee": {
+      "currency": "USD",
+      "minor": 400
+     },
+     "from": 75,
+     "under": 76,
+     "perYear": true
+    },
+    {
+     "years": 4,
+     "fee": {
+      "currency": "USD",
+      "minor": 400
+     },
+     "from": 76,
+     "under": 77,
+     "perYear": true
+    },
+    {
+     "years": 3,
+     "fee": {
+      "currency": "USD",
+      "minor": 400
+     },
+     "from": 77,
+     "under": 78,
+     "perYear": true
+    },
+    {
+     "years": 2,
+     "fee": {
+      "currency": "USD",
+      "minor": 400
+     },
+     "from": 78,
+     "perYear": true
+    }
+   ],
    "from": 17
   },
   "card": {
@@ -3446,40 +4398,129 @@
   "issuer": "the Idaho Transportation Department, Division of Motor Vehicles",
   "licence": {
    "name": "driver's license (Class D)",
-   "fee": {
-    "currency": "USD",
-    "minor": 6000
-   },
-   "validYears": 8,
+   "fee": null,
+   "validYears": null,
+   "terms": [
+    {
+     "years": 4,
+     "fee": {
+      "currency": "USD",
+      "minor": 3500
+     },
+     "from": 21
+    },
+    {
+     "years": 8,
+     "fee": {
+      "currency": "USD",
+      "minor": 6000
+     },
+     "from": 21,
+     "under": 63
+    }
+   ],
    "from": 21
   },
   "card": {
    "name": "identification card",
-   "fee": {
-    "currency": "USD",
-    "minor": 2500
-   },
-   "validYears": 8
+   "fee": null,
+   "validYears": null,
+   "terms": [
+    {
+     "years": 4,
+     "fee": {
+      "currency": "USD",
+      "minor": 1500
+     },
+     "from": 21
+    },
+    {
+     "years": 8,
+     "fee": {
+      "currency": "USD",
+      "minor": 2500
+     },
+     "from": 21
+    }
+   ]
   }
  },
  "US.IL": {
   "issuer": "the Illinois Secretary of State, Driver Services",
   "licence": {
    "name": "driver's license (Class D)",
-   "fee": {
-    "currency": "USD",
-    "minor": 3000
-   },
-   "validYears": 4,
+   "fee": null,
+   "validYears": null,
+   "terms": [
+    {
+     "years": 4,
+     "fee": {
+      "currency": "USD",
+      "minor": 3000
+     },
+     "from": 21,
+     "under": 69
+    },
+    {
+     "years": 4,
+     "fee": {
+      "currency": "USD",
+      "minor": 500
+     },
+     "from": 69,
+     "under": 81
+    },
+    {
+     "years": 4,
+     "fee": {
+      "currency": "USD",
+      "minor": 200
+     },
+     "from": 81,
+     "under": 87
+    },
+    {
+     "years": 1,
+     "fee": {
+      "currency": "USD",
+      "minor": 0
+     },
+     "from": 87
+    }
+   ],
    "from": 21
   },
   "card": {
    "name": "state ID card",
-   "fee": {
-    "currency": "USD",
-    "minor": 2000
-   },
-   "validYears": 5
+   "fee": null,
+   "validYears": null,
+   "terms": [
+    {
+     "years": 5,
+     "fee": {
+      "currency": "USD",
+      "minor": 500
+     },
+     "under": 18
+    },
+    {
+     "years": 5,
+     "fee": {
+      "currency": "USD",
+      "minor": 2000
+     },
+     "from": 18,
+     "under": 65
+    },
+    {
+     "forLife": true,
+     "fee": {
+      "currency": "USD",
+      "minor": 0
+     },
+     "from": 65
+    }
+   ]
   }
  },
  "US.IN": {
@@ -3503,20 +4544,51 @@
   "issuer": "the Kansas Department of Revenue, Division of Vehicles",
   "licence": {
    "name": "class C driver's license",
-   "fee": {
-    "currency": "USD",
-    "minor": 1800
-   },
-   "validYears": 6,
+   "fee": null,
+   "validYears": null,
+   "terms": [
+    {
+     "years": 6,
+     "fee": {
+      "currency": "USD",
+      "minor": 1800
+     },
+     "from": 21,
+     "under": 65
+    },
+    {
+     "years": 4,
+     "fee": {
+      "currency": "USD",
+      "minor": 1200
+     },
+     "from": 65
+    }
+   ],
    "from": 17
   },
   "card": {
    "name": "identification card",
-   "fee": {
-    "currency": "USD",
-    "minor": 1400
-   },
-   "validYears": 6
+   "fee": null,
+   "validYears": null,
+   "terms": [
+    {
+     "years": 6,
+     "fee": {
+      "currency": "USD",
+      "minor": 1400
+     },
+     "under": 65
+    },
+    {
+     "years": 6,
+     "fee": {
+      "currency": "USD",
+      "minor": 1000
+     },
+     "from": 65
+    }
+   ]
   }
  },
  "US.KY": {
@@ -3543,11 +4615,26 @@
   "issuer": "the Louisiana Office of Motor Vehicles (Department of Public Safety and Corrections)",
   "licence": {
    "name": "Class \"E\" driver's license (personal vehicle)",
-   "fee": {
-    "currency": "USD",
-    "minor": 2025
-   },
-   "validYears": 6,
+   "fee": null,
+   "validYears": null,
+   "terms": [
+    {
+     "years": 6,
+     "fee": {
+      "currency": "USD",
+      "minor": 2025
+     },
+     "under": 70
+    },
+    {
+     "years": 6,
+     "fee": {
+      "currency": "USD",
+      "minor": 675
+     },
+     "from": 70
+    }
+   ],
    "from": 17
   },
   "card": {
@@ -3603,11 +4690,26 @@
   "issuer": "the Maine Secretary of State, Bureau of Motor Vehicles",
   "licence": {
    "name": "driver's license",
-   "fee": {
-    "currency": "USD",
-    "minor": 3000
-   },
-   "validYears": 6,
+   "fee": null,
+   "validYears": null,
+   "terms": [
+    {
+     "years": 6,
+     "fee": {
+      "currency": "USD",
+      "minor": 3000
+     },
+     "under": 65
+    },
+    {
+     "years": 4,
+     "fee": {
+      "currency": "USD",
+      "minor": 2000
+     },
+     "from": 65
+    }
+   ],
    "from": 17
   },
   "card": {
@@ -3652,22 +4754,63 @@
   },
   "card": {
    "name": "identification card",
-   "fee": {
-    "currency": "USD",
-    "minor": 3550
-   },
-   "validYears": 4
+   "fee": null,
+   "validYears": null,
+   "terms": [
+    {
+     "years": 4,
+     "fee": {
+      "currency": "USD",
+      "minor": 3550
+     },
+     "from": 21,
+     "under": 65
+    },
+    {
+     "forLife": true,
+     "fee": {
+      "currency": "USD",
+      "minor": 3200
+     },
+     "from": 65
+    }
+   ]
   }
  },
  "US.MO": {
   "issuer": "the Missouri Department of Revenue, Motor Vehicle and Driver Licensing",
   "licence": {
    "name": "driver license (Class F)",
-   "fee": {
-    "currency": "USD",
-    "minor": 3300
-   },
-   "validYears": 6,
+   "fee": null,
+   "validYears": null,
+   "terms": [
+    {
+     "years": 3,
+     "fee": {
+      "currency": "USD",
+      "minor": 1650
+     },
+     "from": 18,
+     "under": 21
+    },
+    {
+     "years": 6,
+     "fee": {
+      "currency": "USD",
+      "minor": 3300
+     },
+     "from": 21,
+     "under": 70
+    },
+    {
+     "years": 3,
+     "fee": {
+      "currency": "USD",
+      "minor": 1650
+     },
+     "from": 70
+    }
+   ],
    "from": 18
   },
   "card": {
@@ -3683,20 +4826,46 @@
   "issuer": "the Mississippi Department of Public Safety, Driver Service Bureau",
   "licence": {
    "name": "Class R driver license",
-   "fee": {
-    "currency": "USD",
-    "minor": 4700
-   },
-   "validYears": 8,
+   "fee": null,
+   "validYears": null,
+   "terms": [
+    {
+     "years": 4,
+     "fee": {
+      "currency": "USD",
+      "minor": 2400
+     }
+    },
+    {
+     "years": 8,
+     "fee": {
+      "currency": "USD",
+      "minor": 4700
+     }
+    }
+   ],
    "from": 16
   },
   "card": {
    "name": "identification card",
-   "fee": {
-    "currency": "USD",
-    "minor": 3300
-   },
-   "validYears": 8
+   "fee": null,
+   "validYears": null,
+   "terms": [
+    {
+     "years": 4,
+     "fee": {
+      "currency": "USD",
+      "minor": 1700
+     }
+    },
+    {
+     "years": 8,
+     "fee": {
+      "currency": "USD",
+      "minor": 3300
+     }
+    }
+   ]
   }
  },
  "US.MT": {
@@ -3723,11 +4892,29 @@
   "issuer": "the North Carolina Division of Motor Vehicles (NCDMV)",
   "licence": {
    "name": "driver license (Class C)",
-   "fee": {
-    "currency": "USD",
-    "minor": 5200
-   },
-   "validYears": 8,
+   "fee": null,
+   "validYears": null,
+   "terms": [
+    {
+     "years": 8,
+     "fee": {
+      "currency": "USD",
+      "minor": 650
+     },
+     "from": 18,
+     "under": 66,
+     "perYear": true
+    },
+    {
+     "years": 5,
+     "fee": {
+      "currency": "USD",
+      "minor": 650
+     },
+     "from": 66,
+     "perYear": true
+    }
+   ],
    "from": 18
   },
   "card": {
@@ -3826,11 +5013,24 @@
   "issuer": "the New Mexico Motor Vehicle Division (Taxation and Revenue Department)",
   "licence": {
    "name": "driver license",
-   "fee": {
-    "currency": "USD",
-    "minor": 1800
-   },
-   "validYears": 4,
+   "fee": null,
+   "validYears": null,
+   "terms": [
+    {
+     "years": 4,
+     "fee": {
+      "currency": "USD",
+      "minor": 1800
+     }
+    },
+    {
+     "years": 8,
+     "fee": {
+      "currency": "USD",
+      "minor": 3400
+     }
+    }
+   ],
    "from": 17
   }
  },
@@ -3847,11 +5047,27 @@
   },
   "card": {
    "name": "identification card",
-   "fee": {
-    "currency": "USD",
-    "minor": 2150
-   },
-   "validYears": 8,
+   "fee": null,
+   "validYears": null,
+   "terms": [
+    {
+     "years": 8,
+     "fee": {
+      "currency": "USD",
+      "minor": 2150
+     },
+     "from": 18,
+     "under": 65
+    },
+    {
+     "years": 8,
+     "fee": {
+      "currency": "USD",
+      "minor": 1150
+     },
+     "from": 65
+    }
+   ],
    "from": 10
   }
  },
@@ -3868,22 +5084,58 @@
   },
   "card": {
    "name": "non-driver ID card",
-   "fee": {
-    "currency": "USD",
-    "minor": 1400
-   },
-   "validYears": 8
+   "fee": null,
+   "validYears": null,
+   "terms": [
+    {
+     "years": 4,
+     "fee": {
+      "currency": "USD",
+      "minor": 1000
+     },
+     "under": 62
+    },
+    {
+     "years": 8,
+     "fee": {
+      "currency": "USD",
+      "minor": 1400
+     },
+     "under": 62
+    },
+    {
+     "years": 10,
+     "fee": {
+      "currency": "USD",
+      "minor": 650
+     },
+     "from": 62
+    }
+   ]
   }
  },
  "US.OH": {
   "issuer": "the Ohio Bureau of Motor Vehicles (BMV)",
   "licence": {
    "name": "driver license (Class D)",
-   "fee": {
-    "currency": "USD",
-    "minor": 5400
-   },
-   "validYears": 8,
+   "fee": null,
+   "validYears": null,
+   "terms": [
+    {
+     "years": 4,
+     "fee": {
+      "currency": "USD",
+      "minor": 2750
+     }
+    },
+    {
+     "years": 8,
+     "fee": {
+      "currency": "USD",
+      "minor": 5400
+     }
+    }
+   ],
    "from": 21
   },
   "card": {
@@ -4041,20 +5293,51 @@
   "issuer": "the Texas Department of Public Safety (DPS)",
   "licence": {
    "name": "driver license (Class C)",
-   "fee": {
-    "currency": "USD",
-    "minor": 3300
-   },
-   "validYears": 8,
+   "fee": null,
+   "validYears": null,
+   "terms": [
+    {
+     "years": 8,
+     "fee": {
+      "currency": "USD",
+      "minor": 3300
+     },
+     "from": 18,
+     "under": 85
+    },
+    {
+     "years": 2,
+     "fee": {
+      "currency": "USD",
+      "minor": 900
+     },
+     "from": 85
+    }
+   ],
    "from": 18
   },
   "card": {
    "name": "identification card",
-   "fee": {
-    "currency": "USD",
-    "minor": 1600
-   },
-   "validYears": 6
+   "fee": null,
+   "validYears": null,
+   "terms": [
+    {
+     "years": 6,
+     "fee": {
+      "currency": "USD",
+      "minor": 1600
+     },
+     "under": 60
+    },
+    {
+     "years": 6,
+     "fee": {
+      "currency": "USD",
+      "minor": 600
+     },
+     "from": 60
+    }
+   ]
   }
  },
  "US.UT": {
@@ -4081,11 +5364,28 @@
   "issuer": "the Virginia Department of Motor Vehicles (DMV)",
   "licence": {
    "name": "driver's license (Class C)",
-   "fee": {
-    "currency": "USD",
-    "minor": 3200
-   },
-   "validYears": 8,
+   "fee": null,
+   "validYears": null,
+   "terms": [
+    {
+     "years": 8,
+     "fee": {
+      "currency": "USD",
+      "minor": 400
+     },
+     "under": 75,
+     "perYear": true
+    },
+    {
+     "years": 5,
+     "fee": {
+      "currency": "USD",
+      "minor": 400
+     },
+     "from": 75,
+     "perYear": true
+    }
+   ],
    "from": 18
   },
   "card": {
@@ -4101,11 +5401,24 @@
   "issuer": "the Vermont Department of Motor Vehicles",
   "licence": {
    "name": "operator's license",
-   "fee": {
-    "currency": "USD",
-    "minor": 6200
-   },
-   "validYears": 4,
+   "fee": null,
+   "validYears": null,
+   "terms": [
+    {
+     "years": 2,
+     "fee": {
+      "currency": "USD",
+      "minor": 3900
+     }
+    },
+    {
+     "years": 4,
+     "fee": {
+      "currency": "USD",
+      "minor": 6200
+     }
+    }
+   ],
    "from": 18
   },
   "card": {
@@ -4121,20 +5434,46 @@
   "issuer": "the Washington State Department of Licensing (DOL)",
   "licence": {
    "name": "driver license",
-   "fee": {
-    "currency": "USD",
-    "minor": 13100
-   },
-   "validYears": 8,
+   "fee": null,
+   "validYears": null,
+   "terms": [
+    {
+     "years": 6,
+     "fee": {
+      "currency": "USD",
+      "minor": 11100
+     }
+    },
+    {
+     "years": 8,
+     "fee": {
+      "currency": "USD",
+      "minor": 13100
+     }
+    }
+   ],
    "from": 18
   },
   "card": {
    "name": "identification card",
-   "fee": {
-    "currency": "USD",
-    "minor": 8100
-   },
-   "validYears": 8
+   "fee": null,
+   "validYears": null,
+   "terms": [
+    {
+     "years": 6,
+     "fee": {
+      "currency": "USD",
+      "minor": 6100
+     }
+    },
+    {
+     "years": 8,
+     "fee": {
+      "currency": "USD",
+      "minor": 8100
+     }
+    }
+   ]
   }
  },
  "US.WI": {

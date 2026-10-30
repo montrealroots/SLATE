@@ -5,15 +5,39 @@
  "licence": {
   "name": "class D driver license",
   "from": 18,
-  "fee": "25",
-  "validYears": null
+  "fee": null,
+  "validYears": null,
+  "terms": [
+   {
+    "untilAge": 65,
+    "fee": "25.00",
+    "under": 40
+   },
+   {
+    "untilAge": 65,
+    "fee": "20.00",
+    "from": 40,
+    "under": 45
+   },
+   {
+    "untilAge": 65,
+    "fee": "15.00",
+    "from": 45,
+    "under": 50
+   },
+   {
+    "untilAge": 65,
+    "fee": "10.00",
+    "from": 50
+   }
+  ]
  },
  "card": {
   "name": "nonoperating identification license",
   "fee": null,
   "validYears": null
  },
- "note": "Arizona's statutes on azleg.gov (read 2026-10-30): A.R.S. § 28-3002 sets the fee for an original or renewed class D licence by age, $25 at 39 or younger (the fee held, the age a first licence is mostly got at; $20 at 40 to 44, $15 at 45 to 49, $10 from 50); § 28-3171 makes a licence valid until the holder's 65th birthday, so it has no fixed term and validYears is null; § 28-3174 gives a person under 18 a class G (graduated) licence, so the full class D is held from 18. § 28-3165 has the department issue a nonoperating identification license to anyone without a licence and set its fee by rule; ADOT's own pages and the Arizona Administrative Code (apps.azsos.gov) both refused the request behind a Cloudflare check on 2026-10-30, so the card's fee and term are null. Not held: the age-banded fees past 39, the photo renewal ADOT asks every 12 years.",
+ "note": "Arizona's statutes on azleg.gov (read 2026-10-30): A.R.S. § 28-3002 sets the fee for an original or renewed class D licence by age, $25 at 39 or younger (the fee held, the age a first licence is mostly got at; $20 at 40 to 44, $15 at 45 to 49, $10 from 50); § 28-3171 makes a licence valid until the holder's 65th birthday, held as the age it ends at, with no fixed term (validYears null); § 28-3174 gives a person under 18 a class G (graduated) licence, so the full class D is held from 18. § 28-3165 has the department issue a nonoperating identification license to anyone without a licence and set its fee by rule; ADOT's own pages and the Arizona Administrative Code (apps.azsos.gov) both refused the request behind a Cloudflare check on 2026-10-30, so the card's fee and term are null. Not held: the age-banded fees past 39, the licence of up to five years first issued from 60 (§ 28-3171(A)(3), a most, not a term), the photo renewal ADOT asks every 12 years. On 2026-10-30 the file was rewritten with the age the licence ends at, 65: until then it held no term and no age. From 2026-10-30 (the lead, when a term could run to an age) the licence holds A.R.S. 28-3002's fees by the applicant's age as terms each running to the 65th birthday (28-3171): $25 to 39, $20 at 40 to 44, $15 at 45 to 49, $10 from 50; until then it held the $25 alone.",
  "sources": [
   {
    "url": "https://www.azleg.gov/ars/28/03002.htm",
