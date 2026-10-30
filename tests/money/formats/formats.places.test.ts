@@ -1,5 +1,6 @@
 import { describe, expect, it } from 'vitest';
 import { COUNTRY_CODES, placesOf } from '../../../src/world/gazetteer/gazetteer.ts';
+import { hasNoBank } from '../../../src/money/banks/banks.ts';
 import { aboutFormats, accountNumber, keepsFormat, payeeRefusal } from '../../../src/money/formats/formats.ts';
 
 /**
@@ -13,9 +14,10 @@ describe('account numbers', () => {
     for (const code of COUNTRY_CODES) {
       const number = accountNumber(0x5eedn, code, 'A Bank', 0);
       for (const p of await placesOf(code)) {
-        // A kept country gives a number that passes its own form; otherwise the player is told.
+        // A kept country gives a number that passes its own form; one with no bank has none to give (the banks say so);
+        // otherwise the player is told.
         if (keepsFormat(code)) expect([typeof number, payeeRefusal(p.country, number as string)], p.id).toEqual(['string', undefined]);
-        else expect([number, aboutFormats(p.country)], p.id).toEqual([undefined, expect.any(String)]);
+        else expect([number, aboutFormats(p.country)], p.id).toEqual([undefined, hasNoBank(code) ? undefined : expect.any(String)]);
         read += 1;
       }
     }

@@ -1024,6 +1024,18 @@
    "residents"
   ]
  },
+ "KN": {
+  "name": "Tax Identification Number (TIN)",
+  "issuer": "the Saint Christopher and Nevis Inland Revenue Department (SKNIRD)",
+  "format": {
+   "min": 1,
+   "pattern": "^\\d+$"
+  },
+  "when": "registration",
+  "who": [
+   "anyone"
+  ]
+ },
  "KR": {
   "name": "Resident Registration Number",
   "issuer": "the Ministry of Interior",

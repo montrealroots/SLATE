@@ -3,7 +3,7 @@ import { mkdirSync, mkdtempSync, readFileSync, writeFileSync } from 'node:fs';
 import { tmpdir } from 'node:os';
 import { join, resolve } from 'node:path';
 import { describe, expect, it } from 'vitest';
-import { APPLY, compileFree, compileResidence, FOR, OUTPUT, readResidence, serialize, SOURCES, TERM_UNITS, WORK } from '../../tools/papers/residence/compile.ts';
+import { APPLY, compileClosed, compileFree, compileResidence, FOR, OUTPUT, readResidence, serialize, SOURCES, TERM_UNITS, WORK } from '../../tools/papers/residence/compile.ts';
 import { COVERAGE, coverageOf, residenceCoverage, TESTS, TOLD } from '../../tools/papers/residence/coverage.ts';
 import { NO_PLACES } from '../../tools/papers/passports/coverage.ts';
 
@@ -21,9 +21,17 @@ describe('the residence permissions compile', () => {
     expect(() => compileFree('SJ', { country: 'NO', free: true })).toThrow();
   });
 
+  it('takes a place where no one from abroad may come to live, and a card for any purpose', () => {
+    expect(compileClosed('TF', { country: 'TF', none: true, note: 'n', sources: [] })).toStrictEqual({ none: true });
+    for (const none of [false, 'yes']) expect(() => compileClosed('TF', { country: 'TF', none }), String(none)).toThrow("TF's file says no one may come to live there only as none: true");
+    expect(() => compileClosed('TF', { country: 'TF', none: true, routes: [] })).toThrow('TF, where no one may come to live, has no term routes');
+    expect(() => compileClosed('TF', { country: 'FR', none: true })).toThrow();
+    expect(compileResidence('SN', { country: 'SN', routes: [{ id: 'card', name: "Carte d'identité d'étranger", for: 'general' }] }).routes[0]?.for).toBe('general');
+  });
+
   it('takes a country to its routes, with what the research states of each', () => {
     expect([SOURCES, OUTPUT]).toEqual(['research/sources/papers/residence', 'src/papers/residence/residence.json']);
-    expect(FOR).toEqual(['work', 'self-employed', 'talent', 'family', 'study', 'means', 'retirement', 'permanent', 'free movement']);
+    expect(FOR).toEqual(['work', 'self-employed', 'talent', 'family', 'study', 'means', 'retirement', 'permanent', 'free movement', 'general']);
     expect([APPLY, WORK, TERM_UNITS]).toEqual([['abroad', 'in country', 'either'], ['any', 'sponsor', 'none'], ['day', 'week', 'month', 'year']]);
     expect(compileResidence('GB', file())).toStrictEqual({ routes: [{ id: 'talent', name: 'Global Talent visa', for: 'talent', apply: 'either', work: 'any' }] });
     const full = { fee: '766', within: { n: 3, unit: 'week' }, term: { n: 5, unit: 'year' }, renewable: true, counts: true, permanentAfter: 3 };
@@ -77,13 +85,13 @@ describe('the residence permissions compile', () => {
     register();
     expect(readResidence(root)).toEqual({});
     mkdirSync(join(root, SOURCES), { recursive: true });
-    for (const [code, body] of [['GB', file()], ['GI', { country: 'GI', issuedBy: 'GB' }]] as const) {
+    for (const [code, body] of [['GB', file()], ['GI', { country: 'GI', issuedBy: 'GB' }], ['SJ', { country: 'SJ', free: true }], ['TF', { country: 'TF', none: true }]] as const) {
       const text = JSON.stringify(body);
       writeFileSync(join(root, SOURCES, `${code}.json`), text);
       entries.push({ fact: `papers.residence.${code}`, value: { file: `${SOURCES}/${code}.json`, sha256: createHash('sha256').update(text).digest('hex') } });
     }
     register();
-    expect(readResidence(root)).toStrictEqual({ GB: compileResidence('GB', file()), GI: { issuedBy: 'GB' } });
+    expect(readResidence(root)).toStrictEqual({ GB: compileResidence('GB', file()), GI: { issuedBy: 'GB' }, SJ: { free: true }, TF: { none: true } });
     writeFileSync(join(root, SOURCES, 'GI.json'), JSON.stringify({ country: 'GI', issuedBy: 'ES' }));
     entries[1] = { fact: 'papers.residence.GI', value: { file: `${SOURCES}/GI.json`, sha256: createHash('sha256').update(JSON.stringify({ country: 'GI', issuedBy: 'ES' })).digest('hex') } };
     register();

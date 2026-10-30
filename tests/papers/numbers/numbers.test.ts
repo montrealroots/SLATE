@@ -14,6 +14,7 @@ vi.mock('../../../src/papers/numbers/numbers.json', () => ({
     GB: { name: 'National Insurance number', issuer: 'HM Revenue and Customs', format: { length: 9, pattern: '[A-Z]{2}\\d{6}[A-D]|X' }, when: 'registration', who: ['residents'] },
     PA: { name: 'cédula', issuer: 'Tribunal Electoral', format: { length: 10, min: 3, pattern: '([1-9]|1[0-3])\\d{1,4}\\d{1,4}' }, when: 'birth', who: ['citizens'] },
     TV: { name: 'n', issuer: 'i', format: { length: 4, min: 2, pattern: '\\d+' }, when: 'birth', who: ['citizens'] },
+    KN: { name: 'n', issuer: 'i', format: { min: 1, pattern: '\\d+' }, when: 'registration', who: ['anyone'] },
     DE: { none: true },
     GU: { issuedBy: 'CA' },
     AS: { issuedBy: 'DE' },
@@ -43,6 +44,8 @@ describe('the national numbers', () => {
     expect(['89261601', '111', '1312341234', '11', '13123412341', '0261601'].map((n) => fitsNumber('PA', n))).toEqual([true, true, true, false, false, false]);
     // The length holds where the pattern is looser.
     expect(['1', '12', '1234', '12345'].map((n) => fitsNumber('TV', n))).toEqual([false, true, true, false]);
+    // No most: from its fewest up, however long.
+    expect(['', '1', '1234567890123456789012345', '12a'].map((n) => fitsNumber('KN', n))).toEqual([false, true, true, false]);
     expect(fitsNumber('GB', 'QQ123456C')).toBe(true);
     expect(fitsNumber('GB', 'QQ123456E')).toBe(false);
     expect(fitsNumber('GB', 'QQ123456CX')).toBe(false);

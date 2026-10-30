@@ -63,6 +63,12 @@ describe('the national numbers compile', () => {
     expect(compileNumber('PA', file({ country: 'PA', format: { length: 10, min: 3, pattern: 'x' } })).format).toStrictEqual({ length: 10, min: 3, pattern: 'x' });
     expect(compileNumber('PA', file({ country: 'PA', format: { length: 2, min: 1, pattern: 'x' } })).format).toStrictEqual({ length: 2, min: 1, pattern: 'x' });
     for (const min of [0, 1.5, '3', 10, 11]) expect(() => compileNumber('CA', file({ format: { length: 10, min, pattern: 'x' } })), String(min)).toThrow(`CA's number is ${String(min)} characters long at the fewest, fewer than its 10 at the most`);
+    // No most, where the source sets none: then a fewest is needed.
+    expect(compileNumber('KN', file({ country: 'KN', format: { min: 1, pattern: '\\d+' } })).format).toStrictEqual({ min: 1, pattern: '\\d+' });
+    expect(() => compileNumber('CA', file({ format: { pattern: 'x' } }))).toThrow("CA's number is a whole number of characters long");
+    // A fewest doesn't excuse a most that isn't a whole number.
+    expect(() => compileNumber('CA', file({ format: { length: 1.5, min: 1, pattern: 'x' } }))).toThrow("CA's number is a whole number of characters long");
+    for (const min of [0, 1.5]) expect(() => compileNumber('CA', file({ format: { min, pattern: 'x' } })), String(min)).toThrow(`CA's number is ${String(min)} characters long at the fewest, fewer than its undefined at the most`);
     for (const pattern of [undefined, '', 7]) expect(() => compileNumber('CA', file({ format: { length: 9, pattern } }))).toThrow("CA's number has a pattern");
     expect(() => compileNumber('CA', file({ format: { length: 9, pattern: '[0-9' } }))).toThrow("CA's pattern isn't a regular expression ([0-9)");
     expect(() => compileNumber('CA', file({ format: { length: 9, pattern: 'x', check: 'verhoeff' } }))).toThrow("CA's number is checked by verhoeff, which the game doesn't compute");

@@ -15,7 +15,8 @@ export interface ResidenceRoute {
   readonly id: string;
   /** As the government names it. */
   readonly name: string;
-  readonly for: 'work' | 'self-employed' | 'talent' | 'family' | 'study' | 'means' | 'retirement' | 'permanent' | 'free movement';
+  /** What it is for; `general` for a card given for any purpose, not tied to one. */
+  readonly for: 'work' | 'self-employed' | 'talent' | 'family' | 'study' | 'means' | 'retirement' | 'permanent' | 'free movement' | 'general';
   /** Where it is applied for; absent where the research's source doesn't say. */
   readonly apply?: 'abroad' | 'in country' | 'either';
   readonly fee?: Money;
@@ -34,19 +35,20 @@ export interface ResidenceRoute {
   readonly groups?: readonly string[];
 }
 
-const RESIDENCE = data as unknown as Record<string, { readonly routes: readonly ResidenceRoute[] } | { readonly issuedBy: string } | { readonly free: true }>;
+const RESIDENCE = data as unknown as Record<string, { readonly routes: readonly ResidenceRoute[] } | { readonly issuedBy: string } | { readonly free: true } | { readonly none: true }>;
 
 /** Whether the game keeps how someone from abroad may live in a country. */
 export const keepsResidence = (country: CountryCode) => Object.hasOwn(RESIDENCE, country);
 
 /**
  * The routes by which someone from abroad may live in a country, its own or the ones it follows; none where no permit is
- * needed at all (`needsNoPermit`); undefined where the game doesn't keep them.
+ * needed at all (`needsNoPermit`) or where no one may come to live (the player is told); undefined where the game
+ * doesn't keep them.
  */
 export function residenceRoutes(country: CountryCode): readonly ResidenceRoute[] | undefined {
   const entry = RESIDENCE[country];
   if (entry === undefined) return undefined;
-  if ('free' in entry) return [];
+  if ('free' in entry || 'none' in entry) return [];
   return 'issuedBy' in entry ? residenceRoutes(entry.issuedBy as CountryCode) : entry.routes;
 }
 
@@ -54,6 +56,11 @@ export function residenceRoutes(country: CountryCode): readonly ResidenceRoute[]
 export const needsNoPermit = (country: CountryCode): boolean | undefined => (keepsResidence(country) ? 'free' in (RESIDENCE[country] as object) : undefined);
 
 export const UNKEPT_LINE = 'residence.unkept';
+export const NONE_LINE = 'residence.none';
 
-/** What the player is told about a country whose residence routes the game doesn't keep. Nothing otherwise. */
-export const aboutResidence = (country: CountryCode): string | undefined => (keepsResidence(country) ? undefined : t(UNKEPT_LINE, { country: countryName(country) }));
+/** What the player is told about a country whose residence routes the game doesn't keep, or where no one may come to live. Nothing otherwise. */
+export function aboutResidence(country: CountryCode): string | undefined {
+  const entry = RESIDENCE[country];
+  if (entry === undefined) return t(UNKEPT_LINE, { country: countryName(country) });
+  return 'none' in entry ? t(NONE_LINE, { country: countryName(country) }) : undefined;
+}

@@ -93,8 +93,11 @@ const DATA = data as unknown as { countries: Record<string, readonly Bank[]> };
 /** Whether the game keeps a country's banks. */
 export const keepsBanks = (country: CountryCode) => Object.hasOwn(DATA.countries, country);
 
-/** A country's banks, in the order the research gives them; none where the game doesn't keep them. */
+/** A country's banks, in the order the research gives them; none where the game doesn't keep them, or there's none. */
 export const banksIn = (country: CountryCode): readonly Bank[] => DATA.countries[country] ?? [];
+
+/** Whether a place has no bank of its own, as the research reads it (the player is told). */
+export const hasNoBank = (country: CountryCode) => keepsBanks(country) && banksIn(country).length === 0;
 
 /** What the holder did over the period the fee is charged for, in the account's currency. */
 export interface Standing {
@@ -130,6 +133,10 @@ export const feeFor = (charge: Fee, standing: Standing, on: string): Money =>
   charge.waived?.some((w) => waives(w, standing)) === true ? money(charge.fee.currency as CurrencyCode, 0) : feeOn(charge, on);
 
 export const UNKEPT_LINE = 'banks.unkept';
+export const NONE_LINE = 'banks.none';
 
-/** What the player is told about a country whose banks the game doesn't keep. Nothing otherwise. */
-export const aboutBanks = (country: CountryCode): string | undefined => (keepsBanks(country) ? undefined : t(UNKEPT_LINE, { country: countryName(country) }));
+/** What the player is told about a country whose banks the game doesn't keep, or that has none. Nothing otherwise. */
+export function aboutBanks(country: CountryCode): string | undefined {
+  if (!keepsBanks(country)) return t(UNKEPT_LINE, { country: countryName(country) });
+  return hasNoBank(country) ? t(NONE_LINE, { country: countryName(country) }) : undefined;
+}

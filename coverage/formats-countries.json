@@ -1941,14 +1941,12 @@
   },
   {
    "key": "PN",
-   "status": "blocked",
+   "status": "researched",
    "register": [
-    "R-3757"
+    "R-3780"
    ],
    "tests": [
-    "tests/money/formats/formats.test.ts::account numbers > are drawn and checked in each country's own form",
-    "tests/money/formats/formats.places.test.ts::account numbers > for every place on the map",
-    "tests/money/formats/formats.test.ts::account numbers > tell the player what the game doesn't know"
+    "tests/money/banks/banks.none.test.ts::a place with no bank > has no bank to open an account at, and the player is told; its account numbers aren't missing, there are none"
    ]
   },
   {

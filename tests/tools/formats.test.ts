@@ -4,7 +4,7 @@ import { tmpdir } from 'node:os';
 import { join, resolve } from 'node:path';
 import { describe, expect, it } from 'vitest';
 import { compileCountry, iban, KINDS, national, OUTPUT, readFormats, resolve as resolveForms, serialize, SOURCES, span, structure } from '../../tools/money/formats/compile.ts';
-import { COVERAGE, coverageOf, formatsCoverage, serializeCoverage, TESTS, TOLD } from '../../tools/money/formats/coverage.ts';
+import { COVERAGE, coverageOf, formatsCoverage, NO_BANK, noBankIn, serializeCoverage, TESTS, TOLD } from '../../tools/money/formats/coverage.ts';
 import { NO_PLACES } from '../../tools/papers/passports/coverage.ts';
 
 const ROOT = resolve(import.meta.dirname, '../..');
@@ -206,6 +206,13 @@ describe('the account formats coverage', () => {
       { key: 'DE', status: 'pending' },
     ]);
     expect(formatsCoverage(['GB'], new Set(['GB']), new Set(['GB']), new Map())).toStrictEqual([{ key: 'GB', status: 'pending' }]);
+    // A place with no bank of its own is researched on the banks' fact, with nothing to number; without that fact, not.
+    const banked = new Map([['money.banks.PN', 'R-9'], ['money.formats.blocked.TK', 'R-8']]);
+    expect(formatsCoverage(['PN', 'TK'], new Set(['PN', 'TK']), new Set(), banked, new Set(['PN', 'TK']))).toStrictEqual([
+      { key: 'PN', status: 'researched', register: ['R-9'], tests: [NO_BANK] },
+      { key: 'TK', status: 'blocked', register: ['R-8'], tests: [...TESTS, TOLD] },
+    ]);
+    expect(noBankIn({ PN: [], GB: [{}], TK: [] })).toStrictEqual(new Set(['PN', 'TK']));
   });
 
   it('writes the matrix the repository holds', () => {

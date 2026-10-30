@@ -954,6 +954,29 @@ Wave 10 (2026-10-30, eight research subagents and the lead's form work):
   maximum; Brunei's licence age built from its stages; Romania's and Brunei's licence law read in secondary copies;
   Palestine's number on Landinfo (oral ministry statements).
 
+Wave 11 (2026-10-30, the lead's form work and two research subagents):
+
+- The three form gaps of wave 10 are closed, each where the fact lives and nowhere else. Residence: a card for any
+  purpose, not tied to one, is `for: 'general'` (Senegal's carte d'identité d'étranger, Liberia's residence permit,
+  Cameroon's carte de séjour, the British Indian Ocean Territory's permit under its Immigration Order 2004, quoted in
+  its Supreme Court's judgment of 31 March 2026, which struck down the Constitution Order's "no right of abode"); a
+  place where no one from abroad may come to live is `{ none: true }` and the player is told (`residence.none`: the
+  French Southern Territories, "sans population permanente" by the TAAF's own pages). Numbers: a `format` may give `min`
+  with no `length` where the source sets no most (Saint Kitts and Nevis's tax number, "from one digit upwards"). Banks:
+  a place with no bank of its own is `{ none: true }` and the player is told (`banks.none`: Pitcairn, by the UN working
+  paper of January 2026 quoting the administering Power); the account formats read that fact rather than keep a second
+  copy of it (`hasNoBank`; such a place's formats row is researched on the banks' fact, and the formats say nothing to
+  the player, there being nothing to number). Every change is mutation-tested at 100%.
+- Held, and why: the Cocos Islands' banks `none` (`research/held/money/banks/CC.json`): a Commonwealth Bank agency
+  serves the islands and their account format follows Australia's, so `none` would tell the player no account can be
+  opened while the formats draw one; the banks' form needs its own `follows` (a territory served by another country's
+  banks) before the Cocos Islands, Christmas Island and Norfolk Island can be written there. Blocked with today's five
+  attempts: banks TK (PacLII's Tokelau Banking Rules 2004 name a Tokelau Savings Bank, behind Cloudflare; a web-archive
+  snapshot of 2025-01-30 exists), TF (the TAAF mission guide sends staff to banks in France or Réunion without saying
+  the territory has none), GS.
+- Standing: numbers 147 researched, 46 blocked, 53 pending; residence 183, 16, 47; licences 90, 9, 147; formats 149, 77,
+  20 (Pitcairn's on the banks' fact; its stale formats blocker R-3757 taken out); banks 224, 22, 0.
+
 The older next steps below are kept as they were written.
 
 1. The weather's blockers

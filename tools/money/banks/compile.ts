@@ -34,6 +34,9 @@ import { amount as above, charge, percent, RATE_PERIODS, type Charge, type RateP
  * known; a threshold (a limit, a deposit, a minimum, the figure interest is paid above) is above nothing, since one at
  * nothing is no threshold and is left out. A share abroad is the cards' charge (tools/money/cards), its floor and ceiling
  * `min` and `max`. Nothing else is taken, so a misspelt term isn't read as one the bank doesn't state.
+ *
+ * A place with no bank of its own, where its source says so, is `none` (from 2026-10-30; until then such a place could
+ * only be blocked): it compiles to no banks, and the player is told there's none.
  */
 export const SOURCES = 'research/sources/money/banks';
 export const OUTPUT = 'src/money/banks/banks.json';
@@ -304,10 +307,15 @@ export function bank(b: unknown, home: CurrencyCode, what: string): Bank {
   return out;
 }
 
-/** A country's file: its banks, none named twice. */
+/** A country's file: its banks, none named twice; or none at all, where its source says it has no bank of its own. */
 export function compileCountry(code: string, file: Record<string, unknown>): Bank[] {
   if (!Object.hasOwn(countries, code)) throw new Error(`${code} is not a country on the map`);
   if (file['country'] !== code) throw new Error(`${code}'s file is for ${String(file['country'])}`);
+  if ('none' in file) {
+    if (file['none'] !== true) throw new Error(`${code}'s file says it has no bank only as none: true`);
+    for (const k of Object.keys(file)) if (!['country', 'none', 'note', 'sources'].includes(k)) throw new Error(`${code}, which has no bank, has no term ${k}`);
+    return [];
+  }
   const home = (countries as Record<string, { currency: string }>)[code]?.currency as CurrencyCode;
   const list = file['banks'];
   if (!Array.isArray(list) || list.length === 0) throw new Error(`${code} names no bank`);

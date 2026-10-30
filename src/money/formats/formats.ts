@@ -1,5 +1,6 @@
 import { t } from '../../core/text/text.ts';
 import { countryName, type CountryCode } from '../../world/gazetteer/gazetteer.ts';
+import { hasNoBank } from '../banks/banks.ts';
 import data from './formats.json' with { type: 'json' };
 import { draw, refusal, type Format, type Refusal } from './number.ts';
 
@@ -9,7 +10,8 @@ import { draw, refusal, type Format, type Refusal } from './number.ts';
  * (its prefix, its length and its BBAN's structure, with where the bank's own code sits in it), else the national
  * number the country's central bank or bankers' association states, part by part. A new account's number is drawn from
  * the life's seed (decider money.account), and a payee's number is checked against its country's form before a
- * transfer is sent. A country whose form the game doesn't keep has none here, and the player is told.
+ * transfer is sent. A country whose form the game doesn't keep has none here, and the player is told; one with no bank
+ * of its own (the banks' `none`) has no account to number, and the banks tell the player so.
  */
 
 const DATA = data as unknown as { countries: Record<string, Format> };
@@ -34,5 +36,6 @@ export const payeeRefusal = (country: CountryCode, text: string): Refusal | unde
 
 export const UNKEPT_LINE = 'formats.unkept';
 
-/** What the player is told about a country whose account numbers the game doesn't keep. Nothing otherwise. */
-export const aboutFormats = (country: CountryCode): string | undefined => (keepsFormat(country) ? undefined : t(UNKEPT_LINE, { country: countryName(country) }));
+/** What the player is told about a country whose account numbers the game doesn't keep. Nothing otherwise, nor where there's no bank to keep them. */
+export const aboutFormats = (country: CountryCode): string | undefined =>
+  keepsFormat(country) || hasNoBank(country) ? undefined : t(UNKEPT_LINE, { country: countryName(country) });

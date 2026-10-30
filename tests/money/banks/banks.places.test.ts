@@ -13,8 +13,8 @@ describe('banks', () => {
     for (const code of COUNTRY_CODES) {
       const banks = banksIn(code);
       for (const p of await placesOf(code)) {
-        // A kept country has a bank to open an account at; otherwise the player is told.
-        if (keepsBanks(code)) expect(banks.length, p.id).toBeGreaterThan(0);
+        // A kept country has a bank to open an account at, or has none and the player is told; otherwise the player is told.
+        if (keepsBanks(code) && banks.length > 0) expect(aboutBanks(p.country), p.id).toBeUndefined();
         else expect([banks, aboutBanks(p.country)], p.id).toEqual([[], expect.any(String)]);
         read += 1;
       }

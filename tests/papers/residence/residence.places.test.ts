@@ -15,8 +15,8 @@ describe('the residence permissions', () => {
       const kept = keepsResidence(code);
       for (const p of await placesOf(code)) {
         expect(routes === undefined, p.id).toBe(!kept);
-        // A country kept offers at least one route, or needs no permit at all; one not kept says so.
-        expect(routes !== undefined ? routes.length > 0 || needsNoPermit(code) === true : aboutResidence(p.country) !== undefined, p.id).toBe(true);
+        // A country kept offers at least one route, or needs no permit at all, or says no one may come; one not kept says so.
+        expect(routes !== undefined && routes.length > 0 ? true : needsNoPermit(code) === true || aboutResidence(p.country) !== undefined, p.id).toBe(true);
         read += 1;
       }
     }

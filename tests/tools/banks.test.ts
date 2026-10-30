@@ -96,6 +96,11 @@ describe('the banks compile', () => {
     expect(() => compileCountry('XX', { country: 'XX', banks: [] })).toThrow('XX is not a country on the map');
     expect(() => compileCountry('DE', { country: 'FR', banks: [] })).toThrow("DE's file is for FR");
     for (const banks of [undefined, [], 'x']) expect(() => compileCountry('DE', { country: 'DE', banks }), JSON.stringify(banks)).toThrow('DE names no bank');
+    // A place with no bank of its own, where its source says so: no banks, and nothing else.
+    expect(compileCountry('PN', { country: 'PN', none: true, note: 'n', sources: [] })).toStrictEqual([]);
+    for (const none of [false, 'yes']) expect(() => compileCountry('PN', { country: 'PN', none }), String(none)).toThrow("PN's file says it has no bank only as none: true");
+    expect(() => compileCountry('PN', { country: 'PN', none: true, banks: [] })).toThrow('PN, which has no bank, has no term banks');
+    expect(() => compileCountry('PN', { country: 'NZ', none: true })).toThrow("PN's file is for NZ");
     expect(() => compileCountry('DE', { country: 'DE', banks: [{ bank: 'B', account: 'A', fees: [] }, { bank: 'B', account: 'A', fees: [{ fee: '1', per: 'month' }] }] })).toThrow("DE names B's A twice");
     expect(() => compileCountry('DE', { country: 'DE', banks: [{ bank: 'B', account: 'A', fees: [] }, { bank: 'B', account: '' }] })).toThrow("DE's bank 1 names the account the bank sells");
     // Two banks may sell an account of the same name.

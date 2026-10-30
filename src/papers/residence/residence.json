@@ -944,8 +944,26 @@
     "id": "carte-de-resident",
     "name": "Carte de Résident",
     "for": "permanent",
+    "fee": {
+     "currency": "XAF",
+     "minor": 750000
+    },
     "term": {
      "n": 10,
+     "unit": "year"
+    },
+    "renewable": true
+   },
+   {
+    "id": "carte-de-sejour",
+    "name": "Carte de Séjour",
+    "for": "general",
+    "fee": {
+     "currency": "XAF",
+     "minor": 300000
+    },
+    "term": {
+     "n": 2,
      "unit": "year"
     },
     "renewable": true
@@ -2233,6 +2251,20 @@
    }
   ]
  },
+ "IO": {
+  "routes": [
+   {
+    "id": "permit",
+    "name": "Permit",
+    "for": "general",
+    "term": {
+     "n": 4,
+     "unit": "year"
+    },
+    "renewable": true
+   }
+  ]
+ },
  "IS": {
   "routes": [
    {
@@ -2658,6 +2690,24 @@
     "term": {
      "n": 1,
      "unit": "year"
+    },
+    "renewable": true
+   }
+  ]
+ },
+ "LR": {
+  "routes": [
+   {
+    "id": "residence-permit",
+    "name": "Residence Permit",
+    "for": "general",
+    "fee": {
+     "currency": "USD",
+     "minor": 75000
+    },
+    "within": {
+     "n": 7,
+     "unit": "working day"
     },
     "renewable": true
    }
@@ -4336,6 +4386,20 @@
    }
   ]
  },
+ "SN": {
+  "routes": [
+   {
+    "id": "carte-d-identite-d-etranger",
+    "name": "Carte d'identité d'étranger",
+    "for": "general",
+    "apply": "in country",
+    "fee": {
+     "currency": "XOF",
+     "minor": 15000
+    }
+   }
+  ]
+ },
  "SO": {
   "routes": [
    {
@@ -4432,6 +4496,9 @@
     "renewable": true
    }
   ]
+ },
+ "TF": {
+  "none": true
  },
  "TG": {
   "routes": [

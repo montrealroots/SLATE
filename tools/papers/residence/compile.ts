@@ -11,14 +11,15 @@ import { amount, checkCountry, checkIssuers, compileIssued, currencyIn, isRecord
  * its term, its renewal, whether its years count toward naturalisation and after how many it leads to permanent
  * residence. The routes a performer could use come first in the research (work, self-employed or talent, free movement,
  * permanent), then family and means. A free movement route names the groups whose citizens it is for. A territory whose
- * permits are another country's says whose (`issuedBy`); a place needing no permit at all says so (`free`). A term a
- * source doesn't state is left out, never guessed. No file was written when the engine was built (2026-10-30); then
- * nothing is compiled.
+ * permits are another country's says whose (`issuedBy`); a place needing no permit at all says so (`free`), and one
+ * where no one from abroad may come to live by any route says that (`none`). A residence card a country gives for any
+ * purpose, not tied to one, is `general` (Senegal's carte d'identité d'étranger). A term a source doesn't state is left
+ * out, never guessed. No file was written when the engine was built (2026-10-30); then nothing is compiled.
  */
 export const SOURCES = 'research/sources/papers/residence';
 export const OUTPUT = 'src/papers/residence/residence.json';
 
-export const FOR = ['work', 'self-employed', 'talent', 'family', 'study', 'means', 'retirement', 'permanent', 'free movement'] as const;
+export const FOR = ['work', 'self-employed', 'talent', 'family', 'study', 'means', 'retirement', 'permanent', 'free movement', 'general'] as const;
 export const APPLY = ['abroad', 'in country', 'either'] as const;
 export const WORK = ['any', 'sponsor', 'none'] as const;
 export const TERM_UNITS = ['day', 'week', 'month', 'year'] as const;
@@ -55,7 +56,12 @@ export interface Free {
   free: true;
 }
 
-export type Entry = Residence | Issued | Free;
+/** A place where no one from abroad may come to live by any route (one with no population of its own to join). */
+export interface Closed {
+  none: true;
+}
+
+export type Entry = Residence | Issued | Free | Closed;
 
 const ROUTE = ['id', 'name', 'for', 'apply', 'fee', 'within', 'term', 'renewable', 'work', 'counts', 'permanentAfter', 'groups'];
 
@@ -117,10 +123,18 @@ export function compileFree(code: string, file: Record<string, unknown>): Free {
   return { free: true };
 }
 
+/** A file saying that no one from abroad may come to live there by any route. */
+export function compileClosed(code: string, file: Record<string, unknown>): Closed {
+  checkCountry(code, file);
+  if (file['none'] !== true) throw new Error(`${code}'s file says no one may come to live there only as none: true`);
+  only(file, ['country', 'none', 'note', 'sources'], `${code}, where no one may come to live,`);
+  return { none: true };
+}
+
 /** The residence routes of every file the register cites and checks. */
 export function readResidence(root: string): Record<string, Entry> {
   const out: Record<string, Entry> = {};
-  for (const [code, file] of readCited(root, SOURCES, 'papers.residence.')) out[code] = 'issuedBy' in file ? compileIssued(code, file, 'permits') : 'free' in file ? compileFree(code, file) : compileResidence(code, file);
+  for (const [code, file] of readCited(root, SOURCES, 'papers.residence.')) out[code] = 'issuedBy' in file ? compileIssued(code, file, 'permits') : 'free' in file ? compileFree(code, file) : 'none' in file ? compileClosed(code, file) : compileResidence(code, file);
   checkIssuers(out, 'permits');
   return out;
 }
