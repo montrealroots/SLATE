@@ -336,13 +336,13 @@ restarts. Read `CLAUDE.md` and the owner's package in `docs/` first.
   (research/sources/money/credit/<CC>.json, register facts money.credit.<CC>), compiled by `tools/money/credit`. A late
   payment marks the record for the country's years; the record's standing is the game's reading, said as the game's: 1000
   less 250 for each mark still kept, down to 0, which prices a card's range (`priced`).
-  Matrix (2026-10-30): 134 researched (US, GB, CA, AU, IE, DE, FR, ES, IT, NL, BE, FI, JP, CN, SE, DK, MX, BR, PL,
+  Matrix (2026-10-30): 135 researched (US, GB, CA, AU, IE, DE, FR, ES, IT, NL, BE, FI, JP, CN, SE, DK, MX, BR, PL,
   AT, HU, CH, RO, SI, HR, GR, NO, CZ, BG, SK, LT, LV, EE, PT, LU, IS, IN, KR, SG, MY, TW, PH, TH, PK, VN, AR, UY,
   CO, PE, SV, DO, PY, EC, IL, TR, SA, XK, KE, ZA, UG, TZ, GY, RW, JM, BB, AG, DM, GD, KN, LC, VC, AI, MS, RU, NZ,
   BJ, BF, CI, GW, ML, NE, SN, TG, NA, MU, KZ, GE, AM, RS, AL, MD, UZ, MN, AZ, LK, KH, BH, OM, NI, HN, CM, CF, CG,
-  GA, GQ, TD, AX, BZ, LR, TL, DZ, SD, PS, LB, LY, YE, FJ, SC; PR, GU, VI, AS, MP under the FCRA, whose "State" takes
-  in every territory; GF, GP, MQ, RE, YT, BL, MF, PM through the IEDOM and NC, PF, WF through the IEOM, on the
-  FICP's rules), 6 proven, 41 blocked, 71 pending.
+  GA, GQ, TD, AX, BZ, LR, TL, DZ, SD, PS, LB, LY, YE, FJ, SC, CY; PR, GU, VI, AS, MP under the FCRA, whose "State"
+  takes in every territory; GF, GP, MQ, RE, YT, BL, MF, PM through the IEDOM and NC, PF, WF through the IEOM, on the
+  FICP's rules), 6 proven, 63 blocked, 48 pending.
   Where the country's own regulator or law shows no bureau
   or registry keeps a person's record of credit, the file says so (`none: true`, nothing else), a late payment there
   marks nothing, and the player is told so (`credit.none`): Luxembourg, whose central bank says it has no register of
@@ -371,6 +371,18 @@ restarts. Read `CLAUDE.md` and the owner's package in `docs/` first.
   Algeria, Sudan, Palestine, Lebanon, Libya and Yemen are read in the IFC and Arab Monetary Fund's Arab Credit Reporting Guide (2015),
   registered as secondary, quoting each regulator's rule; Liberia in its central bank's 2009 guidelines; Timor-Leste
   in its central bank's page on Instruction 3/2009.
+  Cyprus is the Central Bank's ARTEMIS directive (Κ.Δ.Π. 243/2024), read in the Official Gazette's copy on CyLaw.
+  Blocked (`money.credit.blocked.<CC>`, each after all five methods, the player told the record isn't known): MT, HK,
+  ID, CX, CC, NF, LI, MC, AD, SM, CL, CR, AE, NG, BW, GH, MA, TN, SL, MZ, UA, KW, BY, KG, QA, JO, EG, MK, ME, BA, NP, GT,
+  BO, PA, GG, JE, IM, GI, GL, FO, SJ (batch 1); BS, ZM, MW, BD, ET, TT, TJ, BT, MO, ZW, SZ, MG, PG, LA, MM, SB, WS, AW,
+  CW, SX, HT, VE (batch 2, 2026-10-30). Leads to retry: the Bahamas' 2017 Bill says five years after settlement (the Act
+  as passed is behind laws.bahamas.gov.bs's 403); Haiti's Circular 105-2 sets monthly reporting but no keeping period;
+  Zambia's Act s.26 and Malawi's Act are behind unreachable or Cloudflare'd LII copies.
+  Pending (48), the web search budget of the 2026-10-30 session spent before their searches: AF, AO, BI, BM, BN, BQ, CD,
+  CK, CU, CV, DJ, EH, ER, FK, FM, GM, GN, GS, IO, IQ, IR, KI, KM, KP, KY, LS, MH, MR, MV, NR, NU, PN, PW, SH, SO, SR,
+  SS, ST, SY, TC, TF, TK, TM, TO, TV, VA, VG, VU. Notes already made: Brunei's Direction 1/2012 notice (members keep
+  data five years); the Maldives' CIB (monthly, no period); Lesotho's 2013 Regulations leave periods to the Central
+  Bank's standards; Iraq, Mauritania and Syria's sections of the Arab guide state no period.
  A monthly reporting cycle with no stated threshold
   (Britain's status codes, Ireland's Central Credit Register, Equifax Canada's 30-day reporting) is written as 30 days;
   Germany's 28 is BDSG § 31's four weeks from a first reminder sent at the due date. canada.ca refuses this

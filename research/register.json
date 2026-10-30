@@ -68269,6 +68269,890 @@
      "quotes": "https://www.centralbank.gov.ye/"
     }
    ]
+  },
+  {
+   "id": "R-2380",
+   "fact": "money.credit.blocked.BS",
+   "sought": "The credit records of Bahamas: the bureau that keeps them, when a late payment is reported, and how long it stays",
+   "status": "blocked",
+   "attempts": [
+    {
+     "method": "institution",
+     "tried": "centralbankbahamas.com: the 2020 synopsis of the Credit Reporting Act 2018 and Regulations 2019 (cdn copy); the 2019 Regulations' viewPDF link; the 2017 Credit Reporting Bill (cdn copy)",
+     "result": "The synopsis says the Act sets how long information is kept, without the period; the Regulations' link answered 404; the 2017 Bill's s.27 bars disclosure more than five years after a credit's termination or settlement, but it is the Bill, not the Act as passed.",
+     "date": "2026-10-30"
+    },
+    {
+     "method": "official-register",
+     "tried": "The laws of The Bahamas (laws.bahamas.gov.bs) for the Act as passed (No. 3 of 2018)",
+     "result": "403 on every page tried, as is bahamas.gov.bs.",
+     "date": "2026-10-30"
+    },
+    {
+     "method": "web-search",
+     "tried": "'Bahamas Credit Reporting Act 2018 retention period adverse information years'",
+     "result": "Results name the Act, the Regulations and CRIF's brochure, none with the enacted period; a further query on the Act's 'seven years'/'five years' found none.",
+     "date": "2026-10-30"
+    },
+    {
+     "method": "trade-press",
+     "tried": "CRIF Information Services Bahamas' brochure (archive.combankltd.com) and Commonwealth Bank's credit bureau page",
+     "result": "The brochure gave no answer, and the web fetcher got 503; the bank's page links its own terms and fees only.",
+     "date": "2026-10-30"
+    },
+    {
+     "method": "archive",
+     "tried": "archive.org's Wayback availability API for https://www.centralbankbahamas.com/viewPDF/documents/2019-06-18-05-00-24-Credit-Reporting-Regulations.pdf; https://laws.bahamas.gov.bs/cms/",
+     "result": "https://www.centralbankbahamas.com/viewPDF/documents/2019-06-18-05-00-24-Credit-Reporting-Regulations.pdf: snapshot 20250616151702; https://laws.bahamas.gov.bs/cms/: snapshot 20261020115504. web.archive.org, which serves the snapshots, is refused by this environment's egress (no answer over HTTPS, 403 over HTTP, retested 2026-10-30), so none could be read.",
+     "date": "2026-10-30"
+    }
+   ],
+   "notModeled": "credit.unkept"
+  },
+  {
+   "id": "R-2381",
+   "fact": "money.credit.blocked.ZM",
+   "sought": "The credit records of Zambia: the bureau that keeps them, when a late payment is reported, and how long it stays",
+   "status": "blocked",
+   "attempts": [
+    {
+     "method": "institution",
+     "tried": "Bank of Zambia (boz.zm) home page",
+     "result": "Reached, 9.9KB, with no credit-reporting rule linked.",
+     "date": "2026-10-30"
+    },
+    {
+     "method": "official-register",
+     "tried": "The Credit Reporting Act 2018 on ZambiaLII (old.zambialii.org/node/13453), Parliament (parliament.gov.zm/node/7627) and PolicyVault's PDF of the Act",
+     "result": "No answer from any of the three, and the web fetcher got 503 for the PDF.",
+     "date": "2026-10-30"
+    },
+    {
+     "method": "web-search",
+     "tried": "'Zambia Credit Reporting Act 2018 retention of credit information years negative'",
+     "result": "Results show s.26 'Retention period of credit information by credit reporting agency' only as a heading; a second query found the same headings and an unattributed 'ten years'.",
+     "date": "2026-10-30"
+    },
+    {
+     "method": "trade-press",
+     "tried": "Afriwise's note on credit referencing and regalert.today's summary among the results",
+     "result": "A secondary summary speaks of seven years after settlement, without quoting the Act; regalert.today answers with a Vercel security check.",
+     "date": "2026-10-30"
+    },
+    {
+     "method": "archive",
+     "tried": "archive.org's Wayback availability API for https://old.zambialii.org/node/13453; https://www.parliament.gov.zm/node/7627",
+     "result": "https://old.zambialii.org/node/13453: snapshot 20231206010635; https://www.parliament.gov.zm/node/7627: snapshot 20260813181347. web.archive.org, which serves the snapshots, is refused by this environment's egress (no answer over HTTPS, 403 over HTTP, retested 2026-10-30), so none could be read.",
+     "date": "2026-10-30"
+    }
+   ],
+   "notModeled": "credit.unkept"
+  },
+  {
+   "id": "R-2382",
+   "fact": "money.credit.blocked.MW",
+   "sought": "The credit records of Malawi: the bureau that keeps them, when a late payment is reported, and how long it stays",
+   "status": "blocked",
+   "attempts": [
+    {
+     "method": "institution",
+     "tried": "Reserve Bank of Malawi (rbm.mw) home page",
+     "result": "Reached, with no credit-reference rule linked.",
+     "date": "2026-10-30"
+    },
+    {
+     "method": "official-register",
+     "tried": "The Credit Reference Bureau Act 2010 (Cap. 46:09) on MalawiLII, as consolidated to 2017",
+     "result": "The source document answered with a Cloudflare 'Just a moment' check, not passed.",
+     "date": "2026-10-30"
+    },
+    {
+     "method": "web-search",
+     "tried": "'Malawi Credit Reference Bureau Act 2010 negative information retained years'",
+     "result": "Results give the Act's dates and definitions and a 2015 amendment, no retention period.",
+     "date": "2026-10-30"
+    },
+    {
+     "method": "trade-press",
+     "tried": "Nation Online (mwnation.com) among the results, and regalert.today's text of the Act",
+     "result": "The press items speak of bureaus awaiting data, no period; regalert.today answers with a Vercel security check.",
+     "date": "2026-10-30"
+    },
+    {
+     "method": "archive",
+     "tried": "archive.org's Wayback availability API for https://malawilii.org/akn/mw/act/2010/18/eng@2017-12-31",
+     "result": "https://malawilii.org/akn/mw/act/2010/18/eng@2017-12-31: snapshot 20251210085027. web.archive.org, which serves the snapshots, is refused by this environment's egress (no answer over HTTPS, 403 over HTTP, retested 2026-10-30), so none could be read.",
+     "date": "2026-10-30"
+    }
+   ],
+   "notModeled": "credit.unkept"
+  },
+  {
+   "id": "R-2383",
+   "fact": "money.credit.blocked.BD",
+   "sought": "The credit records of Bangladesh: the bureau that keeps them, when a late payment is reported, and how long it stays",
+   "status": "blocked",
+   "attempts": [
+    {
+     "method": "institution",
+     "tried": "Bangladesh Bank (bb.org.bd): the home page and its Credit Information Bureau pages (/departments/cib, /financialactivity/creditinformation)",
+     "result": "The home page was reached; both CIB paths answered 404.",
+     "date": "2026-10-30"
+    },
+    {
+     "method": "official-register",
+     "tried": "The Laws of Bangladesh (bdlaws.minlaw.gov.bd)",
+     "result": "Reached; it holds acts, and the CIB's reporting rules are Bangladesh Bank circulars, not found there.",
+     "date": "2026-10-30"
+    },
+    {
+     "method": "web-search",
+     "tried": "'Bangladesh Bank CIB credit information bureau circular default classified loan remains report years after adjustment'",
+     "result": "Results are on loan classification and default totals; none states how long the CIB keeps a record.",
+     "date": "2026-10-30"
+    },
+    {
+     "method": "trade-press",
+     "tried": "The Daily Star, TBS News and The Financial Express among the results",
+     "result": "Classification thresholds and stay orders against CIB listing; no retention period.",
+     "date": "2026-10-30"
+    },
+    {
+     "method": "archive",
+     "tried": "archive.org's Wayback availability API for https://www.bb.org.bd/en/index.php/departments/cib",
+     "result": "https://www.bb.org.bd/en/index.php/departments/cib: no snapshot listed. web.archive.org, which serves the snapshots, is refused by this environment's egress (no answer over HTTPS, 403 over HTTP, retested 2026-10-30), so none could be read.",
+     "date": "2026-10-30"
+    }
+   ],
+   "notModeled": "credit.unkept"
+  },
+  {
+   "id": "R-2384",
+   "fact": "money.credit.blocked.ET",
+   "sought": "The credit records of Ethiopia: the bureau that keeps them, when a late payment is reported, and how long it stays",
+   "status": "blocked",
+   "attempts": [
+    {
+     "method": "institution",
+     "tried": "National Bank of Ethiopia: its Credit Reference and Movable Collateral Registry Directorate page",
+     "result": "Reached; it names the directorate but links no directive text.",
+     "date": "2026-10-30"
+    },
+    {
+     "method": "official-register",
+     "tried": "The Credit Reference Bureau Directive CRB/02/2019 on nbe.gov.et",
+     "result": "No copy of the directive was found on the bank's site; regalert.today lists it but answers with a Vercel security check.",
+     "date": "2026-10-30"
+    },
+    {
+     "method": "web-search",
+     "tried": "'National Bank of Ethiopia credit reference bureau directive retention negative information years'",
+     "result": "Results name the directive and the consumer protection directive; no retention period.",
+     "date": "2026-10-30"
+    },
+    {
+     "method": "trade-press",
+     "tried": "Addis Ababa University theses and Digital Policy Alert among the results",
+     "result": "They describe the bureau and consumers' access, with no retention period.",
+     "date": "2026-10-30"
+    },
+    {
+     "method": "archive",
+     "tried": "archive.org's Wayback availability API for https://nbe.gov.et/governor_category/credit-reference-and-movable-collateral-registry-directorate",
+     "result": "https://nbe.gov.et/governor_category/credit-reference-and-movable-collateral-registry-directorate: snapshot 20260520130624. web.archive.org, which serves the snapshots, is refused by this environment's egress (no answer over HTTPS, 403 over HTTP, retested 2026-10-30), so none could be read.",
+     "date": "2026-10-30"
+    }
+   ],
+   "notModeled": "credit.unkept"
+  },
+  {
+   "id": "R-2385",
+   "fact": "money.credit.blocked.TT",
+   "sought": "The credit records of Trinidad and Tobago: the bureau that keeps them, when a late payment is reported, and how long it stays",
+   "status": "blocked",
+   "attempts": [
+    {
+     "method": "institution",
+     "tried": "Central Bank of Trinidad and Tobago (central-bank.org.tt) home page; the Bankers' Association (ttbankers.org)",
+     "result": "The bank's page was reached with no credit-bureau rule; the association gave no answer.",
+     "date": "2026-10-30"
+    },
+    {
+     "method": "official-register",
+     "tried": "The laws of Trinidad and Tobago (rgd.legalaffairs.gov.tt/laws2)",
+     "result": "No answer.",
+     "date": "2026-10-30"
+    },
+    {
+     "method": "web-search",
+     "tried": "'Trinidad and Tobago credit bureau TransUnion negative information retained years Central Bank credit reporting'",
+     "result": "Results say the bureau (Credit Reporting Services Limited, with TransUnion) began in 2004 without a legal framework; no retention period.",
+     "date": "2026-10-30"
+    },
+    {
+     "method": "trade-press",
+     "tried": "The World Bank's 2009 Doing Business case study among the results",
+     "result": "It describes the bureau's start and the draft legislation, no period.",
+     "date": "2026-10-30"
+    },
+    {
+     "method": "archive",
+     "tried": "archive.org's Wayback availability API for https://www.central-bank.org.tt/; https://rgd.legalaffairs.gov.tt/laws2/",
+     "result": "https://www.central-bank.org.tt/: snapshot 20261029144220; https://rgd.legalaffairs.gov.tt/laws2/: snapshot 20220902005806. web.archive.org, which serves the snapshots, is refused by this environment's egress (no answer over HTTPS, 403 over HTTP, retested 2026-10-30), so none could be read.",
+     "date": "2026-10-30"
+    }
+   ],
+   "notModeled": "credit.unkept"
+  },
+  {
+   "id": "R-2386",
+   "fact": "money.credit.blocked.TJ",
+   "sought": "The credit records of Tajikistan: the bureau that keeps them, when a late payment is reported, and how long it stays",
+   "status": "blocked",
+   "attempts": [
+    {
+     "method": "institution",
+     "tried": "National Bank of Tajikistan (nbt.tj/ru) home page",
+     "result": "Reached, with no credit-history rule linked.",
+     "date": "2026-10-30"
+    },
+    {
+     "method": "official-register",
+     "tried": "The Law on Credit Histories (2009) on the Ministry of Justice's legal portal (adlia.tj)",
+     "result": "503.",
+     "date": "2026-10-30"
+    },
+    {
+     "method": "web-search",
+     "tried": "'Tajikistan law on credit histories credit bureau information stored years National Bank of Tajikistan'",
+     "result": "Results give the law's year and the bureau's start; a Russian query (\u0441\u0440\u043e\u043a \u0445\u0440\u0430\u043d\u0435\u043d\u0438\u044f \u043a\u0440\u0435\u0434\u0438\u0442\u043d\u043e\u0439 \u0438\u0441\u0442\u043e\u0440\u0438\u0438) found only Kyrgyz, Kazakh and Russian periods.",
+     "date": "2026-10-30"
+    },
+    {
+     "method": "trade-press",
+     "tried": "The World Bank's 2015 note on Tajikistan's first credit bureau among the results",
+     "result": "No retention period.",
+     "date": "2026-10-30"
+    },
+    {
+     "method": "archive",
+     "tried": "archive.org's Wayback availability API for http://www.adlia.tj/; https://www.nbt.tj/ru/",
+     "result": "http://www.adlia.tj/: snapshot 20260905162103; https://www.nbt.tj/ru/: snapshot 20260929113352. web.archive.org, which serves the snapshots, is refused by this environment's egress (no answer over HTTPS, 403 over HTTP, retested 2026-10-30), so none could be read.",
+     "date": "2026-10-30"
+    }
+   ],
+   "notModeled": "credit.unkept"
+  },
+  {
+   "id": "R-2387",
+   "fact": "money.credit.blocked.BT",
+   "sought": "The credit records of Bhutan: the bureau that keeps them, when a late payment is reported, and how long it stays",
+   "status": "blocked",
+   "attempts": [
+    {
+     "method": "institution",
+     "tried": "Royal Monetary Authority of Bhutan (rma.org.bt)",
+     "result": "No answer.",
+     "date": "2026-10-30"
+    },
+    {
+     "method": "official-register",
+     "tried": "The RMA's Credit Information Bureau rules, sought on the RMA's site",
+     "result": "Not reached, the site giving no answer.",
+     "date": "2026-10-30"
+    },
+    {
+     "method": "web-search",
+     "tried": "'Royal Monetary Authority of Bhutan Credit Information Bureau rules negative information retained years'",
+     "result": "No result on Bhutan; the results are other countries' bureaus.",
+     "date": "2026-10-30"
+    },
+    {
+     "method": "trade-press",
+     "tried": "Press among the results",
+     "result": "None on Bhutan.",
+     "date": "2026-10-30"
+    },
+    {
+     "method": "archive",
+     "tried": "archive.org's Wayback availability API for https://www.rma.org.bt/",
+     "result": "https://www.rma.org.bt/: snapshot 20261020045257. web.archive.org, which serves the snapshots, is refused by this environment's egress (no answer over HTTPS, 403 over HTTP, retested 2026-10-30), so none could be read.",
+     "date": "2026-10-30"
+    }
+   ],
+   "notModeled": "credit.unkept"
+  },
+  {
+   "id": "R-2388",
+   "fact": "money.credit.blocked.MO",
+   "sought": "The credit records of Macao: the bureau that keeps them, when a late payment is reported, and how long it stays",
+   "status": "blocked",
+   "attempts": [
+    {
+     "method": "institution",
+     "tried": "Monetary Authority of Macao (amcm.gov.mo/en, /en/financial-services)",
+     "result": "Reached, 7.6KB each, a script shell with no credit-data rule in it.",
+     "date": "2026-10-30"
+    },
+    {
+     "method": "official-register",
+     "tried": "The Macao Official Gazette (bo.io.gov.mo), for the AMCM's 2022 directive on sharing personal credit data",
+     "result": "No answer.",
+     "date": "2026-10-30"
+    },
+    {
+     "method": "web-search",
+     "tried": "'Macau AMCM credit reference database Macao credit record retention years overdue'",
+     "result": "Results say the AMCM's Credit Data Platform began on 1 January 2023 under an August 2022 directive; no retention period. A Chinese query (\u6fb3\u9580\u91d1\u878d\u7ba1\u7406\u5c40 \u4fe1\u8cb8\u8cc7\u6599\u5e73\u53f0) found only Hong Kong's.",
+     "date": "2026-10-30"
+    },
+    {
+     "method": "trade-press",
+     "tried": "GGRAsia and the Legislative Assembly's paper among the results",
+     "result": "They concern a junket database and the platform's start, no period.",
+     "date": "2026-10-30"
+    },
+    {
+     "method": "archive",
+     "tried": "archive.org's Wayback availability API for https://www.amcm.gov.mo/en/",
+     "result": "https://www.amcm.gov.mo/en/: snapshot 20260210140132. web.archive.org, which serves the snapshots, is refused by this environment's egress (no answer over HTTPS, 403 over HTTP, retested 2026-10-30), so none could be read.",
+     "date": "2026-10-30"
+    }
+   ],
+   "notModeled": "credit.unkept"
+  },
+  {
+   "id": "R-2389",
+   "fact": "money.credit.blocked.ZW",
+   "sought": "The credit records of Zimbabwe: the bureau that keeps them, when a late payment is reported, and how long it stays",
+   "status": "blocked",
+   "attempts": [
+    {
+     "method": "institution",
+     "tried": "Reserve Bank of Zimbabwe: its Credit Registry page and the registry's pamphlet (rbz.co.zw/documents/credit_registry/CreditRegistryPamplet.pdf), read by eye",
+     "result": "The page links the pamphlet and the 2017 pricing policy; the pamphlet describes the registry and gives no period.",
+     "date": "2026-10-30"
+    },
+    {
+     "method": "official-register",
+     "tried": "The Banking Act on ZimLII (zimlii.org)",
+     "result": "ZimLII answers with a Cloudflare check, not passed.",
+     "date": "2026-10-30"
+    },
+    {
+     "method": "web-search",
+     "tried": "'Zimbabwe Reserve Bank credit registry guideline negative information retained years credit reference bureau'",
+     "result": "Results describe the registry's 2017 start and the private bureaus; no retention period.",
+     "date": "2026-10-30"
+    },
+    {
+     "method": "trade-press",
+     "tried": "NewsDay, The Herald and FBC among the results",
+     "result": "No retention period.",
+     "date": "2026-10-30"
+    },
+    {
+     "method": "archive",
+     "tried": "archive.org's Wayback availability API for https://www.rbz.co.zw/index.php/financial-stability/credit-registry",
+     "result": "https://www.rbz.co.zw/index.php/financial-stability/credit-registry: snapshot 20261012071415. web.archive.org, which serves the snapshots, is refused by this environment's egress (no answer over HTTPS, 403 over HTTP, retested 2026-10-30), so none could be read.",
+     "date": "2026-10-30"
+    }
+   ],
+   "notModeled": "credit.unkept"
+  },
+  {
+   "id": "R-2390",
+   "fact": "money.credit.blocked.SZ",
+   "sought": "The credit records of Eswatini: the bureau that keeps them, when a late payment is reported, and how long it stays",
+   "status": "blocked",
+   "attempts": [
+    {
+     "method": "institution",
+     "tried": "Central Bank of Eswatini (centralbank.org.sz) home page",
+     "result": "Reached, with no credit-bureau rule linked.",
+     "date": "2026-10-30"
+    },
+    {
+     "method": "official-register",
+     "tried": "The Consumer Credit Act 2016 on EswatiniLII",
+     "result": "EswatiniLII answers with a Cloudflare check, not passed.",
+     "date": "2026-10-30"
+    },
+    {
+     "method": "web-search",
+     "tried": "'Eswatini Consumer Credit Act 2016 credit bureau retention adverse information years'",
+     "result": "No result on Eswatini's Act; the results are South Africa's and Namibia's.",
+     "date": "2026-10-30"
+    },
+    {
+     "method": "trade-press",
+     "tried": "Press among the results",
+     "result": "None on Eswatini.",
+     "date": "2026-10-30"
+    },
+    {
+     "method": "archive",
+     "tried": "archive.org's Wayback availability API for https://www.centralbank.org.sz/",
+     "result": "https://www.centralbank.org.sz/: snapshot 20261017141508. web.archive.org, which serves the snapshots, is refused by this environment's egress (no answer over HTTPS, 403 over HTTP, retested 2026-10-30), so none could be read.",
+     "date": "2026-10-30"
+    }
+   ],
+   "notModeled": "credit.unkept"
+  },
+  {
+   "id": "R-2391",
+   "fact": "money.credit.blocked.MG",
+   "sought": "The credit records of Madagascar: the bureau that keeps them, when a late payment is reported, and how long it stays",
+   "status": "blocked",
+   "attempts": [
+    {
+     "method": "institution",
+     "tried": "Banky Foiben'i Madagasikara (banky-foibe.mg)",
+     "result": "No answer.",
+     "date": "2026-10-30"
+    },
+    {
+     "method": "official-register",
+     "tried": "Loi n\u00b02017-045 on credit information bureaus, the National Assembly's PDF (assemblee-nationale.mg)",
+     "result": "403.",
+     "date": "2026-10-30"
+    },
+    {
+     "method": "web-search",
+     "tried": "'Madagascar loi bureau d'information sur le cr\u00e9dit dur\u00e9e de conservation informations n\u00e9gatives ann\u00e9es'",
+     "result": "Results name Loi 2017-045 and CRIF Madagascar's licence; no retention period in them.",
+     "date": "2026-10-30"
+    },
+    {
+     "method": "trade-press",
+     "tried": "CRIF's announcements among the results",
+     "result": "No retention period.",
+     "date": "2026-10-30"
+    },
+    {
+     "method": "archive",
+     "tried": "archive.org's Wayback availability API for https://www.assemblee-nationale.mg/wp-content/uploads/2020/11/Loi-n%C2%B02017-045_fr.pdf",
+     "result": "https://www.assemblee-nationale.mg/wp-content/uploads/2020/11/Loi-n%C2%B02017-045_fr.pdf: snapshot 20251008072236. web.archive.org, which serves the snapshots, is refused by this environment's egress (no answer over HTTPS, 403 over HTTP, retested 2026-10-30), so none could be read.",
+     "date": "2026-10-30"
+    }
+   ],
+   "notModeled": "credit.unkept"
+  },
+  {
+   "id": "R-2392",
+   "fact": "money.credit.blocked.PG",
+   "sought": "The credit records of Papua New Guinea: the bureau that keeps them, when a late payment is reported, and how long it stays",
+   "status": "blocked",
+   "attempts": [
+    {
+     "method": "institution",
+     "tried": "Bank of Papua New Guinea (bankofpng.gov.pg)",
+     "result": "No answer.",
+     "date": "2026-10-30"
+    },
+    {
+     "method": "official-register",
+     "tried": "Papua New Guinea's credit reporting rules, sought on the Bank of PNG's site",
+     "result": "Not reached, the site giving no answer; the search found no Act or regulation on credit reporting.",
+     "date": "2026-10-30"
+    },
+    {
+     "method": "web-search",
+     "tried": "'Papua New Guinea credit bureau Bank of PNG credit reporting negative information retained years'",
+     "result": "Results describe the private Credit & Data Bureau; no retention period.",
+     "date": "2026-10-30"
+    },
+    {
+     "method": "trade-press",
+     "tried": "Business Advantage PNG among the results",
+     "result": "Profiles of the bureau, no retention period.",
+     "date": "2026-10-30"
+    },
+    {
+     "method": "archive",
+     "tried": "archive.org's Wayback availability API for https://www.bankofpng.gov.pg/",
+     "result": "https://www.bankofpng.gov.pg/: no snapshot listed. web.archive.org, which serves the snapshots, is refused by this environment's egress (no answer over HTTPS, 403 over HTTP, retested 2026-10-30), so none could be read.",
+     "date": "2026-10-30"
+    }
+   ],
+   "notModeled": "credit.unkept"
+  },
+  {
+   "id": "R-2393",
+   "fact": "money.credit.blocked.LA",
+   "sought": "The credit records of Laos: the bureau that keeps them, when a late payment is reported, and how long it stays",
+   "status": "blocked",
+   "attempts": [
+    {
+     "method": "institution",
+     "tried": "Bank of the Lao PDR (bol.gov.la)",
+     "result": "No answer.",
+     "date": "2026-10-30"
+    },
+    {
+     "method": "official-register",
+     "tried": "Decree No. 224/GOL on credit information (2019), sought in the Lao Official Gazette (laoofficialgazette.gov.la)",
+     "result": "No answer.",
+     "date": "2026-10-30"
+    },
+    {
+     "method": "web-search",
+     "tried": "'Laos Bank of Lao PDR Credit Information Bureau decree credit information kept years negative'",
+     "result": "Results name the decree and the Lao Credit Information Company's membership rules; no retention period.",
+     "date": "2026-10-30"
+    },
+    {
+     "method": "trade-press",
+     "tried": "Tilleke & Gibbins and Vietstock among the results",
+     "result": "No retention period.",
+     "date": "2026-10-30"
+    },
+    {
+     "method": "archive",
+     "tried": "archive.org's Wayback availability API for https://www.bol.gov.la/",
+     "result": "https://www.bol.gov.la/: snapshot 20261009215831. web.archive.org, which serves the snapshots, is refused by this environment's egress (no answer over HTTPS, 403 over HTTP, retested 2026-10-30), so none could be read.",
+     "date": "2026-10-30"
+    }
+   ],
+   "notModeled": "credit.unkept"
+  },
+  {
+   "id": "R-2394",
+   "fact": "money.credit.blocked.MM",
+   "sought": "The credit records of Myanmar: the bureau that keeps them, when a late payment is reported, and how long it stays",
+   "status": "blocked",
+   "attempts": [
+    {
+     "method": "institution",
+     "tried": "Central Bank of Myanmar: its home page and 'List of Credit Bureau' page (cbm.gov.mm/content/3144)",
+     "result": "Reached despite a Cloudflare element on the page; the list names Myanmar Credit Bureau Limited (licensed 18 May 2018), with no retention rule.",
+     "date": "2026-10-30"
+    },
+    {
+     "method": "official-register",
+     "tried": "The Credit Reporting System Regulation (2017), sought on cbm.gov.mm",
+     "result": "Not found there; regalert.today's copy answers with a Vercel security check.",
+     "date": "2026-10-30"
+    },
+    {
+     "method": "web-search",
+     "tried": "'Myanmar Credit Bureau regulation Central Bank of Myanmar credit information retained years negative data'",
+     "result": "Results summarise the 2017 regulation and the licence; no retention period.",
+     "date": "2026-10-30"
+    },
+    {
+     "method": "trade-press",
+     "tried": "Frontier Myanmar and Oxford Business Group among the results",
+     "result": "No retention period.",
+     "date": "2026-10-30"
+    },
+    {
+     "method": "archive",
+     "tried": "archive.org's Wayback availability API for https://www.cbm.gov.mm/content/3144",
+     "result": "https://www.cbm.gov.mm/content/3144: snapshot 20260531043508. web.archive.org, which serves the snapshots, is refused by this environment's egress (no answer over HTTPS, 403 over HTTP, retested 2026-10-30), so none could be read.",
+     "date": "2026-10-30"
+    }
+   ],
+   "notModeled": "credit.unkept"
+  },
+  {
+   "id": "R-2395",
+   "fact": "money.credit.blocked.SB",
+   "sought": "The credit records of Solomon Islands: the bureau that keeps them, when a late payment is reported, and how long it stays",
+   "status": "blocked",
+   "attempts": [
+    {
+     "method": "institution",
+     "tried": "Central Bank of Solomon Islands: its reporting-requirements page and the Credit Reporting Regulations 2025 PDF it links (two paths)",
+     "result": "The page was reached; both PDF paths answered 404.",
+     "date": "2026-10-30"
+    },
+    {
+     "method": "official-register",
+     "tried": "The Regulations (Legal Notice 415 of 2025) on PacLII",
+     "result": "The PacLII copy reset the connection when tried earlier the same day; the AustLII mirror (pacliirms.austlii.edu.au) wasn't tried.",
+     "date": "2026-10-30"
+    },
+    {
+     "method": "web-search",
+     "tried": "'Solomon Islands Credit Reporting Regulations 2025 Central Bank negative information retained years'",
+     "result": "Results give the Regulations' start (12 September 2025) and the bureau's licence (19 March 2026); no retention period.",
+     "date": "2026-10-30"
+    },
+    {
+     "method": "trade-press",
+     "tried": "CBSI's and the IFC's press releases among the results",
+     "result": "No retention period.",
+     "date": "2026-10-30"
+    },
+    {
+     "method": "archive",
+     "tried": "archive.org's Wayback availability API for https://www.cbsi.com.sb/sites/default/files/2026-05/Regulations-2025_Solomon-Islands-Credit-Reporting-Regulations-2025-1.pdf",
+     "result": "https://www.cbsi.com.sb/sites/default/files/2026-05/Regulations-2025_Solomon-Islands-Credit-Reporting-Regulations-2025-1.pdf: no snapshot listed. web.archive.org, which serves the snapshots, is refused by this environment's egress (no answer over HTTPS, 403 over HTTP, retested 2026-10-30), so none could be read.",
+     "date": "2026-10-30"
+    }
+   ],
+   "notModeled": "credit.unkept"
+  },
+  {
+   "id": "R-2396",
+   "fact": "money.credit.blocked.WS",
+   "sought": "The credit records of Samoa: the bureau that keeps them, when a late payment is reported, and how long it stays",
+   "status": "blocked",
+   "attempts": [
+    {
+     "method": "institution",
+     "tried": "Central Bank of Samoa (cbs.gov.ws): home page and its credit registry page",
+     "result": "The home page was reached; the registry page answered 404.",
+     "date": "2026-10-30"
+    },
+    {
+     "method": "official-register",
+     "tried": "The Credit Information Register Act 2026, sought on the Central Bank's and Parliament's sites",
+     "result": "Not found; only the 2024 consultation on the Bill is on the bank's site.",
+     "date": "2026-10-30"
+    },
+    {
+     "method": "web-search",
+     "tried": "'Samoa Credit Information Register Act 2026 negative information five years Central Bank of Samoa'",
+     "result": "Results say the Act passed on 19 August 2026 and what the register holds; no retention period.",
+     "date": "2026-10-30"
+    },
+    {
+     "method": "trade-press",
+     "tried": "Samoa Observer and the Pacific PSDI's note among the results",
+     "result": "No retention period.",
+     "date": "2026-10-30"
+    },
+    {
+     "method": "archive",
+     "tried": "archive.org's Wayback availability API for https://cbs.gov.ws/whats-new/credit-registry",
+     "result": "https://cbs.gov.ws/whats-new/credit-registry: snapshot 20241015114806. web.archive.org, which serves the snapshots, is refused by this environment's egress (no answer over HTTPS, 403 over HTTP, retested 2026-10-30), so none could be read.",
+     "date": "2026-10-30"
+    }
+   ],
+   "notModeled": "credit.unkept"
+  },
+  {
+   "id": "R-2397",
+   "fact": "money.credit.blocked.AW",
+   "sought": "The credit records of Aruba: the bureau that keeps them, when a late payment is reported, and how long it stays",
+   "status": "blocked",
+   "attempts": [
+    {
+     "method": "institution",
+     "tried": "Centrale Bank van Aruba (cbaruba.org, its credit-institutions supervision page) and the Centrale Bank van Cura\u00e7ao en Sint Maarten (centralbank.cw)",
+     "result": "Aruba's pages were reached with no credit-registry rule; centralbank.cw answered 403 with a Cloudflare check, not passed.",
+     "date": "2026-10-30"
+    },
+    {
+     "method": "official-register",
+     "tried": "The two central banks' regulations, sought on their own sites",
+     "result": "Not found on Aruba's; Cura\u00e7ao and Sint Maarten's not reached.",
+     "date": "2026-10-30"
+    },
+    {
+     "method": "web-search",
+     "tried": "'Centrale Bank van Aruba OR Centrale Bank van Cura\u00e7ao en Sint Maarten credit registry kredietregistratie bewaartermijn achterstand jaren'",
+     "result": "No result on Aruba, Cura\u00e7ao or Sint Maarten; the results are the Netherlands' BKR and Belgium's register.",
+     "date": "2026-10-30"
+    },
+    {
+     "method": "trade-press",
+     "tried": "Press among the results",
+     "result": "None on the islands.",
+     "date": "2026-10-30"
+    },
+    {
+     "method": "archive",
+     "tried": "archive.org's Wayback availability API for https://www.cbaruba.org/; https://www.centralbank.cw/",
+     "result": "https://www.cbaruba.org/: snapshot 20261017021812; https://www.centralbank.cw/: snapshot 20260920001200. web.archive.org, which serves the snapshots, is refused by this environment's egress (no answer over HTTPS, 403 over HTTP, retested 2026-10-30), so none could be read.",
+     "date": "2026-10-30"
+    }
+   ],
+   "notModeled": "credit.unkept"
+  },
+  {
+   "id": "R-2398",
+   "fact": "money.credit.blocked.CW",
+   "sought": "The credit records of Curacao: the bureau that keeps them, when a late payment is reported, and how long it stays",
+   "status": "blocked",
+   "attempts": [
+    {
+     "method": "institution",
+     "tried": "Centrale Bank van Aruba (cbaruba.org, its credit-institutions supervision page) and the Centrale Bank van Cura\u00e7ao en Sint Maarten (centralbank.cw)",
+     "result": "Aruba's pages were reached with no credit-registry rule; centralbank.cw answered 403 with a Cloudflare check, not passed.",
+     "date": "2026-10-30"
+    },
+    {
+     "method": "official-register",
+     "tried": "The two central banks' regulations, sought on their own sites",
+     "result": "Not found on Aruba's; Cura\u00e7ao and Sint Maarten's not reached.",
+     "date": "2026-10-30"
+    },
+    {
+     "method": "web-search",
+     "tried": "'Centrale Bank van Aruba OR Centrale Bank van Cura\u00e7ao en Sint Maarten credit registry kredietregistratie bewaartermijn achterstand jaren'",
+     "result": "No result on Aruba, Cura\u00e7ao or Sint Maarten; the results are the Netherlands' BKR and Belgium's register.",
+     "date": "2026-10-30"
+    },
+    {
+     "method": "trade-press",
+     "tried": "Press among the results",
+     "result": "None on the islands.",
+     "date": "2026-10-30"
+    },
+    {
+     "method": "archive",
+     "tried": "archive.org's Wayback availability API for https://www.cbaruba.org/; https://www.centralbank.cw/",
+     "result": "https://www.cbaruba.org/: snapshot 20261017021812; https://www.centralbank.cw/: snapshot 20260920001200. web.archive.org, which serves the snapshots, is refused by this environment's egress (no answer over HTTPS, 403 over HTTP, retested 2026-10-30), so none could be read.",
+     "date": "2026-10-30"
+    }
+   ],
+   "notModeled": "credit.unkept"
+  },
+  {
+   "id": "R-2399",
+   "fact": "money.credit.blocked.SX",
+   "sought": "The credit records of Sint Maarten: the bureau that keeps them, when a late payment is reported, and how long it stays",
+   "status": "blocked",
+   "attempts": [
+    {
+     "method": "institution",
+     "tried": "Centrale Bank van Aruba (cbaruba.org, its credit-institutions supervision page) and the Centrale Bank van Cura\u00e7ao en Sint Maarten (centralbank.cw)",
+     "result": "Aruba's pages were reached with no credit-registry rule; centralbank.cw answered 403 with a Cloudflare check, not passed.",
+     "date": "2026-10-30"
+    },
+    {
+     "method": "official-register",
+     "tried": "The two central banks' regulations, sought on their own sites",
+     "result": "Not found on Aruba's; Cura\u00e7ao and Sint Maarten's not reached.",
+     "date": "2026-10-30"
+    },
+    {
+     "method": "web-search",
+     "tried": "'Centrale Bank van Aruba OR Centrale Bank van Cura\u00e7ao en Sint Maarten credit registry kredietregistratie bewaartermijn achterstand jaren'",
+     "result": "No result on Aruba, Cura\u00e7ao or Sint Maarten; the results are the Netherlands' BKR and Belgium's register.",
+     "date": "2026-10-30"
+    },
+    {
+     "method": "trade-press",
+     "tried": "Press among the results",
+     "result": "None on the islands.",
+     "date": "2026-10-30"
+    },
+    {
+     "method": "archive",
+     "tried": "archive.org's Wayback availability API for https://www.cbaruba.org/; https://www.centralbank.cw/",
+     "result": "https://www.cbaruba.org/: snapshot 20261017021812; https://www.centralbank.cw/: snapshot 20260920001200. web.archive.org, which serves the snapshots, is refused by this environment's egress (no answer over HTTPS, 403 over HTTP, retested 2026-10-30), so none could be read.",
+     "date": "2026-10-30"
+    }
+   ],
+   "notModeled": "credit.unkept"
+  },
+  {
+   "id": "R-2400",
+   "fact": "money.credit.blocked.HT",
+   "sought": "The credit records of Haiti: the bureau that keeps them, when a late payment is reported, and how long it stays",
+   "status": "blocked",
+   "attempts": [
+    {
+     "method": "institution",
+     "tried": "Banque de la R\u00e9publique d'Ha\u00efti: Circular 105-2 (15 September 2025) on its Bureau d'Information sur le Cr\u00e9dit, a 48-page scan, read by eye",
+     "result": "Lenders send the BIC the previous month's information by the 10th of each month; no period for which a record is kept is stated.",
+     "date": "2026-10-30"
+    },
+    {
+     "method": "official-register",
+     "tried": "The BRH's other circulars linked from brh.ht",
+     "result": "The home page, reached despite a Cloudflare element, links no rule on how long the BIC keeps a record.",
+     "date": "2026-10-30"
+    },
+    {
+     "method": "web-search",
+     "tried": "'Banque de la R\u00e9publique d'Ha\u00efti centrale des risques circulaire dur\u00e9e conservation informations cr\u00e9dit'",
+     "result": "Results name the BIC and BRH circulars on classification; no retention period.",
+     "date": "2026-10-30"
+    },
+    {
+     "method": "trade-press",
+     "tried": "Enquet'Action and regalert.today among the results",
+     "result": "No retention period.",
+     "date": "2026-10-30"
+    },
+    {
+     "method": "archive",
+     "tried": "archive.org's Wayback availability API for https://www.brh.ht/",
+     "result": "https://www.brh.ht/: snapshot 20261017084247. web.archive.org, which serves the snapshots, is refused by this environment's egress (no answer over HTTPS, 403 over HTTP, retested 2026-10-30), so none could be read.",
+     "date": "2026-10-30"
+    }
+   ],
+   "notModeled": "credit.unkept"
+  },
+  {
+   "id": "R-2401",
+   "fact": "money.credit.blocked.VE",
+   "sought": "The credit records of Venezuela: the bureau that keeps them, when a late payment is reported, and how long it stays",
+   "status": "blocked",
+   "attempts": [
+    {
+     "method": "institution",
+     "tried": "SUDEBAN (sudeban.gob.ve), whose SICRI is the central risk system",
+     "result": "403.",
+     "date": "2026-10-30"
+    },
+    {
+     "method": "official-register",
+     "tried": "SUDEBAN's resolutions on SICRI, sought on its site",
+     "result": "Not reached, the site answering 403.",
+     "date": "2026-10-30"
+    },
+    {
+     "method": "web-search",
+     "tried": "'SUDEBAN Venezuela Sistema de Informaci\u00f3n Central de Riesgos SICRI resoluci\u00f3n conservaci\u00f3n informaci\u00f3n a\u00f1os'",
+     "result": "One result, SUDEBAN's 2022 press note on SICRI's online consultation; no retention period.",
+     "date": "2026-10-30"
+    },
+    {
+     "method": "trade-press",
+     "tried": "Press among the results",
+     "result": "None on SICRI's retention.",
+     "date": "2026-10-30"
+    },
+    {
+     "method": "archive",
+     "tried": "archive.org's Wayback availability API for http://www.sudeban.gob.ve/",
+     "result": "http://www.sudeban.gob.ve/: snapshot 20260531092147. web.archive.org, which serves the snapshots, is refused by this environment's egress (no answer over HTTPS, 403 over HTTP, retested 2026-10-30), so none could be read.",
+     "date": "2026-10-30"
+    }
+   ],
+   "notModeled": "credit.unkept"
+  },
+  {
+   "id": "R-2402",
+   "fact": "money.credit.CY",
+   "sought": "The credit records of Cyprus: the bureau that keeps them, when a late payment is reported, and how long it stays",
+   "status": "found",
+   "value": {
+    "file": "research/sources/money/credit/CY.json",
+    "sha256": "e7337ff0fa7102d6ecd9dc06f32a49938327936f82843d4c21dd4456cdb207a7"
+   },
+   "sources": [
+    {
+     "kind": "primary",
+     "url": "https://www.cylaw.org/KDP/data/2024_1_243.pdf",
+     "title": "Central Bank of Cyprus directive on the ARTEMIS data exchange mechanism, \u039a.\u0394.\u03a0. 243/2024, Official Gazette of the Republic of Cyprus No. 5881, 3 July 2024 (CyLaw copy)",
+     "read": "2026-10-30",
+     "said": "\u03b4\u03b5\u03b4\u03bf\u03bc\u03ad\u03bd\u03c9\u03bd \u0391\u03a1\u03a4\u0395\u039c\u0399\u03a3 \u03c3\u03b5 \u03bc\u03b7\u03bd\u03b9\u03b1\u03af\u03b1 \u03b2\u03ac\u03c3\u03b7, \u03bc\u03b5 \u03b7\u03bc\u03b5\u03c1\u03bf\u03bc\u03b7\u03bd\u03af\u03b1 \u03b1\u03bd\u03b1\u03c6\u03bf\u03c1\u03ac\u03c2 \u03c4\u03b7\u03bd \u03c4\u03b5\u03bb\u03b5\u03c5\u03c4\u03b1\u03af\u03b1 \u03b7\u03bc\u03b5\u03c1\u03bf\u03bb\u03bf\u03b3\u03b9\u03b1\u03ba\u03ae"
+    },
+    {
+     "kind": "primary",
+     "url": "https://www.cylaw.org/KDP/data/2024_1_243.pdf",
+     "title": "Central Bank of Cyprus directive on the ARTEMIS data exchange mechanism, \u039a.\u0394.\u03a0. 243/2024, Official Gazette of the Republic of Cyprus No. 5881, 3 July 2024 (CyLaw copy)",
+     "read": "2026-10-30",
+     "said": "\u03c5\u03c0\u03ad\u03c1\u03b2\u03b1\u03c3\u03b7\u03c2 \u03ae \u03ba\u03b1\u03b8\u03c5\u03c3\u03c4\u03b5\u03c1\u03b7\u03bc\u03ad\u03bd\u03b5\u03c2 \u03bf\u03c6\u03b5\u03b9\u03bb\u03ad\u03c2\u201d \u03ba\u03b1\u03b9 \u03bf\u03b9 \u201c\u03b7\u03bc\u03ad\u03c1\u03b5\u03c2 \u03c3\u03b5 \u03ba\u03b1\u03b8\u03c5\u03c3\u03c4\u03ad\u03c1\u03b7\u03c3\u03b7\u201d, \u03c0\u03b5\u03b4\u03af\u03b1 77 \u03ba\u03b1\u03b9 78 ... \u03b1\u03bd\u03c4\u03b9\u03c3\u03c4\u03bf\u03af\u03c7\u03c9\u03c2 \u03c4\u03bf\u03c5 \u03a0\u03b1\u03c1\u03b1\u03c1\u03c4\u03ae\u03bc\u03b1\u03c4\u03bf\u03c2 \u0391 \u03b3\u03b9\u03b1 \u03c4\u03bf\u03c5\u03c2 \u03c4\u03b5\u03bb\u03b5\u03c5\u03c4\u03b1\u03af\u03bf\u03c5\u03c2 \u03c4\u03c1\u03b9\u03ac\u03bd\u03c4\u03b1 \u03ad\u03be\u03b9 (36) \u03bc\u03ae\u03bd\u03b5\u03c2 \u03bf\u03b9 \u03bf\u03c0\u03bf\u03af\u03bf\u03b9"
+    }
+   ]
   }
  ]
 }
