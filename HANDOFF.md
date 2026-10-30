@@ -336,11 +336,12 @@ restarts. Read `CLAUDE.md` and the owner's package in `docs/` first.
   (research/sources/money/credit/<CC>.json, register facts money.credit.<CC>), compiled by `tools/money/credit`. A late
   payment marks the record for the country's years; the record's standing is the game's reading, said as the game's: 1000
   less 250 for each mark still kept, down to 0, which prices a card's range (`priced`).
-  Matrix (2026-10-30): 89 researched (US, GB, CA, AU, IE, DE, FR, ES, IT, NL, BE, FI, JP, CN, SE, DK, MX, BR, PL,
+  Matrix (2026-10-30): 99 researched (US, GB, CA, AU, IE, DE, FR, ES, IT, NL, BE, FI, JP, CN, SE, DK, MX, BR, PL,
   AT, HU, CH, RO, SI, HR, GR, NO, CZ, BG, SK, LT, LV, EE, PT, LU, IS, IN, KR, SG, MY, TW, PH, TH, PK, VN, AR, UY,
-  CO, PE, SV, DO, PY, EC, IL, TR, SA, XK, KE, ZA, UG, TZ, GY, RW, JM, BB, AG, DM, GD, KN, LC, VC, AI, MS; PR, GU,
-  VI, AS, MP under the FCRA, whose "State" takes in every territory; GF, GP, MQ, RE, YT, BL, MF, PM through the
-  IEDOM and NC, PF, WF through the IEOM, on the FICP's rules), 6 proven, 157 pending.
+  CO, PE, SV, DO, PY, EC, IL, TR, SA, XK, KE, ZA, UG, TZ, GY, RW, JM, BB, AG, DM, GD, KN, LC, VC, AI, MS, RU, NZ,
+  BJ, BF, CI, GW, ML, NE, SN, TG; PR, GU, VI, AS, MP under the FCRA, whose "State" takes in every territory; GF, GP,
+  MQ, RE, YT, BL, MF, PM through the IEDOM and NC, PF, WF through the IEOM, on the FICP's rules), 6 proven, 147
+  pending.
   Where the country's own regulator or law shows no bureau
   or registry keeps a person's record of credit, the file says so (`none: true`, nothing else), a late payment there
   marks nothing, and the player is told so (`credit.none`): Luxembourg, whose central bank says it has no register of
@@ -351,7 +352,7 @@ restarts. Read `CLAUDE.md` and the owner's package in `docs/` first.
   the bureau's next monthly update, 30 days, compiled with `game: true` for the money screen to say so (China, Sweden,
   Denmark, Mexico, Brazil, Austria, Greece, Norway, Slovakia, Lithuania, Iceland, Singapore, Taiwan, the Philippines,
   Thailand, Pakistan, Vietnam, Argentina, Uruguay, Peru, El Salvador, the Dominican Republic, Paraguay, Ecuador, Turkey, Saudi Arabia, Kosovo, South Africa, Uganda, Tanzania, Guyana, Rwanda, Jamaica,
-  Barbados and the eight members of the Eastern Caribbean Central Bank). Jamaica's Act is a scanned PDF with no text,
+  Barbados and the eight members of the Eastern Caribbean Central Bank, Russia, New Zealand). Jamaica's Act is a scanned PDF with no text,
   read by eye; its source has no saved page to check against.
   Colombia's default stays twice as long as the delay (at most four years from payment); a payment a month or two
   late stays months, written as one year, the shortest the game keeps. Mexico's retention steps with the debt's size in UDIs (12 to 72 months); the game keeps the
