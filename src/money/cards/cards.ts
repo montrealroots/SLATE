@@ -52,8 +52,10 @@ export interface Card {
   readonly currency: CurrencyCode;
   /** `in full`: a charge card, whose balance the bank takes from the account each month. */
   readonly rate: Rate | 'in full' | { readonly steps: Steps };
-  /** None where the card costs nothing to hold. */
+  /** None where the card costs nothing to hold, or where the bank publishes none (`feesUnpublished`). */
   readonly fees: readonly Fee[];
+  /** The bank publishes no fee to hold the card: none is charged, and the player is told so. */
+  readonly feesUnpublished?: true;
   readonly issue?: Money;
   readonly limitFees?: readonly { readonly percent: string; readonly when: 'issue' | 'year' | 'raise' }[];
   readonly intro?: { readonly percent: string; readonly per: 'month' | 'year'; readonly months: number };
@@ -242,6 +244,10 @@ export const feeFor = (charge: Fee, standing: Standing, on: string): Money =>
   charge.waived?.some((w) => met(w, standing)) === true ? money(charge.fee.currency as CurrencyCode, 0) : feeOn(charge, on);
 
 export const UNKEPT_LINE = 'cards.unkept';
+export const FEES_UNPUBLISHED_LINE = 'cards.fees-unpublished';
+
+/** What the player is told about a card whose bank publishes no fee to hold it. Nothing otherwise. */
+export const aboutCard = (card: Card): string | undefined => (card.feesUnpublished === true ? t(FEES_UNPUBLISHED_LINE, { bank: card.bank, card: card.card }) : undefined);
 
 /** What the player is told about a country whose cards the game doesn't keep. Nothing otherwise. */
 export const aboutCards = (country: CountryCode): string | undefined => (keepsCards(country) ? undefined : t(UNKEPT_LINE, { country: countryName(country) }));

@@ -18,7 +18,9 @@ import { fee as accountFee, waiver as accountWaiver, type Fee as AccountFee, typ
  *   Birbank Star, 10 manat for each 500).
  * - `fees`: what it costs to hold, each read as an account's fee is (tools/money/banks), waivable also by spending a
  *   figure on the card over the fee's period (`spend`) or for its first periods (`first`); `issue`, what it costs once,
- *   when it's issued; `limitFees`, those set as a share of the card's limit, at issue, each year or at a raise.
+ *   when it's issued; `limitFees`, those set as a share of the card's limit, at issue, each year or at a raise;
+ *   `feesUnpublished`, with no fees, where the bank publishes nothing a holder pays to hold the card, so the game
+ *   charges none and says it doesn't know, rather than reading the empty list as a card that costs nothing.
  * - `intro`: an introductory purchase rate, for so many months from the card's opening.
  * - `cash`: a cash advance's own rate and fee; `fx`: the share added to spending in another currency.
  * - `minimum`: the least a statement asks, a share of its balance, never under a floor, the month's interest on top
@@ -76,6 +78,8 @@ export interface Card {
   currency: CurrencyCode;
   rate: Rate | 'in full' | { steps: Steps };
   fees: Fee[];
+  /** The bank publishes no fee to hold the card: none is charged, and the player is told so. */
+  feesUnpublished?: true;
   issue?: Money;
   limitFees?: { percent: string; when: (typeof LIMIT_WHEN)[number] }[];
   intro?: { percent: string; per: RatePeriod; months: number };
@@ -209,7 +213,7 @@ export function charge<B extends string>(c: unknown, currency: CurrencyCode, bas
   return out;
 }
 
-const TERMS = ['bank', 'card', 'currency', 'rate', 'fees', 'issue', 'limitFees', 'intro', 'cash', 'fx', 'minimum', 'grace', 'late', 'overLimit', 'returned', 'penalty', 'tax', 'limit'];
+const TERMS = ['bank', 'card', 'currency', 'rate', 'fees', 'feesUnpublished', 'issue', 'limitFees', 'intro', 'cash', 'fx', 'minimum', 'grace', 'late', 'overLimit', 'returned', 'penalty', 'tax', 'limit'];
 
 /** One bank's card, in the country's currency unless it names another, with every term the bank publishes. */
 export function card(c: unknown, home: CurrencyCode, what: string): Card {
@@ -222,6 +226,10 @@ export function card(c: unknown, home: CurrencyCode, what: string): Card {
   const cur = currency as CurrencyCode;
   if (!Array.isArray(fees)) throw new Error(`${what}'s fees are a list, empty where the card costs nothing to hold`);
   const out: Card = { bank: bank as string, card: name as string, currency: cur, rate: rate(r, cur, `${what}'s rate`), fees: fees.map((f, i) => fee(f, cur, `${what}'s fee ${i}`)) };
+  if (o['feesUnpublished'] !== undefined) {
+    if (o['feesUnpublished'] !== true || fees.length !== 0) throw new Error(`${what}'s fees are unpublished (feesUnpublished: true) only where it lists none`);
+    out.feesUnpublished = true;
+  }
   if (o['issue'] !== undefined) out.issue = amount(o['issue'], cur, `${what}'s issue`);
   if (o['limitFees'] !== undefined) {
     const list = o['limitFees'];

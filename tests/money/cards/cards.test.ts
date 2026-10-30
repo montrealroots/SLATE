@@ -3,7 +3,7 @@ import { money } from '../../../src/core/money/money.ts';
 import { t } from '../../../src/core/text/text.ts';
 import { COUNTRY_CODES } from '../../../src/world/gazetteer/gazetteer.ts';
 import data from '../../../src/money/cards/cards.json';
-import { aboutCards, cardsIn, cashFee, cashInterestFor, charged, feeFor, fxFee, interestFor, keepsCards, lateFee, limitFee, minimumDue, monthly, overLimitFee, paidInFull, priced, root12, share, stepped, taxOnFees, taxOnInterest, UNKEPT_LINE, type Card, type Fee } from '../../../src/money/cards/cards.ts';
+import { aboutCard, aboutCards, cardsIn, cashFee, cashInterestFor, charged, feeFor, fxFee, interestFor, keepsCards, lateFee, limitFee, minimumDue, monthly, overLimitFee, paidInFull, priced, root12, share, stepped, taxOnFees, taxOnInterest, FEES_UNPUBLISHED_LINE, UNKEPT_LINE, type Card, type Fee } from '../../../src/money/cards/cards.ts';
 
 const usd = (minor: number) => money('USD', minor);
 const standing = { age: 30, deposits: usd(0), lowest: usd(0), average: usd(0), national: false, spent: usd(0), period: 2 };
@@ -191,5 +191,12 @@ describe('cards', () => {
     expect(aboutCards('AQ')).toBe(t(UNKEPT_LINE, { country: 'Antarctica' }));
     expect(aboutCards('AQ')).toBe("The credit cards of Antarctica aren't known to this game yet.");
     expect(aboutCards('US')).toBeUndefined();
+    // A card whose bank publishes nothing to hold it is said so, and charges nothing to hold.
+    expect(FEES_UNPUBLISHED_LINE).toBe('cards.fees-unpublished');
+    const citizens = cardsIn('GY').find((c) => c.bank === 'Citizens Bank Guyana' && c.card === 'Visa Classic');
+    expect([citizens?.fees, citizens?.feesUnpublished]).toEqual([[], true]);
+    expect(aboutCard(citizens as Card)).toBe("Citizens Bank Guyana doesn't publish what its Visa Classic costs to hold, so this game charges nothing for it.");
+    const chase = cardsIn('US').find((c) => c.card === 'Chase Freedom Unlimited') as Card;
+    expect([chase.fees, aboutCard(chase)]).toEqual([[], undefined]);
   });
 });

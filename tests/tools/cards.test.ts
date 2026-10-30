@@ -108,6 +108,11 @@ describe('the cards compile', () => {
     expect(() => card({ bank: 'B', card: 'C', fees: [] }, 'USD', 'c')).toThrow("c's rate is a percent and the period it's charged by, in full, or steps");
     expect(() => card({ bank: 'B', card: 'C', rate: 'in full', fees: [{ fee: '1', per: 'year' }, { fee: '0', per: 'year' }] }, 'USD', 'c')).toThrow("c's fee 1 is above nothing, or suspended until a change");
     expect(() => card({ bank: 'B', card: 'C', rate: 'in full', fees: [], annual: '1' }, 'USD', 'c')).toThrow('c has no term annual');
+    // A bank that publishes nothing to hold the card is told apart from one that charges nothing.
+    expect(card({ bank: 'B', card: 'C', rate: 'in full', fees: [], feesUnpublished: true }, 'USD', 'c')).toStrictEqual({ bank: 'B', card: 'C', currency: 'USD', rate: 'in full', fees: [], feesUnpublished: true });
+    expect(card({ bank: 'B', card: 'C', rate: 'in full', fees: [] }, 'USD', 'c')).not.toHaveProperty('feesUnpublished');
+    for (const [fees, feesUnpublished] of [[[{ fee: '1', per: 'year' }], true], [[], false], [[], 'true']] as const)
+      expect(() => card({ bank: 'B', card: 'C', rate: 'in full', fees, feesUnpublished }, 'USD', 'c'), JSON.stringify([fees, feesUnpublished])).toThrow("c's fees are unpublished (feesUnpublished: true) only where it lists none");
   });
 
   it('takes every other term a bank publishes, in the card\'s currency', () => {
