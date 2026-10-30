@@ -154,6 +154,9 @@
    "tax"
   ]
  },
+ "AX": {
+  "issuedBy": "FI"
+ },
  "AZ": {
   "name": "Personal Identification Number (PIN)",
   "issuer": "the issuer of Azerbaijan's identity card and passport (the sheet names no office)",
@@ -264,6 +267,9 @@
    "tax"
   ]
  },
+ "BL": {
+  "issuedBy": "FR"
+ },
  "BN": {
   "name": "NRIC Number",
   "issuer": "the Brunei Darussalam identity card's issuer (the sheet names no office)",
@@ -328,6 +334,9 @@
    "work"
   ]
  },
+ "CC": {
+  "issuedBy": "AU"
+ },
  "CH": {
   "name": "OASI Number (AHV-Versichertennummer)",
   "issuer": "the Central Compensation Office (CCO)",
@@ -379,7 +388,8 @@
   "issuer": "the public security organ (公安机关)",
   "format": {
    "length": 18,
-   "pattern": "[0-9]{17}[0-9X]"
+   "pattern": "[0-9]{17}[0-9X]",
+   "check": "cn-gb11643"
   },
   "when": "registration",
   "who": [
@@ -882,6 +892,18 @@
    "minor": 0
   }
  },
+ "IQ": {
+  "name": "personal number (on the national card)",
+  "issuer": "the Ministry of Interior's General Directorate of Nationality (civil register)",
+  "format": {
+   "length": 12,
+   "pattern": "^\\d{12}$"
+  },
+  "when": "application",
+  "who": [
+   "citizens"
+  ]
+ },
  "IS": {
   "name": "Icelandic Identification Number (kennitala)",
   "issuer": "Registers Iceland",
@@ -1150,6 +1172,9 @@
    "residents"
   ]
  },
+ "MF": {
+  "issuedBy": "FR"
+ },
  "MH": {
   "name": "social security number (employee identification number)",
   "issuer": "the Marshall Islands Social Security Administration (MISSA)",
@@ -1177,6 +1202,18 @@
   "who": [
    "citizens",
    "residents"
+  ]
+ },
+ "MN": {
+  "name": "registration number",
+  "issuer": "the State Center for Civil Registration and Information (SCCRI), as the source of 2012 names it",
+  "format": {
+   "length": 10,
+   "pattern": "^[A-Za-z\\u0400-\\u04FF]{2}\\d{8}$"
+  },
+  "when": "birth",
+  "who": [
+   "citizens"
   ]
  },
  "MP": {
@@ -1277,6 +1314,9 @@
   "needed": [
    "tax"
   ]
+ },
+ "NF": {
+  "issuedBy": "AU"
  },
  "NG": {
   "name": "Tax Identification Number (JTB TIN)",
@@ -1380,6 +1420,23 @@
   "when": "application",
   "who": [
    "anyone"
+  ],
+  "needed": [
+   "tax"
+  ]
+ },
+ "PA": {
+  "name": "cédula de identidad personal number (for a natural person, the Registro Único de Contribuyente, RUC)",
+  "issuer": "the Tribunal Electoral (Dirección Nacional de Cedulación), from the entry in the Civil Registry",
+  "format": {
+   "length": 10,
+   "min": 3,
+   "pattern": "^([1-9]|1[0-3])\\d{1,4}\\d{1,4}$"
+  },
+  "when": "birth",
+  "who": [
+   "citizens",
+   "residents"
   ],
   "needed": [
    "tax"
@@ -1562,6 +1619,18 @@
    "tax"
   ]
  },
+ "SD": {
+  "name": "national identity number (al-raqm al-watani, الرقم الوطني)",
+  "issuer": "the General Directorate of Civil Registration (Ministry of Interior)",
+  "format": {
+   "length": 11,
+   "pattern": "^\\d{11}$"
+  },
+  "when": "registration",
+  "who": [
+   "citizens"
+  ]
+ },
  "SE": {
   "name": "personnummer",
   "issuer": "Skatteverket (the Swedish Tax Agency)",
@@ -1640,6 +1709,19 @@
   ],
   "needed": [
    "tax"
+  ]
+ },
+ "SO": {
+  "name": "National Identification Number (NIN, 'Tirsi Aqoonsi')",
+  "issuer": "the National Identification and Registration Authority (NIRA)",
+  "format": {
+   "length": 11,
+   "pattern": "^\\d{11}$"
+  },
+  "when": "application",
+  "who": [
+   "citizens",
+   "residents"
   ]
  },
  "TH": {
@@ -1806,6 +1888,9 @@
   "who": [
    "citizens"
   ]
+ },
+ "WF": {
+  "issuedBy": "FR"
  },
  "YT": {
   "issuedBy": "FR"

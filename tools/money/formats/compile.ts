@@ -16,9 +16,12 @@ import { refusal, type Check, type Format, type Iban, type Kind, type National, 
  *   the form it's given with, so a structure misread is caught on the registry's own number. A country the registry
  *   folds into another's prefix (Guadeloupe into France's) gives only that `prefix`, and takes that country's form.
  * - `national`, from the country's central bank or bankers' association, where it has no IBAN: the number's `name`,
- *   its `parts` (each a name, a length and a kind), where the bank's code sits in it (`bank`), the checks inside it as
- *   the central bank publishes them (`checks`, each the digits it's worked `over` and their `weights`, or `mod97`), and
- *   the publisher's own worked number (`example`), which must pass, so a check misread is caught on it.
+ *   its `parts` (each a name, a length and a kind; where a part's length varies, as an account number's often does,
+ *   `min`, the fewest it takes, and `drawn`, the lengths the bank's own numbers are drawn at), where the bank's code
+ *   sits in it (`bank`), the checks inside it as the central bank publishes them (`checks`, each the digits it's worked
+ *   `over` and their `weights`, or `mod97`, `key97` or `rest97`), and the publisher's own worked number (`example`), which
+ *   must pass, so a check misread is caught on it. The bank's code and the checks sit before any part whose length
+ *   varies.
  *
  * Until 2026-10-30 a national check was left out and the form took none; Argentina's, Nigeria's and Angola's were the
  * first read.
@@ -90,18 +93,42 @@ export function national(code: string, o: unknown): Format {
   if (!Array.isArray(f['parts']) || f['parts'].length === 0) throw new Error(`${what}'s parts are a list`);
   const parts = f['parts'].map((p: unknown, i) => {
     const part = object(p, `${what}'s part ${i}`);
-    only(part, ['name', 'length', 'kind'], `${what}'s part ${i}`);
+    only(part, ['name', 'length', 'kind', 'min', 'drawn'], `${what}'s part ${i}`);
     if (!named(part['name'])) throw new Error(`${what}'s part ${i} is named`);
     if (!(KINDS as readonly unknown[]).includes(part['kind'])) throw new Error(`${what}'s part ${i} is digits (n), letters (a) or either (c)`);
-    return { name: part['name'] as string, length: count(part['length'], `${what}'s part ${i}'s length`), kind: part['kind'] as Kind };
+    const out: { -readonly [K in keyof National['parts'][number]]: National['parts'][number][K] } = {
+      name: part['name'] as string,
+      length: count(part['length'], `${what}'s part ${i}'s length`),
+      kind: part['kind'] as Kind,
+    };
+    if (part['min'] !== undefined) {
+      out.min = count(part['min'], `${what}'s part ${i}'s min`);
+      if (out.min >= out.length) throw new Error(`${what}'s part ${i} takes ${out.min} characters at the fewest, fewer than its ${out.length} at the most`);
+    }
+    if (part['drawn'] !== undefined) {
+      if (out.min === undefined) throw new Error(`${what}'s part ${i} is drawn at lengths of its own only where its length varies (min)`);
+      out.drawn = span(part['drawn'], out.length, `${what}'s part ${i}'s drawn`);
+      if (out.drawn[0] < out.min) throw new Error(`${what}'s part ${i} is drawn at lengths it takes`);
+    }
+    return out;
   });
+  // Where a part's length varies, the characters after it have no fixed place: the bank's code and the checks sit before.
+  const varies = parts.findIndex((p) => p.min !== undefined);
+  const fixed = parts.slice(0, varies === -1 ? parts.length : varies).reduce((sum, p) => sum + p.length, 0);
+  const before = (end: number, which: string) => {
+    if (end > fixed) throw new Error(`${what}'s ${which} sits after a part whose length varies`);
+  };
   const long = parts.reduce((sum, p) => sum + p.length, 0);
   const out: { -readonly [K in keyof National]: National[K] } = { name: f['name'] as string, parts };
-  if (f['bank'] !== undefined) out.bank = span(f['bank'], long, `${what}'s bank`);
+  if (f['bank'] !== undefined) {
+    out.bank = span(f['bank'], long, `${what}'s bank`);
+    before(out.bank[1], 'bank');
+  }
   if (f['checks'] !== undefined) {
     if (!Array.isArray(f['checks']) || f['checks'].length === 0) throw new Error(`${what}'s checks are a list`);
     const kinds = parts.flatMap((p) => Array<Kind>(p.length).fill(p.kind));
     out.checks = f['checks'].map((c: unknown, i) => check(c, kinds, `${what}'s check ${i}`));
+    out.checks.forEach((c, i) => before(c.over[1] + ('weights' in c ? 1 : 2), `check ${i}`));
   }
   if (f['example'] !== undefined) {
     const why = refusal({ national: out }, String(f['example']));
@@ -113,14 +140,16 @@ export function national(code: string, o: unknown): Format {
 /** A check inside a national number, over digits of the number whose characters' kinds are `kinds`, its own digits after them. */
 export function check(o: unknown, kinds: readonly Kind[], what: string): Check {
   const c = object(o, what);
-  only(c, ['over', 'weights', 'mod97'], what);
+  only(c, ['over', 'weights', 'mod97', 'key97', 'rest97'], what);
   const over = span(c['over'], kinds.length, `${what}'s over`);
-  const digits = 'mod97' in c ? 2 : 1;
+  const two = (['mod97', 'key97', 'rest97'] as const).filter((k) => k in c);
+  const digits = two.length > 0 ? 2 : 1;
   if (over[1] + digits > kinds.length) throw new Error(`${what}'s digits don't fit after characters ${over[0]} to ${over[1]}`);
   if (kinds.slice(over[0] - 1, over[1] + digits).some((k) => k !== 'n')) throw new Error(`${what} is worked over digits, into digits`);
-  if ('mod97' in c) {
-    if (c['mod97'] !== true || 'weights' in c) throw new Error(`${what} is mod97: true, with no weights`);
-    return { over, mod97: true };
+  const [rule] = two;
+  if (rule !== undefined) {
+    if (two.length > 1 || c[rule] !== true || 'weights' in c) throw new Error(`${what} is one of mod97, key97 or rest97: true, with no weights`);
+    return { over, [rule]: true } as Check;
   }
   const weights = c['weights'];
   if (!Array.isArray(weights) || weights.length !== over[1] - over[0] + 1 || !weights.every((w) => Number.isInteger(w) && w >= 0))

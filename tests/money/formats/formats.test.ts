@@ -5,7 +5,7 @@ import { t } from '../../../src/core/text/text.ts';
 import { COUNTRY_CODES } from '../../../src/world/gazetteer/gazetteer.ts';
 import data from '../../../src/money/formats/formats.json';
 import { aboutFormats, accountNumber, formatOf, keepsFormat, payeeRefusal, UNKEPT_LINE } from '../../../src/money/formats/formats.ts';
-import { draw, ibanCheck, mod97, refusal, signed, type Format, type National } from '../../../src/money/formats/number.ts';
+import { draw, ibanCheck, mod97, refusal, signed, type Format, type National, type Part } from '../../../src/money/formats/number.ts';
 
 const ROOT = resolve(import.meta.dirname, '../../..');
 const SEED = 0x5eed_0000_0000_0001n;
@@ -32,8 +32,8 @@ const EXAMPLES = readdirSync(join(ROOT, 'research/sources/money/formats')).flatM
 describe('account numbers', () => {
   it("are drawn and checked in each country's own form", () => {
     expect(COUNTRY_CODES.filter(keepsFormat)).toEqual(Object.keys(data.countries).sort());
-    expect([keepsFormat('GB'), keepsFormat('US')]).toEqual([true, false]);
-    expect(formatOf('US')).toBeUndefined();
+    expect([keepsFormat('GB'), keepsFormat('ZA')]).toEqual([true, false]);
+    expect(formatOf('ZA')).toBeUndefined();
     expect(GB).toStrictEqual({ iban: { prefix: 'GB', length: 22, bban: [{ length: 4, kind: 'a' }, { length: 6, kind: 'n' }, { length: 8, kind: 'n' }], bank: [1, 4] } });
     // Guadeloupe's accounts are numbered as France's: SWIFT's registry folds it into the prefix FR.
     expect(formatOf('GP')).toStrictEqual(formatOf('FR'));
@@ -48,12 +48,16 @@ describe('account numbers', () => {
       const number = accountNumber(SEED, country, 'A Bank', 0) as string;
       expect(payeeRefusal(country, number), `${country} ${number}`).toBeUndefined();
       const form = formatOf(country) as Format;
-      expect('iban' in form ? number.slice(0, 2) : number.length).toBe('iban' in form ? form.iban.prefix : form.national.parts.reduce((sum, p) => sum + p.length, 0));
+      // An IBAN opens with its prefix; a national number is as long as its parts' drawn lengths, or their most.
+      const drawnAt = (p: Part) => p.drawn ?? [p.length, p.length];
+      if ('iban' in form) expect(number.slice(0, 2)).toBe(form.iban.prefix);
+      else expect(number.length).toBeGreaterThanOrEqual(form.national.parts.reduce((sum, p) => sum + drawnAt(p)[0], 0));
+      if ('national' in form) expect(number.length).toBeLessThanOrEqual(form.national.parts.reduce((sum, p) => sum + drawnAt(p)[1], 0));
     }
-    expect(accountNumber(SEED, 'US', 'Chase', 0)).toBeUndefined();
+    expect(accountNumber(SEED, 'ZA', 'Standard Bank', 0)).toBeUndefined();
     // A kept country's payee is held to its form; an unkept one's can't be, and goes as given.
     expect(payeeRefusal('GB', 'GB28NWBK60161331926819')).toBe('check');
-    expect(payeeRefusal('US', 'anything')).toBeUndefined();
+    expect(payeeRefusal('ZA', 'anything')).toBeUndefined();
   });
 
   it('are the same for the same seed and bank, and differ otherwise', () => {
@@ -144,6 +148,18 @@ describe('account numbers', () => {
     const nba = draw(ao, SEED, 'AO', 'BFA', 0);
     expect([nba.length, mod97(nba), refusal(ao, nba)]).toEqual([21, 1, undefined]);
     expect(refusal(ao, `${nba.slice(0, 19)}${nba[19] === '9' ? '0' : '9'}${nba[20] as string}`)).toBe('check');
+    // The French RIB's key: the Comoros' central bank's worked RIB (Règlement 14/2015, read by eye), its key 88 where
+    // MOD 97-10 would give 89; the whole reads 0 mod 97. Its keys run 01 to 97.
+    const rib: National = { name: 'RIB', parts: [{ name: 'x', length: 23, kind: 'n' }], checks: [{ over: [1, 21], key97: true }] };
+    expect(refusal({ national: rib }, '00099000010000072000288')).toBeUndefined();
+    expect(refusal({ national: rib }, '00099000010000072000289')).toBe('check');
+    expect(mod97('00099000010000072000288')).toBe(0);
+    const key = (body: string) => signed({ ...rib, parts: [{ name: 'x', length: body.length + 2, kind: 'n' }], checks: [{ over: [1, body.length], key97: true }] }, `${body}00`).slice(-2);
+    expect([key('0'), key('1'), key('32')]).toEqual(['97', '94', '01']);
+    // Kyrgyzstan's: the remainder itself, 97 for nought. The National Bank's own three (Instruction 3/5, annex 1).
+    const kg: National = { name: 'K', parts: [{ name: 'x', length: 16, kind: 'n' }], checks: [{ over: [1, 14], rest97: true }] };
+    expect([signed(kg, '1251234567890100'), refusal({ national: kg }, '1251234567890164'), refusal({ national: kg }, '1251234567890163')]).toEqual(['1251234567890164', undefined, 'check']);
+    expect([signed(kg, '0000000000000000'), signed(kg, '0000000000000200')]).toEqual(['0000000000000097', '0000000000000202']);
     // A check below ten keeps its leading nought, and 98 is written whole.
     const two: National = { name: 'N', parts: [{ name: 'x', length: 4, kind: 'n' }], checks: [{ over: [1, 2], mod97: true }] };
     expect([signed(two, '9600'), signed(two, '0000'), signed(two, '3000')]).toEqual(['9604', '0098', '3008']);
@@ -152,10 +168,33 @@ describe('account numbers', () => {
     expect(signed(CLABE.national, '123')).toBe('123');
   });
 
+  it('take a part whose length varies, and draw it at the bank\'s own lengths', () => {
+    const us: National = {
+      name: 'R',
+      parts: [{ name: 'routing', length: 8, kind: 'n' }, { name: 'check', length: 1, kind: 'n' }, { name: 'account', length: 17, kind: 'c', min: 1, drawn: [8, 12] }],
+      bank: [1, 8],
+      checks: [{ over: [1, 8], weights: [3, 7, 1, 3, 7, 1, 3, 7] }],
+    };
+    // Bank of Guam's routing number, 121405115, its check 5 (sum 45), with an account of one to seventeen characters.
+    for (const account of ['1', '12345678', 'A1B2C3', '12345678901234567']) expect(refusal({ national: us }, `121405115${account}`), account).toBeUndefined();
+    expect(refusal({ national: us }, '121405115')).toBe('length');
+    expect(refusal({ national: us }, '121405115123456789012345678')).toBe('length');
+    expect(refusal({ national: us }, '121405116123')).toBe('check');
+    expect(refusal({ national: us }, '12140511512-3')).toBe('structure');
+    // Drawn at eight to twelve, every length in time, each passing; the bank's routing number shared by its accounts.
+    const drawn = Array.from({ length: 60 }, (_, n) => draw({ national: us }, SEED, 'US', 'Chase', n));
+    expect(new Set(drawn.map((d) => d.length))).toStrictEqual(new Set([17, 18, 19, 20, 21]));
+    for (const d of drawn) expect(refusal({ national: us }, d), d).toBeUndefined();
+    expect(new Set(drawn.map((d) => d.slice(0, 9))).size).toBe(1);
+    // Without its own drawn lengths, a part is drawn at its most.
+    const most: National = { ...us, parts: [us.parts[0] as National['parts'][number], us.parts[1] as National['parts'][number], { name: 'account', length: 9, kind: 'n', min: 1 }] };
+    expect(draw({ national: most }, SEED, 'US', 'Chase', 0)).toHaveLength(18);
+  });
+
   it("tell the player what the game doesn't know", () => {
     expect(UNKEPT_LINE).toBe('formats.unkept');
-    expect(aboutFormats('US')).toBe(t(UNKEPT_LINE, { country: 'United States' }));
-    expect(aboutFormats('US')).toBe("How banks in United States number their accounts isn't known to this game yet.");
+    expect(aboutFormats('ZA')).toBe(t(UNKEPT_LINE, { country: 'South Africa' }));
+    expect(aboutFormats('ZA')).toBe("How banks in South Africa number their accounts isn't known to this game yet.");
     expect(aboutFormats('GB')).toBeUndefined();
   });
 });

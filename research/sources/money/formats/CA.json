@@ -15,8 +15,13 @@
    },
    {
     "name": "Account number",
-    "length": 7,
-    "kind": "n"
+    "length": 12,
+    "kind": "c",
+    "min": 1,
+    "drawn": [
+     7,
+     7
+    ]
    }
   ],
   "bank": [
@@ -24,7 +29,7 @@
    3
   ]
  },
- "note": "Payments Canada's Standard 005 (Standards for the Exchange of Financial Data on AFT Files, 2024 edition, read 2026-10-30) gives the routing number a transfer carries as nine digits: a constant zero, the three-digit institution number and the five-digit branch routing (transit) number; the constant zero is left out here. Standard 006 (MICR-encoded items, 2024, amended to 29 March 2024) gives the same institution (three digits) and branch (five digits). Neither fixes the account number: Standard 005 gives it twelve positions, with embedded blanks or dashes allowed and no justification, and Standard 006 leaves its layout to each member. The Royal Bank of Canada, the largest bank, gives its accounts as seven digits (its wire transfer page, read 2026-10-30), so seven is written. No national check digit is stated in either standard; none is modelled.",
+ "note": "Payments Canada's Standard 005 (Standards for the Exchange of Financial Data on AFT Files, 2024 edition, read 2026-10-30) gives the routing number a transfer carries as nine digits: a constant zero, the three-digit institution number and the five-digit branch routing (transit) number; the constant zero is left out here. Standard 006 (MICR-encoded items, 2024, amended to 29 March 2024) gives the same institution (three digits) and branch (five digits). Neither fixes the account number: Standard 005 gives it twelve positions, with embedded blanks or dashes allowed and no justification, and Standard 006 leaves its layout to each member. The Royal Bank of Canada, the largest bank, gives its accounts as seven digits (its wire transfer page, read 2026-10-30). So the account number is held as Standard 005's field takes it, one to twelve letters or digits, and a new one is drawn at seven digits, as RBC's are (until 2026-10-30 it was held at seven, and a payee's longer number refused). No national check digit is stated in either standard; none is modelled.",
  "sources": [
   {
    "url": "https://www.payments.ca/sites/default/files/standard005eng.pdf",

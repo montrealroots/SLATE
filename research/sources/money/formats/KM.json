@@ -1,0 +1,42 @@
+{
+ "country": "KM",
+ "national": {
+  "name": "RIB",
+  "parts": [
+   {
+    "name": "Code De La Banque",
+    "length": 5,
+    "kind": "n"
+   },
+   {
+    "name": "Code Du Guichet",
+    "length": 5,
+    "kind": "n"
+   },
+   {
+    "name": "Numéro Du Compte",
+    "length": 11,
+    "kind": "c"
+   },
+   {
+    "name": "Clé RIB",
+    "length": 2,
+    "kind": "n"
+   }
+  ],
+  "bank": [
+   1,
+   5
+  ],
+  "example": "00099000010000072000288"
+ },
+ "note": "The Banque Centrale des Comores' Règlement n° 14/2015/BCC/DSBR portant attribution des codes banques et normalisation du relevé d'identité bancaire (Moroni, 17 February 2015, in force 1 October 2015), read 2026-10-30 by eye from the BCC's own scanned copy (it has no text layer). The RIB is 23 characters: the bank's code (5 digits, allocated by the BCC: 00001 BIC, 00003 SNPSF, 00004 BDC, 00005 BFC, 00006 Exim Bank, 00007 Union Meck, 00008 Sanduk Anjouan, 00009 Sanduk Mohéli, 00099 the BCC), the counter's (5 digits, padded with zeros on the left), the account number (11, padded with zeros on the left; where a bank's numbering has letters, they're turned into digits to work the key, so the part is held as letters or digits) and the RIB key (2 digits from 01 to 97). The regulation names the key's method as 'MOD 97-10' of ISO 7064, but its own worked RIB (00099 00001 720002 88, the account written unpadded) has the key 88, which is 97 less 100N mod 97 (the French RIB key); ISO 7064's MOD 97-10 would give 89. The form's mod97 is the latter, so no check is written; the lead may add the 97-less key. The worked RIB, padded as the regulation says (00099000010000072000288), is the example, and the regulation's IBAN for it (KM46 0009 9000 0100 0072 0002 88, 27 characters, KM and two check digits before the RIB) checks out. Article 6 requires national transfers to be made on the RIB, international on the IBAN; KM's IBAN isn't in SWIFT's registry, so the RIB is the form.",
+ "sources": [
+  {
+   "url": "https://banque-comores.km/uploads/DOCUMENTS/R%C3%A8glement_014_sur_le_RIB.pdf",
+   "title": "Banque Centrale des Comores, Règlement n° 14/2015/BCC/DSBR portant attribution des codes banques et normalisation du relevé d'identité bancaire (17 February 2015; scanned, read by eye)",
+   "read": "2026-10-30",
+   "said": "Il est attribué par la Banque Centrale des Comores à chaque Etablissement de crédit un numéro à cinq chiffres correspondant à son « code Banque ». ... Le RIB (Relevé d'Identité bancaire) : Identifiant domestique du compte bancaire, qui se compose de 23 caractères alphanumériques comprenant : ... Le code du guichet : Code à cinq chiffres correspondant au numéro de chaque agence de l'établissement. ... Le numéro du compte : Code à onze chiffres correspondant au numéro de compte du client. ... Clé RIB : Code à deux chiffres compris entre 01 et 97 correspondant à une clé de contrôle du RIB. ... Exemple de RIB ... 00099 ... 00001 ... 720002 ... 88 ... Le présent Règlement entre en vigueur le 1er octobre 2015."
+  }
+ ]
+}

@@ -91,11 +91,54 @@ describe('the account formats compile', () => {
     for (const at of [1, 12, 13]) expect(one({ over: [1, 12], weights: Array(12).fill(1) }, lettered(at)), String(at)).toThrow("NG's national number's check 1 is worked over digits, into digits");
     expect(one({ over: [2, 12], weights: Array(11).fill(1) }, lettered(1))).not.toThrow();
     expect(one({ over: [2, 11], weights: Array(10).fill(1) }, lettered(13))).not.toThrow();
-    for (const mod97 of [false, 1, 'true']) expect(one({ over: [1, 11], mod97 }), String(mod97)).toThrow("NG's national number's check 1 is mod97: true, with no weights");
-    expect(one({ over: [1, 11], mod97: true, weights: [] })).toThrow("NG's national number's check 1 is mod97: true, with no weights");
+    for (const mod97 of [false, 1, 'true']) expect(one({ over: [1, 11], mod97 }), String(mod97)).toThrow("NG's national number's check 1 is one of mod97, key97 or rest97: true, with no weights");
+    expect(one({ over: [1, 11], mod97: true, weights: [] })).toThrow("NG's national number's check 1 is one of mod97, key97 or rest97: true, with no weights");
+    // The French RIB's key, two digits like mod 97's; one rule to a check.
+    expect(national('NG', { ...NUBAN, checks: [{ over: [1, 11], key97: true }] })).toStrictEqual({ national: { ...NUBAN, checks: [{ over: [1, 11], key97: true }] } });
+    for (const key97 of [false, 1]) expect(one({ over: [1, 11], key97 }), String(key97)).toThrow("NG's national number's check 1 is one of mod97, key97 or rest97: true, with no weights");
+    expect(one({ over: [1, 11], key97: true, mod97: true })).toThrow("NG's national number's check 1 is one of mod97, key97 or rest97: true, with no weights");
+    expect(one({ over: [1, 11], key97: true, weights: [] })).toThrow("NG's national number's check 1 is one of mod97, key97 or rest97: true, with no weights");
+    expect(one({ over: [1, 12], key97: true })).toThrow("NG's national number's check 1's digits don't fit after characters 1 to 12");
+    expect(national('NG', { ...NUBAN, checks: [{ over: [1, 11], rest97: true }] })).toStrictEqual({ national: { ...NUBAN, checks: [{ over: [1, 11], rest97: true }] } });
+    expect(one({ over: [1, 11], rest97: true, key97: true })).toThrow("NG's national number's check 1 is one of mod97, key97 or rest97: true, with no weights");
+    expect(one({ over: [1, 11], rest97: 'yes' })).toThrow("NG's national number's check 1 is one of mod97, key97 or rest97: true, with no weights");
+    expect(one({ over: [1, 12], rest97: true })).toThrow("NG's national number's check 1's digits don't fit after characters 1 to 12");
     for (const weights of [undefined, 'x', Array(11).fill(1), Array(13).fill(1), [...Array(11).fill(1), 1.5], [...Array(11).fill(1), -1], [...Array(11).fill(1), '1']])
       expect(one({ over: [1, 12], weights }), JSON.stringify(weights)).toThrow("NG's national number's check 1's weights are a whole number for each of characters 1 to 12");
     expect(one({ over: [1, 12], weights: Array(12).fill(0) })).not.toThrow();
+  });
+
+  it("takes a part whose length varies, the bank's code and the checks before it", () => {
+    const fixed = (n: number, name = 'd') => ({ name, length: n, kind: 'n' });
+    const ROUTING = [fixed(8, 'routing'), fixed(1, 'check')];
+    const ACCOUNT = { name: 'account', length: 17, kind: 'c', min: 1, drawn: [8, 12] };
+    const US = { name: 'R', parts: [...ROUTING, ACCOUNT], bank: [1, 8], checks: [{ over: [1, 8], weights: [3, 7, 1, 3, 7, 1, 3, 7] }] };
+    expect(national('US', US)).toStrictEqual({ national: US });
+    expect(national('US', { ...US, parts: [...ROUTING, { ...ACCOUNT, drawn: undefined }] })).toStrictEqual({ national: { ...US, parts: [...ROUTING, { name: 'account', length: 17, kind: 'c', min: 1 }] } });
+    // A part's fewest is fewer than its most; its drawn lengths are lengths it takes.
+    const part = (p: Record<string, unknown>) => () => national('US', { ...US, parts: [...ROUTING, { ...ACCOUNT, ...p }] });
+    for (const min of [0, 1.5, '1']) expect(part({ min }), String(min)).toThrow("US's national number's part 2's min is a whole number above nothing");
+    expect(part({ min: 17 })).toThrow("US's national number's part 2 takes 17 characters at the fewest, fewer than its 17 at the most");
+    expect(part({ min: 16, drawn: [16, 17] })).not.toThrow();
+    expect(part({ drawn: [8, 18] })).toThrow("US's national number's part 2's drawn is characters 8 to 18 of a number 17 long");
+    expect(part({ min: 9, drawn: [8, 12] })).toThrow("US's national number's part 2 is drawn at lengths it takes");
+    expect(part({ min: 8, drawn: [8, 12] })).not.toThrow();
+    expect(part({ min: undefined, drawn: [17, 17] })).toThrow("US's national number's part 2 is drawn at lengths of its own only where its length varies (min)");
+    expect(part({ name: 'a', check: 1 })).toThrow("US's national number's part 2 has no term check");
+    // After a part whose length varies, nothing has a fixed place: the bank's code and the checks sit before.
+    expect(() => national('US', { ...US, bank: [1, 10] })).toThrow("US's national number's bank sits after a part whose length varies");
+    expect(() => national('US', { ...US, bank: [1, 9] })).not.toThrow();
+    const mid = { ...US, parts: [fixed(4), { ...ACCOUNT, kind: 'n', length: 4, min: 2, drawn: undefined }, fixed(4)], bank: [1, 4], checks: [] };
+    expect(() => national('US', { ...mid, checks: [{ over: [1, 3], weights: [1, 1, 1] }] })).not.toThrow();
+    expect(() => national('US', { ...mid, checks: [{ over: [1, 4], weights: [1, 1, 1, 1] }] })).toThrow("US's national number's check 0 sits after a part whose length varies");
+    expect(() => national('US', { ...mid, checks: [{ over: [1, 2], mod97: true }] })).not.toThrow();
+    expect(() => national('US', { ...mid, checks: [{ over: [1, 3], mod97: true }] })).toThrow("US's national number's check 0 sits after a part whose length varies");
+    expect(() => national('US', { ...mid, checks: [{ over: [1, 2], key97: true }] })).not.toThrow();
+    expect(() => national('US', { ...mid, checks: [{ over: [1, 3], key97: true }] })).toThrow("US's national number's check 0 sits after a part whose length varies");
+    expect(() => national('US', { ...mid, checks: [{ over: [1, 2], weights: [1, 1] }, { over: [1, 3], weights: [1, 1, 1] }, { over: [1, 4], weights: [1, 1, 1, 1] }] })).toThrow("US's national number's check 2 sits");
+    expect(() => national('US', { ...mid, bank: [1, 5] })).toThrow("US's national number's bank sits after a part whose length varies");
+    // A fixed form keeps its places to its end.
+    expect(() => national('NG', { name: 'N', parts: [fixed(13)], bank: [1, 13], checks: [{ over: [1, 12], weights: Array(12).fill(1) }] })).not.toThrow();
   });
 
   it("takes a country's file to its one form", () => {

@@ -210,7 +210,8 @@
      {
       "name": "Account number",
       "length": 9,
-      "kind": "n"
+      "kind": "n",
+      "min": 1
      }
     ],
     "bank": [
@@ -487,13 +488,58 @@
      },
      {
       "name": "Account number",
-      "length": 7,
-      "kind": "n"
+      "length": 12,
+      "kind": "c",
+      "min": 1,
+      "drawn": [
+       7,
+       7
+      ]
      }
     ],
     "bank": [
      1,
      3
+    ]
+   }
+  },
+  "CD": {
+   "national": {
+    "name": "RIB",
+    "parts": [
+     {
+      "name": "Code Établissement",
+      "length": 5,
+      "kind": "n"
+     },
+     {
+      "name": "Code Agence",
+      "length": 5,
+      "kind": "n"
+     },
+     {
+      "name": "Numéro De Compte",
+      "length": 11,
+      "kind": "n"
+     },
+     {
+      "name": "Clé RIB",
+      "length": 2,
+      "kind": "n"
+     }
+    ],
+    "bank": [
+     1,
+     5
+    ],
+    "checks": [
+     {
+      "over": [
+       1,
+       21
+      ],
+      "key97": true
+     }
     ]
    }
   },
@@ -1362,6 +1408,51 @@
     ]
    }
   },
+  "JM": {
+   "national": {
+    "name": "Routing number and account number",
+    "parts": [
+     {
+      "name": "Routing Number",
+      "length": 8,
+      "kind": "n"
+     },
+     {
+      "name": "Check Digit",
+      "length": 1,
+      "kind": "n"
+     },
+     {
+      "name": "Account Number",
+      "length": 17,
+      "kind": "c",
+      "min": 1
+     }
+    ],
+    "bank": [
+     1,
+     8
+    ],
+    "checks": [
+     {
+      "over": [
+       1,
+       8
+      ],
+      "weights": [
+       3,
+       7,
+       1,
+       3,
+       7,
+       1,
+       3,
+       7
+      ]
+     }
+    ]
+   }
+  },
   "JO": {
    "iban": {
     "prefix": "JO",
@@ -1409,6 +1500,72 @@
     "bank": [
      1,
      4
+    ]
+   }
+  },
+  "KG": {
+   "national": {
+    "name": "Номер Банковского Расчетного Счета",
+    "parts": [
+     {
+      "name": "Код Финансового Института",
+      "length": 3,
+      "kind": "n"
+     },
+     {
+      "name": "Внутрибанковский Номер Счета",
+      "length": 11,
+      "kind": "n"
+     },
+     {
+      "name": "Контрольный Разряд",
+      "length": 2,
+      "kind": "n"
+     }
+    ],
+    "bank": [
+     1,
+     3
+    ],
+    "checks": [
+     {
+      "over": [
+       1,
+       14
+      ],
+      "rest97": true
+     }
+    ]
+   }
+  },
+  "KM": {
+   "national": {
+    "name": "RIB",
+    "parts": [
+     {
+      "name": "Code De La Banque",
+      "length": 5,
+      "kind": "n"
+     },
+     {
+      "name": "Code Du Guichet",
+      "length": 5,
+      "kind": "n"
+     },
+     {
+      "name": "Numéro Du Compte",
+      "length": 11,
+      "kind": "c"
+     },
+     {
+      "name": "Clé RIB",
+      "length": 2,
+      "kind": "n"
+     }
+    ],
+    "bank": [
+     1,
+     5
     ]
    }
   },
@@ -1896,6 +2053,19 @@
     "bank": [
      1,
      3
+    ]
+   }
+  },
+  "MY": {
+   "national": {
+    "name": "Account Number",
+    "parts": [
+     {
+      "name": "Account Number",
+      "length": 17,
+      "kind": "n",
+      "min": 5
+     }
     ]
    }
   },
@@ -2473,6 +2643,28 @@
     ]
    }
   },
+  "SG": {
+   "national": {
+    "name": "Bank Code And Account Number",
+    "parts": [
+     {
+      "name": "Bank Code",
+      "length": 4,
+      "kind": "n"
+     },
+     {
+      "name": "Account Number",
+      "length": 10,
+      "kind": "n",
+      "min": 9
+     }
+    ],
+    "bank": [
+     1,
+     4
+    ]
+   }
+  },
   "SI": {
    "iban": {
     "prefix": "SI",
@@ -2788,6 +2980,60 @@
     ]
    }
   },
+  "US": {
+   "national": {
+    "name": "Routing and account number",
+    "parts": [
+     {
+      "name": "Federal Reserve Routing Symbol",
+      "length": 4,
+      "kind": "n"
+     },
+     {
+      "name": "ABA Institution Identifier",
+      "length": 4,
+      "kind": "n"
+     },
+     {
+      "name": "Check Digit",
+      "length": 1,
+      "kind": "n"
+     },
+     {
+      "name": "Account Number",
+      "length": 17,
+      "kind": "c",
+      "min": 1,
+      "drawn": [
+       8,
+       12
+      ]
+     }
+    ],
+    "bank": [
+     1,
+     8
+    ],
+    "checks": [
+     {
+      "over": [
+       1,
+       8
+      ],
+      "weights": [
+       3,
+       7,
+       1,
+       3,
+       7,
+       1,
+       3,
+       7
+      ]
+     }
+    ]
+   }
+  },
   "VA": {
    "iban": {
     "prefix": "VA",
@@ -2825,6 +3071,19 @@
     "bank": [
      1,
      4
+    ]
+   }
+  },
+  "VN": {
+   "national": {
+    "name": "Số Tài Khoản",
+    "parts": [
+     {
+      "name": "Số Tài Khoản",
+      "length": 10,
+      "kind": "n",
+      "min": 3
+     }
     ]
    }
   },

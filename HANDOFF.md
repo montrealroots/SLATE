@@ -883,6 +883,43 @@ Wave 8 (2026-10-30, seven research subagents on the papers engines and the accou
   predate the finance law of 2026 (art. 128: a first residence card's taxes from 200 to 300 euros on 1 May 2026, as
   Mayotte's prefecture says).
 
+Wave 9 (2026-10-30, eight research subagents and the lead's form work):
+
+- Account formats: a national part may vary in length (`min`, the fewest it takes, with `length` the most, and `drawn`,
+  the lengths a bank's own numbers are drawn at); the bank's code and the checks sit before any part that varies. The
+  United States is written: the routing number with its check (weights 3,7,1, the New York Fed's Circular 8203 of 1977,
+  proven on Bank of Guam's 121405115), then an account of one to seventeen characters (the Fiscal Service's Green Book),
+  drawn at eight to twelve digits (Chase: "often eight to 12"). Canada now takes one to twelve (Payments Canada's
+  Standard 005 field), drawn at RBC's seven; Australia one to nine. Two check rules joined: `key97`, the French RIB's
+  key (97 less the hundredfold read mod 97), for the Congo's RIB, proven on the Comoros central bank's worked RIB, whose
+  key is 88 where MOD 97-10 gives 89 though its regulation names MOD 97-10; and `rest97`, the remainder itself with 97
+  for nought, for Kyrgyzstan (the National Bank's Instruction 3/5, its annex's three numbers). Written: CD, KM, JM, KG,
+  SG, MY, VN. Blocked 16, each with today's five attempts.
+- National numbers: China's check digit (GB 11643-1999, ISO 7064 MOD 11-2, 10 written X) is computed, proven on the
+  standard's two worked numbers (annex B, read by the lead in the scan: 11010519491231002X, 440524188001010014). The
+  form takes `min` where a number's length varies (Panama's cédula, three to ten digits). India's Verhoeff check stays
+  out (uidai.gov.in reset every connection; its numbering paper is only in the web archive, which can't be read here)
+  and France's NIR key too (only private sites state 97 less the remainder).
+- Standing after the wave: numbers 141 researched, 20 blocked, 85 pending; residence 133, 10, 103; licences 70, 3, 173;
+  formats 127, 34, 85. Released from `research/held/` with the fact each lacked: numbers CC and NF (the Income Tax
+  Assessment Act 1997 s 960-505 counts both as Australia), BL, MF and WF (decree 2025-1384 on the RNIPP, secondary
+  quoting the Journal officiel), PA (its range); residence KE, MU (fees out), AZ, BA; licences NL and DK (fee null, as
+  their sources leave it). Newly held: residence IL (its work for the sponsor inferred), licences MU (the age a
+  provisional licence's). Still held: formats AS, GU, MP, PR; numbers PM, TK, WS; residence BQ, DM, KZ, MS, SB, ZW;
+  licences PH, WS.
+- Form gaps the wave found, each keeping sourced countries out: a residence route whose source doesn't say whether the
+  work is tied to an employer (Vietnam, Georgia, Morocco, Vanuatu, Cameroon, Senegal, Togo, Côte d'Ivoire); a territory
+  taking another country's national account form (Cocos, Christmas and Norfolk Islands to Australia's; Svalbard to
+  Norway's IBAN, which SWIFT's registry doesn't fold it into); Svalbard's residence, where the Governor says no permit
+  of any kind is needed; licences with a citizen's and a non-citizen's fee, a fee by the year, or a term running to an
+  age (Taiwan's to 70, Guernsey's, Slovakia's cap at 70); Saint Kitts and Nevis's tax number, "from one digit upwards".
+- Readings kept, to check: licence ages built from a graduated licence's stages (Hong Kong 19, Malta 21, Malaysia 19,
+  Lithuania 20, Serbia 21 from its law's two probation cases); Tanzania's age from the Road Traffic Act's 2002 text
+  (later amendments not applied there); Zambia's on its 2002 Act; Sudan's, Iraq's and Mongolia's numbers on Landinfo
+  (secondary; Mongolia's of 2012); the Congo's residence on the Spanish embassy's summary (secondary); North Macedonia's
+  residence times taken as the longest the law allows; fees summed from their parts (Albania, Malta, North Macedonia's
+  licence; Guatemala's and Mongolia's residence).
+
 The older next steps below are kept as they were written.
 
 1. The weather's blockers

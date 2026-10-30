@@ -20,7 +20,7 @@ export interface NationalNumber {
   readonly name: string;
   readonly issuer: string;
   /** Its characters with no spaces or separators, a pattern the whole of it matches, and the check digits it carries. */
-  readonly format: { readonly length: number; readonly pattern: string; readonly check?: CheckId };
+  readonly format: { readonly length: number; readonly min?: number; readonly pattern: string; readonly check?: CheckId };
   readonly when: When;
   /** The youngest it is given to, where the law sets an age. */
   readonly from?: number;
@@ -69,8 +69,8 @@ export function needsNumber(country: CountryCode, purpose: Purpose): boolean | u
 export function fitsNumber(country: CountryCode, text: string): boolean | undefined {
   const n = nationalNumber(country);
   if (n === undefined || n === 'none') return undefined;
-  const { length, pattern, check } = n.format;
-  return text.length === length && new RegExp(`^(?:${pattern})$`).test(text) && (check === undefined || checks(check, text));
+  const { length, min = length, pattern, check } = n.format;
+  return text.length >= min && text.length <= length && new RegExp(`^(?:${pattern})$`).test(text) && (check === undefined || checks(check, text));
 }
 
 export const UNKEPT_LINE = 'numbers.unkept';

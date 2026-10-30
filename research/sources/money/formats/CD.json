@@ -1,0 +1,50 @@
+{
+ "country": "CD",
+ "national": {
+  "name": "RIB",
+  "parts": [
+   {
+    "name": "Code Établissement",
+    "length": 5,
+    "kind": "n"
+   },
+   {
+    "name": "Code Agence",
+    "length": 5,
+    "kind": "n"
+   },
+   {
+    "name": "Numéro De Compte",
+    "length": 11,
+    "kind": "n"
+   },
+   {
+    "name": "Clé RIB",
+    "length": 2,
+    "kind": "n"
+   }
+  ],
+  "bank": [
+   1,
+   5
+  ],
+  "checks": [
+   {
+    "over": [
+     1,
+     21
+    ],
+    "key97": true
+   }
+  ]
+ },
+ "note": "The Banque Centrale du Congo's Instruction n° 28 relative à la normalisation des coordonnées bancaires (signed by Governor Déogratias Mutombo Mwana Nyembo; the day of signature is illegible in the scanned copy; in force six months after it), read 2026-10-30 from the BCC's own copy, its annex read by eye as well as in the PDF's text layer: the RIB (or a post office's RIP) is 23 characters, all digits: the institution's code (5, allocated by the BCC to each institution), the branch's (5, allocated by the institution), the account number (11, allocated by the institution, padded with zeros on the left) and the RIB key (2). The key, exactly as the annex gives it: the bank code, the branch code and the account number in that order make a 21-digit number N; 'Clé RIB = 97 - (reste de la division 100xN/97)', a value from 01 to 97, so that the 23 digits read mod 97 give 0. That is the French RIB key, not ISO 7064 MOD 97-10 (which makes the number read mod 97 one, its check 98 less the remainder): the form's mod97 would give a key one higher, so when this file was first written it held the key as any two digits. No worked number is given in the instruction, so there's no example. The key is held as the form's key97 (added 2026-10-30 for it): 97 less 100N read mod 97, proven on the Comoros central bank's worked RIB (the same French key), the instruction giving no worked number of its own.",
+ "sources": [
+  {
+   "url": "https://resources.bcc.cd/publications/documents-surveillance-if/instruction_ndeg28.pdf",
+   "title": "Banque Centrale du Congo, Instruction n° 28 relative à la normalisation des coordonnées bancaires, with its annex (Caractéristiques techniques et modèle normalisé des coordonnés bancaires)",
+   "read": "2026-10-30",
+   "said": "Le RIB ou le RIP, constitué de 23 caractères, contient les informations/données suivantes: ... 5 caractères Numérique ... Le code agence sur 5 ... 11 caractères Numérique ... Compléter avec des 0 à gauche ... A calculer suivant la formule ci-après ... Formule: Clé RIB = 97 - (reste de la division 100xN/97) ... Le reste de la division de N par 97 est égal à O. ... Le code établissement est attribué par la Banque Centrale à chaque assujetti."
+  }
+ ]
+}

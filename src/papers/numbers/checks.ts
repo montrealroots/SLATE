@@ -47,14 +47,31 @@ export const CHECKS = {
       return first + mod11(first);
     },
   },
+  /**
+   * China's citizen identity number: seventeen digits of body and one check character, ISO 7064:1983 MOD 11-2 as the
+   * national standard GB 11643-1999 sets it out (s. 5.1.4): each body digit weighted 2^(i-1) mod 11 by its place i from
+   * the right, the check counting as place 1 (7, 9, 10, 5, 8, 4, 2, 1, 6, 3, 7, 9, 10, 5, 8, 4, 2 from the left), and
+   * the check character the value that makes the whole sum 1 mod 11, 10 written X (its table 2). Read by eye
+   * 2026-10-30 in the scan the Beijing housing commission publishes, with its two worked numbers (annex B):
+   * 11010519491231002X and 440524188001010014.
+   */
+  'cn-gb11643': {
+    digits: 1,
+    compute: (body: string) => {
+      const sum = [...body].reduce((s, d, i) => s + Number(d) * (2 ** (body.length - i) % 11), 0);
+      const a = (12 - (sum % 11)) % 11;
+      return body + (a === 10 ? 'X' : String(a));
+    },
+  },
 } satisfies Record<string, Check>;
 
 export type CheckId = keyof typeof CHECKS;
 
 export const isCheck = (id: unknown): id is CheckId => Object.hasOwn(CHECKS, id as PropertyKey);
 
-/** Whether a number, all digits, ends in the check digits its body gives. */
+/** Whether a number, its body all digits, ends in the check digits (or China's X) its body gives. */
 export function checks(id: CheckId, number: string): boolean {
   const { digits, compute } = CHECKS[id];
-  return /^\d+$/.test(number) && number.length > digits && compute(number.slice(0, -digits)) === number;
+  const body = number.slice(0, -digits);
+  return /^\d+$/.test(body) && compute(body) === number;
 }

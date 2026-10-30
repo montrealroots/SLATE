@@ -10,8 +10,13 @@ import { draws, type Draws } from '../../core/rng/rng.ts';
 export type Kind = 'n' | 'a' | 'c';
 
 export interface Part {
+  /** The part's characters, or the most it takes where its length varies. */
   readonly length: number;
   readonly kind: Kind;
+  /** The fewest characters it takes, where its length varies (a national number's account part, as the US's). */
+  readonly min?: number;
+  /** The lengths a new one is drawn at, where they're the bank's own and not the most the part takes. */
+  readonly drawn?: Span;
 }
 
 /** Characters from..to of a number, counted from 1, both included. */
@@ -32,9 +37,22 @@ export interface Iban {
  * A check inside a national number, worked over the digits `over` and written in the digits straight after them: one
  * digit, ten less the last figure of the digits' sum each times its weight (0 for 10), as Argentina's CBU and Nigeria's
  * NUBAN have it; or two, `mod97`, making the digits and the check read mod 97 one, ISO/IEC 7064's MOD 97-10, as
- * Angola's NBA has it.
+ * Angola's NBA has it; or two, `key97`, the French RIB's key, 97 less the digits' hundredfold read mod 97, making the
+ * whole read mod 97 nought (one less than MOD 97-10's), as the Congo's RIB has it; or two, `rest97`, the digits read mod
+ * 97 themselves, 97 for nought, as Kyrgyzstan's account number has it.
  */
-export type Check = { readonly over: Span; readonly weights: readonly number[] } | { readonly over: Span; readonly mod97: true };
+export type Check =
+  | { readonly over: Span; readonly weights: readonly number[] }
+  | { readonly over: Span; readonly mod97: true }
+  | { readonly over: Span; readonly key97: true }
+  | { readonly over: Span; readonly rest97: true };
+
+/** The two check digits each mod-97 rule writes after the digits it's worked over. */
+const TWO = {
+  mod97: (body: string) => ibanCheck('', body),
+  key97: (body: string) => String(97 - mod97(`${body}00`)).padStart(2, '0'),
+  rest97: (body: string) => String(mod97(body) || 97).padStart(2, '0'),
+};
 
 export interface National {
   /** The number's name, as the country's banks call it. */
@@ -67,7 +85,9 @@ function sign(text: string, check: Check): string {
   const [from, to] = check.over;
   const body = text.slice(from - 1, to);
   const digits =
-    'mod97' in check ? ibanCheck('', body) : String((10 - ([...body].reduce((sum, d, i) => sum + Number(d) * (check.weights[i] as number), 0) % 10)) % 10);
+    'weights' in check
+      ? String((10 - ([...body].reduce((sum, d, i) => sum + Number(d) * (check.weights[i] as number), 0) % 10)) % 10)
+      : TWO['mod97' in check ? 'mod97' : 'key97' in check ? 'key97' : 'rest97'](body);
   return `${text.slice(0, to)}${digits}${text.slice(to + digits.length)}`;
 }
 
@@ -75,19 +95,21 @@ function sign(text: string, check: Check): string {
 export const signed = (format: National, text: string): string => (format.checks ?? []).reduce(sign, text);
 
 const CLASSES: Record<Kind, string> = { n: '[0-9]', a: '[A-Z]', c: '[A-Z0-9]' };
-const fits = (text: string, parts: readonly Part[]) => new RegExp(`^${parts.map((p) => `${CLASSES[p.kind]}{${p.length}}`).join('')}$`).test(text);
+const fits = (text: string, parts: readonly Part[]) => new RegExp(`^${parts.map((p) => `${CLASSES[p.kind]}{${p.min ?? p.length},${p.length}}`).join('')}$`).test(text);
 
 const LETTERS = 'ABCDEFGHIJKLMNOPQRSTUVWXYZ';
 
 /**
  * Characters to the parts, those inside the bank's span from the bank's own stream and the rest from the account's. A
  * `c` is drawn as a digit: the registry allows a letter there and some banks use one (its own French example has an M),
- * but most numbers are digits through, and letters drawn 26 times in 36 would give numbers no bank gives.
+ * but most numbers are digits through, and letters drawn 26 times in 36 would give numbers no bank gives. A part whose
+ * length varies is drawn at one of its `drawn` lengths, from the account's stream, or else at its most.
  */
 function fill(parts: readonly Part[], bank: Span | undefined, own: Draws, account: Draws): string {
   let out = '';
   for (const part of parts) {
-    for (let i = 0; i < part.length; i += 1) {
+    const length = part.drawn === undefined ? part.length : part.drawn[0] + account.below(part.drawn[1] - part.drawn[0] + 1);
+    for (let i = 0; i < length; i += 1) {
       const at = out.length + 1;
       const from = bank !== undefined && at >= bank[0] && at <= bank[1] ? own : account;
       out += part.kind === 'a' ? from.pick([...LETTERS]) : String(from.below(10));
@@ -126,7 +148,7 @@ export function refusal(format: Format, text: string): Refusal | undefined {
   const s = text.replace(/\s/g, '').toUpperCase();
   if ('national' in format) {
     const { parts } = format.national;
-    if (s.length !== parts.reduce((sum, p) => sum + p.length, 0)) return 'length';
+    if (s.length < parts.reduce((sum, p) => sum + (p.min ?? p.length), 0) || s.length > parts.reduce((sum, p) => sum + p.length, 0)) return 'length';
     if (!fits(s, parts)) return 'structure';
     return signed(format.national, s) === s ? undefined : 'check';
   }

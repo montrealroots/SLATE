@@ -11,11 +11,11 @@ import { UNITS, type Unit } from '../passports/compile.ts';
  * one per country (research/sources/papers/numbers/<CC>.json, register fact papers.numbers.<CC>), each checked against
  * the SHA-256 its register entry cites before a byte of it is read. A country that gives its people a number (the
  * United States' Social Security number, the United Kingdom's National Insurance number, Canada's SIN, Brazil's CPF)
- * names it as the government does, its issuer, its form (its length, a pattern it matches with no spaces or separators,
- * and the check digits it carries, by an algorithm src/papers/numbers/checks.ts computes), when it is given and to whom,
- * and what the research states of its fee, its time and what needs one. A country that gives none says so (`none`); a
- * territory whose people hold another country's says whose (`issuedBy`), as the identity documents do. A term a source
- * doesn't state is left out, never guessed. No file was written when the engine was built (2026-10-30), so the
+ * names it as the government does, its issuer, its form (its length, or the fewest and most where it varies, a pattern
+ * it matches with no spaces or separators, and the check digits it carries, by an algorithm src/papers/numbers/checks.ts
+ * computes), when it is given and to whom, and what the research states of its fee, its time and what needs one. A
+ * country that gives none says so (`none`); a territory whose people hold another country's says whose (`issuedBy`), as
+ * the identity documents do. A term a source doesn't state is left out, never guessed. No file was written when the engine was built (2026-10-30), so the
  * directory may not be there yet; then nothing is compiled.
  */
 export const SOURCES = 'research/sources/papers/numbers';
@@ -31,8 +31,10 @@ export interface Within {
 }
 
 export interface Format {
-  /** Its characters, with no spaces or separators. */
+  /** Its characters, with no spaces or separators: the most, where its length varies. */
   length: number;
+  /** The fewest, where its length varies (Panama's cédula, whose parts run one to two, four and four digits). */
+  min?: number;
   /** A regular expression the whole number matches, written as the research reads the issuer's form. */
   pattern: string;
   check?: CheckId;
@@ -114,16 +116,17 @@ export function terms<T extends string>(list: unknown, allowed: readonly T[], wh
 
 function format(f: unknown, at: string): Format {
   if (!isRecord(f)) throw new Error(`${at}'s format is not an object`);
-  only(f, ['length', 'pattern', 'check'], `${at}'s format`);
-  const { length, pattern, check } = f;
+  only(f, ['length', 'min', 'pattern', 'check'], `${at}'s format`);
+  const { length, min, pattern, check } = f;
   if (!isWhole(length, 1)) throw new Error(`${at}'s number is a whole number of characters long`);
+  if (min !== undefined && !(isWhole(min, 1) && min < length)) throw new Error(`${at}'s number is ${String(min)} characters long at the fewest, fewer than its ${length} at the most`);
   if (typeof pattern !== 'string' || pattern === '') throw new Error(`${at}'s number has a pattern`);
   try {
     new RegExp(pattern);
   } catch {
     throw new Error(`${at}'s pattern isn't a regular expression (${pattern})`);
   }
-  const out: Format = { length, pattern };
+  const out: Format = min === undefined ? { length, pattern } : { length, min, pattern };
   if (check === undefined) return out;
   if (!isCheck(check)) throw new Error(`${at}'s number is checked by ${String(check)}, which the game doesn't compute`);
   return { ...out, check };

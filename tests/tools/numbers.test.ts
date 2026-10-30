@@ -59,6 +59,10 @@ describe('the national numbers compile', () => {
     expect(() => compileNumber('CA', file({ format: { length: 9, pattern: 'x', spaces: true } }))).toThrow("CA's format has no term spaces");
     for (const length of [undefined, 0, 1.5, '9']) expect(() => compileNumber('CA', file({ format: { length, pattern: 'x' } }))).toThrow("CA's number is a whole number of characters long");
     expect(compileNumber('CA', file({ format: { length: 1, pattern: 'x' } })).format.length).toBe(1);
+    // A length that varies: the fewest it takes, fewer than its most.
+    expect(compileNumber('PA', file({ country: 'PA', format: { length: 10, min: 3, pattern: 'x' } })).format).toStrictEqual({ length: 10, min: 3, pattern: 'x' });
+    expect(compileNumber('PA', file({ country: 'PA', format: { length: 2, min: 1, pattern: 'x' } })).format).toStrictEqual({ length: 2, min: 1, pattern: 'x' });
+    for (const min of [0, 1.5, '3', 10, 11]) expect(() => compileNumber('CA', file({ format: { length: 10, min, pattern: 'x' } })), String(min)).toThrow(`CA's number is ${String(min)} characters long at the fewest, fewer than its 10 at the most`);
     for (const pattern of [undefined, '', 7]) expect(() => compileNumber('CA', file({ format: { length: 9, pattern } }))).toThrow("CA's number has a pattern");
     expect(() => compileNumber('CA', file({ format: { length: 9, pattern: '[0-9' } }))).toThrow("CA's pattern isn't a regular expression ([0-9)");
     expect(() => compileNumber('CA', file({ format: { length: 9, pattern: 'x', check: 'verhoeff' } }))).toThrow("CA's number is checked by verhoeff, which the game doesn't compute");
