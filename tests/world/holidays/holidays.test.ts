@@ -87,7 +87,7 @@ describe('the holidays of every country kept', () => {
         expect(hs.every((h, i) => h.name !== '' && civilFromDays(h.day).year === year && (i === 0 || (hs[i - 1] as { day: number }).day <= h.day)), `${country} ${year}`).toBe(true);
       }
     }
-  });
+  }, 120_000); // Every country's every year: about a second plain, past 30 s in mutation testing's instrumented first run on CI's runner (2026-10-30), which stopped the gate.
 });
 
 describe('the reckonings', () => {
