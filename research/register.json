@@ -124976,45 +124976,6 @@
    ]
   },
   {
-   "id": "R-3841",
-   "fact": "money.formats.blocked.PN",
-   "sought": "The structure of the account number banks in the Pitcairn Islands give (its length or range of lengths, any bank or branch code inside it, and any check digit), as the Government of the Pitcairn Islands publishes it, or as the largest bank states its own.",
-   "status": "blocked",
-   "attempts": [
-    {
-     "method": "institution",
-     "tried": "https://www.government.pn/ (the Government of the Pitcairn Islands)",
-     "result": "The home page answered and names no bank or account form there",
-     "date": "2026-10-30"
-    },
-    {
-     "method": "official-register",
-     "tried": "SWIFT's IBAN Registry, the vendored text release (vendor/swift/iban-registry.txt, GNU Taler iban-tools commit 81b6dbcb), its row of IBAN prefixes and its 'Country code includes other countries/territories' row searched for PN",
-     "result": "PN has no column in the registry and is folded into no other country's prefix: no IBAN structure registered",
-     "date": "2026-10-30"
-    },
-    {
-     "method": "web-search",
-     "tried": "\"Bank of St Helena account number sort code format Pitcairn Islands banking South Georgia government bank account\"",
-     "result": "Nothing on Pitcairn",
-     "date": "2026-10-30"
-    },
-    {
-     "method": "trade-press",
-     "tried": "The search's results reviewed for press items quoting the central bank or a bank on the account number's form",
-     "result": "None",
-     "date": "2026-10-30"
-    },
-    {
-     "method": "archive",
-     "tried": "archive.org's availability API (bin/wb.sh) for https://www.government.pn/",
-     "result": "https://www.government.pn/: snapshot 20261017103534. web.archive.org, which serves the snapshots, is refused by this egress, so none was read",
-     "date": "2026-10-30"
-    }
-   ],
-   "notModeled": "formats.unkept"
-  },
-  {
    "id": "R-3842",
    "fact": "papers.licence.blocked.AO",
    "sought": "Angola's category B driving licence (carta de condu\u00e7\u00e3o): the age it is issued from, its fee and term, from the National Directorate of Road Traffic (DNVT) or the C\u00f3digo de Estrada (Decreto-Lei 5/08) and Presidential Decree 148/21.",

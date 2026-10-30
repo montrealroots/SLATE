@@ -17,6 +17,10 @@ import type { RegisterIndex } from './register.ts';
  * - blocked: a blocker in the register, and a passing test shows the game saying what isn't modeled;
  * - game: the game's own figure, labeled to the player, in the register, and a passing test holds it;
  * - pending: not done; the layer isn't proven while one remains.
+ *
+ * And every blocker in the register stands for a row: one no row cites (Pitcairn's account-number form, blocked in wave
+ * 10, whose row turned researched on the bank it doesn't have in wave 15, the blocker left behind) says a fact is
+ * unknown that the game now reads, so it fails.
  */
 export const ROW_STATUSES = ['researched', 'proven', 'blocked', 'game', 'pending'] as const;
 type RowStatus = (typeof ROW_STATUSES)[number];
@@ -78,6 +82,7 @@ export function checkCoverage(repo: Repo, ledger: LayerLedger | undefined, regis
   const summary: string[] = [];
   const detail: string[] = [];
   let pending = 0;
+  const cited = new Set<string>();
   /** Matrix A: each engine's status for each country, from its matrix on the country axis. */
   const byCountry = new Map<string, Map<string, RowStatus>>();
 
@@ -142,6 +147,7 @@ export function checkCoverage(repo: Repo, ledger: LayerLedger | undefined, regis
         counts[status] += 1;
         column.set(key, status);
         const refs = Array.isArray(row['register']) ? row['register'] : [];
+        for (const ref of refs) cited.add(String(ref));
         const entries = refs.map((ref) => register.entries.get(String(ref)));
         refs.forEach((ref, j) => {
           if (entries[j] === undefined) r.red(`the row cites ${String(ref)}, which the register doesn't hold`, where);
@@ -168,6 +174,7 @@ export function checkCoverage(repo: Repo, ledger: LayerLedger | undefined, regis
     }
     summary.push(`| \`${id}\` | ${String(e['layer'])} | ${e['readsPlace'] === true ? 'yes' : 'no'} | ${ROW_STATUSES.map((s) => counts[s]).join(' | ')} |`);
   }
+  for (const [ref, entry] of register.entries) if (entry.status === 'blocked' && !cited.has(ref)) r.red('a blocker that no coverage row cites', `${PATHS.register} ${ref}`);
   if (pending > 0) r.incomplete(`${pending} coverage rows are pending`);
 
   // Every directory directly under a layer that holds engines is a declared engine: no engine goes unmatrixed.
