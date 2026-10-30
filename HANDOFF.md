@@ -335,11 +335,11 @@ restarts. Read `CLAUDE.md` and the owner's package in `docs/` first.
   late payment is reported (`report`), and the years it stays (`keep`), from the law, the regulator or the bureau
   (research/sources/money/credit/<CC>.json, register facts money.credit.<CC>), compiled by `tools/money/credit`. A late
   payment marks the record for the country's years; the record's standing is the game's reading, said as the game's: 1000
-  less 250 for each mark still kept, down to 0, which prices a card's range (`priced`). Matrix (2026-10-30): 2
-  researched (US: FCRA 15 U.S.C. 1681c(a)(5), seven years, Experian's 30 days; GB: the ICO's arrears principles,
-  reported at the next monthly update, Experian's six years), 6 proven, 244 pending. Sources already read for the next:
-  Australia (OAIC: missed after 14 days, kept 2 years), Ireland (CCPC: the Central Credit Register monthly, five years),
-  Germany (BDSG § 31: two written reminders, the first four weeks before), in the scratchpad's dl/cr.
+  less 250 for each mark still kept, down to 0, which prices a card's range (`priced`). Matrix (2026-10-30): 6
+  researched (US, GB, CA, AU, IE, DE), 6 proven, 240 pending. A monthly reporting cycle with no stated threshold
+  (Britain's status codes, Ireland's Central Credit Register, Equifax Canada's 30-day reporting) is written as 30 days;
+  Germany's 28 is BDSG § 31's four weeks from a first reminder sent at the due date. canada.ca refuses this
+  environment's egress and was read through the web fetcher, said so in its sources.
 - **Cards** (`money.cards`, built 2026-10-29): each country's credit cards from the bank's own price list, pricing and
   terms, or card page (research/sources/money/cards/<CC>.json, register facts money.cards.<CC>), compiled by
   `tools/money/cards` into `src/money/cards/cards.json`. A card is named as its bank names it, with its currency (the
