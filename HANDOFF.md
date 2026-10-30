@@ -335,9 +335,11 @@ restarts. Read `CLAUDE.md` and the owner's package in `docs/` first.
   late payment is reported (`report`), and the years it stays (`keep`), from the law, the regulator or the bureau
   (research/sources/money/credit/<CC>.json, register facts money.credit.<CC>), compiled by `tools/money/credit`. A late
   payment marks the record for the country's years; the record's standing is the game's reading, said as the game's: 1000
-  less 250 for each mark still kept, down to 0, which prices a card's range (`priced`). Matrix (2026-10-30): 35
+  less 250 for each mark still kept, down to 0, which prices a card's range (`priced`). Matrix (2026-10-30): 52
   researched (US, GB, CA, AU, IE, DE, FR, ES, IT, NL, BE, FI, JP, CN, SE, DK, MX, BR, PL, AT, HU, CH, RO, SI, HR, GR,
-  NO, CZ, BG, SK, LT, LV, EE, PT, LU), 6 proven, 211 pending. Where the country's own regulator or law shows no bureau
+  NO, CZ, BG, SK, LT, LV, EE, PT, LU, IS; PR, GU, VI, AS, MP under the FCRA, whose "State" takes in every territory;
+  GF, GP, MQ, RE, YT, BL, MF, PM through the IEDOM and NC, PF, WF through the IEOM, on the FICP's rules), 6 proven,
+  194 pending. Where the country's own regulator or law shows no bureau
   or registry keeps a person's record of credit, the file says so (`none: true`, nothing else), a late payment there
   marks nothing, and the player is told so (`credit.none`): Luxembourg, whose central bank says it has no register of
   consumer credit. A rule of "more than 90 days" is written as 91, the first day past it (Hungary,
@@ -345,7 +347,7 @@ restarts. Read `CLAUDE.md` and the owner's package in `docs/` first.
   registered as secondary. Where no
   source states the days after a due date a late payment is reported, the file marks them the game's (`reportGame`):
   the bureau's next monthly update, 30 days, compiled with `game: true` for the money screen to say so (China, Sweden,
-  Denmark, Mexico, Brazil, Austria, Greece, Norway, Slovakia, Lithuania). Mexico's retention steps with the debt's size in UDIs (12 to 72 months); the game keeps the
+  Denmark, Mexico, Brazil, Austria, Greece, Norway, Slovakia, Lithuania, Iceland). Mexico's retention steps with the debt's size in UDIs (12 to 72 months); the game keeps the
   72. Portugal: the Banco de Portugal's instruction answers with a bot check, not passed, so Santander's guide to its
   register is registered as secondary, quoting it; Lithuania's central bank and Register of Legal Acts answer with
   Cloudflare, so Creditinfo Lietuva's own statement is read.
