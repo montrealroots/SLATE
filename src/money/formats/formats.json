@@ -64,6 +64,120 @@
     ]
    }
   },
+  "AO": {
+   "national": {
+    "name": "Número Bancário Angolano",
+    "parts": [
+     {
+      "name": "Instituição Financeira",
+      "length": 4,
+      "kind": "n"
+     },
+     {
+      "name": "Finalidade Da Instituição",
+      "length": 4,
+      "kind": "n"
+     },
+     {
+      "name": "Número Da Conta",
+      "length": 11,
+      "kind": "n"
+     },
+     {
+      "name": "Algarismos De Controlo",
+      "length": 2,
+      "kind": "n"
+     }
+    ],
+    "bank": [
+     1,
+     4
+    ],
+    "checks": [
+     {
+      "over": [
+       1,
+       19
+      ],
+      "mod97": true
+     }
+    ]
+   }
+  },
+  "AR": {
+   "national": {
+    "name": "CBU",
+    "parts": [
+     {
+      "name": "Número De Entidad",
+      "length": 3,
+      "kind": "n"
+     },
+     {
+      "name": "Número De Sucursal",
+      "length": 4,
+      "kind": "n"
+     },
+     {
+      "name": "Dígito Verificador",
+      "length": 1,
+      "kind": "n"
+     },
+     {
+      "name": "Identificación De La Cuenta",
+      "length": 13,
+      "kind": "n"
+     },
+     {
+      "name": "Dígito Verificador De La Cuenta",
+      "length": 1,
+      "kind": "n"
+     }
+    ],
+    "bank": [
+     1,
+     3
+    ],
+    "checks": [
+     {
+      "over": [
+       1,
+       7
+      ],
+      "weights": [
+       7,
+       1,
+       3,
+       9,
+       7,
+       1,
+       3
+      ]
+     },
+     {
+      "over": [
+       9,
+       21
+      ],
+      "weights": [
+       3,
+       9,
+       7,
+       1,
+       3,
+       9,
+       7,
+       1,
+       3,
+       9,
+       7,
+       1,
+       3
+      ]
+     }
+    ]
+   }
+  },
   "AT": {
    "iban": {
     "prefix": "AT",
@@ -81,6 +195,27 @@
     "bank": [
      1,
      5
+    ]
+   }
+  },
+  "AU": {
+   "national": {
+    "name": "BSB and account number",
+    "parts": [
+     {
+      "name": "BSB",
+      "length": 6,
+      "kind": "n"
+     },
+     {
+      "name": "Account number",
+      "length": 9,
+      "kind": "n"
+     }
+    ],
+    "bank": [
+     1,
+     6
     ]
    }
   },
@@ -333,6 +468,32 @@
     "bank": [
      1,
      4
+    ]
+   }
+  },
+  "CA": {
+   "national": {
+    "name": "Institution, transit and account number",
+    "parts": [
+     {
+      "name": "Institution number",
+      "length": 3,
+      "kind": "n"
+     },
+     {
+      "name": "Transit number",
+      "length": 5,
+      "kind": "n"
+     },
+     {
+      "name": "Account number",
+      "length": 7,
+      "kind": "n"
+     }
+    ],
+    "bank": [
+     1,
+     3
     ]
    }
   },
@@ -896,6 +1057,32 @@
     ]
    }
   },
+  "HK": {
+   "national": {
+    "name": "Bank code, branch code and account number",
+    "parts": [
+     {
+      "name": "Bank code",
+      "length": 3,
+      "kind": "n"
+     },
+     {
+      "name": "Branch code",
+      "length": 3,
+      "kind": "n"
+     },
+     {
+      "name": "Account number",
+      "length": 9,
+      "kind": "n"
+     }
+    ],
+    "bank": [
+     1,
+     3
+    ]
+   }
+  },
   "HN": {
    "iban": {
     "prefix": "HN",
@@ -1040,6 +1227,37 @@
     ]
    }
   },
+  "IN": {
+   "national": {
+    "name": "IFSC and account number",
+    "parts": [
+     {
+      "name": "Bank code",
+      "length": 4,
+      "kind": "a"
+     },
+     {
+      "name": "Fifth character",
+      "length": 1,
+      "kind": "n"
+     },
+     {
+      "name": "Branch code",
+      "length": 6,
+      "kind": "c"
+     },
+     {
+      "name": "Account number",
+      "length": 11,
+      "kind": "n"
+     }
+    ],
+    "bank": [
+     1,
+     4
+    ]
+   }
+  },
   "IQ": {
    "iban": {
     "prefix": "IQ",
@@ -1165,6 +1383,32 @@
     "bank": [
      5,
      8
+    ]
+   }
+  },
+  "JP": {
+   "national": {
+    "name": "Bank code, branch code and account number",
+    "parts": [
+     {
+      "name": "Bank code",
+      "length": 4,
+      "kind": "n"
+     },
+     {
+      "name": "Branch code",
+      "length": 3,
+      "kind": "n"
+     },
+     {
+      "name": "Account number",
+      "length": 7,
+      "kind": "n"
+     }
+    ],
+    "bank": [
+     1,
+     4
     ]
    }
   },
@@ -1349,6 +1593,18 @@
     "bank": [
      1,
      3
+    ]
+   }
+  },
+  "MA": {
+   "national": {
+    "name": "RIB",
+    "parts": [
+     {
+      "name": "RIB",
+      "length": 24,
+      "kind": "n"
+     }
     ]
    }
   },
@@ -1612,6 +1868,37 @@
     ]
    }
   },
+  "MX": {
+   "national": {
+    "name": "CLABE",
+    "parts": [
+     {
+      "name": "Código Del Banco",
+      "length": 3,
+      "kind": "n"
+     },
+     {
+      "name": "Código De Plaza",
+      "length": 3,
+      "kind": "n"
+     },
+     {
+      "name": "Número De Cuenta",
+      "length": 11,
+      "kind": "n"
+     },
+     {
+      "name": "Dígito De Control",
+      "length": 1,
+      "kind": "n"
+     }
+    ],
+    "bank": [
+     1,
+     3
+    ]
+   }
+  },
   "NC": {
    "iban": {
     "prefix": "FR",
@@ -1637,6 +1924,54 @@
     "bank": [
      1,
      5
+    ]
+   }
+  },
+  "NG": {
+   "national": {
+    "name": "NUBAN",
+    "parts": [
+     {
+      "name": "Bank code",
+      "length": 3,
+      "kind": "n"
+     },
+     {
+      "name": "Account serial number",
+      "length": 9,
+      "kind": "n"
+     },
+     {
+      "name": "Check digit",
+      "length": 1,
+      "kind": "n"
+     }
+    ],
+    "bank": [
+     1,
+     3
+    ],
+    "checks": [
+     {
+      "over": [
+       1,
+       12
+      ],
+      "weights": [
+       3,
+       7,
+       3,
+       3,
+       7,
+       3,
+       3,
+       7,
+       3,
+       3,
+       7,
+       3
+      ]
+     }
     ]
    }
   },
@@ -1704,6 +2039,37 @@
     ]
    }
   },
+  "NZ": {
+   "national": {
+    "name": "Bank account number",
+    "parts": [
+     {
+      "name": "Bank",
+      "length": 2,
+      "kind": "n"
+     },
+     {
+      "name": "Branch",
+      "length": 4,
+      "kind": "n"
+     },
+     {
+      "name": "Account number",
+      "length": 7,
+      "kind": "n"
+     },
+     {
+      "name": "Suffix",
+      "length": 2,
+      "kind": "n"
+     }
+    ],
+    "bank": [
+     1,
+     2
+    ]
+   }
+  },
   "OM": {
    "iban": {
     "prefix": "OM",
@@ -1716,6 +2082,37 @@
      {
       "length": 16,
       "kind": "c"
+     }
+    ],
+    "bank": [
+     1,
+     3
+    ]
+   }
+  },
+  "PE": {
+   "national": {
+    "name": "CCI",
+    "parts": [
+     {
+      "name": "Bank code",
+      "length": 3,
+      "kind": "n"
+     },
+     {
+      "name": "Office code",
+      "length": 3,
+      "kind": "n"
+     },
+     {
+      "name": "Account number",
+      "length": 12,
+      "kind": "n"
+     },
+     {
+      "name": "Check digits",
+      "length": 2,
+      "kind": "n"
      }
     ],
     "bank": [
@@ -2321,6 +2718,53 @@
     "bank": [
      1,
      5
+    ]
+   }
+  },
+  "TT": {
+   "national": {
+    "name": "Routing number and account number",
+    "parts": [
+     {
+      "name": "Routing number",
+      "length": 9,
+      "kind": "n"
+     },
+     {
+      "name": "Account number",
+      "length": 12,
+      "kind": "n"
+     }
+    ],
+    "bank": [
+     1,
+     9
+    ]
+   }
+  },
+  "TW": {
+   "national": {
+    "name": "Bank code, branch code and account number",
+    "parts": [
+     {
+      "name": "Bank code",
+      "length": 3,
+      "kind": "n"
+     },
+     {
+      "name": "Branch code",
+      "length": 4,
+      "kind": "n"
+     },
+     {
+      "name": "Account number",
+      "length": 14,
+      "kind": "n"
+     }
+    ],
+    "bank": [
+     1,
+     3
     ]
    }
   },

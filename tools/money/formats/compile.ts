@@ -2,7 +2,7 @@ import { createHash } from 'node:crypto';
 import { readdirSync, readFileSync } from 'node:fs';
 import { join } from 'node:path';
 import countries from '../../../src/world/gazetteer/countries.json' with { type: 'json' };
-import { refusal, type Format, type Iban, type Kind, type National, type Part, type Span } from '../../../src/money/formats/number.ts';
+import { refusal, type Check, type Format, type Iban, type Kind, type National, type Part, type Span } from '../../../src/money/formats/number.ts';
 
 /**
  * Compiles how each country's banks number their accounts (src/money/formats/formats.json), from the research's files,
@@ -16,9 +16,12 @@ import { refusal, type Format, type Iban, type Kind, type National, type Part, t
  *   the form it's given with, so a structure misread is caught on the registry's own number. A country the registry
  *   folds into another's prefix (Guadeloupe into France's) gives only that `prefix`, and takes that country's form.
  * - `national`, from the country's central bank or bankers' association, where it has no IBAN: the number's `name`,
- *   its `parts` (each a name, a length and a kind) and where the bank's code sits in it (`bank`).
+ *   its `parts` (each a name, a length and a kind), where the bank's code sits in it (`bank`), the checks inside it as
+ *   the central bank publishes them (`checks`, each the digits it's worked `over` and their `weights`, or `mod97`), and
+ *   the publisher's own worked number (`example`), which must pass, so a check misread is caught on it.
  *
- * A national check inside a number is left out until its published specification is read: the form takes none.
+ * Until 2026-10-30 a national check was left out and the form took none; Argentina's, Nigeria's and Angola's were the
+ * first read.
  */
 export const SOURCES = 'research/sources/money/formats';
 export const OUTPUT = 'src/money/formats/formats.json';
@@ -81,7 +84,7 @@ export function iban(code: string, o: unknown): Read {
 export function national(code: string, o: unknown): Format {
   const what = `${code}'s national number`;
   const f = object(o, what);
-  only(f, ['name', 'parts', 'bank'], what);
+  only(f, ['name', 'parts', 'bank', 'checks', 'example'], what);
   const named = (s: unknown) => typeof s === 'string' && s !== '' && s.trim() === s;
   if (!named(f['name'])) throw new Error(`${what} is named as the country's banks name it`);
   if (!Array.isArray(f['parts']) || f['parts'].length === 0) throw new Error(`${what}'s parts are a list`);
@@ -92,9 +95,37 @@ export function national(code: string, o: unknown): Format {
     if (!(KINDS as readonly unknown[]).includes(part['kind'])) throw new Error(`${what}'s part ${i} is digits (n), letters (a) or either (c)`);
     return { name: part['name'] as string, length: count(part['length'], `${what}'s part ${i}'s length`), kind: part['kind'] as Kind };
   });
+  const long = parts.reduce((sum, p) => sum + p.length, 0);
   const out: { -readonly [K in keyof National]: National[K] } = { name: f['name'] as string, parts };
-  if (f['bank'] !== undefined) out.bank = span(f['bank'], parts.reduce((sum, p) => sum + p.length, 0), `${what}'s bank`);
+  if (f['bank'] !== undefined) out.bank = span(f['bank'], long, `${what}'s bank`);
+  if (f['checks'] !== undefined) {
+    if (!Array.isArray(f['checks']) || f['checks'].length === 0) throw new Error(`${what}'s checks are a list`);
+    const kinds = parts.flatMap((p) => Array<Kind>(p.length).fill(p.kind));
+    out.checks = f['checks'].map((c: unknown, i) => check(c, kinds, `${what}'s check ${i}`));
+  }
+  if (f['example'] !== undefined) {
+    const why = refusal({ national: out }, String(f['example']));
+    if (why !== undefined) throw new Error(`${what}'s example ${String(f['example'])} doesn't pass its form (${why})`);
+  }
   return { national: out };
+}
+
+/** A check inside a national number, over digits of the number whose characters' kinds are `kinds`, its own digits after them. */
+export function check(o: unknown, kinds: readonly Kind[], what: string): Check {
+  const c = object(o, what);
+  only(c, ['over', 'weights', 'mod97'], what);
+  const over = span(c['over'], kinds.length, `${what}'s over`);
+  const digits = 'mod97' in c ? 2 : 1;
+  if (over[1] + digits > kinds.length) throw new Error(`${what}'s digits don't fit after characters ${over[0]} to ${over[1]}`);
+  if (kinds.slice(over[0] - 1, over[1] + digits).some((k) => k !== 'n')) throw new Error(`${what} is worked over digits, into digits`);
+  if ('mod97' in c) {
+    if (c['mod97'] !== true || 'weights' in c) throw new Error(`${what} is mod97: true, with no weights`);
+    return { over, mod97: true };
+  }
+  const weights = c['weights'];
+  if (!Array.isArray(weights) || weights.length !== over[1] - over[0] + 1 || !weights.every((w) => Number.isInteger(w) && w >= 0))
+    throw new Error(`${what}'s weights are a whole number for each of characters ${over[0]} to ${over[1]}`);
+  return { over, weights };
 }
 
 /** A country's file: one form, an IBAN or a national number. */

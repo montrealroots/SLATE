@@ -14,6 +14,34 @@
    "tax"
   ]
  },
+ "AE": {
+  "name": "Emirates ID identity number",
+  "issuer": "the Federal Authority for Identity, Citizenship, Customs and Port Security (ICP)",
+  "format": {
+   "length": 15,
+   "pattern": "^\\d{15}$"
+  },
+  "when": "application",
+  "who": [
+   "citizens",
+   "residents"
+  ]
+ },
+ "AG": {
+  "name": "Tax Identification Number (TIN)",
+  "issuer": "the Inland Revenue Department (IRD)",
+  "format": {
+   "length": 6,
+   "pattern": "^\\d{6}$"
+  },
+  "when": "application",
+  "who": [
+   "anyone"
+  ],
+  "needed": [
+   "tax"
+  ]
+ },
  "AI": {
   "name": "Tax Identification Number (TIN)",
   "issuer": "the Inland Revenue Department (IRD)",
@@ -141,6 +169,23 @@
    "tax"
   ]
  },
+ "BA": {
+  "name": "jedinstveni matični broj (JMB), the personal identification number",
+  "issuer": "the competent authority keeping the birth register, the central record kept by the Agency for Identification Documents, Registers and Data Exchange (IDDEEA)",
+  "format": {
+   "length": 13,
+   "pattern": "^(0[1-9]|[12]\\d|3[01])(0[1-9]|1[0-2])\\d{3}1[1-9]\\d{3}\\d$"
+  },
+  "when": "birth",
+  "who": [
+   "citizens",
+   "residents"
+  ],
+  "within": {
+   "n": 15,
+   "unit": "day"
+  }
+ },
  "BB": {
   "name": "Tax Identification Number (TIN)",
   "issuer": "the Barbados Revenue Authority",
@@ -151,6 +196,21 @@
   "when": "application",
   "who": [
    "residents"
+  ],
+  "needed": [
+   "tax"
+  ]
+ },
+ "BD": {
+  "name": "e-TIN (Taxpayer's Identification Number)",
+  "issuer": "the National Board of Revenue (NBR)",
+  "format": {
+   "length": 12,
+   "pattern": "^\\d{12}$"
+  },
+  "when": "application",
+  "who": [
+   "anyone"
   ],
   "needed": [
    "tax"
@@ -183,6 +243,24 @@
    "citizens"
   ],
   "needed": [
+   "tax"
+  ]
+ },
+ "BJ": {
+  "name": "numéro d'Identifiant Fiscal Unique (IFU)",
+  "issuer": "the Direction Générale des Impôts et des Domaines (DGID)",
+  "format": {
+   "length": 13,
+   "pattern": "^\\d{13}$"
+  },
+  "when": "application",
+  "who": [
+   "anyone"
+  ],
+  "from": 18,
+  "needed": [
+   "work",
+   "bank",
    "tax"
   ]
  },
@@ -308,6 +386,37 @@
    "citizens"
   ]
  },
+ "CO": {
+  "name": "Número de Identificación Tributaria (NIT)",
+  "issuer": "the Dirección de Impuestos y Aduanas Nacionales (DIAN)",
+  "format": {
+   "length": 11,
+   "pattern": "^1\\d{10}$"
+  },
+  "when": "registration",
+  "who": [
+   "anyone"
+  ],
+  "needed": [
+   "tax"
+  ]
+ },
+ "CR": {
+  "name": "cédula de identidad number (physical identification number)",
+  "issuer": "the Tribunal Supremo de Elecciones (Registro Civil, Sección Documentos de Identidad)",
+  "format": {
+   "length": 9,
+   "pattern": "^\\d{9}$"
+  },
+  "when": "application",
+  "who": [
+   "citizens"
+  ],
+  "from": 18,
+  "needed": [
+   "tax"
+  ]
+ },
  "CW": {
   "name": "persoonsnummer",
   "issuer": "the Tax Department",
@@ -382,6 +491,34 @@
    "tax"
   ]
  },
+ "DM": {
+  "name": "TIN (Taxpayer Number)",
+  "issuer": "the Inland Revenue Division (the sheet names no office; its tax software, SIGTAS, generates the number)",
+  "format": {
+   "length": 7,
+   "pattern": "^\\d{7}$"
+  },
+  "when": "application",
+  "who": [
+   "anyone"
+  ],
+  "needed": [
+   "tax"
+  ]
+ },
+ "DZ": {
+  "name": "numéro d'identification national unique (NIN)",
+  "issuer": "the Ministry of the Interior's automated NIN system, through the civil registers of the communes and consular services",
+  "format": {
+   "length": 18,
+   "pattern": "^\\d{18}$"
+  },
+  "when": "birth",
+  "who": [
+   "citizens",
+   "residents"
+  ]
+ },
  "EC": {
   "name": "identity card number (cédula)",
   "issuer": "the General Directorate of Civil Registry, Identification and Identification cards",
@@ -411,6 +548,18 @@
   ],
   "needed": [
    "tax"
+  ]
+ },
+ "EG": {
+  "name": "الرقم القومي (national number)",
+  "issuer": "the Ministry of Interior (Civil Status Organization)",
+  "format": {
+   "length": 14,
+   "pattern": "^[23]\\d{2}(0[1-9]|1[0-2])(0[1-9]|[12]\\d|3[01])\\d{7}$"
+  },
+  "when": "application",
+  "who": [
+   "citizens"
   ]
  },
  "ES": {
@@ -508,6 +657,21 @@
    "tax"
   ]
  },
+ "GD": {
+  "name": "Tax Identification Number (TIN)",
+  "issuer": "the Inland Revenue Division",
+  "format": {
+   "length": 6,
+   "pattern": "^\\d{6}$"
+  },
+  "when": "application",
+  "who": [
+   "anyone"
+  ],
+  "needed": [
+   "tax"
+  ]
+ },
  "GE": {
   "name": "personal identification number",
   "issuer": "the Public Registry (the National Agency of Public Registry)",
@@ -522,6 +686,9 @@
   "needed": [
    "tax"
   ]
+ },
+ "GF": {
+  "issuedBy": "FR"
  },
  "GG": {
   "name": "Social Insurance number",
@@ -804,6 +971,19 @@
    "tax"
   ]
  },
+ "KG": {
+  "name": "персональный идентификационный номер (ПИН), the personal identification number",
+  "issuer": "the state body the Cabinet of Ministers designates under the Law on personified accounting (the reports read don't name it)",
+  "format": {
+   "length": 14,
+   "pattern": "^[124]\\d{13}$"
+  },
+  "when": "registration",
+  "who": [
+   "citizens",
+   "residents"
+  ]
+ },
  "KR": {
   "name": "Resident Registration Number",
   "issuer": "the Ministry of Interior",
@@ -851,6 +1031,35 @@
    "tax"
   ]
  },
+ "LI": {
+  "name": "Personenidentifikationsnummer (PEID)",
+  "issuer": "the Central Person Register (Zentrales Personenregister, ZPR), run by the Amt für Informatik",
+  "format": {
+   "length": 12,
+   "pattern": "^\\d{12}$"
+  },
+  "when": "registration",
+  "who": [
+   "residents",
+   "workers"
+  ],
+  "needed": [
+   "tax"
+  ]
+ },
+ "LK": {
+  "name": "National Identity Card (NIC) number",
+  "issuer": "the Department for Registration of Persons",
+  "format": {
+   "length": 12,
+   "pattern": "^(19|20)\\d{5}0\\d{4}$"
+  },
+  "when": "application",
+  "who": [
+   "citizens"
+  ],
+  "from": 15
+ },
  "LT": {
   "name": "personal code",
   "issuer": "the Lithuanian population register (the sheet names no office)",
@@ -897,6 +1106,21 @@
    "tax"
   ]
  },
+ "LY": {
+  "name": "الرقم الوطني (national ID number)",
+  "issuer": "the Civil Status Authority (مصلحة الأحوال المدنية), with the National ID project",
+  "format": {
+   "length": 12,
+   "pattern": "^[12](19|20)\\d{2}\\d{6}\\d$"
+  },
+  "when": "birth",
+  "who": [
+   "citizens"
+  ],
+  "needed": [
+   "pay"
+  ]
+ },
  "MD": {
   "name": "IDNP (Identification Number of Person)",
   "issuer": "the State Register of the Population (R.S.P.)",
@@ -911,6 +1135,19 @@
   ],
   "needed": [
    "tax"
+  ]
+ },
+ "ME": {
+  "name": "jedinstveni matični broj (matični broj)",
+  "issuer": "the Ministry of Internal Affairs (MUP), in the Central Population Register",
+  "format": {
+   "length": 13,
+   "pattern": "^(0[1-9]|[12]\\d|3[01])(0[1-9]|1[0-2])\\d{9}$"
+  },
+  "when": "birth",
+  "who": [
+   "citizens",
+   "residents"
   ]
  },
  "MH": {
@@ -928,6 +1165,25 @@
    "work",
    "tax"
   ]
+ },
+ "MK": {
+  "name": "матичен број на граѓанинот (EMBG), the citizen's personal number",
+  "issuer": "the Ministry of Internal Affairs",
+  "format": {
+   "length": 13,
+   "pattern": "^(0[1-9]|[12]\\d|3[01])(0[1-9]|1[0-2])\\d{3}4[1-9]\\d{3}\\d$"
+  },
+  "when": "birth",
+  "who": [
+   "citizens",
+   "residents"
+  ]
+ },
+ "MP": {
+  "issuedBy": "US"
+ },
+ "MQ": {
+  "issuedBy": "FR"
  },
  "MT": {
   "name": "Identity Card Number",
@@ -950,6 +1206,21 @@
   "format": {
    "length": 8,
    "pattern": "^[1578]\\d{7}$"
+  },
+  "when": "registration",
+  "who": [
+   "anyone"
+  ],
+  "needed": [
+   "tax"
+  ]
+ },
+ "MV": {
+  "name": "Taxpayer Identification Number (TIN)",
+  "issuer": "the Maldives Inland Revenue Authority (MIRA)",
+  "format": {
+   "length": 13,
+   "pattern": "^\\d{7}PIT\\d{3}$"
   },
   "when": "registration",
   "who": [
@@ -992,6 +1263,21 @@
    "tax"
   ]
  },
+ "MZ": {
+  "name": "Número Único de Identificação Tributária (NUIT)",
+  "issuer": "the Autoridade Tributária de Moçambique",
+  "format": {
+   "length": 9,
+   "pattern": "^\\d{9}$"
+  },
+  "when": "application",
+  "who": [
+   "anyone"
+  ],
+  "needed": [
+   "tax"
+  ]
+ },
  "NG": {
   "name": "Tax Identification Number (JTB TIN)",
   "issuer": "the State Boards of Internal Revenue (and the FCT Inland Revenue Service)",
@@ -1003,6 +1289,22 @@
   "who": [
    "workers"
   ],
+  "needed": [
+   "tax"
+  ]
+ },
+ "NI": {
+  "name": "número de Cédula de Identidad Ciudadana",
+  "issuer": "the Consejo Supremo Electoral (CSE)",
+  "format": {
+   "length": 13,
+   "pattern": "^\\d{13}$"
+  },
+  "when": "application",
+  "who": [
+   "citizens"
+  ],
+  "from": 16,
   "needed": [
    "tax"
   ]
@@ -1034,6 +1336,22 @@
    "residents"
   ],
   "needed": [
+   "tax"
+  ]
+ },
+ "NP": {
+  "name": "Permanent Account Number (PAN, स्थायी लेखा नम्बर)",
+  "issuer": "the Inland Revenue Department, through its Inland Revenue Offices and Taxpayer Service Offices",
+  "format": {
+   "length": 9,
+   "pattern": "^\\d{9}$"
+  },
+  "when": "application",
+  "who": [
+   "anyone"
+  ],
+  "needed": [
+   "work",
    "tax"
   ]
  },
@@ -1079,6 +1397,26 @@
    "anyone"
   ],
   "needed": [
+   "tax"
+  ]
+ },
+ "PH": {
+  "name": "Taxpayer Identification Number (TIN)",
+  "issuer": "the Bureau of Internal Revenue (BIR), through the Revenue District Office",
+  "format": {
+   "length": 9,
+   "pattern": "^[1-9]\\d{8}$"
+  },
+  "when": "work",
+  "who": [
+   "anyone"
+  ],
+  "within": {
+   "n": 10,
+   "unit": "day"
+  },
+  "needed": [
+   "work",
    "tax"
   ]
  },
@@ -1142,6 +1480,9 @@
   "needed": [
    "tax"
   ]
+ },
+ "RE": {
+  "issuedBy": "FR"
  },
  "RO": {
   "name": "Personal Code (CNP)",
@@ -1268,6 +1609,9 @@
    "tax"
   ]
  },
+ "SJ": {
+  "issuedBy": "NO"
+ },
  "SK": {
   "name": "birth number",
   "issuer": "the Slovak birth-number register (the sheet names no office)",
@@ -1278,6 +1622,21 @@
   "when": "birth",
   "who": [
    "citizens"
+  ],
+  "needed": [
+   "tax"
+  ]
+ },
+ "SM": {
+  "name": "Social Security Number (SSI Number)",
+  "issuer": "the Social Security Institute (Istituto per la Sicurezza Sociale)",
+  "format": {
+   "length": 9,
+   "pattern": "^\\d{9}$"
+  },
+  "when": "registration",
+  "who": [
+   "residents"
   ],
   "needed": [
    "tax"
@@ -1343,6 +1702,20 @@
   "who": [
    "citizens"
   ]
+ },
+ "TZ": {
+  "name": "National Identification Number (NIN, Namba ya Utambulisho wa Taifa)",
+  "issuer": "the National Identification Authority (NIDA)",
+  "format": {
+   "length": 20,
+   "pattern": "^\\d{20}$"
+  },
+  "when": "registration",
+  "who": [
+   "citizens",
+   "residents"
+  ],
+  "from": 18
  },
  "UA": {
   "name": "РНОКПП, the registration number of the taxpayer’s account card",
@@ -1433,6 +1806,9 @@
   "who": [
    "citizens"
   ]
+ },
+ "YT": {
+  "issuedBy": "FR"
  },
  "ZA": {
   "name": "identity number",

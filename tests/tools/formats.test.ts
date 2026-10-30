@@ -66,6 +66,38 @@ describe('the account formats compile', () => {
     expect(() => national('MX', { ...CLABE, bank: [17, 19] })).toThrow("MX's national number's bank is characters 17 to 19 of a number 18 long");
   });
 
+  it("takes the checks inside a country's own number, held to the publisher's worked number", () => {
+    // Nigeria's NUBAN as the central bank's 2019 standard gives it, with its worked number (bank 011, check 9).
+    const digits = (n: number) => ({ name: 'd', length: n, kind: 'n' });
+    const NUBAN = { name: 'NUBAN', parts: [digits(3), digits(9), digits(1)], bank: [1, 3], checks: [{ over: [1, 12], weights: [3, 7, 3, 3, 7, 3, 3, 7, 3, 3, 7, 3] }] };
+    expect(national('NG', { ...NUBAN, example: '0110000014579' })).toStrictEqual({ national: NUBAN });
+    expect(national('AO', { name: 'NBA', parts: [digits(21)], checks: [{ over: [1, 19], mod97: true }] })).toStrictEqual({ national: { name: 'NBA', parts: [digits(21)], checks: [{ over: [1, 19], mod97: true }] } });
+    // A check misread fails on the publisher's own number.
+    expect(() => national('NG', { ...NUBAN, example: '0110000014578' })).toThrow("NG's national number's example 0110000014578 doesn't pass its form (check)");
+    expect(() => national('NG', { ...NUBAN, checks: [{ over: [1, 12], weights: [3, 7, 3, 3, 7, 3, 3, 7, 3, 3, 7, 1] }], example: '0110000014579' })).toThrow('(check)');
+    expect(() => national('NG', { ...NUBAN, example: '011000001457' })).toThrow("NG's national number's example 011000001457 doesn't pass its form (length)");
+    expect(() => national('NG', { ...NUBAN, example: 110000014579 })).toThrow('(length)');
+    for (const checks of [[], 'x', { over: [1, 12] }]) expect(() => national('NG', { ...NUBAN, checks }), JSON.stringify(checks)).toThrow("NG's national number's checks are a list");
+    const one = (c: unknown, parts = NUBAN.parts) => () => national('NG', { ...NUBAN, parts, checks: [{ over: [5, 6], weights: [1, 1] }, c] });
+    expect(one('x')).toThrow("NG's national number's check 1 is not an object");
+    expect(one({ over: [1, 12], weights: [], mod: 10 })).toThrow("NG's national number's check 1 has no term mod");
+    expect(one({ over: [1, 14], weights: [] })).toThrow("NG's national number's check 1's over is characters 1 to 14 of a number 13 long");
+    // Its digits come straight after what it's worked over, inside the number: one, or two for mod 97.
+    expect(one({ over: [1, 13], weights: Array(13).fill(1) })).toThrow("NG's national number's check 1's digits don't fit after characters 1 to 13");
+    expect(one({ over: [1, 12], mod97: true })).toThrow("NG's national number's check 1's digits don't fit after characters 1 to 12");
+    expect(national('NG', { ...NUBAN, checks: [{ over: [1, 11], mod97: true }] })).toStrictEqual({ national: { ...NUBAN, checks: [{ over: [1, 11], mod97: true }] } });
+    // Worked over digits and written in digits: a letter anywhere from its first to its last digit is refused.
+    const lettered = (at: number) => [digits(at - 1), { name: 'l', length: 1, kind: 'c' }, digits(13 - at)].filter((p) => p.length > 0);
+    for (const at of [1, 12, 13]) expect(one({ over: [1, 12], weights: Array(12).fill(1) }, lettered(at)), String(at)).toThrow("NG's national number's check 1 is worked over digits, into digits");
+    expect(one({ over: [2, 12], weights: Array(11).fill(1) }, lettered(1))).not.toThrow();
+    expect(one({ over: [2, 11], weights: Array(10).fill(1) }, lettered(13))).not.toThrow();
+    for (const mod97 of [false, 1, 'true']) expect(one({ over: [1, 11], mod97 }), String(mod97)).toThrow("NG's national number's check 1 is mod97: true, with no weights");
+    expect(one({ over: [1, 11], mod97: true, weights: [] })).toThrow("NG's national number's check 1 is mod97: true, with no weights");
+    for (const weights of [undefined, 'x', Array(11).fill(1), Array(13).fill(1), [...Array(11).fill(1), 1.5], [...Array(11).fill(1), -1], [...Array(11).fill(1), '1']])
+      expect(one({ over: [1, 12], weights }), JSON.stringify(weights)).toThrow("NG's national number's check 1's weights are a whole number for each of characters 1 to 12");
+    expect(one({ over: [1, 12], weights: Array(12).fill(0) })).not.toThrow();
+  });
+
   it("takes a country's file to its one form", () => {
     expect(compileCountry('GB', { country: 'GB', iban: GB, note: 'n', sources: [] })).toStrictEqual(GB_FORM);
     expect(compileCountry('MX', { country: 'MX', national: CLABE })).toStrictEqual({ national: CLABE });

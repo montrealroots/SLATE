@@ -1,0 +1,36 @@
+{
+ "country": "PH",
+ "name": "Taxpayer Identification Number (TIN)",
+ "issuer": "the Bureau of Internal Revenue (BIR), through the Revenue District Office",
+ "format": {
+  "length": 9,
+  "pattern": "^[1-9]\\d{8}$"
+ },
+ "when": "work",
+ "who": [
+  "anyone"
+ ],
+ "within": {
+  "n": 10,
+  "unit": "day"
+ },
+ "needed": [
+  "work",
+  "tax"
+ ],
+ "note": "Read 2026-10-30 in the Supreme Court E-Library's texts of the BIR's issuances. Revenue Regulations 11-2008 (15 August 2008, consolidated regulations on registration): the TIN is a 9- to 13-digit numeric code, the first 9 digits the TIN proper and the last 4 a branch code for businesses (not drawn); only one TIN is assigned to a taxpayer; an employee registering for the first time by reason of employment registers within ten days of the date of employment, with the RDO of the employer's place of office, which the employer or the employee may do; employees pay no registration fee (the annual P500 fee is for establishments, not modelled). Revenue Memorandum Circular 58-91 (8 July 1991), adopting the TIN: 9 digits, the first 0 for a corporation and 1 to 9 for an individual, the next seven sequential and the ninth a check digit (its rule isn't given, so `check` is left out); the pattern draws an individual's. Read as given at work (employment), to anyone working (minors earning under Executive Order 98 also get one), within 10 days; `needed` is work and tax. The PhilSys Number, the national identity number of the Philippine Statistics Authority, is a separate number whose form wasn't found (an earlier blocker records why) and isn't this one.",
+ "sources": [
+  {
+   "url": "https://elibrary.judiciary.gov.ph/thebookshelf/showdocs/10/56964",
+   "title": "BIR Revenue Regulations No. 11-2008, Consolidated Revenue Regulations on Primary Registration, Its Updates, and Cancellation (15 August 2008), Supreme Court E-Library",
+   "read": "2026-10-30",
+   "said": "The TIN comprises of a 9 to 13 digit numeric code where the first 9 digits is the TIN proper and the last 4 digits is the branch code {in case of business entities). ... Only one TIN shall be assigned to the taxpayer. ... (A) Employees: Within ten (10) days from date of employment ... This applies to individuals who are registering with the BIR for the first time by reason of employment. ... Minors who are earning and who are under the circumstances prescribed under Executive Order No. 98 shall be supplied with TIN."
+  },
+  {
+   "url": "https://elibrary.judiciary.gov.ph/thebookshelf/showdocs/10/49690",
+   "title": "BIR Revenue Memorandum Circular No. 58-91, Adoption of a New Taxpayer Identification Number (TIN) (8 July 1991), Supreme Court E-Library",
+   "read": "2026-10-30",
+   "said": "the new, unique TIN will consist of 9-digit numeric code in contrast to TAN's alphanumeric code. The first digit will identify the type of taxpayer. The digit zero (\"0\") will signify a corporation and digits \"1\" to \"9\" will denote individual taxpayers. The succeeding seven (7) digits will be sequential and the 9th digit will be a check digit."
+  }
+ ]
+}

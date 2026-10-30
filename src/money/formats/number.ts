@@ -28,12 +28,22 @@ export interface Iban {
   readonly bank?: Span;
 }
 
+/**
+ * A check inside a national number, worked over the digits `over` and written in the digits straight after them: one
+ * digit, ten less the last figure of the digits' sum each times its weight (0 for 10), as Argentina's CBU and Nigeria's
+ * NUBAN have it; or two, `mod97`, making the digits and the check read mod 97 one, ISO/IEC 7064's MOD 97-10, as
+ * Angola's NBA has it.
+ */
+export type Check = { readonly over: Span; readonly weights: readonly number[] } | { readonly over: Span; readonly mod97: true };
+
 export interface National {
   /** The number's name, as the country's banks call it. */
   readonly name: string;
   readonly parts: readonly (Part & { readonly name: string })[];
   /** Where the bank's own code sits in the number. */
   readonly bank?: Span;
+  /** The checks inside the number, worked in order, as its central bank publishes them. */
+  readonly checks?: readonly Check[];
 }
 
 export type Format = { readonly iban: Iban } | { readonly national: National };
@@ -51,6 +61,18 @@ export function mod97(text: string): number {
 
 /** The two check digits of the IBAN for a prefix and a BBAN: 98 less the BBAN, the prefix and 00 read mod 97. */
 export const ibanCheck = (prefix: string, bban: string): string => String(98 - mod97(`${bban}${prefix}00`)).padStart(2, '0');
+
+/** A number with a check's digits worked out over the digits before them and written in. */
+function sign(text: string, check: Check): string {
+  const [from, to] = check.over;
+  const body = text.slice(from - 1, to);
+  const digits =
+    'mod97' in check ? ibanCheck('', body) : String((10 - ([...body].reduce((sum, d, i) => sum + Number(d) * (check.weights[i] as number), 0) % 10)) % 10);
+  return `${text.slice(0, to)}${digits}${text.slice(to + digits.length)}`;
+}
+
+/** A national number with every check its form has worked out, in order. */
+export const signed = (format: National, text: string): string => (format.checks ?? []).reduce(sign, text);
 
 const CLASSES: Record<Kind, string> = { n: '[0-9]', a: '[A-Z]', c: '[A-Z0-9]' };
 const fits = (text: string, parts: readonly Part[]) => new RegExp(`^${parts.map((p) => `${CLASSES[p.kind]}{${p.length}}`).join('')}$`).test(text);
@@ -90,7 +112,7 @@ export function draw(format: Format, seed: bigint, country: string, bank: string
     const body = fill(bban, span, own, account);
     return `${prefix}${ibanCheck(prefix, body)}${body}`;
   }
-  return fill(format.national.parts, format.national.bank, own, account);
+  return signed(format.national, fill(format.national.parts, format.national.bank, own, account));
 }
 
 /** Why a payee's number is refused: too long or short, another country's, a character out of place, or its check fails. */
@@ -105,7 +127,8 @@ export function refusal(format: Format, text: string): Refusal | undefined {
   if ('national' in format) {
     const { parts } = format.national;
     if (s.length !== parts.reduce((sum, p) => sum + p.length, 0)) return 'length';
-    return fits(s, parts) ? undefined : 'structure';
+    if (!fits(s, parts)) return 'structure';
+    return signed(format.national, s) === s ? undefined : 'check';
   }
   const { prefix, length, bban } = format.iban;
   if (s.length !== length) return 'length';

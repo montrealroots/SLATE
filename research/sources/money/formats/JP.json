@@ -1,0 +1,36 @@
+{
+ "country": "JP",
+ "national": {
+  "name": "Bank code, branch code and account number",
+  "parts": [
+   {
+    "name": "Bank code",
+    "length": 4,
+    "kind": "n"
+   },
+   {
+    "name": "Branch code",
+    "length": 3,
+    "kind": "n"
+   },
+   {
+    "name": "Account number",
+    "length": 7,
+    "kind": "n"
+   }
+  ],
+  "bank": [
+   1,
+   4
+  ]
+ },
+ "note": "The Japanese Bankers Association's record formats for transfers between companies and banks (AP-I-13, 13th edition, October 2026 / Reiwa 8, read 2026-10-30): the bank code is the unified four-digit financial institution number (統一金融機関番号, N(4)), the branch code the three-digit unified branch number each bank registers with the Association (統一店番号, N(3)), and the account number seven digits (N(7)), right-aligned and padded with leading zeros. The same document notes that ordinary and current accounts have seven digits or fewer, but some banks' other deposits run past seven, for which some records give ten: the everyday account is written as seven. The deposit type (1 ordinary, 2 current, 4 savings) travels beside the number in a transfer and isn't part of it here. No check digit is published.",
+ "sources": [
+  {
+   "url": "https://www.zenginkyo.or.jp/fileadmin/res/abstract/efforts/system/jba_protocol_pc.pdf",
+   "title": "Japanese Bankers Association, AP-I-13 (separate volume): standard communication protocol for personal computers (basic procedure), applications and record formats, October 2026",
+   "read": "2026-10-30",
+   "said": "7 銀行コード N(4) ・統一金融機関番号 ... 9 支店コード N(3) ・統一店番号 ... 12 口座番号 N(7) ・取引口座番号 右詰め残り前「0」 ... 口座番号は普通預金、当座預金では 7 桁以下で あるが、その他の預金については一部の銀行において 7 桁を超え る場合があるため 10 桁とした。"
+  }
+ ]
+}

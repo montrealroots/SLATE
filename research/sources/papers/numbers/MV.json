@@ -1,0 +1,25 @@
+{
+ "country": "MV",
+ "name": "Taxpayer Identification Number (TIN)",
+ "issuer": "the Maldives Inland Revenue Authority (MIRA)",
+ "format": {
+  "length": 13,
+  "pattern": "^\\d{7}PIT\\d{3}$"
+ },
+ "when": "registration",
+ "who": [
+  "anyone"
+ ],
+ "needed": [
+  "tax"
+ ],
+ "note": "Maldives's sheet (its government's own sheet on the OECD's automatic-exchange portal ('Information on Tax Identification Numbers'; the OECD's index page sits behind a bot check and wasn't opened, the sheet itself came straight back)), read 2026-10-30: MIRA issues TINs only to those required to register with it (individuals for income tax when their monthly average income from business or from several employments exceeds MVR 40,000 in a 12-month period, among others); each taxpayer gets a unique seven-digit business-partner number and each tax registration a TIN made of it, the revenue code and a sequence number; an individual's income-tax TIN reads like 1000001PIT001. The format holds the individual income-tax TIN (seven digits, PIT, three digits). Read as given on registration, to anyone required to register; needed for tax. The Maldives' national identity card number (the Department of National Registration's) isn't read here. No check rule, age, fee or time is stated.",
+ "sources": [
+  {
+   "url": "https://www.oecd.org/content/dam/oecd/en/topics/policy-issue-focus/aeoi/maldives-tin.pdf",
+   "title": "OECD AEOI portal, Maldives: Information on Tax Identification Numbers (the jurisdiction's own sheet)",
+   "read": "2026-10-30",
+   "said": "Individuals = 1000001PIT001 ... TIN is only issued if the taxpayer is required to register at MIRA under any of the tax admin requirements. ... So for each taxpayer MIRA issues a unique 7 digit identifier. ... {BP}{Revenue Code}{incrementing Number}"
+  }
+ ]
+}

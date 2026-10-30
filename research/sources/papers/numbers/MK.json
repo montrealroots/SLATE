@@ -1,0 +1,29 @@
+{
+ "country": "MK",
+ "name": "матичен број на граѓанинот (EMBG), the citizen's personal number",
+ "issuer": "the Ministry of Internal Affairs",
+ "format": {
+  "length": 13,
+  "pattern": "^(0[1-9]|[12]\\d|3[01])(0[1-9]|1[0-2])\\d{3}4[1-9]\\d{3}\\d$"
+ },
+ "when": "birth",
+ "who": [
+  "citizens",
+  "residents"
+ ],
+ "note": "Read 2026-10-30: the Law on the Citizen's Personal Number (Official Gazette 36/92), as the Office for Keeping Registry Books (UVMK) publishes it (a copy taken from pravo.org.mk): thirteen digits in six groups, day of birth (2), month (2), the last three digits of the year (3), the register (2), sex and order among those born the same day (3: men 000-499, women 500-999) and a control number (1) set by computer (its rule isn't given, so `check` is left out); the nine registration areas are numbered 41 to 49, which the pattern holds. The Ministry of Internal Affairs determines it, by the place where the newborn is entered in the register of births (a child born abroad by the parents' residence); foreigners staying lawfully get a foreigner's number (read as residents). Caution: that law was replaced by the Law on the Personal Number (Official Gazette 137/13, 55/16 and 67/22), which the Government's August 2024 proposal to amend it says governs the structure, determination and records of the citizen's and the foreigner's number; its text wasn't found this session, so the structure is the 1992 law's and should be checked against it. The law sets no fee, time or age, and says the number is entered in public documents where a law provides (no `needed`).",
+ "sources": [
+  {
+   "url": "https://uvmk.gov.mk/wp-content/uploads/2021/03/Maticen_broj_na_graganinot_92.pdf",
+   "title": "Закон за матичен број на граѓанинот (Сл. весник 36/92), as published by the Управа за водење на матичните книги",
+   "read": "2026-10-30",
+   "said": "Матичниот број се состои од тринаесет цифри распоредени во шест групи и ... И група: ден на раѓањето (две цифри), ... ИИ група: месец на раѓањето (две цифри), ... ИИИ група: година на раѓањето (три цифри), ... ИВ група: број на регистарот (две цифри), ... ВИ група: контролен број (една цифра). ... Министерството за внатрешни работи определува матичен број на граѓанинот. ... Матичен број се определува според местото на запишување на новороденото дете во матичната книга на родените ... Министерството за внатрешни работи им определува матичен број за странци."
+  },
+  {
+   "url": "https://mchamber.mk/Upload/Documents/%D0%9F%D1%80%D0%B5%D0%B4%D0%BB%D0%BE%D0%B3%20%D0%BD%D0%B0%20%D0%B7%D0%B0%D0%BA%D0%BE%D0%BD%20%D0%B7%D0%B0%20%D0%B8%D0%B7%D0%BC%D0%B5%D0%BD%D1%83%D0%B2%D0%B0%D1%9A%D0%B5%20%D0%BD%D0%B0%20%D0%97%D0%B0%D0%BA%D0%BE%D0%BD%D0%BE%D1%82%20%D0%B7%D0%B0%20%D0%BC%D0%B0%D1%82%D0%B8%D1%87%D0%B5%D0%BD%20%D0%B1%D1%80%D0%BE%D1%98%20%D0%BF%D0%BE%20%D1%81%D0%BA%D1%80%D0%B0%D1%82%D0%B5%D0%BD%D0%B0%20%D0%BF%D0%BE%D1%81%D1%82%D0%B0%D0%BF%D0%BA%D0%B0.pdf",
+   "title": "Government of North Macedonia, Предлог на закон за изменување на Законот за матичен број (August 2024), as published by the Economic Chamber of North Macedonia",
+   "read": "2026-10-30",
+   "said": "со кој се уредуваат структурата, определувањето, поништувањето и евиденцијата на матичниот број на граѓанинот на Република Северна Македонија и матичниот број на странецот."
+  }
+ ]
+}

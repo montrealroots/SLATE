@@ -5,12 +5,12 @@ import { t } from '../../../src/core/text/text.ts';
 import { COUNTRY_CODES } from '../../../src/world/gazetteer/gazetteer.ts';
 import data from '../../../src/money/formats/formats.json';
 import { aboutFormats, accountNumber, formatOf, keepsFormat, payeeRefusal, UNKEPT_LINE } from '../../../src/money/formats/formats.ts';
-import { draw, ibanCheck, mod97, refusal, type Format } from '../../../src/money/formats/number.ts';
+import { draw, ibanCheck, mod97, refusal, signed, type Format, type National } from '../../../src/money/formats/number.ts';
 
 const ROOT = resolve(import.meta.dirname, '../../..');
 const SEED = 0x5eed_0000_0000_0001n;
 const GB = formatOf('GB') as Format;
-const CLABE: Format = {
+const CLABE: { national: National } = {
   national: {
     name: 'CLABE',
     parts: [
@@ -47,7 +47,8 @@ describe('account numbers', () => {
     for (const country of COUNTRY_CODES.filter(keepsFormat)) {
       const number = accountNumber(SEED, country, 'A Bank', 0) as string;
       expect(payeeRefusal(country, number), `${country} ${number}`).toBeUndefined();
-      expect(number.slice(0, 2)).toBe(formatOf(country) !== undefined && 'iban' in (formatOf(country) as Format) ? (formatOf(country) as { iban: { prefix: string } }).iban.prefix : '');
+      const form = formatOf(country) as Format;
+      expect('iban' in form ? number.slice(0, 2) : number.length).toBe('iban' in form ? form.iban.prefix : form.national.parts.reduce((sum, p) => sum + p.length, 0));
     }
     expect(accountNumber(SEED, 'US', 'Chase', 0)).toBeUndefined();
     // A kept country's payee is held to its form; an unkept one's can't be, and goes as given.
@@ -119,6 +120,36 @@ describe('account numbers', () => {
     expect(ibanCheck('GB', 'NWBK60161331926819')).toBe('29');
     // A check below ten keeps its leading nought.
     expect(ibanCheck('GB', 'NWBK60161300000010')).toBe('04');
+  });
+
+  it('work the checks inside a national number as their central banks publish them', () => {
+    // Argentina's CBU: the BCRA's 1997 bulletin's number, both blocks (checks 2 and 4), passes, and a digit changed fails.
+    const ar = formatOf('AR') as Format;
+    expect(refusal(ar, '0110138202011100377664')).toBeUndefined();
+    expect(refusal(ar, '0110138302011100377664')).toBe('check');
+    expect(refusal(ar, '0110138202011100377665')).toBe('check');
+    expect(refusal(ar, '1110138202011100377664')).toBe('check');
+    // Each block's check covers only its own block: the first's digit isn't read by the second's.
+    const cbu = (ar as { national: National }).national;
+    expect(signed(cbu, '0110138002011100377660')).toBe('0110138202011100377664');
+    // Nigeria's NUBAN: the CBN's worked number, bank 011, serial 000001457, check 9; and 10 written as 0.
+    const ng = formatOf('NG') as Format;
+    expect(refusal(ng, '0110000014579')).toBeUndefined();
+    expect(refusal(ng, '0110000014570')).toBe('check');
+    expect(signed((ng as { national: National }).national, '0000000000000')).toBe('0000000000000');
+    expect(signed((ng as { national: National }).national, '1100000000005')).toBe('1100000000000');
+    expect(signed((ng as { national: National }).national, '0000000000010')).toBe('0000000000017');
+    // Angola's NBA, ISO 7064's MOD 97-10 over its first nineteen digits; the digits and the check read mod 97 are one.
+    const ao = formatOf('AO') as Format;
+    const nba = draw(ao, SEED, 'AO', 'BFA', 0);
+    expect([nba.length, mod97(nba), refusal(ao, nba)]).toEqual([21, 1, undefined]);
+    expect(refusal(ao, `${nba.slice(0, 19)}${nba[19] === '9' ? '0' : '9'}${nba[20] as string}`)).toBe('check');
+    // A check below ten keeps its leading nought, and 98 is written whole.
+    const two: National = { name: 'N', parts: [{ name: 'x', length: 4, kind: 'n' }], checks: [{ over: [1, 2], mod97: true }] };
+    expect([signed(two, '9600'), signed(two, '0000'), signed(two, '3000')]).toEqual(['9604', '0098', '3008']);
+    // Drawn numbers carry their checks, and a form with none is drawn as it was.
+    for (const country of ['AR', 'NG', 'AO']) expect(refusal(formatOf(country as 'AR') as Format, draw(formatOf(country as 'AR') as Format, SEED + 1n, country, 'B', 3)), country).toBeUndefined();
+    expect(signed(CLABE.national, '123')).toBe('123');
   });
 
   it("tell the player what the game doesn't know", () => {

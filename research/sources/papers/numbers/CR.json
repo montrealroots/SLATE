@@ -1,0 +1,32 @@
+{
+ "country": "CR",
+ "name": "cédula de identidad number (physical identification number)",
+ "issuer": "the Tribunal Supremo de Elecciones (Registro Civil, Sección Documentos de Identidad)",
+ "format": {
+  "length": 9,
+  "pattern": "^\\d{9}$"
+ },
+ "when": "application",
+ "from": 18,
+ "who": [
+  "citizens"
+ ],
+ "needed": [
+  "tax"
+ ],
+ "note": "Costa Rica's sheet (its government's own sheet on the OECD's automatic-exchange portal ('Information on Tax Identification Numbers'; the OECD's index page sits behind a bot check and wasn't opened, the sheet itself came straight back)), read 2026-10-30: the Tax Administration assigns no TIN in the strict sense: a Costa Rican natural person registers with it by their physical identification number (the cédula), 9 numerals written X-XXXX-XXXX (the hyphens optional); foreigners register with their DIMEX (11 or 12 numerals, from the General Directorate of Immigration) or a NITE (not modelled). The sheet doesn't name who gives the cédula number; the Tribunal Supremo de Elecciones's own procedure sheet ('Solicitud de cédula de identidad por primera vez', undated, read 2026-10-30) says every Costa Rican over 18 applies to its Sección Documentos de Identidad, so the number is read as given on application from 18, to citizens (the minors' card, the TIM, isn't modelled). Registration with the Tax Administration is for anyone with a lucrative economic activity, so `needed` is tax. No check digit is stated; no fee or time is modelled from these sheets.",
+ "sources": [
+  {
+   "url": "https://www.oecd.org/content/dam/oecd/en/topics/policy-issue-focus/aeoi/costa-rica-tin.pdf",
+   "title": "OECD AEOI portal, Costa Rica: Information on Tax Identification Numbers (the jurisdiction's own sheet)",
+   "read": "2026-10-30",
+   "said": "Physical identification number, in the case of domestic natural persons. ... In the case of foreign natural persons, registration is done with the “Immigration Identification Document for Foreigners”, called DIMEX. ... Physical identification number X – XXXX – XXXX 9 numerals (“–” is not obligatory)"
+  },
+  {
+   "url": "https://www.tse.go.cr/pdf/requisitosytramites/Solicitud-de-cedula-de-identidad-por-primera-vez.pdf",
+   "title": "Tribunal Supremo de Elecciones, Solicitud de Cédula de identidad por primera vez (procedure sheet)",
+   "read": "2026-10-30",
+   "said": "Gestión que debe realizar toda persona costarricense mayor de 18 años para obtener su cédula de identidad. ... Sección Documentos de Identidad"
+  }
+ ]
+}

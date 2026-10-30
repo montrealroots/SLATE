@@ -1,0 +1,35 @@
+{
+ "sought": "Mexico City's type A (private vehicle) driving licence: the age it is held from (its fee, MXN 1,142.00 for 3 years, was read on data.finanzas.cdmx.gob.mx).",
+ "attempts": [
+  {
+   "method": "institution",
+   "tried": "https://semovi.cdmx.gob.mx/ (and its licence pages), https://www.cdmx.gob.mx/public/InformacionTramite.xhtml?idTramite=2506 and ?idTramite=2700; https://data.finanzas.cdmx.gob.mx/formato_lc/conceptos/licencias",
+   "result": "SEMOVI and cdmx.gob.mx's procedure pages reset the connection or time out from this egress; the Finance Secretariat's concepts page answers (saved as dl/l8/mx09-lic.html) with the type A licence for 3 years at $1,142.00 and the single-term permit at $587.00, but no age.",
+   "date": "2026-10-30"
+  },
+  {
+   "method": "official-register",
+   "tried": "https://data.consejeria.cdmx.gob.mx/ (the City's legal department, for the Reglamento de Tránsito and the Ley de Movilidad); https://www.congresocdmx.gob.mx/",
+   "result": "data.consejeria timed out; the Congress's site answered but no law text was reached.",
+   "date": "2026-10-30"
+  },
+  {
+   "method": "web-search",
+   "tried": "\"licencia de conducir tipo A Ciudad de México requisitos mayor de 18 años trámite semovi\" on cdmx.gob.mx",
+   "result": "Found SEMOVI and cdmx.gob.mx procedure pages (unreachable) and a mention that the Reglamento lets minors of 16 to 18 drive only on temporary permits; no reachable page states the licence's age.",
+   "date": "2026-10-30"
+  },
+  {
+   "method": "trade-press",
+   "tried": "None fetched today.",
+   "result": "Not found.",
+   "date": "2026-10-30"
+  },
+  {
+   "method": "archive",
+   "tried": "bash bin/wb.sh https://www.cdmx.gob.mx/public/InformacionTramite.xhtml?idTramite=2506 https://semovi.cdmx.gob.mx/tramites-y-servicios/vehiculos-particulares/automovil/licencia",
+   "result": "A snapshot of idTramite=2506 exists (2025-11-17), not readable from this egress; none for the SEMOVI page.",
+   "date": "2026-10-30"
+  }
+ ]
+}

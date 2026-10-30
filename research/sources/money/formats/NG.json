@@ -1,0 +1,59 @@
+{
+ "country": "NG",
+ "national": {
+  "name": "NUBAN",
+  "parts": [
+   {
+    "name": "Bank code",
+    "length": 3,
+    "kind": "n"
+   },
+   {
+    "name": "Account serial number",
+    "length": 9,
+    "kind": "n"
+   },
+   {
+    "name": "Check digit",
+    "length": 1,
+    "kind": "n"
+   }
+  ],
+  "bank": [
+   1,
+   3
+  ],
+  "checks": [
+   {
+    "over": [
+     1,
+     12
+    ],
+    "weights": [
+     3,
+     7,
+     3,
+     3,
+     7,
+     3,
+     3,
+     7,
+     3,
+     3,
+     7,
+     3
+    ]
+   }
+  ],
+  "example": "0110000014579"
+ },
+ "note": "The Central Bank of Nigeria's Revised Standards on the Nigeria Uniform Bank Account Number (NUBAN), 2019 (in force one year from release; they supersede the standards of 19 August 2010), read 2026-10-30. The account number a customer is given is ten digits: the nine-digit serial and a check digit. The check is worked over sixteen digits, the bank's three-digit CBN code with three leading zeros (or, for other financial institutions, a 9 and their five-digit code), then the serial; here the bank's three-digit code is held before the ten digits, so a transfer carries it, and the three leading zeros add nothing to the sum. The algorithm, exactly as the standard gives it: 'Step 1: Calculate A*3+B*7+C*3+D*3+E*7+F*3+G*3+H*7+I*3+J*3+K*7+L*3+M*3+N*7+O*3 Step 2: Calculate Modulo 10 of your result i.e. the remainder after dividing by 10 Step 3: Subtract your result from 10 to get the Check Digit Step 4: If your result is 10, then use 0 as your check digit', with its worked example: bank 011 (000011), serial 000001457, sum 81, check digit 9, NUBAN 0000014579. Held here as weights 3,7,3 over the bank's code and 3,7,3,3,7,3,3,7,3 over the serial (the standard's D to O; its three leading zeros, A to C, add nothing), and the standard's number with its bank's code before it, 0110000014579, is the form's example.",
+ "sources": [
+  {
+   "url": "https://www.cbn.gov.ng/out/2020/psmd/revised%20standards%20on%20nigeria%20uniform%20bank%20account%20number%20(nuban)%20for%20banks%20and%20other%20financial%20institutions%20.pdf",
+   "title": "Central Bank of Nigeria, Revised Standards on Nigeria Uniform Bank Account Number (NUBAN) for Banks and Other Financial Institutions (2019)",
+   "read": "2026-10-30",
+   "said": "The NUBAN format shall consist of 16 digits with the following structure: ABCDEFGHIJKLMNO-P where ... ABCDEF is the 3-digit Financial Institution code assigned by the CBN, with 3 leading zeros ... Step 1: Calculate A*3+B*7+C*3+D*3+E*7+F*3+G*3+H*7+I*3+J*3+K*7+L*3+M*3+N*7+O*3 Step 2: Calculate Modulo 10 of your result i.e. the remainder after dividing by 10 Step 3: Subtract your result from 10 to get the Check Digit Step 4: If your result is 10, then use 0 as your check digit ... Therefore, the NUBAN code for this illustration is 0000014579 ... The NUBAN account number advised to a customer shall be 10 digits"
+  }
+ ]
+}

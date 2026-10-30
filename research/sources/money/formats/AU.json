@@ -1,0 +1,43 @@
+{
+ "country": "AU",
+ "national": {
+  "name": "BSB and account number",
+  "parts": [
+   {
+    "name": "BSB",
+    "length": 6,
+    "kind": "n"
+   },
+   {
+    "name": "Account number",
+    "length": 9,
+    "kind": "n"
+   }
+  ],
+  "bank": [
+   1,
+   6
+  ]
+ },
+ "note": "The Australian Taxation Office (read 2026-10-30) asks for a BSB of 6 digits and an account number of no more than 9 digits; the Commonwealth Bank, the largest bank, says the BSB (Bank-State-Branch) identifies banks and branches, and that zeros at the start of an account number make no difference to a payment as long as the total length is 9 digits or less. So the account number is written as nine digits, a shorter one read with leading zeros. The BSB is held as the bank's code, drawn once a life for each bank: the form has no branch of its own, and how the six digits split between bank, state and branch isn't read from AusPayNet, whose pages answered behind Cloudflare. No national check digit is published; none is modelled.",
+ "sources": [
+  {
+   "url": "https://www.ato.gov.au/individuals-and-families/tax-file-number/update-your-tfn-registration-details/update-your-financial-institution-details",
+   "title": "Australian Taxation Office, Update your financial institution details",
+   "read": "2026-10-30",
+   "said": "bank state branch (BSB) number – this number has 6 digits ... account number – this number has no more than 9 digits"
+  },
+  {
+   "url": "https://www.commbank.com.au/support.banking.what-is-a-bsb-number.html",
+   "title": "Commonwealth Bank of Australia, What's a BSB number? (rendered in a browser, the text saved)",
+   "read": "2026-10-30",
+   "said": "A BSB (Bank-State-Branch) is a six-digit number that identifies banks and branches across Australia."
+  },
+  {
+   "url": "https://www.commbank.com.au/support/security/namecheck.html",
+   "title": "Commonwealth Bank of Australia, NameCheck",
+   "read": "2026-10-30",
+   "said": "any zeros at the start of an account number don’t make a difference when making payments"
+  }
+ ]
+}

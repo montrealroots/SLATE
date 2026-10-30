@@ -850,6 +850,39 @@ The owner's ruling of 2026-10-30 on prices: "Yes, use the IMF-linked series for 
 Somalia (2022 = 100, 2020 to 2026) links the Mogadishu index to the new national CPI without saying who made the link;
 it stands as Somalia's 2021-to-2025 index, marked secondary, quoting the national bureau's CPI.
 
+Wave 8 (2026-10-30, seven research subagents on the papers engines and the account formats):
+
+- Account formats: a national form now takes `checks` (digits weighed over a span, the check digit ten less the weighted
+  sum's last figure; or ISO 7064 MOD 97-10's two digits) and `example`, the publisher's own worked number, which must
+  pass. Built where the central bank's own text gives the rule: Argentina's CBU (BCRA, ponderador 9713, proven on the
+  1997 CIMPRA bulletin's number), Nigeria's NUBAN (CBN 2019, weights 3,7,3, its worked number's check 9), Angola's NBA
+  (BNA Aviso 06/2015). Fourteen countries written (where no rule fixes an account's length, the largest bank's stated
+  length, as each note says), eighteen blocked. Held back in `research/held/` (no engine reads it; each file waits on
+  what its line here says): the United States (the routing number's check, weights 3,7,1, read in the New York Fed's
+  Circular 8203 of 1977 and proven on Bank of Guam's 121405115; but no bank states its account number's length, Chase
+  saying "often eight to 12"), so the next step is a form whose account part has a range of lengths, which would also
+  serve Canada (Payments Canada's twelve positions), Australia (up to nine), Hong Kong and Taiwan, now written at the
+  largest bank's length. Puerto Rico, Guam, American Samoa and the Northern Marianas are blocked (no bank states a
+  length). Mexico's CLABE check and Peru's CCI check aren't read from a primary.
+- Numbers, residence, licences: the files written are registered. Standing after the wave: numbers 130 researched, 11
+  blocked, 105 pending; residence 121, 5, 120; licences 38, 2, 206 (Brazil, Colombia and Argentina by all their regions;
+  Canada still lacks Quebec, Prince Edward Island, Yukon and Nunavut, Australia South Australia and Tasmania, each
+  blocked behind a bot check); formats 119, 18, 109. Each agent's countries not reached are in its report. The lead held
+  back, as readings a source doesn't make, numbers CC, NF, TK (pointed at Australia's or New Zealand's number on
+  citizenship alone), PM, BL, MF, WF (France's register inferred from an answer's silence, or announced and
+  unconfirmed), WS (a length from two examples), PA (a length fixed for a number that varies); residence MS (a currency
+  guessed), SB, DM, BA, ZW (a right to work read into a permit), AZ (where to apply), KE (a time read from a table's
+  alignment), KZ (a deadline borrowed from another permit), BQ (a right to work read in), MU (who charges the fees
+  unclear); licences WS (the learner's age), DK (the test's fee for the licence's), PH (an age from a circular on
+  converting foreign licences), NL (the renewal fee for the first's). Blocker files that marked a method "not tried"
+  (licences MD, MX.09) weren't filed. Readings kept, to check: North Macedonia's number rests on the law of 1992 (the
+  2013 law replacing it wasn't found); Bangladesh's, Egypt's, Algeria's, Kyrgyzstan's, Sri Lanka's and Montenegro's
+  numbers and Serbia's residence rest on secondary sources quoting the primary; licence ages built by adding a graduated
+  licence's stages (Northwest Territories, Western Australia, the ACT, Victoria, Switzerland; the Northern Territory's
+  18½ held as 19); Western Australia's exchange list read from the page's script data. France's residence fees may
+  predate the finance law of 2026 (art. 128: a first residence card's taxes from 200 to 300 euros on 1 May 2026, as
+  Mayotte's prefecture says).
+
 The older next steps below are kept as they were written.
 
 1. The weather's blockers

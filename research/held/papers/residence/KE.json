@@ -1,0 +1,48 @@
+{
+ "country": "KE",
+ "routes": [
+  {
+   "id": "special-pass",
+   "name": "Special Pass",
+   "for": "work",
+   "apply": "either",
+   "within": {
+    "n": 7,
+    "unit": "working day"
+   },
+   "work": "sponsor"
+  },
+  {
+   "id": "work-permit",
+   "name": "Work / Residence Permit",
+   "for": "work",
+   "apply": "either",
+   "within": {
+    "n": 21,
+    "unit": "working day"
+   },
+   "renewable": true,
+   "work": "sponsor"
+  },
+  {
+   "id": "permanent-residence",
+   "name": "Permanent Residence",
+   "for": "permanent",
+   "apply": "in country",
+   "within": {
+    "n": 24,
+    "unit": "month"
+   },
+   "work": "any"
+  }
+ ],
+ "note": "Kenya, read in the Directorate of Immigration Services' Service Delivery Charter 2025 (immigration.go.ke, July 2025, the latest found) on 2026-10-30, fetched with the server's missing intermediate certificate completed from its issuer. All three are applied for online on the foreign nationals' service (fns.immigration.go.ke), so where from isn't fixed (either). A Special Pass (the short-term pass the work engine reads for performers) costs USD 200 a month and is decided in 7 working days; its fee is in dollars and the file's are shillings, so none is kept. A work or residence permit is decided in 21 working days (renewal 10), with a KSh 20,000 processing fee and an issuance fee by class, KSh 250,000 a year for classes B, C, F, G and K and KSh 500,000 for A and D (which class a performer holds isn't in the charter, so no fee is kept; read as work for the sponsor); East African Community members pay nothing, which the form doesn't hold as free movement. Permanent residence fees depend on the category (lawful residents KSh 50,000 to process and KSh 750,000 to issue; spouses of citizens KSh 50,000 and 150,000), and the charter's timeline for it is 24 months (kept). The years naturalisation asks aren't read.",
+ "sources": [
+  {
+   "url": "https://immigration.go.ke/wp-content/uploads/2025/07/DIRECTORATE-OF-IMMIGRATION-SERVICE-DELIVERY-CHARTER-2025.pdf",
+   "title": "Directorate of Immigration Services (Kenya), Service Delivery Charter 2025",
+   "read": "2026-10-30",
+   "said": "Special Passes Online application: 200 USD per month 7 working days ... Processing Fees:Classes ... A,B,C,D,F,G,K,N,&Q Ksh. 20,000 ... 21 working days ... Class A & D: Ksh. 500,000/- per year ... Class B, C, F, G & K:Ksh. 250,000/- per year ... East African Community (EAC) Members/Refugees and ... Lawful Residents with spouses & children: Processing Fees ... 24 months ... Issuance of Permanent Residence"
+  }
+ ]
+}

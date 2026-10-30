@@ -1,0 +1,25 @@
+{
+ "country": "GD",
+ "name": "Tax Identification Number (TIN)",
+ "issuer": "the Inland Revenue Division",
+ "format": {
+  "length": 6,
+  "pattern": "^\\d{6}$"
+ },
+ "when": "application",
+ "who": [
+  "anyone"
+ ],
+ "needed": [
+  "tax"
+ ],
+ "note": "Grenada's sheet (its government's own sheet on the OECD's automatic-exchange portal ('Information on Tax Identification Numbers'; the OECD's index page sits behind a bot check and wasn't opened, the sheet itself came straight back)), read 2026-10-30: individuals aren't issued a TIN automatically: one is issued only to an individual liable to file a tax return or pay direct tax; it is a six-digit unique number with no other structure. The sheet doesn't name the issuing office; Grenada's Inland Revenue Division is read as the issuer from the sheet's subject (the tax administration), not stated in it. Read as given on application, to anyone liable; `needed` is tax. No check rule, age, fee or time is stated.",
+ "sources": [
+  {
+   "url": "https://www.oecd.org/content/dam/oecd/en/topics/policy-issue-focus/aeoi/grenada-tin.pdf",
+   "title": "OECD AEOI portal, Grenada: Information on Tax Identification Numbers (the jurisdiction's own sheet)",
+   "read": "2026-10-30",
+   "said": "Individuals [No] Entities [Yes] ... A TIN is only issued to an individual who is liable to file a tax return or pay direct tax ... There is no TIN structure other than the issuing of a six (6) digit unique number"
+  }
+ ]
+}
