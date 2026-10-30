@@ -335,11 +335,14 @@ restarts. Read `CLAUDE.md` and the owner's package in `docs/` first.
   late payment is reported (`report`), and the years it stays (`keep`), from the law, the regulator or the bureau
   (research/sources/money/credit/<CC>.json, register facts money.credit.<CC>), compiled by `tools/money/credit`. A late
   payment marks the record for the country's years; the record's standing is the game's reading, said as the game's: 1000
-  less 250 for each mark still kept, down to 0, which prices a card's range (`priced`). Matrix (2026-10-30): 18
-  researched (US, GB, CA, AU, IE, DE, FR, ES, IT, NL, BE, FI, JP, CN, SE, DK, MX, BR), 6 proven, 228 pending. Where no
+  less 250 for each mark still kept, down to 0, which prices a card's range (`priced`). Matrix (2026-10-30): 29
+  researched (US, GB, CA, AU, IE, DE, FR, ES, IT, NL, BE, FI, JP, CN, SE, DK, MX, BR, PL, AT, HU, CH, RO, SI, HR, GR,
+  NO, CZ, BG), 6 proven, 217 pending. A rule of "more than 90 days" is written as 91, the first day past it (Hungary,
+  Slovenia). Bulgaria's ordinance was read in a legal database, bnb.bg answering with its web firewall's refusal, and is
+  registered as secondary. Where no
   source states the days after a due date a late payment is reported, the file marks them the game's (`reportGame`):
   the bureau's next monthly update, 30 days, compiled with `game: true` for the money screen to say so (China, Sweden,
-  Denmark, Mexico, Brazil). Mexico's retention steps with the debt's size in UDIs (12 to 72 months); the game keeps the
+  Denmark, Mexico, Brazil, Austria, Greece, Norway). Mexico's retention steps with the debt's size in UDIs (12 to 72 months); the game keeps the
   72. Portugal: Banco de Portugal's instruction answers with a bot check.
  A monthly reporting cycle with no stated threshold
   (Britain's status codes, Ireland's Central Credit Register, Equifax Canada's 30-day reporting) is written as 30 days;
