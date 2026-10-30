@@ -3,7 +3,50 @@
  "cards": [
   {
    "bank": "RBC Royal Bank",
+   "card": "RBC Rewards Visa Platinum",
+   "currency": "USD",
+   "rate": {
+    "percent": "18",
+    "per": "year"
+   },
+   "fees": [
+    {
+     "fee": "115",
+     "per": "year"
+    }
+   ],
+   "cash": {
+    "rate": {
+     "percent": "18",
+     "per": "year"
+    }
+   }
+  },
+  {
+   "bank": "RBC Royal Bank",
+   "card": "Visa Gold",
+   "currency": "USD",
+   "rate": {
+    "percent": "18",
+    "per": "year"
+   },
+   "fees": [
+    {
+     "fee": "78.75",
+     "per": "year"
+    }
+   ],
+   "cash": {
+    "rate": {
+     "percent": "18",
+     "per": "year"
+    }
+   }
+  },
+  {
+   "bank": "RBC Royal Bank",
    "card": "Visa Classic International",
+   "currency": "USD",
    "rate": {
     "percent": "18",
     "per": "year"
@@ -14,16 +57,152 @@
      "per": "year"
     }
    ],
-   "currency": "USD"
+   "cash": {
+    "rate": {
+     "percent": "18",
+     "per": "year"
+    }
+   }
+  },
+  {
+   "bank": "Maduro & Curiel's Bank (Bonaire)",
+   "card": "Visa Classic",
+   "rate": {
+    "percent": "18",
+    "per": "year"
+   },
+   "fees": [],
+   "cash": {
+    "fee": {
+     "percent": "3",
+     "min": "15.00"
+    }
+   },
+   "late": {
+    "fixed": "15.00"
+   },
+   "overLimit": {
+    "percent": "10",
+    "of": "excess",
+    "max": "15.00"
+   }
+  },
+  {
+   "bank": "Maduro & Curiel's Bank (Bonaire)",
+   "card": "Mastercard Classic",
+   "rate": {
+    "percent": "18",
+    "per": "year"
+   },
+   "fees": [],
+   "cash": {
+    "fee": {
+     "percent": "3",
+     "min": "15.00"
+    }
+   },
+   "late": {
+    "fixed": "15.00"
+   },
+   "overLimit": {
+    "percent": "10",
+    "of": "excess",
+    "max": "15.00"
+   }
+  },
+  {
+   "bank": "Maduro & Curiel's Bank (Bonaire)",
+   "card": "Visa Aadvantage",
+   "rate": {
+    "percent": "18",
+    "per": "year"
+   },
+   "fees": [],
+   "cash": {
+    "fee": {
+     "percent": "3",
+     "min": "15.00"
+    }
+   },
+   "late": {
+    "fixed": "15.00"
+   },
+   "overLimit": {
+    "percent": "10",
+    "of": "excess",
+    "max": "15.00"
+   }
+  },
+  {
+   "bank": "Maduro & Curiel's Bank (Bonaire)",
+   "card": "Visa Platinum Aadvantage",
+   "rate": {
+    "percent": "18",
+    "per": "year"
+   },
+   "fees": [
+    {
+     "fee": "135.00",
+     "per": "year"
+    }
+   ],
+   "cash": {
+    "fee": {
+     "percent": "3",
+     "min": "15.00"
+    }
+   },
+   "late": {
+    "fixed": "25.00"
+   },
+   "overLimit": {
+    "percent": "10",
+    "of": "excess",
+    "max": "25.00"
+   }
+  },
+  {
+   "bank": "Maduro & Curiel's Bank (Bonaire)",
+   "card": "Mastercard Black Consumer",
+   "rate": {
+    "percent": "18",
+    "per": "year"
+   },
+   "fees": [
+    {
+     "fee": "175.00",
+     "per": "year"
+    }
+   ],
+   "cash": {
+    "fee": {
+     "percent": "3",
+     "min": "15.00"
+    }
+   },
+   "late": {
+    "fixed": "25.00"
+   },
+   "overLimit": {
+    "percent": "10",
+    "of": "excess",
+    "max": "25.00"
+   }
   }
  ],
- "note": "RBC Royal Bank's personal credit cards for Bonaire: its Visa Classic International, the card it offers to build a credit history, costs 36.75 US dollars a year, with a purchase rate of 18% a year. Saba's page prices the same card at 50 dollars a year.",
+ "note": "The main banks: Maduro & Curiel's Bank (Bonaire), RBC Royal Bank and Banco di Caribe, Bonaire's largest retail banks. RBC Royal Bank's Bonaire credit cards page (rendered 30 October 2026): its personal RBC Rewards Visa Platinum, Visa Gold and Visa Classic International, in US dollars, each with its annual fee and its 18% purchase and cash advance rates; its business cards aren't written, and the page states no other fee. Saba's page prices the Visa Classic International at 50 dollars a year; Bonaire's is written. Maduro & Curiel's Bank (Bonaire)'s credit cards, services and fees page (read 30 October 2026): its Visa Classic, Mastercard Classic and Visa Aadvantage (no annual fee given, written as none), Visa Platinum Aadvantage ($135) and Mastercard Black Consumer ($175), in US dollars, each at 18% a year, with its late payment fee, an over limit fee of 10% of the excess up to $15 or $25, and a cash advance fee of 3% at an ATM, at least $15 (3.18% at a teller, not written). Its fraud protection fee is given without its period and isn't written, nor are the optional balance protection and the lost or stolen card fee; the page states no minimum payment, foreign transaction fee or penalty rate. Banco di Caribe's site sits behind a Cloudflare check and wasn't read. This file kept RBC's Visa Classic International, read on 29 October 2026.",
  "sources": [
   {
    "url": "https://www.rbcroyalbank.com/caribbean/credit-cards/view-all/personal/bonaire/index.page",
-   "title": "RBC Royal Bank (Caribbean), personal credit cards: Bonaire",
-   "read": "2026-10-29",
-   "said": "Visa Classic International Compare Low annual rate ... Build your credit history on a strong foundation Annual Fee: $36.75 USD Second Card: $21 USD Purchase Rate: 18 %"
+   "title": "RBC Royal Bank (Caribbean), Credit Cards, Bonaire",
+   "read": "2026-10-30",
+   "said": "RBC Rewards Visa Platinum ... Annual Fee: $115USD ... Visa Gold ... Annual Fee: $78.75USD ... Visa Classic International ... Annual Fee: $36.75USD ... Purchase Rate: 18 % ... Cash Advance Rate: 18 %"
+  },
+  {
+   "url": "https://www.mcbbonaire.com/personal/products/cards/credit-cards-services-and-fees",
+   "title": "Maduro & Curiel's Bank (Bonaire), Credit cards, Services and Fees",
+   "read": "2026-10-30",
+   "said": "All Fees exclude OB ... Visa Classic 18% - - $15.00 the lowest between 10% of the over limit amount and $ 15.00 $10.00 0.30% $24 3% * 3.18% * Mastercard Classic 18% - - $15.00 ... Visa Aadvantage 18% - - $15.00 ... Visa Platinum Aadvantage 18% $135.00 $45.00 $25.00 The lowest between 10% of the over limit amount and $ 25.00 $25.00 - $36 3% * 3.18% * Mastercard Black Consumer 18% $175.00 $50.00 $25.00 the lowest between 10% of the over limit amount and $ 25.00 ... *Minimum amount $15.00"
   }
  ]
 }

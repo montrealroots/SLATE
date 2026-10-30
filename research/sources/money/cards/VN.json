@@ -3,26 +3,126 @@
  "cards": [
   {
    "bank": "VIB",
+   "card": "VIB One Card (Signature)",
+   "rate": {
+    "percent": "3.71",
+    "per": "month",
+    "from": "2.54"
+   },
+   "fees": [
+    {
+     "fee": "2999000",
+     "per": "year"
+    }
+   ],
+   "cash": {
+    "rate": {
+     "percent": "3.71",
+     "per": "month",
+     "from": "2.54"
+    },
+    "fee": {
+     "percent": "2.5",
+     "min": "100000"
+    }
+   },
+   "fx": "1",
+   "grace": 55,
+   "overLimit": {
+    "percent": "4",
+    "of": "excess"
+   },
+   "late": {
+    "percent": "4",
+    "of": "unpaid",
+    "min": "50000",
+    "max": "2000000"
+   }
+  },
+  {
+   "bank": "VIB",
+   "card": "VIB One Card (Platinum)",
+   "rate": {
+    "percent": "3.71",
+    "per": "month",
+    "from": "2.54"
+   },
+   "fees": [
+    {
+     "fee": "1999000",
+     "per": "year"
+    }
+   ],
+   "cash": {
+    "rate": {
+     "percent": "3.71",
+     "per": "month",
+     "from": "2.54"
+    },
+    "fee": {
+     "percent": "3",
+     "min": "100000"
+    }
+   },
+   "fx": "3",
+   "grace": 55,
+   "overLimit": {
+    "percent": "4",
+    "of": "excess"
+   },
+   "late": {
+    "percent": "5",
+    "of": "unpaid",
+    "min": "50000",
+    "max": "2000000"
+   }
+  },
+  {
+   "bank": "VIB",
    "card": "VIB One Card (Gold)",
    "rate": {
     "percent": "3.71",
-    "per": "month"
+    "per": "month",
+    "from": "2.54"
    },
    "fees": [
     {
      "fee": "999000",
      "per": "year"
     }
-   ]
+   ],
+   "cash": {
+    "rate": {
+     "percent": "3.71",
+     "per": "month",
+     "from": "2.54"
+    },
+    "fee": {
+     "percent": "3.5",
+     "min": "100000"
+    }
+   },
+   "fx": "3.5",
+   "grace": 55,
+   "overLimit": {
+    "percent": "4",
+    "of": "excess"
+   },
+   "late": {
+    "percent": "6",
+    "of": "unpaid",
+    "min": "50000",
+    "max": "2000000"
+   }
   }
  ],
- "note": "VIB's fees and conditions for its One Card: a Gold card's annual fee is 999,000 dong, and purchases carried past the interest-free period bear 2.54% to 3.71% a month by credit history, written at the top.",
+ "note": "Vietnam's largest banks are the state banks (Vietcombank, BIDV, VietinBank, Agribank) and the large private banks (Techcombank, VPBank, MB, VIB, among the biggest card issuers). VIB's other cards' fee pages answered a 'Challenge Validation' page on 2026-10-30, which this research doesn't pass; VPBank's card page states no fee figures and Vietcombank's and Techcombank's card fee pages weren't found in this pass; so only VIB's One Card is written. VIB's fees and conditions for its One Card (read again 2026-10-30): the card has three tiers set by the holder's limit (Signature above 100 million dong, Platinum above 50 million up to 100 million, Gold up to 50 million), each written as a card (the Gold this file has held since 2026-10-29 is kept): the principal card's annual fee 2,999,000, 1,999,000 or 999,000 dong; purchases and cash 2.54% to 3.71% a month by credit history (cash drawn at a VIB branch POS 1.88% to 2.96%, not written); up to 55 days free of interest on purchases (the due date is 25, 20 or 15 days after the statement by tier; 55 is written for every tier); a cash advance 2.5%, 3% or 3.5%, at least 100,000 dong; spending in another currency 1%, 3% or 3.5% (the Signature's free for its first three statements, not written); over the limit 4% of the excess; a late payment 4%, 5% or 6% of the whole unpaid statement balance, at least 50,000 and at most 2,000,000 dong. A metal card's 1,500,000-dong issue fee and the design fees aren't written; the standard card is issued free. The page states no minimum payment.",
  "sources": [
   {
    "url": "https://www.vib.com.vn/vn/the-tin-dung/vib-one-card/bieu-phi-va-dieu-kien",
-   "title": "VIB, Biểu phí và điều kiện: Thẻ tín dụng VIB One Card",
-   "read": "2026-10-29",
-   "said": "Lãi suất áp dụng cho các giao dịch mua sắm Miễn lãi lên đến 55 ngày Từ 2.54% đến 3.71%/tháng (*) ... Phí thường niên thẻ chính Signature: 2.999.000 VNĐ Platinum: 1.999.000 VNĐ Gold: 999.000 VNĐ"
+   "title": "VIB, VIB One Card: Biểu phí và điều kiện",
+   "read": "2026-10-30",
+   "said": "Hạng Signature: hạn mức lớn hơn (>) 100 triệu đồng; Hạng Platinum: hạn mức lớn hơn (>) 50 triệu đồng đến tối đa (<=) 100 triệu đồng ... Miễn lãi lên đến 55 ngày Từ 2.54% đến 3.71%/tháng (*) Lãi suất áp dụng cho các giao dịch rút tiền Từ 2.54% đến 3.71%/tháng (*) ... Phí thường niên thẻ chính Signature: 2.999.000 VNĐ Platinum: 1.999.000 VNĐ Gold: 999.000 VNĐ ... Phí ứng/rút tiền mặt Signature: 2.5% (tối thiểu: 100.000 VNĐ) Platinum: 3% (tối thiểu: 100.000 VNĐ) Gold: 3.5% (tối thiểu: 100.000 VNĐ) Phí quản lý giao dịch ngoại tệ Signature: 1% (tối thiểu: 10.000 VNĐ). ... Phí vượt hạn mức 4%/Số tiền vượt hạn mức/giao dịch ... Phí chậm thanh toán Signature: 4% /toàn bộ dư nợ cuối kỳ chưa thanh toán); tối thiểu 50.000 , tối đa 2.000.000 Platinum: 5% /toàn bộ dư nợ cuối kỳ chưa t"
   }
  ]
 }

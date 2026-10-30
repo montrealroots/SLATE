@@ -13,22 +13,44 @@
      "fee": "25",
      "per": "year"
     }
-   ]
+   ],
+   "cash": {
+    "fee": {
+     "percent": "3",
+     "fixed": "2.10"
+    }
+   },
+   "late": {
+    "fixed": "8"
+   },
+   "grace": 45
   }
  ],
- "note": "DSK Bank's tariff for individuals (in force from 1 April 2026): its Visa Galaxy revolving credit card's main card costs 25 euros a year, not charged where the card makes 24 transactions in its first year, a condition the game doesn't check, so the fee is charged in full. The card's standard interest rate on DSK Bank's credit card page is 18.90% a year.",
+ "note": "The main banks were taken as Bulgaria's three largest by assets, a choice from general knowledge (no central bank or association ranking was read in this pass): UniCredit Bulbank, DSK Bank and UBB. DSK Bank: its tariff for individuals (in force from 1 September 2026), whose bank cards section links each card's own sheet, the sheet for its Visa credit cards with revolving credit (the card the April 2026 tariff called Visa Galaxy, now the 'Credit card'), and its credit card page, read 2026-10-30. The card costs 25 euros a year for the main card; the fee isn't charged where the card makes 24 transactions in its first year, or under some of the bank's plans, conditions the game doesn't check, so it is charged in full. It bears 18.90% a year, the page's standard loan interest rate, with up to 45 days without interest. A withdrawal at DSK's own ATMs costs 2.10 euros plus 3% (3.60 plus 3% at others, not written), and an unpaid minimum 8 euros, written as the late fee. The Platinum credit card is issued only under the bank's Premium and Private Banking plans from 1 July 2026, and the DSK-Wizz Air card only to specific client segments, so neither is written. The page doesn't state the minimum's share. UniCredit Bulbank's card pages answered with a captcha, UBB's refused the request (403) and Postbank's answered with a Cloudflare check, so none is written.",
  "sources": [
   {
-   "url": "https://dskbank.bg/docs/default-source/архив/архив-на-тарифа-за-индивидуални-клиенти/2026-година/тарифа-за-физически-лица-от-01-04-2026.pdf",
-   "title": "Банка ДСК, Тарифа за такси и комисиони за физически лица (в сила от 01.04.2026)",
-   "read": "2026-10-29",
-   "said": "КРЕДИТНИ КАРТИ VISA GALAXY С РЕВОЛВИРАЩ КРЕДИТ ... Годишна такса основна карта 25 евро/ 48,90 лв.. **** ... **** Годишната такса обслужване на основната и/или допълнителната карта не се начислява за съответната карта, в случай че с нея бъдат извършени минимум 24 трансакции"
+   "url": "https://dskbank.bg/docs/default-source/bank-tarrif/тарифа-за-физически-лица.pdf",
+   "title": "DSK Bank, Тарифа за такси и комисиони на Банка ДСК за физически лица (in force from 1 September 2026)",
+   "read": "2026-10-30",
+   "said": "Тарифа за такси и комисиони на Банка ДСК за физически лица ... В сила от 01.09.2026"
+  },
+  {
+   "url": "https://dskbank.bg/docs/default-source/cards/card-visa-galaxy.pdf",
+   "title": "DSK Bank, Credit cards Visa with revolving loan (tariff sheet)",
+   "read": "2026-10-30",
+   "said": "CREDIT CARDS VISA WITH REVOLVING LOAN ... Annual fee for a main card*** EUR 25/ BGN 48.90 ... Cash withdrawal from DSK Bank`s АТM in Bulgaria EUR 2.10 + 3%/ BGN 4.11 + 3% ... Unpaid minimum revolving amount EUR 8/ BGN 15.65 ... ** Effective July 1, 2026, the Platinum credit card (primary and supplementary) is issued only"
+  },
+  {
+   "url": "https://dskbank.bg/docs/default-source/cards/kreditna-karta-dsk-wizz-air.pdf",
+   "title": "DSK Bank, Кредитни карти DSK-Wizz Air с револвиращ кредит (tariff sheet)",
+   "read": "2026-10-30",
+   "said": "КРЕДИТНИ КАРТИ DSK-WIZZ AIR С РЕВОЛВИРАЩ КРЕДИТ ЗА СПЕЦИФИЧНИ КЛИЕНТСКИ СЕГМЕНТИ"
   },
   {
    "url": "https://dskbank.bg/en/individual-clients/bank-cards/credit-cards/details-credit-cards/product-group/credit-card",
-   "title": "DSK Bank, Individual clients: Credit card",
-   "read": "2026-10-29",
-   "said": "Revolving credit cards EUR Standard loan interest rate 18,90%"
+   "title": "DSK Bank, Credit card",
+   "read": "2026-10-30",
+   "said": "Revolving credit cards EUR Standard loan interest rate 18,90% ... Option for an interest-free credit period of up to 45 days"
   }
  ]
 }

@@ -3,6 +3,129 @@
  "cards": [
   {
    "bank": "Commercial Bank of Kuwait",
+   "card": "Mastercard World Elite",
+   "rate": {
+    "percent": "1.00",
+    "per": "month"
+   },
+   "fees": [
+    {
+     "fee": "150",
+     "per": "year",
+     "waived": [
+      {
+       "first": 1
+      }
+     ]
+    }
+   ],
+   "issue": "150",
+   "cash": {
+    "fee": {
+     "percent": "5",
+     "min": "2"
+    }
+   },
+   "fx": "2.5",
+   "minimum": {
+    "percent": "8.3",
+    "interest": true
+   },
+   "late": {
+    "percent": "1",
+    "of": "unpaid",
+    "min": "2"
+   },
+   "overLimit": {
+    "percent": "1",
+    "of": "excess",
+    "min": "2"
+   }
+  },
+  {
+   "bank": "Commercial Bank of Kuwait",
+   "card": "World Mastercard",
+   "rate": {
+    "percent": "1.00",
+    "per": "month"
+   },
+   "fees": [
+    {
+     "fee": "100",
+     "per": "year",
+     "waived": [
+      {
+       "first": 1
+      }
+     ]
+    }
+   ],
+   "issue": "100",
+   "cash": {
+    "fee": {
+     "percent": "5",
+     "min": "2"
+    }
+   },
+   "fx": "2.5",
+   "minimum": {
+    "percent": "8.3",
+    "interest": true
+   },
+   "late": {
+    "percent": "1",
+    "of": "unpaid",
+    "min": "2"
+   },
+   "overLimit": {
+    "percent": "1",
+    "of": "excess",
+    "min": "2"
+   }
+  },
+  {
+   "bank": "Commercial Bank of Kuwait",
+   "card": "Platinum Mastercard",
+   "rate": {
+    "percent": "1.00",
+    "per": "month"
+   },
+   "fees": [
+    {
+     "fee": "70",
+     "per": "year",
+     "waived": [
+      {
+       "first": 1
+      }
+     ]
+    }
+   ],
+   "issue": "100",
+   "cash": {
+    "fee": {
+     "percent": "5",
+     "min": "2"
+    }
+   },
+   "fx": "2.5",
+   "minimum": {
+    "percent": "8.3",
+    "interest": true
+   },
+   "late": {
+    "percent": "1",
+    "of": "unpaid",
+    "min": "2"
+   },
+   "overLimit": {
+    "percent": "1",
+    "of": "excess",
+    "min": "2"
+   }
+  },
+  {
+   "bank": "Commercial Bank of Kuwait",
    "card": "Titanium Mastercard",
    "rate": {
     "percent": "1.00",
@@ -11,18 +134,51 @@
    "fees": [
     {
      "fee": "50",
-     "per": "year"
+     "per": "year",
+     "waived": [
+      {
+       "first": 1
+      }
+     ]
     }
-   ]
+   ],
+   "issue": "50",
+   "cash": {
+    "fee": {
+     "percent": "5",
+     "min": "2"
+    }
+   },
+   "fx": "2.5",
+   "minimum": {
+    "percent": "8.3",
+    "interest": true
+   },
+   "late": {
+    "percent": "1",
+    "of": "unpaid",
+    "min": "2"
+   },
+   "overLimit": {
+    "percent": "1",
+    "of": "excess",
+    "min": "2"
+   }
   }
  ],
- "note": "Commercial Bank of Kuwait's card pages: its Titanium Mastercard's annual renewal fee is 50 dinars (the issuance fee isn't counted), and its cards charge 1.00% a month, an annual rate of 12.00% including the service charge.",
+ "note": "The main banks, chosen as the best-known large card issuers (no central bank ranking was read): National Bank of Kuwait, Kuwait Finance House and Commercial Bank of Kuwait. National Bank of Kuwait's consumer tariff list (dated 05/10/2026) was read: it gives each card's issuance and annual fee, a 5% cash withdrawal fee, a 2.75% foreign exchange mark-up and past-due fees, but prices what's carried as 2.5% over the Central Bank of Kuwait's discount rate plus 0.5% a month, and the discount rate's own page (cbk.gov.kw) answered not found, so no NBK card is written: a card's rate can't be left out. Kuwait Finance House's card page showed no terms to this research and wasn't written. Commercial Bank of Kuwait (Al-Tijari): its Mastercard fees and limits page, read in full on 2026-10-30, gives each personal Mastercard's issuance fee and annual renewal fee (World Elite 150 and 150 dinars, World 100 and 100, Platinum 100 and 70, Titanium 50 and 50), written as the issue fee and a yearly fee waived for the first year, which the issuance fee pays for; an annual interest rate (APR) of 12.00% including the service charge, written as 1.00% a month as its APR page explains (read 2026-10-29); a minimum monthly payment of 8.3% of the outstanding balance plus interest; a cash advance fee of 5% with a minimum of 2 dinars; a 2.5% commission on transactions in another currency; an over-limit charge of 1% of the over-limit amount, at least 2 dinars; and a late payment charge of 1% of the unsettled instalment, at least 2 dinars. Its Visa fees and limits page returned the bank's generic page with no fees and wasn't read; the earlier reading of its Titanium Mastercard (50 dinars a year) is replaced by the fuller one. The charge card option, settled in full each month, is the same card paid differently and isn't written separately.",
  "sources": [
   {
    "url": "https://www.cbk.com/Personal-Banking/Cards/Mastercard-Fees-and-Limits",
    "title": "Commercial Bank of Kuwait, Mastercard Fees and Limits",
-   "read": "2026-10-29",
-   "said": "Card Type Minimum credit limit Issuance Fee Annual Renewal Fee ... Titanium Mastercard 200 KD 50 KD 50 KD Annual Interest Rate (APR) 12.00% including service charge."
+   "read": "2026-10-30",
+   "said": "Card Type Minimum credit limit Issuance Fee Annual Renewal Fee Mastercard World Elite 1000 KD 150 KD 150 KD World Mastercard 1000 KD 100 KD 100 KD Platinum Mastercard 300 KD 100 KD 70 KD Titanium Mastercard 200 KD 50 KD 50 KD Annual Interest Rate (APR) 12.00% including service charge. ... The minimum monthly payment is 8.3% of the outstanding balance, plus applicable interest. ... Cash advances are subject to a 5% flat fee (minimum KD 2). ... When used for transactions in a currency other than the card currency, a 2.5% commission on the foreign exchange variance applies. Over-limit charge: 1% or minimum KD 2 once the outstanding amount exceeds the credit limit (calculated on the over-limit amount). Late payment charge: 1% or minimum KD 2 if the due amount is not settled in full by the end of the month (calculated on the unsettled installment amount)."
+  },
+  {
+   "url": "https://www.nbk.com/dam/jcr:664467c9-ee23-47e3-bd98-fc0af8c3cdae/nbk-bank-tariff-list-consumers-e.pdf",
+   "title": "National Bank of Kuwait, Bank Tariff List, Consumers (05/10/2026)",
+   "read": "2026-10-30",
+   "said": "05/10/2026 ... Visa Classic KD 30 ... Charges on overdue / unpaid amount charges on the revolving amount ... plus 0.5% monthly charges"
   },
   {
    "url": "https://www.cbk.com/Personal-Banking/Cards/Understanding-Annual-Percentage-Rate-APR",

@@ -3,26 +3,58 @@
  "cards": [
   {
    "bank": "Victoriabank",
-   "card": "STAR Card",
    "rate": {
     "percent": "16.19",
     "per": "year"
    },
+   "cash": {
+    "fee": {
+     "percent": "2"
+    }
+   },
+   "grace": 56,
+   "card": "STAR Card",
    "fees": [
     {
      "fee": "100",
      "per": "year"
     }
    ]
+  },
+  {
+   "bank": "Victoriabank",
+   "rate": {
+    "percent": "16.19",
+    "per": "year"
+   },
+   "cash": {
+    "fee": {
+     "percent": "2"
+    }
+   },
+   "grace": 56,
+   "card": "STAR Card Platinum",
+   "fees": [
+    {
+     "fee": "1000",
+     "per": "year"
+    }
+   ]
   }
  ],
- "note": "Victoriabank's STAR Card credit card: a floating rate of 16.19% a year, and 100 lei a year for each card from the second year, the first being free and introductory. maib and Moldindconbank answered with bot checks and weren't read.",
+ "note": "The main banks were taken as Moldova's three largest by assets, a choice from general knowledge (no central bank or association ranking was read in this pass): maib, Moldindconbank and Victoriabank. Victoriabank: its credit card list and its STAR Card and STAR Card Platinum pages, read 2026-10-30; its other cards in that list are debit cards or overdrafts on salary and social accounts, not written. Both bear a floating 16.19% a year with up to 56 days of grace; each card linked to the account costs nothing in its first year, which is introductory, then 100 lei a year (STAR Card) or 1,000 lei (Platinum). Cash at ATMs and counter POS costs 2%. The pages state no minimum payment, foreign-currency fee or late charge. maib and Moldindconbank answered with bot checks on the earlier reading and weren't retried.",
  "sources": [
   {
    "url": "https://www.victoriabank.md/carduri/star-card",
    "title": "Victoriabank, STAR Card",
-   "read": "2026-10-29",
-   "said": "STAR Card cu rata flotantă 16,19% ... Deservire anuală a fiecărui card legat de cont – primul an Gratuit , începând cu al doilea an – 100 MDL/anual."
+   "read": "2026-10-30",
+   "said": "Grație până la 56 de zile ... STAR Card cu rata flotantă 16,19% Linie de credit Detalii Comision utilizare ATM-uri şi POS-uri de la ghişeu pentru numerar – 2% ... începând cu al doilea an – 100 MDL/anual."
+  },
+  {
+   "url": "https://www.victoriabank.md/carduri/star-card-platinum",
+   "title": "Victoriabank, STAR Card Platinum",
+   "read": "2026-10-30",
+   "said": "Grație până la 56 de zile ... STAR Card Platinum cu rata flotantă 16,19% Linie de credit Detalii Comision utilizare ATM-uri și POS-uri de la ghișeu pentru numerar – 2% ... începând cu al doilea an – 1,000 MDL/anual ."
   }
  ]
 }

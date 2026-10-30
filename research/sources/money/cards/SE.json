@@ -13,11 +13,65 @@
      "fee": "360",
      "per": "year"
     }
-   ]
+   ],
+   "fx": "1.65",
+   "grace": 45
+  },
+  {
+   "bank": "Handelsbanken",
+   "card": "Platinum",
+   "rate": {
+    "percent": "8.80",
+    "per": "year"
+   },
+   "fees": [
+    {
+     "fee": "2400",
+     "per": "year"
+    }
+   ],
+   "cash": {
+    "fee": {
+     "percent": "2",
+     "min": "20"
+    }
+   },
+   "fx": "1.65",
+   "grace": 45,
+   "late": {
+    "fixed": "100"
+   },
+   "overLimit": {
+    "fixed": "100"
+   }
   }
  ],
- "note": "Handelsbanken's page for its Allkort: 360 kronor a year, and a credit rate of 13.90% a year, the rate its standard European consumer credit information gives from 1 October 2025.",
+ "note": "The main banks: Handelsbanken, Swedbank, SEB and Nordea are Sweden's four large banks; on 2026-10-30 Swedbank's card pages answered with a captcha (not circumvented), SEB's and Nordea's credit card pages weren't found at their addresses, so only Handelsbanken is written. Handelsbanken's two credit cards, each from its own price list and page (read 2026-10-30): the Allkort, 360 kronor a year, with a debt rate currently 13.90% a year, a 1.65% currency exchange fee on purchases and withdrawals abroad, and no fee for a withdrawal at a cash machine in Sweden (so no cash fee is written; the 1%, at least 10 kronor, at a bank or exchange office isn't); and the Platinum, 2,400 kronor a year (included with a Premium agreement or as a Private Banking customer, which the game doesn't hold), 8.80% a year, 2% (at least 20 kronor) for a cash withdrawal at a machine in Sweden, the 1.65% currency fee, a 100-krone late fee and a 100-krone fee for going over the limit (the 45-krone reminder fee isn't written). Both have up to 45 interest-free days and a monthly invoice the holder may pay in part. The Allkort's price list gives no late or over-limit fee. Extra-card, replacement and courier prices aren't written. The earlier reading of the Allkort (2026-10-29) holds and is kept.",
  "sources": [
+  {
+   "url": "https://www.handelsbanken.se/sv/privat/vardagstjanster/bankkort-och-kreditkort/prislista-for-allkort",
+   "title": "Handelsbanken, Prislista för Allkort",
+   "read": "2026-10-30",
+   "said": "Prislista Allkort: Skuldränta Pris: F n 13,90 % ... Prislista Allkort: Uttag i Bankomat och andra uttagsautomater i Sverige Pris: Ingen uttagsavgift. ... Prislista Allkort: Valutaväxlingsavgift Pris: 1,65 % på köp och uttag utomlands. Prislista Allkort: Årsavgift Pris: 360 kr"
+  },
+  {
+   "url": "https://www.handelsbanken.se/sv/privat/vardagstjanster/bankkort-och-kreditkort/prislista-for-platinum",
+   "title": "Handelsbanken, Prislista för Platinum",
+   "read": "2026-10-30",
+   "said": "Lista: Skuldränta Pris: F n 8,80 % ... Lista: Uttag i Bankomat och andra uttagsautomater i Sverige Pris: 2 %, minst 20 kr. ... Lista: Valutaväxlingsavgift Pris: 1,65 % på köp och uttag utomlands. Lista: Årsavgift Pris: 2 400 kr ... Lista: Förseningsavgift gällande fakturabetalning Pris: 100 kr ... Lista: Överskriden köpgräns/övertrassering Pris: 100 kr plus ränta på övertrasserat belopp"
+  },
+  {
+   "url": "https://www.handelsbanken.se/sv/privat/vardagstjanster/bankkort-och-kreditkort/allkort",
+   "title": "Handelsbanken, Allkort",
+   "read": "2026-10-30",
+   "said": "Du får en räntefri kredit i upp till 45 dagar. Du väljer själv om du vill betala hela fakturan eller ett lägre belopp."
+  },
+  {
+   "url": "https://www.handelsbanken.se/sv/privat/vardagstjanster/bankkort-och-kreditkort/platinum",
+   "title": "Handelsbanken, Platinum",
+   "read": "2026-10-30",
+   "said": "Alla köp samlas på en månadsfaktura som går att delbetala. Du får en räntefri kredit i upp till 45 dagar. ... Årsavgift ingår för dig med Premium -avtal samt för dig som är Private Banking -kund."
+  },
   {
    "url": "https://www.handelsbanken.se/sv/privat/vardagstjanster/bankkort-och-kreditkort/allkort",
    "title": "Handelsbanken, Allkort",

@@ -6,30 +6,124 @@
    "card": "TamKart Classic",
    "rate": {
     "percent": "29",
+    "per": "year",
+    "from": "18"
+   },
+   "fees": [],
+   "cash": {
+    "fee": {
+     "percent": "2.5",
+     "min": "2"
+    }
+   },
+   "grace": 60
+  },
+  {
+   "bank": "ABB",
+   "card": "TamKart Gold",
+   "rate": {
+    "percent": "22",
     "per": "year"
    },
-   "fees": []
+   "fees": [],
+   "issue": "30",
+   "cash": {
+    "fee": {
+     "percent": "2.5",
+     "min": "2"
+    }
+   },
+   "grace": 60
+  },
+  {
+   "bank": "ABB",
+   "card": "TamKart Platinum",
+   "rate": {
+    "percent": "20",
+    "per": "year"
+   },
+   "fees": [],
+   "issue": "100",
+   "cash": {
+    "fee": {
+     "percent": "2.5",
+     "min": "2"
+    }
+   },
+   "grace": 60
+  },
+  {
+   "bank": "ABB",
+   "card": "TamKart Premium",
+   "rate": {
+    "percent": "18",
+    "per": "year"
+   },
+   "fees": [],
+   "issue": "300",
+   "cash": {
+    "fee": {
+     "percent": "2.5",
+     "min": "2"
+    }
+   },
+   "grace": 60
+  },
+  {
+   "bank": "Kapital Bank",
+   "card": "Birbank Star",
+   "rate": {
+    "steps": {
+     "fee": "10",
+     "each": "500"
+    }
+   },
+   "fees": [],
+   "cash": {
+    "fee": {
+     "percent": "1",
+     "min": "1"
+    }
+   }
   }
  ],
- "note": "ABB (the International Bank of Azerbaijan): its TamKart Classic credit card is free, and its annual interest rate is one of 18%, 20%, 22%, 27%, 28% or 29% (an actual rate of 18.40% to 40.60%), written at the top. Kapital Bank's Birbank Star charges a fixed 10 manat for each 500 carried instead of interest, which the game's cards don't model.",
+ "note": "The main banks, chosen as the best-known large card issuers (no central bank ranking was read): Kapital Bank, ABB (the International Bank of Azerbaijan) and PASHA Bank; PASHA Bank wasn't tried this time, for want of the research's budget. ABB's credit card pages (each rendered in a browser on 2026-10-30, their terms being built by script) and its tariff table for payment cards (dated 6 October 2026, in Azerbaijani), read in full: the TamKart credit cards are issued for 5 years for one fee, written as the issue fee (Gold 30, Platinum 100, Premium 300 manat); the Classic's 20 manat is waived under a current campaign, and its page says 'Free for 5 years', so it is written as free. The Classic's annual rate is one of 18%, 20%, 22%, 27%, 28% or 29%, set for each holder (written as the range, its top 29%); the Gold's 22%, the Platinum's 20%, the Premium's 18%. Each has a grace period of up to 60 days, and a cash withdrawal at ABB's ATMs and terminals costs 2.5%, at least 2 manat (other banks' and foreign ATMs cost more and aren't written). The TamKart Max, whose page gives its rates (27% to 29%) but no fee to hold or issue, isn't written. Kapital Bank's Birbank Star page (rendered in a browser on 2026-10-30; first read 2026-10-29): there is no annual interest rate; a fixed usage fee of 10 manat for each 1 to 500 manat of debt carried past the month's end, written as the card's steps; cash withdrawals, transfers and credit payments from the credit line cost 1%, at least 1 manat. A debt repaid within the calendar month costs nothing (a grace period by the month, not a number of days, so none is written); the minimum payment may be the usage fee alone, which the game's minimum doesn't hold, and isn't written. After 36 months, or three delays of over 10 days, the remaining debt is split into instalments at 27% a year, which isn't modelled.",
  "sources": [
   {
-   "url": "https://abb-bank.az/en/ferdi/kartlar/kredit-kartlari",
-   "title": "ABB, Credit Cards",
-   "read": "2026-10-29",
-   "said": "TamKart Classic ... Price ... Free ... TamKart Gold"
+   "url": "https://cdn.abb-bank.az/Oed_nis_kartlari_06_10_2026_5080ef41e2.pdf",
+   "title": "ABB, Ödəniş kartları üzrə tarif cədvəli (6 October 2026)",
+   "read": "2026-10-30",
+   "said": "Kredit kartlar Müddət TamKart Classic / Standard TamKart Gold TamKart Platinum TamKart Premium** 5 illik 20 AZN* 30 AZN 100 AZN 300 AZN ... *Kampaniya çərçivəsində pulsuz təqdim olunur. ... TamKart və TamKart Max kredit kartı vasitəsilə nağdlaşdırma və köçürməyə görə komisyon haqqları ... ABB-nin ATM və POS terminalları vasitəsi ilə nağdlaşdırma üzrə komissiya 2.5% (min. 2 AZN)"
   },
   {
    "url": "https://abb-bank.az/en/ferdi/kartlar/kredit-kartlari/tamkart-visa-classic",
    "title": "ABB, TamKart Visa Classic",
-   "read": "2026-10-29",
-   "said": "Annual interest rate ... 18%, 20%, 22%, 27%, 28%, 29% ... Actual annual interest rate ... min. 18.40% - max. 40.60%"
+   "read": "2026-10-30",
+   "said": "Free for 5 years ... Grace period Up to 60 days Annual interest rate 18%, 20%, 22%, 27%, 28%, 29%"
+  },
+  {
+   "url": "https://abb-bank.az/en/ferdi/kartlar/kredit-kartlari/tamkart-visa-gold",
+   "title": "ABB, TamKart Visa Gold",
+   "read": "2026-10-30",
+   "said": "30 ₼ for 5 years ... Grace period Up to 60 days Annual interest rate 22%"
+  },
+  {
+   "url": "https://abb-bank.az/en/ferdi/kartlar/kredit-kartlari/tamkart-visa-platinum",
+   "title": "ABB, TamKart Visa Platinum",
+   "read": "2026-10-30",
+   "said": "100 ₼ for 5 years ... Grace period Up to 60 days Annual interest rate 20%"
+  },
+  {
+   "url": "https://abb-bank.az/en/ferdi/kartlar/kredit-kartlari/tamkart-visa-premium",
+   "title": "ABB, TamKart Visa Premium",
+   "read": "2026-10-30",
+   "said": "300 ₼ for 5 years ... Grace period Up to 60 days Annual interest rate 18%"
   },
   {
    "url": "https://cards.birbank.az/en/BRST/bb/star",
    "title": "Kapital Bank, Birbank Star",
-   "read": "2026-10-29",
-   "said": "There is no annual interest rate. ... This fee is fixed and applies if the credit line is not fully repaid by the end of the month: 10 AZN for each 1–500 AZN debt is carried over."
+   "read": "2026-10-30",
+   "said": "Only a 1% (min. 1 AZN) commission is applied when you use the credit line for cash withdrawal, transfers, or financial transactions. ... The minimum monthly payment for Birbank Star may consist only of the usage fee. This fee is fixed and applies if the credit line is not fully repaid by the end of the month: 10 AZN for each 1–500 AZN debt is carried over. ... After 36 months, the remaining debt is divided into equal monthly annuity payments with an annual interest rate of 27% until the contract expiration date."
   }
  ]
 }

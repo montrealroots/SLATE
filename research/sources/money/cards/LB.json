@@ -3,7 +3,33 @@
  "cards": [
   {
    "bank": "Byblos Bank",
+   "card": "Visa Platinum (LBP)",
+   "rate": {
+    "percent": "2.25",
+    "per": "month"
+   },
+   "fees": [
+    {
+     "fee": "2500000",
+     "per": "year"
+    },
+    {
+     "fee": "40000",
+     "per": "month"
+    }
+   ],
+   "minimum": {
+    "percent": "5",
+    "floor": "500000"
+   },
+   "overLimit": {
+    "fixed": "100000"
+   }
+  },
+  {
+   "bank": "Byblos Bank",
    "card": "Visa Fresh Platinum",
+   "currency": "USD",
    "rate": {
     "percent": "1.75",
     "per": "month"
@@ -18,16 +44,76 @@
      "per": "month"
     }
    ],
-   "currency": "USD"
+   "cash": {
+    "rate": {
+     "percent": "2.083",
+     "per": "month"
+    },
+    "fee": {
+     "percent": "1.5",
+     "min": "3"
+    }
+   },
+   "fx": "7.5",
+   "minimum": {
+    "percent": "5",
+    "floor": "35"
+   },
+   "late": {
+    "fixed": "10"
+   },
+   "overLimit": {
+    "fixed": "10"
+   }
+  },
+  {
+   "bank": "Byblos Bank",
+   "card": "Visa Fresh Platinum Group Offering",
+   "currency": "USD",
+   "rate": {
+    "percent": "1.75",
+    "per": "month"
+   },
+   "fees": [
+    {
+     "fee": "50",
+     "per": "year"
+    },
+    {
+     "fee": "2",
+     "per": "month"
+    }
+   ],
+   "cash": {
+    "rate": {
+     "percent": "2.083",
+     "per": "month"
+    },
+    "fee": {
+     "percent": "1.5",
+     "min": "3"
+    }
+   },
+   "fx": "7.5",
+   "minimum": {
+    "percent": "5",
+    "floor": "35"
+   },
+   "late": {
+    "fixed": "10"
+   },
+   "overLimit": {
+    "fixed": "10"
+   }
   }
  ],
- "note": "Byblos Bank's fees and commissions (last updated 25 June 2026): its Visa Fresh Platinum credit card, in US dollars, costs 100 dollars a year and 3 dollars a month in maintenance, with interest of 1.75% a month on purchases.",
+ "note": "The main banks, chosen as the best-known large card issuers (no central bank ranking was read): Bank Audi, BLOM Bank and Byblos Bank. Bank Audi's card page answered 403 and BLOM Bank's a Cloudflare block on 2026-10-30, and neither was read. Byblos Bank's fees and commissions brochure (last updated 25 June 2026), its credit card fees, commissions and features, read in full on 2026-10-30 (first read 2026-10-29 for the Visa Fresh Platinum alone): its three personal credit cards are written. The Visa Platinum in Lebanese pounds costs 2,500,000 a year and 40,000 a month in maintenance, bears 2.25% a month on purchases, asks a minimum of 5% (its settlement options are 5%, 10% or 100%) and at least 500,000, and charges 100,000 for exceeding its limit; its late fee, stated in dollars, isn't written on it. The Visa Fresh Platinum in 'fresh' US dollars costs 100 dollars a year and 3 a month (the Group Offering, for holders through an employer's group, 50 and 2, a condition the game doesn't check), bears 1.75% a month on purchases and 2.083% on cash from an ATM, charges 1.5% (at least 3 dollars) for cash from an ATM in Lebanon (5%, at least 10, abroad, not written), asks a minimum of 5% and at least 35 dollars, and charges 10 dollars for exceeding the limit and 10 for a late payment. A transaction in another currency carries the foreign exchange mark-up of 4.5% and the cross-border fee of 3%, written together as 7.5% (the cross-border fee's floor of 0.75 dollars isn't modelled). The brochure states no grace period.",
  "sources": [
   {
    "url": "https://byblos.byblosbank.com/files/Library/Assets/Gallery/PDF/NEW%20Fees%20&%20Commissions%20Brochure%2025-6-2026%20-ENG.%202026%20.pdf",
-   "title": "Byblos Bank, Fees & Commissions Brochure (last updated 25 June 2026)",
-   "read": "2026-10-29",
-   "said": "Last updated on June 25, 2026 ... Credit Card Fees ... Annual ... Monthly ... Maintenance Fee ... Visa Fresh 100 100 50 10 10 3 Platinum (USD) ... POS Interest ... (per month) ... 1,75% 2.083% 24%"
+   "title": "Byblos Bank, Fees and Commissions (last updated 25 June 2026)",
+   "read": "2026-10-30",
+   "said": "Last updated on June 25, 2026 ... B. Credit Cards ... Visa Platinum 2,500,000 2,500,000 600,000 100,000 100,000 40,000 (LBP) Visa Fresh 100 100 50 10 10 3 Platinum (USD) Visa Fresh Platinum(USD) 50 50 50 0 10 2 Group Offering ... Foreign Exchange Markup 4.5% added to the daily currency rate Cross Border Fee 3% (min USD 0.75 per transaction) Late Payment Fee USD 10 ... Visa Up to 5%, 10%, or Platinum 500,000 N/A N/A 2.25% N/A 30% 100M 100% (LBP) Minimum Visa Fresh $500 5% , 10%, 1.5%; $3 5%; $10 Platinum 35 1,75% 2.083% 24%"
   }
  ]
 }

@@ -10,14 +10,137 @@
    },
    "fees": [
     {
-     "fee": "13.52",
+     "fee": "13.00",
      "per": "year"
     }
-   ]
+   ],
+   "minimum": {
+    "percent": "5"
+   },
+   "late": {
+    "percent": "4",
+    "of": "minimum",
+    "min": "12.00",
+    "max": "150.00"
+   },
+   "penalty": {
+    "percent": "16.9",
+    "per": "year"
+   },
+   "tax": {
+    "interest": "4",
+    "fees": "4"
+   }
+  },
+  {
+   "bank": "Novo Banco",
+   "card": "Gold VISA",
+   "rate": {
+    "percent": "14.600",
+    "per": "year"
+   },
+   "fees": [
+    {
+     "fee": "25.00",
+     "per": "year"
+    }
+   ],
+   "minimum": {
+    "percent": "5"
+   },
+   "late": {
+    "percent": "4",
+    "of": "minimum",
+    "min": "12.00",
+    "max": "150.00"
+   },
+   "penalty": {
+    "percent": "17.6",
+    "per": "year"
+   },
+   "tax": {
+    "interest": "4",
+    "fees": "4"
+   }
+  },
+  {
+   "bank": "Novo Banco",
+   "card": "Platinum",
+   "rate": {
+    "percent": "16.250",
+    "per": "year"
+   },
+   "fees": [
+    {
+     "fee": "110.00",
+     "per": "year"
+    }
+   ],
+   "minimum": {
+    "percent": "5"
+   },
+   "late": {
+    "percent": "4",
+    "of": "minimum",
+    "min": "12.00",
+    "max": "150.00"
+   },
+   "penalty": {
+    "percent": "19.25",
+    "per": "year"
+   },
+   "tax": {
+    "interest": "4",
+    "fees": "4"
+   }
+  },
+  {
+   "bank": "Novo Banco",
+   "card": "Branco",
+   "rate": "in full",
+   "fees": [
+    {
+     "fee": "65.00",
+     "per": "year"
+    }
+   ],
+   "late": {
+    "percent": "4",
+    "of": "minimum",
+    "min": "12.00",
+    "max": "150.00"
+   },
+   "tax": {
+    "fees": "4"
+   }
   }
  ],
- "note": "Novo Banco's standard information sheet for its Verde VISA credit card (07/2026): a nominal annual rate of 13.900%, and a yearly card fee of 13.00 euros plus 4% stamp duty on it, 13.52 in all; the stamp duty on interest and on credit isn't written.",
+ "note": "Novo Banco's standard information sheets (Fichas de Informação Normalizada) for each of its personal credit cards, read 2026-10-30: the Verde VISA (07/2026; 13.900% a year nominal, a card fee of 13.00 euros a year), Gold VISA (07/2026; 14.600%, 25.00 euros; also sold as the Gold 360, which links the same sheet), Platinum (07/2026; 16.250%, 110.00 euros) and Branco (04/2026; 0.000% and paid in full each month, so nothing is carried; 65.00 euros a year). Each: stamp duty (IS) of 4% on interest and on the card fee, written as the tax (the 0.141% stamp duty on credit used isn't one of the game's terms and isn't written); a minimum payment of 5% of the capital owed (the Branco none, being paid in full); a recovery charge of 4% of an instalment due and unpaid, at least 12 and at most 150 euros, written as the late fee on the minimum; and late interest at the card's rate plus 3% a year, written as the penalty rate (16.9%, 17.6%, 19.25%). The card fee was written in the earlier reading of the Verde VISA (2026-10-29) as 13.52 euros with its stamp duty folded in; it is now the 13.00 fee with the 4% tax. The sheets state no cash advance or foreign transaction fee, nor a grace period. Instalment payments aren't written. The main banks: Caixa Geral de Depósitos, Millennium bcp and Novo Banco; only Novo Banco's sheets were reached on 2026-10-30.",
  "sources": [
+  {
+   "url": "https://www.novobanco.pt/content/dam/novobancopublicsites/docs/pdfs/cart%C3%B5es/FIN_Verde_NB.pdf.coredownload.inline.pdf",
+   "title": "Novo Banco, Ficha de Informação Normalizada: Verde VISA (07/2026)",
+   "read": "2026-10-30",
+   "said": "Cartão de crédito: Verde VISA ... 1.1. Taxa de juro nominal Cartão de crédito: 13,900% ... Cartão de crédito: 13,00 EUR. ... 1374/1 - 07/2026 ... mínimo obrigatório a pagar, o qual será de 5% sobre o valor do capital em dívida ... correspondente a 4% do valor da prestação vencida e não paga, com um mínimo de 12,00 Euros e um máximo de 150,00 EUR ... Taxa remuneratória à data da mora acrescida de 3% ao ano ... IS de 4% s/juros"
+  },
+  {
+   "url": "https://www.novobanco.pt/content/dam/novobancopublicsites/docs/pdfs/cart%C3%B5es/FIN_GOLD_NB.pdf.coredownload.inline.pdf",
+   "title": "Novo Banco, Ficha de Informação Normalizada: Gold VISA (07/2026)",
+   "read": "2026-10-30",
+   "said": "Cartão de crédito: Gold VISA ... 1.1. Taxa de juro nominal Cartão de crédito: 14,600% ... Cartão de crédito: 25,00 EUR. ... 1375/1 - 07/2026 ... mínimo obrigatório a pagar, o qual será de 5% sobre o valor do capital em dívida ... correspondente a 4% do valor da prestação vencida e não paga, com um mínimo de 12,00 Euros e um máximo de 150,00 EUR ... Taxa remuneratória à data da mora acrescida de 3% ao ano ... IS de 4% s/juros"
+  },
+  {
+   "url": "https://www.novobanco.pt/content/dam/novobancopublicsites/docs/pdfs/cart%C3%B5es/FIN_Platinum_NB.pdf.coredownload.inline.pdf",
+   "title": "Novo Banco, Ficha de Informação Normalizada: Platinum (07/2026)",
+   "read": "2026-10-30",
+   "said": "Cartão de crédito: Platinum ... 1.1. Taxa de juro nominal Cartão de crédito: 16,250% ... Cartão de crédito: 110,00 EUR. ... 1376/1 - 07/2026 ... mínimo obrigatório a pagar, o qual será de 5% sobre o valor do capital em dívida ... correspondente a 4% do valor da prestação vencida e não paga, com um mínimo de 12,00 Euros e um máximo de 150,00 EUR ... Taxa remuneratória à data da mora acrescida de 3% ao ano ... IS de 4% s/juros"
+  },
+  {
+   "url": "https://www.novobanco.pt/content/dam/novobancopublicsites/docs/pdfs/cart%C3%B5es/fins/Branco_FIN%20NB_1377.pdf.coredownload.inline.pdf",
+   "title": "Novo Banco, Ficha de Informação Normalizada: Branco (04/2026)",
+   "read": "2026-10-30",
+   "said": "Cartão de crédito: Branco ... -pagamento mensal da totalidade da dívida. ... 1.1. Taxa de juro nominal 0,000% ... Cartão de crédito: 65,00 EUR. ... 1377/1 - 04/2026 ... correspondente a 4% do valor da prestação vencida e não paga, com um mínimo de 12,00 Euros e um máximo de 150,00 EUR"
+  },
   {
    "url": "https://www.novobanco.pt/content/dam/novobancopublicsites/docs/pdfs/cart%C3%B5es/FIN_Verde_NB.pdf.coredownload.inline.pdf",
    "title": "Novo Banco, Ficha de Informação Normalizada: Verde VISA (07/2026)",

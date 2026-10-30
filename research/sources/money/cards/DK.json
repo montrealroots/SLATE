@@ -10,11 +10,69 @@
      "fee": "250",
      "per": "year"
     }
-   ]
+   ],
+   "cash": {
+    "fee": {
+     "percent": "1",
+     "min": "20"
+    }
+   },
+   "fx": "1.5",
+   "late": {
+    "fixed": "100"
+   }
+  },
+  {
+   "bank": "Danske Bank",
+   "card": "Mastercard Guld",
+   "rate": "in full",
+   "fees": [
+    {
+     "fee": "795",
+     "per": "year"
+    }
+   ],
+   "cash": {
+    "fee": {
+     "percent": "1",
+     "min": "20"
+    }
+   },
+   "fx": "1.5",
+   "late": {
+    "fixed": "100"
+   }
+  },
+  {
+   "bank": "Danske Bank",
+   "card": "Mastercard Platin",
+   "rate": "in full",
+   "fees": [
+    {
+     "fee": "1395",
+     "per": "year"
+    }
+   ],
+   "cash": {
+    "fee": {
+     "percent": "1",
+     "min": "20"
+    }
+   },
+   "fx": "1.5",
+   "late": {
+    "fixed": "100"
+   }
   }
  ],
- "note": "Danske Bank's Mastercard Basis: its standard yearly card fee is 250 kroner (the price book updated 7 October 2026; none with the Danske Hverdag+ package, which the game doesn't hold). The card's usual form has a purchase limit, its statement balance drawn from the current account on the due day without interest, so nothing is carried; the form with a credit limit, which carries interest, states no rate in the price book.",
+ "note": "Danske Bank's price book (updated 7 October 2026), read 2026-10-30 for its Mastercards: the Mastercard Basis (250 kroner a year), Guld (795) and Platin (1,395), each with a standard yearly card fee (none inside some customer programmes, which the game doesn't hold). With the usual 100% repayment each month no interest is charged from purchase to the due date, so nothing is carried; the 5, 10 or 15% monthly repayment the holder may choose instead carries interest from the due date at a rate the price book doesn't state, so it isn't written. Each: a cash withdrawal on the credit function at Danske Bank's machines or counters costs 1% (at least 20 kroner); paying in a currency outside the EU/EEA, Switzerland and Britain costs 1.5% (written as the foreign fee; 0.5% on EEA currencies isn't modelled); a payment reminder costs 100 kroner, written as the late fee. The Mastercard Hverdag+ (199 kroner a year) is offered without a credit assessment and can't be used on credit, so it isn't written. Replacement, express and courier charges aren't written. The main banks: Danske Bank, Denmark's largest, is the only one written; Nordea's and Jyske Bank's Danish card price lists weren't reached on 2026-10-30. The earlier reading of the Mastercard Basis (2026-10-29) holds and is kept.",
  "sources": [
+  {
+   "url": "https://danskebank.dk/PDF/PRISER-VILKAAR-FAKTAARK/Generelle-vilkaar/PRISBOGDB.pdf",
+   "title": "Danske Bank, Prisbog (updated 7 October 2026)",
+   "read": "2026-10-30",
+   "said": "Senest opdateret d. 7. oktober 2026 ... Mastercard Hverdag+ Mastercard Basis Mastercard Guld Mastercard Platin ... Standardpris 199 kr.21 250 kr. 795 kr. 1.395 kr. ... Betalingspåmindelse Ikke muligt 100 kr. 100 kr. 100 kr. ... I Danske Banks automater, og i kassen Pris Kan ikke benyttes 1%, min. 20 kr. 1%, min. 20 kr. 1%, min. 20 kr. ... Der beregnes ikke rente fra købstidspunkt til forfaldsdatoen (købsperiode) i tilfælde af 100% afvikling af kredit pr. måned. Ved tilvalg af 5, 10 eller 15% afvikling pr. måned beregnes rente fra ... Kurstillæg 0,5% af beløbet 0,5% af beløbet 0,5% af beløbet 0,5% af beløbet ... Pris 1,5% af beløbet 1,5% af beløbet 1,5% af beløbet 1,5% af beløbet"
+  },
   {
    "url": "https://danskebank.dk/PDF/PRISER-VILKAAR-FAKTAARK/Generelle-vilkaar/PRISBOGDB.pdf",
    "title": "Danske Bank, Prisbog (updated 7 October 2026)",

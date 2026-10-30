@@ -13,9 +13,22 @@ describe('cards', () => {
     expect(COUNTRY_CODES.filter(keepsCards)).toEqual(Object.keys(data.countries).sort());
     expect([keepsCards('US'), keepsCards('AQ')]).toEqual([true, false]);
     expect(cardsIn('AQ')).toEqual([]);
-    // Chase's Freedom Unlimited: no annual fee, 27.99% a year at the top of its range, a twelfth a month.
-    const [chase] = cardsIn('US') as [Card];
-    expect(chase).toStrictEqual({ bank: 'Chase', card: 'Chase Freedom Unlimited', currency: 'USD', rate: { percent: '27.99', per: 'year' }, fees: [] });
+    // Chase's Freedom Unlimited: no annual fee, 18.49% to 27.99% a year, 0% for its first 15 months, its cash, foreign,
+    // late, returned and penalty terms from its Pricing and Terms box.
+    const chase = cardsIn('US').find((c) => c.card === 'Chase Freedom Unlimited') as Card;
+    expect(chase).toStrictEqual({
+      bank: 'Chase',
+      card: 'Chase Freedom Unlimited',
+      currency: 'USD',
+      rate: { percent: '27.99', per: 'year', from: '18.49' },
+      fees: [],
+      intro: { percent: '0', per: 'year', months: 15 },
+      cash: { rate: { percent: '28.74', per: 'year' }, fee: { percent: '5', min: money('USD', 1000) } },
+      fx: '3',
+      late: { fixed: money('USD', 4000) },
+      returned: money('USD', 4000),
+      penalty: { percent: '29.99', per: 'year' },
+    });
     expect(paidInFull(chase)).toBe(false);
     // 1,000 dollars at 27.99% a year is 23.325 a month, rounded half to even.
     expect(interestFor(chase, usd(100_000))).toStrictEqual(usd(2332));
@@ -23,11 +36,13 @@ describe('cards', () => {
     expect(interestFor(chase, usd(1))).toStrictEqual(usd(0));
     // Nothing on a balance in the holder's favour, or none.
     expect([interestFor(chase, usd(0)), interestFor(chase, usd(-50_000))]).toStrictEqual([usd(0), usd(0)]);
-    const [amazon] = cardsIn('GB') as [Card];
-    expect(interestFor(amazon, money('GBP', 100_000))).toStrictEqual(money('GBP', 2408));
-    // Deutsche Bank's Mastercard: 39 euros a year, its balance taken from the account each month.
-    const [db] = cardsIn('DE') as [Card];
-    expect(db).toStrictEqual({ bank: 'Deutsche Bank', card: 'Mastercard oder VISA', currency: 'EUR', rate: 'in full', fees: [{ fee: money('EUR', 3900), per: 'year' }] });
+    // Barclaycard's Amazon card: 28.9% a year effective, the twelfth root of 1.289 less one a month.
+    const amazon = cardsIn('GB').find((c) => c.card === 'Amazon Barclaycard') as Card;
+    expect(interestFor(amazon, money('GBP', 100_000))).toStrictEqual(money('GBP', 2138));
+    // Deutsche Bank's Mastercard: 39 euros a year, its balance taken from the account each month; 2.5% on cash (at least
+    // 5.75 euros) and 1.75% on spending in another currency.
+    const db = cardsIn('DE').find((c) => c.card === 'Mastercard oder VISA') as Card;
+    expect(db).toStrictEqual({ bank: 'Deutsche Bank', card: 'Mastercard oder VISA', currency: 'EUR', rate: 'in full', fees: [{ fee: money('EUR', 3900), per: 'year' }], cash: { fee: { percent: '2.5', min: money('EUR', 575) } }, fx: '1.75' });
     expect(paidInFull(db)).toBe(true);
     expect(() => interestFor(db, money('EUR', 100))).toThrow("Deutsche Bank's Mastercard oder VISA carries nothing: it's paid in full each month");
     expect(feeFor(db.fees[0] as Fee, { ...standing, age: 70, spent: money('EUR', 9_999_999) }, '2026-11-01')).toStrictEqual(money('EUR', 3900));

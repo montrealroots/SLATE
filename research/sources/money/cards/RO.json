@@ -3,26 +3,68 @@
  "cards": [
   {
    "bank": "BCR",
-   "card": "BCR Standard",
    "rate": {
     "percent": "28",
     "per": "year"
    },
+   "cash": {
+    "fee": {
+     "percent": "3",
+     "min": "10"
+    }
+   },
+   "fx": "2",
+   "penalty": {
+    "percent": "31",
+    "per": "year"
+   },
+   "card": "BCR Standard",
    "fees": [
     {
      "fee": "45",
      "per": "year"
     }
-   ]
+   ],
+   "issue": "20"
+  },
+  {
+   "bank": "BCR",
+   "rate": {
+    "percent": "28",
+    "per": "year"
+   },
+   "cash": {
+    "fee": {
+     "percent": "3",
+     "min": "10"
+    }
+   },
+   "fx": "2",
+   "penalty": {
+    "percent": "31",
+    "per": "year"
+   },
+   "card": "BCR Gold",
+   "fees": [
+    {
+     "fee": "200",
+     "per": "year"
+    },
+    {
+     "fee": "20",
+     "per": "year"
+    }
+   ],
+   "issue": "100"
   }
  ],
- "note": "BCR's costs for its Standard credit card: 45 lei a year to administer, and a fixed 28% a year on an unsecured card (23% on one secured by a deposit, which the game doesn't hold). The 20-lei issue fee is not written. Banca Transilvania's tariffs answered with a bot check and weren't read.",
+ "note": "The main banks were taken as Romania's three largest by assets, a choice from general knowledge (no central bank or association ranking was read in this pass): Banca Transilvania, BCR and BRD. BCR: its costs for the BCR Standard and BCR Gold credit cards (undated; the copy its site serves on 2026-10-30), read 2026-10-30. Each bears a fixed 28% a year on an unsecured card (23% on one secured by a deposit, which the game doesn't hold); a payment missed adds 3 points to the current rate on the overdue principal of the minimum, written as a penalty rate of 31%. The Standard costs 20 lei to issue and 45 a year to administer; the Gold 100 to issue, 200 a year to administer and 20 a year for its insurance. Cash at an ATM or POS costs 3%, at least 10 lei, and spending in another currency 2%. The documents state no minimum payment, grace period or late fee. Banca Transilvania's card pages answered with a captcha; BRD's card fee guide on its site is the one in force from 1 January 2020, too old to stand for today's terms, and no current one was found. Neither is written.",
  "sources": [
   {
    "url": "https://www.bcr.ro/content/dam/ro/bcr/www_bcr_ro/Persoane-fizice/Carduri-de-cumparaturi/documente-utile/Tarife_Comisioane_Carduri_Credit_Standard_Gold.pdf",
-   "title": "BCR, Costuri pentru cardul de credit BCR Standard",
-   "read": "2026-10-29",
-   "said": "Costuri pentru cardul de credit BCR Standard ... Administrare anuală a cardului principal/ 45 lei ... 28%/an fixă pentru carduri negarantate"
+   "title": "BCR, Costuri pentru cardul de credit BCR Standard și BCR GOLD",
+   "read": "2026-10-30",
+   "said": "Costuri pentru cardul de credit BCR Standard ... Emitere card principal 20 lei ... 45 lei ... Utilizare ATM/POS pentru numerar 3% min 10 lei ... 2% din valoarea tranzacţiilor efectuate în altă ... 3% care se adaugă la dobânda curentă și se ... 28%/an fixă pentru carduri negarantate ... Costuri pentru cardul de credit BCR GOLD ... Emitere card principal 100 RON ... 200 RON ... Utilizare ATM/POS pentru numerar 3% min.10 RON ... Comision anual de asigurare 20 RON"
   }
  ]
 }

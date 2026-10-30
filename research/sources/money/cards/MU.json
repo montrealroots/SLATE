@@ -3,6 +3,98 @@
  "cards": [
   {
    "bank": "MCB",
+   "card": "American Express Green",
+   "rate": {
+    "percent": "16.40",
+    "per": "year"
+   },
+   "fees": [
+    {
+     "fee": "1500",
+     "per": "year"
+    }
+   ],
+   "cash": {
+    "fee": {
+     "fixed": "100"
+    }
+   },
+   "fx": "2.50",
+   "overLimit": {
+    "fixed": "200.00"
+   }
+  },
+  {
+   "bank": "MCB",
+   "card": "American Express Gold",
+   "rate": {
+    "percent": "16.40",
+    "per": "year"
+   },
+   "fees": [
+    {
+     "fee": "3000",
+     "per": "year"
+    }
+   ],
+   "cash": {
+    "fee": {
+     "fixed": "100"
+    }
+   },
+   "fx": "2.50",
+   "overLimit": {
+    "fixed": "200.00"
+   }
+  },
+  {
+   "bank": "MCB",
+   "card": "VISA Platinum",
+   "rate": {
+    "percent": "16.40",
+    "per": "year"
+   },
+   "fees": [
+    {
+     "fee": "1500",
+     "per": "year"
+    }
+   ],
+   "cash": {
+    "fee": {
+     "fixed": "100"
+    }
+   },
+   "fx": "2.50",
+   "overLimit": {
+    "fixed": "200.00"
+   }
+  },
+  {
+   "bank": "MCB",
+   "card": "VISA Signature",
+   "rate": {
+    "percent": "16.40",
+    "per": "year"
+   },
+   "fees": [
+    {
+     "fee": "2500",
+     "per": "year"
+    }
+   ],
+   "cash": {
+    "fee": {
+     "fixed": "100"
+    }
+   },
+   "fx": "2.50",
+   "overLimit": {
+    "fixed": "200.00"
+   }
+  },
+  {
+   "bank": "MCB",
    "card": "MasterCard/ VISA Classic",
    "rate": {
     "percent": "20.40",
@@ -13,16 +105,158 @@
      "fee": "200",
      "per": "year"
     }
-   ]
+   ],
+   "cash": {
+    "fee": {
+     "fixed": "100"
+    }
+   },
+   "fx": "2.50",
+   "overLimit": {
+    "fixed": "150.00"
+   }
+  },
+  {
+   "bank": "MCB",
+   "card": "MasterCard/ VISA Gold",
+   "rate": {
+    "percent": "20.40",
+    "per": "year"
+   },
+   "fees": [
+    {
+     "fee": "950",
+     "per": "year"
+    }
+   ],
+   "cash": {
+    "fee": {
+     "fixed": "100"
+    }
+   },
+   "fx": "2.50",
+   "overLimit": {
+    "fixed": "150.00"
+   }
+  },
+  {
+   "bank": "MCB",
+   "card": "MasterCard PRIMO",
+   "rate": {
+    "percent": "20.40",
+    "per": "year"
+   },
+   "fees": [
+    {
+     "fee": "150",
+     "per": "year"
+    }
+   ],
+   "cash": {
+    "fee": {
+     "fixed": "100"
+    }
+   },
+   "fx": "2.50",
+   "overLimit": {
+    "fixed": "150.00"
+   }
+  },
+  {
+   "bank": "Absa Bank (Mauritius)",
+   "card": "Absa Card Platinum",
+   "rate": {
+    "percent": "2.13",
+    "per": "month"
+   },
+   "fees": [
+    {
+     "fee": "1725",
+     "per": "year"
+    }
+   ],
+   "cash": {
+    "fee": {
+     "percent": "2.10",
+     "min": "150"
+    }
+   },
+   "fx": "3",
+   "returned": "400",
+   "minimum": {
+    "percent": "5",
+    "floor": "2000"
+   },
+   "grace": 52
+  },
+  {
+   "bank": "Absa Bank (Mauritius)",
+   "card": "Absa Card Gold",
+   "rate": {
+    "percent": "2.13",
+    "per": "month"
+   },
+   "fees": [
+    {
+     "fee": "1092.50",
+     "per": "year"
+    }
+   ],
+   "cash": {
+    "fee": {
+     "percent": "2.10",
+     "min": "150"
+    }
+   },
+   "fx": "3",
+   "returned": "400",
+   "minimum": {
+    "percent": "5",
+    "floor": "1000"
+   },
+   "grace": 52
+  },
+  {
+   "bank": "Absa Bank (Mauritius)",
+   "card": "Absa Card Classic",
+   "rate": {
+    "percent": "2.13",
+    "per": "month"
+   },
+   "fees": [
+    {
+     "fee": "230",
+     "per": "year"
+    }
+   ],
+   "cash": {
+    "fee": {
+     "percent": "2.10",
+     "min": "150"
+    }
+   },
+   "fx": "3",
+   "returned": "400",
+   "minimum": {
+    "percent": "5",
+    "floor": "100"
+   },
+   "grace": 52
   }
  ],
- "note": "MCB's rates and fees (last updated 7 October 2026): its MasterCard/ VISA Classic cards cost 200 rupees a year for the primary card, before VAT, whose rate the list doesn't state, and charge the prime lending rate of 6.90% plus 13.50%, 20.40% a year.",
+ "note": "Mauritius's largest banks are MCB, SBM and Absa Bank (Mauritius); MCB's and Absa's price lists were read, and SBM's wasn't reached. MCB's statement of interest rates and service charges (last updated 7 October 2026), read for every personal credit card: the rate is the prime lending rate of 6.90% plus a margin, 9.50% on the American Express Green and Gold and the VISA Platinum and Signature (16.40% a year) and 13.50% on the MasterCard/VISA Classic and Gold and the MasterCard PRIMO (20.40%); primary cards cost 1,500, 3,000, 1,500, 2,500, 200, 950 and 150 rupees a year before VAT, whose rate the list doesn't state (so it isn't written); a cash advance costs a flat 100 rupees locally (2% abroad, not written); going over the limit costs 200 rupees on the first four and 150 on the rest; conversion is 2.50%. The card the file named before, 'MasterCard/ VISA Classic', is kept with its terms extended; the 'MasterCard/ VISA' cards are written as one card each, as the list prices them. Absa Bank (Mauritius)'s personal tariff guide (effective 1 June 2026): its Platinum, Gold and Classic credit cards cost 1,725, 1,092.50 and 230 rupees a year with VAT, no joining fee, 2.13% a month, 2.10% for a cash advance (at least 150 rupees), 3% forex, 400 rupees for a returned payment, a minimum payment of 5% (at least 2,000, 1,000 and 100 rupees) and up to 52 days interest free; its late and excess-limit fees, each '1% of amount due' (at least 250 and 200 rupees), don't make clear whether the amount due is the minimum or the balance, so they aren't written. Business, corporate and foreign-currency cards aren't written.",
  "sources": [
   {
    "url": "https://www.mcb.mu/docs/mcb/rates-fees/bom/bom-template.pdf",
-   "title": "MCB, Rates and Fees (last updated 7 October 2026)",
-   "read": "2026-10-29",
-   "said": "(Last updated 07.10.2026) ... Prime Lending Rate (PLR) 6.90% ... MasterCard/ VISA Classic cards PLR + 13.50% ... MasterCard/ VISA Classic cards - Primary card 200 + VAT"
+   "title": "MCB, Statement of Principal Interest Rates and Service Charges for domestic operations (last updated 7 October 2026)",
+   "read": "2026-10-30",
+   "said": "(Last updated 07.10.2026) ... Prime Lending Rate (PLR) 6.90% ... American Express Green cards PLR + 9.50% ... American Express Gold cards PLR + 9.50% ... VISA Platinum/ Signature cards PLR + 9.50% ... MasterCard/ VISA Classic cards PLR + 13.50% ... MasterCard/ VISA Gold cards PLR + 13.50% ... MasterCard PRIMO PLR + 13.50% ... American Express Green cards - Primary card 1,500 + VAT ... American Express Gold cards - Primary card 3,000 + VAT ... VISA Platinum cards - Primary card 1,500 + VAT ... VISA Signature cards - Primary card 2,500 + VAT ... MasterCard/ VISA Classic cards - Primary card 200 + VAT ... MasterCard/ VISA Gold cards - Primary card 950 + VAT ... 150 + VAT N/A 150 + VAT ... Locally: Flat 100 per transaction ... Overlimit Fee ... American Express Green cards 200.00 ... VISA Platinum/ Signature cards 200.00 ... MasterCard/ VISA Classic cards 150.00 ... MasterCard PRIMO 150.00 ... VISA 2.50% ... MasterCard 2.50% ... AMEX 2.50%"
+  },
+  {
+   "url": "https://www.absabank.mu/content/dam/mauritius/absa/pdf/tariff-guide/personal-tariff-guide.pdf",
+   "title": "Absa Bank (Mauritius), Personal Tariff Guide (effective 1 June 2026)",
+   "read": "2026-10-30",
+   "said": "Effective as from 1 June 2026 ... Fees and charges Absa Card Platinum Absa Card Gold Absa Card Classic ... Interest rate (monthly) 2.13% 2.13% 2.13% ... Annual fee Rs 1,725 (VAT inclusive) Rs 1092.50 (VAT inclusive) Rs 230 (VAT inclusive) ... Late payment fee1 1% of amount due ... Excess limit fee2 1% of amount due ... 2.10% per transaction ... Returned fee Rs 400 per item ... Minimum payment 5% or minimum Rs 2,000 5% or minimum Rs 1,000 5% or minimum Rs 100 ... Interest free period Up to 52 days ... FOREX fee 3% 3% 3% ... Minimum of Rs 150"
   }
  ]
 }

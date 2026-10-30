@@ -13,16 +13,37 @@
      "fee": "750",
      "per": "year"
     }
-   ]
+   ],
+   "issue": "750",
+   "cash": {
+    "rate": {
+     "percent": "2",
+     "per": "month"
+    },
+    "fee": {
+     "fixed": "100"
+    }
+   },
+   "minimum": {
+    "percent": "10",
+    "floor": "1000"
+   },
+   "grace": 45,
+   "late": {
+    "fixed": "300"
+   },
+   "overLimit": {
+    "fixed": "500"
+   }
   }
  ],
- "note": "Nepal Bank Limited: its Visa credit card charges 2% a month (24% a year) and NPR 750 a year; the issue fee isn't written.",
+ "note": "Nepal's largest banks include Nabil, Global IME, NIC Asia and the state-owned Nepal Bank. Nabil's card page sits behind Cloudflare (not passed), NIC Asia's card URL answers 404 and Global IME's site didn't answer (2026-10-30), so Nepal Bank Limited, this file's bank since 2026-10-29, is written alone. Nepal Bank Limited's credit card page (read again 2026-10-30): its Visa domestic credit card (valid only in Nepal, India and Bhutan) charges 2% a month (24% a year) on purchases and on cash; a joining fee of 750 rupees (now written as the issue fee) and an annual fee of 750; a payment of 10% of the outstanding, at least 1,000 rupees, written as the minimum; 15 to 45 days free of interest on purchases, written as 45; a late payment 300 rupees each time; over the limit 500 rupees; a cash withdrawal 100 rupees at the bank's own ATMs (200 at other Visa ATMs and 250 in India, not written). The page states no foreign-transaction fee (the card works in India and Bhutan too) and none is written.",
  "sources": [
   {
    "url": "https://nepalbank.com.np/services/credit-card",
    "title": "Nepal Bank Limited, NBL Visa Credit Card",
-   "read": "2026-10-29",
-   "said": "NBL Visa Credit Card provides the service of plastic card with credit facility to the individual customers. ... Annual Fee NPR 750 ... Interest Rate 2% per month (24% per annum)"
+   "read": "2026-10-30",
+   "said": "Valid Only in Nepal, India & Bhutan. ... Convenient payment option of 10% (or minimum NPR 1,000) to 100% of outstanding amount. Interest free credit period of minimum 15 days to maximum 45 days for purchase transactions. Competitive interest rate @ 2% per month. ... Joining/ Issuance Fee NPR 750 Annual Fee NPR 750 ... Late Payment Fee NPR 300 per instance Over Limit Fee NPR 500 ... NBL Card NBL ATM – Cash Withdrawal NPR 100 + 2% per month of txn amount ... Interest on Cash Withdrawal 2% per month ... Interest Rate 2% per month (24% per annum)"
   }
  ]
 }

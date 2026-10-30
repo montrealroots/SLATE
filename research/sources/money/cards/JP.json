@@ -3,27 +3,163 @@
  "cards": [
   {
    "bank": "三菱UFJニコス",
+   "rate": {
+    "percent": "19.80",
+    "per": "year"
+   },
+   "cash": {
+    "rate": {
+     "percent": "17.95",
+     "per": "year"
+    }
+   },
    "card": "三菱ＵＦＪカード",
+   "fees": []
+  },
+  {
+   "bank": "三菱UFJニコス",
+   "rate": {
+    "percent": "19.80",
+    "per": "year"
+   },
+   "cash": {
+    "rate": {
+     "percent": "17.95",
+     "per": "year"
+    }
+   },
+   "card": "三菱ＵＦＪカード ゴールド",
+   "fees": [
+    {
+     "fee": "11000",
+     "per": "year"
+    }
+   ]
+  },
+  {
+   "bank": "三菱UFJニコス",
+   "rate": {
+    "percent": "19.80",
+    "per": "year"
+   },
+   "cash": {
+    "rate": {
+     "percent": "17.95",
+     "per": "year"
+    }
+   },
+   "card": "三菱ＵＦＪカード・プラチナ・アメリカン・エキスプレス・カード",
+   "fees": [
+    {
+     "fee": "22000",
+     "per": "year"
+    }
+   ]
+  },
+  {
+   "bank": "JCB",
    "rate": {
     "percent": "18.00",
     "per": "year"
    },
+   "card": "JCB カード W",
    "fees": []
+  },
+  {
+   "bank": "JCB",
+   "rate": {
+    "percent": "18.00",
+    "per": "year"
+   },
+   "card": "JCB カード W plus L",
+   "fees": []
+  },
+  {
+   "bank": "JCB",
+   "rate": {
+    "percent": "18.00",
+    "per": "year"
+   },
+   "card": "JCB カード S",
+   "fees": []
+  },
+  {
+   "bank": "JCB",
+   "rate": {
+    "percent": "18.00",
+    "per": "year"
+   },
+   "card": "JCBゴールド",
+   "fees": [
+    {
+     "fee": "11000",
+     "per": "year",
+     "waived": [
+      {
+       "first": 1
+      }
+     ]
+    }
+   ]
+  },
+  {
+   "bank": "JCB",
+   "rate": {
+    "percent": "18.00",
+    "per": "year"
+   },
+   "card": "JCBプラチナ",
+   "fees": [
+    {
+     "fee": "27500",
+     "per": "year"
+    }
+   ]
   }
  ],
- "note": "Mitsubishi UFJ NICOS's pages for its MUFG Card: no annual fee, ever, for the holder; and on its registered revolving service, the part of a month's spending above the amount the holder sets carries a fee of 18.00% a year.",
+ "note": "Japan's three largest banking groups issue their credit cards through their card companies: MUFG through Mitsubishi UFJ NICOS, SMBC through Sumitomo Mitsui Card, and Mizuho through its card partners. Sumitomo Mitsui Card's and Mizuho Bank's sites refuse this research's requests (Akamai, 'Access Denied', 2026-10-30), so JCB, the country's own card brand and one of its largest issuers, is written in their place. Mitsubishi UFJ NICOS's pages, as of 28 September 2026, read 2026-10-30: the MUFG Card (三菱ＵＦＪカード) has no annual fee, ever; the MUFG Card Gold costs 11,000 yen a year including tax, its first-year waiver being for those who join on the web, a condition the game doesn't check, so the fee is written in full; the MUFG Card Platinum American Express costs 22,000 yen a year. Revolving (its registered revolving service, 楽Ｐａｙ) carries 19.80% a year (実質年率, charged by the day on the balance carried, written as a yearly rate), which replaces the 18.00% this file held from 2026-10-29; the page says a few cards differ, without naming them, and 19.80% is written on all three. A cash advance (キャッシングサービス) carries 17.95% a year (融資利率, 実質年率). The annual-fee reduction for revolving users, the ETC and UnionPay cards' issue fees, the statement-by-post fee and the late charge (遅延損害金, set in the member agreement as the statutory rate, read but not written, the game having no statutory rate) aren't written; nor is a foreign-transaction fee, the member agreement (個人会員規約, read 2026-10-30) adding only 'a fee the company sets' to the exchange rate without a figure. JCB's pages (as of August 2026, read 2026-10-30): the JCB Card W and W plus L (open to those 18 to 39 when they apply, an age the game doesn't check at application) and the JCB Card S have no annual fee; JCB Gold costs 11,000 yen a year including tax, its first year free; JCB Platinum 27,500 yen. Revolving carries 18.00% a year (実質年率), to which JCB moved its cards from 1 October 2026 (some cards may differ, the page says). JCB's cash advance rate, minimum payment and foreign-transaction fee weren't found on the pages read and aren't written. Japanese cards are paid in full each month by default (monthly closing on the 15th, payment on the 10th of the next month), revolving only where the holder chooses it; no grace period in the game's sense is stated.",
  "sources": [
   {
    "url": "https://www.cr.mufg.jp/apply/card/mucard/index06.html",
-   "title": "三菱UFJニコス、三菱ＵＦＪカード",
-   "read": "2026-10-29",
-   "said": "三菱ＵＦＪカード 年会費 [本人会員]永年無料"
+   "title": "三菱UFJニコス、三菱ＵＦＪカード（2026年9月28日現在）",
+   "read": "2026-10-30",
+   "said": "カード名称 三菱ＵＦＪカード 年会費 [本人会員]永年無料"
+  },
+  {
+   "url": "https://www.cr.mufg.jp/apply/card/mucard_goldprestige/index.html",
+   "title": "三菱UFJニコス、三菱ＵＦＪカード ゴールド（2026年9月28日現在）",
+   "read": "2026-10-30",
+   "said": "カード名称 三菱ＵＦＪカード ゴールド ... 年会費 [本人会員] 11,000円（税込） WEB入会対象 初年度年会費無料"
+  },
+  {
+   "url": "https://www.cr.mufg.jp/amex/apply/mucard_platinum/index.html",
+   "title": "三菱UFJニコス、三菱ＵＦＪカード・プラチナ・アメリカン・エキスプレス・カード（2026年9月28日現在）",
+   "read": "2026-10-30",
+   "said": "年会費 [本人会員] 22,000円（税込）"
   },
   {
    "url": "https://www.cr.mufg.jp/mufgcard/service/payment/rakupay/index.html",
    "title": "三菱UFJニコス、登録型リボ「楽Ｐａｙ（らくペイ）」",
-   "read": "2026-10-29",
-   "said": "ご指定金額を超えたご利用分は翌月以降に繰り越され、手数料がかかります。 ... 手数料率（実質年率）18.00％"
+   "read": "2026-10-30",
+   "said": "手数料 手数料率（実質年率）19.80％ 一部手数料率が異なるカードがあります。"
+  },
+  {
+   "url": "https://www.cr.mufg.jp/mufgcard/cashing/cash/condition/index.html",
+   "title": "三菱UFJニコス、キャッシングサービス・カードローンご利用条件の詳細（貸付条件）",
+   "read": "2026-10-30",
+   "said": "キャッシングサービス 融資利率（実質年率） 17.95％*（1年を365日とする日割計算）"
+  },
+  {
+   "url": "https://www.jcb.co.jp/ordercard/kojin_card/os_card_w.html",
+   "title": "JCB、JCB カード W（2026年8月現在）",
+   "read": "2026-10-30",
+   "said": "JCB カード W 詳細を見る 女性にうれしい特典 JCB カード W plus L 詳細を見る 充実の割引・サービス JCB カード S 詳細を見る 安心の補償 JCBゴールド 詳細を見る 最上級のサービス JCBプラチナ 詳細を見る 年会費 永年無料 永年無料 永年無料 11,000円（税込） ※初年度無料 27,500円（税込） お申し込み対象 18〜39歳 18〜39歳 18歳以上 20歳以上 20歳以上"
+  },
+  {
+   "url": "https://www.jcb.co.jp/service/payment/revolving/index.html",
+   "title": "JCB、ショッピングリボ払い",
+   "read": "2026-10-30",
+   "said": "2026年10月1日（木）ご利用分から順次、手数料率を18.00％に改定します。 ... 手数料率 実質年率18.00％ カードの種類により、手数料率が異なる場合があります。"
   }
  ]
 }

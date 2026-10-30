@@ -10,19 +10,63 @@
    },
    "fees": [
     {
-     "fee": "4140.00",
+     "fee": "4000.00",
      "per": "year"
     }
-   ]
+   ],
+   "cash": {
+    "fee": {
+     "percent": "1",
+     "fixed": "221.00"
+    }
+   },
+   "fx": "1.7",
+   "overLimit": {
+    "percent": "1",
+    "of": "excess"
+   },
+   "tax": {
+    "interest": "3.5",
+    "fees": "3.5"
+   }
+  },
+  {
+   "bank": "Banco Comercial do Atlântico",
+   "card": "BCA Visa Gold",
+   "rate": {
+    "percent": "18.250",
+    "per": "year"
+   },
+   "fees": [
+    {
+     "fee": "7000.00",
+     "per": "year"
+    }
+   ],
+   "cash": {
+    "fee": {
+     "percent": "1",
+     "fixed": "221.00"
+    }
+   },
+   "fx": "1.7",
+   "overLimit": {
+    "percent": "1",
+    "of": "excess"
+   },
+   "tax": {
+    "interest": "3.5",
+    "fees": "3.5"
+   }
   }
  ],
- "note": "The Banco Comercial do Atlântico's price list (in force from 30 July 2026): its BCA Visa Classic credit card's annual fee is 4,000 escudos plus 3.5% stamp duty on it, 4,140 in all, and its nominal annual rate is 18.250% (22.345% effective); the stamp duty on interest and on the average balance isn't written.",
+ "note": "Cabo Verde's largest bank, the Banco Comercial do Atlântico, was read; the Caixa Económica's and Banco Interatlântico's price lists weren't reached. The BCA's price list (in force from 30 July 2026), read in full for its credit cards: the BCA Visa Classic and Gold cost 4,000 and 7,000 escudos a year for the main card, charge a nominal 18.250% a year (22.345% effective), 221 escudos plus 1% for a cash advance in Cabo Verde (331 plus 1% abroad; the domestic one is written), 1.7% on purchases outside Cabo Verde and 1% of the amount over the limit. Stamp duty of 3.5% is added to every fee and to the interest, written as tax (this file wrote the Classic's fee with its stamp duty, 4,140, before the form had a tax term); the further 0.05% stamp duty on the month's average balance has no form in the game and isn't written. The late payment charge (331 escudos plus 2%) doesn't say 2% of what, so it isn't written; nor is the 1% charged on a change of limit, whose base isn't stated. The corporate card isn't written.",
  "sources": [
   {
    "url": "https://cms.bca.cv/assets/55e86d2c-0ea7-40b7-adbe-c3bafd9cde3a",
    "title": "Banco Comercial do Atlântico, Preçário (in force from 30 July 2026)",
-   "read": "2026-10-29",
-   "said": "Data de entrada em Vigor: 30/07/2026 ... BCA VISA CLASSIC ... Cartão Principal -- 4.000$00 Início do contrato IS 3,5% ... Nota (1): Acresce imposto de selo: 3,5% sobre o valor da comissão ... 1. Classic ... Taxa de recursos ao crédito 18,250% 22,345% IS 3,5%"
+   "read": "2026-10-30",
+   "said": "Data de entrada em Vigor: 30/07/2026 ... 3.1.1. BCA VISA CLASSIC ... − Cartão Principal -- 4.000$00 Início do contrato IS 3,5% ... 5. Cash Advance nacional 221$00 (fixo)+1% ... 6. Compras fora de Cabo Verde 1,7% ... 7. Atraso no pagamento 331$00 (fixo)+2% ... 1% do valor ... excedido ... Nota (1): Acresce Imposto de Selo 3,5% sobre a comissão; ... 3.1.2. BCA VISA GOLD ... − Cartão Principal -- 7.000$00 Início do contrato IS 3,5% ... 18.7. CARTÕES DE CRÉDITO ... 1. Classic − Taxa de recursos ao crédito 18,250% 22,345% IS 3,5% ... 2. Gold − Taxa de recurso ao crédito 18,250% 22,345% IS 3,5% ... Nota (1): Acresce Imposto do Selo: 3,5% sobre juros e 0,05% sobre a média do crédito mensal"
   }
  ]
 }

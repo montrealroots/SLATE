@@ -13,7 +13,83 @@
      "fee": "100",
      "per": "year"
     }
-   ]
+   ],
+   "cash": {
+    "fee": {
+     "percent": "2"
+    }
+   },
+   "fx": "5",
+   "late": {
+    "percent": "10",
+    "of": "unpaid",
+    "min": "100"
+   },
+   "overLimit": {
+    "percent": "6",
+    "of": "excess",
+    "min": "100"
+   }
+  },
+  {
+   "bank": "Absa Bank Seychelles",
+   "card": "Absa Platinum Credit Card",
+   "rate": {
+    "percent": "33",
+    "per": "year"
+   },
+   "fees": [
+    {
+     "fee": "500",
+     "per": "year"
+    }
+   ],
+   "cash": {
+    "fee": {
+     "percent": "2"
+    }
+   },
+   "fx": "5",
+   "late": {
+    "percent": "10",
+    "of": "unpaid",
+    "min": "100"
+   },
+   "overLimit": {
+    "percent": "6",
+    "of": "excess",
+    "min": "100"
+   }
+  },
+  {
+   "bank": "Absa Bank Seychelles",
+   "card": "Absa Signature Credit Card",
+   "rate": {
+    "percent": "33",
+    "per": "year"
+   },
+   "fees": [
+    {
+     "fee": "1000",
+     "per": "year"
+    }
+   ],
+   "cash": {
+    "fee": {
+     "percent": "2"
+    }
+   },
+   "fx": "5",
+   "late": {
+    "percent": "10",
+    "of": "unpaid",
+    "min": "100"
+   },
+   "overLimit": {
+    "percent": "6",
+    "of": "excess",
+    "min": "100"
+   }
   },
   {
    "bank": "Mauritius Commercial Bank (Seychelles)",
@@ -27,10 +103,114 @@
      "fee": "100",
      "per": "year"
     }
-   ]
+   ],
+   "cash": {
+    "fee": {
+     "percent": "2",
+     "min": "50"
+    }
+   },
+   "fx": "5",
+   "late": {
+    "fixed": "50"
+   },
+   "overLimit": {
+    "fixed": "50"
+   }
+  },
+  {
+   "bank": "Mauritius Commercial Bank (Seychelles)",
+   "card": "VISA Gold",
+   "rate": {
+    "percent": "16",
+    "per": "year"
+   },
+   "fees": [
+    {
+     "fee": "400",
+     "per": "year"
+    }
+   ],
+   "cash": {
+    "fee": {
+     "percent": "2",
+     "min": "50"
+    }
+   },
+   "fx": "5",
+   "late": {
+    "fixed": "50"
+   },
+   "overLimit": {
+    "fixed": "50"
+   }
+  },
+  {
+   "bank": "Nouvobanq",
+   "card": "VISA Gold Card",
+   "rate": "in full",
+   "fees": [
+    {
+     "fee": "250",
+     "per": "year"
+    }
+   ],
+   "issue": "1000",
+   "cash": {
+    "fee": {
+     "percent": "5"
+    }
+   }
+  },
+  {
+   "bank": "Nouvobanq",
+   "card": "Signature",
+   "rate": {
+    "percent": "15",
+    "per": "year"
+   },
+   "fees": [],
+   "issue": "500",
+   "cash": {
+    "fee": {
+     "fixed": "100"
+    }
+   },
+   "late": {
+    "fixed": "100"
+   },
+   "overLimit": {
+    "fixed": "100"
+   }
+  },
+  {
+   "bank": "Al Salam Bank Seychelles",
+   "card": "Credit Card",
+   "rate": {
+    "percent": "1.5",
+    "per": "month"
+   },
+   "fees": [
+    {
+     "fee": "500",
+     "per": "year"
+    }
+   ],
+   "cash": {
+    "fee": {
+     "percent": "3",
+     "min": "300"
+    }
+   },
+   "late": {
+    "fixed": "500"
+   },
+   "overLimit": {
+    "fixed": "250"
+   }
   }
  ],
- "note": "The Central Bank of Seychelles' comparison of the banks' charges, applicable from 1 October to 31 December 2026: Absa's classic credit card costs 100 rupees a year, with interest of 33% a year on the unpaid balance; the Mauritius Commercial Bank's VISA Classic costs 100 rupees a year for the primary card, with interest of 16% a year on the unpaid balance. Their subscription or issue fees aren't counted. Al Salam Bank's credit card (1.5% a month, 500 rupees a year) isn't kept, the table naming no card; the other banks offer none.",
+ "note": "The Central Bank of Seychelles' comparison of every bank's charges (applicable 1 October to 31 December 2026) was read for every bank that offers a credit card: Absa Bank Seychelles, the Mauritius Commercial Bank (Seychelles), Nouvobanq and Al Salam Bank; the Seychelles Commercial Bank, the Credit Union, Bank of Baroda and Bank of Ceylon offer none. Absa: its Classic, Platinum and Signature credit cards cost 100, 500 and 1,000 rupees a year, bear 33% a year on the unpaid balance, 2% on a cash withdrawal, 5% on spending in a foreign currency, a late fee of 10% of the past-due amount (at least 100 rupees, written as a share of the unpaid part) and an over-limit fee of 6% of the excess (at least 100); its subscription or issue fee row repeats each card's yearly figure, read as the same fee and not written twice. The MCB: its VISA Classic and VISA Gold cost 100 and 400 rupees a year for the primary card, bear 16% a year on the unpaid balance, 2% on a cash withdrawal (at least 50 rupees), 5% on foreign currency spending, and 50 rupees each for a late payment and for exceeding the limit. Nouvobanq: its VISA Gold card costs 1,000 rupees to issue and 250 a year, with 'no charge' as its interest on the unpaid balance, read as a card settled in full, and 5% on a cash withdrawal; its Signature card costs 500 to issue, bears 15% a year, and 100 rupees each for a cash withdrawal, a late payment and exceeding the limit; the Gold card's 'bonus fee' (up to 2% when unsecured) doesn't say of what and isn't written. Al Salam Bank's credit card, its only one (the table names it no further), costs 500 rupees a year, 1.5% a month on the balance, 3% on a cash withdrawal (at least 300 rupees), 500 rupees for a late payment and 250 for exceeding the limit. Business and corporate cards aren't written.",
  "sources": [
   {
    "url": "https://www.cbs.sc/Publications/ComparativeBankCharges.html",
@@ -42,7 +222,7 @@
    "url": "https://www.cbs.sc/Controller/getChargesController.jsp",
    "title": "Central Bank of Seychelles, Comparative Bank Charges (the table the page loads)",
    "read": "2026-10-29",
-   "said": "Absa classic credit card: SCR 100 ... Rate of interest or fee on unpaid balance\\r\\n\":\"33% per annum\" ... VISA Classic: Primary Card: SCR 100 ... VISA Classic & VISA Gold: Interest on Unpaid balance: 16% p.a. ... \"Rate of interest or fee on unpaid balance\\r\\n\":\"1.5% of balance p.m\",\"Charge for use of credit card on POS terminals or via online payment gateways\\r\\n\":\"N/A\",\"Charge for withdrawal on other banks' ATM\":\" No charge \",\"Replacement for expired Credit cards \\r\\n\":\"No charge\""
+   "said": "Absa classic credit card: SCR 100 ... Absa Platinum credit card: SCR 500 ... Absa Signature credit card: SCR 1000 ... 6% of the over limit amount or SCR 100, whichever is greater ... 10% of the total past due amount or SCR 100, whichever is greater ... 33% per annum ... Foreign currency: 5% ... VISA Classic & VISA Gold: SCR 50 ... VISA Classic & VISA Gold: Interest on Unpaid balance: 16% p.a. ... 2% SCR of withdrawn amount, min SCR 50 ... VISA Classic: Primary Card: SCR 100 ... VISA Gold: Primary Card: SCR 400 ... Signature: SCR 500 ... No charge Signature: SCR 100 ... No charge Signature: 15% p.a ... Both VISA Gold and VISA Corporate: 5% Signature: SCR 100 ... VISA Gold Card: SCR 1,000 ... VISA Gold Card: SCR 250 ... Fee for exceeding card limit\\r\\n\":\"SCR 250\",\"Late payment fee\\r\\n\":\"SCR 500\" ... 1.5% of balance p.m ... 3% of the amount, min SCR 300 ... \"Annual Fee\\r\\n\":\"SCR 500\"},\"FIXED DEPOSIT\""
   }
  ]
 }

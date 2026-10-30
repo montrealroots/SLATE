@@ -3,6 +3,143 @@
  "cards": [
   {
    "bank": "Commercial Bank",
+   "card": "Limited Edition Credit Card",
+   "fees": [
+    {
+     "fee": "1000",
+     "per": "year"
+    }
+   ],
+   "rate": {
+    "percent": "1",
+    "per": "month"
+   },
+   "cash": {
+    "rate": {
+     "percent": "1",
+     "per": "month"
+    },
+    "fee": {
+     "percent": "4.5"
+    }
+   },
+   "fx": "3.5",
+   "minimum": {
+    "percent": "3"
+   },
+   "late": {
+    "fixed": "100"
+   },
+   "overLimit": {
+    "fixed": "150"
+   },
+   "returned": "400"
+  },
+  {
+   "bank": "Commercial Bank",
+   "card": "Sadara Credit Card",
+   "fees": [
+    {
+     "fee": "1200",
+     "per": "year"
+    }
+   ],
+   "issue": "1200",
+   "rate": {
+    "percent": "1",
+    "per": "month"
+   },
+   "cash": {
+    "rate": {
+     "percent": "1",
+     "per": "month"
+    },
+    "fee": {
+     "percent": "4.5"
+    }
+   },
+   "fx": "3.5",
+   "minimum": {
+    "percent": "3"
+   },
+   "late": {
+    "fixed": "100"
+   },
+   "overLimit": {
+    "fixed": "150"
+   },
+   "returned": "400"
+  },
+  {
+   "bank": "Commercial Bank",
+   "card": "Platinum Credit Card",
+   "fees": [
+    {
+     "fee": "750",
+     "per": "year"
+    }
+   ],
+   "rate": {
+    "percent": "1",
+    "per": "month"
+   },
+   "cash": {
+    "rate": {
+     "percent": "1",
+     "per": "month"
+    },
+    "fee": {
+     "percent": "4.5"
+    }
+   },
+   "fx": "3.5",
+   "minimum": {
+    "percent": "3"
+   },
+   "late": {
+    "fixed": "100"
+   },
+   "overLimit": {
+    "fixed": "150"
+   },
+   "returned": "400"
+  },
+  {
+   "bank": "Commercial Bank",
+   "card": "Titanium Credit Card",
+   "fees": [
+    {
+     "fee": "600",
+     "per": "year"
+    }
+   ],
+   "rate": {
+    "percent": "1",
+    "per": "month"
+   },
+   "cash": {
+    "rate": {
+     "percent": "1",
+     "per": "month"
+    },
+    "fee": {
+     "percent": "4.5"
+    }
+   },
+   "fx": "3.5",
+   "minimum": {
+    "percent": "3"
+   },
+   "late": {
+    "fixed": "100"
+   },
+   "overLimit": {
+    "fixed": "150"
+   },
+   "returned": "400"
+  },
+  {
+   "bank": "Commercial Bank",
    "card": "Classic Credit Card",
    "rate": {
     "percent": "1",
@@ -18,11 +155,37 @@
       }
      ]
     }
-   ]
+   ],
+   "cash": {
+    "rate": {
+     "percent": "1",
+     "per": "month"
+    },
+    "fee": {
+     "percent": "4.5"
+    }
+   },
+   "fx": "3.5",
+   "minimum": {
+    "percent": "3"
+   },
+   "late": {
+    "fixed": "100"
+   },
+   "overLimit": {
+    "fixed": "150"
+   },
+   "returned": "400"
   }
  ],
- "note": "Commercial Bank of Qatar's Classic card, issued against a salary transferred to the bank: an annual fee of 250 riyals after a free first year, the next year's waived on 9,000 riyals of purchases in the year before, written as a waiver on that spending; retail balances bear 1% a month (its tariff of charges, last updated 27 September 2026). A card held without a salary transfer is priced at the bank's discretion.",
+ "note": "The main banks, chosen as the best-known large card issuers (no central bank ranking was read): QNB, Commercial Bank and Qatar Islamic Bank. QNB's card and tariff pages answered this research with a Cloudflare block on 2026-10-30, Qatar Islamic Bank's site didn't answer its connections, and Doha Bank's card pages answered with an Incapsula check, so none of them was read; Commercial Bank's full range is written. Commercial Bank of Qatar's Classic card, issued against a salary transferred to the bank: an annual fee of 250 riyals after a free first year, the next year's waived on 9,000 riyals of purchases in the year before, written as a waiver on that spending; retail balances bear 1% a month (its tariff of charges, last updated 27 September 2026). A card held without a salary transfer is priced at the bank's discretion. Commercial Bank's tariff of charges (last updated 27 September 2026), its schedule of charges for credit cards, read in full again on 2026-10-30: every package card is written with its principal card's annual fee for a holder outside premium banking (the Limited Edition 1,000 riyals, the Sadara 1,200 with a joining fee of 1,200, the Platinum 750, the Titanium 600, the Classic 250); premium banking, which waives the Limited Edition's and Sadara's fees, isn't modelled. Every card bears 1% a month on retail and on cash advances (the rate for cards issued against a salary transfer; the schedule's own note puts other cards' rate at the bank's discretion, and its later table of 2.25% retail and 2.75% cash a month for cards issued under other securities isn't written), a cash advance fee of 4.5% on Visa and Mastercard (4% on Diners Club, not written), a minimum monthly repayment of 3%, an over-limit fee of 150 riyals when the balance is over by 2% and above (the 2% threshold isn't modelled), a returned cheque fee of 400, and a late payment fee of 0.25% or 100 riyals, whichever is greater, written as 100 because the schedule doesn't say what the 0.25% is of. Its foreign currency mark-up differs by currency (US dollars 2%, the Gulf currencies 1.25%, the euro, pound and others listed 3.25%, other currencies 3.50%); the game's card holds one share, written as 3.50%, the figure for currencies not listed. Its 'maximum grace days' of 15 are the days from the statement to the due date, not the days a purchase goes without interest, and aren't written. The Digital Banking card's charges are 'as per card product' and aren't written separately.",
  "sources": [
+  {
+   "url": "https://www.cbq.com.qa/-/media/project/cbq/cbqwebsite/documents/tarrif-of-charges/cbq-personal-banking-tarrif-of-charges-en.pdf?mode=download",
+   "title": "Commercial Bank, Tariff of Charges: Banking Services (last updated 27 September 2026)",
+   "read": "2026-10-30",
+   "said": "SCHEDULE OF CHARGES (CREDIT CARDS) ... Principal Card Banking; QAR Banking; QAR QAR 750.00 QAR 600.00 QAR 250.00 Tariff as per card Annual fees 1,000 for 1,200 for Non ... Minimum Monthly 3% per month 3% per month 3% per month 3% per month 3% per month ... Return cheque QAR 400.00 per ... QAR 150.00/- if QAR 150.00/- if ... Over limit Fees the balance is ... over by 2% and ... 0.25% or QAR 0.25% or QAR ... Overdue/Late 100.00/ - ... Retail Interest 1% per month 1% per month 1% per month 1% per month 1% per month ... Cash Advance 1% per month 1% per month 1% per month 1% per month 1% per month ... 4% for Diners ... Club and 4.5% ... for Visa and ... Maximum Grace 15 days ... • USD – 2% • AED, BHD, KWD, SAR, OMR – 1.25% • EUR, GBP, AUD, CAD, CHF, DKK, JOD, JPY, LBP, NOK, SEK, SGD – 3.25% • Other currencies – 3.50% ... Interest rate for non-salary transfer customers is at the discretion of the Bank and it will be determined at the time of applying ... Last updated on 27 September 2026"
+  },
   {
    "url": "https://cbq.qa/EN/Personal/Cards/Credit-Cards/Pages/Classic-Package.aspx",
    "title": "Commercial Bank, Classic Credit Card",

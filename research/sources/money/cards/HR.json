@@ -3,27 +3,100 @@
  "cards": [
   {
    "bank": "PBZ",
-   "card": "Mastercard revolving",
    "rate": {
     "percent": "6.90",
     "per": "year"
    },
-   "fees": []
+   "fees": [],
+   "minimum": {
+    "percent": "5",
+    "floor": "18",
+    "interest": true
+   },
+   "cash": {
+    "fee": {
+     "percent": "3",
+     "fixed": "2.65"
+    }
+   },
+   "card": "Mastercard revolving"
+  },
+  {
+   "bank": "PBZ",
+   "rate": {
+    "percent": "6.90",
+    "per": "year"
+   },
+   "fees": [],
+   "minimum": {
+    "percent": "5",
+    "floor": "18",
+    "interest": true
+   },
+   "cash": {
+    "fee": {
+     "percent": "3",
+     "fixed": "2.65"
+    }
+   },
+   "card": "Visa Classic revolving"
+  },
+  {
+   "bank": "PBZ",
+   "rate": "in full",
+   "fees": [
+    {
+     "fee": "19.78",
+     "per": "year"
+    }
+   ],
+   "issue": "13.14",
+   "cash": {
+    "fee": {
+     "percent": "3",
+     "fixed": "2.65"
+    }
+   },
+   "card": "Mastercard charge"
+  },
+  {
+   "bank": "PBZ",
+   "rate": "in full",
+   "fees": [
+    {
+     "fee": "19.78",
+     "per": "year"
+    }
+   ],
+   "issue": "13.14",
+   "cash": {
+    "fee": {
+     "percent": "3",
+     "fixed": "2.65"
+    }
+   },
+   "card": "Visa Classic charge"
   }
  ],
- "note": "Privredna banka Zagreb's revolving Mastercard: no joining or annual fee for the card's whole life, and a fixed 6.90% a year (EKS 7.13%) on revolving credit, for cards issued or renewed after 1 July 2025 (its general information of 26 March 2026).",
+ "note": "The main banks were taken as Croatia's three largest by assets, a choice from general knowledge (no central bank or association ranking was read in this pass): Zagrebačka banka, PBZ and Erste & Steiermärkische Bank. PBZ (Privredna banka Zagreb): its general information on revolving credit used through its Mastercard and Visa Classic cards (26 March 2026) and on its Mastercard and Visa Classic charge cards (1 January 2026), and its revolving card page, read 2026-10-30. The revolving cards carry no joining or annual fee and a fixed 6.90% a year for cards issued or renewed after 1 July 2025; the monthly minimum is 5% of what's used, at least 18 euros, plus the interest and charges due in full. The charge cards are paid in full each month, cost 13.14 euros to issue and 19.78 a year for the main card. On all four a withdrawal at PBZ's own ATMs costs 3% plus 2.65 euros (4% plus 2.65 at others, not written). Late payments bear the statutory default rate, the ECB reference rate plus 3 points, which varies by half-year and isn't written. The Visa Inspire and Premium Visa pages state no credit terms and weren't written. Zagrebačka banka's credit card page wasn't found at the address tried (404) and no price list was searched for, and Erste's card terms documents found by search are no longer on its site (404), so neither is written.",
  "sources": [
+  {
+   "url": "https://www.pbz.hr/document/documents/PBZ/kartice_revolving/oi-revolving-kredit-uz-mc-i-visa-kartice-26032026.pdf",
+   "title": "PBZ, Opće informacije o revolving kreditu koji se koristi putem Mastercard / Visa Classic kreditne kartice (26 March 2026)",
+   "read": "2026-10-30",
+   "said": "Revolving kredit putem Mastercard/Visa Classic kreditne kartice [revolving] ... kredita i iznosi 6,90% godišnje* (EKS 7,13%).** ... *Iskazana kamatna stopa primjenjuje se na kartice izdane/obnovljene nakon 01.07.2025. ... (5,00% iskorištenog iznosa, minimalno 18,00 EUR i troškove ... Godišnja članarina: bez naknade za osnovnog i dodatnog korisnika ... Naknada za podizanje gotovog novca na bankomatima Banke 3,00% podignutog iznosa + 2,65 EUR."
+  },
+  {
+   "url": "https://www.pbz.hr/document/documents/PBZ/kartice_charge/Opce-informacije-MC_VC-charge-01012026.pdf",
+   "title": "PBZ, Opće informacije za Mastercard i Visa Classic kreditne kartice [charge] (1 January 2026)",
+   "read": "2026-10-30",
+   "said": "OPĆE INFORMACIJE ZA MASTERCARD I VISA CLASSIC KREDITNE KARTICE [CHARGE] ... - 13,14 eur za osnovnog korisnika i 6,50 eur za dodatnog korisnika ... - 19,78 eur za osnovnog korisnika i 13,14 eur za dodatnog korisnika ... • Podizanje gotovog novca kreditnom karticom na bankomatima Banke: 3% ... isplaćenog iznosa + 2,65 eur"
+  },
   {
    "url": "https://www.pbz.hr/gradjani/kartice/revolving.html",
    "title": "PBZ, Revolving kreditne kartice",
-   "read": "2026-10-29",
+   "read": "2026-10-30",
    "said": "Kartica se izdaje bez upisnine i godišnje članarine za cijelo vrijeme korištenja."
-  },
-  {
-   "url": "https://www.pbz.hr/document/documents/PBZ/kartice_revolving/oi-revolving-kredit-uz-mc-i-visa-kartice-26032026.pdf",
-   "title": "PBZ, Opće informacije o revolving kreditu (26 March 2026)",
-   "read": "2026-10-29",
-   "said": "Godišnja kamatna stopa je fiksna tijekom pojedinog roka valjanosti kartice ... iznosi 6,90% godišnje* (EKS 7,13%).** *Iskazana kamatna stopa primjenjuje se na kartice izdane/obnovljene nakon 01.07.2025."
   }
  ]
 }

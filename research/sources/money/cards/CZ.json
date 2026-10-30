@@ -3,21 +3,154 @@
  "cards": [
   {
    "bank": "Komerční banka",
+   "minimum": {
+    "percent": "3",
+    "interest": true
+   },
+   "late": {
+    "fixed": "500"
+   },
+   "overLimit": {
+    "fixed": "20"
+   },
    "card": "4U karta",
    "rate": {
     "percent": "22.90",
     "per": "year"
    },
-   "fees": []
+   "fees": [],
+   "cash": {
+    "fee": {
+     "percent": "1",
+     "min": "30"
+    }
+   },
+   "grace": 45
+  },
+  {
+   "bank": "Komerční banka",
+   "minimum": {
+    "percent": "3",
+    "interest": true
+   },
+   "late": {
+    "fixed": "500"
+   },
+   "overLimit": {
+    "fixed": "20"
+   },
+   "card": "A karta",
+   "rate": {
+    "percent": "22.90",
+    "per": "year"
+   },
+   "fees": [
+    {
+     "fee": "59",
+     "per": "month",
+     "waived": [
+      {
+       "spend": "3000"
+      }
+     ]
+    }
+   ],
+   "cash": {
+    "fee": {
+     "percent": "1",
+     "min": "30"
+    }
+   },
+   "grace": 45
+  },
+  {
+   "bank": "Komerční banka",
+   "minimum": {
+    "percent": "3",
+    "interest": true
+   },
+   "late": {
+    "fixed": "500"
+   },
+   "overLimit": {
+    "fixed": "20"
+   },
+   "card": "Kreditní karta World Elite",
+   "rate": {
+    "percent": "9.90",
+    "per": "year"
+   },
+   "fees": [
+    {
+     "fee": "550",
+     "per": "month"
+    }
+   ]
+  },
+  {
+   "bank": "Česká spořitelna",
+   "card": "Kreditní karta",
+   "rate": {
+    "percent": "24",
+    "per": "year",
+    "from": "12"
+   },
+   "fees": [
+    {
+     "fee": "50",
+     "per": "month",
+     "waived": [
+      {
+       "spend": "3000"
+      }
+     ]
+    }
+   ],
+   "minimum": {
+    "percent": "3",
+    "floor": "200"
+   },
+   "cash": {
+    "fee": {
+     "fixed": "50"
+    }
+   },
+   "late": {
+    "fixed": "300"
+   }
   }
  ],
- "note": "Komerční banka's 4U credit card: the card, its monthly credit administration and its automatic repayment cost nothing, and a balance carried past the interest-free period bears a fixed 22.90% a year (its representative example dated 1 September 2025).",
+ "note": "The main banks were taken as the three largest Czech banks by clients and assets, a choice from general knowledge (no central bank or association ranking was read in this pass): Česká spořitelna, ČSOB and Komerční banka. Komerční banka: its price list (Sazebník KB, in force from 1 May 2026; the changes from 1 November 2026 were read and don't touch the credit cards) and its card pages, read 2026-10-30. The 4U karta costs nothing to hold, the A karta 59 korunas a month to administer its credit, none in a month with more than 3,000 korunas of card payments (the student holder's 29 isn't written), and the World Elite card 550 korunas a month (free with a Top nabídka account or the Premium service, which the game doesn't hold). The 4U and A karta bear a fixed 22.90% a year and the World Elite 9.90%, each card's page says. Each page states a minimum of 3% a month plus interest and the 4U and A karta pages up to 45 days without interest. Cash from the shared ATM network (KB, MONETA, Air Bank, UniCredit) costs 1%, at least 30 korunas, on the 4U and A karta (other banks' ATMs at least 100 and a cash advance at least 350, not written), and nothing on the World Elite. The 500-koruna reminder charged on an unpaid instalment of 500 korunas or more is written as the late fee (the 500-koruna threshold isn't modelled), and the 20-koruna notice of an overdrawn limit as the over-limit fee. The optional automatic repayment (29 a month on the A karta), MojeKarta design, insurance, post and replacement charges aren't written. The Infinite card (850 a month) belongs to private banking and its rate is only in a notice that wasn't found, so it isn't written. Česká spořitelna: its price list for the Kreditní karta (in force from 29 April 2026, which is also its notice of interest rates), read 2026-10-30. It costs 50 korunas a month, none in a period with 3,000 korunas of card spending; the minimum is 3% of what's drawn, at least 200 korunas. Interest on a balance not repaid in full is 12 to 24% a year, charged as 10 korunas for each whole 500 korunas drawn (none under 500); the range is written, its top the rate and 12 its floor, the step rule not being the started-step form the game holds. A withdrawal from its own ATMs costs 50 korunas (80 and 125 at others, not written). The 300-koruna cost of delay, charged at the 10th day late, is written as the late fee (the further 900 at the 40th and 70th days aren't). The 4.5% surcharge applies only to currencies not on the card exchange list and isn't written. ČSOB's credit card pages answered with a captcha and weren't read.",
  "sources": [
+  {
+   "url": "https://www.kb.cz/getmedia/be838406-0a7e-459c-982a-051701627a54/sazebnik-kb.pdf",
+   "title": "Komerční banka, Sazebník KB (in force from 1 May 2026), Kreditní karty",
+   "read": "2026-10-30",
+   "said": "Platnost Sazebníku od 1. 5. 2026 ... Cena za kreditní kartu 850 měsíčně 550 měsíčně / zdarma 1) zdarma zdarma ... ve sdílené bankomatové síti 7) zdarma zdarma 1 %, min. 30 1 %, min. 30 ... Zaslání oznámení o přečerpání úvěrového limitu 20 ... 2) Zdarma v případě, že bezhotovostní platby z kreditní karty A karta zaúčtované v daném kalendářním měsíci překročí 3 000 Kč."
+  },
   {
    "url": "https://www.kb.cz/cs/obcane/karty/4u-karta",
    "title": "Komerční banka, 4U karta",
-   "read": "2026-10-29",
-   "said": "Cena za kreditní kartu zdarma Cena za vydání další kreditní karty zdarma Měsíční správa a vedení úvěru zdarma ... Pevná úroková sazba 22,90 % p. a. ... Datum smlouvy o úvěru: 1. 9. 2025."
+   "read": "2026-10-30",
+   "said": "Pevná úroková sazba 22,90 % p. a. ... Peníze si půjčujete až na 45 dní zdarma bez úroků Splatit můžete celou částku naráz nebo min. 3 % měsíčně + úrok"
+  },
+  {
+   "url": "https://www.kb.cz/cs/obcane/karty/a-karta",
+   "title": "Komerční banka, A karta",
+   "read": "2026-10-30",
+   "said": "Úrok na A kartě je 22,90 % p. a. ... Měsíční cena za správu úvěru: 59 Kč. ... Peníze si půjčujete až na 45 dní zdarma bez úroků Splatit můžete celou částku naráz nebo min. 3 % měsíčně + úrok"
+  },
+  {
+   "url": "https://www.kb.cz/cs/obcane/karty/kreditni-karta-world-elite",
+   "title": "Komerční banka, Kreditní karta World Elite",
+   "read": "2026-10-30",
+   "said": "Pevná úroková sazba 9,90 % p. a. ... Splácet můžete minimálně 3 % + úroky z půjčené částky měsíčně nebo celou částku naráz"
+  },
+  {
+   "url": "https://www.csas.cz/banka/content/inet/internet/cs/cenik_kreditni_karta.pdf",
+   "title": "Česká spořitelna, Ceník pro Kreditní kartu (in force from 29 April 2026)",
+   "read": "2026-10-30",
+   "said": "Účinnost od 29. 4. 2026 ... Správa a vedení kartového účtu měsíčně 50 Kč ... Při útratě v daném účetním období 3 000 Kč a více ... 3% z vyčerpané částky, ... minimálně 200 Kč ... 12–24 % p. a. ... – za každých celých vyčerpaných 500 Kč zaplatíte úrok 10 Kč. Při vyčerpané částce do 500 Kč úrok neúčtujeme. ... Výběr z bankomatu České spořitelny / z bankomatu skupiny Erste v zahraničí 50 Kč ... Náklady spojené s prodlením** 300 Kč (za 10 dní v prodlení)"
   }
  ]
 }

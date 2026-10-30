@@ -3,33 +3,126 @@
  "cards": [
   {
    "bank": "Bank of China",
-   "card": "普卡",
    "rate": {
     "percent": "19.9",
     "per": "year",
     "effective": true
    },
+   "cash": {
+    "fee": {
+     "percent": "1",
+     "min": "10",
+     "max": "100"
+    }
+   },
+   "grace": 50,
+   "late": {
+    "percent": "5",
+    "of": "unpaid"
+   },
+   "card": "普卡",
    "fees": [
     {
      "fee": "360",
      "per": "year"
     }
    ]
+  },
+  {
+   "bank": "Bank of China",
+   "rate": {
+    "percent": "19.9",
+    "per": "year",
+    "effective": true
+   },
+   "cash": {
+    "fee": {
+     "percent": "1",
+     "min": "10",
+     "max": "100"
+    }
+   },
+   "grace": 50,
+   "late": {
+    "percent": "5",
+    "of": "unpaid"
+   },
+   "card": "白金卡",
+   "fees": [
+    {
+     "fee": "800",
+     "per": "year"
+    }
+   ]
+  },
+  {
+   "bank": "Bank of China",
+   "rate": {
+    "percent": "19.9",
+    "per": "year",
+    "effective": true
+   },
+   "cash": {
+    "fee": {
+     "percent": "1",
+     "min": "10",
+     "max": "100"
+    }
+   },
+   "grace": 50,
+   "late": {
+    "percent": "5",
+    "of": "unpaid"
+   },
+   "card": "高端卡",
+   "fees": [
+    {
+     "fee": "3600",
+     "per": "year"
+    }
+   ]
+  },
+  {
+   "bank": "Bank of China",
+   "rate": {
+    "percent": "19.9",
+    "per": "year",
+    "effective": true
+   },
+   "cash": {
+    "fee": {
+     "percent": "1",
+     "min": "10",
+     "max": "100"
+    }
+   },
+   "grace": 50,
+   "late": {
+    "percent": "5",
+    "of": "unpaid"
+   },
+   "card": "顶级卡",
+   "fees": [
+    {
+     "fee": "8800",
+     "per": "year"
+    }
+   ]
   }
  ],
- "note": "Bank of China: its credit cards' overdraft rate is 0.05% a day, compounded monthly, which it states as 19.9% a year (its note on charges and interest, posted 21 September 2026), written as that effective yearly rate; its price list (in force from 11 November 2025) sets a standard, gold or titanium card's annual fee at most 360 yuan, which is written, a product's own fee being stated only in its application.",
+ "note": "China's largest banks by assets are ICBC, China Construction Bank, Agricultural Bank of China and Bank of China; China Merchants Bank is among the largest card issuers. ICBC's and China Construction Bank's sites didn't answer this research's requests (no connection, 2026-10-30); Agricultural Bank of China's price list answers 403 (its access-control system); China Merchants Bank's service price catalogue (fin.paas.cmbchina.com) renders nothing without its script and comes back empty when rendered, and its card product pages return a stub; the PDFs a search found on its file store are gone (NoSuchKey). So only Bank of China is written. Bank of China's credit card price list (第五章 11 信用卡, in force from 11 November 2025, read 2026-10-30) sets the annual fee by the card's tier, which the price list states applies to every card the bank issues, a product's own fee being given in its application: an ordinary, gold or titanium card (普卡/金卡/钛金卡) at most 360 yuan, written at that ceiling as the 普卡 this file has held since 2026-10-29; a platinum card (白金卡) 800 yuan; a high-end card (高端卡) 3,600 yuan; a top card (顶级卡) 8,800 yuan. A domestic cash advance at the counter costs 1% of the amount, at least 10 yuan and at most 100 yuan (the Great Wall Global series' self-service rate is the same; the BOC series' self-service floor of 8 or 12 yuan isn't written); a cash advance abroad (3%, 30 to 180 yuan) isn't written, the form having one cash fee. A late payment costs 5% of the part of the minimum payment left unpaid (written as a share of the unpaid part), never more in a cycle than the principal overdrawn, a cap that isn't written. Bank of China's note on card charges and interest (中国银行信用卡服务收费及计息方式说明, read 2026-10-30): the overdraft rate is 0.05% a day, which it states as 19.9% a year, compounded monthly, written as that effective yearly rate; cash advances carry it from the day they're posted, with no free period; purchases go free of interest for 20 to 50 days when the statement is paid in full, written as 50. The minimum payment, the foreign-transaction fee and the over-limit fee aren't stated in either document and aren't written.",
  "sources": [
   {
    "url": "https://www.boc.cn/bcservice/bc3/bc31/201203/t20120331_1767028.html",
-   "title": "Bank of China, 中国银行信用卡服务收费及计息方式说明",
-   "read": "2026-10-29",
-   "said": "信用卡透支利率为日利率万分之五，对应的年化利率为19.9%（受大小月天数不同及客户还款情况不同等因素的影响，实际年化利率与上述年化利率可能存在差异，个别产品利率浮动见产品说明书），按月计收复利。"
+   "title": "中国银行，中国银行信用卡服务收费及计息方式说明",
+   "read": "2026-10-30",
+   "said": "信用卡的免息还款期一般为20-50天。 ... 信用卡透支利率为日利率万分之五，对应的年化利率为19.9%（受大小月天数不同及客户还款情况不同等因素的影响，实际年化利率与上述年化利率可能存在差异，个别产品利率浮动见产品说明书），按月计收复利。"
   },
   {
    "url": "https://pic.bankofchina.com/bocappd/pricelist/202511/P020251110646005583269.pdf",
-   "title": "Bank of China, 中国银行服务价目表: 第五章 综合客户服务收费业务（11 信用卡）(in force from 11 November 2025)",
-   "read": "2026-10-29",
-   "said": "普卡/金卡/钛金卡最高人民币 360 元/卡"
+   "title": "中国银行，服务价格目录 第五章 综合客户服务收费业务（11 信用卡）（2025年11月11日起施行）",
+   "read": "2026-10-30",
+   "said": "普卡/金卡/钛金卡最高人民币 360 元/卡； ... 白金卡人民币 800 元/卡； ... 高端卡人民币 3600 元/卡； ... 顶级卡人民币 8800 元/卡 ... 取现金额 1%，最低每笔人民币 10 元/1.4 美 ... 每笔人民币 100 元/14 美元/12 欧元/11 英镑 ... 按照最低还款额未偿还部分的 5%收取"
   }
  ]
 }

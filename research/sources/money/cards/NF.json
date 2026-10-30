@@ -6,23 +6,141 @@
    "card": "Low Rate",
    "rate": {
     "percent": "15.99",
-    "per": "year"
+    "per": "year",
+    "from": "10.99"
    },
    "fees": [
     {
      "fee": "6",
      "per": "month"
     }
-   ]
+   ],
+   "cash": {
+    "rate": {
+     "percent": "21.99",
+     "per": "year"
+    },
+    "fee": {
+     "percent": "3.00",
+     "min": "4.00"
+    }
+   },
+   "fx": "3.50",
+   "grace": 55,
+   "late": {
+    "fixed": "20"
+   }
+  },
+  {
+   "bank": "Commonwealth Bank",
+   "card": "Low Fee",
+   "rate": {
+    "percent": "20.99",
+    "per": "year"
+   },
+   "fees": [
+    {
+     "fee": "3",
+     "per": "month",
+     "waived": [
+      {
+       "spend": "300"
+      }
+     ]
+    }
+   ],
+   "cash": {
+    "rate": {
+     "percent": "21.99",
+     "per": "year"
+    },
+    "fee": {
+     "percent": "3.00",
+     "min": "4.00"
+    }
+   },
+   "fx": "3.50",
+   "grace": 55,
+   "late": {
+    "fixed": "20"
+   }
+  },
+  {
+   "bank": "Commonwealth Bank",
+   "card": "Smart Awards",
+   "rate": {
+    "percent": "20.99",
+    "per": "year"
+   },
+   "fees": [
+    {
+     "fee": "19",
+     "per": "month",
+     "waived": [
+      {
+       "spend": "2000"
+      }
+     ]
+    }
+   ],
+   "cash": {
+    "rate": {
+     "percent": "21.99",
+     "per": "year"
+    },
+    "fee": {
+     "percent": "3.00",
+     "min": "4.00",
+     "max": "300"
+    }
+   },
+   "fx": "3.5",
+   "grace": 44,
+   "late": {
+    "fixed": "20"
+   }
+  },
+  {
+   "bank": "Commonwealth Bank",
+   "card": "CommBank Neo",
+   "rate": {
+    "percent": "0",
+    "per": "year"
+   },
+   "fees": [
+    {
+     "fee": "25",
+     "per": "month"
+    }
+   ],
+   "fx": "0"
   }
  ],
- "note": "Norfolk Island is served by the Commonwealth Bank, whose Australian cards it offers: its Low Rate credit card's personalised purchase rate is offered on approval between 10.99% and 15.99% a year, written at the top of the range, with a monthly fee of 6 dollars.",
+ "note": "Norfolk Island is served by the Commonwealth Bank, whose branch there offers its Australian cards (the island is Australian territory, under Australia's credit law and its dollar) (other banks on the island weren't read). The Commonwealth Bank's own pages for each personal credit card it sells (read 30 October 2026): the Low Rate card costs $6 a month, with a personalised purchase rate between 10.99% and 15.99% a year offered on approval (written at the top, with the lowest as from); the Low Fee card $3 a month, nothing in a statement period with $300 of spending, and 20.99%; the Smart Awards card $19 a month, nothing in a statement period with $2,000 of spending, and 20.99% (the page says that waiver ends on 1 January 2027, which the form can't schedule, so it is written as it stands now). These three charge 21.99% a year on cash advances and a cash advance fee of $4.00 or 3.00%, whichever is greater (at most $300 on Smart Awards), a 3.50% international transaction fee and a $20 late payment fee, with up to 55 interest-free days (44 on Smart Awards). The CommBank Neo charges no interest (0% a year) and no international or late fee, but a monthly fee of $15, $20 or $25 by its credit limit ($1,000, $2,000 or $3,000); the game doesn't keep a limit, so the $25 is written, and the page's $0 month when the card isn't used and the balance is paid isn't a condition the game checks. The Ultimate Awards card's page answered 404 and isn't written. The Low Rate card's first-year fee and cashback offers are introductory and not written.",
  "sources": [
   {
    "url": "https://www.commbank.com.au/credit-cards/low-rate.html",
    "title": "Commonwealth Bank, Low Rate credit card",
-   "read": "2026-10-29",
-   "said": "A personalised interest rate on purchases offered on approval, from within our range of low rates, currently, 10.99% p.a. to 15.99% p.a. ... Monthly fee $6 per month"
+   "read": "2026-10-30",
+   "said": "Monthly fee $6 per month Cash advance interest rate 21.99% p.a. ... Cash advance fee $4.00 or 3.00% of the transaction amount – whichever is greater ... Interest free period on purchases Up to 55 days International transaction fee 3.50% ... Late payment fee $20 ... Purchase interest rate 10.99% p.a. to 15.99% p.a."
+  },
+  {
+   "url": "https://www.commbank.com.au/credit-cards/low-fee.html",
+   "title": "Commonwealth Bank, Low Fee credit card",
+   "read": "2026-10-30",
+   "said": "Monthly fee $3 - $0 per month Pay no monthly fee if you spend at least $300 in your statement period ... Cash advance interest rate 21.99% p.a ... Cash advance fee $4.00 or 3.00% of the transaction amount – whichever is greater ... Interest free period on purchases Up to 55 days International transaction fee 3.50% ... Late payment fee $20 ... Purchase interest rate 20.99% p.a."
+  },
+  {
+   "url": "https://www.commbank.com.au/credit-cards/smart-awards.html",
+   "title": "Commonwealth Bank, Smart Awards credit card",
+   "read": "2026-10-30",
+   "said": "Monthly Fee $19 - $0 per month ^ The monthly fee waiver if you spend at least $2,000 in a statement period will be removed from 1 January 2027. ... International Transaction Fee 3.5% Interest-free Period on Purchases Up to 44 days Late Payment Fee $20 ... Purchase Rate 20.99% p.a. Cash Advance Rate 21.99% p.a. ... Cash Advance Fee $4.00 or 3.00% of the transaction amount – whichever is greater. 8 A maximum charge of $300"
+  },
+  {
+   "url": "https://www.commbank.com.au/credit-cards/commbank-neo.html",
+   "title": "Commonwealth Bank, CommBank Neo",
+   "read": "2026-10-30",
+   "said": "Monthly fee $15, $20 or $25 (based on your credit limit) Pay $0 if you don’t use your card and pay your total balance owing in full ... Late payment fee $0 International transaction fee 0% Purchase interest rate 0% p.a."
   }
  ]
 }

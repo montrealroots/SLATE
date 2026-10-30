@@ -8,16 +8,66 @@
     "percent": "3.1",
     "per": "month"
    },
-   "fees": []
+   "fees": [],
+   "minimum": {
+    "percent": "4",
+    "floor": "100",
+    "interest": true
+   },
+   "grace": 62,
+   "penalty": {
+    "percent": "6.2",
+    "per": "month"
+   },
+   "cash": {
+    "fee": {
+     "percent": "4"
+    }
+   }
+  },
+  {
+   "bank": "monobank",
+   "card": "Картка monobank platinum",
+   "rate": {
+    "percent": "2.9",
+    "per": "month"
+   },
+   "fees": [
+    {
+     "fee": "300",
+     "per": "month",
+     "waived": [
+      {
+       "spend": "40000"
+      }
+     ]
+    }
+   ],
+   "issue": "500",
+   "minimum": {
+    "percent": "4",
+    "floor": "100",
+    "interest": true
+   },
+   "grace": 62,
+   "penalty": {
+    "percent": "5.8",
+    "per": "month"
+   },
+   "cash": {
+    "fee": {
+     "percent": "3.5"
+    }
+   }
   }
  ],
- "note": "monobank's tariffs (from 23 October 2026): its Black card is issued and serviced free, and credit on it carries a base rate of 3.1% a month where the debt isn't repaid in full within the grace period; the higher rate on overdue debt isn't written.",
+ "note": "The main banks were taken as Ukraine's three largest retail card issuers, a choice from general knowledge (no ranking was read in this pass): PrivatBank, Oschadbank and monobank (Universal Bank). monobank: its tariffs (from 23 October 2026, served as a signed PDF; the copy saved 2026-10-29 is byte-identical to the one served on 2026-10-30), read 2026-10-30. The Black card is issued and serviced free; credit carried past the grace period bears a base rate of 3.1% a month, and 6.2% a month on the whole debt while any of it is overdue, written as the penalty rate. The platinum card costs 500 hryvnias to issue and 300 a month for the physical main card with a virtual additional one (400 with a physical additional, not written), none in the month after one with 40,000 hryvnias of shop and online spending (a lag of a month not modelled); it bears 2.9% a month, and 5.8% while overdue. Both have a grace period of up to 62 days, and a monthly minimum of 4% of the debt, at least 100 hryvnias, and never less than the period's interest. Cash drawn beyond the holder's own funds costs 4% on the Black card and 3.5% on the platinum. The 4% and 3.5% on payments and transfers made with credit funds aren't written. The White card and the currency and Diia cards are debit cards and aren't written. PrivatBank's card pages answered with a captcha and Oschadbank's with an Incapsula check, so neither is written.",
  "sources": [
   {
    "url": "https://monobank.ua/taryfy",
-   "title": "monobank, Тарифи: Чорна картка monobank (від 23.10.2026)",
-   "read": "2026-10-29",
-   "said": "від 23.10.2026 Чорна картка monobank ... Оформлення фізичної картки та фізичної картки MONO-АТБ Безкоштовно Обслуговування віртуальної, фізичної та віртуальної/ фізичної картки MONO-АТБ ... Базова відсоткова ставка 3,1% на місяць"
+   "title": "monobank (Universal Bank), Тарифи (from 23 October 2026)",
+   "read": "2026-10-30",
+   "said": "від 23.10.2026 ... Чорна картка monobank ... Пільговий період за карткою До 62 днів ... 4% від суми Заборгованості на кінець попер ... розрахункового періоду - не менше 100 грн., але не ... Базова відсоткова ставка 3,1% на місяць ... Збільшена відсоткова ставка на місяць за карткою на 6,2% на місяць ... власних коштів, а також за операції з quasi-валютою 4% від суми ... Картка monobank platinum ... Оформлення картки 500 грн ... - 300 грн/місяць - фізичної основної та віртуальної ... торговельних мережах та Інтернеті на суму 40 000 ... Базова відсоткова ставка 2,9% на місяць ... Збільшена відсоткова ставка на місяць за карткою на 5,8% на місяць ... готівки будь-яких українських і закордонних банків, 3,5% від суми зняття"
   }
  ]
 }

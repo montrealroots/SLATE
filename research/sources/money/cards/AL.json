@@ -13,16 +13,35 @@
      "fee": "1250",
      "per": "year"
     }
-   ]
+   ],
+   "minimum": {
+    "percent": "7",
+    "floor": "1500"
+   },
+   "cash": {
+    "rate": {
+     "percent": "24",
+     "per": "year"
+    },
+    "fee": {
+     "percent": "2.00",
+     "min": "300"
+    }
+   },
+   "fx": "1.00",
+   "penalty": {
+    "percent": "30",
+    "per": "year"
+   }
   }
  ],
- "note": "ABI Bank's pre-contract information for its Visa Classic credit card (undated): 18% a year on purchases in lek or euros, and a yearly card fee of 1,250 lek after a first year at 625, which is introductory and not written. Tirana Bank's documents answered with a bot check and weren't read.",
+ "note": "The main banks were taken as Albania's three largest by assets, a choice from general knowledge (no central bank or association ranking was read in this pass): BKT, Raiffeisen Bank and Credins Bank, with ABI Bank kept from the earlier reading. ABI Bank: its pre-contract information for its Visa Classic credit card (undated), read again 2026-10-30. It bears 18% a year on purchases and 24% on withdrawals, in lek or euros; the yearly card fee is 1,250 lek after a first year at 625, which is introductory and not written. The minimum payment is 7% of the amount used, at least 1,500 lek; a withdrawal at ABI's own ATMs costs 2.00%, at least 300 lek (2.25% and 2.50% at other banks, not written); a transaction in a foreign currency costs 1.00%. The unpaid part of a minimum not paid in full bears 30% a year, written as the penalty rate (with penalty and default interest together capped at 30% of the obligation, a cap not modelled). The 100-lek account maintenance in the example belongs to the linked current account and isn't written. BKT's credit card page shows its rates only in a section that didn't come up to a plain fetch, and Raiffeisen's answered with a captcha; Credins wasn't reached in this pass. None is written.",
  "sources": [
   {
    "url": "https://www.abi.al/media/63529deccfd39.pdf",
-   "title": "ABI Bank, Karte krediti Visa Classic: informacion parakontraktor",
-   "read": "2026-10-29",
-   "said": "KARTE KREDITI - VISA CLASSIC ... Kartë Krediti 18% ne blerje / 18% ne blerje / ... për vitin pasardhës: 1.250 Leke / 10 Eur"
+   "title": "ABI Bank, pre-contract information: Karte krediti Visa Classic",
+   "read": "2026-10-30",
+   "said": "KARTE KREDITI - VISA CLASSIC ... Pagesa minimale = 7% Min 1.500 Leke/ 15 Eur ... 18% ne blerje / ... 24% ne terheqje ... Tërheqje ne ATM-të e rrjetit te ABI Bank 2.00% Min 300 Lek/ 2Eur ... Komision për transaksione në monedhë të huaj 1.00% ... për vitin pasardhës: 1.250 Leke / 10 Eur ... pa asnjë lajmërim tjetër është në vonesë dhe mbi te do te aplikohet komision ne vlerën 30% vjetore."
   }
  ]
 }

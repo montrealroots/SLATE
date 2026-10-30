@@ -86,7 +86,7 @@ describe('a card held', () => {
     expect(() => termsOf({ country: 'US', bank: 'Nobody', card: 'None' })).toThrow("Nobody's None isn't a card of US");
     const list: Card[] = [plain, { ...plain, card: 'D' }, { ...plain, bank: 'E' }];
     expect([pick(list, 'B', 'D'), pick(list, 'E', 'C'), pick(list, 'E', 'D')]).toStrictEqual([list[1], list[2], undefined]);
-    expect(termsOf({ country: 'US', bank: 'Chase', card: 'Chase Freedom Unlimited' }).rate).toStrictEqual({ percent: '27.99', per: 'year' });
+    expect(termsOf({ country: 'US', bank: 'Chase', card: 'Chase Freedom Unlimited' }).rate).toStrictEqual({ percent: '27.99', per: 'year', from: '18.49' });
   });
 
   it('opens within its multiple of income, charging its issue fees and their tax, its first statement a month on', () => {

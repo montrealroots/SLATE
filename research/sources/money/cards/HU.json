@@ -3,6 +3,20 @@
  "cards": [
   {
    "bank": "OTP Bank",
+   "minimum": {
+    "percent": "5",
+    "floor": "5000"
+   },
+   "late": {
+    "fixed": "7388"
+   },
+   "overLimit": {
+    "fixed": "7388"
+   },
+   "penalty": {
+    "percent": "3.771",
+    "per": "month"
+   },
    "card": "Mastercard Bonus",
    "rate": {
     "percent": "2.78",
@@ -13,16 +27,65 @@
      "fee": "6862",
      "per": "year"
     }
-   ]
+   ],
+   "cash": {
+    "rate": {
+     "percent": "4.15",
+     "per": "month"
+    },
+    "fee": {
+     "percent": "2.85",
+     "min": "2276"
+    }
+   }
+  },
+  {
+   "bank": "OTP Bank",
+   "minimum": {
+    "percent": "5",
+    "floor": "5000"
+   },
+   "late": {
+    "fixed": "7388"
+   },
+   "overLimit": {
+    "fixed": "7388"
+   },
+   "penalty": {
+    "percent": "3.771",
+    "per": "month"
+   },
+   "card": "Mastercard BonusGold",
+   "rate": {
+    "percent": "2.59",
+    "per": "month"
+   },
+   "fees": [
+    {
+     "fee": "27760",
+     "per": "year"
+    }
+   ],
+   "issue": "3673",
+   "cash": {
+    "rate": {
+     "percent": "4.16",
+     "per": "month"
+    },
+    "fee": {
+     "percent": "2.85",
+     "min": "2276"
+    }
+   }
   }
  ],
- "note": "OTP Bank's Mastercard Bonus credit card (its notice in force from 15 October 2026): the main card costs 6,862 forints a year, and purchases carried past the grace period bear 2.78% a month for contracts made from that day. The first year's fee refunded on enough spending in the first two months is introductory and not written.",
+ "note": "The main banks were taken as Hungary's three largest by assets, a choice from general knowledge (no central bank or association ranking was read in this pass): OTP Bank, MBH Bank and K&H Bank. OTP Bank: its notice on its credit cards for contracts from 17 July 2017 (in force from 15 October 2026), read 2026-10-30. Of its cards, the Mastercard Bonus and Mastercard BonusGold are on open sale; the classic Mastercard, VISA and Mastercard Arany ended sale on 1 January 2021 and the Otthon card is offered only to borrowers of an OTP mortgage, so none of these is written. For contracts made from 15 October 2026, purchases carried bear 2.78% a month on the Bonus and 2.59% on the BonusGold, and cash 4.15% and 4.16%. The Bonus costs 6,862 forints a year for the main card; the BonusGold 27,760 from its second year (14,232 in the first, introductory and not written) and 3,673 to make the card. The first year's fee refunded on purchases matching it within 45 days is introductory and not written. A cash withdrawal at OTP's own ATMs and branches costs 2.85%, at least 2,276 forints (outside the euro area 3,284 plus 1.72%, not written). The minimum payment is 5% of the credit used, at least 5,000 forints; the late fee and the over-limit fee are 7,388 forints each time; the monthly default interest of 3.771% for contracts from 1 May 2015 is written as the penalty rate. The notice's 15-day period to pay after the statement closes isn't a stated interest-free period, so no grace is written. The notice states no foreign-currency fee. K&H's and MBH Bank's card pages refused the request (403) and weren't read; UniCredit's notice answered with an IP check.",
  "sources": [
   {
    "url": "https://www.otpbank.hu/hirdetmeny/aktualis/H_Hitelkartya",
-   "title": "OTP Bank, Hirdetmény a hitelkártya termékről (in force from 15 October 2026)",
-   "read": "2026-10-29",
-   "said": "A hatályba lépés napja: 2026. október 15. ... Mastercard 6 862 Ft1 6 862 Ft 5 156 Ft 5 156 Ft 0 Ft 0 Ft 3 082 Ft Bonus ... 2026.10.15-től MC Bonus, Otthon - 2,78% - 4,15%"
+   "title": "OTP Bank, Hirdetmény a hitelkártya termékről, 2017. július 17-től kötött szerződések esetén (in force from 15 October 2026)",
+   "read": "2026-10-30",
+   "said": "A hatályba lépés napja: 2026. október 15. ... A Bank 2021. január 1-től megszünteti a Mastercard (Klasszik) Hitelkártya, a VISA (Klasszik) ... Mastercard 6 862 Ft1 6 862 Ft 5 156 Ft 5 156 Ft 0 Ft 0 Ft 3 082 Ft ... Mastercard 14 232 Ft 27 760 Ft 14 990 Ft 14 990 Ft 3 673 Ft 0 Ft 3 082 Ft ... A Bank által üzemeltetett forint és euró töltésű 2,85%, minimum 2 276 Ft ... e) hitelkeret túllépési díj 7 388 Ft/alkalom ... f) késedelemi díj 7 388 Ft/alkalom ... 3,771%3 ... Minimum fizetendő összeg a felhasznált hitelkeret 5%-a, minimum 5000 Ft ... MC BonusGold - 2,59% - 4,16% ... MC Bonus, Otthon - 2,78% - 4,15%"
   }
  ]
 }

@@ -10,22 +10,101 @@
      "fee": "28",
      "per": "year"
     }
+   ],
+   "cash": {
+    "fee": {
+     "percent": "5",
+     "min": "15"
+    }
+   }
+  },
+  {
+   "bank": "NLB",
+   "card": "NLB Visa",
+   "rate": "in full",
+   "fees": [
+    {
+     "fee": "28",
+     "per": "year"
+    }
+   ],
+   "cash": {
+    "fee": {
+     "percent": "5",
+     "min": "15"
+    }
+   }
+  },
+  {
+   "bank": "NLB",
+   "card": "NLB Zlata Mastercard",
+   "rate": "in full",
+   "fees": [
+    {
+     "fee": "77",
+     "per": "year"
+    }
    ]
+  },
+  {
+   "bank": "NLB",
+   "card": "NLB Mastercard 3v1 – fiksna OM",
+   "rate": {
+    "percent": "8.00",
+    "per": "year"
+   },
+   "fees": [
+    {
+     "fee": "4",
+     "per": "month",
+     "waived": [
+      {
+       "spend": "800.01"
+      }
+     ]
+    }
+   ],
+   "minimum": {
+    "percent": "5"
+   }
+  },
+  {
+   "bank": "NLB",
+   "card": "NLB Mastercard 3v1 World",
+   "rate": {
+    "percent": "8.00",
+    "per": "year"
+   },
+   "fees": [
+    {
+     "fee": "150",
+     "per": "year"
+    }
+   ],
+   "minimum": {
+    "percent": "5"
+   }
   }
  ],
- "note": "NLB's Mastercard is a deferred-payment card: what's bought is paid on the 8th, 18th or 28th of the month, so nothing is carried. Its membership fee for a customer without an NLB package, paid by direct debit, is 28 euros a year from 1 August 2026 (26 before).",
+ "note": "The main banks were taken as Slovenia's three largest by assets, a choice from general knowledge (no central bank or association ranking was read in this pass): NLB, OTP banka and Intesa Sanpaolo Bank. NLB: its extract of interest rates and its tariff for individuals on payment cards (in force from 1 August 2026) and its card pages, read 2026-10-30. The NLB Mastercard, NLB Visa and NLB Zlata (Gold) Mastercard are deferred-payment cards, settled in full on the 8th, 18th or 28th of the month; their yearly membership, paid by direct debit, is 28 euros for a customer without an NLB package (26 with one, 48 by payment order) and 77 for the Gold card. A cash withdrawal costs 5%, at least 15 euros, on the Mastercard and Visa. The NLB Mastercard 3v1 is a loan card on which 5%, 33% or 100% of the balance is paid each month; the 5% is written as the minimum. Its fixed-rate version bears 8.00% a year and costs 4 euros a month on a physical card, 2 on 401 to 800 euros of monthly spending and none above 800; the middle step isn't written, so the fee is charged in full up to 800. The 3v1 World bears the same fixed 8.00% and costs 150 euros a year. The variable-rate 3v1 (six-month Euribor plus 5.42 points), the Karanta and the loan-card NLB Mastercard (Euribor plus 7.50) aren't written, the Euribor figure in force not being stated in the sheet. The NLB Premium Visa and the 3v1 World Elite belong to the bank's Premium and private packages, which the game doesn't hold. OTP banka's and Intesa Sanpaolo Bank's card price lists weren't reached in this pass and aren't written.",
  "sources": [
+  {
+   "url": "https://www.nlb.si/content/dam/nlb/pdf-files/osebne-finance/kartice/stroski-obrestne.pdf",
+   "title": "NLB, Obrestne mere in NLB Tarifa za prebivalstvo: NLB plačilne kartice (extract in force from 1 August 2026)",
+   "read": "2026-10-30",
+   "said": "Veljavnost izvlečka od 01. 08. 2026 ... NLB Mastercard 3v1- fiksna OM, NLB Mastercard 3v1 8,00 odstotnih točk ... NLB Karanta; NLB Mastercard; NLB Visa ... Plačevanje prek direktne bremenitve - za stranke, ki niso imetniki paketa 28,00 EUR letno ... NLB Zlata Mastercard Plačevanje prek direktne bremenitve 77,00 EUR letno ... Mesečna poraba (fizična kartica) do 400 EUR 4,00 EUR / mesec ... Mesečna poraba (fizična kartica) nad 800 EUR brezplačno ... NLB Mastercard 3v1 World Plačevanje prek direktne bremenitve 150,00 EUR letno*** ... Dvig gotovine s kartico NLB Karanta, NLB Mastercard in NLB Visa 5,00 % od zneska dviga, min. 15,00 EUR"
+  },
   {
    "url": "https://www.nlb.si/osebno/kartice/kreditne-kartice-mastercard",
    "title": "NLB, Kreditne kartice Mastercard",
-   "read": "2026-10-29",
+   "read": "2026-10-30",
    "said": "Kupite danes, plačajte jutri (8., 18. ali 28. v mesecu)"
   },
   {
-   "url": "https://www.nlb.si/content/dam/nlb/pdf-files/osebne-finance/privatno-bancnistvo/napovednik-za-objavo-sprememb-v-nlb-tarifi-za-prebivalstvo-in-stranke-privatnega-bancnistva-z-veljavnostjo-1-8-2026.pdf",
-   "title": "NLB, Napovednik sprememb v NLB Tarifi za prebivalstvo s 1. 8. 2026",
-   "read": "2026-10-29",
-   "said": "Napovednik sprememb s 1. 8. 2026 ... 6.1. Članarina za kartice z odloženim plačilom in dodatne kartice NLB Karanta, NLB Mastercard, NLB Visa 6.1.3. Plačevanje prek direktne bremenitve - za stranke, ki niso imetniki paketa 26,00 28,00 EUR letno"
+   "url": "https://www.nlb.si/osebno/kartice/posojilne-kartice-mastercard",
+   "title": "NLB, Posojilne kartice Mastercard",
+   "read": "2026-10-30",
+   "said": "Plačilo 5 %, 33 % ali 100 % zneska"
   }
  ]
 }

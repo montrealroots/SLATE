@@ -3,21 +3,160 @@
  "cards": [
   {
    "bank": "KTC",
-   "card": "KTC Credit Card",
    "rate": {
     "percent": "16",
     "per": "year"
    },
+   "cash": {
+    "rate": {
+     "percent": "16",
+     "per": "year"
+    },
+    "fee": {
+     "percent": "3"
+    }
+   },
+   "fx": "2.0",
+   "minimum": {
+    "percent": "10",
+    "floor": "500"
+   },
+   "grace": 45,
+   "card": "KTC Credit Card",
    "fees": []
+  },
+  {
+   "bank": "KTC",
+   "rate": {
+    "percent": "16",
+    "per": "year"
+   },
+   "cash": {
+    "rate": {
+     "percent": "16",
+     "per": "year"
+    },
+    "fee": {
+     "percent": "3"
+    }
+   },
+   "fx": "2.0",
+   "minimum": {
+    "percent": "10",
+    "floor": "500"
+   },
+   "grace": 45,
+   "card": "KTC X VISA SIGNATURE",
+   "fees": [
+    {
+     "fee": "5000",
+     "per": "year"
+    }
+   ]
+  },
+  {
+   "bank": "KTC",
+   "rate": {
+    "percent": "16",
+    "per": "year"
+   },
+   "cash": {
+    "rate": {
+     "percent": "16",
+     "per": "year"
+    },
+    "fee": {
+     "percent": "3"
+    }
+   },
+   "fx": "2.0",
+   "minimum": {
+    "percent": "10",
+    "floor": "500"
+   },
+   "grace": 45,
+   "card": "KTC X WORLD REWARDS MASTERCARD",
+   "fees": [
+    {
+     "fee": "5000",
+     "per": "year"
+    }
+   ]
+  },
+  {
+   "bank": "KTC",
+   "rate": "in full",
+   "cash": {
+    "rate": {
+     "percent": "16",
+     "per": "year"
+    },
+    "fee": {
+     "percent": "3"
+    }
+   },
+   "fx": "2.0",
+   "grace": 45,
+   "card": "KTC VISA INFINITE",
+   "fees": [
+    {
+     "fee": "5000",
+     "per": "year"
+    }
+   ]
+  },
+  {
+   "bank": "KTC",
+   "rate": "in full",
+   "cash": {
+    "rate": {
+     "percent": "16",
+     "per": "year"
+    },
+    "fee": {
+     "percent": "3"
+    }
+   },
+   "fx": "2.0",
+   "grace": 45,
+   "card": "KTC WORLD MASTERCARD",
+   "fees": [
+    {
+     "fee": "5000",
+     "per": "year"
+    }
+   ]
+  },
+  {
+   "bank": "KTC",
+   "rate": "in full",
+   "cash": {
+    "rate": {
+     "percent": "16",
+     "per": "year"
+    },
+    "fee": {
+     "percent": "3"
+    }
+   },
+   "fx": "2.0",
+   "grace": 45,
+   "card": "KTC UNIONPAY ASIA PRESTIGE DIAMOND",
+   "fees": [
+    {
+     "fee": "10000",
+     "per": "year"
+    }
+   ]
   }
  ],
- "note": "Krung Thai Card's table of interest and fees (effective 1 January 2026): interest on all its credit cards is 16% a year, and a card of the types without an annual fee costs nothing to hold as a first card of its brand. Kasikornbank's own pages answer a bot challenge, which this research doesn't pass.",
+ "note": "Thailand's largest card issuers are the big banks' card arms: Krungthai Card (KTC, of Krungthai Bank), Kasikornbank, Siam Commercial Bank, Bangkok Bank and Krungsri. Kasikornbank's pages answer a bot challenge (2026-10-29), Siam Commercial Bank's rates-and-fees PDF and Krungsri's card pages answer Incapsula's block, and Bangkok Bank's and Krungsri Card's sites didn't answer (no connection, 2026-10-30); none of those is passed or worked around, so only KTC is written. KTC's table of interest, fees and other service charges (effective 1 January 2026, read again 2026-10-30): interest on every card 16% a year, on purchases from the posting date and on cash from the day it's drawn, with up to 45 days free on purchases when the statement is paid in full; the minimum payment 10% of the statement or at least 500 baht; the Visa Infinite, World Mastercard and UnionPay Asia Prestige Diamond take no minimum payment (written as charge cards); the primary card's annual fee 5,000 baht for the Visa Infinite, World Mastercard, KTC X Visa Signature and KTC X World Rewards Mastercard and 10,000 for the UnionPay Asia Prestige Diamond; every other card has no annual fee for a single card (written as the KTC Credit Card this file has held since 2026-10-29; a second card of the same brand costs 500 baht a year, which the game doesn't track); a cash advance 3% of the amount; spending in another currency at most 2.0%, written as 2.0; no late payment fee and no returned-cheque fee (written by leaving them out), but a collection charge of 50 baht for a debt one cycle overdue and 100 for more, which isn't written. Fees and charges are before VAT, whose rate the table doesn't state. The corporate, commercial and government-services cards aren't written.",
  "sources": [
   {
    "url": "https://www.ktc.co.th/pub/media/sites/cs/assets/support/download/document/KTCJAN2026-Table-of-Interest-Rate-CreditCard-EN.pdf",
-   "title": "KTC, Interest, Fee and Others Service Charges (effective 1 January 2026)",
-   "read": "2026-10-29",
-   "said": "Effective 1 January 2026) ... Interest Rate (all types of credit cards) 16% per annum ... For other types of credit card with no annual fee ... For holding 1 card None"
+   "title": "Krungthai Card, Interest, Fee and Others Service Charges (effective 1 January 2026)",
+   "read": "2026-10-30",
+   "said": "Interest Rate (all types of credit cards) 16% per annum ... Up to 45 days from the day after the account summary date (For spending transactions) ... 10% of the total amount of monthly statement, ... THB 500. /KTC UNIONPAY ASIA PRESTIGE DIAMOND and KTC VISA CORPORATE credit card cannot make a minimum payment) ... /KTC WORLD MASTERCARD THB 5,000/card/year /KTC X VISA SIGNATURE and KTC X WORLD REWARDS MASTERCARD credit cards • For KTC UNIONPAY ASIA PRESTIGE DIAMOND credit cards THB 10,000/card/year • For other types of credit card with no annual fee • For holding 1 card None ... Cash withdrawal fee 3% of the total cash advance amount ... Check payment returned fee None • Overdue payment fee None ... not over than 2.0% of the preliminary exchange reference rates"
   }
  ]
 }

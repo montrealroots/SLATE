@@ -3,6 +3,84 @@
  "cards": [
   {
    "bank": "Sacombank Cambodia",
+   "card": "Visa Platinum (secured)",
+   "currency": "USD",
+   "rate": {
+    "percent": "1.2",
+    "per": "month"
+   },
+   "fees": [
+    {
+     "fee": "100",
+     "per": "year"
+    }
+   ],
+   "cash": {
+    "fee": {
+     "percent": "2",
+     "min": "3"
+    }
+   },
+   "fx": "2.5",
+   "minimum": {
+    "percent": "10",
+    "floor": "20"
+   }
+  },
+  {
+   "bank": "Sacombank Cambodia",
+   "card": "Visa Platinum (unsecured)",
+   "currency": "USD",
+   "rate": {
+    "percent": "1.5",
+    "per": "month"
+   },
+   "fees": [
+    {
+     "fee": "100",
+     "per": "year"
+    }
+   ],
+   "cash": {
+    "fee": {
+     "percent": "2",
+     "min": "3"
+    }
+   },
+   "fx": "2.5",
+   "minimum": {
+    "percent": "10",
+    "floor": "20"
+   }
+  },
+  {
+   "bank": "Sacombank Cambodia",
+   "card": "Visa Classic (secured)",
+   "currency": "USD",
+   "rate": {
+    "percent": "1.2",
+    "per": "month"
+   },
+   "fees": [
+    {
+     "fee": "15",
+     "per": "year"
+    }
+   ],
+   "cash": {
+    "fee": {
+     "percent": "2",
+     "min": "3"
+    }
+   },
+   "fx": "2.5",
+   "minimum": {
+    "percent": "10",
+    "floor": "20"
+   }
+  },
+  {
+   "bank": "Sacombank Cambodia",
    "card": "Visa Classic (unsecured)",
    "currency": "USD",
    "rate": {
@@ -14,16 +92,27 @@
      "fee": "15",
      "per": "year"
     }
-   ]
+   ],
+   "cash": {
+    "fee": {
+     "percent": "2",
+     "min": "3"
+    }
+   },
+   "fx": "2.5",
+   "minimum": {
+    "percent": "10",
+    "floor": "20"
+   }
   }
  ],
- "note": "Sacombank Cambodia's Visa credit card tariff: its unsecured Visa Classic, in dollars, costs $15 a year for the primary card and charges 1.65% a month in interest. ABA Bank's fee pages answered with a bot check and weren't read.",
+ "note": "The main banks, chosen as the best-known large card issuers (no central bank ranking was read): ABA Bank, ACLEDA Bank and Canadia Bank. ABA Bank's fee pages answered with a bot check on 2026-10-29 and weren't read; ACLEDA and Canadia weren't tried this time, for want of the research's budget. Sacombank Cambodia's Visa credit card tariff, read in full on 2026-10-30 (first read 2026-10-29 for the unsecured Classic alone), is written in full: its Visa Platinum and Visa Classic, each secured (against a deposit, a condition the game doesn't check) or unsecured, in US dollars. The Platinum costs 100 dollars a year (as a processing or annual fee on the secured card, as the primary card's fee on the unsecured), the Classic 15; interest is 1.2% a month on the secured cards, 1.5% on the unsecured Platinum and 1.65% on the unsecured Classic; the minimum payment is 10%, at least 20 dollars; the late payment charge is 10% (at least 10 dollars) on the Platinum, 5% (at least 5) on the secured Classic and 5% (at least 10) on the unsecured, not written, the tariff not naming what the share is of; a cash withdrawal at an ATM costs 2%, at least 3 dollars; the foreign exchange or cross-border fee is 2.5%. The over-limit charge, 0.075% a day with a minimum of 2 dollars, is a daily charge the game's card doesn't hold, and isn't written. The tariff states no grace period.",
  "sources": [
   {
    "url": "https://www.sacombank.com.kh/en/product/general-en/visa-credit-card-tariff-fee/",
    "title": "Sacombank Cambodia, Visa Credit Card Tariff Fee",
-   "read": "2026-10-29",
-   "said": "Visa Platinum ... Visa Classic ... Secured ... Unsecured ... Primary card ... Annually ... $15 ... $15 ... Interest Charge ... Monthly ... 1.2% ... 1.5% ... 1.2% ... 1.65%"
+   "read": "2026-10-30",
+   "said": "Fees Frequency Visa Platinum Visa Classic Secured Unsecured Secured Unsecured Processing/Annual fee Annually $100 Free – – Primary card Annually Free $100 $15 $15 ... Minimum payment Monthly 10% (Min $20) 10% (Min $20) Interest Charge Monthly 1.2% 1.5% 1.2% 1.65% Late payment charge Monthly 10% (Min $10) 5% (Min $5) 5% (Min $10) Over credit limit charge Daily 0.075%/day (Min $2) 0.075%/day (Min $2) Cash withdrawal fee at ATM Per time 2% (Min $3) 2% (Min $3) ... FX fee/cross border fee Per transaction 2.5% 2.5%"
   }
  ]
 }

@@ -6,7 +6,8 @@
    "card": "Revolving credit card",
    "rate": {
     "percent": "22",
-    "per": "year"
+    "per": "year",
+    "from": "19"
    },
    "fees": [
     {
@@ -18,16 +19,65 @@
       }
      ]
     }
-   ]
+   ],
+   "cash": {
+    "fee": {
+     "percent": "2.5",
+     "fixed": "2"
+    }
+   },
+   "penalty": {
+    "percent": "10.40",
+    "per": "year"
+   }
+  },
+  {
+   "bank": "Swedbank",
+   "card": "Gold revolving credit card",
+   "rate": {
+    "percent": "20",
+    "per": "year",
+    "from": "17"
+   },
+   "fees": [
+    {
+     "fee": "7",
+     "per": "month"
+    }
+   ],
+   "penalty": {
+    "percent": "10.40",
+    "per": "year"
+   }
+  },
+  {
+   "bank": "Swedbank",
+   "card": "Platinum credit card",
+   "rate": {
+    "percent": "17",
+    "per": "year",
+    "from": "14"
+   },
+   "fees": [
+    {
+     "fee": "17",
+     "per": "month"
+    }
+   ],
+   "grace": 40,
+   "penalty": {
+    "percent": "10.40",
+    "per": "year"
+   }
   }
  ],
- "note": "Swedbank Estonia's card prices (effective 31 August 2026): its revolving credit card costs 2 euros a month, free for people up to 25 years of age (written as under 26), with an annual interest rate of 19% to 22%, written at the top.",
+ "note": "The main banks were taken as Estonia's three largest by assets, a choice from general knowledge (no central bank or association ranking was read in this pass): Swedbank, SEB and LHV. Swedbank Estonia: its credit card page and price list (credit cards effective 31 August 2026, card transactions effective 2 February 2026), read 2026-10-30. The revolving credit card costs 2 euros a month, free for people up to 25 years of age (written as under 26); the Gold revolving card 7 euros and the Platinum card 17 euros a month (its optional extra package of 160 euros a year isn't written). Their annual rates are 19-22%, 17-20% and 14-17%, each written at the top of its range with the bottom as its floor. The default interest, the ECB rate plus 8 points, is stated as currently 10.40% a year and written as the penalty rate. The Platinum card has up to 40 days without interest; the revolving and Gold cards' interest-free time runs to the end of the month or the 10th of the next, not a fixed count of days, and isn't written. A cash withdrawal with the revolving card costs 2 euros plus 2.5%; the Gold and Platinum cards' free withdrawals up to 500 and 1,000 euros a month are thresholds not modelled, so their cash fees aren't written. The fixed payment credit card hasn't been issued since 21 April 2022. SEB's and LHV's card prices weren't reached in this pass and aren't written.",
  "sources": [
   {
    "url": "https://www.swedbank.ee/private/cards/credit/creditCard?language=ENG",
-   "title": "Swedbank (Estonia), Credit cards",
-   "read": "2026-10-29",
-   "said": "Credit cards Effective as of 31.08.2026 Revolving credit card ... Price Monthly fee 2 € (free of charge for people up to 25 years of age) Monthly fee of an additional card 2 € Annual interest rate 19-22%"
+   "title": "Swedbank Estonia, Credit cards and price list (credit cards effective 31 August 2026)",
+   "read": "2026-10-30",
+   "said": "Credit cards Effective as of 31.08.2026 Revolving credit card ... Price Monthly fee 2 € (free of charge for people up to 25 years of age) Monthly fee of an additional card 2 € Annual interest rate 19-22% Penalty ECB interest rate + 8% a year (currently 0.028% a day, 10.40% a year) ... Fixed payment credit cards are not issued from 21.04.2022. ... Price Monthly fee 7 € Monthly fee of an additional card 7 € Annual interest rate 17-20% ... the transaction amount is subject to an up to 40-day interest-free period ... Price Monthly fee 17 € Monthly fee of an additional card 17 € Platinum extra package 160 € a year ... Annual interest rate 14-17% ... Cash withdrawal with credit cards (except for the revolving Gold credit card and Platinum credit card ... 2 € + 2.5% of the amount"
   }
  ]
 }

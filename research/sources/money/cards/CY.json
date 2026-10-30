@@ -3,26 +3,216 @@
  "cards": [
   {
    "bank": "Bank of Cyprus",
-   "card": "VISA CLASSIC",
    "rate": {
     "percent": "11.50",
     "per": "year"
    },
+   "cash": {
+    "fee": {
+     "percent": "3.33",
+     "min": "5"
+    }
+   },
+   "fx": "3",
+   "card": "VISA CLASSIC",
    "fees": [
     {
      "fee": "12.50",
      "per": "year"
     }
    ]
+  },
+  {
+   "bank": "Bank of Cyprus",
+   "rate": {
+    "percent": "11.50",
+    "per": "year"
+   },
+   "cash": {
+    "fee": {
+     "percent": "3.33",
+     "min": "5"
+    }
+   },
+   "fx": "3",
+   "card": "VISA GOLD",
+   "fees": [
+    {
+     "fee": "55",
+     "per": "year"
+    }
+   ]
+  },
+  {
+   "bank": "Bank of Cyprus",
+   "rate": {
+    "percent": "11.50",
+    "per": "year"
+   },
+   "cash": {
+    "fee": {
+     "percent": "3.33",
+     "min": "5"
+    }
+   },
+   "fx": "3",
+   "card": "VISA PLATINUM",
+   "fees": [
+    {
+     "fee": "90",
+     "per": "year"
+    }
+   ]
+  },
+  {
+   "bank": "Bank of Cyprus",
+   "rate": {
+    "percent": "11.50",
+    "per": "year"
+   },
+   "cash": {
+    "fee": {
+     "percent": "3.33",
+     "min": "5"
+    }
+   },
+   "fx": "3",
+   "card": "MASTERCARD CLASSIC",
+   "fees": [
+    {
+     "fee": "12.50",
+     "per": "year"
+    }
+   ]
+  },
+  {
+   "bank": "Bank of Cyprus",
+   "rate": {
+    "percent": "11.50",
+    "per": "year"
+   },
+   "cash": {
+    "fee": {
+     "percent": "3.33",
+     "min": "5"
+    }
+   },
+   "fx": "3",
+   "card": "MASTERCARD GOLD",
+   "fees": [
+    {
+     "fee": "55",
+     "per": "year"
+    }
+   ]
+  },
+  {
+   "bank": "Bank of Cyprus",
+   "rate": {
+    "percent": "11.50",
+    "per": "year"
+   },
+   "cash": {
+    "fee": {
+     "percent": "3.33",
+     "min": "5"
+    }
+   },
+   "fx": "3",
+   "card": "MASTERCARD PLATINUM",
+   "fees": [
+    {
+     "fee": "90",
+     "per": "year"
+    }
+   ]
+  },
+  {
+   "bank": "Bank of Cyprus",
+   "rate": {
+    "percent": "11.50",
+    "per": "year"
+   },
+   "fx": "1",
+   "card": "MASTERCARD ELITE",
+   "fees": [
+    {
+     "fee": "180",
+     "per": "year"
+    }
+   ]
+  },
+  {
+   "bank": "Bank of Cyprus",
+   "rate": {
+    "percent": "12.50",
+    "per": "year"
+   },
+   "cash": {
+    "fee": {
+     "percent": "3.33",
+     "min": "5"
+    }
+   },
+   "fx": "3",
+   "card": "AEGEAN MASTERCARD",
+   "fees": [
+    {
+     "fee": "5",
+     "per": "month"
+    }
+   ]
+  },
+  {
+   "bank": "Bank of Cyprus",
+   "rate": {
+    "percent": "11.50",
+    "per": "year"
+   },
+   "cash": {
+    "fee": {
+     "percent": "3.33",
+     "min": "5"
+    }
+   },
+   "fx": "3",
+   "card": "APOEL VISA",
+   "fees": [
+    {
+     "fee": "25",
+     "per": "year"
+    }
+   ]
+  },
+  {
+   "bank": "Bank of Cyprus",
+   "rate": {
+    "percent": "11.50",
+    "per": "year"
+   },
+   "cash": {
+    "fee": {
+     "percent": "3.33",
+     "min": "5"
+    }
+   },
+   "fx": "3",
+   "card": "OMONOIA VISA",
+   "fees": [
+    {
+     "fee": "75",
+     "per": "year"
+    }
+   ]
   }
  ],
- "note": "Bank of Cyprus's commissions and charges for physical persons (June 2026): its VISA CLASSIC credit card's annual membership fee is 12.50 euros for the cardholder, and its credit cards' interest rate is 11.50% a year (11.25% for an eCredit card applied for through 1bank, not written).",
+ "note": "The main banks were taken as Cyprus's three largest by assets, a choice from general knowledge (no central bank or association ranking was read in this pass): Bank of Cyprus, Hellenic Bank and Eurobank Cyprus. Bank of Cyprus: its table of commissions and charges for physical persons (June 2026), section 5.1, credit cards, read 2026-10-30 (the copy saved on 2026-10-29; the bank's server gave an empty reply on 2026-10-30). Each card's yearly membership for the cardholder is written (the Aegean Mastercard's 5 euros a month); all bear 11.50% a year except the Aegean Mastercard, 12.50% (the eCredit rate of 11.25% for a card applied for through 1bank isn't written). A cash advance costs 3.33%, at least 5 euros (on the Mastercard Elite nothing up to 800 euros and 3.33% above, a threshold not modelled, so its cash fee isn't written); spending in a currency other than the euro or krona costs 3%, 1% on the Mastercard Elite. The minimum payment is a fixed share of the balance, at least 17 euros, but the share isn't stated, so it isn't written; the 2% a month charged on arrears over 20 euros isn't written as a penalty rate, being a charge on the arrears. The Mastercard Blue isn't offered to new customers, the Mastercard Gold ETEK is for members of the Technical Chamber, the PrivilEDGE card belongs to private banking and the Budget cards are instalment plans, so none is written. Hellenic Bank's and Eurobank Cyprus's card charges weren't reached in this pass and aren't written.",
  "sources": [
   {
    "url": "https://www.bankofcyprus.com/globalassets/cyprus/org_methods/commissions--charges-current/eng/commissions-and-charges-physical-persons-06_2026.pdf",
-   "title": "Bank of Cyprus, Commissions and Charges: Physical Persons (June 2026)",
+   "title": "Bank of Cyprus, Table of Commissions and Charges, Physical Persons (June 2026)",
    "read": "2026-10-29",
-   "said": "June 2026 ... 5.1 Commissions and Charges for Credit Cards ... VISA CLASSIC €12,50 €5 ... Interest Rate 11,50%"
+   "said": "5.1 Commissions and Charges for Credit Cards ... VISA CLASSIC €12,50 €5 ... VISA GOLD €55 €25 ... VISA PLATINUM €90 €65 ... MASTERCARD CLASSIC €12,50 €5 ... MASTERCARD GOLD €55 €25 ... MASTERCARD PLATINUM €90 €65 ... MASTERCARD ELITE €180 €180 ... AEGEAN MASTERCARD €5 €3 ... APOEL VISA €25 €25 ... OMONOIA VISA €75 Not applicable ... Interest Rate for AEGEAN MASTERCARD Cards 12,50% ... Interest Rate 11,50% ... 3,33% minimum amount €5 ... (Currency exchange services) for credit card 1% ... (Currency exchange services) (Note 3) ... (1) This product is not offered to new customers."
   }
  ]
 }

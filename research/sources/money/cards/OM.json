@@ -11,18 +11,121 @@
    "fees": [
     {
      "fee": "21",
-     "per": "year"
+     "per": "year",
+     "waived": [
+      {
+       "spend": "1500"
+      }
+     ]
     }
-   ]
+   ],
+   "cash": {
+    "fee": {
+     "percent": "3.15",
+     "min": "3.675"
+    }
+   },
+   "fx": "2.75",
+   "minimum": {
+    "percent": "5"
+   },
+   "late": {
+    "fixed": "5.250"
+   },
+   "overLimit": {
+    "fixed": "5.250"
+   }
+  },
+  {
+   "bank": "National Bank of Oman",
+   "card": "Credit Card – Signature",
+   "rate": {
+    "percent": "1.5",
+    "per": "month"
+   },
+   "fees": [
+    {
+     "fee": "47.25",
+     "per": "year",
+     "waived": [
+      {
+       "spend": "2500"
+      }
+     ]
+    }
+   ],
+   "cash": {
+    "fee": {
+     "percent": "3.15",
+     "min": "3.675"
+    }
+   },
+   "fx": "2.75",
+   "minimum": {
+    "percent": "5"
+   },
+   "late": {
+    "fixed": "5.250"
+   },
+   "overLimit": {
+    "fixed": "5.250"
+   }
+  },
+  {
+   "bank": "National Bank of Oman",
+   "card": "Credit Card – Infinite",
+   "rate": {
+    "percent": "1.5",
+    "per": "month"
+   },
+   "fees": [
+    {
+     "fee": "94.5",
+     "per": "year",
+     "waived": [
+      {
+       "spend": "3600"
+      }
+     ]
+    }
+   ],
+   "cash": {
+    "fee": {
+     "percent": "3.15",
+     "min": "3.675"
+    }
+   },
+   "fx": "2.75",
+   "minimum": {
+    "percent": "5"
+   },
+   "late": {
+    "fixed": "5.250"
+   },
+   "overLimit": {
+    "fixed": "5.250"
+   }
   }
  ],
- "note": "National Bank of Oman's key facts statement for its Gold credit card: 21 rials a year, VAT included, with interest of 1.5% a month on a card held against salary; the 1.66% on a card against a pledged deposit isn't written, the game holding no pledged deposit. Bank Muscat's tariff gives its cards' fees but not their interest.",
+ "note": "The main banks, chosen as the best-known large card issuers (no central bank ranking was read): Bank Muscat, National Bank of Oman and Bank Dhofar. Bank Muscat's card page answered behind a captcha check and Bank Dhofar's behind Cloudflare on 2026-10-30, and neither was read (an earlier reading of Bank Muscat's tariff found its cards' fees but not their interest). National Bank of Oman's key facts statements for its credit cards, read in full: the Gold (read 2026-10-29 and again 2026-10-30), the Signature and the Infinite, the three the bank publishes at its key-facts address (the Platinum's didn't answer). Each is written with its annual fee, VAT included (21, 47.25 and 94.5 rials), waived in full when the year's spending is more than 1,500, 2,500 or 3,600 rials (written as a waiver on that spending); interest of 1.5% a month on a card held against salary (the 1.66% on a card against a pledged deposit isn't written, the game holding no pledged deposit); a cash advance fee of 3.15% or 3.675 rials, whichever is higher; a foreign transaction fee of 2.75% (2.5% for Sadara Priority and Private Banking, not modelled); a late payment fee of 5.250 rials a month where nothing is paid (the same fee on a partial payment, written once); an over-limit fee of 5.250 each time; and a minimum of 5% of the amount due, which the statements give as the least a holder can pay each month. They state no grace period.",
  "sources": [
   {
    "url": "https://www.nbo.om/en/Download%20Documents/NBO%20KFS%20Gold%20Credit%20Card%20English.pdf",
-   "title": "National Bank of Oman, Key Facts Statement (KFS): Credit Card – Gold",
-   "read": "2026-10-29",
-   "said": "Key Facts Statement (KFS) Credit Card – Gold ... Annual Fee OMR 21 ... Interest Rate against salary 1.5% per month ... Interest Rate against Deposit 1.66% per month ... are inclusive of Value Added Tax (VAT)"
+   "title": "National Bank of Oman, Key Facts Statement, Credit Card – Gold",
+   "read": "2026-10-30",
+   "said": "Credit Card – Gold ... Annual Fee OMR 21 ... Interest Rate against salary 1.5% per month ... Interest Rate against Deposit 1.66% per month ... 3.15% of the amount withdrawn or OMR ... 3.675 whichever is higher ... Late Payment Fee (No Payment) OMR 5.250 per month ... Overdue Fee (Partial Payment) OMR 5.250 per month ... Over limit Fee OMR 5.250 per insatnce ... Foreign Transaction Fee (Applies to all transaction 2.75%(2.5% for Sadara Priority Banking & ... are inclusive of Value Added Tax (VAT) ... as little as 5% of the amount due every month ... 100% of annual fee will be waived if the total spend ... more than 1500OMR"
+  },
+  {
+   "url": "https://www.nbo.om/en/Download%20Documents/NBO%20KFS%20Signature%20Credit%20Card%20English.pdf",
+   "title": "National Bank of Oman, Key Facts Statement, Credit Card – Signature",
+   "read": "2026-10-30",
+   "said": "Credit Card – Sign ... Annual Fee OMR 47.25 ... Interest Rate against salary 1.5% per month ... 3.15% of the amount withdrawn or OMR 3.675 ... Late Payment Fee (No Payment) OMR 5.25 per month ... Over limit Fee OMR 5.250 per instance ... 2.75%(2.5% for Sadara Priority Banking & ... as little as 5% of the amount due every month ... 100% of annual fee will be waived if the total spend more than 2,500 OMR"
+  },
+  {
+   "url": "https://www.nbo.om/en/Download%20Documents/NBO%20KFS%20Infinite%20Credit%20Card%20English.pdf",
+   "title": "National Bank of Oman, Key Facts Statement, Credit Card – Infinite",
+   "read": "2026-10-30",
+   "said": "Credit Card – Infi ... Annual Fee OMR 94.5 ... Interest Rate against salary 1.5% per month ... 3.15% of the amount withdrawn or OMR ... 3.675 whichever ... Late Payment Fee (No Payment) OMR 5.250 per month ... Over limit Fee OMR 5.250 per instance ... 2.75%(2.5% for Sadara Priority Banking & ... as little as 5% of the amount due every month ... 100% of annual fee will be waived if the total spend more than 3600 OMR"
   }
  ]
 }

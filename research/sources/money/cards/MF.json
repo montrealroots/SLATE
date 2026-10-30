@@ -24,17 +24,6 @@
    ]
   },
   {
-   "bank": "CEPAC",
-   "card": "Carte internationale à débit différé",
-   "rate": "in full",
-   "fees": [
-    {
-     "fee": "45.40",
-     "per": "year"
-    }
-   ]
-  },
-  {
    "bank": "LCL",
    "card": "Carte internationale à débit différé",
    "rate": "in full",
@@ -44,15 +33,69 @@
      "per": "year"
     }
    ]
+  },
+  {
+   "bank": "CEPAC",
+   "card": "Visa Infinite (débit différé)",
+   "rate": "in full",
+   "fees": [
+    {
+     "fee": "339.17",
+     "per": "year"
+    }
+   ],
+   "fx": "2.90"
+  },
+  {
+   "bank": "CEPAC",
+   "card": "Visa Platinum (débit différé)",
+   "rate": "in full",
+   "fees": [
+    {
+     "fee": "231.40",
+     "per": "year"
+    }
+   ],
+   "fx": "2.90"
+  },
+  {
+   "bank": "CEPAC",
+   "card": "Visa Premier (débit différé)",
+   "rate": "in full",
+   "fees": [
+    {
+     "fee": "144.40",
+     "per": "year"
+    }
+   ],
+   "fx": "2.90"
+  },
+  {
+   "bank": "CEPAC",
+   "card": "CB Visa Classic (débit différé)",
+   "rate": "in full",
+   "fees": [
+    {
+     "fee": "46.20",
+     "per": "year"
+    }
+   ],
+   "fx": "2.90"
   }
  ],
- "note": "The IEDOM's observatory of bank charges for private customers (its half-yearly report of April 2026, prices at 1 April 2026), Saint-Martin's table: the yearly price of each bank's international deferred-debit card, whose month's spending the bank takes from the account at once, so nothing is carried on it. The banks' revolving credit isn't in the table and isn't kept.",
+ "note": "The IEDOM's observatory of bank charges for private customers (its half-yearly report of April 2026, prices at 1 April 2026), Saint-Martin's table: the yearly price of each bank's international deferred-debit card, whose month's spending the bank takes from the account at once, so nothing is carried on it. The banks' revolving credit isn't in the table and isn't kept. CEPAC's own price list for private customers (in force from 1 September 2026; it covers Réunion, Guadeloupe, Martinique, St Barthélémy, St Martin and St Pierre et Miquelon), read 30 October 2026, replaces the observatory's single CEPAC figure (45.40 euros, April 2026) with its full range of deferred-debit cards: the Visa Infinite (339.17 euros a year), Visa Platinum (231.40), Visa Premier (144.40) and CB Visa Classic (46.20), each charged in full once a month (the month's payments are taken from the account on the 4th of the next), and a 2.90% commission on payments in a foreign currency (its 0.60-euro fixed part isn't modelled). Its Izicarte cards, tied to a revolving credit from BPCE Financement, carry a rate the price list doesn't give, so they aren't written; its debit cards with immediate debit aren't credit cards. The price list from 1 November 2026, published already, isn't yet in force.",
  "sources": [
   {
    "url": "https://www.iedom.fr/IMG/pdf/tarifs_bancaires_dans_les_dcom_eur_avril_2026_vf.pdf",
    "title": "IEDOM, Observatoire des tarifs bancaires pour les particuliers, rapport semestriel d'avril 2026 (prices at 1 April 2026)",
    "read": "2026-10-29",
    "said": "RAPPORT SEMESTRIEL : AVRIL 2026 OBSERVATOIRE DES TARIFS BANCAIRES POUR LES PARTICULIERS ... Bred-BP Crédit Mutuel Alliance Fédérale CEPAC LCL Saint-Martin Hexagone (1) ... Fourniture d'une carte de débit (carte de paiement internationale à débit différé) 50,40 € 48,00 € 45,40 € 52,20 € 48,60 € 44,53 €"
+  },
+  {
+   "url": "https://www.img.caisse-epargne.fr/app/uploads/sites/8/2026/08/31162007/cepac-brochure-marche-des-particuliers-sept2026.pdf",
+   "title": "Caisse d'Epargne CEPAC, Conditions et tarifs des opérations et services bancaires aux particuliers (au 1er septembre 2026)",
+   "read": "2026-10-30",
+   "said": "Au 1er septembre 2026 ... Guadeloupe, Martinique, St Barthélémy, St Martin, St Pierre et Miquelon, ... Infinite* Platinum* Premier* Classic* ... 339,17 € 231,40 € 144,40 € 46,20 € ... tous les paiements effectués entre le 1er et le 30 (ou 31) du mois sont débités du compte le 4 du mois suivant ... Sous réserve d’acceptation du crédit renouvelable par BPCE Financement ... Paiement par carte en devises (la carte est émise par la banque) ... 2,90 %"
   }
  ]
 }

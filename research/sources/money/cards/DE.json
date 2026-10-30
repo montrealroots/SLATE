@@ -10,11 +10,138 @@
      "fee": "39.00",
      "per": "year"
     }
-   ]
+   ],
+   "cash": {
+    "fee": {
+     "percent": "2.5",
+     "min": "5.75"
+    }
+   },
+   "fx": "1.75"
+  },
+  {
+   "bank": "Deutsche Bank",
+   "card": "Mastercard GOLD oder VISA GOLD",
+   "rate": "in full",
+   "fees": [
+    {
+     "fee": "82.00",
+     "per": "year"
+    }
+   ],
+   "cash": {
+    "fee": {
+     "percent": "2.5",
+     "min": "5.75"
+    }
+   },
+   "fx": "1.75"
+  },
+  {
+   "bank": "Deutsche Bank",
+   "card": "Mastercard Travel",
+   "rate": "in full",
+   "fees": [
+    {
+     "fee": "94.00",
+     "per": "year"
+    }
+   ],
+   "cash": {
+    "fee": {
+     "percent": "2.5",
+     "min": "5.75"
+    }
+   },
+   "fx": "0.50"
+  },
+  {
+   "bank": "Deutsche Bank",
+   "card": "Deutsche Bank Mastercard PLATIN",
+   "rate": "in full",
+   "fees": [
+    {
+     "fee": "200.00",
+     "per": "year"
+    }
+   ],
+   "cash": {
+    "fee": {
+     "percent": "2.5",
+     "min": "5.75"
+    }
+   },
+   "fx": "1.75"
+  },
+  {
+   "bank": "Deutsche Bank",
+   "card": "Deutsche Bank Mastercard BLACK",
+   "rate": "in full",
+   "fees": [
+    {
+     "fee": "600.00",
+     "per": "year"
+    }
+   ],
+   "cash": {
+    "fee": {
+     "percent": "2.5",
+     "min": "5.75"
+    }
+   },
+   "fx": "1.75"
+  },
+  {
+   "bank": "Commerzbank",
+   "card": "ClassicKreditkarte (Mastercard / Visa)",
+   "rate": "in full",
+   "fees": [
+    {
+     "fee": "39.90",
+     "per": "year"
+    }
+   ],
+   "cash": {
+    "fee": {
+     "percent": "1.95",
+     "min": "5.98"
+    }
+   },
+   "fx": "1.75"
+  },
+  {
+   "bank": "Commerzbank",
+   "card": "GoldKreditkarte (Mastercard / Visa)",
+   "rate": "in full",
+   "fees": [
+    {
+     "fee": "99.90",
+     "per": "year"
+    }
+   ],
+   "cash": {
+    "fee": {
+     "percent": "1.95",
+     "min": "5.98"
+    }
+   },
+   "fx": "1.75"
   }
  ],
- "note": "Deutsche Bank's list of prices and services (as at 1 October 2026): its Mastercard or VISA costs 39 euros a year, and what's spent on it is charged to the account in the monthly statement, so nothing is carried on the card (only its WorldFlexCard, no longer sold, has a part-repayment function).",
+ "note": "The main banks: Deutsche Bank (with Postbank, its branch) and Commerzbank, Germany's two largest private-sector retail banks; the savings banks (Sparkassen) each set their own prices and aren't one bank, and ING and DKB, the largest direct banks, issue debit Visa cards, not credit cards, so no third bank is written. Deutsche Bank's list of prices and services (as at 1 October 2026), read in full for its credit cards: the Mastercard or VISA (39 euros a year), GOLD (82; free with the db BestKonto, which the game doesn't hold), Mastercard Travel (94; 60 with the db BestKonto, not written), Mastercard PLATIN (200) and Mastercard BLACK (600), each charged to the account in the monthly statement, so nothing is carried on them; its WorldFlexCard (10 euros a year), the only one with a part-repayment function, is no longer sold and isn't written, nor is its BusinessCard. Cash at a cash machine with any of them costs 2.5% (at least 5.75 euros; 3.0% at a counter, not written); paying in a currency other than the euro costs 1.75% (at least 1.50 euros, not modelled), and the Mastercard Travel only the 0.50% conversion charge. Commerzbank's account-opening information (as at 19 June 2026), with its price and service list and its credit card conditions: the ClassicKreditkarte (39.90 euros a year) and GoldKreditkarte (99.90), Mastercard or Visa, their spending charged to the settlement account once the monthly statement is issued; cash at a cash machine costs 1.95% (at least 5.98 euros), paying abroad outside the euro 1.75%. The PremiumKreditkarte comes only inside the PremiumKonto and the Young Visa Kreditkarte only with the StartKonto, so neither is written. No German card here carries a balance, so no interest, minimum, grace period or default fee applies.",
  "sources": [
+  {
+   "url": "https://www.deutsche-bank.de/dam/deutschebank/de/shared/pdf/ser-konditionen_preise_leistungsverzeichnis.pdf",
+   "title": "Deutsche Bank, Preis- und Leistungsverzeichnis (Stand 1. Oktober 2026)",
+   "read": "2026-10-30",
+   "said": "Deutsche Bank AG, Stand: 01. Oktober 2026 ... Mastercard oder VISA 39,00 EUR ... Mastercard GOLD oder VISA GOLD 82,00 EUR ... Mastercard Travel 94,00 EUR ... Deutsche Bank Mastercard PLATIN ... 200,00 EUR ... Deutsche Bank Mastercard BLACK 600,00 EUR ... Belastung im Rahmen der monatlichen Abrechnung. Ausgabe einer Kreditkarte ab 18 Jahren bei entsprechender Bonität. ... Ausschließlich Bestandsprodukt, kein Neugeschäft. ... Mit Mastercard, VISA der Deutschen Bank (alle Kartenversionen außer Mastercard Travel und BusinessCard mit PLUS-Paket) ... 2,5 %, mind. 5,75 EUR ... Mit Mastercard, VISA der Deutschen Bank (alle Kartenversionen außer Mastercard Travel) EUR-Verfügungen (innerhalb der EU- und der weiteren EWR-Staaten) sonstige Verfügungen kostenfrei 1,75 %, mind. 1,50 EUR3 ... Die Bank erhebt zusätzlich ein Währungsumrechnungsentgelt in Form eines Kurs-Aufschlages in Höhe von 0,50 %."
+  },
+  {
+   "url": "https://www.commerzbank.de/portal/media/efw-dokumente/fernabsatz_girokonto_neukunde.pdf",
+   "title": "Commerzbank, Informationen zur Eröffnung eines Commerzbank Girokontos mit Kreditkarte (Stand 19.06.2026), with its Preis- und Leistungsverzeichnis and Kreditkartenbedingungen",
+   "read": "2026-10-30",
+   "said": "Stand: 19.06.2026 ... ClassicKreditkarte (Mastercard / Visa) 39,90 EUR ... GoldKreditkarte (Mastercard / Visa) 99,90 EUR ... PremiumKreditkarte (Mastercard / Visa) – Pro PremiumKonto sind max. zwei Mastercard und zwei Visa Karten im Preis enthalten ... mit ClassicKreditkarte / GoldKreditkarte / Prepaid Karte / Young Visa Kreditkarte 1,95 % auf den Auszahlungsbetrag Minimum 5,98 EUR ... alle Mastercard / Visa: ClassicKreditkarte / GoldKreditkarte / PremiumKreditkarte / Prepaid Karte / Young Visa Kreditkarte ... 1,75 % Auslandseinsatzentgelt ... Nach Erteilung der Abrechnung werden die Umsätze dem vereinbarten Abrechnungskonto belastet."
+  },
   {
    "url": "https://www.deutsche-bank.de/dam/deutschebank/de/shared/pdf/ser-konditionen_preise_leistungsverzeichnis.pdf",
    "title": "Deutsche Bank, Preis- und Leistungsverzeichnis (Stand 1. Oktober 2026)",

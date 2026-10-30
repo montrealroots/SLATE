@@ -3,9 +3,16 @@
  "cards": [
   {
    "bank": "PKO Bank Polski",
-   "card": "Przejrzysta karta kredytowa PKO Visa",
    "rate": {
     "percent": "14.50",
+    "per": "year"
+   },
+   "minimum": {
+    "percent": "4",
+    "floor": "50"
+   },
+   "penalty": {
+    "percent": "18.50",
     "per": "year"
    },
    "fees": [
@@ -18,22 +25,276 @@
       }
      ]
     }
-   ]
+   ],
+   "cash": {
+    "fee": {
+     "percent": "4",
+     "min": "15"
+    }
+   },
+   "fx": "4",
+   "grace": 55,
+   "overLimit": {
+    "fixed": "35"
+   },
+   "card": "Przejrzysta karta kredytowa PKO Visa"
+  },
+  {
+   "bank": "PKO Bank Polski",
+   "rate": {
+    "percent": "14.50",
+    "per": "year"
+   },
+   "minimum": {
+    "percent": "4",
+    "floor": "50"
+   },
+   "penalty": {
+    "percent": "18.50",
+    "per": "year"
+   },
+   "fees": [
+    {
+     "fee": "80",
+     "per": "year",
+     "waived": [
+      {
+       "spend": "7200"
+      }
+     ]
+    }
+   ],
+   "cash": {
+    "fee": {
+     "percent": "4",
+     "min": "15"
+    }
+   },
+   "fx": "4",
+   "grace": 55,
+   "overLimit": {
+    "fixed": "35"
+   },
+   "card": "Przejrzysta karta kredytowa PKO Mastercard"
+  },
+  {
+   "bank": "PKO Bank Polski",
+   "rate": {
+    "percent": "14.50",
+    "per": "year"
+   },
+   "minimum": {
+    "percent": "4",
+    "floor": "50"
+   },
+   "penalty": {
+    "percent": "18.50",
+    "per": "year"
+   },
+   "card": "PKO Mastercard Platinum",
+   "fees": [
+    {
+     "fee": "300",
+     "per": "year",
+     "waived": [
+      {
+       "spend": "60000"
+      }
+     ]
+    }
+   ],
+   "cash": {
+    "fee": {
+     "percent": "3"
+    }
+   },
+   "fx": "0"
+  },
+  {
+   "bank": "PKO Bank Polski",
+   "rate": {
+    "percent": "14.50",
+    "per": "year"
+   },
+   "minimum": {
+    "percent": "4",
+    "floor": "50"
+   },
+   "penalty": {
+    "percent": "18.50",
+    "per": "year"
+   },
+   "card": "PKO VISA Infinite",
+   "fees": [
+    {
+     "fee": "1000",
+     "per": "year",
+     "waived": [
+      {
+       "spend": "132000"
+      }
+     ]
+    }
+   ],
+   "cash": {
+    "fee": {
+     "percent": "3"
+    }
+   },
+   "fx": "0"
+  },
+  {
+   "bank": "Erste Bank Polska",
+   "rate": {
+    "percent": "14.50",
+    "per": "year"
+   },
+   "cash": {
+    "fee": {
+     "percent": "4",
+     "min": "10"
+    }
+   },
+   "card": "Visa Bonus",
+   "fees": [
+    {
+     "fee": "9",
+     "per": "month",
+     "waived": [
+      {
+       "spend": "300"
+      }
+     ]
+    }
+   ],
+   "fx": "2.8",
+   "minimum": {
+    "percent": "3",
+    "floor": "50"
+   },
+   "grace": 54
+  },
+  {
+   "bank": "Erste Bank Polska",
+   "rate": {
+    "percent": "14.50",
+    "per": "year"
+   },
+   "cash": {
+    "fee": {
+     "percent": "4",
+     "min": "10"
+    }
+   },
+   "card": "Visa Silver „Akcja Pajacyk”",
+   "fees": [
+    {
+     "fee": "7.50",
+     "per": "month"
+    }
+   ],
+   "fx": "2.8",
+   "grace": 54
+  },
+  {
+   "bank": "Erste Bank Polska",
+   "rate": {
+    "percent": "14.50",
+    "per": "year"
+   },
+   "cash": {
+    "fee": {
+     "percent": "4",
+     "min": "10"
+    }
+   },
+   "card": "World MasterCard",
+   "fees": [
+    {
+     "fee": "17.50",
+     "per": "month"
+    }
+   ],
+   "fx": "0",
+   "grace": 54
+  },
+  {
+   "bank": "Erste Bank Polska",
+   "rate": {
+    "percent": "14.50",
+    "per": "year"
+   },
+   "cash": {
+    "fee": {
+     "percent": "4",
+     "min": "10"
+    }
+   },
+   "card": "Visa Platinum",
+   "fees": [
+    {
+     "fee": "42",
+     "per": "month"
+    }
+   ],
+   "fx": "2"
   }
  ],
- "note": "PKO Bank Polski's Przejrzysta (transparent) credit card: a variable 14.50% a year, the NBP reference rate plus 12 points, held at the legal maximum since 5 March 2026 (the bank's rate table in force from 7 September 2026). Its yearly fee is 80 zlotys, 40 on 6,000 zlotys of spending in the year and none on 7,200; the middle step isn't written, so the fee is charged in full below 7,200. The optional credit insurance is not written.",
+ "note": "The main banks were taken as the three largest Polish banks by total assets, a choice from general knowledge (no central bank or association ranking was read in this pass): PKO Bank Polski, Bank Pekao and Erste Bank Polska (Santander Bank Polska until 2026). PKO Bank Polski: its tariff for individuals, part IV, credit cards on offer (in force from 3 December 2024, the version its card page links today), its rate table (in force from 7 September 2026), its notice of the rate cut from 5 March 2026, and its Przejrzysta card page, read 2026-10-30. All four cards bear a variable 14.50% a year, the NBP reference rate plus 12 points, held at the legal maximum since 5 March 2026; the overdue rate for contracts from 9 January 2016, 18.50%, is written as the penalty rate. The Przejrzysta card is sold as a Visa and as a Mastercard on the same terms, written as two cards. Each card's yearly fee is charged in full below the spending that waives it entirely (7,200, 60,000 and 132,000 zlotys a year); the half fee on lesser spending (40, 150 and 500 zlotys on 6,000, 30,000 and 98,400) isn't written, so the fee is charged in full there. The cash withdrawal fee is 4% (at least 15 zlotys) on the Przejrzysta card, and 3% in Poland on the Platinum and Infinite cards (0% abroad, not written). The currency conversion fee is 4% on the Przejrzysta card and none on the other two. The over-limit fee of 35 zlotys on the Przejrzysta card applies when the limit is exceeded by more than 5%; that threshold isn't modelled, so the fee is charged on any excess. The minimum payment, 4% of the debt and at least 50 zlotys, is the bank's statement for all its credit cards on the card page; the interest-free period of up to 55 days is stated for the Przejrzysta card only. The insurance, express delivery, casino, transfer and certificate charges aren't written. Erste Bank Polska: its tariff for individuals (in force from 25 April 2026), credit cards, table 1, and its card pages, read 2026-10-30. Its four cards on open sale bear a variable 14.50% a year, the legal maximum, as each card page states (at 5 March 2026). The Visa Bonus costs 9 zlotys a month, none after a statement cycle with 300 zlotys of card spending; the Visa Silver 'Akcja Pajacyk', World MasterCard and Visa Platinum cost 7.50, 17.50 and 42 zlotys a month, none after a cycle with ten card transactions, a count the game doesn't check, so their fees are charged in full. Cash withdrawals cost 4%, at least 10 zlotys; foreign-currency spending 2.8% on the Visa Bonus and Visa Silver, none on the World MasterCard and 2% on the Visa Platinum. The minimum payment of 3% of the debt, at least 50 zlotys, is stated on the Visa Bonus page only, and the up to 54 days without interest on the Visa Bonus, Visa Silver and World MasterCard pages; neither is written where its page doesn't state it. The Mastercard World Elite (1,500 zlotys a year, none on 90,000 of spending) is issued only on the bank's invitation and isn't written. The tariff states no late fee or penalty rate for these cards. Bank Pekao's credit card pages and tariff weren't reached: its site's card section didn't come up to a plain fetch, and a search found no current tariff, so its cards aren't written.",
  "sources": [
   {
-   "url": "https://www.pkobp.pl/klient-indywidualny/karty-platnosci/karta-kredytowa-przejrzysta",
-   "title": "PKO Bank Polski, Przejrzysta karta kredytowa",
-   "read": "2026-10-29",
-   "said": "Opłata roczna, gdy w roku zrobisz transakcje na kwotę mniejszą niż 6 000 zł 80 zł Opłata roczna, gdy w roku zrobisz transakcje na kwotę min. 6 000 zł 40 zł Opłata roczna, gdy w roku zrobisz transakcje na kwotę min. 7 200 zł 0 zł"
+   "url": "https://www.pkobp.pl/api/public/9f1a14a3-1d4a-4ba2-b1ec-cf787df3cb9e.pdf",
+   "title": "PKO Bank Polski, Taryfa prowizji i opłat bankowych dla osób fizycznych, część IV, karty kredytowe w ofercie (in force from 3 December 2024)",
+   "read": "2026-10-30",
+   "said": "Obowiązuje od dnia 3 grudnia 2024 r. ... Dział I. Karty kredytowe w ofercie ... 80 zł – gdy w roku dokonano ... 300 zł - gdy w roku dokonano ... 1 000 zł – gdy w roku dokonano ... 0 zł – gdy w roku dokonano ... transakcji na kwotę min. 7 200 zł ... transakcji na kwotę min. 60 000 zł ... 132 000 zł ... 4% nie mniej niż 15 zł 3% 3% ... 4% nie mniej niż 15 zł 0% 0% ... 4% 0% 0% ... 35 zł 0 zł 0 zł"
   },
   {
    "url": "https://www.pkobp.pl/api/public/7441531c-62da-4f33-9018-4817a6efa93b.pdf",
    "title": "PKO Bank Polski, Oprocentowanie rachunków i kredytów w PLN (in force from 7 September 2026)",
-   "read": "2026-10-29",
-   "said": "Wersja obowiązująca od 7 września 2026 r. ... Przejrzysta karta kredytowa PKO Visa, ... Od 5 marca 2026 r. wysokość stopy referencyjnej NBP wynosi 3,75%, a wysokość odsetek maksymalnych:14,50%."
+   "read": "2026-10-30",
+   "said": "Wersja obowiązująca od 7 września 2026 r. ... Przejrzysta karta kredytowa PKO Visa, ... PKO Mastercard Platinum, ... PKO Visa Infinite ... Od 5 marca 2026 r. wysokość stopy referencyjnej NBP wynosi 3,75%, a wysokość odsetek maksymalnych:14,50%."
+  },
+  {
+   "url": "https://www.pkobp.pl/media_files/9e9ecfcb-3c4a-452e-94d6-0dc804dc2311.pdf",
+   "title": "PKO Bank Polski, notice of the interest rate change from 5 March 2026",
+   "read": "2026-10-30",
+   "said": "kart kredytowych dla klientów indywidualnych: ... b. z 19,00% na 18,50% – zadłużenia przeterminowanego dla umów zawartych od 9 stycznia 2016 r."
+  },
+  {
+   "url": "https://www.pkobp.pl/klient-indywidualny/karty-platnosci/karta-kredytowa-przejrzysta",
+   "title": "PKO Bank Polski, Przejrzysta karta kredytowa",
+   "read": "2026-10-30",
+   "said": "Pamiętaj, że minimalna kwota do zapłaty wynosi 4% zadłużenia, jednak nie mniej niż 50 zł. ... Okres, w którym nie płacisz odsetek za lipcowe zakupy Przejrzystą kartą kredytową to maks. 55 dni"
+  },
+  {
+   "url": "https://www.erste.pl/regulation_file_server/time20260415122006/download?id=167685&lang=pl_PL",
+   "title": "Erste Bank Polska, Taryfa opłat i prowizji dla klientów indywidualnych (in force from 25 April 2026)",
+   "read": "2026-10-30",
+   "said": "Tabela opłat i prowizji – obowiązuje od 25.04.2026 r. ... 0 zł albo 9 zł; 0 zł albo 7,50 zł; 0 zł albo 17,50 zł; 0 zł albo 42 zł; ... transakcji kartą na łączną kwotę co najmniej 300 zł ... minimum 10 ... 2,8% 2,8% 0% 2% 0% ... 7. Kartę Mastercard World Elite udostępniamy tylko na nasze zaproszenie."
+  },
+  {
+   "url": "https://www.erste.pl/klient-indywidualny/karty-platnosci-i-kantor/karta-kredytowa-visa-bonus",
+   "title": "Erste Bank Polska, Karta kredytowa Visa Bonus",
+   "read": "2026-10-30",
+   "said": "Opłata za wypłatę gotówki w kraju i za granicą 4% min. 10 zł ... Karta kredytowa Visa Bonus 14,50% 17,96% Wysokość oprocentowania na dzień 5.03.2026 r. ... minimalną kwotę 3% zadłużenia (min. 50 zł.) ... bez odsetek masz do 54 dni"
+  },
+  {
+   "url": "https://www.erste.pl/klient-indywidualny/karty-platnosci-i-kantor/karta-kredytowa-visa-silver-akcja-pajacyk",
+   "title": "Erste Bank Polska, Karta kredytowa Visa Silver „Akcja Pajacyk”",
+   "read": "2026-10-30",
+   "said": "Karta kredytowa Visa Silver \"Akcja Pajacyk\" 14,50% 19,78% ... bez odsetek nawet do 54 dni"
+  },
+  {
+   "url": "https://www.erste.pl/klient-indywidualny/karty-platnosci-i-kantor/karta-kredytowa-world-mastercard",
+   "title": "Erste Bank Polska, Karta kredytowa World Mastercard",
+   "read": "2026-10-30",
+   "said": "Karta kredytowa World Mastercard 14,50% 17,91% ... Skorzystasz bez odsetek nawet do 54 dni"
+  },
+  {
+   "url": "https://www.erste.pl/erste-platinum/finansowanie-potrzeb/karta-kredytowa-visa-platinum",
+   "title": "Erste Bank Polska, Karta kredytowa Visa Platinum",
+   "read": "2026-10-30",
+   "said": "Karta kredytowa Visa Platinum 14,50% 20,75% Wysokość oprocentowania na dzień 5.03.2026 r."
   }
  ]
 }
