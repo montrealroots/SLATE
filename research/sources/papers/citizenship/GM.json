@@ -3,7 +3,7 @@
  "years": 15,
  "renounce": true,
  "lapses": false,
- "note": "GLOBALCIT's Citizenship Law Dataset v3.0 (EUI, 2025), coding the law in force on 1 January 2024 (A06a Const 12, GAM 6-7; A06b Const 12, GAM 6-7; L05 Const 13(1)(a), GAM 10): ordinary naturalisation after 15 years' residence; the applicant must give up other citizenships; a citizen keeps it on taking another (loss applies only to naturalised citizens, not modelled). Reforms after that date are checked in the file's later sources, where a later source is given.",
+ "note": "GLOBALCIT's Citizenship Law Dataset v3.0 (EUI, 2025), coding the law in force on 1 January 2024 (A06a Const 12, GAM 6-7; A06b Const 12, GAM 6-7; L05 Const 13(1)(a), GAM 10): ordinary naturalisation after 15 years' residence; the applicant must give up other citizenships; a citizen keeps it on taking another (loss applies only to naturalised citizens, not modelled). Reforms after that date are checked in the file's later sources, where a later source is given. Citizenship at birth is read from the same dataset's 2024 coding of modes A01a (descent, born in country: Generally applicable provision), A01b (descent, born abroad: Generational transmission restriction: conditional on birthplace/place of residence /mode under which parent acquired citizenship), A02a (birth in country: No provision) and A02b (birth in country to a parent born there: No provision), as its codebook (RSC/GLOBALCIT 2025/01, sections 3.2.1a to 3.2.2b) defines them: not by birth in the territory alone (provisions for foundlings and children otherwise stateless, modes A03a and A03b, aren't held by the form); by descent from either parent, a child born abroad on the limit the dataset states. Changes to the law at birth after 1 January 2024 weren't checked for this file.",
  "sources": [
   {
    "url": "https://cadmus.eui.eu/bitstreams/3b166501-e695-48d7-9e27-d7bef061573a/download",
@@ -11,7 +11,12 @@
    "read": "2026-10-29",
    "kind": "secondary",
    "quotes": "https://globalcit.eu/national-citizenship-laws/",
-   "said": "Person has been ordinarily resident in The Gambia for a continuous period of not less than 15 years. Intention to permanently reside required. ... Renunciation of citizenship of another country required. ... Person is a citizen other than by birth or descent and acquired citizenship of another country by voluntary act other than marriage, or exercised rights accorded to citizens in that country, and it is not conducive to the public good that s/he should remain a citizen."
+   "said": "Person has been ordinarily resident in The Gambia for a continuous period of not less than 15 years. Intention to permanently reside required. ... Renunciation of citizenship of another country required. ... Person is a citizen other than by birth or descent and acquired citizenship of another country by voluntary act other than marriage, or exercised rights accorded to citizens in that country, and it is not conducive to the public good that s/he should remain a citizen. ... Generally applicable provision ... Person is born in The Gambia to a citizen. ... Generational transmission restriction: conditional on birthplace/place of residence /mode under which parent acquired citizenship ... Person is born outside The Gambia to a citizen other than by descent (i.e. parent was born in The Gambia or is a citizen by naturalisation). ... No provision ... No provision"
   }
- ]
+ ],
+ "atBirth": {
+  "soil": "none",
+  "descent": "either parent",
+  "descentAbroad": "Person is born outside The Gambia to a citizen other than by descent (i.e. parent was born in The Gambia or is a citizen by naturalisation)."
+ }
 }

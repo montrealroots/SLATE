@@ -3,7 +3,7 @@
  "years": 5,
  "renounce": false,
  "lapses": false,
- "note": "GLOBALCIT's Citizenship Law Dataset v3.0 (EUI, 2025), coding the law in force on 1 January 2024 (A06a INA 312, 313, 316, 334(b); A06b INA 312, 313, 316, 334(b); L05 No provision): ordinary naturalisation after 5 years' residence; no renunciation of other citizenships required; a citizen keeps it on taking another. Reforms after that date are checked in the file's later sources, where a later source is given.",
+ "note": "GLOBALCIT's Citizenship Law Dataset v3.0 (EUI, 2025), coding the law in force on 1 January 2024 (A06a INA 312, 313, 316, 334(b); A06b INA 312, 313, 316, 334(b); L05 No provision): ordinary naturalisation after 5 years' residence; no renunciation of other citizenships required; a citizen keeps it on taking another. Reforms after that date are checked in the file's later sources, where a later source is given. Citizenship at birth is read from the same dataset's 2024 coding of modes A01a (descent, born in country: No provision), A01b (descent, born abroad: Generational transmission restriction: conditional on birthplace/place of residence /mode under which parent acquired citizenship), A02a (birth in country: Generally applicable provision) and A02b (birth in country to a parent born there: No provision), as its codebook (RSC/GLOBALCIT 2025/01, sections 3.2.1a to 3.2.2b) defines them: by birth in the territory unconditionally; by descent from either parent, a child born abroad on the limit the dataset states (the dataset codes no separate descent rule for a child born in the country, birth there giving it; the parent's sex is read from mode A01b). Changes to the law at birth after 1 January 2024 were checked as follows. Naturalisation (Form N-400) costs $760 on paper, $50 less filed online, and $380 for a household at or below 400 per cent of the Federal Poverty Guidelines (8 CFR 106.2(b)(3) and 106.1(g), eCFR as of 27 October 2026; DHS's proposed rule of 23 June 2026 to raise it to $1,330 hadn't been made final by then, the Federal Register's listing for 8 CFR 106 showing it only as proposed); the paper fee is held. The applicant must show an understanding of English and of the fundamentals of United States history and government (8 CFR 312.1, 312.2). USCIS publishes no longest time (its processing-time pages refused this research's requests, as did uscis.gov itself), so none is held. Executive Order 14160 (20 January 2025), which would have denied citizenship at birth to children of parents unlawfully or temporarily present, was held contrary to the Fourteenth Amendment by the Supreme Court in Trump v. Barbara (No. 25-365, decided 30 June 2026), so birth in the United States stays unconditional.",
  "sources": [
   {
    "url": "https://cadmus.eui.eu/bitstreams/3b166501-e695-48d7-9e27-d7bef061573a/download",
@@ -11,7 +11,42 @@
    "read": "2026-10-29",
    "kind": "secondary",
    "quotes": "https://globalcit.eu/national-citizenship-laws/",
-   "said": "Person has been resident in the United States for a continuous period of 5 years. ... n.a. ... n.a."
+   "said": "Person has been resident in the United States for a continuous period of 5 years. ... n.a. ... n.a. ... No provision ... Generational transmission restriction: conditional on birthplace/place of residence /mode under which parent acquired citizenship ... Person is born abroad to two citizens one of whom had residence in the United States or its outlying possessions prior to the person's birth.; Person is born abroad to a citizen who has been physically present in the United States or its outlying possessions for a continuous period of 1 year prior to the person's birth, and the other parent is a national, but not a citizen.; Person is born abroad to an alien and a citizen and the latter was, prior to the person's birth, physically present in the United States or its outlying possessions for a total period of at least 5 years, at least 2 of which were after attaining the age of 14. (Residence abroad in a certain capacity may be counted to satisfy the physical-presence requirement.).; Person is the minor child of a citizen who has parental authority and the child legally and permanently resides in the United States.; Person is the minor child of a citizen AND (1) the parent has been physically present in the United States or its outlying possessions for a total period of at least 5 years, at least 2 of which were after attaining the age of 14, OR (2) that parent him/herself had a parent who has been physically present in the United States or its outlying possessions for a total period of at least 5 years, at least 2 of which were after attaining the age of 14, AND the child is resident abroad but is temporarily and lawfully present in the United States. ... Generally applicable provision ... Person is born in the United States, Puerto Rico, the US Virgin Islands or Guam.; Person is born in an outlying possession of the United States to a parent who is a citizen and who has been physically present in the United States or one of its outlying possessions for a continuous period of 1 year at any time prior to the person's birth.; Person born in 'outlying possessions' (defined to include American Samoa only) are nationals but not citizens at birth. ... No provision"
+  },
+  {
+   "url": "https://www.ecfr.gov/api/versioner/v1/full/2026-10-27/title-8.xml?part=106&section=106.2",
+   "title": "eCFR, 8 CFR 106.2 USCIS fees (as of 27 October 2026)",
+   "read": "2026-10-30",
+   "said": "Application for Naturalization, Form N-400. To apply for U.S. citizenship. $760. ... The fee for an applicant whose documented household income is less than or equal to 400 percent of the Federal Poverty Guidelines: $380."
+  },
+  {
+   "url": "https://www.ecfr.gov/api/versioner/v1/full/2026-10-27/title-8.xml?part=106&section=106.1",
+   "title": "eCFR, 8 CFR 106.1 Fee requirements (as of 27 October 2026), paragraph (g)",
+   "read": "2026-10-30",
+   "said": "Online filing discount. Unless otherwise provided in this part, the fee for forms filed online with USCIS, using the electronic system prescribed by USCIS, will be an amount that is $50 lower than the fee prescribed in § 106.2."
+  },
+  {
+   "url": "https://www.ecfr.gov/api/versioner/v1/full/2026-10-27/title-8.xml?part=312",
+   "title": "eCFR, 8 CFR Part 312 Educational requirements for naturalization (as of 27 October 2026), sections 312.1 and 312.2",
+   "read": "2026-10-30",
+   "said": "no person shall be naturalized as a citizen of the United States upon his or her own application unless that person can demonstrate an understanding of the English language, including an ability to read, write, and speak words in ordinary usage in the English language. ... No person shall be naturalized as a citizen of the United States upon his or her own application unless that person can demonstrate a knowledge and understanding of the fundamentals of the history, and of the principles and form of government, of the United States."
+  },
+  {
+   "url": "https://www.supremecourt.gov/opinions/25pdf/25-365_4hdj.pdf",
+   "title": "Supreme Court of the United States, Trump v. Barbara, No. 25-365 (decided 30 June 2026), syllabus",
+   "read": "2026-10-30",
+   "said": "Held: Children born in the United States to parents unlawfully or temporarily present are “subject to the jurisdiction” of the United States and are citizens at birth under the Fourteenth Amendment’s Citizenship Clause."
   }
+ ],
+ "atBirth": {
+  "soil": "unconditional",
+  "descent": "either parent",
+  "descentAbroad": "Person is born abroad to two citizens one of whom had residence in the United States or its outlying possessions prior to the person's birth.; Person is born abroad to a citizen who has been physically present in the United States or its outlying possessions for a continuous period of 1 year prior to the person's birth, and the other parent is a national, but not a citizen.; Person is born abroad to an alien and a citizen and the latter was, prior to the person's birth, physically present in the United States or its outlying possessions for a total period of at least 5 years, at least 2 of which were after attaining the age of 14. (Residence abroad in a certain capacity may be counted to satisfy the physical-presence requirement.).; Person is the minor child of a citizen who has parental authority and the child legally and permanently resides in the United States.; Person is the minor child of a citizen AND (1) the parent has been physically present in the United States or its outlying possessions for a total period of at least 5 years, at least 2 of which were after attaining the age of 14, OR (2) that parent him/herself had a parent who has been physically present in the United States or its outlying possessions for a total period of at least 5 years, at least 2 of which were after attaining the age of 14, AND the child is resident abroad but is temporarily and lawfully present in the United States."
+ },
+ "currency": "USD",
+ "fee": "760",
+ "test": [
+  "language",
+  "civics"
  ]
 }

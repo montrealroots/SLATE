@@ -3,7 +3,7 @@
  "years": 5,
  "renounce": false,
  "lapses": false,
- "note": "GLOBALCIT's Citizenship Law Dataset v3.0 (EUI, 2025), coding the law in force on 1 January 2024 (A06a NZL 8; A06b NZL 8; L05 No provision): ordinary naturalisation after 5 years' residence; no renunciation of other citizenships required; a citizen keeps it on taking another. Reforms after that date are checked in the file's later sources, where a later source is given.",
+ "note": "GLOBALCIT's Citizenship Law Dataset v3.0 (EUI, 2025), coding the law in force on 1 January 2024 (A06a NZL 8; A06b NZL 8; L05 No provision): ordinary naturalisation after 5 years' residence; no renunciation of other citizenships required; a citizen keeps it on taking another. Reforms after that date are checked in the file's later sources, where a later source is given. Citizenship at birth is read from the same dataset's 2024 coding of modes A01a (descent, born in country: Generally applicable provision), A01b (descent, born abroad: Generational transmission restriction: conditional on birthplace/place of residence /mode under which parent acquired citizenship), A02a (birth in country: Parental residence restriction) and A02b (birth in country to a parent born there: No provision), as its codebook (RSC/GLOBALCIT 2025/01, sections 3.2.1a to 3.2.2b) defines them: by birth in the territory only on the condition the dataset states; by descent from either parent, a child born abroad on the limit the dataset states. Changes to the law at birth after 1 January 2024 weren't checked for this file. Citizenship by grant costs an adult NZ$641; the applicant must be able to hold a basic conversation in English and understand the responsibilities and privileges of citizenship, which a test will check from late 2027 (govt.nz, read 30 October 2026: 'the test is a change to how applicants show they meet the requirement, not to the requirement itself'). No longest time is published, so none is held.",
  "sources": [
   {
    "url": "https://cadmus.eui.eu/bitstreams/3b166501-e695-48d7-9e27-d7bef061573a/download",
@@ -11,7 +11,37 @@
    "read": "2026-10-29",
    "kind": "secondary",
    "quotes": "https://globalcit.eu/national-citizenship-laws/",
-   "said": "Person must be present in New Zealand (or in the Cook Islands, Niue or Tokelau) for a minimum of 1350 days during the 5 years immediately preceding the date of application and for at least 240 days in each of those 5 years and person intends to continue to reside in NZ or to enter into Crown service under the NZ government or service under an international organisation of which NZ is a member, or service in the employment of an entity resident or established in NZ. ... n.a. ... n.a."
+   "said": "Person must be present in New Zealand (or in the Cook Islands, Niue or Tokelau) for a minimum of 1350 days during the 5 years immediately preceding the date of application and for at least 240 days in each of those 5 years and person intends to continue to reside in NZ or to enter into Crown service under the NZ government or service under an international organisation of which NZ is a member, or service in the employment of an entity resident or established in NZ. ... n.a. ... n.a. ... Generally applicable provision ... Person is born in NZ after 1 January 2006 and at least one of his/her parents was a citizen. ... Generational transmission restriction: conditional on birthplace/place of residence /mode under which parent acquired citizenship ... Person is born outside NZ on/after 1 January 1978 to a parent who is citizen otherwise than by descent, or the parent is a citizen by descent and the person would otherwise be stateless.; Person is born abroad, may be a citizen by descent, is 16 years or over and satisfies the requirements in NZL 8(1) and NZL 8(2).; Person is born abroad to a citizen by descent. Citizenship may be granted by the Minister in special cases.; Person was born abroad before 1 January 1978 to a mother was a citizen otherwise than by descent; Person is born abroad to a citizen who is the head of a mission, an employee of the State services or Armed Forces, a person working overseas for the public service of Niue, Tokelau or the Cook Islands, an officer or employee of NZ Trade and Enterprise, or an officer/employee of the NZ Tourism Board.; Person would have been born in Tokelau but was born in Samoa because of a medical necessity and at the time of his/her birth s/he would have been a citizen if born in Tokelau.; Person was born abroad on/after 1 January 1949 but before 1 January 1978 to a father who was a citizen or, if the person was born after 1970, to a mother who was a citizen. ... Parental residence restriction ... Person is born in NZ after 1 January 2006 and at least one of his/her parents was entitled under the Immigration Act 2009 to be in NZ indefinitely, or one of his/her parents was entitled to reside indefinitely in the Cook Islands, Niue or Tokelau. Acquisition is automatic if person was born in NZ after 1 January 1949 and before 1 January 2006. ... No provision"
+  },
+  {
+   "url": "https://www.govt.nz/browse/passports-citizenship-and-identity/nz-citizenship/citizenship-fees/",
+   "title": "govt.nz, Citizenship fees",
+   "read": "2026-10-30",
+   "said": "Citizenship by grant — Adult (aged 16 years and over) NZD$641"
+  },
+  {
+   "url": "https://www.govt.nz/browse/passports-citizenship-and-identity/nz-citizenship/requirements-for-nz-citizenship/",
+   "title": "govt.nz, Requirements for NZ citizenship",
+   "read": "2026-10-30",
+   "said": "You need to be able to hold a basic conversation in English to get New Zealand citizenship."
+  },
+  {
+   "url": "https://www.govt.nz/browse/passports-citizenship-and-identity/nz-citizenship/citizenship-test/",
+   "title": "govt.nz, Citizenship test",
+   "read": "2026-10-30",
+   "said": "From late 2027, most people who apply for New Zealand citizenship by grant will have to pass a test to become a citizen. ... The citizenship test will check applicants understand the responsibilities and privileges that come with New Zealand citizenship. ... The test is a change to how applicants show they meet the requirement, not to the requirement itself."
   }
+ ],
+ "atBirth": {
+  "soil": "conditional",
+  "soilIf": "Person is born in NZ after 1 January 2006 and at least one of his/her parents was entitled under the Immigration Act 2009 to be in NZ indefinitely, or one of his/her parents was entitled to reside indefinitely in the Cook Islands, Niue or Tokelau. Acquisition is automatic if person was born in NZ after 1 January 1949 and before 1 January 2006.",
+  "descent": "either parent",
+  "descentAbroad": "Person is born outside NZ on/after 1 January 1978 to a parent who is citizen otherwise than by descent, or the parent is a citizen by descent and the person would otherwise be stateless.; Person is born abroad, may be a citizen by descent, is 16 years or over and satisfies the requirements in NZL 8(1) and NZL 8(2).; Person is born abroad to a citizen by descent. Citizenship may be granted by the Minister in special cases.; Person was born abroad before 1 January 1978 to a mother was a citizen otherwise than by descent; Person is born abroad to a citizen who is the head of a mission, an employee of the State services or Armed Forces, a person working overseas for the public service of Niue, Tokelau or the Cook Islands, an officer or employee of NZ Trade and Enterprise, or an officer/employee of the NZ Tourism Board.; Person would have been born in Tokelau but was born in Samoa because of a medical necessity and at the time of his/her birth s/he would have been a citizen if born in Tokelau.; Person was born abroad on/after 1 January 1949 but before 1 January 1978 to a father who was a citizen or, if the person was born after 1970, to a mother who was a citizen."
+ },
+ "currency": "NZD",
+ "fee": "641",
+ "test": [
+  "language",
+  "civics"
  ]
 }

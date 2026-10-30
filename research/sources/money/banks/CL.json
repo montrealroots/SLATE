@@ -4,16 +4,38 @@
   {
    "bank": "BancoEstado",
    "account": "CuentaRUT",
-   "fees": []
+   "fees": [],
+   "debit": {
+    "fx": "1.9"
+   },
+   "atm": {
+    "own": "0",
+    "other": "300",
+    "abroad": {
+     "percent": "1.9"
+    }
+   },
+   "transfers": {
+    "domestic": "0"
+   },
+   "opening": {
+    "from": 12
+   }
   }
  ],
- "note": "ChileAtiende, the government's services portal (updated 16 April 2026): BancoEstado's CuentaRUT, a demand account with a debit card, costs nothing to open or to keep. Per-use charges (another bank's ATMs, a replacement card) aren't modelled.",
+ "note": "ChileAtiende, the government's services portal (updated 16 April 2026): BancoEstado's CuentaRUT, a demand account with a debit card, costs nothing to open or to keep. Per-use charges (another bank's ATMs, a replacement card) aren't modelled. Read again 2026-10-30 (the government's ficha on the account): transfers to BancoEstado and, from 15 April 2026, to other banks are free; withdrawals at BancoEstado machines free, at another bank's 300 pesos; international transactions (withdrawals and purchases) 1.9% of the amount, at least US$0.50 (a dollar floor the form doesn't hold); open from 12 (under 18 with a parent or guardian). Not stated: overdraft, a returned payment, interest, a transfer abroad's price, the papers asked.",
  "sources": [
   {
    "url": "https://chileatiende.gob.cl/fichas/70638/1/pdf",
    "title": "ChileAtiende, CuentaRUT de BancoEstado (última actualización 16 abril 2026)",
-   "read": "2026-10-29",
+   "read": "2026-10-30",
    "said": "La CuentaRUT es una cuenta vista que incluye una tarjeta de débito y no tiene costo de apertura ni mantención."
+  },
+  {
+   "url": "https://chileatiende.gob.cl/fichas/70638/1/pdf",
+   "title": "ChileAtiende, CuentaRUT de BancoEstado (ficha): transacciones y requisitos",
+   "read": "2026-10-30",
+   "said": "Desde el 15 de abril de 2026, transferir desde tu CuentaRUT a otros bancos es gratis. ... La CuentaRUT te permite realizar las siguientes transacciones sin costo: ... Giros en sucursales BancoEstado, CajaVecina, oficinas BancoEstado Express y cajeros automáticos ... Giros en cajeros automáticos de otros bancos: $300. ... 1,9 % del monto, con un mínimo de US$ 0,5. ... Tener 12 años o más, sin distinción de género o sexo."
   }
  ]
 }

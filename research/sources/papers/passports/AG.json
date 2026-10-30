@@ -3,20 +3,58 @@
  "office": "the Antigua & Barbuda Passport Office; abroad, a High Commission (here London)",
  "currency": "GBP",
  "routes": [
-  {"id": "home", "where": "home", "speed": "standard", "within": null, "label": "at the Passport Office in Antigua"},
-  {"id": "abroad", "where": "abroad", "speed": "standard", "within": null, "label": "through the High Commission in London"}
+  {
+   "id": "home",
+   "where": "home",
+   "speed": "standard",
+   "within": null,
+   "label": "at the Passport Office in Antigua"
+  },
+  {
+   "id": "abroad",
+   "where": "abroad",
+   "speed": "standard",
+   "within": null,
+   "label": "through the High Commission in London"
+  },
+  {
+   "id": "abroad-lost",
+   "where": "abroad",
+   "speed": "standard",
+   "within": null,
+   "replacement": true,
+   "label": "a lost, damaged or stolen passport replaced through the High Commission"
+  }
  ],
  "passports": [
-  {"for": "16 and over", "from": 16, "validYears": null, "pay": {"home": null, "abroad": "50"}},
-  {"for": "under 16", "under": 16, "validYears": null, "pay": {"home": null, "abroad": "25"}}
+  {
+   "for": "16 and over",
+   "from": 16,
+   "validYears": null,
+   "pay": {
+    "home": null,
+    "abroad": "50",
+    "abroad-lost": "100"
+   }
+  },
+  {
+   "for": "under 16",
+   "under": 16,
+   "validYears": null,
+   "pay": {
+    "home": null,
+    "abroad": "25",
+    "abroad-lost": "50"
+   }
+  }
  ],
- "note": "The High Commission in London's fees from 1 April 2025: 50 pounds for a new or renewed passport at 16 and over and 25 under 16 (double for one lost, damaged or stolen); couriering it to Antigua and back costs 130 more, which isn't added. The Passport Office's own site gives no fee, so the fee at home, validity and time aren't read.",
+ "note": "The High Commission in London's fees from 1 April 2025: 50 pounds for a new or renewed passport at 16 and over and 25 under 16 (double for one lost, damaged or stolen, 100 and 50 pounds, written as a replacement route); couriering it to Antigua and back costs 130 more, which isn't added. The Passport Office's own site gives no fee, so the fee at home, validity and time aren't read.",
  "sources": [
   {
    "url": "https://antigua-barbuda.com/ova_sev/fees/",
    "title": "High Commission for Antigua and Barbuda in the United Kingdom, Fees (effective 1 April 2025)",
    "read": "2026-10-28",
-   "said": "Effective 1st April 2025, please note the updated consular fees and payment information as follows: Passport Application Fees: New or renewal for persons 16 years and over: £50 New or renewal for persons under 16 years: £25 Lost/Damaged/Stolen passports for persons 16 years and over: £100 Lost/Damaged/Stolen passports for persons under 16 years: £50 Courier Fees: Passport courier service to Antigua (i.e. collection in Antigua): £60 Passport courier service to Antigua and return to the UK and Europe: £130"
+   "said": "Effective 1st April 2025, please note the updated consular fees and payment information as follows: Passport Application Fees: New or renewal for persons 16 years and over: £50 New or renewal for persons under 16 years: £25 Lost/Damaged/Stolen passports for persons 16 years and over: £100 Lost/Damaged/Stolen passports for persons under 16 years: £50 Courier Fees: Passport courier service to Antigua (i.e. collection in Antigua): £60 Passport courier service to Antigua and return to the UK and Europe: £130 ... Lost/Damaged/Stolen passports for persons 16 years and over: £100 Lost/Damaged/Stolen passports for persons under 16 years: £50"
   }
  ]
 }

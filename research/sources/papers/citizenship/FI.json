@@ -3,7 +3,7 @@
  "years": 8,
  "renounce": false,
  "lapses": false,
- "note": "GLOBALCIT's Citizenship Law Dataset v3.0 (EUI, 2025), coding the law in force on 1 January 2024 (A06a FIN 13, 14, 15, 18, 18(a), 18(b), 19, 19(a), 20, 21, 22, 23, 24, 6; A06b FIN 13, 14, 15, 18, 18(a), 18(b), 19, 19(a), 20, 21, 22, 23, 24, 6; L05 No provision): ordinary naturalisation after 5 years' residence; no renunciation of other citizenships required; a citizen keeps it on taking another. Reforms after that date are checked in the file's later sources, where a later source is given. Act 474/2024 (5 July 2024, in force 1 October 2024) raised the residence requirement: the Nationality Act's section 13 as Finlex consolidates it asks that the applicant's actual residence and home be, and have been, in Finland for the last eight years; nothing on renunciation or loss changed.",
+ "note": "GLOBALCIT's Citizenship Law Dataset v3.0 (EUI, 2025), coding the law in force on 1 January 2024 (A06a FIN 13, 14, 15, 18, 18(a), 18(b), 19, 19(a), 20, 21, 22, 23, 24, 6; A06b FIN 13, 14, 15, 18, 18(a), 18(b), 19, 19(a), 20, 21, 22, 23, 24, 6; L05 No provision): ordinary naturalisation after 5 years' residence; no renunciation of other citizenships required; a citizen keeps it on taking another. Reforms after that date are checked in the file's later sources, where a later source is given. Act 474/2024 (5 July 2024, in force 1 October 2024) raised the residence requirement: the Nationality Act's section 13 as Finlex consolidates it asks that the applicant's actual residence and home be, and have been, in Finland for the last eight years; nothing on renunciation or loss changed. Citizenship at birth is read from the Nationality Act's 9 § (as amended 20.4.2018/260, in the same consolidation): a child takes Finnish citizenship at birth from a Finnish mother, and from a Finnish father if he is married to the mother or the child is born in Finland and his paternity is confirmed. Birth in Finland gives it only to a child who would otherwise have no citizenship, or whose parents have refugee status or other protection in Finland (9 § 4), which the form doesn't hold; it is not a citizenship by birth in the territory as such.",
  "sources": [
   {
    "url": "https://cadmus.eui.eu/bitstreams/3b166501-e695-48d7-9e27-d7bef061573a/download",
@@ -15,9 +15,14 @@
   },
   {
    "url": "https://www.finlex.fi/fi/lainsaadanto/2003/359",
-   "title": "Finlex, Kansalaisuuslaki 359/2003 (consolidated), 13 § Kansalaistamisen yleiset edellytykset",
+   "title": "Finlex, Kansalaisuuslaki 359/2003 (consolidated), 9 § Lapsi and 13 § Kansalaistamisen yleiset edellytykset",
    "read": "2026-10-29",
-   "said": "Ulkomaalaiselle myönnetään hakemuksesta Suomen kansalaisuus, jos hakemusta ratkaistaessa: 1) hän on täyttänyt 18 vuotta; (24.10.2025/929) 2) hänen varsinainen asuntonsa ja kotinsa on ja on ollut Suomessa viimeksi kuluneet kahdeksan vuotta ( asumisaikaedellytys ); (5.7.2024/474)"
+   "said": "Ulkomaalaiselle myönnetään hakemuksesta Suomen kansalaisuus, jos hakemusta ratkaistaessa: 1) hän on täyttänyt 18 vuotta; (24.10.2025/929) 2) hänen varsinainen asuntonsa ja kotinsa on ja on ollut Suomessa viimeksi kuluneet kahdeksan vuotta ( asumisaikaedellytys ); (5.7.2024/474) ... Lapsi saa syntyessään Suomen kansalaisuuden, jos: 1) äiti on Suomen kansalainen; 2) isä on Suomen kansalainen; ja a) avioliitossa lapsen äidin kanssa; tai b) lapsi syntyy Suomessa ja miehen isyys lapseen vahvistetaan; ... 4) lapsi syntyy Suomessa eikä saa syntyessään minkään vieraan valtion kansalaisuutta"
   }
- ]
+ ],
+ "atBirth": {
+  "soil": "none",
+  "descent": "either parent",
+  "descentAbroad": "A child born abroad takes it from a Finnish father at birth only if he is married to the child's mother (a child born in Finland also takes it from an unmarried Finnish father whose paternity is confirmed); from a Finnish mother wherever the child is born (9 §)."
+ }
 }

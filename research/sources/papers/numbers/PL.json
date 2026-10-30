@@ -1,0 +1,23 @@
+{
+ "country": "PL",
+ "name": "numer PESEL",
+ "issuer": "the minister responsible for internal affairs (minister właściwy do spraw wewnętrznych)",
+ "format": {
+  "length": 11,
+  "pattern": "[0-9]{11}"
+ },
+ "when": "birth",
+ "who": [
+  "citizens",
+  "residents"
+ ],
+ "note": "Read the Act on population records (ustawa z dnia 24 września 2010 r. o ewidencji ludności, Dz.U. 2010 nr 217 poz. 1427, as published; consolidated texts and amendments since not read): art. 15, every person whose data the PESEL and residents' registers hold is given a PESEL number of eleven digits: birth date in the first six (year, month with the century coded into it, day), an ordinal number in the seventh to tenth whose last digit codes sex, and an eleventh check digit for electronic checking; art. 16, the number is given of the authority's own motion by the minister for internal affairs, or on application for the persons of art. 7(2); art. 17, the registrar who draws up the birth certificate asks for it for children born in Poland, and the municipality for those registered as residents. The Act doesn't state the check digit's algorithm, so the format names no check. Readings: 'when' is birth (the usual case; registration of residence and application are other routes the form doesn't hold); 'who' is citizens and residents. No fee, time or required purposes are read.",
+ "sources": [
+  {
+   "url": "https://dziennikustaw.gov.pl/D2010217142701.pdf",
+   "title": "Ustawa z dnia 24 września 2010 r. o ewidencji ludności (Dz.U. 2010 nr 217 poz. 1427), arts. 15 to 17",
+   "read": "2026-10-30",
+   "said": "Osobie, której dane są gromadzone w rejestrze PESEL i rejestrze mieszkańców, nadaje się numer identyfikacyjny Powszechnego Elektronicznego Systemu Ewidencji Ludności, zwany dalej „numerem PESEL”. ... Numer PESEL jest to jedenastocyfrowy symbol numeryczny, jednoznacznie identyfikujący osobę fizyczną, zawierający datę urodzenia, numer porządkowy, oznaczenie płci oraz liczbę kontrolną ... jedenasta cyfra numeru PESEL jest liczbą kontrolną umożliwiającą elektroniczną kontrolę poprawności nadanego numeru identyfikacyjnego. ... Numer PESEL jest nadawany z urzędu. ... Numer PESEL nadaje minister właściwy do spraw wewnętrznych. ... kierownik urzędu stanu cywilnego sporządzający akt urodzenia"
+  }
+ ]
+}

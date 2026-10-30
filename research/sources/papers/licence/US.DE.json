@@ -1,0 +1,43 @@
+{
+ "country": "US",
+ "region": "US.DE",
+ "issuer": "the Delaware Division of Motor Vehicles (DMV)",
+ "licence": {
+  "name": "driver license (Class D)",
+  "from": 18,
+  "fee": "50.00",
+  "validYears": 8
+ },
+ "card": {
+  "name": "identification card",
+  "fee": "40.00",
+  "validYears": 8
+ },
+ "note": "The DMV's licence requirements page (read 2026-10-30) says most licences are issued for eight years and that the eight-year licence costs the amount its page fills in from the DMV's fee script, DMVFees.js (read the same day), which gives Class D (8yr) $50.00 and the photo identification card $40.00; the ID card page says the card expires eight years from the next birthday. The graduated licence page says the programme is for those 16 to under 18 and optional from 18, so a full licence is kept from 18. No youngest age for the card was read.",
+ "sources": [
+  {
+   "url": "https://citizen.dmv.de.gov/DriverServices/drivers_license/index.shtml?dc=dr_lic_gen_req",
+   "title": "Delaware DMV, General Requirements",
+   "read": "2026-10-30",
+   "said": "Most driver's licenses will be issued for a period of eight (8) years from the driver's last birthday."
+  },
+  {
+   "url": "https://citizen.dmv.de.gov/CLF4/agency/js/DMVFees.js",
+   "title": "Delaware DMV, fee script DMVFees.js (fills the fees into the DMV's pages)",
+   "read": "2026-10-30",
+   "said": "var dlcd8 = \"$50.00\"; // Class D (8yr) ... var dlpic = \"$40.00\"; // Photo Identification Card"
+  },
+  {
+   "url": "https://citizen.dmv.de.gov/DriverServices/drivers_license/index.shtml?dc=dr_lic_idcard",
+   "title": "Delaware DMV, Identification (ID) Card",
+   "read": "2026-10-30",
+   "said": "and it expires eight years from the applicant's next birthday."
+  },
+  {
+   "url": "https://citizen.dmv.de.gov/DriverServices/drivers_license/index.shtml?dc=dr_lic_grad_dl",
+   "title": "Delaware DMV, Graduated Driver License (Under 18)",
+   "read": "2026-10-30",
+   "said": "Participation in the GDL program is optional for any person who is 18 years of age or older."
+  }
+ ]
+}

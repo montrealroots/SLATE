@@ -3,7 +3,7 @@
  "years": 7,
  "renounce": true,
  "lapses": true,
- "note": "GLOBALCIT's Citizenship Law Dataset v3.0 (EUI, 2025), coding the law in force on 1 January 2024 (A06a TAN 9, Schedule 2; A06b TAN 9, Schedule 2; L05 TAN 7(4)): ordinary naturalisation after 7 years' residence; the applicant must give up other citizenships; a citizen loses the citizenship on voluntarily taking another. Reforms after that date are checked in the file's later sources, where a later source is given.",
+ "note": "GLOBALCIT's Citizenship Law Dataset v3.0 (EUI, 2025), coding the law in force on 1 January 2024 (A06a TAN 9, Schedule 2; A06b TAN 9, Schedule 2; L05 TAN 7(4)): ordinary naturalisation after 7 years' residence; the applicant must give up other citizenships; a citizen loses the citizenship on voluntarily taking another. Reforms after that date are checked in the file's later sources, where a later source is given. Citizenship at birth is read from the same dataset's 2024 coding of modes A01a (descent, born in country: No provision), A01b (descent, born abroad: Generational transmission restriction: conditional on birthplace/place of residence /mode under which parent acquired citizenship), A02a (birth in country: Generally applicable provision) and A02b (birth in country to a parent born there: No provision), as its codebook (RSC/GLOBALCIT 2025/01, sections 3.2.1a to 3.2.2b) defines them: by birth in the territory unconditionally; by descent from either parent, a child born abroad on the limit the dataset states (the dataset codes no separate descent rule for a child born in the country, birth there giving it; the parent's sex is read from mode A01b). Changes to the law at birth after 1 January 2024 weren't checked for this file.",
  "sources": [
   {
    "url": "https://cadmus.eui.eu/bitstreams/3b166501-e695-48d7-9e27-d7bef061573a/download",
@@ -11,7 +11,12 @@
    "read": "2026-10-29",
    "kind": "secondary",
    "quotes": "https://globalcit.eu/national-citizenship-laws/",
-   "said": "Person has been resident for 12 months prior to the application and at least 7 years during previous 10 years. ... Renunciation of other citizenship required. ... Person acquired citizenship of another country by voluntary act other than marriage, or acquired the citizenship of another country and fails to renounce Tanzanian citizenship."
+   "said": "Person has been resident for 12 months prior to the application and at least 7 years during previous 10 years. ... Renunciation of other citizenship required. ... Person acquired citizenship of another country by voluntary act other than marriage, or acquired the citizenship of another country and fails to renounce Tanzanian citizenship. ... No provision ... Generational transmission restriction: conditional on birthplace/place of residence /mode under which parent acquired citizenship ... Person is born abroad to a citizen other than by descent (i.e. not also born outside the country).; Father a citizen by descent (person may apply for citizenship by naturalisation). ... Generally applicable provision ... Person is born in Tanzania unless father has diplomatic immunity and mother is not a citizen, or either parent is an enemy and birth takes place in territory occupied by the enemy. (Note: in practice, the notional provision is not applied and has been overruled by the state's legal office. The Tanzanian authorities thus interpret the ius soli provision to require one parent to be a citizen.) ... No provision"
   }
- ]
+ ],
+ "atBirth": {
+  "soil": "unconditional",
+  "descent": "either parent",
+  "descentAbroad": "Person is born abroad to a citizen other than by descent (i.e. not also born outside the country).; Father a citizen by descent (person may apply for citizenship by naturalisation)."
+ }
 }

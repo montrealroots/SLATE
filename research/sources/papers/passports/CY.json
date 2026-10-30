@@ -3,14 +3,55 @@
  "office": "the Civil Registry and Migration Department, which issues every passport at its central offices in Nicosia",
  "currency": "EUR",
  "routes": [
-  {"id": "standard", "where": "home", "speed": "standard", "within": {"n": 10, "unit": "working day"}, "label": "in Cyprus, in person"},
-  {"id": "expedited", "where": "home", "speed": "urgent", "within": null, "label": "in Cyprus, expedited"}
+  {
+   "id": "standard",
+   "where": "home",
+   "speed": "standard",
+   "within": {
+    "n": 10,
+    "unit": "working day"
+   },
+   "label": "in Cyprus, in person"
+  },
+  {
+   "id": "expedited",
+   "where": "home",
+   "speed": "urgent",
+   "within": null,
+   "label": "in Cyprus, expedited"
+  },
+  {
+   "id": "lost",
+   "where": "home",
+   "speed": "standard",
+   "within": null,
+   "replacement": true,
+   "label": "replacement for a lost, damaged or stolen passport, the first time"
+  }
  ],
  "passports": [
-  {"for": "adult", "from": 18, "validYears": 10, "pay": {"standard": "70.00", "expedited": "120.00"}},
-  {"for": "minor", "under": 18, "validYears": 5, "pay": {"standard": "45.00", "expedited": "95.00"}}
+  {
+   "for": "adult",
+   "from": 18,
+   "validYears": 10,
+   "pay": {
+    "standard": "70.00",
+    "expedited": "120.00",
+    "lost": "140.00"
+   }
+  },
+  {
+   "for": "minor",
+   "under": 18,
+   "validYears": 5,
+   "pay": {
+    "standard": "45.00",
+    "expedited": "95.00",
+    "lost": "90.00"
+   }
+  }
  ],
- "note": "The fees are €70 for an adult and €45 for a minor under 18, as the High Commission in London lists them (it charges the equivalent in pounds, updated monthly). Sigmalive (31 July 2025) gives the expedited fees (the standard fee plus a €50 surcharge), the standard processing time of about 10 working days, which can grow with demand, and the validity of 10 years for adults and 5 for minors; it gives no time for the expedited route. A replacement for a lost, damaged or stolen passport costs double, which isn't modelled.",
+ "note": "The fees are €70 for an adult and €45 for a minor under 18, as the High Commission in London lists them (it charges the equivalent in pounds, updated monthly). Sigmalive (31 July 2025) gives the expedited fees (the standard fee plus a €50 surcharge), the standard processing time of about 10 working days, which can grow with demand, and the validity of 10 years for adults and 5 for minors; it gives no time for the expedited route. A replacement for a lost, damaged or stolen passport costs double the standard fee the first time (EUR 140 and 90, written as a replacement route) and double the previous fee each time after, which isn't modelled.",
  "sources": [
   {
    "url": "https://cyprusinuk.com/issue-renewal-of-passports/",
@@ -24,7 +65,7 @@
    "quotes": "https://www.moi.gov.cy/",
    "title": "Sigmalive, All you need to know about last-minute ID or passport renewal? (31 July 2025)",
    "read": "2026-10-28",
-   "said": "Fees Issuance/renewal of adult passport: €70 Issuance/renewal of minor’s passport: €45 Expedited issuance/renewal of adult passport: €120 (€70 fee + €50 surcharge) Expedited issuance/renewal of minor’s passport: €95 (€45 fee + €50 surcharge) ... All passports are issued at the central offices of the Civil Registry and Migration Department in Nicosia. ... The standard processing time is approximately 10 working days. ... Passports are valid for 10 years for adults and 5 years for minors."
+   "said": "Fees Issuance/renewal of adult passport: €70 Issuance/renewal of minor’s passport: €45 Expedited issuance/renewal of adult passport: €120 (€70 fee + €50 surcharge) Expedited issuance/renewal of minor’s passport: €95 (€45 fee + €50 surcharge) ... All passports are issued at the central offices of the Civil Registry and Migration Department in Nicosia. ... The standard processing time is approximately 10 working days. ... Passports are valid for 10 years for adults and 5 years for minors. ... Replacement due to loss, damage, or theft: Double the standard fee for the first time, and double the previous fee for each subsequent replacement."
   }
  ]
 }

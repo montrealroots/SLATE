@@ -3,7 +3,7 @@
  "years": 4,
  "renounce": false,
  "lapses": false,
- "note": "GLOBALCIT's Citizenship Law Dataset v3.0 (EUI, 2025), coding the law in force on 1 January 2024 (A06a AUS 21-24; A06b AUS 21-24; L05 No provision): ordinary naturalisation after 4 years' residence; no renunciation of other citizenships required; a citizen keeps it on taking another. Reforms after that date are checked in the file's later sources, where a later source is given. The Act as compiled on 4 June 2026 still asks four years' presence immediately before the application, the last 12 months as a permanent resident (s. 22(1)).",
+ "note": "GLOBALCIT's Citizenship Law Dataset v3.0 (EUI, 2025), coding the law in force on 1 January 2024 (A06a AUS 21-24; A06b AUS 21-24; L05 No provision): ordinary naturalisation after 4 years' residence; no renunciation of other citizenships required; a citizen keeps it on taking another. Reforms after that date are checked in the file's later sources, where a later source is given. The Act as compiled on 4 June 2026 still asks four years' presence immediately before the application, the last 12 months as a permanent resident (s. 22(1)). Citizenship at birth is read from the same compilation, sections 12 (citizenship by birth: a person born in Australia is a citizen if and only if a parent is a citizen or permanent resident at the birth, or the person is ordinarily resident in Australia for the ten years from it) and 16(2) (citizenship by descent, by application, for a person born abroad). Abandoned children found in Australia (s. 14) aren't held by the form. Conferral under the general eligibility criteria (s. 21(2)) costs A$595 from 1 July 2026 (Australian Citizenship Regulation 2016, Schedule 3 item 14, compilation of 1 July 2026); the applicant must possess a basic knowledge of English and an adequate knowledge of Australia and of the responsibilities and privileges of citizenship (Act s. 21(2)(e) and (f)), shown by the citizenship test. Home Affairs' pages, which publish processing times, refused this research's requests, so no longest time is held.",
  "sources": [
   {
    "url": "https://cadmus.eui.eu/bitstreams/3b166501-e695-48d7-9e27-d7bef061573a/download",
@@ -15,9 +15,27 @@
   },
   {
    "url": "https://www.legislation.gov.au/C2007A00020/2026-06-04/2026-06-04/text/original/pdf",
-   "title": "Federal Register of Legislation, Australian Citizenship Act 2007 (compilation of 4 June 2026), section 22 (General residence requirement)",
+   "title": "Federal Register of Legislation, Australian Citizenship Act 2007 (compilation of 4 June 2026), sections 12 (Citizenship by birth), 16(2) (Citizenship by descent) and 22 (General residence requirement)",
    "read": "2026-10-29",
-   "said": "General residence requirement (1) Subject to this section, for the purposes of section 21 a person satisfies the general residence requirement if: (a) the person was present in Australia for the period of 4 years immediately before the day the person made the application; and (b) the person was not present in Australia as an unlawful non-citizen at any time during that 4 year period; and (c) the person was present in Australia as a permanent resident for the period of 12 months immediately before the day the person made the application."
+   "said": "General residence requirement (1) Subject to this section, for the purposes of section 21 a person satisfies the general residence requirement if: (a) the person was present in Australia for the period of 4 years immediately before the day the person made the application; and (b) the person was not present in Australia as an unlawful non-citizen at any time during that 4 year period; and (c) the person was present in Australia as a permanent resident for the period of 12 months immediately before the day the person made the application. ... 12 Citizenship by birth (1) A person born in Australia is an Australian citizen if and only if: (a) a parent of the person is an Australian citizen, or a permanent resident, at the time the person is born; or (b) the person is ordinarily resident in Australia throughout the period of 10 years beginning on the day the person is born. ... (2) A person born outside Australia on or after 26 January 1949 is eligible to become an Australian citizen if: (a) a parent of the person was an Australian citizen at the time of the birth; and (b) if the parent was an Australian citizen under this Subdivision or Subdivision AA, or section 10B, 10C or 11 of the old Act (about citizenship by descent), at the time of the birth: (i) the parent has been present in Australia (except as an unlawful non-citizen) for a total period of at least 2 years at any time before the person made the application; or (ii) the person is not a national or a citizen of any country at the time the person made the application and the person has never been such a national or citizen; ... (e) possesses a basic knowledge of the English language; and (f) has an adequate knowledge of Australia and of the responsibilities and privileges of Australian citizenship;"
+  },
+  {
+   "url": "https://www.legislation.gov.au/F2016L01916/2026-07-01/2026-07-01/text/original/epub/OEBPS/document_1/document_1.html",
+   "title": "Federal Register of Legislation, Australian Citizenship Regulation 2016 (compilation of 1 July 2026), Schedule 3",
+   "read": "2026-10-30",
+   "said": "An application under section 21 of the Act, other than an application mentioned in items 5 to 13 or items 15 to 18, if the applicant claims eligibility on the basis of the criteria in subsection 21(2) of the Act $595"
   }
+ ],
+ "atBirth": {
+  "soil": "conditional",
+  "soilIf": "A parent is an Australian citizen or a permanent resident at the time of the birth, or the child is ordinarily resident in Australia throughout the ten years from the day of the birth (s. 12(1)).",
+  "descent": "either parent",
+  "descentAbroad": "Not automatic: a child born abroad applies (s. 16(2)) on a parent's having been an Australian citizen at the time of the birth, and, where that parent was a citizen by descent, on the parent's having been present in Australia for at least two years in all before the application (or the child's being stateless)."
+ },
+ "currency": "AUD",
+ "fee": "595",
+ "test": [
+  "language",
+  "civics"
  ]
 }

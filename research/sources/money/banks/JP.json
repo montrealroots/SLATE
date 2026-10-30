@@ -4,16 +4,46 @@
   {
    "bank": "三菱UFJ銀行",
    "account": "普通預金",
-   "fees": []
+   "fees": [],
+   "atm": {
+    "own": "0",
+    "other": "0"
+   },
+   "transfers": {
+    "domestic": "154",
+    "abroad": {
+     "fixed": "3000",
+     "percent": "0.05",
+     "min": "5500"
+    }
+   }
   }
  ],
- "note": "MUFG Bank's explanation of its ordinary deposit account (as of 1 May 2023, the edition it publishes): its fee section names no fee for keeping the account, only card fees, an unused-account fee (an account opened from July 2021 with no deposit or withdrawal for two years is charged 1,320 yen a year as unused) and a paper-passbook fee (for accounts from April 2022, 550 yen a year), neither of which the game's account incurs.",
+ "note": "MUFG Bank's explanation of its ordinary deposit account (as of 1 May 2023, the edition it publishes): its fee section names no fee for keeping the account, only card fees, an unused-account fee (an account opened from July 2021 with no deposit or withdrawal for two years is charged 1,320 yen a year as unused) and a paper-passbook fee (for accounts from April 2022, 550 yen a year), neither of which the game's account incurs. Read 2026-10-30 from MUFG's fee lists: a transfer through MUFG Direct to another bank is 154 yen under 30,000 yen and 220 yen from 30,000 (to MUFG nothing; person-to-person up to 100,000 yen free through Bank Pay); the domestic figure written is the lower tier. A transfer abroad online to another bank is 3,000 yen plus, sent in yen, 0.05% of the amount at least 2,500 yen, written as 3,000 yen plus 0.05% at least 5,500 yen in all (the same sum at every amount; one to MUFG's own branch abroad is 2,500). Withdrawals with the MUFG card at MUFG, partner and convenience-store machines are free from 8:45 to 21:00 and 110 yen at other hours (written as free). Not stated: the ordinary deposit's rate (applied as displayed in branches daily, not published in these documents), overdraft (the ordinary account alone has none; the general account's secured overdraft is a separate product), a returned payment, a card share abroad, what opening asks.",
  "sources": [
   {
    "url": "https://www.bk.mufg.jp/kouza/futsu/btm/pdf/t_fu_setsumei.pdf",
    "title": "三菱UFJ銀行, 普通預金 商品説明書（2023年5月1日現在）",
-   "read": "2026-10-29",
+   "read": "2026-10-30",
    "said": "（2023年5月1日現在） ... ［未利用口座管理手数料について］※2021年7月1日以降に開設の普通預金口座のみ適用されます ... 年間1,320円（税込）の未利用口座管理手数料を引き落としいたします。 ... ［紙通帳利用手数料について］※2022年4月1日以降に開設の普通預金口座のみ適用されます"
+  },
+  {
+   "url": "https://www.bk.mufg.jp/tesuuryou/furikomi.html",
+   "title": "三菱ＵＦＪ銀行, 振込手数料",
+   "read": "2026-10-30",
+   "said": "3万円未満 ... 3万円以上 ... 当行あて ... 他行あて ... 154円 ... 220円 ... 10万円以下の個人間送金は「Bank Payことら送金」にて無料でご利用いただけます。"
+  },
+  {
+   "url": "https://www.bk.mufg.jp/tesuuryou/atm/new.html",
+   "title": "三菱ＵＦＪ銀行, ATM利用手数料",
+   "read": "2026-10-30",
+   "said": "三菱ＵＦＪ銀行ATMのほか、提携ATM、コンビニATMが無料でご利用いただけます。 ... 8：45～21：00 ... その他の時間帯 ... 110円"
+  },
+  {
+   "url": "https://www.bk.mufg.jp/tesuuryou/gaitame.html",
+   "title": "三菱ＵＦＪ銀行, 外為手数料",
+   "read": "2026-10-30",
+   "said": "仕向送金手数料 ... 2,500円 ... 3,000円 ... 送金金額×0.050%（計算結果が2,500円未満の場合、一律2,500円がかかります）"
   }
  ]
 }

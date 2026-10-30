@@ -22,6 +22,28 @@
     "unit": "working day"
    },
    "label": "urgent processing, 2 working days"
+  },
+  {
+   "id": "lost",
+   "where": "home",
+   "speed": "standard",
+   "within": {
+    "n": 5,
+    "unit": "working day"
+   },
+   "replacement": true,
+   "label": "replacement of a lost or damaged passport"
+  },
+  {
+   "id": "lost-urgent",
+   "where": "home",
+   "speed": "urgent",
+   "within": {
+    "n": 2,
+    "unit": "working day"
+   },
+   "replacement": true,
+   "label": "replacement of a lost or damaged passport, urgent"
   }
  ],
  "passports": [
@@ -31,7 +53,9 @@
    "validYears": null,
    "pay": {
     "home": "200.00",
-    "urgent": "240.00"
+    "urgent": "240.00",
+    "lost": "400.00",
+    "lost-urgent": "440.00"
    }
   },
   {
@@ -40,17 +64,19 @@
    "validYears": null,
    "pay": {
     "home": "100.00",
-    "urgent": "140.00"
+    "urgent": "140.00",
+    "lost": "200.00",
+    "lost-urgent": "240.00"
    }
   }
  ],
- "note": "The Ministry's fees for a new Samoan passport, written SAT$ (the tala). A child is \"16 years and under\", so the child's fee runs to the 17th birthday. Replacing a lost or damaged passport costs SAT$400.00 for an adult and SAT$200.00 for a child (urgent SAT$440.00 and SAT$240.00), not modelled; the urgent fee is waived where the urgency is a funeral or medical treatment (not modelled). Embassies abroad pass applications to the Immigration Office in Samoa and charge their own fees in local currency (the Embassy in Japan asks ¥20,000 for an adult), which are not modelled. The validity is a lead: neither the Ministry's pages nor the form state it.",
+ "note": "The Ministry's fees for a new Samoan passport, written SAT$ (the tala). A child is \"16 years and under\", so the child's fee runs to the 17th birthday. Replacing a lost or damaged passport costs SAT$400.00 for an adult and SAT$200.00 for a child (urgent SAT$440.00 and SAT$240.00), written as replacement routes at the same 5 and 2 working days; the urgent fee is waived where the urgency is a funeral or medical treatment (not modelled). Embassies abroad pass applications to the Immigration Office in Samoa and charge their own fees in local currency (the Embassy in Japan asks ¥20,000 for an adult), which are not modelled. The validity is a lead: neither the Ministry's pages nor the form state it.",
  "sources": [
   {
    "url": "https://mpmc.gov.ws/divisions/immigration/passports/",
    "title": "Ministry of the Prime Minister and Cabinet (Samoa), Immigration: Passports",
    "read": "2026-10-28",
-   "said": "Application for a NEW passport Adult Child (16 years and under) Standard processing SAT$200.00 SAT$100.00 Urgent processing SAT$240.00 SAT$140.00 ... *Standard processing time = 5 working days *Urgent processing time = 2"
+   "said": "Application for a NEW passport Adult Child (16 years and under) Standard processing SAT$200.00 SAT$100.00 Urgent processing SAT$240.00 SAT$140.00 ... *Standard processing time = 5 working days *Urgent processing time = 2 ... Application for the REPLACEMENT of a lost or damaged passport Adult Child (16 years and under) Standard processing SAT$400.00 SAT$200.00 Urgent processing SAT$440.00 SAT$240.00"
   },
   {
    "url": "https://mpmc.gov.ws/wp-content/uploads/2022/02/ppt-form.mpmc300-2.pdf",

@@ -24,6 +24,7 @@ function minimal(over: Record<string, unknown> = {}) {
     'registry/owner-docs.lock.json': { files: lockOf(fixture(docs).repo) },
     'registry/layers.json': { layers: [{ n: 0, name: 'Gate', dirs: ['gate'] }, { n: 1, name: 'Core', dirs: ['src/core'], holdsEngines: true }], proven: [] },
     'registry/features.json': {},
+    'registry/effects.json': {},
     'registry/pages.json': {},
     'registry/engines.json': {},
     'registry/axes.json': readFileSync(join(ROOT, 'registry/axes.json'), 'utf8'),
@@ -53,14 +54,14 @@ describe('the gate, end to end on a fixture', () => {
     const before = runGate(opts(root));
     expect(before.verdict).toBe('red');
     expect(all(named(before.results, 'generated'))).toEqual(
-      ['LAYERS', 'REGISTER', 'FEATURES', 'COVERAGE'].map((m) => `red matrix/${m}.md | out of date; run \`npm run gate:write\` and commit it`),
+      ['LAYERS', 'REGISTER', 'FEATURES', 'EFFECTS', 'COVERAGE'].map((m) => `red matrix/${m}.md | out of date; run \`npm run gate:write\` and commit it`),
     );
     expect(runGate(opts(root, { write: true })).verdict).toBe('green');
     expect(readFileSync(join(root, 'matrix/LAYERS.md'), 'utf8')).toContain('| 0 | Gate | `gate` | in progress |');
     const after = runGate(opts(root));
     expect(after.results.flatMap(all)).toEqual([]);
     expect(after.verdict).toBe('green');
-    expect(after.results.map((r) => r.check)).toEqual(['toolchain', 'owner-docs', 'build-order', 'text-inventory', 'title-case', 'research-register', 'feature-matrix', 'coverage', 'handoff', 'generated']);
+    expect(after.results.map((r) => r.check)).toEqual(['toolchain', 'owner-docs', 'build-order', 'text-inventory', 'title-case', 'research-register', 'feature-matrix', 'effects', 'coverage', 'handoff', 'generated']);
   });
   it('fails a matrix that is stale, and a file in matrix/ no check owns', () => {
     const { root } = minimal();
@@ -76,7 +77,7 @@ describe('the gate, end to end on a fixture', () => {
     const { testRun: _t, ...withoutTests } = opts(root, { full: true, run: spy });
     const out = runGate(withoutTests);
     expect(calls).toEqual(['npx tsc', 'npx eslint', 'npx vitest', 'npm audit', 'npx stryker']);
-    expect(out.results.map((r) => r.check)).toEqual(['toolchain', 'owner-docs', 'build-order', 'text-inventory', 'title-case', 'research-register', 'typecheck', 'lint', 'tests', 'feature-matrix', 'coverage', 'handoff', 'audit', 'mutation', 'generated']);
+    expect(out.results.map((r) => r.check)).toEqual(['toolchain', 'owner-docs', 'build-order', 'text-inventory', 'title-case', 'research-register', 'typecheck', 'lint', 'tests', 'feature-matrix', 'effects', 'coverage', 'handoff', 'audit', 'mutation', 'generated']);
     expect(all(named(out.results, 'tests'))).toEqual(['red - | the test run left no report']);
   });
   it('feeds what the test run said into the feature matrix and the coverage', () => {

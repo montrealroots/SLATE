@@ -1,0 +1,26 @@
+{
+ "country": "DK",
+ "name": "CPR number",
+ "issuer": "the municipalities, or the Danish Tax Agency, under the Civil Registration System Act",
+ "format": {
+  "length": 10,
+  "pattern": "^\\d{10}$"
+ },
+ "when": "birth",
+ "who": [
+  "residents",
+  "workers"
+ ],
+ "needed": [
+  "tax"
+ ],
+ "note": "Denmark's sheet (its government's own sheet on the OECD's automatic-exchange portal ('Information on Tax Identification Numbers'; the OECD's index page sits behind a bot check and wasn't opened, the sheet itself came straight back)), read 2026-10-30: the CPR number is the tax number; everyone registered in Denmark by birth or by moving there, in the work pension ATP, or needing one for tax is registered; 10 digits (written with a hyphen after the sixth); the last digit tells sex, and numbers issued after 1 October 2007 needn't satisfy the old check digit, so `check` is left out. The first six digits are the birth date (the sheet's format, not tied by the pattern). It is used in almost all dealings with public authorities. Read as given at birth (or on moving to Denmark), to residents and workers. The name and issuer are as the sheet gives them, in English.",
+ "sources": [
+  {
+   "url": "https://www.oecd.org/content/dam/oecd/en/topics/policy-issue-focus/aeoi/denmark-tin.pdf",
+   "title": "OECD AEOI portal, Denmark: Information on Tax Identification Numbers (the jurisdiction's own sheet)",
+   "read": "2026-10-30",
+   "said": "In Denmark the TIN equals the Danish CPR number. ... The CPR number is issued after the rules in the Civil Registration System Act by the local ... municipalities or the Danish Tax Agency. ... are registered in Denmark due to birth or migration from abroad, ... CPR numbers issued after 1 October 2007 can have a different format meaning that the last"
+  }
+ ]
+}

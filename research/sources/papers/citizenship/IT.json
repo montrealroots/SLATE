@@ -3,7 +3,7 @@
  "years": 10,
  "renounce": false,
  "lapses": false,
- "note": "GLOBALCIT's Citizenship Law Dataset v3.0 (EUI, 2025), coding the law in force on 1 January 2024 (A06a ITA 9(1)(f); A06b ITA 9(1)(f); L05 No provision): ordinary naturalisation after 10 years' residence; no renunciation of other citizenships required; a citizen keeps it on taking another. Reforms after that date are checked in the file's later sources, where a later source is given.",
+ "note": "GLOBALCIT's Citizenship Law Dataset v3.0 (EUI, 2025), coding the law in force on 1 January 2024 (A06a ITA 9(1)(f); A06b ITA 9(1)(f); L05 No provision): ordinary naturalisation after 10 years' residence; no renunciation of other citizenships required; a citizen keeps it on taking another. Reforms after that date are checked in the file's later sources, where a later source is given. Citizenship at birth is read from the same dataset's 2024 coding of modes A01a (descent, born in country: Generally applicable provision), A01b (descent, born abroad: Generally applicable provision), A02a (birth in country: No provision) and A02b (birth in country to a parent born there: No provision), as its codebook (RSC/GLOBALCIT 2025/01, sections 3.2.1a to 3.2.2b) defines them: not by birth in the territory alone (provisions for foundlings and children otherwise stateless, modes A03a and A03b, aren't held by the form); by descent from either parent, with no further limit on a child born abroad. Changes to the law at birth after 1 January 2024 were checked as follows. Naturalisation by residence costs a €250 contribution (Law 91/1992 art. 9-bis(2), as Decree-Law 113/2018 art. 14 raised it from €200), and asks Italian at level B1 or above (art. 9.1, added by the same article); for applications from 20 December 2020 the procedure must end within 24 months, extendable to 36 (Decree-Law 130/2020 art. 4(5), as the Ministry of the Interior's page published 11 November 2024 states). Italy asks no civics test. Since Decree-Law 36 of 28 March 2025, converted by Law 74 of 23 May 2025, art. 3-bis of Law 91/1992 limits citizenship by descent for a child born abroad with another citizenship (as the Embassy in Warsaw sets the article out), which GLOBALCIT's 2024 coding predates; descentAbroad holds the new limit.",
  "sources": [
   {
    "url": "https://cadmus.eui.eu/bitstreams/3b166501-e695-48d7-9e27-d7bef061573a/download",
@@ -11,7 +11,39 @@
    "read": "2026-10-29",
    "kind": "secondary",
    "quotes": "https://globalcit.eu/national-citizenship-laws/",
-   "said": "Person has been resident in Italy for 10 years. ... n.a. ... n.a."
+   "said": "Person has been resident in Italy for 10 years. ... n.a. ... n.a. ... Generally applicable provision ... Person is born in Italy to a citizen. ... Generally applicable provision ... Person is born abroad to a citizen. ... No provision ... No provision"
+  },
+  {
+   "url": "https://www.gazzettaufficiale.it/atto/serie_generale/caricaArticolo?art.progressivo=0&art.idArticolo=14&art.versione=1&art.codiceRedazionale=18A07702&art.dataPubblicazioneGazzetta=2018-12-03&art.idGruppo=3&art.idSottoArticolo1=10&art.idSottoArticolo=1&art.flagTipoArticolo=0",
+   "title": "Gazzetta Ufficiale, Decreto-legge 4 ottobre 2018, n. 113 (testo coordinato con la legge di conversione 1 dicembre 2018, n. 132), art. 14",
+   "read": "2026-10-30",
+   "said": "La concessione della cittadinanza italiana ai sensi degli articoli 5 e 9 e' subordinata al possesso, da parte dell'interessato, di un'adeguata conoscenza della lingua italiana, non inferiore al livello B1 del Quadro comune europeo di riferimento per la conoscenza delle lingue (QCER). ... sono sostituite dalle seguenti «di importo pari a 250»"
+  },
+  {
+   "url": "https://libertaciviliimmigrazione.dlci.interno.gov.it/temi/concessione-della-cittadinanza-italiana-residenza-sul-territorio-italiano-ai-sensi-dellart-9",
+   "title": "Ministero dell'Interno, Dipartimento per le Libertà Civili e l'Immigrazione, Concessione della cittadinanza italiana per residenza (pubblicato 11/11/2024)",
+   "read": "2026-10-30",
+   "said": "Per le domande presentate a partire dal 20 dicembre 2020 il termine massimo di conclusione dei procedimenti di concessione della cittadinanza italiana è di ventiquattro mesi prorogabili fino a un massimo di trentasei mesi"
+  },
+  {
+   "url": "https://ambvarsavia.esteri.it/it/servizi-consolari-e-visti/servizi-per-il-cittadino-straniero/cittadinanza/riconoscimento-della-cittadinanza-iure-sanguinis/",
+   "title": "Ambasciata d'Italia a Varsavia (Ministero degli Affari Esteri), Riconoscimento della cittadinanza iure sanguinis",
+   "read": "2026-10-30",
+   "said": "è considerato non avere mai acquistato la cittadinanza italiana chi è nato all’estero anche prima della data di entrata in vigore del presente articolo ed è in possesso di altra cittadinanza, salvo che ricorra una delle seguenti condizioni: ... c) un ascendente di primo o di secondo grado possiede, o possedeva al momento della morte, esclusivamente la cittadinanza italiana; d) un genitore o adottante è stato residente in Italia per almeno due anni continuativi successivamente all’acquisto della cittadinanza italiana e prima della data di nascita o di adozione del figlio."
   }
+ ],
+ "atBirth": {
+  "soil": "none",
+  "descent": "either parent",
+  "descentAbroad": "A child born abroad who also holds another citizenship is held never to have acquired Italian citizenship, unless an ascendant of the first or second degree holds (or held at death) Italian citizenship only, or a parent lived in Italy for at least two continuous years after becoming Italian and before the birth; claims filed by 27 March 2025 keep the earlier rule (Law 91/1992 art. 3-bis)."
+ },
+ "currency": "EUR",
+ "fee": "250",
+ "within": {
+  "n": 36,
+  "unit": "month"
+ },
+ "test": [
+  "language"
  ]
 }

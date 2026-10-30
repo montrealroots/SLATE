@@ -4,16 +4,28 @@
   {
    "bank": "Banca Transilvania",
    "account": "Cont curent in Lei",
-   "fees": []
+   "fees": [],
+   "atm": {
+    "own": "0"
+   },
+   "transfers": {
+    "domestic": "2.5"
+   }
   }
  ],
- "note": "Banca Transilvania's fee information document (26 June 2026): administering a current account in lei costs 0 lei a month.",
+ "note": "Banca Transilvania's fee information document (26 June 2026): administering a current account in lei costs 0 lei a month. Read again 2026-10-30 (the document of 26 June 2026): an electronic interbank payment in lei costs 2.5 lei under 1,000 lei (the tier written), 5 lei to 50,000 and 10 lei above; BT's own ATMs nothing, another bank's 0.5% plus 2.5 lei (a share the home figure can't hold); an overdraft (descoperit de cont) is a credit at 17% a year (14% with income paid into BT), granted on request, not written. Not stated: interest, a returned payment, abroad, what opening asks.",
  "sources": [
   {
    "url": "https://www.bancatransilvania.ro/files/app/media/Documente-utile/Document-de-informare-cu-privire-la-comisioanele-in-LEI.pdf",
    "title": "Banca Transilvania, Document de informare cu privire la comisioane: Cont curent in Lei (26 Iunie 2026)",
-   "read": "2026-10-29",
+   "read": "2026-10-30",
    "said": "Denumirea contului: Cont curent in Lei Data: 26 Iunie 2026 ... Lunar: 0 lei Administrarea contului (Lei) Comision anual total: 0 lei"
+  },
+  {
+   "url": "https://www.bancatransilvania.ro/files/app/media/Documente-utile/Document-de-informare-cu-privire-la-comisioanele-in-LEI.pdf",
+   "title": "Banca Transilvania, Document de informare cu privire la comisioane, Cont curent in Lei: the other terms",
+   "read": "2026-10-30",
+   "said": "plăți < 1000 lei 2.5 lei/tranzacție ... Plăți interbancare în Lei_canal electronic plăți 1000 - 50.000 lei 5 lei/tranzacție ... Retrageri de numerar în Lei de la ATM-ul băncii ... 0,5% +2.5 lei/ tranzacție ... 17%/an fără încasarea veniturilor în BT"
   }
  ]
 }

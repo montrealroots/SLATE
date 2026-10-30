@@ -3,7 +3,7 @@
  "years": 10,
  "renounce": false,
  "lapses": false,
- "note": "GLOBALCIT's Citizenship Law Dataset v3.0 (EUI, 2025), coding the law in force on 1 January 2024 (A06a SWI 9, 11, 12. 2, 3, 4, 5, 6, 7, 8, 9 Ordinance on Swiss Citizenship; A06b SWI 9, 11, 12. 2, 3, 4, 5, 6, 7, 8, 9 Ordinance on Swiss Citizenship; L05 No provision): ordinary naturalisation after 10 years' residence; no renunciation of other citizenships required; a citizen keeps it on taking another. Reforms after that date are checked in the file's later sources, where a later source is given.",
+ "note": "GLOBALCIT's Citizenship Law Dataset v3.0 (EUI, 2025), coding the law in force on 1 January 2024 (A06a SWI 9, 11, 12. 2, 3, 4, 5, 6, 7, 8, 9 Ordinance on Swiss Citizenship; A06b SWI 9, 11, 12. 2, 3, 4, 5, 6, 7, 8, 9 Ordinance on Swiss Citizenship; L05 No provision): ordinary naturalisation after 10 years' residence; no renunciation of other citizenships required; a citizen keeps it on taking another. Reforms after that date are checked in the file's later sources, where a later source is given. Citizenship at birth is read from the same dataset's 2024 coding of modes A01a (descent, born in country: Generally applicable provision), A01b (descent, born abroad: Generally applicable provision), A02a (birth in country: No provision) and A02b (birth in country to a parent born there: No provision), as its codebook (RSC/GLOBALCIT 2025/01, sections 3.2.1a to 3.2.2b) defines them: not by birth in the territory alone (provisions for foundlings and children otherwise stateless, modes A03a and A03b, aren't held by the form); by descent from either parent, with no further limit on a child born abroad. Changes to the law at birth after 1 January 2024 weren't checked for this file. The State Secretariat for Migration charges CHF 100 for the federal naturalisation permit of an applicant over 18; the canton and commune charge their own fees, which cantonal law sets and the form doesn't hold, so the fee held is only the federal one. The applicant must prove knowledge of a national language (oral B1 and written A2, the SEM's phased model) and be familiar with the Swiss way of life, which the canton checks; after the federal licence the canton must decide within a year, but no longest time for the whole procedure is published, so none is held.",
  "sources": [
   {
    "url": "https://cadmus.eui.eu/bitstreams/3b166501-e695-48d7-9e27-d7bef061573a/download",
@@ -11,7 +11,29 @@
    "read": "2026-10-29",
    "kind": "secondary",
    "quotes": "https://globalcit.eu/national-citizenship-laws/",
-   "said": "Person has a permanent residence permit, resided in Switzerland for 10 years  (3 of these must have been in the 5 years preceding the application). ... n.a. ... n.a."
+   "said": "Person has a permanent residence permit, resided in Switzerland for 10 years  (3 of these must have been in the 5 years preceding the application). ... n.a. ... n.a. ... Generally applicable provision ... Person is born in Switzerland to a citizen. ... Generally applicable provision ... Person is born abroad to a citizen. ... No provision ... No provision"
+  },
+  {
+   "url": "https://www.sem.admin.ch/sem/en/home/integration-einbuergerung/schweizer-werden/ordentlich.html",
+   "title": "SEM, Ordinary naturalisation",
+   "read": "2026-10-30",
+   "said": "for persons over the age of 18 at the time the application is made: CHF 100.- ... communal and cantonal fees must be paid. Cantonal law regulates the level of these fees. ... be familiar with the Swiss way of life;"
+  },
+  {
+   "url": "https://www.sem.admin.ch/sem/en/home/integration-einbuergerung/mein-beitrag/zugewandert/sprache.html",
+   "title": "SEM, Language requirements",
+   "read": "2026-10-30",
+   "said": "All persons applying for family reunification, a residence or permanent residence permit, or regular or early naturalisation must prove their knowledge of a national language."
   }
+ ],
+ "atBirth": {
+  "soil": "none",
+  "descent": "either parent"
+ },
+ "currency": "CHF",
+ "fee": "100",
+ "test": [
+  "language",
+  "civics"
  ]
 }

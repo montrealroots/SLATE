@@ -1,0 +1,26 @@
+{
+ "country": "GR",
+ "name": "Taxpayer Identification Number",
+ "issuer": "the Tax Administration",
+ "format": {
+  "length": 9,
+  "pattern": "^\\d{9}$"
+ },
+ "when": "application",
+ "who": [
+  "anyone"
+ ],
+ "needed": [
+  "tax",
+  "bank"
+ ],
+ "note": "Greece's sheet (its government's own sheet on the OECD's automatic-exchange portal ('Information on Tax Identification Numbers'; the OECD's index page sits behind a bot check and wasn't opened, the sheet itself came straight back)), read 2026-10-30: under art. 11 of the Tax Procedure Code (L. 4174/2013) the Tax Administration gives every taxpayer a unique number, and anyone on request for dealings with government bodies or domestic financial institutions (needed: tax, bank); issued on request (application), nine digits. Its check digit isn't described by the sheet, so `check` is left out. The social security number is separate, not modelled. The name and issuer are as the sheet gives them, in English.",
+ "sources": [
+  {
+   "url": "https://www.oecd.org/content/dam/oecd/en/topics/policy-issue-focus/aeoi/greece-tin.pdf",
+   "title": "OECD AEOI portal, Greece: Information on Tax Identification Numbers (the jurisdiction's own sheet)",
+   "read": "2026-10-30",
+   "said": "the Tax Administration assigns a ... unique taxpayer identification number to every taxpayer. ... Identification Number upon request by any natural or legal person or legal entity, for the purpose of ... conducting financial transactions with General Government bodies or domestic financial institutions or ... 9 digits"
+  }
+ ]
+}

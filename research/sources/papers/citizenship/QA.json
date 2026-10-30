@@ -3,7 +3,7 @@
  "years": 25,
  "renounce": true,
  "lapses": true,
- "note": "GLOBALCIT's Citizenship Law Dataset v3.0 (EUI, 2025), coding the law in force on 1 January 2024 (A06a QAT 2(1); A06b QAT 2(1), Decision 14/2007; L05 QAT 11(5)): ordinary naturalisation after 25 years' residence; the applicant must give up other citizenships; a citizen loses the citizenship on voluntarily taking another. Reforms after that date are checked in the file's later sources, where a later source is given.",
+ "note": "GLOBALCIT's Citizenship Law Dataset v3.0 (EUI, 2025), coding the law in force on 1 January 2024 (A06a QAT 2(1); A06b QAT 2(1), Decision 14/2007; L05 QAT 11(5)): ordinary naturalisation after 25 years' residence; the applicant must give up other citizenships; a citizen loses the citizenship on voluntarily taking another. Reforms after that date are checked in the file's later sources, where a later source is given. Citizenship at birth is read from the same dataset's 2024 coding of modes A01a (descent, born in country: Gender restriction: no or restricted access if the mother is a citizen (wedlock condition/supplementary provision may apply)), A01b (descent, born abroad: Gender restriction: no or restricted access if the mother is a citizen (wedlock condition/supplementary provision may apply)), A02a (birth in country: No provision) and A02b (birth in country to a parent born there: No provision), as its codebook (RSC/GLOBALCIT 2025/01, sections 3.2.1a to 3.2.2b) defines them: not by birth in the territory alone (provisions for foundlings and children otherwise stateless, modes A03a and A03b, aren't held by the form); by descent from the father only, a child born abroad on the limit the dataset states. Changes to the law at birth after 1 January 2024 weren't checked for this file.",
  "sources": [
   {
    "url": "https://cadmus.eui.eu/bitstreams/3b166501-e695-48d7-9e27-d7bef061573a/download",
@@ -11,7 +11,12 @@
    "read": "2026-10-29",
    "kind": "secondary",
    "quotes": "https://globalcit.eu/national-citizenship-laws/",
-   "said": "Person has been resident in the country for at least 25 years. ... Applicant for naturalisation must submit proof that he/she has relinquished original citizenship. ... Person acquires citizenship of another country."
+   "said": "Person has been resident in the country for at least 25 years. ... Applicant for naturalisation must submit proof that he/she has relinquished original citizenship. ... Person acquires citizenship of another country. ... Gender restriction: no or restricted access if the mother is a citizen (wedlock condition/supplementary provision may apply) ... Person is born in Qatar to a male citizen. ... Gender restriction: no or restricted access if the mother is a citizen (wedlock condition/supplementary provision may apply) ... Person is born abroad to a male citizen. ... No provision ... No provision"
   }
- ]
+ ],
+ "atBirth": {
+  "soil": "none",
+  "descent": "father",
+  "descentAbroad": "Person is born abroad to a male citizen."
+ }
 }

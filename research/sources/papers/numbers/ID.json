@@ -1,0 +1,25 @@
+{
+ "country": "ID",
+ "name": "Nomor Induk Kependudukan (NIK)",
+ "issuer": "the Government of the Republic of Indonesia (its population registry)",
+ "format": {
+  "length": 16,
+  "pattern": "^\\d{16}$"
+ },
+ "when": "registration",
+ "who": [
+  "residents"
+ ],
+ "needed": [
+  "tax"
+ ],
+ "note": "Indonesia's sheet (its government's own sheet on the OECD's automatic-exchange portal ('Information on Tax Identification Numbers'; the OECD's index page sits behind a bot check and wasn't opened, the sheet itself came straight back)), read 2026-10-30: since 14 July 2022 an individual taxpayer resident in Indonesia uses the national identity number, the NIK, 16 numerals, issued by the Government and shown on the identity card, as the tax number. Read as given on registration as a resident (the population registry), to residents. Dukcapil (the Interior Ministry's population and civil registration directorate) issues it, but the sheet names only the Government; its law (UU 24/2013) wasn't read (peraturan.bpk.go.id refused curl that day with a 403). No age, fee or time is stated; no check digit is.",
+ "sources": [
+  {
+   "url": "https://www.oecd.org/content/dam/oecd/en/topics/policy-issue-focus/aeoi/indonesia-tin.pdf",
+   "title": "OECD AEOI portal, Indonesia: Information on Tax Identification Numbers (the jurisdiction's own sheet)",
+   "read": "2026-10-30",
+   "said": "individual taxpayer who is an Indonesian resident shall use the national identity number ... Starting from 14 July 2022, the NPWP structure comprises of 16-digit numerals only. ... The 16-digit NPWP is the individual taxpayer’s national identity number (Nomor Induk ... Kependudukan/NIK) issued by the Government of the Republic of Indonesia."
+  }
+ ]
+}

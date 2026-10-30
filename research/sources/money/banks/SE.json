@@ -14,16 +14,39 @@
       }
      ]
     }
-   ]
+   ],
+   "debit": {
+    "fx": "1.65"
+   },
+   "atm": {
+    "own": "0",
+    "other": "0",
+    "abroad": {
+     "fixed": "40",
+     "percent": "1.65"
+    }
+   },
+   "transfers": {
+    "domestic": "0",
+    "abroad": {
+     "fixed": "60"
+    }
+   }
   }
  ],
- "note": "Handelsbanken's fee information document (30 June 2026): the Allkonto comes in the base offer (the account, a Bankkort Start, internet and mobile banking, Swish) at 25 kronor a month, nothing for customers under 21 (or students 18 to 26 paid by CSN, or holders of its Mastercard, not modelled).",
+ "note": "Handelsbanken's fee information document (30 June 2026): the Allkonto comes in the base offer (the account, a Bankkort Start, internet and mobile banking, Swish) at 25 kronor a month, nothing for customers under 21 (or students 18 to 26 paid by CSN, or holders of its Mastercard, not modelled). Read again 2026-10-30: a payment to another bank's account online costs nothing; one abroad within EU/SEPA online nothing, outside it 60 kronor (written as the transfer abroad; a Nordic customer payment is free); withdrawals at any machine in Sweden nothing; abroad, euros at a machine nothing, another currency 40 kronor plus the 1.65% currency fee, which is also charged on card purchases abroad. Not stated: overdraft, a returned payment, interest, what opening asks.",
  "sources": [
   {
    "url": "https://www.handelsbanken.se/tron/public/info/contents/v1/document/32-150016",
    "title": "Handelsbanken, Avgiftsinformation: Allkonto och Allkonto Ung (2026-06-30)",
-   "read": "2026-10-29",
+   "read": "2026-10-30",
    "said": "Kontobeteckning: Allkonto och Allkonto Ung Datum: 2026-06-30 ... Baserbjudande 25 kr ... Månadsavgift ... Kund under 21 år 0 kr"
+  },
+  {
+   "url": "https://www.handelsbanken.se/tron/public/info/contents/v1/document/32-150016",
+   "title": "Handelsbanken, Avgiftsinformation, Allkonto (2026-06-30): the other terms",
+   "read": "2026-10-30",
+   "said": "Betalning till konto i annan bank Internetbanken och mobilappen ... - Per betalning 0 kr ... EU/SEPA betalning - Per betalning 0 kr ... normalbetalning - Per betalning 60 kr ... Kontantuttag i Sverige Uttagsautomat ... - pris/uttag 0 kr ... Annan valuta i uttagsautomat ... - pris/uttag 40 kr ... Valutaväxlingsavgift på köp/uttag 1,65%"
   }
  ]
 }

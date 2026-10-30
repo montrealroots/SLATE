@@ -6,6 +6,7 @@ export const PATHS = {
   ownerDocsLock: 'registry/owner-docs.lock.json',
   layers: 'registry/layers.json',
   features: 'registry/features.json',
+  effects: 'registry/effects.json',
   pages: 'registry/pages.json',
   engines: 'registry/engines.json',
   axes: 'registry/axes.json',

@@ -139,6 +139,7 @@ export function openOn(s: Holding, a: OpenArgs, terms: Bank, c: Context): string
 /** What a monthly fee, a longer one, the interest and the overdraft come to at the end of an account's month. */
 export function month(s: Holding, item: Item, c: Context): void {
   const { account: id } = item.data as { account: string };
+  // @slate:consumer account.open
   const h = heldOf(s.accounts, id);
   const ledger = accountOf(s.ledger, id);
   h.months += 1;
@@ -150,6 +151,8 @@ export function month(s: Holding, item: Item, c: Context): void {
   // Interest: on the month's whole average daily balance once it's above the figure the bank names, credited at the
   // month's end.
   const rate = interestOf(h);
+  // @slate:consumer account.pay
+  // @slate:consumer means.first-morning
   const { average, lowest } = standing(ledger, start, c.now);
   if (rate !== undefined) {
     const over = rate.over ?? zero;
@@ -206,6 +209,7 @@ export function pay(s: Holding, a: PayArgs, c: Context): void {
   const cur = h.currency as CurrencyCode;
   const amount = sum(cur, a.amount, 'a payment');
   const cost = costOf(h.terms, a.how, amount);
+  // @slate:consumer account.month
   const after = subtract(subtract(balance(accountOf(s.ledger, h.id)), amount), cost);
   const od = h.terms.overdraft;
   const bank = `${WORLD}${h.bank}`;

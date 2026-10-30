@@ -16,6 +16,14 @@
    "speed": "urgent",
    "within": null,
    "label": "as an emergency application"
+  },
+  {
+   "id": "lost",
+   "where": "home",
+   "speed": "standard",
+   "within": null,
+   "replacement": true,
+   "label": "a lost or damaged passport: the application fee and the M300.00 penalty"
   }
  ],
  "passports": [
@@ -25,7 +33,8 @@
    "validYears": null,
    "pay": {
     "home": "130.00",
-    "emergency": "630.00"
+    "emergency": "630.00",
+    "lost": "430.00"
    }
   },
   {
@@ -34,11 +43,12 @@
    "validYears": null,
    "pay": {
     "home": "300.00",
-    "emergency": "800.00"
+    "emergency": "800.00",
+    "lost": "600.00"
    }
   }
  ],
- "note": "The Ministry of Home Affairs' fees under the Lesotho Passports and Travel Documents (Fees) Regulations, 2019: M130.00 for the regular 32-page passport and M300.00 for 64 pages (the Ministry's FAQ gives M250.00 for 64 pages; the passports page, which names the regulations, is followed). An emergency application adds M500.00, as the FAQ's M630.00 total shows. Replacing a lost or damaged passport adds a M300.00 penalty (not modelled). Validity and processing times are leads.",
+ "note": "The Ministry of Home Affairs' fees under the Lesotho Passports and Travel Documents (Fees) Regulations, 2019: M130.00 for the regular 32-page passport and M300.00 for 64 pages (the Ministry's FAQ gives M250.00 for 64 pages; the passports page, which names the regulations, is followed). An emergency application adds M500.00, as the FAQ's M630.00 total shows. Replacing a lost or damaged passport adds a M300.00 penalty (M430.00 for 32 pages, as the FAQ sums it; M600.00 for 64 pages by the same sum), written as a replacement route. Validity and processing times are leads.",
  "sources": [
   {
    "url": "https://homeaffairs.gov.ls/passports",
@@ -50,7 +60,7 @@
    "url": "https://www.homeaffairs.gov.ls/faqs",
    "title": "Ministry of Home Affairs (Lesotho), FAQs",
    "read": "2026-10-28",
-   "said": "How much does an emergency passport cost? Application: M 130.00 Emergency fee M500.00, total M630.00 ... Regular passport (32 pages) _ M130.00 Regular passport (64 pages) _ M250.00"
+   "said": "How much does an emergency passport cost? Application: M 130.00 Emergency fee M500.00, total M630.00 ... Regular passport (32 pages) _ M130.00 Regular passport (64 pages) _ M250.00 ... Penalty for lost/damaged, pay M300.00 Application fee M130.00, total M430.00"
   }
  ]
 }

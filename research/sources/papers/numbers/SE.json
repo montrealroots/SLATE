@@ -1,0 +1,28 @@
+{
+ "country": "SE",
+ "name": "personnummer",
+ "issuer": "Skatteverket (the Swedish Tax Agency)",
+ "format": {
+  "length": 10,
+  "pattern": "[0-9]{10}"
+ },
+ "when": "registration",
+ "who": [
+  "residents"
+ ],
+ "note": "Read the Population Registration Act (folkbokföringslag 1991:481, as Riksdagen serves it on 2026-10-30), 18 § (as amended by Lag 2009:272): every person entered in the population register is given a personnummer of birth date (six digits: year, month, day), birth number (three digits, odd for men and even for women) and a check digit; a hyphen between birth date and birth number becomes a plus sign in the year the holder turns 100, which the pattern, written without separators, leaves out; registers may store the birth date with eight digits, which the form doesn't hold. The Act gives Skatteverket the population register. Skatteverket's page on the personnummer says the check digit is computed by machine from the birth date and birth number but doesn't name the algorithm, so the format names no check (the algorithm is not read). Reading: 'when' is registration, 'who' is residents (those registered; a coordination number, samordningsnummer, for those not registered is another number, not modelled). No fee, time or required purposes are read.",
+ "sources": [
+  {
+   "url": "https://www.riksdagen.se/sv/dokument-och-lagar/dokument/svensk-forfattningssamling/folkbokforingslag-1991481_sfs-1991-481/",
+   "title": "Folkbokföringslag (1991:481), 18 §",
+   "read": "2026-10-30",
+   "said": "För varje folkbokförd person fastställs ett personnummer som identitetsbeteckning. Personnumret innehåller födelsetid, födelsenummer och kontrollsiffra. ... Födelsetiden anges med sex siffror, två för året, två för månaden och två för dagen i nu nämnd ordning. Födelsenumret består av tre siffror och är udda för män och jämnt för kvinnor. ... Skatteverket ansvarar för folkbokföring"
+  },
+  {
+   "url": "https://www.skatteverket.se/privat/folkbokforing/personnummer.4.3810a01c150939e893f18c29.html",
+   "title": "Skatteverket, Personnummer",
+   "read": "2026-10-30",
+   "said": "Sista siffran i personnumret är en kontrollsiffra. Den räknas ut maskinellt med ledning av födelsetiden och födelsenumret."
+  }
+ ]
+}

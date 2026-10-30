@@ -13,9 +13,26 @@ describe('banks', () => {
     expect(COUNTRY_CODES.filter(keepsBanks)).toEqual(Object.keys(data.countries).sort());
     expect([keepsBanks('US'), keepsBanks('AQ')]).toEqual([true, false]);
     expect(banksIn('AQ')).toEqual([]);
-    // Barclays charges nothing; Deutsche Bank's AktivKonto 6.90 euros a month whatever the holder does.
-    expect(banksIn('GB')).toStrictEqual([{ bank: 'Barclays', account: 'Flexible', currency: 'GBP', fees: [] }]);
-    expect(banksIn('DE')).toStrictEqual([{ bank: 'Deutsche Bank', account: 'AktivKonto', currency: 'EUR', fees: [{ fee: money('EUR', 690), per: 'month' }] }]);
+    // Barclays charges nothing to keep the account and refuses a payment past the balance (no unarranged overdraft);
+    // Deutsche Bank's AktivKonto 6.90 euros a month whatever the holder does, a tolerated overdraft at 13.30% a year.
+    const gbp = (minor: number) => money('GBP', minor);
+    const eur = (minor: number) => money('EUR', minor);
+    expect(banksIn('GB')).toStrictEqual([
+      { bank: 'Barclays', account: 'Flexible', currency: 'GBP', fees: [], overdraft: false, returned: gbp(0), debit: { fx: '2.99' }, atm: { own: gbp(0), other: gbp(0), abroad: { percent: '2.99' } }, transfers: { domestic: gbp(0), abroad: { percent: '0' } } },
+    ]);
+    expect(banksIn('DE')).toStrictEqual([
+      {
+        bank: 'Deutsche Bank',
+        account: 'AktivKonto',
+        currency: 'EUR',
+        fees: [{ fee: eur(690), per: 'month' }],
+        overdraft: { rate: { percent: '13.30', per: 'year' } },
+        returned: eur(68),
+        debit: { fx: '1' },
+        atm: { own: eur(0), abroad: { percent: '1', min: eur(599) } },
+        transfers: { domestic: eur(0) },
+      },
+    ]);
     const deutsche = banksIn('DE')[0]?.fees[0] as Fee;
     expect(feeFor(deutsche, { age: 70, deposits: money('EUR', 1_000_000), lowest: money('EUR', 1_000_000), average: money('EUR', 1_000_000), national: true, period: 1 }, '2026-11-01')).toStrictEqual(money('EUR', 690));
     // Chase Total Checking: $15 a month, waived by $500 paid in, a balance never under $1,500, or an average of $5,000.

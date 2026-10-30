@@ -3,7 +3,7 @@
  "years": 5,
  "renounce": false,
  "lapses": false,
- "note": "GLOBALCIT's Citizenship Law Dataset v3.0 (EUI, 2025), coding the law in force on 1 January 2024 (A06a GER 10-12, 37, 8 in conjuction Administrative regulation 8.1.1., 8.1.2.; A06b GER 10-12, 37, 8 in conjuction Administrative regulation 8.1.1., 8.1.2.; L05 GER 25): ordinary naturalisation after 8 years' residence; the applicant must give up other citizenships (with major exceptions); a citizen loses the citizenship on voluntarily taking another (with exceptions). Reforms after that date are checked in the file's later sources, where a later source is given. The Act to Modernise Nationality Law (in force 27 June 2024) changed all three, as the Nationality Act reads today: naturalisation after five years' lawful habitual residence (§ 10(1)); the renunciation requirement (§ 12) and the loss of German citizenship on taking another (§ 25) are repealed, so other citizenships are kept either way.",
+ "note": "GLOBALCIT's Citizenship Law Dataset v3.0 (EUI, 2025), coding the law in force on 1 January 2024 (A06a GER 10-12, 37, 8 in conjuction Administrative regulation 8.1.1., 8.1.2.; A06b GER 10-12, 37, 8 in conjuction Administrative regulation 8.1.1., 8.1.2.; L05 GER 25): ordinary naturalisation after 8 years' residence; the applicant must give up other citizenships (with major exceptions); a citizen loses the citizenship on voluntarily taking another (with exceptions). Reforms after that date are checked in the file's later sources, where a later source is given. The Act to Modernise Nationality Law (in force 27 June 2024) changed all three, as the Nationality Act reads today: naturalisation after five years' lawful habitual residence (§ 10(1)); the renunciation requirement (§ 12) and the loss of German citizenship on taking another (§ 25) are repealed, so other citizenships are kept either way. Citizenship at birth is read from StAG § 4 as consolidated today (Gesetze im Internet, read 30 October 2026): a child takes German citizenship at birth if a parent holds it (§ 4(1)); a child of foreign parents born in Germany takes it if a parent has lived lawfully in Germany for five years with an unlimited right of residence (§ 4(3); GLOBALCIT's 2024 coding still had eight years, before the Act to Modernise Nationality Law of 2024); a child born abroad to a German parent who was also born abroad after 1999 and lives there takes it only if the birth is registered within a year or the child would otherwise be stateless (§ 4(4)). Foundlings (§ 4(2)) aren't held by the form. Naturalisation costs €255 (StAG § 38(2) no. 1; €51 for a minor child naturalised with a parent), and the applicant must have sufficient German and knowledge of the legal and social order and living conditions in Germany (§ 10(1) nos. 6 and 7: a B1 language level and the naturalisation test, in § 10(4) and (5)). The Act sets no longest time and the authorities that decide are the Länder's, so none is held.",
  "sources": [
   {
    "url": "https://cadmus.eui.eu/bitstreams/3b166501-e695-48d7-9e27-d7bef061573a/download",
@@ -17,7 +17,7 @@
    "url": "https://www.gesetze-im-internet.de/stag/__10.html",
    "title": "Gesetze im Internet, Staatsangehörigkeitsgesetz (StAG) § 10",
    "read": "2026-10-29",
-   "said": "(1) Ein Ausländer, der seit fünf Jahren rechtmäßig seinen gewöhnlichen Aufenthalt im Inland hat und handlungsfähig nach § 34 Satz 1 oder gesetzlich vertreten ist, ist auf Antrag einzubürgern"
+   "said": "(1) Ein Ausländer, der seit fünf Jahren rechtmäßig seinen gewöhnlichen Aufenthalt im Inland hat und handlungsfähig nach § 34 Satz 1 oder gesetzlich vertreten ist, ist auf Antrag einzubürgern ... 6. über ausreichende Kenntnisse der deutschen Sprache verfügt und 7. über Kenntnisse der Rechts- und Gesellschaftsordnung und der Lebensverhältnisse in Deutschland verfügt."
   },
   {
    "url": "https://www.gesetze-im-internet.de/stag/__12.html",
@@ -30,6 +30,30 @@
    "title": "Gesetze im Internet, Staatsangehörigkeitsgesetz (StAG) § 25",
    "read": "2026-10-29",
    "said": "§ 25 (weggefallen)"
+  },
+  {
+   "url": "https://www.gesetze-im-internet.de/stag/__4.html",
+   "title": "Gesetze im Internet, Staatsangehörigkeitsgesetz (StAG) § 4",
+   "read": "2026-10-30",
+   "said": "(1) Durch die Geburt erwirbt ein Kind die deutsche Staatsangehörigkeit, wenn ein Elternteil die deutsche Staatsangehörigkeit besitzt. ... (3) Durch die Geburt im Inland erwirbt ein Kind ausländischer Eltern die deutsche Staatsangehörigkeit, wenn ein Elternteil 1. seit fünf Jahren rechtmäßig seinen gewöhnlichen Aufenthalt im Inland hat und 2. ein unbefristetes Aufenthaltsrecht oder als Staatsangehöriger der Schweiz oder dessen Familienangehöriger eine Aufenthaltserlaubnis auf Grund des Abkommens vom 21. Juni 1999 zwischen der Europäischen Gemeinschaft und ihren Mitgliedstaaten einerseits und der Schweizerischen Eidgenossenschaft andererseits über die Freizügigkeit (BGBl. 2001 II S. 810) besitzt. ... (4) Die deutsche Staatsangehörigkeit wird nicht nach Absatz 1 erworben bei Geburt im Ausland, wenn der deutsche Elternteil nach dem 31. Dezember 1999 im Ausland geboren wurde und dort seinen gewöhnlichen Aufenthalt hat, es sei denn, das Kind würde sonst staatenlos. Die Rechtsfolge nach Satz 1 tritt nicht ein, wenn innerhalb eines Jahres nach der Geburt des Kindes ein Antrag nach § 36 des Personenstandsgesetzes auf Beurkundung der Geburt im Geburtenregister gestellt wird;"
+  },
+  {
+   "url": "https://www.gesetze-im-internet.de/stag/__38.html",
+   "title": "Gesetze im Internet, Staatsangehörigkeitsgesetz (StAG) § 38",
+   "read": "2026-10-30",
+   "said": "(2) Gebühren werden erhoben für: 1. die Einbürgerung in Höhe von 255 Euro"
   }
+ ],
+ "atBirth": {
+  "soil": "conditional",
+  "soilIf": "A parent has had lawful habitual residence in Germany for five years and holds an unlimited right of residence (or, as a Swiss citizen or a Swiss citizen's family member, a residence permit under the 1999 EU–Switzerland free movement agreement) (StAG § 4(3)).",
+  "descent": "either parent",
+  "descentAbroad": "Not acquired by a child born abroad whose German parent was born abroad after 31 December 1999 and lives abroad, unless the child would otherwise be stateless or the birth is applied for registration in the German birth register within a year of it (StAG § 4(4))."
+ },
+ "currency": "EUR",
+ "fee": "255",
+ "test": [
+  "language",
+  "civics"
  ]
 }

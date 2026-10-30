@@ -1,0 +1,31 @@
+{
+ "country": "CA",
+ "region": "CA.02",
+ "issuer": "the Insurance Corporation of British Columbia (ICBC), for the Province of British Columbia",
+ "licence": {
+  "name": "Class 5 driver's licence",
+  "from": 21,
+  "fee": "75",
+  "validYears": 5
+ },
+ "card": {
+  "name": "BC Identification (BCID) card",
+  "fee": "35",
+  "validYears": 5
+ },
+ "note": "ICBC's fees page and graduated licensing page (read 2026-10-30) are built from a script payload, so their text was read from the saved pages' payload (ca-bc-fees.txt and ca-bc-glp.txt, the cells of each page in order, beside the saved HTML; ICBC writes a dollar sign there as $$). The fees page gives a first 5-year novice licence and a 5-year renewal at $75 each, and an original BCID valid for five years at $35. The graduated licensing page: a learner's licence from the 16th birthday; a novice licence after at least 2 years of practice; a Class 5 licence with restrictions after at least 24 months on the novice licence (if under 25); a full Class 5 licence after 12 months on that. The earliest full licence is therefore at 21 (16, plus 2, 2 and 1 years; 20 1/2 with an approved course), a sum of the page's periods kept as the age. No youngest age for the BCID was read.",
+ "sources": [
+  {
+   "url": "https://icbc.com/driver-licensing/visit-dl-office/Fees",
+   "title": "ICBC, Fees (driver licensing)",
+   "read": "2026-10-30",
+   "said": "First 5-year novice licence $$75 ... Original BCID (valid for five years) $$35"
+  },
+  {
+   "url": "https://icbc.com/driver-licensing/new-drivers/Graduated-licensing",
+   "title": "ICBC, Graduated licensing",
+   "read": "2026-10-30",
+   "said": "You can get your L on or after your 16th birthday. ... After at least 2 years of practice with a qualified supervisor ... 24 months* of safe driving (if you are under 25) ... After 12 months of safe driving with no prohibitions or suspensions on your Class 5 licence with restrictions, you will have a full Class 5 licence."
+  }
+ ]
+}

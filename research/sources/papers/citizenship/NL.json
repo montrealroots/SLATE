@@ -3,7 +3,7 @@
  "years": 5,
  "renounce": true,
  "lapses": true,
- "note": "GLOBALCIT's Citizenship Law Dataset v3.0 (EUI, 2025), coding the law in force on 1 January 2024 (A06a NET 8(1); A06b NET 8(1); L05 NET 15(1)(a), 16(1)(e)): ordinary naturalisation after 5 years' residence; the applicant must give up other citizenships (with major exceptions); a citizen loses the citizenship on voluntarily taking another (with exceptions). Reforms after that date are checked in the file's later sources, where a later source is given. The Kingdom Act as consolidated today still asks five years' admission and principal residence immediately before the request (art. 8(1)(c)).",
+ "note": "GLOBALCIT's Citizenship Law Dataset v3.0 (EUI, 2025), coding the law in force on 1 January 2024 (A06a NET 8(1); A06b NET 8(1); L05 NET 15(1)(a), 16(1)(e)): ordinary naturalisation after 5 years' residence; the applicant must give up other citizenships (with major exceptions); a citizen loses the citizenship on voluntarily taking another (with exceptions). Reforms after that date are checked in the file's later sources, where a later source is given. The Kingdom Act as consolidated today still asks five years' admission and principal residence immediately before the request (art. 8(1)(c)). Citizenship at birth is read from article 3 of the same consolidated Kingdom Act: a child is Dutch if the father or the mother is Dutch at the birth, or a Dutch parent died before it (art. 3(1)), wherever the child is born; birth in the Kingdom gives it only in the third generation (art. 3(3)). Foundlings (art. 3(2)) aren't held by the form, nor the loss later of a Dutch national living abroad for long (art. 15). Naturalisation costs €1,139 for one person (IND, read 30 October 2026); the applicant must have passed the civic integration exam, in Dutch at least at A2 and in knowledge of Dutch society; the IND has a legal decision period of 12 months, which it may extend by 1 year in total, so the longest held is 24 months.",
  "sources": [
   {
    "url": "https://cadmus.eui.eu/bitstreams/3b166501-e695-48d7-9e27-d7bef061573a/download",
@@ -15,9 +15,42 @@
   },
   {
    "url": "https://wetten.overheid.nl/BWBR0003738/",
-   "title": "wetten.overheid.nl, Rijkswet op het Nederlanderschap (consolidated), article 8(1)(c)",
+   "title": "wetten.overheid.nl, Rijkswet op het Nederlanderschap (consolidated), articles 3 and 8(1)(c)",
    "read": "2026-10-29",
-   "said": "c. die tenminste sedert vijf jaren onmiddellijk voorafgaande aan het verzoek in het Europese deel van Nederland, Aruba, Curaçao, Sint Maarten of de openbare lichamen Bonaire, Sint Eustatius en Saba, toelating en hoofdverblijf heeft;"
+   "said": "c. die tenminste sedert vijf jaren onmiddellijk voorafgaande aan het verzoek in het Europese deel van Nederland, Aruba, Curaçao, Sint Maarten of de openbare lichamen Bonaire, Sint Eustatius en Saba, toelating en hoofdverblijf heeft; ... 1 Nederlander is het kind waarvan ten tijde van zijn geboorte de vader of de moeder Nederlander is, alsmede het kind van een Nederlander die voordien is overleden. ... 3 Nederlander is het kind van een vader of moeder die ten tijde van de geboorte van het kind zijn of haar hoofdverblijf heeft in Nederland, Aruba, Curaçao of Sint Maarten en die zelf geboren is als kind van een vader of moeder die ten tijde van zijn of haar geboorte in een van die landen hoofdverblijf had, mits het kind ten tijde van zijn geboorte zijn hoofdverblijf heeft in Nederland, Aruba, Curaçao of Sint Maarten."
+  },
+  {
+   "url": "https://ind.nl/en/costs",
+   "title": "IND, Costs",
+   "read": "2026-10-30",
+   "said": "Request for naturalisation for 1 person € 1139,00"
+  },
+  {
+   "url": "https://ind.nl/en/after-your-application/decision-periods",
+   "title": "IND, Decision periods",
+   "read": "2026-10-30",
+   "said": "A legal decision period of 1 year applies to this application. ... The IND can extend the decision period by 1 year in total."
+  },
+  {
+   "url": "https://ind.nl/en/civic-integration-for-naturalisation",
+   "title": "IND, Civic integration for naturalisation",
+   "read": "2026-10-30",
+   "said": "The civic integration exam consists of the following tests: Verbal and writing skills in the Dutch language: ... Knowledge of Dutch Society (KNS):"
   }
+ ],
+ "atBirth": {
+  "soil": "conditional",
+  "soilIf": "A parent with principal residence in the Netherlands, Aruba, Curaçao or Sint Maarten at the birth was himself or herself born to a parent who had principal residence in one of those countries at that birth, and the child has principal residence there at birth (art. 3(3)).",
+  "descent": "either parent"
+ },
+ "currency": "EUR",
+ "fee": "1139",
+ "within": {
+  "n": 24,
+  "unit": "month"
+ },
+ "test": [
+  "language",
+  "civics"
  ]
 }

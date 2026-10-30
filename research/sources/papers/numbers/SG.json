@@ -1,0 +1,26 @@
+{
+ "country": "SG",
+ "name": "NRIC number",
+ "issuer": "the Singapore Government (on the National Registration Identity Card)",
+ "format": {
+  "length": 9,
+  "pattern": "^[ST]\\d{7}[A-Z]$"
+ },
+ "when": "registration",
+ "who": [
+  "citizens",
+  "residents"
+ ],
+ "needed": [
+  "tax"
+ ],
+ "note": "Singapore's sheet (its government's own sheet on the OECD's automatic-exchange portal ('Information on Tax Identification Numbers'; the OECD's index page sits behind a bot check and wasn't opened, the sheet itself came straight back)), read 2026-10-30: the NRIC number is for citizens and permanent residents (foreigners with a work pass hold a FIN, F, G or M, not modelled); a letter, S for those born before 2000 and T from 2000, a 7-digit serial (starting with the birth year for those born from 1968), and a checksum letter whose rule the sheet doesn't give (`check` left out). The issuing authority (the Immigration and Checkpoints Authority) isn't named in the sheet. Read as given on registration (at birth registration, for a citizen).",
+ "sources": [
+  {
+   "url": "https://www.oecd.org/content/dam/oecd/en/topics/policy-issue-focus/aeoi/singapore-tin.pdf",
+   "title": "OECD AEOI portal, Singapore: Information on Tax Identification Numbers (the jurisdiction's own sheet)",
+   "read": "2026-10-30",
+   "said": "NRIC Number: This is for Singapore Citizens or Permanent Residents of Singapore. ... Singapore citizens and permanent residents born before the year 2000 are assigned the letter \"S\". ... Singapore citizens and permanent residents born in and after 2000 are assigned the letter \"T\". ... This is a 7-digit serial number assigned to the document holder ... This is a checksum alphabet"
+  }
+ ]
+}

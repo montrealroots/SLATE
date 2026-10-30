@@ -3,7 +3,7 @@
  "years": 5,
  "renounce": true,
  "lapses": true,
- "note": "GLOBALCIT's Citizenship Law Dataset v3.0 (EUI, 2025), coding the law in force on 1 January 2024 (A06a LAT 10-12, 17; A06b LAT 10-12, 17; L05 LAT 9(1), 23(2), 24(1)(1)): ordinary naturalisation after 5 years' residence; the applicant must give up other citizenships (with major exceptions); a citizen loses the citizenship on voluntarily taking another (with exceptions). Reforms after that date are checked in the file's later sources, where a later source is given.",
+ "note": "GLOBALCIT's Citizenship Law Dataset v3.0 (EUI, 2025), coding the law in force on 1 January 2024 (A06a LAT 10-12, 17; A06b LAT 10-12, 17; L05 LAT 9(1), 23(2), 24(1)(1)): ordinary naturalisation after 5 years' residence; the applicant must give up other citizenships (with major exceptions); a citizen loses the citizenship on voluntarily taking another (with exceptions). Reforms after that date are checked in the file's later sources, where a later source is given. Citizenship at birth is read from the same dataset's 2024 coding of modes A01a (descent, born in country: Generally applicable provision), A01b (descent, born abroad: Generally applicable provision), A02a (birth in country: No provision) and A02b (birth in country to a parent born there: No provision), as its codebook (RSC/GLOBALCIT 2025/01, sections 3.2.1a to 3.2.2b) defines them: not by birth in the territory alone (provisions for foundlings and children otherwise stateless, modes A03a and A03b, aren't held by the form); by descent from either parent, with no further limit on a child born abroad. Changes to the law at birth after 1 January 2024 weren't checked for this file.",
  "sources": [
   {
    "url": "https://cadmus.eui.eu/bitstreams/3b166501-e695-48d7-9e27-d7bef061573a/download",
@@ -11,7 +11,11 @@
    "read": "2026-10-29",
    "kind": "secondary",
    "quotes": "https://globalcit.eu/national-citizenship-laws/",
-   "said": "Person has been permanently resident in Latvia for 5 years. ... Renunciation or automatic loss of citizenship of another country required. Exemption from renunciation requirement applies to nationals of a Member State of the EU, the EFTA or NATO, Australia, Brazil or New Zealand, or a country with which Latvia has concluded a dual citizenship agreement. ... Person acquires citizenship of another country (and is under an obligation to inform the Latvian authorities of this within 30 days). Unless this country is a Member State of the EU, EFTA or NATO, Australia, Brazil or New Zealand, or a country with which Latvia concluded a dual citizenship agreement. Person may receive permission from the government if retention of Latvian citizenship is in the State."
+   "said": "Person has been permanently resident in Latvia for 5 years. ... Renunciation or automatic loss of citizenship of another country required. Exemption from renunciation requirement applies to nationals of a Member State of the EU, the EFTA or NATO, Australia, Brazil or New Zealand, or a country with which Latvia has concluded a dual citizenship agreement. ... Person acquires citizenship of another country (and is under an obligation to inform the Latvian authorities of this within 30 days). Unless this country is a Member State of the EU, EFTA or NATO, Australia, Brazil or New Zealand, or a country with which Latvia concluded a dual citizenship agreement. Person may receive permission from the government if retention of Latvian citizenship is in the State. ... Generally applicable provision ... Person is born in Latvia to two citizens, or to one citizen and LAT 9(2) or 9(5) (regarding dual citizenship) are complied with. ... Generally applicable provision ... Person is born abroad to two citizens, or to one citizen and LAT 9(2) or 9(5) (regarding dual citizenship) is complied with. ... No provision ... No provision"
   }
- ]
+ ],
+ "atBirth": {
+  "soil": "none",
+  "descent": "either parent"
+ }
 }

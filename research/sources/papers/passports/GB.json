@@ -3,61 +3,150 @@
  "office": "HM Passport Office",
  "currency": "GBP",
  "routes": [
-  {"id": "online", "where": "home", "speed": "standard", "within": {"n": 3, "unit": "week"}, "label": "online, in the UK: 3 weeks"},
-  {"id": "paper", "where": "home", "speed": "standard", "within": {"n": 3, "unit": "week"}, "label": "paper form, in the UK: 3 weeks"},
-  {"id": "fast-track", "where": "home", "speed": "urgent", "within": {"n": 1, "unit": "week"}, "label": "1 week fast track: delivered 1 week after an appointment, at the earliest the day after applying"},
-  {"id": "premium", "where": "home", "speed": "urgent", "within": {"n": 4, "unit": "hour"}, "label": "1 day premium (adult renewals): ready 4 hours after an appointment, at the earliest 2 days after applying"},
-  {"id": "abroad-online", "where": "abroad", "speed": "standard", "within": null, "label": "online, from outside the UK, delivered to an address abroad"}
+  {
+   "id": "online",
+   "where": "home",
+   "speed": "standard",
+   "within": {
+    "n": 3,
+    "unit": "week"
+   },
+   "label": "online, in the UK: 3 weeks"
+  },
+  {
+   "id": "paper",
+   "where": "home",
+   "speed": "standard",
+   "within": {
+    "n": 3,
+    "unit": "week"
+   },
+   "label": "paper form, in the UK: 3 weeks"
+  },
+  {
+   "id": "fast-track",
+   "where": "home",
+   "speed": "urgent",
+   "within": {
+    "n": 1,
+    "unit": "week"
+   },
+   "label": "1 week fast track: delivered 1 week after an appointment, at the earliest the day after applying"
+  },
+  {
+   "id": "premium",
+   "where": "home",
+   "speed": "urgent",
+   "within": {
+    "n": 4,
+    "unit": "hour"
+   },
+   "label": "1 day premium (adult renewals): ready 4 hours after an appointment, at the earliest 2 days after applying",
+   "renewal": true
+  },
+  {
+   "id": "abroad-online",
+   "where": "abroad",
+   "speed": "standard",
+   "within": null,
+   "label": "online, from outside the UK, delivered to an address abroad"
+  }
  ],
  "passports": [
-  {"for": "adult", "from": 16, "pages": 34, "validYears": 10, "pay": {"online": "102", "paper": "115.50", "fast-track": "192", "premium": "239.50", "abroad-online": "130.82"}},
-  {"for": "adult", "from": 16, "pages": 54, "validYears": 10, "pay": {"online": "116", "paper": "129.50", "fast-track": "206", "premium": "253.50", "abroad-online": "144.82"}},
-  {"for": "child", "under": 16, "pages": 34, "validYears": 5, "pay": {"online": "66.50", "paper": "80", "fast-track": "156.50", "abroad-online": "89.82"}},
-  {"for": "child", "under": 16, "pages": 54, "validYears": 5, "pay": {"online": "80.50", "paper": "94", "fast-track": "170.50", "abroad-online": "103.82"}}
+  {
+   "for": "adult",
+   "from": 16,
+   "pages": 34,
+   "validYears": 10,
+   "pay": {
+    "online": "102",
+    "paper": "115.50",
+    "fast-track": "192",
+    "premium": "239.50",
+    "abroad-online": "130.82"
+   }
+  },
+  {
+   "for": "adult",
+   "from": 16,
+   "pages": 54,
+   "validYears": 10,
+   "pay": {
+    "online": "116",
+    "paper": "129.50",
+    "fast-track": "206",
+    "premium": "253.50",
+    "abroad-online": "144.82"
+   }
+  },
+  {
+   "for": "child",
+   "under": 16,
+   "pages": 34,
+   "validYears": 5,
+   "pay": {
+    "online": "66.50",
+    "paper": "80",
+    "fast-track": "156.50",
+    "abroad-online": "89.82"
+   }
+  },
+  {
+   "for": "child",
+   "under": 16,
+   "pages": 54,
+   "validYears": 5,
+   "pay": {
+    "online": "80.50",
+    "paper": "94",
+    "fast-track": "170.50",
+    "abroad-online": "103.82"
+   }
+  }
  ],
  "free": "a British national born on or before 2 September 1929",
- "note": "Applying in the United Kingdom. HM Passport Office's service page says a paper form costs an extra £16.00; its fees page gives £13.50 more (£115.50 against £102): the fees page, the one for fees, is taken. Applying online from outside the United Kingdom, the Passport (Fees) Regulations 2022 as the 2026 amendment left them set £116.50 for a holder of 16 or over and £75.50 for a younger one, £14 more for the frequent traveller passport, and £14.32 for delivering the passport to an address abroad; each fee abroad here is that sum. A paper form from abroad and the charge for forwarding an application made abroad aren't modelled, and the regulations give no processing time. The fast track and premium times count from the appointment, not the application.",
+ "note": "Applying in the United Kingdom. HM Passport Office's service page says a paper form costs an extra £16.00; its fees page gives £13.50 more (£115.50 against £102): the fees page, the one for fees, is taken. Applying online from outside the United Kingdom, the Passport (Fees) Regulations 2022 as the 2026 amendment left them set £116.50 for a holder of 16 or over and £75.50 for a younger one, £14 more for the frequent traveller passport, and £14.32 for delivering the passport to an address abroad; each fee abroad here is that sum. A paper form from abroad and the charge for forwarding an application made abroad aren't modelled, and the regulations give no processing time. The fast track and premium times count from the appointment, not the application. The 1 day premium service only renews an adult passport, so it is written as a renewal route; the fees page gives one price for a first passport and a renewal.",
  "sources": [
   {
    "url": "https://www.gov.uk/passport-fees",
    "title": "GOV.UK, Passport fees",
-   "read": "2026-10-28",
-   "said": "Apply online / Apply by paper form: Adult (16 and over) standard 34-page passport £102 £115.50; Adult (16 and over) 54-page frequent traveller passport £116 £129.50; Child (under 16) standard 34-page passport £66.50 £80; Child (under 16) 54-page frequent traveller passport £80.50 £94; Passport for people born on or before 2 September 1929 Free Free."
+   "read": "2026-10-30",
+   "said": "Apply online Apply by paper form Adult (16 and over) standard 34-page passport £102 £115.50 Adult (16 and over) 54-page frequent traveller passport £116 £129.50 Child (under 16) standard 34-page passport £66.50 £80 Child (under 16) 54-page frequent traveller passport £80.50 £94 Passport for people born on or before 2 September 1929 Free Free"
   },
   {
    "url": "https://www.gov.uk/apply-first-adult-passport",
    "title": "GOV.UK, Getting your first adult passport",
-   "read": "2026-10-28",
-   "said": "you're aged 16 or over (or will be in 3 weeks) ... An adult passport is valid for 10 years."
+   "read": "2026-10-30",
+   "said": "you’re aged 16 or over (or will be in 3 weeks ... An adult passport is valid for 10 years."
   },
   {
    "url": "https://www.gov.uk/get-a-child-passport",
    "title": "GOV.UK, Get a passport for your child",
-   "read": "2026-10-28",
+   "read": "2026-10-30",
    "said": "You apply for a child passport if your child is under 16. It costs £66.50 to apply online and £80 to apply with a paper form from the Post Office. A child passport is valid for 5 years."
   },
   {
    "url": "https://www.gov.uk/get-a-passport-urgently",
    "title": "GOV.UK, Get a passport urgently",
-   "read": "2026-10-28",
-   "said": "1 day premium: The earliest you can get an appointment is 2 days after you apply ... Your new passport will be ready to collect from the passport office 4 hours after your appointment. You can only use this service to renew an adult passport. It costs £239.50 (or £253.50 for a 54-page frequent traveller passport). 1 week fast track: The earliest you can get an appointment is the next day after you apply. Your new passport will be delivered to you by courier 1 week after your appointment ... It costs: £192 for an adult passport (or £206 for a 54-page frequent traveller passport) £156.50 for a child passport (or £170.50 for a 54-page frequent traveller passport)"
+   "read": "2026-10-30",
+   "said": "1 day premium The earliest you can get an appointment is 2 days after you apply ... Your new passport will be ready to collect from the passport office 4 hours after your appointment. You can only use this service to renew an adult passport. It costs £239.50 (or £253.50 for a 54-page frequent traveller passport). 1 week fast track The earliest you can get an appointment is the next day after you apply. Your new passport will be delivered to you by courier 1 week after your appointment ... It costs: £192 for an adult passport (or £206 for a 54-page frequent traveller passport) £156.50 for a child passport (or £170.50 for a 54-page frequent traveller passport)"
   },
   {
    "url": "https://www.gov.uk/government/organisations/hm-passport-office/about-our-services",
    "title": "GOV.UK, HM Passport Office, About our services",
-   "read": "2026-10-28",
-   "said": "Processing times in the UK: You'll usually get your passport within 3 weeks. It may take longer than 3 weeks if we need more information, or we need to interview you ... You can also apply with a paper form from a post office. This costs an extra £16.00."
+   "read": "2026-10-30",
+   "said": "Processing times in the UK You’ll usually get your passport within 3 weeks. It may take longer than 3 weeks if we need more information, or we need to interview you ... You can also apply with a paper form from a post office . This costs an extra £16.00"
   },
   {
    "url": "https://www.legislation.gov.uk/uksi/2022/660/pdfs/uksi_20220660_en.pdf",
    "title": "The Passport (Fees) Regulations 2022 (S.I. 2022/660), as made, Schedule, paragraphs 2, 7, 10 and 14",
-   "read": "2026-10-28",
+   "read": "2026-10-30",
    "said": "Under-16 prospective In the United Kingdom Online £49 ... Outside the United Kingdom Online £56 ... Over-16 prospective In the United Kingdom Online £75.50 ... Outside the United Kingdom Online £86 ... (b) the prospective passport holder lives outside the United Kingdom; ... Where paragraph 7(b) applies, the fee is the appropriate fee specified in paragraph 2 for an application made by a prospective passport holder who lives outside the United Kingdom plus £10. ... Arranging delivery of a passport for an application made outside the United Kingdom and if the application is successful, delivering the passport—"
   },
   {
    "url": "https://www.legislation.gov.uk/uksi/2026/311/pdfs/uksi_20260311_en.pdf",
    "title": "The Immigration, Nationality and Passports (Fees) (Amendment) Regulations 2026 (S.I. 2026/311), regulation 13 and Schedule 8",
-   "read": "2026-10-28",
+   "read": "2026-10-30",
    "said": "these Regulations come into force at 9.00 a.m. on 8th April 2026. ... (8) In paragraph 10, for £13” substitute “£14”. ... (b) in the second entry (arranging delivery of a passport)— (i) for “£11.41” substitute “£14.32”; (ii) for “£9.70” substitute “£14.32”; ... The first entry £61.50 £66.50 The second entry £74 £80 The third entry £70 £75.50 The fourth entry £82.50 £89 The fifth entry £94.50 £102 The sixth entry £107 £115.50 The seventh entry £108 £116.50 The eighth entry £120.50 £130"
   }
  ]

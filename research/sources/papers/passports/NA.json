@@ -16,6 +16,22 @@
    "speed": "standard",
    "within": null,
    "label": "at a Namibian mission"
+  },
+  {
+   "id": "lost",
+   "where": "home",
+   "speed": "standard",
+   "within": null,
+   "replacement": true,
+   "label": "a lost or damaged passport replaced"
+  },
+  {
+   "id": "abroad-lost",
+   "where": "abroad",
+   "speed": "standard",
+   "within": null,
+   "replacement": true,
+   "label": "a lost or damaged passport replaced through the Embassy in Brussels"
   }
  ],
  "passports": [
@@ -25,11 +41,13 @@
    "validYears": 10,
    "pay": {
     "home": "400",
-    "abroad": null
+    "abroad": "25.00",
+    "lost": "800",
+    "abroad-lost": "50.00"
    }
   }
  ],
- "note": "The Ministry's executive director's statement as The Namibian reported it (26 July 2021): a 47-page passport valid ten years at N$400 (doubled), N$800 to replace a lost or damaged one (not modelled). Abroad the Embassy in Brussels charges €25.00 for a new or renewed passport, a fee in euros that isn't summed with the dollar fee, so the abroad route is left unpaid. The Ministry's site resets the connection for this client. Processing times are a lead.",
+ "note": "The Ministry's executive director's statement as The Namibian reported it (26 July 2021): a 47-page passport valid ten years at N$400 (doubled), N$800 to replace a lost or damaged one, written as a replacement route. Abroad the Embassy in Brussels charges €25.00 for a new or renewed passport, and €50.00 for one lost or damaged: the abroad routes are paid in euros. The Ministry's site resets the connection for this client. Processing times are a lead.",
  "sources": [
   {
    "kind": "secondary",
@@ -37,13 +55,16 @@
    "quotes": "https://mha.gov.na/passports-general-information",
    "title": "The Namibian, 70 000 uncollected ID cards at home affairs (26 July 2021)",
    "read": "2026-10-28",
-   "said": "The renewal of lost and damaged passports will now cost N$800, which is twice the original fee. ... “The number of pages in a passport booklet has increased from 32 to 47, and the validity period has increased from five to 10 years. With the price of a passport being N$400, one is basically paying N$40 per year. This necessitated the doubling of passport fees,” he said."
+   "said": "The renewal of lost and damaged passports will now cost N$800, which is twice the original fee. ... “The number of pages in a passport booklet has increased from 32 to 47, and the validity period has increased from five to 10 years. With the price of a passport being N$400, one is basically paying N$40 per year. This necessitated the doubling of passport fees,” he said. ... The renewal of lost and damaged passports will now cost N$800, which is twice the original fee."
   },
   {
    "url": "https://namibiaembassy.be/visa_permit_passports_fees.htm",
    "title": "Embassy of Namibia to Belgium, the Netherlands, Luxembourg and the European Union, Visa/Permit/Passport Fees",
    "read": "2026-10-28",
-   "said": "New / Renewed Namibian Passport €25.00 Lost / Damaged Namibian Passport €50.00"
+   "said": "New / Renewed Namibian Passport €25.00 Lost / Damaged Namibian Passport €50.00 ... New / Renewed Namibian Passport €25.00 Lost / Damaged Namibian Passport €50.00"
   }
- ]
+ ],
+ "abroad": {
+  "currency": "EUR"
+ }
 }

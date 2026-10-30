@@ -1,0 +1,89 @@
+{
+ "country": "NL",
+ "routes": [
+  {
+   "id": "self-employed",
+   "name": "Residence permit self-employed person",
+   "for": "self-employed",
+   "apply": "abroad",
+   "fee": "423",
+   "within": {
+    "n": 90,
+    "unit": "day"
+   },
+   "renewable": true,
+   "work": "any",
+   "counts": true,
+   "permanentAfter": 5
+  },
+  {
+   "id": "employment",
+   "name": "Work in employment (single permit)",
+   "for": "work",
+   "apply": "either",
+   "fee": "423",
+   "renewable": true,
+   "work": "sponsor",
+   "counts": true,
+   "permanentAfter": 5
+  },
+  {
+   "id": "eu-eea-swiss",
+   "name": "Staying in the Netherlands as an EU/EEA or Swiss citizen",
+   "for": "free movement",
+   "apply": "in country",
+   "work": "any",
+   "counts": true,
+   "groups": [
+    "EU/EEA",
+    "CH"
+   ]
+  },
+  {
+   "id": "permanent",
+   "name": "Permanent residence permit",
+   "for": "permanent",
+   "apply": "in country",
+   "fee": "254",
+   "within": {
+    "n": 6,
+    "unit": "month"
+   },
+   "work": "any",
+   "counts": true
+  }
+ ],
+ "note": "Netherlands, read on the Immigration and Naturalisation Service's own pages (read 2026-10-30): the fees (valid 1 January to 31 December, changed each year), the residence permit for a self-employed person, the permanent residence permit, EU/EEA and Swiss citizens' stay and naturalisation. A self-employed artist whose work is of essential interest to Dutch culture (the IND asks the Ministry of Education, Culture and Science) may have the self-employed permit, applied for with an MVV through a Dutch embassy, decided within 90 days (extendable by up to 6 months for advice); first application €423. The game reads it as letting the holder take any engagement as a freelancer. Employment for a Dutch employer is the single permit (residence and work), €423 for a first application and for an extension, tied to the employer (read as work for the sponsor; the work engine's GVVA). The permits' terms were not stated on the pages read, so none is kept. After at least 5 consecutive years on a valid permit, the permanent residence permit (€254), decided within 6 months. EU/EEA and Swiss citizens need no residence permit and are free to work. Naturalisation asks 5 consecutive years in the Kingdom with a valid residence permit, so every route's years count.",
+ "sources": [
+  {
+   "url": "https://ind.nl/en/fees-costs-of-an-application",
+   "title": "Fees (costs) of an application, IND (fees valid January 1 to December 31, read 2026-10-30)",
+   "read": "2026-10-30",
+   "said": "Work as a self-employed person (including Dutch-American Friendship Treaty or Dutch-Japanese Trade Treaty) First application and change in purpose of stay € 423,00 ... Work in employment (including spending leave after work on board a Dutch seagoing vessel or mining installation) ... First application and change in purpose of stay including single permit € 423,00 Extension including single permit € 423,00 ... Permanent residence permit ... Long-term EU residency ... First application € 254,00 ... The fees are changed each year on January 1. The fee amounts are valid from January 1 to December 31."
+  },
+  {
+   "url": "https://ind.nl/en/residence-permits/work/residence-permit-self-employed-person",
+   "title": "Residence permit self-employed person, IND (read 2026-10-30)",
+   "read": "2026-10-30",
+   "said": "Or you want to work as a self-employed artist in the Netherlands. ... Your work needs to be of essential interest to the Dutch culture. To assess this, the IND requests advice from the Ministry of Education, Culture and Science (OCW). ... The IND must take a decision within 90 days. This is called the decision period. The IND can extend the decision period by a maximum of 6 months if we ask for advice from the RVO or the OCW."
+  },
+  {
+   "url": "https://ind.nl/en/replace-extend-renew-and-change/permanent-residency/permanent-residence-permit",
+   "title": "Permanent residence permit, IND (read 2026-10-30)",
+   "read": "2026-10-30",
+   "said": "You have had a valid Dutch residence permit for at least 5 consecutive years. ... The IND must take a decision within 6 months."
+  },
+  {
+   "url": "https://ind.nl/en/residence-permits/eu-eea-or-swiss-citizens/staying-in-the-netherlands-as-an-eu-eea-or-swiss-citizen",
+   "title": "Staying in the Netherlands as an EU/EEA or Swiss citizen, IND (read 2026-10-30)",
+   "read": "2026-10-30",
+   "said": "You do not need a residence permit to live in the Netherlands. ... You are free to work in the Netherlands. Your employer does not need a work permit"
+  },
+  {
+   "url": "https://ind.nl/en/dutch-citizenship/becoming-a-dutch-national-through-naturalisation",
+   "title": "Becoming a Dutch national through naturalisation, IND (read 2026-10-30)",
+   "read": "2026-10-30",
+   "said": "You have lived in the Kingdom of the Netherlands for at least 5 consecutive years with a valid residence permit."
+  }
+ ]
+}

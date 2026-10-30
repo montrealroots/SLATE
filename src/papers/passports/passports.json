@@ -98,6 +98,13 @@
     "where": "abroad",
     "speed": "standard",
     "within": null
+   },
+   {
+    "id": "abroad-lost",
+    "where": "abroad",
+    "speed": "standard",
+    "within": null,
+    "replacement": true
    }
   ],
   "bands": [
@@ -105,7 +112,8 @@
     "validYears": null,
     "pay": {
      "home": null,
-     "abroad": 5000
+     "abroad": 5000,
+     "abroad-lost": 10000
     },
     "from": 16
    },
@@ -113,7 +121,8 @@
     "validYears": null,
     "pay": {
      "home": null,
-     "abroad": 2500
+     "abroad": 2500,
+     "abroad-lost": 5000
     },
     "under": 16
    }
@@ -201,6 +210,12 @@
     "where": "abroad",
     "speed": "standard",
     "within": null
+   },
+   {
+    "id": "abroad-video",
+    "where": "abroad",
+    "speed": "standard",
+    "within": null
    }
   ],
   "bands": [
@@ -208,7 +223,8 @@
     "validYears": 10,
     "pay": {
      "home": null,
-     "abroad": 6500000
+     "abroad": 6500000,
+     "abroad-video": 9000000
     },
     "from": 16
    },
@@ -216,7 +232,8 @@
     "validYears": null,
     "pay": {
      "home": null,
-     "abroad": 3000000
+     "abroad": 3000000,
+     "abroad-video": 9000000
     },
     "under": 16
    }
@@ -646,6 +663,13 @@
      "n": 1,
      "unit": "day"
     }
+   },
+   {
+    "id": "lost",
+    "where": "home",
+    "speed": "standard",
+    "within": null,
+    "replacement": true
    }
   ],
   "bands": [
@@ -654,7 +678,8 @@
     "pay": {
      "ordinary": 15000,
      "urgent-5": 22500,
-     "urgent-1": 30000
+     "urgent-1": 30000,
+     "lost": 30000
     },
     "from": 16
    },
@@ -663,7 +688,8 @@
     "pay": {
      "ordinary": 10000,
      "urgent-5": null,
-     "urgent-1": null
+     "urgent-1": null,
+     "lost": null
     },
     "under": 16
    }
@@ -910,6 +936,27 @@
     "where": "home",
     "speed": "urgent",
     "within": null
+   },
+   {
+    "id": "renewal",
+    "where": "home",
+    "speed": "standard",
+    "within": null,
+    "renewal": true
+   },
+   {
+    "id": "renewal-fast",
+    "where": "home",
+    "speed": "urgent",
+    "within": null,
+    "renewal": true
+   },
+   {
+    "id": "lost",
+    "where": "home",
+    "speed": "standard",
+    "within": null,
+    "replacement": true
    }
   ],
   "bands": [
@@ -917,7 +964,10 @@
     "validYears": null,
     "pay": {
      "home": 10000,
-     "fast": 20000
+     "fast": 20000,
+     "renewal": 5000,
+     "renewal-fast": 15000,
+     "lost": 50000
     }
    }
   ]
@@ -1079,6 +1129,13 @@
     "where": "home",
     "speed": "urgent",
     "within": null
+   },
+   {
+    "id": "lost",
+    "where": "home",
+    "speed": "standard",
+    "within": null,
+    "replacement": true
    }
   ],
   "bands": [
@@ -1086,7 +1143,8 @@
     "validYears": null,
     "pay": {
      "common": 25725,
-     "urgency": 33442
+     "urgency": 33442,
+     "lost": 51450
     }
    }
   ]
@@ -1172,6 +1230,9 @@
  },
  "BZ": {
   "currency": "BZD",
+  "abroad": {
+   "currency": "USD"
+  },
   "routes": [
    {
     "id": "regular",
@@ -1187,6 +1248,36 @@
      "n": 24,
      "unit": "hour"
     }
+   },
+   {
+    "id": "lost",
+    "where": "home",
+    "speed": "standard",
+    "within": null,
+    "replacement": true
+   },
+   {
+    "id": "lost-24h",
+    "where": "home",
+    "speed": "urgent",
+    "within": {
+     "n": 24,
+     "unit": "hour"
+    },
+    "replacement": true
+   },
+   {
+    "id": "abroad-us",
+    "where": "abroad",
+    "speed": "standard",
+    "within": null
+   },
+   {
+    "id": "abroad-us-lost",
+    "where": "abroad",
+    "speed": "standard",
+    "within": null,
+    "replacement": true
    }
   ],
   "bands": [
@@ -1194,7 +1285,11 @@
     "validYears": 10,
     "pay": {
      "regular": 20000,
-     "24h": 50000
+     "24h": 50000,
+     "lost": 40000,
+     "lost-24h": 70000,
+     "abroad-us": 15000,
+     "abroad-us-lost": 20000
     },
     "from": 16
    },
@@ -1202,7 +1297,11 @@
     "validYears": 5,
     "pay": {
      "regular": 15000,
-     "24h": 45000
+     "24h": 45000,
+     "lost": 35000,
+     "lost-24h": 65000,
+     "abroad-us": 15000,
+     "abroad-us-lost": 20000
     },
     "under": 16
    }
@@ -1429,10 +1528,19 @@
  },
  "CO": {
   "currency": "COP",
+  "abroad": {
+   "currency": "USD"
+  },
   "routes": [
    {
     "id": "bogota",
     "where": "home",
+    "speed": "standard",
+    "within": null
+   },
+   {
+    "id": "abroad",
+    "where": "abroad",
     "speed": "standard",
     "within": null
    }
@@ -1441,7 +1549,8 @@
    {
     "validYears": null,
     "pay": {
-     "bogota": 19560000
+     "bogota": 19560000,
+     "abroad": 8600
     }
    }
   ]
@@ -1582,6 +1691,13 @@
     "where": "home",
     "speed": "urgent",
     "within": null
+   },
+   {
+    "id": "lost",
+    "where": "home",
+    "speed": "standard",
+    "within": null,
+    "replacement": true
    }
   ],
   "bands": [
@@ -1589,7 +1705,8 @@
     "validYears": 10,
     "pay": {
      "standard": 7000,
-     "expedited": 12000
+     "expedited": 12000,
+     "lost": 14000
     },
     "from": 18
    },
@@ -1597,7 +1714,8 @@
     "validYears": 5,
     "pay": {
      "standard": 4500,
-     "expedited": 9500
+     "expedited": 9500,
+     "lost": 9000
     },
     "under": 18
    }
@@ -1673,13 +1791,19 @@
     "id": "home",
     "where": "home",
     "speed": "standard",
-    "within": null
+    "within": {
+     "n": 5,
+     "unit": "week"
+    }
    },
    {
     "id": "express",
     "where": "home",
     "speed": "urgent",
-    "within": null
+    "within": {
+     "n": 6,
+     "unit": "working day"
+    }
    },
    {
     "id": "abroad",
@@ -1740,20 +1864,32 @@
      "n": 2,
      "unit": "week"
     }
+   },
+   {
+    "id": "lost",
+    "where": "home",
+    "speed": "standard",
+    "within": {
+     "n": 2,
+     "unit": "week"
+    },
+    "replacement": true
    }
   ],
   "bands": [
    {
     "validYears": 10,
     "pay": {
-     "standard": 89400
+     "standard": 89400,
+     "lost": 178800
     },
     "from": 18
    },
    {
     "validYears": 5,
     "pay": {
-     "standard": 18200
+     "standard": 18200,
+     "lost": 36400
     },
     "from": 12,
     "under": 18
@@ -1761,7 +1897,8 @@
    {
     "validYears": 5,
     "pay": {
-     "standard": 15000
+     "standard": 15000,
+     "lost": 30000
     },
     "from": 2,
     "under": 12
@@ -1769,7 +1906,8 @@
    {
     "validYears": 2,
     "pay": {
-     "standard": 15000
+     "standard": 15000,
+     "lost": 30000
     },
     "under": 2
    }
@@ -1869,6 +2007,13 @@
      "n": 5,
      "unit": "day"
     }
+   },
+   {
+    "id": "abroad-lost",
+    "where": "abroad",
+    "speed": "standard",
+    "within": null,
+    "replacement": true
    }
   ],
   "bands": [
@@ -1877,7 +2022,8 @@
     "pay": {
      "home": 600000,
      "abroad": 600000,
-     "abroad-fast": 2500000
+     "abroad-fast": 2500000,
+     "abroad-lost": 1600000
     },
     "pages": 28
    },
@@ -1886,7 +2032,8 @@
     "pay": {
      "home": null,
      "abroad": 900000,
-     "abroad-fast": 4500000
+     "abroad-fast": 4500000,
+     "abroad-lost": 1900000
     },
     "pages": 48
    }
@@ -1996,7 +2143,8 @@
     "id": "abroad-renewal",
     "where": "abroad",
     "speed": "standard",
-    "within": null
+    "within": null,
+    "renewal": true
    }
   ],
   "bands": [
@@ -2177,6 +2325,26 @@
     "where": "home",
     "speed": "urgent",
     "within": null
+   },
+   {
+    "id": "lost",
+    "where": "home",
+    "speed": "standard",
+    "within": {
+     "n": 10,
+     "unit": "working day"
+    },
+    "replacement": true
+   },
+   {
+    "id": "lost-urgent",
+    "where": "home",
+    "speed": "urgent",
+    "within": {
+     "n": 3,
+     "unit": "working day"
+    },
+    "replacement": true
    }
   ],
   "bands": [
@@ -2185,7 +2353,9 @@
     "pay": {
      "ordinary": 20650,
      "urgent": 28385,
-     "weekend": 62760
+     "weekend": 62760,
+     "lost": 41290,
+     "lost-urgent": 53675
     }
    }
   ]
@@ -2235,13 +2405,21 @@
     "where": "home",
     "speed": "standard",
     "within": null
+   },
+   {
+    "id": "lost",
+    "where": "home",
+    "speed": "standard",
+    "within": null,
+    "replacement": true
    }
   ],
   "bands": [
    {
     "validYears": 10,
     "pay": {
-     "home": 5000
+     "home": 5000,
+     "lost": 7500
     }
    }
   ]
@@ -2398,7 +2576,8 @@
     "within": {
      "n": 4,
      "unit": "hour"
-    }
+    },
+    "renewal": true
    },
    {
     "id": "abroad-online",
@@ -2458,6 +2637,9 @@
  },
  "GD": {
   "currency": "XCD",
+  "abroad": {
+   "currency": "GBP"
+  },
   "routes": [
    {
     "id": "home",
@@ -2469,7 +2651,29 @@
     "id": "abroad",
     "where": "abroad",
     "speed": "standard",
-    "within": null
+    "within": {
+     "n": 6,
+     "unit": "week"
+    }
+   },
+   {
+    "id": "abroad-fast",
+    "where": "abroad",
+    "speed": "urgent",
+    "within": {
+     "n": 4,
+     "unit": "week"
+    }
+   },
+   {
+    "id": "abroad-lost",
+    "where": "abroad",
+    "speed": "standard",
+    "within": {
+     "n": 6,
+     "unit": "week"
+    },
+    "replacement": true
    }
   ],
   "bands": [
@@ -2477,7 +2681,9 @@
     "validYears": 10,
     "pay": {
      "home": 35000,
-     "abroad": null
+     "abroad": 30200,
+     "abroad-fast": 42800,
+     "abroad-lost": 57800
     },
     "from": 18
    },
@@ -2485,7 +2691,9 @@
     "validYears": 5,
     "pay": {
      "home": null,
-     "abroad": null
+     "abroad": 22000,
+     "abroad-fast": 34600,
+     "abroad-lost": null
     },
     "under": 18
    }
@@ -3215,6 +3423,33 @@
     "where": "abroad",
     "speed": "standard",
     "within": null
+   },
+   {
+    "id": "counter-5-days",
+    "where": "home",
+    "speed": "urgent",
+    "within": {
+     "n": 5,
+     "unit": "working day"
+    }
+   },
+   {
+    "id": "counter-same-day",
+    "where": "home",
+    "speed": "urgent",
+    "within": {
+     "n": 0,
+     "unit": "working day"
+    }
+   },
+   {
+    "id": "online-5-days",
+    "where": "home",
+    "speed": "urgent",
+    "within": {
+     "n": 5,
+     "unit": "working day"
+    }
    }
   ],
   "bands": [
@@ -3224,7 +3459,10 @@
      "online": 7500,
      "postal": 8000,
      "counter": 9500,
-     "mission": 9500
+     "mission": 9500,
+     "counter-5-days": 17000,
+     "counter-same-day": 24500,
+     "online-5-days": 11500
     },
     "from": 18,
     "pages": 34
@@ -3235,7 +3473,10 @@
      "online": 10500,
      "postal": 11000,
      "counter": 12500,
-     "mission": 12500
+     "mission": 12500,
+     "counter-5-days": 20000,
+     "counter-same-day": 27500,
+     "online-5-days": 14500
     },
     "from": 18,
     "pages": 66
@@ -3246,7 +3487,10 @@
      "online": 2000,
      "postal": 3000,
      "counter": 4500,
-     "mission": 4500
+     "mission": 4500,
+     "counter-5-days": 12000,
+     "counter-same-day": 19500,
+     "online-5-days": 6000
     },
     "under": 18,
     "pages": 34
@@ -3257,12 +3501,26 @@
      "online": 5000,
      "postal": 5500,
      "counter": 5500,
-     "mission": 5500
+     "mission": 5500,
+     "counter-5-days": 13000,
+     "counter-same-day": 20500,
+     "online-5-days": 9000
     },
     "under": 18,
     "pages": 66
    }
-  ]
+  ],
+  "card": {
+   "name": "Passport Card",
+   "bands": [
+    {
+     "validYears": null,
+     "pay": {
+      "online": 3500
+     }
+    }
+   ]
+  }
  },
  "IL": {
   "currency": "ILS",
@@ -3354,6 +3612,9 @@
  },
  "IN": {
   "currency": "INR",
+  "abroad": {
+   "currency": "USD"
+  },
   "routes": [
    {
     "id": "normal",
@@ -3366,6 +3627,46 @@
     "where": "home",
     "speed": "urgent",
     "within": null
+   },
+   {
+    "id": "lost",
+    "where": "home",
+    "speed": "standard",
+    "within": null,
+    "replacement": true
+   },
+   {
+    "id": "lost-tatkaal",
+    "where": "home",
+    "speed": "urgent",
+    "within": null,
+    "replacement": true
+   },
+   {
+    "id": "abroad",
+    "where": "abroad",
+    "speed": "standard",
+    "within": null
+   },
+   {
+    "id": "abroad-tatkaal",
+    "where": "abroad",
+    "speed": "urgent",
+    "within": null
+   },
+   {
+    "id": "abroad-lost",
+    "where": "abroad",
+    "speed": "standard",
+    "within": null,
+    "replacement": true
+   },
+   {
+    "id": "abroad-lost-tatkaal",
+    "where": "abroad",
+    "speed": "urgent",
+    "within": null,
+    "replacement": true
    }
   ],
   "bands": [
@@ -3373,7 +3674,13 @@
     "validYears": 10,
     "pay": {
      "normal": 250000,
-     "tatkaal": 500000
+     "tatkaal": 500000,
+     "lost": 500000,
+     "lost-tatkaal": 750000,
+     "abroad": 12500,
+     "abroad-tatkaal": 25000,
+     "abroad-lost": 25000,
+     "abroad-lost-tatkaal": 37500
     },
     "from": 18,
     "pages": 36
@@ -3382,7 +3689,13 @@
     "validYears": 10,
     "pay": {
      "normal": 350000,
-     "tatkaal": 600000
+     "tatkaal": 600000,
+     "lost": 600000,
+     "lost-tatkaal": 850000,
+     "abroad": 17500,
+     "abroad-tatkaal": 30000,
+     "abroad-lost": 30000,
+     "abroad-lost-tatkaal": 42500
     },
     "from": 18,
     "pages": 60
@@ -3391,7 +3704,13 @@
     "validYears": 5,
     "pay": {
      "normal": 175000,
-     "tatkaal": 425000
+     "tatkaal": 425000,
+     "lost": 425000,
+     "lost-tatkaal": 675000,
+     "abroad": 9000,
+     "abroad-tatkaal": 21500,
+     "abroad-lost": 21500,
+     "abroad-lost-tatkaal": 34000
     },
     "under": 18,
     "pages": 36
@@ -3546,6 +3865,9 @@
  },
  "JM": {
   "currency": "JMD",
+  "abroad": {
+   "currency": "USD"
+  },
   "routes": [
    {
     "id": "regular",
@@ -3591,6 +3913,56 @@
      "n": 20,
      "unit": "working day"
     }
+   },
+   {
+    "id": "replacement",
+    "where": "home",
+    "speed": "standard",
+    "within": {
+     "n": 14,
+     "unit": "working day"
+    },
+    "replacement": true
+   },
+   {
+    "id": "replacement-rush-3",
+    "where": "home",
+    "speed": "urgent",
+    "within": {
+     "n": 3,
+     "unit": "working day"
+    },
+    "replacement": true
+   },
+   {
+    "id": "replacement-rush-1",
+    "where": "home",
+    "speed": "urgent",
+    "within": {
+     "n": 1,
+     "unit": "day"
+    },
+    "replacement": true
+   },
+   {
+    "id": "replacement-rush-0",
+    "where": "home",
+    "speed": "urgent",
+    "within": {
+     "n": 0,
+     "unit": "day"
+    },
+    "replacement": true
+   },
+   {
+    "id": "overseas-replacement",
+    "where": "abroad",
+    "speed": "standard",
+    "within": {
+     "n": 20,
+     "unit": "working day"
+    },
+    "replacement": true
    }
   ],
   "bands": [
@@ -3601,7 +3973,12 @@
      "rush-3": 950000,
      "rush-1": 1150000,
      "rush-0": 1650000,
-     "overseas": null
+     "overseas": 8000,
+     "replacement": 1150000,
+     "replacement-rush-3": 1450000,
+     "replacement-rush-1": 1650000,
+     "replacement-rush-0": 2150000,
+     "overseas-replacement": 16000
     },
     "from": 18
    },
@@ -3612,7 +3989,12 @@
      "rush-3": 600000,
      "rush-1": 700000,
      "rush-0": 900000,
-     "overseas": null
+     "overseas": 5000,
+     "replacement": 700000,
+     "replacement-rush-3": 900000,
+     "replacement-rush-1": 1000000,
+     "replacement-rush-0": 1200000,
+     "overseas-replacement": 10000
     },
     "under": 18
    }
@@ -3716,6 +4098,20 @@
     "where": "abroad",
     "speed": "standard",
     "within": null
+   },
+   {
+    "id": "lost",
+    "where": "home",
+    "speed": "standard",
+    "within": null,
+    "replacement": true
+   },
+   {
+    "id": "abroad-lost",
+    "where": "abroad",
+    "speed": "standard",
+    "within": null,
+    "replacement": true
    }
   ],
   "bands": [
@@ -3723,7 +4119,9 @@
     "validYears": null,
     "pay": {
      "home": 750000,
-     "abroad": 755000
+     "abroad": 755000,
+     "lost": 2000000,
+     "abroad-lost": 2005000
     },
     "pages": 34
    },
@@ -3731,7 +4129,9 @@
     "validYears": null,
     "pay": {
      "home": 950000,
-     "abroad": 955000
+     "abroad": 955000,
+     "lost": 2000000,
+     "abroad-lost": 2005000
     },
     "pages": 50
    },
@@ -3739,7 +4139,9 @@
     "validYears": null,
     "pay": {
      "home": 1250000,
-     "abroad": 1255000
+     "abroad": 1255000,
+     "lost": 2000000,
+     "abroad-lost": 2005000
     },
     "pages": 66
    }
@@ -3890,7 +4292,10 @@
     "id": "standard",
     "where": "home",
     "speed": "standard",
-    "within": null
+    "within": {
+     "n": 8,
+     "unit": "working day"
+    }
    }
   ],
   "bands": [
@@ -4291,6 +4696,13 @@
     "where": "home",
     "speed": "urgent",
     "within": null
+   },
+   {
+    "id": "lost",
+    "where": "home",
+    "speed": "standard",
+    "within": null,
+    "replacement": true
    }
   ],
   "bands": [
@@ -4298,7 +4710,8 @@
     "validYears": null,
     "pay": {
      "home": 13000,
-     "emergency": 63000
+     "emergency": 63000,
+     "lost": 43000
     },
     "pages": 32
    },
@@ -4306,7 +4719,8 @@
     "validYears": null,
     "pay": {
      "home": 30000,
-     "emergency": 80000
+     "emergency": 80000,
+     "lost": 60000
     },
     "pages": 64
    }
@@ -4735,20 +5149,29 @@
     "where": "home",
     "speed": "standard",
     "within": null
+   },
+   {
+    "id": "lost",
+    "where": "home",
+    "speed": "standard",
+    "within": null,
+    "replacement": true
    }
   ],
   "bands": [
    {
     "validYears": 10,
     "pay": {
-     "home": 10000
+     "home": 10000,
+     "lost": 20000
     },
     "from": 13
    },
    {
     "validYears": 5,
     "pay": {
-     "home": 5000
+     "home": 5000,
+     "lost": 10000
     },
     "under": 13
    }
@@ -4838,13 +5261,21 @@
     "where": "home",
     "speed": "standard",
     "within": null
+   },
+   {
+    "id": "lost",
+    "where": "home",
+    "speed": "standard",
+    "within": null,
+    "replacement": true
    }
   ],
   "bands": [
    {
     "validYears": null,
     "pay": {
-     "home": 3500000
+     "home": 3500000,
+     "lost": 7500000
     }
    }
   ]
@@ -4888,6 +5319,16 @@
      "n": 2,
      "unit": "working day"
     }
+   },
+   {
+    "id": "lost",
+    "where": "home",
+    "speed": "standard",
+    "within": {
+     "n": 60,
+     "unit": "day"
+    },
+    "replacement": true
    }
   ],
   "bands": [
@@ -4895,7 +5336,8 @@
     "validYears": null,
     "pay": {
      "normal": 43000,
-     "urgent": 58000
+     "urgent": 58000,
+     "lost": 58000
     }
    }
   ]
@@ -4918,19 +5360,28 @@
     "where": "home",
     "speed": "standard",
     "within": null
+   },
+   {
+    "id": "lost",
+    "where": "home",
+    "speed": "standard",
+    "within": null,
+    "replacement": true
    }
   ],
   "bands": [
    {
     "validYears": null,
     "pay": {
-     "home": 300000
+     "home": 300000,
+     "lost": 400000
     }
    },
    {
     "validYears": null,
     "pay": {
-     "home": 1000000
+     "home": 1000000,
+     "lost": null
     },
     "pages": 64
    }
@@ -5159,26 +5610,40 @@
  },
  "MX": {
   "currency": "MXN",
+  "abroad": {
+   "currency": "USD"
+  },
   "routes": [
    {
     "id": "home",
     "where": "home",
     "speed": "standard",
     "within": null
+   },
+   {
+    "id": "consulate",
+    "where": "abroad",
+    "speed": "standard",
+    "within": {
+     "n": 10,
+     "unit": "day"
+    }
    }
   ],
   "bands": [
    {
     "validYears": 1,
     "pay": {
-     "home": 92075
+     "home": 92075,
+     "consulate": 4400
     },
     "under": 3
    },
    {
     "validYears": 3,
     "pay": {
-     "home": 179529
+     "home": 179529,
+     "consulate": 10100
     },
     "from": 3,
     "under": 18
@@ -5186,7 +5651,8 @@
    {
     "validYears": 6,
     "pay": {
-     "home": 243863
+     "home": 243863,
+     "consulate": 13700
     },
     "from": 3,
     "under": 18
@@ -5194,7 +5660,8 @@
    {
     "validYears": 3,
     "pay": {
-     "home": 179529
+     "home": 179529,
+     "consulate": 10100
     },
     "from": 18,
     "under": 60
@@ -5202,7 +5669,8 @@
    {
     "validYears": 6,
     "pay": {
-     "home": 243863
+     "home": 243863,
+     "consulate": 13700
     },
     "from": 18,
     "under": 60
@@ -5210,7 +5678,8 @@
    {
     "validYears": 10,
     "pay": {
-     "home": 427769
+     "home": 427769,
+     "consulate": 20900
     },
     "from": 18,
     "under": 60
@@ -5218,21 +5687,24 @@
    {
     "validYears": 3,
     "pay": {
-     "home": null
+     "home": null,
+     "consulate": 5050
     },
     "from": 60
    },
    {
     "validYears": 6,
     "pay": {
-     "home": null
+     "home": null,
+     "consulate": 6850
     },
     "from": 60
    },
    {
     "validYears": 10,
     "pay": {
-     "home": null
+     "home": null,
+     "consulate": 10450
     },
     "from": 60
    }
@@ -5324,6 +5796,9 @@
  },
  "NA": {
   "currency": "NAD",
+  "abroad": {
+   "currency": "EUR"
+  },
   "routes": [
    {
     "id": "home",
@@ -5336,6 +5811,20 @@
     "where": "abroad",
     "speed": "standard",
     "within": null
+   },
+   {
+    "id": "lost",
+    "where": "home",
+    "speed": "standard",
+    "within": null,
+    "replacement": true
+   },
+   {
+    "id": "abroad-lost",
+    "where": "abroad",
+    "speed": "standard",
+    "within": null,
+    "replacement": true
    }
   ],
   "bands": [
@@ -5343,7 +5832,9 @@
     "validYears": 10,
     "pay": {
      "home": 40000,
-     "abroad": null
+     "abroad": 2500,
+     "lost": 80000,
+     "abroad-lost": 5000
     },
     "pages": 47
    }
@@ -5416,10 +5907,19 @@
  },
  "NG": {
   "currency": "NGN",
+  "abroad": {
+   "currency": "USD"
+  },
   "routes": [
    {
     "id": "home",
     "where": "home",
+    "speed": "standard",
+    "within": null
+   },
+   {
+    "id": "abroad",
+    "where": "abroad",
     "speed": "standard",
     "within": null
    }
@@ -5428,14 +5928,16 @@
    {
     "validYears": 5,
     "pay": {
-     "home": 10000000
+     "home": 10000000,
+     "abroad": 15000
     },
     "pages": 32
    },
    {
     "validYears": 10,
     "pay": {
-     "home": 20000000
+     "home": 20000000,
+     "abroad": 23000
     },
     "pages": 64
    }
@@ -5560,13 +6062,21 @@
     "where": "home",
     "speed": "standard",
     "within": null
+   },
+   {
+    "id": "lost",
+    "where": "home",
+    "speed": "standard",
+    "within": null,
+    "replacement": true
    }
   ],
   "bands": [
    {
     "validYears": null,
     "pay": {
-     "standard": 1200000
+     "standard": 1200000,
+     "lost": 1700000
     },
     "from": 10,
     "pages": 34
@@ -5574,7 +6084,8 @@
    {
     "validYears": null,
     "pay": {
-     "standard": 2000000
+     "standard": 2000000,
+     "lost": 2500000
     },
     "from": 10,
     "pages": 66
@@ -5582,7 +6093,8 @@
    {
     "validYears": null,
     "pay": {
-     "standard": 950000
+     "standard": 950000,
+     "lost": 1450000
     },
     "under": 10,
     "pages": 34
@@ -5590,7 +6102,8 @@
    {
     "validYears": null,
     "pay": {
-     "standard": 1450000
+     "standard": 1450000,
+     "lost": 1950000
     },
     "under": 10,
     "pages": 66
@@ -6281,6 +6794,26 @@
      "n": 5,
      "unit": "working day"
     }
+   },
+   {
+    "id": "lost",
+    "where": "home",
+    "speed": "standard",
+    "within": {
+     "n": 14,
+     "unit": "working day"
+    },
+    "replacement": true
+   },
+   {
+    "id": "lost-fast",
+    "where": "home",
+    "speed": "urgent",
+    "within": {
+     "n": 5,
+     "unit": "working day"
+    },
+    "replacement": true
    }
   ],
   "bands": [
@@ -6288,7 +6821,9 @@
     "validYears": 10,
     "pay": {
      "home": 100000,
-     "fast": 130000
+     "fast": 130000,
+     "lost": 130000,
+     "lost-fast": 160000
     }
    }
   ]
@@ -6310,6 +6845,20 @@
     "where": "abroad",
     "speed": "standard",
     "within": null
+   },
+   {
+    "id": "lost",
+    "where": "home",
+    "speed": "standard",
+    "within": null,
+    "replacement": true
+   },
+   {
+    "id": "embassy-lost",
+    "where": "abroad",
+    "speed": "standard",
+    "within": null,
+    "replacement": true
    }
   ],
   "bands": [
@@ -6317,7 +6866,9 @@
     "validYears": null,
     "pay": {
      "home": 75000,
-     "embassy": 175000
+     "embassy": 175000,
+     "lost": 225000,
+     "embassy-lost": 325000
     }
    }
   ]
@@ -6574,6 +7125,43 @@
     "where": "abroad",
     "speed": "standard",
     "within": null
+   },
+   {
+    "id": "lost",
+    "where": "home",
+    "speed": "standard",
+    "within": {
+     "n": 30,
+     "unit": "day"
+    },
+    "replacement": true
+   },
+   {
+    "id": "lost-urgent-10",
+    "where": "home",
+    "speed": "urgent",
+    "within": {
+     "n": 10,
+     "unit": "working day"
+    },
+    "replacement": true
+   },
+   {
+    "id": "lost-urgent-2",
+    "where": "home",
+    "speed": "urgent",
+    "within": {
+     "n": 2,
+     "unit": "working day"
+    },
+    "replacement": true
+   },
+   {
+    "id": "abroad-lost",
+    "where": "abroad",
+    "speed": "standard",
+    "within": null,
+    "replacement": true
    }
   ],
   "bands": [
@@ -6583,7 +7171,11 @@
      "standard": 5000,
      "urgent-10": 10000,
      "urgent-2": 15000,
-     "abroad": 6000
+     "abroad": 6000,
+     "lost": 10000,
+     "lost-urgent-10": 20000,
+     "lost-urgent-2": 30000,
+     "abroad-lost": 12000
     },
     "from": 16
    },
@@ -6593,7 +7185,11 @@
      "standard": 2000,
      "urgent-10": 4000,
      "urgent-2": 6000,
-     "abroad": 2200
+     "abroad": 2200,
+     "lost": 4000,
+     "lost-urgent-10": 8000,
+     "lost-urgent-2": 12000,
+     "abroad-lost": 4400
     },
     "from": 6,
     "under": 16
@@ -6604,7 +7200,11 @@
      "standard": 1200,
      "urgent-10": 2400,
      "urgent-2": 3600,
-     "abroad": 1400
+     "abroad": 1400,
+     "lost": 2400,
+     "lost-urgent-10": 4800,
+     "lost-urgent-2": 7200,
+     "abroad-lost": 2800
     },
     "under": 6
    }
@@ -7001,7 +7601,8 @@
     "id": "abroad",
     "where": "abroad",
     "speed": "standard",
-    "within": null
+    "within": null,
+    "renewal": true
    }
   ],
   "bands": [
@@ -7136,6 +7737,20 @@
      "n": 7,
      "unit": "working day"
     }
+   },
+   {
+    "id": "lost",
+    "where": "home",
+    "speed": "standard",
+    "within": null,
+    "replacement": true
+   },
+   {
+    "id": "lost-expedited",
+    "where": "home",
+    "speed": "urgent",
+    "within": null,
+    "replacement": true
    }
   ],
   "bands": [
@@ -7143,7 +7758,9 @@
     "validYears": 10,
     "pay": {
      "standard": 50000,
-     "expedited": 110000
+     "expedited": 110000,
+     "lost": 200000,
+     "lost-expedited": 260000
     },
     "from": 16,
     "pages": 32
@@ -7152,7 +7769,9 @@
     "validYears": 10,
     "pay": {
      "standard": 70000,
-     "expedited": 130000
+     "expedited": 130000,
+     "lost": 200000,
+     "lost-expedited": 260000
     },
     "from": 16,
     "pages": 48
@@ -7161,7 +7780,9 @@
     "validYears": 5,
     "pay": {
      "standard": 50000,
-     "expedited": 110000
+     "expedited": 110000,
+     "lost": 200000,
+     "lost-expedited": 260000
     },
     "from": 2,
     "under": 16,
@@ -7171,7 +7792,9 @@
     "validYears": 5,
     "pay": {
      "standard": 0,
-     "expedited": 60000
+     "expedited": 60000,
+     "lost": 0,
+     "lost-expedited": 60000
     },
     "under": 2,
     "pages": 32
@@ -7221,6 +7844,9 @@
  },
  "TZ": {
   "currency": "TZS",
+  "abroad": {
+   "currency": "USD"
+  },
   "routes": [
    {
     "id": "home",
@@ -7240,7 +7866,7 @@
     "validYears": null,
     "pay": {
      "home": 15000000,
-     "abroad": null
+     "abroad": 9000
     }
    }
   ]
@@ -7300,6 +7926,13 @@
     "where": "home",
     "speed": "urgent",
     "within": null
+   },
+   {
+    "id": "lost",
+    "where": "home",
+    "speed": "standard",
+    "within": null,
+    "replacement": true
    }
   ],
   "bands": [
@@ -7307,7 +7940,8 @@
     "validYears": null,
     "pay": {
      "ordinary": 250000,
-     "express": 400000
+     "express": 400000,
+     "lost": 350000
     },
     "pages": 48
    },
@@ -7315,7 +7949,8 @@
     "validYears": null,
     "pay": {
      "ordinary": 350000,
-     "express": 500000
+     "express": 500000,
+     "lost": 450000
     },
     "pages": 64
    }
@@ -7335,6 +7970,33 @@
     "where": "home",
     "speed": "urgent",
     "within": null
+   },
+   {
+    "id": "renewal-mail",
+    "where": "home",
+    "speed": "standard",
+    "within": null,
+    "renewal": true
+   },
+   {
+    "id": "renewal-mail-expedited",
+    "where": "home",
+    "speed": "urgent",
+    "within": null,
+    "renewal": true
+   },
+   {
+    "id": "abroad",
+    "where": "abroad",
+    "speed": "standard",
+    "within": null
+   },
+   {
+    "id": "abroad-renewal",
+    "where": "abroad",
+    "speed": "standard",
+    "within": null,
+    "renewal": true
    }
   ],
   "bands": [
@@ -7342,7 +8004,11 @@
     "validYears": 10,
     "pay": {
      "in-person": 16500,
-     "in-person-expedited": 22500
+     "in-person-expedited": 22500,
+     "renewal-mail": 13000,
+     "renewal-mail-expedited": 19000,
+     "abroad": 16500,
+     "abroad-renewal": 13000
     },
     "from": 16
    },
@@ -7350,11 +8016,35 @@
     "validYears": 5,
     "pay": {
      "in-person": 13500,
-     "in-person-expedited": 19500
+     "in-person-expedited": 19500,
+     "abroad": 13500
     },
     "under": 16
    }
-  ]
+  ],
+  "card": {
+   "name": "passport card",
+   "bands": [
+    {
+     "validYears": 10,
+     "pay": {
+      "in-person": 6500,
+      "in-person-expedited": 12500,
+      "renewal-mail": 3000,
+      "renewal-mail-expedited": 9000
+     },
+     "from": 16
+    },
+    {
+     "validYears": 5,
+     "pay": {
+      "in-person": 5000,
+      "in-person-expedited": 11000
+     },
+     "under": 16
+    }
+   ]
+  }
  },
  "UY": {
   "currency": "UYU",
@@ -7376,6 +8066,26 @@
      "n": 5,
      "unit": "working day"
     }
+   },
+   {
+    "id": "renewal",
+    "where": "home",
+    "speed": "standard",
+    "within": {
+     "n": 15,
+     "unit": "working day"
+    },
+    "renewal": true
+   },
+   {
+    "id": "renewal-urgent",
+    "where": "home",
+    "speed": "urgent",
+    "within": {
+     "n": 5,
+     "unit": "working day"
+    },
+    "renewal": true
    }
   ],
   "bands": [
@@ -7383,7 +8093,9 @@
     "validYears": 5,
     "pay": {
      "common": 563000,
-     "urgent": 1211400
+     "urgent": 1211400,
+     "renewal": 387800,
+     "renewal-urgent": 860900
     },
     "from": 18
    },
@@ -7391,7 +8103,9 @@
     "validYears": 5,
     "pay": {
      "common": 545500,
-     "urgent": 1071200
+     "urgent": 1071200,
+     "renewal": 370300,
+     "renewal-urgent": 720700
     },
     "under": 18
    }
@@ -7418,10 +8132,19 @@
  },
  "VC": {
   "currency": "XCD",
+  "abroad": {
+   "currency": "USD"
+  },
   "routes": [
    {
     "id": "home",
     "where": "home",
+    "speed": "standard",
+    "within": null
+   },
+   {
+    "id": "abroad-us",
+    "where": "abroad",
     "speed": "standard",
     "within": null
    }
@@ -7430,14 +8153,16 @@
    {
     "validYears": 10,
     "pay": {
-     "home": 15000
+     "home": 15000,
+     "abroad-us": 15000
     },
     "from": 16
    },
    {
     "validYears": 5,
     "pay": {
-     "home": 8000
+     "home": 8000,
+     "abroad-us": 8000
     },
     "under": 16
    }
@@ -7668,6 +8393,26 @@
      "n": 2,
      "unit": "working day"
     }
+   },
+   {
+    "id": "lost",
+    "where": "home",
+    "speed": "standard",
+    "within": {
+     "n": 5,
+     "unit": "working day"
+    },
+    "replacement": true
+   },
+   {
+    "id": "lost-urgent",
+    "where": "home",
+    "speed": "urgent",
+    "within": {
+     "n": 2,
+     "unit": "working day"
+    },
+    "replacement": true
    }
   ],
   "bands": [
@@ -7675,7 +8420,9 @@
     "validYears": null,
     "pay": {
      "home": 20000,
-     "urgent": 24000
+     "urgent": 24000,
+     "lost": 40000,
+     "lost-urgent": 44000
     },
     "from": 17
    },
@@ -7683,7 +8430,9 @@
     "validYears": null,
     "pay": {
      "home": 10000,
-     "urgent": 14000
+     "urgent": 14000,
+     "lost": 20000,
+     "lost-urgent": 24000
     },
     "under": 17
    }

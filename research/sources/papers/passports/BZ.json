@@ -3,20 +3,96 @@
  "office": "the Nationality and Passports Department",
  "currency": "BZD",
  "routes": [
-  {"id": "regular", "where": "home", "speed": "standard", "within": null, "label": "regular"},
-  {"id": "24h", "where": "home", "speed": "urgent", "within": {"n": 24, "unit": "hour"}, "label": "24 hours, at the Belmopan headquarters only"}
+  {
+   "id": "regular",
+   "where": "home",
+   "speed": "standard",
+   "within": null,
+   "label": "regular"
+  },
+  {
+   "id": "24h",
+   "where": "home",
+   "speed": "urgent",
+   "within": {
+    "n": 24,
+    "unit": "hour"
+   },
+   "label": "24 hours, at the Belmopan headquarters only"
+  },
+  {
+   "id": "lost",
+   "where": "home",
+   "speed": "standard",
+   "within": null,
+   "replacement": true,
+   "label": "regular, previous passport lost"
+  },
+  {
+   "id": "lost-24h",
+   "where": "home",
+   "speed": "urgent",
+   "within": {
+    "n": 24,
+    "unit": "hour"
+   },
+   "replacement": true,
+   "label": "24-hour service, previous passport lost"
+  },
+  {
+   "id": "abroad-us",
+   "where": "abroad",
+   "speed": "standard",
+   "within": null,
+   "label": "at the Embassy in Washington or a consulate in the United States"
+  },
+  {
+   "id": "abroad-us-lost",
+   "where": "abroad",
+   "speed": "standard",
+   "within": null,
+   "replacement": true,
+   "label": "a lost or stolen passport replaced at a mission in the United States"
+  }
  ],
  "passports": [
-  {"for": "adult", "from": 16, "validYears": 10, "pay": {"regular": "200", "24h": "500"}},
-  {"for": "child", "under": 16, "validYears": 5, "pay": {"regular": "150", "24h": "450"}}
+  {
+   "for": "adult",
+   "from": 16,
+   "validYears": 10,
+   "pay": {
+    "regular": "200",
+    "24h": "500",
+    "lost": "400",
+    "lost-24h": "700",
+    "abroad-us": "150",
+    "abroad-us-lost": "200"
+   }
+  },
+  {
+   "for": "child",
+   "under": 16,
+   "validYears": 5,
+   "pay": {
+    "regular": "150",
+    "24h": "450",
+    "lost": "350",
+    "lost-24h": "650",
+    "abroad-us": "150",
+    "abroad-us-lost": "200"
+   }
+  }
  ],
- "note": "A lost passport adds BZD 200. A medical emergency passport (BZD 100, five working days) is at the office's discretion. Applying overseas, the fees include shipping and handling and differ by mission. The ordinary processing time in Belize is a lead.",
+ "note": "A lost passport adds BZD 200 (the 24-hour fee is added to the regular price and the lost fee), written as replacement routes. A medical emergency passport (BZD 100, five working days) is at the office's discretion. Applying overseas, the fees include shipping and handling and differ by mission (London USD 50 and 30, Taipei in Taiwan dollars); the abroad routes carry the Embassy in Washington's and the US consulates' one schedule, USD 150 at any age and 200 for a lost or stolen one, the missions where most Belizeans abroad apply being a reading, not a statement of the page. The ordinary processing time in Belize is a lead.",
  "sources": [
   {
    "url": "https://immigration.gov.bz/passport/passport-fees/",
    "title": "immigration.gov.bz, Passport Fees",
    "read": "2026-10-28",
-   "said": "All fees are shown in Belize dollars e-PASSPORTS FEE 10 – year validity e-passport (for persons aged 16 and over) BZ$200.00 5 Year validity e-passport (for children under 16) BZ$150.00 Expedite Service Fees The Nationality and Passports Department offer an expedite service, the services is for a 24 hour. This services is only given at our Belmopan Headquarters office. The price below is in addition to the regular price stated above and a lost fee if applicable. For example, the 24 hours service for a child e-passport is BZ$150.00 (regular price) + BZ$300.00 (expedite service fee) = BZ$450.00 24 hours service fee – BZ$300.00 Medical Emergency e-Passport A medical emergency passport is only issued at our Belmopan Headquarters Office and is approved on the discretion of the passport office. The passport application is processed within five (5) working days. An emergency e-passport fee – BZ$100.00 ... A lost passport fee – BZ$200.00 Applying from overseas Note that applying for a Belize e-Passport from overseas additional administrative fees (shipping and handling fees) are included in the passport fees. A regular e-passport is proceed within 6-8 weeks from date of application."
+   "said": "All fees are shown in Belize dollars e-PASSPORTS FEE 10 – year validity e-passport (for persons aged 16 and over) BZ$200.00 5 Year validity e-passport (for children under 16) BZ$150.00 Expedite Service Fees The Nationality and Passports Department offer an expedite service, the services is for a 24 hour. This services is only given at our Belmopan Headquarters office. The price below is in addition to the regular price stated above and a lost fee if applicable. For example, the 24 hours service for a child e-passport is BZ$150.00 (regular price) + BZ$300.00 (expedite service fee) = BZ$450.00 24 hours service fee – BZ$300.00 Medical Emergency e-Passport A medical emergency passport is only issued at our Belmopan Headquarters Office and is approved on the discretion of the passport office. The passport application is processed within five (5) working days. An emergency e-passport fee – BZ$100.00 ... A lost passport fee – BZ$200.00 Applying from overseas Note that applying for a Belize e-Passport from overseas additional administrative fees (shipping and handling fees) are included in the passport fees. A regular e-passport is proceed within 6-8 weeks from date of application. ... The price below is in addition to the regular price stated above and a lost fee if applicable. ... Lost Passport Fees A lost passport fee is applied to an application for a passport where previous passport is lost in addition to the fee listed above for a medical emergency, regular application or temporary passport. A lost passport fee – BZ$200.00 ... Embassy of Belize in Washington, DC - USA Fees in US Dollar PASSPORTS FEE 10 – year validity passport (for persons aged 16 and over) USD$150.00 5 Year validity passport (for children under 16) USD$150.00 Replacement of a lost or stolen passports (for persons aged 16 and over) USD$200.00 Replacement of a lost or stolen passports (for children under 16) USD$200.00"
   }
- ]
+ ],
+ "abroad": {
+  "currency": "USD"
+ }
 }

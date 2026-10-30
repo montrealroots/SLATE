@@ -3,20 +3,58 @@
  "office": "the Ministry of Internal Affairs (NCIC), at a passport centre",
  "currency": "UGX",
  "routes": [
-  {"id": "ordinary", "where": "home", "speed": "standard", "within": null, "label": "ordinary"},
-  {"id": "express", "where": "home", "speed": "urgent", "within": null, "label": "express processing, UGX 150,000 more"}
+  {
+   "id": "ordinary",
+   "where": "home",
+   "speed": "standard",
+   "within": null,
+   "label": "ordinary"
+  },
+  {
+   "id": "express",
+   "where": "home",
+   "speed": "urgent",
+   "within": null,
+   "label": "express processing, UGX 150,000 more"
+  },
+  {
+   "id": "lost",
+   "where": "home",
+   "speed": "standard",
+   "within": null,
+   "replacement": true,
+   "label": "a lost passport replaced, with the fine"
+  }
  ],
  "passports": [
-  {"for": "any", "pages": 48, "validYears": null, "pay": {"ordinary": "250000", "express": "400000"}},
-  {"for": "any", "pages": 64, "validYears": null, "pay": {"ordinary": "350000", "express": "500000"}}
+  {
+   "for": "any",
+   "pages": 48,
+   "validYears": null,
+   "pay": {
+    "ordinary": "250000",
+    "express": "400000",
+    "lost": "350000"
+   }
+  },
+  {
+   "for": "any",
+   "pages": 64,
+   "validYears": null,
+   "pay": {
+    "ordinary": "350000",
+    "express": "500000",
+    "lost": "450000"
+   }
+  }
  ],
- "note": "Fees by the Uganda Citizenship and Immigration Control (Fees) Regulations, 2021 (S.I. 2021 No. 12), which the immigration site still gives on the date read (UGX 250,000, express UGX 150,000 more, paid separately in a bank); a later amendment hasn't been looked for. Express is the ordinary fee plus 150,000. A lost passport's fine is UGX 100,000, a mutilated passport UGX 100,000. Validity, minors' terms and processing times are leads.",
+ "note": "Fees by the Uganda Citizenship and Immigration Control (Fees) Regulations, 2021 (S.I. 2021 No. 12), which the immigration site still gives on the date read (UGX 250,000, express UGX 150,000 more, paid separately in a bank); a later amendment hasn't been looked for. Express is the ordinary fee plus 150,000. A lost passport's fine is UGX 100,000, a mutilated passport UGX 100,000; the lost passport's is written as a replacement route, the fine added to the ordinary fee. Validity, minors' terms and processing times are leads.",
  "sources": [
   {
    "url": "https://archive.gazettes.africa/archive/ug/2021/ug-government-gazette-statutory-instruments-supplement-dated-2021-02-22-no-18.pdf",
    "title": "The Uganda Gazette No. 18, Statutory Instruments Supplement No. 7, 22 February 2021: The Uganda Citizenship and Immigration Control (Fees) Regulations, 2021 (S.I. 2021 No. 12)",
    "read": "2026-10-28",
-   "said": "These Regulations may be cited as the Uganda Citizenship and Immigration Control (Fees) Regulations, 2021. ... Ordinary passport (48 pages) Shs 250,000/ ... Ordinary passport (64pages) Shs 350,000/ ... Fee for express processing of passport Shs 150,000/ ... Fine for lost passport Shs 100,000/= ... Mutilated passport Shs 100,000/"
+   "said": "These Regulations may be cited as the Uganda Citizenship and Immigration Control (Fees) Regulations, 2021. ... Ordinary passport (48 pages) Shs 250,000/ ... Ordinary passport (64pages) Shs 350,000/ ... Fee for express processing of passport Shs 150,000/ ... Fine for lost passport Shs 100,000/= ... Mutilated passport Shs 100,000/ ... (i) Fine for lost passport Shs 100,000/="
   },
   {
    "url": "https://immigration.go.ug/node/119",

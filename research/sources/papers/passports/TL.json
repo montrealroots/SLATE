@@ -3,13 +3,33 @@
  "office": "the Ministry of Justice's National Directorate of Civil Identification and Criminal Records, or a Timorese embassy or consulate abroad",
  "currency": "USD",
  "routes": [
-  {"id": "home", "where": "home", "speed": "standard", "within": null, "label": "in Timor-Leste"},
-  {"id": "abroad", "where": "abroad", "speed": "standard", "within": null, "label": "renewed abroad"}
+  {
+   "id": "home",
+   "where": "home",
+   "speed": "standard",
+   "within": null,
+   "label": "in Timor-Leste"
+  },
+  {
+   "id": "abroad",
+   "where": "abroad",
+   "speed": "standard",
+   "within": null,
+   "label": "renewed abroad",
+   "renewal": true
+  }
  ],
  "passports": [
-  {"for": "any", "validYears": null, "pay": {"home": null, "abroad": "100"}}
+  {
+   "for": "any",
+   "validYears": null,
+   "pay": {
+    "home": null,
+    "abroad": "100"
+   }
+  }
  ],
- "note": "Renewing abroad cost 100 dollars a passport in the Ministry of Justice's 2021-22 campaign in Portugal, the United Kingdom and South Korea, as TATOLI reported on 10 February 2022. The fee at home isn't read from a current source: the only figures found (50 dollars in 10 days, 75 in 3, 100 in 24 hours) come from a 2017 report whose page refuses the request. The passport is valid at most 5 years, under the Passports Regime (Decree-Law 52/2016) as Decree-Law 23/2023 recites it.",
+ "note": "Renewing abroad cost 100 dollars a passport in the Ministry of Justice's 2021-22 campaign in Portugal, the United Kingdom and South Korea, as TATOLI reported on 10 February 2022 (a renewal route: the campaign renewed passports held). The fee at home isn't read from a current source: the only figures found (50 dollars in 10 days, 75 in 3, 100 in 24 hours) come from a 2017 report whose page refuses the request. The passport is valid at most 5 years, under the Passports Regime (Decree-Law 52/2016) as Decree-Law 23/2023 recites it.",
  "sources": [
   {
    "url": "https://www.mj.gov.tl/jornal/public/docs/2023/serie_1/SERIE%20I%20N.%2015A.pdf",

@@ -3,27 +3,81 @@
  "office": "the municipal councils (borgerservice); abroad, Danish diplomatic and consular representations",
  "currency": "DKK",
  "routes": [
-  {"id": "standard", "where": "home", "speed": "standard", "within": {"n": 2, "unit": "week"}, "label": "up to about two weeks"}
+  {
+   "id": "standard",
+   "where": "home",
+   "speed": "standard",
+   "within": {
+    "n": 2,
+    "unit": "week"
+   },
+   "label": "up to about two weeks"
+  },
+  {
+   "id": "lost",
+   "where": "home",
+   "speed": "standard",
+   "within": {
+    "n": 2,
+    "unit": "week"
+   },
+   "replacement": true,
+   "label": "a new passport without the old one, or with a damaged one: the price doubled"
+  }
  ],
  "passports": [
-  {"for": "adult", "from": 18, "validYears": 10, "pay": {"standard": "894"}},
-  {"for": "minor", "from": 12, "under": 18, "validYears": 5, "pay": {"standard": "182"}},
-  {"for": "child", "from": 2, "under": 12, "validYears": 5, "pay": {"standard": "150"}},
-  {"for": "infant", "under": 2, "validYears": 2, "pay": {"standard": "150"}}
+  {
+   "for": "adult",
+   "from": 18,
+   "validYears": 10,
+   "pay": {
+    "standard": "894",
+    "lost": "1788"
+   }
+  },
+  {
+   "for": "minor",
+   "from": 12,
+   "under": 18,
+   "validYears": 5,
+   "pay": {
+    "standard": "182",
+    "lost": "364"
+   }
+  },
+  {
+   "for": "child",
+   "from": 2,
+   "under": 12,
+   "validYears": 5,
+   "pay": {
+    "standard": "150",
+    "lost": "300"
+   }
+  },
+  {
+   "for": "infant",
+   "under": 2,
+   "validYears": 2,
+   "pay": {
+    "standard": "150",
+    "lost": "300"
+   }
+  }
  ],
- "note": "2026 prices, including the fingerprint fee. The price doubles if the applicant can't show a valid or expired passport, or shows a damaged one, when renewing or getting a new passport within the validity period. The fee for a pensioner follows the person's own state pension age. The order on passports read is marked in force with later amendments (BEK 1120/2022, BEK 1377/2024) not read; its § 21 is as quoted. From the state pension age the fee is DKK 382; the game charges the adult fee until the state pension age by birth year is read.",
+ "note": "2026 prices, including the fingerprint fee. The price doubles if the applicant can't show a valid or expired passport, or shows a damaged one, when renewing or getting a new passport within the validity period: written as a replacement route (DKK 1,788, 364, 300 and 300), at the same two weeks. The fee for a pensioner follows the person's own state pension age. The order on passports read is marked in force with later amendments (BEK 1120/2022, BEK 1377/2024) not read; its § 21 is as quoted. From the state pension age the fee is DKK 382; the game charges the adult fee until the state pension age by birth year is read.",
  "sources": [
   {
    "url": "https://frederikshavn.dk/media/5wpghwen/ansoegning-om-pas.pdf",
    "title": "Ansøgning om dansk pas, form PS 005 (04/2026), as published by Frederikshavn Kommune",
    "read": "2026-10-28",
-   "said": "Passet betales ved bestillingen. Prisen på pas (2026) inklusiv gebyr for fingeraftryk er: Børn 0 – 11 år kr. 150 Børn 12 – 18 år kr. 182 Personer 18 år – folkepensionsalder kr. 894 Personer i folkepensionsalderen kr. 382 ... Pasgebyret beregnes efter den enkeltes pensionsalder ... i tilfælde hvor du ikke kan fremvise et gyldigt eller udløbet pas ved ansøgning, eller fremviser passet i ødelagt stand i forbindelse med ansøgning om fornyelse af pas eller udstedelse af nyt pas i gyldighedsperioden, fordobles prisen (2026) for udstedelse af pas ... For at forhindre forfalskninger fremstilles passet kun ét sted i landet og under strenge sikkerhedsforanstaltninger. Derfor kan der være en leveringstid på op imod to uger."
+   "said": "Passet betales ved bestillingen. Prisen på pas (2026) inklusiv gebyr for fingeraftryk er: Børn 0 – 11 år kr. 150 Børn 12 – 18 år kr. 182 Personer 18 år – folkepensionsalder kr. 894 Personer i folkepensionsalderen kr. 382 ... Pasgebyret beregnes efter den enkeltes pensionsalder ... i tilfælde hvor du ikke kan fremvise et gyldigt eller udløbet pas ved ansøgning, eller fremviser passet i ødelagt stand i forbindelse med ansøgning om fornyelse af pas eller udstedelse af nyt pas i gyldighedsperioden, fordobles prisen (2026) for udstedelse af pas ... For at forhindre forfalskninger fremstilles passet kun ét sted i landet og under strenge sikkerhedsforanstaltninger. Derfor kan der være en leveringstid på op imod to uger. ... Vær opmærksom på, at i tilfælde hvor du ikke kan fremvise et gyldigt eller udløbet pas ved ansøgning, eller fremviser passet i ødelagt stand i forbindelse med ansøgning om fornyelse af pas eller udstedelse af nyt pas i gyldighedsperioden, fordobles prisen (2026) for udstedelse af pas."
   },
   {
    "url": "https://www.retsinformation.dk/eli/lta/2021/2693",
    "title": "Retsinformation, Bekendtgørelse om pas m.v., BEK nr 2693 af 28/12/2021 (Justitsministeriet; marked GÆLDENDE)",
-   "read": "2026-10-28",
-   "said": "§ 3. Kommunalbestyrelserne udsteder pas til danske statsborgere, som opholder sig her i landet ... Stk. 3. Til danske statsborgere, der opholder sig i udlandet, kan pas udstedes ... af danske diplomatiske og konsulære repræsentationer ... § 21. For personer, som er fyldt 18 år, udstedes pas med en gyldighedstid på 10 år fra udstedelsesdatoen ... Stk. 2. Er pasansøgeren mellem 2 og 18 år, udstedes passet med en gyldighedstid på 5 år fra udstedelsesdatoen ... Stk. 3. For børn under 2 år udstedes pas med en gyldighedstid, der under normale omstændigheder ikke overstiger 2 år fra udstedelsesdatoen."
+   "read": "2026-10-30",
+   "said": "§ 3. Kommunalbestyrelserne udsteder pas til danske statsborgere, som opholder sig her i landet ... Stk. 3. Til danske statsborgere, der opholder sig i udlandet, kan pas udstedes ... af danske diplomatiske og konsulære repræsentationer ... § 21. For personer, som er fyldt 18 år, udstedes pas med en gyldighedstid på 10 år fra udstedelsesdatoen ... Stk. 2. Er pasansøgeren mellem 2 og 18 år, udstedes passet med en gyldighedstid på 5 år fra udstedelsesdatoen ... Stk. 3. For børn under 2 år udstedes pas med en gyldighedstid, der under normale omstændigheder ikke overstiger 2 år fra udstedelsesdatoen"
   }
  ]
 }

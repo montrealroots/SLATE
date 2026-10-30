@@ -210,8 +210,10 @@ export function pay(s: Holding, a: { card: number; amount: string }, c: Context)
 export function statement(s: Holding, item: Item, c: Context): void {
   const { card: i, born, zone, national } = item.data as { card: number; born: string; zone: string; national: boolean };
   const h = heldAt(s, i);
+  // @slate:consumer card.open
   const card = h.terms;
   const zero = money(card.currency, 0);
+  // @slate:consumer card.report
   const standing = standingOf(s.credit, c.now);
   h.stated += 1;
   const n = h.stated;
@@ -234,10 +236,12 @@ export function statement(s: Holding, item: Item, c: Context): void {
   }
   // A fee set as a share of the limit each year, from the second year (the issue's own being charged at issue).
   if (n > 1 && (n - 1) % 12 === 0) fees = add(fees, limitFee(card, m(h, h.limit), 'year'));
+  // @slate:consumer card.spend
   const owed = h.purchases + h.cash + interest.minor + fees.minor;
   fees = add(fees, overLimitFee(card, { excess: m(h, owed - h.limit), balance: m(h, owed), limit: m(h, h.limit) }));
   h.purchases += add(add(interest, fees), add(taxOnInterest(card, interest), taxOnFees(card, fees))).minor;
   const balance = m(h, h.purchases + h.cash);
+  // @slate:consumer card.due
   const pastDue = h.past.reduce((a, p) => a + p.short, 0);
   // What's past due is owed on top of the new minimum (Chase's agreement: "plus any amount past due"), the two never
   // more than the balance. Until 2026-10-30 the new minimum had the past due taken from it, which on a card asking a
@@ -257,8 +261,10 @@ export function statement(s: Holding, item: Item, c: Context): void {
 export function dueDate(s: Holding, item: Item, c: Context): void {
   const { card: i } = item.data as { card: number };
   const h = heldAt(s, i);
+  // @slate:consumer card.statement
   const st = h.statement as NonNullable<Held['statement']>;
   h.carrying = st.paid < st.balance;
+  // @slate:consumer card.pay
   if (st.paid >= st.minimum) return;
   const card = h.terms;
   const short = st.minimum - st.paid;

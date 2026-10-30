@@ -3,7 +3,7 @@
  "years": "none",
  "renounce": null,
  "lapses": true,
- "note": "GLOBALCIT's Citizenship Law Dataset v3.0 (EUI, 2025), coding the law in force on 1 January 2024 (A06a No provision; A06b No provision; L05 CHI 3, 9): no ordinary naturalisation by residence; a citizen loses the citizenship on voluntarily taking another. Reforms after that date are checked in the file's later sources, where a later source is given. Naturalisation in China is discretionary rather than a residence right: the dataset codes it under its discretionary mode (A24, CHI 7 and 8: a person settled in China, with no residence period specified, or with other legitimate reasons, who gives up any other nationality), which is why it is modelled as no naturalisation by residence.",
+ "note": "GLOBALCIT's Citizenship Law Dataset v3.0 (EUI, 2025), coding the law in force on 1 January 2024 (A06a No provision; A06b No provision; L05 CHI 3, 9): no ordinary naturalisation by residence; a citizen loses the citizenship on voluntarily taking another. Reforms after that date are checked in the file's later sources, where a later source is given. Naturalisation in China is discretionary rather than a residence right: the dataset codes it under its discretionary mode (A24, CHI 7 and 8: a person settled in China, with no residence period specified, or with other legitimate reasons, who gives up any other nationality), which is why it is modelled as no naturalisation by residence. Citizenship at birth is read from the same dataset's 2024 coding of modes A01a (descent, born in country: Generally applicable provision), A01b (descent, born abroad: Generational transmission restriction: conditional on birthplace/place of residence /mode under which parent acquired citizenship), A02a (birth in country: No provision) and A02b (birth in country to a parent born there: No provision), as its codebook (RSC/GLOBALCIT 2025/01, sections 3.2.1a to 3.2.2b) defines them: not by birth in the territory alone (provisions for foundlings and children otherwise stateless, modes A03a and A03b, aren't held by the form); by descent from either parent, a child born abroad on the limit the dataset states. Changes to the law at birth after 1 January 2024 weren't checked for this file.",
  "sources": [
   {
    "url": "https://cadmus.eui.eu/bitstreams/3b166501-e695-48d7-9e27-d7bef061573a/download",
@@ -11,7 +11,12 @@
    "read": "2026-10-29",
    "kind": "secondary",
    "quotes": "https://globalcit.eu/national-citizenship-laws/",
-   "said": "n.a. ... n.a. ... Person is settled abroad and has voluntarily acquired another citizenship."
+   "said": "n.a. ... n.a. ... Person is settled abroad and has voluntarily acquired another citizenship. ... Generally applicable provision ... Person is born in China to a citizen. ... Generational transmission restriction: conditional on birthplace/place of residence /mode under which parent acquired citizenship ... Person is born abroad to a citizen. Unless the parent is settled abroad and the child consequently acquired another citizenship at birth. ... No provision ... No provision"
   }
- ]
+ ],
+ "atBirth": {
+  "soil": "none",
+  "descent": "either parent",
+  "descentAbroad": "Person is born abroad to a citizen. Unless the parent is settled abroad and the child consequently acquired another citizenship at birth."
+ }
 }

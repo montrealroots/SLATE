@@ -3,23 +3,140 @@
  "office": "the documents department (oddelenie dokladov) at the place of permanent or temporary residence or where the citizen is staying; abroad, the Slovak Republic's embassy",
  "currency": "EUR",
  "routes": [
-  {"id": "standard", "where": "home", "speed": "standard", "within": {"n": 30, "unit": "day"}, "label": "within 30 days"},
-  {"id": "urgent-10", "where": "home", "speed": "urgent", "within": {"n": 10, "unit": "working day"}, "label": "within 10 working days"},
-  {"id": "urgent-2", "where": "home", "speed": "urgent", "within": {"n": 2, "unit": "working day"}, "label": "within 2 working days"},
-  {"id": "abroad", "where": "abroad", "speed": "standard", "within": null, "label": "issued abroad"}
+  {
+   "id": "standard",
+   "where": "home",
+   "speed": "standard",
+   "within": {
+    "n": 30,
+    "unit": "day"
+   },
+   "label": "within 30 days"
+  },
+  {
+   "id": "urgent-10",
+   "where": "home",
+   "speed": "urgent",
+   "within": {
+    "n": 10,
+    "unit": "working day"
+   },
+   "label": "within 10 working days"
+  },
+  {
+   "id": "urgent-2",
+   "where": "home",
+   "speed": "urgent",
+   "within": {
+    "n": 2,
+    "unit": "working day"
+   },
+   "label": "within 2 working days"
+  },
+  {
+   "id": "abroad",
+   "where": "abroad",
+   "speed": "standard",
+   "within": null,
+   "label": "issued abroad"
+  },
+  {
+   "id": "lost",
+   "where": "home",
+   "speed": "standard",
+   "within": {
+    "n": 30,
+    "unit": "day"
+   },
+   "replacement": true,
+   "label": "a valid passport lost, damaged or stolen, the first time"
+  },
+  {
+   "id": "lost-urgent-10",
+   "where": "home",
+   "speed": "urgent",
+   "within": {
+    "n": 10,
+    "unit": "working day"
+   },
+   "replacement": true,
+   "label": "the same, within 10 working days"
+  },
+  {
+   "id": "lost-urgent-2",
+   "where": "home",
+   "speed": "urgent",
+   "within": {
+    "n": 2,
+    "unit": "working day"
+   },
+   "replacement": true,
+   "label": "the same, within 2 working days"
+  },
+  {
+   "id": "abroad-lost",
+   "where": "abroad",
+   "speed": "standard",
+   "within": null,
+   "replacement": true,
+   "label": "the same, issued abroad"
+  }
  ],
  "passports": [
-  {"for": "adult", "from": 16, "validYears": 10, "pay": {"standard": "50", "urgent-10": "100", "urgent-2": "150", "abroad": "60"}},
-  {"for": "child", "from": 6, "under": 16, "validYears": 5, "pay": {"standard": "20", "urgent-10": "40", "urgent-2": "60", "abroad": "22"}},
-  {"for": "child", "under": 6, "validYears": 2, "pay": {"standard": "12", "urgent-10": "24", "urgent-2": "36", "abroad": "14"}}
+  {
+   "for": "adult",
+   "from": 16,
+   "validYears": 10,
+   "pay": {
+    "standard": "50",
+    "urgent-10": "100",
+    "urgent-2": "150",
+    "abroad": "60",
+    "lost": "100",
+    "lost-urgent-10": "200",
+    "lost-urgent-2": "300",
+    "abroad-lost": "120"
+   }
+  },
+  {
+   "for": "child",
+   "from": 6,
+   "under": 16,
+   "validYears": 5,
+   "pay": {
+    "standard": "20",
+    "urgent-10": "40",
+    "urgent-2": "60",
+    "abroad": "22",
+    "lost": "40",
+    "lost-urgent-10": "80",
+    "lost-urgent-2": "120",
+    "abroad-lost": "44"
+   }
+  },
+  {
+   "for": "child",
+   "under": 6,
+   "validYears": 2,
+   "pay": {
+    "standard": "12",
+    "urgent-10": "24",
+    "urgent-2": "36",
+    "abroad": "14",
+    "lost": "24",
+    "lost-urgent-10": "48",
+    "lost-urgent-2": "72",
+    "abroad-lost": "28"
+   }
+  }
  ],
- "note": "Fees in force from 1 April 2024, paid by eKolok when applying. A replacement for a valid passport lost, damaged or stolen costs double the fee the first time, five times the second within 2 years and ten times the third within 2 years. The fee page writes the reduced periods as 'Do 10 dní' and 'Do 2 dní', the travel documents page as working days. A one-year passport costs EUR 12, 24 or 36 under 16 and EUR 45, 90 or 135 from 16.",
+ "note": "Fees in force from 1 April 2024, paid by eKolok when applying. A replacement for a valid passport lost, damaged or stolen costs double the fee the first time (written as replacement routes), five times the second within 2 years and ten times the third within 2 years. The fee page writes the reduced periods as 'Do 10 dní' and 'Do 2 dní', the travel documents page as working days. A one-year passport costs EUR 12, 24 or 36 under 16 and EUR 45, 90 or 135 from 16.",
  "sources": [
   {
    "url": "https://www.slovensko.sk/sk/zivotne-situacie/zivotna-situacia/_cestovne-doklady-a-nahradne-ce/",
    "title": "slovensko.sk (Ústredný portál verejnej správy), Cestovné doklady a náhradné cestovné doklady",
    "read": "2026-10-28",
-   "said": "Žiadosť o vydanie cestovného pasu podáva občan osobne na oddelení dokladov v mieste trvalého alebo prechodného bydliska alebo v mieste, kde sa zdržiava. ... Žiadosť je možné podať aj v zahraničí na príslušnom zastupiteľskom úrade Slovenskej republiky. ... Platnosť cestovného pasu Od 16 rokov na 10 rokov Do 16 rokov na 5 rokov Do 6 rokov na 2 roky ... Správne poplatky Platné od 01.04.2024. Od 16 rokov Do 16 rokov Do 6 rokov Do 30 dní 50€ 20€ 12€ Do 10 pracovných dní 100€ 40€ 24€ Do 2 pracovných dní 150€ 60€ 36€ Vydanie v zahraničí 60€ 22€ 14€ Pri strate, poškodení a odcudzení platného cestovného pasu je správny poplatok vyšší. Dvojnásobne pri prvom, päťnásobne pri druhom v priebehu 2 rokov a desaťnásobne pri treťom opätovnom vybavovaní počas 2 rokov."
+   "said": "Žiadosť o vydanie cestovného pasu podáva občan osobne na oddelení dokladov v mieste trvalého alebo prechodného bydliska alebo v mieste, kde sa zdržiava. ... Žiadosť je možné podať aj v zahraničí na príslušnom zastupiteľskom úrade Slovenskej republiky. ... Platnosť cestovného pasu Od 16 rokov na 10 rokov Do 16 rokov na 5 rokov Do 6 rokov na 2 roky ... Správne poplatky Platné od 01.04.2024. Od 16 rokov Do 16 rokov Do 6 rokov Do 30 dní 50€ 20€ 12€ Do 10 pracovných dní 100€ 40€ 24€ Do 2 pracovných dní 150€ 60€ 36€ Vydanie v zahraničí 60€ 22€ 14€ Pri strate, poškodení a odcudzení platného cestovného pasu je správny poplatok vyšší. Dvojnásobne pri prvom, päťnásobne pri druhom v priebehu 2 rokov a desaťnásobne pri treťom opätovnom vybavovaní počas 2 rokov. ... Pri strate, poškodení a odcudzení platného cestovného pasu je správny poplatok vyšší. Dvojnásobne pri prvom, päťnásobne pri druhom v priebehu 2 rokov a desaťnásobne pri treťom opätovnom vybavovaní počas 2"
   },
   {
    "url": "https://www.slovensko.sk/sk/zivotne-situacie/zivotna-situacia/_spravne-poplatky-za-cestovny-p/",

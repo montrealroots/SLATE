@@ -3,7 +3,7 @@ import { money } from '../../../src/core/money/money.ts';
 import { t } from '../../../src/core/text/text.ts';
 import { COUNTRY_CODES } from '../../../src/world/gazetteer/gazetteer.ts';
 import data from '../../../src/money/cards/cards.json';
-import { aboutCard, aboutCards, cardsIn, cashFee, cashInterestFor, charged, feeFor, fxFee, interestFor, keepsCards, lateFee, limitFee, minimumDue, monthly, overLimitFee, paidInFull, priced, root12, share, stepped, taxOnFees, taxOnInterest, FEES_UNPUBLISHED_LINE, UNKEPT_LINE, type Card, type Fee } from '../../../src/money/cards/cards.ts';
+import { aboutCard, aboutCards, cardsIn, cashFee, cashInterestFor, charged, feeFor, fxFee, interestFor, keepsCards, lateFee, limitFee, minimumDue, monthly, overLimitFee, paidInFull, priced, root12, share, stepped, taxOnFees, taxOnInterest, FEES_UNPUBLISHED_LINE, MINIMUM_UNPUBLISHED_LINE, UNKEPT_LINE, type Card, type Fee } from '../../../src/money/cards/cards.ts';
 
 const usd = (minor: number) => money('USD', minor);
 const standing = { age: 30, deposits: usd(0), lowest: usd(0), average: usd(0), national: false, spent: usd(0), period: 2 };
@@ -199,8 +199,14 @@ describe('cards', () => {
     expect(FEES_UNPUBLISHED_LINE).toBe('cards.fees-unpublished');
     const citizens = cardsIn('GY').find((c) => c.bank === 'Citizens Bank Guyana' && c.card === 'Visa Classic');
     expect([citizens?.fees, citizens?.feesUnpublished]).toEqual([[], true]);
-    expect(aboutCard(citizens as Card)).toBe("Citizens Bank Guyana doesn't publish what its Visa Classic costs to hold, so this game charges nothing for it.");
+    expect(aboutCard({ ...(citizens as Card), minimum: { percent: '5' } })).toEqual(["Citizens Bank Guyana doesn't publish what its Visa Classic costs to hold, so this game charges nothing for it."]);
+    // A card whose bank publishes no minimum asks its whole balance, and says so; a card paid in full in any case doesn't.
+    expect(MINIMUM_UNPUBLISHED_LINE).toBe('cards.minimum-unpublished');
+    const bare: Card = { bank: 'Citizens Bank Guyana', card: 'Visa Classic', currency: 'USD', rate: { percent: '1.55', per: 'month' }, fees: [] };
+    const both: Card = { ...bare, feesUnpublished: true };
+    expect(aboutCard(both)).toEqual([t(FEES_UNPUBLISHED_LINE, { bank: both.bank, card: both.card }), "Citizens Bank Guyana doesn't publish the least its Visa Classic asks each month, so this game asks the whole balance."]);
+    expect([aboutCard({ ...bare, rate: 'in full' }), aboutCard(bare)]).toEqual([[], ["Citizens Bank Guyana doesn't publish the least its Visa Classic asks each month, so this game asks the whole balance."]]);
     const chase = cardsIn('US').find((c) => c.card === 'Chase Freedom Unlimited') as Card;
-    expect([chase.fees, aboutCard(chase)]).toEqual([[], undefined]);
+    expect([chase.fees, aboutCard(chase)]).toEqual([[], []]);
   });
 });

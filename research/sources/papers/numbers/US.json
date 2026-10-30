@@ -1,0 +1,41 @@
+{
+ "country": "US",
+ "name": "Social Security number",
+ "issuer": "the Social Security Administration",
+ "format": {
+  "length": 9,
+  "pattern": "(?!000|666|9)[0-9]{3}(?!00)[0-9]{2}(?!0000)[0-9]{4}"
+ },
+ "when": "application",
+ "who": [
+  "citizens",
+  "residents"
+ ],
+ "note": "Read 20 CFR 422.103 (govinfo, the 2024-04-01 edition; last amended 80 FR 47833, 2015): a person needing a number applies on a prescribed application with evidence of age, citizenship or alien status and identity; a parent may instead ask for one in the official birth registration (Enumeration at Birth) and an immigrant through the immigration process; the card is mailed 'within a reasonable time' (no number of days, so no 'within'). Read SSA's POMS RM 10201.030 (2011-06-23): nine digits, written 000-00-0000, the old area and group structure without significance since 2011-06-25; RM 10201.050: all numbers assigned randomly from 2011-06-25; RM 10201.035 (2011-06-23): a number whose first three digits are 000, 666 or in the 900s, whose middle two are 00 or whose last four are 0000 is invalid, which the pattern holds. No check digit. 'who' reads 422.103(c)(1) and (e)(3): citizens, and noncitizens by their status (permanent residents without a legend; others with 'Not Valid for Employment' or 'Valid For Work Only With DHS Authorization', which the form doesn't hold). Not read: the fee (ssa.gov, which says the number is free, refused this egress with an Akamai 'Access Denied' on 2026-10-30, so 'fee' is left out) and what needs one ('needed' left out: 422.103(a) says the number identifies the earnings record, and RM 10201.010 lists the IRS and banks among authorized users, but neither text says a purpose requires it).",
+ "sources": [
+  {
+   "url": "https://www.govinfo.gov/content/pkg/CFR-2024-title20-vol2/xml/CFR-2024-title20-vol2-sec422-103.xml",
+   "title": "20 CFR 422.103, Social security numbers (2024-04-01 edition)",
+   "read": "2026-10-30",
+   "said": "An individual needing a Social Security number may apply for one by completing a prescribed application and submitting the required evidence. ... Where an agreement is in effect, a parent, as part of the official birth registration process, need not complete a prescribed application and may request that we assign a Social Security number to the newborn child. ... we will require you to furnish evidence, as necessary, to assist us in establishing your age, U.S. citizenship or alien status, true identity, and previously assigned Social Security number(s), if any. ... U.S. citizens and individuals who are permanent residents receive SSN cards without a restrictive legend."
+  },
+  {
+   "url": "https://secure.ssa.gov/poms.nsf/lnx/0110201030",
+   "title": "POMS RM 10201.030, Structure of the Social Security Number (SSN), 2011-06-23",
+   "read": "2026-10-30",
+   "said": "The SSN consists of nine digits, separated into three groups by hyphens (i.e., 000-00-0000). ... Beginning June 25, 2011 forward, this structure is no longer of any significance."
+  },
+  {
+   "url": "https://secure.ssa.gov/poms.nsf/lnx/0110201050",
+   "title": "POMS RM 10201.050, Social Security Number (SSN) Assignment and Card Issuance, 2011-06-23",
+   "read": "2026-10-30",
+   "said": "Beginning June 25, 2011, we assign all SSNs randomly."
+  },
+  {
+   "url": "https://secure.ssa.gov/poms.nsf/lnx/0110201035",
+   "title": "POMS RM 10201.035, Invalid Social Security Numbers (SSNs), 2011-06-23",
+   "read": "2026-10-30",
+   "said": "An invalid (or impossible) SSN is one that we never assigned. ... The first three digits (former area number) as \"000,\" \"666,” or in the 900 series. ... The second group of two digits (former group number) as \"00.\" ... The third group of four digits (former serial number) as \"0000.\""
+  }
+ ]
+}

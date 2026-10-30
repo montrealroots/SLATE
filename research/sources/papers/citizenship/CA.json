@@ -3,7 +3,7 @@
  "years": 3,
  "renounce": false,
  "lapses": false,
- "note": "GLOBALCIT's Citizenship Law Dataset v3.0 (EUI, 2025), coding the law in force on 1 January 2024 (A06a CAN 5(1); A06b CAN 5(1); L05 No provision): ordinary naturalisation after 3 years' residence (the 3 of 5 years the provision asks; the dataset's own count is 5); no renunciation of other citizenships required; a citizen keeps it on taking another. Reforms after that date are checked in the file's later sources, where a later source is given.",
+ "note": "GLOBALCIT's Citizenship Law Dataset v3.0 (EUI, 2025), coding the law in force on 1 January 2024 (A06a CAN 5(1); A06b CAN 5(1); L05 No provision): ordinary naturalisation after 3 years' residence (the 3 of 5 years the provision asks; the dataset's own count is 5); no renunciation of other citizenships required; a citizen keeps it on taking another. Reforms after that date are checked in the file's later sources, where a later source is given. Citizenship at birth is read from the same dataset's 2024 coding of modes A01a (descent, born in country: No provision), A01b (descent, born abroad: Generational transmission restriction: conditional on birthplace/place of residence /mode under which parent acquired citizenship), A02a (birth in country: Generally applicable provision) and A02b (birth in country to a parent born there: No provision), as its codebook (RSC/GLOBALCIT 2025/01, sections 3.2.1a to 3.2.2b) defines them: by birth in the territory unconditionally; by descent from either parent, a child born abroad on the limit the dataset states (the dataset codes no separate descent rule for a child born in the country, birth there giving it; the parent's sex is read from mode A01b). Changes to the law at birth after 1 January 2024 were checked as follows. A grant of citizenship costs an adult C$653, the processing fee and the right of citizenship fee together (IRCC fee list, read 30 October 2026); applicants aged 18 to 54 must prove English or French and pass the citizenship test. IRCC's processing times are a live estimate, not a published maximum, so none is held. Bill C-3 (in force 15 December 2025) replaced the first-generation limit GLOBALCIT codes for 2024: a second-generation child born abroad from that date is Canadian if the Canadian parent spent at least 1,095 days in Canada before the birth (IRCC, read 30 October 2026); descentAbroad holds the new rule.",
  "sources": [
   {
    "url": "https://cadmus.eui.eu/bitstreams/3b166501-e695-48d7-9e27-d7bef061573a/download",
@@ -11,7 +11,36 @@
    "read": "2026-10-29",
    "kind": "secondary",
    "quotes": "https://globalcit.eu/national-citizenship-laws/",
-   "said": "Person has been resident for 3 out 5 years immediately preceding the application. ... n.a. ... n.a."
+   "said": "Person has been resident for 3 out 5 years immediately preceding the application. ... n.a. ... n.a. ... No provision ... Generational transmission restriction: conditional on birthplace/place of residence /mode under which parent acquired citizenship ... Person is born abroad to a citizen otherwise than by descent. Exempt from this first generation limitation are those born abroad to parents engaged in Canada's armed forces or public service. ... Generally applicable provision ... Person is born in Canada. Unless parents are foreign diplomats. ... No provision"
+  },
+  {
+   "url": "https://ircc.canada.ca/english/information/fees/fees.asp",
+   "title": "IRCC, Citizenship and immigration application fees: Fee list",
+   "read": "2026-10-30",
+   "said": "Adult (18 and over) This amount includes the processing fee and the right of citizenship fee. 653.00"
+  },
+  {
+   "url": "https://www.canada.ca/en/immigration-refugees-citizenship/services/canadian-citizenship/become-canadian-citizen/eligibility.html",
+   "title": "IRCC, Canadian citizenship: Who can apply (eligibility)",
+   "read": "2026-10-30",
+   "said": "prove your language skills in English or French (adults 18 to 54 only) ... pass the citizenship test (adults 18 to 54 only)"
+  },
+  {
+   "url": "https://www.canada.ca/en/immigration-refugees-citizenship/services/canadian-citizenship/act-changes/rules-2025.html",
+   "title": "IRCC, Change to citizenship rules in 2025",
+   "read": "2026-10-30",
+   "said": "This legislation changes the first-generation limit to citizenship by descent. ... If you were born or adopted on or after December 15, 2025 People born outside Canada in the second generation (or later) may be Canadian if their parent was also born or adopted outside Canada to a Canadian citizen (meaning the grandparent was Canadian), and that same parent spent at least 1,095 days in Canada before the birth"
   }
+ ],
+ "atBirth": {
+  "soil": "unconditional",
+  "descent": "either parent",
+  "descentAbroad": "A child born abroad to a Canadian parent who was born in Canada or naturalised is Canadian by descent; a child born abroad on or after 15 December 2025 to a parent who was also born abroad to a Canadian is Canadian only if that parent spent at least 1,095 days in Canada before the birth (Citizenship Act as amended by Bill C-3)."
+ },
+ "currency": "CAD",
+ "fee": "653",
+ "test": [
+  "language",
+  "civics"
  ]
 }

@@ -3,7 +3,7 @@
  "years": "none",
  "renounce": null,
  "lapses": false,
- "note": "GLOBALCIT's Citizenship Law Dataset v3.0 (EUI, 2025), coding the law in force on 1 January 2024 (A06a No provision; A06b No provision; L05 No provision): no ordinary naturalisation by residence; a citizen keeps it on taking another. Reforms after that date are checked in the file's later sources, where a later source is given.",
+ "note": "GLOBALCIT's Citizenship Law Dataset v3.0 (EUI, 2025), coding the law in force on 1 January 2024 (A06a No provision; A06b No provision; L05 No provision): no ordinary naturalisation by residence; a citizen keeps it on taking another. Reforms after that date are checked in the file's later sources, where a later source is given. Citizenship at birth is read from the same dataset's 2024 coding of modes A01a (descent, born in country: Group restriction: only if citizen parent is member of a particular group, race or religion), A01b (descent, born abroad: Group restriction: only if citizen parent is member of a particular group, race or religion), A02a (birth in country: Group restriction: only if parent is member of a particular group, race or religion) and A02b (birth in country to a parent born there: No provision), as its codebook (RSC/GLOBALCIT 2025/01, sections 3.2.1a to 3.2.2b) defines them: by birth in the territory only on the condition the dataset states; by descent from either parent, a child born abroad on the limit the dataset states. The coding also records a restriction to members of a particular group, which the form holds only in the condition's words, which the form doesn't hold. Changes to the law at birth after 1 January 2024 weren't checked for this file.",
  "sources": [
   {
    "url": "https://cadmus.eui.eu/bitstreams/3b166501-e695-48d7-9e27-d7bef061573a/download",
@@ -11,7 +11,13 @@
    "read": "2026-10-29",
    "kind": "secondary",
    "quotes": "https://globalcit.eu/national-citizenship-laws/",
-   "said": "n.a. ... n.a. ... The law includes an explicit statement that a Liberian citizen may acquire another citizenship without affecting his or her Liberian citizenship."
+   "said": "n.a. ... n.a. ... The law includes an explicit statement that a Liberian citizen may acquire another citizenship without affecting his or her Liberian citizenship. ... Group restriction: only if citizen parent is member of a particular group, race or religion ... Person is born in Liberia to a citizen. Other conditions: must be Negro or of Negro descent. ... Group restriction: only if citizen parent is member of a particular group, race or religion ... Person is born abroad to a citizen. Other conditions: must be Negro or of Negro descent. ... Group restriction: only if parent is member of a particular group, race or religion ... Person is born in Liberia and is a Negro or of Negro descent. ... No provision"
   }
- ]
+ ],
+ "atBirth": {
+  "soil": "conditional",
+  "soilIf": "Person is born in Liberia and is a Negro or of Negro descent.",
+  "descent": "either parent",
+  "descentAbroad": "Person is born abroad to a citizen. Other conditions: must be Negro or of Negro descent."
+ }
 }

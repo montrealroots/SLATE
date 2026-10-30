@@ -3,7 +3,7 @@
  "years": 5,
  "renounce": false,
  "lapses": false,
- "note": "GLOBALCIT's Citizenship Law Dataset v3.0 (EUI, 2025), coding the law in force on 1 January 2024 (A06a FJI 11; A06b FJI 11; L05 No provision): ordinary naturalisation after 5 years' residence; no renunciation of other citizenships required; a citizen keeps it on taking another. Reforms after that date are checked in the file's later sources, where a later source is given.",
+ "note": "GLOBALCIT's Citizenship Law Dataset v3.0 (EUI, 2025), coding the law in force on 1 January 2024 (A06a FJI 11; A06b FJI 11; L05 No provision): ordinary naturalisation after 5 years' residence; no renunciation of other citizenships required; a citizen keeps it on taking another. Reforms after that date are checked in the file's later sources, where a later source is given. Citizenship at birth is read from the same dataset's 2024 coding of modes A01a (descent, born in country: Generally applicable provision), A01b (descent, born abroad: Generally applicable provision), A02a (birth in country: No provision) and A02b (birth in country to a parent born there: No provision), as its codebook (RSC/GLOBALCIT 2025/01, sections 3.2.1a to 3.2.2b) defines them: not by birth in the territory alone (provisions for foundlings and children otherwise stateless, modes A03a and A03b, aren't held by the form); by descent from either parent, with no further limit on a child born abroad. Changes to the law at birth after 1 January 2024 weren't checked for this file.",
  "sources": [
   {
    "url": "https://cadmus.eui.eu/bitstreams/3b166501-e695-48d7-9e27-d7bef061573a/download",
@@ -11,7 +11,11 @@
    "read": "2026-10-29",
    "kind": "secondary",
    "quotes": "https://globalcit.eu/national-citizenship-laws/",
-   "said": "Presence in Fiji for 5 of preceding 10 years, intention to reside in Fiji. ... n.a. ... n.a."
+   "said": "Presence in Fiji for 5 of preceding 10 years, intention to reside in Fiji. ... n.a. ... n.a. ... Generally applicable provision ... One or both parents must be a citizen. Excludes child born in Fiji to diplomat. ... Generally applicable provision ... One or both parents must be a citizen. If application for registration is made after child is 18, residence in Fiji for 3 of 5 preceding years also required. ... No provision ... No provision"
   }
- ]
+ ],
+ "atBirth": {
+  "soil": "none",
+  "descent": "either parent"
+ }
 }

@@ -3,23 +3,88 @@
  "office": "local government passport offices (여권민원실)",
  "currency": "KRW",
  "routes": [
-  {"id": "standard", "where": "home", "speed": "standard", "within": null, "label": "electronic multiple passport"}
+  {
+   "id": "standard",
+   "where": "home",
+   "speed": "standard",
+   "within": {
+    "n": 8,
+    "unit": "working day"
+   },
+   "label": "electronic multiple passport"
+  }
  ],
  "passports": [
-  {"for": "adult", "from": 18, "pages": 58, "validYears": 10, "pay": {"standard": "52000"}},
-  {"for": "adult", "from": 18, "pages": 26, "validYears": 10, "pay": {"standard": "49000"}},
-  {"for": "minor", "from": 8, "under": 18, "pages": 58, "validYears": 5, "pay": {"standard": "44000"}},
-  {"for": "minor", "from": 8, "under": 18, "pages": 26, "validYears": 5, "pay": {"standard": "41000"}},
-  {"for": "child", "under": 8, "pages": 58, "validYears": 5, "pay": {"standard": "35000"}},
-  {"for": "child", "under": 8, "pages": 26, "validYears": 5, "pay": {"standard": "32000"}}
+  {
+   "for": "adult",
+   "from": 18,
+   "pages": 58,
+   "validYears": 10,
+   "pay": {
+    "standard": "52000"
+   }
+  },
+  {
+   "for": "adult",
+   "from": 18,
+   "pages": 26,
+   "validYears": 10,
+   "pay": {
+    "standard": "49000"
+   }
+  },
+  {
+   "for": "minor",
+   "from": 8,
+   "under": 18,
+   "pages": 58,
+   "validYears": 5,
+   "pay": {
+    "standard": "44000"
+   }
+  },
+  {
+   "for": "minor",
+   "from": 8,
+   "under": 18,
+   "pages": 26,
+   "validYears": 5,
+   "pay": {
+    "standard": "41000"
+   }
+  },
+  {
+   "for": "child",
+   "under": 8,
+   "pages": 58,
+   "validYears": 5,
+   "pay": {
+    "standard": "35000"
+   }
+  },
+  {
+   "for": "child",
+   "under": 8,
+   "pages": 26,
+   "validYears": 5,
+   "pay": {
+    "standard": "32000"
+   }
+  }
  ],
- "note": "Fees include the international exchange contribution. Since 1 May 2025 every adult of 18 or more may get a ten-year passport, those who haven't done military service included. Read from Suwon's fee page (updated 2026-02-27, an official e-government site).",
+ "note": "Fees include the international exchange contribution. Since 1 May 2025 every adult of 18 or more may get a ten-year passport, those who haven't done military service included. Read from Suwon's fee page (updated 2026-02-27, an official e-government site). Suwon's page on collecting a passport gives 8 working days from application to collection in Korea where the identity check raises nothing, taken as the route's time.",
  "sources": [
   {
    "url": "https://www.suwon.go.kr/sw-www/www01/www01_09/www01_09_05.jsp",
    "title": "수원특례시 (Suwon Special City), 여권발급 수수료 (국제교류기여금 포함), 수정일 2026-02-27",
-   "read": "2026-10-28",
+   "read": "2026-10-30",
    "said": "여권 발급 수수료 (국제교류기여금 포함) ... 종류 대 상 여권발급수수료 비 고 58면 26면 전자여권 복수여권 10년 이내 52,000 49,000 '25.5.1.부터 병역미필자도 10년 여권발급 가능, 만18세 이상 성인은 모두 10년 여권발급 가능함. 5년 만 8세 이상 ~만 18세 미만 44,000 41,000 만 8세 미만 35,000 32,000 기존 여권의 남은 유효기간 부여 (58면, 26면 선택) 27,000 ... 단수여권 1년이내 17,000"
+  },
+  {
+   "url": "https://www.suwon.go.kr/sw-www/www01/www01_09/www01_09_06.jsp",
+   "title": "수원특례시 (Suwon Special City), 여권 교부일 및 수령방법 (read 2026-10-30)",
+   "read": "2026-10-30",
+   "said": "여권신청 후 신원 조회 상 문제가 없을 경우 여권 발급을 신청한 날부터 수령까지 처리기간은 근무일 기준 8일(국내기준)입니다."
   }
  ]
 }

@@ -9,16 +9,33 @@
      "fee": "6.00",
      "per": "month"
     }
-   ]
+   ],
+   "returned": "0",
+   "debit": {
+    "fx": "1.75"
+   },
+   "atm": {
+    "own": "0",
+    "other": "0",
+    "abroad": {
+     "percent": "3.5"
+    }
+   }
   }
  ],
- "note": "AIB's guide to fees and charges for personal accounts: a personal current account's monthly account fee is 6 euros, covering unlimited euro transactions; none for an AIB mortgage holder paying it from the account (not modelled). Debit-card stamp duty isn't modelled.",
+ "note": "AIB's guide to fees and charges for personal accounts: a personal current account's monthly account fee is 6 euros, covering unlimited euro transactions; none for an AIB mortgage holder paying it from the account (not modelled). Debit-card stamp duty isn't modelled. Read again 2026-10-30: the monthly fee covers unlimited euro transactions, taking cash out among them (own and other machines free); unpaid items carry no charge; a purchase in another currency costs 1.75% of the euro value (at least 0.45, at most 11.00 EUR, bounds the form's card share doesn't hold); cash taken out abroad 2.5% plus a commission of 1% at least 2.00 and at most 6.00 EUR, written as 3.5% (exact between 200 and 600 EUR, under it below 200 and over it above 600). An overdraft is by agreement only, its rate in the agreement, with a facility fee of 25.39 EUR (not written). Not stated: interest, transfers' prices, what opening asks.",
  "sources": [
   {
    "url": "https://www.aib.ie/content/dam/aib/personal/docs/fees-and-charges/a-guide-to-fees-and-charges-for-personal-accounts.pdf",
    "title": "AIB, A guide to fees and charges for personal accounts",
-   "read": "2026-10-29",
+   "read": "2026-10-30",
    "said": "How much is the fee? → €6.00 per month per account for personal current accounts"
+  },
+  {
+   "url": "https://www.aib.ie/content/dam/aib/personal/docs/fees-and-charges/a-guide-to-fees-and-charges-for-personal-accounts.pdf",
+   "title": "AIB, A guide to fees and charges for personal accounts (1 July 2026): the other terms",
+   "read": "2026-10-30",
+   "said": "1 July 2026 ... This fee is charged to cover an unlimited number of euro ... cash out and putting money in your account. ... Services with no charge ... Unpaid charges ... Purchases in foreign 1.75% of the euro value ... Taking cash out 2.5% of the euro value ... 1% of euro value (Minimum €2.00, Maximum €6.00)"
   }
  ]
 }

@@ -191,7 +191,39 @@
        }
       ]
      }
-    ]
+    ],
+    "overdraft": {
+     "fee": {
+      "currency": "EUR",
+      "minor": 453
+     }
+    },
+    "returned": {
+     "currency": "EUR",
+     "minor": 760
+    },
+    "atm": {
+     "own": {
+      "currency": "EUR",
+      "minor": 0
+     },
+     "other": {
+      "currency": "EUR",
+      "minor": 0
+     }
+    },
+    "transfers": {
+     "domestic": {
+      "currency": "EUR",
+      "minor": 0
+     },
+     "abroad": {
+      "fixed": {
+       "currency": "EUR",
+       "minor": 575
+      }
+     }
+    }
    }
   ],
   "AU": [
@@ -218,7 +250,37 @@
        }
       ]
      }
-    ]
+    ],
+    "overdraft": {
+     "rate": {
+      "percent": "14.90",
+      "per": "year"
+     },
+     "fee": {
+      "currency": "AUD",
+      "minor": 1500
+     }
+    },
+    "returned": {
+     "currency": "AUD",
+     "minor": 500
+    },
+    "debit": {
+     "fx": "3.5"
+    },
+    "atm": {
+     "other": {
+      "currency": "AUD",
+      "minor": 0
+     },
+     "abroad": {
+      "percent": "3.5",
+      "fixed": {
+       "currency": "AUD",
+       "minor": 500
+      }
+     }
+    }
    }
   ],
   "AW": [
@@ -332,7 +394,34 @@
        }
       ]
      }
-    ]
+    ],
+    "returned": {
+     "currency": "EUR",
+     "minor": 605
+    },
+    "atm": {
+     "own": {
+      "currency": "EUR",
+      "minor": 0
+     },
+     "other": {
+      "currency": "EUR",
+      "minor": 0
+     },
+     "abroad": {
+      "percent": "2.55",
+      "fixed": {
+       "currency": "EUR",
+       "minor": 212
+      }
+     }
+    },
+    "transfers": {
+     "domestic": {
+      "currency": "EUR",
+      "minor": 0
+     }
+    }
    }
   ],
   "BF": [
@@ -578,7 +667,13 @@
     "bank": "Nubank",
     "account": "Conta do Nubank",
     "currency": "BRL",
-    "fees": []
+    "fees": [],
+    "transfers": {
+     "domestic": {
+      "currency": "BRL",
+      "minor": 0
+     }
+    }
    }
   ],
   "BS": [
@@ -666,7 +761,16 @@
       },
       "per": "month"
      }
-    ]
+    ],
+    "debit": {
+     "fx": "2.5"
+    },
+    "transfers": {
+     "domestic": {
+      "currency": "CAD",
+      "minor": 0
+     }
+    }
    }
   ],
   "CD": [
@@ -703,7 +807,38 @@
        }
       ]
      }
-    ]
+    ],
+    "debit": {
+     "fx": "1.5"
+    },
+    "atm": {
+     "own": {
+      "currency": "CHF",
+      "minor": 0
+     },
+     "other": {
+      "currency": "CHF",
+      "minor": 200
+     },
+     "abroad": {
+      "fixed": {
+       "currency": "CHF",
+       "minor": 500
+      }
+     }
+    },
+    "transfers": {
+     "domestic": {
+      "currency": "CHF",
+      "minor": 0
+     },
+     "abroad": {
+      "fixed": {
+       "currency": "CHF",
+       "minor": 200
+      }
+     }
+    }
    }
   ],
   "CI": [
@@ -743,7 +878,32 @@
     "bank": "BancoEstado",
     "account": "CuentaRUT",
     "currency": "CLP",
-    "fees": []
+    "fees": [],
+    "debit": {
+     "fx": "1.9"
+    },
+    "atm": {
+     "own": {
+      "currency": "CLP",
+      "minor": 0
+     },
+     "other": {
+      "currency": "CLP",
+      "minor": 300
+     },
+     "abroad": {
+      "percent": "1.9"
+     }
+    },
+    "transfers": {
+     "domestic": {
+      "currency": "CLP",
+      "minor": 0
+     }
+    },
+    "opening": {
+     "from": 12
+    }
    }
   ],
   "CM": [
@@ -759,7 +919,11 @@
     "bank": "中国银行",
     "account": "个人借记卡（人民币个人活期存款账户）",
     "currency": "CNY",
-    "fees": []
+    "fees": [],
+    "interest": {
+     "percent": "0.05",
+     "per": "year"
+    }
    }
   ],
   "CO": [
@@ -850,7 +1014,13 @@
     "bank": "ČSOB",
     "account": "Plus Konto",
     "currency": "CZK",
-    "fees": []
+    "fees": [],
+    "atm": {
+     "own": {
+      "currency": "CZK",
+      "minor": 0
+     }
+    }
    }
   ],
   "DE": [
@@ -866,7 +1036,39 @@
       },
       "per": "month"
      }
-    ]
+    ],
+    "overdraft": {
+     "rate": {
+      "percent": "13.30",
+      "per": "year"
+     }
+    },
+    "returned": {
+     "currency": "EUR",
+     "minor": 68
+    },
+    "debit": {
+     "fx": "1"
+    },
+    "atm": {
+     "own": {
+      "currency": "EUR",
+      "minor": 0
+     },
+     "abroad": {
+      "percent": "1",
+      "min": {
+       "currency": "EUR",
+       "minor": 599
+      }
+     }
+    },
+    "transfers": {
+     "domestic": {
+      "currency": "EUR",
+      "minor": 0
+     }
+    }
    }
   ],
   "DJ": [
@@ -903,7 +1105,33 @@
        }
       ]
      }
-    ]
+    ],
+    "debit": {
+     "fx": "1.5"
+    },
+    "atm": {
+     "own": {
+      "currency": "DKK",
+      "minor": 0
+     },
+     "other": {
+      "currency": "DKK",
+      "minor": 1200
+     },
+     "abroad": {
+      "percent": "1.5",
+      "fixed": {
+       "currency": "DKK",
+       "minor": 3000
+      }
+     }
+    },
+    "transfers": {
+     "domestic": {
+      "currency": "DKK",
+      "minor": 500
+     }
+    }
    }
   ],
   "DM": [
@@ -999,7 +1227,17 @@
        }
       ]
      }
-    ]
+    ],
+    "interest": {
+     "percent": "0",
+     "per": "year"
+    },
+    "opening": {
+     "deposit": {
+      "currency": "EGP",
+      "minor": 250000
+     }
+    }
    }
   ],
   "ES": [
@@ -1007,7 +1245,32 @@
     "bank": "CaixaBank",
     "account": "Cuenta On-line CaixaBank",
     "currency": "EUR",
-    "fees": []
+    "fees": [],
+    "overdraft": {
+     "rate": {
+      "percent": "0.00",
+      "per": "year"
+     }
+    },
+    "atm": {
+     "own": {
+      "currency": "EUR",
+      "minor": 0
+     }
+    },
+    "transfers": {
+     "domestic": {
+      "currency": "EUR",
+      "minor": 0
+     },
+     "abroad": {
+      "percent": "0.6",
+      "min": {
+       "currency": "EUR",
+       "minor": 1500
+      }
+     }
+    }
    }
   ],
   "ET": [
@@ -1036,7 +1299,50 @@
        }
       ]
      }
-    ]
+    ],
+    "debit": {
+     "fee": {
+      "fee": {
+       "currency": "EUR",
+       "minor": 275
+      },
+      "per": "month",
+      "waived": [
+       {
+        "under": 26
+       }
+      ]
+     }
+    },
+    "atm": {
+     "own": {
+      "currency": "EUR",
+      "minor": 0
+     },
+     "other": {
+      "currency": "EUR",
+      "minor": 0
+     },
+     "abroad": {
+      "percent": "2.75",
+      "fixed": {
+       "currency": "EUR",
+       "minor": 200
+      }
+     }
+    },
+    "transfers": {
+     "domestic": {
+      "currency": "EUR",
+      "minor": 0
+     },
+     "abroad": {
+      "fixed": {
+       "currency": "EUR",
+       "minor": 600
+      }
+     }
+    }
    },
    {
     "bank": "Nordea",
@@ -1122,7 +1428,25 @@
       },
       "per": "month"
      }
-    ]
+    ],
+    "overdraft": {
+     "fee": {
+      "currency": "EUR",
+      "minor": 790
+     }
+    },
+    "atm": {
+     "other": {
+      "currency": "EUR",
+      "minor": 0
+     }
+    },
+    "transfers": {
+     "domestic": {
+      "currency": "EUR",
+      "minor": 0
+     }
+    }
    }
   ],
   "GB": [
@@ -1130,7 +1454,37 @@
     "bank": "Barclays",
     "account": "Flexible",
     "currency": "GBP",
-    "fees": []
+    "fees": [],
+    "overdraft": false,
+    "returned": {
+     "currency": "GBP",
+     "minor": 0
+    },
+    "debit": {
+     "fx": "2.99"
+    },
+    "atm": {
+     "own": {
+      "currency": "GBP",
+      "minor": 0
+     },
+     "other": {
+      "currency": "GBP",
+      "minor": 0
+     },
+     "abroad": {
+      "percent": "2.99"
+     }
+    },
+    "transfers": {
+     "domestic": {
+      "currency": "GBP",
+      "minor": 0
+     },
+     "abroad": {
+      "percent": "0"
+     }
+    }
    }
   ],
   "GD": [
@@ -1426,7 +1780,24 @@
       },
       "per": "month"
      }
-    ]
+    ],
+    "interest": {
+     "percent": "0.01",
+     "per": "year"
+    },
+    "transfers": {
+     "abroad": {
+      "percent": "0.35",
+      "min": {
+       "currency": "HUF",
+       "minor": 491500
+      },
+      "max": {
+       "currency": "HUF",
+       "minor": 5945600
+      }
+     }
+    }
    }
   ],
   "ID": [
@@ -1442,7 +1813,39 @@
       },
       "per": "month"
      }
-    ]
+    ],
+    "atm": {
+     "own": {
+      "currency": "IDR",
+      "minor": 0
+     },
+     "other": {
+      "currency": "IDR",
+      "minor": 750000
+     },
+     "abroad": {
+      "fixed": {
+       "currency": "IDR",
+       "minor": 2000000
+      }
+     }
+    },
+    "transfers": {
+     "domestic": {
+      "currency": "IDR",
+      "minor": 250000
+     }
+    },
+    "opening": {
+     "deposit": {
+      "currency": "IDR",
+      "minor": 5000000
+     },
+     "from": 17,
+     "papers": [
+      "id"
+     ]
+    }
    }
   ],
   "IE": [
@@ -1458,7 +1861,27 @@
       },
       "per": "month"
      }
-    ]
+    ],
+    "returned": {
+     "currency": "EUR",
+     "minor": 0
+    },
+    "debit": {
+     "fx": "1.75"
+    },
+    "atm": {
+     "own": {
+      "currency": "EUR",
+      "minor": 0
+     },
+     "other": {
+      "currency": "EUR",
+      "minor": 0
+     },
+     "abroad": {
+      "percent": "3.5"
+     }
+    }
    }
   ],
   "IL": [
@@ -1490,7 +1913,17 @@
     "bank": "State Bank of India",
     "account": "Savings Bank Account",
     "currency": "INR",
-    "fees": []
+    "fees": [],
+    "interest": {
+     "percent": "2.50",
+     "per": "year"
+    },
+    "atm": {
+     "other": {
+      "currency": "INR",
+      "minor": 0
+     }
+    }
    }
   ],
   "IO": [
@@ -1530,7 +1963,43 @@
       },
       "per": "month"
      }
-    ]
+    ],
+    "overdraft": {
+     "rate": {
+      "percent": "20.2800",
+      "per": "year"
+     },
+     "fee": {
+      "currency": "EUR",
+      "minor": 0
+     }
+    },
+    "interest": {
+     "percent": "0.0000",
+     "per": "year"
+    },
+    "atm": {
+     "own": {
+      "currency": "EUR",
+      "minor": 0
+     },
+     "other": {
+      "currency": "EUR",
+      "minor": 0
+     }
+    },
+    "transfers": {
+     "domestic": {
+      "currency": "EUR",
+      "minor": 0
+     },
+     "abroad": {
+      "fixed": {
+       "currency": "EUR",
+       "minor": 1200
+      }
+     }
+    }
    }
   ],
   "JE": [
@@ -1578,7 +2047,34 @@
     "bank": "三菱UFJ銀行",
     "account": "普通預金",
     "currency": "JPY",
-    "fees": []
+    "fees": [],
+    "atm": {
+     "own": {
+      "currency": "JPY",
+      "minor": 0
+     },
+     "other": {
+      "currency": "JPY",
+      "minor": 0
+     }
+    },
+    "transfers": {
+     "domestic": {
+      "currency": "JPY",
+      "minor": 154
+     },
+     "abroad": {
+      "percent": "0.05",
+      "fixed": {
+       "currency": "JPY",
+       "minor": 3000
+      },
+      "min": {
+       "currency": "JPY",
+       "minor": 5500
+      }
+     }
+    }
    }
   ],
   "KE": [
@@ -1642,7 +2138,26 @@
     "bank": "신한은행",
     "account": "쏠편한 입출금통장",
     "currency": "KRW",
-    "fees": []
+    "fees": [],
+    "interest": {
+     "percent": "0.1",
+     "per": "year"
+    },
+    "atm": {
+     "own": {
+      "currency": "KRW",
+      "minor": 0
+     }
+    },
+    "transfers": {
+     "domestic": {
+      "currency": "KRW",
+      "minor": 0
+     }
+    },
+    "opening": {
+     "from": 14
+    }
    }
   ],
   "KW": [
@@ -2226,7 +2741,17 @@
       },
       "per": "month"
      }
-    ]
+    ],
+    "interest": {
+     "percent": "0",
+     "per": "year"
+    },
+    "opening": {
+     "papers": [
+      "id",
+      "address"
+     ]
+    }
    }
   ],
   "MY": [
@@ -2250,7 +2775,11 @@
        }
       ]
      }
-    ]
+    ],
+    "returned": {
+     "currency": "MYR",
+     "minor": 10000
+    }
    }
   ],
   "MZ": [
@@ -2325,7 +2854,36 @@
     "bank": "Access Bank",
     "account": "Instant Savings",
     "currency": "NGN",
-    "fees": []
+    "fees": [],
+    "interest": {
+     "percent": "6.90",
+     "per": "year"
+    },
+    "debit": {
+     "fee": {
+      "fee": {
+       "currency": "NGN",
+       "minor": 5375
+      },
+      "per": "quarter"
+     }
+    },
+    "atm": {
+     "own": {
+      "currency": "NGN",
+      "minor": 0
+     },
+     "other": {
+      "currency": "NGN",
+      "minor": 10750
+     }
+    },
+    "transfers": {
+     "domestic": {
+      "currency": "NGN",
+      "minor": 1075
+     }
+    }
    }
   ],
   "NI": [
@@ -2370,7 +2928,23 @@
        }
       ]
      }
-    ]
+    ],
+    "atm": {
+     "own": {
+      "currency": "EUR",
+      "minor": 0
+     },
+     "other": {
+      "currency": "EUR",
+      "minor": 0
+     },
+     "abroad": {
+      "fixed": {
+       "currency": "EUR",
+       "minor": 350
+      }
+     }
+    }
    }
   ],
   "NO": [
@@ -2378,7 +2952,48 @@
     "bank": "DNB",
     "account": "Brukskonto",
     "currency": "NOK",
-    "fees": []
+    "fees": [],
+    "overdraft": {
+     "rate": {
+      "percent": "20",
+      "per": "year"
+     }
+    },
+    "debit": {
+     "fee": {
+      "fee": {
+       "currency": "NOK",
+       "minor": 29500
+      },
+      "per": "year"
+     },
+     "fx": "1.99"
+    },
+    "atm": {
+     "own": {
+      "currency": "NOK",
+      "minor": 0
+     },
+     "other": {
+      "currency": "NOK",
+      "minor": 0
+     },
+     "abroad": {
+      "percent": "1.99",
+      "fixed": {
+       "currency": "NOK",
+       "minor": 4000
+      }
+     }
+    },
+    "transfers": {
+     "abroad": {
+      "fixed": {
+       "currency": "NOK",
+       "minor": 6000
+      }
+     }
+    }
    }
   ],
   "NP": [
@@ -2542,7 +3157,24 @@
        }
       ]
      }
-    ]
+    ],
+    "interest": {
+     "percent": "0.0625",
+     "per": "year",
+     "over": {
+      "currency": "PHP",
+      "minor": 500000
+     }
+    },
+    "opening": {
+     "deposit": {
+      "currency": "PHP",
+      "minor": 200000
+     },
+     "papers": [
+      "id"
+     ]
+    }
    }
   ],
   "PK": [
@@ -2550,7 +3182,36 @@
     "bank": "HBL",
     "account": "Conventional Current Account",
     "currency": "PKR",
-    "fees": []
+    "fees": [],
+    "returned": {
+     "currency": "PKR",
+     "minor": 100000
+    },
+    "debit": {
+     "fee": {
+      "fee": {
+       "currency": "PKR",
+       "minor": 300000
+      },
+      "per": "year"
+     },
+     "fx": "4"
+    },
+    "atm": {
+     "abroad": {
+      "percent": "4",
+      "min": {
+       "currency": "PKR",
+       "minor": 30000
+      }
+     }
+    },
+    "transfers": {
+     "domestic": {
+      "currency": "PKR",
+      "minor": 0
+     }
+    }
    }
   ],
   "PL": [
@@ -2558,7 +3219,32 @@
     "bank": "PKO Bank Polski",
     "account": "PKO Konto za Zero",
     "currency": "PLN",
-    "fees": []
+    "fees": [],
+    "debit": {
+     "fee": {
+      "fee": {
+       "currency": "PLN",
+       "minor": 1000
+      },
+      "per": "month"
+     }
+    },
+    "atm": {
+     "own": {
+      "currency": "PLN",
+      "minor": 0
+     },
+     "other": {
+      "currency": "PLN",
+      "minor": 1000
+     }
+    },
+    "transfers": {
+     "domestic": {
+      "currency": "PLN",
+      "minor": 0
+     }
+    }
    }
   ],
   "PM": [
@@ -2653,7 +3339,13 @@
       },
       "per": "month"
      }
-    ]
+    ],
+    "transfers": {
+     "domestic": {
+      "currency": "EUR",
+      "minor": 0
+     }
+    }
    }
   ],
   "PW": [
@@ -2719,7 +3411,19 @@
     "bank": "Banca Transilvania",
     "account": "Cont curent in Lei",
     "currency": "RON",
-    "fees": []
+    "fees": [],
+    "atm": {
+     "own": {
+      "currency": "RON",
+      "minor": 0
+     }
+    },
+    "transfers": {
+     "domestic": {
+      "currency": "RON",
+      "minor": 250
+     }
+    }
    }
   ],
   "RS": [
@@ -2869,7 +3573,39 @@
        }
       ]
      }
-    ]
+    ],
+    "debit": {
+     "fx": "1.65"
+    },
+    "atm": {
+     "own": {
+      "currency": "SEK",
+      "minor": 0
+     },
+     "other": {
+      "currency": "SEK",
+      "minor": 0
+     },
+     "abroad": {
+      "percent": "1.65",
+      "fixed": {
+       "currency": "SEK",
+       "minor": 4000
+      }
+     }
+    },
+    "transfers": {
+     "domestic": {
+      "currency": "SEK",
+      "minor": 0
+     },
+     "abroad": {
+      "fixed": {
+       "currency": "SEK",
+       "minor": 6000
+      }
+     }
+    }
    }
   ],
   "SG": [
@@ -3130,7 +3866,14 @@
     "bank": "Kasikornbank",
     "account": "K eSavings",
     "currency": "THB",
-    "fees": []
+    "fees": [],
+    "interest": {
+     "percent": "1.25",
+     "per": "year"
+    },
+    "opening": {
+     "from": 12
+    }
    }
   ],
   "TJ": [
@@ -3300,7 +4043,49 @@
        }
       ]
      }
-    ]
+    ],
+    "overdraft": {
+     "fee": {
+      "currency": "USD",
+      "minor": 3400
+     }
+    },
+    "interest": {
+     "percent": "0",
+     "per": "year"
+    },
+    "debit": {
+     "fx": "3"
+    },
+    "atm": {
+     "own": {
+      "currency": "USD",
+      "minor": 0
+     },
+     "other": {
+      "currency": "USD",
+      "minor": 300
+     },
+     "abroad": {
+      "percent": "3",
+      "fixed": {
+       "currency": "USD",
+       "minor": 500
+      }
+     }
+    },
+    "transfers": {
+     "domestic": {
+      "currency": "USD",
+      "minor": 2500
+     },
+     "abroad": {
+      "fixed": {
+       "currency": "USD",
+       "minor": 500
+      }
+     }
+    }
    }
   ],
   "UY": [
@@ -3402,7 +4187,13 @@
     "bank": "Vietcombank",
     "account": "Tài khoản thanh toán",
     "currency": "VND",
-    "fees": []
+    "fees": [],
+    "transfers": {
+     "domestic": {
+      "currency": "VND",
+      "minor": 0
+     }
+    }
    }
   ],
   "VU": [
@@ -3503,7 +4294,31 @@
       },
       "per": "month"
      }
-    ]
+    ],
+    "returned": {
+     "currency": "ZAR",
+     "minor": 600
+    },
+    "atm": {
+     "abroad": {
+      "fixed": {
+       "currency": "ZAR",
+       "minor": 7000
+      }
+     }
+    },
+    "transfers": {
+     "domestic": {
+      "currency": "ZAR",
+      "minor": 200
+     },
+     "abroad": {
+      "fixed": {
+       "currency": "ZAR",
+       "minor": 17500
+      }
+     }
+    }
    }
   ],
   "ZM": [

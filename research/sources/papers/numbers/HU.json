@@ -1,0 +1,26 @@
+{
+ "country": "HU",
+ "name": "adóazonosító jel",
+ "issuer": "the state tax authority",
+ "format": {
+  "length": 10,
+  "pattern": "^8\\d{9}$"
+ },
+ "when": "registration",
+ "who": [
+  "residents"
+ ],
+ "needed": [
+  "tax",
+  "pay"
+ ],
+ "note": "Hungary's sheet (its government's own sheet on the OECD's automatic-exchange portal ('Information on Tax Identification Numbers'; the OECD's index page sits behind a bot check and wasn't opened, the sheet itself came straight back)), read 2026-10-30: Hungary issues individuals a tax identification number (adóazonosító jel), automatically to all residents, not shown on identity documents; a paying agent must put it on payment documents (needed: tax, pay). Ten digits: 8, five digits counting the days from 1 January 1867 to the birth date, three random, a check digit whose algorithm Act XX of 1996 publishes (not read), so `check` is left out; the pattern doesn't tie digits 2 to 6 to the birth date. The authority is the Nemzeti Adó- és Vámhivatal, which the sheet calls the state tax authority. Hungary's personal identifier and social security (TAJ) numbers are separate, not modelled. The name and issuer are as the sheet gives them, in English.",
+ "sources": [
+  {
+   "url": "https://www.oecd.org/content/dam/oecd/en/topics/policy-issue-focus/aeoi/hungary-tin.pdf",
+   "title": "OECD AEOI portal, Hungary: Information on Tax Identification Numbers (the jurisdiction's own sheet)",
+   "read": "2026-10-30",
+   "said": "For individuals Hungary issues TINs which are not indicated on official documents of identification. ... called: “adóazonosító jel”. ... state tax authority"
+  }
+ ]
+}

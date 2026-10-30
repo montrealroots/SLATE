@@ -4,16 +4,48 @@
   {
    "bank": "DNB",
    "account": "Brukskonto",
-   "fees": []
+   "fees": [],
+   "overdraft": {
+    "rate": {
+     "percent": "20",
+     "per": "year"
+    }
+   },
+   "debit": {
+    "fee": {
+     "fee": "295",
+     "per": "year"
+    },
+    "fx": "1.99"
+   },
+   "atm": {
+    "own": "0",
+    "other": "0",
+    "abroad": {
+     "fixed": "40",
+     "percent": "1.99"
+    }
+   },
+   "transfers": {
+    "abroad": {
+     "fixed": "60"
+    }
+   }
   }
  ],
- "note": "DNB's fee information form, the one its terms page links to (dated for 2025, printed March 2026): keeping a payment account costs nothing, nor does internet and mobile banking. The form is an image, read by eye.",
+ "note": "DNB's fee information form, the one its terms page links to (dated for 2025, printed March 2026): keeping a payment account costs nothing, nor does internet and mobile banking. The form is an image, read by eye. Read again by eye 2026-10-30 (the same image form, dated for 2025): the adult's card, Pluss bankkort, is 295 kroner a year; withdrawals at any minibank with BankAxept are free, with Visa (abroad) 40 kroner; a currency surcharge of 1.99% on purchases and withdrawals abroad; overdraft interest 20% a year; a payment abroad outside SEPA 60 kroner (SEPA 30); an instant payment to another bank above 5,000 kroner 75 kroner (an ordinary domestic payment isn't priced on the form, so none is written). Not stated: a returned payment, interest, what opening asks.",
  "sources": [
   {
    "url": "https://content.dnb.no/docs/9723359/gebyropplysningsskjema-dnb-asa.pdf",
    "title": "DNB Bank ASA, Gebyropplysningsskjema: Betalingskonto (01.01.2025 - 31.12.2025), the form its terms page links to (an image, read by eye)",
-   "read": "2026-10-29",
+   "read": "2026-10-30",
    "said": "Kontotilbyderens navn: DNB Bank ASA Kontobetegnelse: Betalingskonto Dato: 01.01.2025 - 31.12.2025 ... Generelle kontotjenester Drift av konto (kontoholdsgebyr) 0 kr Nett- og mobilbank 0 kr"
+  },
+  {
+   "url": "https://content.dnb.no/docs/9723359/gebyropplysningsskjema-dnb-asa.pdf",
+   "title": "DNB Bank ASA, Gebyropplysningsskjema, Betalingskonto: the other terms (an image, read by eye)",
+   "read": "2026-10-30",
+   "said": "Øvrige betalinger til utlandet 60 kr ... SEPA betalinger 30 kr ... Pluss bankkort, per år 295 kr ... Valutapåslag ved varekjøp og kontantuttak i utlandet 1,99 % ... Kontantuttak i minibank med BankAxept, alle kunder 0 kr ... Kontantuttak i minibank med Visa for kunder med Pluss bankkort, SAGA bankkort og Private Banking bankkort 40 kr ... Overtrekksrente p.a. 20 %"
   }
  ]
 }

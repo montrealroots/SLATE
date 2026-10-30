@@ -248,8 +248,17 @@ export const feeFor = (charge: Fee, standing: Standing, on: string): Money =>
 export const UNKEPT_LINE = 'cards.unkept';
 export const FEES_UNPUBLISHED_LINE = 'cards.fees-unpublished';
 
-/** What the player is told about a card whose bank publishes no fee to hold it. Nothing otherwise. */
-export const aboutCard = (card: Card): string | undefined => (card.feesUnpublished === true ? t(FEES_UNPUBLISHED_LINE, { bank: card.bank, card: card.card }) : undefined);
+export const MINIMUM_UNPUBLISHED_LINE = 'cards.minimum-unpublished';
+
+/**
+ * What the player is told about a card the game runs on a reading of its own: one whose bank publishes no fee to hold
+ * it (charged nothing), and one that isn't paid in full whose bank publishes no minimum payment (asked its whole
+ * balance each month, as `minimumDue` does). None for a card whose terms are all the bank's.
+ */
+export const aboutCard = (card: Card): string[] => [
+  ...(card.feesUnpublished === true ? [t(FEES_UNPUBLISHED_LINE, { bank: card.bank, card: card.card })] : []),
+  ...(card.minimum === undefined && !paidInFull(card) ? [t(MINIMUM_UNPUBLISHED_LINE, { bank: card.bank, card: card.card })] : []),
+];
 
 /** What the player is told about a country whose cards the game doesn't keep. Nothing otherwise. */
 export const aboutCards = (country: CountryCode): string | undefined => (keepsCards(country) ? undefined : t(UNKEPT_LINE, { country: countryName(country) }));

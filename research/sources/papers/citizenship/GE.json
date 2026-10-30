@@ -3,7 +3,7 @@
  "years": 10,
  "renounce": true,
  "lapses": true,
- "note": "GLOBALCIT's Citizenship Law Dataset v3.0 (EUI, 2025), coding the law in force on 1 January 2024 (A06a GEO 12, 12-1, 15-16; A06b GEO 12, 12-1, 15-16; L05 GEO 21, 21-1): ordinary naturalisation after 10 years' residence; the applicant must give up other citizenships; a citizen loses the citizenship on voluntarily taking another (with exceptions). Reforms after that date are checked in the file's later sources, where a later source is given.",
+ "note": "GLOBALCIT's Citizenship Law Dataset v3.0 (EUI, 2025), coding the law in force on 1 January 2024 (A06a GEO 12, 12-1, 15-16; A06b GEO 12, 12-1, 15-16; L05 GEO 21, 21-1): ordinary naturalisation after 10 years' residence; the applicant must give up other citizenships; a citizen loses the citizenship on voluntarily taking another (with exceptions). Reforms after that date are checked in the file's later sources, where a later source is given. Citizenship at birth is read from the same dataset's 2024 coding of modes A01a (descent, born in country: Generally applicable provision), A01b (descent, born abroad: Dual citizenship restriction), A02a (birth in country: No provision) and A02b (birth in country to a parent born there: No provision), as its codebook (RSC/GLOBALCIT 2025/01, sections 3.2.1a to 3.2.2b) defines them: not by birth in the territory alone (provisions for foundlings and children otherwise stateless, modes A03a and A03b, aren't held by the form); by descent from either parent, a child born abroad on the limit the dataset states. The coding also records a dual-citizenship restriction on descent, which the form doesn't hold. Changes to the law at birth after 1 January 2024 weren't checked for this file.",
  "sources": [
   {
    "url": "https://cadmus.eui.eu/bitstreams/3b166501-e695-48d7-9e27-d7bef061573a/download",
@@ -11,7 +11,12 @@
    "read": "2026-10-29",
    "kind": "secondary",
    "quotes": "https://globalcit.eu/national-citizenship-laws/",
-   "said": "Person has been lawfully resident for 10 years. ... Renunciation of citizenship of another country required. ... Person acquires citizenship of a foreign country, except if person has obtained permission for retention of citizenship. Permission to retain Georgian nationality IS granted if there is deemed to be a genuine connection of that person with Georgia"
+   "said": "Person has been lawfully resident for 10 years. ... Renunciation of citizenship of another country required. ... Person acquires citizenship of a foreign country, except if person has obtained permission for retention of citizenship. Permission to retain Georgian nationality IS granted if there is deemed to be a genuine connection of that person with Georgia ... Generally applicable provision ... Person is born in Georgia to a citizen. ... Dual citizenship restriction ... Person is born abroad to two citizens. Or to a citizen and a non-citizen, one of whom has permanent residence in Georgia. Or to a citizen and a non-citizen both of whom permanently reside abroad, if the parents agree on the child<d4>s acquiring citizenship of Georgia. ... No provision ... No provision"
   }
- ]
+ ],
+ "atBirth": {
+  "soil": "none",
+  "descent": "either parent",
+  "descentAbroad": "Person is born abroad to two citizens. Or to a citizen and a non-citizen, one of whom has permanent residence in Georgia. Or to a citizen and a non-citizen both of whom permanently reside abroad, if the parents agree on the child<d4>s acquiring citizenship of Georgia."
+ }
 }

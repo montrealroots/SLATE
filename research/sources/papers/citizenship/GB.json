@@ -3,7 +3,7 @@
  "years": 5,
  "renounce": false,
  "lapses": false,
- "note": "GLOBALCIT's Citizenship Law Dataset v3.0 (EUI, 2025), coding the law in force on 1 January 2024 (A06a UK 6(1), 40-42B; A06b UK 6(1), 40-42B; L05 No provision): ordinary naturalisation after 5 years' residence; no renunciation of other citizenships required; a citizen keeps it on taking another. Reforms after that date are checked in the file's later sources, where a later source is given.",
+ "note": "GLOBALCIT's Citizenship Law Dataset v3.0 (EUI, 2025), coding the law in force on 1 January 2024 (A06a UK 6(1), 40-42B; A06b UK 6(1), 40-42B; L05 No provision): ordinary naturalisation after 5 years' residence; no renunciation of other citizenships required; a citizen keeps it on taking another. Reforms after that date are checked in the file's later sources, where a later source is given. Citizenship at birth is read from the same dataset's 2024 coding of modes A01a (descent, born in country: Generally applicable provision), A01b (descent, born abroad: Generational transmission restriction: conditional on birthplace/place of residence /mode under which parent acquired citizenship), A02a (birth in country: Parental residence restriction) and A02b (birth in country to a parent born there: No provision), as its codebook (RSC/GLOBALCIT 2025/01, sections 3.2.1a to 3.2.2b) defines them: by birth in the territory only on the condition the dataset states; by descent from either parent, a child born abroad on the limit the dataset states. Changes to the law at birth after 1 January 2024 weren't checked for this file. Naturalisation costs £1,839 (£1,709 to apply and a £130 citizenship ceremony fee); the applicant must prove knowledge of English, Welsh or Scottish Gaelic and have passed the Life in the UK test; a decision usually comes within 6 months, some taking longer, the applicant being told before the 6 months pass (GOV.UK, read 30 October 2026). The 6 months held are the usual time GOV.UK publishes, not a legal maximum.",
  "sources": [
   {
    "url": "https://cadmus.eui.eu/bitstreams/3b166501-e695-48d7-9e27-d7bef061573a/download",
@@ -11,7 +11,29 @@
    "read": "2026-10-29",
    "kind": "secondary",
    "quotes": "https://globalcit.eu/national-citizenship-laws/",
-   "said": "Person has been resident in the UK for 5 years, intention to have principal home in the country and to continue residence in or service for the UK. ... n.a. ... n.a."
+   "said": "Person has been resident in the UK for 5 years, intention to have principal home in the country and to continue residence in or service for the UK. ... n.a. ... n.a. ... Generally applicable provision ... Person is born in the UK to a citizen. ... Generational transmission restriction: conditional on birthplace/place of residence /mode under which parent acquired citizenship ... Automatic acquisition of British citizenship by descent if person is born abroad to a citizen who acquired citizenship otherwise than by descent or is in the public service.; Entitlement to register as a British citizen if person is a minor whose parent acquired citizenship by descent and has resided at any time in the UK for 3 years: entitlement while child is minor. The parent's own British parent must have acquired citizenship otherwise than by descent. Other conditions: good character if person is over 10 years old. Person may not be an ineligible person ex Illegal Migration Act (i.e. due to irregular entry) OR person is a minor whose parent is a citizen by descent and the child and both parents (unless one is dead or divorced) live in the UK for a period of three years and both parents consent (unless one parent has died). Other conditions: good character if person is over 10 years old. Person may not be an ineligible person ex Illegal Migration Act (i.e. due to irregular entry) ... Parental residence restriction ... Person is born in the UK to a parent who is resident there without immigration restrictions.; Person is born after 1 July 2021, parent was granted indefinite leave under paragraph EU2 of Appendix EU to the UK immigration rules before 1 July 2021 or would have met eligibility requirements before that date, and parent is ordinarily resident in the United Kingdom. ... No provision"
+  },
+  {
+   "url": "https://www.gov.uk/apply-citizenship-indefinite-leave-to-remain",
+   "title": "GOV.UK, Apply for citizenship if you have indefinite leave to remain or settled status: Eligibility and fees",
+   "read": "2026-10-30",
+   "said": "It costs £1,839 (£1,709 to apply and a £130 citizenship ceremony fee). ... prove your knowledge of English , Welsh or Scottish Gaelic have passed the life in the UK test ... You’ll usually get a decision within 6 months - some applications can take longer. If yours will take longer you’ll be told before 6 months have passed."
   }
+ ],
+ "atBirth": {
+  "soil": "conditional",
+  "soilIf": "Person is born in the UK to a parent who is resident there without immigration restrictions.; Person is born after 1 July 2021, parent was granted indefinite leave under paragraph EU2 of Appendix EU to the UK immigration rules before 1 July 2021 or would have met eligibility requirements before that date, and parent is ordinarily resident in the United Kingdom.",
+  "descent": "either parent",
+  "descentAbroad": "Automatic acquisition of British citizenship by descent if person is born abroad to a citizen who acquired citizenship otherwise than by descent or is in the public service.; Entitlement to register as a British citizen if person is a minor whose parent acquired citizenship by descent and has resided at any time in the UK for 3 years: entitlement while child is minor. The parent's own British parent must have acquired citizenship otherwise than by descent. Other conditions: good character if person is over 10 years old. Person may not be an ineligible person ex Illegal Migration Act (i.e. due to irregular entry) OR person is a minor whose parent is a citizen by descent and the child and both parents (unless one is dead or divorced) live in the UK for a period of three years and both parents consent (unless one parent has died). Other conditions: good character if person is over 10 years old. Person may not be an ineligible person ex Illegal Migration Act (i.e. due to irregular entry)"
+ },
+ "currency": "GBP",
+ "fee": "1839",
+ "within": {
+  "n": 6,
+  "unit": "month"
+ },
+ "test": [
+  "language",
+  "civics"
  ]
 }

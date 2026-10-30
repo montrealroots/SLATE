@@ -14,8 +14,32 @@
    "id": "abroad",
    "where": "abroad",
    "speed": "standard",
-   "within": null,
+   "within": {
+    "n": 6,
+    "unit": "week"
+   },
    "label": "through a High Commission"
+  },
+  {
+   "id": "abroad-fast",
+   "where": "abroad",
+   "speed": "urgent",
+   "within": {
+    "n": 4,
+    "unit": "week"
+   },
+   "label": "fast track through the High Commission in London"
+  },
+  {
+   "id": "abroad-lost",
+   "where": "abroad",
+   "speed": "standard",
+   "within": {
+    "n": 6,
+    "unit": "week"
+   },
+   "replacement": true,
+   "label": "a valid passport lost or damaged, through the High Commission in London"
   }
  ],
  "passports": [
@@ -25,7 +49,9 @@
    "validYears": 10,
    "pay": {
     "home": "350",
-    "abroad": null
+    "abroad": "302.00",
+    "abroad-fast": "428.00",
+    "abroad-lost": "578.00"
    }
   },
   {
@@ -34,11 +60,13 @@
    "validYears": 5,
    "pay": {
     "home": null,
-    "abroad": null
+    "abroad": "220.00",
+    "abroad-fast": "346.00",
+    "abroad-lost": null
    }
   }
  ],
- "note": "From 1 July 2024 a passport issued by the Immigration Department costs $350 and is valid ten years, five years under 18 (NOW Grenada's report of the amendment to the Passports Act, Chapter 226, passed on 25 June 2024); the minor's fee at home is not stated, so it is left unpaid. The High Commission in London charges in pounds from the same date (£277.00 for ten years from 18, £195.00 for five years to 17, each with a £25.00 processing fee, in 6 weeks; fast track £428.00 and £346.00 in 2 to 4 weeks), not summed with the dollar fee and not modelled.",
+ "note": "From 1 July 2024 a passport issued by the Immigration Department costs $350 and is valid ten years, five years under 18 (NOW Grenada's report of the amendment to the Passports Act, Chapter 226, passed on 25 June 2024); the minor's fee at home is not stated, so it is left unpaid. The High Commission in London charges in pounds from the same date (£277.00 for ten years from 18, £195.00 for five years to 17, each with a £25.00 processing fee, in 6 weeks; fast track £428.00 and £346.00 in 2 to 4 weeks), the abroad routes' currency: GBP 302.00 and 220.00 with the processing fee in 6 weeks, the fast track as listed in 4 weeks at the longest, and a valid passport lost or damaged GBP 553.00 plus the processing fee (578.00; an expired one lost costs the ordinary fee), written for an adult, the schedule giving no minor's figure.",
  "sources": [
   {
    "kind": "secondary",
@@ -52,7 +80,10 @@
    "url": "https://grenada-highcommission.co.uk/wp-content/uploads/2025/08/Passport-and-Visa-Fees-2025.pdf",
    "title": "High Commission for Grenada, London, Grenadian Passport & Visa Fees (with effect from 1 July 2024)",
    "read": "2026-10-28",
-   "said": "Passport Application (renewal and First Time) (6 Weeks): ❖ £195.00 (36 pages – 5 yr) (From birth to 17 years) ❖ £25.00 – PROCESSING FEE ❖ £277.00 (36 pages – 10 yr) (18 years and above)"
+   "said": "Passport Application (renewal and First Time) (6 Weeks): ❖ £195.00 (36 pages – 5 yr) (From birth to 17 years) ❖ £25.00 – PROCESSING FEE ❖ £277.00 (36 pages – 10 yr) (18 years and above) ... Fast Track (2 - 4 weeks) ❖ £346.00 (36 pages – 5 yr) (From birth to 17 years) ❖ £428.00 (36 pages – 10 yr) (18 years and above) Lost, Damaged, Early Application: ❖ £553.00 (if the passport has not expired) ❖ £277.00 (if the passport is expired) ❖ £25.00 – PROCESSING FEE An additional fee of £126.00 is charged for Fast track of lost, damaged and early renewal of passport"
   }
- ]
+ ],
+ "abroad": {
+  "currency": "GBP"
+ }
 }

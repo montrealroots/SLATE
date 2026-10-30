@@ -22,6 +22,28 @@
     "unit": "working day"
    },
    "label": "trámite urgente"
+  },
+  {
+   "id": "renewal",
+   "where": "home",
+   "speed": "standard",
+   "within": {
+    "n": 15,
+    "unit": "working day"
+   },
+   "renewal": true,
+   "label": "renovación, trámite común"
+  },
+  {
+   "id": "renewal-urgent",
+   "where": "home",
+   "speed": "urgent",
+   "within": {
+    "n": 5,
+    "unit": "working day"
+   },
+   "renewal": true,
+   "label": "renovación, trámite urgente"
   }
  ],
  "passports": [
@@ -31,7 +53,9 @@
    "validYears": 5,
    "pay": {
     "common": "5630",
-    "urgent": "12114"
+    "urgent": "12114",
+    "renewal": "3878",
+    "renewal-urgent": "8609"
    }
   },
   {
@@ -40,17 +64,19 @@
    "validYears": 5,
    "pay": {
     "common": "5455",
-    "urgent": "10712"
+    "urgent": "10712",
+    "renewal": "3703",
+    "renewal-urgent": "7207"
    }
   }
  ],
- "note": "The first issue's fee in pesos from 1 July 2026, as the procedure's page gives it (the decree fixes it in indexed units, UI, so the peso amount follows the UI); from 18 the Certificado de Antecedentes Judiciales is required with it ($175, or $1,402 urgent), added here. A renewal costs less ($3,703 common, $7,207 urgent) and isn't modelled. The times are the longest the page gives (in Montevideo it's handed over the same day, in the interior 15 or 5 working days after). Validity is five years by the regulation's article 7 as IMPO consolidates it; the press's ten years for adults wasn't found in a text in force, a lead.",
+ "note": "The first issue's fee in pesos from 1 July 2026, as the procedure's page gives it (the decree fixes it in indexed units, UI, so the peso amount follows the UI); from 18 the Certificado de Antecedentes Judiciales is required with it ($175, or $1,402 urgent), added here. A renewal costs less ($3,703 common, $7,207 urgent, with the certificate from 18: $3,878 and $8,609), written as renewal routes at the same times. The times are the longest the page gives (in Montevideo it's handed over the same day, in the interior 15 or 5 working days after). Validity is five years by the regulation's article 7 as IMPO consolidates it; the press's ten years for adults wasn't found in a text in force, a lead.",
  "sources": [
   {
    "url": "https://www.gub.uy/tramites/solicitud-pasaporte-primera-vez-personas-ciudadanas-naturales-uruguayas-0",
    "title": "gub.uy (Dirección Nacional de Identificación Civil, Ministerio del Interior), Solicitud de pasaporte primera vez: personas ciudadanas naturales uruguayas",
    "read": "2026-10-28",
-   "said": "Mayor de 18 años: Certificado de Antecedentes Judiciales. ... En el interior: Trámite común: Se retira el Pasaporte 15 días hábiles posterior a la gestión (dependiendo de la demanda). Trámite urgente: Se retira el Pasaporte 5 días hábiles posterior a la gestión (dependiendo de la demanda). ... VALORES A PARTIR DEL 01/07/2026 • Trámite primera vez común : $ 5.455 + Certificado de Antecedentes Judiciales $ 175. • Trámite primera vez urgente: $ 10.712 + Certificado de Antecedentes Judiciales urgente $1.402. Trámite renovación común: $3.703 + Certificado de Antecedentes Judiciales $ 175. Trámite renovación urgente: $7.207 + Certificado de Antecedentes Judiciales urgente $ 1.402."
+   "said": "Mayor de 18 años: Certificado de Antecedentes Judiciales. ... En el interior: Trámite común: Se retira el Pasaporte 15 días hábiles posterior a la gestión (dependiendo de la demanda). Trámite urgente: Se retira el Pasaporte 5 días hábiles posterior a la gestión (dependiendo de la demanda). ... VALORES A PARTIR DEL 01/07/2026 • Trámite primera vez común : $ 5.455 + Certificado de Antecedentes Judiciales $ 175. • Trámite primera vez urgente: $ 10.712 + Certificado de Antecedentes Judiciales urgente $1.402. Trámite renovación común: $3.703 + Certificado de Antecedentes Judiciales $ 175. Trámite renovación urgente: $7.207 + Certificado de Antecedentes Judiciales urgente $ 1.402. ... Trámite renovación común: $3.703 + Certificado de Antecedentes Judiciales $ 175. Trámite renovación urgente: $7.207 + Certificado de Antecedentes Judiciales urgente $ 1.402."
   },
   {
    "url": "https://impo.com.uy/bases/decretos-reglamento/129-2014",
@@ -62,7 +88,7 @@
    "url": "https://www.impo.com.uy/bases/decretos/298-2021",
    "title": "IMPO (impo.com.uy), Decreto N° 298/021: Fijación de valores de las tasas de expedición de pasaportes que expide la Dirección Nacional de Identificación Civil",
    "read": "2026-10-28",
-   "said": "DECRETA: Artículo 1 Fíjanse los valores de las tasas de expedición de Pasaportes que expide la Dirección Nacional de Identificación Civil, según el siguiente detalle: - Pasaporte trámite normal, 1ra. vez, 826,20 U.I - Pasaporte trámite urgente, 1ra. vez, 1.622,40 U.I - Pasaporte trámite normal renovación, 560,80 U.I - Pasaporte trámite urgente renovación, 1.091,60 U.I."
+   "said": "DECRETA: Artículo 1 Fíjanse los valores de las tasas de expedición de Pasaportes que expide la Dirección Nacional de Identificación Civil, según el siguiente detalle: ... - Pasaporte trámite normal, 1ra. vez, 826,20 U.I - Pasaporte trámite urgente, 1ra. vez, 1.622,40 U.I - Pasaporte trámite normal renovación, 560,80 U.I - Pasaporte trámite urgente renovación, 1.091,60 U.I."
   }
  ]
 }

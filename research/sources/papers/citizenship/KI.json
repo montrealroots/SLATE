@@ -3,7 +3,7 @@
  "years": 7,
  "renounce": true,
  "lapses": true,
- "note": "GLOBALCIT's Citizenship Law Dataset v3.0 (EUI, 2025), coding the law in force on 1 January 2024 (A06a KIR 7; A06b KIR 7; L05 Const 24, KIR 8(1)(a)): ordinary naturalisation after 7 years' residence; the applicant must give up other citizenships; a citizen loses the citizenship on voluntarily taking another (with exceptions). Reforms after that date are checked in the file's later sources, where a later source is given.",
+ "note": "GLOBALCIT's Citizenship Law Dataset v3.0 (EUI, 2025), coding the law in force on 1 January 2024 (A06a KIR 7; A06b KIR 7; L05 Const 24, KIR 8(1)(a)): ordinary naturalisation after 7 years' residence; the applicant must give up other citizenships; a citizen loses the citizenship on voluntarily taking another (with exceptions). Reforms after that date are checked in the file's later sources, where a later source is given. Citizenship at birth is read from the same dataset's 2024 coding of modes A01a (descent, born in country: Gender restriction: no or restricted access if the mother is a citizen (wedlock condition/supplementary provision may apply)), A01b (descent, born abroad: Gender restriction: no or restricted access if the mother is a citizen (wedlock condition/supplementary provision may apply)), A02a (birth in country: No provision) and A02b (birth in country to a parent born there: No provision), as its codebook (RSC/GLOBALCIT 2025/01, sections 3.2.1a to 3.2.2b) defines them: not by birth in the territory alone (provisions for foundlings and children otherwise stateless, modes A03a and A03b, aren't held by the form); by descent from the father only, a child born abroad on the limit the dataset states. Changes to the law at birth after 1 January 2024 weren't checked for this file.",
  "sources": [
   {
    "url": "https://cadmus.eui.eu/bitstreams/3b166501-e695-48d7-9e27-d7bef061573a/download",
@@ -11,7 +11,12 @@
    "read": "2026-10-29",
    "kind": "secondary",
    "quotes": "https://globalcit.eu/national-citizenship-laws/",
-   "said": "Ordinarily resident in Kiribati for 7 years (waived if applicant has lost or renounced citizenship). ... Renunciation of citizenship of another country required. ... Person not of i-Kiribati descent who became a citizen on independence day (12 July 1979) but does not renounce foreign citizenship within two years ceases to be Kiribati citizen (Constitution). Person not of I-Kiribati descent who became a citizen after independence day (12 July 1979) loses citizenship if he/she obtains another citizenship by voluntary act (other than marriage) (Citizenship Act)."
+   "said": "Ordinarily resident in Kiribati for 7 years (waived if applicant has lost or renounced citizenship). ... Renunciation of citizenship of another country required. ... Person not of i-Kiribati descent who became a citizen on independence day (12 July 1979) but does not renounce foreign citizenship within two years ceases to be Kiribati citizen (Constitution). Person not of I-Kiribati descent who became a citizen after independence day (12 July 1979) loses citizenship if he/she obtains another citizenship by voluntary act (other than marriage) (Citizenship Act). ... Gender restriction: no or restricted access if the mother is a citizen (wedlock condition/supplementary provision may apply) ... Person is born in Kiribati after independence day (12 July 1979) and his/her father is a citizen or one of the parents is of I-Kiribati descent. Citizenship is not acquired if neither parent is a citizen and father (or mother if parents unmarried) is a foreign diplomat or person<d5>s father (or mother if parents are unmarried) is a citizen of a country with which Kiribati is at war and birth occurred in occupied place. (Note discrimination on the basis of gender and marital status.) ... Gender restriction: no or restricted access if the mother is a citizen (wedlock condition/supplementary provision may apply) ... Person born outside Kiribati after independence day, as long as person's if father is or would have been a citizen of Kiribati on the date of person's birth. (Note gender discrimination - citizenship by descent through father only) ... No provision ... No provision"
   }
- ]
+ ],
+ "atBirth": {
+  "soil": "none",
+  "descent": "father",
+  "descentAbroad": "Person born outside Kiribati after independence day, as long as person's if father is or would have been a citizen of Kiribati on the date of person's birth. (Note gender discrimination - citizenship by descent through father only)"
+ }
 }

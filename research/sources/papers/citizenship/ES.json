@@ -3,7 +3,7 @@
  "years": 10,
  "renounce": false,
  "lapses": true,
- "note": "GLOBALCIT's Citizenship Law Dataset v3.0 (EUI, 2025), coding the law in force on 1 January 2024 (A06a SPA 21(2), 22, 23; A06b SPA 21(2), 22, 23; L05 SPA 24(1)): ordinary naturalisation after 10 years' residence; no renunciation of other citizenships required; a citizen loses the citizenship on voluntarily taking another (with exceptions). Reforms after that date are checked in the file's later sources, where a later source is given.",
+ "note": "GLOBALCIT's Citizenship Law Dataset v3.0 (EUI, 2025), coding the law in force on 1 January 2024 (A06a SPA 21(2), 22, 23; A06b SPA 21(2), 22, 23; L05 SPA 24(1)): ordinary naturalisation after 10 years' residence; no renunciation of other citizenships required; a citizen loses the citizenship on voluntarily taking another (with exceptions). Reforms after that date are checked in the file's later sources, where a later source is given. Citizenship at birth is read from the same dataset's 2024 coding of modes A01a (descent, born in country: Generally applicable provision), A01b (descent, born abroad: Generally applicable provision), A02a (birth in country: No provision) and A02b (birth in country to a parent born there: Generally applicable provision), as its codebook (RSC/GLOBALCIT 2025/01, sections 3.2.1a to 3.2.2b) defines them: by birth in the territory only on the condition the dataset states; by descent from either parent, with no further limit on a child born abroad. Changes to the law at birth after 1 January 2024 weren't checked for this file. Nationality by residence costs a €104.05 fee (Ministry of Justice, read 30 October 2026), and asks two tests: the DELE at level A2 or above, unless the applicant is a national of a Spanish-speaking country, and the CCSE on the Constitution and Spain's social and cultural reality (Law 19/2015, final provision 7(3)). No longest time was read, so none is held.",
  "sources": [
   {
    "url": "https://cadmus.eui.eu/bitstreams/3b166501-e695-48d7-9e27-d7bef061573a/download",
@@ -11,7 +11,30 @@
    "read": "2026-10-29",
    "kind": "secondary",
    "quotes": "https://globalcit.eu/national-citizenship-laws/",
-   "said": "Person has been resident in Spain for 10 years immediately prior to the application. ... Oath of renunciation of another citizenship (except for citizens of Latin American countries, Andorra, Philippines, Equatorial Guinea, Portugal and Sephardic Jews originally from Spain) required. ... Person resides abroad, acquires citizenship of another country and does not submit a declaration to retain citizenship within three years. Provision does not apply to citizens of Latin American countries, Andorra, the Philippines, Equatorial Guinea or Portugal. Provision does not apply in time of war."
+   "said": "Person has been resident in Spain for 10 years immediately prior to the application. ... Oath of renunciation of another citizenship (except for citizens of Latin American countries, Andorra, Philippines, Equatorial Guinea, Portugal and Sephardic Jews originally from Spain) required. ... Person resides abroad, acquires citizenship of another country and does not submit a declaration to retain citizenship within three years. Provision does not apply to citizens of Latin American countries, Andorra, the Philippines, Equatorial Guinea or Portugal. Provision does not apply in time of war. ... Generally applicable provision ... Person is born to a citizen. ... Generally applicable provision ... Person is born to a citizen. ... No provision ... Generally applicable provision ... Person is born in Spain to a person who was also born there."
+  },
+  {
+   "url": "https://www.mjusticia.gob.es/es/ciudadania/nacionalidad/que-es-nacionalidad/como-adquiere-nacionalidad/residencia",
+   "title": "Ministerio de Justicia, Residencia: ¿Cómo se adquiere la nacionalidad española?",
+   "read": "2026-10-30",
+   "said": "Las Solicitudes de Adquisición de la Nacionalidad Española por Residencia están sujetas al pago de una Tasa. El importe actual es de 104,05 eur."
+  },
+  {
+   "url": "https://www.boe.es/buscar/act.php?id=BOE-A-2015-7851",
+   "title": "BOE, Ley 19/2015, de 13 de julio (texto consolidado), disposición final séptima",
+   "read": "2026-10-30",
+   "said": "La acreditación del suficiente grado de integración en la sociedad española requerirá la superación de dos pruebas. ... La primera prueba acreditará un conocimiento básico de la lengua española, nivel A2 o superior"
   }
+ ],
+ "atBirth": {
+  "soil": "conditional",
+  "soilIf": "Person is born in Spain to a person who was also born there.",
+  "descent": "either parent"
+ },
+ "currency": "EUR",
+ "fee": "104.05",
+ "test": [
+  "language",
+  "civics"
  ]
 }

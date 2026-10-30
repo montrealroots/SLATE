@@ -563,11 +563,18 @@ describe('the station compiler', () => {
     // By the even-odd rule: a ring inside another is a hole.
     expect(inOutline([square(0, 0, 4), square(1, 1, 2)], 2, 2)).toBe(false);
     expect(inOutline([square(0, 0, 4), square(1, 1, 2)], 0.5, 0.5)).toBe(true);
+    // A slanting edge crossed where it is at the place's latitude.
+    const slant: [number, number][] = [[0, 1], [4, 1], [0, 5], [0, 1]];
+    expect([inOutline([slant], 2, 2.5), inOutline([slant], 2, 3.5), inOutline([slant], 4, 0.5), inOutline([slant], 4, 1.5)]).toEqual([true, false, true, false]);
+    // A place on the top or the right edge is outside, as one on the bottom or the left is inside (one side each).
+    expect([inOutline([square(0, 0, 4)], 4, 2), inOutline([square(0, 0, 4)], 2, 4), inOutline([square(0, 0, 4)], 0, 2), inOutline([square(0, 0, 4)], 2, 0)]).toEqual([false, false, true, true]);
     // From an edge's middle and past its end, at the equator and where a degree of longitude is half as long.
     const degree = (Math.PI * 6371.0088) / 180;
     expect(outlineKm([square(0, 0, 2)], 3, 1)).toBeCloseTo(degree, 6);
     expect(outlineKm([square(0, 0, 4)], 1, 2)).toBeCloseTo(degree, 6);
     expect(outlineKm([square(0, 59, 2)], 60, 3)).toBeCloseTo(degree / 2, 6);
+    // Past an edge's end where a degree of longitude is short, the end, not the line it lies on.
+    expect(outlineKm([square(0, 59, 2)], 62, -2)).toBeCloseTo(Math.hypot(2 * Math.cos((62 * Math.PI) / 180), 1) * degree, 6);
     expect(outlineKm([square(0, 0, 2)], -3, -4)).toBeCloseTo(Math.hypot(4 * Math.cos((3 * Math.PI) / 180), 3) * degree, 6);
     expect(outlineKm([[[1, 1], [1, 1]]], 2, 1)).toBeCloseTo(degree, 6);
     expect(outlineKm([], 0, 0)).toBe(Infinity);
@@ -597,8 +604,11 @@ describe('the station compiler', () => {
       // China's in Taiwan, whose own service stands for it, are left out.
       line9120({ id: '00058968', member: 'China', name: 'TAIBEI', lat: '25.030', lon: '121.520' }),
       line9120({ id: '00033791', member: 'Ukraine', name: 'Kryvyi_Rih', lat: '48.054', lon: '33.211' }),
+      // At sea, and placed by the 1961-1990 set's record of the number: its Member's place, and its Publication No. 9's.
+      line9120({ id: '00033792', member: 'Ukraine', name: 'By_Member', lat: '43.030', lon: '33.210' }),
+      line9120({ id: '00033793', member: 'Ukraine', name: 'By_Pub9', lat: '43.030', lon: '33.210' }),
     ] }));
-    const keys = ['1MW67421', '2RA38599', '6UP33791'].map(K) as [string, string, string];
+    const keys = ['1MW67421', '2RA38599', '6UP33791', '6UP33792', '6UP33793'].map(K) as [string, string, string, string, string];
     const s6190 = parse6190(keys.map((key) => norm6190({ key })).join('\n'), [
       // Malawi's own coordinates north of the equator, Publication No. 9's south.
       meta6190({ key: keys[0], lat: '0942N', lon: '03316E', pub9lat: '0942S', pub9lon: '03316E', name: 'CHITIPA' }),
@@ -606,13 +616,19 @@ describe('the station compiler', () => {
       meta6190({ key: keys[1], lat: '4013N', lon: '06944E', pub9lat: '4013N', pub9lon: '06944E', name: 'LENINBAD' }),
       // Publication No. 9's place in the Black Sea, and no other in the line: the 1991-2020 set's place of its number.
       meta6190({ key: keys[2], lat: '     ', lon: '      ', pub9lat: '4302N', pub9lon: '03313E', name: 'KROVOJ ROG' }),
+      meta6190({ key: keys[3], lat: '4800N', lon: '03300E', pub9lat: '4302N', pub9lon: '03313E' }),
+      meta6190({ key: keys[4], lat: '4302N', lon: '03313E', pub9lat: '4800N', pub9lon: '03300E' }),
     ].join('\n'));
     const out = compileStations(s9120, s6190, [], [], [], [], new Map(), [], towns);
     expect(out.map((s) => [s.id, s.country, s.latitude, s.longitude, s.town])).toEqual([
       ['6190:1MW67421', 'MW', -9.7, 33.2667, 'Chitipa'],
       ['6190:2RA38599', 'TJ', 40.2167, 69.7333, 'Khujand'],
       ['6190:6UP33791', 'UA', 48.054, 33.211, 'Kryvyi Rih'],
+      ['6190:6UP33792', 'UA', 48, 33, 'Kryvyi Rih'],
+      ['6190:6UP33793', 'UA', 48, 33, 'Kryvyi Rih'],
       ['9120:00033791:0-20000-0-12345', 'UA', 48.054, 33.211, 'Kryvyi Rih'],
+      ['9120:00033792:0-20000-0-12345', 'UA', 48, 33, 'Kryvyi Rih'],
+      ['9120:00033793:0-20000-0-12345', 'UA', 48, 33, 'Kryvyi Rih'],
       ['9120:00064210:0-20000-0-12345', 'CD', -4.39, 15.45, 'Kinshasa'],
       ['9120:00064400:0-20000-0-12345', 'CG', -4.816, 11.75, 'Pointe-Noire'],
       ['9120:00064401:0-20000-0-12345', 'UA', 47.9, 33.4, 'Kryvyi Rih'],
@@ -624,7 +640,7 @@ describe('the station compiler', () => {
       const lines = parse9120(files9120({ tmax: [line9120({ id, member: 'Ukraine', name: 'Kryvyi_Rih', lat: '48.054', lon: '33.211' })] }));
       return compileStations(lines, parse6190(norm6190({ key }), meta6190({ key, lat: '     ', lon: '      ', pub9lat: '4302N', pub9lon: '03313E' })), [], [], [], [], new Map(), [], towns).find((s) => s.id.startsWith('6190'))?.latitude;
     };
-    expect([unmatched(K('6UP33791'), '00033791'), unmatched(K('6UP33791   1'), '00033791'), unmatched(K('6UP99999'), '00099999'), unmatched(K('6UP33791'), '10033791'), unmatched(K('6UP33791'), '000337910')]).toEqual([48.054, 43.0333, 43.0333, 43.0333, 43.0333]);
+    expect([unmatched(K('6UP33791'), '00033791'), unmatched(K('6UP33791   1'), '00033791'), unmatched(K('6UP99999'), '00099999'), unmatched(K('6UP33791'), '100033791'), unmatched(K('6UP33791'), '000337910'), unmatched(K('6UP33791   1'), '10033791')]).toEqual([48.054, 43.0333, 43.0333, 43.0333, 43.0333, 43.0333]);
   });
   it('stands a station by its outline where no town is near, within a border\'s error of it, and stops at one in another\'s outline near no town', () => {
     const box = (x1: number, y1: number, x2: number, y2: number): [number, number][] => [[x1, y1], [x2, y1], [x2, y2], [x1, y2], [x1, y1]];
@@ -644,6 +660,7 @@ describe('the station compiler', () => {
     expect(place([st('kare', 'SE', 68.44, 23.6)])).toEqual([['kare', 'FI']]);
     // In Finland's outline, near no town and 58 km from Sweden's: no record says where it is.
     expect(() => place([st('lost', 'SE', 64, 23.5)])).toThrow("lost lies in FI's outline, near no town, filed under SE: a station the compiler can't place");
+    expect(() => place([], [{ ...st('dwd:lost', '', 64, 23.5), member: 'Norway' }])).toThrow("dwd:lost lies in FI's outline, near no town, filed under NO or SJ or BV: a station");
     // At sea, in no outline and near no town, as on an island too small for the outlines: as filed.
     expect(place([st('isle', 'SE', 50, -30), st('aq', 'AQ', -75, 0)])).toEqual([['aq', 'AQ'], ['isle', 'SE']]);
   });

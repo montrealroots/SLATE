@@ -1,0 +1,25 @@
+{
+ "country": "UA",
+ "name": "РНОКПП, the registration number of the taxpayer’s account card",
+ "issuer": "the State Tax Service of Ukraine (in the State Register of Individuals – Taxpayers)",
+ "format": {
+  "length": 10,
+  "pattern": "^\\d{10}$"
+ },
+ "when": "registration",
+ "who": [
+  "anyone"
+ ],
+ "needed": [
+  "tax"
+ ],
+ "note": "Ukraine's sheet (its government's own sheet on the OECD's automatic-exchange portal ('Information on Tax Identification Numbers'; the OECD's index page sits behind a bot check and wasn't opened, the sheet itself came straight back)), read 2026-10-30: every individual payer of taxes is entered in the State Register and given the RNOKPP, ten digits, for life; it is printed in the citizen's passport card. Its last digit is a control digit whose algorithm the sheet doesn't give, so `check` is left out. Someone may refuse it for religious belief and be identified by passport instead (not modelled). Read as given on registration, to anyone who pays tax; the demographic register's own record number is separate, not modelled. tax.gov.ua refused curl (403) that day, so its terms (fee, time) weren't read. The name and issuer are as the sheet gives them, in English.",
+ "sources": [
+  {
+   "url": "https://www.oecd.org/content/dam/oecd/en/topics/policy-issue-focus/aeoi/ukraine-tin.pdf",
+   "title": "OECD AEOI portal, Ukraine: Information on Tax Identification Numbers (the jurisdiction's own sheet)",
+   "read": "2026-10-30",
+   "said": "All individuals – payers of taxes and duties are registered with the controlling authorities by including ... the individual is assigned with a registration number of the taxpayer’s ... RNOKPP does not change throughout the life of an individual ... RNOKPP is the ten-digit numerical code (without use of letters, hyphens, or other symbols). ... K – control category."
+  }
+ ]
+}

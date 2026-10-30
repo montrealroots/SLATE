@@ -1,0 +1,30 @@
+{
+ "country": "MX",
+ "name": "Clave Única de Registro de Población (CURP)",
+ "issuer": "Secretaría de Gobernación, Dirección General del Registro Nacional de Población e Identidad (RENAPO)",
+ "format": {
+  "length": 18,
+  "pattern": "[A-Z]{4}[0-9]{6}[HM][A-Z]{2}[A-Z]{3}[0-9A-J][0-9]"
+ },
+ "when": "birth",
+ "who": [
+  "citizens",
+  "residents"
+ ],
+ "fee": "0",
+ "note": "Read the Instructivo Normativo para la asignación de la CURP (DOF 2018-06-18) and its modification (DOF, codigo 5632965, 2021), which leaves positions 1 to 11 and 13 to 18 as they were and changes only the place of the birthplace catalogue. The CURP is 18 alphanumeric characters, given to Mexicans and to foreigners with regular stay; for Mexicans by birth it is assigned from the moment the birth is registered at the Civil Registry or a consulate. The pattern reads the position table: four letters from the surnames and given name, six digits of birth date (YYMMDD), sex as H or M, two letters of birthplace, three internal consonants, a homonymy and century character (0-9 for births to 1999-12-31, A-J from 2000-01-01) and a numeric check digit; the exception rules for the letters (art. 12) and the birthplace catalogue the pattern doesn't hold. The check digit is computed by an algorithm of the Secretaría the Instructivo doesn't publish, so the format names no check. 'fee' 0: the CURP certificate carries the legend 'TRÁMITE GRATUITO'. Foreigners' temporary CURP (up to 365 days) is not modelled.",
+ "sources": [
+  {
+   "url": "https://dof.gob.mx/nota_detalle_popup.php?codigo=5526717",
+   "title": "Instructivo Normativo para la asignación de la Clave Única de Registro de Población (DOF 2018-06-18)",
+   "read": "2026-10-30",
+   "said": "la cual consiste en una secuencia alfanumérica de 18 caracteres, y que se asigna de forma individual a las y los mexicanos y a las y los extranjeros que se encuentren con una condición de estancia regular en el país ... 11 Sexo: H para hombre y M para mujer ... 0-9 para fechas de nacimiento hasta el 31 de diciembre de 1999, y A-J para fechas de nacimiento a partir del día 01 de enero del año 2000 ... Corresponde al dígito verificador, el cual es un carácter asignado por la Secretaría de Gobernación, a través de la aplicación de un algoritmo que permite calcular y verificar la correcta conformación de la clave ... La CURP se construye de 18 posiciones alfanuméricas ... La CURP se asignará desde el momento en que sea registrado el nacimiento de una persona ante el Registro Civil o ante las Oficinas Consulares de México en el exterior ... TRÁMITE GRATUITO"
+  },
+  {
+   "url": "https://dof.gob.mx/nota_detalle_popup.php?codigo=5632965",
+   "title": "Modificación al Instructivo Normativo para la Asignación de la Clave Única de Registro de Población (DOF 2021)",
+   "read": "2026-10-30",
+   "said": "MODIFICACIÓN al Instructivo Normativo para la Asignación de la Clave Única de Registro de Población ... Posición Origen Naturaleza Observaciones 1 a 11 ... ... ... 12"
+  }
+ ]
+}

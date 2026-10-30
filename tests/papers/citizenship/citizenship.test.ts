@@ -1,4 +1,5 @@
 import { describe, expect, it } from 'vitest';
+import { money } from '../../../src/core/money/money.ts';
 import { t } from '../../../src/core/text/text.ts';
 import { COUNTRY_CODES } from '../../../src/world/gazetteer/gazetteer.ts';
 import data from '../../../src/papers/citizenship/citizenship.json';
@@ -8,10 +9,10 @@ describe('citizenship', () => {
   it("is each state's own, and a territory's is its state's", () => {
     expect(COUNTRY_CODES.filter(keepsCitizenship)).toEqual(Object.keys(data).sort());
     expect([keepsCitizenship('DE'), keepsCitizenship('AQ')]).toEqual([true, false]);
-    // Germany since 27 June 2024: five years, other citizenships kept either way.
-    expect(naturalisation('DE')).toStrictEqual({ years: 5, renounce: false });
+    // Germany since 27 June 2024: five years, other citizenships kept either way; 255 euros, a language and a civics test.
+    expect(naturalisation('DE')).toStrictEqual({ years: 5, renounce: false, fee: money('EUR', 25_500), test: ['language', 'civics'] });
     expect(naturalisation('JP')).toStrictEqual({ years: 5, renounce: true });
-    expect(naturalisation('CA')).toStrictEqual({ years: 3, renounce: false });
+    expect(naturalisation('CA')).toStrictEqual({ years: 3, renounce: false, fee: money('CAD', 65_300), test: ['language', 'civics'] });
     expect(naturalisation('CN')).toBe('none');
     expect([naturalisation('AQ'), nationality('AQ')]).toEqual([undefined, undefined]);
     // A territory's people hold their state's nationality under its rules; Svalbard's residence doesn't count.

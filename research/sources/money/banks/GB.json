@@ -4,16 +4,40 @@
   {
    "bank": "Barclays",
    "account": "Flexible",
-   "fees": []
+   "fees": [],
+   "overdraft": false,
+   "returned": "0",
+   "debit": {
+    "fx": "2.99"
+   },
+   "atm": {
+    "own": "0",
+    "other": "0",
+    "abroad": {
+     "percent": "2.99"
+    }
+   },
+   "transfers": {
+    "domestic": "0",
+    "abroad": {
+     "percent": "0"
+    }
+   }
   }
  ],
- "note": "Barclays' everyday current account (sold as the Barclays Bank Account; Flexible in its Fee Information Document) has no monthly fee.",
+ "note": "Barclays' everyday current account (sold as the Barclays Bank Account; Flexible in its Fee Information Document) has no monthly fee. Read again 2026-10-30 (the Fee Information Document is still the June 2024 edition): an unarranged overdraft is \"Service not available\", so a payment past the balance is refused (overdraft false) and refusing it costs nothing; an arranged overdraft is a separate application at 35.0% a year above a £15 interest-free buffer, which the game doesn't hold; cash in pounds in the UK costs nothing at any machine; spending or withdrawing in another currency carries the 2.99% Non-Sterling Transaction fee; a Faster Payment at home and a Barclays International Payment sent online cost nothing (overseas delivery charges by the receiving country may apply and aren't held). Not stated: interest on the account, what opening asks, a savings account.",
  "sources": [
   {
    "url": "https://www.barclays.co.uk/content/dam/documents/personal/important-information/FeeInformation-Flexible.pdf",
    "title": "Barclays, Fee Information Document: Flexible (June 2024)",
-   "read": "2026-10-29",
+   "read": "2026-10-30",
    "said": "Name of the account provider: Barclays Account name: Flexible ... Monthly account fee No fee"
+  },
+  {
+   "url": "https://www.barclays.co.uk/content/dam/documents/personal/important-information/FeeInformation-Flexible.pdf",
+   "title": "Barclays, Fee Information Document, Flexible (June 2024): the other terms",
+   "read": "2026-10-30",
+   "said": "Faster Payments Service No fee ... Online banking No fee ... Cash withdrawal in pounds (£) in the UK ... Non-Sterling Transaction fee ... 2.99% per transaction ... Over £15 ... 35.0% (variable) ... Unarranged overdraft ... Service not available ... Allowing a payment despite lack of funds ... Refusing a payment due to lack of funds"
   }
  ]
 }

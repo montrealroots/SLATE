@@ -1,0 +1,26 @@
+{
+ "country": "JM",
+ "name": "Taxpayer Registration Number (TRN)",
+ "issuer": "Tax Administration Jamaica (TAJ)",
+ "format": {
+  "length": 9,
+  "pattern": "^1\\d{8}$"
+ },
+ "when": "application",
+ "who": [
+  "anyone"
+ ],
+ "needed": [
+  "tax",
+  "pay"
+ ],
+ "note": "Jamaica's sheet (its government's own sheet on the OECD's automatic-exchange portal ('Information on Tax Identification Numbers'; the OECD's index page sits behind a bot check and wasn't opened, the sheet itself came straight back)), read 2026-10-30: the TRN is a unique nine-digit number Tax Administration Jamaica assigns, for life, on an application, to every individual or body that does or will do business with it, including through employers and financial institutions that withhold tax (needed: tax, pay); an individual's begins with 1. It is also used by schools, universities and examination boards (not modelled). No fee or time is stated; no check digit is described.",
+ "sources": [
+  {
+   "url": "https://www.oecd.org/content/dam/oecd/en/topics/policy-issue-focus/aeoi/jamaica-tin.pdf",
+   "title": "OECD AEOI portal, Jamaica: Information on Tax Identification Numbers (the jurisdiction's own sheet)",
+   "read": "2026-10-30",
+   "said": "Jamaica issues a Taxpayer Registration Number (TRN). This is a unique nine-digit identification ... The TRN is issued by an automated system further to an application for registration ... The TRN is issued by the tax authority of Jamaica, Tax Administration Jamaica. ... Currently, the first of the nine (9) digits for an individual is a “1”"
+  }
+ ]
+}

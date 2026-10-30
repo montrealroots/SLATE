@@ -1,0 +1,37 @@
+{
+ "country": "DE",
+ "name": "Identifikationsnummer (steuerliche Identifikationsnummer, IdNr)",
+ "issuer": "the Bundeszentralamt für Steuern (BZSt)",
+ "format": {
+  "length": 11,
+  "pattern": "^\\d{11}$"
+ },
+ "when": "registration",
+ "who": [
+  "residents"
+ ],
+ "needed": [
+  "tax"
+ ],
+ "note": "The Abgabenordnung § 139b and the Steueridentifikationsnummerverordnung (StIdV) § 1, as Gesetze im Internet holds them on 2026-10-30, and the BZSt's page: one number per person, for life; the registration offices send the BZSt the data of every resident registered with a sole or main home there for the first allotment, read as given on registration (a child on its birth registration), to residents, free (no fee is charged anywhere in what was read, but none is stated, so `fee` is left out). Eleven digits, the eleventh a check digit; the StIdV doesn't name its algorithm (ISO/IEC 7064 MOD 11,10 by the tax administration's technical specification, not read), which the game doesn't compute, so `check` is left out. It is the tax administration's number (needed: tax); its other uses (the register modernisation) aren't modelled.",
+ "sources": [
+  {
+   "url": "https://www.gesetze-im-internet.de/stidv/__1.html",
+   "title": "Gesetze im Internet, StIdV § 1 Aufbau der Identifikationsnummer",
+   "read": "2026-10-30",
+   "said": "Die Identifikationsnummer nach § 139b der Abgabenordnung besteht aus zehn Ziffern und einer Prüfziffer als elfter Ziffer."
+  },
+  {
+   "url": "https://www.gesetze-im-internet.de/ao_1977/__139b.html",
+   "title": "Gesetze im Internet, Abgabenordnung § 139b Identifikationsnummer",
+   "read": "2026-10-30",
+   "said": "(1) Eine natürliche Person darf nicht mehr als eine Identifikationsnummer erhalten. ... (6) Zum Zwecke der erstmaligen Zuteilung der Identifikationsnummer übermitteln die Meldebehörden dem Bundeszentralamt für Steuern für jeden in ihrem Zuständigkeitsbereich mit alleiniger Wohnung oder Hauptwohnung im Melderegister registrierten Einwohner folgende Daten:"
+  },
+  {
+   "url": "https://www.bzst.de/DE/Privatpersonen/SteuerlicheIdentifikationsnummer/steuerlicheidentifikationsnummer_node.html",
+   "title": "Bundeszentralamt für Steuern, Die Identifikationsnummer",
+   "read": "2026-10-30",
+   "said": "ist eine elfstellige Nummer und enthält keine Informationen über die betreffende Person. Sie ist dauerhaft gültig"
+  }
+ ]
+}

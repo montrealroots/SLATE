@@ -1,0 +1,26 @@
+{
+ "country": "GH",
+ "name": "Ghanacard Personal Identification Number (Ghanacard PIN)",
+ "issuer": "the National Identification Authority (NIA)",
+ "format": {
+  "length": 13,
+  "pattern": "^[A-Z]{3}\\d{9}[0-9A-Z]$"
+ },
+ "when": "application",
+ "who": [
+  "citizens",
+  "residents"
+ ],
+ "needed": [
+  "tax"
+ ],
+ "note": "Ghana's sheet (its government's own sheet on the OECD's automatic-exchange portal ('Information on Tax Identification Numbers'; the OECD's index page sits behind a bot check and wasn't opened, the sheet itself came straight back)), read 2026-10-30: since 1 April 2021 the Ghanacard PIN the National Identification Authority issues is the tax number of individuals eligible for the Ghanacard, and a permanent resident's non-citizen card serves too; it is three parts joined by hyphens, a 3-letter ISO country code of the holder's nationality at first registration, an 8- or 9-digit system number and a checksum character (used internally), 15 with hyphens, 13 without; the pattern draws the 9-digit form. Read as given on application (registration with the NIA). The checksum's rule isn't published, so `check` is left out. No age, fee or time is stated.",
+ "sources": [
+  {
+   "url": "https://www.oecd.org/content/dam/oecd/en/topics/policy-issue-focus/aeoi/ghana-tin.pdf",
+   "title": "OECD AEOI portal, Ghana: Information on Tax Identification Numbers (the jurisdiction's own sheet)",
+   "read": "2026-10-30",
+   "said": "From 1st April, 2021 the 15- character Ghanacard Personal Identification Number, (Ghanacard PIN) ... issued by the National Identification Authority (NIA), became the TIN for individuals who are eligible ... The Non-citizen card of foreign individuals permanently resident in Ghana also ... there are 3 parts : Country Code, 8 or 9 digit number, checksum character."
+  }
+ ]
+}
