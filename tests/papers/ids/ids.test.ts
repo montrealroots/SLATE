@@ -27,8 +27,8 @@ describe('the identity documents', () => {
     expect(brief(idOffers('FR', 5))).toEqual([['home', 0, 10, undefined], ['abroad', 0, 10, undefined]]);
     expect(idOffers('GF', 40)).toStrictEqual(idOffers('FR', 40));
     expect(idDocument('GF')).toBe("carte nationale d'identité");
-    // Slovenia: from 70 the card never expires; the priority procedure's fee isn't known.
-    expect(brief(idOffers('SI', 70))).toEqual([['unit', 3055, null, true], ['priority', null, null, true], ['mission', null, null, true]]);
+    // Slovenia: from 70 the card never expires; priority costs the decision tax twice, and a mission charges its own.
+    expect(brief(idOffers('SI', 70))).toEqual([['unit', 3055, null, true], ['priority', 3965, null, true], ['mission', 7600, null, true]]);
     expect(idOffers('SI', 70)?.[0]?.permanent).toBe(true);
     expect(brief(idOffers('SI', 69))?.[0]).toEqual(['unit', 3055, 10, undefined]);
     expect(brief(idOffers('SI', 11))?.[0]).toEqual(['unit', 2520, 5, undefined]);
@@ -52,7 +52,7 @@ describe('the identity documents', () => {
     expect(idOfferGaps({ ...home, route: { ...home.route, within: { n: 3, unit: 'week' } } })).toEqual([]);
     expect(idOfferGaps({ ...home, fee: null, validYears: null })).toEqual([t(FEE_UNKNOWN_LINE), t(VALIDITY_UNKNOWN_LINE), t(TIME_UNKNOWN_LINE)]);
     // A card that never expires has no validity to tell; one whose term isn't known does.
-    expect(idOfferGaps(idOffers('SI', 70)?.[1] as IdOffer)).toEqual([t(FEE_UNKNOWN_LINE)]);
+    expect(idOfferGaps(idOffers('MK', 66)?.[1] as IdOffer)).toEqual([t(FEE_UNKNOWN_LINE)]);
     expect(idOfferGaps(idOffers('ES', 70)?.[0] as IdOffer)).toEqual([t(VALIDITY_UNKNOWN_LINE), t(TIME_UNKNOWN_LINE)]);
   });
 });

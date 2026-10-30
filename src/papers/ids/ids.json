@@ -1036,8 +1036,8 @@
     "validYears": 10,
     "pay": {
      "standard": 6750,
-     "accelerated": null,
-     "urgent": null,
+     "accelerated": 11250,
+     "urgent": 15750,
      "consulate": null
     },
     "from": 14
@@ -1117,7 +1117,7 @@
    {
     "validYears": null,
     "pay": {
-     "collection-centre": null
+     "collection-centre": 0
     }
    }
   ]
@@ -2792,14 +2792,14 @@
    {
     "validYears": null,
     "pay": {
-     "cspd": null
+     "cspd": 2000
     },
     "under": 16
    },
    {
     "validYears": null,
     "pay": {
-     "cspd": null
+     "cspd": 2000
     },
     "from": 16
    }
@@ -3267,14 +3267,17 @@
     "id": "nicr",
     "where": "home",
     "speed": "standard",
-    "within": null
+    "within": {
+     "n": 1,
+     "unit": "hour"
+    }
    }
   ],
   "bands": [
    {
     "validYears": 10,
     "pay": {
-     "nicr": null
+     "nicr": 0
     },
     "from": 16
    }
@@ -3463,7 +3466,7 @@
     "validYears": 2,
     "pay": {
      "ten-days": 1500,
-     "two-days": null
+     "two-days": 3000
     },
     "under": 5
    },
@@ -3471,7 +3474,7 @@
     "validYears": 5,
     "pay": {
      "ten-days": 1500,
-     "two-days": null
+     "two-days": 3000
     },
     "from": 5,
     "under": 20
@@ -5024,8 +5027,8 @@
     "validYears": 3,
     "pay": {
      "unit": 2340,
-     "priority": null,
-     "mission": null
+     "priority": 2610,
+     "mission": 4400
     },
     "under": 3
    },
@@ -5033,8 +5036,8 @@
     "validYears": 5,
     "pay": {
      "unit": 2520,
-     "priority": null,
-     "mission": null
+     "priority": 2970,
+     "mission": 6000
     },
     "from": 3,
     "under": 12
@@ -5043,8 +5046,8 @@
     "validYears": 5,
     "pay": {
      "unit": 2595,
-     "priority": null,
-     "mission": null
+     "priority": 3045,
+     "mission": 6000
     },
     "from": 12,
     "under": 18
@@ -5053,8 +5056,8 @@
     "validYears": 10,
     "pay": {
      "unit": 3055,
-     "priority": null,
-     "mission": null
+     "priority": 3965,
+     "mission": 7600
     },
     "from": 18,
     "under": 70
@@ -5063,8 +5066,8 @@
     "validYears": null,
     "pay": {
      "unit": 3055,
-     "priority": null,
-     "mission": null
+     "priority": 3965,
+     "mission": 7600
     },
     "from": 70,
     "permanent": true
@@ -5365,7 +5368,7 @@
     "validYears": null,
     "pay": {
      "duicentro": 0,
-     "abroad": null
+     "abroad": 3500
     }
    }
   ]
@@ -5616,14 +5619,17 @@
     "id": "interior",
     "where": "home",
     "speed": "standard",
-    "within": null
+    "within": {
+     "n": 15,
+     "unit": "day"
+    }
    }
   ],
   "bands": [
    {
     "validYears": null,
     "pay": {
-     "interior": null
+     "interior": 3000
     }
    }
   ]

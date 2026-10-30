@@ -278,8 +278,8 @@ restarts. Read `CLAUDE.md` and the owner's package in `docs/` first.
   is read from the bank's own price list, fee schedule or account page (or, in the EEA and the UK, its Fee
   Information Document); the first SLATE's world bank list (Wikipedia-sourced, `montrealroots/1221`
   `banks-world.ts`) is not a source, and its fee sheets' URLs (`banks-world-sheets.ts`) are only leads, each fetched
-  and read again. Not yet decided or built: credit records, the exchange rates the life's money is estimated
-  at, the family's starting means; the account number's format by country went with the residence history
+  and read again. Not yet decided or built: the family's starting means (credit records and the exchange rates were
+  built 2026-10-30, below); the account number's format by country went with the residence history
   (`docs/KEEP.md` entry 14). France's overseas departments (BRED's price lists) are read from MoneyVox's archived
   copies of the bank's documents, so secondary; Wallis and Futuna from the IEOM's tariffs observatory, which names its
   one bank. Where a bank's waiver needs two months below a minimum (BDO), the game charges after one, the stricter
@@ -396,6 +396,20 @@ restarts. Read `CLAUDE.md` and the owner's package in `docs/` first.
   (Britain's status codes, Ireland's Central Credit Register, Equifax Canada's 30-day reporting) is written as 30 days;
   Germany's 28 is BDSG § 31's four weeks from a first reminder sent at the due date. canada.ca refuses this
   environment's egress and was read through the web fetcher, said so in its sources.
+- **Exchange rates** (`money.rates`, built 2026-10-30): each currency's units per US dollar, from the day its source
+  gives the rate, each holding until the next (`rateOn(currency, day)`), and an amount in another currency through the
+  dollar, always an estimate (`exchangeOn`), the dollar being the unit. Research files per currency
+  (research/sources/money/rates/<CUR>.json, register facts money.rates.<CUR>), compiled by `tools/money/rates`: 144
+  currencies from the US Treasury's Reporting Rates of Exchange (Fiscal Data API, record dates 31 December 2025 to 30
+  September 2026, mid-quarter amendments kept, the euro from the 'Euro Zone-Euro' row, Bulgaria in euros from 2026);
+  Belarus's rouble for the first quarter from the National Bank's official rate of 31 December 2025, the Treasury
+  listing none; six fixed parities from their issuers (Aruba's florin 1.79 per dollar, the ngultrum at par with the
+  rupee, the Falklands, Gibraltar and St Helena pounds at par with sterling, the pataca 1.03 per Hong Kong dollar) and
+  the CFP franc's 1,000 for 8.38 euros (the IEOM), which has no finite decimal and is written to six places, half to
+  even. North Korea's won is blocked (money.rates.blocked.KPW): the issuer's hosts don't answer; the UN Treasury's
+  operational rate (110 won a dollar from 15 January 2026) is the UN's own accounting rate, kept as a lead, not a
+  source. Matrix by country (2026-10-30): 229 researched, 22 proven (dollar countries by the unit's test, and those with
+  no place), 1 blocked, none pending. Mutation 100% (compile, coverage, engine).
 - **Cards** (`money.cards`, built 2026-10-29): each country's credit cards from the bank's own price list, pricing and
   terms, or card page (research/sources/money/cards/<CC>.json, register facts money.cards.<CC>), compiled by
   `tools/money/cards` into `src/money/cards/cards.json`. A card is named as its bank names it, with its currency (the
@@ -1146,7 +1160,9 @@ What layer 0 holds:
    Liberia's holidays (the observance laws as the Ministry of Information's 2025-2026 proclamations quote them,
    Sunday holidays kept on the Monday as proclaimed, New Year's Day and Christmas from WageIndicator citing the
    embassy's list). Tonga's 2011 fee regulations are on PacLII, which answers with a Cloudflare block.
-   Identity cards and citizenship: done 2026-10-29 (above); the cards' null fees and citizenship's post-2024 reforms
+   Identity cards and citizenship: done 2026-10-29 (above); the cards' null fees (retried 2026-10-30 by research
+   subagents: filled for Latvia, Belarus over 14, Jordan, Lesotho, the Congo, Slovenia, El Salvador and Tunisia; 35
+   countries still have one, each file's note saying what was tried; Bosnia's 18 KM from 2013 and 2016 sources not taken) and citizenship's post-2024 reforms
    to try again. Next: visas, residence and work permissions (each an engine with its own matrix), then the banks.
 6. Before the game is called done (layer 7, verification), at the owner's word on 2026-10-29: the gate enforces the
    owner's Title Case rule (`.claude/rules/title-case.md`, taken from the first SLATE, `montrealroots/1221`). Port

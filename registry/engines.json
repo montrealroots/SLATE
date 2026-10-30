@@ -177,5 +177,14 @@
    "coverage/credit-countries.json"
   ],
   "allPlacesTest": "tests/money/credit/credit.places.test.ts::credit > for every place on the map"
+ },
+ "money.rates": {
+  "layer": 3,
+  "dir": "src/money/rates",
+  "readsPlace": true,
+  "matrices": [
+   "coverage/rates-countries.json"
+  ],
+  "allPlacesTest": "tests/money/rates/rates.places.test.ts::rates > for every place on the map"
  }
 }

@@ -8,7 +8,10 @@
    "id": "interior",
    "where": "home",
    "speed": "standard",
-   "within": null,
+   "within": {
+    "n": 15,
+    "unit": "day"
+   },
    "label": "through the Ministry of the Interior's services"
   }
  ],
@@ -17,11 +20,11 @@
    "for": "anyone",
    "validYears": null,
    "pay": {
-    "interior": null
+    "interior": "3"
    }
   }
  ],
- "note": "Tunisia's national identity card is issued under the Ministry of the Interior. The biometric card approved in December 2023 was to cost 25 to 40 dinars, the chair of the parliamentary rights and liberties committee said, once its regulations were finalised (Managers, 16 March 2024); whether it has replaced the current card, and the current card's stamp duty, term, age and time, weren't found. Tried again 2026-10-29: Tuniscope (21 July 2026) lists a fiscal stamp receipt among the renewal documents and gives 15 days to renew, without the stamp's amount; the biometric card's fee isn't yet set in any text found.",
+ "note": "Tunisia's national identity card is issued under the Ministry of the Interior. The biometric card approved in December 2023 was to cost 25 to 40 dinars, the chair of the parliamentary rights and liberties committee said, once its regulations were finalised (Managers, 16 March 2024); whether it has replaced the current card, and the current card's stamp duty, term, age and time, weren't found. Tried again 2026-10-29: Tuniscope (21 July 2026) lists a fiscal stamp receipt among the renewal documents and gives 15 days to renew, without the stamp's amount; the biometric card's fee isn't yet set in any text found. Found 2026-10-30: the Ministry of the Interior's procedure pages (e-Interieur) ask, for a first card, a renewal or a change, for the receipt of the fiscal stamp duty due, without its amount, and give the service within 15 days of the application; the Ministry's notice of its campaign for baccalaureate pupils (7 January 2025) names that receipt as one of 3 dinars from the tax office, so the card is 3 dinars. A replacement for a lost or damaged card isn't modelled; the biometric card's fee isn't set in any text found.",
  "sources": [
   {
    "url": "https://managers.tn/2024/03/16/combien-les-tunisiens-vont-ils-payer-pour-le-passeport-et-la-cin-biometriques",
@@ -30,6 +33,18 @@
    "kind": "secondary",
    "quotes": "https://www.interieur.gov.tn/",
    "said": "En ce qui concerne la Carte d’Identité Nationale (CIN), son prix varie de 25 à 40 dinars. ... Les projets de la carte d’identité et du passeport biométriques ont été approuvés depuis le 1er décembre, en attendant la finalisation des textes réglementaires."
+  },
+  {
+   "url": "https://services.interieur.gov.tn/wap/ar/docs/demarches/01.html",
+   "title": "Ministère de l'Intérieur (e-Interieur), خدمات إدارية - بطاقة التعريف الوطنية",
+   "read": "2026-10-30",
+   "said": "الحصول على بطاقة التعريف الوطنية لأول مرة ... وصل خلاص معلوم الطابع الجبائي المستوجب ... أجل الحصول على الخدمة خلال 15 يوما من تاريخ تقديم الطلب"
+  },
+  {
+   "url": "https://www.interieur.gov.tn/actualite/32515/",
+   "title": "Ministère de l'Intérieur, حملة وطنيّة لإستخراج بطاقات التعريف الوطنيّة لفائدة تلاميذ الباكالوريا دورة 2026 (7 January 2025)",
+   "read": "2026-10-30",
+   "said": "تنتظمُ حملة وطنيّة بالشراكة مع وزارة التربية لإنجاز بطاقات التعريف الوطنيّة لفائدة تلاميذ البكالوريـا دورة 2026 ... وصل خلاص قيمتهُ 03 دنانير مُسلم من القباضة الماليّة."
   }
  ]
 }

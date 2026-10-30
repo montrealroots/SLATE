@@ -1,0 +1,30 @@
+{
+ "currency": "ALL",
+ "rates": [
+  {
+   "from": "2025-12-31",
+   "perUSD": "81.85"
+  },
+  {
+   "from": "2026-03-31",
+   "perUSD": "83.3"
+  },
+  {
+   "from": "2026-06-30",
+   "perUSD": "82.4"
+  },
+  {
+   "from": "2026-09-30",
+   "perUSD": "80.75"
+  }
+ ],
+ "note": "The US Treasury's Reporting Rates of Exchange (Bureau of the Fiscal Service), the rates US government agencies use for foreign currency, its 'Albania-Lek' row: 81.85 from 2025-12-31; 83.3 from 2026-03-31; 82.4 from 2026-06-30; 80.75 from 2026-09-30 per US dollar, each holding until the next. Read from the Fiscal Data API on 2026-10-30.",
+ "sources": [
+  {
+   "url": "https://api.fiscaldata.treasury.gov/services/api/fiscal_service/v1/accounting/od/rates_of_exchange?filter=record_date:gte:2025-12-31&sort=country_currency_desc,effective_date&page%5Bsize%5D=2000&fields=record_date,country,currency,country_currency_desc,exchange_rate,effective_date&format=csv",
+   "title": "U.S. Department of the Treasury, Bureau of the Fiscal Service: Treasury Reporting Rates of Exchange (Fiscal Data API), record dates 31 December 2025 to 30 September 2026",
+   "read": "2026-10-30",
+   "said": "\"2025-12-31\",\"Albania\",\"Lek\",\"Albania-Lek\",\"81.85\",\"2025-12-31\" ... \"2026-03-31\",\"Albania\",\"Lek\",\"Albania-Lek\",\"83.3\",\"2026-03-31\" ... \"2026-06-30\",\"Albania\",\"Lek\",\"Albania-Lek\",\"82.4\",\"2026-06-30\" ... \"2026-09-30\",\"Albania\",\"Lek\",\"Albania-Lek\",\"80.75\",\"2026-09-30\""
+  }
+ ]
+}
