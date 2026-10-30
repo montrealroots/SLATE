@@ -19,9 +19,11 @@ import { refusal, type Check, type Format, type Iban, type Kind, type National, 
  *   its `parts` (each a name, a length and a kind; where a part's length varies, as an account number's often does,
  *   `min`, the fewest it takes, and `drawn`, the lengths the bank's own numbers are drawn at), where the bank's code
  *   sits in it (`bank`), the checks inside it as the central bank publishes them (`checks`, each the digits it's worked
- *   `over` and their `weights`, or `mod97`, `key97` or `rest97`), and the publisher's own worked number (`example`), which
- *   must pass, so a check misread is caught on it. The bank's code and the checks sit before any part whose length
- *   varies.
+ *   `over` and their `weights`, or `mod97`, `key97` or `rest97`), and the publisher's own worked number (`example`),
+ *   which must pass, so a check misread is caught on it. The bank's code and the checks sit before any part whose
+ *   length varies.
+ * - `follows`, a territory whose banks number accounts in another country's own form (the Cocos Islands' in
+ *   Australia's), named by its source as that country's; it takes that form.
  *
  * Until 2026-10-30 a national check was left out and the form took none; Argentina's, Nigeria's and Angola's were the
  * first read.
@@ -31,8 +33,8 @@ export const OUTPUT = 'src/money/formats/formats.json';
 
 export const KINDS = ['n', 'a', 'c'] as const satisfies readonly Kind[];
 
-/** A file's form before a folded prefix is resolved to its country's. */
-export type Read = Format | { prefix: string };
+/** A file's form before a folded prefix, or a territory following another's own number, is resolved to its country's. */
+export type Read = Format | { prefix: string } | { follows: string };
 
 const object = (o: unknown, what: string): Record<string, unknown> => {
   if (typeof o !== 'object' || o === null || Array.isArray(o)) throw new Error(`${what} is not an object`);
@@ -161,15 +163,29 @@ export function check(o: unknown, kinds: readonly Kind[], what: string): Check {
 export function compileCountry(code: string, file: Record<string, unknown>): Read {
   if (!Object.hasOwn(countries, code)) throw new Error(`${code} is not a country on the map`);
   if (file['country'] !== code) throw new Error(`${code}'s file is for ${String(file['country'])}`);
+  if ('follows' in file) {
+    only(file, ['country', 'follows', 'note', 'sources'], `${code}'s file, following another's,`);
+    if (typeof file['follows'] !== 'string' || !Object.hasOwn(countries, file['follows']) || file['follows'] === code) throw new Error(`${code} follows another country on the map`);
+    return { follows: file['follows'] };
+  }
   only(file, ['country', 'iban', 'national', 'note', 'sources'], `${code}'s file`);
   if ((file['iban'] === undefined) === (file['national'] === undefined)) throw new Error(`${code} gives one form, an IBAN or a national number`);
   return file['iban'] === undefined ? national(code, file['national']) : iban(code, file['iban']);
 }
 
-/** Every file's form, a folded prefix taken to the form of the country that owns it. */
+/**
+ * Every file's form, a folded prefix taken to the form of the country that owns it, and a territory that follows
+ * another's own number (Australia's, at the Cocos Islands) to that country's form.
+ */
 export function resolve(read: Readonly<Record<string, Read>>): Record<string, Format> {
   const out: Record<string, Format> = {};
   for (const [code, form] of Object.entries(read)) {
+    if ('follows' in form) {
+      const owner = read[form.follows];
+      if (owner === undefined || 'prefix' in owner || 'follows' in owner) throw new Error(`${code} follows ${form.follows}, whose own form the research doesn't give`);
+      out[code] = owner;
+      continue;
+    }
     if (!('prefix' in form)) {
       out[code] = form;
       continue;

@@ -6,12 +6,14 @@ import { amount, checkCountry, checkIssuers, compileIssued, currencyIn, isRecord
  * files, one per country (research/sources/papers/residence/<CC>.json, register fact papers.residence.<CC>), each
  * checked against the SHA-256 its register entry cites. A country gives the routes by which someone who isn't its
  * citizen may live there, each named as the government names it: what it is for, where it is applied for, whether it
- * lets its holder work, and what the research states of its fee, its time, its term, its renewal, whether its years
- * count toward naturalisation and after how many it leads to permanent residence. The routes a performer could use come
- * first in the research (work, self-employed or talent, free movement, permanent), then family and means. A free
- * movement route names the groups whose citizens it is for. A territory whose permits are another country's says whose
- * (`issuedBy`). A term a source doesn't state is left out, never guessed. No file was written when the engine was built
- * (2026-10-30); then nothing is compiled.
+ * lets its holder work (each left out where the source doesn't say: until 2026-10-30 both were required, and a page
+ * naming a permit and its terms without them kept the country out), and what the research states of its fee, its time,
+ * its term, its renewal, whether its years count toward naturalisation and after how many it leads to permanent
+ * residence. The routes a performer could use come first in the research (work, self-employed or talent, free movement,
+ * permanent), then family and means. A free movement route names the groups whose citizens it is for. A territory whose
+ * permits are another country's says whose (`issuedBy`); a place needing no permit at all says so (`free`). A term a
+ * source doesn't state is left out, never guessed. No file was written when the engine was built (2026-10-30); then
+ * nothing is compiled.
  */
 export const SOURCES = 'research/sources/papers/residence';
 export const OUTPUT = 'src/papers/residence/residence.json';
@@ -26,15 +28,16 @@ export interface Route {
   /** As the government names it. */
   name: string;
   for: (typeof FOR)[number];
-  apply: (typeof APPLY)[number];
+  /** Where it is applied for; left out where the source doesn't say. */
+  apply?: (typeof APPLY)[number];
   fee?: Money;
   /** The longest a decision takes as the office publishes it. */
   within?: Within;
   /** How long a grant lasts. */
   term?: { n: number; unit: (typeof TERM_UNITS)[number] };
   renewable?: true;
-  /** The work it allows: any, only for the sponsor named, or none. */
-  work: (typeof WORK)[number];
+  /** The work it allows: any, only for the sponsor named, or none; left out where the source doesn't say. */
+  work?: (typeof WORK)[number];
   /** Its years count toward naturalisation's. */
   counts?: true;
   /** The years on it after which permanent residence may be asked for. */
@@ -47,7 +50,12 @@ export interface Residence {
   routes: Route[];
 }
 
-export type Entry = Residence | Issued;
+/** A place where anyone may live and work with no permit of any kind (Svalbard, by its Governor). */
+export interface Free {
+  free: true;
+}
+
+export type Entry = Residence | Issued | Free;
 
 const ROUTE = ['id', 'name', 'for', 'apply', 'fee', 'within', 'term', 'renewable', 'work', 'counts', 'permanentAfter', 'groups'];
 
@@ -62,7 +70,9 @@ function route(r: unknown, at: string, currency: () => string): Route {
   const { id, name, fee, term, renewable, counts, permanentAfter, groups } = r;
   if (typeof id !== 'string' || id === '') throw new Error(`${at} needs an id`);
   if (typeof name !== 'string' || name === '') throw new Error(`${at} (${id}) needs its name`);
-  const out: Route = { id, name, for: oneOf(r['for'], FOR, `${at} (${id})'s for`), apply: oneOf(r['apply'], APPLY, `${at} (${id})'s apply`), work: oneOf(r['work'], WORK, `${at} (${id})'s work`) };
+  const out: Route = { id, name, for: oneOf(r['for'], FOR, `${at} (${id})'s for`) };
+  if (r['apply'] !== undefined) out.apply = oneOf(r['apply'], APPLY, `${at} (${id})'s apply`);
+  if (r['work'] !== undefined) out.work = oneOf(r['work'], WORK, `${at} (${id})'s work`);
   if (fee !== undefined) out.fee = amount(fee, currency(), `${at} (${id})'s fee`);
   if (r['within'] !== undefined) out.within = within(r['within'], `${at} (${id})'s within`);
   if (term !== undefined) {
@@ -99,10 +109,18 @@ export function compileResidence(code: string, file: Record<string, unknown>): R
   return { routes };
 }
 
+/** A file saying that no permit of any kind is needed to live or work there. */
+export function compileFree(code: string, file: Record<string, unknown>): Free {
+  checkCountry(code, file);
+  if (file['free'] !== true) throw new Error(`${code}'s file says no permit is needed only as free: true`);
+  only(file, ['country', 'free', 'note', 'sources'], `${code}, where no permit is needed,`);
+  return { free: true };
+}
+
 /** The residence routes of every file the register cites and checks. */
 export function readResidence(root: string): Record<string, Entry> {
   const out: Record<string, Entry> = {};
-  for (const [code, file] of readCited(root, SOURCES, 'papers.residence.')) out[code] = 'issuedBy' in file ? compileIssued(code, file, 'permits') : compileResidence(code, file);
+  for (const [code, file] of readCited(root, SOURCES, 'papers.residence.')) out[code] = 'issuedBy' in file ? compileIssued(code, file, 'permits') : 'free' in file ? compileFree(code, file) : compileResidence(code, file);
   checkIssuers(out, 'permits');
   return out;
 }

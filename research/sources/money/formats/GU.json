@@ -1,0 +1,25 @@
+{
+ "country": "GU",
+ "follows": "US",
+ "note": "Banks in Guam are numbered within the United States' routing number system: the American Bankers Association's Routing Number Policy and Procedures (the Routing Number Administrative Board's policy, revised 9/20, read 2026-10-30 on aba.com) defines a Federal Reserve District as one of the twelve areas assigned to a Federal Reserve Bank main office and says all of the United States and its territories fall into one of these twelve districts, whose routing symbols (01-12) begin a bank's routing number; the FDIC's BankFind data (read 2026-10-30) lists 17 FDIC-insured bank offices in Guam (Bank of Guam, Bank of Hawaii, BankPacific, Finance Factors and First Hawaiian Bank); and Bank of Guam, the territory's own bank, gives its routing number, 121405115, on its own page (read 2026-10-30), a number that passes the United States' check digit. So an account there is numbered as one in the United States: a routing number and an account number of one to seventeen characters. (Wave 8's file, held for want of the account's length, gave the routing number alone; the United States' own form now takes the account.)",
+ "sources": [
+  {
+   "url": "https://www.aba.com/news-research/analysis-guides/routing-number-policy-procedures",
+   "title": "American Bankers Association, Routing Number Policy and Procedures (revised 9/20)",
+   "read": "2026-10-30",
+   "said": "Federal Reserve District One of the twelve geographic areas assigned to a Federal Reserve Bank main office. All of the United States and its territories fall into one of these twelve districts."
+  },
+  {
+   "url": "https://api.fdic.gov/banks/locations?filters=STALP:GU&fields=NAME,OFFNAME,CITY,STNAME,CERT&limit=100",
+   "title": "Federal Deposit Insurance Corporation, BankFind Suite data (public API), FDIC-insured bank offices in Guam",
+   "read": "2026-10-30",
+   "said": "\"total\":17 ... \"STNAME\":\"Guam\" ... \"NAME\":\"Bank of Guam\""
+  },
+  {
+   "url": "https://bankofguam.com/routing-number",
+   "title": "Bank of Guam, Bank of Guam Routing Number",
+   "read": "2026-10-30",
+   "said": "Bank of Guam's Routing Number: 121405115"
+  }
+ ]
+}

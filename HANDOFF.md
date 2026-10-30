@@ -920,6 +920,40 @@ Wave 9 (2026-10-30, eight research subagents and the lead's form work):
   residence times taken as the longest the law allows; fees summed from their parts (Albania, Malta, North Macedonia's
   licence; Guatemala's and Mongolia's residence).
 
+Wave 10 (2026-10-30, eight research subagents and the lead's form work):
+
+- Forms: a residence route's `apply` and `work` may be left out where the source doesn't say them (until this day both
+  were required, and permits named with their terms kept their countries out); a place needing no permit of any kind is
+  `{ free: true }` (Svalbard, by its Governor: the Immigration Act doesn't apply there), and `needsNoPermit` says so. An
+  account format may `follow` another country's own form where a source says the territory's banks use it (Christmas and
+  Norfolk Islands by AusPayNet's BSB directory, the Cocos Islands by a 1999 parliamentary report of a Commonwealth Bank
+  agency, Nauru by CommBank's own terms, Svalbard by SpareBank 1's offices, the US territories, Palau, Micronesia and
+  Diego Garcia by the ABA's policy, the FDIC's register and their banks' routing numbers, Western Sahara by Bank
+  Al-Maghrib's Laayoune branch). A licence may carry `foreignFee`, `perYear` and `untilAge` (Taiwan's to 70, Bermuda's
+  and Gibraltar's to 70, Greece's to 65, Macau's to 40 read from its renewal-age table, Malaysia's by the year with a
+  non-citizen's RM60, Cayman's non-Caymanian CI$750). The Gambia, Liberia and Guinea take the West African ACP/ACH BBAN
+  with the French RIB key, proven on its published 001001000000011157; Haiti's routing check is the ABA's, proven on the
+  BRH's two numbers.
+- Standing after the wave: numbers 146 researched, 46 blocked, 54 pending; residence 179, 16, 51; licences 90, 9, 147;
+  formats 148, 78, 20. Released from `research/held/`: formats PR, GU, MP, AS (following the US); numbers none;
+  residence DM, MS, SB, ZW, BQ, IL, KZ (written without the readings), licences PH (the LTO's manual), MU (its Act), WS
+  (its Road Code; the test fee for overseas citizens not held as a licence fee). Newly held: residence HT (a secondary
+  source naming no Haitian primary), licences IE (17 is the age shared with the learner permit; six months on it before
+  the test weren't read) and IM (16 may be the provisional's age). Still held: numbers PM, TK, WS.
+- Form gaps the wave found: a residence card for any purpose (Senegal's carte d'identité d'étranger, Liberia's residence
+  permit, Cameroon's carte de séjour), which needs a `for` value of its own; a place with no residence route or no bank
+  at all (the French Southern Territories, the British Indian Ocean Territory's residence, Tokelau's bank), which needs
+  a `none`; Saint Kitts and Nevis's tax number of no maximum length. Mexico and Uruguay keep their licences by state and
+  department: none of Mexico's 32 states is written, and Uruguay's 19 departments are untouched. Canada still lacks
+  Prince Edward Island, Yukon and Nunavut, Australia South Australia and Tasmania, all behind bot checks.
+- Readings kept, to check: residence categories assigned (investment as means in Macau and Georgia, a business-people
+  permit as self-employed in Lesotho and Madagascar), decision times taken as the longest (Aruba 24 weeks, Togo 45 days,
+  Viet Nam's permanent card 6 months), fees chosen from a schedule by origin (Côte d'Ivoire's non-ECOWAS 300,000 F CFA,
+  Dominica's non-CARICOM EC$800); Kuwait's residence on press quoting the gazette; Armenia's written two days before a
+  reform takes effect; Latvia's on the EU portal; Quebec's licence age built from its stages and its fee a yearly
+  maximum; Brunei's licence age built from its stages; Romania's and Brunei's licence law read in secondary copies;
+  Palestine's number on Landinfo (oral ministry statements).
+
 The older next steps below are kept as they were written.
 
 1. The weather's blockers

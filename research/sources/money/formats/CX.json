@@ -1,0 +1,31 @@
+{
+ "country": "CX",
+ "follows": "AU",
+ "note": "Christmas Island's bank is a branch of an Australian bank numbered in Australia's own BSB system: AusPayNet's BSB Directory (the full file, read 2026-10-30; AusPayNet administers the BSB System and updates the file monthly) lists Westpac's Christmas Island branch, Canberra Place, postcode 6798, at BSB 036-189 (and 736-189), and its key gives WBC as Westpac Banking Corporation, prefixes 03, 04, 73 and 74; Westpac's own branch locator (read 2026-10-30) gives the same branch and BSB. So an account there is numbered as one in Australia, a BSB and an account number.",
+ "sources": [
+  {
+   "url": "https://auspaynetbsbpublic.blob.core.windows.net/bsb-reports/BSBDirectoryFull.csv",
+   "title": "Australian Payments Network (AusPayNet), BSB Directory (Full Version), CSV, the monthly file of every Bank-State-Branch number in the BSB System it administers",
+   "read": "2026-10-30",
+   "said": "\"036-189\",\"WBC\",\"Christmas Island\",\"Christmas Island Canberra Place\",\"Christmas Island\",\"WA\",\"6798\",\"PEH\""
+  },
+  {
+   "url": "https://auspaynetbsbpublic.blob.core.windows.net/bsb-reports/key%20to%20abbreviations%20and%20bsb%20numbers.csv",
+   "title": "Australian Payments Network (AusPayNet), key to abbreviations and BSB numbers (CSV)",
+   "read": "2026-10-30",
+   "said": "WBC,Westpac Banking Corporation,03,,,"
+  },
+  {
+   "url": "https://auspaynet.com.au/BSBLinks",
+   "title": "Australian Payments Network (AusPayNet), Static Download Links for BSB Files",
+   "read": "2026-10-30",
+   "said": "AusPayNet administers the Bank-State-Branch (BSB) System for financial institutions in Australia. ... The BSB database is updated on the first (NSW) business day of each month."
+  },
+  {
+   "url": "https://digital-api.westpac.com.au/cap/chnl/lcteus/svc/v1/prcng-svc-srch?latitude=-10.4217&longitude=105.6791&searchType=branch&format=json",
+   "title": "Westpac, branch locator (the data behind https://www.westpac.com.au/locateus/), searched at Christmas Island",
+   "read": "2026-10-30",
+   "said": "\"serviceProviderTypeName\":\"Branch\",\"name\":\"Christmas Island\" ... \"streetAddress\":\"Canberra Place\",\"suburb\":\"Christmas Island\",\"state\":\"WA\",\"postcode\":\"6798\",\"phoneNumber\":\"0891648221\",\"country\":\"AU\" ... \"bsb\":\"036189\",\"brandName\":\"Westpac\""
+  }
+ ]
+}

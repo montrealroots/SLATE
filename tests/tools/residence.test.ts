@@ -3,7 +3,7 @@ import { mkdirSync, mkdtempSync, readFileSync, writeFileSync } from 'node:fs';
 import { tmpdir } from 'node:os';
 import { join, resolve } from 'node:path';
 import { describe, expect, it } from 'vitest';
-import { APPLY, compileResidence, FOR, OUTPUT, readResidence, serialize, SOURCES, TERM_UNITS, WORK } from '../../tools/papers/residence/compile.ts';
+import { APPLY, compileFree, compileResidence, FOR, OUTPUT, readResidence, serialize, SOURCES, TERM_UNITS, WORK } from '../../tools/papers/residence/compile.ts';
 import { COVERAGE, coverageOf, residenceCoverage, TESTS, TOLD } from '../../tools/papers/residence/coverage.ts';
 import { NO_PLACES } from '../../tools/papers/passports/coverage.ts';
 
@@ -14,6 +14,13 @@ const file = (over: Record<string, unknown> = {}) => ({ country: 'GB', routes: [
 const at = (r: Record<string, unknown>) => compileResidence('GB', file({ routes: [r] })).routes[0];
 
 describe('the residence permissions compile', () => {
+  it('takes a place where no permit of any kind is needed', () => {
+    expect(compileFree('SJ', { country: 'SJ', free: true, note: 'n', sources: [] })).toStrictEqual({ free: true });
+    for (const free of [false, 'yes']) expect(() => compileFree('SJ', { country: 'SJ', free }), String(free)).toThrow("SJ's file says no permit is needed only as free: true");
+    expect(() => compileFree('SJ', { country: 'SJ', free: true, routes: [] })).toThrow('SJ, where no permit is needed, has no term routes');
+    expect(() => compileFree('SJ', { country: 'NO', free: true })).toThrow();
+  });
+
   it('takes a country to its routes, with what the research states of each', () => {
     expect([SOURCES, OUTPUT]).toEqual(['research/sources/papers/residence', 'src/papers/residence/residence.json']);
     expect(FOR).toEqual(['work', 'self-employed', 'talent', 'family', 'study', 'means', 'retirement', 'permanent', 'free movement']);
@@ -42,7 +49,11 @@ describe('the residence permissions compile', () => {
     for (const name of [undefined, '', 7]) expect(() => at(route({ name }))).toThrow("GB's route 0 (talent) needs its name");
     expect(() => at(route({ for: 'fun' }))).toThrow("GB's route 0 (talent)'s for is one of work, self-employed, talent, family, study, means, retirement, permanent, free movement");
     expect(() => at(route({ apply: 'online' }))).toThrow("GB's route 0 (talent)'s apply is one of abroad, in country, either");
-    expect(() => at(route({ work: undefined }))).toThrow("GB's route 0 (talent)'s work is one of any, sponsor, none");
+    for (const work of ['all', null]) expect(() => at(route({ work })), String(work)).toThrow("GB's route 0 (talent)'s work is one of any, sponsor, none");
+    // Where and the work it allows are left out where the source doesn't say.
+    expect(at(route({ work: undefined, apply: undefined }))).toStrictEqual({ id: 'talent', name: 'Global Talent visa', for: 'talent' });
+    expect(at(route({ work: undefined }))).toStrictEqual({ id: 'talent', name: 'Global Talent visa', for: 'talent', apply: 'either' });
+    expect(at(route({ apply: undefined }))).toStrictEqual({ id: 'talent', name: 'Global Talent visa', for: 'talent', work: 'any' });
     expect(() => at(route({ fee: 766 }))).toThrow("GB's route 0 (talent)'s fee is an amount written out in major units");
     expect(() => compileResidence('GB', file({ currency: 'XXX', routes: [route({ fee: '1' })] }))).toThrow("GB's fees are in XXX, not a currency in use");
     expect(() => at(route({ within: { n: 1, unit: 'year' } }))).toThrow("GB's route 0 (talent)'s within is a whole number");

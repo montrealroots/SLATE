@@ -33,6 +33,18 @@ describe('the licences compile', () => {
     expect(compileLicence('DE', de({ licence: undefined, card: { name: 'x', from: 0, fee: '1', validYears: null }, currency: 'USD' }))).toStrictEqual({ issuer: 'Fahrerlaubnisbehörde', card: { name: 'x', from: 0, fee: { currency: 'USD', minor: 100 }, validYears: null } });
     expect(compileLicence('US.NY', ny({ exchange: ['US.NJ', 'DE'] })).exchange).toEqual(['US.NJ', 'DE']);
     expect(compileLicence('DE', de({ licence: { name: 'x', from: 0, fee: null, validYears: 1 } })).licence?.from).toBe(0);
+    // A non-citizen's fee beside a citizen's, a fee by the year, an age the licence ends at.
+    const my = (over: Record<string, unknown>) => compileLicence('DE', de({ currency: 'EUR', licence: { name: 'x', from: 18, fee: '30', validYears: null, ...over } })).licence;
+    expect(my({ foreignFee: '120', perYear: true, untilAge: 70 })).toStrictEqual({ name: 'x', from: 18, fee: { currency: 'EUR', minor: 3000 }, foreignFee: { currency: 'EUR', minor: 12000 }, perYear: true, validYears: null, untilAge: 70 });
+    expect(() => my({ fee: null, foreignFee: '120' })).toThrow("DE's licence charges a non-citizen another fee only beside a citizen's");
+    expect(() => my({ foreignFee: 'x' })).toThrow("DE's licence's foreign fee");
+    for (const perYear of [false, 'yes']) expect(() => my({ perYear }), String(perYear)).toThrow("DE's licence's fee is by the year only as perYear: true, beside a fee");
+    expect(() => my({ fee: null, perYear: true })).toThrow("DE's licence's fee is by the year only as perYear: true, beside a fee");
+    for (const untilAge of [18, 17, 0, 70.5, '70']) expect(() => my({ untilAge }), String(untilAge)).toThrow("DE's licence ends at a whole age above the one it's issued from");
+    expect(my({ untilAge: 19 })?.untilAge).toBe(19);
+    const card = (untilAge: unknown) => compileLicence('DE', de({ licence: undefined, currency: 'EUR', card: { name: 'c', fee: null, validYears: null, untilAge } })).card;
+    expect(card(1)?.untilAge).toBe(1);
+    expect(() => card(0)).toThrow("DE's card ends at a whole age above the one it's issued from");
   });
 
   it('refuses a licence that is not what it says it is', () => {

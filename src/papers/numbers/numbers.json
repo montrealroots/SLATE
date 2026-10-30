@@ -304,6 +304,21 @@
    "minor": 0
   }
  },
+ "BS": {
+  "name": "National Insurance number",
+  "issuer": "the National Insurance Board (NIB)",
+  "format": {
+   "length": 8,
+   "pattern": "^\\d{8}$"
+  },
+  "when": "work",
+  "who": [
+   "workers"
+  ],
+  "needed": [
+   "work"
+  ]
+ },
  "BZ": {
   "name": "Tax Identification Number (TIN)",
   "issuer": "the Belize Tax Service",
@@ -441,6 +456,9 @@
   "needed": [
    "tax"
   ]
+ },
+ "CX": {
+  "issuedBy": "AU"
  },
  "CY": {
   "name": "tax identification number (TIN)",
@@ -1204,6 +1222,18 @@
    "residents"
   ]
  },
+ "ML": {
+  "name": "Numéro d'Identification Nationale (NINA)",
+  "issuer": "the national statistics service (the service national chargé de la statistique)",
+  "format": {
+   "length": 15,
+   "pattern": "^\\d{14}[A-Z]$"
+  },
+  "when": "application",
+  "who": [
+   "anyone"
+  ]
+ },
  "MN": {
   "name": "registration number",
   "issuer": "the State Center for Civil Registration and Information (SCCRI), as the source of 2012 names it",
@@ -1508,6 +1538,18 @@
  "PR": {
   "issuedBy": "US"
  },
+ "PS": {
+  "name": "identity number (raqam al-huwiyya)",
+  "issuer": "the Ministry of the Interior's General Directorate of Civil Status, from the Palestinian population register",
+  "format": {
+   "length": 9,
+   "pattern": "^[489]\\d{8}$"
+  },
+  "when": "birth",
+  "who": [
+   "citizens"
+  ]
+ },
  "PT": {
   "name": "tax identification number",
   "issuer": "the Tax and Customs Authority",
@@ -1737,6 +1779,18 @@
   ],
   "needed": [
    "tax"
+  ]
+ },
+ "TN": {
+  "name": "identifiant unique citoyen (the citizen's unique identifier)",
+  "issuer": "the ministry in charge of local affairs, which keeps the Registre de l'identifiant unique citoyen, from the civil-status registers",
+  "format": {
+   "length": 11,
+   "pattern": "^\\d{11}$"
+  },
+  "when": "birth",
+  "who": [
+   "citizens"
   ]
  },
  "TR": {

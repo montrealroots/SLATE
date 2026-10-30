@@ -147,6 +147,10 @@ describe('the account formats compile', () => {
     expect(() => compileCountry('XX', { country: 'XX' })).toThrow('XX is not a country on the map');
     expect(() => compileCountry('GB', { country: 'FR', iban: GB })).toThrow("GB's file is for FR");
     expect(() => compileCountry('GB', { country: 'GB', iban: GB, banks: [] })).toThrow("GB's file has no term banks");
+    expect(compileCountry('CC', { country: 'CC', follows: 'AU', note: 'n', sources: [] })).toStrictEqual({ follows: 'AU' });
+    // An array of one code reads as that code to a property lookup; it isn't one.
+    for (const follows of ['CC', 'XX', 7, ['AU']]) expect(() => compileCountry('CC', { country: 'CC', follows }), String(follows)).toThrow('CC follows another country on the map');
+    expect(() => compileCountry('CC', { country: 'CC', follows: 'AU', national: CLABE })).toThrow("CC's file, following another's, has no term national");
     expect(() => compileCountry('GB', { country: 'GB' })).toThrow('GB gives one form, an IBAN or a national number');
     expect(() => compileCountry('GB', { country: 'GB', iban: GB, national: CLABE })).toThrow('GB gives one form, an IBAN or a national number');
   });
@@ -157,6 +161,11 @@ describe('the account formats compile', () => {
     expect(() => resolveForms({ IM: { prefix: 'GB' } })).toThrow("IM's prefix GB is no IBAN the research gives");
     expect(() => resolveForms({ MX: mx, XX: { prefix: 'MX' } })).toThrow("XX's prefix MX is no IBAN the research gives");
     expect(() => resolveForms({ GP: { prefix: 'FR' }, FR: { prefix: 'GP' } })).toThrow("GP's prefix FR is no IBAN the research gives");
+    // A territory following another's own form takes it, IBAN or national; never one that itself follows or folds.
+    expect(resolveForms({ AU: mx, CC: { follows: 'AU' }, GB: GB_FORM as never, JE: { follows: 'GB' } })).toStrictEqual({ AU: mx, CC: mx, GB: GB_FORM, JE: GB_FORM });
+    expect(() => resolveForms({ CC: { follows: 'AU' } })).toThrow("CC follows AU, whose own form the research doesn't give");
+    expect(() => resolveForms({ AU: mx, CX: { follows: 'CC' }, CC: { follows: 'AU' } })).toThrow("CX follows CC, whose own form the research doesn't give");
+    expect(() => resolveForms({ FR: GB_FORM as never, GP: { prefix: 'FR' }, MF: { follows: 'GP' } })).toThrow("MF follows GP, whose own form the research doesn't give");
   });
 
   it('reads only the files the register cites, at the hash it cites', () => {

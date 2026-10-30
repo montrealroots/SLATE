@@ -1,0 +1,31 @@
+{
+ "country": "BS",
+ "name": "National Insurance number",
+ "issuer": "the National Insurance Board (NIB)",
+ "format": {
+  "length": 8,
+  "pattern": "^\\d{8}$"
+ },
+ "when": "work",
+ "who": [
+  "workers"
+ ],
+ "needed": [
+  "work"
+ ],
+ "note": "The Bahamas levies no direct tax (its sheet on the OECD's automatic-exchange portal, read 2026-10-30, is the residence sheet and says there are no direct taxation laws), so the number a life holds there is the National Insurance number. The National Insurance Board's Individual Registration page (read 2026-10-30, rendered in a browser since the site is built by script): everyone in gainful employment in The Bahamas, temporary, probationary, part-time or permanent, must register with the Board, before or as soon as possible after starting work, and on registration is assigned a National Insurance number, a unique eight-digit number that reflects the registrant's year and quarter of birth and sex and stays with them for life. So `when` is work, `who` workers, and `needed` work (the page makes registration a duty of everyone in gainful employment). Minors and non-Bahamians may also register (the page lists their papers), which the form's single `who` doesn't add. The digits' order isn't given, so the pattern draws any eight digits. No age, fee or time for the number is stated.",
+ "sources": [
+  {
+   "url": "https://www.nib-bahamas.com/registration/individual",
+   "title": "National Insurance Board of The Bahamas, Individual Registration",
+   "read": "2026-10-30",
+   "said": "All persons engaged in gainful employment in The Bahamas, whether employed on a temporary, probationary, part-time, or permanent basis, are required to register with the National Insurance Board. Registration should be completed before, or as soon as possible after, commencing employment. ... Upon registration, each individual is assigned a National Insurance number. This is a unique eight-digit number that specifically identifies the individual. The number reflects the registrant's year and quarter of birth, as well as their sex. ... Once assigned, the National Insurance number remains with the individual for life."
+  },
+  {
+   "url": "https://www.oecd.org/content/dam/oecd/en/topics/policy-issue-focus/aeoi/bahamas-tin.pdf",
+   "title": "OECD AEOI portal, The Bahamas (the jurisdiction's own sheet, filed under its TIN address)",
+   "read": "2026-10-30",
+   "said": "There are no direct taxation laws in The Bahamas"
+  }
+ ]
+}

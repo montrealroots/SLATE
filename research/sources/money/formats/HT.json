@@ -1,0 +1,70 @@
+{
+ "country": "HT",
+ "national": {
+  "name": "Routing number and account number",
+  "parts": [
+   {
+    "name": "Bank Number",
+    "length": 3,
+    "kind": "n"
+   },
+   {
+    "name": "Currency",
+    "length": 1,
+    "kind": "n"
+   },
+   {
+    "name": "Department",
+    "length": 2,
+    "kind": "n"
+   },
+   {
+    "name": "Branch",
+    "length": 2,
+    "kind": "n"
+   },
+   {
+    "name": "Check Digit",
+    "length": 1,
+    "kind": "n"
+   },
+   {
+    "name": "Account Number",
+    "length": 14,
+    "kind": "n",
+    "min": 1
+   }
+  ],
+  "bank": [
+   1,
+   3
+  ],
+  "checks": [
+   {
+    "over": [
+     1,
+     8
+    ],
+    "weights": [
+     3,
+     7,
+     1,
+     3,
+     7,
+     1,
+     3,
+     7
+    ]
+   }
+  ]
+ },
+ "note": "The Banque de la République d'Haïti's Standardisation des Chèques (its own page, published 2 August 2018, last modified 20 April 2019, read 2026-10-30), the specifications for the design of cheques: the MICR line carries, left to right, the routing number, the account number and the cheque number, all digits. The routing number is nine digits: the bank's number (3), a currency indicator (1 = dollar, 0 = gourde), the department (2: 00 Ouest, 10 Artibonite ... 90 Nippes), the branch (2: 00 the head office, 01 the first branch in the zone) and a check digit, CD = 10 less the sum of the first eight digits times the ABA's weights 3 7 1 3 7 1 3 7 taken modulo 10 (0 where that is 0), which is the form's weights check; the page's own worked numbers, 225000005 (bank 225, gourdes, head office at Port-au-Prince) and 225100002 (the same in dollars), pass it. The account number has at most 14 digits, padded with blanks on the left when shorter, so it is held as one to fourteen digits. Readings to check: the standard is the cheque's, read as the bank's routing and account number, which is how the form takes a number with its bank's code (as the United States'); the currency digit's two values and the departments' codes aren't held by the form, which takes any digit. No whole worked number (routing and account together) is published, so there's no example.",
+ "sources": [
+  {
+   "url": "https://www.brh.ht/standardisation-des-cheques/",
+   "title": "Banque de la République d'Haïti, Standardisation des Chèques (published 2 August 2018, modified 20 April 2019)",
+   "read": "2026-10-30",
+   "said": "Dans la ligne optique on trouve, de gauche à droite, le routing, le numéro de compte, le numéro du chèque ... Trois premiers chiffres : représentent le numéro de la banque ; ... Quatrième chiffre : l’indicateur de la monnaie (1 = dollar, 0 = gourde) ; ... Septième et Huitième chiffres : indiquent un siège (01 = première succursale dans la zone, 00 = siège social) ; ... Neuvième chiffre : « Check Digit (CD) », obtenu en utilisant l’algorithme suivant : CD = 10 – MODULO [SOMMEPRODUIT ((wl, pl), …, (w8, p8)), 10]. ... Les poids w1 à w8 sont choisis par le standard ABA comme étant 37137137, dans l’ordre. ... Siège social : 225000005 Gourdes ; ... Siège social : 225100002 Dollars ; ... Le numéro de compte comporte au maximum 14 chiffres + le symbole « on-us ». Si le numéro de compte comporte moins de 14 chiffres, il sera complété par des blancs à gauche."
+  }
+ ]
+}

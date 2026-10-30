@@ -1,0 +1,73 @@
+{
+ "country": "LV",
+ "routes": [
+  {
+   "id": "employed-worker",
+   "name": "Temporary residence permit (employed worker)",
+   "for": "work",
+   "apply": "abroad",
+   "fee": "100",
+   "within": {
+    "n": 30,
+    "unit": "day"
+   },
+   "renewable": true,
+   "work": "sponsor",
+   "permanentAfter": 5
+  },
+  {
+   "id": "self-employed",
+   "name": "Residence permit for a self-employed person",
+   "for": "self-employed",
+   "apply": "abroad",
+   "fee": "100",
+   "within": {
+    "n": 30,
+    "unit": "day"
+   },
+   "renewable": true,
+   "permanentAfter": 5
+  },
+  {
+   "id": "eu-registration",
+   "name": "Registration of an EU citizen with the Office of Citizenship and Migration Affairs",
+   "for": "free movement",
+   "groups": [
+    "EU"
+   ]
+  },
+  {
+   "id": "long-term-resident",
+   "name": "Long-term resident status",
+   "for": "permanent",
+   "work": "any"
+  }
+ ],
+ "note": "Latvia. The Office of Citizenship and Migration Affairs' own site (pmlp.gov.lv) and the legal database likumi.lv didn't answer from here on 2026-10-30 (no connection), so this file rests on secondary sources stating its rules, read that day: the European Commission's EU Immigration Portal pages 'Employed worker in Latvia' and 'Self-employed worker in Latvia' (which may be dated: they give a 2021 salary threshold), and the Spanish Embassy in Riga's page on EU citizens. A third-country worker staying over 90 days in half a year needs a temporary residence permit: the State Employment Agency's vacancy test, then the employer's invitation approved by the Office, after which the person applies at a Latvian diplomatic or consular mission abroad (abroad). The fee for examining the documents is 100 euros for up to 30 days (200 for 10 working days, 400 for 5; the ordinary kept, with its 30 days as the decision time). The permit is granted for the period of employment 'but not longer than five years' (a ceiling, so no term is kept) and is registered and renewed every year (renewable). 'Right to work is tied to a specific position and a specific employer' (work for the sponsor). The self-employed apply at a mission abroad for a permit granted 'for up to one year' (no term kept), renewable while the activity goes on and a set tax (9,960 euros a year) has been paid, the same examination fees; it 'allows access to any additional self-employed activity', which isn't the form's any work, so work is left out. Long-term resident status may be granted after at least five years' legal residence (5 kept as both permits' years to it), with means, Latvian and a residence; its holder has 'no restrictions to work' (any); where it is asked and its fee aren't on these pages. EU citizens may live in Latvia without a residence permit and register with the Office for stays over 90 days in a half-year (the Spanish Embassy's page, for Spaniards as EU citizens; whether EEA and Swiss citizens are the same isn't said there, so only the EU is named); what work registration allows isn't said there, so work is left out. Naturalisation isn't read here.",
+ "sources": [
+  {
+   "url": "https://home-affairs.ec.europa.eu/policies/migration-and-asylum/eu-immigration-portal/employed-worker-latvia_en",
+   "title": "European Commission, EU Immigration Portal, Employed worker in Latvia",
+   "read": "2026-10-30",
+   "said": "If you want to be admitted as a worker to reside in Latvia for a period longer than 90 days within half a year counting from the first day of entrance, you must obtain a temporary residence permit. ... Once the employer’s invitation is approved, a person can apply for a residence permit at the diplomatic or consular representative of the Republic of Latvia abroad. ... up to 30 days – 100 euros, ... The residence permit is granted for the period of employment but not longer than five years. ... Residence permit should be registered and renewed every year. ... Right to work is tied to a specific position and a specific employer. Changes are not allowed. ... A long-term resident status may be granted if you have resided legally in the Republic of Latvia for at least five years. ... If you have a long-term resident status, you have no restrictions to work in the Republic of Latvia.",
+   "kind": "secondary",
+   "quotes": "https://www.pmlp.gov.lv/en"
+  },
+  {
+   "url": "https://home-affairs.ec.europa.eu/policies/migration-and-asylum/eu-immigration-portal/self-employed-worker-latvia_en",
+   "title": "European Commission, EU Immigration Portal, Self-employed worker in Latvia",
+   "read": "2026-10-30",
+   "said": "Applications are submitted to a ... diplomatic or consular representative office of the Republic of Latvia abroad ... up to 30 days - 100 euros, ... Residence permits for self-employment are granted for up to one year. ... A third-country citizen can renew a residence permit if self-employed activities are still being carried out and if during the previous period of residence certain tax amount has been paid to the budget (9960 euros per year). ... The residence permit allows access to any additional self-employed activity. ... A long-term resident status may be granted if you have resided legally in the Republic of Latvia for at least five years",
+   "kind": "secondary",
+   "quotes": "https://www.pmlp.gov.lv/en"
+  },
+  {
+   "url": "https://www.exteriores.gob.es/Embajadas/riga/es/ViajarA/Paginas/Documentaci%C3%B3n-y-tr%C3%A1mites.aspx",
+   "title": "Embajada de España en Riga, Documentación y trámites",
+   "read": "2026-10-30",
+   "said": "Los españoles, como ciudadanos de la Unión Europea,  pueden residir en Letonia sin necesidad de una autorización de residencia. Si su duración se prevé superior a los 90 días por semestre, deberá registrarse en el Departamento de Ciudadanía y Migración de Letonia.",
+   "kind": "secondary",
+   "quotes": "https://www.pmlp.gov.lv/en"
+  }
+ ]
+}

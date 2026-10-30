@@ -16,8 +16,13 @@ export interface LicenceDocument {
   readonly name: string;
   /** The youngest it is issued to (for a licence, a full one). */
   readonly from?: number;
+  /** A citizen's, where a non-citizen pays another (`foreignFee`); by the year where `perYear`. */
   readonly fee: Money | null;
+  readonly foreignFee?: Money;
+  readonly perYear?: true;
   readonly validYears: number | null;
+  /** The age at which it ends, whichever comes first with its years. */
+  readonly untilAge?: number;
 }
 
 export interface Licence {

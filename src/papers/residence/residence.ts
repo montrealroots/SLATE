@@ -16,15 +16,16 @@ export interface ResidenceRoute {
   /** As the government names it. */
   readonly name: string;
   readonly for: 'work' | 'self-employed' | 'talent' | 'family' | 'study' | 'means' | 'retirement' | 'permanent' | 'free movement';
-  readonly apply: 'abroad' | 'in country' | 'either';
+  /** Where it is applied for; absent where the research's source doesn't say. */
+  readonly apply?: 'abroad' | 'in country' | 'either';
   readonly fee?: Money;
   /** The longest a decision takes as the office publishes it. */
   readonly within?: { readonly n: number; readonly unit: string };
   /** How long a grant lasts. */
   readonly term?: { readonly n: number; readonly unit: 'day' | 'week' | 'month' | 'year' };
   readonly renewable?: true;
-  /** The work it allows: any, only for the sponsor named, or none. */
-  readonly work: 'any' | 'sponsor' | 'none';
+  /** The work it allows: any, only for the sponsor named, or none; absent where the research's source doesn't say. */
+  readonly work?: 'any' | 'sponsor' | 'none';
   /** Its years count toward naturalisation's. */
   readonly counts?: true;
   /** The years on it after which permanent residence may be asked for. */
@@ -33,17 +34,24 @@ export interface ResidenceRoute {
   readonly groups?: readonly string[];
 }
 
-const RESIDENCE = data as unknown as Record<string, { readonly routes: readonly ResidenceRoute[] } | { readonly issuedBy: string }>;
+const RESIDENCE = data as unknown as Record<string, { readonly routes: readonly ResidenceRoute[] } | { readonly issuedBy: string } | { readonly free: true }>;
 
 /** Whether the game keeps how someone from abroad may live in a country. */
 export const keepsResidence = (country: CountryCode) => Object.hasOwn(RESIDENCE, country);
 
-/** The routes by which someone from abroad may live in a country, its own or the ones it follows; undefined where the game doesn't keep them. */
+/**
+ * The routes by which someone from abroad may live in a country, its own or the ones it follows; none where no permit is
+ * needed at all (`needsNoPermit`); undefined where the game doesn't keep them.
+ */
 export function residenceRoutes(country: CountryCode): readonly ResidenceRoute[] | undefined {
   const entry = RESIDENCE[country];
   if (entry === undefined) return undefined;
+  if ('free' in entry) return [];
   return 'issuedBy' in entry ? residenceRoutes(entry.issuedBy as CountryCode) : entry.routes;
 }
+
+/** Whether anyone may live and work in a place with no permit of any kind; undefined where the game doesn't keep it. */
+export const needsNoPermit = (country: CountryCode): boolean | undefined => (keepsResidence(country) ? 'free' in (RESIDENCE[country] as object) : undefined);
 
 export const UNKEPT_LINE = 'residence.unkept';
 

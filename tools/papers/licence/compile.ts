@@ -10,7 +10,8 @@ import { amount, checkIssuers, compileIssued, currencyIn, isRecord, isWhole, onl
  * (research/sources/papers/licence/<CC>.json) or, where the country's first-level regions issue their own (the United
  * States' states and DC, Canada's provinces, Australia's states), a region's, by the gazetteer's key for it
  * (<CC>.<region>.json, as US.CA.json); a country is kept one way or the other, never both. Each names its issuer and
- * gives the full licence (its name, the age it is held from, its fee and the years it lasts) and the identity card the
+ * gives the full licence (its name, the age it is held from, its fee (a non-citizen's too where it differs, and whether
+ * it's charged by the year), the years it lasts and the age it ends at, where one is set) and the identity card the
  * office issues to someone who doesn't drive, either or both, with the licences it exchanges without a test. A fee or
  * a term the research hasn't read is null. A territory whose licences are another country's says whose (`issuedBy`).
  * No file was written when the engine was built (2026-10-30); then nothing is compiled.
@@ -23,9 +24,15 @@ export interface Document {
   name: string;
   /** The youngest it is issued to (for a licence, a full one). */
   from?: number;
-  /** In the currency's minor units, or null where it isn't known. */
+  /** In the currency's minor units, or null where it isn't known: a citizen's, where a non-citizen pays another. */
   fee: Money | null;
+  /** What a non-citizen pays, where the office charges one more (Malaysia's, Cayman's). */
+  foreignFee?: Money;
+  /** The fee is charged for each year the licence is held for (Malaysia's, bought for one to five years). */
+  perYear?: true;
   validYears: number | null;
+  /** The age at which it ends, whichever comes first with its years (Taiwan's runs to 70, Slovakia's to 70 at most). */
+  untilAge?: number;
 }
 
 export interface Licence {
@@ -42,12 +49,24 @@ const onMap = (key: unknown) => Object.hasOwn(countries, key as PropertyKey) || 
 
 function document(d: unknown, at: string, currency: () => string, needsAge: boolean): Document {
   if (!isRecord(d)) throw new Error(`${at} is not an object`);
-  only(d, ['name', 'from', 'fee', 'validYears'], at);
-  const { name, from, fee, validYears } = d;
+  only(d, ['name', 'from', 'fee', 'foreignFee', 'perYear', 'validYears', 'untilAge'], at);
+  const { name, from, fee, foreignFee, perYear, validYears, untilAge } = d;
   if (typeof name !== 'string' || name === '') throw new Error(`${at} needs its name`);
   if (from === undefined ? needsAge : !isWhole(from, 0)) throw new Error(`${at} is issued from a whole age`);
   if (validYears !== null && !isWhole(validYears, 1)) throw new Error(`${at} is valid a whole number of years, or null`);
   const out: Document = { name, fee: fee === null ? null : amount(fee, currency(), `${at}'s fee`), validYears };
+  if (foreignFee !== undefined) {
+    if (out.fee === null) throw new Error(`${at} charges a non-citizen another fee only beside a citizen's`);
+    out.foreignFee = amount(foreignFee, currency(), `${at}'s foreign fee`);
+  }
+  if (perYear !== undefined) {
+    if (perYear !== true || out.fee === null) throw new Error(`${at}'s fee is by the year only as perYear: true, beside a fee`);
+    out.perYear = true;
+  }
+  if (untilAge !== undefined) {
+    if (!isWhole(untilAge, 1) || untilAge <= ((from as number | undefined) ?? 0)) throw new Error(`${at} ends at a whole age above the one it's issued from`);
+    out.untilAge = untilAge;
+  }
   return from === undefined ? out : { ...out, from: from as number };
 }
 

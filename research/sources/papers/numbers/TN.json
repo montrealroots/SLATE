@@ -1,0 +1,28 @@
+{
+ "country": "TN",
+ "name": "identifiant unique citoyen (the citizen's unique identifier)",
+ "issuer": "the ministry in charge of local affairs, which keeps the Registre de l'identifiant unique citoyen, from the civil-status registers",
+ "format": {
+  "length": 11,
+  "pattern": "^\\d{11}$"
+ },
+ "when": "birth",
+ "who": [
+  "citizens"
+ ],
+ "note": "Decree-law 2020-17 of 12 May 2020 on the citizen's unique identifier and government decree 2020-312 of 15 May 2020 fixing its content and technical specifications, read 2026-10-30 in their French texts as DCAF's Tunisian security-legislation database holds them (the Journal officiel's own site wasn't reached). The decree-law founds the register, kept by the ministry in charge of local affairs, and gives the identifier to every person of Tunisian nationality entered in the civil register of births, to Tunisians born abroad entered at a mission, and to those naturalised (art. 3); so `when` is birth and `who` citizens (a naturalised person's comes at naturalisation, which the form doesn't hold apart). Decree 2020-312, art. 2: eleven digits, from left to right one additional digit, eight random sequential digits and a two-digit control and verification key. The key's algorithm isn't stated, so no check is held and the pattern takes any eleven digits. Art. 3 forbids an identifier revealing anything of its holder and giving one person several. The national identity card's number (law 93-27 as amended by organic law 2024-22, read the same day) is the card's, printed on it, and the law gives it no length; it isn't this number. No fee, time or age for the identifier is stated, and no text read says what needs one (art. 19 bars bodies from asking a citizen for data the register holds), so `needed` is left out.",
+ "sources": [
+  {
+   "url": "https://legislation-securite.tn/latest-laws/decret-loi-du-chef-du-gouvernement-n-2020-17-du-12-mai-2020-relatif-a-lidentifiant-unique-du-citoyen/",
+   "title": "Décret-loi du Chef du Gouvernement n° 2020-17 du 12 mai 2020, relatif à l'identifiant unique du citoyen (DCAF's Tunisia legal database)",
+   "read": "2026-10-30",
+   "said": "Il est institué un registre dénommé « Registre de l’identifiant unique citoyen ». Il est tenu et géré par le ministère chargé des affaires locales. ... L’identifiant unique citoyen est attribué à toute personne physique : ayant la nationalité tunisienne, inscrite sur le registre des naissances de l’état civil, de nationalité tunisienne née dans un pays étranger, inscrite auprès de la mission diplomatique ou consulaire accréditée dans ce pays, ayant acquis la nationalité tunisienne par voie de naturalisation."
+  },
+  {
+   "url": "https://legislation-securite.tn/latest-laws/decret-gouvernemental-n-2020-312-du-15-mai-2020-fixant-le-contenu-et-les-specifications-techniques-de-lidentifiant-unique-du-citoyen-et-les-regles-regissant-la-tenue-et-la-gestion-de-son-regi/",
+   "title": "Décret gouvernemental n° 2020-312 du 15 mai 2020, fixant le contenu et les spécifications techniques de l'identifiant unique du citoyen et les règles régissant la tenue et la gestion de son registre (DCAF's Tunisia legal database)",
+   "read": "2026-10-30",
+   "said": "L’identifiant unique citoyen désigné ci-après par « l’identifiant », comprend une série de onze (11) chiffres composés de gauche à droite de trois (3) groupes consécutifs qui se succèdent : un chiffre supplémentaire, huit chiffres séquentiels aléatoires, une Clé de contrôle et de vérification à deux chiffres. ... Il est également interdit d’attribuer le même identifiant à plusieurs personnes ou d’attribuer à une personne plusieurs identifiants."
+  }
+ ]
+}
