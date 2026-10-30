@@ -3,7 +3,7 @@ import { mkdirSync, mkdtempSync, readFileSync, writeFileSync } from 'node:fs';
 import { tmpdir } from 'node:os';
 import { join, resolve } from 'node:path';
 import { describe, expect, it } from 'vitest';
-import { compileCountry, OUTPUT, readCredit, serialize, SOURCES } from '../../tools/money/credit/compile.ts';
+import { compileCountry, GAME_REPORT, OUTPUT, readCredit, serialize, SOURCES } from '../../tools/money/credit/compile.ts';
 import { COVERAGE, coverageOf, creditCoverage, serializeCoverage, TESTS, TOLD } from '../../tools/money/credit/coverage.ts';
 import { NO_PLACES } from '../../tools/papers/passports/coverage.ts';
 
@@ -20,6 +20,11 @@ describe('the credit records compile', () => {
     for (const bureau of [undefined, '', ' B', 7]) expect(() => compileCountry('US', { country: 'US', bureau, report: 30, keep: 7 }), String(bureau)).toThrow('US names the bureau that keeps the record');
     for (const report of [0, 366, 1.5, '30', undefined]) expect(() => compileCountry('US', { country: 'US', bureau: 'B', report, keep: 7 }), String(report)).toThrow("US's report is the days after a due date a late payment is reported, from 1 to 365");
     for (const keep of [0, 31, 6.5, '7', undefined]) expect(() => compileCountry('US', { country: 'US', bureau: 'B', report: 30, keep }), String(keep)).toThrow("US's keep is the whole years a late payment stays, from 1 to 30");
+    // No source stating the days: the game's reading, marked so.
+    expect(GAME_REPORT).toBe(30);
+    expect(compileCountry('MX', { country: 'MX', bureau: 'B', reportGame: true, keep: 6 })).toStrictEqual({ bureau: 'B', report: 30, keep: 6, game: true });
+    for (const f of [{ reportGame: false }, { reportGame: 'true' }, { reportGame: true, report: 30 }]) expect(() => compileCountry('MX', { country: 'MX', bureau: 'B', keep: 6, ...f }), JSON.stringify(f)).toThrow("MX states its days to report, or marks them the game's (reportGame: true), not both");
+    expect(() => compileCountry('MX', { country: 'MX', bureau: 'B', reportGame: true, keep: 0 })).toThrow("MX's keep is the whole years a late payment stays, from 1 to 30");
   });
 
   it('reads only the files the register cites, at the hash it cites', () => {

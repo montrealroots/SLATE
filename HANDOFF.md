@@ -335,12 +335,12 @@ restarts. Read `CLAUDE.md` and the owner's package in `docs/` first.
   late payment is reported (`report`), and the years it stays (`keep`), from the law, the regulator or the bureau
   (research/sources/money/credit/<CC>.json, register facts money.credit.<CC>), compiled by `tools/money/credit`. A late
   payment marks the record for the country's years; the record's standing is the game's reading, said as the game's: 1000
-  less 250 for each mark still kept, down to 0, which prices a card's range (`priced`). Matrix (2026-10-30): 13
-  researched (US, GB, CA, AU, IE, DE, FR, ES, IT, NL, BE, FI, JP), 6 proven, 233 pending. Read and not yet enough:
-  China (the State Council's regulation keeps adverse information five years, art. 16; no primary source yet for when a
-  missed payment is reported), Sweden (the Credit Information Act keeps it three years, s. 8), Denmark (the Data
-  Protection Act's five years, s. 20(3); its four-week notice is for public debt only), Portugal (Banco de Portugal's
-  instruction answers with a bot check).
+  less 250 for each mark still kept, down to 0, which prices a card's range (`priced`). Matrix (2026-10-30): 18
+  researched (US, GB, CA, AU, IE, DE, FR, ES, IT, NL, BE, FI, JP, CN, SE, DK, MX, BR), 6 proven, 228 pending. Where no
+  source states the days after a due date a late payment is reported, the file marks them the game's (`reportGame`):
+  the bureau's next monthly update, 30 days, compiled with `game: true` for the money screen to say so (China, Sweden,
+  Denmark, Mexico, Brazil). Mexico's retention steps with the debt's size in UDIs (12 to 72 months); the game keeps the
+  72. Portugal: Banco de Portugal's instruction answers with a bot check.
  A monthly reporting cycle with no stated threshold
   (Britain's status codes, Ireland's Central Credit Register, Equifax Canada's 30-day reporting) is written as 30 days;
   Germany's 28 is BDSG § 31's four weeks from a first reminder sent at the due date. canada.ca refuses this

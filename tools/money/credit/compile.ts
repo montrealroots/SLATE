@@ -9,6 +9,8 @@ import countries from '../../../src/world/gazetteer/countries.json' with { type:
  * register entry cites before a byte of it is read: the bureau or registry that keeps a person's record of credit
  * (`bureau`, as it names itself), how many days after a payment's due date it's reported late (`report`), and how many
  * years a late payment stays on the record from then (`keep`), as the law, the regulator or the bureau itself states.
+ * Where none of them states the days, the file says so (`reportGame`), and the days are the game's reading: a late
+ * payment reaches the record at the bureau's next monthly update, 30 days, said to the player as the game's.
  */
 export const SOURCES = 'research/sources/money/credit';
 export const OUTPUT = 'src/money/credit/credit.json';
@@ -17,7 +19,12 @@ export interface Record {
   bureau: string;
   report: number;
   keep: number;
+  /** The days to report are the game's reading, no source stating them. */
+  game?: true;
 }
+
+/** The game's reading of the days to report, where no source states them: the bureau's next monthly update. */
+export const GAME_REPORT = 30;
 
 const named = (s: unknown) => typeof s === 'string' && s !== '' && s.trim() === s;
 
@@ -25,10 +32,14 @@ const named = (s: unknown) => typeof s === 'string' && s !== '' && s.trim() === 
 export function compileCountry(code: string, file: { [key: string]: unknown }): Record {
   if (!Object.hasOwn(countries, code)) throw new Error(`${code} is not a country on the map`);
   if (file['country'] !== code) throw new Error(`${code}'s file is for ${String(file['country'])}`);
-  const { bureau, report, keep } = file;
+  const { bureau, report, keep, reportGame } = file;
   if (!named(bureau)) throw new Error(`${code} names the bureau that keeps the record`);
-  if (!Number.isInteger(report) || (report as number) < 1 || (report as number) > 365) throw new Error(`${code}'s report is the days after a due date a late payment is reported, from 1 to 365`);
   if (!Number.isInteger(keep) || (keep as number) < 1 || (keep as number) > 30) throw new Error(`${code}'s keep is the whole years a late payment stays, from 1 to 30`);
+  if (reportGame !== undefined) {
+    if (reportGame !== true || report !== undefined) throw new Error(`${code} states its days to report, or marks them the game's (reportGame: true), not both`);
+    return { bureau: bureau as string, report: GAME_REPORT, keep: keep as number, game: true };
+  }
+  if (!Number.isInteger(report) || (report as number) < 1 || (report as number) > 365) throw new Error(`${code}'s report is the days after a due date a late payment is reported, from 1 to 365`);
   return { bureau: bureau as string, report: report as number, keep: keep as number };
 }
 
