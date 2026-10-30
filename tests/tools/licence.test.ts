@@ -45,6 +45,10 @@ describe('the licences compile', () => {
     const card = (untilAge: unknown) => compileLicence('DE', de({ licence: undefined, currency: 'EUR', card: { name: 'c', fee: null, validYears: null, untilAge } })).card;
     expect(card(1)?.untilAge).toBe(1);
     expect(() => card(0)).toThrow("DE's card ends at a whole age above the one it's issued from");
+    // For life: no years, no age it ends at.
+    expect(my({ forLife: true })?.forLife).toBe(true);
+    for (const bad of [{ forLife: false }, { forLife: 'yes' }, { forLife: true, validYears: 10 }, { forLife: true, untilAge: 70 }])
+      expect(() => my(bad), JSON.stringify(bad)).toThrow("DE's licence lasts for life only as forLife: true, with no years and no age it ends at");
   });
 
   it('refuses a licence that is not what it says it is', () => {

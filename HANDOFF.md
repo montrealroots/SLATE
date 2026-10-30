@@ -977,6 +977,34 @@ Wave 11 (2026-10-30, the lead's form work and two research subagents):
 - Standing: numbers 147 researched, 46 blocked, 53 pending; residence 183, 16, 47; licences 90, 9, 147; formats 149, 77,
   20 (Pitcairn's on the banks' fact; its stale formats blocker R-3757 taken out); banks 224, 22, 0.
 
+Wave 12 (2026-10-30, five research subagents on licences and the lead's form work):
+
+- Licences by region: Uruguay's 19 departments are written (each Intendencia under Law 18.191 art. 26 and the Congreso
+  de Intendentes' PUNC: category A from 18, 10 years; Florida's fee the only one in pesos, the rest in UR and left
+  null), and Mexico's states 24 of 32 (each state's own transit law and Ley de Ingresos or Hacienda; blocked behind
+  resets, captchas or Cloudflare: Estado de México, Sinaloa, Quintana Roo, Tlaxcala, Baja California Sur, Veracruz,
+  Oaxaca, Querétaro). Countries: Costa Rica, Ethiopia, New Caledonia, Oman, Benin, Honduras, Guam, Ecuador (press
+  quoting the ANT, secondary), Greenland, Pitcairn, Côte d'Ivoire, Armenia, New Zealand, Azerbaijan, Uganda, Mauritania,
+  and Pakistan's Islamabad (Pakistan by its regions, Punjab blocked). Held: Dominica (its 18 the learner's minimum).
+  Blocked with today's five attempts: 22 more, the Cocos Islands' banks among them (no current source shows the
+  Commonwealth Bank's agency still there; a Shire snapshot of 2026-09-14 is the first thing to read when the archive can
+  be).
+- The licence form takes `forLife` (a licence that never ends, where its source says so, its years then null; until this
+  day a null term couldn't tell "for life" from "not known"): Benin's "indéterminée", Pitcairn's "for the remainder of
+  his or her lifetime", San Luis Potosí's permanent licence. Mutation-tested at 100%.
+- Form gap found: a fee set in an index unit (Mexico's UMA, revalued each January; Uruguay's UR, revalued each month;
+  the passports' UI). A peso figure worked from the unit's current value is a number typed where a sum belongs and goes
+  stale, so such fees stand null with the unit's count in the note (Durango 6 UMA, Nayarit 8.5, Guerrero 3.55, Morelos
+  4.90, Tabasco 7.0, Oaxaca, Querétaro; seven Uruguayan departments). Closing it needs the units' official values by
+  date (INEGI's UMA, INE's UR) as research and a fee that names its unit and count.
+- Readings kept, to check: Mexican licence ages read from a minors' permit ending at the age of majority (Guanajuato,
+  Yucatán, Mexico City; San Luis Potosí, Michoacán, Campeche and Zacatecas by "mayoría de edad"), Chiapas and Durango at
+  16 (each calls the minors' card the automovilista licence itself), Chihuahua's fee as its office charges it though it
+  isn't its law's UMA figure, Campeche's fee from an image read by eye; Uruguay's age 18 that of the first permit,
+  provisional for two years, its 10 years the term after; Ethiopia's and Oman's ages built from their temporary
+  licences; Pitcairn's "over the age of 15 years" held as 15; Mauritania's fee null for the ouguiya's redenomination.
+- Standing: licences 107 researched, 30 blocked, 109 pending; banks 224, 22, 0.
+
 The older next steps below are kept as they were written.
 
 1. The weather's blockers

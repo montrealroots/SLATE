@@ -23,6 +23,8 @@ export interface LicenceDocument {
   readonly validYears: number | null;
   /** The age at which it ends, whichever comes first with its years. */
   readonly untilAge?: number;
+  /** It never ends; its years are then null. */
+  readonly forLife?: true;
 }
 
 export interface Licence {

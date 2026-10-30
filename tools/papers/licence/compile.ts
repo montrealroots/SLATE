@@ -11,10 +11,10 @@ import { amount, checkIssuers, compileIssued, currencyIn, isRecord, isWhole, onl
  * States' states and DC, Canada's provinces, Australia's states), a region's, by the gazetteer's key for it
  * (<CC>.<region>.json, as US.CA.json); a country is kept one way or the other, never both. Each names its issuer and
  * gives the full licence (its name, the age it is held from, its fee (a non-citizen's too where it differs, and whether
- * it's charged by the year), the years it lasts and the age it ends at, where one is set) and the identity card the
- * office issues to someone who doesn't drive, either or both, with the licences it exchanges without a test. A fee or
- * a term the research hasn't read is null. A territory whose licences are another country's says whose (`issuedBy`).
- * No file was written when the engine was built (2026-10-30); then nothing is compiled.
+ * it's charged by the year), the years it lasts and the age it ends at, where one is set, or that it lasts for life)
+ * and the identity card the office issues to someone who doesn't drive, either or both, with the licences it exchanges
+ * without a test. A fee or a term the research hasn't read is null. A territory whose licences are another country's
+ * says whose (`issuedBy`). No file was written when the engine was built (2026-10-30); then nothing is compiled.
  */
 export const SOURCES = 'research/sources/papers/licence';
 export const OUTPUT = 'src/papers/licence/licence.json';
@@ -33,6 +33,8 @@ export interface Document {
   validYears: number | null;
   /** The age at which it ends, whichever comes first with its years (Taiwan's runs to 70, Slovakia's to 70 at most). */
   untilAge?: number;
+  /** It never ends, where its source says so (Benin's "indéterminée", Pitcairn's for life); its years are then null. */
+  forLife?: true;
 }
 
 export interface Licence {
@@ -49,8 +51,8 @@ const onMap = (key: unknown) => Object.hasOwn(countries, key as PropertyKey) || 
 
 function document(d: unknown, at: string, currency: () => string, needsAge: boolean): Document {
   if (!isRecord(d)) throw new Error(`${at} is not an object`);
-  only(d, ['name', 'from', 'fee', 'foreignFee', 'perYear', 'validYears', 'untilAge'], at);
-  const { name, from, fee, foreignFee, perYear, validYears, untilAge } = d;
+  only(d, ['name', 'from', 'fee', 'foreignFee', 'perYear', 'validYears', 'untilAge', 'forLife'], at);
+  const { name, from, fee, foreignFee, perYear, validYears, untilAge, forLife } = d;
   if (typeof name !== 'string' || name === '') throw new Error(`${at} needs its name`);
   if (from === undefined ? needsAge : !isWhole(from, 0)) throw new Error(`${at} is issued from a whole age`);
   if (validYears !== null && !isWhole(validYears, 1)) throw new Error(`${at} is valid a whole number of years, or null`);
@@ -66,6 +68,10 @@ function document(d: unknown, at: string, currency: () => string, needsAge: bool
   if (untilAge !== undefined) {
     if (!isWhole(untilAge, 1) || untilAge <= ((from as number | undefined) ?? 0)) throw new Error(`${at} ends at a whole age above the one it's issued from`);
     out.untilAge = untilAge;
+  }
+  if (forLife !== undefined) {
+    if (forLife !== true || validYears !== null || untilAge !== undefined) throw new Error(`${at} lasts for life only as forLife: true, with no years and no age it ends at`);
+    out.forLife = true;
   }
   return from === undefined ? out : { ...out, from: from as number };
 }
