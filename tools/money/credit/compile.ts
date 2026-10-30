@@ -10,18 +10,27 @@ import countries from '../../../src/world/gazetteer/countries.json' with { type:
  * (`bureau`, as it names itself), how many days after a payment's due date it's reported late (`report`), and how many
  * years a late payment stays on the record from then (`keep`), as the law, the regulator or the bureau itself states.
  * Where none of them states the days, the file says so (`reportGame`), and the days are the game's reading: a late
- * payment reaches the record at the bureau's next monthly update, 30 days, said to the player as the game's.
+ * payment reaches the record at the bureau's next monthly update, 30 days, said to the player as the game's. Where the
+ * country's own regulator or law shows no bureau or registry keeps a person's record of credit, the file says that
+ * (`none: true`, with nothing else), and a late payment there marks no record.
  */
 export const SOURCES = 'research/sources/money/credit';
 export const OUTPUT = 'src/money/credit/credit.json';
 
-export interface Record {
+export interface Kept {
   bureau: string;
   report: number;
   keep: number;
   /** The days to report are the game's reading, no source stating them. */
   game?: true;
 }
+
+/** A country where no bureau or registry keeps a person's record of credit. */
+export interface None {
+  none: true;
+}
+
+export type Record = Kept | None;
 
 /** The game's reading of the days to report, where no source states them: the bureau's next monthly update. */
 export const GAME_REPORT = 30;
@@ -32,7 +41,11 @@ const named = (s: unknown) => typeof s === 'string' && s !== '' && s.trim() === 
 export function compileCountry(code: string, file: { [key: string]: unknown }): Record {
   if (!Object.hasOwn(countries, code)) throw new Error(`${code} is not a country on the map`);
   if (file['country'] !== code) throw new Error(`${code}'s file is for ${String(file['country'])}`);
-  const { bureau, report, keep, reportGame } = file;
+  const { bureau, report, keep, reportGame, none } = file;
+  if (none !== undefined) {
+    if (none !== true || bureau !== undefined || report !== undefined || keep !== undefined || reportGame !== undefined) throw new Error(`${code} keeps no record (none: true) and names nothing a record would have`);
+    return { none: true };
+  }
   if (!named(bureau)) throw new Error(`${code} names the bureau that keeps the record`);
   if (!Number.isInteger(keep) || (keep as number) < 1 || (keep as number) > 30) throw new Error(`${code}'s keep is the whole years a late payment stays, from 1 to 30`);
   if (reportGame !== undefined) {

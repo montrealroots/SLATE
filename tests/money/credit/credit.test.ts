@@ -2,7 +2,7 @@ import { describe, expect, it } from 'vitest';
 import { t } from '../../../src/core/text/text.ts';
 import { COUNTRY_CODES } from '../../../src/world/gazetteer/gazetteer.ts';
 import data from '../../../src/money/credit/credit.json';
-import { aboutCredit, CREDIT_START, creditIn, keepsCredit, MARK, record, reportAfter, standingOf, UNKEPT_LINE, type CreditSlice } from '../../../src/money/credit/credit.ts';
+import { aboutCredit, CREDIT_START, creditIn, keepsCredit, MARK, NONE_LINE, record, reportAfter, standingOf, UNKEPT_LINE, type CreditSlice } from '../../../src/money/credit/credit.ts';
 
 const YEAR = Math.round(365.25 * 86_400);
 
@@ -12,6 +12,8 @@ describe('credit', () => {
     expect(creditIn('US')).toStrictEqual({ bureau: 'Equifax, Experian and TransUnion', report: 30, keep: 7 });
     expect([reportAfter('US'), reportAfter('GB'), reportAfter('AQ')]).toEqual([30, 30, undefined]);
     expect(creditIn('AQ')).toBeUndefined();
+    // Luxembourg's central bank: no register of consumer credit, so nothing to report to.
+    expect([keepsCredit('LU'), creditIn('LU'), reportAfter('LU')]).toStrictEqual([true, { none: true }, undefined]);
     expect(CREDIT_START).toStrictEqual({ marks: [] });
   });
 
@@ -26,6 +28,8 @@ describe('credit', () => {
     expect(standingOf(credit, 2000)).toBe(1000 - 2 * MARK);
     // A country whose records the game doesn't keep marks nothing.
     record(credit, 'AQ', 3000);
+    // Nor does one where no bureau keeps a record.
+    record(credit, 'LU', 3000);
     expect(credit.marks).toHaveLength(2);
     for (let i = 0; i < 4; i += 1) record(credit, 'US', 4000);
     expect([MARK, standingOf(credit, 4000)]).toEqual([250, 0]);
@@ -36,5 +40,8 @@ describe('credit', () => {
     expect(aboutCredit('AQ')).toBe(t(UNKEPT_LINE, { country: 'Antarctica' }));
     expect(aboutCredit('AQ')).toBe("The credit records of Antarctica aren't known to this game yet.");
     expect(aboutCredit('US')).toBeUndefined();
+    expect(NONE_LINE).toBe('credit.none');
+    expect(aboutCredit('LU')).toBe(t(NONE_LINE, { country: 'Luxembourg' }));
+    expect(aboutCredit('LU')).toBe("No bureau in Luxembourg keeps a record of anyone's credit, so a late payment there leaves no mark.");
   });
 });

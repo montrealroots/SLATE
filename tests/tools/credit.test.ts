@@ -25,6 +25,9 @@ describe('the credit records compile', () => {
     expect(compileCountry('MX', { country: 'MX', bureau: 'B', reportGame: true, keep: 6 })).toStrictEqual({ bureau: 'B', report: 30, keep: 6, game: true });
     for (const f of [{ reportGame: false }, { reportGame: 'true' }, { reportGame: true, report: 30 }]) expect(() => compileCountry('MX', { country: 'MX', bureau: 'B', keep: 6, ...f }), JSON.stringify(f)).toThrow("MX states its days to report, or marks them the game's (reportGame: true), not both");
     expect(() => compileCountry('MX', { country: 'MX', bureau: 'B', reportGame: true, keep: 0 })).toThrow("MX's keep is the whole years a late payment stays, from 1 to 30");
+    // No bureau or registry at all: said so, and nothing a record would have.
+    expect(compileCountry('LU', { country: 'LU', none: true, note: 'x', sources: [] })).toStrictEqual({ none: true });
+    for (const f of [{ none: false }, { none: 'true' }, { none: true, bureau: 'B' }, { none: true, report: 30 }, { none: true, keep: 5 }, { none: true, reportGame: true }]) expect(() => compileCountry('LU', { country: 'LU', ...f }), JSON.stringify(f)).toThrow('LU keeps no record (none: true) and names nothing a record would have');
   });
 
   it('reads only the files the register cites, at the hash it cites', () => {

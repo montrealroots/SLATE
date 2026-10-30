@@ -8,21 +8,29 @@ import data from './credit.json' with { type: 'json' };
  * facts money.credit.<CC>): the bureau or registry that keeps them, how many days after its due date a payment is
  * reported late, and how many years a late payment stays. A holder's record is the late payments marked on it, each in
  * the country whose bureau keeps it and until the day its keeping ends. Where no source states the days to report, they
- * are the game's reading, the bureau's next monthly update, and marked so (`game`). A country whose records the game
- * doesn't keep marks nothing, and the player is told.
+ * are the game's reading, the bureau's next monthly update, and marked so (`game`). A country where no bureau or
+ * registry keeps a record (`none`) marks nothing, and the player is told so; one whose records the game doesn't know
+ * marks nothing either, and the player is told that.
  *
  * What a lender makes of a record is its own: no bureau or bank publishes how it scores one. The game's reading, said to
  * the player as the game's: a record with nothing on it stands at 1000, the best, and each late payment still kept takes
  * 250 from it, down to 0. A card priced within a range prices a holder by it (src/money/cards, `priced`).
  */
 
-export interface Record {
+export interface Kept {
   readonly bureau: string;
   readonly report: number;
   readonly keep: number;
   /** The days to report are the game's reading (the bureau's next monthly update), no source stating them. */
   readonly game?: true;
 }
+
+/** A country where no bureau or registry keeps a person's record of credit. */
+export interface None {
+  readonly none: true;
+}
+
+export type Record = Kept | None;
 
 export interface CreditSlice {
   marks: { country: string; at: number; until: number }[];
@@ -32,21 +40,27 @@ export const CREDIT_START: CreditSlice = { marks: [] };
 
 const DATA = data as unknown as { countries: { [code: string]: Record } };
 
-/** Whether the game keeps a country's credit records. */
+/** Whether the game knows a country's credit records, kept or shown to be none. */
 export const keepsCredit = (country: CountryCode) => Object.hasOwn(DATA.countries, country);
 
-/** A country's record keeping, where the game keeps it. */
+/** A country's record keeping, where the game knows it. */
 export const creditIn = (country: CountryCode): Record | undefined => DATA.countries[country];
 
-/** The days after a due date a late payment is reported in a country, where the game keeps its records. */
-export const reportAfter = (country: string): number | undefined => DATA.countries[country]?.report;
+/** A country's bureau and its terms, where one keeps a record. */
+const kept = (country: string): Kept | undefined => {
+  const r = DATA.countries[country];
+  return r === undefined || 'none' in r ? undefined : r;
+};
+
+/** The days after a due date a late payment is reported in a country, where a bureau keeps a record. */
+export const reportAfter = (country: string): number | undefined => kept(country)?.report;
 
 /** What one late payment kept on the record takes from the best standing, the game's reading. */
 export const MARK = 250;
 
-/** Marks a late payment on the record, kept the country's years from now; nothing where the game doesn't keep its records. */
+/** Marks a late payment on the record, kept the country's years from now; nothing where no bureau keeps one, or the game doesn't know. */
 export function record(credit: CreditSlice, country: string, at: number): void {
-  const keeping = DATA.countries[country];
+  const keeping = kept(country);
   if (keeping === undefined) return;
   credit.marks.push({ country, at, until: at + Math.round(keeping.keep * 365.25 * SECONDS_PER_DAY) });
 }
@@ -55,6 +69,11 @@ export function record(credit: CreditSlice, country: string, at: number): void {
 export const standingOf = (credit: CreditSlice, now: number): number => Math.max(0, 1000 - MARK * credit.marks.filter((m) => m.at <= now && now < m.until).length);
 
 export const UNKEPT_LINE = 'credit.unkept';
+export const NONE_LINE = 'credit.none';
 
-/** What the player is told about a country whose credit records the game doesn't keep. Nothing otherwise. */
-export const aboutCredit = (country: CountryCode): string | undefined => (keepsCredit(country) ? undefined : t(UNKEPT_LINE, { country: countryName(country) }));
+/** What the player is told about a country where no bureau keeps a record, or whose records the game doesn't know. Nothing otherwise. */
+export function aboutCredit(country: CountryCode): string | undefined {
+  const r = DATA.countries[country];
+  if (r === undefined) return t(UNKEPT_LINE, { country: countryName(country) });
+  return 'none' in r ? t(NONE_LINE, { country: countryName(country) }) : undefined;
+}
