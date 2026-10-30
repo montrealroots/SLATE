@@ -76,7 +76,7 @@ a place fills a column; a cell is the row's status in that engine's matrix, or b
 | ER | Eritrea | researched | researched | researched | researched | blocked | blocked | researched | researched | researched | researched | blocked | blocked | blocked | pending |
 | ES | Spain | researched | researched | researched | researched | researched | researched | researched | researched | researched | researched | researched | researched | researched | researched |
 | ET | Ethiopia | researched | researched | researched | researched | researched | researched | researched | researched | researched | researched | blocked | researched | blocked | pending |
-| FI | Finland | researched | researched | researched | researched | researched | researched | researched | researched | researched | researched | researched | researched | researched | pending |
+| FI | Finland | researched | researched | researched | researched | researched | researched | researched | researched | researched | researched | researched | researched | researched | researched |
 | FJ | Fiji | researched | researched | researched | researched | researched | researched | researched | researched | researched | researched | researched | researched | researched | pending |
 | FK | Falkland Islands | researched | researched | researched | blocked | researched | blocked | researched | blocked | researched | researched | researched | blocked | blocked | pending |
 | FM | Micronesia | researched | researched | researched | researched | blocked | researched | researched | researched | researched | researched | blocked | researched | blocked | pending |
@@ -120,7 +120,7 @@ a place fills a column; a cell is the row's status in that engine's matrix, or b
 | JE | Jersey | researched | researched | researched | researched | researched | researched | researched | researched | researched | researched | blocked | researched | researched | pending |
 | JM | Jamaica | researched | researched | researched | researched | researched | researched | researched | researched | researched | researched | researched | researched | researched | pending |
 | JO | Jordan | researched | researched | researched | researched | researched | researched | researched | researched | researched | researched | researched | researched | researched | pending |
-| JP | Japan | researched | researched | researched | researched | researched | researched | researched | researched | researched | researched | researched | researched | researched | pending |
+| JP | Japan | researched | researched | researched | researched | researched | researched | researched | researched | researched | researched | researched | researched | researched | researched |
 | KE | Kenya | researched | researched | researched | researched | researched | researched | researched | researched | researched | researched | researched | researched | researched | pending |
 | KG | Kyrgyzstan | researched | researched | researched | researched | researched | researched | blocked | researched | researched | researched | researched | researched | blocked | pending |
 | KH | Cambodia | researched | researched | researched | blocked | researched | researched | researched | researched | researched | researched | researched | researched | researched | pending |
