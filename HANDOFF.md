@@ -342,7 +342,7 @@ restarts. Read `CLAUDE.md` and the owner's package in `docs/` first.
   BJ, BF, CI, GW, ML, NE, SN, TG, NA, MU, KZ, GE, AM, RS, AL, MD, UZ, MN, AZ, LK, KH, BH, OM, NI, HN, CM, CF, CG,
   GA, GQ, TD, AX, BZ, LR, TL, DZ, SD, PS, LB, LY, YE, FJ, SC, CY; PR, GU, VI, AS, MP under the FCRA, whose "State"
   takes in every territory; GF, GP, MQ, RE, YT, BL, MF, PM through the IEDOM and NC, PF, WF through the IEOM, on the
-  FICP's rules), 6 proven, 63 blocked, 48 pending.
+  FICP's rules), 6 proven, 86 blocked, 25 pending.
   Where the country's own regulator or law shows no bureau
   or registry keeps a person's record of credit, the file says so (`none: true`, nothing else), a late payment there
   marks nothing, and the player is told so (`credit.none`): Luxembourg, whose central bank says it has no register of
@@ -375,12 +375,15 @@ restarts. Read `CLAUDE.md` and the owner's package in `docs/` first.
   Blocked (`money.credit.blocked.<CC>`, each after all five methods, the player told the record isn't known): MT, HK,
   ID, CX, CC, NF, LI, MC, AD, SM, CL, CR, AE, NG, BW, GH, MA, TN, SL, MZ, UA, KW, BY, KG, QA, JO, EG, MK, ME, BA, NP, GT,
   BO, PA, GG, JE, IM, GI, GL, FO, SJ (batch 1); BS, ZM, MW, BD, ET, TT, TJ, BT, MO, ZW, SZ, MG, PG, LA, MM, SB, WS, AW,
-  CW, SX, HT, VE (batch 2, 2026-10-30). Leads to retry: the Bahamas' 2017 Bill says five years after settlement (the Act
+  CW, SX, HT, VE (batch 2, 2026-10-30); BM, KY, TC, VG, BQ, FK, SH, GS, IO, TF, VA (batch 3, 2026-10-30, by a research
+  subagent, checked against its saved pages); VU, TO, CK, FM, MH, PW, KI, NR, TV, NU, TK, PN (batch 4, 2026-10-30, the same way).
+  Leads: Vanuatu's 2025 Financial Institutions (Amendment) Bill keeps bureau data six years (s.21A(4)); the Act was
+  gazetted (Daily Post, 20 December 2025) but its text wasn't found. Tonga's 2026 consultation draft would keep
+  default information seven years. Leads to retry: the Bahamas' 2017 Bill says five years after settlement (the Act
   as passed is behind laws.bahamas.gov.bs's 403); Haiti's Circular 105-2 sets monthly reporting but no keeping period;
   Zambia's Act s.26 and Malawi's Act are behind unreachable or Cloudflare'd LII copies.
-  Pending (48), the web search budget of the 2026-10-30 session spent before their searches: AF, AO, BI, BM, BN, BQ, CD,
-  CK, CU, CV, DJ, EH, ER, FK, FM, GM, GN, GS, IO, IQ, IR, KI, KM, KP, KY, LS, MH, MR, MV, NR, NU, PN, PW, SH, SO, SR,
-  SS, ST, SY, TC, TF, TK, TM, TO, TV, VA, VG, VU. Notes already made: Brunei's Direction 1/2012 notice (members keep
+  Pending (25), the web search budget of the 2026-10-30 session spent before their searches, now with research subagents:
+  AF, AO, BI, BN, CD, CU, CV, DJ, EH, ER, GM, GN, IQ, IR, KM, KP, LS, MR, MV, SO, SR, SS, ST, SY, TM. Notes already made: Brunei's Direction 1/2012 notice (members keep
   data five years); the Maldives' CIB (monthly, no period); Lesotho's 2013 Regulations leave periods to the Central
   Bank's standards; Iraq, Mauritania and Syria's sections of the Arab guide state no period.
  A monthly reporting cycle with no stated threshold
