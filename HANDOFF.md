@@ -336,10 +336,11 @@ restarts. Read `CLAUDE.md` and the owner's package in `docs/` first.
   (research/sources/money/credit/<CC>.json, register facts money.credit.<CC>), compiled by `tools/money/credit`. A late
   payment marks the record for the country's years; the record's standing is the game's reading, said as the game's: 1000
   less 250 for each mark still kept, down to 0, which prices a card's range (`priced`).
-  Matrix (2026-10-30): 69 researched (US, GB, CA, AU, IE, DE, FR, ES, IT, NL, BE, FI, JP, CN, SE, DK, MX, BR, PL,
+  Matrix (2026-10-30): 76 researched (US, GB, CA, AU, IE, DE, FR, ES, IT, NL, BE, FI, JP, CN, SE, DK, MX, BR, PL,
   AT, HU, CH, RO, SI, HR, GR, NO, CZ, BG, SK, LT, LV, EE, PT, LU, IS, IN, KR, SG, MY, TW, PH, TH, PK, VN, AR, UY,
-  CO, PE, SV, DO, PY, EC; PR, GU, VI, AS, MP under the FCRA, whose "State" takes in every territory; GF, GP, MQ, RE,
-  YT, BL, MF, PM through the IEDOM and NC, PF, WF through the IEOM, on the FICP's rules), 6 proven, 177 pending.
+  CO, PE, SV, DO, PY, EC, IL, TR, SA, XK, KE, ZA, UG; PR, GU, VI, AS, MP under the FCRA, whose "State" takes in
+  every territory; GF, GP, MQ, RE, YT, BL, MF, PM through the IEDOM and NC, PF, WF through the IEOM, on the FICP's
+  rules), 6 proven, 170 pending.
   Where the country's own regulator or law shows no bureau
   or registry keeps a person's record of credit, the file says so (`none: true`, nothing else), a late payment there
   marks nothing, and the player is told so (`credit.none`): Luxembourg, whose central bank says it has no register of
@@ -349,7 +350,7 @@ restarts. Read `CLAUDE.md` and the owner's package in `docs/` first.
   source states the days after a due date a late payment is reported, the file marks them the game's (`reportGame`):
   the bureau's next monthly update, 30 days, compiled with `game: true` for the money screen to say so (China, Sweden,
   Denmark, Mexico, Brazil, Austria, Greece, Norway, Slovakia, Lithuania, Iceland, Singapore, Taiwan, the Philippines,
-  Thailand, Pakistan, Vietnam, Argentina, Uruguay, Peru, El Salvador, the Dominican Republic, Paraguay, Ecuador).
+  Thailand, Pakistan, Vietnam, Argentina, Uruguay, Peru, El Salvador, the Dominican Republic, Paraguay, Ecuador, Turkey, Saudi Arabia, Kosovo, South Africa, Uganda).
   Colombia's default stays twice as long as the delay (at most four years from payment); a payment a month or two
   late stays months, written as one year, the shortest the game keeps. Mexico's retention steps with the debt's size in UDIs (12 to 72 months); the game keeps the
   72. Portugal: the Banco de Portugal's instruction answers with a bot check, not passed, so Santander's guide to its

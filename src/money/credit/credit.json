@@ -1,7 +1,7 @@
 {
  "countries": {
   "AR": {
-   "bureau": "Central de Deudores (BCRA) and the credit bureaus",
+   "bureau": "archivos de datos sobre solvencia (credit data files)",
    "report": 30,
    "keep": 2,
    "game": true
@@ -60,7 +60,7 @@
    "game": true
   },
   "CO": {
-   "bureau": "operadores de información (Datacrédito Experian, TransUnion)",
+   "bureau": "operadores de información (credit bureaus)",
    "report": 30,
    "keep": 1
   },
@@ -81,7 +81,7 @@
    "game": true
   },
   "DO": {
-   "bureau": "Sociedades de Información Crediticia (TransUnion, DataCrédito)",
+   "bureau": "Sociedades de Información Crediticia",
    "report": 30,
    "keep": 4,
    "game": true
@@ -153,8 +153,13 @@
    "report": 30,
    "keep": 5
   },
+  "IL": {
+   "bureau": "מאגר נתוני אשראי (the Bank of Israel credit data register) and the credit bureaus",
+   "report": 30,
+   "keep": 3
+  },
   "IN": {
-   "bureau": "credit information companies (TransUnion CIBIL, Experian, Equifax, CRIF High Mark)",
+   "bureau": "credit information companies",
    "report": 12,
    "keep": 7
   },
@@ -174,8 +179,13 @@
    "report": 61,
    "keep": 5
   },
+  "KE": {
+   "bureau": "credit reference bureaus",
+   "report": 90,
+   "keep": 5
+  },
   "KR": {
-   "bureau": "NICE평가정보 and KCB (credit bureaus)",
+   "bureau": "NICE평가정보 and the other credit bureaus (CB사)",
    "report": 7,
    "keep": 3
   },
@@ -236,7 +246,7 @@
    "game": true
   },
   "PE": {
-   "bureau": "centrales privadas de información de riesgos (Equifax Infocorp, Experian, Sentinel) and the SBS Central de Riesgos",
+   "bureau": "centrales privadas de información de riesgos and the SBS Central de Riesgos",
    "report": 30,
    "keep": 2,
    "game": true
@@ -279,7 +289,7 @@
    "keep": 5
   },
   "PY": {
-   "bureau": "Burós de Información Crediticia (Informconf, Equifax) and the BCP Central de Riesgos",
+   "bureau": "burós de información crediticia (credit bureaus)",
    "report": 30,
    "keep": 5,
    "game": true
@@ -293,6 +303,12 @@
    "bureau": "Biroul de Credit",
    "report": 30,
    "keep": 4
+  },
+  "SA": {
+   "bureau": "credit information companies",
+   "report": 30,
+   "keep": 5,
+   "game": true
   },
   "SE": {
    "bureau": "kreditupplysningsföretag (credit reporting companies)",
@@ -324,15 +340,27 @@
    "game": true
   },
   "TH": {
-   "bureau": "บริษัท ข้อมูลเครดิตแห่งชาติ (National Credit Bureau)",
+   "bureau": "เครดิตบูโร (the credit bureau)",
    "report": 30,
    "keep": 3,
+   "game": true
+  },
+  "TR": {
+   "bureau": "Kredi Kayıt Bürosu (Findeks)",
+   "report": 30,
+   "keep": 10,
    "game": true
   },
   "TW": {
    "bureau": "財團法人金融聯合徵信中心 (Joint Credit Information Center)",
    "report": 30,
    "keep": 1,
+   "game": true
+  },
+  "UG": {
+   "bureau": "credit reference bureaus",
+   "report": 30,
+   "keep": 5,
    "game": true
   },
   "US": {
@@ -362,10 +390,22 @@
    "report": 60,
    "keep": 5
   },
+  "XK": {
+   "bureau": "Credit Registry of Kosovo (Central Bank of the Republic of Kosovo)",
+   "report": 30,
+   "keep": 5,
+   "game": true
+  },
   "YT": {
    "bureau": "FICP (Banque de France, through the IEDOM)",
    "report": 60,
    "keep": 5
+  },
+  "ZA": {
+   "bureau": "credit bureaus",
+   "report": 30,
+   "keep": 5,
+   "game": true
   }
  }
 }
