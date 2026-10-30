@@ -135,7 +135,12 @@ describe('the gate, end to end on a fixture', () => {
     // matrices written from them) are held by the gate's own run instead. Everything else must hold now; work declared
     // and not yet done (incomplete, such as pending research) is the gate's to report, not a break.
     // The repository's sources are dated as read, so it is held to the day the suite runs, as the gate's own run is.
-    const out = runGate(opts(ROOT, { today: new Date().toISOString().slice(0, 10) }));
+    // Under mutation testing this file runs in Stryker's sandbox (.stryker-tmp/sandbox-*), whose sources are instrumented:
+    // `defineCommand({ id: 'account.open' })` is rewritten around the literal, so the effects check found no declaration
+    // there and the run of 2026-10-30 failed on 26 findings no real tree has. The gate's code (mutated or not) is held to
+    // the checkout the sandbox sits in, which is the repository as committed.
+    const repository = ROOT.replace(/[\\/]\.stryker-tmp[\\/]sandbox-[^\\/]+$/, '');
+    const out = runGate(opts(repository, { today: new Date().toISOString().slice(0, 10) }));
     const runOnly = /^(the row's test didn't pass in this run|no passing test falsifies|the engine reads a place, so a passing test)/;
     const findings = out.results
       .filter((r) => r.check !== 'generated')
