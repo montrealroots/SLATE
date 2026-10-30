@@ -1,7 +1,7 @@
 import { describe, expect, it, vi } from 'vitest';
 import { t } from '../../../src/core/text/text.ts';
 import { money } from '../../../src/core/money/money.ts';
-import { aboutLicence, feeOn, licenceAt, termFeeOn, UNKEPT_LINE } from '../../../src/papers/licence/licence.ts';
+import { aboutLicence, feeOn, licenceAt, NONE_LINE, termFeeOn, UNKEPT_LINE } from '../../../src/papers/licence/licence.ts';
 
 /**
  * No office's research was written when the engine was built (2026-10-30), so its reads are held here on a few
@@ -11,7 +11,7 @@ const { NY, DE } = vi.hoisted(() => ({
   NY: { issuer: 'New York State Department of Motor Vehicles', card: { name: 'Non-driver ID card', fee: { currency: 'USD', minor: 1400 }, validYears: 8 } },
   DE: { issuer: 'Fahrerlaubnisbehörde', licence: { name: 'Führerschein Klasse B', from: 18, fee: null, validYears: 15 } },
 }));
-vi.mock('../../../src/papers/licence/licence.json', () => ({ default: { 'US.NY': NY, DE, AT: { issuedBy: 'DE' }, CX: { issuedBy: 'US.NY' } } }));
+vi.mock('../../../src/papers/licence/licence.json', () => ({ default: { 'US.NY': NY, DE, AT: { issuedBy: 'DE' }, CX: { issuedBy: 'US.NY' }, IO: { none: true } } }));
 
 describe('the licences', () => {
   it('charge a fee as it stands, or a count of an index unit at its value on the day, with what the office adds', () => {
@@ -47,6 +47,12 @@ describe('the licences', () => {
     expect(licenceAt({ country: 'US', region: 'US.NJ' })).toBeUndefined();
     expect(licenceAt({ country: 'US', region: '' })).toBeUndefined();
     expect(licenceAt({ country: 'LY', region: 'LY.77' })).toBeUndefined();
+  });
+
+  it('say where a place issues no licence of its own', () => {
+    expect([licenceAt({ country: 'IO', region: '' }), NONE_LINE]).toEqual([undefined, 'licence.none']);
+    expect(aboutLicence({ country: 'IO', region: '' })).toBe(t(NONE_LINE, { place: 'British Indian Ocean Territory' }));
+    expect(aboutLicence({ country: 'IO', region: '' })).toBe('British Indian Ocean Territory issues no driving licence of its own: drivers there hold one from elsewhere.');
   });
 
   it("tell the player what the game doesn't know", () => {

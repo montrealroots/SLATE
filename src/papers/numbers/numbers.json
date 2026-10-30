@@ -793,6 +793,18 @@
    "tax"
   ]
  },
+ "GI": {
+  "name": "taxpayer reference number",
+  "issuer": "the Income Tax Office",
+  "format": {
+   "min": 1,
+   "pattern": "^\\d+$"
+  },
+  "when": "registration",
+  "who": [
+   "anyone"
+  ]
+ },
  "GL": {
   "issuedBy": "DK"
  },
@@ -1127,6 +1139,31 @@
    "tax"
   ]
  },
+ "LA": {
+  "name": "Taxpayer Identification Number (TIN)",
+  "issuer": "the Tax Department of the Ministry of Finance",
+  "format": {
+   "length": 12,
+   "pattern": "^\\d{9}[09]\\d{2}$"
+  },
+  "when": "registration",
+  "who": [
+   "anyone"
+  ]
+ },
+ "LC": {
+  "name": "Tax Identification Number (TIN)",
+  "issuer": "the Inland Revenue Department",
+  "format": {
+   "length": 6,
+   "min": 1,
+   "pattern": "^\\d{1,6}$"
+  },
+  "when": "application",
+  "who": [
+   "anyone"
+  ]
+ },
  "LI": {
   "name": "Personenidentifikationsnummer (PEID)",
   "issuer": "the Central Person Register (Zentrales Personenregister, ZPR), run by the Amt für Informatik",
@@ -1155,6 +1192,21 @@
    "citizens"
   ],
   "from": 15
+ },
+ "LS": {
+  "name": "Taxpayer Identification Number (TIN)",
+  "issuer": "the Revenue Services Lesotho (RSL)",
+  "format": {
+   "length": 10,
+   "pattern": "^\\d{10}$"
+  },
+  "when": "application",
+  "who": [
+   "anyone"
+  ],
+  "needed": [
+   "tax"
+  ]
  },
  "LT": {
   "name": "personal code",
@@ -1401,6 +1453,32 @@
    "tax"
   ]
  },
+ "NA": {
+  "name": "Identity number",
+  "issuer": "the Minister responsible for home affairs (the Ministry of Home Affairs, Immigration, Safety and Security), in the population register",
+  "format": {
+   "length": 11,
+   "pattern": "^\\d{11}$"
+  },
+  "when": "application",
+  "who": [
+   "citizens",
+   "residents"
+  ],
+  "from": 16
+ },
+ "NC": {
+  "name": "identifiant fiscal",
+  "issuer": "the Government of New Caledonia's tax services (impots.nc)",
+  "format": {
+   "length": 7,
+   "pattern": "^\\d{7}$"
+  },
+  "when": "application",
+  "who": [
+   "anyone"
+  ]
+ },
  "NF": {
   "issuedBy": "AU"
  },
@@ -1542,6 +1620,9 @@
   "needed": [
    "tax"
   ]
+ },
+ "PF": {
+  "issuedBy": "FR"
  },
  "PH": {
   "name": "Taxpayer Identification Number (TIN)",

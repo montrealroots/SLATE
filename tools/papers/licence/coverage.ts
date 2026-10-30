@@ -6,8 +6,10 @@ import { inputsOf, serializeBy } from '../numbers/coverage.ts';
 /**
  * The licences' coverage matrix (coverage/licence-countries.json), by country: researched where the country's own file
  * is compiled and cited (papers.licence.<CC>), or every one of its first-level regions' is (papers.licence.<CC>.<region>,
- * citing them all); blocked where the register holds the country's blocker (papers.licence.blocked.<CC>), else pending
- * (a country with some of its regions read and not all is pending); proven where it has no place of its own.
+ * citing them all); blocked where the register holds the country's blocker (papers.licence.blocked.<CC>), or where
+ * each of its regions is read or blocked and one at least blocked (papers.licence.blocked.<CC>.<region>, citing every
+ * region's fact: until 2026-10-30 such a country stood pending, its regions' blockers uncounted); else pending (a
+ * region neither read nor blocked); proven where it has no place of its own.
  */
 export const COVERAGE = 'coverage/licence-countries.json';
 
@@ -21,10 +23,14 @@ export function licenceCoverage(countries: readonly string[], withPlaces: Readon
     if (!withPlaces.has(key)) return { key, status: 'proven', tests: [NO_PLACES] };
     const own = read(key);
     if (own !== undefined) return { key, status: 'researched', register: [own], tests: TESTS };
-    const byRegion = regions.filter((r) => r.startsWith(`${key}.`)).map(read);
-    if (byRegion.length > 0 && byRegion.every((id) => id !== undefined)) return { key, status: 'researched', register: byRegion as string[], tests: TESTS };
+    const keys = regions.filter((r) => r.startsWith(`${key}.`));
+    const byRegion = keys.map(read);
+    if (keys.length > 0 && byRegion.every((id) => id !== undefined)) return { key, status: 'researched', register: byRegion as string[], tests: TESTS };
     const blocker = facts.get(`papers.licence.blocked.${key}`);
-    return blocker === undefined ? { key, status: 'pending' } : { key, status: 'blocked', register: [blocker], tests: [...TESTS, TOLD] };
+    if (blocker !== undefined) return { key, status: 'blocked', register: [blocker], tests: [...TESTS, TOLD] };
+    const settled = keys.map((r, i) => byRegion[i] ?? facts.get(`papers.licence.blocked.${r}`));
+    if (keys.length > 0 && settled.every((id) => id !== undefined)) return { key, status: 'blocked', register: settled as string[], tests: [...TESTS, TOLD] };
+    return { key, status: 'pending' };
   });
 }
 

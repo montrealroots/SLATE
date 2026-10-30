@@ -3,7 +3,7 @@ import { mkdirSync, mkdtempSync, readFileSync, writeFileSync } from 'node:fs';
 import { tmpdir } from 'node:os';
 import { join, resolve } from 'node:path';
 import { describe, expect, it } from 'vitest';
-import { checkLicences, compileLicence, feeOf, OUTPUT, readLicences, serialize, SOURCES } from '../../tools/papers/licence/compile.ts';
+import { checkLicences, compileLicence, compileNoLicence, feeOf, OUTPUT, readLicences, serialize, SOURCES } from '../../tools/papers/licence/compile.ts';
 import { compileIssued } from '../../tools/papers/numbers/compile.ts';
 import regions from '../../src/world/gazetteer/regions.json' with { type: 'json' };
 import { COVERAGE, coverageOf, licenceCoverage, TESTS, TOLD } from '../../tools/papers/licence/coverage.ts';
@@ -158,6 +158,13 @@ describe('the licences compile', () => {
     const wa = compileLicence('AU.08', { country: 'AU', region: 'AU.08', issuer: 'i', licence: { name: 'x', from: 19, fee: null, validYears: 5 } });
     expect(() => checkLicences({ 'AU.08': wa, CX: { issuedBy: 'AU.08' } })).not.toThrow();
     expect(() => checkLicences({ CX: { issuedBy: 'AU.08' } })).toThrow("CX's licences are AU.08's, which the game doesn't keep in its own right");
+    // A place that issues no licence of its own: no issuer may point at it.
+    expect(compileNoLicence('IO', { country: 'IO', none: true, note: 'n', sources: [] })).toStrictEqual({ none: true });
+    for (const none of [false, 'yes']) expect(() => compileNoLicence('IO', { country: 'IO', none }), String(none)).toThrow("IO's file says it issues no licence only as none: true");
+    expect(() => compileNoLicence('IO', { country: 'IO', none: true, licence: {} })).toThrow('IO, which issues no licence, has no term licence');
+    for (const [key, country] of [['IO', 'GB'], ['XX', 'XX'], ['US.NY', 'US']] as const) expect(() => compileNoLicence(key, { country, none: true }), key).toThrow(`${key}'s file is for ${country}, a country on the map`);
+    expect(() => checkLicences({ IO: { none: true }, DG: { issuedBy: 'IO' } })).toThrow("DG's licences are IO's, which issues none");
+    expect(() => checkLicences({ IO: { none: true } })).not.toThrow();
   });
 
   it('reads only files the register cites, a region by its key', () => {
@@ -215,6 +222,13 @@ describe('the licences coverage', () => {
     ]);
     expect(licenceCoverage(['CA'], new Set(['CA']), regions, new Set(['CA.08']), facts.set('papers.licence.blocked.CA', 'R-6'))[0]).toEqual({ key: 'CA', status: 'blocked', register: ['R-6'], tests: [...TESTS, TOLD] });
     expect(licenceCoverage(['CA'], new Set(['CA']), regions, new Set(['CA.08']), new Map())[0]).toEqual({ key: 'CA', status: 'pending' });
+    // Every region read or blocked, one at least blocked: blocked, citing each region's fact; one region neither: pending.
+    const regional = new Map([['papers.licence.CA.08', 'R-4'], ['papers.licence.blocked.CA.10', 'R-8']]);
+    expect(licenceCoverage(['CA'], new Set(['CA']), regions, new Set(['CA.08']), regional)[0]).toEqual({ key: 'CA', status: 'blocked', register: ['R-4', 'R-8'], tests: [...TESTS, TOLD] });
+    expect(licenceCoverage(['CA'], new Set(['CA']), [...regions, 'CA.11'], new Set(['CA.08']), regional)[0]).toEqual({ key: 'CA', status: 'pending' });
+    // A region blocked and read stands read; a region cited but not compiled, and blocked, stands blocked.
+    expect(licenceCoverage(['CA'], new Set(['CA']), regions, new Set(['CA.08']), new Map([...regional, ['papers.licence.CA.10', 'R-9']]))[0]).toEqual({ key: 'CA', status: 'blocked', register: ['R-4', 'R-8'], tests: [...TESTS, TOLD] });
+    expect(licenceCoverage(['CA'], new Set(['CA']), regions, new Set(['CA.08', 'CA.10']), new Map([...regional, ['papers.licence.CA.10', 'R-9']]))[0]).toEqual({ key: 'CA', status: 'researched', register: ['R-4', 'R-9'], tests: TESTS });
     expect(TESTS).toEqual(["tests/papers/licence/licence.test.ts::the licences > are each office's own", 'tests/papers/licence/licence.places.test.ts::the licences > for every place on the map']);
     expect(TOLD).toBe("tests/papers/licence/licence.test.ts::the licences > tell the player what the game doesn't know");
   });

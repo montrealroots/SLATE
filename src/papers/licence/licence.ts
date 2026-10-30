@@ -76,22 +76,27 @@ export function termFeeOn(term: NonNullable<LicenceDocument['terms']>[number], d
 
 type Where = Pick<Place, 'country' | 'region'>;
 
-const LICENCES = data as unknown as Record<string, Licence | { readonly issuedBy: string }>;
+const LICENCES = data as unknown as Record<string, Licence | { readonly issuedBy: string } | { readonly none: true }>;
 
 /** The licence and card a place's office issues: its country's, else its region's, or those of the country its country follows; undefined where the game doesn't keep them. */
 export function licenceAt({ country, region }: Where): Licence | undefined {
   const entry = LICENCES[country] ?? LICENCES[region];
-  if (entry === undefined) return undefined;
+  if (entry === undefined || 'none' in entry) return undefined;
   // The compile holds every issuer named as a place kept in its own right: a country kept whole, or a region
   // (Christmas Island's licences are Western Australia's).
   return 'issuedBy' in entry ? (LICENCES[entry.issuedBy] as Licence) : entry;
 }
 
 export const UNKEPT_LINE = 'licence.unkept';
+export const NONE_LINE = 'licence.none';
 
-/** What the player is told about a place whose licences the game doesn't keep, named by its region where its country's regions issue their own. Nothing otherwise. */
+/**
+ * What the player is told about a place that issues no licence of its own, or whose licences the game doesn't keep
+ * (named by its region where its country's regions issue their own). Nothing otherwise.
+ */
 export function aboutLicence(where: Where): string | undefined {
   if (licenceAt(where) !== undefined) return undefined;
+  if (LICENCES[where.country] !== undefined && 'none' in (LICENCES[where.country] as object)) return t(NONE_LINE, { place: countryName(where.country) });
   const byRegion = Object.keys(LICENCES).some((key) => key.startsWith(`${where.country}.`));
   return t(UNKEPT_LINE, { place: (byRegion ? regionName(where.region) : undefined) ?? countryName(where.country) });
 }

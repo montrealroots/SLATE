@@ -506,7 +506,15 @@
   },
   {
    "key": "CK",
-   "status": "pending"
+   "status": "blocked",
+   "register": [
+    "R-4113"
+   ],
+   "tests": [
+    "tests/money/formats/formats.test.ts::account numbers > are drawn and checked in each country's own form",
+    "tests/money/formats/formats.places.test.ts::account numbers > for every place on the map",
+    "tests/money/formats/formats.test.ts::account numbers > tell the player what the game doesn't know"
+   ]
   },
   {
    "key": "CL",

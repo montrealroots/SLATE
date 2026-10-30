@@ -107,7 +107,12 @@ export interface Licence {
   exchange?: string[];
 }
 
-export type Entry = Licence | Issued;
+/** A place that issues no driving licence of its own (the British Indian Ocean Territory, whose drivers hold another country's). */
+export interface NoLicence {
+  none: true;
+}
+
+export type Entry = Licence | Issued | NoLicence;
 
 const onMap = (key: unknown) => Object.hasOwn(countries, key as PropertyKey) || Object.hasOwn(regions, key as PropertyKey);
 
@@ -217,10 +222,21 @@ export function compileLicence(key: string, file: Record<string, unknown>): Lice
   return out;
 }
 
-/** A country is kept whole or by its regions, never both; every issuer named keeps its own. */
+/** A file saying a place issues no driving licence of its own. */
+export function compileNoLicence(key: string, file: Record<string, unknown>): NoLicence {
+  if (!Object.hasOwn(countries, key) || file['country'] !== key) throw new Error(`${key}'s file is for ${String(file['country'])}, a country on the map`);
+  if (file['none'] !== true) throw new Error(`${key}'s file says it issues no licence only as none: true`);
+  only(file, ['country', 'none', 'note', 'sources'], `${key}, which issues no licence,`);
+  return { none: true };
+}
+
+/** A country is kept whole or by its regions, never both; every issuer named keeps its own, and issues one. */
 export function checkLicences(entries: Readonly<Record<string, Entry>>): void {
   for (const key of Object.keys(entries)) {
     if (key.length > 2 && Object.hasOwn(entries, key.slice(0, 2))) throw new Error(`${key.slice(0, 2)} is kept whole and by its regions (${key})`);
+  }
+  for (const [key, e] of Object.entries(entries)) {
+    if ('issuedBy' in e && 'none' in (entries[e.issuedBy] ?? {})) throw new Error(`${key}'s licences are ${e.issuedBy}'s, which issues none`);
   }
   checkIssuers(entries, 'licences');
 }
@@ -228,7 +244,7 @@ export function checkLicences(entries: Readonly<Record<string, Entry>>): void {
 /** The licences and cards of every file the register cites and checks. */
 export function readLicences(root: string): Record<string, Entry> {
   const out: Record<string, Entry> = {};
-  for (const [key, file] of readCited(root, SOURCES, 'papers.licence.')) out[key] = 'issuedBy' in file ? compileIssued(key, file, 'licences', regions) : compileLicence(key, file);
+  for (const [key, file] of readCited(root, SOURCES, 'papers.licence.')) out[key] = 'issuedBy' in file ? compileIssued(key, file, 'licences', regions) : 'none' in file ? compileNoLicence(key, file) : compileLicence(key, file);
   checkLicences(out);
   return out;
 }

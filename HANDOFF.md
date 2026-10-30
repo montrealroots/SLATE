@@ -1063,6 +1063,29 @@ Wave 14 (2026-10-30, the licence form and six research subagents rewriting from 
   Washington, New York's card), Victoria's 4-year licence as the probationary P2, Nevada's card under 18 and Kansas's
   licence under 21 with no term, the senior card's fees by age (Kansas, Nevada, Texas, DC, California).
 
+Wave 15 (2026-10-30, seven research subagents and the lead's form work):
+
+- No row of any coverage matrix is pending (2026-10-30, the first time since the matrices were made): 4,718 researched,
+  184 proven, 726 blocked, each blocker with the five methods it was tried by. Licences 142 researched and 104 blocked;
+  numbers 158 and 88; residence 214 and 32; formats 153 and 93; every other engine as before.
+- Forms: a country kept by regions whose every region is read or blocked is blocked, citing each region's fact
+  (`tools/papers/licence/coverage.ts`; Mexico, Australia, Canada and Pakistan had stood pending with their regions
+  settled; the country-level blockers an agent wrote for Mexico and Australia, merging their regions' attempts, weren't
+  filed: a second copy of a fact); a place that issues no licence of its own is `{ none: true }` and the player is told
+  (`licence.none`: the British Indian Ocean Territory, whose Road Traffic Ordinance 1998 s 4 accepts licences from the
+  UK, the US, the Commonwealth, the EU and EEA and Switzerland). Mutation-tested at 100%.
+- Wave 15's research: licences Oaxaca, Tasmania (age 20 from its stages; its fee in Tasmanian fee units, which the units
+  engine doesn't hold: a unit to add), Saint-Pierre-et-Miquelon (France's, by its prefecture's pages), Congo and the
+  Central African Republic (the CEMAC road code, the latter a reading: no Central African text reached), Suriname,
+  Haiti, Vanuatu, Bosnia and Herzegovina (kept whole: its state law, the issuers cantonal), Montenegro, Asunción
+  (Paraguay blocked at country level: Ley 5016 fixes 18 nationally, the term 'up to five years' set licence by licence
+  by Decreto 3427), Bahrain; numbers Gibraltar and Saint Lucia (tax numbers of no fixed length), Laos, New Caledonia,
+  Namibia (the Legal Assistance Centre's copies of the Acts, secondary), French Polynesia (France's NIR, by the ISPF),
+  Lesotho (its revenue service's own form check); residence 21 more, Haiti among them (its embassy in Canada citing
+  decree-law 26/12/1978); the Cook Islands' account format blocked (no bank states its length). Fees taken out where
+  unsure: Nauru's business visas (column unknown), Grenada's permanent residence (two figures), Saint Vincent's
+  temporary residence (charged by the year).
+
 The older next steps below are kept as they were written.
 
 1. The weather's blockers

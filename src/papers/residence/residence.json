@@ -63,6 +63,16 @@
    }
   ]
  },
+ "AG": {
+  "routes": [
+   {
+    "id": "entry-permit",
+    "name": "Entry permit",
+    "for": "general",
+    "renewable": true
+   }
+  ]
+ },
  "AI": {
   "routes": [
    {
@@ -944,6 +954,16 @@
    }
   ]
  },
+ "CG": {
+  "routes": [
+   {
+    "id": "carte-de-resident",
+    "name": "Carte de résident",
+    "for": "general",
+    "apply": "in country"
+   }
+  ]
+ },
  "CH": {
   "routes": [
    {
@@ -1002,6 +1022,32 @@
     "groups": [
      "ECOWAS"
     ]
+   }
+  ]
+ },
+ "CK": {
+  "routes": [
+   {
+    "id": "work-permit",
+    "name": "Work permit",
+    "for": "work"
+   },
+   {
+    "id": "residence",
+    "name": "Residence",
+    "for": "family",
+    "work": "any"
+   },
+   {
+    "id": "entry-permit",
+    "name": "Entry Permit",
+    "for": "family",
+    "work": "none"
+   },
+   {
+    "id": "permanent-resident",
+    "name": "Permanent Resident",
+    "for": "permanent"
    }
   ]
  },
@@ -1390,6 +1436,27 @@
    }
   ]
  },
+ "DJ": {
+  "routes": [
+   {
+    "id": "permis-de-travail",
+    "name": "Permis de travail (ANEFIP)",
+    "for": "work"
+   },
+   {
+    "id": "carte-de-resident",
+    "name": "Carte de résident",
+    "for": "self-employed"
+   },
+   {
+    "id": "carte-de-sejour",
+    "name": "Carte de séjour",
+    "for": "general",
+    "apply": "in country",
+    "renewable": true
+   }
+  ]
+ },
  "DK": {
   "routes": [
    {
@@ -1506,6 +1573,9 @@
     ]
    }
   ]
+ },
+ "EH": {
+  "issuedBy": "MA"
  },
  "ES": {
   "routes": [
@@ -1675,6 +1745,40 @@
    }
   ]
  },
+ "FM": {
+  "routes": [
+   {
+    "id": "us-citizens",
+    "name": "Citizens of the United States (Compact of Free Association, as amended)",
+    "for": "free movement",
+    "work": "any",
+    "groups": [
+     "US"
+    ]
+   },
+   {
+    "id": "entry-permit",
+    "name": "Entry permit",
+    "for": "general"
+   }
+  ]
+ },
+ "FO": {
+  "routes": [
+   {
+    "id": "forskere-specialister",
+    "name": "Opholdstilladelse på Færøerne efter udlændingelovens § 9, stk. 2, nr. 3 (forskere, undervisere, funktionærer i ledende stillinger og specialister)",
+    "for": "work",
+    "renewable": true
+   },
+   {
+    "id": "videregaaende-uddannelse",
+    "name": "Opholdstilladelse på Færøerne med henblik på at deltage i en videregående uddannelse",
+    "for": "study",
+    "renewable": true
+   }
+  ]
+ },
  "FR": {
   "routes": [
    {
@@ -1799,6 +1903,20 @@
     "apply": "in country",
     "work": "any",
     "counts": true
+   }
+  ]
+ },
+ "GD": {
+  "routes": [
+   {
+    "id": "work-permit",
+    "name": "Work permit",
+    "for": "work"
+   },
+   {
+    "id": "permanent-residence",
+    "name": "Permanent Residence",
+    "for": "permanent"
    }
   ]
  },
@@ -2280,6 +2398,17 @@
    }
   ]
  },
+ "HT": {
+  "routes": [
+   {
+    "id": "permis-de-sejour",
+    "name": "Permis de séjour",
+    "for": "general",
+    "apply": "in country",
+    "renewable": true
+   }
+  ]
+ },
  "HU": {
   "routes": [
    {
@@ -2724,6 +2853,15 @@
    }
   ]
  },
+ "KG": {
+  "routes": [
+   {
+    "id": "edinoe-razreshenie",
+    "name": "Единое разрешение на пребывание и трудовую деятельность",
+    "for": "work"
+   }
+  ]
+ },
  "KN": {
   "routes": [
    {
@@ -2811,6 +2949,28 @@
     "term": {
      "n": 6,
      "unit": "month"
+    }
+   }
+  ]
+ },
+ "LC": {
+  "routes": [
+   {
+    "id": "temporary-resident",
+    "name": "Permit granting temporary resident",
+    "for": "general",
+    "fee": {
+     "currency": "XCD",
+     "minor": 100000
+    }
+   },
+   {
+    "id": "permanent-resident",
+    "name": "Permit granting permanent resident",
+    "for": "permanent",
+    "fee": {
+     "currency": "XCD",
+     "minor": 250000
     }
    }
   ]
@@ -3364,6 +3524,22 @@
  "MQ": {
   "issuedBy": "FR"
  },
+ "MR": {
+  "routes": [
+   {
+    "id": "permis-de-travail",
+    "name": "Permis de travail",
+    "for": "work"
+   },
+   {
+    "id": "carte-de-resident",
+    "name": "Carte de résident",
+    "for": "general",
+    "apply": "in country",
+    "renewable": true
+   }
+  ]
+ },
  "MS": {
   "routes": [
    {
@@ -3630,6 +3806,21 @@
  "NC": {
   "issuedBy": "FR"
  },
+ "NE": {
+  "routes": [
+   {
+    "id": "visa-contrat-travail",
+    "name": "Visa du contrat de travail des travailleurs étrangers",
+    "for": "work",
+    "apply": "abroad",
+    "within": {
+     "n": 1,
+     "unit": "month"
+    },
+    "renewable": true
+   }
+  ]
+ },
  "NF": {
   "issuedBy": "AU"
  },
@@ -3872,6 +4063,52 @@
    }
   ]
  },
+ "NR": {
+  "routes": [
+   {
+    "id": "business-employment",
+    "name": "Business visa (Employment)",
+    "for": "work",
+    "work": "sponsor"
+   },
+   {
+    "id": "local-business-employment",
+    "name": "Local business (employment) visa",
+    "for": "work",
+    "apply": "abroad",
+    "work": "sponsor",
+    "fee": {
+     "currency": "AUD",
+     "minor": 30000
+    }
+   },
+   {
+    "id": "business-general",
+    "name": "Business visa (General)",
+    "for": "self-employed"
+   },
+   {
+    "id": "residence",
+    "name": "Residence visa",
+    "for": "family",
+    "apply": "either",
+    "fee": {
+     "currency": "AUD",
+     "minor": 0
+    }
+   },
+   {
+    "id": "dependant",
+    "name": "Dependant’s visa",
+    "for": "family",
+    "apply": "either",
+    "fee": {
+     "currency": "AUD",
+     "minor": 100000
+    }
+   }
+  ]
+ },
  "NZ": {
   "routes": [
    {
@@ -3995,6 +4232,21 @@
  },
  "PF": {
   "issuedBy": "FR"
+ },
+ "PG": {
+  "routes": [
+   {
+    "id": "general-work-permit",
+    "name": "General work permit (Employment of Non-Citizens Act 2007)",
+    "for": "work",
+    "work": "sponsor",
+    "within": {
+     "n": 15,
+     "unit": "working day"
+    },
+    "renewable": true
+   }
+  ]
  },
  "PH": {
   "routes": [
@@ -4195,6 +4447,16 @@
     "for": "permanent",
     "apply": "in country",
     "work": "any"
+   }
+  ]
+ },
+ "PW": {
+  "routes": [
+   {
+    "id": "nonresident-work-permit",
+    "name": "Nonresident work permit (Division of Labor)",
+    "for": "work",
+    "renewable": true
    }
   ]
  },
@@ -4721,6 +4983,36 @@
    }
   ]
  },
+ "SS": {
+  "routes": [
+   {
+    "id": "temporary-residence-permit",
+    "name": "Temporary Residence Permit",
+    "for": "general",
+    "renewable": true
+   },
+   {
+    "id": "ordinary-residence-permit",
+    "name": "Ordinary Residence Permit",
+    "for": "general",
+    "term": {
+     "n": 2,
+     "unit": "year"
+    },
+    "renewable": true
+   },
+   {
+    "id": "special-residence-permit",
+    "name": "Special Residence Permit",
+    "for": "general",
+    "term": {
+     "n": 5,
+     "unit": "year"
+    },
+    "renewable": true
+   }
+  ]
+ },
  "ST": {
   "routes": [
    {
@@ -4926,6 +5218,16 @@
    }
   ]
  },
+ "TJ": {
+  "routes": [
+   {
+    "id": "sanadi-zist",
+    "name": "Санади зист",
+    "for": "general",
+    "renewable": true
+   }
+  ]
+ },
  "TL": {
   "routes": [
    {
@@ -4994,6 +5296,35 @@
    }
   ]
  },
+ "TM": {
+  "routes": [
+   {
+    "id": "rugsatnama-is",
+    "name": "Разрешение на работу",
+    "for": "work",
+    "within": {
+     "n": 30,
+     "unit": "day"
+    },
+    "renewable": true
+   },
+   {
+    "id": "vid-na-zhitelstvo",
+    "name": "Вид на жительство",
+    "for": "general",
+    "apply": "in country",
+    "fee": {
+     "currency": "TMT",
+     "minor": 4500
+    },
+    "term": {
+     "n": 5,
+     "unit": "year"
+    },
+    "renewable": true
+   }
+  ]
+ },
  "TN": {
   "routes": [
    {
@@ -5013,6 +5344,73 @@
     "name": "Permiso de residencia (estudiantes)",
     "for": "study",
     "apply": "in country"
+   }
+  ]
+ },
+ "TO": {
+  "routes": [
+   {
+    "id": "employment-visa",
+    "name": "Employment Visa",
+    "for": "work",
+    "fee": {
+     "currency": "USD",
+     "minor": 23000
+    },
+    "within": {
+     "n": 1,
+     "unit": "month"
+    },
+    "renewable": true
+   },
+   {
+    "id": "business-visa",
+    "name": "Business Visa",
+    "for": "self-employed",
+    "apply": "abroad",
+    "fee": {
+     "currency": "USD",
+     "minor": 34500
+    },
+    "within": {
+     "n": 1,
+     "unit": "month"
+    },
+    "renewable": true
+   },
+   {
+    "id": "residency-visa",
+    "name": "Residency Visa",
+    "for": "family",
+    "fee": {
+     "currency": "USD",
+     "minor": 11500
+    }
+   },
+   {
+    "id": "assured-income-visa",
+    "name": "Assured Income Visa",
+    "for": "retirement",
+    "work": "none",
+    "fee": {
+     "currency": "USD",
+     "minor": 34500
+    },
+    "renewable": true
+   },
+   {
+    "id": "student-visa",
+    "name": "Student Visa",
+    "for": "study",
+    "fee": {
+     "currency": "USD",
+     "minor": 5750
+    },
+    "within": {
+     "n": 1,
+     "unit": "month"
+    },
+    "renewable": true
    }
   ]
  },
@@ -5301,6 +5699,29 @@
     "id": "tempo-determinato-famiglia",
     "name": "Autorizzazione a risiedere a tempo determinato (persone di famiglia)",
     "for": "family"
+   }
+  ]
+ },
+ "VC": {
+  "routes": [
+   {
+    "id": "work-permit",
+    "name": "Work Permit",
+    "for": "work"
+   },
+   {
+    "id": "temporary-residence",
+    "name": "Temporary Residence",
+    "for": "general"
+   },
+   {
+    "id": "permanent-residence",
+    "name": "Permanent Residence",
+    "for": "permanent",
+    "fee": {
+     "currency": "XCD",
+     "minor": 320000
+    }
    }
   ]
  },
