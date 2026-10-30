@@ -3,7 +3,7 @@ import { mkdirSync, mkdtempSync, readFileSync, writeFileSync } from 'node:fs';
 import { tmpdir } from 'node:os';
 import { join, resolve } from 'node:path';
 import { describe, expect, it } from 'vitest';
-import { checkIssuers, compileIssued, compilePassport, isCompilable, OUTPUT, readPassports, serialize, SOURCES, UNITS } from '../../tools/papers/passports/compile.ts';
+import { checkIssuers, compileIssued, compilePassport, isCompilable, isOwnRoute, OUTPUT, readPassports, serialize, SOURCES, UNITS } from '../../tools/papers/passports/compile.ts';
 import { COVERAGE, coverageOf, NO_PLACES, passportsCoverage, serializeCoverage, TESTS, TOLD } from '../../tools/papers/passports/coverage.ts';
 
 const ROOT = resolve(import.meta.dirname, '../..');
@@ -120,14 +120,67 @@ describe('the passports compile', () => {
     expect(bad({ validYears: 5, pay: { s: '1.001' } })).toThrow('EUR has 2 decimal places; "1.001" has more');
   });
 
+  it('takes the routes that renew a passport held or replace a lost one, and refuses a term the form lacks', () => {
+    const routes = [route('standard'), route('renew', { renewal: true, within: { n: 6, unit: 'week' } }), route('lost', { replacement: true })];
+    const passports = [{ for: 'adult', validYears: 10, pay: { standard: '165', renew: '130', lost: '165' } }];
+    expect(compilePassport('SK', file({ routes, passports })).routes).toStrictEqual([
+      { id: 'standard', where: 'home', speed: 'standard', within: { n: 30, unit: 'day' } },
+      { id: 'renew', where: 'home', speed: 'standard', within: { n: 6, unit: 'week' }, renewal: true },
+      { id: 'lost', where: 'home', speed: 'standard', within: { n: 30, unit: 'day' }, replacement: true },
+    ]);
+    expect(isOwnRoute({ id: 'a', where: 'home', speed: 'standard', within: null })).toBe(false);
+    expect(isOwnRoute({ id: 'a', where: 'home', speed: 'standard', within: null, renewal: true })).toBe(true);
+    expect(isOwnRoute({ id: 'a', where: 'home', speed: 'standard', within: null, replacement: true })).toBe(true);
+    const bad = (r: unknown) => () => compilePassport('SK', file({ routes: [route('s'), r], passports: [{ validYears: 1, pay: { s: '1', t: '1' } }] }));
+    for (const renewal of [false, 'yes', 1]) expect(bad(route('t', { renewal })), String(renewal)).toThrow("SK's route 1 (t) is a renewal only as renewal: true");
+    for (const replacement of [false, 'yes', 1]) expect(bad(route('t', { replacement })), String(replacement)).toThrow("SK's route 1 (t) is a replacement only as replacement: true");
+    expect(bad(route('t', { renewal: true, replacement: true }))).toThrow("SK's route 1 (t) renews a document held or replaces a lost one, not both");
+    expect(bad(route('t', { renewl: true }))).toThrow("SK's route 1 (t) has no term renewl");
+    expect(() => compilePassport('SK', file({ routes: routes.slice(1), passports: [{ validYears: 10, pay: { renew: '1', lost: '1' } }] }))).toThrow('SK has no route for a first passport');
+    // A band's term the form lacks; its `for` is the research's, accepted.
+    expect(() => compilePassport('SK', file({ routes: [route('s')], passports: [{ for: 'adult', validYears: 1, pay: { s: '1' }, fee: '1' }] }))).toThrow("SK's passport 0 has no term fee");
+  });
+
+  it('pays the routes abroad in the currency the missions set, where it is not the country\'s', () => {
+    // Yen have no minor units, so a fee abroad in cents shows the abroad currency is the one read.
+    const routes = [route('home'), route('mission', { where: 'abroad' })];
+    const jp = (abroad: unknown, more: Record<string, unknown> = {}) => compilePassport('JP', file({ country: 'JP', currency: 'JPY', abroad, routes, passports: [{ validYears: 10, pay: { home: '16300', mission: '62.50' } }], ...more }));
+    expect(jp({ currency: 'USD' })).toStrictEqual({ currency: 'JPY', abroad: { currency: 'USD' }, routes: routes.map(({ label: _, ...r }) => r), bands: [{ validYears: 10, pay: { home: 16300, mission: 6250 } }] });
+    expect(() => compilePassport('JP', file({ country: 'JP', currency: 'JPY', routes, passports: [{ validYears: 10, pay: { home: '16300', mission: '62.50' } }] }))).toThrow('JPY has 0 decimal places; "62.50" has more');
+    for (const abroad of ['USD', null, ['USD']]) expect(() => jp(abroad), JSON.stringify(abroad)).toThrow("JP's abroad is not an object");
+    expect(() => jp({ currency: 'USD', pay: {} })).toThrow("JP's abroad has no term pay");
+    for (const currency of ['XXX', 7, undefined]) expect(() => jp({ currency }), String(currency)).toThrow(`JP's fees abroad are in ${String(currency)}, not a currency in use`);
+    expect(() => jp({ currency: ['USD'] })).toThrow("JP's fees abroad are in USD, not a currency in use");
+    expect(() => jp({ currency: 'JPY' })).toThrow("JP's fees abroad are in its own currency, which needs no abroad");
+    expect(() => jp({ currency: 'USD' }, { routes: [route('home')], passports: [{ validYears: 10, pay: { home: '1' } }] })).toThrow('JP has no route abroad to pay in USD');
+  });
+
+  it('takes a passport card: its name and its bands, paid by the routes', () => {
+    const card = (c: unknown, more: Record<string, unknown> = {}) => compilePassport('SK', file({ card: c, ...more })).card;
+    const bands = [{ for: 'adult', from: 16, validYears: 10, pay: { standard: '30' } }, { under: 16, validYears: 5, pay: { standard: '15', urgent: null } }];
+    expect(card({ name: 'passport card', bands })).toStrictEqual({ name: 'passport card', bands: [{ from: 16, validYears: 10, pay: { standard: 3000 } }, { under: 16, validYears: 5, pay: { standard: 1500, urgent: null } }] });
+    expect(compilePassport('SK', file())).not.toHaveProperty('card');
+    // Paid abroad in the missions' currency, as the passport is.
+    const abroad = { abroad: { currency: 'JPY' }, routes: [route('standard'), route('urgent'), route('m', { where: 'abroad' })], passports: [{ validYears: 10, pay: { standard: '1', urgent: '1', m: '100' } }] };
+    expect(card({ name: 'c', bands: [{ validYears: 10, pay: { m: '100' } }] }, abroad)?.bands[0]?.pay).toEqual({ m: 100 });
+    for (const c of ['card', null, []]) expect(() => card(c), JSON.stringify(c)).toThrow("SK's passport card is not an object");
+    for (const name of ['', 7, undefined]) expect(() => card({ name, bands }), String(name)).toThrow("SK's passport card needs its name");
+    for (const b of [[], {}, undefined]) expect(() => card({ name: 'c', bands: b }), JSON.stringify(b)).toThrow("SK's passport card has no bands");
+    expect(() => card({ name: 'c', bands, fee: '1' })).toThrow("SK's passport card has no term fee");
+    expect(() => card({ name: 'c', bands: [{ validYears: 10, pages: 2, pay: { standard: '1' } }] })).toThrow("SK's passport card 0 is a card, with no pages");
+    expect(() => card({ name: 'c', bands: [{ validYears: 10, pay: { standard: '1' } }, { from: 18, validYears: 10, pay: { standard: '1' } }] })).toThrow("SK's passport cards 0 and 1 meet the same applicant");
+    expect(() => card({ name: 'c', bands: [{ validYears: 10, pay: { x: '1' } }] })).toThrow("SK's passport card 0 pays for a route there is none of (x)");
+  });
+
   it("takes a territory to the country whose passport its people hold, and holds the issuer to the others", () => {
     expect(compileIssued('GU', { country: 'GU', issuedBy: 'US', note: 'x', sources: [] })).toStrictEqual({ issuedBy: 'US' });
     expect(compileIssued('GF', { country: 'GF', issuedBy: 'FR', onlyRoutes: ['guyane', 'abroad'] })).toStrictEqual({ issuedBy: 'FR', onlyRoutes: ['guyane', 'abroad'] });
     expect(() => compileIssued('XX', { country: 'XX', issuedBy: 'US' })).toThrow('XX is not a country on the map');
     expect(() => compileIssued('GU', { country: 'PR', issuedBy: 'US' })).toThrow("GU's file is for PR");
     for (const issuedBy of ['XX', 'GU', 7]) expect(() => compileIssued('GU', { country: 'GU', issuedBy })).toThrow(`GU's passports are issued by another country on the map, not ${String(issuedBy)}`);
-    expect(() => compileIssued('GU', { country: 'GU', issuedBy: 'US', routes: [] })).toThrow("GU's passports are US's, so it has no routes or passports of its own");
-    expect(() => compileIssued('GU', { country: 'GU', issuedBy: 'US', passports: [] })).toThrow("GU's passports are US's, so it has no routes or passports of its own");
+    for (const key of ['routes', 'passports', 'abroad', 'card']) {
+      expect(() => compileIssued('GU', { country: 'GU', issuedBy: 'US', [key]: [] }), key).toThrow("GU's passports are US's, so it has no routes, passports, fees abroad or passport card of its own");
+    }
     for (const onlyRoutes of [[], 'guyane', [''], [3], ['a', ''], ['a', 'a']]) {
       expect(() => compileIssued('GF', { country: 'GF', issuedBy: 'FR', onlyRoutes }), JSON.stringify(onlyRoutes)).toThrow("GF is open to distinct routes of FR's by id");
     }

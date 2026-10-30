@@ -41,7 +41,11 @@
      "fee": "25000",
      "per": "year"
     }
-   ]
+   ],
+   "minimum": {
+    "percent": "10",
+    "interest": true
+   }
   },
   {
    "bank": "KB국민카드",
@@ -68,7 +72,11 @@
      "fee": "55000",
      "per": "year"
     }
-   ]
+   ],
+   "minimum": {
+    "percent": "10",
+    "interest": true
+   }
   },
   {
    "bank": "KB국민카드",
@@ -95,7 +103,11 @@
      "fee": "20000",
      "per": "year"
     }
-   ]
+   ],
+   "minimum": {
+    "percent": "10",
+    "interest": true
+   }
   },
   {
    "bank": "KB국민카드",
@@ -122,7 +134,11 @@
      "fee": "15000",
      "per": "year"
     }
-   ]
+   ],
+   "minimum": {
+    "percent": "10",
+    "interest": true
+   }
   },
   {
    "bank": "KB국민카드",
@@ -149,7 +165,11 @@
      "fee": "15000",
      "per": "year"
     }
-   ]
+   ],
+   "minimum": {
+    "percent": "10",
+    "interest": true
+   }
   },
   {
    "bank": "KB국민카드",
@@ -176,7 +196,11 @@
      "fee": "30000",
      "per": "year"
     }
-   ]
+   ],
+   "minimum": {
+    "percent": "10",
+    "interest": true
+   }
   },
   {
    "bank": "KB국민카드",
@@ -203,7 +227,11 @@
      "fee": "15000",
      "per": "year"
     }
-   ]
+   ],
+   "minimum": {
+    "percent": "10",
+    "interest": true
+   }
   },
   {
    "bank": "KB국민카드",
@@ -230,7 +258,11 @@
      "fee": "30000",
      "per": "year"
     }
-   ]
+   ],
+   "minimum": {
+    "percent": "10",
+    "interest": true
+   }
   },
   {
    "bank": "KB국민카드",
@@ -257,7 +289,11 @@
      "fee": "15000",
      "per": "year"
     }
-   ]
+   ],
+   "minimum": {
+    "percent": "10",
+    "interest": true
+   }
   },
   {
    "bank": "KB국민카드",
@@ -284,7 +320,11 @@
      "fee": "30000",
      "per": "year"
     }
-   ]
+   ],
+   "minimum": {
+    "percent": "10",
+    "interest": true
+   }
   },
   {
    "bank": "KB국민카드",
@@ -311,7 +351,11 @@
      "fee": "20000",
      "per": "year"
     }
-   ]
+   ],
+   "minimum": {
+    "percent": "10",
+    "interest": true
+   }
   },
   {
    "bank": "신한카드",
@@ -330,6 +374,11 @@
    "penalty": {
     "percent": "20",
     "per": "year"
+   },
+   "minimum": {
+    "percent": "10",
+    "floor": "50000",
+    "interest": true
    }
   },
   {
@@ -349,6 +398,11 @@
    "penalty": {
     "percent": "20",
     "per": "year"
+   },
+   "minimum": {
+    "percent": "10",
+    "floor": "50000",
+    "interest": true
    }
   },
   {
@@ -368,6 +422,11 @@
    "penalty": {
     "percent": "20",
     "per": "year"
+   },
+   "minimum": {
+    "percent": "10",
+    "floor": "50000",
+    "interest": true
    }
   },
   {
@@ -387,6 +446,11 @@
    "penalty": {
     "percent": "20",
     "per": "year"
+   },
+   "minimum": {
+    "percent": "10",
+    "floor": "50000",
+    "interest": true
    }
   },
   {
@@ -406,6 +470,11 @@
    "penalty": {
     "percent": "20",
     "per": "year"
+   },
+   "minimum": {
+    "percent": "10",
+    "floor": "50000",
+    "interest": true
    }
   },
   {
@@ -425,6 +494,11 @@
    "penalty": {
     "percent": "20",
     "per": "year"
+   },
+   "minimum": {
+    "percent": "10",
+    "floor": "50000",
+    "interest": true
    }
   },
   {
@@ -444,10 +518,15 @@
    "penalty": {
     "percent": "20",
     "per": "year"
+   },
+   "minimum": {
+    "percent": "10",
+    "floor": "50000",
+    "interest": true
    }
   }
  ],
- "note": "Korea's largest banks (KB Kookmin, Shinhan, Hana, Woori) issue their credit cards through their card companies (KB국민카드, 신한카드, 하나카드, 우리카드). Shinhan Card's and Hana Card's sites serve only a script shell to this research, and Woori Card's didn't answer (2026-10-30), so KB Kookmin Card is written, with BC Card's card this file has held since 2026-10-29. KB Kookmin Card's credit card list (read 2026-10-30) shows each card's annual fee by version; the eleven cards the page shows without a script are written, each at its domestic version's fee, or where it has none at the lowest version listed (ALL point 카드 15,000 won, its Visa version 20,000; The Easy카드 15,000). The cards the page loads only by script aren't written. KB Kookmin Card's product rate disclosure (상품별 수수료율, changed 3 February 2026, read 2026-10-30) gives every card the same ranges, each holder priced within them: revolving (일부결제금액이월약정) 5.60% to 19.95% a year, cash advances (단기카드대출) 5.90% to 19.95%, and the late rate on a lump-sum purchase (연체이자율, 일시불) 5.90% to 19.95%, written as the penalty rate (on a cash advance it's 6.90% to 20.00%, not written). Instalment rates and the card loan aren't written. Neither page states a minimum payment, grace period, foreign-transaction fee or late fee, and they aren't written. BC Card's product description for its 신세계 BC 바로 아시아나 플러스 (its file dated 1 July 2025, read 2026-10-29): an annual fee of 10,000 won (a 0 basic fee plus 10,000 for the partner's services), and revolving at 5.9% to 19.9% a year, now written as that range; its file didn't answer on 2026-10-30 and is kept as read. Wave 4 (2026-10-30): Shinhan Card (신한카드), the largest card company, is added from its event page that is served without a script (approved by the Credit Finance Association, 여신금융협회 심의필 제2026-C1h-036, read 2026-10-30), Samsung Card's, Lotte Card's and NH's sites serving only a script shell and Hyundai Card's and Woori Card's not answering (2026-10-30). The page gives seven cards' annual fees by version, each written at its domestic version's fee (Discount Plan+ 50,000 won, either version; Simple Plan+ 47,000; Air One 49,000; 처음 (ANNIVERSE) 15,000; Mr.Life 15,000; Deep Oil 10,000; Edu Plan+ 40,000); revolving (일부결제금액이월약정) priced by the holder's credit score between 5.4% and 19.9% a year (variable, the rate as calculated on 13 February 2025, as the page states), written as that range; and the late rate as the holder's agreed rate plus at most 3% a year, within the legal maximum of 20%, written as a penalty rate of 20% a year. Its other cards, loaded only by script, the cash advance rate, minimum payment, foreign-transaction fee and late fee aren't on the page and aren't written.",
+ "note": "Korea's largest banks (KB Kookmin, Shinhan, Hana, Woori) issue their credit cards through their card companies (KB국민카드, 신한카드, 하나카드, 우리카드). Shinhan Card's and Hana Card's sites serve only a script shell to this research, and Woori Card's didn't answer (2026-10-30), so KB Kookmin Card is written, with BC Card's card this file has held since 2026-10-29. KB Kookmin Card's credit card list (read 2026-10-30) shows each card's annual fee by version; the eleven cards the page shows without a script are written, each at its domestic version's fee, or where it has none at the lowest version listed (ALL point 카드 15,000 won, its Visa version 20,000; The Easy카드 15,000). The cards the page loads only by script aren't written. KB Kookmin Card's product rate disclosure (상품별 수수료율, changed 3 February 2026, read 2026-10-30) gives every card the same ranges, each holder priced within them: revolving (일부결제금액이월약정) 5.60% to 19.95% a year, cash advances (단기카드대출) 5.90% to 19.95%, and the late rate on a lump-sum purchase (연체이자율, 일시불) 5.90% to 19.95%, written as the penalty rate (on a cash advance it's 6.90% to 20.00%, not written). Instalment rates and the card loan aren't written. Neither page states a grace period, foreign-transaction fee or late fee, and they aren't written (nor a minimum payment, written in wave 5 from KB's revolving page). BC Card's product description for its 신세계 BC 바로 아시아나 플러스 (its file dated 1 July 2025, read 2026-10-29): an annual fee of 10,000 won (a 0 basic fee plus 10,000 for the partner's services), and revolving at 5.9% to 19.9% a year, now written as that range; its file didn't answer on 2026-10-30 and is kept as read. Wave 4 (2026-10-30): Shinhan Card (신한카드), the largest card company, is added from its event page that is served without a script (approved by the Credit Finance Association, 여신금융협회 심의필 제2026-C1h-036, read 2026-10-30), Samsung Card's, Lotte Card's and NH's sites serving only a script shell and Hyundai Card's and Woori Card's not answering (2026-10-30). The page gives seven cards' annual fees by version, each written at its domestic version's fee (Discount Plan+ 50,000 won, either version; Simple Plan+ 47,000; Air One 49,000; 처음 (ANNIVERSE) 15,000; Mr.Life 15,000; Deep Oil 10,000; Edu Plan+ 40,000); revolving (일부결제금액이월약정) priced by the holder's credit score between 5.4% and 19.9% a year (variable, the rate as calculated on 13 February 2025, as the page states), written as that range; and the late rate as the holder's agreed rate plus at most 3% a year, within the legal maximum of 20%, written as a penalty rate of 20% a year. Its other cards, loaded only by script, the cash advance rate, foreign-transaction fee and late fee aren't on the page and aren't written (nor the minimum payment, written in wave 5 from Shinhan's revolving page). Wave 5 (2026-10-30), minimum payments: A Korean card's statement asks the whole balance unless the holder has signed the revolving agreement (일부결제금액이월약정), whose rate each card here carries; its minimum is written. KB Kookmin Card's revolving page (read 2026-10-30): the minimum payment ratio is 10% to 30% of the revolving amount by the holder's credit score, the carried balance billed with its fee; written as 10% with the interest added (a principal under 50,000 won billed in full isn't written). Shinhan Card's revolving page (read 2026-10-30): the minimum ratio is set at 10% to 30% by credit standing, the minimum payment the revolving amount times that ratio or 50,000 won, whichever is greater, the fee charged with the next month's payment; written as 10% with a 50,000 floor and the interest added. No minimum payment is published for BC Card's 신세계 BC 바로 아시아나 플러스; tried: its product description (no minimum), BC Card's site, and the revolving pages of KB and Shinhan, which bind only their own cards.",
  "sources": [
   {
    "url": "https://www.bccard.com/down/individual/customer/baro_asiana_card_20250701.pdf",
@@ -472,6 +551,18 @@
    "title": "신한카드 이벤트 페이지 (여신금융협회 심의필 제2026-C1h-036)",
    "read": "2026-10-30",
    "said": "신한카드 Discount Plan+ 국내전용/해외겸용(Master) 5만원 ... 신한카드 Simple Plan+ 해외겸용(Master) 5만원/국내전용 4.7만원 ... 신한카드 Air One 해외겸용(AMEX) 5.1만원/국내전용 4.9만원 ... 신한카드 처음 (ANNIVERSE) 해외겸용(Master) 1.8만원/국내전용 1.5만원 ... 신한카드 Mr.Life 해외겸용(VISA) 1.8만원/국내전용 1.5만원 ... 신한카드 Deep Oil 해외겸용(Master) 1.3만원/국내전용 1만원 ... 신한카드 Edu Plan+ 해외겸용(Masterd) 4.3만원/국내전용 4만원 ... 최저 5.4%~최고 19.9%(변동금리) 범위 내 적용됨 ... 금리 산출시점 : 2025년 2월 13일 ... 회원별, 이용상품별 약정금리 + 최대 연 3%, 법정 최고금리(연 20%) 이내"
+  },
+  {
+   "url": "https://m.kbcard.com/FNC/DVIEW/MFCMCXHIAFLS0001",
+   "title": "KB국민카드 일부결제금액이월약정(리볼빙) 조회/변경/해지",
+   "read": "2026-10-30",
+   "said": "최소결제비율 : 총 약정금액의 10%~30%(개인신용평점등에 따라 차등 적용) ... 일부결제금액이월약정(리볼빙) 이월잔액 발생 시 수수료와 함께 청구되며"
+  },
+  {
+   "url": "https://www.shinhancard.com/pconts/html/finance/revolving/CONFM60030/CONFM60030R01.html",
+   "title": "신한카드 일부결제금액이월약정(리볼빙)",
+   "read": "2026-10-30",
+   "said": "리볼빙 약정 신청 시에 카드사에서 부여하고 10%~30% 중에 신용도에 따라 차등 적용돼요. ... 리볼빙 이용 금액 X 최소 결제 비율과 50,000원 중 큰 금액이에요. ... 다음달에 수수료도 같이 부과돼요."
   }
  ]
 }

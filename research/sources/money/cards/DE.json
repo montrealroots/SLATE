@@ -156,7 +156,11 @@
     }
    ],
    "fx": "1.99",
-   "grace": 59
+   "grace": 59,
+   "minimum": {
+    "percent": "3",
+    "floor": "30"
+   }
   },
   {
    "bank": "easybank",
@@ -198,6 +202,10 @@
      "percent": "4",
      "min": "5.95"
     }
+   },
+   "minimum": {
+    "percent": "3",
+    "floor": "30"
    }
   },
   {
@@ -220,10 +228,14 @@
      "percent": "4",
      "min": "5.95"
     }
+   },
+   "minimum": {
+    "percent": "3",
+    "floor": "30"
    }
   }
  ],
- "note": "The main banks: Deutsche Bank (with Postbank, its branch) and Commerzbank, Germany's two largest private-sector retail banks; the savings banks (Sparkassen) each set their own prices and aren't one bank, and ING and DKB, the largest direct banks, issue debit Visa cards, not credit cards, so no third bank is written. Deutsche Bank's list of prices and services (as at 1 October 2026), read in full for its credit cards: the Mastercard or VISA (39 euros a year), GOLD (82; free with the db BestKonto, which the game doesn't hold), Mastercard Travel (94; 60 with the db BestKonto, not written), Mastercard PLATIN (200) and Mastercard BLACK (600), each charged to the account in the monthly statement, so nothing is carried on them; its WorldFlexCard (10 euros a year), the only one with a part-repayment function, is no longer sold and isn't written, nor is its BusinessCard. Cash at a cash machine with any of them costs 2.5% (at least 5.75 euros; 3.0% at a counter, not written); paying in a currency other than the euro costs 1.75% (at least 1.50 euros, not modelled), and the Mastercard Travel only the 0.50% conversion charge. Commerzbank's account-opening information (as at 19 June 2026), with its price and service list and its credit card conditions: the ClassicKreditkarte (39.90 euros a year) and GoldKreditkarte (99.90), Mastercard or Visa, their spending charged to the settlement account once the monthly statement is issued; cash at a cash machine costs 1.95% (at least 5.98 euros), paying abroad outside the euro 1.75%. The PremiumKreditkarte comes only inside the PremiumKonto and the Young Visa Kreditkarte only with the StartKonto, so neither is written. No German card here carries a balance, so no interest, minimum, grace period or default fee applies. easybank (BAWAG AG Niederlassung Deutschland, which took over Barclays' German card business; barclays.de now forwards to easybank.de) was added in wave 4 as the third bank, chosen as Germany's largest issuer of credit cards that carry a balance, whose price lists are open; its card pages and the price and service list of each card (as at April 2026; the Eurowings cards' lists from 23 April 2026), read 2026-10-30: the easybank Kreditkarte (no yearly fee), Kreditkarte Gold (59 euros a year), Kreditkarte Platinum (99), Eurowings Classic and Eurowings Premium (29 and 99 euros a year from the second year; the first year's 14.50 and 49.50 for new customers is introductory and not written). Each bears a variable 19.64% a year (21.51% effective) on a balance repaid in parts, with up to 59 interest-free days, written as grace 59. Spending and cash in a currency other than the euro cost 1.99% on the Gold and Eurowings Classic and nothing on the others (fx 0). Cash costs nothing except on the Eurowings cards in Germany, 4% (at least 5.95 euros; nothing outside Germany). The monthly repayment by direct debit is preset at 3% of the balance, at least 30 euros, on the easybank Kreditkarte and Platinum pages, written as their minimum; the other pages don't state it. The 2 euros a month for choosing 100% repayment by direct debit is a choice and isn't written; the cheaper rate of the Zahlplan instalment option and the 4% on gambling and securities spending aren't written. No other bank was tried for Germany in wave 4.",
+ "note": "The main banks: Deutsche Bank (with Postbank, its branch) and Commerzbank, Germany's two largest private-sector retail banks; the savings banks (Sparkassen) each set their own prices and aren't one bank, and ING and DKB, the largest direct banks, issue debit Visa cards, not credit cards, so no third bank is written. Deutsche Bank's list of prices and services (as at 1 October 2026), read in full for its credit cards: the Mastercard or VISA (39 euros a year), GOLD (82; free with the db BestKonto, which the game doesn't hold), Mastercard Travel (94; 60 with the db BestKonto, not written), Mastercard PLATIN (200) and Mastercard BLACK (600), each charged to the account in the monthly statement, so nothing is carried on them; its WorldFlexCard (10 euros a year), the only one with a part-repayment function, is no longer sold and isn't written, nor is its BusinessCard. Cash at a cash machine with any of them costs 2.5% (at least 5.75 euros; 3.0% at a counter, not written); paying in a currency other than the euro costs 1.75% (at least 1.50 euros, not modelled), and the Mastercard Travel only the 0.50% conversion charge. Commerzbank's account-opening information (as at 19 June 2026), with its price and service list and its credit card conditions: the ClassicKreditkarte (39.90 euros a year) and GoldKreditkarte (99.90), Mastercard or Visa, their spending charged to the settlement account once the monthly statement is issued; cash at a cash machine costs 1.95% (at least 5.98 euros), paying abroad outside the euro 1.75%. The PremiumKreditkarte comes only inside the PremiumKonto and the Young Visa Kreditkarte only with the StartKonto, so neither is written. No German card here carries a balance, so no interest, minimum, grace period or default fee applies. easybank (BAWAG AG Niederlassung Deutschland, which took over Barclays' German card business; barclays.de now forwards to easybank.de) was added in wave 4 as the third bank, chosen as Germany's largest issuer of credit cards that carry a balance, whose price lists are open; its card pages and the price and service list of each card (as at April 2026; the Eurowings cards' lists from 23 April 2026), read 2026-10-30: the easybank Kreditkarte (no yearly fee), Kreditkarte Gold (59 euros a year), Kreditkarte Platinum (99), Eurowings Classic and Eurowings Premium (29 and 99 euros a year from the second year; the first year's 14.50 and 49.50 for new customers is introductory and not written). Each bears a variable 19.64% a year (21.51% effective) on a balance repaid in parts, with up to 59 interest-free days, written as grace 59. Spending and cash in a currency other than the euro cost 1.99% on the Gold and Eurowings Classic and nothing on the others (fx 0). Cash costs nothing except on the Eurowings cards in Germany, 4% (at least 5.95 euros; nothing outside Germany). The monthly repayment by direct debit is preset at 3% of the balance, at least 30 euros, on the easybank Kreditkarte and Platinum pages, written as their minimum; easybank's questions on repayment state the same for every card (each month at least 3% of the open balance, at least 30 euros), so the Gold and the Eurowings cards carry it too; its repayment page says the 3% includes the interest, so no interest is added on top. The 2 euros a month for choosing 100% repayment by direct debit is a choice and isn't written; the cheaper rate of the Zahlplan instalment option and the 4% on gambling and securities spending aren't written. No other bank was tried for Germany in wave 4.",
  "sources": [
   {
    "url": "https://www.deutsche-bank.de/dam/deutschebank/de/shared/pdf/ser-konditionen_preise_leistungsverzeichnis.pdf",
@@ -314,6 +326,18 @@
    "title": "easybank, Preis- & Leistungsverzeichnis Eurowings Kreditkarte Premium (from 23 April 2026)",
    "read": "2026-10-30",
    "said": "in den Folgejahren € 99,– ... Auslandseinsatzentgelt gebührenfrei ... innerhalb Deutschlands 4 %, mind. € 5,95"
+  },
+  {
+   "url": "https://www.easybank.de/easybank-de/faq/faq-kreditkarten/rueckzahlungsoptionen",
+   "title": "easybank, FAQ Kreditkarten: Rückzahlungsoptionen",
+   "read": "2026-10-30",
+   "said": "Pro Monat musst du lediglich 3 % des offenen Kreditkarten-Saldos, jedoch mindestens 30 € zurückzahlen."
+  },
+  {
+   "url": "https://www.easybank.de/easybank-de/hilfe-und-kontakt/rueckzahlungsoptionen",
+   "title": "easybank, Rückzahlungsoptionen",
+   "read": "2026-10-30",
+   "said": "Mit Eröffnung deines Kreditkarten-Kontos ist eine Mindestrückzahlung von monatlich 3 % (mindestens 30 €) eingestellt. Dieser Betrag enthält Zins und Tilgung"
   }
  ]
 }

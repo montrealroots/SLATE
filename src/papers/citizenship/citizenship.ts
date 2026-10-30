@@ -1,3 +1,5 @@
+import type { Money } from '../../core/money/money.ts';
+import type { Unit } from '../passports/passports.ts';
 import { t } from '../../core/text/text.ts';
 import { countryName, type CountryCode } from '../../world/gazetteer/gazetteer.ts';
 import data from './citizenship.json' with { type: 'json' };
@@ -11,11 +13,39 @@ import data from './citizenship.json' with { type: 'json' };
  * state's naturalisation (Svalbard), which then naturalises no one there. Whether other citizenships must go, or are
  * lost, is null where the research couldn't read it, and the player is told; a country the game doesn't keep has
  * nothing here, and the player is told that too.
+ *
+ * From 2026-10-30 a state may also give how citizenship comes at birth (by birth in its territory, by descent), and its
+ * naturalisation's fee, the longest it takes and the tests it asks; where the research hasn't read them, they're absent.
  */
+export interface AtBirth {
+  /** By birth in the territory: always, on a condition the law states (soilIf), or never. */
+  readonly soil: 'unconditional' | 'conditional' | 'none';
+  readonly soilIf?: string;
+  /** By descent: from either parent, from the father only, or never; with any limit for a child born abroad. */
+  readonly descent: 'either parent' | 'father' | 'none';
+  readonly descentAbroad?: string;
+}
+
+export type Test = 'language' | 'civics';
+
 interface State {
   readonly years: number | 'none';
   readonly renounce: boolean | null;
   readonly lapses: boolean | null;
+  readonly atBirth?: AtBirth;
+  readonly fee?: Money;
+  readonly within?: { readonly n: number; readonly unit: Unit };
+  readonly test?: readonly Test[];
+}
+
+/** An ordinary naturalisation: the years of residence, whether every other citizenship must go, and its fee, time and tests where read. */
+export interface Naturalisation {
+  readonly years: number;
+  readonly renounce: boolean | null;
+  readonly fee?: Money;
+  readonly within?: { readonly n: number; readonly unit: Unit };
+  /** The tests it asks; none where empty. */
+  readonly test?: readonly Test[];
 }
 
 interface Of {
@@ -37,13 +67,18 @@ export const nationality = (country: CountryCode): CountryCode | undefined => {
 /** The state's own rules (the compile holds every state named as a country in its own right). */
 const rules = (country: CountryCode) => RULES[String(nationality(country))] as State | undefined;
 
-/** A state's ordinary naturalisation: the years of residence it asks and whether every other citizenship must go; 'none' where it naturalises no one by residence; undefined where the game doesn't keep it. */
-export function naturalisation(country: CountryCode): { readonly years: number; readonly renounce: boolean | null } | 'none' | undefined {
+/** A state's ordinary naturalisation: the years of residence it asks, whether every other citizenship must go, and its fee, time and tests where read; 'none' where it naturalises no one by residence; undefined where the game doesn't keep it. */
+export function naturalisation(country: CountryCode): Naturalisation | 'none' | undefined {
   const state = rules(country);
   if (state === undefined) return undefined;
   const counts = (RULES[country] as Partial<Of>).residenceCounts !== false;
-  return state.years === 'none' || !counts ? 'none' : { years: state.years, renounce: state.renounce };
+  if (state.years === 'none' || !counts) return 'none';
+  const { years, renounce, fee, within, test } = state;
+  return { years, renounce, ...(fee === undefined ? {} : { fee }), ...(within === undefined ? {} : { within }), ...(test === undefined ? {} : { test }) };
 }
+
+/** How citizenship comes at birth in a country (a territory's, its state's); undefined where the game doesn't keep it or the research hasn't read it. */
+export const atBirth = (country: CountryCode): AtBirth | undefined => rules(country)?.atBirth;
 
 /** The citizenships a person holds after naturalising in a country, and those whose keeping the game doesn't know. */
 export interface Held {

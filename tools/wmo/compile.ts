@@ -2,6 +2,7 @@ import { createHash } from 'node:crypto';
 import { readFileSync } from 'node:fs';
 import { join } from 'node:path';
 import { gunzipSync } from 'node:zlib';
+import { FOLDED, SOURCE as OUTLINES } from '../naturalearth/compile.ts';
 
 /**
  * Compiles the weather's stations from the WMO's climatological normals, as each Member's national weather service
@@ -135,7 +136,11 @@ export const MEMBERS_9120: Readonly<Record<string, readonly string[]>> = {
   Venezuela: ['VE'], Zambia: ['ZM'],
 };
 
-/** The 1961-1990 normals' own country codes (NCDC's, not ISO's: CTRYCOD1.TXT), each with the codes its stations may be in. */
+/**
+ * The 1961-1990 normals' own country codes (NCDC's, not ISO's: CTRYCOD1.TXT), each with the codes its stations may be in.
+ * RA's and RE's (Russia's) include stations of the Soviet Union's in what are now other countries (Leninabad, now
+ * Khujand, Termez, Kushka, Nikolaev and others); compileStations' check gives each the country whose town it lies by.
+ */
 export const MEMBERS_6190: Readonly<Record<string, readonly string[]>> = {
   AH: ['AF'], AB: ['AL'], AL: ['DZ'], AN: ['AO'], AG: ['AR'], AA: ['AQ'], AR: ['AM'], AU: ['AU', 'CX', 'CC', 'NF', 'HM'], AS: ['AQ'],
   OS: ['AT'], AJ: ['AZ'], BA: ['BS'], B1: ['BH'], BL: ['BY'], BX: ['BE'], B2: ['BZ'], B3: ['BJ'], BH: ['BA'], BZ: ['BR'], BP: ['BN'],
@@ -292,6 +297,22 @@ export const COUNTRIES_KT: Readonly<Record<string, readonly string[]>> = {
  */
 export const KT_COUNTRY: Readonly<Record<string, string>> = { '45011': 'MO' };
 
+/**
+ * The 1991-2020 files' stations of a country name whose WMO block is another country's, by the name and the block:
+ * NCEI's name the Republic of the Congo's (block 644: Pointe-Noire, Brazzaville, Mpouya, Impfondo and others)
+ * Dem._Rep._Congo, as they do the Democratic Republic's. Mpouya stands on the Congo's bank nearer a town of the
+ * Democratic Republic's, so its place alone wouldn't say. (An ID isn't always a WMO number: Peru's are its own.)
+ */
+export const BLOCKS_9120: Readonly<Record<string, string>> = { 'Dem._Rep._Congo|644': 'CG' };
+
+/**
+ * The countries no Member's normals in the WMO's sets speak for, their own service's standing for them: Taiwan's
+ * Central Weather Administration (R-0045). A station another Member files that lies in one is left out: China's files
+ * hold eight in Taiwan, which would stand before the CWA's (Taipei's temperatures read from Taoyuan's of 1961-1990,
+ * 31 km off, rather than Taipei's own of 1991-2020).
+ */
+export const NO_MEMBER: readonly string[] = ['TW'];
+
 // Stryker restore all
 
 export interface Town {
@@ -391,21 +412,25 @@ const ELEMENTS_6190: Readonly<Record<string, Param>> = { '0201': 'tmax', '0301':
 
 /** The 1961-1990 normals: stations from STNMETA.DAT, the parameters from ALLNORMS.DAT, the 1961-1990 period's first. */
 export function parse6190(normals: string, stations: string) {
-  const meta = new Map<string, { member: string; name: string; latitude: number; longitude: number; elevation: number | null }>();
+  const meta = new Map<string, { member: string; name: string; latitude: number; longitude: number; pub9: [number, number]; elevation: number | null }>();
   for (const line of stations.split(/\r?\n/).filter((l) => l.trim() !== '')) {
     const key = line.slice(0, 17);
     const member = line.slice(1, 3);
     if (!Object.hasOwn(MEMBERS_6190, member)) throw new Error(`a 1961-1990 Member the compiler doesn't know: ${member}`);
-    // The Member's own coordinates where it gave them, else those of WMO Publication No. 9.
-    const lat = dms(line.slice(18, 20), line.slice(20, 22), line[22] as string, 'S') ?? dms(line.slice(35, 37), line.slice(37, 39), line[39] as string, 'S');
-    const lon = dms(line.slice(23, 26), line.slice(26, 28), line[28] as string, 'W') ?? dms(line.slice(40, 43), line.slice(43, 45), line[45] as string, 'W');
+    // The Member's own coordinates where it gave them, else those of WMO Publication No. 9; and Publication No. 9's
+    // where it gave them, else the Member's, for a station the Member's place puts outside its country (Malawi's own
+    // coordinates are all north of the equator, Publication No. 9's south).
+    const pub9Lat = dms(line.slice(35, 37), line.slice(37, 39), line[39] as string, 'S');
+    const pub9Lon = dms(line.slice(40, 43), line.slice(43, 45), line[45] as string, 'W');
+    const lat = dms(line.slice(18, 20), line.slice(20, 22), line[22] as string, 'S') ?? pub9Lat;
+    const lon = dms(line.slice(23, 26), line.slice(26, 28), line[28] as string, 'W') ?? pub9Lon;
     const own = line.slice(29, 35).trim();
     const pub9 = line.slice(46, 50).trim();
     const elevation = own !== '' ? Number(own) : pub9 !== '' ? Number(pub9) : null;
     const name = (line.slice(56, 90).trim() || line.slice(90, 136).trim()).replace(/\s+/g, ' ');
-    if (lat !== null && lon !== null) meta.set(key, { member, name, latitude: lat, longitude: lon, elevation });
+    if (lat !== null && lon !== null) meta.set(key, { member, name, latitude: lat, longitude: lon, pub9: [pub9Lat ?? lat, pub9Lon ?? lon], elevation });
   }
-  const out = new Map<string, { member: string; name: string; latitude: number; longitude: number; elevation: number | null; normals: Partial<Record<Param, Months>>; standard: Partial<Record<Param, boolean>> }>();
+  const out = new Map<string, { member: string; name: string; latitude: number; longitude: number; pub9: [number, number]; elevation: number | null; normals: Partial<Record<Param, Months>>; standard: Partial<Record<Param, boolean>> }>();
   for (const line of normals.split(/\r?\n/)) {
     const key = line.slice(0, 17);
     const m = meta.get(key);
@@ -915,7 +940,77 @@ function pinned(root: string, file: string, sha256: string, encoding: 'utf8' | '
   return bytes.toString(encoding);
 }
 
-/** Every station of both sets that has a parameter, its country resolved against the gazetteer's towns. */
+/** A ring of an outline, as [longitude, latitude] points. */
+type Ring = readonly (readonly [number, number])[];
+/** Each country's outlines at 1:110m, by the gazetteer's code, as Natural Earth draws them. */
+export type Outlines = ReadonlyMap<string, readonly Ring[]>;
+
+/** Whether a place lies inside a country's outlines (the even-odd rule, over every ring). */
+export function inOutline(rings: readonly Ring[], latitude: number, longitude: number): boolean {
+  let inside = false;
+  for (const ring of rings) {
+    for (let i = 0, j = ring.length - 1; i < ring.length; j = i, i += 1) {
+      const [xi, yi] = ring[i] as readonly [number, number];
+      const [xj, yj] = ring[j] as readonly [number, number];
+      if (yi > latitude !== yj > latitude && longitude < ((xj - xi) * (latitude - yi)) / (yj - yi) + xi) inside = !inside;
+    }
+  }
+  return inside;
+}
+
+/** The distance from a place to an outline's nearest edge, km, on a plane about the place (near enough at this scale). */
+export function outlineKm(rings: readonly Ring[], latitude: number, longitude: number): number {
+  const k = Math.cos(rad(latitude));
+  let best = Infinity;
+  for (const ring of rings) {
+    for (let i = 1; i < ring.length; i += 1) {
+      const [x1, y1] = ring[i - 1] as readonly [number, number];
+      const [x2, y2] = ring[i] as readonly [number, number];
+      const [ax, ay, dx, dy] = [(x1 - longitude) * k, y1 - latitude, (x2 - x1) * k, y2 - y1];
+      // The point of the edge nearest the place, as a share of the edge from its start.
+      // An edge of one point (two the same in a row) is that point.
+      const t = Math.max(0, Math.min(1, -(ax * dx + ay * dy) / (dx * dx + dy * dy || 1)));
+      best = Math.min(best, Math.hypot(ax + t * dx, ay + t * dy));
+    }
+  }
+  return (best * Math.PI * RADIUS_KM) / 180;
+}
+
+/**
+ * How near a town of its own country a station must be to stand in it, km, where it's not within BORDER_KM of one of
+ * its Member's outlines: the Republic of the Congo's Dolisie, which NCEI's file gives the Democratic Republic's, is 112
+ * km from the Democratic Republic's nearest town.
+ */
+export const NEAR_KM = 100;
+/**
+ * How near an outline of its Member's a station must be to stand in it, km: the outlines at 1:110m draw a border tens
+ * of kilometres off (Karesuando, on the Swedish bank of the border river, lies outside Sweden's); the former Soviet
+ * Union's stations filed as Russia's lie 126 km and more from Russia's, China's in Taiwan 181 km and more from China's.
+ */
+export const BORDER_KM = 50;
+
+/** Natural Earth's countries, as the map compiles them, by the gazetteer's code. */
+export function readOutlines(geojson: string): Outlines {
+  const data = JSON.parse(geojson) as { features: { properties: { ISO_A2_EH: string; ADM0_A3: string }; geometry: { type: 'Polygon'; coordinates: [number, number][][] } | { type: 'MultiPolygon'; coordinates: [number, number][][][] } }[] };
+  const out = new Map<string, [number, number][][]>();
+  for (const { properties, geometry } of data.features) {
+    const code = properties.ISO_A2_EH === '-99' ? (FOLDED[properties.ADM0_A3] as string) : properties.ISO_A2_EH;
+    out.set(code, [...(out.get(code) ?? []), ...(geometry.type === 'Polygon' ? geometry.coordinates : geometry.coordinates.flat())]);
+  }
+  return out;
+}
+
+/**
+ * Every station of both sets that has a parameter, its country resolved against the gazetteer's towns, and every one
+ * checked to lie in the country it's filed under: within NEAR_KM of a town of that country, or inside an outline of
+ * one of its Member's countries, or in Antarctica south of 60°S. One that doesn't is placed by another record of it
+ * where one puts it in its country (the other coordinates of its 1961-1990 line, the WMO's other set's of its number);
+ * else it's given the country whose town lies within NEAR_KM (NCEI's Congo-Brazzaville stations labelled the
+ * Democratic Republic, the Soviet Union's stations in the 1961-1990 file filed as Russia's, China's in Taiwan); else,
+ * where another country's outline holds it, the compile stops with why, for a person to decide. A station in no
+ * outline and near no town is left as filed: the outlines at 1:110m don't draw the small islands that most such
+ * stations stand on, so the check can't tell an island from the sea.
+ */
 export function compileStations(
   s9120: ReturnType<typeof parse9120>,
   s6190: ReturnType<typeof parse6190>,
@@ -926,26 +1021,59 @@ export function compileStations(
   sWwis: ReturnType<typeof parseWwis>,
   ghcnd: readonly SourceStation[],
   towns: readonly Town[],
+  outlines: Outlines = new Map(),
 ): Station[] {
-  const pools = new Map<readonly string[], Town[]>();
-  const placed = (codes: readonly string[], latitude: number, longitude: number) => {
-    let pool = pools.get(codes);
-    if (pool === undefined) {
-      pool = townPool(towns, codes);
-      pools.set(codes, pool);
+  const pools = new Map<string, Town[]>();
+  const pool = (codes: readonly string[]) => {
+    const key = codes.join();
+    const cached = pools.get(key) ?? townPool(towns, codes);
+    pools.set(key, cached);
+    return cached;
+  };
+  const near = (t: Town | undefined, latitude: number, longitude: number) => t !== undefined && distanceKm(latitude, longitude, t.latitude, t.longitude) <= NEAR_KM;
+  const all = [...towns].sort((a, b) => a.latitude - b.latitude);
+  // The places of each WMO number in the WMO's two sets, as another record of a station of that number.
+  const round4 = (n: number) => Math.round(n * 1e4) / 1e4;
+  const records = new Map<string, [number, number][]>();
+  const record = (wmo: string | undefined, [lat, lon]: [number, number]) => {
+    if (wmo !== undefined && wmo !== '99999') records.set(wmo, [...(records.get(wmo) ?? []), [round4(lat), round4(lon)]]);
+  };
+  // A WMO number: a 1991-2020 ID's last five digits; a 1961-1990 key's five after its region and Member, where nothing
+  // follows them (a national number after them is the Member's own, and stations that share the five are several).
+  const wmo9120 = (key: string) => /^000(\d{5})\|/.exec(key)?.[1];
+  const wmo6190 = (key: string) => /^\d..(\d{5})\s*$/.exec(key)?.[1];
+  for (const [key, s] of s9120) record(wmo9120(key), [s.latitude, s.longitude]);
+  for (const [key, s] of s6190) {
+    record(wmo6190(key), [s.latitude, s.longitude]);
+    record(wmo6190(key), s.pub9);
+  }
+  const placed = (id: string, codes: readonly string[], latitude: number, longitude: number, others: readonly [number, number][] = []) => {
+    for (const [lat, lon] of [[latitude, longitude] as [number, number], ...others]) {
+      const country = countryOf(codes, lat, lon, pool(codes));
+      const own = (c: string) => inOutline(outlines.get(c) ?? [], lat, lon) || outlineKm(outlines.get(c) ?? [], lat, lon) <= BORDER_KM;
+      if (country === 'AQ' || near(nearestTown(pool([country]), lat, lon), lat, lon) || codes.some(own)) return { country, latitude: lat, longitude: lon };
     }
-    return countryOf(codes, latitude, longitude, pool);
+    const town = nearestTown(all, latitude, longitude);
+    if (near(town, latitude, longitude)) return NO_MEMBER.includes((town as Town).country) ? null : { country: (town as Town).country, latitude, longitude };
+    const holder = [...outlines].find(([, rings]) => inOutline(rings, latitude, longitude));
+    if (holder !== undefined) throw new Error(`${id} lies in ${holder[0]}'s outline, near no town, filed under ${codes.join(' or ')}: a station the compiler can't place`);
+    return { country: countryOf(codes, latitude, longitude, pool(codes)), latitude, longitude };
+  };
+  const checked = (s: SourceStation, codes: readonly string[], others?: readonly [number, number][]): SourceStation[] => {
+    const place = placed(s.id, codes, s.latitude, s.longitude, others);
+    return place === null ? [] : [{ ...s, ...place }];
   };
   const out: SourceStation[] = [];
   for (const [key, s] of s9120) {
     if (Object.keys(s.normals).length === 0) continue;
     const [id, wigos] = key.split('|') as [string, string];
-    out.push({ id: `9120:${id}:${wigos}`, name: s.name, country: placed(MEMBERS_9120[s.member] as readonly string[], s.latitude, s.longitude), latitude: s.latitude, longitude: s.longitude, elevation: s.elevation, period: '1991-2020', normals: s.normals });
+    const block = BLOCKS_9120[`${s.member}|${(wmo9120(key) ?? '').slice(0, 3)}`];
+    out.push(...checked({ id: `9120:${id}:${wigos}`, name: s.name, country: '', latitude: s.latitude, longitude: s.longitude, elevation: s.elevation, period: '1991-2020', normals: s.normals }, block === undefined ? (MEMBERS_9120[s.member] as readonly string[]) : [block], records.get(wmo9120(key) as string)));
   }
-  const round4 = (n: number) => Math.round(n * 1e4) / 1e4;
   // A 1961-1990 station is only read with a normal of its own, so every one has one.
   for (const [key, s] of s6190) {
-    out.push({ id: `6190:${key.trim().replace(/\s+/g, ':')}`, name: s.name, country: placed(MEMBERS_6190[s.member] as readonly string[], s.latitude, s.longitude), latitude: round4(s.latitude), longitude: round4(s.longitude), elevation: s.elevation, period: '1961-1990', normals: s.normals });
+    const stations = checked({ id: `6190:${key.trim().replace(/\s+/g, ':')}`, name: s.name, country: '', latitude: s.latitude, longitude: s.longitude, elevation: s.elevation, period: '1961-1990', normals: s.normals }, MEMBERS_6190[s.member] as readonly string[], [s.pub9, ...(records.get(wmo6190(key) as string) ?? [])]);
+    out.push(...stations.map((st) => ({ ...st, latitude: round4(st.latitude), longitude: round4(st.longitude) })));
   }
   // A 1981-2010 station, then a national service's own, then the Deutscher Wetterdienst's normals and its Klimatafeln,
   // then a World Weather Information Service city, then an average of NOAA's daily records, stands only for what its
@@ -957,23 +1085,21 @@ export function compileStations(
       if (Object.keys(normals).length > 0) out.push({ ...s, normals });
     }
   };
-  fill(s8110);
-  fill(national);
-  fill(dwd.map(({ member, ...s }) => ({ ...s, country: placed(COUNTRIES_DWD[member] as readonly string[], s.latitude, s.longitude) })));
-  fill(klimatafeln.map(({ member, ...s }) => ({ ...s, country: KT_COUNTRY[s.id.split(':')[1] as string] ?? placed(COUNTRIES_KT[member] as readonly string[], s.latitude, s.longitude) })));
+  const own = (s: SourceStation) => checked(s, [s.country]);
+  fill(s8110.flatMap(own));
+  fill(national.flatMap(own));
+  fill(dwd.flatMap(({ member, ...s }) => checked(s, COUNTRIES_DWD[member] as readonly string[])));
   fill(
-    [...sWwis].map(([id, s]) => ({ id: `wwis:${id}`, name: s.name, country: placed(MEMBERS_WWIS[s.member] as readonly string[], s.latitude, s.longitude), latitude: round4(s.latitude), longitude: round4(s.longitude), elevation: null, period: s.period, normals: s.normals })),
+    klimatafeln.flatMap(({ member, ...s }) => {
+      const country = KT_COUNTRY[s.id.split(':')[1] as string];
+      return checked(s, country === undefined ? (COUNTRIES_KT[member] as readonly string[]) : [country]);
+    }),
   );
-  fill(ghcnd);
+  fill([...sWwis].flatMap(([id, s]) => checked({ id: `wwis:${id}`, name: s.name, country: '', latitude: round4(s.latitude), longitude: round4(s.longitude), elevation: null, period: s.period, normals: s.normals }, MEMBERS_WWIS[s.member] as readonly string[])));
+  fill(ghcnd.flatMap(own));
   // Each station named for the player by the town nearest it in its own country, where one is near.
-  const own = new Map<string, Town[]>();
   const named = out.map((s) => {
-    let pool = own.get(s.country);
-    if (pool === undefined) {
-      pool = townPool(towns, [s.country]);
-      own.set(s.country, pool);
-    }
-    const t = nearestTown(pool, s.latitude, s.longitude);
+    const t = nearestTown(pool([s.country]), s.latitude, s.longitude);
     // Stryker disable next-line EqualityOperator: a town exactly 50 km off is near enough or not, either way.
     return { ...s, town: t !== undefined && distanceKm(s.latitude, s.longitude, t.latitude, t.longitude) <= TOWN_KM ? t.name : null };
   });
@@ -992,7 +1118,8 @@ export function readStations(root: string, towns: readonly Town[]): Station[] {
   }
   const wwis = pinned(root, SOURCE_WWIS.file, SOURCE_WWIS.sha256, 'utf8');
   const s8110 = Object.entries(SOURCES_8110).flatMap(([country, f]) => parse8110(country, pinned(root, f.file, f.sha256, 'latin1')));
-  return compileStations(parse9120(files), parse6190(normals, stations), s8110, national, parseDwd(pinned(root, SOURCE_DWD.file, SOURCE_DWD.sha256, 'utf8')), parseKlimatafeln(pinned(root, SOURCE_KT.file, SOURCE_KT.sha256, 'utf8')), parseWwis(wwis), parseGhcnd(pinned(root, SOURCE_GHCND.file, SOURCE_GHCND.sha256, 'utf8')), towns);
+  const outlines = readOutlines(pinned(root, OUTLINES.file, OUTLINES.sha256, 'utf8'));
+  return compileStations(parse9120(files), parse6190(normals, stations), s8110, national, parseDwd(pinned(root, SOURCE_DWD.file, SOURCE_DWD.sha256, 'utf8')), parseKlimatafeln(pinned(root, SOURCE_KT.file, SOURCE_KT.sha256, 'utf8')), parseWwis(wwis), parseGhcnd(pinned(root, SOURCE_GHCND.file, SOURCE_GHCND.sha256, 'utf8')), towns, outlines);
 }
 
 /** Compact: a station per array (id, name, town, country, latitude, longitude, height, period), its parameters as twelve months or null, in PARAMS' order. */

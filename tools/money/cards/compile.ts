@@ -85,7 +85,7 @@ export interface Card {
   intro?: { percent: string; per: RatePeriod; months: number };
   cash?: { rate?: Rate; fee?: Charge };
   fx?: string;
-  minimum?: { percent: string; floor?: Money; interest?: true };
+  minimum?: { percent: string; floor?: Money; interest?: true; plus?: Money };
   grace?: number;
   late?: Charge & { of?: (typeof LATE_BASES)[number] };
   overLimit?: Charge & { of?: (typeof OVER_BASES)[number] };
@@ -175,7 +175,6 @@ export function rate(r: unknown, currency: CurrencyCode, what: string): Card['ra
 /** One condition that waives a card's fee: an account's, spending a figure over the fee's period, or its first periods. */
 export function waiver(w: unknown, currency: CurrencyCode, what: string): Waiver {
   if (typeof w === 'object' && w !== null && Object.keys(w).length === 1 && 'spend' in w) return { spend: amount((w as { spend: unknown }).spend, currency, `${what}'s spend`) };
-  if (typeof w === 'object' && w !== null && Object.keys(w).length === 1 && 'first' in w) return { first: whole((w as { first: unknown }).first, 1, 60, `${what}'s first`) };
   return accountWaiver(w, currency, what);
 }
 
@@ -256,7 +255,7 @@ export function card(c: unknown, home: CurrencyCode, what: string): Card {
   }
   if (o['fx'] !== undefined) out.fx = percent(o['fx'], 100n, `${what}'s fx`);
   if (o['minimum'] !== undefined) {
-    const { percent: p, floor, interest: plus, ...rest } = object(o['minimum'], `${what}'s minimum`);
+    const { percent: p, floor, interest: plus, plus: sumAdded, ...rest } = object(o['minimum'], `${what}'s minimum`);
     nothingElse(rest, `${what}'s minimum`);
     out.minimum = { percent: percent(p, 100n, `${what}'s minimum`) };
     if (floor !== undefined) out.minimum.floor = amount(floor, cur, `${what}'s minimum floor`);
@@ -264,6 +263,8 @@ export function card(c: unknown, home: CurrencyCode, what: string): Card {
       if (plus !== true) throw new Error(`${what}'s minimum adds the interest, marked true`);
       out.minimum.interest = true;
     }
+    // A fixed sum on top of the share and the interest, as Canada's banks ask "the interest, the fees and $10".
+    if (sumAdded !== undefined) out.minimum.plus = amount(sumAdded, cur, `${what}'s minimum plus`);
   }
   if (o['grace'] !== undefined) out.grace = whole(o['grace'], 1, 90, `${what}'s grace`);
   if (o['late'] !== undefined) out.late = charge(o['late'], cur, LATE_BASES, `${what}'s late`);

@@ -1,7 +1,7 @@
 import { money, type CurrencyCode } from '../../core/money/money.ts';
 import { t } from '../../core/text/text.ts';
 import { countryName, type CountryCode } from '../../world/gazetteer/gazetteer.ts';
-import type { Offer, Route } from '../passports/passports.ts';
+import { routesFor, type Need, type Offer, type Route } from '../passports/passports.ts';
 import data from './ids.json' with { type: 'json' };
 
 /**
@@ -10,6 +10,9 @@ import data from './ids.json' with { type: 'json' };
  * total paid for each way and how many years the document is valid, in the passports' form. A country that issues none says so; a territory may hold another country's. A country whose
  * documents aren't kept has none here, and the player is told; what the research hasn't read is null, and the player
  * is told that too.
+ *
+ * From 2026-10-30 a card may give the age from which it must be held, the youngest it's issued to, and the groups and
+ * countries where it serves as a travel document; its renewal and its replacement are routes, as the passports' are.
  */
 interface Band {
   readonly from?: number;
@@ -25,6 +28,12 @@ interface Card {
   readonly currency: string;
   readonly routes: readonly Route[];
   readonly bands: readonly Band[];
+  /** The age from which the card must be held. */
+  readonly must?: number;
+  /** The youngest age the card is issued at. */
+  readonly from?: number;
+  /** The groups (EU/EEA, GCC, Mercosur, ECOWAS) and countries where the card serves as a travel document. */
+  readonly travel?: readonly string[];
 }
 
 interface None {
@@ -61,13 +70,17 @@ export function idDocument(country: CountryCode): string | undefined {
 
 const fits = (b: Band, age: number) => (b.from ?? 0) <= age && age < (b.under ?? Infinity);
 
-/** The ways a citizen of an age (whole years on the day of application) can get the country's identity document, one per route and band that fits; none where none is issued; undefined where the game doesn't keep it. */
-export function idOffers(country: CountryCode, age: number): IdOffer[] | undefined {
+/**
+ * The ways a citizen of an age (whole years on the day of application) can get the country's identity document, for a
+ * first issue, a renewal or a replacement, one per route and band that fits; none where none is issued or the citizen is
+ * younger than it's issued to; undefined where the game doesn't keep it.
+ */
+export function idOffers(country: CountryCode, age: number, need?: Need): IdOffer[] | undefined {
   const entry = own(country);
   if (entry === undefined) return undefined;
-  if ('none' in entry) return [];
+  if ('none' in entry || age < (entry.from ?? 0)) return [];
   const offers: IdOffer[] = [];
-  for (const route of entry.routes) {
+  for (const route of routesFor(entry.routes, need)) {
     for (const b of entry.bands) {
       if (!fits(b, age) || !Object.hasOwn(b.pay, route.id)) continue;
       const minor = b.pay[route.id] as number | null;
@@ -76,6 +89,22 @@ export function idOffers(country: CountryCode, age: number): IdOffer[] | undefin
     }
   }
   return offers;
+}
+
+/** Whether a citizen of an age must hold the country's identity document; false where none is issued or no age is set; undefined where the game doesn't keep it. */
+export function mustHoldId(country: CountryCode, age: number): boolean | undefined {
+  const entry = own(country);
+  if (entry === undefined) return undefined;
+  // A country that issues none, or sets no age, has no `must`: nobody reaches it.
+  return age >= ((entry as { readonly must?: number }).must ?? Infinity);
+}
+
+/** The groups and countries where the country's identity document serves as a travel document; none where it serves nowhere known or none is issued; undefined where the game doesn't keep it. */
+export function idTravel(country: CountryCode): readonly string[] | undefined {
+  const entry = own(country);
+  if (entry === undefined) return undefined;
+  // A country that issues none has no `travel`.
+  return (entry as { readonly travel?: readonly string[] }).travel ?? [];
 }
 
 export const UNKEPT_LINE = 'ids.unkept';

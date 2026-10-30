@@ -15,7 +15,10 @@
      "min": "5.00"
     }
    },
-   "fx": "1.60"
+   "fx": "1.60",
+   "minimum": {
+    "percent": "5.6"
+   }
   },
   {
    "bank": "Beobank",
@@ -558,7 +561,7 @@
    }
   }
  ],
- "note": "KBC's fee information document for the Compte Base KBC (1 January 2026): credit cards come with the account free, with or without Flex Budget, the revolving credit drawn on the KBC credit card, whose variable debit rate is 8.97% a year. Read again in full on 2026-10-30: a cash withdrawal with the KBC credit card at a machine costs 1.00% (at least 5.00 euros; 2.00% at a bank or exchange office, not written), and one in another currency adds a 1.60% exchange margin, written as the card's foreign fee (the document gives the margin for withdrawals; it gives none for card payments in another currency). The main banks: BNP Paribas Fortis, KBC, Belfius and ING Belgium; only KBC's document was read on 2026-10-30, and it prices one KBC credit card. Beobank (Crédit Mutuel group), Belgium's largest specialist credit card issuer, was added in wave 4 because its price list is open; BNP Paribas Fortis's card page answered 503 and Belfius's price page lists only investment and business tariffs, so neither was read. Beobank's price list for individuals (1 October 2026), chapter XI, credit cards, and its card pages, read 2026-10-30: each card on open sale with its yearly fee and the actuarial (effective) debit rate the list gives for its example credit line, written as the card's effective yearly rate (the list says the rate runs from 7.95% to 15.02% by the product and the size of the credit line, which the game doesn't hold); late-payment and over-limit interest is at most 110% of the actuarial rate, written as each card's penalty rate (its rate times 1.1). A cash withdrawal costs 2.50%, at least 5 and at most 15 euros, for contracts from 1 September 2011; every non-euro transaction 2.10%; a reminder 6.20 or 7.50 euros by the credit contract's conditions, written at 7.50 (postage on top not written); an unpaid direct debit 10 euros, written as the returned payment. The monthly minimum is 1/18 of the credit used for a line up to 5,000 euros and 1/20 above, at least 25 euros, plus the yearly fee, as the card pages state; the line isn't modelled, so 1/18 is written, rounded to 5.56%. The Young Mastercard is for young holders (the age isn't checked). The Extra World Mastercard, closed to new contracts since 26 April 2021, and the optional insurance and Cash Back option aren't written.",
+ "note": "KBC's fee information document for the Compte Base KBC (1 January 2026): credit cards come with the account free, with or without Flex Budget, the revolving credit drawn on the KBC credit card, whose variable debit rate is 8.97% a year. Read again in full on 2026-10-30: a cash withdrawal with the KBC credit card at a machine costs 1.00% (at least 5.00 euros; 2.00% at a bank or exchange office, not written), and one in another currency adds a 1.60% exchange margin, written as the card's foreign fee (the document gives the margin for withdrawals; it gives none for card payments in another currency). The main banks: BNP Paribas Fortis, KBC, Belfius and ING Belgium; only KBC's document was read on 2026-10-30, and it prices one KBC credit card. Beobank (Crédit Mutuel group), Belgium's largest specialist credit card issuer, was added in wave 4 because its price list is open; BNP Paribas Fortis's card page answered 503 and Belfius's price page lists only investment and business tariffs, so neither was read. Beobank's price list for individuals (1 October 2026), chapter XI, credit cards, and its card pages, read 2026-10-30: each card on open sale with its yearly fee and the actuarial (effective) debit rate the list gives for its example credit line, written as the card's effective yearly rate (the list says the rate runs from 7.95% to 15.02% by the product and the size of the credit line, which the game doesn't hold); late-payment and over-limit interest is at most 110% of the actuarial rate, written as each card's penalty rate (its rate times 1.1). A cash withdrawal costs 2.50%, at least 5 and at most 15 euros, for contracts from 1 September 2011; every non-euro transaction 2.10%; a reminder 6.20 or 7.50 euros by the credit contract's conditions, written at 7.50 (postage on top not written); an unpaid direct debit 10 euros, written as the returned payment. The monthly minimum is 1/18 of the credit used for a line up to 5,000 euros and 1/20 above, at least 25 euros, plus the yearly fee, as the card pages state; the line isn't modelled, so 1/18 is written, rounded to 5.56%. The Young Mastercard is for young holders (the age isn't checked). The Extra World Mastercard, closed to new contracts since 26 April 2021, and the optional insurance and Cash Back option aren't written. KBC's Flex Budget page (read 2026-10-30): what the holder repays each month must by law be at least 5.6% of the open balance, written as the KBC card's minimum (the holder may choose a higher share or a fixed sum).",
  "sources": [
   {
    "url": "https://multimediafiles.kbcgroup.eu/ng/PUBLISHED/KBC/PDF/Tarieven/kbc-compte-base-document-d-information-tarifaire.pdf",
@@ -583,6 +586,12 @@
    "title": "Beobank, Extra Mastercard",
    "read": "2026-10-30",
    "said": "1/18e (si votre ligne de crédit est inférieure ou égale à 5.000 euros) ou 1/20e (si votre ligne de crédit est supérieure à 5.000 euros) de la réserve financière utilisée (hors cotisation annuelle) avec un minimum de 25 euros"
+  },
+  {
+   "url": "https://www.kbc.be/particulieren/nl/product/betalen/betaalkaarten/kredietkaarten-en-prepaid-kaarten/kbc-flex-budget.html",
+   "title": "KBC, KBC Flex Budget",
+   "read": "2026-10-30",
+   "said": "Het bedrag dat je maandelijks terugbetaalt, moet wettelijk minstens 5,6% van je openstaande saldo zijn. ... Voor een KBC-Kredietkaart met KBC Flex Budget bedraagt dit 8,97%, ongeacht de limiet"
   }
  ]
 }

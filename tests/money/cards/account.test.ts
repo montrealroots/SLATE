@@ -3,7 +3,6 @@ import { begin, commandIndex, dispatch, pass, type Context, type Item, type Json
 import { money } from '../../../src/core/money/money.ts';
 import { daysFromCivil } from '../../../src/core/time/calendar.ts';
 import {
-  ageOn,
   CARDS_START,
   pick,
   dueAfter,
@@ -54,7 +53,7 @@ function ctx(now: number) {
 }
 
 const plain: Card = { bank: 'B', card: 'C', currency: 'USD', rate: { percent: '24', per: 'year' }, fees: [] };
-const holder = { born: '1996-03-10', national: false };
+const holder = { born: '1996-03-10', zone: 'America/New_York', national: false };
 const fresh = (): Holding => ({ cards: { held: [] }, credit: { marks: [] } });
 const opened = (card: Card, when = at(2026, 1, 15), limit = '1000', country = 'US'): { s: Holding; h: Held } => {
   const s = fresh();
@@ -69,10 +68,9 @@ const stated = (s: Holding, when: number, i = 0) => {
 };
 
 describe('a card held', () => {
-  it('reads amounts, ages and the days of its statements', () => {
+  it('reads amounts and the days of its statements', () => {
     expect(sum('USD', '12.50', 'x')).toStrictEqual(usd(1250));
     for (const t of ['0', '-1', '1e3', 'a1', '1a', '']) expect(() => sum('USD', t, 'x'), t).toThrow('x is an amount above nothing, written in major units');
-    expect([ageOn('1996-03-10', at(2026, 3, 9)), ageOn('1996-03-10', at(2026, 3, 10)), ageOn('1996-03-10', at(2026, 2, 28)), ageOn('1996-03-10', at(2026, 4, 1))]).toEqual([29, 30, 29, 30]);
     const h = { day: 28, opened: at(2026, 1, 28, 9) };
     expect(nextStatement(h, at(2026, 1, 28))).toBe(at(2026, 2, 28));
     expect(nextStatement(h, at(2026, 12, 28))).toBe(at(2027, 1, 28));
@@ -246,11 +244,17 @@ describe('a card held', () => {
     stated(s, at(2027, 2, 15));
     // The thirteenth: the second year's 50, its quarter's 6, the month's 1, and 1% of the 1,000 limit, 10.
     expect(h.purchases).toBe(5000 + 600 + 100 + 1000);
-    const old = fresh();
-    openOn(old, { country: 'US', bank: 'B', card: 'C', limit: '1000', income: '5000', born: '1960-01-01', national: false }, card, ctx(at(2026, 1, 15)).c);
-    statement(old, item(STATEMENT_KIND, at(2026, 2, 15), { card: 0, born: '1960-01-01', national: false }), ctx(at(2026, 2, 15)).c);
-    // Sixty and over: the quarterly fee waived.
-    expect((old.cards.held[0] as Held).purchases).toBe(100);
+    // Sixty and over: the quarterly fee waived, from the holder's sixtieth birthday where they live. A statement at
+    // 16:00 UT on 14 February is the 15th in Tokyo, and still the 14th in New York.
+    const sixty = (zone: string, when: number) => {
+      const old = fresh();
+      openOn(old, { country: 'US', bank: 'B', card: 'C', limit: '1000', income: '5000', born: '1966-02-15', zone, national: false }, card, ctx(at(2026, 1, 14, 16)).c);
+      statement(old, item(STATEMENT_KIND, when, { card: 0, born: '1966-02-15', zone, national: false }), ctx(when).c);
+      return (old.cards.held[0] as Held).purchases;
+    };
+    expect([sixty('Asia/Tokyo', at(2026, 2, 14, 16)), sixty('America/New_York', at(2026, 2, 14, 16)), sixty('America/New_York', at(2026, 2, 15, 5))]).toEqual([100, 700, 100]);
+    // The holder's zone is held to one at opening, so a statement never meets one it can't read.
+    expect(() => openOn(fresh(), { country: 'US', bank: 'B', card: 'C', limit: '1000', income: '5000', ...holder, zone: 'Mars/Olympus' }, card, ctx(at(2026, 1, 15)).c)).toThrow("Mars/Olympus isn't a time zone");
   });
 
   it('keeps a year of months, reads a fee by the day its statement comes, and counts a longer period from issue', () => {
@@ -289,7 +293,7 @@ describe('a card held', () => {
     expect(h.purchases).toBe(98_501 + 1000 + 2500);
   });
 
-  it('charges the tax on interest and fees, and the over-limit fee on a balance past the limit; takes past due off the minimum', () => {
+  it('charges the tax on interest and fees, and the over-limit fee on a balance past the limit; asks past due on top of the minimum, never past the balance', () => {
     const card: Card = { ...plain, tax: { interest: '10', fees: '20' }, overLimit: { fixed: usd(2500) }, fees: [{ fee: usd(1000), per: 'month' }], minimum: { percent: '10' } };
     const { s, h } = opened(card, at(2026, 1, 15), '1000');
     h.purchases = 99_500;
@@ -298,14 +302,14 @@ describe('a card held', () => {
     stated(s, at(2026, 2, 15));
     // 995 at 24%: 19.90, its tax 1.99; the month's fee 10 and the over-limit 25, their tax 7.
     expect(h.purchases).toBe(99_500 + 1990 + 199 + 1000 + 2500 + 700);
-    // A tenth of 1,058.89 is 105.89; less 30 past due.
-    expect(h.statement?.minimum).toBe(10_589 - 3000);
+    // A tenth of 1,058.89 is 105.89, owed beside the 30 past due (until 2026-10-30 the 30 was taken off it).
+    expect(h.statement?.minimum).toBe(10_589);
     // At the limit and not past it: no over-limit fee.
     const { s: t, h: u } = opened({ ...plain, overLimit: { fixed: usd(2500) }, minimum: { percent: '10' } }, at(2026, 1, 15), '1000');
     u.purchases = 100_000;
     stated(t, at(2026, 2, 15));
     expect(u.purchases).toBe(100_000);
-    // Past due more than the minimum: nothing more asked now.
+    // Past due and the minimum together past the balance: nothing more asked now than what makes up the balance.
     u.past = [{ due: 1, short: 999_999 }];
     stated(t, at(2026, 3, 15));
     expect(u.statement?.minimum).toBe(0);

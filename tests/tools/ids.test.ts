@@ -3,7 +3,7 @@ import { mkdirSync, mkdtempSync, readFileSync, writeFileSync } from 'node:fs';
 import { tmpdir } from 'node:os';
 import { join, resolve } from 'node:path';
 import { describe, expect, it } from 'vitest';
-import { checkIssuers, compileCard, compileIssued, compileNone, OUTPUT, readIds, serialize, SOURCES } from '../../tools/papers/ids/compile.ts';
+import { checkIssuers, compileCard, compileIssued, compileNone, OUTPUT, readIds, serialize, SOURCES, TRAVEL_GROUPS } from '../../tools/papers/ids/compile.ts';
 import { COVERAGE, coverageOf, idsCoverage, serializeCoverage, TESTS, TOLD } from '../../tools/papers/ids/coverage.ts';
 import { NO_PLACES } from '../../tools/papers/passports/coverage.ts';
 
@@ -73,20 +73,45 @@ describe('the identity documents compile', () => {
     expect(compileCard('DE', file({ cards: [{ from: 18, validYears: 5, pay: { home: '1', abroad: '1' } }, { from: 18, validYears: 10, pay: { home: '2' } }] })).bands).toHaveLength(2);
   });
 
+  it('takes the age a card must be held from, the youngest it is issued at, where it travels, and its renewal and replacement routes', () => {
+    expect([...TRAVEL_GROUPS]).toEqual(['EU/EEA', 'GCC', 'Mercosur', 'ECOWAS']);
+    const full = compileCard('DE', file({ must: 16, from: 0, travel: ['EU/EEA', 'CH', 'GCC', 'Mercosur', 'ECOWAS'] }));
+    expect(full).toStrictEqual({ ...compileCard('DE', file()), must: 16, from: 0, travel: ['EU/EEA', 'CH', 'GCC', 'Mercosur', 'ECOWAS'] });
+    expect(compileCard('DE', file({ must: 16, from: 16 }))).toMatchObject({ must: 16, from: 16 });
+    expect(compileCard('DE', file({ from: 120 })).from).toBe(120);
+    expect(compileCard('DE', file({ must: 0 })).must).toBe(0);
+    expect(compileCard('DE', file())).not.toHaveProperty('must');
+    for (const must of [-1, 1.5, '16', null, 121]) expect(() => compileCard('DE', file({ must })), String(must)).toThrow("DE's card must be held from a whole age");
+    for (const from of [-1, 1.5, '18', null, 121]) expect(() => compileCard('DE', file({ from })), String(from)).toThrow("DE's card is issued from a whole age");
+    expect(() => compileCard('DE', file({ must: 16, from: 17 }))).toThrow("DE's card must be held from 16, before it's issued at 17");
+    for (const travel of [[], 'EU/EEA', ['EU'], ['DE'], ['XX'], [7], [['CH']], ['CH', 'XX'], ['CH', 'CH'], {}]) {
+      expect(() => compileCard('DE', file({ travel })), JSON.stringify(travel)).toThrow("DE's card travels to distinct groups (EU/EEA, GCC, Mercosur, ECOWAS) or other countries on the map");
+    }
+    expect(() => compileCard('DE', file({ issuers: {} }))).toThrow("DE's regions' own cards aren't in the form yet (the US states' go to the licence engine)");
+    // Renewal and replacement routes, the passports' form; a card needs a route for its first issue.
+    const routes = [route('home'), route('renew', { renewal: true }), route('lost', { replacement: true })];
+    const cards = [{ validYears: 10, pay: { home: '5', renew: '16', lost: '20' } }];
+    expect(compileCard('DE', file({ routes, cards })).routes.slice(1)).toStrictEqual([
+      { id: 'renew', where: 'home', speed: 'standard', within: null, renewal: true },
+      { id: 'lost', where: 'home', speed: 'standard', within: null, replacement: true },
+    ]);
+    expect(() => compileCard('DE', file({ routes: routes.slice(1), cards: [{ validYears: 10, pay: { renew: '16', lost: '20' } }] }))).toThrow('DE has no route for a first card');
+  });
+
   it('takes a country that issues none to none, and a territory to the country whose document its people hold', () => {
     expect(compileNone('GB', { country: 'GB', none: true, note: 'x', sources: [] })).toStrictEqual({ none: true });
     expect(() => compileNone('XX', { country: 'XX', none: true })).toThrow('XX is not a country on the map');
     expect(() => compileNone('GB', { country: 'GB', none: 'yes' })).toThrow("GB's file says it issues none only as none: true");
-    for (const key of ['routes', 'cards', 'document']) {
-      expect(() => compileNone('GB', { country: 'GB', none: true, [key]: [] }), key).toThrow('GB issues no identity document, so it has no routes, cards or name');
+    for (const key of ['routes', 'cards', 'document', 'must', 'from', 'travel']) {
+      expect(() => compileNone('GB', { country: 'GB', none: true, [key]: [] }), key).toThrow('GB issues no identity document, so it has no routes, cards, name, ages or travel');
     }
     expect(compileIssued('GU', { country: 'GU', issuedBy: 'US', note: 'x', sources: [] })).toStrictEqual({ issuedBy: 'US' });
     expect(() => compileIssued('XX', { country: 'XX', issuedBy: 'US' })).toThrow('XX is not a country on the map');
     expect(() => compileIssued('GU', { country: 'PR', issuedBy: 'US' })).toThrow("GU's file is for PR");
     for (const issuedBy of ['XX', 'GU', 7]) expect(() => compileIssued('GU', { country: 'GU', issuedBy })).toThrow(`GU's identity documents are issued by another country on the map, not ${String(issuedBy)}`);
     // No territory's card is limited to some of its issuer's routes, so a file can't say so.
-    for (const key of ['routes', 'cards', 'onlyRoutes']) {
-      expect(() => compileIssued('GU', { country: 'GU', issuedBy: 'US', [key]: [] }), key).toThrow("GU's identity documents are US's, on all its routes, so it has no routes, cards or route limits of its own");
+    for (const key of ['routes', 'cards', 'onlyRoutes', 'must', 'from', 'travel']) {
+      expect(() => compileIssued('GU', { country: 'GU', issuedBy: 'US', [key]: [] }), key).toThrow("GU's identity documents are US's, on all its routes, so it has no routes, cards, route limits, ages or travel of its own");
     }
     const de = compileCard('DE', file());
     expect(() => checkIssuers({ DE: de, GB: { none: true }, AT: { issuedBy: 'DE' }, GU: { issuedBy: 'GB' } })).not.toThrow();

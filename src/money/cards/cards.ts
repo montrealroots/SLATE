@@ -61,7 +61,8 @@ export interface Card {
   readonly intro?: { readonly percent: string; readonly per: 'month' | 'year'; readonly months: number };
   readonly cash?: { readonly rate?: Rate; readonly fee?: Charge };
   readonly fx?: string;
-  readonly minimum?: { readonly percent: string; readonly floor?: Money; readonly interest?: true };
+  /** Its share of the balance, its floor, the month's interest added, and a fixed sum added on top. */
+  readonly minimum?: { readonly percent: string; readonly floor?: Money; readonly interest?: true; readonly plus?: Money };
   readonly grace?: number;
   readonly late?: Charge & { readonly of?: 'minimum' | 'balance' | 'unpaid' };
   readonly overLimit?: Charge & { readonly of?: 'excess' | 'balance' | 'limit' };
@@ -202,7 +203,8 @@ export function overLimitFee(card: Card, o: Over): Money {
 }
 
 /**
- * The least a statement asks: its share of the balance and the month's interest where the bank adds it, never under
+ * The least a statement asks: its share of the balance, the month's interest where the bank adds it and any fixed sum on
+ * top, never under
  * its floor nor over the balance itself; nothing on nothing owed. A card that publishes no minimum asks the balance.
  */
 export function minimumDue(card: Card, balance: Money, interest: Money): Money {
@@ -211,6 +213,7 @@ export function minimumDue(card: Card, balance: Money, interest: Money): Money {
   if (card.minimum === undefined) return balance;
   let due = share(balance, card.minimum.percent);
   if (card.minimum.interest === true) due = add(due, interest);
+  if (card.minimum.plus !== undefined) due = add(due, card.minimum.plus);
   // Stryker disable next-line EqualityOperator: at the floor, taking it or the sum is the same.
   if (card.minimum.floor !== undefined && compare(due, card.minimum.floor) < 0) due = card.minimum.floor;
   // Stryker disable next-line EqualityOperator: at the balance, taking it or the minimum is the same.
@@ -235,7 +238,6 @@ export interface Standing extends AccountStanding {
 /** Whether the holder's standing over the period meets a waiver. */
 const met = (w: Waiver, s: Standing): boolean => {
   if ('spend' in w) return compare(s.spent, w.spend) >= 0;
-  if ('first' in w) return s.period <= w.first;
   return waives(w, s);
 };
 

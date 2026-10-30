@@ -156,6 +156,7 @@ describe('the cards compile', () => {
       limit: { times: '4' },
     });
     expect(card({ ...base, cash: { fee: { fixed: '2' } }, minimum: { percent: '10' }, tax: { fees: '15' } }, 'USD', 'c')).toStrictEqual({ ...out, cash: { fee: { fixed: usd(200) } }, minimum: { percent: '10' }, tax: { fees: '15' } });
+    expect(card({ ...base, minimum: { percent: '0', interest: true, plus: '10' } }, 'USD', 'c').minimum).toStrictEqual({ percent: '0', interest: true, plus: usd(1000) });
     expect(card({ ...base, cash: { rate: { percent: '2', per: 'month' } }, tax: { interest: '3.5' } }, 'USD', 'c')).toStrictEqual({ ...out, cash: { rate: { percent: '2', per: 'month' } }, tax: { interest: '3.5' } });
     const bad: [Record<string, unknown>, string][] = [
       [{ issue: '0' }, "c's issue is an amount above nothing, written in major units"],
@@ -178,6 +179,7 @@ describe('the cards compile', () => {
       [{ minimum: { percent: '5', x: 1 } }, "c's minimum has no term x"],
       [{ minimum: { percent: '5', interest: 'yes' } }, "c's minimum adds the interest, marked true"],
       [{ minimum: { percent: '5', floor: '0' } }, "c's minimum floor is an amount above nothing, written in major units"],
+      [{ minimum: { percent: '0', plus: '0' } }, "c's minimum plus is an amount above nothing, written in major units"],
       [{ minimum: { percent: '101' } }, "c's minimum is above 100"],
       [{ grace: 0 }, "c's grace is a whole number from 1 to 90"],
       [{ grace: 91 }, "c's grace is a whole number from 1 to 90"],

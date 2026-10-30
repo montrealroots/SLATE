@@ -3,7 +3,7 @@ import { mkdirSync, mkdtempSync, readFileSync, writeFileSync } from 'node:fs';
 import { tmpdir } from 'node:os';
 import { join, resolve } from 'node:path';
 import { describe, expect, it } from 'vitest';
-import { checkNationalities, compileOf, compileState, OUTPUT, readCitizenship, serialize, SOURCES } from '../../tools/papers/citizenship/compile.ts';
+import { checkNationalities, compileOf, compileState, DESCENT, OUTPUT, readCitizenship, serialize, SOIL, SOURCES, TEST_KINDS } from '../../tools/papers/citizenship/compile.ts';
 import { citizenshipCoverage, COVERAGE, coverageOf, serializeCoverage, TESTS, TOLD } from '../../tools/papers/citizenship/coverage.ts';
 import { NO_PLACES } from '../../tools/papers/passports/coverage.ts';
 
@@ -34,6 +34,53 @@ describe('the citizenship rules compile', () => {
     }
   });
 
+  it('takes how citizenship comes at birth, by soil and by descent', () => {
+    expect([SOIL, DESCENT, TEST_KINDS]).toEqual([['unconditional', 'conditional', 'none'], ['either parent', 'father', 'none'], ['language', 'civics']]);
+    const born = (atBirth: unknown) => compileState('DE', state({ atBirth })).atBirth;
+    expect(born({ soil: 'unconditional', descent: 'either parent' })).toStrictEqual({ soil: 'unconditional', descent: 'either parent' });
+    expect(born({ soil: 'conditional', soilIf: 'a parent lawfully resident eight years', descent: 'either parent', descentAbroad: 'a parent born abroad after 1999 registers the birth within a year' })).toStrictEqual({
+      soil: 'conditional', soilIf: 'a parent lawfully resident eight years', descent: 'either parent', descentAbroad: 'a parent born abroad after 1999 registers the birth within a year',
+    });
+    expect(born({ soil: 'none', descent: 'father', descentAbroad: 'x' })).toStrictEqual({ soil: 'none', descent: 'father', descentAbroad: 'x' });
+    expect(born({ soil: 'none', descent: 'none' })).toStrictEqual({ soil: 'none', descent: 'none' });
+    expect(compileState('DE', state())).not.toHaveProperty('atBirth');
+    expect(compileState('CN', state({ country: 'CN', years: 'none', renounce: null, atBirth: { soil: 'none', descent: 'either parent' } })).atBirth).toEqual({ soil: 'none', descent: 'either parent' });
+    const W = "DE's citizenship at birth";
+    for (const a of ['soil', null, []]) expect(() => born(a), JSON.stringify(a)).toThrow(`${W} is not an object`);
+    expect(() => born({ soil: 'none', descent: 'none', parents: 2 })).toThrow(`${W} has no term parents`);
+    for (const soil of ['always', undefined]) expect(() => born({ soil, descent: 'none' }), String(soil)).toThrow(`${W} by birth in the territory is unconditional, conditional, none, not ${String(soil)}`);
+    for (const descent of ['mother', undefined]) expect(() => born({ soil: 'none', descent }), String(descent)).toThrow(`${W} by descent is either parent, father, none, not ${String(descent)}`);
+    for (const soilIf of [undefined, '', ' ', 7]) expect(() => born({ soil: 'conditional', soilIf, descent: 'none' }), String(soilIf)).toThrow(`${W} by birth in the territory is conditional, so states its condition (soilIf)`);
+    for (const soil of ['unconditional', 'none']) expect(() => born({ soil, soilIf: 'x', descent: 'none' }), soil).toThrow(`${W} states a condition only for a conditional birth in the territory`);
+    for (const [descent, descentAbroad] of [['none', 'x'], ['father', ''], ['father', ' '], ['either parent', 7]]) {
+      expect(() => born({ soil: 'none', descent, descentAbroad }), `${descent} ${String(descentAbroad)}`).toThrow(`${W} states a limit abroad only as text, and only for a descent`);
+    }
+  });
+
+  it("takes naturalisation's fee, time and tests", () => {
+    expect(compileState('GB', state({ country: 'GB', currency: 'GBP', fee: '1839', within: { n: 6, unit: 'month' }, test: ['language', 'civics'] }))).toStrictEqual({
+      years: 5, renounce: false, lapses: false, fee: { currency: 'GBP', minor: 183900 }, within: { n: 6, unit: 'month' }, test: ['language', 'civics'],
+    });
+    expect(compileState('MX', state({ country: 'MX', currency: 'MXN', fee: '9502.01', within: { n: 0, unit: 'working day' }, test: [] }))).toMatchObject({ fee: { currency: 'MXN', minor: 950201 }, within: { n: 0, unit: 'working day' }, test: [] });
+    expect(compileState('IE', state({ country: 'IE', currency: 'EUR', fee: '0' })).fee).toEqual({ currency: 'EUR', minor: 0 });
+    const s = compileState('DE', state());
+    for (const key of ['fee', 'within', 'test']) expect(s).not.toHaveProperty(key);
+    for (const currency of ['XXX', 7, undefined]) expect(() => compileState('DE', state({ currency, fee: '1' })), String(currency)).toThrow(`DE's naturalisation fee is in ${String(currency)}, not a currency in use`);
+    expect(() => compileState('DE', state({ currency: ['EUR'], fee: '1' }))).toThrow("DE's naturalisation fee is in EUR, not a currency in use");
+    for (const fee of [1, '-1', '1,5', '', null]) expect(() => compileState('DE', state({ currency: 'EUR', fee })), String(fee)).toThrow("DE's naturalisation fee is an amount written out in major units");
+    expect(() => compileState('DE', state({ currency: 'EUR', fee: '1.001' }))).toThrow('EUR has 2 decimal places; "1.001" has more');
+    expect(() => compileState('DE', state({ currency: 'EUR' }))).toThrow('DE names a currency only for its naturalisation fee');
+    for (const within of [3, null, [6, 'month'], { n: -1, unit: 'day' }, { n: 1.5, unit: 'day' }, { n: 1, unit: 'year' }, { unit: 'day' }, { n: 1, unit: 'day', at: 'most' }]) {
+      expect(() => compileState('DE', state({ within })), JSON.stringify(within)).toThrow("DE's naturalisation takes a whole number of minutes, hours, days, working days, weeks or months");
+    }
+    for (const test of ['language', ['oath'], ['language', 'language'], null]) {
+      expect(() => compileState('DE', state({ test })), JSON.stringify(test)).toThrow("DE's naturalisation tests are distinct of language, civics, or none");
+    }
+    for (const more of [{ currency: 'CNY' }, { fee: '1' }, { within: { n: 1, unit: 'day' } }, { test: [] }]) {
+      expect(() => compileState('CN', state({ country: 'CN', years: 'none', renounce: null, ...more })), JSON.stringify(more)).toThrow('CN naturalises no one by residence, so has no fee, time or test');
+    }
+  });
+
   it("takes a territory to the state whose nationality its people hold, and whether living there counts", () => {
     expect(compileOf('GU', { country: 'GU', nationalityOf: 'US', note: 'x', sources: [] })).toStrictEqual({ nationalityOf: 'US' });
     expect(compileOf('SJ', { country: 'SJ', nationalityOf: 'NO', residenceCounts: false })).toStrictEqual({ nationalityOf: 'NO', residenceCounts: false });
@@ -43,7 +90,7 @@ describe('the citizenship rules compile', () => {
     expect(() => compileOf('XX', { country: 'XX', nationalityOf: 'US' })).toThrow('XX is not a country on the map');
     expect(() => compileOf('GU', { country: 'PR', nationalityOf: 'US' })).toThrow("GU's file is for PR");
     for (const of of ['XX', 'GU', 7]) expect(() => compileOf('GU', { country: 'GU', nationalityOf: of })).toThrow(`GU's people hold another country's nationality on the map, not ${String(of)}`);
-    for (const key of ['years', 'renounce', 'lapses']) {
+    for (const key of ['years', 'renounce', 'lapses', 'atBirth', 'currency', 'fee', 'within', 'test']) {
       expect(() => compileOf('GU', { country: 'GU', nationalityOf: 'US', [key]: null }), key).toThrow("GU's people hold US's nationality, so its rules are US's");
     }
     const us = compileState('US', state({ country: 'US' }));

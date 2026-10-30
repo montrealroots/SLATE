@@ -195,5 +195,57 @@
    "coverage/means-countries.json"
   ],
   "allPlacesTest": "tests/money/means/means.places.test.ts::means > for every place on the map"
+ },
+ "money.ledger": {
+  "layer": 3,
+  "dir": "src/money/ledger",
+  "readsPlace": false,
+  "matrices": [
+   "coverage/ledger-operations.json"
+  ]
+ },
+ "papers.numbers": {
+  "layer": 3,
+  "dir": "src/papers/numbers",
+  "readsPlace": true,
+  "matrices": [
+   "coverage/numbers-countries.json"
+  ],
+  "allPlacesTest": "tests/papers/numbers/numbers.places.test.ts::the national numbers > for every place on the map"
+ },
+ "papers.residence": {
+  "layer": 3,
+  "dir": "src/papers/residence",
+  "readsPlace": true,
+  "matrices": [
+   "coverage/residence-countries.json"
+  ],
+  "allPlacesTest": "tests/papers/residence/residence.places.test.ts::the residence permissions > for every place on the map"
+ },
+ "papers.licence": {
+  "layer": 3,
+  "dir": "src/papers/licence",
+  "readsPlace": true,
+  "matrices": [
+   "coverage/licence-countries.json"
+  ],
+  "allPlacesTest": "tests/papers/licence/licence.places.test.ts::the licences > for every place on the map"
+ },
+ "money.accounts": {
+  "layer": 3,
+  "dir": "src/money/accounts",
+  "readsPlace": false,
+  "matrices": [
+   "coverage/accounts-operations.json"
+  ]
+ },
+ "money.formats": {
+  "layer": 3,
+  "dir": "src/money/formats",
+  "readsPlace": true,
+  "matrices": [
+   "coverage/formats-countries.json"
+  ],
+  "allPlacesTest": "tests/money/formats/formats.places.test.ts::account numbers > for every place on the map"
  }
 }

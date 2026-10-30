@@ -29,6 +29,10 @@
    "grace": 55,
    "late": {
     "fixed": "20"
+   },
+   "minimum": {
+    "percent": "2",
+    "floor": "25"
    }
   },
   {
@@ -63,6 +67,10 @@
    "grace": 55,
    "late": {
     "fixed": "20"
+   },
+   "minimum": {
+    "percent": "2",
+    "floor": "25"
    }
   },
   {
@@ -98,6 +106,10 @@
    "grace": 44,
    "late": {
     "fixed": "20"
+   },
+   "minimum": {
+    "percent": "2",
+    "floor": "25"
    }
   },
   {
@@ -113,10 +125,14 @@
      "per": "month"
     }
    ],
-   "fx": "0"
+   "fx": "0",
+   "minimum": {
+    "percent": "2",
+    "floor": "25"
+   }
   }
  ],
- "note": "Norfolk Island is served by the Commonwealth Bank, whose branch there offers its Australian cards (the island is Australian territory, under Australia's credit law and its dollar) (other banks on the island weren't read). The Commonwealth Bank's own pages for each personal credit card it sells (read 30 October 2026): the Low Rate card costs $6 a month, with a personalised purchase rate between 10.99% and 15.99% a year offered on approval (written at the top, with the lowest as from); the Low Fee card $3 a month, nothing in a statement period with $300 of spending, and 20.99%; the Smart Awards card $19 a month, nothing in a statement period with $2,000 of spending, and 20.99% (the page says that waiver ends on 1 January 2027, which the form can't schedule, so it is written as it stands now). These three charge 21.99% a year on cash advances and a cash advance fee of $4.00 or 3.00%, whichever is greater (at most $300 on Smart Awards), a 3.50% international transaction fee and a $20 late payment fee, with up to 55 interest-free days (44 on Smart Awards). The CommBank Neo charges no interest (0% a year) and no international or late fee, but a monthly fee of $15, $20 or $25 by its credit limit ($1,000, $2,000 or $3,000); the game doesn't keep a limit, so the $25 is written, and the page's $0 month when the card isn't used and the balance is paid isn't a condition the game checks. The Ultimate Awards card's page answered 404 and isn't written. The Low Rate card's first-year fee and cashback offers are introductory and not written.",
+ "note": "Norfolk Island is served by the Commonwealth Bank, whose branch there offers its Australian cards (the island is Australian territory, under Australia's credit law and its dollar) (other banks on the island weren't read). The Commonwealth Bank's own pages for each personal credit card it sells (read 30 October 2026): the Low Rate card costs $6 a month, with a personalised purchase rate between 10.99% and 15.99% a year offered on approval (written at the top, with the lowest as from); the Low Fee card $3 a month, nothing in a statement period with $300 of spending, and 20.99%; the Smart Awards card $19 a month, nothing in a statement period with $2,000 of spending, and 20.99% (the page says that waiver ends on 1 January 2027, which the form can't schedule, so it is written as it stands now). These three charge 21.99% a year on cash advances and a cash advance fee of $4.00 or 3.00%, whichever is greater (at most $300 on Smart Awards), a 3.50% international transaction fee and a $20 late payment fee, with up to 55 interest-free days (44 on Smart Awards). The CommBank Neo charges no interest (0% a year) and no international or late fee, but a monthly fee of $15, $20 or $25 by its credit limit ($1,000, $2,000 or $3,000); the game doesn't keep a limit, so the $25 is written, and the page's $0 month when the card isn't used and the balance is paid isn't a condition the game checks. The Ultimate Awards card's page answered 404 and isn't written. The Low Rate card's first-year fee and cashback offers are introductory and not written. Wave 5 (2026-10-30), minimum payments: Commonwealth Bank's key facts sheet for all its credit cards (correct as at 23 October 2026, read 2026-10-30): the minimum is the greater of any amount over the limit, 2% of the closing balance (2.5% from 1 February 2027, not yet written) or 25 dollars, the whole balance below 25; written as 2% with a 25 floor (the over-limit amount isn't modelled).",
  "sources": [
   {
    "url": "https://www.commbank.com.au/credit-cards/low-rate.html",
@@ -141,6 +157,12 @@
    "title": "Commonwealth Bank, CommBank Neo",
    "read": "2026-10-30",
    "said": "Monthly fee $15, $20 or $25 (based on your credit limit) Pay $0 if you don’t use your card and pay your total balance owing in full ... Late payment fee $0 International transaction fee 0% Purchase interest rate 0% p.a."
+  },
+  {
+   "url": "https://www.commbank.com.au/content/dam/commbank/personal/apply-online/download-printed-forms/cc-keyfacts.pdf",
+   "title": "Commonwealth Bank, Key facts about CommBank’s credit cards (correct as at 23 October 2026)",
+   "read": "2026-10-30",
+   "said": "Correct as at 23 October 2026 ... Minimum repayments ... If you owe less than $25, your minimum payment is the amount you owe. Otherwise, your minimum payment is the greater of: ... 2% (From 1 February 2027: 2.50%) of your closing balance rounded down to the nearest dollar; or"
   }
  ]
 }

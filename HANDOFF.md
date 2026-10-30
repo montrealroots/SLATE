@@ -722,6 +722,87 @@ What layer 0 holds:
 
 ## Next step
 
+**The depth audit and the owner's rulings of 2026-10-30.** At the owner's word ("make sure everything in layers 0-3 is
+fully fleshed out in their certain department covering every single detail leaving no basis untouched"), four read-only
+auditors compared layers 0 to 3 with the owner's documents and the first SLATE (/home/user/1221). Their reports were
+checked against the tree before anything was taken from them (Malawi's stations filed at 9.7 degrees north, DR Congo's
+pool holding Pointe-Noire, `pass()` with no guard against an item rescheduled at its own moment, `registry/features.json`
+empty, the US Modest family's savings 96,386 dollars, a card with no minimum asking the whole balance: each confirmed).
+What they found, in short: every engine of layer 3 is a catalog nothing outside its tests reads; the gate's
+feature-to-effect and zero-decoration checks look only at screens, so no engine of layers 1 to 3 was ever asked for a
+consumer; and some data is wrong. The owner's rulings the same day, each in their words through the question put:
+
+- Papers a life holds, researched for every country, with a number, issue date, expiry, fees and the commands to apply,
+  renew and replace: **all four** put: the passport and ID card, the national number (SSN, NI number, SIN, CPF ...),
+  residence permits (living somewhere as a non-citizen, feeding naturalisation's years), and the driving licence or
+  state ID card, as photo ID (nothing drives).
+- Account formats (IBAN, routing, sort code, CLABE ...): **built, with transfers** that read them and charge the banks'
+  fees, domestic and between currencies (KEEP entry 14's cut of the format is overruled by this).
+- The family's first morning: **the liquid share of wealth, debt kept**: savings take only the share a band holds as
+  deposits and cash, where a central bank or survey publishes it per country (a blocker where not), and a band's
+  negative wealth becomes a debt the life starts with.
+- Where: **layer 3, now**: the ledger, the everyday account and the papers held, with their commands, are built in
+  layer 3 before it is proven, so layer 4 reads real holdings.
+
+The work, in order (each step's tests, matrix and mutation before the next; the audits' full reports were in the
+session's scratchpad, `audit/{core,world,papers,money}.md`, and their findings are carried here):
+
+1. Wrong data and wrong outcomes first: the weather stations' location check (MW's hemisphere, NCEI's Congo labels,
+   the former USSR's stations filed as Russia; then MW, CD, CG, TJ, UZ, TM rebuilt); `pass()` guarded; dates and age in
+   a place's own zone in the core (the cards' `ageOn` read in UT); persistence's delete on a full device, IndexedDB's
+   fallback, a save-load-continue test.
+2. The gate holds every engine to a reader: every command, scheduled kind and notice with a consumer at a file and
+   line and a falsifier, every slice written read somewhere else (the first SLATE's `effects.mjs` and `wired.mjs`).
+3. The ledger (postings, never a typed balance) and the everyday account: opened at a real bank on its fee sheet,
+   receiving the family's means, paying the card, charging the bank's fees; overdraft, returned payment, savings
+   interest, the debit card and ATM fees researched into the banks' form; one bank registry shared by banks and cards.
+4. Cards: each card's minimum payment researched (1,375 revolving cards have none; the US's are in the Cardmember
+   Agreements), the limit and eligibility set by the bank's rule and the life's record, not typed; the credit record's
+   thin file and the bureaus' own scales.
+5. Papers held: the document record and its commands; passports' and ID cards' processing time, validity, renewal,
+   applying from abroad and replacement researched; the national number, residence permits and the driving licence
+   as new engines, every country researched or blocked.
+6. Account formats and transfers; the life's currency; one base date with CPI carrying prices, means and rates to it.
+7. The family's means re-read as the liquid share, debt kept.
+8. The world's deeper rows: holidays beyond 2026 (95 countries announced to 2026 only), the weekend and business days
+   read by cards and papers, prices by place and in time, the gazetteer's other names, the clock's commitments.
+9. Then every blocker of layers 2 and 3 retried by research subagents against the fuller forms (444 on 2026-10-30:
+   weather 44, holidays 51, prices 22, passports 23, IDs 8, work 58, banks 24, cards 72, credit 106, rates 1, means 35).
+
+Where the work stood at the end of 2026-10-30 (the first commits of it):
+
+- Step 1: `pass()` refuses a kind brought back at the moment it happened, naming the chain; the core has local dates
+  and age (`src/core/time/dates.ts`: `dayStart`, `startOfDay`, `addDays`, `addMonths`, `daysBetween`, `ageOn`, a 29
+  February birthday counted from 1 March in other years, the game's reading until the statutes are read), and the
+  cards read age there; a life deletes on a full device, IndexedDB that won't open falls back to local storage, and a
+  save-load-continue test plays a real US card a year on both copies. The weather stations' location check was still
+  being built when this was written.
+- Step 3: the ledger (`src/money/ledger`) and the accounts (`src/money/accounts`: `account.open`, `account.pay`,
+  `account.month`, `means.first-morning`): an account opened as its bank opens it, its fees and interest each month
+  from the ledger's own balances, its overdraft as the bank runs it or the returned-payment fee, a transfer's and a
+  machine's fee, and the family's means paid in on the first morning. The banks' form holds overdraft, returned
+  payment, interest, debit card, machines, transfers, opening and savings terms; each bank's account now names its
+  currency. No research file uses the new terms yet: their research wave is next.
+- Step 4, in part: research subagents read every card's minimum payment (wave 5): of 1,375 cards that had none,
+  about 650 now have the bank's or the law's (the US's from the issuers' agreements in the CFPB's database, Mexico's
+  Banxico circular 34/2010, Chile's CMF rule 537, Turkey's BDDK bands at their lower band, Guatemala's JM-56-2024
+  through a law firm's summary, the gazette named as its primary); the rest say in their notes what was tried. The
+  form gained `plus` (a sum added on top, Canada's "interest plus $10"). A statement now asks what's past due on top
+  of the new minimum, never past the balance (until this day the past due was taken off the new minimum). Open: a
+  card still with no minimum asks its whole balance; it should be told to the player as the fees unpublished are.
+- Step 5, the forms: passports (renewal, replacement, fees abroad in the consulate's currency, the passport card),
+  identity cards (the ages a card must be held and can be had, travel use, renewal and replacement) and citizenship
+  (at birth by soil and descent; naturalisation's fee, time and test); and three new engines, `papers.numbers`,
+  `papers.residence` and `papers.licence`, each with its form, its coverage (246 rows pending each) and its lines for
+  what isn't known. Their research waves are next.
+- Step 6, in part: `money.formats`, from SWIFT's IBAN registry (swift.com answered 403; the copy in GNU Taler's
+  iban-tools, its latest country update December 2024, vendored at `vendor/swift/iban-registry.txt` and cited as
+  secondary): 89 IBAN countries and 16 territories folded into FR, FI and GB, the IBAN's check digits computed and
+  every registry example proven; national check digits (ABA, CLABE, RIB ...) aren't built for want of their published
+  specifications, and the other countries are pending.
+
+The older next steps below are kept as they were written.
+
 1. The weather's blockers
    (`world.weather.blocked.<code>`, R-0051 on) each say what is to be tried again where it can be reached (the
    web archives, the services whose sites didn't answer from here: Djibouti's, Lesotho's, the Comoros', Palestine's,

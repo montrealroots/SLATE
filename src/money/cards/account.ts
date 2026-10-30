@@ -1,6 +1,8 @@
 import { defineCommand, defineKind, defineNotice, type Context, type Item, type Json } from '../../core/frame/frame.ts';
 import { add, compare, fromMajor, money, multiply, type CurrencyCode, type Money } from '../../core/money/money.ts';
 import { civilFromDays, daysFromCivil, SECONDS_PER_DAY } from '../../core/time/calendar.ts';
+import { ageOn } from '../../core/time/dates.ts';
+import { canonicalZone } from '../../core/time/time.ts';
 import type { CountryCode } from '../../world/gazetteer/gazetteer.ts';
 import { clear, record, reportAfter, standingOf, type CreditSlice } from '../credit/credit.ts';
 import { cardsIn, cashFee, cashInterestFor, feeFor, fxFee, interestFor, lateFee, limitFee, minimumDue, overLimitFee, paidInFull, taxOnFees, taxOnInterest, type Card } from './cards.ts';
@@ -71,8 +73,12 @@ export type Holding = { cards: CardsSlice; credit: CreditSlice };
 
 export interface Holder {
   [key: string]: Json;
-  /** The holder's birth date (YYYY-MM-DD), for a fee waived by age, and whether they're a citizen of the card's country. */
+  /**
+   * The holder's birth date (YYYY-MM-DD), for a fee waived by age, the zone of the place they live in, whose midnight
+   * their birthday turns at, and whether they're a citizen of the card's country.
+   */
   born: string;
+  zone: string;
   national: boolean;
 }
 
@@ -109,12 +115,14 @@ export function nextStatement(h: Pick<Held, 'day' | 'opened'>, after: number): n
 export const dueAfter = (card: Card, statementAt: number, h: Pick<Held, 'day' | 'opened'>): number =>
   card.grace === undefined ? nextStatement(h, statementAt) : statementAt + Math.max(card.grace - 30, 1) * DAY;
 
-/** A person's age in whole years on the day of a moment, from their birth date. */
-export function ageOn(born: string, at: number): number {
-  const [y, mo, d] = born.split('-').map(Number) as [number, number, number];
-  const c = civilFromDays(Math.floor(at / DAY));
-  return c.year - y - (c.month < mo || (c.month === mo && c.day < d) ? 1 : 0);
-}
+/**
+ * The holder's age at a moment, in the zone they live in (the core's, src/core/time/dates.ts). Until 2026-10-30 the
+ * card counted it here on UT's day, so a birthday in Tokyo came nine hours after its local midnight.
+ */
+const ageAt = (born: string, at: number, zone: string): number => {
+  const [year, month, day] = born.split('-').map(Number) as [number, number, number];
+  return ageOn({ year, month, day }, at, zone);
+};
 
 const dateOf = (at: number): string => {
   const c = civilFromDays(Math.floor(at / DAY));
@@ -137,13 +145,14 @@ const open = (s: Holding, a: OpenArgs, c: Context): void => openOn(s, a, termsOf
 export function openOn(s: Holding, a: OpenArgs, card: Card, c: Context): void {
   const limit = sum(card.currency, a.limit, 'a limit');
   const income = sum(card.currency, a.income, 'an income');
+  if (canonicalZone(a.zone) === undefined) throw new Error(`${a.zone} isn't a time zone`);
   if (card.limit !== undefined && compare(limit, multiply(income, card.limit.times)) > 0) throw new Error(`${a.bank} lends at most ${card.limit.times} times a month's income on its ${a.card}`);
   const h: Held = { country: a.country, bank: a.bank, card: a.card, currency: card.currency, terms: card, limit: limit.minor, opened: c.now, day: Math.min(civilFromDays(Math.floor(c.now / DAY)).day, 28), purchases: 0, cash: 0, stated: 0, spent: 0, months: [], carrying: false, late: false, statement: null, past: [] };
   // What it costs once, at issue, and as a share of its limit at issue, with the tax the bank adds on its fees.
   const fees = add(card.issue ?? money(card.currency, 0), limitFee(card, limit, 'issue'));
   h.purchases = add(fees, taxOnFees(card, fees)).minor;
   s.cards.held.push(h);
-  c.schedule(STATEMENT_KIND, nextStatement(h, c.now), { card: s.cards.held.length - 1, born: a.born, national: a.national });
+  c.schedule(STATEMENT_KIND, nextStatement(h, c.now), { card: s.cards.held.length - 1, born: a.born, zone: a.zone, national: a.national });
 }
 
 function heldAt(s: Holding, i: number): Held {
@@ -199,7 +208,7 @@ export function pay(s: Holding, a: { card: number; amount: string }, c: Context)
 
 /** A statement: interest, the fees that come due, tax, the over-limit fee, its minimum, and its due date scheduled. */
 export function statement(s: Holding, item: Item, c: Context): void {
-  const { card: i, born, national } = item.data as { card: number; born: string; national: boolean };
+  const { card: i, born, zone, national } = item.data as { card: number; born: string; zone: string; national: boolean };
   const h = heldAt(s, i);
   const card = h.terms;
   const zero = money(card.currency, 0);
@@ -221,7 +230,7 @@ export function statement(s: Holding, item: Item, c: Context): void {
     if ((n - 1) % every !== 0) continue;
     const spent = m(h, h.months.slice(-every).reduce((a, b) => a + b, 0));
     const period = (n - 1) / every + 1;
-    fees = add(fees, feeFor(f, { age: ageOn(born, c.now), national, deposits: zero, lowest: zero, average: zero, spent, period }, dateOf(c.now)));
+    fees = add(fees, feeFor(f, { age: ageAt(born, c.now, zone), national, deposits: zero, lowest: zero, average: zero, spent, period }, dateOf(c.now)));
   }
   // A fee set as a share of the limit each year, from the second year (the issue's own being charged at issue).
   if (n > 1 && (n - 1) % 12 === 0) fees = add(fees, limitFee(card, m(h, h.limit), 'year'));
@@ -230,12 +239,15 @@ export function statement(s: Holding, item: Item, c: Context): void {
   h.purchases += add(add(interest, fees), add(taxOnInterest(card, interest), taxOnFees(card, fees))).minor;
   const balance = m(h, h.purchases + h.cash);
   const pastDue = h.past.reduce((a, p) => a + p.short, 0);
-  const minimum = paidInFull(card) ? balance.minor : Math.max(minimumDue(card, balance, interest).minor - pastDue, 0);
+  // What's past due is owed on top of the new minimum (Chase's agreement: "plus any amount past due"), the two never
+  // more than the balance. Until 2026-10-30 the new minimum had the past due taken from it, which on a card asking a
+  // share left a holder who had missed one payment owing nothing new the next month.
+  const minimum = paidInFull(card) ? balance.minor : Math.max(Math.min(balance.minor, pastDue + minimumDue(card, balance, interest).minor) - pastDue, 0);
   const due = dueAfter(card, c.now, h);
   h.statement = { balance: balance.minor, minimum, due, paid: 0 };
   c.notify(STATED, { card: i, balance: balance.minor, minimum, pastDue, due });
   if (balance.minor > 0) c.schedule(DUE_KIND, due, { card: i });
-  c.schedule(STATEMENT_KIND, nextStatement(h, c.now), { card: i, born, national });
+  c.schedule(STATEMENT_KIND, nextStatement(h, c.now), { card: i, born, zone, national });
 }
 
 /**

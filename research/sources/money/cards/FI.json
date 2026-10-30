@@ -15,7 +15,11 @@
     }
    ],
    "fx": "2.50",
-   "grace": 30
+   "grace": 30,
+   "minimum": {
+    "percent": "3",
+    "interest": true
+   }
   },
   {
    "bank": "Nordea",
@@ -31,7 +35,11 @@
     }
    ],
    "fx": "2.50",
-   "grace": 30
+   "grace": 30,
+   "minimum": {
+    "percent": "3",
+    "interest": true
+   }
   },
   {
    "bank": "Nordea",
@@ -47,7 +55,10 @@
     }
    ],
    "fx": "2.50",
-   "grace": 30
+   "grace": 30,
+   "minimum": {
+    "percent": "3"
+   }
   },
   {
    "bank": "Nordea",
@@ -58,7 +69,10 @@
    },
    "fees": [],
    "fx": "2.50",
-   "grace": 30
+   "grace": 30,
+   "minimum": {
+    "percent": "3"
+   }
   },
   {
    "bank": "Bank Norwegian",
@@ -72,10 +86,14 @@
    "grace": 45,
    "late": {
     "fixed": "5"
+   },
+   "minimum": {
+    "percent": "3",
+    "floor": "30"
    }
   }
  ],
- "note": "Nordea's four personal credit cards in Finland, each from its own page (read 2026-10-30): the Nordea Credit (2.99 euros a month), Nordea Gold (5.99 a month, the card's 2.99 and its added services), Nordea Platinum (16.99 a month to personal customers) and Stockmann Mastercard (no opening or annual fee; for MyStockmann members). Each lends at the 3-month Euribor plus a margin (14.90%, 13.90%, 9.5% and 12.5%), written as their sum on the Euribor Nordea's own examples give, 2.08% in April 2026: 16.98%, 15.98%, 11.58% and 14.58% a year. Each gives 30 days without interest for card payments (the Stockmann card's page says 30 on average), written as grace of 30, and adds 2.50% to the exchange rate on a purchase or withdrawal in a currency other than the euro. A cash withdrawal on the card credit bears interest from the day it's taken, with no withdrawal fee stated, so no cash fee is written. Cheaper monthly prices inside service packages (Blue, Platinum, Private Banking) aren't written, the game holding no package; the student card page offers the Nordea Gold. The main banks: Nordea, OP and Danske Bank are Finland's largest; OP's credit card page wasn't found at its address on 2026-10-30 and Danske Bank's Finnish cards weren't reached, so only Nordea is written. The earlier reading of the Nordea Credit (2026-10-29) holds and is kept. Bank Norwegian, a large Nordic card issuer whose Finnish card page gives its full price list, was added in wave 4 (read 2026-10-30): the Bank Norwegian card, no yearly fee and no invoice fee, 17.50% a year nominal (the Bank of Finland reference rate, 2.5% from 1 July 2026, plus a 15% margin; 18.97% effective), up to 45 interest-free days (grace 45), no fee on purchases or cash machine withdrawals (no cash fee written), a 2.49% currency exchange fee, and a 5-euro payment reminder written as the late fee. OP's and Danske Bank's Finnish credit card pages weren't at the addresses tried (404); S-Pankki's S-Etukortti Visa is free only to co-operative member-owners and its page gives no rate; Resurs Bank's page answered with a captcha; TF Bank's and Ikano's Finnish card pages weren't found, and re:member's Finnish site offers consumer loans, not a card.",
+ "note": "Nordea's four personal credit cards in Finland, each from its own page (read 2026-10-30): the Nordea Credit (2.99 euros a month), Nordea Gold (5.99 a month, the card's 2.99 and its added services), Nordea Platinum (16.99 a month to personal customers) and Stockmann Mastercard (no opening or annual fee; for MyStockmann members). Each lends at the 3-month Euribor plus a margin (14.90%, 13.90%, 9.5% and 12.5%), written as their sum on the Euribor Nordea's own examples give, 2.08% in April 2026: 16.98%, 15.98%, 11.58% and 14.58% a year. Each gives 30 days without interest for card payments (the Stockmann card's page says 30 on average), written as grace of 30, and adds 2.50% to the exchange rate on a purchase or withdrawal in a currency other than the euro. A cash withdrawal on the card credit bears interest from the day it's taken, with no withdrawal fee stated, so no cash fee is written. Cheaper monthly prices inside service packages (Blue, Platinum, Private Banking) aren't written, the game holding no package; the student card page offers the Nordea Gold. The main banks: Nordea, OP and Danske Bank are Finland's largest; OP's credit card page wasn't found at its address on 2026-10-30 and Danske Bank's Finnish cards weren't reached, so only Nordea is written. The earlier reading of the Nordea Credit (2026-10-29) holds and is kept. Bank Norwegian, a large Nordic card issuer whose Finnish card page gives its full price list, was added in wave 4 (read 2026-10-30): the Bank Norwegian card, no yearly fee and no invoice fee, 17.50% a year nominal (the Bank of Finland reference rate, 2.5% from 1 July 2026, plus a 15% margin; 18.97% effective), up to 45 interest-free days (grace 45), no fee on purchases or cash machine withdrawals (no cash fee written), a 2.49% currency exchange fee, and a 5-euro payment reminder written as the late fee. OP's and Danske Bank's Finnish credit card pages weren't at the addresses tried (404); S-Pankki's S-Etukortti Visa is free only to co-operative member-owners and its page gives no rate; Resurs Bank's page answered with a captcha; TF Bank's and Ikano's Finnish card pages weren't found, and re:member's Finnish site offers consumer loans, not a card. The minimum payment: each Nordea card's page lets the holder choose the repayment share from 3 to 100% of the credit used, written at the least, 3%. Its standard European consumer credit information forms (read 2026-10-30) say the Nordea Credit's and Gold's instalment is that share of the principal with the interest added (written with the interest on top), and the Platinum's and Stockmann card's instalment is the share itself, interest included; the two payment-free months a year the holder may choose aren't modelled. Bank Norwegian's standard information form: at least 3% of the billed sum or 30 euros, written as 3% with a 30-euro floor.",
  "sources": [
   {
    "url": "https://www.nordea.fi/henkiloasiakkaat/palvelumme/maksu-luottokortit/nordea-credit.html",
@@ -112,6 +130,60 @@
    "title": "Bank Norwegian, Luottokortti (Finland)",
    "read": "2026-10-30",
    "said": "Vuosimaksu 0 € ... E-lasku 0 € Paperilasku (vapaavalintainen) 0 € Korko Vuotuinen nimelliskorko 17,50 %* ... Todellinen vuosikorko 18,97 % ... Nosto pankkiautomaatilla* 0 € / nosto ... Maksumuistutus 5 € ... Korko on sidottu Suomen Pankin viitekorkoon (2,5 % 01.07.2026 alkaen) ja siihen lisätään 15 % marginaalikorko, jolloin nimelliskorko on 17,50 %. ... Maksaessasi kortilla ulkomaan valuutassa maksuun lisätään 2,49 %:n suuruinen valuutanvaihtomaksu. ... Jopa 45 päivää korotonta maksuaikaa"
+  },
+  {
+   "url": "https://www.nordea.fi/henkiloasiakkaat/palvelumme/maksu-luottokortit/nordea-credit.html",
+   "title": "Nordea, Nordea Credit",
+   "read": "2026-10-30",
+   "said": "Voit valita korttisi luoton lyhennysprosentiksi 3–100. Lyhennysprosentti tarkoittaa määrää, joka sinun tulee vähintään maksaa käyttämästäsi luotosta kuukausittain."
+  },
+  {
+   "url": "https://www.nordea.fi/henkiloasiakkaat/palvelumme/maksu-luottokortit/nordea-gold.html",
+   "title": "Nordea, Nordea Gold",
+   "read": "2026-10-30",
+   "said": "Voit valita korttisi luoton lyhennysprosentiksi 3–100."
+  },
+  {
+   "url": "https://www.nordea.fi/henkiloasiakkaat/palvelumme/maksu-luottokortit/nordea-platinum.html",
+   "title": "Nordea, Nordea Platinum",
+   "read": "2026-10-30",
+   "said": "Voit valita korttisi luoton lyhennysprosentiksi 3–100."
+  },
+  {
+   "url": "https://www.nordea.fi/henkiloasiakkaat/palvelumme/maksu-luottokortit/stockmann-mastercard.html",
+   "title": "Nordea, Stockmann Mastercard",
+   "read": "2026-10-30",
+   "said": "Lyhennysprosentti voi olla 3-100 % luoton määrästä."
+  },
+  {
+   "url": "https://www.nordea.fi/Images/146-84679/MVCD010PL.pdf",
+   "title": "Nordea Bank Oyj, Nordea Credit Mastercard: Vakiomuotoiset eurooppalaiset kuluttajaluottotiedot",
+   "read": "2026-10-30",
+   "said": "Luottoa maksetaan takaisin kuukausierissä, jotka sisältävät koron ja ... pääomalyhennyksen. Pääomalyhennyksen suuruus on sovittu ... on neljä (4), on kuukausierä 60 euroa lisättynä mahdollisilla koroilla."
+  },
+  {
+   "url": "https://www.nordea.fi/Images/146-84677/MVGC010PL.pdf",
+   "title": "Nordea Bank Oyj, Nordea Gold Mastercard: Vakiomuotoiset eurooppalaiset kuluttajaluottotiedot",
+   "read": "2026-10-30",
+   "said": "Pääomalyhennyksen suuruus on sovittu ... on neljä (4), on kuukausierä 60 euroa lisättynä mahdollisilla koroilla."
+  },
+  {
+   "url": "https://www.nordea.fi/Images/146-544992/MCPC010PLFIN.pdf",
+   "title": "Nordea Rahoitus Suomi Oy, Nordea Platinum Mastercard: Vakiomuotoiset eurooppalaiset kuluttajaluottotiedot",
+   "read": "2026-10-30",
+   "said": "Kuukausierän suuruus on sovittu prosenttiosuus ... on kaksikymmentä (20), on kuukausierä 300 euroa."
+  },
+  {
+   "url": "https://www.nordea.fi/Images/146-84681/MSCD010PL.pdf",
+   "title": "Stockmann Mastercard: Vakiomuotoiset eurooppalaiset kuluttajaluottotiedot",
+   "read": "2026-10-30",
+   "said": "Kuukausierän suuruus on sovittu prosenttiosuus laskutushetken ... velkasaldosta."
+  },
+  {
+   "url": "https://www.banknorwegian.fi/documents/fi/creditcard/SECCI%20CC%20FI.pdf",
+   "title": "Bank Norwegian, luottokortti: Vakiomuotoiset eurooppalaiset kuluttajaluottotiedot",
+   "read": "2026-10-30",
+   "said": "määrä on 3 prosenttia laskutetusta summasta tai 30 euroa."
   }
  ]
 }

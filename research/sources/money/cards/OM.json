@@ -131,7 +131,10 @@
    "overLimit": {
     "fixed": "10.5"
    },
-   "fx": "2.5"
+   "fx": "2.5",
+   "minimum": {
+    "percent": "5"
+   }
   },
   {
    "bank": "Oman Arab Bank",
@@ -158,7 +161,10 @@
    "overLimit": {
     "fixed": "10.5"
    },
-   "fx": "2.5"
+   "fx": "2.5",
+   "minimum": {
+    "percent": "5"
+   }
   },
   {
    "bank": "Oman Arab Bank",
@@ -265,6 +271,9 @@
    },
    "overLimit": {
     "fixed": "5.25"
+   },
+   "minimum": {
+    "percent": "5"
    }
   },
   {
@@ -291,6 +300,9 @@
    },
    "overLimit": {
     "fixed": "5.25"
+   },
+   "minimum": {
+    "percent": "5"
    }
   },
   {
@@ -317,6 +329,9 @@
    },
    "overLimit": {
     "fixed": "5.25"
+   },
+   "minimum": {
+    "percent": "5"
    }
   },
   {
@@ -343,6 +358,9 @@
    },
    "overLimit": {
     "fixed": "5.25"
+   },
+   "minimum": {
+    "percent": "5"
    }
   },
   {
@@ -369,6 +387,9 @@
    },
    "overLimit": {
     "fixed": "5.25"
+   },
+   "minimum": {
+    "percent": "5"
    }
   },
   {
@@ -395,6 +416,9 @@
    },
    "overLimit": {
     "fixed": "5.25"
+   },
+   "minimum": {
+    "percent": "5"
    }
   },
   {
@@ -421,6 +445,9 @@
    },
    "overLimit": {
     "fixed": "5.25"
+   },
+   "minimum": {
+    "percent": "5"
    }
   },
   {
@@ -447,6 +474,9 @@
    },
    "overLimit": {
     "fixed": "5.25"
+   },
+   "minimum": {
+    "percent": "5"
    }
   },
   {
@@ -473,10 +503,13 @@
    },
    "overLimit": {
     "fixed": "5.25"
+   },
+   "minimum": {
+    "percent": "5"
    }
   }
  ],
- "note": "The main banks, chosen as the best-known large card issuers (no central bank ranking was read): Bank Muscat, National Bank of Oman and Bank Dhofar. Bank Muscat's card page answered behind a captcha check and Bank Dhofar's behind Cloudflare on 2026-10-30, and neither was read (an earlier reading of Bank Muscat's tariff found its cards' fees but not their interest). National Bank of Oman's key facts statements for its credit cards, read in full: the Gold (read 2026-10-29 and again 2026-10-30), the Signature and the Infinite, the three the bank publishes at its key-facts address (the Platinum's didn't answer). Each is written with its annual fee, VAT included (21, 47.25 and 94.5 rials), waived in full when the year's spending is more than 1,500, 2,500 or 3,600 rials (written as a waiver on that spending); interest of 1.5% a month on a card held against salary (the 1.66% on a card against a pledged deposit isn't written, the game holding no pledged deposit); a cash advance fee of 3.15% or 3.675 rials, whichever is higher; a foreign transaction fee of 2.75% (2.5% for Sadara Priority and Private Banking, not modelled); a late payment fee of 5.250 rials a month where nothing is paid (the same fee on a partial payment, written once); an over-limit fee of 5.250 each time; and a minimum of 5% of the amount due, which the statements give as the least a holder can pay each month. They state no grace period. Wave 4 (2026-10-30): Oman Arab Bank was added, the next large card issuer whose tariff answers this research, and Bank Dhofar, whose site answered this time without a check and links its October 2026 tariff list directly (Sohar International's Visa Signature card page showed no terms to this research; Ahlibank Oman answered with a Cloudflare check; HSBC Oman didn't answer; Bank Muscat wasn't retried). Oman Arab Bank's bank charges for retail customers (its 2026 tariff review, inclusive of VAT), read in full: each primary credit card's issuance and renewal fee a year (Classic 31.500 rials; Gold, Platinum and Signature 52.500; Infinite 105, free for Elite customers, a condition the game doesn't check), monthly interest of 1.575%, a cash advance fee of 3.15% with a minimum of 2.100, a late payment fee and an over-limit charge of 10.500 a month each, and 2.5% on international and GCC foreign exchange; it states no minimum payment or grace period, and its internet shopping card isn't written. Bank Dhofar's tariff list (October 2026), its credit cards, read in full: each principal card's annual fee with 5% VAT (World Legend 262.500, World Elite 63, Visa Infinite 52.500, World and Signature 42, the three Platinum cards 31.500, and the Gold, Classic and Standard, priced as one row, 21; the internet card isn't written); interest of 1.5% a month on all cards; a late payment fee of 10.500 and an over-limit fee of 5.250 with VAT; and a cash advance fee of 3% or 5 rials, whichever is higher, plus VAT, written as 3.15% with a floor of 5.250. Its foreign exchange mark-up of up to 3% sits with the debit cards and isn't written on the credit cards; it states no minimum payment or grace period.",
+ "note": "The main banks, chosen as the best-known large card issuers (no central bank ranking was read): Bank Muscat, National Bank of Oman and Bank Dhofar. Bank Muscat's card page answered behind a captcha check and Bank Dhofar's behind Cloudflare on 2026-10-30, and neither was read (an earlier reading of Bank Muscat's tariff found its cards' fees but not their interest). National Bank of Oman's key facts statements for its credit cards, read in full: the Gold (read 2026-10-29 and again 2026-10-30), the Signature and the Infinite, the three the bank publishes at its key-facts address (the Platinum's didn't answer). Each is written with its annual fee, VAT included (21, 47.25 and 94.5 rials), waived in full when the year's spending is more than 1,500, 2,500 or 3,600 rials (written as a waiver on that spending); interest of 1.5% a month on a card held against salary (the 1.66% on a card against a pledged deposit isn't written, the game holding no pledged deposit); a cash advance fee of 3.15% or 3.675 rials, whichever is higher; a foreign transaction fee of 2.75% (2.5% for Sadara Priority and Private Banking, not modelled); a late payment fee of 5.250 rials a month where nothing is paid (the same fee on a partial payment, written once); an over-limit fee of 5.250 each time; and a minimum of 5% of the amount due, which the statements give as the least a holder can pay each month. They state no grace period. Wave 4 (2026-10-30): Oman Arab Bank was added, the next large card issuer whose tariff answers this research, and Bank Dhofar, whose site answered this time without a check and links its October 2026 tariff list directly (Sohar International's Visa Signature card page showed no terms to this research; Ahlibank Oman answered with a Cloudflare check; HSBC Oman didn't answer; Bank Muscat wasn't retried). Oman Arab Bank's bank charges for retail customers (its 2026 tariff review, inclusive of VAT), read in full: each primary credit card's issuance and renewal fee a year (Classic 31.500 rials; Gold, Platinum and Signature 52.500; Infinite 105, free for Elite customers, a condition the game doesn't check), monthly interest of 1.575%, a cash advance fee of 3.15% with a minimum of 2.100, a late payment fee and an over-limit charge of 10.500 a month each, and 2.5% on international and GCC foreign exchange; it states no minimum payment or grace period, and its internet shopping card isn't written. Bank Dhofar's tariff list (October 2026), its credit cards, read in full: each principal card's annual fee with 5% VAT (World Legend 262.500, World Elite 63, Visa Infinite 52.500, World and Signature 42, the three Platinum cards 31.500, and the Gold, Classic and Standard, priced as one row, 21; the internet card isn't written); interest of 1.5% a month on all cards; a late payment fee of 10.500 and an over-limit fee of 5.250 with VAT; and a cash advance fee of 3% or 5 rials, whichever is higher, plus VAT, written as 3.15% with a floor of 5.250. Its foreign exchange mark-up of up to 3% sits with the debit cards and isn't written on the credit cards; it states no minimum payment or grace period. Wave 5 (2026-10-30), minimum payments: Bank Dhofar's key facts statement for its credit cards (the edition with the World Elite and World Legend, matching the October 2026 tariff) gives the minimum monthly repayment as a choice of 5%, 10%, 20%, 50% or 100%, in one row for every card, written as 5%, the least (an older edition on its site, without the World Legend, offered 3%; it isn't the current one and isn't written). Oman Arab Bank's cards page lets its Gold and Classic cardholders 'pay as little as 5% of your outstanding monthly balance', written on those two. No minimum payment is published for Oman Arab Bank's Platinum, Signature and Infinite cards; tried: the same cards page (their sections state none), its 2026 tariff (none), the Central Bank of Oman (a search found no rule setting one), a search for its key facts statement (none found), and archive.org's API (a snapshot of the cards page of 22 October 2026, which this research's connection can't open).",
  "sources": [
   {
    "url": "https://www.nbo.om/en/Download%20Documents/NBO%20KFS%20Gold%20Credit%20Card%20English.pdf",
@@ -507,6 +540,18 @@
    "title": "Bank Dhofar, Tariff List (October 2026), 9. Credit Cards",
    "read": "2026-10-30",
    "said": "TARIFF LIST ... VAT @5% ... MasterCard World Legend Annual Fee ... Principal card 250.000 12.500 262.500 ... MasterCard World Elite Annual Fee ... Principal card 60.000 3.000 63.000 ... Visa Infinite Card Annual Fee ... Principal card 50.000 2.500 52.500 ... Mastercard World Card Annual Fee Principal card 40.000 2.000 42.000 ... Visa Signature Card Annual Fee ... Principal card 40.000 2.000 42.000 ... MasterCard Platinum Annual Fee Principal card 30.000 1.500 31.500 ... MasterCard Najm Platinum Annual Fee ... MasterCard ValueBack Platinum Annual Fee ... Principal Card Fee 30.000 1.500 31.500 ... Gold (Visa or MasterCard) / Visa Classic & MasterCard Standard Credit Card Annual Fee ... Principal card 20.000 1.000 21.000 ... Interest Rate 1.5% per month ... Late Payment Fee 10.000 Bz. 500 10.500 ... Overlimit Fee 5.000 Bz. 250 5.250 ... Cash Advance Fee (as percentage of total amount) /per transaction ... 3% or 5.000 whichever is higher"
+  },
+  {
+   "url": "https://bankdhofar.com/media/e15dmare/kfs-credit-card-en.pdf",
+   "title": "Bank Dhofar, Key Facts Statement (KFS) - Credit Cards",
+   "read": "2026-10-30",
+   "said": "MasterCard World legend ... Minimum Monthly Repayment 5%,10%,20%,50% & 100% ... Annualised Percentage Rate (APR) for Purchase 18% per annum or 1.5% per month"
+  },
+  {
+   "url": "https://oman-arabbank.com/home/personal-banking/cards/",
+   "title": "Oman Arab Bank, Cards (Gold and Classic credit cards)",
+   "read": "2026-10-30",
+   "said": "Gold Credit Card ... Choose the repayment option that suits your budget, pay as little as 5% of your outstanding monthly balance ... Classic Credit Card ... Choose the repayment option that suits your budget, pay as little as 5% of your outstanding monthly balance."
   }
  ]
 }

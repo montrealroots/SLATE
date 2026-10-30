@@ -29,6 +29,9 @@
     "percent": "6",
     "of": "excess",
     "min": "100"
+   },
+   "minimum": {
+    "percent": "5"
    }
   },
   {
@@ -59,6 +62,9 @@
     "percent": "6",
     "of": "excess",
     "min": "100"
+   },
+   "minimum": {
+    "percent": "5"
    }
   },
   {
@@ -210,7 +216,7 @@
    }
   }
  ],
- "note": "The Central Bank of Seychelles' comparison of every bank's charges (applicable 1 October to 31 December 2026) was read for every bank that offers a credit card: Absa Bank Seychelles, the Mauritius Commercial Bank (Seychelles), Nouvobanq and Al Salam Bank; the Seychelles Commercial Bank, the Credit Union, Bank of Baroda and Bank of Ceylon offer none. Absa: its Classic, Platinum and Signature credit cards cost 100, 500 and 1,000 rupees a year, bear 33% a year on the unpaid balance, 2% on a cash withdrawal, 5% on spending in a foreign currency, a late fee of 10% of the past-due amount (at least 100 rupees, written as a share of the unpaid part) and an over-limit fee of 6% of the excess (at least 100); its subscription or issue fee row repeats each card's yearly figure, read as the same fee and not written twice. The MCB: its VISA Classic and VISA Gold cost 100 and 400 rupees a year for the primary card, bear 16% a year on the unpaid balance, 2% on a cash withdrawal (at least 50 rupees), 5% on foreign currency spending, and 50 rupees each for a late payment and for exceeding the limit. Nouvobanq: its VISA Gold card costs 1,000 rupees to issue and 250 a year, with 'no charge' as its interest on the unpaid balance, read as a card settled in full, and 5% on a cash withdrawal; its Signature card costs 500 to issue, bears 15% a year, and 100 rupees each for a cash withdrawal, a late payment and exceeding the limit; the Gold card's 'bonus fee' (up to 2% when unsecured) doesn't say of what and isn't written. Al Salam Bank's credit card, its only one (the table names it no further), costs 500 rupees a year, 1.5% a month on the balance, 3% on a cash withdrawal (at least 300 rupees), 500 rupees for a late payment and 250 for exceeding the limit. Business and corporate cards aren't written.",
+ "note": "The Central Bank of Seychelles' comparison of every bank's charges (applicable 1 October to 31 December 2026) was read for every bank that offers a credit card: Absa Bank Seychelles, the Mauritius Commercial Bank (Seychelles), Nouvobanq and Al Salam Bank; the Seychelles Commercial Bank, the Credit Union, Bank of Baroda and Bank of Ceylon offer none. Absa: its Classic, Platinum and Signature credit cards cost 100, 500 and 1,000 rupees a year, bear 33% a year on the unpaid balance, 2% on a cash withdrawal, 5% on spending in a foreign currency, a late fee of 10% of the past-due amount (at least 100 rupees, written as a share of the unpaid part) and an over-limit fee of 6% of the excess (at least 100); its subscription or issue fee row repeats each card's yearly figure, read as the same fee and not written twice. The MCB: its VISA Classic and VISA Gold cost 100 and 400 rupees a year for the primary card, bear 16% a year on the unpaid balance, 2% on a cash withdrawal (at least 50 rupees), 5% on foreign currency spending, and 50 rupees each for a late payment and for exceeding the limit. Nouvobanq: its VISA Gold card costs 1,000 rupees to issue and 250 a year, with 'no charge' as its interest on the unpaid balance, read as a card settled in full, and 5% on a cash withdrawal; its Signature card costs 500 to issue, bears 15% a year, and 100 rupees each for a cash withdrawal, a late payment and exceeding the limit; the Gold card's 'bonus fee' (up to 2% when unsecured) doesn't say of what and isn't written. Al Salam Bank's credit card, its only one (the table names it no further), costs 500 rupees a year, 1.5% a month on the balance, 3% on a cash withdrawal (at least 300 rupees), 500 rupees for a late payment and 250 for exceeding the limit. Business and corporate cards aren't written. Wave 5 (2026-10-30), minimum payments: Absa Seychelles's Classic and Platinum card pages let the holder repay a minimum of 5% up to the whole balance, written as 5%. No minimum payment is published for Absa's Signature card, MCB Seychelles's Visa Classic and Gold, Nouvobanq's Signature, or Al Salam Bank Seychelles's card; tried: Absa's Signature page and MCB Seychelles's two card pages (none stated), Nouvobanq's credit card page ('convenient repayment options', no figure), Al Salam Bank Seychelles's site (no answer), the Central Bank of Seychelles's comparative bank charges (no minimum among its card rows), and archive.org's API (snapshots of Nouvobanq's card page of 20 April 2026, web.archive.org itself is refused by this research's connection; none of MCB Seychelles's Gold page).",
  "sources": [
   {
    "url": "https://www.cbs.sc/Publications/ComparativeBankCharges.html",
@@ -223,6 +229,18 @@
    "title": "Central Bank of Seychelles, Comparative Bank Charges (the table the page loads)",
    "read": "2026-10-29",
    "said": "Absa classic credit card: SCR 100 ... Absa Platinum credit card: SCR 500 ... Absa Signature credit card: SCR 1000 ... 6% of the over limit amount or SCR 100, whichever is greater ... 10% of the total past due amount or SCR 100, whichever is greater ... 33% per annum ... Foreign currency: 5% ... VISA Classic & VISA Gold: SCR 50 ... VISA Classic & VISA Gold: Interest on Unpaid balance: 16% p.a. ... 2% SCR of withdrawn amount, min SCR 50 ... VISA Classic: Primary Card: SCR 100 ... VISA Gold: Primary Card: SCR 400 ... Signature: SCR 500 ... No charge Signature: SCR 100 ... No charge Signature: 15% p.a ... Both VISA Gold and VISA Corporate: 5% Signature: SCR 100 ... VISA Gold Card: SCR 1,000 ... VISA Gold Card: SCR 250 ... Fee for exceeding card limit\\r\\n\":\"SCR 250\",\"Late payment fee\\r\\n\":\"SCR 500\" ... 1.5% of balance p.m ... 3% of the amount, min SCR 300 ... \"Annual Fee\\r\\n\":\"SCR 500\"},\"FIXED DEPOSIT\""
+  },
+  {
+   "url": "https://www.absa.sc/personal/get-a-classic-credit-card/",
+   "title": "Absa Bank Seychelles, Classic Credit Card (card page)",
+   "read": "2026-10-30",
+   "said": "Customers can choose to spread the cost of their spending by repaying a minimum amount of 5%; and up to the full total of their outstanding balance"
+  },
+  {
+   "url": "https://www.absa.sc/personal/get-a-platinum-credit-card/",
+   "title": "Absa Bank Seychelles, Platinum Credit Card (card page)",
+   "read": "2026-10-30",
+   "said": "Choose to spread the cost of your spending by repaying a minimum amount of 5%; and up to the full total of their outstanding balance"
   }
  ]
 }

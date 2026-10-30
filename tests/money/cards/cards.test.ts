@@ -14,7 +14,7 @@ describe('cards', () => {
     expect([keepsCards('US'), keepsCards('AQ')]).toEqual([true, false]);
     expect(cardsIn('AQ')).toEqual([]);
     // Chase's Freedom Unlimited: no annual fee, 18.49% to 27.99% a year, 0% for its first 15 months, its cash, foreign,
-    // late, returned and penalty terms from its Pricing and Terms box.
+    // late, returned and penalty terms from its Pricing and Terms box, its minimum from its cardmember agreement.
     const chase = cardsIn('US').find((c) => c.card === 'Chase Freedom Unlimited') as Card;
     expect(chase).toStrictEqual({
       bank: 'Chase',
@@ -25,6 +25,7 @@ describe('cards', () => {
       intro: { percent: '0', per: 'year', months: 15 },
       cash: { rate: { percent: '28.74', per: 'year' }, fee: { percent: '5', min: money('USD', 1000) } },
       fx: '3',
+      minimum: { percent: '1', floor: money('USD', 4000), interest: true },
       late: { fixed: money('USD', 4000) },
       returned: money('USD', 4000),
       penalty: { percent: '29.99', per: 'year' },
@@ -167,6 +168,9 @@ describe('cards', () => {
     expect(minimumDue({ ...m, minimum: { percent: '5' } }, usd(100_000), usd(2000))).toStrictEqual(usd(5000));
     expect(minimumDue({ ...m, minimum: { percent: '5' } }, usd(1), usd(0))).toStrictEqual(usd(0));
     expect([minimumDue(m, usd(0), usd(0)), minimumDue(m, usd(-100), usd(0))]).toStrictEqual([usd(0), usd(0)]);
+    // Canada's banks: the interest, and $10 on top; the balance where that's less.
+    const ca = { ...m, minimum: { percent: '0', interest: true as const, plus: usd(1000) } };
+    expect([minimumDue(ca, usd(100_000), usd(2000)), minimumDue(ca, usd(1500), usd(0)), minimumDue(ca, usd(800), usd(0))]).toStrictEqual([usd(3000), usd(1000), usd(800)]);
     // A card that publishes no minimum asks the balance.
     expect(minimumDue({ bank: 'B', card: 'C', currency: 'USD', rate: 'in full', fees: [] }, usd(12_345), usd(0))).toStrictEqual(usd(12_345));
   });
