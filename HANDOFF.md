@@ -689,6 +689,13 @@ What layer 0 holds:
   - text-inventory: every player-facing line in `src/core/text/catalog.json`, each said somewhere in the source,
     none in the engine's vocabulary (`registry/voice.json`, from KEEP entry 2); placeholder wording unfinished from
     layer 6 on; the inventory for the owner's rewrite generated at `matrix/TEXT.md`.
+  - title-case (added 2026-10-30, next step 6): the owner's Title Case rule (`.claude/rules/title-case.md`), read
+    from `src/core/text/case.ts`, the code the screens will write labels with. A catalog line that reads as prose
+    (ending in `.`, `?` or `!`, or longer than nine words) is left alone; any other is a label and must be its own
+    Title Case, but for a real name `registry/names.json` lists ("asWritten", each with why) as its owner spells it.
+    A registry whose names are shown as labels is listed there too ("shownAsLabels": the file and the key), and its
+    names are held to Title Case with a joining word lower case inside a name, never at its front. An exception
+    that's already Title Case, or that nothing shows, is red.
   - research-register: every entry found (primary source, page, date read, value), secondary (naming the primary
     it quotes), blocked (all five methods of KEEP entry 7 tried and dated, and the line telling the player what
     isn't modeled), or the game's own figure (its reason and its label to the player); no fact held twice; no date
@@ -1190,12 +1197,21 @@ What layer 0 holds:
    countries still have one, each file's note saying what was tried; Bosnia's 18 KM from 2013 and 2016 sources not taken) and citizenship's post-2024 reforms
    to try again. Next: visas, residence and work permissions (each an engine with its own matrix), then the banks.
 6. Before the game is called done (layer 7, verification), at the owner's word on 2026-10-29: the gate enforces the
-   owner's Title Case rule (`.claude/rules/title-case.md`, taken from the first SLATE, `montrealroots/1221`). Port
-   `titleCaseLabel` and `readsAsProse` from 1221's `src/engine/core/text.ts` into `src/core/text/`, and make the
-   text check fail every label (a catalog line, a heading, button, tab or title, and a name from the data shown as a
-   label) that isn't Title Case, as 1221's `tools/title-case.mjs --check` and `tools/label-sweep.mjs` did, with
-   their exceptions (prose, acronyms, internal capitals, digit-led words, real names as their owners spell them).
-   The game isn't done until this check is in the gate and green.
+   owner's Title Case rule (`.claude/rules/title-case.md`, taken from the first SLATE, `montrealroots/1221`). Done
+   in part on 2026-10-30: `titleCaseLabel` and `readsAsProse` were ported from 1221's `src/engine/core/text.ts` into
+   `src/core/text/case.ts` (with `titleCaseWord`; a letter is now any script's, not only A to Z, and a word holding
+   a slot for a value is left as written, as 1221's `tools/title-case.mjs` did), tested in
+   `tests/core/text/case.test.ts`, and the gate's new title-case check (`gate/checks/title-case.ts`, run after
+   text-inventory, tested in `gate/test/title-case.test.ts`, both at 100% mutation score) fails every catalog label
+   that isn't Title Case, with 1221's exceptions (prose, acronyms, internal capitals, digit-led words, slots, real
+   names as their owners spell them in `registry/names.json`). It also holds the names of any registry listed there
+   as shown as labels, as 1221's `tools/label-sweep.mjs` did. On 2026-10-30 all 49 catalog lines were prose, no
+   screen existed, and no registry's names were shown as labels, so `registry/names.json` lists none. What stays:
+   when the screens are built (layer 5), every heading, button, tab and title comes from the catalog through `t()`
+   (the lint's no-raw-text rule), so the check holds them as they're written; each registry whose names a screen
+   shows as labels (the gazetteer's countries and places, the banks, the cards, and the like) is added to
+   "shownAsLabels" in the same commit as the screen, and each real name a label keeps in its owner's spelling to
+   "asWritten". The game isn't done until this check is green with every screen in place.
 
 ## Verification evidence
 
