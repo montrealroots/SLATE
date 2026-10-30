@@ -801,6 +801,28 @@ Where the work stood at the end of 2026-10-30 (the first commits of it):
   every registry example proven; national check digits (ABA, CLABE, RIB ...) aren't built for want of their published
   specifications, and the other countries are pending.
 
+Wave 6 (2026-10-30, nine research subagents, a container restart midway resumed from disk): the gate's effects check
+(`gate/checks/effects.ts`, `registry/effects.json`, matrix `EFFECTS.md`) holds every command, kind and notice to a
+consumer anchor and a falsifier (`tests/money/effects.test.ts`); the weather stations stand in their own countries
+(`tools/wmo/compile.ts`'s outline check); and the research above is registered. Open from it, each to be done:
+
+- Weather: R-0060's hand-read Gustavia sunshine is read by nothing now that BL takes 6190 Gustavia (narrow R-0060 to
+  Marigot, or keep Gustavia filed GP); coverage cites changed for BL, CD, CG, GP; the block-644 rule and the compiler's
+  use of Natural Earth want register rows; 9120 Auckland_Aero_AWS stands 205 km offshore with no other record;
+  Khujand's temperatures have no source in any set read.
+- Family means: the liquid share exists for 28 countries only (the ECB's Distributional Wealth Accounts for 21, the
+  Fed's DFA and the SCF, Statistics Canada's SFS, the ABS, Stats NZ, the ONS's WAS as net financial wealth, Korea's
+  SFHLC read by eye, Japan's FIES by savings quintile), their bands differing (quintiles, deciles 6 to 10, 50/90/99);
+  the research files are in the scratchpad (`w6/means-liquid/`), not yet in a form: the form, then the means re-read,
+  then every other country's blocker.
+- National numbers: check algorithms not in the code (Verhoeff for Aadhaar, ISO 7064 MOD 11-2 for China, France's
+  mod 97, Serbia's JMBG); Brazil's CPF rule rests on a university note (the Receita states none found); the US
+  pattern uses lookaheads, so a drawing from it must honour them.
+- Residence, licences, numbers, passports: each agent's countries not reached are listed in its report (most behind
+  bot checks or not reached for time); the readings each made are in its files' notes.
+- Citizenship: 181 files' changes after 1 January 2024 (GLOBALCIT's coding date) unchecked; Palestine has no
+  `atBirth`; Japan's naturalisation blocked (moj.go.jp 403).
+
 The older next steps below are kept as they were written.
 
 1. The weather's blockers
