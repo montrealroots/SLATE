@@ -1,0 +1,25 @@
+{
+ "country": "AU",
+ "name": "Tax File Number (TFN)",
+ "issuer": "the Australian Taxation Office (ATO)",
+ "format": {
+  "length": 9,
+  "pattern": "^\\d{9}$"
+ },
+ "when": "application",
+ "who": [
+  "anyone"
+ ],
+ "needed": [
+  "tax"
+ ],
+ "note": "Australia's sheet (its government's own sheet on the OECD's automatic-exchange portal ('Information on Tax Identification Numbers'; the OECD's index page sits behind a bot check and wasn't opened, the sheet itself came straight back)), read 2026-10-30: the Tax File Number is issued by the ATO under the Income Tax Assessment Act 1936 on application, online or on paper, once proof of identity is given; eight or nine digits compiled with a check digit algorithm the sheet doesn't give (`check` left out), displayed as three groups of three, so the pattern draws nine. Read as given on application, to anyone who must deal with the ATO. No age, fee or time is stated.",
+ "sources": [
+  {
+   "url": "https://www.oecd.org/content/dam/oecd/en/topics/policy-issue-focus/aeoi/australia-tin.pdf",
+   "title": "OECD AEOI portal, Australia: Information on Tax Identification Numbers (the jurisdiction's own sheet)",
+   "read": "2026-10-30",
+   "said": "The TIN in Australia is referred to as the Tax File Number (TFN). ... A TFN is issued under the Income Tax Assessment Act 1936 (ITAA 1936) upon application by the client ... The TFN is an eight or nine digit number compiled using a check digit algorithm"
+  }
+ ]
+}

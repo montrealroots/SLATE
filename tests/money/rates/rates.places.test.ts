@@ -14,8 +14,9 @@ describe('rates', () => {
     for (const code of COUNTRY_CODES) {
       const currency = currencyOf(code);
       for (const p of await placesOf(code)) {
-        // A known currency has a rate on the first day; otherwise the player is told.
-        if (currency !== undefined && knowsRate(currency)) expect(rateOn(currency, '2026-01-01'), p.id).toBeDefined();
+        // A known currency has a rate (North Korea's from 15 January 2026, every other from the first day); otherwise
+        // the player is told.
+        if (currency !== undefined && knowsRate(currency)) expect(rateOn(currency, '2026-01-15'), p.id).toBeDefined();
         else expect(aboutRate(p.country), p.id).toEqual(expect.any(String));
         read += 1;
       }

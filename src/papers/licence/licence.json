@@ -69,6 +69,58 @@
    "validYears": 5
   }
  },
+ "CA.03": {
+  "issuer": "Manitoba Public Insurance (MPI)",
+  "licence": {
+   "name": "Class 5 driver's licence",
+   "fee": {
+    "currency": "CAD",
+    "minor": 2000
+   },
+   "validYears": null,
+   "from": 18
+  },
+  "card": {
+   "name": "Manitoba Identification Card",
+   "fee": {
+    "currency": "CAD",
+    "minor": 2000
+   },
+   "validYears": 5
+  }
+ },
+ "CA.05": {
+  "issuer": "Digital Government and Service NL, Motor Registration",
+  "licence": {
+   "name": "Class 5 driver's licence",
+   "fee": {
+    "currency": "CAD",
+    "minor": 12500
+   },
+   "validYears": 5,
+   "from": 18
+  },
+  "card": {
+   "name": "Photo Identification Card",
+   "fee": {
+    "currency": "CAD",
+    "minor": 2500
+   },
+   "validYears": 5
+  }
+ },
+ "CA.07": {
+  "issuer": "the Nova Scotia Registry of Motor Vehicles (Service Nova Scotia)",
+  "licence": {
+   "name": "Class 5 driver's licence",
+   "fee": {
+    "currency": "CAD",
+    "minor": 8015
+   },
+   "validYears": 5,
+   "from": 21
+  }
+ },
  "CA.08": {
   "issuer": "the Ontario Ministry of Transportation, through ServiceOntario and DriveTest",
   "licence": {
@@ -90,6 +142,26 @@
    "from": 16
   }
  },
+ "CA.11": {
+  "issuer": "Saskatchewan Government Insurance (SGI), through motor licence issuers",
+  "licence": {
+   "name": "experienced Class 5 driver's licence",
+   "fee": {
+    "currency": "CAD",
+    "minor": 10000
+   },
+   "validYears": 5,
+   "from": 18
+  },
+  "card": {
+   "name": "photo ID card",
+   "fee": {
+    "currency": "CAD",
+    "minor": 0
+   },
+   "validYears": 5
+  }
+ },
  "DE": {
   "issuer": "the driving licence authority (Fahrerlaubnisbehörde) of the holder's district or city",
   "licence": {
@@ -100,7 +172,82 @@
    },
    "validYears": 15,
    "from": 18
-  }
+  },
+  "exchange": [
+   "AL",
+   "AD",
+   "BA",
+   "PF",
+   "GI",
+   "GG",
+   "IM",
+   "IL",
+   "JP",
+   "JE",
+   "XK",
+   "MK",
+   "MC",
+   "ME",
+   "NA",
+   "NC",
+   "NZ",
+   "KR",
+   "SM",
+   "CH",
+   "RS",
+   "SG",
+   "ZA",
+   "TW",
+   "UA",
+   "GB",
+   "PR",
+   "AU.01",
+   "AU.02",
+   "AU.03",
+   "AU.04",
+   "AU.05",
+   "AU.06",
+   "AU.07",
+   "AU.08",
+   "US.AL",
+   "US.AZ",
+   "US.AR",
+   "US.CO",
+   "US.DE",
+   "US.ID",
+   "US.IL",
+   "US.IA",
+   "US.KS",
+   "US.KY",
+   "US.LA",
+   "US.MD",
+   "US.MA",
+   "US.MI",
+   "US.NM",
+   "US.OH",
+   "US.OK",
+   "US.PA",
+   "US.SC",
+   "US.SD",
+   "US.UT",
+   "US.VA",
+   "US.WA",
+   "US.WV",
+   "US.WI",
+   "US.WY",
+   "CA.01",
+   "CA.02",
+   "CA.03",
+   "CA.04",
+   "CA.05",
+   "CA.13",
+   "CA.07",
+   "CA.08",
+   "CA.09",
+   "CA.10",
+   "CA.11",
+   "CA.12"
+  ]
  },
  "ES": {
   "issuer": "the Dirección General de Tráfico (DGT)",
@@ -133,6 +280,38 @@
    },
    "validYears": 10,
    "from": 17
+  }
+ },
+ "JP": {
+  "issuer": "the prefectural public safety commission (in Tokyo, the Metropolitan Police Department)",
+  "licence": {
+   "name": "普通免許 (ordinary licence)",
+   "fee": {
+    "currency": "JPY",
+    "minor": 4250
+   },
+   "validYears": 3,
+   "from": 18
+  }
+ },
+ "US.AK": {
+  "issuer": "the Alaska Division of Motor Vehicles",
+  "licence": {
+   "name": "driver's license",
+   "fee": {
+    "currency": "USD",
+    "minor": 2000
+   },
+   "validYears": 8,
+   "from": 17
+  },
+  "card": {
+   "name": "identification card",
+   "fee": {
+    "currency": "USD",
+    "minor": 1500
+   },
+   "validYears": null
   }
  },
  "US.AL": {
@@ -175,6 +354,23 @@
    "validYears": 4
   }
  },
+ "US.AZ": {
+  "issuer": "the Arizona Department of Transportation, Motor Vehicle Division (MVD)",
+  "licence": {
+   "name": "class D driver license",
+   "fee": {
+    "currency": "USD",
+    "minor": 2500
+   },
+   "validYears": null,
+   "from": 18
+  },
+  "card": {
+   "name": "nonoperating identification license",
+   "fee": null,
+   "validYears": null
+  }
+ },
  "US.CA": {
   "issuer": "the California Department of Motor Vehicles (DMV)",
   "licence": {
@@ -193,6 +389,26 @@
     "minor": 4000
    },
    "validYears": 6
+  }
+ },
+ "US.CO": {
+  "issuer": "the Colorado Department of Revenue, Division of Motor Vehicles",
+  "licence": {
+   "name": "driver's license",
+   "fee": {
+    "currency": "USD",
+    "minor": 3400
+   },
+   "validYears": 5,
+   "from": 21
+  },
+  "card": {
+   "name": "identification card",
+   "fee": {
+    "currency": "USD",
+    "minor": 1400
+   },
+   "validYears": 5
   }
  },
  "US.CT": {
@@ -295,6 +511,26 @@
    "validYears": 8
   }
  },
+ "US.HI": {
+  "issuer": "the county driver licensing offices (on Oahu, the City and County of Honolulu Customer Services Department)",
+  "licence": {
+   "name": "driver's license",
+   "fee": {
+    "currency": "USD",
+    "minor": 2000
+   },
+   "validYears": 4,
+   "from": 17
+  },
+  "card": {
+   "name": "State ID",
+   "fee": {
+    "currency": "USD",
+    "minor": 4000
+   },
+   "validYears": 8
+  }
+ },
  "US.IA": {
   "issuer": "the Iowa Department of Transportation, Motor Vehicle Division",
   "licence": {
@@ -372,6 +608,86 @@
    "validYears": 6
   }
  },
+ "US.KS": {
+  "issuer": "the Kansas Department of Revenue, Division of Vehicles",
+  "licence": {
+   "name": "class C driver's license",
+   "fee": {
+    "currency": "USD",
+    "minor": 1800
+   },
+   "validYears": 6,
+   "from": 17
+  },
+  "card": {
+   "name": "identification card",
+   "fee": {
+    "currency": "USD",
+    "minor": 1400
+   },
+   "validYears": 6
+  }
+ },
+ "US.KY": {
+  "issuer": "the Kentucky Transportation Cabinet",
+  "licence": {
+   "name": "operator's license",
+   "fee": {
+    "currency": "USD",
+    "minor": 4300
+   },
+   "validYears": 8,
+   "from": 17
+  },
+  "card": {
+   "name": "personal identification card",
+   "fee": {
+    "currency": "USD",
+    "minor": 2300
+   },
+   "validYears": 8
+  }
+ },
+ "US.LA": {
+  "issuer": "the Louisiana Office of Motor Vehicles (Department of Public Safety and Corrections)",
+  "licence": {
+   "name": "Class \"E\" driver's license (personal vehicle)",
+   "fee": {
+    "currency": "USD",
+    "minor": 2025
+   },
+   "validYears": 6,
+   "from": 17
+  },
+  "card": {
+   "name": "special identification card",
+   "fee": {
+    "currency": "USD",
+    "minor": 1500
+   },
+   "validYears": 6
+  }
+ },
+ "US.MA": {
+  "issuer": "the Massachusetts Registry of Motor Vehicles (RMV)",
+  "licence": {
+   "name": "passenger (Class D) driver's license",
+   "fee": {
+    "currency": "USD",
+    "minor": 5000
+   },
+   "validYears": 5,
+   "from": 18
+  },
+  "card": {
+   "name": "Massachusetts identification card (Mass ID)",
+   "fee": {
+    "currency": "USD",
+    "minor": 2500
+   },
+   "validYears": 5
+  }
+ },
  "US.MD": {
   "issuer": "the Maryland Motor Vehicle Administration (MVA)",
   "licence": {
@@ -390,6 +706,46 @@
     "minor": 4000
    },
    "validYears": 8
+  }
+ },
+ "US.ME": {
+  "issuer": "the Maine Secretary of State, Bureau of Motor Vehicles",
+  "licence": {
+   "name": "driver's license",
+   "fee": {
+    "currency": "USD",
+    "minor": 3000
+   },
+   "validYears": 6,
+   "from": 17
+  },
+  "card": {
+   "name": "nondriver identification card",
+   "fee": {
+    "currency": "USD",
+    "minor": 500
+   },
+   "validYears": 6
+  }
+ },
+ "US.MI": {
+  "issuer": "the Michigan Department of State (Secretary of State)",
+  "licence": {
+   "name": "operator's license",
+   "fee": {
+    "currency": "USD",
+    "minor": 2500
+   },
+   "validYears": 4,
+   "from": 17
+  },
+  "card": {
+   "name": "official state personal identification card",
+   "fee": {
+    "currency": "USD",
+    "minor": 1000
+   },
+   "validYears": 4
   }
  },
  "US.MN": {
@@ -448,6 +804,26 @@
    "fee": {
     "currency": "USD",
     "minor": 3300
+   },
+   "validYears": 8
+  }
+ },
+ "US.MT": {
+  "issuer": "the Montana Motor Vehicle Division (Department of Justice)",
+  "licence": {
+   "name": "driver's license",
+   "fee": {
+    "currency": "USD",
+    "minor": 6000
+   },
+   "validYears": 12,
+   "from": 16
+  },
+  "card": {
+   "name": "identification card",
+   "fee": {
+    "currency": "USD",
+    "minor": 1600
    },
    "validYears": 8
   }
@@ -511,6 +887,60 @@
     "minor": 0
    },
    "validYears": 5
+  }
+ },
+ "US.NH": {
+  "issuer": "the New Hampshire Division of Motor Vehicles (Department of Safety)",
+  "licence": {
+   "name": "operator license",
+   "fee": {
+    "currency": "USD",
+    "minor": 5000
+   },
+   "validYears": null,
+   "from": 21
+  },
+  "card": {
+   "name": "non-driver identification card",
+   "fee": {
+    "currency": "USD",
+    "minor": 2000
+   },
+   "validYears": 5,
+   "from": 12
+  }
+ },
+ "US.NJ": {
+  "issuer": "the New Jersey Motor Vehicle Commission (MVC)",
+  "licence": {
+   "name": "basic driver license (auto)",
+   "fee": {
+    "currency": "USD",
+    "minor": 2400
+   },
+   "validYears": null,
+   "from": 18
+  },
+  "card": {
+   "name": "non-driver identification card",
+   "fee": {
+    "currency": "USD",
+    "minor": 2400
+   },
+   "validYears": null,
+   "from": 14
+  }
+ },
+ "US.NM": {
+  "issuer": "the New Mexico Motor Vehicle Division (Taxation and Revenue Department)",
+  "licence": {
+   "name": "driver license",
+   "fee": {
+    "currency": "USD",
+    "minor": 1800
+   },
+   "validYears": 4,
+   "from": 17
   }
  },
  "US.NV": {
@@ -634,6 +1064,27 @@
    "validYears": null
   }
  },
+ "US.RI": {
+  "issuer": "the Rhode Island Division of Motor Vehicles",
+  "licence": {
+   "name": "operator's license",
+   "fee": {
+    "currency": "USD",
+    "minor": 2500
+   },
+   "validYears": 5,
+   "from": 17
+  },
+  "card": {
+   "name": "Rhode Island identification card",
+   "fee": {
+    "currency": "USD",
+    "minor": 2500
+   },
+   "validYears": 5,
+   "from": 21
+  }
+ },
  "US.SC": {
   "issuer": "the South Carolina Department of Motor Vehicles (SCDMV)",
   "licence": {
@@ -653,6 +1104,46 @@
    },
    "validYears": null,
    "from": 5
+  }
+ },
+ "US.SD": {
+  "issuer": "the South Dakota Department of Public Safety, Driver Licensing",
+  "licence": {
+   "name": "operator's license",
+   "fee": {
+    "currency": "USD",
+    "minor": 3800
+   },
+   "validYears": 5,
+   "from": 16
+  },
+  "card": {
+   "name": "nondriver identification card",
+   "fee": {
+    "currency": "USD",
+    "minor": 3800
+   },
+   "validYears": 5
+  }
+ },
+ "US.TN": {
+  "issuer": "the Tennessee Department of Safety and Homeland Security, Driver Services",
+  "licence": {
+   "name": "Class D operator license",
+   "fee": {
+    "currency": "USD",
+    "minor": 2800
+   },
+   "validYears": 8,
+   "from": 18
+  },
+  "card": {
+   "name": "identification license (ID only)",
+   "fee": {
+    "currency": "USD",
+    "minor": 1200
+   },
+   "validYears": 8
   }
  },
  "US.TX": {
@@ -715,6 +1206,26 @@
    "validYears": 8
   }
  },
+ "US.VT": {
+  "issuer": "the Vermont Department of Motor Vehicles",
+  "licence": {
+   "name": "operator's license",
+   "fee": {
+    "currency": "USD",
+    "minor": 6200
+   },
+   "validYears": 4,
+   "from": 18
+  },
+  "card": {
+   "name": "nondriver identification card",
+   "fee": {
+    "currency": "USD",
+    "minor": 2900
+   },
+   "validYears": 4
+  }
+ },
  "US.WA": {
   "issuer": "the Washington State Department of Licensing (DOL)",
   "licence": {
@@ -755,8 +1266,38 @@
    "validYears": 8
   }
  },
+ "US.WV": {
+  "issuer": "the West Virginia Division of Motor Vehicles",
+  "licence": {
+   "name": "Class E driver’s license",
+   "fee": {
+    "currency": "USD",
+    "minor": 4000
+   },
+   "validYears": 8,
+   "from": 17
+  },
+  "card": {
+   "name": "identification card",
+   "fee": {
+    "currency": "USD",
+    "minor": 2500
+   },
+   "validYears": 5,
+   "from": 2
+  }
+ },
  "US.WY": {
   "issuer": "the Wyoming Department of Transportation, Driver Services",
+  "licence": {
+   "name": "driver's license",
+   "fee": {
+    "currency": "USD",
+    "minor": 4500
+   },
+   "validYears": 5,
+   "from": 17
+  },
   "card": {
    "name": "identification card",
    "fee": {

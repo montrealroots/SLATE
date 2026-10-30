@@ -1,0 +1,27 @@
+{
+ "country": "TR",
+ "name": "National Identity Number",
+ "issuer": "the Turkish state's civil registry (the sheet doesn't name the office)",
+ "format": {
+  "length": 11,
+  "pattern": "^\\d{11}$"
+ },
+ "when": "registration",
+ "who": [
+  "citizens",
+  "residents"
+ ],
+ "needed": [
+  "tax",
+  "bank"
+ ],
+ "note": "Türkiye's sheet (its government's own sheet on the OECD's automatic-exchange portal ('Information on Tax Identification Numbers'; the OECD's index page sits behind a bot check and wasn't opened, the sheet itself came straight back)), read 2026-10-30: since 1 July 2006 the 11-digit National Identity Number is Turkish citizens' tax number, and all citizens hold it automatically; foreigners staying over 90 days get a foreign ID number, also used as the TIN. The sheet doesn't name the office that gives the National Identity Number (it names only the central taxpayer registry for the separate 10-digit TIN), so the issuer is written as the civil registry without its office's name. Read as given on registration, to citizens and resident foreigners. The sheet lists banking and financial services among the transactions that require it, so `needed` is tax and bank. No age, fee, time or check rule for the 11-digit number is stated.",
+ "sources": [
+  {
+   "url": "https://www.oecd.org/content/dam/oecd/en/topics/policy-issue-focus/aeoi/turkiye-tin.pdf",
+   "title": "OECD AEOI portal, Türkiye: Information on Tax Identification Numbers (the jurisdiction's own sheet)",
+   "read": "2026-10-30",
+   "said": "As of 1 July 2006, the National Identity Number is used as the unique identification number for Turkish citizens ... All Turkish citizens automatically have TIN, since there is a legal obligation to use national ID numbers as TIN in domestic law. Foreigners staying in Türkiye more than 90 days or visa duration are required to obtain a foreign ID number which is also used as TIN. ... transactions related to banking and financial services ... National Identity Number consists of 11 digits different than the 10 digit TIN."
+  }
+ ]
+}

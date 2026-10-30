@@ -14,8 +14,9 @@ describe('means', () => {
     for (const code of COUNTRY_CODES) {
       const m = meansOf(code, 'modest');
       for (const p of await placesOf(code)) {
-        // A known country gives each family's means; otherwise the player is told.
-        if (m !== undefined) expect([m.checking.minor >= 0, m.savings.minor >= 0, aboutMeans(p.country)], p.id).toEqual([true, true, undefined]);
+        // A known country gives each family's means (its savings where a survey gives them, the player told where none
+        // does); otherwise the player is told.
+        if (m !== undefined) expect([m.checking.minor >= 0, m.savings.minor >= 0, m.debt.minor >= 0, aboutMeans(p.country) === undefined], p.id).toEqual([true, true, true, m.savings.minor > 0]);
         else expect(aboutMeans(p.country), p.id).toEqual(expect.any(String));
         read += 1;
       }

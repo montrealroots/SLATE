@@ -34,8 +34,9 @@ describe('rates', () => {
     // A country with no currency of its own, and one whose currency's rate isn't kept.
     expect(aboutRate('AQ')).toBe(t(UNKEPT_LINE, { country: 'Antarctica' }));
     expect(aboutRate('AQ')).toBe("What Antarctica's money is worth in other currencies isn't known to this game yet.");
-    // North Korea's won: its rate isn't kept (money.rates.blocked.KPW), so nothing exchanges into it, and the player is told.
-    expect([knowsRate('KPW'), rateOn('KPW', '2026-01-01'), exchangeOn(money('USD', 100), 'KPW', '2026-01-01')]).toStrictEqual([false, undefined, undefined]);
-    expect(aboutRate('KP')).toBe("What North Korea's money is worth in other currencies isn't known to this game yet.");
+    // North Korea's won: the UN's operational rate, 110 to the dollar from 15 January 2026 (the UN Treasury's export
+    // starts there; until 2026-10-30 the won was blocked); before that day nothing exchanges into it.
+    expect([knowsRate('KPW'), aboutRate('KP'), rateOn('KPW', '2026-01-14'), exchangeOn(money('USD', 100), 'KPW', '2026-01-14')]).toStrictEqual([true, undefined, undefined, undefined]);
+    expect(exchangeOn(money('USD', 100), 'KPW', '2026-01-15')?.money).toStrictEqual(money('KPW', 11_000));
   });
 });

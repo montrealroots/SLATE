@@ -673,5 +673,7 @@ describe('the station compiler', () => {
       writeFileSync(join(root, target.file), target.file.endsWith('.gz') ? gzipSync('changed') : 'changed');
       expect(() => readStations(root, []), target.file).toThrow(`${target.file} is not the file the register cites (sha256 `);
     }
-  });
+    // It copies every source once per source, the outlines among them since 2026-10-30: past vitest's 30 seconds on a
+    // loaded machine (timed out under eight research agents), well inside two minutes.
+  }, 120_000);
 });

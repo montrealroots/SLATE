@@ -1,0 +1,74 @@
+{
+ "country": "SK",
+ "routes": [
+  {
+   "id": "zamestnanie",
+   "name": "Prechodný pobyt na účel zamestnania",
+   "for": "work",
+   "apply": "either",
+   "fee": "250",
+   "within": {
+    "n": 60,
+    "unit": "day"
+   },
+   "term": {
+    "n": 5,
+    "unit": "year"
+   },
+   "renewable": true,
+   "work": "sponsor",
+   "permanentAfter": 5
+  },
+  {
+   "id": "podnikanie",
+   "name": "Prechodný pobyt na účel podnikania",
+   "for": "self-employed",
+   "apply": "either",
+   "fee": "330",
+   "within": {
+    "n": 90,
+    "unit": "day"
+   },
+   "term": {
+    "n": 3,
+    "unit": "year"
+   },
+   "renewable": true,
+   "work": "any",
+   "permanentAfter": 5
+  },
+  {
+   "id": "obcan-unie",
+   "name": "Pobyt občana Únie",
+   "for": "free movement",
+   "apply": "in country",
+   "work": "any",
+   "groups": [
+    "EU/EEA",
+    "CH"
+   ]
+  },
+  {
+   "id": "dlhodoby-pobyt",
+   "name": "Dlhodobý pobyt",
+   "for": "permanent",
+   "apply": "in country",
+   "work": "any"
+  }
+ ],
+ "note": "Slovakia, read in the statutes as Slov-Lex publishes them: the Act on the Residence of Foreigners (No. 404/2011 Coll.) as in force from 1 October 2026 and the Act on Administrative Fees (No. 145/1995 Coll.) as in force from 15 July 2026. Temporary residence for employment is granted for the expected length of the employment, at most five years (the Interior Ministry's own FAQ of 2024 and 2025 still said two; the Act in force wins), on a confirmation that the vacancy may be filled (read as work for the sponsor); the police decide within 60 days of a complete application where no work permit is needed, 90 otherwise (60 kept, the case the Act names for § 23(1)); the application costs 250 euros and its renewal 140. Temporary residence for business (as a natural person, or acting for a company outside employment) is granted for three years; 330 euros, renewal 200; decided within 90 days. Both are applied for at a police department or a Slovak mission abroad (either; the Act's procedure, not quoted here). Citizens of the EU, the EEA and Switzerland (the Act's member states) have the right of residence beyond three months as employees, self-employed persons or with sufficient means. Long-term residence (dlhodobý pobyt) is granted to one lawfully and continuously in Slovakia for five years immediately before applying (5 kept for both temporary routes); its fee isn't in the fee table read (permanent residence's is 250 euros, which is the five-year permanent residence of family members and others, not written). Naturalisation's years weren't read, so no route is marked as counting.",
+ "sources": [
+  {
+   "url": "https://static.slov-lex.sk/static/SK/ZZ/2011/404/20261001.html",
+   "title": "Zákon č. 404/2011 Z. z. o pobyte cudzincov (Slov-Lex, znenie od 1. 10. 2026)",
+   "read": "2026-10-30",
+   "said": "(3) Policajný útvar udelí prechodný pobyt na účel zamestnania na predpokladaný čas zamestnania, najviac však na päť rokov. ... (2) Policajný útvar udelí prechodný pobyt na účel podnikania na tri roky. ... (8) Policajný útvar rozhodne o žiadosti o udelenie prechodného pobytu a) do 90 dní, b) do 60 dní odo dňa doručenia žiadosti spolu so všetkými náležitosťami podľa § 32 , ak ide o štátneho príslušníka tretej krajiny podľa § 23 ods. 1 ... § 65 (1) Občan Únie má právo na pobyt na území Slovenskej republiky počas obdobia dlhšieho ako tri mesiace, ak a) je zamestnaný na území Slovenskej republiky, b) je samostatne zárobkovo činnou osobou na území Slovenskej republiky ... c) členským štátom členský štát Európskej únie okrem Slovenskej republiky, iný štát, ktorý je zmluvnou stranou Dohody o Európskom hospodárskom priestore, a Švajčiarska konfederácia ... a) ktorý sa na území Slovenskej republiky zdržiava oprávnene a nepretržite po dobu piatich rokov bezprostredne pred podaním žiadosti"
+  },
+  {
+   "url": "https://static.slov-lex.sk/static/SK/ZZ/1995/145/20260715.html",
+   "title": "Zákon č. 145/1995 Z. z. o správnych poplatkoch (Slov-Lex, znenie od 15. 7. 2026), Položka 24",
+   "read": "2026-10-30",
+   "said": "Položka 24 a) Žiadosť o udelenie prechodného pobytu na účel 1. podnikania alebo podľa § 30 ods. 1 písm. a) zákona č. 404/2011 Z. z. o pobyte cudzincov a o zmene a doplnení niektorých zákonov (ďalej len „zákon č. 404/2011 Z. z.“) 330 eur 2. zamestnania alebo podľa § 30 ods. 1 písm. b) zákona č. 404/2011 Z. z. 250 eur ... c) Žiadosť o udelenie trvalého pobytu 250 eur d) Žiadosť o obnovenie prechodného pobytu na účel 1. podnikania alebo podľa § 30 ods. 1 písm. a) zákona č. 404/2011 Z. z. 200 eur 2. zamestnania alebo podľa § 30 ods. 1 písm. b) zákona č. 404/2011 Z. z. 140 eur"
+  }
+ ]
+}

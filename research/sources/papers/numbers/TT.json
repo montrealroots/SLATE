@@ -1,0 +1,27 @@
+{
+ "country": "TT",
+ "name": "Board of Inland Revenue file number (BIR number)",
+ "issuer": "the Board of Inland Revenue",
+ "format": {
+  "length": 10,
+  "pattern": "^\\d{10}$"
+ },
+ "when": "application",
+ "from": 16,
+ "who": [
+  "residents"
+ ],
+ "needed": [
+  "tax",
+  "work"
+ ],
+ "note": "Trinidad and Tobago's sheet (its government's own sheet on the OECD's automatic-exchange portal ('Information on Tax Identification Numbers'; the OECD's index page sits behind a bot check and wasn't opened, the sheet itself came straight back)), read 2026-10-30: the sheet is a scanned document with no text layer and was read by eye (its three pages rendered to images): under section 76 of the Income Tax Act (Chapter 75:01) the Board of Inland Revenue assigns a unique BIR file number; it is not issued automatically, and taxpayers apply on paper or on the Inland Revenue Division's website; every resident with tax filing obligations must apply, and every employee must give it to the employer (s 76B); persons under sixteen, those with no liability to the Board and temporary residents are not issued one; ten numerals, automatically generated, with no check digit. Read as given on application from 16, to residents; `needed` is tax and work. No fee or time is stated.",
+ "sources": [
+  {
+   "url": "https://www.oecd.org/content/dam/oecd/en/topics/policy-issue-focus/aeoi/trinidad-and-tobago-tin.pdf",
+   "title": "OECD AEOI portal, Trinidad and Tobago: Information on Tax Identification Numbers (the jurisdiction's own sheet)",
+   "read": "2026-10-30",
+   "said": "In accordance with Section 76 of the Income Tax Act (ITA) Chapter 75:01, the Board of Inland Revenue assigns a unique identification number referred to as the Board of Inland Revenue file number (B.I.R. file number) ... Every resident with tax filing obligations is required to apply for the BIR number. ... Persons under the age of sixteen, those who do not have a liability to the Board and temporary residents are not issued a number. ... The BIR Number consists ten (10) numerals. ... There is no check digit(s) in the BIR number."
+  }
+ ]
+}

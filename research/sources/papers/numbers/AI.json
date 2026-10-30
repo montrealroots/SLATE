@@ -1,0 +1,25 @@
+{
+ "country": "AI",
+ "name": "Tax Identification Number (TIN)",
+ "issuer": "the Inland Revenue Department (IRD)",
+ "format": {
+  "length": 10,
+  "pattern": "^1\\d{9}$"
+ },
+ "when": "application",
+ "who": [
+  "anyone"
+ ],
+ "needed": [
+  "tax"
+ ],
+ "note": "Anguilla's sheet (its government's own sheet on the OECD's automatic-exchange portal ('Information on Tax Identification Numbers'; the OECD's index page sits behind a bot check and wasn't opened, the sheet itself came straight back)), read 2026-10-30: the Inland Revenue Department issues TINs to individuals and entities who register with it, not automatically; ten digits including a prefix digit (1 for individuals) and a check digit (rule not given, `check` left out). Read as given on registration with the Department, to anyone registering. No age, fee or time is stated.",
+ "sources": [
+  {
+   "url": "https://www.oecd.org/content/dam/oecd/en/topics/policy-issue-focus/aeoi/anguilla-tin.pdf",
+   "title": "OECD AEOI portal, Anguilla: Information on Tax Identification Numbers (the jurisdiction's own sheet)",
+   "read": "2026-10-30",
+   "said": "TINs are issued to individuals and entities registered with the Inland Revenue Department (IRD). ... TINs are issued when individuals register with the Inland Revenue Department. ... consists of 10 digits, including prefix digit and check digit • Individual TINs start with prefix 1"
+  }
+ ]
+}

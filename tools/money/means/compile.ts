@@ -17,8 +17,15 @@ import { isCurrency, minorUnits, rational, roundHalfEven, type CurrencyCode } fr
  * The game's reading, said to the player as the game's: each family is a band of the country's adults, Nothing the
  * bottom fifth, Scraping By the next, Modest the middle fifth, Comfortable the 60th to 90th percentiles, Wealthy the
  * 90th to 99th and Inherited the top 1 percent; a band's average is read from the averages below its edges. A family
- * gives the first morning one month of its band's income in checking and its band's wealth, where above nothing, in
- * savings.
+ * gives the first morning one month of its band's income in checking, and its band's net wealth, where below nothing,
+ * as a debt the life starts with.
+ *
+ * Savings, by the owner's ruling of 2026-10-30, are only what a family holds as deposits and cash: until that day the
+ * band's whole net wealth (homes and pensions with it) went into savings, so a US family of modest means started with
+ * 96,386 dollars in the bank. A country whose household wealth survey publishes deposits by net wealth band gives them
+ * (`liquid`: the survey, the period it's of, its currency, and its bands, each from and to a percentile, contiguous from
+ * 0 to 100, with its average deposits per household); a family's savings are the average of the bands its own
+ * percentiles cross, each weighed by the width it shares. A country with none gives no savings, and the player is told.
  */
 export const SOURCES = 'research/sources/money/means';
 export const OUTPUT = 'src/money/means/means.json';
@@ -36,8 +43,28 @@ export interface Means {
   currency: CurrencyCode;
   /** The year the database gives the figures for. */
   year: number;
-  /** Each family's first morning, in minor units: a month of its band's income in checking, its wealth in savings. */
-  families: { [f in Family]: { checking: number; savings: number } };
+  /**
+   * Each family's first morning, in minor units: a month of its band's income in checking and its negative wealth as
+   * a debt, in the database's currency; its deposits in savings, in the survey's, where a survey gives them.
+   */
+  families: { [f in Family]: { checking: number; debt: number; savings?: number } };
+  /** The survey the savings are read from: its currency and the period it's of. */
+  liquid?: { currency: CurrencyCode; period: string };
+}
+
+/** A family's deposits from the survey's bands: the average over its percentiles, each band weighed by the width shared. */
+export function deposits(f: Family, bands: readonly { from: number; to: number; deposits: Q }[]): Q {
+  const [a, b] = BANDS[f];
+  let num = 0n;
+  let den = 1n;
+  for (const x of bands) {
+    // Percentiles in thousandths, so a band of the top tenth of a percent (the Fed's 99.9 to 100) weighs exactly.
+    const width = BigInt(Math.max(0, Math.round(Math.min(b, x.to) * 1000) - Math.round(Math.max(a, x.from) * 1000)));
+    // num/den + width * x / (b - a), kept exact.
+    num = num * x.deposits.den + den * width * x.deposits.num;
+    den = den * x.deposits.den;
+  }
+  return { num, den: den * BigInt((b - a) * 1000) };
 }
 
 const DECIMAL = /^-?\d+(\.\d+)?$/;
@@ -82,16 +109,45 @@ export function compileCountry(code: string, file: { [key: string]: unknown }): 
   const w = read(wealth, 'wealth');
   const i = read(income, 'income');
   const scale = 10n ** BigInt(minorUnits(cur));
+  const held = file['liquid'] === undefined ? undefined : liquid(code, file['liquid']);
   const families = Object.fromEntries(
     FAMILIES.map((f) => {
       const inc = band(f, i);
       const wea = band(f, w);
       const checking = roundHalfEven(inc.num * scale, inc.den * 12n);
-      const savings = roundHalfEven(wea.num * scale, wea.den);
-      return [f, { checking: Number(checking < 0n ? 0n : checking), savings: Number(savings < 0n ? 0n : savings) }];
+      const worth = roundHalfEven(wea.num * scale, wea.den);
+      const out: Means['families'][Family] = { checking: Number(checking < 0n ? 0n : checking), debt: Number(worth < 0n ? -worth : 0n) };
+      if (held !== undefined) {
+        const d = deposits(f, held.bands);
+        out.savings = Number(roundHalfEven(d.num * 10n ** BigInt(minorUnits(held.currency)), d.den));
+      }
+      return [f, out];
     }),
   ) as Means['families'];
-  return { currency: cur, year: year as number, families };
+  const out: Means = { currency: cur, year: year as number, families };
+  if (held !== undefined) out.liquid = { currency: held.currency, period: held.period };
+  return out;
+}
+
+/** A survey's deposits by net wealth band: its currency, its period, and bands contiguous from 0 to 100. */
+export function liquid(code: string, l: unknown): { currency: CurrencyCode; period: string; bands: { from: number; to: number; deposits: Q }[] } {
+  const { survey, period, currency, per, bands, ...rest } = (typeof l === 'object' && l !== null ? l : {}) as { [k: string]: unknown };
+  if (typeof l !== 'object' || l === null || Object.keys(rest).length > 0) throw new Error(`${code}'s liquid is the survey, its period, currency, per and bands, nothing else`);
+  if (typeof survey !== 'string' || survey === '') throw new Error(`${code}'s liquid names its survey`);
+  if (typeof period !== 'string' || period === '') throw new Error(`${code}'s liquid names the period it's of`);
+  if (!isCurrency(String(currency))) throw new Error(`${code}'s liquid names its currency`);
+  if (per !== 'household') throw new Error(`${code}'s liquid is per household`);
+  if (!Array.isArray(bands) || bands.length === 0) throw new Error(`${code}'s liquid has bands`);
+  let at = 0;
+  const out = bands.map((x: unknown, n) => {
+    const { from, to, deposits: d } = (x ?? {}) as { [k: string]: unknown };
+    if (from !== at || typeof to !== 'number' || !(to > at) || to > 100) throw new Error(`${code}'s liquid band ${n} runs on from ${at}, up to 100 at most`);
+    if (typeof d !== 'string' || !/^\d+(\.\d+)?$/.test(d)) throw new Error(`${code}'s liquid band ${n} gives its deposits as a decimal`);
+    at = to;
+    return { from, to, deposits: rational(d) };
+  });
+  if (at !== 100) throw new Error(`${code}'s liquid bands reach 100`);
+  return { currency: currency as CurrencyCode, period, bands: out };
 }
 
 interface Register {

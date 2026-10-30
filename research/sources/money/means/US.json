@@ -18,7 +18,40 @@
   "p0p99": "81896.70000000001",
   "p99p100": "1419582.7"
  },
- "note": "The World Inequality Database (WID.world, bulk download of 15 October 2026), United States, 2024: average net personal wealth (ahwealj992) and average post-tax disposable income (adiincj992) per adult over 20, resources split equally within couples, in USD of that year, for the bottom 20, 40, 60, 90 and 99 percent and the top 1 percent; each family's band is read from them. Read 2026-10-30.",
+ "liquid": {
+  "survey": "Federal Reserve Distributional Financial Accounts (Survey of Consumer Finances aligned to the Financial Accounts); Survey of Consumer Finances 2022",
+  "period": "2026:Q2",
+  "currency": "USD",
+  "per": "household",
+  "bands": [
+   {
+    "from": 0,
+    "to": 50,
+    "deposits": "11498"
+   },
+   {
+    "from": 50,
+    "to": 90,
+    "deposits": "94153"
+   },
+   {
+    "from": 90,
+    "to": 99,
+    "deposits": "412192"
+   },
+   {
+    "from": 99,
+    "to": 99.9,
+    "deposits": "1544032"
+   },
+   {
+    "from": 99.9,
+    "to": 100,
+    "deposits": "10588694"
+   }
+  ]
+ },
+ "note": "The World Inequality Database (WID.world, bulk download of 15 October 2026), United States, 2024: average net personal wealth (ahwealj992) and average post-tax disposable income (adiincj992) per adult over 20, resources split equally within couples, in USD of that year, for the bottom 20, 40, 60, 90 and 99 percent and the top 1 percent; each family's band is read from them. Read 2026-10-30. Savings (the owner's ruling of 2026-10-30: only what a family holds as deposits and cash): Main table: the Federal Reserve Board's Distributional Financial Accounts (dfa.zip, files of 15 September 2026, quarter 2026:Q2), which distribute the Financial Accounts of the United States across net-worth percentile groups using the Survey of Consumer Finances: bottom 50 percent, 50th to 90th, 90th to 99th, 99th to 99.9th and top 0.1 percent. Deposits are \"Checkable Deposits and Currency plus Time Deposits and Short-term Investments\"; money market fund shares are listed apart. Per household = the group's millions of dollars times 1,000,000 divided by its household count (my division). Second table (scf2022): the 2022 SCF's own Table 6 (financial assets by percentile of net worth: less than 25, 25-49.9, 50-74.9, 75-89.9, 90-100), transaction accounts and certificates of deposit, percentage of families holding and mean value for holders in thousands of 2022 dollars (times 1000 here; the mean over all families is my product of the two), and Table 4's median and mean net worth (2022 column). The SCF workbook was read with openpyxl and its sheets saved as CSV; the said parts are from those CSVs. SCF marks the means \"not reviewed for robustness\".",
  "sources": [
   {
    "url": "https://wid.world/bulk_download/wid_all_data.zip",
@@ -31,6 +64,42 @@
    "title": "World Inequality Database, bulk download, WID_metadata_US.csv (variables ahwealj992 and adiincj992)",
    "read": "2026-10-30",
    "said": "US;ahwealj992;992;j; ... equal-split adults ... ;The population is comprised of individuals over age 20.;USD; ... US;adiincj992;992;j;"
+  },
+  {
+   "url": "https://www.federalreserve.gov/releases/z1/dataviz/download/zips/dfa.zip",
+   "title": "Federal Reserve Board, Distributional Financial Accounts, dfa-networth-levels-detail.csv",
+   "read": "2026-10-30",
+   "said": "Date,Category,Assets,Nonfinancial assets,Real estate,Consumer durables,Financial assets,Deposits ... 2026:Q2,TopPt1,28168034,2706858,1966460,740398,25461176,1448311,984940,1090909,1090909,0,197273,175960,21313,16153923,228630,68964,162810,297905,4780991,46521,300943,298286,117243,52381,17038,111624,2656,27867091,136779, ... 2026:Q2,RemainingTop1,33334932,5127706,4705920,421786,28207225,1874802,972839,1125416,1125416,0,169479,162797,6681,16735623,411208,240672,1504209,968137,4105038,99804,888999,880191,453093,111186,154840,161072,8808,32445932,1214225, ... 2026:Q2,Next9,71849146,17001832,15083366,1918467,54847314,5014713,2075552,2335425,2335425,0,266944,254228,12717,24014368,684262,1407704,6182225,7129334,5328226,408560,4215067,4201152,3410241,524901,60745,205266,13915,67634079,12165969, ... 2026:Q2,Next40,62317685,27079226,23214769,3864458,35238459,5090389,1021646,1158965,1158965,0,127652,111766,15886,7362060,722784,1154806,5668295,9637124,2371758,922980,8891801,8877042,6836034,1787916,147269,105823,14760,53425884,54064877, ... 2026:Q2,Bottom50,10272832,6990876,4821163,2169713,3281956,777430,55950,32798,32798,0,2474,2436,37,374196,169177,59362,758283,488457,168117,395711,5994794,5991103,3160326,2643874,144390,42513,3691,4278038,67616544,"
+  },
+  {
+   "url": "https://www.federalreserve.gov/releases/z1/dataviz/download/zips/dfa.zip",
+   "title": "Federal Reserve Board, Distributional Financial Accounts, dfa-general-levels-detail-dictionary.txt",
+   "read": "2026-10-30",
+   "said": "Holdings of Deposits (Checkable Deposits and Currency plus Time Deposits and Short-term Investments)."
+  },
+  {
+   "url": "https://www.federalreserve.gov/releases/z1/dataviz/download/zips/dfa.zip",
+   "title": "Federal Reserve Board, Distributional Financial Accounts, dfa-data-definitions.txt",
+   "read": "2026-10-30",
+   "said": "Category: Wealth Percentile Group (Top 0.1%, Next 0.9%, Next 9%, Next 40%, Bottom 50%)"
+  },
+  {
+   "url": "https://www.federalreserve.gov/econres/files/scf2022_tables_public_nominal_historical.xlsx",
+   "title": "Federal Reserve Board, 2022 Survey of Consumer Finances, Table 6 (2022 means), sheet \"Table 6 22 means\"",
+   "read": "2026-10-30",
+   "said": "Mean value of holdings for families holding asset (thousands of 2022 dollars) ... Less than 25,3.526,*,0.66,*,2.56,7.03,12.74,5.068,*,7.37,7.39 ... 25–49.9,10.876,30.31,2.16,*,7.46,21.71,33.85,13.981,54.14,26.02,33.42 ... 50–74.9,29.524,40.07,8.21,*,23.92,71.8,106.23,23.619,104.02,37.26,124.86 ... 75–89.9,85.393,69.76,15.39,89.97,108.91,218.57,328.64,51.492,223.31,97.88,518.14 ... 90–100,379.01,294.86,123.68,1306.56,1386.38,2166.85,1296.68,189.759,1164.35,355.98,3841.51"
+  },
+  {
+   "url": "https://www.federalreserve.gov/econres/files/scf2022_tables_public_nominal_historical.xlsx",
+   "title": "Federal Reserve Board, 2022 Survey of Consumer Finances, Table 6 (2022 percentages), sheet \"Table 6 22 %s & medians\"",
+   "read": "2026-10-30",
+   "said": "Percentage of families holding asset ... Less than 25,96.705,*,1.29,*,8.325,1.85,19.965,7.1309,*,7.14,97.612 ... 25–49.9,98.837,2.71,3.3,*,13.1764,2.31,47.1801,13.045,1.8,4.61,99.047 ... 50–74.9,99.067,8.61,7.43,*,19.176,9.64,62.9176,17.7044,5.9,5.86,99.543 ... 75–89.9,99.943,14.8,13.09,1.48,34.988,22.7,84.7773,25.3326,14.19,7.93,99.943 ... 90–100,100,12.83,14.69,7.97,55.4714,46.49,91.0537,28.1437,21.14,11.95,100"
+  },
+  {
+   "url": "https://www.federalreserve.gov/econres/files/scf2022_tables_public_nominal_historical.xlsx",
+   "title": "Federal Reserve Board, 2022 Survey of Consumer Finances, Table 4, family net worth",
+   "read": "2026-10-30",
+   "said": "Percentile of net worth ... Less than 25,0.11,-0.54,0.5,-0.56,0.95,-0.15,0.5,-1.85,1.2,0.08,1.7,-1.33,1.31,-2.11,†,-12.14,†,-12.97,0.1,-11.9,0.31,-13.63,3.47,-5.65 ... 25–49.9,21,23.15,23.58,25.47,28.32,30.63,32.84,35.97,41,44.46,43.6,47.16,54.21,58.13,32.3,35.63,31.36,35.86,39.92,44.67,57.6,58.18,93.4,98.84 ... 50–74.9,87.3,89.72,87.9,90.75,95.12,99.63,120.76,128.7,157.9,167.42,171.1,185.85,220.59,227.74,156.8,168.09,168.23,177.71,192.05,204.06,224.2,236.28,356.9,373.78 ... 75–89.9,211.65,227.71,204.401,219.06,221.71,238.72,310.93,322.69,431.45,452.35,509.9,528.9,572.2,588.02,479.92,525.01,505.08,546.25,605,659.16,653.1,703.59,1036.3,1102.76 ... 90–100,691,1269.33,668,1252.72,684.35,1447.39,900.3,1944.46,1316.8,2765.46,1429.5,3118.72,1897.2,3974.89,1863.8,3681.88,1871.6,3962.43,2386.5,5310.88,2598.4,5710.34,3795,7771.29"
   }
  ]
 }

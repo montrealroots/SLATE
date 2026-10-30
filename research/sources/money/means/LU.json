@@ -18,7 +18,50 @@
   "p0p99": "210870.3",
   "p99p100": "1944017.2"
  },
- "note": "The World Inequality Database (WID.world, bulk download of 15 October 2026), Luxembourg, 2024: average net personal wealth (ahwealj992) and average post-tax disposable income (adiincj992) per adult over 20, resources split equally within couples, in EUR of that year, for the bottom 20, 40, 60, 90 and 99 percent and the top 1 percent; each family's band is read from them. Read 2026-10-30.",
+ "liquid": {
+  "survey": "ECB Distributional Wealth Accounts (HFCS distributions aligned to the national financial accounts)",
+  "period": "2026-Q1",
+  "currency": "EUR",
+  "per": "household",
+  "bands": [
+   {
+    "from": 0,
+    "to": 20,
+    "deposits": "31080"
+   },
+   {
+    "from": 20,
+    "to": 40,
+    "deposits": "101640"
+   },
+   {
+    "from": 40,
+    "to": 60,
+    "deposits": "133580"
+   },
+   {
+    "from": 60,
+    "to": 70,
+    "deposits": "168170"
+   },
+   {
+    "from": 70,
+    "to": 80,
+    "deposits": "211150"
+   },
+   {
+    "from": 80,
+    "to": 90,
+    "deposits": "288350"
+   },
+   {
+    "from": 90,
+    "to": 100,
+    "deposits": "826400"
+   }
+  ]
+ },
+ "note": "The World Inequality Database (WID.world, bulk download of 15 October 2026), Luxembourg, 2024: average net personal wealth (ahwealj992) and average post-tax disposable income (adiincj992) per adult over 20, resources split equally within couples, in EUR of that year, for the bottom 20, 40, 60, 90 and 99 percent and the top 1 percent; each family's band is read from them. Read 2026-10-30. Savings (the owner's ruling of 2026-10-30: only what a family holds as deposits and cash): The ECB's Distributional Wealth Accounts (dataset DWA, read through the ECB Data Portal API on 2026-10-30, latest quarter 2026-Q1) split the household sector's balance sheet of LU by net-wealth quintile and by the top five net-wealth deciles, built from the Household Finance and Consumption Survey and scaled to the national financial and non-financial accounts. Per household, in euro (the API gives thousands; multiplied by 1000 here): deposits (instrument F2M), net wealth (NWA), total assets and total liabilities (F_NNA). No top 1 percent and no separate bottom deciles 1 to 5 are published; B50 is the bottom half. Deposits include currency only as far as the national accounts' F2M instrument does (deposits; currency F21 is not separated). depositsShareOfNetWealth is my division of the two published means; it is above 1 or negative wherever the band's net wealth is small or negative (Quintile 1). Units are households, while WID's bands are adults with equal split; the mapping in \"band\" is by percentile position only.",
  "sources": [
   {
    "url": "https://wid.world/bulk_download/wid_all_data.zip",
@@ -31,6 +74,18 @@
    "title": "World Inequality Database, bulk download, WID_metadata_LU.csv (variables ahwealj992 and adiincj992)",
    "read": "2026-10-30",
    "said": "LU;ahwealj992;992;j; ... equal-split adults ... ;The population is comprised of individuals over age 20.;EUR; ... LU;adiincj992;992;j;"
+  },
+  {
+   "url": "https://data-api.ecb.europa.eu/service/data/DWA/Q..S14...F2M+NWA+F_NNA...S.N?lastNObservations=1&format=csvdata",
+   "title": "ECB Data Portal, Distributional Wealth Accounts (DWA), households, deposits, net wealth, total assets and liabilities by net wealth group, per household, latest observation",
+   "read": "2026-10-30",
+   "said": "DWA.Q.LU.S14.A.LE.F2M.Q1.EUR_R_NH.S.N,Q,LU,S14,A,LE,F2M,Q1,EUR_R_NH,S,N,2026-Q1,31.08, ... DWA.Q.LU.S14.N.LE.NWA.Q1.EUR_R_NH.S.N,Q,LU,S14,N,LE,NWA,Q1,EUR_R_NH,S,N,2026-Q1,10.81, ... DWA.Q.LU.S14.A.LE.F_NNA.Q1.EUR_R_NH.S.N,Q,LU,S14,A,LE,F_NNA,Q1,EUR_R_NH,S,N,2026-Q1,133.08, ... DWA.Q.LU.S14.L.LE.F_NNA.Q1.EUR_R_NH.S.N,Q,LU,S14,L,LE,F_NNA,Q1,EUR_R_NH,S,N,2026-Q1,-122.27, ... DWA.Q.LU.S14.A.LE.F2M.Q2.EUR_R_NH.S.N,Q,LU,S14,A,LE,F2M,Q2,EUR_R_NH,S,N,2026-Q1,101.64, ... DWA.Q.LU.S14.N.LE.NWA.Q2.EUR_R_NH.S.N,Q,LU,S14,N,LE,NWA,Q2,EUR_R_NH,S,N,2026-Q1,213.43, ... DWA.Q.LU.S14.A.LE.F_NNA.Q2.EUR_R_NH.S.N,Q,LU,S14,A,LE,F_NNA,Q2,EUR_R_NH,S,N,2026-Q1,439.6, ... DWA.Q.LU.S14.L.LE.F_NNA.Q2.EUR_R_NH.S.N,Q,LU,S14,L,LE,F_NNA,Q2,EUR_R_NH,S,N,2026-Q1,-226.17, ... DWA.Q.LU.S14.A.LE.F2M.Q3.EUR_R_NH.S.N,Q,LU,S14,A,LE,F2M,Q3,EUR_R_NH,S,N,2026-Q1,133.58, ... DWA.Q.LU.S14.N.LE.NWA.Q3.EUR_R_NH.S.N,Q,LU,S14,N,LE,NWA,Q3,EUR_R_NH,S,N,2026-Q1,665.53, ... DWA.Q.LU.S14.A.LE.F_NNA.Q3.EUR_R_NH.S.N,Q,LU,S14,A,LE,F_NNA,Q3,EUR_R_NH,S,N,2026-Q1,922.61, ... DWA.Q.LU.S14.L.LE.F_NNA.Q3.EUR_R_NH.S.N,Q,LU,S14,L,LE,F_NNA,Q3,EUR_R_NH,S,N,2026-Q1,-257.08, ... DWA.Q.LU.S14.A.LE.F2M.Q4.EUR_R_NH.S.N,Q,LU,S14,A,LE,F2M,Q4,EUR_R_NH,S,N,2026-Q1,189.68, ... DWA.Q.LU.S14.N.LE.NWA.Q4.EUR_R_NH.S.N,Q,LU,S14,N,LE,NWA,Q4,EUR_R_NH,S,N,2026-Q1,1238.94, ... DWA.Q.LU.S14.A.LE.F_NNA.Q4.EUR_R_NH.S.N,Q,LU,S14,A,LE,F_NNA,Q4,EUR_R_NH,S,N,2026-Q1,1397.82, ... DWA.Q.LU.S14.L.LE.F_NNA.Q4.EUR_R_NH.S.N,Q,LU,S14,L,LE,F_NNA,Q4,EUR_R_NH,S,N,2026-Q1,-158.88, ... DWA.Q.LU.S14.A.LE.F2M.Q5.EUR_R_NH.S.N,Q,LU,S14,A,LE,F2M,Q5,EUR_R_NH,S,N,2026-Q1,557.9, ... DWA.Q.LU.S14.N.LE.NWA.Q5.EUR_R_NH.S.N,Q,LU,S14,N,LE,NWA,Q5,EUR_R_NH,S,N,2026-Q1,4544.09, ... DWA.Q.LU.S14.A.LE.F_NNA.Q5.EUR_R_NH.S.N,Q,LU,S14,A,LE,F_NNA,Q5,EUR_R_NH,S,N,2026-Q1,4783.37, ... DWA.Q.LU.S14.L.LE.F_NNA.Q5.EUR_R_NH.S.N,Q,LU,S14,L,LE,F_NNA,Q5,EUR_R_NH,S,N,2026-Q1,-239.28, ... DWA.Q.LU.S14.A.LE.F2M.D6.EUR_R_NH.S.N,Q,LU,S14,A,LE,F2M,D6,EUR_R_NH,S,N,2026-Q1,134.02, ... DWA.Q.LU.S14.N.LE.NWA.D6.EUR_R_NH.S.N,Q,LU,S14,N,LE,NWA,D6,EUR_R_NH,S,N,2026-Q1,797.12, ... DWA.Q.LU.S14.A.LE.F_NNA.D6.EUR_R_NH.S.N,Q,LU,S14,A,LE,F_NNA,D6,EUR_R_NH,S,N,2026-Q1,1023.05, ... DWA.Q.LU.S14.L.LE.F_NNA.D6.EUR_R_NH.S.N,Q,LU,S14,L,LE,F_NNA,D6,EUR_R_NH,S,N,2026-Q1,-225.94, ... DWA.Q.LU.S14.A.LE.F2M.D7.EUR_R_NH.S.N,Q,LU,S14,A,LE,F2M,D7,EUR_R_NH,S,N,2026-Q1,168.17, ... DWA.Q.LU.S14.N.LE.NWA.D7.EUR_R_NH.S.N,Q,LU,S14,N,LE,NWA,D7,EUR_R_NH,S,N,2026-Q1,1068.6, ... DWA.Q.LU.S14.A.LE.F_NNA.D7.EUR_R_NH.S.N,Q,LU,S14,A,LE,F_NNA,D7,EUR_R_NH,S,N,2026-Q1,1211.65, ... DWA.Q.LU.S14.L.LE.F_NNA.D7.EUR_R_NH.S.N,Q,LU,S14,L,LE,F_NNA,D7,EUR_R_NH,S,N,2026-Q1,-143.05, ... DWA.Q.LU.S14.A.LE.F2M.D8.EUR_R_NH.S.N,Q,LU,S14,A,LE,F2M,D8,EUR_R_NH,S,N,2026-Q1,211.15, ... DWA.Q.LU.S14.N.LE.NWA.D8.EUR_R_NH.S.N,Q,LU,S14,N,LE,NWA,D8,EUR_R_NH,S,N,2026-Q1,1408.74, ... DWA.Q.LU.S14.A.LE.F_NNA.D8.EUR_R_NH.S.N,Q,LU,S14,A,LE,F_NNA,D8,EUR_R_NH,S,N,2026-Q1,1583.43, ... DWA.Q.LU.S14.L.LE.F_NNA.D8.EUR_R_NH.S.N,Q,LU,S14,L,LE,F_NNA,D8,EUR_R_NH,S,N,2026-Q1,-174.69, ... DWA.Q.LU.S14.A.LE.F2M.D9.EUR_R_NH.S.N,Q,LU,S14,A,LE,F2M,D9,EUR_R_NH,S,N,2026-Q1,288.35, ... DWA.Q.LU.S14.N.LE.NWA.D9.EUR_R_NH.S.N,Q,LU,S14,N,LE,NWA,D9,EUR_R_NH,S,N,2026-Q1,2071.3, ... DWA.Q.LU.S14.A.LE.F_NNA.D9.EUR_R_NH.S.N,Q,LU,S14,A,LE,F_NNA,D9,EUR_R_NH,S,N,2026-Q1,2233.16, ... DWA.Q.LU.S14.L.LE.F_NNA.D9.EUR_R_NH.S.N,Q,LU,S14,L,LE,F_NNA,D9,EUR_R_NH,S,N,2026-Q1,-161.86, ... DWA.Q.LU.S14.A.LE.F2M.D10.EUR_R_NH.S.N,Q,LU,S14,A,LE,F2M,D10,EUR_R_NH,S,N,2026-Q1,826.4, ... DWA.Q.LU.S14.N.LE.NWA.D10.EUR_R_NH.S.N,Q,LU,S14,N,LE,NWA,D10,EUR_R_NH,S,N,2026-Q1,7007.37, ... DWA.Q.LU.S14.A.LE.F_NNA.D10.EUR_R_NH.S.N,Q,LU,S14,A,LE,F_NNA,D10,EUR_R_NH,S,N,2026-Q1,7323.78, ... DWA.Q.LU.S14.L.LE.F_NNA.D10.EUR_R_NH.S.N,Q,LU,S14,L,LE,F_NNA,D10,EUR_R_NH,S,N,2026-Q1,-316.4, ... DWA.Q.LU.S14.A.LE.F2M.B50.EUR_R_NH.S.N,Q,LU,S14,A,LE,F2M,B50,EUR_R_NH,S,N,2026-Q1,79.75, ... DWA.Q.LU.S14.N.LE.NWA.B50.EUR_R_NH.S.N,Q,LU,S14,N,LE,NWA,B50,EUR_R_NH,S,N,2026-Q1,196.73, ... DWA.Q.LU.S14.A.LE.F_NNA.B50.EUR_R_NH.S.N,Q,LU,S14,A,LE,F_NNA,B50,EUR_R_NH,S,N,2026-Q1,393.77, ... DWA.Q.LU.S14.L.LE.F_NNA.B50.EUR_R_NH.S.N,Q,LU,S14,L,LE,F_NNA,B50,EUR_R_NH,S,N,2026-Q1,-197.05,"
+  },
+  {
+   "url": "https://data-api.ecb.europa.eu/service/datastructure/ECB/ECB_DWA1?references=children",
+   "title": "ECB Data Portal, DWA data structure definition and code lists (CL_DWA_GRP, CL_DWA_INSTR, CL_DWA_UNIT)",
+   "read": "2026-10-30",
+   "said": "Quintile 1 based on net wealth concept ... Decile 10 based on net wealth concept ... Bottom 50% based on net wealth concept ... Deposits ... Adjusted wealth (net) ... Euro; ratio to number of households"
   }
  ]
 }

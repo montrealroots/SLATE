@@ -810,6 +810,16 @@ consumer anchor and a falsifier (`tests/money/effects.test.ts`); the weather sta
   Marigot, or keep Gustavia filed GP); coverage cites changed for BL, CD, CG, GP; the block-644 rule and the compiler's
   use of Natural Earth want register rows; 9120 Auckland_Aero_AWS stands 205 km offshore with no other record;
   Khujand's temperatures have no source in any set read.
+- Family means, done 2026-10-30 (the form): `liquid` in a country's means file gives the survey's bands of household
+  deposits (contiguous from 0 to 100), and each family's savings are the bands its percentiles cross, weighed by the
+  width shared; a band's net wealth below nothing is a `debt` the first morning opens as a ledger account owed to the
+  family; a country with no survey gives nothing in savings and says so (`means.savings-unkept`). 25 countries carry
+  it: the ECB's Distributional Wealth Accounts for the euro area and Hungary (in euros), the Fed's DFA for the US
+  (bands 50/90/99/99.9), Statistics Canada, the ABS and Stats NZ (quintiles). A US family of modest means now starts
+  with 52,825.50 dollars in the bank (it was 96,386 of net wealth). Not used, being other measures: the UK's WAS (net
+  financial wealth by total wealth deciles), Japan's FIES (savings quintiles), Korea's 저축액 (stocks and insurance with
+  deposits). The rest of the world still to be searched for a survey; where none, the line stands. What follows was
+  written before the form:
 - Family means: the liquid share exists for 28 countries only (the ECB's Distributional Wealth Accounts for 21, the
   Fed's DFA and the SCF, Statistics Canada's SFS, the ABS, Stats NZ, the ONS's WAS as net financial wealth, Korea's
   SFHLC read by eye, Japan's FIES by savings quintile), their bands differing (quintiles, deciles 6 to 10, 50/90/99);
@@ -822,6 +832,10 @@ consumer anchor and a falsifier (`tests/money/effects.test.ts`); the weather sta
   bot checks or not reached for time); the readings each made are in its files' notes.
 - Citizenship: 181 files' changes after 1 January 2024 (GLOBALCIT's coding date) unchecked; Palestine has no
   `atBirth`; Japan's naturalisation blocked (moj.go.jp 403).
+
+The owner's ruling of 2026-10-30 on prices: "Yes, use the IMF-linked series for Somalia." The IMF's CPI series for
+Somalia (2022 = 100, 2020 to 2026) links the Mogadishu index to the new national CPI without saying who made the link;
+it stands as Somalia's 2021-to-2025 index, marked secondary, quoting the national bureau's CPI.
 
 The older next steps below are kept as they were written.
 

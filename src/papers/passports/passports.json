@@ -1228,6 +1228,58 @@
    }
   ]
  },
+ "BY": {
+  "currency": "BYN",
+  "routes": [
+   {
+    "id": "standard",
+    "where": "home",
+    "speed": "standard",
+    "within": {
+     "n": 15,
+     "unit": "working day"
+    }
+   },
+   {
+    "id": "accelerated",
+    "where": "home",
+    "speed": "urgent",
+    "within": {
+     "n": 10,
+     "unit": "working day"
+    }
+   },
+   {
+    "id": "urgent",
+    "where": "home",
+    "speed": "urgent",
+    "within": {
+     "n": 5,
+     "unit": "working day"
+    }
+   }
+  ],
+  "bands": [
+   {
+    "validYears": null,
+    "pay": {
+     "standard": 6750,
+     "accelerated": 11250,
+     "urgent": 15750
+    },
+    "under": 14
+   },
+   {
+    "validYears": null,
+    "pay": {
+     "standard": 9000,
+     "accelerated": 13500,
+     "urgent": 18000
+    },
+    "from": 14
+   }
+  ]
+ },
  "BZ": {
   "currency": "BZD",
   "abroad": {
@@ -4144,6 +4196,39 @@
      "abroad-lost": 2005000
     },
     "pages": 66
+   }
+  ]
+ },
+ "KG": {
+  "currency": "KGS",
+  "routes": [
+   {
+    "id": "first",
+    "where": "home",
+    "speed": "standard",
+    "within": {
+     "n": 18,
+     "unit": "working day"
+    }
+   },
+   {
+    "id": "lost",
+    "where": "home",
+    "speed": "standard",
+    "within": {
+     "n": 18,
+     "unit": "working day"
+    },
+    "replacement": true
+   }
+  ],
+  "bands": [
+   {
+    "validYears": null,
+    "pay": {
+     "first": 298100,
+     "lost": 318100
+    }
    }
   ]
  },
@@ -8108,6 +8193,65 @@
      "renewal-urgent": 720700
     },
     "under": 18
+   }
+  ]
+ },
+ "UZ": {
+  "currency": "UZS",
+  "routes": [
+   {
+    "id": "portal",
+    "where": "home",
+    "speed": "standard",
+    "within": {
+     "n": 10,
+     "unit": "working day"
+    }
+   },
+   {
+    "id": "office",
+    "where": "home",
+    "speed": "standard",
+    "within": {
+     "n": 10,
+     "unit": "working day"
+    }
+   }
+  ],
+  "bands": [
+   {
+    "validYears": 2,
+    "pay": {
+     "portal": null,
+     "office": 35200000
+    },
+    "under": 1
+   },
+   {
+    "validYears": 5,
+    "pay": {
+     "portal": null,
+     "office": 35200000
+    },
+    "from": 1,
+    "under": 16
+   },
+   {
+    "validYears": 5,
+    "pay": {
+     "portal": 39600000,
+     "office": 44000000
+    },
+    "from": 16,
+    "under": 25
+   },
+   {
+    "validYears": 10,
+    "pay": {
+     "portal": 39600000,
+     "office": 44000000
+    },
+    "from": 25
    }
   ]
  },

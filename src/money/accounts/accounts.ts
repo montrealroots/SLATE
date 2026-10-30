@@ -23,7 +23,8 @@ import { exchangeOn } from '../rates/rates.ts';
  * The first morning: the family's means (src/money/means) are paid into an everyday account at a bank of the country
  * the life starts in, its month of income into the everyday account and its savings into the bank's savings account
  * where it sells one (else into the everyday account too), carried at the day's rate where the bank keeps the
- * account in another currency.
+ * account in another currency; a family whose net wealth is below nothing leaves the life a debt of it, kept as a
+ * ledger account of its own owed to the family.
  *
  * The holder's birth date, zone and citizenship come with each command from the life (layer 4's person holds them).
  */
@@ -253,6 +254,12 @@ export function firstMorning(s: Holding, a: FirstMorningArgs, terms: Bank, c: Co
     const carried = cur === figure.currency ? figure : exchangeOn(figure, cur, dateOf(c.now))?.money;
     if (carried === undefined) throw new Error(`the rate between ${figure.currency} and ${cur} isn't known to this game`);
     move(s.ledger, c.now, 'the family', [{ account: `${WORLD}family`, amount: money(cur, -carried.minor) }, { account: into, amount: carried }]);
+  }
+  // A family whose net wealth is below nothing leaves the life that debt, owed to the family (the game's reading).
+  if (means.debt.minor > 0) {
+    const debt = `debt:${s.accounts.held.length + 1}`;
+    openLedger(s.ledger, debt, means.debt.currency as CurrencyCode, c.now);
+    move(s.ledger, c.now, 'the family', [{ account: debt, amount: money(means.debt.currency as CurrencyCode, -means.debt.minor) }, { account: `${WORLD}family`, amount: means.debt }]);
   }
 }
 

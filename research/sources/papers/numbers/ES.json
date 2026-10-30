@@ -1,0 +1,25 @@
+{
+ "country": "ES",
+ "name": "National Identity Card (DNI) number",
+ "issuer": "the Ministry of Internal Affairs (General Directorate of Police)",
+ "format": {
+  "length": 9,
+  "pattern": "^\\d{8}[A-Z]$"
+ },
+ "when": "application",
+ "who": [
+  "citizens"
+ ],
+ "needed": [
+  "tax"
+ ],
+ "note": "Spain's sheet (its government's own sheet on the OECD's automatic-exchange portal ('Information on Tax Identification Numbers'; the OECD's index page sits behind a bot check and wasn't opened, the sheet itself came straight back)), read 2026-10-30: for Spanish nationals the TIN is generally the National Identity Card (DNI) number, issued by the Ministry of Internal Affairs (General Directorate of Police): 8 digits and a control letter (its rule isn't given, so `check` is left out). Foreigners use the NIE (X, Y or Z, seven digits and a letter), also from the Ministry, not modelled here; the Tax Administration gives a K number to resident Spaniards under 14 without a DNI, so the DNI is read as the citizen's number given on application. No age is set as `from` because the sheet doesn't state one. No fee or time is stated.",
+ "sources": [
+  {
+   "url": "https://www.oecd.org/content/dam/oecd/en/topics/policy-issue-focus/aeoi/spain-tin.pdf",
+   "title": "OECD AEOI portal, Spain: Information on Tax Identification Numbers (the jurisdiction's own sheet)",
+   "read": "2026-10-30",
+   "said": "Natural persons of Spanish nationality: Generally, the TIN is the number on your National Identity Card, issued by the Ministry of Internal Affairs (General Directorate of Police). ... 99999999L 8 digits + 1 control letter Spanish Natural Persons: DNI* ... K9999999L Letter K + 7 digits + 1 control letter Resident Spaniards under 14 without DNI*"
+  }
+ ]
+}

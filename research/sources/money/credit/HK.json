@@ -1,0 +1,24 @@
+{
+ "country": "HK",
+ "bureau": "TransUnion Limited (credit reference agency)",
+ "report": 61,
+ "keep": 30,
+ "clears": 1826,
+ "note": "The Privacy Commissioner's Code of Practice on Consumer Credit Data (its own PDF answers this environment with a bot-check script, not passed) is read through the Hong Kong Monetary Authority's Supervisory Policy Manual IC-6 (V.5, 14 February 2014), which sets the Code's rules for banks: a 'material default' is a default of more than 60 days, and unless the amount in default is repaid or written off within 60 days of the default, the account repayment data are retained by the credit reference agency until five years after final settlement of the amount in default (or five years after discharge from bankruptcy, whichever is earlier). The game reads this as the mark made at 61 days (report 61), kept while unpaid (keep 30, 'the longest the game keeps'), and lifting five years after it is paid (clears 1826). Repayment data that reveal no material default, and bankruptcy, aren't modelled. The bureau is TransUnion Limited, the credit reference agency the Government's reply to LCQ22 (24 April 2024) names, holding data on about 5.4 million individuals.",
+ "sources": [
+  {
+   "url": "https://brdr.hkma.gov.hk/eng/doc-ldg/docId/getPdf/20140214-2-EN/IC-6.pdf",
+   "title": "Hong Kong Monetary Authority, Supervisory Policy Manual IC-6, The Sharing and Use of Consumer Credit Data through a Credit Reference Agency (V.5, 14 February 2014)",
+   "read": "2026-10-30",
+   "said": "“Material default” means a default in payment for a period in excess of 60 days. ... unless the amount in default is fully repaid or written off (otherwise than due to a bankruptcy order) before the expiry of 60 days from the date of the default, the individual shall be liable to have his account repayment data to be retained by the CRA until the expiry of 5 years from the date of final settlement of the amount in default",
+   "kind": "secondary",
+   "quotes": "https://www.pcpd.org.hk/english/data_privacy_law/code_of_practices/files/CCDCode_2013_e.pdf"
+  },
+  {
+   "url": "https://www.info.gov.hk/gia/general/202404/24/P2024042400200.htm",
+   "title": "Hong Kong Government press release, LCQ22: Privacy protection for consumer credit data (24 April 2024)",
+   "read": "2026-10-30",
+   "said": "the Office of the Privacy Commissioner for Personal Data (PCPD) issued enforcement notices to TransUnion Limited (TransUnion) and Softmedia Technology Company Limited (Softmedia) in 2019 and 2023 respectively."
+  }
+ ]
+}

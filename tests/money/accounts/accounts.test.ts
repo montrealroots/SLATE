@@ -253,16 +253,23 @@ describe('an account at a bank', () => {
     firstMorning(t, { ...holder, country: 'US', family: 'modest', bank: 'B', account: 'A' }, plain, ctx(T0).c);
     expect([t.accounts.held.length, bal(t, 'everyday:1')]).toEqual([1, means.checking.minor + means.savings.minor]);
     expect(accountOf(t.ledger, 'everyday:1').postings.map((p) => p.what)).toEqual(['the family', 'the family']);
-    // A family with no savings (the poorest fifth) puts nothing in the savings account.
+    // The poorest fifth of the US: its net wealth below nothing leaves the life a debt to the family, an account of its own.
     const z = fresh();
     firstMorning(z, { ...holder, country: 'US', family: 'nothing', bank: 'B', account: 'A' }, { ...plain, savings: { account: 'S', interest: { percent: '1', per: 'year' } } }, ctx(T0).c);
-    expect(accountOf(z.ledger, 'savings:2').postings).toEqual([]);
+    const poor = meansOf('US', 'nothing');
+    expect([bal(z, 'debt:3'), accountOf(z.ledger, 'debt:3').postings.map((p) => p.what)]).toEqual([-(poor?.debt.minor ?? 0), ['the family']]);
+    // A family with nothing in savings (Norway's, no survey read) puts nothing in the savings account, and owes nothing.
+    const n = fresh();
+    firstMorning(n, { ...holder, country: 'NO', family: 'modest', bank: 'B', account: 'A' }, { ...plain, currency: 'NOK', savings: { account: 'S', interest: { percent: '1', per: 'year' } } }, ctx(T0).c);
+    expect([accountOf(n.ledger, 'savings:2').postings, n.ledger.accounts.some((a) => a.id.startsWith('debt:'))]).toEqual([[], false]);
     // An account in euros takes the dollars at the day's rate.
     const e = fresh();
     firstMorning(e, { ...holder, country: 'US', family: 'nothing', bank: 'B', account: 'A' }, { ...plain, currency: 'EUR' }, ctx(T0).c);
     const nothing = meansOf('US', 'nothing');
-    expect(bal(e, 'everyday:1')).toBe(exchangeOn(nothing?.checking ?? usd(0), 'EUR', '2026-01-15')?.money.minor);
-    expect(() => firstMorning(fresh(), { ...holder, country: 'US', family: 'modest', bank: 'B', account: 'A' }, { ...plain, currency: 'KPW' }, ctx(T0).c)).toThrow("the rate between USD and KPW isn't known to this game");
+    const inEuros = (m: ReturnType<typeof usd> | undefined) => exchangeOn(m ?? usd(0), 'EUR', '2026-01-15')?.money.minor ?? 0;
+    expect(bal(e, 'everyday:1')).toBe(inEuros(nothing?.checking) + inEuros(nothing?.savings));
+    // North Korea's won has a rate only from 15 January 2026.
+    expect(() => firstMorning(fresh(), { ...holder, country: 'US', family: 'modest', bank: 'B', account: 'A' }, { ...plain, currency: 'KPW' }, ctx(at(2026, 1, 14)).c)).toThrow("the rate between USD and KPW isn't known to this game");
     expect(() => firstMorning(fresh(), { ...holder, country: 'VA', family: 'modest', bank: 'B', account: 'A' }, plain, ctx(T0).c)).toThrow("what a family in VA has to give isn't known to this game");
   });
 
