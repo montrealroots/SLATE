@@ -13,16 +13,97 @@
      "fee": "1485",
      "per": "year"
     }
-   ]
+   ],
+   "cash": {
+    "fee": {
+     "percent": "5.50"
+    }
+   },
+   "fx": "4.00",
+   "late": {
+    "fixed": "1000"
+   },
+   "overLimit": {
+    "fixed": "500"
+   },
+   "returned": "1000"
+  },
+  {
+   "bank": "Banque Nationale de Crédit",
+   "card": "Carte de crédit Standard",
+   "rate": {
+    "percent": "3.33",
+    "per": "month"
+   },
+   "fees": [
+    {
+     "fee": "3700",
+     "per": "year"
+    }
+   ],
+   "cash": {
+    "fee": {
+     "percent": "5.50"
+    }
+   },
+   "late": {
+    "fixed": "1750"
+   },
+   "overLimit": {
+    "fixed": "1750"
+   },
+   "tax": {
+    "fees": "10"
+   }
+  },
+  {
+   "bank": "Banque Nationale de Crédit",
+   "card": "Carte de crédit Gold",
+   "rate": {
+    "percent": "3.33",
+    "per": "month"
+   },
+   "fees": [
+    {
+     "fee": "4500",
+     "per": "year"
+    }
+   ],
+   "cash": {
+    "fee": {
+     "percent": "5.50"
+    }
+   },
+   "late": {
+    "fixed": "1750"
+   },
+   "overLimit": {
+    "fixed": "1750"
+   },
+   "tax": {
+    "fees": "10"
+   }
   }
  ],
- "note": "Sogebank's fee grid (March 2026, before the turnover tax, whose rate it doesn't state): its credit cards cost 1,485 to 23,760 gourdes a year to issue and hold the main card, by card, and bear monthly interest of 3.17% to 4.67%. The card isn't named, so the lowest fee, its basic card's, is written with the top of the interest range.",
+ "note": "Sogebank's fee grid (March 2026, before the turnover tax, whose rate it doesn't state): its credit cards cost 1,485 to 23,760 gourdes a year to issue and hold the main card, by card, and bear monthly interest of 3.17% to 4.67%. The card isn't named, so the lowest fee, its basic card's, is written with the top of the interest range. Read again by eye on 2026-10-30, the same grid also gives, for credit cards in gourdes: a cash advance fee of 5.50%, a fee on international transactions of 4.00%, a late fee of 1,000 to 2,700 gourdes, an over-limit fee of 500 to 2,000 and a returned-cheque fee of 1,000 to 2,250; following the reading of the basic card, the lowest of each range is written. The main banks: Sogebank, Unibank and the Banque Nationale de Crédit (BNC), the largest by the BRH's published figures as best known. BNC's price list (2024, linked from its home page on 2026-10-30) carries its card tariff in force from 18 April 2022: the standard credit card 3,700 gourdes a year and the Gold 4,500 (the Corporate card, for businesses, isn't written); 3.33% interest a month; 5.50% on a cash advance; over-limit and late fees of 1,750 gourdes each; and the 10% turnover tax (TCA) on every fee and commission. Unibank's site answered with an Incapsula check (not circumvented) and Capital Bank's with 503, so neither is written.",
  "sources": [
   {
    "url": "https://www.sogebank.com/wp-content/uploads/2026/03/Grille-de-tarification-mars-2026.pdf",
    "title": "Sogebank, Frais applicables (hors TCA), March 2026",
    "read": "2026-10-29",
    "said": "IV- CARTE(S) DE CREDIT. FRAIS: Frais d'émission /Cotisation annuelle Carte principale, HTG 1,485.00 @ 23,760.00, USD N/A. Intérêts mensuels, HTG 3.17% @ 4.67%, USD N/A. (Read by eye from page 2 of the image-only document, footed DCRP 27022026.)"
+  },
+  {
+   "url": "https://www.sogebank.com/wp-content/uploads/2026/03/Grille-de-tarification-mars-2026.pdf",
+   "title": "Sogebank, Frais applicables (hors TCA), March 2026",
+   "read": "2026-10-30",
+   "said": "IV- CARTE(S) DE CREDIT. FRAIS, HTG: Frais d'émission /Cotisation annuelle Carte principale 1,485.00 @ 23,760.00. Retrait d'espèce(s) 5.5%. Frais de retard 1,000.00 @ 2,700.00. Frais de dépassement 500.00 @ 2,000.00. Intérêts mensuels 3.17% @ 4.67%. Frais sur avance de fonds 5.50%. Frais sur chèque retourné 1,000.00 @ 2,250.00. Frais sur transaction internationale 4.00%. USD N/A throughout. (Read by eye from page 2 of the image-only document, footed DCRP 27022026.)"
+  },
+  {
+   "url": "https://www.bnconline.com/bnc/wp-content/uploads/2024/02/Tarifications-de-la-BNC-2024.pdf",
+   "title": "Banque Nationale de Crédit (BNC), Tarification des produits et services (2024): Tarification de la carte BNC, effective 18 April 2022",
+   "read": "2026-10-30",
+   "said": "Tous les frais et commissions sont soumis au prélèvement de la TCA de 10% ... TARIFICATION DE LA CARTE BNC EFFECTIVE LE 18 AVRIL 2022 ... COTISATION ANNUELLE-CARTE DE CREDIT Corporate : HTG 5,000.00 Gold : HTG 4,500.00 STD: HTG 3,700.00 ... FRAIS DE DEPASSEMENT DE LIMITE Corporate : HTG 2,500.00 Gold : HTG 1,750.00 STD: HTG 1,750.00 FRAIS DE RETARD Corporate : HTG 3,500.00 Gold : HTG 1,750.00 STD: HTG 1,750.00 COMMISSION SUR AVANCES DE FONDS ... 5.50% ... INTERETS MENSUELS 3.33%"
   }
  ]
 }

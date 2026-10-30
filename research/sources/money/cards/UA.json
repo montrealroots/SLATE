@@ -59,15 +59,201 @@
      "percent": "3.5"
     }
    }
+  },
+  {
+   "bank": "OTP Bank",
+   "card": "Ладна",
+   "fees": [],
+   "cash": {
+    "fee": {
+     "percent": "3"
+    }
+   },
+   "grace": 62,
+   "late": {
+    "fixed": "200"
+   },
+   "rate": {
+    "percent": "3.3",
+    "per": "month"
+   },
+   "minimum": {
+    "percent": "5",
+    "floor": "50"
+   }
+  },
+  {
+   "bank": "OTP Bank",
+   "card": "MasterCard Standard",
+   "fees": [
+    {
+     "fee": "19.9",
+     "per": "month"
+    }
+   ],
+   "cash": {
+    "fee": {
+     "percent": "5.5",
+     "fixed": "7"
+    }
+   },
+   "grace": 45,
+   "late": {
+    "fixed": "150"
+   },
+   "rate": {
+    "percent": "3.3",
+    "per": "month"
+   },
+   "minimum": {
+    "percent": "5",
+    "floor": "50"
+   }
+  },
+  {
+   "bank": "OTP Bank",
+   "card": "Visa Classic",
+   "fees": [
+    {
+     "fee": "19.9",
+     "per": "month"
+    }
+   ],
+   "cash": {
+    "fee": {
+     "percent": "5.5",
+     "fixed": "7"
+    }
+   },
+   "grace": 45,
+   "late": {
+    "fixed": "150"
+   },
+   "rate": {
+    "percent": "3.3",
+    "per": "month"
+   },
+   "minimum": {
+    "percent": "5",
+    "floor": "50"
+   }
+  },
+  {
+   "bank": "OTP Bank",
+   "card": "MasterCard Gold",
+   "fees": [
+    {
+     "fee": "55",
+     "per": "month"
+    }
+   ],
+   "cash": {
+    "fee": {
+     "percent": "5.5",
+     "fixed": "7"
+    }
+   },
+   "grace": 45,
+   "late": {
+    "fixed": "150"
+   },
+   "rate": {
+    "percent": "3.3",
+    "per": "month"
+   },
+   "minimum": {
+    "percent": "5",
+    "floor": "50"
+   }
+  },
+  {
+   "bank": "OTP Bank",
+   "card": "Visa Gold",
+   "fees": [
+    {
+     "fee": "55",
+     "per": "month"
+    }
+   ],
+   "cash": {
+    "fee": {
+     "percent": "5.5",
+     "fixed": "7"
+    }
+   },
+   "grace": 45,
+   "late": {
+    "fixed": "150"
+   },
+   "rate": {
+    "percent": "3.3",
+    "per": "month"
+   },
+   "minimum": {
+    "percent": "5",
+    "floor": "50"
+   }
+  },
+  {
+   "bank": "A-Bank",
+   "card": "Зелена",
+   "rate": {
+    "percent": "3.4",
+    "per": "month"
+   },
+   "fees": [],
+   "cash": {
+    "fee": {
+     "percent": "4"
+    }
+   },
+   "minimum": {
+    "percent": "4",
+    "floor": "100"
+   },
+   "grace": 62,
+   "late": {
+    "fixed": "50"
+   }
   }
  ],
- "note": "The main banks were taken as Ukraine's three largest retail card issuers, a choice from general knowledge (no ranking was read in this pass): PrivatBank, Oschadbank and monobank (Universal Bank). monobank: its tariffs (from 23 October 2026, served as a signed PDF; the copy saved 2026-10-29 is byte-identical to the one served on 2026-10-30), read 2026-10-30. The Black card is issued and serviced free; credit carried past the grace period bears a base rate of 3.1% a month, and 6.2% a month on the whole debt while any of it is overdue, written as the penalty rate. The platinum card costs 500 hryvnias to issue and 300 a month for the physical main card with a virtual additional one (400 with a physical additional, not written), none in the month after one with 40,000 hryvnias of shop and online spending (a lag of a month not modelled); it bears 2.9% a month, and 5.8% while overdue. Both have a grace period of up to 62 days, and a monthly minimum of 4% of the debt, at least 100 hryvnias, and never less than the period's interest. Cash drawn beyond the holder's own funds costs 4% on the Black card and 3.5% on the platinum. The 4% and 3.5% on payments and transfers made with credit funds aren't written. The White card and the currency and Diia cards are debit cards and aren't written. PrivatBank's card pages answered with a captcha and Oschadbank's with an Incapsula check, so neither is written.",
+ "note": "The main banks were taken as Ukraine's three largest retail card issuers, a choice from general knowledge (no ranking was read in this pass): PrivatBank, Oschadbank and monobank (Universal Bank). monobank: its tariffs (from 23 October 2026, served as a signed PDF; the copy saved 2026-10-29 is byte-identical to the one served on 2026-10-30), read 2026-10-30. The Black card is issued and serviced free; credit carried past the grace period bears a base rate of 3.1% a month, and 6.2% a month on the whole debt while any of it is overdue, written as the penalty rate. The platinum card costs 500 hryvnias to issue and 300 a month for the physical main card with a virtual additional one (400 with a physical additional, not written), none in the month after one with 40,000 hryvnias of shop and online spending (a lag of a month not modelled); it bears 2.9% a month, and 5.8% while overdue. Both have a grace period of up to 62 days, and a monthly minimum of 4% of the debt, at least 100 hryvnias, and never less than the period's interest. Cash drawn beyond the holder's own funds costs 4% on the Black card and 3.5% on the platinum. The 4% and 3.5% on payments and transfers made with credit funds aren't written. The White card and the currency and Diia cards are debit cards and aren't written. PrivatBank's card pages answered with a captcha and Oschadbank's with an Incapsula check, so neither is written. Wave 4 (30 October 2026): OTP Bank (Ukraine) was added as the next large card issuer that publishes its tariffs at a plain address; Raiffeisen Bank and PUMB answered with a Cloudflare check, Sense Bank and Ukrgasbank with an Incapsula check, Credit Agricole with a captcha and Ukrsibbank didn't answer, so none of them is written. OTP Bank's tariffs for the Ladna (Digital Card) credit card and for its Visa and MasterCard cards (both approved 13 April 2026, in force from 18 May 2026), read 30 October 2026 with the Ladna's page: each bears 0.01% a year within the grace period and 3.3% a month after it, written as the rate; the minimum monthly payment is 5% of the debt, at least 50 hryvnias; a minimum not paid on time costs a one-off fine, 200 hryvnias on the Ladna and 150 on the others (none on an overdue sum of 50 hryvnias or less, not modelled). The Ladna costs nothing to open or hold, has a grace period of 59 to 62 days (written as 62) and charges 3% on cash drawn from credit funds. The Visa Classic and MasterCard Standard carry a credit line fee of 19.90 hryvnias a month and the Visa Gold and MasterCard Gold 55, charged in a month the credit line is used (a condition the game doesn't check, so charged in full; with a credit line the card account's own fee isn't charged); their grace period is 42 to 45 days on shop and internet purchases (written as 45), and cash from credit funds costs 5.5% plus 7 hryvnias at home (5.5% plus 32 abroad, not written). The 33% a year on overdue credit is below the card's own rate and isn't written as a penalty; transfer fees on credit funds, the SMS and statement fees and the cards in foreign currencies aren't written. OTP's other credit cards (Мані на кармані, Global Auto Card, Tickets) weren't read. A-Bank (Akcent-Bank), the next issuer reached, was added for its Зелена (Green) credit card: its tariffs and the card's page, read 30 October 2026: free to issue and hold; a base rate of 3.4% a month on the debt after the grace period (since 1 October 2020); a grace period of up to 62 days, the debt paid in full by the last day of the following month; a monthly payment of 4% of the debt at the end of the previous month, at least 100 hryvnias (and never less than the interest charged plus any fine, not modelled); cash drawn from credit funds costs 4% above 1,000 hryvnias (fixed sums of 7 to 47 hryvnias below, not modelled); a payment missed in whole or in part, on 100 hryvnias or more, costs 50 hryvnias (100 from the second month running and 500 plus 5% of the debt after 60 days, not modelled). The doubled rate on overdue debt (6.8%) is printed without its period and isn't written.",
  "sources": [
   {
    "url": "https://monobank.ua/taryfy",
    "title": "monobank (Universal Bank), Тарифи (from 23 October 2026)",
    "read": "2026-10-30",
    "said": "від 23.10.2026 ... Чорна картка monobank ... Пільговий період за карткою До 62 днів ... 4% від суми Заборгованості на кінець попер ... розрахункового періоду - не менше 100 грн., але не ... Базова відсоткова ставка 3,1% на місяць ... Збільшена відсоткова ставка на місяць за карткою на 6,2% на місяць ... власних коштів, а також за операції з quasi-валютою 4% від суми ... Картка monobank platinum ... Оформлення картки 500 грн ... - 300 грн/місяць - фізичної основної та віртуальної ... торговельних мережах та Інтернеті на суму 40 000 ... Базова відсоткова ставка 2,9% на місяць ... Збільшена відсоткова ставка на місяць за карткою на 5,8% на місяць ... готівки будь-яких українських і закордонних банків, 3,5% від суми зняття"
+  },
+  {
+   "url": "https://www.otpbank.com.ua/pdf/privateclients/tariff/18052026/digital-card.pdf",
+   "title": "OTP Bank (Ukraine), Тарифи на операції з платіжними кредитними картками «Digital Card» (Ладна картка), from 18 May 2026",
+   "read": "2026-10-30",
+   "said": "Починають діяти з 18.05.2026 р. ... Плата за обслуговування основної картки Плата не встановлюється ... 4. Видача готівки1, кредитні кошти клієнта 3% ... - діє протягом Пільгового періоду до 62 днів2, річних 0.01 % ... - діє після закінчення Пільгового періоду, щомісячна 3,3% ... 5% мін 50 грн. ... Штраф за прострочення внесення суми мінімального платежу, одноразово за кожний факт 200 грн. ... Тривалість Пільгового періоду може коливатися від 59 до 62 днів"
+  },
+  {
+   "url": "https://www.otpbank.com.ua/privateclients/pay-cards/credit-cards/ladna/",
+   "title": "OTP Bank (Ukraine), Ладна — кредитна картка",
+   "read": "2026-10-30",
+   "said": "Тарифи та умови Відкриття та обслуговування – 0 грн Річних для пільгового періоду до 62 днів – 0,01% річних Зняття власних коштів в будь-який банкоматах України – 1%, кредитні – 3% Відсоткова ставка на місяць – 3,3%"
+  },
+  {
+   "url": "https://www.otpbank.com.ua/pdf/privateclients/tariff/18052026/standard-cards.pdf",
+   "title": "OTP Bank (Ukraine), Тарифи на операції з платіжними картками Visa International та MasterCard для фізичних осіб, from 18 May 2026",
+   "read": "2026-10-30",
+   "said": "Починають діяти з 18.05.2026 р. ... - у банкоматах та пунктах видачі готівки на території Україні 5.5% + 7 грн. ... - діє після закінчення Пільгового періоду, в місяць: 3,3 % ... Плата за обслуговування кредитної лінії6 55 грн. 19.9 грн. 28. Мінімальний платіж7 5% мін 50 грн*** ... Штраф за прострочення внесення суми мінімального платежу, одноразово за 150 грн. ... У випадку відкриття кредитної лінії до карткового рахунку щомісячна плата за обслуговування карткового рахунку не встановлюється. ... Тривалість Пільгового періоду може коливатися від 42 до 45 днів ... 6. Стягується щомісячно шляхом списання з карткового рахунку у разі користування кредитною лінією в розрахунковому періоді."
+  },
+  {
+   "url": "https://conditions-and-rules.a-bank.com.ua/media/uploads/Tarif/Zelena_ua.pdf",
+   "title": "A-Bank, Тарифи по картці «Зелена»",
+   "read": "2026-10-30",
+   "said": "Тарифи по картці «Зелена» ... Обслуговування платіжної картки Безкоштовно ... До 62 днів (діє за умови погашення заборгованості в ... З 01.10.2020 - 3,4% за місяць, ... 4% від заборгованості на кінець минулого місяця (не менше 100 грн, не менше суми нарахованих процентів плюс штраф ... більше ніж 1000 грн - 4% від суми зняття ... Подвійна процентна ставка, що діє в тарифі: Розмір прострочених зобов'язань по кредиту з 01.10.2020 - 6,8%"
+  },
+  {
+   "url": "https://a-bank.com.ua/cards/green",
+   "title": "A-Bank, Картка «Зелена»",
+   "read": "2026-10-30",
+   "said": "Базова процентна ставка 3.4% на місяць ... 50 грн кожен раз, коли виникає прострочення по уплаті обов'язкового щомісячного платежу повністю або частково на суму від 100 грн"
   }
  ]
 }

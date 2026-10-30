@@ -25,9 +25,37 @@
     "floor": "20",
     "interest": true
    }
+  },
+  {
+   "bank": "Addiko Bank",
+   "card": "Addiko Mastercard kreditna kartica",
+   "rate": {
+    "percent": "16.8",
+    "per": "year"
+   },
+   "fees": [
+    {
+     "fee": "2.50",
+     "per": "month"
+    }
+   ],
+   "minimum": {
+    "percent": "5",
+    "floor": "10"
+   }
+  },
+  {
+   "bank": "Crnogorska komercijalna banka (CKB)",
+   "card": "Visa Gold",
+   "rate": {
+    "percent": "13.99",
+    "per": "year"
+   },
+   "fees": [],
+   "fx": "1.50"
   }
  ],
- "note": "Erste Bank Montenegro's general information on its Mastercard revolving credit card (dated 10 June 2026), read in full, with the card's page. The nominal rate is fixed, from 7.00% a year; the bank sets each holder's rate by creditworthiness and gives no top, so the rate of its representative example, 8.99% a year (a 2,000 euro limit, an effective 12.87%), is written. It costs 2.50 euros a month to hold (an additional card 1.50, not written); the minimum monthly payment is 3% of the amount used, at least 20 euros, plus interest and fees (the fees aren't modelled in the minimum); a cash withdrawal at Erste Bank's own machines in Montenegro costs 3%, at least 3 euros (4 euros at other machines, not modelled). The limit is 1,500 to 5,000 euros set by creditworthiness, not a multiple of income. Neither source states a late fee, penalty rate, grace period or foreign transaction fee; on late payment the bank may call the whole debt with default interest, which isn't one of the form's terms.",
+ "note": "Erste Bank Montenegro's general information on its Mastercard revolving credit card (dated 10 June 2026), read in full, with the card's page. The nominal rate is fixed, from 7.00% a year; the bank sets each holder's rate by creditworthiness and gives no top, so the rate of its representative example, 8.99% a year (a 2,000 euro limit, an effective 12.87%), is written. It costs 2.50 euros a month to hold (an additional card 1.50, not written); the minimum monthly payment is 3% of the amount used, at least 20 euros, plus interest and fees (the fees aren't modelled in the minimum); a cash withdrawal at Erste Bank's own machines in Montenegro costs 3%, at least 3 euros (4 euros at other machines, not modelled). The limit is 1,500 to 5,000 euros set by creditworthiness, not a multiple of income. Neither source states a late fee, penalty rate, grace period or foreign transaction fee; on late payment the bank may call the whole debt with default interest, which isn't one of the form's terms. Wave 4 (30 October 2026): Addiko Bank and Crnogorska komercijalna banka (CKB, of the OTP group, the largest bank) were added because their terms are published at a plain address (CKB's server omits its certificate's intermediate, completed from DigiCert's own AIA copy); NLB Banka's fee overview gives its Visa Revolving card's fees but its card pages and documents read give no rate, and Prva banka answered 403, so neither is written. Addiko Bank's Mastercard credit card page, read 30 October 2026: a representative example at 16.8% a year, a monthly account maintenance fee of 2.50 euros, and a minimum monthly repayment of 5% of the debt, at least 10 euros; no interest when the debt is repaid in full. Its instalment split and cash terms aren't written. CKB's tariff for individuals (in force from 19 October 2026), read 30 October 2026, for its Visa Gold credit card: free to issue and with no monthly fee for the main card; a nominal rate of 13.99%, which the tariff defines as a yearly rate; conversion of a foreign currency transaction into euros costs 1.50%; withdrawals at CKB's machines are free (other banks' 3.5%, at least 4 euros, not written); the minimum monthly payment is a fixed 25 euros, which the game's form (a share of the balance) can't hold, so it isn't written; no over-limit fee. Its Visa Shopping card, which carries no interest but a fee for each instalment purchase, isn't written.",
  "sources": [
   {
    "url": "https://cdn.erstegroup.com/content/dam/me/ebmn/www_erstebank_me/documents/stanovnistvo/2026/06/opste-informacije-o-mastercard-revolving-kreditnoj-kartici-06-2026.pdf",
@@ -40,6 +68,18 @@
    "title": "Erste Bank Montenegro, Mastercard revolving kreditna kartica",
    "read": "2026-10-30",
    "said": "Fiksna nominalna kamatna stopa od 7,00% ... Mjesečna članarina: 2,5 €"
+  },
+  {
+   "url": "https://www.addiko.me/gradjani/kartice/addiko-mastercard-3-u-1/",
+   "title": "Addiko Bank Crna Gora, Addiko Mastercard kreditna kartica",
+   "read": "2026-10-30",
+   "said": "plaćajte odloženo minimalno 5% duga mjesečno (min 10€), ili veći iznos, ako želite na neplaćeni dio duga plaća se kamata ... Godišnja kreditna kamata 16,8% Naknada za mjesečno održavanje računa 2,50 EUR"
+  },
+  {
+   "url": "https://www.ckb.me/upload/Lista-uslova-za-fizicka-lica.pdf",
+   "title": "Crnogorska komercijalna banka, Tarifnik za fizička lica (važi od 19. oktobra 2026)",
+   "read": "2026-10-30",
+   "said": "VAŽI OD 19. OKTOBRA 2026. ... 9.2. Mjesečna naknada za osnovnu karticu VISA CLASSIC VISA PLATINUM VISA JUNIOR VISA GOLD VISA SHOPPING BESPLATNO 2,50 eura BESPLATNO 0 eura 0 eura ... 10.7. Konverzija transakcija iz strane valute u EUR 1,50% od iznosa 10.8. Kamatna stopa na Visa Gold kreditnu karticu NKS 13,99% ... Nominalna kamatna stopa (NKS) je stopa koja se na godišnjem nivou primjenjuje na iznos povučenih kreditnih sredstava."
   }
  ]
 }

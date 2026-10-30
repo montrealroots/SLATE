@@ -238,9 +238,162 @@
     }
    ],
    "fx": "2"
+  },
+  {
+   "bank": "mBank",
+   "card": "Visa Classic",
+   "rate": {
+    "percent": "14.50",
+    "per": "year"
+   },
+   "fees": [
+    {
+     "fee": "100",
+     "per": "year",
+     "waived": [
+      {
+       "spend": "12000"
+      }
+     ]
+    }
+   ],
+   "issue": "30",
+   "grace": 54,
+   "fx": "5.9"
+  },
+  {
+   "bank": "mBank",
+   "card": "Mastercard Standard",
+   "rate": {
+    "percent": "14.50",
+    "per": "year"
+   },
+   "fees": [
+    {
+     "fee": "100",
+     "per": "year",
+     "waived": [
+      {
+       "spend": "12000"
+      }
+     ]
+    }
+   ],
+   "issue": "30",
+   "grace": 54,
+   "fx": "5.9"
+  },
+  {
+   "bank": "mBank",
+   "card": "Mastercard Me",
+   "rate": {
+    "percent": "14.50",
+    "per": "year"
+   },
+   "fees": [
+    {
+     "fee": "100",
+     "per": "year",
+     "waived": [
+      {
+       "spend": "10000"
+      }
+     ]
+    }
+   ],
+   "issue": "10",
+   "grace": 54,
+   "fx": "5.9"
+  },
+  {
+   "bank": "mBank",
+   "card": "World Mastercard",
+   "rate": {
+    "percent": "14.50",
+    "per": "year"
+   },
+   "fees": [
+    {
+     "fee": "350",
+     "per": "year",
+     "waived": [
+      {
+       "spend": "18000"
+      }
+     ]
+    }
+   ],
+   "issue": "30",
+   "grace": 54
+  },
+  {
+   "bank": "mBank",
+   "card": "Visa Premium",
+   "rate": {
+    "percent": "14.50",
+    "per": "year"
+   },
+   "fees": [
+    {
+     "fee": "300",
+     "per": "year",
+     "waived": [
+      {
+       "spend": "24000"
+      }
+     ]
+    }
+   ],
+   "issue": "30",
+   "grace": 54,
+   "fx": "5.9"
+  },
+  {
+   "bank": "mBank",
+   "card": "World Mastercard Intensive",
+   "rate": {
+    "percent": "14.50",
+    "per": "year"
+   },
+   "fees": [
+    {
+     "fee": "400",
+     "per": "year",
+     "waived": [
+      {
+       "spend": "30000"
+      }
+     ]
+    }
+   ],
+   "issue": "50",
+   "grace": 54,
+   "fx": "0"
+  },
+  {
+   "bank": "mBank",
+   "card": "World Elite Mastercard",
+   "rate": {
+    "percent": "12.25",
+    "per": "year"
+   },
+   "fees": [
+    {
+     "fee": "1200",
+     "per": "year",
+     "waived": [
+      {
+       "spend": "90000"
+      }
+     ]
+    }
+   ],
+   "issue": "1200",
+   "grace": 54,
+   "fx": "5.9"
   }
  ],
- "note": "The main banks were taken as the three largest Polish banks by total assets, a choice from general knowledge (no central bank or association ranking was read in this pass): PKO Bank Polski, Bank Pekao and Erste Bank Polska (Santander Bank Polska until 2026). PKO Bank Polski: its tariff for individuals, part IV, credit cards on offer (in force from 3 December 2024, the version its card page links today), its rate table (in force from 7 September 2026), its notice of the rate cut from 5 March 2026, and its Przejrzysta card page, read 2026-10-30. All four cards bear a variable 14.50% a year, the NBP reference rate plus 12 points, held at the legal maximum since 5 March 2026; the overdue rate for contracts from 9 January 2016, 18.50%, is written as the penalty rate. The Przejrzysta card is sold as a Visa and as a Mastercard on the same terms, written as two cards. Each card's yearly fee is charged in full below the spending that waives it entirely (7,200, 60,000 and 132,000 zlotys a year); the half fee on lesser spending (40, 150 and 500 zlotys on 6,000, 30,000 and 98,400) isn't written, so the fee is charged in full there. The cash withdrawal fee is 4% (at least 15 zlotys) on the Przejrzysta card, and 3% in Poland on the Platinum and Infinite cards (0% abroad, not written). The currency conversion fee is 4% on the Przejrzysta card and none on the other two. The over-limit fee of 35 zlotys on the Przejrzysta card applies when the limit is exceeded by more than 5%; that threshold isn't modelled, so the fee is charged on any excess. The minimum payment, 4% of the debt and at least 50 zlotys, is the bank's statement for all its credit cards on the card page; the interest-free period of up to 55 days is stated for the Przejrzysta card only. The insurance, express delivery, casino, transfer and certificate charges aren't written. Erste Bank Polska: its tariff for individuals (in force from 25 April 2026), credit cards, table 1, and its card pages, read 2026-10-30. Its four cards on open sale bear a variable 14.50% a year, the legal maximum, as each card page states (at 5 March 2026). The Visa Bonus costs 9 zlotys a month, none after a statement cycle with 300 zlotys of card spending; the Visa Silver 'Akcja Pajacyk', World MasterCard and Visa Platinum cost 7.50, 17.50 and 42 zlotys a month, none after a cycle with ten card transactions, a count the game doesn't check, so their fees are charged in full. Cash withdrawals cost 4%, at least 10 zlotys; foreign-currency spending 2.8% on the Visa Bonus and Visa Silver, none on the World MasterCard and 2% on the Visa Platinum. The minimum payment of 3% of the debt, at least 50 zlotys, is stated on the Visa Bonus page only, and the up to 54 days without interest on the Visa Bonus, Visa Silver and World MasterCard pages; neither is written where its page doesn't state it. The Mastercard World Elite (1,500 zlotys a year, none on 90,000 of spending) is issued only on the bank's invitation and isn't written. The tariff states no late fee or penalty rate for these cards. Bank Pekao's credit card pages and tariff weren't reached: its site's card section didn't come up to a plain fetch, and a search found no current tariff, so its cards aren't written.",
+ "note": "The main banks were taken as the three largest Polish banks by total assets, a choice from general knowledge (no central bank or association ranking was read in this pass): PKO Bank Polski, Bank Pekao and Erste Bank Polska (Santander Bank Polska until 2026). PKO Bank Polski: its tariff for individuals, part IV, credit cards on offer (in force from 3 December 2024, the version its card page links today), its rate table (in force from 7 September 2026), its notice of the rate cut from 5 March 2026, and its Przejrzysta card page, read 2026-10-30. All four cards bear a variable 14.50% a year, the NBP reference rate plus 12 points, held at the legal maximum since 5 March 2026; the overdue rate for contracts from 9 January 2016, 18.50%, is written as the penalty rate. The Przejrzysta card is sold as a Visa and as a Mastercard on the same terms, written as two cards. Each card's yearly fee is charged in full below the spending that waives it entirely (7,200, 60,000 and 132,000 zlotys a year); the half fee on lesser spending (40, 150 and 500 zlotys on 6,000, 30,000 and 98,400) isn't written, so the fee is charged in full there. The cash withdrawal fee is 4% (at least 15 zlotys) on the Przejrzysta card, and 3% in Poland on the Platinum and Infinite cards (0% abroad, not written). The currency conversion fee is 4% on the Przejrzysta card and none on the other two. The over-limit fee of 35 zlotys on the Przejrzysta card applies when the limit is exceeded by more than 5%; that threshold isn't modelled, so the fee is charged on any excess. The minimum payment, 4% of the debt and at least 50 zlotys, is the bank's statement for all its credit cards on the card page; the interest-free period of up to 55 days is stated for the Przejrzysta card only. The insurance, express delivery, casino, transfer and certificate charges aren't written. Erste Bank Polska: its tariff for individuals (in force from 25 April 2026), credit cards, table 1, and its card pages, read 2026-10-30. Its four cards on open sale bear a variable 14.50% a year, the legal maximum, as each card page states (at 5 March 2026). The Visa Bonus costs 9 zlotys a month, none after a statement cycle with 300 zlotys of card spending; the Visa Silver 'Akcja Pajacyk', World MasterCard and Visa Platinum cost 7.50, 17.50 and 42 zlotys a month, none after a cycle with ten card transactions, a count the game doesn't check, so their fees are charged in full. Cash withdrawals cost 4%, at least 10 zlotys; foreign-currency spending 2.8% on the Visa Bonus and Visa Silver, none on the World MasterCard and 2% on the Visa Platinum. The minimum payment of 3% of the debt, at least 50 zlotys, is stated on the Visa Bonus page only, and the up to 54 days without interest on the Visa Bonus, Visa Silver and World MasterCard pages; neither is written where its page doesn't state it. The Mastercard World Elite (1,500 zlotys a year, none on 90,000 of spending) is issued only on the bank's invitation and isn't written. The tariff states no late fee or penalty rate for these cards. Bank Pekao's credit card pages and tariff weren't reached: its site's card section didn't come up to a plain fetch, and a search found no current tariff, so its cards aren't written. mBank, among Poland's five largest banks, was added in wave 4 as the third bank, Bank Pekao's card pages not being found at their addresses (404) and ING Bank Śląski's answering with an Incapsula check: its credit card pages, each with the card's table of charges, read 2026-10-30. The Visa Classic and Mastercard Standard (one table), Mastercard Me, World Mastercard, Visa Premium and World Mastercard Intensive bear a variable 14.50% a year and the World Elite Mastercard 12.25%; each costs once to issue (30 zlotys; 10 on the Me, 50 on the Intensive, 1,200 on the World Elite) and a yearly fee after each year of use (100, 100, 350, 300, 400 and 1,200 zlotys), not charged on a year's card spending of at least 12,000, 10,000, 18,000, 24,000, 30,000 and 90,000 zlotys, the waiver for contracts whose rate doesn't follow the NBP Lombard rate (the higher fee for older contracts, the Me's half fee on 8,000 and the World Elite's 600 tier aren't written). Up to 54 days without interest (grace 54). A 5.9% currency conversion commission on each card's page but the World Mastercard's (none stated) and the Intensive's, which is exempt (fx 0). The 5% (at least 10 zlotys) on withdrawals at foreign cash machines is a fee abroad only and isn't written, nor the 7% on transfers from the card account; the automatic repayment of 5% or 100% is a setting, not a stated minimum, and isn't written.",
  "sources": [
   {
    "url": "https://www.pkobp.pl/api/public/9f1a14a3-1d4a-4ba2-b1ec-cf787df3cb9e.pdf",
@@ -295,6 +448,42 @@
    "title": "Erste Bank Polska, Karta kredytowa Visa Platinum",
    "read": "2026-10-30",
    "said": "Karta kredytowa Visa Platinum 14,50% 20,75% Wysokość oprocentowania na dzień 5.03.2026 r."
+  },
+  {
+   "url": "https://www.mbank.pl/indywidualny/karty/karty-kredytowe/karta-kredytowa-klasyczna/",
+   "title": "mBank, Karta kredytowa Visa Classic / Mastercard Standard",
+   "read": "2026-10-30",
+   "said": "za co zapłacisz Visa Classic Mastercard Standard 1. oprocentowanie nominalne w skali roku kredytu w rachunku karty 14,50% 14,50% 2. opłata za wydanie karty głównej i nowej w miejsce zastrzeżonej 30 zł 3. opłata roczna pobierana po zakończeniu każdego roku użytkowania karty głównej 100 zł ... za ostatnie 12 miesięcy wyniesie minimum: 12 000 zł ... prowizję za przewalutowanie transakcji w wysokości 5,9% od wartości transakcji ... nawet do 54 dni bez odsetek"
+  },
+  {
+   "url": "https://www.mbank.pl/indywidualny/karty/karty-kredytowe/karta-kredytowa-mastercard-me/",
+   "title": "mBank, Mastercard Me",
+   "read": "2026-10-30",
+   "said": "za co zapłacisz Mastercard Me 1. oprocentowanie nominalne w skali roku kredytu w rachunku karty 14,50% 2. opłata za wydanie karty głównej i nowej w miejsce zastrzeżonej 10 zł ... opłata roczna pobierana po zakończeniu każdego roku użytkowania karty głównej 100 zł ... Rozwiń 10 000 zł ... prowizję za przewalutowanie transakcji w wysokości 5,9% od wartości transakcji"
+  },
+  {
+   "url": "https://www.mbank.pl/indywidualny/karty/karty-kredytowe/karta-kredytowa-world-mastercard/",
+   "title": "mBank, World Mastercard",
+   "read": "2026-10-30",
+   "said": "za co zapłacisz World Mastercard 1. oprocentowanie nominalne w skali roku kredytu w rachunku karty 14,50% 2. opłata za wydanie karty głównej i nowej w miejsce zastrzeżonej 30 zł 3. opłata roczna pobierana po zakończeniu każdego roku użytkowania karty głównej 350 zł ... za ostatnie 12 miesięcy wyniesie minimum: 18 000 zł"
+  },
+  {
+   "url": "https://www.mbank.pl/indywidualny/karty/karty-kredytowe/visa-premium/",
+   "title": "mBank, Visa Premium",
+   "read": "2026-10-30",
+   "said": "Za co zapłacisz Visa Premium 1. Oprocentowanie nominalne w skali roku kredytu w rachunku karty 14,50% 2. Opłata za wydanie karty głównej i nowej w miejsce zastrzeżonej 30 zł 3. Opłata roczna pobierana po zakończeniu każdego roku użytkowania karty głównej 300 zł ... Rozwiń 24 000 zł ... prowizję za przewalutowanie transakcji w wysokości 5,9% od wartości transakcji"
+  },
+  {
+   "url": "https://www.mbank.pl/indywidualny/karty/karty-kredytowe/world-mastercad-intensive/",
+   "title": "mBank, World Mastercard Intensive",
+   "read": "2026-10-30",
+   "said": "za co zapłacisz World Mastercard Intensive 1. oprocentowanie nominalne w skali roku kredytu w rachunku karty 14,50% 2. opłata za wydanie karty głównej i nowej w miejsce zastrzeżonej 50 zł 3. opłata roczna pobierana po zakończeniu każdego roku użytkowania karty głównej 400 zł ... za ostatnie 12 miesięcy wyniesie minimum 30 000 zł ... Karta World Mastercard Intensive jest zwolniona z prowizji za przewalutowanie transakcji zagranicznych"
+  },
+  {
+   "url": "https://www.mbank.pl/indywidualny/karty/karty-kredytowe/world-elite-mastercard/",
+   "title": "mBank, World Elite Mastercard",
+   "read": "2026-10-30",
+   "said": "za co zapłacisz World Elite Mastercard 1. oprocentowanie nominalne w skali roku kredytu w rachunku karty 12,25% 2. opłata za wydanie karty głównej i nowej w miejsce zastrzeżonej 1 200 zł ... opłata roczna pobierana po zakończeniu każdego roku użytkowania karty głównej 1 200 zł ... masz tylko kartę główną i w ciągu ostatnich 12 miesięcy wykonasz transakcje bezgotówkowe za min. 90 000 zł ... prowizję za przewalutowanie transakcji w wysokości 5,9% od wartości transakcji"
   }
  ]
 }

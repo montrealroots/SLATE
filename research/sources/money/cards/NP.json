@@ -35,15 +35,91 @@
    "overLimit": {
     "fixed": "500"
    }
+  },
+  {
+   "bank": "NMB Bank",
+   "card": "NMB BANK VISA Credit Card",
+   "fees": [
+    {
+     "fee": "1000",
+     "per": "year"
+    }
+   ],
+   "issue": "1000",
+   "rate": {
+    "percent": "2.50",
+    "per": "month"
+   },
+   "cash": {
+    "rate": {
+     "percent": "2.50",
+     "per": "month"
+    },
+    "fee": {
+     "percent": "2",
+     "min": "100"
+    }
+   },
+   "late": {
+    "percent": "2.5",
+    "of": "minimum",
+    "min": "500"
+   },
+   "overLimit": {
+    "fixed": "500"
+   }
+  },
+  {
+   "bank": "NMB Bank",
+   "card": "NMB BANK VISA Credit Card (Platinum)",
+   "fees": [
+    {
+     "fee": "2000",
+     "per": "year",
+     "waived": [
+      {
+       "first": 1
+      }
+     ]
+    }
+   ],
+   "rate": {
+    "percent": "2.50",
+    "per": "month"
+   },
+   "cash": {
+    "rate": {
+     "percent": "2.50",
+     "per": "month"
+    },
+    "fee": {
+     "percent": "2",
+     "min": "100"
+    }
+   },
+   "late": {
+    "percent": "2.5",
+    "of": "minimum",
+    "min": "500"
+   },
+   "overLimit": {
+    "fixed": "500"
+   }
   }
  ],
- "note": "Nepal's largest banks include Nabil, Global IME, NIC Asia and the state-owned Nepal Bank. Nabil's card page sits behind Cloudflare (not passed), NIC Asia's card URL answers 404 and Global IME's site didn't answer (2026-10-30), so Nepal Bank Limited, this file's bank since 2026-10-29, is written alone. Nepal Bank Limited's credit card page (read again 2026-10-30): its Visa domestic credit card (valid only in Nepal, India and Bhutan) charges 2% a month (24% a year) on purchases and on cash; a joining fee of 750 rupees (now written as the issue fee) and an annual fee of 750; a payment of 10% of the outstanding, at least 1,000 rupees, written as the minimum; 15 to 45 days free of interest on purchases, written as 45; a late payment 300 rupees each time; over the limit 500 rupees; a cash withdrawal 100 rupees at the bank's own ATMs (200 at other Visa ATMs and 250 in India, not written). The page states no foreign-transaction fee (the card works in India and Bhutan too) and none is written.",
+ "note": "Nepal's largest banks include Nabil, Global IME, NIC Asia and the state-owned Nepal Bank. Nabil's card page sits behind Cloudflare (not passed), NIC Asia's card URL answers 404 and Global IME's site didn't answer (2026-10-30), so Nepal Bank Limited, this file's bank since 2026-10-29, is written alone. Nepal Bank Limited's credit card page (read again 2026-10-30): its Visa domestic credit card (valid only in Nepal, India and Bhutan) charges 2% a month (24% a year) on purchases and on cash; a joining fee of 750 rupees (now written as the issue fee) and an annual fee of 750; a payment of 10% of the outstanding, at least 1,000 rupees, written as the minimum; 15 to 45 days free of interest on purchases, written as 45; a late payment 300 rupees each time; over the limit 500 rupees; a cash withdrawal 100 rupees at the bank's own ATMs (200 at other Visa ATMs and 250 in India, not written). The page states no foreign-transaction fee (the card works in India and Bhutan too) and none is written. Wave 4 (2026-10-30): NMB Bank, a large commercial bank whose standard tariff prices its credit cards, is added; NIC Asia's, Global IME's and Himalayan Bank's sites didn't answer this time, Sanima's home page links no tariff this research found, and Everest Bank's wasn't pursued (2026-10-30). NMB Bank's standard tariff of charges (effective 17 September 2026, read 2026-10-30): the VISA Credit Card's joining fee of 1,000 rupees (written as the issue fee) and its yearly fee of 1,000 (or 5,000 for the card's five years); the Platinum card's first year free, then 2,000 a year (or 8,000); interest 2.50% a month in the first billing cycle, 2.75% in the second and 3% from the third, written as 2.50% a month (the later steps aren't written); a cash withdrawal at NMB's ATMs 100 rupees or 2%, whichever is higher (200 or 2% at other banks', and 300 or 4% in India, not written); a late payment 2.5% of the minimum due or 500 rupees, whichever is higher, each month; over the limit 500. The tariff states no minimum payment, grace period or foreign-transaction fee for the credit cards; the corporate card isn't written.",
  "sources": [
   {
    "url": "https://nepalbank.com.np/services/credit-card",
    "title": "Nepal Bank Limited, NBL Visa Credit Card",
    "read": "2026-10-30",
    "said": "Valid Only in Nepal, India & Bhutan. ... Convenient payment option of 10% (or minimum NPR 1,000) to 100% of outstanding amount. Interest free credit period of minimum 15 days to maximum 45 days for purchase transactions. Competitive interest rate @ 2% per month. ... Joining/ Issuance Fee NPR 750 Annual Fee NPR 750 ... Late Payment Fee NPR 300 per instance Over Limit Fee NPR 500 ... NBL Card NBL ATM – Cash Withdrawal NPR 100 + 2% per month of txn amount ... Interest on Cash Withdrawal 2% per month ... Interest Rate 2% per month (24% per annum)"
+  },
+  {
+   "url": "https://www.nmb.com.np/download/standard-tariff-charges",
+   "title": "NMB Bank Limited, Standard Tariff of Charges (effective 17 September 2026), the PDF linked from this page (its download link is a signed URL that expires)",
+   "read": "2026-10-30",
+   "said": "Effective: 17th September, 2026 ... NPR 1,000 (free for first ... NPR 5,000 or annual ... installment of NPR 1,000 ... For 1st Year: Free NPR ... installment of NPR 2,000 ... At NMB ATM: NPR 100 ... or 2% whichever is ... 2.5% of minimum due or ... NPR 500, whichever is ... Over limit fee NPR 500 NPR 500 ... I billing cycle 2.50% per month 2.50% per month ... II billing cycle 2.75% per month ... III billing cycle & Above 3% per month"
   }
  ]
 }

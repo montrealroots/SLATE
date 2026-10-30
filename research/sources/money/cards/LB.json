@@ -105,15 +105,121 @@
    "overLimit": {
     "fixed": "10"
    }
+  },
+  {
+   "bank": "Banque Libano-Française",
+   "card": "Blue Charge Card (USD)",
+   "currency": "USD",
+   "rate": "in full",
+   "fees": [
+    {
+     "fee": "30",
+     "per": "year"
+    },
+    {
+     "fee": "1",
+     "per": "month"
+    }
+   ],
+   "cash": {
+    "fee": {
+     "percent": "0.5",
+     "min": "1"
+    }
+   },
+   "late": {
+    "fixed": "15"
+   },
+   "fx": "4"
+  },
+  {
+   "bank": "Banque Libano-Française",
+   "card": "Gold Charge Card (USD)",
+   "currency": "USD",
+   "rate": "in full",
+   "fees": [
+    {
+     "fee": "100",
+     "per": "year"
+    },
+    {
+     "fee": "1",
+     "per": "month"
+    }
+   ],
+   "cash": {
+    "fee": {
+     "percent": "0.5",
+     "min": "1"
+    }
+   },
+   "late": {
+    "fixed": "15"
+   },
+   "fx": "4"
+  },
+  {
+   "bank": "Banque Libano-Française",
+   "card": "Platinum Charge Card (USD)",
+   "currency": "USD",
+   "rate": "in full",
+   "fees": [
+    {
+     "fee": "150",
+     "per": "year"
+    },
+    {
+     "fee": "1",
+     "per": "month"
+    }
+   ],
+   "cash": {
+    "fee": {
+     "percent": "0.5",
+     "min": "1"
+    }
+   },
+   "late": {
+    "fixed": "15"
+   },
+   "fx": "4"
+  },
+  {
+   "bank": "Banque Libano-Française",
+   "card": "Infinite Charge Card (USD)",
+   "currency": "USD",
+   "rate": "in full",
+   "fees": [
+    {
+     "fee": "250",
+     "per": "year"
+    }
+   ],
+   "cash": {
+    "fee": {
+     "percent": "0.5",
+     "min": "1"
+    }
+   },
+   "late": {
+    "fixed": "15"
+   },
+   "fx": "4"
   }
  ],
- "note": "The main banks, chosen as the best-known large card issuers (no central bank ranking was read): Bank Audi, BLOM Bank and Byblos Bank. Bank Audi's card page answered 403 and BLOM Bank's a Cloudflare block on 2026-10-30, and neither was read. Byblos Bank's fees and commissions brochure (last updated 25 June 2026), its credit card fees, commissions and features, read in full on 2026-10-30 (first read 2026-10-29 for the Visa Fresh Platinum alone): its three personal credit cards are written. The Visa Platinum in Lebanese pounds costs 2,500,000 a year and 40,000 a month in maintenance, bears 2.25% a month on purchases, asks a minimum of 5% (its settlement options are 5%, 10% or 100%) and at least 500,000, and charges 100,000 for exceeding its limit; its late fee, stated in dollars, isn't written on it. The Visa Fresh Platinum in 'fresh' US dollars costs 100 dollars a year and 3 a month (the Group Offering, for holders through an employer's group, 50 and 2, a condition the game doesn't check), bears 1.75% a month on purchases and 2.083% on cash from an ATM, charges 1.5% (at least 3 dollars) for cash from an ATM in Lebanon (5%, at least 10, abroad, not written), asks a minimum of 5% and at least 35 dollars, and charges 10 dollars for exceeding the limit and 10 for a late payment. A transaction in another currency carries the foreign exchange mark-up of 4.5% and the cross-border fee of 3%, written together as 7.5% (the cross-border fee's floor of 0.75 dollars isn't modelled). The brochure states no grace period.",
+ "note": "The main banks, chosen as the best-known large card issuers (no central bank ranking was read): Bank Audi, BLOM Bank and Byblos Bank. Bank Audi's card page answered 403 and BLOM Bank's a Cloudflare block on 2026-10-30, and neither was read. Byblos Bank's fees and commissions brochure (last updated 25 June 2026), its credit card fees, commissions and features, read in full on 2026-10-30 (first read 2026-10-29 for the Visa Fresh Platinum alone): its three personal credit cards are written. The Visa Platinum in Lebanese pounds costs 2,500,000 a year and 40,000 a month in maintenance, bears 2.25% a month on purchases, asks a minimum of 5% (its settlement options are 5%, 10% or 100%) and at least 500,000, and charges 100,000 for exceeding its limit; its late fee, stated in dollars, isn't written on it. The Visa Fresh Platinum in 'fresh' US dollars costs 100 dollars a year and 3 a month (the Group Offering, for holders through an employer's group, 50 and 2, a condition the game doesn't check), bears 1.75% a month on purchases and 2.083% on cash from an ATM, charges 1.5% (at least 3 dollars) for cash from an ATM in Lebanon (5%, at least 10, abroad, not written), asks a minimum of 5% and at least 35 dollars, and charges 10 dollars for exceeding the limit and 10 for a late payment. A transaction in another currency carries the foreign exchange mark-up of 4.5% and the cross-border fee of 3%, written together as 7.5% (the cross-border fee's floor of 0.75 dollars isn't modelled). The brochure states no grace period. Wave 4 (2026-10-30): Banque Libano-Française was added, a large Lebanese card issuer whose fees and charges answer this research (Fransabank's list of fees and charges, version August 2026, prices only debit and prepaid cards; Société Générale de Banque au Liban, Bankmed and BBAC didn't answer; Crédit Libanais's home page showed no fees; BEMO answered 403; Bank Audi and BLOM Bank weren't retried). Its Fees & Charges (October 2026), credit cards revolving and charge, read in full: the Blue, Gold, Platinum and Infinite cards, each sold as a revolving card (5%, 10% or 20% repaid each cycle) or a charge card (repaid in full each cycle). Its interest rates on purchases (21% on dollar and euro cards, 24% on pound cards) and withdrawals (24% and 30%) state no period, so the revolving cards aren't written; the charge cards in dollars are, paid in full: yearly fees of 30, 100, 150 and 250 dollars, a mandatory SMS fee of 1 dollar a month (free on the Infinite), a cash withdrawal fee at BLF's ATMs of 0.5% with a minimum of 1 dollar (1.5%, at least 5, at other ATMs, not written), a late payment fee of 15 dollars, and a forex fee of 4% on a transaction in another currency (the 2% cross-border fee on a transaction abroad in the card's own currency isn't modelled). Its 'overdraft fee' of 20 dollars isn't written: the list doesn't say it is charged for exceeding the limit. The cards in pounds and euros, the Air France KLM cards and the debit cards aren't written. The '10 days grace period' after the 25th is a due date, not days free of interest, and isn't written.",
  "sources": [
   {
    "url": "https://byblos.byblosbank.com/files/Library/Assets/Gallery/PDF/NEW%20Fees%20&%20Commissions%20Brochure%2025-6-2026%20-ENG.%202026%20.pdf",
    "title": "Byblos Bank, Fees and Commissions (last updated 25 June 2026)",
    "read": "2026-10-30",
    "said": "Last updated on June 25, 2026 ... B. Credit Cards ... Visa Platinum 2,500,000 2,500,000 600,000 100,000 100,000 40,000 (LBP) Visa Fresh 100 100 50 10 10 3 Platinum (USD) Visa Fresh Platinum(USD) 50 50 50 0 10 2 Group Offering ... Foreign Exchange Markup 4.5% added to the daily currency rate Cross Border Fee 3% (min USD 0.75 per transaction) Late Payment Fee USD 10 ... Visa Up to 5%, 10%, or Platinum 500,000 N/A N/A 2.25% N/A 30% 100M 100% (LBP) Minimum Visa Fresh $500 5% , 10%, 1.5%; $3 5%; $10 Platinum 35 1,75% 2.083% 24%"
+  },
+  {
+   "url": "https://blfblob.blob.core.windows.net/files/Library/Assets/Gallery/pdfs/All-Tariffs/2026-10-08%20Fees%20and%20Charges%20English.pdf",
+   "title": "Banque Libano-Française, Fees & Charges (October 2026; file dated 2026-10-08), bank cards: credit cards (revolving and charge)",
+   "read": "2026-10-30",
+   "said": "FEES & CHARGES |October 2026 ... Credit cards (Revolving* and Charge**) ... Credit cards in USD, LBP and EUR ... Blue Gold Platinum Infinite ... USD 30 USD 100 USD 150 ... Annual fees USD 250 ... USD 1 or the c/v in LBP or EUR 1 Free ... (mandatory) ... BLF ATM 5‰, min USD 1 or EUR 1 ... Interest rate on purchases USD/EUR cards: 21% - LBP cards: 24% ... Late payment fee USD 15 or EUR 15 or the c/v in LBP ... **Total reimbursement of the spent amount at each end of the cycle (monthly cycle for settlement: the 25 th of the month + 10 days grace period). ... 4% on each withdrawal and/or purchase transaction (in points of sale and online), made in different currency."
   }
  ]
 }

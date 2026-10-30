@@ -33,15 +33,54 @@
     "percent": "30",
     "per": "year"
    }
+  },
+  {
+   "bank": "Intesa Sanpaolo Bank Albania",
+   "card": "Mastercard Standard",
+   "rate": {
+    "percent": "19",
+    "per": "year"
+   },
+   "fees": [
+    {
+     "fee": "1500",
+     "per": "year"
+    }
+   ],
+   "cash": {
+    "rate": {
+     "percent": "20",
+     "per": "year"
+    },
+    "fee": {
+     "percent": "2",
+     "min": "500"
+    }
+   },
+   "minimum": {
+    "percent": "5",
+    "interest": true
+   },
+   "grace": 45,
+   "penalty": {
+    "percent": "35",
+    "per": "year"
+   }
   }
  ],
- "note": "The main banks were taken as Albania's three largest by assets, a choice from general knowledge (no central bank or association ranking was read in this pass): BKT, Raiffeisen Bank and Credins Bank, with ABI Bank kept from the earlier reading. ABI Bank: its pre-contract information for its Visa Classic credit card (undated), read again 2026-10-30. It bears 18% a year on purchases and 24% on withdrawals, in lek or euros; the yearly card fee is 1,250 lek after a first year at 625, which is introductory and not written. The minimum payment is 7% of the amount used, at least 1,500 lek; a withdrawal at ABI's own ATMs costs 2.00%, at least 300 lek (2.25% and 2.50% at other banks, not written); a transaction in a foreign currency costs 1.00%. The unpaid part of a minimum not paid in full bears 30% a year, written as the penalty rate (with penalty and default interest together capped at 30% of the obligation, a cap not modelled). The 100-lek account maintenance in the example belongs to the linked current account and isn't written. BKT's credit card page shows its rates only in a section that didn't come up to a plain fetch, and Raiffeisen's answered with a captcha; Credins wasn't reached in this pass. None is written.",
+ "note": "The main banks were taken as Albania's three largest by assets, a choice from general knowledge (no central bank or association ranking was read in this pass): BKT, Raiffeisen Bank and Credins Bank, with ABI Bank kept from the earlier reading. ABI Bank: its pre-contract information for its Visa Classic credit card (undated), read again 2026-10-30. It bears 18% a year on purchases and 24% on withdrawals, in lek or euros; the yearly card fee is 1,250 lek after a first year at 625, which is introductory and not written. The minimum payment is 7% of the amount used, at least 1,500 lek; a withdrawal at ABI's own ATMs costs 2.00%, at least 300 lek (2.25% and 2.50% at other banks, not written); a transaction in a foreign currency costs 1.00%. The unpaid part of a minimum not paid in full bears 30% a year, written as the penalty rate (with penalty and default interest together capped at 30% of the obligation, a cap not modelled). The 100-lek account maintenance in the example belongs to the linked current account and isn't written. BKT's credit card page shows its rates only in a section that didn't come up to a plain fetch, and Raiffeisen's answered with a captcha; Credins wasn't reached in this pass. None is written. Wave 4 (30 October 2026): Intesa Sanpaolo Bank Albania was added as the next large bank whose card terms are published at a plain address; Credins Bank's site didn't answer (the proxy's tunnel failed), OTP Bank Albania, Tirana Bank and Union Bank answered 403, and Fibank's Visa Classic page gives its rates and yearly fee only as 'according to the tariffs', which weren't read; none is written. Intesa Sanpaolo Bank Albania's key fact statement for its Mastercard Standard credit card (updated 9 April 2025), read 30 October 2026: the card is in lek or euros (the lek terms are written); free to issue, then 1,500 lek a year from the second year (the free first year is introductory, not written); a yearly rate on purchases of 19% for a holder whose salary isn't paid to the bank (16% for one whose is, 8% against cash collateral, which the game doesn't track) and 20% on withdrawals; the interest-free period is 14 to 45 days (written as 45); the minimum repayment is 5% of purchases and withdrawals plus all the fees, interest and penalties due (the fees not modelled); a cash withdrawal at the bank's own ATMs costs 2%, at least 500 lek (2.5% at others', not written); a minimum paid late bears a penalty of 35% a year. The statement gives no foreign transaction fee.",
  "sources": [
   {
    "url": "https://www.abi.al/media/63529deccfd39.pdf",
    "title": "ABI Bank, pre-contract information: Karte krediti Visa Classic",
    "read": "2026-10-30",
    "said": "KARTE KREDITI - VISA CLASSIC ... Pagesa minimale = 7% Min 1.500 Leke/ 15 Eur ... 18% ne blerje / ... 24% ne terheqje ... Tërheqje ne ATM-të e rrjetit te ABI Bank 2.00% Min 300 Lek/ 2Eur ... Komision për transaksione në monedhë të huaj 1.00% ... për vitin pasardhës: 1.250 Leke / 10 Eur ... pa asnjë lajmërim tjetër është në vonesë dhe mbi te do te aplikohet komision ne vlerën 30% vjetore."
+  },
+  {
+   "url": "https://www.intesasanpaolobank.al/document/documents/ISPALBANIA/RETAIL/CARDS/CREDIT_CARD_ANG/KFS---MASTERCARD-STANDARD---CREDIT-CARD_LEK---EUR.pdf",
+   "title": "Intesa Sanpaolo Bank Albania, Key Fact Statements, Credit Card – Mastercard Standard (updated 9 April 2025)",
+   "read": "2026-10-30",
+   "said": "CREDIT CARD – MASTERCARD STANDARD ... Perditesuar me 09 Prill 2025 ... eshte 14-45 dite. ... POS 5% ... Komision antaresimi 100% ... Interes Standard 100% ... Pagese vjetore antaresie 1,500 LEK / 15 EUR ne vit duke filluar nga viti i dyte ... Komision per terheqje CASH ne ATM-te e Intesa Sanpaolo 2% min 500 LEK / 2% min 3 EUR ... Klientet Pagamarres 16% 16% Interesi vjetor per blerjet Klientet jo-Pagamarres 19% 17% ... Klientet Pagamarres 20% 18% Interesi vjetor per terheqjet Klientet jo-Pagamarres 20% 18% ... Penaliteti per pagesen me vonese te Minimumit te Shumes 35% se Ripagimit (vjetor)"
   }
  ]
 }

@@ -242,9 +242,114 @@
     "floor": "100"
    },
    "grace": 52
+  },
+  {
+   "bank": "AfrAsia Bank",
+   "card": "World Credit Card",
+   "rate": {
+    "percent": "15",
+    "per": "year"
+   },
+   "fees": [
+    {
+     "fee": "402.50",
+     "per": "month"
+    }
+   ],
+   "cash": {
+    "rate": {
+     "percent": "15",
+     "per": "year"
+    },
+    "fee": {
+     "percent": "2.5",
+     "min": "100"
+    }
+   },
+   "fx": "3",
+   "minimum": {
+    "percent": "5"
+   },
+   "grace": 48,
+   "late": {
+    "fixed": "200"
+   },
+   "overLimit": {
+    "fixed": "200"
+   }
+  },
+  {
+   "bank": "AfrAsia Bank",
+   "card": "Titanium Credit Card",
+   "rate": {
+    "percent": "20",
+    "per": "year"
+   },
+   "fees": [
+    {
+     "fee": "195.50",
+     "per": "month"
+    }
+   ],
+   "cash": {
+    "rate": {
+     "percent": "20",
+     "per": "year"
+    },
+    "fee": {
+     "percent": "2.5",
+     "min": "100"
+    }
+   },
+   "fx": "3",
+   "minimum": {
+    "percent": "5"
+   },
+   "grace": 48,
+   "late": {
+    "fixed": "200"
+   },
+   "overLimit": {
+    "fixed": "200"
+   }
+  },
+  {
+   "bank": "AfrAsia Bank",
+   "card": "Gold Credit Card",
+   "rate": {
+    "percent": "24",
+    "per": "year"
+   },
+   "fees": [
+    {
+     "fee": "805.00",
+     "per": "month"
+    }
+   ],
+   "cash": {
+    "rate": {
+     "percent": "24",
+     "per": "year"
+    },
+    "fee": {
+     "percent": "2.5",
+     "min": "100"
+    }
+   },
+   "fx": "3",
+   "minimum": {
+    "percent": "5"
+   },
+   "grace": 48,
+   "late": {
+    "fixed": "200"
+   },
+   "overLimit": {
+    "fixed": "200"
+   }
   }
  ],
- "note": "Mauritius's largest banks are MCB, SBM and Absa Bank (Mauritius); MCB's and Absa's price lists were read, and SBM's wasn't reached. MCB's statement of interest rates and service charges (last updated 7 October 2026), read for every personal credit card: the rate is the prime lending rate of 6.90% plus a margin, 9.50% on the American Express Green and Gold and the VISA Platinum and Signature (16.40% a year) and 13.50% on the MasterCard/VISA Classic and Gold and the MasterCard PRIMO (20.40%); primary cards cost 1,500, 3,000, 1,500, 2,500, 200, 950 and 150 rupees a year before VAT, whose rate the list doesn't state (so it isn't written); a cash advance costs a flat 100 rupees locally (2% abroad, not written); going over the limit costs 200 rupees on the first four and 150 on the rest; conversion is 2.50%. The card the file named before, 'MasterCard/ VISA Classic', is kept with its terms extended; the 'MasterCard/ VISA' cards are written as one card each, as the list prices them. Absa Bank (Mauritius)'s personal tariff guide (effective 1 June 2026): its Platinum, Gold and Classic credit cards cost 1,725, 1,092.50 and 230 rupees a year with VAT, no joining fee, 2.13% a month, 2.10% for a cash advance (at least 150 rupees), 3% forex, 400 rupees for a returned payment, a minimum payment of 5% (at least 2,000, 1,000 and 100 rupees) and up to 52 days interest free; its late and excess-limit fees, each '1% of amount due' (at least 250 and 200 rupees), don't make clear whether the amount due is the minimum or the balance, so they aren't written. Business, corporate and foreign-currency cards aren't written.",
+ "note": "Mauritius's largest banks are MCB, SBM and Absa Bank (Mauritius); MCB's and Absa's price lists were read, and SBM's wasn't reached. MCB's statement of interest rates and service charges (last updated 7 October 2026), read for every personal credit card: the rate is the prime lending rate of 6.90% plus a margin, 9.50% on the American Express Green and Gold and the VISA Platinum and Signature (16.40% a year) and 13.50% on the MasterCard/VISA Classic and Gold and the MasterCard PRIMO (20.40%); primary cards cost 1,500, 3,000, 1,500, 2,500, 200, 950 and 150 rupees a year before VAT, whose rate the list doesn't state (so it isn't written); a cash advance costs a flat 100 rupees locally (2% abroad, not written); going over the limit costs 200 rupees on the first four and 150 on the rest; conversion is 2.50%. The card the file named before, 'MasterCard/ VISA Classic', is kept with its terms extended; the 'MasterCard/ VISA' cards are written as one card each, as the list prices them. Absa Bank (Mauritius)'s personal tariff guide (effective 1 June 2026): its Platinum, Gold and Classic credit cards cost 1,725, 1,092.50 and 230 rupees a year with VAT, no joining fee, 2.13% a month, 2.10% for a cash advance (at least 150 rupees), 3% forex, 400 rupees for a returned payment, a minimum payment of 5% (at least 2,000, 1,000 and 100 rupees) and up to 52 days interest free; its late and excess-limit fees, each '1% of amount due' (at least 250 and 200 rupees), don't make clear whether the amount due is the minimum or the balance, so they aren't written. Business, corporate and foreign-currency cards aren't written. Wave 4 (30 October 2026), for a third bank: SBM's site answered 503 (an upstream connection timeout) on its cards pages and a search found no SBM Mauritius tariff, so AfrAsia Bank, a large Mauritian bank that publishes its Bank of Mauritius template, was added: its template (last updated 8 June 2026), read for its credit cards: the World, Titanium and Gold cards cost MUR 402.50, 195.50 and 805.00 a month for the primary card, VAT included (the Gold's 'payable upfront'; each is written as the monthly fee the template names), charge 15%, 20% and 24% a year on the balance and on cash advances, 2.5% for a cash advance in Mauritius (at least MUR 100; 2.5%, at least 250, abroad, not written), 3% on payments in another currency, MUR 200 late and MUR 200 over the limit, ask a minimum monthly repayment of 5%, and give up to 48 days interest free when the balance is repaid in full (written at 48). The quasi-cash commission, courier and replacement charges aren't written. BCP Bank's template gives its credit card rate as 'n/a'; MauBank's template (last updated 5 June 2026) also publishes its Visa cards' terms (1.80% a month, annual fees of 230, 920 and 1,380 rupees) but wasn't written, three banks being the aim. So Mauritius has three banks' cards.",
  "sources": [
   {
    "url": "https://www.mcb.mu/docs/mcb/rates-fees/bom/bom-template.pdf",
@@ -257,6 +362,12 @@
    "title": "Absa Bank (Mauritius), Personal Tariff Guide (effective 1 June 2026)",
    "read": "2026-10-30",
    "said": "Effective as from 1 June 2026 ... Fees and charges Absa Card Platinum Absa Card Gold Absa Card Classic ... Interest rate (monthly) 2.13% 2.13% 2.13% ... Annual fee Rs 1,725 (VAT inclusive) Rs 1092.50 (VAT inclusive) Rs 230 (VAT inclusive) ... Late payment fee1 1% of amount due ... Excess limit fee2 1% of amount due ... 2.10% per transaction ... Returned fee Rs 400 per item ... Minimum payment 5% or minimum Rs 2,000 5% or minimum Rs 1,000 5% or minimum Rs 100 ... Interest free period Up to 52 days ... FOREX fee 3% 3% 3% ... Minimum of Rs 150"
+  },
+  {
+   "url": "https://afrasiabank.com/en/about/rates",
+   "title": "AfrAsia Bank, Bank of Mauritius Template on Fees, Charges and Commissions (last updated 8 June 2026)",
+   "read": "2026-10-30",
+   "said": "Last updated on: 8 June 2026 ... Credit cards – World 15% p.a. ... Credit cards - Titanium 20% p.a. ... Credit cards - Gold 24% p.a. ... 10. Credit Cards - World Monthly primary card fees MUR 402.50/- (VAT Inclusive) ... Cash advance fee In Mauritius: 2.5% of amount with minimum of MUR 100/- ... Interest Charges (Outstanding bal. & Cash Advance) - MUR 15% p.a ... Interest-Free period Up to 48 days for 100% repayment ... Minimum monthly repayment 5% ... Late payment fee MUR 200/- ... Conversion charge on payments in foreign currency *Conversion fee applies where transaction currency is not equal to the billing currency 3% ... Overlimit fee MUR 200/- ... Credit Cards - Titanium Monthly fees - Primary Cardholder MUR 195.50/- VAT incl. ... Interest Rate on Outstanding Balance 1.67% p.m (20% p.a) ... Cash advance Interest 1.67% p.m (20% p.a) ... Minimum Monthly Repayment 5% ... Late Payment Charges MUR 200/- ... Credit Cards - Gold Monthly fees - Primary Cardholder MUR 805.00/- VAT incl. (payable upfront) ... Interest Rate on Outstanding Balance 2% p.m (24% p.a) ... Cash advance Interest 2% p.m (24% p.a)"
   }
  ]
 }

@@ -251,9 +251,73 @@
     "fixed": "5.500"
    },
    "returned": "10"
+  },
+  {
+   "bank": "Standard Chartered Bank",
+   "card": "Journey Credit Card",
+   "rate": {
+    "percent": "2.50",
+    "per": "month"
+   },
+   "fees": [
+    {
+     "fee": "44",
+     "per": "year"
+    }
+   ],
+   "cash": {
+    "fee": {
+     "percent": "5.50",
+     "min": "11"
+    }
+   },
+   "overLimit": {
+    "fixed": "15.4"
+   },
+   "late": {
+    "fixed": "17.6"
+   },
+   "fx": "3.30",
+   "minimum": {
+    "percent": "1",
+    "floor": "10",
+    "interest": true
+   }
+  },
+  {
+   "bank": "Standard Chartered Bank",
+   "card": "Rewards Credit Card",
+   "rate": {
+    "percent": "2.50",
+    "per": "month"
+   },
+   "fees": [
+    {
+     "fee": "33",
+     "per": "year"
+    }
+   ],
+   "cash": {
+    "fee": {
+     "percent": "5.50",
+     "min": "11"
+    }
+   },
+   "overLimit": {
+    "fixed": "15.4"
+   },
+   "late": {
+    "fixed": "17.6"
+   },
+   "fx": "3.30",
+   "minimum": {
+    "percent": "1",
+    "floor": "10",
+    "interest": true
+   }
   }
  ],
- "note": "The main banks, chosen as the best-known large card issuers (no central bank ranking was read): National Bank of Bahrain, Bank of Bahrain and Kuwait and Ahli United Bank. National Bank of Bahrain's site served the same script-built page for every address and showed no terms; Bank of Bahrain and Kuwait's card and fee pages answered not found behind a captcha; a search for their schedules (and Ahli United's and Bank ABC's) found none. Arab Bank's Bahrain branch, whose list was already read, and Khaleeji Bank, whose card fees the search found, are written instead. Arab Bank's Bahrain list of fees and charges (effective 20 January 2025, read in full on 2026-10-30): every credit card is written with its primary card's annual fee (none where it says Free), its monthly interest rate on retail purchases (the Travel Mate card's monthly figure is printed as 24%, its annual figure as 24%, written as 24% a year, the printed monthly figure being plainly the annual one), its monthly cash advance rate, a cash advance fee of 3.30%, a late payment fee of 11 dinars if the minimum isn't paid by the due date, an over-limit fee of 11 dinars, and a cross-border commission of up to 3% (0% on the Travel Mate card for US dollars, euros, pounds and dirhams, not written: the game's card holds one share). The list states no minimum payment or grace period. Khaleeji Bank's covered credit card fees (27 March 2025, inclusive of 10% VAT): its Infinite covered card, an Islamic card, charges a monthly profit rate of 1.65% and no annual fee, a minimum of 3% or 10 dinars, a cash advance fee of 4 dinars, a late payment fee of 5 dinars (given to charity), an over-limit fee of 5.500, a foreign transaction commission of 3.3%, and a cheque return fee of 10 dinars in the English column (11 in the Arabic, which marks it as including VAT; the English figure is written).",
+ "note": "The main banks, chosen as the best-known large card issuers (no central bank ranking was read): National Bank of Bahrain, Bank of Bahrain and Kuwait and Ahli United Bank. National Bank of Bahrain's site served the same script-built page for every address and showed no terms; Bank of Bahrain and Kuwait's card and fee pages answered not found behind a captcha; a search for their schedules (and Ahli United's and Bank ABC's) found none. Arab Bank's Bahrain branch, whose list was already read, and Khaleeji Bank, whose card fees the search found, are written instead. Arab Bank's Bahrain list of fees and charges (effective 20 January 2025, read in full on 2026-10-30): every credit card is written with its primary card's annual fee (none where it says Free), its monthly interest rate on retail purchases (the Travel Mate card's monthly figure is printed as 24%, its annual figure as 24%, written as 24% a year, the printed monthly figure being plainly the annual one), its monthly cash advance rate, a cash advance fee of 3.30%, a late payment fee of 11 dinars if the minimum isn't paid by the due date, an over-limit fee of 11 dinars, and a cross-border commission of up to 3% (0% on the Travel Mate card for US dollars, euros, pounds and dirhams, not written: the game's card holds one share). The list states no minimum payment or grace period. Khaleeji Bank's covered credit card fees (27 March 2025, inclusive of 10% VAT): its Infinite covered card, an Islamic card, charges a monthly profit rate of 1.65% and no annual fee, a minimum of 3% or 10 dinars, a cash advance fee of 4 dinars, a late payment fee of 5 dinars (given to charity), an over-limit fee of 5.500, a foreign transaction commission of 3.3%, and a cheque return fee of 10 dinars in the English column (11 in the Arabic, which marks it as including VAT; the English figure is written). Wave 4 (2026-10-30): Standard Chartered Bank's Bahrain branch was added as the next card issuer whose price guide answers this research (HSBC Bahrain's card page now shows only the announcement of its sale; Al Salam Bank's site answered with an Incapsula check and Bahrain Islamic Bank's with a captcha; National Bank of Bahrain and Bank of Bahrain and Kuwait weren't retried). Its Retail Banking Service & Price Guide, credit card page (fees applicable as of June 2024, all inclusive of 10% VAT), read in full; its table's header and the card names are set in a font that doesn't extract as text and were read by eye from the rendered page: the Journey card costs 44 dinars a year and the Rewards card 33; both bear 2.50% a month (an annual rate of 30%); a cash advance fee of 5.50% or 11 dinars, whichever is higher; an over-limit charge of 15.400 and a late payment charge of 17.600; a processing fee of 3.30% on overseas transactions; and a minimum amount due of 1% of the outstanding principal plus all instalments, fees, charges and interest, or 10 dinars, whichever is higher (written as 1% with a floor of 10, the interest added). The payment due date, 20 days from the statement, isn't a grace period and isn't written. The bank's World, World Elite, FalconFlyer and stc cards, which the guide doesn't price, aren't written.",
  "sources": [
   {
    "url": "https://www.arabbank.bh/docs/default-source/library-bahrain/fees-and-charges/42755-list-of-fees-and-charges-generic-english-bahrain.pdf?sfvrsn=eef35b9e_1",
@@ -266,6 +330,12 @@
    "title": "Khaleeji Bank, Covered Credit Card Fees (27 March 2025)",
    "read": "2026-10-30",
    "said": "Covered Credit Card Fees ... Infinite ... Card profit rate monthly ... 1.65% ... Annual membership / subscription fee ... Free ... Minimum fee charged ... 3% OR 10 BD ... Cash advance fee ... BD 4 ... Late payment fee - goes to charity ... BD 5 ... Over limit fee ... BD 5.500 ... Cheque return fee ... BD 10 ... Foreign transaction commission fee ... 3.3% ... Fees and Charges are inclusive of 10% VAT"
+  },
+  {
+   "url": "https://av.sc.com/bh/content/docs/bh-retail-bankingservice.pdf",
+   "title": "Standard Chartered Bank Bahrain, Retail Banking Service & Price Guide, credit cards (fees applicable as of June 2024, inclusive of 10% VAT; the card names in the table's header, set in a font that doesn't extract, read by eye)",
+   "read": "2026-10-30",
+   "said": "44 33 ... 2.50% ... 30% ... 5.50% of cash advance amount or BHD 11.000, whichever is higher ... Over Limit Charge 15.400 ... Late Payment Charge* 17.600 ... Overseas transactions ... 3.30% ... 1% of the outstanding principal and 100% of all ... be BHD 10, whichever is higher ... All Fees and Charges mentioned for Credit Cards are applicable as of June 2024. ... All fees and charges listed are inclusive of 10% Value Added Tax (VAT), where applicable."
   }
  ]
 }

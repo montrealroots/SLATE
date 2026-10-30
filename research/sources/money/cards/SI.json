@@ -84,9 +84,20 @@
    "minimum": {
     "percent": "5"
    }
+  },
+  {
+   "bank": "OTP banka",
+   "card": "Visa z odloženim plačilom",
+   "rate": "in full",
+   "fees": [
+    {
+     "fee": "26",
+     "per": "year"
+    }
+   ]
   }
  ],
- "note": "The main banks were taken as Slovenia's three largest by assets, a choice from general knowledge (no central bank or association ranking was read in this pass): NLB, OTP banka and Intesa Sanpaolo Bank. NLB: its extract of interest rates and its tariff for individuals on payment cards (in force from 1 August 2026) and its card pages, read 2026-10-30. The NLB Mastercard, NLB Visa and NLB Zlata (Gold) Mastercard are deferred-payment cards, settled in full on the 8th, 18th or 28th of the month; their yearly membership, paid by direct debit, is 28 euros for a customer without an NLB package (26 with one, 48 by payment order) and 77 for the Gold card. A cash withdrawal costs 5%, at least 15 euros, on the Mastercard and Visa. The NLB Mastercard 3v1 is a loan card on which 5%, 33% or 100% of the balance is paid each month; the 5% is written as the minimum. Its fixed-rate version bears 8.00% a year and costs 4 euros a month on a physical card, 2 on 401 to 800 euros of monthly spending and none above 800; the middle step isn't written, so the fee is charged in full up to 800. The 3v1 World bears the same fixed 8.00% and costs 150 euros a year. The variable-rate 3v1 (six-month Euribor plus 5.42 points), the Karanta and the loan-card NLB Mastercard (Euribor plus 7.50) aren't written, the Euribor figure in force not being stated in the sheet. The NLB Premium Visa and the 3v1 World Elite belong to the bank's Premium and private packages, which the game doesn't hold. OTP banka's and Intesa Sanpaolo Bank's card price lists weren't reached in this pass and aren't written.",
+ "note": "The main banks were taken as Slovenia's three largest by assets, a choice from general knowledge (no central bank or association ranking was read in this pass): NLB, OTP banka and Intesa Sanpaolo Bank. NLB: its extract of interest rates and its tariff for individuals on payment cards (in force from 1 August 2026) and its card pages, read 2026-10-30. The NLB Mastercard, NLB Visa and NLB Zlata (Gold) Mastercard are deferred-payment cards, settled in full on the 8th, 18th or 28th of the month; their yearly membership, paid by direct debit, is 28 euros for a customer without an NLB package (26 with one, 48 by payment order) and 77 for the Gold card. A cash withdrawal costs 5%, at least 15 euros, on the Mastercard and Visa. The NLB Mastercard 3v1 is a loan card on which 5%, 33% or 100% of the balance is paid each month; the 5% is written as the minimum. Its fixed-rate version bears 8.00% a year and costs 4 euros a month on a physical card, 2 on 401 to 800 euros of monthly spending and none above 800; the middle step isn't written, so the fee is charged in full up to 800. The 3v1 World bears the same fixed 8.00% and costs 150 euros a year. The variable-rate 3v1 (six-month Euribor plus 5.42 points), the Karanta and the loan-card NLB Mastercard (Euribor plus 7.50) aren't written, the Euribor figure in force not being stated in the sheet. The NLB Premium Visa and the 3v1 World Elite belong to the bank's Premium and private packages, which the game doesn't hold. OTP banka's and Intesa Sanpaolo Bank's card price lists weren't reached in this pass and aren't written. OTP banka (Slovenia), the second of the main banks named above, was added in wave 4: its pages for the Visa deferred-payment card and its instalment use, read 2026-10-30 (the page loads a font from Cloudflare's CDN but has no bot check). The Visa z odloženim plačilom costs 26 euros a year (included in the Ekstra, Premium and Private Banking packages, which the game doesn't hold); a month's purchases are settled once a month (on the 8th, 18th or 28th), so nothing is carried; purchases over 50 euros may be split into 2 to 24 instalments without interest, not written. The pages give no cash, currency or default charge. Intesa Sanpaolo Bank's card page wasn't at the address tried (404, with a captcha on the error page).",
  "sources": [
   {
    "url": "https://www.nlb.si/content/dam/nlb/pdf-files/osebne-finance/kartice/stroski-obrestne.pdf",
@@ -105,6 +116,18 @@
    "title": "NLB, Posojilne kartice Mastercard",
    "read": "2026-10-30",
    "said": "Plačilo 5 %, 33 % ali 100 % zneska"
+  },
+  {
+   "url": "https://www.otpbanka.si/kartice-z-odlozenim-placilom",
+   "title": "OTP banka, Kartice z odloženim plačilom",
+   "read": "2026-10-30",
+   "said": "Obveznosti poravnate 1x mesečno (8., 18. ali 28. v mesecu). ... Plačilo lahko razdelite na 2 do 24 obrokov"
+  },
+  {
+   "url": "https://www.otpbanka.si/obrocna-kartica-visa",
+   "title": "OTP banka, Obročna kartica Visa",
+   "read": "2026-10-30",
+   "said": "Letna članarina, ki jo plačujete za kartico Visa z odloženim plačilom, znaša 26 evrov ... imetniki paketov Ekstra, Premium in Private Banking stroške letne članarine za kartico z odloženim plačilom"
   }
  ]
 }

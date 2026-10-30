@@ -44,9 +44,70 @@
    "overLimit": {
     "fixed": "100"
    }
+  },
+  {
+   "bank": "Bank Norwegian",
+   "card": "Bank Norwegian-kortet",
+   "rate": {
+    "percent": "22.00",
+    "per": "year"
+   },
+   "fees": [],
+   "fx": "1.99",
+   "minimum": {
+    "percent": "3.5"
+   },
+   "grace": 45,
+   "late": {
+    "fixed": "60"
+   },
+   "penalty": {
+    "percent": "22",
+    "per": "year"
+   }
+  },
+  {
+   "bank": "re:member (Entercard)",
+   "card": "re:member flex",
+   "rate": {
+    "percent": "21.90",
+    "per": "year",
+    "from": "9.74"
+   },
+   "fees": [],
+   "cash": {
+    "fee": {
+     "percent": "3",
+     "min": "35"
+    }
+   },
+   "fx": "2",
+   "minimum": {
+    "percent": "3",
+    "floor": "200"
+   },
+   "grace": 56
+  },
+  {
+   "bank": "Ikano Bank",
+   "card": "Ikano Kort",
+   "rate": {
+    "percent": "17.80",
+    "per": "year"
+   },
+   "fees": [
+    {
+     "fee": "39",
+     "per": "month"
+    }
+   ],
+   "minimum": {
+    "percent": "5",
+    "floor": "100"
+   }
   }
  ],
- "note": "The main banks: Handelsbanken, Swedbank, SEB and Nordea are Sweden's four large banks; on 2026-10-30 Swedbank's card pages answered with a captcha (not circumvented), SEB's and Nordea's credit card pages weren't found at their addresses, so only Handelsbanken is written. Handelsbanken's two credit cards, each from its own price list and page (read 2026-10-30): the Allkort, 360 kronor a year, with a debt rate currently 13.90% a year, a 1.65% currency exchange fee on purchases and withdrawals abroad, and no fee for a withdrawal at a cash machine in Sweden (so no cash fee is written; the 1%, at least 10 kronor, at a bank or exchange office isn't); and the Platinum, 2,400 kronor a year (included with a Premium agreement or as a Private Banking customer, which the game doesn't hold), 8.80% a year, 2% (at least 20 kronor) for a cash withdrawal at a machine in Sweden, the 1.65% currency fee, a 100-krone late fee and a 100-krone fee for going over the limit (the 45-krone reminder fee isn't written). Both have up to 45 interest-free days and a monthly invoice the holder may pay in part. The Allkort's price list gives no late or over-limit fee. Extra-card, replacement and courier prices aren't written. The earlier reading of the Allkort (2026-10-29) holds and is kept.",
+ "note": "The main banks: Handelsbanken, Swedbank, SEB and Nordea are Sweden's four large banks; on 2026-10-30 Swedbank's card pages answered with a captcha (not circumvented), SEB's and Nordea's credit card pages weren't found at their addresses, so only Handelsbanken is written. Handelsbanken's two credit cards, each from its own price list and page (read 2026-10-30): the Allkort, 360 kronor a year, with a debt rate currently 13.90% a year, a 1.65% currency exchange fee on purchases and withdrawals abroad, and no fee for a withdrawal at a cash machine in Sweden (so no cash fee is written; the 1%, at least 10 kronor, at a bank or exchange office isn't); and the Platinum, 2,400 kronor a year (included with a Premium agreement or as a Private Banking customer, which the game doesn't hold), 8.80% a year, 2% (at least 20 kronor) for a cash withdrawal at a machine in Sweden, the 1.65% currency fee, a 100-krone late fee and a 100-krone fee for going over the limit (the 45-krone reminder fee isn't written). Both have up to 45 interest-free days and a monthly invoice the holder may pay in part. The Allkort's price list gives no late or over-limit fee. Extra-card, replacement and courier prices aren't written. The earlier reading of the Allkort (2026-10-29) holds and is kept. Three card companies were added in wave 4, Sweden's large banks other than Handelsbanken not answering (SEB's card page 404, Nordea's 404, Swedbank's captcha), each chosen as a large Swedish credit card issuer that publishes its terms on its own page, read 2026-10-30. Bank Norwegian (Nordic Choice/Bank Norwegian, Sweden): the Bank Norwegian card, no yearly fee, a variable 22.00% a year (example calculated July 2026), up to 45 interest-free days (grace 45), a 1.99% currency surcharge, no cash withdrawal fee (none written), a least monthly payment of 3.5% of the credit used, a 60-krona reminder fee written as the late fee, and default interest of 22% for contracts from 1 March 2025, written as the penalty rate. re:member (credit given by Entercard Group): the re:member flex, no yearly fee and no statement fee by e-invoice (the 39-krona paper invoice is a choice, not written), a yearly rate set individually from 9.74% to 21.90% (as at 2025-07-01, the figures its page still gives), up to 56 interest-free days, cash 3% (at least 35 kronor), a 2% currency mark-up, and monthly payments of at least 3%, at least 200 kronor. Ikano Bank: the Ikano Kort, no yearly fee but a 39-krona statement fee each month, written as a monthly fee, a variable 17.80% a year (as at 2026-08-01), and a least payment of 5% of the debt, at least 100 kronor; its interest-free instalment plans (a 195-krona fee) aren't written, and its page gives no cash or currency charge. Resurs Bank's card page answered with a captcha, Santander Consumer's with an Incapsula check and TF Bank's wasn't at its address (404).",
  "sources": [
   {
    "url": "https://www.handelsbanken.se/sv/privat/vardagstjanster/bankkort-och-kreditkort/prislista-for-allkort",
@@ -83,6 +144,24 @@
    "title": "Handelsbanken, Standardiserad europeisk konsumentkreditinformation: Allkort",
    "read": "2026-10-29",
    "said": "För närvarande 13,90 % (1 oktober 2025)"
+  },
+  {
+   "url": "https://www.banknorwegian.se/kreditkort/",
+   "title": "Bank Norwegian, Kreditkort",
+   "read": "2026-10-30",
+   "said": "Krediträntan är 22,00 %. Årsavgiften är 0 kr. ... Exemplet är beräknat i juli 2026 och räntan är rörlig. ... Valutapåslag 1,99 % ... Påminnelsesavgift 60 kr ... Dröjsmålsränta (avtal efter 01.03.2025) 22 % ... Det lägsta beloppet du behöver betala varje månad är 3,5 % av det totala kreditbeloppet eller köpesumman. Med Bank Norwegian-kortet får du upp till 45 räntefria dagar. ... Vi tar aldrig uttagsavgifter när du använder kortet i bankomater"
+  },
+  {
+   "url": "https://www.remember.se/",
+   "title": "re:member, kreditkort och privatlån",
+   "read": "2026-10-30",
+   "said": "Ordinarie årsavgift 0 kr. Aviavgift vid e-faktura 0 kr (pappersfaktura 39 kr). Årsräntan sätts individuellt och är 9,74 % - 21,90 % (2025-07-01), rörlig. ... Upp till 56 dagar räntefri kredit ... Kontantuttag kostar 3 % av uttaget belopp, dock lägst 35 kr per uttag. Valutaväxlingspåslag är 2 % på valutakursen. Betalas inte hela kontoskulden på en gång ska kontoskulden återbetalas genom månadsvisa betalningar om lägst 3 %. Inbetalningsbeloppet är dock lägst 200 kr, men högst skulden på kontot. ... Kreditgivare: Entercard Group AB"
+  },
+  {
+   "url": "https://www.ikanobank.se/kreditkort",
+   "title": "Ikano Bank, Ikano Kort",
+   "read": "2026-10-30",
+   "said": "Ingen årsavgift ... Ord. villkor för Ikano Kort: 17,80 % rörlig ränta samt aviavgift 39 kr/mån. ... (2026-08-01). ... det är som lägst 5 % av din skuld, och minst 100 kr."
   }
  ]
 }

@@ -126,9 +126,104 @@
     }
    },
    "fx": "1.75"
+  },
+  {
+   "bank": "easybank",
+   "card": "easybank Kreditkarte",
+   "rate": {
+    "percent": "19.64",
+    "per": "year"
+   },
+   "fees": [],
+   "fx": "0",
+   "grace": 59,
+   "minimum": {
+    "percent": "3",
+    "floor": "30"
+   }
+  },
+  {
+   "bank": "easybank",
+   "card": "Kreditkarte Gold",
+   "rate": {
+    "percent": "19.64",
+    "per": "year"
+   },
+   "fees": [
+    {
+     "fee": "59",
+     "per": "year"
+    }
+   ],
+   "fx": "1.99",
+   "grace": 59
+  },
+  {
+   "bank": "easybank",
+   "card": "Kreditkarte Platinum",
+   "rate": {
+    "percent": "19.64",
+    "per": "year"
+   },
+   "fees": [
+    {
+     "fee": "99",
+     "per": "year"
+    }
+   ],
+   "fx": "0",
+   "grace": 59,
+   "minimum": {
+    "percent": "3",
+    "floor": "30"
+   }
+  },
+  {
+   "bank": "easybank",
+   "card": "Eurowings Classic",
+   "rate": {
+    "percent": "19.64",
+    "per": "year"
+   },
+   "fees": [
+    {
+     "fee": "29",
+     "per": "year"
+    }
+   ],
+   "fx": "1.99",
+   "grace": 59,
+   "cash": {
+    "fee": {
+     "percent": "4",
+     "min": "5.95"
+    }
+   }
+  },
+  {
+   "bank": "easybank",
+   "card": "Eurowings Premium",
+   "rate": {
+    "percent": "19.64",
+    "per": "year"
+   },
+   "fees": [
+    {
+     "fee": "99",
+     "per": "year"
+    }
+   ],
+   "fx": "0",
+   "grace": 59,
+   "cash": {
+    "fee": {
+     "percent": "4",
+     "min": "5.95"
+    }
+   }
   }
  ],
- "note": "The main banks: Deutsche Bank (with Postbank, its branch) and Commerzbank, Germany's two largest private-sector retail banks; the savings banks (Sparkassen) each set their own prices and aren't one bank, and ING and DKB, the largest direct banks, issue debit Visa cards, not credit cards, so no third bank is written. Deutsche Bank's list of prices and services (as at 1 October 2026), read in full for its credit cards: the Mastercard or VISA (39 euros a year), GOLD (82; free with the db BestKonto, which the game doesn't hold), Mastercard Travel (94; 60 with the db BestKonto, not written), Mastercard PLATIN (200) and Mastercard BLACK (600), each charged to the account in the monthly statement, so nothing is carried on them; its WorldFlexCard (10 euros a year), the only one with a part-repayment function, is no longer sold and isn't written, nor is its BusinessCard. Cash at a cash machine with any of them costs 2.5% (at least 5.75 euros; 3.0% at a counter, not written); paying in a currency other than the euro costs 1.75% (at least 1.50 euros, not modelled), and the Mastercard Travel only the 0.50% conversion charge. Commerzbank's account-opening information (as at 19 June 2026), with its price and service list and its credit card conditions: the ClassicKreditkarte (39.90 euros a year) and GoldKreditkarte (99.90), Mastercard or Visa, their spending charged to the settlement account once the monthly statement is issued; cash at a cash machine costs 1.95% (at least 5.98 euros), paying abroad outside the euro 1.75%. The PremiumKreditkarte comes only inside the PremiumKonto and the Young Visa Kreditkarte only with the StartKonto, so neither is written. No German card here carries a balance, so no interest, minimum, grace period or default fee applies.",
+ "note": "The main banks: Deutsche Bank (with Postbank, its branch) and Commerzbank, Germany's two largest private-sector retail banks; the savings banks (Sparkassen) each set their own prices and aren't one bank, and ING and DKB, the largest direct banks, issue debit Visa cards, not credit cards, so no third bank is written. Deutsche Bank's list of prices and services (as at 1 October 2026), read in full for its credit cards: the Mastercard or VISA (39 euros a year), GOLD (82; free with the db BestKonto, which the game doesn't hold), Mastercard Travel (94; 60 with the db BestKonto, not written), Mastercard PLATIN (200) and Mastercard BLACK (600), each charged to the account in the monthly statement, so nothing is carried on them; its WorldFlexCard (10 euros a year), the only one with a part-repayment function, is no longer sold and isn't written, nor is its BusinessCard. Cash at a cash machine with any of them costs 2.5% (at least 5.75 euros; 3.0% at a counter, not written); paying in a currency other than the euro costs 1.75% (at least 1.50 euros, not modelled), and the Mastercard Travel only the 0.50% conversion charge. Commerzbank's account-opening information (as at 19 June 2026), with its price and service list and its credit card conditions: the ClassicKreditkarte (39.90 euros a year) and GoldKreditkarte (99.90), Mastercard or Visa, their spending charged to the settlement account once the monthly statement is issued; cash at a cash machine costs 1.95% (at least 5.98 euros), paying abroad outside the euro 1.75%. The PremiumKreditkarte comes only inside the PremiumKonto and the Young Visa Kreditkarte only with the StartKonto, so neither is written. No German card here carries a balance, so no interest, minimum, grace period or default fee applies. easybank (BAWAG AG Niederlassung Deutschland, which took over Barclays' German card business; barclays.de now forwards to easybank.de) was added in wave 4 as the third bank, chosen as Germany's largest issuer of credit cards that carry a balance, whose price lists are open; its card pages and the price and service list of each card (as at April 2026; the Eurowings cards' lists from 23 April 2026), read 2026-10-30: the easybank Kreditkarte (no yearly fee), Kreditkarte Gold (59 euros a year), Kreditkarte Platinum (99), Eurowings Classic and Eurowings Premium (29 and 99 euros a year from the second year; the first year's 14.50 and 49.50 for new customers is introductory and not written). Each bears a variable 19.64% a year (21.51% effective) on a balance repaid in parts, with up to 59 interest-free days, written as grace 59. Spending and cash in a currency other than the euro cost 1.99% on the Gold and Eurowings Classic and nothing on the others (fx 0). Cash costs nothing except on the Eurowings cards in Germany, 4% (at least 5.95 euros; nothing outside Germany). The monthly repayment by direct debit is preset at 3% of the balance, at least 30 euros, on the easybank Kreditkarte and Platinum pages, written as their minimum; the other pages don't state it. The 2 euros a month for choosing 100% repayment by direct debit is a choice and isn't written; the cheaper rate of the Zahlplan instalment option and the 4% on gambling and securities spending aren't written. No other bank was tried for Germany in wave 4.",
  "sources": [
   {
    "url": "https://www.deutsche-bank.de/dam/deutschebank/de/shared/pdf/ser-konditionen_preise_leistungsverzeichnis.pdf",
@@ -153,6 +248,72 @@
    "title": "Deutsche Bank, Preisaushang (Stand 15.10.2026)",
    "read": "2026-10-29",
    "said": "Jahresbeiträge Kreditkarten16), 17) ... − Mastercard oder VISA14) 39,00 EUR"
+  },
+  {
+   "url": "https://www.easybank.de/easybank-de/kreditkarten/",
+   "title": "easybank, Unsere Kreditkarten im Vergleich (barclays.de/kreditkarten forwards here)",
+   "read": "2026-10-30",
+   "said": "Sollzinssatz (veränderlich): 19,64 % p. a. ... Eff. Jahreszins: 21,51 % ... zinsfreien Zeitraums von bis zu 59 Tagen ... Darlehensgeber: BAWAG AG Niederlassung Deutschland"
+  },
+  {
+   "url": "https://www.easybank.de/easybank-de/kreditkarten/easybank-kreditkarte",
+   "title": "easybank, easybank Kreditkarte",
+   "read": "2026-10-30",
+   "said": "0 € Jahresgebühr ... Eine monatliche Rückzahlung per Lastschrift ist auf 3 % deines Gesamtsaldos bzw. mindestens 30 € voreingestellt. ... Sollzins (veränderlich): 19,64 % p. a."
+  },
+  {
+   "url": "https://www.easybank.de/resource/blob/123020/e828ed43452aa5ec5d39ff98b5efd2a5/preisverzeichnis-easybank-kreditkarte-data.pdf",
+   "title": "easybank, Preis- & Leistungsverzeichnis easybank Kreditkarte (Stand: April 2026)",
+   "read": "2026-10-30",
+   "said": "Jahresgebühr Kreditkartennutzung € 0,– ... Auslandseinsatzentgelt gebührenfrei ... Bargeldabhebungsgebühr gebührenfrei ... Stand: April 2026."
+  },
+  {
+   "url": "https://www.easybank.de/easybank-de/kreditkarten/kreditkarte-gold",
+   "title": "easybank, Kreditkarte Gold",
+   "read": "2026-10-30",
+   "said": "59 € Jahresgebühr ... Sollzins (veränderlich): 19,64 % p. a. ... zinsfreien Zeitraums von bis zu 59 Tagen"
+  },
+  {
+   "url": "https://www.easybank.de/resource/blob/123008/33084be362fbecdcd098c70d38244d19/preisverzeichnis-easybank-kreditkarte-gold-data.pdf",
+   "title": "easybank, Preis- & Leistungsverzeichnis Kreditkarte Gold",
+   "read": "2026-10-30",
+   "said": "Jahresgebühr easybank Gold Leistungen € 59,– ... sonst 1,99 % des Kartenumsatzes bzw. ... Bargeldabhebungsgebühr gebührenfrei"
+  },
+  {
+   "url": "https://www.easybank.de/easybank-de/kreditkarten/kreditkarte-platinum",
+   "title": "easybank, Kreditkarte Platinum",
+   "read": "2026-10-30",
+   "said": "99 € Jahresgebühr ... Keine Fremdwährungsgebühren ... 3 % deines Gesamtsaldos bzw. mindestens 30 € voreingestellt ... Sollzins (veränderlich): 19,64 % p. a."
+  },
+  {
+   "url": "https://www.easybank.de/resource/blob/123014/0bb3dac7ce3ce8312675fde4d2e5b24a/preisverzeichnis-easybank-kreditkarte-platinum-data.pdf",
+   "title": "easybank, Preis- & Leistungsverzeichnis Kreditkarte Platinum",
+   "read": "2026-10-30",
+   "said": "Jahresgebühr easybank Platinum Leistungen € 99,– ... Auslandseinsatzentgelt gebührenfrei ... Bargeldabhebungsgebühr gebührenfrei"
+  },
+  {
+   "url": "https://www.easybank.de/easybank-de/kreditkarten/eurowings-kreditkarte-classic",
+   "title": "easybank, Eurowings Classic",
+   "read": "2026-10-30",
+   "said": "Vorteilspreis: 14,50 € Jahresgebühr im ersten Jahr, 29 € Jahresgebühr ab dem 2. Jahr ... Sollzins (veränderlich): 19,64 % p. a."
+  },
+  {
+   "url": "https://www.easybank.de/resource/blob/140380/b50246d6517f2b68e2e269b86cc47037/preisverzeichnis-eurowings-kreditkarte-classic-ab-230426-data.pdf",
+   "title": "easybank, Preis- & Leistungsverzeichnis Eurowings Kreditkarte Classic (from 23 April 2026)",
+   "read": "2026-10-30",
+   "said": "in den Folgejahren € 29,– ... sonst 1,99 % des Kartenumsatzes bzw. ... innerhalb Deutschlands 4 %, mind. € 5,95"
+  },
+  {
+   "url": "https://www.easybank.de/easybank-de/kreditkarten/eurowings-kreditkarte-premium",
+   "title": "easybank, Eurowings Premium",
+   "read": "2026-10-30",
+   "said": "Vorteilspreis: 49,50 € Jahresgebühr im ersten Jahr, 99 € Jahresgebühr ab dem 2. Jahr ... Sollzins (veränderlich): 19,64 % p. a."
+  },
+  {
+   "url": "https://www.easybank.de/resource/blob/140382/b07cf091714e2f674879132ccf1fc2fc/preisverzeichnis-eurowings-kreditkarte-premium-ab-230426-data.pdf",
+   "title": "easybank, Preis- & Leistungsverzeichnis Eurowings Kreditkarte Premium (from 23 April 2026)",
+   "read": "2026-10-30",
+   "said": "in den Folgejahren € 99,– ... Auslandseinsatzentgelt gebührenfrei ... innerhalb Deutschlands 4 %, mind. € 5,95"
   }
  ]
 }
