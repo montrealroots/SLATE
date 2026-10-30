@@ -234,6 +234,21 @@
    "tax"
   ]
  },
+ "BF": {
+  "name": "Identifiant financier unique (IFU)",
+  "issuer": "the Direction générale des impôts (DGI)",
+  "format": {
+   "length": 9,
+   "pattern": "^\\d*[A-Z]\\d*$"
+  },
+  "when": "application",
+  "who": [
+   "anyone"
+  ],
+  "needed": [
+   "tax"
+  ]
+ },
  "BG": {
   "name": "Unified Civil Number (UCN)",
   "issuer": "the Ministry of Interior",
@@ -351,6 +366,22 @@
  },
  "CC": {
   "issuedBy": "AU"
+ },
+ "CG": {
+  "name": "Numéro d'identification unique (NIU)",
+  "issuer": "the Direction générale des impôts et des domaines (DGID)",
+  "format": {
+   "length": 16,
+   "pattern": "^[0-9A-Z]\\d{2}\\d{12}[0-9A-Z]$"
+  },
+  "when": "application",
+  "who": [
+   "anyone"
+  ],
+  "fee": {
+   "currency": "XAF",
+   "minor": 0
+  }
  },
  "CH": {
   "name": "OASI Number (AHV-Versichertennummer)",
@@ -661,6 +692,19 @@
   ],
   "needed": [
    "health"
+  ]
+ },
+ "GA": {
+  "name": "Numéro d'Identification Personnel (NIP)",
+  "issuer": "the Centre National de l'Etat Civil",
+  "format": {
+   "length": 14,
+   "pattern": "^[0-9A-Z]{14}$"
+  },
+  "when": "registration",
+  "who": [
+   "citizens",
+   "residents"
   ]
  },
  "GB": {
@@ -1957,6 +2001,18 @@
  },
  "WF": {
   "issuedBy": "FR"
+ },
+ "WS": {
+  "name": "Taxpayer Identification Number (TIN)",
+  "issuer": "the Ministry of Customs and Revenue",
+  "format": {
+   "min": 1,
+   "pattern": "^\\d+$"
+  },
+  "when": "application",
+  "who": [
+   "anyone"
+  ]
  },
  "YT": {
   "issuedBy": "FR"

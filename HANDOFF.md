@@ -846,6 +846,11 @@ every US state and DC, seven Canadian provinces, two Australian states and seven
 numbers 145, residence 179, licences 239 countries (a country by regions counts once all its regions are in), formats
 141.
 
+The owner's ruling of 2026-10-30 on a site that refuses the research client by the name it declares (four
+governments' tax and gazette sites answered 403 to it and 200 to curl's default): "Keep the block; don't switch user
+agents." Such a refusal is a block like any other, recorded in the five methods; the client's name isn't changed to
+get past it.
+
 The owner's ruling of 2026-10-30 on prices: "Yes, use the IMF-linked series for Somalia." The IMF's CPI series for
 Somalia (2022 = 100, 2020 to 2026) links the Mogadishu index to the new national CPI without saying who made the link;
 it stands as Somalia's 2021-to-2025 index, marked secondary, quoting the national bureau's CPI.
@@ -1004,6 +1009,35 @@ Wave 12 (2026-10-30, five research subagents on licences and the lead's form wor
   provisional for two years, its 10 years the term after; Ethiopia's and Oman's ages built from their temporary
   licences; Pitcairn's "over the age of 15 years" held as 15; Mauritania's fee null for the ouguiya's redenomination.
 - Standing: licences 107 researched, 30 blocked, 109 pending; banks 224, 22, 0.
+
+Wave 13 (2026-10-30, the units engine and six research subagents):
+
+- The index-unit gap is closed. A new engine, `money.units` (`tools/money/units`, `src/money/units`, coverage
+  `coverage/units-units.json` on an axis of its own: the units the game's fees name, so every unit a fee names has a
+  row), holds each unit's official value by date: Mexico's UMA from INEGI (11 values, 73.04 from 28 January 2016 to
+  117.31 from 1 February 2026, each year's day from INEGI's DOF notices and bulletins) and Uruguay's UR as INE
+  republishes the Banco Hipotecario's (33 monthly values, 1,638.35 from January 2024 to 1,940.77 from September 2026,
+  each month's value the one in use that month, as Decrees 38/025 and 268/025 and the DGI say). A licence fee may be `{
+  count, unit, plus? }`; `feeOn(fee, day)` gives its amount on the day, the count times the value worked exactly and
+  rounded once to the centavo, half to even, as every product of the game's money is (a fiscal code's own rounding to
+  the peso isn't held). Written so: Nayarit 8.5 UMA, Morelos 4.90, Tabasco 7.0, Quintana Roo 5.18 for its shortest term;
+  Uruguay's Cerro Largo (1.25 UR and $333 of stamps), Lavalleja 1.50, Maldonado, Paysandú, Río Negro, Rivera and San
+  José 1.25. Still null, each for a charge no source prices: Durango (its education tax), Guerrero (its 'impuestos
+  adicionales'), Artigas (an unpriced stamp). Chile's UF and Colombia's UVT aren't held: no fee names them yet (Chile's
+  cards and Colombia's passports were written from figures their sources published).
+- The owner's ruling on user agents (above) bound the wave: every refusal of the declared client is a block.
+- Wave 13's research: licences 132 researched, 49 blocked, 65 pending (Mexico 28 of 32: Quintana Roo, Sinaloa, Querétaro
+  and Tlaxcala from the Orden Jurídico Nacional's copies; the Caribbean Netherlands by island, BQ.BO, BQ.SE and BQ.SB,
+  each under its own ordinance; Ireland's age 18, its 17 and the learner's six months rounded up; Dominica's from its
+  Act's own section); numbers 151, 52, 43; residence 193, 18, 35; formats 153, 92, 1 (the Cook Islands held: six digits
+  are one bank's own); banks 224, 22. Held still: numbers PM, TK; residence HT; licences IM; formats CK; banks CC.
+- Form gaps the wave found: a territory using a region's licence (Christmas Island, Western Australia's: `issuedBy`
+  names a country kept whole); a licence term ending at the next decade birthday (San Marino's, Guernsey's); a term the
+  holder chooses with a fee for each (Papua New Guinea's 1 to 5 years, Querétaro's, Sinaloa's). Readings kept, to check:
+  licence ages built from stages (Nepal 19, Papua New Guinea 19, American Samoa 20, Norfolk Island 18), Kuwait's age
+  read by eye in a 2022 compilation, Qatar's on a 2013 secondary, Timor-Leste's two years read in Tetum, Aruba's age
+  from the examination's; residence on secondary copies (Nicaragua, Benin, The Gambia, Gabon); Burkina Faso's tax
+  number's letter in any place.
 
 The older next steps below are kept as they were written.
 

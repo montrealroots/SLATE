@@ -1,4 +1,5 @@
-import type { Money } from '../../core/money/money.ts';
+import { add, type Money } from '../../core/money/money.ts';
+import { inUnits } from '../../money/units/units.ts';
 import { t } from '../../core/text/text.ts';
 import { countryName, regionName, type Place } from '../../world/gazetteer/gazetteer.ts';
 import data from './licence.json' with { type: 'json' };
@@ -11,14 +12,21 @@ import data from './licence.json' with { type: 'json' };
  * them), and the licences it exchanges without a test. A territory may hold another country's. A place whose
  * licences aren't kept has none here, and the player is told.
  */
+/** A fee set in an index unit: so many of it, worth their value on the day paid, and any amount the office adds. */
+export interface UnitFee {
+  readonly count: string;
+  readonly unit: string;
+  readonly plus?: Money;
+}
+
 export interface LicenceDocument {
   /** As the office names it. */
   readonly name: string;
   /** The youngest it is issued to (for a licence, a full one). */
   readonly from?: number;
   /** A citizen's, where a non-citizen pays another (`foreignFee`); by the year where `perYear`. */
-  readonly fee: Money | null;
-  readonly foreignFee?: Money;
+  readonly fee: Money | UnitFee | null;
+  readonly foreignFee?: Money | UnitFee;
   readonly perYear?: true;
   readonly validYears: number | null;
   /** The age at which it ends, whichever comes first with its years. */
@@ -33,6 +41,13 @@ export interface Licence {
   readonly card?: LicenceDocument;
   /** The countries and regions whose licences it exchanges without a test. */
   readonly exchange?: readonly string[];
+}
+
+/** What a fee comes to on a day (YYYY-MM-DD): an amount as it is; so many of a unit at its value that day, with what's added; none where it isn't known. */
+export function feeOn(fee: Money | UnitFee | null | undefined, day: string): Money | undefined {
+  if (fee === null || fee === undefined || 'minor' in fee) return fee ?? undefined;
+  const value = inUnits(fee.count, fee.unit, day);
+  return value === undefined || fee.plus === undefined ? value : add(value, fee.plus);
 }
 
 type Where = Pick<Place, 'country' | 'region'>;

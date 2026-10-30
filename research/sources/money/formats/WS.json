@@ -1,0 +1,33 @@
+{
+ "country": "WS",
+ "national": {
+  "name": "Account Number",
+  "parts": [
+   {
+    "name": "Account Number",
+    "length": 13,
+    "min": 7,
+    "kind": "n",
+    "drawn": [
+     7,
+     7
+    ]
+   }
+  ]
+ },
+ "note": "No rule of the Central Bank of Samoa fixing an account number's length was read. ANZ Bank (Samoa), in its page and Quick Reference Guide on the Central Bank of Samoa's national payment system upgrade under the National Payment System Act 2014 (from 16 May 2023; read 2026-10-30, the guide dated 05/23), gives each receiving bank's account number format, the bank being named by its SWIFT code beside the number (replacing the ACH codes WS01 to WS04): ANZ Samoa seven digits, BSP's Samoa branch ten, National Bank of Samoa ten, Samoa Commercial Bank thirteen (prefix 101, a seven-digit base number and a suffix from 201-250, 001-050 or 301-350) or, for numbers introduced in 2019, ten (a two-digit prefix and an eight-digit base number); short National Bank and Samoa Commercial Bank numbers are padded with zeros at the front, ANZ's and BSP's not. So the number is written as seven to thirteen digits, drawn at seven, ANZ's own format, the bank the game's Samoa account is held at. Reading to check: the guide's column is headed 'minimum number of digits required'; ANZ's own numbers are given as the format XXXXXXX with no longer one named. No check digit is published, and the bank isn't coded inside the number.",
+ "sources": [
+  {
+   "url": "https://www.anz.com/samoa/en/business/national-payment-system-upgrade/",
+   "title": "ANZ Samoa, National Payment System Upgrade: Changes to the way we process payments",
+   "read": "2026-10-30",
+   "said": "To support the Central Bank of Samoa’s national payment system upgrade, the way ANZ Samoa processes payment files and ANZ Transactive payments changed on 16 May 2023. ... ANZ Bank (Samoa) Ltd. WS04 ANZBWSWWXXX BSP Financial Group Ltd., Samoa Branch WS01 BOSPWSWSXXX National Bank of Samoa Ltd. WS02 NBSLWSWSXXX Samoa Commercial Bank Ltd. WS03 SCOBWSWSXXX"
+  },
+  {
+   "url": "https://www.anz.com/content/dam/samoa/pdf/national-payment-system-upgrade-quick-reference-guide.pdf",
+   "title": "ANZ Bank (Samoa), National Payment System upgrade, Quick Reference Guide (05/23)",
+   "read": "2026-10-30",
+   "said": "The following table outlines account number requirements for each Beneficiary Bank. ... ANZ Bank (Samoa) Ltd. XXXXXXX 7 ... National Bank of Samoa Ltd. XXXXXXXXXX 10* ... Samoa Commercial Bank Ltd. 101XXXXXXX201 Prefix and 7* digit account ... 101 = Prefix ... 201 = Suffix (Ranges 201-250, ... 10 = Prefix (10 Savings, 12 ... This is not applicable for ANZ Bank (Samoa) Ltd. or BSP Financial"
+  }
+ ]
+}

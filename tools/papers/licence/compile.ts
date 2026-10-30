@@ -1,6 +1,8 @@
 import type { Money } from '../../../src/core/money/money.ts';
 import countries from '../../../src/world/gazetteer/countries.json' with { type: 'json' };
 import regions from '../../../src/world/gazetteer/regions.json' with { type: 'json' };
+import { unitCurrency } from '../../../src/money/units/units.ts';
+import { positive } from '../../money/units/compile.ts';
 import { amount, checkIssuers, compileIssued, currencyIn, isRecord, isWhole, only, readCited, type Issued } from '../numbers/compile.ts';
 
 /**
@@ -19,15 +21,41 @@ import { amount, checkIssuers, compileIssued, currencyIn, isRecord, isWhole, onl
 export const SOURCES = 'research/sources/papers/licence';
 export const OUTPUT = 'src/papers/licence/licence.json';
 
+/**
+ * A fee set in an index unit (a Mexican state's licence at 6 UMA, a Uruguayan department's at 1.25 UR): so many of the
+ * unit, worth their value on the day paid (src/money/units), and any amount in the currency the office adds (`plus`,
+ * Cerro Largo's stamps). Until 2026-10-30 such a fee stood null: a figure worked from the unit's value then would go
+ * stale.
+ */
+export interface UnitFee {
+  count: string;
+  unit: string;
+  plus?: Money;
+}
+
+export type Fee = Money | UnitFee;
+
+/** A fee as the research writes it: an amount in major units, or a count of an index unit the game holds in the same currency. */
+export function feeOf(f: unknown, currency: string, what: string): Fee {
+  if (typeof f !== 'object' || f === null) return amount(f, currency, what);
+  const o = f as Record<string, unknown>;
+  only(o, ['count', 'unit', 'plus'], what);
+  if (!positive(o['count'])) throw new Error(`${what} is a count of its unit, a decimal above 0`);
+  if (typeof o['unit'] !== 'string' || unitCurrency(o['unit']) !== currency) throw new Error(`${what} is in a unit the game holds, worth an amount of ${currency}`);
+  const out: UnitFee = { count: o['count'], unit: o['unit'] };
+  if (o['plus'] !== undefined) out.plus = amount(o['plus'], currency, `${what}'s plus`);
+  return out;
+}
+
 export interface Document {
   /** As the office names it. */
   name: string;
   /** The youngest it is issued to (for a licence, a full one). */
   from?: number;
   /** In the currency's minor units, or null where it isn't known: a citizen's, where a non-citizen pays another. */
-  fee: Money | null;
+  fee: Fee | null;
   /** What a non-citizen pays, where the office charges one more (Malaysia's, Cayman's). */
-  foreignFee?: Money;
+  foreignFee?: Fee;
   /** The fee is charged for each year the licence is held for (Malaysia's, bought for one to five years). */
   perYear?: true;
   validYears: number | null;
@@ -56,10 +84,10 @@ function document(d: unknown, at: string, currency: () => string, needsAge: bool
   if (typeof name !== 'string' || name === '') throw new Error(`${at} needs its name`);
   if (from === undefined ? needsAge : !isWhole(from, 0)) throw new Error(`${at} is issued from a whole age`);
   if (validYears !== null && !isWhole(validYears, 1)) throw new Error(`${at} is valid a whole number of years, or null`);
-  const out: Document = { name, fee: fee === null ? null : amount(fee, currency(), `${at}'s fee`), validYears };
+  const out: Document = { name, fee: fee === null ? null : feeOf(fee, currency(), `${at}'s fee`), validYears };
   if (foreignFee !== undefined) {
     if (out.fee === null) throw new Error(`${at} charges a non-citizen another fee only beside a citizen's`);
-    out.foreignFee = amount(foreignFee, currency(), `${at}'s foreign fee`);
+    out.foreignFee = feeOf(foreignFee, currency(), `${at}'s foreign fee`);
   }
   if (perYear !== undefined) {
     if (perYear !== true || out.fee === null) throw new Error(`${at}'s fee is by the year only as perYear: true, beside a fee`);

@@ -3,7 +3,7 @@ import { mkdirSync, mkdtempSync, readFileSync, writeFileSync } from 'node:fs';
 import { tmpdir } from 'node:os';
 import { join, resolve } from 'node:path';
 import { describe, expect, it } from 'vitest';
-import { checkLicences, compileLicence, OUTPUT, readLicences, serialize, SOURCES } from '../../tools/papers/licence/compile.ts';
+import { checkLicences, compileLicence, feeOf, OUTPUT, readLicences, serialize, SOURCES } from '../../tools/papers/licence/compile.ts';
 import { COVERAGE, coverageOf, licenceCoverage, TESTS, TOLD } from '../../tools/papers/licence/coverage.ts';
 import { NO_PLACES } from '../../tools/papers/passports/coverage.ts';
 
@@ -38,6 +38,18 @@ describe('the licences compile', () => {
     expect(my({ foreignFee: '120', perYear: true, untilAge: 70 })).toStrictEqual({ name: 'x', from: 18, fee: { currency: 'EUR', minor: 3000 }, foreignFee: { currency: 'EUR', minor: 12000 }, perYear: true, validYears: null, untilAge: 70 });
     expect(() => my({ fee: null, foreignFee: '120' })).toThrow("DE's licence charges a non-citizen another fee only beside a citizen's");
     expect(() => my({ foreignFee: 'x' })).toThrow("DE's licence's foreign fee");
+    // A fee in an index unit the game holds, worth an amount of the file's currency, with what the office adds.
+    expect(feeOf({ count: '8.5', unit: 'UMA' }, 'MXN', 'f')).toStrictEqual({ count: '8.5', unit: 'UMA' });
+    expect(feeOf({ count: '1.25', unit: 'UR', plus: '333' }, 'UYU', 'f')).toStrictEqual({ count: '1.25', unit: 'UR', plus: { currency: 'UYU', minor: 33_300 } });
+    expect(feeOf('10', 'EUR', 'f')).toStrictEqual({ currency: 'EUR', minor: 1000 });
+    for (const count of ['0', '-1', 8.5, undefined]) expect(() => feeOf({ count, unit: 'UMA' }, 'MXN', 'f'), String(count)).toThrow('f is a count of its unit, a decimal above 0');
+    for (const unit of ['UF', 'UR', undefined, 7, ['UMA']]) expect(() => feeOf({ count: '1', unit }, 'MXN', 'f'), String(unit)).toThrow('f is in a unit the game holds, worth an amount of MXN');
+    expect(() => feeOf({ count: '1', unit: 'UMA', per: 'year' }, 'MXN', 'f')).toThrow('f has no term per');
+    expect(() => feeOf({ count: '1', unit: 'UR', plus: 'x' }, 'UYU', 'f')).toThrow("f's plus is an amount written out in major units");
+    expect(() => feeOf(null, 'MXN', 'f')).toThrow('f is an amount written out in major units');
+    // Through the file: the licence's fee and a non-citizen's may each be one.
+    const mx = compileLicence('MX.18', { country: 'MX', region: 'MX.18', issuer: 'i', licence: { name: 'x', from: 18, fee: { count: '8.5', unit: 'UMA' }, foreignFee: { count: '9', unit: 'UMA' }, validYears: 3 } });
+    expect([mx.licence?.fee, mx.licence?.foreignFee]).toStrictEqual([{ count: '8.5', unit: 'UMA' }, { count: '9', unit: 'UMA' }]);
     for (const perYear of [false, 'yes']) expect(() => my({ perYear }), String(perYear)).toThrow("DE's licence's fee is by the year only as perYear: true, beside a fee");
     expect(() => my({ fee: null, perYear: true })).toThrow("DE's licence's fee is by the year only as perYear: true, beside a fee");
     for (const untilAge of [18, 17, 0, 70.5, '70']) expect(() => my({ untilAge }), String(untilAge)).toThrow("DE's licence ends at a whole age above the one it's issued from");

@@ -942,6 +942,23 @@
     ]
    }
   },
+  "FJ": {
+   "national": {
+    "name": "Account Number",
+    "parts": [
+     {
+      "name": "Account Number",
+      "length": 14,
+      "kind": "n",
+      "min": 5,
+      "drawn": [
+       5,
+       5
+      ]
+     }
+    ]
+   }
+  },
   "FK": {
    "iban": {
     "prefix": "FK",
@@ -2785,6 +2802,37 @@
     ]
    }
   },
+  "NU": {
+   "national": {
+    "name": "Bank account number",
+    "parts": [
+     {
+      "name": "Bank",
+      "length": 2,
+      "kind": "n"
+     },
+     {
+      "name": "Branch",
+      "length": 4,
+      "kind": "n"
+     },
+     {
+      "name": "Account number",
+      "length": 7,
+      "kind": "n"
+     },
+     {
+      "name": "Suffix",
+      "length": 2,
+      "kind": "n"
+     }
+    ],
+    "bank": [
+     1,
+     2
+    ]
+   }
+  },
   "NZ": {
    "national": {
     "name": "Bank account number",
@@ -3248,6 +3296,23 @@
     "bank": [
      1,
      2
+    ]
+   }
+  },
+  "SB": {
+   "national": {
+    "name": "Account Number",
+    "parts": [
+     {
+      "name": "Account Number",
+      "length": 15,
+      "kind": "n",
+      "min": 4,
+      "drawn": [
+       9,
+       10
+      ]
+     }
     ]
    }
   },
@@ -3874,6 +3939,23 @@
     "bank": [
      1,
      5
+    ]
+   }
+  },
+  "WS": {
+   "national": {
+    "name": "Account Number",
+    "parts": [
+     {
+      "name": "Account Number",
+      "length": 13,
+      "kind": "n",
+      "min": 7,
+      "drawn": [
+       7,
+       7
+      ]
+     }
     ]
    }
   },

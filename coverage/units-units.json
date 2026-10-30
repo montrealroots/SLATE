@@ -1,0 +1,32 @@
+{
+ "engine": "money.units",
+ "axis": "unit",
+ "universe": {
+  "keys": [
+   "UMA",
+   "UR"
+  ]
+ },
+ "rows": [
+  {
+   "key": "UMA",
+   "status": "researched",
+   "register": [
+    "R-3872"
+   ],
+   "tests": [
+    "tests/money/units/units.test.ts::units > give a count of a unit in its currency on a day, from its publisher's values"
+   ]
+  },
+  {
+   "key": "UR",
+   "status": "researched",
+   "register": [
+    "R-3873"
+   ],
+   "tests": [
+    "tests/money/units/units.test.ts::units > give a count of a unit in its currency on a day, from its publisher's values"
+   ]
+  }
+ ]
+}
