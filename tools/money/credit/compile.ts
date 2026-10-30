@@ -50,7 +50,7 @@ export function compileCountry(code: string, file: { [key: string]: unknown }): 
   }
   if (!named(bureau)) throw new Error(`${code} names the bureau that keeps the record`);
   if (!Number.isInteger(keep) || (keep as number) < 1 || (keep as number) > 30) throw new Error(`${code}'s keep is the whole years a late payment stays, from 1 to 30`);
-  if (clears !== undefined && (!Number.isInteger(clears) || (clears as number) < 0 || (clears as number) > 365)) throw new Error(`${code}'s clears is the days after a late payment is paid that its mark lifts, from 0 to 365`);
+  if (clears !== undefined && (!Number.isInteger(clears) || (clears as number) < 0 || (clears as number) > 3650)) throw new Error(`${code}'s clears is the days after a late payment is paid that its mark lifts, from 0 to 3650`);
   const lifts = clears === undefined ? {} : { clears: clears as number };
   if (reportGame !== undefined) {
     if (reportGame !== true || report !== undefined) throw new Error(`${code} states its days to report, or marks them the game's (reportGame: true), not both`);

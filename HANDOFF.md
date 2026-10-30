@@ -336,19 +336,23 @@ restarts. Read `CLAUDE.md` and the owner's package in `docs/` first.
   (research/sources/money/credit/<CC>.json, register facts money.credit.<CC>), compiled by `tools/money/credit`. A late
   payment marks the record for the country's years; the record's standing is the game's reading, said as the game's: 1000
   less 250 for each mark still kept, down to 0, which prices a card's range (`priced`).
-  Matrix (2026-10-30): 129 researched (US, GB, CA, AU, IE, DE, FR, ES, IT, NL, BE, FI, JP, CN, SE, DK, MX, BR, PL,
+  Matrix (2026-10-30): 134 researched (US, GB, CA, AU, IE, DE, FR, ES, IT, NL, BE, FI, JP, CN, SE, DK, MX, BR, PL,
   AT, HU, CH, RO, SI, HR, GR, NO, CZ, BG, SK, LT, LV, EE, PT, LU, IS, IN, KR, SG, MY, TW, PH, TH, PK, VN, AR, UY,
   CO, PE, SV, DO, PY, EC, IL, TR, SA, XK, KE, ZA, UG, TZ, GY, RW, JM, BB, AG, DM, GD, KN, LC, VC, AI, MS, RU, NZ,
   BJ, BF, CI, GW, ML, NE, SN, TG, NA, MU, KZ, GE, AM, RS, AL, MD, UZ, MN, AZ, LK, KH, BH, OM, NI, HN, CM, CF, CG,
-  GA, GQ, TD, AX, BZ, LR, TL, DZ, SD, PS; PR, GU, VI, AS, MP under the FCRA, whose "State" takes in every territory;
-  GF, GP, MQ, RE, YT, BL, MF, PM through the IEDOM and NC, PF, WF through the IEOM, on the FICP's rules), 6 proven,
-  41 blocked, 76 pending.
+  GA, GQ, TD, AX, BZ, LR, TL, DZ, SD, PS, LB, LY, YE, FJ, SC; PR, GU, VI, AS, MP under the FCRA, whose "State" takes
+  in every territory; GF, GP, MQ, RE, YT, BL, MF, PM through the IEDOM and NC, PF, WF through the IEOM, on the
+  FICP's rules), 6 proven, 41 blocked, 71 pending.
   Where the country's own regulator or law shows no bureau
   or registry keeps a person's record of credit, the file says so (`none: true`, nothing else), a late payment there
   marks nothing, and the player is told so (`credit.none`): Luxembourg, whose central bank says it has no register of
-  consumer credit. Where the record lifts a late payment once it's paid, the file says how many days after paying it
-  lifts (`clears`), `keep` being the years it stays unpaid; the mark is tied to its card and due date, and paying what
-  was past due lifts it (Honduras: 90 days after). A rule of "more than 90 days" is written as 91, the first day past it (Hungary,
+  consumer credit, and Libya, whose credit information center keeps only business customers' records (the IFC and Arab
+  Monetary Fund's guide, secondary). Where the record lifts a late payment once it's paid, the file says how many days
+  after paying it lifts (`clears`, 0 to 3,650), `keep` being the years it stays unpaid; the mark is tied to its card and
+  due date, and paying what was past due lifts it (Honduras: 90 days after; Fiji: two years, its Act's 2021 amendment;
+  Seychelles: five years, its Credit Reporting Act 2023; Yemen: the day it's paid, the registry keeping no history).
+  Where a record stays as long as the debt is unpaid, or is never erased (Lebanon, per the guide), `keep` is thirty
+  years, the longest the game keeps. A rule of "more than 90 days" is written as 91, the first day past it (Hungary,
   Slovenia). Bulgaria's ordinance was read in a legal database, bnb.bg answering with its web firewall's refusal, and is
   registered as secondary. Where no
   source states the days after a due date a late payment is reported, the file marks them the game's (`reportGame`):
@@ -364,7 +368,7 @@ restarts. Read `CLAUDE.md` and the owner's package in `docs/` first.
   72. Portugal: the Banco de Portugal's instruction answers with a bot check, not passed, so Santander's guide to its
   register is registered as secondary, quoting it; Lithuania's central bank and Register of Legal Acts answer with
   Cloudflare, so Creditinfo Lietuva's own statement is read.
-  Algeria, Sudan and Palestine are read in the IFC and Arab Monetary Fund's Arab Credit Reporting Guide (2015),
+  Algeria, Sudan, Palestine, Lebanon, Libya and Yemen are read in the IFC and Arab Monetary Fund's Arab Credit Reporting Guide (2015),
   registered as secondary, quoting each regulator's rule; Liberia in its central bank's 2009 guidelines; Timor-Leste
   in its central bank's page on Instruction 3/2009.
  A monthly reporting cycle with no stated threshold
