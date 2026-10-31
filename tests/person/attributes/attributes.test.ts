@@ -1,6 +1,7 @@
 import { describe, expect, it } from 'vitest';
 import { begin, dispatch } from '../../../src/core/frame/frame.ts';
-import { ATTRIBUTES, ATTRIBUTES_START, attributeOf, chooseAttributes, chosen, label, MAX, practise, RATE, ROLES, shown, valuesOf } from '../../../src/person/attributes/attributes.ts';
+import { ATTRIBUTES, ATTRIBUTES_START, attributeOf, chooseAttributes, chosen, DAILY, facetSkill, label, MAX, practise, ROLES, shown, skillOf, valuesOf } from '../../../src/person/attributes/attributes.ts';
+import facetResearch from '../../../research/sources/person/attributes/screenwriter-facets.json';
 import research from '../../../research/sources/person/attributes/screenwriter.json';
 import { falsifyAny } from '../../support/falsify-core.ts';
 
@@ -57,19 +58,46 @@ describe('the screenwriter attributes', () => {
     expect(() => valuesOf(ATTRIBUTES_START, 'screenwriter')).toThrow("the screenwriter's attributes haven't been chosen");
   });
 
-  it('rise with work, faster from low, never past 100', () => {
-    const v: Record<string, number> = { dialogue: 0, plot: 50, characters: 100, theme: 90 };
-    practise(v, { dialogue: 1, plot: 1, characters: 1, theme: 0.5 });
-    expect(v['dialogue']).toBe(RATE);
-    expect(v['plot']).toBe(50 + RATE / 2);
+  it('rise with each day of work, faster from low, never past 100: twenty years of daily work take a writer from 10 to 80', () => {
+    expect(DAILY).toBeCloseTo(1 - (20 / 90) ** (1 / 7300), 15);
+    const v: Record<string, number> = { dialogue: 10, plot: 50, characters: 100, theme: 90 };
+    practise(v, ['dialogue'], 20 * 365);
+    expect(v['dialogue']).toBeCloseTo(80, 8);
+    practise(v, ['plot', 'characters', 'theme'], 30);
+    expect(v['plot']).toBeCloseTo(100 - 50 * (1 - DAILY) ** 30, 10);
     expect(v['characters']).toBe(100);
-    expect(v['theme']).toBeCloseTo(90 + RATE * 0.5 * 0.1, 10);
-    practise(v, { dialogue: -1 });
-    expect(v['dialogue']).toBe(RATE);
-    const near: Record<string, number> = { dialogue: 99.9 };
-    practise(near, { dialogue: 100 });
-    expect(near['dialogue']).toBe(100);
-    expect(() => practise(v, { stamina: 1 })).toThrow("there's no attribute stamina to raise");
+    expect(v['theme']).toBeCloseTo(100 - 10 * (1 - DAILY) ** 30, 10);
+    const before = v['plot'];
+    practise(v, ['plot'], -5);
+    expect(v['plot']).toBe(before);
+    expect(() => practise(v, ['stamina'], 1)).toThrow("there's no attribute stamina to raise");
+  });
+
+  it("carry the sources' definitions and facets, each facet with its ties and the readers that grade it", () => {
+    for (const a of ATTRIBUTES.screenwriter) {
+      const r = facetResearch.attributes.find((x) => x.attribute === a.id);
+      expect(r, a.id).toBeDefined();
+      expect(a.definition).toBe(r?.definition);
+      expect(a.facets.map((f) => [f.id, f.name, f.meaning])).toEqual(r?.facets.map((f) => [f.id, f.name, f.meaning]));
+      for (const [i, f] of a.facets.entries()) {
+        const rf = r?.facets[i];
+        expect(f.draws, `${a.id} ${f.id}`).toEqual([...new Set(rf?.alsoDrawsOn.map((x) => x.attribute))].sort());
+        expect(f.readers, `${a.id} ${f.id}`).toEqual([...new Set(rf?.readBy.flatMap((x) => (x.game === null ? [] : [x.game])))].sort());
+      }
+    }
+    expect(ATTRIBUTES.screenwriter.reduce((t, a) => t + a.facets.length, 0)).toBe(164);
+    expect(attributeOf('screenwriter', 'dialogue').definition).toBe('The words characters speak: natural and believable, in a voice each character owns, saying little, showing who they are and moving the story.');
+  });
+
+  it('act through their facets: a facet a source ties to other attributes draws on them for a quarter', () => {
+    const pitching = attributeOf('screenwriter', 'pitching');
+    const tied = pitching.facets.find((f) => f.draws.length > 0);
+    const plain = pitching.facets.find((f) => f.draws.length === 0);
+    const v = { ...chosen({ role: 'screenwriter', all: 40 }), pitching: 80 };
+    expect(facetSkill(v, plain!, 'pitching')).toBe(80); // eslint-disable-line @typescript-eslint/no-non-null-assertion
+    expect(facetSkill(v, tied!, 'pitching')).toBeCloseTo(0.75 * 80 + 0.25 * 40, 10); // eslint-disable-line @typescript-eslint/no-non-null-assertion
+    expect(skillOf(v, 'screenwriter', 'pitching')).toBeCloseTo(pitching.facets.reduce((t, f) => t + facetSkill(v, f, 'pitching'), 0) / pitching.facets.length, 10);
+    expect(skillOf(chosen({ role: 'screenwriter', all: 100 }), 'screenwriter', 'pitching')).toBe(100);
   });
 
   it('attributes.choose: the level chosen is the level held', () => {

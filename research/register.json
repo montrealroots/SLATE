@@ -167651,24 +167651,20 @@
    "fact": "person.work.model",
    "sought": "How a screenwriter's attributes make the quality of a script, how long a draft takes, how far a revision carries it, and how fast doing the work raises the attributes",
    "status": "game",
-   "why": "The research names what a screenwriter has and what readers grade (R-4601), and the Black List's founder publishes how its readers weigh its components, but no source gives how much a writer's level in an attribute makes of a script, the days a draft takes at a level, or how much a draft teaches. The game reckons them so that a writer at 100 throughout writes at the top of every reader's scale and lower levels write correspondingly worse, with a spread that narrows as the writer improves; the owner put their balance for later (2026-10-31: \"We can get into perfectly balancing them later\"), and the player is told the reckoning is the game's own.",
+   "why": "What stands on sources is theirs: the facets each attribute is made of and the readers who grade each (R-4607); a feature's eight weeks and an episode's 2.4, a rewrite's and a polish's share of a draft's time and what each may change (the MBA), the Black List's weights, the overall's place between the weakest and strongest component, its score spread and its readers' agreement, and two decades to professional skill (R-4608). No source gives how much a writer's level in an attribute makes of a facet, the spread of a draft at a level, a pilot's or a short's writing time, how far a revision carries, or how far off a writer's own read is: the game reckons those, so that a writer at 100 throughout writes at the top of every reader's scale and lower levels correspondingly worse (a writer at 53 averaging the Black List's 5.74), balanced later at the owner's word, and the player is told the reckoning is the game's own.",
    "playerLabel": "work.model",
    "value": {
-    "daysAt100": {
-     "feature": 60,
-     "pilot": 30,
-     "episode": 20,
-     "short": 10
-    },
-    "daysAt0": "twice those, by Writing (60%) and Time Management (40%)",
-    "mix": "each part 70% its own attribute and 30% Writing; premise 60% Premise, 40% Innovation; setting 60% Setting, 40% Research; voice 70% Distinctive Voice, 30% Innovation; format all Screenplay Format; producibility 70% Film Production Process, 30% Structure",
+    "facetMix": "60% the part's attribute, 25% Writing, 15% the attributes a source ties to the facet (Innovation and Research where their own facets name the part); 70/30 where none is tied",
+    "processFacets": "an attribute's facet 75% the attribute, 25% the attributes a source ties to it",
     "spread": "3 points either side at 100, 18 at 0",
     "rushed": "a draft given part of its days keeps 40% to 70% of the shortfall's worth by Perseverance",
-    "revision": "toward the writer's level plus 5, as far as Revision (30% to 80%) and the days carry it; Taking Notes keeps 50% to 100% of the work on the noted parts",
+    "pilotAndShortDays": "12.6 and 10 at the top (no source; R-4608 blockers)",
+    "slowest": "twice the top's days at 0 in Writing and Time Management",
+    "revisionReach": "30% to 80% by Revision, toward the writer's level plus 5; Taking Notes keeping 50% to 100% of the work on the noted facets",
     "ownRead": "off by up to 20 points, by Story Critique (70%) and Critical Thinking (30%)",
-    "readerTaste": "5 points either side of a part's score, then 1 to 10",
-    "blackListHold": "the overall no more than one point above the weakest of plot, characters and dialogue (the founder: an execution score can hold the whole down)",
-    "growth": "up to 4 points from 0 for one full draft's use, less the nearer 100, none at 100"
+    "tasteFitted": "a read's lenience 0.75, each criterion 0.6, the overall's residual 0.4, on the 1 to 10 scale, fitted to the Black List's agreement (R-4608)",
+    "overallBlend": "half the weighted components, half their place 0.38 from the weakest",
+    "growthReading": "Kellogg's two decades read as 10 to 80 over twenty years of daily work"
    },
    "sources": []
   },
@@ -167677,22 +167673,15 @@
    "fact": "person.career.model",
    "sought": "How a screenwriter's attributes that work with people decide a synopsis, the contacts networking makes, the requests to read a script sent out, a pitch's sale, a staffing meeting and a season's standing in a writers' room",
    "status": "game",
-   "why": "The research names these attributes and who judges them (R-4601: the schools that teach pitching, the BBC's postings that hire on persuasion, the registers that rate speaking and social perceptiveness) and gives the WGA's minimums and ladder (R-4241), but no source gives the chance a contact asks to read a script, a pitch sells, or a room keeps a writer at a level of an attribute. The game reckons them so that a writer at 100 sells and is kept nearly always and a weaker one seldom, the script's quality counting most; the owner put their balance for later (2026-10-31), and the player is told the reckoning is the game's own.",
+   "why": "What stands on sources is theirs: the WGA's minimums and ladder (R-4241); the studios reading nothing unsolicited, cold queries' 1 to 2% read requests, a third of the specs taken out selling (2012), a season of twenty weeks and the MBA's 2026 weekly minimums by rung, the treatment step's 6.1 weeks (R-4608); the facets of the attributes that work with people (R-4607). No source gives how likely a day's networking makes a contact, a contact asks to read, a meeting of a given skill sells or staffs, or a room keeps or promotes a writer at a level: the game reckons those, balanced later at the owner's word, and the player is told the reckoning is the game's own.",
    "playerLabel": "work.model",
    "value": {
-    "synopsisDaysAt100": {
-     "feature": 7,
-     "pilot": 5,
-     "episode": 3,
-     "short": 1
-    },
-    "synopsis": "70% Synopsis, 30% Writing; half its worth when given no days, all of it when given enough; the draft's spread",
     "contactADay": "5% for a writer at 0 to 50% at 100, by Networking 60%, Speaking 20%, Social Perceptiveness 20%",
-    "request": "(10% to 60% by Promotion) x (30% to 100% by the synopsis) x (50% to 100% by the script's grade), for each contact approached, one a day",
-    "meeting": "Pitching 50%, Speaking 20%, Persuasion 20%, the synopsis 10%; staffing: Speaking 40%, Social Perceptiveness 30%, Persuasion 30%",
-    "sale": "(the script's grade out of 100) squared x (40% to 100% by the meeting)",
+    "warmRequest": "0.4 x (0.5 to 1.5 by Promotion and the best query document) x (50% to 100% by the script's grade)",
+    "coldRequestScale": "the sourced 1.5% times the same 0.5 to 1.5",
+    "sale": "the sourced third at a script of 75 and a middling meeting, by the script's quality squared and 0.5 to 1.5 by the meeting (Pitching 50%, Speaking 20%, Persuasion 20%, the best pitch document 10%); staffing the same with Speaking 40%, Social Perceptiveness 30%, Persuasion 30%",
     "season": "standing by Social Perceptiveness 50%, Speaking 25%, Persuasion 25%, within the writer's spread: 2 episodes at 80, 1 at 50; kept at 40; a rung up at 70",
-    "growth": "each use of an attribute as a draft's: up to 4 points from 0, less the nearer 100"
+    "documentDays": "logline 1, short synopsis 1, one-page 2, outline 5, scene breakdown 10, series bible 14, pitch document 3, statement of intent 1, scriptment 21 at the top (no source)"
    },
    "sources": []
   },

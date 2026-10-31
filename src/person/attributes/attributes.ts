@@ -11,12 +11,29 @@ import data from './attributes.json';
  * Each is a number from 0 to 100, 100 the most. The player sets where each starts when the life is made (the owner:
  * "there should be an option to pick how good I want to be"), each on its own or all at one level; and doing the work
  * raises what the work uses (the owner: "if its not maxed out then through doing work my skills/attributes get raised"),
- * faster from low and slower near the top, never past 100. Growth's pace is the game's own figure until the owner
- * balances it (register person.work.model).
+ * faster from low and slower near the top, never past 100, at the pace the research on writing skill gives: two decades
+ * of practice to professional skill (Kellogg; Hayes's ten-year rule; R-4608).
+ *
+ * What each attribute means is the sources' (the owner: "I want those meanings to mean something and actually reflect
+ * on the work"): its definition and the facets it is made of (research/sources/person/attributes/screenwriter-facets.json,
+ * R-4607), each facet with the other attributes a source ties to it and the readers whose own criteria grade it. An
+ * attribute acts through its facets: a facet a source ties to other attributes draws on them too.
  */
 
 export type Role = keyof typeof data;
 export type ScreenwriterAttribute = (typeof data.screenwriter)[number]['id'];
+
+/** One part of what an attribute is, as the sources name it. */
+export interface Facet {
+  readonly id: string;
+  /** As the player reads it. */
+  readonly name: string;
+  readonly meaning: string;
+  /** The other attributes a source ties to it. */
+  readonly draws: readonly string[];
+  /** The readers the game models whose own criteria grade it. */
+  readonly readers: readonly string[];
+}
 
 export interface Attribute {
   readonly id: string;
@@ -24,6 +41,9 @@ export interface Attribute {
   readonly name: string;
   /** The research group it stands for, by its name there. */
   readonly research: string;
+  /** What it is, in the sources' words, as the player reads it. */
+  readonly definition: string;
+  readonly facets: readonly Facet[];
 }
 
 export const ROLES = Object.keys(data) as Role[];
@@ -101,16 +121,33 @@ export const chooseAttributes = defineCommand<{ attributes: AttributesSlice }, C
 // Stryker restore all
 
 /**
- * Work raises what it uses: each attribute by its share of the work (`use`, 0 to about 1.5 for a long stretch), the
- * nearer 100 the less, so a writer at 40 gains several times what one at 90 does from the same draft, and one at 100
- * gains nothing. `RATE` is the most one full use can add, from 0; the game's own figure (person.work.model).
+ * What one facet of an attribute comes to for a person: the attribute itself, three quarters, and the attributes a
+ * source ties to the facet, a quarter between them (all of it the attribute's own where none is tied). The shares are
+ * the game's own (person.work.model).
  */
-export const RATE = 4;
+export function facetSkill(values: Readonly<Record<string, number>>, facet: Facet, own: string): number {
+  const v = values[own] as number;
+  if (facet.draws.length === 0) return v;
+  return 0.75 * v + (0.25 * facet.draws.reduce((t, id) => t + (values[id] as number), 0)) / facet.draws.length;
+}
 
-export function practise(values: Record<string, number>, use: Readonly<Record<string, number>>): void {
-  for (const [id, u] of Object.entries(use)) {
+/** What an attribute comes to through all its facets: their mean. */
+export function skillOf(values: Readonly<Record<string, number>>, role: Role, id: string): number {
+  const { facets } = attributeOf(role, id);
+  return facets.reduce((t, f) => t + facetSkill(values, f, id), 0) / facets.length;
+}
+
+/**
+ * The share of what's left to learn that a day of work teaches: a writer who worked every day for twenty years would go
+ * from 10 to 80. The two decades are Kellogg's and Hayes's (R-4608); reading them as 10 to 80 is the game's own.
+ */
+export const DAILY = 1 - (20 / 90) ** (1 / (20 * 365));
+
+/** Days of work raise each attribute they used, the nearer 100 the less, never past it. */
+export function practise(values: Record<string, number>, ids: readonly string[], days: number): void {
+  for (const id of ids) {
     const v = values[id];
     if (v === undefined) throw new Error(`there's no attribute ${id} to raise`);
-    values[id] = Math.min(MAX, v + RATE * Math.max(0, u) * ((MAX - v) / MAX));
+    values[id] = MAX - (MAX - v) * (1 - DAILY) ** Math.max(0, days);
   }
 }

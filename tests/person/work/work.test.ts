@@ -1,24 +1,32 @@
 import { describe, expect, it } from 'vitest';
 import { begin, commandIndex, dispatch, type Life } from '../../../src/core/frame/frame.ts';
 import { draws, seedFromText } from '../../../src/core/rng/rng.ts';
-import { ATTRIBUTES_START, chooseAttributes, type AttributesSlice } from '../../../src/person/attributes/attributes.ts';
+import { ATTRIBUTES_START, chooseAttributes, DAILY, skillOf, type AttributesSlice } from '../../../src/person/attributes/attributes.ts';
 import {
+  BLACK_LIST_POSITION,
   BLACK_LIST_WEIGHTS,
   CRITERIA,
   DAYS,
   daysNeeded,
+  facetsOf,
   finish,
+  graded,
   MODEL_LINE,
+  normal,
   ownRead,
-  PART_NAMES,
   PARTS,
+  partScore,
   readScript,
   reviseScript,
+  REVISIONS,
   SCRIPTS_START,
   scoresOf,
   scriptOf,
   skill,
+  SOURCES_OF_MATTER,
   spread,
+  TASTE,
+  tiedTo,
   writeScript,
   type Part,
   type Read,
@@ -29,53 +37,78 @@ import { falsifyAny } from '../../support/falsify-core.ts';
 
 type Working = { attributes: AttributesSlice; scripts: ScriptsSlice };
 const SEED = '0123456789abcdef';
+const u = (decider: 'work.draft' | 'work.read', ...keys: (string | number)[]) => 2 * draws(seedFromText(SEED), decider, ...keys).float() - 1;
 const ctx = { draws: (decider: 'work.read', ...keys: (string | number)[]) => draws(seedFromText(SEED), decider, ...keys) };
+const clamp = (n: number) => Math.min(100, Math.max(0, n));
 
 const made = (all: number, each: Record<string, number> = {}, seed = SEED): Life<Working> =>
   dispatch(begin(seed, 0, { attributes: structuredClone(ATTRIBUTES_START), scripts: structuredClone(SCRIPTS_START) }), chooseAttributes, { role: 'screenwriter', all, each });
-const written = (all: number, days = 60, each: Record<string, number> = {}, seed = SEED) => dispatch(made(all, each, seed), writeScript, { form: 'feature', days });
+const written = (all: number, days = 200, each: Record<string, number> = {}, seed = SEED, form: 'feature' | 'episode' = 'feature') => dispatch(made(all, each, seed), writeScript, { form, days });
 const first = (l: Life<Working>): Script => l.slices.scripts.written[0] as Script;
+const v = (l: Life<Working>) => l.slices.attributes['screenwriter'] as Record<string, number>;
+const values = (all: number, each: Record<string, number> = {}) => v(made(all, each));
 const only = (reads: readonly Read[]): Read => {
   expect(reads).toHaveLength(1);
   return reads[0] as Read;
 };
-const values = (all: number, each: Record<string, number> = {}) => made(all, each).slices.attributes['screenwriter'] as Record<string, number>;
+const mean = (xs: number[]) => xs.reduce((t, x) => t + x, 0) / xs.length;
+const facetMean = (s: Script) => mean(PARTS.map((p) => partScore(s, p)));
 
 describe('a script', () => {
-  it("is written in parts, each from the attributes that write it, Writing behind the page's parts", () => {
-    expect(PART_NAMES).toEqual(['characters', 'dialogue', 'structure', 'plot', 'theme', 'premise', 'setting', 'visual', 'voice', 'format', 'producibility']);
-    for (const p of PART_NAMES) expect(Object.values(PARTS[p]).reduce((a, b) => a + b, 0)).toBeCloseTo(1, 10);
-    const v = values(50, { dialogue: 90, writing: 10 });
-    expect(skill(v, 'dialogue')).toBeCloseTo(0.7 * 90 + 0.3 * 10, 10);
-    expect(skill(v, 'format')).toBe(50);
+  it("is written facet by facet: each part a reader grades is a craft attribute, made of the facets its sources name", () => {
+    expect(PARTS).toEqual(['characters', 'dialogue', 'structure', 'plot', 'theme', 'premise', 'setting', 'visual-storytelling', 'distinctive-voice', 'screenplay-format', 'film-production-process']);
+    expect(facetsOf('dialogue').map((f) => f.id)).toEqual(['natural-and-believable', 'a-voice-for-each-character', 'reveals-character', 'moves-the-story', 'succinct', 'subtext', 'fits-tone-and-setting']);
+    const s = first(written(60));
+    for (const p of PARTS) expect(Object.keys(s.facets[p]), p).toEqual(facetsOf(p).map((f) => f.id));
+    expect(partScore(s, 'dialogue')).toBeCloseTo(mean(Object.values(s.facets.dialogue)), 10);
     expect(MODEL_LINE).toBe('work.model');
   });
 
-  it('comes out at the top of the scale from a writer at 100 in everything, given its days', () => {
-    const s = first(written(100));
-    for (const p of PART_NAMES) expect(s.parts[p], p).toBeGreaterThanOrEqual(97);
-    expect(s).toMatchObject({ id: 1, form: 'feature', started: 0, needed: 60, drafts: 1, reads: [] });
+  it("scores a facet from the part's attribute, Writing, and the attributes a source ties to it", () => {
+    const voice = facetsOf('dialogue').find((f) => f.id === 'a-voice-for-each-character');
+    const natural = facetsOf('dialogue').find((f) => f.id === 'natural-and-believable');
+    expect(voice?.draws).toContain('characters');
+    expect(tiedTo('dialogue', voice!)).toEqual(['characters']); // eslint-disable-line @typescript-eslint/no-non-null-assertion
+    expect(tiedTo('dialogue', natural!)).toEqual([]); // eslint-disable-line @typescript-eslint/no-non-null-assertion
+    const w = values(50, { dialogue: 90, writing: 10, characters: 30 });
+    expect(skill(w, 'dialogue', voice!)).toBeCloseTo(0.6 * 90 + 0.25 * 10 + 0.15 * 30, 10); // eslint-disable-line @typescript-eslint/no-non-null-assertion
+    expect(skill(w, 'dialogue', natural!)).toBeCloseTo(0.7 * 90 + 0.3 * 10, 10); // eslint-disable-line @typescript-eslint/no-non-null-assertion
   });
 
-  it('comes out as good as the writer is: around 50 from a writer at 50, hardly readable from one at 10', () => {
-    const mid = first(written(50, 120));
-    for (const p of PART_NAMES) expect(Math.abs(mid.parts[p] - 50), p).toBeLessThanOrEqual(spread(50));
-    const low = first(written(10, 120));
-    for (const p of PART_NAMES) expect(low.parts[p], p).toBeLessThanOrEqual(10 + spread(10));
-    const mean = (s: Script) => PART_NAMES.reduce((t, p) => t + s.parts[p], 0) / PART_NAMES.length;
-    expect(mean(first(written(100)))).toBeGreaterThan(mean(mid));
-    expect(mean(mid)).toBeGreaterThan(mean(low));
+  it("ties no part's facet to its own part or to Writing, and names its tied attributes in order", () => {
+    for (const p of PARTS) for (const f of facetsOf(p)) expect(f.draws.filter((id) => id === p || id === 'writing'), `${p} ${f.id}`).toEqual([]);
+    const ids = PARTS.flatMap((p) => facetsOf(p).map((f) => f.id));
+    expect(new Set(ids).size).toBe(ids.length);
+    const subtext = facetsOf('dialogue').find((f) => f.id === 'subtext');
+    expect(new Set(tiedTo('dialogue', subtext!))).toEqual(new Set(['characters', 'theme', 'visual-storytelling'])); // eslint-disable-line @typescript-eslint/no-non-null-assertion
+    const authentic = facetsOf('setting').find((f) => f.id === 'authentically-brought-to-life');
+    expect(new Set(tiedTo('setting', authentic!))).toEqual(new Set([...authentic!.draws, 'research'])); // eslint-disable-line @typescript-eslint/no-non-null-assertion
+    expect(tiedTo('setting', authentic!)).toHaveLength(new Set([...authentic!.draws, 'research']).size); // eslint-disable-line @typescript-eslint/no-non-null-assertion
   });
 
-  it('is better in a part when the attribute that writes it is higher, the rest alike', () => {
-    for (const p of PART_NAMES) {
-      const own = Object.keys(PARTS[p])[0] as string;
-      expect(first(written(50, 120, { [own]: 90 })).parts[p], p).toBeGreaterThan(first(written(50, 120, { [own]: 20 })).parts[p]);
-    }
+  it("brings in Innovation and Research where their own facets name the part's matter", () => {
+    expect(SOURCES_OF_MATTER).toEqual(['innovation', 'research']);
+    for (const p of ['plot', 'characters'] as Part[]) for (const f of facetsOf(p)) expect(tiedTo(p, f), `${p} ${f.id}`).toContain('innovation');
+    for (const f of facetsOf('setting')) expect(tiedTo('setting', f)).toContain('research');
+    for (const f of facetsOf('dialogue')) expect(tiedTo('dialogue', f)).not.toContain('research');
+    expect(partScore(first(written(50, 200, { innovation: 100 })), 'plot')).toBeGreaterThan(partScore(first(written(50, 200, { innovation: 0 })), 'plot'));
+    expect(partScore(first(written(50, 200, { research: 100 })), 'setting')).toBeGreaterThan(partScore(first(written(50, 200, { research: 0 })), 'setting'));
   });
 
-  it('is moved in a part by every attribute that writes it', () => {
-    for (const p of PART_NAMES) for (const id of Object.keys(PARTS[p])) expect(skill(values(50, { [id]: 90 }), p), `${p} by ${id}`).toBeGreaterThan(skill(values(50, { [id]: 20 }), p));
+  it('is moved in each facet by every attribute that writes it', () => {
+    for (const p of PARTS) for (const f of facetsOf(p)) for (const id of [p, 'writing', ...tiedTo(p, f)]) expect(skill(values(50, { [id]: 90 }), p, f), `${p} ${f.id} by ${id}`).toBeGreaterThan(skill(values(50, { [id]: 20 }), p, f));
+  });
+
+  it('comes out at the top from a writer at 100 throughout, around 50 from one at 50, hardly readable from one at 10', () => {
+    const top = first(written(100));
+    for (const p of PARTS) for (const x of Object.values(top.facets[p])) expect(x, p).toBeGreaterThanOrEqual(97);
+    expect(top).toMatchObject({ id: 1, form: 'feature', started: 0, needed: 56, drafts: 1, reads: [] });
+    const mid = first(written(50));
+    for (const p of PARTS) for (const x of Object.values(mid.facets[p])) expect(Math.abs(x - 50), p).toBeLessThanOrEqual(spread(50));
+    const low = first(written(10));
+    for (const p of PARTS) for (const x of Object.values(low.facets[p])) expect(x, p).toBeLessThanOrEqual(10 + spread(10));
+    expect(facetMean(top)).toBeGreaterThan(facetMean(mid));
+    expect(facetMean(mid)).toBeGreaterThan(facetMean(low));
   });
 
   it('spreads less as the writer gets better', () => {
@@ -84,91 +117,147 @@ describe('a script', () => {
     expect(spread(50)).toBe(10.5);
   });
 
-  it('needs days by Writing and Time Management, and a rushed draft keeps less, Perseverance holding more of it', () => {
-    expect(daysNeeded(values(100), 'feature')).toBe(DAYS.feature);
-    expect(daysNeeded(values(0), 'feature')).toBe(120);
-    expect(daysNeeded(values(0, { writing: 100 }), 'short')).toBe(13);
-    expect(daysNeeded(values(0, { 'time-management': 100 }), 'episode')).toBe(29);
-    expect(DAYS).toEqual({ feature: 60, pilot: 30, episode: 20, short: 10 });
+  it("needs the trade's time: a feature in eight weeks at the top, an episode within the MBA's 2.4 weeks", () => {
+    expect(DAYS).toEqual({ feature: 56, pilot: 12.6, episode: 8.4, short: 10 });
+    expect(daysNeeded(values(100), 'feature')).toBe(56);
+    expect(daysNeeded(values(0), 'feature')).toBe(112);
+    expect(daysNeeded(values(0), 'episode')).toBe(17);
+    expect(daysNeeded(values(100), 'episode')).toBe(9);
+    const pace = (w: Record<string, number>) => 0.6 * skillOf(w, 'screenwriter', 'writing') + 0.4 * skillOf(w, 'screenwriter', 'time-management');
+    for (const w of [values(0, { writing: 100 }), values(0, { 'time-management': 100 }), values(37)]) for (const form of ['feature', 'pilot', 'episode', 'short'] as const) expect(daysNeeded(w, form)).toBe(Math.ceil(DAYS[form] / (0.5 + (0.5 * pace(w)) / 100)));
+    expect(daysNeeded(values(0, { writing: 100 }), 'short')).toBeGreaterThan(daysNeeded(values(100), 'short'));
     expect(finish(values(0), 60, 60)).toBe(1);
     expect(finish(values(0), 90, 60)).toBe(1);
     expect(finish(values(0), 30, 60)).toBeCloseTo(0.7, 10);
     expect(finish(values(100), 30, 60)).toBeCloseTo(0.85, 10);
-    expect(first(written(100, 20)).parts.dialogue).toBeLessThan(first(written(100, 60)).parts.dialogue);
+    expect(partScore(first(written(100, 20)), 'dialogue')).toBeLessThan(partScore(first(written(100, 56)), 'dialogue'));
   });
 
-  it('raises the attributes its writing used, and none past 100', () => {
-    const after = written(50, 120).slices.attributes['screenwriter'] as Record<string, number>;
-    for (const id of ['dialogue', 'writing', 'premise', 'innovation', 'research', 'screenplay-format', 'film-production-process', 'time-management', 'perseverance']) expect(after[id], id).toBeGreaterThan(50);
+  it('scores each facet exactly: the level, shortened by rushing, within the spread', () => {
+    const w = values(50, { dialogue: 80 });
+    const s = first(written(50, 30, { dialogue: 80 }));
+    const needed = daysNeeded(w, 'feature');
+    const f = finish(w, 30, needed);
+    for (const p of PARTS) for (const facet of facetsOf(p)) expect(s.facets[p][facet.id], `${p} ${facet.id}`).toBeCloseTo(clamp(skill(w, p, facet) * f + spread(skill(w, p, facet)) * u('work.draft', 1, 1, p, facet.id)), 10);
+  });
+
+  it('teaches the attributes its writing used, a day at a time, at the pace of two decades to professional', () => {
+    expect((1 - DAILY) ** (20 * 365)).toBeCloseTo(20 / 90, 10);
+    const after = v(written(50, 56));
+    for (const id of ['dialogue', 'writing', 'premise', 'research', 'innovation', 'screenplay-format', 'film-production-process', 'time-management', 'perseverance']) expect(after[id], id).toBeCloseTo(100 - 50 * (1 - DAILY) ** 56, 10);
     expect(after['pitching']).toBe(50);
     expect(after['revision']).toBe(50);
-    expect(Object.values(written(100).slices.attributes['screenwriter'] as Record<string, number>).every((v) => v === 100)).toBe(true);
+    expect(Object.values(v(written(100))).every((x) => x === 100)).toBe(true);
   });
 
   it('is refused in a form there is not, for days that are not whole, or before the attributes are chosen', () => {
     expect(() => dispatch(made(50), writeScript, { form: 'novel' as 'feature', days: 10 })).toThrow("there's no form novel");
     expect(() => dispatch(made(50), writeScript, { form: 'short', days: 0 })).toThrow(RangeError);
     expect(() => dispatch(made(50), writeScript, { form: 'short', days: 1.5 })).toThrow('the days given are a whole number of at least 1 (1.5)');
+    expect(first(dispatch(made(50), writeScript, { form: 'short', days: 1 })).needed).toBe(daysNeeded(values(50), 'short'));
     const bare = begin(SEED, 0, { attributes: structuredClone(ATTRIBUTES_START), scripts: structuredClone(SCRIPTS_START) });
     expect(() => dispatch(bare, writeScript, { form: 'short', days: 5 })).toThrow("the screenwriter's attributes haven't been chosen");
     expect(() => scriptOf(SCRIPTS_START, 1)).toThrow("there's no script 1");
   });
 
   it('is the same for the same life and differs for another', () => {
-    expect(first(written(50, 120)).parts).toEqual(first(written(50, 120)).parts);
-    expect(first(written(50, 120, {}, 'fedcba9876543210')).parts).not.toEqual(first(written(50, 120)).parts);
+    expect(first(written(50)).facets).toEqual(first(written(50)).facets);
+    expect(first(written(50, 200, {}, 'fedcba9876543210')).facets).not.toEqual(first(written(50)).facets);
+  });
+
+  it('script.write: a better writer writes better dialogue', () => {
+    falsifyAny({ feature: 'script.write', claim: 'bites', says: 'a writer at 90 in dialogue writes better dialogue than one at 30', base: 30, twin: 90, outcome: (n) => partScore(first(written(50, 200, { dialogue: n })), 'dialogue') });
   });
 });
 
 describe('a reader', () => {
-  it("grades by its own criteria: the Black List's five, PAGE's ten", () => {
+  it("grades by its own criteria, each on the facets those criteria name", () => {
     expect(Object.keys(CRITERIA['black-list'])).toEqual(['premise', 'plot', 'characters', 'dialogue', 'setting']);
     expect(Object.keys(CRITERIA.page)).toEqual(['premise/concept', 'presentation', 'structure', 'plot', 'pacing', 'characters', 'dialogue', 'theme', 'style/tone', 'marketing potential']);
-    for (const mixes of Object.values(CRITERIA)) for (const mix of Object.values(mixes)) expect(Object.values(mix).reduce((a, b) => a + (b as number), 0)).toBeCloseTo(1, 10);
-    const graded = new Set(Object.values(CRITERIA).flatMap((m) => Object.values(m).flatMap((mix) => Object.keys(mix))));
-    expect([...graded].sort()).toEqual([...PART_NAMES].sort());
-    expect(Object.values(BLACK_LIST_WEIGHTS).reduce((a, b) => a + b, 0)).toBeCloseTo(1, 4);
+    const read = new Set(Object.values(CRITERIA).flatMap((m) => Object.values(m).flat()));
+    expect([...read].sort()).toEqual([...PARTS].sort());
+    expect(graded('black-list', 'dialogue').map((f) => f.id)).toEqual(facetsOf('dialogue').map((f) => f.id));
+    expect(graded('page', 'dialogue').map((f) => f.id)).toEqual(['natural-and-believable', 'a-voice-for-each-character', 'reveals-character', 'moves-the-story', 'succinct']);
+    expect(graded('page', 'film-production-process').map((f) => f.id)).toEqual(facetsOf('film-production-process').map((f) => f.id));
   });
 
-  it('gives a writer at 100 the top of its scale, one at 50 the middle, one at 10 the bottom', () => {
-    const top = dispatch(written(100), readScript, { script: 1, reader: 'black-list' });
-    const r = only(first(top).reads);
-    expect(r.overall).toBe(10);
-    for (const v of Object.values(r.scores)) expect(v).toBeGreaterThanOrEqual(9);
-    expect(r).toMatchObject({ reader: 'black-list', at: 0 });
-    const page = only(first(dispatch(written(100), readScript, { script: 1, reader: 'page' })).reads);
-    expect(Object.keys(page.scores)).toHaveLength(10);
-    expect(page.overall).toBeGreaterThanOrEqual(9);
-    const mid = only(first(dispatch(written(50, 120), readScript, { script: 1, reader: 'black-list' })).reads);
-    expect(mid.overall).toBeGreaterThanOrEqual(4);
-    expect(mid.overall).toBeLessThanOrEqual(7);
-    const low = only(first(dispatch(written(10, 120), readScript, { script: 1, reader: 'black-list' })).reads);
-    expect(low.overall).toBeLessThanOrEqual(3);
-  });
-
-  it("weighs the Black List's components as its founder found, a weak execution score holding the whole down", () => {
-    const at = (parts: Partial<Record<Part, number>>): Script => ({ id: 9, form: 'feature', started: 0, needed: 60, drafts: 1, reads: [], parts: { ...Object.fromEntries(PART_NAMES.map((p) => [p, 100])), ...parts } as Record<Part, number> });
-    const strong = scoresOf('black-list', at({}), ctx);
-    expect(strong.overall).toBe(10);
-    const weakPlot = scoresOf('black-list', at({ plot: 40 }), ctx);
-    expect(weakPlot.scores['plot']).toBeLessThanOrEqual(5);
-    expect(weakPlot.overall).toBeLessThanOrEqual((weakPlot.scores['plot'] as number) + 1);
-    const weakSetting = scoresOf('black-list', at({ setting: 40 }), ctx);
+  it("weighs the Black List's components as its regression found, the overall placed between the weakest and strongest", () => {
+    expect(BLACK_LIST_WEIGHTS).toEqual({ plot: 0.318, characters: 0.234, dialogue: 0.219, premise: 0.13, setting: 0.102 });
+    expect(BLACK_LIST_POSITION).toBe(0.38);
+    expect(TASTE).toEqual({ lenience: 0.75, criterion: 0.6, residual: 0.4 });
+    const at = (parts: Partial<Record<Part, number>>): Script => ({ id: 9, form: 'feature', started: 0, needed: 56, drafts: 1, reads: [], facets: Object.fromEntries(PARTS.map((p) => [p, Object.fromEntries(facetsOf(p).map((f) => [f.id, parts[p] ?? 100]))])) as Record<Part, Record<string, number>> });
+    expect(scoresOf('black-list', at({}), ctx).overall).toBeGreaterThanOrEqual(9);
+    const weakPlot = scoresOf('black-list', at({ plot: 30 }), ctx);
+    const weakSetting = scoresOf('black-list', at({ setting: 30 }), ctx);
     expect(weakSetting.overall).toBeGreaterThan(weakPlot.overall);
-    const flat = scoresOf('page', at({ format: 0 }), ctx);
-    expect(flat.scores['presentation']).toBeLessThanOrEqual(2);
-    expect(flat.overall).toBe(Math.round(Object.values(flat.scores).reduce((a, b) => a + b, 0) / 10));
+    expect(scoresOf('page', at({ 'screenplay-format': 0 }), ctx).scores['presentation']).toBeLessThanOrEqual(3);
   });
 
-  it("notes the three weakest parts it grades, weakest first", () => {
-    const l = dispatch(written(50, 120, { dialogue: 0, plot: 5, setting: 10, 'screenplay-format': 0 }), readScript, { script: 1, reader: 'black-list' });
-    const s = first(l);
-    const graded: Part[] = ['characters', 'dialogue', 'plot', 'premise', 'setting'];
-    expect(s.reads[0]?.notes).toEqual([...graded].sort((x, y) => s.parts[x] - s.parts[y]).slice(0, 3));
-    expect(s.reads[0]?.notes).not.toContain('format');
-    expect(new Set(s.reads[0]?.notes)).toEqual(new Set(['dialogue', 'plot', 'setting']));
-    const p = first(dispatch(written(50, 120, { 'screenplay-format': 0, dialogue: 0, plot: 5 }), readScript, { script: 1, reader: 'page' }));
-    expect(p.reads[0]?.notes).toContain('format');
+  it("scores as the Black List's own readers do: a writer at 53 averages about its 5.74, an 8 is rare below the top", () => {
+    const reads = (lvl: number, n: number) =>
+      Array.from({ length: n }, (_, i) => {
+        const l = dispatch(dispatch(written(lvl, 200, {}, (i + 1).toString(16).padStart(16, '0')), readScript, { script: 1, reader: 'black-list' }), readScript, { script: 1, reader: 'black-list' });
+        const r = first(l).reads;
+        return [r[0]?.overall ?? 0, r[1]?.overall ?? 0] as const;
+      });
+    const mid = reads(53, 200);
+    expect(mean(mid.map((r) => r[0]))).toBeGreaterThan(5.2);
+    expect(mean(mid.map((r) => r[0]))).toBeLessThan(6.2);
+    expect(mid.filter((r) => r[0] >= 8).length / 200).toBeLessThan(0.05);
+    const gap = (k: number) => mid.filter((r) => Math.abs(r[0] - r[1]) === k).length / 200;
+    expect(gap(0)).toBeGreaterThan(0.22);
+    expect(gap(0)).toBeLessThan(0.38);
+    expect(gap(0) + gap(1)).toBeGreaterThan(0.64);
+    expect(gap(0) + gap(1)).toBeLessThan(0.84);
+    expect(mean(reads(100, 40).map((r) => r[0]))).toBeGreaterThan(8.8);
+    expect(mean(reads(10, 40).map((r) => r[0]))).toBeLessThan(3);
+  });
+
+  it('notes only facets of the parts it grades, though another part be weaker', () => {
+    const s = first(dispatch(written(60, 200, { theme: 0, structure: 0 }), readScript, { script: 1, reader: 'black-list' }));
+    for (const n of only(s.reads).notes) expect(['premise', 'plot', 'characters', 'dialogue', 'setting']).toContain(n.part);
+  });
+
+  it('notes the three weakest facets it grades, weakest first', () => {
+    const s = first(dispatch(written(50, 200, { dialogue: 0, plot: 5 }), readScript, { script: 1, reader: 'black-list' }));
+    const notes = only(s.reads).notes;
+    const all = (['premise', 'plot', 'characters', 'dialogue', 'setting'] as Part[]).flatMap((part) => graded('black-list', part).map((f) => ({ part, facet: f.id })));
+    const score = (n: { part: Part; facet: string }) => s.facets[n.part][n.facet] as number;
+    expect(notes).toEqual([...all].sort((x, y) => score(x) - score(y)).slice(0, 3));
+    expect(notes.every((n) => n.part === 'dialogue' || n.part === 'plot')).toBe(true);
+  });
+
+  it('combines exactly: the score, the read\'s lenience, each criterion\'s taste, the weights, the place between weakest and strongest, the residual', () => {
+    for (let i = 1; i <= 12; i += 1) {
+    const seed = i.toString(16).padStart(16, '0');
+    const ws = first(written(45 + i * 3, 200, {}, seed));
+    const d = (...k: (string | number)[]) => draws(seedFromText(seed), 'work.read', ...k);
+    const ctxi = { draws: (decider: 'work.read', ...keys: (string | number)[]) => draws(seedFromText(seed), decider, ...keys) };
+    for (const reader of ['black-list', 'page'] as const) {
+      const key = [reader, 1, 1, 0] as const;
+      const lenience = 0.75 * normal(d(...key, 'lenience'));
+      const exact: Record<string, number> = {};
+      for (const [name, parts] of Object.entries(CRITERIA[reader])) {
+        const n = mean(parts.map((p) => mean(graded(reader, p).map((f) => ws.facets[p][f.id] as number))));
+        exact[name] = Math.min(10, Math.max(1, 1 + (9 * n) / 100 + lenience + 0.6 * normal(d(...key, name))));
+      }
+      const residual = 0.4 * normal(d(...key, 'overall'));
+      const vals = Object.values(exact);
+      const lo = Math.min(...vals);
+      const hi = Math.max(...vals);
+      const weighed = Object.entries(BLACK_LIST_WEIGHTS).reduce((t, [k, w]) => t + w * (exact[k] ?? 0), 0);
+      const expected = reader === 'black-list' ? (weighed + lo + 0.38 * (hi - lo)) / 2 + residual : mean(vals) + residual;
+      const got = scoresOf(reader, ws, ctxi);
+      expect(got.scores, reader).toEqual(Object.fromEntries(Object.entries(exact).map(([k, x]) => [k, Math.round(x)])));
+      expect(got.overall, reader).toBe(Math.min(10, Math.max(1, Math.round(expected))));
+    }
+    }
+  });
+
+  it('gives each read its own taste, the same read again the same', () => {
+    const l = dispatch(dispatch(written(55), readScript, { script: 1, reader: 'page' }), readScript, { script: 1, reader: 'page' });
+    expect(first(l).reads.map((r) => r.scores)).not.toEqual([first(l).reads[0]?.scores, first(l).reads[0]?.scores]);
+    expect(first(dispatch(written(55), readScript, { script: 1, reader: 'page' })).reads).toEqual(first(dispatch(written(55), readScript, { script: 1, reader: 'page' })).reads);
   });
 
   it('is refused for a reader there is not', () => {
@@ -176,167 +265,131 @@ describe('a reader', () => {
   });
 
   it('script.read: a better draft is graded higher', () => {
-    falsifyAny({ feature: 'script.read', claim: 'bites', says: 'a writer at 90 is graded above one at 30', base: 30, twin: 90, outcome: (n) => first(dispatch(written(n, 120), readScript, { script: 1, reader: 'black-list' })).reads[0]?.overall });
+    falsifyAny({ feature: 'script.read', claim: 'bites', says: 'a writer at 90 is graded above one at 30', base: 30, twin: 90, outcome: (n) => first(dispatch(written(n), readScript, { script: 1, reader: 'black-list' })).reads[0]?.overall });
   });
 });
 
 describe('a revision', () => {
-  it("moves the noted parts toward what the writer can do, as far as Revision carries it", () => {
-    const rushed = dispatch(written(80, 10), readScript, { script: 1, reader: 'black-list' });
-    const notes = only(first(rushed).reads).notes;
-    const before = first(rushed).parts;
-    const after = first(dispatch(rushed, reviseScript, { script: 1, days: 30 }));
-    expect(after.drafts).toBe(2);
-    for (const p of notes) expect(after.parts[p], p).toBeGreaterThan(before[p]);
-    const better = first(dispatch(dispatch(written(80, 10, { revision: 100 }), readScript, { script: 1, reader: 'black-list' }), reviseScript, { script: 1, days: 30 }));
-    const worse = first(dispatch(dispatch(written(80, 10, { revision: 0 }), readScript, { script: 1, reader: 'black-list' }), reviseScript, { script: 1, days: 30 }));
-    for (const p of notes) expect(better.parts[p], p).toBeGreaterThan(worse.parts[p]);
+  const rushed = (each: Record<string, number> = {}) => dispatch(written(80, 10, each), readScript, { script: 1, reader: 'black-list' });
+
+  it("does what the MBA says each kind is, in its share of a draft's time", () => {
+    expect(REVISIONS.rewrite.share).toBeCloseTo(6.14 / 9.22, 10);
+    expect(REVISIONS.polish.share).toBeCloseTo(3.07 / 9.22, 10);
+    expect(REVISIONS.rewrite.parts).toEqual(PARTS);
+    expect(REVISIONS.polish.parts).toEqual(['dialogue', 'visual-storytelling', 'screenplay-format']);
+    const before = first(rushed());
+    const polished = first(dispatch(rushed(), reviseScript, { script: 1, kind: 'polish', days: 30 }));
+    for (const p of PARTS) if (!REVISIONS.polish.parts.includes(p)) expect(polished.facets[p], p).toEqual(before.facets[p]);
+    expect(partScore(polished, 'dialogue')).toBeGreaterThan(partScore(before, 'dialogue'));
+    expect(() => dispatch(rushed(), reviseScript, { script: 1, kind: 'redo' as 'rewrite', days: 3 })).toThrow("there's no revision redo");
+    expect(() => dispatch(rushed(), reviseScript, { script: 1, kind: 'rewrite', days: 0 })).toThrow('the days given are a whole number of at least 1 (0)');
   });
 
-  it('keeps the work on the noted parts as far as Taking Notes keeps it', () => {
-    const base = (tn: number) => dispatch(written(80, 10, { 'taking-notes': tn }), readScript, { script: 1, reader: 'black-list' });
-    const notes = only(first(base(0)).reads).notes;
-    const gain = (tn: number) => {
-      const b = base(tn);
-      const a = first(dispatch(b, reviseScript, { script: 1, days: 30 }));
-      return notes.reduce((t, p) => t + a.parts[p] - first(b).parts[p], 0);
-    };
-    expect(gain(100)).toBeGreaterThan(gain(0));
-  });
-
-  it("works on what the writer's own read thinks weakest where no reader has noted it, read truer with a better eye", () => {
-    const s = first(written(60, 120));
-    const sharp = ownRead({ ...values(60), 'story-critique': 100, 'critical-thinking': 100 }, s, ctx);
-    for (const p of PART_NAMES) expect(sharp[p]).toBeCloseTo(s.parts[p], 10);
-    const blind = ownRead(values(60, { 'story-critique': 0, 'critical-thinking': 0 }), s, ctx);
-    const off = PART_NAMES.reduce((t, p) => t + Math.abs(blind[p] - s.parts[p]), 0);
-    expect(off).toBeGreaterThan(0);
-    for (const p of PART_NAMES) expect(Math.abs(blind[p] - s.parts[p])).toBeLessThanOrEqual(20);
-    const after = dispatch(written(60, 10), reviseScript, { script: 1, days: 20 });
+  it("moves each facet toward the writer, by the days, Revision, and the share of the work Taking Notes keeps on the notes", () => {
+    const base = rushed({ revision: 40, 'taking-notes': 60 });
+    const before = first(base);
+    const vb = v(base);
+    const after = dispatch(base, reviseScript, { script: 1, kind: 'rewrite', days: 10 });
+    const notes = only(before.reads).notes;
+    const kept = 0.5 + (0.5 * skillOf(vb, 'screenwriter', 'taking-notes')) / 100;
+    const reach = Math.min(1, 10 / (REVISIONS.rewrite.share * before.needed)) * (0.3 + (0.5 * skillOf(vb, 'screenwriter', 'revision')) / 100);
+    const total = PARTS.reduce((t, p) => t + facetsOf(p).length, 0);
+    for (const p of PARTS) {
+      for (const f of facetsOf(p)) {
+        const noted = notes.some((n) => n.part === p && n.facet === f.id);
+        const share = (noted ? kept / notes.length : 0) + (1 - kept) / total;
+        const target = Math.min(100, skill(vb, p, f) + 5);
+        const was = before.facets[p][f.id] as number;
+        expect(first(after).facets[p][f.id], `${p} ${f.id}`).toBeCloseTo(was + (target - was) * Math.min(1, reach * share * 3), 10);
+      }
+    }
     expect(first(after).drafts).toBe(2);
-    const grew = after.slices.attributes['screenwriter'] as Record<string, number>;
-    expect(grew['story-critique']).toBeGreaterThan(60);
-    expect(grew['critical-thinking']).toBeGreaterThan(60);
-    expect(grew['revision']).toBeGreaterThan(60);
-    expect(grew['taking-notes']).toBe(60);
+    const grown = v(after);
+    for (const id of ['revision', 'taking-notes', 'writing', ...new Set(notes.map((n) => n.part))]) expect(grown[id], id).toBeCloseTo(100 - (100 - (vb[id] as number)) * (1 - DAILY) ** 10, 10);
+    expect(grown['story-critique']).toBe(vb['story-critique']);
   });
 
-  it('raises Revision and Taking Notes when it answers a reader', () => {
-    const l = dispatch(dispatch(written(60, 10), readScript, { script: 1, reader: 'page' }), reviseScript, { script: 1, days: 20 });
-    const v = l.slices.attributes['screenwriter'] as Record<string, number>;
-    expect(v['revision']).toBeGreaterThan(60);
-    expect(v['taking-notes']).toBeGreaterThan(60);
-    expect(v['story-critique']).toBe(60);
+  it('polishes only what a polish may change, its notes on other parts set aside', () => {
+    const base = dispatch(written(80, 10, { plot: 0, dialogue: 10 }), readScript, { script: 1, reader: 'page' });
+    const before = first(base);
+    const vb = v(base);
+    const after = first(dispatch(base, reviseScript, { script: 1, kind: 'polish', days: 10 }));
+    const notes = only(before.reads).notes.filter((n) => REVISIONS.polish.parts.includes(n.part));
+    const kept = 0.5 + (0.5 * skillOf(vb, 'screenwriter', 'taking-notes')) / 100;
+    const reach = Math.min(1, 10 / (REVISIONS.polish.share * before.needed)) * (0.3 + (0.5 * skillOf(vb, 'screenwriter', 'revision')) / 100);
+    const open = REVISIONS.polish.parts.flatMap((part) => facetsOf(part).map((f) => ({ part, facet: f })));
+    for (const { part, facet } of open) {
+      const noted = notes.some((n) => n.part === part && n.facet === facet.id);
+      const share = (noted ? kept / notes.length : 0) + (1 - kept) / open.length;
+      const was = before.facets[part][facet.id] as number;
+      expect(after.facets[part][facet.id], `${part} ${facet.id}`).toBeCloseTo(was + (Math.min(100, skill(vb, part, facet) + 5) - was) * Math.min(1, reach * share * 3), 10);
+    }
+    expect(only(before.reads).notes.some((n) => !REVISIONS.polish.parts.includes(n.part))).toBe(true);
+    expect(notes.length).toBeGreaterThan(0);
   });
 
-  it('script.write: a better writer writes a better draft', () => {
-    falsifyAny({ feature: 'script.write', claim: 'bites', says: 'a writer at 90 in dialogue writes better dialogue than one at 30', base: 30, twin: 90, outcome: (n) => first(written(50, 120, { dialogue: n })).parts.dialogue });
+  it('keeps more of the work on the noted facets with better Taking Notes, and carries further with better Revision', () => {
+    const gain = (each: Record<string, number>) => {
+      const b = rushed(each);
+      const a = first(dispatch(b, reviseScript, { script: 1, kind: 'rewrite', days: 20 }));
+      return only(first(b).reads).notes.reduce((t, n) => t + (a.facets[n.part][n.facet] as number) - (first(b).facets[n.part][n.facet] as number), 0);
+    };
+    expect(gain({ 'taking-notes': 100 })).toBeGreaterThan(gain({ 'taking-notes': 0 }));
+    expect(gain({ revision: 100 })).toBeGreaterThan(gain({ revision: 0 }));
+  });
+
+  it("works where no reader has noted on what the writer's own read thinks weakest, read truer with a better eye", () => {
+    const s = first(written(60));
+    const sharp = ownRead(values(100), s, ctx);
+    for (const p of PARTS) for (const f of facetsOf(p)) expect(sharp[p][f.id]).toBeCloseTo(s.facets[p][f.id] as number, 10);
+    const w = values(60, { 'story-critique': 30, 'critical-thinking': 80 });
+    const r = ownRead(w, s, ctx);
+    const eye = 0.7 * skillOf(w, 'screenwriter', 'story-critique') + 0.3 * skillOf(w, 'screenwriter', 'critical-thinking');
+    for (const p of PARTS) for (const f of facetsOf(p)) expect(r[p][f.id]).toBeCloseTo((s.facets[p][f.id] as number) + 20 * (1 - eye / 100) * u('work.read', 'own', 1, 1, p, f.id), 10);
+    const base = written(60, 10);
+    const after = dispatch(base, reviseScript, { script: 1, kind: 'rewrite', days: 20 });
+    expect(first(after).drafts).toBe(2);
+    expect(v(after)['story-critique']).toBeGreaterThan(60);
+    expect(v(after)['critical-thinking']).toBeGreaterThan(60);
+    expect(v(after)['taking-notes']).toBe(60);
+  });
+
+  it("revises without notes exactly on the three facets the writer's own read finds weakest", () => {
+    const base = written(60, 10);
+    const s = first(base);
+    const vb = v(base);
+    const r = ownRead(vb, s, ctx);
+    const open = PARTS.flatMap((part) => facetsOf(part).map((f) => ({ part, facet: f })));
+    const focus = [...open].sort((x, y) => (r[x.part][x.facet.id] as number) - (r[y.part][y.facet.id] as number)).slice(0, 3);
+    const after = first(dispatch(base, reviseScript, { script: 1, kind: 'rewrite', days: 20 }));
+    const kept = 0.5 + (0.5 * skillOf(vb, 'screenwriter', 'taking-notes')) / 100;
+    const reach = Math.min(1, 20 / (REVISIONS.rewrite.share * s.needed)) * (0.3 + (0.5 * skillOf(vb, 'screenwriter', 'revision')) / 100);
+    for (const { part, facet } of open) {
+      const share = (focus.some((x) => x.part === part && x.facet.id === facet.id) ? kept / 3 : 0) + (1 - kept) / open.length;
+      const was = s.facets[part][facet.id] as number;
+      expect(after.facets[part][facet.id], `${part} ${facet.id}`).toBeCloseTo(was + (Math.min(100, skill(vb, part, facet) + 5) - was) * Math.min(1, reach * share * 3), 10);
+    }
   });
 
   it('script.revise: more days carry a revision further', () => {
-    const rushed = dispatch(written(80, 10), readScript, { script: 1, reader: 'black-list' });
-    falsifyAny({ feature: 'script.revise', claim: 'bites', says: 'a longer revision lifts the draft further', base: 2, twin: 30, outcome: (d) => first(dispatch(rushed, reviseScript, { script: 1, days: d })).parts.dialogue });
-  });
-});
-
-describe('the reckoning, exactly', () => {
-  const u = (decider: 'work.draft' | 'work.read', ...keys: (string | number)[]) => 2 * draws(seedFromText(SEED), decider, ...keys).float() - 1;
-  const clamp = (n: number) => Math.min(100, Math.max(0, n));
-
-  it("scores each part as the writer's level in it, shortened by rushing, moved within the writer's spread", () => {
-    const v = values(50, { dialogue: 80 });
-    const s = first(written(50, 30, { dialogue: 80 }));
-    const needed = daysNeeded(v, 'feature');
-    expect(needed).toBe(80);
-    const f = finish(v, 30, needed);
-    for (const p of PART_NAMES) expect(s.parts[p], p).toBeCloseTo(clamp(skill(v, p) * f + spread(skill(v, p)) * u('work.draft', 1, 1, p)), 10);
-    expect(first(dispatch(made(50), writeScript, { form: 'short', days: 1 })).needed).toBe(daysNeeded(values(50), 'short'));
+    falsifyAny({ feature: 'script.revise', claim: 'bites', says: 'a longer rewrite lifts the draft further', base: 2, twin: 30, outcome: (d) => facetMean(first(dispatch(rushed(), reviseScript, { script: 1, kind: 'rewrite', days: d }))) });
   });
 
-  it("raises each attribute used by the draft's share of its days, up to half again", () => {
-    const at = (days: number) => written(50, days).slices.attributes['screenwriter'] as Record<string, number>;
-    expect(at(60)['dialogue']).toBeCloseTo(50 + 4 * (60 / 80) * 0.5, 10);
-    expect(at(240)['dialogue']).toBeCloseTo(50 + 4 * 1.5 * 0.5, 10);
-  });
-
-  it("reads the writer's own judgement of each part, off by the eye's want", () => {
-    const v = values(60, { 'story-critique': 30, 'critical-thinking': 80 });
-    const s = first(written(60, 120));
-    const r = ownRead(v, s, ctx);
-    const eye = 0.7 * 30 + 0.3 * 80;
-    for (const p of PART_NAMES) expect(r[p], p).toBeCloseTo(s.parts[p] + 20 * (1 - eye / 100) * u('work.read', 'own', 1, 1, p), 10);
-  });
-
-  it("grades each criterion as the parts it reads, moved by the reader's taste, on 1 to 10", () => {
-    const s = first(written(60, 120));
-    const { scores } = scoresOf('page', s, ctx);
-    for (const [name, mix] of Object.entries(CRITERIA.page)) {
-      const n = Object.entries(mix).reduce((t, [p, w]) => t + (w as number) * s.parts[p as Part], 0);
-      expect(scores[name], name).toBe(Math.min(10, Math.max(1, Math.round(1 + (9 * (n + 5 * u('work.read', 'page', 1, 1, name))) / 100))));
-    }
-  });
-
-  it('revises each part toward the writer, by the days, Revision, and the share of the work on it', () => {
-    const v = values(70, { revision: 40, 'taking-notes': 60, dialogue: 90 });
-    const base = dispatch(written(70, 10, { revision: 40, 'taking-notes': 60, dialogue: 90 }), readScript, { script: 1, reader: 'black-list' });
-    const before = first(base);
-    const vBefore = base.slices.attributes['screenwriter'] as Record<string, number>;
-    const after = dispatch(base, reviseScript, { script: 1, days: 10 });
-    const notes = only(before.reads).notes;
-    const kept = 0.5 + (0.5 * (vBefore['taking-notes'] as number)) / 100;
-    const reach = Math.min(1, 10 / (0.4 * before.needed)) * (0.3 + (0.5 * (vBefore['revision'] as number)) / 100);
-    for (const p of PART_NAMES) {
-      const share = (notes.includes(p) ? kept / 3 : 0) + (1 - kept) / PART_NAMES.length;
-      const target = Math.min(100, skill(vBefore, p) + 5);
-      expect(first(after).parts[p], p).toBeCloseTo(before.parts[p] + (target - before.parts[p]) * Math.min(1, reach * share * 3), 10);
-    }
-    expect(v['revision']).toBe(40);
-    const grown = after.slices.attributes['screenwriter'] as Record<string, number>;
-    const use = Math.min(1.5, 10 / (0.4 * before.needed));
-    expect(grown['revision']).toBeCloseTo((vBefore['revision'] as number) + 4 * (use / 2) * (1 - (vBefore['revision'] as number) / 100), 10);
-    expect(grown['taking-notes']).toBeCloseTo((vBefore['taking-notes'] as number) + 4 * (use / 2) * (1 - (vBefore['taking-notes'] as number) / 100), 10);
-    expect(grown['critical-thinking']).toBe(vBefore['critical-thinking']);
-    for (const p of notes) for (const id of Object.keys(PARTS[p])) if (id !== 'revision') expect(grown[id], id).toBeGreaterThan(vBefore[id] as number);
-    const long = dispatch(base, reviseScript, { script: 1, days: 400 });
-    const capped = (long.slices.attributes['screenwriter'] as Record<string, number>)['taking-notes'] as number;
-    expect(capped).toBeCloseTo((vBefore['taking-notes'] as number) + 4 * 0.75 * (1 - (vBefore['taking-notes'] as number) / 100), 10);
-    for (const p of PART_NAMES) expect(first(long).parts[p]).toBeLessThanOrEqual(Math.min(100, skill(vBefore, p) + 5) + 1e-9);
-  });
-
-  it('revises without notes on what the own read finds weakest, growing the eye', () => {
-    const base = written(60, 10);
-    const s = first(base);
-    const vb = base.slices.attributes['screenwriter'] as Record<string, number>;
-    const r = ownRead(vb, s, ctx);
-    const focus = [...PART_NAMES].sort((x, y) => r[x] - r[y]).slice(0, 3);
-    const after = first(dispatch(base, reviseScript, { script: 1, days: 20 }));
-    const kept = 0.5 + (0.5 * (vb['taking-notes'] as number)) / 100;
-    const reach = Math.min(1, 20 / (0.4 * s.needed)) * (0.3 + (0.5 * (vb['revision'] as number)) / 100);
-    for (const p of PART_NAMES) {
-      const share = (focus.includes(p) ? kept / 3 : 0) + (1 - kept) / PART_NAMES.length;
-      expect(after.parts[p], p).toBeCloseTo(s.parts[p] + (Math.min(100, skill(vb, p) + 5) - s.parts[p]) * Math.min(1, reach * share * 3), 10);
-    }
-  });
-
-  it('names its weakest parts in their order where they tie', () => {
-    const flat: Script = { id: 1, form: 'short', started: 0, needed: 10, drafts: 1, reads: [], parts: Object.fromEntries(PART_NAMES.map((p) => [p, 50])) as Record<Part, number> };
-    const l = dispatch(begin(SEED, 0, { attributes: {}, scripts: { written: [flat] } }), readScript, { script: 1, reader: 'black-list' });
-    expect(only(first(l).reads).notes).toEqual(['characters', 'dialogue', 'plot']);
-  });
-
-  it('finds the script asked for among several, and refuses a revision of no days', () => {
+  it('finds the script asked for among several', () => {
     const two = dispatch(dispatch(written(50, 60), writeScript, { form: 'short', days: 5 }), readScript, { script: 2, reader: 'page' });
-    expect(two.slices.scripts.written.map((x) => [x.id, x.form, x.reads.length])).toEqual([[1, 'feature', 0], [2, 'short', 1]]);
+    expect(two.slices.scripts.written.map((x) => [x.id, x.form, x.reads.length])).toEqual([
+      [1, 'feature', 0],
+      [2, 'short', 1],
+    ]);
     expect(scriptOf(two.slices.scripts, 2).form).toBe('short');
-    expect(() => dispatch(written(50), reviseScript, { script: 1, days: 0 })).toThrow('the days given are a whole number of at least 1 (0)');
   });
 
   it('is run through the frame, each command declaring what it reads and writes', () => {
-    expect(commandIndex().filter((x) => x.id.startsWith('script.') || x.id === 'attributes.choose')).toEqual([
-      { id: 'attributes.choose', reads: [], writes: ['attributes'] },
+    expect(commandIndex().filter((x) => x.id.startsWith('script.') && ['script.write', 'script.revise', 'script.read'].includes(x.id))).toEqual([
       { id: 'script.write', reads: [], writes: ['attributes', 'scripts'] },
       { id: 'script.revise', reads: [], writes: ['attributes', 'scripts'] },
       { id: 'script.read', reads: [], writes: ['scripts'] },
     ]);
+    expect(commandIndex().find((x) => x.id === 'attributes.choose')).toEqual({ id: 'attributes.choose', reads: [], writes: ['attributes'] });
   });
 });

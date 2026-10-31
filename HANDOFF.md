@@ -1979,4 +1979,19 @@ to work on them, and a facet a source ties to another attribute to draw on it. T
 the facet map (workbench/briefs/BRIEF-facets.md), alongside three on the real figures behind the model
 (workbench/briefs/BRIEF-calibration.md). Both land as research files and register entries, then the engines are
 rebuilt on them.
+Rebuilt 2026-10-31 on the facets and the real figures (R-4607, R-4608): the attributes carry their sourced definition
+and facets (src/person/attributes/attributes.json, held to the research by a test); a script is scored facet by facet
+(60% the part's attribute, 25% Writing, 15% the attributes a source ties to the facet, Innovation and Research where
+their own facets name the part); readers grade the facets their own criteria name, the Black List combining its
+components by its regression's weights and the overall's place 0.38 from the weakest, each read's taste a lenience,
+a per-criterion spread and the overall's residual fitted to its readers' agreement (simulated: the same score 26%, a
+point apart 45%, against its 30% and 44%; a writer at 53 averages about its 5.74); notes name the weakest graded
+facets and revisions work on them; a rewrite changes anything, a polish only dialogue, narration and action, in the
+MBA's shares of a draft's time; a feature takes eight weeks at the top, an episode within the MBA's 2.4; skill grows a
+day at a time at two decades to professional; a script's ten documents are written each on its own (the treatment in
+the MBA's 6.1 weeks at the slowest); cold queries answer 1.5%; a third of the specs taken out sell at the market's
+level; a room's season is twenty weeks paid at the MBA's 2026 minimum for the rung. R-4605 and R-4606 now name only
+what no source gives. 58 tests; the three files at 100% mutation score (684 mutants). Still the game's: the shares, the
+spreads at 0 and 100, a pilot's and a short's days, how far a revision carries, the chances of a contact, a warm
+request, a staffing and a room's marks; each blocker in R-4608 says what was tried.
 
