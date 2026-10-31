@@ -334,6 +334,23 @@
    "work"
   ]
  },
+ "BW": {
+  "name": "Omang (national identity card) ID number",
+  "issuer": "the Registrar of National Registration (the Department of Civil and National Registration)",
+  "format": {
+   "length": 9,
+   "pattern": "^\\d{4}[12]\\d{4}$"
+  },
+  "when": "registration",
+  "who": [
+   "citizens"
+  ],
+  "from": 16,
+  "within": {
+   "n": 14,
+   "unit": "working day"
+  }
+ },
  "BZ": {
   "name": "Tax Identification Number (TIN)",
   "issuer": "the Belize Tax Service",
@@ -469,6 +486,21 @@
    "citizens"
   ],
   "from": 18,
+  "needed": [
+   "tax"
+  ]
+ },
+ "CV": {
+  "name": "Número de Identificação Fiscal (NIF)",
+  "issuer": "the Direção Geral das Contribuições e Impostos (DGCI), of the Direção Nacional de Receitas do Estado",
+  "format": {
+   "length": 9,
+   "pattern": "^\\d{9}$"
+  },
+  "when": "application",
+  "who": [
+   "anyone"
+  ],
   "needed": [
    "tax"
   ]
@@ -808,6 +840,19 @@
  "GL": {
   "issuedBy": "DK"
  },
+ "GN": {
+  "name": "numéro personnel d'identification (NPI)",
+  "issuer": "the body in charge of civil status and the identification of natural persons",
+  "format": {
+   "length": 18,
+   "pattern": "^(?=(?:\\d*[A-Za-z]){3}\\d*$)[0-9A-Za-z]{16}\\d{2}$"
+  },
+  "when": "birth",
+  "who": [
+   "citizens",
+   "residents"
+  ]
+ },
  "GP": {
   "issuedBy": "FR"
  },
@@ -842,6 +887,18 @@
  },
  "GU": {
   "issuedBy": "US"
+ },
+ "GY": {
+  "name": "Taxpayer Identification Number (TIN)",
+  "issuer": "the Guyana Revenue Authority",
+  "format": {
+   "length": 9,
+   "pattern": "^\\d{9}$"
+  },
+  "when": "application",
+  "who": [
+   "anyone"
+  ]
  },
  "HK": {
   "name": "Hong Kong Identity Card number",
@@ -1901,6 +1958,21 @@
   "who": [
    "citizens",
    "residents"
+  ]
+ },
+ "SR": {
+  "name": "fiscaal identificatienummer (FIN)",
+  "issuer": "the Belastingdienst (its inspectors)",
+  "format": {
+   "length": 10,
+   "pattern": "^\\d{10}$"
+  },
+  "when": "registration",
+  "who": [
+   "anyone"
+  ],
+  "needed": [
+   "tax"
   ]
  },
  "TH": {

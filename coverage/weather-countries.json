@@ -2113,7 +2113,6 @@
     "R-0039",
     "R-0040",
     "R-0060",
-    "R-0062",
     "R-0091"
    ],
    "tests": [
@@ -2909,19 +2908,18 @@
   },
   {
    "key": "SB",
-   "status": "blocked",
+   "status": "researched",
    "register": [
     "R-0037",
     "R-0038",
     "R-0039",
     "R-0040",
-    "R-0072"
+    "R-4116"
    ],
    "tests": [
     "tests/tools/wmo.test.ts::the station compiler > reproduces the stations the engine reads, byte for byte, from the WMO's files",
     "tests/world/weather/weather.places.test.ts::the weather at real towns > at every place on the map",
-    "tests/world/weather/weather.test.ts::a day's weather > comes back, over thirty years, to the normals it's drawn around",
-    "tests/world/weather/weather.test.ts::the weather at real towns > reads each town's nearest station of its own country, and says where it has none"
+    "tests/world/weather/weather.test.ts::a day's weather > comes back, over thirty years, to the normals it's drawn around"
    ]
   },
   {
@@ -3634,7 +3632,8 @@
     "R-0040",
     "R-0042",
     "R-0062",
-    "R-0105"
+    "R-0105",
+    "R-4117"
    ],
    "tests": [
     "tests/tools/wmo.test.ts::the station compiler > reproduces the stations the engine reads, byte for byte, from the WMO's files",
@@ -3674,18 +3673,17 @@
   },
   {
    "key": "XK",
-   "status": "blocked",
+   "status": "researched",
    "register": [
     "R-0039",
     "R-0040",
     "R-0042",
-    "R-0065"
+    "R-4115"
    ],
    "tests": [
     "tests/tools/wmo.test.ts::the station compiler > reproduces the stations the engine reads, byte for byte, from the WMO's files",
     "tests/world/weather/weather.places.test.ts::the weather at real towns > at every place on the map",
-    "tests/world/weather/weather.test.ts::a day's weather > comes back, over thirty years, to the normals it's drawn around",
-    "tests/world/weather/weather.test.ts::the weather at real towns > reads each town's nearest station of its own country, and says where it has none"
+    "tests/world/weather/weather.test.ts::a day's weather > comes back, over thirty years, to the normals it's drawn around"
    ]
   },
   {

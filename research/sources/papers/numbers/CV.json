@@ -1,0 +1,37 @@
+{
+ "country": "CV",
+ "name": "Número de Identificação Fiscal (NIF)",
+ "issuer": "the Direção Geral das Contribuições e Impostos (DGCI), of the Direção Nacional de Receitas do Estado",
+ "format": {
+  "length": 9,
+  "pattern": "^\\d{9}$"
+ },
+ "when": "application",
+ "who": [
+  "anyone"
+ ],
+ "needed": [
+  "tax"
+ ],
+ "note": "The Direção Nacional de Receitas do Estado's 'Fatura Eletrónica de Cabo Verde – Manual Técnico v7.0' (version of 20 July 2021), read 2026-10-31: the unique identifier of an electronic tax document is built of fixed parts, among them 'NIF = Os 9 dígitos do NIF do emissor do DFE'; the issuer's NIF must always be a Cabo Verde NIF; the manual's examples show 'NIF: 123456789'. Decree-Law of 30 April 2021 on the 'Fatura da Felicidade' prize draw (Boletim Oficial, I Série, no. 45), read 2026-10-31: individual tenants take part when their NIF, 'atribuído pela DGCI', is on a rent receipt the landlord reports to the DNRE. The DNRE's page (mf.gov.cv/web/dnre, read 2026-10-31) lists the service 'Atribuição do NIF' as 'Para Todos'. READINGS: the manual's nine digits of the issuing taxpayer's NIF are read as every NIF's length (the same field, TaxId, holds every Cabo Verde taxpayer's NIF, buyer's as well as issuer's, and the examples are nine digits); a later version of the manual (v10.0) is listed on efatura.cv but its address answered the site's HTML shell, not the PDF, so v7.0 (2021) is the latest read; 'who' is read as anyone from the DNRE's 'Para Todos'; 'when' is read as on application to the tax administration; 'needed' is tax (the NIF identifies the taxpayer on tax documents). No check digit, fee, time or age is stated.",
+ "sources": [
+  {
+   "url": "https://www.efatura.cv/assets/files/manual-tecnico-v7-216ba5a0643ea57e50cfbbf26b47e746.pdf",
+   "title": "Direção Nacional de Receitas do Estado, Fatura Eletrónica de Cabo Verde – Manual Técnico v7.0 (20 July 2021)",
+   "read": "2026-10-31",
+   "said": "Direção Nacional de Receitas do Estado ... 7.0 2021-07-20 ... NIF = Os 9 dígitos do NIF do emissor do DFE. ... O campo NIF deve ser sempre um NIF de Cabo Verde."
+  },
+  {
+   "url": "https://boe.incv.cv/Bulletins/Download/3726",
+   "title": "Boletim Oficial da República de Cabo Verde, I Série, no. 45 (30 April 2021): Decree-Law on the Fatura da Felicidade prize draw",
+   "read": "2026-10-31",
+   "said": "e cujo NIF, atribuído pela DGCI, esteja inserido em recibo de renda comunicado pelo senhorio à DNRE."
+  },
+  {
+   "url": "https://www.mf.gov.cv/web/dnre",
+   "title": "Ministério das Finanças, Direção Nacional de Receitas do Estado (DNRE), services page",
+   "read": "2026-10-31",
+   "said": "Atribuição do NIF Para Todos"
+  }
+ ]
+}

@@ -9,7 +9,7 @@ import { PARAMS, type Param, type Station } from './compile.ts';
 export const OUTPUT = 'coverage/weather-countries.json';
 
 /** The register entry each set's stations come from, by the start of their id. */
-export const SETS: Readonly<Record<string, string>> = { '9120': 'R-0037', '6190': 'R-0038', '8110': 'R-0044', mf: 'R-0043', cwa: 'R-0045', metoffice: 'R-0048', bws: 'R-0049', dhm: 'R-0057', rnsm: 'R-0060', meteocw: 'R-0074', anguilla: 'R-0075', tms: 'R-0076', dwd: 'R-0062', kt: 'R-0063', wwis: 'R-0042', ghcnd: 'R-0073' };
+export const SETS: Readonly<Record<string, string>> = { '9120': 'R-0037', '6190': 'R-0038', '8110': 'R-0044', mf: 'R-0043', cwa: 'R-0045', metoffice: 'R-0048', bws: 'R-0049', dhm: 'R-0057', rnsm: 'R-0060', meteocw: 'R-0074', anguilla: 'R-0075', tms: 'R-0076', rhmz: 'R-4115', jica: 'R-4116', vms: 'R-4117', dwd: 'R-0062', kt: 'R-0063', wwis: 'R-0042', ghcnd: 'R-0073' };
 /** Every row's model: the lapse rate and the rain-snow threshold. */
 export const MODEL = ['R-0039', 'R-0040'];
 

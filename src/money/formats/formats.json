@@ -355,6 +355,47 @@
     ]
    }
   },
+  "BD": {
+   "national": {
+    "name": "Routing number and bank account number",
+    "parts": [
+     {
+      "name": "Routing number",
+      "length": 8,
+      "kind": "n"
+     },
+     {
+      "name": "Check digit",
+      "length": 1,
+      "kind": "n"
+     },
+     {
+      "name": "Bank account number",
+      "length": 17,
+      "kind": "c",
+      "min": 1
+     }
+    ],
+    "checks": [
+     {
+      "over": [
+       1,
+       8
+      ],
+      "weights": [
+       5,
+       7,
+       1,
+       5,
+       7,
+       1,
+       5,
+       7
+      ]
+     }
+    ]
+   }
+  },
   "BE": {
    "iban": {
     "prefix": "BE",
@@ -2031,6 +2072,23 @@
     ]
    }
   },
+  "KY": {
+   "national": {
+    "name": "Account Number",
+    "parts": [
+     {
+      "name": "Account Number",
+      "length": 17,
+      "kind": "n",
+      "min": 1,
+      "drawn": [
+       13,
+       13
+      ]
+     }
+    ]
+   }
+  },
   "KZ": {
    "iban": {
     "prefix": "KZ",
@@ -2108,6 +2166,23 @@
     "bank": [
      1,
      5
+    ]
+   }
+  },
+  "LK": {
+   "national": {
+    "name": "Account Number",
+    "parts": [
+     {
+      "name": "Account Number",
+      "length": 18,
+      "kind": "n",
+      "min": 6,
+      "drawn": [
+       15,
+       15
+      ]
+     }
     ]
    }
   },
@@ -3807,6 +3882,23 @@
     ]
    }
   },
+  "UY": {
+   "national": {
+    "name": "Número De Cuenta",
+    "parts": [
+     {
+      "name": "Número De Cuenta",
+      "length": 16,
+      "kind": "n",
+      "min": 1,
+      "drawn": [
+       16,
+       16
+      ]
+     }
+    ]
+   }
+  },
   "VA": {
    "iban": {
     "prefix": "VA",
@@ -3910,6 +4002,23 @@
       "length": 10,
       "kind": "n",
       "min": 3
+     }
+    ]
+   }
+  },
+  "VU": {
+   "national": {
+    "name": "Account Number",
+    "parts": [
+     {
+      "name": "Account Number",
+      "length": 14,
+      "kind": "n",
+      "min": 7,
+      "drawn": [
+       7,
+       7
+      ]
      }
     ]
    }

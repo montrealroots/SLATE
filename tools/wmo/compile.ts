@@ -47,7 +47,14 @@ export const SOURCE_METOFFICE = { file: 'research/sources/metoffice-averages.jso
  * Saint-Barthélemy, 1976-1998 (summing to its 3,032 hours), and precipitation at Marigot, Saint-Martin, 1971-2000
  * (summing to its 1,159.6 mm), each at its town as the gazetteer places it, the stations' own places not given; and
  * Meteo Curaçao's Summary of Climatological Normals for Flamingo Airport, Bonaire, 1971-2000 (R-0074), its mean
- * daily maximum and minimum, monthly rainfall and days of at least 1 mm (12°08'N, 68°17'W; no height given).
+ * daily maximum and minimum, monthly rainfall and days of at least 1 mm (12°08'N, 68°17'W; no height given); and
+ * the Republic Hydrometeorological Service of Serbia's station pages for Priština, Peć and Prizren (R-4115), their mean
+ * monthly hours of sunshine, 1961-1990, when it ran those stations (each page's months sum to its year); and JICA's
+ * 2006 supporting report for the Solomon Islands Water Authority (R-4116), its Table S-1-5's mean daily sunshine at
+ * Henderson Airport, 1986-1998, by the month's days (February's 28.25), as R-0057's; and the Vanuatu Meteorological
+ * Services' own page on Port Vila's climate (R-4117), read in archive.org's snapshots of 2009 and 2017 (the page was gone
+ * by 2017's later captures), its average hours of sunshine by month, the period not stated. Their places are as each
+ * source gives them, Port Vila's as the World Weather Information Service's from Vanuatu's service.
  */
 // Stryker disable all: a table made as the module loads (see the Members' tables); the byte-for-byte test holds it.
 export const HAND_READ: readonly { source: { file: string; sha256: string }; station: SourceStation }[] = [
@@ -70,6 +77,26 @@ export const HAND_READ: readonly { source: { file: string; sha256: string }; sta
   {
     source: { file: 'vendor/meteocw/CLIM_SUM_Bon.pdf', sha256: '7d04eb008526c584f9f4f6fda242a9644654d4063e859ba15254b27470d193f4' },
     station: { id: 'meteocw:flamingo:1971-2000', name: 'Flamingo Airport', country: 'BQ', latitude: 12.1333, longitude: -68.2833, elevation: null, period: '1971-2000', normals: { tmax: [29.5, 29.7, 30.0, 30.4, 31.0, 31.2, 31.1, 31.6, 31.9, 31.7, 31.0, 30.0], tmin: [24.4, 24.5, 24.8, 25.4, 26.2, 26.4, 26.2, 26.5, 26.5, 26.3, 25.7, 25.0], prcp: [44.4, 18.3, 13.2, 13.2, 14.8, 14.4, 36.3, 35.0, 37.0, 67.3, 95.9, 73.6], wet: [9.2, 4.4, 2.5, 1.8, 1.7, 2.8, 5.6, 4.4, 5.0, 7.6, 11.5, 10.8] } },
+  },
+  {
+    source: { file: 'vendor/rhmz/stanica_13481_pristina.html', sha256: '077812f08ebad664e8e8db0f09c86350760d9fb5f59ba1f97b7a0231a0a43703' },
+    station: { id: 'rhmz:pristina:1961-1990', name: 'Priština', country: 'XK', latitude: 42.65, longitude: 21.15, elevation: 573, period: '1961-1990', normals: { sun: [70.8, 96.0, 143.0, 184.0, 227.9, 246.3, 299.3, 289.6, 225.8, 173.5, 96.9, 70.2] } },
+  },
+  {
+    source: { file: 'vendor/rhmz/stanica_13473_pec.html', sha256: 'c5917deac540a3c57f50e34f927298bb70e6afd5c0a195ad2c7baba44e5e3a1f' },
+    station: { id: 'rhmz:pec:1961-1990', name: 'Peć', country: 'XK', latitude: 42.6667, longitude: 20.3, elevation: 498, period: '1961-1990', normals: { sun: [69.5, 93.3, 143.0, 172.0, 207.8, 257.7, 274.3, 264.9, 206.3, 152.6, 86.8, 55.3] } },
+  },
+  {
+    source: { file: 'vendor/rhmz/stanica_13477_prizren.html', sha256: '54aea7b1f96c517d56d8651782181284bfbd2e3bbac4079ae51ef59bc5562844' },
+    station: { id: 'rhmz:prizren:1961-1990', name: 'Prizren', country: 'XK', latitude: 42.2, longitude: 20.7167, elevation: 402, period: '1961-1990', normals: { sun: [100.2, 92.0, 139.4, 176.2, 224.5, 290.7, 300.8, 285.7, 220.7, 163.4, 89.7, 54.1] } },
+  },
+  {
+    source: { file: 'vendor/jica/11829389_01.pdf', sha256: 'd0c58a1526aef95a7fa97db53f6766f4d0d783dd5a6b3c16ddedc4dcbc5e423d' },
+    station: { id: 'jica:henderson:1986-1998', name: 'Henderson Airport', country: 'SB', latitude: -9.4167, longitude: 160.05, elevation: 7.9, period: '1986-1998', normals: { sun: [186.0, 169.5, 195.3, 198.0, 207.7, 207.0, 195.3, 207.7, 198.0, 223.2, 228.0, 207.7] } },
+  },
+  {
+    source: { file: 'vendor/vmgd/ClimateforPortVilaEfate-20170329.html', sha256: '96a71714ce42391453b7ee6fb6f18235a0bb320f9966d41b12416bdfd3d7cd3e' },
+    station: { id: 'vms:port-vila', name: 'Port Vila', country: 'VU', latitude: -17.73, longitude: 168.32, elevation: null, period: null, normals: { sun: [198, 172, 176, 173, 169, 139, 159, 180, 182, 208, 200, 196] } },
   },
 ];
 // Stryker restore all
@@ -243,7 +270,7 @@ export const COUNTRIES_DWD: Readonly<Record<string, readonly string[]>> = {
   'Russian Federation': ['RU'], 'Rwanda': ['RW'], 'Salomon Islands': ['SB'], 'Samoa': ['WS'], 'Saudi Arabia': ['SA'],
   'Senegal': ['SN'], 'Serbia': ['RS', 'XK'], 'Seychelles': ['SC'], 'Sierra Leone': ['SL'], 'Singapore': ['SG'],
   'Slovakia': ['SK'], 'Slovenia': ['SI'], 'Somalia': ['SO'], 'South Africa': ['ZA'], 'South Sudan': ['SS'],
-  'Spain': ['ES'], 'Sri Lanka': ['LK'], 'St. Maarten': ['SX', 'MF'], 'Sudan': ['SD'], 'Suriname': ['SR'],
+  'Spain': ['ES'], 'Sri Lanka': ['LK'], 'St. Maarten': ['SX'], 'Sudan': ['SD'], 'Suriname': ['SR'],
   'Sweden': ['SE'], 'Switzerland': ['CH', 'LI'], 'Syrian Arab Rep.': ['SY'], 'São Tomé and Príncipe': ['ST'],
   'Tajikistan': ['TJ'], 'Tanzania': ['TZ'], 'Thailand': ['TH'], 'Timor-Leste (East Timor)': ['TL'], 'Togo': ['TG'],
   'Tokelau': ['TK'], 'Tonga': ['TO'], 'Trinidad and Tobago': ['TT'], 'Tunisia': ['TN'], 'Turkey': ['TR'],

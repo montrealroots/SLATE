@@ -1,0 +1,40 @@
+{
+ "country": "SN",
+ "name": "numéro d'identification national (NIN)",
+ "issuer": "the Direction générale de la Sûreté nationale (Ministry of the Interior), which signs the national identity card that carries the number",
+ "format": {
+  "min": 13,
+  "pattern": "^[12]\\d{12}[0-9A-Za-z]*$"
+ },
+ "when": "application",
+ "who": [
+  "citizens"
+ ],
+ "note": "Decree 2005-787 of 6 September 2005 (the application decree of Law 2005-28 on the digitised national identity card), as osiris.sn reproduces it, read 2026-10-30: the card carries the 'numéro d'identification national', which 'contient treize (13) chiffres qui peuvent être suivis d'un indice de différenciation': one digit for sex (1 male, 2 female), three for the civil-status centre that registered the birth, four for the year that centre registered the birth and five for the number under which it was registered. Decree 2016-1536 of 29 September 2016 (the ECOWAS biometric card, as ICNL hosts the Journal officiel's print page, read 2026-10-30) keeps the NIN on the back of the new card, for voters and non-voters alike, without restating its form, and gives the card's own number separately as seventeen digits; Law 2016-09 (as the WHO repository hosts it, read 2026-10-30) repealed Law 2005-28 'and its contrary provisions'; neither text repeals or replaces the 2005 decree's definition of the NIN. READINGS: the 2005 definition is read as still describing the NIN the 2016 card carries (no later text defining it was found); the differentiation index's form and length aren't given, so `min` is 13 with no most and the pattern lets letters or digits follow the thirteen digits (the index read as alphanumeric); the issuer is read from the card's signatory (art. 3: the Directeur général de la Sûreté nationale signs it; art. 7 and 2016 art. 6: the Minister of the Interior executes the decrees); the number is read as given on application for the card, which carries it, though it is built from the birth's registration; to citizens, the card being the national identity card. The 1,000 FCFA receipt of 2005 art. 5 is the card's fee, not the number's, so no fee is held. No check digit, age, time or purpose is stated for the NIN.",
+ "sources": [
+  {
+   "url": "https://osiris.sn/Decret-no-2005-787-du-6-septembre.html",
+   "title": "Décret n° 2005-787 du 6 septembre 2005 (carte nationale d'identité numérisée), as osiris.sn reproduces the Journal officiel's text",
+   "read": "2026-10-30",
+   "kind": "secondary",
+   "quotes": "http://www.jo.gouv.sn/",
+   "said": "Numéro d’identification national. ... Ce numéro contient treize (13) chiffres qui peuvent être suivis d’un indice de différenciation : ... 1 chiffre pour la codification du sexe : ... 3 chiffres pour la codification du centre d’état civil qui a enregistré la naissance ; ... 4 chiffres pour indiquer l’année d’enregistrement de la naissance par le centre d’état civil ; ... 5 chiffres indiquant le numéro sous lequel la naissance a été enregistrée par le centre d’état civil. ... Elle comporte aussi la signature du Directeur général de la Sûreté nationale et la date de délivrance."
+  },
+  {
+   "url": "https://www.icnl.org/wp-content/uploads/Senegal_biometric.pdf",
+   "title": "Décret n° 2016-1536 du 29 septembre 2016 (carte d'identité biométrique CEDEAO), the Journal officiel's print page as ICNL hosts it",
+   "read": "2026-10-30",
+   "kind": "secondary",
+   "quotes": "http://www.jo.gouv.sn/spip.php?page=imprimer&id_article=10986",
+   "said": "Le numéro de la carte d’identité contient dix sept (17) chiffres ... Numéro d’identification national (NIN). ... la mention « personne non inscrite sur le fichier électoral » ; ... numéro d’identification national (NIN)."
+  },
+  {
+   "url": "https://extranet.who.int/cpcd/sites/default/files/public_file_repository/SEN_Senegal_Loi-No-2016-09-instituant-une-carte-d_identite_-biometrique-CEDEAO_2016.pdf",
+   "title": "Loi n° 2016-09 du 14 mars 2016 instituant une carte d'identité biométrique CEDEAO, as the WHO repository hosts it",
+   "read": "2026-10-30",
+   "kind": "secondary",
+   "quotes": "http://www.jo.gouv.sn/",
+   "said": "Sont abrogées les dispositions contraires à la présente loi et notamment celles contenues dans la loi n° 2005-28 du 06"
+  }
+ ]
+}

@@ -1086,6 +1086,38 @@ Wave 15 (2026-10-30, seven research subagents and the lead's form work):
   unsure: Nauru's business visas (column unknown), Grenada's permanent residence (two figures), Saint Vincent's
   temporary residence (charged by the year).
 
+Wave 16 (2026-10-30 to 31, sixteen research subagents in two rounds, every blocker of layers 2 and 3 retried):
+
+- The gate's end-to-end test reads the checkout, not Stryker's instrumented sandbox (CI's full gate had failed from
+  run 499 on 26 effects findings no real tree has), and the coverage check fails a blocker no row cites (Pitcairn's
+  account-format blocker had outlived its row's research).
+- web.archive.org began serving snapshots through this egress on 2026-10-31 (it had refused them): the brief
+  (`$S/audit/BRIEF-wave16.md`, last section) has agents read an institution's archived page as its own words, cited
+  by the snapshot's address with its date. Most of the round's finds came that way.
+- Retried 17 of the 29 lists (licence 1-2, credit 1-2, formats 1-3, numbers 1-2, cards 1-2, holidays 1-2, weather
+  1-2, work 1-2): blocked rows 726 to 651. Read: licences 22 (Khyber Pakhtunkhwa, Punjab, Sindh, Azad Kashmir, Saudi
+  Arabia, Vietnam, Ukraine, Turkey, Algeria, South Australia, Morocco, Myanmar, Angola, Kenya, Bulgaria, Cuba,
+  Malawi, Togo, Sri Lanka, Niger, Belarus, Turkmenistan); credit 18; work 18; holidays 9 (Iraq, Vanuatu,
+  Saint-Pierre-et-Miquelon, Sao Tome, the Cook Islands, Micronesia, Wallis and Futuna, Christmas Island, Cocos);
+  account formats 5 (Bangladesh with its routing check digit, Sri Lanka, Uruguay, Vanuatu, the Caymans); numbers 5
+  (Guinea, Suriname, Guyana, Cape Verde, Botswana); weather: Kosovo's, the Solomon Islands' and Vanuatu's sunshine,
+  hand-read (R-4115 to R-4117; Vanuatu still lacks days of rain).
+- Held (`research/held/`, the reason in the lead's notes `$S/w16/lead-notes.txt`): work BF (a code reported adopted,
+  no promulgation found), LY (a decision a 2021 one may have replaced), SZ, NU, KI, TV (the need for a permit read
+  into the text); numbers SN (a decree under a repealed law), TJ (a 2020 table older than the 2021 Tax Code); formats
+  GY (the game's bank's length disputed); holidays BS (the names were the agent's), PW (two days left out); licence YE
+  (a 2010 capture). Each stays blocked on its earlier attempts.
+- The lead's changes to accepted files: Sri Lanka's accounts drawn at 15 digits, Standard Chartered's most (the
+  national most, 18, its bank refuses); Saudi Arabia's issuer as its source names it.
+- Weather: the Deutscher Wetterdienst's one "St. Maarten" station, Princess Juliana Airport, is Sint Maarten's; it had
+  been placed in Saint-Martin and given it the airport's temperatures. Saint-Martin's blocker now names what it lacks.
+- Form gaps found: a licence's age that isn't whole years (Prince Edward Island 18 years 275 days, Yukon 17 years
+  6 months, Israel 16 years 9 months, Palestine 17 and a half); a hand-read station spread over many files (Saint
+  Vincent's normals over twelve monthly bulletins, `$S/w16/weather/VC.json`).
+- Next: the other 12 lists (`$S/w16/lists/`: banks, cards-3, credit-3/4, ids, passports, licence-3/4, means,
+  numbers-3, prices, residence), then an archive pass over the lists closed before the archive opened (formats-1,
+  work-1, holidays-1, weather-1, numbers-1, cards-1; the snapshots each blocker records).
+
 The older next steps below are kept as they were written.
 
 1. The weather's blockers

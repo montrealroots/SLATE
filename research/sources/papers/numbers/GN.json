@@ -1,0 +1,25 @@
+{
+ "country": "GN",
+ "name": "numéro personnel d'identification (NPI)",
+ "issuer": "the body in charge of civil status and the identification of natural persons",
+ "format": {
+  "length": 18,
+  "pattern": "^(?=(?:\\d*[A-Za-z]){3}\\d*$)[0-9A-Za-z]{16}\\d{2}$"
+ },
+ "when": "birth",
+ "who": [
+  "citizens",
+  "residents"
+ ],
+ "note": "The decree on the creation, management and keeping of a numéro personnel d'identification (NPI), read on national television on 14 April 2025, as Guinéenews reproduces its articles (14 April 2025), read 2026-10-30: art. 2 institutes an 18-character NPI for every Guinean from the issue of the birth certificate and, for foreigners established in Guinea, from their entry in the national register of natural persons (RNPP), as the universal reference identifying a natural person; art. 3 makes the body in charge of civil status and the identification of natural persons its authority; art. 4 makes it permanent, unequivocal and for life; art. 5 says it is no proof of nationality though it appears on every identity document; art. 6: 18 alphanumeric characters, of which 13 digits, 3 letters and a two-digit check key computed on the first 16 characters (sex 1 or 2, year and month of birth, prefecture, commune and quarter of birth, or region and country codes for those born abroad, and four or five random digits). READINGS: the check key is read as the last two characters (it is computed on the first sixteen); the positions of the three letters among the first sixteen aren't given, so the pattern holds exactly three letters anywhere in them, upper or lower case (the case isn't given); the key's algorithm isn't given, so `check` is left out; read as given at birth (the birth certificate's issue) for citizens and to residents (foreigners established in Guinea, from their RNPP registration), the form holding one `when`. The decree's own text in the Journal officiel (sgg.gov.gn, which answered 403 to this research) wasn't read, so the source is marked secondary. The DNI's tax number (NIFp) remains a separate number whose form wasn't found. No fee, time, age or purpose is stated.",
+ "sources": [
+  {
+   "url": "https://guineenews.org/2025/04/14/decret-creation-gestion-et-conservation-dun-numero-personnel-didentification-npi-en-republique-de-guinee/",
+   "title": "Guinéenews, Décret : création, gestion et conservation d'un numéro personnel d'identification (NPI) en République de Guinée (14 April 2025)",
+   "read": "2026-10-30",
+   "kind": "secondary",
+   "quotes": "https://www.sgg.gov.gn/",
+   "said": "Un numéro personnel d’identification composé de 18 caractères est instauré pour tous les Guinéens dès la délivrance de l’acte de naissance. ... Pour les étrangers établis en Guinée, dès l’inscription au registre national des personnes physiques RNPP. ... L’organe en charge de l’état civil et de l’identification des personnes physiques est l’autorité chargée de la création,de la gestion et de la conservation du NPI. ... Le NPI est composé de 18 caractères alphanumériques, dont 13 chiffres, 3 lettres et une clé de contrôle à 2 chiffres. ... Cette clé de contrôle est calculée sur les 16 premiers caractères."
+  }
+ ]
+}
