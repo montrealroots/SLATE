@@ -738,6 +738,20 @@ learning outcomes, guild handbooks, staffing programmes). An attribute is on the
 KEEP entry 11 (2026-10-26) removed all the attributes from the new build; this research is for planning, and whether
 attributes return, and shown as numbers or not, is the owner's to rule.
 
+**The attributes, researched (2026-10-31, session 01XFR5Ut6sxu4Q37Ha2jKNLQ).** The screenwriter is done:
+`research/sources/person/attributes/screenwriter.json` (R-4601, `person.attributes.screenwriter`): 480 attributes
+grouping 754 source terms from 127 pages read that day (10 secondary, each naming the primary it quotes), every quote
+checked against its saved page by `workbench/tools/attrs-check.py`; 25 blockers, each with the five methods, in the
+file. Each attribute is one of its sources' own terms, under a category the lead gave (craft of the script 115, judged
+quality of the script 86, working with others 64, knowledge 52, cognitive ability 46, working trait 44, sensory or
+physical 32, business and career 29, tools and format 12); O*NET's ratings are kept per term. The three parts were
+researched by parallel subagents (registers, judging, teaching), the synonyms grouped by a fourth, each result checked
+by the lead before it landed (`workbench/briefs/BRIEF-attrs.md`; the other roles' form is
+`workbench/briefs/BRIEF-attrs-roles.md`; the file is written by `workbench/tools/attrs-build.py`). The producer, the
+director and the actor are being researched the same way (nine subagents launched the same day): their files go to
+`research/sources/person/attributes/<role>.json` as `person.attributes.<role>`. Then the four lists go to the owner
+for layer 4's plan.
+
 **Saved before layer 4 planning (2026-10-31).** The working files that lived only in the session's scratchpad are
 in `workbench/` (its README says what each holds): the waves' briefs and the four audits' reports (`workbench/briefs/`,
 where `audit/{core,world,papers,money}.md` below now are), the unlaunched per-country industry brief and its ten lists
