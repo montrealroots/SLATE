@@ -10,7 +10,13 @@
    "quality-by-level",
    "read",
    "revise",
-   "refusals"
+   "refusals",
+   "synopsis",
+   "networking",
+   "promotion",
+   "pitch-and-sale",
+   "room",
+   "career-declarations"
   ]
  },
  "rows": [
@@ -116,6 +122,84 @@
    "tests": [
     "tests/person/work/work.test.ts::a script > is refused in a form there is not, for days that are not whole, or before the attributes are chosen",
     "tests/person/work/work.test.ts::a reader > is refused for a reader there is not"
+   ]
+  },
+  {
+   "key": "synopsis",
+   "status": "game",
+   "register": [
+    "R-4601",
+    "R-4606"
+   ],
+   "tests": [
+    "tests/person/work/career.test.ts::a synopsis > is written from Synopsis and Writing, worth half when rushed to nothing, within the draft spread",
+    "tests/person/work/career.test.ts::a synopsis > script.summarise: a better hand at it writes a better synopsis"
+   ]
+  },
+  {
+   "key": "networking",
+   "status": "game",
+   "register": [
+    "R-4601",
+    "R-4606"
+   ],
+   "tests": [
+    "tests/person/work/career.test.ts::networking > makes a contact a day as often as Networking, Speaking and Social Perceptiveness make it likely",
+    "tests/person/work/career.test.ts::networking > network.meet: a better networker meets more people"
+   ]
+  },
+  {
+   "key": "promotion",
+   "status": "game",
+   "register": [
+    "R-4601",
+    "R-4606"
+   ],
+   "tests": [
+    "tests/person/work/career.test.ts::sending a script out > gets requests to read from the contacts approached, one a day, by Promotion, the synopsis and the grade",
+    "tests/person/work/career.test.ts::sending a script out > script.promote: a better promoter gets more requests",
+    "tests/person/work/career.test.ts::sending a script out > is weighed by the buyer on its last grade, or its parts' mean where none has graded it"
+   ]
+  },
+  {
+   "key": "pitch-and-sale",
+   "status": "game",
+   "register": [
+    "R-4241",
+    "R-4601",
+    "R-4606"
+   ],
+   "tests": [
+    "tests/person/work/career.test.ts::a pitch > sells as the script's quality and the meeting make likely: nearly always at 100, seldom at 30",
+    "tests/person/work/career.test.ts::a pitch > decides by the meeting draw, and grows Pitching, Speaking and Persuasion",
+    "tests/person/work/career.test.ts::a pitch > pays the WGA's minimum for the form, takes the script off the market and leaves the buyer a contact",
+    "tests/person/work/career.test.ts::a pitch > script.pitch: a better script sells where a weak one does not"
+   ]
+  },
+  {
+   "key": "room",
+   "status": "game",
+   "register": [
+    "R-4241",
+    "R-4601",
+    "R-4606"
+   ],
+   "tests": [
+    "tests/person/work/career.test.ts::a writers room > staffs a writer through a contact on a pilot or episode sample, as the sample and the meeting make likely",
+    "tests/person/work/career.test.ts::a writers room > gives each season's standing its episodes, keeps the writer on or lets them go, and steps them up the WGA's ladder",
+    "tests/person/work/career.test.ts::a writers room > room.join: a better sample and meeting staff the writer where weak ones do not",
+    "tests/person/work/career.test.ts::a writers room > room.season: a writer the room values is kept, one it does not is let go"
+   ]
+  },
+  {
+   "key": "career-declarations",
+   "status": "game",
+   "register": [
+    "R-4601",
+    "R-4606"
+   ],
+   "tests": [
+    "tests/person/work/career.test.ts::a writers room > is run through the frame, each command declaring what it reads and writes"
    ]
   }
  ]

@@ -1955,4 +1955,19 @@ in plot" are its founder's (R-4601). The attributes' matrix (`coverage/attribute
 reader, 7 pending: Synopsis, Pitching, Networking, Promotion, Persuasion, Speaking and Social Perceptiveness, whose readers
 are the selling and staffing engine and the writers' room (next), and coverage work. The creation screen's choice is
 layer 5's, reading `attributes.choose`.
+Built 2026-10-31, at the owner's word ("Go ahead and build the remaining 7 engines"): the readers of the screenwriter's
+last seven attributes, in src/person/work/career.ts (engine person.work, slice `career`). script.summarise (Synopsis,
+Writing: a script's logline, synopsis and treatment), network.meet (Networking, Speaking, Social Perceptiveness: the
+contacts days among the trade make), script.promote (Promotion, the synopsis, the script's grade: requests to read from
+the contacts approached), script.pitch (Pitching, Speaking, Persuasion, the synopsis: a sale on a request, at the 2026
+MBA's first-year minimum for the form, $173,215 for an original feature with treatment, $71,190 a pilot, $47,460 a
+60-minute episode, none for a short; the script off the market, the buyer a contact), room.join (Speaking, Social
+Perceptiveness, Persuasion: staffed as a Staff Writer through a contact on a pilot or episode sample) and room.season
+(the season's standing: episodes assigned at 50 and 80, kept on at 40, a rung up the WGA's ladder at 70, let go below
+40). The chances are the game's own (R-4606, person.career.model); the minimums and the ladder are the WGA's (R-4241).
+All 27 attributes now have their reader (coverage/attributes-screenwriter.json: 0 pending); the three engines' files
+are at 100% mutation score (503 mutants). Still open in this engine: a sale's fee and a room's pay are recorded, not yet
+paid into the ledger (money.accounts), which waits on how the work pays being ruled with the premise; a room's weekly
+pay by rung needs the MBA's longer weekly rates for story editors read; other countries' guild minimums wait on the
+per-country industry research. Next: the producer, the director and the actor the same way, from their research files.
 
