@@ -1810,5 +1810,10 @@ four: each role needs an engine that reads it and changes an outcome the player 
 and acting work), built when the premise's detail names those outcomes; until then none is shown that nothing reads.
 The title-case rule (`.claude/rules/title-case.md`) would capitalise the owner's "and" in a label ("And Actor");
 the owner's wording is kept as given until the owner rules on it.
+Answered 2026-10-31 (asked as layer 3 closed): home on the first morning is "Player picks any place" (chosen from the
+world picker, apart from the birthplace and where they grew up); the start date is "Player chooses", which replaces
+the fixed 1 January 2026 the owner set on 2026-10-26 (the research is in force from 1 January 2026, so the choice
+runs from that day; how far forward is the person layer's to set by the years the engines carry); Sleep stays as a
+clock action ("Keep Sleep"). The premise's detail: "We will get to all of this when you're done with layer 3."
 Still to be asked when the build reaches them: the rest of the premise's detail (what the four roles' work is and
-what it changes), home on the first morning, Sleep as a clock action.
+what it changes), after layer 3 is proven.
