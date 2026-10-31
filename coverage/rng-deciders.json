@@ -40,6 +40,20 @@
    "tests": [
     "tests/world/weather/weather.test.ts::a day's weather > is the same for the same seed, station and day, and differs otherwise"
    ]
+  },
+  {
+   "key": "work.draft",
+   "status": "proven",
+   "tests": [
+    "tests/person/work/work.test.ts::a script > is the same for the same life and differs for another"
+   ]
+  },
+  {
+   "key": "work.read",
+   "status": "proven",
+   "tests": [
+    "tests/person/work/work.test.ts::a revision > works on what the writer's own read thinks weakest where no reader has noted it, read truer with a better eye"
+   ]
   }
  ]
 }

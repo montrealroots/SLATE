@@ -21,7 +21,9 @@ That leaves 27, each 0 to 100. Every other researched attribute stays in the res
 
 ## The engines that read them
 
-None of these exists yet; each is built with its tests and its falsifiers before the attribute that feeds it is shown.
+Built 2026-10-31 (src/person/work): the script, the readers (the Black List, PAGE), the writing and the notes. Still to
+build: selling and staffing, the room, coverage work; each with its tests and its falsifiers before the attribute that
+feeds it is shown.
 
 - **The script** (`work.script`): a script the player writes (feature, pilot, episode, short) has a score for each
   component a real reader grades. A component's score comes from the attribute that writes it, the time given and the

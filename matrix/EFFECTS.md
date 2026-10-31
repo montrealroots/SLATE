@@ -5,7 +5,7 @@ the falsifiers recorded by the last test run; do not edit by hand. Every command
 by code that changes an outcome by it (or awaits the layer that will read it), and every command and kind is
 falsified: changing its input changes the state it leaves.
 
-Effects: 16.
+Effects: 20.
 
 | Effect | Sort | Declared | What it changes | Read at | Falsified by |
 |---|---|---|---|---|---|
@@ -13,6 +13,7 @@ Effects: 16.
 | `account.open` | command | `src/money/accounts/accounts.ts:272` | Opens an account at a bank on its terms, with its first deposit, its first month scheduled. | `src/money/accounts/accounts.ts:144` | tests/money/effects.test.ts › the accounts > account.open: the first deposit is what the account holds |
 | `account.pay` | command | `src/money/accounts/accounts.ts:273` | Pays from an account: within the balance or the overdraft, with the bank's fees; refused with the returned-payment fee past them. | `src/money/accounts/accounts.ts:157` | tests/money/effects.test.ts › the accounts > account.pay: a payment leaves the account |
 | `account.returned` | notice | `src/money/accounts/accounts.ts:269` | Leaves the player a notice of a payment refused for want of funds. | awaits: layer 5: the money screen tells the player a payment was turned down | left for its reader |
+| `attributes.choose` | command | `src/person/attributes/attributes.ts:100` | Sets where each of a role's attributes starts, 0 to 100, when the life is made: every one at a level, or each its own. | `src/person/work/work.ts:135` | tests/person/attributes/attributes.test.ts › the screenwriter attributes > attributes.choose: the level chosen is the level held |
 | `card.due` | kind | `src/money/cards/account.ts:296` | A statement's due date: interest from here where unpaid in full; the late fee and the penalty rate where the minimum is short. | `src/money/cards/account.ts:245` | tests/money/effects.test.ts › the cards > card.due: a minimum unpaid by its due date makes the card late |
 | `card.missed` | notice | `src/money/cards/account.ts:291` | Leaves the player a notice of a missed minimum. | awaits: layer 5: the money screen tells the player a missed payment | left for its reader |
 | `card.open` | command | `src/money/cards/account.ts:298` | Opens a card on its bank's terms: its limit, its issue fees, its first statement scheduled. | `src/money/cards/account.ts:214` | tests/money/effects.test.ts › the cards > card.open: the limit asked is the limit held |
@@ -25,3 +26,6 @@ Effects: 16.
 | `clock.pause` | command | `src/world/clock/clock.ts:46` | Pauses the clock: real time passing moves the life on no more. | `src/world/clock/clock.ts:61` | tests/money/effects.test.ts › the clock > clock.pause: paused, real time moves the life on no more |
 | `clock.play` | command | `src/world/clock/clock.ts:45` | Sets the clock playing: real time passing moves the life on. | `src/world/clock/clock.ts:61` | tests/money/effects.test.ts › the clock > clock.play: played, real time moves the life on |
 | `means.first-morning` | command | `src/money/accounts/accounts.ts:274` | Opens the first morning's accounts at a bank and pays the family's means into them. | `src/money/accounts/accounts.ts:157` | tests/money/effects.test.ts › the accounts > means.first-morning: the family's means are what the first morning holds |
+| `script.read` | command | `src/person/work/work.ts:264` | Has a reader grade a draft by its own criteria (the Black List, PAGE), with an overall score and notes naming its three weakest parts. | `src/person/work/work.ts:181` | tests/person/work/work.test.ts › a reader > script.read: a better draft is graded higher |
+| `script.revise` | command | `src/person/work/work.ts:263` | Revises a draft toward what the writer can do, on the parts the last read's notes name or the writer's own read thinks weakest; the attributes used rise. | `src/person/work/work.ts:254` | tests/person/work/work.test.ts › a revision > script.revise: more days carry a revision further |
+| `script.write` | command | `src/person/work/work.ts:262` | Writes a script's first draft: each part a reader grades scored from the attributes that write it, the days given and the writer's spread; the attributes used rise. | `src/person/work/work.ts:183`<br>`src/person/work/work.ts:254` | tests/person/work/work.test.ts › a revision > script.write: a better writer writes a better draft |

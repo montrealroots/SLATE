@@ -1939,4 +1939,20 @@ can get into perfectly balancing them later. Lets start with 'Screenwriter'." Th
 workbench/plans/screenwriter-attributes.md: 27 attributes (those named by at least four institutions, less two that
 are readers' conclusions and two folded into others), each with the engine that reads it and the outcome it changes,
 waiting for the owner's approval before anything is built.
+Ruled 2026-10-31, the owner, on how attributes work: "I want my attributes to effect the quality of my work ... I start
+out with all attributes a 100 which will be the max ... create the engine/downstream effect that'll produce the quality
+of what being maxed out at every attribute would be also with other various numbers ... it needs to actually produce
+results depending on how bad or good I am. Also there should be an option to pick how good I want to be in the creation
+suite of the game and if its not maxed out then through doing work my skills/attributes get raised." Taken as approving
+the 27 (the owner building on them). Built the same day, layer 4: `person.attributes` (src/person/attributes: the 27,
+0 to 100, chosen at creation all at one level or each its own, shown "Dialogue - 92", raised by work, faster from low,
+never past 100) and `person.work` (src/person/work: writing a draft, revising it, a reader's grade), each command
+falsified and anchored to its consumer, both at 100% mutation score (260 mutants, workbench/configs/stryker.person.mjs).
+A writer at 100 throughout writes at 97 to 100 in every part and is graded 10 by the Black List; at 50, about 5; at 10,
+3 or under. The model's figures are the game's own (R-4605, `person.work.model`, told to the player by the line
+`work.model`), balanced later at the owner's word; the Black List's weighting and its "an 8 in dialogue cannot rescue a 5
+in plot" are its founder's (R-4601). The attributes' matrix (`coverage/attributes-screenwriter.json`): 20 with their
+reader, 7 pending: Synopsis, Pitching, Networking, Promotion, Persuasion, Speaking and Social Perceptiveness, whose readers
+are the selling and staffing engine and the writers' room (next), and coverage work. The creation screen's choice is
+layer 5's, reading `attributes.choose`.
 

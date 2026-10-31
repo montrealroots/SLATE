@@ -1,0 +1,122 @@
+{
+ "engine": "person.work",
+ "axis": "work-operation",
+ "universe": {
+  "keys": [
+   "choose",
+   "shown",
+   "growth",
+   "draft",
+   "quality-by-level",
+   "read",
+   "revise",
+   "refusals"
+  ]
+ },
+ "rows": [
+  {
+   "key": "choose",
+   "status": "game",
+   "register": [
+    "R-4601",
+    "R-4605"
+   ],
+   "tests": [
+    "tests/person/attributes/attributes.test.ts::the screenwriter attributes > attributes.choose: the level chosen is the level held",
+    "tests/person/attributes/attributes.test.ts::the screenwriter attributes > are chosen when the life is made: all at one level, each its own, or levels over one",
+    "tests/person/attributes/attributes.test.ts::the screenwriter attributes > are refused outside 0 to 100, for a role or attribute there is not, or with one left without a level"
+   ]
+  },
+  {
+   "key": "shown",
+   "status": "game",
+   "register": [
+    "R-4601",
+    "R-4605"
+   ],
+   "tests": [
+    "tests/person/attributes/attributes.test.ts::the screenwriter attributes > read as a whole number, rounded down, beside the name"
+   ]
+  },
+  {
+   "key": "growth",
+   "status": "game",
+   "register": [
+    "R-4601",
+    "R-4605"
+   ],
+   "tests": [
+    "tests/person/attributes/attributes.test.ts::the screenwriter attributes > rise with work, faster from low, never past 100",
+    "tests/person/work/work.test.ts::a script > raises the attributes its writing used, and none past 100"
+   ]
+  },
+  {
+   "key": "draft",
+   "status": "game",
+   "register": [
+    "R-4601",
+    "R-4605"
+   ],
+   "tests": [
+    "tests/person/work/work.test.ts::a script > is written in parts, each from the attributes that write it, Writing behind the page's parts",
+    "tests/person/work/work.test.ts::a script > is moved in a part by every attribute that writes it",
+    "tests/person/work/work.test.ts::a script > is better in a part when the attribute that writes it is higher, the rest alike",
+    "tests/person/work/work.test.ts::a script > needs days by Writing and Time Management, and a rushed draft keeps less, Perseverance holding more of it",
+    "tests/person/work/work.test.ts::a script > is the same for the same life and differs for another"
+   ]
+  },
+  {
+   "key": "quality-by-level",
+   "status": "game",
+   "register": [
+    "R-4601",
+    "R-4605"
+   ],
+   "tests": [
+    "tests/person/work/work.test.ts::a script > comes out at the top of the scale from a writer at 100 in everything, given its days",
+    "tests/person/work/work.test.ts::a script > comes out as good as the writer is: around 50 from a writer at 50, hardly readable from one at 10",
+    "tests/person/work/work.test.ts::a script > spreads less as the writer gets better"
+   ]
+  },
+  {
+   "key": "read",
+   "status": "game",
+   "register": [
+    "R-4601",
+    "R-4605"
+   ],
+   "tests": [
+    "tests/person/work/work.test.ts::a reader > grades by its own criteria: the Black List's five, PAGE's ten",
+    "tests/person/work/work.test.ts::a reader > gives a writer at 100 the top of its scale, one at 50 the middle, one at 10 the bottom",
+    "tests/person/work/work.test.ts::a reader > weighs the Black List's components as its founder found, a weak execution score holding the whole down",
+    "tests/person/work/work.test.ts::a reader > notes the three weakest parts it grades, weakest first"
+   ]
+  },
+  {
+   "key": "revise",
+   "status": "game",
+   "register": [
+    "R-4601",
+    "R-4605"
+   ],
+   "tests": [
+    "tests/person/work/work.test.ts::a revision > moves the noted parts toward what the writer can do, as far as Revision carries it",
+    "tests/person/work/work.test.ts::a revision > keeps the work on the noted parts as far as Taking Notes keeps it",
+    "tests/person/work/work.test.ts::a revision > works on what the writer's own read thinks weakest where no reader has noted it, read truer with a better eye",
+    "tests/person/work/work.test.ts::a revision > raises Revision and Taking Notes when it answers a reader"
+   ]
+  },
+  {
+   "key": "refusals",
+   "status": "game",
+   "register": [
+    "R-4601",
+    "R-4605"
+   ],
+   "tests": [
+    "tests/person/work/work.test.ts::a script > is refused in a form there is not, for days that are not whole, or before the attributes are chosen",
+    "tests/person/work/work.test.ts::a reader > is refused for a reader there is not"
+   ]
+  }
+ ]
+}
