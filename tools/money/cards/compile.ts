@@ -289,10 +289,18 @@ export function card(c: unknown, home: CurrencyCode, what: string): Card {
   return out;
 }
 
-/** A country's file: its cards, none named twice. */
+/**
+ * A country's file: its cards, none named twice; or none at all, where its source says no bank there offers one (from
+ * 2026-10-31, as the banks' `none`; until then such a place could only be blocked).
+ */
 export function compileCountry(code: string, file: Record<string, unknown>): Card[] {
   if (!Object.hasOwn(countries, code)) throw new Error(`${code} is not a country on the map`);
   if (file['country'] !== code) throw new Error(`${code}'s file is for ${String(file['country'])}`);
+  if ('none' in file) {
+    if (file['none'] !== true) throw new Error(`${code}'s file says no bank there offers a card only as none: true`);
+    for (const k of Object.keys(file)) if (!['country', 'none', 'note', 'sources'].includes(k)) throw new Error(`${code}, where no bank offers a card, has no term ${k}`);
+    return [];
+  }
   const home = (countries as Record<string, { currency: string }>)[code]?.currency as CurrencyCode;
   const list = file['cards'];
   if (!Array.isArray(list) || list.length === 0) throw new Error(`${code} names no card`);

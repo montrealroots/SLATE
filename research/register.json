@@ -6398,7 +6398,7 @@
   {
    "id": "R-0103",
    "fact": "world.weather.blocked.VC",
-   "sought": "Saint Vincent and the Grenadines' mean daily maximum and minimum temperature, precipitation, days of at least 1 mm and monthly hours of sunshine, as normals",
+   "sought": "Saint Vincent and the Grenadines' days of at least 1 mm and monthly hours of sunshine, as normals (its temperature and precipitation were read on 2026-10-31, R-4235)",
    "status": "blocked",
    "attempts": [
     {
@@ -68751,141 +68751,6 @@
      "method": "archive",
      "tried": "archive.org's Wayback availability API for http://www.naenara.com.kp/en/",
      "result": "http://www.naenara.com.kp/en/: snapshot 20210427031331. web.archive.org, which serves the snapshots, answered over HTTPS when tested on 2026-10-31 (it had refused earlier today), but the brief directs that no snapshot be read, so none was.",
-     "date": "2026-10-31"
-    }
-   ],
-   "notModeled": "cards.unkept"
-  },
-  {
-   "id": "R-2043",
-   "fact": "money.cards.blocked.PN",
-   "sought": "The credit cards of Pitcairn: each bank's card, its interest and its fees, as the bank publishes them",
-   "status": "blocked",
-   "attempts": [
-    {
-     "method": "institution",
-     "tried": "A bank serving Pitcairn: government.pn, as the banks research tried",
-     "result": "The site answers; no bank, and so no card issuer, named.",
-     "date": "2026-10-29"
-    },
-    {
-     "method": "official-register",
-     "tried": "government.pn and visitpitcairn.pn",
-     "result": "The New Zealand dollar and visitor information; no card issuer.",
-     "date": "2026-10-29"
-    },
-    {
-     "method": "web-search",
-     "tried": "'Pitcairn Island OR Tokelau bank credit card residents banking services cards'",
-     "result": "Travel guides: cash is the usual payment, no ATMs, basic banking at the Government Treasury; no credit card issued on the island.",
-     "date": "2026-10-29"
-    },
-    {
-     "method": "trade-press",
-     "tried": "Press and guide results among the search named",
-     "result": "None names a card issuer or terms.",
-     "date": "2026-10-29"
-    },
-    {
-     "method": "archive",
-     "tried": "The Wayback Machine (web.archive.org) for the pages named above",
-     "result": "This environment's egress refuses web.archive.org (no answer, 000, retested 2026-10-29); no snapshot could be read.",
-     "date": "2026-10-29"
-    },
-    {
-     "method": "institution",
-     "tried": "government.pn (Government of the Pitcairn Islands; the island has no bank)",
-     "result": "Answers (200); it names no card issuer.",
-     "date": "2026-10-30"
-    },
-    {
-     "method": "official-register",
-     "tried": "government.pn, the territory's official site",
-     "result": "No bank or card issuer named.",
-     "date": "2026-10-30"
-    },
-    {
-     "method": "web-search",
-     "tried": "'\"Cocos (Keeling) Islands\" OR \"Pitcairn\" OR \"St Helena\" OR \"Diego Garcia\" bank credit card residents banking services 2026'",
-     "result": "A Wikipedia list of banks for the Cocos (Keeling) Islands (no card terms), the Bank of St Helena's own pages, the St Helena Government's 2020 notice on Gibraltar International Bank (a debit card), DoD Community Bank's Diego Garcia location page and a payment processor's page on Pitcairn; no credit card issued to residents of any of them.",
-     "date": "2026-10-30"
-    },
-    {
-     "method": "trade-press",
-     "tried": "Press results among the search named",
-     "result": "None names a credit card issued there or its terms.",
-     "date": "2026-10-30"
-    },
-    {
-     "method": "archive",
-     "tried": "archive.org's Wayback availability API for https://www.government.pn/",
-     "result": "https://www.government.pn/: no snapshot listed. web.archive.org, which serves the snapshots, is refused by this environment's egress (no answer over HTTPS, 403 over HTTP, retested 2026-10-30), so none could be read.",
-     "date": "2026-10-30"
-    },
-    {
-     "method": "institution",
-     "tried": "https://www.government.pn/",
-     "result": "https://www.government.pn/: answers (200); it names no credit card.",
-     "date": "2026-10-30"
-    },
-    {
-     "method": "official-register",
-     "tried": "https://www.government.pn/ (the government's site)",
-     "result": "https://www.government.pn/: answers (200); it names no credit card; it publishes no bank's card terms on the page read.",
-     "date": "2026-10-30"
-    },
-    {
-     "method": "web-search",
-     "tried": "'\"Standard Chartered\" Falkland Islands account charges OR fees; \"National Bank of Tuvalu\" OR Tokelau OR Pitcairn OR \"Cocos Islands\" OR \"St Helena\" banking services fees 2026'",
-     "result": "Standard Chartered Falklands' about-us page (the islands' only bank, no fees) and other countries' Standard Chartered tariffs; nothing for Tuvalu, Tokelau, Pitcairn, the Cocos Islands or St Helena.",
-     "date": "2026-10-30"
-    },
-    {
-     "method": "trade-press",
-     "tried": "Press among the results of the search named",
-     "result": "None.",
-     "date": "2026-10-30"
-    },
-    {
-     "method": "archive",
-     "tried": "archive.org's Wayback availability API for https://www.government.pn/",
-     "result": "https://www.government.pn/: the API answered 429 Too Many Requests, retried with pauses. web.archive.org, which serves the snapshots, resets the connection from this environment (retested 2026-10-30: connection reset, no answer), so no snapshot could be read.",
-     "date": "2026-10-30"
-    },
-    {
-     "method": "archive",
-     "tried": "archive.org's Wayback availability API for https://www.government.pn/",
-     "result": "https://www.government.pn/: snapshot 20261017103534. web.archive.org, which serves the snapshots, resets the connection from this environment (retested 2026-10-30: connection reset, no answer), so no snapshot could be read.",
-     "date": "2026-10-30"
-    },
-    {
-     "method": "institution",
-     "tried": "visitpitcairn.pn (the Government's tourism site) and government.pn/treasury",
-     "result": "visitpitcairn.pn answers (200) and names no bank or card; the treasury path answers 404.",
-     "date": "2026-10-31"
-    },
-    {
-     "method": "official-register",
-     "tried": "government.pn/treasury, the Government's own path for its Treasury",
-     "result": "404.",
-     "date": "2026-10-31"
-    },
-    {
-     "method": "web-search",
-     "tried": "'Pitcairn OR Tokelau OR \"Cocos (Keeling)\" OR Kerguelen OR \"South Georgia\" OR \"Diego Garcia\" no bank residents banking \"Treasury\" OR \"no banks\" cards official'",
-     "result": "Open Banking Tracker names one fintech (N3XT) without a branch; no bank or card issuer on Pitcairn.",
-     "date": "2026-10-31"
-    },
-    {
-     "method": "trade-press",
-     "tried": "Press among the results of the search named",
-     "result": "None.",
-     "date": "2026-10-31"
-    },
-    {
-     "method": "archive",
-     "tried": "archive.org's availability API for https://www.visitpitcairn.pn/, and web.archive.org for the snapshots it named",
-     "result": "https://www.visitpitcairn.pn/: snapshot 20260922225752. web.archive.org, which serves the snapshots, reset every connection from this environment throughout the turn (2026-10-31, 02:10 to 03:08 UTC; each fetch retried every minute or so, as the brief asks), so no snapshot named here was read.",
      "date": "2026-10-31"
     }
    ],
@@ -148656,6 +148521,207 @@
      "title": "World Inequality Database, bulk download (WID_data_KS.csv), its market exchange rate rows",
      "read": "2026-10-31",
      "said": "KS;xlceuxi999;p0p100;2024;1.000517249107361;999;i;5"
+    }
+   ]
+  },
+  {
+   "id": "R-4235",
+   "fact": "world.weather.normals-saint-vincent",
+   "sought": "Saint Vincent and the Grenadines' mean daily maximum and minimum temperature and precipitation as normals, which the WMO's sets, the Deutscher Wetterdienst's and the World Weather Information Service don't give",
+   "status": "found",
+   "value": {
+    "files": [
+     {
+      "file": "vendor/svgmet/Bulletin_January2015.pdf",
+      "sha256": "1ce16f3149b3fa5ea861cd8ab9387e761ebe5b86df98022f3c7af2deef9f0b97"
+     },
+     {
+      "file": "vendor/svgmet/Bulletin_February2015.pdf",
+      "sha256": "136f96fa8d2684bffa75f4a43e735388b844d74b4501f9ba906aeef254aab895"
+     },
+     {
+      "file": "vendor/svgmet/Bulletin_March2015.pdf",
+      "sha256": "adbf1a079cb9327bd35f5c8d9fd5cd5c48ee47dee9b468c048e30b3da1036482"
+     },
+     {
+      "file": "vendor/svgmet/Bulletin_April2015.pdf",
+      "sha256": "44d4191ffb1f4092c9cc7994a771de8a6bb24775f9f8ae5c47c93dca86ea4f05"
+     },
+     {
+      "file": "vendor/svgmet/Bulletin_May2014.pdf",
+      "sha256": "dced1bc44c3570ff8910e87bfa5b6636dcb5464387a6b5991eaec7b63883b3ff"
+     },
+     {
+      "file": "vendor/svgmet/Bulletin_June2014.pdf",
+      "sha256": "70a6c8e8905798fc32e9c523fe90ece32cdb4ed11520ec8fa6568fc0aac070a9"
+     },
+     {
+      "file": "vendor/svgmet/Bulletin_July2014.pdf",
+      "sha256": "805146c7f39a4f538c7c581af6169abf189b621eace91b1eeff4d7c1537e8a68"
+     },
+     {
+      "file": "vendor/svgmet/Bulletin_August2014.pdf",
+      "sha256": "a2c722c30abe494251345cd1b7ab052ab1d4587fd1980e8cec90e78c22ef5bbe"
+     },
+     {
+      "file": "vendor/svgmet/Bulletin_September2014.pdf",
+      "sha256": "c96f18f4d62c394964f6b4973c46ff5a7af44e746dcbb1751693cd78d527f2fe"
+     },
+     {
+      "file": "vendor/svgmet/Bulletin_Oct2016.pdf",
+      "sha256": "cfc7affbd3d3667d98b2ae4b544b2d551aa1b1da0b5351e92bb78e5cb1c9b4e4"
+     },
+     {
+      "file": "vendor/svgmet/Bulletin_November2014.pdf",
+      "sha256": "ab14375fd7f820b1e6115b3f53d68409d529bb967fab10a9cc770c35271fcce3"
+     },
+     {
+      "file": "vendor/svgmet/Bulletin_December2014.pdf",
+      "sha256": "e8c236c2901b17ea4fbc72569292cc27cfb21e048458872898eeabecf5fd79d3"
+     }
+    ],
+    "station": "E.T. Joshua Airport",
+    "period": "1981-2010",
+    "place": [
+     13.1,
+     -61.2,
+     null
+    ],
+    "tmax": [
+     30.0,
+     30.1,
+     30.5,
+     31.2,
+     31.6,
+     31.5,
+     31.5,
+     31.9,
+     32.3,
+     32.1,
+     31.5,
+     30.9
+    ],
+    "tmin": [
+     21.3,
+     21.1,
+     21.3,
+     22.1,
+     23.2,
+     23.1,
+     23.0,
+     22.9,
+     23.0,
+     23.0,
+     22.6,
+     21.3
+    ],
+    "prcp": [
+     132.2,
+     90.3,
+     82.8,
+     95.9,
+     114.4,
+     202.6,
+     229.8,
+     237.0,
+     243.9,
+     280.1,
+     277.6,
+     173.0
+    ],
+    "note": "Saint Vincent and the Grenadines' mean daily maximum and minimum temperature and monthly rainfall at E.T. Joshua Airport, each month from the row '30 year average*' of Table 2 of the Meteorological Services' own Monthly Weather Bulletin for it (2014-2016, as the WMO's WAMIS hosts them); the lead checked all thirty-six figures against the twelve files on 2026-10-31. The period: eight bulletins name 1981-2010 in their own prose, the March 2015 bulletin gives April's (~96 mm, 31.2/22.1) and the October 2016 bulletin November's (277.6 mm, 31.5/22.6) as 1981-2010 averages, and January's and December's stand in the same row of the same table, which no bulletin read names otherwise: held as one 1981-2010 series, a reading for those two months. The place is the Caribbean Institute for Meteorology and Hydrology's for the station (13.1N, 61.2W); no height is given. Left out: rain-days (counted with no threshold), sunshine (none given)."
+   },
+   "sources": [
+    {
+     "kind": "primary",
+     "url": "https://wamis.org/wamis/wp-content/uploads/2023/05/Bulletin_January2015.pdf",
+     "title": "St. Vincent and the Grenadines Meteorological Services, Monthly Weather Bulletin (January2015), as WMO WAMIS hosts it",
+     "read": "2026-10-30",
+     "said": "Table 2. Comparison of Parameters at E.T. Joshua Airport Station ... 30 year average* 19 132.2 75.2 30.0/21.3"
+    },
+    {
+     "kind": "primary",
+     "url": "https://wamis.org/wamis/wp-content/uploads/2023/05/Bulletin_February2015.pdf",
+     "title": "St. Vincent and the Grenadines Meteorological Services, Monthly Weather Bulletin (February2015), as WMO WAMIS hosts it",
+     "read": "2026-10-30",
+     "said": "Table 2. Comparison of Parameters at E.T. Joshua Airport Station ... 30 year average* 16 90.3 73.5 30.1/21.1"
+    },
+    {
+     "kind": "primary",
+     "url": "https://wamis.org/wamis/wp-content/uploads/2023/05/Bulletin_March2015.pdf",
+     "title": "St. Vincent and the Grenadines Meteorological Services, Monthly Weather Bulletin (March2015), as WMO WAMIS hosts it",
+     "read": "2026-10-30",
+     "said": "Table 2. Comparison of Parameters at E.T. Joshua Airport Station ... 30 year average* 17 82.8 73.1 30.5/21.3"
+    },
+    {
+     "kind": "primary",
+     "url": "https://wamis.org/wamis/wp-content/uploads/2023/05/Bulletin_April2015.pdf",
+     "title": "St. Vincent and the Grenadines Meteorological Services, Monthly Weather Bulletin (April2015), as WMO WAMIS hosts it",
+     "read": "2026-10-30",
+     "said": "Table 2. Comparison of Parameters at E.T. Joshua Airport Station ... 30 year average* 14 95.9 74.6 31.2/22.1"
+    },
+    {
+     "kind": "primary",
+     "url": "https://wamis.org/wamis/wp-content/uploads/2023/05/Bulletin_May2014.pdf",
+     "title": "St. Vincent and the Grenadines Meteorological Services, Monthly Weather Bulletin (May2014), as WMO WAMIS hosts it",
+     "read": "2026-10-30",
+     "said": "Table 2. Comparison of Parameters at E.T. Joshua Airport Station ... 30 year average* 16 114.4 75.1 31.6/23.2"
+    },
+    {
+     "kind": "primary",
+     "url": "https://wamis.org/wamis/wp-content/uploads/2023/05/Bulletin_June2014.pdf",
+     "title": "St. Vincent and the Grenadines Meteorological Services, Monthly Weather Bulletin (June2014), as WMO WAMIS hosts it",
+     "read": "2026-10-30",
+     "said": "Table 2. Comparison of Parameters at E.T. Joshua Airport Station ... 30 year average* 19 202.6 77.4 31.5/23.1"
+    },
+    {
+     "kind": "primary",
+     "url": "https://wamis.org/wamis/wp-content/uploads/2023/05/Bulletin_July2014.pdf",
+     "title": "St. Vincent and the Grenadines Meteorological Services, Monthly Weather Bulletin (July2014), as WMO WAMIS hosts it",
+     "read": "2026-10-30",
+     "said": "Table 2. Comparison of Parameters at E.T. Joshua Airport Station ... 30 year average* 21 229.8 78.3 31.5/23.0"
+    },
+    {
+     "kind": "primary",
+     "url": "https://wamis.org/wamis/wp-content/uploads/2023/05/Bulletin_August2014.pdf",
+     "title": "St. Vincent and the Grenadines Meteorological Services, Monthly Weather Bulletin (August2014), as WMO WAMIS hosts it",
+     "read": "2026-10-30",
+     "said": "Table 2. Comparison of Parameters at E.T. Joshua Airport Station ... 30 year average* 20 237.0 77.9 31.9/22.9"
+    },
+    {
+     "kind": "primary",
+     "url": "https://wamis.org/wamis/wp-content/uploads/2023/05/Bulletin_September2014.pdf",
+     "title": "St. Vincent and the Grenadines Meteorological Services, Monthly Weather Bulletin (September2014), as WMO WAMIS hosts it",
+     "read": "2026-10-30",
+     "said": "Table 2. Comparison of Parameters at E.T. Joshua Airport Station ... 30 year average* 18 243.9 78.1 32.3/23.0"
+    },
+    {
+     "kind": "primary",
+     "url": "https://wamis.org/wamis/wp-content/uploads/2023/05/Bulletin_Oct2016.pdf",
+     "title": "St. Vincent and the Grenadines Meteorological Services, Monthly Weather Bulletin (Oct2016), as WMO WAMIS hosts it",
+     "read": "2026-10-30",
+     "said": "Table 2. Comparison of Parameters at E.T. Joshua Airport Station ... 30 year average* 19 280.1 78 32.1/23.0"
+    },
+    {
+     "kind": "primary",
+     "url": "https://wamis.org/wamis/wp-content/uploads/2023/05/Bulletin_November2014.pdf",
+     "title": "St. Vincent and the Grenadines Meteorological Services, Monthly Weather Bulletin (November2014), as WMO WAMIS hosts it",
+     "read": "2026-10-30",
+     "said": "Table 2. Comparison of Parameters at E.T. Joshua Airport Station ... 30 year average* 20 277.6 77.1 31.5/22.6"
+    },
+    {
+     "kind": "primary",
+     "url": "https://wamis.org/wamis/wp-content/uploads/2023/05/Bulletin_December2014.pdf",
+     "title": "St. Vincent and the Grenadines Meteorological Services, Monthly Weather Bulletin (December2014), as WMO WAMIS hosts it",
+     "read": "2026-10-30",
+     "said": "Table 2. Comparison of Parameters at E.T. Joshua Airport Station ... 30 year average* 18 173.0 75.3 30.9/21.3"
+    },
+    {
+     "kind": "primary",
+     "url": "https://rcc.cimh.edu.bb/files/2023/03/ET-Joshua_TMax.png",
+     "title": "CIMH (the WMO's Caribbean Regional Climate Centre), ET Joshua, St. Vincent - Maximum Temperature, 1991-2020 (read for the station's place only)",
+     "read": "2026-10-30",
+     "said": "ET Joshua, St. Vincent - Maximum Temperature (oC) (Location: 13.1°N, -61.2°W; Period of record: 1991-2020)"
     }
    ]
   }

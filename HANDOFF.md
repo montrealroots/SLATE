@@ -1144,6 +1144,26 @@ Wave 16, second half (2026-10-31, the remaining twelve lists):
 - Next: the archive pass (every list, its queues first) once web.archive.org answers; the form gaps; Maqam cited as
   primary in papers.ids PS and as secondary in papers.work PS, to make one.
 
+Wave 17 (2026-10-31, the form gaps of wave 16):
+
+- A licence's age may fall between birthdays: `from` takes whole years, or years and months (1 to 11), or years and
+  days (1 to 364) (`Age` in `tools/papers/licence/compile.ts` and `src/papers/licence/licence.ts`; nothing in the game
+  reads the age yet, the person layer will). Mutation-tested at 100%.
+- Cards may be `none`, as banks are: no bank in the place offers a card, where a source says so; and a place with no
+  bank at all (Pitcairn) has no card, its row researched on the banks' fact (`cards.none`, told to the player).
+  Pitcairn's cards blocker went with its row. Mutation-tested at 100%.
+- A hand-read weather station may pin several files: Saint Vincent's normals at E.T. Joshua Airport (R-4235), each
+  month from that month's bulletin, the lead checking all thirty-six figures against the twelve files. Its period is
+  1981-2010 by eight bulletins' own words and two more confirming April's and November's; January's and December's
+  stand in the same table row, read as the same series. Saint Vincent stays blocked on days of rain and sunshine.
+- Turks and Caicos' passport fees by age stay blocked: search indexes show the passport office's guide defining a child
+  as under 16 (gov.tc/passports/images/forms/BOT_Passport_Application_Guide.pdf), but every gov.tc passport path
+  answers 404 to this client, and the archive was down. It heads the archive pass.
+- How a law database's copy is cited (the Maqam question): the copy of a law's full text is the law's own words
+  (primary), as PacLII's, the LIIs', FAOLEX's and Maqam's in papers.ids PS are; where a government's copy exists and
+  is named, the database's is secondary quoting it, as Maqam's in papers.work PS and world.holidays PS are. No official
+  copy of Palestine's Civil Status Law 2 of 1999 was found online, so ids PS stays primary. Both are as the rule says.
+
 The older next steps below are kept as they were written.
 
 1. The weather's blockers

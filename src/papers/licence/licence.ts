@@ -19,11 +19,14 @@ export interface UnitFee {
   readonly plus?: Money;
 }
 
+/** An age: whole years, or years and months, or years and days, where the youngest holder falls between birthdays. */
+export type Age = number | { readonly years: number; readonly months: number } | { readonly years: number; readonly days: number };
+
 export interface LicenceDocument {
   /** As the office names it. */
   readonly name: string;
   /** The youngest it is issued to (for a licence, a full one). */
-  readonly from?: number;
+  readonly from?: Age;
   /** A citizen's, where a non-citizen pays another (`foreignFee`); by the year where `perYear`. */
   readonly fee: Money | UnitFee | null;
   readonly foreignFee?: Money | UnitFee;
@@ -52,7 +55,7 @@ export interface LicenceDocument {
 
 export interface Licence {
   readonly issuer: string;
-  readonly licence?: LicenceDocument & { readonly from: number };
+  readonly licence?: LicenceDocument & { readonly from: Age };
   readonly card?: LicenceDocument;
   /** The countries and regions whose licences it exchanges without a test. */
   readonly exchange?: readonly string[];

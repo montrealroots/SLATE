@@ -5,7 +5,7 @@ import { join, resolve } from 'node:path';
 import { describe, expect, it } from 'vitest';
 import { money } from '../../src/core/money/money.ts';
 import { amount, card, charge, compileCountry, fee, interest, LATE_BASES, LIMIT_WHEN, OUTPUT, OVER_BASES, percent, rate, RATE_PERIODS, readCards, serialize, SOURCES, waiver } from '../../tools/money/cards/compile.ts';
-import { cardsCoverage, COVERAGE, coverageOf, serializeCoverage, TESTS, TOLD } from '../../tools/money/cards/coverage.ts';
+import { cardsCoverage, COVERAGE, coverageOf, NO_CARD, serializeCoverage, TESTS, TOLD } from '../../tools/money/cards/coverage.ts';
 import { NO_PLACES } from '../../tools/papers/passports/coverage.ts';
 
 const ROOT = resolve(import.meta.dirname, '../..');
@@ -209,6 +209,12 @@ describe('the cards compile', () => {
     expect(() => compileCountry('XX', { country: 'XX', cards: [] })).toThrow('XX is not a country on the map');
     expect(() => compileCountry('DE', { country: 'FR', cards: [] })).toThrow("DE's file is for FR");
     for (const cards of [undefined, [], 'x']) expect(() => compileCountry('DE', { country: 'DE', cards }), JSON.stringify(cards)).toThrow('DE names no card');
+    // A place where no bank offers a card, where its source says so: no cards, and nothing else but its note and sources.
+    expect(compileCountry('FK', { country: 'FK', none: true, note: 'x', sources: [] })).toStrictEqual([]);
+    for (const none of [false, 'true', 1]) expect(() => compileCountry('FK', { country: 'FK', none })).toThrow("FK's file says no bank there offers a card only as none: true");
+    expect(() => compileCountry('FK', { country: 'FK', none: true, cards: [] })).toThrow('FK, where no bank offers a card, has no term cards');
+    expect(() => compileCountry('XX', { country: 'XX', none: true })).toThrow('XX is not a country on the map');
+    expect(() => compileCountry('FK', { country: 'GB', none: true })).toThrow("FK's file is for GB");
     const c = { bank: 'B', card: 'C', rate: 'in full', fees: [] };
     expect(() => compileCountry('DE', { country: 'DE', cards: [c, { ...c, rate: { percent: '9', per: 'year' } }] })).toThrow("DE names B's C twice");
     expect(() => compileCountry('DE', { country: 'DE', cards: [c, { ...c, card: '' }] })).toThrow("DE's card 1 names the card the bank sells");
@@ -241,8 +247,18 @@ describe('the cards compile', () => {
 
 describe('the cards coverage', () => {
   it('rows each country researched, blocked, pending, or proven with no place', () => {
-    const facts = new Map([['money.cards.GB', 'R-1'], ['money.cards.blocked.FR', 'R-2'], ['money.cards.DE', 'R-3'], ['money.banks.IT', 'R-4']]);
-    expect(cardsCoverage(['GB', 'FR', 'IT', 'AQ', 'DE'], new Set(['GB', 'FR', 'IT', 'DE']), new Set(['GB', 'IT']), facts)).toStrictEqual([
+    const facts = new Map([['money.cards.GB', 'R-1'], ['money.cards.blocked.FR', 'R-2'], ['money.cards.DE', 'R-3'], ['money.banks.IT', 'R-4'], ['money.cards.FK', 'R-5'], ['money.banks.PN', 'R-6'], ['money.banks.CK', 'R-7']]);
+    const rows = cardsCoverage(['GB', 'FR', 'IT', 'AQ', 'DE', 'FK', 'PN', 'CK', 'TK'], new Set(['GB', 'FR', 'IT', 'DE', 'FK', 'PN', 'CK', 'TK']), new Set(['GB', 'IT', 'FK']), facts, new Set(['FK']), new Set(['PN', 'TK']));
+    expect(rows.slice(5)).toStrictEqual([
+      // No bank offers a card: researched on its own file, the player told.
+      { key: 'FK', status: 'researched', register: ['R-5'], tests: [...TESTS, NO_CARD] },
+      // No bank at all: researched on the banks' fact, the player told; a place with banks gets nothing from theirs.
+      { key: 'PN', status: 'researched', register: ['R-6'], tests: [...TESTS, NO_CARD] },
+      { key: 'CK', status: 'pending' },
+      // No bank, but no banks' fact to cite: no research.
+      { key: 'TK', status: 'pending' },
+    ]);
+    expect(rows.slice(0, 5)).toStrictEqual([
       { key: 'GB', status: 'researched', register: ['R-1'], tests: TESTS },
       { key: 'FR', status: 'blocked', register: ['R-2'], tests: [...TESTS, TOLD] },
       // The banks' fact isn't the cards'.
@@ -254,6 +270,7 @@ describe('the cards coverage', () => {
   });
 
   it('writes the matrix the repository holds', () => {
+    expect(NO_CARD).toBe('tests/money/cards/cards.none.test.ts::a place where no bank offers a card > has none to take out, and the player is told');
     expect([COVERAGE, TOLD, TESTS]).toEqual([
       'coverage/cards-countries.json',
       "tests/money/cards/cards.test.ts::cards > tell the player what the game doesn't know",

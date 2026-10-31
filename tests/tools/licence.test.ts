@@ -133,8 +133,16 @@ describe('the licences compile', () => {
     expect(() => compileLicence('DE', de({ licence: 'B' }))).toThrow("DE's licence is not an object");
     expect(() => compileLicence('DE', de({ licence: { name: 'x', from: 18, fee: null, validYears: 1, classes: [] } }))).toThrow("DE's licence has no term classes");
     for (const name of [undefined, '', 7]) expect(() => compileLicence('DE', de({ licence: { name, from: 18, fee: null, validYears: 1 } }))).toThrow("DE's licence needs its name");
-    for (const from of [undefined, -1, 17.5, '18']) expect(() => compileLicence('DE', de({ licence: { name: 'x', from, fee: null, validYears: 1 } }))).toThrow("DE's licence is issued from a whole age");
-    expect(() => compileLicence('DE', de({ card: { name: 'x', from: -1, fee: null, validYears: 1 } }))).toThrow("DE's card is issued from a whole age");
+    const AGE = 'is issued from an age: whole years, or years and months (1 to 11) or days (1 to 364)';
+    const bad = [undefined, -1, 17.5, '18', { years: 17 }, { years: -1, months: 6 }, { years: 17.5, months: 6 }, { years: 17, months: 0 }, { years: 17, months: 12 }, { years: 17, months: 1.5 }, { years: 18, days: 0 }, { years: 18, days: 365 }, { years: 18, days: 2.5 }, { years: 17, months: 6, days: 3 }, { years: 17, weeks: 6 }, { months: 6 }, [17, 6]];
+    for (const from of bad) expect(() => compileLicence('DE', de({ licence: { name: 'x', from, fee: null, validYears: 1 } })), JSON.stringify(from)).toThrow(`DE's licence ${AGE}`);
+    expect(() => compileLicence('DE', de({ card: { name: 'x', from: -1, fee: null, validYears: 1 } }))).toThrow(`DE's card ${AGE}`);
+    // Between birthdays: Jamaica's 17½, Prince Edward Island's 18 years and 275 days; the edges of a year held.
+    for (const from of [{ years: 17, months: 6 }, { years: 18, days: 275 }, { years: 0, months: 1 }, { years: 16, months: 11 }, { years: 18, days: 1 }, { years: 18, days: 364 }])
+      expect(compileLicence('DE', de({ licence: { name: 'x', from, fee: null, validYears: 1 } })).licence?.from).toStrictEqual(from);
+    // An age it ends at is a whole one above the years of the age it's issued from.
+    expect(compileLicence('DE', de({ licence: { name: 'x', from: { years: 17, months: 6 }, fee: null, validYears: 1, untilAge: 18 } })).licence?.untilAge).toBe(18);
+    expect(() => compileLicence('DE', de({ licence: { name: 'x', from: { years: 17, months: 6 }, fee: null, validYears: 1, untilAge: 17 } }))).toThrow("DE's licence ends at a whole age above the one it's issued from, or at ages in order above it");
     for (const validYears of [undefined, 0, 1.5, 'permanent']) expect(() => compileLicence('DE', de({ card: { name: 'x', fee: null, validYears } }))).toThrow("DE's card is valid a whole number of years, or null");
     expect(() => compileLicence('DE', de({ card: { name: 'x', fee: 14, validYears: 1 } }))).toThrow("DE's card's fee is an amount written out in major units");
     expect(() => compileLicence('DE', de({ card: { name: 'x', validYears: 1 } }))).toThrow("DE's card's fee is an amount written out in major units");

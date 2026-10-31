@@ -90,7 +90,7 @@ describe('the station compiler', () => {
       { key: 'EC', status: 'researched', register: ['R-0038', 'R-0039', 'R-0040', 'R-0044'], tests: TESTS },
     ]);
     expect(TOLD).toBe("tests/world/weather/weather.test.ts::the weather at real towns > reads each town's nearest station of its own country, and says where it has none");
-    expect([SETS, MODEL]).toEqual([{ '9120': 'R-0037', '6190': 'R-0038', '8110': 'R-0044', mf: 'R-0043', cwa: 'R-0045', metoffice: 'R-0048', bws: 'R-0049', dhm: 'R-0057', rnsm: 'R-0060', meteocw: 'R-0074', anguilla: 'R-0075', tms: 'R-0076', rhmz: 'R-4115', jica: 'R-4116', vms: 'R-4117', dwd: 'R-0062', kt: 'R-0063', wwis: 'R-0042', ghcnd: 'R-0073' }, ['R-0039', 'R-0040']]);
+    expect([SETS, MODEL]).toEqual([{ '9120': 'R-0037', '6190': 'R-0038', '8110': 'R-0044', mf: 'R-0043', cwa: 'R-0045', metoffice: 'R-0048', bws: 'R-0049', dhm: 'R-0057', rnsm: 'R-0060', meteocw: 'R-0074', anguilla: 'R-0075', tms: 'R-0076', rhmz: 'R-4115', jica: 'R-4116', vms: 'R-4117', svgmet: 'R-4235', dwd: 'R-0062', kt: 'R-0063', wwis: 'R-0042', ghcnd: 'R-0073' }, ['R-0039', 'R-0040']]);
     // A station is of a set by its id's start up to the colon, not by a likeness.
     expect(weatherCoverage(['FR'], new Set(['FR']), [st('9120x:1', 'FR', ['tmax', 'tmin', 'prcp', 'wet', 'sun'])], new Map())[0]).toMatchObject({ register: ['R-0039', 'R-0040'] });
     expect(serializeCoverage([{ key: 'AN', status: 'proven', tests: ['t'] }])).toBe('{\n "engine": "world.weather",\n "axis": "country",\n "rows": [\n  {\n   "key": "AN",\n   "status": "proven",\n   "tests": [\n    "t"\n   ]\n  }\n ]\n}\n');
@@ -668,10 +668,10 @@ describe('the station compiler', () => {
     expect(place([st('isle', 'SE', 50, -30), st('aq', 'AQ', -75, 0)])).toEqual([['aq', 'AQ'], ['isle', 'SE']]);
   });
   it('refuses a file that isn\'t the one the register cites', () => {
-    const files = [...Object.values(SOURCES_9120), ...Object.values(SOURCES_6190), ...Object.values(SOURCES_8110), SOURCE_MF, SOURCE_CWA, SOURCE_METOFFICE, ...HAND_READ.map((h) => h.source), SOURCE_ANGUILLA, SOURCE_TONGA, OUTLINES, SOURCE_DWD, SOURCE_KT, SOURCE_WWIS, SOURCE_GHCND];
+    const files = [...Object.values(SOURCES_9120), ...Object.values(SOURCES_6190), ...Object.values(SOURCES_8110), SOURCE_MF, SOURCE_CWA, SOURCE_METOFFICE, ...HAND_READ.flatMap((h) => [h.source].flat()), SOURCE_ANGUILLA, SOURCE_TONGA, OUTLINES, SOURCE_DWD, SOURCE_KT, SOURCE_WWIS, SOURCE_GHCND];
     for (const target of files) {
       const root = mkdtempSync(join(tmpdir(), 'slate-wmo-'));
-      for (const dir of ['vendor/wmo/9120', 'vendor/wmo/6190', 'vendor/wmo/8110', 'vendor/bws', 'vendor/dhm', 'vendor/rnsm', 'vendor/meteocw', 'vendor/rhmz', 'vendor/jica', 'vendor/vmgd', 'vendor/naturalearth', 'research/sources']) mkdirSync(join(root, dir), { recursive: true });
+      for (const dir of ['vendor/wmo/9120', 'vendor/wmo/6190', 'vendor/wmo/8110', 'vendor/bws', 'vendor/dhm', 'vendor/rnsm', 'vendor/meteocw', 'vendor/rhmz', 'vendor/jica', 'vendor/vmgd', 'vendor/svgmet', 'vendor/naturalearth', 'research/sources']) mkdirSync(join(root, dir), { recursive: true });
       for (const f of files) copyFileSync(join(ROOT, f.file), join(root, f.file));
       writeFileSync(join(root, target.file), target.file.endsWith('.gz') ? gzipSync('changed') : 'changed');
       expect(() => readStations(root, []), target.file).toThrow(`${target.file} is not the file the register cites (sha256 `);

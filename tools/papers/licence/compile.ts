@@ -69,11 +69,31 @@ export interface Term {
   under?: number;
 }
 
+/**
+ * An age: whole years, or years and months (1 to 11), or years and days (1 to 364), where the law or the stages it
+ * sets put the youngest holder between birthdays (Jamaica's 17½, Prince Edward Island's 18 years and 275 days). Until
+ * 2026-10-31 only whole years were held, and those places stood blocked.
+ */
+export type Age = number | { years: number; months: number } | { years: number; days: number };
+
+/** An age as the form holds it, or none where it isn't one. */
+function ageOf(v: unknown): Age | undefined {
+  if (isWhole(v, 0)) return v;
+  if (!isRecord(v) || !isWhole(v['years'], 0)) return undefined;
+  const keys = Object.keys(v).sort().join();
+  if (keys === 'months,years' && isWhole(v['months'], 1) && (v['months'] as number) <= 11) return { years: v['years'], months: v['months'] as number };
+  if (keys === 'days,years' && isWhole(v['days'], 1) && (v['days'] as number) <= 364) return { years: v['years'], days: v['days'] as number };
+  return undefined;
+}
+
+/** The whole years of an age. */
+const yearsOf = (a: Age) => (typeof a === 'number' ? a : a.years);
+
 export interface Document {
   /** As the office names it. */
   name: string;
   /** The youngest it is issued to (for a licence, a full one). */
-  from?: number;
+  from?: Age;
   /** In the currency's minor units, or null where it isn't known: a citizen's, where a non-citizen pays another. */
   fee: Fee | null;
   /** What a non-citizen pays, where the office charges one more (Malaysia's, Cayman's). */
@@ -101,7 +121,7 @@ export interface Document {
 
 export interface Licence {
   issuer: string;
-  licence?: Document & { from: number };
+  licence?: Document & { from: Age };
   card?: Document;
   /** The countries and regions whose licences it exchanges without a test. */
   exchange?: string[];
@@ -121,7 +141,8 @@ function document(d: unknown, at: string, currency: () => string, needsAge: bool
   only(d, ['name', 'from', 'fee', 'foreignFee', 'perYear', 'validYears', 'untilAge', 'forLife', 'terms'], at);
   const { name, from, fee, foreignFee, perYear, validYears, untilAge, forLife, terms } = d;
   if (typeof name !== 'string' || name === '') throw new Error(`${at} needs its name`);
-  if (from === undefined ? needsAge : !isWhole(from, 0)) throw new Error(`${at} is issued from a whole age`);
+  const age = ageOf(from);
+  if (from === undefined ? needsAge : age === undefined) throw new Error(`${at} is issued from an age: whole years, or years and months (1 to 11) or days (1 to 364)`);
   if (validYears !== null && !isWhole(validYears, 1)) throw new Error(`${at} is valid a whole number of years, or null`);
   const out: Document = { name, fee: fee === null ? null : feeOf(fee, currency(), `${at}'s fee`), validYears };
   if (foreignFee !== undefined) {
@@ -134,7 +155,8 @@ function document(d: unknown, at: string, currency: () => string, needsAge: bool
   }
   if (untilAge !== undefined) {
     const ages = Array.isArray(untilAge) ? untilAge : [untilAge];
-    const above = (from as number | undefined) ?? 0;
+    // A whole age above the years of the one it's issued from is above that age too, its months or days under a year.
+    const above = age === undefined ? 0 : yearsOf(age);
     if (ages.length === 0 || !ages.every((a, i) => isWhole(a, 1) && (a as number) > (i === 0 ? above : (ages[i - 1] as number))))
       throw new Error(`${at} ends at a whole age above the one it's issued from, or at ages in order above it`);
     out.untilAge = untilAge as number | number[];
@@ -156,7 +178,7 @@ function document(d: unknown, at: string, currency: () => string, needsAge: bool
     if (forLife !== true || validYears !== null || untilAge !== undefined) throw new Error(`${at} lasts for life only as forLife: true, with no years and no age it ends at`);
     out.forLife = true;
   }
-  return from === undefined ? out : { ...out, from: from as number };
+  return age === undefined ? out : { ...out, from: age };
 }
 
 /**
@@ -211,7 +233,7 @@ export function compileLicence(key: string, file: Record<string, unknown>): Lice
   if (file['licence'] === undefined && file['card'] === undefined) throw new Error(`${key} gives a licence, a card or both`);
   const currency = () => currencyIn(code, file);
   const out: Licence = { issuer };
-  if (file['licence'] !== undefined) out.licence = document(file['licence'], `${key}'s licence`, currency, true) as Document & { from: number };
+  if (file['licence'] !== undefined) out.licence = document(file['licence'], `${key}'s licence`, currency, true) as Document & { from: Age };
   if (file['card'] !== undefined) out.card = document(file['card'], `${key}'s card`, currency, false);
   if (exchange !== undefined) {
     if (!Array.isArray(exchange) || exchange.length === 0 || !exchange.every(onMap) || exchange.includes(key) || new Set(exchange).size !== exchange.length) {

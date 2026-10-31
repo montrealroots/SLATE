@@ -57,7 +57,14 @@ export const SOURCE_METOFFICE = { file: 'research/sources/metoffice-averages.jso
  * source gives them, Port Vila's as the World Weather Information Service's from Vanuatu's service.
  */
 // Stryker disable all: a table made as the module loads (see the Members' tables); the byte-for-byte test holds it.
-export const HAND_READ: readonly { source: { file: string; sha256: string }; station: SourceStation }[] = [
+/** A file pinned by its SHA-256. */
+type Pin = { file: string; sha256: string };
+/**
+ * Each hand-read station with the file it's read from, or the files, where the source spreads one station's normals
+ * over several (Saint Vincent's, a month to each monthly bulletin; until 2026-10-31 one file per station was all the
+ * form held, and such a station stood unread).
+ */
+export const HAND_READ: readonly { source: Pin | readonly Pin[]; station: SourceStation }[] = [
   {
     source: { file: 'vendor/bws/1952_06_01_No5_Sunshine_In_Bermuda.pdf', sha256: 'e040193828cea956651a5f27ac8e47e5ac3dd2746c5b374e17788b28c45949ef' },
     station: { id: 'bws:fort-george:1927-1951', name: 'Fort George', country: 'BM', latitude: 32.3833, longitude: -64.6833, elevation: 55, period: '1927-1951', normals: { sun: [157.0, 153.7, 194.6, 226.3, 254.3, 258.5, 305.4, 278.8, 236.9, 195.9, 174.0, 152.5] } },
@@ -97,6 +104,23 @@ export const HAND_READ: readonly { source: { file: string; sha256: string }; sta
   {
     source: { file: 'vendor/vmgd/ClimateforPortVilaEfate-20170329.html', sha256: '96a71714ce42391453b7ee6fb6f18235a0bb320f9966d41b12416bdfd3d7cd3e' },
     station: { id: 'vms:port-vila', name: 'Port Vila', country: 'VU', latitude: -17.73, longitude: 168.32, elevation: null, period: null, normals: { sun: [198, 172, 176, 173, 169, 139, 159, 180, 182, 208, 200, 196] } },
+  },
+  {
+    source: [
+      { file: 'vendor/svgmet/Bulletin_January2015.pdf', sha256: '1ce16f3149b3fa5ea861cd8ab9387e761ebe5b86df98022f3c7af2deef9f0b97' },
+      { file: 'vendor/svgmet/Bulletin_February2015.pdf', sha256: '136f96fa8d2684bffa75f4a43e735388b844d74b4501f9ba906aeef254aab895' },
+      { file: 'vendor/svgmet/Bulletin_March2015.pdf', sha256: 'adbf1a079cb9327bd35f5c8d9fd5cd5c48ee47dee9b468c048e30b3da1036482' },
+      { file: 'vendor/svgmet/Bulletin_April2015.pdf', sha256: '44d4191ffb1f4092c9cc7994a771de8a6bb24775f9f8ae5c47c93dca86ea4f05' },
+      { file: 'vendor/svgmet/Bulletin_May2014.pdf', sha256: 'dced1bc44c3570ff8910e87bfa5b6636dcb5464387a6b5991eaec7b63883b3ff' },
+      { file: 'vendor/svgmet/Bulletin_June2014.pdf', sha256: '70a6c8e8905798fc32e9c523fe90ece32cdb4ed11520ec8fa6568fc0aac070a9' },
+      { file: 'vendor/svgmet/Bulletin_July2014.pdf', sha256: '805146c7f39a4f538c7c581af6169abf189b621eace91b1eeff4d7c1537e8a68' },
+      { file: 'vendor/svgmet/Bulletin_August2014.pdf', sha256: 'a2c722c30abe494251345cd1b7ab052ab1d4587fd1980e8cec90e78c22ef5bbe' },
+      { file: 'vendor/svgmet/Bulletin_September2014.pdf', sha256: 'c96f18f4d62c394964f6b4973c46ff5a7af44e746dcbb1751693cd78d527f2fe' },
+      { file: 'vendor/svgmet/Bulletin_Oct2016.pdf', sha256: 'cfc7affbd3d3667d98b2ae4b544b2d551aa1b1da0b5351e92bb78e5cb1c9b4e4' },
+      { file: 'vendor/svgmet/Bulletin_November2014.pdf', sha256: 'ab14375fd7f820b1e6115b3f53d68409d529bb967fab10a9cc770c35271fcce3' },
+      { file: 'vendor/svgmet/Bulletin_December2014.pdf', sha256: 'e8c236c2901b17ea4fbc72569292cc27cfb21e048458872898eeabecf5fd79d3' },
+    ],
+    station: { id: 'svgmet:et-joshua:1981-2010', name: 'E.T. Joshua Airport', country: 'VC', latitude: 13.1, longitude: -61.2, elevation: null, period: '1981-2010', normals: { tmax: [30.0, 30.1, 30.5, 31.2, 31.6, 31.5, 31.5, 31.9, 32.3, 32.1, 31.5, 30.9], tmin: [21.3, 21.1, 21.3, 22.1, 23.2, 23.1, 23.0, 22.9, 23.0, 23.0, 22.6, 21.3], prcp: [132.2, 90.3, 82.8, 95.9, 114.4, 202.6, 229.8, 237.0, 243.9, 280.1, 277.6, 173.0] } },
   },
 ];
 // Stryker restore all
@@ -1145,7 +1169,7 @@ export function readStations(root: string, towns: readonly Town[]): Station[] {
   const national = [...parseMeteoFrance(pinned(root, SOURCE_MF.file, SOURCE_MF.sha256, 'utf8')), ...parseCwa(pinned(root, SOURCE_CWA.file, SOURCE_CWA.sha256, 'utf8')), ...parseMetOffice(pinned(root, SOURCE_METOFFICE.file, SOURCE_METOFFICE.sha256, 'utf8')), ...parseAnguilla(pinned(root, SOURCE_ANGUILLA.file, SOURCE_ANGUILLA.sha256, 'utf8')), ...parseTonga(pinned(root, SOURCE_TONGA.file, SOURCE_TONGA.sha256, 'utf8'))];
   // Each file read by hand is checked, though nothing is read from it here.
   for (const { source, station } of HAND_READ) {
-    pinned(root, source.file, source.sha256, 'latin1');
+    for (const pin of [source].flat()) pinned(root, pin.file, pin.sha256, 'latin1');
     national.push(station);
   }
   const wwis = pinned(root, SOURCE_WWIS.file, SOURCE_WWIS.sha256, 'utf8');

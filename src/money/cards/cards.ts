@@ -1,7 +1,7 @@
 import { add, compare, money, rational, roundHalfEven, type CurrencyCode, type Money } from '../../core/money/money.ts';
 import { t } from '../../core/text/text.ts';
 import { countryName, type CountryCode } from '../../world/gazetteer/gazetteer.ts';
-import { feeOn, waives, type Fee as AccountFee, type Standing as AccountStanding, type Waiver as AccountWaiver } from '../banks/banks.ts';
+import { feeOn, hasNoBank, waives, type Fee as AccountFee, type Standing as AccountStanding, type Waiver as AccountWaiver } from '../banks/banks.ts';
 import data from './cards.json' with { type: 'json' };
 
 /**
@@ -77,8 +77,11 @@ const DATA = data as unknown as { countries: Record<string, readonly Card[]> };
 /** Whether the game keeps a country's cards. */
 export const keepsCards = (country: CountryCode) => Object.hasOwn(DATA.countries, country);
 
-/** A country's cards, in the order the research gives them; none where the game doesn't keep them. */
+/** A country's cards, in the order the research gives them; none where the game doesn't keep them, or there's none. */
 export const cardsIn = (country: CountryCode): readonly Card[] => DATA.countries[country] ?? [];
+
+/** Whether no bank in a place offers a credit card, as the research reads it, or it has no bank at all (the player is told). */
+export const hasNoCard = (country: CountryCode) => (keepsCards(country) && cardsIn(country).length === 0) || hasNoBank(country);
 
 /** Whether the card's balance is taken from the account in full each month, so nothing is carried on it. */
 export const paidInFull = (card: Card): boolean => card.rate === 'in full';
@@ -246,6 +249,7 @@ export const feeFor = (charge: Fee, standing: Standing, on: string): Money =>
   charge.waived?.some((w) => met(w, standing)) === true ? money(charge.fee.currency as CurrencyCode, 0) : feeOn(charge, on);
 
 export const UNKEPT_LINE = 'cards.unkept';
+export const NONE_LINE = 'cards.none';
 export const FEES_UNPUBLISHED_LINE = 'cards.fees-unpublished';
 
 export const MINIMUM_UNPUBLISHED_LINE = 'cards.minimum-unpublished';
@@ -260,5 +264,8 @@ export const aboutCard = (card: Card): string[] => [
   ...(card.minimum === undefined && !paidInFull(card) ? [t(MINIMUM_UNPUBLISHED_LINE, { bank: card.bank, card: card.card })] : []),
 ];
 
-/** What the player is told about a country whose cards the game doesn't keep. Nothing otherwise. */
-export const aboutCards = (country: CountryCode): string | undefined => (keepsCards(country) ? undefined : t(UNKEPT_LINE, { country: countryName(country) }));
+/** What the player is told about a country whose cards the game doesn't keep, or where no bank offers one. Nothing otherwise. */
+export function aboutCards(country: CountryCode): string | undefined {
+  if (hasNoCard(country)) return t(NONE_LINE, { country: countryName(country) });
+  return keepsCards(country) ? undefined : t(UNKEPT_LINE, { country: countryName(country) });
+}
