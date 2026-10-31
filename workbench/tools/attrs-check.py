@@ -2,7 +2,7 @@ import json,sys,re,html,os,unicodedata
 S=sys.argv[1]; f=sys.argv[2]
 d=json.load(open(f))
 def norm(t):
-    t=html.unescape(t).replace('\u00ad',''); t=unicodedata.normalize('NFKC',t)
+    t=html.unescape(t).replace('\u00ad','').replace('\u200b',''); t=unicodedata.normalize('NFKC',t)
     t=t.replace('’',"'").replace('‘',"'").replace('“','"').replace('”','"').replace(' ',' ').replace('–','-').replace('—','-')
     t=re.sub(r'\s+',' ',t); t=re.sub(r' ([,.:;!?)])',r'\1',t); t=re.sub(r'([(]) ',r'\1',t)
     return t.strip().lower()

@@ -1,10 +1,11 @@
 import json,sys,re,collections,hashlib
 S,role,parts,out,note=sys.argv[1],sys.argv[2],sys.argv[3].split(','),sys.argv[4],sys.argv[5]
 T=json.load(open(f'{S}/attrs/titles.json')) if role=='screenwriter' else {}
-entries=[];blockers=[]
+entries=[];blockers=[];excluded=[]
 for p in parts:
     d=json.load(open(f'{S}/attrs/out/{p}.json'))
     entries+=d['attributes']; blockers+=[dict(b,part=p.split('-')[-1]) for b in d.get('blockers',[])]
+    if d.get('excluded'): excluded.append(dict(d['excluded'],part=p.split('-')[-1]))
 G=json.load(open(f'{S}/attrs/{"groups" if role=="screenwriter" else "groups-"+role}.json'))['groups']
 src=collections.OrderedDict(); said=collections.defaultdict(list)
 def sid(s):
@@ -35,5 +36,6 @@ for g in G:
     attrs.append({'name':g['label'],'category':g['category'],'terms':terms})
 sources=[dict(v,said=' … '.join(said[u])) for u,v in src.items()]
 doc={'role':role,'read':'2026-10-31','note':note,'sources':sources,'attributes':attrs,'blockers':blockers}
+if excluded: doc['excluded']=excluded
 txt=json.dumps(doc,ensure_ascii=False,indent=1)+'\n'; open(out,'w').write(txt)
 print(role,'attributes',len(attrs),'terms',sum(len(a['terms']) for a in attrs),'sources',len(sources),'secondary',sum(s['kind']=='secondary' for s in sources),'blockers',len(blockers),'sha',hashlib.sha256(txt.encode()).hexdigest())
