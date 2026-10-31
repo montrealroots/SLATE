@@ -1164,6 +1164,31 @@ Wave 17 (2026-10-31, the form gaps of wave 16):
   is named, the database's is secondary quoting it, as Maqam's in papers.work PS and world.holidays PS are. No official
   copy of Palestine's Civil Status Law 2 of 1999 was found online, so ids PS stays primary. Both are as the rule says.
 
+papers.ages, researched (2026-10-31, eight agents, the lead checking every file):
+
+- 187 countries have a file and 168 rows are blocked by field (a file may leave a field null, each null field named in
+  its blocker with the five methods); 78 are researched in all three; the six with no place are proven. Of the files,
+  123 give the majority (whole, or by region), 152 the working age with what a young performer may do, 115 the service
+  (39 of them conscripting, by sex and age).
+- The form grew twice from what the research found: military service as a term per sex where each is called for its
+  own span (Myanmar's men to 35, women to 27), and a region's majority as unknown rather than its country's (Yukon,
+  the Northwest Territories and Nunavut would have taken Canada's 18 for their 19), a country's own null standing beside
+  its regions'. The United States' majority is read state by state (29 states and DC; 19 null), Canada's by province
+  (six read), Australia's by state (two read).
+- The lead set to null what rested on silence or on reading: a performer's work where the law left it to other
+  legislation (Mozambique) or a report named an exception (Monaco); no minimum age where none is stated (New Zealand,
+  Nauru); service "none" where no text says so (Saudi Arabia, Uruguay, and nine "none"s written from the note alone);
+  a majority from a superseded code (Gabon's, later read in two post-reform sources as still 21) or an assumed
+  application (Saint-Pierre, Saint-Barthelemy, Saint-Martin); Estonia's service months (two lengths); the Vatican's
+  hiring age taken for a working age. Readings kept and named in each note: "barred" where the labour law bars all
+  employment under its age and names no exception for performers (some forty countries), a child's definition read
+  as the majority where no statute names one (Uganda, Myanmar, the Gambia), Sudan's and Saudi Arabia's Hijri ages held
+  as 17 years and 169 days.
+- web.archive.org reset nearly every fetch all day: every blocker lists the snapshots it found unread. That and the
+  sites behind bot checks (Cloudflare, Akamai, Incapsula, AWS WAF) are where the 168 blocked rows stand.
+- Owner, 2026-10-31: stop after this wave and plan before more research (the per-country roles research,
+  `$S/audit/BRIEF-industry.md` and `$S/industry/lists/`, waits for the plan).
+
 The older next steps below are kept as they were written.
 
 1. The weather's blockers
@@ -1827,3 +1852,21 @@ lead, before layer 3 is proven: the age of majority (contracts) by country and U
 performer's permit, hours and set-aside earnings; military service by sex and age; a card's eligibility age; papers a
 sex limits (a married woman's passport needing a husband's consent where the law says so; whether a passport or ID
 offers a sex marker other than M or F). The four roles' research carries a "Sex and age" topic.
+Ruled 2026-10-31, the owner restating the mandate: "Again I want realism and cohesiveness and logical and again I want
+every single feature and I mean every single one to have downstream effects. Nothing in this game is just there to be
+there and for decoration it always 100% perfectly has a purpose. I want depth covering every basis for each feature
+like I dont want to get to a feature and be like add this cause its not there and things applies throughout the whole
+game for everything." How it binds from layer 4 on: before a feature is built, its every basis is listed from the
+research (who may use it, at what age and sex, in which country, what it costs and pays, what it needs and what it
+changes, every edge the sources state) and each item gets a reader that changes an outcome the player meets, and a
+test; a basis the research lacks is researched first or named a blocker, never left for the owner to find. Layer 3's
+engines that no game code reads yet (papers.ages, the roles' research) get their readers in layer 4, each named in
+the feature-to-effect matrix before the layer is called proven.
+Ruled 2026-10-31: "Also note how each of these rules are covered and however many countries you can possibly get
+research on. Everything should uniquely be attached to wherever its at just like in the real world." So the four
+roles' rules are researched country by country (research/sources/person/industry/<CC>.json, facts
+person.industry.<CC>, blockers person.industry.blocked.<CC>): each country's writers', directors', actors' and
+producers' guilds and minimums, its incentives and film agency, its child performers' permit and set-aside, its awards
+and whether acting is split by sex, its rating body, and its industry's size; a territory follows its sovereign's only
+where a source says so. The coverage of every country is tracked from the first wave and becomes the engine's matrix
+when layer 4 builds it.

@@ -9,12 +9,16 @@ import { isRecord, only, readCited } from '../numbers/compile.ts';
  * each checked against the SHA-256 its register entry cites before a byte of it is read (from 2026-10-31, at the
  * owner's ruling that sex and age matter wherever a real rule reads them). A file gives:
  * - `majority`: the age a person is of full age in law and makes contracts in their own name, with `regions` where a
- *   first-level region's own law sets another (Alabama's 19, Mississippi's 21);
+ *   first-level region's own law sets it (Alabama's 19, Mississippi's 21; null for a region whose law wasn't read, so it
+ *   doesn't take the country's, as Yukon would have taken Canada's 18 for its 19; and beside a country's own null where
+ *   the age is each region's and only some were read);
  * - `work`: the youngest age a person may be employed in general (`from`), and what the law says of a performer
  *   younger (`performers`): `permit` (allowed with the permit or licence it names, `permit`, from the age it sets, if any),
  *   `free` (performing isn't held to the age), or `barred`;
  * - `service`: military service, `none` where the law asks none (or none is enforced, as its source says), or who is
- *   called (`sexes`), from and until what age, and for how many months (`months`, null where the law sets none).
+ *   called (`sexes`), from and until what age, and for how many months (`months`, null where the law sets none); or a
+ *   list of such terms where the law calls each sex for a different span (Myanmar's men to 35, its women to 27; until
+ *   2026-10-31 one span stood for both, and a woman of 28 to 35 would have been called), each sex in one term at most.
  * Each is null where the source wasn't found, and the note says why; an age is whole years, or years and months or days.
  */
 export const SOURCES = 'research/sources/papers/ages';
@@ -30,11 +34,17 @@ export interface Work {
   permit?: string;
   permitFrom?: Age;
 }
-export type Service = 'none' | { sexes: Sex[]; from: Age; until: Age; months: number | null };
+export interface Term {
+  sexes: Sex[];
+  from: Age;
+  until: Age;
+  months: number | null;
+}
+export type Service = 'none' | Term[];
 
 export interface Ages {
   majority: Age | null;
-  regions?: Record<string, Age>;
+  regions?: Record<string, Age | null>;
   work: Work | null;
   service: Service | null;
 }
@@ -65,6 +75,15 @@ function work(w: unknown, what: string): Work {
 
 function service(s: unknown, what: string): Service {
   if (s === 'none') return 'none';
+  const terms = Array.isArray(s) ? s : [s];
+  if (terms.length === 0) throw new Error(`${what} is none, a term, or a list of terms`);
+  const out = terms.map((t, i) => term(t, terms.length === 1 ? what : `${what}'s term ${i}`));
+  const sexes = out.flatMap((t) => t.sexes);
+  if (new Set(sexes).size !== sexes.length) throw new Error(`${what} calls each sex in one term at most`);
+  return out;
+}
+
+function term(s: unknown, what: string): Term {
   if (!isRecord(s)) throw new Error(`${what} is none or an object`);
   only(s, ['sexes', 'from', 'until', 'months'], what);
   const sexes = s['sexes'];
@@ -90,11 +109,11 @@ export function compileAges(code: string, file: Record<string, unknown>): Ages {
   };
   if (file['regions'] !== undefined) {
     const r = file['regions'];
-    if (!isRecord(r) || Object.keys(r).length === 0 || out.majority === null) throw new Error(`${code}'s regions set their own majority beside the country's`);
+    if (!isRecord(r) || Object.keys(r).length === 0) throw new Error(`${code}'s regions set their own majority beside the country's`);
     out.regions = {};
     for (const [key, a] of Object.entries(r)) {
       if (!key.startsWith(`${code}.`) || !Object.hasOwn(regions, key)) throw new Error(`${code}'s region ${key} is one of its regions on the map`);
-      out.regions[key] = age(a, `${code}'s majority in ${key}`);
+      out.regions[key] = a === null ? null : age(a, `${code}'s majority in ${key}`);
     }
   }
   return out;

@@ -14,8 +14,8 @@ describe('the ages', () => {
       const known = workAge(code) !== undefined && serviceIn(code) !== undefined;
       for (const p of await placesOf(code)) {
         // Where all three are known the player is told nothing; otherwise they're told.
-        if (known && majorityAt(p) !== undefined) expect(aboutAges(p.country), p.id).toBeUndefined();
-        else expect(aboutAges(p.country), p.id).toEqual(expect.any(String));
+        if (known && majorityAt(p) !== undefined) expect(aboutAges(p), p.id).toBeUndefined();
+        else expect(aboutAges(p), p.id).toEqual(expect.any(String));
         read += 1;
       }
     }

@@ -4,7 +4,7 @@ import { tmpdir } from 'node:os';
 import { join, resolve } from 'node:path';
 import { describe, expect, it } from 'vitest';
 import { compileAges, OUTPUT, PERFORMERS, readAges, serialize, SEXES, SOURCES } from '../../tools/papers/ages/compile.ts';
-import { agesCoverage, COVERAGE, coverageOf, TESTS, TOLD, whole } from '../../tools/papers/ages/coverage.ts';
+import { agesCoverage, COVERAGE, coverageOf, majorityRead, TESTS, TOLD, whole } from '../../tools/papers/ages/coverage.ts';
 import { NO_PLACES } from '../../tools/papers/passports/coverage.ts';
 
 const ROOT = resolve(import.meta.dirname, '../..');
@@ -31,7 +31,9 @@ describe('the ages compile', () => {
   it("takes a region's own majority beside the country's", () => {
     expect(compileAges('US', us({ regions: { 'US.AL': 19, 'US.MS': 21 } })).regions).toStrictEqual({ 'US.AL': 19, 'US.MS': 21 });
     for (const regions of [{}, 'x', [19]]) expect(() => compileAges('US', us({ regions }))).toThrow("US's regions set their own majority beside the country's");
-    expect(() => compileAges('US', us({ majority: null, regions: { 'US.AL': 19 } }))).toThrow("US's regions set their own majority beside the country's");
+    // A region whose law wasn't read stands null, not the country's; regions stand beside a country's own null.
+    expect(compileAges('US', us({ regions: { 'US.AL': 19, 'US.MS': null } })).regions).toStrictEqual({ 'US.AL': 19, 'US.MS': null });
+    expect(compileAges('US', us({ majority: null, regions: { 'US.AL': 19 } }))).toStrictEqual({ majority: null, regions: { 'US.AL': 19 }, work: US.work, service: 'none' });
     for (const key of ['CA.01', 'US.ZZ', 'US']) expect(() => compileAges('US', us({ regions: { [key]: 19 } }))).toThrow(`US's region ${key} is one of its regions on the map`);
     expect(() => compileAges('US', us({ regions: { 'US.AL': 19.5 } }))).toThrow(`US's majority in US.AL ${AGE}`);
   });
@@ -50,16 +52,23 @@ describe('the ages compile', () => {
 
   it('takes military service by sex and age, or none', () => {
     const kr = { sexes: ['male'], from: 18, until: 28, months: 18 };
-    expect(compileAges('US', us({ service: kr })).service).toStrictEqual(kr);
-    expect(compileAges('US', us({ service: { ...kr, sexes: ['male', 'female'], months: null } })).service).toStrictEqual({ ...kr, sexes: ['male', 'female'], months: null });
+    expect(compileAges('US', us({ service: kr })).service).toStrictEqual([kr]);
+    expect(compileAges('US', us({ service: { ...kr, sexes: ['male', 'female'], months: null } })).service).toStrictEqual([{ ...kr, sexes: ['male', 'female'], months: null }]);
     for (const service of ['some', 7]) expect(() => compileAges('US', us({ service }))).toThrow("US's service is none or an object");
+    // A term for each sex where the law calls each for its own span (Myanmar's), each sex in one term at most.
+    const mm = [kr, { ...kr, sexes: ['female'], until: 27 }];
+    expect(compileAges('US', us({ service: mm })).service).toStrictEqual(mm);
+    expect(() => compileAges('US', us({ service: [] }))).toThrow("US's service is none, a term, or a list of terms");
+    expect(() => compileAges('US', us({ service: [kr, kr] }))).toThrow("US's service calls each sex in one term at most");
+    expect(() => compileAges('US', us({ service: [kr, 'x'] }))).toThrow("US's service's term 1 is none or an object");
+    expect(() => compileAges('US', us({ service: [kr, { ...kr, sexes: ['female'], months: 0 }] }))).toThrow("US's service's term 1 lasts a whole number of months, or null");
     expect(() => compileAges('US', us({ service: { ...kr, alt: 1 } }))).toThrow("US's service has no term alt");
     for (const sexes of [[], 'male', ['men'], ['male', 'male'], undefined]) expect(() => compileAges('US', us({ service: { ...kr, sexes } }))).toThrow("US's service calls male, female or both, each once");
     expect(() => compileAges('US', us({ service: { ...kr, from: 'x' } }))).toThrow(`US's service's from ${AGE}`);
     expect(() => compileAges('US', us({ service: { ...kr, until: 'x' } }))).toThrow(`US's service's until ${AGE}`);
     for (const until of [18, 17, { years: 18, months: 6 }]) expect(() => compileAges('US', us({ service: { ...kr, until } }))).toThrow("US's service runs until an age above the one it calls from");
-    expect(compileAges('US', us({ service: { ...kr, from: { years: 18, months: 6 }, until: 19 } })).service).toStrictEqual({ ...kr, from: { years: 18, months: 6 }, until: 19 });
-    expect(compileAges('US', us({ service: { ...kr, months: 1 } })).service).toStrictEqual({ ...kr, months: 1 });
+    expect(compileAges('US', us({ service: { ...kr, from: { years: 18, months: 6 }, until: 19 } })).service).toStrictEqual([{ ...kr, from: { years: 18, months: 6 }, until: 19 }]);
+    expect(compileAges('US', us({ service: { ...kr, months: 1 } })).service).toStrictEqual([{ ...kr, months: 1 }]);
     for (const months of [0, 1.5, '18', undefined]) expect(() => compileAges('US', us({ service: { ...kr, months } }))).toThrow("US's service lasts a whole number of months, or null");
   });
 
@@ -86,9 +95,18 @@ describe('the ages compile', () => {
 describe('the ages coverage', () => {
   it('is researched where all three are read and cited, blocked where the register holds a blocker, proven where no one lives', () => {
     const ages = { US: { majority: 18, work: {}, service: 'none' }, FR: { majority: 18, work: null, service: 'none' }, DE: { majority: null, work: {}, service: 'none' }, IT: { majority: 18, work: {}, service: null } };
-    expect(whole(ages)).toEqual(new Set(['US']));
+    expect(whole(ages, [])).toEqual(new Set(['US']));
+    // A majority by region is read only where every region's is: Canada's with both read, Australia's with one missing;
+    // a region named unknown leaves its country unread though the country's own is known.
+    const regions = ['CA.01', 'CA.02', 'AU.01', 'AU.02', 'US.AL'];
+    expect(majorityRead('CA', { majority: null, regions: { 'CA.01': 18, 'CA.02': 19 }, work: {}, service: 'none' }, regions)).toBe(true);
+    expect(majorityRead('AU', { majority: null, regions: { 'AU.01': 18 }, work: {}, service: 'none' }, regions)).toBe(false);
+    expect(majorityRead('US', { majority: 18, regions: { 'US.AL': null }, work: {}, service: 'none' }, regions)).toBe(false);
+    expect(majorityRead('US', { majority: 18, regions: { 'US.AL': 19 }, work: {}, service: 'none' }, regions)).toBe(true);
+    expect(majorityRead('FR', { majority: null, work: {}, service: 'none' }, ['FR.01'])).toBe(false);
+    expect(whole({ CA: { majority: null, regions: { 'CA.01': 18, 'CA.02': 19 }, work: {}, service: 'none' } }, regions)).toEqual(new Set(['CA']));
     const facts = new Map([['papers.ages.US', 'R-1'], ['papers.ages.FR', 'R-2'], ['papers.ages.blocked.FR', 'R-3']]);
-    expect(agesCoverage(['US', 'FR', 'DE', 'AQ'], new Set(['US', 'FR', 'DE']), whole(ages), facts)).toEqual([
+    expect(agesCoverage(['US', 'FR', 'DE', 'AQ'], new Set(['US', 'FR', 'DE']), whole(ages, []), facts)).toEqual([
       { key: 'US', status: 'researched', register: ['R-1'], tests: TESTS },
       { key: 'FR', status: 'blocked', register: ['R-3'], tests: [...TESTS, TOLD] },
       { key: 'DE', status: 'pending' },
