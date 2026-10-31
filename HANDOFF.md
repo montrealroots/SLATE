@@ -1,6 +1,6 @@
 # Handoff
 
-Layer in progress: 3
+Layer in progress: 4
 
 The precise state of the build, kept current at every checkpoint so an interrupted session resumes rather than
 restarts. Read `CLAUDE.md` and the owner's package in `docs/` first.
@@ -30,7 +30,7 @@ restarts. Read `CLAUDE.md` and the owner's package in `docs/` first.
   Bank's levels, 21 carried from the 2021 benchmark, 5 priced against France and 25 territories kept at another's
   level by the owner's ruling, and the Caribbean Netherlands from Bonaire's ICP level; 6 proven, 22 blocked, each
   after all five methods (R-0428 to R-0449; the next step names them and what to try again), none pending.
-- Layer 3 (the person's papers and money) is in progress. Built: the passports engine (`papers.passports`,
+- Layer 3 (the person's papers and money) was proven on 2026-10-31 at `a0520b2` (see Next step). Built: the passports engine (`papers.passports`,
   `src/papers/passports/`), compiled by `tools/papers/passports/` from the research files, at 100% mutation score
   (406 mutants). Its matrix (`coverage/passports-countries.json`): 223 researched, 23 blocked, 6 proven (no places),
   none pending (2026-10-29: Kiribati from its ministry's March 2026 brochure); every research file is in the engine's form. Next: visas, residence and work
@@ -721,6 +721,22 @@ What layer 0 holds:
   persist only once the owner pastes `tools/setup/cloud-setup.sh` into the environment's Setup script.
 
 ## Next step
+
+**Layer 3 proven (2026-10-31).** CI's full gate passed at `a0520b2` (Gate run 519): 1,631 of 1,631 tests, 30 engines
+with 0 rows pending, 0 advisories, mutation 100.00% (16,970 of 16,970), 14,343 s; recorded in `registry/layers.json`.
+
+**Layer 4 planning: first to do in the next session, at the owner's word (2026-10-31).** The owner asked for every
+screenwriter attribute, then whether the list given was fresh research covering every basis. It wasn't: of eighteen,
+four (Characterization, Construction, Dialogue, Scenes) are the WGA's own credit elements from the research, and
+fourteen were the lead's grouping from memory, so unsourced. The owner said yes to researching it to the source, the
+screenwriter first, then the producer, director and actor the same way; then: "We'll just mark down to do those later
+in the new session." The three agents launched were stopped before writing anything. The brief is
+`workbench/briefs/BRIEF-attrs.md`, split three ways: occupational registers (O*NET 27-3043 with ratings, BLS, ESCO's
+screenwriter skills, the UK, Canada, Australia, Ireland, France, Germany), how scripts are judged and credited (the WGA
+credit manuals, Nicholl, the Black List, labs, contests, coverage, awards' rules) and what is taught and asked (schools'
+learning outcomes, guild handbooks, staffing programmes). An attribute is on the list only if a source names it.
+KEEP entry 11 (2026-10-26) removed all the attributes from the new build; this research is for planning, and whether
+attributes return, and shown as numbers or not, is the owner's to rule.
 
 **Saved before layer 4 planning (2026-10-31).** The working files that lived only in the session's scratchpad are
 in `workbench/` (its README says what each holds): the waves' briefs and the four audits' reports (`workbench/briefs/`,
