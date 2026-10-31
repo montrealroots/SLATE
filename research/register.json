@@ -68623,6 +68623,36 @@
      "tried": "archive.org's availability API for https://www.gov.gs/visitors/, and web.archive.org for the snapshots it named",
      "result": "https://www.gov.gs/visitors/: no snapshot. web.archive.org, which serves the snapshots, reset every connection from this environment throughout the turn (2026-10-31, 02:10 to 03:08 UTC; each fetch retried every minute or so, as the brief asks), so no snapshot named here was read.",
      "date": "2026-10-31"
+    },
+    {
+     "method": "institution",
+     "tried": "gov.gs: Information for Yachts (gov.gs/wp-content/uploads/2025/08/Information-for-Yachts-FINAL.pdf), Visitor Policy & Risk Awareness (gov.gs/?p=2031), the GSGSSI Post Office Application and Information Pack 2026-2027 (gov.gs/wp-content/uploads/2026/05/...)",
+     "result": "All answer (200); none names a bank or a card. The Post Office pack's duties include 'Ensuring the safe transportation of cash between South Georgia and the Falkland Islands', which suggests no bank but doesn't say so.",
+     "date": "2026-10-31"
+    },
+    {
+     "method": "official-register",
+     "tried": "gov.gs/?p=2427 (Visitor Information Documents And Application Forms, named by a search)",
+     "result": "404.",
+     "date": "2026-10-31"
+    },
+    {
+     "method": "web-search",
+     "tried": "\"South Georgia\" \"no bank\" OR \"no banking facilities\" King Edward Point visitors gov.gs",
+     "result": "gov.gs visitor pages (no medical facilities, no public conveniences), the post office; nothing on banking.",
+     "date": "2026-10-31"
+    },
+    {
+     "method": "trade-press",
+     "tried": "Press among the results of the search named",
+     "result": "None names a bank or card.",
+     "date": "2026-10-31"
+    },
+    {
+     "method": "archive",
+     "tried": "archive.org availability API, then web.archive.org/web/<timestamp>id_/<URL> for the snapshot it named: https://www.gov.gs/",
+     "result": "https://www.gov.gs/: snapshot 20261018043823. web.archive.org reset every connection for the raw snapshot (curl 000; five tries each with pauses, in rounds between 04:40 and 05:00 UTC on 2026-10-31), so the snapshot named wasn't read.",
+     "date": "2026-10-31"
     }
    ],
    "notModeled": "cards.unkept"
@@ -68881,6 +68911,36 @@
      "tried": "archive.org's availability API for https://taaf.fr/collectivite/, and web.archive.org for the snapshots it named",
      "result": "https://taaf.fr/collectivite/: no snapshot. web.archive.org, which serves the snapshots, reset every connection from this environment throughout the turn (2026-10-31, 02:10 to 03:08 UTC; each fetch retried every minute or so, as the brief asks), so no snapshot named here was read.",
      "date": "2026-10-31"
+    },
+    {
+     "method": "institution",
+     "tried": "taaf.fr's home page and its own search for 'carte bancaire' (taaf.fr/?s=carte+bancaire)",
+     "result": "Both answer (200). The search lists the Administration's mission guides (2015, 2019, 2021): 'Les cartes bancaires ne sont pas utilisables \u00e0 bord du navire ni dans les bases' (bank cards can't be used aboard the ship or at the bases). That is about using cards, not about a bank there issuing one; no bank is named in the territory.",
+     "date": "2026-10-31"
+    },
+    {
+     "method": "official-register",
+     "tried": "taaf.fr/journal-officiel/ (the TAAF's Journal officiel), and the Journal officiel entry among the search's results",
+     "result": "The page answers 404; the search result names a text under the code mon\u00e9taire et financier, not a bank or card in the territory.",
+     "date": "2026-10-31"
+    },
+    {
+     "method": "web-search",
+     "tried": "TAAF Kerguelen \"pas de banque\" OR \"aucune banque\" OR \"pas de distributeur\" Port-aux-Fran\u00e7ais argent",
+     "result": "Metropolitan France's cash access and French Polynesia forums; nothing for the TAAF.",
+     "date": "2026-10-31"
+    },
+    {
+     "method": "trade-press",
+     "tried": "Press among the results of the search named",
+     "result": "None for the TAAF.",
+     "date": "2026-10-31"
+    },
+    {
+     "method": "archive",
+     "tried": "archive.org availability API, then web.archive.org/web/<timestamp>id_/<URL> for the snapshot it named: https://taaf.fr/",
+     "result": "https://taaf.fr/: snapshot 20261020121241. web.archive.org reset every connection for the raw snapshot (curl 000; five tries each with pauses, in rounds between 04:40 and 05:00 UTC on 2026-10-31), so the snapshot named wasn't read.",
+     "date": "2026-10-31"
     }
    ],
    "notModeled": "cards.unkept"
@@ -69016,6 +69076,36 @@
      "tried": "archive.org's availability API for https://www.tokelau.org.nz/Bulletin.html, and web.archive.org for the snapshots it named",
      "result": "https://www.tokelau.org.nz/Bulletin.html: snapshot 20260930040731. web.archive.org, which serves the snapshots, reset every connection from this environment throughout the turn (2026-10-31, 02:10 to 03:08 UTC; each fetch retried every minute or so, as the brief asks), so no snapshot named here was read.",
      "date": "2026-10-31"
+    },
+    {
+     "method": "institution",
+     "tried": "tokelau.org.nz (the Government of Tokelau's home page), read again",
+     "result": "Answers (200); names no bank.",
+     "date": "2026-10-31"
+    },
+    {
+     "method": "official-register",
+     "tried": "The UN Secretariat's 2026 working paper on Tokelau, A/AC.109/2026/14 (documents.un.org/api/symbol/access?s=A/AC.109/2026/14)",
+     "result": "Read: it names no bank and no card.",
+     "date": "2026-10-31"
+    },
+    {
+     "method": "web-search",
+     "tried": "Tokelau \"no banks\" OR \"no bank\" OR \"no banking\" atolls cash government official",
+     "result": "Travel guides (MileHacker: no banks or ATMs; not a source), CIA World Factbook archives, Te Ara; no official statement on banking.",
+     "date": "2026-10-31"
+    },
+    {
+     "method": "trade-press",
+     "tried": "New Internationalist and RNZ's Tokelau tag page among the results",
+     "result": "Nothing on banking.",
+     "date": "2026-10-31"
+    },
+    {
+     "method": "archive",
+     "tried": "archive.org availability API, then web.archive.org/web/<timestamp>id_/<URL> for the snapshot it named: https://www.tokelau.org.nz/Bulletin.html",
+     "result": "https://www.tokelau.org.nz/Bulletin.html: snapshot 20260930040731. web.archive.org reset every connection for the raw snapshot (curl 000; five tries each with pauses, in rounds between 04:40 and 05:00 UTC on 2026-10-31), so the snapshot named wasn't read.",
+     "date": "2026-10-31"
     }
    ],
    "notModeled": "cards.unkept"
@@ -69150,6 +69240,36 @@
      "method": "archive",
      "tried": "archive.org's availability API for http://www.nbt.tv/index.html, and web.archive.org for the snapshots it named",
      "result": "http://www.nbt.tv/index.html: no snapshot. web.archive.org, which serves the snapshots, reset every connection from this environment throughout the turn (2026-10-31, 02:10 to 03:08 UTC; each fetch retried every minute or so, as the brief asks), so no snapshot named here was read.",
+     "date": "2026-10-31"
+    },
+    {
+     "method": "institution",
+     "tried": "nbt.tv and www.nbt.tv (National Bank of Tuvalu, the only bank); the bank's Facebook page (facebook.com/nationalbankoftuvalu)",
+     "result": "nbt.tv answers (200) with a 114-byte page whose script redirects to '/lander' (a parked domain, no bank content); Facebook returned nothing (0 bytes).",
+     "date": "2026-10-31"
+    },
+    {
+     "method": "official-register",
+     "tried": "The Government of Tuvalu (gov.tv) and its Ministry of Finance (mof.gov.tv)",
+     "result": "No answer (000) from either.",
+     "date": "2026-10-31"
+    },
+    {
+     "method": "web-search",
+     "tried": "\"National Bank of Tuvalu\" \"credit card\" OR \"credit cards\" not available OR \"does not\" OR \"no credit\"",
+     "result": "PINA (17 April 2025), APIBC, Hawai\u02bbi Public Radio and ATM Marketplace on Tuvalu's first ATMs; the bank's plan of a credit card 'eventually'; nothing later.",
+     "date": "2026-10-31"
+    },
+    {
+     "method": "trade-press",
+     "tried": "PINA, 'Tuvalu marks momentous occasion with unveiling of its first ATMs' (17 April 2025), and APIBC, 'Tuvalu embraces digital banking with ATMs', both read",
+     "result": "PINA: 'For now, only prepaid cards can be used at the machines ... The bank plans to roll out Tuvalu-issued debit cards next, with the goal of eventually providing Visa debit and credit card functionality'. A plan of April 2025, which implies no credit card then but isn't a statement that none is offered now, eighteen months on; no later text was found.",
+     "date": "2026-10-31"
+    },
+    {
+     "method": "archive",
+     "tried": "archive.org availability API, then web.archive.org/web/<timestamp>id_/<URL> for the snapshot it named: http://www.nbt.tv/",
+     "result": "http://www.nbt.tv/: snapshot 20250616000233. web.archive.org reset every connection for the raw snapshot (curl 000; five tries each with pauses, in rounds between 04:40 and 05:00 UTC on 2026-10-31), so the snapshot named wasn't read.",
      "date": "2026-10-31"
     }
    ],
@@ -69420,6 +69540,36 @@
      "method": "archive",
      "tried": "archive.org's availability API for https://www.cocoskeelingislands.com.au/, and web.archive.org for the snapshots it named",
      "result": "https://www.cocoskeelingislands.com.au/: snapshot 20260827042511. web.archive.org, which serves the snapshots, reset every connection from this environment throughout the turn (2026-10-31, 02:10 to 03:08 UTC; each fetch retried every minute or so, as the brief asks), so no snapshot named here was read.",
+     "date": "2026-10-31"
+    },
+    {
+     "method": "institution",
+     "tried": "cocoskeelingislands.com.au/visitor-information/",
+     "result": "404 behind a Cloudflare page, not passed.",
+     "date": "2026-10-31"
+    },
+    {
+     "method": "official-register",
+     "tried": "infrastructure.gov.au's Cocos (Keeling) traveller information page (named by a search)",
+     "result": "No answer (000).",
+     "date": "2026-10-31"
+    },
+    {
+     "method": "web-search",
+     "tried": "\"Cocos (Keeling) Islands\" banking Westpac OR \"Bank@Post\" OR \"Commonwealth Bank\" agency Home Island West Island residents",
+     "result": "A 1993 House of Representatives committee report ('no bank as such on Cocos Island; however there is a Commonwealth Bank agency'), a cruising report naming 'the only ATM on the islands'; residents are served by Australian banks, so 'none' would be wrong without a source saying their cards aren't offered there.",
+     "date": "2026-10-31"
+    },
+    {
+     "method": "trade-press",
+     "tried": "noonsite's Cocos Keeling cruising report, among the results",
+     "result": "An ATM on West Island; no card issued or refused.",
+     "date": "2026-10-31"
+    },
+    {
+     "method": "archive",
+     "tried": "archive.org availability API, then web.archive.org/web/<timestamp>id_/<URL> for the snapshot it named: https://www.cocoskeelingislands.com.au/",
+     "result": "https://www.cocoskeelingislands.com.au/: snapshot 20260827042511. web.archive.org reset every connection for the raw snapshot (curl 000; five tries each with pauses, in rounds between 04:40 and 05:00 UTC on 2026-10-31), so the snapshot named wasn't read.",
      "date": "2026-10-31"
     }
    ],
@@ -70095,6 +70245,36 @@
      "method": "archive",
      "tried": "archive.org's availability API for https://www.sc.com/fk/about-us/, and web.archive.org for the snapshots it named",
      "result": "https://www.sc.com/fk/about-us/: snapshot 20250218204204. web.archive.org, which serves the snapshots, reset every connection from this environment throughout the turn (2026-10-31, 02:10 to 03:08 UTC; each fetch retried every minute or so, as the brief asks), so no snapshot named here was read.",
+     "date": "2026-10-31"
+    },
+    {
+     "method": "institution",
+     "tried": "Standard Chartered Falklands, the islands' only bank: its sitemap (sc.com/fk/sitemap.xml and each sitemap-pt-page-*.xml, 32 pages listed) and the pages save/debit-cards, save, borrow, ways-to-bank, help-centre, terms-conditions, contact-us and falklands-mobile-banking-app; /fk/credit-cards/ and /fk/cards/",
+     "result": "The site has no credit card page (/fk/credit-cards/ and /fk/cards/ answer 404); ways-to-bank lists 'Visa Debit Card available on Current Accounts' and 'Credit or debit card Cash Advance' (an advance on a card issued elsewhere). No page says the bank issues no credit card: its product list is silence, not a statement.",
+     "date": "2026-10-31"
+    },
+    {
+     "method": "official-register",
+     "tried": "The Falkland Islands Government's money page (falklands.gov.fk/22-visiting-the-falkland-islands/visiting-the-falklands-list/286-money), retried; the UN Secretariat's 2026 working paper on the Falkland Islands (Malvinas), A/AC.109/2026/6 (documents.un.org/api/symbol/access?s=A/AC.109/2026/6)",
+     "result": "The Government's page gave no answer (000). The UN paper (read) names no bank and no card.",
+     "date": "2026-10-31"
+    },
+    {
+     "method": "web-search",
+     "tried": "Falkland Islands \"credit cards\" \"not issued\" OR \"do not issue\" OR \"does not offer\" Standard Chartered Stanley residents",
+     "result": "Standard Chartered's About Us page, the Government's money page, travel guides (World Travel Guide, Wildfoot) on cards accepted in Stanley; nothing says no credit card is issued on the islands.",
+     "date": "2026-10-31"
+    },
+    {
+     "method": "trade-press",
+     "tried": "Information Age, 'Square and Mastercard bring card payments to the Falkland Islands', and World Travel Guide, among the results of the search named",
+     "result": "On accepting visitors' cards; no card issued there, and no statement that none is.",
+     "date": "2026-10-31"
+    },
+    {
+     "method": "archive",
+     "tried": "archive.org availability API, then web.archive.org/web/<timestamp>id_/<URL> for the snapshot it named: https://www.falklands.gov.fk/22-visiting-the-falkland-islands/visiting-the-falklands-list/286-money; https://www.sc.com/fk/save/debit-cards/",
+     "result": "https://www.falklands.gov.fk/22-visiting-the-falkland-islands/visiting-the-falklands-list/286-money: no snapshot; https://www.sc.com/fk/save/debit-cards/: snapshot 20250324195345. web.archive.org reset every connection for the raw snapshot (curl 000; five tries each with pauses, in rounds between 04:40 and 05:00 UTC on 2026-10-31), so the snapshot named wasn't read.",
      "date": "2026-10-31"
     }
    ],
@@ -73170,6 +73350,36 @@
      "tried": "archive.org's availability API for https://bsp.co.ck/about-us/media-centre/news-announcements/bsp-introduces-new-credit-card; https://www.bsp.co.ck/uploads/2025/12/Interest-Rate-Fee-Schedule_15122025.pdf; https://www.bci.co.ck/, and web.archive.org for the snapshots it named",
      "result": "https://bsp.co.ck/about-us/media-centre/news-announcements/bsp-introduces-new-credit-card: no snapshot; https://www.bsp.co.ck/uploads/2025/12/Interest-Rate-Fee-Schedule_15122025.pdf: snapshot 20260211001946; https://www.bci.co.ck/: snapshot 20260812152008. web.archive.org, which serves the snapshots, reset every connection from this environment throughout the turn (2026-10-31, 02:10 to 03:08 UTC; each fetch retried every minute or so, as the brief asks), so no snapshot named here was read.",
      "date": "2026-10-31"
+    },
+    {
+     "method": "institution",
+     "tried": "ANZ Cook Islands: anz.com/cookislands/en/personal/rates-fees-agreements/ (named by a search), anz.com/cook-islands/en/personal/ and /credit-cards/",
+     "result": "The rates page answers (200) and names debit cards only; the cook-islands paths answer ANZ Australia's 404. No statement that no bank offers a credit card; BSP and BCI weren't refetched (their schedules were read on 2026-10-31 earlier).",
+     "date": "2026-10-31"
+    },
+    {
+     "method": "official-register",
+     "tried": "The Ministry of Finance and Economic Management (mfem.gov.ck)",
+     "result": "Answers (200); its home page names no bank's cards.",
+     "date": "2026-10-31"
+    },
+    {
+     "method": "web-search",
+     "tried": "\"Cook Islands\" \"credit card\" ANZ OR BSP OR \"Bank of the Cook Islands\" Visa credit card residents interest rate 2026",
+     "result": "ANZ's and BSP's fee schedules, BSP's 2026 notice on Visa card processing; BSP has offered a Visa Business credit card (a business's, not a person's); no statement of none.",
+     "date": "2026-10-31"
+    },
+    {
+     "method": "trade-press",
+     "tried": "Press among the results of the search named",
+     "result": "None.",
+     "date": "2026-10-31"
+    },
+    {
+     "method": "archive",
+     "tried": "archive.org availability API, then web.archive.org/web/<timestamp>id_/<URL> for the snapshot it named: https://www.bci.co.ck/",
+     "result": "https://www.bci.co.ck/: snapshot 20260812152008. web.archive.org reset every connection for the raw snapshot (curl 000; five tries each with pauses, in rounds between 04:40 and 05:00 UTC on 2026-10-31), so the snapshot named wasn't read.",
+     "date": "2026-10-31"
     }
    ],
    "notModeled": "cards.unkept"
@@ -73299,140 +73509,35 @@
      "tried": "Wayback Machine: the CDX listing of anz.com/kiribati",
      "result": "Visa Debit card, Access card and letters of credit pages (2010 to 2022) and the fees page; no credit card page. web.archive.org answered on 2026-10-31 (it drops connections and was 'Temporarily Offline' at times; each fetch was retried).",
      "date": "2026-10-31"
-    }
-   ],
-   "notModeled": "cards.unkept"
-  },
-  {
-   "id": "R-2081",
-   "fact": "money.cards.blocked.NR",
-   "sought": "The credit cards of Nauru: each bank's card, its interest and its fees, as the bank publishes them",
-   "status": "blocked",
-   "attempts": [
-    {
-     "method": "institution",
-     "tried": "CommBank's Nauru page (commbank.com.au/banking/nauru.html), the banks research's source",
-     "result": "It says CommBank's full suite of products is not available to Nauruan customers and offers a Debit Mastercard; no credit card.",
-     "date": "2026-10-29"
-    },
-    {
-     "method": "official-register",
-     "tried": "Nauru has no central bank (it uses the Australian dollar)",
-     "result": "No regulator publishes card terms to read.",
-     "date": "2026-10-29"
-    },
-    {
-     "method": "web-search",
-     "tried": "'Kiribati OR Nauru bank credit card Visa interest rate ANZ Kiribati credit card'",
-     "result": "Nothing for Nauru.",
-     "date": "2026-10-29"
-    },
-    {
-     "method": "trade-press",
-     "tried": "Press results among the search named",
-     "result": "None for Nauru.",
-     "date": "2026-10-29"
-    },
-    {
-     "method": "archive",
-     "tried": "The Wayback Machine (web.archive.org) for the pages named above",
-     "result": "This environment's egress refuses web.archive.org (no answer, 000, retested 2026-10-29); no snapshot could be read.",
-     "date": "2026-10-29"
     },
     {
      "method": "institution",
-     "tried": "CommBank's Nauru page (commbank.com.au/banking/nauru.html)",
-     "result": "Answers (200); it names no credit card.",
-     "date": "2026-10-30"
-    },
-    {
-     "method": "official-register",
-     "tried": "naurugov.nr (Government of Nauru; no central bank)",
-     "result": "No answer (000, 2026-10-30).",
-     "date": "2026-10-30"
-    },
-    {
-     "method": "web-search",
-     "tried": "'Kiribati OR Nauru OR Tuvalu OR Tokelau residents credit card issued local bank Visa credit card 2026'",
-     "result": "2025 reports of Tuvalu's first ATMs (prepaid cards only; debit and credit cards planned), ANZ's Visa Debit terms, travellers' forum posts on cash and declined cards; no credit card issued in Kiribati, Nauru, Tuvalu or Tokelau.",
-     "date": "2026-10-30"
-    },
-    {
-     "method": "trade-press",
-     "tried": "Press results among the search named",
-     "result": "None names a credit card issued there or its terms.",
-     "date": "2026-10-30"
-    },
-    {
-     "method": "archive",
-     "tried": "archive.org's Wayback availability API for https://www.commbank.com.au/banking/nauru.html",
-     "result": "https://www.commbank.com.au/banking/nauru.html: no snapshot listed. web.archive.org, which serves the snapshots, is refused by this environment's egress (no answer over HTTPS, 403 over HTTP, retested 2026-10-30), so none could be read.",
-     "date": "2026-10-30"
-    },
-    {
-     "method": "institution",
-     "tried": "https://www.commbank.com.au/banking/nauru.html",
-     "result": "https://www.commbank.com.au/banking/nauru.html: answers (200); it names no credit card.",
-     "date": "2026-10-30"
-    },
-    {
-     "method": "official-register",
-     "tried": "https://www.naurugov.nr/ (the central bank or regulator)",
-     "result": "https://www.naurugov.nr/: no answer (000).",
-     "date": "2026-10-30"
-    },
-    {
-     "method": "web-search",
-     "tried": "'Pacific islands \"credit card\" Samoa OR Tonga OR Vanuatu OR \"Solomon Islands\" OR Palau OR Micronesia OR \"Marshall Islands\" OR \"Cook Islands\" OR Kiribati bank card \"annual percentage rate\" OR \"interest rate\" fees 2026'",
-     "result": "ANZ Fiji's card rates, the FSM Code's Title 34 (consumer protection), Australian and US cards; nothing for this place's cards.",
-     "date": "2026-10-30"
-    },
-    {
-     "method": "trade-press",
-     "tried": "Press among the results of the search named",
-     "result": "None for the place.",
-     "date": "2026-10-30"
-    },
-    {
-     "method": "archive",
-     "tried": "archive.org's Wayback availability API for https://www.commbank.com.au/banking/nauru.html",
-     "result": "https://www.commbank.com.au/banking/nauru.html: the API answered 429 Too Many Requests, retried with pauses. web.archive.org, which serves the snapshots, resets the connection from this environment (retested 2026-10-30: connection reset, no answer), so no snapshot could be read.",
-     "date": "2026-10-30"
-    },
-    {
-     "method": "archive",
-     "tried": "archive.org's Wayback availability API for https://www.commbank.com.au/banking/nauru.html",
-     "result": "https://www.commbank.com.au/banking/nauru.html: snapshot 20261003012447. web.archive.org, which serves the snapshots, resets the connection from this environment (retested 2026-10-30: connection reset, no answer), so no snapshot could be read.",
-     "date": "2026-10-30"
-    },
-    {
-     "method": "institution",
-     "tried": "https://www.naurugov.nr/ (Government of Nauru, for its banking agency's notices)",
-     "result": "No answer (000).",
+     "tried": "ANZ Kiribati: anz.com/kiribati/en/personal/ and anz.com/kiribati/en/personal/credit-cards/",
+     "result": "The personal page answers (200) and names no credit card; the credit-cards path answers 404. No statement that ANZ offers none in Kiribati.",
      "date": "2026-10-31"
     },
     {
      "method": "official-register",
-     "tried": "ronlaw.gov.nr (the Republic of Nauru's online legislation)",
-     "result": "Answers (200); a home page with no banking or card rule.",
+     "tried": "The Ministry of Finance and Economic Development (mfed.gov.ki)",
+     "result": "Answers (200); its home page names no bank's cards.",
      "date": "2026-10-31"
     },
     {
      "method": "web-search",
-     "tried": "'\"National Bank of Tuvalu\" Visa card 2026 OR \"Nauru\" bank agency Bendigo OR \"Bank of Nauru\" 2026 cards residents'",
-     "result": "Nothing on a bank or card for Nauru: Tuvalu's ATM reports only.",
+     "tried": "Kiribati \"credit cards\" ANZ Kiribati \"not available\" OR \"does not offer\" OR \"no credit card\" residents",
+     "result": "ANZ Kiribati's Visa Debit brochure and savings terms, ANZ Fiji's credit card conditions; nothing on a Kiribati credit card either way.",
      "date": "2026-10-31"
     },
     {
      "method": "trade-press",
-     "tried": "Press among the results of the search named",
-     "result": "None for Nauru.",
+     "tried": "ANZ's Bluenotes piece on its Kiribati leadership (2024), among the results",
+     "result": "Nothing on cards.",
      "date": "2026-10-31"
     },
     {
      "method": "archive",
-     "tried": "archive.org's availability API for https://www.naurugov.nr/, and web.archive.org for the snapshots it named",
-     "result": "https://www.naurugov.nr/: snapshot 20260921200514. web.archive.org, which serves the snapshots, reset every connection from this environment throughout the turn (2026-10-31, 02:10 to 03:08 UTC; each fetch retried every minute or so, as the brief asks), so no snapshot named here was read.",
+     "tried": "archive.org availability API, then web.archive.org/web/<timestamp>id_/<URL> for the snapshot it named: https://www.anz.com/kiribati/en/personal/",
+     "result": "https://www.anz.com/kiribati/en/personal/: snapshot 20260517204328. web.archive.org reset every connection for the raw snapshot (curl 000; five tries each with pauses, in rounds between 04:40 and 05:00 UTC on 2026-10-31), so the snapshot named wasn't read.",
      "date": "2026-10-31"
     }
    ],
@@ -73568,6 +73673,36 @@
      "method": "archive",
      "tried": "archive.org's availability API for https://www.scbl.ws/personal.html; https://www.cbs.gov.ws/commercial-banks, and web.archive.org for the snapshots it named",
      "result": "https://www.scbl.ws/personal.html: snapshot 20260121092915; https://www.cbs.gov.ws/commercial-banks: snapshot 20261003044744. web.archive.org, which serves the snapshots, reset every connection from this environment throughout the turn (2026-10-31, 02:10 to 03:08 UTC; each fetch retried every minute or so, as the brief asks), so no snapshot named here was read.",
+     "date": "2026-10-31"
+    },
+    {
+     "method": "institution",
+     "tried": "ANZ Samoa: anz.com/samoa/en/personal/ and /personal/credit-cards/",
+     "result": "The personal page answers (200) and names no credit card; the credit-cards path answers 404. Samoa has four banks; no statement that none offers a credit card.",
+     "date": "2026-10-31"
+    },
+    {
+     "method": "official-register",
+     "tried": "The Central Bank of Samoa's 'Commercial-Banks-Interest-Rates.Fees&Charges-March2026.pdf' (cbs.gov.ws/media/, named by a search)",
+     "result": "404.",
+     "date": "2026-10-31"
+    },
+    {
+     "method": "web-search",
+     "tried": "Vanuatu OR Samoa OR \"Cook Islands\" Reserve Bank \"credit cards\" commercial banks offer report 2025 personal credit card issued",
+     "result": "Nothing on credit cards for Samoa.",
+     "date": "2026-10-31"
+    },
+    {
+     "method": "trade-press",
+     "tried": "Press among the results of the search named",
+     "result": "None.",
+     "date": "2026-10-31"
+    },
+    {
+     "method": "archive",
+     "tried": "archive.org availability API, then web.archive.org/web/<timestamp>id_/<URL> for the snapshot it named: https://www.scbl.ws/personal.html",
+     "result": "https://www.scbl.ws/personal.html: snapshot 20260121092915. web.archive.org reset every connection for the raw snapshot (curl 000; five tries each with pauses, in rounds between 04:40 and 05:00 UTC on 2026-10-31), so the snapshot named wasn't read.",
      "date": "2026-10-31"
     }
    ],
@@ -73974,6 +74109,36 @@
      "tried": "archive.org's availability API for https://www.bsp.com.vu/; https://www.bred.vu/brochures-and-fees/, and web.archive.org for the snapshots it named",
      "result": "https://www.bsp.com.vu/: snapshot 20260220172956; https://www.bred.vu/brochures-and-fees/: snapshot 20260617012432. web.archive.org, which serves the snapshots, reset every connection from this environment throughout the turn (2026-10-31, 02:10 to 03:08 UTC; each fetch retried every minute or so, as the brief asks), so no snapshot named here was read.",
      "date": "2026-10-31"
+    },
+    {
+     "method": "institution",
+     "tried": "ANZ Vanuatu: anz.com/vanuatu/en/personal/ and /personal/credit-cards/",
+     "result": "The personal page answers (200) and names no credit card; the credit-cards path answers 404. No statement of none, and Vanuatu has several banks.",
+     "date": "2026-10-31"
+    },
+    {
+     "method": "official-register",
+     "tried": "The Reserve Bank of Vanuatu's December 2025 Quarterly Economic Review (rbv.gov.vu/images/Quarterly-Economic-Reviews/2025/December%202025%20QER.pdf) and its financial inclusion page (rbv.gov.vu/index.php/en/financial-inclusion-2018), both named by a search",
+     "result": "No answer (000) from either.",
+     "date": "2026-10-31"
+    },
+    {
+     "method": "web-search",
+     "tried": "Vanuatu OR Samoa OR \"Cook Islands\" Reserve Bank \"credit cards\" commercial banks offer report 2025 personal credit card issued",
+     "result": "The RBV's 2025 quarterly reviews and annual reports; nothing on credit cards for Vanuatu, Samoa or the Cook Islands.",
+     "date": "2026-10-31"
+    },
+    {
+     "method": "trade-press",
+     "tried": "Press among the results of the search named",
+     "result": "None.",
+     "date": "2026-10-31"
+    },
+    {
+     "method": "archive",
+     "tried": "archive.org availability API, then web.archive.org/web/<timestamp>id_/<URL> for the snapshot it named: https://www.bred.vu/brochures-and-fees/",
+     "result": "https://www.bred.vu/brochures-and-fees/: snapshot 20260617012432. web.archive.org reset every connection for the raw snapshot (curl 000; five tries each with pauses, in rounds between 04:40 and 05:00 UTC on 2026-10-31), so the snapshot named wasn't read.",
+     "date": "2026-10-31"
     }
    ],
    "notModeled": "cards.unkept"
@@ -74108,6 +74273,36 @@
      "method": "archive",
      "tried": "archive.org's availability API for https://www.boh.com/newsroom/bank-of-hawaii-scheduled-to-close-american-samoa-operations-in-august, and web.archive.org for the snapshots it named",
      "result": "https://www.boh.com/newsroom/bank-of-hawaii-scheduled-to-close-american-samoa-operations-in-august: snapshot 20260712060940. web.archive.org, which serves the snapshots, reset every connection from this environment throughout the turn (2026-10-31, 02:10 to 03:08 UTC; each fetch retried every minute or so, as the brief asks), so no snapshot named here was read.",
+     "date": "2026-10-31"
+    },
+    {
+     "method": "institution",
+     "tried": "The Territorial Bank of American Samoa's home page (mytbas.com), read again",
+     "result": "Answers (200): 'The new TBAS Debit Mastercard and the Business Debit Mastercard is here now!'; no credit card, and no statement that it offers none.",
+     "date": "2026-10-31"
+    },
+    {
+     "method": "official-register",
+     "tried": "The UN Secretariat's 2026 working paper on American Samoa, A/AC.109/2026/1 (documents.un.org/api/symbol/access?s=A/AC.109/2026/1)",
+     "result": "Read: it names no bank and no card.",
+     "date": "2026-10-31"
+    },
+    {
+     "method": "web-search",
+     "tried": "\"American Samoa\" bank OR \"credit union\" \"credit card\" Pago Pago Territorial Bank ANZ Amerika Samoa credit card offered",
+     "result": "Samoa News items on the TBAS debit Mastercard; ANZ pages for (independent) Samoa; no credit card issued in American Samoa and no statement of none. US issuers' cards are open to a US territory's residents, so 'none' would need a source.",
+     "date": "2026-10-31"
+    },
+    {
+     "method": "trade-press",
+     "tried": "Samoa News, 'Samoa moves towards a cashless economy' and the TBAS debit Mastercard promotion, among the results",
+     "result": "Debit cards only.",
+     "date": "2026-10-31"
+    },
+    {
+     "method": "archive",
+     "tried": "archive.org availability API, then web.archive.org/web/<timestamp>id_/<URL> for the snapshot it named: https://www.mytbas.com/",
+     "result": "https://www.mytbas.com/: snapshot 20260712114246. web.archive.org reset every connection for the raw snapshot (curl 000; five tries each with pauses, in rounds between 04:40 and 05:00 UTC on 2026-10-31), so the snapshot named wasn't read.",
      "date": "2026-10-31"
     }
    ],
@@ -74244,6 +74439,36 @@
      "tried": "archive.org's availability API for https://www.fsmdb.fm/, and web.archive.org for the snapshots it named",
      "result": "https://www.fsmdb.fm/: snapshot 20260617012210. web.archive.org, which serves the snapshots, reset every connection from this environment throughout the turn (2026-10-31, 02:10 to 03:08 UTC; each fetch retried every minute or so, as the brief asks), so no snapshot named here was read.",
      "date": "2026-10-31"
+    },
+    {
+     "method": "institution",
+     "tried": "Bank of Guam's site, which has branches in Koror, the FSM's states and Majuro: bankofguam.com/personal/spend/credit-cards (named by a search), bankofguam.com/sitemap.xml and bankofguam.com/personal/spend/personal-checking, with and without www",
+     "result": "No answer (000) from any of them today. The search's snippet of the credit cards page names Bank of Guam Visa Classic, Visa Gold, Mastercard Classic and Mastercard Gold, and its branch list names the branch here: so a card may well be offered to residents, and 'none' would be wrong; the page's own terms are the lead for a researched file.",
+     "date": "2026-10-31"
+    },
+    {
+     "method": "official-register",
+     "tried": "The FSM Banking Board (fsmbankingboard.fm)",
+     "result": "No answer (000).",
+     "date": "2026-10-31"
+    },
+    {
+     "method": "web-search",
+     "tried": "\"Bank of Guam\" Visa credit card Palau OR Pohnpei OR Majuro branch apply \"credit card\"",
+     "result": "Bank of Guam's credit cards page and its Pohnpei branch listing; pohnpei-adventure.com on cards; no statement that none is offered.",
+     "date": "2026-10-31"
+    },
+    {
+     "method": "trade-press",
+     "tried": "pohnpei-adventure.com's 'Money Matters', among the results",
+     "result": "On ATMs and cards accepted; no card's terms.",
+     "date": "2026-10-31"
+    },
+    {
+     "method": "archive",
+     "tried": "archive.org availability API, then web.archive.org/web/<timestamp>id_/<URL> for the snapshot it named: https://www.bankfsm.com/",
+     "result": "https://www.bankfsm.com/: no snapshot",
+     "date": "2026-10-31"
     }
    ],
    "notModeled": "cards.unkept"
@@ -74379,6 +74604,36 @@
      "tried": "archive.org's availability API for https://www.bankpacific.com/; https://www.boh.com/personal/credit-card; https://islandtimes.org/bank-of-hawaii-renews-commitment-to-palau-vows-investment/, and web.archive.org for the snapshots it named",
      "result": "https://www.bankpacific.com/: snapshot 20260922004056; https://www.boh.com/personal/credit-card: snapshot 20261014010947; https://islandtimes.org/bank-of-hawaii-renews-commitment-to-palau-vows-investment/: snapshot 20240503030657. web.archive.org, which serves the snapshots, reset every connection from this environment throughout the turn (2026-10-31, 02:10 to 03:08 UTC; each fetch retried every minute or so, as the brief asks), so no snapshot named here was read.",
      "date": "2026-10-31"
+    },
+    {
+     "method": "institution",
+     "tried": "Bank of Guam's site, which has branches in Koror, the FSM's states and Majuro: bankofguam.com/personal/spend/credit-cards (named by a search), bankofguam.com/sitemap.xml and bankofguam.com/personal/spend/personal-checking, with and without www",
+     "result": "No answer (000) from any of them today. The search's snippet of the credit cards page names Bank of Guam Visa Classic, Visa Gold, Mastercard Classic and Mastercard Gold, and its branch list names the branch here: so a card may well be offered to residents, and 'none' would be wrong; the page's own terms are the lead for a researched file.",
+     "date": "2026-10-31"
+    },
+    {
+     "method": "official-register",
+     "tried": "The Financial Institutions Commission's Central Registry for Banks (mail.ropfic.org/pdf/CENTRAL-REGISTRY-FOR-BANKS _UPDATED-9.17.18.pdf, named by a search)",
+     "result": "406.",
+     "date": "2026-10-31"
+    },
+    {
+     "method": "web-search",
+     "tried": "\"Bank of Guam\" Visa credit card Palau OR Pohnpei OR Majuro branch apply \"credit card\"",
+     "result": "Bank of Guam's credit cards page and branch list (Koror, Pohnpei, Majuro), a NerdWallet card page (aggregator, not opened), travel pages.",
+     "date": "2026-10-31"
+    },
+    {
+     "method": "trade-press",
+     "tried": "pohnpei-adventure.com's money page and the Taiwan embassy's Palau page, among the results",
+     "result": "No card's terms.",
+     "date": "2026-10-31"
+    },
+    {
+     "method": "archive",
+     "tried": "archive.org availability API, then web.archive.org/web/<timestamp>id_/<URL> for the snapshot it named: https://www.bankpacific.com/",
+     "result": "https://www.bankpacific.com/: snapshot 20260922004056. web.archive.org reset every connection for the raw snapshot (curl 000; five tries each with pauses, in rounds between 04:40 and 05:00 UTC on 2026-10-31), so the snapshot named wasn't read.",
+     "date": "2026-10-31"
     }
    ],
    "notModeled": "cards.unkept"
@@ -74513,6 +74768,36 @@
      "method": "archive",
      "tried": "archive.org's availability API for https://bomi.biz/, and web.archive.org for the snapshots it named",
      "result": "https://bomi.biz/: snapshot 20261015000724. web.archive.org, which serves the snapshots, reset every connection from this environment throughout the turn (2026-10-31, 02:10 to 03:08 UTC; each fetch retried every minute or so, as the brief asks), so no snapshot named here was read.",
+     "date": "2026-10-31"
+    },
+    {
+     "method": "institution",
+     "tried": "Bank of Guam's site, which has branches in Koror, the FSM's states and Majuro: bankofguam.com/personal/spend/credit-cards (named by a search), bankofguam.com/sitemap.xml and bankofguam.com/personal/spend/personal-checking, with and without www",
+     "result": "No answer (000) from any of them today. The search's snippet of the credit cards page names Bank of Guam Visa Classic, Visa Gold, Mastercard Classic and Mastercard Gold, and its branch list names the branch here: so a card may well be offered to residents, and 'none' would be wrong; the page's own terms are the lead for a researched file.",
+     "date": "2026-10-31"
+    },
+    {
+     "method": "official-register",
+     "tried": "The RMI Banking Commission (rmibankingcommission.org)",
+     "result": "No answer (000).",
+     "date": "2026-10-31"
+    },
+    {
+     "method": "web-search",
+     "tried": "\"Bank of Guam\" Visa credit card Palau OR Pohnpei OR Majuro branch apply \"credit card\"",
+     "result": "Bank of Guam's credit cards page and its Majuro branch listing; no statement that no card is offered in the Marshall Islands.",
+     "date": "2026-10-31"
+    },
+    {
+     "method": "trade-press",
+     "tried": "Press among the results of the search named",
+     "result": "None for the Marshall Islands.",
+     "date": "2026-10-31"
+    },
+    {
+     "method": "archive",
+     "tried": "archive.org availability API, then web.archive.org/web/<timestamp>id_/<URL> for the snapshot it named: https://bomi.biz/",
+     "result": "https://bomi.biz/: snapshot 20261015000724. web.archive.org reset every connection for the raw snapshot (curl 000; five tries each with pauses, in rounds between 04:40 and 05:00 UTC on 2026-10-31), so the snapshot named wasn't read.",
      "date": "2026-10-31"
     }
    ],
@@ -77734,6 +78019,36 @@
      "tried": "archive.org's availability API for https://www.sainthelenabank.com/products-and-services/local-debit-card/, and web.archive.org for the snapshots it named",
      "result": "https://www.sainthelenabank.com/products-and-services/local-debit-card/: snapshot 20250905002801. web.archive.org, which serves the snapshots, reset every connection from this environment throughout the turn (2026-10-31, 02:10 to 03:08 UTC; each fetch retried every minute or so, as the brief asks), so no snapshot named here was read.",
      "date": "2026-10-31"
+    },
+    {
+     "method": "institution",
+     "tried": "Bank of St Helena: about-us, products-and-services/local-debit-card, cash-advance, personal-lending and retail-finance pages; its PDFs Rates-Fees-and-Charges, LDC-Terms-and-Conditions, Customer-Service-Charter and Account-Features-Application-Individual (sainthelenabank.com/wp-content/uploads/)",
+     "result": "All answer (200). About Us: the bank 'has been the only banking facility on both St Helena Island and Ascension Island'. Its cards are the Local Debit Card and the prepaid Tourist Card; the fees list a 'Credit / Debit Card Cash Advance' at 5% (cards issued elsewhere). No page says it issues no credit card: silence.",
+     "date": "2026-10-31"
+    },
+    {
+     "method": "official-register",
+     "tried": "The UN Secretariat's 2026 working paper on Saint Helena, A/AC.109/2026/13 (documents.un.org/api/symbol/access?s=A/AC.109/2026/13), section E, Banking and credit",
+     "result": "Read: 'The Bank of Saint Helena is the sole banking entity ... A local debit card service commenced in December 2017.' It says nothing of credit cards either way.",
+     "date": "2026-10-31"
+    },
+    {
+     "method": "web-search",
+     "tried": "\"Bank of St Helena\" \"credit cards\" \"do not\" OR \"does not\" OR \"not available\" offer",
+     "result": "The bank's own pages (Tourist Card, local debit card), noonsite and britbrief on the FCDO's advice (cards accepted in few places, no ATMs); no statement that no credit card is issued.",
+     "date": "2026-10-31"
+    },
+    {
+     "method": "trade-press",
+     "tried": "britbrief, 'Foreign Office Warns: No ATMs and Cards Not Widely Accepted on Three Islands', and noonsite's St Helena money page, among the results",
+     "result": "On acceptance; nothing on a card issued there.",
+     "date": "2026-10-31"
+    },
+    {
+     "method": "archive",
+     "tried": "archive.org availability API, then web.archive.org/web/<timestamp>id_/<URL> for the snapshot it named: https://www.sainthelenabank.com/products-and-services/local-debit-card/",
+     "result": "https://www.sainthelenabank.com/products-and-services/local-debit-card/: snapshot 20250905002801. web.archive.org reset every connection for the raw snapshot (curl 000; five tries each with pauses, in rounds between 04:40 and 05:00 UTC on 2026-10-31), so the snapshot named wasn't read.",
+     "date": "2026-10-31"
     }
    ],
    "notModeled": "cards.unkept"
@@ -77868,6 +78183,36 @@
      "method": "archive",
      "tried": "archive.org's availability API for https://biot.gov.io/visiting/, and web.archive.org for the snapshots it named",
      "result": "https://biot.gov.io/visiting/: snapshot 20261022133717. web.archive.org, which serves the snapshots, reset every connection from this environment throughout the turn (2026-10-31, 02:10 to 03:08 UTC; each fetch retried every minute or so, as the brief asks), so no snapshot named here was read.",
+     "date": "2026-10-31"
+    },
+    {
+     "method": "institution",
+     "tried": "Community Bank (DoD, operated by Navy Federal Credit Union), whose banking center is on Diego Garcia: dodcommunitybank.com/sitemap.xml, home/credit_services, home/credit_services/loan_rates, home/newcomer/faqs/general_faqs, the Diego Garcia location page",
+     "result": "All answer (200). Its credit is auto, motorcycle and signature loans and a line of credit linked to checking; it provides ATM and debit cards; no credit card page and no statement that it offers none.",
+     "date": "2026-10-31"
+    },
+    {
+     "method": "official-register",
+     "tried": "biot.gov.io/visiting/ (the BIOT Administration), read again",
+     "result": "Answers (200); names no bank card.",
+     "date": "2026-10-31"
+    },
+    {
+     "method": "web-search",
+     "tried": "\"Community Bank\" \"Diego Garcia\" OR \"DoD Community Bank\" \"credit card\" does not offer OR \"credit cards\"",
+     "result": "Community Bank's own pages, Navy Federal's fact sheet, DoD travel card pages; nothing says Community Bank offers no credit card.",
+     "date": "2026-10-31"
+    },
+    {
+     "method": "trade-press",
+     "tried": "CUInsight, 'Navy Federal Credit Union awarded contract to operate Department of Defense overseas military banking program', among the results",
+     "result": "On the contract; no card's terms or statement of none.",
+     "date": "2026-10-31"
+    },
+    {
+     "method": "archive",
+     "tried": "archive.org availability API, then web.archive.org/web/<timestamp>id_/<URL> for the snapshot it named: https://biot.gov.io/visiting/",
+     "result": "https://biot.gov.io/visiting/: snapshot 20261022133717. web.archive.org reset every connection for the raw snapshot (curl 000; five tries each with pauses, in rounds between 04:40 and 05:00 UTC on 2026-10-31), so the snapshot named wasn't read.",
      "date": "2026-10-31"
     }
    ],
@@ -148562,6 +148907,39 @@
      "title": "Tax Administration Jamaica, Rates and Fees",
      "read": "2026-10-31",
      "said": "DRIVER\u2019S LICENCE FEES Private Driver\u2019s Licence $5,400.00"
+    }
+   ]
+  },
+  {
+   "id": "R-4239",
+   "fact": "money.cards.NR",
+   "sought": "The credit cards of Nauru: each bank's card, its interest and its fees, as the bank publishes them",
+   "status": "found",
+   "value": {
+    "file": "research/sources/money/cards/NR.json",
+    "sha256": "838f9dc6ef8f5eb714d97b320ba92100189f5ef6ae5d130c613f80dfcfed9bf8"
+   },
+   "sources": [
+    {
+     "kind": "primary",
+     "url": "https://www.commbank.com.au/content/dam/commbank/personal/apply-online/download-printed-forms/SavingsInvestment_ADB2852.pdf",
+     "title": "Commonwealth Bank of Australia, Transaction, Savings and Investment Account Terms and Conditions (1 October 2026), Addendum specific to Nauruan customers, with the notice of changes from 1 November 2026",
+     "read": "2026-10-31",
+     "said": "If you create a CommBank Customer profile in Nauru, you will be considered a Nauruan customer. ... N.2. Products and services available to you ... Our full suite of CommBank products is not available to you. As a Nauruan customer, you will only be eligible to open the following personal products with features tailored to Nauruan Accounts: \u2013 Streamline Basic; and \u2013 NetBank Saver. ... All references to \u2018Nauru\u2019 updated to \u2018Naoero\u2019. All references to \u2018Nauruan\u2019 updated to \u2018Dei-Naoero\u2019."
+    },
+    {
+     "kind": "primary",
+     "url": "https://www.commbank.com.au/banking/nauru.html",
+     "title": "Commonwealth Bank of Australia, CommBank Naoero: How Naoero customers can access banking services with CommBank",
+     "read": "2026-10-31",
+     "said": "Streamline Basic, an everyday account for individual customers, with access to NetBank and Debit Mastercard ... NetBank Saver, an online savings account for individuals ... Following the exit of the existing banking provider, and the recent announcement of a Treaty between the Governments of Australia and Nauru, CommBank will establish banking operations in Nauru. ... our full suite of CommBank products is not available to Nauruan customers"
+    },
+    {
+     "kind": "primary",
+     "url": "https://naurufinance.info/cba/",
+     "title": "Government of Naoero, Department of Finance, Commonwealth Bank of Australia (the CommBank agency)",
+     "read": "2026-10-31",
+     "said": "The Department of Finance (representing the Republic of Naoero) operates an agency of the Commonwealth Bank of Australia (CommBank) in Naoero to provide banking services to Nauruans residents ( Agency ), supporting the Government of Naoero\u2019s financial inclusion objectives. The Agency commenced operations on 11 August 2025."
     }
    ]
   }
