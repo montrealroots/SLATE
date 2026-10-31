@@ -1,0 +1,129 @@
+{
+ "country": "US",
+ "office": "the Department of State",
+ "currency": "USD",
+ "routes": [
+  {
+   "id": "in-person",
+   "where": "home",
+   "speed": "standard",
+   "within": null,
+   "label": "in person: the application fee, the security surcharge and the execution fee"
+  },
+  {
+   "id": "in-person-expedited",
+   "where": "home",
+   "speed": "urgent",
+   "within": null,
+   "label": "in person, expedited (USD 60 more)"
+  },
+  {
+   "id": "renewal-mail",
+   "where": "home",
+   "speed": "standard",
+   "within": null,
+   "renewal": true,
+   "label": "renewal by mail or online (DS-82): no execution fee"
+  },
+  {
+   "id": "renewal-mail-expedited",
+   "where": "home",
+   "speed": "urgent",
+   "within": null,
+   "renewal": true,
+   "label": "renewal by mail or online, expedited (USD 60 more)"
+  },
+  {
+   "id": "abroad",
+   "where": "abroad",
+   "speed": "standard",
+   "within": null,
+   "label": "in person at an embassy or consulate (no expedited service abroad)"
+  },
+  {
+   "id": "abroad-renewal",
+   "where": "abroad",
+   "speed": "standard",
+   "within": null,
+   "renewal": true,
+   "label": "renewal by mail to a post authorised to take it"
+  }
+ ],
+ "passports": [
+  {
+   "for": "adult",
+   "from": 16,
+   "validYears": 10,
+   "pay": {
+    "in-person": "165",
+    "in-person-expedited": "225",
+    "renewal-mail": "130",
+    "renewal-mail-expedited": "190",
+    "abroad": "165",
+    "abroad-renewal": "130"
+   }
+  },
+  {
+   "for": "child",
+   "under": 16,
+   "validYears": 5,
+   "pay": {
+    "in-person": "135",
+    "in-person-expedited": "195",
+    "abroad": "135"
+   }
+  }
+ ],
+ "note": "The passport book: the application fee and the security surcharge always, the execution fee for first-time applicants and others who must apply in person (22 CFR 22.1, items 1, 2 and 3). A renewal by mail or online (22 CFR 51.21(b)) is open to a holder whose last passport was valid ten years, issued at 16 or over and not more than 15 years before, and pays no execution fee: USD 130 for a book, 190 expedited; a child (under 16) always applies in person. Abroad, a consular officer is a passport agent (51.22(a)(2)) and the same fees apply; the expedited service is 'not applicable abroad' (item 3), so the posts have one speed; a post the Department authorises takes renewals by mail (51.21(c)), USD 130. The passport card (item 9): USD 30 at 16 or over, 15 under 16, plus the execution fee in person (65 and 50), no security surcharge; valid ten years at 16 or over and five under (51.4(b)); the sources read don't say a post abroad issues it, so the card is priced at home only. A lost or stolen passport is replaced by a new application in person at the first-issue fees (51.21(a): one not eligible to renew by mail), so no route of its own is written. Processing times are published only on travel.state.gov, which answers this client with a Cloudflare challenge (not circumvented), so every route's time is null.",
+ "sources": [
+  {
+   "url": "https://www.ecfr.gov/current/title-22/chapter-I/subchapter-C/part-22/section-22.1",
+   "title": "Electronic Code of Federal Regulations, 22 CFR 22.1, Schedule of fees (title 22 up to date as of 2026-10-26); saved again 2026-10-30 from the eCFR renderer",
+   "read": "2026-10-30",
+   "said": "Passport and Citizenship Services 1. Passport Book or Card Execution: Required for first-time applicants and others who must apply in person $35 2. Passport Book Application Services for: (a) Applicants age 16 or over (including renewals) $50 (b) Applicants under age 16 $20 ... (g) Passport book security surcharge (enhanced border security fee) $80 3. Expedited service: Passport processing within the expedited processing period published on the Department's website (see 22 CFR 51.56(b) ) and/or in-person service at a U.S. Passport Agency (not applicable abroad) $60. ... 9. Passport Card Application Services for: (a) Applicants age 16 or over (including renewals) [Adult Passport Card] $30. (b) Applicants under age 16 [Minor Passport Card] $15."
+  },
+  {
+   "url": "https://www.ecfr.gov/current/title-22/chapter-I/subchapter-F/part-51/subpart-A/section-51.4",
+   "title": "Electronic Code of Federal Regulations, 22 CFR 51.4, Validity of passports (title 22 up to date as of 2026-10-26)",
+   "read": "2026-10-30",
+   "said": "( b ) Period of validity of a regular passport and a passport card. ( 1 ) A regular passport or passport card issued to an applicant 16 years of age or older is valid for ten years from date of issue unless the Department limits the validity period to a shorter period. ( 2 ) A regular passport or passport card issued to an applicant under 16 years of age is valid for five years from date of issue unless the Department limits the validity period to a shorter period."
+  },
+  {
+   "url": "https://www.ecfr.gov/current/title-22/chapter-I/subchapter-F/part-51/subpart-B/section-51.21",
+   "title": "Electronic Code of Federal Regulations, 22 CFR 51.21, Execution of passport application (current as read 2026-10-30, from the eCFR renderer)",
+   "read": "2026-10-30",
+   "said": "( b ) Application by mail or on-line—persons in the United States. ( 1 ) A person in the United States who previously has been issued a passport valid for 10 years in his or her own name may apply for a new passport by filling out, signing and mailing an application on the form prescribed by the Department if: ( i ) The most recently issued previous passport was issued when the applicant was 16 years of age or older; ( ii ) The application is made not more than 15 years following the issue date of the previous passport ... ( c ) Application by mail—persons abroad. ( 1 ) A person in a foreign country where the Department has authorized a post to receive passport applications by mail who previously has been issued a passport valid for 10 years in his or her own name may apply for a new passport in that country"
+  },
+  {
+   "url": "https://www.ecfr.gov/current/title-22/chapter-I/subchapter-F/part-51/subpart-B/section-51.22",
+   "title": "Electronic Code of Federal Regulations, 22 CFR 51.22, Passport agents and passport acceptance agents (current as read 2026-10-30, from the eCFR renderer)",
+   "read": "2026-10-30",
+   "said": "The following employees of the Department are authorized by virtue of their positions to serve as passport agents unless the Department in an individual case withdraws authorization: ( 1 ) A passport authorizing officer; ( 2 ) A consular officer, or a U.S. citizen consular agent abroad;"
+  }
+ ],
+ "card": {
+  "name": "passport card",
+  "bands": [
+   {
+    "for": "adult",
+    "from": 16,
+    "validYears": 10,
+    "pay": {
+     "in-person": "65",
+     "in-person-expedited": "125",
+     "renewal-mail": "30",
+     "renewal-mail-expedited": "90"
+    }
+   },
+   {
+    "for": "child",
+    "under": 16,
+    "validYears": 5,
+    "pay": {
+     "in-person": "50",
+     "in-person-expedited": "110"
+    }
+   }
+  ]
+ }
+}

@@ -1,0 +1,26 @@
+{
+ "country": "MD",
+ "name": "IDNP (Identification Number of Person)",
+ "issuer": "the State Register of the Population (R.S.P.)",
+ "format": {
+  "length": 13,
+  "pattern": "^2\\d{12}$"
+ },
+ "when": "registration",
+ "who": [
+  "citizens",
+  "residents"
+ ],
+ "needed": [
+  "tax"
+ ],
+ "note": "Moldova's sheet (its government's own sheet on the OECD's automatic-exchange portal ('Information on Tax Identification Numbers'; the OECD's index page sits behind a bot check and wasn't opened, the sheet itself came straight back)), read 2026-10-30: the IDNP is assigned to each natural person on the first entry of their data in the State Register of the Population and never changes; 13 digits, 2ГГГXXXYYYYYK (2, the last three digits of the year it was given, the registrar's office, a serial, a check digit by a 'special algorithm' it doesn't give, so `check` is left out); a citizen's tax number is the IDNP on the identity card, and a foreigner's who owes tax is the IDNP where there is one. Read as given on registration (a birth's or a newcomer's first entry), to citizens and residents. The name and issuer are as the sheet gives them, in English.",
+ "sources": [
+  {
+   "url": "https://www.oecd.org/content/dam/oecd/en/topics/policy-issue-focus/aeoi/moldova-tin.pdf",
+   "title": "OECD AEOI portal, Moldova: Information on Tax Identification Numbers (the jurisdiction's own sheet)",
+   "read": "2026-10-30",
+   "said": "IDNP is assigned to each natural person at the time of the initial entry of data about him in R.S.P. (State ... Register of the Population) and remains unchanged during the entire period of existence of this data ... which represents a series of 13 digits, arranged in a strict order, in which: ... K - check digit (special algorithm). ... for individuals who are citizens of the Republic of Moldova - the personal code (IDNP) indicated on"
+  }
+ ]
+}

@@ -1,0 +1,28 @@
+{
+ "country": "JP",
+ "name": "個人番号 (My Number)",
+ "issuer": "the mayor of the municipality (市町村長)",
+ "format": {
+  "length": 12,
+  "pattern": "[0-9]{12}"
+ },
+ "when": "registration",
+ "who": [
+  "residents"
+ ],
+ "note": "Read the My Number Act (行政手続における特定の個人を識別するための番号の利用等に関する法律, Act No. 27 of 2013, as served by e-Gov's law API on 2026-10-30): art. 2(5), the number is derived from the resident record code and identifies the person of that resident record; art. 7(1), the mayor designates it and notifies the person promptly when a resident record code is entered on the resident record. Read its Enforcement Order (Cabinet Order No. 155 of 2014, art. 8): eleven digits followed by one check digit computed from them by a formula the Ministry of Internal Affairs and Communications sets by ordinance; that ordinance was not read and src/papers/numbers/checks.ts has no such check, so the format names none. 'who' is residents: the resident record covers Japanese nationals and foreign residents (art. 2(7) names foreign residents), so a citizen living abroad has none. No fee, time or required purposes are read.",
+ "sources": [
+  {
+   "url": "https://laws.e-gov.go.jp/api/1/lawdata/425AC0000000027",
+   "title": "行政手続における特定の個人を識別するための番号の利用等に関する法律 (Act No. 27 of 2013), arts. 2(5) and 7(1), e-Gov law API",
+   "read": "2026-10-30",
+   "said": "「個人番号」とは、第七条第一項又は第二項の規定により、住民票コード（住民基本台帳法（昭和四十二年法律第八十一号）第七条第十三号に規定する住民票コードをいう。以下同じ。）を変換して得られる番号であって、当該住民票コードが記載された住民票に係る者を識別するために指定されるものをいう。 ... 住民基本台帳法第三十条の三第二項の規定により住民票に住民票コードを記載したときは、政令で定めるところにより、速やかに、次条第二項の規定により機構から通知された個人番号とすべき番号をその者の個人番号として指定し、その者に対し、当該個人番号を通知しなければならない。"
+  },
+  {
+   "url": "https://laws.e-gov.go.jp/api/1/lawdata/426CO0000000155",
+   "title": "行政手続における特定の個人を識別するための番号の利用等に関する法律施行令 (Cabinet Order No. 155 of 2014), art. 8, e-Gov law API",
+   "read": "2026-10-30",
+   "said": "十一桁の番号及びその後に付された一桁の検査用数字（個人番号を電子計算機に入力するときに誤りのないことを確認することを目的として、当該十一桁の番号を基礎として総務省令で定める算式により算出される零から九までの整数をいう。第三号において同じ。）により構成されるものとする。"
+  }
+ ]
+}

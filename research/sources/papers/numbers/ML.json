@@ -1,0 +1,22 @@
+{
+ "country": "ML",
+ "name": "Numéro d'Identification Nationale (NINA)",
+ "issuer": "the national statistics service (the service national chargé de la statistique)",
+ "format": {
+  "length": 15,
+  "pattern": "^\\d{14}[A-Z]$"
+ },
+ "when": "application",
+ "who": [
+  "anyone"
+ ],
+ "note": "Mali's Décret n° 06-442/P-RM of 18 October 2006, fixing how Loi n° 06-040 of 11 August 2006 (which instituted the Numéro d'Identification Nationale of natural and legal persons) applies, read 2026-10-30 in the Ministry of Territorial Administration and Decentralisation's compilation of its texts (Recueil de textes, December 2012, pp. 870 to 874), as FAOLEX holds it. Article 1: the number is 14 digits plus a control letter of the French alphabet; for a natural person, in order, nationality (one digit), sex (one), year of birth (two), place of birth (seven), a three-digit sequence number and the control letter. The pattern reads the letter as a capital A to Z; the decree doesn't say how the letter is computed, so no check is modelled. Articles 3 and 4: it is given on a file sent to the national statistics service, which attributes the number and issues the certificate, so `when` is application. The decree names no class of natural person it is limited to (its first digit records nationality, and the file lists a nationality certificate among its papers), so `who` reads natural persons at large as anyone; that is a reading to check. Article 13 names the services bound to use the number (the economic and financial administrations, medical and social services, employment, security, transport and others) but not a step of a life that needs it, so `needed` is left out. No age, fee or time is stated. Not read: Loi 06-040 itself, any later amendment (the decree as compiled in 2012 is the latest text read), and the DGI's own NIF, whose form its site doesn't state (its verification page gives only an example).",
+ "sources": [
+  {
+   "url": "https://faolex.fao.org/docs/pdf/Mli176233.pdf",
+   "title": "Décret n° 06-442/P-RM du 18 octobre 2006 fixant les modalités d'application de la loi portant institution du Numéro d'Identification Nationale des personnes physiques et morales (Recueil de textes de l'Administration du Territoire et de la Décentralisation, December 2012, as FAOLEX holds it)",
+   "read": "2026-10-30",
+   "said": "Article 1er : Le Numéro d’Identification Nationale est composé de 14 chiffres plus une lettre clé de contrôle et comprend dans l’ordre : ... la nationalité, exprimée par un chiffre ; ... la localité de naissance par 7 chiffres ; ... une clé de contrôle par une lettre de l’alphabet français. ... Article 4 : Sur la base des pièces énumérées à l’article 3. Le service national chargé de la statistique attribue au requérant un Numéro d’Identification Nationale et lui délivre le certificat d’immatricu"
+  }
+ ]
+}

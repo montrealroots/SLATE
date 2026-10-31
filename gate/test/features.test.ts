@@ -159,6 +159,11 @@ describe('the feature-matrix check', () => {
       `red ${T} | a falsifier names "ghost.proof", which isn't a registered feature`,
     ]);
   });
+  it("leaves an engine effect's falsifier to the effects check, and a consumer anchor too", () => {
+    const effect = { feature: 'thing.make', claim: 'bites' as const, file: T, test: 't' };
+    expect(findings({ 'registry/effects.json': { 'thing.make': { what: 'x' } }, 'src/x.ts': '// @slate:consumer thing.make\nx();\n' }, [...proofs, effect])).toEqual([]);
+    expect(findings({ 'registry/effects.json': [] }, [...proofs, effect])).toEqual([`red ${T} | a falsifier names "thing.make", which isn't a registered feature`]);
+  });
   it('does not count anchors or marks in tests', () => {
     expect(findings({ [ENGINE]: 'export {};\n', 'src/person/family/family.test.ts': engine })).toEqual([`red ${F} ${ID} | the feature has no bites anchor`, `red ${F} ${ID} | the feature has no downstream anchor`]);
   });

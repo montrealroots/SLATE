@@ -1,0 +1,47 @@
+{
+ "country": "NZ",
+ "national": {
+  "name": "Bank account number",
+  "parts": [
+   {
+    "name": "Bank",
+    "length": 2,
+    "kind": "n"
+   },
+   {
+    "name": "Branch",
+    "length": 4,
+    "kind": "n"
+   },
+   {
+    "name": "Account number",
+    "length": 7,
+    "kind": "n"
+   },
+   {
+    "name": "Suffix",
+    "length": 2,
+    "kind": "n"
+   }
+  ],
+  "bank": [
+   1,
+   2
+  ]
+ },
+ "note": "Payments NZ's bank branch register (its CSV, downloaded 2026-10-30) numbers each bank in two digits and each branch in four (01, 0001). Kiwibank (read 2026-10-30) gives the whole number: two digits for the bank, four for the branch, seven for the account and two for the suffix, which some systems write as three with a leading zero; the two-digit suffix is written. New Zealand's numbers carry a modulus-11 check by bank (published by Inland Revenue in its withholding-tax specifications), but no current copy of that specification was reached (the 2020 copy's address answers 404, the investment income file specification of February 2026 doesn't hold it), so the algorithm isn't quoted and the form takes none.",
+ "sources": [
+  {
+   "url": "https://www.paymentsnz.co.nz/resources/industry-registers/bank-branch-register/download/csv/",
+   "title": "Payments NZ, Bank Branch Register (CSV download, monthly)",
+   "read": "2026-10-30",
+   "said": "Bank_Number,Branch_Number,National_Clearing_Code ... 01,0001,010001"
+  },
+  {
+   "url": "https://kiwibank.co.nz/help/accounts/open-manage/account-numbers",
+   "title": "Kiwibank, Find & read a bank account number",
+   "read": "2026-10-30",
+   "said": "The first two digits tell you the bank – Kiwibank is 38. The next four digits tell you the branch ... The next seven digits tell you the account number. The last two digits tell you the account suffix"
+  }
+ ]
+}

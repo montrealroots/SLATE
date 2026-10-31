@@ -1,0 +1,44 @@
+{
+ "country": "GB",
+ "name": "National Insurance number",
+ "issuer": "HM Revenue and Customs (HMRC), and on application the Department for Work and Pensions",
+ "format": {
+  "length": 9,
+  "pattern": "^(?!BG|GB|KN|NK|NT|TN|ZZ)[A-CEGHJ-PR-TW-Z][A-CEGHJ-NPR-TW-Z]\\d{6}[A-D]$"
+ },
+ "when": "registration",
+ "who": [
+  "residents",
+  "workers"
+ ],
+ "within": {
+  "n": 4,
+  "unit": "week"
+ },
+ "needed": [
+  "work",
+  "tax"
+ ],
+ "note": "GOV.UK's guides and HMRC's National Insurance Manual NIM39110, read 2026-10-30: two letters, six numbers and a final letter A to D, the same for life; the prefix's letters exclude D, F, I, Q, U and V, the second excludes O, and BG, GB, KN, NK, NT, TN and ZZ aren't used (the pattern holds these; administrative and temporary numbers aren't drawn). A UK resident whose parent claimed Child Benefit is sent it in the 3 months before 16, read as given on registration (the Child Benefit record) from 16, a few months late for the game's simplicity; anyone else living in the UK with the right to work applies, in the UK, and it can take up to 4 weeks. Its holders are asked for it by HMRC and their employer (needed: work, tax); one may start work before it arrives with proof of the right to work. No fee is stated.",
+ "sources": [
+  {
+   "url": "https://www.gov.uk/national-insurance/your-national-insurance-number",
+   "title": "GOV.UK, National Insurance: Your National Insurance number",
+   "read": "2026-10-30",
+   "said": "Your National Insurance number remains the same for life. It’s made up of 2 letters, 6 numbers and a final letter. ... your employer"
+  },
+  {
+   "url": "https://www.gov.uk/apply-national-insurance-number",
+   "title": "GOV.UK, Apply for a National Insurance number",
+   "read": "2026-10-30",
+   "said": "live in the UK ... have the right to work in the UK ... You’ll normally be sent a National Insurance number in the 3 months before your 16th birthday if both the following are true: ... You can only apply when you’re in the UK. ... It can take up to 4 weeks to get your National Insurance number."
+  },
+  {
+   "url": "https://www.gov.uk/hmrc-internal-manuals/national-insurance-manual/nim39110",
+   "title": "HMRC internal manual, NIM39110 What a NINO looks like",
+   "read": "2026-10-30",
+   "said": "A NINO is made up of 2 letters, 6 numbers and a final letter, which is always A, B, C, or D. ... The characters D, F, I, Q, U, and V are not used as either the first or second letter of a NINO prefix. ... The letter O is not used as the second letter of a prefix. ... Prefixes BG, GB, KN, NK, NT, TN and ZZ are not to be used"
+  }
+ ],
+ "from": 16
+}

@@ -1,0 +1,66 @@
+{
+ "country": "ES",
+ "document": "Documento Nacional de Identidad (DNI)",
+ "office": "a documentation unit of the National Police (Unidades de Documentación), by appointment",
+ "currency": "EUR",
+ "routes": [
+  {
+   "id": "police",
+   "where": "home",
+   "speed": "standard",
+   "within": null,
+   "label": "at a National Police documentation unit"
+  }
+ ],
+ "cards": [
+  {
+   "for": "under 5",
+   "under": 5,
+   "validYears": 2,
+   "pay": {
+    "police": "12"
+   }
+  },
+  {
+   "for": "5 to 29",
+   "from": 5,
+   "under": 30,
+   "validYears": 5,
+   "pay": {
+    "police": "12"
+   }
+  },
+  {
+   "for": "30 to 69",
+   "from": 30,
+   "under": 70,
+   "validYears": 10,
+   "pay": {
+    "police": "12"
+   }
+  },
+  {
+   "for": "70 and over",
+   "from": 70,
+   "validYears": null,
+   "pay": {
+    "police": "12"
+   }
+  }
+ ],
+ "note": "Royal Decree 255/2025 (art. 7.1) sets the DNI's term by age; from 70 it is more than ten years, to a date the office writes on the card, which the game doesn't know, so it is null. The fee is the state's 12 euros (Law 84/78, updated by the budget law); a large family's members and a change of particulars on a valid card pay nothing (not modelled). The DNI is issued in Spain only.",
+ "sources": [
+  {
+   "url": "https://www.dnielectronico.es/PortalDNIe/PRF1_Cons02.action?pag=REF_1070&id_menu=7_%208",
+   "title": "Ministerio del Interior, Dirección General de la Policía, Portal DNIe, Validez del DNIe",
+   "read": "2026-10-28",
+   "said": "Dos años, cuando el solicitante no haya cumplido los cinco años de edad. Cinco años, cuando el titular haya cumplido los cinco años de edad y no haya alcanzado los treinta al momento de la expedición o renovación. Diez años, cuando el titular haya cumplido los treinta y no haya alcanzado los setenta. Más de diez años, cuando la persona titular haya cumplido los setenta años, consignando una fecha."
+  },
+  {
+   "url": "https://www.dnielectronico.es/PortalDNIe/PRF1_Cons02.action?pag=REF_480&id_menu=7_%208",
+   "title": "Ministerio del Interior, Dirección General de la Policía, Portal DNIe, Tasas de expedición del DNI",
+   "read": "2026-10-28",
+   "said": "La tasa aplicada al DNI, se actualiza mediante la Ley de Presupuestos Generales del Estado, estando actualmente fijada en 12 euros , pudiéndose realizar el pago en las Unidades de Documentación en efectivo o mediante tarjeta bancaria"
+  }
+ ]
+}

@@ -1,0 +1,76 @@
+{
+ "country": "BY",
+ "office": "in Belarus only: the Ministry of Foreign Affairs' consular department (ГКУ МИД) in Minsk, or a citizenship and migration unit of the internal affairs bodies",
+ "currency": "BYN",
+ "routes": [
+  {
+   "id": "standard",
+   "where": "home",
+   "speed": "standard",
+   "within": {
+    "n": 15,
+    "unit": "working day"
+   },
+   "label": "in the usual order"
+  },
+  {
+   "id": "accelerated",
+   "where": "home",
+   "speed": "urgent",
+   "within": {
+    "n": 10,
+    "unit": "working day"
+   },
+   "label": "accelerated (one base value more)"
+  },
+  {
+   "id": "urgent",
+   "where": "home",
+   "speed": "urgent",
+   "within": {
+    "n": 5,
+    "unit": "working day"
+   },
+   "label": "urgent (two base values more)"
+  }
+ ],
+ "passports": [
+  {
+   "for": "child",
+   "under": 14,
+   "validYears": null,
+   "pay": {
+    "standard": "67.50",
+    "accelerated": "112.50",
+    "urgent": "157.50"
+   }
+  },
+  {
+   "for": "anyone 14 or older",
+   "from": 14,
+   "validYears": null,
+   "pay": {
+    "standard": "90",
+    "accelerated": "135",
+    "urgent": "180"
+   }
+  }
+ ],
+ "note": "Belarus's biometric passport, as the Ministry of Foreign Affairs' page sets it out: issued with, or to a holder of, the identification card (whose own fee isn't counted here), and since the Edict ending issue abroad, only in Belarus. The fee is 2 base values from 14 and 1.5 under 14, plus 1 base value for the accelerated order (10 working days) or 2 for the urgent (5); the usual order is 15 working days. The base value is 45 roubles from 1 January 2026 (Council of Ministers' resolution, as BelTA reports it), so 90 and 67.50 roubles. Pensioners and the disabled of groups I and II, who pay 1.5, aren't modelled; the non-biometric passport (series PP) and the passport's validity aren't read (pravo.by and etalonline.by refuse this client, mvd.gov.by doesn't answer).",
+ "sources": [
+  {
+   "url": "https://mfa.gov.by/visa/passport/",
+   "title": "Ministry of Foreign Affairs of the Republic of Belarus, Выдача/обмен паспортов",
+   "read": "2026-10-30",
+   "said": "Выдача/обмен биометрического паспорта ... в обычном порядке – 15 рабочих дней; ... 1,5 базовой величины – детям, не достигшим 14-летнего возраста, лицам, достигшим общеустановленного пенсионного возраста, и инвалидам I и II группы; ... 2 базовой величины – лицам, достигшим 14-летнего возраста; ... 1 базовая величина – за оформление в ускоренном порядке (10 рабочих дней); ... 2 базовых величины – за оформление в срочном порядке (5 рабочих дней)."
+  },
+  {
+   "url": "https://belta.by/society/view/bazovaja-velichina-v-belarusi-s-1-janvarja-sostavljaet-br45-756984-2026/",
+   "title": "BelTA, Базовая величина в Беларуси с 1 января составляет Br45 (1 January 2026)",
+   "read": "2026-10-30",
+   "kind": "secondary",
+   "quotes": "https://pravo.by/",
+   "said": "Размер базовой величины с 1 января 2026 года составляет Br45. Это предусмотрено постановлением правительства, сообщает БЕЛТА."
+  }
+ ]
+}

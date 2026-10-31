@@ -1,0 +1,29 @@
+{
+ "country": "CG",
+ "name": "Numéro d'identification unique (NIU)",
+ "issuer": "the Direction générale des impôts et des domaines (DGID)",
+ "format": {
+  "length": 16,
+  "pattern": "^[0-9A-Z]\\d{2}\\d{12}[0-9A-Z]$"
+ },
+ "when": "application",
+ "who": [
+  "anyone"
+ ],
+ "fee": "0",
+ "note": "The Republic of the Congo's Arrêté n° 5327 of 12 March 2020 fixing how the numéro d'identification unique (instituted by decree 2004-469 of 3 November 2004) is attributed and used, read 2026-10-30 in the Journal officiel de la République du Congo n° 12 of 2020 (pp. 295 to 296) on the Secrétariat général du Gouvernement's site. Art. 2: the DGID attributes it on the information the taxpayer gives on a registration form. Art. 3 (its opening words lost in the page's two-column layout, the list kept): sixteen characters, being one character for the type of person, two for the last two figures of the year of creation, twelve for the sequence of digits padded at the left with 0, and one alphanumeric control character based on the Luhn algorithm. The pattern reads the type character as a digit or capital letter (the text doesn't say which), the year's two characters and the sequence as digits, and the control character as a digit or capital; the control's alphanumeric Luhn variant isn't specified, so no check is modelled. Art. 4: a natural person applies at the tax office of their residence or main establishment, with an identity paper and two photos; so `when` is application and `who` anyone (the arrêté sets no citizenship or residence). Art. 7: registration is free (fee 0); the taxpayer card that materialises it costs 1,500 F CFA for a natural person, a card's price the form doesn't hold as the number's fee. Arrêté n° 25604 of 29 October 2022 lists the transactions and formalities that need the NIU (in force from 30 June 2023 by Arrêté n° 439 of 7 February 2023, read in the Journal officiel n° 7 of 2023); 25604 itself wasn't read, so `needed` is left out. No age or time is stated.",
+ "sources": [
+  {
+   "url": "https://www.sgg.cg/JO/2020/congo-jo-2020-12.pdf",
+   "title": "Journal officiel de la République du Congo n° 12-2020: Arrêté n° 5327 du 12 mars 2020 fixant les modalités d'attribution et d'utilisation du numéro d'identification unique",
+   "read": "2026-10-30",
+   "said": "Article 2 : Le numéro d’identification unique est attribué par la direction générale des impôts et des domaines, sur la base des renseignements fournis par le contribuable. ... prend seize caractères dont : ... un caractère déterminant le type de personne ... deux caractères prenant en compte les deux derniers de l’année de création; ... douze caractères représentant la séquence des chiffres précédée à gauche par “0“ ; ... un caractère de contrôle alpha numérique basé sur l’algorithme LUHN. ... Article 4 : Tout requérant, personne physique, pour son immatriculation, s’adresse au service des impôts du lieu de sa résidence ou de son principal établissement ... Article 7 : L’immatriculation est gratuite. ... le coût est fixé à mille cinq cents francs CFA, pour les personnes physiques"
+  },
+  {
+   "url": "https://www.sgg.cg/JO/2023/congo-jo-2023-07.pdf",
+   "title": "Journal officiel de la République du Congo n° 7-2023: Arrêté n° 439 du 7 février 2023 modifiant l'arrêté n° 25604",
+   "read": "2026-10-30",
+   "said": "Arrêté n° 439 du 7 février 2023 modifiant l’arrêté n° 25604 déterminant les transactions économiques et les formalités administratives dont la réalisation est obligatoirement soumise à l’utilisation du Numéro d’Identification Unique (NIU) ... entrent en vigueur à compter du 30 juin 2023."
+  }
+ ]
+}

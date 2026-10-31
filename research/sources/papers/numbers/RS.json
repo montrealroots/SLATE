@@ -1,0 +1,24 @@
+{
+ "country": "RS",
+ "name": "jedinstveni matični broj građana (JMBG)",
+ "issuer": "the ministry responsible for internal affairs",
+ "format": {
+  "length": 13,
+  "pattern": "[0-9]{13}"
+ },
+ "when": "birth",
+ "who": [
+  "citizens"
+ ],
+ "note": "Read the Unique Master Citizen Number Act (Zakon o jedinstvenom matičnom broju građana, Službeni glasnik RS 24/2018) as Paragraf reproduces it (the Official Gazette's legal information system serves its acts only to a script and this act's own address there wasn't found on 2026-10-30, so it is marked secondary): art. 3, the number is given to citizens of Serbia, by the place of entry in the register of births, by the ministry of internal affairs; art. 4, thirteen digits: day (2), month (2) and year (3) of birth, registration area (2), sex and ordinal for those born the same day (3; men 000-499, women 500-999) and a check digit (1); art. 6, the check digit is computed automatically by a single mathematical procedure modulo 11 (its weights are not stated, and the code has no such check, so the format names none); art. 7, the register of births sends the extract within 15 days of the entry and the ministry tells it the number within 15 days of determining it (not read as 'within', since the holder isn't told on a stated day). Foreigners' numbers are another law's and not modelled. No fee is read.",
+ "sources": [
+  {
+   "url": "https://www.paragraf.rs/propisi/zakon-o-jedinstvenom-maticnom-broju-gradjana.html",
+   "title": "Zakon o jedinstvenom matičnom broju građana (Sl. glasnik RS 24/2018), arts. 3, 4 and 6 (Paragraf)",
+   "read": "2026-10-30",
+   "kind": "secondary",
+   "quotes": "https://www.pravno-informacioni-sistem.rs/",
+   "said": "Matični broj određuje se državljaninu Republike Srbije. Matični broj određuje se prema mestu upisa u matičnu knjigu rođenih na teritoriji Republike Srbije. ... Matični broj određuje ministarstvo nadležno za unutrašnje poslove ... Matični broj se sastoji od 13 cifara koje potiču iz šest grupa podataka ... VI grupa - kontrolni broj (jedna cifra). ... nadležni organ određuje automatski, primenom jedinstvenog matematičkog postupka po modulu 11"
+  }
+ ]
+}

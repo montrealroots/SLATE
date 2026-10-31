@@ -1,0 +1,30 @@
+{
+ "currency": "MAD",
+ "rates": [
+  {
+   "from": "2025-12-31",
+   "perUSD": "9.101"
+  },
+  {
+   "from": "2026-03-31",
+   "perUSD": "9.379"
+  },
+  {
+   "from": "2026-06-30",
+   "perUSD": "9.375"
+  },
+  {
+   "from": "2026-09-30",
+   "perUSD": "9.668"
+  }
+ ],
+ "note": "The US Treasury's Reporting Rates of Exchange (Bureau of the Fiscal Service), the rates US government agencies use for foreign currency, its 'Morocco-Dirham' row: 9.101 from 2025-12-31; 9.379 from 2026-03-31; 9.375 from 2026-06-30; 9.668 from 2026-09-30 per US dollar, each holding until the next. Read from the Fiscal Data API on 2026-10-30.",
+ "sources": [
+  {
+   "url": "https://api.fiscaldata.treasury.gov/services/api/fiscal_service/v1/accounting/od/rates_of_exchange?filter=record_date:gte:2025-12-31&sort=country_currency_desc,effective_date&page%5Bsize%5D=2000&fields=record_date,country,currency,country_currency_desc,exchange_rate,effective_date&format=csv",
+   "title": "U.S. Department of the Treasury, Bureau of the Fiscal Service: Treasury Reporting Rates of Exchange (Fiscal Data API), record dates 31 December 2025 to 30 September 2026",
+   "read": "2026-10-30",
+   "said": "\"2025-12-31\",\"Morocco\",\"Dirham\",\"Morocco-Dirham\",\"9.101\",\"2025-12-31\" ... \"2026-03-31\",\"Morocco\",\"Dirham\",\"Morocco-Dirham\",\"9.379\",\"2026-03-31\" ... \"2026-06-30\",\"Morocco\",\"Dirham\",\"Morocco-Dirham\",\"9.375\",\"2026-06-30\" ... \"2026-09-30\",\"Morocco\",\"Dirham\",\"Morocco-Dirham\",\"9.668\",\"2026-09-30\""
+  }
+ ]
+}

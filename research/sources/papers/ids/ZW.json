@@ -1,0 +1,43 @@
+{
+ "country": "ZW",
+ "document": "National identity document (metal or synthetic polythene identity card)",
+ "office": "the Registrar-General of Births, Deaths and National Registration",
+ "currency": "USD",
+ "routes": [
+  {
+   "id": "registry",
+   "where": "home",
+   "speed": "standard",
+   "within": null,
+   "label": "initial registration at a Registrar-General's office"
+  }
+ ],
+ "cards": [
+  {
+   "for": "initial registration at 16 to 18",
+   "from": 16,
+   "under": 19,
+   "validYears": null,
+   "pay": {
+    "registry": "0"
+   }
+  },
+  {
+   "for": "initial registration above 18",
+   "from": 19,
+   "validYears": null,
+   "pay": {
+    "registry": "2"
+   }
+  }
+ ],
+ "note": "The National Registration (Fees) (Amendment) Regulations 2024 (S.I. 10 of 2024), in US dollars: initial registration is free for persons aged between 16 and 18 and US$2 above 18; replacing a lost or defaced metal or polythene identity document costs US$10 for a resident (US$20 urgently), and exchanging a metal card for a polythene one US$20 (not modelled). The card's term and the time aren't stated.",
+ "sources": [
+  {
+   "url": "https://veritaszim.net/sites/veritas_d/files/SI%202024-010%20National%20Registration%20%28Fees%29%20%28Amendment%29%20Regulations%2C%202024%20%28No.%2018%29.pdf",
+   "title": "Statutory Instrument 10 of 2024, National Registration (Fees) (Amendment) Regulations, 2024 (No. 18), Veritas copy",
+   "read": "2026-10-28",
+   "said": "(a) initial registration persons: ... (i) aged between 16 and 18 years............................................. Free ... (ii) aged above 18 years............................................................ 2.00 ... replacement of lost or defaced metal or synthetic polythene ... Identity documents: ... (i) resident.............................................................................. 10.00"
+  }
+ ]
+}

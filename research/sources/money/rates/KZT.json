@@ -1,0 +1,30 @@
+{
+ "currency": "KZT",
+ "rates": [
+  {
+   "from": "2025-12-31",
+   "perUSD": "506.28"
+  },
+  {
+   "from": "2026-03-31",
+   "perUSD": "476.1"
+  },
+  {
+   "from": "2026-06-30",
+   "perUSD": "478.11"
+  },
+  {
+   "from": "2026-09-30",
+   "perUSD": "439.98"
+  }
+ ],
+ "note": "The US Treasury's Reporting Rates of Exchange (Bureau of the Fiscal Service), the rates US government agencies use for foreign currency, its 'Kazakhstan-Tenge' row: 506.28 from 2025-12-31; 476.1 from 2026-03-31; 478.11 from 2026-06-30; 439.98 from 2026-09-30 per US dollar, each holding until the next. Read from the Fiscal Data API on 2026-10-30.",
+ "sources": [
+  {
+   "url": "https://api.fiscaldata.treasury.gov/services/api/fiscal_service/v1/accounting/od/rates_of_exchange?filter=record_date:gte:2025-12-31&sort=country_currency_desc,effective_date&page%5Bsize%5D=2000&fields=record_date,country,currency,country_currency_desc,exchange_rate,effective_date&format=csv",
+   "title": "U.S. Department of the Treasury, Bureau of the Fiscal Service: Treasury Reporting Rates of Exchange (Fiscal Data API), record dates 31 December 2025 to 30 September 2026",
+   "read": "2026-10-30",
+   "said": "\"2025-12-31\",\"Kazakhstan\",\"Tenge\",\"Kazakhstan-Tenge\",\"506.28\",\"2025-12-31\" ... \"2026-03-31\",\"Kazakhstan\",\"Tenge\",\"Kazakhstan-Tenge\",\"476.1\",\"2026-03-31\" ... \"2026-06-30\",\"Kazakhstan\",\"Tenge\",\"Kazakhstan-Tenge\",\"478.11\",\"2026-06-30\" ... \"2026-09-30\",\"Kazakhstan\",\"Tenge\",\"Kazakhstan-Tenge\",\"439.98\",\"2026-09-30\""
+  }
+ ]
+}

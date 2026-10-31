@@ -1,0 +1,25 @@
+{
+ "country": "NL",
+ "name": "Citizen Service Number (BSN)",
+ "issuer": "the municipality where the person is registered",
+ "format": {
+  "length": 9,
+  "pattern": "^\\d{9}$"
+ },
+ "when": "birth",
+ "who": [
+  "residents"
+ ],
+ "needed": [
+  "tax"
+ ],
+ "note": "Netherlands's sheet (its government's own sheet on the OECD's automatic-exchange portal ('Information on Tax Identification Numbers'; the OECD's index page sits behind a bot check and wasn't opened, the sheet itself came straight back)), read 2026-10-30: a natural person's TIN (the Citizen Service Number, BSN) is allocated at birth or at registration with the municipality; 9 digits, the ninth a check digit by an eleven-weighted modulus the sheet spells out, which the game doesn't compute yet (`check` left out; adding it to checks.ts would let it). Read as given at birth by the municipality, to residents. No fee or time is stated.",
+ "sources": [
+  {
+   "url": "https://www.oecd.org/content/dam/oecd/en/topics/policy-issue-focus/aeoi/netherlands-tin.pdf",
+   "title": "OECD AEOI portal, Netherlands: Information on Tax Identification Numbers (the jurisdiction's own sheet)",
+   "read": "2026-10-30",
+   "said": "Natural persons: At birth or at registration at the municipality ... The Dutch TIN has 9 digits: 999999999. ... N9 is a check digit. ... The Citizen Service Number (BSN)"
+  }
+ ]
+}

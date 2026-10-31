@@ -1,0 +1,23 @@
+{
+ "country": "EG",
+ "bureau": "الشركة المصرية للاستعلام الائتماني (iscore)",
+ "reportGame": true,
+ "keep": 30,
+ "clears": 183,
+ "note": "I-Score (the Egyptian Credit Bureau), its Arabic FAQ PDF linked from its own FAQ page (iscore.com.eg/ar/faqs/, read 2026-10-30; the PDF's text layer splits its Arabic letters, so it was read by eye): it is the only licensed credit bureau in Egypt; banks and member lenders report to it periodically, with balances and days in arrears; a credit's data stay in the system until it is paid and then show as history for six months where the debt is paid in full, or one year where it is paid by settlement (questions 7, 8 and 30: closed facilities, lists of irregular clients and legal actions alike). The game reads this as a late payment shown while unpaid (keep 30, 'the longest the game keeps') and lifting six months after full payment, written as 183 days (six months rounded to days); the one year after a settlement isn't held by the form. No source read states how many days after its due date a missed payment is reported (the FAQ says only 'periodically'), so the days are the game's reading: the bureau's next monthly update. The Central Bank's own rules (cbe.org.eg) answered with a bot check and weren't read.",
+ "sources": [
+  {
+   "url": "https://www.iscore.com.eg/ar/faqs/",
+   "title": "I-Score: الاسئلة الشائعة (FAQ page, linking the FAQ PDF)",
+   "read": "2026-10-30",
+   "said": "الاسئلة الشائعة"
+  },
+  {
+   "url": "https://www.iscore.com.eg/media/10676/faqs-ar-v1-october.pdf",
+   "title": "I-Score (الشركة المصرية للاستعلام الائتماني): الأسئلة الشائعة, Arabic FAQ PDF (text layer unusable; read by eye)",
+   "read": "2026-10-30",
+   "read_by_eye": true,
+   "said": "تظل الشركة المصرية للاستعلام الائتماني \"iscore\" هي الشركة الوحيدة المُرخصة في مصر كشركة استعلام ائتماني. ... بيانات تقر بها البنوك والجهات المشتركة مباشرة للشركة المصرية للاستعلام الائتماني بصفة دورية ... ويتم تحديث البيانات متضمنة الأرصدة وعدد أيام التأخير إن وجدت. ... وتظل هذه البيانات قائمة بالنظام قبل إتمام السداد وتتيح معلومة تاريخية بعد السداد توضح سلوك سداد العملاء سابقا. ... وتستمر هذه التسهيلات في الظهور على التقرير الخاص بك: لمدة ستة أشهر فى حالة سداد المديونية بالكامل . ولمدة سنة في حالة سداد المديونية في إطار تسوية ."
+  }
+ ]
+}

@@ -1,0 +1,25 @@
+{
+ "country": "AZ",
+ "name": "Personal Identification Number (PIN)",
+ "issuer": "the issuer of Azerbaijan's identity card and passport (the sheet names no office)",
+ "format": {
+  "length": 7,
+  "pattern": "^[0-9A-NP-Z]{7}$"
+ },
+ "when": "application",
+ "who": [
+  "citizens"
+ ],
+ "needed": [
+  "tax"
+ ],
+ "note": "Azerbaijan's sheet (its government's own sheet on the OECD's automatic-exchange portal ('Information on Tax Identification Numbers'; the OECD's index page sits behind a bot check and wasn't opened, the sheet itself came straight back)), read 2026-10-30: the State Tax Service under the Ministry of Economy issues a 10-digit TIN only to natural persons in entrepreneurial activity or otherwise required to register; every individual has a Personal Identification Number (PIN) that substitutes for the TIN for identification, so the PIN is kept here: seven characters, letters and digits (never the letter O), printed as 'Personal No' on the national ID card and passport. The sheet doesn't name the office that assigns the PIN. Read as given on application (the identity card), to citizens. No check rule, age, fee or time is stated.",
+ "sources": [
+  {
+   "url": "https://www.oecd.org/content/dam/oecd/en/topics/policy-issue-focus/aeoi/azerbaijan-tin.pdf",
+   "title": "OECD AEOI portal, Azerbaijan: Information on Tax Identification Numbers (the jurisdiction's own sheet)",
+   "read": "2026-10-30",
+   "said": "TIN is not issued to natural persons who do not engage in entrepreneurial activities and (or) should not be registered as taxpayer according to legislation. If TIN can not be determined or not issued, all individuals has Personal Identification Number (PIN) which substitutes TIN for the purpose of identification ... The Personal Identification Number (PIN) is a single code consisting of a combination of letters and digits with seven symbols and never changed. ... For new passport and National ID –is indicated as “Personal No” ... (there is never “O” letter in PIN, only “0” (zero))"
+  }
+ ]
+}

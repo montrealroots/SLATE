@@ -1,0 +1,56 @@
+{
+ "country": "LV",
+ "office": "the Office of Citizenship and Migration Affairs (Pilsonības un migrācijas lietu pārvalde, PMLP)",
+ "currency": "EUR",
+ "routes": [
+  {
+   "id": "10-days",
+   "where": "home",
+   "speed": "standard",
+   "within": {
+    "n": 10,
+    "unit": "working day"
+   },
+   "label": "within 10 working days"
+  },
+  {
+   "id": "2-days",
+   "where": "home",
+   "speed": "urgent",
+   "within": {
+    "n": 2,
+    "unit": "working day"
+   },
+   "label": "within 2 working days"
+  }
+ ],
+ "passports": [
+  {
+   "for": "adult",
+   "from": 20,
+   "validYears": null,
+   "pay": {
+    "10-days": "50",
+    "2-days": "75"
+   }
+  },
+  {
+   "for": "under 20",
+   "under": 20,
+   "validYears": null,
+   "pay": {
+    "10-days": "25",
+    "2-days": null
+   }
+  }
+ ],
+ "note": "The state fee from 1 January 2026 (the Cabinet of Ministers' regulations of 10 December 2024), as PMLP announced it. The concession for children and young people under 20, pensioners and people with a group I or II disability is EUR 25 within 10 working days; its two-day fee isn't stated; pensioners and disability aren't modelled, so they pay the full fee here. The validity by age is in the Cabinet's regulation No. 134 on likumi.lv, which resets this client's connections, and pmlp.gov.lv doesn't answer; a lead. Fees at a mission abroad are leads.",
+ "sources": [
+  {
+   "url": "https://lvportals.lv/dienaskartiba/384277-2024-gada-pienemtais-mk-lemums-par-valsts-nodevu-pakapenisku-palielinasanu-pases-un-eid-kartes-izsniegsanai-stasies-speka-2026-gada-2025",
+   "title": "Pilsonības un migrācijas lietu pārvalde, public notice on LV portāls (Latvijas Vēstnesis), 2024. gadā pieņemtais MK lēmums par valsts nodevu pakāpenisku palielināšanu pases un eID kartes izsniegšanai stāsies spēkā 2026. gadā",
+   "read": "2026-10-28",
+   "said": "no 2026. gada 1. janvāra valsts nodeva par pases izsniegšanu 10 darba dienu laikā būs 50 eiro, bet par izsniegšanu divu darba dienu laikā – 75 eiro. ... Arī turpmāk tiek saglabāti visi līdzšinējie valsts nodevu atvieglojumi par personu apliecinošu dokumentu izsniegšanu bērniem un jauniešiem līdz 20 gadu vecumam, pensionāriem, kā arī personām ar I vai II grupas invaliditāti. Šīm sabiedrības grupām no 2026. gada 1. janvāra valsts nodeva par pases noformēšanu 10 darba dienu laikā būs 25 eiro ... Šī informācija ir publisks paziņojums un neatspoguļo LV portāla viedokli. Par tās saturu atbild iesūtītājs."
+  }
+ ]
+}

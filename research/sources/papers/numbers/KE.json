@@ -1,0 +1,26 @@
+{
+ "country": "KE",
+ "name": "Personal Identification Number (PIN)",
+ "issuer": "the Kenya Revenue Authority (KRA)",
+ "format": {
+  "length": 11,
+  "pattern": "^A\\d{9}[A-Z]$"
+ },
+ "when": "application",
+ "who": [
+  "anyone"
+ ],
+ "needed": [
+  "tax"
+ ],
+ "note": "Kenya's sheet (its government's own sheet on the OECD's automatic-exchange portal ('Information on Tax Identification Numbers'; the OECD's index page sits behind a bot check and wasn't opened, the sheet itself came straight back)), read 2026-10-30: the Kenya Revenue Authority's PIN is in essence the TIN, issued to individuals who have reached 18 on application, valid with no renewal, and used for every tax head and for land, vehicle and business registrations; 11 characters, an individual's starting with A, nine digits and a final letter (its rule isn't given). Read as given on application from 18, to anyone. No fee or time is stated.",
+ "sources": [
+  {
+   "url": "https://www.oecd.org/content/dam/oecd/en/topics/policy-issue-focus/aeoi/kenya-tin.pdf",
+   "title": "OECD AEOI portal, Kenya: Information on Tax Identification Numbers (the jurisdiction's own sheet)",
+   "read": "2026-10-30",
+   "said": "Personal Identification numbers (PINs) which are in essence TINs. A TIN is issued by the KRA to individuals who have attained the age of 18 years upon application ... TIN should have 11 digits. The first and last digits are letters and the others are numbers. ... Individual TIN starts with letter A."
+  }
+ ],
+ "from": 18
+}

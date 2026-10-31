@@ -1,0 +1,91 @@
+{
+ "country": "AR",
+ "national": {
+  "name": "CBU",
+  "parts": [
+   {
+    "name": "Número De Entidad",
+    "length": 3,
+    "kind": "n"
+   },
+   {
+    "name": "Número De Sucursal",
+    "length": 4,
+    "kind": "n"
+   },
+   {
+    "name": "Dígito Verificador",
+    "length": 1,
+    "kind": "n"
+   },
+   {
+    "name": "Identificación De La Cuenta",
+    "length": 13,
+    "kind": "n"
+   },
+   {
+    "name": "Dígito Verificador De La Cuenta",
+    "length": 1,
+    "kind": "n"
+   }
+  ],
+  "bank": [
+   1,
+   3
+  ],
+  "checks": [
+   {
+    "over": [
+     1,
+     7
+    ],
+    "weights": [
+     7,
+     1,
+     3,
+     9,
+     7,
+     1,
+     3
+    ]
+   },
+   {
+    "over": [
+     9,
+     21
+    ],
+    "weights": [
+     3,
+     9,
+     7,
+     1,
+     3,
+     9,
+     7,
+     1,
+     3,
+     9,
+     7,
+     1,
+     3
+    ]
+   }
+  ],
+  "example": "0110138202011100377664"
+ },
+ "note": "The BCRA's Texto ordenado on the Sistema Nacional de Pagos, Servicios de pago, Section 1 (as ordered to 2025-08-18, last communication incorporated A 8303), read 2026-10-30: every sight account is given a Clave Bancaria Uniforme in two blocks, the first the entity's number (3), the branch's (4) and a check digit over those seven, the second the account's identification (13) and a check digit over those thirteen, 22 digits in all. The check, as the text states it: 'Para el cálculo de los dígitos verificadores deben aplicar la clave 10 con el ponderador 9713.' The BCRA's 1997 CIMPRA bulletin gives the same rule ('se utilizará el módulo 10 y el ponderador 9713') and a worked number: block 1 01101382 (check 2 over 0110138) and block 2 02011100377664 (check 4 over 0201110037766). Read as weights 7,1,3,9,7,1,3 over block 1's seven digits and 3,9,7,1,3,9,7,1,3,9,7,1,3 over block 2's thirteen (9713 repeating, ending on 3 at the digit before the check), check = (10 - sum mod 10) mod 10; it gives 2 and 4 on the bulletin's numbers, and the bulletin's number (both blocks, 0110138202011100377664) is the form's example. A CVU (a payment provider's virtual account, the same 22-digit form starting 000) isn't modelled.",
+ "sources": [
+  {
+   "url": "https://www.bcra.gob.ar/Pdfs/Texord/t-snp-spd.pdf",
+   "title": "Banco Central de la República Argentina, Texto ordenado: Sistema Nacional de Pagos, Servicios de pago (al 18/08/2025)",
+   "read": "2026-10-30",
+   "said": "Texto ordenado al 18/08/2025 ... 1.1.1.1. Número de entidad (3 posiciones; se utiliza el número asignado por la cámara ... 1.1.1.2. Número de sucursal (4 posiciones). ... 1.1.1.3. Dígito verificador de las primeras 7 posiciones (1 posición). ... 1.1.2.1. Identificación de la cuenta individual (13 posiciones). ... 1.1.2.2. Dígito verificador de las anteriores 13 posiciones (1 posición). ... Para el cálculo de los dígitos verificadores deben aplicar la clave 10 con el ponderador 9713."
+  },
+  {
+   "url": "https://www.bcra.gob.ar/archivos/Pdfs/SistemasFinancierosYdePagos/Boletin-CIMPRA-002-1997.pdf",
+   "title": "Banco Central de la República Argentina, Boletín CIMPRA 002, 1997 (the CBU's introduction, with a worked example)",
+   "read": "2026-10-30",
+   "said": "Para el cálculo de dígitos verificadores de ambos bloques se utilizará el módulo 10 y el ... ponderador 9713. ... bloque 1: 01101382 ... bloque 2: 02011100377664"
+  }
+ ]
+}

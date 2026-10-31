@@ -1,0 +1,57 @@
+{
+ "country": "RU",
+ "document": "паспорт гражданина Российской Федерации (internal passport)",
+ "office": "a subdivision of the Ministry of Internal Affairs",
+ "currency": "RUB",
+ "routes": [
+  {
+   "id": "mvd",
+   "where": "home",
+   "speed": "standard",
+   "within": {
+    "n": 5,
+    "unit": "working day"
+   },
+   "label": "within five working days of the complete application"
+  }
+ ],
+ "cards": [
+  {
+   "for": "14 to 19",
+   "from": 14,
+   "under": 20,
+   "validYears": null,
+   "pay": {
+    "mvd": "300"
+   }
+  },
+  {
+   "for": "20 to 44",
+   "from": 20,
+   "under": 45,
+   "validYears": null,
+   "pay": {
+    "mvd": "300"
+   }
+  },
+  {
+   "for": "45 and over",
+   "from": 45,
+   "validYears": "permanent",
+   "pay": {
+    "mvd": "300"
+   }
+  }
+ ],
+ "note": "Russia's identity document inside the country is the internal passport: valid from 14 to 20, from 20 to 45, and without end after 45, replaced within 90 days of the 20th and 45th birthdays; so its term is to the next of those birthdays, not a number of years (null). The duty for the planned issue is 300 roubles (1,500 for one replacing a lost or spoilt passport, not modelled), as Garant reports the Tax Code (art. 333.33).",
+ "sources": [
+  {
+   "url": "https://www.garant.ru/news/2150053/",
+   "title": "ГАРАНТ.РУ, Заменить паспорт РФ в 20 и 45 лет необходимо в течение 90 дней",
+   "read": "2026-10-28",
+   "kind": "secondary",
+   "quotes": "https://xn--b1aew.xn--p1ai/",
+   "said": "Паспорт действует с 14 до 20 лет, с 20 до 45 лет, а после 45 лет – бессрочно. Когда гражданину исполняется 20 или 45 лет, документ подлежит замене. ... Срок предоставления услуги отсчитывается со дня получения подразделением заявления и полного пакета документов и составляет не более пяти рабочих дней. Размер пошлины за плановую замену – 300 руб., за выдачу паспорта взамен утраченного или испорченного – 1,5 тыс. руб."
+  }
+ ]
+}

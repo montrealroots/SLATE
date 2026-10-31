@@ -35,10 +35,11 @@ export interface FalsifierRecord {
 }
 
 const ANCHOR = /@slate:(reads|bites|downstream)\s+([A-Za-z0-9.-]+)/g;
-const MALFORMED = /@slate:(?!(reads|bites|downstream)\s+[A-Za-z0-9.-])/;
+// `@slate:consumer` is the effects check's (gate/checks/effects.ts).
+const MALFORMED = /@slate:(?!(reads|bites|downstream|consumer)\s+[A-Za-z0-9.-])/;
 
 /** A line with no code on it: blank, or starting as a comment (`//`, `/*`, ` *`, or JSX's `{/*`). */
-const isCommentOnly = (line: string) => /^\s*(\/\/|\/\*|\*|\{\s*\/\*|$)/.test(line);
+export const isCommentOnly = (line: string) => /^\s*(\/\/|\/\*|\*|\{\s*\/\*|$)/.test(line);
 
 /**
  * Finds every anchor in a file and the line of code each one vouches for: its own line when code comes before it
@@ -145,7 +146,11 @@ export function checkFeatures(repo: Repo, falsifiers: readonly FalsifierRecord[]
     }
     rows.push(`| \`${id}\` | ${cells.join(' | ')} | ${falsified.join('<br>')} |`);
   }
-  for (const f of falsifiers) if (!(f.feature in features)) r.red(`a falsifier names "${f.feature}", which isn't a registered feature`, f.file);
+  // A falsifier of an engine's effect is the effects check's (gate/checks/effects.ts).
+  const effects = readJson(repo, PATHS.effects);
+  // Stryker disable next-line LogicalOperator: a registry that doesn't read has no value, which isn't a record either way.
+  const effectIds = effects.ok && isRecord(effects.value) ? effects.value : {};
+  for (const f of falsifiers) if (!(f.feature in features) && !(f.feature in effectIds)) r.red(`a falsifier names "${f.feature}", which isn't a registered feature`, f.file);
 
   r.generate(
     `${PATHS.matrixDir}/FEATURES.md`,

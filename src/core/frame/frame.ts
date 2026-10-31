@@ -271,10 +271,18 @@ export function waiting<S extends object>(life: Life<S>): Item[] {
  * Time passes, up to a moment: everything scheduled before it happens in order, each at its own moment, and time
  * stops early at the first commitment that wants the player (which stays on the schedule). Passing to a moment in one
  * step or in several ends the same.
+ *
+ * A happening may schedule another at its own moment, and that one happens in turn; but a kind brought back at the
+ * moment it happened, by itself or through the happenings it set off then, is refused, naming the kinds: it would
+ * happen again at that moment for ever, and time would never pass it (until 2026-10-30 nothing stopped it, and the
+ * audit's probe ran such a kind 5,001 times before its own guard did). Two items of a kind at one moment (two cards'
+ * statements on the same day) are not a loop: only what a happening sets off at its own moment is followed.
  */
 export function pass<S extends object>(life: Life<S>, to: number): { life: Life<S>; stoppedAt: Item | null } {
   if (!isTime(to) || to < life.frame.now) throw new RangeError(`time passes forward to a moment (from ${life.frame.now} to ${to})`);
   let current = life;
+  // The kinds that set off each item scheduled at the moment of the happening that scheduled it, first to last.
+  const causes = new Map<number, string[]>();
   for (;;) {
     const item = current.frame.schedule.find((i) => i.at <= to);
     if (item === undefined) break;
@@ -284,6 +292,12 @@ export function pass<S extends object>(life: Life<S>, to: number): { life: Life<
     if (kind.wants) return { life: { ...current, frame: { ...current.frame, now: at } }, stoppedAt: item };
     const due: Life<S> = { ...current, frame: { ...current.frame, now: at, schedule: current.frame.schedule.filter((i) => i.id !== item.id) } };
     current = apply(due, kind.kind, kind as Access<S>, at, (slices, context) => (kind as { happen(s: S, i: Item, c: Context): void }).happen(slices, item, context));
+    const chain = [...(causes.get(item.id) ?? []), kind.kind];
+    for (const added of current.frame.schedule) {
+      if (added.id < due.frame.next || added.at !== at) continue;
+      if (chain.includes(added.kind)) throw new Error(`${chain.join(', then ')} brings ${added.kind} back at the moment it happened (${at}), so time would never pass it`);
+      causes.set(added.id, chain);
+    }
   }
   return { life: { ...current, frame: { ...current.frame, now: to } }, stoppedAt: null };
 }

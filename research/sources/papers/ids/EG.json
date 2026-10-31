@@ -1,0 +1,91 @@
+{
+ "country": "EG",
+ "document": "بطاقة الرقم القومي (National ID card)",
+ "office": "the Civil Status Organization (Ministry of Interior), at civil registry offices",
+ "currency": "EGP",
+ "routes": [
+  {
+   "id": "ordinary",
+   "where": "home",
+   "speed": "standard",
+   "within": {
+    "n": 15,
+    "unit": "day"
+   },
+   "label": "ordinary form: delivered within 15 days"
+  },
+  {
+   "id": "urgent",
+   "where": "home",
+   "speed": "urgent",
+   "within": {
+    "n": 3,
+    "unit": "day"
+   },
+   "label": "urgent form: within 3 days"
+  },
+  {
+   "id": "special",
+   "where": "home",
+   "speed": "urgent",
+   "within": {
+    "n": 24,
+    "unit": "hour"
+   },
+   "label": "special form: within 24 hours"
+  },
+  {
+   "id": "vip",
+   "where": "home",
+   "speed": "urgent",
+   "within": {
+    "n": 30,
+    "unit": "minute"
+   },
+   "label": "VIP express: within 30 minutes"
+  },
+  {
+   "id": "instant",
+   "where": "home",
+   "speed": "urgent",
+   "within": {
+    "n": 1,
+    "unit": "minute"
+   },
+   "label": "instant form: on the spot, from the model vehicle"
+  }
+ ],
+ "cards": [
+  {
+   "for": "from 15",
+   "from": 15,
+   "validYears": 7,
+   "pay": {
+    "ordinary": "50",
+    "urgent": "125",
+    "special": "175",
+    "vip": "515",
+    "instant": "800"
+   }
+  }
+ ],
+ "note": "The Civil Status Organization's form prices as Al-Dostor reported them (2025): ordinary EGP 50 (15 days), urgent 125 (3 days), special 175 (24 hours), VIP express 515 (30 minutes), instant 800 (on the spot); the applicant must be at least 15; Telegraph Egypt (16 October 2026) gives the card's term, seven years, and the same 800-pound instant form. The Ministry's site gives no fee schedule this session could read. 'On the spot' is kept as within a minute.",
+ "sources": [
+  {
+   "url": "https://www.dostor.org/5194793",
+   "title": "Al-Dostor, رسوم استخراج بطاقة الرقم القومي 2025",
+   "read": "2026-10-28",
+   "kind": "secondary",
+   "quotes": "https://www.moi.gov.eg/",
+   "said": "يجب أن لا تقل سن المتقدم لبطاقة الرقم القومي عن 15 سنة. ... الفئة الفورية: 800 جنيه تسليم فوري. VIP إكسبريس: 515 جنيهًا تسليم خلال 30 دقيقة. الفئة الخاصة: 175 جنيهًا تسليم خلال 24 ساعة. البطاقة العاجلة: 125 جنيهًا تسليم خلال 3 أيام. البطاقة العادية: 50 جنيهًا تسليم خلال 15 يومًا."
+  },
+  {
+   "url": "https://www.egypttelegraph.com/article/287462/%D9%87%D8%AA%D8%B3%D8%AA%D9%84%D9%85%D9%87%D8%A7-%D9%81%D9%88%D8%B1%D8%A7-%D8%A8%D9%808%D9%A0%D9%A0-%D8%AC%D9%86%D9%8A%D9%87-%D8%AA%D8%B9%D8%B1%D9%81-%D8%B9%D9%84%D9%89-%D8%B1%D8%B3%D9%88%D9%85",
+   "title": "Telegraph Egypt, \"هتستلمها فورا بـ800 جنيه\".. تعرف على رسوم وطرق استخراج بطاقة الرقم القومي (16 October 2026)",
+   "read": "2026-10-28",
+   "kind": "secondary",
+   "quotes": "https://www.moi.gov.eg/",
+   "said": "انتهاء مدة صلاحية البطاقة (7 سنوات) ... استمارة VIP فوري: بسعر 800 جنيها تستلمها لحظيًا"
+  }
+ ]
+}

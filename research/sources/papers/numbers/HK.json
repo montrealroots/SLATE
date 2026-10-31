@@ -1,0 +1,22 @@
+{
+ "country": "HK",
+ "name": "Hong Kong Identity Card number",
+ "issuer": "the Immigration Department",
+ "format": {
+  "length": 8,
+  "pattern": "[A-Z][0-9]{6}[0-9A]"
+ },
+ "when": "registration",
+ "who": [
+  "residents"
+ ],
+ "note": "Read the HKSAR Government's interoperability framework common schema 'HKID Number' (Digital Policy Office): a unique reference of the holder of a Hong Kong Identity Card issued by the Immigration Department; the number without its check digit is at most two letters and six digits (seven or eight characters), and the check digit is 0-9 or A (written in brackets on the card, which the pattern leaves out). The form holds one length, so the file holds the one-letter form (eight characters with the check digit); the two-letter prefix isn't modelled. The check digit's algorithm isn't stated there and the code has none, so the format names no check. The Immigration Department's own pages and the Registration of Persons Ordinance (Cap. 177) were not read: 'when' is registration and 'who' residents as the schema's 'holder of a Hong Kong Identity Card' reads; the age of registration, the fee and the time are not read.",
+ "sources": [
+  {
+   "url": "https://www.digitalpolicy.gov.hk/en/our_work/data_governance/policies_standards/interoperability_framework/common_schemas/hkid_number/index.html",
+   "title": "Digital Policy Office, Interoperability Framework common schema: HKID Number",
+   "read": "2026-10-30",
+   "said": "A unique reference associated with the holder of a Hong Kong Identity Card issued by the Immigration Department of the HKSARG. ... Hong Kong ID number without check digit ... A maximum of 2 alphabetic characters and a 6 numeric digit number ... Minimum length: 7 ... Maximum length: 8 ... Check digit of Hong Kong ID number ... 0-9 or A"
+  }
+ ]
+}

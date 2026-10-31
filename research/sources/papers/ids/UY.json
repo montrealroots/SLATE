@@ -1,0 +1,61 @@
+{
+ "country": "UY",
+ "document": "Documento Nacional de Identidad (cédula de identidad)",
+ "office": "the Dirección Nacional de Identificación Civil (Ministerio del Interior)",
+ "currency": "UYU",
+ "routes": [
+  {
+   "id": "child",
+   "where": "home",
+   "speed": "standard",
+   "within": {
+    "n": 1,
+    "unit": "day"
+   },
+   "label": "in person, for a child under 10: collected the same day"
+  },
+  {
+   "id": "office",
+   "where": "home",
+   "speed": "standard",
+   "within": {
+    "n": 5,
+    "unit": "working day"
+   },
+   "label": "in person, from 10: collected from 5 working days after applying"
+  }
+ ],
+ "cards": [
+  {
+   "for": "child under 10",
+   "under": 10,
+   "validYears": null,
+   "pay": {
+    "child": "456"
+   }
+  },
+  {
+   "for": "from 10",
+   "from": 10,
+   "validYears": null,
+   "pay": {
+    "office": "456"
+   }
+  }
+ ],
+ "note": "The national procedures catalogue's page for a natural citizen's first document: UYU 456 from 1 July 2026; required from 45 days after birth. The page says children under nine collect it the same day and those over ten from five working days later; age nine, which it leaves between the two, is kept with the younger. The document's term isn't on the page, so it's null and the player is told.",
+ "sources": [
+  {
+   "url": "https://www.gub.uy/tramites/documento-nacional-identidad-primera-vez-personas-ciudadanas-naturales-uruguayas",
+   "title": "Gobierno de Uruguay (gub.uy), Documento Nacional de Identidad primera vez - personas ciudadanas naturales uruguayas",
+   "read": "2026-10-28",
+   "said": "Menores de 9 años: retiran Documento Nacional de Identidad el mismo día que la tramitan. Mayores de 10 años: retiran Documento Nacional de Identidad a partir de 5 días hábiles de realizado el trámite, con un plazo máximo de 90 días. ... Costos 456 $ Valores a partir del 01/07/2026"
+  },
+  {
+   "url": "https://www.gub.uy/tramites/cedula-identidad",
+   "title": "Gobierno de Uruguay (gub.uy), Cédula de Identidad",
+   "read": "2026-10-28",
+   "said": "En Uruguay a partir de los 45 días de nacido se debe tener Documento Nacional de Identidad."
+  }
+ ]
+}

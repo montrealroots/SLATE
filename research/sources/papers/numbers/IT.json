@@ -1,0 +1,25 @@
+{
+ "country": "IT",
+ "name": "codice fiscale",
+ "issuer": "the Agenzia delle Entrate (Italian Revenue Agency)",
+ "format": {
+  "length": 16,
+  "pattern": "^[A-Z]{6}\\d{2}[A-Z]\\d{2}[A-Z]\\d{3}[A-Z]$"
+ },
+ "when": "birth",
+ "who": [
+  "residents"
+ ],
+ "needed": [
+  "tax"
+ ],
+ "note": "Italy's sheet (its government's own sheet on the OECD's automatic-exchange portal ('Information on Tax Identification Numbers'; the OECD's index page sits behind a bot check and wasn't opened, the sheet itself came straight back)), read 2026-10-30: the codice fiscale is valid only as registered in the Tax Register of the Agenzia delle Entrate, the only body that issues it; for infants it is usually assigned by the municipality at the first entry in the registers, and anyone without one asks any Revenue Agency office with an identity document (non-EU citizens with a passport, consular certificate, residence permit or municipal ID). Its structure is drawn in the sheet as an image, read by eye: six letters (three of the surname, three of the name), two digits of the birth year, a letter for the month, two digits for the day of birth and sex, a letter and three digits for the municipality or foreign state of birth, and a check letter, 16 characters in all; the check rule isn't given, so `check` is left out. Read as given at birth, to residents (others obtain one on request, not modelled). The sheet states no fee or time.",
+ "sources": [
+  {
+   "url": "https://www.oecd.org/content/dam/oecd/en/topics/policy-issue-focus/aeoi/italy-tin.pdf",
+   "title": "OECD AEOI portal, Italy: Information on Tax Identification Numbers (the jurisdiction's own sheet)",
+   "read": "2026-10-30",
+   "said": "In case of individuals, those who do not have a TIN should submit a request to any Office of Italian Revenue Agency. ... For infants, TIN is usually assigned by the municipalities at the time of the first entry in the registries ... The only acceptable TIN is the one issued by the Revenue Agency Offices (Agenzia delle Entrate). ... IT-TIN (Codice fiscale)"
+  }
+ ]
+}

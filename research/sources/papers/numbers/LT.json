@@ -1,0 +1,25 @@
+{
+ "country": "LT",
+ "name": "personal code",
+ "issuer": "the Lithuanian population register (the sheet names no office)",
+ "format": {
+  "length": 11,
+  "pattern": "^[1-6]\\d{10}$"
+ },
+ "when": "birth",
+ "who": [
+  "residents"
+ ],
+ "needed": [
+  "tax"
+ ],
+ "note": "Lithuania's sheet (its government's own sheet on the OECD's automatic-exchange portal ('Information on Tax Identification Numbers'; the OECD's index page sits behind a bot check and wasn't opened, the sheet itself came straight back)), read 2026-10-30: the TIN of a natural person equals the Lithuanian personal code, immutable for life: 11 digits, the first (1 to 6) giving sex and century, then the birth date, and an eleventh check digit by weights the sheet spells out (the game doesn't compute it yet, `check` left out). Individuals get it automatically. The sheet doesn't name the office that gives it. Read as given at birth, to residents. No fee or time is stated.",
+ "sources": [
+  {
+   "url": "https://www.oecd.org/content/dam/oecd/en/topics/policy-issue-focus/aeoi/lithuania-tin.pdf",
+   "title": "OECD AEOI portal, Lithuania: Information on Tax Identification Numbers (the jurisdiction's own sheet)",
+   "read": "2026-10-30",
+   "said": "Natural persons: In Lithuania the TIN equals the Lithuanian personal code. This code is immutable throughout the life of the natural person. ... C1 Can only take the value 1 to 6. C2, C3 Two last digits of a year. ... Individuals [Yes] Entities [Yes]"
+  }
+ ]
+}

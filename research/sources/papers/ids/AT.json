@@ -1,0 +1,94 @@
+{
+ "country": "AT",
+ "document": "Personalausweis",
+ "office": "any passport authority in Austria (district authority or magistrate); abroad, the embassy or consulate of the place of residence, or some honorary consulates",
+ "currency": "EUR",
+ "routes": [
+  {
+   "id": "home",
+   "where": "home",
+   "speed": "standard",
+   "within": null,
+   "label": "at any passport authority in Austria"
+  },
+  {
+   "id": "abroad",
+   "where": "abroad",
+   "speed": "standard",
+   "within": null,
+   "label": "at an Austrian embassy or consulate"
+  },
+  {
+   "id": "honorary",
+   "where": "abroad",
+   "speed": "standard",
+   "within": null,
+   "label": "at an honorary consulate that takes applications, for 30 euros more"
+  }
+ ],
+ "cards": [
+  {
+   "for": "under 2",
+   "under": 2,
+   "validYears": 2,
+   "pay": {
+    "home": "0",
+    "abroad": "0",
+    "honorary": "30"
+   }
+  },
+  {
+   "for": "2 to 11",
+   "from": 2,
+   "under": 12,
+   "validYears": 5,
+   "pay": {
+    "home": "39",
+    "abroad": "39",
+    "honorary": "69"
+   }
+  },
+  {
+   "for": "12 to 15",
+   "from": 12,
+   "under": 16,
+   "validYears": 10,
+   "pay": {
+    "home": "39",
+    "abroad": "39",
+    "honorary": "69"
+   }
+  },
+  {
+   "for": "16 and over",
+   "from": 16,
+   "validYears": 10,
+   "pay": {
+    "home": "91",
+    "abroad": "91",
+    "honorary": "121"
+   }
+  }
+ ],
+ "note": "The card costs 91 euros from the 16th birthday, 39 euros from the 2nd, and nothing for a first card up to the 2nd birthday (a further one then costs 39 euros, not modelled), at home or at an embassy or consulate; an honorary consulate that takes the application charges 30 euros more, summed here. It is valid two years under 2, five years from 2, ten years from 12. A first card issued on the 2nd birthday itself is free and valid five years, which whole years of age can't tell apart. No processing time is published.",
+ "sources": [
+  {
+   "url": "https://www.oesterreich.gv.at/de/themen/persoenliche_dokumente_und_bestaetigungen/personalausweis/Seite.030100",
+   "title": "oesterreich.gv.at, Personalausweis – Neuausstellung",
+   "read": "2026-10-28",
+   "said": "Der Personalausweis ist zehn Jahre gültig . ... Kosten 91 Euro"
+  },
+  {
+   "url": "https://www.oesterreich.gv.at/de/themen/persoenliche_dokumente_und_bestaetigungen/personalausweis/Seite.030300",
+   "title": "oesterreich.gv.at, Personalausweis – Minderjährige unter 18 Jahren",
+   "read": "2026-10-28",
+   "said": "Gültigkeitsdauer eines Personalausweises für Minderjährige unter 18 Jahren Für Kinder bis zwei Jahre: zwei Jahre Für Kinder ab dem 2. Geburtstag: fünf Jahre Ab dem 12. Geburtstag: zehn Jahre ... Erfolgt die erstmalige Ausstellung des Personalausweises genau am zweiten Geburtstag , beträgt die Gültigkeitsdauer des Reisedokuments bereits fünf Jahre. ... Bis zum bzw. am 2. Geburtstag: Bei Erstausstellung: gebührenfrei Bei Ausstellung eines weiteren Personalausweises, z.B. wegen Namensänderung: 39 Euro Nach dem 2. Geburtstag: 39 Euro Ab dem 16. Geburtstag: 91 Euro"
+  },
+  {
+   "url": "https://www.oesterreich.gv.at/de/themen/eu_und_international/erhalt-von-urkunden-und-ausweisen-im-ausland/Seite.480901",
+   "title": "oesterreich.gv.at, Ausstellung eines Personalausweises – Auslandsösterreicherinnen/Auslandsösterreicher",
+   "read": "2026-10-28",
+   "said": "Konsulargebühren: Personalausweis: 91 Euro Personalausweis für Kinder (2 bis 15 Jahre): 39 Euro erster Personalausweis für Kinder bis zum bzw. am 2. Geburtstag: gebührenfrei kostenpflichtige Antragstellung bei Honorarkonsulaten: ... 30 Euro für Beantragung eines Personalausweises"
+  }
+ ]
+}

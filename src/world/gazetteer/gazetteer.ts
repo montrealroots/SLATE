@@ -1,3 +1,4 @@
+import type { CurrencyCode } from '../../core/money/money.ts';
 import countries from './countries.json';
 import regions from './regions.json';
 
@@ -34,6 +35,12 @@ export function isCountry(code: string): code is CountryCode {
 }
 
 export const countryName = (code: CountryCode): string => countries[code].name;
+
+/** The currency a country's prices are in (GeoNames', held to ISO 4217's current list), or none for one that has none. */
+export function currencyOf(code: CountryCode): CurrencyCode | undefined {
+  const c = countries[code].currency;
+  return c === '' ? undefined : (c as CurrencyCode);
+}
 
 export function regionName(key: string): string | undefined {
   return Object.hasOwn(regions, key) ? regions[key as keyof typeof regions].name : undefined;

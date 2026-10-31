@@ -1,0 +1,29 @@
+{
+ "country": "ST",
+ "office": "the Migration and Borders Service (SMF), Av. 12 de Julho, São Tomé",
+ "currency": "STN",
+ "routes": [
+  {"id": "normal", "where": "home", "speed": "standard", "within": null, "label": "normal"},
+  {"id": "urgent", "where": "home", "speed": "urgent", "within": {"n": 24, "unit": "hour"}, "label": "urgent, in 24 hours"}
+ ],
+ "passports": [
+  {"for": "any", "validYears": null, "pay": {"normal": "1500.00", "urgent": "1750.00"}}
+ ],
+ "note": "The SMF's fee page for the common passport: 1,500 dobras normally, and an urgency fee of 250 for 24 hours, added here. The page writes 'STD', the old dobra's code, but the amounts are in new dobras (STN): Téla Nón reported the electronic passport's launch price in February 2018 as '1700 novas dobras, cerca de 70 euros'. Delivery at the airport or port (30% more) and issue out of hours (25% more) aren't modelled; nor are validity and a normal processing time, which the page doesn't give.",
+ "sources": [
+  {
+   "url": "https://www.smf.st/taxas.php",
+   "title": "Serviço de Migração e Fronteiras, Taxas: Custo de passaporte",
+   "read": "2026-10-28",
+   "said": "CUSTO DE PASSAPORTE ... Passaporte Comum Normal (Sem taxa adicional) 1.500,00 STD Taxa de urgência (24 horas) 250,00 STD Emissão e Entrega (no areoporto/Porto (acresce 30%)) 2.535,00 STD Emissão (Fora do horário, domingo e feriados (acresce 25%)) 2.437,00 STD"
+  },
+  {
+   "kind": "secondary",
+   "url": "https://www.telanon.info/politica/2018/02/02/26346/governo-lancou-passaporte-electronico/",
+   "quotes": "https://www.smf.st/",
+   "title": "Téla Nón, Governo lançou passaporte electrónico (2 February 2018)",
+   "read": "2026-10-28",
+   "said": "O novo passaporte electrónico, custa caro para a maioria da população são-tomense. 1700 novas dobras, cerca de 70 euros."
+  }
+ ]
+}

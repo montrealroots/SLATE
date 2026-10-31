@@ -1,0 +1,25 @@
+{
+ "country": "NO",
+ "name": "national identity number",
+ "issuer": "the Norwegian Tax Administration (the Tax Office)",
+ "format": {
+  "length": 11,
+  "pattern": "^\\d{11}$"
+ },
+ "when": "birth",
+ "who": [
+  "residents"
+ ],
+ "needed": [
+  "tax"
+ ],
+ "note": "Norway's sheet (its government's own sheet on the OECD's automatic-exchange portal ('Information on Tax Identification Numbers'; the OECD's index page sits behind a bot check and wasn't opened, the sheet itself came straight back)), read 2026-10-30: everyone resident in Norway, including everyone born there and anyone settling for at least six months, is assigned a national identity number, notified by letter from the Tax Office; 11 digits, the birth date (day, month, year), a three-digit individual number and two control digits (the rule isn't given, `check` left out). Short-stay foreign workers get a D-number instead, not modelled. Read as given at birth, to residents. No fee or time is stated.",
+ "sources": [
+  {
+   "url": "https://www.oecd.org/content/dam/oecd/en/topics/policy-issue-focus/aeoi/norway-tin.pdf",
+   "title": "OECD AEOI portal, Norway: Information on Tax Identification Numbers (the jurisdiction's own sheet)",
+   "read": "2026-10-30",
+   "said": "Everyone who resides in Norway is assigned a unique national identity number. This includes everyone born in Norway, anyone who settles and are staying for at least 6 months in Norway ... Individuals as mentioned above will be notified of their Norwegian national number by an official letter from the Tax Office. ... The national identity number consists of 11 digits. ... The last two digits are control digits."
+  }
+ ]
+}

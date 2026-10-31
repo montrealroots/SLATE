@@ -1,0 +1,33 @@
+{
+ "country": "AR",
+ "name": "Código Único de Identificación Laboral (CUIL)",
+ "issuer": "the Administración Nacional de la Seguridad Social (ANSES)",
+ "format": {
+  "length": 11,
+  "pattern": "^(20|23|24|27)\\d{9}$"
+ },
+ "when": "birth",
+ "who": [
+  "citizens",
+  "residents",
+  "workers"
+ ],
+ "needed": [
+  "work"
+ ],
+ "note": "ANSES's service page on argentina.gob.ar and Argentina's sheet (its government's own sheet on the OECD's automatic-exchange portal ('Information on Tax Identification Numbers'; the OECD's index page sits behind a bot check and wasn't opened, the sheet itself came straight back)), read 2026-10-30: the CUIL is the number ANSES gives to record pension contributions; it is generated automatically when a child is registered with the Registro Nacional de las Personas (read as given at birth); a foreigner who wants to work generates a provisional CUIL after migration's procedures. The sheet gives the structure of the CUIT (11 digits: 20, 23, 24 or 27 for an individual, the DNI's 8 digits, a verification digit) and says the CUIL is granted with the DNI; that the CUIL shares the CUIT's form is a reading (an individual's CUIT is the CUIL's number), flagged. The sheet calls the last digit randomly assigned, so no check is computed. The certificate (constancia) is free; the number's own fee isn't stated, so `fee` is left out.",
+ "sources": [
+  {
+   "url": "https://www.argentina.gob.ar/servicio/solicitar-constancia-de-cuil",
+   "title": "argentina.gob.ar (ANSES), Solicitar constancia de CUIL",
+   "read": "2026-10-30",
+   "said": "es un número que brinda ANSES para registrar tus aportes jubilatorios ... En la actualidad el CUIL se genera de manera automática al momento de inscripción de un menor ante el Registro Nacional de las Personas. ... Las personas extranjeras que quieran trabajar en el país deben generar un CUIL provisorio"
+  },
+  {
+   "url": "https://www.oecd.org/content/dam/oecd/en/topics/policy-issue-focus/aeoi/tin_argentina.pdf",
+   "title": "OECD AEOI portal, Argentina: Information on Tax Identification Numbers (the jurisdiction's own sheet)",
+   "read": "2026-10-30",
+   "said": "The CUIL is granted automatically and simultaneously with the ID (DNI). ... The CUIT consists of 11 digits: ... the first 2 digits indicate the person: the numbers 20, 23, 24 or 27 are assigned randomly for ... The next 8 digits are: in the case of individuals, the ID (DNI) number ... The last digit is the verification number and it is randomly assigned."
+  }
+ ]
+}

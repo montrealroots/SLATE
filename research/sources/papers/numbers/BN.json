@@ -1,0 +1,27 @@
+{
+ "country": "BN",
+ "name": "NRIC Number",
+ "issuer": "the Brunei Darussalam identity card's issuer (the sheet names no office)",
+ "format": {
+  "length": 8,
+  "pattern": "^\\d{8}$"
+ },
+ "when": "application",
+ "who": [
+  "citizens",
+  "residents"
+ ],
+ "needed": [
+  "tax"
+ ],
+ "from": 12,
+ "note": "Brunei Darussalam's sheet (its government's own sheet on the OECD's automatic-exchange portal ('Information on Tax Identification Numbers'; the OECD's index page sits behind a bot check and wasn't opened, the sheet itself came straight back)), read 2026-10-30: (last updated August 2018) Brunei issues no TIN to individuals (only companies are taxed); the functional equivalent is the NRIC number, for citizens (yellow cards), permanent residents (purple) and temporary residents (green), card holders aged 12 and above; written NN-NNNNNN, eight digits, citizens' numbers since 2000 running 01 to 29 in the first two. The sheet doesn't name the issuing office. Read as given on application from 12, to citizens and residents. No check rule, fee or time is stated.",
+ "sources": [
+  {
+   "url": "https://www.oecd.org/content/dam/oecd/en/topics/policy-issue-focus/aeoi/brunei-darussalam-tin%20.pdf",
+   "title": "OECD AEOI portal, Brunei Darussalam: Information on Tax Identification Numbers (the jurisdiction's own sheet)",
+   "read": "2026-10-30",
+   "said": "Individual: There is no TIN issued for individual. In the absence of TIN, the functional equivalent are as follows: NRIC Number: This is for Brunei Darussalam Citizen, Permanent Resident of Brunei Darussalam and Temporary Resident of Brunei Darussalam. Brunei Darussalam Citizen – Yellow bordered cards with yellow printing and holders are aged 12 years and above. ... 01-000001 to 29-999999"
+  }
+ ]
+}

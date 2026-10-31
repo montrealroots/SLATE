@@ -1,0 +1,23 @@
+{
+ "country": "LU",
+ "office": "the Bureau des passeports, visas et légalisations, applied for at the commune",
+ "currency": "EUR",
+ "routes": [
+  {"id": "classic", "where": "home", "speed": "standard", "within": {"n": 7, "unit": "working day"}, "label": "classic: 7 working days"},
+  {"id": "urgent", "where": "home", "speed": "urgent", "within": {"n": 3, "unit": "working day"}, "label": "urgent procedure: 3 working days, collected at the Bureau des passeports"}
+ ],
+ "passports": [
+  {"for": "adult", "from": 18, "validYears": 10, "pay": {"classic": "55", "urgent": "155"}},
+  {"for": "minor", "from": 4, "under": 18, "validYears": 5, "pay": {"classic": "55", "urgent": "155"}},
+  {"for": "infant", "under": 4, "validYears": 2, "pay": {"classic": "35", "urgent": "95"}}
+ ],
+ "note": "From a commune's procedure sheet of May 2026; a sheet of September 2021 (Rosport-Mompach) gives five years for adults; the newer is taken. The totals include the commune's chancery tax of EUR 5, paid in cash.",
+ "sources": [
+  {
+   "url": "https://www.erpeldange.lu/media/3d4ea4b9-403e-41be-b69b-090d646c0004/proceudre-demande-de-passeport.pdf",
+   "title": "Commune d'Erpeldange-sur-Sûre, Procédure: demande de passeport (PDF created 11 May 2026)",
+   "read": "2026-10-28",
+   "said": "Le paiement peut se faire en ligne via myguichet.lu ou par virement sur le compte chèque-postal du Bureau des passeports, visas et légalisations ... Le montant à régler pour la délivrance d'un passeport d'une durée de validité de : 10 ans (pour les personnes de 18 ans révolus) est de : o 50 euros en cas de procédure dite classique ; o 150 euros en cas de procédure d'urgence. 5 ans (pour les mineurs de 4 ans révolus à 18 ans) est de : o 50 euros ... o 150 euros ... 2 ans (pour les mineurs de moins de 4 ans révolus) est de : o 30 euros ... o 90 euros ... Lors de la demande auprès de l'administration communale, une taxe de chancellerie de 5€ est à payer en espèces sur place ... Le délai d'attente pour obtenir un passeport est de 7 jours ouvrables. En cas de procédure d'urgence, le délai est de 3 jours ouvrables et le passeport devra être retiré au Bureau des passeports."
+  }
+ ]
+}

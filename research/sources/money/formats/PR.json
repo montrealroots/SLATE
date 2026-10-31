@@ -1,0 +1,19 @@
+{
+ "country": "PR",
+ "follows": "US",
+ "note": "Banks in Puerto Rico are numbered within the United States' routing number system: the American Bankers Association's Routing Number Policy and Procedures (the Routing Number Administrative Board's policy, revised 9/20, read 2026-10-30 on aba.com) defines a Federal Reserve District as one of the twelve areas assigned to a Federal Reserve Bank main office and says all of the United States and its territories fall into one of these twelve districts, whose routing symbols (01-12) begin a bank's routing number; and the FDIC's BankFind data (read 2026-10-30) lists 260 FDIC-insured bank offices in Puerto Rico, those of Banco Popular de Puerto Rico, FirstBank Puerto Rico and Oriental Bank. So an account there is numbered as one in the United States: a routing number and an account number of one to seventeen characters. (Wave 8's file, held for want of the account's length, gave the routing number alone; the United States' own form now takes the account.) No bank's own routing number page was read for Puerto Rico.",
+ "sources": [
+  {
+   "url": "https://www.aba.com/news-research/analysis-guides/routing-number-policy-procedures",
+   "title": "American Bankers Association, Routing Number Policy and Procedures (revised 9/20)",
+   "read": "2026-10-30",
+   "said": "Federal Reserve District One of the twelve geographic areas assigned to a Federal Reserve Bank main office. All of the United States and its territories fall into one of these twelve districts."
+  },
+  {
+   "url": "https://api.fdic.gov/banks/locations?filters=STALP:PR&fields=NAME,OFFNAME,CITY,STNAME,CERT&limit=100",
+   "title": "Federal Deposit Insurance Corporation, BankFind Suite data (public API), FDIC-insured bank offices in Puerto Rico",
+   "read": "2026-10-30",
+   "said": "\"total\":260 ... \"STNAME\":\"Puerto Rico\" ... \"NAME\":\"Banco Popular de Puerto Rico\" ... \"NAME\":\"FirstBank Puerto Rico\" ... \"NAME\":\"Oriental Bank\""
+  }
+ ]
+}

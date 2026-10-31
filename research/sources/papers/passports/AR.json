@@ -1,0 +1,29 @@
+{
+ "country": "AR",
+ "office": "the Registro Nacional de las Personas (Renaper)",
+ "currency": "ARS",
+ "routes": [
+  {"id": "regular", "where": "home", "speed": "standard", "within": null, "label": "regular, delivered by post"},
+  {"id": "express", "where": "home", "speed": "urgent", "within": {"n": 4, "unit": "working day"}, "label": "exprés: delivered by post within 96 working hours (horas hábiles)"},
+  {"id": "instant", "where": "home", "speed": "urgent", "within": {"n": 6, "unit": "hour"}, "label": "al instante: delivered within 6 hours of starting the application"}
+ ],
+ "passports": [
+  {"for": "adult", "from": 18, "validYears": 10, "pay": {"regular": "100000", "express": "200000", "instant": "330000"}},
+  {"for": "minor", "under": 18, "validYears": 5, "pay": {"regular": "100000", "express": "200000", "instant": "330000"}}
+ ],
+ "note": "Renaper's tariff from 6 March 2026 (Disposición 106/2026). The 96 working hours are read as four working days. The regular delivery time (15 working days, by searches) is on a page that answers this client 403, so it is left unknown. A minor leaving the country needs a travel authorisation (ARS 30,000), not modelled.",
+ "sources": [
+  {
+   "url": "https://www.argentina.gob.ar/interior/renaper/tarifario-de-tramites-de-renaper",
+   "title": "Argentina.gob.ar, Renaper, Tarifario de trámites de Renaper",
+   "read": "2026-10-28",
+   "said": "PASAPORTE Pasaporte regular : $ 100.000 Pasaporte exprés (dentro de las 96 horas hábiles) : $ 200.000 (*) Pasaporte al instante : (con entrega dentro de las 6 horas de iniciado el trámite): $ 330.000 ... IMPORTANTE: A aquellas personas que hayan abonado su trámite de DNI y/o Pasaporte antes del 6 de marzo de 2026, no se les cobrará la diferencia respecto de la nueva tarifa."
+  },
+  {
+   "url": "https://www.argentina.gob.ar/servicio/tramitar-el-pasaporte-con-modalidad-de-entrega-expres",
+   "title": "Argentina.gob.ar, Tramitar el Pasaporte con modalidad de entrega exprés",
+   "read": "2026-10-28",
+   "said": "Con esta modalidad exprés, la entrega será por correo dentro de las 96 horas hábiles posteriores a su realización.* ... ¿Cuál es el costo? $200000.00 Vigencia 10 años Desde la fecha de emisión a mayores de 18 años. 5 años Desde la fecha de emisión a menores de 18 años."
+  }
+ ]
+}

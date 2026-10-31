@@ -1,0 +1,28 @@
+{
+ "country": "UZ",
+ "name": "персональный идентификационный номер физического лица (ПИНФЛ)",
+ "issuer": "the issuer of the citizen's passport (the portal names no office)",
+ "format": {
+  "length": 14,
+  "pattern": "^\\d{14}$"
+ },
+ "when": "application",
+ "who": [
+  "citizens"
+ ],
+ "note": "The government services portal's own FAQ (oldmy.gov.uz, the earlier version of my.gov.uz, undated), read 2026-10-30: the PINFL, the personal identification number of a natural person, is 14 digits, shown at the foot of the passport's photo page (the last 14 digits but two), encoding sex, birth date, a city code and the citizen's serial number, with a check digit (its rule isn't given, `check` left out); it is entered to register for the state's OneID sign-in. The FAQ cites the 1996 Cabinet resolution No. 200 on determining it, which lex.uz shows lost force on 13 April 2022 (its successor wasn't read; lex.uz's full texts sit behind a captcha). Read as given with the passport (on application), to citizens. No age, fee or time is stated.",
+ "sources": [
+  {
+   "url": "https://oldmy.gov.uz/ru/site/faq/11",
+   "title": "Единый портал интерактивных государственных услуг (my.gov.uz), Часто задаваемые вопросы",
+   "read": "2026-10-30",
+   "said": "ПИНФЛ — персональный идентификационный номер физического лица, состоящий из 14 цифр, которые можно определить по паспорту физического лица ... отображает индекс пола, дату рождения, код города, порядковый номер гражданина, а также включает контрольную цифру."
+  },
+  {
+   "url": "https://lex.uz/mact/444922",
+   "title": "LexUz, Постановление Кабинета Министров № 200 от 31.05.1996 (card)",
+   "read": "2026-10-30",
+   "said": "О порядке определения персонального идентификационного номера физического лица в Республике Узбекистан ... Акт утратил силу 13.04.2022"
+  }
+ ]
+}

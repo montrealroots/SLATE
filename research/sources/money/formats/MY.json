@@ -1,0 +1,23 @@
+{
+ "country": "MY",
+ "national": {
+  "name": "Account Number",
+  "parts": [
+   {
+    "name": "Account Number",
+    "length": 17,
+    "min": 5,
+    "kind": "n"
+   }
+  ]
+ },
+ "note": "No rule of Bank Negara Malaysia or PayNet fixing an account number's length was read (bnm.gov.my answered with a captcha page). Maybank, the largest bank, lists for its customers' Interbank GIRO transfers the length of each receiving bank's current and savings account numbers (its PDF 'Banks and payment type', read 2026-10-30; the file's own date is 21 May 2018): from 5 digits (Bank of America and Standard Chartered, 5 to 17) to 17 (several banks, among them ICBC, Deutsche Bank, HSBC and UOB at their longest), most banks at 10 to 16 (Public Bank and OCBC 10, Affin and Bank Rakyat 12, AmBank 13, CIMB, RHB and Bank Islam 14, Alliance 15, BSN 16). So the number is written as 5 to 17 digits. Maybank's own length isn't in the list (it's the sender's) and wasn't found stated on Maybank's pages read, so no drawn length is given and a new account is drawn at the most, 17 digits, which is a reading the lead should check. The transfer names the receiving bank beside the number; no bank code sits in it. No check digit is published.",
+ "sources": [
+  {
+   "url": "https://maybank2u.com.my/iwov-resources/pdf/personal/services/funds_transfer/banks-payment-type-ibg.pdf",
+   "title": "Maybank (Malayan Banking Berhad), Maybank2u, Banks and payment type (Interbank GIRO: the account number lengths of receiving banks), PDF dated 21 May 2018",
+   "read": "2026-10-30",
+   "said": "Banks and payment type ... Affin Bank 12 digits 16 digits 12 digits 12 digits ... Bank of America 5 - 17 digits ... Public Bank 10 digits 16 digits 15 digits 15 digits ... Industrial & Commercial Bank 17 digits 16 digits 17 digits ... United Overseas Bank 7 - 17 digits 16 digits 10 & 15 digits"
+  }
+ ]
+}

@@ -1,0 +1,25 @@
+{
+ "country": "IL",
+ "name": "ID number",
+ "issuer": "the Israeli population register (the sheet names no office)",
+ "format": {
+  "length": 9,
+  "pattern": "^\\d{9}$"
+ },
+ "when": "registration",
+ "who": [
+  "residents"
+ ],
+ "needed": [
+  "tax"
+ ],
+ "note": "Israel's sheet (its government's own sheet on the OECD's automatic-exchange portal ('Information on Tax Identification Numbers'; the OECD's index page sits behind a bot check and wasn't opened, the sheet itself came straight back)), read 2026-10-30: an individual's TIN is the ID number; nine numeric characters. The sheet's description section is left blank and it names no issuing office (the Population and Immigration Authority isn't named), so the issuer is written without its office. Read as given on registration, to residents. No check rule, age, fee or time is stated.",
+ "sources": [
+  {
+   "url": "https://www.oecd.org/content/dam/oecd/en/topics/policy-issue-focus/aeoi/israel-tin.pdf",
+   "title": "OECD AEOI portal, Israel: Information on Tax Identification Numbers (the jurisdiction's own sheet)",
+   "read": "2026-10-30",
+   "said": "The \"TIN\" for an Individual is his ID number. ... The Israeli TIN structure for a company / an individual includes only 9 numeric characters."
+  }
+ ]
+}

@@ -1,0 +1,51 @@
+{
+ "country": "MH",
+ "office": "the Office of the Attorney General, Majuro, which alone issues the passport (applications from abroad are mailed to it)",
+ "currency": "USD",
+ "routes": [
+  {
+   "id": "home",
+   "where": "home",
+   "speed": "standard",
+   "within": null,
+   "label": "from the Office of the Attorney General, Majuro"
+  },
+  {
+   "id": "lost",
+   "where": "home",
+   "speed": "standard",
+   "within": null,
+   "replacement": true,
+   "label": "a lost or damaged passport, with the penalty"
+  }
+ ],
+ "passports": [
+  {
+   "for": "adult",
+   "from": 13,
+   "validYears": 10,
+   "pay": {
+    "home": "100.00",
+    "lost": "200.00"
+   }
+  },
+  {
+   "for": "child",
+   "under": 13,
+   "validYears": 5,
+   "pay": {
+    "home": "50.00",
+    "lost": "100.00"
+   }
+  }
+ ],
+ "note": "The passport fees effective 12 February 2018 as the Embassy in Washington publishes them: $100.00 and ten years from age 13, $50.00 and five years for infants and children 12 and under. The $50.00 expedited fee is granted only for a family emergency of life or death, with a death certificate or a doctor's letter, so it is not modelled as a route anyone can buy. A lost or damaged passport costs $200 or $100 including a penalty, written as a replacement route. The processing time is a lead.",
+ "sources": [
+  {
+   "url": "https://www.rmiembassyus.org/s/Passportapplicationinstructionpdf3.pdf",
+   "title": "Embassy of the Republic of the Marshall Islands, Washington, General Information for RMI Passport (\"Passport Fees\" on its Forms & Resources page)",
+   "read": "2026-10-28",
+   "said": "The Office of the Attorney General of the Republic of the Marshall Islands has sole responsibility to issue and process passports. ... PASSPORT FEES (EFFECTIVE FEBRUARY 12, 2018) For Infants and Children Under 12 Years and Under $50.00 (USD) 5 years validity For Ages 13 and Above $100.00 (USD) 10 years validity ... The expedited fee can only be granted for family emergency involving life or death situation of a family ... For lost or damaged passports: (i) $200 for children 13 years and adults ( $100 renewal fee plus $100 penalty fee); and (ii) $100 for infants and children 12 years old and below ($50 renewal fee plus $50"
+  }
+ ]
+}

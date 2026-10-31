@@ -1,0 +1,24 @@
+{
+ "country": "RU",
+ "office": "the Ministry of Internal Affairs (MVD), applied for through Gosuslugi, an MFC or the MVD",
+ "currency": "RUB",
+ "routes": [
+  {"id": "registration-region", "where": "home", "speed": "standard", "within": {"n": 1, "unit": "month"}, "label": "in the region of registration: up to 1 month"},
+  {"id": "elsewhere", "where": "home", "speed": "standard", "within": {"n": 3, "unit": "month"}, "label": "in another region: up to 3 months"}
+ ],
+ "passports": [
+  {"for": "14 or older", "from": 14, "validYears": 10, "pay": {"registration-region": "6000", "elsewhere": "6000"}},
+  {"for": "14 or older", "from": 14, "validYears": 5, "pay": {"registration-region": "2000", "elsewhere": "2000"}},
+  {"for": "child", "under": 14, "validYears": 10, "pay": {"registration-region": "3000", "elsewhere": "3000"}},
+  {"for": "child", "under": 14, "validYears": 5, "pay": {"registration-region": "1000", "elsewhere": "1000"}}
+ ],
+ "note": "The state duty in 2026: the biometric passport (ten years) or the old model (five years), the applicant's choice. Residents of Kaliningrad and its region pay nothing (Tax Code art. 333.29(4)); the game doesn't model it. An urgent issue within 3 working days is only for documented medical need and isn't modelled. The duty is paid after the MVD confirms it has taken the application.",
+ "sources": [
+  {
+   "url": "https://xn--h1alcedd.xn--d1aqf.xn--p1ai/news/skolko-stoit-oformlenie-zagranpasporta-v-2026-godu/",
+   "title": "Госуслуги (госуслуги.рф), Как оформить загранпаспорт в 2026 году: сроки, цена, необходимые документы",
+   "read": "2026-10-28",
+   "said": "Стоимость загранпаспорта зависит от типа документа (биометрический на 10 лет или старого образца на 5 лет) и возраста получателя. Сколько стоит загранпаспорт: старого образца — 2 000 ₽ взрослым и детям старше 14 лет, детям до 14 лет — 1 000 ₽ нового образца — 6 000 ₽ взрослым и детям старше 14 лет, детям до 14 лет — 3 000 ₽ бесплатно — гражданам, живущим в Калининграде и Калининградской области ? НК РФ Статья 333.29, п.4 Оплатить госпошлину можно после подтверждения приема заявления от МВД. ... Срок изготовления — до 1 месяца в регионе прописки, до 3 месяцев в других регионах; срочный порядок – 3 дня по справкам о необходимости поездки."
+  }
+ ]
+}

@@ -1,0 +1,25 @@
+{
+ "country": "IS",
+ "name": "Icelandic Identification Number (kennitala)",
+ "issuer": "Registers Iceland",
+ "format": {
+  "length": 10,
+  "pattern": "^\\d{10}$"
+ },
+ "when": "registration",
+ "who": [
+  "residents"
+ ],
+ "needed": [
+  "tax"
+ ],
+ "note": "Iceland's sheet (its government's own sheet on the OECD's automatic-exchange portal ('Information on Tax Identification Numbers'; the OECD's index page sits behind a bot check and wasn't opened, the sheet itself came straight back)), read 2026-10-30: the kennitala, which Registers Iceland issues to individuals (automatically to all residents), is the tax number for all taxes; ten digits, the birth date DDMMYY, two random digits, a check digit and a century digit. The sheet prints the check digit's equations (a weighted sum by 11) but the game doesn't compute it, so `check` is left out; the pattern doesn't tie the first six digits to the birth date. Read as given on registration (at birth or on moving to Iceland).",
+ "sources": [
+  {
+   "url": "https://www.oecd.org/content/dam/oecd/en/topics/policy-issue-focus/aeoi/iceland-tin.pdf",
+   "title": "OECD AEOI portal, Iceland: Information on Tax Identification Numbers (the jurisdiction's own sheet)",
+   "read": "2026-10-30",
+   "said": "The Icelandic Identification Number (kennitala) is used as a TIN in Iceland. ... Register Iceland issues the identification number for individuals ... The identification number (TIN) is composed of ten digits. ... For individuals the first six of these digits are the individual’s date of birth in the format DDMMYY. ... The seventh and eighth digits are random, the ninth is a check digit and the tenth indicates the century"
+  }
+ ]
+}

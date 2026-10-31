@@ -1,0 +1,107 @@
+{
+ "country": "MD",
+ "document": "carte de identitate",
+ "office": "the Public Services Agency (Agenția Servicii Publice)",
+ "currency": "MDL",
+ "routes": [
+  {
+   "id": "ten-days",
+   "where": "home",
+   "speed": "standard",
+   "within": {
+    "n": 10,
+    "unit": "working day"
+   },
+   "label": "in 10 working days"
+  },
+  {
+   "id": "five-days",
+   "where": "home",
+   "speed": "urgent",
+   "within": {
+    "n": 5,
+    "unit": "day"
+   },
+   "label": "in 5 days"
+  },
+  {
+   "id": "one-day",
+   "where": "home",
+   "speed": "urgent",
+   "within": {
+    "n": 1,
+    "unit": "working day"
+   },
+   "label": "in 1 working day"
+  },
+  {
+   "id": "same-day",
+   "where": "home",
+   "speed": "urgent",
+   "within": {
+    "n": 1,
+    "unit": "day"
+   },
+   "label": "the same day"
+  }
+ ],
+ "cards": [
+  {
+   "for": "under 7",
+   "under": 7,
+   "validYears": 4,
+   "pay": {
+    "ten-days": "510",
+    "five-days": "730",
+    "one-day": "940",
+    "same-day": "1160"
+   }
+  },
+  {
+   "for": "7 to 13",
+   "from": 7,
+   "under": 14,
+   "validYears": 7,
+   "pay": {
+    "ten-days": "510",
+    "five-days": "730",
+    "one-day": "940",
+    "same-day": "1160"
+   }
+  },
+  {
+   "for": "14 to 69",
+   "from": 14,
+   "under": 70,
+   "validYears": 10,
+   "pay": {
+    "ten-days": "510",
+    "five-days": "730",
+    "one-day": "940",
+    "same-day": "1160"
+   }
+  },
+  {
+   "for": "70 and over",
+   "from": 70,
+   "validYears": "permanent",
+   "pay": {
+    "ten-days": "510",
+    "five-days": "730",
+    "one-day": "940",
+    "same-day": "1160"
+   }
+  }
+ ],
+ "note": "The Public Services Agency's tariffs as Logos-Press reported them (the Agency's own site presents a certificate this client can't verify, so it wasn't read): 510 lei in 10 working days to 1,160 the same day. The card is issued from 14, or earlier at a legal representative's request; valid four years under 7, seven from 7, ten from 14, and without end from 70.",
+ "sources": [
+  {
+   "url": "https://logos-pres.md/noutati/cetatenii-moldoveni-pot-obtine-o-carte-de-identitate-in-regim-de-urgenta/",
+   "title": "Logos-Press, Cetățenii moldoveni pot obține o carte de identitate în regim de urgență",
+   "read": "2026-10-28",
+   "kind": "secondary",
+   "quotes": "https://www.asp.gov.md/",
+   "said": "Obținerea unui certificat în ziua solicitării va costa 1160 lei, producerea în 1 zi lucrătoare – 940 lei, în 5 zile – 730 lei, iar în 10 zile lucrătoare – 510 lei. ... Noile acte de identitate se eliberează cetățenilor Republicii Moldova care au împlinit vârsta de 14 ani. La cererea reprezentantului legal, documentul poate fi eliberat chiar înainte de împlinirea acestei vârste. ... Valabilitatea cărților de identitate variază în funcție de vârsta titularului: 4 ani – pentru persoanele cu vârsta cuprinsă între 0 și 7 ani; 7 ani – de la 7 la 14 ani; 10 ani – de la 14 la 70 de ani. După împlinirea vârstei de 70 de ani, valabilitatea documentului nu este limitată."
+  }
+ ]
+}

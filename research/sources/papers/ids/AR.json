@@ -1,0 +1,62 @@
+{
+ "country": "AR",
+ "document": "Documento Nacional de Identidad (DNI)",
+ "office": "the Registro Nacional de las Personas (RENAPER), at civil registry offices",
+ "currency": "ARS",
+ "routes": [
+  {
+   "id": "regular",
+   "where": "home",
+   "speed": "standard",
+   "within": null,
+   "label": "regular"
+  },
+  {
+   "id": "express",
+   "where": "home",
+   "speed": "urgent",
+   "within": null,
+   "label": "express: ARS 16,000 more"
+  },
+  {
+   "id": "day",
+   "where": "home",
+   "speed": "urgent",
+   "within": {
+    "n": 24,
+    "unit": "hour"
+   },
+   "label": "in 24 hours: ARS 31,000 more"
+  },
+  {
+   "id": "instant",
+   "where": "home",
+   "speed": "urgent",
+   "within": null,
+   "label": "on the spot, at offices that offer it: ARS 47,000 more"
+  }
+ ],
+ "cards": [
+  {
+   "for": "anyone",
+   "validYears": null,
+   "pay": {
+    "regular": "10000",
+    "express": "26000",
+    "day": "41000",
+    "instant": "57000"
+   }
+  }
+ ],
+ "note": "The Interior Ministry's Resolution 19/2026, in force from 6 March 2026, as Diario de Cuyo reported it: the updates at five, eight and fourteen and a new copy (change of address, correction) cost ARS 10,000; express adds 16,000, 24-hour 31,000, on-the-spot 47,000. A newborn's first DNI is free up to six months and people without means are exempt (neither modelled). The Boletín Oficial's own page wasn't found, and the DNI's term and the regular and express times aren't in the report, so they're null and the player is told.",
+ "sources": [
+  {
+   "url": "https://www.diariodecuyo.com.ar/argentina/aumentan-los-dni-pasaportes-y-otros-tramites-cuales-son-los-nuevos-valores-del-renaper-n6567218",
+   "title": "Diario de Cuyo, Aumentan los DNI, pasaportes y otros trámites: cuáles son los nuevos valores del RENAPER (3 March 2026)",
+   "read": "2026-10-28",
+   "kind": "secondary",
+   "quotes": "https://www.boletinoficial.gob.ar/",
+   "said": "el primer DNI para recién nacidos seguirá siendo sin cargo hasta los seis meses. ... actualizaciones a los cinco, ocho y catorce años, tendrán un costo de $10.000 por trámite. ... Los nuevos ejemplares —ya sea por cambio de domicilio, rectificación de datos o adopción— también costarán $10.000. ... el trámite exprés costará un adicional de $16.000 (total $26.000), la modalidad 24 horas suma $31.000 (total $41.000) y el trámite al instante, disponible solo en oficinas habilitadas, tiene un adicional de $47.000 (total $57.000)."
+  }
+ ]
+}

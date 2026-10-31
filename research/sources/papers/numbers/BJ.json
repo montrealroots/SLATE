@@ -1,0 +1,28 @@
+{
+ "country": "BJ",
+ "name": "numéro d'Identifiant Fiscal Unique (IFU)",
+ "issuer": "the Direction Générale des Impôts et des Domaines (DGID)",
+ "format": {
+  "length": 13,
+  "pattern": "^\\d{13}$"
+ },
+ "when": "application",
+ "from": 18,
+ "who": [
+  "anyone"
+ ],
+ "needed": [
+  "work",
+  "bank",
+  "tax"
+ ],
+ "note": "Decree 2006-201 of 8 May 2006 creating a single tax identifier and a national register of persons (the Secrétariat Général du Gouvernement's scan, OCR text, read 2026-10-30): natural persons aged over eighteen carrying on salaried or non-salaried activities, among others, must obtain an IFU (art. 2); the number carries no code for what it identifies and has thirteen digits, the last a check digit (art. 5; the rule isn't given, so `check` is left out); a structure of the DGID receives the applications and assigns it (art. 6); banks and financial institutions must require it to open an account, and it must be required to register with the social-security fund (art. 7). Read as given on application, from 18 (the decree says over eighteen; 18 is the nearest whole age), to anyone with an activity, needed for work, bank and tax. Not read: whether the National Agency for the Identification of Persons' personal identification number (NPI) has since replaced the IFU for individuals (anip.bj is a script page with no text to curl). No fee or time is stated.",
+ "sources": [
+  {
+   "url": "https://sgg.gouv.bj/doc/decret-2006-201/download",
+   "title": "Décret n° 2006-201 du 08 mai 2006 portant création d'un numéro d'identifiant fiscal unique et d'un répertoire national des personnes, institutions et associations (SGG, Bénin)",
+   "read": "2026-10-30",
+   "said": "aux personnes physiques âgées de plus de dix huit (18) ans menant des activités salariées ou non salariées, commerciales ou non commerciales ; ... ll est composé de treize (13)chiffres dont le dernier est le chiffre clé. ... L'IFU doit être exi gé par les banques ou institutions financières à l'ouverture des comptes pour toute personne physique ou morale, quel que soit son statut."
+  }
+ ]
+}

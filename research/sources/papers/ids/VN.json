@@ -1,0 +1,74 @@
+{
+ "country": "VN",
+ "document": "Thẻ căn cước (identity card)",
+ "office": "the police's identity management office (Ministry of Public Security)",
+ "currency": "VND",
+ "routes": [
+  {
+   "id": "office",
+   "where": "home",
+   "speed": "standard",
+   "within": null,
+   "label": "in person at the police identity office"
+  }
+ ],
+ "cards": [
+  {
+   "for": "child, renewing at 14",
+   "from": 14,
+   "under": 16,
+   "validYears": null,
+   "pay": {
+    "office": "0"
+   }
+  },
+  {
+   "for": "renewal at 25 or 40",
+   "from": 16,
+   "under": 60,
+   "validYears": null,
+   "pay": {
+    "office": "50000"
+   }
+  },
+  {
+   "for": "renewal at 60",
+   "from": 60,
+   "validYears": "permanent",
+   "pay": {
+    "office": "0"
+   }
+  }
+ ],
+ "note": "The Law on Identification (26/2023/QH15, in force 1 July 2024), article 21: a holder must renew the card at 14, 25, 40 and 60, and a card issued in the two years before one of those ages serves to the next; the card has no term in years before 60, so its validity is null and the player is told, and the one issued at 60 has no later age to renew at, so it's kept as never expiring. Circular 73/2024/TT-BTC: 50,000 dong to renew under article 24(1), 70,000 to replace a lost or damaged card (not modelled), 30,000 to change an older citizen identity card to the new one (not modelled); children (under 16, the Law on Children) and the elderly (60 and over, the Law on the Elderly) are exempt. A first card at 14 isn't in the circular's fees. The time isn't modelled.",
+ "sources": [
+  {
+   "url": "https://hcc.nghean.gov.vn/tin-tong-hop/quy-dinh-moi-muc-thu-le-phi-cap-doi-the-can-cuoc-cong-dan-sang-the-can-cuoc-1655.html",
+   "title": "Nghe An Provincial Public Administration Service Centre, Quy định mới: Mức thu lệ phí cấp đổi thẻ căn cước công dân sang thẻ căn cước (on Circular 73/2024/TT-BTC)",
+   "read": "2026-10-28",
+   "said": "Cấp đổi thẻ căn cước đối với các trường hợp quy định tại khoản 1 Điều 24 Luật Căn cước: 50.000 đồng/thẻ căn cước; ... Cấp lại thẻ căn cước đối với các trường hợp quy định tại khoản 2 Điều 24 Luật Căn cước: 70.000 đồng/thẻ căn cước. ... Trẻ em theo quy định tại Luật Trẻ em; người cao tuổi theo quy định tại Luật Người cao tuổi; người khuyết tật theo quy định tại Luật Người khuyết tật. ... a) Công dân Việt Nam đã được cấp thẻ căn cước phải thực hiện thủ tục cấp đổi thẻ căn cước khi đủ 14 tuổi, 25 tuổi, 40 tuổi và 60 tuổi."
+  },
+  {
+   "url": "https://pbgdpl.cantho.gov.vn/the-can-cuoc-moi-thay-cho-the-can-cuoc-cong-dan",
+   "title": "Can Tho City Department of Justice, Thẻ căn cước mới thay cho thẻ căn cước công dân",
+   "read": "2026-10-28",
+   "said": "Thẻ căn cước đã được cấp, cấp đổi, cấp lại trong thời hạn 02 năm trước độ tuổi cấp đổi thẻ căn cước theo quy định trên có giá trị sử dụng đến tuổi cấp đổi thẻ căn cước tiếp theo."
+  },
+  {
+   "url": "https://dulieuphapluat.vn/van-ban/van-hoa-van-ban/luat-tre-em-2016-265703.html",
+   "title": "Dữ liệu pháp luật, Luật Trẻ em 2016 (102/2016/QH13), article 1",
+   "read": "2026-10-28",
+   "kind": "secondary",
+   "quotes": "https://quochoi.vn/",
+   "said": "Trẻ em là người dưới 16 tuổi."
+  },
+  {
+   "url": "https://caselaw.vn/van-ban-phap-luat/115842-luat-nguoi-cao-tuoi-nam-2009",
+   "title": "Caselaw Việt Nam, Luật Người cao tuổi 2009 (39/2009/QH12), article 2",
+   "read": "2026-10-28",
+   "kind": "secondary",
+   "quotes": "https://quochoi.vn/",
+   "said": "Người cao tuổi được quy định trong Luật này là công dân Việt Nam từ đủ 60 tuổi trở lên."
+  }
+ ]
+}

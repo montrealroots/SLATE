@@ -1,0 +1,35 @@
+{
+ "country": "CN",
+ "name": "公民身份号码 (citizen identity number)",
+ "issuer": "the public security organ (公安机关)",
+ "format": {
+  "length": 18,
+  "pattern": "[0-9]{17}[0-9X]",
+  "check": "cn-gb11643"
+ },
+ "when": "registration",
+ "who": [
+  "citizens"
+ ],
+ "note": "Read the Resident Identity Card Law (State Council Gazette text of 2003, art. 3): the citizen identity number is each citizen's unique, lifelong identity code, compiled by the public security organ under the national standard. Read by eye the national standard GB 11643-1999 (in force 1999-07-01; the copy the Beijing housing commission publishes, a scan), whose status the national standards platform gives as current: its object is citizens of the People's Republic of China (s. 4); the number is seventeen digits of body (six of address, eight of birth date, three of sequence, odd for men and even for women) and one check character (s. 5.1), with no spaces (s. 5.2). The check character is ISO 7064:1983 MOD 11-2 (s. 5.1.4: weights 2^(i-1) mod 11 by place from the right, the sum with the check 1 mod 11, a value of 10 written X), computed by src/papers/numbers/checks.ts as 'cn-gb11643' and proven on the standard's two worked numbers (annex B, read by eye 2026-10-30 by the lead): 11010519491231002X and 440524188001010014. Until 2026-10-30 the format named no check. Reading: 'when' is registration, since the number is the household register's and the law gives it to every citizen without application; the moment of its assignment (birth registration in the household register) is not stated in the two texts read. No fee or time is stated for the number itself (the card's fee is the identity card engine's).",
+ "sources": [
+  {
+   "url": "https://www.gov.cn/gongbao/content/2003/content_62254.htm",
+   "title": "中华人民共和国居民身份证法 (State Council Gazette, 2003), art. 3",
+   "read": "2026-10-30",
+   "said": "公民身份号码是每个公民唯一的、终身不变的身份代码，由公安机关按照公民身份号码国家标准编制。"
+  },
+  {
+   "url": "https://openstd.samr.gov.cn/bzgk/gb/newGbInfo?hcno=080D6FBF2BB468F9007657F26D60013E",
+   "title": "GB 11643-1999 公民身份号码, national standards platform record",
+   "read": "2026-10-30",
+   "said": "标准号：GB 11643-1999 ... 公民身份号码"
+  },
+  {
+   "url": "https://zjw.beijing.gov.cn/Portals/0/zhuanti/fazhan/%E8%BA%AB%E4%BB%BD%E8%AF%81GB11643-1999.pdf",
+   "title": "GB 11643-1999 公民身份号码 (scan published by the Beijing Municipal Commission of Housing and Urban-Rural Development), ss. 4, 5.1, 5.1.4, 5.2, annexes A and B",
+   "read": "2026-10-30",
+   "said": "公民身份号码的编码对象是具有中华人民共和国国籍的公民。 ... 公民身份号码是特征组合码，由十七位数字本体码和一位数字校验码组成。 ... 校验码采用 ISO 7064:1983，MOD 11-2 校验码系统。 ... 当a1值等于10时，用罗马数字字符X表示。 ... 公民身份号码中各个位置上的号码字符值应满足下列公式的校验 ... 11010519491231002X ... 440524188001010014"
+  }
+ ]
+}

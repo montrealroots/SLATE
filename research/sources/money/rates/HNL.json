@@ -1,0 +1,30 @@
+{
+ "currency": "HNL",
+ "rates": [
+  {
+   "from": "2025-12-31",
+   "perUSD": "26.326"
+  },
+  {
+   "from": "2026-03-31",
+   "perUSD": "26.496"
+  },
+  {
+   "from": "2026-06-30",
+   "perUSD": "26.668"
+  },
+  {
+   "from": "2026-09-30",
+   "perUSD": "26.84"
+  }
+ ],
+ "note": "The US Treasury's Reporting Rates of Exchange (Bureau of the Fiscal Service), the rates US government agencies use for foreign currency, its 'Honduras-Lempira' row: 26.326 from 2025-12-31; 26.496 from 2026-03-31; 26.668 from 2026-06-30; 26.84 from 2026-09-30 per US dollar, each holding until the next. Read from the Fiscal Data API on 2026-10-30.",
+ "sources": [
+  {
+   "url": "https://api.fiscaldata.treasury.gov/services/api/fiscal_service/v1/accounting/od/rates_of_exchange?filter=record_date:gte:2025-12-31&sort=country_currency_desc,effective_date&page%5Bsize%5D=2000&fields=record_date,country,currency,country_currency_desc,exchange_rate,effective_date&format=csv",
+   "title": "U.S. Department of the Treasury, Bureau of the Fiscal Service: Treasury Reporting Rates of Exchange (Fiscal Data API), record dates 31 December 2025 to 30 September 2026",
+   "read": "2026-10-30",
+   "said": "\"2025-12-31\",\"Honduras\",\"Lempira\",\"Honduras-Lempira\",\"26.326\",\"2025-12-31\" ... \"2026-03-31\",\"Honduras\",\"Lempira\",\"Honduras-Lempira\",\"26.496\",\"2026-03-31\" ... \"2026-06-30\",\"Honduras\",\"Lempira\",\"Honduras-Lempira\",\"26.668\",\"2026-06-30\" ... \"2026-09-30\",\"Honduras\",\"Lempira\",\"Honduras-Lempira\",\"26.84\",\"2026-09-30\""
+  }
+ ]
+}

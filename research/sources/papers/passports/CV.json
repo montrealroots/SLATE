@@ -1,0 +1,56 @@
+{
+ "country": "CV",
+ "office": "the Direção de Estrangeiros e Fronteiras (DEF) at home, and Cabo Verde's embassies and consulates abroad",
+ "currency": "CVE",
+ "routes": [
+  {
+   "id": "home",
+   "where": "home",
+   "speed": "standard",
+   "within": null,
+   "label": "normal issue"
+  },
+  {
+   "id": "urgent",
+   "where": "home",
+   "speed": "urgent",
+   "within": null,
+   "label": "urgent issue"
+  },
+  {
+   "id": "abroad",
+   "where": "abroad",
+   "speed": "standard",
+   "within": null,
+   "label": "normal issue at an embassy or consulate, paid in local currency"
+  },
+  {
+   "id": "abroad-urgent",
+   "where": "abroad",
+   "speed": "urgent",
+   "within": null,
+   "label": "urgent issue at an embassy or consulate, paid in local currency"
+  }
+ ],
+ "passports": [
+  {
+   "for": "any",
+   "validYears": null,
+   "pay": {
+    "home": "5600",
+    "urgent": "6000",
+    "abroad": "5600",
+    "abroad-urgent": "6000"
+   }
+  }
+ ],
+ "note": "The electronic passport's fees in Annex I of Decreto-Lei No. 69/2014 of 22 December: 5,600 escudos for normal issue and 6,000 for urgent issue; abroad the same fees are charged in local currency at the day's rate. Postage for delivery (Annex II) and the special urgent service are not modelled. Later amendments to the decree were not read, so the amounts are the 2014 ones. Validity and processing times are leads.",
+ "sources": [
+  {
+   "url": "https://sniac.cv/wp-content/uploads/2018/03/Decreto-Lei-n%C2%BA-69-2014-de-22-de-Dezembro-Taxas-PECCV.pdf",
+   "title": "Boletim Oficial da República de Cabo Verde, I Série, No. 80 (22 December 2014), Decreto-Lei No. 69/2014, as published by the Núcleo Operacional da Sociedade de Informação (SNIAC)",
+   "read": "2026-10-28",
+   "said": "por cada emissão de passaporte electrónico é pago o valor correspondente, conforme o pedido for de emissão normal ou de emissão urgente, nos termos do Anexo I ao presente diploma ... 3. No estrangeiro, as taxas são cobradas em moeda local, no valor do câmbio do dia da moeda nacional. ... Tabela de taxas a que se refere o número 1 do ... Passaporte 5.600 6.000"
+  }
+ ]
+}

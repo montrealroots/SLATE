@@ -1,0 +1,38 @@
+{
+ "currency": "SDG",
+ "rates": [
+  {
+   "from": "2025-12-31",
+   "perUSD": "2400"
+  },
+  {
+   "from": "2026-02-27",
+   "perUSD": "2850"
+  },
+  {
+   "from": "2026-03-31",
+   "perUSD": "3100"
+  },
+  {
+   "from": "2026-06-30",
+   "perUSD": "3550"
+  },
+  {
+   "from": "2026-09-15",
+   "perUSD": "4200"
+  },
+  {
+   "from": "2026-09-30",
+   "perUSD": "4200"
+  }
+ ],
+ "note": "The US Treasury's Reporting Rates of Exchange (Bureau of the Fiscal Service), the rates US government agencies use for foreign currency, its 'Sudan-Pound' row: 2400 from 2025-12-31; 2850 from 2026-02-27; 3100 from 2026-03-31; 3550 from 2026-06-30; 4200 from 2026-09-15; 4200 from 2026-09-30 per US dollar, each holding until the next. Read from the Fiscal Data API on 2026-10-30.",
+ "sources": [
+  {
+   "url": "https://api.fiscaldata.treasury.gov/services/api/fiscal_service/v1/accounting/od/rates_of_exchange?filter=record_date:gte:2025-12-31&sort=country_currency_desc,effective_date&page%5Bsize%5D=2000&fields=record_date,country,currency,country_currency_desc,exchange_rate,effective_date&format=csv",
+   "title": "U.S. Department of the Treasury, Bureau of the Fiscal Service: Treasury Reporting Rates of Exchange (Fiscal Data API), record dates 31 December 2025 to 30 September 2026",
+   "read": "2026-10-30",
+   "said": "\"2025-12-31\",\"Sudan\",\"Pound\",\"Sudan-Pound\",\"2400.0\",\"2025-12-31\" ... \"2025-12-31\",\"Sudan\",\"Pound\",\"Sudan-Pound\",\"2850.0\",\"2026-02-27\" ... \"2026-03-31\",\"Sudan\",\"Pound\",\"Sudan-Pound\",\"3100.0\",\"2026-03-31\" ... \"2026-06-30\",\"Sudan\",\"Pound\",\"Sudan-Pound\",\"3550.0\",\"2026-06-30\" ... \"2026-06-30\",\"Sudan\",\"Pound\",\"Sudan-Pound\",\"4200.0\",\"2026-09-15\" ... \"2026-09-30\",\"Sudan\",\"Pound\",\"Sudan-Pound\",\"4200.0\",\"2026-09-30\""
+  }
+ ]
+}

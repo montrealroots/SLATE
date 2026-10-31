@@ -1,0 +1,111 @@
+{
+ "country": "EE",
+ "document": "ID-kaart",
+ "office": "the Police and Border Guard Board: its self-service portal or a service office; abroad, a foreign representation",
+ "currency": "EUR",
+ "routes": [
+  {
+   "id": "portal",
+   "where": "home",
+   "speed": "standard",
+   "within": null,
+   "label": "through the self-service portal"
+  },
+  {
+   "id": "office",
+   "where": "home",
+   "speed": "standard",
+   "within": {
+    "n": 30,
+    "unit": "day"
+   },
+   "label": "at a service office: ready within 30 days"
+  },
+  {
+   "id": "expedited",
+   "where": "home",
+   "speed": "urgent",
+   "within": {
+    "n": 2,
+    "unit": "working day"
+   },
+   "label": "expedited: ready in two business days"
+  },
+  {
+   "id": "abroad",
+   "where": "abroad",
+   "speed": "standard",
+   "within": null,
+   "label": "at an Estonian foreign representation, plus EUR 20 for transport; longer than 30 days"
+  }
+ ],
+ "cards": [
+  {
+   "for": "child",
+   "under": 18,
+   "validYears": 5,
+   "pay": {
+    "portal": "15",
+    "office": "20",
+    "expedited": "250",
+    "abroad": "40"
+   }
+  },
+  {
+   "for": "adult",
+   "from": 18,
+   "validYears": 5,
+   "pay": {
+    "portal": "35",
+    "office": "45",
+    "expedited": "250",
+    "abroad": "95"
+   }
+  }
+ ],
+ "note": "Valid up to five years. The fee at a foreign representation includes the EUR 20 for transporting the card there. From the general retirement age, and with a disability, the fee is EUR 15 to 20 (not modelled, the age not being given). A card and passport together cost less (not modelled).",
+ "sources": [
+  {
+   "url": "https://www.politsei.ee/en/instructions/applying-for-an-id-card-for-an-adult",
+   "title": "Police and Border Guard Board, ID card for an adult",
+   "read": "2026-10-28",
+   "said": "An ID card is valid for up to five years."
+  },
+  {
+   "url": "https://www.politsei.ee/en/instructions/applying-for-an-id-card-for-an-adult/submitting-an-application-using-the-self-service-portal",
+   "title": "Police and Border Guard Board, ID card for an adult: self-service portal",
+   "read": "2026-10-28",
+   "said": "The state fee for an ID card is €35. ... The state fee for applying for an ID card on an expedited basis is €250."
+  },
+  {
+   "url": "https://www.politsei.ee/en/instructions/applying-for-an-id-card-for-an-adult/submitting-an-application-at-a-client-service-office",
+   "title": "Police and Border Guard Board, ID card for an adult: client service office",
+   "read": "2026-10-28",
+   "said": "When opting for the standard ID card application procedure, the card will be ready within a maximum of 30 days after the application was accepted for processing. ... When opting for the expedited ID card application procedure, the card will be ready in two business days. ... The state fee for an ID card is €45."
+  },
+  {
+   "url": "https://www.politsei.ee/en/instructions/applying-for-an-id-card-for-an-adult/submitting-an-application-abroad",
+   "title": "Police and Border Guard Board, ID card for an adult: abroad",
+   "read": "2026-10-28",
+   "said": "You need to allow a longer waiting period when collecting an ID card ordered from abroad, as it takes longer to transport documents to Estonian foreign missions. ... The state fee for an ID card is €75. ... The transport for ordering a document to a foreign representation costs an additional €20 on top of the state fee."
+  },
+  {
+   "url": "https://www.politsei.ee/en/instructions/applying-for-an-id-card-for-a-child/submitting-an-application-using-the-self-service-portal",
+   "title": "Police and Border Guard Board, ID card for a child: self-service portal",
+   "read": "2026-10-28",
+   "said": "The state fee for an ID card is €15. ... The state fee for applying for an ID card on an expedited basis is €250."
+  },
+  {
+   "url": "https://www.politsei.ee/en/instructions/applying-for-an-id-card-for-a-child/submitting-an-application-at-a-client-service-office",
+   "title": "Police and Border Guard Board, ID card for a child: client service office",
+   "read": "2026-10-28",
+   "said": "The state fee for an ID card for a child under the age of 18 is €20."
+  },
+  {
+   "url": "https://www.politsei.ee/en/instructions/applying-for-an-id-card-for-a-child/submitting-an-application-abroad",
+   "title": "Police and Border Guard Board, ID card for a child: abroad",
+   "read": "2026-10-28",
+   "said": "The state fee for an ID card for a child under the age of 18 is €20. ... The transport for ordering a document to a foreign representation costs an additional €20 on top of the state fee."
+  }
+ ]
+}

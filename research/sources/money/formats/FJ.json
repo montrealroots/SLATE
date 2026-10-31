@@ -1,0 +1,33 @@
+{
+ "country": "FJ",
+ "national": {
+  "name": "Account Number",
+  "parts": [
+   {
+    "name": "Account Number",
+    "length": 14,
+    "min": 5,
+    "kind": "n",
+    "drawn": [
+     5,
+     5
+    ]
+   }
+  ]
+ },
+ "note": "No rule of the Reserve Bank of Fiji fixing an account number's length was read. ANZ's Fiji branch, in its pages and Quick Reference Guide on the national payment system upgraded under the National Payment System Act 2021 (from 28 November 2022; both read 2026-10-30, the guide dated 12/22), gives the account number format each receiving bank accepts, the receiving bank being named by its SWIFT code beside the number, which replaced the bank (ACH) codes: ANZ six digits, Westpac ten, Bank of Baroda fourteen (a four-digit branch code from 910, a two-digit account type and an eight-digit account number), Bred Bank twelve, Bank of South Pacific five, Home Finance Company nine; shorter Westpac, Baroda, Bred and HFC numbers are padded with zeros at the front to that length, ANZ's and BSP's never. So the number is written as five to fourteen digits, drawn at five, BSP's format, the bank the game's Fiji account is held at (BSP Fiji). Readings to check: the guide's column is headed 'minimum number of digits required', and for ANZ and BSP, which aren't padded, it gives the format (XXXXXX, XXXXX) without saying whether a longer number exists; the drawn five is ANZ's statement of BSP's format, not BSP's own. No check digit is published, and the bank isn't coded inside the number.",
+ "sources": [
+  {
+   "url": "https://www.anz.com/fiji/en/business/national-payment-system-upgrade/",
+   "title": "ANZ Fiji, National Payment System Upgrade: Changes to account number formats as part of National Payment System upgrade",
+   "read": "2026-10-30",
+   "said": "To support the Reserve Bank of Fiji’s changes to the national payments system, the way ANZ processes ERP Payment Files and ANZ Transactive payments changed on 28 November 2022. ... Australia and New Zealand Banking Group Limited, Fiji Branch XXXXXX 6 digits Westpac Banking Corporation, Fiji Branch XXXXXXXXXX 10 digits* Bank of Baroda 910X0X000XXXXX 910X = Branch code 0X = Account type 000XXXXX = Account number Branch and account type plus the 8 digit account number* Bred Bank Fiji Limited XXXXXXXXXXXX 12 digits* Bank of South Pacific XXXXX 5 Home Finance Company Limited XXXXXXXXX 9 digits* ... This is not applicable for ANZ or BSP bank accounts. If you put zeros before an ANZ or BSP account number, the payment will be reversed by the receiving bank."
+  },
+  {
+   "url": "https://www.anz.com/content/dam/fiji/pdf/quick-reference-guide.pdf",
+   "title": "ANZ Fiji, National Payment System upgrade, Quick Reference Guide (12/22)",
+   "read": "2026-10-30",
+   "said": "If the account number you have for an ANZ or BSP bank account doesn’t meet the minimum number of digits, don’t add zeros to the front or your payment will be reversed by the receiving bank."
+  }
+ ]
+}

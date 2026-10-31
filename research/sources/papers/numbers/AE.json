@@ -1,0 +1,29 @@
+{
+ "country": "AE",
+ "name": "Emirates ID identity number",
+ "issuer": "the Federal Authority for Identity, Citizenship, Customs and Port Security (ICP)",
+ "format": {
+  "length": 15,
+  "pattern": "^\\d{15}$"
+ },
+ "when": "application",
+ "who": [
+  "citizens",
+  "residents"
+ ],
+ "note": "the United Arab Emirates's sheet (its government's own sheet on the OECD's automatic-exchange portal ('Information on Tax Identification Numbers'; the OECD's index page sits behind a bot check and wasn't opened, the sheet itself came straight back)), read 2026-10-30: the UAE issues no Tax Identification Numbers, automatically or otherwise; a tax residency certificate carries none and a VAT number can't stand in for one (January 2021). The number a life holds there is the Emirates ID's: the UAE government portal's Emirates ID page (read 2026-10-30) says the ICP issues the card, every citizen and resident must apply for it, and its identity number stays with its holder for life, unique, of 15 digits (the pattern draws any 15; the portal states no prefix or check digit). Read as given on application, to citizens and residents. The portal says the number is what government and many private services ask for, which none of the form's purposes names, so `needed` is left out; the card's fees and times are the identity cards' file's, not this one's.",
+ "sources": [
+  {
+   "url": "https://www.oecd.org/content/dam/oecd/en/topics/policy-issue-focus/aeoi/uae-tin.pdf",
+   "title": "OECD AEOI portal, United Arab Emirates: Information on Tax Identification Numbers (the jurisdiction's own sheet)",
+   "read": "2026-10-30",
+   "said": "The United Arab Emirates does not issue Tax Identification Numbers (″TINs″). Therefore, TINs are not automatically issued for Individuals and Entities."
+  },
+  {
+   "url": "https://u.ae/en/information-and-services/visa-and-emirates-id/emirates-id",
+   "title": "The UAE Government portal (u.ae), Emirates ID",
+   "read": "2026-10-30",
+   "said": "It is mandatory for all UAE citizens and residents to apply for an Emirates ID. ... Emirates ID is an identity card issued by Federal Authority for Identity, Citizenship, Customs and Ports Security (ICP). ... The identity card is featured for its identification number known as the identity number which sticks with its holder forever. ... The identity number is featured for its sole and un-repeated number. It includes 15 digits."
+  }
+ ]
+}

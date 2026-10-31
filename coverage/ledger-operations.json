@@ -1,0 +1,42 @@
+{
+ "engine": "money.ledger",
+ "axis": "ledger-operation",
+ "universe": {
+  "keys": [
+   "accounts",
+   "movements",
+   "refusals",
+   "standing"
+  ]
+ },
+ "rows": [
+  {
+   "key": "accounts",
+   "status": "proven",
+   "tests": [
+    "tests/money/ledger/ledger.test.ts::the ledger > opens accounts in a currency, each id once, and finds them"
+   ]
+  },
+  {
+   "key": "movements",
+   "status": "proven",
+   "tests": [
+    "tests/money/ledger/ledger.test.ts::the ledger > moves money in one currency, what leaves entering elsewhere, and keeps a balance as the sum of its postings"
+   ]
+  },
+  {
+   "key": "refusals",
+   "status": "proven",
+   "tests": [
+    "tests/money/ledger/ledger.test.ts::the ledger > refuses a movement that doesn't balance, mixes currencies, has one leg, or comes before an account's last moment"
+   ]
+  },
+  {
+   "key": "standing",
+   "status": "proven",
+   "tests": [
+    "tests/money/ledger/ledger.test.ts::the ledger > gives what came in over a period, and the lowest and average daily balance a bank states"
+   ]
+  }
+ ]
+}

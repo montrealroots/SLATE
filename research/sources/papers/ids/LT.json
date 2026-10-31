@@ -1,0 +1,117 @@
+{
+ "country": "LT",
+ "document": "Asmens tapatybės kortelė (identity card)",
+ "office": "the Migration Department",
+ "currency": "EUR",
+ "routes": [
+  {
+   "id": "standard",
+   "where": "home",
+   "speed": "standard",
+   "within": {
+    "n": 1,
+    "unit": "month"
+   },
+   "label": "at a Migration Department office, within a month"
+  },
+  {
+   "id": "urgent",
+   "where": "home",
+   "speed": "urgent",
+   "within": {
+    "n": 5,
+    "unit": "working day"
+   },
+   "label": "urgent, within 5 working days"
+  },
+  {
+   "id": "next-day",
+   "where": "home",
+   "speed": "urgent",
+   "within": {
+    "n": 1,
+    "unit": "working day"
+   },
+   "label": "urgent, within 1 working day"
+  },
+  {
+   "id": "abroad",
+   "where": "abroad",
+   "speed": "standard",
+   "within": {
+    "n": 2,
+    "unit": "month"
+   },
+   "label": "through a consulate or its service provider abroad, within 2 months"
+  }
+ ],
+ "cards": [
+  {
+   "for": "under 5",
+   "under": 5,
+   "validYears": 2,
+   "pay": {
+    "standard": "10",
+    "urgent": "60",
+    "next-day": "100",
+    "abroad": "140"
+   }
+  },
+  {
+   "for": "5 to 15",
+   "from": 5,
+   "under": 16,
+   "validYears": 5,
+   "pay": {
+    "standard": "10",
+    "urgent": "60",
+    "next-day": "100",
+    "abroad": "140"
+   }
+  },
+  {
+   "for": "16 to 69",
+   "from": 16,
+   "under": 70,
+   "validYears": 10,
+   "pay": {
+    "standard": "10",
+    "urgent": "60",
+    "next-day": "100",
+    "abroad": "140"
+   }
+  },
+  {
+   "for": "70 and over",
+   "from": 70,
+   "validYears": 30,
+   "pay": {
+    "standard": "10",
+    "urgent": "60",
+    "next-day": "100",
+    "abroad": "140"
+   }
+  }
+ ],
+ "note": "The Migration Department's MIGRIS page for the identity card: €10 within a month, €60 within 5 working days, €100 within 1 working day; through a consulate abroad €140 within 2 months (the page for citizens living abroad, shared with the passport). The card is valid 2 years if issued under 5, 5 years from 5 to 16, 10 years from 16 to 70 and 30 years from 70 (12 months without fingerprints, not modelled). A child under 18 pays half on the one-month route for one document of their choice, taken in this game as the passport, so the card is charged in full; the 80% relief at pension age isn't modelled.",
+ "sources": [
+  {
+   "url": "https://www.migracija.lt/service/pilieciams#ad-atk-asmens-tapatybes-kortele",
+   "title": "Migracijos departamentas, MIGRIS, Asmens tapatybės kortelė (with its questions on validity and urgent issue)",
+   "read": "2026-10-28",
+   "said": "Prašymo nagrinėjimo terminai ir valstybės rinkliava Bendra tvarka per 1 mėnesį 10,00 Eur Skubos tvarka per 5 darbo dienas 60,00 Eur Skubos tvarka per 1 darbo dieną 100,00 Eur ... Asmens tapatybės kortelė galioja: išduota piliečiui iki 5 metų – 2 metus; išduota piliečiui nuo 5 metų iki 16 metų – 5 metus; išduota piliečiui nuo 16 metų iki 70 metų – 10 metų; išduota piliečiui nuo 70 metų – 30 metų;"
+  },
+  {
+   "url": "https://www.migracija.lt/service/pilieciams#ad-lietuvos-respublikos-pasas-asmens-tapatybes-kortele-gyvenantiems-uzsienyje",
+   "title": "Migracijos departamentas, MIGRIS, Lietuvos Respublikos pasas, asmens tapatybės kortelė (gyvenantiems užsienyje)",
+   "read": "2026-10-28",
+   "said": "Pilietis, gyvenantis užsienyje, dokumentus dėl asmens tapatybės kortelės ir paso gavimo Lietuvos Respublikos konsulinei įstaigai gali pateikti per išorės paslaugų teikėjo (IPT) biurą arba tiesiogiai. ... Prašymo nagrinėjimo terminai ir valstybės rinkliava Bendra tvarka iki 2 mėn. 140,00 Eur"
+  },
+  {
+   "url": "https://www.migracija.lt/service/pilieciams#ad-lrp-lietuvos-respublikos-pasas",
+   "title": "Migracijos departamentas, MIGRIS, Lietuvos Respublikos pasas (its question on relief from the state fee)",
+   "read": "2026-10-28",
+   "said": "Vaikams iki 18 m. valstybės rinkliava už vieno iš asmens dokumentų (pasirinktinai) išdavimą ar keitimą bendra tvarka per 1 mėn. yra sumažinama 50%, o piliečiams, kuriems sukako senatvės pensijos amžius, nustatytas Lietuvos Respublikos valstybinių socialinio draudimo pensijų įstatyme, valstybės rinkliava už vieno iš asmens dokumentų (pasirinktinai) išdavimą ar keitimą bendra tvarka per 1 mėn. yra sumažinama 80 %."
+  }
+ ]
+}

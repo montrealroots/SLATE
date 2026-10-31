@@ -1,0 +1,58 @@
+{
+ "country": "BD",
+ "national": {
+  "name": "Routing number and bank account number",
+  "parts": [
+   {
+    "name": "Routing number",
+    "length": 8,
+    "kind": "n"
+   },
+   {
+    "name": "Check digit",
+    "length": 1,
+    "kind": "n"
+   },
+   {
+    "name": "Bank account number",
+    "length": 17,
+    "kind": "c",
+    "min": 1
+   }
+  ],
+  "checks": [
+   {
+    "over": [
+     1,
+     8
+    ],
+    "weights": [
+     5,
+     7,
+     1,
+     5,
+     7,
+     1,
+     5,
+     7
+    ]
+   }
+  ],
+  "example": "020270007123456789"
+ },
+ "note": "Bangladesh Bank's Bangladesh Electronic Funds Transfer Network (BEFTN) Operating Rules, Version 2.0, enclosed with PSD Circular No. 08/2020 of 28 October 2020, which tells every scheduled bank in the Bangladesh Automated Clearing House to follow them with immediate effect (read 2026-10-30), and the first Operating Rules of 10 August 2010 (DCMPS, read 2026-10-30), which Version 2.0 reviewed. A transfer names the receiving account by the branch's routing number, 'a nine digit number that identifies a specific bank branch assigned by Bangladesh Bank' (V2.0, definition 48), carried in the entry as the receiving bank's eight digits and a check digit, then the bank account number. The check is as the 2010 rules' Appendix gives it: 'The Check Digit is computed using Modulus 10', weights 5 7 1 5 7 1 5 7 over the first eight digits, the check digit what brings the sum to the next multiple of ten (their example: 0 7 6 4 0 1 2 5, sum 121, check digit 9). Version 2.0's own text no longer prints the routine (its record layouts aren't in its text), but it keeps the 'Routing Number Check Digit Error' among the entry errors, and both of its worked entries pass these weights: receiving bank 02027000 with check digit 7, and 01527000 with check digit 9; that the weights hold under Version 2.0 is a reading from those two numbers. The account number: Version 2.0 says the 'Correct BANK Account Number appears in first (left justification) 17 positions', and the rules' alphanumeric fields are left justified and space filled; the 2010 rules' entry layout gives the BANK Account Number as alphanumeric, length 17. Held as one to seventeen letters or digits: no rule gives a fewest, and the one is a reading of a left-justified 17-position field (as the United States' Green Book field is held). The example is Version 2.0's own worked PPD credit entry: receiving bank 02027000, check digit 7, account 123456789. Not held: which digits of the routing number are the bank's, the district's and the branch's (the rules don't say; aggregators' layouts conflict, so `bank` is left out); any check inside the account number (the rules leave it to each bank: R04 'may fail the check digit validation').",
+ "sources": [
+  {
+   "url": "https://www.bb.org.bd/aboutus/regulationguideline/beftn_operatingrules_v2.pdf",
+   "title": "Bangladesh Bank, PSD Circular No. 08/2020 (28 October 2020), Bangladesh Electronic Funds Transfer Network (BEFTN) Operating Rules Version 2.0",
+   "read": "2026-10-30",
+   "said": "advised to follow the BEFTN Operating Rules Version 2.0 ... is a nine digit number that identifies a specific bank branch assigned by ... Routing Number Check Digit Error ... Correct BANK Account Number appears in first (left justification) 17 positions of the ... All alphanumeric and alphabetic fields must be left justified and space filled ... <ReceivingBank>02027000</ReceivingBank> <CheckDigit>7</CheckDigit> <DFIAccountNum>123456789</DFIAccountNum> ... <ReceivingBank>01527000</ReceivingBank> <CheckDigit>9</CheckDigit>"
+  },
+  {
+   "url": "https://www.bb.org.bd/aboutus/regulationguideline/beftn_operatingrules.pdf",
+   "title": "Bangladesh Bank, Bangladesh Electronic Funds Transfer Network (BEFTN) Operating Rules, 10 August 2010",
+   "read": "2026-10-30",
+   "said": "Routing Number: a nine digit number that identifies a specific bank branch. ... The Check Digit is computed using Modulus 10 as follows: ... Position: 1 2 3 4 5 6 7 8 ... Weights: 5 7 1 5 7 1 5 7 ... Subtract the sum from the next highest multiple of 10. The result is the Check Digit. ... Routing No. :0 7 6 4 0 1 2 5 ... Check Digit = 9 (130 minus 121)"
+  }
+ ]
+}

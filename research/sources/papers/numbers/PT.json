@@ -1,0 +1,25 @@
+{
+ "country": "PT",
+ "name": "tax identification number",
+ "issuer": "the Tax and Customs Authority",
+ "format": {
+  "length": 9,
+  "pattern": "^[12]\\d{8}$"
+ },
+ "when": "application",
+ "who": [
+  "anyone"
+ ],
+ "needed": [
+  "tax"
+ ],
+ "note": "Portugal's sheet (its government's own sheet on the OECD's automatic-exchange portal ('Information on Tax Identification Numbers'; the OECD's index page sits behind a bot check and wasn't opened, the sheet itself came straight back)), read 2026-10-30: the Tax and Customs Authority allocates individuals their tax identification number, a single number for every legal effect with no expiry; nine sequential digits with a control digit (its rule isn't given), individuals' starting with 1 or 2 (3 not yet allocated; 45 for non-residents only taxed at source, not modelled). Individuals get one automatically. Read as given on application, to anyone (residents and non-residents both hold one). No fee or time is stated.",
+ "sources": [
+  {
+   "url": "https://www.oecd.org/content/dam/oecd/en/topics/policy-issue-focus/aeoi/portugal-tin.pdf",
+   "title": "OECD AEOI portal, Portugal: Information on Tax Identification Numbers (the jurisdiction's own sheet)",
+   "read": "2026-10-30",
+   "said": "The Tax and Customs Authority is the entity competent to allocate a tax identification number for individuals. ... The structure of the numbering System consists by 9 sequential digits with a control digit. ... For individuals: 1xx xxx xxx 2xx xxx xxx 3xx xxx xxx (not allocated yet)"
+  }
+ ]
+}

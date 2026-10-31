@@ -1,0 +1,34 @@
+{
+ "country": "MO",
+ "name": "número do Bilhete de Identidade de Residente (BIR)",
+ "issuer": "the Direcção dos Serviços de Identificação (DSI)",
+ "format": {
+  "length": 8,
+  "pattern": "^\\d{8}$"
+ },
+ "when": "application",
+ "who": [
+  "residents"
+ ],
+ "note": "Law 8/2002 (the regime of the resident identity card, BIR) and Regulamento Administrativo 23/2002 (its regulation), both as the Official Gazette's site (Direcção dos Serviços de Assuntos de Justiça) shows them in their current text, the regulation as republished by Regulamento Administrativo 41/2023, read 2026-10-31; the government portal's page of the BIR's related legislation (read 2026-10-31) lists both, with Regulamento Administrativo 22/2013 (the card's new model), as the texts that govern it. The Law: the BIR is the civil identification document proving its holder's identity and residence in Macao (art. 2(1)); permanent residents' and non-permanent residents' cards (art. 2(2)); the DSI is responsible for issuing them (art. 2(3)); residents are entitled to one, compulsory from the age of five and optional below it (art. 3); the number is the first of the visible data (art. 7(1)). The Regulation, art. 5: the BIR's number is made of seven digits followed by a check digit. READINGS: the eight characters are the seven digits and the check digit, read as all digits (the regulation calls the last a 'dígito'); the check digit's algorithm isn't given, so `check` is left out; 'when' is read as on application (residents are entitled to the card, compulsory from five), and 'who' as residents. The card's fee (MOP 90) and time (15 working days), on the government portal, are the card's and aren't held as the number's. No age from which the number is given is set (the card is optional under five).",
+ "sources": [
+  {
+   "url": "https://bo.dsaj.gov.mo/bo/i/2002/44/regadm23.asp",
+   "title": "Regulamento Administrativo n.º 23/2002, Regulamento do bilhete de identidade de residente da RAEM (BO 44/2002), as republished by Regulamento Administrativo n.º 41/2023, on the Official Gazette's site",
+   "read": "2026-10-31",
+   "said": "O conteúdo deste diploma legal foi republicado pelo ... Regulamento Administrativo n.º 41/2023 ... Artigo 5.º Número O número do BIR é composto por um conjunto de sete dígitos, seguido de um dígito de controlo."
+  },
+  {
+   "url": "https://bo.dsaj.gov.mo/bo/i/2002/31/lei08.asp",
+   "title": "Lei n.º 8/2002, Regime do bilhete de identidade de residente da RAEM (BO 31/2002), as amended by Lei n.º 11/2023, on the Official Gazette's site",
+   "read": "2026-10-31",
+   "said": "A Direcção dos Serviços de Identificação, adiante designada por DSI, é responsável pela emissão dos BIR. ... Os residentes da RAEM têm direito à emissão do BIR. ... A titularidade do BIR é obrigatória para os residentes da RAEM que tenham completado cinco anos de idade e facultativa para os residentes que não tenham completado cinco anos de idade."
+  },
+  {
+   "url": "https://www.gov.mo/pt/servicos/ps-1065/legislacoes-relacionadas",
+   "title": "Portal do Governo da RAEM, Bilhete de Identidade de Residente: legislações relacionadas",
+   "read": "2026-10-31",
+   "said": "Regulamento Administrativo n.º 23/2002 - Aprova o regulamento do bilhete de identidade de residente da Região Administrativa Especial de Macau."
+  }
+ ]
+}

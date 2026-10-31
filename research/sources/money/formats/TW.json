@@ -1,0 +1,36 @@
+{
+ "country": "TW",
+ "national": {
+  "name": "Bank code, branch code and account number",
+  "parts": [
+   {
+    "name": "Bank code",
+    "length": 3,
+    "kind": "n"
+   },
+   {
+    "name": "Branch code",
+    "length": 4,
+    "kind": "n"
+   },
+   {
+    "name": "Account number",
+    "length": 14,
+    "kind": "n"
+   }
+  ],
+  "bank": [
+   1,
+   3
+  ]
+ },
+ "note": "Bank of Taiwan, the largest bank, in the file formats of its corporate transfer service (read 2026-10-30, undated): the payee's bank code is three digits and the branch code four; the payee's account number is a field of sixteen digits, left-aligned and not padded, and its EDI format takes the account's first fourteen digits. Account lengths vary by bank (the Central Bank's table of offshore-unit accounts shows 11 to 14 digits by bank) and no national standard fixing them was read, so the fourteen of Bank of Taiwan's EDI format is written; a shorter account is read with leading zeros. No national check digit is published; none is modelled.",
+ "sources": [
+  {
+   "url": "https://necomb.bot.com.tw/BOT_CIB_B2C_WEB/fms/fms02008/FMS02008_filetype_pop_zh_TW.html",
+   "title": "Bank of Taiwan, corporate internet banking: file formats (檔案格式)",
+   "read": "2026-10-30",
+   "said": "收款人帳號 139 16 數字 R 左靠不補零 4 收款人銀行代碼 155 3 數字 R 5 收款人分行代碼 158 4 數字 R ... 收款人銀行代碼：三位銀行碼，四位分行碼 收款人帳號：由左邊向右取14位"
+  }
+ ]
+}

@@ -5,7 +5,8 @@ import { gzipSync } from 'node:zlib';
 import { describe, expect, it } from 'vitest';
 import { coverageOf, readTowns } from '../../tools/wmo/build.ts';
 import { MODEL, NO_PLACES, OUTPUT as COVERAGE, SETS, TESTS, TOLD, serializeCoverage, weatherCoverage } from '../../tools/wmo/coverage.ts';
-import { COMMUNES_MF, COUNTRIES_DWD, COUNTRIES_KT, KT_COUNTRY, MONTH_DAYS, MEMBERS_6190, MEMBERS_9120, MEMBERS_WWIS, OUTPUT, SOURCES_6190, SOURCES_8110, SOURCES_9120, HAND_READ, SOURCE_CWA, SOURCE_DWD, SOURCE_KT, SOURCE_METOFFICE, SOURCE_MF, SOURCE_WWIS, SOURCE_GHCND, SOURCE_ANGUILLA, SOURCE_TONGA, YEARS_GHCND, compileStations, monthValue, parseAnguilla, parseTonga, parseGhcnd, countryOf, distanceKm, nearestTown, parse6190, parse8110, parse9120, parseCwa, parseDwd, parseKlimatafeln, parseMeteoFrance, parseMetOffice, parseWwis, readStations, serialize, TOWN_KM, townPool, type SourceStation } from '../../tools/wmo/compile.ts';
+import { COMMUNES_MF, COUNTRIES_DWD, COUNTRIES_KT, KT_COUNTRY, MONTH_DAYS, MEMBERS_6190, MEMBERS_9120, MEMBERS_WWIS, OUTPUT, SOURCES_6190, SOURCES_8110, SOURCES_9120, HAND_READ, SOURCE_CWA, SOURCE_DWD, SOURCE_KT, SOURCE_METOFFICE, SOURCE_MF, SOURCE_WWIS, SOURCE_GHCND, SOURCE_ANGUILLA, SOURCE_TONGA, YEARS_GHCND, compileStations, monthValue, parseAnguilla, parseTonga, parseGhcnd, countryOf, distanceKm, nearestTown, parse6190, parse8110, parse9120, parseCwa, parseDwd, parseKlimatafeln, parseMeteoFrance, parseMetOffice, parseWwis, readStations, serialize, TOWN_KM, townPool, type SourceStation, inOutline, outlineKm, readOutlines, NEAR_KM, BORDER_KM } from '../../tools/wmo/compile.ts';
+import { SOURCE as OUTLINES } from '../../tools/naturalearth/compile.ts';
 
 const ROOT = join(import.meta.dirname, '../..');
 /** A 1961-1990 station key: region, country, WMO number, national id and its code, 17 columns. */
@@ -89,7 +90,7 @@ describe('the station compiler', () => {
       { key: 'EC', status: 'researched', register: ['R-0038', 'R-0039', 'R-0040', 'R-0044'], tests: TESTS },
     ]);
     expect(TOLD).toBe("tests/world/weather/weather.test.ts::the weather at real towns > reads each town's nearest station of its own country, and says where it has none");
-    expect([SETS, MODEL]).toEqual([{ '9120': 'R-0037', '6190': 'R-0038', '8110': 'R-0044', mf: 'R-0043', cwa: 'R-0045', metoffice: 'R-0048', bws: 'R-0049', dhm: 'R-0057', rnsm: 'R-0060', meteocw: 'R-0074', anguilla: 'R-0075', tms: 'R-0076', dwd: 'R-0062', kt: 'R-0063', wwis: 'R-0042', ghcnd: 'R-0073' }, ['R-0039', 'R-0040']]);
+    expect([SETS, MODEL]).toEqual([{ '9120': 'R-0037', '6190': 'R-0038', '8110': 'R-0044', mf: 'R-0043', cwa: 'R-0045', metoffice: 'R-0048', bws: 'R-0049', dhm: 'R-0057', rnsm: 'R-0060', meteocw: 'R-0074', anguilla: 'R-0075', tms: 'R-0076', rhmz: 'R-4115', jica: 'R-4116', vms: 'R-4117', svgmet: 'R-4235', dwd: 'R-0062', kt: 'R-0063', wwis: 'R-0042', ghcnd: 'R-0073' }, ['R-0039', 'R-0040']]);
     // A station is of a set by its id's start up to the colon, not by a likeness.
     expect(weatherCoverage(['FR'], new Set(['FR']), [st('9120x:1', 'FR', ['tmax', 'tmin', 'prcp', 'wet', 'sun'])], new Map())[0]).toMatchObject({ register: ['R-0039', 'R-0040'] });
     expect(serializeCoverage([{ key: 'AN', status: 'proven', tests: ['t'] }])).toBe('{\n "engine": "world.weather",\n "axis": "country",\n "rows": [\n  {\n   "key": "AN",\n   "status": "proven",\n   "tests": [\n    "t"\n   ]\n  }\n ]\n}\n');
@@ -179,6 +180,9 @@ describe('the station compiler', () => {
     expect(s.get(K('6FR07480'))).toMatchObject({ member: 'FR', name: 'LYON BRON', elevation: 240, normals: { tmax: [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12], tmin: Array(12).fill(-2.5), prcp: [0, 0, 0, 0, 1, 2, 3, 4, 5, 6, 7, 8], wet: Array(12).fill(10), sun: Array(12).fill(150) } });
     expect(s.get(K('6FR07480'))?.latitude).toBeCloseTo(45 + 43 / 60, 9);
     expect(s.get(K('6FR07480'))?.longitude).toBeCloseTo(5 + 1 / 60, 9);
+    // Publication No. 9's place beside it, or the Member's where Publication No. 9 gives none.
+    expect(s.get(K('6FR07480'))?.pub9).toEqual([45 + 44 / 60, 5 + 2 / 60]);
+    expect(parse6190(norm6190(), meta6190({ pub9lat: '     ', pub9lon: '      ' })).get(K('6FR07480'))?.pub9).toEqual([45 + 43 / 60, 5 + 1 / 60]);
     const south = s.get(K('6FR07481'));
     expect(south).toMatchObject({ name: 'SOUTH PLACE', elevation: 12, normals: { sun: Array(12).fill(180), tmax: Array(12).fill(21) } });
     expect(south?.normals.tmin).toBeUndefined();
@@ -374,6 +378,9 @@ describe('the station compiler', () => {
     expect(parseDwd(json({ sun: { '1961_1990': [`98429;${Array(11).fill('1').join(';')}`, `98444;x;${Array(11).fill('1').join(';')}`] } }, list))).toEqual([]);
     expect(() => parseDwd(json({ sun: { '1961_1990': [row('12345', '1')] } }, ['12345;X;1;1;1;Atlantis']))).toThrow("a Deutscher Wetterdienst country the compiler doesn't know: Atlantis");
     expect(COUNTRIES_DWD['Republic of China, Taiwan']).toEqual(['TW']);
+    // Its one station is Princess Juliana Airport, in Sint Maarten; filed under SX or MF until 2026-10-31, it was placed
+    // in Saint-Martin by a town across the border nearer than any in Sint Maarten, and the WMO's own sets put it in SX.
+    expect(COUNTRIES_DWD['St. Maarten']).toEqual(['SX']);
   });
   it("reads the Deutscher Wetterdienst's Klimatafeln: each row's months and its own years, the sunshine by the month's days", () => {
     const page = 'https://www.dwd.de/DE/leistungen/klimadatenwelt/asien/ae/china/china_node.html';
@@ -543,14 +550,133 @@ describe('the station compiler', () => {
     const text = serialize(stations.slice(2));
     expect(text).toBe(`${JSON.stringify({ params: ['tmax', 'tmin', 'prcp', 'wet', 'sun'], stations: [['9120:00012345:0-20000-0-12345', 'Lyon', null, 'FR', 45, 5, 100, '1991-2020', [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12], null, null, null, null]] })}\n`);
   });
+  it('reads the outlines as rings of longitude and latitude, and tells whether a place is inside them and how far from their edge', () => {
+    const square = (x: number, y: number, size: number): [number, number][] => [[x, y], [x + size, y], [x + size, y + size], [x, y + size], [x, y]];
+    const outlines = readOutlines(JSON.stringify({ features: [
+      { properties: { ISO_A2_EH: 'MW', ADM0_A3: 'MWI' }, geometry: { type: 'Polygon', coordinates: [square(33, -17, 3)] } },
+      { properties: { ISO_A2_EH: 'NO', ADM0_A3: 'NOR' }, geometry: { type: 'MultiPolygon', coordinates: [[square(5, 58, 5)], [square(10, 77, 5)]] } },
+      { properties: { ISO_A2_EH: 'CY', ADM0_A3: 'CYP' }, geometry: { type: 'Polygon', coordinates: [square(32, 34.5, 1)] } },
+      { properties: { ISO_A2_EH: '-99', ADM0_A3: 'CYN' }, geometry: { type: 'Polygon', coordinates: [square(33, 35, 1)] } },
+    ] }));
+    expect([...outlines.keys()]).toEqual(['MW', 'NO', 'CY']);
+    expect(outlines.get('NO')).toEqual([square(5, 58, 5), square(10, 77, 5)]);
+    expect(outlines.get('CY')).toEqual([square(32, 34.5, 1), square(33, 35, 1)]);
+    const mw = outlines.get('MW') ?? [];
+    expect([inOutline(mw, -15.7, 35), inOutline(mw, 15.7, 35), inOutline(mw, -15.7, 37), inOutline(mw, -15.7, 32), inOutline(mw, -18, 35), inOutline(mw, -13, 35)]).toEqual([true, false, false, false, false, false]);
+    // By the even-odd rule: a ring inside another is a hole.
+    expect(inOutline([square(0, 0, 4), square(1, 1, 2)], 2, 2)).toBe(false);
+    expect(inOutline([square(0, 0, 4), square(1, 1, 2)], 0.5, 0.5)).toBe(true);
+    // A slanting edge crossed where it is at the place's latitude.
+    const slant: [number, number][] = [[0, 1], [4, 1], [0, 5], [0, 1]];
+    expect([inOutline([slant], 2, 2.5), inOutline([slant], 2, 3.5), inOutline([slant], 4, 0.5), inOutline([slant], 4, 1.5)]).toEqual([true, false, true, false]);
+    // A place on the top or the right edge is outside, as one on the bottom or the left is inside (one side each).
+    expect([inOutline([square(0, 0, 4)], 4, 2), inOutline([square(0, 0, 4)], 2, 4), inOutline([square(0, 0, 4)], 0, 2), inOutline([square(0, 0, 4)], 2, 0)]).toEqual([false, false, true, true]);
+    // From an edge's middle and past its end, at the equator and where a degree of longitude is half as long.
+    const degree = (Math.PI * 6371.0088) / 180;
+    expect(outlineKm([square(0, 0, 2)], 3, 1)).toBeCloseTo(degree, 6);
+    expect(outlineKm([square(0, 0, 4)], 1, 2)).toBeCloseTo(degree, 6);
+    expect(outlineKm([square(0, 59, 2)], 60, 3)).toBeCloseTo(degree / 2, 6);
+    // Past an edge's end where a degree of longitude is short, the end, not the line it lies on.
+    expect(outlineKm([square(0, 59, 2)], 62, -2)).toBeCloseTo(Math.hypot(2 * Math.cos((62 * Math.PI) / 180), 1) * degree, 6);
+    expect(outlineKm([square(0, 0, 2)], -3, -4)).toBeCloseTo(Math.hypot(4 * Math.cos((3 * Math.PI) / 180), 3) * degree, 6);
+    expect(outlineKm([[[1, 1], [1, 1]]], 2, 1)).toBeCloseTo(degree, 6);
+    expect(outlineKm([], 0, 0)).toBe(Infinity);
+  });
+  it('checks that every station lies in the country it is filed under, and places one that does not by another record of it or by where it lies', () => {
+    expect([NEAR_KM, BORDER_KM]).toEqual([100, 50]);
+    const towns = [
+      { name: 'Chitipa', country: 'MW', latitude: -9.7, longitude: 33.27 },
+      { name: 'Juba', country: 'SS', latitude: 9.6, longitude: 33.3 },
+      { name: 'Pointe-Noire', country: 'CG', latitude: -4.8, longitude: 11.85 },
+      { name: 'Kinshasa', country: 'CD', latitude: -4.33, longitude: 15.31 },
+      { name: 'Brazzaville', country: 'CG', latitude: -4.27, longitude: 15.28 },
+      { name: 'Khujand', country: 'TJ', latitude: 40.28, longitude: 69.62 },
+      { name: 'Moscow', country: 'RU', latitude: 55.75, longitude: 37.62 },
+      { name: 'Kryvyi Rih', country: 'UA', latitude: 47.91, longitude: 33.39 },
+      { name: 'Sinop', country: 'TR', latitude: 42.03, longitude: 35.15 },
+      { name: 'Taipei', country: 'TW', latitude: 25.05, longitude: 121.53 },
+      { name: 'Fuzhou', country: 'CN', latitude: 26.06, longitude: 119.3 },
+    ];
+    const s9120 = parse9120(files9120({ tmax: [
+      // NCEI's file names the Republic of the Congo's block 644 the Democratic Republic's: Mpouya, on the Congo's bank,
+      // lies nearer a town of the Democratic Republic's; a station of another name with an ID of the block is its own.
+      line9120({ id: '00064400', member: 'Dem._Rep._Congo', name: 'POINTENOIRE', lat: '-4.816', lon: '11.750' }),
+      line9120({ id: '00064452', member: 'Dem._Rep._Congo', name: 'MPOUYA', lat: '-4.300', lon: '15.300' }),
+      line9120({ id: '00064210', member: 'Dem._Rep._Congo', name: 'KINSHASA', lat: '-4.390', lon: '15.450' }),
+      line9120({ id: '00064401', member: 'Ukraine', name: 'Not_Dolisie', lat: '47.900', lon: '33.400' }),
+      // China's in Taiwan, whose own service stands for it, are left out.
+      line9120({ id: '00058968', member: 'China', name: 'TAIBEI', lat: '25.030', lon: '121.520' }),
+      line9120({ id: '00033791', member: 'Ukraine', name: 'Kryvyi_Rih', lat: '48.054', lon: '33.211' }),
+      // At sea, and placed by the 1961-1990 set's record of the number: its Member's place, and its Publication No. 9's.
+      line9120({ id: '00033792', member: 'Ukraine', name: 'By_Member', lat: '43.030', lon: '33.210' }),
+      line9120({ id: '00033793', member: 'Ukraine', name: 'By_Pub9', lat: '43.030', lon: '33.210' }),
+    ] }));
+    const keys = ['1MW67421', '2RA38599', '6UP33791', '6UP33792', '6UP33793'].map(K) as [string, string, string, string, string];
+    const s6190 = parse6190(keys.map((key) => norm6190({ key })).join('\n'), [
+      // Malawi's own coordinates north of the equator, Publication No. 9's south.
+      meta6190({ key: keys[0], lat: '0942N', lon: '03316E', pub9lat: '0942S', pub9lon: '03316E', name: 'CHITIPA' }),
+      // A station of the Soviet Union's, filed as Russia's.
+      meta6190({ key: keys[1], lat: '4013N', lon: '06944E', pub9lat: '4013N', pub9lon: '06944E', name: 'LENINBAD' }),
+      // Publication No. 9's place in the Black Sea, and no other in the line: the 1991-2020 set's place of its number.
+      meta6190({ key: keys[2], lat: '     ', lon: '      ', pub9lat: '4302N', pub9lon: '03313E', name: 'KROVOJ ROG' }),
+      meta6190({ key: keys[3], lat: '4800N', lon: '03300E', pub9lat: '4302N', pub9lon: '03313E' }),
+      meta6190({ key: keys[4], lat: '4302N', lon: '03313E', pub9lat: '4800N', pub9lon: '03300E' }),
+    ].join('\n'));
+    const out = compileStations(s9120, s6190, [], [], [], [], new Map(), [], towns);
+    expect(out.map((s) => [s.id, s.country, s.latitude, s.longitude, s.town])).toEqual([
+      ['6190:1MW67421', 'MW', -9.7, 33.2667, 'Chitipa'],
+      ['6190:2RA38599', 'TJ', 40.2167, 69.7333, 'Khujand'],
+      ['6190:6UP33791', 'UA', 48.054, 33.211, 'Kryvyi Rih'],
+      ['6190:6UP33792', 'UA', 48, 33, 'Kryvyi Rih'],
+      ['6190:6UP33793', 'UA', 48, 33, 'Kryvyi Rih'],
+      ['9120:00033791:0-20000-0-12345', 'UA', 48.054, 33.211, 'Kryvyi Rih'],
+      ['9120:00033792:0-20000-0-12345', 'UA', 48, 33, 'Kryvyi Rih'],
+      ['9120:00033793:0-20000-0-12345', 'UA', 48, 33, 'Kryvyi Rih'],
+      ['9120:00064210:0-20000-0-12345', 'CD', -4.39, 15.45, 'Kinshasa'],
+      ['9120:00064400:0-20000-0-12345', 'CG', -4.816, 11.75, 'Pointe-Noire'],
+      ['9120:00064401:0-20000-0-12345', 'UA', 47.9, 33.4, 'Kryvyi Rih'],
+      ['9120:00064452:0-20000-0-12345', 'CG', -4.3, 15.3, 'Brazzaville'],
+    ]);
+    // Another record of the number counts only where it's the station's: a 1961-1990 key with the Member's own number
+    // after the five digits isn't one, nor 99999, nor a 1991-2020 ID that isn't a WMO number.
+    const unmatched = (key: string, id: string) => {
+      const lines = parse9120(files9120({ tmax: [line9120({ id, member: 'Ukraine', name: 'Kryvyi_Rih', lat: '48.054', lon: '33.211' })] }));
+      return compileStations(lines, parse6190(norm6190({ key }), meta6190({ key, lat: '     ', lon: '      ', pub9lat: '4302N', pub9lon: '03313E' })), [], [], [], [], new Map(), [], towns).find((s) => s.id.startsWith('6190'))?.latitude;
+    };
+    expect([unmatched(K('6UP33791'), '00033791'), unmatched(K('6UP33791   1'), '00033791'), unmatched(K('6UP99999'), '00099999'), unmatched(K('6UP33791'), '100033791'), unmatched(K('6UP33791'), '000337910'), unmatched(K('6UP33791   1'), '10033791')]).toEqual([48.054, 43.0333, 43.0333, 43.0333, 43.0333, 43.0333]);
+  });
+  it('stands a station by its outline where no town is near, within a border\'s error of it, and stops at one in another\'s outline near no town', () => {
+    const box = (x1: number, y1: number, x2: number, y2: number): [number, number][] => [[x1, y1], [x2, y1], [x2, y2], [x1, y2], [x1, y1]];
+    const outlines = new Map([['NO', [box(5, 76, 35, 81)]], ['SE', [box(11, 55, 22.3, 69)]], ['FI', [box(22.3, 60, 30, 70)]]]);
+    const towns = [
+      { name: 'Longyearbyen', country: 'SJ', latitude: 78.22, longitude: 15.6 },
+      { name: 'Barentsburg', country: 'RU', latitude: 79.3, longitude: 11.9 },
+      { name: 'Enontekiö', country: 'FI', latitude: 68.38, longitude: 23.1 },
+      { name: 'Kiruna', country: 'SE', latitude: 67.85, longitude: 20.2 },
+    ];
+    const st = (id: string, country: string, latitude: number, longitude: number): SourceStation => ({ id, name: id, country, latitude, longitude, elevation: null, period: '1991-2020', normals: { tmax: [1] } });
+    const place = (stations: SourceStation[], dwd: (SourceStation & { member: string })[] = []) => compileStations(new Map(), new Map(), [], stations, dwd, [], new Map(), [], towns, outlines).map((s) => [s.id, s.country]);
+    // Svalbard's, in Norway's outline, 112 km from its own town and 44 from another country's.
+    expect(place([], [{ ...st('dwd:01004:1991-2020', '', 78.92, 11.93), member: 'Norway' }])).toEqual([['dwd:01004:1991-2020', 'SJ']]);
+    // Karesuando's, on the Swedish bank of the border, 8 km outside Sweden's outline, nearer a Finnish town than a Swedish.
+    expect(place([st('kare', 'SE', 68.44, 22.48)])).toEqual([['kare', 'SE']]);
+    expect(place([st('kare', 'SE', 68.44, 23.6)])).toEqual([['kare', 'FI']]);
+    // In Finland's outline, near no town and 58 km from Sweden's: no record says where it is.
+    expect(() => place([st('lost', 'SE', 64, 23.5)])).toThrow("lost lies in FI's outline, near no town, filed under SE: a station the compiler can't place");
+    expect(() => place([], [{ ...st('dwd:lost', '', 64, 23.5), member: 'Norway' }])).toThrow("dwd:lost lies in FI's outline, near no town, filed under NO or SJ or BV: a station");
+    // At sea, in no outline and near no town, as on an island too small for the outlines: as filed.
+    expect(place([st('isle', 'SE', 50, -30), st('aq', 'AQ', -75, 0)])).toEqual([['aq', 'AQ'], ['isle', 'SE']]);
+  });
   it('refuses a file that isn\'t the one the register cites', () => {
-    const files = [...Object.values(SOURCES_9120), ...Object.values(SOURCES_6190), ...Object.values(SOURCES_8110), SOURCE_MF, SOURCE_CWA, SOURCE_METOFFICE, ...HAND_READ.map((h) => h.source), SOURCE_ANGUILLA, SOURCE_TONGA, SOURCE_DWD, SOURCE_KT, SOURCE_WWIS, SOURCE_GHCND];
+    const files = [...Object.values(SOURCES_9120), ...Object.values(SOURCES_6190), ...Object.values(SOURCES_8110), SOURCE_MF, SOURCE_CWA, SOURCE_METOFFICE, ...HAND_READ.flatMap((h) => [h.source].flat()), SOURCE_ANGUILLA, SOURCE_TONGA, OUTLINES, SOURCE_DWD, SOURCE_KT, SOURCE_WWIS, SOURCE_GHCND];
     for (const target of files) {
       const root = mkdtempSync(join(tmpdir(), 'slate-wmo-'));
-      for (const dir of ['vendor/wmo/9120', 'vendor/wmo/6190', 'vendor/wmo/8110', 'vendor/bws', 'vendor/dhm', 'vendor/rnsm', 'vendor/meteocw', 'research/sources']) mkdirSync(join(root, dir), { recursive: true });
+      for (const dir of ['vendor/wmo/9120', 'vendor/wmo/6190', 'vendor/wmo/8110', 'vendor/bws', 'vendor/dhm', 'vendor/rnsm', 'vendor/meteocw', 'vendor/rhmz', 'vendor/jica', 'vendor/vmgd', 'vendor/svgmet', 'vendor/naturalearth', 'research/sources']) mkdirSync(join(root, dir), { recursive: true });
       for (const f of files) copyFileSync(join(ROOT, f.file), join(root, f.file));
       writeFileSync(join(root, target.file), target.file.endsWith('.gz') ? gzipSync('changed') : 'changed');
       expect(() => readStations(root, []), target.file).toThrow(`${target.file} is not the file the register cites (sha256 `);
     }
-  });
+    // It copies every source once per source, the outlines among them since 2026-10-30: past vitest's 30 seconds on a
+    // loaded machine (timed out under eight research agents), well inside two minutes.
+  }, 120_000);
 });

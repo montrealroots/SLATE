@@ -1,0 +1,22 @@
+{
+ "country": "WS",
+ "name": "Taxpayer Identification Number (TIN)",
+ "issuer": "the Ministry of Customs and Revenue",
+ "format": {
+  "min": 1,
+  "pattern": "^\\d+$"
+ },
+ "when": "application",
+ "who": [
+  "anyone"
+ ],
+ "note": "Samoa's sheet on the OECD's automatic-exchange portal ('Information on Tax Identification Numbers', the jurisdiction's own sheet, signed by the Ministry of Customs and Revenue as competent authority), read 2026-10-30. TINs are governed by sections 12 to 14 of the Tax Administration Act 2012 (the Act at revenue.gov.ws refused this research's request with a 403, so it wasn't read). A TIN is issued upon approval of a business licence application, or to a person who employs people; it is not issued automatically to residents. So `when` is application and `who` anyone (the sheet sets no citizenship or residence). Structure: the sheet says there is no specific structure: numbers are issued in sequence from the last one allocated (it started at 70004; its example runs 11001, 11002). It sets no length, so the form gives the fewest (one digit) and no most, the pattern digits only, rather than a length read from its examples (the reading wave 8 held back). The sheet says what the TIN is used for (income tax, VAGST, PAYE), not that anything needs one, so `needed` is left out. No age, fee, time or check is stated.",
+ "sources": [
+  {
+   "url": "https://www.oecd.org/content/dam/oecd/en/topics/policy-issue-focus/aeoi/samoa-tin.pdf",
+   "title": "OECD AEOI portal, Samoa: Information on Tax Identification Numbers (the jurisdiction's own sheet)",
+   "read": "2026-10-30",
+   "said": "TINs are governed by sections 12 – 14 of the Tax Administration Act 2012. ... The TIN is issued upon approval of the business license application. ... It is not automatically issued to any or all tax residents. ... There is currently no specific or unique structure for the digits allocated for each TIN. ... Issuance of TIN started from the number 70004, there is also no specific reason for why it started from this number. ... If by today the TINs issued has come up to the number 11001, the next person who will register for a TIN will receive the TIN number of 11002."
+  }
+ ]
+}

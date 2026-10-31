@@ -1,0 +1,96 @@
+{
+ "country": "UZ",
+ "office": "the Ministry of Internal Affairs, applied for through the Single Portal of Interactive Public Services (my.gov.uz) or in person",
+ "currency": "UZS",
+ "routes": [
+  {
+   "id": "portal",
+   "where": "home",
+   "speed": "standard",
+   "within": {
+    "n": 10,
+    "unit": "working day"
+   },
+   "label": "through the Single Portal (my.gov.uz), at the electronic discount"
+  },
+  {
+   "id": "office",
+   "where": "home",
+   "speed": "standard",
+   "within": {
+    "n": 10,
+    "unit": "working day"
+   },
+   "label": "in person, at the full state duty"
+  }
+ ],
+ "passports": [
+  {
+   "for": "baby",
+   "under": 1,
+   "validYears": 2,
+   "pay": {
+    "portal": null,
+    "office": "352000"
+   }
+  },
+  {
+   "for": "child",
+   "from": 1,
+   "under": 16,
+   "validYears": 5,
+   "pay": {
+    "portal": null,
+    "office": "352000"
+   }
+  },
+  {
+   "for": "young adult",
+   "from": 16,
+   "under": 25,
+   "validYears": 5,
+   "pay": {
+    "portal": "396000",
+    "office": "440000"
+   }
+  },
+  {
+   "for": "adult",
+   "from": 25,
+   "validYears": 10,
+   "pay": {
+    "portal": "396000",
+    "office": "440000"
+   }
+  }
+ ],
+ "note": "Uzbekistan's biometric passport for travel abroad. The Law on State Duty (ZRU-600 of 6 January 2020, section 6 of its rates) sets the duty at 1 base calculation value (BRV), and 80 per cent of one for a citizen under 16; the BRV is 440,000 sum from 1 September 2026 (Decree UP-115 of 23 June 2026, as buxgalter.uz reports it), so 440,000 and 352,000 sum. Applied for through the Single Portal it's 396,000 sum (0.9 BRV, the electronic discount), as my.gov.uz shows; the portal's price for a child isn't shown, so it's left unknown. my.gov.uz gives 10 working days (a month for some applicants of 16 to 25 needing more checking, not modelled). Validity is the Cabinet of Ministers' regulation No. 49 of 30 January 2020 (amended by No. 492 of 2022), point 10: two years from birth to one, five years from one to 25, ten years after; that regulation is the consular one, its validity taken for every passport. The duty's exemptions and the consular fee abroad aren't modelled.",
+ "sources": [
+  {
+   "url": "https://lex.uz/docs/4680955",
+   "title": "Lex.uz (National Database of Legislation), Закон Республики Узбекистан «О государственной пошлине» от 06.01.2020 № ЗРУ-600, размеры ставок",
+   "read": "2026-10-30",
+   "said": "б) за выдачу биометрического паспорта гражданина Республики Узбекистан для выезда за границу 1 БРВ в) за выдачу биометрического паспорта для выезда за границу гражданам Республики Узбекистан, не достигшим шестнадцатилетнего возраста 80 процентов БРВ"
+  },
+  {
+   "url": "https://my.gov.uz/ru/applying-foreign-passport-v1/passport",
+   "title": "Единый портал интерактивных государственных услуг (my.gov.uz), Подача заявления на оформление загранпаспорта",
+   "read": "2026-10-30",
+   "said": "Сумма при подаче через Единый портал - 396000 сум (0.9 БРВ) ... Сроки оказания услуги 10 рабочих дней"
+  },
+  {
+   "url": "https://www.lex.uz/docs/4719876",
+   "title": "Lex.uz, Постановление Кабинета Министров № 49 от 30.01.2020, Положение о порядке оформления, выдачи и обмена биометрического паспорта для выезда за границу (консульскими учреждениями), пункт 10",
+   "read": "2026-10-30",
+   "said": "Биометрический паспорт для выезда за границу выдается гражданам со сроком действия: ... со дня рождения до одного года — на два года; ... от одного года до 25-летнего возраста — на 5 лет; ... лицам старше 25-летнего возраста — на 10 лет."
+  },
+  {
+   "url": "https://buxgalter.uz/publish/doc/text215798_kakie_brv_i_mrot_budem_ispolzovat_s_1_sentyabrya_2026_goda",
+   "title": "Buxgalter.uz, Какие БРВ и МРОТ будем использовать с 1 сентября 2026 года (24 June 2026)",
+   "read": "2026-10-30",
+   "kind": "secondary",
+   "quotes": "https://lex.uz/",
+   "said": "Принят Указ №УП-115 от 23.06.2026 г. «О повышении размеров заработной платы, пенсий, стипендий и пособий». ... БРВ 412 000 сум. 440 000 сум."
+  }
+ ]
+}

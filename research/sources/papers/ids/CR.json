@@ -1,0 +1,48 @@
+{
+ "country": "CR",
+ "document": "Cédula de identidad",
+ "office": "the Tribunal Supremo de Elecciones (Registro Civil), Sección Documentos de Identidad",
+ "currency": "CRC",
+ "routes": [
+  {
+   "id": "central",
+   "where": "home",
+   "speed": "standard",
+   "within": {
+    "n": 2,
+    "unit": "hour"
+   },
+   "label": "at the central offices in San José: two hours from capture"
+  },
+  {
+   "id": "regional",
+   "where": "home",
+   "speed": "standard",
+   "within": {
+    "n": 5,
+    "unit": "day"
+   },
+   "label": "at a regional office: five days at most"
+  }
+ ],
+ "cards": [
+  {
+   "for": "from 18",
+   "from": 18,
+   "validYears": 10,
+   "pay": {
+    "central": "0",
+    "regional": "0"
+   }
+  }
+ ],
+ "note": "The TSE's procedure sheet for a first cédula: every Costa Rican of 18 (or turning 18 by an election) applies in person; the service is free; the card is valid ten years (article 94 of the TSE's Organic Law); delivered two hours after capture at the central offices (next morning for applications after 14:00) and within five days at a regional office. Under 18 the separate minors' card (TIM) isn't modelled.",
+ "sources": [
+  {
+   "url": "https://www.tse.go.cr/pdf/requisitosytramites/Solicitud-de-cedula-de-identidad-por-primera-vez.pdf",
+   "title": "Tribunal Supremo de Elecciones (Costa Rica), Solicitud de Cédula de identidad por primera vez",
+   "read": "2026-10-28",
+   "said": "Gestión que debe realizar toda persona costarricense mayor de 18 años para obtener su cédula de identidad. ... 10 años, según artículo 94 de la Ley Orgánica del T.S.E y ... Este servicio es gratuito ... Oficinas centrales: Dos horas (2), desde la captura. ... Oficinas Regionales: Máximo cinco días."
+  }
+ ]
+}

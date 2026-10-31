@@ -1,0 +1,26 @@
+{
+ "country": "EC",
+ "name": "identity card number (cédula)",
+ "issuer": "the General Directorate of Civil Registry, Identification and Identification cards",
+ "format": {
+  "length": 10,
+  "pattern": "^\\d{10}$"
+ },
+ "when": "application",
+ "who": [
+  "citizens",
+  "residents"
+ ],
+ "needed": [
+  "tax"
+ ],
+ "note": "Ecuador's sheet (its government's own sheet on the OECD's automatic-exchange portal ('Information on Tax Identification Numbers'; the OECD's index page sits behind a bot check and wasn't opened, the sheet itself came straight back)), read 2026-10-30: the identity card (cédula) is conferred by the General Directorate of Civil Registry, Identification and Identification cards; its number is exclusive to one person and valid for every public and private act; it is mandatory for Ecuadorians from 18 and for foreigners residing in Ecuador. An individual's tax number (RUC) is the card's ten digits followed by 001, and is only issued to those with economic activity, so the cédula number is kept here: ten digits (its check rule isn't given, `check` left out). Read as given on application, to citizens and residents; 18 is the age from which it is mandatory, not the youngest it is given at, so no `from`. No fee or time is stated.",
+ "sources": [
+  {
+   "url": "https://www.oecd.org/content/dam/oecd/en/topics/policy-issue-focus/aeoi/ecuador-tin.pdf",
+   "title": "OECD AEOI portal, Ecuador: Information on Tax Identification Numbers (the jurisdiction's own sheet)",
+   "read": "2026-10-30",
+   "said": "The identification card number is exclusive and may not be assigned to another person. It is conferred by the General Directorate of Civil Registry, Identification, and Identification cards ... It is mandatory to obtain an identity card for Ecuadorians from the age of 18 and for foreign citizens residing in Ecuador. ... Ten digits of the identity or citizenship card: The last three digits are always 001."
+  }
+ ]
+}

@@ -1,0 +1,66 @@
+{
+ "country": "LS",
+ "office": "the Ministry of Home Affairs' passport offices and enrolment centres, in person",
+ "currency": "LSL",
+ "routes": [
+  {
+   "id": "home",
+   "where": "home",
+   "speed": "standard",
+   "within": null,
+   "label": "at a passport office"
+  },
+  {
+   "id": "emergency",
+   "where": "home",
+   "speed": "urgent",
+   "within": null,
+   "label": "as an emergency application"
+  },
+  {
+   "id": "lost",
+   "where": "home",
+   "speed": "standard",
+   "within": null,
+   "replacement": true,
+   "label": "a lost or damaged passport: the application fee and the M300.00 penalty"
+  }
+ ],
+ "passports": [
+  {
+   "for": "any",
+   "pages": 32,
+   "validYears": null,
+   "pay": {
+    "home": "130.00",
+    "emergency": "630.00",
+    "lost": "430.00"
+   }
+  },
+  {
+   "for": "any",
+   "pages": 64,
+   "validYears": null,
+   "pay": {
+    "home": "300.00",
+    "emergency": "800.00",
+    "lost": "600.00"
+   }
+  }
+ ],
+ "note": "The Ministry of Home Affairs' fees under the Lesotho Passports and Travel Documents (Fees) Regulations, 2019: M130.00 for the regular 32-page passport and M300.00 for 64 pages (the Ministry's FAQ gives M250.00 for 64 pages; the passports page, which names the regulations, is followed). An emergency application adds M500.00, as the FAQ's M630.00 total shows. Replacing a lost or damaged passport adds a M300.00 penalty (M430.00 for 32 pages, as the FAQ sums it; M600.00 for 64 pages by the same sum), written as a replacement route. Validity and processing times are leads.",
+ "sources": [
+  {
+   "url": "https://homeaffairs.gov.ls/passports",
+   "title": "Ministry of Home Affairs (Lesotho), Passport services",
+   "read": "2026-10-28",
+   "said": "FEES: Regular passport – 32 pages = M 130.00 Regular passport – 64 pages = M 300.00 Other passport types, fees and sundry refer to: 1.The Lesotho Passport and Travel Documents Act, 2018 2.Lesotho Passports and Travel Documents (Fees) Regulations, 2019."
+  },
+  {
+   "url": "https://www.homeaffairs.gov.ls/faqs",
+   "title": "Ministry of Home Affairs (Lesotho), FAQs",
+   "read": "2026-10-28",
+   "said": "How much does an emergency passport cost? Application: M 130.00 Emergency fee M500.00, total M630.00 ... Regular passport (32 pages) _ M130.00 Regular passport (64 pages) _ M250.00 ... Penalty for lost/damaged, pay M300.00 Application fee M130.00, total M430.00"
+  }
+ ]
+}

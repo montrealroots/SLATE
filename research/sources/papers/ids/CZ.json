@@ -1,0 +1,80 @@
+{
+ "country": "CZ",
+ "document": "občanský průkaz",
+ "office": "any municipal office with extended powers (in Prague, any of the district offices of Prague 1 to 22); for the shortened terms, also the Ministry of the Interior",
+ "currency": "CZK",
+ "routes": [
+  {
+   "id": "standard",
+   "where": "home",
+   "speed": "standard",
+   "within": {
+    "n": 30,
+    "unit": "day"
+   },
+   "label": "at a municipal office with extended powers: within 30 days"
+  },
+  {
+   "id": "five-days",
+   "where": "home",
+   "speed": "urgent",
+   "within": {
+    "n": 5,
+    "unit": "working day"
+   },
+   "label": "within 5 working days, applied for and collected at the same office or the Ministry"
+  },
+  {
+   "id": "next-day",
+   "where": "home",
+   "speed": "urgent",
+   "within": {
+    "n": 24,
+    "unit": "hour"
+   },
+   "label": "within 24 hours on working days, collected only at the Ministry of the Interior"
+  }
+ ],
+ "cards": [
+  {
+   "for": "under 15",
+   "under": 15,
+   "validYears": 5,
+   "pay": {
+    "standard": "100",
+    "five-days": "300",
+    "next-day": "500"
+   }
+  },
+  {
+   "for": "15 to 69",
+   "from": 15,
+   "under": 70,
+   "validYears": 10,
+   "pay": {
+    "standard": "0",
+    "five-days": "500",
+    "next-day": "1000"
+   }
+  },
+  {
+   "for": "70 and over",
+   "from": 70,
+   "validYears": 35,
+   "pay": {
+    "standard": "0",
+    "five-days": "500",
+    "next-day": "1000"
+   }
+  }
+ ],
+ "note": "A citizen over 15 with permanent residence in the Czech Republic must hold one. In the standard 30 days the card is free from 15 (when the old one expires or is first due), 100 korunas under 15; a citizen over 15 without permanent residence in the Czech Republic pays 200 (not modelled). The shortened terms' fees are the totals for applying and collecting at the same office or at the Ministry (split between the office and the Ministry when they differ).",
+ "sources": [
+  {
+   "url": "https://portal.gov.cz/sluzby-vs/S143",
+   "title": "Portál veřejné správy (gov.cz), Vydání občanského průkazu",
+   "read": "2026-10-28",
+   "said": "Občanský průkaz se vydává: občanům mladším 15 let s dobou platnosti na 5 let, občanům starším 15 let s dobou platnosti na 10 let, občanům starším 70 let s dobou platnosti na 35 let, ... jste občan České republiky, máte na jejím území trvalý pobyt a jste starší 15 let ... Přijetí žádosti o vydání občanského průkazu ve lhůtě do 24 hodin pracovního dne : při podání žádosti a převzetí u Ministerstva vnitra - 1000 Kč ... občanům mladším 15 let : při podání žádosti a převzetí u Ministerstva vnitra - 500 Kč ... Přijetí žádosti o vydání občanského průkazu ve lhůtě do 5 pracovních dnů : při podání žádosti a převzetí u Ministerstva vnitra - 500 Kč ... při podání žádosti a převzetí u stejného obecního úřadu obce s rozšířenou působností - 500 Kč občanům mladším 15 let : při podání žádosti a převzetí u Ministerstva vnitra - 300 Kč ... při podání žádosti a převzetí u stejného obecního úřadu obce s rozšířenou působností - 300 Kč ... Přijetí žádosti o vydání občanského průkazu občanu mladšímu 15 let - 100 Kč Přijetí žádosti o vydání občanského průkazu občanu staršímu 15 let, který nemá trvalý pobyt na území České republiky - 200 Kč ... Přijetí žádosti o vydání občanského průkazu ve lhůtě do 30 dnů z důvodu uplynutí doby platnosti občanského průkazu - bez správního poplatku ... Občanský průkaz se vydává ve lhůtě 30 dnů . Pokud potřebujete urychleně vydat občanský průkaz, můžete požádat o jeho vydání i ve lhůtě do 24 hodin v pracovních dnech nebo do 5 pracovních dnů ."
+  }
+ ]
+}

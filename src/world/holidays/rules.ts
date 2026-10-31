@@ -104,6 +104,8 @@ export interface Substitute {
   over?: true;
   /** The weekdays the day off passes over, where not those it's for (South Korea's Sunday Chuseok: the next weekday). */
   skip?: number[];
+  /** The next (or previous) day only, and none where that's already a holiday (Malaysia's Holidays Act 1951, s. 3). */
+  following?: true;
 }
 
 export interface CountryRules {
@@ -121,6 +123,12 @@ export interface CountryRules {
    * territories, each by its employment standards law); any other region keeps the country's.
    */
   regional?: string[];
+  /**
+   * The first-level regions whose rule for a holiday on their weekly day of rest the game hasn't read: their holidays
+   * are kept, the days off in place of them aren't (Malaysia's Kedah, Kelantan and Terengganu, whose weekly holiday
+   * is Friday).
+   */
+  unmoved?: string[];
   /** A day between two holidays (not substitutes) is one too, by this name (Japan's Act on National Holidays, article 3(3)). */
   between?: string;
 }
@@ -201,7 +209,9 @@ export function holidaysIn(rules: CountryRules, year: number, region?: string): 
     const step = sub.to === 'next' ? 1 : -1;
     const skip = sub.skip ?? sub.on;
     let d = h.day + step;
-    while (skip.includes(weekdayFromDays(d)) || (taken.has(d) && sub.shared !== true)) d += step;
+    if (sub.following === true) {
+      if (taken.has(d)) continue;
+    } else while (skip.includes(weekdayFromDays(d)) || (taken.has(d) && sub.shared !== true)) d += step;
     taken.add(d);
     if (sub.as === undefined) h.moved = true;
     out.push({ day: d, name: h.name, substitute: true });

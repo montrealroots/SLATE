@@ -1,0 +1,67 @@
+{
+ "country": "NZ",
+ "office": "the Department of Internal Affairs (Te Tari Taiwhenua), Passports",
+ "currency": "NZD",
+ "routes": [
+  {
+   "id": "standard",
+   "where": "home",
+   "speed": "standard",
+   "within": null,
+   "label": "standard"
+  },
+  {
+   "id": "urgent",
+   "where": "home",
+   "speed": "urgent",
+   "within": {
+    "n": 3,
+    "unit": "working day"
+   },
+   "label": "urgent, within 3 working days as the Department aims"
+  }
+ ],
+ "passports": [
+  {
+   "for": "adult",
+   "from": 16,
+   "validYears": 10,
+   "pay": {
+    "standard": "247",
+    "urgent": "494"
+   }
+  },
+  {
+   "for": "child",
+   "under": 16,
+   "validYears": 5,
+   "pay": {
+    "standard": "144",
+    "urgent": "391"
+   }
+  }
+ ],
+ "note": "Fees from 2 May 2025 (the Passport (Fees) Amendment Regulations 2025), GST included; the urgent price is the passport's plus the urgent service fee of $247, as 1News reported the Department's announcement (the regulations on legislation.govt.nz and passports.govt.nz answer this client with a bot check, not read). The standard processing time and the fees for applying from abroad are leads; the after-hours call-out service ($754 more) isn't modelled.",
+ "sources": [
+  {
+   "url": "https://www.govt.nz/browse/passports-citizenship-and-identity/get-or-renew-a-new-zealand-passport/get-or-renew-a-new-zealand-passport/",
+   "title": "Govt.nz (New Zealand Government), Get or renew a New Zealand passport",
+   "read": "2026-10-28",
+   "said": "If you are 16 or older, you need an adult passport. Adult passports cost $247 and are valid for 10 years. Child passports Child passports are for children aged 15 and under. Child passports cost $144 and are valid for 5 years. ... We aim to process applications for urgent processing within 3 working days, but this can depend on demand and factors such as complete information and a photo that meets the standards."
+  },
+  {
+   "url": "https://www.dia.govt.nz/press.nsf/d77da9b523f12931cc256ac5000d19b6/81b8eaa9c51a898acc258c7d0003b229!OpenDocument",
+   "title": "Department of Internal Affairs, Passport fees to increase from 2 May (1 May 2025)",
+   "read": "2026-10-28",
+   "said": "From 2 May 2025, the price of an adult passport will increase from $215 to $247, and the price of a child passport from $125 to $144 (incl. GST)."
+  },
+  {
+   "kind": "secondary",
+   "quotes": "https://www.legislation.govt.nz/secondary-legislation/pco-drafted/2025/75/en/latest/",
+   "url": "https://www.1news.co.nz/2025/05/01/price-of-new-zealand-passport-to-increase/",
+   "title": "1News, Price of New Zealand passport to increase (1 May 2025)",
+   "read": "2026-10-28",
+   "said": "The urgent service fee would increase from $215 to $247, bringing the total cost for an urgent passport to $494 for adults and $391 for children."
+  }
+ ]
+}

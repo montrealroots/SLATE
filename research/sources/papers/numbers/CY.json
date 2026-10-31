@@ -1,0 +1,25 @@
+{
+ "country": "CY",
+ "name": "tax identification number (TIN)",
+ "issuer": "the Tax Administration",
+ "format": {
+  "length": 9,
+  "pattern": "^\\d{8}[A-Z]$"
+ },
+ "when": "application",
+ "who": [
+  "anyone"
+ ],
+ "needed": [
+  "tax"
+ ],
+ "note": "Cyprus's sheet (its government's own sheet on the OECD's automatic-exchange portal ('Information on Tax Identification Numbers'; the OECD's index page sits behind a bot check and wasn't opened, the sheet itself came straight back)), read 2026-10-30: (dated 28 April 2023) the Tax Administration issues TINs under articles 5 and 5A of the Assessment and Collection of Taxes Law 1978; an individual obliged to register must obtain one, and none is issued to those not obliged; eight numbers and a capital Latin check letter (its algorithm isn't given, `check` left out). Read as given on application, to anyone obliged. No age, fee or time is stated.",
+ "sources": [
+  {
+   "url": "https://www.oecd.org/content/dam/oecd/en/topics/policy-issue-focus/aeoi/cyprus-tin.pdf",
+   "title": "OECD AEOI portal, Cyprus: Information on Tax Identification Numbers (the jurisdiction's own sheet)",
+   "read": "2026-10-30",
+   "said": "It is the responsibility of the obliged individual to register and obtain TIN. No TIN is issued to individuals who are not obliged to register. ... 99999999L 8 numbers followed by a letter"
+  }
+ ]
+}

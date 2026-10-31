@@ -1,0 +1,75 @@
+{
+ "country": "NZ",
+ "currency": "NZD",
+ "year": 2024,
+ "wealth": {
+  "p0p20": "-29104.3",
+  "p0p40": "31204.4",
+  "p0p60": "105891",
+  "p0p90": "315514.5",
+  "p0p99": "516653.8",
+  "p99p100": "14988133.5"
+ },
+ "income": {
+  "p0p20": "32640.6",
+  "p0p40": "45416.2",
+  "p0p60": "57345.2",
+  "p0p90": "75137.5",
+  "p0p99": "86796.40000000001",
+  "p99p100": "950446.8"
+ },
+ "liquid": {
+  "survey": "Stats NZ, Household Economic Survey, household net worth statistics, year ended June 2021",
+  "period": "2020-21",
+  "currency": "NZD",
+  "per": "household",
+  "bands": [
+   {
+    "from": 0,
+    "to": 20,
+    "deposits": "6000"
+   },
+   {
+    "from": 20,
+    "to": 40,
+    "deposits": "22000"
+   },
+   {
+    "from": 40,
+    "to": 60,
+    "deposits": "34000"
+   },
+   {
+    "from": 60,
+    "to": 80,
+    "deposits": "60000"
+   },
+   {
+    "from": 80,
+    "to": 100,
+    "deposits": "163000"
+   }
+  ]
+ },
+ "note": "The World Inequality Database (WID.world, bulk download of 15 October 2026), New Zealand, 2024: average net personal wealth (ahwealj992) and average post-tax disposable income (adiincj992) per adult over 20, resources split equally within couples, in NZD of that year, for the bottom 20, 40, 60, 90 and 99 percent and the top 1 percent; each family's band is read from them. Read 2026-10-30. Savings (the owner's ruling of 2026-10-30: only what a family holds as deposits and cash): Stats NZ, Household net worth statistics: Year ended June 2021 (corrected workbook), Table 2.02 Household assets and liabilities, mean value, by net-worth quintile, year ended June 2021, in $000s (times 1000 here; rounded to the nearest thousand at source, so Quintile 1's deposits of 6 and net worth of -5 are coarse). \"Currency and deposits\" is the liquid item. The workbook was read with openpyxl and Table 2.02 saved as CSV; its first block is 2021. Quintile 1's net worth is negative (-$5,000), so its share of net wealth is negative. No top 1 percent.",
+ "sources": [
+  {
+   "url": "https://wid.world/bulk_download/wid_all_data.zip",
+   "title": "World Inequality Database, bulk download (WID_data_NZ.csv and WID_metadata_NZ.csv), wid.world, files of 15 October 2026",
+   "read": "2026-10-30",
+   "said": "NZ;ahwealj992;p0p20;2024;-29104.3;992;j;0 ... NZ;ahwealj992;p0p40;2024;31204.4;992;j;0 ... NZ;ahwealj992;p0p60;2024;105891;992;j;0 ... NZ;ahwealj992;p0p90;2024;315514.5;992;j;0 ... NZ;ahwealj992;p0p99;2024;516653.8;992;j;0 ... NZ;ahwealj992;p99p100;2024;14988133.5;992;j;0 ... NZ;adiincj992;p0p20;2024;32640.6;992;j;5 ... NZ;adiincj992;p0p40;2024;45416.2;992;j;5 ... NZ;adiincj992;p0p60;2024;57345.2;992;j;5 ... NZ;adiincj992;p0p90;2024;75137.5;992;j;5 ... NZ;adiincj992;p0p99;2024;86796.40000000001;992;j;5 ... NZ;adiincj992;p99p100;2024;950446.8;992;j;5"
+  },
+  {
+   "url": "https://wid.world/bulk_download/wid_all_data.zip",
+   "title": "World Inequality Database, bulk download, WID_metadata_NZ.csv (variables ahwealj992 and adiincj992)",
+   "read": "2026-10-30",
+   "said": "NZ;ahwealj992;992;j; ... equal-split adults ... ;The population is comprised of individuals over age 20.;NZD; ... NZ;adiincj992;992;j;"
+  },
+  {
+   "url": "https://www.stats.govt.nz/assets/Uploads/Household-net-worth-statistics/Household-net-worth-statistics-Year-ended-June-2021/Download-data/household-net-worth-statistics-year-ended-June-2021-corrected.xlsx",
+   "title": "Stats NZ, Household net worth statistics: Year ended June 2021 (corrected), Table 2.02",
+   "read": "2026-10-30",
+   "said": "Household assets and liabilities – mean value ... By net-worth quintile(1)(2)(3) ... Year ended June 2021(R) ... ($000s)(5) ... ,Currency and deposits,6,15.5,22,13.4,34,14.9,60,13.6,163,12.5,57,9.2 ... Total household assets,,69,14.3,264,10.2,599,3.8,979,2.6,3155,6.7,1014,4.6 ... Total household net worth,,-5,129.7,135,4.2,407,1.9,821,1.6,2978,7.2,868,5.5"
+  }
+ ]
+}

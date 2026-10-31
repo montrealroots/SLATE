@@ -1,0 +1,80 @@
+{
+ "country": "GE",
+ "document": "electronic identity card",
+ "office": "a Public Service Hall or a territorial office of the Public Service Development Agency",
+ "currency": "GEL",
+ "routes": [
+  {
+   "id": "ten-days",
+   "where": "home",
+   "speed": "standard",
+   "within": {
+    "n": 10,
+    "unit": "working day"
+   },
+   "label": "on the 10th working day"
+  },
+  {
+   "id": "five-days",
+   "where": "home",
+   "speed": "urgent",
+   "within": {
+    "n": 5,
+    "unit": "working day"
+   },
+   "label": "on the 5th working day"
+  },
+  {
+   "id": "three-days",
+   "where": "home",
+   "speed": "urgent",
+   "within": {
+    "n": 3,
+    "unit": "working day"
+   },
+   "label": "on the 3rd working day"
+  },
+  {
+   "id": "two-days",
+   "where": "home",
+   "speed": "urgent",
+   "within": {
+    "n": 2,
+    "unit": "working day"
+   },
+   "label": "on the 2nd working day"
+  },
+  {
+   "id": "same-day",
+   "where": "home",
+   "speed": "urgent",
+   "within": {
+    "n": 1,
+    "unit": "day"
+   },
+   "label": "on the same day"
+  }
+ ],
+ "cards": [
+  {
+   "for": "anyone",
+   "validYears": null,
+   "pay": {
+    "ten-days": "60",
+    "five-days": "80",
+    "three-days": "100",
+    "two-days": "120",
+    "same-day": "150"
+   }
+  }
+ ],
+ "note": "The Public Service Development Agency's page: a citizen who has reached 14 must obtain one within six months (not abroad), and one may be issued under 14; the fees by term; photos at the Agency cost GEL 5 more (not modelled), and students, people with disabilities and some others pay less (not modelled). The card's term isn't on the page, so it's null.",
+ "sources": [
+  {
+   "url": "https://sda.gov.ge/en/products/id-card/",
+   "title": "Public Service Development Agency (Georgia), Identity card",
+   "read": "2026-10-28",
+   "said": "A Georgian citizen having reached 14 years of age is obliged to obtain an identity card within the term of 6 months. Identity card may also be issued to a Georgian citizen under the age of 14. ... On the 10 th working day – GEL 60; On the 5 th working day – GEL 80; On the 3 rd working day – GEL 100; On the 2 nd working day – GEL 120; On the same day – GEL 150."
+  }
+ ]
+}

@@ -1,0 +1,41 @@
+{
+ "country": "BR",
+ "routes": [
+  {
+   "id": "trabalho",
+   "name": "Autorização de residência para fins de trabalho",
+   "for": "work",
+   "apply": "either",
+   "work": "sponsor",
+   "counts": true
+  },
+  {
+   "id": "cultural",
+   "name": "Autorização de residência para atividade com relevância cultural",
+   "for": "talent",
+   "apply": "either",
+   "work": "any",
+   "counts": true
+  },
+  {
+   "id": "tratado",
+   "name": "Autorização de residência – beneficiário de tratado em matéria de residência e livre circulação",
+   "for": "free movement",
+   "apply": "either",
+   "work": "any",
+   "counts": true,
+   "groups": [
+    "Mercosur"
+   ]
+  }
+ ],
+ "note": "Brazil, read in the Migration Law (Lei nº 13.445, of 24 May 2017) as originally published, from the Chamber of Deputies' legislation site on 2026-10-30; the Planalto's consolidated text and the Federal Police's and the Ministry of Justice's pages didn't answer this client or sat behind a bot check, so later amendments, the regulation (Decreto nº 9.199/2017) with its terms, and the fees in force weren't read and nothing of term, fee or time is written. Article 30 lets residence be authorised, on registration, for work, for an activity of cultural relevance, and to a beneficiary of a treaty on residence and free movement (the Mercosur Residence Agreement, the game's reading of the treaty meant) or the holder of a job offer. A performer's first route is work, read as tied to the contract it rests on ('sponsor', the game's reading); the cultural-relevance route is read as a talent route that leaves the work open. Each may be asked for at a consulate as a temporary visa or in Brazil as a residence authorisation ('either'). Ordinary naturalisation asks four years' residence in the national territory (article 65), which any authorised residence is read as counting toward.",
+ "sources": [
+  {
+   "url": "https://www2.camara.leg.br/legin/fed/lei/2017/lei-13445-24-maio-2017-784925-publicacaooriginal-152812-pl.html",
+   "title": "Lei nº 13.445, de 24 de maio de 2017 (Lei de Migração), publicação original",
+   "read": "2026-10-30",
+   "said": "Art. 30. A residência poderá ser autorizada, mediante registro, ao imigrante, ao residente fronteiriço ou ao visitante que se enquadre em uma das seguintes hipóteses: ... realização de investimento ou de atividade com relevância econômica, social, científica, tecnológica ou cultural; ... a) seja beneficiária de tratado em matéria de residência e livre circulação; b) seja detentora de oferta de trabalho; ... II - ter residência em território nacional, pelo prazo mínimo de 4 (quatro) anos;"
+  }
+ ]
+}

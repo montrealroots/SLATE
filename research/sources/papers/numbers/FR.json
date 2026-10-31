@@ -1,0 +1,32 @@
+{
+ "country": "FR",
+ "name": "numéro d'inscription au répertoire (NIR), the numéro de sécurité sociale",
+ "issuer": "the Institut national de la statistique et des études économiques (Insee), in the répertoire national d'identification des personnes physiques (RNIPP)",
+ "format": {
+  "length": 15,
+  "pattern": "^[12]\\d{14}$"
+ },
+ "when": "birth",
+ "who": [
+  "citizens",
+  "residents"
+ ],
+ "needed": [
+  "health"
+ ],
+ "note": "Insee's definition and Service-Public's page (verified 14 September 2026), read 2026-10-30: everyone born in metropolitan France or an overseas department is entered in the RNIPP and given the NIR, used by the health insurance funds for the carte Vitale; 13 digits (sex 1 or 2, year, month, a 5-digit place of birth, a 3-digit order number) and a 2-digit control key, 15 in all. Read as given at birth, to those born in France (citizens and residents in the game's terms); someone born abroad who works in France is given one when first registered with social security, not modelled. Corsica's department codes 2A and 2B and the provisional numbers aren't held by the pattern (the sources say digits). The key's algorithm (97 less the number's remainder by 97) isn't stated in what was read and the game doesn't compute it, so `check` is left out. No fee or time is stated.",
+ "sources": [
+  {
+   "url": "https://www.insee.fr/fr/metadonnees/definition/c1409",
+   "title": "Insee, Définition: Numéro d'inscription au répertoire (NIR)",
+   "read": "2026-10-30",
+   "said": "Toute personne née en France métropolitaine et dans les départements d'outre-mer (DOM) est inscrite au répertoire national d'identification des personnes physiques (RNIPP). L'inscription à ce répertoire entraîne l'attribution du numéro d'inscription au répertoire (NIR) qui est utilisé notamment par les organismes d'assurance maladie pour la délivrance des « cartes vitales ». ... Ce numéro d'identification unique de l'individu est formé de 13 chiffres"
+  },
+  {
+   "url": "https://www.service-public.gouv.fr/particuliers/vosdroits/F33078",
+   "title": "Service-Public.fr, Que signifie le numéro de Sécurité sociale ? (verified 14 September 2026)",
+   "read": "2026-10-30",
+   "said": "Vérifié le 14 septembre 2026 ... Ce numéro est composé : ... 13 chiffres ... clé de contrôle ... 2 chiffres"
+  }
+ ]
+}

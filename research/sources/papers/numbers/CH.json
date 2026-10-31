@@ -1,0 +1,25 @@
+{
+ "country": "CH",
+ "name": "OASI Number (AHV-Versichertennummer)",
+ "issuer": "the Central Compensation Office (CCO)",
+ "format": {
+  "length": 13,
+  "pattern": "^756\\d{10}$"
+ },
+ "when": "birth",
+ "who": [
+  "residents"
+ ],
+ "needed": [
+  "tax"
+ ],
+ "note": "Switzerland's sheet (its government's own sheet on the OECD's automatic-exchange portal ('Information on Tax Identification Numbers'; the OECD's index page sits behind a bot check and wasn't opened, the sheet itself came straight back)), read 2026-10-30: an individual's TIN is the Old-age and Survivors' Insurance Number (AHV/AVS number), issued by the Central Compensation Office to residents and those habitually in Switzerland, at the registration of the birth in Infostar or when the State Secretariat for Migration reports an arrival; since 2008 it is 756, nine random digits and a check digit (13 digits, written 756.1234.5678.97; the check rule isn't given here, `check` left out). Its systematic use is restricted by law. Read as given at birth, to residents. No fee or time is stated.",
+ "sources": [
+  {
+   "url": "https://www.oecd.org/content/dam/oecd/en/topics/policy-issue-focus/aeoi/switzerland-tin.pdf",
+   "title": "OECD AEOI portal, Switzerland: Information on Tax Identification Numbers (the jurisdiction's own sheet)",
+   "read": "2026-10-30",
+   "said": "Old-age and Survivors’ Insurance Number (hereinafter: OASI Number ... issued by the Central Compensation Office (CCO). ... Essentially, an OASI Number is assigned to individuals who are residents of Switzerland and to individuals who have their habitual abode in Switzerland. This happens immediately at the moment of the registration of an individual's birth certificate ... It consists of an initial 3-digit country code (Switzerland = 756), a 9-digit random number which provides a lifelong, unique and anonymous identification to each person, and a final check digit."
+  }
+ ]
+}

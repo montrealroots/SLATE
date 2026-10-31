@@ -1,0 +1,27 @@
+{
+ "country": "LK",
+ "national": {
+  "name": "Account Number",
+  "parts": [
+   {
+    "name": "Account Number",
+    "length": 18,
+    "kind": "n",
+    "min": 6,
+    "drawn": [
+     15,
+     15
+    ]
+   }
+  ]
+ },
+ "note": "No rule of the Central Bank of Sri Lanka fixing an account number's length was read (its payments pages answered 404). LankaPay, the national payment network of Sri Lanka, which runs CEFTS (its real-time interbank transfers), lists on its CEFTS page (read 2026-10-31; the page's statistics are for the financial year ending 31 March 2025) the account number format of each of its participant banks and finance companies, for the sender to 'verify the account number formats, before you initiate the fund transfer': from 6 digits (Commercial Credit & Finance PLC) to 18 (Citizen Development Business Finance PLC), most at 10 to 15 (Bank of Ceylon, Commercial Bank of Ceylon and Citibank 10, Bank of Ceylon's 'without the branch code'; Hatton National Bank, Sampath, NDB, NSB and DFCC 12; Amana and Public Bank 13; State Bank of India 14; People's Bank, Seylan, Bank of China and L B Finance 15; Union Bank of Colombo 16). So the number is written as 6 to 18 digits. Standard Chartered, the bank the game's Sri Lankan account is held at, is listed at 'Maximum 15 digits', with no fewest, so a new account there is drawn at 15 digits (the lead's choice of 2026-10-31: drawing at the national most, 18, would give it a number its own bank's line refuses; 15 is the length its line allows at most, and a reading). Not held: the four-digit bank code and three-digit branch code a transfer also names (not stated on the page read), and any check digit (none is published on the page; each bank's own).",
+ "sources": [
+  {
+   "url": "https://lankapay.net/en/for-business/real-time-payments-cefts",
+   "title": "LankaPay, Real-Time Payments (CEFTS), for business: account number formats of the participating financial institutions",
+   "read": "2026-10-31",
+   "said": "Verify the account number formats, before you initiate the fund transfer ... Commercial Credit & Finance PLC ... 06 digits account number ... Citizen Development Business Finance PLC ... 18 digits for any account number ... Bank of Ceylon ... 10 digits for any account number, without the branch code ... Standard Chartered Bank ... Maximum 15 digits for account number ... Union Bank of Colombo PLC ... 16 digits for any account number ... LankaPay is the national payment network of Sri Lanka"
+  }
+ ]
+}

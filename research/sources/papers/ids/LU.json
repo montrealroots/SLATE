@@ -1,0 +1,87 @@
+{
+ "country": "LU",
+ "document": "carte d'identité",
+ "office": "Guichet.lu's desk or the commune of residence; abroad, a diplomatic or consular mission",
+ "currency": "EUR",
+ "routes": [
+  {
+   "id": "normal",
+   "where": "home",
+   "speed": "standard",
+   "within": {
+    "n": 10,
+    "unit": "working day"
+   },
+   "label": "at Guichet.lu or the commune: 10 working days"
+  },
+  {
+   "id": "accelerated",
+   "where": "home",
+   "speed": "urgent",
+   "within": {
+    "n": 3,
+    "unit": "working day"
+   },
+   "label": "accelerated procedure, at Guichet.lu or the commune: 3 working days"
+  },
+  {
+   "id": "mission",
+   "where": "abroad",
+   "speed": "standard",
+   "within": null,
+   "label": "at a diplomatic or consular mission: longer delivery"
+  },
+  {
+   "id": "mission-accelerated",
+   "where": "abroad",
+   "speed": "urgent",
+   "within": null,
+   "label": "accelerated procedure at a mission"
+  }
+ ],
+ "cards": [
+  {
+   "for": "under 4",
+   "under": 4,
+   "validYears": 2,
+   "pay": {
+    "normal": "5",
+    "accelerated": "45",
+    "mission": "25",
+    "mission-accelerated": "45"
+   }
+  },
+  {
+   "for": "4 to 15",
+   "from": 4,
+   "under": 16,
+   "validYears": 5,
+   "pay": {
+    "normal": "10",
+    "accelerated": "45",
+    "mission": "30",
+    "mission-accelerated": "45"
+   }
+  },
+  {
+   "for": "over 15",
+   "from": 16,
+   "validYears": 10,
+   "pay": {
+    "normal": "14",
+    "accelerated": "45",
+    "mission": "34",
+    "mission-accelerated": "45"
+   }
+  }
+ ],
+ "note": "The card is compulsory for a Luxembourger over 15 living in Luxembourg. A commune may add a chancery tax of its own, not included. A mission's delivery takes longer by an amount not stated.",
+ "sources": [
+  {
+   "url": "https://guichet.public.lu/fr/citoyens/citoyennete/papiers-identite/carte-identite/demande-carte-identite.html",
+   "title": "Guichet.lu, Demande d'une carte d'identité luxembourgeoise",
+   "read": "2026-10-28",
+   "said": "La carte d’identité est obligatoire pour toute personne de nationalité luxembourgeoise qui est âgée de plus de 15 ans et qui réside au Luxembourg. ... 10 jours ouvrés pour la procédure normale ; 3 jours ouvrés pour la procédure accélérée . Un délai de livraison supplémentaire s’applique aux demandes introduites auprès d’une mission diplomatique ou consulaire. ... Âge du titulaire Durée de validité Accueil physique de Guichet.lu ou commune de résidence Mission diplomatique ou consulaire > 15 ans 10 ans 14 euros 34 euros 4 à 15 ans 5 ans 10 euros 30 euros < 4 ans 2 ans 5 euros 25 euros En cas de procédure accélérée , le coût est fixé à 45 euros , peu importe le lieu de la demande ou la durée de validité de la carte. Lorsque vous faites la demande auprès de votre commune, il est possible que vous deviez payer en plus une taxe de chancellerie sur place."
+  }
+ ]
+}

@@ -1,0 +1,27 @@
+{
+ "country": "HR",
+ "name": "osobni identifikacijski broj (OIB)",
+ "issuer": "Ministarstvo financija – Porezna uprava (the Tax Administration)",
+ "format": {
+  "length": 11,
+  "pattern": "[0-9]{11}"
+ },
+ "when": "birth",
+ "who": [
+  "citizens",
+  "anyone"
+ ],
+ "within": {
+  "n": 30,
+  "unit": "day"
+ },
+ "note": "Read the Personal Identification Number Act (Zakon o osobnom identifikacijskom broju, Narodne novine 60/2008, in force 2009-01-01, as first published; later amendments not read): art. 3, eleven digits, ten chosen at random and one check digit (the algorithm is not named in the Act, so the format names no check); art. 8, the Tax Administration assigns it of its own motion, to Croatian citizens from the entry in the register of births (or in the citizenship book), to a foreign person on the occasion that makes them followed in Croatia; art. 10, the certificate of the number is delivered within 30 days of its assignment, read as 'within'. Readings: 'when' is birth for citizens (the foreigner's occasion, such as buying property or taking work, the form doesn't hold); 'anyone' stands for the foreign person with such an occasion. Art. 20 leaves any fee to a regulation not read, so no fee is given.",
+ "sources": [
+  {
+   "url": "https://narodne-novine.nn.hr/clanci/sluzbeni/2008_05_60_2033.html",
+   "title": "Zakon o osobnom identifikacijskom broju (Narodne novine 60/2008), arts. 3, 5, 8 and 10",
+   "read": "2026-10-30",
+   "said": "Osobni identifikacijski broj sastoji se od jedanaest znamenki, i to od deset znamenki koje su određene slučajnim odabirom i ne sadrže informacije koje pokazuju vezu s obveznikom osobnoga identifikacijskog broja kojemu je dodijeljen te od jedne znamenke koja je kontrolni broj. ... Ministarstvo financija – Porezna uprava po službenoj dužnosti određuje i dodjeljuje osobni identifikacijski broj na temelju podataka o kojima nadležna tijela vode službene evidencije, odmah nakon preuzimanja upisanih podataka. ... Hrvatskim državljanima osobni identifikacijski broj određuje se i dodjeljuje na temelju podataka nadležnog tijela o upisu u maticu rođenih ... Stranoj osobi osobni identifikacijski broj određuje se i dodjeljuje na temelju podataka nadležnih tijela i pravnih osoba o nastalom povodu za praćenje strane osobe na području Republike Hrvatske. ... Potvrdu o dodijeljenom osobnom identifikacijskom broju Ministarstvo financija – Porezna uprava dostavlja obveznicima broja najkasnije u roku od 30 dana od trenutka određivanja i dodjeljivanja osobnoga identifikacijskog broja."
+  }
+ ]
+}

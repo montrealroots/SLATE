@@ -1,0 +1,112 @@
+{
+ "country": "GL",
+ "cards": [
+  {
+   "bank": "Bankivik",
+   "card": "MC Standard (uden forsikring)",
+   "rate": {
+    "percent": "14.50",
+    "per": "year"
+   },
+   "fees": [
+    {
+     "fee": "150",
+     "per": "year"
+    }
+   ],
+   "cash": {
+    "fee": {
+     "percent": "2",
+     "min": "50"
+    }
+   },
+   "fx": "2.0",
+   "grace": 42,
+   "returned": "200"
+  },
+  {
+   "bank": "Bankivik",
+   "card": "MC Standard",
+   "rate": {
+    "percent": "14.50",
+    "per": "year"
+   },
+   "fees": [
+    {
+     "fee": "250",
+     "per": "year"
+    }
+   ],
+   "cash": {
+    "fee": {
+     "percent": "2",
+     "min": "50"
+    }
+   },
+   "fx": "2.0",
+   "grace": 42,
+   "returned": "200"
+  },
+  {
+   "bank": "Bankivik",
+   "card": "MC Gold",
+   "rate": {
+    "percent": "14.50",
+    "per": "year"
+   },
+   "fees": [
+    {
+     "fee": "1000",
+     "per": "year"
+    }
+   ],
+   "cash": {
+    "fee": {
+     "percent": "2",
+     "min": "50"
+    }
+   },
+   "fx": "2.0",
+   "grace": 42,
+   "returned": "200"
+  },
+  {
+   "bank": "Bankivik",
+   "card": "MC Platinum",
+   "rate": {
+    "percent": "14.50",
+    "per": "year"
+   },
+   "fees": [
+    {
+     "fee": "1800",
+     "per": "year"
+    }
+   ],
+   "cash": {
+    "fee": {
+     "percent": "2",
+     "min": "50"
+    }
+   },
+   "fx": "2.0",
+   "grace": 42,
+   "returned": "200"
+  }
+ ],
+ "note": "The main banks: Grønlandsbanken and Bankivik, Greenland's two banks. Grønlandsbanken's site (banken.gl) answers 403 to every request through its gateway's firewall (30 October 2026), so its cards aren't written. Bankivik's price book (in force from 25 September 2026) and its interest overview (in force from 1 May 2026), read in full: its four personal Mastercard credit cards, the Standard without insurance, Standard, Gold and Platinum, each with its yearly card fee from the price book (150, 250, 1,000 and 1,800 kroner; the older interest overview gives 900 and 1,600 for the Gold and Platinum, superseded). The interest overview gives each a nominal rate 'from 0.00% to 14.50%', and its note 12 says the lowest applies when the whole balance is paid when billed and the highest when it isn't: so the rate on what's carried is 14.50% a year, written so, and the bill comes 15 to 42 days after a purchase, written as 42 days' grace. Cash withdrawals cost 2% (at least 50 kroner) at home and abroad; payments in shops cost nothing; spending in another currency is converted at the Nets rate plus 1.5% for European currencies and 2.0% for others (written as 2.0); a payment returned for want of funds costs 200 kroner. The family and business cards and the fees for urgent orders, couriers, copies, unjustified disputes, blocking for misuse and limit changes, met only on request or misuse, aren't written; no minimum payment, late fee or over-limit fee is stated. This file kept the MC Standard without insurance, read on 29 October 2026, and adds the rest. Wave 4 (30 October 2026): no bank was added. Greenland has only these two banks, and Grønlandsbanken's firewall answered 403 on the earlier reading, so it wasn't retried. No minimum payment is published for Bankivik's four Mastercards; tried: its price book and interest overview (read again 2026-10-30, none stated), its card pages (404 at the addresses tried), a search in Danish for BankNordik's card terms (only its general business terms, with no card repayment), and archive.org's availability API (its snapshots can't be read: web.archive.org is refused by this environment's egress), which lists no snapshot of its site.",
+ "sources": [
+  {
+   "url": "https://www.bankivik.gl/-/media/banknordik/files/priser-og-vilkaar/gl/priser/prisbog_gl.pdf?rev=534a2d71754f4e7497abd3c59ba88580",
+   "title": "Bankivik, Prisbog (in force from 25 September 2026)",
+   "read": "2026-10-30",
+   "said": "Gældende fra 25. september 2026 ... Mastercard Standard uden forsikring, årligt kortgebyr 150 kr. Kort ... Mastercard Standard, årligt kortgebyr 250 kr. Kort ... Mastercard Gold, årligt kortgebyr 1.000 kr. Kort ... Mastercard Platinum, årligt kortgebyr 1.800 kr. Kort ... Hævning i pengeautomat hos Bankivik 2%, min. 50 kr. Hævning ... Returnering pga. manglende dækning 200 kr. Returnering ... Valutakurs på bankdagen før transaktionen cleares i Nets tillagt 1,5%. ... Valutakurs på bankdagen før transaktionen cleares i Nets tillagt 2,0%."
+  },
+  {
+   "url": "https://www.bankivik.gl/-/media/banknordik/files/priser-og-vilkaar/gl/priser/renteoversigt_gl.pdf",
+   "title": "Bankivik, Renteoversigt Grønland (in force from 1 May 2026)",
+   "read": "2026-10-30",
+   "said": "Gældende fra 1. maj 2026 ... 12 Pålydende rente 0,00% 14,50% ... Laveste sats bruges, når hele saldoen indfries på faktureringstidspunktet, hvorved saldoen er rentefri. ... Højeste sats bruges, når hele saldoen ikke indfries på faktureringstidspunktet. ... Fakturering sker 15-42 dage afhængigt af datoen for, hvornår kortet er brugt."
+  }
+ ]
+}

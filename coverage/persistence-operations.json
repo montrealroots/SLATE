@@ -18,7 +18,8 @@
    "server-retries-once",
    "server-store",
    "server-refusals-in-players-terms",
-   "where-lives-are-kept"
+   "where-lives-are-kept",
+   "save-load-continue"
   ]
  },
  "rows": [
@@ -55,7 +56,8 @@
     "tests/core/persistence/local.test.ts::the key stores > IndexedDB: a database that won't open is tried again",
     "tests/core/persistence/local.test.ts::the key stores > IndexedDB: a transaction that fails or is aborted rejects with its error",
     "tests/core/persistence/local.test.ts::the key stores > the device's: IndexedDB where there is one, local storage otherwise",
-    "tests/core/persistence/local.test.ts::lives kept on this device > use the device's own store when given none"
+    "tests/core/persistence/local.test.ts::lives kept on this device > use the device's own store when given none",
+    "tests/core/persistence/local.test.ts::the key stores > the device's: local storage from the first time IndexedDB won't open, and only then"
    ]
   },
   {
@@ -63,7 +65,9 @@
    "status": "proven",
    "tests": [
     "tests/core/persistence/local.test.ts::the key stores > local storage: reads, writes and removes, and says when there is none",
-    "tests/core/persistence/local.test.ts::the key stores > the device's: IndexedDB where there is one, local storage otherwise"
+    "tests/core/persistence/local.test.ts::the key stores > the device's: IndexedDB where there is one, local storage otherwise",
+    "tests/core/persistence/local.test.ts::the key stores > the device's: local storage from the first time IndexedDB won't open, and only then",
+    "tests/core/persistence/local.test.ts::the key stores > the device's: a life kept in local storage while IndexedDB wouldn't open is found once it does"
    ]
   },
   {
@@ -87,7 +91,8 @@
    "status": "proven",
    "tests": [
     "tests/core/persistence/local.test.ts::lives kept on this device > let a life go keeping it as the copy, but never write a damaged one over a good copy",
-    "tests/core/persistence/server.test.ts::the backend functions > let a life go as the copy, freeing its place for a new one"
+    "tests/core/persistence/server.test.ts::the backend functions > let a life go as the copy, freeing its place for a new one",
+    "tests/core/persistence/local.test.ts::lives kept on this device > let a life go on a full device, its copy written into the room it left, or the copy before kept"
    ]
   },
   {
@@ -157,6 +162,13 @@
    "status": "proven",
    "tests": [
     "tests/core/persistence/server.test.ts::where lives are kept > on the server where the deployment injects its client, on this device otherwise"
+   ]
+  },
+  {
+   "key": "save-load-continue",
+   "status": "proven",
+   "tests": [
+    "tests/core/persistence/continue.test.ts::a life saved, opened and played on > ends where the life never saved ends"
    ]
   }
  ]

@@ -1,0 +1,23 @@
+{
+ "country": "MY",
+ "years": 10,
+ "renounce": false,
+ "lapses": true,
+ "note": "GLOBALCIT's Citizenship Law Dataset v3.0 (EUI, 2025), coding the law in force on 1 January 2024 (A06a Const 19, 16; A06b Const 19, 16; L05 Const 24(1); Const 24(4)): ordinary naturalisation after 10 years' residence; no renunciation of other citizenships required; a citizen loses the citizenship on voluntarily taking another. Reforms after that date are checked in the file's later sources, where a later source is given. Citizenship at birth is read from the same dataset's 2024 coding of modes A01a (descent, born in country: Wedlock restriction), A01b (descent, born abroad: Gender restriction: no or restricted access if the mother is a citizen (wedlock condition/supplementary provision may apply)), A02a (birth in country: Parental residence restriction) and A02b (birth in country to a parent born there: No provision), as its codebook (RSC/GLOBALCIT 2025/01, sections 3.2.1a to 3.2.2b) defines them: by birth in the territory only on the condition the dataset states; by descent from either parent, a child born abroad on the limit the dataset states. The coding also records a wedlock restriction (a child born out of wedlock may not take it from a citizen father), which the form doesn't hold. Changes to the law at birth after 1 January 2024 weren't checked for this file.",
+ "sources": [
+  {
+   "url": "https://cadmus.eui.eu/bitstreams/3b166501-e695-48d7-9e27-d7bef061573a/download",
+   "title": "GLOBALCIT Citizenship Law Dataset v3.0 (Vink, van der Baaren, Bauböck, Dzankic, Honohan, Manby; EUI Research Data, 2025), country-year-mode files, Malaysia, 2024",
+   "read": "2026-10-29",
+   "kind": "secondary",
+   "quotes": "https://globalcit.eu/national-citizenship-laws/",
+   "said": "Person has been resident in Malaysia for 12 months immediately prior to the application, and was resident (holding Malaysian permanent resident status) in the country for 10 out of 12 years prior to the application. ... n.a. ... Person acquired citizenship of another country by a voluntary and formal act other than by marriage; Person is a woman who is a citizen by registration and who subsequently acquired citizenship of another country through marriage with a foreigner. ... Wedlock restriction ... Person is born in Malaysia to a citizenship mother or in wedlock to a citizen father. ... Gender restriction: no or restricted access if the mother is a citizen (wedlock condition/supplementary provision may apply) ... Person is born abroad to a father who is a citizen and was born in Malaysia, to a father who is a citizen and resident abroad in the service of the government, or to a father who is a citizen and the child is registered with the Malaysian authorities within 1 year after birth.; Person is under the age of 21 years and was born abroad to a mother who is a citizen and a father who is not a citizen. ... Parental residence restriction ... Person is born in Malaysia to a permanently resident foreigner. Unless born to a father who is a foreign diplomat, or the father is an enemy alien and the child is born in a place then under occupation by the enemy. ... No provision"
+  }
+ ],
+ "atBirth": {
+  "soil": "conditional",
+  "soilIf": "Person is born in Malaysia to a permanently resident foreigner. Unless born to a father who is a foreign diplomat, or the father is an enemy alien and the child is born in a place then under occupation by the enemy.",
+  "descent": "either parent",
+  "descentAbroad": "Person is born abroad to a father who is a citizen and was born in Malaysia, to a father who is a citizen and resident abroad in the service of the government, or to a father who is a citizen and the child is registered with the Malaysian authorities within 1 year after birth.; Person is under the age of 21 years and was born abroad to a mother who is a citizen and a father who is not a citizen."
+ }
+}

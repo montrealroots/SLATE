@@ -1,0 +1,26 @@
+{
+ "country": "KR",
+ "name": "Resident Registration Number",
+ "issuer": "the Ministry of Interior",
+ "format": {
+  "length": 13,
+  "pattern": "^\\d{13}$"
+ },
+ "when": "registration",
+ "who": [
+  "citizens"
+ ],
+ "needed": [
+  "tax",
+  "pay"
+ ],
+ "note": "Korea's sheet (its government's own sheet on the OECD's automatic-exchange portal ('Information on Tax Identification Numbers'; the OECD's index page sits behind a bot check and wasn't opened, the sheet itself came straight back)), read 2026-10-30: (last updated 30 May 2023) an individual's TIN is the Resident Registration Number the Ministry of Interior issues to Korean citizens residing in the country, used when an employer withholds tax from wages and in tax returns; 13 digits (written XXXXXX-XXXXXXX), the first six the date of birth, the seventh the sex and century. Read as given on registration, to citizens; `needed` is tax and pay (the employer withholds against it). No check rule, age, fee or time is stated.",
+ "sources": [
+  {
+   "url": "https://www.oecd.org/content/dam/oecd/en/topics/policy-issue-focus/aeoi/korea-tin.pdf",
+   "title": "OECD AEOI portal, Republic of Korea: Information on Tax Identification Numbers (the jurisdiction's own sheet)",
+   "read": "2026-10-30",
+   "said": "A Resident Registration Number, which is issued by the Ministry of Interior to a Korean citizen residing in the country, should be used as his or her TIN when a corporation withholds taxes from its employee’s wages and salaries or an individual files tax returns ... A Resident Registration Number consists of 13 digits (XXXXXX-XXXXXXX)"
+  }
+ ]
+}

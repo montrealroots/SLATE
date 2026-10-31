@@ -1,0 +1,47 @@
+{
+ "country": "ZM",
+ "national": {
+  "name": "Sort code and account number",
+  "parts": [
+   {
+    "name": "Bank",
+    "length": 2,
+    "kind": "n"
+   },
+   {
+    "name": "Area",
+    "length": 2,
+    "kind": "n"
+   },
+   {
+    "name": "Branch",
+    "length": 2,
+    "kind": "n"
+   },
+   {
+    "name": "Account Number",
+    "length": 13,
+    "kind": "n"
+   }
+  ],
+  "bank": [
+   1,
+   2
+  ]
+ },
+ "note": "The Zambia Electronic Clearing House Limited's rules, read 2026-10-30 from the clearing house's own site. Its Direct Debit and Credit Clearing Rules (the EFT rules, revised May 2019, approved 6 March 2020) have a customer sending a direct credit make sure of their own bank account number (13 digits) and the beneficiary's (13 digits) and the beneficiary's branch name or sort code, and the clearing house checks that the bank code component in the bank sort code is for a valid bank. Its General Rules (version 1, approved 11 March 2021) give the sort codes in Schedule I, each branch's in three columns of two digits, the bank's, the area's and the branch's (the Bank of Zambia 00, Zambia National Commercial Bank 01; Zanaco's head office 01 00 01, its Kawambwa branch 01 21 04). So the number is held as the sort code's three parts, the bank's code being the first, then the 13-digit account. Readings to check: that the sort code is written as the three columns run together (bank, area, branch) is read from the schedule's layout, which names the columns and calls them the sort codes; the account number is held as digits because the rules say 13 digits. The file formats of the EFT files are given only to participants (Appendix I), so no record layout was read, and no check digit is published; there's no worked number.",
+ "sources": [
+  {
+   "url": "https://www.zechl.co.zm/wp-content/uploads/2024/12/REVISED-ZECH-ELECTRONIC-FUNDS-TRANSFER-RULES-APPROVED-MARCH-2020.pdf",
+   "title": "Zambia Electronic Clearing House Limited, Direct Debit and Credit Clearing Rules (revised May 2019, approved 6 March 2020)",
+   "read": "2026-10-30",
+   "said": "Approved: 6 March 2020 ... Check that the Bank code component in the bank sort code is for a valid bank. ... Bank account number (13 digits). ... Beneficiary’s bank account number (13 digits). It is the responsibility of the customer who ... Beneficiary’s branch name or sort code. ... The file format specifications of these files shall be obtained from ZECHL."
+  },
+  {
+   "url": "https://www.zechl.co.zm/wp-content/uploads/2024/12/ZECH-General-Rules-Version-1-March-2022.pdf",
+   "title": "Zambia Electronic Clearing House Limited, ZECH General Rules (version 1, approved 11 March 2021)",
+   "read": "2026-10-30",
+   "said": "SCHEDULE I – BANK BRANCH AREA SORT CODES ... BANK SORT CODES Bank Area Branch ... Bank Of Zambia 00 ... Zambia National Commercial Plc 01 ... Head Office 01 00 01 ... Kawambwa 01 21 04"
+  }
+ ]
+}

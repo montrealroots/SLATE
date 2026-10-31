@@ -1,0 +1,25 @@
+{
+ "country": "NG",
+ "name": "Tax Identification Number (JTB TIN)",
+ "issuer": "the State Boards of Internal Revenue (and the FCT Inland Revenue Service)",
+ "format": {
+  "length": 10,
+  "pattern": "^\\d{10}$"
+ },
+ "when": "work",
+ "who": [
+  "workers"
+ ],
+ "needed": [
+  "tax"
+ ],
+ "note": "Nigeria's sheet (its government's own sheet on the OECD's automatic-exchange portal ('Information on Tax Identification Numbers'; the OECD's index page sits behind a bot check and wasn't opened, the sheet itself came straight back)), read 2026-10-30: individuals in employment are given their TIN by the State Boards of Internal Revenue or the FCT Inland Revenue Service (the JTB TIN), purely numerical and 10 digits; the FIRS issues it to the armed forces, police, diplomats and companies (8 digits, a hyphen and 0001, not modelled). One TIN serves every tax. Read as given on starting work, to workers. No check rule, age, fee or time is stated.",
+ "sources": [
+  {
+   "url": "https://www.oecd.org/content/dam/oecd/en/topics/policy-issue-focus/aeoi/nigeria-tin.pdf",
+   "title": "OECD AEOI portal, Nigeria: Information on Tax Identification Numbers (the jurisdiction's own sheet)",
+   "read": "2026-10-30",
+   "said": "Individuals in employment are given TIN by the States Board of Internal Revenue/Federal Capital Territory Inland Revenue Service (JTB TIN) ... while that of the JTB is purely numerical and contains 10 digits."
+  }
+ ]
+}
