@@ -1970,4 +1970,13 @@ are at 100% mutation score (503 mutants). Still open in this engine: a sale's fe
 paid into the ledger (money.accounts), which waits on how the work pays being ruled with the premise; a room's weekly
 pay by rung needs the MBA's longer weekly rates for story editors read; other countries' guild minimums wait on the
 per-country industry research. Next: the producer, the director and the actor the same way, from their research files.
+Ruled 2026-10-31, the owner, on the attributes' meanings: "I want those meanings to mean something and actually reflect
+on the work and not be for decoration. Just want tons of realism here." So each attribute's sourced meaning is broken
+into the facets the sources name (Dialogue: natural, succinct, a voice unique to each character, revealing character,
+moving the story, as PAGE, AFI, the BBC and the Black List state it), each with a definition the player reads; the
+engines are to score a script facet by facet, readers to grade and note the facets their own criteria name, revisions
+to work on them, and a facet a source ties to another attribute to draw on it. Three research subagents are extracting
+the facet map (workbench/briefs/BRIEF-facets.md), alongside three on the real figures behind the model
+(workbench/briefs/BRIEF-calibration.md). Both land as research files and register entries, then the engines are
+rebuilt on them.
 
