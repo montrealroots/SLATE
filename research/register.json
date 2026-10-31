@@ -119546,198 +119546,6 @@
    "notModeled": "residence.unkept"
   },
   {
-   "id": "R-3491",
-   "fact": "papers.licence.blocked.CA.09",
-   "sought": "Prince Edward Island's Class 5 driver's licence (the age a full licence is held from, its fee and term) and its voluntary photo ID card.",
-   "status": "blocked",
-   "attempts": [
-    {
-     "method": "institution",
-     "tried": "https://www.princeedwardisland.ca/en/information/transportation-and-infrastructure/get-a-drivers-licence, https://www.princeedwardisland.ca/en/legislation, https://www.princeedwardisland.ca/fr; https://www.gov.pe.ca/ and https://authoringweb.gpei.ca/ (found by search)",
-     "result": "princeedwardisland.ca answers every request with 403 from a Radware server (\"403 Forbidden ... Transaction ID\"), a bot block, not passed; gov.pe.ca answers 503; authoringweb.gpei.ca doesn't connect.",
-     "date": "2026-10-30"
-    },
-    {
-     "method": "official-register",
-     "tried": "https://www.princeedwardisland.ca/sites/default/files/legislation/ (Highway Traffic Act Drivers Licences Regulations PDF); https://www.gov.pe.ca/law/regulations/pdf/H&05-1-18.pdf; https://www.canlii.org/en/",
-     "result": "403 (Radware), 503 and a captcha: none read.",
-     "date": "2026-10-30"
-    },
-    {
-     "method": "web-search",
-     "tried": "\"Prince Edward Island driver's licence fee five years class 5 graduated licence photo identification card fee\"",
-     "result": "Points to princeedwardisland.ca's Drivers Licence Fees page (a $116 5-year fee per a 2019 amendment, in snippets) and an old form ($50 5-year voluntary ID): all on the blocked domain.",
-     "date": "2026-10-30"
-    },
-    {
-     "method": "trade-press",
-     "tried": "The CBC story in the same results (https://www.cbc.ca/1.5356804), seen as a snippet",
-     "result": "A 2019 report on licence fees; not a source for today's rule, not read.",
-     "date": "2026-10-30"
-    },
-    {
-     "method": "archive",
-     "tried": "bash bin/wb.sh https://www.princeedwardisland.ca/en/information/transportation-and-infrastructure/drivers-licence-fees",
-     "result": "A snapshot exists (20260616150354) but web.archive.org is refused by this egress; not read.",
-     "date": "2026-10-30"
-    },
-    {
-     "method": "institution",
-     "tried": "https://www.gov.pe.ca/, https://www.princeedwardisland.ca/en/information/transportation-and-infrastructure/get-a-drivers-licence and https://www.princeedwardisland.ca/en/node/59126 (found by search)",
-     "result": "gov.pe.ca answered 503; princeedwardisland.ca answered 403 (its Radware block).",
-     "date": "2026-10-30"
-    },
-    {
-     "method": "official-register",
-     "tried": "https://www.princeedwardisland.ca/en/legislation/all/all/h (the Highway Traffic Act and its regulations) and https://www.canlii.org/en/pe/laws/",
-     "result": "The first answered 403 (Radware), CanLII 403 with a captcha; not read.",
-     "date": "2026-10-30"
-    },
-    {
-     "method": "web-search",
-     "tried": "\"Yukon Nunavut Prince Edward Island Quebec class 5 driver's licence fee schedule regulation 2026\"",
-     "result": "Found the SAAQ's fee pages (Quebec, now written as CA.10) and princeedwardisland.ca/en/node/59126 (test fees, on the blocked domain, answering 403); no Yukon or Nunavut fee, and no reachable primary page for either territory or PEI.",
-     "date": "2026-10-30"
-    },
-    {
-     "method": "trade-press",
-     "tried": "https://jjkellercompliancenetwork.com/regsense/drivers-licence-information-province-territory-comparison (J.J. Keller's comparison, found by search), read",
-     "result": "A compliance publisher's table of ages by province without fees or terms and without quoting the regulations; not used.",
-     "date": "2026-10-30"
-    },
-    {
-     "method": "institution",
-     "tried": "https://www.assembly.pe.ca/ and /legislation (the Legislative Assembly), https://www.ccmta.ca/ (CCMTA)",
-     "result": "The Assembly answers but holds no regulations (404 on /legislation); CCMTA's site carries no provincial licence fees or ages.",
-     "date": "2026-10-30"
-    },
-    {
-     "method": "official-register",
-     "tried": "https://www.gov.pe.ca/law/statutes/pdf/h-05.pdf (old statute path); the Highway Traffic Act Fees Regulations via archive.org (https://web.archive.org/web/20240613110834/https://www.princeedwardisland.ca/sites/default/files/legislation/h05f-highway_traffic_act_fees_regulations.pdf, read, saved dl/w16l1/wa-pe-feesreg.pdf)",
-     "result": "gov.pe.ca 503. The Fees Regulations, consolidated to 11 May 2024: a driver's licence for five years $116 (s. 8(1)); photo identification $20 for one year, $50 for five, none for a qualifying non-driver. Fee and card are read; the age isn't (below).",
-     "date": "2026-10-31"
-    },
-    {
-     "method": "web-search",
-     "tried": "Nunavut Yukon Prince Edward Island Class 5 driver's licence fee five years general identification card fee regulation, limited to gov.nu.ca, nunavutlegislation.ca, yukon.ca, laws.yukon.ca, princeedwardisland.ca, nunatsiaq.com, cbc.ca, yukon-news.com",
-     "result": "PEI's Fees Regulations ($116 five years) and GDL booklet; nothing on the age a full licence is held from.",
-     "date": "2026-10-31"
-    },
-    {
-     "method": "trade-press",
-     "tried": "https://www.saltwire.com/ (SaltWire, Atlantic Canada)",
-     "result": "Answers; no current story on PEI licence fees or ages reached from its home.",
-     "date": "2026-10-31"
-    },
-    {
-     "method": "archive",
-     "tried": "https://web.archive.org/web/20260616150354/https://www.princeedwardisland.ca/en/information/transportation-and-infrastructure/drivers-licence-fees, https://web.archive.org/web/20260715013027/https://www.princeedwardisland.ca/en/information/transportation-and-infrastructure/graduated-driver-licensing-program-gdl and https://web.archive.org/web/20260731025328/https://www.princeedwardisland.ca/en/information/transportation-and-infrastructure/getting-a-pei-drivers-license, read (saved dl/w16l1/wa-pe-*.html)",
-     "result": "The GDL page: an instruction permit from 16; after 365 days (275 with driver education) the road test gives the Class 5 licence with G conditions for 365 days; the programme takes at least three years (two years and 275 days with driver education) before the standard Class 5 licence. The youngest full holder is thus 18 years and 275 days (19 without the course): not a whole age the form holds without my reading, so not written. Fee $116 for 5 years and photo ID $20/$50 from the 2024 Fees Regulations are ready if the lead settles the age.",
-     "date": "2026-10-31"
-    }
-   ],
-   "notModeled": "licence.unkept"
-  },
-  {
-   "id": "R-3493",
-   "fact": "papers.licence.blocked.CA.12",
-   "sought": "Yukon's Class 5 driver's licence (the age a full licence is held from, its fee and term) and its general identification card.",
-   "status": "blocked",
-   "attempts": [
-    {
-     "method": "institution",
-     "tried": "https://yukon.ca/en/driving-and-transportation/driver-licences, https://yukon.ca/sites/default/files/hpw/hpw-yukon-drivers-handbook.pdf; https://open.yukon.ca/",
-     "result": "yukon.ca answers a Cloudflare \"Just a moment...\" challenge (cf-mitigated: challenge), not passed. open.yukon.ca answers but holds only 2010 press releases on the new card (found by search), not today's fees or stages.",
-     "date": "2026-10-30"
-    },
-    {
-     "method": "official-register",
-     "tried": "https://laws.yukon.ca/ (the Motor Vehicles Act and its regulations); https://www.canlii.org/en/",
-     "result": "laws.yukon.ca answers the same Cloudflare challenge; CanLII a captcha. Not read.",
-     "date": "2026-10-30"
-    },
-    {
-     "method": "web-search",
-     "tried": "\"Yukon Motor Vehicles Act regulations driver's licence fee general identification card fee graduated licence Class 5\"",
-     "result": "Snippets of yukon.ca pages ($20 a year or $100 for 5 years; entry at 15) on the blocked domain, and third-party guides; nothing reachable and primary.",
-     "date": "2026-10-30"
-    },
-    {
-     "method": "trade-press",
-     "tried": "Yukon News results in the same search (https://www.yukon-news.com/news/strict-requirements-for-yukon-licences/, https://www.yukon-news.com/news/new-licence-hits-the-streets/)",
-     "result": "2010 stories on the new card; not today's rule; not read.",
-     "date": "2026-10-30"
-    },
-    {
-     "method": "archive",
-     "tried": "bash bin/wb.sh https://yukon.ca/en/driving-and-transportation/driver-licensing/get-drivers-licence",
-     "result": "A snapshot exists (20251113060558) but web.archive.org is refused by this egress; not read.",
-     "date": "2026-10-30"
-    },
-    {
-     "method": "institution",
-     "tried": "https://yukon.ca/en/driving-and-transportation/driver-licences and https://open.yukon.ca/search?search_api_fulltext=driver%20licence",
-     "result": "yukon.ca answered 403 with a Cloudflare \"Just a moment\" challenge, not passed; open.yukon.ca's search path answered 404.",
-     "date": "2026-10-30"
-    },
-    {
-     "method": "official-register",
-     "tried": "https://laws.yukon.ca/ (the Motor Vehicles Act and regulations)",
-     "result": "HTTP 403 with a Cloudflare \"Just a moment\" challenge; not read.",
-     "date": "2026-10-30"
-    },
-    {
-     "method": "web-search",
-     "tried": "\"Yukon Nunavut Prince Edward Island Quebec class 5 driver's licence fee schedule regulation 2026\"",
-     "result": "Found the SAAQ's fee pages (Quebec, now written as CA.10) and princeedwardisland.ca/en/node/59126 (test fees, on the blocked domain, answering 403); no Yukon or Nunavut fee, and no reachable primary page for either territory or PEI.",
-     "date": "2026-10-30"
-    },
-    {
-     "method": "trade-press",
-     "tried": "https://jjkellercompliancenetwork.com/regsense/drivers-licence-information-province-territory-comparison, read",
-     "result": "A compliance publisher's table giving Yukon's ages (15, 16, 17 years 6 months) by column without fees or terms and without quoting the regulations; not used.",
-     "date": "2026-10-30"
-    },
-    {
-     "method": "archive",
-     "tried": "bash bin/wb.sh https://yukon.ca/en/driving-and-transportation/driver-licences",
-     "result": "No snapshot.",
-     "date": "2026-10-30"
-    },
-    {
-     "method": "institution",
-     "tried": "https://yukonassembly.ca/, https://www.gov.yk.ca/legislation/regs/ and https://www.gov.yk.ca/legislation/acts/move_c.pdf (old legislation paths), https://legislation.yukon.ca/",
-     "result": "Each answered 403 with a Cloudflare \"Just a moment\" challenge; not passed.",
-     "date": "2026-10-30"
-    },
-    {
-     "method": "official-register",
-     "tried": "https://laws.yukon.ca/ via the archive (availability API)",
-     "result": "A snapshot of 2026-10-21 of the home exists; the regulations themselves weren't found in the archive this turn.",
-     "date": "2026-10-31"
-    },
-    {
-     "method": "web-search",
-     "tried": "The Canada query recorded for CA.09 (limited to yukon.ca, laws.yukon.ca and the territories' domains)",
-     "result": "Yukon's renewal page snippet: $100 for a 5-year licence; the knowledge test $20; no reachable primary.",
-     "date": "2026-10-31"
-    },
-    {
-     "method": "trade-press",
-     "tried": "https://www.yukon-news.com/?s=driver%27s+licence (Yukon News search)",
-     "result": "Answers; stories of 2009 and 2011 on the card, none on today's fee or age.",
-     "date": "2026-10-31"
-    },
-    {
-     "method": "archive",
-     "tried": "https://web.archive.org/web/20251113060558/https://yukon.ca/en/driving-and-transportation/driver-licensing/get-drivers-licence, read (saved dl/w16l1/wa-yk-get.html, date modified 2025-07-31)",
-     "result": "Learner from 15; road test from 16 after 6 months on the learner's licence; at least 18 months in the novice stage before the full class licence. The youngest full holder is thus 17 years 6 months, my arithmetic and not a whole age; no fee for the full licence is given on this page (the renewal page's snapshot wasn't read). Not written.",
-     "date": "2026-10-31"
-    }
-   ],
-   "notModeled": "licence.unkept"
-  },
-  {
    "id": "R-3494",
    "fact": "papers.licence.blocked.CA.14",
    "sought": "Nunavut's Class 5 driver's licence (the age a full licence is held from, its fee and term) and its general identification card.",
@@ -133121,75 +132929,6 @@
    "notModeled": "licence.unkept"
   },
   {
-   "id": "R-3853",
-   "fact": "papers.licence.blocked.JM",
-   "sought": "Jamaica's private driver's licence: the age it is held from under the Road Traffic Act 2018 (in force since February 2023); its fee (J$5,400) and term (five birthdays) were read on Tax Administration Jamaica's pages.",
-   "status": "blocked",
-   "attempts": [
-    {
-     "method": "institution",
-     "tried": "https://www.jamaicatax.gov.jm/rates-and-fees and its Driver's Licence FAQ (DL FAQs.pdf, 7 March 2022) and learner's licence hub (read); https://ita.gov.jm/, https://www.ita.gov.jm/ (Island Traffic Authority); https://www.mtw.gov.jm/",
-     "result": "TAJ gives the Private Driver's Licence at $5,400.00 and a licence valid for \"5 Birthdays\", but its FAQ answers the minimum age as \"17 years 6 months old \u2013 pending Road Traffic Act\", written before the Act came into force, so the age now in force isn't stated; the ITA timed out; mtw.gov.jm has no licence page.",
-     "date": "2026-10-30"
-    },
-    {
-     "method": "official-register",
-     "tried": "https://laws.moj.gov.jm/ (the Ministry of Justice's laws), https://japarliament.gov.jm/ and https://www.japarliament.gov.jm/index.php/publications/acts",
-     "result": "laws.moj.gov.jm timed out; the Parliament's site answers but the Act's text wasn't found from its pages.",
-     "date": "2026-10-30"
-    },
-    {
-     "method": "web-search",
-     "tried": "\"Jamaica Road Traffic Act 2018 private driver's licence minimum age 17 years six months learner's permit section\"",
-     "result": "A Gleaner report on the 2016 bill (learner's permit at 17, six months' training) and commercial test sites; not the Act as enacted.",
-     "date": "2026-10-30"
-    },
-    {
-     "method": "trade-press",
-     "tried": "https://past.jamaica-gleaner.com/article/news/20170129/critical-moves-needed-end-road-carnage-pm",
-     "result": "No answer (connection timed out).",
-     "date": "2026-10-30"
-    },
-    {
-     "method": "archive",
-     "tried": "bash bin/wb.sh https://laws.moj.gov.jm/ https://www.jamaicatax.gov.jm/web/guest/motor-vehicle-driver-s-licence",
-     "result": "Snapshots of 2026-10-14 and 2022-02-16 exist (not readable here).",
-     "date": "2026-10-30"
-    },
-    {
-     "method": "institution",
-     "tried": "https://www.jamaicatax.gov.jm/web/guest/drivers-licence (Tax Administration Jamaica) and https://ita.gov.jm/drivers-licence/ (Island Traffic Authority)",
-     "result": "TAJ answered 404 at that path; the ITA gave no answer.",
-     "date": "2026-10-31"
-    },
-    {
-     "method": "official-register",
-     "tried": "https://japarliament.gov.jm/attachments/article/339/the%20road%20traffic%20act%202018.pdf (the Road Traffic Act, 2018, Houses of Parliament), read",
-     "result": "S. 26(1)(e): the Authority shall not grant a driver's licence unless the applicant 'is at least seventeen and one-half years of age' (and has held a learner's permit, from 17 (s. 23(1)(a)), for six months); s. 25(2)(a): a licence remains in force five years. The age is 17 years and 6 months, which the form's whole years can't hold, so nothing was written; the fee (J$5,400 on TAJ's pages, read earlier) and term (five years) aren't in question.",
-     "date": "2026-10-31"
-    },
-    {
-     "method": "web-search",
-     "tried": "Road Traffic Act 2018 Jamaica \"driver's licence\" \"eighteen years\" age section",
-     "result": "Led to the Act on japarliament.gov.jm (read, above); the rest were a 2010 Gleaner article and test sites.",
-     "date": "2026-10-31"
-    },
-    {
-     "method": "trade-press",
-     "tried": "https://jamaicaobserver.com/2023/02/01/nrsc-optimistic-that-new-traffic-law-will-reduce-road-fatalities (Jamaica Observer, 1 February 2023, on the Act's coming into force), read",
-     "result": "The National Road Safety Council's Dr Jones describes the graduated licence (zero alcohol in the first year, s. 27(2)); no age given.",
-     "date": "2026-10-31"
-    },
-    {
-     "method": "archive",
-     "tried": "archive.org availability API for https://www.jamaicatax.gov.jm/web/guest/motor-vehicle-driver-s-licence",
-     "result": "A snapshot of 2022-02-16 exists (before the Act came into force in 2023, so no proof of the age now); web.archive.org reset every connection (CDX and snapshot, retried every 20 to 60 seconds) from 02:07 to 03:07 UTC this morning, so it wasn't read; the Act's text made it unnecessary.",
-     "date": "2026-10-31"
-    }
-   ],
-   "notModeled": "licence.unkept"
-  },
-  {
    "id": "R-3854",
    "fact": "papers.licence.blocked.KP",
    "sought": "North Korea's driving licence: the age it is issued from, its fee and term, from the state's own publications or the Road Traffic Law (revised 15 September 2024).",
@@ -135435,6 +135174,36 @@
      "method": "archive",
      "tried": "archive.org availability API for https://mvd.gov.kg/, https://cbd.minjust.gov.kg/, https://grs.gov.kg/ru/ and https://www.consilium.europa.eu/prado/EN/KGZ-FO-01001/index.html",
      "result": "Snapshots exist (2026-06-17, 2026-09-16, 2024-04-25, 2021-01-10); web.archive.org reset every connection (CDX and snapshot, retried every 20 to 60 seconds) from 02:07 to 03:07 UTC this morning, so none was read.",
+     "date": "2026-10-31"
+    },
+    {
+     "method": "institution",
+     "tried": "https://www.gov.kg/, https://www.gov.kg/ru, https://grs.gov.kg/ru/ (the State Centre for Registration of Vehicles and Drivers, Russian page this time), https://mvd.gov.kg/",
+     "result": "None answered (connection failed with no response, 20 s each).",
+     "date": "2026-10-31"
+    },
+    {
+     "method": "official-register",
+     "tried": "https://cbd.minjust.gov.kg/ (https: no answer) and http://cbd.minjust.gov.kg/ (301 to the https address, which doesn't answer), for the Law on Road Traffic and Cabinet decrees No. 760 of 27 November 2025 and No. 352 of 19 May 2026; https://base.spinform.ru/show_doc.fwx?rgn=137435 (Soyuzpravoinform's CIS legislation database, found by search)",
+     "result": "The central database gave no answer; Spinform's page was another Cabinet decree (on a presidential decree), its text behind the database's paid access, not read past it.",
+     "date": "2026-10-31"
+    },
+    {
+     "method": "web-search",
+     "tried": "\"\u0417\u0430\u043a\u043e\u043d \u041a\u044b\u0440\u0433\u044b\u0437\u0441\u043a\u043e\u0439 \u0420\u0435\u0441\u043f\u0443\u0431\u043b\u0438\u043a\u0438 \"\u041e \u0434\u043e\u0440\u043e\u0436\u043d\u043e\u043c \u0434\u0432\u0438\u0436\u0435\u043d\u0438\u0438\" \u043f\u0440\u0430\u0432\u043e \u043d\u0430 \u0443\u043f\u0440\u0430\u0432\u043b\u0435\u043d\u0438\u0435 \u0442\u0440\u0430\u043d\u0441\u043f\u043e\u0440\u0442\u043d\u044b\u043c\u0438 \u0441\u0440\u0435\u0434\u0441\u0442\u0432\u0430\u043c\u0438 \u043a\u0430\u0442\u0435\u0433\u043e\u0440\u0438\u0438 \"B\" \u043b\u0438\u0446\u0430\u043c \u0434\u043e\u0441\u0442\u0438\u0433\u0448\u0438\u043c \u0432\u043e\u0441\u0435\u043c\u043d\u0430\u0434\u0446\u0430\u0442\u0438\u043b\u0435\u0442\u043d\u0435\u0433\u043e \u0432\u043e\u0437\u0440\u0430\u0441\u0442\u0430\"; \"cbd.minjust.gov.kg \"\u041e \u0434\u043e\u0440\u043e\u0436\u043d\u043e\u043c \u0434\u0432\u0438\u0436\u0435\u043d\u0438\u0438 \u0432 \u041a\u044b\u0440\u0433\u044b\u0437\u0441\u043a\u043e\u0439 \u0420\u0435\u0441\u043f\u0443\u0431\u043b\u0438\u043a\u0435\" \u0432\u043e\u0434\u0438\u0442\u0435\u043b\u044c\u0441\u043a\u043e\u0435 \u0443\u0434\u043e\u0441\u0442\u043e\u0432\u0435\u0440\u0435\u043d\u0438\u0435 \u0432\u043e\u0437\u0440\u0430\u0441\u0442 \u043a\u0430\u0442\u0435\u0433\u043e\u0440\u0438\u0438 \"B\" \"C\"\"; \"\u043f\u043e\u0441\u0442\u0430\u043d\u043e\u0432\u043b\u0435\u043d\u0438\u0435 \u041a\u0430\u0431\u0438\u043d\u0435\u0442\u0430 \u041c\u0438\u043d\u0438\u0441\u0442\u0440\u043e\u0432 760 27 \u043d\u043e\u044f\u0431\u0440\u044f 2025 \u043f\u0440\u0430\u0432\u0438\u043b\u0430 \u043f\u0440\u0438\u0435\u043c\u0430 \u043a\u0432\u0430\u043b\u0438\u0444\u0438\u043a\u0430\u0446\u0438\u043e\u043d\u043d\u044b\u0445 \u044d\u043a\u0437\u0430\u043c\u0435\u043d\u043e\u0432 \u0432\u044b\u0434\u0430\u0447\u0438 \u0432\u043e\u0434\u0438\u0442\u0435\u043b\u044c\u0441\u043a\u0438\u0445 \u0443\u0434\u043e\u0441\u0442\u043e\u0432\u0435\u0440\u0435\u043d\u0438\u0439 \u0432\u043e\u0437\u0440\u0430\u0441\u0442 \u043a\u0430\u043d\u0434\u0438\u0434\u0430\u0442\u0430 \u043a\u0430\u0442\u0435\u0433\u043e\u0440\u0438\u044f B\"",
+     "result": "No text of the law or of decree 760 with the age; results were Kazakh and Russian rules, Law No. 81 of 5 June 2026 amending road-safety acts (its content not shown), Kaktus.media's reports and MVD PDFs on mvd.gov.kg (which doesn't answer).",
+     "date": "2026-10-31"
+    },
+    {
+     "method": "trade-press",
+     "tried": "https://kaktus.media/doc/358981_polezno:_kak_polychit_voditelskoe_ydostoverenie_v_kyrgyzstane.html (read, saved dl/w17lic/kg-kaktus-358981.html), https://kaktus.media/doc/538676_teper_obychenie_na_prava_kategorii_b_prodlitsia_10_mesiacev_a_na_kategoriu_s_12_mesiacev.html (read, saved dl/w17lic/kg-kaktus-538676.html); the saved economist.kg story of 22 May 2026 re-read",
+     "result": "Kaktus's explainer of 5 July 2017 says category B from 17 and licences for 10 years, without quoting the law and nine years before the 2025-2026 rules; Kaktus of 14 January 2026 reports that category B training now lasts 10 months (480 hours), no age; economist.kg: a six-month temporary licence after the exams (decree 352), the base age not given. No current statement of the age the temporary or the ordinary licence is had from, so the age of the youngest full holder can't be added up; the fee isn't given anywhere read.",
+     "date": "2026-10-31"
+    },
+    {
+     "method": "archive",
+     "tried": "The CDX API for grs.gov.kg/* (five tries, 8 s apart)",
+     "result": "web.archive.org reset every connection; nothing was looked up or read.",
      "date": "2026-10-31"
     }
    ],
@@ -148722,6 +148491,77 @@
      "title": "CIMH (the WMO's Caribbean Regional Climate Centre), ET Joshua, St. Vincent - Maximum Temperature, 1991-2020 (read for the station's place only)",
      "read": "2026-10-30",
      "said": "ET Joshua, St. Vincent - Maximum Temperature (oC) (Location: 13.1°N, -61.2°W; Period of record: 1991-2020)"
+    }
+   ]
+  },
+  {
+   "id": "R-4236",
+   "fact": "papers.licence.CA.09",
+   "sought": "The driving licence and identity card the licensing office of Prince Edward Island, Canada issues: who can get one, its fee and how long it lasts",
+   "status": "found",
+   "value": {
+    "file": "research/sources/papers/licence/CA.09.json",
+    "sha256": "ad70d83bfbedbe9e82e201710c144dea88a18227fe6abb25678c3cdad54e2d66"
+   },
+   "sources": [
+    {
+     "kind": "primary",
+     "url": "https://web.archive.org/web/20260715013027/https://www.princeedwardisland.ca/en/information/transportation-and-infrastructure/graduated-driver-licensing-program-gdl",
+     "title": "Government of Prince Edward Island, Graduated Driver Licensing Program (GDL) (archive.org snapshot of 15 July 2026)",
+     "read": "2026-10-31",
+     "said": "It takes a minimum of three years to complete the program. If you enroll in a certified driver education program you may be able to complete the GDL program in a minimum of two years and 275 days. ... If you are 16 years of age or older, you may apply for an Instruction Driver's Permit (Class 7 license) ... This period is reduced to 275 days if enrolled in a certified driver education program. ... After you pass the road test, you will be issued your Class 5 driver\u2019s license ... This stage lasts for one full year (365 days) ... Once you successfully complete the second stage, you will enter Stage 3, which lasts another full year (365 days)."
+    },
+    {
+     "kind": "primary",
+     "url": "https://web.archive.org/web/20240613110834/https://www.princeedwardisland.ca/sites/default/files/legislation/h05f-highway_traffic_act_fees_regulations.pdf",
+     "title": "Government of Prince Edward Island, Highway Traffic Act Fees Regulations, office consolidation current to May 11, 2024 (archive.org snapshot of 13 June 2024)",
+     "read": "2026-10-31",
+     "said": "current to May 11, 2024 ... The fee for a driver\u2019s license issued for a five-year period is $116. ... Photographic identification issued under ss. 6.1(1) 20 of the Act for a one-year period Photographic identification issued under ss. 6.1(1) 50 of the Act for a five-year period"
+    }
+   ]
+  },
+  {
+   "id": "R-4237",
+   "fact": "papers.licence.CA.12",
+   "sought": "The driving licence and identity card the licensing office of Yukon, Canada issues: who can get one, its fee and how long it lasts",
+   "status": "found",
+   "value": {
+    "file": "research/sources/papers/licence/CA.12.json",
+    "sha256": "94f6f0fef13be4b2ad4906e2268d3f5d97493d04ba7a01cc3fe1f48e7c54f8a1"
+   },
+   "sources": [
+    {
+     "kind": "primary",
+     "url": "https://web.archive.org/web/20251113060558/https://yukon.ca/en/driving-and-transportation/driver-licensing/get-drivers-licence",
+     "title": "Government of Yukon, Get a driver's licence (archive.org snapshot of 13 November 2025)",
+     "read": "2026-10-31",
+     "said": "New drivers must complete the Graduated Driver Licensing Program to get a Yukon driver's licence. You must: be at least 15 years of age ... You'll be in the learner stage for a minimum of 6 months. ... To be able to take your road test you must: be at least 16 years old; have had your learner\u2019s licence for 6 months; ... Once you pass the road test, you'll be issued a novice licence. ... You'll need to be in the novice stage for at least 18 months before you're able to apply for a full class licence."
+    }
+   ]
+  },
+  {
+   "id": "R-4238",
+   "fact": "papers.licence.JM",
+   "sought": "The driving licence and identity card the licensing office of Jamaica issues: who can get one, its fee and how long it lasts",
+   "status": "found",
+   "value": {
+    "file": "research/sources/papers/licence/JM.json",
+    "sha256": "f76169530dfb5668307d9205a7317ee5f066c5166ed6a4a3fe7ec42f070b762b"
+   },
+   "sources": [
+    {
+     "kind": "primary",
+     "url": "https://japarliament.gov.jm/attachments/article/339/the%20road%20traffic%20act%202018.pdf",
+     "title": "Houses of Parliament of Jamaica, The Road Traffic Act, 2018",
+     "read": "2026-10-31",
+     "said": "Class B driver\u2019s licence, which entitles the holder thereof to drive, not for reward, trucks, motor cars ... a driver\u2019s licence granted under subsection (1) shall\u2014 (a) remain in force for a period of five years; ... The Authority shall not grant a driver\u2019s licence to the ... has, immediately prior to the application, been the holder of a learner\u2019s permit for at least six months; ... is at least seventeen and one-half years of age;"
+    },
+    {
+     "kind": "primary",
+     "url": "https://www.jamaicatax.gov.jm/rates-and-fees",
+     "title": "Tax Administration Jamaica, Rates and Fees",
+     "read": "2026-10-31",
+     "said": "DRIVER\u2019S LICENCE FEES Private Driver\u2019s Licence $5,400.00"
     }
    ]
   }
