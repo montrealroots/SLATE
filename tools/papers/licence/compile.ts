@@ -77,7 +77,7 @@ export interface Term {
 export type Age = number | { years: number; months: number } | { years: number; days: number };
 
 /** An age as the form holds it, or none where it isn't one. */
-function ageOf(v: unknown): Age | undefined {
+export function ageOf(v: unknown): Age | undefined {
   if (isWhole(v, 0)) return v;
   if (!isRecord(v) || !isWhole(v['years'], 0)) return undefined;
   const keys = Object.keys(v).sort().join();
