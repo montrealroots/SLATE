@@ -1,0 +1,31 @@
+{
+ "country": "FK",
+ "name": "Tax Identification Number (TIN)",
+ "issuer": "the Falkland Islands Government Taxation Office",
+ "format": {
+  "length": 14,
+  "pattern": "^\\d{14}$"
+ },
+ "when": "work",
+ "who": [
+  "workers"
+ ],
+ "needed": [
+  "tax"
+ ],
+ "note": "The Falkland Islands Government Taxation Office's form 'Authorising your Agent' (FIGTO, April 2025), read 2026-10-31: among the taxpayer's Falkland Islands tax references it asks for 'Your Tax Identification Number (TIN) - 14 numbers' (beside the Company Reference Number of 6 characters and the Employer Reference Number of 8), and its notes say the personal TIN is found on the end-of-year Certificate of Tax Deducted (EMP-04) and the tax return. The Office's End of Year Forms – Employers Guide (for the year to 2 February 2025), read 2026-10-31: the employer enters each employee's TIN on the end-of-year return, and may request TINs from the Tax Office during the year for the monthly and end-of-year returns. READINGS: the fourteen 'numbers' are read as fourteen digits; no structure or check digit is given, so the pattern holds any fourteen digits; 'when' is read as on taking work and 'who' as workers, the Office giving employees' TINs on their employers' request (the Tax Return Guide 2020, read in wave 7, also asks for a spouse's TIN, entering the date of birth if it isn't known); 'needed' as tax. The Taxes Ordinance wasn't read (legislation.gov.fk didn't answer). No fee, time or age is stated.",
+ "sources": [
+  {
+   "url": "https://www.gov.fk/taxation/wp-content/uploads/sites/25/2026/02/Agent-Authority-form-guide-1.pdf",
+   "title": "Falkland Islands Government Taxation Office, Authorising your Agent (April 2025)",
+   "read": "2026-10-31",
+   "said": "Your Tax Identification Number (TIN) - 14 numbers ... Authorising your agent, FIGTO, April 2025 ... Your personal Tax Identification Number (TIN) - your end of year Certificate of Tax Deducted (EMP-04) - your Tax Return"
+  },
+  {
+   "url": "https://www.gov.fk/taxation/wp-content/uploads/sites/25/2026/02/2.-Employer-Guide-End-of-Year-Forms-2024.pdf",
+   "title": "Falkland Islands Government Taxation Office, End of Year Forms – Employers Guide (2024)",
+   "read": "2026-10-31",
+   "said": "Enter each employee’s Tax Identification Number (TIN). During the year you can request TINs from the Tax Office to ensure you have these details for the monthly returns and the end of year returns."
+  }
+ ]
+}

@@ -1118,6 +1118,32 @@ Wave 16 (2026-10-30 to 31, sixteen research subagents in two rounds, every block
   numbers-3, prices, residence), then an archive pass over the lists closed before the archive opened (formats-1,
   work-1, holidays-1, weather-1, numbers-1, cards-1; the snapshots each blocker records).
 
+Wave 16, second half (2026-10-31, the remaining twelve lists):
+
+- CI's run 504 (the commit before wave 16) passed every check but mutation: 16,558 of 16,561 mutants killed, the three
+  survivors in `src/money/rates/rates.ts`, whose test of a currency the rates don't hold had used North Korea's won,
+  read on 2026-10-30. `tests/money/rates/rates.unknown.test.ts` holds that case on a mocked rates file (100%). The run
+  took 175 minutes and run 505 was cancelled at its 180; the job now has 340.
+- web.archive.org reset every raw fetch from about 02:05 to 04:12 UTC, so this half's agents read no snapshot; each
+  blocker records the snapshots that exist. The queues of the most promising: `$S/w16/lic4/snapshots-unread.txt`
+  (32, licences), `$S/cr/c16c4_q.txt` (credit; Svalbard's regulation), `$S/w16/cards3/snaps1.txt` (the Isle of Man's
+  Santander cards), the prices agent's KN, TC and VG, and every blocker's own archive line.
+- Blocked rows 651 to 611. Read: credit Montenegro, the Solomon Islands, Liechtenstein (ZEK's), Greenland; licences
+  Nicaragua, Panama, Belize, Guyana, Namibia (its fee left null: card and application fee, no total stated), Fiji,
+  Sint Maarten; numbers Macau, Vanuatu, the Caribbean Netherlands (the BSN from 11 November 2025); residence 13;
+  starting means Kosovo (WID's KS), Jersey, Guernsey, the Caribbean Netherlands; banks Syria (Cham Bank, in the new
+  pound the rates hold from 15 February 2026; the lead checked the read-by-eye row on a render), Western Sahara
+  (BMCI's branches); ID cards Palestine; passports Iran, Congo, Palestine, Djibouti, Tonga, Nauru. Cards, prices
+  and the fourth credit list read nothing.
+- Held: credit WS (an Act not yet commenced); licence DJ (a 2016 report), LC (its age and its terms disagree);
+  numbers FK (who and when read into a form); residence EC, CR, KR (texts older than reforms not read); passports SL
+  (a 2023 page, the leone redenominated). The integration now registers and builds the means and the holidays.
+- Form gaps found: money.cards has no `none` (the Falklands' only bank offers debit cards only, and seven more
+  territories); a licence's age in half years again (Jamaica 17 and a half, Kyrgyzstan's six-month first licence);
+  Turks and Caicos' passport fee by an age no source states.
+- Next: the archive pass (every list, its queues first) once web.archive.org answers; the form gaps; Maqam cited as
+  primary in papers.ids PS and as secondary in papers.work PS, to make one.
+
 The older next steps below are kept as they were written.
 
 1. The weather's blockers

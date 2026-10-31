@@ -302,6 +302,9 @@
    "tax"
   ]
  },
+ "BQ": {
+  "issuedBy": "NL"
+ },
  "BR": {
   "name": "Cadastro de Pessoas Físicas (CPF)",
   "issuer": "the Receita Federal do Brasil",
@@ -1411,6 +1414,18 @@
    "citizens"
   ]
  },
+ "MO": {
+  "name": "número do Bilhete de Identidade de Residente (BIR)",
+  "issuer": "the Direcção dos Serviços de Identificação (DSI)",
+  "format": {
+   "length": 8,
+   "pattern": "^\\d{8}$"
+  },
+  "when": "application",
+  "who": [
+   "residents"
+  ]
+ },
  "MP": {
   "issuedBy": "US"
  },
@@ -2150,6 +2165,21 @@
   "when": "birth",
   "who": [
    "citizens"
+  ]
+ },
+ "VU": {
+  "name": "Tax Identification Number (TIN)",
+  "issuer": "the Director of Customs and Inland Revenue",
+  "format": {
+   "length": 6,
+   "pattern": "^\\d{6}$"
+  },
+  "when": "application",
+  "who": [
+   "anyone"
+  ],
+  "needed": [
+   "tax"
   ]
  },
  "WF": {

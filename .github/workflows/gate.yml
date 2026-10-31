@@ -9,7 +9,9 @@ jobs:
   gate:
     runs-on: ubuntu-24.04
     # Mutation testing reruns the suite for each of some 8,300 mutants: about two hours on a 4-core runner (2026-10-28).
-    timeout-minutes: 180
+    # By 2026-10-31 there were 16,561 and the run took 175 minutes; run 505 was cancelled at the 180 it was given. A
+    # GitHub-hosted job may run 360.
+    timeout-minutes: 340
     steps:
       - uses: actions/checkout@v4
         with:

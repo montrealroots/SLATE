@@ -1,0 +1,62 @@
+{
+ "country": "DJ",
+ "office": "the National Police, which issues the biometric passport; abroad, the consular service of the Embassy of Djibouti in Washington, D.C., which takes the application, fingerprints and photograph",
+ "currency": "DJF",
+ "abroad": {
+  "currency": "USD"
+ },
+ "routes": [
+  {
+   "id": "home",
+   "where": "home",
+   "speed": "standard",
+   "within": null,
+   "label": "from the National Police in Djibouti"
+  },
+  {
+   "id": "abroad",
+   "where": "abroad",
+   "speed": "standard",
+   "within": {
+    "n": 8,
+    "unit": "week"
+   },
+   "label": "at the Embassy in Washington, 6 to 8 weeks"
+  }
+ ],
+ "passports": [
+  {
+   "for": "any age, 32 pages",
+   "pages": 32,
+   "validYears": 5,
+   "pay": {
+    "home": null,
+    "abroad": "85.00"
+   }
+  },
+  {
+   "for": "any age, 48 pages",
+   "pages": 48,
+   "validYears": 5,
+   "pay": {
+    "home": null,
+    "abroad": "115.00"
+   }
+  }
+ ],
+ "note": "The Embassy of Djibouti in Washington's requirements for a new biometric passport for nationals in the United States and Canada (a scanned document, read by eye; the scan is dated 5 November 2018 and is the form the Embassy's Biometric Passport page links to as read on 2026-10-31; no later fee text was found): US$85.00 for a 32-page passport and US$115.00 for a 48-page one by US money order (US$87.00 and US$117.00 by Canadian money order, not modelled); about 6 to 8 weeks between application and collection, written as 8 weeks; the biometric passport is valid five years. The same fee is set for adults and minors (the page lists no separate minor's fee). At home, the National Police's fee wasn't found (its host doesn't answer this client), so the home route is left unpaid; the five years' validity is the Embassy's statement of the passport itself.",
+ "sources": [
+  {
+   "url": "https://www.djiboutiembassyus.org/sites/default/files/documents/BIOMETRIC_PASSPORT_APPLICATION_REQUIREMENTS_AND_FORM.pdf",
+   "title": "Embassy of the Republic of Djibouti, Washington, D.C., Requirements for a new biometric passport for Djibouti nationals in the United States and Canada (scanned; linked from the Embassy's Biometric Passport page)",
+   "read": "2026-10-31",
+   "said": "The approximate time between filing the application and receiving or collecting the passport is 6 to 8 weeks. ... FEES: (Payable to the Embassy of Djibouti with money order). US $ 85.00 for a 32-page passport - Canadian money order (in US$ 87.00) US $ 115.00 for a 48-page passport - Canadian money order (in US$ 117.00) ... VALIDITY: The biometric passport is valid for 5 years."
+  },
+  {
+   "url": "https://www.djiboutiembassyus.org/page/biometric-passport",
+   "title": "Embassy of the Republic of Djibouti, Washington, D.C., Biometric Passport",
+   "read": "2026-10-31",
+   "said": "Biometric Passport Please click the form below:"
+  }
+ ]
+}

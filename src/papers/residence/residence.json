@@ -63,6 +63,15 @@
    }
   ]
  },
+ "AF": {
+  "routes": [
+   {
+    "id": "istogane-visa",
+    "name": "استوګنې وېزه",
+    "for": "general"
+   }
+  ]
+ },
  "AG": {
   "routes": [
    {
@@ -513,6 +522,42 @@
    }
   ]
  },
+ "BG": {
+  "routes": [
+   {
+    "id": "single-permit",
+    "name": "Single permit",
+    "for": "work",
+    "apply": "in country",
+    "work": "sponsor",
+    "term": {
+     "n": 1,
+     "unit": "year"
+    },
+    "renewable": true,
+    "permanentAfter": 5
+   },
+   {
+    "id": "self-employment",
+    "name": "Residence permit on a self-employment permit",
+    "for": "self-employed",
+    "apply": "in country",
+    "term": {
+     "n": 1,
+     "unit": "year"
+    },
+    "renewable": true,
+    "permanentAfter": 5
+   },
+   {
+    "id": "permanent",
+    "name": "Permanent (long-term) residence",
+    "for": "permanent",
+    "apply": "either",
+    "work": "any"
+   }
+  ]
+ },
  "BH": {
   "routes": [
    {
@@ -705,6 +750,26 @@
    }
   ]
  },
+ "BO": {
+  "routes": [
+   {
+    "id": "visa-objeto-determinado",
+    "name": "Visa de Objeto Determinado",
+    "for": "work",
+    "apply": "abroad"
+   },
+   {
+    "id": "permanencia-temporal-estudiante",
+    "name": "Permanencia temporal del estudiante",
+    "for": "study",
+    "term": {
+     "n": 1,
+     "unit": "year"
+    },
+    "renewable": true
+   }
+  ]
+ },
  "BQ": {
   "routes": [
    {
@@ -816,6 +881,30 @@
      "currency": "BSD",
      "minor": 20000
     }
+   }
+  ]
+ },
+ "BT": {
+  "routes": [
+   {
+    "id": "work-permit",
+    "name": "Work Permit",
+    "for": "work"
+   },
+   {
+    "id": "investor-card",
+    "name": "Investor card",
+    "for": "means",
+    "term": {
+     "n": 3,
+     "unit": "year"
+    },
+    "renewable": true
+   },
+   {
+    "id": "dependent-permit",
+    "name": "Dependent permit",
+    "for": "family"
    }
   ]
  },
@@ -951,6 +1040,15 @@
     "for": "permanent",
     "apply": "in country",
     "work": "any"
+   }
+  ]
+ },
+ "CF": {
+  "routes": [
+   {
+    "id": "titre-de-sejour",
+    "name": "Titre de séjour",
+    "for": "general"
    }
   ]
  },
@@ -1515,6 +1613,63 @@
    }
   ]
  },
+ "DO": {
+  "routes": [
+   {
+    "id": "rt-3",
+    "name": "Residencia Temporal Laboral (RT-3)",
+    "for": "work",
+    "renewable": true
+   },
+   {
+    "id": "rt-2",
+    "name": "Residencia Temporal Gerencial (RT-2)",
+    "for": "work",
+    "renewable": true
+   },
+   {
+    "id": "padei",
+    "name": "Permiso Para Artista, Deportista Y Estudiante De Intercambio (PADEI)",
+    "for": "talent",
+    "renewable": true
+   },
+   {
+    "id": "inversion-rentista",
+    "name": "Residencia Por Inversión En Calidad Rentista",
+    "for": "means",
+    "renewable": true
+   },
+   {
+    "id": "inversion-pensionado",
+    "name": "Residencia Por Inversión En Calidad Pensionado Y Jubilado",
+    "for": "retirement",
+    "renewable": true
+   },
+   {
+    "id": "rt-7",
+    "name": "Residencia Temporal De Dependiente (RT-7)",
+    "for": "family",
+    "renewable": true
+   },
+   {
+    "id": "e-1",
+    "name": "Permiso De Estudiante Extranjero (E-1)",
+    "for": "study",
+    "renewable": true
+   },
+   {
+    "id": "rp-1",
+    "name": "Residencia Permanente (RP-1)",
+    "for": "permanent",
+    "renewable": true
+   },
+   {
+    "id": "rd-1",
+    "name": "Residencia Definitiva (RD-1)",
+    "for": "permanent"
+   }
+  ]
+ },
  "DZ": {
   "routes": [
    {
@@ -1571,6 +1726,50 @@
      "EU/EEA",
      "CH"
     ]
+   }
+  ]
+ },
+ "EG": {
+  "routes": [
+   {
+    "id": "iqama-khassa-ulama",
+    "name": "إقامة خاصة (العلماء ورجال الأدب والفن والصناعة والاقتصاد ممن يؤدون خدمات جليلة للبلاد)",
+    "for": "talent",
+    "term": {
+     "n": 10,
+     "unit": "year"
+    },
+    "renewable": true
+   },
+   {
+    "id": "iqama-moaqata",
+    "name": "إقامة مؤقتة",
+    "for": "general",
+    "term": {
+     "n": 1,
+     "unit": "year"
+    },
+    "renewable": true
+   },
+   {
+    "id": "iqama-aqar-200k",
+    "name": "إقامة مؤقتة لغير السياحة لمن يمتلك عقاراً لا تقل قيمته عن مائتي ألف دولار",
+    "for": "means",
+    "term": {
+     "n": 5,
+     "unit": "year"
+    },
+    "renewable": true
+   },
+   {
+    "id": "iqama-aqar-100k",
+    "name": "إقامة مؤقتة لغير السياحة لمن يملك عقاراً تبلغ قيمته مائة ألف دولار",
+    "for": "means",
+    "term": {
+     "n": 3,
+     "unit": "year"
+    },
+    "renewable": true
    }
   ]
  },
@@ -4413,6 +4612,16 @@
  "PR": {
   "issuedBy": "US"
  },
+ "PS": {
+  "routes": [
+   {
+    "id": "iqama",
+    "name": "الإقامة (الإدارة العامة للإقامات وشؤون الأجانب)",
+    "for": "general",
+    "apply": "in country"
+   }
+  ]
+ },
  "PT": {
   "routes": [
    {
@@ -4702,6 +4911,15 @@
    }
   ]
  },
+ "SD": {
+  "routes": [
+   {
+    "id": "iqama-dirasa",
+    "name": "الإقامة بغرض الدراسة",
+    "for": "study"
+   }
+  ]
+ },
  "SE": {
   "routes": [
    {
@@ -4920,6 +5138,15 @@
    }
   ]
  },
+ "SL": {
+  "routes": [
+   {
+    "id": "residence-permit",
+    "name": "Residence Permit for Non-Nationals (Biometric Residence Permit)",
+    "for": "general"
+   }
+  ]
+ },
  "SM": {
   "routes": [
    {
@@ -5100,6 +5327,25 @@
    }
   ]
  },
+ "SZ": {
+  "routes": [
+   {
+    "id": "trp-work",
+    "name": "Temporary Residence Permit",
+    "for": "work"
+   },
+   {
+    "id": "trp-study",
+    "name": "Temporary Residence Permit",
+    "for": "study"
+   },
+   {
+    "id": "permanent",
+    "name": "Permanent residency",
+    "for": "permanent"
+   }
+  ]
+ },
  "TC": {
   "routes": [
    {
@@ -5212,6 +5458,85 @@
     },
     "term": {
      "n": 3,
+     "unit": "year"
+    },
+    "renewable": true
+   }
+  ]
+ },
+ "TH": {
+  "routes": [
+   {
+    "id": "ltr-highly-skilled",
+    "name": "Long-Term Resident (LTR) Visa: Highly-skilled Professionals",
+    "for": "talent",
+    "apply": "either",
+    "fee": {
+     "currency": "THB",
+     "minor": 5000000
+    },
+    "term": {
+     "n": 5,
+     "unit": "year"
+    },
+    "renewable": true
+   },
+   {
+    "id": "ltr-work-from-thailand",
+    "name": "Long-Term Resident (LTR) Visa: Work-from-Thailand Professionals",
+    "for": "work",
+    "apply": "either",
+    "fee": {
+     "currency": "THB",
+     "minor": 5000000
+    },
+    "term": {
+     "n": 5,
+     "unit": "year"
+    },
+    "renewable": true
+   },
+   {
+    "id": "ltr-wealthy-global-citizen",
+    "name": "Long-Term Resident (LTR) Visa: Wealthy Global Citizens",
+    "for": "means",
+    "apply": "either",
+    "fee": {
+     "currency": "THB",
+     "minor": 5000000
+    },
+    "term": {
+     "n": 5,
+     "unit": "year"
+    },
+    "renewable": true
+   },
+   {
+    "id": "ltr-wealthy-pensioner",
+    "name": "Long-Term Resident (LTR) Visa: Wealthy Pensioners",
+    "for": "retirement",
+    "apply": "either",
+    "fee": {
+     "currency": "THB",
+     "minor": 5000000
+    },
+    "term": {
+     "n": 5,
+     "unit": "year"
+    },
+    "renewable": true
+   },
+   {
+    "id": "ltr-dependants",
+    "name": "Long-Term Resident (LTR) Visa: Spouses and dependents",
+    "for": "family",
+    "apply": "either",
+    "fee": {
+     "currency": "THB",
+     "minor": 5000000
+    },
+    "term": {
+     "n": 5,
      "unit": "year"
     },
     "renewable": true
@@ -5685,6 +6010,21 @@
     "for": "work",
     "apply": "either",
     "work": "any"
+   }
+  ]
+ },
+ "UZ": {
+  "routes": [
+   {
+    "id": "doimiy-yashash",
+    "name": "Доимий яшашга рухсатнома",
+    "for": "permanent",
+    "apply": "in country"
+   },
+   {
+    "id": "yashash-guvohnomasi-kochmas-mulk",
+    "name": "Яшаш гувоҳномаси (кўчмас мулк сотиб олиш орқали йирик инвестиция киритган чет эл фуқаролари)",
+    "for": "means"
    }
   ]
  },
