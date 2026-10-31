@@ -1,0 +1,62 @@
+{
+ "country": "JM",
+ "national": {
+  "name": "Routing number and account number",
+  "parts": [
+   {
+    "name": "Routing Number",
+    "length": 8,
+    "kind": "n"
+   },
+   {
+    "name": "Check Digit",
+    "length": 1,
+    "kind": "n"
+   },
+   {
+    "name": "Account Number",
+    "length": 17,
+    "kind": "c",
+    "min": 1
+   }
+  ],
+  "bank": [
+   1,
+   8
+  ],
+  "checks": [
+   {
+    "over": [
+     1,
+     8
+    ],
+    "weights": [
+     3,
+     7,
+     1,
+     3,
+     7,
+     1,
+     3,
+     7
+    ]
+   }
+  ],
+  "example": "122000043123987654321"
+ },
+ "note": "Retail Payments Jamaica Limited's ACH Rules, Appendices and Technical Specifications (amended July 2020, published by the Bank of Jamaica; read 2026-10-30): a transfer carries the receiving institution's routing number, 'as assigned by Bank of Jamaica', in eight positions with a check digit after it, and the account number in up to seventeen (1 to 17 positions, left-justified; taken from a cheque's on-us field as digits and hyphens, or from another source with letters allowed: held as letters or digits, the hyphens left out, which the form can't hold). The check digit, as the rules give it: each of the routing number's eight digits times the weights 3 7 1 3 7 1 3 7, summed, the check the sum taken from the next multiple of 10 (their worked routing number 0764012-5 gives 109 and check 1). The rules' own enrollment example (22*12200004*3*123987654321) gives a whole number, routing 12200004, check 3, account 123987654321, which is the example. Reading to check: the rules read like an adaptation of the US NACHA rules (their enrollment examples speak of federal agencies), but they're the clearing house's own published rule for Jamaica and the routing number is the BOJ's. The paper rules (Section A) number a branch differently: a Transit Number, the member's three-digit number allocated by the BOJ and the branch's five digits; whether the ACH's eight-digit routing number is that transit number isn't said, so the whole routing number is held as the bank's code. No bank's own account length was read (NCB's pages state none), so the account is drawn at the most the rules allow, seventeen.",
+ "sources": [
+  {
+   "url": "https://boj.org.jm/wp-content/uploads/2023/09/RPJL-ACH-Rules-Appendices-1-7-Amended-July-2020.pdf",
+   "title": "Retail Payments Jamaica Limited, Automated Clearing House (ACH) Rules: Appendices and Technical Specifications (amended July 2020), on the Bank of Jamaica's site",
+   "read": "2026-10-30",
+   "said": "The Check Digit is computed using Modulus 10 as follows: ... Multiply each digit in the Routing Number by a weighting factor. ... Weights: 37137137 ... Subtract the sum from the next highest multiple of 10. The result is the Check Digit. ... Receiving DFI Identification Number—This field will contain the routing number used to identify the DFI at which the account holder maintains its account. (8 positions) ... DFI Account Number—This field will contain the account holder’s account number. (1 - 17 positions) ... 22*12200004*3*123987654321*777777777*DOE*JOHN*0\\ ... The standard Routing Number as assigned by Bank of Jamaica (with Check Digit) is used to identify the DFI in which the Receiver maintains his account. ... If information is obtained from another source, alpha characters may be included."
+  },
+  {
+   "url": "https://boj.org.jm/wp-content/uploads/2023/09/RPJL-ACH-Rules-Section-A-Paper-Items-Amended-July-2020.pdf",
+   "title": "Retail Payments Jamaica Limited, Automated Clearing House (ACH) Rules: Section A, Paper Items (amended July 2020), on the Bank of Jamaica's site",
+   "read": "2026-10-30",
+   "said": "\"Branch Number\" means a five-digit number (including leading zeros) designated by the Financial Institution to identify a Branch. ... “Member Number” means a three digit number allocated by BOJ that may be utilized for MICR encoding on cheques and other paper Items drawn on a Member. ... “Transit Number” is the combination of Member Number and the Branch number."
+  }
+ ]
+}

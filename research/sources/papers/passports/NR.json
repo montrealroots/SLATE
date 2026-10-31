@@ -1,0 +1,52 @@
+{
+ "country": "NR",
+ "office": "the Passport Office of the Government of Nauru, under the Passports Act 2011",
+ "currency": "AUD",
+ "routes": [
+  {
+   "id": "home",
+   "where": "home",
+   "speed": "standard",
+   "within": null,
+   "label": "ordinary application"
+  },
+  {
+   "id": "24h",
+   "where": "home",
+   "speed": "urgent",
+   "within": {
+    "n": 24,
+    "unit": "hour"
+   },
+   "label": "processed within 24 hours"
+  },
+  {
+   "id": "lost",
+   "where": "home",
+   "speed": "standard",
+   "within": null,
+   "replacement": true,
+   "label": "replacing a first passport lost, stolen or damaged within 10 years of its issue"
+  }
+ ],
+ "passports": [
+  {
+   "for": "any age, an ordinary passport",
+   "validYears": null,
+   "pay": {
+    "home": "60",
+    "24h": "160",
+    "lost": "160"
+   }
+  }
+ ],
+ "note": "The Passports Regulations 2011 as consolidated on RONLAW, Nauru's online legal database (Service 3, printed 13 November 2024), Schedule 3 Part 1 as substituted by the Passport (Amendment) Regulations 2017 (SL 32, in force 6 December 2017): an ordinary passport's application fee $60; replacing a first passport lost, stolen or damaged within 10 years of its issue $160; an ordinary passport processed within 24 hours $160, including the passport's fee; replacing more than one lost passport within 10 years $560 (not modelled); postage by ordinary mail $100 (not modelled). The fees are in dollars, read as the Australian dollar, Nauru's currency (the Regulations write \"Fee ($)\"; the 2025 Regulations for economic citizens, which set USD 500 for their passports, say \"(USD)\" where they mean it, and do not apply to an ordinary citizen). Regulation 5 sets the passport's maximum validity at 10 years (subject to exceptions); as a maximum, it isn't written as the term. No age bands and no standard time are given. The table of amendments lists no change to Schedule 3 after 2017 (the 2021 and 2023 Acts amended other parts).",
+ "sources": [
+  {
+   "url": "https://ronlaw.gov.nr/assets/docs/laws/2011/Passports%20Regulations%202011_serv3.pdf",
+   "title": "RONLAW (Nauru's online legal database), Passports Regulations 2011, consolidated Service 3 (printed 13 November 2024)",
+   "read": "2026-10-31",
+   "said": "Passport (Amedment) Regulations 2017 6 December 2017 6 December 2017 ... For the purposes of Section 22(a) of the Act, the maximum period of validity for a passport is as follows: (a) subject to paragraphs (b), (c) and (d), 10 years; ... [Sch 3 subst SL 32 of 2017 reg 5, opn 6 Dec 2017] ... Item Matter Fee ($) (a) Ordinary passport 1 Application fee for passport 60 2 Application fee for replacement of first passport lost, stolen or 160 damaged within 10 years of the date of issue of the passport ... 8 Application fee for ordinary passport to be processed within 160 24 hours including fee for passport"
+  }
+ ]
+}

@@ -1,0 +1,25 @@
+{
+ "country": "BF",
+ "name": "Identifiant financier unique (IFU)",
+ "issuer": "the Direction générale des impôts (DGI)",
+ "format": {
+  "length": 9,
+  "pattern": "^\\d*[A-Z]\\d*$"
+ },
+ "when": "application",
+ "who": [
+  "anyone"
+ ],
+ "needed": [
+  "tax"
+ ],
+ "note": "Burkina Faso's Direction générale des impôts, its page 'FAQ : Immatriculation des contribuables' (read 2026-10-30): the IFU is a unique number given to a user of the financial administration who asks for it, alphanumeric, of eight digits and one letter, invariable and personal; it is attributed to any user of the financial administration. So `when` is application and `who` anyone (the page sets no citizenship or residence; its list of papers for a salaried person shows individuals get one). The length is nine characters; the page doesn't say where the letter stands, so the pattern takes eight digits and exactly one capital letter in any place (the letter's case is read as a capital). No check rule is stated. `needed` is tax: the page lists making tax declarations (effectuer des déclarations fiscales) among the operations the IFU registration permits, and says bank-domiciliation and the opening of commercial and professional accounts can't be done without it (business accounts, which the form's `bank` doesn't hold apart, so `bank` is left out). A salaried person's papers include a request bearing a 200 F CFA stamp; that is the stamp on the request, not a fee the page sets for the number, so `fee` is left out. No age or time is stated. Not read: the Code général des impôts' own article on the IFU.",
+ "sources": [
+  {
+   "url": "https://dgi.bf/faq-immatriculation-des-contribuables/",
+   "title": "Direction générale des impôts du Burkina Faso, FAQ : Immatriculation des contribuables",
+   "read": "2026-10-30",
+   "said": "L’IFU est un numéro alpha numérique de huit (08) chiffres et une lettre. Il est invariable et personnel. ... Les pièces à fournir par un salarié pour l’obtention d’un numéro IFU sont : ... – une demande timbrée 200 FCFA ; ... L’IFU est un numéro alpha numérique, de huit chiffres et une lettre, attribué à tout usager de l’administration financière du Burkina Faso. ... – effectuer des déclarations fiscales ; ... les ouvertures de comptes commerciaux et professionnels"
+  }
+ ]
+}

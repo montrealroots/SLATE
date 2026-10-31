@@ -1,0 +1,33 @@
+{
+ "country": "KG",
+ "name": "персональный идентификационный номер (ПИН), the personal identification number",
+ "issuer": "the state body the Cabinet of Ministers designates under the Law on personified accounting (the reports read don't name it)",
+ "format": {
+  "length": 14,
+  "pattern": "^[124]\\d{13}$"
+ },
+ "when": "registration",
+ "who": [
+  "citizens",
+  "residents"
+ ],
+ "note": "Two Kyrgyz papers, read 2026-10-30, report the rules: Kaktus.media (29 September 2025) on Cabinet resolution no. 598 of 22 September 2025, in force from 1 July: the PIN has 14 digits, the first 1 for a woman and 2 for a man who are citizens, 4 for every foreign citizen or stateless person (before, 3 for foreign women and 4 for foreign men); Economist.kg (10 April 2026) on the President's amendments to the law on personified accounting of citizens: the number is still given once, to citizens, foreigners and stateless people, kept for life (changeable now only in exceptional cases such as witness protection), and used for compulsory state social insurance. The pattern holds the first digit and 14 digits; the other places aren't described, and no check digit is stated. Read as given on registration, to citizens and residents. Which office gives it isn't named in what was read (Kaktus says the State Institution 'Kyzmat' is to change the information systems), so the issuer is written as the designated body. Social insurance isn't one of the form's purposes, so `needed` is left out. The resolution's and the law's own texts (cbd.minjust.gov.kg) weren't read, so both sources are marked secondary. No fee, time or age is stated.",
+ "sources": [
+  {
+   "url": "https://kaktus.media/doc/532371_kabmin_vnes_izmeneniia_v_poriadok_prisvoeniia_pin.html",
+   "title": "Kaktus.media, Кабмин внес изменения в порядок присвоения ПИН (29 September 2025)",
+   "read": "2026-10-30",
+   "kind": "secondary",
+   "quotes": "https://cbd.minjust.gov.kg/",
+   "said": "Согласно постановлению №598, подписанному 22 сентября председателем кабмина Адылбеком Касымалиевым, отличительным знаком ПИН, присваиваемых иностранным гражданам и лицам без гражданства, является цифра 4. ... 1 и 2, напомним, указывают на пол гражданина Кыргызстана: женский и мужской соответственно. ... Ранее, отметим, первая цифра 14-значного ПИН присваивалась:"
+  },
+  {
+   "url": "https://economist.kg/society/2026/04/10/pin-v-kyrgyzstane-teper-mozhno-budet-izmenit-v-iskliuchitelnykh-sluchaiakh/",
+   "title": "Economist.kg, ПИН в Кыргызстане теперь можно будет изменить — в исключительных случаях (10 April 2026)",
+   "read": "2026-10-30",
+   "kind": "secondary",
+   "quotes": "https://cbd.minjust.gov.kg/",
+   "said": "идентификационный номер по-прежнему присваивается гражданам Кыргызстана, иностранцам и лицам без гражданства один раз и сохраняется в течение всей жизни ... ПИН остается неизменным индивидуальным номером, используемым для целей обязательного государственного социального страхования."
+  }
+ ]
+}

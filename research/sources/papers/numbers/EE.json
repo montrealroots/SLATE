@@ -1,0 +1,25 @@
+{
+ "country": "EE",
+ "name": "personal identification code",
+ "issuer": "the Estonian population register (the sheet names no office)",
+ "format": {
+  "length": 11,
+  "pattern": "^[1-6]\\d{10}$"
+ },
+ "when": "birth",
+ "who": [
+  "residents"
+ ],
+ "needed": [
+  "tax"
+ ],
+ "note": "Estonia's sheet (its government's own sheet on the OECD's automatic-exchange portal ('Information on Tax Identification Numbers'; the OECD's index page sits behind a bot check and wasn't opened, the sheet itself came straight back)), read 2026-10-30: the individual's TIN is the personal identification code, 11 digits GYYMMDDSSSC: sex and century, the birth date, a serial for those born the same day and a checksum (its rule isn't given here, `check` left out); individuals get it automatically. The sheet points to the law (riigiteataja.ee/akt/106032012004, not read) for the issuing body, so the issuer is written without its office. Read as given at birth, to residents. No fee or time is stated.",
+ "sources": [
+  {
+   "url": "https://www.oecd.org/content/dam/oecd/en/topics/policy-issue-focus/aeoi/estonia-tin.pdf",
+   "title": "OECD AEOI portal, Estonia: Information on Tax Identification Numbers (the jurisdiction's own sheet)",
+   "read": "2026-10-30",
+   "said": "Information about issuance of TIN for individuals (personal identification code, see structure in section II below) and about TIN issuing bodies can be found in Estonian here: https://www.riigiteataja.ee/akt/106032012004 ... An Estonian personal identification code consists of 11 digits ... The form is GYYMMDDSSSC, where G shows sex and century of birth"
+  }
+ ]
+}

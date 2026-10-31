@@ -1,0 +1,22 @@
+{
+ "country": "NC",
+ "name": "identifiant fiscal",
+ "issuer": "the Government of New Caledonia's tax services (impots.nc)",
+ "format": {
+  "length": 7,
+  "pattern": "^\\d{7}$"
+ },
+ "when": "application",
+ "who": [
+  "anyone"
+ ],
+ "note": "New Caledonia's government notice 'S'abonner au téléservice « Vos démarches fiscales en ligne »' (version of October 2019, served on impots.nc, read 2026-10-30), addressed to every natural person signing up for themselves or for a company. A person who has declared income in New Caledonia enters their identifiant fiscal, 'composé de 7 chiffres', personal to them and printed on the previous year's tax notice, then its key of two digits and the household's number (three letters and seven digits). The identifier is held as seven digits; the two-digit key printed beside it is a separate field whose rule isn't given, so no check is modelled, and the household number isn't held. A first-time declarant (primo-déclarant) asks online for the creation of their tax file, giving a CAFAT number if they have one or the obligatory particulars and a scan of an identity paper; so `when` is application (the identifier being read as given with that file; the notice doesn't say in words when it is assigned) and `who` anyone (the notice sets no citizenship or residence). No age, fee, time or what needs it is stated. The CAFAT's own insured person's number, which the notice asks for, has no published form found, and isn't this file's number. New Caledonia isn't in France's tax system; France's numéro fiscal isn't the number here.",
+ "sources": [
+  {
+   "url": "https://www.impots.nc/statics/public/infobulle/CU-SEL-ACCUEIL/S_abonner-au-teleservice-vos-demarches-fiscales-en-ligne.pdf",
+   "title": "Gouvernement de la Nouvelle-Calédonie, Notice téléservices : S'abonner au téléservice « Vos démarches fiscales en ligne » (V.Oct2019)",
+   "read": "2026-10-30",
+   "said": "Cette notice s’adresse à toutes les personnes physiques souhaitant s’inscrire pour leur propre compte ou pour le compte d’une personne morale. ... Saisir votre identifiant fiscal composé de 7 chiffres ... Votre identifiant est personnel. ... Saisir votre clé sur 2 chiffres. ... Saisir le numéro de foyer qui est composé de 3 lettres et 7 chiffres. ... Cliquer sur le lien en bleu « cliquez ici pour demander la création de votre dossier fiscal ». ... Si vous avez un numéro CAFAT, saisissez le dans le champ « Numéro CAFAT »"
+  }
+ ]
+}

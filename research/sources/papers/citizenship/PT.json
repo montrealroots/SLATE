@@ -1,0 +1,29 @@
+{
+ "country": "PT",
+ "years": 10,
+ "renounce": false,
+ "lapses": false,
+ "note": "GLOBALCIT's Citizenship Law Dataset v3.0 (EUI, 2025), coding the law in force on 1 January 2024 (A06a POR 6(1); A06b POR 6(1); L05 No provision): ordinary naturalisation after 5 years' residence; no renunciation of other citizenships required; a citizen keeps it on taking another. Reforms after that date are checked in the file's later sources, where a later source is given. Organic Law 1/2026 (Diário da República, 18 May 2026) rewrote article 6(1): naturalisation now asks ten years' legal residence, or seven for nationals of Portuguese-speaking countries and citizens of EU Member States (the shorter period by nationality isn't modelled, so ten is); nothing on renunciation or loss changed. Citizenship at birth is read from article 1 of Law 37/81 as republished in the annex to Organic Law 1/2026: a child of a Portuguese mother or father born in Portugal is Portuguese of origin; one born abroad is if the parent serves the state there, or the birth is registered or a declaration made; birth in Portugal to foreign parents gives it in the second generation or, by declaration, after a parent's five years of legal residence (one year, of any residence, before the 2026 amendment, as GLOBALCIT's 2024 coding has it). Grandchildren of Portuguese citizens by declaration (art. 1(1)(d)), children born in Portugal with no other nationality (art. 1(1)(g)) and foundlings aren't held by the form.",
+ "sources": [
+  {
+   "url": "https://cadmus.eui.eu/bitstreams/3b166501-e695-48d7-9e27-d7bef061573a/download",
+   "title": "GLOBALCIT Citizenship Law Dataset v3.0 (Vink, van der Baaren, Bauböck, Dzankic, Honohan, Manby; EUI Research Data, 2025), country-year-mode files, Portugal, 2024",
+   "read": "2026-10-29",
+   "kind": "secondary",
+   "quotes": "https://globalcit.eu/national-citizenship-laws/",
+   "said": "Person has been resident in Portugal for 5 years. ... n.a. ... n.a."
+  },
+  {
+   "url": "https://files.diariodarepublica.pt/1s/2026/05/09500/0000200020.pdf",
+   "title": "Diário da República, 1.ª série, n.º 95, 18 May 2026: Lei Orgânica n.º 1/2026, de 18 de maio (Alteração à Lei n.º 37/81, que aprova a Lei da Nacionalidade), article 6",
+   "read": "2026-10-29",
+   "said": "Lei Orgânica n.º 1/2026, de 18 de maio ... 1 — O Governo concede a nacionalidade portuguesa aos indivíduos que, no momento do pedido, satisfaçam cumulativamente os seguintes requisitos: ... b) Residirem legalmente no território português há pelo menos sete anos, no caso de nacionais de países de língua oficial portuguesa e de cidadãos de Estados-Membros da União Europeia, ou 10 anos, no caso de nacionais de outros países; ... Artigo 1.º Nacionalidade originária 1 — São portugueses de origem: a) Os filhos de mãe portuguesa ou de pai português nascidos no território português; b) Os filhos de mãe portuguesa ou de pai português nascidos no estrangeiro se o progenitor português aí se encontrar ao serviço do Estado português; c) Os filhos de mãe portuguesa ou de pai português nascidos no estrangeiro se tiverem o seu nascimento inscrito no registo civil português ou se declararem que querem ser portugueses; ... e) Os indivíduos nascidos no território português, filhos de estrangeiros, se pelo menos um dos progenitores também aqui tiver nascido e aqui tiver residência, independentemente de título, ao tempo do nascimento; f) Os indivíduos nascidos no território português, filhos de estrangeiros que não se encontrem ao serviço do respetivo Estado, se declararem que querem ser portugueses, desde que, no momento do nascimento, um dos progenitores resida legalmente no território português há pelo menos cinco anos;"
+  }
+ ],
+ "atBirth": {
+  "soil": "conditional",
+  "soilIf": "Born in Portugal to foreign parents, one of whom was also born in Portugal and lives there at the birth, whatever the title (art. 1(1)(e)); or born in Portugal to foreign parents not in their state's service, one of whom has lived legally in Portugal for at least five years at the birth, if the child declares the wish to be Portuguese (art. 1(1)(f), as amended by Organic Law 1/2026).",
+  "descent": "either parent",
+  "descentAbroad": "A child of a Portuguese mother or father born abroad is Portuguese at birth if the Portuguese parent is there in the Portuguese state's service, and otherwise if the birth is entered in the Portuguese civil register or the child declares the wish to be Portuguese (art. 1(1)(b) and (c))."
+ }
+}

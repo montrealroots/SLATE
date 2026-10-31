@@ -1,0 +1,26 @@
+{
+ "country": "UY",
+ "name": "Identity Card Number",
+ "issuer": "the DNIC (National Direction of Civil Identification)",
+ "format": {
+  "length": 8,
+  "pattern": "^\\d{8}$"
+ },
+ "when": "application",
+ "who": [
+  "citizens",
+  "residents"
+ ],
+ "needed": [
+  "tax"
+ ],
+ "note": "Uruguay's sheet (its government's own sheet on the OECD's automatic-exchange portal ('Information on Tax Identification Numbers'; the OECD's index page sits behind a bot check and wasn't opened, the sheet itself came straight back)), read 2026-10-30: a person without a RUT is identified for tax by the identity card the DNIC issues; its number is 7 digits and a verification digit, written without points or hyphens. The verification rule isn't given, so `check` is left out. Read as given on application for the card (when, to whom and at what age isn't in the sheet; citizens and residents are the game's reading); foreigners without a card get a 9-digit NIE from the tax authority (not modelled). The name and issuer are as the sheet gives them, in English.",
+ "sources": [
+  {
+   "url": "https://www.oecd.org/content/dam/oecd/en/topics/policy-issue-focus/aeoi/uruguay-tin.pdf",
+   "title": "OECD AEOI portal, Uruguay: Information on Tax Identification Numbers (the jurisdiction's own sheet)",
+   "read": "2026-10-30",
+   "said": "IDCard: Identity Card for Physical Persons: a Card issued by the National Office ... This number is granted by the DNIC (National Direction of Civil Identification), and is formed by 7 numbers, plus ... a verifying digit. For our RUT records, we register the number without any points or hyphens."
+  }
+ ]
+}

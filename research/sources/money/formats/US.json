@@ -1,0 +1,100 @@
+{
+ "country": "US",
+ "national": {
+  "name": "Routing and account number",
+  "parts": [
+   {
+    "name": "Federal Reserve Routing Symbol",
+    "length": 4,
+    "kind": "n"
+   },
+   {
+    "name": "ABA Institution Identifier",
+    "length": 4,
+    "kind": "n"
+   },
+   {
+    "name": "Check Digit",
+    "length": 1,
+    "kind": "n"
+   },
+   {
+    "name": "Account Number",
+    "length": 17,
+    "kind": "c",
+    "min": 1,
+    "drawn": [
+     8,
+     12
+    ]
+   }
+  ],
+  "bank": [
+   1,
+   8
+  ],
+  "checks": [
+   {
+    "over": [
+     1,
+     8
+    ],
+    "weights": [
+     3,
+     7,
+     1,
+     3,
+     7,
+     1,
+     3,
+     7
+    ]
+   }
+  ]
+ },
+ "note": "The ABA's Routing Number Policy (revised 9/20, read 2026-10-30 on aba.com) gives the routing number as nine digits: a four-digit Federal Reserve Routing Symbol (01-12 for banks, by Federal Reserve district), a four-digit ABA institution identifier (the page misprints it 'Intuition') and a check digit; the ABA's own page puts the account number right after it on a cheque. The check digit is the one the Federal Reserve Bank of New York's Circular No. 8203 (19 October 1977, read 2026-10-30 in the St. Louis Fed's FRASER copy) announced for the joint ABA/Federal Reserve programme in force from 1 July 1978: 'a Modulus-10, weights 3, 7, 1, check digit as the last digit in the Routing Number field'. The weights are read left to right over the first eight digits (3, 7, 1, 3, 7, 1, 3, 7), the check digit being what brings the sum to a multiple of ten; that reading was checked on the page of the Key to Routing Numbers enclosed with the circular, whose 0219-0757 (7), 0213-0763 (0) and 0219-0797 (5) all pass it, and on Bank of Guam's routing number 121405115 (its own page, read 2026-10-30). No national standard fixes the account number's length: the Fiscal Service's Green Book says only that account numbers may be up to 17 characters, letters or digits. JPMorgan Chase, the largest bank, says a checking account number is often eight to 12 digits long and gives no single length in text; so the account number is held as the Green Book gives it, one to seventeen characters, and a new one is drawn at eight to twelve digits, as Chase says its own are. (Until 2026-10-30 this file held nine digits, counted from the placeholder zeros of the sample check on Chase's routing-numbers page; a picture's placeholders aren't a length the bank states, and the lead held the file back.) A whole worked number (routing and account together) isn't published by any source read, so the form has no example. The routing number is held as the bank's code (characters 1 to 8, the check digit worked from them). NACHA's ACH developer guide answered with a Cloudflare challenge and wasn't read; the Federal Reserve's E-Payments Routing Directory pages sit behind a terms-of-use agreement and weren't entered.",
+ "sources": [
+  {
+   "url": "https://www.aba.com/news-research/analysis-guides/routing-number-policy-procedures",
+   "title": "American Bankers Association, Routing Number Policy and Procedures (the Routing Number Administrative Board's policy, revised 9/20)",
+   "read": "2026-10-30",
+   "said": "The Routing Number is a 9-digit number consisting of three components as shown below: XXXX YYYY C Federal Reserve Routing Symbol ABA Intuition Identifier Check Digit ... 01-12 Series: All checks and electronic transactions of banks ... One of the twelve geographic areas assigned to a Federal Reserve Bank main office. All of the United States and its territories fall into one of these twelve districts."
+  },
+  {
+   "url": "https://www.aba.com/about-us/routing-number",
+   "title": "American Bankers Association, ABA Routing Number",
+   "read": "2026-10-30",
+   "said": "is the official registrar of the ABA Routing Number™ ... listings of every active nine-digit Routing Number (approximately 22,000) ... The ABA Routing Number is the left-most number, followed by your account number, and then by the number of the check."
+  },
+  {
+   "url": "https://fraser.stlouisfed.org/files/docs/historical/ny%20circulars/nycirc_1977_08203.pdf",
+   "title": "Federal Reserve Bank of New York, Circular No. 8203, Addition of the Check Digit in the Routing Number Field on Checks (October 19, 1977), as digitized by the Federal Reserve Bank of St. Louis (FRASER)",
+   "read": "2026-10-30",
+   "said": "the insertion of a Modulus-10, weights 3, 7, 1, check digit as the last digit in the Routing Number field ... It will be the same digit that is currently being used in transferring funds and securities over the Federal Reserve ... 0219-0757 (7) The First National Bank of Highland"
+  },
+  {
+   "url": "https://fiscal.treasury.gov/files/reference-guidance/green-book/greenbook-full.pdf",
+   "title": "Bureau of the Fiscal Service, Green Book: A Guide to Federal Government ACH Payments",
+   "read": "2026-10-30",
+   "said": "The 9-digit routing number is a 9-digit number used to denote which financial institution will receive the deposit. ... Account Numbers may be up to 17 characters long."
+  },
+  {
+   "url": "https://www.chase.com/personal/banking/education/basics/how-to-find-checking-account-number-without-a-check",
+   "title": "JPMorgan Chase Bank, How to find your checking account number without a check",
+   "read": "2026-10-30",
+   "said": "Your checking account number is a unique sequence of digits—often eight to 12 numbers long—that identifies your specific account at your financial institution."
+  },
+  {
+   "url": "https://www.chase.com/content/services/rendition/image.large.jpg/unified-assets/ccbcontent-images/image-fragment/personal/checking/chk_routing-dd.jpg",
+   "title": "JPMorgan Chase Bank, sample check on its Routing Numbers page (chase.com/personal/checking/routing-numbers), an image read by eye",
+   "read": "2026-10-30",
+   "said": "9 Digit Routing Number ... Account Number ... Check Number"
+  },
+  {
+   "url": "https://bankofguam.com/routing-number",
+   "title": "Bank of Guam, Bank of Guam Routing Number",
+   "read": "2026-10-30",
+   "said": "Bank of Guam's Routing Number: 121405115"
+  }
+ ]
+}

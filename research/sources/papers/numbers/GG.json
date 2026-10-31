@@ -1,0 +1,25 @@
+{
+ "country": "GG",
+ "name": "Social Insurance number",
+ "issuer": "the Guernsey Revenue Service",
+ "format": {
+  "length": 8,
+  "pattern": "^GY\\d{6}$"
+ },
+ "when": "birth",
+ "who": [
+  "residents"
+ ],
+ "needed": [
+  "tax"
+ ],
+ "note": "Guernsey's sheet (its government's own sheet on the OECD's automatic-exchange portal ('Information on Tax Identification Numbers'; the OECD's index page sits behind a bot check and wasn't opened, the sheet itself came straight back)), read 2026-10-30: Guernsey has no TIN as such and uses the Social Insurance number for individuals; the Guernsey Revenue Service issues it at birth (if born in the Bailiwick) or on moving to Guernsey; GY and six digits, issued in sequence. No check digit, fee or time is stated.",
+ "sources": [
+  {
+   "url": "https://www.oecd.org/content/dam/oecd/en/topics/policy-issue-focus/aeoi/guernsey-tin.pdf",
+   "title": "OECD AEOI portal, Guernsey: Information on Tax Identification Numbers (the jurisdiction's own sheet)",
+   "read": "2026-10-30",
+   "said": "Guernsey has adopted the use of Social Insurance numbers as the functional ... These are issued by the Guernsey Revenue Service and are issued to an individual at birth (where born ... in the Bailiwick of Guernsey) or on moving residence to Guernsey. ... The TIN is comprised of 6 digits prefixed with GY"
+  }
+ ]
+}

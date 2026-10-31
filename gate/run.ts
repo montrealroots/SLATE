@@ -1,12 +1,14 @@
 import { mkdirSync, writeFileSync } from 'node:fs';
 import { dirname, join } from 'node:path';
 import { checkCoverage } from './checks/coverage.ts';
+import { checkEffects } from './checks/effects.ts';
 import { checkFeatures, type FalsifierRecord, type TestRun } from './checks/features.ts';
 import { checkHandoff } from './checks/handoff.ts';
 import { checkLayers, layerInProgress, parseLedger, type Git } from './checks/layers.ts';
 import { checkOwnerDocs } from './checks/owner-docs.ts';
 import { checkRegister } from './checks/register.ts';
 import { checkText } from './checks/text.ts';
+import { checkTitleCase } from './checks/title-case.ts';
 import { checkToolchain } from './checks/toolchain.ts';
 import { checkAudit, checkLint, checkMutation, checkTests, checkTypecheck, type Runner } from './checks/tools.ts';
 import { PATHS } from './lib/paths.ts';
@@ -51,6 +53,7 @@ export function runGate(o: GateOptions): GateOutcome {
   // Before the ledger can be read, the text is held as at layer 0: placeholder wording isn't yet unfinished work.
   const text = checkText(repo, current ?? 0);
   results.push(text.result);
+  results.push(checkTitleCase(repo));
   const register = checkRegister(repo, o.today, text.ids);
   results.push(register.result);
 
@@ -64,6 +67,7 @@ export function runGate(o: GateOptions): GateOutcome {
   }
 
   results.push(checkFeatures(repo, tests.falsifiers, tests.run));
+  results.push(checkEffects(repo, tests.falsifiers, tests.run));
   results.push(checkCoverage(repo, ledger, register.index, tests.run));
   results.push(checkHandoff(repo, current));
   if (o.full) {

@@ -1,0 +1,76 @@
+{
+ "country": "FI",
+ "banks": [
+  {
+   "bank": "OP",
+   "account": "Käyttötili",
+   "fees": [
+    {
+     "fee": "2.50",
+     "per": "month",
+     "waived": [
+      {
+       "under": 26
+      }
+     ]
+    }
+   ],
+   "debit": {
+    "fee": {
+     "fee": "2.75",
+     "per": "month",
+     "waived": [
+      {
+       "under": 26
+      }
+     ]
+    }
+   },
+   "atm": {
+    "own": "0",
+    "other": "0",
+    "abroad": {
+     "fixed": "2.00",
+     "percent": "2.75"
+    }
+   },
+   "transfers": {
+    "domestic": "0",
+    "abroad": {
+     "fixed": "6.00"
+    }
+   }
+  },
+  {
+   "bank": "Nordea",
+   "account": "Käyttötili",
+   "fees": [
+    {
+     "fee": "2.60",
+     "per": "month"
+    }
+   ]
+  }
+ ],
+ "note": "OP's price list (from 1 April 2025): a current account costs 2.50 euros a month, nothing for customers under 26 or for owner-members of their co-operative bank (membership isn't modelled). Nordea: a current account outside a service package costs 2.60 euros a month. Read again 2026-10-30 for OP (Nordea's page was saved again, its terms not read further): the OP Debit card costs 2.75 EUR a month, one card free under 18 and from 18 to 25 (waived under 26); euro withdrawals at any machine four free a month, then 0.70 EUR (written as free); withdrawals in another currency 2.00 EUR plus 2.75%; payments in OP's digital services are included in their monthly fee (domestic 0); a payment abroad online 6.00 EUR. An overdraft of the account is charged statutory late interest (at least 1.00 EUR) and 12.00 EUR a reminder, not written. Not stated: interest, a returned payment, the card's share on purchases in another currency, what opening asks.",
+ "sources": [
+  {
+   "url": "https://www.op.fi/tac?did=HeOmi0000004731&cs=650e8bcd8d9b842a87f58261c8ebf865a94076f901792f6646711df0e029c699",
+   "title": "OP, Palveluhinnasto: henkilöasiakkaat (voimassa 1.4.2025 alkaen)",
+   "read": "2026-10-30",
+   "said": "Voimassa 1.4.2025 alkaen Tilit ja maksaminen Tilit Käyttötilin kuukausimaksu 2,50 euroa ... Nuorten palvelut (alle 26-vuotiaille) Peruspalvelut Käyttötilin kuukausimaksu Maksuton"
+  },
+  {
+   "url": "https://www.nordea.fi/henkiloasiakkaat/palvelumme/tilit-maksut/kayttotili.html",
+   "title": "Nordea, Käyttötili",
+   "read": "2026-10-30",
+   "said": "Käyttötilin kuukausimaksu tiliä kohti on 2,60 €."
+  },
+  {
+   "url": "https://www.op.fi/tac?did=HeOmi0000004731&cs=650e8bcd8d9b842a87f58261c8ebf865a94076f901792f6646711df0e029c699",
+   "title": "OP, Palveluhinnasto, henkilöasiakkaat (1.4.2025): card and payments",
+   "read": "2026-10-30",
+   "said": "Maksaminen OP:n digipalveluissa (SEPA) Sisältyy OP:n ... Lähtevä ulkomaanmaksu ja pikamääräys OP:n digipalveluissa 6,00 euroa ... OP Debit 2,75 euroa ... 18-25 -vuotiaalle OP Classic, OP Debit tai OP Basic Yksi kortti maksuton ... Euromääräinen automaattinosto pankkitililtä 4 ilmaista nostoa/kk, ... 0,70 €/nosto ... Muu kuin euromääräinen automaattinosto pankkitililtä 2,00 € ja 2,75 %"
+  }
+ ]
+}

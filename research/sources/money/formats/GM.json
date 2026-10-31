@@ -1,0 +1,57 @@
+{
+ "country": "GM",
+ "national": {
+  "name": "BBAN",
+  "parts": [
+   {
+    "name": "Bank Code",
+    "length": 3,
+    "kind": "n"
+   },
+   {
+    "name": "Branch Code",
+    "length": 3,
+    "kind": "n"
+   },
+   {
+    "name": "Account Number",
+    "length": 10,
+    "kind": "n"
+   },
+   {
+    "name": "Account Check Digit",
+    "length": 2,
+    "kind": "n"
+   }
+  ],
+  "bank": [
+   1,
+   3
+  ],
+  "checks": [
+   {
+    "over": [
+     1,
+     16
+    ],
+    "key97": true
+   }
+  ],
+  "example": "001001000000011157"
+ },
+ "note": "The Gambia's ACP/ACH (the West African Monetary Zone's automated cheque processing and clearing house, built by BFI for the West African Monetary Institute) numbers an account as an 18-digit BBAN. The Central Bank of The Gambia's own Guidance Notes on the Operation of the ACP/ACH System (cheques and direct credits; the file of 20 November 2019, read 2026-10-30 from cbg.gm) give the direct credit's Payer BBAN as 18 digits, the bank code, branch code, account number and account check digit, and say the core banking application is to validate BBANs. The ACP/ACH Participant Guide (BFI for WAMI, version 1.0.1 of 11 June 2010, a draft 'to be validated', published by the Central Bank among its WAMZ payment system documents) gives the parts: the bank's code (3 digits), the branch's (3), the account number (10, padded with zeros on the left) and a two-digit check, worked over the 16 digits before it as 97 less the remainder of 100 times that number divided by 97 (from 01 to 97), the French RIB's key, held as key97; its worked BBAN, 001001000000011157, is the example and passes it. The same guide gives the zone's country codes, 01 for the Gambia, 05 for Sierra Leone and 03 for Guinea.",
+ "sources": [
+  {
+   "url": "https://www.cbg.gm/downloads-file/fced309f-06d3-11ea-876c-02e599c15748",
+   "title": "Central Bank of The Gambia, Guidance Notes on the Operation of the ACP/ACH System: Cheques and Direct Credits (2019)",
+   "read": "2026-10-30",
+   "said": "It is important for the Core Banking Application to validate BBANS in the Direct Credit Menu. ... Payer BBAN ... (bank code, branch code, account ... number and account check digit)"
+  },
+  {
+   "url": "https://www.cbg.gm/downloads-file/beddb2be-06e8-11ea-876c-02e599c15748",
+   "title": "BFI for the West African Monetary Institute, ACP / ACH Participant Guide (version 1.0.1, 11 June 2010), published by the Central Bank of The Gambia among its WAMZ Payment System Documentation",
+   "read": "2026-10-30",
+   "said": "The Account number (BBAN) is codified over 18 Positions as follows: ... The bank code 03 Number Completed with 0 on the left ... The branch code 03 Number Completed with 0 on the left ... Account number 10 Number Completed with 0 on the left ... Account Check Digit 02 Number ... The assembly formed in order by the bank code, branch code and account number constitutes a number N of 16 digits. ... Therefore, the result of the following subtraction (97 – (N‟ mod 97)) can only take values ... BBAN = 001001000000011157 ... 01 (GM) /05 (SL) / 03 (GN)"
+  }
+ ]
+}

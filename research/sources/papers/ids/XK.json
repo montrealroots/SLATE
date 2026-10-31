@@ -1,0 +1,48 @@
+{
+ "country": "XK",
+ "document": "letërnjoftim",
+ "office": "a civil registration centre (QPD) of the Civil Registration Agency, or a diplomatic or consular mission",
+ "currency": "EUR",
+ "routes": [
+  {
+   "id": "regular",
+   "where": "home",
+   "speed": "standard",
+   "within": {
+    "n": 15,
+    "unit": "day"
+   },
+   "label": "regular procedure: issued within 15 days"
+  },
+  {
+   "id": "accelerated",
+   "where": "home",
+   "speed": "urgent",
+   "within": {
+    "n": 72,
+    "unit": "hour"
+   },
+   "label": "accelerated procedure: issued within 72 hours"
+  }
+ ],
+ "cards": [
+  {
+   "for": "16 and over",
+   "from": 16,
+   "validYears": null,
+   "pay": {
+    "regular": "10",
+    "accelerated": "60"
+   }
+  }
+ ],
+ "note": "The Ministry of Internal Affairs' page: 10 euros by the regular procedure (5 for a pensioner, whose age isn't given, not modelled), 10 plus 50 by the accelerated one; its procedures are for applicants from 16. The card's term isn't on the page, so it's null; missions abroad take applications, at fees not stated (not modelled).",
+ "sources": [
+  {
+   "url": "https://mpb.rks-gov.net/f/42/Pajisja-me-leternjoftim",
+   "title": "Ministria e Punëve të Brendshme, Pajisja me letërnjoftim",
+   "read": "2026-10-28",
+   "said": "Gjatë aplikimit për pajisje me letërnjoftim për aplikuesit nga mosha 16 deri në 18 vjeç ... Aplikuesi duhet të jetë prezent në QPD ose në objektin e misionit diplomatik apo konsullor ... Pajisja me Letërnjoftim në procedure të rregullt kushton 10 euro ndërsa për pensionist 5 euro dhe lëshohet brenda 15 ditësh nga dita e paraqitjes së kërkesës. Pajisja me Letërnjoftim në procedurë përshpejtuar kushton 10+50 dhe lëshohet brenda 72 orëve."
+  }
+ ]
+}

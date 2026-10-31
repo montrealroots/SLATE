@@ -1,0 +1,123 @@
+# Passport research attempt log (2026-10-28)
+- AU: passports.gov.au closes the connection (curl: empty reply). legislation.gov.au: Australian Passports (Application Fees) Determination 2015, compilation F2024C01230 (26 Nov 2024) read as PDF; fees are base amounts x indexation factor (s 7, ABS CPI, Sept years). Lead: compute or DFAT.
+- IE: ireland.ie 403. NZ: passports.govt.nz 403.
+- ES: interior.gob.es 403; pasaporte.es TLS unrecognized name; policia.es tramites_pasaporte 404. Lead: BOE tasa (30 EUR per secondary sources), exteriores consular PDFs (local currency).
+- IT: poliziadistato.it article URLs 404 (guessed). Lead: normattiva / passaportonline.
+- MX: gob.mx answers with a challenge page (not circumvented). IN: passportindia.gov.in FeeStructure renders 'page not found'; home renders empty. Lead: Passports Rules 1980 schedule on indiacode / egazette.
+- KR: passport.go.kr connection failed. NG: immigration.gov.ng 403. CN: nia.gov.cn answers (home only read).
+- FI: poliisi.fi 403; valtioneuvosto.fi 403. NO: politiet.no fee page moved (404 rendered); fee in Storting budget decisions (2019 decision: 570 kr, 342 kr under 16 from 2020). Lead: Stortinget vedtak for 2026.
+- CH: schweizerpass.admin.ch connection failed. AT: oesterreich.gv.at answers (ID card page read; passport page to find).
+- NL, BE, SE, DK: guessed URLs 404. PL, PT: pages answer but JS; PT rendered empty-ish; to retry with search.
+- AD: no fee found; PRADO (consilium.europa.eu) answers with a browser check (not circumvented).
+- PT: eportugal.gov.pt answers curl 200 with a JS shell; rendered, the WAF answers 'Web Page Blocked' (stop: not retried). www2.gov.pt service URL 404. Secondary sources: 65 EUR in Portugal, 5 years (2 under 4?), 10 more by post.
+- NO: politiet.no pages moved; fees in Storting budget decisions.
+- FI: poliisi.fi and valtioneuvosto.fi 403.
+- CH: VAwG on Fedlex: ELI tried returned 404 page; EDA fee pages 403. Read the BL/BS cantonal flyer instead.
+- BG: mvr.bg home answers; the 27 Apr 2026 reform (10-year adult passports, euro fees, Tariff No. 4) not found on an official page yet. Leads: Tariff No. 4 text on mvr.bg, Държавен вестник. RO: validity (Legea 248/2005) not read; legislatie.just.ro lead. GR: validity on mfa.gr pages (403).
+- HR: mup.gov.hr passport URL tried shows the Aliens section; fee only in an e-savjetovanja draft (42.47 EUR etc., kuna conversion). mvep.gov.hr consular pages: 30-day legal deadline, 4-8 weeks abroad. Lead: Narodne novine Pravilnik o cijeni putovnice.
+- LV: pmlp.gov.lv closes the connection (empty reply) on its passport and state-fee pages. LT: migracija.lt is a JS app (MIGRIS); migration.lt is a private firm (not used). Lead: e-tar.lt valstybės rinkliava resolution. SI: fees (tax + booklet) lead. EE done.
+- AR: Disposición 106/2026 RENAPER (BO 3 Mar 2026, in force 6 Mar per press) text read on argentina.gob.ar/normativa (norma-423576); its Cuadro Tarifario annex (DI-2026-20472790-APN-RENAPER#MI) is on the BO PDF, which reset the connection: retry. Press: regular 100000, exprés +100000, inmediata +230000 ARS. BR: validity by age lead (Decreto 5.978/2006, IN 173).
+- CL: registrocivil.cl 'Request Rejected' (WAF). CO: cancilleria.gov.co Cloudflare. PE: gob.pe page guessed 404; fee lead TUPA Migraciones.
+- PH: consular.dfa.gov.ph 403 'Malicious request blocked'.
+- TH: domestic fee (1,000/1,500 THB per Wikipedia) not on an official page read; MFA image PDF Consular_Fee_EN_670730 is an embassy's local-currency list. Lead: consular.mfa.go.th, Ministerial Regulation on passport fees.
+- ID: fee regulation PP 45/2024 (BPK: partially revoked by PP 30/2026 on Kemenkumham PNBP tariffs). Lead: PP 30/2026 text on peraturan.bpk.go.id / peraturan.go.id.
+- TR: 2026 harç by Harçlar Kanunu tariff (revaluation 18.95%), defter bedeli 1,351 TL per press; official Resmî Gazete / GİB tariff not read: lead.
+- IL: gov.il Cloudflare block. KE: immigration.go.ke TLS fails (self-signed chain in certificate chain); TLS verification kept on. PK: dgip.gov.pk guessed URL 404.
+- VN: fee per Thông tư 25/2021/TT-BTC (200,000 VND new; 400,000 reissue after loss/damage) only via thuvienphapluat (private); validity (10 y; 5 y under 14) not on official page read. Lead: vbpl.vn, xuatnhapcanh.gov.vn.
+- UA: dmsu.gov.ua guessed service URL 404; the page's links show only the domestic passport (ID). Lead: dmsu.gov.ua services, Cabinet resolutions on fees.
+- RU: fees per secondary (6000/3000 biometric; 2000/1000 old); спроси.дом.рф page is an AI summary (not used). Lead: НК РФ ст. 333.28 on pravo.gov.ru; МВД.
+- AU method: fee2025 = round(398 x f2025), fee2026 = round(fee2025 x f2026) (Determination s 5(1)(b), 5(4)); f = sum of 4 quarterly All Groups CPI index numbers (weighted avg 8 capitals) for the Sept year ending in the previous year / same for the year before, to 3 decimals, on the most recently published reference period (s 7). ABS API: dataflow CPI 2.0.0 key 1.10001.10.50.Q returned only 2026-Q3 103.64 (BASE_PERIOD 25); CPI_Q 1.0.0 'NoRecordsFound' for that key. Need the quarterly series on the current reference period back to Q4 2022.
+- IS: Reglugerð 560/2009 on island.is (processing 3-14 working days); fee in lög um aukatekjur ríkissjóðs (yearly); skra.is not reached in search. Lead.
+- CY: mfa.gov.cy Azure WAF (403); moi.gov.cy CRMD document 404. Secondary: EUR 70 adult / 45 minor, 10 / 5 years.
+- MA: passeport.ma TLS fails (unable to get local issuer certificate); verification kept on. GH: portal front page only (GHS 350, 15 working days); validity lead.
+- AE: icp.gov.ae renewal page: static HTML is the service menu; rendered shows 'We are coming back soon' (maintenance). Secondary: AED 10 request + 40 issue + 15 delivery abroad.
+- NZ: passports.govt.nz 403; legislation.govt.nz answers 202 with an empty body (bot check) for Passport (Fees) Regulations 2015 (as at 2025-05-02; amended 2025/75 from 2 May 2025). Lead.
+- UY: Decreto 298/2021 (impo.com.uy) sets DNIC passport fees in Unidades Reajustables (renewal normal 2 UR = 530.80 UI); peso amount = UR value (INE) at the date. Lead: read decree; read UR value. Consular fees vary monthly.
+- DO: pasaportes.gob.do answers; services page and the Carta Compromiso brochure give no fees or validity in text. Lead: the charter's full PDF / services detail pages. CR: migracion.go.cr not reached in search; press: US$45 (art. 251 LGME) + US$30 (art. 252) + timbres.
+- LK: immigration.gov.lk connection reset.
+- AM: mfa.am embassy fee pages list biometric passport AMD 65,000 adult / 30,000 under 16 (from 1 Jan 2026, Law On State Duties) - consular; domestic police.am not reached. New biometric documents from autumn 2026 (Armenpress). Lead.
+- NO (2026-10-28): fee in pass- og ID-kortforskriften § 7-1 (per search snippets of norway.no); lovdata.no answers 405 (Varnish IPS) and norway.no a Cloudflare challenge to this client. Embassy fees 2026 per snippets 1 290 / 770 NOK (not read). Lead: the regulation's text via another official copy (regjeringen.no?).
+- ME (2026-10-28): search found only 2019 secondary (paragraf.me: EUR 25 fee + 15 form, under-21 exempt from 25). Lead: gov.me MUP page, Zakon o putnim ispravama.
+- AL (2026-10-28): search found no current fee; Instruction nr. 289 of 2.9.2020 (amended 16.12.2020) sets procedure. Lead: e-albania.al, Ministry of Interior fee act.
+- MK (2026-10-28): mvr.gov.mk resets the connection (curl 35); search found no fee on uslugi.gov.mk; the fee is in the Law on Administrative Taxes tariff (gazibaba.gov.mk copies, 2011). Lead: current tariff.
+- BD (2026-10-28): epassport.gov.bd 403 (Akamai Access Denied); dip.gov.bd certificate fails verification (TLS kept on). Secondary (Wikipedia, UNB): 48 pages BDT 4,025 (5y) / 5,750 (10y) regular incl. 15% VAT. Lead: the SRO/gazette that sets the fee.
+- MU (2026-10-28): passport.govmu.org pages (new 761, renewal 792, law 979) give documents, no fee or validity. Secondary (wikiprocedure, undated): Rs 700 adult, Rs 400 under 16. Lead: Passports Regulations fee schedule (MauritiusAssembly / attorneygeneral.govmu.org).
+- TZ (2026-10-28): immigration.go.tz fee page is a JS app; rendered with Playwright, empty body. Search snippet of it: ordinary e-passport TSh 130,000 + 20,000 form fee in-country; USD 90 at embassies. Lead.
+- NA (2026-10-28): mha.gov.na certificate fails verification (TLS kept on), then connection reset. New Era (undated) N$200 ordinary. Lead.
+- ZM (2026-10-28): search found no Department of Immigration fee schedule (fee units). Lead: zambiaimmigration.gov.zm, the Immigration and Deportation (Fees) regulations.
+- JO (2026-10-28): search gave only 2017 press (JD 50, five years). Lead: cspd.gov.jo.
+- OM (2026-10-28): search gave only ID-card fees (ROP decision 78/2025). Lead: rop.gov.om passport fee.
+- HN (2026-10-28): inm.gob.hn/pasaportes (updated 15 Oct 2026) gives requirements (adult = 21+) but no amounts ('tarifas oficiales vigentes'). Press: USD 35 (5y) / 50 (10y), under 21 five years only. Lead: the tariff.
+- PA (2026-10-28): search: press only (B/.100, B/.50 retirees, urgent +B/.75, ~5 years). Lead: pasaportes.gob.pa / APAP resolution.
+- BO (2026-10-28): search: DS 3762 (e-passport, no fee); no fee/validity found. Lead: migracion.gob.bo.
+- PY: note: identificaciones.gov.py still shows Gs. 199.000, superseded by Res. 689/2022 (Gs. 240.000, from 26 Sept 2022, via Última Hora).
+- BN (2026-10-28): search found no INRD fee. Lead: immigration.gov.bn.
+- BT (2026-10-28): mfa.gov.bt FAQ (?p=9175) resets the connection; snippet: Nu 1,000 adult / 800 under 18, 10 / 5 years. Lead.
+- TR (2026-10-28): 2026 duties in Harçlar Kanunu Genel Tebliği Seri 98 (RG 33124, 5. mükerrer, 31.12.2025); resmigazete.gov.tr times out, randevu.nvi.gov.tr resets, gib.gov.tr node 404, alomaliye copy 403. Secondary: 10-year 13,410.40 harç + 1,351 booklet. Lead.
+- AR (2026-10-28): retry of the BO aviso PDF (339013/20260303) reset again (proxy: ws_closed_mid_exchange); argentina.gob.ar norma-423576 has no annex link. Still a lead.
+- GL (2026-10-28): search found only the fingerprint fee rule (Danish passport act for Greenland, § 4 b, indexed, 30 kr in 2024) and the 2024 application form (Greenlandic or Danish passport). Lead: politi.gl, sullissivik.gl fee page.
+- FO (2026-10-28): search found no passport fee. Lead: politi.fo.
+- JE (2026-10-28): gov.je answers a 'Web Page Blocked' page (WAF) to this client on the fees page and the 2025 news. Leads: MD-HA-2025-278 (Ministerial Decision), Bailiwick Express (secondary).
+- AI (2026-10-28): gov.ai passport office page (vital-records-anguilla-passport-office) gives requirements, no fee; the fee page found by search (EC$100 + 40, as of 2007) answers 404. Lead.
+- VG (2026-10-28): bvi.gov.vg gives UK passport fees via the Civil Registry (April 2026), not the BOTC passport's. Lead.
+- TC (2026-10-28): gov.tc gives only naturalisation fees; the passport guide is 2015. Lead.
+- AG (2026-10-28): search: consulate fees only (USD, GBP). Lead: ab.gov.ag Immigration fee schedule.
+- GD (2026-10-28): rgpf.gd immigration page answers 409 (a bot check?) with 83 bytes; not pursued. Secondary: EC$350 adult 10y, EC$250 child 5y from 1 July 2024 (NOW Grenada, Wikipedia). Lead.
+- VC (2026-10-28): search: only 2014 launch press (EC$150 adult, 80 minor; 10y from 16, 5y under). Lead.
+- ID (2026-10-28): PP 45/2024 tariff (press: e-passport 5y Rp 650,000, 10y 950,000, same-day +1,000,000) not read in an official text; PP 30/2026 said to replace part. Lead: peraturan.bpk.go.id / jdih.
+- TH (2026-10-28): only embassy fee tables in foreign currency (Colombo LKR); mfa.go.th e-passport page of 2020. Lead: consular.mfa.go.th fee page.
+- KZ (2026-10-28): search: fee in MRP (8 MRP in 2020), new Tax Code 2026 not read. Lead: adilet.zan.kz Tax Code, egov.kz service.
+- BH (2026-10-28): bahrain.bh directory page only for replacement abroad (10 BD). Lead.
+- QA (2026-10-28): press/blog: QAR 100 new/renewal; official MOI fee decision not read. Lead.
+- EG (2026-10-28): search: press only (EGP 705 machine-readable, ~900, urgent 1450-1600; 7 years). moi.gov.eg not reached. Lead.
+- DZ (2026-10-28): LF 2026 art. 45 (stamp duty abroad: 28 pages 6,000 DA eq., 48 pages 9,000 DA eq.); domestic duty and JO text not read. Lead: joradp.dz.
+- LT (2026-10-28): migracija.lt rendered (curl 200, JS): only the service for citizens abroad (passport or ID card: EUR 140, up to 2 months), not the domestic fee. Lead: Resolution 1458 consolidated on e-tar.lt.
+- NZ (2026-10-28): written from govt.nz + DIA press; urgent via 1News (secondary). legislation.govt.nz and passports.govt.nz: bot checks. CK/NU/TK: NZ citizens, but the fee applying from there (GST?) is in the regulations (not read); lead.
+- BG (2026-10-28): fees in MVR Tariff No. 4; mvr.bg doc of Nov 2023 is in leva (pre-euro); 2026 euro amounts not found. Lead: Държавен вестник / mvr.bg 2026 tariff.
+- MC (2026-10-28): fee in the Government's release of 12 Feb 2021 (EUR 90 adult 10y; 60 under 18 5y; 30 under 3, 3y) on en.gouv.mc, which gives this client an empty reply; www.gouv.mc French equivalent not found; monservicepublic.gouv.mc pages answer but the passport page not found. Lead: JdM ordonnance/arrêté.
+- CY (2026-10-28): gov.cy answers Azure WAF 403. Lead.
+- PH (2026-10-28): dfa.gov.ph, passport.gov.ph, consular.dfa.gov.ph answer 403. Lead.
+- KE (2026-10-28): immigration.go.ke certificate chain fails verification (TLS kept on). Press: 34 pages KES 7,500 from 2024 (Legal Notice of 7 Nov 2023). Lead.
+- VN (2026-10-28): TT 25/2021/TT-BTC amended by TT 64/2025/TT-BTC (50% from 1 Jul 2025 to end 2026, per thuvienphapluat, 403); vbpl.vn search renders nothing; xuatnhapcanh.gov.vn empty. Lead.
+- AZ (2026-10-28): fee in the State Duty Law art. 16; e-qanun.az/meclis.gov.az answer small pages. Lead.
+- MN (2026-10-28): no tugrik fee found. Lead.
+- UZ (2026-10-28): my.gov.uz service 418 renders only reviews; fee/validity not shown. Press: 1 BRV (2022). Lead.
+- AD (2026-10-28): gov.ad tunnel 502; govern.ad answers but fee page not found; Wikipedia: EUR 49.31 / 32.16. Lead: Llei de taxes on bopa.ad.
+- SA (2026-10-28): my.gov.sa 403. Lead. TO/WS/PW: PacLII Cloudflare 403; TO 2011 regs (TOP 250/150/100) not read. Leads.
+- MA (2026-10-28): passeport.ma certificate fails verification; tax.gov.ma CGI 2026 PDF link not found; under-18 exemption (art. 250, LF 2011) per ccme.org.ma. Lead.
+- KE (2026-10-28, 2): press conflicts (7,500/9,500/12,500 vs 7,550/9,550/12,050; A and B series withdrawn from eCitizen 2025-26). Lead.
+- ZM (2026-10-28, 2): zambiaimmigration.gov.zm answers (visa fees only); DNRPC passport fees not found. Lead.
+- PS (2026-10-28): moi.pna.ps answers, no passport fee page; palestinecabinet.gov.ps service 25 times out (503). Lead.
+- EG (2026-10-28, 2): moi.gov.eg services directory renders nothing; press conflicts (705/900/1450 vs 1385/1725/2950 from a 2025 decision). Lead.
+- MA (2026-10-28, 2): passeport.ma verifies with the AIA-completed chain (DigiCert G2) but gives an empty reply.
+- BD (2026-10-28, 2): dip.gov.bd serves a self-signed certificate; not read.
+- MN (2026-10-28): burtgel.gov.mn is a portal of subdomains; no passport fee page found. Lead.
+- PM/BL/MF (2026-10-28): préfecture sites answer; SPM's passport pages give no fee (own tax code); Saint-Barth/Saint-Martin site has no passport page. Leads.
+- VE (2026-10-28): saime.gob.ve/pasaporte gives 'Ref. 108/162/216' (8-15 working days) and 'Ref. 290/310/350' (habilitado, 48 h) anchored to the BCV rate; the reference currency isn't named. Lead.
+- DO (2026-10-28, 2): pasaportes.gob.do charter brochure (July 2026) has no fees. Lead.
+- TZ (2026-10-28, 2): fee page immigration.go.tz/index.php/application-fee-for-electronic-passports-and-travel-document renders empty with Playwright; search snippet: 130,000 + 20,000 form (in-country), USD 90 abroad; press figure 150,000 is from the 2018 launch. Lead.
+- AO (2026-10-28): sme.gov.ao passport page renders only a login form. Lead.
+- CI/SN/TN (2026-10-28): only consumer guides (CI 40,000 FCFA; SN 20,000 FCFA timbre) and Tunisian parliamentary estimates. Leads.
+- GL (2026-10-28, 2): politi.gl's pages have no passport fee page; only the fingerprint fee regulation (30 kr from 2024, indexed). Lead.
+- AL (2026-10-28, 2): identitek.al pages (sherbime, aplikimet, e-kupon) give no prices; e-kupon flow not entered. Wikipedia: L7,500 / 18,000 priority. Lead.
+- QA (2026-10-28, 2): only Wego/Eastern Herald (QAR 100 new or renewed, 400 lost); no MOI or Peninsula/Gulf Times source. Lead.
+- MZ (2026-10-28): portaldogoverno.gov.mz answers; search for passaporte returns nothing. Lead. CM: dgsn.cm in maintenance.
+
+## 2026-10-28 (cont.)
+- SB done (commerce.gov.sb notice PDF + FAQ). WS done (mpmc.gov.ws). PG done (FA81 form via pngembassy.org + EMTV secondary; ica.gov.pg Cloudflare challenge, not bypassed).
+- TV: falepilipathway.gov.au/support-tuvalu (AU gov page listing Tuvalu passport fees per search: AU$80 adult/AU$60 child, priority AU$150/100 within 3 working days, standard ~4 weeks): curl empty reply x2, WebFetch 503. Retry later.
+- TO: rms.paclii.org papr2011463.pdf 403 Cloudflare (not bypassed); search reports TOP 250/150/100 (Passport (Amendment) Regs 2011). austlii mirror = alternate host, not used.
+- NR: paclii npa2011pr2011489 (Naoero Passports Regs 2011) — PacLII Cloudflare.
+- PW: palaugov.pw 403 WAF (not retried); search found only Wikipedia (USD 50), no primary.
+- TC: gov.tc/passports guide 404; citizenship.gov.tc travel-documents only ETD ($50). JE: gov.je + jerseylaw.je WAF block page (500 'Web Page Blocked'), used Bailiwick Express. BL: comstbarth.fr script app, no passport page; own stamp duties per Senate report (search).
+- BH: bahrain.bh 403; Decree 86/2024 amends Decree 196/2014 fee table (Daily Tribune), table not in press. Try lloc.gov.bh. CR: migracion.go.cr 403; fees $75 + ₡250 stamps + Correos ₡8,203.5+IVA (press) - mixed currencies. BO: migracion.gob.bo cert mismatch. PA: pasaportes.gob.pa proxy 502.
+- OM: rop.gov.om no answer; qanoon.om has ROP decision 71/1997 (10 rials 10-yr, 5 rials 5-yr), not confirmed current; who gets 5-yr unknown.
+- SZ: gov.sz travel-documents page reset x2 (search: E150 + E20 fingerprint + E2 stamp). ZM: only Passports (Prescribed Fees) Regs 2008 (laws.africa), UN mission USD 100/150 undated.
+- SL: slid.gov.sl 403 (search: $100 equivalent or LE 2,280, 10 working days).
+- BT: mfa.gov.bt reset x3 (search: Nu.1,000 adult, Nu.800 under 18, MFA FAQ). AG: only consular fees (London GBP 50/25, NY USD 90/40); home EC$ not found. DJ: only Jarnias guide 15,000 DJF. KM, ML, MG: no fee found.
+- SD: Dabanga Sep 2023 SDG150,000/75,000, review ordered by Burhan; stale. LY: nothing. BY: myfin.by 423; mvd not found. KG: 24.kg old fees only. NI: only service site C$750.
+- SY: syrianobserver Apr 2025 (312,700 / 432,700 / ~2M SYP; abroad $300/$800), superseded by 26 Jun 2025 decision (Enab Baladi, Cloudflare-blocked). SO: immigration.gov.so services page no fee. UZ: fee in BCV multiples, no current amount.
+- LT (2026-10-28 b): www.migracija.lt (MIGRIS, rendered) lists only the service for citizens abroad; migracija.lrv.lt and lrv.lt documents 403; e-seimas TAD Cloudflare; press search empty.
+- QA (b): moi.gov.qa 244-byte page; almeezan.qa JS app; search: only guides (QAR 100).
+- NI (b): migob.gob.ni 403, legislacion.asamblea.gob.ni 403; VOA 2020 reform (dollars) no passport figure; leybook only 1991 arancel.
+- HT (b): haiti.org/fees (Embassy Washington, served with HTTP 406 but full page): adults $125, minors $100; home fee only 2015 (3,000 HTG stamp, IRB). Age of 'minors' not on page. SR: nothing official found.

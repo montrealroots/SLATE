@@ -1,0 +1,22 @@
+{
+ "country": "NA",
+ "years": 10,
+ "renounce": true,
+ "lapses": false,
+ "note": "GLOBALCIT's Citizenship Law Dataset v3.0 (EUI, 2025), coding the law in force on 1 January 2024 (A06a Const 4(5), NAM 5; A06b Const 4(5), NAM 5; L05 Const 4(8)(a), NAM 7(1)(a)-(c)): ordinary naturalisation after 10 years' residence; the applicant must give up other citizenships; a citizen keeps it on taking another (loss applies only to naturalised citizens, not modelled). Reforms after that date are checked in the file's later sources, where a later source is given. Citizenship at birth is read from the same dataset's 2024 coding of modes A01a (descent, born in country: Generally applicable provision), A01b (descent, born abroad: Generally applicable provision), A02a (birth in country: Parental residence restriction) and A02b (birth in country to a parent born there: No provision), as its codebook (RSC/GLOBALCIT 2025/01, sections 3.2.1a to 3.2.2b) defines them: by birth in the territory only on the condition the dataset states; by descent from either parent, with no further limit on a child born abroad. Changes to the law at birth after 1 January 2024 weren't checked for this file.",
+ "sources": [
+  {
+   "url": "https://cadmus.eui.eu/bitstreams/3b166501-e695-48d7-9e27-d7bef061573a/download",
+   "title": "GLOBALCIT Citizenship Law Dataset v3.0 (Vink, van der Baaren, Bauböck, Dzankic, Honohan, Manby; EUI Research Data, 2025), country-year-mode files, Namibia, 2024",
+   "read": "2026-10-29",
+   "kind": "secondary",
+   "quotes": "https://globalcit.eu/national-citizenship-laws/",
+   "said": "Person has been lawfully and ordinarily resident for at least 10 years. ... Renunciation of citizenship of another country required. ... Person is a naturalised citizen and voluntarily acquires another citizenship or acquires it involuntarily and fails to renounce the other citizenship within 1 year. ... Generally applicable provision ... Person is born in Namibia to a citizen. ... Generally applicable provision ... Person is born abroad to a citizen and birth is registered with consular authorities. ... Parental residence restriction ... Person is born in Namibia to a person who is ordinarily resident at the time of birth. Other conditions: parents are not enjoying diplomatic immunity, nor represent another country, nor members of any police or military unit seconded for service in Namibia, nor illegal immigrants. ... No provision"
+  }
+ ],
+ "atBirth": {
+  "soil": "conditional",
+  "soilIf": "Person is born in Namibia to a person who is ordinarily resident at the time of birth. Other conditions: parents are not enjoying diplomatic immunity, nor represent another country, nor members of any police or military unit seconded for service in Namibia, nor illegal immigrants.",
+  "descent": "either parent"
+ }
+}

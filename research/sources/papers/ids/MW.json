@@ -1,0 +1,49 @@
+{
+ "country": "MW",
+ "document": "National Identity Card",
+ "office": "the National Registration Bureau (NRB)",
+ "currency": "MWK",
+ "routes": [
+  {
+   "id": "office",
+   "where": "home",
+   "speed": "standard",
+   "within": {
+    "n": 30,
+    "unit": "day"
+   },
+   "label": "registration at an NRB office or registration centre; issued within 30 days"
+  }
+ ],
+ "cards": [
+  {
+   "for": "from 16",
+   "from": 16,
+   "validYears": 10,
+   "pay": {
+    "office": "0"
+   }
+  }
+ ],
+ "note": "The NRB registers every citizen of 16 and over for the card, issued within 30 days of application; registering after 30 working days of turning 16 draws a late fee (not modelled). Its FAQ, read again on 2026-10-29: registration for a first card and its collection are free, and a card first taken at 16 expires ten years after issue (cards are meant to fall due at 26, 36, 46 and so on; those first registered in 2017 were given the years left to that sequence, not modelled). The National Registration (Amendment) Regulations 2026 (Gazette Supplement 19A, 31 July 2026) set a replacement or a biometric update at K 5,000 (not modelled).",
+ "sources": [
+  {
+   "url": "https://www.nrb.gov.mw/faqs/",
+   "title": "National Registration Bureau (Malawi), FAQs",
+   "read": "2026-10-29",
+   "said": "Citizen above 16 years for National Identity Card ... Registration for first National IDs is FREE and collection of the ID is also FREE. ... The National ID Card shall be issued within 30 days of application ... When you register for your first National ID at 16 years, the National ID card will expire after 10 years from the date of issuance."
+  },
+  {
+   "url": "https://www.nrb.gov.mw/national-id/",
+   "title": "National Registration Bureau (Malawi), National ID",
+   "read": "2026-10-28",
+   "said": "For late registration (after 30 working days upon turning 16 years of age), Registration Officer advises applicant to pay stipulated late registration fee."
+  },
+  {
+   "url": "https://www.nrb.gov.mw/wp-content/uploads/file-listing/NRB_Public_Statement_Revision_of_Fees_English-merged.pdf",
+   "title": "National Registration Bureau, Public Statement: Revision of National Registration Fees (17 August 2026), with the National Registration (Amendment) Regulations 2026, Government Notice 66, Malawi Gazette Supplement 19A of 31 July 2026",
+   "read": "2026-10-29",
+   "said": "The revised fees are published in the Malawi Gazette Supplement (No. 19A) dated 31st July, 2026. ... 6. Replacement of National ID . . .. .. K 5,000 per card"
+  }
+ ]
+}

@@ -1,0 +1,62 @@
+{
+ "country": "SG",
+ "document": "National Registration Identity Card (NRIC)",
+ "office": "the Immigration & Checkpoints Authority (ICA)",
+ "currency": "SGD",
+ "routes": [
+  {
+   "id": "register",
+   "where": "home",
+   "speed": "standard",
+   "within": {
+    "n": 1,
+    "unit": "working day"
+   },
+   "label": "registration at 15: online, then biometrics at school or the ICA Services Centre; collect from the next working day"
+  },
+  {
+   "id": "re-register",
+   "where": "home",
+   "speed": "standard",
+   "within": {
+    "n": 7,
+    "unit": "working day"
+   },
+   "label": "re-registration at 30 and at 55: online, processed within 7 working days"
+  }
+ ],
+ "cards": [
+  {
+   "for": "registration",
+   "from": 15,
+   "under": 30,
+   "validYears": null,
+   "pay": {
+    "register": "10"
+   }
+  },
+  {
+   "for": "re-registration",
+   "from": 30,
+   "validYears": null,
+   "pay": {
+    "re-register": "10"
+   }
+  }
+ ],
+ "note": "For Singapore citizens; a permanent resident pays S$50 (not modelled here). The card has no term in years: it must be registered at 15 (before the 16th birthday) and re-registered at 30 and again at 55, so its validity is left null and the player is told. Registration's time is the ICA's: after the biometrics enrolment the card can be collected from the next working day; re-registration is processed within seven working days.",
+ "sources": [
+  {
+   "url": "https://www.ica.gov.sg/documents/ic/registration",
+   "title": "Immigration & Checkpoints Authority, Register Identity Card for 15-year-olds",
+   "read": "2026-10-28",
+   "said": "The Identity Card (IC) is a compulsory document that Singapore citizens and permanent residents must register when they reach the age of 15 ... S$10 for Singapore citizens S$50 for Singapore permanent residents. ... Upon completion of enrolment of biometrics, the IC applicant can make an appointment the next working day to collect his/her IC at the designated post offices."
+  },
+  {
+   "url": "https://www.ica.gov.sg/documents/ic/re-registration",
+   "title": "Immigration & Checkpoints Authority, Re-Register Identity Card for 30/55-year-olds",
+   "read": "2026-10-28",
+   "said": "must re-register for when they reach the age of 30 (before their 31st birthday), and again when they reach the age of 55 (before their 56th birthday) ... S$10 for Singapore citizens ... We will process your application within seven working days."
+  }
+ ]
+}

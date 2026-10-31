@@ -1,0 +1,70 @@
+{
+ "country": "MC",
+ "routes": [
+  {
+   "id": "carte-temporaire",
+   "name": "Carte de séjour « temporaire »",
+   "for": "work",
+   "apply": "in country",
+   "fee": "80",
+   "term": {
+    "n": 1,
+    "unit": "year"
+   },
+   "renewable": true,
+   "work": "sponsor",
+   "permanentAfter": 10
+  },
+  {
+   "id": "etablissement-eee",
+   "name": "Carte de séjour (ressortissants de l’EEE et de la Suisse)",
+   "for": "free movement",
+   "apply": "in country",
+   "fee": "80",
+   "term": {
+    "n": 1,
+    "unit": "year"
+   },
+   "renewable": true,
+   "work": "sponsor",
+   "groups": [
+    "EU/EEA",
+    "CH"
+   ]
+  },
+  {
+   "id": "carte-privilegie",
+   "name": "Carte de séjour « privilégié »",
+   "for": "permanent",
+   "apply": "in country",
+   "fee": "160",
+   "term": {
+    "n": 10,
+    "unit": "year"
+   },
+   "renewable": true,
+   "work": "sponsor"
+  }
+ ],
+ "note": "Monaco, read on the Government's public service pages for individuals (service-public-particuliers.gouv.mc: 'La Carte de séjour', updated 28 October 2024, and 'Demander une carte de séjour', updated 25 September 2026) on 2026-10-30. Anyone 16 or over staying over three months or settling asks the Monegasque authorities for a residence card, showing housing in Monaco, sufficient resources (a salary, professional income, savings or a relative's support) and good character; the first card is 'temporaire', one year, 80 euros (40 to renew), with no residence required; 'ordinaire' after 3 years (3 years, 100 euros); 'privilégié' after 10 years' effective residence (10 years, 160 euros; 80 to renew), kept as the permanent route and 10 as the temporary card's years to it. The card is asked at the Residents' Section in Monaco (in country); a non-EEA national first needs an establishment visa (type D) from the French consulate nearest their last home, or a transfer of residence through the French Embassy in Monaco if settled in France over a year. EEA nationals (and Switzerland, Andorra, San Marino and the Vatican, which the page lists with them) need no visa or prior document, kept as free movement under the same card and fee. Work in Monaco takes the employer's authorisation to hire and a work permit whatever the card (the work engine's route), so every route is read as work for the sponsor. Decision times and naturalisation aren't written.",
+ "sources": [
+  {
+   "url": "https://service-public-particuliers.gouv.mc/thematiques/nationalite-et-residence/residence/residents/la-carte-de-sejour",
+   "title": "Gouvernement Princier, Service Public Particuliers: La Carte de séjour (mise à jour le 28/10/2024)",
+   "read": "2026-10-30",
+   "said": "Toute personne âgée d’au moins 16 ans, qui souhaite séjourner à Monaco plus de trois mois ou désirant y établir sa résidence, doit souscrire une demande une carte de séjour. ... sans condition d’ancienneté de résidence , par conséquent aux primo-résidents. Elle est valable 1 an et les droits de délivrance s'élèvent pour une première carte à 80 € ... Pour un renouvellement de carte de séjour les droits de délivrance s'élèvent à 40 €. ... personnes totalisant 3 ans de résidence . Elle est valable 3 ans ... totalisant 10 ans de résidence et dont la présence sur le territoire monégasque est effective. Sa durée de validité est de 10 ans et les droits de délivrance pour une première carte s'élèvent à 160 €."
+  },
+  {
+   "url": "https://service-public-particuliers.gouv.mc/thematiques/nationalite-et-residence/residence/nouveaux-arrivants/demander-une-carte-de-sejour",
+   "title": "Gouvernement Princier, Service Public Particuliers: Demander une carte de séjour (mise à jour le 25/09/2026)",
+   "read": "2026-10-30",
+   "said": "doit faire une demande de carte de séjour auprès des autorités monégasques. ... D'un salaire ... De revenus professionnels (activité commerciale indépendante ou par l’intermédiaire d’une société) ... En tant que ressortissant de l'Espace Économique Européen et des pays tiers, vous n'avez aucun document à fournir. ... Vous devez présenter une demande de visa d’établissement (de type D) pour Monaco auprès ... du consulat de France le plus proche de votre dernier domicile ... la Suisse."
+  },
+  {
+   "url": "https://monentreprise.gouv.mc/en/themes/employment/recruitment-and-training/recruitment/how-to-recruit-staff",
+   "title": "Monaco Government, How to recruit staff",
+   "read": "2026-10-30",
+   "said": "Once all administrative approvals have been obtained, the employee receives: A work permit"
+  }
+ ]
+}

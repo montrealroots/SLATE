@@ -1,0 +1,26 @@
+{
+ "country": "MH",
+ "name": "social security number (employee identification number)",
+ "issuer": "the Marshall Islands Social Security Administration (MISSA)",
+ "format": {
+  "length": 8,
+  "pattern": "^04\\d{6}$"
+ },
+ "when": "work",
+ "who": [
+  "workers"
+ ],
+ "needed": [
+  "work",
+  "tax"
+ ],
+ "note": "Marshall Islands's sheet (its government's own sheet on the OECD's automatic-exchange portal ('Information on Tax Identification Numbers'; the OECD's index page sits behind a bot check and wasn't opened, the sheet itself came straight back)), read 2026-10-30: the RMI issues no TINs; every employee working there must apply to the Marshall Islands Social Security Administration (MISSA) for a personal social security (employee identification) number, which identifies taxpayers: 04, a dash and six digits (04 is the code the United States assigned the freely associated states). Read as given on starting work, to workers; `needed` is work and tax. No check rule, age, fee or time is stated.",
+ "sources": [
+  {
+   "url": "https://www.oecd.org/content/dam/oecd/en/topics/policy-issue-focus/aeoi/marshall-islands-tin.pdf",
+   "title": "OECD AEOI portal, Marshall Islands: Information on Tax Identification Numbers (the jurisdiction's own sheet)",
+   "read": "2026-10-30",
+   "said": "Every employee working in the RMI is required to apply to MISSA for a personal social security number (SSN) or employee identification number. ... The employee identification number always starts with “04” and always ends with a six digit number with a dash sign in between the numbers, e.g., 04-086123."
+  }
+ ]
+}

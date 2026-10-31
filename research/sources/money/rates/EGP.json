@@ -1,0 +1,30 @@
+{
+ "currency": "EGP",
+ "rates": [
+  {
+   "from": "2025-12-31",
+   "perUSD": "47.6"
+  },
+  {
+   "from": "2026-03-31",
+   "perUSD": "54.58"
+  },
+  {
+   "from": "2026-06-30",
+   "perUSD": "49.18"
+  },
+  {
+   "from": "2026-09-30",
+   "perUSD": "51.89"
+  }
+ ],
+ "note": "The US Treasury's Reporting Rates of Exchange (Bureau of the Fiscal Service), the rates US government agencies use for foreign currency, its 'Egypt-Pound' row: 47.6 from 2025-12-31; 54.58 from 2026-03-31; 49.18 from 2026-06-30; 51.89 from 2026-09-30 per US dollar, each holding until the next. Read from the Fiscal Data API on 2026-10-30.",
+ "sources": [
+  {
+   "url": "https://api.fiscaldata.treasury.gov/services/api/fiscal_service/v1/accounting/od/rates_of_exchange?filter=record_date:gte:2025-12-31&sort=country_currency_desc,effective_date&page%5Bsize%5D=2000&fields=record_date,country,currency,country_currency_desc,exchange_rate,effective_date&format=csv",
+   "title": "U.S. Department of the Treasury, Bureau of the Fiscal Service: Treasury Reporting Rates of Exchange (Fiscal Data API), record dates 31 December 2025 to 30 September 2026",
+   "read": "2026-10-30",
+   "said": "\"2025-12-31\",\"Egypt\",\"Pound\",\"Egypt-Pound\",\"47.6\",\"2025-12-31\" ... \"2026-03-31\",\"Egypt\",\"Pound\",\"Egypt-Pound\",\"54.58\",\"2026-03-31\" ... \"2026-06-30\",\"Egypt\",\"Pound\",\"Egypt-Pound\",\"49.18\",\"2026-06-30\" ... \"2026-09-30\",\"Egypt\",\"Pound\",\"Egypt-Pound\",\"51.89\",\"2026-09-30\""
+  }
+ ]
+}

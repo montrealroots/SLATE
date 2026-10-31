@@ -1,0 +1,68 @@
+{
+ "country": "KI",
+ "office": "the Passport Section of the Ministry of Foreign Affairs and Immigration",
+ "currency": "AUD",
+ "routes": [
+  {
+   "id": "normal",
+   "where": "home",
+   "speed": "standard",
+   "within": {
+    "n": 10,
+    "unit": "day"
+   },
+   "label": "normal, 10 days"
+  },
+  {
+   "id": "standard",
+   "where": "home",
+   "speed": "standard",
+   "within": {
+    "n": 5,
+    "unit": "day"
+   },
+   "label": "standard, 5 days"
+  },
+  {
+   "id": "expedited",
+   "where": "home",
+   "speed": "urgent",
+   "within": {
+    "n": 3,
+    "unit": "day"
+   },
+   "label": "expedited, 3 days"
+  },
+  {
+   "id": "priority",
+   "where": "home",
+   "speed": "urgent",
+   "within": {
+    "n": 1,
+    "unit": "day"
+   },
+   "label": "priority, 1 day"
+  }
+ ],
+ "passports": [
+  {
+   "for": "any",
+   "validYears": null,
+   "pay": {
+    "normal": "56.25",
+    "standard": "84.40",
+    "expedited": "98.40",
+    "priority": "112.50"
+   }
+  }
+ ],
+ "note": "One fee by processing time for any citizen, first passport or renewal (the brochure gives no age bands; minors under 18 need a parent's or guardian's consent). A lost, stolen or damaged passport carries a penalty of 100 dollars the first time and 300 the second. The validity isn't given. Read through the fetch tool's saved copy, since the ministry's server answers curl with 406.",
+ "sources": [
+  {
+   "url": "https://www.mfa.gov.ki/wp-content/uploads/2026/03/Passport-brochure.docx",
+   "title": "Ministry of Foreign Affairs and Immigration, Kiribati, Immigration Division, Passport Services brochure (March 2026)",
+   "read": "2026-10-29",
+   "said": "KIRIBATI PASSPORT ... Who Can Apply: All citizens of Kiribati – first-time applicants or renewals ... Minors (under 18years of age): Require parental or guardian consent ... Passport fees and processing time: Priority/ Urgent (1 day) - $112.50 Expedited (3 days) - $98.40 Standard (5 days) - $84.40 Normal/ regular (10 days) - $56.25 ... For lost, stolen and damaged passports, penalties apply as follows: 1st time: $100 2nd time: $300"
+  }
+ ]
+}

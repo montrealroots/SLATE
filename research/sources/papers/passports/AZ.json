@@ -1,0 +1,70 @@
+{
+ "country": "AZ",
+ "office": "the Ministry of Internal Affairs (abroad, through the embassies and consulates)",
+ "currency": "AZN",
+ "routes": [
+  {
+   "id": "home",
+   "where": "home",
+   "speed": "standard",
+   "within": null,
+   "label": "in Azerbaijan"
+  },
+  {
+   "id": "abroad",
+   "where": "abroad",
+   "speed": "standard",
+   "within": null,
+   "label": "through an embassy or consulate"
+  }
+ ],
+ "passports": [
+  {
+   "for": "adult",
+   "from": 18,
+   "validYears": 10,
+   "pay": {
+    "home": "60",
+    "abroad": null
+   }
+  },
+  {
+   "for": "child",
+   "from": 3,
+   "under": 18,
+   "validYears": 5,
+   "pay": {
+    "home": "35",
+    "abroad": null
+   }
+  },
+  {
+   "for": "child",
+   "from": 1,
+   "under": 3,
+   "validYears": 3,
+   "pay": {
+    "home": "25",
+    "abroad": null
+   }
+  },
+  {
+   "for": "infant",
+   "under": 1,
+   "validYears": 1,
+   "pay": {
+    "home": "15",
+    "abroad": null
+   }
+  }
+ ],
+ "note": "The state fee for issuing an ordinary passport, by age, as the Ministry of Foreign Affairs publishes it. Through a mission abroad USD 25 is added for preparing and submitting the documents, and the passport travels by diplomatic courier; a fee in two currencies isn't summed, so abroad is null. Processing times are leads. mfa.gov.az's server omits its intermediate certificate; it was read with the chain completed from the certificate's own issuer URL (Sectigo), verification kept on.",
+ "sources": [
+  {
+   "url": "https://mfa.gov.az/en/category/services-provided-by-the-diplomatic-missions-and-consulates-of-the-republic-of-azerbaijan-in-foreign-countries/ordinary-passport",
+   "title": "Ministry of Foreign Affairs of the Republic of Azerbaijan, Ordinary passport",
+   "read": "2026-10-28",
+   "said": "State fee for the ıssuance or replacement of ordinary passports granting citizens of the Republic of Azerbaijan the right to travel abroad: Children under 1 year of age 15 AZN Children from 1 to 3 years of age 25 AZN Children from 3 to 18 years of age 35 AZN Citizens aged 18 and above 60 AZN For the preparation and submission of documents at the embassy or consulate for the purpose of obtaining ordinary passports — 25 US dollars. ... An ordinary passport is issued for a period of one year for children under the age of 1, three years for children from 1 to 3 years of age, five years for children from 3 to 18 years of age, and ten years for persons who have reached the age of 18."
+  }
+ ]
+}

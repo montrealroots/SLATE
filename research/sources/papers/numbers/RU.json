@@ -1,0 +1,42 @@
+{
+ "country": "RU",
+ "name": "страховой номер индивидуального лицевого счёта (СНИЛС)",
+ "issuer": "the Social Fund of Russia (Социальный фонд России, СФР)",
+ "format": {
+  "length": 11,
+  "pattern": "^\\d{11}$"
+ },
+ "when": "birth",
+ "who": [
+  "citizens",
+  "residents"
+ ],
+ "within": {
+  "n": 15,
+  "unit": "minute"
+ },
+ "needed": [
+  "work"
+ ],
+ "note": "The Social Fund's pages, read 2026-10-30: the SNILS is set once for life; since July 2020 the Fund opens a child's account proactively on the record of its birth (read as given at birth); citizens and foreign nationals and stateless people are registered; an employer must register a first-time worker who has none (needed: work); in person at the Fund or an MFC registration takes 15 minutes (by post four working days). No fee is stated. Its length is in the Fund's own procedure for filling in form ЕФС-1 (SFR order No. 1462 of 17 November 2025, para. 33, as the Fund's Chuvashia branch publishes it, a Word file read after LibreOffice converted it to PDF): 11 digits, written XXX-XXX-XXX-XX or XXX-XXX-XXX XX. (ConsultantPlus, which first pointed to para. 33, was dropped as a source once the order itself was read.) The last two digits are a control number whose algorithm wasn't found in an official text that day, so `check` is left out.",
+ "sources": [
+  {
+   "url": "https://sfr.gov.ru/grazhdanam/personificirovannyj_uchet/snils/",
+   "title": "Социальный фонд России, Страховой номер индивидуального лицевого счета (СНИЛС)",
+   "read": "2026-10-30",
+   "said": "Для каждого человека на территории РФ этот номер устанавливается один раз и на всю жизнь. ... Лицам, впервые поступающим на работу ... , СНИЛС обязан оформить работодатель."
+  },
+  {
+   "url": "https://sfr.gov.ru/grazhdanam/personificirovannyj_uchet/registraciya_i_oformlenie_snils/",
+   "title": "Социальный фонд России, Регистрация граждан и оформление СНИЛС",
+   "read": "2026-10-30",
+   "said": "Граждане РФ ... Иностранные граждане и лица без гражданства ... с июля 2020 года СФР открывает ребенку индивидуальный лицевой счет проактивно, по факту рождения ... в течение 15 минут при обращении в клиентскую службу СФР или МФЦ"
+  },
+  {
+   "url": "https://sfr.gov.ru/files/branches/chuvashia/Documents/EFS-1/Poryadok_zapolneniya_EFS-1_2026.doc",
+   "title": "Социальный фонд России (Chuvashia branch), Порядок заполнения единой формы ЕФС-1 (приказ СФР от 17 ноября 2025 г. № 1462), the .doc converted to PDF by LibreOffice to be read",
+   "read": "2026-10-30",
+   "said": "(приказ СФР от 17 ноября 2025 г. № 1462) ... 33. В поле \"СНИЛС\" указывается страховой номер индивидуального лицевого счета ... СНИЛС должен состоять из 11 цифр по формату ХХХ-ХХХ-ХХХ-ХХ или ХХХ-ХХХ-ХХХ"
+  }
+ ]
+}

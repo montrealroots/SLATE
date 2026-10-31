@@ -1,0 +1,63 @@
+{
+ "country": "AE",
+ "document": "Emirates ID (national identity card)",
+ "office": "the Federal Authority for Identity, Citizenship, Customs and Port Security (ICP)",
+ "currency": "AED",
+ "routes": [
+  {
+   "id": "standard",
+   "where": "home",
+   "speed": "standard",
+   "within": {
+    "n": 5,
+    "unit": "day"
+   },
+   "label": "online or at a service centre, delivered by courier: 5 days"
+  },
+  {
+   "id": "urgent",
+   "where": "home",
+   "speed": "urgent",
+   "within": {
+    "n": 24,
+    "unit": "hour"
+   },
+   "label": "urgent, at an ICP service centre: within 24 hours, AED 150 more"
+  }
+ ],
+ "cards": [
+  {
+   "for": "under 21",
+   "under": 21,
+   "validYears": 5,
+   "pay": {
+    "standard": "100",
+    "urgent": "250"
+   }
+  },
+  {
+   "for": "21 and over",
+   "from": 21,
+   "validYears": 10,
+   "pay": {
+    "standard": "200",
+    "urgent": "350"
+   }
+  }
+ ],
+ "note": "For UAE citizens. The ICP's service card for a new card: 5 years and AED 100 under 21, 10 years and AED 200 over 21, AED 150 more for the urgent service at a service centre; the service takes 5 days. The 24-hour time of the urgent service is the UAE government portal's. Fingerprints and signature from 15.",
+ "sources": [
+  {
+   "url": "https://icp.gov.ae/en/services-details/?serviceid=64afe3c1035448005bd52e5a",
+   "title": "Federal Authority for Identity, Citizenship, Customs and Port Security, New Identity Card Issuance (service card, UAE Citizen)",
+   "read": "2026-10-28",
+   "said": "The national ID card is issued with a validity of 5 years for those under the age of 21, and 10 years for those over the age of 21. ... Fees for issuing a new national ID card for citizens under the age of 21, valid for 5 years. - 100 AED ... Fees for issuing a new national ID card for citizens over the age of 21, valid for 10 years. - 200 AED ... Urgent service fees (available only at the Authority’s service centers) - 150 AED ... Service Completion Duration 5 Days"
+  },
+  {
+   "url": "https://u.ae/en/information-and-services/visa-and-emirates-id/emirates-id",
+   "title": "The United Arab Emirates' Government portal, Emirates ID",
+   "read": "2026-10-28",
+   "said": "ICP provides an urgent service for issuing the Emirates ID card within 24 hours. The service is for UAE nationals, and GCC nationals residing in the UAE."
+  }
+ ]
+}

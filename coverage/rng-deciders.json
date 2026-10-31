@@ -7,6 +7,13 @@
  },
  "rows": [
   {
+   "key": "money.account",
+   "status": "proven",
+   "tests": [
+    "tests/money/formats/formats.test.ts::account numbers > are the same for the same seed and bank, and differ otherwise"
+   ]
+  },
+  {
    "key": "weather.cloud",
    "status": "proven",
    "tests": [

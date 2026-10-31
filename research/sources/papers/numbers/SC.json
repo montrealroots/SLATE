@@ -1,0 +1,25 @@
+{
+ "country": "SC",
+ "name": "Tax Identification Number (TIN)",
+ "issuer": "the Seychelles Revenue Commission (SRC)",
+ "format": {
+  "length": 9,
+  "pattern": "^\\d{9}$"
+ },
+ "when": "application",
+ "who": [
+  "anyone"
+ ],
+ "needed": [
+  "tax"
+ ],
+ "note": "Seychelles's sheet (its government's own sheet on the OECD's automatic-exchange portal ('Information on Tax Identification Numbers'; the OECD's index page sits behind a bot check and wasn't opened, the sheet itself came straight back)), read 2026-10-30: (last updated 30 May 2023) under section 35 of the Revenue Administration Act 2009 any person liable for revenue applies for a TIN, issued only by the Seychelles Revenue Commission (SRC); individuals are taxed only in business, and employees are not issued one; a 9-digit random number meeting a checksum (rule not given, `check` left out). Read as given on application, to anyone liable. No age, fee or time is stated.",
+ "sources": [
+  {
+   "url": "https://www.oecd.org/content/dam/oecd/en/topics/policy-issue-focus/aeoi/seychelles-tin.pdf",
+   "title": "OECD AEOI portal, Seychelles: Information on Tax Identification Numbers (the jurisdiction's own sheet)",
+   "read": "2026-10-30",
+   "said": "In accordance with Section 35 of the Revenue Administration Act, 2009 any person liable for revenue has to apply for a TIN. ... The employees are not issued with a TIN. Only SRC has the ability to issue TIN. ... The Tax Identification Number, TIN, is a 9 digit number"
+  }
+ ]
+}

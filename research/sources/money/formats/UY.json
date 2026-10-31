@@ -1,0 +1,27 @@
+{
+ "country": "UY",
+ "national": {
+  "name": "Número De Cuenta",
+  "parts": [
+   {
+    "name": "Número De Cuenta",
+    "length": 16,
+    "kind": "n",
+    "min": 1,
+    "drawn": [
+     16,
+     16
+    ]
+   }
+  ]
+ },
+ "note": "No rule of the Banco Central del Uruguay fixing an account number's form was read (bcu.gub.uy gave no answer, 2026-10-30 and 2026-10-31). Banco de la República Oriental del Uruguay (BROU), the state bank, lists on its page on the Sistema de Pagos Interbancarios (SPI), through which transfers go between the financial institutions of the market, the account format of each other institution (read 2026-10-31): digits only ('sin espacios ni otros caracteres no numéricos'), from a few digits (MIDINERO 'entre 3 y 11 dígitos'; several at 'Máximo de 8 caracteres', not padded with zeros, with no fewest) to sixteen (Santander: 4 digits of branch and 12 of account, each padded with zeros); BHU's twelve digits may also be written as fifteen characters with hyphens, which aren't held. So the number is written as 1 to 16 digits; the fewest, one, is a reading of the maxima the page gives with no fewest (as Bangladesh's left-justified field is held), and the most is Santander's sixteen. A new account is drawn at sixteen digits, Santander's (the bank the game's Uruguayan account is held at), which the page pads to its full length. BROU's own format isn't on the page (it's the sender's). Not held: the branch inside Santander's, Bandes' and BHU's numbers (each bank's own), BHU's, Citi's, OCA Blue's, Mercado Pago's and Scotiabank's check digits (each bank's own; no algorithm is given).",
+ "sources": [
+  {
+   "url": "https://www.brou.com.uy/personas/servicios/spi",
+   "title": "BROU, Sistema de Pagos Interbancarios (SPI): formato de cuenta de cada institución",
+   "read": "2026-10-31",
+   "said": "El Sistema de Pagos Interbancarios (SPI) permite a las Instituciones Financieras habilitadas de plaza el envío y recepción de transferencias electrónicas entre sus integrantes ... La cuenta puede tener entre 3 y 11 dígitos. ... Máximo de 8 caracteres. ... No se rellena con ceros a la izquierda, sin espacios ni otros caracteres no numéricos. ... 4 dígitos corresponden a la Sucursal. Rellenar con ceros a la izquierda para completar. ... 12 dígitos corresponden a la cuenta, se rellena con ceros hasta completar el largo. ... El primer formato tiene un total de 15 caracteres y deben ser incluidos los guiones de separación."
+  }
+ ]
+}

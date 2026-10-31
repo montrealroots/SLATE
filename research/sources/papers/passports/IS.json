@@ -1,0 +1,23 @@
+{
+ "country": "IS",
+ "office": "the district commissioners (sýslumenn)",
+ "currency": "ISK",
+ "routes": [
+  {"id": "ordinary", "where": "home", "speed": "standard", "within": {"n": 4, "unit": "day"}, "label": "almenn afgreiðsla: delivered within 4 days of the photograph"},
+  {"id": "express", "where": "home", "speed": "urgent", "within": {"n": 2, "unit": "day"}, "label": "hraðafgreiðsla: delivered within 2 days of the photograph"}
+ ],
+ "passports": [
+  {"for": "adult", "from": 18, "under": 67, "validYears": 10, "pay": {"ordinary": "19000", "express": "39200"}},
+  {"for": "senior", "from": 67, "validYears": 10, "pay": {"ordinary": "7000", "express": "14000"}},
+  {"for": "child", "under": 18, "validYears": 5, "pay": {"ordinary": "7000", "express": "14000"}}
+ ],
+ "note": "The page gives the adult fee for ages 18 to 66 and the reduced fee for children, the elderly and people with a disability (öryrkjar), who also pay the reduced fee as adults; the senior band from 67 is read from '18 til 66 ára'. Validity runs from the application date. Delivery outside the capital area adds posting time.",
+ "sources": [
+  {
+   "url": "https://island.is/vegabref",
+   "title": "Ísland.is, Vegabréf",
+   "read": "2026-10-28",
+   "said": "Afhending Almenn afhending er innan 4 daga og hraðafhending innan 2 daga frá því að umsækjandi kemur í myndatöku. Sendingartími bætist við afhendingartíma fyrir umsækjendur á landsbyggðinni. ... Kostnaður Almenn afgreiðsla vegabréfa: 18 til 66 ára: 19.000 krónur . Börn, aldraðir, öryrkjar: 7.000 krónur . Hraðafgreiðsla: 18 til 66 ára: 39.200 krónur . Börn, aldraðir, öryrkjar: 14.000 krónur . Gildistími vegabréfa Vegabréf gilda í tíu ár frá umsóknardegi en í fimm ár fyrir börn yngri en 18 ára."
+  }
+ ]
+}

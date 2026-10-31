@@ -1,0 +1,78 @@
+{
+ "country": "FJ",
+ "office": "the Ministry of Immigration",
+ "currency": "FJD",
+ "routes": [
+  {
+   "id": "ordinary",
+   "where": "home",
+   "speed": "standard",
+   "within": {
+    "n": 10,
+    "unit": "working day"
+   },
+   "label": "ordinary, 10 working days"
+  },
+  {
+   "id": "urgent",
+   "where": "home",
+   "speed": "urgent",
+   "within": {
+    "n": 3,
+    "unit": "working day"
+   },
+   "label": "urgent, 3 working days"
+  },
+  {
+   "id": "weekend",
+   "where": "home",
+   "speed": "urgent",
+   "within": null,
+   "label": "urgent, on a weekend or public holiday"
+  },
+  {
+   "id": "lost",
+   "where": "home",
+   "speed": "standard",
+   "within": {
+    "n": 10,
+    "unit": "working day"
+   },
+   "replacement": true,
+   "label": "replacement of a valid passport lost or damaged"
+  },
+  {
+   "id": "lost-urgent",
+   "where": "home",
+   "speed": "urgent",
+   "within": {
+    "n": 3,
+    "unit": "working day"
+   },
+   "replacement": true,
+   "label": "replacement of a valid passport lost or damaged, urgent"
+  }
+ ],
+ "passports": [
+  {
+   "for": "any",
+   "validYears": null,
+   "pay": {
+    "ordinary": "206.50",
+    "urgent": "283.85",
+    "weekend": "627.60",
+    "lost": "412.90",
+    "lost-urgent": "536.75"
+   }
+  }
+ ],
+ "note": "One fee for a new passport or a renewal, at any age (the page gives no age bands; children below 10 need no biometrics). Replacing a valid passport lost or damaged costs FJD 412.90 (536.75 urgent), in the same 10 and 3 working days, written as replacement routes. Validity is a lead.",
+ "sources": [
+  {
+   "url": "https://www.immigration.gov.fj/fiji-passports#ordinary-passport",
+   "title": "Ministry of Immigration, Fiji (immigration.gov.fj), Fiji Passports, the Ordinary Passport tab (moved to the Fiji Passports page; its Ordinary Passport tab, rendered and opened 2026-10-30)",
+   "read": "2026-10-30",
+   "said": "Ordinary Passport The standard passport issued to all qualified Fijians. ... Fees – new and renewal Category Price Method of payment Ordinary (10 working days) $206.50 MPAISA/EFTPOS Urgent (3 working days) $283.85 MPAISA/EFTPOS ... Fees – lost or damaged (valid) Category Price Method of payment Ordinary (10 working days) $412.90 MPAISA/EFTPOS Urgent (3 working days) $536.75 MPAISA/EFTPOS ... Passport photos for children below 10 years of age (no biometrics required) ... Urgent processing – new or renewal (weekend/public holidays) $627.60"
+  }
+ ]
+}

@@ -1,0 +1,42 @@
+{
+ "country": "HK",
+ "national": {
+  "name": "Bank code, branch code and account number",
+  "parts": [
+   {
+    "name": "Bank code",
+    "length": 3,
+    "kind": "n"
+   },
+   {
+    "name": "Branch code",
+    "length": 3,
+    "kind": "n"
+   },
+   {
+    "name": "Account number",
+    "length": 9,
+    "kind": "n"
+   }
+  ],
+  "bank": [
+   1,
+   3
+  ]
+ },
+ "note": "HSBC, the largest bank in Hong Kong (read 2026-10-30): a payer chooses the bank by its three-digit code (HSBC's is 004) and enters the 10- or 12-digit HSBC account number, whose first 3 digits are the branch code, followed by a 7- or 9-digit account number. Other banks' lengths vary and no Hong Kong Interbank Clearing or HKMA rule fixing them was read (HKICL's site answered with an empty page), so HSBC's twelve-digit form (branch 3, account 9) is written. No check digit is stated.",
+ "sources": [
+  {
+   "url": "https://www.hsbc.com.hk/help/faq/transfers-and-payments/",
+   "title": "HSBC Hong Kong, Help: transfers and payments FAQ",
+   "read": "2026-10-30",
+   "said": "Please advise your payer to choose HSBC (bank code 004) as the payee’s bank or receiving bank, then enter your 10- or 12-digit HSBC account number in the payee account number field. The first 3 digits of your HSBC account number is the branch code, followed by a 7- or 9-digit account number."
+  },
+  {
+   "url": "https://www.hsbc.com.hk/content/dam/hsbc/hk/docs/transfer-payments/customer-information-sheet-for-inward-payments-to-hong-kong.pdf",
+   "title": "HSBC Hong Kong, Customer information sheet for inward payments to Hong Kong",
+   "read": "2026-10-30",
+   "said": "Account number of HSBC HK must be 10 or 12 digits. Branch code is the first 3 digits and the following 7-9 digits"
+  }
+ ]
+}

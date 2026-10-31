@@ -1,0 +1,60 @@
+{
+ "country": "SM",
+ "office": "the Republic's passport service (info.passaporti@pa.sm); abroad through San Marino's consulates",
+ "currency": "EUR",
+ "routes": [
+  {
+   "id": "home",
+   "where": "home",
+   "speed": "standard",
+   "within": null,
+   "label": "in San Marino"
+  },
+  {
+   "id": "abroad",
+   "where": "abroad",
+   "speed": "standard",
+   "within": null,
+   "label": "through a consulate, paid online"
+  }
+ ],
+ "passports": [
+  {
+   "for": "adult",
+   "from": 14,
+   "validYears": 10,
+   "pay": {
+    "home": null,
+    "abroad": "100.00"
+   }
+  },
+  {
+   "for": "child",
+   "from": 3,
+   "under": 14,
+   "validYears": 5,
+   "pay": {
+    "home": null,
+    "abroad": "50.00"
+   }
+  },
+  {
+   "for": "child",
+   "under": 3,
+   "validYears": 3,
+   "pay": {
+    "home": null,
+    "abroad": "30.00"
+   }
+  }
+ ],
+ "note": "The fees and validities San Marino's consulate in the United Kingdom gives for citizens resident there: €100.00 from age 14 (ten years), €50.00 from 3 to 13 (five years), €30.00 under 3 (three years), net of commissions, with €10.00 or €20.00 for registered postage (not modelled). The fee in San Marino itself was not found, so the home route is unpaid until a source gives it.",
+ "sources": [
+  {
+   "url": "https://www.consolatosanmarino.uk/it/?p=33",
+   "title": "Consolato della Repubblica di San Marino nel Regno Unito, Rilascio o rinnovo di passaporti sammarinesi",
+   "read": "2026-10-28",
+   "said": "How much does it cost? Passports for adults – €100.00 Passport for children over14 – €100.00 Passport for children from 3 to 13 – €50.00 Passport for children from 0 to 2 – €30.00 Fees are net of commissions. ... Passport validity -3 years for children up to 2 ; -5 years for children from 3 to 13 ; -10 years for children over 14 and adults"
+  }
+ ]
+}

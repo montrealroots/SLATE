@@ -1,0 +1,57 @@
+{
+ "country": "GN",
+ "national": {
+  "name": "BBAN",
+  "parts": [
+   {
+    "name": "Bank Code",
+    "length": 3,
+    "kind": "n"
+   },
+   {
+    "name": "Branch Code",
+    "length": 3,
+    "kind": "n"
+   },
+   {
+    "name": "Account Number",
+    "length": 10,
+    "kind": "n"
+   },
+   {
+    "name": "Account Check Digit",
+    "length": 2,
+    "kind": "n"
+   }
+  ],
+  "bank": [
+   1,
+   3
+  ],
+  "checks": [
+   {
+    "over": [
+     1,
+     16
+    ],
+    "key97": true
+   }
+  ],
+  "example": "001001000000011157"
+ },
+ "note": "Guinea's clearing is the West African Monetary Zone's ACP/ACH. The ACP/ACH Participant Guide (BFI for the West African Monetary Institute, version 1.0.1 of 11 June 2010, a draft 'to be validated', read 2026-10-30 in the copy the Central Bank of The Gambia publishes) is written for the zone's system and names Guinea in it (country code 03, currency 324); it numbers an account as an 18-digit BBAN, the bank's code (3 digits), the branch's (3), the account number (10, padded with zeros on the left) and a two-digit check, 97 less the remainder of 100 times the 16 digits before it divided by 97 (the French RIB's key, held as key97), with its worked BBAN 001001000000011157 as the example. The Banque Centrale de la République de Guinée's Règlement N° 0115/BCRG/2020 fixant les règles applicables à la chambre de compensation automatisée (30 April 2020, scanned, read by eye from the BCRG's own copy) requires each participant's files to follow the structures of the ACP/ACH participants' guide, and sets up the ACP/ACH with three-digit participant codes (001 the BCRG, 002 BICIGUI, 003 Société Générale Guinée...) and the same record codes for presentations, rejections and cancellations (21 to 24) as the guide; the BCRG's convention for cheque truncation (30 April 2020) speaks of a RIB/RIP on the cheque. Reading to check: no BCRG text read gives the account number's structure itself; the 18 digits rest on the zone's guide naming Guinea and on the BCRG's system being that ACP/ACH.",
+ "sources": [
+  {
+   "url": "https://www.cbg.gm/downloads-file/beddb2be-06e8-11ea-876c-02e599c15748",
+   "title": "BFI for the West African Monetary Institute, ACP / ACH Participant Guide (version 1.0.1, 11 June 2010), published by the Central Bank of The Gambia among its WAMZ Payment System Documentation",
+   "read": "2026-10-30",
+   "said": "The Account number (BBAN) is codified over 18 Positions as follows: ... The bank code 03 Number Completed with 0 on the left ... The branch code 03 Number Completed with 0 on the left ... Account number 10 Number Completed with 0 on the left ... Account Check Digit 02 Number ... The assembly formed in order by the bank code, branch code and account number constitutes a number N of 16 digits. ... Therefore, the result of the following subtraction (97 – (N‟ mod 97)) can only take values ... BBAN = 001001000000011157 ... 01 (GM) /05 (SL) / 03 (GN)"
+  },
+  {
+   "url": "https://www.bcrg-guinee.org/wp-content/uploads/2025/03/Reglement-N0115-fixant-les-regles-applicables-a-la-chambre-de-compensation-automatisee.pdf",
+   "title": "Banque Centrale de la République de Guinée, Règlement N° 0115/BCRG/2020 fixant les règles applicables à la chambre de compensation automatisée (30 April 2020; scanned, read by eye)",
+   "read": "2026-10-30",
+   "said": "Article 12.3 : Interface Système d'Information (SI) avec le système ACP/ACH ... en respectant la norme de structures telle que indiquée dans le document de Guide des participants de ACP/ACH. ... Les fichiers générés par le SI doivent permettre de gérer : Les présentations : code enregistrement 21 ; Les rejets : code enregistrement 22 ; Les annulations : code enregistrement 23 ; Les annulations de rejets : code enregistrement 24. ... Liste des participants ... 001 Banque Centrale de la République de Guinée (BCRG) ... 002 Banque Internationale pour le Commerce et l'Industrie en Guinée (BICIGUI) ... 003 Société Générale Guinée (SGG)"
+  }
+ ]
+}

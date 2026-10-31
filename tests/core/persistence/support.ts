@@ -13,10 +13,14 @@ export function kept(slot: Slot, over: { id?: string; now?: number; playtime?: n
   };
 }
 
-/** Local storage in memory, with a quota a test can set, and a switch that makes it fail. */
+/**
+ * Local storage in memory, with a quota a test can set (on one value, or on all of them together, as a browser holds an
+ * origin's), and a switch that makes it fail.
+ */
 export class MemoryStorage implements Storage {
   readonly map = new Map<string, string>();
   quota = Infinity;
+  capacity = Infinity;
   broken = false;
   get length() {
     return this.map.size;
@@ -33,7 +37,8 @@ export class MemoryStorage implements Storage {
   }
   setItem(key: string, value: string) {
     if (this.broken) throw new Error('storage failed');
-    if (value.length > this.quota) throw new DOMException('full', 'QuotaExceededError');
+    const used = [...this.map].reduce((n, [k, v]) => n + (k === key ? 0 : v.length), 0);
+    if (value.length > this.quota || used + value.length > this.capacity) throw new DOMException('full', 'QuotaExceededError');
     this.map.set(key, value);
   }
   removeItem(key: string) {

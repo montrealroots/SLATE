@@ -1,0 +1,24 @@
+{
+ "country": "CZ",
+ "office": "the municipal offices of municipalities with extended powers (in Prague, the city district offices 1 to 22), and the Ministry of the Interior for reduced periods",
+ "currency": "CZK",
+ "routes": [
+  {"id": "30", "where": "home", "speed": "standard", "within": {"n": 30, "unit": "day"}, "label": "within 30 days"},
+  {"id": "5", "where": "home", "speed": "urgent", "within": {"n": 5, "unit": "working day"}, "label": "within 5 working days, at the Ministry of the Interior"},
+  {"id": "24h", "where": "home", "speed": "urgent", "within": {"n": 24, "unit": "hour"}, "label": "within 24 hours of a working day, at the Ministry of the Interior"},
+  {"id": "embassy", "where": "abroad", "speed": "standard", "within": {"n": 120, "unit": "day"}, "label": "at an embassy, within 120 days"}
+ ],
+ "passports": [
+  {"for": "adult", "from": 15, "validYears": 10, "pay": {"30": "600", "5": "3000", "24h": "6000", "embassy": null}},
+  {"for": "child", "under": 15, "validYears": 5, "pay": {"30": "100", "5": "1000", "24h": "2000", "embassy": null}}
+ ],
+ "note": "Collecting a 30-day passport at another authority than the one applied to costs CZK 100 more. A reduced-period application at a municipal authority with collection at the Ministry is paid in two parts (CZK 4,000 and 2,000 for 24 hours; 2,000 and 1,000 for 5 working days). The fee at an embassy is not on the page read.",
+ "sources": [
+  {
+   "url": "https://portal.gov.cz/en/sluzby-vs/vydani-cestovniho-pasu-S315",
+   "title": "portal.gov.cz, Issue of a passport",
+   "read": "2026-10-28",
+   "said": "The passport is issued with territorial validity in all countries of the world and with a validity of 5 years for citizens under the age of 15, or 10 years for citizens over the age of 15 ... You can apply for a passport: at any municipal office of a municipality with extended powers, in Prague, at any office of city districts 1 to 22, in the case of a passport being issued within 30 days, or within reduced periods of 24 hours on a working day or within 5 working days, at the Ministry of the Interior ... when abroad, at an embassy ... In this case, it shall be issued within 120 days ... For a passport to be issued within 30 days: The administrative fee is CZK 600, and CZK 100 for a citizen under the age of 15 ... An administrative fee of CZK 100 is payable for collecting your passport if you collect a passport issued within 30 days at an authority other than the one to which you applied ... For a passport issued in a reduced period of up to 24 hours on a working day: for submission and collection at the Ministry of the Interior CZK 6 000, for submission at a municipal authority with extended powers CZK 4,000, and collection at the Ministry of the Interior CZK 2,000, for citizens under the age of 15: for submission and collection at the Ministry of the Interior CZK 2 000 ... For a passport issued in a reduced period of up to 5 working days: for submission and collection at the Ministry of the Interior CZK 3 000 ... for citizens under the age of 15: for submission and collection at the Ministry of the Interior CZK 1 000"
+  }
+ ]
+}

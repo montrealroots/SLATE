@@ -1,0 +1,33 @@
+{
+ "country": "BD",
+ "name": "e-TIN (Taxpayer's Identification Number)",
+ "issuer": "the National Board of Revenue (NBR)",
+ "format": {
+  "length": 12,
+  "pattern": "^\\d{12}$"
+ },
+ "when": "application",
+ "who": [
+  "anyone"
+ ],
+ "needed": [
+  "tax"
+ ],
+ "note": "The Daily Star (1 July 2013), reporting the NBR's launch of online TIN registration and its chairman's words, read 2026-10-30: an applicant registers on the NBR's portal with their national identity card number, mobile number and e-mail; the NBR checks the details against the Election Commission's national ID database and issues the TIN online at once; the new number has 12 digits (it replaced the 10-digit one from 1 January 2014). The NBR's own registration portal (secure.incometax.gov.bd/TINHome, read 2026-10-30) answers as 'Taxpayer's Identification Number (TIN) Registration / Cancellation' but states no form; the NBR's main site and its help pages weren't found stating the length, so the length rests on the newspaper's report of the NBR's rule (marked secondary). Read as given on application, to anyone registering (the report ties it to the national ID card, so in practice citizens; foreigners' route isn't modelled); `needed` is tax. 'At once' isn't kept as a `within`. No check digit, age or fee is stated.",
+ "sources": [
+  {
+   "url": "https://www.thedailystar.net/news/nbr-launches-online-tin-registration",
+   "title": "The Daily Star, NBR launches online TIN registration (1 July 2013)",
+   "read": "2026-10-30",
+   "kind": "secondary",
+   "quotes": "https://secure.incometax.gov.bd/TINHome",
+   "said": "one has to log on to the NBR's website -- incometax.gov.bd -- and provide details which include the national identity card number, mobile phone number and e-mail address, to get TIN online. ... The existing TIN holders, too, would have to re-register by December 31, 2013 for the new 12-digit number, which would replace the current 10-digit number on January 1, 2014. ... If the information provided by applicants is found correct, the TIN would be issued online instantly."
+  },
+  {
+   "url": "https://secure.incometax.gov.bd/TINHome",
+   "title": "National Board of Revenue, Taxpayer's Identification Number (TIN) Registration portal",
+   "read": "2026-10-30",
+   "said": "Taxpayer's Identification Number (TIN) ... Registration / Cancellation"
+  }
+ ]
+}

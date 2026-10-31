@@ -113,7 +113,7 @@ describe('the holidays\' coverage', () => {
     ]);
     expect(TESTS).toEqual([
       'tests/world/holidays/holidays.test.ts::the holidays of every country kept > are the days its official lists name, list by list',
-      'tests/world/holidays/holidays.test.ts::the holidays > at every place on the map',
+      'tests/world/holidays/holidays.places.test.ts::the holidays > at every place on the map',
     ]);
     expect(TOLD).toBe("tests/world/holidays/holidays.test.ts::the holidays > tell the player where a country's aren't kept");
     expect(TOLD_REGION).toBe("tests/world/holidays/holidays.test.ts::the holidays > tell the player where a region's own aren't kept");

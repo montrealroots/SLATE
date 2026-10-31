@@ -1,0 +1,25 @@
+{
+ "country": "AT",
+ "name": "tax identification number (TIN)",
+ "issuer": "the local tax office",
+ "format": {
+  "length": 9,
+  "pattern": "^\\d{9}$"
+ },
+ "when": "application",
+ "who": [
+  "residents"
+ ],
+ "needed": [
+  "tax"
+ ],
+ "note": "Austria's sheet (its government's own sheet on the OECD's automatic-exchange portal ('Information on Tax Identification Numbers'; the OECD's index page sits behind a bot check and wasn't opened, the sheet itself came straight back)), read 2026-10-30: Austria's TIN is issued by the local tax office of the taxpayer's residence when the taxpayer asks it for a service, only to individuals liable to tax, and changes if the residence moves; 9 digits (written 99-999/9999). The sheet gives no other name for it. Read as given on application, to residents. No check rule, age, fee or time is stated.",
+ "sources": [
+  {
+   "url": "https://www.oecd.org/content/dam/oecd/en/topics/policy-issue-focus/aeoi/austria-tin.pdf",
+   "title": "OECD AEOI portal, Austria: Information on Tax Identification Numbers (the jurisdiction's own sheet)",
+   "read": "2026-10-30",
+   "said": "The Local Tax Offices issue TINs to the taxpayers having their residence in the area of competence of these Offices, when they ask the local office for a service. This means that a TIN can change when a taxpayer changes residence. ... TINs are only issued to individuals who are liable to tax. ... 99-999/9999 9 digits"
+  }
+ ]
+}

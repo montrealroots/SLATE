@@ -1,0 +1,36 @@
+{
+ "currency": "BYN",
+ "rates": [
+  {
+   "from": "2025-12-31",
+   "perUSD": "2.9027"
+  },
+  {
+   "from": "2026-03-31",
+   "perUSD": "2.951"
+  },
+  {
+   "from": "2026-06-30",
+   "perUSD": "2.907"
+  },
+  {
+   "from": "2026-09-30",
+   "perUSD": "3.029"
+  }
+ ],
+ "note": "The National Bank of the Republic of Belarus's official rate for 31 December 2025, 2.9027 roubles per US dollar (its rates API), the US Treasury's Reporting Rates of Exchange listing no Belarusian rouble that quarter; from 31 March 2026 the Treasury's 'Belarus-New Ruble' row: 2.951 from 2026-03-31; 2.907 from 2026-06-30; 3.029 from 2026-09-30 per US dollar, each holding until the next. Both read 2026-10-30.",
+ "sources": [
+  {
+   "url": "https://api.nbrb.by/exrates/rates/431?ondate=2025-12-31",
+   "title": "National Bank of the Republic of Belarus, official exchange rate of the Belarusian rouble against the US dollar on 31 December 2025 (rates API)",
+   "read": "2026-10-30",
+   "said": "\"Date\":\"2025-12-31T00:00:00\",\"Cur_Abbreviation\":\"USD\",\"Cur_Scale\":1 ... \"Cur_OfficialRate\":2.9027"
+  },
+  {
+   "url": "https://api.fiscaldata.treasury.gov/services/api/fiscal_service/v1/accounting/od/rates_of_exchange?filter=record_date:gte:2025-12-31&sort=country_currency_desc,effective_date&page%5Bsize%5D=2000&fields=record_date,country,currency,country_currency_desc,exchange_rate,effective_date&format=csv",
+   "title": "U.S. Department of the Treasury, Bureau of the Fiscal Service: Treasury Reporting Rates of Exchange (Fiscal Data API), record dates 31 December 2025 to 30 September 2026",
+   "read": "2026-10-30",
+   "said": "\"2026-03-31\",\"Belarus\",\"New Ruble\",\"Belarus-New Ruble\",\"2.951\",\"2026-03-31\" ... \"2026-06-30\",\"Belarus\",\"New Ruble\",\"Belarus-New Ruble\",\"2.907\",\"2026-06-30\" ... \"2026-09-30\",\"Belarus\",\"New Ruble\",\"Belarus-New Ruble\",\"3.029\",\"2026-09-30\""
+  }
+ ]
+}

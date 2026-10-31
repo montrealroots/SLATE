@@ -1,0 +1,46 @@
+{
+ "country": "KG",
+ "national": {
+  "name": "Номер Банковского Расчетного Счета",
+  "parts": [
+   {
+    "name": "Код Финансового Института",
+    "length": 3,
+    "kind": "n"
+   },
+   {
+    "name": "Внутрибанковский Номер Счета",
+    "length": 11,
+    "kind": "n"
+   },
+   {
+    "name": "Контрольный Разряд",
+    "length": 2,
+    "kind": "n"
+   }
+  ],
+  "bank": [
+   1,
+   3
+  ],
+  "example": "1251234567890164",
+  "checks": [
+   {
+    "over": [
+     1,
+     14
+    ],
+    "rest97": true
+   }
+  ]
+ },
+ "note": "The National Bank of the Kyrgyz Republic's Instruction on the numbering of bank settlement accounts (approved by the Board's resolution No. 3/5 of 22 February 2005, registered with the Ministry of Justice on 17 March 2005, No. 41-05; as amended by resolution No. 2017-P-14/23-11 of 8 June 2017), read 2026-10-30 on nbkr.kg: the account number has a fixed length of sixteen digits in three blocks, the payment-system participant's number (the first three positions of the bank's BIK, positions 1 to 3), the bank's own eleven-digit internal account number (positions 4 to 14), and two check digits (positions 15 and 16). The check, as the Instruction gives it: the remainder of the first 14 positions divided by 97, written 97 where the remainder is 0 and with a leading zero where it is one digit. That rule is neither the form's mod97 (ISO 7064 MOD 97-10, which makes the whole read 1 mod 97) nor its key97 (97 less the hundredfold's remainder); the form took it as rest97 on 2026-10-30, when this file was written without it. The example is the Instruction's own (Annex 1: participant 125, internal account 12345678901, remainder 64, account 125 12345678901 64), which passes the structure; its remainder was worked again here (12512345678901 mod 97 = 64), and the annex's other two (…934 97, …936 02) fit the same rule.",
+ "sources": [
+  {
+   "url": "https://www.nbkr.kg/searchout.jsp?item=106&material=103328&lang=RUS",
+   "title": "Национальный банк Кыргызской Республики, Инструкция о порядке нумерации банковских расчетных счетов (постановление Правления № 3/5 от 22 февраля 2005 года, в редакции постановления № 2017-П-14/23-11 от 8 июня 2017 года)",
+   "read": "2026-10-30",
+   "said": "Регистрационный номер 41-05 ... от 22 февраля 2005 года N 3/5 ... (В редакции постановления Правления Нацбанка КР от 8 июня 2017 года № 2017-П-14/23-11) ... 4.1. Номер Счета имеет фиксированную длину и содержит контрольные разряды, обеспечивающие проверку достоверности счета по единому алгоритму. ... 4.2. Структура Счета представляет собой совокупность шестнадцати цифровых разрядов, сгруппированных в 3 блока: ... 4.3. Блок 1 - представляет собой номер участника платежной системы, являющийся первыми тремя позициями Банковского идентификационного кода банка (БИК), в котором открыт Счет клиента, и занимает 1-3 позиции в номере Счета. ... представляет собой внутрибанковский номер счета и занимает 11 позиций номера Счета, с 4-й по 14-ю. ... Контрольные разряды Счета присваиваются в номере Счета банком при открытии Счета клиенту и рассчитываются как остаток от деления на 97 первых 14-ти позиций Счета. В случае если остаток от деления равен \"0\", контрольный разряд будет 97. ... 125 12345678901 64"
+  }
+ ]
+}

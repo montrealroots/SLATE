@@ -1,0 +1,42 @@
+{
+ "country": "MA",
+ "office": "the prefecture or province in Morocco, or the consulate for the area of residence abroad, the passport stamp paid as a fixed stamp duty under the General Tax Code",
+ "currency": "MAD",
+ "routes": [
+  {"id": "home", "where": "home", "speed": "standard", "within": null, "label": "in Morocco"},
+  {"id": "abroad", "where": "abroad", "speed": "standard", "within": null, "label": "at the consulate for your area of residence"}
+ ],
+ "passports": [
+  {"for": "child under 3", "under": 3, "validYears": null, "pay": {"home": "100", "abroad": "0"}},
+  {"for": "child", "from": 3, "under": 12, "validYears": 5, "pay": {"home": "100", "abroad": "0"}},
+  {"for": "minor", "from": 12, "under": 18, "validYears": 5, "pay": {"home": null, "abroad": "0"}},
+  {"for": "adult", "from": 18, "validYears": 5, "pay": {"home": "500", "abroad": "500"}}
+ ],
+ "note": "The stamp is a fixed stamp duty under article 252-II-B of the General Tax Code, as LesMRE's guide (updated October 2026) cites it: 500 dirhams for an adult, and none for the children under 18 of Moroccans living abroad. LesMRE's news piece of 19 July 2026 gives 100 dirhams for a child under 12; read with the guide's exemption abroad, that's taken as the fee in Morocco, and a minor of 12 to 17 in Morocco has no fee read. The passport is valid 5 years for anyone over 3. The Tax Code (tax.gov.ma) and passeport.ma reset the connection and consulat.ma refuses the request, so both sources are secondary. Consular chancery fees, which vary by consulate, and processing times aren't modelled.",
+ "sources": [
+  {
+   "kind": "secondary",
+   "url": "https://www.lesmre.com/fr/guides/renouveler-passeport-marocain-etranger",
+   "quotes": "https://www.tax.gov.ma/",
+   "title": "LesMRE, Renouveler son passeport marocain depuis l'étranger : guide complet 2026 (published 27 February 2026, updated October 2026)",
+   "read": "2026-10-28",
+   "said": "Timbre fiscal passeport 500 DH adulte / exonération pour les enfants de MRE de moins de 18 ans Droit de timbre fixe (article 252-II-B du CGI) ... Le passeport biométrique marocain est valable 5 ans pour toutes les personnes de plus de 3 ans, sans exception. Le renouvellement se fait exclusivement au consulat de votre zone de résidence."
+  },
+  {
+   "kind": "secondary",
+   "url": "https://www.lesmre.com/fr/actualites/passeport-marocain-validite-10-ans-revendication-mre-2026",
+   "quotes": "https://www.passeport.ma/",
+   "title": "LesMRE, Passeport marocain : les MRE plaident pour une validité de 10 ans (19 July 2026)",
+   "read": "2026-10-28",
+   "said": "Combien coûte le renouvellement aujourd'hui ? Le timbre est de 500 dirhams pour les adultes et de 100 dirhams pour les enfants de moins de 12 ans, auxquels s'ajoutent les photos et les éventuels frais de déplacement au consulat."
+  },
+  {
+   "kind": "secondary",
+   "url": "https://aujourdhui.ma/focus/tout-ce-quil-faut-savoir-sur-la-procedure-dobtention-du-nouveau-passeport-68445",
+   "quotes": "https://www.sgg.gov.ma/",
+   "title": "Aujourd'hui le Maroc, Tout ce qu'il faut savoir sur la procédure d'obtention du nouveau passeport",
+   "read": "2026-10-28",
+   "said": "Ainsi, les passeports biométriques seront délivrés dans les provinces et préfectures de Rabat ... Selon le ministère de l’Intérieur, cette démarche s’inscrit dans le cadre d’une stratégie visant la généralisation progressive de la délivrance des passeports biométriques au niveau de l’ensemble des préfectures et provinces, ambassades et consulats du Maroc"
+  }
+ ]
+}

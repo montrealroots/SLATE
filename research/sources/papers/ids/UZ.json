@@ -1,0 +1,85 @@
+{
+ "country": "UZ",
+ "document": "ID card (passport) of a citizen of the Republic of Uzbekistan",
+ "office": "the migration and citizenship departments of the internal affairs bodies",
+ "currency": "UZS",
+ "routes": [
+  {
+   "id": "online",
+   "where": "home",
+   "speed": "standard",
+   "within": {
+    "n": 1,
+    "unit": "working day"
+   },
+   "label": "applied and paid for on my.gov.uz, data taken at a migration department or public services centre: 1 working day after the data are taken"
+  },
+  {
+   "id": "office",
+   "where": "home",
+   "speed": "standard",
+   "within": {
+    "n": 1,
+    "unit": "working day"
+   },
+   "label": "at a migration department or public services centre: 1 working day after the documents are taken"
+  },
+  {
+   "id": "consulate",
+   "where": "abroad",
+   "speed": "standard",
+   "within": null,
+   "label": "at a consulate of Uzbekistan abroad"
+  }
+ ],
+ "cards": [
+  {
+   "for": "under 1, at the parents' wish",
+   "under": 1,
+   "validYears": 2,
+   "pay": {
+    "online": "330012",
+    "office": "366680",
+    "consulate": "366680"
+   }
+  },
+  {
+   "for": "1 to 15, at the parents' wish",
+   "from": 1,
+   "under": 16,
+   "validYears": 5,
+   "pay": {
+    "online": "330012",
+    "office": "366680",
+    "consulate": "366680"
+   }
+  },
+  {
+   "for": "16 and over",
+   "from": 16,
+   "validYears": 10,
+   "pay": {
+    "online": "330012",
+    "office": "366680",
+    "consulate": "366680"
+   }
+  }
+ ],
+ "note": "The government portal: the card is issued from birth at the parents' wish and on reaching 16, and handed over within one working day of the documents being taken. Kun.uz's guide (27 December 2025) gives the state duty by way of applying, not by age: 80.1% of the base calculation value through my.gov, 89% at a migration department, a public services centre or a consulate, with the base value at 412,000 soums from 1 August 2025; and the term by age at issue. A card replaced for loss or damage carries a fine on top (not modelled); a defective card is replaced free. The time at a consulate isn't given.",
+ "sources": [
+  {
+   "url": "https://gov.uz/en/advice/61/document/1628",
+   "title": "Government portal of the Republic of Uzbekistan, Obtaining the ID card (passport) of a citizen of the Republic of Uzbekistan",
+   "read": "2026-10-28",
+   "said": "по желанию родителей, опекунов (попечителей) — с момента рождения ребёнка до достижения им 16-летнего возраста; при достижении гражданином 16-летнего возраста; ... ID-карта выдается пунктом сбора информации в течение одного рабочего дня после полного приёма документов."
+  },
+  {
+   "url": "https://kun.uz/ru/news/2025/12/27/kak-poluchit-id-kartu-v-uzbekistane",
+   "title": "Kun.uz, How to get an ID card in Uzbekistan (27 December 2025)",
+   "read": "2026-10-28",
+   "kind": "secondary",
+   "quotes": "https://my.gov.uz/",
+   "said": "Сумма зависит от способа подачи: ... 330 012 сум (80.1% от БРВ) ... при подаче через ... 366 680 сум (89% от БРВ) ... при подаче через Отдел миграции ОВД, ЦГУ или в консульстве. ... с 1 августа 2025 года составляет — 412 000 сум. ... ID-карту сделают за ... 1 рабочий день ... после приема всех данных. ... Срок действия ID-карты в зависимости от возраста: ... 10 лет ... — получателю от 16 лет ... 5 лет ... — получателю от 1 года до 16 лет ... 2 года ... — получателю до 1 года"
+  }
+ ]
+}

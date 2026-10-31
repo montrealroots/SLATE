@@ -1,0 +1,31 @@
+{
+ "country": "FI",
+ "office": "the police",
+ "currency": "EUR",
+ "routes": [
+  {"id": "in-person", "where": "home", "speed": "standard", "within": null, "label": "applied for in person"},
+  {"id": "online", "where": "home", "speed": "standard", "within": null, "label": "applied for electronically"},
+  {"id": "pika-in-person", "where": "home", "speed": "urgent", "within": null, "label": "pikapassi, in person"},
+  {"id": "pika-online", "where": "home", "speed": "urgent", "within": null, "label": "pikapassi, electronically"},
+  {"id": "express-in-person", "where": "home", "speed": "urgent", "within": null, "label": "express passport, in person"},
+  {"id": "express-online", "where": "home", "speed": "urgent", "within": null, "label": "express passport, electronically"}
+ ],
+ "passports": [
+  {"for": "any", "validYears": 5, "pay": {"in-person": "48", "online": "42", "pika-in-person": "67", "pika-online": "61", "express-in-person": "87", "express-online": "81"}}
+ ],
+ "note": "Fees from 1 March 2026 to the end of 2026 (decree 96/2026, amending decree 1335/2025), the Digital and Population Data Services Agency's fee included; a veteran of Finland's wars pays EUR 25 or 22, a temporary passport EUR 83. Validity is five years under the Passport Act as it stands, as the Ministry of the Interior's draft government proposal of December 2025 says; that draft would lengthen it to ten years (five for minors) from 1 January 2027, and whether it has passed is a lead. The delivery times of the ordinary, pikapassi and express passports are leads (poliisi.fi refuses this client).",
+ "sources": [
+  {
+   "url": "https://www.finlex.fi/api/media/statute/908434/mainPdf/main.pdf",
+   "title": "Finlex, Suomen säädöskokoelma 96/2026, Sisäministeriön asetus poliisin suoritteiden ja virka-avun maksullisuudesta vuonna 2026 annetun sisäministeriön asetuksen liitteen muuttamisesta",
+   "read": "2026-10-28",
+   "said": "muutetaan poliisin suoritteiden ja virka-avun maksullisuudesta vuonna 2026 annetun sisäministeriön asetuksen (1335/2025) liite seuraavasti: ... Tämä asetus tulee voimaan 1 päivänä maaliskuuta 2026. ... Passi (sisältää DVV:n maksun) 48 € Passi, sähköinen hakemus (sisältää DVV:n maksun) 42 € Passi Suomen sotiin osallistuneelle (sisältää DVV:n maksun) 25 € Passi Suomen sotiin osallistuneelle, sähköinen hakemus (sisältää DVV:n maksun) 22 € ... Pikapassi (sisältää DVV:n maksun) 67 € Pikapassi, sähköinen hakemus (sisältää DVV:n maksun) 61 € Express-passi (sisältää DVV:n maksun) 87 € Express-passi, sähköinen hakemus (sisältää DVV:n maksun) 81 € Väliaikainen passi 83 €"
+  },
+  {
+   "url": "https://api.hankeikkuna.fi/asiakirjat/33facb04-ca9c-4d2a-94bd-a21e449690f7/fefb377f-32ec-4f83-8c45-ce67d68056e0/LAUSUNTOPYYNTO_20251223055415.PDF",
+   "title": "Hankeikkuna, Luonnos: Hallituksen esitys eduskunnalle passilain ja henkilökorttilain muuttamisesta",
+   "read": "2026-10-28",
+   "said": "Ehdotetut passilain ja henkilökorttilain muutokset koskisivat passin ja henkilökortin enimmäisvoimassaoloaikaa, joka pidentyisi nykyisestä viidestä vuodesta kymmeneen vuoteen. Alaikäiselle myönnettävä passi ja henkilökortti olisi voimassa kuitenkin enintään viisi vuotta. ... Lait on tarkoitettu tulemaan voimaan 1.1.2027. ... Sekä passin että henkilökortin enimmäisvoimassaoloaika on voimassa olevan lainsäädännön mukaan viisi vuotta."
+  }
+ ]
+}

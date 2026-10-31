@@ -1,0 +1,39 @@
+{
+ "country": "BA",
+ "name": "jedinstveni matični broj (JMB), the personal identification number",
+ "issuer": "the competent authority keeping the birth register, the central record kept by the Agency for Identification Documents, Registers and Data Exchange (IDDEEA)",
+ "format": {
+  "length": 13,
+  "pattern": "^(0[1-9]|[12]\\d|3[01])(0[1-9]|1[0-2])\\d{3}1[1-9]\\d{3}\\d$"
+ },
+ "when": "birth",
+ "who": [
+  "citizens",
+  "residents"
+ ],
+ "within": {
+  "n": 15,
+  "unit": "day"
+ },
+ "note": "The Law on Personal Identification Number (Official Gazette of BiH 32/01; IDDEEA's English text, read 2026-10-30) with its amendments 103/11 and 87/13 (IDDEEA's texts, read the same day): the JMB is 13 figures in six groups, day of birth (2), month (2), the last three digits of the year (3), the register of the registration area (2), sex and order among those born the same day (3: men 000-499, women 500-999) and a control number (1) computed modulo 11 'according to the instruction of the MCAC' (the weights aren't in the law, so `check` is left out). The 2013 amendment renumbered the registers 11 to 19 (Republika Srpska 11-13, Brčko 14, the Federation 15-19), which the pattern holds; numbers given under the older register list (10 to 19) aren't changed and aren't drawn. The competent authority gives it ex officio when a child born in Bosnia and Herzegovina is entered in the birth register, within 15 days; an alien granted status gets one within 15 days of the request (read as residents). Since the 2011 amendment IDDEEA keeps the central record. Art. 18: it is entered in the ID card, health card and other documents only where a law says so, so `needed` is left out. No fee or age is stated.",
+ "sources": [
+  {
+   "url": "https://www.iddeea.gov.ba/wp-content/uploads/WEB/ZAKONODAVSTVO/ZAKONI/4/law_on_jmb-english.pdf",
+   "title": "Law on Personal Identification Number (Official Gazette of BiH 32/01), English text published by IDDEEA",
+   "read": "2026-10-30",
+   "said": "JMB shall be an individual and unique code of identification data of a person consisting of 13 figures, classified into six groups, as follows: ... I group day of birth (two figures) ... II group month of birth (two figures) ... III group year of birth (three figures) ... IV group number of JMB register – registration areas (two figures) ... VI group control number (one figure) ... The Control Number (group VI) shall be specified by computer module 11 according to the instruction of the MCAC. ... The competent authority shall, ex officio, allocate a JMB to the citizens born in Bosnia and Herzegovina on the occasion of registration into BiH birth register. ... The competent authority shall be obliged to allocate a JMB to a child within 15 days as of the date of registration in the Birth register. ... The MCAC shall be obliged to issue the JMB to the alien within 15 days after a request"
+  },
+  {
+   "url": "https://www.iddeea.gov.ba/wp-content/uploads/WEB/ZAKONODAVSTVO/ZAKONI/4/lawonamendlawonpin_87-13_eng.pdf",
+   "title": "Law on Amendments to the Law on Personal Identification Number (Official Gazette of BiH 87/13), English text published by IDDEEA",
+   "read": "2026-10-30",
+   "said": "Registers (IV group) in Republic of Srpska are as follows: ... Register number 14 for registration area: Brčko District of Bosnia and Herzegovina. ... Register number 19 for registration areas: ... shall not be changed."
+  },
+  {
+   "url": "https://www.iddeea.gov.ba/wp-content/uploads/WEB/ZAKONODAVSTVO/ZAKONI/4/zakon%20o%20izmjenama%20i%20dopunama%20zakona%20o%20jedinstvenom%20maticnom%20broju_103-11_hrv.pdf",
+   "title": "Zakon o izmjenama i dopunama Zakona o jedinstvenom matičnom broju (Službeni glasnik BiH 103/11), published by IDDEEA",
+   "read": "2026-10-30",
+   "said": "Agencija za identifikacijske isprave, evidenciju i razmjenu podataka BiH (u daljnjem tekstu: Agencija), sukladno Zakonu o Agenciji, putem elektroničke obrade podataka vodi i održava središnju evidenciju"
+  }
+ ]
+}

@@ -1,0 +1,54 @@
+{
+ "country": "ET",
+ "office": "the Immigration and Citizenship Service (ICS)",
+ "currency": "ETB",
+ "routes": [
+  {
+   "id": "standard",
+   "where": "home",
+   "speed": "standard",
+   "within": null,
+   "label": "normal"
+  },
+  {
+   "id": "five-day",
+   "where": "home",
+   "speed": "urgent",
+   "within": {
+    "n": 5,
+    "unit": "day"
+   },
+   "label": "urgent, 5 days"
+  },
+  {
+   "id": "two-day",
+   "where": "home",
+   "speed": "urgent",
+   "within": {
+    "n": 2,
+    "unit": "day"
+   },
+   "label": "urgent, 2 days"
+  }
+ ],
+ "passports": [
+  {
+   "for": "any",
+   "validYears": null,
+   "pay": {
+    "standard": "5000",
+    "five-day": "20000",
+    "two-day": "25000"
+   }
+  }
+ ],
+ "note": "The ICS's passport fees under Council of Ministers Regulation 550/2024, for a new passport or an expired one's renewal; corrections, damage and loss cost more (not modelled). Validity, the normal time and fees abroad are leads.",
+ "sources": [
+  {
+   "url": "https://ics.gov.et/information/immigration-and-citizenship-service-fees-revised-by-council-of-ministers-regulation-550-2024/",
+   "title": "Immigration and Citizenship Service, Ethiopia, Immigration and Citizenship Service Fees (Revised by Council of Ministers Regulation 550/2024) (26 February 2025)",
+   "read": "2026-10-28",
+   "said": "Passport Service Fees (ETB) Application Type Reason Normal Urgent (2 Days) Urgent (5 Days) New Passport 5,000 25,000 20,000 Renewal Passport Expired 5,000 25,000 20,000"
+  }
+ ]
+}

@@ -1,0 +1,51 @@
+{
+ "country": "BR",
+ "document": "Carteira de Identidade Nacional (CIN)",
+ "office": "the identification institute of the state's civil police (each state issues it)",
+ "currency": "BRL",
+ "routes": [
+  {
+   "id": "state",
+   "where": "home",
+   "speed": "standard",
+   "within": null,
+   "label": "in person at the state identification office, on paper"
+  }
+ ],
+ "cards": [
+  {
+   "for": "child under 12",
+   "under": 12,
+   "validYears": 5,
+   "pay": {
+    "state": "0"
+   }
+  },
+  {
+   "for": "12 to 59",
+   "from": 12,
+   "under": 60,
+   "validYears": 10,
+   "pay": {
+    "state": "0"
+   }
+  },
+  {
+   "for": "60 and over",
+   "from": 60,
+   "validYears": "permanent",
+   "pay": {
+    "state": "0"
+   }
+  }
+ ],
+ "note": "The federal government's questions and answers on the CIN: by Decree 10.977/2022 it is valid 5 years under 12, 10 years from 12 to 59 and indefinitely from 60; Law 7.116/1983 makes the first issue on paper free (a polycarbonate card, where a state offers it, has a cost, and a second copy may too; neither modelled). Any age with a CPF number may have one. The states issue it, and their times differ, so the time isn't modelled.",
+ "sources": [
+  {
+   "url": "https://www.gov.br/governodigital/pt-br/identidade/cin/perguntas-frequentes-sobre-a-cin",
+   "title": "Governo Digital (gov.br), Perguntas frequentes sobre a CIN",
+   "read": "2026-10-28",
+   "said": "0 a 12 anos incompletos – validade de 5 anos. 12 a 60 anos incompletos – validade de 10 anos. Acima de 60 anos – validade indeterminada. ... O cidadão terá que pagar pela atualização da carteira de identidade? Não, a Lei nº 7.116/1983 estabelece a gratuidade da primeira emissão em papel do documento. ... Lembrando que para a emissão do modelo em cartão, o documento tem um custo para o cidadão."
+  }
+ ]
+}

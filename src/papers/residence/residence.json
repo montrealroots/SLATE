@@ -1,0 +1,6409 @@
+{
+ "AD": {
+  "routes": [
+   {
+    "id": "residencia-i-treball",
+    "name": "Autorització d’immigració de residència i treball",
+    "for": "work",
+    "apply": "either",
+    "work": "sponsor",
+    "fee": {
+     "currency": "EUR",
+     "minor": 19096
+    },
+    "term": {
+     "n": 1,
+     "unit": "year"
+    },
+    "renewable": true
+   },
+   {
+    "id": "compte-propi",
+    "name": "Autorització de residència i treball per compte propi",
+    "for": "self-employed",
+    "apply": "either",
+    "work": "any",
+    "fee": {
+     "currency": "EUR",
+     "minor": 19096
+    },
+    "term": {
+     "n": 1,
+     "unit": "year"
+    },
+    "renewable": true
+   }
+  ]
+ },
+ "AE": {
+  "routes": [
+   {
+    "id": "standard-work",
+    "name": "Standard work visa",
+    "for": "work",
+    "apply": "either",
+    "work": "sponsor",
+    "term": {
+     "n": 2,
+     "unit": "year"
+    },
+    "renewable": true
+   },
+   {
+    "id": "golden-creative",
+    "name": "Golden visa (creatives in culture and arts)",
+    "for": "talent",
+    "apply": "either",
+    "work": "any",
+    "term": {
+     "n": 10,
+     "unit": "year"
+    },
+    "renewable": true
+   }
+  ]
+ },
+ "AF": {
+  "routes": [
+   {
+    "id": "istogane-visa",
+    "name": "استوګنې وېزه",
+    "for": "general"
+   }
+  ]
+ },
+ "AG": {
+  "routes": [
+   {
+    "id": "entry-permit",
+    "name": "Entry permit",
+    "for": "general",
+    "renewable": true
+   }
+  ]
+ },
+ "AI": {
+  "routes": [
+   {
+    "id": "work-permit-employee",
+    "name": "Work Permit (Employee)",
+    "for": "work",
+    "apply": "either",
+    "work": "sponsor",
+    "renewable": true
+   },
+   {
+    "id": "work-permit-self-employed",
+    "name": "Work Permit (Self employed)",
+    "for": "self-employed",
+    "apply": "either",
+    "work": "any",
+    "renewable": true
+   },
+   {
+    "id": "permanent-residence",
+    "name": "Permit of Permanent Residence",
+    "for": "permanent",
+    "apply": "in country",
+    "work": "any",
+    "fee": {
+     "currency": "XCD",
+     "minor": 115000
+    },
+    "term": {
+     "n": 1,
+     "unit": "year"
+    },
+    "renewable": true
+   }
+  ]
+ },
+ "AL": {
+  "routes": [
+   {
+    "id": "leje-unike-punemarres",
+    "name": "Leje unike si punëmarrës",
+    "for": "work",
+    "apply": "in country",
+    "work": "sponsor",
+    "within": {
+     "n": 4,
+     "unit": "week"
+    },
+    "renewable": true,
+    "permanentAfter": 5
+   },
+   {
+    "id": "shtetas-be",
+    "name": "E drejta e qëndrimit e shtetasve të Bashkimit Evropian",
+    "for": "free movement",
+    "apply": "in country",
+    "work": "any",
+    "permanentAfter": 5,
+    "groups": [
+     "EU"
+    ]
+   },
+   {
+    "id": "leje-e-perhershme",
+    "name": "Leje e përhershme qëndrimi e tipit “C”",
+    "for": "permanent",
+    "apply": "in country",
+    "work": "any",
+    "within": {
+     "n": 60,
+     "unit": "day"
+    }
+   }
+  ]
+ },
+ "AM": {
+  "routes": [
+   {
+    "id": "temporary-work",
+    "name": "Ժամանակավոր կացության կարգավիճակ (աշխատանք)",
+    "for": "work"
+   },
+   {
+    "id": "temporary-entrepreneurship",
+    "name": "Ժամանակավոր կացության կարգավիճակ (ձեռնարկատիրական գործունեություն)",
+    "for": "self-employed",
+    "within": {
+     "n": 30,
+     "unit": "day"
+    }
+   },
+   {
+    "id": "permanent",
+    "name": "Մշտական կացության կարգավիճակ",
+    "for": "permanent",
+    "within": {
+     "n": 30,
+     "unit": "day"
+    },
+    "term": {
+     "n": 5,
+     "unit": "year"
+    }
+   }
+  ]
+ },
+ "AO": {
+  "routes": [
+   {
+    "id": "visto-de-trabalho",
+    "name": "Visto de Trabalho",
+    "for": "work",
+    "apply": "abroad",
+    "work": "sponsor",
+    "term": {
+     "n": 365,
+     "unit": "day"
+    },
+    "renewable": true
+   }
+  ]
+ },
+ "AR": {
+  "routes": [
+   {
+    "id": "artistas",
+    "name": "Residencia temporaria – Deportistas y artistas (art. 23 inc. f)",
+    "for": "work",
+    "apply": "either",
+    "work": "sponsor",
+    "term": {
+     "n": 3,
+     "unit": "year"
+    },
+    "renewable": true
+   },
+   {
+    "id": "mercosur",
+    "name": "Residencia temporaria – Nacionalidad (art. 23 inc. l)",
+    "for": "free movement",
+    "apply": "either",
+    "work": "any",
+    "term": {
+     "n": 2,
+     "unit": "year"
+    },
+    "renewable": true,
+    "groups": [
+     "Mercosur"
+    ]
+   },
+   {
+    "id": "permanente",
+    "name": "Residencia permanente (art. 22)",
+    "for": "permanent",
+    "apply": "either",
+    "work": "any"
+   }
+  ]
+ },
+ "AS": {
+  "routes": [
+   {
+    "id": "sponsored",
+    "name": "Permission to remain (sponsored employment)",
+    "for": "work",
+    "apply": "either",
+    "work": "sponsor",
+    "permanentAfter": 20
+   },
+   {
+    "id": "us-nationals",
+    "name": "Nationals of the United States",
+    "for": "free movement",
+    "apply": "either",
+    "work": "any",
+    "groups": [
+     "US"
+    ]
+   },
+   {
+    "id": "permanent-resident",
+    "name": "Permanent resident status",
+    "for": "permanent",
+    "apply": "in country",
+    "work": "any"
+   }
+  ]
+ },
+ "AT": {
+  "routes": [
+   {
+    "id": "artist-self-employed",
+    "name": "Niederlassungsbewilligung – Künstler",
+    "for": "self-employed",
+    "apply": "abroad",
+    "work": "any",
+    "counts": true
+   },
+   {
+    "id": "artist-employed",
+    "name": "Niederlassungsbewilligung – Künstler (unselbständig)",
+    "for": "work",
+    "apply": "abroad",
+    "work": "sponsor",
+    "counts": true
+   },
+   {
+    "id": "eea-swiss",
+    "name": "Unionsrechtliches Aufenthaltsrecht (EWR-Bürger und Schweizer)",
+    "for": "free movement",
+    "apply": "in country",
+    "work": "any",
+    "counts": true,
+    "groups": [
+     "EU/EEA",
+     "CH"
+    ]
+   }
+  ]
+ },
+ "AU": {
+  "routes": [
+   {
+    "id": "national-innovation-858",
+    "name": "National Innovation visa (subclass 858)",
+    "for": "talent",
+    "apply": "either",
+    "work": "any",
+    "fee": {
+     "currency": "AUD",
+     "minor": 623500
+    },
+    "counts": true
+   },
+   {
+    "id": "skills-in-demand-482",
+    "name": "Skills in Demand visa (subclass 482)",
+    "for": "work",
+    "apply": "either",
+    "work": "sponsor",
+    "fee": {
+     "currency": "AUD",
+     "minor": 401500
+    },
+    "counts": true
+   },
+   {
+    "id": "special-category-444",
+    "name": "Special category visa (subclass 444)",
+    "for": "free movement",
+    "apply": "in country",
+    "work": "any",
+    "counts": true,
+    "groups": [
+     "NZ"
+    ]
+   }
+  ]
+ },
+ "AW": {
+  "routes": [
+   {
+    "id": "arbeid-in-loondienst",
+    "name": "Verblijfsvergunning arbeid in loondienst",
+    "for": "work",
+    "work": "sponsor",
+    "within": {
+     "n": 24,
+     "unit": "week"
+    },
+    "permanentAfter": 10
+   },
+   {
+    "id": "onbepaalde-tijd",
+    "name": "Verblijfsvergunning voor onbepaalde tijd",
+    "for": "permanent",
+    "work": "any",
+    "within": {
+     "n": 24,
+     "unit": "week"
+    }
+   }
+  ]
+ },
+ "AX": {
+  "issuedBy": "FI"
+ },
+ "AZ": {
+  "routes": [
+   {
+    "id": "work-permit",
+    "name": "Work permit and temporary residence permit",
+    "for": "work",
+    "apply": "in country",
+    "work": "sponsor",
+    "term": {
+     "n": 1,
+     "unit": "year"
+    },
+    "renewable": true
+   },
+   {
+    "id": "entrepreneurship",
+    "name": "Temporary residence permit (entrepreneurship activity)",
+    "for": "self-employed",
+    "apply": "in country",
+    "work": "any",
+    "term": {
+     "n": 1,
+     "unit": "year"
+    },
+    "renewable": true
+   },
+   {
+    "id": "permanent-residence",
+    "name": "Permit for permanent residence",
+    "for": "permanent",
+    "apply": "in country",
+    "work": "any",
+    "term": {
+     "n": 5,
+     "unit": "year"
+    },
+    "renewable": true
+   }
+  ]
+ },
+ "BA": {
+  "routes": [
+   {
+    "id": "privremeni-boravak-rad",
+    "name": "Privremeni boravak po osnovu rada sa radnom dozvolom",
+    "for": "work",
+    "apply": "either",
+    "work": "sponsor",
+    "term": {
+     "n": 1,
+     "unit": "year"
+    },
+    "renewable": true,
+    "permanentAfter": 5
+   },
+   {
+    "id": "stalni-boravak",
+    "name": "Stalni boravak",
+    "for": "permanent",
+    "apply": "in country",
+    "work": "any"
+   }
+  ]
+ },
+ "BB": {
+  "routes": [
+   {
+    "id": "long-term-work-permit",
+    "name": "Long-Term Work Permit",
+    "for": "work",
+    "apply": "abroad",
+    "work": "sponsor",
+    "fee": {
+     "currency": "BBD",
+     "minor": 30000
+    },
+    "term": {
+     "n": 3,
+     "unit": "year"
+    }
+   }
+  ]
+ },
+ "BD": {
+  "routes": [
+   {
+    "id": "work-permit",
+    "name": "Work permit",
+    "for": "work",
+    "within": {
+     "n": 16,
+     "unit": "working day"
+    },
+    "renewable": true
+   }
+  ]
+ },
+ "BE": {
+  "routes": [
+   {
+    "id": "single-permit",
+    "name": "Single Permit",
+    "for": "work",
+    "apply": "either",
+    "work": "sponsor",
+    "fee": {
+     "currency": "EUR",
+     "minor": 15200
+    },
+    "within": {
+     "n": 4,
+     "unit": "month"
+    }
+   },
+   {
+    "id": "professional-card",
+    "name": "Professional card (residence for a self-employed person)",
+    "for": "self-employed",
+    "apply": "abroad",
+    "work": "any",
+    "fee": {
+     "currency": "EUR",
+     "minor": 24200
+    }
+   },
+   {
+    "id": "eu-registration",
+    "name": "Registration certificate (Annex 19)",
+    "for": "free movement",
+    "apply": "in country",
+    "work": "any",
+    "groups": [
+     "EU/EEA",
+     "CH"
+    ]
+   }
+  ]
+ },
+ "BF": {
+  "routes": [
+   {
+    "id": "visa-long-sejour",
+    "name": "Visa long séjour",
+    "for": "general",
+    "apply": "either",
+    "term": {
+     "n": 1,
+     "unit": "year"
+    }
+   }
+  ]
+ },
+ "BG": {
+  "routes": [
+   {
+    "id": "single-permit",
+    "name": "Single permit",
+    "for": "work",
+    "apply": "in country",
+    "work": "sponsor",
+    "term": {
+     "n": 1,
+     "unit": "year"
+    },
+    "renewable": true,
+    "permanentAfter": 5
+   },
+   {
+    "id": "self-employment",
+    "name": "Residence permit on a self-employment permit",
+    "for": "self-employed",
+    "apply": "in country",
+    "term": {
+     "n": 1,
+     "unit": "year"
+    },
+    "renewable": true,
+    "permanentAfter": 5
+   },
+   {
+    "id": "permanent",
+    "name": "Permanent (long-term) residence",
+    "for": "permanent",
+    "apply": "either",
+    "work": "any"
+   }
+  ]
+ },
+ "BH": {
+  "routes": [
+   {
+    "id": "work-2y",
+    "name": "إقامة للعمل لمدة سنتين (Work residence, two years)",
+    "for": "work",
+    "fee": {
+     "currency": "BHD",
+     "minor": 20000
+    },
+    "term": {
+     "n": 2,
+     "unit": "year"
+    },
+    "renewable": true
+   },
+   {
+    "id": "work-1y",
+    "name": "إقامة للعمل لمدة سنة واحدة (Work residence, one year)",
+    "for": "work",
+    "fee": {
+     "currency": "BHD",
+     "minor": 10000
+    },
+    "term": {
+     "n": 1,
+     "unit": "year"
+    },
+    "renewable": true
+   },
+   {
+    "id": "iltihaq",
+    "name": "إقامة لغرض الالتحاق (Residence to join a family member)",
+    "for": "family",
+    "fee": {
+     "currency": "BHD",
+     "minor": 50000
+    },
+    "term": {
+     "n": 2,
+     "unit": "year"
+    },
+    "renewable": true
+   },
+   {
+    "id": "kafala-shakhsiya",
+    "name": "إقامة بكفالة شخصية (Self-sponsored residence)",
+    "for": "general",
+    "fee": {
+     "currency": "BHD",
+     "minor": 200000
+    },
+    "term": {
+     "n": 2,
+     "unit": "year"
+    },
+    "renewable": true
+   }
+  ]
+ },
+ "BI": {
+  "routes": [
+   {
+    "id": "etablissement-ordinaire",
+    "name": "Visa d'établissement ordinaire",
+    "for": "work",
+    "apply": "in country",
+    "work": "any",
+    "fee": {
+     "currency": "USD",
+     "minor": 50000
+    },
+    "term": {
+     "n": 2,
+     "unit": "year"
+    }
+   },
+   {
+    "id": "resident-permanent",
+    "name": "Visa de résident permanent ordinaire",
+    "for": "permanent",
+    "apply": "in country",
+    "work": "any",
+    "fee": {
+     "currency": "USD",
+     "minor": 120000
+    },
+    "term": {
+     "n": 99,
+     "unit": "year"
+    }
+   }
+  ]
+ },
+ "BJ": {
+  "routes": [
+   {
+    "id": "visa-professionnel",
+    "name": "Visa professionnel",
+    "for": "work",
+    "renewable": true
+   },
+   {
+    "id": "carte-resident-ordinaire",
+    "name": "Carte de résident ordinaire",
+    "for": "general",
+    "term": {
+     "n": 3,
+     "unit": "year"
+    },
+    "renewable": true
+   },
+   {
+    "id": "carte-resident-privilegie",
+    "name": "Carte de résident privilégié",
+    "for": "general",
+    "term": {
+     "n": 10,
+     "unit": "year"
+    }
+   },
+   {
+    "id": "visa-etude",
+    "name": "Visa d'étude",
+    "for": "study",
+    "renewable": true
+   }
+  ]
+ },
+ "BL": {
+  "issuedBy": "FR"
+ },
+ "BM": {
+  "routes": [
+   {
+    "id": "short-term-entertainment",
+    "name": "Short-term permit (professional sport or entertainment)",
+    "for": "work",
+    "apply": "either",
+    "work": "sponsor",
+    "fee": {
+     "currency": "BMD",
+     "minor": 40000
+    },
+    "term": {
+     "n": 14,
+     "unit": "day"
+    }
+   },
+   {
+    "id": "standard-work-permit",
+    "name": "Standard Work Permit",
+    "for": "work",
+    "apply": "either",
+    "work": "sponsor",
+    "fee": {
+     "currency": "BMD",
+     "minor": 101500
+    },
+    "term": {
+     "n": 1,
+     "unit": "year"
+    }
+   },
+   {
+    "id": "prc",
+    "name": "Permanent Resident’s Certificate",
+    "for": "permanent",
+    "apply": "in country",
+    "work": "any"
+   }
+  ]
+ },
+ "BN": {
+  "routes": [
+   {
+    "id": "pas-kerja",
+    "name": "Pas Kerja",
+    "for": "work",
+    "apply": "either",
+    "work": "sponsor",
+    "renewable": true
+   },
+   {
+    "id": "permit-masuk",
+    "name": "Permit Masuk (Taraf Penduduk Tetap)",
+    "for": "permanent",
+    "apply": "in country",
+    "work": "any"
+   }
+  ]
+ },
+ "BO": {
+  "routes": [
+   {
+    "id": "visa-objeto-determinado",
+    "name": "Visa de Objeto Determinado",
+    "for": "work",
+    "apply": "abroad"
+   },
+   {
+    "id": "permanencia-temporal-estudiante",
+    "name": "Permanencia temporal del estudiante",
+    "for": "study",
+    "term": {
+     "n": 1,
+     "unit": "year"
+    },
+    "renewable": true
+   }
+  ]
+ },
+ "BQ": {
+  "routes": [
+   {
+    "id": "loondienst",
+    "name": "Verblijfsvergunning bepaalde tijd (arbeid in loondienst)",
+    "for": "work",
+    "apply": "either",
+    "fee": {
+     "currency": "USD",
+     "minor": 32600
+    },
+    "renewable": true,
+    "permanentAfter": 5
+   },
+   {
+    "id": "zelfstandige",
+    "name": "Verblijfsvergunning bepaalde tijd (arbeid als zelfstandige)",
+    "for": "self-employed",
+    "apply": "either",
+    "fee": {
+     "currency": "USD",
+     "minor": 92200
+    },
+    "renewable": true,
+    "permanentAfter": 5
+   },
+   {
+    "id": "rechtswege",
+    "name": "Verklaring van Rechtswege",
+    "for": "free movement",
+    "fee": {
+     "currency": "USD",
+     "minor": 16900
+    },
+    "renewable": true,
+    "groups": [
+     "NL",
+     "US"
+    ]
+   },
+   {
+    "id": "onbepaalde-tijd",
+    "name": "Verblijfsvergunning voor onbepaalde tijd",
+    "for": "permanent",
+    "fee": {
+     "currency": "USD",
+     "minor": 19600
+    }
+   }
+  ]
+ },
+ "BR": {
+  "routes": [
+   {
+    "id": "trabalho",
+    "name": "Autorização de residência para fins de trabalho",
+    "for": "work",
+    "apply": "either",
+    "work": "sponsor",
+    "counts": true
+   },
+   {
+    "id": "cultural",
+    "name": "Autorização de residência para atividade com relevância cultural",
+    "for": "talent",
+    "apply": "either",
+    "work": "any",
+    "counts": true
+   },
+   {
+    "id": "tratado",
+    "name": "Autorização de residência – beneficiário de tratado em matéria de residência e livre circulação",
+    "for": "free movement",
+    "apply": "either",
+    "work": "any",
+    "counts": true,
+    "groups": [
+     "Mercosur"
+    ]
+   }
+  ]
+ },
+ "BS": {
+  "routes": [
+   {
+    "id": "annual-work-permit",
+    "name": "Annual Work Permit",
+    "for": "work",
+    "apply": "abroad",
+    "work": "sponsor",
+    "fee": {
+     "currency": "BSD",
+     "minor": 20000
+    },
+    "term": {
+     "n": 1,
+     "unit": "year"
+    },
+    "renewable": true,
+    "permanentAfter": 20
+   },
+   {
+    "id": "permanent-residence",
+    "name": "Permanent Residence",
+    "for": "permanent",
+    "apply": "in country",
+    "work": "any",
+    "fee": {
+     "currency": "BSD",
+     "minor": 20000
+    }
+   }
+  ]
+ },
+ "BT": {
+  "routes": [
+   {
+    "id": "work-permit",
+    "name": "Work Permit",
+    "for": "work"
+   },
+   {
+    "id": "investor-card",
+    "name": "Investor card",
+    "for": "means",
+    "term": {
+     "n": 3,
+     "unit": "year"
+    },
+    "renewable": true
+   },
+   {
+    "id": "dependent-permit",
+    "name": "Dependent permit",
+    "for": "family"
+   }
+  ]
+ },
+ "BW": {
+  "routes": [
+   {
+    "id": "work-permit",
+    "name": "Work Permit",
+    "for": "work",
+    "within": {
+     "n": 14,
+     "unit": "working day"
+    },
+    "renewable": true,
+    "permanentAfter": 5
+   },
+   {
+    "id": "permanent-residence",
+    "name": "Permanent Residence",
+    "for": "permanent",
+    "apply": "in country",
+    "fee": {
+     "currency": "BWP",
+     "minor": 300000
+    }
+   }
+  ]
+ },
+ "BZ": {
+  "routes": [
+   {
+    "id": "tep-entertainer",
+    "name": "Temporary Employment Permit (Entertainers performing alone)",
+    "for": "work",
+    "apply": "in country",
+    "work": "sponsor",
+    "fee": {
+     "currency": "BZD",
+     "minor": 60000
+    },
+    "term": {
+     "n": 1,
+     "unit": "week"
+    },
+    "permanentAfter": 1
+   },
+   {
+    "id": "tep-self-employed",
+    "name": "Temporary Employment Permit (Self Employed Workers)",
+    "for": "self-employed",
+    "apply": "in country",
+    "work": "any",
+    "fee": {
+     "currency": "BZD",
+     "minor": 300000
+    },
+    "term": {
+     "n": 1,
+     "unit": "year"
+    },
+    "permanentAfter": 1
+   },
+   {
+    "id": "csme-skilled-national",
+    "name": "CSME Skilled Certificate",
+    "for": "free movement",
+    "apply": "either",
+    "work": "any",
+    "permanentAfter": 1,
+    "groups": [
+     "AG",
+     "BB",
+     "DM",
+     "GD",
+     "GY",
+     "JM",
+     "KN",
+     "LC",
+     "VC",
+     "SR",
+     "TT"
+    ]
+   },
+   {
+    "id": "permanent-residence",
+    "name": "Permanent Residence",
+    "for": "permanent",
+    "apply": "in country",
+    "work": "any"
+   }
+  ]
+ },
+ "CA": {
+  "routes": [
+   {
+    "id": "work-permit",
+    "name": "Work permit",
+    "for": "work",
+    "apply": "either",
+    "work": "sponsor",
+    "fee": {
+     "currency": "CAD",
+     "minor": 15500
+    },
+    "renewable": true,
+    "counts": true
+   },
+   {
+    "id": "permanent-resident",
+    "name": "Permanent resident status",
+    "for": "permanent",
+    "apply": "either",
+    "work": "any",
+    "counts": true
+   }
+  ]
+ },
+ "CC": {
+  "issuedBy": "AU"
+ },
+ "CD": {
+  "routes": [
+   {
+    "id": "residence-work",
+    "name": "Visado de residencia de trabajo",
+    "for": "work",
+    "apply": "in country",
+    "work": "any"
+   },
+   {
+    "id": "residence-permanent",
+    "name": "Visado de residencia permanente",
+    "for": "permanent",
+    "apply": "in country",
+    "work": "any"
+   }
+  ]
+ },
+ "CF": {
+  "routes": [
+   {
+    "id": "titre-de-sejour",
+    "name": "Titre de séjour",
+    "for": "general"
+   }
+  ]
+ },
+ "CG": {
+  "routes": [
+   {
+    "id": "carte-de-resident",
+    "name": "Carte de résident",
+    "for": "general",
+    "apply": "in country"
+   }
+  ]
+ },
+ "CH": {
+  "routes": [
+   {
+    "id": "b-eu-efta",
+    "name": "B EU/EFTA permit",
+    "for": "free movement",
+    "apply": "in country",
+    "work": "any",
+    "term": {
+     "n": 5,
+     "unit": "year"
+    },
+    "renewable": true,
+    "permanentAfter": 5,
+    "groups": [
+     "EU/EEA"
+    ]
+   },
+   {
+    "id": "c-settlement",
+    "name": "C EU/EFTA permit",
+    "for": "permanent",
+    "apply": "in country",
+    "work": "any"
+   }
+  ]
+ },
+ "CI": {
+  "routes": [
+   {
+    "id": "carte-de-resident",
+    "name": "Carte de résident",
+    "for": "work",
+    "fee": {
+     "currency": "XOF",
+     "minor": 300000
+    }
+   },
+   {
+    "id": "carte-de-resident-conjoint",
+    "name": "Carte de résident pour un conjoint pris en charge",
+    "for": "family",
+    "fee": {
+     "currency": "XOF",
+     "minor": 300000
+    },
+    "within": {
+     "n": 45,
+     "unit": "day"
+    }
+   },
+   {
+    "id": "carte-de-resident-cedeao",
+    "name": "Carte de résident CEDEAO",
+    "for": "free movement",
+    "groups": [
+     "ECOWAS"
+    ]
+   }
+  ]
+ },
+ "CK": {
+  "routes": [
+   {
+    "id": "work-permit",
+    "name": "Work permit",
+    "for": "work"
+   },
+   {
+    "id": "residence",
+    "name": "Residence",
+    "for": "family",
+    "work": "any"
+   },
+   {
+    "id": "entry-permit",
+    "name": "Entry Permit",
+    "for": "family",
+    "work": "none"
+   },
+   {
+    "id": "permanent-resident",
+    "name": "Permanent Resident",
+    "for": "permanent"
+   }
+  ]
+ },
+ "CL": {
+  "routes": [
+   {
+    "id": "paid-activities",
+    "name": "Residencia Temporal – Personas que realizan actividades lícitas remuneradas",
+    "for": "work",
+    "apply": "either",
+    "work": "any",
+    "term": {
+     "n": 2,
+     "unit": "year"
+    },
+    "renewable": true
+   },
+   {
+    "id": "mercosur",
+    "name": "Residencia Temporal – Principio de reciprocidad internacional (Mercosur)",
+    "for": "free movement",
+    "apply": "either",
+    "work": "any",
+    "term": {
+     "n": 2,
+     "unit": "year"
+    },
+    "renewable": true,
+    "groups": [
+     "Mercosur"
+    ]
+   },
+   {
+    "id": "definitiva",
+    "name": "Residencia Definitiva",
+    "for": "permanent",
+    "apply": "in country",
+    "work": "any",
+    "fee": {
+     "currency": "CLP",
+     "minor": 142726
+    }
+   }
+  ]
+ },
+ "CM": {
+  "routes": [
+   {
+    "id": "carte-de-resident",
+    "name": "Carte de Résident",
+    "for": "permanent",
+    "fee": {
+     "currency": "XAF",
+     "minor": 750000
+    },
+    "term": {
+     "n": 10,
+     "unit": "year"
+    },
+    "renewable": true
+   },
+   {
+    "id": "carte-de-sejour",
+    "name": "Carte de Séjour",
+    "for": "general",
+    "fee": {
+     "currency": "XAF",
+     "minor": 300000
+    },
+    "term": {
+     "n": 2,
+     "unit": "year"
+    },
+    "renewable": true
+   }
+  ]
+ },
+ "CN": {
+  "routes": [
+   {
+    "id": "work",
+    "name": "工作类居留许可",
+    "for": "work",
+    "apply": "in country",
+    "work": "sponsor",
+    "within": {
+     "n": 7,
+     "unit": "working day"
+    },
+    "renewable": true
+   }
+  ]
+ },
+ "CO": {
+  "routes": [
+   {
+    "id": "m-trabajador",
+    "name": "Visa M Trabajador",
+    "for": "work",
+    "apply": "either",
+    "work": "sponsor",
+    "within": {
+     "n": 30,
+     "unit": "day"
+    },
+    "term": {
+     "n": 3,
+     "unit": "year"
+    },
+    "renewable": true,
+    "permanentAfter": 5
+   },
+   {
+    "id": "m-profesional-independiente",
+    "name": "Visa M Profesional independiente",
+    "for": "self-employed",
+    "apply": "either",
+    "work": "any",
+    "within": {
+     "n": 30,
+     "unit": "day"
+    },
+    "term": {
+     "n": 3,
+     "unit": "year"
+    },
+    "renewable": true,
+    "permanentAfter": 5
+   },
+   {
+    "id": "m-mercosur",
+    "name": "Visa M Migrante Mercosur",
+    "for": "free movement",
+    "apply": "either",
+    "work": "any",
+    "within": {
+     "n": 30,
+     "unit": "day"
+    },
+    "term": {
+     "n": 2,
+     "unit": "year"
+    },
+    "permanentAfter": 2,
+    "groups": [
+     "Mercosur"
+    ]
+   },
+   {
+    "id": "r-residente",
+    "name": "Visa R Residente Permanente (por tiempo acumulado)",
+    "for": "permanent",
+    "apply": "either",
+    "work": "any",
+    "within": {
+     "n": 30,
+     "unit": "day"
+    },
+    "term": {
+     "n": 5,
+     "unit": "year"
+    },
+    "renewable": true
+   }
+  ]
+ },
+ "CU": {
+  "routes": [
+   {
+    "id": "residente-temporal-trabajo",
+    "name": "Residente Temporal (permiso de trabajo)",
+    "for": "work"
+   },
+   {
+    "id": "residente-temporal-familiar",
+    "name": "Residente Temporal (familiar acompañante)",
+    "for": "family",
+    "apply": "in country"
+   }
+  ]
+ },
+ "CV": {
+  "routes": [
+   {
+    "id": "subordinada",
+    "name": "Autorização de residência para exercício de actividade profissional subordinada",
+    "for": "work",
+    "apply": "either",
+    "work": "sponsor",
+    "within": {
+     "n": 90,
+     "unit": "day"
+    },
+    "term": {
+     "n": 2,
+     "unit": "year"
+    },
+    "renewable": true,
+    "permanentAfter": 5
+   },
+   {
+    "id": "independente",
+    "name": "Autorização de residência para exercício de actividade profissional independente",
+    "for": "self-employed",
+    "apply": "either",
+    "work": "any",
+    "within": {
+     "n": 90,
+     "unit": "day"
+    },
+    "term": {
+     "n": 2,
+     "unit": "year"
+    },
+    "renewable": true,
+    "permanentAfter": 5
+   },
+   {
+    "id": "permanente",
+    "name": "Autorização de residência permanente",
+    "for": "permanent",
+    "apply": "in country",
+    "work": "any",
+    "within": {
+     "n": 90,
+     "unit": "day"
+    }
+   }
+  ]
+ },
+ "CW": {
+  "routes": [
+   {
+    "id": "werknemer",
+    "name": "Verblijfsvergunning met doel arbeid (werknemer)",
+    "for": "work",
+    "within": {
+     "n": 4,
+     "unit": "month"
+    },
+    "renewable": true
+   },
+   {
+    "id": "eenmanszaak",
+    "name": "Verblijfsvergunning met doel eigen bedrijf (directeur eenmanszaak)",
+    "for": "self-employed",
+    "within": {
+     "n": 4,
+     "unit": "month"
+    },
+    "renewable": true
+   }
+  ]
+ },
+ "CX": {
+  "issuedBy": "AU"
+ },
+ "CY": {
+  "routes": [
+   {
+    "id": "eu-registration",
+    "name": "Certificado de Registro",
+    "for": "free movement",
+    "apply": "in country",
+    "work": "any",
+    "within": {
+     "n": 6,
+     "unit": "month"
+    },
+    "groups": [
+     "EU"
+    ]
+   }
+  ]
+ },
+ "CZ": {
+  "routes": [
+   {
+    "id": "employee-card",
+    "name": "Employee Card",
+    "for": "work",
+    "apply": "either",
+    "work": "sponsor",
+    "fee": {
+     "currency": "CZK",
+     "minor": 250000
+    },
+    "within": {
+     "n": 90,
+     "unit": "day"
+    },
+    "term": {
+     "n": 2,
+     "unit": "year"
+    },
+    "renewable": true,
+    "permanentAfter": 5
+   },
+   {
+    "id": "business",
+    "name": "Long-term residence permit for the purpose of doing business",
+    "for": "self-employed",
+    "apply": "in country",
+    "work": "any",
+    "fee": {
+     "currency": "CZK",
+     "minor": 250000
+    },
+    "within": {
+     "n": 60,
+     "unit": "day"
+    },
+    "term": {
+     "n": 2,
+     "unit": "year"
+    },
+    "permanentAfter": 5
+   },
+   {
+    "id": "permanent-5",
+    "name": "Permanent residence permit after 5 years of temporary residence",
+    "for": "permanent",
+    "apply": "in country",
+    "work": "any",
+    "fee": {
+     "currency": "CZK",
+     "minor": 250000
+    },
+    "within": {
+     "n": 60,
+     "unit": "day"
+    }
+   }
+  ]
+ },
+ "DE": {
+  "routes": [
+   {
+    "id": "freelance",
+    "name": "Aufenthaltserlaubnis zur Ausübung einer freiberuflichen Tätigkeit (§ 21 Abs. 5 AufenthG)",
+    "for": "self-employed",
+    "apply": "either",
+    "work": "any",
+    "fee": {
+     "currency": "EUR",
+     "minor": 10000
+    },
+    "counts": true,
+    "permanentAfter": 5
+   },
+   {
+    "id": "employment",
+    "name": "Aufenthaltserlaubnis zur Ausübung einer Beschäftigung (§ 19c Abs. 1 AufenthG)",
+    "for": "work",
+    "apply": "either",
+    "work": "sponsor",
+    "fee": {
+     "currency": "EUR",
+     "minor": 10000
+    },
+    "counts": true,
+    "permanentAfter": 5
+   },
+   {
+    "id": "eu-free-movement",
+    "name": "Freizügigkeit von Unionsbürgern (FreizügG/EU)",
+    "for": "free movement",
+    "apply": "in country",
+    "work": "any",
+    "counts": true,
+    "groups": [
+     "EU/EEA"
+    ]
+   },
+   {
+    "id": "settlement",
+    "name": "Niederlassungserlaubnis (§ 9 AufenthG)",
+    "for": "permanent",
+    "apply": "in country",
+    "work": "any",
+    "fee": {
+     "currency": "EUR",
+     "minor": 11300
+    },
+    "counts": true
+   }
+  ]
+ },
+ "DJ": {
+  "routes": [
+   {
+    "id": "permis-de-travail",
+    "name": "Permis de travail (ANEFIP)",
+    "for": "work"
+   },
+   {
+    "id": "carte-de-resident",
+    "name": "Carte de résident",
+    "for": "self-employed"
+   },
+   {
+    "id": "carte-de-sejour",
+    "name": "Carte de séjour",
+    "for": "general",
+    "apply": "in country",
+    "renewable": true
+   }
+  ]
+ },
+ "DK": {
+  "routes": [
+   {
+    "id": "pay-limit",
+    "name": "The Pay Limit Scheme",
+    "for": "work",
+    "apply": "either",
+    "work": "sponsor",
+    "fee": {
+     "currency": "DKK",
+     "minor": 681000
+    },
+    "within": {
+     "n": 3,
+     "unit": "month"
+    },
+    "term": {
+     "n": 4,
+     "unit": "year"
+    },
+    "renewable": true
+   }
+  ]
+ },
+ "DM": {
+  "routes": [
+   {
+    "id": "work-permit",
+    "name": "Work Permit",
+    "for": "work",
+    "fee": {
+     "currency": "XCD",
+     "minor": 80000
+    },
+    "term": {
+     "n": 1,
+     "unit": "year"
+    },
+    "renewable": true
+   },
+   {
+    "id": "residence-permit",
+    "name": "Residence Permit",
+    "for": "means",
+    "apply": "in country",
+    "fee": {
+     "currency": "XCD",
+     "minor": 80000
+    },
+    "term": {
+     "n": 1,
+     "unit": "year"
+    },
+    "renewable": true,
+    "permanentAfter": 5
+   }
+  ]
+ },
+ "DO": {
+  "routes": [
+   {
+    "id": "rt-3",
+    "name": "Residencia Temporal Laboral (RT-3)",
+    "for": "work",
+    "renewable": true
+   },
+   {
+    "id": "rt-2",
+    "name": "Residencia Temporal Gerencial (RT-2)",
+    "for": "work",
+    "renewable": true
+   },
+   {
+    "id": "padei",
+    "name": "Permiso Para Artista, Deportista Y Estudiante De Intercambio (PADEI)",
+    "for": "talent",
+    "renewable": true
+   },
+   {
+    "id": "inversion-rentista",
+    "name": "Residencia Por Inversión En Calidad Rentista",
+    "for": "means",
+    "renewable": true
+   },
+   {
+    "id": "inversion-pensionado",
+    "name": "Residencia Por Inversión En Calidad Pensionado Y Jubilado",
+    "for": "retirement",
+    "renewable": true
+   },
+   {
+    "id": "rt-7",
+    "name": "Residencia Temporal De Dependiente (RT-7)",
+    "for": "family",
+    "renewable": true
+   },
+   {
+    "id": "e-1",
+    "name": "Permiso De Estudiante Extranjero (E-1)",
+    "for": "study",
+    "renewable": true
+   },
+   {
+    "id": "rp-1",
+    "name": "Residencia Permanente (RP-1)",
+    "for": "permanent",
+    "renewable": true
+   },
+   {
+    "id": "rd-1",
+    "name": "Residencia Definitiva (RD-1)",
+    "for": "permanent"
+   }
+  ]
+ },
+ "DZ": {
+  "routes": [
+   {
+    "id": "resident-worker",
+    "name": "Carte de résident (travailleur étranger salarié)",
+    "for": "work",
+    "apply": "in country",
+    "work": "sponsor",
+    "renewable": true
+   }
+  ]
+ },
+ "EE": {
+  "routes": [
+   {
+    "id": "employment",
+    "name": "Residence permit for employment",
+    "for": "work",
+    "apply": "either",
+    "work": "sponsor",
+    "within": {
+     "n": 90,
+     "unit": "day"
+    },
+    "term": {
+     "n": 5,
+     "unit": "year"
+    },
+    "renewable": true
+   },
+   {
+    "id": "business",
+    "name": "Residence permit for business",
+    "for": "self-employed",
+    "apply": "either",
+    "work": "any",
+    "within": {
+     "n": 90,
+     "unit": "day"
+    },
+    "term": {
+     "n": 5,
+     "unit": "year"
+    },
+    "renewable": true
+   },
+   {
+    "id": "eea-swiss",
+    "name": "Right of residence (citizens of the EU, Iceland, Liechtenstein, Norway and Switzerland)",
+    "for": "free movement",
+    "apply": "in country",
+    "work": "any",
+    "groups": [
+     "EU/EEA",
+     "CH"
+    ]
+   }
+  ]
+ },
+ "EG": {
+  "routes": [
+   {
+    "id": "iqama-khassa-ulama",
+    "name": "إقامة خاصة (العلماء ورجال الأدب والفن والصناعة والاقتصاد ممن يؤدون خدمات جليلة للبلاد)",
+    "for": "talent",
+    "term": {
+     "n": 10,
+     "unit": "year"
+    },
+    "renewable": true
+   },
+   {
+    "id": "iqama-moaqata",
+    "name": "إقامة مؤقتة",
+    "for": "general",
+    "term": {
+     "n": 1,
+     "unit": "year"
+    },
+    "renewable": true
+   },
+   {
+    "id": "iqama-aqar-200k",
+    "name": "إقامة مؤقتة لغير السياحة لمن يمتلك عقاراً لا تقل قيمته عن مائتي ألف دولار",
+    "for": "means",
+    "term": {
+     "n": 5,
+     "unit": "year"
+    },
+    "renewable": true
+   },
+   {
+    "id": "iqama-aqar-100k",
+    "name": "إقامة مؤقتة لغير السياحة لمن يملك عقاراً تبلغ قيمته مائة ألف دولار",
+    "for": "means",
+    "term": {
+     "n": 3,
+     "unit": "year"
+    },
+    "renewable": true
+   }
+  ]
+ },
+ "EH": {
+  "issuedBy": "MA"
+ },
+ "ES": {
+  "routes": [
+   {
+    "id": "cuenta-ajena",
+    "name": "Autorización de residencia temporal y trabajo por cuenta ajena",
+    "for": "work",
+    "apply": "abroad",
+    "work": "sponsor",
+    "term": {
+     "n": 1,
+     "unit": "year"
+    },
+    "renewable": true,
+    "counts": true,
+    "permanentAfter": 5
+   },
+   {
+    "id": "cuenta-propia",
+    "name": "Autorización de residencia temporal y trabajo por cuenta propia",
+    "for": "self-employed",
+    "apply": "abroad",
+    "work": "any",
+    "term": {
+     "n": 1,
+     "unit": "year"
+    },
+    "renewable": true,
+    "counts": true,
+    "permanentAfter": 5
+   },
+   {
+    "id": "eu-free-movement",
+    "name": "Certificado de registro de ciudadano de la Unión",
+    "for": "free movement",
+    "apply": "in country",
+    "work": "any",
+    "counts": true,
+    "groups": [
+     "EU/EEA",
+     "CH"
+    ]
+   },
+   {
+    "id": "larga-duracion",
+    "name": "Autorización de residencia de larga duración",
+    "for": "permanent",
+    "apply": "in country",
+    "work": "any",
+    "counts": true
+   }
+  ]
+ },
+ "ET": {
+  "routes": [
+   {
+    "id": "temporary-id",
+    "name": "Temporary ID",
+    "for": "work",
+    "apply": "in country",
+    "work": "sponsor",
+    "within": {
+     "n": 10,
+     "unit": "working day"
+    },
+    "renewable": true
+   },
+   {
+    "id": "permanent-residence-id",
+    "name": "Permanent Residence ID",
+    "for": "permanent",
+    "apply": "in country",
+    "work": "sponsor",
+    "within": {
+     "n": 10,
+     "unit": "working day"
+    },
+    "term": {
+     "n": 5,
+     "unit": "year"
+    },
+    "renewable": true
+   }
+  ]
+ },
+ "FI": {
+  "routes": [
+   {
+    "id": "entrepreneur",
+    "name": "Residence permit for an entrepreneur",
+    "for": "self-employed",
+    "apply": "either",
+    "work": "any"
+   },
+   {
+    "id": "eu-registration",
+    "name": "Registration of an EU citizen’s right of residence",
+    "for": "free movement",
+    "apply": "in country",
+    "work": "any",
+    "groups": [
+     "EU/EEA",
+     "CH"
+    ]
+   },
+   {
+    "id": "permanent",
+    "name": "Permanent residence permit (P)",
+    "for": "permanent",
+    "apply": "in country",
+    "work": "any"
+   }
+  ]
+ },
+ "FJ": {
+  "routes": [
+   {
+    "id": "long-term-work-permit",
+    "name": "Long Term Work Permit",
+    "for": "work",
+    "apply": "abroad",
+    "work": "sponsor",
+    "fee": {
+     "currency": "FJD",
+     "minor": 83505
+    },
+    "term": {
+     "n": 3,
+     "unit": "year"
+    },
+    "renewable": true
+   },
+   {
+    "id": "short-term-work-permit",
+    "name": "Short Term Work Permit",
+    "for": "work",
+    "apply": "either",
+    "work": "sponsor",
+    "fee": {
+     "currency": "FJD",
+     "minor": 83505
+    },
+    "term": {
+     "n": 1,
+     "unit": "year"
+    }
+   }
+  ]
+ },
+ "FK": {
+  "routes": [
+   {
+    "id": "work-permit",
+    "name": "Work Permit",
+    "for": "work",
+    "apply": "abroad",
+    "work": "sponsor",
+    "renewable": true,
+    "permanentAfter": 3
+   },
+   {
+    "id": "permanent-residence-permit",
+    "name": "Permanent Residence Permit",
+    "for": "permanent",
+    "apply": "in country",
+    "work": "any"
+   }
+  ]
+ },
+ "FM": {
+  "routes": [
+   {
+    "id": "us-citizens",
+    "name": "Citizens of the United States (Compact of Free Association, as amended)",
+    "for": "free movement",
+    "work": "any",
+    "groups": [
+     "US"
+    ]
+   },
+   {
+    "id": "entry-permit",
+    "name": "Entry permit",
+    "for": "general"
+   }
+  ]
+ },
+ "FO": {
+  "routes": [
+   {
+    "id": "forskere-specialister",
+    "name": "Opholdstilladelse på Færøerne efter udlændingelovens § 9, stk. 2, nr. 3 (forskere, undervisere, funktionærer i ledende stillinger og specialister)",
+    "for": "work",
+    "renewable": true
+   },
+   {
+    "id": "videregaaende-uddannelse",
+    "name": "Opholdstilladelse på Færøerne med henblik på at deltage i en videregående uddannelse",
+    "for": "study",
+    "renewable": true
+   }
+  ]
+ },
+ "FR": {
+  "routes": [
+   {
+    "id": "talent-artistic",
+    "name": "Carte de séjour « talent – profession artistique et culturelle »",
+    "for": "talent",
+    "apply": "either",
+    "work": "any",
+    "fee": {
+     "currency": "EUR",
+     "minor": 35000
+    },
+    "term": {
+     "n": 4,
+     "unit": "year"
+    },
+    "counts": true,
+    "permanentAfter": 5
+   },
+   {
+    "id": "eea-swiss",
+    "name": "Séjour de longue durée d’un Européen en France",
+    "for": "free movement",
+    "apply": "in country",
+    "work": "any",
+    "counts": true,
+    "groups": [
+     "EU/EEA",
+     "CH"
+    ]
+   },
+   {
+    "id": "long-term-resident",
+    "name": "Carte de résident de longue durée – UE",
+    "for": "permanent",
+    "apply": "in country",
+    "work": "any",
+    "fee": {
+     "currency": "EUR",
+     "minor": 25000
+    },
+    "term": {
+     "n": 10,
+     "unit": "year"
+    },
+    "renewable": true,
+    "counts": true
+   }
+  ]
+ },
+ "GA": {
+  "routes": [
+   {
+    "id": "permis-de-residence",
+    "name": "Permis de résidence",
+    "for": "general",
+    "renewable": true
+   }
+  ]
+ },
+ "GB": {
+  "routes": [
+   {
+    "id": "global-talent",
+    "name": "Global Talent visa",
+    "for": "talent",
+    "apply": "either",
+    "work": "any",
+    "fee": {
+     "currency": "GBP",
+     "minor": 76600
+    },
+    "within": {
+     "n": 8,
+     "unit": "week"
+    },
+    "term": {
+     "n": 5,
+     "unit": "year"
+    },
+    "renewable": true,
+    "counts": true,
+    "permanentAfter": 5
+   },
+   {
+    "id": "skilled-worker",
+    "name": "Skilled Worker visa",
+    "for": "work",
+    "apply": "either",
+    "work": "sponsor",
+    "fee": {
+     "currency": "GBP",
+     "minor": 81900
+    },
+    "within": {
+     "n": 8,
+     "unit": "week"
+    },
+    "term": {
+     "n": 5,
+     "unit": "year"
+    },
+    "renewable": true,
+    "counts": true,
+    "permanentAfter": 5
+   },
+   {
+    "id": "common-travel-area",
+    "name": "Common Travel Area",
+    "for": "free movement",
+    "apply": "either",
+    "work": "any",
+    "counts": true,
+    "groups": [
+     "IE"
+    ]
+   },
+   {
+    "id": "indefinite-leave",
+    "name": "Indefinite leave to remain",
+    "for": "permanent",
+    "apply": "in country",
+    "work": "any",
+    "counts": true
+   }
+  ]
+ },
+ "GD": {
+  "routes": [
+   {
+    "id": "work-permit",
+    "name": "Work permit",
+    "for": "work"
+   },
+   {
+    "id": "permanent-residence",
+    "name": "Permanent Residence",
+    "for": "permanent"
+   }
+  ]
+ },
+ "GE": {
+  "routes": [
+   {
+    "id": "work",
+    "name": "შრომითი ბინადრობის ნებართვა",
+    "for": "work",
+    "fee": {
+     "currency": "GEL",
+     "minor": 30000
+    },
+    "within": {
+     "n": 30,
+     "unit": "day"
+    },
+    "renewable": true,
+    "permanentAfter": 10
+   },
+   {
+    "id": "investment",
+    "name": "საინვესტიციო ბინადრობის ნებართვა",
+    "for": "means",
+    "fee": {
+     "currency": "GEL",
+     "minor": 30000
+    },
+    "within": {
+     "n": 30,
+     "unit": "day"
+    },
+    "term": {
+     "n": 5,
+     "unit": "year"
+    },
+    "permanentAfter": 5
+   },
+   {
+    "id": "permanent",
+    "name": "მუდმივი ცხოვრების ნებართვა",
+    "for": "permanent",
+    "fee": {
+     "currency": "GEL",
+     "minor": 50000
+    },
+    "within": {
+     "n": 30,
+     "unit": "day"
+    }
+   },
+   {
+    "id": "spouse",
+    "name": "საქართველოს მოქალაქის მეუღლის ბინადრობის ნებართვა",
+    "for": "family",
+    "fee": {
+     "currency": "GEL",
+     "minor": 50000
+    },
+    "within": {
+     "n": 90,
+     "unit": "day"
+    },
+    "term": {
+     "n": 1,
+     "unit": "year"
+    },
+    "renewable": true,
+    "permanentAfter": 5
+   },
+   {
+    "id": "family",
+    "name": "ბინადრობის ნებართვა ოჯახის გაერთიანების მიზნით",
+    "for": "family",
+    "fee": {
+     "currency": "GEL",
+     "minor": 30000
+    },
+    "within": {
+     "n": 30,
+     "unit": "day"
+    },
+    "renewable": true,
+    "permanentAfter": 10
+   },
+   {
+    "id": "study",
+    "name": "სასწავლო ბინადრობის ნებართვა",
+    "for": "study",
+    "fee": {
+     "currency": "GEL",
+     "minor": 30000
+    },
+    "within": {
+     "n": 30,
+     "unit": "day"
+    },
+    "renewable": true
+   }
+  ]
+ },
+ "GF": {
+  "issuedBy": "FR"
+ },
+ "GG": {
+  "routes": [
+   {
+    "id": "step-work-permit",
+    "name": "Short Term Employment Permit with Work Permit and leave to remain",
+    "for": "work",
+    "apply": "either",
+    "work": "sponsor",
+    "fee": {
+     "currency": "GBP",
+     "minor": 40000
+    },
+    "term": {
+     "n": 12,
+     "unit": "month"
+    },
+    "renewable": true
+   },
+   {
+    "id": "ltep-work-permit",
+    "name": "Long Term Employment Permit with Work Permit and leave to remain",
+    "for": "work",
+    "apply": "either",
+    "work": "sponsor",
+    "fee": {
+     "currency": "GBP",
+     "minor": 124300
+    },
+    "term": {
+     "n": 3,
+     "unit": "year"
+    },
+    "renewable": true
+   },
+   {
+    "id": "indefinite-leave",
+    "name": "Indefinite leave to remain",
+    "for": "permanent",
+    "apply": "in country",
+    "work": "any",
+    "fee": {
+     "currency": "GBP",
+     "minor": 322600
+    }
+   }
+  ]
+ },
+ "GH": {
+  "routes": [
+   {
+    "id": "work-residence",
+    "name": "Work and Residence Permit (Companies)",
+    "for": "work",
+    "apply": "in country",
+    "work": "sponsor",
+    "fee": {
+     "currency": "USD",
+     "minor": 129300
+    }
+   },
+   {
+    "id": "indefinite",
+    "name": "Indefinite Residence Status",
+    "for": "permanent",
+    "apply": "in country",
+    "work": "any"
+   }
+  ]
+ },
+ "GI": {
+  "routes": [
+   {
+    "id": "work-permit",
+    "name": "Work Permit",
+    "for": "work",
+    "apply": "either",
+    "work": "sponsor",
+    "fee": {
+     "currency": "GIP",
+     "minor": 7000
+    }
+   }
+  ]
+ },
+ "GL": {
+  "routes": [
+   {
+    "id": "residence-work",
+    "name": "Residence and work permit in Greenland",
+    "for": "work",
+    "apply": "either",
+    "work": "sponsor",
+    "fee": {
+     "currency": "DKK",
+     "minor": 0
+    },
+    "within": {
+     "n": 6,
+     "unit": "month"
+    },
+    "term": {
+     "n": 2,
+     "unit": "year"
+    }
+   },
+   {
+    "id": "nordic",
+    "name": "Nordic citizens in Greenland",
+    "for": "free movement",
+    "apply": "in country",
+    "work": "any",
+    "groups": [
+     "FI",
+     "IS",
+     "NO",
+     "SE"
+    ]
+   }
+  ]
+ },
+ "GM": {
+  "routes": [
+   {
+    "id": "residential-permit-b",
+    "name": "Residential Permit Type B",
+    "for": "work",
+    "term": {
+     "n": 1,
+     "unit": "year"
+    },
+    "renewable": true
+   },
+   {
+    "id": "residential-permit-c",
+    "name": "Residential Permit Type C",
+    "for": "work",
+    "term": {
+     "n": 1,
+     "unit": "year"
+    },
+    "renewable": true
+   },
+   {
+    "id": "residential-permit-a",
+    "name": "Residential Permit Type A",
+    "for": "means",
+    "work": "none",
+    "term": {
+     "n": 1,
+     "unit": "year"
+    },
+    "renewable": true
+   }
+  ]
+ },
+ "GN": {
+  "routes": [
+   {
+    "id": "vls",
+    "name": "Long Term Visa (VLS)",
+    "for": "general",
+    "fee": {
+     "currency": "USD",
+     "minor": 50000
+    },
+    "term": {
+     "n": 1,
+     "unit": "year"
+    }
+   },
+   {
+    "id": "carte-de-sejour",
+    "name": "Carte de séjour",
+    "for": "general",
+    "apply": "in country"
+   }
+  ]
+ },
+ "GP": {
+  "issuedBy": "FR"
+ },
+ "GR": {
+  "routes": [
+   {
+    "id": "z2",
+    "name": "Μέλη καλλιτεχνικών συγκροτημάτων (τίτλος διαμονής τύπου «Ζ.2»)",
+    "for": "work",
+    "apply": "abroad",
+    "work": "sponsor",
+    "term": {
+     "n": 1,
+     "unit": "year"
+    }
+   }
+  ]
+ },
+ "GS": {
+  "routes": [
+   {
+    "id": "work-permit",
+    "name": "Entry Permit (work)",
+    "for": "work",
+    "apply": "abroad",
+    "work": "sponsor",
+    "fee": {
+     "currency": "GBP",
+     "minor": 0
+    },
+    "term": {
+     "n": 6,
+     "unit": "month"
+    },
+    "renewable": true
+   }
+  ]
+ },
+ "GT": {
+  "routes": [
+   {
+    "id": "artistas",
+    "name": "Residencia Temporal para Artistas",
+    "for": "work",
+    "apply": "in country",
+    "work": "sponsor",
+    "fee": {
+     "currency": "USD",
+     "minor": 22500
+    },
+    "term": {
+     "n": 1,
+     "unit": "year"
+    },
+    "renewable": true,
+    "permanentAfter": 5
+   },
+   {
+    "id": "permanente",
+    "name": "Residencia Permanente para Residentes Temporales por 5 años o más",
+    "for": "permanent",
+    "apply": "in country",
+    "work": "any",
+    "fee": {
+     "currency": "USD",
+     "minor": 72500
+    },
+    "counts": true
+   }
+  ]
+ },
+ "GU": {
+  "issuedBy": "US"
+ },
+ "GY": {
+  "routes": [
+   {
+    "id": "landing-permit-employment",
+    "name": "Landing Permit for Employment Status",
+    "for": "work",
+    "apply": "abroad",
+    "work": "sponsor",
+    "within": {
+     "n": 1,
+     "unit": "month"
+    }
+   }
+  ]
+ },
+ "HK": {
+  "routes": [
+   {
+    "id": "gep",
+    "name": "General Employment Policy (GEP)",
+    "for": "work",
+    "apply": "abroad",
+    "work": "sponsor",
+    "fee": {
+     "currency": "HKD",
+     "minor": 190000
+    },
+    "within": {
+     "n": 4,
+     "unit": "week"
+    },
+    "term": {
+     "n": 3,
+     "unit": "year"
+    },
+    "renewable": true,
+    "permanentAfter": 7
+   }
+  ]
+ },
+ "HN": {
+  "routes": [
+   {
+    "id": "permiso-contrato",
+    "name": "Permiso especial de permanencia por contrato",
+    "for": "work",
+    "permanentAfter": 5
+   },
+   {
+    "id": "rentista",
+    "name": "Residente rentista",
+    "for": "means",
+    "apply": "either",
+    "renewable": true,
+    "permanentAfter": 5
+   },
+   {
+    "id": "pensionado",
+    "name": "Residente pensionado",
+    "for": "retirement",
+    "apply": "either",
+    "renewable": true,
+    "permanentAfter": 5
+   },
+   {
+    "id": "inversionista",
+    "name": "Residente inversionista",
+    "for": "means",
+    "apply": "either",
+    "renewable": true,
+    "permanentAfter": 5
+   },
+   {
+    "id": "conyuge",
+    "name": "Residente por vínculo matrimonial",
+    "for": "family",
+    "apply": "either",
+    "renewable": true,
+    "permanentAfter": 5
+   },
+   {
+    "id": "inmigrado",
+    "name": "Residente inmigrado",
+    "for": "permanent"
+   }
+  ]
+ },
+ "HR": {
+  "routes": [
+   {
+    "id": "stay-and-work",
+    "name": "Stay and work permit",
+    "for": "work",
+    "apply": "either",
+    "work": "sponsor",
+    "fee": {
+     "currency": "EUR",
+     "minor": 4645
+    },
+    "term": {
+     "n": 1,
+     "unit": "year"
+    },
+    "renewable": true,
+    "permanentAfter": 5
+   },
+   {
+    "id": "eea",
+    "name": "Stay and work of EEA nationals",
+    "for": "free movement",
+    "apply": "in country",
+    "work": "any",
+    "groups": [
+     "EU/EEA"
+    ]
+   },
+   {
+    "id": "long-term-residence",
+    "name": "Long-term residence",
+    "for": "permanent",
+    "apply": "in country",
+    "work": "any"
+   }
+  ]
+ },
+ "HT": {
+  "routes": [
+   {
+    "id": "permis-de-sejour",
+    "name": "Permis de séjour",
+    "for": "general",
+    "apply": "in country",
+    "renewable": true
+   }
+  ]
+ },
+ "HU": {
+  "routes": [
+   {
+    "id": "hungarian-card",
+    "name": "Magyar Kártya (előadóművész)",
+    "for": "work",
+    "apply": "either",
+    "work": "sponsor",
+    "term": {
+     "n": 3,
+     "unit": "year"
+    },
+    "renewable": true
+   },
+   {
+    "id": "eea-free-movement",
+    "name": "Szabad mozgás és tartózkodás joga",
+    "for": "free movement",
+    "apply": "in country",
+    "work": "any",
+    "groups": [
+     "EU/EEA",
+     "CH"
+    ]
+   }
+  ]
+ },
+ "ID": {
+  "routes": [
+   {
+    "id": "e23",
+    "name": "Visa Kerja (E23) dan Izin Tinggal Terbatas",
+    "for": "work",
+    "apply": "either",
+    "work": "sponsor",
+    "fee": {
+     "currency": "IDR",
+     "minor": 700000000
+    },
+    "within": {
+     "n": 4,
+     "unit": "working day"
+    },
+    "term": {
+     "n": 1,
+     "unit": "year"
+    },
+    "renewable": true
+   },
+   {
+    "id": "itap",
+    "name": "Izin Tinggal Tetap (ITAP)",
+    "for": "permanent",
+    "apply": "in country",
+    "work": "any",
+    "within": {
+     "n": 8,
+     "unit": "working day"
+    }
+   }
+  ]
+ },
+ "IE": {
+  "routes": [
+   {
+    "id": "general-employment-permit",
+    "name": "General Employment Permit",
+    "for": "work",
+    "apply": "either",
+    "work": "sponsor",
+    "fee": {
+     "currency": "EUR",
+     "minor": 100000
+    },
+    "term": {
+     "n": 2,
+     "unit": "year"
+    },
+    "renewable": true,
+    "permanentAfter": 5
+   }
+  ]
+ },
+ "IL": {
+  "routes": [
+   {
+    "id": "b1-work",
+    "name": "B/1 Work visa",
+    "for": "work"
+   }
+  ]
+ },
+ "IM": {
+  "routes": [
+   {
+    "id": "tier-5-temporary-workers",
+    "name": "Tier 5 - Temporary Workers",
+    "for": "talent",
+    "apply": "either",
+    "work": "sponsor"
+   },
+   {
+    "id": "worker-migrant",
+    "name": "Worker Migrant",
+    "for": "work",
+    "apply": "either",
+    "work": "sponsor",
+    "renewable": true
+   },
+   {
+    "id": "ilr-worker-migrant",
+    "name": "Indefinite Leave to Remain in the Isle of Man as a Worker Migrant",
+    "for": "permanent",
+    "apply": "in country",
+    "work": "any",
+    "fee": {
+     "currency": "GBP",
+     "minor": 322600
+    }
+   }
+  ]
+ },
+ "IN": {
+  "routes": [
+   {
+    "id": "employment-visa",
+    "name": "Employment Visa",
+    "for": "work",
+    "apply": "abroad",
+    "work": "sponsor",
+    "term": {
+     "n": 1,
+     "unit": "year"
+    },
+    "renewable": true
+   },
+   {
+    "id": "nepal-treaty",
+    "name": "Treaty of Peace and Friendship (India–Nepal, 1950), Article 7",
+    "for": "free movement",
+    "apply": "either",
+    "work": "any",
+    "groups": [
+     "NP"
+    ]
+   }
+  ]
+ },
+ "IO": {
+  "routes": [
+   {
+    "id": "permit",
+    "name": "Permit",
+    "for": "general",
+    "term": {
+     "n": 4,
+     "unit": "year"
+    },
+    "renewable": true
+   }
+  ]
+ },
+ "IS": {
+  "routes": [
+   {
+    "id": "expert-knowledge",
+    "name": "Residence permit for work requiring expert knowledge",
+    "for": "work",
+    "apply": "either",
+    "work": "sponsor",
+    "fee": {
+     "currency": "ISK",
+     "minor": 80000
+    },
+    "term": {
+     "n": 4,
+     "unit": "year"
+    },
+    "renewable": true,
+    "permanentAfter": 4
+   },
+   {
+    "id": "eea-efta",
+    "name": "Registration of EEA/EFTA citizens",
+    "for": "free movement",
+    "apply": "in country",
+    "work": "any",
+    "groups": [
+     "EU/EEA",
+     "CH"
+    ]
+   },
+   {
+    "id": "permanent",
+    "name": "Permanent residence permit",
+    "for": "permanent",
+    "apply": "in country",
+    "work": "any",
+    "fee": {
+     "currency": "ISK",
+     "minor": 60000
+    }
+   }
+  ]
+ },
+ "IT": {
+  "routes": [
+   {
+    "id": "spettacolo",
+    "name": "Permesso di soggiorno per lavoro subordinato (lavoratori dello spettacolo, art. 27 TUI)",
+    "for": "work",
+    "apply": "abroad",
+    "work": "sponsor",
+    "term": {
+     "n": 1,
+     "unit": "year"
+    },
+    "renewable": true,
+    "permanentAfter": 5
+   },
+   {
+    "id": "eu-free-movement",
+    "name": "Diritto di soggiorno del cittadino dell'Unione",
+    "for": "free movement",
+    "apply": "in country",
+    "work": "any",
+    "groups": [
+     "EU/EEA"
+    ]
+   },
+   {
+    "id": "lungo-periodo",
+    "name": "Permesso di soggiorno UE per soggiornanti di lungo periodo",
+    "for": "permanent",
+    "apply": "in country",
+    "work": "any",
+    "within": {
+     "n": 90,
+     "unit": "day"
+    },
+    "term": {
+     "n": 10,
+     "unit": "year"
+    },
+    "renewable": true
+   }
+  ]
+ },
+ "JE": {
+  "routes": [
+   {
+    "id": "long-term",
+    "name": "Long-term work permit",
+    "for": "work",
+    "apply": "either",
+    "work": "sponsor",
+    "renewable": true,
+    "permanentAfter": 5
+   },
+   {
+    "id": "annual-temporary",
+    "name": "Annual temporary work permit",
+    "for": "work",
+    "work": "sponsor",
+    "fee": {
+     "currency": "GBP",
+     "minor": 17500
+    },
+    "term": {
+     "n": 12,
+     "unit": "month"
+    },
+    "renewable": true
+   },
+   {
+    "id": "ilr",
+    "name": "Indefinite Leave to Remain",
+    "for": "permanent",
+    "apply": "in country",
+    "fee": {
+     "currency": "GBP",
+     "minor": 288500
+    }
+   }
+  ]
+ },
+ "JM": {
+  "routes": [
+   {
+    "id": "caricom-unconditional-landing",
+    "name": "CARICOM Unconditional Landing (CUL)",
+    "for": "free movement",
+    "apply": "in country",
+    "work": "any",
+    "fee": {
+     "currency": "JMD",
+     "minor": 1000000
+    },
+    "groups": [
+     "AG",
+     "BB",
+     "BZ",
+     "DM",
+     "GD",
+     "GY",
+     "KN",
+     "LC",
+     "VC",
+     "SR",
+     "TT"
+    ]
+   },
+   {
+    "id": "permanent-residence",
+    "name": "Permanent Residence",
+    "for": "permanent",
+    "apply": "in country",
+    "work": "any",
+    "fee": {
+     "currency": "JMD",
+     "minor": 10000000
+    },
+    "within": {
+     "n": 6,
+     "unit": "month"
+    }
+   }
+  ]
+ },
+ "JO": {
+  "routes": [
+   {
+    "id": "work-visa",
+    "name": "تأشيرة بقصد العمل",
+    "for": "work",
+    "renewable": true
+   },
+   {
+    "id": "bank-deposit",
+    "name": "إقامة سنوية بموجب وديعة بنكية",
+    "for": "means",
+    "renewable": true
+   }
+  ]
+ },
+ "JP": {
+  "routes": [
+   {
+    "id": "kogyo",
+    "name": "在留資格「興行」",
+    "for": "work",
+    "apply": "either",
+    "work": "sponsor",
+    "fee": {
+     "currency": "JPY",
+     "minor": 33000
+    },
+    "term": {
+     "n": 1,
+     "unit": "year"
+    },
+    "renewable": true,
+    "counts": true
+   },
+   {
+    "id": "geijutsu",
+    "name": "在留資格「芸術」",
+    "for": "talent",
+    "apply": "either",
+    "work": "sponsor",
+    "fee": {
+     "currency": "JPY",
+     "minor": 33000
+    },
+    "term": {
+     "n": 1,
+     "unit": "year"
+    },
+    "renewable": true,
+    "counts": true
+   },
+   {
+    "id": "eiju",
+    "name": "永住許可",
+    "for": "permanent",
+    "apply": "in country",
+    "work": "any",
+    "fee": {
+     "currency": "JPY",
+     "minor": 200000
+    },
+    "counts": true
+   },
+   {
+    "id": "haigusha",
+    "name": "在留資格「日本人の配偶者等」",
+    "for": "family",
+    "apply": "either",
+    "work": "any",
+    "fee": {
+     "currency": "JPY",
+     "minor": 33000
+    },
+    "term": {
+     "n": 1,
+     "unit": "year"
+    },
+    "renewable": true,
+    "counts": true
+   }
+  ]
+ },
+ "KE": {
+  "routes": [
+   {
+    "id": "class-d",
+    "name": "Class D: (Employment)",
+    "for": "work",
+    "apply": "either",
+    "work": "sponsor",
+    "fee": {
+     "currency": "KES",
+     "minor": 50000000
+    },
+    "within": {
+     "n": 21,
+     "unit": "working day"
+    },
+    "renewable": true,
+    "permanentAfter": 7
+   },
+   {
+    "id": "permanent-residence",
+    "name": "Permanent Residence",
+    "for": "permanent",
+    "apply": "in country",
+    "work": "any",
+    "fee": {
+     "currency": "KES",
+     "minor": 75000000
+    }
+   }
+  ]
+ },
+ "KG": {
+  "routes": [
+   {
+    "id": "edinoe-razreshenie",
+    "name": "Единое разрешение на пребывание и трудовую деятельность",
+    "for": "work"
+   }
+  ]
+ },
+ "KN": {
+  "routes": [
+   {
+    "id": "work-visa",
+    "name": "Work Visa (work permit)",
+    "for": "work",
+    "apply": "abroad"
+   }
+  ]
+ },
+ "KW": {
+  "routes": [
+   {
+    "id": "standard-private-sector",
+    "name": "Standard residency (private sector workers)",
+    "for": "work",
+    "renewable": true
+   },
+   {
+    "id": "self-sponsored",
+    "name": "Self-sponsored residency (Article 24)",
+    "for": "means"
+   }
+  ]
+ },
+ "KY": {
+  "routes": [
+   {
+    "id": "temporary-work-permit",
+    "name": "Temporary Work Permit",
+    "for": "work",
+    "apply": "either",
+    "work": "sponsor",
+    "term": {
+     "n": 6,
+     "unit": "month"
+    }
+   }
+  ]
+ },
+ "KZ": {
+  "routes": [
+   {
+    "id": "foreign-worker",
+    "name": "Разрешение на временное проживание иностранному работнику",
+    "for": "work",
+    "renewable": true
+   },
+   {
+    "id": "permanent",
+    "name": "Разрешение на постоянное проживание",
+    "for": "permanent",
+    "apply": "in country"
+   }
+  ]
+ },
+ "LA": {
+  "routes": [
+   {
+    "id": "foreign-labour-permit",
+    "name": "Permit for Foreign Labour to Work in Lao",
+    "for": "work",
+    "apply": "in country",
+    "work": "sponsor",
+    "fee": {
+     "currency": "LAK",
+     "minor": 6000000
+    },
+    "term": {
+     "n": 12,
+     "unit": "month"
+    },
+    "renewable": true
+   }
+  ]
+ },
+ "LB": {
+  "routes": [
+   {
+    "id": "artist-residency",
+    "name": "Residency of foreign artists",
+    "for": "work",
+    "apply": "in country",
+    "work": "sponsor",
+    "term": {
+     "n": 6,
+     "unit": "month"
+    }
+   }
+  ]
+ },
+ "LC": {
+  "routes": [
+   {
+    "id": "temporary-resident",
+    "name": "Permit granting temporary resident",
+    "for": "general",
+    "fee": {
+     "currency": "XCD",
+     "minor": 100000
+    }
+   },
+   {
+    "id": "permanent-resident",
+    "name": "Permit granting permanent resident",
+    "for": "permanent",
+    "fee": {
+     "currency": "XCD",
+     "minor": 250000
+    }
+   }
+  ]
+ },
+ "LI": {
+  "routes": [
+   {
+    "id": "aufenthaltsbewilligung",
+    "name": "Aufenthaltsbewilligung (Erwerbstätigkeit)",
+    "for": "work",
+    "apply": "abroad",
+    "work": "any",
+    "term": {
+     "n": 1,
+     "unit": "year"
+    },
+    "renewable": true,
+    "permanentAfter": 5
+   },
+   {
+    "id": "ewr-ch",
+    "name": "Aufenthaltsbewilligung nach dem Personenfreizügigkeitsgesetz",
+    "for": "free movement",
+    "apply": "either",
+    "work": "any",
+    "term": {
+     "n": 5,
+     "unit": "year"
+    },
+    "renewable": true,
+    "permanentAfter": 5,
+    "groups": [
+     "EU/EEA",
+     "CH"
+    ]
+   },
+   {
+    "id": "niederlassungsbewilligung",
+    "name": "Niederlassungsbewilligung",
+    "for": "permanent",
+    "apply": "in country",
+    "work": "any"
+   }
+  ]
+ },
+ "LK": {
+  "routes": [
+   {
+    "id": "residence-private-sector",
+    "name": "Residence Visa – Personnel employed in a Private Sector Company",
+    "for": "work",
+    "apply": "in country",
+    "work": "sponsor",
+    "term": {
+     "n": 1,
+     "unit": "year"
+    },
+    "renewable": true
+   }
+  ]
+ },
+ "LR": {
+  "routes": [
+   {
+    "id": "residence-permit",
+    "name": "Residence Permit",
+    "for": "general",
+    "fee": {
+     "currency": "USD",
+     "minor": 75000
+    },
+    "within": {
+     "n": 7,
+     "unit": "working day"
+    },
+    "renewable": true
+   }
+  ]
+ },
+ "LS": {
+  "routes": [
+   {
+    "id": "business-people-two-years",
+    "name": "Two Years Residence Permit (Business people permit)",
+    "for": "self-employed",
+    "apply": "in country",
+    "term": {
+     "n": 2,
+     "unit": "year"
+    },
+    "renewable": true
+   },
+   {
+    "id": "business-people-indefinite",
+    "name": "Indefinite Permit (Business people permit)",
+    "for": "permanent",
+    "apply": "in country"
+   }
+  ]
+ },
+ "LT": {
+  "routes": [
+   {
+    "id": "darbas-pagal-darbo-sutarti",
+    "name": "Leidimas laikinai gyventi (darbas pagal darbo sutartį)",
+    "for": "work",
+    "work": "sponsor",
+    "fee": {
+     "currency": "EUR",
+     "minor": 22000
+    },
+    "within": {
+     "n": 3,
+     "unit": "month"
+    },
+    "renewable": true,
+    "permanentAfter": 5
+   },
+   {
+    "id": "leidimas-nuolat-gyventi",
+    "name": "Leidimas nuolat gyventi",
+    "for": "permanent",
+    "apply": "in country",
+    "fee": {
+     "currency": "EUR",
+     "minor": 22000
+    },
+    "within": {
+     "n": 3,
+     "unit": "month"
+    }
+   }
+  ]
+ },
+ "LU": {
+  "routes": [
+   {
+    "id": "salarie",
+    "name": "Titre de séjour pour travailleur salarié",
+    "for": "work",
+    "apply": "abroad",
+    "work": "sponsor",
+    "fee": {
+     "currency": "EUR",
+     "minor": 8000
+    },
+    "term": {
+     "n": 2,
+     "unit": "year"
+    },
+    "counts": true,
+    "permanentAfter": 5
+   },
+   {
+    "id": "independant",
+    "name": "Titre de séjour pour travailleur indépendant",
+    "for": "self-employed",
+    "apply": "abroad",
+    "work": "any",
+    "fee": {
+     "currency": "EUR",
+     "minor": 8000
+    },
+    "counts": true,
+    "permanentAfter": 5
+   },
+   {
+    "id": "libre-circulation",
+    "name": "Droit de séjour du citoyen de l’Union",
+    "for": "free movement",
+    "apply": "in country",
+    "work": "any",
+    "counts": true,
+    "groups": [
+     "EU/EEA",
+     "CH"
+    ]
+   },
+   {
+    "id": "longue-duree",
+    "name": "Résident de longue durée - UE",
+    "for": "permanent",
+    "apply": "in country",
+    "work": "any",
+    "within": {
+     "n": 6,
+     "unit": "month"
+    },
+    "term": {
+     "n": 5,
+     "unit": "year"
+    },
+    "renewable": true,
+    "counts": true
+   }
+  ]
+ },
+ "LV": {
+  "routes": [
+   {
+    "id": "employed-worker",
+    "name": "Temporary residence permit (employed worker)",
+    "for": "work",
+    "apply": "abroad",
+    "work": "sponsor",
+    "fee": {
+     "currency": "EUR",
+     "minor": 10000
+    },
+    "within": {
+     "n": 30,
+     "unit": "day"
+    },
+    "renewable": true,
+    "permanentAfter": 5
+   },
+   {
+    "id": "self-employed",
+    "name": "Residence permit for a self-employed person",
+    "for": "self-employed",
+    "apply": "abroad",
+    "fee": {
+     "currency": "EUR",
+     "minor": 10000
+    },
+    "within": {
+     "n": 30,
+     "unit": "day"
+    },
+    "renewable": true,
+    "permanentAfter": 5
+   },
+   {
+    "id": "eu-registration",
+    "name": "Registration of an EU citizen with the Office of Citizenship and Migration Affairs",
+    "for": "free movement",
+    "groups": [
+     "EU"
+    ]
+   },
+   {
+    "id": "long-term-resident",
+    "name": "Long-term resident status",
+    "for": "permanent",
+    "work": "any"
+   }
+  ]
+ },
+ "LY": {
+  "routes": [
+   {
+    "id": "work-visa",
+    "name": "Visado de trabajo",
+    "for": "work",
+    "apply": "abroad",
+    "term": {
+     "n": 3,
+     "unit": "month"
+    },
+    "renewable": true
+   }
+  ]
+ },
+ "MA": {
+  "routes": [
+   {
+    "id": "immatriculation-activite",
+    "name": "Carte d'immatriculation (activité professionnelle)",
+    "for": "work",
+    "renewable": true,
+    "permanentAfter": 4
+   },
+   {
+    "id": "residence",
+    "name": "Carte de résidence",
+    "for": "permanent"
+   },
+   {
+    "id": "residence-conjoint",
+    "name": "Carte de résidence (conjoint d'un ressortissant marocain)",
+    "for": "family"
+   },
+   {
+    "id": "immatriculation-visiteur",
+    "name": "Carte d'immatriculation portant la mention « visiteur »",
+    "for": "means",
+    "work": "none",
+    "renewable": true,
+    "permanentAfter": 4
+   },
+   {
+    "id": "immatriculation-etudiant",
+    "name": "Carte d'immatriculation portant la mention « étudiant »",
+    "for": "study",
+    "renewable": true
+   }
+  ]
+ },
+ "MC": {
+  "routes": [
+   {
+    "id": "carte-temporaire",
+    "name": "Carte de séjour « temporaire »",
+    "for": "work",
+    "apply": "in country",
+    "work": "sponsor",
+    "fee": {
+     "currency": "EUR",
+     "minor": 8000
+    },
+    "term": {
+     "n": 1,
+     "unit": "year"
+    },
+    "renewable": true,
+    "permanentAfter": 10
+   },
+   {
+    "id": "etablissement-eee",
+    "name": "Carte de séjour (ressortissants de l’EEE et de la Suisse)",
+    "for": "free movement",
+    "apply": "in country",
+    "work": "sponsor",
+    "fee": {
+     "currency": "EUR",
+     "minor": 8000
+    },
+    "term": {
+     "n": 1,
+     "unit": "year"
+    },
+    "renewable": true,
+    "groups": [
+     "EU/EEA",
+     "CH"
+    ]
+   },
+   {
+    "id": "carte-privilegie",
+    "name": "Carte de séjour « privilégié »",
+    "for": "permanent",
+    "apply": "in country",
+    "work": "sponsor",
+    "fee": {
+     "currency": "EUR",
+     "minor": 16000
+    },
+    "term": {
+     "n": 10,
+     "unit": "year"
+    },
+    "renewable": true
+   }
+  ]
+ },
+ "MD": {
+  "routes": [
+   {
+    "id": "work",
+    "name": "Drept de ședere provizorie pentru imigrare la muncă",
+    "for": "work",
+    "apply": "in country",
+    "work": "sponsor",
+    "fee": {
+     "currency": "MDL",
+     "minor": 369000
+    },
+    "within": {
+     "n": 15,
+     "unit": "day"
+    },
+    "renewable": true
+   },
+   {
+    "id": "permanent",
+    "name": "Drept de ședere permanentă",
+    "for": "permanent",
+    "apply": "in country",
+    "work": "any",
+    "fee": {
+     "currency": "MDL",
+     "minor": 110000
+    },
+    "within": {
+     "n": 3,
+     "unit": "month"
+    }
+   }
+  ]
+ },
+ "ME": {
+  "routes": [
+   {
+    "id": "boravak-i-rad",
+    "name": "Dozvola za privremeni boravak i rad radi zapošljavanja",
+    "for": "work",
+    "apply": "either",
+    "work": "sponsor",
+    "term": {
+     "n": 1,
+     "unit": "year"
+    },
+    "renewable": true,
+    "permanentAfter": 5
+   },
+   {
+    "id": "eu",
+    "name": "Prijava boravka državljanina EU radi rada ili samozapošljavanja",
+    "for": "free movement",
+    "apply": "in country",
+    "work": "any",
+    "groups": [
+     "EU"
+    ]
+   },
+   {
+    "id": "stalni-boravak",
+    "name": "Dozvola za stalni boravak",
+    "for": "permanent",
+    "apply": "in country",
+    "work": "any"
+   }
+  ]
+ },
+ "MF": {
+  "issuedBy": "FR"
+ },
+ "MG": {
+  "routes": [
+   {
+    "id": "transformable-travailleur",
+    "name": "Visa transformable en long séjour (travailleur)",
+    "for": "work",
+    "apply": "abroad"
+   },
+   {
+    "id": "transformable-investisseur",
+    "name": "Visa transformable en long séjour (investisseur)",
+    "for": "self-employed",
+    "apply": "abroad"
+   },
+   {
+    "id": "transformable-retraite",
+    "name": "Visa transformable en long séjour (retraité)",
+    "for": "retirement",
+    "apply": "abroad"
+   }
+  ]
+ },
+ "MK": {
+  "routes": [
+   {
+    "id": "employment",
+    "name": "Привремен престој заради вработување",
+    "for": "work",
+    "apply": "either",
+    "work": "sponsor",
+    "within": {
+     "n": 60,
+     "unit": "working day"
+    },
+    "renewable": true,
+    "permanentAfter": 5
+   },
+   {
+    "id": "permanent",
+    "name": "Постојан престој",
+    "for": "permanent",
+    "apply": "in country",
+    "work": "any",
+    "within": {
+     "n": 7,
+     "unit": "month"
+    }
+   }
+  ]
+ },
+ "ML": {
+  "routes": [
+   {
+    "id": "carte-de-resident",
+    "name": "Carte de résident",
+    "for": "general",
+    "apply": "in country",
+    "term": {
+     "n": 5,
+     "unit": "year"
+    },
+    "renewable": true
+   },
+   {
+    "id": "visa-de-sejour",
+    "name": "Visa de séjour",
+    "for": "general",
+    "apply": "in country",
+    "renewable": true
+   },
+   {
+    "id": "visa-de-sejour-de-plein-droit",
+    "name": "Autorisation de séjour temporaire accordée de plein droit (conjoint, enfant ou parent d'un Malien)",
+    "for": "family",
+    "apply": "in country",
+    "renewable": true
+   }
+  ]
+ },
+ "MM": {
+  "routes": [
+   {
+    "id": "stay-permit",
+    "name": "Stay Permit (extension of stay for business visa holders)",
+    "for": "work"
+   }
+  ]
+ },
+ "MN": {
+  "routes": [
+   {
+    "id": "residence-permit",
+    "name": "Оршин суух зөвшөөрөл (албан болон хувийн хэргээр)",
+    "for": "work",
+    "apply": "in country",
+    "work": "sponsor",
+    "fee": {
+     "currency": "MNT",
+     "minor": 13500000
+    },
+    "renewable": true
+   }
+  ]
+ },
+ "MO": {
+  "routes": [
+   {
+    "id": "major-investment",
+    "name": "Temporary residency based on “major investment/major investment plan”",
+    "for": "means",
+    "renewable": true,
+    "permanentAfter": 7
+   },
+   {
+    "id": "permanent",
+    "name": "Macao SAR Permanent Resident Identity Card",
+    "for": "permanent"
+   }
+  ]
+ },
+ "MP": {
+  "issuedBy": "US"
+ },
+ "MQ": {
+  "issuedBy": "FR"
+ },
+ "MR": {
+  "routes": [
+   {
+    "id": "permis-de-travail",
+    "name": "Permis de travail",
+    "for": "work"
+   },
+   {
+    "id": "carte-de-resident",
+    "name": "Carte de résident",
+    "for": "general",
+    "apply": "in country",
+    "renewable": true
+   }
+  ]
+ },
+ "MS": {
+  "routes": [
+   {
+    "id": "work-permit",
+    "name": "Work Permit",
+    "for": "work",
+    "renewable": true,
+    "permanentAfter": 8
+   },
+   {
+    "id": "permanent-residence",
+    "name": "Permit of Permanent Residence",
+    "for": "permanent"
+   }
+  ]
+ },
+ "MT": {
+  "routes": [
+   {
+    "id": "single-permit",
+    "name": "Single Permit",
+    "for": "work",
+    "apply": "either",
+    "work": "sponsor",
+    "fee": {
+     "currency": "EUR",
+     "minor": 60000
+    },
+    "within": {
+     "n": 4,
+     "unit": "month"
+    },
+    "term": {
+     "n": 1,
+     "unit": "year"
+    },
+    "renewable": true
+   },
+   {
+    "id": "self-employment",
+    "name": "Residence Permit on the basis of Self-Employment",
+    "for": "self-employed",
+    "apply": "either",
+    "work": "any",
+    "fee": {
+     "currency": "EUR",
+     "minor": 10000
+    },
+    "term": {
+     "n": 1,
+     "unit": "year"
+    },
+    "renewable": true
+   },
+   {
+    "id": "eu-free-movement",
+    "name": "Free movement of EU and EEA nationals (Registration Certificate and eResidence Document)",
+    "for": "free movement",
+    "apply": "in country",
+    "work": "any",
+    "groups": [
+     "EU/EEA"
+    ]
+   }
+  ]
+ },
+ "MU": {
+  "routes": [
+   {
+    "id": "op-professional",
+    "name": "Occupation Permit (Professional)",
+    "for": "work",
+    "apply": "either",
+    "work": "sponsor",
+    "renewable": true,
+    "permanentAfter": 5
+   },
+   {
+    "id": "op-self-employed",
+    "name": "Occupation Permit (Self-Employed)",
+    "for": "self-employed",
+    "apply": "either",
+    "work": "any",
+    "term": {
+     "n": 10,
+     "unit": "year"
+    },
+    "renewable": true,
+    "permanentAfter": 5
+   },
+   {
+    "id": "prp",
+    "name": "Permanent Residence Permit (PRP)",
+    "for": "permanent",
+    "apply": "in country",
+    "work": "any",
+    "term": {
+     "n": 20,
+     "unit": "year"
+    },
+    "renewable": true
+   }
+  ]
+ },
+ "MV": {
+  "routes": [
+   {
+    "id": "work-visa",
+    "name": "Work Visa",
+    "for": "work",
+    "apply": "in country",
+    "work": "sponsor",
+    "term": {
+     "n": 1,
+     "unit": "year"
+    },
+    "renewable": true
+   }
+  ]
+ },
+ "MW": {
+  "routes": [
+   {
+    "id": "tep",
+    "name": "Temporary Employment Permit",
+    "for": "work",
+    "apply": "abroad",
+    "work": "sponsor",
+    "renewable": true,
+    "permanentAfter": 5
+   },
+   {
+    "id": "brp",
+    "name": "Business Residence Permit",
+    "for": "self-employed",
+    "apply": "either",
+    "work": "any",
+    "term": {
+     "n": 5,
+     "unit": "year"
+    },
+    "renewable": true,
+    "permanentAfter": 5
+   },
+   {
+    "id": "prp",
+    "name": "Permanent Residence Permit",
+    "for": "permanent",
+    "apply": "in country",
+    "work": "any"
+   }
+  ]
+ },
+ "MX": {
+  "routes": [
+   {
+    "id": "temporal",
+    "name": "Residente temporal",
+    "for": "work",
+    "apply": "abroad",
+    "work": "sponsor",
+    "fee": {
+     "currency": "MXN",
+     "minor": 1114074
+    },
+    "term": {
+     "n": 1,
+     "unit": "year"
+    },
+    "renewable": true,
+    "counts": true,
+    "permanentAfter": 4
+   },
+   {
+    "id": "permanente",
+    "name": "Residente permanente",
+    "for": "permanent",
+    "apply": "either",
+    "work": "any",
+    "fee": {
+     "currency": "MXN",
+     "minor": 1357896
+    },
+    "counts": true
+   }
+  ]
+ },
+ "MY": {
+  "routes": [
+   {
+    "id": "plik",
+    "name": "Visit Pass (Professional)",
+    "for": "work",
+    "apply": "abroad",
+    "work": "sponsor",
+    "term": {
+     "n": 12,
+     "unit": "month"
+    }
+   },
+   {
+    "id": "employment-pass",
+    "name": "Employment Pass",
+    "for": "work",
+    "apply": "either",
+    "work": "sponsor"
+   },
+   {
+    "id": "entry-permit",
+    "name": "Entry Permit",
+    "for": "permanent",
+    "apply": "in country",
+    "work": "any"
+   },
+   {
+    "id": "residence-pass",
+    "name": "Residence Pass",
+    "for": "family",
+    "apply": "in country",
+    "work": "any",
+    "fee": {
+     "currency": "MYR",
+     "minor": 50000
+    },
+    "term": {
+     "n": 5,
+     "unit": "year"
+    }
+   }
+  ]
+ },
+ "MZ": {
+  "routes": [
+   {
+    "id": "dire-trabalho",
+    "name": "Tarjeta de Residencia de Extranjeros (DIRE)",
+    "for": "work",
+    "apply": "abroad"
+   }
+  ]
+ },
+ "NA": {
+  "routes": [
+   {
+    "id": "work-permit",
+    "name": "Permiso de trabajo",
+    "for": "work",
+    "work": "sponsor",
+    "permanentAfter": 5
+   },
+   {
+    "id": "temporary-residence",
+    "name": "Permiso de residencia temporal",
+    "for": "retirement",
+    "permanentAfter": 5
+   },
+   {
+    "id": "permanent-residence",
+    "name": "Residencia permanente",
+    "for": "permanent"
+   }
+  ]
+ },
+ "NC": {
+  "issuedBy": "FR"
+ },
+ "NE": {
+  "routes": [
+   {
+    "id": "visa-contrat-travail",
+    "name": "Visa du contrat de travail des travailleurs étrangers",
+    "for": "work",
+    "apply": "abroad",
+    "within": {
+     "n": 1,
+     "unit": "month"
+    },
+    "renewable": true
+   }
+  ]
+ },
+ "NF": {
+  "issuedBy": "AU"
+ },
+ "NG": {
+  "routes": [
+   {
+    "id": "expatriate",
+    "name": "Employment (Expatriate) Visa and CERPAC",
+    "for": "work",
+    "apply": "abroad",
+    "work": "sponsor",
+    "fee": {
+     "currency": "USD",
+     "minor": 200000
+    },
+    "term": {
+     "n": 2,
+     "unit": "year"
+    },
+    "renewable": true
+   },
+   {
+    "id": "skilled",
+    "name": "Highly Skilled Immigrant Visa (N4A)",
+    "for": "permanent",
+    "apply": "abroad",
+    "work": "sponsor"
+   },
+   {
+    "id": "spouse",
+    "name": "Spouse of Nigerian Citizens Visa (N1A)",
+    "for": "family",
+    "apply": "abroad",
+    "work": "sponsor",
+    "fee": {
+     "currency": "USD",
+     "minor": 0
+    }
+   }
+  ]
+ },
+ "NI": {
+  "routes": [
+   {
+    "id": "temporal-trabajador",
+    "name": "Residencia temporal: trabajadores independientes o en relación de dependencia",
+    "for": "work",
+    "apply": "either",
+    "within": {
+     "n": 30,
+     "unit": "working day"
+    },
+    "renewable": true
+   },
+   {
+    "id": "temporal-artista",
+    "name": "Residencia temporal: artistas",
+    "for": "talent",
+    "apply": "either",
+    "within": {
+     "n": 30,
+     "unit": "working day"
+    },
+    "renewable": true
+   },
+   {
+    "id": "temporal-estudiante",
+    "name": "Residencia temporal: estudiantes",
+    "for": "study",
+    "apply": "either",
+    "within": {
+     "n": 30,
+     "unit": "working day"
+    },
+    "renewable": true
+   },
+   {
+    "id": "temporal-jubilado",
+    "name": "Residencia temporal: jubilados",
+    "for": "retirement",
+    "apply": "either",
+    "within": {
+     "n": 30,
+     "unit": "working day"
+    },
+    "renewable": true
+   },
+   {
+    "id": "temporal-rentista",
+    "name": "Residencia temporal: rentista",
+    "for": "means",
+    "apply": "either",
+    "within": {
+     "n": 30,
+     "unit": "working day"
+    },
+    "renewable": true
+   },
+   {
+    "id": "permanente-vinculo",
+    "name": "Residencia permanente: cónyuge, padres o hijos de nicaragüenses",
+    "for": "family",
+    "apply": "either",
+    "within": {
+     "n": 30,
+     "unit": "working day"
+    },
+    "renewable": true
+   },
+   {
+    "id": "permanente",
+    "name": "Residencia permanente: inmigrante",
+    "for": "permanent",
+    "apply": "either",
+    "within": {
+     "n": 30,
+     "unit": "working day"
+    },
+    "renewable": true
+   }
+  ]
+ },
+ "NL": {
+  "routes": [
+   {
+    "id": "self-employed",
+    "name": "Residence permit self-employed person",
+    "for": "self-employed",
+    "apply": "abroad",
+    "work": "any",
+    "fee": {
+     "currency": "EUR",
+     "minor": 42300
+    },
+    "within": {
+     "n": 90,
+     "unit": "day"
+    },
+    "renewable": true,
+    "counts": true,
+    "permanentAfter": 5
+   },
+   {
+    "id": "employment",
+    "name": "Work in employment (single permit)",
+    "for": "work",
+    "apply": "either",
+    "work": "sponsor",
+    "fee": {
+     "currency": "EUR",
+     "minor": 42300
+    },
+    "renewable": true,
+    "counts": true,
+    "permanentAfter": 5
+   },
+   {
+    "id": "eu-eea-swiss",
+    "name": "Staying in the Netherlands as an EU/EEA or Swiss citizen",
+    "for": "free movement",
+    "apply": "in country",
+    "work": "any",
+    "counts": true,
+    "groups": [
+     "EU/EEA",
+     "CH"
+    ]
+   },
+   {
+    "id": "permanent",
+    "name": "Permanent residence permit",
+    "for": "permanent",
+    "apply": "in country",
+    "work": "any",
+    "fee": {
+     "currency": "EUR",
+     "minor": 25400
+    },
+    "within": {
+     "n": 6,
+     "unit": "month"
+    },
+    "counts": true
+   }
+  ]
+ },
+ "NO": {
+  "routes": [
+   {
+    "id": "skilled-worker",
+    "name": "Residence permit for skilled workers",
+    "for": "work",
+    "apply": "either",
+    "work": "sponsor",
+    "fee": {
+     "currency": "NOK",
+     "minor": 630000
+    },
+    "term": {
+     "n": 3,
+     "unit": "year"
+    },
+    "renewable": true,
+    "permanentAfter": 3
+   },
+   {
+    "id": "eu-eea",
+    "name": "Residency according to the EU/EEA regulations",
+    "for": "free movement",
+    "apply": "in country",
+    "work": "any",
+    "groups": [
+     "EU/EEA"
+    ]
+   },
+   {
+    "id": "permanent",
+    "name": "Permanent residence permit",
+    "for": "permanent",
+    "apply": "in country",
+    "work": "any",
+    "fee": {
+     "currency": "NOK",
+     "minor": 400000
+    }
+   }
+  ]
+ },
+ "NP": {
+  "routes": [
+   {
+    "id": "india-treaty",
+    "name": "Treaty of Peace and Friendship (India–Nepal, 1950), Article 7",
+    "for": "free movement",
+    "apply": "either",
+    "work": "any",
+    "groups": [
+     "IN"
+    ]
+   }
+  ]
+ },
+ "NR": {
+  "routes": [
+   {
+    "id": "business-employment",
+    "name": "Business visa (Employment)",
+    "for": "work",
+    "work": "sponsor"
+   },
+   {
+    "id": "local-business-employment",
+    "name": "Local business (employment) visa",
+    "for": "work",
+    "apply": "abroad",
+    "work": "sponsor",
+    "fee": {
+     "currency": "AUD",
+     "minor": 30000
+    }
+   },
+   {
+    "id": "business-general",
+    "name": "Business visa (General)",
+    "for": "self-employed"
+   },
+   {
+    "id": "residence",
+    "name": "Residence visa",
+    "for": "family",
+    "apply": "either",
+    "fee": {
+     "currency": "AUD",
+     "minor": 0
+    }
+   },
+   {
+    "id": "dependant",
+    "name": "Dependant’s visa",
+    "for": "family",
+    "apply": "either",
+    "fee": {
+     "currency": "AUD",
+     "minor": 100000
+    }
+   }
+  ]
+ },
+ "NZ": {
+  "routes": [
+   {
+    "id": "aewv",
+    "name": "Accredited Employer Work Visa",
+    "for": "work",
+    "apply": "either",
+    "work": "sponsor",
+    "fee": {
+     "currency": "NZD",
+     "minor": 154000
+    },
+    "within": {
+     "n": 5,
+     "unit": "week"
+    },
+    "term": {
+     "n": 5,
+     "unit": "year"
+    }
+   },
+   {
+    "id": "skilled-migrant",
+    "name": "Skilled Migrant Category Resident Visa",
+    "for": "work",
+    "apply": "either",
+    "work": "any",
+    "fee": {
+     "currency": "NZD",
+     "minor": 645000
+    },
+    "permanentAfter": 2
+   },
+   {
+    "id": "permanent-resident",
+    "name": "Permanent Resident Visa",
+    "for": "permanent",
+    "apply": "either",
+    "work": "any",
+    "fee": {
+     "currency": "NZD",
+     "minor": 31500
+    },
+    "within": {
+     "n": 2,
+     "unit": "week"
+    }
+   }
+  ]
+ },
+ "OM": {
+  "routes": [
+   {
+    "id": "residencia-trabajo",
+    "name": "Permiso de residencia y trabajo",
+    "for": "work",
+    "work": "sponsor"
+   },
+   {
+    "id": "residencia-conyuge",
+    "name": "Permiso de residencia (cónyuge)",
+    "for": "family"
+   }
+  ]
+ },
+ "PA": {
+  "routes": [
+   {
+    "id": "transeuntes-artistas",
+    "name": "Visa para trabajadores transeúntes o trabajadores eventuales – artistas",
+    "for": "work",
+    "apply": "in country",
+    "work": "sponsor",
+    "fee": {
+     "currency": "PAB",
+     "minor": 10000
+    },
+    "term": {
+     "n": 1,
+     "unit": "year"
+    },
+    "renewable": true
+   },
+   {
+    "id": "industria-cinematografica",
+    "name": "Permiso de residente temporal en calidad de personal extranjero de la industria cinematográfica y audiovisual",
+    "for": "talent",
+    "apply": "in country",
+    "work": "sponsor",
+    "fee": {
+     "currency": "PAB",
+     "minor": 10000
+    }
+   }
+  ]
+ },
+ "PE": {
+  "routes": [
+   {
+    "id": "trabajador-residente",
+    "name": "Calidad migratoria trabajador residente",
+    "for": "work",
+    "apply": "in country",
+    "work": "sponsor",
+    "fee": {
+     "currency": "PEN",
+     "minor": 16140
+    },
+    "within": {
+     "n": 30,
+     "unit": "working day"
+    },
+    "term": {
+     "n": 365,
+     "unit": "day"
+    },
+    "renewable": true,
+    "permanentAfter": 3
+   }
+  ]
+ },
+ "PF": {
+  "issuedBy": "FR"
+ },
+ "PG": {
+  "routes": [
+   {
+    "id": "general-work-permit",
+    "name": "General work permit (Employment of Non-Citizens Act 2007)",
+    "for": "work",
+    "work": "sponsor",
+    "within": {
+     "n": 15,
+     "unit": "working day"
+    },
+    "renewable": true
+   }
+  ]
+ },
+ "PH": {
+  "routes": [
+   {
+    "id": "9g",
+    "name": "Pre-arranged Employment Visa (9G)",
+    "for": "work",
+    "apply": "in country",
+    "work": "sponsor",
+    "fee": {
+     "currency": "PHP",
+     "minor": 1013000
+    },
+    "term": {
+     "n": 1,
+     "unit": "year"
+    }
+   },
+   {
+    "id": "quota-13",
+    "name": "Quota Visa (13)",
+    "for": "permanent",
+    "apply": "in country",
+    "work": "any",
+    "fee": {
+     "currency": "PHP",
+     "minor": 1883000
+    }
+   }
+  ]
+ },
+ "PK": {
+  "routes": [
+   {
+    "id": "work-visa",
+    "name": "Work Visa",
+    "for": "work",
+    "apply": "either",
+    "work": "sponsor",
+    "term": {
+     "n": 2,
+     "unit": "year"
+    }
+   }
+  ]
+ },
+ "PL": {
+  "routes": [
+   {
+    "id": "pobyt-i-praca",
+    "name": "Zezwolenie na pobyt czasowy i pracę",
+    "for": "work",
+    "apply": "in country",
+    "work": "sponsor",
+    "fee": {
+     "currency": "PLN",
+     "minor": 44000
+    },
+    "within": {
+     "n": 60,
+     "unit": "day"
+    },
+    "term": {
+     "n": 3,
+     "unit": "year"
+    },
+    "renewable": true,
+    "permanentAfter": 5
+   },
+   {
+    "id": "eu-registration",
+    "name": "Rejestracja pobytu obywatela UE",
+    "for": "free movement",
+    "apply": "in country",
+    "work": "any",
+    "groups": [
+     "EU/EEA"
+    ]
+   },
+   {
+    "id": "rezydent-ue",
+    "name": "Zezwolenie na pobyt rezydenta długoterminowego UE",
+    "for": "permanent",
+    "apply": "in country",
+    "work": "any",
+    "fee": {
+     "currency": "PLN",
+     "minor": 64000
+    }
+   },
+   {
+    "id": "pobyt-staly-malzenstwo",
+    "name": "Zezwolenie na pobyt stały (małżonek obywatela polskiego)",
+    "for": "family",
+    "apply": "in country",
+    "work": "any",
+    "fee": {
+     "currency": "PLN",
+     "minor": 64000
+    }
+   }
+  ]
+ },
+ "PM": {
+  "issuedBy": "FR"
+ },
+ "PN": {
+  "routes": [
+   {
+    "id": "work-visa",
+    "name": "Work visa",
+    "for": "work",
+    "apply": "abroad",
+    "fee": {
+     "currency": "NZD",
+     "minor": 30000
+    },
+    "term": {
+     "n": 6,
+     "unit": "month"
+    },
+    "renewable": true
+   },
+   {
+    "id": "settlement-skills",
+    "name": "Settlement visa (skills pathway)",
+    "for": "work",
+    "fee": {
+     "currency": "NZD",
+     "minor": 50000
+    },
+    "term": {
+     "n": 2,
+     "unit": "year"
+    },
+    "permanentAfter": 2
+   },
+   {
+    "id": "settlement-family",
+    "name": "Settlement visa (family pathway)",
+    "for": "family",
+    "fee": {
+     "currency": "NZD",
+     "minor": 50000
+    },
+    "term": {
+     "n": 2,
+     "unit": "year"
+    },
+    "permanentAfter": 2
+   },
+   {
+    "id": "permanent-residence",
+    "name": "Permanent residence",
+    "for": "permanent",
+    "work": "any",
+    "fee": {
+     "currency": "NZD",
+     "minor": 0
+    }
+   }
+  ]
+ },
+ "PR": {
+  "issuedBy": "US"
+ },
+ "PS": {
+  "routes": [
+   {
+    "id": "iqama",
+    "name": "الإقامة (الإدارة العامة للإقامات وشؤون الأجانب)",
+    "for": "general",
+    "apply": "in country"
+   }
+  ]
+ },
+ "PT": {
+  "routes": [
+   {
+    "id": "cultural",
+    "name": "Autorização de residência para atividade cultural (artigo 90.º)",
+    "for": "talent",
+    "apply": "either",
+    "work": "any",
+    "term": {
+     "n": 2,
+     "unit": "year"
+    },
+    "renewable": true,
+    "permanentAfter": 5
+   },
+   {
+    "id": "independente",
+    "name": "Autorização de residência para exercício de atividade profissional independente (artigo 89.º)",
+    "for": "self-employed",
+    "apply": "abroad",
+    "work": "any",
+    "term": {
+     "n": 2,
+     "unit": "year"
+    },
+    "renewable": true,
+    "permanentAfter": 5
+   },
+   {
+    "id": "permanente",
+    "name": "Autorização de residência permanente",
+    "for": "permanent",
+    "apply": "in country",
+    "work": "any"
+   }
+  ]
+ },
+ "PW": {
+  "routes": [
+   {
+    "id": "nonresident-work-permit",
+    "name": "Nonresident work permit (Division of Labor)",
+    "for": "work",
+    "renewable": true
+   }
+  ]
+ },
+ "PY": {
+  "routes": [
+   {
+    "id": "temporal",
+    "name": "Residencia Temporal",
+    "for": "work",
+    "apply": "either",
+    "work": "any",
+    "term": {
+     "n": 2,
+     "unit": "year"
+    },
+    "renewable": true,
+    "permanentAfter": 2
+   },
+   {
+    "id": "permanente",
+    "name": "Residencia Permanente",
+    "for": "permanent",
+    "apply": "in country",
+    "work": "any"
+   }
+  ]
+ },
+ "QA": {
+  "routes": [
+   {
+    "id": "residence-permit-work",
+    "name": "Residence permit",
+    "for": "work",
+    "apply": "in country"
+   }
+  ]
+ },
+ "RE": {
+  "issuedBy": "FR"
+ },
+ "RO": {
+  "routes": [
+   {
+    "id": "munca",
+    "name": "Drept de şedere temporară în scop de muncă (permis unic)",
+    "for": "work",
+    "apply": "abroad",
+    "work": "sponsor",
+    "term": {
+     "n": 2,
+     "unit": "year"
+    },
+    "renewable": true,
+    "permanentAfter": 5
+   }
+  ]
+ },
+ "RS": {
+  "routes": [
+   {
+    "id": "jedinstvena-dozvola",
+    "name": "Dozvola za privremeni boravak i rad stranca (Jedinstvena dozvola)",
+    "for": "work",
+    "apply": "either",
+    "work": "sponsor",
+    "within": {
+     "n": 15,
+     "unit": "day"
+    },
+    "term": {
+     "n": 3,
+     "unit": "year"
+    },
+    "renewable": true,
+    "permanentAfter": 3
+   },
+   {
+    "id": "stalno-nastanjenje",
+    "name": "Stalno nastanjenje",
+    "for": "permanent",
+    "apply": "in country",
+    "work": "any"
+   }
+  ]
+ },
+ "RU": {
+  "routes": [
+   {
+    "id": "rvp",
+    "name": "Разрешение на временное проживание",
+    "for": "work",
+    "apply": "either",
+    "work": "any",
+    "term": {
+     "n": 3,
+     "unit": "year"
+    },
+    "permanentAfter": 1
+   },
+   {
+    "id": "vnzh",
+    "name": "Вид на жительство",
+    "for": "permanent",
+    "apply": "in country",
+    "work": "any"
+   }
+  ]
+ },
+ "RW": {
+  "routes": [
+   {
+    "id": "c2-artist",
+    "name": "C2: Professional Player or Artist",
+    "for": "work",
+    "apply": "in country",
+    "work": "any",
+    "fee": {
+     "currency": "RWF",
+     "minor": 100000
+    },
+    "term": {
+     "n": 2,
+     "unit": "year"
+    },
+    "renewable": true
+   }
+  ]
+ },
+ "SA": {
+  "routes": [
+   {
+    "id": "gifted",
+    "name": "Gifted Residency",
+    "for": "talent",
+    "apply": "either",
+    "work": "any",
+    "fee": {
+     "currency": "SAR",
+     "minor": 400000
+    },
+    "term": {
+     "n": 5,
+     "unit": "year"
+    },
+    "renewable": true,
+    "permanentAfter": 5
+   },
+   {
+    "id": "limited",
+    "name": "Limited Duration Premium Residency",
+    "for": "means",
+    "apply": "either",
+    "work": "any",
+    "fee": {
+     "currency": "SAR",
+     "minor": 10000000
+    },
+    "renewable": true
+   },
+   {
+    "id": "unlimited",
+    "name": "Unlimited Duration Premium Residency",
+    "for": "permanent",
+    "apply": "either",
+    "work": "any",
+    "fee": {
+     "currency": "SAR",
+     "minor": 80000000
+    }
+   }
+  ]
+ },
+ "SB": {
+  "routes": [
+   {
+    "id": "entertainer-musician",
+    "name": "Entertainer Visa – Musician (Commercial)",
+    "for": "talent",
+    "fee": {
+     "currency": "USD",
+     "minor": 45000
+    },
+    "term": {
+     "n": 60,
+     "unit": "day"
+    }
+   },
+   {
+    "id": "long-term-employment",
+    "name": "Working Resident Visa – Long-Term Employment",
+    "for": "work",
+    "apply": "abroad",
+    "fee": {
+     "currency": "USD",
+     "minor": 50000
+    },
+    "term": {
+     "n": 2,
+     "unit": "year"
+    },
+    "renewable": true,
+    "permanentAfter": 5
+   },
+   {
+    "id": "permanent-resident",
+    "name": "Permanent Resident Visa – Resident (Long Term)",
+    "for": "permanent",
+    "fee": {
+     "currency": "USD",
+     "minor": 155000
+    },
+    "term": {
+     "n": 5,
+     "unit": "year"
+    },
+    "renewable": true
+   }
+  ]
+ },
+ "SC": {
+  "routes": [
+   {
+    "id": "gop",
+    "name": "Gainful Occupation Permit",
+    "for": "work",
+    "apply": "abroad",
+    "work": "sponsor",
+    "fee": {
+     "currency": "SCR",
+     "minor": 100000
+    },
+    "within": {
+     "n": 5,
+     "unit": "day"
+    }
+   },
+   {
+    "id": "permanent-residence",
+    "name": "Permanent Residence Permit",
+    "for": "permanent",
+    "apply": "in country",
+    "work": "any"
+   }
+  ]
+ },
+ "SD": {
+  "routes": [
+   {
+    "id": "iqama-dirasa",
+    "name": "الإقامة بغرض الدراسة",
+    "for": "study"
+   }
+  ]
+ },
+ "SE": {
+  "routes": [
+   {
+    "id": "artist-work-permit",
+    "name": "Work permit for artists",
+    "for": "work",
+    "apply": "abroad",
+    "work": "sponsor",
+    "fee": {
+     "currency": "SEK",
+     "minor": 150000
+    },
+    "term": {
+     "n": 2,
+     "unit": "year"
+    },
+    "renewable": true
+   },
+   {
+    "id": "eu-right-of-residence",
+    "name": "Right of residence (EU/EEA citizens)",
+    "for": "free movement",
+    "apply": "in country",
+    "work": "any",
+    "groups": [
+     "EU/EEA"
+    ]
+   }
+  ]
+ },
+ "SG": {
+  "routes": [
+   {
+    "id": "one-pass",
+    "name": "Overseas Networks & Expertise Pass",
+    "for": "talent",
+    "apply": "either",
+    "work": "any",
+    "fee": {
+     "currency": "SGD",
+     "minor": 33000
+    },
+    "within": {
+     "n": 4,
+     "unit": "week"
+    },
+    "term": {
+     "n": 5,
+     "unit": "year"
+    },
+    "renewable": true
+   },
+   {
+    "id": "employment-pass",
+    "name": "Employment Pass",
+    "for": "work",
+    "apply": "either",
+    "work": "sponsor",
+    "fee": {
+     "currency": "SGD",
+     "minor": 33000
+    },
+    "within": {
+     "n": 6,
+     "unit": "week"
+    },
+    "term": {
+     "n": 2,
+     "unit": "year"
+    },
+    "renewable": true
+   },
+   {
+    "id": "pr",
+    "name": "Singapore permanent residence",
+    "for": "permanent",
+    "apply": "in country",
+    "work": "any",
+    "fee": {
+     "currency": "SGD",
+     "minor": 12000
+    },
+    "within": {
+     "n": 6,
+     "unit": "month"
+    },
+    "counts": true
+   }
+  ]
+ },
+ "SH": {
+  "routes": [
+   {
+    "id": "long-term-entry-permit",
+    "name": "Long Term Entry Permit (on an Immigrant Employment Certificate)",
+    "for": "work",
+    "apply": "either",
+    "work": "sponsor",
+    "term": {
+     "n": 5,
+     "unit": "year"
+    }
+   },
+   {
+    "id": "work-permit",
+    "name": "Work Permit (self-employed)",
+    "for": "self-employed",
+    "apply": "either",
+    "work": "any",
+    "term": {
+     "n": 5,
+     "unit": "year"
+    },
+    "renewable": true
+   },
+   {
+    "id": "st-helenian-status",
+    "name": "St Helenian status (by grant)",
+    "for": "permanent",
+    "apply": "in country",
+    "work": "any"
+   }
+  ]
+ },
+ "SI": {
+  "routes": [
+   {
+    "id": "eu-registration",
+    "name": "Residence registration certificate for EU citizens",
+    "for": "free movement",
+    "apply": "in country",
+    "work": "any",
+    "term": {
+     "n": 5,
+     "unit": "year"
+    },
+    "renewable": true,
+    "permanentAfter": 5,
+    "groups": [
+     "EU/EEA"
+    ]
+   },
+   {
+    "id": "eu-permanent",
+    "name": "Permanent residence registration certificate for an EU citizen",
+    "for": "permanent",
+    "apply": "in country",
+    "work": "any"
+   }
+  ]
+ },
+ "SJ": {
+  "free": true
+ },
+ "SK": {
+  "routes": [
+   {
+    "id": "zamestnanie",
+    "name": "Prechodný pobyt na účel zamestnania",
+    "for": "work",
+    "apply": "either",
+    "work": "sponsor",
+    "fee": {
+     "currency": "EUR",
+     "minor": 25000
+    },
+    "within": {
+     "n": 60,
+     "unit": "day"
+    },
+    "term": {
+     "n": 5,
+     "unit": "year"
+    },
+    "renewable": true,
+    "permanentAfter": 5
+   },
+   {
+    "id": "podnikanie",
+    "name": "Prechodný pobyt na účel podnikania",
+    "for": "self-employed",
+    "apply": "either",
+    "work": "any",
+    "fee": {
+     "currency": "EUR",
+     "minor": 33000
+    },
+    "within": {
+     "n": 90,
+     "unit": "day"
+    },
+    "term": {
+     "n": 3,
+     "unit": "year"
+    },
+    "renewable": true,
+    "permanentAfter": 5
+   },
+   {
+    "id": "obcan-unie",
+    "name": "Pobyt občana Únie",
+    "for": "free movement",
+    "apply": "in country",
+    "work": "any",
+    "groups": [
+     "EU/EEA",
+     "CH"
+    ]
+   },
+   {
+    "id": "dlhodoby-pobyt",
+    "name": "Dlhodobý pobyt",
+    "for": "permanent",
+    "apply": "in country",
+    "work": "any"
+   }
+  ]
+ },
+ "SL": {
+  "routes": [
+   {
+    "id": "residence-permit",
+    "name": "Residence Permit for Non-Nationals (Biometric Residence Permit)",
+    "for": "general"
+   }
+  ]
+ },
+ "SM": {
+  "routes": [
+   {
+    "id": "lavoro-temporaneo",
+    "name": "Permesso di soggiorno per motivi di lavoro (temporaneo)",
+    "for": "work",
+    "renewable": true
+   },
+   {
+    "id": "imprenditoriale",
+    "name": "Permesso di soggiorno per motivi imprenditoriali",
+    "for": "self-employed"
+   }
+  ]
+ },
+ "SN": {
+  "routes": [
+   {
+    "id": "carte-d-identite-d-etranger",
+    "name": "Carte d'identité d'étranger",
+    "for": "general",
+    "apply": "in country",
+    "fee": {
+     "currency": "XOF",
+     "minor": 15000
+    }
+   }
+  ]
+ },
+ "SO": {
+  "routes": [
+   {
+    "id": "work-residence",
+    "name": "Residence permit (work-based residency)",
+    "for": "work",
+    "renewable": true
+   },
+   {
+    "id": "permanent-residence",
+    "name": "Permanent residence permit",
+    "for": "permanent"
+   }
+  ]
+ },
+ "SR": {
+  "routes": [
+   {
+    "id": "werkvergunning",
+    "name": "Werkvergunning (Wet Werkvergunning Vreemdelingen)",
+    "for": "work",
+    "apply": "in country",
+    "work": "sponsor",
+    "fee": {
+     "currency": "USD",
+     "minor": 10000
+    },
+    "within": {
+     "n": 60,
+     "unit": "day"
+    }
+   }
+  ]
+ },
+ "SS": {
+  "routes": [
+   {
+    "id": "temporary-residence-permit",
+    "name": "Temporary Residence Permit",
+    "for": "general",
+    "renewable": true
+   },
+   {
+    "id": "ordinary-residence-permit",
+    "name": "Ordinary Residence Permit",
+    "for": "general",
+    "term": {
+     "n": 2,
+     "unit": "year"
+    },
+    "renewable": true
+   },
+   {
+    "id": "special-residence-permit",
+    "name": "Special Residence Permit",
+    "for": "general",
+    "term": {
+     "n": 5,
+     "unit": "year"
+    },
+    "renewable": true
+   }
+  ]
+ },
+ "ST": {
+  "routes": [
+   {
+    "id": "actividade-subordinada",
+    "name": "Visto para fixação de residência: Actividade Profissional Subordinada",
+    "for": "work",
+    "within": {
+     "n": 7,
+     "unit": "working day"
+    }
+   },
+   {
+    "id": "actividade-independente",
+    "name": "Visto para fixação de residência: Actividade Profissional Independente",
+    "for": "self-employed",
+    "within": {
+     "n": 7,
+     "unit": "working day"
+    }
+   },
+   {
+    "id": "reagrupamento-familiar",
+    "name": "Visto para fixação de residência: Reagrupamento Familiar",
+    "for": "family",
+    "within": {
+     "n": 7,
+     "unit": "working day"
+    }
+   },
+   {
+    "id": "estudo",
+    "name": "Visto para fixação de residência: Estudo, Intercâmbio de Estudantes, Estágio Profissional",
+    "for": "study",
+    "within": {
+     "n": 7,
+     "unit": "working day"
+    }
+   }
+  ]
+ },
+ "SV": {
+  "routes": [
+   {
+    "id": "pei-artistas",
+    "name": "Permiso Especial de Ingreso para artistas extranjeros (PEI Artistas)",
+    "for": "talent",
+    "apply": "either",
+    "work": "sponsor",
+    "fee": {
+     "currency": "USD",
+     "minor": 10000
+    },
+    "within": {
+     "n": 5,
+     "unit": "working day"
+    }
+   }
+  ]
+ },
+ "SX": {
+  "routes": [
+   {
+    "id": "tijdelijk-verblijf",
+    "name": "Vergunning tot tijdelijk verblijf",
+    "for": "work",
+    "apply": "either",
+    "work": "sponsor"
+   },
+   {
+    "id": "nederlanders",
+    "name": "Toelating van rechtswege (Nederlanders)",
+    "for": "free movement",
+    "apply": "in country",
+    "work": "any",
+    "groups": [
+     "NL"
+    ]
+   },
+   {
+    "id": "verblijf",
+    "name": "Vergunning tot verblijf",
+    "for": "permanent",
+    "apply": "either",
+    "work": "any"
+   }
+  ]
+ },
+ "SZ": {
+  "routes": [
+   {
+    "id": "trp-work",
+    "name": "Temporary Residence Permit",
+    "for": "work"
+   },
+   {
+    "id": "trp-study",
+    "name": "Temporary Residence Permit",
+    "for": "study"
+   },
+   {
+    "id": "permanent",
+    "name": "Permanent residency",
+    "for": "permanent"
+   }
+  ]
+ },
+ "TC": {
+  "routes": [
+   {
+    "id": "work-permit-employed",
+    "name": "Work Permit (Employed)",
+    "for": "work",
+    "apply": "either",
+    "work": "sponsor",
+    "within": {
+     "n": 25,
+     "unit": "day"
+    },
+    "renewable": true
+   }
+  ]
+ },
+ "TF": {
+  "none": true
+ },
+ "TG": {
+  "routes": [
+   {
+    "id": "temporaire",
+    "name": "Carte de séjour temporaire",
+    "for": "work",
+    "apply": "in country",
+    "fee": {
+     "currency": "XOF",
+     "minor": 200000
+    },
+    "within": {
+     "n": 45,
+     "unit": "day"
+    },
+    "term": {
+     "n": 1,
+     "unit": "year"
+    },
+    "renewable": true
+   },
+   {
+    "id": "ordinaire",
+    "name": "Carte de séjour ordinaire",
+    "for": "work",
+    "apply": "in country",
+    "fee": {
+     "currency": "XOF",
+     "minor": 500000
+    },
+    "within": {
+     "n": 45,
+     "unit": "day"
+    },
+    "term": {
+     "n": 3,
+     "unit": "year"
+    },
+    "renewable": true
+   },
+   {
+    "id": "privilegiee",
+    "name": "Carte de séjour privilégiée",
+    "for": "work",
+    "apply": "in country",
+    "fee": {
+     "currency": "XOF",
+     "minor": 800000
+    },
+    "within": {
+     "n": 45,
+     "unit": "day"
+    },
+    "term": {
+     "n": 5,
+     "unit": "year"
+    },
+    "renewable": true
+   },
+   {
+    "id": "temporaire-etudiant",
+    "name": "Carte de séjour temporaire pour étudiant",
+    "for": "study",
+    "apply": "in country",
+    "fee": {
+     "currency": "XOF",
+     "minor": 100000
+    },
+    "within": {
+     "n": 45,
+     "unit": "day"
+    },
+    "term": {
+     "n": 1,
+     "unit": "year"
+    },
+    "renewable": true
+   },
+   {
+    "id": "ordinaire-etudiant",
+    "name": "Carte de séjour ordinaire pour étudiant",
+    "for": "study",
+    "apply": "in country",
+    "fee": {
+     "currency": "XOF",
+     "minor": 250000
+    },
+    "within": {
+     "n": 45,
+     "unit": "day"
+    },
+    "term": {
+     "n": 3,
+     "unit": "year"
+    },
+    "renewable": true
+   }
+  ]
+ },
+ "TH": {
+  "routes": [
+   {
+    "id": "ltr-highly-skilled",
+    "name": "Long-Term Resident (LTR) Visa: Highly-skilled Professionals",
+    "for": "talent",
+    "apply": "either",
+    "fee": {
+     "currency": "THB",
+     "minor": 5000000
+    },
+    "term": {
+     "n": 5,
+     "unit": "year"
+    },
+    "renewable": true
+   },
+   {
+    "id": "ltr-work-from-thailand",
+    "name": "Long-Term Resident (LTR) Visa: Work-from-Thailand Professionals",
+    "for": "work",
+    "apply": "either",
+    "fee": {
+     "currency": "THB",
+     "minor": 5000000
+    },
+    "term": {
+     "n": 5,
+     "unit": "year"
+    },
+    "renewable": true
+   },
+   {
+    "id": "ltr-wealthy-global-citizen",
+    "name": "Long-Term Resident (LTR) Visa: Wealthy Global Citizens",
+    "for": "means",
+    "apply": "either",
+    "fee": {
+     "currency": "THB",
+     "minor": 5000000
+    },
+    "term": {
+     "n": 5,
+     "unit": "year"
+    },
+    "renewable": true
+   },
+   {
+    "id": "ltr-wealthy-pensioner",
+    "name": "Long-Term Resident (LTR) Visa: Wealthy Pensioners",
+    "for": "retirement",
+    "apply": "either",
+    "fee": {
+     "currency": "THB",
+     "minor": 5000000
+    },
+    "term": {
+     "n": 5,
+     "unit": "year"
+    },
+    "renewable": true
+   },
+   {
+    "id": "ltr-dependants",
+    "name": "Long-Term Resident (LTR) Visa: Spouses and dependents",
+    "for": "family",
+    "apply": "either",
+    "fee": {
+     "currency": "THB",
+     "minor": 5000000
+    },
+    "term": {
+     "n": 5,
+     "unit": "year"
+    },
+    "renewable": true
+   }
+  ]
+ },
+ "TJ": {
+  "routes": [
+   {
+    "id": "sanadi-zist",
+    "name": "Санади зист",
+    "for": "general",
+    "renewable": true
+   }
+  ]
+ },
+ "TL": {
+  "routes": [
+   {
+    "id": "temporary-stay-visa",
+    "name": "Temporary Stay Visa",
+    "for": "talent",
+    "apply": "either",
+    "work": "sponsor",
+    "fee": {
+     "currency": "USD",
+     "minor": 5000
+    },
+    "within": {
+     "n": 30,
+     "unit": "day"
+    },
+    "term": {
+     "n": 1,
+     "unit": "year"
+    },
+    "renewable": true
+   },
+   {
+    "id": "working-visa",
+    "name": "Working Visa",
+    "for": "work",
+    "apply": "either",
+    "work": "sponsor",
+    "fee": {
+     "currency": "USD",
+     "minor": 10000
+    },
+    "term": {
+     "n": 1,
+     "unit": "year"
+    },
+    "renewable": true
+   },
+   {
+    "id": "temporary-resident-permit",
+    "name": "Temporary Resident Permit (Type A)",
+    "for": "work",
+    "apply": "in country",
+    "work": "any",
+    "fee": {
+     "currency": "USD",
+     "minor": 10000
+    },
+    "term": {
+     "n": 2,
+     "unit": "year"
+    },
+    "renewable": true,
+    "permanentAfter": 6
+   },
+   {
+    "id": "permanent-resident-permit",
+    "name": "Permanent Resident Permit",
+    "for": "permanent",
+    "apply": "in country",
+    "work": "any",
+    "fee": {
+     "currency": "USD",
+     "minor": 15000
+    }
+   }
+  ]
+ },
+ "TM": {
+  "routes": [
+   {
+    "id": "rugsatnama-is",
+    "name": "Разрешение на работу",
+    "for": "work",
+    "within": {
+     "n": 30,
+     "unit": "day"
+    },
+    "renewable": true
+   },
+   {
+    "id": "vid-na-zhitelstvo",
+    "name": "Вид на жительство",
+    "for": "general",
+    "apply": "in country",
+    "fee": {
+     "currency": "TMT",
+     "minor": 4500
+    },
+    "term": {
+     "n": 5,
+     "unit": "year"
+    },
+    "renewable": true
+   }
+  ]
+ },
+ "TN": {
+  "routes": [
+   {
+    "id": "residencia-trabajo",
+    "name": "Permiso de residencia (contrato de trabajo)",
+    "for": "work",
+    "apply": "in country"
+   },
+   {
+    "id": "residencia-ingresos",
+    "name": "Permiso de residencia (otras fuentes de ingresos)",
+    "for": "means",
+    "apply": "in country"
+   },
+   {
+    "id": "residencia-estudiante",
+    "name": "Permiso de residencia (estudiantes)",
+    "for": "study",
+    "apply": "in country"
+   }
+  ]
+ },
+ "TO": {
+  "routes": [
+   {
+    "id": "employment-visa",
+    "name": "Employment Visa",
+    "for": "work",
+    "fee": {
+     "currency": "USD",
+     "minor": 23000
+    },
+    "within": {
+     "n": 1,
+     "unit": "month"
+    },
+    "renewable": true
+   },
+   {
+    "id": "business-visa",
+    "name": "Business Visa",
+    "for": "self-employed",
+    "apply": "abroad",
+    "fee": {
+     "currency": "USD",
+     "minor": 34500
+    },
+    "within": {
+     "n": 1,
+     "unit": "month"
+    },
+    "renewable": true
+   },
+   {
+    "id": "residency-visa",
+    "name": "Residency Visa",
+    "for": "family",
+    "fee": {
+     "currency": "USD",
+     "minor": 11500
+    }
+   },
+   {
+    "id": "assured-income-visa",
+    "name": "Assured Income Visa",
+    "for": "retirement",
+    "work": "none",
+    "fee": {
+     "currency": "USD",
+     "minor": 34500
+    },
+    "renewable": true
+   },
+   {
+    "id": "student-visa",
+    "name": "Student Visa",
+    "for": "study",
+    "fee": {
+     "currency": "USD",
+     "minor": 5750
+    },
+    "within": {
+     "n": 1,
+     "unit": "month"
+    },
+    "renewable": true
+   }
+  ]
+ },
+ "TR": {
+  "routes": [
+   {
+    "id": "turkuaz-kart",
+    "name": "Turkuaz Kart",
+    "for": "talent",
+    "apply": "either",
+    "work": "any"
+   },
+   {
+    "id": "sureli",
+    "name": "Süreli Çalışma İzni",
+    "for": "work",
+    "apply": "either",
+    "work": "sponsor",
+    "fee": {
+     "currency": "TRY",
+     "minor": 1257490
+    },
+    "term": {
+     "n": 1,
+     "unit": "year"
+    },
+    "renewable": true,
+    "permanentAfter": 8
+   },
+   {
+    "id": "bagimsiz",
+    "name": "Bağımsız Çalışma İzni",
+    "for": "self-employed",
+    "apply": "either",
+    "work": "any",
+    "fee": {
+     "currency": "TRY",
+     "minor": 12580220
+    }
+   },
+   {
+    "id": "suresiz",
+    "name": "Süresiz Çalışma İzni",
+    "for": "permanent",
+    "apply": "in country",
+    "work": "any",
+    "fee": {
+     "currency": "TRY",
+     "minor": 12580220
+    }
+   }
+  ]
+ },
+ "TT": {
+  "routes": [
+   {
+    "id": "work-permit",
+    "name": "Work Permit",
+    "for": "work",
+    "apply": "either",
+    "work": "sponsor",
+    "renewable": true
+   }
+  ]
+ },
+ "TW": {
+  "routes": [
+   {
+    "id": "employed-residence",
+    "name": "外僑居留（受聘僱）",
+    "for": "work",
+    "apply": "in country",
+    "work": "sponsor",
+    "renewable": true,
+    "counts": true,
+    "permanentAfter": 5
+   },
+   {
+    "id": "apr",
+    "name": "外僑永久居留",
+    "for": "permanent",
+    "apply": "in country",
+    "work": "any",
+    "counts": true
+   },
+   {
+    "id": "spouse",
+    "name": "外僑居留（依親：配偶）",
+    "for": "family",
+    "apply": "in country",
+    "work": "sponsor",
+    "renewable": true,
+    "counts": true,
+    "permanentAfter": 5
+   }
+  ]
+ },
+ "TZ": {
+  "routes": [
+   {
+    "id": "class-b-1",
+    "name": "Residence Permit Class B (B-1, Specific employment by specific employer)",
+    "for": "work",
+    "apply": "abroad",
+    "work": "sponsor",
+    "fee": {
+     "currency": "USD",
+     "minor": 200000
+    },
+    "renewable": true
+   },
+   {
+    "id": "class-b-3",
+    "name": "Residence Permit Class B (B-3, Specific employment by specific employer, Short Term Residence Permit)",
+    "for": "work",
+    "apply": "abroad",
+    "work": "sponsor",
+    "fee": {
+     "currency": "USD",
+     "minor": 50000
+    }
+   }
+  ]
+ },
+ "UA": {
+  "routes": [
+   {
+    "id": "tymchasove-prozhyvannya-pratsevlashtuvannya",
+    "name": "Посвідка на тимчасове проживання (працевлаштування)",
+    "for": "work",
+    "apply": "in country",
+    "work": "sponsor",
+    "fee": {
+     "currency": "UAH",
+     "minor": 114000
+    },
+    "within": {
+     "n": 15,
+     "unit": "working day"
+    }
+   },
+   {
+    "id": "dozvil-na-immihratsiiu-kultura",
+    "name": "Дозвіл на імміграцію (діячі науки та культури)",
+    "for": "permanent",
+    "apply": "either",
+    "work": "any",
+    "fee": {
+     "currency": "UAH",
+     "minor": 166400
+    },
+    "within": {
+     "n": 12,
+     "unit": "month"
+    }
+   }
+  ]
+ },
+ "UG": {
+  "routes": [
+   {
+    "id": "special-pass",
+    "name": "Special Pass",
+    "for": "work",
+    "apply": "either",
+    "work": "sponsor",
+    "fee": {
+     "currency": "USD",
+     "minor": 40000
+    },
+    "term": {
+     "n": 3,
+     "unit": "month"
+    }
+   },
+   {
+    "id": "class-g2",
+    "name": "Entry Permit Class G2",
+    "for": "work",
+    "apply": "either",
+    "work": "sponsor",
+    "fee": {
+     "currency": "USD",
+     "minor": 250000
+    },
+    "term": {
+     "n": 12,
+     "unit": "month"
+    },
+    "permanentAfter": 10
+   },
+   {
+    "id": "certificate-residence-long-stay",
+    "name": "Certificate of Residence (Due to Long stay)",
+    "for": "permanent",
+    "apply": "in country",
+    "work": "any",
+    "fee": {
+     "currency": "USD",
+     "minor": 300000
+    }
+   }
+  ]
+ },
+ "US": {
+  "routes": [
+   {
+    "id": "o1",
+    "name": "O-1 nonimmigrant (extraordinary ability in the arts)",
+    "for": "talent",
+    "apply": "abroad",
+    "work": "sponsor",
+    "fee": {
+     "currency": "USD",
+     "minor": 105500
+    },
+    "term": {
+     "n": 3,
+     "unit": "year"
+    },
+    "renewable": true
+   },
+   {
+    "id": "p1",
+    "name": "P-1 nonimmigrant (entertainment group)",
+    "for": "work",
+    "apply": "abroad",
+    "work": "sponsor",
+    "fee": {
+     "currency": "USD",
+     "minor": 101500
+    },
+    "term": {
+     "n": 1,
+     "unit": "year"
+    },
+    "renewable": true
+   },
+   {
+    "id": "lpr",
+    "name": "Lawful permanent residence",
+    "for": "permanent",
+    "apply": "either",
+    "work": "any",
+    "fee": {
+     "currency": "USD",
+     "minor": 144000
+    },
+    "counts": true
+   }
+  ]
+ },
+ "UY": {
+  "routes": [
+   {
+    "id": "mercosur",
+    "name": "Residencia permanente – nacionales de los Estados Partes del Mercosur y Estados Asociados (art. 33 lit. B)",
+    "for": "free movement",
+    "apply": "either",
+    "work": "any",
+    "within": {
+     "n": 90,
+     "unit": "working day"
+    },
+    "groups": [
+     "Mercosur"
+    ]
+   },
+   {
+    "id": "artistas",
+    "name": "Residencia temporaria – Artistas (art. 34 lit. H)",
+    "for": "work",
+    "apply": "either",
+    "work": "any"
+   }
+  ]
+ },
+ "UZ": {
+  "routes": [
+   {
+    "id": "doimiy-yashash",
+    "name": "Доимий яшашга рухсатнома",
+    "for": "permanent",
+    "apply": "in country"
+   },
+   {
+    "id": "yashash-guvohnomasi-kochmas-mulk",
+    "name": "Яшаш гувоҳномаси (кўчмас мулк сотиб олиш орқали йирик инвестиция киритган чет эл фуқаролари)",
+    "for": "means"
+   }
+  ]
+ },
+ "VA": {
+  "routes": [
+   {
+    "id": "carica-o-servizio",
+    "name": "Autorizzazione a risiedere (in ragione della carica o del servizio)",
+    "for": "work"
+   },
+   {
+    "id": "tempo-determinato-famiglia",
+    "name": "Autorizzazione a risiedere a tempo determinato (persone di famiglia)",
+    "for": "family"
+   }
+  ]
+ },
+ "VC": {
+  "routes": [
+   {
+    "id": "work-permit",
+    "name": "Work Permit",
+    "for": "work"
+   },
+   {
+    "id": "temporary-residence",
+    "name": "Temporary Residence",
+    "for": "general"
+   },
+   {
+    "id": "permanent-residence",
+    "name": "Permanent Residence",
+    "for": "permanent",
+    "fee": {
+     "currency": "XCD",
+     "minor": 320000
+    }
+   }
+  ]
+ },
+ "VE": {
+  "routes": [
+   {
+    "id": "tr-l",
+    "name": "Visa de Transeúnte Laboral (TR-L)",
+    "for": "work",
+    "renewable": true
+   },
+   {
+    "id": "tr-r",
+    "name": "Visa de Transeúnte Rentista (TR-R)",
+    "for": "means",
+    "renewable": true
+   },
+   {
+    "id": "tr-f-v",
+    "name": "Visa de Transeúnte Familiar Venezolano (TR-F-V)",
+    "for": "family",
+    "renewable": true
+   }
+  ]
+ },
+ "VG": {
+  "routes": [
+   {
+    "id": "work-permit",
+    "name": "Work Permit",
+    "for": "work",
+    "apply": "either",
+    "work": "sponsor",
+    "within": {
+     "n": 6,
+     "unit": "week"
+    },
+    "term": {
+     "n": 3,
+     "unit": "year"
+    },
+    "renewable": true,
+    "permanentAfter": 10
+   },
+   {
+    "id": "residence-status",
+    "name": "Residence Status",
+    "for": "permanent",
+    "apply": "in country",
+    "work": "any",
+    "fee": {
+     "currency": "USD",
+     "minor": 25000
+    }
+   }
+  ]
+ },
+ "VI": {
+  "issuedBy": "US"
+ },
+ "VN": {
+  "routes": [
+   {
+    "id": "the-tam-tru-ld",
+    "name": "Thẻ tạm trú (ký hiệu LĐ1, LĐ2)",
+    "for": "work",
+    "apply": "in country",
+    "fee": {
+     "currency": "USD",
+     "minor": 14500
+    },
+    "within": {
+     "n": 5,
+     "unit": "working day"
+    },
+    "renewable": true
+   },
+   {
+    "id": "the-thuong-tru",
+    "name": "Thẻ thường trú",
+    "for": "permanent",
+    "fee": {
+     "currency": "USD",
+     "minor": 10000
+    },
+    "within": {
+     "n": 6,
+     "unit": "month"
+    }
+   }
+  ]
+ },
+ "VU": {
+  "routes": [
+   {
+    "id": "employment",
+    "name": "Employment visa",
+    "for": "work",
+    "work": "sponsor",
+    "fee": {
+     "currency": "VUV",
+     "minor": 257500
+    },
+    "term": {
+     "n": 12,
+     "unit": "month"
+    }
+   },
+   {
+    "id": "short-term-employment",
+    "name": "Short-term employment visa",
+    "for": "work",
+    "work": "sponsor",
+    "fee": {
+     "currency": "VUV",
+     "minor": 51500
+    }
+   },
+   {
+    "id": "permanent-residency-131",
+    "name": "Permanent residency visa (Part A, subclass 131)",
+    "for": "permanent"
+   }
+  ]
+ },
+ "WF": {
+  "routes": [
+   {
+    "id": "visa-long-sejour-travail",
+    "name": "Visa de long séjour avec autorisation de travail",
+    "for": "work",
+    "apply": "abroad",
+    "work": "sponsor"
+   }
+  ]
+ },
+ "WS": {
+  "routes": [
+   {
+    "id": "tr-employment-off-island",
+    "name": "Temporary Resident Permit for Employment (main applicant, off island)",
+    "for": "work",
+    "apply": "abroad",
+    "work": "sponsor",
+    "fee": {
+     "currency": "WST",
+     "minor": 90000
+    },
+    "within": {
+     "n": 10,
+     "unit": "working day"
+    }
+   },
+   {
+    "id": "tr-employment-in-country",
+    "name": "Temporary Resident Permit for Employment (main applicant, in country)",
+    "for": "work",
+    "apply": "in country",
+    "work": "sponsor",
+    "fee": {
+     "currency": "WST",
+     "minor": 180000
+    },
+    "within": {
+     "n": 10,
+     "unit": "working day"
+    }
+   },
+   {
+    "id": "tr-business-off-island",
+    "name": "Temporary Resident Permit for conduct of business (main applicant, off island)",
+    "for": "self-employed",
+    "apply": "abroad",
+    "fee": {
+     "currency": "WST",
+     "minor": 90000
+    },
+    "within": {
+     "n": 10,
+     "unit": "working day"
+    }
+   },
+   {
+    "id": "permanent-residence",
+    "name": "Permanent Residence permit (adult)",
+    "for": "permanent",
+    "fee": {
+     "currency": "WST",
+     "minor": 320000
+    },
+    "within": {
+     "n": 10,
+     "unit": "working day"
+    }
+   }
+  ]
+ },
+ "XK": {
+  "routes": [
+   {
+    "id": "perkohshem-pune",
+    "name": "Lejeqëndrim i përkohshëm për qëllim pune",
+    "for": "work",
+    "apply": "in country",
+    "work": "sponsor",
+    "fee": {
+     "currency": "EUR",
+     "minor": 5000
+    },
+    "renewable": true,
+    "permanentAfter": 5
+   },
+   {
+    "id": "perhershem",
+    "name": "Lejeqëndrim i përhershëm",
+    "for": "permanent",
+    "apply": "in country",
+    "work": "any",
+    "fee": {
+     "currency": "EUR",
+     "minor": 10000
+    }
+   }
+  ]
+ },
+ "YE": {
+  "routes": [
+   {
+    "id": "iqama-khassa",
+    "name": "إقامة خاصة (Special residence)",
+    "for": "talent",
+    "term": {
+     "n": 10,
+     "unit": "year"
+    },
+    "renewable": true
+   },
+   {
+    "id": "iqama-thalath-sanawat",
+    "name": "إقامة لمدة ثلاث سنوات (Three-year residence)",
+    "for": "work",
+    "term": {
+     "n": 3,
+     "unit": "year"
+    },
+    "renewable": true
+   },
+   {
+    "id": "iqama-muaqqata",
+    "name": "إقامة مؤقتة (Temporary residence)",
+    "for": "general",
+    "renewable": true
+   }
+  ]
+ },
+ "YT": {
+  "issuedBy": "FR"
+ },
+ "ZA": {
+  "routes": [
+   {
+    "id": "general-work",
+    "name": "General Work Visa",
+    "for": "work",
+    "apply": "either",
+    "work": "sponsor",
+    "within": {
+     "n": 4,
+     "unit": "week"
+    },
+    "term": {
+     "n": 5,
+     "unit": "year"
+    },
+    "permanentAfter": 5
+   },
+   {
+    "id": "pr-worker",
+    "name": "Permanent Residence – Worker (section 26(a))",
+    "for": "permanent",
+    "apply": "in country",
+    "work": "any",
+    "within": {
+     "n": 8,
+     "unit": "month"
+    }
+   }
+  ]
+ },
+ "ZM": {
+  "routes": [
+   {
+    "id": "employment",
+    "name": "Employment Permit",
+    "for": "work",
+    "apply": "abroad",
+    "work": "sponsor",
+    "fee": {
+     "currency": "ZMW",
+     "minor": 2400000
+    },
+    "term": {
+     "n": 10,
+     "unit": "year"
+    },
+    "renewable": true,
+    "permanentAfter": 10
+   },
+   {
+    "id": "residence",
+    "name": "Residence Permit",
+    "for": "permanent",
+    "apply": "in country",
+    "work": "any",
+    "fee": {
+     "currency": "ZMW",
+     "minor": 2000000
+    }
+   }
+  ]
+ },
+ "ZW": {
+  "routes": [
+   {
+    "id": "temporary-employment-permit",
+    "name": "Temporary Employment Permit",
+    "for": "work",
+    "fee": {
+     "currency": "USD",
+     "minor": 50000
+    },
+    "renewable": true
+   },
+   {
+    "id": "permanent-residence-permit",
+    "name": "Permanent residence permit",
+    "for": "permanent",
+    "fee": {
+     "currency": "USD",
+     "minor": 50000
+    }
+   }
+  ]
+ }
+}

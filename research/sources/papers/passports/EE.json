@@ -1,0 +1,53 @@
+{
+ "country": "EE",
+ "office": "the Police and Border Guard Board (Politsei- ja Piirivalveamet)",
+ "currency": "EUR",
+ "routes": [
+  {"id": "portal", "where": "home", "speed": "standard", "within": {"n": 30, "unit": "day"}, "label": "self-service portal: at most 30 days from acceptance"},
+  {"id": "office", "where": "home", "speed": "standard", "within": {"n": 30, "unit": "day"}, "label": "service office: at most 30 days from acceptance"},
+  {"id": "expedited", "where": "home", "speed": "urgent", "within": {"n": 1, "unit": "working day"}, "label": "expedited: at most 1 working day"}
+ ],
+ "passports": [
+  {"for": "adult", "from": 18, "validYears": 10, "pay": {"portal": "50", "office": "60", "expedited": "250"}},
+  {"for": "child", "under": 18, "validYears": 5, "pay": {"portal": "20", "office": "25", "expedited": null}}
+ ],
+ "note": "Validity is 'up to' 10 years (adult) and 5 (child). Ordering a document to a foreign representation adds 20 euros. From retirement age the fees are EUR 20 (portal) and 25 (office); the game charges the adult fee until the retirement age is read. A child's expedited fee isn't given.",
+ "sources": [
+  {
+   "url": "https://www.politsei.ee/en/instructions/estonian-passport-for-an-adult",
+   "title": "Police and Border Guard Board (politsei.ee), Estonian passport for an adult",
+   "read": "2026-10-28",
+   "said": "The Estonian citizen's passport has a term of validity of up to 10 years."
+  },
+  {
+   "url": "https://www.politsei.ee/en/instructions/estonian-passport-for-an-adult/applying-at-the-self-service-portal",
+   "title": "Police and Border Guard Board (politsei.ee), Estonian passport for an adult: Applying at the self-service portal",
+   "read": "2026-10-28",
+   "said": "State fees Passport The state fee for a passport is €50. The state fee for a passport is €20 for people who have reached the general retirement age applicable in Estonia ... The state fee for applying for a passport on an expedited basis is €250. Ordering a document to a foreign representation will cost €20 in addition to the state fee."
+  },
+  {
+   "url": "https://www.politsei.ee/en/instructions/estonian-passport-for-an-adult/applying-for-a-passport-at-a-service-office",
+   "title": "Police and Border Guard Board (politsei.ee), Estonian passport for an adult: Applying for a passport at a service office",
+   "read": "2026-10-28",
+   "said": "After your application has been accepted, it will take a maximum of 30 days to prepare your passport under ordinary procedure ... It will take a maximum of 1 working days to prepare a passport applied for under expedited procedure ... The state fee for a passport is €60. The state fee for a passport for those who have reached retirement age in Estonia is €25 ... The state fee if you are applying for the passport under expedited procedure is €250."
+  },
+  {
+   "url": "https://www.politsei.ee/en/instructions/estonian-passport-for-a-child",
+   "title": "Police and Border Guard Board (politsei.ee), Estonian passport for a child",
+   "read": "2026-10-28",
+   "said": "The Estonian citizen's passport has a term of validity of up to 5 years."
+  },
+  {
+   "url": "https://www.politsei.ee/en/instructions/estonian-passport-for-a-child/applying-at-the-self-service-portal",
+   "title": "Police and Border Guard Board (politsei.ee), Estonian passport for a child: Applying at the self-service portal",
+   "read": "2026-10-28",
+   "said": "State fees Passport The state fee for a passport is €20."
+  },
+  {
+   "url": "https://www.politsei.ee/en/instructions/estonian-passport-for-a-child/applying-for-a-passport-at-a-service-office",
+   "title": "Police and Border Guard Board (politsei.ee), Estonian passport for a child: Applying for a passport at a service office",
+   "read": "2026-10-28",
+   "said": "State fees Estonian citizen's passport The state fee for a passport for a child under the age of 18 is €25. The state fee for a passport for those 18 and over is €60."
+  }
+ ]
+}

@@ -1,0 +1,29 @@
+{
+ "country": "HR",
+ "office": "the police administrations and police stations that carry out administrative work",
+ "currency": "EUR",
+ "routes": [
+  {"id": "regular", "where": "home", "speed": "standard", "within": {"n": 30, "unit": "day"}, "label": "regular procedure: within 30 days"},
+  {"id": "delivered", "where": "home", "speed": "standard", "within": {"n": 30, "unit": "day"}, "label": "regular procedure, delivered to the address"},
+  {"id": "urgent-zagreb", "where": "home", "speed": "urgent", "within": {"n": 48, "unit": "hour"}, "label": "urgent, at the Zagreb police administration: within 48 hours"},
+  {"id": "urgent", "where": "home", "speed": "urgent", "within": {"n": 3, "unit": "working day"}, "label": "urgent, at other police administrations or stations: within 3 working days"}
+ ],
+ "passports": [
+  {"for": "any", "validYears": null, "pay": {"regular": "42.47", "delivered": "46.45", "urgent-zagreb": "54.42", "urgent": "61.72"}}
+ ],
+ "note": "Paid into the state budget. Validity is a lead: the Ministry of Foreign Affairs' consular pages give five years under 21 (one page) or under 27 (a 2009 page) and ten years above, both older than the law's later amendments.",
+ "sources": [
+  {
+   "url": "https://gov.hr/hr/izdavanje-putovnice-u-policijskoj-upravi-ili-postaji/1890",
+   "title": "gov.hr, Izdavanje putovnice u policijskoj upravi ili postaji",
+   "read": "2026-10-28",
+   "said": "dokaz o uplati u državni proračun: iznosa od 42,47 EUR za izdavanje biometrijske putovnice u redovnom postupku iznosa od 46,45 EUR za izdavanje biometrijske putovnice u redovnom postupku koja se na zahtjev podnositelja zahtjeva za izdavanje putovnice dostavlja na adresu prebivališta ili boravišta iznosa od 54,42 EUR za izdavanje biometrijske putovnice u žurnom postupku za koju se zahtjev podnosi u Policijskoj upravi zagrebačkoj, odnosno iznosa od 61,72 EUR za izdavanje biometrijske putovnice u žurnom postupku, za koju se zahtjev podnosi u ostalim policijskim upravama ili postajama u njihovom sastavu ... Putovnica za koju je zahtjev za izdavanje podnesen u žurnom postupku u Policijskoj upravi zagrebačkoj, izdaje se u roku od 48 sati u navedenoj policijskoj upravi. ... izdaje se u roku od tri radna dana od dana podnošenja zahtjeva."
+  },
+  {
+   "url": "https://mup.gov.hr/putovnica-330/330",
+   "title": "Ministarstvo unutarnjih poslova Republike Hrvatske (mup.gov.hr), Putovnica",
+   "read": "2026-10-28",
+   "said": "Rok za izdavanje putovnice u redovnom postupku je 30 dana od dana zaprimanja zahtjeva. Zahtjev se podnosi u policijskoj upravi ili policijskoj postaji koja obavlja i upravne poslove."
+  }
+ ]
+}

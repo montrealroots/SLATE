@@ -1,6 +1,6 @@
 import { describe, expect, it } from 'vitest';
 import { daysFromCivil, daysInMonth, SECONDS_PER_DAY } from '../../../src/core/time/calendar.ts';
-import { COUNTRY_CODES, findPlace, placesOf } from '../../../src/world/gazetteer/gazetteer.ts';
+import { findPlace } from '../../../src/world/gazetteer/gazetteer.ts';
 import { isLine, t } from '../../../src/core/text/text.ts';
 import { draws, seedFromText } from '../../../src/core/rng/rng.ts';
 import { hourAngleArg, julianCentury, julianDay, sunDeclination } from '../../../src/core/time/sun.ts';
@@ -94,6 +94,15 @@ describe('the nearest station', () => {
     expect(nearestIn([station({ latitude: 10 })], 50, 5).station.latitude).toBe(10);
     expect(nearestIn([station({ latitude: 60 })], 50, 5).station.latitude).toBe(60);
   });
+  it('stops searching once a station is further in latitude alone than the nearest found', () => {
+    // A thousand stations a tenth of a degree apart on one meridian: the nearest to a town among them is found by
+    // looking at a few around its latitude, not all of them (the rule over every place of the map stands on it).
+    const stations = Array.from({ length: 1000 }, (_, i) => station({ id: String(i), latitude: -50 + i / 10, longitude: 0 }));
+    let read = 0;
+    const pool = new Proxy(stations, { get: (target, key, receiver) => (typeof key === 'string' && /^\d+$/.test(key) && (read += 1), Reflect.get(target, key, receiver)) });
+    expect(nearestIn(pool, 0.04, 0).station.id).toBe('500');
+    expect(read).toBeLessThan(20);
+  });
   it('comes from the town\'s own country, 1991-2020 first, then 1961-1990, else borrowed from abroad', () => {
     const recent = station({ id: 'recent', country: 'FR', latitude: 40, period: '1991-2020', normals: { tmax: [1] } });
     const older = station({ id: 'older', country: 'FR', latitude: 45.1, period: '1961-1990', normals: { tmax: [1], tmin: [1] } });
@@ -103,8 +112,10 @@ describe('the nearest station', () => {
     expect([s.tmax.station.id, s.tmin.station.id, s.prcp.station.id, s.prcp.borrowed, s.tmax.borrowed]).toEqual(['recent', 'older', 'abroad', true, false]);
     expect(s.tmax.km).toBeCloseTo(distanceKm(45, 5, 40, 5), 9);
     // The pools are kept: asking again reads the same.
+    const pool = index.pools.get('FR|tmin');
     expect(sourcesFor({ country: 'FR', latitude: 45, longitude: 5 }, index).tmin.station.id).toBe('older');
     expect(index.pools.size).toBe(5);
+    expect(index.pools.get('FR|tmin')).toBe(pool);
   });
 });
 
@@ -296,19 +307,6 @@ describe('the weather at real towns', () => {
     expect(PARAMS.every((p) => vatican[p].borrowed && vatican[p].station.country === 'IT')).toBe(true);
     expect(aboutWeather(va, vatican)).toBe(t(BORROWED_LINE, { country: 'Vatican', place: vatican.wet.station.town ?? vatican.wet.station.name, placeCountry: 'Italy' }));
   });
-  it('at every place on the map', async () => {
-    const index = indexStations(await loadStations());
-    let read = 0;
-    for (const code of COUNTRY_CODES) {
-      for (const p of await placesOf(code)) {
-        const s = sourcesFor(p, index);
-        const w = weatherOn(SEED, p, s, { year: 2026, month: 8, day: 24 });
-        expect(Number.isFinite(w.high) && Number.isFinite(w.low) && w.precipitation >= 0, p.id).toBe(true);
-        read += 1;
-      }
-    }
-    expect(read).toBe(171_654);
-  }, 300_000);
 });
 
 describe('the steps of a day', () => {

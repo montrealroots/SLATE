@@ -1,0 +1,24 @@
+{
+ "country": "EG",
+ "name": "الرقم القومي (national number)",
+ "issuer": "the Ministry of Interior (Civil Status Organization)",
+ "format": {
+  "length": 14,
+  "pattern": "^[23]\\d{2}(0[1-9]|1[0-2])(0[1-9]|[12]\\d|3[01])\\d{7}$"
+ },
+ "when": "application",
+ "who": [
+  "citizens"
+ ],
+ "note": "Telegraph Egypt's explainer (8 November 2024), read 2026-10-30: the national number on the identity card the Ministry of Interior issues has 14 digits, unique to each citizen; the first is the century of birth (2 for 1900-1999, 3 for 2000-2099), the next six the year, month and day of birth, the eighth and ninth the governorate's code (88 for those born abroad), the tenth to thirteenth the person's place in the sequence of those born that day; the fourteenth isn't explained there (other unofficial sources call it a check digit; its rule isn't known, so `check` is left out). The pattern holds the century, the date and fourteen digits. The Ministry's own statement of the form wasn't found: moi.gov.eg was tried before (the identity cards' research) without a fee or form page, and a search on 2026-10-30 found only news sites, forums and code libraries, so this file rests on the newspaper (marked secondary, as the identity cards' file does with the same paper). Read as given on application (the card, from 15 in the identity cards' file), to citizens. No fee, time or purpose stated here.",
+ "sources": [
+  {
+   "url": "https://www.egypttelegraph.com/89893",
+   "title": "Telegraph Egypt, ماذا تشير كل خانة في بطاقة الرقم القومي؟ (8 November 2024)",
+   "read": "2026-10-30",
+   "kind": "secondary",
+   "quotes": "https://www.moi.gov.eg/",
+   "said": "يحتوي على عدة معلومات يرمز لها كل رقم ضمن 14 رقما، لا يمكن تكرارهم بين شخص وآخر ... تصدر بطاقة الرقم القومي من وزارة الداخلية المصرية ... فإذا ما كان الرقم (3) مثلًا، فيشير إلى مواليد الألفينات من عام 2000 إلى عام 2099، أما إذا كان الرقم (2) فيشير إلى مواليد التسعينيات من عام 1900 إلى 1999 ... فيما تختص الخانتان الثامنة والتاسعة بكود المحافظة"
+  }
+ ]
+}

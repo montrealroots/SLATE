@@ -5,7 +5,6 @@ import { begin, commandIndex, defineKind, dispatch, type Life } from '../../../s
 import { daysFromCivil } from '../../../src/core/time/calendar.ts';
 import { instantOf } from '../../../src/core/time/time.ts';
 import { CLOCK_START, USNO_SEASONS, advance, computedStart, elapse, pause, play, reading, seasonAt, seasonStarts, type ClockSlice } from '../../../src/world/clock/clock.ts';
-import { COUNTRY_CODES, placesOf } from '../../../src/world/gazetteer/gazetteer.ts';
 import { readSeasons, serialize, OUTPUT } from '../../../tools/seasons/compile.ts';
 
 const ROOT = join(import.meta.dirname, '../../..');
@@ -158,16 +157,4 @@ describe('what the clock shows', () => {
     expect(r.local.date).toEqual({ year: 2026, month: 3, day: 8 });
     expect(r.daylight.sunrise).toBeDefined();
   });
-  it('at every place on the map', async () => {
-    let read = 0;
-    for (const code of COUNTRY_CODES) {
-      for (const p of await placesOf(code)) {
-        const r = reading(T0, p);
-        expect(r.local.date.year, p.id).toBe(2026);
-        expect(['spring', 'summer', 'autumn', 'winter']).toContain(r.season);
-        read += 1;
-      }
-    }
-    expect(read).toBe(171_654);
-  }, 180_000);
 });

@@ -1,0 +1,153 @@
+{
+ "country": "SK",
+ "cards": [
+  {
+   "bank": "ČSOB",
+   "minimum": {
+    "percent": "5",
+    "floor": "15"
+   },
+   "grace": 55,
+   "card": "Mastercard Gold",
+   "rate": {
+    "percent": "13.9",
+    "per": "year"
+   },
+   "fees": [
+    {
+     "fee": "9",
+     "per": "month",
+     "waived": [
+      {
+       "spend": "750"
+      }
+     ]
+    }
+   ]
+  },
+  {
+   "bank": "ČSOB",
+   "minimum": {
+    "percent": "5",
+    "floor": "15"
+   },
+   "grace": 55,
+   "card": "Mastercard Standard",
+   "rate": {
+    "percent": "19.5",
+    "per": "year"
+   },
+   "fees": [
+    {
+     "fee": "3.50",
+     "per": "month",
+     "waived": [
+      {
+       "spend": "250"
+      }
+     ]
+    }
+   ]
+  },
+  {
+   "bank": "ČSOB",
+   "minimum": {
+    "percent": "5",
+    "floor": "15"
+   },
+   "grace": 55,
+   "card": "Mastercard Basic",
+   "rate": {
+    "percent": "19.5",
+    "per": "year"
+   },
+   "fees": [
+    {
+     "fee": "2.50",
+     "per": "month"
+    }
+   ]
+  },
+  {
+   "bank": "Slovenská sporiteľňa",
+   "card": "Visa Classic",
+   "rate": {
+    "percent": "19.50",
+    "per": "year"
+   },
+   "fees": [
+    {
+     "fee": "2.50",
+     "per": "month",
+     "waived": [
+      {
+       "spend": "1000"
+      }
+     ]
+    }
+   ],
+   "minimum": {
+    "percent": "5",
+    "floor": "15"
+   },
+   "late": {
+    "fixed": "8"
+   },
+   "fx": "0"
+  },
+  {
+   "bank": "Slovenská sporiteľňa",
+   "card": "Visa Gold",
+   "rate": {
+    "percent": "13.50",
+    "per": "year"
+   },
+   "fees": [
+    {
+     "fee": "9.00",
+     "per": "month",
+     "waived": [
+      {
+       "spend": "1000"
+      }
+     ]
+    }
+   ],
+   "minimum": {
+    "percent": "5",
+    "floor": "15"
+   },
+   "late": {
+    "fixed": "8"
+   },
+   "fx": "0"
+  }
+ ],
+ "note": "The main banks were taken as the three largest Slovak retail banks by assets, a choice from general knowledge (no central bank or association ranking was read in this pass): Slovenská sporiteľňa, VÚB and Tatra banka, with ČSOB, the fourth, kept from the earlier reading. ČSOB: its credit card page, read 2026-10-30: the Mastercard Gold costs 9 euros a month, waived in full in a month with at least 750 euros of payments, and bears 13.9% a year; the Mastercard Standard 3.50 euros, waived on 250, and 19.5%; the Mastercard Basic 2.50 euros with no waiver, and 19.5%. Each has up to 55 days without interest and a minimum payment of 5% of the debt, at least 15 euros. Its fee schedule wasn't read, so its cash, late and foreign-currency charges aren't written. Slovenská sporiteľňa: its price list for individuals (in force from 1 July 2026), its credit card disclosure (in force from 1 July 2025) and its interest rate notice for embossed credit cards (rates in force from 1 September 2014, the notice dated July 2024, a scan read by eye), read 2026-10-30. The Visa Classic costs 2.50 euros a month and the Visa Gold 9; each is refunded in a month with card payments of 300 euros for a limit up to 1,000, 30% of the limit up to 3,333, and 1,000 above that; the limit isn't modelled, so the refund is written at 1,000 euros of spending, the figure that meets every tier, and the fee is charged in full below it. The Visa Classic bears a variable 19.50% a year and the Visa Gold 13.50%; the 5% default interest added on overdue sums isn't written as a penalty rate, being charged on top. The minimum payment is 5% of the bank's claim, at least 15 euros; the contractual penalty for delay is 8 euros; cash withdrawals and other-currency processing cost nothing (fx written as none). The Štedrá karta's sale ended on 1 July 2025 and isn't written. VÚB's product sheets for its Mastercard Standard and World came up as missing pages (404) and its price list wasn't found; Tatra banka's pages answered with a bot check. Neither is written. In wave 4 (2026-10-30) Prima banka's card page wasn't at the addresses tried (404), UniCredit Bank's refused the request (403), VÚB's credit card page wasn't at its address (404), and 365.bank's and Home Credit's card pages are drawn by script with no terms in the page (Home Credit's, rendered without protection, showed only its menu); no bank was added.",
+ "sources": [
+  {
+   "url": "https://www.csob.sk/kreditna-karta",
+   "title": "ČSOB, Kreditná karta",
+   "read": "2026-10-30",
+   "said": "Gold 9 EUR Mesačný poplatok Požiadať o kartu Gold 100 % pri mesačnom objeme platieb min. 750 EUR Od 1 500 EUR do 15 000 EUR 13,9 % ročne Až do 55 dní ... Standard 3,50 EUR Mesačný poplatok Požiadať o kartu Standard 100 % pri mesačnom objeme platieb min. 250 EUR Od 300 EUR do 7 500 EUR 19,5 % ročne Až do 55 dní ... Basic 2,50 EUR Mesačný poplatok Požiadať o kartu Basic Bez zľavy Od 150 EUR do 3 000 EUR 19,5 % ročne Až do 55 dní ... Do dátumu splatnosti však musíte uhradiť aspoň minimálnu splátku 5 % z dlžnej sumy, najmenej 15 EUR."
+  },
+  {
+   "url": "https://cdn0.erstegroup.com/content/dam/sk/slsp/www_slsp_sk/documents/sadzobnik/sadzobnik-obyvatelstvo-01072026.pdf",
+   "title": "Slovenská sporiteľňa, Sadzobník, časť A – fyzická osoba nepodnikateľ (in force from 1 July 2026)",
+   "read": "2026-10-30",
+   "said": "Zverejnené: 24. 4. 2026 Účinné: 1. 7. 2026 ... Visa Classic Visa Gold ... 2,50 € / 9,00 € / ... b) Výber hotovosti z bankomatu Banky 0,00 € 0,00 € ... g) Spracovanie transakcií v inej mene ako EUR 0,00 € 0,00 € ... Zmluvná pokuta za omeškanie 8,00 € 8,00 €"
+  },
+  {
+   "url": "https://cdn0.erstegroup.com/content/dam/sk/slsp/www_slsp_sk/documents/zverejnenia/zverejnenie-kreditne-karty.pdf",
+   "title": "Slovenská sporiteľňa, Zverejnenie ku kreditným kartám (in force from 1 July 2025)",
+   "read": "2026-10-30",
+   "said": "Znenie účinné od: 1. 7. 2025 ... S účinnosťou od 1.7.2025 Banka ukončuje predaj kreditnej karty Štedrá karta. ... 5 % z Pohľadávky Banky, ... minimálne 15 EUR. ... do 1 000 (vrátane) 300 ... 30% z výšky Celkového úverového rámca ... 3 334 a viac 1 000"
+  },
+  {
+   "url": "https://www.slsp.sk/content/dam/sk/slsp/www_slsp_sk/documents/urokove-sadzby/us-kreditne-karty.pdf",
+   "title": "Slovenská sporiteľňa, Úrokové sadzby platné pre produkty od 1. januára 2019: kreditné karty embosované (a scan, read by eye)",
+   "read": "2026-10-30",
+   "said": "Visa Classic 19,50 5,00 ... Visa Gold 13,50 5,00 ... Platné od 1. septembra 2014"
+  }
+ ]
+}

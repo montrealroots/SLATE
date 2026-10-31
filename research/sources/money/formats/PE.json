@@ -1,0 +1,47 @@
+{
+ "country": "PE",
+ "national": {
+  "name": "CCI",
+  "parts": [
+   {
+    "name": "Bank code",
+    "length": 3,
+    "kind": "n"
+   },
+   {
+    "name": "Office code",
+    "length": 3,
+    "kind": "n"
+   },
+   {
+    "name": "Account number",
+    "length": 12,
+    "kind": "n"
+   },
+   {
+    "name": "Check digits",
+    "length": 2,
+    "kind": "n"
+   }
+  ],
+  "bank": [
+   1,
+   3
+  ]
+ },
+ "note": "Peru's interbank account code (Código de Cuenta Interbancario, CCI), the number a transfer between banks is made to, as BBVA Peru gives it (read 2026-10-30): 20 digits, the financial institution's code (3), the office's (3), the account number (12) and two check digits; a bank's own account number, used within the bank, runs from 10 to 18 digits. Scotiabank Peru gives the same four parts in the same order and says the two last digits let the information be verified before a transfer is processed. Neither the Cámara de Compensación Electrónica (no answer on 2026-10-30) nor the Central Reserve Bank (behind Incapsula) was read, so the check digits' algorithm isn't known and the form holds them as any two digits.",
+ "sources": [
+  {
+   "url": "https://www.bbva.pe/blog/mis-finanzas/ahorro/cual-es-el-cci-de-una-tarjeta.html",
+   "title": "BBVA Perú, ¿Cuál es el CCI de una tarjeta?",
+   "read": "2026-10-30",
+   "said": "un número de cuenta bancario clásico tiene entre 10 a 18 dígitos, pero el CCI tiene 20 números , que están estructurados de la siguiente manera: Código de la entidad financiera 3 dígitos, código de la oficina 3 dígitos, número de cuenta 12 dígitos, dígitos de control 2 dígitos."
+  },
+  {
+   "url": "https://www.scotiabank.com.pe/blog/que-es-cci-cuenta-bancaria",
+   "title": "Scotiabank Perú, ¿Qué es el CCI y el código SWIFT?",
+   "read": "2026-10-30",
+   "said": "El código está compuesto por 20 dígitos distribuidos de la siguiente manera: Código del banco Código de la oficina Número de cuenta Dígitos de control Estos últimos permiten verificar que la información ingresada sea correcta antes de procesar la transferencia."
+  }
+ ]
+}

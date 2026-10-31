@@ -1,0 +1,1565 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0 Transitional//EN">
+<html  lang="en-US">
+<head id="Head">
+<!--**********************************************************************************-->
+<!-- DotNetNuke� - http://www.dotnetnuke.com                                          -->
+<!-- Copyright (c) 2002-2008                                                          -->
+<!-- by DotNetNuke Corporation                                                        -->
+<!--**********************************************************************************-->
+<meta content="text/html; charset=UTF-8" http-equiv="Content-Type" /><meta content="text/javascript" http-equiv="Content-Script-Type" /><meta content="text/css" http-equiv="Content-Style-Type" /><meta id="MetaKeywords" name="KEYWORDS" content=",DotNetNuke,DNN" /><meta id="MetaCopyright" name="COPYRIGHT" content="Copyright 2009 by DotNetNuke Corporation" /><meta id="MetaGenerator" name="GENERATOR" content="DotNetNuke " /><meta id="MetaAuthor" name="AUTHOR" content="Welcome to Vanuatu Meteorological Climate Services" /><meta name="RESOURCE-TYPE" content="DOCUMENT" /><meta name="DISTRIBUTION" content="GLOBAL" /><meta name="ROBOTS" content="INDEX, FOLLOW" /><meta name="REVISIT-AFTER" content="1 DAYS" /><meta name="RATING" content="GENERAL" /><meta http-equiv="PAGE-ENTER" content="RevealTrans(Duration=0,Transition=1)" /><style id="StylePlaceholder" type="text/css"></style><link id="_DesktopModules_ClimateData" rel="stylesheet" type="text/css" href="/DesktopModules/ClimateData/module.css" /><link id="_Portals__default_" rel="stylesheet" type="text/css" href="/Portals/_default/default.css" /><link id="_Portals__default_Skins_Weather_Skin_" rel="stylesheet" type="text/css" href="/Portals/_default/Skins/Weather Skin/skin.css" /><link id="_Portals__default_Containers_CSS_Link_RL_" rel="stylesheet" type="text/css" href="/Portals/_default/Containers/CSS Link RL/container.css" /><link id="_Portals__default_Containers_TransparentContainer_" rel="stylesheet" type="text/css" href="/Portals/_default/Containers/TransparentContainer/container.css" /><link id="_Portals_3_" rel="stylesheet" type="text/css" href="/Portals/3/portal.css" /><script type="text/javascript" src="/Resources/Shared/Scripts/jquery/jquery.min.js" ></script><link href="/WebResource.axd?d=KU2xXMJLeHy4c1LxKFMCM58JCIPFr2iyUE1P-VrHnaoX5BAt6aMfSzqNzgx9dU3kuXQneyck9Sq6cQMpchep-XSvJ7UsrZiEku0GkaUxBHoBWx_rIg9aLBpYfHlf7Y1F3kiXnA2&amp;t=633793980731990000" type="text/css" rel="stylesheet" /><link href="/WebResource.axd?d=KU2xXMJLeHy4c1LxKFMCM58JCIPFr2iyUE1P-VrHnaoX5BAt6aMfSzqNzgx9dU3kuXQneyck9Sq6cQMpchep-XSvJ7UsrZiEku0GkaUxBHoBWx_rIg9aLBpYfHlf7Y1F3kiXnA2&amp;t=633793980731990000" type="text/css" rel="stylesheet" /><link href="/WebResource.axd?d=KU2xXMJLeHy4c1LxKFMCM58JCIPFr2iyUE1P-VrHnaoX5BAt6aMfSzqNzgx9dU3kuXQneyck9Sq6cQMpchep-XSvJ7UsrZiEku0GkaUxBHoBWx_rIg9aLBpYfHlf7Y1F3kiXnA2&amp;t=633793980731990000" type="text/css" rel="stylesheet" /><link href="/WebResource.axd?d=KU2xXMJLeHy4c1LxKFMCM58JCIPFr2iyUE1P-VrHnaoX5BAt6aMfSzqNzgx9dU3kuXQneyck9Sq6cQMpchep-XSvJ7UsrZiEku0GkaUxBHoBWx_rIg9aLBpYfHlf7Y1F3kiXnA2&amp;t=633793980731990000" type="text/css" rel="stylesheet" /><link href="/WebResource.axd?d=KU2xXMJLeHy4c1LxKFMCM58JCIPFr2iyUE1P-VrHnaoX5BAt6aMfSzqNzgx9dU3kuXQneyck9Sq6cQMpchep-XSvJ7UsrZiEku0GkaUxBHoBWx_rIg9aLBpYfHlf7Y1F3kiXnA2&amp;t=633793980731990000" type="text/css" rel="stylesheet" /><link href="/WebResource.axd?d=KU2xXMJLeHy4c1LxKFMCM58JCIPFr2iyUE1P-VrHnaoX5BAt6aMfSzqNzgx9dU3kuXQneyck9Sq6cQMpchep-XSvJ7UsrZiEku0GkaUxBHoBWx_rIg9aLBpYfHlf7Y1F3kiXnA2&amp;t=633793980731990000" type="text/css" rel="stylesheet" /><link href="/WebResource.axd?d=KU2xXMJLeHy4c1LxKFMCM58JCIPFr2iyUE1P-VrHnaoX5BAt6aMfSzqNzgx9dU3kuXQneyck9Sq6cQMpchep-XSvJ7UsrZiEku0GkaUxBHoBWx_rIg9aLBpYfHlf7Y1F3kiXnA2&amp;t=633793980731990000" type="text/css" rel="stylesheet" /><link href="/WebResource.axd?d=KU2xXMJLeHy4c1LxKFMCM58JCIPFr2iyUE1P-VrHnaoX5BAt6aMfSzqNzgx9dU3kuXQneyck9Sq6cQMpchep-XSvJ7UsrZiEku0GkaUxBHoBWx_rIg9aLBpYfHlf7Y1F3kiXnA2&amp;t=633793980731990000" type="text/css" rel="stylesheet" /><link href="/WebResource.axd?d=KU2xXMJLeHy4c1LxKFMCM58JCIPFr2iyUE1P-VrHnaoX5BAt6aMfSzqNzgx9dU3kuXQneyck9Sq6cQMpchep-XSvJ7UsrZiEku0GkaUxBHoBWx_rIg9aLBpYfHlf7Y1F3kiXnA2&amp;t=633793980731990000" type="text/css" rel="stylesheet" /><link href="/WebResource.axd?d=KU2xXMJLeHy4c1LxKFMCM58JCIPFr2iyUE1P-VrHnaoX5BAt6aMfSzqNzgx9dU3kuXQneyck9Sq6cQMpchep-XSvJ7UsrZiEku0GkaUxBHoBWx_rIg9aLBpYfHlf7Y1F3kiXnA2&amp;t=633793980731990000" type="text/css" rel="stylesheet" /><link href="/WebResource.axd?d=KU2xXMJLeHy4c1LxKFMCM58JCIPFr2iyUE1P-VrHnaoX5BAt6aMfSzqNzgx9dU3kuXQneyck9Sq6cQMpchep-XSvJ7UsrZiEku0GkaUxBHoBWx_rIg9aLBpYfHlf7Y1F3kiXnA2&amp;t=633793980731990000" type="text/css" rel="stylesheet" /><link href="/WebResource.axd?d=KU2xXMJLeHy4c1LxKFMCM58JCIPFr2iyUE1P-VrHnaoX5BAt6aMfSzqNzgx9dU3kuXQneyck9Sq6cQMpchep-XSvJ7UsrZiEku0GkaUxBHoBWx_rIg9aLBpYfHlf7Y1F3kiXnA2&amp;t=633793980731990000" type="text/css" rel="stylesheet" /><link href="/WebResource.axd?d=KU2xXMJLeHy4c1LxKFMCM58JCIPFr2iyUE1P-VrHnaoX5BAt6aMfSzqNzgx9dU3kuXQneyck9Sq6cQMpchep-XSvJ7UsrZiEku0GkaUxBHoBWx_rIg9aLBpYfHlf7Y1F3kiXnA2&amp;t=633793980731990000" type="text/css" rel="stylesheet" /><title>
+	Climate for Port Vila (Efate)
+</title></head>
+<body id="Body">
+    <form name="Form" method="post" action="/climate/VanuatuClimate/ClimateforPortVilaEfate/tabid/208/Default.aspx" id="Form" enctype="multipart/form-data">
+<input type="hidden" name="dnn_ctr635_ViewClimateData_Tabs_ClientState" id="dnn_ctr635_ViewClimateData_Tabs_ClientState" value="{&quot;ActiveTabIndex&quot;:0,&quot;TabState&quot;:[true,true,true,true,true,true,true,true,true,true,true,true]}" />
+<input type="hidden" name="__VIEWSTATE" id="__VIEWSTATE" value="/wEPDwUKLTc3MzY4NDA0NQ9kFgZmDxYCHgRUZXh0BT48IURPQ1RZUEUgSFRNTCBQVUJMSUMgIi0vL1czQy8vRFREIEhUTUwgNC4wIFRyYW5zaXRpb25hbC8vRU4iPmQCAQ9kFgwCBA8WAh4HVmlzaWJsZWhkAgUPFgQeB2NvbnRlbnRkHwFoZAIGDxYCHwIFDyxEb3ROZXROdWtlLEROTmQCBw8WAh8CBShDb3B5cmlnaHQgMjAwOSBieSBEb3ROZXROdWtlIENvcnBvcmF0aW9uZAIIDxYCHwIFC0RvdE5ldE51a2UgZAIJDxYCHwIFMldlbGNvbWUgdG8gVmFudWF0dSBNZXRlb3JvbG9naWNhbCBDbGltYXRlIFNlcnZpY2VzZAICD2QWAgIBD2QWAgIED2QWAmYPZBYQAgIPZBYEAgEPZBYMZg8PFgIfAWhkZAIBD2QWAgICDxYCHwFoZAICDxYCHgVjbGFzcwUVbGlua3BhbmUgRE5OQWxpZ25sZWZ0FgICAQ8PZBYCHwMFEEROTl9MaW5rc0NvbnRlbnQWAgIBD2QWBGYPZBYCAgEPPCsACQEADxYGHg9SZXBlYXREaXJlY3Rpb24LKilTeXN0ZW0uV2ViLlVJLldlYkNvbnRyb2xzLlJlcGVhdERpcmVjdGlvbgEeCERhdGFLZXlzFgAeC18hSXRlbUNvdW50AgZkFgxmD2QWDGYPFQEAZAIBDw8WBB4LTmF2aWdhdGVVcmwFeGh0dHA6Ly93d3cubWV0ZW8uZ292LnZ1L2NsaW1hdGUvVmFudWF0dUNsaW1hdGUvQ2xpbWF0ZWZvclBvcnRWaWxhRWZhdGUvdGFiaWQvMjA4L2N0bC9FZGl0L21pZC81ODkvSXRlbUlELzY5L0RlZmF1bHQuYXNweB8BaGQWAmYPDxYCHwFoZGQCAw8PFgQeCEltYWdlVXJsZB8BaGRkAgUPDxYIHwAFCUFib3V0IFZDQx8HBSovTGlua0NsaWNrLmFzcHg/bGluaz0xOTkmdGFiaWQ9MjA4Jm1pZD01ODkeB1Rvb2xUaXBlHgZUYXJnZXQFBV9zZWxmZGQCBw8PFgIfAWhkZAIJD2QWAgIBDw8WAh8AZWRkAgEPZBYMZg8VAQBkAgEPDxYEHwcFeGh0dHA6Ly93d3cubWV0ZW8uZ292LnZ1L2NsaW1hdGUvVmFudWF0dUNsaW1hdGUvQ2xpbWF0ZWZvclBvcnRWaWxhRWZhdGUvdGFiaWQvMjA4L2N0bC9FZGl0L21pZC81ODkvSXRlbUlELzY0L0RlZmF1bHQuYXNweB8BaGQWAmYPDxYCHwFoZGQCAw8PFgQfCGQfAWhkZAIFDw8WCB8ABRJDbGltYXRlIG9mIFZhbnVhdHUfBwUqL0xpbmtDbGljay5hc3B4P2xpbms9MTk2JnRhYmlkPTIwOCZtaWQ9NTg5HwllHwoFBV9zZWxmZGQCBw8PFgIfAWhkZAIJD2QWAgIBDw8WAh8AZWRkAgIPZBYMZg8VAQBkAgEPDxYEHwcFeGh0dHA6Ly93d3cubWV0ZW8uZ292LnZ1L2NsaW1hdGUvVmFudWF0dUNsaW1hdGUvQ2xpbWF0ZWZvclBvcnRWaWxhRWZhdGUvdGFiaWQvMjA4L2N0bC9FZGl0L21pZC81ODkvSXRlbUlELzY1L0RlZmF1bHQuYXNweB8BaGQWAmYPDxYCHwFoZGQCAw8PFgQfCGQfAWhkZAIFDw8WCB8ABSNDbGltYXRlIEd1aWRlIHdoZW4gVmlzaXRpbmcgVmFudWF0dR8HBSovTGlua0NsaWNrLmFzcHg/bGluaz0xOTcmdGFiaWQ9MjA4Jm1pZD01ODkfCWUfCgUFX3NlbGZkZAIHDw8WAh8BaGRkAgkPZBYCAgEPDxYCHwBlZGQCAw9kFgxmDxUBAGQCAQ8PFgQfBwV4aHR0cDovL3d3dy5tZXRlby5nb3YudnUvY2xpbWF0ZS9WYW51YXR1Q2xpbWF0ZS9DbGltYXRlZm9yUG9ydFZpbGFFZmF0ZS90YWJpZC8yMDgvY3RsL0VkaXQvbWlkLzU4OS9JdGVtSUQvNjYvRGVmYXVsdC5hc3B4HwFoZBYCZg8PFgIfAWhkZAIDDw8WBB8IZB8BaGRkAgUPDxYIHwAFHFZhbnVhdHUgQ2xpbWF0ZSBCYXNsaW5lIE1hcHMfBwUqL0xpbmtDbGljay5hc3B4P2xpbms9MTk4JnRhYmlkPTIwOCZtaWQ9NTg5HwllHwoFBV9zZWxmZGQCBw8PFgIfAWhkZAIJD2QWAgIBDw8WAh8AZWRkAgQPZBYMZg8VAQBkAgEPDxYEHwcFeGh0dHA6Ly93d3cubWV0ZW8uZ292LnZ1L2NsaW1hdGUvVmFudWF0dUNsaW1hdGUvQ2xpbWF0ZWZvclBvcnRWaWxhRWZhdGUvdGFiaWQvMjA4L2N0bC9FZGl0L21pZC81ODkvSXRlbUlELzY3L0RlZmF1bHQuYXNweB8BaGQWAmYPDxYCHwFoZGQCAw8PFgQfCGQfAWhkZAIFDw8WCB8ABRZWYW51YXR1IFRvdXJpc20gT2ZmaWNlHwcFSi9MaW5rQ2xpY2suYXNweD9saW5rPWh0dHAlM2ElMmYlMmZ3d3cudmFudWF0dXRvdXJpc20uY29tJnRhYmlkPTIwOCZtaWQ9NTg5HwllHwoFBV9zZWxmZGQCBw8PFgIfAWhkZAIJD2QWAgIBDw8WAh8AZWRkAgUPZBYMZg8VAQBkAgEPDxYEHwcFeGh0dHA6Ly93d3cubWV0ZW8uZ292LnZ1L2NsaW1hdGUvVmFudWF0dUNsaW1hdGUvQ2xpbWF0ZWZvclBvcnRWaWxhRWZhdGUvdGFiaWQvMjA4L2N0bC9FZGl0L21pZC81ODkvSXRlbUlELzY4L0RlZmF1bHQuYXNweB8BaGQWAmYPDxYCHwFoZGQCAw8PFgQfCGQfAWhkZAIFDw8WCB8ABR9NYWRkZW4gSnVsaWFuIE9zY2lsbGF0aW9uIChNSk8pHwcFjwEvTGlua0NsaWNrLmFzcHg/bGluaz1odHRwJTNhJTJmJTJmd3d3LmJvbS5nb3YuYXUlMmZibXJjJTJmY2xmb3IlMmZjZnN0YWZmJTJmbWF0dyUyZm1hcHJvb20lMmZPTFJfbW9kZXMlMmZhbWFwcy5hbGwuNTB0bzIwLmdpZiZ0YWJpZD0yMDgmbWlkPTU4OR8JZR8KBQVfc2VsZmRkAgcPDxYCHwFoZGQCCQ9kFgICAQ8PFgIfAGVkZAICDw8WAh8BaGQWAgIBDxBkZBYAZAIDD2QWAmYPDxYCHwFoZGQCBA9kFgJmDw8WAh8BaGRkAgYPZBYCZg8PFgIfAWhkZAIDD2QWDGYPDxYCHwFoZGQCAQ9kFgICAg8WAh8BaGQCAg8WAh8DBRVsaW5rcGFuZSBETk5BbGlnbmxlZnQWAgIBDw9kFgIfAwUQRE5OX0xpbmtzQ29udGVudBYCAgEPZBYEZg9kFgICAQ88KwAJAQAPFgYfBAsrBAEfBRYAHwYCAmQWBGYPZBYMZg8VAQBkAgEPDxYEHwcFeGh0dHA6Ly93d3cubWV0ZW8uZ292LnZ1L2NsaW1hdGUvVmFudWF0dUNsaW1hdGUvQ2xpbWF0ZWZvclBvcnRWaWxhRWZhdGUvdGFiaWQvMjA4L2N0bC9FZGl0L21pZC82MTMvSXRlbUlELzcwL0RlZmF1bHQuYXNweB8BaGQWAmYPDxYCHwFoZGQCAw8PFgQfCGQfAWhkZAIFDw8WCB8ABRNUQyBTZWFzb25hbCBPdXRsb29rHwcFKi9MaW5rQ2xpY2suYXNweD9saW5rPTIwMSZ0YWJpZD0yMDgmbWlkPTYxMx8JZR8KBQVfc2VsZmRkAgcPDxYCHwFoZGQCCQ9kFgICAQ8PFgIfAGVkZAIBD2QWDGYPFQEAZAIBDw8WBB8HBXhodHRwOi8vd3d3Lm1ldGVvLmdvdi52dS9jbGltYXRlL1ZhbnVhdHVDbGltYXRlL0NsaW1hdGVmb3JQb3J0VmlsYUVmYXRlL3RhYmlkLzIwOC9jdGwvRWRpdC9taWQvNjEzL0l0ZW1JRC83MS9EZWZhdWx0LmFzcHgfAWhkFgJmDw8WAh8BaGRkAgMPDxYEHwhkHwFoZGQCBQ8PFggfAAUcVGlkYWwgUHJlZGljdGlvbiAoUG9ydCBWaWxhKR8HBSovTGlua0NsaWNrLmFzcHg/bGluaz0xNDcmdGFiaWQ9MjA4Jm1pZD02MTMfCWUfCgUFX3NlbGZkZAIHDw8WAh8BaGRkAgkPZBYCAgEPDxYCHwBlZGQCAg8PFgIfAWhkFgICAQ8QZGQWAGQCAw9kFgJmDw8WAh8BaGRkAgQPZBYCZg8PFgIfAWhkZAIGD2QWAmYPDxYCHwFoZGQCAw8WAh8DBRpjb250ZW50cGFuZWwyIEROTkVtcHR5UGFuZWQCBA9kFgJmDw8WAh8ABQVMb2dpbmRkAgcPZBYCAgEPZBYKZg8PFgIfAWhkZAIBD2QWAgICDxYCHwFoZAICD2QWAgIBDw9kFgIfAwUWQ2xpbWF0ZSBEYXRhIHYxQ29udGVudBYCAgEPZBYCZg9kFhhmD2QWAmYPZBYCAgEPFgIfBgIBFgJmD2QWAmYPFQUGMjcwLjAwBTMxLjAwBTIyLjAwBjE5OC4wMAU4NC4wMGQCAQ9kFgJmD2QWAgIBDxYCHwYCARYCZg9kFgJmDxUFBjI5My4wMAUzMS4wMAUyMi4wMAYxNzIuMDAFODQuMDBkAgIPZBYCZg9kFgICAQ8WAh8GAgEWAmYPZBYCZg8VBQYzMjMuMDAFMzAuMDAFMjIuMDAGMTc2LjAwBTg3LjAwZAIDD2QWAmYPZBYCAgEPFgIfBgIBFgJmD2QWAmYPFQUGMjE1LjAwBTI5LjAwBTIyLjAwBjE3My4wMAU4Ny4wMGQCBA9kFgJmD2QWAgIBDxYCHwYCARYCZg9kFgJmDxUFBjE2OC4wMAUyOC4wMAUyMC4wMAYxNjkuMDAFODUuMDBkAgUPZBYCZg9kFgICAQ8WAh8GAgEWAmYPZBYCZg8VBQYxNjEuMDAFMjcuMDAFMTkuMDAGMTM5LjAwBTg2LjAwZAIGD2QWAmYPZBYCAgEPFgIfBgIBFgJmD2QWAmYPFQUFOTIuMDAFMjYuMDAFMTguMDAGMTU5LjAwBTg1LjAwZAIHD2QWAmYPZBYCAgEPFgIfBgIBFgJmD2QWAmYPFQUFODYuMDAFMjYuMDAFMTcuMDAGMTgwLjAwBTgxLjAwZAIID2QWAmYPZBYCAgEPFgIfBgIBFgJmD2QWAmYPFQUFOTAuMDAFMjcuMDAFMTguMDAGMTgyLjAwBTgyLjAwZAIJD2QWAmYPZBYCAgEPFgIfBgIBFgJmD2QWAmYPFQUGMTA0LjAwBTI4LjAwBTE4LjAwBjIwOC4wMAU4Mi4wMGQCCg9kFgJmD2QWAgIBDxYCHwYCARYCZg9kFgJmDxUFBjEzNS4wMAUzMC4wMAUyMC4wMAYyMDAuMDAFODMuMDBkAgsPZBYCZg9kFgICAQ8WAh8GAgEWAmYPZBYCZg8VBQYxOTEuMDAFMzAuMDAFMjEuMDAGMTk2LjAwBTgyLjAwZAIDD2QWAmYPDxYCHwFoZGQCBA9kFgJmDw8WAh8BaGRkAggPFgIfAwUXYm90dG9tcGFuZSBETk5FbXB0eVBhbmVkAgkPZBYGAgEPZBYMZg8PFgIfAWhkZAIBD2QWAgICDxYCHwFoZAICDxYCHwMFFmxpbmtwYW5lIEROTkFsaWducmlnaHQWAgIBDw9kFgIfAwUQRE5OX0xpbmtzQ29udGVudBYCAgEPZBYEZg9kFgICAQ88KwAJAQAPFgYfBAsrBAEfBRYAHwYCB2QWDmYPZBYMZg8VAQZub3dyYXBkAgEPDxYEHwcFeGh0dHA6Ly93d3cubWV0ZW8uZ292LnZ1L2NsaW1hdGUvVmFudWF0dUNsaW1hdGUvQ2xpbWF0ZWZvclBvcnRWaWxhRWZhdGUvdGFiaWQvMjA4L2N0bC9FZGl0L21pZC81NzMvSXRlbUlELzUzL0RlZmF1bHQuYXNweB8BaGQWAmYPDxYCHwFoZGQCAw8PFgQfCGQfAWhkZAIFDw8WCB8ABQNJQ1UfBwVSL0xpbmtDbGljay5hc3B4P2xpbms9aHR0cCUzYSUyZiUyZnd3dy5uaXdhLmNyaS5ueiUyZm5jYyUyZmljdSUyZiZ0YWJpZD0yMDgmbWlkPTU3Mx8JZR8KBQZfYmxhbmtkZAIHDw8WAh8BaGRkAgkPZBYCAgEPDxYCHwBlZGQCAQ9kFgxmDxUBBm5vd3JhcGQCAQ8PFgQfBwV4aHR0cDovL3d3dy5tZXRlby5nb3YudnUvY2xpbWF0ZS9WYW51YXR1Q2xpbWF0ZS9DbGltYXRlZm9yUG9ydFZpbGFFZmF0ZS90YWJpZC8yMDgvY3RsL0VkaXQvbWlkLzU3My9JdGVtSUQvNTQvRGVmYXVsdC5hc3B4HwFoZBYCZg8PFgIfAWhkZAIDDw8WBB8IZB8BaGRkAgUPDxYIHwAFBE5DRVAfBwVzL0xpbmtDbGljay5hc3B4P2xpbms9aHR0cCUzYSUyZiUyZnd3dy5jcGMubmNlcC5ub2FhLmdvdiUyZnByb2R1Y3RzJTJmcGVvcGxlJTJmd3dhbmclMmZjZnNfZmNzdCUyZiZ0YWJpZD0yMDgmbWlkPTU3Mx8JZR8KBQZfYmxhbmtkZAIHDw8WAh8BaGRkAgkPZBYCAgEPDxYCHwBlZGQCAg9kFgxmDxUBBm5vd3JhcGQCAQ8PFgQfBwV4aHR0cDovL3d3dy5tZXRlby5nb3YudnUvY2xpbWF0ZS9WYW51YXR1Q2xpbWF0ZS9DbGltYXRlZm9yUG9ydFZpbGFFZmF0ZS90YWJpZC8yMDgvY3RsL0VkaXQvbWlkLzU3My9JdGVtSUQvNjAvRGVmYXVsdC5hc3B4HwFoZBYCZg8PFgIfAWhkZAIDDw8WBB8IZB8BaGRkAgUPDxYIHwAFBkVDTVdGIB8HBcQBL0xpbmtDbGljay5hc3B4P2xpbms9aHR0cCUzYSUyZiUyZnd3dy5lY213Zi5pbnQlMmZwcm9kdWN0cyUyZmZvcmVjYXN0cyUyZmQlMmZjaGFydHMlMmZzZWFzb25hbCUyZmZvcmVjYXN0JTJmc2Vhc29uYWxfcmFuZ2VfZm9yZWNhc3QlMmZncm91cF9wdWJsaWMlMmZzZWFzb25hbF9jaGFydHNfcHVibGljXzJ0bSUyZiZ0YWJpZD0yMDgmbWlkPTU3Mx8JZR8KBQZfYmxhbmtkZAIHDw8WAh8BaGRkAgkPZBYCAgEPDxYCHwBlZGQCAw9kFgxmDxUBBm5vd3JhcGQCAQ8PFgQfBwV4aHR0cDovL3d3dy5tZXRlby5nb3YudnUvY2xpbWF0ZS9WYW51YXR1Q2xpbWF0ZS9DbGltYXRlZm9yUG9ydFZpbGFFZmF0ZS90YWJpZC8yMDgvY3RsL0VkaXQvbWlkLzU3My9JdGVtSUQvNjEvRGVmYXVsdC5hc3B4HwFoZBYCZg8PFgIfAWhkZAIDDw8WBB8IZB8BaGRkAgUPDxYIHwAFA0lSSR8HBWcvTGlua0NsaWNrLmFzcHg/bGluaz1odHRwJTNhJTJmJTJmaXJpLmNvbHVtYmlhLmVkdSUyZmNsaW1hdGUlMmZmb3JlY2FzdCUyZm5ldF9hc210JTJmJnRhYmlkPTIwOCZtaWQ9NTczHwllHwoFBl9ibGFua2RkAgcPDxYCHwFoZGQCCQ9kFgICAQ8PFgIfAGVkZAIED2QWDGYPFQEGbm93cmFwZAIBDw8WBB8HBXhodHRwOi8vd3d3Lm1ldGVvLmdvdi52dS9jbGltYXRlL1ZhbnVhdHVDbGltYXRlL0NsaW1hdGVmb3JQb3J0VmlsYUVmYXRlL3RhYmlkLzIwOC9jdGwvRWRpdC9taWQvNTczL0l0ZW1JRC82Mi9EZWZhdWx0LmFzcHgfAWhkFgJmDw8WAh8BaGRkAgMPDxYEHwhkHwFoZGQCBQ8PFggfAAUDVENDHwcFhQEvTGlua0NsaWNrLmFzcHg/bGluaz1odHRwJTNhJTJmJTJmZHMuZGF0YS5qbWEuZ28uanAlMmZ0Y2MlMmZ0Y2MlMmZwcm9kdWN0cyUyZm1vZGVsJTJmbWFwJTJmNG1FJTJmbWFwMSUyZnpwY21hcC5odG1sJnRhYmlkPTIwOCZtaWQ9NTczHwllHwoFBV9zZWxmZGQCBw8PFgIfAWhkZAIJD2QWAgIBDw8WAh8AZWRkAgUPZBYMZg8VAQZub3dyYXBkAgEPDxYEHwcFeGh0dHA6Ly93d3cubWV0ZW8uZ292LnZ1L2NsaW1hdGUvVmFudWF0dUNsaW1hdGUvQ2xpbWF0ZWZvclBvcnRWaWxhRWZhdGUvdGFiaWQvMjA4L2N0bC9FZGl0L21pZC81NzMvSXRlbUlELzYzL0RlZmF1bHQuYXNweB8BaGQWAmYPDxYCHwFoZGQCAw8PFgQfCGQfAWhkZAIFDw8WCB8ABRBGb3JlY2FzdHMgLSBQSUMgHwcFbC9MaW5rQ2xpY2suYXNweD9saW5rPWh0dHAlM2ElMmYlMmZ3d3cuYm9tLmdvdi5hdSUyZmNsaW1hdGUlMmZwaS1jcHAlMmZjbGltX2ZvcmVjYXN0cy5zaHRtbCZ0YWJpZD0yMDgmbWlkPTU3Mx8JZR8KBQVfc2VsZmRkAgcPDxYCHwFoZGQCCQ9kFgICAQ8PFgIfAGVkZAIGD2QWDGYPFQEGbm93cmFwZAIBDw8WBB8HBXhodHRwOi8vd3d3Lm1ldGVvLmdvdi52dS9jbGltYXRlL1ZhbnVhdHVDbGltYXRlL0NsaW1hdGVmb3JQb3J0VmlsYUVmYXRlL3RhYmlkLzIwOC9jdGwvRWRpdC9taWQvNTczL0l0ZW1JRC83My9EZWZhdWx0LmFzcHgfAWhkFgJmDw8WAh8BaGRkAgMPDxYEHwhkHwFoZGQCBQ8PFggfAAUMVXNlZnVsIExpbmtzHwcFKi9MaW5rQ2xpY2suYXNweD9saW5rPTIwNCZ0YWJpZD0yMDgmbWlkPTU3Mx8JZR8KBQVfc2VsZmRkAgcPDxYCHwFoZGQCCQ9kFgICAQ8PFgIfAGVkZAICDw8WAh8BaGQWAgIBDxBkZBYAZAIDD2QWAmYPDxYCHwFoZGQCBA9kFgJmDw8WAh8BaGRkAgYPZBYCZg8PFgIfAWhkZAIDD2QWDGYPDxYCHwFoZGQCAQ9kFgICAg8WAh8BaGQCAg8WAh8DBRVsaW5rcGFuZSBETk5BbGlnbmxlZnQWAgIBDw9kFgIfAwUQRE5OX0xpbmtzQ29udGVudBYCAgEPZBYEZg9kFgICAQ88KwAJAQAPFgYfBAsrBAEfBRYAHwYCA2QWBmYPZBYMZg8VAQZub3dyYXBkAgEPDxYEHwcFeGh0dHA6Ly93d3cubWV0ZW8uZ292LnZ1L2NsaW1hdGUvVmFudWF0dUNsaW1hdGUvQ2xpbWF0ZWZvclBvcnRWaWxhRWZhdGUvdGFiaWQvMjA4L2N0bC9FZGl0L21pZC82MDkvSXRlbUlELzU3L0RlZmF1bHQuYXNweB8BaGQWAmYPDxYCHwFoZGQCAw8PFgQfCGQfAWhkZAIFDw8WCB8ABQ1Db25zZW5zdXMgU1NUHwcFUi9MaW5rQ2xpY2suYXNweD9saW5rPWh0dHAlM2ElMmYlMmZ3d3cubml3YS5jcmkubnolMmZuY2MlMmZpY3UlMmYmdGFiaWQ9MjA4Jm1pZD02MDkfCWUfCgUFX3NlbGZkZAIHDw8WAh8BaGRkAgkPZBYCAgEPDxYCHwBlZGQCAQ9kFgxmDxUBBm5vd3JhcGQCAQ8PFgQfBwV4aHR0cDovL3d3dy5tZXRlby5nb3YudnUvY2xpbWF0ZS9WYW51YXR1Q2xpbWF0ZS9DbGltYXRlZm9yUG9ydFZpbGFFZmF0ZS90YWJpZC8yMDgvY3RsL0VkaXQvbWlkLzYwOS9JdGVtSUQvNTgvRGVmYXVsdC5hc3B4HwFoZBYCZg8PFgIfAWhkZAIDDw8WBB8IZB8BaGRkAgUPDxYIHwAFE1NTVCBGb3JlY2FzdHMgLSBJUkkfBwV0L0xpbmtDbGljay5hc3B4P2xpbms9aHR0cCUzYSUyZiUyZmlyaS5jb2x1bWJpYS5lZHUlMmZjbGltYXRlJTJmRU5TTyUyZmN1cnJlbnRpbmZvJTJmU1NUX3RhYmxlLmh0bWwmdGFiaWQ9MjA4Jm1pZD02MDkfCWUfCgUFX3NlbGZkZAIHDw8WAh8BaGRkAgkPZBYCAgEPDxYCHwBlZGQCAg9kFgxmDxUBBm5vd3JhcGQCAQ8PFgQfBwV4aHR0cDovL3d3dy5tZXRlby5nb3YudnUvY2xpbWF0ZS9WYW51YXR1Q2xpbWF0ZS9DbGltYXRlZm9yUG9ydFZpbGFFZmF0ZS90YWJpZC8yMDgvY3RsL0VkaXQvbWlkLzYwOS9JdGVtSUQvNTkvRGVmYXVsdC5hc3B4HwFoZBYCZg8PFgIfAWhkZAIDDw8WBB8IZB8BaGRkAgUPDxYIHwAFDlNTVCBBbmltYXRpb24gHwcFiQEvTGlua0NsaWNrLmFzcHg/bGluaz1odHRwJTNhJTJmJTJmd3d3LmNwYy5uY2VwLm5vYWEuZ292JTJmcHJvZHVjdHMlMmZhbmFseXNpc19tb25pdG9yaW5nJTJmZW5zb191cGRhdGUlMmZnc3N0YW5pbS5zaHRtbCZ0YWJpZD0yMDgmbWlkPTYwOR8JZR8KBQVfc2VsZmRkAgcPDxYCHwFoZGQCCQ9kFgICAQ8PFgIfAGVkZAICDw8WAh8BaGQWAgIBDxBkZBYAZAIDD2QWAmYPDxYCHwFoZGQCBA9kFgJmDw8WAh8BaGRkAgYPZBYCZg8PFgIfAWhkZAIFD2QWDGYPDxYCHwFoZGQCAQ9kFgICAg8WAh8BaGQCAg8WAh8DBRVsaW5rcGFuZSBETk5BbGlnbmxlZnQWAgIBDw9kFgIfAwUQRE5OX0xpbmtzQ29udGVudBYCAgEPZBYEZg9kFgICAQ88KwAJAQAPFgYfBAsrBAEfBRYAHwYCAWQWAmYPZBYMZg8VAQBkAgEPDxYEHwcFeGh0dHA6Ly93d3cubWV0ZW8uZ292LnZ1L2NsaW1hdGUvVmFudWF0dUNsaW1hdGUvQ2xpbWF0ZWZvclBvcnRWaWxhRWZhdGUvdGFiaWQvMjA4L2N0bC9FZGl0L21pZC82MTQvSXRlbUlELzcyL0RlZmF1bHQuYXNweB8BaGQWAmYPDxYCHwFoZGQCAw8PFgQfCGQfAWhkZAIFDw8WCB8ABRNPbGQgQ2xpbWF0ZSBVcGRhdGVzHwcFKi9MaW5rQ2xpY2suYXNweD9saW5rPTIwMyZ0YWJpZD0yMDgmbWlkPTYxNB8JZR8KBQVfc2VsZmRkAgcPDxYCHwFoZGQCCQ9kFgICAQ8PFgIfAGVkZAICDw8WAh8BaGQWAgIBDxBkZBYAZAIDD2QWAmYPDxYCHwFoZGQCBA9kFgJmDw8WAh8BaGRkAgYPZBYCZg8PFgIfAWhkZAIKDxYCHwMFG2NvbnRlbnRwYW5lbHIyIEROTkVtcHR5UGFuZWQCCw8WAh8DBRtjb250ZW50cGFuZWxyMyBETk5FbXB0eVBhbmVkGAMFHl9fQ29udHJvbHNSZXF1aXJlUG9zdEJhY2tLZXlfXxYBBR9kbm4kY3RyNjM1JFZpZXdDbGltYXRlRGF0YSRUYWJzBR9kbm4kY3RyNjM1JFZpZXdDbGltYXRlRGF0YSRUYWJzDw9kZmQFFGRubiRkbm5OQVYkY3RsZG5uTkFWDw9kBQcxOTZcMjA4ZGRWo5sBrNNkWnYfFd8XM/3cYA86" />
+
+
+<script src="/js/dnncore.js" type="text/javascript"></script>
+<script src="/WebResource.axd?d=GDMYznPpXgAB2KAFtD-FcAmKAfFl9WLTxpsZv81iJgMcLc0l4Wd_SsJFSNoI1I2r9nwN2fPRemHLvIkf0&amp;t=635589795467565191" type="text/javascript"></script>
+<script src="/ScriptResource.axd?d=OZfUol3yPPptm7w2nQxAy1mOg_GAVxOHedE9IehTNylCrI6TTYxDAg4GyNoOSgirn81cPAVdIeqmecClb7YbSzVnuGEzMMI3gi19N2CzI_dOgHc0IxWHpyEKT66C53HUT8YXHHawBtY_zeqmbZ64X5Ny34Y1&amp;t=ffffffffbcb9b94a" type="text/javascript"></script>
+<script src="/ScriptResource.axd?d=Z4gSk7HovQxG-WBezGi_V4NWAvNY4S-i7wpWxgyE2BLkTgki1-jXGcAW9jPDlVMsj8XTPFu4r2QFLoRLSvh5mGEl8cbrL9DyOELmcOhwbzyoFXcMJm6nC2jKWALe864fsSp008-NUS2pAYm40&amp;t=fffffffff8ef54e2" type="text/javascript"></script>
+<script src="/ScriptResource.axd?d=sOp8LaqQ2TKwQ1IJYw2vdbRA-qP4qRUMRHTYYAIrTuSHqOokk__vDdZ9F4EurzrLGO_ZOObYG1xwgoWy6fV42_I35V7BZw1iYbtHSxOfJ4JNlo_AZKAqegYwUpx4FNxhQ62W6lgPxB-bjpyE0&amp;t=fffffffff8ef54e2" type="text/javascript"></script>
+<script src="/ScriptResource.axd?d=q8xqzB4fnGNSwCuPyCs3BSPPV4jOVBmIVriNsJ109M_CGay7nCpSJGOOR1f6NDJ0-H4yVYEwfNkMRDi1utdFrSUNvwuGzlfP4BvpCWt1Vc8q2IKZNtaZWXkLqoGY2Atbk2EA1IJP3p3m35NA7V0UwBwWW0A1&amp;t=fffffffff8ef54e2" type="text/javascript"></script>
+<script src="/ScriptResource.axd?d=uml9Jn-o5dtKrTog-jxMlpVWNGhbG_jwax0ax8hUFAjYkYJKAfxfywAWL_AAyBl7exgrqd6YfyGCnFWcLA5fFksg70lF545TPT1bQkE5tcw0wqAvpVTRSCDMhSjuBTDhu0GO7Q2&amp;t=fffffffff8ef54e2" type="text/javascript"></script>
+<script src="/ScriptResource.axd?d=JsqvZwUiOoVqsr7gcyIT9c6B3euTFeZILbsD3aenm-9TtZMs-YwwtTRtbSH4i6KMskhcfIKO67v9sehaqcK-1YH034DtHXZK2bB3m_JVaPmB5triDGcluUDS9S4-ZGDMpr_GxKNXP_90ZDKkCBoo-ztRCktptuukDebEksT4zlkJc8bz0&amp;t=fffffffff8ef54e2" type="text/javascript"></script>
+<input type="hidden" name="__VIEWSTATEGENERATOR" id="__VIEWSTATEGENERATOR" value="CA0B0334" />
+        
+        
+<link href="/Portals/_default/Skins/Weather Skin/skin.css" rel="stylesheet" type="text/css" />
+<link href="/Portals/_default/Skins/Weather Skin/menu.css" rel="stylesheet" type="text/css" />
+
+
+<div class="pagemaster">
+		<div id="dnn_ControlPanel" class="ControlPanel"></div>
+   	<div class="skinmaster">	
+
+			<div id="banner">
+				<img class="logo" src="/Portals/_default/Skins/Weather Skin/vms_logo_colour.png" alt="VMS Logo"/>
+			</div>
+
+  <div id="menu">
+	    <a href="#dnn_dnnNAV_ctldnnNAV_SkipLink"><img alt="Skip Navigation Links" src="/WebResource.axd?d=XAifpXc1IkFa8rC60bcqiW-d2rNVCsmghihfaABq7C6AYjekPX9ODZghVPBaSaqJWLUMK_e2QSp5U9CZ0&amp;t=635589795467565191" width="0" height="0" border="0" /></a><table id="dnn_dnnNAV_ctldnnNAV" cellpadding="0" cellspacing="0" border="0">
+	<tr>
+		<td onmouseover="Menu_HoverStatic(this)" onmouseout="Menu_Unhover(this)" onkeyup="Menu_Key(event)" id="dnn_dnnNAV_ctldnnNAVn0"><table class="menu_rootitem" cellpadding="0" cellspacing="0" border="0" width="100%">
+			<tr>
+				<td nowrap="nowrap"><a class="menu_rootitem" href="http://www.meteo.gov.vu/">Home (VMS)</a></td>
+			</tr>
+		</table></td><td width="3"></td><td onmouseover="Menu_HoverStatic(this)" onmouseout="Menu_Unhover(this)" onkeyup="Menu_Key(event)" id="dnn_dnnNAV_ctldnnNAVn1"><table class="menu_rootitem" cellpadding="0" cellspacing="0" border="0" width="100%">
+			<tr>
+				<td nowrap="nowrap"><a class="menu_rootitem" href="http://www.meteo.gov.vu/climate/HomeClimate/tabid/147/Default.aspx">Home (Climate)</a></td>
+			</tr>
+		</table></td><td width="3"></td><td onmouseover="Menu_HoverStatic(this)" onmouseout="Menu_Unhover(this)" onkeyup="Menu_Key(event)" id="dnn_dnnNAV_ctldnnNAVn2"><table class="menu_rootitem" cellpadding="0" cellspacing="0" border="0" width="100%">
+			<tr>
+				<td nowrap="nowrap"><a class="menu_rootitem" href="#">Climate Forecasts (Rainfall)</a></td><td width="0"><img src="/images/menu_down.gif" alt="Expand Climate Forecasts (Rainfall)" valign="middle" /></td>
+			</tr>
+		</table></td><td onmouseover="Menu_HoverStatic(this)" onmouseout="Menu_Unhover(this)" onkeyup="Menu_Key(event)" id="dnn_dnnNAV_ctldnnNAVn3"><table class="menu_rootitem" cellpadding="0" cellspacing="0" border="0" width="100%">
+			<tr>
+				<td nowrap="nowrap"><a class="menu_rootitem" href="http://www.meteo.gov.vu/climate/VanuatuClimate/tabid/196/Default.aspx">Vanuatu Climate</a></td><td width="0"><img src="/images/menu_down.gif" alt="Expand Vanuatu Climate" valign="middle" /></td>
+			</tr>
+		</table></td><td onmouseover="Menu_HoverStatic(this)" onmouseout="Menu_Unhover(this)" onkeyup="Menu_Key(event)" id="dnn_dnnNAV_ctldnnNAVn4"><table class="menu_rootitem" cellpadding="0" cellspacing="0" border="0" width="100%">
+			<tr>
+				<td nowrap="nowrap"><a class="menu_rootitem" href="http://www.meteo.gov.vu/climate/SeaSurfaceTemperatureSSTForecast/tabid/195/Default.aspx">Sea Surface Temperature (SST) Forecast</a></td>
+			</tr>
+		</table></td><td width="3"></td><td onmouseover="Menu_HoverStatic(this)" onmouseout="Menu_Unhover(this)" onkeyup="Menu_Key(event)" id="dnn_dnnNAV_ctldnnNAVn5"><table class="menu_rootitem" cellpadding="0" cellspacing="0" border="0" width="100%">
+			<tr>
+				<td nowrap="nowrap"><a class="menu_rootitem" href="http://www.meteo.gov.vu/climate/Prediction/tabid/200/Default.aspx">Prediction</a></td><td width="0"><img src="/images/menu_down.gif" alt="Expand Prediction" valign="middle" /></td>
+			</tr>
+		</table></td>
+	</tr>
+</table><div id="dnn_dnnNAV_ctldnnNAVn2Items" class="menu_bar" style="display:none;">
+	<table border="0" cellpadding="0" cellspacing="0">
+		<tr onmouseover="Menu_HoverDynamic(this)" onmouseout="Menu_Unhover(this)" onkeyup="Menu_Key(event)" id="dnn_dnnNAV_ctldnnNAVn6">
+			<td><table class="menu_item menu_item" cellpadding="0" cellspacing="0" border="0" width="100%">
+				<tr>
+					<td nowrap="nowrap" width="100%"><a class="menu_item menu_item" href="http://www.meteo.gov.vu/climate/ClimateForecastsRainfall/NorthernVanuatu/tabid/166/Default.aspx">Northern Vanuatu</a></td>
+				</tr>
+			</table></td>
+		</tr><tr onmouseover="Menu_HoverDynamic(this)" onmouseout="Menu_Unhover(this)" onkeyup="Menu_Key(event)" id="dnn_dnnNAV_ctldnnNAVn7">
+			<td><table class="menu_item menu_item" cellpadding="0" cellspacing="0" border="0" width="100%">
+				<tr>
+					<td nowrap="nowrap" width="100%"><a class="menu_item menu_item" href="http://www.meteo.gov.vu/climate/ClimateForecastsRainfall/SouthernVanuatu/tabid/188/Default.aspx">Southern Vanuatu</a></td>
+				</tr>
+			</table></td>
+		</tr>
+	</table><div class="menu_item menu_item" id="dnn_dnnNAV_ctldnnNAVn2ItemsUp" onmouseover="PopOut_Up(this)" onmouseout="PopOut_Stop(this)" align="center" style="display:none;">
+		<img src="/WebResource.axd?d=dVLqNyzrT7DRYU4eWXjuZkm_F7xA7bNcGFCQUNkd1EQ9b_NWJjERhlsaIBW_Hpq9rNIUFUQNpHYgOBdLce0k_RKCD_I1&amp;t=635589795467565191" alt="Scroll up" />
+	</div><div class="menu_item menu_item" id="dnn_dnnNAV_ctldnnNAVn2ItemsDn" onmouseover="PopOut_Down(this)" onmouseout="PopOut_Stop(this)" align="center" style="display:none;">
+		<img src="/WebResource.axd?d=RsgPvdCncTBovEeARD948Bsu9w9MW25XHy_sUeJOrWtIWrjNbbMKw8WV-Vjx0YPcyUq91HDhgY8I4iXDpC3WOFHQA_M1&amp;t=635589795467565191" alt="Scroll down" />
+	</div>
+</div><div id="dnn_dnnNAV_ctldnnNAVn3Items" class="menu_bar" style="display:none;">
+	<table border="0" cellpadding="0" cellspacing="0">
+		<tr onmouseover="Menu_HoverDynamic(this)" onmouseout="Menu_Unhover(this)" onkeyup="Menu_Key(event)" id="dnn_dnnNAV_ctldnnNAVn8">
+			<td><table class="menu_item menu_item" cellpadding="0" cellspacing="0" border="0" width="100%">
+				<tr>
+					<td nowrap="nowrap" width="100%"><a class="menu_item menu_item" href="http://www.meteo.gov.vu/climate/VanuatuClimate/AboutVanuatuClimateCenter/tabid/199/Default.aspx">About Vanuatu Climate Center</a></td>
+				</tr>
+			</table></td>
+		</tr><tr onmouseover="Menu_HoverDynamic(this)" onmouseout="Menu_Unhover(this)" onkeyup="Menu_Key(event)" id="dnn_dnnNAV_ctldnnNAVn9">
+			<td><table class="node_selecteditem menu_item menu_item" cellpadding="0" cellspacing="0" border="0" width="100%">
+				<tr>
+					<td nowrap="nowrap" width="100%"><a class="node_selecteditem menu_item menu_item" href="http://www.meteo.gov.vu/climate/VanuatuClimate/ClimateforPortVilaEfate/tabid/208/Default.aspx">Climate for Port Vila (Efate)</a></td>
+				</tr>
+			</table></td>
+		</tr><tr onmouseover="Menu_HoverDynamic(this)" onmouseout="Menu_Unhover(this)" onkeyup="Menu_Key(event)" id="dnn_dnnNAV_ctldnnNAVn10">
+			<td><table class="menu_item menu_item" cellpadding="0" cellspacing="0" border="0" width="100%">
+				<tr>
+					<td nowrap="nowrap" width="100%"><a class="menu_item menu_item" href="http://www.meteo.gov.vu/climate/VanuatuClimate/VanuatuClimateBaselineMaps/tabid/198/Default.aspx">Vanuatu Climate Baseline Maps</a></td>
+				</tr>
+			</table></td>
+		</tr><tr onmouseover="Menu_HoverDynamic(this)" onmouseout="Menu_Unhover(this)" onkeyup="Menu_Key(event)" id="dnn_dnnNAV_ctldnnNAVn11">
+			<td><table class="menu_item menu_item" cellpadding="0" cellspacing="0" border="0" width="100%">
+				<tr>
+					<td nowrap="nowrap" width="100%"><a class="menu_item menu_item" href="http://www.meteo.gov.vu/climate/VanuatuClimate/OldClimateUpdates/tabid/203/Default.aspx">Old Climate Updates</a></td>
+				</tr>
+			</table></td>
+		</tr>
+	</table><div class="menu_item menu_item" id="dnn_dnnNAV_ctldnnNAVn3ItemsUp" onmouseover="PopOut_Up(this)" onmouseout="PopOut_Stop(this)" align="center" style="display:none;">
+		<img src="/WebResource.axd?d=dVLqNyzrT7DRYU4eWXjuZkm_F7xA7bNcGFCQUNkd1EQ9b_NWJjERhlsaIBW_Hpq9rNIUFUQNpHYgOBdLce0k_RKCD_I1&amp;t=635589795467565191" alt="Scroll up" />
+	</div><div class="menu_item menu_item" id="dnn_dnnNAV_ctldnnNAVn3ItemsDn" onmouseover="PopOut_Down(this)" onmouseout="PopOut_Stop(this)" align="center" style="display:none;">
+		<img src="/WebResource.axd?d=RsgPvdCncTBovEeARD948Bsu9w9MW25XHy_sUeJOrWtIWrjNbbMKw8WV-Vjx0YPcyUq91HDhgY8I4iXDpC3WOFHQA_M1&amp;t=635589795467565191" alt="Scroll down" />
+	</div>
+</div><div id="dnn_dnnNAV_ctldnnNAVn5Items" class="menu_bar" style="display:none;">
+	<table border="0" cellpadding="0" cellspacing="0">
+		<tr onmouseover="Menu_HoverDynamic(this)" onmouseout="Menu_Unhover(this)" onkeyup="Menu_Key(event)" id="dnn_dnnNAV_ctldnnNAVn12">
+			<td><table class="menu_item menu_item" cellpadding="0" cellspacing="0" border="0" width="100%">
+				<tr>
+					<td nowrap="nowrap" width="100%"><a class="menu_item menu_item" href="http://www.meteo.gov.vu/climate/Prediction/TropicalCycloneSeasonalOutlook/tabid/201/Default.aspx">Tropical Cyclone Seasonal Outlook</a></td>
+				</tr>
+			</table></td>
+		</tr><tr onmouseover="Menu_HoverDynamic(this)" onmouseout="Menu_Unhover(this)" onkeyup="Menu_Key(event)" id="dnn_dnnNAV_ctldnnNAVn13">
+			<td><table class="menu_item menu_item" cellpadding="0" cellspacing="0" border="0" width="100%">
+				<tr>
+					<td nowrap="nowrap" width="100%"><a class="menu_item menu_item" href="http://www.meteo.gov.vu/climate/Prediction/TidalPredictionforPortVila/tabid/202/Default.aspx">Tidal Prediction for Port Vila</a></td>
+				</tr>
+			</table></td>
+		</tr>
+	</table><div class="menu_item menu_item" id="dnn_dnnNAV_ctldnnNAVn5ItemsUp" onmouseover="PopOut_Up(this)" onmouseout="PopOut_Stop(this)" align="center" style="display:none;">
+		<img src="/WebResource.axd?d=dVLqNyzrT7DRYU4eWXjuZkm_F7xA7bNcGFCQUNkd1EQ9b_NWJjERhlsaIBW_Hpq9rNIUFUQNpHYgOBdLce0k_RKCD_I1&amp;t=635589795467565191" alt="Scroll up" />
+	</div><div class="menu_item menu_item" id="dnn_dnnNAV_ctldnnNAVn5ItemsDn" onmouseover="PopOut_Down(this)" onmouseout="PopOut_Stop(this)" align="center" style="display:none;">
+		<img src="/WebResource.axd?d=RsgPvdCncTBovEeARD948Bsu9w9MW25XHy_sUeJOrWtIWrjNbbMKw8WV-Vjx0YPcyUq91HDhgY8I4iXDpC3WOFHQA_M1&amp;t=635589795467565191" alt="Scroll down" />
+	</div>
+</div><a id="dnn_dnnNAV_ctldnnNAV_SkipLink"></a>
+  </div>
+
+      <div id="innercontainer">
+        <div id="leftpanel">
+		        <div id="dnn_ContentPanel1" class="contentpanel1"><a id="589"></a>
+<LINK ID="container" REL="stylesheet" TYPE="text/css" HREF="/Portals/_default/Containers/CSS Link RL/container.css" />
+
+<div class="cssrlcontainermain">
+	
+    <div class="toprow">
+	    <span class="titlecol">
+	        
+	    </span>
+    </div> <!-- End title row -->
+  
+    <div class="cssrltitlerow">
+        <span class="cssrlmodtitle"><span id="dnn_ctr589_dnnTITLE_lblTitle" class="Head">VCC</span>
+
+
+</span>
+    </div>
+
+    <div id="dnn_ctr589_ContentPane" class="linkpane DNNAlignleft" align="center"><!-- Start_Module_589 --><div id="dnn_ctr589_ModuleContent" class="DNN_LinksContent">
+	<div id="dnn_ctr589_Links_pnlList">
+		
+    <table id="dnn_ctr589_Links_lstLinks" cellspacing="0" cellpadding="0" summary="Links Design Table" border="0">
+			<tr>
+				<td valign="top">
+            <table border="0" cellpadding="4" cellspacing="0">
+                <tr>
+                    <td >
+                        
+                        
+                        <a class="Normal" href="/LinkClick.aspx?link=199&amp;tabid=208&amp;mid=589" target="_self">About VCC</a>
+                        &nbsp;
+                        
+                    </td>
+                </tr>
+                <tr>
+                    <td>
+                        
+                    </td>
+                </tr>
+            </table>
+        </td>
+			</tr><tr>
+				<td valign="top">
+            <table border="0" cellpadding="4" cellspacing="0">
+                <tr>
+                    <td >
+                        
+                        
+                        <a class="Normal" href="/LinkClick.aspx?link=196&amp;tabid=208&amp;mid=589" target="_self">Climate of Vanuatu</a>
+                        &nbsp;
+                        
+                    </td>
+                </tr>
+                <tr>
+                    <td>
+                        
+                    </td>
+                </tr>
+            </table>
+        </td>
+			</tr><tr>
+				<td valign="top">
+            <table border="0" cellpadding="4" cellspacing="0">
+                <tr>
+                    <td >
+                        
+                        
+                        <a class="Normal" href="/LinkClick.aspx?link=197&amp;tabid=208&amp;mid=589" target="_self">Climate Guide when Visiting Vanuatu</a>
+                        &nbsp;
+                        
+                    </td>
+                </tr>
+                <tr>
+                    <td>
+                        
+                    </td>
+                </tr>
+            </table>
+        </td>
+			</tr><tr>
+				<td valign="top">
+            <table border="0" cellpadding="4" cellspacing="0">
+                <tr>
+                    <td >
+                        
+                        
+                        <a class="Normal" href="/LinkClick.aspx?link=198&amp;tabid=208&amp;mid=589" target="_self">Vanuatu Climate Basline Maps</a>
+                        &nbsp;
+                        
+                    </td>
+                </tr>
+                <tr>
+                    <td>
+                        
+                    </td>
+                </tr>
+            </table>
+        </td>
+			</tr><tr>
+				<td valign="top">
+            <table border="0" cellpadding="4" cellspacing="0">
+                <tr>
+                    <td >
+                        
+                        
+                        <a class="Normal" href="/LinkClick.aspx?link=http%3a%2f%2fwww.vanuatutourism.com&amp;tabid=208&amp;mid=589" target="_self">Vanuatu Tourism Office</a>
+                        &nbsp;
+                        
+                    </td>
+                </tr>
+                <tr>
+                    <td>
+                        
+                    </td>
+                </tr>
+            </table>
+        </td>
+			</tr><tr>
+				<td valign="top">
+            <table border="0" cellpadding="4" cellspacing="0">
+                <tr>
+                    <td >
+                        
+                        
+                        <a class="Normal" href="/LinkClick.aspx?link=http%3a%2f%2fwww.bom.gov.au%2fbmrc%2fclfor%2fcfstaff%2fmatw%2fmaproom%2fOLR_modes%2famaps.all.50to20.gif&amp;tabid=208&amp;mid=589" target="_self">Madden Julian Oscillation (MJO)</a>
+                        &nbsp;
+                        
+                    </td>
+                </tr>
+                <tr>
+                    <td>
+                        
+                    </td>
+                </tr>
+            </table>
+        </td>
+			</tr>
+		</table>
+
+	</div>
+
+
+</div><!-- End_Module_589 --></div>
+  
+    <div class="baserow">
+        <span class="titlecol">
+            
+            
+            <span><span></span>&nbsp;&nbsp;</span>
+            &nbsp;
+        </span>
+    </div> <!-- End base row -->
+  
+</div>
+<a id="613"></a>
+<LINK ID="container" REL="stylesheet" TYPE="text/css" HREF="/Portals/_default/Containers/CSS Link RL/container.css" />
+
+<div class="cssrlcontainermain">
+	
+    <div class="toprow">
+	    <span class="titlecol">
+	        
+	    </span>
+    </div> <!-- End title row -->
+  
+    <div class="cssrltitlerow">
+        <span class="cssrlmodtitle"><span id="dnn_ctr613_dnnTITLE_lblTitle" class="Head">Prediction</span>
+
+
+</span>
+    </div>
+
+    <div id="dnn_ctr613_ContentPane" class="linkpane DNNAlignleft" align="center"><!-- Start_Module_613 --><div id="dnn_ctr613_ModuleContent" class="DNN_LinksContent">
+	<div id="dnn_ctr613_Links_pnlList">
+		
+    <table id="dnn_ctr613_Links_lstLinks" cellspacing="0" cellpadding="0" summary="Links Design Table" border="0">
+			<tr>
+				<td valign="top">
+            <table border="0" cellpadding="4" cellspacing="0">
+                <tr>
+                    <td >
+                        
+                        
+                        <a class="Normal" href="/LinkClick.aspx?link=201&amp;tabid=208&amp;mid=613" target="_self">TC Seasonal Outlook</a>
+                        &nbsp;
+                        
+                    </td>
+                </tr>
+                <tr>
+                    <td>
+                        
+                    </td>
+                </tr>
+            </table>
+        </td>
+			</tr><tr>
+				<td valign="top">
+            <table border="0" cellpadding="4" cellspacing="0">
+                <tr>
+                    <td >
+                        
+                        
+                        <a class="Normal" href="/LinkClick.aspx?link=147&amp;tabid=208&amp;mid=613" target="_self">Tidal Prediction (Port Vila)</a>
+                        &nbsp;
+                        
+                    </td>
+                </tr>
+                <tr>
+                    <td>
+                        
+                    </td>
+                </tr>
+            </table>
+        </td>
+			</tr>
+		</table>
+
+	</div>
+
+
+</div><!-- End_Module_613 --></div>
+  
+    <div class="baserow">
+        <span class="titlecol">
+            
+            
+            <span><span></span>&nbsp;&nbsp;</span>
+            &nbsp;
+        </span>
+    </div> <!-- End base row -->
+  
+</div>
+</div>
+		        <div id="dnn_ContentPanel2" class="contentpanel2 DNNEmptyPane"></div>
+		        <div><img src="/Portals/_default/Skins/Weather Skin/label_bg.png" alt="" /></div>
+                <span class="loginuser"><a id="dnn_dnnLOGIN_cmdLogin" class="SkinObject" href="javascript:__doPostBack('dnn$dnnLOGIN$cmdLogin','')">Login</a></span>
+        </div>
+        	
+        <div id="centerpanel">
+          <div class="skintools">
+              <table border="0">
+              <tr>
+                <td style="width: 70%"><span id="dnn_dnnBREADCRUMB_lblBreadCrumb"><a href="http://www.meteo.gov.vu/climate/VanuatuClimate/tabid/196/Default.aspx" class="SkinObject">Vanuatu Climate</a> » <a href="http://www.meteo.gov.vu/climate/VanuatuClimate/ClimateforPortVilaEfate/tabid/208/Default.aspx" class="SkinObject">Climate for Port Vila (Efate)</a></span>
+</td>
+                <td align="right" style="width:200px"><span id="dnn_dnnCURRENTDATE_lblDate" class="SkinObject">Wednesday, March 29, 2017</span>
+</td>
+              </tr>
+              </table>
+          </div>
+          
+	        <div id="dnn_ContentPane" class="skincontentpane"><a id="635"></a>
+
+<link id="container" rel="stylesheet" type="text/css" href="/Portals/_default/Containers/TransparentContainer/container.css" />
+
+<table class="containermaster_df" cellspacing="0" cellpadding="0" align="center" border="0" width="100%">
+    <tr>
+        <td class="containerrow1_df">
+            <table width="100%" border="0" cellpadding="0" cellspacing="0">
+                <tr>
+                  <td valign="middle" nowrap>
+                  </td>
+                  <td valign="middle" width="100%" nowrap>
+                        &nbsp;<span id="dnn_ctr635_dnnTITLE_lblTitle" class="Head">Your Climate when Visiting Port Vila, Efate</span>
+
+
+
+                  </td>
+                </tr>
+            </table>
+        </td>
+    </tr>
+    <tr>
+        <td id="dnn_ctr635_ContentPane" class="containerpane"><!-- Start_Module_635 --><div id="dnn_ctr635_ModuleContent" class="Climate Data v1Content">
+	
+    
+    <style type="text/css">
+
+
+
+/* ajax__tab_opera-theme theme */
+.ajax__tab_opera-theme
+{
+	display:block;
+	/* fonts for the tabs */
+	font-family:"Trebuchet MS",Trebuchet,Verdana,Helvetica,Arial,sans-serif;
+	font-size:13px;	
+}
+.ajax__tab_opera-theme .ajax__tab_tab
+{
+	font-weight:bold;	
+}
+.ajax__tab_opera-theme .ajax__tab_body 
+{
+	background-color:#fff;
+	border:1px solid #eeeeee; /* border */
+	border-top:none;
+	padding:10px;
+}
+.ajax__tab_opera-theme .ajax__tab_header
+{
+	border-bottom:1px solid #eeeeee; /* border */
+	padding-right:10px;
+}
+
+/* regular header styles */
+.ajax__tab_opera-theme .ajax__tab_header .ajax__tab_tab
+{
+	/* left/right rounded images are 11 pixels wide */
+	margin:0px 11px 0px 11px;
+	color:#fff; 
+	background:url('/images/tabs/opera/bg.gif') repeat-x;	
+}
+.ajax__tab_opera-theme .ajax__tab_header .ajax__tab_outer
+{
+	/* 2 pixel horizontal space between tabs */
+	margin-right:2px;
+	background:url('/images/tabs/opera/right.gif') no-repeat right top;
+}
+.ajax__tab_opera-theme .ajax__tab_header .ajax__tab_inner
+{
+	background:url('/images/tabs/opera/left.gif') no-repeat left top;
+}
+
+/* active headers styles */
+.ajax__tab_opera-theme .ajax__tab_active .ajax__tab_tab, 
+.ajax__tab_opera-theme .ajax__tab_hover .ajax__tab_tab  
+{
+	/* left/right rounded images are 11 pixels wide */
+	margin:0px 11px 0px 11px;
+	color:#111111;
+	background:url('/images/tabs/opera/bg.gif') repeat-x 0pt -48px;	
+}
+.ajax__tab_opera-theme .ajax__tab_active .ajax__tab_outer,
+.ajax__tab_opera-theme .ajax__tab_hover .ajax__tab_outer
+{
+	/* 2 pixel horizontal space between tabs */
+	margin-right:2px;
+	background:url('/images/tabs/opera/right.gif') no-repeat 100% -48px;
+}
+.ajax__tab_opera-theme .ajax__tab_active .ajax__tab_inner,
+.ajax__tab_opera-theme .ajax__tab_hover .ajax__tab_inner
+{
+	background:url('/images/tabs/opera/left.gif') no-repeat 0pt -48px;
+}
+
+
+/* ajax__tab_red-theme theme (images/red.jpg) */
+.ajax__tab_red-theme .ajax__tab_header 
+{
+    font-family:arial,helvetica,clean,sans-serif;
+    font-size:small;
+    font-weight:bold;
+    border-bottom:solid 5px #a50000;
+}
+.ajax__tab_red-theme .ajax__tab_header .ajax__tab_outer 
+{
+    background:url('/images/colour/red.jpg') #d8d8d8 repeat-x;
+    margin:0px 0.16em 0px 0px;
+    padding:1px 0px 1px 0px;
+    vertical-align:bottom;
+    border:solid 1px #a3a3a3;
+    border-bottom-width:0px;
+}
+.ajax__tab_red-theme .ajax__tab_header .ajax__tab_tab
+{    
+    color:#000;
+    padding:0.35em 0.75em;    
+    margin-right:0.01em;
+}
+.ajax__tab_red-theme .ajax__tab_hover .ajax__tab_outer 
+{
+    background: url('/images/colour/red.jpg') #bfdaff repeat-x left -1300px;
+}
+.ajax__tab_red-theme .ajax__tab_active .ajax__tab_tab 
+{
+    color:#fff;
+}
+.ajax__tab_red-theme .ajax__tab_active .ajax__tab_outer
+{
+    background:url('/images/colour/red.jpg') #a50000 repeat-x left -1400px;
+}
+.ajax__tab_red-theme .ajax__tab_body 
+{
+    font-family:verdana,tahoma,helvetica;
+    font-size:10pt;
+    padding:0.25em 0.5em;
+    background-color:#edf5ff;    
+    border:solid 1px #808080;
+    border-top-width:0px;
+}
+
+/* ajax__tab_lightblue-theme theme (images/lightblue.jpg) */
+.ajax__tab_lightblue-theme .ajax__tab_header 
+{
+    font-family:arial,helvetica,clean,sans-serif;
+    font-size:small;
+    border-bottom:solid 5px #c2e0fd;
+}
+.ajax__tab_lightblue-theme .ajax__tab_header .ajax__tab_outer 
+{
+    background:url('/images/colour/lightblue.jpg') #d8d8d8 repeat-x;
+    margin:0px 0.16em 0px 0px;
+    padding:1px 0px 1px 0px;
+    vertical-align:bottom;
+    border:solid 1px #a3a3a3;
+    border-bottom-width:0px;
+}
+.ajax__tab_lightblue-theme .ajax__tab_header .ajax__tab_tab
+{    
+    color:#000;
+    padding:0.35em 0.75em;    
+    margin-right:0.01em;
+}
+.ajax__tab_lightblue-theme .ajax__tab_hover .ajax__tab_outer 
+{
+    background: url('/images/colour/lightblue.jpg') #bfdaff repeat-x left -1300px;
+}
+.ajax__tab_lightblue-theme .ajax__tab_active .ajax__tab_tab 
+{
+    color:#000;
+}
+.ajax__tab_lightblue-theme .ajax__tab_active .ajax__tab_outer
+{
+    background:url('/images/colour/lightblue.jpg') #ffffff repeat-x left -1400px;
+}
+.ajax__tab_lightblue-theme .ajax__tab_body 
+{
+    font-family:verdana,tahoma,helvetica;
+    font-size:10pt;
+    padding:0.25em 0.5em;
+    background-color:#ffffff;    
+    border:solid 1px #808080;
+    border-top-width:0px;
+}
+
+/* ajax__tab_green-theme theme (images/green.jpg) */
+.ajax__tab_green-theme .ajax__tab_header 
+{
+    font-family:arial,helvetica,clean,sans-serif;
+    font-size:small;
+    border-bottom:solid 5px #7cdb44;
+}
+.ajax__tab_green-theme .ajax__tab_header .ajax__tab_outer 
+{
+    background:url('/images/colour/green.jpg') #d8d8d8 repeat-x;
+    margin:0px 0.16em 0px 0px;
+    padding:1px 0px 1px 0px;
+    vertical-align:bottom;
+    border:solid 1px #a3a3a3;
+    border-bottom-width:0px;
+}
+.ajax__tab_green-theme .ajax__tab_header .ajax__tab_tab
+{    
+    color:#000;
+    padding:0.35em 0.75em;    
+    margin-right:0.01em;
+}
+.ajax__tab_green-theme .ajax__tab_hover .ajax__tab_outer 
+{
+    background: url('/images/colour/green.jpg') #bfdaff repeat-x left -1300px;
+}
+.ajax__tab_green-theme .ajax__tab_active .ajax__tab_tab 
+{
+    color:#fff;
+}
+.ajax__tab_green-theme .ajax__tab_active .ajax__tab_outer
+{
+    background:url('/images/colour/green.jpg') #7cdb44 repeat-x left -1400px;
+}
+.ajax__tab_green-theme .ajax__tab_body 
+{
+    font-family:verdana,tahoma,helvetica;
+    font-size:10pt;
+    padding:0.25em 0.5em;
+    background-color:#edf5ff;    
+    border:solid 1px #808080;
+    border-top-width:0px;
+}
+/* ajax__tab_orange-theme theme (images/orange.jpg) */
+.ajax__tab_orange-theme .ajax__tab_header 
+{
+    font-family:arial,helvetica,clean,sans-serif;
+    font-size:small;
+    border-bottom:solid 5px #84aeef;
+}
+.ajax__tab_orange-theme .ajax__tab_header .ajax__tab_outer 
+{
+    background:url('/images/colour/orange.jpg') #d8d8d8 repeat-x;
+    margin:0px 0.16em 0px 0px;
+    padding:1px 0px 1px 0px;
+    vertical-align:bottom;
+    border:solid 1px #a3a3a3;
+    border-bottom-width:0px;
+}
+.ajax__tab_orange-theme .ajax__tab_header .ajax__tab_tab
+{    
+    color:#000;
+    padding:0.35em 0.75em;    
+    margin-right:0.01em;
+}
+.ajax__tab_orange-theme .ajax__tab_hover .ajax__tab_outer 
+{
+    background: url('/images/colour/orange.jpg') #bfdaff repeat-x left -1300px;
+}
+.ajax__tab_orange-theme .ajax__tab_active .ajax__tab_tab 
+{
+    color:#fff;
+}
+.ajax__tab_orange-theme .ajax__tab_active .ajax__tab_outer
+{
+    background:url('/images/colour/orange.jpg') #84aeef repeat-x left -1400px;
+}
+.ajax__tab_orange-theme .ajax__tab_body 
+{
+    font-family:verdana,tahoma,helvetica;
+    font-size:10pt;
+    padding:0.25em 0.5em;
+    background-color:#edf5ff;    
+    border:solid 1px #808080;
+    border-top-width:0px;
+}
+
+/* ajax__tab_darkblue-theme theme (images/darkblue.jpg) */
+.ajax__tab_darkblue-theme .ajax__tab_header 
+{
+    font-family:arial,helvetica,clean,sans-serif;
+    font-size:small;
+    border-bottom:solid 5px #84aeef;
+}
+.ajax__tab_darkblue-theme .ajax__tab_header .ajax__tab_outer 
+{
+    background:url('/images/colour/darkblue.jpg') #d8d8d8 repeat-x;
+    margin:0px 0.16em 0px 0px;
+    padding:1px 0px 1px 0px;
+    vertical-align:bottom;
+    border:solid 1px #a3a3a3;
+    border-bottom-width:0px;
+}
+.ajax__tab_darkblue-theme .ajax__tab_header .ajax__tab_tab
+{    
+    color:#000;
+    padding:0.35em 0.75em;    
+    margin-right:0.01em;
+}
+.ajax__tab_darkblue-theme .ajax__tab_hover .ajax__tab_outer 
+{
+    background: url('/images/colour/darkblue.jpg') #bfdaff repeat-x left -1300px;
+}
+.ajax__tab_darkblue-theme .ajax__tab_active .ajax__tab_tab 
+{
+    color:#fff;
+}
+.ajax__tab_darkblue-theme .ajax__tab_active .ajax__tab_outer
+{
+    background:url('/images/colour/darkblue.jpg') #84aeef repeat-x left -1400px;
+}
+.ajax__tab_darkblue-theme .ajax__tab_body 
+{
+    font-family:verdana,tahoma,helvetica;
+    font-size:10pt;
+    padding:0.25em 0.5em;
+    background-color:#edf5ff;    
+    border:solid 1px #808080;
+    border-top-width:0px;
+}
+/* ajax__tab_blueGrad-theme theme (images/blueGrad.jpg) */
+.ajax__tab_blueGrad-theme .ajax__tab_header 
+{
+    font-family:arial,helvetica,clean,sans-serif;
+    font-size:small;
+    color:#ffffff;
+    border-bottom:solid 5px #84aeef;
+}
+.ajax__tab_blueGrad-theme .ajax__tab_header .ajax__tab_outer 
+{
+    background:url('/images/colour/blueGrad.jpg') repeat-x;
+    margin:0px 0.16em 0px 0px;
+    padding:1px 0px 1px 0px;
+    vertical-align:middle;
+    border:solid 1px #a3a3a3;
+    border-bottom-width:0px;
+}
+.ajax__tab_blueGrad-theme .ajax__tab_header .ajax__tab_tab
+{    
+    color:#ffffff;
+    padding:0.35em 0.75em;    
+    margin-right:0.01em;
+}
+.ajax__tab_blueGrad-theme .ajax__tab_hover .ajax__tab_outer 
+{
+    background: url('/images/colour/blueGrad.jpg') #84aeef repeat-x left -1300px;
+}
+.ajax__tab_blueGrad-theme .ajax__tab_active .ajax__tab_tab 
+{
+    color:#fff;
+}
+.ajax__tab_blueGrad-theme .ajax__tab_active .ajax__tab_outer
+{
+     background:url('/images/colour/blueGrad.jpg') #84aeef repeat-x left -1400px;  
+}
+.ajax__tab_blueGrad-theme .ajax__tab_body 
+{
+    font-family:verdana,tahoma,helvetica;
+    font-size:10pt;
+    padding:0.25em 0.5em;
+    background-color:#edf5ff;    
+    border:solid 1px #808080;
+    border-top-width:0px;
+}
+
+</style>
+<div class="holder">
+<table>
+<tr>
+<td>
+
+<div class="demo">
+<div>
+        <div id="dnn_ctr635_ViewClimateData_Tabs" class="ajax__tab_opera-theme">
+		<div id="dnn_ctr635_ViewClimateData_Tabs_header">
+			<span id="__tab_dnn_ctr635_ViewClimateData_Tabs_pnlJan">Jan</span><span id="__tab_dnn_ctr635_ViewClimateData_Tabs_pnlFeb">Feb</span><span id="__tab_dnn_ctr635_ViewClimateData_Tabs_pnlMar">Mar</span><span id="__tab_dnn_ctr635_ViewClimateData_Tabs_pnlApril">Apr</span><span id="__tab_dnn_ctr635_ViewClimateData_Tabs_pnlMay">May</span><span id="__tab_dnn_ctr635_ViewClimateData_Tabs_pnlJune">Jun</span><span id="__tab_dnn_ctr635_ViewClimateData_Tabs_pnlJuly">Jul</span><span id="__tab_dnn_ctr635_ViewClimateData_Tabs_pnlAug">Aug</span><span id="__tab_dnn_ctr635_ViewClimateData_Tabs_pnlSept">Sep</span><span id="__tab_dnn_ctr635_ViewClimateData_Tabs_pnlOct">Oct</span><span id="__tab_dnn_ctr635_ViewClimateData_Tabs_pnlNov">Nov</span><span id="__tab_dnn_ctr635_ViewClimateData_Tabs_pnlDecember">Dec</span>
+		</div><div id="dnn_ctr635_ViewClimateData_Tabs_body">
+			<div id="dnn_ctr635_ViewClimateData_Tabs_pnlJan" style="display:none;">
+				
+                    <table class="climatenoborder" width="400px" cellpadding="4">
+                    <caption class="climatetitlecaption">January Climate Averages</caption>   
+                    
+                        <tr class="fcline1">
+                            <td  class="headings" width="200px"><span>Average Rain Fall (mm)</span></td>
+                            <td><span class="data">270.00</span></td>
+                        </tr>
+                        <tr>
+                            <td  class="headings" width="200px"><span>Average Maximum Temp(&deg;C)</span></td>
+                            <td><span class="data">31.00</span></td>
+                        </tr>
+                        <tr class="fcline1">
+                            <td  class="headings" width="200px"><span>Average Minimum Temp(&deg;C)</span></td>
+                            <td><span class="data">22.00</span></td>
+                        </tr>
+					    <tr>
+					        <td  class="headings" width="200px"><span>Average Sunshine Hours</span></td>
+					        <td><span class="data">198.00</span></td>  
+					    </tr>
+					    <tr class="fcline1">
+                            <td  class="headings" width="200px"><span>Relative Humidity (%)</span></td>
+                            <td><span class="data">84.00</span></td>
+                        </tr>
+                     
+            	</table>      
+                
+			</div><div id="dnn_ctr635_ViewClimateData_Tabs_pnlFeb" style="display:none;">
+				
+                     <table class="climatenoborder" width="400px" cellpadding="4">
+                    <caption class="climatetitlecaption">February Climate Averages</caption>   
+                    
+                        <tr class="fcline1">
+                            <td  class="headings" width="200px"><span>Average Rain Fall (mm)</span></td>
+                            <td><span class="data">293.00</span></td>
+                        </tr>
+                        <tr>
+                            <td  class="headings" width="200px"><span>Average Maximum Temp(&deg;C)</span></td>
+                            <td><span class="data">31.00</span></td>
+                        </tr>
+                        <tr class="fcline1">
+                            <td  class="headings" width="200px"><span>Average Minimum Temp(&deg;C)</span></td>
+                            <td><span class="data">22.00</span></td>
+                        </tr>
+					    <tr>
+					        <td  class="headings" width="200px"><span>Average Sunshine Hours</span></td>
+					        <td><span class="data">172.00</span></td>  
+					    </tr>
+					    <tr class="fcline1">
+                            <td  class="headings" width="200px"><span>Relative Humidity (%)</span></td>
+                            <td><span class="data">84.00</span></td>
+                        </tr>
+                     
+            	</table>      
+                
+			</div><div id="dnn_ctr635_ViewClimateData_Tabs_pnlMar" style="display:none;">
+				 
+                    <table class="climatenoborder" width="400px" cellpadding="4">
+                    <caption class="climatetitlecaption">March Climate Averages</caption>   
+                    
+                        <tr class="fcline1">
+                            <td  class="headings" width="200px"><span>Average Rain Fall (mm)</span></td>
+                            <td><span class="data">323.00</span></td>
+                        </tr>
+                        <tr>
+                            <td  class="headings" width="200px"><span>Average Maximum Temp(&deg;C)</span></td>
+                            <td><span class="data">30.00</span></td>
+                        </tr>
+                        <tr class="fcline1">
+                            <td  class="headings" width="200px"><span>Average Minimum Temp(&deg;C)</span></td>
+                            <td><span class="data">22.00</span></td>
+                        </tr>
+					    <tr>
+					        <td  class="headings" width="200px"><span>Average Sunshine Hours</span></td>
+					        <td><span class="data">176.00</span></td>  
+					    </tr>
+					    <tr class="fcline1">
+                            <td  class="headings" width="200px"><span>Relative Humidity (%)</span></td>
+                            <td><span class="data">87.00</span></td>
+                        </tr>
+                     
+            	</table>    
+                
+			</div><div id="dnn_ctr635_ViewClimateData_Tabs_pnlApril" style="display:none;">
+				
+                    <table class="climatenoborder" width="400px" cellpadding="4">
+                    <caption class="climatetitlecaption">April Climate Averages</caption>   
+                    
+                        <tr class="fcline1">
+                            <td  class="headings" width="200px"><span>Average Rain Fall (mm)</span></td>
+                            <td><span class="data">215.00</span></td>
+                        </tr>
+                        <tr>
+                            <td  class="headings" width="200px"><span>Average Maximum Temp(&deg;C)</span></td>
+                            <td><span class="data">29.00</span></td>
+                        </tr>
+                        <tr class="fcline1">
+                            <td  class="headings" width="200px"><span>Average Minimum Temp(&deg;C)</span></td>
+                            <td><span class="data">22.00</span></td>
+                        </tr>
+					    <tr>
+					        <td  class="headings" width="200px"><span>Average Sunshine Hours</span></td>
+					        <td><span class="data">173.00</span></td>  
+					    </tr>
+					    <tr class="fcline1">
+                            <td  class="headings" width="200px"><span>Relative Humidity (%)</span></td>
+                            <td><span class="data">87.00</span></td>
+                        </tr>
+                     
+            	</table>    
+                
+			</div><div id="dnn_ctr635_ViewClimateData_Tabs_pnlMay" style="display:none;">
+				
+                    <table class="climatenoborder" width="400px" cellpadding="4">
+                    <caption class="climatetitlecaption">May Climate Averages</caption>   
+                    
+                        <tr class="fcline1">
+                            <td  class="headings" width="200px"><span>Average Rain Fall (mm)</span></td>
+                            <td><span class="data">168.00</span></td>
+                        </tr>
+                        <tr>
+                            <td  class="headings" width="200px"><span>Average Maximum Temp(&deg;C)</span></td>
+                            <td><span class="data">28.00</span></td>
+                        </tr>
+                        <tr class="fcline1">
+                            <td  class="headings" width="200px"><span>Average Minimum Temp(&deg;C)</span></td>
+                            <td><span class="data">20.00</span></td>
+                        </tr>
+					    <tr>
+					        <td  class="headings" width="200px"><span>Average Sunshine Hours</span></td>
+					        <td><span class="data">169.00</span></td>  
+					    </tr>
+					    <tr class="fcline1">
+                            <td  class="headings" width="200px"><span>Relative Humidity (%)</span></td>
+                            <td><span class="data">85.00</span></td>
+                        </tr>
+                     
+            	</table>    
+            	
+                
+			</div><div id="dnn_ctr635_ViewClimateData_Tabs_pnlJune" style="display:none;">
+				
+                    <table class="climatenoborder" width="400px" cellpadding="4">
+                    <caption class="climatetitlecaption">June Climate Averages</caption>   
+                    
+                        <tr class="fcline1">
+                            <td  class="headings" width="200px"><span>Average Rain Fall (mm)</span></td>
+                            <td><span class="data">161.00</span></td>
+                        </tr>
+                        <tr>
+                            <td  class="headings" width="200px"><span>Average Maximum Temp(&deg;C)</span></td>
+                            <td><span class="data">27.00</span></td>
+                        </tr>
+                        <tr class="fcline1">
+                            <td  class="headings" width="200px"><span>Average Minimum Temp(&deg;C)</span></td>
+                            <td><span class="data">19.00</span></td>
+                        </tr>
+					    <tr>
+					        <td  class="headings" width="200px"><span>Average Sunshine Hours</span></td>
+					        <td><span class="data">139.00</span></td>  
+					    </tr>
+					    <tr class="fcline1">
+                            <td  class="headings" width="200px"><span>Relative Humidity (%)</span></td>
+                            <td><span class="data">86.00</span></td>
+                        </tr>
+                     
+            	</table>    
+                
+			</div><div id="dnn_ctr635_ViewClimateData_Tabs_pnlJuly" style="display:none;">
+				
+                    <table class="climatenoborder" width="400px" cellpadding="4">
+                    <caption class="climatetitlecaption">July Climate Averages</caption>   
+                    
+                        <tr class="fcline1">
+                            <td  class="headings" width="200px"><span>Average Rain Fall (mm)</span></td>
+                            <td><span class="data">92.00</span></td>
+                        </tr>
+                        <tr>
+                            <td  class="headings" width="200px"><span>Average Maximum Temp(&deg;C)</span></td>
+                            <td><span class="data">26.00</span></td>
+                        </tr>
+                        <tr class="fcline1">
+                            <td  class="headings" width="200px"><span>Average Minimum Temp(&deg;C)</span></td>
+                            <td><span class="data">18.00</span></td>
+                        </tr>
+					    <tr>
+					        <td  class="headings" width="200px"><span>Average Sunshine Hours</span></td>
+					        <td><span class="data">159.00</span></td>  
+					    </tr>
+					    <tr class="fcline1">
+                            <td  class="headings" width="200px"><span>Relative Humidity (%)</span></td>
+                            <td><span class="data">85.00</span></td>
+                        </tr>
+                     
+            	</table>    
+                
+			</div><div id="dnn_ctr635_ViewClimateData_Tabs_pnlAug" style="display:none;">
+				
+                     <table class="climatenoborder" width="400px" cellpadding="4">
+                    <caption class="climatetitlecaption">August Climate Averages</caption>   
+                    
+                        <tr class="fcline1">
+                            <td  class="headings" width="200px"><span>Average Rain Fall (mm)</span></td>
+                            <td><span class="data">86.00</span></td>
+                        </tr>
+                        <tr>
+                            <td  class="headings" width="200px"><span>Average Maximum Temp(&deg;C)</span></td>
+                            <td><span class="data">26.00</span></td>
+                        </tr>
+                        <tr class="fcline1">
+                            <td  class="headings" width="200px"><span>Average Minimum Temp(&deg;C)</span></td>
+                            <td><span class="data">17.00</span></td>
+                        </tr>
+					    <tr>
+					        <td  class="headings" width="200px"><span>Average Sunshine Hours</span></td>
+					        <td><span class="data">180.00</span></td>  
+					    </tr>
+					    <tr class="fcline1">
+                            <td  class="headings" width="200px"><span>Relative Humidity (%)</span></td>
+                            <td><span class="data">81.00</span></td>
+                        </tr>
+                     
+            	</table>    
+                
+			</div><div id="dnn_ctr635_ViewClimateData_Tabs_pnlSept" style="display:none;">
+				
+                    <table class="climatenoborder" width="400px" cellpadding="4">
+                    <caption class="climatetitlecaption">September Climate Averages</caption>   
+                    
+                        <tr class="fcline1">
+                            <td  class="headings" width="200px"><span>Average Rain Fall (mm)</span></td>
+                            <td><span class="data">90.00</span></td>
+                        </tr>
+                        <tr>
+                            <td  class="headings" width="200px"><span>Average Maximum Temp(&deg;C)</span></td>
+                            <td><span class="data">27.00</span></td>
+                        </tr>
+                        <tr class="fcline1">
+                            <td  class="headings" width="200px"><span>Average Minimum Temp(&deg;C)</span></td>
+                            <td><span class="data">18.00</span></td>
+                        </tr>
+					    <tr>
+					        <td  class="headings" width="200px"><span>Average Sunshine Hours</span></td>
+					        <td><span class="data">182.00</span></td>  
+					    </tr>
+					    <tr class="fcline1">
+                            <td  class="headings" width="200px"><span>Relative Humidity (%)</span></td>
+                            <td><span class="data">82.00</span></td>
+                        </tr>
+                     
+            	</table>    
+                
+			</div><div id="dnn_ctr635_ViewClimateData_Tabs_pnlOct" style="display:none;">
+				
+                    <table class="climatenoborder" width="400px" cellpadding="4">
+                    <caption class="climatetitlecaption">October Climate Averages</caption>   
+                    
+                        <tr class="fcline1">
+                            <td  class="headings" width="200px"><span>Average Rain Fall (mm)</span></td>
+                            <td><span class="data">104.00</span></td>
+                        </tr>
+                        <tr>
+                            <td  class="headings" width="200px"><span>Average Maximum Temp(&deg;C)</span></td>
+                            <td><span class="data">28.00</span></td>
+                        </tr>
+                        <tr class="fcline1">
+                            <td  class="headings" width="200px"><span>Average Minimum Temp(&deg;C)</span></td>
+                            <td><span class="data">18.00</span></td>
+                        </tr>
+					    <tr>
+					        <td  class="headings" width="200px"><span>Average Sunshine Hours</span></td>
+					        <td><span class="data">208.00</span></td>  
+					    </tr>
+					    <tr class="fcline1">
+                            <td  class="headings" width="200px"><span>Relative Humidity (%)</span></td>
+                            <td><span class="data">82.00</span></td>
+                        </tr>
+                     
+            	</table>    
+                
+			</div><div id="dnn_ctr635_ViewClimateData_Tabs_pnlNov" style="display:none;">
+				
+                     <table class="climatenoborder" width="400px" cellpadding="4">
+                    <caption class="climatetitlecaption">November Climate Averages</caption>   
+                    
+                        <tr class="fcline1">
+                            <td  class="headings" width="200px"><span>Average Rain Fall (mm)</span></td>
+                            <td><span class="data">135.00</span></td>
+                        </tr>
+                        <tr>
+                            <td  class="headings" width="200px"><span>Average Maximum Temp(&deg;C)</span></td>
+                            <td><span class="data">30.00</span></td>
+                        </tr>
+                        <tr class="fcline1">
+                            <td  class="headings" width="200px"><span>Average Minimum Temp(&deg;C)</span></td>
+                            <td><span class="data">20.00</span></td>
+                        </tr>
+					    <tr>
+					        <td  class="headings" width="200px"><span>Average Sunshine Hours</span></td>
+					        <td><span class="data">200.00</span></td>  
+					    </tr>
+					    <tr class="fcline1">
+                            <td  class="headings" width="200px"><span>Relative Humidity (%)</span></td>
+                            <td><span class="data">83.00</span></td>
+                        </tr>
+                     
+            	</table>    
+                
+			</div><div id="dnn_ctr635_ViewClimateData_Tabs_pnlDecember" style="display:none;">
+				
+                     <table class="climatenoborder" width="400px" cellpadding="4">
+                    <caption class="climatetitlecaption">December Climate Averages</caption>   
+                    
+                        <tr class="fcline1">
+                            <td  class="headings" width="200px"><span>Average Rain Fall (mm)</span></td>
+                            <td><span class="data">191.00</span></td>
+                        </tr>
+                        <tr>
+                            <td  class="headings" width="200px"><span>Average Maximum Temp(&deg;C)</span></td>
+                            <td><span class="data">30.00</span></td>
+                        </tr>
+                        <tr class="fcline1">
+                            <td  class="headings" width="200px"><span>Average Minimum Temp(&deg;C)</span></td>
+                            <td><span class="data">21.00</span></td>
+                        </tr>
+					    <tr>
+					        <td  class="headings" width="200px"><span>Average Sunshine Hours</span></td>
+					        <td><span class="data">196.00</span></td>  
+					    </tr>
+					    <tr class="fcline1">
+                            <td  class="headings" width="200px"><span>Relative Humidity (%)</span></td>
+                            <td><span class="data">82.00</span></td>
+                        </tr>
+                     
+            	</table>    
+                
+			</div>
+		</div>
+	</div>
+      
+      <span id="dnn_ctr635_ViewClimateData_CurrentTab"></span><br />
+      <span id="dnn_ctr635_ViewClimateData_Messages"></span>
+     </div>
+     </div>
+     </td>
+</tr>
+</table>
+</div>
+<script type="text/javascript">
+
+function PanelClick(sender, e) {
+}
+
+function ActiveTabChanged(sender, e) {
+}
+
+var HighlightAnimations = {};
+function Highlight(el) {
+}
+
+function ToggleHidden(value) {
+    $find('dnn_ctr635_ViewClimateData_Tabs').get_tabs()[2].set_enabled(value);
+}
+
+</script>
+</div><!-- End_Module_635 --></td>
+
+    </tr>
+    <tr>
+        <td>      
+            <table width="100%" border="0" cellpadding="0" cellspacing="0">
+                <tr>
+                  <td align="left" valign="middle" nowrap>
+                                      
+                  &nbsp;
+                  </td>
+                </tr>
+            </table>
+        </td>
+    </tr>
+</table>
+</div>
+  	      <div id="dnn_BottomPane" class="bottompane DNNEmptyPane"></div>
+        </div>   
+           
+        <div id="rightpanel">
+	        <div id="dnn_ContentPanelr1" class="contentpanelr1"><a id="573"></a>
+<LINK ID="container" REL="stylesheet" TYPE="text/css" HREF="/Portals/_default/Containers/CSS Link RL/container.css" />
+
+<div class="cssrlcontainermain">
+	
+    <div class="toprow">
+	    <span class="titlecol">
+	        
+	    </span>
+    </div> <!-- End title row -->
+  
+    <div class="cssrltitlerow">
+        <span class="cssrlmodtitle"><span id="dnn_ctr573_dnnTITLE_lblTitle" class="Head">Forecasts</span>
+
+
+</span>
+    </div>
+
+    <div id="dnn_ctr573_ContentPane" class="linkpane DNNAlignright" align="center"><!-- Start_Module_573 --><div id="dnn_ctr573_ModuleContent" class="DNN_LinksContent">
+	<div id="dnn_ctr573_Links_pnlList">
+		
+    <table id="dnn_ctr573_Links_lstLinks" cellspacing="0" cellpadding="0" summary="Links Design Table" border="0">
+			<tr>
+				<td valign="top">
+            <table border="0" cellpadding="4" cellspacing="0">
+                <tr>
+                    <td nowrap>
+                        
+                        
+                        <a class="Normal" href="/LinkClick.aspx?link=http%3a%2f%2fwww.niwa.cri.nz%2fncc%2ficu%2f&amp;tabid=208&amp;mid=573" target="_blank">ICU</a>
+                        &nbsp;
+                        
+                    </td>
+                </tr>
+                <tr>
+                    <td>
+                        
+                    </td>
+                </tr>
+            </table>
+        </td>
+			</tr><tr>
+				<td valign="top">
+            <table border="0" cellpadding="4" cellspacing="0">
+                <tr>
+                    <td nowrap>
+                        
+                        
+                        <a class="Normal" href="/LinkClick.aspx?link=http%3a%2f%2fwww.cpc.ncep.noaa.gov%2fproducts%2fpeople%2fwwang%2fcfs_fcst%2f&amp;tabid=208&amp;mid=573" target="_blank">NCEP</a>
+                        &nbsp;
+                        
+                    </td>
+                </tr>
+                <tr>
+                    <td>
+                        
+                    </td>
+                </tr>
+            </table>
+        </td>
+			</tr><tr>
+				<td valign="top">
+            <table border="0" cellpadding="4" cellspacing="0">
+                <tr>
+                    <td nowrap>
+                        
+                        
+                        <a class="Normal" href="/LinkClick.aspx?link=http%3a%2f%2fwww.ecmwf.int%2fproducts%2fforecasts%2fd%2fcharts%2fseasonal%2fforecast%2fseasonal_range_forecast%2fgroup_public%2fseasonal_charts_public_2tm%2f&amp;tabid=208&amp;mid=573" target="_blank">ECMWF </a>
+                        &nbsp;
+                        
+                    </td>
+                </tr>
+                <tr>
+                    <td>
+                        
+                    </td>
+                </tr>
+            </table>
+        </td>
+			</tr><tr>
+				<td valign="top">
+            <table border="0" cellpadding="4" cellspacing="0">
+                <tr>
+                    <td nowrap>
+                        
+                        
+                        <a class="Normal" href="/LinkClick.aspx?link=http%3a%2f%2firi.columbia.edu%2fclimate%2fforecast%2fnet_asmt%2f&amp;tabid=208&amp;mid=573" target="_blank">IRI</a>
+                        &nbsp;
+                        
+                    </td>
+                </tr>
+                <tr>
+                    <td>
+                        
+                    </td>
+                </tr>
+            </table>
+        </td>
+			</tr><tr>
+				<td valign="top">
+            <table border="0" cellpadding="4" cellspacing="0">
+                <tr>
+                    <td nowrap>
+                        
+                        
+                        <a class="Normal" href="/LinkClick.aspx?link=http%3a%2f%2fds.data.jma.go.jp%2ftcc%2ftcc%2fproducts%2fmodel%2fmap%2f4mE%2fmap1%2fzpcmap.html&amp;tabid=208&amp;mid=573" target="_self">TCC</a>
+                        &nbsp;
+                        
+                    </td>
+                </tr>
+                <tr>
+                    <td>
+                        
+                    </td>
+                </tr>
+            </table>
+        </td>
+			</tr><tr>
+				<td valign="top">
+            <table border="0" cellpadding="4" cellspacing="0">
+                <tr>
+                    <td nowrap>
+                        
+                        
+                        <a class="Normal" href="/LinkClick.aspx?link=http%3a%2f%2fwww.bom.gov.au%2fclimate%2fpi-cpp%2fclim_forecasts.shtml&amp;tabid=208&amp;mid=573" target="_self">Forecasts - PIC </a>
+                        &nbsp;
+                        
+                    </td>
+                </tr>
+                <tr>
+                    <td>
+                        
+                    </td>
+                </tr>
+            </table>
+        </td>
+			</tr><tr>
+				<td valign="top">
+            <table border="0" cellpadding="4" cellspacing="0">
+                <tr>
+                    <td nowrap>
+                        
+                        
+                        <a class="Normal" href="/LinkClick.aspx?link=204&amp;tabid=208&amp;mid=573" target="_self">Useful Links</a>
+                        &nbsp;
+                        
+                    </td>
+                </tr>
+                <tr>
+                    <td>
+                        
+                    </td>
+                </tr>
+            </table>
+        </td>
+			</tr>
+		</table>
+
+	</div>
+
+
+</div><!-- End_Module_573 --></div>
+  
+    <div class="baserow">
+        <span class="titlecol">
+            
+            
+            <span><span></span>&nbsp;&nbsp;</span>
+            &nbsp;
+        </span>
+    </div> <!-- End base row -->
+  
+</div>
+<a id="609"></a>
+<LINK ID="container" REL="stylesheet" TYPE="text/css" HREF="/Portals/_default/Containers/CSS Link RL/container.css" />
+
+<div class="cssrlcontainermain">
+	
+    <div class="toprow">
+	    <span class="titlecol">
+	        
+	    </span>
+    </div> <!-- End title row -->
+  
+    <div class="cssrltitlerow">
+        <span class="cssrlmodtitle"><span id="dnn_ctr609_dnnTITLE_lblTitle" class="Head">SST Forecast</span>
+
+
+</span>
+    </div>
+
+    <div id="dnn_ctr609_ContentPane" class="linkpane DNNAlignleft" align="center"><!-- Start_Module_609 --><div id="dnn_ctr609_ModuleContent" class="DNN_LinksContent">
+	<div id="dnn_ctr609_Links_pnlList">
+		
+    <table id="dnn_ctr609_Links_lstLinks" cellspacing="0" cellpadding="0" summary="Links Design Table" border="0">
+			<tr>
+				<td valign="top">
+            <table border="0" cellpadding="4" cellspacing="0">
+                <tr>
+                    <td nowrap>
+                        
+                        
+                        <a class="Normal" href="/LinkClick.aspx?link=http%3a%2f%2fwww.niwa.cri.nz%2fncc%2ficu%2f&amp;tabid=208&amp;mid=609" target="_self">Consensus SST</a>
+                        &nbsp;
+                        
+                    </td>
+                </tr>
+                <tr>
+                    <td>
+                        
+                    </td>
+                </tr>
+            </table>
+        </td>
+			</tr><tr>
+				<td valign="top">
+            <table border="0" cellpadding="4" cellspacing="0">
+                <tr>
+                    <td nowrap>
+                        
+                        
+                        <a class="Normal" href="/LinkClick.aspx?link=http%3a%2f%2firi.columbia.edu%2fclimate%2fENSO%2fcurrentinfo%2fSST_table.html&amp;tabid=208&amp;mid=609" target="_self">SST Forecasts - IRI</a>
+                        &nbsp;
+                        
+                    </td>
+                </tr>
+                <tr>
+                    <td>
+                        
+                    </td>
+                </tr>
+            </table>
+        </td>
+			</tr><tr>
+				<td valign="top">
+            <table border="0" cellpadding="4" cellspacing="0">
+                <tr>
+                    <td nowrap>
+                        
+                        
+                        <a class="Normal" href="/LinkClick.aspx?link=http%3a%2f%2fwww.cpc.ncep.noaa.gov%2fproducts%2fanalysis_monitoring%2fenso_update%2fgsstanim.shtml&amp;tabid=208&amp;mid=609" target="_self">SST Animation </a>
+                        &nbsp;
+                        
+                    </td>
+                </tr>
+                <tr>
+                    <td>
+                        
+                    </td>
+                </tr>
+            </table>
+        </td>
+			</tr>
+		</table>
+
+	</div>
+
+
+</div><!-- End_Module_609 --></div>
+  
+    <div class="baserow">
+        <span class="titlecol">
+            
+            
+            <span><span></span>&nbsp;&nbsp;</span>
+            &nbsp;
+        </span>
+    </div> <!-- End base row -->
+  
+</div>
+<a id="614"></a>
+<LINK ID="container" REL="stylesheet" TYPE="text/css" HREF="/Portals/_default/Containers/CSS Link RL/container.css" />
+
+<div class="cssrlcontainermain">
+	
+    <div class="toprow">
+	    <span class="titlecol">
+	        
+	    </span>
+    </div> <!-- End title row -->
+  
+    <div class="cssrltitlerow">
+        <span class="cssrlmodtitle"><span id="dnn_ctr614_dnnTITLE_lblTitle" class="Head">Archive</span>
+
+
+</span>
+    </div>
+
+    <div id="dnn_ctr614_ContentPane" class="linkpane DNNAlignleft" align="center"><!-- Start_Module_614 --><div id="dnn_ctr614_ModuleContent" class="DNN_LinksContent">
+	<div id="dnn_ctr614_Links_pnlList">
+		
+    <table id="dnn_ctr614_Links_lstLinks" cellspacing="0" cellpadding="0" summary="Links Design Table" border="0">
+			<tr>
+				<td valign="top">
+            <table border="0" cellpadding="4" cellspacing="0">
+                <tr>
+                    <td >
+                        
+                        
+                        <a class="Normal" href="/LinkClick.aspx?link=203&amp;tabid=208&amp;mid=614" target="_self">Old Climate Updates</a>
+                        &nbsp;
+                        
+                    </td>
+                </tr>
+                <tr>
+                    <td>
+                        
+                    </td>
+                </tr>
+            </table>
+        </td>
+			</tr>
+		</table>
+
+	</div>
+
+
+</div><!-- End_Module_614 --></div>
+  
+    <div class="baserow">
+        <span class="titlecol">
+            
+            
+            <span><span></span>&nbsp;&nbsp;</span>
+            &nbsp;
+        </span>
+    </div> <!-- End base row -->
+  
+</div>
+</div>
+	        <div id="dnn_ContentPanelr2" class="contentpanelr2 DNNEmptyPane"></div>
+	        <div id="dnn_ContentPanelr3" class="contentpanelr3 DNNEmptyPane"></div>
+        </div>
+        
+			<div id="base">
+				<div id="footer">
+						<span class="copyright">Copyright&nbsp;&copy;&nbsp;Vanuatu Meteorological Services&nbsp;2007</span>
+						<span class="disclaimer">
+							All person using this site are assumed to have read the <em>Terms and Conditions</em>
+							and the <em>Privacy Policy</em>. The copyright in the materials on this web site
+							is owned by the Vanuatu Government . The materials on this web site may only be used
+							by those who use it or reproduce it in hard copy for their own
+							personal reference. Any other use of the materials on this web site is
+							prohibited and is subject to the prior written permission from the Director
+							of Vanuatu Meteorological Service.
+							All rights reserved.
+						</span>
+				</div>
+			</div>
+
+	</div>
+</div>
+
+        <input name="ScrollTop" type="hidden" id="ScrollTop" />
+        <input name="__dnnVariable" type="hidden" id="__dnnVariable" />
+    
+<script type="text/javascript" src="/Resources/Shared/scripts/initWidgets.js" ></script>
+<script type="text/javascript">
+//<![CDATA[
+var dnn_dnnNAV_ctldnnNAV_Data = new Object();
+dnn_dnnNAV_ctldnnNAV_Data.disappearAfter = 500;
+dnn_dnnNAV_ctldnnNAV_Data.horizontalOffset = 0;
+dnn_dnnNAV_ctldnnNAV_Data.verticalOffset = 0;
+dnn_dnnNAV_ctldnnNAV_Data.hoverClass = 'subhover';
+Sys.Application.initialize();
+Sys.Application.add_init(function() {
+    $create(AjaxControlToolkit.TabPanel, {"headerTab":$get("__tab_dnn_ctr635_ViewClimateData_Tabs_pnlJan")}, null, {"owner":"dnn_ctr635_ViewClimateData_Tabs"}, $get("dnn_ctr635_ViewClimateData_Tabs_pnlJan"));
+});
+Sys.Application.add_init(function() {
+    $create(AjaxControlToolkit.TabPanel, {"headerTab":$get("__tab_dnn_ctr635_ViewClimateData_Tabs_pnlFeb")}, null, {"owner":"dnn_ctr635_ViewClimateData_Tabs"}, $get("dnn_ctr635_ViewClimateData_Tabs_pnlFeb"));
+});
+Sys.Application.add_init(function() {
+    $create(AjaxControlToolkit.TabPanel, {"headerTab":$get("__tab_dnn_ctr635_ViewClimateData_Tabs_pnlMar")}, null, {"owner":"dnn_ctr635_ViewClimateData_Tabs"}, $get("dnn_ctr635_ViewClimateData_Tabs_pnlMar"));
+});
+Sys.Application.add_init(function() {
+    $create(AjaxControlToolkit.TabPanel, {"headerTab":$get("__tab_dnn_ctr635_ViewClimateData_Tabs_pnlApril")}, null, {"owner":"dnn_ctr635_ViewClimateData_Tabs"}, $get("dnn_ctr635_ViewClimateData_Tabs_pnlApril"));
+});
+Sys.Application.add_init(function() {
+    $create(AjaxControlToolkit.TabPanel, {"headerTab":$get("__tab_dnn_ctr635_ViewClimateData_Tabs_pnlMay")}, null, {"owner":"dnn_ctr635_ViewClimateData_Tabs"}, $get("dnn_ctr635_ViewClimateData_Tabs_pnlMay"));
+});
+Sys.Application.add_init(function() {
+    $create(AjaxControlToolkit.TabPanel, {"headerTab":$get("__tab_dnn_ctr635_ViewClimateData_Tabs_pnlJune")}, null, {"owner":"dnn_ctr635_ViewClimateData_Tabs"}, $get("dnn_ctr635_ViewClimateData_Tabs_pnlJune"));
+});
+Sys.Application.add_init(function() {
+    $create(AjaxControlToolkit.TabPanel, {"headerTab":$get("__tab_dnn_ctr635_ViewClimateData_Tabs_pnlJuly")}, null, {"owner":"dnn_ctr635_ViewClimateData_Tabs"}, $get("dnn_ctr635_ViewClimateData_Tabs_pnlJuly"));
+});
+Sys.Application.add_init(function() {
+    $create(AjaxControlToolkit.TabPanel, {"headerTab":$get("__tab_dnn_ctr635_ViewClimateData_Tabs_pnlAug")}, null, {"owner":"dnn_ctr635_ViewClimateData_Tabs"}, $get("dnn_ctr635_ViewClimateData_Tabs_pnlAug"));
+});
+Sys.Application.add_init(function() {
+    $create(AjaxControlToolkit.TabPanel, {"headerTab":$get("__tab_dnn_ctr635_ViewClimateData_Tabs_pnlSept")}, null, {"owner":"dnn_ctr635_ViewClimateData_Tabs"}, $get("dnn_ctr635_ViewClimateData_Tabs_pnlSept"));
+});
+Sys.Application.add_init(function() {
+    $create(AjaxControlToolkit.TabPanel, {"headerTab":$get("__tab_dnn_ctr635_ViewClimateData_Tabs_pnlOct")}, null, {"owner":"dnn_ctr635_ViewClimateData_Tabs"}, $get("dnn_ctr635_ViewClimateData_Tabs_pnlOct"));
+});
+Sys.Application.add_init(function() {
+    $create(AjaxControlToolkit.TabPanel, {"headerTab":$get("__tab_dnn_ctr635_ViewClimateData_Tabs_pnlNov")}, null, {"owner":"dnn_ctr635_ViewClimateData_Tabs"}, $get("dnn_ctr635_ViewClimateData_Tabs_pnlNov"));
+});
+Sys.Application.add_init(function() {
+    $create(AjaxControlToolkit.TabPanel, {"headerTab":$get("__tab_dnn_ctr635_ViewClimateData_Tabs_pnlDecember")}, null, {"owner":"dnn_ctr635_ViewClimateData_Tabs"}, $get("dnn_ctr635_ViewClimateData_Tabs_pnlDecember"));
+});
+Sys.Application.add_init(function() {
+    $create(AjaxControlToolkit.TabContainer, {"activeTabIndex":0,"clientStateField":$get("dnn_ctr635_ViewClimateData_Tabs_ClientState"),"scrollBars":4}, {"activeTabChanged":ActiveTabChanged}, null, $get("dnn_ctr635_ViewClimateData_Tabs"));
+});
+//]]>
+</script>
+</form>
+
+</body>
+</html>

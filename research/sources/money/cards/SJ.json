@@ -1,0 +1,62 @@
+{
+ "country": "SJ",
+ "cards": [
+  {
+   "bank": "SpareBank 1 Nord-Norge",
+   "card": "SpareBank 1 Kredittkort",
+   "rate": {
+    "percent": "23.46",
+    "per": "year"
+   },
+   "fees": [],
+   "cash": {
+    "fee": {
+     "percent": "1",
+     "fixed": "40"
+    }
+   },
+   "fx": "2",
+   "minimum": {
+    "percent": "3.2",
+    "floor": "250"
+   },
+   "grace": 45,
+   "overLimit": {
+    "fixed": "125"
+   }
+  },
+  {
+   "bank": "SpareBank 1 Nord-Norge",
+   "card": "SpareBank 1 Kredittkort Ung",
+   "rate": {
+    "percent": "21.62",
+    "per": "year"
+   },
+   "fees": [],
+   "cash": {
+    "fee": {
+     "percent": "1",
+     "fixed": "40"
+    }
+   },
+   "fx": "2",
+   "minimum": {
+    "percent": "5",
+    "floor": "300"
+   },
+   "grace": 45,
+   "overLimit": {
+    "fixed": "70"
+   }
+  }
+ ],
+ "note": "The main banks: SpareBank 1 Nord-Norge, the one bank with a branch in Longyearbyen, is the bank read. Its price list for private customers (read 30 October 2026): the SpareBank 1 Kredittkort and the SpareBank 1 Kredittkort Ung (for young customers, an age the game doesn't check), both free to hold, at nominal rates of 23.46% and 21.62% a year; a cash withdrawal in Norway, or abroad in Norwegian kroner, costs 40 kroner plus 1% (one in a foreign currency abroad costs nothing, not modelled); spending in another currency carries a 2% currency surcharge; interest-free credit for up to 45 days; a minimum payment of 3.2% of the credit used, at least 250 kroner (5%, at least 300, on the Ung; agreements signed before 15 May 2019 keep 2.5%, not modelled); and an over-limit fee of 125 kroner (70 on the Ung). The reminder fee is 'according to the state's rates', a figure the price list doesn't give, so no late fee is written; nor are the transfer and bill payment fees, the 11-kroner paper invoice fee and the optional insurances. This file kept the Kredittkort, read on 29 October 2026, and adds its terms and the Ung. Wave 4 (30 October 2026): no bank was added. SpareBank 1 Nord-Norge is the only bank with a branch in Longyearbyen, and no source read shows another bank's terms for Svalbard.",
+ "sources": [
+  {
+   "url": "https://www.sparebank1.no/nb/nord-norge/privat/kundeservice/bestill/prisliste.html",
+   "title": "SpareBank 1 Nord-Norge, Prisliste privatkunder",
+   "read": "2026-10-30",
+   "said": "SpareBank 1 Kredittkort Ung ... Årspris 0 kr ... 40 kr + 1 % av uttaket ... Nominell rente 21,62 % p.a. ... Rentefri kreditt Inntil 45 dager Minstebeløp å betale ** 5 % av benyttet kreditt, minimum 300 kr ... Valutapåslag 2 % Overtrekksgebyr *** 70 kr ... SpareBank 1 Kredittkort Årspris Årspris 0 kr ... Rentefri betalingsutsettelse i inntil 45 dager. Renter påløper fra første forfall. Nedbetaling: 3,2 % av benyttet kreditt, minimum 250 kr**. ... Nominell rente 23,46 % p.a. ... Purregebyr I henhold til statens satser Overtrekksgebyr*** 125 kr"
+  }
+ ]
+}

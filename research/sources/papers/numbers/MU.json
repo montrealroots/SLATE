@@ -1,0 +1,25 @@
+{
+ "country": "MU",
+ "name": "Tax Account Number (TAN)",
+ "issuer": "the Mauritius Revenue Authority (MRA)",
+ "format": {
+  "length": 8,
+  "pattern": "^[1578]\\d{7}$"
+ },
+ "when": "registration",
+ "who": [
+  "anyone"
+ ],
+ "needed": [
+  "tax"
+ ],
+ "note": "Mauritius's sheet (its government's own sheet on the OECD's automatic-exchange portal ('Information on Tax Identification Numbers'; the OECD's index page sits behind a bot check and wasn't opened, the sheet itself came straight back)), read 2026-10-30: the TIN is officially the Tax Account Number (TAN); the Mauritius Revenue Authority issues one to every individual with a tax obligation, at the individual's registration in its databases, not automatically to all residents; eight numerals, an individual's starting with 1, 5, 7 or 8. Read as given on registration, to anyone with a tax obligation. No check rule, age, fee or time is stated.",
+ "sources": [
+  {
+   "url": "https://www.oecd.org/content/dam/oecd/en/topics/policy-issue-focus/aeoi/mauritius-tin.pdf",
+   "title": "OECD AEOI portal, Mauritius: Information on Tax Identification Numbers (the jurisdiction's own sheet)",
+   "read": "2026-10-30",
+   "said": "In Mauritius the TIN is officially called the Tax Account Number (TAN). For individuals: The Mauritius Revenue Authority (MRA) issues a Tax Account Number to all individuals with a tax obligation in Mauritius. The TAN is given at the time of the registration of the individual in the databases of the MRA. ... For individuals: The TAN consists of 8 numerals (format: 99999999). The first digit of the TAN is always 1, 5, 7or 8."
+  }
+ ]
+}

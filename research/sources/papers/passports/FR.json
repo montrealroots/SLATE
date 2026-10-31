@@ -1,0 +1,30 @@
+{
+ "country": "FR",
+ "office": "the town halls equipped to take passport applications, for the Ministère de l'Intérieur (ANTS)",
+ "currency": "EUR",
+ "routes": [
+  {"id": "france", "where": "home", "speed": "standard", "within": null, "label": "in France"},
+  {"id": "guyane", "where": "home", "speed": "standard", "within": null, "label": "in Guyane"},
+  {"id": "abroad", "where": "abroad", "speed": "standard", "within": null, "label": "abroad"}
+ ],
+ "passports": [
+  {"for": "adult", "from": 18, "validYears": 10, "pay": {"france": "86", "guyane": "43", "abroad": "96"}},
+  {"for": "minor", "from": 15, "under": 18, "validYears": 5, "pay": {"france": "42", "guyane": "21", "abroad": "52"}},
+  {"for": "minor", "under": 15, "validYears": 5, "pay": {"france": "17", "guyane": "8.50", "abroad": "27"}}
+ ],
+ "note": "The fee is a tax stamp (timbre fiscal). Service Public gives no processing time, only that it varies by place and season; the passport is made elsewhere, never issued on the spot, and is to be collected within 3 months.",
+ "sources": [
+  {
+   "url": "https://www.service-public.gouv.fr/particuliers/vosdroits/F14929",
+   "title": "Service Public (DILA, Premier ministre; Ministère chargé de l'intérieur), Passeport d'un majeur : première demande (vérifié le 8 avril 2026)",
+   "read": "2026-10-28",
+   "said": "En France: Vous devez acheter un timbre fiscal d'un montant de 86 € (43 € en Guyane) ... Les délais de fabrication dépendent du lieu et de la période de la demande ... Le passeport doit être retiré dans les 3 mois ... Le passeport est valide 10 ans. À l'étranger: Vous devez acheter un timbre fiscal d'un montant de 96 € ... Le passeport est valide 10 ans."
+  },
+  {
+   "url": "https://www.service-public.gouv.fr/particuliers/vosdroits/F14930",
+   "title": "Service Public (DILA, Premier ministre; Ministère chargé de l'intérieur), Passeport d'un mineur : première demande (vérifié le 19 juin 2026)",
+   "read": "2026-10-28",
+   "said": "En France: Si le mineur a entre 0 et 14 ans, le timbre fiscal coûte 17 € (8,50 € en Guyane) Si le mineur a entre 15 et 17 ans, le timbre fiscal coûte 42 € (21 € en Guyane) ... Le passeport d'un mineur est valable pendant 5 ans. À l'étranger: Si le mineur a entre 0 et 14 ans, le timbre fiscal coûte 27 € Si le mineur a entre 15 et 17 ans, le timbre fiscal coûte 52 €."
+  }
+ ]
+}

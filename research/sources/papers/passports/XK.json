@@ -1,0 +1,53 @@
+{
+ "country": "XK",
+ "office": "the Ministry of Internal Affairs, at the Centres for Documents (QPD)",
+ "currency": "EUR",
+ "routes": [
+  {
+   "id": "standard",
+   "where": "home",
+   "speed": "standard",
+   "within": null,
+   "label": "at a Centre for Documents"
+  },
+  {
+   "id": "expedited",
+   "where": "home",
+   "speed": "urgent",
+   "within": {
+    "n": 3,
+    "unit": "working day"
+   },
+   "label": "expedited, within 72 hours of working days"
+  }
+ ],
+ "passports": [
+  {
+   "for": "adult",
+   "from": 18,
+   "validYears": null,
+   "pay": {
+    "standard": "30",
+    "expedited": "80"
+   }
+  },
+  {
+   "for": "minor",
+   "under": 18,
+   "validYears": null,
+   "pay": {
+    "standard": "20",
+    "expedited": "70"
+   }
+  }
+ ],
+ "note": "The biometric passport's fee as the Ministry gives it; the expedited procedure (Administrative Instruction MIA No. 07/2017) adds 50 euros. A pensioner pays 15 euros (not modelled). Validity and the standard time aren't stated, leads.",
+ "sources": [
+  {
+   "url": "https://mpb.rks-gov.net/f/48",
+   "title": "Ministria e Punëve të Brendshme, Republika e Kosovës, Aplikimi për pasaportë biometrike",
+   "read": "2026-10-28",
+   "said": "Dëshminë për pagesë 20 Euro ( të cilën e merr gjatë aplikimit në sportel) ... Procedura e aplikimit për pajisje me pasaportë për personat nga mosha 18 vjeçare: ... Dëshminë për pagesë 30 Euro ( të cilën e merr gjatë aplikimit në sportel). Për pensionistë është 15 Euro ... Shënim: Sipas UA MPB Nr. 07/2017, pasaporta mund të merret me procedurë të përshpejtuar në afati kohor brenda 72 orë (llogariten vetëm ditët e punës), tarifa shtesë është 50 Euro."
+  }
+ ]
+}

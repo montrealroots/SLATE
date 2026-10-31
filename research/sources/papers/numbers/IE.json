@@ -1,0 +1,25 @@
+{
+ "country": "IE",
+ "name": "Personal Public Service Number (PPS No)",
+ "issuer": "the Department of Social Protection",
+ "format": {
+  "length": 8,
+  "pattern": "^\\d{7}[A-Z]$"
+ },
+ "when": "birth",
+ "who": [
+  "residents"
+ ],
+ "needed": [
+  "tax"
+ ],
+ "note": "Ireland's sheet (its government's own sheet on the OECD's automatic-exchange portal ('Information on Tax Identification Numbers'; the OECD's index page sits behind a bot check and wasn't opened, the sheet itself came straight back)), read 2026-10-30: the Personal Public Service Number is issued by the Department of Social Protection and used by the Revenue Commissioners to identify taxpayers; it is issued automatically on birth registration for children born in Ireland, and anyone else applies at a Department office; never changed. The sheet's format is seven digits and one or two letters; the pattern draws the one-letter form (the two-letter form is not modelled). Read as given at birth, to residents. No check rule, fee or time is stated.",
+ "sources": [
+  {
+   "url": "https://www.oecd.org/content/dam/oecd/en/topics/policy-issue-focus/aeoi/ireland-tin.pdf",
+   "title": "OECD AEOI portal, Ireland: Information on Tax Identification Numbers (the jurisdiction's own sheet)",
+   "read": "2026-10-30",
+   "said": "The number used to identify taxpayers is the Personal Public Service Number (PPS No). This number is issued by the Department of Social Protection ... PPS-numbers are issued automatically on birth registration for children born in the country. Anyone else must make application at an office of the Department of Social Protection. ... 7 digits + either 1 or 2 letters."
+  }
+ ]
+}

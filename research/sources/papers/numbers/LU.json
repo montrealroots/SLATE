@@ -1,0 +1,26 @@
+{
+ "country": "LU",
+ "name": "national identification number",
+ "issuer": "the Luxembourg State, under the law of 19 June 2013",
+ "format": {
+  "length": 13,
+  "pattern": "^\\d{13}$"
+ },
+ "when": "registration",
+ "who": [
+  "residents",
+  "citizens"
+ ],
+ "needed": [
+  "tax"
+ ],
+ "note": "Luxembourg's sheet (its government's own sheet on the OECD's automatic-exchange portal ('Information on Tax Identification Numbers'; the OECD's index page sits behind a bot check and wasn't opened, the sheet itself came straight back)), read 2026-10-30: the law of 19 June 2013 gives a 13-digit identification number to every natural person registered in a municipal registry, registered by law in a public administration's file, or a Luxembourg national living abroad; it serves as the tax number, automatically. Its 12th digit is a Luhn check and its 13th a Verhoeff check, both on the first 11 digits; the game's luhn computes one digit on the whole body, so it can't name this form and `check` is left out. The register that holds it (the national register of natural persons) isn't named in the sheet.",
+ "sources": [
+  {
+   "url": "https://www.oecd.org/content/dam/oecd/en/topics/policy-issue-focus/aeoi/luxembourg-tin.pdf",
+   "title": "OECD AEOI portal, Luxembourg: Information on Tax Identification Numbers (the jurisdiction's own sheet)",
+   "read": "2026-10-30",
+   "said": "The law of 19th June 2013 attributes an identification number of 13 digits to all natural persons. ... registered in a municipal registry of physical persons; ... possessing the Luxembourg nationality and residing abroad. ... The identification number has 13 digits (9999999999999), the 2 last digits are check digits."
+  }
+ ]
+}

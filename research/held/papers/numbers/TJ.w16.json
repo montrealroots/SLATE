@@ -1,0 +1,25 @@
+{
+ "country": "TJ",
+ "name": "идентификационный номер налогоплательщика (ИНН)",
+ "issuer": "the tax authorities (the tax inspectorate that registers the taxpayer)",
+ "format": {
+  "length": 9,
+  "pattern": "^\\d{2}[5-9]\\d{6}$"
+ },
+ "when": "application",
+ "from": 16,
+ "who": [
+  "anyone"
+ ],
+ "note": "The Federal Tax Service of Russia's table 'Сведения об используемых налоговых идентификаторах некоторых стран - членов СНГ' (updated 10 February 2020; read 2026-10-31), the section on the Republic of Tajikistan: the identifier for natural persons is the ИНН (the passport number isn't used for tax); every taxpayer has one, natural persons from the age of 16, residents and non-residents alike; natural persons of 16 or more get a certificate of the ИНН on application to the tax authorities, in the time the Tax Code sets (its art. 26(5)); the ИНН is nine digits, NNAXXXXXC: NN the code of the tax inspectorate that registered the taxpayer and issues the number, A a digit giving the taxpayer's status (0 to 4 a legal person, 5 to 9 a natural person), XXXXX the taxpayer's serial number. The table rests on the Tax Code of Tajikistan then in force (it cites art. 26(5)); it is marked secondary, quoting the Tax Committee (andoz.tj), whose sites didn't answer this research. READINGS: the table dates from February 2020; the new Tax Code of Tajikistan (adopted 2021, in force from 1 January 2022) wasn't read (adlia.tj answered 503 and the Tax Committee's sites didn't answer), so whether it changed the number's form wasn't checked; the ninth character, C, isn't explained, and is read as a digit (the table gives nine numeric characters), so no check algorithm is held; the pattern is a natural person's (A from 5 to 9); 'who' is read as anyone, the table naming residents and non-residents. No fee or time is stated.",
+ "sources": [
+  {
+   "url": "https://340fzreport.nalog.ru/html/sites/www.340fzreport.nalog.ru/doc/sng_tin1802.pdf",
+   "title": "Federal Tax Service of Russia, Сведения об используемых налоговых идентификаторах некоторых стран - членов СНГ (updated 10 February 2020), section Республика Таджикистан",
+   "read": "2026-10-31",
+   "kind": "secondary",
+   "quotes": "https://andoz.tj/",
+   "said": "Дата обновления 10.02.2020 ... РЕСПУБЛИКА ТАДЖИКИСТАН ... Физическим лицам, достигшим 16-летнего возраста, а также не коммерческим юридическим лицам, выдаётся свидетельство о присвоении идентификационного номера налогоплательщика на основании заявления в соответствующие налоговые органы ... NNAXXXXXC 1. NN - код налоговой инспекции, поставившего налогоплательщика на учет и выдающего ИНН, ... 2) от 5 до 9, признак налогоплательщика физического лица, ... ИНН – 9 цифровых знаков,"
+  }
+ ]
+}

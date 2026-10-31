@@ -1,0 +1,30 @@
+{
+ "currency": "CRC",
+ "rates": [
+  {
+   "from": "2025-12-31",
+   "perUSD": "493.36"
+  },
+  {
+   "from": "2026-03-31",
+   "perUSD": "462.08"
+  },
+  {
+   "from": "2026-06-30",
+   "perUSD": "451.95"
+  },
+  {
+   "from": "2026-09-30",
+   "perUSD": "453.56"
+  }
+ ],
+ "note": "The US Treasury's Reporting Rates of Exchange (Bureau of the Fiscal Service), the rates US government agencies use for foreign currency, its 'Costa Rica-Colon' row: 493.36 from 2025-12-31; 462.08 from 2026-03-31; 451.95 from 2026-06-30; 453.56 from 2026-09-30 per US dollar, each holding until the next. Read from the Fiscal Data API on 2026-10-30.",
+ "sources": [
+  {
+   "url": "https://api.fiscaldata.treasury.gov/services/api/fiscal_service/v1/accounting/od/rates_of_exchange?filter=record_date:gte:2025-12-31&sort=country_currency_desc,effective_date&page%5Bsize%5D=2000&fields=record_date,country,currency,country_currency_desc,exchange_rate,effective_date&format=csv",
+   "title": "U.S. Department of the Treasury, Bureau of the Fiscal Service: Treasury Reporting Rates of Exchange (Fiscal Data API), record dates 31 December 2025 to 30 September 2026",
+   "read": "2026-10-30",
+   "said": "\"2025-12-31\",\"Costa Rica\",\"Colon\",\"Costa Rica-Colon\",\"493.36\",\"2025-12-31\" ... \"2026-03-31\",\"Costa Rica\",\"Colon\",\"Costa Rica-Colon\",\"462.08\",\"2026-03-31\" ... \"2026-06-30\",\"Costa Rica\",\"Colon\",\"Costa Rica-Colon\",\"451.95\",\"2026-06-30\" ... \"2026-09-30\",\"Costa Rica\",\"Colon\",\"Costa Rica-Colon\",\"453.56\",\"2026-09-30\""
+  }
+ ]
+}

@@ -51,6 +51,8 @@ const files = (over: Record<string, unknown> = {}) => ({
   ...over,
 });
 const passed = new Set([T, ALL]);
+/** What the check says where no row cites the register's blocker R-0002 (XX's row turned pending, or dropped). */
+const UNCITED = 'red research/register.json R-0002 | a blocker that no coverage row cites';
 const run = (over: Record<string, unknown> = {}, p: ReadonlySet<string> = passed) => checkCoverage(fixture(files(over)).repo, ledger, register, { passed: p });
 const findings = (over: Record<string, unknown> = {}, p?: ReadonlySet<string>) => all(run(over, p));
 const weatherRows = (r: unknown[]) => ({ [W]: { engine: 'world.weather', axis: 'country', rows: r } });
@@ -127,7 +129,7 @@ describe('the coverage check', () => {
   });
   it('holds a pending row as unfinished, not broken, and counts it', () => {
     const r = run(weatherRows([rows[0], rows[1], { key: 'XX', status: 'pending' }]));
-    expect(all(r)).toEqual(['incomplete - | 1 coverage rows are pending']);
+    expect(all(r)).toEqual([UNCITED, 'incomplete - | 1 coverage rows are pending']);
     expect(r.notes).toEqual(['2 engines; 1 rows pending']);
     expect(r.generated[0]?.content).toContain('| `world.weather` | 2 | yes | 2 | 0 | 0 | 0 | 1 |');
   });
@@ -136,6 +138,7 @@ describe('the coverage check', () => {
       `red ${W} FR | the key has two rows`,
       `red ${W} ZZ | the key isn't in the axis "country"`,
       `red ${W} | 2 keys of the axis "country" have no row (first: DE, XX)`,
+      UNCITED,
       'incomplete - | 1 coverage rows are pending',
     ]);
   });
@@ -143,6 +146,7 @@ describe('the coverage check', () => {
     const many = Object.fromEntries(['A', 'B', 'C', 'D', 'E', 'F', 'G'].map((k) => [k, {}]));
     expect(findings({ [A]: { ...axes, country: { ...axes.country, count: 7 } }, 'src/world/gazetteer/countries.json': many, ...weatherRows([]) })).toEqual([
       `red ${W} | 7 keys of the axis "country" have no row (first: A, B, C, D, E)`,
+      UNCITED,
     ]);
   });
   it("fails an axis whose universe isn't the owner's count", () => {
@@ -164,20 +168,28 @@ describe('the coverage check', () => {
     expect(findings(weatherRows([rows[0], { ...rows[1], status: 'game', register: [] }, { ...rows[2], register: ['R-0001'] }]))).toEqual([
       `red ${W} DE | a row standing on the game's own figure cites it`,
       `red ${W} XX | a blocked row cites its blocker`,
+      UNCITED,
     ]);
     expect(findings(weatherRows([rows[0], { ...rows[1], status: 'game', register: ['R-0003'] }, rows[2]]))).toEqual([]);
+  });
+  it('fails a blocker that no row of any matrix cites, and nothing else the register holds uncited', () => {
+    const researched = { ...rows[2], status: 'researched', register: ['R-0004'] };
+    expect(findings(weatherRows([rows[0], { ...rows[1], register: ['R-0004'] }, researched]))).toEqual([UNCITED]);
+    const elsewhere = { [G]: { engine: 'world.gazetteer', axis: 'place', rows: ['1', '2', '3', '4'].map((key) => ({ key, status: key === '4' ? 'blocked' : 'proven', register: key === '4' ? ['R-0002'] : [], tests: [T] })) } };
+    expect(findings({ ...weatherRows([rows[0], rows[1], researched]), ...elsewhere })).toEqual([]);
   });
   it('fails a done row with no test, or one that did not pass; a pending row needs none', () => {
     expect(findings(weatherRows([{ ...rows[0], tests: [] }, { ...rows[1], tests: ['x::y'] }, { key: 'XX', status: 'pending', tests: ['x::y'] }]))).toEqual([
       `red ${W} FR | the row names no test that holds it`,
       `red ${W} DE | the row's test didn't pass in this run: x::y`,
+      UNCITED,
       'incomplete - | 1 coverage rows are pending',
     ]);
     expect(findings(weatherRows([{ ...rows[0], tests: undefined }, rows[1], rows[2]]))).toEqual([`red ${W} FR | the row names no test that holds it`]);
   });
   it('fails an engine that reads a place without the country axis, or without a run over every place', () => {
     const placeOnly = { [E]: { ...engines, 'world.weather': { ...weather, matrices: ['coverage/w2.json'] } }, 'coverage/w2.json': { engine: 'world.weather', axis: 'place', rows: ['1', '2', '3', '4'].map((key) => ({ key, status: 'proven', tests: [T] })) } };
-    expect(findings(placeOnly)).toEqual(['red registry/engines.json world.weather | the engine reads a place, so it covers the country axis']);
+    expect(findings(placeOnly)).toEqual(['red registry/engines.json world.weather | the engine reads a place, so it covers the country axis', UNCITED]);
     expect(findings({}, new Set([T]))).toEqual(['red registry/engines.json world.weather | the engine reads a place, so a passing test runs it over every place of the map (allPlacesTest)']);
     expect(findings({ [E]: { ...engines, 'world.weather': { ...weather, allPlacesTest: undefined } } })).toEqual(['red registry/engines.json world.weather | the engine reads a place, so a passing test runs it over every place of the map (allPlacesTest)']);
   });

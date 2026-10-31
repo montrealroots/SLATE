@@ -1,0 +1,57 @@
+{
+ "country": "MX",
+ "document": "Credencial para Votar (INE voter's card, the official identification)",
+ "office": "the Instituto Nacional Electoral (INE), at its citizen service modules",
+ "currency": "MXN",
+ "routes": [
+  {
+   "id": "module",
+   "where": "home",
+   "speed": "standard",
+   "within": null,
+   "label": "in person at an INE citizen service module"
+  },
+  {
+   "id": "consulate",
+   "where": "abroad",
+   "speed": "standard",
+   "within": {
+    "n": 5,
+    "unit": "week"
+   },
+   "label": "at a Mexican consulate abroad, mailed home in three to five weeks"
+  }
+ ],
+ "cards": [
+  {
+   "for": "from 18",
+   "from": 18,
+   "validYears": 10,
+   "pay": {
+    "module": "0",
+    "consulate": "0"
+   }
+  }
+ ],
+ "note": "Mexico's official photo identification for adults is the INE's voter's card; a citizen may ask for it on turning 18. The General Law of Electoral Institutions and Procedures (article 156(5)) makes it valid for 10 years counted from the year of issue. The card is free, as the Foreign Ministry's consulate page says; abroad it reaches the holder by courier in three to five weeks. The time at a module in Mexico isn't modelled.",
+ "sources": [
+  {
+   "url": "https://ine.mx/credencial/",
+   "title": "Instituto Nacional Electoral, Credencial para Votar",
+   "read": "2026-10-28",
+   "said": "Si acabas de cumplir 18 años, también puedes solicitarla."
+  },
+  {
+   "url": "https://www.diputados.gob.mx/LeyesBiblio/pdf/LGIPE.pdf",
+   "title": "Cámara de Diputados, Ley General de Instituciones y Procedimientos Electorales, article 156",
+   "read": "2026-10-28",
+   "said": "5. La credencial para votar tendrá una vigencia de 10 años, contados a partir del año de su emisión"
+  },
+  {
+   "url": "https://consulmex.sre.gob.mx/oxnard/index.php/servicios-consulares/credencial-para-votar",
+   "title": "Secretaría de Relaciones Exteriores, Consulado de México en Oxnard, Credencial para Votar",
+   "read": "2026-10-28",
+   "said": "Este trámite no tiene costo, es gratuito. ... el Instituto Nacional Electoral enviará por mensajería, en un periodo de tres a cinco semanas, la credencial a tu domicilio."
+  }
+ ]
+}

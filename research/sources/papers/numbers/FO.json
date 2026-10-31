@@ -1,0 +1,25 @@
+{
+ "country": "FO",
+ "name": "P Number",
+ "issuer": "the National Registration Office",
+ "format": {
+  "length": 9,
+  "pattern": "^\\d{9}$"
+ },
+ "when": "birth",
+ "who": [
+  "residents"
+ ],
+ "needed": [
+  "tax"
+ ],
+ "note": "The Faroe Islands' sheet (its government's own sheet on the OECD's automatic-exchange portal ('Information on Tax Identification Numbers'; the OECD's index page sits behind a bot check and wasn't opened, the sheet itself came straight back)), read 2026-10-30: the Faroese P number, issued by the National Registration Office under the Civil Registration System Act, is the tax number; a person is registered on being born in the Faroes or moving there as a resident, or when taxable there; nine digits ddmmyyxxx, the last a check digit that also tells sex (odd male, even female), whose rule isn't given, so `check` is left out. Read as given at birth (or on arrival). The Faroes keep their own system apart from Denmark's CPR.",
+ "sources": [
+  {
+   "url": "https://www.oecd.org/content/dam/oecd/en/topics/policy-issue-focus/aeoi/faroe-islands-tin.pdf",
+   "title": "OECD AEOI portal, Faroe-Islands: Information on Tax Identification Numbers (the jurisdiction's own sheet)",
+   "read": "2026-10-30",
+   "said": "In the Faroe Islands the TIN equals the Faroese P Number. ... The P Number is issued in accordance with the Civil Registration System Act ... by the National Registration ... The person is born in the Faroe Islands or has moved to the Faroe Islands as a resident. ... Ddmmyyxxx (ddmmyy-xxx) 9 digits often with a hyphen between 6th and 7th digits ... The Last digit is a check digit"
+  }
+ ]
+}

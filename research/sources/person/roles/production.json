@@ -1,0 +1,1432 @@
+{
+ "role": "production",
+ "topics": [
+  {
+   "topic": "Stages and timelines",
+   "facts": [
+    {
+     "fact": "On a theatrical feature the producer must give the director ten weeks, or one day of editing for each two days of scheduled photography, whichever is longer, to complete the Director's Cut.",
+     "value": {
+      "weeks": 10,
+      "ratio": "1 editing day per 2 scheduled shooting days",
+      "rule": "longer of the two"
+     },
+     "src": [
+      1
+     ]
+    },
+    {
+     "fact": "On a High Budget SVOD picture of 96 minutes or longer budgeted at $22,500,000 or more, the Director's Cut period is ten weeks.",
+     "value": {
+      "weeks": 10
+     },
+     "src": [
+      1
+     ],
+     "asOf": "2023-09-24"
+    },
+    {
+     "fact": "On a long-form television motion picture of 91 minutes to two hours the Director's Cut period is 20 days, plus 5 days for each hour beyond two hours.",
+     "value": {
+      "days": 20,
+      "perExtraHourDays": 5
+     },
+     "src": [
+      1
+     ]
+    },
+    {
+     "fact": "The producer must give the director five days' advance notice of the time and place of every preview of a theatrical film.",
+     "value": {
+      "days": 5
+     },
+     "src": [
+      1
+     ]
+    },
+    {
+     "fact": "A director may ask for a preview of the Director's Cut before a public audience or, at the producer's choice, a private audience of no fewer than 100 people.",
+     "value": {
+      "minAudience": 100
+     },
+     "src": [
+      1
+     ]
+    },
+    {
+     "fact": "Under California's Program 4.0 a tax-credit project moves through five phases: application, documentation of the highest-ranked jobs ratios, the Credit Allocation Letter, principal photography through audit, and the Tax Credit Certificate.",
+     "value": [
+      "Phase I: application",
+      "Phase II: documentation",
+      "Phase III: Credit Allocation Letter",
+      "Phase IV: principal photography to audit",
+      "Phase V: Tax Credit Certificate"
+     ],
+     "src": [
+      28
+     ]
+    },
+    {
+     "fact": "A California tax-credit production must begin principal photography within 180 days of its Credit Allocation Letter, or 240 days if its qualified budget is $100 million or more.",
+     "value": {
+      "days": 180,
+      "daysIf100MPlus": 240
+     },
+     "src": [
+      28
+     ],
+     "asOf": "2026-01-01"
+    },
+    {
+     "fact": "A California tax-credit project must deliver its final element within 30 months of its Credit Allocation Letter.",
+     "value": {
+      "months": 30
+     },
+     "src": [
+      28
+     ],
+     "asOf": "2026-01-01"
+    },
+    {
+     "fact": "SAG-AFTRA advises a low-budget producer to start the signatory process four to six weeks before using its performers, less under the Micro-Budget Agreement.",
+     "value": {
+      "weeks": [
+       4,
+       6
+      ]
+     },
+     "src": [
+      5,
+      6
+     ]
+    },
+    {
+     "fact": "A City of Los Angeles film permit takes at least three full business days to process.",
+     "value": {
+      "businessDays": 3
+     },
+     "src": [
+      25
+     ]
+    }
+   ]
+  },
+  {
+   "topic": "Budget tiers",
+   "facts": [
+    {
+     "fact": "The DGA Low Budget Theatrical Sideletter covers scripted theatrical features budgeted up to $11 million, in seven levels from July 1, 2026 to June 30, 2027.",
+     "value": [
+      {
+       "level": "1a",
+       "max": 500000
+      },
+      {
+       "level": "1b",
+       "min": 500000,
+       "max": 1100000
+      },
+      {
+       "level": "2",
+       "min": 1100000,
+       "max": 3000000
+      },
+      {
+       "level": "3",
+       "min": 3000000,
+       "max": 4000000
+      },
+      {
+       "level": "4a",
+       "min": 4000000,
+       "max": 5500000
+      },
+      {
+       "level": "4b",
+       "min": 5500000,
+       "max": 8500000
+      },
+      {
+       "level": "4c",
+       "min": 8500000,
+       "max": 11000000
+      }
+     ],
+     "src": [
+      0
+     ],
+     "asOf": "2026-07-01"
+    },
+    {
+     "fact": "At DGA Low Budget Level 3 the director's salary is 33% of the Basic Agreement minimum with a 13-week guarantee, $108,168 in all.",
+     "value": {
+      "amount": 108168,
+      "currency": "USD"
+     },
+     "src": [
+      0
+     ],
+     "asOf": "2026-07-01"
+    },
+    {
+     "fact": "A DGA low-budget employer must submit a Final Cost Statement to the DGA before principal photography begins.",
+     "src": [
+      0
+     ],
+     "asOf": "2026-07-01"
+    },
+    {
+     "fact": "The WGA Low Budget Agreement covers narrative theatrical features budgeted at or below $1.2 million, with a lower band from $500,000 to $1.2 million.",
+     "value": {
+      "amount": 1200000,
+      "currency": "USD"
+     },
+     "src": [
+      2,
+      3
+     ]
+    },
+    {
+     "fact": "Under the WGA 2026 Basic Agreement a theatrical picture costing $5,000,000 or more is High Budget and one costing less is Low Budget, each with its own screenplay minimums.",
+     "value": {
+      "amount": 5000000,
+      "currency": "USD"
+     },
+     "src": [
+      4
+     ],
+     "asOf": "2026-05-02"
+    },
+    {
+     "fact": "Under the WGA 2026 Basic Agreement a dramatic SVOD program is High Budget if it costs $1,030,000 or more at 20 to 35 minutes, $1,750,000 or more at 36 to 65 minutes, or $3,000,000 or more at 66 minutes or longer; under 20 minutes it never is.",
+     "value": [
+      {
+       "minutes": "20-35",
+       "min": 1030000
+      },
+      {
+       "minutes": "36-65",
+       "min": 1750000
+      },
+      {
+       "minutes": "66+",
+       "min": 3000000
+      }
+     ],
+     "src": [
+      4
+     ],
+     "asOf": "2026-05-02"
+    },
+    {
+     "fact": "SAG-AFTRA's low-budget agreements cap the budget at $20,000 for Micro-Budget, $35,000 for Student Film, $50,000 for Short Project, $300,000 for Ultra Low Budget, $700,000 for Moderate Low Budget and $2,000,000 for Low Budget Theatrical.",
+     "value": [
+      {
+       "agreement": "Micro-Budget",
+       "max": 20000
+      },
+      {
+       "agreement": "Student Film",
+       "max": 35000,
+       "maxMinutes": 35
+      },
+      {
+       "agreement": "Short Project",
+       "max": 50000,
+       "maxMinutes": 40
+      },
+      {
+       "agreement": "Ultra Low Budget",
+       "max": 300000
+      },
+      {
+       "agreement": "Moderate Low Budget",
+       "max": 700000
+      },
+      {
+       "agreement": "Low Budget Theatrical",
+       "max": 2000000
+      }
+     ],
+     "src": [
+      5
+     ]
+    },
+    {
+     "fact": "Every SAG-AFTRA low-budget production must shoot entirely in the United States.",
+     "src": [
+      5
+     ]
+    },
+    {
+     "fact": "Under SAG-AFTRA's low-budget agreements there is no consecutive-day pay, except on overnight locations.",
+     "src": [
+      6
+     ]
+    },
+    {
+     "fact": "SAG-AFTRA may take a security deposit of 40% to 100% of covered performer payroll, returned at the completion of principal photography.",
+     "value": {
+      "percentOfPayroll": [
+       40,
+       100
+      ]
+     },
+     "src": [
+      6
+     ]
+    },
+    {
+     "fact": "A production qualifies for California's Program 4.0 credit only with a budget of at least $1 million, or $1 million per episode for a new series of at least 20 minutes an episode.",
+     "value": {
+      "amount": 1000000,
+      "currency": "USD"
+     },
+     "src": [
+      29
+     ]
+    }
+   ]
+  },
+  {
+   "topic": "Film and series structure",
+   "facts": [
+    {
+     "fact": "The Academy counts a picture as feature length only if it runs over 40 minutes.",
+     "value": {
+      "minutes": 40
+     },
+     "src": [
+      7
+     ]
+    },
+    {
+     "fact": "The Emmys count a half-hour episode as more than 20 and up to 40 minutes, and an hour-long episode as more than 40 minutes.",
+     "value": {
+      "halfHour": ">20-40",
+      "hour": ">40"
+     },
+     "src": [
+      10
+     ]
+    },
+    {
+     "fact": "An animation, comedy, drama, variety, short-form or reality series needs six episodes premiered nationally in the Emmy year to enter as a series, and a documentary or hosted nonfiction series needs three.",
+     "value": {
+      "series": 6,
+      "docSeries": 3
+     },
+     "src": [
+      10
+     ]
+    },
+    {
+     "fact": "Every episode of a limited or anthology series must premiere nationally by May 31 to compete that Emmy year.",
+     "src": [
+      10
+     ]
+    },
+    {
+     "fact": "Under the WGA's 2023 rules a development room has at least three writer-producers including the showrunner, guaranteed ten consecutive weeks.",
+     "value": {
+      "writerProducers": 3,
+      "weeks": 10
+     },
+     "src": [
+      44
+     ],
+     "asOf": "2023-12-01"
+    },
+    {
+     "fact": "A post-greenlight writers' room needs three writers for an order of 1 to 6 episodes, five for 7 to 12, and six for 13 or more, three of them writer-producers, guaranteed 20 weeks or the room's length if shorter.",
+     "value": [
+      {
+       "episodes": "1-6",
+       "writers": 3
+      },
+      {
+       "episodes": "7-12",
+       "writers": 5
+      },
+      {
+       "episodes": "13+",
+       "writers": 6
+      }
+     ],
+     "src": [
+      44
+     ],
+     "asOf": "2023-12-01"
+    },
+    {
+     "fact": "A series written entirely by one writer or team is exempt from the WGA minimum-staffing rules.",
+     "src": [
+      44
+     ],
+     "asOf": "2023-12-01"
+    },
+    {
+     "fact": "The WGA minimum for writing a pilot is 150% of the episode minimum.",
+     "value": {
+      "percentOfEpisode": 150
+     },
+     "src": [
+      4
+     ],
+     "asOf": "2026-05-02"
+    },
+    {
+     "fact": "A Best Picture nomination goes to no more than three producers who did the major part of the producing.",
+     "value": {
+      "maxProducers": 3
+     },
+     "src": [
+      8
+     ]
+    }
+   ]
+  },
+  {
+   "topic": "Distribution, release and windows",
+   "facts": [
+    {
+     "fact": "To qualify for the 99th Academy Awards a feature must play for paid admission in a commercial theater in Los Angeles County, New York City, the Bay Area, Chicago, Dallas-Fort Worth or Atlanta.",
+     "value": [
+      "Los Angeles County",
+      "City of New York",
+      "Bay Area",
+      "Chicago (Cook County)",
+      "Dallas-Fort Worth",
+      "Atlanta (Fulton County)"
+     ],
+     "src": [
+      7
+     ]
+    },
+    {
+     "fact": "The Academy's qualifying run is at least seven consecutive days in one theater with at least three screenings a day, one of them starting between 6 p.m. and 10 p.m.",
+     "value": {
+      "days": 7,
+      "screeningsPerDay": 3,
+      "eveningWindow": "18:00-22:00"
+     },
+     "src": [
+      7
+     ]
+    },
+    {
+     "fact": "A film first released in any non-theatrical medium is ineligible for the Oscars, though up to fifteen percent of its running time may be shown that way before the qualifying run.",
+     "value": {
+      "percent": 15
+     },
+     "src": [
+      7
+     ]
+    },
+    {
+     "fact": "For the 99th Academy Awards the qualifying run must begin between January 1 and December 31, 2026, and a picture gets only one qualifying run.",
+     "src": [
+      7
+     ],
+     "asOf": "2026-01-01"
+    },
+    {
+     "fact": "Films qualifying from July 1 to December 31, 2026 must file their Oscars submission forms by 5 p.m. PT on November 12, 2026.",
+     "src": [
+      7
+     ]
+    },
+    {
+     "fact": "A Best Picture contender also needs releases in nine more top-50 U.S. markets, ten in all, of at least seven days each with a daily showtime, within 45 days of the qualifying run.",
+     "value": {
+      "extraMarkets": 9,
+      "days": 7,
+      "withinDays": 45
+     },
+     "src": [
+      8
+     ]
+    },
+    {
+     "fact": "Paramount committed at CinemaCon in April 2026 to a 45-day theatrical window and 90 days before subscription streaming, as reported quoting its CEO.",
+     "value": {
+      "theatricalDays": 45,
+      "svodDays": 90
+     },
+     "src": [
+      12
+     ],
+     "asOf": "2026-04-16"
+    },
+    {
+     "fact": "Universal's exclusive theatrical window reaches 45 days starting in 2027, as reported.",
+     "value": {
+      "days": 45
+     },
+     "src": [
+      13
+     ]
+    }
+   ]
+  },
+  {
+   "topic": "Box office and audience",
+   "facts": [
+    {
+     "fact": "The global box office was $21.3 billion in 2021, by the MPA's 2021 THEME report, the latest it has published.",
+     "value": {
+      "amount": 21300000000,
+      "currency": "USD",
+      "period": "2021"
+     },
+     "src": [
+      11
+     ]
+    },
+    {
+     "fact": "The U.S./Canada box office was $4.5 billion in 2021, on 470 million tickets sold.",
+     "value": {
+      "boxOffice": {
+       "amount": 4500000000,
+       "currency": "USD",
+       "period": "2021"
+      },
+      "admissions": 470000000
+     },
+     "src": [
+      11
+     ]
+    },
+    {
+     "fact": "In 2021, 47% of the U.S./Canada population, 168 million people, went to the cinema at least once.",
+     "value": {
+      "percent": 47,
+      "people": 168000000
+     },
+     "src": [
+      11
+     ]
+    },
+    {
+     "fact": "Frequent moviegoers, who go once a month or more, were 3% of the U.S./Canada population in 2021 but bought 34% of tickets.",
+     "value": {
+      "populationPercent": 3,
+      "ticketPercent": 34
+     },
+     "src": [
+      11
+     ]
+    },
+    {
+     "fact": "More than 940 films entered production worldwide during 2021.",
+     "value": {
+      "films": 940
+     },
+     "src": [
+      11
+     ]
+    },
+    {
+     "fact": "Online video subscriptions worldwide reached 1.3 billion in 2021.",
+     "value": {
+      "subscriptions": 1300000000
+     },
+     "src": [
+      11
+     ]
+    }
+   ]
+  },
+  {
+   "topic": "Festivals and markets",
+   "facts": [
+    {
+     "fact": "Sundance 2027 charged feature films $80 by July 27, $100 by August 28 and $125 by September 21, 2026, and shorts from $55.",
+     "value": [
+      {
+       "deadline": "2026-07-27",
+       "fee": 80
+      },
+      {
+       "deadline": "2026-08-28",
+       "fee": 100
+      },
+      {
+       "deadline": "2026-09-21",
+       "fee": 125
+      }
+     ],
+     "src": [
+      14
+     ]
+    },
+    {
+     "fact": "A Sundance feature runs 50 minutes or more, and a U.S. feature must have at least half its financing from the United States.",
+     "value": {
+      "minutes": 50
+     },
+     "src": [
+      14
+     ]
+    },
+    {
+     "fact": "Only films keeping world premiere status may enter Sundance's U.S. feature categories, and a film shown to the public before February 1, 2027 is ineligible.",
+     "src": [
+      14
+     ]
+    },
+    {
+     "fact": "The 2027 Sundance Film Festival runs January 21 to 31, 2027 in Boulder, Colorado.",
+     "src": [
+      14
+     ]
+    },
+    {
+     "fact": "A Cannes Official Selection film must have been produced in the twelve months before the festival, shown nowhere outside its home country, at no other international festival, and never online.",
+     "value": {
+      "months": 12
+     },
+     "src": [
+      15
+     ]
+    },
+    {
+     "fact": "Every Cannes Competition film must be released commercially in French theatres.",
+     "src": [
+      15
+     ]
+    },
+    {
+     "fact": "Feature submissions for Cannes 2026 closed on March 13, 2026.",
+     "src": [
+      15
+     ]
+    },
+    {
+     "fact": "Rights-holders submitting to Cannes guarantee the film was made in compliance with health and safety law.",
+     "src": [
+      15
+     ]
+    },
+    {
+     "fact": "The Berlinale charges 175 euros to submit a feature and 75 euros for a short; features need at least 60 minutes and completion within 12 months of the festival.",
+     "value": {
+      "featureFee": {
+       "amount": 175,
+       "currency": "EUR"
+      },
+      "shortFee": {
+       "amount": 75,
+       "currency": "EUR"
+      },
+      "minutes": 60,
+      "months": 12
+     },
+     "src": [
+      16
+     ]
+    },
+    {
+     "fact": "Berlinale feature submissions for 2027 closed on October 21, 2026.",
+     "src": [
+      16
+     ]
+    },
+    {
+     "fact": "The Berlinale Competition takes world or international premieres only, and German films must be world premieres.",
+     "src": [
+      17
+     ]
+    },
+    {
+     "fact": "Venice 2026 took only world premieres completed after September 6, 2025, never shown publicly, to the press or online.",
+     "src": [
+      18
+     ]
+    },
+    {
+     "fact": "Venice 2026 charged 200 euros for a feature, rising to 250 euros from May 15, 2026.",
+     "value": [
+      {
+       "fee": {
+        "amount": 200,
+        "currency": "EUR"
+       }
+      },
+      {
+       "from": "2026-05-15",
+       "fee": {
+        "amount": 250,
+        "currency": "EUR"
+       }
+      }
+     ],
+     "src": [
+      18
+     ]
+    },
+    {
+     "fact": "SXSW 2027 charged features $95 by September 15 and $125 by October 1, 2026; the festival runs March 15 to 21, 2027 in Austin.",
+     "value": [
+      {
+       "deadline": "2026-09-15",
+       "fee": 95
+      },
+      {
+       "deadline": "2026-10-01",
+       "fee": 125
+      }
+     ],
+     "src": [
+      19
+     ]
+    }
+   ]
+  },
+  {
+   "topic": "Copyright and chain of title",
+   "facts": [
+    {
+     "fact": "A screenplay or treatment of a future motion picture is not a fixation of the motion picture for copyright.",
+     "src": [
+      20
+     ]
+    },
+    {
+     "fact": "Offering a film for exhibition at a festival may count as publication.",
+     "src": [
+      20
+     ]
+    },
+    {
+     "fact": "Once a motion picture is published, its screenplay is published to the extent the film contains it.",
+     "src": [
+      20
+     ]
+    },
+    {
+     "fact": "A copyright owner cannot sue for infringement until the Copyright Office has acted on the registration.",
+     "src": [
+      20
+     ]
+    },
+    {
+     "fact": "Copyright registration costs $45 online for a single author's one work not made for hire, and $65 on the Standard Application.",
+     "value": [
+      {
+       "form": "Single",
+       "fee": 45
+      },
+      {
+       "form": "Standard",
+       "fee": 65
+      }
+     ],
+     "src": [
+      21
+     ]
+    },
+    {
+     "fact": "Preregistering certain unpublished works costs $200.",
+     "value": {
+      "amount": 200,
+      "currency": "USD"
+     },
+     "src": [
+      21
+     ]
+    },
+    {
+     "fact": "Recording a transfer document costs $95 electronically or $125 on paper.",
+     "value": {
+      "electronic": 95,
+      "paper": 125
+     },
+     "src": [
+      21
+     ]
+    },
+    {
+     "fact": "A work made for hire is protected for 95 years from first publication or 120 years from creation, whichever ends first; an individual's work since 1978 lasts the author's life plus 70 years.",
+     "value": {
+      "forHireYearsPublished": 95,
+      "forHireYearsCreated": 120,
+      "lifePlus": 70
+     },
+     "src": [
+      22
+     ]
+    },
+    {
+     "fact": "A transfer of copyright ownership is valid only in a writing signed by the owner of the rights conveyed.",
+     "src": [
+      23
+     ]
+    },
+    {
+     "fact": "Between two conflicting transfers the first executed prevails if recorded within one month in the United States, or two months abroad.",
+     "value": {
+      "monthsUS": 1,
+      "monthsAbroad": 2
+     },
+     "src": [
+      23
+     ]
+    },
+    {
+     "fact": "WGA East script registration costs $10 for members, $17 for students and associates and $25 for the public, runs ten years, and gives no statutory protection.",
+     "value": {
+      "member": 10,
+      "student": 17,
+      "public": 25,
+      "years": 10
+     },
+     "src": [
+      24
+     ]
+    }
+   ]
+  },
+  {
+   "topic": "Insurance, permits and legal",
+   "facts": [
+    {
+     "fact": "Filming on location in the City of Los Angeles needs $1,000,000 of liability insurance, $500,000 for stills only and $2,000,000 for drones, naming the City and FilmLA as additional insured.",
+     "value": {
+      "filming": 1000000,
+      "stills": 500000,
+      "drones": 2000000
+     },
+     "src": [
+      25
+     ]
+    },
+    {
+     "fact": "Filming in unincorporated Los Angeles County needs proof of workers' compensation and $1,000,000 of liability, or $5,000,000 with aircraft.",
+     "value": {
+      "filming": 1000000,
+      "aircraft": 5000000
+     },
+     "src": [
+      26
+     ]
+    },
+    {
+     "fact": "A City of Los Angeles film permit application costs $931 for up to five locations over seven consecutive days, and a simple student permit $52.",
+     "value": {
+      "standard": 931,
+      "student": 52
+     },
+     "src": [
+      25
+     ]
+    },
+    {
+     "fact": "Standard filming hours in the City of Los Angeles are 7 a.m. to 10 p.m. on weekdays and 9 a.m. to 10 p.m. on weekends.",
+     "src": [
+      25
+     ]
+    },
+    {
+     "fact": "A program delivered to PBS needs errors and omissions insurance of $1,000,000 per occurrence and $3,000,000 aggregate, for at least three years, including title coverage.",
+     "value": {
+      "perOccurrence": 1000000,
+      "aggregate": 3000000,
+      "years": 3
+     },
+     "src": [
+      27
+     ],
+     "asOf": "2026-09-01"
+    }
+   ]
+  },
+  {
+   "topic": "Financing and incentives",
+   "facts": [
+    {
+     "fact": "California's Program 4.0 gives non-independent features and television a 35% credit on up to $120 million of qualified spending.",
+     "value": {
+      "percent": 35,
+      "capSpend": 120000000
+     },
+     "src": [
+      28
+     ],
+     "asOf": "2026-01-01"
+    },
+    {
+     "fact": "An independent film gets California's 35% credit on up to $20 million of qualified spending, and may sell or transfer the credit.",
+     "value": {
+      "percent": 35,
+      "capSpend": 20000000
+     },
+     "src": [
+      28
+     ],
+     "asOf": "2026-01-01"
+    },
+    {
+     "fact": "A series relocating to California gets a 40% credit for its first season there.",
+     "value": {
+      "percent": 40
+     },
+     "src": [
+      28
+     ],
+     "asOf": "2026-01-01"
+    },
+    {
+     "fact": "To qualify for California's credit at least 75% of the budget must be spent in California or at least 75% of principal photography days shot there.",
+     "value": {
+      "percent": 75
+     },
+     "src": [
+      28
+     ],
+     "asOf": "2026-01-01"
+    },
+    {
+     "fact": "California's Program 4.0 holds $3.75 billion over five years to June 30, 2030.",
+     "value": {
+      "amount": 3750000000,
+      "currency": "USD"
+     },
+     "src": [
+      29
+     ]
+    }
+   ]
+  },
+  {
+   "topic": "Safety",
+   "facts": [
+    {
+     "fact": "Live ammunition is never to be used on a set or brought onto any work location, under the industry's Safety Bulletin #1.",
+     "src": [
+      30
+     ],
+     "asOf": "2024-04-29"
+    },
+    {
+     "fact": "Firearms on a production are props in the charge of the Property Master, and only the Property Master and authorized cast should handle them.",
+     "src": [
+      30
+     ],
+     "asOf": "2024-04-29"
+    },
+    {
+     "fact": "Safety Bulletin #1 is to go out with the call sheet each day firearms or prop firearms are used.",
+     "src": [
+      30
+     ],
+     "asOf": "2024-04-29"
+    },
+    {
+     "fact": "The Industry Wide Labor-Management Safety Committee's bulletins are recommended guidelines, not law.",
+     "src": [
+      30
+     ]
+    },
+    {
+     "fact": "Before a minor performs a physical activity, the director, first assistant director, stunt coordinator and safety professional should confer with the minor, a parent and the studio teacher.",
+     "src": [
+      32
+     ],
+     "asOf": "2006-05-17"
+    },
+    {
+     "fact": "Every California employer must keep a written Injury and Illness Prevention Program.",
+     "src": [
+      33
+     ],
+     "asOf": "1991-07-01"
+    }
+   ]
+  },
+  {
+   "topic": "Sex and age",
+   "facts": [
+    {
+     "fact": "In California a minor needs an Entertainment Work Permit to work in entertainment, valid for no more than six months.",
+     "value": {
+      "months": 6
+     },
+     "src": [
+      35
+     ]
+    },
+    {
+     "fact": "In California a baby of 15 days to 6 months may be on set two hours and work twenty minutes.",
+     "value": {
+      "onSetHours": 2,
+      "workMinutes": 20
+     },
+     "src": [
+      34,
+      31
+     ]
+    },
+    {
+     "fact": "In California a child of 6 months to 2 years may be on set four hours and work two.",
+     "value": {
+      "onSetHours": 4,
+      "workHours": 2
+     },
+     "src": [
+      34
+     ]
+    },
+    {
+     "fact": "In California a child of 2 to 6 may be on set six hours and work three.",
+     "value": {
+      "onSetHours": 6,
+      "workHours": 3
+     },
+     "src": [
+      34
+     ]
+    },
+    {
+     "fact": "In California a child of 6 to 9 may be on set eight hours, work four and have at least three hours of school when school is in session.",
+     "value": {
+      "onSetHours": 8,
+      "workHours": 4,
+      "schoolHours": 3
+     },
+     "src": [
+      34
+     ]
+    },
+    {
+     "fact": "In California a minor of 9 to 16 may be on set nine hours, work five and have at least three hours of school when school is in session.",
+     "value": {
+      "onSetHours": 9,
+      "workHours": 5,
+      "schoolHours": 3
+     },
+     "src": [
+      34
+     ]
+    },
+    {
+     "fact": "In California a minor of 16 to 18 may be on set ten hours, work six and have at least three hours of school when school is in session.",
+     "value": {
+      "onSetHours": 10,
+      "workHours": 6,
+      "schoolHours": 3
+     },
+     "src": [
+      34
+     ]
+    },
+    {
+     "fact": "In California twelve hours must pass between a minor's dismissal and the next call.",
+     "value": {
+      "hours": 12
+     },
+     "src": [
+      34
+     ]
+    },
+    {
+     "fact": "A California production must provide a studio teacher for minors from 15 days to 16 years, one for every ten minors.",
+     "value": {
+      "ratio": 10
+     },
+     "src": [
+      36
+     ]
+    },
+    {
+     "fact": "A parent or guardian must be with a California minor under 16 on set at all times.",
+     "value": {
+      "age": 16
+     },
+     "src": [
+      37
+     ]
+    },
+    {
+     "fact": "Travel between studio and location counts toward a California minor's working day.",
+     "src": [
+      38
+     ]
+    },
+    {
+     "fact": "In New York a child performer needs a Child Performer Permit before work begins, and the employer needs a Certificate of Eligibility.",
+     "src": [
+      39,
+      40
+     ]
+    },
+    {
+     "fact": "In New York an employer puts 15% of a child performer's gross earnings into a trust account.",
+     "value": {
+      "percent": 15
+     },
+     "src": [
+      40
+     ]
+    },
+    {
+     "fact": "In New York infants under 15 days old may not be employed, and child performers get 12 hours of rest between workdays.",
+     "value": {
+      "minAgeDays": 15,
+      "restHours": 12
+     },
+     "src": [
+      41
+     ]
+    },
+    {
+     "fact": "In New York a child performer must get an average of at least three hours of instruction per school day, and never more than ten consecutive school days without it.",
+     "value": {
+      "hours": 3,
+      "maxDaysWithout": 10
+     },
+     "src": [
+      39
+     ]
+    },
+    {
+     "fact": "An R-rated film admits children under 17 only with a parent or adult guardian, and an NC-17 film admits no one 17 or under.",
+     "value": {
+      "R": 17,
+      "NC-17": 17
+     },
+     "src": [
+      42
+     ],
+     "asOf": "2020-07-24"
+    },
+    {
+     "fact": "Nudity and sex scenes are not allowed under SAG-AFTRA's Micro-Budget Agreement.",
+     "src": [
+      6
+     ]
+    },
+    {
+     "fact": "Under SAG-AFTRA's first intimacy coordinator contract, ratified in December 2025, coordinators get minimum day and week rates, union health and pension, and access to performers' nudity and simulated sex riders.",
+     "src": [
+      43
+     ],
+     "asOf": "2025-12-19"
+    },
+    {
+     "fact": "The Academy's acting awards are four categories, actor and actress in a leading and in a supporting role, voted by the Actors Branch.",
+     "value": [
+      "Actor in a Leading Role",
+      "Actor in a Supporting Role",
+      "Actress in a Leading Role",
+      "Actress in a Supporting Role"
+     ],
+     "src": [
+      9
+     ]
+    },
+    {
+     "fact": "Only roles performed by humans with their consent are eligible for the Academy's acting awards.",
+     "src": [
+      9
+     ]
+    },
+    {
+     "fact": "The Emmys give separate lead actor and lead actress awards for series.",
+     "src": [
+      10
+     ]
+    },
+    {
+     "fact": "SAG-AFTRA's Moderate Low Budget and Low Budget agreements offer production incentives when half the speaking roles and days go to women, performers over 60, performers with disabilities or people of color, and 20% of days to people of color.",
+     "src": [
+      6
+     ]
+    }
+   ]
+  }
+ ],
+ "sources": [
+  {
+   "url": "https://www.dga.org/news/guild-news/2026/september2026/2026-changes2lowbudgettheatricalsideletter",
+   "title": "DGA: 2026 Changes to the Low Budget Theatrical Sideletter (August 19, 2026)",
+   "read": "2026-10-31",
+   "said": "covers scripted films intended for theatrical release with budgets of up to $11 million ... From July 1, 2026, until June 30, 2027, the following modified terms are now in effect ... Level 1a: $500K and under ... Level 1b: $500K-$1.1M ... Level 2: $1.1M-$3M ... Level 3: $3M-$4M ... Level 4a: $4M-$5.5M ... Level 4b: $5.5M-$8.5M ... Level 4c: $8.5M-$11M ... Director salary for Level 3 is now 33% of the BA minimum with a 13-week guarantee, for a total of $108,168 ... before the start of principal photography, the Employer must submit to the DGA a Final Cost Statement"
+  },
+  {
+   "url": "https://www.dga.org/Contracts/Creative-Rights/Summary---Features",
+   "title": "DGA: Creative Rights Summary - Features & Long-Form Television Films",
+   "read": "2026-10-31",
+   "said": "With few exceptions, only one Director may be assigned to a motion picture. ... Ten weeks, or one day of editing for each two days of scheduled photography, whichever is longer. ... Ten weeks for High Budget SVOD pictures that are 96 minutes or longer with budgets of $22,500,000 or more. ... 91 minutes to 2 hours: 20 days ... Each additional hour in excess of 2 hours: 5 days ... a private audience of no less than 100 persons ... five days’ advance notice of the time and place of all previews of a theatrical film"
+  },
+  {
+   "url": "https://www.wga.org/uploadedfiles/contracts/other-contracts/LBA-Filings23.pdf",
+   "title": "WGA Low Budget Agreement (for films budgeted at $1,200,000 and below), 2023 MBA",
+   "read": "2026-10-31",
+   "said": "FOR FILMS BUDGETED AT $1,200,000 AND BELOW ... BUDGET $500,000 - $1,200,000"
+  },
+  {
+   "url": "https://www.wga.org/contracts/contracts",
+   "title": "WGA West: Contracts",
+   "read": "2026-10-31",
+   "said": "The Low Budget Agreement allows writers to write and sell a narrative feature-length screenplay under the protection of the Writers Guild if the theatrical film’s budget is at or below $1.2 million."
+  },
+  {
+   "url": "https://www.wga.org/uploadedfiles/contracts/2026_schedule_of_minimums.pdf",
+   "title": "WGA Schedule of Minimums, 2026 Theatrical and Television Basic Agreement (effective May 2, 2026)",
+   "read": "2026-10-31",
+   "said": "EFFECTIVE MAY 2, 2026 ... (Costs equal or exceed $5,000,000) ... (Costs are less than $5,000,000) ... Programs shorter than 20 minutes in length do not fall under this category regardless of the budget. ... 20-35 Minutes $1,030,000 and above ... 36-65 Minutes $1,750,000 and above ... 66 Minutes or more $3,000,000 and above ... The applicable minimum for a pilot is 150% of the amount set forth above."
+  },
+  {
+   "url": "https://www.sagindie.org/signatory/",
+   "title": "SAGindie: Signatory process (SAG-AFTRA low budget agreements)",
+   "read": "2026-10-31",
+   "said": "start the process 4-6 weeks ... SAG-AFTRA low budget productions must shoot entirely in ... Micro-Budget Project Agreement Student Film Agreement Short Project Agreement (SPA) Ultra Low Budget Project Agreement (UPA) Moderate Low Budget Project Agreement (MPA) Low Budget Theatrical Agreement (LBA) Max. budget: $20k (per picture or per episode) Max. budget: $35k Max. budget: $50k Max. budget: $300k Max. budget: $700k Max. budget: $2MM 35 minutes or less 40 minutes or less",
+   "kind": "secondary",
+   "quotes": "https://www.sagaftra.org/sites/default/files/2024-10/Low%20Budget%20Entertainment%20Contracts%20One%20Sheet.pdf"
+  },
+  {
+   "url": "https://www.sagindie.org/resources/faq/",
+   "title": "SAGindie: FAQ",
+   "read": "2026-10-31",
+   "said": "Under all of the low budget agreements, there is no consecutive employment ... There is a formula for this (anywhere between 40% to 100% of covered performer payroll) ... this is returned to you at the completion of principal photography ... Be aware that nudity and sex scenes are not allowed under the Micro-Budget Agreement. ... Be aware that stunts are not allowed under the Micro-Budget Agreement. ... if at least 20% of production days are cast with People of Color ... Women; Senior performers 60 years or older; Performers with Disabilities; People of Color",
+   "kind": "secondary",
+   "quotes": "https://www.sagaftra.org/sites/default/files/2024-10/Low%20Budget%20Entertainment%20Contracts%20One%20Sheet.pdf"
+  },
+  {
+   "url": "https://www.oscars.org/sites/oscars/files/2026-05/99th%20General%20Entry%20Rules.pdf",
+   "title": "Academy of Motion Picture Arts and Sciences: 99th Academy Awards, Rules Two and Three (General Entry)",
+   "read": "2026-10-31",
+   "said": "feature length (defined as over 40 minutes) ... for paid admission in a commercial motion picture theater in one of the six qualifying U.S. metro ... areas: Los Angeles County; City of New York [five boroughs]; the Bay Area ... Chicago [Cook County, Illinois]; ... Dallas-Fort Worth [Dallas County and Tarrant County, Texas]; and Atlanta [Fulton County, ... for a theatrical qualifying run of at least seven consecutive days in the same commercial motion ... screenings must occur at least three times daily, with at least ... one screening beginning between 6 p.m. and 10 p.m. daily ... up to fifteen percent of the running time of a film may be shown ... in a nontheatrical medium prior to the film’s qualifying run ... must begin between ... January 1, 2026, and December 31, 2026. ... Each picture may have only one theatrical qualifying run. ... by 5 p.m. PT on Thursday, November 12, 2026"
+  },
+  {
+   "url": "https://www.oscars.org/sites/oscars/files/2026-05/99th%20Best%20Picture%20Rules.pdf",
+   "title": "Academy: 99th Academy Awards, Rule Twenty (Best Picture)",
+   "read": "2026-10-31",
+   "said": "Completed theatrical releases in nine additional markets ... resulting in a total of at ... least ten markets ... least seven days, consecutive or non-consecutive, with at least one showtime per day ... must occur within 45 days, either before or ... The nominees will be those three or fewer producers who have ... performed the major portion of the producing functions"
+  },
+  {
+   "url": "https://www.oscars.org/sites/oscars/files/2026-05/99th_oscars_complete_rules.pdf",
+   "title": "Academy: 99th Academy Awards, complete rules",
+   "read": "2026-10-31",
+   "said": "Performance by an actor in a leading role. ... Performance by an actress in a leading role. ... Only roles credited in the film’s legal billing and demonstrably performed by ... humans with their consent will be considered eligible. ... Final voting for the Acting awards shall be restricted to active and life Academy members."
+  },
+  {
+   "url": "https://www.televisionacademy.com/files/assets/Downloads/2026-rules-procedures-v4.pdf",
+   "title": "Television Academy: 78th Emmy Rules and Procedures, version 4 (April 7, 2026)",
+   "read": "2026-10-31",
+   "said": "June 1, 2025 - May 31, 2026 ... Six episodes are required for series in animation, ... comedy, drama, variety, short form, and reality categories. ... Three episodes are required for ... documentary series and hosted nonfiction series. ... All episodes/parts of a limited/anthology series must premiere nationally by May 31 ... Half-hour series episodes have an episode running time of more than 20 minutes and up to ... 40 minutes ... Hour-long series have an episode running time of more than 40 minutes ... OUTSTANDING LEAD ACTOR IN A DRAMA SERIES ... OUTSTANDING LEAD ACTRESS IN A DRAMA SERIES"
+  },
+  {
+   "url": "https://www.motionpictures.org/wp-content/uploads/2022/03/MPA-2021-THEME-Report-FINAL.pdf",
+   "title": "Motion Picture Association: 2021 THEME Report (March 2022)",
+   "read": "2026-10-31",
+   "said": "The global box office market was $21.3 billion in 2021 ... box office market was $4.5 billion in 2021, up 105 percent from 2020 ... U.S./Canada admissions, or tickets sold (470 million) ... Just under half (47%) of the U.S./Canada population – or 168 million people – went to the cinema at least once in ... Frequent moviegoers – individuals who go to the cinema once a month or more ... U.S./Canada population (12 million people) in 2021 but accounted for 34 percent of tickets sold ... More than 940 films entered production during 2021 ... growing 14 percent in 2021 to reach 1.3 billion"
+  },
+  {
+   "url": "https://deadline.com/2026/04/paramount-ceo-david-ellison-surprise-cinemacon-appearance-1236863093/",
+   "title": "Deadline: Paramount CEO David Ellison Commits To 45-Day Theatrical Window At CinemaCon (April 16, 2026)",
+   "read": "2026-10-31",
+   "said": "the studio is committing to a 45-day theatrical window, starting immediately, and 90 days to SVOD",
+   "kind": "secondary",
+   "quotes": "https://www.cinemacon.com/"
+  },
+  {
+   "url": "https://variety.com/2026/film/news/david-ellison-cinemacon-paramount-windows-streaming-1236722998/",
+   "title": "Variety: Paramount Commits to 45-Day Release Window at CinemaCon (April 2026)",
+   "read": "2026-10-31",
+   "said": "Universal Pictures will hit 45 days starting in 2027.",
+   "kind": "secondary",
+   "quotes": "https://www.cinemacon.com/"
+  },
+  {
+   "url": "https://www.sundance.org/wp-content/uploads/2026/06/2027_Submissions_FAQ.pdf",
+   "title": "Sundance Institute: Submitting Your Project to the 2027 Sundance Film Festival (FAQ)",
+   "read": "2026-10-31",
+   "said": "U.S. & International Feature Films: Monday, July 27, 2026 - $80 entry fee ... U.S. & International Feature Films: Friday, August 28, 2026 - $100 entry fee ... U.S. & International Feature Films: Monday, September 21, 2026 - $125 entry fee ... U.S. & International Short Films: Monday, July 13, 2026 - $55 entry fee ... with a running time of 50 minutes or more ... at least half of the project's financing must originate from within the United States ... Only projects retaining world ... premiere status are eligible for open submission to this category. ... prior to February 1, 2027 are not eligible to ... The 2027 Sundance Film Festival will take place in Boulder, Colorado from January 21 to January 31, 2027."
+  },
+  {
+   "url": "https://cdn.festival-cannes.com/media/uploads/2025/11/reglement_longs-metrages_2026_en.pdf",
+   "title": "Festival de Cannes: 2026 Regulations, Official Selection feature films",
+   "read": "2026-10-31",
+   "said": "have been produced in the twelve months preceding the Festival; ... not have been screened elsewhere than their home country; ... not have been screened on the Internet. ... Every feature film invited to be In Competition must be commercially released in French ... theatres ... The deadline to submit a feature film for the selection is 13th March 2026. ... in compliance with legal ... obligations in terms of health and safety"
+  },
+  {
+   "url": "https://www.berlinale.de/en/film-entry/guidelines/general-guidelines.html",
+   "title": "Berlinale: General Guidelines for Submission and Participation",
+   "read": "2026-10-31",
+   "said": "Feature-length films: receipt of submission form and selection screener by October 21, 2026 ... While feature-length films need a minimum running time of 60 min, ... Only films completed within the 12 months prior to the start of the festival may be submitted. ... The fee for submitting a feature-length film is 175 euros (7 % VAT included) regardless of the number of sections for which the film is entered. The fee for short films is 75 euros (7 % VAT included). ... German premieres are not eligible for any section accepting film submissions."
+  },
+  {
+   "url": "https://www.berlinale.de/en/film-entry/guidelines/competition.html",
+   "title": "Berlinale: Competition Regulations",
+   "read": "2026-10-31",
+   "said": "are available as world or international premieres. ... German films must be world premieres."
+  },
+  {
+   "url": "https://static.labiennale.org/files/cinema/2026/Documenti/regulations-83.pdf",
+   "title": "La Biennale di Venezia: 83rd Venice International Film Festival Regulations (2026)",
+   "read": "2026-10-31",
+   "said": "Films completed after 6 September 2025; ... Films that have not had any form of commercial distribution or exhibition on the Internet; ... The fee is 200 Euros for feature length films ... For feature length films submitted from 15 ... May 2026 the fee will be 250 Euros."
+  },
+  {
+   "url": "https://sxsw.com/film-submissions/",
+   "title": "SXSW: Film & TV Festival Submissions (2027)",
+   "read": "2026-10-31",
+   "said": "Second deadline is September 15 ($95). Final deadline is October 1 ($125). ... All deadlines end at 11:59pm PT. ... March 15–21, 2027 | Austin, TX"
+  },
+  {
+   "url": "https://www.copyright.gov/circs/circ45.pdf",
+   "title": "U.S. Copyright Office: Circular 45, Copyright Registration for Motion Pictures",
+   "read": "2026-10-31",
+   "said": "screenplays or treatments of ... future motion pictures do not constitute fixations of motion pictures ... Offering to distribute a copy of a motion picture for exhibition during a ... film festival may be considered publication of that work. ... if a motion picture made from a screenplay is published, the screenplay is ... published to the extent it is contained in the published work ... the Copyright Office must have ... acted on your application before you can file a suit for copy-"
+  },
+  {
+   "url": "https://www.copyright.gov/about/fees.html",
+   "title": "U.S. Copyright Office: Fees",
+   "read": "2026-10-31",
+   "said": "Single author, same claimant, one work, not for hire $45 ... Standard Application $65 ... Preregistration of certain unpublished works $200 ... Base fee (includes 1 work identified by 1 title and/or registration number): Paper $125 Electronic $95"
+  },
+  {
+   "url": "https://www.copyright.gov/help/faq/faq-duration.html",
+   "title": "U.S. Copyright Office: FAQ, How long does copyright protection last?",
+   "read": "2026-10-31",
+   "said": "for works created after January 1, 1978, copyright protection lasts for the life of the author plus an additional 70 years ... a work made for hire, the copyright endures for a term of 95 years from the year of its first publication or a term of 120 years from the year of its creation, whichever expires first"
+  },
+  {
+   "url": "https://www.copyright.gov/circs/circ12.pdf",
+   "title": "U.S. Copyright Office: Circular 12, Recordation of Transfers and Other Documents",
+   "read": "2026-10-31",
+   "said": "is not valid unless an instrument of conveyance ... is in writing and is signed by the owner of the rights conveyed ... the one executed first prevails if it is recorded ... within one month after its execution in the United States or within two months after its execution outside the United States"
+  },
+  {
+   "url": "https://www.wgaeast.org/mo/script_registration/faq",
+   "title": "Writers Guild of America East: Secure Script Registration FAQ",
+   "read": "2026-10-31",
+   "said": "Registration does not confer any statutory protection. ... $10 for WGAE, WGAW and IAWG Members ... $17 for Students and Associates ... $25 for General Public (Non-Members) ... Registration is valid for a term of ten (10) years. ... Renewals will be accepted up to three (3) months prior to the expiration of the original registration."
+  },
+  {
+   "url": "https://info.filmla.com/area-requirements/area-requirements-city-of-los-angeles",
+   "title": "FilmLA: Area Requirements, City of Los Angeles",
+   "read": "2026-10-31",
+   "said": "three full business days ... Standard filming hours are from 7:00 a.m. to 10:00 p.m. Monday – Friday and 9 a.m. – 10 p.m. on weekends ... $500,000 - Still Photography Only ... $1,000,000 - Motion Capture (Filming) ... $2,000,000 - UAS Use (Drones) ... The City of Los Angeles added as additional insured ... Permit Application Fee Up to 5 Locations, 7 Consecutive Days $931 ... Student Permit Fee (simple) $52 ... Notification Fee Base Radius $232 ... FilmLA Monitor Fee"
+  },
+  {
+   "url": "https://info.filmla.com/area-requirements/area-requirements-county-of-los-angeles",
+   "title": "FilmLA: Area Requirements, County of Los Angeles",
+   "read": "2026-10-31",
+   "said": "Proof of Workers’ Compensation ... $5,000,000 - Aircraft use"
+  },
+  {
+   "url": "https://www.pbs.org/about/producing-pbs/bento-api/filer-file-download/468172/",
+   "title": "PBS Producer’s Handbook (as of September 2026)",
+   "read": "2026-10-31",
+   "said": "As of September 2026 ... Package, General Liability, and Errors and Omissions. ... The Policy period must be for minimum of three years. ... The limit of E&O liability should be $1,000,000 for each occurrence and $3,000,000 in the aggregate. ... Title coverage (to meet PBS Programming approval in writing) must be included."
+  },
+  {
+   "url": "https://film.ca.gov/wp-content/uploads/2025/08/4.0-Program-Guidelines-1.pdf",
+   "title": "California Film Commission: Film and Television Tax Credit Program 4.0, Program Guidelines (January 1, 2026)",
+   "read": "2026-10-31",
+   "said": "receive 35% tax credits. ... The 35% tax credit applies up to a maximum of $120 million of qualified ... Relocating TV series applicants are eligible for 40% tax credits up to a maximum ... applied to a maximum of $20 million of the qualified expenditure budget. ... A minimum of 75% of the production budget must be utilized for goods, services, ... A minimum of 75% of total principal photography days must occur wholly in ... Productions must begin principal photography within 180 days. ... projects with a qualified expenditure budget of $100 million or more have 240 ... All projects must deliver the final element within 30 months. ... Phase I: Eligible productions apply for tax credits. ... Phase V (or tax credit status): Once the audit process is complete, the Tax Credit ... Certificate will be issued."
+  },
+  {
+   "url": "https://film.ca.gov/tax-credit/the-basics-4-0/",
+   "title": "California Film Commission: The Basics 4.0",
+   "read": "2026-10-31",
+   "said": "The $3.75 billion program runs for 5 years, with a sunset date of June 30, 2030. ... Feature Film : $1 million minimum budget. ... $1 million minimum budget per episode (at least 20 minutes per episode, scripted only). ... TV Pilots : $1 million minimum budget (at least 20 minutes)."
+  },
+  {
+   "url": "https://www.csatf.org/01_safety_bltn_firearms",
+   "title": "Industry Wide Labor-Management Safety Committee: Safety Bulletin #1, Firearms, Blanks and Dummy Rounds (revised April 29, 2024)",
+   "read": "2026-10-31",
+   "said": "Live ammunition (“ammunition”) is never to be used on set ... Revised: April 29, 2024 ... Firearms in the film industry are ... considered props and are the responsibility of the Property Master. ... This Safety Bulletin should be ... distributed with the call sheet each day that firearms and prop firearms will be used. ... The Property Master and authorized cast members are the only individuals who should ever ... handle a firearm on set. ... SAFETY BULLETINS ARE RECOMMENDED GUIDELINES ONLY"
+  },
+  {
+   "url": "https://www.csatf.org/wp-content/uploads/2018/05/33INFANT_ACTORS.pdf",
+   "title": "Industry Wide Labor-Management Safety Committee: Safety Bulletin #33, Infant Actors (revised January 22, 1997)",
+   "read": "2026-10-31",
+   "said": "SPECIAL SAFETY CONSIDERATIONS WHEN EMPLOYING INFANT ACTORS ... (FIFTEEN DAYS TO SIX MONTHS OLD)"
+  },
+  {
+   "url": "https://www.csatf.org/wp-content/uploads/2018/05/Guideline001.MINORS.pdf",
+   "title": "Industry Wide Labor-Management Safety Committee: Procedural Guidelines #1, Minors Performing Physical Activities (issued May 17, 2006)",
+   "read": "2026-10-31",
+   "said": "should confer with the minor, minor’s parent/legal guardian and ... Studio Teacher to review and discuss the activity. ... ISSUED: May 17, 2006"
+  },
+  {
+   "url": "https://www.dir.ca.gov/title8/3203.html",
+   "title": "California Code of Regulations, Title 8, §3203, Injury and Illness Prevention Program",
+   "read": "2026-10-31",
+   "said": "every employer shall establish, implement and maintain an effective Injury and Illness Prevention Program (Program). The Program shall be in writing"
+  },
+  {
+   "url": "https://www.dir.ca.gov/t8/11760.html",
+   "title": "California Code of Regulations, Title 8, §11760, Working Hours of Minors",
+   "read": "2026-10-31",
+   "said": "Babies who have reached the age of fifteen (15) days but have not reached the age of six (6) months may be permitted to remain at the place of employment for a maximum of two (2) hours. ... The day's work shall not exceed twenty (20) minutes ... may be permitted at the place of employment for a maximum of four (4) hours. Such four (4)-hour period shall consist of not more than two (2) hours of work ... may be permitted at the place of employment for a maximum of six (6) hours. Such six (6)-hour period shall consist of not more than three (3) hours of work ... may be permitted at the place of employment for a maximum of eight (8) hours. Such eight (8)-hour period shall consist of not more than four (4) hours of work and at least three (3) hours of schooling ... may be permitted at the place of employment for a maximum of nine (9) hours. Such nine (9)-hour period shall consist of not more than five (5) hours of work and at least three (3) hours of schooling ... may be permitted at the place of employment for a maximum of ten (10) hours. Such ten (10)-hour period shall consist of not more than six (6) hours of work and at least three (3) hours of schooling ... Twelve (12) hours must elapse between the minor's time of dismissal and time of call on the following day."
+  },
+  {
+   "url": "https://www.dir.ca.gov/t8/11753.html",
+   "title": "California Code of Regulations, Title 8, §11753, Entertainment Work Permit",
+   "read": "2026-10-31",
+   "said": "A minor desiring to be employed in the entertainment industry must obtain an Entertainment Work Permit. ... The permit shall be for a period not to exceed six (6) months"
+  },
+  {
+   "url": "https://www.dir.ca.gov/t8/11755_2.html",
+   "title": "California Code of Regulations, Title 8, §11755.2, Use of Studio Teachers",
+   "read": "2026-10-31",
+   "said": "Employers shall provide a studio teacher on each call for minors from age fifteen (15) days to their sixteenth (16th) birthday ... One (1) studio teacher must be provided for each group of ten (10) minors or fraction thereof."
+  },
+  {
+   "url": "https://www.dir.ca.gov/t8/11757.html",
+   "title": "California Code of Regulations, Title 8, §11757, Presence of Parents or Guardians",
+   "read": "2026-10-31",
+   "said": "A parent or guardian of a minor under sixteen (16) years of age must be present with, and accompany, such minor on the set or location"
+  },
+  {
+   "url": "https://www.dir.ca.gov/t8/11759.html",
+   "title": "California Code of Regulations, Title 8, §11759, Travel Time for Minors",
+   "read": "2026-10-31",
+   "said": "all time spent in traveling from a studio to a location or from a location to a studio shall count as part of the working day of a minor"
+  },
+  {
+   "url": "https://dol.ny.gov/information-child-performers",
+   "title": "New York State Department of Labor: Information for Child Performers",
+   "read": "2026-10-31",
+   "said": "Before work begins, a parent or guardian of the child performer must apply for a permit and provide a copy to each employer. ... Teachers must provide instruction for an average of at least three hours per school day on a weekly basis. ... Child performers cannot be without educational instruction for more than ten consecutive days while school of enrollment is in session."
+  },
+  {
+   "url": "https://dol.ny.gov/employers-child-performers-responsibilities",
+   "title": "New York State Department of Labor: Employers of Child Performers Responsibilities",
+   "read": "2026-10-31",
+   "said": "When the employment contract is for 30 days or less, transfer 15% of gross earnings within thirty (30) days following the final day of the child performer’s employment. ... New York State law requires that all employers of child performers have a valid Certificate of Eligibility to Employ Child Performers issued by the Department. ... Submit a Notice of Use of Child Performers at least 2 business days prior to the beginning of use of child performers."
+  },
+  {
+   "url": "https://dol.ny.gov/system/files/documents/2025/12/ls559.pdf",
+   "title": "New York State Department of Labor: LS 559, Child Performer Permitted Working Hours",
+   "read": "2026-10-31",
+   "said": "Infants under 15 days old may not be employed as child performers. ... Child performers must receive 12 hours of rest between workdays. ... Child performers ages 14-17 may work up to 8 hours during school hours, for no more than 2 consecutive days, with school permission. ... No later than 10:00pm on evenings preceding school days"
+  },
+  {
+   "url": "https://www.filmratings.com/wp-content/uploads/2025/08/rating_rules.pdf",
+   "title": "Classification and Rating Administration (MPA and NATO): Classification and Rating Rules (effective July 24, 2020)",
+   "read": "2026-10-31",
+   "said": "Effective as revised July 24, 2020 ... Those fees are assessed in relation to the negative cost ... R - Restricted. Children Under 17 Require Accompanying Parent ... NC-17 - No One 17 and Under Admitted. ... Children under 17 are not allowed to ... attend R-rated motion pictures unaccompanied by a parent or adult ... More than one ... such expletive requires an R rating"
+  },
+  {
+   "url": "https://www.hollywoodreporter.com/business/business-news/sag-aftra-intimacy-coordinator-union-contract-ratified-1236455269/",
+   "title": "The Hollywood Reporter: SAG-AFTRA National Board Unanimously Ratifies First Intimacy Coordinator Union Contract (December 19, 2025)",
+   "read": "2026-10-31",
+   "said": "The contract establishes minimum wage rates for daily and weekly work and inducts intimacy coordinators into the union health and pension plans. ... intimacy coordinators are additionally given access to material for their work including performers’ nudity/simulated sex riders and studio rules for such scenes.",
+   "kind": "secondary",
+   "quotes": "https://www.sagaftra.org/"
+  },
+  {
+   "url": "https://www.wga.org/contracts/contracts/mba/showrunners-guide-to-2023-mba-writers-room-provisions",
+   "title": "WGA: Showrunners’ Guide to 2023 MBA Writers’ Room Provisions",
+   "read": "2026-10-31",
+   "said": "These new minimum staffing provisions went into effect for seasons where the first episode is written on December 1, 2023 or after. ... Minimum staff: 3 writer-producers (including showrunner). ... Guarantee of 10 consecutive Weeks. ... Episode Order Required Writers Required Writer Producers 1 to 6 3 3 7-12 5* 3 13+ 6* 3 ... Minimum staff must be guaranteed 20 weeks or duration of the post-greenlight room, whichever is fewer. ... A show for which a single writer (including teams) is employed to write all episodes is exempt from the minimum staffing requirements."
+  }
+ ],
+ "note": "Read 2026-10-31. Primary: DGA Low Budget Sideletter changes (in force 2026-07-01 to 2027-06-30) and Creative Rights summary; WGA 2026 Schedule of Minimums (effective 2026-05-02), WGA Low Budget Agreement (2023 MBA filing), WGA Showrunners' Guide to 2023 MBA room rules (from 2023-12-01; not checked against the 2026 MBA text); Academy 99th rules (May 2026); Television Academy 78th Emmy rules v4 (2026-04-07); MPA 2021 THEME report (March 2022, the latest edition on the MPA site; no later THEME found); Sundance 2027 FAQ; Cannes 2026 regulations; Berlinale guidelines (2027 edition); Venice 2026 regulations; SXSW 2027 submissions page; US Copyright Office circulars 45 and 12, fees page and duration FAQ; WGA East registry FAQ; FilmLA LA City and County requirements; PBS Producer's Handbook (Sept 2026); California Film Commission Program 4.0 guidelines (2026-01-01) and basics page; CSATF Safety Bulletins #1 (2024-04-29), #33 (1997-01-22), Procedural Guideline #1 (2006-05-17); 8 CCR 3203, 11753, 11755.2, 11757, 11759, 11760 (dir.ca.gov); NY DOL child performer pages and LS 559; CARA Classification and Rating Rules (2020-07-24). Secondary: SAGindie (a SAG-AFTRA-funded nonprofit run separately) for the SAG-AFTRA low-budget caps and terms, because sagaftra.org answers curl with a 403 'enable JS' bot check; Deadline and Variety for the Paramount/Universal windows (spoken at CinemaCon 2026; no studio release read: paramount.com/press 403); The Hollywood Reporter for the intimacy coordinator contract. Not found or blocked: SAG-AFTRA's own pages (bot check; web.archive.org reset every CDX call today); TIFF submissions (tiff.net returns 202 with an empty body, a challenge, not passed); WGA West registry (Incapsula); California Family Code 6752 Coogan rule (leginfo 403); osha.gov (403), so no federal OSHA rule is cited; no primary measuring typical durations of development, pre-production, shooting or post across productions, so only the agreement and tax-credit times are given; no current MPA box-office or ticket-price figure after 2021; Cannes and Venice submission fees for the next edition; SXSW's first-deadline feature fee ($75 appears only in search snippets, not the saved page); Emmy minimum-episode rules for 2027. The Sundance, Berlinale, Venice and SXSW deadlines given have passed as of 2026-10-31. No figure here is worked out from others; the SAG-AFTRA incentive caps ($950,000/$3M) appear in search snippets only and are left out."
+}

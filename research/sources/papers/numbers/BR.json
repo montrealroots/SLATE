@@ -1,0 +1,39 @@
+{
+ "country": "BR",
+ "name": "Cadastro de Pessoas Físicas (CPF)",
+ "issuer": "the Receita Federal do Brasil",
+ "format": {
+  "length": 11,
+  "pattern": "^\\d{11}$",
+  "check": "br-cpf"
+ },
+ "when": "application",
+ "who": [
+  "anyone"
+ ],
+ "fee": "0",
+ "currency": "BRL",
+ "note": "The Receita Federal's pages (gov.br service page modified 8 October 2026; 'Meu CPF'), read 2026-10-30: anyone, Brazilian or foreign, resident or not, may enrol; there is no minimum age; the number is unique and permanent; enrolment is free at the Receita (online, by e-mail or in person), and costs R$7.00 at an agreed unit (civil registry, Banco do Brasil, Caixa, Correios), not modelled; the estimated wait in person is up to 15 minutes, a queue's wait, not read as its time (no time to issue is stated). The Receita's pages read don't state the number's length or its check digits: both are from the Universidade Federal de Minas Gerais's course note (11 digits, nine and two check digits by the remainder by 11, its worked 123456789-09), which the code's br-cpf was built from; the note cites no Receita text, and two searches that day (Receita and the CPF's instruction, IN RFB 2.172/2024) found no Receita statement of the rule (the Receita's norms portal is a script application curl can't read). So the rule rests on a secondary source, flagged for the lead.",
+ "sources": [
+  {
+   "url": "https://www.gov.br/pt-br/servicos/inscrever-no-cpf",
+   "title": "gov.br, Inscrever Cidadão no Cadastro de Pessoas Físicas (CPF) (last modified 08/10/2026)",
+   "read": "2026-10-30",
+   "said": "O cadastro de Pessoas Físicas (CPF) é um Banco de dados gerenciado pela Receita Federal do Brasil (RFB) que armazena informações cadastrais de pessoas físicas brasileiras e estrangeiras, residentes e não residentes no Brasil. ... Pessoas físicas brasileiras e estrangeiras, residentes e não residentes no Brasil. ... Atendimento em unidades conveniadas - custo R$ 7,00"
+  },
+  {
+   "url": "https://www.gov.br/receitafederal/pt-br/assuntos/meu-cpf",
+   "title": "Receita Federal, Meu CPF",
+   "read": "2026-10-30",
+   "said": "Não há idade mínima para ter um CPF e cidadãos brasileiros ou estrangeiros podem se inscrever, morando no Brasil ou no exterior. ... é único e definitivo ... sem pagar nada."
+  },
+  {
+   "url": "https://homepages.dcc.ufmg.br/~rodolfo/aedsi-1-12/Digitos%20verificadores%20de%20CPF.pdf",
+   "title": "Universidade Federal de Minas Gerais, DCC, course note \"Dígitos verificadores de CPF\"",
+   "read": "2026-10-30",
+   "kind": "secondary",
+   "quotes": "https://www.gov.br/receitafederal/pt-br/assuntos/meu-cpf",
+   "said": "CPF: são 9 dígitos, foi adicionado 1 dígito ... total 11 digitos. ... A dezena do número verificador é 0 caso ... o resto da divisão por 11 da soma de ... produtos seja 0 ou 1, caso contrário a ... dezena equivale a subtrair de 11 este"
+  }
+ ]
+}

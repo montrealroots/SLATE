@@ -1,0 +1,29 @@
+{
+ "country": "SI",
+ "name": "tax number (davčna številka)",
+ "issuer": "the Financial Administration of the Republic of Slovenia",
+ "format": {
+  "length": 8,
+  "pattern": "^[1-9]\\d{7}$"
+ },
+ "when": "registration",
+ "who": [
+  "residents"
+ ],
+ "within": {
+  "n": 8,
+  "unit": "day"
+ },
+ "needed": [
+  "tax"
+ ],
+ "note": "Slovenia's sheet (its government's own sheet on the OECD's automatic-exchange portal ('Information on Tax Identification Numbers'; the OECD's index page sits behind a bot check and wasn't opened, the sheet itself came straight back)), read 2026-10-30: the tax number identifies every taxpayer in the Financial Administration's records and is used for all taxes; individuals are given one automatically; a random eight digits, the first not 0, the eighth a control digit by modulus 11 (whose weights the sheet doesn't give, so `check` is left out); the Financial Administration issues a certificate within 8 days of entry in the tax register (read as its time). Not shown on identity documents. Slovenia's personal register number (EMŠO) is separate and not modelled.",
+ "sources": [
+  {
+   "url": "https://www.oecd.org/content/dam/oecd/en/topics/policy-issue-focus/aeoi/slovenia-tin.pdf",
+   "title": "OECD AEOI portal, Slovenia: Information on Tax Identification Numbers (the jurisdiction's own sheet)",
+   "read": "2026-10-30",
+   "said": "The SI tax number (TIN) is the identification sign, which defines the taxpayer (individuals and legal entities). ... The TIN is used for all taxes. ... The SI tax number is a random eight-digit number (first digit cannot be 0): ... The eighth digit is a control number, calculated according to module 11. ... The Financial Administration of the Republic of Slovenia issues a certificate within 8 days after the entry into the ... Entry into the tax register and tax number"
+  }
+ ]
+}

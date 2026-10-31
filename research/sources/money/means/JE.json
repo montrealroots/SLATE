@@ -1,0 +1,48 @@
+{
+ "country": "JE",
+ "currency": "GBP",
+ "year": 2024,
+ "wealth": {
+  "p0p20": "-35581.7",
+  "p0p40": "37476",
+  "p0p60": "127878.6",
+  "p0p90": "381813.6",
+  "p0p99": "627933.9",
+  "p99p100": "18413072.2"
+ },
+ "income": {
+  "p0p20": "38825.2",
+  "p0p40": "58975.8",
+  "p0p60": "75754.7",
+  "p0p90": "109354.9",
+  "p0p99": "132535.7",
+  "p99p100": "1503835.6"
+ },
+ "note": "The World Inequality Database (WID.world, bulk download of 15 October 2026), Jersey, 2024: average net personal wealth (ahwealj992) and average post-tax disposable income (adiincj992) per adult over 20, resources split equally within couples, for the bottom 20, 40, 60, 90 and 99 percent and the top 1 percent; each family's band is read from them. The database's metadata leaves the figures' currency blank; its market exchange rate in local currency per US dollar (xlcusxi999), whose metadata says of 1960 to 2024 \"Currency assumed to be GBP\", is 0.7824145555496216 for 2024, the same as its rate for the United Kingdom (GB), so they are read as GBP, as the database's own rates state them to be. Read 2026-10-31.",
+ "sources": [
+  {
+   "url": "https://wid.world/bulk_download/wid_all_data.zip",
+   "title": "World Inequality Database, bulk download (WID_data_JE.csv and WID_metadata_JE.csv), wid.world, files of 15 October 2026",
+   "read": "2026-10-31",
+   "said": "JE;ahwealj992;p0p20;2024;-35581.7;992;j;0 ... JE;ahwealj992;p0p40;2024;37476;992;j;0 ... JE;ahwealj992;p0p60;2024;127878.6;992;j;0 ... JE;ahwealj992;p0p90;2024;381813.6;992;j;0 ... JE;ahwealj992;p0p99;2024;627933.9;992;j;0 ... JE;ahwealj992;p99p100;2024;18413072.2;992;j;0 ... JE;adiincj992;p0p20;2024;38825.2;992;j;0 ... JE;adiincj992;p0p40;2024;58975.8;992;j;0 ... JE;adiincj992;p0p60;2024;75754.7;992;j;0 ... JE;adiincj992;p0p90;2024;109354.9;992;j;0 ... JE;adiincj992;p0p99;2024;132535.7;992;j;0 ... JE;adiincj992;p99p100;2024;1503835.6;992;j;0"
+  },
+  {
+   "url": "https://wid.world/bulk_download/wid_all_data.zip",
+   "title": "World Inequality Database, bulk download, WID_metadata_JE.csv (variables ahwealj992, adiincj992 and xlcusxi999)",
+   "read": "2026-10-31",
+   "said": "JE;ahwealj992;992;j;Jersey;Net personal wealth; ... equal-split adults ... ;The population is comprised of individuals over age 20.; ... JE;adiincj992;992;j;Jersey; ... JE;xlcusxi999;999;i;Jersey;Market exchange rate, LCU per USD; ... 1960-2024: Currency assumed to be GBP;"
+  },
+  {
+   "url": "https://wid.world/bulk_download/wid_all_data.zip",
+   "title": "World Inequality Database, bulk download (WID_data_JE.csv), its market exchange rate rows",
+   "read": "2026-10-31",
+   "said": "JE;xlcusxi999;p0p100;2024;0.7824145555496216;999;i;5"
+  },
+  {
+   "url": "https://wid.world/bulk_download/wid_all_data.zip",
+   "title": "World Inequality Database, bulk download (WID_data_GB.csv), the United Kingdom's market exchange rate row for 2024",
+   "read": "2026-10-31",
+   "said": "GB;xlcusxi999;p0p100;2024;0.7824145555496216;999;i;5"
+  }
+ ]
+}

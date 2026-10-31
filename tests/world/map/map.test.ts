@@ -1,5 +1,5 @@
 import { describe, expect, it } from 'vitest';
-import { COUNTRY_CODES, placesOf } from '../../../src/world/gazetteer/gazetteer.ts';
+import { COUNTRY_CODES } from '../../../src/world/gazetteer/gazetteer.ts';
 import { boxFromCorners, frameBox, loadMap, mapLoader, markerIn, markerRadiusAt, projectPoint, strokeAt, viewBoxOf, wholeWorld, wrapLongitude, type WorldMap } from '../../../src/world/map/map.ts';
 
 const S = { width: 2000, height: 1000 };
@@ -79,16 +79,3 @@ describe('the outlines', () => {
   });
 });
 
-describe('every place on the map', () => {
-  it('is marked on the whole world\'s view, where its coordinates put it', async () => {
-    let marked = 0;
-    for (const code of COUNTRY_CODES) {
-      for (const p of await placesOf(code)) {
-        const m = markerIn(wholeWorld(S), S, p.latitude, p.longitude);
-        expect(m, p.id).toEqual(projectPoint(p.latitude, p.longitude, S));
-        marked += 1;
-      }
-    }
-    expect(marked).toBe(171_654);
-  }, 120_000);
-});

@@ -1,0 +1,75 @@
+{
+ "country": "CA",
+ "currency": "CAD",
+ "year": 2024,
+ "wealth": {
+  "p0p20": "108947.8",
+  "p0p40": "131052.5",
+  "p0p60": "166003.2",
+  "p0p90": "232482.3",
+  "p0p99": "375403",
+  "p99p100": "14875540.8"
+ },
+ "income": {
+  "p0p20": "31501.6",
+  "p0p40": "41197.7",
+  "p0p60": "51445",
+  "p0p90": "70001.40000000001",
+  "p0p99": "81619.8",
+  "p99p100": "817968.7000000001"
+ },
+ "liquid": {
+  "survey": "Statistics Canada, Survey of Financial Security 2023 (table 11-10-0049-01)",
+  "period": "2023",
+  "currency": "CAD",
+  "per": "household",
+  "bands": [
+   {
+    "from": 0,
+    "to": 20,
+    "deposits": "4693"
+   },
+   {
+    "from": 20,
+    "to": 40,
+    "deposits": "12993"
+   },
+   {
+    "from": 40,
+    "to": 60,
+    "deposits": "22957"
+   },
+   {
+    "from": 60,
+    "to": 80,
+    "deposits": "35245"
+   },
+   {
+    "from": 80,
+    "to": 100,
+    "deposits": "101772"
+   }
+  ]
+ },
+ "note": "The World Inequality Database (WID.world, bulk download of 15 October 2026), Canada, 2024: average net personal wealth (ahwealj992) and average post-tax disposable income (adiincj992) per adult over 20, resources split equally within couples, in CAD of that year, for the bottom 20, 40, 60, 90 and 99 percent and the top 1 percent; each family's band is read from them. Read 2026-10-30. Savings (the owner's ruling of 2026-10-30: only what a family holds as deposits and cash): Statistics Canada table 11-10-0049-01 (Survey of Financial Security, assets and debts by net worth quintile, file of 29 October 2024, the 2023 survey), Canada, estimates: \"Deposits in financial institutions\", net worth, total assets and total debt as totals in millions of 2023 constant dollars, the number of family units in thousands, and for deposits the percentage of total assets, the percentage holding and the average for holders. The per-family means are my division of the totals by the family count. The full CSV (101 MB) was cut to the 2023 Canada estimate rows for these four items, kept verbatim in the extract; said parts quote the cells of those rows. Deposits here exclude TFSA and registered plan balances held as deposits (they are separate items). No top 1 percent.",
+ "sources": [
+  {
+   "url": "https://wid.world/bulk_download/wid_all_data.zip",
+   "title": "World Inequality Database, bulk download (WID_data_CA.csv and WID_metadata_CA.csv), wid.world, files of 15 October 2026",
+   "read": "2026-10-30",
+   "said": "CA;ahwealj992;p0p20;2024;108947.8;992;j;0 ... CA;ahwealj992;p0p40;2024;131052.5;992;j;0 ... CA;ahwealj992;p0p60;2024;166003.2;992;j;0 ... CA;ahwealj992;p0p90;2024;232482.3;992;j;0 ... CA;ahwealj992;p0p99;2024;375403;992;j;0 ... CA;ahwealj992;p99p100;2024;14875540.8;992;j;0 ... CA;adiincj992;p0p20;2024;31501.6;992;j;5 ... CA;adiincj992;p0p40;2024;41197.7;992;j;5 ... CA;adiincj992;p0p60;2024;51445;992;j;5 ... CA;adiincj992;p0p90;2024;70001.40000000001;992;j;5 ... CA;adiincj992;p0p99;2024;81619.8;992;j;5 ... CA;adiincj992;p99p100;2024;817968.7000000001;992;j;5"
+  },
+  {
+   "url": "https://wid.world/bulk_download/wid_all_data.zip",
+   "title": "World Inequality Database, bulk download, WID_metadata_CA.csv (variables ahwealj992 and adiincj992)",
+   "read": "2026-10-30",
+   "said": "CA;ahwealj992;992;j; ... equal-split adults ... ;The population is comprised of individuals over age 20.;CAD; ... CA;adiincj992;992;j;"
+  },
+  {
+   "url": "https://www150.statcan.gc.ca/n1/tbl/csv/11100049-eng.zip",
+   "title": "Statistics Canada, Table 11-10-0049-01, Survey of Financial Security (SFS), assets and debts by net worth quintile (CSV), 2023 Canada rows",
+   "read": "2026-10-30",
+   "said": "\"Deposits in financial institutions\",\"Lowest net worth quintile\",\"Total values\",\"Estimate\" ... \"Deposits in financial institutions\",\"Lowest net worth quintile\",\"Total values\",\"Estimate\",\"2023 constant dollars\" ... \"Deposits in financial institutions\",\"Lowest net worth quintile\",\"Percentage of total assets or total debts\",\"Estimate\" ... \"Deposits in financial institutions\",\"Lowest net worth quintile\",\"Percentage of total assets or total debts\",\"Estimate\",\"Percent\" ... \"Deposits in financial institutions\",\"Lowest net worth quintile\",\"Percentage holding asset or debt\",\"Estimate\" ... \"Deposits in financial institutions\",\"Lowest net worth quintile\",\"Percentage holding asset or debt\",\"Estimate\",\"Percent\" ... \"Deposits in financial institutions\",\"Lowest net worth quintile\",\"Average value for those holding asset or debt\",\"Estimate\" ... \"Deposits in financial institutions\",\"Lowest net worth quintile\",\"Average value for those holding asset or debt\",\"Estimate\",\"2023 constant dollars\" ... \"Net worth (total assets less total debt)\",\"Lowest net worth quintile\",\"Total values\",\"Estimate\" ... \"Net worth (total assets less total debt)\",\"Lowest net worth quintile\",\"Total values\",\"Estimate\",\"2023 constant dollars\" ... \"Net worth (total assets less total debt)\",\"Lowest net worth quintile\",\"Number holding asset or debt\",\"Estimate\" ... \"Net worth (total assets less total debt)\",\"Lowest net worth quintile\",\"Number holding asset or debt\",\"Estimate\",\"Number\" ... \"Total assets\",\"Lowest net worth quintile\",\"Total values\",\"Estimate\" ... \"Total assets\",\"Lowest net worth quintile\",\"Total values\",\"Estimate\",\"2023 constant dollars\" ... \"Total debt\",\"Lowest net worth quintile\",\"Total values\",\"Estimate\" ... \"Total debt\",\"Lowest net worth quintile\",\"Total values\",\"Estimate\",\"2023 constant dollars\" ... \"Deposits in financial institutions\",\"Second net worth quintile\",\"Total values\",\"Estimate\" ... \"Deposits in financial institutions\",\"Second net worth quintile\",\"Total values\",\"Estimate\",\"2023 constant dollars\" ... \"Deposits in financial institutions\",\"Second net worth quintile\",\"Percentage of total assets or total debts\",\"Estimate\" ... \"Deposits in financial institutions\",\"Second net worth quintile\",\"Percentage of total assets or total debts\",\"Estimate\",\"Percent\" ... \"Deposits in financial institutions\",\"Second net worth quintile\",\"Percentage holding asset or debt\",\"Estimate\" ... \"Deposits in financial institutions\",\"Second net worth quintile\",\"Percentage holding asset or debt\",\"Estimate\",\"Percent\" ... \"Deposits in financial institutions\",\"Second net worth quintile\",\"Average value for those holding asset or debt\",\"Estimate\" ... \"Deposits in financial institutions\",\"Second net worth quintile\",\"Average value for those holding asset or debt\",\"Estimate\",\"2023 constant dollars\" ... \"Net worth (total assets less total debt)\",\"Second net worth quintile\",\"Total values\",\"Estimate\" ... \"Net worth (total assets less total debt)\",\"Second net worth quintile\",\"Total values\",\"Estimate\",\"2023 constant dollars\" ... \"Net worth (total assets less total debt)\",\"Second net worth quintile\",\"Number holding asset or debt\",\"Estimate\" ... \"Net worth (total assets less total debt)\",\"Second net worth quintile\",\"Number holding asset or debt\",\"Estimate\",\"Number\" ... \"Total assets\",\"Second net worth quintile\",\"Total values\",\"Estimate\" ... \"Total assets\",\"Second net worth quintile\",\"Total values\",\"Estimate\",\"2023 constant dollars\" ... \"Total debt\",\"Second net worth quintile\",\"Total values\",\"Estimate\" ... \"Total debt\",\"Second net worth quintile\",\"Total values\",\"Estimate\",\"2023 constant dollars\" ... \"Deposits in financial institutions\",\"Middle net worth quintile\",\"Total values\",\"Estimate\" ... \"Deposits in financial institutions\",\"Middle net worth quintile\",\"Total values\",\"Estimate\",\"2023 constant dollars\" ... \"Deposits in financial institutions\",\"Middle net worth quintile\",\"Percentage of total assets or total debts\",\"Estimate\" ... \"Deposits in financial institutions\",\"Middle net worth quintile\",\"Percentage of total assets or total debts\",\"Estimate\",\"Percent\" ... \"Deposits in financial institutions\",\"Middle net worth quintile\",\"Percentage holding asset or debt\",\"Estimate\" ... \"Deposits in financial institutions\",\"Middle net worth quintile\",\"Percentage holding asset or debt\",\"Estimate\",\"Percent\" ... \"Deposits in financial institutions\",\"Middle net worth quintile\",\"Average value for those holding asset or debt\",\"Estimate\" ... \"Deposits in financial institutions\",\"Middle net worth quintile\",\"Average value for those holding asset or debt\",\"Estimate\",\"2023 constant dollars\" ... \"Net worth (total assets less total debt)\",\"Middle net worth quintile\",\"Total values\",\"Estimate\" ... \"Net worth (total assets less total debt)\",\"Middle net worth quintile\",\"Total values\",\"Estimate\",\"2023 constant dollars\" ... \"Net worth (total assets less total debt)\",\"Middle net worth quintile\",\"Number holding asset or debt\",\"Estimate\" ... \"Net worth (total assets less total debt)\",\"Middle net worth quintile\",\"Number holding asset or debt\",\"Estimate\",\"Number\" ... \"Total assets\",\"Middle net worth quintile\",\"Total values\",\"Estimate\" ... \"Total assets\",\"Middle net worth quintile\",\"Total values\",\"Estimate\",\"2023 constant dollars\" ... \"Total debt\",\"Middle net worth quintile\",\"Total values\",\"Estimate\" ... \"Total debt\",\"Middle net worth quintile\",\"Total values\",\"Estimate\",\"2023 constant dollars\" ... \"Deposits in financial institutions\",\"Fourth net worth quintile\",\"Total values\",\"Estimate\" ... \"Deposits in financial institutions\",\"Fourth net worth quintile\",\"Total values\",\"Estimate\",\"2023 constant dollars\" ... \"Deposits in financial institutions\",\"Fourth net worth quintile\",\"Percentage of total assets or total debts\",\"Estimate\" ... \"Deposits in financial institutions\",\"Fourth net worth quintile\",\"Percentage of total assets or total debts\",\"Estimate\",\"Percent\" ... \"Deposits in financial institutions\",\"Fourth net worth quintile\",\"Percentage holding asset or debt\",\"Estimate\" ... \"Deposits in financial institutions\",\"Fourth net worth quintile\",\"Percentage holding asset or debt\",\"Estimate\",\"Percent\" ... \"Deposits in financial institutions\",\"Fourth net worth quintile\",\"Average value for those holding asset or debt\",\"Estimate\" ... \"Deposits in financial institutions\",\"Fourth net worth quintile\",\"Average value for those holding asset or debt\",\"Estimate\",\"2023 constant dollars\" ... \"Net worth (total assets less total debt)\",\"Fourth net worth quintile\",\"Total values\",\"Estimate\" ... \"Net worth (total assets less total debt)\",\"Fourth net worth quintile\",\"Total values\",\"Estimate\",\"2023 constant dollars\" ... \"Net worth (total assets less total debt)\",\"Fourth net worth quintile\",\"Number holding asset or debt\",\"Estimate\" ... \"Net worth (total assets less total debt)\",\"Fourth net worth quintile\",\"Number holding asset or debt\",\"Estimate\",\"Number\" ... \"Total assets\",\"Fourth net worth quintile\",\"Total values\",\"Estimate\" ... \"Total assets\",\"Fourth net worth quintile\",\"Total values\",\"Estimate\",\"2023 constant dollars\" ... \"Total debt\",\"Fourth net worth quintile\",\"Total values\",\"Estimate\" ... \"Total debt\",\"Fourth net worth quintile\",\"Total values\",\"Estimate\",\"2023 constant dollars\" ... \"Deposits in financial institutions\",\"Highest net worth quintile\",\"Total values\",\"Estimate\" ... \"Deposits in financial institutions\",\"Highest net worth quintile\",\"Total values\",\"Estimate\",\"2023 constant dollars\" ... \"Deposits in financial institutions\",\"Highest net worth quintile\",\"Percentage of total assets or total debts\",\"Estimate\" ... \"Deposits in financial institutions\",\"Highest net worth quintile\",\"Percentage of total assets or total debts\",\"Estimate\",\"Percent\" ... \"Deposits in financial institutions\",\"Highest net worth quintile\",\"Percentage holding asset or debt\",\"Estimate\" ... \"Deposits in financial institutions\",\"Highest net worth quintile\",\"Percentage holding asset or debt\",\"Estimate\",\"Percent\" ... \"Deposits in financial institutions\",\"Highest net worth quintile\",\"Average value for those holding asset or debt\",\"Estimate\" ... \"Deposits in financial institutions\",\"Highest net worth quintile\",\"Average value for those holding asset or debt\",\"Estimate\",\"2023 constant dollars\" ... \"Net worth (total assets less total debt)\",\"Highest net worth quintile\",\"Total values\",\"Estimate\" ... \"Net worth (total assets less total debt)\",\"Highest net worth quintile\",\"Total values\",\"Estimate\",\"2023 constant dollars\" ... \"Net worth (total assets less total debt)\",\"Highest net worth quintile\",\"Number holding asset or debt\",\"Estimate\" ... \"Net worth (total assets less total debt)\",\"Highest net worth quintile\",\"Number holding asset or debt\",\"Estimate\",\"Number\" ... \"Total assets\",\"Highest net worth quintile\",\"Total values\",\"Estimate\" ... \"Total assets\",\"Highest net worth quintile\",\"Total values\",\"Estimate\",\"2023 constant dollars\" ... \"Total debt\",\"Highest net worth quintile\",\"Total values\",\"Estimate\" ... \"Total debt\",\"Highest net worth quintile\",\"Total values\",\"Estimate\",\"2023 constant dollars\""
+  }
+ ]
+}

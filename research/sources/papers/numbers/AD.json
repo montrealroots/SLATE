@@ -1,0 +1,25 @@
+{
+ "country": "AD",
+ "name": "Número de Registre Tributari (NRT)",
+ "issuer": "the Andorran administration (the NIA's register; the sheet names no office)",
+ "format": {
+  "length": 8,
+  "pattern": "^F\\d{6}[A-Z]$"
+ },
+ "when": "registration",
+ "who": [
+  "residents"
+ ],
+ "needed": [
+  "tax"
+ ],
+ "note": "Andorra's sheet (its government's own sheet on the OECD's automatic-exchange portal ('Information on Tax Identification Numbers'; the OECD's index page sits behind a bot check and wasn't opened, the sheet itself came straight back)), read 2026-10-30: taxable subjects must obtain and use a Tax Register Number (NRT) under Law 21/2014; for residents it is the Administrative Identification Number (NIA, Law 8/2007) preceded by F, and it is issued automatically when the NIA is obtained (article 14 of the tax management Regulations of 11 February 2015): F, six digits (0 to 699,999) and a control letter (rule not given, `check` left out). The sheet doesn't name the office that gives the NIA. Read as given on registration, to residents. No fee or time is stated.",
+ "sources": [
+  {
+   "url": "https://www.oecd.org/content/dam/oecd/en/topics/policy-issue-focus/aeoi/andorra-tin.pdf",
+   "title": "OECD AEOI portal, Andorra: Information on Tax Identification Numbers (the jurisdiction's own sheet)",
+   "read": "2026-10-30",
+   "said": "For natural persons resident in Andorra, the NRT is the Número d’Identificació Administrativa (Administrative Identification Number, NIA), preceded by the letter “F” ... F + 6 digits + 1 control letter TIN number for individuals is issued automatically when they obtain the Administrative Identification Number (NIA)"
+  }
+ ]
+}

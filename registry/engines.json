@@ -59,7 +59,7 @@
   "matrices": [
    "coverage/gazetteer-countries.json"
   ],
-  "allPlacesTest": "tests/world/gazetteer/gazetteer.test.ts::every place on the map > is in its country, with a region of that country or none, coordinates on the globe, and a time zone the clock and the sun answer for"
+  "allPlacesTest": "tests/world/gazetteer/gazetteer.places.test.ts::every place on the map > is in its country, with a region of that country or none, coordinates on the globe, and a time zone the clock and the sun answer for"
  },
  "world.map": {
   "layer": 2,
@@ -68,7 +68,7 @@
   "matrices": [
    "coverage/map-countries.json"
   ],
-  "allPlacesTest": "tests/world/map/map.test.ts::every place on the map > is marked on the whole world's view, where its coordinates put it"
+  "allPlacesTest": "tests/world/map/map.places.test.ts::every place on the map > is marked on the whole world's view, where its coordinates put it"
  },
  "world.clock": {
   "layer": 2,
@@ -77,7 +77,7 @@
   "matrices": [
    "coverage/clock-countries.json"
   ],
-  "allPlacesTest": "tests/world/clock/clock.test.ts::what the clock shows > at every place on the map"
+  "allPlacesTest": "tests/world/clock/clock.places.test.ts::what the clock shows > at every place on the map"
  },
  "world.weather": {
   "layer": 2,
@@ -86,7 +86,7 @@
   "matrices": [
    "coverage/weather-countries.json"
   ],
-  "allPlacesTest": "tests/world/weather/weather.test.ts::the weather at real towns > at every place on the map"
+  "allPlacesTest": "tests/world/weather/weather.places.test.ts::the weather at real towns > at every place on the map"
  },
  "world.holidays": {
   "layer": 2,
@@ -95,6 +95,174 @@
   "matrices": [
    "coverage/holidays-countries.json"
   ],
-  "allPlacesTest": "tests/world/holidays/holidays.test.ts::the holidays > at every place on the map"
+  "allPlacesTest": "tests/world/holidays/holidays.places.test.ts::the holidays > at every place on the map"
+ },
+ "world.prices": {
+  "layer": 2,
+  "dir": "src/world/prices",
+  "readsPlace": true,
+  "matrices": [
+   "coverage/prices-countries.json"
+  ],
+  "allPlacesTest": "tests/world/prices/prices.places.test.ts::the prices > at every place on the map"
+ },
+ "papers.passports": {
+  "layer": 3,
+  "dir": "src/papers/passports",
+  "readsPlace": true,
+  "matrices": [
+   "coverage/passports-countries.json"
+  ],
+  "allPlacesTest": "tests/papers/passports/passports.places.test.ts::the passports > for every place on the map"
+ },
+ "papers.ids": {
+  "layer": 3,
+  "dir": "src/papers/ids",
+  "readsPlace": true,
+  "matrices": [
+   "coverage/ids-countries.json"
+  ],
+  "allPlacesTest": "tests/papers/ids/ids.places.test.ts::the identity documents > for every place on the map"
+ },
+ "papers.citizenship": {
+  "layer": 3,
+  "dir": "src/papers/citizenship",
+  "readsPlace": true,
+  "matrices": [
+   "coverage/citizenship-countries.json"
+  ],
+  "allPlacesTest": "tests/papers/citizenship/citizenship.places.test.ts::citizenship > for every place on the map"
+ },
+ "papers.visits": {
+  "layer": 3,
+  "dir": "src/papers/visits",
+  "readsPlace": true,
+  "matrices": [
+   "coverage/visits-countries.json"
+  ],
+  "allPlacesTest": "tests/papers/visits/visits.places.test.ts::visits > for every place on the map"
+ },
+ "papers.ages": {
+  "layer": 3,
+  "dir": "src/papers/ages",
+  "readsPlace": true,
+  "matrices": [
+   "coverage/ages-countries.json"
+  ],
+  "allPlacesTest": "tests/papers/ages/ages.places.test.ts::the ages > for every place on the map"
+ },
+ "papers.work": {
+  "layer": 3,
+  "dir": "src/papers/work",
+  "readsPlace": true,
+  "matrices": [
+   "coverage/work-countries.json"
+  ],
+  "allPlacesTest": "tests/papers/work/work.places.test.ts::work > for every place on the map"
+ },
+ "money.banks": {
+  "layer": 3,
+  "dir": "src/money/banks",
+  "readsPlace": true,
+  "matrices": [
+   "coverage/banks-countries.json"
+  ],
+  "allPlacesTest": "tests/money/banks/banks.places.test.ts::banks > for every place on the map"
+ },
+ "money.cards": {
+  "layer": 3,
+  "dir": "src/money/cards",
+  "readsPlace": true,
+  "matrices": [
+   "coverage/cards-countries.json"
+  ],
+  "allPlacesTest": "tests/money/cards/cards.places.test.ts::cards > for every place on the map"
+ },
+ "money.credit": {
+  "layer": 3,
+  "dir": "src/money/credit",
+  "readsPlace": true,
+  "matrices": [
+   "coverage/credit-countries.json"
+  ],
+  "allPlacesTest": "tests/money/credit/credit.places.test.ts::credit > for every place on the map"
+ },
+ "money.rates": {
+  "layer": 3,
+  "dir": "src/money/rates",
+  "readsPlace": true,
+  "matrices": [
+   "coverage/rates-countries.json"
+  ],
+  "allPlacesTest": "tests/money/rates/rates.places.test.ts::rates > for every place on the map"
+ },
+ "money.means": {
+  "layer": 3,
+  "dir": "src/money/means",
+  "readsPlace": true,
+  "matrices": [
+   "coverage/means-countries.json"
+  ],
+  "allPlacesTest": "tests/money/means/means.places.test.ts::means > for every place on the map"
+ },
+ "money.ledger": {
+  "layer": 3,
+  "dir": "src/money/ledger",
+  "readsPlace": false,
+  "matrices": [
+   "coverage/ledger-operations.json"
+  ]
+ },
+ "papers.numbers": {
+  "layer": 3,
+  "dir": "src/papers/numbers",
+  "readsPlace": true,
+  "matrices": [
+   "coverage/numbers-countries.json"
+  ],
+  "allPlacesTest": "tests/papers/numbers/numbers.places.test.ts::the national numbers > for every place on the map"
+ },
+ "papers.residence": {
+  "layer": 3,
+  "dir": "src/papers/residence",
+  "readsPlace": true,
+  "matrices": [
+   "coverage/residence-countries.json"
+  ],
+  "allPlacesTest": "tests/papers/residence/residence.places.test.ts::the residence permissions > for every place on the map"
+ },
+ "papers.licence": {
+  "layer": 3,
+  "dir": "src/papers/licence",
+  "readsPlace": true,
+  "matrices": [
+   "coverage/licence-countries.json"
+  ],
+  "allPlacesTest": "tests/papers/licence/licence.places.test.ts::the licences > for every place on the map"
+ },
+ "money.accounts": {
+  "layer": 3,
+  "dir": "src/money/accounts",
+  "readsPlace": false,
+  "matrices": [
+   "coverage/accounts-operations.json"
+  ]
+ },
+ "money.formats": {
+  "layer": 3,
+  "dir": "src/money/formats",
+  "readsPlace": true,
+  "matrices": [
+   "coverage/formats-countries.json"
+  ],
+  "allPlacesTest": "tests/money/formats/formats.places.test.ts::account numbers > for every place on the map"
+ },
+ "money.units": {
+  "layer": 3,
+  "dir": "src/money/units",
+  "readsPlace": false,
+  "matrices": [
+   "coverage/units-units.json"
+  ]
  }
 }

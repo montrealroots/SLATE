@@ -1,0 +1,89 @@
+{
+ "country": "KE",
+ "office": "the Department of Immigration Services, applied for through eCitizen; abroad, Kenya's missions",
+ "currency": "KES",
+ "routes": [
+  {
+   "id": "home",
+   "where": "home",
+   "speed": "standard",
+   "within": null,
+   "label": "in Kenya, through eCitizen"
+  },
+  {
+   "id": "abroad",
+   "where": "abroad",
+   "speed": "standard",
+   "within": null,
+   "label": "at a Kenyan mission, biometrics in person"
+  },
+  {
+   "id": "lost",
+   "where": "home",
+   "speed": "standard",
+   "within": null,
+   "replacement": true,
+   "label": "a lost passport replaced"
+  },
+  {
+   "id": "abroad-lost",
+   "where": "abroad",
+   "speed": "standard",
+   "within": null,
+   "replacement": true,
+   "label": "a lost passport replaced through the High Commission in London"
+  }
+ ],
+ "passports": [
+  {
+   "for": "any",
+   "pages": 34,
+   "validYears": null,
+   "pay": {
+    "home": "7500",
+    "abroad": "7550",
+    "lost": "20000",
+    "abroad-lost": "20050"
+   }
+  },
+  {
+   "for": "any",
+   "pages": 50,
+   "validYears": null,
+   "pay": {
+    "home": "9500",
+    "abroad": "9550",
+    "lost": "20000",
+    "abroad-lost": "20050"
+   }
+  },
+  {
+   "for": "any",
+   "pages": 66,
+   "validYears": null,
+   "pay": {
+    "home": "12500",
+    "abroad": "12550",
+    "lost": "20000",
+    "abroad-lost": "20050"
+   }
+  }
+ ],
+ "note": "The ordinary passport's fees set by the Interior Cabinet Secretary's special gazette notice of 7 November 2023, as Citizen Digital reported it (34 pages Ksh.7,500, 50 pages Ksh.9,500, 66 pages Ksh.12,500), and as the Kenya High Commission in London lists them for applications there, Ksh.50 more each (Ksh.7,550, 9,550, 12,550). Whether that Ksh.50 is also charged at home is not stated, so the home route carries the gazette's amounts. A lost or mutilated passport costs Ksh.20,000 (Ksh.20,050 abroad), one figure whatever the pages, written as replacement routes on every booklet. Validity and processing times are leads; the Department's site and eCitizen do not answer this client.",
+ "sources": [
+  {
+   "url": "https://kenyahighcom.org.uk/passports",
+   "title": "Kenya High Commission, London, Passports",
+   "read": "2026-10-28",
+   "said": "Passport fees 34 pages Ordinary “A” series - Ksh. 7,550 50 pages Ordinary “B” series - Ksh. 9,550 66 pages Ordinary “C” series - Ksh. 12,550 ... Mutilated passport - Ksh. 20,050 Lost Passport - Ksh. 20,050"
+  },
+  {
+   "kind": "secondary",
+   "url": "https://citizen.digital/article/more-pain-for-kenyans-as-govt-raises-id-passport-application-costs-by-over-ksh3000-n330951",
+   "quotes": "https://kenyahighcom.org.uk/passports",
+   "title": "Citizen Digital, More pain for Kenyans as gov't raises ID, passport application costs by over Ksh.3,000 (November 2023)",
+   "read": "2026-10-28",
+   "said": "In a special gazette notice dated November 7, 2023, Interior Cabinet Secretary (CS) Prof. Kithure Kindiki announced that the fee for the standard 34-page passport application has surged to Ksh.7,500 up from the current Ksh.4,500. A 50-page ordinary passport will now cost applicants Ksh.9,500 from the existing Ksh.6,000 while the application fee for a 66-page ordinary passport has shot up by Ksh.5,000 to Ksh.12,500. ... Replacing a lost passport will cost Ksh.20,000"
+  }
+ ]
+}

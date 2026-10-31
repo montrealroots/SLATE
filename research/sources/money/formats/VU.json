@@ -1,0 +1,33 @@
+{
+ "country": "VU",
+ "national": {
+  "name": "Account Number",
+  "parts": [
+   {
+    "name": "Account Number",
+    "length": 14,
+    "kind": "n",
+    "min": 7,
+    "drawn": [
+     7,
+     7
+    ]
+   }
+  ]
+ },
+ "note": "No rule of the Reserve Bank of Vanuatu fixing an account number's length was read (rbv.gov.vu gave no answer on 2026-10-30). ANZ Bank (Vanuatu), in its page and Quick Reference Guide on the Reserve Bank of Vanuatu's national payment system upgrade (in force from 11 September 2023; both read 2026-10-31, the guide dated 09/23), gives the account number format each beneficiary bank accepts, the receiving bank being named by its SWIFT code beside the number, which replaced the bank (ACH) codes VU00 to VU04: ANZ seven digits, Bank South Pacific ten, National Bank of Vanuatu ten, BRED fourteen (shorter BRED numbers padded with zeros at the front to fourteen, the others never), Wanfuteng Bank thirteen, written XXX-XXXXXX-XX-XX (the hyphens aren't held). So the number is written as seven to fourteen digits, drawn at seven, ANZ's format, the bank the game's Vanuatu account is held at. Readings to check: the guide's column is headed 'Minimum number of digits required', and for the banks that aren't padded it gives the format without saying whether a longer number exists (as Fiji's and Solomon Islands' guides from ANZ are read). No check digit is published, and the bank isn't coded inside the number.",
+ "sources": [
+  {
+   "url": "https://www.anz.com/vanuatu/en/business/national-payment-system-upgrade/",
+   "title": "ANZ Vanuatu, National payment system upgrade: accepted account number formats",
+   "read": "2026-10-31",
+   "said": "To support the Reserve Bank of Vanuatu's national payment system upgrade, the way ANZ Vanuatu processes payment files and ANZ Transactive payments changed on 11 September 2023. ... What are the accepted account number formats? Bank name Account number format Minimum number of digits required ANZ Bank (Vanuatu) Limited XXXXXXX 7 Bank South Pacific (Vanuatu) Limited XXXXXXXXXX 10 National Bank of Vanuatu Limited XXXXXXXXXX 10 BRED (Vanuatu) Limited XXXXXXXXXXXXXX 14* Wanfuteng Bank Limited XXX-XXXXXX-XX-XX 13 ... If the account number doesn’t have the minimum number of digits required, you will need to add the relevant number of zeros to the front of the account number to meet the minimum number of digits required. This is not applicable for ANZ Bank (Vanuatu) Limited, Bank South Pacific (Vanuatu) Limited, National Bank of Vanuatu Limited, or Wanfuteng Bank Limited."
+  },
+  {
+   "url": "https://www.anz.com/content/dam/vanuatu/pdf/national-payment-system-upgrade-guide-vanuatu.pdf",
+   "title": "ANZ Bank (Vanuatu), Quick Reference Guide on the national payment system upgrade, September 2023",
+   "read": "2026-10-31",
+   "said": "The following table outlines account number requirements for each Beneficiary Bank. ... ANZ Bank (Vanuatu) Limited XXXXXXX 7 ... BRED (Vanuatu) Limited XXXXXXXXXXXXXX 14* ... Wanfuteng Bank Limited XXX-XXXXXX-XX-XX 13 ... The following table outlines which SWIFT codes will replace the current bank (ACH) codes."
+  }
+ ]
+}

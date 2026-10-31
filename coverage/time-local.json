@@ -6,7 +6,9 @@
    "type-at",
    "local-time",
    "instant-of",
-   "zone-names"
+   "zone-names",
+   "local-days",
+   "age"
   ]
  },
  "rows": [
@@ -39,6 +41,26 @@
    "status": "proven",
    "tests": [
     "tests/core/time/time.test.ts::zones by name > holds the release's 344 zones, and follows an alias to its zone"
+   ]
+  },
+  {
+   "key": "local-days",
+   "status": "proven",
+   "tests": [
+    "tests/core/time/dates.test.ts::a local day > starts at the zone's midnight, not UT's",
+    "tests/core/time/dates.test.ts::a local day > starts at its first moment where the clock skips midnight",
+    "tests/core/time/dates.test.ts::days and months on > keep the local time across a change of the clocks, so a day is 23 or 25 hours there",
+    "tests/core/time/dates.test.ts::days and months on > keep the day of the month, or the month's last where it has fewer, across years both ways",
+    "tests/core/time/dates.test.ts::days and months on > count the local dates between two moments, not the hours"
+   ]
+  },
+  {
+   "key": "age",
+   "status": "proven",
+   "tests": [
+    "tests/core/time/dates.test.ts::an age > turns at the local midnight of the zone the person lives in",
+    "tests/core/time/dates.test.ts::an age > is whole years, before and after the birthday in its month and either side of it",
+    "tests/core/time/dates.test.ts::an age > turns on 1 March for someone born on 29 February, in a year without one (the game's reading)"
    ]
   }
  ]

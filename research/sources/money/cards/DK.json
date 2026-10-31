@@ -1,0 +1,131 @@
+{
+ "country": "DK",
+ "cards": [
+  {
+   "bank": "Danske Bank",
+   "card": "Mastercard Basis",
+   "rate": "in full",
+   "fees": [
+    {
+     "fee": "250",
+     "per": "year"
+    }
+   ],
+   "cash": {
+    "fee": {
+     "percent": "1",
+     "min": "20"
+    }
+   },
+   "fx": "1.5",
+   "late": {
+    "fixed": "100"
+   }
+  },
+  {
+   "bank": "Danske Bank",
+   "card": "Mastercard Guld",
+   "rate": "in full",
+   "fees": [
+    {
+     "fee": "795",
+     "per": "year"
+    }
+   ],
+   "cash": {
+    "fee": {
+     "percent": "1",
+     "min": "20"
+    }
+   },
+   "fx": "1.5",
+   "late": {
+    "fixed": "100"
+   }
+  },
+  {
+   "bank": "Danske Bank",
+   "card": "Mastercard Platin",
+   "rate": "in full",
+   "fees": [
+    {
+     "fee": "1395",
+     "per": "year"
+    }
+   ],
+   "cash": {
+    "fee": {
+     "percent": "1",
+     "min": "20"
+    }
+   },
+   "fx": "1.5",
+   "late": {
+    "fixed": "100"
+   }
+  },
+  {
+   "bank": "Bank Norwegian",
+   "card": "Bank Norwegian-kortet",
+   "rate": {
+    "percent": "19.99",
+    "per": "year"
+   },
+   "fees": [],
+   "fx": "1.99",
+   "grace": 45,
+   "late": {
+    "fixed": "100"
+   }
+  },
+  {
+   "bank": "re:member (Entercard)",
+   "card": "re:member Mastercard",
+   "rate": {
+    "percent": "19.95",
+    "per": "year"
+   },
+   "fees": [],
+   "cash": {
+    "fee": {
+     "percent": "2",
+     "min": "50"
+    }
+   },
+   "grace": 52
+  }
+ ],
+ "note": "Danske Bank's price book (updated 7 October 2026), read 2026-10-30 for its Mastercards: the Mastercard Basis (250 kroner a year), Guld (795) and Platin (1,395), each with a standard yearly card fee (none inside some customer programmes, which the game doesn't hold). With the usual 100% repayment each month no interest is charged from purchase to the due date, so nothing is carried; the 5, 10 or 15% monthly repayment the holder may choose instead carries interest from the due date at a rate the price book doesn't state, so it isn't written. Each: a cash withdrawal on the credit function at Danske Bank's machines or counters costs 1% (at least 20 kroner); paying in a currency outside the EU/EEA, Switzerland and Britain costs 1.5% (written as the foreign fee; 0.5% on EEA currencies isn't modelled); a payment reminder costs 100 kroner, written as the late fee. The Mastercard Hverdag+ (199 kroner a year) is offered without a credit assessment and can't be used on credit, so it isn't written. Replacement, express and courier charges aren't written. The main banks: Danske Bank, Denmark's largest, is the only one written; Nordea's and Jyske Bank's Danish card price lists weren't reached on 2026-10-30. The earlier reading of the Mastercard Basis (2026-10-29) holds and is kept. Two card companies were added in wave 4, Nordea's Danish card page not being at its address (404) and Jyske Bank's answering with a Cloudflare check, each a large Danish credit card issuer whose card page gives its full price table, read 2026-10-30. Bank Norwegian: the Bank Norwegian card, no yearly fee and no fee for an invoice in e-Boks (35 kroner on paper, a choice not written), 19.99% a year nominal (21.93% debit rate and APR), up to 45 interest-free days (grace 45), no cash withdrawal fee in Denmark or abroad (none written), a 1.99% currency surcharge, and a 100-krone reminder fee written as the late fee (the 100-krone debt-collection notices and the 100-krone fee for pulling back a Betalingsservice payment aren't written). re:member: the re:member Mastercard, no card fee, invoice or Betalingsservice charge, 19.95% a year nominal (21.88% debit rate), up to 52 interest-free days (grace 52), and 2% on a cash withdrawal in Denmark or abroad, at least 50 kroner (the 2% on a transfer to a NemKonto isn't written); its table gives no currency surcharge. No minimum payment is published for Bank Norwegian's card and the re:member Mastercard; tried: Bank Norwegian's card page, price list and credit card agreement (read 2026-10-30; the agreement says only that the credit is repaid as the statement says, and its standard information form wasn't at the address its Finnish one uses, 404), re:member's card page and its questions page (none stated), a search in Danish for re:member's least monthly payment (nothing from the issuer), and archive.org's availability API (its snapshots can't be read: web.archive.org is refused by this environment's egress), which lists snapshots of both card pages.",
+ "sources": [
+  {
+   "url": "https://danskebank.dk/PDF/PRISER-VILKAAR-FAKTAARK/Generelle-vilkaar/PRISBOGDB.pdf",
+   "title": "Danske Bank, Prisbog (updated 7 October 2026)",
+   "read": "2026-10-30",
+   "said": "Senest opdateret d. 7. oktober 2026 ... Mastercard Hverdag+ Mastercard Basis Mastercard Guld Mastercard Platin ... Standardpris 199 kr.21 250 kr. 795 kr. 1.395 kr. ... Betalingspåmindelse Ikke muligt 100 kr. 100 kr. 100 kr. ... I Danske Banks automater, og i kassen Pris Kan ikke benyttes 1%, min. 20 kr. 1%, min. 20 kr. 1%, min. 20 kr. ... Der beregnes ikke rente fra købstidspunkt til forfaldsdatoen (købsperiode) i tilfælde af 100% afvikling af kredit pr. måned. Ved tilvalg af 5, 10 eller 15% afvikling pr. måned beregnes rente fra ... Kurstillæg 0,5% af beløbet 0,5% af beløbet 0,5% af beløbet 0,5% af beløbet ... Pris 1,5% af beløbet 1,5% af beløbet 1,5% af beløbet 1,5% af beløbet"
+  },
+  {
+   "url": "https://danskebank.dk/PDF/PRISER-VILKAAR-FAKTAARK/Generelle-vilkaar/PRISBOGDB.pdf",
+   "title": "Danske Bank, Prisbog (updated 7 October 2026)",
+   "read": "2026-10-29",
+   "said": "Senest opdateret d. 7. oktober 2026 ... Mastercard Hverdag+ Mastercard Basis Mastercard Guld Mastercard Platin ... Gebyrer Årligt kortgebyr Standardpris 199 kr.21 250 kr."
+  },
+  {
+   "url": "http://www.danskebank.dk/PDF/PRISER-VILKAAR-FAKTAARK/Kort/Kortbestemmelser-for-MC-BASIS.pdf",
+   "title": "Danske Bank, Kortbestemmelser for Mastercard Basis",
+   "read": "2026-10-29",
+   "said": "Mastercard Basis med et købsmaksimum, hvor der ikke beregnes rente fra betalingen/udbetalingen med kortet til forfaldsdagen ... Hvis du har et Mastercard med købsmaksimum, forfalder saldoen på fakturaen til betaling og hæves på forfaldsdagen på din løbende konto."
+  },
+  {
+   "url": "https://www.banknorwegian.dk/kreditkort/",
+   "title": "Bank Norwegian, Kreditkort (Denmark)",
+   "read": "2026-10-30",
+   "said": "Årsgebyr 0 kr. ... Papirfaktura (valgfri) 35 kr. Rente ved benyttet kredit Pålydende rente pr. år 19,99 % ... Debitorrente 21,93 % ÅOP 21,93 % ... Kontanthævning Danmark* 0 kr. ... Valutatillæg 1,99 % ... Rykkergebyr 100 kr. Inkassovarsel 100 kr. ... Op til 45 dages rentefri kredit"
+  },
+  {
+   "url": "https://www.remember.dk/kreditkort",
+   "title": "re:member, Kreditkort (Denmark)",
+   "read": "2026-10-30",
+   "said": "Årligt kortgebyr 0 kr. ... Gebyr for opkrævning via Betalingsservice 0 kr. Kontanthævning i Danmark eller udlandet 2 %, min. 50 kr. Overførsel til NemKonto 2 % og renter fra dag 1 Pålydende årlig rente 19,95 % Debitorrenten 21,88 % ... Med re:member Mastercard har du op til 52 dages rentefrihed"
+  }
+ ]
+}

@@ -1,0 +1,90 @@
+{
+ "country": "BD",
+ "office": "the Department of Immigration and Passports",
+ "currency": "BDT",
+ "routes": [
+  {
+   "id": "regular",
+   "where": "home",
+   "speed": "standard",
+   "within": {
+    "n": 21,
+    "unit": "day"
+   },
+   "label": "regular, at least 15 working days or 21 days from biometric registration"
+  },
+  {
+   "id": "express",
+   "where": "home",
+   "speed": "urgent",
+   "within": {
+    "n": 10,
+    "unit": "day"
+   },
+   "label": "express, 7 to 10 days"
+  },
+  {
+   "id": "super-express",
+   "where": "home",
+   "speed": "urgent",
+   "within": {
+    "n": 2,
+    "unit": "working day"
+   },
+   "label": "super express, within 2 working days"
+  }
+ ],
+ "passports": [
+  {
+   "for": "any",
+   "pages": 48,
+   "validYears": 5,
+   "pay": {
+    "regular": "4025",
+    "express": "6325",
+    "super-express": "8625"
+   }
+  },
+  {
+   "for": "any",
+   "pages": 64,
+   "validYears": 5,
+   "pay": {
+    "regular": "6325",
+    "express": "8625",
+    "super-express": "12075"
+   }
+  },
+  {
+   "for": "any",
+   "pages": 48,
+   "validYears": 10,
+   "pay": {
+    "regular": "5750",
+    "express": "8050",
+    "super-express": "10350"
+   }
+  },
+  {
+   "for": "any",
+   "pages": 64,
+   "validYears": 10,
+   "pay": {
+    "regular": "8050",
+    "express": "10350",
+    "super-express": "13800"
+   }
+  }
+ ],
+ "note": "The e-passport's fees by pages, validity and service, as UNB reported them in March 2025 from the e-passport portal (epassport.gov.bd answers this client 403; not read). The times are the longest the report gives. Limits by age on the ten-year passport and fees at missions abroad are leads.",
+ "sources": [
+  {
+   "kind": "secondary",
+   "quotes": "https://www.epassport.gov.bd/",
+   "url": "https://unb.com.bd/category/bangladesh/getting-e-passport-without-police-verification-in-bangladesh-documents-fees-and-online-application-process/154686",
+   "title": "UNB (United News of Bangladesh), Getting e-passport without police verification in Bangladesh: Documents, fees, and online application process (4 March 2025)",
+   "read": "2026-10-28",
+   "said": "Super Express Service: The fastest option, delivering the passport within 2 working days from the date of biometric registration. Express Service: Processing takes a minimum of 7 working days which extends to a maximum of 10 days from the date of biometric registration. Regular Service: The most extended timeframe, with a processing period of at least 15 working days or 21 days from the date of biometric registration. ... E-Passport with 48 Pages (5-Year Validity) Regular Service: BDT 4,025 Express Service: BDT 6,325 Super Express Service: BDT 8,625 E-Passport with 64 Pages (5-Year Validity) Regular Service: BDT 6,325 Express Service: BDT 8,625 Super Express Service: BDT 12,075 E-Passport with 48 Pages (10-Year Validity) Regular Service: BDT 5,750 Express Service: BDT 8,050 Super Express Service: BDT 10,350 E-Passport with 64 Pages (10-Year Validity) Regular Service: BDT 8,050 Express Service: BDT 10,350 Super Express Service: BDT 13,800"
+  }
+ ]
+}

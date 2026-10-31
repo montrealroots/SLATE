@@ -1,0 +1,62 @@
+{
+ "country": "AL",
+ "office": "IdentiTek sh.a., the state company that takes applications for and produces Albania's biometric documents, at its offices in the municipal and administrative units; the fee is paid by an electronic coupon",
+ "currency": "ALL",
+ "routes": [
+  {
+   "id": "home",
+   "where": "home",
+   "speed": "standard",
+   "within": {
+    "n": 14,
+    "unit": "day"
+   },
+   "label": "standard procedure, delivered in 14 days"
+  },
+  {
+   "id": "fast",
+   "where": "home",
+   "speed": "urgent",
+   "within": {
+    "n": 3,
+    "unit": "day"
+   },
+   "label": "fast-track procedure, within 3 days, at some offices"
+  }
+ ],
+ "passports": [
+  {
+   "for": "adult",
+   "from": 16,
+   "validYears": 10,
+   "pay": {
+    "home": "7500.00",
+    "fast": "18000.00"
+   }
+  },
+  {
+   "for": "child",
+   "under": 16,
+   "validYears": 5,
+   "pay": {
+    "home": "7500.00",
+    "fast": "18000.00"
+   }
+  }
+ ],
+ "note": "IdentiTek's coupon prices for applying in Albania: 7,500 lekë for a passport by the standard procedure (14 days) and 18,000 lekë by the fast track (3 days), the same for every age; validity ten years from 16, five years under 16, as IdentiTek's application procedures state. Abroad the coupon depends on the region (25,059 lekë for the United States and Canada, 16,730 lekë for the United Kingdom, 130 euros for Italy and Greece, 170 euros elsewhere in Europe, each 15 days) and is not modelled, since the routes abroad don't yet carry the region of residence.",
+ "sources": [
+  {
+   "url": "https://e-kupon.identitek.al/",
+   "title": "IdentiTek sh.a., e-Kupon (the coupon shop's table of documents, prices and delivery times)",
+   "read": "2026-10-28",
+   "said": "\"title\":\"Pasaportë me procedurë standarde\" ... \"price\":\"7500.00\" ... \"estimate\":14 ... \"title\":\"Pasaportë me procedurë të shpejtë\" ... \"price\":\"18000.00\" ... \"estimate\":3 ... \"title\":\"Pasaportë për në SHBA & Kanada\" ... \"price\":\"25059.00\""
+  },
+  {
+   "url": "https://identitek.al/aplikimet",
+   "title": "IdentiTek sh.a., Procedurat e aplikimit: Pasaportë, Në Shqipëri",
+   "read": "2026-10-28",
+   "said": "Për shtetasin mbi 16 vjeç, vlefshmëria e pasaportës është 10 vjet. ... Për shtetasin nën moshën 16 vjeç, vlefshmëria e pasaportës është 5 vjet. ... (brenda 3 ditësh), mund të kryeni një aplikim të ri duke zgjedhur procedurën e përshpejtuar."
+  }
+ ]
+}

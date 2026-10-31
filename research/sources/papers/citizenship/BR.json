@@ -1,0 +1,43 @@
+{
+ "country": "BR",
+ "years": 4,
+ "renounce": false,
+ "lapses": false,
+ "note": "GLOBALCIT's Citizenship Law Dataset v3.0 (EUI, 2025), coding the law in force on 1 January 2024 (A06a Const 12(2)(a), BRA 65; A06b Const 12(2)(a), BRA 65; L05 No provision): ordinary naturalisation after 4 years' residence; no renunciation of other citizenships required; a citizen keeps it on taking another. Reforms after that date are checked in the file's later sources, where a later source is given. Citizenship at birth is read from the same dataset's 2024 coding of modes A01a (descent, born in country: No provision), A01b (descent, born abroad: Generational transmission restriction: conditional on birthplace/place of residence /mode under which parent acquired citizenship), A02a (birth in country: Generally applicable provision) and A02b (birth in country to a parent born there: No provision), as its codebook (RSC/GLOBALCIT 2025/01, sections 3.2.1a to 3.2.2b) defines them: by birth in the territory unconditionally; by descent from either parent, a child born abroad on the limit the dataset states (the dataset codes no separate descent rule for a child born in the country, birth there giving it; the parent's sex is read from mode A01b). Changes to the law at birth after 1 January 2024 weren't checked for this file. No fee is charged for naturalisation under current law, and the procedure must end within 180 days of the request (Decree 9,199/2017 art. 228, as the Ministry of Justice's questions page quotes it); the applicant must be able to communicate in Portuguese, shown by Celpe-Bras or an approved course and at the Federal Police interview (Ministry of Justice, ordinary naturalisation). No civics test is asked.",
+ "sources": [
+  {
+   "url": "https://cadmus.eui.eu/bitstreams/3b166501-e695-48d7-9e27-d7bef061573a/download",
+   "title": "GLOBALCIT Citizenship Law Dataset v3.0 (Vink, van der Baaren, Bauböck, Dzankic, Honohan, Manby; EUI Research Data, 2025), country-year-mode files, Brazil, 2024",
+   "read": "2026-10-29",
+   "kind": "secondary",
+   "quotes": "https://globalcit.eu/national-citizenship-laws/",
+   "said": "Person has been permanently resident in Brazil for at least 4 years immediately prior to the application and continues to do so. ... n.a. ... n.a. ... No provision ... Generational transmission restriction: conditional on birthplace/place of residence /mode under which parent acquired citizenship ... Person is born abroad to a citizen in the service of Brazil.; Person is born abroad to a citizen not in the service of Brazil and is registered with the Brazilian consulate.; Person is born abroad to a citizen not in the service of Brazil and establishes residence in Brazil (by declaration after reaching the age of majority). ... Generally applicable provision ... Person is born in Brazil. Unless parents are in the service of their country (e.g. diplomats). ... No provision"
+  },
+  {
+   "url": "https://www.gov.br/mj/pt-br/assuntos/seus-direitos/migracoes/nacionalidade-naturalizacao-e-certidoes/perguntas-frequentes",
+   "title": "Ministério da Justiça e Segurança Pública, Perguntas frequentes (nacionalidade, naturalização e certidões)",
+   "read": "2026-10-30",
+   "said": "Não, conforme a legislação atual, não há recolhimento de taxa ... Art. 228. O procedimento de naturalização se encerrará no prazo de cento e oitenta dias, contado da data do recebimento do pedido."
+  },
+  {
+   "url": "https://www.gov.br/mj/pt-br/assuntos/seus-direitos/migracoes/naturalizacao/o-que-e-naturalizacao/naturalizacao-ordinaria",
+   "title": "Ministério da Justiça e Segurança Pública, Naturalização ordinária",
+   "read": "2026-10-30",
+   "said": "Você consegue se comunicar em português? ... Os caminhos mais comuns são o exame Celpe-Bras ou um curso de português para imigrantes, com aprovação, em instituição credenciada pelo MEC."
+  }
+ ],
+ "atBirth": {
+  "soil": "unconditional",
+  "descent": "either parent",
+  "descentAbroad": "Person is born abroad to a citizen in the service of Brazil.; Person is born abroad to a citizen not in the service of Brazil and is registered with the Brazilian consulate.; Person is born abroad to a citizen not in the service of Brazil and establishes residence in Brazil (by declaration after reaching the age of majority)."
+ },
+ "currency": "BRL",
+ "fee": "0",
+ "within": {
+  "n": 180,
+  "unit": "day"
+ },
+ "test": [
+  "language"
+ ]
+}

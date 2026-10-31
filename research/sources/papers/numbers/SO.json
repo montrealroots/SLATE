@@ -1,0 +1,35 @@
+{
+ "country": "SO",
+ "name": "National Identification Number (NIN, 'Tirsi Aqoonsi')",
+ "issuer": "the National Identification and Registration Authority (NIRA)",
+ "format": {
+  "length": 11,
+  "pattern": "^\\d{11}$"
+ },
+ "when": "application",
+ "who": [
+  "citizens",
+  "residents"
+ ],
+ "note": "NIRA's own pages, read 2026-10-30 (undated): under the Identification and Registration Act (Law No. 009 of 2023, which amended Law No. 41 of 2020 establishing NIRA), NIRA issues every citizen and legal resident a unique National Identification Number, 'Tirsi Aqoonsi' in Somali; after an application, identity proofing, biometric capture and deduplication, the applicant is issued a unique 11-digit National ID number, permanently assigned (so `when` is application, to citizens and residents). The pages say the ID is used for government services, banking and social protection but not that the law requires it for any of them, so `needed` is left out. No check digit, age, fee or time for the number is stated (the 48-hour time on the identification page is the interim certificate's, not the number's, and isn't modelled). The Act itself wasn't read; NIRA's FAQ page loads most of its answers by script, and only those in the page as served were read.",
+ "sources": [
+  {
+   "url": "https://nira.gov.so/nationalid",
+   "title": "NIRA Somalia, National ID Registration",
+   "read": "2026-10-30",
+   "said": "NIRA’s National ID process involves a structured and secure workflow to ensure the accurate registration and issuance of identity credentials for citizens and legal residents in Somalia. ... The first step involves the submission of an application by the individual seeking a National ID. ... Once validation is complete and the identity is confirmed, the applicant is issued a unique 11-digit National ID number, which is permanently assigned to the individual."
+  },
+  {
+   "url": "https://nira.gov.so/",
+   "title": "NIRA Somalia (home page)",
+   "read": "2026-10-30",
+   "said": "NIRA is entrusted with the task of providing every citizen and legal resident with a secure, verifiable identity through the issuance of a unique National Identification Number (NIN), also known as 'Tirsi Aqoonsi' in Somali."
+  },
+  {
+   "url": "https://nira.gov.so/faqs",
+   "title": "NIRA Somalia, FAQ's",
+   "read": "2026-10-30",
+   "said": "The National Identification and Registration Authority was established under Law Lr No. 41 of 2020. This Act was amended by Lr. No. 009 Act, which was passed in May 2023."
+  }
+ ]
+}

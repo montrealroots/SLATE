@@ -1,0 +1,90 @@
+{
+ "country": "DE",
+ "routes": [
+  {
+   "id": "freelance",
+   "name": "Aufenthaltserlaubnis zur Ausübung einer freiberuflichen Tätigkeit (§ 21 Abs. 5 AufenthG)",
+   "for": "self-employed",
+   "apply": "either",
+   "fee": "100",
+   "work": "any",
+   "counts": true,
+   "permanentAfter": 5
+  },
+  {
+   "id": "employment",
+   "name": "Aufenthaltserlaubnis zur Ausübung einer Beschäftigung (§ 19c Abs. 1 AufenthG)",
+   "for": "work",
+   "apply": "either",
+   "fee": "100",
+   "work": "sponsor",
+   "counts": true,
+   "permanentAfter": 5
+  },
+  {
+   "id": "eu-free-movement",
+   "name": "Freizügigkeit von Unionsbürgern (FreizügG/EU)",
+   "for": "free movement",
+   "apply": "in country",
+   "work": "any",
+   "counts": true,
+   "groups": [
+    "EU/EEA"
+   ]
+  },
+  {
+   "id": "settlement",
+   "name": "Niederlassungserlaubnis (§ 9 AufenthG)",
+   "for": "permanent",
+   "apply": "in country",
+   "fee": "113",
+   "work": "any",
+   "counts": true
+  }
+ ],
+ "note": "Germany, read in the federal statutes on gesetze-im-internet.de (the Federal Ministry of Justice's text, as in force on 2026-10-30). A performer working freelance takes a residence permit for a liberal profession under section 21(5) of the Residence Act, which waives the economic-interest test of 21(1) and the three-year limit of 21(4) (the game's reading: performing artists are the liberal profession the Act means; the Act names no profession), so no term is given. One employed (a theatre's ensemble, a production) takes a permit for employment under 19c(1), which the Employment Ordinance's section 25 (artists, read for the work engine) opens; it ties the work to the job the Federal Employment Agency approved. Either permit costs 100 euros at issue (Residence Ordinance section 45: 100 for up to a year and for more), and 93 euros to extend for more than three months, which the form does not hold. The settlement permit is unlimited, due after five years of holding a residence permit with a secured living, 60 months of pension contributions, sufficient German and the civic test (section 9), for 113 euros (section 44 'in allen übrigen Fällen'). Naturalisation asks five years' lawful habitual residence (section 10 of the Nationality Act), which each of these counts toward. EU and EEA citizens have the right of entry and residence as workers and self-employed under the Free Movement Act (Swiss citizens under the 1999 agreement, not read). No decision time is published in the statutes.",
+ "sources": [
+  {
+   "url": "https://www.gesetze-im-internet.de/aufenthg_2004/__21.html",
+   "title": "AufenthG § 21, Selbständige Tätigkeit",
+   "read": "2026-10-30",
+   "said": "(4) Die Aufenthaltserlaubnis wird auf längstens drei Jahre befristet. ... (5) Einem Ausländer kann eine Aufenthaltserlaubnis zur Ausübung einer freiberuflichen Tätigkeit abweichend von Absatz 1 erteilt werden. ... Absatz 4 ist nicht anzuwenden."
+  },
+  {
+   "url": "https://www.gesetze-im-internet.de/aufenthg_2004/__19c.html",
+   "title": "AufenthG § 19c, Sonstige Beschäftigungszwecke",
+   "read": "2026-10-30",
+   "said": "(1) Einem Ausländer kann unabhängig von einer Qualifikation als Fachkraft eine Aufenthaltserlaubnis zur Ausübung einer Beschäftigung erteilt werden, wenn die Beschäftigungsverordnung oder eine zwischenstaatliche Vereinbarung bestimmt, dass der Ausländer zur Ausübung dieser Beschäftigung zugelassen werden kann."
+  },
+  {
+   "url": "https://www.gesetze-im-internet.de/aufenthg_2004/__9.html",
+   "title": "AufenthG § 9, Niederlassungserlaubnis",
+   "read": "2026-10-30",
+   "said": "(1) Die Niederlassungserlaubnis ist ein unbefristeter Aufenthaltstitel. ... 1. er seit fünf Jahren die Aufenthaltserlaubnis besitzt,"
+  },
+  {
+   "url": "https://www.gesetze-im-internet.de/aufenthv/__45.html",
+   "title": "AufenthV § 45, Gebühren für die Aufenthaltserlaubnis",
+   "read": "2026-10-30",
+   "said": "a) mit einer Geltungsdauer von bis zu einem Jahr 100 Euro, b) mit einer Geltungsdauer von mehr als einem Jahr 100 Euro,"
+  },
+  {
+   "url": "https://www.gesetze-im-internet.de/aufenthv/__44.html",
+   "title": "AufenthV § 44, Gebühren für die Niederlassungserlaubnis",
+   "read": "2026-10-30",
+   "said": "für die Erteilung einer Niederlassungserlaubnis in allen übrigen Fällen 113 Euro."
+  },
+  {
+   "url": "https://www.gesetze-im-internet.de/freiz_gg_eu_2004/__2.html",
+   "title": "FreizügG/EU § 2, Recht auf Einreise und Aufenthalt",
+   "read": "2026-10-30",
+   "said": "(1) Freizügigkeitsberechtigte Unionsbürger und ihre Familienangehörigen haben das Recht auf Einreise und Aufenthalt nach Maßgabe dieses Gesetzes. ... 1. Unionsbürger, die sich als Arbeitnehmer oder zur Berufsausbildung aufhalten wollen,"
+  },
+  {
+   "url": "https://www.gesetze-im-internet.de/stag/__10.html",
+   "title": "StAG § 10",
+   "read": "2026-10-30",
+   "said": "(1) Ein Ausländer, der seit fünf Jahren rechtmäßig seinen gewöhnlichen Aufenthalt im Inland hat"
+  }
+ ]
+}

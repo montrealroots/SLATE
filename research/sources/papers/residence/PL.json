@@ -1,0 +1,76 @@
+{
+ "country": "PL",
+ "routes": [
+  {
+   "id": "pobyt-i-praca",
+   "name": "Zezwolenie na pobyt czasowy i pracę",
+   "for": "work",
+   "apply": "in country",
+   "fee": "440",
+   "within": {
+    "n": 60,
+    "unit": "day"
+   },
+   "term": {
+    "n": 3,
+    "unit": "year"
+   },
+   "renewable": true,
+   "work": "sponsor",
+   "permanentAfter": 5
+  },
+  {
+   "id": "eu-registration",
+   "name": "Rejestracja pobytu obywatela UE",
+   "for": "free movement",
+   "apply": "in country",
+   "work": "any",
+   "groups": [
+    "EU/EEA"
+   ]
+  },
+  {
+   "id": "rezydent-ue",
+   "name": "Zezwolenie na pobyt rezydenta długoterminowego UE",
+   "for": "permanent",
+   "apply": "in country",
+   "fee": "640",
+   "work": "any"
+  },
+  {
+   "id": "pobyt-staly-malzenstwo",
+   "name": "Zezwolenie na pobyt stały (małżonek obywatela polskiego)",
+   "for": "family",
+   "apply": "in country",
+   "fee": "640",
+   "work": "any"
+  }
+ ],
+ "note": "Poland, read in the Office for Foreigners' case service (Moduł Obsługi Spraw, mos.cudzoziemcy.gov.pl): its questions and answers on the temporary residence and work permit, on permanent permits and on EU citizens, and its page on the EU long-term resident permit (read 2026-10-30; the site's missing TLS intermediate was completed from the CA's own address). The temporary residence and work permit (the single permit), asked of the voivode in Poland, is granted for the period the stay's purpose needs, from over 3 months to 3 years (the longest is kept), for 440 zł paid up front, decided within 60 days of a complete application, and for the employer named (read as work for the sponsor); the 100 zł residence card is apart. The EU long-term resident permit, a permit to stay without limit, is for those who have stayed lawfully and without interruption for the required period, as a rule 5 years; it costs 640 zł and gives full access to the labour market. Permanent residence (pobyt stały) for the spouse of a Polish citizen after 3 years' marriage and 2 years' residence on that ground costs 640 zł. An EU citizen staying over 3 months registers the stay with the voivode as a worker, self-employed or with sufficient means; the page speaks of EU citizens, and the group is kept as the EU/EEA. Citizenship's years were not read, so no route says its years count. The Act on Foreigners itself (isap.sejm.gov.pl) answered 403 behind a bot check and was not read; the gov.pl office pages tried did not answer with the permit's page.",
+ "sources": [
+  {
+   "url": "https://www.mos.cudzoziemcy.gov.pl/baza-pytan-i-odpowiedzi/zezwolenia-pobyt-i-praca/",
+   "title": "Q&A: Zezwolenie na pobyt czasowy i pracę, Moduł Obsługi Spraw, Urząd do Spraw Cudzoziemców (read 2026-10-30)",
+   "read": "2026-10-30",
+   "said": "Zezwolenie na pobyt czasowy i pracę udzielane jest na okres niezbędny do realizacji celu pobytu powyżej 3 miesięcy do 3 lat. ... 440 zł – w przypadku pracownika (za udzielenie zezwolenia na podstawie art. 114 ust. 1 ustawy o cudzoziemcach); ... Wniosek o udzielenie zezwolenia zostanie rozpoznany w terminie 60 dni od złożenia kompletnego wniosku"
+  },
+  {
+   "url": "https://www.mos.cudzoziemcy.gov.pl/kategorie-informacji/mozliwosci-legalizacji/spoza-ue-kontynuacja-pobytu/zezwolenie-na-pobyt-rezydenta-dlugoterminowego-ue/",
+   "title": "Zezwolenie na pobyt rezydenta długoterminowego UE, Moduł Obsługi Spraw (read 2026-10-30)",
+   "read": "2026-10-30",
+   "said": "Zezwolenie na pobyt rezydenta długoterminowego UE to uprawnienie do bezterminowego (stałego) pobytu na terytorium Polski ... udzielane cudzoziemcom, którzy przebywają na terytorium Polski legalnie i nieprzerwanie przez wymagany okres ... , który wynosi z reguły 5 lat. ... Opłata skarbowa 640 zł ... Pełen dostęp do polskiego rynku pracy"
+  },
+  {
+   "url": "https://www.mos.cudzoziemcy.gov.pl/baza-pytan-i-odpowiedzi/zezwolenia-bezterminowe/",
+   "title": "Q&A: Zezwolenia bezterminowe, Moduł Obsługi Spraw (read 2026-10-30)",
+   "read": "2026-10-30",
+   "said": "zezwolenie na pobyt stały udziela się cudzoziemcowi, który pozostaje w uznawanym przez prawo polskie związku małżeńskim z obywatelem polskim i pozostawał w tym związku małżeńskim przez co najmniej 3 lata ... Opłata skarbowa za udzielenie zezwolenia na pobyt stały wynosi 640 zł."
+  },
+  {
+   "url": "https://www.mos.cudzoziemcy.gov.pl/baza-pytan-i-odpowiedzi/obywatele-ue/",
+   "title": "Q&A: Obywatele UE, Moduł Obsługi Spraw (read 2026-10-30)",
+   "read": "2026-10-30",
+   "said": "Jeśli jesteś obywatelem UE i przebywasz w Polsce dłużej niż 3 miesiące, to powinieneś zarejestrować pobyt w Polsce. ... bycie pracownikiem lub osobą pracującą na własny rachunek na terytorium Polski, lub"
+  }
+ ]
+}

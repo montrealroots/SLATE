@@ -1,0 +1,14 @@
+#!/bin/bash
+# get URL [outname]: fetch to dl/, print text (html->text, pdf->text)
+S=/tmp/claude-0/-home-user-SLATE/c8b0b159-b4a5-540a-bbd6-18661cbe240c/scratchpad
+url="$1"; name="${2:-$(echo "$url" | md5sum | cut -c1-10)}"
+f="$S/dl/$name"
+for try in 1 2 3 4; do code=$(curl $CURLX --compressed -sSL -m "${T:-60}" -A "SLATE-research/0.1 (curl)" -H "Accept-Language: en,fr;q=0.8" -o "$f" -w "%{http_code} %{content_type}" "$url"); [ "${code:0:3}" != "000" ] && break; sleep 2; done
+echo "== $code $(stat -c %s "$f" 2>/dev/null) bytes -> $f" >&2
+if head -c 5 "$f" | grep -q '%PDF'; then pdftotext -layout "$f" - 2>/dev/null
+else python3 -I -c "
+import sys,bs4
+s=bs4.BeautifulSoup(open(sys.argv[1],'rb').read(),'lxml')
+for t in s(['script','style','noscript']): t.decompose()
+import re
+print(re.sub(r'\n\s*\n+','\n',s.get_text('\n')))" "$f"; fi

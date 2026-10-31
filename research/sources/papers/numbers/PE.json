@@ -1,0 +1,25 @@
+{
+ "country": "PE",
+ "name": "Single Taxpayers' Registry (RUC) number",
+ "issuer": "the National Superintendence of Customs and Tax Administration (SUNAT)",
+ "format": {
+  "length": 11,
+  "pattern": "^10\\d{9}$"
+ },
+ "when": "application",
+ "who": [
+  "anyone"
+ ],
+ "needed": [
+  "tax"
+ ],
+ "note": "Peru's sheet (its government's own sheet on the OECD's automatic-exchange portal ('Information on Tax Identification Numbers'; the OECD's index page sits behind a bot check and wasn't opened, the sheet itself came straight back)), read 2026-10-30: the Single Taxpayers' Registry (RUC) under Legislative Decree 943 is administered by SUNAT (the National Superintendence of Customs and Tax Administration); those who become taxpayers, seek certain refunds, use customs regimes or deal with the public administration must register, in person or online (RUC Digital for domiciled natural persons with a National Identity Document, DNI); the RUC is 11 digits, for individuals with a DNI the prefix 10, the DNI and a verification digit (rule not given, `check` left out). Read as given on application, to anyone who must register. No age, fee or time is stated.",
+ "sources": [
+  {
+   "url": "https://www.oecd.org/content/dam/oecd/en/topics/policy-issue-focus/aeoi/peru-tin.pdf",
+   "title": "OECD AEOI portal, Peru: Information on Tax Identification Numbers (the jurisdiction's own sheet)",
+   "read": "2026-10-30",
+   "said": "the administration of that registry is in charge of National Superintendence of Customs and Tax Administration (SUNAT). Must register in the RUC those who: a) To acquire the status of taxpayers ... RUC consists of an 11-digit number. The number is structured as follows: (a) Individuals identified with DNI: Prefix 10 + DNI + verification digit."
+  }
+ ]
+}

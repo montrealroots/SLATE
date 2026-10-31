@@ -1,0 +1,63 @@
+{
+ "country": "EE",
+ "routes": [
+  {
+   "id": "employment",
+   "name": "Residence permit for employment",
+   "for": "work",
+   "apply": "either",
+   "within": {
+    "n": 90,
+    "unit": "day"
+   },
+   "term": {
+    "n": 5,
+    "unit": "year"
+   },
+   "renewable": true,
+   "work": "sponsor"
+  },
+  {
+   "id": "business",
+   "name": "Residence permit for business",
+   "for": "self-employed",
+   "apply": "either",
+   "within": {
+    "n": 90,
+    "unit": "day"
+   },
+   "term": {
+    "n": 5,
+    "unit": "year"
+   },
+   "renewable": true,
+   "work": "any"
+  },
+  {
+   "id": "eea-swiss",
+   "name": "Right of residence (citizens of the EU, Iceland, Liechtenstein, Norway and Switzerland)",
+   "for": "free movement",
+   "apply": "in country",
+   "work": "any",
+   "groups": [
+    "EU/EEA",
+    "CH"
+   ]
+  }
+ ],
+ "note": "Estonia, read on the Police and Border Guard Board's own instructions on 2026-10-30. A temporary residence permit for employment needs an employer registered in Estonia paying at least the average gross salary (as a rule) and the Unemployment Insurance Fund's permission for the post, so it is tied to that employer; one for business needs a business plan with two years' forecasts. Each is decided within 90 days (the card follows within 30), issued for up to 5 years and extended for up to 10 at a time. Citizens of the EU, Iceland, Liechtenstein, Norway and Switzerland need no residence permit; the right of residence they register is the game's name for their route, read from that exclusion. The state fee is named but not given on these pages, and where the application is lodged (a mission abroad or a service office in Estonia) isn't stated on them, 'either' being the game's reading. The 'temporary residence permit for permanent residence' (3 of 5 years on a permit, Estonian at A2) is a temporary permit, not the long-term resident's status, which wasn't read; whether the years count toward naturalisation isn't on these pages, so nothing is marked as counting.",
+ "sources": [
+  {
+   "url": "https://www.politsei.ee/en/instructions/residence-permit-for-employment",
+   "title": "Police and Border Guard Board, Residence permit for employment",
+   "read": "2026-10-30",
+   "said": "A temporary residence permit is issued for up to 5 years. ... A temporary residence permit may be extended for up to 10 years at a time. ... The employer obtains a permit from the Estonian Unemployment Insurance Fund to recruit a foreign national for the position. ... You will receive a response within 90 days, and the residence permit card will be issued within 30 days thereafter."
+  },
+  {
+   "url": "https://www.politsei.ee/en/instructions/residence-permit-for-business",
+   "title": "Police and Border Guard Board, Residence permit for business",
+   "read": "2026-10-30",
+   "said": "You need a residence permit for business in Estonia if you are not a citizen of a European Union member state, Iceland, Liechtenstein, Norway, or Switzerland. ... You will receive a response within 90 days, and the residence permit card will be issued within 30 days thereafter."
+  }
+ ]
+}

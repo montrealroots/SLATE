@@ -1,0 +1,53 @@
+{
+ "country": "WF",
+ "office": "the Circonscription d'Uvéa and the Délégation de Futuna, for the Administration supérieure des îles Wallis et Futuna",
+ "currency": "XPF",
+ "routes": [
+  {
+   "id": "home",
+   "where": "home",
+   "speed": "standard",
+   "within": {
+    "n": 1,
+    "unit": "month"
+   },
+   "label": "in Wallis and Futuna, about a month"
+  }
+ ],
+ "passports": [
+  {
+   "for": "adult",
+   "from": 18,
+   "validYears": 10,
+   "pay": {
+    "home": "6000"
+   }
+  },
+  {
+   "for": "minor",
+   "from": 15,
+   "under": 18,
+   "validYears": 5,
+   "pay": {
+    "home": "3000"
+   }
+  },
+  {
+   "for": "minor",
+   "under": 15,
+   "validYears": 5,
+   "pay": {
+    "home": null
+   }
+  }
+ ],
+ "note": "Wallis and Futuna's people hold France's passport; applied for there, the tax stamp is in francs CFP. The stamp for a child under 15 isn't stated, so it's null. Abroad, France's routes and fees apply.",
+ "sources": [
+  {
+   "url": "https://www.wallis-et-futuna.gouv.fr/passeport",
+   "title": "Les services de l'État et du Territoire à Wallis et Futuna, Passeport",
+   "read": "2026-10-28",
+   "said": "La durée de validité du passeport est de 5 ans pour les mineurs et 10 ans pour les adultes. ... 6 000 fcfp (pour les personnes majeures) et 3 000 fcfp (pour les jeunes entre 15 et 18 ans) en timbre fiscal ... Le délai d'obtention du passeport est d'un mois environ."
+  }
+ ]
+}

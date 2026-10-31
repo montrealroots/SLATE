@@ -1,0 +1,49 @@
+{
+ "country": "CG",
+ "office": "the Ministry of Security and Public Order, which produces the passport in Brazzaville; abroad, the Embassy of the Congo in France, which takes the application online and the fingerprints at its enrolment centre in Paris",
+ "currency": "XAF",
+ "abroad": {
+  "currency": "EUR"
+ },
+ "routes": [
+  {
+   "id": "home",
+   "where": "home",
+   "speed": "standard",
+   "within": null,
+   "label": "in the Republic of the Congo"
+  },
+  {
+   "id": "abroad",
+   "where": "abroad",
+   "speed": "standard",
+   "within": null,
+   "label": "at the Embassy in France, enrolled in Paris"
+  }
+ ],
+ "passports": [
+  {
+   "for": "any age",
+   "validYears": 5,
+   "pay": {
+    "home": null,
+    "abroad": "120"
+   }
+  }
+ ],
+ "note": "The Embassy of the Republic of the Congo in France's passport page (rendered 2026-10-31): the CEMAC biometric passport is valid five years; its chancery fee is 120 euros, paid online before the fingerprinting appointment in Paris; the passport is produced in Brazzaville, and no time is given. The Embassy in Washington's passport page says the same five years (\"CEMAC biometric passports are valid for five (5) years\"). The page gives no separate fee for a child. At home, the fee in francs CFA wasn't found (the Ministry's and the Government's pages carry none), so the home route is left unpaid.",
+ "sources": [
+  {
+   "url": "https://www.ambacongofr.org/site/passport",
+   "title": "Embassy of the Republic of the Congo in France, Demande de passeport (rendered 2026-10-31)",
+   "read": "2026-10-31",
+   "said": "La validité du passeport biométrique CEMAC est de 5 ans. ... Frais de chancellerie Carte consulaire : 8 € Passeport biométrique CEMAC : 120 € ... La demande de passeport est instruite par l’Ambassade mais la production du passeport est réalisée à Brazzaville."
+  },
+  {
+   "url": "https://www.ambacongo-us.org/en/embassy-services/consular/passport",
+   "title": "Embassy of the Republic of Congo, Washington, D.C., Passports",
+   "read": "2026-10-31",
+   "said": "Please note that CEMAC biometric passports are valid for five (5) years and cannot be extended under any circumstances"
+  }
+ ]
+}
