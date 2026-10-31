@@ -1,0 +1,48 @@
+{
+ "country": "JP",
+ "document": "個人番号カード (My Number Card)",
+ "office": "the municipality of residence",
+ "currency": "JPY",
+ "routes": [
+  {
+   "id": "municipality",
+   "where": "home",
+   "speed": "standard",
+   "within": null,
+   "label": "through the municipality of residence"
+  }
+ ],
+ "cards": [
+  {
+   "for": "under 18",
+   "under": 18,
+   "validYears": 5,
+   "pay": {
+    "municipality": "0"
+   }
+  },
+  {
+   "for": "18 and over",
+   "from": 18,
+   "validYears": 10,
+   "pay": {
+    "municipality": "0"
+   }
+  }
+ ],
+ "note": "The first card is free (Akita City's answer; a reissue after a loss costs 1,000 yen, not modelled). The Ministry of Internal Affairs and Communications' ordinance (art. 26) makes it valid to the 10th birthday after it is made for someone 18 or over, the 5th for someone younger, taken as ten and five years. No processing time is read.",
+ "sources": [
+  {
+   "url": "https://www.city.akita.lg.jp/faq/mynumber/1011709/1011713.html",
+   "title": "Akita City, マイナンバーカード よくある質問",
+   "read": "2026-10-28",
+   "said": "マイナンバーカードの初回交付手数料は無料です。 ただし、紛失などで再発行を行う場合は、手数料1,000円（カード：800円、電子証明書：200円）が必要となります。"
+  },
+  {
+   "url": "https://laws.e-gov.go.jp/law/426M60000008085",
+   "title": "e-Gov法令検索, 平成二十六年総務省令第八十五号 (the My Number Card ordinance), art. 26",
+   "read": "2026-10-28",
+   "said": "個人番号カードの有効期間は、次の各号に掲げる個人番号カードの交付を受ける者の区分に応じ、当該各号に定める期間とする。 ... 個人番号カードの作成の日において十八歳以上の者 ... 当該作成の日から当該作成の日後のその者の十回目の誕生日まで ... 個人番号カードの作成の日において十八歳未満の者 ... 当該作成の日から当該作成の日後のその者の五回目の誕生日まで"
+  }
+ ]
+}

@@ -1,0 +1,83 @@
+{
+ "country": "HU",
+ "document": "személyazonosító igazolvány",
+ "office": "a government window (kormányablak)",
+ "currency": "HUF",
+ "routes": [
+  {
+   "id": "kormanyablak",
+   "where": "home",
+   "speed": "standard",
+   "within": null,
+   "label": "at a government window"
+  }
+ ],
+ "cards": [
+  {
+   "for": "under 12",
+   "under": 12,
+   "validYears": 3,
+   "pay": {
+    "kormanyablak": "0"
+   }
+  },
+  {
+   "for": "12 and 13",
+   "from": 12,
+   "under": 14,
+   "validYears": 3,
+   "pay": {
+    "kormanyablak": "0"
+   }
+  },
+  {
+   "for": "14 to 17",
+   "from": 14,
+   "under": 18,
+   "validYears": 3,
+   "pay": {
+    "kormanyablak": "7700"
+   }
+  },
+  {
+   "for": "18 to 69",
+   "from": 18,
+   "under": 70,
+   "validYears": 6,
+   "pay": {
+    "kormanyablak": "7700"
+   }
+  },
+  {
+   "for": "70 and over",
+   "from": 70,
+   "validYears": 6,
+   "pay": {
+    "kormanyablak": "0"
+   }
+  },
+  {
+   "for": "70 and over, ten years on request",
+   "from": 70,
+   "validYears": 10,
+   "pay": {
+    "kormanyablak": "0"
+   }
+  }
+ ],
+ "note": "The fee is the administrative service fee of the 2024 decree (7,700 forints; 9,700 with delivery by post, not modelled), waived for a card replacing one that expired, for an applicant under 14, and for one who has turned 70 (among other cases); the totals here are for a card issued for any other reason, as a first card from 14. Validity (Nytv. § 29/E): three years under 18 (for a child under 12 no later than the 12th birthday), six from 18, each to the birthday after; from 70, ten years on request. No processing time is read.",
+ "sources": [
+  {
+   "url": "https://njt.jog.gov.hu/jogszabaly/1992-66-00-00",
+   "title": "Nemzeti Jogszabálytár, 1992. évi LXVI. törvény (Nytv.), §§ 29/E and 36/A",
+   "read": "2026-10-28",
+   "said": "a) a 12. életévét még nem töltötte be, a kiállítás napjától számított 3 évet követő születési idejének napja, de legfeljebb a 12. életév betöltésének napjáig terjedő időtartam, b) a 12. életévét betöltötte, de a 18. életévét még nem töltötte be, a kiállítás napjától számított 3 évet követő születési idejének napja, c) a 18. életévét betöltötte, a kiállítás napjától számított 6 évet követő születési idejének napja. ... A 70. életévet betöltött jogosult – az (1a), (4) és (4a) bekezdésben foglalt kivétellel – kérheti, hogy részére a kiállítás napjától számított 10 éves érvényességi idejű személyazonosító igazolvány kerüljön kiállításra. ... A személyazonosító igazolvány kiállításáért, pótlásáért igazgatási szolgáltatási díjat kell fizetni, kivéve a) a korábbi állandó személyazonosító igazolvány érvényességének lejárta miatti új okmány igénylésekor, b) a 14. életévet be nem töltött kérelmező személyazonosító igazolványának igénylésekor, ... f) a 70. életévet betöltött kérelmező állandó személyazonosító igazolványának igénylésekor,"
+  },
+  {
+   "url": "https://njt.jog.gov.hu/jogszabaly/2024-19-20-7G",
+   "title": "Nemzeti Jogszabálytár, 19/2024. rendelet on administrative service fees for documents, annex",
+   "read": "2026-10-28",
+   "said": "az állandó személyazonosító igazolvány 7 700 Ft 20 az állandó személyazonosító igazolvány és belföldön, postai úton könyvelt küldeményként történő kézbesítése 9 700 Ft"
+  }
+ ]
+}

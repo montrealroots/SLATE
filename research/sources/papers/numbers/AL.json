@@ -1,0 +1,27 @@
+{
+ "country": "AL",
+ "name": "National ID number (NID)",
+ "issuer": "the Albanian civil registry (the National Registry of Civil Status; the sheet doesn't name the issuing office)",
+ "format": {
+  "length": 10,
+  "pattern": "^[A-Z]\\d{8}[A-Z]$"
+ },
+ "when": "birth",
+ "who": [
+  "citizens",
+  "residents"
+ ],
+ "needed": [
+  "tax",
+  "health"
+ ],
+ "note": "Albania's sheet (its government's own sheet on the OECD's automatic-exchange portal ('Information on Tax Identification Numbers'; the OECD's index page sits behind a bot check and wasn't opened, the sheet itself came straight back)), read 2026-10-30: the individual's TIN is the National ID number (NID), issued to Albanian citizens and foreign permanent residents and serving the National Registry of Civil Status, the identity document, social security and health insurance, elections, tax and the driving licence; ten characters (e.g. I05101999Q) coding the birth date and sex, an issuing order and a check character (its rule isn't given, `check` left out); the example begins with a letter, so the pattern draws a letter, eight digits and a letter. The sheet doesn't name the office that issues the NID. Read as given at birth registration (the civil registry), to citizens and permanent residents; `needed` is tax and health. No fee or time is stated.",
+ "sources": [
+  {
+   "url": "https://www.oecd.org/content/dam/oecd/en/topics/policy-issue-focus/aeoi/albania-tin.pdf",
+   "title": "OECD AEOI portal, Albania: Information on Tax Identification Numbers (the jurisdiction's own sheet)",
+   "read": "2026-10-30",
+   "said": "The TIN for individuals (NID) is issued to Albanian citizens and foreign citizens of permanent residence within the Republic of Albania´s territory, serving: 1. For the National Registry of Civil Status. ... 3. As a social security number to identify, register and claim benefits from social security, health insurance and other social protection programs. ... 5. As a Tax Identification Number. ... The TIN for individuals (National ID number NID), is a unique number, consisting of ten characters (e.g. I05101999Q)"
+  }
+ ]
+}

@@ -302,4 +302,34 @@ describe('the passage of time', () => {
     expect(() => pass({ ...l, frame: { ...l.frame, schedule: [odd] } }, T0 + 2)).toThrow("item 9 is of test.lost, which isn't a declared kind");
     expect(waiting({ ...l, frame: { ...l.frame, now: T0 + 5, schedule: [odd] } })).toEqual([]);
   });
+  it('refuses a kind brought back at the moment it happened, by itself or by what it set off then', () => {
+    // Each schedules the kind its data names, at its own moment.
+    const at = (name: string) => defineKind<S>({ kind: `test.${name}`, wants: false, reads: [], writes: ['schedule', 'money'], happen: (s, item, ctx) => {
+      s.money.log.push(`${name} ${ctx.now}`);
+      const [next, ...rest] = item.data as string[];
+      if (next !== undefined) ctx.schedule(next, ctx.now, rest);
+    } }).kind;
+    const [a, b, c] = [at('loop.a'), at('loop.b'), at('loop.c')];
+    const refused = (l: Life<S>) => {
+      try {
+        pass(l, T0 + 10);
+      } catch (e) {
+        return (e as Error).message;
+      }
+      return 'not refused';
+    };
+    expect(refused(plan([a, T0 + 5, [a]]))).toBe(`test.loop.a brings test.loop.a back at the moment it happened (${T0 + 5}), so time would never pass it`);
+    expect(refused(plan([a, T0 + 5, [b, c, a]]))).toBe(`test.loop.a, then test.loop.b, then test.loop.c brings test.loop.a back at the moment it happened (${T0 + 5}), so time would never pass it`);
+    expect(refused(plan([a, T0 + 5, [b, b]]))).toBe(`test.loop.a, then test.loop.b brings test.loop.b back at the moment it happened (${T0 + 5}), so time would never pass it`);
+    // A chain that ends, two of a kind at one moment, and the same kind a moment later are not loops.
+    const ends = pass(plan([a, T0 + 5, [b, c]], [a, T0 + 5, []], [b, T0 + 5, []]), T0 + 10).life;
+    expect(ends.slices.money.log).toEqual([`loop.a ${T0 + 5}`, `loop.a ${T0 + 5}`, `loop.b ${T0 + 5}`, `loop.b ${T0 + 5}`, `loop.c ${T0 + 5}`]);
+    expect(ends.frame.schedule).toEqual([]);
+    // What set off an item at one moment doesn't follow it to the next: a kind may come back at a later moment.
+    const later = defineKind<S>({ kind: 'test.loop.later', wants: false, reads: [], writes: ['schedule'], happen: (_s, item, ctx) => {
+      if ((item.data as string[])[0] === 'again') ctx.schedule(a, ctx.now + 1, [b]);
+    } }).kind;
+    const on = pass(plan([a, T0 + 5, [later, 'again']], [b, T0 + 6, [a]]), T0 + 10).life;
+    expect(on.slices.money.log).toEqual([`loop.a ${T0 + 5}`, `loop.b ${T0 + 6}`, `loop.a ${T0 + 6}`, `loop.a ${T0 + 6}`, `loop.b ${T0 + 6}`]);
+  });
 });

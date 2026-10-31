@@ -3,13 +3,14 @@ import { join } from 'node:path';
 import { describe, expect, it } from 'vitest';
 import { civilFromDays, daysFromCivil } from '../../../src/core/time/calendar.ts';
 import { isLine, t } from '../../../src/core/text/text.ts';
-import { COUNTRY_CODES, isCountry, placesOf, regionName, type CountryCode } from '../../../src/world/gazetteer/gazetteer.ts';
+import { isCountry, regionName, type CountryCode } from '../../../src/world/gazetteer/gazetteer.ts';
 import { CALENDAR_FROM, CALENDAR_TO, daysIn, monthIndex } from '../../../src/world/holidays/calendars.ts';
 import {
   FIRST_YEAR,
   LAST_YEAR,
   LOCAL_LINE,
   REGION_UNKEPT_LINE,
+  REGION_UNMOVED_LINE,
   UNANNOUNCED_LINE,
   UNKEPT_LINE,
   aboutHolidays,
@@ -57,7 +58,7 @@ describe('the holidays of every country kept', () => {
         }
       }
     }
-    expect(read).toBe(549);
+    expect(read).toBe(660);
   });
   it('are each a country of the map with its lists, their regions its own, their substitutes the engine reckons', () => {
     expect(Object.keys(RULES).sort()).toEqual(LISTS.map((l) => l.country).sort());
@@ -86,7 +87,7 @@ describe('the holidays of every country kept', () => {
         expect(hs.every((h, i) => h.name !== '' && civilFromDays(h.day).year === year && (i === 0 || (hs[i - 1] as { day: number }).day <= h.day)), `${country} ${year}`).toBe(true);
       }
     }
-  });
+  }, 120_000); // Every country's every year: about a second plain, past 30 s in mutation testing's instrumented first run on CI's runner (2026-10-30), which stopped the gate.
 });
 
 describe('the reckonings', () => {
@@ -231,6 +232,13 @@ describe('a rule', () => {
     const sunday = (skip?: number[]): CountryRules => ({ holidays: [r({ name: 'A', when: { fixed: [3, 1] } })], substitute: [{ on: [0], to: 'previous', ...(skip && { skip }) }] });
     expect(at(sunday([6, 0]), 2026)).toEqual(['2026-02-27 A (instead)', '2026-03-01 A (moved)']);
     expect(at(sunday(), 2026)).toEqual(['2026-02-28 A (instead)', '2026-03-01 A (moved)']);
+    // The day after only, and none where it's already a holiday (Malaysia's): 2026-02-01 and 2026-05-31 are Sundays.
+    const following = (only?: true): CountryRules => ({
+      holidays: [r({ name: 'A', when: { fixed: [2, 1] } }), r({ name: 'B', when: { fixed: [2, 1] } }), r({ name: 'C', when: { fixed: [5, 31] } }), r({ name: 'D', when: { fixed: [6, 1] } })],
+      substitute: [{ on: [0], to: 'next', as: 'well', ...(only && { following: only }) }],
+    });
+    expect(at(following(true), 2026)).toEqual(['2026-02-01 A', '2026-02-01 B', '2026-02-02 A (instead)', '2026-05-31 C', '2026-06-01 D']);
+    expect(at(following(), 2026)).toEqual(['2026-02-01 A', '2026-02-01 B', '2026-02-02 A (instead)', '2026-02-03 B (instead)', '2026-05-31 C', '2026-06-01 D', '2026-06-02 C (instead)']);
   });
   it("makes a day between two holidays one too, by the country's name for it", () => {
     const hs: Rule[] = [r({ name: 'A', when: { fixed: [9, 21] } }), r({ name: 'B', when: { fixed: [9, 23] } }), r({ name: 'C', when: { fixed: [9, 25] } })];
@@ -279,29 +287,6 @@ describe('a rule', () => {
 const NATIONAL_GB = ['New Year’s Day', 'Good Friday', 'Early May bank holiday', 'Spring bank holiday', 'Christmas Day', 'Boxing Day', 'Boxing Day'];
 
 describe('the holidays', () => {
-  it('at every place on the map', async () => {
-    let read = 0;
-    const seen = new Map<string, string>();
-    for (const code of COUNTRY_CODES) {
-      for (const p of await placesOf(code)) {
-        const key = `${p.country} ${p.region}`;
-        if (!seen.has(key)) {
-          const hs = holidaysOf(p.country, 2026, p.region === '' ? undefined : p.region);
-          // Ukraine's martial law makes 2026 a year without days off (its law's come back after): its rules still give days.
-          const none = p.country === 'UA';
-          expect(keepsHolidays(p.country) && !none ? hs.length > 0 : hs.length === 0, key).toBe(true);
-          if (none) expect(holidaysOf(p.country, 2027).length, key).toBeGreaterThan(0);
-          expect(hs.every((h) => civilFromDays(h.day).year === 2026), key).toBe(true);
-          expect(aboutHolidays(p.country, 2026) === undefined, key).toBe(keepsHolidays(p.country));
-          seen.set(key, hs.map((h) => h.name).join());
-        }
-        read += 1;
-      }
-    }
-    expect(read).toBe(171_654);
-    // Each region of a country with regional holidays keeps its own and the country's.
-    expect(seen.get('CH CH.ZH')).not.toBe(seen.get('CH CH.TI'));
-  }, 300_000);
   it('keep a region of its own as the country does, and its own days besides', () => {
     expect(holidaysOf('GB', 2026, 'GB.SCT').map((h) => iso(h.day))).toContain('2026-11-30');
     expect(holidaysOf('GB', 2026, 'GB.ENG').map((h) => iso(h.day))).not.toContain('2026-11-30');
@@ -352,6 +337,17 @@ describe('the holidays', () => {
     expect(aboutHolidays('CA', 2026)).toBeUndefined();
     expect(aboutHolidays('US', 2026, 'US.CA')).toBeUndefined();
     expect(isLine(REGION_UNKEPT_LINE)).toBe(true);
+  });
+  it("tell the player where a region's days off in place of its holidays aren't kept", () => {
+    expect(REGION_UNMOVED_LINE).toBe('holidays.region-unmoved');
+    // Kelantan's own days are kept, but not its rule for one on its weekly holiday, Friday (the register's blocker); Selangor's is.
+    expect(aboutHolidays('MY', 2026, 'MY.03')).toBe(t(REGION_UNMOVED_LINE, { region: 'Kelantan' }));
+    expect(aboutHolidays('MY', 2026, 'MY.03')).toBe("When a holiday in Kelantan falls on its weekly day of rest, the day off given in its place isn't on this calendar.");
+    expect(holidaysOf('MY', 2026, 'MY.03').some((h) => h.name === 'Hari Keputeraan Sultan Kelantan')).toBe(true);
+    expect(aboutHolidays('MY', 2026, 'MY.12')).toBeUndefined();
+    expect(aboutHolidays('MY', 2028, 'MY.03')).toBe(t(UNANNOUNCED_LINE, { place: 'Malaysia', year: '2027' }));
+    expect(aboutHolidays('MY', 2026)).toBeUndefined();
+    expect(isLine(REGION_UNMOVED_LINE)).toBe(true);
   });
   it("tell the player a town's own aren't kept", () => {
     expect(LOCAL_LINE).toBe('holidays.local');

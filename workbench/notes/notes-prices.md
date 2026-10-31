@@ -1,0 +1,18 @@
+# Prices research log (2026-10-28)
+VG: institution gov.vg/central-statistics-office (200, no CPI links), gov.vg/statistics (empty listing), gov.vg/department-resources/51 (404), bvi.gov.vg/* 404 after move; web-search std+extended found only 2015-2017 CPI reports; trade press: none yet; official-register: ILOSTAT has none for 2021/2025; archive: availability API to check.
+TC: institution www.gov.tc/stats/ -> Sucuri firewall page (404, not circumvented); stats.gov.tc cert mismatch; web-search std+extended: only the Statistics Authority's 2025 inflation 2.5% panel (unread), GlobalData; ILOSTAT none.
+KN: institution stats.gov.kn monthly CPI pages to 2023, annual to 2024 (WP search and media list: no 2025); ECCB statistics (eccb-centralbank.org) 403; web-search: Trading Economics Dec 2025 116.21 (aggregator, ECCB data); ILOSTAT has 2021 105.9 and 2025 114.94 (annual) -- check what ILOSTAT's 2025 rests on.
+MH: institution rmieppso.org CPI page: reports in WP File Download categories (Report 2025 id 50); the listing AJAX answers with a humans_ cookie script (bot check, not circumvented); WP search: Q4 2023 latest post; web-search: IMF TA report 2024 (rebasing); SPREP portal has 2018-2021 reports.
+AS: institution doc.as.gov/stats (Wix; CPI year folders 2016-2026 don't open by click; one file found: Q3 2021 newsletter, All Items 2021 Q1 105.1, Q2 106.9, Q3 108.9); official-register: SPC Pacific Data Hub DF_CPI (quotes AS DOC) has 2022Q1-2026Q1 only (2025: 127.2 129.5 128.6 127.8); trade press: Samoa News Q2 2021 106.9; Q4 2021 not found. Rebase between 2021Q3 and 2022Q1 unverified.
+MP: SPC DF_CPI (quotes CNMI Commerce) 2022Q1-2024Q4 only; no 2021, no 2025 yet. National site not yet tried.
+MH: SPC has annual inflation 2021-2024 only; RMI site bot-check.
+NR: nbs.gov.nr unresolvable/502; SPC annual inflation 2021-2024 only.
+SZ: institution gov.sz (CSO monthly inflation reports at gov.sz/images/planningministry/...): connection reset from the proxy, WebFetch 503 (2026-10-28); retry later.
+SO: SNBS new CPI from Jan 2025 (ref 2022, all states, COICOP 2018), old CPI Dec 2014=100 (Mogadishu) to Dec 2024: a 2021-2025 change needs the two chained at an overlap (both cover 2024?); index currency of prices not stated. Deferred.
+VI: institution usviber.org (Bureau of Economic Research): annual CPI reviews to 2024 (CPI-2024-BER-F.pdf, May 2025); no 2025 review in its media list to 2026-09-24.
+KN: stats.gov.kn annual table (Jan 2010=100): 2021 105.90, 2024 113.86, but the page is dated 12/04/2024, so 2024 may be partial; not used. ILOSTAT annual 2021 105.9, 2025 114.94 (source unstated here).
+VI: 2021 review (2019=100) months 109.5..117.9; 2024 review months 142.9..150.4 (base unstated); but Dec-23 is 140.6 in the 2023 review and 142.7 in the 2024 review: revised or rebased without a stated link, so 2021 and 2024 aren't on one footing. Not used.
+MM: csostat.gov.mm PriceAnalysis p3.1MA02.xlsx: CPI (Union) 2012=100 June 2021 to June 2022 only; CEIC says a 2017=100 series from 2023 (not on the CSO's pages).
+MP: CNMI Commerce CSD report hub: island CPIs (Saipan, Rota, Tinian) quarterly changes; Saipan table to 2023 Q1; "2024 4th Qtr CNMI CPI index tables" named in search but not found on the hub page; SPC DF_CPI MP 2022Q1-2024Q4 only.
+ZW: ZimStat ZWG CPI base April 2024 = 100 (monthly 2025 releases CPI_ZWG_MM_2025.pdf); 2021 is in the withdrawn ZWL series; a ZWL-to-ZWG link isn't published in what was read.
+YT: gap 10.3% (excl. rents); CPI base Dec 2021 from Jan 2023 (national method), old Mahorais index to Dec 2022 with a method break; the new method was run in parallel in 2022 (insee.fr/fr/statistiques/6958766); my_cp_2024_ipc.pdf re-expresses Dec 2006-Dec 2022 on base Dec 2021. To do.

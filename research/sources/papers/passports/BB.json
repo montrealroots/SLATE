@@ -1,0 +1,81 @@
+{
+ "country": "BB",
+ "office": "the Immigration Department; abroad, Barbados' diplomatic and consular missions, at fees of their own",
+ "currency": "BBD",
+ "routes": [
+  {
+   "id": "ordinary",
+   "where": "home",
+   "speed": "standard",
+   "within": null,
+   "label": "ordinary"
+  },
+  {
+   "id": "urgent-5",
+   "where": "home",
+   "speed": "urgent",
+   "within": {
+    "n": 5,
+    "unit": "day"
+   },
+   "label": "urgent, required in 2-5 days"
+  },
+  {
+   "id": "urgent-1",
+   "where": "home",
+   "speed": "urgent",
+   "within": {
+    "n": 1,
+    "unit": "day"
+   },
+   "label": "urgent, required in 1 day"
+  },
+  {
+   "id": "lost",
+   "where": "home",
+   "speed": "standard",
+   "within": null,
+   "replacement": true,
+   "label": "replacement of a lost passport"
+  }
+ ],
+ "passports": [
+  {
+   "for": "adult",
+   "from": 16,
+   "validYears": null,
+   "pay": {
+    "ordinary": "150",
+    "urgent-5": "225",
+    "urgent-1": "300",
+    "lost": "300"
+   }
+  },
+  {
+   "for": "minor",
+   "under": 16,
+   "validYears": null,
+   "pay": {
+    "ordinary": "100",
+    "urgent-5": null,
+    "urgent-1": null,
+    "lost": null
+   }
+  }
+ ],
+ "note": "Fees effective 1 December 2010, still those both government pages publish on the date read. Whether the urgent fees replace the ordinary fee or are added to it, and whether a minor pays the same urgent fees, the page doesn't say. A lost passport's replacement costs BBD 300, written for an adult; the table gives no minor's figure, so a minor's is left unpaid. Validity and the ordinary processing time are leads. The urgent amounts are taken as the urgent passport's price, as the table lists them among the passport types; a minor's urgent fee isn't given. The businessman's passport (BBD 225) isn't modelled.",
+ "sources": [
+  {
+   "url": "https://immigration.gov.bb/pages/Passport.aspx",
+   "title": "Immigration Department (immigration.gov.bb), Passport",
+   "read": "2026-10-28",
+   "said": "The fees for passports issued by our diplomatic missions overseas vary from mission to mission. You should therefore check with the respective mission regarding the fee schedule. New Passport Fees Effective December 01, 2010 Passport Types BARBADOS (BDS) Adult’s Passport $150 Minor’s Passport (under 16) $100 Businessman’s Passport $225 Emergency Passport / Travel document $150 Replacement of Lost Passport $300 Urgent Passport (required in 1 day) $300 Urgent Passport (required in 2-5 days) $225 ... Completed Passport Form A for persons sixteen years and older OR Completed Passport Form B for children under sixteen years of age ... Replacement of Lost Passport $300"
+  },
+  {
+   "url": "https://www.gov.bb/Citizens/apply-passport",
+   "title": "Government of Barbados (gov.bb), Apply for a Passport",
+   "read": "2026-10-28",
+   "said": "you may apply for a passport from the Immigration Department in Barbados, or at one of Barbados' diplomatic and consular missions abroad. ... New Passport Fees Effective December 01, 2010 Passport Types BARBADOS (BDS) Adult's Passport $150 Minor's Passport (under 16) $100 Businessman's Passport $225 Emergency Passport / Travel document $150 Replacement of Lost Passport $300 Urgent Passport (required in 1 day) $300 Urgent Passport (required in 2-5 days) $225"
+  }
+ ]
+}

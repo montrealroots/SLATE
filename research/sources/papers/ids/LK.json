@@ -1,0 +1,57 @@
+{
+ "country": "LK",
+ "document": "National Identity Card (NIC)",
+ "office": "the Department for Registration of Persons",
+ "currency": "LKR",
+ "routes": [
+  {
+   "id": "normal",
+   "where": "home",
+   "speed": "standard",
+   "within": null,
+   "label": "through the Grama Niladhari and Divisional Secretariat; the card is mailed"
+  },
+  {
+   "id": "one-day",
+   "where": "home",
+   "speed": "urgent",
+   "within": {
+    "n": 3,
+    "unit": "hour"
+   },
+   "label": "one-day service at the Department: within 3 hours of handing in the application"
+  }
+ ],
+ "cards": [
+  {
+   "for": "from 15",
+   "from": 15,
+   "validYears": null,
+   "pay": {
+    "normal": "200",
+    "one-day": "2200"
+   }
+  }
+ ],
+ "note": "Every citizen of 15 or over must apply. The Department's notice revising its fees from 1 November 2022 (Cabinet decision of 22 September 2022): registration and issue of a card for the first time Rs 200; the one-day service Rs 2,000 in addition to that application fee, so Rs 2,200 in all; an amended copy Rs 500, a duplicate of a lost card Rs 1,000 and a new card in place of one whose validity has ended Rs 200 (not modelled). The card's term isn't on the Department's pages, so it's null; the player is told.",
+ "sources": [
+  {
+   "url": "https://drp.gov.lk/en/normal.php",
+   "title": "Department for Registration of Persons, Sri Lanka, Obtaining National Identity Card for the first time",
+   "read": "2026-10-28",
+   "said": "Every person who is a citizen of Sri Lanka and who has attained or attains the age of 15 years shall apply for a National Identity card. ... For issuance of National Identity Cards under One Day Service. Rs.2000.00"
+  },
+  {
+   "url": "https://drp.gov.lk/en/faq.php",
+   "title": "Department for Registration of Persons, Sri Lanka, FAQ",
+   "read": "2026-10-28",
+   "said": "the National Identity Card can be obtained within 3 hours of handing over the application."
+  },
+  {
+   "url": "https://drp.gov.lk/en/assets/downloads/fees-english.pdf",
+   "title": "Department for Registration of Persons, Notice: Revision of Fees Charged ... for Issuance of National Identity Cards and Providing other Services (from 1 November 2022)",
+   "read": "2026-10-29",
+   "said": "the fees charged by the Department for Registration of Persons for the services rendered in respect of the activities listed in the schedule below are revised as mentioned against each item with effect from 01.11.2022 ... 1. Registration and issuance of National Identity Cards for the first time Rs. 200/- ... 5. Issuance of National Identity Cards under one day Service Rs. 2,000/- (In addition to the Application Fee)"
+  }
+ ]
+}

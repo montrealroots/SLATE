@@ -1,0 +1,66 @@
+{
+ "country": "IT",
+ "document": "Carta di Identità Elettronica (CIE)",
+ "office": "the municipality (Comune) of residence or abode; abroad, the consulate for citizens registered with AIRE",
+ "currency": "EUR",
+ "routes": [
+  {
+   "id": "comune",
+   "where": "home",
+   "speed": "standard",
+   "within": {
+    "n": 6,
+    "unit": "working day"
+   },
+   "label": "at the Comune: delivered within 6 working days"
+  }
+ ],
+ "cards": [
+  {
+   "for": "under 3",
+   "under": 3,
+   "validYears": 3,
+   "pay": {
+    "comune": "16.79"
+   }
+  },
+  {
+   "for": "3 to 17",
+   "from": 3,
+   "under": 18,
+   "validYears": 5,
+   "pay": {
+    "comune": "16.79"
+   }
+  },
+  {
+   "for": "18 and over",
+   "from": 18,
+   "validYears": 10,
+   "pay": {
+    "comune": "16.79"
+   }
+  }
+ ],
+ "note": "The state's 16.79 euros, to which a Comune may add fixed and secretarial fees of its own (not included, they differ by Comune). The card expires on the first birthday after its term (for an adult, after nine years plus the days to the birthday, ten at most). Consulates issue it to citizens registered abroad on terms the Foreign Ministry's site gives, which weren't read, so applying abroad isn't modelled.",
+ "sources": [
+  {
+   "url": "https://www.cartaidentita.interno.gov.it/richiedi/rilascio-e-rinnovo-in-italia/",
+   "title": "Ministero dell'Interno, Carta di Identità Elettronica, Rilascio e rinnovo in Italia",
+   "read": "2026-10-28",
+   "said": "La validità della CIE varia a seconda dell’età del titolare al momento della richiesta del documento; in particolare, la CIE scade al primo compleanno dopo: ... Per i maggiorenni la carta, ai sensi del Regolamento (UE) 2019/1157, ha una validità massima di 10 anni ... Per il rilascio della Carta di Identità Elettronica occorre versare la somma di € 16,79 oltre i diritti fissi e di segreteria qualora previsti. ... La CIE sarà consegnata entro 6 giorni lavorativi dalla richiesta."
+  },
+  {
+   "url": "https://www.cartaidentita.interno.gov.it/richiedi/rilascio-e-rinnovo-minorenni/",
+   "title": "Ministero dell'Interno, Carta di Identità Elettronica, Rilascio e rinnovo minorenni",
+   "read": "2026-10-28",
+   "said": "3 anni per i minori di 3 anni ... 5 anni per i minori di età compresa fra 3 e 18 anni"
+  },
+  {
+   "url": "https://www.cartaidentita.interno.gov.it/richiedi/rilascio-e-rinnovo-allestero/",
+   "title": "Ministero dell'Interno, Carta di Identità Elettronica, Rilascio e rinnovo all'estero",
+   "read": "2026-10-28",
+   "said": "Per i cittadini residenti all’estero iscritti all’AIRE, la Carta di Identità Elettronica può essere richiesta presso il Consolato di riferimento. Le modalità di rilascio sono indicate sul sito del Ministero degli Affari Esteri e della Cooperazione Internazionale."
+  }
+ ]
+}

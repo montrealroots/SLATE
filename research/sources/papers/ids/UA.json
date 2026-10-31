@@ -1,0 +1,46 @@
+{
+ "country": "UA",
+ "document": "паспорт громадянина України у формі картки (ID-картка)",
+ "office": "the State Migration Service, an administrative services centre (TsNAP) or a Passport Service centre",
+ "currency": "UAH",
+ "routes": [
+  {
+   "id": "first",
+   "where": "home",
+   "speed": "standard",
+   "within": {
+    "n": 7,
+    "unit": "working day"
+   },
+   "label": "issued within 7 working days of the application form"
+  }
+ ],
+ "cards": [
+  {
+   "for": "14 to 17",
+   "from": 14,
+   "under": 18,
+   "validYears": 4,
+   "pay": {
+    "first": "0"
+   }
+  },
+  {
+   "for": "18 and over",
+   "from": 18,
+   "validYears": 10,
+   "pay": {
+    "first": "0"
+   }
+  }
+ ],
+ "note": "The State Migration Service's page on the first card: free for a citizen who has turned 14 and gets one for the first time (exchanges and replacements are other services, not modelled); issued within 7 working days (up to two months for a first card at 18 or over when identity has to be established); valid four years from 14 to 18, ten from 18.",
+ "sources": [
+  {
+   "url": "https://dmsu.gov.ua/poslugi/pasport-gromadyanina-ukrajni/id-vidacha-pasporta-gromadyanina-ukrajni-u-formi-kartki-po-dosyagnennyu-14-richnogo-viku-vpershe.html",
+   "title": "Державна міграційна служба України, Видача паспорта громадянина України у формі картки по досягненню 14-річного віку (вперше)",
+   "read": "2026-10-28",
+   "said": "Для громадян, які досягли 14-річного віку, та отримують паспорт громадянина України вперше - адміністративна послуга безоплатна ... Паспорт, який оформлюється вперше, видається не пізніше ніж через 7 робочих днів з дня оформлення заяви-анкети для його отримання. У випадках оформлення паспорта вперше особам, які досягли 18-річного віку, у зв'язку із проведенням процедури встановлення особи строк оформлення паспорта продовжується до двох місяців ... особам віком від 14 до 18 років паспорт громадянина України у формі картки видається зі строком дії 4 роки; особам, яким виповнилося 18 років, паспорт громадянина України у формі картки видається зі строком дії 10 років;"
+  }
+ ]
+}

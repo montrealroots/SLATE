@@ -1,0 +1,141 @@
+{
+ "country": "SI",
+ "document": "osebna izkaznica",
+ "office": "any administrative unit (upravna enota); abroad, a Slovenian diplomatic or consular mission",
+ "currency": "EUR",
+ "routes": [
+  {
+   "id": "unit",
+   "where": "home",
+   "speed": "standard",
+   "within": {
+    "n": 4,
+    "unit": "working day"
+   },
+   "label": "at an administrative unit: made and posted within 4 working days"
+  },
+  {
+   "id": "priority",
+   "where": "home",
+   "speed": "urgent",
+   "within": {
+    "n": 1,
+    "unit": "working day"
+   },
+   "label": "priority: made and posted by the next working day, for an extra administrative tax"
+  },
+  {
+   "id": "mission",
+   "where": "abroad",
+   "speed": "standard",
+   "within": null,
+   "label": "at a Slovenian diplomatic or consular mission"
+  }
+ ],
+ "cards": [
+  {
+   "for": "under 3",
+   "under": 3,
+   "validYears": 3,
+   "pay": {
+    "unit": "23.40",
+    "priority": "26.10",
+    "mission": "44"
+   }
+  },
+  {
+   "for": "3 to 11",
+   "from": 3,
+   "under": 12,
+   "validYears": 5,
+   "pay": {
+    "unit": "25.20",
+    "priority": "29.70",
+    "mission": "60"
+   }
+  },
+  {
+   "for": "12 to 17",
+   "from": 12,
+   "under": 18,
+   "validYears": 5,
+   "pay": {
+    "unit": "25.95",
+    "priority": "30.45",
+    "mission": "60"
+   }
+  },
+  {
+   "for": "18 to 69",
+   "from": 18,
+   "under": 70,
+   "validYears": 10,
+   "pay": {
+    "unit": "30.55",
+    "priority": "39.65",
+    "mission": "76"
+   }
+  },
+  {
+   "for": "70 and over",
+   "from": 70,
+   "validYears": "permanent",
+   "pay": {
+    "unit": "30.55",
+    "priority": "39.65",
+    "mission": "76"
+   }
+  }
+ ],
+ "note": "Each total is the administrative tax for the decision (2.70 euros for a three-year card, 4.50 for five years, 9.10 for ten or permanent validity) and for the application (0.50), with the card form's price (20.20 euros up to the 12th birthday from 2 April 2026, 20.95 after it). From 70 the card never expires. Priority issue asked for without one of the law's urgent reasons (treatment, illness or death of a close relative, urgent business, which are free) pays the decision tax twice (the tax tariff's note 8 to tariff 14, which eUprava's answer of 2015 restates), so each priority total adds the decision tax once more: 26.10, 29.70, 30.45 and 39.65 euros. At a mission the card costs the consular taxes of tariff 57 (38, 54 or 70 euros by term, and 6 for the application), as the Embassy in Paris states them: 44 euros under 3, 60 from 3 to 18, 76 from 18 and for the permanent card; the Embassy states no card-form price on top, so none is added. The free urgent cases aren't modelled. The 4 working days are from an eUprava answer of 2015.",
+ "sources": [
+  {
+   "url": "https://e-uprava.gov.si/si/podrocja/osebni-dokumenti-potrdila-selitev/osebni-dokumenti/osebna-izkaznica.html",
+   "title": "eUprava, Osebna izkaznica",
+   "read": "2026-10-28",
+   "said": "Osebne izkaznice imajo različno dobo veljavnosti: 10 let , če je državljan star od 18 do 70 let, trajno , če je državljan star 70 ali več let, 3 leta , če je otrok mlajši od 3 let, 5 let , če je otrok star od 3 do 18 let,"
+  },
+  {
+   "url": "https://e-uprava.gov.si/si/podrocja/osebni-dokumenti-potrdila-selitev/osebni-dokumenti/osebna-izkaznica/seznam-pogostih-vprasanj/v-koliksnem-casu-lahko-pridobim-osebno-izkaznico.html",
+   "title": "eUprava, V kolikšnem času lahko pridobim osebno izkaznico? (22 May 2015)",
+   "read": "2026-10-28",
+   "said": "Osebno izkaznico moramo izdelati in odpremiti na pošto v roku 4 delovnih dni od vložitve vloge."
+  },
+  {
+   "url": "https://www.gov.si/teme/biometricna-osebna-izkaznica/",
+   "title": "GOV.SI, Biometrična osebna izkaznica",
+   "read": "2026-10-28",
+   "said": "Za osebno izkaznico lahko zaprosite na kateri koli upravni enoti v Republiki Sloveniji in na slovenskih diplomatskih predstavništvih ... V tem primeru je osebna izkaznica izdelana in predana na pošto najkasneje naslednji delovni dan, za prednostno izdelavo pa je treba doplačati upravno takso."
+  },
+  {
+   "url": "https://www.gov.si/assets/ministrstva/MJU/ZUP/Taksna-tarifa-priloga-Zakona-o-upravnih-taksah-v2.pdf",
+   "title": "GOV.SI, Taksna tarifa (annex to the Zakon o upravnih taksah)",
+   "read": "2026-10-30",
+   "said": "2. Za odločbe o vlogi državljana Republike Slovenije za: a) izdajo osebne izkaznice z veljavnostjo 1 leta 2,30 b) izdajo osebne izkaznice z veljavnostjo 3 let 2,70 c) izdajo osebne izkaznice z veljavnostjo 5 let 4,50 č) izdajo osebne izkaznice z veljavnostjo 10 let ali s trajno veljavnostjo 9,10 ... f) vlogo za izdajo osebne izkaznice 0,50 ... (8) Za izdajo osebne izkaznice v drugih nujnih primerih, ki kot nujni niso navedeni v zakonu, ki ureja osebno izkaznico, se plača dvakratna vrednost takse iz točk 2.a, 2.b, 2.c ali 2.č te tarifne številke. ... Za osebne izkaznice, ki jih izdajajo diplomatska ali konzularna predstavništva Republike Slovenije v tujini za: a) izdajo osebne izkaznice z veljavnostjo 1 leta 31,00 b) izdajo osebne izkaznice z veljavnostjo 3 leta 38,00 c) izdajo osebne izkaznice z veljavnostjo 5 let 54,00 č) izdajo osebne izkaznice z veljavnostjo 10 let 70,00 ... f) vlogo za izdajo osebne izkaznice 6,00"
+  },
+  {
+   "url": "https://uradni-list.si/_pdf/2024/Ur/u2024107.pdf",
+   "title": "Uradni list RS 107/2024, amendment of the Pravilnik o izvrševanju Zakona o osebni izkaznici (art. 5)",
+   "read": "2026-10-28",
+   "said": "(1) Cena obrazca osebne izkaznice, ki se izda na vlogo državljana do dopolnjenega 12. leta starosti, je 20,05 eura. ... (2) Cena obrazca osebne izkaznice, ki se izda na vlogo državljana po dopolnjenem 12. letu starosti, je 20,95 eura."
+  },
+  {
+   "url": "https://pisrs.si/api/uradni-list/objava/u20260060.pdf",
+   "title": "Uradni list RS 60/2026, Pravilnik o spremembi Pravilnika o izvrševanju Zakona o osebni izkaznici",
+   "read": "2026-10-28",
+   "said": "se v 5. členu v prvem odstavku znesek »20,05 eura« nadomesti z zneskom »20,20 eura«. ... Ta pravilnik začne veljati 2. aprila 2026."
+  },
+  {
+   "url": "https://e-uprava.gov.si/si/podrocja/osebni-dokumenti-potrdila-selitev/osebni-dokumenti/osebna-izkaznica/seznam-pogostih-vprasanj/koliko-stane-prioritetna-izdaja-osebne-izkaznice.html",
+   "title": "eUprava, Koliko stane prioritetna izdaja osebne izkaznice? (22 May 2015)",
+   "read": "2026-10-30",
+   "said": "V nujnih primerih, kot so na primer zdravljenje, bolezen ali smrt ožjega družinskega člana ter nujni službeni opravki, lahko za prioritetno izdajo osebne izkaznice zaprosite brez doplačila. ... Če želite prioritetno izdelavo brez opravičljivega razloga (na primer, nameravate na dopust v tujino in ste spregledali potek veljavnosti dokumenta), morate za izdajo osebne izkaznice plačati dvakratno vrednost takse."
+  },
+  {
+   "url": "https://www.gov.si/predstavnistva/veleposlanistvo-pariz/konzularne-informacije/",
+   "title": "GOV.SI, Konzularne informacije Veleposlaništva Pariz",
+   "read": "2026-10-30",
+   "said": "Veljavnost osebne izkaznice in konzularne takse: 10 let za odrasle osebe od 18. do 70. leta starosti – 76 EUR , 5 let za otroke od 3. do 18. leta starosti – 60 EUR , 3 leta za otroke do 3. leta starosti – 44 EUR , trajna osebna izkaznica – 76 EUR ."
+  }
+ ]
+}

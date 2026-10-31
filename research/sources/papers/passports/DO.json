@@ -1,0 +1,70 @@
+{
+ "country": "DO",
+ "office": "the Dirección General de Pasaportes (DGP), at its offices by appointment",
+ "currency": "DOP",
+ "routes": [
+  {
+   "id": "home",
+   "where": "home",
+   "speed": "standard",
+   "within": {
+    "n": 72,
+    "unit": "hour"
+   },
+   "label": "normal, 72 hours"
+  },
+  {
+   "id": "urgent",
+   "where": "home",
+   "speed": "urgent",
+   "within": {
+    "n": 1,
+    "unit": "working day"
+   },
+   "label": "urgent, 2 hours if asked before 1 p.m., else the next working day from 9 a.m."
+  }
+ ],
+ "passports": [
+  {
+   "for": "adult",
+   "from": 18,
+   "validYears": 10,
+   "pay": {
+    "home": "6700.00",
+    "urgent": "10700.00"
+   }
+  },
+  {
+   "for": "minor",
+   "under": 18,
+   "validYears": 5,
+   "pay": {
+    "home": "6700.00",
+    "urgent": "10700.00"
+   }
+  }
+ ],
+ "note": "The DGP's service pages give RD$6,700.00 for a renewal or first passport, adult or minor, in 72 hours, and RD$4,000.00 more for urgency (summed here), ready in 2 hours if asked before 1 p.m., else the next working day. Validity (ten years for adults, five under 18) is the electronic passport's of 2026 as Revista Mercado reported it. Fees abroad are a lead.",
+ "sources": [
+  {
+   "url": "https://pasaportes.gob.do/servicios/renovacion-de-pasaporte-para-adultos-por-vencimiento/",
+   "title": "Dirección General de Pasaportes, Renovación de Pasaporte para Adultos por Vencimiento",
+   "read": "2026-10-28",
+   "said": "Tiempo de realización: Normal: 72 horas Urgencia: 2 horas, si solicita antes de las 01:00 PM. Si deposita después de esa hora, se le entregará al siguiente día laborable a partir de las 9:00 A.M. ... Costo: Normal: RD$ 6,700.00 *Urgencia: RD$ 4,000.00 adicional"
+  },
+  {
+   "url": "https://pasaportes.gob.do/servicios/renovacion-de-pasaporte-para-menores-por-vencimiento/",
+   "title": "Dirección General de Pasaportes, Renovación de Pasaporte para Menores por Vencimiento",
+   "read": "2026-10-28",
+   "said": "Tiempo de realización: Normal: 72 horas *Urgencia: 2 horas, si solicita antes de las 01:00 PM. ... Costo: Normal: RD$ 6,700.00 *Urgencia: RD$ 4,000.00 adicional A quién va dirigido: Dominicanos menores de edad"
+  },
+  {
+   "kind": "secondary",
+   "url": "https://revistamercado.do/nacional/cuanto-cuesta-renovar-el-pasaporte-en-2026-y-cuanto-tarda-lo-que-cambio-con-el-electronico/",
+   "quotes": "https://pasaportes.gob.do/",
+   "title": "Revista Mercado, ¿Cuánto cuesta renovar el pasaporte en 2026 y cuánto tarda? Lo que cambió con el electrónico (13 October 2026)",
+   "read": "2026-10-28",
+   "said": "El monto corresponde al documento con vigencia de 10 años para adultos , mientras que los menores de 18 años reciben una libreta válida por cinco años ."
+  }
+ ]
+}

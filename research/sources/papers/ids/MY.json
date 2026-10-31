@@ -1,0 +1,106 @@
+{
+ "country": "MY",
+ "document": "MyKad (identity card)",
+ "office": "the National Registration Department (JPN)",
+ "currency": "MYR",
+ "routes": [
+  {
+   "id": "print",
+   "where": "home",
+   "speed": "standard",
+   "within": {
+    "n": 30,
+    "unit": "minute"
+   },
+   "label": "at a JPN office that prints the card: within 30 minutes"
+  },
+  {
+   "id": "branch",
+   "where": "home",
+   "speed": "standard",
+   "within": {
+    "n": 5,
+    "unit": "working day"
+   },
+   "label": "at any other JPN branch: 5 working days in Peninsular Malaysia (7 in Sabah, Sarawak and Labuan)"
+  }
+ ],
+ "cards": [
+  {
+   "for": "child registering at 12",
+   "from": 12,
+   "under": 13,
+   "validYears": null,
+   "pay": {
+    "print": "0",
+    "branch": "0"
+   }
+  },
+  {
+   "for": "child registering late",
+   "from": 13,
+   "under": 16,
+   "validYears": null,
+   "pay": {
+    "print": "10",
+    "branch": "10"
+   }
+  },
+  {
+   "for": "replacement of a damaged card",
+   "from": 16,
+   "under": 18,
+   "validYears": null,
+   "pay": {
+    "print": "10",
+    "branch": "10"
+   }
+  },
+  {
+   "for": "replacement at 18 to 25",
+   "from": 18,
+   "under": 26,
+   "validYears": null,
+   "pay": {
+    "print": "10",
+    "branch": "10"
+   }
+  },
+  {
+   "for": "replacement of a damaged card",
+   "from": 26,
+   "validYears": null,
+   "pay": {
+    "print": "10",
+    "branch": "10"
+   }
+  }
+ ],
+ "note": "For citizens. A child must register at 12; within 30 days of the birthday it is free, after that a RM10 processing fee is due up to 16 (the first year's band here takes the free case). A holder must replace the card between 18 and 25 (RM10 for a citizen); outside those years an adult's way to a new card is the replacement of a damaged one, RM10 (free within 12 months of issue, not modelled). The card has no term in years, only those two milestones, so its validity is left null and the player is told. Seven working days, not five, in Sabah, Sarawak and Labuan.",
+ "sources": [
+  {
+   "url": "https://www.jpn.gov.my/en/services/identity-card/mykad-application-for-children-aged-12/",
+   "title": "National Registration Department of Malaysia, MyKad Application for Children Aged 12",
+   "read": "2026-10-28",
+   "said": "a Malaysian child who has reached the age of 12 must register for the identity card. ... The applicant must submit the application within 30 days of attaining the age of 12. Otherwise, a processing fee will be charged. ... From 12 years and 30 days to 13 years – 10.00 10.00"
+  },
+  {
+   "url": "https://www.jpn.gov.my/en/services/identity-card/identity-card-replacement-application-mykad-or-mypr-for-citizens-and-non-citizens-aged-18/",
+   "title": "National Registration Department of Malaysia, Identity Card Replacement Application (MyKad or MyPR) for Citizens and Non-Citizens Aged 18",
+   "read": "2026-10-28",
+   "said": "must have a replacement identity card made no later than the age of 25. ... Citizens = RM10.00"
+  },
+  {
+   "url": "https://www.jpn.gov.my/en/faq/identity-card/",
+   "title": "National Registration Department of Malaysia, FAQ: Identity Card",
+   "read": "2026-10-28",
+   "said": "MyKad can be completed within 30 minutes for applicants who choose collection at the NRD Headquarters or offices that have distributed printing machines. ... 5 working days in Peninsular Malaysia 7 working days in Sabah, Sarawak and Labuan"
+  },
+  {
+   "url": "https://www.jpn.gov.my/en/services/identity-card/application-for-replacement-of-damaged-identity-card/",
+   "title": "National Registration Department of Malaysia, Application for Replacement of Damaged Identity Card",
+   "read": "2026-10-28",
+   "said": "any person whose identity card is damaged or destroyed shall immediately apply for a replacement identity card. ... Citizens: RM10.00 ... Identity cards damaged within 12 months of the date of issue will be replaced WITHOUT CHARGE."
+  }
+ ]
+}

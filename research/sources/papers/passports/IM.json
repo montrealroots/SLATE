@@ -1,0 +1,34 @@
+{
+ "country": "IM",
+ "office": "the Isle of Man Passport Office (Isle of Man variant British passports)",
+ "currency": "GBP",
+ "routes": [
+  {"id": "standard", "where": "home", "speed": "standard", "within": {"n": 20, "unit": "working day"}, "label": "standard service: the published 20 working days, delivery excluded (taking longer at present)"},
+  {"id": "express", "where": "home", "speed": "urgent", "within": {"n": 5, "unit": "working day"}, "label": "express service: within 5 working days from payment, delivery excluded"}
+ ],
+ "passports": [
+  {"for": "adult", "from": 16, "validYears": 10, "pay": {"standard": "115.50", "express": "205.50"}},
+  {"for": "child", "under": 16, "validYears": 5, "pay": {"standard": "80", "express": "170"}}
+ ],
+ "note": "Fees from 1 August 2026, realigned with HM Passport Office's of 8 April 2026. Someone born on or before 2 September 1929 gets the standard passport free (express GBP 90). The temporary (emergency) passport, valid 12 months, isn't modelled. The passport is the Isle of Man variant British passport.",
+ "sources": [
+  {
+   "url": "https://gov.im/categories/travel-traffic-and-motoring/passports/application-forms-and-fees",
+   "title": "Isle of Man Government (gov.im), Application forms and fees",
+   "read": "2026-10-28",
+   "said": "Standard – is taking longer than 20 working days due to technical issues (this excludes delivery) Express – processed withing 5 working days from the date you paid for your application (this excludes delivery) ... Fees Adult Passports - 16 years of age and over Standard Service: £115.50 Express Service*: £205.50 ... If you were born on or before 2 September 1929 you are eligible for a free standard 10 year passport. If you need to use the Express or Emergency service, you will need to pay the relevant fee. Standard Service: Nil Express Service: £90 ... Child Passports – 5 year validity Standard Service: £80 Express Service*: £170"
+  },
+  {
+   "url": "https://www.gov.im/news/2026/jun/29/changes-to-passport-immigration-and-nationality-fees-come-into-effect-on-1-august/",
+   "title": "Isle of Man Government (gov.im), Changes to Passport, Immigration and Nationality fees come into effect on 1 August, 29 June 2026",
+   "read": "2026-10-28",
+   "said": "Increases to the cost of an Isle of Man Variant British Passport will be implemented from 1 August 2026. The changes will apply to all new applications, renewals and replacement passports. These changes realign the Isle of Man Variant British Passport with fees set by HM Passport Office on 8 April 2026."
+  },
+  {
+   "url": "https://www.gov.im/categories/travel-traffic-and-motoring/passports",
+   "title": "Isle of Man Government (gov.im), Passports",
+   "read": "2026-10-28",
+   "said": "standard passport applications are taking longer than the published 20 working days to process (Processing times excludes delivery)"
+  }
+ ]
+}

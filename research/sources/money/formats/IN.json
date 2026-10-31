@@ -1,0 +1,47 @@
+{
+ "country": "IN",
+ "national": {
+  "name": "IFSC and account number",
+  "parts": [
+   {
+    "name": "Bank code",
+    "length": 4,
+    "kind": "a"
+   },
+   {
+    "name": "Fifth character",
+    "length": 1,
+    "kind": "n"
+   },
+   {
+    "name": "Branch code",
+    "length": 6,
+    "kind": "c"
+   },
+   {
+    "name": "Account number",
+    "length": 11,
+    "kind": "n"
+   }
+  ],
+  "bank": [
+   1,
+   4
+  ]
+ },
+ "note": "The Reserve Bank of India's NEFT FAQ (read 2026-10-30, undated page) gives the IFSC, the code a transfer is routed by: 11 characters, the first 4 letters for the bank, the 5th always 0 (zero), the last 6 the branch (the RBI says 'characters', so the branch part is read as letters or digits). The form can't fix a character's value: the 5th is held as one digit, and the engine draws any digit there unless the lead pins it to 0. The account number's length isn't fixed by the RBI or NPCI: each bank sets its own. The State Bank of India, the largest bank, asks for 'account number (11 digit)' in its Internet Banking FAQ (read 2026-10-30), so 11 digits is written. Other banks' lengths (other than SBI's) aren't read. No check digit is published by the RBI for either part.",
+ "sources": [
+  {
+   "url": "https://www.rbi.org.in/Scripts/FAQView.aspx?Id=60",
+   "title": "Reserve Bank of India, FAQs: National Electronic Funds Transfer (NEFT) System",
+   "read": "2026-10-30",
+   "said": "Indian Financial System Code (IFSC) is an alpha-numeric code that uniquely identifies a bank-branch participating in the NEFT system. It is a 11-digit code with the first 4 alpha characters representing the bank, and the last 6 characters representing the branch. The 5th character is 0 (zero)."
+  },
+  {
+   "url": "https://sbi.bank.in/web/faq-s/faq-internet-banking",
+   "title": "State Bank of India, FAQ: Internet Banking",
+   "read": "2026-10-30",
+   "said": "Please give the branch name (5 digit) and account number (11 digit) for which you have not received user id and password."
+  }
+ ]
+}

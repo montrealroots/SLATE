@@ -1,0 +1,79 @@
+{
+ "country": "BG",
+ "office": "the Ministry of Interior's Bulgarian Identity Documents units, at the permanent address or online",
+ "currency": "EUR",
+ "routes": [
+  {
+   "id": "home",
+   "where": "home",
+   "speed": "standard",
+   "within": {
+    "n": 30,
+    "unit": "day"
+   },
+   "label": "ordinary, up to 30 calendar days"
+  },
+  {
+   "id": "fast",
+   "where": "home",
+   "speed": "urgent",
+   "within": {
+    "n": 3,
+    "unit": "working day"
+   },
+   "label": "fast, up to 3 working days"
+  },
+  {
+   "id": "express",
+   "where": "home",
+   "speed": "urgent",
+   "within": {
+    "n": 1,
+    "unit": "working day"
+   },
+   "label": "express, up to 8 working hours"
+  }
+ ],
+ "passports": [
+  {
+   "for": "child",
+   "under": 14,
+   "validYears": 5,
+   "pay": {
+    "home": "7",
+    "fast": "14",
+    "express": "35"
+   }
+  },
+  {
+   "for": "adult",
+   "from": 14,
+   "under": 70,
+   "validYears": 5,
+   "pay": {
+    "home": "27",
+    "fast": "54",
+    "express": "135"
+   }
+  },
+  {
+   "for": "senior",
+   "from": 70,
+   "validYears": 5,
+   "pay": {
+    "home": "7",
+    "fast": "14",
+    "express": "35"
+   }
+  }
+ ],
+ "note": "The fees under Tariff No. 4 (State Fees Act) as the Integrated Information System of the State Administration lists them for service 1074, Issuing a passport to Bulgarian citizens: a five-year passport, €27, €54 or €135 between 14 and 70 for the ordinary, fast and express services (30 calendar days, 3 working days, 8 working hours), €7, €14 or €35 over 70 and for a child's first passport under 14 (a later one under 14 is €14, €28 or €70, not modelled), with reductions for disability (not modelled). The express service's 8 working hours are kept as one working day.",
+ "sources": [
+  {
+   "url": "https://iisda.government.bg/adm_services/services/service_provision/22596",
+   "title": "Integrated Information System of the State Administration (IISDA), service 1074, Издаване на паспорт на български граждани: provision by the Ministry of Interior",
+   "read": "2026-10-28",
+   "said": "Срок за предоставяне: обикновена - до 30 календарни дни; бърза - до 3 работни дни; експресна - до 8 работни часа Срок на действие на документа/индивидуалния административен акт: 5 години ... За услугата се заплаща такса 27.00 € ПАСПОРТ с 5-годишен срок на валидност Обикновена - 30 дни Бърза 3- раб. дни Експресна до 8 раб. ч. първи-лица до 14 г. 7€ 14€ 35€ следващ-лица до 14 г. 14€ 28€ 70€ м/у 14 и 70 г. 27€ 54€ 135€ над 70 г. 7€ 14€ 35€"
+  }
+ ]
+}

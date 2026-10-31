@@ -24,10 +24,12 @@ function minimal(over: Record<string, unknown> = {}) {
     'registry/owner-docs.lock.json': { files: lockOf(fixture(docs).repo) },
     'registry/layers.json': { layers: [{ n: 0, name: 'Gate', dirs: ['gate'] }, { n: 1, name: 'Core', dirs: ['src/core'], holdsEngines: true }], proven: [] },
     'registry/features.json': {},
+    'registry/effects.json': {},
     'registry/pages.json': {},
     'registry/engines.json': {},
     'registry/axes.json': readFileSync(join(ROOT, 'registry/axes.json'), 'utf8'),
     'registry/voice.json': readFileSync(join(ROOT, 'registry/voice.json'), 'utf8'),
+    'registry/names.json': readFileSync(join(ROOT, 'registry/names.json'), 'utf8'),
     'research/register.json': { entries: [] },
     'HANDOFF.md': `Layer in progress: 0\n\n${SECTIONS.join('\n\n')}\n`,
     ...over,
@@ -52,14 +54,14 @@ describe('the gate, end to end on a fixture', () => {
     const before = runGate(opts(root));
     expect(before.verdict).toBe('red');
     expect(all(named(before.results, 'generated'))).toEqual(
-      ['LAYERS', 'REGISTER', 'FEATURES', 'COVERAGE'].map((m) => `red matrix/${m}.md | out of date; run \`npm run gate:write\` and commit it`),
+      ['LAYERS', 'REGISTER', 'FEATURES', 'EFFECTS', 'COVERAGE'].map((m) => `red matrix/${m}.md | out of date; run \`npm run gate:write\` and commit it`),
     );
     expect(runGate(opts(root, { write: true })).verdict).toBe('green');
     expect(readFileSync(join(root, 'matrix/LAYERS.md'), 'utf8')).toContain('| 0 | Gate | `gate` | in progress |');
     const after = runGate(opts(root));
     expect(after.results.flatMap(all)).toEqual([]);
     expect(after.verdict).toBe('green');
-    expect(after.results.map((r) => r.check)).toEqual(['toolchain', 'owner-docs', 'build-order', 'text-inventory', 'research-register', 'feature-matrix', 'coverage', 'handoff', 'generated']);
+    expect(after.results.map((r) => r.check)).toEqual(['toolchain', 'owner-docs', 'build-order', 'text-inventory', 'title-case', 'research-register', 'feature-matrix', 'effects', 'coverage', 'handoff', 'generated']);
   });
   it('fails a matrix that is stale, and a file in matrix/ no check owns', () => {
     const { root } = minimal();
@@ -75,7 +77,7 @@ describe('the gate, end to end on a fixture', () => {
     const { testRun: _t, ...withoutTests } = opts(root, { full: true, run: spy });
     const out = runGate(withoutTests);
     expect(calls).toEqual(['npx tsc', 'npx eslint', 'npx vitest', 'npm audit', 'npx stryker']);
-    expect(out.results.map((r) => r.check)).toEqual(['toolchain', 'owner-docs', 'build-order', 'text-inventory', 'research-register', 'typecheck', 'lint', 'tests', 'feature-matrix', 'coverage', 'handoff', 'audit', 'mutation', 'generated']);
+    expect(out.results.map((r) => r.check)).toEqual(['toolchain', 'owner-docs', 'build-order', 'text-inventory', 'title-case', 'research-register', 'typecheck', 'lint', 'tests', 'feature-matrix', 'effects', 'coverage', 'handoff', 'audit', 'mutation', 'generated']);
     expect(all(named(out.results, 'tests'))).toEqual(['red - | the test run left no report']);
   });
   it('feeds what the test run said into the feature matrix and the coverage', () => {
@@ -133,7 +135,12 @@ describe('the gate, end to end on a fixture', () => {
     // matrices written from them) are held by the gate's own run instead. Everything else must hold now; work declared
     // and not yet done (incomplete, such as pending research) is the gate's to report, not a break.
     // The repository's sources are dated as read, so it is held to the day the suite runs, as the gate's own run is.
-    const out = runGate(opts(ROOT, { today: new Date().toISOString().slice(0, 10) }));
+    // Under mutation testing this file runs in Stryker's sandbox (.stryker-tmp/sandbox-*), whose sources are instrumented:
+    // `defineCommand({ id: 'account.open' })` is rewritten around the literal, so the effects check found no declaration
+    // there and the run of 2026-10-30 failed on 26 findings no real tree has. The gate's code (mutated or not) is held to
+    // the checkout the sandbox sits in, which is the repository as committed.
+    const repository = ROOT.replace(/[\\/]\.stryker-tmp[\\/]sandbox-[^\\/]+$/, '');
+    const out = runGate(opts(repository, { today: new Date().toISOString().slice(0, 10) }));
     const runOnly = /^(the row's test didn't pass in this run|no passing test falsifies|the engine reads a place, so a passing test)/;
     const findings = out.results
       .filter((r) => r.check !== 'generated')

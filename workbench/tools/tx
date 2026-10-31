@@ -1,0 +1,10 @@
+#!/bin/bash
+# tx FILE [regex]: a saved page's text on one line (pdf or html); with a regex, the matches with context
+f="$1"
+if head -c 5 "$f" | grep -q '%PDF'; then t=$(pdftotext -layout "$f" - 2>/dev/null | tr -s ' \n' ' ');
+else t=$(python3 -I -c "
+import sys,bs4,re
+s=bs4.BeautifulSoup(open(sys.argv[1],'rb').read(),'lxml')
+for x in s(['script','style','noscript']): x.decompose()
+print(re.sub(r'\s+',' ',s.get_text(' ')))" "$f"); fi
+if [ -n "$2" ]; then echo "$t" | grep -oiE ".{0,${C:-200}}($2).{0,${C:-200}}"; else echo "$t"; fi

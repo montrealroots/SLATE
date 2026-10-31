@@ -1,0 +1,28 @@
+{
+ "country": "UA",
+ "office": "the State Migration Service's units, administrative service centres (TsNAP) and the Passport Service centres of DP Dokument",
+ "currency": "UAH",
+ "routes": [
+  {"id": "standard", "where": "home", "speed": "standard", "within": {"n": 20, "unit": "working day"}, "label": "within 20 working days"},
+  {"id": "urgent", "where": "home", "speed": "urgent", "within": {"n": 7, "unit": "working day"}, "label": "urgent, within 7 working days"}
+ ],
+ "passports": [
+  {"for": "adult", "from": 16, "validYears": 10, "pay": {"standard": "1147", "urgent": "1787"}},
+  {"for": "child", "under": 16, "validYears": 4, "pay": {"standard": "1147", "urgent": "1787"}}
+ ],
+ "note": "Fees from 1 January 2026: the administrative service (352 or 992 hryvnias) and the blank (795), in the State Migration Service's units; the page names no other fee by age. An urgent issue within 3 working days, at the same 1,787 hryvnias, is only for cases the law sets, and isn't modelled. At Ukraine's consulates abroad a consular fee is paid instead.",
+ "sources": [
+  {
+   "url": "https://dmsu.gov.ua/poslugi/dokumenti-dlya-vijzdu-za-kordon/vidacha-pasporta-gromadyanina-ukrajni-dlya-vijzdu-za-kordon.html",
+   "title": "Державна міграційна служба України (dmsu.gov.ua), Видача паспорта громадянина України для виїзду за кордон",
+   "read": "2026-10-28",
+   "said": "Паспорт громадянина України для виїзду за кордон оформлюється дітям від народження строком на 4 роки, громадянам віком від 16 років - строком на 10 років. ... При оформленні цього документу у консульських установах України за кордоном сплачується консульський збір. Оплачується адміністративний збір, який розраховується як сума вартості адміністративної послуги та вартості бланку. У разі оформлення протягом 20 робочих днів сума адміністративного збору складає 1147 грн., у тому числі: вартість адміністративної послуги - 352 грн. вартість бланка - 795 грн. У разі термінового (протягом 7 робочих днів) оформлення,сума адміністративного збору складає 1787 грн., у тому числі: вартість адміністративної послуги - 992 грн. вартість бланка - 795 грн. У разі термінового (протягом 3 робочих днів у випадках, визначених законодавством) оформлення, сума адміністративного збору складає 1787 грн."
+  },
+  {
+   "url": "https://dmsu.gov.ua/news/dms/19633.html",
+   "title": "Державна міграційна служба України (dmsu.gov.ua), З 1 січня 2026 року ДП «Поліграфічний комбінат «Україна» змінено вартість бланків окремих біометричних документів, 31.12.2025",
+   "read": "2026-10-28",
+   "said": "З 1 січня 2026 року ДП «Поліграфічний комбінат «Україна» змінено вартість бланків окремих біометричних документів У зв’язку з цим зростала і загальна вартість оформлення паспорта громадянина України у формі ID-картки, паспорта громадянина України для виїзду за кордон"
+  }
+ ]
+}

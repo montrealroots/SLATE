@@ -1,0 +1,42 @@
+{
+ "country": "TW",
+ "document": "國民身分證 (National Identification Card)",
+ "office": "the household registration office (戶政事務所) of the place of registration",
+ "currency": "TWD",
+ "routes": [
+  {
+   "id": "office",
+   "where": "home",
+   "speed": "standard",
+   "within": {
+    "n": 30,
+    "unit": "minute"
+   },
+   "label": "in person at the household registration office: card issued within 30 minutes"
+  }
+ ],
+ "cards": [
+  {
+   "for": "anyone",
+   "validYears": "permanent",
+   "pay": {
+    "office": "50"
+   }
+  }
+ ],
+ "note": "The Household Registration Act (戶籍法) requires a registered citizen of 14 or over to apply for the card and lets a younger one have it (article 57); it sets no term: a card lapses only when the central authority gazettes a general replacement and the date old cards cease (article 59), so it's kept as never expiring. Fees and the time are from Taichung City's household registration staff handbook (updated 15 September 2023): NT$50 for a first card or a renewal, NT$200 for a replacement of a lost one (not modelled), issued within 30 minutes unless checks are needed.",
+ "sources": [
+  {
+   "url": "https://law.moj.gov.tw/LawClass/LawAll.aspx?pcode=D0030006",
+   "title": "Laws & Regulations Database of the Republic of China (Taiwan), 戶籍法 (Household Registration Act), articles 57 and 59",
+   "read": "2026-10-28",
+   "said": "有戶籍國民年滿十四歲者，應申請初領國民身分證，未滿十四歲者，得申請發給。 ... 國民身分證全面換發及舊證失效日期，由中央主管機關公告，並刊登政府公報。"
+  },
+  {
+   "url": "https://civilinfo.taichung.gov.tw/media/1313158/%E6%88%B6%E7%B1%8D%E9%A0%85%E7%9B%AE-%E5%9C%8B%E6%B0%91%E8%BA%AB%E5%88%86%E8%AD%89.pdf",
+   "title": "Taichung City Government, Civil Affairs Bureau, 臺中市戶政人員工作手冊: 國民身分證",
+   "read": "2026-10-28",
+   "said": "規費 50 元 ... 規費 200 元 ... 30 分鐘內(不含須實施查證者)領證"
+  }
+ ]
+}

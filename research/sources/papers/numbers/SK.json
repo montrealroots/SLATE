@@ -1,0 +1,25 @@
+{
+ "country": "SK",
+ "name": "birth number",
+ "issuer": "the Slovak birth-number register (the sheet names no office)",
+ "format": {
+  "length": 10,
+  "pattern": "^\\d{10}$"
+ },
+ "when": "birth",
+ "who": [
+  "citizens"
+ ],
+ "needed": [
+  "tax"
+ ],
+ "note": "Slovakia's sheet (its government's own sheet on the OECD's automatic-exchange portal ('Information on Tax Identification Numbers'; the OECD's index page sits behind a bot check and wasn't opened, the sheet itself came straight back)), read 2026-10-30: the Financial Administration assigns a 10-digit TIN only to persons in business who must register with a local tax office, so most natural persons have none; for them the unique birth number serves as the TIN: 10 digits (written 999999/9999), the first six the birth date (the month plus 50 for women), the tenth possibly absent for those born before 1954 (not modelled). The sheet doesn't name the office that assigns birth numbers, so the issuer is written without it. Read as given at birth, to citizens. No check rule, fee or time is stated.",
+ "sources": [
+  {
+   "url": "https://www.oecd.org/content/dam/oecd/en/topics/policy-issue-focus/aeoi/slovak-republic-tin.pdf",
+   "title": "OECD AEOI portal, Slovak Republic: Information on Tax Identification Numbers (the jurisdiction's own sheet)",
+   "read": "2026-10-30",
+   "said": "TIN is not issued for citizens of Slovakia who do not have obligation to register at local tax office and therefore most natural persons do not have TIN. ... If the natural person does not have the TIN assigned, their unique birth number is used for automatic exchange of information purposes. ... Birth number consists of 10 digits [C1 C2 C3 C4 C5 C6 C7 C8 C9 C10]. ... If the number consisting of the digits C1, C2 is lower than 54, C10 might not be present."
+  }
+ ]
+}

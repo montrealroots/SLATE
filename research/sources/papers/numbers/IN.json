@@ -1,0 +1,30 @@
+{
+ "country": "IN",
+ "name": "Aadhaar number",
+ "issuer": "the Unique Identification Authority of India (UIDAI)",
+ "format": {
+  "length": 12,
+  "pattern": "^\\d{12}$"
+ },
+ "when": "application",
+ "who": [
+  "residents"
+ ],
+ "fee": "0",
+ "currency": "INR",
+ "note": "The UIDAI's own pages, read 2026-10-30: the Aadhaar number is a 12-digit random number the UIDAI issues to residents of India after its verification; any resident may enrol voluntarily, at any age, and enrolment is free. Read as given on application (enrolment), to residents, at no age limit (no `from`). The Act makes it voluntary, so nothing here is set as needing one. The final digit is a check digit by the Verhoeff algorithm (UIDAI's numbering-scheme paper of 2010, not read: its PDF was gone from uidai.gov.in that day), which the game doesn't compute, so `check` is left out. Enrolment times aren't published on these pages.",
+ "sources": [
+  {
+   "url": "https://uidai.gov.in/about-aadhaar",
+   "title": "UIDAI, About Aadhaar",
+   "read": "2026-10-30",
+   "said": "Aadhaar number is a 12-digit random number issued by the UIDAI (“Authority”) to the residents of India after satisfying the verification process laid down by the Authority. Any individual, irrespective of age and gender, who is a resident of India, may voluntarily enrol to obtain Aadhaar number. ... during the enrolment process which is totally free of cost."
+  },
+  {
+   "url": "https://uidai.gov.in/en/your-aadhaar",
+   "title": "UIDAI, Your Aadhaar",
+   "read": "2026-10-30",
+   "said": "Aadhaar number is a 12-digit random number assigned to an individual seeking enrolment on completing the enrolment process."
+  }
+ ]
+}

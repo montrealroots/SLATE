@@ -1,0 +1,25 @@
+{
+ "country": "AG",
+ "name": "Tax Identification Number (TIN)",
+ "issuer": "the Inland Revenue Department (IRD)",
+ "format": {
+  "length": 6,
+  "pattern": "^\\d{6}$"
+ },
+ "when": "application",
+ "who": [
+  "anyone"
+ ],
+ "needed": [
+  "tax"
+ ],
+ "note": "Antigua and Barbuda's sheet (its government's own sheet on the OECD's automatic-exchange portal ('Information on Tax Identification Numbers'; the OECD's index page sits behind a bot check and wasn't opened, the sheet itself came straight back)), read 2026-10-30: TINs aren't issued automatically to individuals; the Inland Revenue Department's tax software (SIGTAS) assigns one at the end of registration, numbers only, the smallest 6 digits (a check digit only for VAT (ABST) registrants, not modelled; a tax account number adds a two-digit tax-type code). The game draws the 6-digit form, the shortest the sheet names, since it gives no fixed length. Read as given on application (registration), to anyone registering; `needed` is tax. No age, fee or time is stated.",
+ "sources": [
+  {
+   "url": "https://www.oecd.org/content/dam/oecd/en/topics/policy-issue-focus/aeoi/antigua-and-barbuda-tin.pdf",
+   "title": "OECD AEOI portal, Antigua and Barbuda: Information on Tax Identification Numbers (the jurisdiction's own sheet)",
+   "read": "2026-10-30",
+   "said": "Individuals No Entities No ... TIN s are assigned at the end of the registration process by our Tax Administration software (SIGTAS), with the smallest number being 6 digits. TINs only contain numbers."
+  }
+ ]
+}

@@ -1,0 +1,25 @@
+{
+ "country": "BG",
+ "name": "Unified Civil Number (UCN)",
+ "issuer": "the Ministry of Interior",
+ "format": {
+  "length": 10,
+  "pattern": "^\\d{10}$"
+ },
+ "when": "registration",
+ "who": [
+  "citizens"
+ ],
+ "needed": [
+  "tax"
+ ],
+ "note": "Bulgaria's sheet (its government's own sheet on the OECD's automatic-exchange portal ('Information on Tax Identification Numbers'; the OECD's index page sits behind a bot check and wasn't opened, the sheet itself came straight back)), read 2026-10-30: Bulgarian citizens' tax number is the Unified Civil Number, 10 digits, assigned (the sheet says) by the Ministry of Interior and shown on every identity document; foreigners with long-term or permanent residence have a 10-digit Personal Number of a Foreigner and other tax residents an NRA number (not modelled). When it's given (at birth registration, by the civil registry) the sheet doesn't say, so it's read as registration; its check digit isn't described, so `check` is left out. The name and issuer are as the sheet gives them, in English.",
+ "sources": [
+  {
+   "url": "https://www.oecd.org/content/dam/oecd/en/topics/policy-issue-focus/aeoi/bulgaria%20-%20tin.pdf",
+   "title": "OECD AEOI portal, Bulgaria: Information on Tax Identification Numbers (the jurisdiction's own sheet)",
+   "read": "2026-10-30",
+   "said": "For Bulgarian citizens – Unified Civil Number (UCN) which consists of a block of 10 digits; ... The Unified Civil Number and the Personal Number of a Foreigner are assigned by the Ministry of ... Interior and could be found in all identity documents."
+  }
+ ]
+}

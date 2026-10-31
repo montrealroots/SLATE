@@ -1,0 +1,27 @@
+{
+ "country": "GY",
+ "national": {
+  "name": "Account Number",
+  "parts": [
+   {
+    "name": "Account Number",
+    "length": 14,
+    "kind": "n",
+    "min": 1,
+    "drawn": [
+     7,
+     7
+    ]
+   }
+  ]
+ },
+ "note": "No rule of the Bank of Guyana fixing an account number's length was read (its home page gave none, 2026-10-30). Scotiabank's Scotia OnLine for Business Guyana Electronic Funds Transfer User Guide (June 14, 2019, version 11; read 2026-10-31), written for the launch of the Bank of Guyana's Electronic Funds Transfer (EFT), 'a clearing and settlement facility ... between participating financial institutions in Guyana', from August 12, 2019, gives in its Appendix 1 the 'Recipient Account format required by the Bank' for each participant: Scotiabank Guyana 1 to 9 digits; Bank of Guyana 10 or 12; Bank of Baroda a maximum of 14 with leading zeros; Citizens Bank 1 to 10; Demerara Bank 1 to 7; Guyana Bank of Trade and Industry a maximum of 12 with leading zeros; Republic Bank (Guyana) a maximum of 7 with leading zeros; all with no dashes or special characters. So the number is written as 1 to 14 digits (the fewest is the guide's own, the most Bank of Baroda's). A new account is drawn at seven digits, Republic Bank's line padded with leading zeros (the bank the game's Guyanese account is held at). Readings to check: the guide is of 2019 and is a participant's, not the Bank of Guyana's own text; a later list wasn't found (the Guyana Revenue Authority's bank-payment page, which shows the Authority's own accounts, answered 403 and wasn't read), so a change in any bank's numbering since 2019 isn't held. The receiving bank and branch go in a nine-digit ABA-style number beside the account (Appendix 2), not inside it; no check digit inside the account number is given.",
+ "sources": [
+  {
+   "url": "https://gy.scotiabank.com/content/dam/scotiabank/international/guyana/documents/EFT-UserGuide.pdf",
+   "title": "Scotiabank Guyana, Scotia OnLine for Business Electronic Funds Transfer User Guide, June 14, 2019 (version 11), Appendix 1: Recipient Account format required by the Bank",
+   "read": "2026-10-31",
+   "said": "June 14, 2019 (version 11) ... Scotiabank is pleased to advise we are part of the launch of the Bank of Guyana’s Electronic Funds Transfer (EFT). EFT is a clearing and settlement facility established to process the exchange of electronic transactions in a secured network between participating financial institutions in Guyana. ... Appendix 1: Recipient Account format required by the Bank ... Scotiabank Guyana Account Number 1 to 9 digits. No dashes or special ... Bank of Guyana Account Number 10 or 12 digits. ... Bank of Baroda Account Number Maximum 14 digits with leading ... Citizens Bank Account Number 1 - 10 digits. ... Demerara Bank Account Number 1 - 7 digits. ... Maximum 12 digits with leading zeros. ... Republic Bank (Guyana) Ltd Account Number Maximum 7 digits with leading zeros."
+  }
+ ]
+}

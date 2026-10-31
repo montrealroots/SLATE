@@ -1,0 +1,25 @@
+{
+ "country": "PK",
+ "name": "Computerized National Identity Card (CNIC) number",
+ "issuer": "the National Database and Registration Authority (NADRA)",
+ "format": {
+  "length": 13,
+  "pattern": "^\\d{13}$"
+ },
+ "when": "application",
+ "who": [
+  "citizens"
+ ],
+ "needed": [
+  "tax"
+ ],
+ "note": "Pakistan's sheet (its government's own sheet on the OECD's automatic-exchange portal ('Information on Tax Identification Numbers'; the OECD's index page sits behind a bot check and wasn't opened, the sheet itself came straight back)), read 2026-10-30: under the Income Tax Ordinance 2001 and its Rules, an individual holding a Computerized National Identity Card (CNIC) from the National Database and Registration Authority (NADRA) has the CNIC number as the National Tax Number; 13 digits (written XXXXX-XXXXXX-X), the first five a place code, the next seven a family number, the last odd for a man and even for a woman, with no check digit stated. Read as given on application (the CNIC), to citizens (the sheet doesn't say who holds a CNIC; a non-resident without one uses a passport number, not modelled). An individual counts as holding a TIN only once registered with the Federal Board of Revenue, so `needed` is tax. The sheet states no age, fee or time.",
+ "sources": [
+  {
+   "url": "https://www.oecd.org/content/dam/oecd/en/topics/policy-issue-focus/aeoi/pakistan-tin.pdf",
+   "title": "OECD AEOI portal, Pakistan: Information on Tax Identification Numbers (the jurisdiction's own sheet)",
+   "read": "2026-10-30",
+   "said": "individuals having Computerized National Identity Card (CNIC) issued by the National Database and Registration Authority are allocated the CNIC number as National Tax Number or Registration Number. ... CNIC number is a 13 digit (XXXXX-XXXXXX-X) ... An individual is only considered as having a TIN issued when he/she registers with FBR"
+  }
+ ]
+}

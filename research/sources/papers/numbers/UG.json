@@ -1,0 +1,26 @@
+{
+ "country": "UG",
+ "name": "Taxpayer Identification Number (TIN)",
+ "issuer": "the Uganda Revenue Authority (URA)",
+ "format": {
+  "length": 10,
+  "pattern": "^\\d{10}$"
+ },
+ "when": "application",
+ "who": [
+  "anyone"
+ ],
+ "fee": "0",
+ "needed": [
+  "tax"
+ ],
+ "note": "Uganda's sheet (its government's own sheet on the OECD's automatic-exchange portal ('Information on Tax Identification Numbers'; the OECD's index page sits behind a bot check and wasn't opened, the sheet itself came straight back)), read 2026-10-30: the Uganda Revenue Authority assigns every taxpayer a TIN; anyone likely to do tax business with it must apply; ten digits, nine sequential and a check digit by a modulus-97 rule the game doesn't compute (`check` left out), assigned free of charge. Read as given on application, to anyone, at no fee. No age or time is stated.",
+ "sources": [
+  {
+   "url": "https://www.oecd.org/content/dam/oecd/en/topics/policy-issue-focus/aeoi/uganda-tin.pdf",
+   "title": "OECD AEOI portal, Uganda: Information on Tax Identification Numbers (the jurisdiction's own sheet)",
+   "read": "2026-10-30",
+   "said": "Any person who is likely to transact in any tax related business with URA, shall be required to apply for a TIN. ... The TIN is a ten-digit numeric identifier assigned free of charge ... a) The first nine digits represent a sequentially assigned number. b) The final digit serves as a check digit"
+  }
+ ]
+}

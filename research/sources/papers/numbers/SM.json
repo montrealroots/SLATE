@@ -1,0 +1,25 @@
+{
+ "country": "SM",
+ "name": "Social Security Number (SSI Number)",
+ "issuer": "the Social Security Institute (Istituto per la Sicurezza Sociale)",
+ "format": {
+  "length": 9,
+  "pattern": "^\\d{9}$"
+ },
+ "when": "registration",
+ "who": [
+  "residents"
+ ],
+ "needed": [
+  "tax"
+ ],
+ "note": "San Marino's sheet (its government's own sheet on the OECD's automatic-exchange portal ('Information on Tax Identification Numbers'; the OECD's index page sits behind a bot check and wasn't opened, the sheet itself came straight back)), read 2026-10-30: individuals are identified for tax by the Social Security Number, allocated by the Social Security Institute, issued automatically to all residents; a block of digits assigned in sequence carrying no information on the person, its format given as 999999999 (leading zeros may be omitted, which the format, nine digits, doesn't); it is shown on the identity card and the health card, and must be given in every deed addressed to the Public Administration and in notarial deeds. Read as given on registration (as a resident), to residents; needed for tax. No check rule, age, fee or time is stated.",
+ "sources": [
+  {
+   "url": "https://www.oecd.org/content/dam/oecd/en/topics/policy-issue-focus/aeoi/san-marino-tin.pdf",
+   "title": "OECD AEOI portal, San Marino: Information on Tax Identification Numbers (the jurisdiction's own sheet)",
+   "read": "2026-10-30",
+   "said": "the Social Security Number (SSI Number), which identifies all individuals; ... the Social Security Institute for the Social Security Number; ... Besides for tax purposes, the Social Security Number and the Tax Registration Number (COE) are also required to be indicated in all deeds addressed to the Public Administration ... TINs consist of a block of digits assigned in sequence, but they do not contain any information on taxpayers, such as, for example, name and surname, address, age, gender. ... Individuals 999999999 More than one digit"
+  }
+ ]
+}

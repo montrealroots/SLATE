@@ -1,0 +1,22 @@
+{
+ "country": "AF",
+ "office": "the passport authorities in Afghanistan, where passports are printed; abroad, a consulate (here the Consulate General in Bonn), which sends the application to Afghanistan",
+ "currency": "EUR",
+ "routes": [
+  {"id": "home", "where": "home", "speed": "standard", "within": null, "label": "in Afghanistan"},
+  {"id": "abroad", "where": "abroad", "speed": "standard", "within": {"n": 5, "unit": "month"}, "label": "through the consulate, printed in Afghanistan and posted: 3 to 5 months"}
+ ],
+ "passports": [
+  {"for": "5-year passport", "validYears": 5, "pay": {"home": null, "abroad": "130"}},
+  {"for": "10-year passport", "validYears": 10, "pay": {"home": null, "abroad": "230"}}
+ ],
+ "note": "The Consulate General in Bonn: 120 euros for a 5-year passport and 220 for a 10-year one, plus 10 euros' postage that every passport service includes, summed here; printed in Afghanistan and posted in about 3 to 5 months. The page doesn't say who may choose which validity. The fee in Afghanistan isn't read from an official or press source.",
+ "sources": [
+  {
+   "url": "https://afghanmissionbonn.de/new-passport.php",
+   "title": "Consulate General of Afghanistan in Bonn, پاسپورت جدید (new passport)",
+   "read": "2026-10-28",
+   "said": "پاسپورت در افغانستان چاپ شده و از طریق پست معمولاً ظرف ۳ تا ۵ ماه به آدرس متقاضی ارسال می‌گردد. ... پاسپورت ۵ ساله: €120 — پاسپورت ۱۰ ساله: €220. علاوه بر هزینه‌های فوق، مبلغ ۱۰ یورو به‌عنوان هزینه پُست نیز شامل خدمات پاسپورت می‌باشد. پردازش و ارسال: درخواست شما به افغانستان ارسال می‌شود. زمان پردازش تقریباً ۳ تا ۵ ماه است."
+  }
+ ]
+}

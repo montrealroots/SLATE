@@ -1,0 +1,58 @@
+{
+ "country": "MO",
+ "document": "Bilhete de Identidade de Residente (BIR), Macao SAR Resident Identity Card",
+ "office": "the Identification Services Bureau (DSI)",
+ "currency": "MOP",
+ "routes": [
+  {
+   "id": "normal",
+   "where": "home",
+   "speed": "standard",
+   "within": {
+    "n": 15,
+    "unit": "working day"
+   },
+   "label": "normal service: 15 working days"
+  },
+  {
+   "id": "express",
+   "where": "home",
+   "speed": "urgent",
+   "within": {
+    "n": 10,
+    "unit": "working day"
+   },
+   "label": "express service: 10 working days, MOP 150 more"
+  },
+  {
+   "id": "special",
+   "where": "home",
+   "speed": "urgent",
+   "within": {
+    "n": 3,
+    "unit": "working day"
+   },
+   "label": "special express service: within 3 working days, MOP 250 more"
+  }
+ ],
+ "cards": [
+  {
+   "for": "anyone",
+   "validYears": null,
+   "pay": {
+    "normal": "90",
+    "express": "240",
+    "special": "340"
+   }
+  }
+ ],
+ "note": "The Government Portal's page for a first BIR: MOP 90, plus 150 for the express service or 250 for the special express, summed here; the unemployed and the poor may be exempted (not modelled). The card's term isn't on the page, so it's null; the regulation that sets it is on a host this session can't reach.",
+ "sources": [
+  {
+   "url": "https://www.gov.mo/en/services/ps-1065/ps-1065a/",
+   "title": "Macao SAR Government Portal, PS-1065 Application for Macao SAR Resident Identity Card (BIR) – First-Time Application",
+   "read": "2026-10-28",
+   "said": "Fees: First-time application: MOP90.00; Express Service: An additional charge of MOP 150.00. Special Express Service: An additional charge of MOP 250.00. ... Normal Service: 15 working days. (Performance Pledge) ... Express Service: 10 working days. (Performance Pledge) ... Special Express Service: Within 3 working days. (Performance Pledge)"
+  }
+ ]
+}

@@ -1,0 +1,85 @@
+{
+ "country": "SK",
+ "document": "občiansky preukaz",
+ "office": "a document department of a district directorate of the Police Force",
+ "currency": "EUR",
+ "routes": [
+  {
+   "id": "standard",
+   "where": "home",
+   "speed": "standard",
+   "within": {
+    "n": 30,
+    "unit": "day"
+   },
+   "label": "standard: within 30 days"
+  },
+  {
+   "id": "urgent",
+   "where": "home",
+   "speed": "urgent",
+   "within": {
+    "n": 2,
+    "unit": "working day"
+   },
+   "label": "urgent: within 2 (working) days"
+  }
+ ],
+ "cards": [
+  {
+   "for": "under 6",
+   "under": 6,
+   "validYears": 2,
+   "pay": {
+    "standard": "7",
+    "urgent": "27.50"
+   }
+  },
+  {
+   "for": "6 to 14",
+   "from": 6,
+   "under": 15,
+   "validYears": 5,
+   "pay": {
+    "standard": "7",
+    "urgent": "27.50"
+   }
+  },
+  {
+   "for": "15 and over",
+   "from": 15,
+   "validYears": 10,
+   "pay": {
+    "standard": "0",
+    "urgent": "20"
+   }
+  }
+ ],
+ "note": "A citizen who has turned 15 and has permanent residence in Slovakia must hold one. The card first issued at 15, and one replacing an expired card, is free in the standard 30 days; urgently, within 2 days, the first card costs 20 euros (fees in force from 1 April 2024). A child's card before 15 is optional; the portal's fee table sets the basic fee at 7 euros and the 2-day issue at 27.50 including it, and a child's card is not among the exemptions from the basic fee, so it costs 7 euros, 27.50 urgently (the Ministry's press release gives the same 7 euros for both children's bands). Validity is the Identity Card Act's (395/2019, § 2).",
+ "sources": [
+  {
+   "url": "https://www.slovensko.sk/sk/zivotne-situacie/zivotna-situacia/_prvy-obciansky-preukaz/",
+   "title": "Slovensko.sk, Prvý občiansky preukaz",
+   "read": "2026-10-28",
+   "said": "Ak ste slovenský občan, dovŕšili ste 15 rokov veku a máte trvalý pobyt na území Slovenskej republiky, ste povinný byť držiteľom občianskeho preukazu. ... Vydanie občianskeho preukazu - štandardná lehota na vydanie občianskeho preukazu je do 30 dní , Urýchlené vydanie občianskeho preukazu ( do 2 dní ) - za poplatok 20 eur. Poplatky platné od 01.04.2024 Prvý občiansky preukaz (do 30 dní) bezplatne Urýchlené vydanie občianskeho preukazu (do 2 dní) 20 €"
+  },
+  {
+   "url": "https://www.slovensko.sk/sk/zivotne-situacie/zivotna-situacia/_vybavujem-obciansky-preukaz-s/",
+   "title": "Slovensko.sk, Vybavujem občiansky preukaz",
+   "read": "2026-10-29",
+   "said": "Vydanie OP (pri zápise nových údajovalebo zmene) 7 € ... Vydanie OP do 2 pracovných dní 27,50 €* ... * Cena zahŕňa základný poplatok 7 € Od základného poplatku 7 eur sú oslobodení občania : ktorým sa vydáva občiansky preukaz z dôvodu dovŕšenia veku 15 rokov a ktorí majú trvalý pobyt na území SR, ktorým sa vydáva občiansky preukaz z dôvodu uplynutia jeho platnosti, ... Vydanie OP do 2 pracovných dní 27,50 €*"
+  },
+  {
+   "url": "https://static.slov-lex.sk/static/SK/ZZ/2019/395/20260515.html",
+   "title": "Slov-Lex, Zákon č. 395/2019 Z. z. o občianskych preukazoch, version in force from 15 May 2026, § 2(4)",
+   "read": "2026-10-28",
+   "said": "Občiansky preukaz sa občanovi, ktorý dovŕšil vek 15 rokov, vydáva s platnosťou na 10 rokov; občanovi mladšiemu ako 15 rokov sa vydáva s platnosťou na 5 rokov a občanovi mladšiemu ako 6 rokov sa vydáva s platnosťou na 2 roky."
+  },
+  {
+   "url": "https://www.minv.sk/?tlacove-spravy&sprava=ak-dietatu-staci-na-cestovanie-tzv-detsky-obciansky-preukaz-vyuzite-to-je-to-aj-lacnejsie",
+   "title": "Ministerstvo vnútra SR, tlačová správa: Ak dieťaťu stačí na cestovanie tzv. detský občiansky preukaz, využite to, je to aj lacnejšie (6 May 2024)",
+   "read": "2026-10-29",
+   "said": "Občanovi mladšiemu ako 15 rokov sa OP vydáva s platnosťou na 5 rokov, občanovi mladšiemu ako 6 rokov možno vydať OP s platnosťou na 2 roky. V oboch prípadoch je správny poplatok 7 eur"
+  }
+ ]
+}

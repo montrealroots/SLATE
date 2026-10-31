@@ -1,0 +1,37 @@
+{
+ "country": "LS",
+ "name": "Taxpayer Identification Number (TIN)",
+ "issuer": "the Revenue Services Lesotho (RSL)",
+ "format": {
+  "length": 10,
+  "pattern": "^\\d{10}$"
+ },
+ "when": "application",
+ "who": [
+  "anyone"
+ ],
+ "needed": [
+  "tax"
+ ],
+ "note": "Revenue Services Lesotho's page 'Registration/De-registration' (read 2026-10-30): registration, on a form at an RSL Digital Service Centre or online, lets the RSL allocate a specific TIN, one TIN for income tax, customs and excise and VAT, allocated once the registration's requirements are met and to be quoted on every tax form; every resident individual with chargeable income must register, and non-resident individuals operating in Lesotho register with a work permit. So `when` is application, `who` anyone, `needed` tax. The form is read from the RSL's own e-services portal, the validation script of its TIN log-in (eservices.rsl.org.ls, read 2026-10-30): a TIN must match nine digits, a hyphen and one digit ('TIN must be in the format 123456789-0'), ten digits in all, the hyphen a separator the pattern leaves out. The same script's message calls it an '11-digit TIN', which counts the hyphen among the eleven characters or is a slip: the rule the portal enforces is ten digits, and that is what is held. Whether the last digit is a check digit, and by what rule, isn't stated. The National Identity Cards Act 2011 (s. 5) gives each person in the register a National Identity Number that 'shall comply with prescribed requirements', setting no form, so the TIN is the number modelled. No age, fee or time is stated.",
+ "sources": [
+  {
+   "url": "https://www.rsl.org.ls/registrationde-registration",
+   "title": "Revenue Services Lesotho, Registration/De-registration",
+   "read": "2026-10-30",
+   "said": "The effect of registration is, first, to allow the RSL to allocate a specific taxpayer identification number (TIN). ... That is, only one TIN is allocated for purposes of Income Tax, Customs and Excise, and VAT. The TIN is allocated only after all the requirements of registration are met, and must be quoted at all times when corresponding and communicating with the RSL or when completing tax forms. ... Every resident individual, trustee, partnership, companies and other organisations ... Certified copy of a valid work permit should also be submitted when registering."
+  },
+  {
+   "url": "https://eservices.rsl.org.ls/exitnotesaccess/assets/js/public/tin-login-page-validation.js",
+   "title": "Revenue Services Lesotho e-services, TIN log-in validation (tin-login-page-validation.js)",
+   "read": "2026-10-30",
+   "said": "return this.optional(element) || /^\\d{9}-\\d{1}$/.test(value); ... \"TIN must be in the format 123456789-0\" ... \"Enter your 11-digit TIN in the format: xxxxxxxxx-x (e.g., 123456789-0).\""
+  },
+  {
+   "url": "https://extranet.who.int/cpcd/sites/default/files/public_file_repository/LSO_Lesotho_National-Identity-Cards_Act_2011.pdf",
+   "title": "National Identity Cards Act 2011 (Lesotho), the Laws.Africa copy in the WHO repository",
+   "read": "2026-10-30",
+   "said": "An entry made in the Register about a person shall be assigned a unique number to be known as the ... person’s National Identity Number which shall comply with prescribed requirements."
+  }
+ ]
+}

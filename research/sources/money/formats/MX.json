@@ -1,0 +1,41 @@
+{
+ "country": "MX",
+ "national": {
+  "name": "CLABE",
+  "parts": [
+   {
+    "name": "Código Del Banco",
+    "length": 3,
+    "kind": "n"
+   },
+   {
+    "name": "Código De Plaza",
+    "length": 3,
+    "kind": "n"
+   },
+   {
+    "name": "Número De Cuenta",
+    "length": 11,
+    "kind": "n"
+   },
+   {
+    "name": "Dígito De Control",
+    "length": 1,
+    "kind": "n"
+   }
+  ],
+  "bank": [
+   1,
+   3
+  ]
+ },
+ "note": "BBVA México, the country's largest bank, on its own page (read 2026-10-30): the CLABE interbancaria is 18 digits, three for the bank, three for the plaza or region, eleven for the account number and one control digit; the bank's own account number (ten digits at BBVA) is used within the bank only. Banxico's own page wasn't reached (its CEP service answered with a captcha and the old CLABE page is gone), and the IMSS page that describes the CLABE answered with an Incapsula check. The control digit's algorithm isn't stated on the page read, so it isn't quoted here.",
+ "sources": [
+  {
+   "url": "https://www.bbva.mx/educacion-financiera/banca-digital/cuenta-digital-numero-de-cuenta-clabe-interbancaria.html",
+   "title": "BBVA México, Diferencias entre un número de cuenta y CLABE interbancaria",
+   "read": "2026-10-30",
+   "said": "Una CLABE interbancaria se compone de 18 dígitos ... 3 dígitos para el código del banco. 3 dígitos para el código de plaza o región. 11 dígitos del número de cuenta bancaria. 1 dígito de control para validar la estructura de los datos de la CLABE. ... el número de cuenta bancaria es un número individual de 10 dígitos que principalmente te permite hacer transferencias a otras personas dentro del mismo banco."
+  }
+ ]
+}

@@ -1,0 +1,31 @@
+{
+ "country": "FM",
+ "follows": "US",
+ "note": "Both of the banks the FDIC's register lists in the Federated States of Micronesia are FDIC-insured banks of the United States' system, which numbers accounts by an ABA routing number and an account number: the FDIC's BankFind data (its public API, read 2026-10-30) lists eight bank offices in the FSM, those of Bank of Guam (certificate 20884; branches at Chuuk, Pohnpei, Yap and Kosrae) and of the Bank of the Federated States of Micronesia (certificate 26539, Kolonia, with branches at Kosrae, Yap and Chuuk), the latter active, FDIC-insured and in the Federal Reserve's twelfth district. Bank of Guam's own pages (read 2026-10-30) give its single routing number, 121405115, and list its full-service branches in Chuuk, Yap, Pohnpei and Kosrae. Reading to check: the Bank of the FSM's own site (bankfsm.com) didn't answer from here, so its routing number wasn't read from the bank (directories that aren't sources give 121302373); the FSM's government or banking board wasn't read saying the United States' system is used. The file rests on the FDIC's register and Bank of Guam's own page; the FSM is a sovereign state in free association with the United States, and nothing here rests on that.",
+ "sources": [
+  {
+   "url": "https://api.fdic.gov/banks/locations?filters=STALP:FM&fields=NAME,OFFNAME,CITY,STNAME,CERT&limit=30",
+   "title": "Federal Deposit Insurance Corporation, BankFind Suite data (public API), bank offices in the Federated States of Micronesia",
+   "read": "2026-10-30",
+   "said": "\"total\":8 ... \"OFFNAME\":\"CHUUK BRANCH\",\"CITY\":\"Chuuk\",\"STNAME\":\"Federated States Of Micronesia\",\"CERT\":\"20884\",\"NAME\":\"Bank of Guam\" ... \"OFFNAME\":\"Bank of the Federated States of Micronesia\",\"CITY\":\"Kolonia\",\"STNAME\":\"Federated States Of Micronesia\",\"CERT\":\"26539\",\"NAME\":\"Bank of the Federated States of Micronesia\""
+  },
+  {
+   "url": "https://api.fdic.gov/banks/institutions?filters=CERT:26539&fields=NAME,CITY,STNAME,ACTIVE,INSFDIC,FED,CERT",
+   "title": "Federal Deposit Insurance Corporation, BankFind Suite data (public API), the Bank of the Federated States of Micronesia",
+   "read": "2026-10-30",
+   "said": "\"FED\":\"12\",\"CITY\":\"Kolonia\",\"ACTIVE\":1,\"INSFDIC\":1,\"STNAME\":\"Federated States Of Micronesia\",\"CERT\":26539,\"NAME\":\"Bank of the Federated States of Micronesia\""
+  },
+  {
+   "url": "https://bankofguam.com/routing-number",
+   "title": "Bank of Guam, Bank of Guam Routing Number",
+   "read": "2026-10-30",
+   "said": "Our Yap branch will be closed on Monday, November 2, 2026 and our Pohnpei, Chuuk, and Kosrae branches will be closed on Tuesday, November 3, 2026 for FSM Independence Day. ... Bank of Guam's Routing Number: 121405115"
+  },
+  {
+   "url": "https://bankofguam.com/find-a-branch",
+   "title": "Bank of Guam, Find a Branch",
+   "read": "2026-10-30",
+   "said": "Chuuk Branch Lobby (Full Service) ... Yap Branch Walk-up (Full Service) ... Pohnpei Branch Walk-up (Full Service) ... Kosrae Branch Walk-up (Full Service)"
+  }
+ ]
+}

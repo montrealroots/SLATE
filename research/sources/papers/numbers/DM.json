@@ -1,0 +1,25 @@
+{
+ "country": "DM",
+ "name": "TIN (Taxpayer Number)",
+ "issuer": "the Inland Revenue Division (the sheet names no office; its tax software, SIGTAS, generates the number)",
+ "format": {
+  "length": 7,
+  "pattern": "^\\d{7}$"
+ },
+ "when": "application",
+ "who": [
+  "anyone"
+ ],
+ "needed": [
+  "tax"
+ ],
+ "note": "Dominica's sheet (its government's own sheet on the OECD's automatic-exchange portal ('Information on Tax Identification Numbers'; the OECD's index page sits behind a bot check and wasn't opened, the sheet itself came straight back)), read 2026-10-30: the TIN is a numeric code issued to individuals and entities on application (or on third-party information that they should be registered), generated in sequence by the tax software (SIGTAS) and used for every tax type; it is at most six digits and one check digit (the check rule isn't given, so `check` is left out), and the taxpayer number is its first six. The game draws the full seven-digit form. An individual's TIN doesn't change. Read as given on application, to anyone; `needed` is tax. No age, fee or time is stated.",
+ "sources": [
+  {
+   "url": "https://www.oecd.org/content/dam/oecd/en/topics/policy-issue-focus/aeoi/dominica-tin.pdf",
+   "title": "OECD AEOI portal, Commonwealth of Dominica: Information on Tax Identification Numbers (the jurisdiction's own sheet)",
+   "read": "2026-10-30",
+   "said": "The TIN/TAXPAYER NUMBER is a numeric code which is issued to Individuals, and Entities upon application. ... The TIN is concatenated with the one digit check code. ... The TIN consists of a maximum of six (6) digits and one (1) check digit."
+  }
+ ]
+}

@@ -76,18 +76,29 @@ export function storageStore(storage: () => Storage | undefined = () => globalTh
 export const DB_NAME = 'slate-lives';
 const DB_STORE = 'lives';
 
+/** IndexedDB that wouldn't open (a private window, a browser's policy, a damaged profile), told from a request that failed. */
+class Unopened extends Error {}
+
 /** IndexedDB, as a key store: one database, one object store, a transaction a request. */
 export function indexedStore(factory: IDBFactory): KeyStore {
   let db: Promise<IDBDatabase> | undefined;
   const open = () => {
     db ??= new Promise<IDBDatabase>((resolve, reject) => {
-      const req = factory.open(DB_NAME, 1);
+      const refuse = (e: unknown) => reject(new Unopened(String(e)));
+      let req: IDBOpenDBRequest;
+      try {
+        req = factory.open(DB_NAME, 1);
+      } catch (e) {
+        // One that throws as it's asked (where the page's origin may keep nothing) won't open later either.
+        refuse(e);
+        return;
+      }
       req.onupgradeneeded = () => req.result.createObjectStore(DB_STORE);
       req.onsuccess = () => resolve(req.result);
       req.onerror = () => {
         // A database that wouldn't open is tried again next time.
         db = undefined;
-        reject(req.error);
+        refuse(req.error);
       };
     });
     return db;
@@ -109,9 +120,41 @@ export function indexedStore(factory: IDBFactory): KeyStore {
   };
 }
 
-/** IndexedDB where the browser has it, local storage where it doesn't. */
-export function deviceStore(factory: IDBFactory | undefined = globalThis.indexedDB): KeyStore {
-  return factory === undefined ? storageStore() : indexedStore(factory);
+/**
+ * IndexedDB where the browser has it and it opens; local storage where it hasn't, or where it won't open, from the first
+ * refusal on (until 2026-10-30 a browser whose IndexedDB refused to open could read and keep no life at all). A life kept
+ * in local storage while IndexedDB wouldn't open is found again once it does: a key IndexedDB lacks is read from local
+ * storage, and letting a key go lets it go from both. Where there's no local storage beside IndexedDB, there's nothing
+ * there to find.
+ */
+export function deviceStore(factory: IDBFactory | undefined = globalThis.indexedDB, storage: KeyStore = storageStore()): KeyStore {
+  // Stryker disable next-line ConditionalExpression: without it, a missing IndexedDB throws as it's asked and is refused the same way, the same answer.
+  if (factory === undefined) return storage;
+  const idb = indexedStore(factory);
+  let refused = false;
+  const either = async <T>(db: () => Promise<T>, local: () => Promise<T>): Promise<T> => {
+    if (!refused) {
+      try {
+        return await db();
+      } catch (e) {
+        if (!(e instanceof Unopened)) throw e;
+        refused = true;
+      }
+    }
+    return local();
+  };
+  return {
+    getItem: (key) => either(async () => (await idb.getItem(key)) ?? storage.getItem(key).catch(() => null), () => storage.getItem(key)),
+    setItem: (key, value) => either(() => idb.setItem(key, value), () => storage.setItem(key, value)),
+    removeItem: (key) =>
+      either(
+        async () => {
+          await idb.removeItem(key);
+          await storage.removeItem(key).catch(() => undefined);
+        },
+        () => storage.removeItem(key),
+      ),
+  };
 }
 
 const FULL = (e: unknown) => e instanceof DOMException && (e.name === 'QuotaExceededError' || e.name === 'NS_ERROR_DOM_QUOTA_REACHED');
@@ -192,11 +235,29 @@ export class DeviceStore implements Store {
     }
   }
 
-  /** Letting a life go keeps it as the copy, unless it can't be read: then a good copy is never written over. */
+  /**
+   * Letting a life go keeps it as the copy, unless it can't be read: then a good copy is never written over. The copy is
+   * written first, so a delete cut short leaves the life where it was. On a full device (where the device-full line sends
+   * the player to let a life go) the life goes anyway, and its copy is written into the room it left; if even that won't
+   * fit, the copy from before stays, and the slots say how far back it goes. Until 2026-10-30 the copy's write failed
+   * with the browser's own error on a full device, and the life stayed.
+   */
   async remove(slot: Slot): Promise<void> {
     const existing = await this.read(LIFE(slot));
-    if ((await this.readable(existing)) !== null) await this.keys.setItem(COPY(slot), existing as string);
-    await this.keys.removeItem(LIFE(slot));
+    const keep = (await this.readable(existing)) !== null;
+    let full = false;
+    try {
+      if (keep) await this.keys.setItem(COPY(slot), existing as string);
+    } catch (e) {
+      if (!FULL(e)) throw new PersistenceError('life.device-refused', true);
+      full = true;
+    }
+    try {
+      await this.keys.removeItem(LIFE(slot));
+    } catch {
+      throw new PersistenceError('life.device-refused', true);
+    }
+    if (full) await this.keys.setItem(COPY(slot), existing as string).catch(() => undefined);
   }
 
   /** The copy written back as the life (the life it replaces becoming the copy), and opened. */

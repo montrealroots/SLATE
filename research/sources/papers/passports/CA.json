@@ -1,0 +1,26 @@
+{
+ "country": "CA",
+ "office": "the Minister of Citizenship and Immigration",
+ "currency": "CAD",
+ "routes": [
+  {"id": "in-canada", "where": "home", "speed": "standard", "within": null, "label": "requested and delivered in Canada"},
+  {"id": "outside", "where": "abroad", "speed": "standard", "within": null, "label": "requested or delivered outside Canada"},
+  {"id": "pickup-1", "where": "home", "speed": "urgent", "within": {"n": 1, "unit": "working day"}, "label": "pick-up in Canada, the first working day after the request (CAD 110 more)"},
+  {"id": "pickup-9", "where": "home", "speed": "urgent", "within": {"n": 9, "unit": "working day"}, "label": "pick-up in Canada, the second to the ninth working day (CAD 50 more)"},
+  {"id": "pickup-later", "where": "home", "speed": "urgent", "within": null, "label": "pick-up in Canada, after the ninth working day (CAD 20 more)"}
+ ],
+ "passports": [
+  {"for": "adult", "from": 16, "validYears": 10, "pay": {"in-canada": "135", "outside": "235", "pickup-1": "245", "pickup-9": "185", "pickup-later": "155"}},
+  {"for": "adult", "from": 16, "validYears": 5, "pay": {"in-canada": "95", "outside": "165", "pickup-1": "205", "pickup-9": "145", "pickup-later": "115"}},
+  {"for": "child", "under": 16, "validYears": 5, "pay": {"in-canada": "57", "outside": "100", "pickup-1": "167", "pickup-9": "107", "pickup-later": "77"}}
+ ],
+ "note": "Fees for a passport requested and delivered in Canada, or requested or delivered outside it. Processing times are published on canada.ca, which closes the connection on this client, so they aren't read. The pick-up totals add the urgent service fee to the passport's fee in Canada.",
+ "sources": [
+  {
+   "url": "https://laws-lois.justice.gc.ca/eng/regulations/SOR-2012-253/FullText.html",
+   "title": "Justice Laws Website, Passport and Other Travel Document Services Fees Regulations, SOR/2012-253 (current to 2026-09-30, last amended on 2026-01-26)",
+   "read": "2026-10-28",
+   "said": "SCHEDULE ... 1 Issuance of a passport to a person at least 16 years of age ... (a) if the request is made in Canada and the passport is to be delivered in Canada (i) for a passport with a validity period of 10 years 135 (ii) for a passport with a validity period of 5 years 95 (b) if the request is made outside Canada or the passport is to be delivered outside of Canada (i) ... 10 years 235 (ii) ... 5 years 165 2 Issuance of a passport to a person less than 16 years of age ... (a) ... in Canada ... validity period of 5 years 57 (b) ... outside of Canada ... 5 years 100 ... 7 Making available for pick-up in Canada a passport ... (a) on the first working day after the day of the request for service 110 (b) after the working day after the day of the request for service but before the tenth working day after that day 50 (c) after the ninth working day after the day of the request for service 20 8 Performance of one or more of the services set out in items 1 and 2 of this schedule in the circumstance referred to in subsection 2(3) of these Regulations 335"
+  }
+ ]
+}

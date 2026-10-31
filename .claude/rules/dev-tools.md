@@ -4,11 +4,9 @@ Graphify, Superpowers, Agent Skills, Impeccable, Caveman and Ponytail are set up
 (`tools/setup/README.md` says how and what persists). They are aids to `CLAUDE.md` and the owner's documents and
 never outrank them. Where one of them says otherwise, this is what holds:
 
-- **One agent.** Any skill step that dispatches subagents, parallel agents, agent teams, workflows or reviewer panels
-  is not run; the same work is done in this session by this agent. That covers Superpowers'
-  subagent-driven-development, dispatching-parallel-agents and the reviewer in requesting-code-review, the agents of
-  Agent Skills, Impeccable and Caveman (cavecrew), and the `/graphify` skill's semantic-extraction subagents. A
-  skill's single-agent steps may be followed.
+- **Parallel subagents** (the owner, 2026-10-30, replacing the one-agent rule of 2026-10-27): skill steps that
+  dispatch subagents or parallel agents may be run, for independent work. The lead agent keeps the shared files (the
+  register, the HANDOFF, git) and verifies every subagent's result before it lands.
 - **Saving tokens never saves work.** Caveman and Ponytail shorten how the agent writes and how much code a change
   adds. They never drop a feature the mandate requires, a test, a falsifier, a matrix row, a citation, a research
   attempt, a recorded blocker, or a gate step. Ponytail's "least code" applies inside full coverage, not instead of it.

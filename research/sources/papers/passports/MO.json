@@ -1,0 +1,58 @@
+{
+ "country": "MO",
+ "office": "the Identification Services Bureau (DSI)",
+ "currency": "MOP",
+ "routes": [
+  {
+   "id": "normal",
+   "where": "home",
+   "speed": "standard",
+   "within": {
+    "n": 10,
+    "unit": "working day"
+   },
+   "label": "normal: 10 working days (performance pledge)"
+  },
+  {
+   "id": "urgent",
+   "where": "home",
+   "speed": "urgent",
+   "within": {
+    "n": 2,
+    "unit": "working day"
+   },
+   "label": "urgent: 2 working days, MOP 150 more"
+  },
+  {
+   "id": "lost",
+   "where": "home",
+   "speed": "standard",
+   "within": {
+    "n": 60,
+    "unit": "day"
+   },
+   "replacement": true,
+   "label": "replacement of a passport not presented or damaged, the first time"
+  }
+ ],
+ "passports": [
+  {
+   "for": "any",
+   "validYears": null,
+   "pay": {
+    "normal": "430",
+    "urgent": "580",
+    "lost": "580"
+   }
+  }
+ ],
+ "note": "Replacing a passport not presented, or damaged, adds MOP 150 the first time, rising to 300, 600, 1,200 and 2,400 from the fifth; the first time is written as a replacement route (MOP 580, in at most 60 days, the time the page gives for one damaged, stolen or lost). Some applicants (in poverty, unemployed, with a disability) can be exempted. Validity (by age, under the 2009 regulation) is a lead.",
+ "sources": [
+  {
+   "url": "https://www.gov.mo/en/services/ps-1066/ps-1066a/",
+   "title": "Macao SAR Government Portal (gov.mo), PS-1066 Macao SAR Passport/ Macao SAR Travel Permit – Application procedures for Macao SAR Passport",
+   "read": "2026-10-28",
+   "said": "Cost Normal application: MOP 430 Urgent application: an additional fee of MOP 150 will be charged. If the applicant cannot present the original travel document or the replacement is made for the reason of damage, the extra processing additional fees to be charged are as below: – First time: an additional fee of MOP 150.00; – Second time: an additional fee of MOP 300.00; – Third time: an additional fee of MOP 600.00; – Fourth time: an additional fee of MOP 1,200.00; – Fifth time or above: an additional fee of MOP 2,400.00. ... Approval time required Normal: 10 working days (Performance Pledge) Urgent: 2 working days (Performance Pledge) Notes: The abovementioned collection date is calculated from the day after the application and all required documents are received by DSI. ... If the applicant cannot present the original travel document or the replacement is made for the reason of damage, the extra processing additional fees to be charged are as below: – First time: an additional fee of MOP 150.00; ... In case of the former Macao SAR travel document is damaged, stolen or lost, the replacement of the new travel document may take 60 days at maximum."
+  }
+ ]
+}

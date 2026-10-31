@@ -1,0 +1,31 @@
+{
+ "country": "TT",
+ "national": {
+  "name": "Routing number and account number",
+  "parts": [
+   {
+    "name": "Routing number",
+    "length": 9,
+    "kind": "n"
+   },
+   {
+    "name": "Account number",
+    "length": 12,
+    "kind": "n"
+   }
+  ],
+  "bank": [
+   1,
+   9
+  ]
+ },
+ "note": "RBC Royal Bank (Trinidad and Tobago), in its guide to the ACH payment template (read 2026-10-30, undated): the routing number that identifies the payee's bank is nine digits, the first a zero (its list: 010100039 RBC, 010100903 Republic Bank, and others); account lengths vary from bank to bank, Republic Bank's being 12 digits. Republic Bank is the country's largest, so twelve is written. A participant's guide, not the Central Bank's or the clearing house's own rule: the Central Bank of Trinidad and Tobago's page wasn't read. The form draws all nine routing digits; the leading zero isn't pinned. No check digit is stated.",
+ "sources": [
+  {
+   "url": "https://www.rbcroyalbank.com/caribbean/tt/document/tt_guidelines_on_the_use_of_electronic_payment.pdf",
+   "title": "RBC Royal Bank (Trinidad and Tobago), Guidelines on the use of the electronic payment template for payroll and miscellaneous credits",
+   "read": "2026-10-30",
+   "said": "These routing numbers are 9 digits long with the first digit being a zero. ... Account number lengths vary from bank to bank. ... Republic Bank 12 digits"
+  }
+ ]
+}

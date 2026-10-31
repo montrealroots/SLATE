@@ -1,0 +1,27 @@
+{
+ "country": "KY",
+ "national": {
+  "name": "Account Number",
+  "parts": [
+   {
+    "name": "Account Number",
+    "length": 17,
+    "kind": "n",
+    "min": 1,
+    "drawn": [
+     13,
+     13
+    ]
+   }
+  ]
+ },
+ "note": "No rule of the Cayman Islands Monetary Authority or of Cayman ACH Limited fixing an account number's length was read (cima.ky answered with Cloudflare markers on 2026-10-30 and wasn't pursued). RBC Royal Bank, on its Caribbean digital banking page for its 'Send to Local Bank' feature (read 2026-10-31, undated), says the service goes through the Cayman Islands Automated Clearing House (CIACH), operated by Cayman ACH Limited, names the other participants, and gives 'a guide on participant bank account number format and lengths' (the beneficiary account number's maximum length): Scotiabank 17 digits or less, a 5-digit transit then the account; Proven 8 digits; Cayman National 8 digits; CIBC FirstCaribbean 12 digits; Butterfield 13 digits or less (accounts beginning with 1 or 2 take leading zeros, those beginning with 136 or 840 don't). So the number is written as 1 to 17 digits; the most is Scotiabank's seventeen, and the fewest, one, is a reading of the maxima the page gives with no fewest (as Uruguay's and Bangladesh's are held). RBC's own numbers (the sender's) aren't in the table. A new account is drawn at thirteen digits, the most Butterfield's line allows (the bank the game's Cayman account is held at; its shorter numbers padded with leading zeros), which is a reading. Not held: the transit inside Scotiabank's numbers (that bank's own) and any check digit (none is given).",
+ "sources": [
+  {
+   "url": "https://www.rbcroyalbank.com/caribbean/digital-hub/ach-feature.html",
+   "title": "RBC Royal Bank (Caribbean), Send to Local Bank (ACH) feature: Cayman Islands participants' account number format and lengths",
+   "read": "2026-10-31",
+   "said": "This service is facilitated via the Automated Clearing House (ACH) which is operated by Cayman Islands Automated Clearing House (CIACH). The CIACH is operated by Cayman ACH Limited. ... See below for a guide on participant bank account number format and lengths: Bank Name Beneficiary Account Number Maximum Length ... Scotiabank 17 digits or less ... 5 digit transit ... Proven 8 digits ... Cayman National 8 digits ... CIBC FirstCaribbean 12 digits ... Butterfield Bank 13 digits or less Note: Accounts beginning with 136 or 840 do not require leading zeros; accounts beginning with 1 or 2 require leading zeros"
+  }
+ ]
+}

@@ -1,0 +1,45 @@
+{
+ "country": "CV",
+ "document": "Cartão Nacional de Identificação (CNI)",
+ "office": "the civil registry offices and the Casa do Cidadão; abroad, the embassies and consulates",
+ "currency": "CVE",
+ "routes": [
+  {
+   "id": "normal",
+   "where": "home",
+   "speed": "standard",
+   "within": null,
+   "label": "normal issue, at a civil registry office or the Casa do Cidadão"
+  },
+  {
+   "id": "urgent",
+   "where": "home",
+   "speed": "urgent",
+   "within": {
+    "n": 7,
+    "unit": "day"
+   },
+   "label": "urgent issue: delivered within seven days"
+  }
+ ],
+ "cards": [
+  {
+   "for": "from 4",
+   "from": 4,
+   "validYears": null,
+   "pay": {
+    "normal": "1395",
+    "urgent": "1795"
+   }
+  }
+ ],
+ "note": "Decree-Law 68/2014 (Boletim Oficial, 22 December 2014): the CNI, created by Decree-Law 19/2014 and compulsory for every Cape Verdean from four, costs 1,395 escudos to issue, 1,795 with the urgent service, delivered within seven days of the application; delivery by post 100 escudos more within the country (not modelled); people over 60 without income are exempt (not modelled). Its term is in Decree-Law 19/2014, not read, so it's null; the normal issue's time isn't set.",
+ "sources": [
+  {
+   "url": "https://boe.incv.cv/Bulletins/Download/1948",
+   "title": "Boletim Oficial de Cabo Verde, I Série, n.º 80 (22 December 2014), Decreto-Lei n.º 68/2014",
+   "read": "2026-10-28",
+   "said": "a partir de quatro anos de idade ... No caso referido no número precedente, a entrega ou remessa é feita no prazo de sete dias após a apresentação do pedido ... Taxa normal de emissão Taxa com serviço urgente CNI 1.395 1.795"
+  }
+ ]
+}

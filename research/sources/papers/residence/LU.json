@@ -1,0 +1,97 @@
+{
+ "country": "LU",
+ "routes": [
+  {
+   "id": "salarie",
+   "name": "Titre de séjour pour travailleur salarié",
+   "for": "work",
+   "apply": "abroad",
+   "fee": "80",
+   "term": {
+    "n": 2,
+    "unit": "year"
+   },
+   "work": "sponsor",
+   "counts": true,
+   "permanentAfter": 5
+  },
+  {
+   "id": "independant",
+   "name": "Titre de séjour pour travailleur indépendant",
+   "for": "self-employed",
+   "apply": "abroad",
+   "fee": "80",
+   "work": "any",
+   "counts": true,
+   "permanentAfter": 5
+  },
+  {
+   "id": "libre-circulation",
+   "name": "Droit de séjour du citoyen de l’Union",
+   "for": "free movement",
+   "apply": "in country",
+   "work": "any",
+   "counts": true,
+   "groups": [
+    "EU/EEA",
+    "CH"
+   ]
+  },
+  {
+   "id": "longue-duree",
+   "name": "Résident de longue durée - UE",
+   "for": "permanent",
+   "apply": "in country",
+   "within": {
+    "n": 6,
+    "unit": "month"
+   },
+   "term": {
+    "n": 5,
+    "unit": "year"
+   },
+   "renewable": true,
+   "work": "any",
+   "counts": true
+  }
+ ],
+ "note": "Luxembourg, read on Guichet.lu (the government's own portal; the pages last changed on 2026-10-01) on 2026-10-30. A third-country national staying over 90 days to work as an employee or as a self-employed person follows two steps: an application for a residence authorisation made before entering Luxembourg (abroad), then, on entry with a 6-month D visa, the residence permit itself. The first permit for an employee lasts at most 2 years, and its holder may not change employer for the first 6 months (read as work for the sponsor; after that a change is notified to the Directorate General of Immigration, which has 30 days to object); the self-employed permit asks a business plan and the means to carry it out (its term isn't on the page). Every first residence permit costs the 80-euro issue tax. Citizens of the EU, the EEA (Norway, Iceland, Liechtenstein) and Switzerland may live and work in Luxembourg, registering with their commune within 3 months. After 5 years' legal and uninterrupted residence a third-country national may ask for long-term resident status (EU), which the Ministry of Home Affairs answers within 6 months at most; the permit is valid 5 years and renewable while its conditions hold. Naturalisation asks 5 years' legal residence, the last year uninterrupted, so the years on each route count (their fees for renewal, the long-term permit's fee and the self-employed permit's term aren't on the pages read).",
+ "sources": [
+  {
+   "url": "https://guichet.public.lu/fr/citoyens/immigration/vivre/non-luxembourg/immigration/pays-tiers/salarie/salarie-pays-tiers.html",
+   "title": "Guichet.lu, Autorisation de séjour pour travailleur salarié",
+   "read": "2026-10-30",
+   "said": "vous souhaitez vous installer au Luxembourg pour une durée supérieure à 90 jours pour y exercer une activité salariée, vous devez suivre une procédure en 2 étapes. ... En cas d’accord, vous obtenez un visa D pour une durée de 6 mois. ... Le 1 er titre de séjour pour travailleur salarié est délivré pour une durée maximale de 2 ans avec certaines règles à respecter : durant les 6 premiers mois , vous n’êtes pas autorisé à changer d’employeur."
+  },
+  {
+   "url": "https://guichet.public.lu/fr/citoyens/immigration/vivre/non-luxembourg/immigration/pays-tiers/travailleur-independant/independant.html",
+   "title": "Guichet.lu, Autorisation de séjour pour travailleur indépendant",
+   "read": "2026-10-30",
+   "said": "vous souhaitez vous installer au Luxembourg pour une durée supérieure à 90 jours pour y exercer une activité indépendante, vous devez suivre une procédure en 2 étapes. ... preuve que vous disposez des ressources économiques nécessaires pour la réalisation du projet d’entreprise"
+  },
+  {
+   "url": "https://guichet.public.lu/fr/citoyens/immigration/vivre/luxembourg/autres/premier-titre-sejour.html",
+   "title": "Guichet.lu, Premier titre de séjour",
+   "read": "2026-10-30",
+   "said": "payer la taxe de délivrance du titre de séjour de 80 euros"
+  },
+  {
+   "url": "https://guichet.public.lu/fr/citoyens/immigration/vivre/non-luxembourg/immigration/union-euro/travail/sejour-travail.html",
+   "title": "Guichet.lu, Séjour d’un citoyen de l’UE pour travailler",
+   "read": "2026-10-30",
+   "said": "Tout citoyen de l’Union européenne (UE) bénéficie de la libre circulation au sein de l’UE. ... Les ressortissants d’un des autres États parties à l’ Accord sur l’Espace économique européen (Norvège, Islande, Liechtenstein) et de la Confédération suisse sont assimilés aux citoyen ... Vous devez, dans un délai de 3 mois à partir de votre arrivée au Luxembourg, remplir une déclaration d’enregis"
+  },
+  {
+   "url": "https://guichet.public.lu/fr/citoyens/immigration/vivre/luxembourg/apres-5-ans/ressortissant-tiers/statut-resident-longue-duree-ressortissant-pays-tiers.html",
+   "title": "Guichet.lu, Statut de résident de longue durée d’un ressortissant de pays tiers",
+   "read": "2026-10-30",
+   "said": "résider au Luxembourg de manière légale (donc détenir un titre de séjour) et ininterrompue depuis au moins 5 ans ... Le délai de réponse légal du ministère des Affaires intérieures est de 6 mois maximum . ... Le \"permis de séjour de résident longue durée - UE\" est valable pour une durée de 5 ans. ... Tant que les conditions d’obtention restent remplies, le titre est renouvelable sur demande."
+  },
+  {
+   "url": "https://guichet.public.lu/fr/citoyens/immigration/vivre/luxembourg/apres-5-ans/ressortissant-tiers/naturalisation.html",
+   "title": "Guichet.lu, Naturalisation",
+   "read": "2026-10-30",
+   "said": "de résider légalement au Luxembourg depuis au moins 5 ans . La dernière année de résidence précédant immédiatement la demande de naturalisation doit être ininterrompue"
+  }
+ ]
+}

@@ -56,7 +56,10 @@ export interface Moved<S extends Clocked> {
 /** Real milliseconds have passed: while playing, the life moves on by as many whole seconds, and counts them played. */
 export function elapse<S extends Clocked>(life: Life<S>, realMs: number): Moved<S> {
   if (!Number.isFinite(realMs) || realMs < 0) throw new RangeError(`real time passes forward (${realMs} ms)`);
+  // @slate:consumer clock.play
+  // @slate:consumer clock.pause
   if (!life.slices.clock.playing) return { life, stoppedAt: null };
+  // @slate:consumer clock.counted
   const carry = life.slices.clock.carryMs + realMs;
   const seconds = Math.floor(carry / 1000);
   const moved = pass(life, life.frame.now + seconds);

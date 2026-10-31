@@ -1,0 +1,25 @@
+{
+ "country": "AM",
+ "name": "Taxpayer Identification Number",
+ "issuer": "the State Register",
+ "format": {
+  "length": 8,
+  "pattern": "^\\d{8}$"
+ },
+ "when": "registration",
+ "who": [
+  "residents"
+ ],
+ "needed": [
+  "tax"
+ ],
+ "note": "Armenia's sheet (its government's own sheet on the OECD's automatic-exchange portal ('Information on Tax Identification Numbers'; the OECD's index page sits behind a bot check and wasn't opened, the sheet itself came straight back)), read 2026-10-30: (the State Revenue Committee's sheet) the TIN is issued to entities and individuals by the State Register, where all business subjects must be registered, is unique and never changes; individuals get one automatically; eight digits, seven serial and a check digit computed from them (rule not given, `check` left out). Read as given on registration, to residents. No age, fee or time is stated.",
+ "sources": [
+  {
+   "url": "https://www.oecd.org/content/dam/oecd/en/topics/policy-issue-focus/aeoi/armenia-tin.pdf",
+   "title": "OECD AEOI portal, Armenia: Information on Tax Identification Numbers (the jurisdiction's own sheet)",
+   "read": "2026-10-30",
+   "said": "Taxpayer Identification Number in Armenia is issued both to Entities and Individuals by State Register, where all business subjects must be registered. ... Individuals Yes Entities Yes ... TIN consists of 8 digits; no other symbols could be used. First seven digits are next serial number, 8th digit is check digit"
+  }
+ ]
+}

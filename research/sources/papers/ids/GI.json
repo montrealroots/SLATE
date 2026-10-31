@@ -1,0 +1,70 @@
+{
+ "country": "GI",
+ "document": "Gibraltar identity card",
+ "office": "the Civil Status and Registration Office",
+ "currency": "GBP",
+ "routes": [
+  {
+   "id": "standard",
+   "where": "home",
+   "speed": "standard",
+   "within": null,
+   "label": "at the Civil Status and Registration Office"
+  },
+  {
+   "id": "emergency",
+   "where": "home",
+   "speed": "urgent",
+   "within": {
+    "n": 24,
+    "unit": "hour"
+   },
+   "label": "emergency application: within 24 hours, weekends and public holidays excepted"
+  }
+ ],
+ "cards": [
+  {
+   "for": "under 15",
+   "under": 15,
+   "validYears": null,
+   "pay": {
+    "standard": "37",
+    "emergency": "105.50"
+   }
+  },
+  {
+   "for": "15 to 64",
+   "from": 15,
+   "under": 65,
+   "validYears": 10,
+   "pay": {
+    "standard": "37",
+    "emergency": "105.50"
+   }
+  },
+  {
+   "for": "65 and over",
+   "from": 65,
+   "validYears": 10,
+   "pay": {
+    "standard": "0",
+    "emergency": null
+   }
+  }
+ ],
+ "note": "The 2026 table of fees: a first card costs 37 pounds (a renewal or change of circumstances 16, not modelled), an emergency 24-hour card 105.50, and a card for someone 65 or over is free (whether the emergency charge applies then isn't stated, so it's null). The Electronic Identity Card Regulations 2015 make a card valid ten years; one issued under 15 expires on the date the card shows, which the game doesn't know. Tried again 2026-10-30: the Minister's notice under the Regulations (LN.2026/248, from 1 August 2026) lists the same lines (first card 37 pounds, persons aged 65 or above 0, emergency 105.50) without saying which applies to an emergency card for someone 65 or over, so that fee stays null.",
+ "sources": [
+  {
+   "url": "https://www.gibraltar.gov.gi/uploads/Department%20of%20Immigration%20%26%20Home%20Affairs/Table_of_Fees_2026.pdf",
+   "title": "HM Government of Gibraltar, Department of Immigration and Home Affairs, Table of Fees 2026",
+   "read": "2026-10-28",
+   "said": "ELECTRONIC IDENTITY CARD FEES 2026 PURPOSE £ 1. Application for first time Identity card 37.00 2. Application for renewal or change of circumstances Identity card 16.00 ... 6. Applications for Identity cards by persons aged 65 years or above Free 5. Emergency application for 24 hour Identity Card (excluding weekends and 105.50"
+  },
+  {
+   "url": "https://www.gibraltarlaws.gov.gi/legislations/electronic-identity-card-regulations-2015-3897/download",
+   "title": "Gibraltar Laws, Electronic Identity Card Regulations 2015 (LN. 2015/100), reg. 10",
+   "read": "2026-10-28",
+   "said": "(a) an identity card will be valid from the date of issue for a period of 10 years; and ... (3) Pursuant to subregulation (1) if a person is under the age of 15 years on the day on which"
+  }
+ ]
+}

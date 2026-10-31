@@ -1,0 +1,55 @@
+{
+ "country": "PE",
+ "document": "Documento Nacional de Identidad electrónico (DNIe 3.0)",
+ "office": "the Registro Nacional de Identificación y Estado Civil (RENIEC)",
+ "currency": "PEN",
+ "routes": [
+  {
+   "id": "office",
+   "where": "home",
+   "speed": "standard",
+   "within": {
+    "n": 10,
+    "unit": "working day"
+   },
+   "label": "in person at a RENIEC centre: about 10 working days"
+  },
+  {
+   "id": "web",
+   "where": "home",
+   "speed": "standard",
+   "within": null,
+   "label": "online renewal, with a photo taken in the DNIBioFacial app"
+  }
+ ],
+ "cards": [
+  {
+   "for": "17 to 59",
+   "from": 17,
+   "under": 60,
+   "validYears": 10,
+   "pay": {
+    "office": "41",
+    "web": "41"
+   }
+  },
+  {
+   "for": "60 and over",
+   "from": 60,
+   "validYears": "permanent",
+   "pay": {
+    "office": "41",
+    "web": "41"
+   }
+  }
+ ],
+ "note": "RENIEC's page for renewing an adult DNI on gob.pe: from 17 the adult DNIe 3.0, valid 10 years from issue, S/ 41 for a holder of an electronic DNI (S/ 30 to move from the older blue or minor's yellow DNI, until 31 December 2026, not modelled); over 60 the DNI is marked 'No caduca'; free for people with a permanent disability (not modelled). At a centre the card is ready in about 10 working days; S/ 5 more to collect it elsewhere. A child's DNI isn't modelled here.",
+ "sources": [
+  {
+   "url": "https://www.gob.pe/250-renovar-dni-para-mayores-de-17-anos",
+   "title": "Plataforma del Estado Peruano (gob.pe), RENIEC, Renovar DNI para mayores de 17 Años",
+   "read": "2026-10-28",
+   "said": "Después de la renovación te emitiremos el DNIe 3.0 con una vigencia de 10 años más desde la fecha de emisión. ... A las personas mayores de 60 años se les entrega un DNI con la indicación “No caduca” . ... Si ya cuentas con DNIe de mayor, paga S/ 41.00 al código de tributo 00525 . ... también te indicará la fecha aproximada de entrega (10 días hábiles aproximadamente)."
+  }
+ ]
+}

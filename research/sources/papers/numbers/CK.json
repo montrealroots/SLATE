@@ -1,0 +1,25 @@
+{
+ "country": "CK",
+ "name": "RMD Number",
+ "issuer": "the Revenue Management Division",
+ "format": {
+  "length": 5,
+  "pattern": "^\\d{5}$"
+ },
+ "when": "application",
+ "who": [
+  "anyone"
+ ],
+ "needed": [
+  "tax"
+ ],
+ "note": "Cook Islands's sheet (its government's own sheet on the OECD's automatic-exchange portal ('Information on Tax Identification Numbers'; the OECD's index page sits behind a bot check and wasn't opened, the sheet itself came straight back)), read 2026-10-30: individuals aren't issued a TIN automatically; it is the RMD Number from the Revenue Management Division, held only once applied for; numeric, 5 digits. Read as given on application, to anyone. No check rule, age, fee or time is stated.",
+ "sources": [
+  {
+   "url": "https://www.oecd.org/content/dam/oecd/en/topics/policy-issue-focus/aeoi/cook-islands-tin.pdf",
+   "title": "OECD AEOI portal, Cook Islands: Information on Tax Identification Numbers (the jurisdiction's own sheet)",
+   "read": "2026-10-30",
+   "said": "The individual has not applied to Revenue Management Division for a RMD Number ... Numeric and must be 5 digits, e.g. NNNNN"
+  }
+ ]
+}

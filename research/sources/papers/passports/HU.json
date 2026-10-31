@@ -1,0 +1,30 @@
+{
+ "country": "HU",
+ "office": "the passport authorities",
+ "currency": "HUF",
+ "routes": [
+  {"id": "passport", "where": "home", "speed": "standard", "within": null, "label": "collected"},
+  {"id": "post", "where": "home", "speed": "standard", "within": null, "label": "with domestic delivery by registered post"}
+ ],
+ "passports": [
+  {"for": "adult", "from": 18, "validYears": 10, "pay": {"passport": "17000", "post": "19000"}},
+  {"for": "minor", "from": 12, "under": 18, "validYears": 5, "pay": {"passport": "12500", "post": "14500"}},
+  {"for": "child", "from": 6, "under": 12, "validYears": 5, "pay": {"passport": "8500", "post": "10500"}},
+  {"for": "infant", "under": 6, "validYears": 3, "pay": {"passport": "8500", "post": "10500"}}
+ ],
+ "note": "Validity by age at application (the passport act, § 8), counted from a birthday. A child of a household raising three or more minors pays 3,000 (under 12) or 8,500 (12 to 18). Fees from the decree in force since 1 February 2025.",
+ "sources": [
+  {
+   "url": "https://njt.jog.gov.hu/jogszabaly/2024-19-20-7G",
+   "title": "Nemzeti Jogszabálytár, 19/2024. (XII. 31.) MK rendelet, 1. melléklet: Egyes okmányokhoz kapcsolódó igazgatási szolgáltatási díjak",
+   "read": "2026-10-28",
+   "said": "Ez a rendelet ... 2025. február 1-jén lép hatályba ... 3 a magánútlevél, a második magánútlevél 17 000 Ft 4 a magánútlevél, a második magánútlevél és belföldön, postai úton könyvelt küldeményként történő kézbesítése 19 000 Ft 5 a kérelem benyújtásának időpontjában 12. életévét be nem töltött személy magánútlevele, második magánútlevele 8 500 Ft 6 ... és belföldön, postai úton könyvelt küldeményként történő kézbesítése 10 500 Ft 7 a kérelem benyújtásának időpontjában három vagy több kiskorú gyermeket háztartásában nevelő törvényes képviselő esetén a 12. életévét be nem töltött kiskorú gyermek magánútlevele ... 3 000 Ft ... 9 a 12–18 éves életkor közötti személy magánútlevele, második magánútlevele 12 500 Ft 10 ... és belföldön, postai úton könyvelt küldeményként történő kézbesítése 14 500 Ft 11 ... három vagy több kiskorú gyermeket ... a 12. életévét betöltött kiskorú gyermek magánútlevele ... 8 500 Ft"
+  },
+  {
+   "url": "https://njt.jog.gov.hu/jogszabaly/1998-12-00-00",
+   "title": "Nemzeti Jogszabálytár, 1998. évi XII. törvény a külföldre utazásról (the version dated 2026.10.01.), 8. §",
+   "read": "2026-10-28",
+   "said": "8. § (1) A magánútlevél érvényességének időtartama ... az állampolgárnak az útlevél iránti kérelem benyújtásakor betöltött életkorától függően a) 6 éves életkor betöltéséig 3 év, b) 6–18 éves életkor közöttiek esetén 5 év, c) 18 éven felüliek esetén 10 év. (2) A magánútlevél kiállításáért, pótlásáért igazgatási szolgáltatási díjat kell fizetni"
+  }
+ ]
+}

@@ -1,0 +1,50 @@
+{
+ "country": "AO",
+ "national": {
+  "name": "Número Bancário Angolano",
+  "parts": [
+   {
+    "name": "Instituição Financeira",
+    "length": 4,
+    "kind": "n"
+   },
+   {
+    "name": "Finalidade Da Instituição",
+    "length": 4,
+    "kind": "n"
+   },
+   {
+    "name": "Número Da Conta",
+    "length": 11,
+    "kind": "n"
+   },
+   {
+    "name": "Algarismos De Controlo",
+    "length": 2,
+    "kind": "n"
+   }
+  ],
+  "bank": [
+   1,
+   4
+  ],
+  "checks": [
+   {
+    "over": [
+     1,
+     19
+    ],
+    "mod97": true
+   }
+  ]
+ },
+ "note": "The Banco Nacional de Angola's Aviso n.º 06/2015 (Diário da República, I série, n.º 53, 20 April 2015; in force five days after publication; it revoked Aviso 03/04), read 2026-10-30 in the copy Banco de Fomento Angola publishes: the NBA is 21 digits, four for the financial institution, four for a purpose the institution sets (zeros when unused), eleven for the account and two control digits. The check, as the Aviso states it: '2 (dois) algarismos de controlo dos números precedentes, calculados de acordo com o algoritmo Módulo 97-10, definido na Norma ISO 7064.' The IBAN is AO, two ISO 13616 check digits and the NBA, 25 characters; Angola isn't in SWIFT's IBAN Registry copy the research holds, so the national form is given, and the Aviso's examples (1234 1234 12345678901 12, AO12 ...) are layouts, not valid numbers. bna.ao's article pages didn't give the text.",
+ "sources": [
+  {
+   "url": "https://bfa.ao/media/1610/aviso-nº-06_2015-20-de-abril.pdf",
+   "title": "Banco Nacional de Angola, Aviso n.º 06/2015, Sistema de Pagamentos de Angola: Número Bancário Angolano (NBA) e IBAN (Diário da República, I série, n.º 53, 20 April 2015), the copy published by Banco de Fomento Angola",
+   "read": "2026-10-30",
+   "said": "O Número Bancário Angolano consiste na sequência de 21 (vinte e um) ... a) 4 (quatro) algarismos para a identificação da instituição financeira onde a ... b) 4 (quatro) algarismos para finalidade definida pela instituição financeira, ... c) 11 (onze) algarismos para a indicação do número da conta de depósito; ... d) 2 (dois) algarismos de controlo dos números precedentes, calculados de ... acordo com o algoritmo Módulo 97-10, definido na Norma ISO 7064. ... é uma sequência de 25 (vinte e cinco) caracteres estruturados de acordo"
+  }
+ ]
+}

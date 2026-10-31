@@ -1,0 +1,26 @@
+{
+ "country": "RO",
+ "name": "Personal Code (CNP)",
+ "issuer": "the Ministry of Internal Affairs",
+ "format": {
+  "length": 13,
+  "pattern": "^[1-8]\\d{12}$"
+ },
+ "when": "birth",
+ "who": [
+  "citizens",
+  "residents"
+ ],
+ "needed": [
+  "tax"
+ ],
+ "note": "Romania's sheet (its government's own sheet on the OECD's automatic-exchange portal ('Information on Tax Identification Numbers'; the OECD's index page sits behind a bot check and wasn't opened, the sheet itself came straight back)), read 2026-10-30: the Personal Code (CNP), issued by the Ministry of Internal Affairs and used by the tax administration as the TIN, is assigned to natural persons born in Romania and to foreign residents registered there; 13 digits, the first (1 to 8) giving sex and century or foreign residence, then the birth date and a county code. Individuals get one automatically. Read as given at birth, to citizens and residents. No check rule, fee or time is stated.",
+ "sources": [
+  {
+   "url": "https://www.oecd.org/content/dam/oecd/en/topics/policy-issue-focus/aeoi/romania-tin.pdf",
+   "title": "OECD AEOI portal, Romania: Information on Tax Identification Numbers (the jurisdiction's own sheet)",
+   "read": "2026-10-30",
+   "said": "The Personal Code (CNP) is issued by the Ministry of Internal Affairs and it is used also by the tax administration as a TIN; ... It is assigned to natural persons born in Romania and to foreign residents registered in Romania. ... 9999999999999 13-digit code Personal Code (CNP)"
+  }
+ ]
+}

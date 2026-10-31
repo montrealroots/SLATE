@@ -1,0 +1,6222 @@
+{
+ "AD": {
+  "none": true
+ },
+ "AE": {
+  "document": "Emirates ID (national identity card)",
+  "currency": "AED",
+  "routes": [
+   {
+    "id": "standard",
+    "where": "home",
+    "speed": "standard",
+    "within": {
+     "n": 5,
+     "unit": "day"
+    }
+   },
+   {
+    "id": "urgent",
+    "where": "home",
+    "speed": "urgent",
+    "within": {
+     "n": 24,
+     "unit": "hour"
+    }
+   }
+  ],
+  "bands": [
+   {
+    "validYears": 5,
+    "pay": {
+     "standard": 10000,
+     "urgent": 25000
+    },
+    "under": 21
+   },
+   {
+    "validYears": 10,
+    "pay": {
+     "standard": 20000,
+     "urgent": 35000
+    },
+    "from": 21
+   }
+  ]
+ },
+ "AF": {
+  "document": "E-tazkira (electronic national ID card)",
+  "currency": "AFN",
+  "routes": [
+   {
+    "id": "accra",
+    "where": "home",
+    "speed": "standard",
+    "within": null
+   }
+  ],
+  "bands": [
+   {
+    "validYears": null,
+    "pay": {
+     "accra": 10000
+    },
+    "permanent": true
+   }
+  ]
+ },
+ "AG": {
+  "document": "Electoral Identification Card",
+  "currency": "XCD",
+  "routes": [
+   {
+    "id": "registration-unit",
+    "where": "home",
+    "speed": "standard",
+    "within": {
+     "n": 3,
+     "unit": "week"
+    }
+   }
+  ],
+  "bands": [
+   {
+    "validYears": 10,
+    "pay": {
+     "registration-unit": 0
+    },
+    "from": 18
+   }
+  ]
+ },
+ "AL": {
+  "document": "Letërnjoftim Elektronik (Kartë Identiteti)",
+  "currency": "ALL",
+  "routes": [
+   {
+    "id": "standard",
+    "where": "home",
+    "speed": "standard",
+    "within": {
+     "n": 14,
+     "unit": "day"
+    }
+   },
+   {
+    "id": "fast",
+    "where": "home",
+    "speed": "urgent",
+    "within": {
+     "n": 3,
+     "unit": "day"
+    }
+   }
+  ],
+  "bands": [
+   {
+    "validYears": 10,
+    "pay": {
+     "standard": 150000,
+     "fast": 300000
+    },
+    "from": 16,
+    "under": 76
+   },
+   {
+    "validYears": null,
+    "pay": {
+     "standard": 150000,
+     "fast": 300000
+    },
+    "from": 76,
+    "permanent": true
+   }
+  ]
+ },
+ "AM": {
+  "document": "identification card",
+  "currency": "AMD",
+  "routes": [
+   {
+    "id": "standard",
+    "where": "home",
+    "speed": "standard",
+    "within": {
+     "n": 15,
+     "unit": "working day"
+    }
+   },
+   {
+    "id": "five-days",
+    "where": "home",
+    "speed": "urgent",
+    "within": {
+     "n": 5,
+     "unit": "working day"
+    }
+   },
+   {
+    "id": "three-days",
+    "where": "home",
+    "speed": "urgent",
+    "within": {
+     "n": 3,
+     "unit": "working day"
+    }
+   },
+   {
+    "id": "one-day",
+    "where": "home",
+    "speed": "urgent",
+    "within": {
+     "n": 1,
+     "unit": "working day"
+    }
+   }
+  ],
+  "bands": [
+   {
+    "validYears": 10,
+    "pay": {
+     "standard": 300000,
+     "five-days": 800000,
+     "three-days": 1300000,
+     "one-day": 2300000
+    },
+    "from": 16
+   }
+  ]
+ },
+ "AO": {
+  "document": "Bilhete de Identidade",
+  "currency": "AOA",
+  "routes": [
+   {
+    "id": "posto",
+    "where": "home",
+    "speed": "standard",
+    "within": null
+   }
+  ],
+  "bands": [
+   {
+    "validYears": null,
+    "pay": {
+     "posto": 0
+    }
+   }
+  ]
+ },
+ "AR": {
+  "document": "Documento Nacional de Identidad (DNI)",
+  "currency": "ARS",
+  "routes": [
+   {
+    "id": "regular",
+    "where": "home",
+    "speed": "standard",
+    "within": null
+   },
+   {
+    "id": "express",
+    "where": "home",
+    "speed": "urgent",
+    "within": null
+   },
+   {
+    "id": "day",
+    "where": "home",
+    "speed": "urgent",
+    "within": {
+     "n": 24,
+     "unit": "hour"
+    }
+   },
+   {
+    "id": "instant",
+    "where": "home",
+    "speed": "urgent",
+    "within": null
+   }
+  ],
+  "bands": [
+   {
+    "validYears": null,
+    "pay": {
+     "regular": 1000000,
+     "express": 2600000,
+     "day": 4100000,
+     "instant": 5700000
+    }
+   }
+  ]
+ },
+ "AS": {
+  "issuedBy": "US"
+ },
+ "AT": {
+  "document": "Personalausweis",
+  "currency": "EUR",
+  "routes": [
+   {
+    "id": "home",
+    "where": "home",
+    "speed": "standard",
+    "within": null
+   },
+   {
+    "id": "abroad",
+    "where": "abroad",
+    "speed": "standard",
+    "within": null
+   },
+   {
+    "id": "honorary",
+    "where": "abroad",
+    "speed": "standard",
+    "within": null
+   }
+  ],
+  "bands": [
+   {
+    "validYears": 2,
+    "pay": {
+     "home": 0,
+     "abroad": 0,
+     "honorary": 3000
+    },
+    "under": 2
+   },
+   {
+    "validYears": 5,
+    "pay": {
+     "home": 3900,
+     "abroad": 3900,
+     "honorary": 6900
+    },
+    "from": 2,
+    "under": 12
+   },
+   {
+    "validYears": 10,
+    "pay": {
+     "home": 3900,
+     "abroad": 3900,
+     "honorary": 6900
+    },
+    "from": 12,
+    "under": 16
+   },
+   {
+    "validYears": 10,
+    "pay": {
+     "home": 9100,
+     "abroad": 9100,
+     "honorary": 12100
+    },
+    "from": 16
+   }
+  ]
+ },
+ "AU": {
+  "none": true
+ },
+ "AW": {
+  "document": "Nederlandse identiteitskaart",
+  "currency": "USD",
+  "routes": [
+   {
+    "id": "standard",
+    "where": "home",
+    "speed": "standard",
+    "within": {
+     "n": 2,
+     "unit": "week"
+    }
+   }
+  ],
+  "bands": [
+   {
+    "validYears": 10,
+    "pay": {
+     "standard": 12650
+    },
+    "from": 18
+   },
+   {
+    "validYears": 5,
+    "pay": {
+     "standard": 8375
+    },
+    "under": 18
+   }
+  ]
+ },
+ "AX": {
+  "document": "identitetskort (Finland's henkilökortti)",
+  "currency": "EUR",
+  "routes": [
+   {
+    "id": "in-person",
+    "where": "home",
+    "speed": "standard",
+    "within": null
+   },
+   {
+    "id": "online",
+    "where": "home",
+    "speed": "standard",
+    "within": null
+   },
+   {
+    "id": "pika-in-person",
+    "where": "home",
+    "speed": "urgent",
+    "within": null
+   },
+   {
+    "id": "pika-online",
+    "where": "home",
+    "speed": "urgent",
+    "within": null
+   },
+   {
+    "id": "express-in-person",
+    "where": "home",
+    "speed": "urgent",
+    "within": null
+   },
+   {
+    "id": "express-online",
+    "where": "home",
+    "speed": "urgent",
+    "within": null
+   }
+  ],
+  "bands": [
+   {
+    "validYears": 5,
+    "pay": {
+     "in-person": 4500,
+     "online": 4100,
+     "pika-in-person": 6300,
+     "pika-online": 5900,
+     "express-in-person": 8200,
+     "express-online": 7800
+    },
+    "under": 18
+   },
+   {
+    "validYears": 5,
+    "pay": {
+     "in-person": 6500,
+     "online": 6100,
+     "pika-in-person": 8300,
+     "pika-online": 7900,
+     "express-in-person": 10200,
+     "express-online": 9800
+    },
+    "from": 18
+   }
+  ]
+ },
+ "AZ": {
+  "document": "şəxsiyyət vəsiqəsi",
+  "currency": "AZN",
+  "routes": [
+   {
+    "id": "asan",
+    "where": "home",
+    "speed": "standard",
+    "within": {
+     "n": 10,
+     "unit": "day"
+    }
+   }
+  ],
+  "bands": [
+   {
+    "validYears": null,
+    "pay": {
+     "asan": 500
+    },
+    "under": 5
+   },
+   {
+    "validYears": null,
+    "pay": {
+     "asan": 500
+    },
+    "from": 5,
+    "under": 15
+   },
+   {
+    "validYears": null,
+    "pay": {
+     "asan": 500
+    },
+    "from": 15
+   }
+  ]
+ },
+ "BA": {
+  "document": "lična karta",
+  "currency": "BAM",
+  "routes": [
+   {
+    "id": "mup",
+    "where": "home",
+    "speed": "standard",
+    "within": null
+   }
+  ],
+  "bands": [
+   {
+    "validYears": 2,
+    "pay": {
+     "mup": null
+    },
+    "from": 15,
+    "under": 18
+   },
+   {
+    "validYears": 10,
+    "pay": {
+     "mup": null
+    },
+    "from": 18,
+    "under": 61
+   },
+   {
+    "validYears": null,
+    "pay": {
+     "mup": null
+    },
+    "from": 61,
+    "permanent": true
+   }
+  ]
+ },
+ "BB": {
+  "document": "Trident ID (national identification card)",
+  "currency": "BBD",
+  "routes": [
+   {
+    "id": "office",
+    "where": "home",
+    "speed": "standard",
+    "within": null
+   }
+  ],
+  "bands": [
+   {
+    "validYears": null,
+    "pay": {
+     "office": 0
+    }
+   }
+  ]
+ },
+ "BD": {
+  "document": "National Identity Card (জাতীয় পরিচয়পত্র)",
+  "currency": "BDT",
+  "routes": [
+   {
+    "id": "office",
+    "where": "home",
+    "speed": "standard",
+    "within": null
+   }
+  ],
+  "bands": [
+   {
+    "validYears": 15,
+    "pay": {
+     "office": 0
+    },
+    "from": 18
+   }
+  ]
+ },
+ "BE": {
+  "document": "carte d'identité électronique (eID)",
+  "currency": "EUR",
+  "routes": [
+   {
+    "id": "commune",
+    "where": "home",
+    "speed": "standard",
+    "within": {
+     "n": 3,
+     "unit": "week"
+    }
+   },
+   {
+    "id": "urgent",
+    "where": "home",
+    "speed": "urgent",
+    "within": null
+   },
+   {
+    "id": "super-urgent",
+    "where": "home",
+    "speed": "urgent",
+    "within": null
+   },
+   {
+    "id": "consulate",
+    "where": "abroad",
+    "speed": "standard",
+    "within": null
+   }
+  ],
+  "bands": [
+   {
+    "validYears": 3,
+    "pay": {
+     "commune": 810,
+     "urgent": 11060,
+     "super-urgent": 14940,
+     "consulate": 1000
+    },
+    "under": 12
+   },
+   {
+    "validYears": 6,
+    "pay": {
+     "commune": 2010,
+     "urgent": 12260,
+     "super-urgent": 16140,
+     "consulate": 2000
+    },
+    "from": 12,
+    "under": 18
+   },
+   {
+    "validYears": 10,
+    "pay": {
+     "commune": 2010,
+     "urgent": 12260,
+     "super-urgent": 16140,
+     "consulate": 2000
+    },
+    "from": 18
+   }
+  ]
+ },
+ "BF": {
+  "document": "Carte nationale d'identité burkinabè (CNIB)",
+  "currency": "XOF",
+  "routes": [
+   {
+    "id": "office",
+    "where": "home",
+    "speed": "standard",
+    "within": null
+   }
+  ],
+  "bands": [
+   {
+    "validYears": null,
+    "pay": {
+     "office": 2500
+    }
+   }
+  ]
+ },
+ "BG": {
+  "document": "лична карта",
+  "currency": "EUR",
+  "routes": [
+   {
+    "id": "ordinary",
+    "where": "home",
+    "speed": "standard",
+    "within": null
+   },
+   {
+    "id": "fast",
+    "where": "home",
+    "speed": "urgent",
+    "within": {
+     "n": 3,
+     "unit": "working day"
+    }
+   },
+   {
+    "id": "express",
+    "where": "home",
+    "speed": "urgent",
+    "within": {
+     "n": 8,
+     "unit": "hour"
+    }
+   },
+   {
+    "id": "consulate",
+    "where": "abroad",
+    "speed": "standard",
+    "within": {
+     "n": 45,
+     "unit": "day"
+    }
+   },
+   {
+    "id": "consulate-fast",
+    "where": "abroad",
+    "speed": "urgent",
+    "within": {
+     "n": 30,
+     "unit": "day"
+    }
+   }
+  ],
+  "bands": [
+   {
+    "validYears": 4,
+    "pay": {
+     "ordinary": 0,
+     "fast": null,
+     "express": null,
+     "consulate": 0,
+     "consulate-fast": null
+    },
+    "from": 14,
+    "under": 16
+   },
+   {
+    "validYears": 4,
+    "pay": {
+     "ordinary": 1074,
+     "fast": 2148,
+     "express": 5370,
+     "consulate": 1074,
+     "consulate-fast": 2148
+    },
+    "from": 16,
+    "under": 18
+   },
+   {
+    "validYears": 10,
+    "pay": {
+     "ordinary": 1534,
+     "fast": 3068,
+     "express": 7670,
+     "consulate": 1534,
+     "consulate-fast": 3068
+    },
+    "from": 18,
+    "under": 70
+   },
+   {
+    "validYears": 10,
+    "pay": {
+     "ordinary": 0,
+     "fast": null,
+     "express": null,
+     "consulate": 0,
+     "consulate-fast": null
+    },
+    "from": 70
+   },
+   {
+    "validYears": 30,
+    "pay": {
+     "ordinary": 0,
+     "fast": null,
+     "express": null,
+     "consulate": 0,
+     "consulate-fast": null
+    },
+    "from": 70
+   }
+  ]
+ },
+ "BH": {
+  "document": "Identity card (بطاقة الهوية)",
+  "currency": "BHD",
+  "routes": [
+   {
+    "id": "centre",
+    "where": "home",
+    "speed": "standard",
+    "within": null
+   }
+  ],
+  "bands": [
+   {
+    "validYears": 5,
+    "pay": {
+     "centre": 2000
+    },
+    "under": 70
+   },
+   {
+    "validYears": 10,
+    "pay": {
+     "centre": 2000
+    },
+    "from": 70
+   }
+  ]
+ },
+ "BI": {
+  "document": "Carte nationale d'identité (CNI)",
+  "currency": "BIF",
+  "routes": [
+   {
+    "id": "commune",
+    "where": "home",
+    "speed": "standard",
+    "within": null
+   }
+  ],
+  "bands": [
+   {
+    "validYears": null,
+    "pay": {
+     "commune": 500
+    },
+    "from": 16
+   }
+  ]
+ },
+ "BJ": {
+  "document": "Carte nationale d'identité biométrique (CNIB)",
+  "currency": "XOF",
+  "routes": [
+   {
+    "id": "anip",
+    "where": "home",
+    "speed": "standard",
+    "within": null
+   }
+  ],
+  "bands": [
+   {
+    "validYears": 5,
+    "pay": {
+     "anip": 6000
+    }
+   }
+  ]
+ },
+ "BL": {
+  "issuedBy": "FR"
+ },
+ "BM": {
+  "document": "Government ID card (Transport Control Department)",
+  "currency": "BMD",
+  "routes": [
+   {
+    "id": "tcd",
+    "where": "home",
+    "speed": "standard",
+    "within": null
+   }
+  ],
+  "bands": [
+   {
+    "validYears": null,
+    "pay": {
+     "tcd": null
+    }
+   }
+  ]
+ },
+ "BN": {
+  "document": "Kad Pengenalan Kuning (yellow smart identity card)",
+  "currency": "BND",
+  "routes": [
+   {
+    "id": "office",
+    "where": "home",
+    "speed": "standard",
+    "within": null
+   }
+  ],
+  "bands": [
+   {
+    "validYears": null,
+    "pay": {
+     "office": null
+    },
+    "from": 12
+   }
+  ]
+ },
+ "BO": {
+  "document": "Cédula de Identidad",
+  "currency": "BOB",
+  "routes": [
+   {
+    "id": "office",
+    "where": "home",
+    "speed": "standard",
+    "within": null
+   }
+  ],
+  "bands": [
+   {
+    "validYears": null,
+    "pay": {
+     "office": 1700
+    }
+   }
+  ]
+ },
+ "BQ": {
+  "document": "Nederlandse identiteitskaart",
+  "currency": "USD",
+  "routes": [
+   {
+    "id": "standard",
+    "where": "home",
+    "speed": "standard",
+    "within": {
+     "n": 2,
+     "unit": "week"
+    }
+   }
+  ],
+  "bands": [
+   {
+    "validYears": 10,
+    "pay": {
+     "standard": 12650
+    },
+    "from": 18
+   },
+   {
+    "validYears": 5,
+    "pay": {
+     "standard": 8375
+    },
+    "under": 18
+   }
+  ]
+ },
+ "BR": {
+  "document": "Carteira de Identidade Nacional (CIN)",
+  "currency": "BRL",
+  "routes": [
+   {
+    "id": "state",
+    "where": "home",
+    "speed": "standard",
+    "within": null
+   }
+  ],
+  "bands": [
+   {
+    "validYears": 5,
+    "pay": {
+     "state": 0
+    },
+    "under": 12
+   },
+   {
+    "validYears": 10,
+    "pay": {
+     "state": 0
+    },
+    "from": 12,
+    "under": 60
+   },
+   {
+    "validYears": null,
+    "pay": {
+     "state": 0
+    },
+    "from": 60,
+    "permanent": true
+   }
+  ]
+ },
+ "BS": {
+  "none": true
+ },
+ "BT": {
+  "document": "Citizenship Identity Card (CID)",
+  "currency": "BTN",
+  "routes": [
+   {
+    "id": "dzongkhag",
+    "where": "home",
+    "speed": "standard",
+    "within": {
+     "n": 6,
+     "unit": "day"
+    }
+   }
+  ],
+  "bands": [
+   {
+    "validYears": null,
+    "pay": {
+     "dzongkhag": 10000
+    }
+   }
+  ]
+ },
+ "BW": {
+  "document": "National Identity Card (Omang)",
+  "currency": "BWP",
+  "routes": [
+   {
+    "id": "office",
+    "where": "home",
+    "speed": "standard",
+    "within": {
+     "n": 14,
+     "unit": "working day"
+    }
+   }
+  ],
+  "bands": [
+   {
+    "validYears": 10,
+    "pay": {
+     "office": 0
+    },
+    "from": 16
+   }
+  ]
+ },
+ "BY": {
+  "document": "ID-карта (identification card)",
+  "currency": "BYN",
+  "routes": [
+   {
+    "id": "standard",
+    "where": "home",
+    "speed": "standard",
+    "within": {
+     "n": 15,
+     "unit": "working day"
+    }
+   },
+   {
+    "id": "accelerated",
+    "where": "home",
+    "speed": "urgent",
+    "within": {
+     "n": 10,
+     "unit": "working day"
+    }
+   },
+   {
+    "id": "urgent",
+    "where": "home",
+    "speed": "urgent",
+    "within": {
+     "n": 5,
+     "unit": "working day"
+    }
+   },
+   {
+    "id": "consulate",
+    "where": "abroad",
+    "speed": "standard",
+    "within": null
+   }
+  ],
+  "bands": [
+   {
+    "validYears": 5,
+    "pay": {
+     "standard": 0,
+     "accelerated": null,
+     "urgent": null,
+     "consulate": null
+    },
+    "under": 14
+   },
+   {
+    "validYears": 10,
+    "pay": {
+     "standard": 6750,
+     "accelerated": 11250,
+     "urgent": 15750,
+     "consulate": null
+    },
+    "from": 14
+   }
+  ]
+ },
+ "BZ": {
+  "document": "Social Security card (the de facto national ID)",
+  "currency": "BZD",
+  "routes": [
+   {
+    "id": "office",
+    "where": "home",
+    "speed": "standard",
+    "within": null
+   }
+  ],
+  "bands": [
+   {
+    "validYears": null,
+    "pay": {
+     "office": 500
+    },
+    "under": 14
+   },
+   {
+    "validYears": null,
+    "pay": {
+     "office": 500
+    },
+    "from": 14,
+    "permanent": true
+   }
+  ]
+ },
+ "CA": {
+  "none": true
+ },
+ "CC": {
+  "issuedBy": "AU"
+ },
+ "CD": {
+  "none": true
+ },
+ "CF": {
+  "document": "Carte nationale d'identité",
+  "currency": "XAF",
+  "routes": [
+   {
+    "id": "enrolment",
+    "where": "home",
+    "speed": "standard",
+    "within": null
+   }
+  ],
+  "bands": [
+   {
+    "validYears": null,
+    "pay": {
+     "enrolment": 6000
+    }
+   }
+  ]
+ },
+ "CG": {
+  "document": "Carte nationale d'identité informatisée, sécurisée et biométrique",
+  "currency": "XAF",
+  "routes": [
+   {
+    "id": "collection-centre",
+    "where": "home",
+    "speed": "standard",
+    "within": null
+   }
+  ],
+  "bands": [
+   {
+    "validYears": null,
+    "pay": {
+     "collection-centre": 0
+    }
+   }
+  ]
+ },
+ "CH": {
+  "document": "Identitätskarte",
+  "currency": "CHF",
+  "routes": [
+   {
+    "id": "home",
+    "where": "home",
+    "speed": "standard",
+    "within": null
+   }
+  ],
+  "bands": [
+   {
+    "validYears": 10,
+    "pay": {
+     "home": 7000
+    },
+    "from": 18
+   },
+   {
+    "validYears": 5,
+    "pay": {
+     "home": 3500
+    },
+    "under": 18
+   }
+  ]
+ },
+ "CI": {
+  "document": "Carte nationale d'identité (CNI)",
+  "currency": "XOF",
+  "routes": [
+   {
+    "id": "office",
+    "where": "home",
+    "speed": "standard",
+    "within": null
+   }
+  ],
+  "bands": [
+   {
+    "validYears": 10,
+    "pay": {
+     "office": 5000
+    },
+    "from": 5
+   }
+  ]
+ },
+ "CK": {
+  "issuedBy": "NZ"
+ },
+ "CL": {
+  "document": "Cédula de identidad",
+  "currency": "CLP",
+  "routes": [
+   {
+    "id": "office",
+    "where": "home",
+    "speed": "standard",
+    "within": null
+   }
+  ],
+  "bands": [
+   {
+    "validYears": 10,
+    "pay": {
+     "office": 3820
+    },
+    "under": 80
+   },
+   {
+    "validYears": 20,
+    "pay": {
+     "office": 3820
+    },
+    "from": 80
+   }
+  ]
+ },
+ "CM": {
+  "document": "Carte nationale d'identité (CNI)",
+  "currency": "XAF",
+  "routes": [
+   {
+    "id": "post",
+    "where": "home",
+    "speed": "standard",
+    "within": {
+     "n": 48,
+     "unit": "hour"
+    }
+   }
+  ],
+  "bands": [
+   {
+    "validYears": 10,
+    "pay": {
+     "post": 10000
+    },
+    "from": 18
+   }
+  ]
+ },
+ "CN": {
+  "document": "居民身份证 (resident identity card)",
+  "currency": "CNY",
+  "routes": [
+   {
+    "id": "police",
+    "where": "home",
+    "speed": "standard",
+    "within": null
+   }
+  ],
+  "bands": [
+   {
+    "validYears": 5,
+    "pay": {
+     "police": 2000
+    },
+    "under": 16
+   },
+   {
+    "validYears": 10,
+    "pay": {
+     "police": 2000
+    },
+    "from": 16,
+    "under": 26
+   },
+   {
+    "validYears": 20,
+    "pay": {
+     "police": 2000
+    },
+    "from": 26,
+    "under": 46
+   },
+   {
+    "validYears": null,
+    "pay": {
+     "police": 2000
+    },
+    "from": 46,
+    "permanent": true
+   }
+  ]
+ },
+ "CO": {
+  "document": "Cédula de ciudadanía digital",
+  "currency": "COP",
+  "routes": [
+   {
+    "id": "office",
+    "where": "home",
+    "speed": "standard",
+    "within": null
+   }
+  ],
+  "bands": [
+   {
+    "validYears": 10,
+    "pay": {
+     "office": 0
+    },
+    "from": 18
+   }
+  ]
+ },
+ "CR": {
+  "document": "Cédula de identidad",
+  "currency": "CRC",
+  "routes": [
+   {
+    "id": "central",
+    "where": "home",
+    "speed": "standard",
+    "within": {
+     "n": 2,
+     "unit": "hour"
+    }
+   },
+   {
+    "id": "regional",
+    "where": "home",
+    "speed": "standard",
+    "within": {
+     "n": 5,
+     "unit": "day"
+    }
+   }
+  ],
+  "bands": [
+   {
+    "validYears": 10,
+    "pay": {
+     "central": 0,
+     "regional": 0
+    },
+    "from": 18
+   }
+  ]
+ },
+ "CU": {
+  "document": "Carné de identidad",
+  "currency": "CUP",
+  "routes": [
+   {
+    "id": "office",
+    "where": "home",
+    "speed": "standard",
+    "within": null
+   }
+  ],
+  "bands": [
+   {
+    "validYears": null,
+    "pay": {
+     "office": 2500
+    },
+    "from": 16
+   }
+  ]
+ },
+ "CV": {
+  "document": "Cartão Nacional de Identificação (CNI)",
+  "currency": "CVE",
+  "routes": [
+   {
+    "id": "normal",
+    "where": "home",
+    "speed": "standard",
+    "within": null
+   },
+   {
+    "id": "urgent",
+    "where": "home",
+    "speed": "urgent",
+    "within": {
+     "n": 7,
+     "unit": "day"
+    }
+   }
+  ],
+  "bands": [
+   {
+    "validYears": null,
+    "pay": {
+     "normal": 139500,
+     "urgent": 179500
+    },
+    "from": 4
+   }
+  ]
+ },
+ "CW": {
+  "document": "Nederlandse identiteitskaart",
+  "currency": "USD",
+  "routes": [
+   {
+    "id": "standard",
+    "where": "home",
+    "speed": "standard",
+    "within": {
+     "n": 2,
+     "unit": "week"
+    }
+   }
+  ],
+  "bands": [
+   {
+    "validYears": 10,
+    "pay": {
+     "standard": 12650
+    },
+    "from": 18
+   },
+   {
+    "validYears": 5,
+    "pay": {
+     "standard": 8375
+    },
+    "under": 18
+   }
+  ]
+ },
+ "CX": {
+  "issuedBy": "AU"
+ },
+ "CY": {
+  "document": "δελτίο ταυτότητας (identity card)",
+  "currency": "EUR",
+  "routes": [
+   {
+    "id": "standard",
+    "where": "home",
+    "speed": "standard",
+    "within": null
+   },
+   {
+    "id": "abroad",
+    "where": "abroad",
+    "speed": "standard",
+    "within": null
+   }
+  ],
+  "bands": [
+   {
+    "validYears": 5,
+    "pay": {
+     "standard": 2000,
+     "abroad": 2000
+    },
+    "under": 18
+   },
+   {
+    "validYears": 10,
+    "pay": {
+     "standard": 3000,
+     "abroad": 3000
+    },
+    "from": 18
+   }
+  ]
+ },
+ "CZ": {
+  "document": "občanský průkaz",
+  "currency": "CZK",
+  "routes": [
+   {
+    "id": "standard",
+    "where": "home",
+    "speed": "standard",
+    "within": {
+     "n": 30,
+     "unit": "day"
+    }
+   },
+   {
+    "id": "five-days",
+    "where": "home",
+    "speed": "urgent",
+    "within": {
+     "n": 5,
+     "unit": "working day"
+    }
+   },
+   {
+    "id": "next-day",
+    "where": "home",
+    "speed": "urgent",
+    "within": {
+     "n": 24,
+     "unit": "hour"
+    }
+   }
+  ],
+  "bands": [
+   {
+    "validYears": 5,
+    "pay": {
+     "standard": 10000,
+     "five-days": 30000,
+     "next-day": 50000
+    },
+    "under": 15
+   },
+   {
+    "validYears": 10,
+    "pay": {
+     "standard": 0,
+     "five-days": 50000,
+     "next-day": 100000
+    },
+    "from": 15,
+    "under": 70
+   },
+   {
+    "validYears": 35,
+    "pay": {
+     "standard": 0,
+     "five-days": 50000,
+     "next-day": 100000
+    },
+    "from": 70
+   }
+  ]
+ },
+ "DE": {
+  "document": "Personalausweis",
+  "currency": "EUR",
+  "routes": [
+   {
+    "id": "home",
+    "where": "home",
+    "speed": "standard",
+    "within": null
+   },
+   {
+    "id": "abroad",
+    "where": "abroad",
+    "speed": "standard",
+    "within": null
+   }
+  ],
+  "bands": [
+   {
+    "validYears": 10,
+    "pay": {
+     "home": 4600,
+     "abroad": 8900
+    },
+    "from": 24
+   },
+   {
+    "validYears": 6,
+    "pay": {
+     "home": 2760,
+     "abroad": 7060
+    },
+    "under": 24
+   }
+  ]
+ },
+ "DJ": {
+  "document": "Carte d'identité numérique (national identity card)",
+  "currency": "DJF",
+  "routes": [
+   {
+    "id": "population",
+    "where": "home",
+    "speed": "standard",
+    "within": null
+   }
+  ],
+  "bands": [
+   {
+    "validYears": 10,
+    "pay": {
+     "population": 2000
+    },
+    "from": 18
+   }
+  ]
+ },
+ "DK": {
+  "document": "legitimationskort",
+  "currency": "DKK",
+  "routes": [
+   {
+    "id": "borgerservice",
+    "where": "home",
+    "speed": "standard",
+    "within": {
+     "n": 14,
+     "unit": "day"
+    }
+   }
+  ],
+  "bands": [
+   {
+    "validYears": 10,
+    "pay": {
+     "borgerservice": 15000
+    },
+    "from": 15
+   }
+  ]
+ },
+ "DM": {
+  "document": "Voter identification card",
+  "currency": "XCD",
+  "routes": [
+   {
+    "id": "electoral-office",
+    "where": "home",
+    "speed": "standard",
+    "within": null
+   }
+  ],
+  "bands": [
+   {
+    "validYears": null,
+    "pay": {
+     "electoral-office": null
+    }
+   }
+  ]
+ },
+ "DO": {
+  "document": "Cédula de Identidad y Electoral",
+  "currency": "DOP",
+  "routes": [
+   {
+    "id": "centre",
+    "where": "home",
+    "speed": "standard",
+    "within": null
+   },
+   {
+    "id": "abroad",
+    "where": "abroad",
+    "speed": "standard",
+    "within": null
+   }
+  ],
+  "bands": [
+   {
+    "validYears": null,
+    "pay": {
+     "centre": 0,
+     "abroad": 0
+    },
+    "from": 16
+   }
+  ]
+ },
+ "DZ": {
+  "document": "Carte nationale d'identité biométrique électronique (CNIBE)",
+  "currency": "DZD",
+  "routes": [
+   {
+    "id": "commune",
+    "where": "home",
+    "speed": "standard",
+    "within": null
+   },
+   {
+    "id": "online",
+    "where": "home",
+    "speed": "standard",
+    "within": null
+   },
+   {
+    "id": "consulate",
+    "where": "abroad",
+    "speed": "standard",
+    "within": null
+   }
+  ],
+  "bands": [
+   {
+    "validYears": 5,
+    "pay": {
+     "commune": null,
+     "online": null,
+     "consulate": null
+    },
+    "under": 19
+   },
+   {
+    "validYears": 10,
+    "pay": {
+     "commune": null,
+     "online": null,
+     "consulate": null
+    },
+    "from": 19
+   }
+  ]
+ },
+ "EC": {
+  "document": "Cédula de identidad",
+  "currency": "USD",
+  "routes": [
+   {
+    "id": "office",
+    "where": "home",
+    "speed": "standard",
+    "within": {
+     "n": 72,
+     "unit": "hour"
+    }
+   }
+  ],
+  "bands": [
+   {
+    "validYears": 10,
+    "pay": {
+     "office": 500
+    }
+   }
+  ]
+ },
+ "EE": {
+  "document": "ID-kaart",
+  "currency": "EUR",
+  "routes": [
+   {
+    "id": "portal",
+    "where": "home",
+    "speed": "standard",
+    "within": null
+   },
+   {
+    "id": "office",
+    "where": "home",
+    "speed": "standard",
+    "within": {
+     "n": 30,
+     "unit": "day"
+    }
+   },
+   {
+    "id": "expedited",
+    "where": "home",
+    "speed": "urgent",
+    "within": {
+     "n": 2,
+     "unit": "working day"
+    }
+   },
+   {
+    "id": "abroad",
+    "where": "abroad",
+    "speed": "standard",
+    "within": null
+   }
+  ],
+  "bands": [
+   {
+    "validYears": 5,
+    "pay": {
+     "portal": 1500,
+     "office": 2000,
+     "expedited": 25000,
+     "abroad": 4000
+    },
+    "under": 18
+   },
+   {
+    "validYears": 5,
+    "pay": {
+     "portal": 3500,
+     "office": 4500,
+     "expedited": 25000,
+     "abroad": 9500
+    },
+    "from": 18
+   }
+  ]
+ },
+ "EG": {
+  "document": "بطاقة الرقم القومي (National ID card)",
+  "currency": "EGP",
+  "routes": [
+   {
+    "id": "ordinary",
+    "where": "home",
+    "speed": "standard",
+    "within": {
+     "n": 15,
+     "unit": "day"
+    }
+   },
+   {
+    "id": "urgent",
+    "where": "home",
+    "speed": "urgent",
+    "within": {
+     "n": 3,
+     "unit": "day"
+    }
+   },
+   {
+    "id": "special",
+    "where": "home",
+    "speed": "urgent",
+    "within": {
+     "n": 24,
+     "unit": "hour"
+    }
+   },
+   {
+    "id": "vip",
+    "where": "home",
+    "speed": "urgent",
+    "within": {
+     "n": 30,
+     "unit": "minute"
+    }
+   },
+   {
+    "id": "instant",
+    "where": "home",
+    "speed": "urgent",
+    "within": {
+     "n": 1,
+     "unit": "minute"
+    }
+   }
+  ],
+  "bands": [
+   {
+    "validYears": 7,
+    "pay": {
+     "ordinary": 5000,
+     "urgent": 12500,
+     "special": 17500,
+     "vip": 51500,
+     "instant": 80000
+    },
+    "from": 15
+   }
+  ]
+ },
+ "EH": {
+  "issuedBy": "MA"
+ },
+ "ER": {
+  "document": "Identity card (the new machine-readable card)",
+  "currency": "ERN",
+  "routes": [
+   {
+    "id": "branch",
+    "where": "home",
+    "speed": "standard",
+    "within": null
+   }
+  ],
+  "bands": [
+   {
+    "validYears": null,
+    "pay": {
+     "branch": 10000
+    },
+    "from": 18,
+    "permanent": true
+   }
+  ]
+ },
+ "ES": {
+  "document": "Documento Nacional de Identidad (DNI)",
+  "currency": "EUR",
+  "routes": [
+   {
+    "id": "police",
+    "where": "home",
+    "speed": "standard",
+    "within": null
+   }
+  ],
+  "bands": [
+   {
+    "validYears": 2,
+    "pay": {
+     "police": 1200
+    },
+    "under": 5
+   },
+   {
+    "validYears": 5,
+    "pay": {
+     "police": 1200
+    },
+    "from": 5,
+    "under": 30
+   },
+   {
+    "validYears": 10,
+    "pay": {
+     "police": 1200
+    },
+    "from": 30,
+    "under": 70
+   },
+   {
+    "validYears": null,
+    "pay": {
+     "police": 1200
+    },
+    "from": 70
+   }
+  ]
+ },
+ "ET": {
+  "document": "Fayda (national digital ID), with a physical card on request",
+  "currency": "ETB",
+  "routes": [
+   {
+    "id": "centre",
+    "where": "home",
+    "speed": "standard",
+    "within": null
+   }
+  ],
+  "bands": [
+   {
+    "validYears": null,
+    "pay": {
+     "centre": null
+    }
+   }
+  ]
+ },
+ "FI": {
+  "document": "henkilökortti",
+  "currency": "EUR",
+  "routes": [
+   {
+    "id": "in-person",
+    "where": "home",
+    "speed": "standard",
+    "within": null
+   },
+   {
+    "id": "online",
+    "where": "home",
+    "speed": "standard",
+    "within": null
+   },
+   {
+    "id": "pika-in-person",
+    "where": "home",
+    "speed": "urgent",
+    "within": null
+   },
+   {
+    "id": "pika-online",
+    "where": "home",
+    "speed": "urgent",
+    "within": null
+   },
+   {
+    "id": "express-in-person",
+    "where": "home",
+    "speed": "urgent",
+    "within": null
+   },
+   {
+    "id": "express-online",
+    "where": "home",
+    "speed": "urgent",
+    "within": null
+   }
+  ],
+  "bands": [
+   {
+    "validYears": 5,
+    "pay": {
+     "in-person": 3900,
+     "online": 3300,
+     "pika-in-person": 5700,
+     "pika-online": 5100,
+     "express-in-person": 7600,
+     "express-online": 7000
+    },
+    "under": 18
+   },
+   {
+    "validYears": 5,
+    "pay": {
+     "in-person": 5900,
+     "online": 5300,
+     "pika-in-person": 7700,
+     "pika-online": 7100,
+     "express-in-person": 9600,
+     "express-online": 9000
+    },
+    "from": 18
+   }
+  ]
+ },
+ "FJ": {
+  "none": true
+ },
+ "FM": {
+  "none": true
+ },
+ "FO": {
+  "none": true
+ },
+ "FR": {
+  "document": "carte nationale d'identité",
+  "currency": "EUR",
+  "routes": [
+   {
+    "id": "home",
+    "where": "home",
+    "speed": "standard",
+    "within": null
+   },
+   {
+    "id": "abroad",
+    "where": "abroad",
+    "speed": "standard",
+    "within": null
+   }
+  ],
+  "bands": [
+   {
+    "validYears": 10,
+    "pay": {
+     "home": 0,
+     "abroad": 0
+    }
+   }
+  ]
+ },
+ "GA": {
+  "document": "Carte nationale d'identité électronique (CNIE)",
+  "currency": "XAF",
+  "routes": [
+   {
+    "id": "dgdi",
+    "where": "home",
+    "speed": "standard",
+    "within": null
+   },
+   {
+    "id": "online",
+    "where": "home",
+    "speed": "standard",
+    "within": null
+   }
+  ],
+  "bands": [
+   {
+    "validYears": null,
+    "pay": {
+     "dgdi": 0,
+     "online": 0
+    }
+   }
+  ]
+ },
+ "GB": {
+  "none": true
+ },
+ "GD": {
+  "document": "Voter's Identification Card",
+  "currency": "XCD",
+  "routes": [
+   {
+    "id": "constituency",
+    "where": "home",
+    "speed": "standard",
+    "within": {
+     "n": 2,
+     "unit": "week"
+    }
+   }
+  ],
+  "bands": [
+   {
+    "validYears": null,
+    "pay": {
+     "constituency": 0
+    },
+    "from": 18
+   }
+  ]
+ },
+ "GE": {
+  "document": "electronic identity card",
+  "currency": "GEL",
+  "routes": [
+   {
+    "id": "ten-days",
+    "where": "home",
+    "speed": "standard",
+    "within": {
+     "n": 10,
+     "unit": "working day"
+    }
+   },
+   {
+    "id": "five-days",
+    "where": "home",
+    "speed": "urgent",
+    "within": {
+     "n": 5,
+     "unit": "working day"
+    }
+   },
+   {
+    "id": "three-days",
+    "where": "home",
+    "speed": "urgent",
+    "within": {
+     "n": 3,
+     "unit": "working day"
+    }
+   },
+   {
+    "id": "two-days",
+    "where": "home",
+    "speed": "urgent",
+    "within": {
+     "n": 2,
+     "unit": "working day"
+    }
+   },
+   {
+    "id": "same-day",
+    "where": "home",
+    "speed": "urgent",
+    "within": {
+     "n": 1,
+     "unit": "day"
+    }
+   }
+  ],
+  "bands": [
+   {
+    "validYears": null,
+    "pay": {
+     "ten-days": 6000,
+     "five-days": 8000,
+     "three-days": 10000,
+     "two-days": 12000,
+     "same-day": 15000
+    }
+   }
+  ]
+ },
+ "GF": {
+  "issuedBy": "FR"
+ },
+ "GG": {
+  "issuedBy": "GB"
+ },
+ "GH": {
+  "document": "Ghana Card (national identity card)",
+  "currency": "GHS",
+  "routes": [
+   {
+    "id": "district",
+    "where": "home",
+    "speed": "standard",
+    "within": null
+   },
+   {
+    "id": "premium",
+    "where": "home",
+    "speed": "urgent",
+    "within": null
+   }
+  ],
+  "bands": [
+   {
+    "validYears": 10,
+    "pay": {
+     "district": 0,
+     "premium": 41000
+    },
+    "under": 25
+   },
+   {
+    "validYears": 10,
+    "pay": {
+     "district": 3000,
+     "premium": 41000
+    },
+    "from": 25
+   }
+  ]
+ },
+ "GI": {
+  "document": "Gibraltar identity card",
+  "currency": "GBP",
+  "routes": [
+   {
+    "id": "standard",
+    "where": "home",
+    "speed": "standard",
+    "within": null
+   },
+   {
+    "id": "emergency",
+    "where": "home",
+    "speed": "urgent",
+    "within": {
+     "n": 24,
+     "unit": "hour"
+    }
+   }
+  ],
+  "bands": [
+   {
+    "validYears": null,
+    "pay": {
+     "standard": 3700,
+     "emergency": 10550
+    },
+    "under": 15
+   },
+   {
+    "validYears": 10,
+    "pay": {
+     "standard": 3700,
+     "emergency": 10550
+    },
+    "from": 15,
+    "under": 65
+   },
+   {
+    "validYears": 10,
+    "pay": {
+     "standard": 0,
+     "emergency": null
+    },
+    "from": 65
+   }
+  ]
+ },
+ "GL": {
+  "none": true
+ },
+ "GM": {
+  "document": "Biometric National Identity Card",
+  "currency": "GMD",
+  "routes": [
+   {
+    "id": "centre",
+    "where": "home",
+    "speed": "standard",
+    "within": null
+   }
+  ],
+  "bands": [
+   {
+    "validYears": null,
+    "pay": {
+     "centre": 45000
+    },
+    "from": 18
+   }
+  ]
+ },
+ "GN": {
+  "document": "Carte nationale d'identité",
+  "currency": "GNF",
+  "routes": [
+   {
+    "id": "office",
+    "where": "home",
+    "speed": "standard",
+    "within": null
+   }
+  ],
+  "bands": [
+   {
+    "validYears": 5,
+    "pay": {
+     "office": 15000
+    },
+    "from": 15
+   }
+  ]
+ },
+ "GP": {
+  "issuedBy": "FR"
+ },
+ "GR": {
+  "document": "δελτίο ταυτότητας",
+  "currency": "EUR",
+  "routes": [
+   {
+    "id": "police",
+    "where": "home",
+    "speed": "standard",
+    "within": null
+   }
+  ],
+  "bands": [
+   {
+    "validYears": 10,
+    "pay": {
+     "police": 1000
+    },
+    "from": 12
+   }
+  ]
+ },
+ "GS": {
+  "issuedBy": "GB"
+ },
+ "GT": {
+  "document": "Documento Personal de Identificación (DPI)",
+  "currency": "GTQ",
+  "routes": [
+   {
+    "id": "office",
+    "where": "home",
+    "speed": "standard",
+    "within": null
+   },
+   {
+    "id": "delivery-capital",
+    "where": "home",
+    "speed": "standard",
+    "within": null
+   },
+   {
+    "id": "delivery",
+    "where": "home",
+    "speed": "standard",
+    "within": null
+   }
+  ],
+  "bands": [
+   {
+    "validYears": null,
+    "pay": {
+     "office": 10000,
+     "delivery-capital": 14000,
+     "delivery": 16000
+    }
+   }
+  ]
+ },
+ "GU": {
+  "issuedBy": "US"
+ },
+ "GY": {
+  "document": "National Identification Card",
+  "currency": "GYD",
+  "routes": [
+   {
+    "id": "office",
+    "where": "home",
+    "speed": "standard",
+    "within": {
+     "n": 6,
+     "unit": "week"
+    }
+   }
+  ],
+  "bands": [
+   {
+    "validYears": null,
+    "pay": {
+     "office": 0
+    },
+    "from": 14
+   }
+  ]
+ },
+ "HK": {
+  "document": "Hong Kong Identity Card",
+  "currency": "HKD",
+  "routes": [
+   {
+    "id": "rop",
+    "where": "home",
+    "speed": "standard",
+    "within": null
+   }
+  ],
+  "bands": [
+   {
+    "validYears": null,
+    "pay": {
+     "rop": 0
+    }
+   }
+  ]
+ },
+ "HN": {
+  "document": "Documento Nacional de Identificación (DNI)",
+  "currency": "HNL",
+  "routes": [
+   {
+    "id": "office",
+    "where": "home",
+    "speed": "standard",
+    "within": null
+   }
+  ],
+  "bands": [
+   {
+    "validYears": null,
+    "pay": {
+     "office": 0
+    },
+    "from": 18
+   }
+  ]
+ },
+ "HR": {
+  "document": "osobna iskaznica (eOI)",
+  "currency": "EUR",
+  "routes": [
+   {
+    "id": "regular",
+    "where": "home",
+    "speed": "standard",
+    "within": {
+     "n": 30,
+     "unit": "day"
+    }
+   },
+   {
+    "id": "accelerated",
+    "where": "home",
+    "speed": "urgent",
+    "within": {
+     "n": 10,
+     "unit": "day"
+    }
+   },
+   {
+    "id": "urgent",
+    "where": "home",
+    "speed": "urgent",
+    "within": {
+     "n": 3,
+     "unit": "working day"
+    }
+   }
+  ],
+  "bands": [
+   {
+    "validYears": 5,
+    "pay": {
+     "regular": 0,
+     "accelerated": 2588,
+     "urgent": 6636
+    },
+    "under": 18
+   },
+   {
+    "validYears": 5,
+    "pay": {
+     "regular": 1327,
+     "accelerated": 2588,
+     "urgent": 6636
+    },
+    "from": 18,
+    "under": 70
+   },
+   {
+    "validYears": 40,
+    "pay": {
+     "regular": 1327,
+     "accelerated": 2588,
+     "urgent": 6636
+    },
+    "from": 70
+   }
+  ]
+ },
+ "HT": {
+  "document": "Carte d'identification nationale (CIN)",
+  "currency": "HTG",
+  "routes": [
+   {
+    "id": "office",
+    "where": "home",
+    "speed": "standard",
+    "within": null
+   }
+  ],
+  "bands": [
+   {
+    "validYears": 10,
+    "pay": {
+     "office": 0
+    },
+    "from": 18
+   }
+  ]
+ },
+ "HU": {
+  "document": "személyazonosító igazolvány",
+  "currency": "HUF",
+  "routes": [
+   {
+    "id": "kormanyablak",
+    "where": "home",
+    "speed": "standard",
+    "within": null
+   }
+  ],
+  "bands": [
+   {
+    "validYears": 3,
+    "pay": {
+     "kormanyablak": 0
+    },
+    "under": 12
+   },
+   {
+    "validYears": 3,
+    "pay": {
+     "kormanyablak": 0
+    },
+    "from": 12,
+    "under": 14
+   },
+   {
+    "validYears": 3,
+    "pay": {
+     "kormanyablak": 770000
+    },
+    "from": 14,
+    "under": 18
+   },
+   {
+    "validYears": 6,
+    "pay": {
+     "kormanyablak": 770000
+    },
+    "from": 18,
+    "under": 70
+   },
+   {
+    "validYears": 6,
+    "pay": {
+     "kormanyablak": 0
+    },
+    "from": 70
+   },
+   {
+    "validYears": 10,
+    "pay": {
+     "kormanyablak": 0
+    },
+    "from": 70
+   }
+  ]
+ },
+ "ID": {
+  "document": "KTP-el (Kartu Tanda Penduduk elektronik)",
+  "currency": "IDR",
+  "routes": [
+   {
+    "id": "office",
+    "where": "home",
+    "speed": "standard",
+    "within": null
+   }
+  ],
+  "bands": [
+   {
+    "validYears": null,
+    "pay": {
+     "office": 0
+    },
+    "from": 17,
+    "permanent": true
+   }
+  ]
+ },
+ "IE": {
+  "none": true
+ },
+ "IL": {
+  "document": "Teudat Zehut (biometric identity card)",
+  "currency": "ILS",
+  "routes": [
+   {
+    "id": "bureau",
+    "where": "home",
+    "speed": "standard",
+    "within": null
+   }
+  ],
+  "bands": [
+   {
+    "validYears": null,
+    "pay": {
+     "bureau": 0
+    },
+    "from": 16
+   }
+  ]
+ },
+ "IM": {
+  "issuedBy": "GB"
+ },
+ "IN": {
+  "document": "Aadhaar (letter and e-Aadhaar)",
+  "currency": "INR",
+  "routes": [
+   {
+    "id": "enrol",
+    "where": "home",
+    "speed": "standard",
+    "within": null
+   }
+  ],
+  "bands": [
+   {
+    "validYears": null,
+    "pay": {
+     "enrol": 0
+    }
+   }
+  ]
+ },
+ "IO": {
+  "issuedBy": "GB"
+ },
+ "IQ": {
+  "document": "Unified National Card (البطاقة الوطنية الموحدة)",
+  "currency": "IQD",
+  "routes": [
+   {
+    "id": "office",
+    "where": "home",
+    "speed": "standard",
+    "within": null
+   }
+  ],
+  "bands": [
+   {
+    "validYears": null,
+    "pay": {
+     "office": 5000000
+    }
+   }
+  ]
+ },
+ "IR": {
+  "document": "Kart-e melli (national smart ID card)",
+  "currency": "IRR",
+  "routes": [
+   {
+    "id": "office",
+    "where": "home",
+    "speed": "standard",
+    "within": null
+   }
+  ],
+  "bands": [
+   {
+    "validYears": null,
+    "pay": {
+     "office": null
+    },
+    "from": 15
+   }
+  ]
+ },
+ "IS": {
+  "document": "nafnskírteini",
+  "currency": "ISK",
+  "routes": [
+   {
+    "id": "normal",
+    "where": "home",
+    "speed": "standard",
+    "within": {
+     "n": 4,
+     "unit": "working day"
+    }
+   },
+   {
+    "id": "express",
+    "where": "home",
+    "speed": "urgent",
+    "within": null
+   }
+  ],
+  "bands": [
+   {
+    "validYears": 5,
+    "pay": {
+     "normal": 4600,
+     "express": 9200
+    },
+    "under": 18
+   },
+   {
+    "validYears": 10,
+    "pay": {
+     "normal": 9200,
+     "express": 18400
+    },
+    "from": 18,
+    "under": 67
+   },
+   {
+    "validYears": 10,
+    "pay": {
+     "normal": 4600,
+     "express": 9200
+    },
+    "from": 67
+   }
+  ]
+ },
+ "IT": {
+  "document": "Carta di Identità Elettronica (CIE)",
+  "currency": "EUR",
+  "routes": [
+   {
+    "id": "comune",
+    "where": "home",
+    "speed": "standard",
+    "within": {
+     "n": 6,
+     "unit": "working day"
+    }
+   }
+  ],
+  "bands": [
+   {
+    "validYears": 3,
+    "pay": {
+     "comune": 1679
+    },
+    "under": 3
+   },
+   {
+    "validYears": 5,
+    "pay": {
+     "comune": 1679
+    },
+    "from": 3,
+    "under": 18
+   },
+   {
+    "validYears": 10,
+    "pay": {
+     "comune": 1679
+    },
+    "from": 18
+   }
+  ]
+ },
+ "JE": {
+  "issuedBy": "GB"
+ },
+ "JM": {
+  "document": "National Identification Card (NIDS)",
+  "currency": "JMD",
+  "routes": [
+   {
+    "id": "nira",
+    "where": "home",
+    "speed": "standard",
+    "within": null
+   }
+  ],
+  "bands": [
+   {
+    "validYears": 5,
+    "pay": {
+     "nira": 0
+    },
+    "under": 18
+   },
+   {
+    "validYears": 10,
+    "pay": {
+     "nira": 0
+    },
+    "from": 18
+   }
+  ]
+ },
+ "JO": {
+  "document": "Smart civil status card (بطاقة الأحوال المدنية الذكية)",
+  "currency": "JOD",
+  "routes": [
+   {
+    "id": "cspd",
+    "where": "home",
+    "speed": "standard",
+    "within": null
+   }
+  ],
+  "bands": [
+   {
+    "validYears": null,
+    "pay": {
+     "cspd": 2000
+    },
+    "under": 16
+   },
+   {
+    "validYears": null,
+    "pay": {
+     "cspd": 2000
+    },
+    "from": 16
+   }
+  ]
+ },
+ "JP": {
+  "document": "個人番号カード (My Number Card)",
+  "currency": "JPY",
+  "routes": [
+   {
+    "id": "municipality",
+    "where": "home",
+    "speed": "standard",
+    "within": null
+   }
+  ],
+  "bands": [
+   {
+    "validYears": 5,
+    "pay": {
+     "municipality": 0
+    },
+    "under": 18
+   },
+   {
+    "validYears": 10,
+    "pay": {
+     "municipality": 0
+    },
+    "from": 18
+   }
+  ]
+ },
+ "KE": {
+  "document": "National identity card",
+  "currency": "KES",
+  "routes": [
+   {
+    "id": "registration",
+    "where": "home",
+    "speed": "standard",
+    "within": null
+   }
+  ],
+  "bands": [
+   {
+    "validYears": null,
+    "pay": {
+     "registration": 0
+    }
+   }
+  ]
+ },
+ "KG": {
+  "document": "ID card (passport of a citizen of the Kyrgyz Republic)",
+  "currency": "KGS",
+  "routes": [
+   {
+    "id": "centre",
+    "where": "home",
+    "speed": "standard",
+    "within": null
+   }
+  ],
+  "bands": [
+   {
+    "validYears": 10,
+    "pay": {
+     "centre": 110300
+    },
+    "from": 16,
+    "under": 26
+   },
+   {
+    "validYears": 10,
+    "pay": {
+     "centre": 186800
+    },
+    "from": 26
+   }
+  ]
+ },
+ "KH": {
+  "document": "Khmer Nationality Identity Card",
+  "currency": "KHR",
+  "routes": [
+   {
+    "id": "police",
+    "where": "home",
+    "speed": "standard",
+    "within": {
+     "n": 30,
+     "unit": "working day"
+    }
+   }
+  ],
+  "bands": [
+   {
+    "validYears": 10,
+    "pay": {
+     "police": 0
+    }
+   }
+  ]
+ },
+ "KI": {
+  "document": "National ID smartcard",
+  "currency": "AUD",
+  "routes": [
+   {
+    "id": "registration",
+    "where": "home",
+    "speed": "standard",
+    "within": null
+   }
+  ],
+  "bands": [
+   {
+    "validYears": null,
+    "pay": {
+     "registration": null
+    }
+   }
+  ]
+ },
+ "KM": {
+  "document": "Carte nationale d'identité comorienne numérisée biométrique",
+  "currency": "KMF",
+  "routes": [
+   {
+    "id": "interior",
+    "where": "home",
+    "speed": "standard",
+    "within": null
+   }
+  ],
+  "bands": [
+   {
+    "validYears": 10,
+    "pay": {
+     "interior": null
+    },
+    "under": 15
+   },
+   {
+    "validYears": 10,
+    "pay": {
+     "interior": null
+    },
+    "from": 15
+   }
+  ]
+ },
+ "KN": {
+  "document": "National Identification Card",
+  "currency": "XCD",
+  "routes": [
+   {
+    "id": "electoral-office",
+    "where": "home",
+    "speed": "standard",
+    "within": null
+   }
+  ],
+  "bands": [
+   {
+    "validYears": 10,
+    "pay": {
+     "electoral-office": null
+    },
+    "from": 18
+   }
+  ]
+ },
+ "KP": {
+  "document": "Citizen's identity card (공민증)",
+  "currency": "KPW",
+  "routes": [
+   {
+    "id": "safety",
+    "where": "home",
+    "speed": "standard",
+    "within": null
+   }
+  ],
+  "bands": [
+   {
+    "validYears": null,
+    "pay": {
+     "safety": null
+    },
+    "from": 17
+   }
+  ]
+ },
+ "KR": {
+  "document": "주민등록증 (resident registration card)",
+  "currency": "KRW",
+  "routes": [
+   {
+    "id": "centre",
+    "where": "home",
+    "speed": "standard",
+    "within": null
+   }
+  ],
+  "bands": [
+   {
+    "validYears": null,
+    "pay": {
+     "centre": 0
+    },
+    "from": 17
+   }
+  ]
+ },
+ "KW": {
+  "document": "Civil ID card (البطاقة المدنية)",
+  "currency": "KWD",
+  "routes": [
+   {
+    "id": "paci",
+    "where": "home",
+    "speed": "standard",
+    "within": null
+   }
+  ],
+  "bands": [
+   {
+    "validYears": null,
+    "pay": {
+     "paci": 5000
+    }
+   }
+  ]
+ },
+ "KY": {
+  "document": "Cayman Islands Identification Card (My eID)",
+  "currency": "KYD",
+  "routes": [
+   {
+    "id": "enrolment",
+    "where": "home",
+    "speed": "standard",
+    "within": null
+   }
+  ],
+  "bands": [
+   {
+    "validYears": null,
+    "pay": {
+     "enrolment": 0
+    }
+   }
+  ]
+ },
+ "KZ": {
+  "document": "удостоверение личности гражданина Республики Казахстан",
+  "currency": "KZT",
+  "routes": [
+   {
+    "id": "standard",
+    "where": "home",
+    "speed": "standard",
+    "within": null
+   }
+  ],
+  "bands": [
+   {
+    "validYears": 10,
+    "pay": {
+     "standard": 86500
+    },
+    "from": 16
+   }
+  ]
+ },
+ "LA": {
+  "document": "Digital ID card (citizen identity card)",
+  "currency": "LAK",
+  "routes": [
+   {
+    "id": "command",
+    "where": "home",
+    "speed": "standard",
+    "within": null
+   }
+  ],
+  "bands": [
+   {
+    "validYears": null,
+    "pay": {
+     "command": 3000000
+    },
+    "under": 15
+   },
+   {
+    "validYears": null,
+    "pay": {
+     "command": 3000000
+    },
+    "from": 15,
+    "under": 60
+   },
+   {
+    "validYears": null,
+    "pay": {
+     "command": 3000000
+    },
+    "from": 60,
+    "permanent": true
+   }
+  ]
+ },
+ "LB": {
+  "document": "Identity card (بطاقة الهوية)",
+  "currency": "LBP",
+  "routes": [
+   {
+    "id": "mukhtar",
+    "where": "home",
+    "speed": "standard",
+    "within": {
+     "n": 2,
+     "unit": "month"
+    }
+   }
+  ],
+  "bands": [
+   {
+    "validYears": null,
+    "pay": {
+     "mukhtar": 500000
+    }
+   }
+  ]
+ },
+ "LC": {
+  "document": "Voter identification card (Electoral Department)",
+  "currency": "XCD",
+  "routes": [
+   {
+    "id": "elector",
+    "where": "home",
+    "speed": "standard",
+    "within": null
+   },
+   {
+    "id": "non-elector",
+    "where": "home",
+    "speed": "standard",
+    "within": null
+   }
+  ],
+  "bands": [
+   {
+    "validYears": null,
+    "pay": {
+     "non-elector": 2000
+    },
+    "under": 18
+   },
+   {
+    "validYears": null,
+    "pay": {
+     "elector": null,
+     "non-elector": 2000
+    },
+    "from": 18
+   }
+  ]
+ },
+ "LI": {
+  "document": "Identitätskarte",
+  "currency": "CHF",
+  "routes": [
+   {
+    "id": "home",
+    "where": "home",
+    "speed": "standard",
+    "within": null
+   }
+  ],
+  "bands": [
+   {
+    "validYears": 5,
+    "pay": {
+     "home": 3000
+    },
+    "under": 12
+   },
+   {
+    "validYears": 10,
+    "pay": {
+     "home": 3000
+    },
+    "from": 12,
+    "under": 18
+   },
+   {
+    "validYears": 10,
+    "pay": {
+     "home": 6500
+    },
+    "from": 18
+   }
+  ]
+ },
+ "LK": {
+  "document": "National Identity Card (NIC)",
+  "currency": "LKR",
+  "routes": [
+   {
+    "id": "normal",
+    "where": "home",
+    "speed": "standard",
+    "within": null
+   },
+   {
+    "id": "one-day",
+    "where": "home",
+    "speed": "urgent",
+    "within": {
+     "n": 3,
+     "unit": "hour"
+    }
+   }
+  ],
+  "bands": [
+   {
+    "validYears": null,
+    "pay": {
+     "normal": 20000,
+     "one-day": 220000
+    },
+    "from": 15
+   }
+  ]
+ },
+ "LR": {
+  "document": "National Identification Card",
+  "currency": "USD",
+  "routes": [
+   {
+    "id": "nir",
+    "where": "home",
+    "speed": "standard",
+    "within": null
+   }
+  ],
+  "bands": [
+   {
+    "validYears": null,
+    "pay": {
+     "nir": 500
+    }
+   }
+  ]
+ },
+ "LS": {
+  "document": "National Identity Card",
+  "currency": "LSL",
+  "routes": [
+   {
+    "id": "nicr",
+    "where": "home",
+    "speed": "standard",
+    "within": {
+     "n": 1,
+     "unit": "hour"
+    }
+   }
+  ],
+  "bands": [
+   {
+    "validYears": 10,
+    "pay": {
+     "nicr": 0
+    },
+    "from": 16
+   }
+  ]
+ },
+ "LT": {
+  "document": "Asmens tapatybės kortelė (identity card)",
+  "currency": "EUR",
+  "routes": [
+   {
+    "id": "standard",
+    "where": "home",
+    "speed": "standard",
+    "within": {
+     "n": 1,
+     "unit": "month"
+    }
+   },
+   {
+    "id": "urgent",
+    "where": "home",
+    "speed": "urgent",
+    "within": {
+     "n": 5,
+     "unit": "working day"
+    }
+   },
+   {
+    "id": "next-day",
+    "where": "home",
+    "speed": "urgent",
+    "within": {
+     "n": 1,
+     "unit": "working day"
+    }
+   },
+   {
+    "id": "abroad",
+    "where": "abroad",
+    "speed": "standard",
+    "within": {
+     "n": 2,
+     "unit": "month"
+    }
+   }
+  ],
+  "bands": [
+   {
+    "validYears": 2,
+    "pay": {
+     "standard": 1000,
+     "urgent": 6000,
+     "next-day": 10000,
+     "abroad": 14000
+    },
+    "under": 5
+   },
+   {
+    "validYears": 5,
+    "pay": {
+     "standard": 1000,
+     "urgent": 6000,
+     "next-day": 10000,
+     "abroad": 14000
+    },
+    "from": 5,
+    "under": 16
+   },
+   {
+    "validYears": 10,
+    "pay": {
+     "standard": 1000,
+     "urgent": 6000,
+     "next-day": 10000,
+     "abroad": 14000
+    },
+    "from": 16,
+    "under": 70
+   },
+   {
+    "validYears": 30,
+    "pay": {
+     "standard": 1000,
+     "urgent": 6000,
+     "next-day": 10000,
+     "abroad": 14000
+    },
+    "from": 70
+   }
+  ]
+ },
+ "LU": {
+  "document": "carte d'identité",
+  "currency": "EUR",
+  "routes": [
+   {
+    "id": "normal",
+    "where": "home",
+    "speed": "standard",
+    "within": {
+     "n": 10,
+     "unit": "working day"
+    }
+   },
+   {
+    "id": "accelerated",
+    "where": "home",
+    "speed": "urgent",
+    "within": {
+     "n": 3,
+     "unit": "working day"
+    }
+   },
+   {
+    "id": "mission",
+    "where": "abroad",
+    "speed": "standard",
+    "within": null
+   },
+   {
+    "id": "mission-accelerated",
+    "where": "abroad",
+    "speed": "urgent",
+    "within": null
+   }
+  ],
+  "bands": [
+   {
+    "validYears": 2,
+    "pay": {
+     "normal": 500,
+     "accelerated": 4500,
+     "mission": 2500,
+     "mission-accelerated": 4500
+    },
+    "under": 4
+   },
+   {
+    "validYears": 5,
+    "pay": {
+     "normal": 1000,
+     "accelerated": 4500,
+     "mission": 3000,
+     "mission-accelerated": 4500
+    },
+    "from": 4,
+    "under": 16
+   },
+   {
+    "validYears": 10,
+    "pay": {
+     "normal": 1400,
+     "accelerated": 4500,
+     "mission": 3400,
+     "mission-accelerated": 4500
+    },
+    "from": 16
+   }
+  ]
+ },
+ "LV": {
+  "document": "personas apliecība (eID karte)",
+  "currency": "EUR",
+  "routes": [
+   {
+    "id": "ten-days",
+    "where": "home",
+    "speed": "standard",
+    "within": {
+     "n": 10,
+     "unit": "working day"
+    }
+   },
+   {
+    "id": "two-days",
+    "where": "home",
+    "speed": "urgent",
+    "within": {
+     "n": 2,
+     "unit": "working day"
+    }
+   }
+  ],
+  "bands": [
+   {
+    "validYears": 2,
+    "pay": {
+     "ten-days": 1500,
+     "two-days": 3000
+    },
+    "under": 5
+   },
+   {
+    "validYears": 5,
+    "pay": {
+     "ten-days": 1500,
+     "two-days": 3000
+    },
+    "from": 5,
+    "under": 20
+   },
+   {
+    "validYears": 10,
+    "pay": {
+     "ten-days": 3000,
+     "two-days": 4500
+    },
+    "from": 20
+   }
+  ]
+ },
+ "MA": {
+  "document": "Carte nationale d'identité électronique (CNIE)",
+  "currency": "MAD",
+  "routes": [
+   {
+    "id": "office",
+    "where": "home",
+    "speed": "standard",
+    "within": null
+   }
+  ],
+  "bands": [
+   {
+    "validYears": 7,
+    "pay": {
+     "office": 5000
+    },
+    "under": 12
+   },
+   {
+    "validYears": 10,
+    "pay": {
+     "office": 7500
+    },
+    "from": 12
+   }
+  ]
+ },
+ "MC": {
+  "document": "carte d'identité monégasque",
+  "currency": "EUR",
+  "routes": [
+   {
+    "id": "mairie",
+    "where": "home",
+    "speed": "standard",
+    "within": null
+   }
+  ],
+  "bands": [
+   {
+    "validYears": 3,
+    "pay": {
+     "mairie": 0
+    },
+    "under": 3
+   },
+   {
+    "validYears": 5,
+    "pay": {
+     "mairie": 0
+    },
+    "from": 3
+   }
+  ]
+ },
+ "MD": {
+  "document": "carte de identitate",
+  "currency": "MDL",
+  "routes": [
+   {
+    "id": "ten-days",
+    "where": "home",
+    "speed": "standard",
+    "within": {
+     "n": 10,
+     "unit": "working day"
+    }
+   },
+   {
+    "id": "five-days",
+    "where": "home",
+    "speed": "urgent",
+    "within": {
+     "n": 5,
+     "unit": "day"
+    }
+   },
+   {
+    "id": "one-day",
+    "where": "home",
+    "speed": "urgent",
+    "within": {
+     "n": 1,
+     "unit": "working day"
+    }
+   },
+   {
+    "id": "same-day",
+    "where": "home",
+    "speed": "urgent",
+    "within": {
+     "n": 1,
+     "unit": "day"
+    }
+   }
+  ],
+  "bands": [
+   {
+    "validYears": 4,
+    "pay": {
+     "ten-days": 51000,
+     "five-days": 73000,
+     "one-day": 94000,
+     "same-day": 116000
+    },
+    "under": 7
+   },
+   {
+    "validYears": 7,
+    "pay": {
+     "ten-days": 51000,
+     "five-days": 73000,
+     "one-day": 94000,
+     "same-day": 116000
+    },
+    "from": 7,
+    "under": 14
+   },
+   {
+    "validYears": 10,
+    "pay": {
+     "ten-days": 51000,
+     "five-days": 73000,
+     "one-day": 94000,
+     "same-day": 116000
+    },
+    "from": 14,
+    "under": 70
+   },
+   {
+    "validYears": null,
+    "pay": {
+     "ten-days": 51000,
+     "five-days": 73000,
+     "one-day": 94000,
+     "same-day": 116000
+    },
+    "from": 70,
+    "permanent": true
+   }
+  ]
+ },
+ "ME": {
+  "document": "lična karta",
+  "currency": "EUR",
+  "routes": [
+   {
+    "id": "mup",
+    "where": "home",
+    "speed": "standard",
+    "within": null
+   }
+  ],
+  "bands": [
+   {
+    "validYears": 4,
+    "pay": {
+     "mup": 500
+    },
+    "under": 4
+   },
+   {
+    "validYears": 10,
+    "pay": {
+     "mup": 500
+    },
+    "from": 4,
+    "under": 66
+   },
+   {
+    "validYears": 40,
+    "pay": {
+     "mup": 500
+    },
+    "from": 66
+   }
+  ]
+ },
+ "MF": {
+  "issuedBy": "FR"
+ },
+ "MG": {
+  "document": "Karapanondrom-pirenena (carte d'identité nationale, CIN)",
+  "currency": "MGA",
+  "routes": [
+   {
+    "id": "commune",
+    "where": "home",
+    "speed": "standard",
+    "within": null
+   }
+  ],
+  "bands": [
+   {
+    "validYears": null,
+    "pay": {
+     "commune": null
+    }
+   }
+  ]
+ },
+ "MH": {
+  "document": "National identification card",
+  "currency": "USD",
+  "routes": [
+   {
+    "id": "registrar",
+    "where": "home",
+    "speed": "standard",
+    "within": null
+   }
+  ],
+  "bands": [
+   {
+    "validYears": null,
+    "pay": {
+     "registrar": null
+    }
+   }
+  ]
+ },
+ "MK": {
+  "document": "лична карта",
+  "currency": "MKD",
+  "routes": [
+   {
+    "id": "regular",
+    "where": "home",
+    "speed": "standard",
+    "within": null
+   },
+   {
+    "id": "two-days",
+    "where": "home",
+    "speed": "urgent",
+    "within": {
+     "n": 2,
+     "unit": "working day"
+    }
+   }
+  ],
+  "bands": [
+   {
+    "validYears": null,
+    "pay": {
+     "regular": 31000,
+     "two-days": null
+    },
+    "under": 66
+   },
+   {
+    "validYears": null,
+    "pay": {
+     "regular": 31000,
+     "two-days": null
+    },
+    "from": 66,
+    "permanent": true
+   }
+  ]
+ },
+ "ML": {
+  "document": "Carte nationale d'identité",
+  "currency": "XOF",
+  "routes": [
+   {
+    "id": "police",
+    "where": "home",
+    "speed": "standard",
+    "within": {
+     "n": 24,
+     "unit": "hour"
+    }
+   }
+  ],
+  "bands": [
+   {
+    "validYears": 3,
+    "pay": {
+     "police": 1700
+    },
+    "from": 18
+   }
+  ]
+ },
+ "MM": {
+  "document": "National registration card (citizenship scrutiny card)",
+  "currency": "MMK",
+  "routes": [
+   {
+    "id": "immigration",
+    "where": "home",
+    "speed": "standard",
+    "within": null
+   }
+  ],
+  "bands": [
+   {
+    "validYears": null,
+    "pay": {
+     "immigration": null
+    }
+   }
+  ]
+ },
+ "MN": {
+  "document": "Citizen's identity card (иргэний үнэмлэх)",
+  "currency": "MNT",
+  "routes": [
+   {
+    "id": "office",
+    "where": "home",
+    "speed": "standard",
+    "within": null
+   },
+   {
+    "id": "mission",
+    "where": "abroad",
+    "speed": "standard",
+    "within": null
+   }
+  ],
+  "bands": [
+   {
+    "validYears": null,
+    "pay": {
+     "office": 1830000,
+     "mission": 1830000
+    },
+    "from": 16,
+    "under": 25
+   },
+   {
+    "validYears": null,
+    "pay": {
+     "office": null,
+     "mission": null
+    },
+    "from": 25
+   }
+  ]
+ },
+ "MO": {
+  "document": "Bilhete de Identidade de Residente (BIR), Macao SAR Resident Identity Card",
+  "currency": "MOP",
+  "routes": [
+   {
+    "id": "normal",
+    "where": "home",
+    "speed": "standard",
+    "within": {
+     "n": 15,
+     "unit": "working day"
+    }
+   },
+   {
+    "id": "express",
+    "where": "home",
+    "speed": "urgent",
+    "within": {
+     "n": 10,
+     "unit": "working day"
+    }
+   },
+   {
+    "id": "special",
+    "where": "home",
+    "speed": "urgent",
+    "within": {
+     "n": 3,
+     "unit": "working day"
+    }
+   }
+  ],
+  "bands": [
+   {
+    "validYears": null,
+    "pay": {
+     "normal": 9000,
+     "express": 24000,
+     "special": 34000
+    }
+   }
+  ]
+ },
+ "MP": {
+  "issuedBy": "US"
+ },
+ "MQ": {
+  "issuedBy": "FR"
+ },
+ "MR": {
+  "document": "Carte d'Identification (national identity card)",
+  "currency": "MRU",
+  "routes": [
+   {
+    "id": "centre",
+    "where": "home",
+    "speed": "standard",
+    "within": null
+   }
+  ],
+  "bands": [
+   {
+    "validYears": 10,
+    "pay": {
+     "centre": null
+    },
+    "from": 6,
+    "under": 16
+   },
+   {
+    "validYears": 10,
+    "pay": {
+     "centre": null
+    },
+    "from": 16
+   }
+  ]
+ },
+ "MT": {
+  "document": "e-ID card",
+  "currency": "EUR",
+  "routes": [
+   {
+    "id": "unit",
+    "where": "home",
+    "speed": "standard",
+    "within": {
+     "n": 6,
+     "unit": "working day"
+    }
+   },
+   {
+    "id": "urgent",
+    "where": "home",
+    "speed": "urgent",
+    "within": {
+     "n": 1,
+     "unit": "working day"
+    }
+   }
+  ],
+  "bands": [
+   {
+    "validYears": 2,
+    "pay": {
+     "unit": 0,
+     "urgent": 4000
+    },
+    "from": 14,
+    "under": 16
+   },
+   {
+    "validYears": 2,
+    "pay": {
+     "unit": 0,
+     "urgent": 4000
+    },
+    "from": 16,
+    "under": 18
+   },
+   {
+    "validYears": 10,
+    "pay": {
+     "unit": 0,
+     "urgent": 4000
+    },
+    "from": 18
+   }
+  ]
+ },
+ "MU": {
+  "document": "National Identity Card",
+  "currency": "MUR",
+  "routes": [
+   {
+    "id": "csd",
+    "where": "home",
+    "speed": "standard",
+    "within": null
+   }
+  ],
+  "bands": [
+   {
+    "validYears": null,
+    "pay": {
+     "csd": 0
+    },
+    "from": 18
+   }
+  ]
+ },
+ "MV": {
+  "document": "National Identity Card",
+  "currency": "MVR",
+  "routes": [
+   {
+    "id": "dnr",
+    "where": "home",
+    "speed": "standard",
+    "within": null
+   }
+  ],
+  "bands": [
+   {
+    "validYears": 5,
+    "pay": {
+     "dnr": null
+    },
+    "from": 10,
+    "under": 40
+   },
+   {
+    "validYears": 10,
+    "pay": {
+     "dnr": null
+    },
+    "from": 40
+   }
+  ]
+ },
+ "MW": {
+  "document": "National Identity Card",
+  "currency": "MWK",
+  "routes": [
+   {
+    "id": "office",
+    "where": "home",
+    "speed": "standard",
+    "within": {
+     "n": 30,
+     "unit": "day"
+    }
+   }
+  ],
+  "bands": [
+   {
+    "validYears": 10,
+    "pay": {
+     "office": 0
+    },
+    "from": 16
+   }
+  ]
+ },
+ "MX": {
+  "document": "Credencial para Votar (INE voter's card, the official identification)",
+  "currency": "MXN",
+  "routes": [
+   {
+    "id": "module",
+    "where": "home",
+    "speed": "standard",
+    "within": null
+   },
+   {
+    "id": "consulate",
+    "where": "abroad",
+    "speed": "standard",
+    "within": {
+     "n": 5,
+     "unit": "week"
+    }
+   }
+  ],
+  "bands": [
+   {
+    "validYears": 10,
+    "pay": {
+     "module": 0,
+     "consulate": 0
+    },
+    "from": 18
+   }
+  ]
+ },
+ "MY": {
+  "document": "MyKad (identity card)",
+  "currency": "MYR",
+  "routes": [
+   {
+    "id": "print",
+    "where": "home",
+    "speed": "standard",
+    "within": {
+     "n": 30,
+     "unit": "minute"
+    }
+   },
+   {
+    "id": "branch",
+    "where": "home",
+    "speed": "standard",
+    "within": {
+     "n": 5,
+     "unit": "working day"
+    }
+   }
+  ],
+  "bands": [
+   {
+    "validYears": null,
+    "pay": {
+     "print": 0,
+     "branch": 0
+    },
+    "from": 12,
+    "under": 13
+   },
+   {
+    "validYears": null,
+    "pay": {
+     "print": 1000,
+     "branch": 1000
+    },
+    "from": 13,
+    "under": 16
+   },
+   {
+    "validYears": null,
+    "pay": {
+     "print": 1000,
+     "branch": 1000
+    },
+    "from": 16,
+    "under": 18
+   },
+   {
+    "validYears": null,
+    "pay": {
+     "print": 1000,
+     "branch": 1000
+    },
+    "from": 18,
+    "under": 26
+   },
+   {
+    "validYears": null,
+    "pay": {
+     "print": 1000,
+     "branch": 1000
+    },
+    "from": 26
+   }
+  ]
+ },
+ "MZ": {
+  "document": "Bilhete de Identidade (BI)",
+  "currency": "MZN",
+  "routes": [
+   {
+    "id": "dnic",
+    "where": "home",
+    "speed": "standard",
+    "within": null
+   }
+  ],
+  "bands": [
+   {
+    "validYears": null,
+    "pay": {
+     "dnic": 0
+    }
+   }
+  ]
+ },
+ "NA": {
+  "document": "Electronic identity card (e-ID)",
+  "currency": "NAD",
+  "routes": [
+   {
+    "id": "civil-registration",
+    "where": "home",
+    "speed": "standard",
+    "within": null
+   }
+  ],
+  "bands": [
+   {
+    "validYears": null,
+    "pay": {
+     "civil-registration": 0
+    }
+   }
+  ]
+ },
+ "NC": {
+  "issuedBy": "FR"
+ },
+ "NE": {
+  "document": "Carte d'identité biométrique AES",
+  "currency": "XOF",
+  "routes": [
+   {
+    "id": "enrolment",
+    "where": "home",
+    "speed": "standard",
+    "within": null
+   }
+  ],
+  "bands": [
+   {
+    "validYears": 5,
+    "pay": {
+     "enrolment": 4500
+    },
+    "under": 15
+   },
+   {
+    "validYears": 5,
+    "pay": {
+     "enrolment": 4500
+    },
+    "from": 15
+   }
+  ]
+ },
+ "NF": {
+  "issuedBy": "AU"
+ },
+ "NG": {
+  "document": "National Identification Number (NIN) and its slip",
+  "currency": "NGN",
+  "routes": [
+   {
+    "id": "office",
+    "where": "home",
+    "speed": "standard",
+    "within": null
+   },
+   {
+    "id": "premium",
+    "where": "home",
+    "speed": "urgent",
+    "within": null
+   }
+  ],
+  "bands": [
+   {
+    "validYears": null,
+    "pay": {
+     "office": 0,
+     "premium": 2000000
+    }
+   }
+  ]
+ },
+ "NI": {
+  "document": "Cédula de identidad ciudadana",
+  "currency": "NIO",
+  "routes": [
+   {
+    "id": "office",
+    "where": "home",
+    "speed": "standard",
+    "within": null
+   }
+  ],
+  "bands": [
+   {
+    "validYears": null,
+    "pay": {
+     "office": 0
+    },
+    "from": 16
+   }
+  ]
+ },
+ "NL": {
+  "document": "Nederlandse identiteitskaart",
+  "currency": "EUR",
+  "routes": [
+   {
+    "id": "municipality",
+    "where": "home",
+    "speed": "standard",
+    "within": {
+     "n": 8,
+     "unit": "week"
+    }
+   }
+  ],
+  "bands": [
+   {
+    "validYears": 10,
+    "pay": {
+     "municipality": 8010
+    },
+    "from": 18
+   },
+   {
+    "validYears": 5,
+    "pay": {
+     "municipality": 4320
+    },
+    "under": 18
+   }
+  ]
+ },
+ "NO": {
+  "document": "nasjonalt ID-kort",
+  "currency": "NOK",
+  "routes": [
+   {
+    "id": "police",
+    "where": "home",
+    "speed": "standard",
+    "within": null
+   }
+  ],
+  "bands": [
+   {
+    "validYears": 2,
+    "pay": {
+     "police": 51000
+    },
+    "under": 5
+   },
+   {
+    "validYears": 3,
+    "pay": {
+     "police": 51000
+    },
+    "from": 5,
+    "under": 10
+   },
+   {
+    "validYears": 5,
+    "pay": {
+     "police": 84000
+    },
+    "from": 10,
+    "under": 16
+   },
+   {
+    "validYears": 5,
+    "pay": {
+     "police": 84000
+    },
+    "from": 16
+   }
+  ]
+ },
+ "NP": {
+  "document": "National Identity Card (राष्ट्रिय परिचयपत्र)",
+  "currency": "NPR",
+  "routes": [
+   {
+    "id": "station",
+    "where": "home",
+    "speed": "standard",
+    "within": null
+   }
+  ],
+  "bands": [
+   {
+    "validYears": null,
+    "pay": {
+     "station": 0
+    },
+    "from": 16
+   }
+  ]
+ },
+ "NR": {
+  "none": true
+ },
+ "NU": {
+  "issuedBy": "NZ"
+ },
+ "NZ": {
+  "none": true
+ },
+ "OM": {
+  "document": "Personal card (البطاقة الشخصية)",
+  "currency": "OMR",
+  "routes": [
+   {
+    "id": "civil-status",
+    "where": "home",
+    "speed": "standard",
+    "within": null
+   }
+  ],
+  "bands": [
+   {
+    "validYears": 10,
+    "pay": {
+     "civil-status": 10000
+    }
+   }
+  ]
+ },
+ "PA": {
+  "document": "Cédula de identidad personal",
+  "currency": "PAB",
+  "routes": [
+   {
+    "id": "office",
+    "where": "home",
+    "speed": "standard",
+    "within": null
+   }
+  ],
+  "bands": [
+   {
+    "validYears": null,
+    "pay": {
+     "office": 0
+    },
+    "under": 18
+   },
+   {
+    "validYears": null,
+    "pay": {
+     "office": 0
+    },
+    "from": 18
+   }
+  ]
+ },
+ "PE": {
+  "document": "Documento Nacional de Identidad electrónico (DNIe 3.0)",
+  "currency": "PEN",
+  "routes": [
+   {
+    "id": "office",
+    "where": "home",
+    "speed": "standard",
+    "within": {
+     "n": 10,
+     "unit": "working day"
+    }
+   },
+   {
+    "id": "web",
+    "where": "home",
+    "speed": "standard",
+    "within": null
+   }
+  ],
+  "bands": [
+   {
+    "validYears": 10,
+    "pay": {
+     "office": 4100,
+     "web": 4100
+    },
+    "from": 17,
+    "under": 60
+   },
+   {
+    "validYears": null,
+    "pay": {
+     "office": 4100,
+     "web": 4100
+    },
+    "from": 60,
+    "permanent": true
+   }
+  ]
+ },
+ "PF": {
+  "issuedBy": "FR"
+ },
+ "PG": {
+  "document": "National Identity (NID) card",
+  "currency": "PGK",
+  "routes": [
+   {
+    "id": "nid",
+    "where": "home",
+    "speed": "standard",
+    "within": null
+   }
+  ],
+  "bands": [
+   {
+    "validYears": null,
+    "pay": {
+     "nid": 0
+    },
+    "from": 18
+   }
+  ]
+ },
+ "PH": {
+  "document": "PhilID (Philippine Identification Card)",
+  "currency": "PHP",
+  "routes": [
+   {
+    "id": "register",
+    "where": "home",
+    "speed": "standard",
+    "within": null
+   }
+  ],
+  "bands": [
+   {
+    "validYears": null,
+    "pay": {
+     "register": 0
+    }
+   }
+  ]
+ },
+ "PK": {
+  "document": "Smart National Identity Card (SNIC)",
+  "currency": "PKR",
+  "routes": [
+   {
+    "id": "normal",
+    "where": "home",
+    "speed": "standard",
+    "within": null
+   },
+   {
+    "id": "urgent",
+    "where": "home",
+    "speed": "urgent",
+    "within": null
+   },
+   {
+    "id": "executive",
+    "where": "home",
+    "speed": "urgent",
+    "within": null
+   }
+  ],
+  "bands": [
+   {
+    "validYears": null,
+    "pay": {
+     "normal": 75000,
+     "urgent": 150000,
+     "executive": 250000
+    },
+    "from": 18
+   }
+  ]
+ },
+ "PL": {
+  "document": "dowód osobisty",
+  "currency": "PLN",
+  "routes": [
+   {
+    "id": "gmina",
+    "where": "home",
+    "speed": "standard",
+    "within": null
+   }
+  ],
+  "bands": [
+   {
+    "validYears": 5,
+    "pay": {
+     "gmina": 0
+    },
+    "under": 12
+   },
+   {
+    "validYears": 10,
+    "pay": {
+     "gmina": 0
+    },
+    "from": 12
+   }
+  ]
+ },
+ "PM": {
+  "issuedBy": "FR"
+ },
+ "PN": {
+  "issuedBy": "GB"
+ },
+ "PR": {
+  "issuedBy": "US"
+ },
+ "PS": {
+  "document": "Bitaqat al-hawiyya (بطاقة الهوية, Palestinian identity card)",
+  "currency": "ILS",
+  "routes": [
+   {
+    "id": "office",
+    "where": "home",
+    "speed": "standard",
+    "within": null
+   }
+  ],
+  "bands": [
+   {
+    "validYears": null,
+    "pay": {
+     "office": null
+    },
+    "from": 16,
+    "permanent": true
+   }
+  ],
+  "must": 16,
+  "from": 16
+ },
+ "PT": {
+  "document": "Cartão de Cidadão",
+  "currency": "EUR",
+  "routes": [
+   {
+    "id": "normal",
+    "where": "home",
+    "speed": "standard",
+    "within": {
+     "n": 9,
+     "unit": "working day"
+    }
+   },
+   {
+    "id": "urgent",
+    "where": "home",
+    "speed": "urgent",
+    "within": {
+     "n": 5,
+     "unit": "day"
+    }
+   },
+   {
+    "id": "same-day",
+    "where": "home",
+    "speed": "urgent",
+    "within": {
+     "n": 1,
+     "unit": "working day"
+    }
+   },
+   {
+    "id": "abroad",
+    "where": "abroad",
+    "speed": "standard",
+    "within": {
+     "n": 11,
+     "unit": "working day"
+    }
+   },
+   {
+    "id": "abroad-urgent",
+    "where": "abroad",
+    "speed": "urgent",
+    "within": {
+     "n": 7,
+     "unit": "day"
+    }
+   }
+  ],
+  "bands": [
+   {
+    "validYears": 5,
+    "pay": {
+     "normal": 1500,
+     "urgent": 3000,
+     "same-day": 5000,
+     "abroad": 2000,
+     "abroad-urgent": 4500
+    },
+    "under": 25
+   },
+   {
+    "validYears": 10,
+    "pay": {
+     "normal": 1800,
+     "urgent": 3300,
+     "same-day": 5300,
+     "abroad": 2300,
+     "abroad-urgent": 4800
+    },
+    "from": 25
+   }
+  ]
+ },
+ "PW": {
+  "none": true
+ },
+ "PY": {
+  "document": "Cédula de Identidad Civil",
+  "currency": "PYG",
+  "routes": [
+   {
+    "id": "office",
+    "where": "home",
+    "speed": "standard",
+    "within": null
+   }
+  ],
+  "bands": [
+   {
+    "validYears": null,
+    "pay": {
+     "office": 0
+    }
+   }
+  ]
+ },
+ "QA": {
+  "document": "Personal card (البطاقة الشخصية)",
+  "currency": "QAR",
+  "routes": [
+   {
+    "id": "moi",
+    "where": "home",
+    "speed": "standard",
+    "within": null
+   }
+  ],
+  "bands": [
+   {
+    "validYears": 5,
+    "pay": {
+     "moi": 10000
+    },
+    "under": 16
+   },
+   {
+    "validYears": 10,
+    "pay": {
+     "moi": 10000
+    },
+    "from": 16
+   }
+  ]
+ },
+ "RE": {
+  "issuedBy": "FR"
+ },
+ "RO": {
+  "document": "carte electronică de identitate (CEI)",
+  "currency": "RON",
+  "routes": [
+   {
+    "id": "spclep",
+    "where": "home",
+    "speed": "standard",
+    "within": null
+   }
+  ],
+  "bands": [
+   {
+    "validYears": 2,
+    "pay": {
+     "spclep": 6700
+    },
+    "under": 2
+   },
+   {
+    "validYears": 4,
+    "pay": {
+     "spclep": 6700
+    },
+    "from": 2,
+    "under": 14
+   },
+   {
+    "validYears": 5,
+    "pay": {
+     "spclep": 0
+    },
+    "from": 14,
+    "under": 18
+   },
+   {
+    "validYears": 10,
+    "pay": {
+     "spclep": 0
+    },
+    "from": 18,
+    "under": 70
+   },
+   {
+    "validYears": null,
+    "pay": {
+     "spclep": 0
+    },
+    "from": 70,
+    "permanent": true
+   }
+  ]
+ },
+ "RS": {
+  "document": "lična karta",
+  "currency": "RSD",
+  "routes": [
+   {
+    "id": "police",
+    "where": "home",
+    "speed": "standard",
+    "within": {
+     "n": 15,
+     "unit": "day"
+    }
+   }
+  ],
+  "bands": [
+   {
+    "validYears": 5,
+    "pay": {
+     "police": 115480
+    },
+    "from": 10,
+    "under": 16
+   },
+   {
+    "validYears": 10,
+    "pay": {
+     "police": 115480
+    },
+    "from": 16
+   }
+  ]
+ },
+ "RU": {
+  "document": "паспорт гражданина Российской Федерации (internal passport)",
+  "currency": "RUB",
+  "routes": [
+   {
+    "id": "mvd",
+    "where": "home",
+    "speed": "standard",
+    "within": {
+     "n": 5,
+     "unit": "working day"
+    }
+   }
+  ],
+  "bands": [
+   {
+    "validYears": null,
+    "pay": {
+     "mvd": 30000
+    },
+    "from": 14,
+    "under": 20
+   },
+   {
+    "validYears": null,
+    "pay": {
+     "mvd": 30000
+    },
+    "from": 20,
+    "under": 45
+   },
+   {
+    "validYears": null,
+    "pay": {
+     "mvd": 30000
+    },
+    "from": 45,
+    "permanent": true
+   }
+  ]
+ },
+ "RW": {
+  "document": "National identity card (Indangamuntu)",
+  "currency": "RWF",
+  "routes": [
+   {
+    "id": "sector",
+    "where": "home",
+    "speed": "standard",
+    "within": {
+     "n": 30,
+     "unit": "day"
+    }
+   }
+  ],
+  "bands": [
+   {
+    "validYears": null,
+    "pay": {
+     "sector": 500
+    },
+    "from": 16
+   }
+  ]
+ },
+ "SA": {
+  "document": "National identity card (بطاقة الهوية الوطنية)",
+  "currency": "SAR",
+  "routes": [
+   {
+    "id": "office",
+    "where": "home",
+    "speed": "standard",
+    "within": {
+     "n": 14,
+     "unit": "day"
+    }
+   }
+  ],
+  "bands": [
+   {
+    "validYears": 10,
+    "pay": {
+     "office": 0
+    },
+    "from": 6,
+    "under": 15
+   },
+   {
+    "validYears": 10,
+    "pay": {
+     "office": 0
+    },
+    "from": 15
+   }
+  ]
+ },
+ "SB": {
+  "none": true
+ },
+ "SC": {
+  "document": "National Identity Card",
+  "currency": "SCR",
+  "routes": [
+   {
+    "id": "id-office",
+    "where": "home",
+    "speed": "standard",
+    "within": null
+   }
+  ],
+  "bands": [
+   {
+    "validYears": 10,
+    "pay": {
+     "id-office": 0
+    }
+   }
+  ]
+ },
+ "SD": {
+  "document": "National ID card",
+  "currency": "SDG",
+  "routes": [
+   {
+    "id": "registry",
+    "where": "home",
+    "speed": "standard",
+    "within": null
+   }
+  ],
+  "bands": [
+   {
+    "validYears": 5,
+    "pay": {
+     "registry": null
+    },
+    "from": 16
+   }
+  ]
+ },
+ "SE": {
+  "document": "nationellt id-kort",
+  "currency": "SEK",
+  "routes": [
+   {
+    "id": "police",
+    "where": "home",
+    "speed": "standard",
+    "within": null
+   }
+  ],
+  "bands": [
+   {
+    "validYears": 3,
+    "pay": {
+     "police": 40000
+    },
+    "under": 12
+   },
+   {
+    "validYears": 5,
+    "pay": {
+     "police": 40000
+    },
+    "from": 12
+   }
+  ]
+ },
+ "SG": {
+  "document": "National Registration Identity Card (NRIC)",
+  "currency": "SGD",
+  "routes": [
+   {
+    "id": "register",
+    "where": "home",
+    "speed": "standard",
+    "within": {
+     "n": 1,
+     "unit": "working day"
+    }
+   },
+   {
+    "id": "re-register",
+    "where": "home",
+    "speed": "standard",
+    "within": {
+     "n": 7,
+     "unit": "working day"
+    }
+   }
+  ],
+  "bands": [
+   {
+    "validYears": null,
+    "pay": {
+     "register": 1000
+    },
+    "from": 15,
+    "under": 30
+   },
+   {
+    "validYears": null,
+    "pay": {
+     "re-register": 1000
+    },
+    "from": 30
+   }
+  ]
+ },
+ "SI": {
+  "document": "osebna izkaznica",
+  "currency": "EUR",
+  "routes": [
+   {
+    "id": "unit",
+    "where": "home",
+    "speed": "standard",
+    "within": {
+     "n": 4,
+     "unit": "working day"
+    }
+   },
+   {
+    "id": "priority",
+    "where": "home",
+    "speed": "urgent",
+    "within": {
+     "n": 1,
+     "unit": "working day"
+    }
+   },
+   {
+    "id": "mission",
+    "where": "abroad",
+    "speed": "standard",
+    "within": null
+   }
+  ],
+  "bands": [
+   {
+    "validYears": 3,
+    "pay": {
+     "unit": 2340,
+     "priority": 2610,
+     "mission": 4400
+    },
+    "under": 3
+   },
+   {
+    "validYears": 5,
+    "pay": {
+     "unit": 2520,
+     "priority": 2970,
+     "mission": 6000
+    },
+    "from": 3,
+    "under": 12
+   },
+   {
+    "validYears": 5,
+    "pay": {
+     "unit": 2595,
+     "priority": 3045,
+     "mission": 6000
+    },
+    "from": 12,
+    "under": 18
+   },
+   {
+    "validYears": 10,
+    "pay": {
+     "unit": 3055,
+     "priority": 3965,
+     "mission": 7600
+    },
+    "from": 18,
+    "under": 70
+   },
+   {
+    "validYears": null,
+    "pay": {
+     "unit": 3055,
+     "priority": 3965,
+     "mission": 7600
+    },
+    "from": 70,
+    "permanent": true
+   }
+  ]
+ },
+ "SJ": {
+  "document": "nasjonalt ID-kort (Norway's)",
+  "currency": "NOK",
+  "routes": [
+   {
+    "id": "governor",
+    "where": "home",
+    "speed": "standard",
+    "within": {
+     "n": 5,
+     "unit": "week"
+    }
+   }
+  ],
+  "bands": [
+   {
+    "validYears": 2,
+    "pay": {
+     "governor": 51000
+    },
+    "under": 5
+   },
+   {
+    "validYears": 3,
+    "pay": {
+     "governor": 51000
+    },
+    "from": 5,
+    "under": 10
+   },
+   {
+    "validYears": 5,
+    "pay": {
+     "governor": 84000
+    },
+    "from": 10,
+    "under": 16
+   },
+   {
+    "validYears": 5,
+    "pay": {
+     "governor": 84000
+    },
+    "from": 16
+   }
+  ]
+ },
+ "SK": {
+  "document": "občiansky preukaz",
+  "currency": "EUR",
+  "routes": [
+   {
+    "id": "standard",
+    "where": "home",
+    "speed": "standard",
+    "within": {
+     "n": 30,
+     "unit": "day"
+    }
+   },
+   {
+    "id": "urgent",
+    "where": "home",
+    "speed": "urgent",
+    "within": {
+     "n": 2,
+     "unit": "working day"
+    }
+   }
+  ],
+  "bands": [
+   {
+    "validYears": 2,
+    "pay": {
+     "standard": 700,
+     "urgent": 2750
+    },
+    "under": 6
+   },
+   {
+    "validYears": 5,
+    "pay": {
+     "standard": 700,
+     "urgent": 2750
+    },
+    "from": 6,
+    "under": 15
+   },
+   {
+    "validYears": 10,
+    "pay": {
+     "standard": 0,
+     "urgent": 2000
+    },
+    "from": 15
+   }
+  ]
+ },
+ "SL": {
+  "document": "National identity card",
+  "currency": "SLE",
+  "routes": [
+   {
+    "id": "ncra",
+    "where": "home",
+    "speed": "standard",
+    "within": null
+   }
+  ],
+  "bands": [
+   {
+    "validYears": null,
+    "pay": {
+     "ncra": null
+    }
+   }
+  ]
+ },
+ "SM": {
+  "document": "carta d'identità",
+  "currency": "EUR",
+  "routes": [
+   {
+    "id": "office",
+    "where": "home",
+    "speed": "standard",
+    "within": null
+   }
+  ],
+  "bands": [
+   {
+    "validYears": 3,
+    "pay": {
+     "office": 1500
+    },
+    "under": 6
+   },
+   {
+    "validYears": 5,
+    "pay": {
+     "office": 3000
+    },
+    "from": 6
+   }
+  ]
+ },
+ "SN": {
+  "document": "Carte d'identité biométrique CEDEAO",
+  "currency": "XOF",
+  "routes": [
+   {
+    "id": "office",
+    "where": "home",
+    "speed": "standard",
+    "within": null
+   }
+  ],
+  "bands": [
+   {
+    "validYears": 10,
+    "pay": {
+     "office": 10000
+    },
+    "from": 5
+   }
+  ]
+ },
+ "SO": {
+  "document": "National ID card (NIRA)",
+  "currency": "SOS",
+  "routes": [
+   {
+    "id": "centre",
+    "where": "home",
+    "speed": "standard",
+    "within": null
+   }
+  ],
+  "bands": [
+   {
+    "validYears": null,
+    "pay": {
+     "centre": 0
+    }
+   }
+  ]
+ },
+ "SR": {
+  "document": "Id-kaart",
+  "currency": "SRD",
+  "routes": [
+   {
+    "id": "office",
+    "where": "home",
+    "speed": "standard",
+    "within": null
+   }
+  ],
+  "bands": [
+   {
+    "validYears": 10,
+    "pay": {
+     "office": 0
+    },
+    "from": 16,
+    "under": 17
+   },
+   {
+    "validYears": 10,
+    "pay": {
+     "office": 7500
+    },
+    "from": 17
+   }
+  ]
+ },
+ "SS": {
+  "document": "National identity card",
+  "currency": "SSP",
+  "routes": [
+   {
+    "id": "directorate",
+    "where": "home",
+    "speed": "standard",
+    "within": null
+   }
+  ],
+  "bands": [
+   {
+    "validYears": null,
+    "pay": {
+     "directorate": null
+    }
+   }
+  ]
+ },
+ "ST": {
+  "document": "Bilhete de Identidade (BI)",
+  "currency": "STN",
+  "routes": [
+   {
+    "id": "registos",
+    "where": "home",
+    "speed": "standard",
+    "within": null
+   }
+  ],
+  "bands": [
+   {
+    "validYears": null,
+    "pay": {
+     "registos": null
+    },
+    "under": 18
+   },
+   {
+    "validYears": null,
+    "pay": {
+     "registos": 0
+    },
+    "from": 18,
+    "under": 19
+   },
+   {
+    "validYears": null,
+    "pay": {
+     "registos": null
+    },
+    "from": 19
+   }
+  ]
+ },
+ "SV": {
+  "document": "Documento Único de Identidad (DUI)",
+  "currency": "USD",
+  "routes": [
+   {
+    "id": "duicentro",
+    "where": "home",
+    "speed": "standard",
+    "within": null
+   },
+   {
+    "id": "abroad",
+    "where": "abroad",
+    "speed": "standard",
+    "within": null
+   }
+  ],
+  "bands": [
+   {
+    "validYears": null,
+    "pay": {
+     "duicentro": 0,
+     "abroad": 3500
+    }
+   }
+  ]
+ },
+ "SX": {
+  "document": "Nederlandse identiteitskaart",
+  "currency": "USD",
+  "routes": [
+   {
+    "id": "standard",
+    "where": "home",
+    "speed": "standard",
+    "within": {
+     "n": 2,
+     "unit": "week"
+    }
+   }
+  ],
+  "bands": [
+   {
+    "validYears": 10,
+    "pay": {
+     "standard": 12650
+    },
+    "from": 18
+   },
+   {
+    "validYears": 5,
+    "pay": {
+     "standard": 8375
+    },
+    "under": 18
+   }
+  ]
+ },
+ "SY": {
+  "document": "Identity card (البطاقة الشخصية)",
+  "currency": "SYP",
+  "routes": [
+   {
+    "id": "registry",
+    "where": "home",
+    "speed": "standard",
+    "within": null
+   }
+  ],
+  "bands": [
+   {
+    "validYears": null,
+    "pay": {
+     "registry": 100000
+    },
+    "from": 14
+   }
+  ]
+ },
+ "SZ": {
+  "document": "National identity card",
+  "currency": "SZL",
+  "routes": [
+   {
+    "id": "service-centre",
+    "where": "home",
+    "speed": "standard",
+    "within": null
+   }
+  ],
+  "bands": [
+   {
+    "validYears": null,
+    "pay": {
+     "service-centre": null
+    }
+   }
+  ]
+ },
+ "TC": {
+  "document": "National Turks and Caicos Islander Status Card",
+  "currency": "USD",
+  "routes": [
+   {
+    "id": "department",
+    "where": "home",
+    "speed": "standard",
+    "within": null
+   }
+  ],
+  "bands": [
+   {
+    "validYears": null,
+    "pay": {
+     "department": 0
+    }
+   }
+  ]
+ },
+ "TD": {
+  "document": "Carte nationale d'identité",
+  "currency": "XAF",
+  "routes": [
+   {
+    "id": "anats",
+    "where": "home",
+    "speed": "standard",
+    "within": null
+   }
+  ],
+  "bands": [
+   {
+    "validYears": 10,
+    "pay": {
+     "anats": 5000
+    }
+   }
+  ]
+ },
+ "TF": {
+  "issuedBy": "FR"
+ },
+ "TG": {
+  "document": "Carte nationale d'identité (CNI)",
+  "currency": "XOF",
+  "routes": [
+   {
+    "id": "commissariat",
+    "where": "home",
+    "speed": "standard",
+    "within": null
+   }
+  ],
+  "bands": [
+   {
+    "validYears": null,
+    "pay": {
+     "commissariat": 5000
+    },
+    "from": 18
+   }
+  ]
+ },
+ "TH": {
+  "document": "บัตรประจำตัวประชาชน (identity card)",
+  "currency": "THB",
+  "routes": [
+   {
+    "id": "office",
+    "where": "home",
+    "speed": "standard",
+    "within": {
+     "n": 9,
+     "unit": "minute"
+    }
+   }
+  ],
+  "bands": [
+   {
+    "validYears": null,
+    "pay": {
+     "office": 0
+    },
+    "from": 7
+   }
+  ]
+ },
+ "TJ": {
+  "document": "Passport of a citizen of the Republic of Tajikistan (identity card)",
+  "currency": "USD",
+  "routes": [
+   {
+    "id": "service",
+    "where": "home",
+    "speed": "standard",
+    "within": {
+     "n": 15,
+     "unit": "day"
+    }
+   }
+  ],
+  "bands": [
+   {
+    "validYears": null,
+    "pay": {
+     "service": 1000
+    }
+   }
+  ]
+ },
+ "TK": {
+  "issuedBy": "NZ"
+ },
+ "TL": {
+  "document": "Bilhete de identidade",
+  "currency": "USD",
+  "routes": [
+   {
+    "id": "registos",
+    "where": "home",
+    "speed": "standard",
+    "within": null
+   }
+  ],
+  "bands": [
+   {
+    "validYears": 5,
+    "pay": {
+     "registos": null
+    },
+    "under": 60
+   },
+   {
+    "validYears": null,
+    "pay": {
+     "registos": null
+    },
+    "from": 60,
+    "permanent": true
+   }
+  ]
+ },
+ "TM": {
+  "document": "Passport of a citizen of Turkmenistan",
+  "currency": "TMT",
+  "routes": [
+   {
+    "id": "mvd",
+    "where": "home",
+    "speed": "standard",
+    "within": {
+     "n": 7,
+     "unit": "working day"
+    }
+   }
+  ],
+  "bands": [
+   {
+    "validYears": null,
+    "pay": {
+     "mvd": null
+    }
+   }
+  ]
+ },
+ "TN": {
+  "document": "Carte d'identité nationale (CIN)",
+  "currency": "TND",
+  "routes": [
+   {
+    "id": "interior",
+    "where": "home",
+    "speed": "standard",
+    "within": {
+     "n": 15,
+     "unit": "day"
+    }
+   }
+  ],
+  "bands": [
+   {
+    "validYears": null,
+    "pay": {
+     "interior": 3000
+    }
+   }
+  ]
+ },
+ "TO": {
+  "document": "National identity card",
+  "currency": "TOP",
+  "routes": [
+   {
+    "id": "nico",
+    "where": "home",
+    "speed": "standard",
+    "within": null
+   }
+  ],
+  "bands": [
+   {
+    "validYears": null,
+    "pay": {
+     "nico": null
+    }
+   }
+  ]
+ },
+ "TR": {
+  "document": "Türkiye Cumhuriyeti kimlik kartı",
+  "currency": "TRY",
+  "routes": [
+   {
+    "id": "nufus",
+    "where": "home",
+    "speed": "standard",
+    "within": null
+   }
+  ],
+  "bands": [
+   {
+    "validYears": null,
+    "pay": {
+     "nufus": 22000
+    }
+   }
+  ]
+ },
+ "TT": {
+  "document": "National Identification Card",
+  "currency": "TTD",
+  "routes": [
+   {
+    "id": "office",
+    "where": "home",
+    "speed": "standard",
+    "within": null
+   }
+  ],
+  "bands": [
+   {
+    "validYears": 10,
+    "pay": {
+     "office": 0
+    },
+    "from": 15
+   }
+  ]
+ },
+ "TV": {
+  "none": true
+ },
+ "TW": {
+  "document": "國民身分證 (National Identification Card)",
+  "currency": "TWD",
+  "routes": [
+   {
+    "id": "office",
+    "where": "home",
+    "speed": "standard",
+    "within": {
+     "n": 30,
+     "unit": "minute"
+    }
+   }
+  ],
+  "bands": [
+   {
+    "validYears": null,
+    "pay": {
+     "office": 5000
+    },
+    "permanent": true
+   }
+  ]
+ },
+ "TZ": {
+  "document": "National identity card (kitambulisho cha Taifa)",
+  "currency": "TZS",
+  "routes": [
+   {
+    "id": "nida",
+    "where": "home",
+    "speed": "standard",
+    "within": null
+   }
+  ],
+  "bands": [
+   {
+    "validYears": null,
+    "pay": {
+     "nida": 0
+    },
+    "permanent": true
+   }
+  ]
+ },
+ "UA": {
+  "document": "паспорт громадянина України у формі картки (ID-картка)",
+  "currency": "UAH",
+  "routes": [
+   {
+    "id": "first",
+    "where": "home",
+    "speed": "standard",
+    "within": {
+     "n": 7,
+     "unit": "working day"
+    }
+   }
+  ],
+  "bands": [
+   {
+    "validYears": 4,
+    "pay": {
+     "first": 0
+    },
+    "from": 14,
+    "under": 18
+   },
+   {
+    "validYears": 10,
+    "pay": {
+     "first": 0
+    },
+    "from": 18
+   }
+  ]
+ },
+ "UG": {
+  "document": "National Identity Card",
+  "currency": "UGX",
+  "routes": [
+   {
+    "id": "office",
+    "where": "home",
+    "speed": "standard",
+    "within": null
+   }
+  ],
+  "bands": [
+   {
+    "validYears": null,
+    "pay": {
+     "office": 0
+    },
+    "under": 18
+   },
+   {
+    "validYears": null,
+    "pay": {
+     "office": 0
+    },
+    "from": 18
+   }
+  ]
+ },
+ "US": {
+  "none": true
+ },
+ "UY": {
+  "document": "Documento Nacional de Identidad (cédula de identidad)",
+  "currency": "UYU",
+  "routes": [
+   {
+    "id": "child",
+    "where": "home",
+    "speed": "standard",
+    "within": {
+     "n": 1,
+     "unit": "day"
+    }
+   },
+   {
+    "id": "office",
+    "where": "home",
+    "speed": "standard",
+    "within": {
+     "n": 5,
+     "unit": "working day"
+    }
+   }
+  ],
+  "bands": [
+   {
+    "validYears": null,
+    "pay": {
+     "child": 45600
+    },
+    "under": 10
+   },
+   {
+    "validYears": null,
+    "pay": {
+     "office": 45600
+    },
+    "from": 10
+   }
+  ]
+ },
+ "UZ": {
+  "document": "ID card (passport) of a citizen of the Republic of Uzbekistan",
+  "currency": "UZS",
+  "routes": [
+   {
+    "id": "online",
+    "where": "home",
+    "speed": "standard",
+    "within": {
+     "n": 1,
+     "unit": "working day"
+    }
+   },
+   {
+    "id": "office",
+    "where": "home",
+    "speed": "standard",
+    "within": {
+     "n": 1,
+     "unit": "working day"
+    }
+   },
+   {
+    "id": "consulate",
+    "where": "abroad",
+    "speed": "standard",
+    "within": null
+   }
+  ],
+  "bands": [
+   {
+    "validYears": 2,
+    "pay": {
+     "online": 33001200,
+     "office": 36668000,
+     "consulate": 36668000
+    },
+    "under": 1
+   },
+   {
+    "validYears": 5,
+    "pay": {
+     "online": 33001200,
+     "office": 36668000,
+     "consulate": 36668000
+    },
+    "from": 1,
+    "under": 16
+   },
+   {
+    "validYears": 10,
+    "pay": {
+     "online": 33001200,
+     "office": 36668000,
+     "consulate": 36668000
+    },
+    "from": 16
+   }
+  ]
+ },
+ "VA": {
+  "document": "Tessera di riconoscimento (recognition card)",
+  "currency": "EUR",
+  "routes": [
+   {
+    "id": "governorate",
+    "where": "home",
+    "speed": "standard",
+    "within": null
+   }
+  ],
+  "bands": [
+   {
+    "validYears": null,
+    "pay": {
+     "governorate": null
+    }
+   }
+  ]
+ },
+ "VC": {
+  "document": "National identification card",
+  "currency": "XCD",
+  "routes": [
+   {
+    "id": "constituency",
+    "where": "home",
+    "speed": "standard",
+    "within": {
+     "n": 2,
+     "unit": "week"
+    }
+   }
+  ],
+  "bands": [
+   {
+    "validYears": null,
+    "pay": {
+     "constituency": null
+    },
+    "from": 18
+   }
+  ]
+ },
+ "VE": {
+  "document": "Cédula de identidad",
+  "currency": "VES",
+  "routes": [
+   {
+    "id": "office",
+    "where": "home",
+    "speed": "standard",
+    "within": null
+   },
+   {
+    "id": "consulate",
+    "where": "abroad",
+    "speed": "standard",
+    "within": null
+   }
+  ],
+  "bands": [
+   {
+    "validYears": 10,
+    "pay": {
+     "office": 0,
+     "consulate": 0
+    },
+    "from": 9
+   }
+  ]
+ },
+ "VG": {
+  "document": "Belonger Card",
+  "currency": "USD",
+  "routes": [
+   {
+    "id": "registry",
+    "where": "home",
+    "speed": "standard",
+    "within": null
+   }
+  ],
+  "bands": [
+   {
+    "validYears": null,
+    "pay": {
+     "registry": null
+    }
+   }
+  ]
+ },
+ "VI": {
+  "issuedBy": "US"
+ },
+ "VN": {
+  "document": "Thẻ căn cước (identity card)",
+  "currency": "VND",
+  "routes": [
+   {
+    "id": "office",
+    "where": "home",
+    "speed": "standard",
+    "within": null
+   }
+  ],
+  "bands": [
+   {
+    "validYears": null,
+    "pay": {
+     "office": 0
+    },
+    "from": 14,
+    "under": 16
+   },
+   {
+    "validYears": null,
+    "pay": {
+     "office": 50000
+    },
+    "from": 16,
+    "under": 60
+   },
+   {
+    "validYears": null,
+    "pay": {
+     "office": 0
+    },
+    "from": 60,
+    "permanent": true
+   }
+  ]
+ },
+ "VU": {
+  "document": "Vanuatu ID Card",
+  "currency": "VUV",
+  "routes": [
+   {
+    "id": "crim",
+    "where": "home",
+    "speed": "standard",
+    "within": null
+   }
+  ],
+  "bands": [
+   {
+    "validYears": null,
+    "pay": {
+     "crim": null
+    }
+   }
+  ]
+ },
+ "WF": {
+  "issuedBy": "FR"
+ },
+ "WS": {
+  "none": true
+ },
+ "XK": {
+  "document": "letërnjoftim",
+  "currency": "EUR",
+  "routes": [
+   {
+    "id": "regular",
+    "where": "home",
+    "speed": "standard",
+    "within": {
+     "n": 15,
+     "unit": "day"
+    }
+   },
+   {
+    "id": "accelerated",
+    "where": "home",
+    "speed": "urgent",
+    "within": {
+     "n": 72,
+     "unit": "hour"
+    }
+   }
+  ],
+  "bands": [
+   {
+    "validYears": null,
+    "pay": {
+     "regular": 1000,
+     "accelerated": 6000
+    },
+    "from": 16
+   }
+  ]
+ },
+ "YE": {
+  "document": "National identity card (البطاقة الشخصية)",
+  "currency": "YER",
+  "routes": [
+   {
+    "id": "civil-registry",
+    "where": "home",
+    "speed": "standard",
+    "within": null
+   }
+  ],
+  "bands": [
+   {
+    "validYears": 10,
+    "pay": {
+     "civil-registry": null
+    },
+    "from": 16
+   }
+  ]
+ },
+ "YT": {
+  "issuedBy": "FR"
+ },
+ "ZA": {
+  "document": "Smart ID card",
+  "currency": "ZAR",
+  "routes": [
+   {
+    "id": "office",
+    "where": "home",
+    "speed": "standard",
+    "within": null
+   }
+  ],
+  "bands": [
+   {
+    "validYears": null,
+    "pay": {
+     "office": 0
+    },
+    "from": 16
+   }
+  ]
+ },
+ "ZM": {
+  "document": "National Registration Card (NRC)",
+  "currency": "ZMW",
+  "routes": [
+   {
+    "id": "office",
+    "where": "home",
+    "speed": "standard",
+    "within": null
+   }
+  ],
+  "bands": [
+   {
+    "validYears": null,
+    "pay": {
+     "office": 0
+    },
+    "from": 16,
+    "permanent": true
+   }
+  ]
+ },
+ "ZW": {
+  "document": "National identity document (metal or synthetic polythene identity card)",
+  "currency": "USD",
+  "routes": [
+   {
+    "id": "registry",
+    "where": "home",
+    "speed": "standard",
+    "within": null
+   }
+  ],
+  "bands": [
+   {
+    "validYears": null,
+    "pay": {
+     "registry": 0
+    },
+    "from": 16,
+    "under": 19
+   },
+   {
+    "validYears": null,
+    "pay": {
+     "registry": 200
+    },
+    "from": 19
+   }
+  ]
+ }
+}

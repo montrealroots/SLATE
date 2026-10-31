@@ -1,0 +1,65 @@
+{
+ "country": "LK",
+ "office": "the Department of Immigration and Emigration",
+ "currency": "LKR",
+ "routes": [
+  {
+   "id": "normal",
+   "where": "home",
+   "speed": "standard",
+   "within": {
+    "n": 30,
+    "unit": "working day"
+   },
+   "label": "normal basis, 30 working days"
+  },
+  {
+   "id": "urgent",
+   "where": "home",
+   "speed": "urgent",
+   "within": {
+    "n": 1,
+    "unit": "day"
+   },
+   "label": "urgent basis, the same day"
+  }
+ ],
+ "passports": [
+  {
+   "for": "adult",
+   "from": 16,
+   "validYears": null,
+   "pay": {
+    "normal": "10000",
+    "urgent": "20000"
+   }
+  },
+  {
+   "for": "minor, three years",
+   "under": 16,
+   "validYears": 3,
+   "pay": {
+    "normal": "3000",
+    "urgent": "9000"
+   }
+  },
+  {
+   "for": "minor, ten years",
+   "under": 16,
+   "validYears": 10,
+   "pay": {
+    "normal": "10000",
+    "urgent": "20000"
+   }
+  }
+ ],
+ "note": "The All-Countries Passport's processing fees and delivery times as the Department gives them; a minor (under 16) chooses three or ten years. The adult passport's validity isn't stated on the page, a lead. Fees at missions abroad are leads.",
+ "sources": [
+  {
+   "url": "https://www.immigration.gov.lk/pages_e.php?id=8",
+   "title": "Department of Immigration and Emigration, Sri Lanka, Issue of passport",
+   "read": "2026-10-28",
+   "said": "What are the delivery times for All-Countries Passport ? Normal Basis – 30 working days Urgent Basis – Same day What are the processing fees for All-Countries Passport ? Normal Basis - LKR. 10,000.00 Urgent Basis - LKR.20,000.00 ... Any person below 16 years of age is considered as a minor for this purpose. ... What are the processing fees for All-Countries Passport (below 16 years of age) ? Validity period for 3 years Normal Basis - LKR. 3,000.00 Urgent Basis - LKR. 9,000.00 Validity period for 10 years Normal Basis - LKR. 10,000.00 Urgent Basis - LKR. 20,000.00"
+  }
+ ]
+}

@@ -1,0 +1,64 @@
+{
+ "country": "AL",
+ "document": "Letërnjoftim Elektronik (Kartë Identiteti)",
+ "office": "an IdentiTek application office at a municipality or administrative unit",
+ "currency": "ALL",
+ "routes": [
+  {
+   "id": "standard",
+   "where": "home",
+   "speed": "standard",
+   "within": {
+    "n": 14,
+    "unit": "day"
+   },
+   "label": "standard procedure: delivered in 14 calendar days"
+  },
+  {
+   "id": "fast",
+   "where": "home",
+   "speed": "urgent",
+   "within": {
+    "n": 3,
+    "unit": "day"
+   },
+   "label": "fast procedure: delivered in 3 calendar days"
+  }
+ ],
+ "cards": [
+  {
+   "for": "16 to 75",
+   "from": 16,
+   "under": 76,
+   "validYears": 10,
+   "pay": {
+    "standard": "1500",
+    "fast": "3000"
+   }
+  },
+  {
+   "for": "over 75",
+   "from": 76,
+   "validYears": "permanent",
+   "pay": {
+    "standard": "1500",
+    "fast": "3000"
+   }
+  }
+ ],
+ "note": "IdentiTek's coupon prices for applying in Albania, and its procedures: the card is for a citizen who has turned 16, valid ten years, without end for one who applies over 75. Abroad the coupon depends on the region (12 euros for Italy and Greece, 16 elsewhere in Europe, 1,879 lekë for the United States and Canada, 1,673 for the United Kingdom, each 15 days) and isn't modelled, the routes abroad not carrying the region.",
+ "sources": [
+  {
+   "url": "https://e-kupon.identitek.al/",
+   "title": "IdentiTek, e-Kupon (coupon catalogue)",
+   "read": "2026-10-28",
+   "said": "\"title\": \"Kartë Identiteti me procedurë standarde\", ... \"price\": \"1500.00\", ... \"estimate\": 14, ... \"title\": \"Kartë Identiteti me procedurë të shpejtë\", ... \"price\": \"3000.00\", ... \"estimate\": 3,"
+  },
+  {
+   "url": "https://identitek.al/aplikimet",
+   "title": "IdentiTek, Procedurat e aplikimit (Letërnjoftim Elektronik)",
+   "read": "2026-10-28",
+   "said": "Kush mund të aplikojë Çdo shtetash shqiptar që ka mbushur moshën 16 vjeç, Letërnjoftimi Elektronik të së cilit ka skaduar ... Vlefshmëria e Letërnjoftimit Elektronik së Identitetit është 10 vite. Vlefshmëria e Letërnjoftimit Elektronik së Identitetit është pa afat për shtetasit që aplikojnë mbi moshën 75 vjecare."
+  }
+ ]
+}

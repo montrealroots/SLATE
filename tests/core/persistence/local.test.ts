@@ -162,6 +162,62 @@ describe('the key stores', () => {
       await expect(q).rejects.toThrow('req');
     }
   });
+  it('the device\'s: local storage from the first time IndexedDB won\'t open, and only then', async () => {
+    const real = new IDBFactory();
+    let fails = 1;
+    const flaky = {
+      open: (name: string, version: number) => {
+        if (fails === 0) return real.open(name, version);
+        fails -= 1;
+        const req = { error: new DOMException('no', 'UnknownError') } as unknown as IDBOpenDBRequest;
+        queueMicrotask(() => (req.onerror as () => void)());
+        return req;
+      },
+    } as unknown as IDBFactory;
+    const mem = new MemoryStorage();
+    const s = deviceStore(flaky, storageStore(() => mem));
+    await s.setItem('k', 'v');
+    // IndexedDB would open now, but this session stays where its lives went.
+    await s.setItem('j', 'w');
+    expect([mem.map.get('k'), mem.map.get('j'), await s.getItem('k')]).toEqual(['v', 'w', 'v']);
+    await s.removeItem('k');
+    expect(mem.map.has('k')).toBe(false);
+    expect(await indexedStore(real).getItem('j')).toBeNull();
+    // One that throws as it's asked refuses every time, and the device keeps its lives in local storage.
+    const thrown = { open: () => { throw new DOMException('origin', 'SecurityError'); } } as unknown as IDBFactory;
+    await expect(indexedStore(thrown).getItem('k')).rejects.toThrow('SecurityError: origin');
+    const store = indexedStore(thrown);
+    for (let i = 0; i < 2; i += 1) await expect(store.getItem('k')).rejects.toThrow('origin');
+    await deviceStore(thrown, storageStore(() => mem)).setItem('t', '1');
+    expect(mem.map.get('t')).toBe('1');
+    // A request that fails once it's open isn't a database that won't open: it's refused, not sent elsewhere.
+    const tx = { error: new DOMException('tx', 'AbortError'), objectStore: () => ({ put: () => ({}) }) } as unknown as IDBTransaction;
+    const open = { result: { transaction: () => tx } } as unknown as IDBOpenDBRequest;
+    const failing = { open: () => (queueMicrotask(() => (open.onsuccess as () => void)()), open) } as unknown as IDBFactory;
+    const p = deviceStore(failing, storageStore(() => mem)).setItem('x', '1');
+    await Promise.resolve();
+    await Promise.resolve();
+    queueMicrotask(() => (tx.onerror as () => void)());
+    await expect(p).rejects.toThrow('tx');
+    expect(mem.map.has('x')).toBe(false);
+  });
+  it('the device\'s: a life kept in local storage while IndexedDB wouldn\'t open is found once it does', async () => {
+    const factory = new IDBFactory();
+    const mem = new MemoryStorage();
+    mem.map.set('k', 'from before');
+    const s = deviceStore(factory, storageStore(() => mem));
+    expect(await s.getItem('k')).toBe('from before');
+    await s.setItem('k', 'now');
+    expect(await s.getItem('k')).toBe('now');
+    await s.removeItem('k');
+    expect([await s.getItem('k'), mem.map.has('k')]).toEqual([null, false]);
+    // Without local storage beside it, there's nothing there to find, and nothing to let go.
+    const alone = deviceStore(factory, storageStore(() => undefined));
+    await alone.setItem('a', '1');
+    expect([await alone.getItem('a'), await alone.getItem('b')]).toEqual(['1', null]);
+    await alone.removeItem('a');
+    expect(await alone.getItem('a')).toBeNull();
+  });
   it('the device\'s: IndexedDB where there is one, local storage otherwise', async () => {
     const factory = new IDBFactory();
     await deviceStore(factory).setItem('k', 'v');
@@ -267,6 +323,34 @@ describe('lives kept on this device', () => {
     expect(mem.map.has('slate.life.1')).toBe(false);
     await store.remove(2);
     expect(mem.map.size).toBe(1);
+  });
+  it('let a life go on a full device, its copy written into the room it left, or the copy before kept', async () => {
+    const { mem, store } = setup();
+    await store.save(kept(1, { name: 'Old' }));
+    await store.save(kept(1, { name: 'Gone, with a name the copy before it lacks', now: T0 + 1 }));
+    const [life, before] = [mem.map.get('slate.life.1') as string, mem.map.get('slate.copy.1') as string];
+    expect(life.length).toBeGreaterThan(before.length);
+    // Full: the life and its copy fill the device, and there's no room for a second copy of it.
+    mem.capacity = life.length + before.length;
+    await store.remove(1);
+    expect([mem.map.has('slate.life.1'), mem.map.get('slate.copy.1')]).toEqual([false, life]);
+    // Where even the room it leaves won't hold it, the life still goes, and the copy from before stays.
+    mem.map.set('slate.life.1', life);
+    mem.map.set('slate.copy.1', before);
+    mem.capacity = life.length + before.length + 1;
+    mem.quota = life.length - 1;
+    await store.remove(1);
+    expect([mem.map.has('slate.life.1'), mem.map.get('slate.copy.1')]).toEqual([false, before]);
+    expect((await store.listSlots())[0]).toMatchObject({ occupied: false, hasBackup: true, backupCard: { name: 'Old' } });
+    // Any other refusal leaves the life where it was, and says so.
+    mem.map.set('slate.life.1', life);
+    const refusing: KeyStore = { getItem: async (k) => mem.getItem(k), setItem: async () => { throw new DOMException('x', 'InvalidStateError'); }, removeItem: async (k) => mem.removeItem(k) };
+    expect(await refusal(new DeviceStore(refusing).remove(1))).toEqual(['life.device-refused', true]);
+    expect(mem.map.get('slate.life.1')).toBe(life);
+    const stuck: KeyStore = { ...refusing, setItem: async (k, v) => mem.setItem(k, v), removeItem: async () => { throw new Error('disk'); } };
+    mem.quota = Infinity;
+    expect(await refusal(new DeviceStore(stuck).remove(1))).toEqual(['life.device-refused', true]);
+    expect(mem.map.get('slate.life.1')).toBe(life);
   });
   it('bring the copy back as the life, the life it replaces becoming the copy', async () => {
     const { mem, store } = setup();

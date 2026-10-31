@@ -1,0 +1,105 @@
+{
+ "country": "PT",
+ "document": "Cartão de Cidadão",
+ "office": "a registry desk of the Instituto dos Registos e do Notariado (IRN) or a Loja do Cidadão; abroad, a consular post",
+ "currency": "EUR",
+ "routes": [
+  {
+   "id": "normal",
+   "where": "home",
+   "speed": "standard",
+   "within": {
+    "n": 9,
+    "unit": "working day"
+   },
+   "label": "normal: 8 working days on the mainland, 9 on some Azores islands (the longest is taken)"
+  },
+  {
+   "id": "urgent",
+   "where": "home",
+   "speed": "urgent",
+   "within": {
+    "n": 5,
+    "unit": "day"
+   },
+   "label": "urgent: at most 3 days on the mainland, 4 or 5 on the islands (the longest is taken)"
+  },
+  {
+   "id": "same-day",
+   "where": "home",
+   "speed": "urgent",
+   "within": {
+    "n": 1,
+    "unit": "working day"
+   },
+   "label": "extremely urgent, at the Campus da Justiça in Lisbon or the Loja do Cidadão in Porto: the same day or the next working day"
+  },
+  {
+   "id": "abroad",
+   "where": "abroad",
+   "speed": "standard",
+   "within": {
+    "n": 11,
+    "unit": "working day"
+   },
+   "label": "normal, delivered abroad: up to 11 working days (rest of the world)"
+  },
+  {
+   "id": "abroad-urgent",
+   "where": "abroad",
+   "speed": "urgent",
+   "within": {
+    "n": 7,
+    "unit": "day"
+   },
+   "label": "urgent, delivered abroad: at most 5 days in Europe, 7 elsewhere"
+  }
+ ],
+ "cards": [
+  {
+   "for": "under 25 (valid 5 years)",
+   "under": 25,
+   "validYears": 5,
+   "pay": {
+    "normal": "15",
+    "urgent": "30",
+    "same-day": "50",
+    "abroad": "20",
+    "abroad-urgent": "45"
+   }
+  },
+  {
+   "for": "25 and over (valid 10 years)",
+   "from": 25,
+   "validYears": 10,
+   "pay": {
+    "normal": "18",
+    "urgent": "33",
+    "same-day": "53",
+    "abroad": "23",
+    "abroad-urgent": "48"
+   }
+  }
+ ],
+ "note": "Fees from Portaria 291/2017 as published (a later amendment hasn't been looked for): a card valid up to five years costs less than one valid longer, and the term is five years under 25 and ten from 25 (Portaria 287/2017, art. 5). gov.pt says the card is compulsory, to be requested within 20 days of birth; a first card requested by then, with normal delivery, costs half (not modelled), and an online renewal 10% less. The times are the ones gov.pt and the Portaria give for the letter that releases the card.",
+ "sources": [
+  {
+   "url": "https://diariodarepublica.pt/dr/detalhe/portaria/291-2017-108228013",
+   "title": "Diário da República, Portaria n.º 291/2017, de 28 de setembro (fees of the Cartão de Cidadão)",
+   "read": "2026-10-28",
+   "said": "a) Com entrega normal no território nacional e prazo de validade até 5 anos - 15(euro); b) Com entrega normal no território nacional e prazo de validade superior a 5 anos - 18(euro); c) Com entrega urgente no território nacional e prazo de validade até 5 anos - 30(euro); d) Com entrega urgente no território nacional e prazo de validade superior a 5 anos - 33(euro); e) Com entrega normal no estrangeiro e prazo de validade até 5 anos - 20(euro); f) Com entrega normal no estrangeiro e prazo de validade superior a 5 anos - 23(euro); g) Com entrega urgente no estrangeiro e prazo de validade até 5 anos - 45(euro); h) Com entrega urgente no estrangeiro e prazo de validade superior a 5 anos - 48(euro); i) Com levantamento em balcão do Instituto dos Registos e do Notariado, I. P. (IRN), designado para o efeito, no próprio dia do pedido ou no dia útil seguinte e prazo de validade até 5 anos - 50(euro); j) Com levantamento em balcão do Instituto dos Registos e do Notariado, I. P. (IRN), designado para o efeito, no próprio dia do pedido ou no dia útil seguinte e prazo de validade superior a 5 anos - 53(euro). ... 1.1 - Portugal Continental - 3 dias; 1.2 - Região Autónoma da Madeira e nas Ilhas de São Miguel, Terceira, Faial, Pico e Santa Maria da Região Autónoma dos Açores - 4 dias; 1.3 - Nas Ilhas Graciosa, Corvo, São Jorge e Flores da Região Autónoma dos Açores - 5 dias; 1.4 - Europa - 5 dias; 1.5 - Resto do mundo - 7 dias."
+  },
+  {
+   "url": "https://diariodarepublica.pt/dr/detalhe/portaria/287-2017-108228009",
+   "title": "Diário da República, Portaria n.º 287/2017, de 28 de setembro, art. 5 (term of the Cartão de Cidadão)",
+   "read": "2026-10-28",
+   "said": "1 - O prazo geral de validade do cartão de cidadão é de 10 anos, sem prejuízo do disposto nos números seguintes. 2 - O cartão de cidadão tem um prazo de validade de 5 anos para os cidadãos que não tenham completado 25 anos de idade."
+  },
+  {
+   "url": "https://www2.gov.pt/servicos/pedir-o-cartao-de-cidadao",
+   "title": "gov.pt, Pedir o primeiro Cartão de Cidadão",
+   "read": "2026-10-28",
+   "said": "O Cartão de Cidadão é obrigatório e deve ser pedido até 20 dias depois do nascimento do bebé. ... Normal Portugal continental 8 dias úteis Faial, Pico, Santa Maria, Graciosa, São Jorge, Flores e Corvo 9 dias úteis ... Resto do mundo 11 dias úteis Urgente Portugal continental 3 dias úteis ... Extremo urgente Portugal (serviço de atendimento do Campus da Justiça, em Lisboa, e na Loja de Cidadão do Porto) no próprio dia ou no dia útil seguinte"
+  }
+ ]
+}

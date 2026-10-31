@@ -1,0 +1,25 @@
+{
+ "country": "GE",
+ "name": "personal identification number",
+ "issuer": "the Public Registry (the National Agency of Public Registry)",
+ "format": {
+  "length": 11,
+  "pattern": "^\\d{11}$"
+ },
+ "when": "registration",
+ "who": [
+  "citizens"
+ ],
+ "needed": [
+  "tax"
+ ],
+ "note": "Georgia's sheet (its government's own sheet on the OECD's automatic-exchange portal ('Information on Tax Identification Numbers'; the OECD's index page sits behind a bot check and wasn't opened, the sheet itself came straight back)), read 2026-10-30: a Georgian citizen's tax number is the same 11-digit identification number the registering body (the Public Registry) assigns on the national identity card; a non-citizen is given a 9-digit number by the tax authority on registering (not modelled). Read as given on registration with the Public Registry, to citizens; when (at birth registration) and its check digit, if any, the sheet doesn't say. The name and issuer are as the sheet gives them, in English.",
+ "sources": [
+  {
+   "url": "https://www.oecd.org/content/dam/oecd/en/topics/policy-issue-focus/aeoi/georgia-tin.pdf",
+   "title": "OECD AEOI portal, Georgia: Information on Tax Identification Numbers (the jurisdiction's own sheet)",
+   "read": "2026-10-30",
+   "said": "out by LEPL National Agency of Public Registry ... Georgian citizen natural persons (including individual entrepreneurs) are assigned the same ... 11 digit tax identification number as the identification number that is assigned in the national ... identity card by registering body (Public registry)."
+  }
+ ]
+}

@@ -1,0 +1,70 @@
+{
+ "country": "IS",
+ "document": "nafnskírteini",
+ "office": "the district commissioners (sýslumenn), after pre-registering online; issued by Registers Iceland (Þjóðskrá)",
+ "currency": "ISK",
+ "routes": [
+  {
+   "id": "normal",
+   "where": "home",
+   "speed": "standard",
+   "within": {
+    "n": 4,
+    "unit": "working day"
+   },
+   "label": "ordinary: up to 4 working days from the application, plus post outside the capital"
+  },
+  {
+   "id": "express",
+   "where": "home",
+   "speed": "urgent",
+   "within": null,
+   "label": "express"
+  }
+ ],
+ "cards": [
+  {
+   "for": "child",
+   "under": 18,
+   "validYears": 5,
+   "pay": {
+    "normal": "4600",
+    "express": "9200"
+   }
+  },
+  {
+   "for": "18 to 66",
+   "from": 18,
+   "under": 67,
+   "validYears": 10,
+   "pay": {
+    "normal": "9200",
+    "express": "18400"
+   }
+  },
+  {
+   "for": "67 and over",
+   "from": 67,
+   "validYears": 10,
+   "pay": {
+    "normal": "4600",
+    "express": "9200"
+   }
+  }
+ ],
+ "note": "Two kinds are issued, one a travel document within the EEA and one not, at the same fees. The reduced fee is for children, the elderly and people with a disability; the age at which the elderly's begins isn't stated beside it, so 67, where the adult band ends, is taken. The express time isn't stated. A card may be collected at an embassy or consul abroad, but it is applied for in Iceland.",
+ "sources": [
+  {
+   "url": "https://island.is/nafnskirteini",
+   "title": "Ísland.is, Sækja um nafnskírteini",
+   "read": "2026-10-28",
+   "said": "Afgreiðslutími nafnskírteina er allt að 4 virkir dagar frá því að umsókn berst. Sendingartími bætist við afhendingartíma fyrir umsækjendur á landsbyggðinni. Gefnar eru út tvær (2) tegundir af nafnskírteinum. Nafnskírteini sem er ferðskilríki innan EES. Nafnskírteini sem er ekki ferðaskilríki. ... Erlendis í sendiráði eða ræðismanni. ... Almenn afgreiðsla nafnskírteina: 18 til 66 ára: 9.200 krónur. Börn, aldraðir, öryrkjar: 4.600 krónur. Hraðafgreiðsla: 18 til 66 ára: 18.400 krónur. Börn, aldraðir, öryrkjar: 9.200 krónur."
+  },
+  {
+   "url": "https://island.is/reglugerdir/nr/0255-2024",
+   "title": "Ísland.is, Reglugerð nr. 255/2024 um nafnskírteini, art. 19",
+   "read": "2026-10-28",
+   "said": "Gildistími nafnskírteinis skal vera tíu ár frá útgáfudegi en fimm ár fyrir börn yngri en 18 ára."
+  }
+ ]
+}

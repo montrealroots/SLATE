@@ -1,0 +1,25 @@
+{
+ "country": "MT",
+ "name": "Identity Card Number",
+ "issuer": "the Maltese identity card's issuer (the sheet names no office)",
+ "format": {
+  "length": 8,
+  "pattern": "^\\d{7}[MGAPLHBZ]$"
+ },
+ "when": "application",
+ "who": [
+  "citizens"
+ ],
+ "needed": [
+  "tax"
+ ],
+ "note": "Malta's sheet (its government's own sheet on the OECD's automatic-exchange portal ('Information on Tax Identification Numbers'; the OECD's index page sits behind a bot check and wasn't opened, the sheet itself came straight back)), read 2026-10-30: Maltese nationals use their Identity Card Number as the TIN: seven digits and one letter (M, G, A, P, L, H, B or Z), always recorded as eight characters with leading zeros; non-nationals get a 9-digit IRD number on a registration form, not modelled. The sheet doesn't name the office that issues the identity card. Read as given on application, to citizens. No check rule, age, fee or time is stated.",
+ "sources": [
+  {
+   "url": "https://www.oecd.org/content/dam/oecd/en/topics/policy-issue-focus/aeoi/malta-tin.pdf",
+   "title": "OECD AEOI portal, Malta: Information on Tax Identification Numbers (the jurisdiction's own sheet)",
+   "read": "2026-10-30",
+   "said": "In Malta, individuals who are Maltese nationals use their Identity Card Number as the TIN. ... 8 characters: - 7 digits - 1 letter (M, G, A, P, L, H, B, Z) ... in the case of IT processing, the length of this TIN must always be 8 characters"
+  }
+ ]
+}

@@ -1,0 +1,79 @@
+{
+ "country": "ID",
+ "office": "the Directorate General of Immigration (Direktorat Jenderal Imigrasi)",
+ "currency": "IDR",
+ "routes": [
+  {
+   "id": "electronic",
+   "where": "home",
+   "speed": "standard",
+   "within": null,
+   "label": "electronic passport"
+  },
+  {
+   "id": "electronic-same-day",
+   "where": "home",
+   "speed": "urgent",
+   "within": {
+    "n": 1,
+    "unit": "day"
+   },
+   "label": "electronic passport, done the same day"
+  },
+  {
+   "id": "non-electronic",
+   "where": "home",
+   "speed": "standard",
+   "within": null,
+   "label": "non-electronic passport"
+  },
+  {
+   "id": "non-electronic-same-day",
+   "where": "home",
+   "speed": "urgent",
+   "within": {
+    "n": 1,
+    "unit": "day"
+   },
+   "label": "non-electronic passport, done the same day"
+  }
+ ],
+ "passports": [
+  {
+   "for": "any",
+   "validYears": 5,
+   "pay": {
+    "electronic": "650000",
+    "electronic-same-day": "1650000",
+    "non-electronic": "350000",
+    "non-electronic-same-day": "1350000"
+   }
+  },
+  {
+   "for": "from 17, or married",
+   "from": 17,
+   "validYears": 10,
+   "pay": {
+    "electronic": "950000",
+    "electronic-same-day": "1950000",
+    "non-electronic": "650000",
+    "non-electronic-same-day": "1650000"
+   }
+  }
+ ],
+ "note": "The non-tax state revenue (PNBP) tariff as the Directorate General publishes it; the same-day service (Rp 1,000,000 per application) is added to the passport's fee. A passport valid up to ten years is given only from 17 or to the married (Permenkumham 18/2022, art. 2A para. 2); marriage isn't modelled, so under 17 it's five years. The standard processing time and the fees at a mission abroad are leads.",
+ "sources": [
+  {
+   "url": "https://www.imigrasi.go.id/biaya_imigrasi/index",
+   "title": "Direktorat Jenderal Imigrasi, Informasi Biaya Keimigrasian",
+   "read": "2026-10-28",
+   "said": "A. Dokumen Perjalanan Republik Indonesia 1 Layanan Percepatan Paspor Selesai Pada Hari yang Sama per Permohonan Rp 1.000.000,- 2 Paspor Biasa Non Elektronik (Masa Berlaku 5 Tahun) per Permohonan Rp 350.000,- 3 Paspor biasa Non Elektronik (Masa Berlaku 10 Tahun) per Permohonan Rp 650.000,- 4 Paspor biasa Elektronik (Masa Berlaku 5 Tahun) per Permohonan Rp 650.000,- 5 Paspor biasa Elektronik (Masa Berlaku 10 Tahun) per Permohonan Rp 950.000,-"
+  },
+  {
+   "url": "https://www.imigrasi.go.id/siaran_pers/2022/10/11/siaran-pers-paspor-masa-berlaku-10-tahun-diterbitkan-mulai-12-oktober-2022?lang=id-ID",
+   "title": "Direktorat Jenderal Imigrasi, Siaran Pers: Paspor Masa Berlaku 10 Tahun Diterbitkan Mulai 12 Oktober 2022",
+   "read": "2026-10-28",
+   "said": "Perlu diketahui bahwa dalam Pasal 2A ayat (2) Permenkumham 18/2022 disebutkan, paspor biasa (elektronik dan nonelektronik) dengan masa berlaku paling lama 10 tahun hanya diberikan kepada Warga Negara Indonesia yang telah berusia 17 (tujuh belas) tahun atau sudah menikah. Selain kategori tersebut, paspor diberikan untuk jangka waktu 5 (lima) tahun."
+  }
+ ]
+}

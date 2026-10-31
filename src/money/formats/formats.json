@@ -1,0 +1,4179 @@
+{
+ "countries": {
+  "AD": {
+   "iban": {
+    "prefix": "AD",
+    "length": 24,
+    "bban": [
+     {
+      "length": 4,
+      "kind": "n"
+     },
+     {
+      "length": 4,
+      "kind": "n"
+     },
+     {
+      "length": 12,
+      "kind": "c"
+     }
+    ],
+    "bank": [
+     1,
+     4
+    ]
+   }
+  },
+  "AE": {
+   "iban": {
+    "prefix": "AE",
+    "length": 23,
+    "bban": [
+     {
+      "length": 3,
+      "kind": "n"
+     },
+     {
+      "length": 16,
+      "kind": "n"
+     }
+    ],
+    "bank": [
+     1,
+     3
+    ]
+   }
+  },
+  "AL": {
+   "iban": {
+    "prefix": "AL",
+    "length": 28,
+    "bban": [
+     {
+      "length": 8,
+      "kind": "n"
+     },
+     {
+      "length": 16,
+      "kind": "c"
+     }
+    ],
+    "bank": [
+     1,
+     3
+    ]
+   }
+  },
+  "AO": {
+   "national": {
+    "name": "Número Bancário Angolano",
+    "parts": [
+     {
+      "name": "Instituição Financeira",
+      "length": 4,
+      "kind": "n"
+     },
+     {
+      "name": "Finalidade Da Instituição",
+      "length": 4,
+      "kind": "n"
+     },
+     {
+      "name": "Número Da Conta",
+      "length": 11,
+      "kind": "n"
+     },
+     {
+      "name": "Algarismos De Controlo",
+      "length": 2,
+      "kind": "n"
+     }
+    ],
+    "bank": [
+     1,
+     4
+    ],
+    "checks": [
+     {
+      "over": [
+       1,
+       19
+      ],
+      "mod97": true
+     }
+    ]
+   }
+  },
+  "AR": {
+   "national": {
+    "name": "CBU",
+    "parts": [
+     {
+      "name": "Número De Entidad",
+      "length": 3,
+      "kind": "n"
+     },
+     {
+      "name": "Número De Sucursal",
+      "length": 4,
+      "kind": "n"
+     },
+     {
+      "name": "Dígito Verificador",
+      "length": 1,
+      "kind": "n"
+     },
+     {
+      "name": "Identificación De La Cuenta",
+      "length": 13,
+      "kind": "n"
+     },
+     {
+      "name": "Dígito Verificador De La Cuenta",
+      "length": 1,
+      "kind": "n"
+     }
+    ],
+    "bank": [
+     1,
+     3
+    ],
+    "checks": [
+     {
+      "over": [
+       1,
+       7
+      ],
+      "weights": [
+       7,
+       1,
+       3,
+       9,
+       7,
+       1,
+       3
+      ]
+     },
+     {
+      "over": [
+       9,
+       21
+      ],
+      "weights": [
+       3,
+       9,
+       7,
+       1,
+       3,
+       9,
+       7,
+       1,
+       3,
+       9,
+       7,
+       1,
+       3
+      ]
+     }
+    ]
+   }
+  },
+  "AS": {
+   "national": {
+    "name": "Routing and account number",
+    "parts": [
+     {
+      "name": "Federal Reserve Routing Symbol",
+      "length": 4,
+      "kind": "n"
+     },
+     {
+      "name": "ABA Institution Identifier",
+      "length": 4,
+      "kind": "n"
+     },
+     {
+      "name": "Check Digit",
+      "length": 1,
+      "kind": "n"
+     },
+     {
+      "name": "Account Number",
+      "length": 17,
+      "kind": "c",
+      "min": 1,
+      "drawn": [
+       8,
+       12
+      ]
+     }
+    ],
+    "bank": [
+     1,
+     8
+    ],
+    "checks": [
+     {
+      "over": [
+       1,
+       8
+      ],
+      "weights": [
+       3,
+       7,
+       1,
+       3,
+       7,
+       1,
+       3,
+       7
+      ]
+     }
+    ]
+   }
+  },
+  "AT": {
+   "iban": {
+    "prefix": "AT",
+    "length": 20,
+    "bban": [
+     {
+      "length": 5,
+      "kind": "n"
+     },
+     {
+      "length": 11,
+      "kind": "n"
+     }
+    ],
+    "bank": [
+     1,
+     5
+    ]
+   }
+  },
+  "AU": {
+   "national": {
+    "name": "BSB and account number",
+    "parts": [
+     {
+      "name": "BSB",
+      "length": 6,
+      "kind": "n"
+     },
+     {
+      "name": "Account number",
+      "length": 9,
+      "kind": "n",
+      "min": 1
+     }
+    ],
+    "bank": [
+     1,
+     6
+    ]
+   }
+  },
+  "AX": {
+   "iban": {
+    "prefix": "FI",
+    "length": 18,
+    "bban": [
+     {
+      "length": 3,
+      "kind": "n"
+     },
+     {
+      "length": 11,
+      "kind": "n"
+     }
+    ],
+    "bank": [
+     1,
+     3
+    ]
+   }
+  },
+  "AZ": {
+   "iban": {
+    "prefix": "AZ",
+    "length": 28,
+    "bban": [
+     {
+      "length": 4,
+      "kind": "a"
+     },
+     {
+      "length": 20,
+      "kind": "c"
+     }
+    ],
+    "bank": [
+     1,
+     4
+    ]
+   }
+  },
+  "BA": {
+   "iban": {
+    "prefix": "BA",
+    "length": 20,
+    "bban": [
+     {
+      "length": 3,
+      "kind": "n"
+     },
+     {
+      "length": 3,
+      "kind": "n"
+     },
+     {
+      "length": 8,
+      "kind": "n"
+     },
+     {
+      "length": 2,
+      "kind": "n"
+     }
+    ],
+    "bank": [
+     1,
+     3
+    ]
+   }
+  },
+  "BB": {
+   "national": {
+    "name": "Account Number",
+    "parts": [
+     {
+      "name": "Account Number",
+      "length": 12,
+      "kind": "n",
+      "min": 1
+     }
+    ]
+   }
+  },
+  "BD": {
+   "national": {
+    "name": "Routing number and bank account number",
+    "parts": [
+     {
+      "name": "Routing number",
+      "length": 8,
+      "kind": "n"
+     },
+     {
+      "name": "Check digit",
+      "length": 1,
+      "kind": "n"
+     },
+     {
+      "name": "Bank account number",
+      "length": 17,
+      "kind": "c",
+      "min": 1
+     }
+    ],
+    "checks": [
+     {
+      "over": [
+       1,
+       8
+      ],
+      "weights": [
+       5,
+       7,
+       1,
+       5,
+       7,
+       1,
+       5,
+       7
+      ]
+     }
+    ]
+   }
+  },
+  "BE": {
+   "iban": {
+    "prefix": "BE",
+    "length": 16,
+    "bban": [
+     {
+      "length": 3,
+      "kind": "n"
+     },
+     {
+      "length": 7,
+      "kind": "n"
+     },
+     {
+      "length": 2,
+      "kind": "n"
+     }
+    ],
+    "bank": [
+     1,
+     3
+    ]
+   }
+  },
+  "BG": {
+   "iban": {
+    "prefix": "BG",
+    "length": 22,
+    "bban": [
+     {
+      "length": 4,
+      "kind": "a"
+     },
+     {
+      "length": 4,
+      "kind": "n"
+     },
+     {
+      "length": 2,
+      "kind": "n"
+     },
+     {
+      "length": 8,
+      "kind": "c"
+     }
+    ],
+    "bank": [
+     1,
+     4
+    ]
+   }
+  },
+  "BH": {
+   "iban": {
+    "prefix": "BH",
+    "length": 22,
+    "bban": [
+     {
+      "length": 4,
+      "kind": "a"
+     },
+     {
+      "length": 14,
+      "kind": "c"
+     }
+    ],
+    "bank": [
+     1,
+     4
+    ]
+   }
+  },
+  "BI": {
+   "iban": {
+    "prefix": "BI",
+    "length": 27,
+    "bban": [
+     {
+      "length": 5,
+      "kind": "n"
+     },
+     {
+      "length": 5,
+      "kind": "n"
+     },
+     {
+      "length": 11,
+      "kind": "n"
+     },
+     {
+      "length": 2,
+      "kind": "n"
+     }
+    ],
+    "bank": [
+     1,
+     5
+    ]
+   }
+  },
+  "BL": {
+   "iban": {
+    "prefix": "FR",
+    "length": 27,
+    "bban": [
+     {
+      "length": 5,
+      "kind": "n"
+     },
+     {
+      "length": 5,
+      "kind": "n"
+     },
+     {
+      "length": 11,
+      "kind": "c"
+     },
+     {
+      "length": 2,
+      "kind": "n"
+     }
+    ],
+    "bank": [
+     1,
+     5
+    ]
+   }
+  },
+  "BR": {
+   "iban": {
+    "prefix": "BR",
+    "length": 29,
+    "bban": [
+     {
+      "length": 8,
+      "kind": "n"
+     },
+     {
+      "length": 5,
+      "kind": "n"
+     },
+     {
+      "length": 10,
+      "kind": "n"
+     },
+     {
+      "length": 1,
+      "kind": "a"
+     },
+     {
+      "length": 1,
+      "kind": "c"
+     }
+    ],
+    "bank": [
+     1,
+     8
+    ]
+   }
+  },
+  "BY": {
+   "iban": {
+    "prefix": "BY",
+    "length": 28,
+    "bban": [
+     {
+      "length": 4,
+      "kind": "c"
+     },
+     {
+      "length": 4,
+      "kind": "n"
+     },
+     {
+      "length": 16,
+      "kind": "c"
+     }
+    ],
+    "bank": [
+     1,
+     4
+    ]
+   }
+  },
+  "CA": {
+   "national": {
+    "name": "Institution, transit and account number",
+    "parts": [
+     {
+      "name": "Institution number",
+      "length": 3,
+      "kind": "n"
+     },
+     {
+      "name": "Transit number",
+      "length": 5,
+      "kind": "n"
+     },
+     {
+      "name": "Account number",
+      "length": 12,
+      "kind": "c",
+      "min": 1,
+      "drawn": [
+       7,
+       7
+      ]
+     }
+    ],
+    "bank": [
+     1,
+     3
+    ]
+   }
+  },
+  "CC": {
+   "national": {
+    "name": "BSB and account number",
+    "parts": [
+     {
+      "name": "BSB",
+      "length": 6,
+      "kind": "n"
+     },
+     {
+      "name": "Account number",
+      "length": 9,
+      "kind": "n",
+      "min": 1
+     }
+    ],
+    "bank": [
+     1,
+     6
+    ]
+   }
+  },
+  "CD": {
+   "national": {
+    "name": "RIB",
+    "parts": [
+     {
+      "name": "Code Établissement",
+      "length": 5,
+      "kind": "n"
+     },
+     {
+      "name": "Code Agence",
+      "length": 5,
+      "kind": "n"
+     },
+     {
+      "name": "Numéro De Compte",
+      "length": 11,
+      "kind": "n"
+     },
+     {
+      "name": "Clé RIB",
+      "length": 2,
+      "kind": "n"
+     }
+    ],
+    "bank": [
+     1,
+     5
+    ],
+    "checks": [
+     {
+      "over": [
+       1,
+       21
+      ],
+      "key97": true
+     }
+    ]
+   }
+  },
+  "CH": {
+   "iban": {
+    "prefix": "CH",
+    "length": 21,
+    "bban": [
+     {
+      "length": 5,
+      "kind": "n"
+     },
+     {
+      "length": 12,
+      "kind": "c"
+     }
+    ],
+    "bank": [
+     1,
+     5
+    ]
+   }
+  },
+  "CR": {
+   "iban": {
+    "prefix": "CR",
+    "length": 22,
+    "bban": [
+     {
+      "length": 4,
+      "kind": "n"
+     },
+     {
+      "length": 14,
+      "kind": "n"
+     }
+    ],
+    "bank": [
+     1,
+     4
+    ]
+   }
+  },
+  "CX": {
+   "national": {
+    "name": "BSB and account number",
+    "parts": [
+     {
+      "name": "BSB",
+      "length": 6,
+      "kind": "n"
+     },
+     {
+      "name": "Account number",
+      "length": 9,
+      "kind": "n",
+      "min": 1
+     }
+    ],
+    "bank": [
+     1,
+     6
+    ]
+   }
+  },
+  "CY": {
+   "iban": {
+    "prefix": "CY",
+    "length": 28,
+    "bban": [
+     {
+      "length": 3,
+      "kind": "n"
+     },
+     {
+      "length": 5,
+      "kind": "n"
+     },
+     {
+      "length": 16,
+      "kind": "c"
+     }
+    ],
+    "bank": [
+     1,
+     3
+    ]
+   }
+  },
+  "CZ": {
+   "iban": {
+    "prefix": "CZ",
+    "length": 24,
+    "bban": [
+     {
+      "length": 4,
+      "kind": "n"
+     },
+     {
+      "length": 6,
+      "kind": "n"
+     },
+     {
+      "length": 10,
+      "kind": "n"
+     }
+    ],
+    "bank": [
+     1,
+     4
+    ]
+   }
+  },
+  "DE": {
+   "iban": {
+    "prefix": "DE",
+    "length": 22,
+    "bban": [
+     {
+      "length": 8,
+      "kind": "n"
+     },
+     {
+      "length": 10,
+      "kind": "n"
+     }
+    ],
+    "bank": [
+     1,
+     8
+    ]
+   }
+  },
+  "DJ": {
+   "iban": {
+    "prefix": "DJ",
+    "length": 27,
+    "bban": [
+     {
+      "length": 5,
+      "kind": "n"
+     },
+     {
+      "length": 5,
+      "kind": "n"
+     },
+     {
+      "length": 11,
+      "kind": "n"
+     },
+     {
+      "length": 2,
+      "kind": "n"
+     }
+    ],
+    "bank": [
+     1,
+     5
+    ]
+   }
+  },
+  "DK": {
+   "iban": {
+    "prefix": "DK",
+    "length": 18,
+    "bban": [
+     {
+      "length": 4,
+      "kind": "n"
+     },
+     {
+      "length": 9,
+      "kind": "n"
+     },
+     {
+      "length": 1,
+      "kind": "n"
+     }
+    ],
+    "bank": [
+     1,
+     4
+    ]
+   }
+  },
+  "DO": {
+   "iban": {
+    "prefix": "DO",
+    "length": 28,
+    "bban": [
+     {
+      "length": 4,
+      "kind": "c"
+     },
+     {
+      "length": 20,
+      "kind": "n"
+     }
+    ],
+    "bank": [
+     1,
+     4
+    ]
+   }
+  },
+  "EE": {
+   "iban": {
+    "prefix": "EE",
+    "length": 20,
+    "bban": [
+     {
+      "length": 2,
+      "kind": "n"
+     },
+     {
+      "length": 14,
+      "kind": "n"
+     }
+    ],
+    "bank": [
+     1,
+     2
+    ]
+   }
+  },
+  "EG": {
+   "iban": {
+    "prefix": "EG",
+    "length": 29,
+    "bban": [
+     {
+      "length": 4,
+      "kind": "n"
+     },
+     {
+      "length": 4,
+      "kind": "n"
+     },
+     {
+      "length": 17,
+      "kind": "n"
+     }
+    ],
+    "bank": [
+     1,
+     4
+    ]
+   }
+  },
+  "EH": {
+   "national": {
+    "name": "RIB",
+    "parts": [
+     {
+      "name": "RIB",
+      "length": 24,
+      "kind": "n"
+     }
+    ]
+   }
+  },
+  "ES": {
+   "iban": {
+    "prefix": "ES",
+    "length": 24,
+    "bban": [
+     {
+      "length": 4,
+      "kind": "n"
+     },
+     {
+      "length": 4,
+      "kind": "n"
+     },
+     {
+      "length": 1,
+      "kind": "n"
+     },
+     {
+      "length": 1,
+      "kind": "n"
+     },
+     {
+      "length": 10,
+      "kind": "n"
+     }
+    ],
+    "bank": [
+     1,
+     4
+    ]
+   }
+  },
+  "FI": {
+   "iban": {
+    "prefix": "FI",
+    "length": 18,
+    "bban": [
+     {
+      "length": 3,
+      "kind": "n"
+     },
+     {
+      "length": 11,
+      "kind": "n"
+     }
+    ],
+    "bank": [
+     1,
+     3
+    ]
+   }
+  },
+  "FJ": {
+   "national": {
+    "name": "Account Number",
+    "parts": [
+     {
+      "name": "Account Number",
+      "length": 14,
+      "kind": "n",
+      "min": 5,
+      "drawn": [
+       5,
+       5
+      ]
+     }
+    ]
+   }
+  },
+  "FK": {
+   "iban": {
+    "prefix": "FK",
+    "length": 18,
+    "bban": [
+     {
+      "length": 2,
+      "kind": "a"
+     },
+     {
+      "length": 12,
+      "kind": "n"
+     }
+    ],
+    "bank": [
+     1,
+     2
+    ]
+   }
+  },
+  "FM": {
+   "national": {
+    "name": "Routing and account number",
+    "parts": [
+     {
+      "name": "Federal Reserve Routing Symbol",
+      "length": 4,
+      "kind": "n"
+     },
+     {
+      "name": "ABA Institution Identifier",
+      "length": 4,
+      "kind": "n"
+     },
+     {
+      "name": "Check Digit",
+      "length": 1,
+      "kind": "n"
+     },
+     {
+      "name": "Account Number",
+      "length": 17,
+      "kind": "c",
+      "min": 1,
+      "drawn": [
+       8,
+       12
+      ]
+     }
+    ],
+    "bank": [
+     1,
+     8
+    ],
+    "checks": [
+     {
+      "over": [
+       1,
+       8
+      ],
+      "weights": [
+       3,
+       7,
+       1,
+       3,
+       7,
+       1,
+       3,
+       7
+      ]
+     }
+    ]
+   }
+  },
+  "FO": {
+   "iban": {
+    "prefix": "FO",
+    "length": 18,
+    "bban": [
+     {
+      "length": 4,
+      "kind": "n"
+     },
+     {
+      "length": 9,
+      "kind": "n"
+     },
+     {
+      "length": 1,
+      "kind": "n"
+     }
+    ],
+    "bank": [
+     1,
+     4
+    ]
+   }
+  },
+  "FR": {
+   "iban": {
+    "prefix": "FR",
+    "length": 27,
+    "bban": [
+     {
+      "length": 5,
+      "kind": "n"
+     },
+     {
+      "length": 5,
+      "kind": "n"
+     },
+     {
+      "length": 11,
+      "kind": "c"
+     },
+     {
+      "length": 2,
+      "kind": "n"
+     }
+    ],
+    "bank": [
+     1,
+     5
+    ]
+   }
+  },
+  "GB": {
+   "iban": {
+    "prefix": "GB",
+    "length": 22,
+    "bban": [
+     {
+      "length": 4,
+      "kind": "a"
+     },
+     {
+      "length": 6,
+      "kind": "n"
+     },
+     {
+      "length": 8,
+      "kind": "n"
+     }
+    ],
+    "bank": [
+     1,
+     4
+    ]
+   }
+  },
+  "GE": {
+   "iban": {
+    "prefix": "GE",
+    "length": 22,
+    "bban": [
+     {
+      "length": 2,
+      "kind": "a"
+     },
+     {
+      "length": 16,
+      "kind": "n"
+     }
+    ],
+    "bank": [
+     1,
+     2
+    ]
+   }
+  },
+  "GF": {
+   "iban": {
+    "prefix": "FR",
+    "length": 27,
+    "bban": [
+     {
+      "length": 5,
+      "kind": "n"
+     },
+     {
+      "length": 5,
+      "kind": "n"
+     },
+     {
+      "length": 11,
+      "kind": "c"
+     },
+     {
+      "length": 2,
+      "kind": "n"
+     }
+    ],
+    "bank": [
+     1,
+     5
+    ]
+   }
+  },
+  "GG": {
+   "iban": {
+    "prefix": "GB",
+    "length": 22,
+    "bban": [
+     {
+      "length": 4,
+      "kind": "a"
+     },
+     {
+      "length": 6,
+      "kind": "n"
+     },
+     {
+      "length": 8,
+      "kind": "n"
+     }
+    ],
+    "bank": [
+     1,
+     4
+    ]
+   }
+  },
+  "GI": {
+   "iban": {
+    "prefix": "GI",
+    "length": 23,
+    "bban": [
+     {
+      "length": 4,
+      "kind": "a"
+     },
+     {
+      "length": 15,
+      "kind": "c"
+     }
+    ],
+    "bank": [
+     1,
+     4
+    ]
+   }
+  },
+  "GL": {
+   "iban": {
+    "prefix": "GL",
+    "length": 18,
+    "bban": [
+     {
+      "length": 4,
+      "kind": "n"
+     },
+     {
+      "length": 9,
+      "kind": "n"
+     },
+     {
+      "length": 1,
+      "kind": "n"
+     }
+    ],
+    "bank": [
+     1,
+     4
+    ]
+   }
+  },
+  "GM": {
+   "national": {
+    "name": "BBAN",
+    "parts": [
+     {
+      "name": "Bank Code",
+      "length": 3,
+      "kind": "n"
+     },
+     {
+      "name": "Branch Code",
+      "length": 3,
+      "kind": "n"
+     },
+     {
+      "name": "Account Number",
+      "length": 10,
+      "kind": "n"
+     },
+     {
+      "name": "Account Check Digit",
+      "length": 2,
+      "kind": "n"
+     }
+    ],
+    "bank": [
+     1,
+     3
+    ],
+    "checks": [
+     {
+      "over": [
+       1,
+       16
+      ],
+      "key97": true
+     }
+    ]
+   }
+  },
+  "GN": {
+   "national": {
+    "name": "BBAN",
+    "parts": [
+     {
+      "name": "Bank Code",
+      "length": 3,
+      "kind": "n"
+     },
+     {
+      "name": "Branch Code",
+      "length": 3,
+      "kind": "n"
+     },
+     {
+      "name": "Account Number",
+      "length": 10,
+      "kind": "n"
+     },
+     {
+      "name": "Account Check Digit",
+      "length": 2,
+      "kind": "n"
+     }
+    ],
+    "bank": [
+     1,
+     3
+    ],
+    "checks": [
+     {
+      "over": [
+       1,
+       16
+      ],
+      "key97": true
+     }
+    ]
+   }
+  },
+  "GP": {
+   "iban": {
+    "prefix": "FR",
+    "length": 27,
+    "bban": [
+     {
+      "length": 5,
+      "kind": "n"
+     },
+     {
+      "length": 5,
+      "kind": "n"
+     },
+     {
+      "length": 11,
+      "kind": "c"
+     },
+     {
+      "length": 2,
+      "kind": "n"
+     }
+    ],
+    "bank": [
+     1,
+     5
+    ]
+   }
+  },
+  "GR": {
+   "iban": {
+    "prefix": "GR",
+    "length": 27,
+    "bban": [
+     {
+      "length": 3,
+      "kind": "n"
+     },
+     {
+      "length": 4,
+      "kind": "n"
+     },
+     {
+      "length": 16,
+      "kind": "c"
+     }
+    ],
+    "bank": [
+     1,
+     3
+    ]
+   }
+  },
+  "GT": {
+   "iban": {
+    "prefix": "GT",
+    "length": 28,
+    "bban": [
+     {
+      "length": 4,
+      "kind": "c"
+     },
+     {
+      "length": 20,
+      "kind": "c"
+     }
+    ],
+    "bank": [
+     1,
+     4
+    ]
+   }
+  },
+  "GU": {
+   "national": {
+    "name": "Routing and account number",
+    "parts": [
+     {
+      "name": "Federal Reserve Routing Symbol",
+      "length": 4,
+      "kind": "n"
+     },
+     {
+      "name": "ABA Institution Identifier",
+      "length": 4,
+      "kind": "n"
+     },
+     {
+      "name": "Check Digit",
+      "length": 1,
+      "kind": "n"
+     },
+     {
+      "name": "Account Number",
+      "length": 17,
+      "kind": "c",
+      "min": 1,
+      "drawn": [
+       8,
+       12
+      ]
+     }
+    ],
+    "bank": [
+     1,
+     8
+    ],
+    "checks": [
+     {
+      "over": [
+       1,
+       8
+      ],
+      "weights": [
+       3,
+       7,
+       1,
+       3,
+       7,
+       1,
+       3,
+       7
+      ]
+     }
+    ]
+   }
+  },
+  "HK": {
+   "national": {
+    "name": "Bank code, branch code and account number",
+    "parts": [
+     {
+      "name": "Bank code",
+      "length": 3,
+      "kind": "n"
+     },
+     {
+      "name": "Branch code",
+      "length": 3,
+      "kind": "n"
+     },
+     {
+      "name": "Account number",
+      "length": 9,
+      "kind": "n"
+     }
+    ],
+    "bank": [
+     1,
+     3
+    ]
+   }
+  },
+  "HN": {
+   "iban": {
+    "prefix": "HN",
+    "length": 28,
+    "bban": [
+     {
+      "length": 4,
+      "kind": "a"
+     },
+     {
+      "length": 20,
+      "kind": "n"
+     }
+    ],
+    "bank": [
+     1,
+     4
+    ]
+   }
+  },
+  "HR": {
+   "iban": {
+    "prefix": "HR",
+    "length": 21,
+    "bban": [
+     {
+      "length": 7,
+      "kind": "n"
+     },
+     {
+      "length": 10,
+      "kind": "n"
+     }
+    ],
+    "bank": [
+     1,
+     7
+    ]
+   }
+  },
+  "HT": {
+   "national": {
+    "name": "Routing number and account number",
+    "parts": [
+     {
+      "name": "Bank Number",
+      "length": 3,
+      "kind": "n"
+     },
+     {
+      "name": "Currency",
+      "length": 1,
+      "kind": "n"
+     },
+     {
+      "name": "Department",
+      "length": 2,
+      "kind": "n"
+     },
+     {
+      "name": "Branch",
+      "length": 2,
+      "kind": "n"
+     },
+     {
+      "name": "Check Digit",
+      "length": 1,
+      "kind": "n"
+     },
+     {
+      "name": "Account Number",
+      "length": 14,
+      "kind": "n",
+      "min": 1
+     }
+    ],
+    "bank": [
+     1,
+     3
+    ],
+    "checks": [
+     {
+      "over": [
+       1,
+       8
+      ],
+      "weights": [
+       3,
+       7,
+       1,
+       3,
+       7,
+       1,
+       3,
+       7
+      ]
+     }
+    ]
+   }
+  },
+  "HU": {
+   "iban": {
+    "prefix": "HU",
+    "length": 28,
+    "bban": [
+     {
+      "length": 3,
+      "kind": "n"
+     },
+     {
+      "length": 4,
+      "kind": "n"
+     },
+     {
+      "length": 1,
+      "kind": "n"
+     },
+     {
+      "length": 15,
+      "kind": "n"
+     },
+     {
+      "length": 1,
+      "kind": "n"
+     }
+    ],
+    "bank": [
+     1,
+     3
+    ]
+   }
+  },
+  "IE": {
+   "iban": {
+    "prefix": "IE",
+    "length": 22,
+    "bban": [
+     {
+      "length": 4,
+      "kind": "a"
+     },
+     {
+      "length": 6,
+      "kind": "n"
+     },
+     {
+      "length": 8,
+      "kind": "n"
+     }
+    ],
+    "bank": [
+     1,
+     4
+    ]
+   }
+  },
+  "IL": {
+   "iban": {
+    "prefix": "IL",
+    "length": 23,
+    "bban": [
+     {
+      "length": 3,
+      "kind": "n"
+     },
+     {
+      "length": 3,
+      "kind": "n"
+     },
+     {
+      "length": 13,
+      "kind": "n"
+     }
+    ],
+    "bank": [
+     1,
+     3
+    ]
+   }
+  },
+  "IM": {
+   "iban": {
+    "prefix": "GB",
+    "length": 22,
+    "bban": [
+     {
+      "length": 4,
+      "kind": "a"
+     },
+     {
+      "length": 6,
+      "kind": "n"
+     },
+     {
+      "length": 8,
+      "kind": "n"
+     }
+    ],
+    "bank": [
+     1,
+     4
+    ]
+   }
+  },
+  "IN": {
+   "national": {
+    "name": "IFSC and account number",
+    "parts": [
+     {
+      "name": "Bank code",
+      "length": 4,
+      "kind": "a"
+     },
+     {
+      "name": "Fifth character",
+      "length": 1,
+      "kind": "n"
+     },
+     {
+      "name": "Branch code",
+      "length": 6,
+      "kind": "c"
+     },
+     {
+      "name": "Account number",
+      "length": 11,
+      "kind": "n"
+     }
+    ],
+    "bank": [
+     1,
+     4
+    ]
+   }
+  },
+  "IO": {
+   "national": {
+    "name": "Routing and account number",
+    "parts": [
+     {
+      "name": "Federal Reserve Routing Symbol",
+      "length": 4,
+      "kind": "n"
+     },
+     {
+      "name": "ABA Institution Identifier",
+      "length": 4,
+      "kind": "n"
+     },
+     {
+      "name": "Check Digit",
+      "length": 1,
+      "kind": "n"
+     },
+     {
+      "name": "Account Number",
+      "length": 17,
+      "kind": "c",
+      "min": 1,
+      "drawn": [
+       8,
+       12
+      ]
+     }
+    ],
+    "bank": [
+     1,
+     8
+    ],
+    "checks": [
+     {
+      "over": [
+       1,
+       8
+      ],
+      "weights": [
+       3,
+       7,
+       1,
+       3,
+       7,
+       1,
+       3,
+       7
+      ]
+     }
+    ]
+   }
+  },
+  "IQ": {
+   "iban": {
+    "prefix": "IQ",
+    "length": 23,
+    "bban": [
+     {
+      "length": 4,
+      "kind": "a"
+     },
+     {
+      "length": 3,
+      "kind": "n"
+     },
+     {
+      "length": 12,
+      "kind": "n"
+     }
+    ],
+    "bank": [
+     1,
+     4
+    ]
+   }
+  },
+  "IS": {
+   "iban": {
+    "prefix": "IS",
+    "length": 26,
+    "bban": [
+     {
+      "length": 4,
+      "kind": "n"
+     },
+     {
+      "length": 2,
+      "kind": "n"
+     },
+     {
+      "length": 6,
+      "kind": "n"
+     },
+     {
+      "length": 10,
+      "kind": "n"
+     }
+    ],
+    "bank": [
+     1,
+     2
+    ]
+   }
+  },
+  "IT": {
+   "iban": {
+    "prefix": "IT",
+    "length": 27,
+    "bban": [
+     {
+      "length": 1,
+      "kind": "a"
+     },
+     {
+      "length": 5,
+      "kind": "n"
+     },
+     {
+      "length": 5,
+      "kind": "n"
+     },
+     {
+      "length": 12,
+      "kind": "c"
+     }
+    ],
+    "bank": [
+     2,
+     6
+    ]
+   }
+  },
+  "JE": {
+   "iban": {
+    "prefix": "GB",
+    "length": 22,
+    "bban": [
+     {
+      "length": 4,
+      "kind": "a"
+     },
+     {
+      "length": 6,
+      "kind": "n"
+     },
+     {
+      "length": 8,
+      "kind": "n"
+     }
+    ],
+    "bank": [
+     1,
+     4
+    ]
+   }
+  },
+  "JM": {
+   "national": {
+    "name": "Routing number and account number",
+    "parts": [
+     {
+      "name": "Routing Number",
+      "length": 8,
+      "kind": "n"
+     },
+     {
+      "name": "Check Digit",
+      "length": 1,
+      "kind": "n"
+     },
+     {
+      "name": "Account Number",
+      "length": 17,
+      "kind": "c",
+      "min": 1
+     }
+    ],
+    "bank": [
+     1,
+     8
+    ],
+    "checks": [
+     {
+      "over": [
+       1,
+       8
+      ],
+      "weights": [
+       3,
+       7,
+       1,
+       3,
+       7,
+       1,
+       3,
+       7
+      ]
+     }
+    ]
+   }
+  },
+  "JO": {
+   "iban": {
+    "prefix": "JO",
+    "length": 30,
+    "bban": [
+     {
+      "length": 4,
+      "kind": "a"
+     },
+     {
+      "length": 4,
+      "kind": "n"
+     },
+     {
+      "length": 18,
+      "kind": "c"
+     }
+    ],
+    "bank": [
+     5,
+     8
+    ]
+   }
+  },
+  "JP": {
+   "national": {
+    "name": "Bank code, branch code and account number",
+    "parts": [
+     {
+      "name": "Bank code",
+      "length": 4,
+      "kind": "n"
+     },
+     {
+      "name": "Branch code",
+      "length": 3,
+      "kind": "n"
+     },
+     {
+      "name": "Account number",
+      "length": 7,
+      "kind": "n"
+     }
+    ],
+    "bank": [
+     1,
+     4
+    ]
+   }
+  },
+  "KG": {
+   "national": {
+    "name": "Номер Банковского Расчетного Счета",
+    "parts": [
+     {
+      "name": "Код Финансового Института",
+      "length": 3,
+      "kind": "n"
+     },
+     {
+      "name": "Внутрибанковский Номер Счета",
+      "length": 11,
+      "kind": "n"
+     },
+     {
+      "name": "Контрольный Разряд",
+      "length": 2,
+      "kind": "n"
+     }
+    ],
+    "bank": [
+     1,
+     3
+    ],
+    "checks": [
+     {
+      "over": [
+       1,
+       14
+      ],
+      "rest97": true
+     }
+    ]
+   }
+  },
+  "KM": {
+   "national": {
+    "name": "RIB",
+    "parts": [
+     {
+      "name": "Code De La Banque",
+      "length": 5,
+      "kind": "n"
+     },
+     {
+      "name": "Code Du Guichet",
+      "length": 5,
+      "kind": "n"
+     },
+     {
+      "name": "Numéro Du Compte",
+      "length": 11,
+      "kind": "c"
+     },
+     {
+      "name": "Clé RIB",
+      "length": 2,
+      "kind": "n"
+     }
+    ],
+    "bank": [
+     1,
+     5
+    ]
+   }
+  },
+  "KW": {
+   "iban": {
+    "prefix": "KW",
+    "length": 30,
+    "bban": [
+     {
+      "length": 4,
+      "kind": "a"
+     },
+     {
+      "length": 22,
+      "kind": "c"
+     }
+    ],
+    "bank": [
+     1,
+     4
+    ]
+   }
+  },
+  "KY": {
+   "national": {
+    "name": "Account Number",
+    "parts": [
+     {
+      "name": "Account Number",
+      "length": 17,
+      "kind": "n",
+      "min": 1,
+      "drawn": [
+       13,
+       13
+      ]
+     }
+    ]
+   }
+  },
+  "KZ": {
+   "iban": {
+    "prefix": "KZ",
+    "length": 20,
+    "bban": [
+     {
+      "length": 3,
+      "kind": "n"
+     },
+     {
+      "length": 13,
+      "kind": "c"
+     }
+    ],
+    "bank": [
+     1,
+     3
+    ]
+   }
+  },
+  "LB": {
+   "iban": {
+    "prefix": "LB",
+    "length": 28,
+    "bban": [
+     {
+      "length": 4,
+      "kind": "n"
+     },
+     {
+      "length": 20,
+      "kind": "c"
+     }
+    ],
+    "bank": [
+     1,
+     4
+    ]
+   }
+  },
+  "LC": {
+   "iban": {
+    "prefix": "LC",
+    "length": 32,
+    "bban": [
+     {
+      "length": 4,
+      "kind": "a"
+     },
+     {
+      "length": 24,
+      "kind": "c"
+     }
+    ],
+    "bank": [
+     1,
+     4
+    ]
+   }
+  },
+  "LI": {
+   "iban": {
+    "prefix": "LI",
+    "length": 21,
+    "bban": [
+     {
+      "length": 5,
+      "kind": "n"
+     },
+     {
+      "length": 12,
+      "kind": "c"
+     }
+    ],
+    "bank": [
+     1,
+     5
+    ]
+   }
+  },
+  "LK": {
+   "national": {
+    "name": "Account Number",
+    "parts": [
+     {
+      "name": "Account Number",
+      "length": 18,
+      "kind": "n",
+      "min": 6,
+      "drawn": [
+       15,
+       15
+      ]
+     }
+    ]
+   }
+  },
+  "LR": {
+   "national": {
+    "name": "BBAN",
+    "parts": [
+     {
+      "name": "Bank Code",
+      "length": 3,
+      "kind": "n"
+     },
+     {
+      "name": "Branch Code",
+      "length": 3,
+      "kind": "n"
+     },
+     {
+      "name": "Account Number",
+      "length": 10,
+      "kind": "n"
+     },
+     {
+      "name": "Account Check Digit",
+      "length": 2,
+      "kind": "n"
+     }
+    ],
+    "bank": [
+     1,
+     3
+    ],
+    "checks": [
+     {
+      "over": [
+       1,
+       16
+      ],
+      "key97": true
+     }
+    ]
+   }
+  },
+  "LT": {
+   "iban": {
+    "prefix": "LT",
+    "length": 20,
+    "bban": [
+     {
+      "length": 5,
+      "kind": "n"
+     },
+     {
+      "length": 11,
+      "kind": "n"
+     }
+    ],
+    "bank": [
+     1,
+     5
+    ]
+   }
+  },
+  "LU": {
+   "iban": {
+    "prefix": "LU",
+    "length": 20,
+    "bban": [
+     {
+      "length": 3,
+      "kind": "n"
+     },
+     {
+      "length": 13,
+      "kind": "c"
+     }
+    ],
+    "bank": [
+     1,
+     3
+    ]
+   }
+  },
+  "LV": {
+   "iban": {
+    "prefix": "LV",
+    "length": 21,
+    "bban": [
+     {
+      "length": 4,
+      "kind": "a"
+     },
+     {
+      "length": 13,
+      "kind": "c"
+     }
+    ],
+    "bank": [
+     1,
+     4
+    ]
+   }
+  },
+  "LY": {
+   "iban": {
+    "prefix": "LY",
+    "length": 25,
+    "bban": [
+     {
+      "length": 3,
+      "kind": "n"
+     },
+     {
+      "length": 3,
+      "kind": "n"
+     },
+     {
+      "length": 15,
+      "kind": "n"
+     }
+    ],
+    "bank": [
+     1,
+     3
+    ]
+   }
+  },
+  "MA": {
+   "national": {
+    "name": "RIB",
+    "parts": [
+     {
+      "name": "RIB",
+      "length": 24,
+      "kind": "n"
+     }
+    ]
+   }
+  },
+  "MC": {
+   "iban": {
+    "prefix": "MC",
+    "length": 27,
+    "bban": [
+     {
+      "length": 5,
+      "kind": "n"
+     },
+     {
+      "length": 5,
+      "kind": "n"
+     },
+     {
+      "length": 11,
+      "kind": "c"
+     },
+     {
+      "length": 2,
+      "kind": "n"
+     }
+    ],
+    "bank": [
+     1,
+     5
+    ]
+   }
+  },
+  "MD": {
+   "iban": {
+    "prefix": "MD",
+    "length": 24,
+    "bban": [
+     {
+      "length": 2,
+      "kind": "c"
+     },
+     {
+      "length": 18,
+      "kind": "c"
+     }
+    ],
+    "bank": [
+     1,
+     2
+    ]
+   }
+  },
+  "ME": {
+   "iban": {
+    "prefix": "ME",
+    "length": 22,
+    "bban": [
+     {
+      "length": 3,
+      "kind": "n"
+     },
+     {
+      "length": 13,
+      "kind": "n"
+     },
+     {
+      "length": 2,
+      "kind": "n"
+     }
+    ],
+    "bank": [
+     1,
+     3
+    ]
+   }
+  },
+  "MF": {
+   "iban": {
+    "prefix": "FR",
+    "length": 27,
+    "bban": [
+     {
+      "length": 5,
+      "kind": "n"
+     },
+     {
+      "length": 5,
+      "kind": "n"
+     },
+     {
+      "length": 11,
+      "kind": "c"
+     },
+     {
+      "length": 2,
+      "kind": "n"
+     }
+    ],
+    "bank": [
+     1,
+     5
+    ]
+   }
+  },
+  "MK": {
+   "iban": {
+    "prefix": "MK",
+    "length": 19,
+    "bban": [
+     {
+      "length": 3,
+      "kind": "n"
+     },
+     {
+      "length": 10,
+      "kind": "c"
+     },
+     {
+      "length": 2,
+      "kind": "n"
+     }
+    ],
+    "bank": [
+     1,
+     3
+    ]
+   }
+  },
+  "MN": {
+   "iban": {
+    "prefix": "MN",
+    "length": 20,
+    "bban": [
+     {
+      "length": 4,
+      "kind": "n"
+     },
+     {
+      "length": 12,
+      "kind": "n"
+     }
+    ],
+    "bank": [
+     1,
+     4
+    ]
+   }
+  },
+  "MO": {
+   "national": {
+    "name": "Account Number",
+    "parts": [
+     {
+      "name": "Account Number",
+      "length": 15,
+      "kind": "n",
+      "min": 12
+     }
+    ]
+   }
+  },
+  "MP": {
+   "national": {
+    "name": "Routing and account number",
+    "parts": [
+     {
+      "name": "Federal Reserve Routing Symbol",
+      "length": 4,
+      "kind": "n"
+     },
+     {
+      "name": "ABA Institution Identifier",
+      "length": 4,
+      "kind": "n"
+     },
+     {
+      "name": "Check Digit",
+      "length": 1,
+      "kind": "n"
+     },
+     {
+      "name": "Account Number",
+      "length": 17,
+      "kind": "c",
+      "min": 1,
+      "drawn": [
+       8,
+       12
+      ]
+     }
+    ],
+    "bank": [
+     1,
+     8
+    ],
+    "checks": [
+     {
+      "over": [
+       1,
+       8
+      ],
+      "weights": [
+       3,
+       7,
+       1,
+       3,
+       7,
+       1,
+       3,
+       7
+      ]
+     }
+    ]
+   }
+  },
+  "MQ": {
+   "iban": {
+    "prefix": "FR",
+    "length": 27,
+    "bban": [
+     {
+      "length": 5,
+      "kind": "n"
+     },
+     {
+      "length": 5,
+      "kind": "n"
+     },
+     {
+      "length": 11,
+      "kind": "c"
+     },
+     {
+      "length": 2,
+      "kind": "n"
+     }
+    ],
+    "bank": [
+     1,
+     5
+    ]
+   }
+  },
+  "MR": {
+   "iban": {
+    "prefix": "MR",
+    "length": 27,
+    "bban": [
+     {
+      "length": 5,
+      "kind": "n"
+     },
+     {
+      "length": 5,
+      "kind": "n"
+     },
+     {
+      "length": 11,
+      "kind": "n"
+     },
+     {
+      "length": 2,
+      "kind": "n"
+     }
+    ],
+    "bank": [
+     1,
+     5
+    ]
+   }
+  },
+  "MT": {
+   "iban": {
+    "prefix": "MT",
+    "length": 31,
+    "bban": [
+     {
+      "length": 4,
+      "kind": "a"
+     },
+     {
+      "length": 5,
+      "kind": "n"
+     },
+     {
+      "length": 18,
+      "kind": "c"
+     }
+    ],
+    "bank": [
+     1,
+     4
+    ]
+   }
+  },
+  "MU": {
+   "iban": {
+    "prefix": "MU",
+    "length": 30,
+    "bban": [
+     {
+      "length": 4,
+      "kind": "a"
+     },
+     {
+      "length": 2,
+      "kind": "n"
+     },
+     {
+      "length": 2,
+      "kind": "n"
+     },
+     {
+      "length": 12,
+      "kind": "n"
+     },
+     {
+      "length": 3,
+      "kind": "n"
+     },
+     {
+      "length": 3,
+      "kind": "a"
+     }
+    ],
+    "bank": [
+     1,
+     6
+    ]
+   }
+  },
+  "MX": {
+   "national": {
+    "name": "CLABE",
+    "parts": [
+     {
+      "name": "Código Del Banco",
+      "length": 3,
+      "kind": "n"
+     },
+     {
+      "name": "Código De Plaza",
+      "length": 3,
+      "kind": "n"
+     },
+     {
+      "name": "Número De Cuenta",
+      "length": 11,
+      "kind": "n"
+     },
+     {
+      "name": "Dígito De Control",
+      "length": 1,
+      "kind": "n"
+     }
+    ],
+    "bank": [
+     1,
+     3
+    ]
+   }
+  },
+  "MY": {
+   "national": {
+    "name": "Account Number",
+    "parts": [
+     {
+      "name": "Account Number",
+      "length": 17,
+      "kind": "n",
+      "min": 5
+     }
+    ]
+   }
+  },
+  "NC": {
+   "iban": {
+    "prefix": "FR",
+    "length": 27,
+    "bban": [
+     {
+      "length": 5,
+      "kind": "n"
+     },
+     {
+      "length": 5,
+      "kind": "n"
+     },
+     {
+      "length": 11,
+      "kind": "c"
+     },
+     {
+      "length": 2,
+      "kind": "n"
+     }
+    ],
+    "bank": [
+     1,
+     5
+    ]
+   }
+  },
+  "NF": {
+   "national": {
+    "name": "BSB and account number",
+    "parts": [
+     {
+      "name": "BSB",
+      "length": 6,
+      "kind": "n"
+     },
+     {
+      "name": "Account number",
+      "length": 9,
+      "kind": "n",
+      "min": 1
+     }
+    ],
+    "bank": [
+     1,
+     6
+    ]
+   }
+  },
+  "NG": {
+   "national": {
+    "name": "NUBAN",
+    "parts": [
+     {
+      "name": "Bank code",
+      "length": 3,
+      "kind": "n"
+     },
+     {
+      "name": "Account serial number",
+      "length": 9,
+      "kind": "n"
+     },
+     {
+      "name": "Check digit",
+      "length": 1,
+      "kind": "n"
+     }
+    ],
+    "bank": [
+     1,
+     3
+    ],
+    "checks": [
+     {
+      "over": [
+       1,
+       12
+      ],
+      "weights": [
+       3,
+       7,
+       3,
+       3,
+       7,
+       3,
+       3,
+       7,
+       3,
+       3,
+       7,
+       3
+      ]
+     }
+    ]
+   }
+  },
+  "NI": {
+   "iban": {
+    "prefix": "NI",
+    "length": 28,
+    "bban": [
+     {
+      "length": 4,
+      "kind": "a"
+     },
+     {
+      "length": 20,
+      "kind": "n"
+     }
+    ],
+    "bank": [
+     1,
+     4
+    ]
+   }
+  },
+  "NL": {
+   "iban": {
+    "prefix": "NL",
+    "length": 18,
+    "bban": [
+     {
+      "length": 4,
+      "kind": "a"
+     },
+     {
+      "length": 10,
+      "kind": "n"
+     }
+    ],
+    "bank": [
+     1,
+     4
+    ]
+   }
+  },
+  "NO": {
+   "iban": {
+    "prefix": "NO",
+    "length": 15,
+    "bban": [
+     {
+      "length": 4,
+      "kind": "n"
+     },
+     {
+      "length": 6,
+      "kind": "n"
+     },
+     {
+      "length": 1,
+      "kind": "n"
+     }
+    ],
+    "bank": [
+     1,
+     4
+    ]
+   }
+  },
+  "NR": {
+   "national": {
+    "name": "BSB and account number",
+    "parts": [
+     {
+      "name": "BSB",
+      "length": 6,
+      "kind": "n"
+     },
+     {
+      "name": "Account number",
+      "length": 9,
+      "kind": "n",
+      "min": 1
+     }
+    ],
+    "bank": [
+     1,
+     6
+    ]
+   }
+  },
+  "NU": {
+   "national": {
+    "name": "Bank account number",
+    "parts": [
+     {
+      "name": "Bank",
+      "length": 2,
+      "kind": "n"
+     },
+     {
+      "name": "Branch",
+      "length": 4,
+      "kind": "n"
+     },
+     {
+      "name": "Account number",
+      "length": 7,
+      "kind": "n"
+     },
+     {
+      "name": "Suffix",
+      "length": 2,
+      "kind": "n"
+     }
+    ],
+    "bank": [
+     1,
+     2
+    ]
+   }
+  },
+  "NZ": {
+   "national": {
+    "name": "Bank account number",
+    "parts": [
+     {
+      "name": "Bank",
+      "length": 2,
+      "kind": "n"
+     },
+     {
+      "name": "Branch",
+      "length": 4,
+      "kind": "n"
+     },
+     {
+      "name": "Account number",
+      "length": 7,
+      "kind": "n"
+     },
+     {
+      "name": "Suffix",
+      "length": 2,
+      "kind": "n"
+     }
+    ],
+    "bank": [
+     1,
+     2
+    ]
+   }
+  },
+  "OM": {
+   "iban": {
+    "prefix": "OM",
+    "length": 23,
+    "bban": [
+     {
+      "length": 3,
+      "kind": "n"
+     },
+     {
+      "length": 16,
+      "kind": "c"
+     }
+    ],
+    "bank": [
+     1,
+     3
+    ]
+   }
+  },
+  "PE": {
+   "national": {
+    "name": "CCI",
+    "parts": [
+     {
+      "name": "Bank code",
+      "length": 3,
+      "kind": "n"
+     },
+     {
+      "name": "Office code",
+      "length": 3,
+      "kind": "n"
+     },
+     {
+      "name": "Account number",
+      "length": 12,
+      "kind": "n"
+     },
+     {
+      "name": "Check digits",
+      "length": 2,
+      "kind": "n"
+     }
+    ],
+    "bank": [
+     1,
+     3
+    ]
+   }
+  },
+  "PF": {
+   "iban": {
+    "prefix": "FR",
+    "length": 27,
+    "bban": [
+     {
+      "length": 5,
+      "kind": "n"
+     },
+     {
+      "length": 5,
+      "kind": "n"
+     },
+     {
+      "length": 11,
+      "kind": "c"
+     },
+     {
+      "length": 2,
+      "kind": "n"
+     }
+    ],
+    "bank": [
+     1,
+     5
+    ]
+   }
+  },
+  "PK": {
+   "iban": {
+    "prefix": "PK",
+    "length": 24,
+    "bban": [
+     {
+      "length": 4,
+      "kind": "a"
+     },
+     {
+      "length": 16,
+      "kind": "c"
+     }
+    ],
+    "bank": [
+     1,
+     4
+    ]
+   }
+  },
+  "PL": {
+   "iban": {
+    "prefix": "PL",
+    "length": 28,
+    "bban": [
+     {
+      "length": 8,
+      "kind": "n"
+     },
+     {
+      "length": 16,
+      "kind": "n"
+     }
+    ]
+   }
+  },
+  "PM": {
+   "iban": {
+    "prefix": "FR",
+    "length": 27,
+    "bban": [
+     {
+      "length": 5,
+      "kind": "n"
+     },
+     {
+      "length": 5,
+      "kind": "n"
+     },
+     {
+      "length": 11,
+      "kind": "c"
+     },
+     {
+      "length": 2,
+      "kind": "n"
+     }
+    ],
+    "bank": [
+     1,
+     5
+    ]
+   }
+  },
+  "PR": {
+   "national": {
+    "name": "Routing and account number",
+    "parts": [
+     {
+      "name": "Federal Reserve Routing Symbol",
+      "length": 4,
+      "kind": "n"
+     },
+     {
+      "name": "ABA Institution Identifier",
+      "length": 4,
+      "kind": "n"
+     },
+     {
+      "name": "Check Digit",
+      "length": 1,
+      "kind": "n"
+     },
+     {
+      "name": "Account Number",
+      "length": 17,
+      "kind": "c",
+      "min": 1,
+      "drawn": [
+       8,
+       12
+      ]
+     }
+    ],
+    "bank": [
+     1,
+     8
+    ],
+    "checks": [
+     {
+      "over": [
+       1,
+       8
+      ],
+      "weights": [
+       3,
+       7,
+       1,
+       3,
+       7,
+       1,
+       3,
+       7
+      ]
+     }
+    ]
+   }
+  },
+  "PS": {
+   "iban": {
+    "prefix": "PS",
+    "length": 29,
+    "bban": [
+     {
+      "length": 4,
+      "kind": "a"
+     },
+     {
+      "length": 21,
+      "kind": "c"
+     }
+    ],
+    "bank": [
+     1,
+     4
+    ]
+   }
+  },
+  "PT": {
+   "iban": {
+    "prefix": "PT",
+    "length": 25,
+    "bban": [
+     {
+      "length": 4,
+      "kind": "n"
+     },
+     {
+      "length": 4,
+      "kind": "n"
+     },
+     {
+      "length": 11,
+      "kind": "n"
+     },
+     {
+      "length": 2,
+      "kind": "n"
+     }
+    ],
+    "bank": [
+     1,
+     4
+    ]
+   }
+  },
+  "PW": {
+   "national": {
+    "name": "Routing and account number",
+    "parts": [
+     {
+      "name": "Federal Reserve Routing Symbol",
+      "length": 4,
+      "kind": "n"
+     },
+     {
+      "name": "ABA Institution Identifier",
+      "length": 4,
+      "kind": "n"
+     },
+     {
+      "name": "Check Digit",
+      "length": 1,
+      "kind": "n"
+     },
+     {
+      "name": "Account Number",
+      "length": 17,
+      "kind": "c",
+      "min": 1,
+      "drawn": [
+       8,
+       12
+      ]
+     }
+    ],
+    "bank": [
+     1,
+     8
+    ],
+    "checks": [
+     {
+      "over": [
+       1,
+       8
+      ],
+      "weights": [
+       3,
+       7,
+       1,
+       3,
+       7,
+       1,
+       3,
+       7
+      ]
+     }
+    ]
+   }
+  },
+  "QA": {
+   "iban": {
+    "prefix": "QA",
+    "length": 29,
+    "bban": [
+     {
+      "length": 4,
+      "kind": "a"
+     },
+     {
+      "length": 21,
+      "kind": "c"
+     }
+    ],
+    "bank": [
+     1,
+     4
+    ]
+   }
+  },
+  "RE": {
+   "iban": {
+    "prefix": "FR",
+    "length": 27,
+    "bban": [
+     {
+      "length": 5,
+      "kind": "n"
+     },
+     {
+      "length": 5,
+      "kind": "n"
+     },
+     {
+      "length": 11,
+      "kind": "c"
+     },
+     {
+      "length": 2,
+      "kind": "n"
+     }
+    ],
+    "bank": [
+     1,
+     5
+    ]
+   }
+  },
+  "RO": {
+   "iban": {
+    "prefix": "RO",
+    "length": 24,
+    "bban": [
+     {
+      "length": 4,
+      "kind": "a"
+     },
+     {
+      "length": 16,
+      "kind": "c"
+     }
+    ],
+    "bank": [
+     1,
+     4
+    ]
+   }
+  },
+  "RS": {
+   "iban": {
+    "prefix": "RS",
+    "length": 22,
+    "bban": [
+     {
+      "length": 3,
+      "kind": "n"
+     },
+     {
+      "length": 13,
+      "kind": "n"
+     },
+     {
+      "length": 2,
+      "kind": "n"
+     }
+    ],
+    "bank": [
+     1,
+     3
+    ]
+   }
+  },
+  "RU": {
+   "iban": {
+    "prefix": "RU",
+    "length": 33,
+    "bban": [
+     {
+      "length": 9,
+      "kind": "n"
+     },
+     {
+      "length": 5,
+      "kind": "n"
+     },
+     {
+      "length": 15,
+      "kind": "c"
+     }
+    ],
+    "bank": [
+     1,
+     9
+    ]
+   }
+  },
+  "SA": {
+   "iban": {
+    "prefix": "SA",
+    "length": 24,
+    "bban": [
+     {
+      "length": 2,
+      "kind": "n"
+     },
+     {
+      "length": 18,
+      "kind": "c"
+     }
+    ],
+    "bank": [
+     1,
+     2
+    ]
+   }
+  },
+  "SB": {
+   "national": {
+    "name": "Account Number",
+    "parts": [
+     {
+      "name": "Account Number",
+      "length": 15,
+      "kind": "n",
+      "min": 4,
+      "drawn": [
+       9,
+       10
+      ]
+     }
+    ]
+   }
+  },
+  "SC": {
+   "iban": {
+    "prefix": "SC",
+    "length": 31,
+    "bban": [
+     {
+      "length": 4,
+      "kind": "a"
+     },
+     {
+      "length": 2,
+      "kind": "n"
+     },
+     {
+      "length": 2,
+      "kind": "n"
+     },
+     {
+      "length": 16,
+      "kind": "n"
+     },
+     {
+      "length": 3,
+      "kind": "a"
+     }
+    ],
+    "bank": [
+     1,
+     6
+    ]
+   }
+  },
+  "SD": {
+   "iban": {
+    "prefix": "SD",
+    "length": 18,
+    "bban": [
+     {
+      "length": 2,
+      "kind": "n"
+     },
+     {
+      "length": 12,
+      "kind": "n"
+     }
+    ],
+    "bank": [
+     1,
+     2
+    ]
+   }
+  },
+  "SE": {
+   "iban": {
+    "prefix": "SE",
+    "length": 24,
+    "bban": [
+     {
+      "length": 3,
+      "kind": "n"
+     },
+     {
+      "length": 16,
+      "kind": "n"
+     },
+     {
+      "length": 1,
+      "kind": "n"
+     }
+    ],
+    "bank": [
+     1,
+     3
+    ]
+   }
+  },
+  "SG": {
+   "national": {
+    "name": "Bank Code And Account Number",
+    "parts": [
+     {
+      "name": "Bank Code",
+      "length": 4,
+      "kind": "n"
+     },
+     {
+      "name": "Account Number",
+      "length": 10,
+      "kind": "n",
+      "min": 9
+     }
+    ],
+    "bank": [
+     1,
+     4
+    ]
+   }
+  },
+  "SI": {
+   "iban": {
+    "prefix": "SI",
+    "length": 19,
+    "bban": [
+     {
+      "length": 5,
+      "kind": "n"
+     },
+     {
+      "length": 8,
+      "kind": "n"
+     },
+     {
+      "length": 2,
+      "kind": "n"
+     }
+    ],
+    "bank": [
+     1,
+     5
+    ]
+   }
+  },
+  "SJ": {
+   "iban": {
+    "prefix": "NO",
+    "length": 15,
+    "bban": [
+     {
+      "length": 4,
+      "kind": "n"
+     },
+     {
+      "length": 6,
+      "kind": "n"
+     },
+     {
+      "length": 1,
+      "kind": "n"
+     }
+    ],
+    "bank": [
+     1,
+     4
+    ]
+   }
+  },
+  "SK": {
+   "iban": {
+    "prefix": "SK",
+    "length": 24,
+    "bban": [
+     {
+      "length": 4,
+      "kind": "n"
+     },
+     {
+      "length": 6,
+      "kind": "n"
+     },
+     {
+      "length": 10,
+      "kind": "n"
+     }
+    ],
+    "bank": [
+     1,
+     4
+    ]
+   }
+  },
+  "SM": {
+   "iban": {
+    "prefix": "SM",
+    "length": 27,
+    "bban": [
+     {
+      "length": 1,
+      "kind": "a"
+     },
+     {
+      "length": 5,
+      "kind": "n"
+     },
+     {
+      "length": 5,
+      "kind": "n"
+     },
+     {
+      "length": 12,
+      "kind": "c"
+     }
+    ],
+    "bank": [
+     2,
+     6
+    ]
+   }
+  },
+  "SO": {
+   "iban": {
+    "prefix": "SO",
+    "length": 23,
+    "bban": [
+     {
+      "length": 4,
+      "kind": "n"
+     },
+     {
+      "length": 3,
+      "kind": "n"
+     },
+     {
+      "length": 12,
+      "kind": "n"
+     }
+    ],
+    "bank": [
+     1,
+     4
+    ]
+   }
+  },
+  "ST": {
+   "iban": {
+    "prefix": "ST",
+    "length": 25,
+    "bban": [
+     {
+      "length": 8,
+      "kind": "n"
+     },
+     {
+      "length": 11,
+      "kind": "n"
+     },
+     {
+      "length": 2,
+      "kind": "n"
+     }
+    ],
+    "bank": [
+     1,
+     4
+    ]
+   }
+  },
+  "SV": {
+   "iban": {
+    "prefix": "SV",
+    "length": 28,
+    "bban": [
+     {
+      "length": 4,
+      "kind": "a"
+     },
+     {
+      "length": 20,
+      "kind": "n"
+     }
+    ],
+    "bank": [
+     1,
+     4
+    ]
+   }
+  },
+  "TF": {
+   "iban": {
+    "prefix": "FR",
+    "length": 27,
+    "bban": [
+     {
+      "length": 5,
+      "kind": "n"
+     },
+     {
+      "length": 5,
+      "kind": "n"
+     },
+     {
+      "length": 11,
+      "kind": "c"
+     },
+     {
+      "length": 2,
+      "kind": "n"
+     }
+    ],
+    "bank": [
+     1,
+     5
+    ]
+   }
+  },
+  "TL": {
+   "iban": {
+    "prefix": "TL",
+    "length": 23,
+    "bban": [
+     {
+      "length": 3,
+      "kind": "n"
+     },
+     {
+      "length": 14,
+      "kind": "n"
+     },
+     {
+      "length": 2,
+      "kind": "n"
+     }
+    ],
+    "bank": [
+     1,
+     3
+    ]
+   }
+  },
+  "TN": {
+   "iban": {
+    "prefix": "TN",
+    "length": 24,
+    "bban": [
+     {
+      "length": 2,
+      "kind": "n"
+     },
+     {
+      "length": 3,
+      "kind": "n"
+     },
+     {
+      "length": 13,
+      "kind": "n"
+     },
+     {
+      "length": 2,
+      "kind": "n"
+     }
+    ],
+    "bank": [
+     1,
+     2
+    ]
+   }
+  },
+  "TR": {
+   "iban": {
+    "prefix": "TR",
+    "length": 26,
+    "bban": [
+     {
+      "length": 5,
+      "kind": "n"
+     },
+     {
+      "length": 1,
+      "kind": "n"
+     },
+     {
+      "length": 16,
+      "kind": "c"
+     }
+    ],
+    "bank": [
+     1,
+     5
+    ]
+   }
+  },
+  "TT": {
+   "national": {
+    "name": "Routing number and account number",
+    "parts": [
+     {
+      "name": "Routing number",
+      "length": 9,
+      "kind": "n"
+     },
+     {
+      "name": "Account number",
+      "length": 12,
+      "kind": "n"
+     }
+    ],
+    "bank": [
+     1,
+     9
+    ]
+   }
+  },
+  "TW": {
+   "national": {
+    "name": "Bank code, branch code and account number",
+    "parts": [
+     {
+      "name": "Bank code",
+      "length": 3,
+      "kind": "n"
+     },
+     {
+      "name": "Branch code",
+      "length": 4,
+      "kind": "n"
+     },
+     {
+      "name": "Account number",
+      "length": 14,
+      "kind": "n"
+     }
+    ],
+    "bank": [
+     1,
+     3
+    ]
+   }
+  },
+  "UA": {
+   "iban": {
+    "prefix": "UA",
+    "length": 29,
+    "bban": [
+     {
+      "length": 6,
+      "kind": "n"
+     },
+     {
+      "length": 19,
+      "kind": "c"
+     }
+    ],
+    "bank": [
+     1,
+     6
+    ]
+   }
+  },
+  "US": {
+   "national": {
+    "name": "Routing and account number",
+    "parts": [
+     {
+      "name": "Federal Reserve Routing Symbol",
+      "length": 4,
+      "kind": "n"
+     },
+     {
+      "name": "ABA Institution Identifier",
+      "length": 4,
+      "kind": "n"
+     },
+     {
+      "name": "Check Digit",
+      "length": 1,
+      "kind": "n"
+     },
+     {
+      "name": "Account Number",
+      "length": 17,
+      "kind": "c",
+      "min": 1,
+      "drawn": [
+       8,
+       12
+      ]
+     }
+    ],
+    "bank": [
+     1,
+     8
+    ],
+    "checks": [
+     {
+      "over": [
+       1,
+       8
+      ],
+      "weights": [
+       3,
+       7,
+       1,
+       3,
+       7,
+       1,
+       3,
+       7
+      ]
+     }
+    ]
+   }
+  },
+  "UY": {
+   "national": {
+    "name": "Número De Cuenta",
+    "parts": [
+     {
+      "name": "Número De Cuenta",
+      "length": 16,
+      "kind": "n",
+      "min": 1,
+      "drawn": [
+       16,
+       16
+      ]
+     }
+    ]
+   }
+  },
+  "VA": {
+   "iban": {
+    "prefix": "VA",
+    "length": 22,
+    "bban": [
+     {
+      "length": 3,
+      "kind": "n"
+     },
+     {
+      "length": 15,
+      "kind": "n"
+     }
+    ],
+    "bank": [
+     1,
+     3
+    ]
+   }
+  },
+  "VG": {
+   "iban": {
+    "prefix": "VG",
+    "length": 24,
+    "bban": [
+     {
+      "length": 4,
+      "kind": "a"
+     },
+     {
+      "length": 16,
+      "kind": "n"
+     }
+    ],
+    "bank": [
+     1,
+     4
+    ]
+   }
+  },
+  "VI": {
+   "national": {
+    "name": "Routing and account number",
+    "parts": [
+     {
+      "name": "Federal Reserve Routing Symbol",
+      "length": 4,
+      "kind": "n"
+     },
+     {
+      "name": "ABA Institution Identifier",
+      "length": 4,
+      "kind": "n"
+     },
+     {
+      "name": "Check Digit",
+      "length": 1,
+      "kind": "n"
+     },
+     {
+      "name": "Account Number",
+      "length": 17,
+      "kind": "c",
+      "min": 1,
+      "drawn": [
+       8,
+       12
+      ]
+     }
+    ],
+    "bank": [
+     1,
+     8
+    ],
+    "checks": [
+     {
+      "over": [
+       1,
+       8
+      ],
+      "weights": [
+       3,
+       7,
+       1,
+       3,
+       7,
+       1,
+       3,
+       7
+      ]
+     }
+    ]
+   }
+  },
+  "VN": {
+   "national": {
+    "name": "Số Tài Khoản",
+    "parts": [
+     {
+      "name": "Số Tài Khoản",
+      "length": 10,
+      "kind": "n",
+      "min": 3
+     }
+    ]
+   }
+  },
+  "VU": {
+   "national": {
+    "name": "Account Number",
+    "parts": [
+     {
+      "name": "Account Number",
+      "length": 14,
+      "kind": "n",
+      "min": 7,
+      "drawn": [
+       7,
+       7
+      ]
+     }
+    ]
+   }
+  },
+  "WF": {
+   "iban": {
+    "prefix": "FR",
+    "length": 27,
+    "bban": [
+     {
+      "length": 5,
+      "kind": "n"
+     },
+     {
+      "length": 5,
+      "kind": "n"
+     },
+     {
+      "length": 11,
+      "kind": "c"
+     },
+     {
+      "length": 2,
+      "kind": "n"
+     }
+    ],
+    "bank": [
+     1,
+     5
+    ]
+   }
+  },
+  "WS": {
+   "national": {
+    "name": "Account Number",
+    "parts": [
+     {
+      "name": "Account Number",
+      "length": 13,
+      "kind": "n",
+      "min": 7,
+      "drawn": [
+       7,
+       7
+      ]
+     }
+    ]
+   }
+  },
+  "XK": {
+   "iban": {
+    "prefix": "XK",
+    "length": 20,
+    "bban": [
+     {
+      "length": 4,
+      "kind": "n"
+     },
+     {
+      "length": 10,
+      "kind": "n"
+     },
+     {
+      "length": 2,
+      "kind": "n"
+     }
+    ],
+    "bank": [
+     1,
+     2
+    ]
+   }
+  },
+  "YE": {
+   "iban": {
+    "prefix": "YE",
+    "length": 30,
+    "bban": [
+     {
+      "length": 4,
+      "kind": "a"
+     },
+     {
+      "length": 4,
+      "kind": "n"
+     },
+     {
+      "length": 18,
+      "kind": "c"
+     }
+    ],
+    "bank": [
+     1,
+     4
+    ]
+   }
+  },
+  "YT": {
+   "iban": {
+    "prefix": "FR",
+    "length": 27,
+    "bban": [
+     {
+      "length": 5,
+      "kind": "n"
+     },
+     {
+      "length": 5,
+      "kind": "n"
+     },
+     {
+      "length": 11,
+      "kind": "c"
+     },
+     {
+      "length": 2,
+      "kind": "n"
+     }
+    ],
+    "bank": [
+     1,
+     5
+    ]
+   }
+  },
+  "ZM": {
+   "national": {
+    "name": "Sort code and account number",
+    "parts": [
+     {
+      "name": "Bank",
+      "length": 2,
+      "kind": "n"
+     },
+     {
+      "name": "Area",
+      "length": 2,
+      "kind": "n"
+     },
+     {
+      "name": "Branch",
+      "length": 2,
+      "kind": "n"
+     },
+     {
+      "name": "Account Number",
+      "length": 13,
+      "kind": "n"
+     }
+    ],
+    "bank": [
+     1,
+     2
+    ]
+   }
+  }
+ }
+}

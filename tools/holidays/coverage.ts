@@ -15,7 +15,7 @@ export const OUTPUT = 'coverage/holidays-countries.json';
 export const RECKONINGS = { lunar: 'R-0106', easter: 'R-0107', orthodox: 'R-0108', equinox: 'R-0036' } as const;
 
 const T = 'tests/world/holidays/holidays.test.ts';
-export const TESTS = [`${T}::the holidays of every country kept > are the days its official lists name, list by list`, `${T}::the holidays > at every place on the map`];
+export const TESTS = [`${T}::the holidays of every country kept > are the days its official lists name, list by list`, 'tests/world/holidays/holidays.places.test.ts::the holidays > at every place on the map'];
 /** And a blocked row's: the test that shows the player told its holidays aren't kept. */
 export const TOLD = `${T}::the holidays > tell the player where a country's aren't kept`;
 /** And the row's of a country with a region blocked (world.holidays.blocked.<region>): the test that shows the player told. */

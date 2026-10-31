@@ -1,0 +1,57 @@
+{
+ "country": "GH",
+ "document": "Ghana Card (national identity card)",
+ "office": "the National Identification Authority (NIA)",
+ "currency": "GHS",
+ "routes": [
+  {
+   "id": "district",
+   "where": "home",
+   "speed": "standard",
+   "within": null,
+   "label": "first registration at an NIA district office"
+  },
+  {
+   "id": "premium",
+   "where": "home",
+   "speed": "urgent",
+   "within": null,
+   "label": "first registration at an NIA premium centre"
+  }
+ ],
+ "cards": [
+  {
+   "for": "under 25",
+   "under": 25,
+   "validYears": 10,
+   "pay": {
+    "district": "0",
+    "premium": "410"
+   }
+  },
+  {
+   "for": "25 and over",
+   "from": 25,
+   "validYears": 10,
+   "pay": {
+    "district": "30",
+    "premium": "410"
+   }
+  }
+ ],
+ "note": "The NIA's approved fees and charges for 2026: a first registration is free at a district office under 25, GHc30 from 25, GHc410 at a premium centre; abroad it costs the cedi equivalent of USD 55 in ECOWAS, 75 elsewhere in Africa and 115 outside Africa (not modelled: the form keeps one currency). The card is issued from age zero and expires ten years after issue. The time isn't stated.",
+ "sources": [
+  {
+   "url": "https://nia.gov.gh/fees-and-charges-2026/",
+   "title": "National Identification Authority (Ghana), NIA Approved Fees & Charges",
+   "read": "2026-10-28",
+   "said": "1.1 First Time Registration at NIA District Office (below 25 years) Free 1.2 First Time Registration at NIA District Office (25 years and above) GHc30.00 1.3 First Time Registration at NIA Premium Centre GHc410.00 1.4 Registration within the ECOWAS Sub-Region Cedi equivalent of USD 55.00 1.5 Registration in the rest of Africa Cedi equivalent of USD75.00 1.6 Registration in countries outside Africa Cedi equivalent of USD115.00"
+  },
+  {
+   "url": "https://nia.gov.gh/faqs/",
+   "title": "National Identification Authority (Ghana), FAQs",
+   "read": "2026-10-28",
+   "said": "The processing and issuance of National Identity Cards commonly known as Ghana Cards to all eligible persons who are aged zero and above; ... The Ghana Card will expire after ten years from the date of issuance."
+  }
+ ]
+}

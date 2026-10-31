@@ -1,0 +1,66 @@
+{
+ "country": "VU",
+ "office": "the Department of Immigration and Passport Services",
+ "currency": "VUV",
+ "routes": [
+  {
+   "id": "normal",
+   "where": "home",
+   "speed": "standard",
+   "within": {
+    "n": 3,
+    "unit": "day"
+   },
+   "label": "normal, three days"
+  },
+  {
+   "id": "urgent",
+   "where": "home",
+   "speed": "urgent",
+   "within": {
+    "n": 1,
+    "unit": "day"
+   },
+   "label": "urgent, one day"
+  }
+ ],
+ "passports": [
+  {
+   "for": "adult",
+   "from": 18,
+   "under": 66,
+   "validYears": null,
+   "pay": {
+    "normal": "20000",
+    "urgent": "30000"
+   }
+  },
+  {
+   "for": "senior",
+   "from": 66,
+   "validYears": null,
+   "pay": {
+    "normal": "10000",
+    "urgent": null
+   }
+  },
+  {
+   "for": "child",
+   "under": 18,
+   "validYears": null,
+   "pay": {
+    "normal": "10000",
+    "urgent": null
+   }
+  }
+ ],
+ "note": "The fees from the page's 'Passport Fees' list: adults 18 to 65 pay 20,000 vatu (three days) or 30,000 urgent (one day); children to 17 and adults from 66 pay 10,000, within three days, with no urgent fee given (null). The same page's shorter list puts the senior fee from 65 instead of 66; the detailed list is taken. Additional costs 'may apply' and validity isn't stated, leads.",
+ "sources": [
+  {
+   "url": "https://immigration.gov.vu/passport-forms",
+   "title": "Vanuatu Department of Immigration and Passport Services, Vanuatu Passport (passport forms)",
+   "read": "2026-10-28",
+   "said": "Fee: Passport fee various with different processing time and age. 0 -17 years 10,000vt 18 – 64 years 20,000vt 65 years upwards 10,000vt Normal processing time 20,000vt (up to 3 days) Express processing time 30,000vt (up to 1 day) Please note that additional cost may apply ... Passport Fees: •Adults(18-65yrs) > 20,000vt Normal fee – For three (3) days process > 30,000vt Urgent fee – For one (1) day process •Kids (0-17 yrs) > 10,000vt – Turn around processing time will be within three (3) days •Adults (66yrs and above) > 10,000vt"
+  }
+ ]
+}

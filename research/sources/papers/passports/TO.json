@@ -1,0 +1,56 @@
+{
+ "country": "TO",
+ "office": "the Immigration Division of the Ministry of Foreign Affairs, which prints the passport; abroad, Tonga's missions (here the Tonga Consulate General in Burlingame, California), which take the application and scan it to the Division",
+ "currency": "TOP",
+ "abroad": {
+  "currency": "USD"
+ },
+ "routes": [
+  {
+   "id": "home",
+   "where": "home",
+   "speed": "standard",
+   "within": null,
+   "label": "from the Ministry of Foreign Affairs in Tonga"
+  },
+  {
+   "id": "abroad",
+   "where": "abroad",
+   "speed": "standard",
+   "within": {
+    "n": 4,
+    "unit": "week"
+   },
+   "label": "at the Consulate General in California, up to 4 weeks"
+  }
+ ],
+ "passports": [
+  {
+   "for": "16 and over",
+   "from": 16,
+   "validYears": null,
+   "pay": {
+    "home": null,
+    "abroad": null
+   }
+  },
+  {
+   "for": "minor, under 16",
+   "under": 16,
+   "validYears": null,
+   "pay": {
+    "home": null,
+    "abroad": "86.25"
+   }
+  }
+ ],
+ "note": "The Tonga Consulate General in Burlingame, California (its Passport page, read 2026-10-31, copyright 2025): new applications are scanned to the Immigration Division of the Ministry of Foreign Affairs in Tonga for printing and take up to 4 weeks; a minor's (under 16) application is paid with a USD$86.25 money order. The adult's fee is not stated on the page (\"Money order of the fee payable\"), so it is left unpaid (the page's other USD$86.25, for a five-year extension of a passport, is a different service and is not read as the adult's fee). At home the fee was not read: the Passport (Amendment) Regulations 2011 are on PacLII, which answers this client with a Cloudflare challenge, and the Government portal says only that the fees are due. The validity is not stated.",
+ "sources": [
+  {
+   "url": "https://tongaconsul.com/passport",
+   "title": "Tonga Consulate General, Burlingame, California, Passport - Paasipooti (rendered 2026-10-31)",
+   "read": "2026-10-31",
+   "said": "All applications for a Machine Readable Tongan passport, including replacements for those lost, damaged and expired are required to be lodged with the Tonga Consulate General. ... Please note that all NEW PASSPORT APPLICATIONS are being scanned to the Immigration Division, Ministry of Foreign Affairs in Tonga for printing. It will take up to 4 weeks for processing. ... Minor Applicant (Under Age 16) ... USD$86.25 money order payable to Tonga Consulate General ... Q: How much does it cost for a 5 year extension of Tongan Passport? A: USD $86.25"
+  }
+ ]
+}

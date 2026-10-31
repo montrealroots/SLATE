@@ -665,6 +665,166 @@
    }
   ]
  },
+ "AG": {
+  "announcedTo": 2026,
+  "holidays": [
+   {
+    "name": "New Year’s Day",
+    "when": {
+     "fixed": [
+      1,
+      1
+     ]
+    },
+    "move": [
+     {
+      "on": [
+       0
+      ],
+      "to": "next"
+     }
+    ]
+   },
+   {
+    "name": "Good Friday",
+    "when": {
+     "easter": -2
+    }
+   },
+   {
+    "name": "Easter Monday",
+    "when": {
+     "easter": 1
+    }
+   },
+   {
+    "name": "The day following a general election",
+    "when": {
+     "dates": [
+      "2026-05-01"
+     ]
+    }
+   },
+   {
+    "name": "Labour Day",
+    "when": {
+     "nth": [
+      5,
+      1,
+      1
+     ]
+    }
+   },
+   {
+    "name": "Whit Monday",
+    "when": {
+     "easter": 50
+    }
+   },
+   {
+    "name": "Carnival Holiday",
+    "when": {
+     "nth": [
+      8,
+      1,
+      1
+     ]
+    }
+   },
+   {
+    "name": "Carnival Holiday",
+    "when": {
+     "nth": [
+      8,
+      1,
+      1
+     ]
+    },
+    "plus": 1
+   },
+   {
+    "name": "National Day of Prayer",
+    "when": {
+     "nth": [
+      9,
+      4,
+      2
+     ]
+    }
+   },
+   {
+    "name": "Independence Day",
+    "when": {
+     "fixed": [
+      11,
+      1
+     ]
+    },
+    "move": [
+     {
+      "on": [
+       6,
+       0
+      ],
+      "to": "next"
+     }
+    ]
+   },
+   {
+    "name": "Sir Vere Cornwall Bird Snr. Day",
+    "when": {
+     "fixed": [
+      12,
+      9
+     ]
+    },
+    "move": [
+     {
+      "on": [
+       6,
+       0
+      ],
+      "to": "next"
+     }
+    ]
+   },
+   {
+    "name": "Christmas Day",
+    "when": {
+     "fixed": [
+      12,
+      25
+     ]
+    },
+    "move": [
+     {
+      "on": [
+       6,
+       0
+      ],
+      "to": "next"
+     }
+    ]
+   },
+   {
+    "name": "Boxing Day",
+    "when": {
+     "fixed": [
+      12,
+      26
+     ]
+    },
+    "move": [
+     {
+      "on": [
+       0
+      ],
+      "to": "next"
+     }
+    ]
+   }
+  ]
+ },
  "AI": {
   "announcedTo": 2026,
   "holidays": [
@@ -2539,6 +2699,207 @@
     "regions": [
      "AR.23"
     ]
+   }
+  ]
+ },
+ "AS": {
+  "announcedTo": 2026,
+  "holidays": [
+   {
+    "name": "New Year’s Day",
+    "when": {
+     "fixed": [
+      1,
+      1
+     ]
+    },
+    "move": [
+     {
+      "on": [
+       6
+      ],
+      "to": "previous",
+      "shared": true
+     },
+     {
+      "on": [
+       0
+      ],
+      "to": "next",
+      "shared": true
+     }
+    ]
+   },
+   {
+    "name": "Washington’s Birthday",
+    "when": {
+     "nth": [
+      2,
+      1,
+      3
+     ]
+    }
+   },
+   {
+    "name": "Good Friday",
+    "when": {
+     "easter": -2
+    }
+   },
+   {
+    "name": "American Samoa Flag Day",
+    "when": {
+     "fixed": [
+      4,
+      17
+     ]
+    }
+   },
+   {
+    "name": "Memorial Day",
+    "when": {
+     "nth": [
+      5,
+      1,
+      -1
+     ]
+    }
+   },
+   {
+    "name": "Independence Day",
+    "when": {
+     "fixed": [
+      7,
+      4
+     ]
+    },
+    "move": [
+     {
+      "on": [
+       6
+      ],
+      "to": "previous",
+      "shared": true
+     },
+     {
+      "on": [
+       0
+      ],
+      "to": "next",
+      "shared": true
+     }
+    ]
+   },
+   {
+    "name": "Manu’a Islands Cession Day",
+    "when": {
+     "fixed": [
+      7,
+      16
+     ]
+    }
+   },
+   {
+    "name": "Labor Day",
+    "when": {
+     "nth": [
+      9,
+      1,
+      1
+     ]
+    }
+   },
+   {
+    "name": "Veterans Day",
+    "when": {
+     "fixed": [
+      11,
+      11
+     ]
+    },
+    "move": [
+     {
+      "on": [
+       6
+      ],
+      "to": "previous",
+      "shared": true
+     },
+     {
+      "on": [
+       0
+      ],
+      "to": "next",
+      "shared": true
+     }
+    ]
+   },
+   {
+    "name": "Thanksgiving",
+    "when": {
+     "nth": [
+      11,
+      4,
+      4
+     ]
+    }
+   },
+   {
+    "name": "Christmas",
+    "when": {
+     "fixed": [
+      12,
+      25
+     ]
+    },
+    "move": [
+     {
+      "on": [
+       6
+      ],
+      "to": "previous",
+      "shared": true
+     },
+     {
+      "on": [
+       0
+      ],
+      "to": "next",
+      "shared": true
+     }
+    ]
+   },
+   {
+    "name": "New Year’s Day",
+    "when": {
+     "dates": [
+      "2026-01-02"
+     ]
+    }
+   },
+   {
+    "name": "Martin Luther King, Jr. Day",
+    "when": {
+     "dates": [
+      "2026-01-19"
+     ]
+    }
+   },
+   {
+    "name": "American Samoa Flag Day",
+    "when": {
+     "dates": [
+      "2026-04-16"
+     ]
+    }
+   },
+   {
+    "name": "Columbus Day / Indigenous Peoples’ Day",
+    "when": {
+     "dates": [
+      "2026-10-12"
+     ]
+    }
    }
   ]
  },
@@ -5296,6 +5657,136 @@
    }
   ]
  },
+ "BI": {
+  "announcedTo": 2026,
+  "holidays": [
+   {
+    "name": "Premier jour de l'an",
+    "when": {
+     "fixed": [
+      1,
+      1
+     ]
+    }
+   },
+   {
+    "name": "Fête de l'Unité et de la Réconciliation nationales",
+    "when": {
+     "fixed": [
+      2,
+      5
+     ]
+    }
+   },
+   {
+    "name": "Commémoration de l'assassinat du Président Cyprien Ntaryamira",
+    "when": {
+     "fixed": [
+      4,
+      6
+     ]
+    }
+   },
+   {
+    "name": "Ascension",
+    "when": {
+     "easter": 39
+    }
+   },
+   {
+    "name": "Fête internationale du travail",
+    "when": {
+     "fixed": [
+      5,
+      1
+     ]
+    }
+   },
+   {
+    "name": "Journée nationale du patriotisme et commémoration de la mort du Président Pierre Nkurunziza",
+    "when": {
+     "fixed": [
+      6,
+      8
+     ]
+    }
+   },
+   {
+    "name": "Anniversaire de l'Indépendance",
+    "when": {
+     "fixed": [
+      7,
+      1
+     ]
+    }
+   },
+   {
+    "name": "Assomption",
+    "when": {
+     "fixed": [
+      8,
+      15
+     ]
+    }
+   },
+   {
+    "name": "Commémoration de l'assassinat du Héros national, le Prince Louis Rwagasore",
+    "when": {
+     "fixed": [
+      10,
+      13
+     ]
+    }
+   },
+   {
+    "name": "Commémoration de l'assassinat du Président Melchior Ndadaye",
+    "when": {
+     "fixed": [
+      10,
+      21
+     ]
+    }
+   },
+   {
+    "name": "Toussaint",
+    "when": {
+     "fixed": [
+      11,
+      1
+     ]
+    }
+   },
+   {
+    "name": "Noël",
+    "when": {
+     "fixed": [
+      12,
+      25
+     ]
+    }
+   },
+   {
+    "name": "Aïd el-Fitr",
+    "when": {
+     "lunar": [
+      "islamic-umalqura",
+      "10",
+      1
+     ]
+    }
+   },
+   {
+    "name": "Aïd el-Adha",
+    "when": {
+     "lunar": [
+      "islamic-umalqura",
+      "12",
+      10
+     ]
+    }
+   }
+  ]
+ },
  "BJ": {
   "announcedTo": 2026,
   "holidays": [
@@ -5614,6 +6105,490 @@
       26
      ]
     }
+   }
+  ]
+ },
+ "BO": {
+  "substitute": [
+   {
+    "on": [
+     0
+    ],
+    "to": "next"
+   }
+  ],
+  "announcedTo": 2026,
+  "holidays": [
+   {
+    "name": "Año Nuevo",
+    "when": {
+     "fixed": [
+      1,
+      1
+     ]
+    }
+   },
+   {
+    "name": "Año Nuevo",
+    "when": {
+     "dates": [
+      "2026-01-02"
+     ]
+    }
+   },
+   {
+    "name": "Día de la Creación del Estado Plurinacional de Bolivia",
+    "when": {
+     "fixed": [
+      1,
+      22
+     ]
+    },
+    "except": [
+     2026
+    ]
+   },
+   {
+    "name": "Día de la Creación del Estado Plurinacional de Bolivia",
+    "when": {
+     "dates": [
+      "2026-01-23"
+     ]
+    }
+   },
+   {
+    "name": "Carnaval",
+    "when": {
+     "easter": -48
+    }
+   },
+   {
+    "name": "Carnaval",
+    "when": {
+     "easter": -47
+    }
+   },
+   {
+    "name": "Viernes Santo",
+    "when": {
+     "easter": -2
+    }
+   },
+   {
+    "name": "Día del Trabajo",
+    "when": {
+     "fixed": [
+      5,
+      1
+     ]
+    }
+   },
+   {
+    "name": "Día del Trabajo",
+    "when": {
+     "fixed": [
+      4,
+      30
+     ]
+    },
+    "when_": {
+     "on": [
+      5,
+      1
+     ],
+     "weekdays": [
+      2
+     ]
+    }
+   },
+   {
+    "name": "Día del Trabajo",
+    "when": {
+     "fixed": [
+      5,
+      2
+     ]
+    },
+    "when_": {
+     "on": [
+      5,
+      1
+     ],
+     "weekdays": [
+      4
+     ]
+    }
+   },
+   {
+    "name": "Corpus Christi",
+    "when": {
+     "easter": 60
+    }
+   },
+   {
+    "name": "Corpus Christi",
+    "when": {
+     "dates": [
+      "2026-06-05"
+     ]
+    }
+   },
+   {
+    "name": "Año Nuevo Andino Amazónico Chaqueño",
+    "when": {
+     "fixed": [
+      6,
+      21
+     ]
+    }
+   },
+   {
+    "name": "Día de la Independencia de Bolivia",
+    "when": {
+     "fixed": [
+      8,
+      6
+     ]
+    }
+   },
+   {
+    "name": "Día de la Independencia de Bolivia",
+    "when": {
+     "dates": [
+      "2026-08-07"
+     ]
+    }
+   },
+   {
+    "name": "Día de Todos los Difuntos",
+    "when": {
+     "fixed": [
+      11,
+      2
+     ]
+    },
+    "fixed": true
+   },
+   {
+    "name": "Navidad",
+    "when": {
+     "fixed": [
+      12,
+      25
+     ]
+    }
+   },
+   {
+    "name": "Efeméride de Chuquisaca",
+    "when": {
+     "fixed": [
+      5,
+      25
+     ]
+    },
+    "regions": [
+     "BO.01"
+    ]
+   },
+   {
+    "name": "Efeméride de Cochabamba",
+    "when": {
+     "fixed": [
+      9,
+      14
+     ]
+    },
+    "regions": [
+     "BO.02"
+    ]
+   },
+   {
+    "name": "Efeméride del Beni",
+    "when": {
+     "fixed": [
+      11,
+      18
+     ]
+    },
+    "regions": [
+     "BO.03"
+    ]
+   },
+   {
+    "name": "Efeméride de La Paz",
+    "when": {
+     "fixed": [
+      7,
+      16
+     ]
+    },
+    "regions": [
+     "BO.04"
+    ]
+   },
+   {
+    "name": "Efeméride de Oruro",
+    "when": {
+     "fixed": [
+      2,
+      10
+     ]
+    },
+    "regions": [
+     "BO.05"
+    ]
+   },
+   {
+    "name": "Creación del Departamento de Pando",
+    "when": {
+     "fixed": [
+      9,
+      24
+     ]
+    },
+    "regions": [
+     "BO.06"
+    ]
+   },
+   {
+    "name": "Creación del Departamento de Pando",
+    "when": {
+     "dates": [
+      "2026-09-25"
+     ]
+    },
+    "regions": [
+     "BO.06"
+    ]
+   },
+   {
+    "name": "Batalla de Bahía",
+    "when": {
+     "fixed": [
+      10,
+      11
+     ]
+    },
+    "regions": [
+     "BO.06"
+    ]
+   },
+   {
+    "name": "Efeméride de Potosí",
+    "when": {
+     "fixed": [
+      11,
+      10
+     ]
+    },
+    "regions": [
+     "BO.07"
+    ]
+   },
+   {
+    "name": "Efeméride de Santa Cruz",
+    "when": {
+     "fixed": [
+      9,
+      24
+     ]
+    },
+    "regions": [
+     "BO.08"
+    ]
+   },
+   {
+    "name": "Efeméride de Santa Cruz",
+    "when": {
+     "dates": [
+      "2026-09-25"
+     ]
+    },
+    "regions": [
+     "BO.08"
+    ]
+   },
+   {
+    "name": "Batalla de la Tablada",
+    "when": {
+     "fixed": [
+      4,
+      15
+     ]
+    },
+    "regions": [
+     "BO.09"
+    ]
+   }
+  ]
+ },
+ "BQ": {
+  "regionsAnnouncedTo": {
+   "BQ.SB": 2026
+  },
+  "holidays": [
+   {
+    "name": "Nieuwjaarsdag",
+    "when": {
+     "fixed": [
+      1,
+      1
+     ]
+    }
+   },
+   {
+    "name": "Goede Vrijdag",
+    "when": {
+     "easter": -2
+    }
+   },
+   {
+    "name": "Eerste Paasdag",
+    "when": {
+     "easter": 0
+    }
+   },
+   {
+    "name": "Tweede Paasdag",
+    "when": {
+     "easter": 1
+    }
+   },
+   {
+    "name": "Koningsdag",
+    "when": {
+     "fixed": [
+      4,
+      27
+     ]
+    },
+    "move": [
+     {
+      "on": [
+       0
+      ],
+      "to": "previous"
+     }
+    ]
+   },
+   {
+    "name": "Dag van de Arbeid",
+    "when": {
+     "fixed": [
+      5,
+      1
+     ]
+    },
+    "move": [
+     {
+      "on": [
+       0
+      ],
+      "to": "next"
+     }
+    ]
+   },
+   {
+    "name": "Hemelvaartsdag",
+    "when": {
+     "easter": 39
+    }
+   },
+   {
+    "name": "Pinksterzondag",
+    "when": {
+     "easter": 49
+    }
+   },
+   {
+    "name": "Eerste Kerstdag",
+    "when": {
+     "fixed": [
+      12,
+      25
+     ]
+    }
+   },
+   {
+    "name": "Tweede Kerstdag",
+    "when": {
+     "fixed": [
+      12,
+      26
+     ]
+    }
+   },
+   {
+    "name": "Dia di Rincon",
+    "when": {
+     "fixed": [
+      4,
+      30
+     ]
+    },
+    "regions": [
+     "BQ.BO"
+    ]
+   },
+   {
+    "name": "Dia di Boneiru",
+    "when": {
+     "fixed": [
+      9,
+      6
+     ]
+    },
+    "regions": [
+     "BQ.BO"
+    ]
+   },
+   {
+    "name": "Emancipatiedag",
+    "when": {
+     "fixed": [
+      7,
+      1
+     ]
+    },
+    "regions": [
+     "BQ.SE"
+    ]
+   },
+   {
+    "name": "Statia Day",
+    "when": {
+     "fixed": [
+      11,
+      16
+     ]
+    },
+    "regions": [
+     "BQ.SE"
+    ]
+   },
+   {
+    "name": "Carnaval maandag",
+    "when": {
+     "dates": [
+      "2026-08-03"
+     ]
+    },
+    "regions": [
+     "BQ.SB"
+    ]
+   },
+   {
+    "name": "Saba Day",
+    "when": {
+     "nth": [
+      12,
+      5,
+      1
+     ]
+    },
+    "regions": [
+     "BQ.SB"
+    ]
    }
   ]
  },
@@ -6472,6 +7447,145 @@
     "regions": [
      "BR.31"
     ]
+   }
+  ]
+ },
+ "BW": {
+  "substitute": [
+   {
+    "on": [
+     0
+    ],
+    "to": "next"
+   }
+  ],
+  "announcedTo": 2026,
+  "holidays": [
+   {
+    "name": "New Year’s Day",
+    "when": {
+     "fixed": [
+      1,
+      1
+     ]
+    }
+   },
+   {
+    "name": "Public Holiday",
+    "when": {
+     "fixed": [
+      1,
+      2
+     ]
+    }
+   },
+   {
+    "name": "Good Friday",
+    "when": {
+     "easter": -2
+    }
+   },
+   {
+    "name": "Public Holiday",
+    "when": {
+     "easter": -1
+    },
+    "fixed": true
+   },
+   {
+    "name": "Easter Monday",
+    "when": {
+     "easter": 1
+    }
+   },
+   {
+    "name": "Labour Day",
+    "when": {
+     "fixed": [
+      5,
+      1
+     ]
+    }
+   },
+   {
+    "name": "Ascension Day",
+    "when": {
+     "easter": 39
+    }
+   },
+   {
+    "name": "Public Holiday",
+    "when": {
+     "dates": [
+      "2026-05-15"
+     ]
+    }
+   },
+   {
+    "name": "Sir Seretse Khama Day",
+    "when": {
+     "fixed": [
+      7,
+      1
+     ]
+    }
+   },
+   {
+    "name": "President’s Day",
+    "when": {
+     "nth": [
+      7,
+      1,
+      3
+     ]
+    }
+   },
+   {
+    "name": "Public Holiday",
+    "when": {
+     "nth": [
+      7,
+      1,
+      3
+     ]
+    },
+    "plus": 1
+   },
+   {
+    "name": "Botswana Day",
+    "when": {
+     "fixed": [
+      9,
+      30
+     ]
+    }
+   },
+   {
+    "name": "Public Holiday",
+    "when": {
+     "fixed": [
+      10,
+      1
+     ]
+    }
+   },
+   {
+    "name": "Christmas Day",
+    "when": {
+     "fixed": [
+      12,
+      25
+     ]
+    }
+   },
+   {
+    "name": "Boxing Day",
+    "when": {
+     "fixed": [
+      12,
+      26
+     ]
+    }
    }
   ]
  },
@@ -8194,6 +9308,391 @@
    }
   ]
  },
+ "CC": {
+  "announcedTo": 2027,
+  "holidays": [
+   {
+    "name": "New Year’s Day",
+    "when": {
+     "fixed": [
+      1,
+      1
+     ]
+    },
+    "move": [
+     {
+      "on": [
+       6,
+       0
+      ],
+      "to": "next"
+     }
+    ]
+   },
+   {
+    "name": "Australia Day",
+    "when": {
+     "fixed": [
+      1,
+      26
+     ]
+    },
+    "move": [
+     {
+      "on": [
+       6,
+       0
+      ],
+      "to": "next"
+     }
+    ]
+   },
+   {
+    "name": "Hari Raya Puasa",
+    "when": {
+     "dates": [
+      "2026-03-20",
+      "2027-03-09"
+     ]
+    },
+    "fixed": true
+   },
+   {
+    "name": "Act of Self-Determination Day",
+    "when": {
+     "dates": [
+      "2026-04-07",
+      "2027-04-06"
+     ]
+    },
+    "fixed": true
+   },
+   {
+    "name": "Good Friday",
+    "when": {
+     "easter": -2
+    },
+    "fixed": true
+   },
+   {
+    "name": "Easter Monday",
+    "when": {
+     "easter": 1
+    },
+    "fixed": true
+   },
+   {
+    "name": "Anzac Day",
+    "when": {
+     "fixed": [
+      4,
+      25
+     ]
+    },
+    "move": [
+     {
+      "on": [
+       6,
+       0
+      ],
+      "to": "next"
+     }
+    ]
+   },
+   {
+    "name": "Hari Raya Haji",
+    "when": {
+     "dates": [
+      "2026-05-27",
+      "2027-05-17"
+     ]
+    },
+    "fixed": true
+   },
+   {
+    "name": "King’s Birthday",
+    "when": {
+     "dates": [
+      "2026-06-08",
+      "2027-06-07"
+     ]
+    },
+    "fixed": true
+   },
+   {
+    "name": "Hari Maulaud Nabi",
+    "when": {
+     "dates": [
+      "2026-08-26",
+      "2027-08-16"
+     ]
+    },
+    "fixed": true
+   },
+   {
+    "name": "Christmas Day",
+    "when": {
+     "fixed": [
+      12,
+      25
+     ]
+    },
+    "move": [
+     {
+      "on": [
+       6,
+       0
+      ],
+      "to": "next",
+      "shared": true
+     }
+    ]
+   },
+   {
+    "name": "Boxing Day",
+    "when": {
+     "fixed": [
+      12,
+      26
+     ]
+    },
+    "move": [
+     {
+      "on": [
+       6
+      ],
+      "to": "next",
+      "skip": [
+       6,
+       0
+      ]
+     },
+     {
+      "on": [
+       0,
+       1
+      ],
+      "to": "next"
+     }
+    ]
+   }
+  ]
+ },
+ "CD": {
+  "announcedTo": 2026,
+  "substitute": [
+   {
+    "on": [
+     0
+    ],
+    "to": "previous"
+   }
+  ],
+  "holidays": [
+   {
+    "name": "Nouvel an",
+    "when": {
+     "fixed": [
+      1,
+      1
+     ]
+    }
+   },
+   {
+    "name": "Journée des Martyrs de l'indépendance",
+    "when": {
+     "fixed": [
+      1,
+      4
+     ]
+    }
+   },
+   {
+    "name": "Journée du héros national Laurent Désiré Kabila",
+    "when": {
+     "fixed": [
+      1,
+      16
+     ]
+    }
+   },
+   {
+    "name": "Journée du héros national Patrice Emery Lumumba",
+    "when": {
+     "fixed": [
+      1,
+      17
+     ]
+    },
+    "except": [
+     2026
+    ]
+   },
+   {
+    "name": "Journée du héros national Patrice Emery Lumumba",
+    "when": {
+     "dates": [
+      "2026-01-19"
+     ]
+    }
+   },
+   {
+    "name": "Qualification des Léopards à la Coupe du monde",
+    "when": {
+     "dates": [
+      "2026-04-01"
+     ]
+    }
+   },
+   {
+    "name": "Journée du combat de Simon Kimbangu et de la conscience africaine",
+    "when": {
+     "fixed": [
+      4,
+      6
+     ]
+    }
+   },
+   {
+    "name": "Fête du travail",
+    "when": {
+     "fixed": [
+      5,
+      1
+     ]
+    }
+   },
+   {
+    "name": "Journée des Forces armées",
+    "when": {
+     "fixed": [
+      5,
+      17
+     ]
+    }
+   },
+   {
+    "name": "Journée de l'indépendance",
+    "when": {
+     "fixed": [
+      6,
+      30
+     ]
+    }
+   },
+   {
+    "name": "Fête des parents",
+    "when": {
+     "fixed": [
+      8,
+      1
+     ]
+    }
+   },
+   {
+    "name": "Noël",
+    "when": {
+     "fixed": [
+      12,
+      25
+     ]
+    }
+   }
+  ]
+ },
+ "CG": {
+  "announcedTo": 2026,
+  "holidays": [
+   {
+    "name": "Jour de l'An",
+    "when": {
+     "fixed": [
+      1,
+      1
+     ]
+    }
+   },
+   {
+    "name": "Lundi de Pâques",
+    "when": {
+     "easter": 1
+    }
+   },
+   {
+    "name": "Fête du travail",
+    "when": {
+     "fixed": [
+      5,
+      1
+     ]
+    }
+   },
+   {
+    "name": "Jeudi de l'Ascension",
+    "when": {
+     "easter": 39
+    }
+   },
+   {
+    "name": "Lundi de Pentecôte",
+    "when": {
+     "easter": 50
+    }
+   },
+   {
+    "name": "Fête de la commémoration nationale souvenir",
+    "when": {
+     "fixed": [
+      6,
+      10
+     ]
+    }
+   },
+   {
+    "name": "Fête nationale",
+    "when": {
+     "fixed": [
+      8,
+      15
+     ]
+    }
+   },
+   {
+    "name": "Toussaint",
+    "when": {
+     "fixed": [
+      11,
+      1
+     ]
+    }
+   },
+   {
+    "name": "Noël",
+    "when": {
+     "fixed": [
+      12,
+      25
+     ]
+    }
+   },
+   {
+    "name": "Journée chômée et payée",
+    "when": {
+     "dates": [
+      "2026-01-02"
+     ]
+    }
+   },
+   {
+    "name": "Investiture du Président de la République",
+    "when": {
+     "dates": [
+      "2026-04-16"
+     ]
+    }
+   }
+  ]
+ },
  "CH": {
   "holidays": [
    {
@@ -8955,6 +10454,115 @@
       "as": "well"
      }
     ]
+   }
+  ]
+ },
+ "CK": {
+  "substitute": [
+   {
+    "on": [
+     6,
+     0
+    ],
+    "to": "next"
+   }
+  ],
+  "holidays": [
+   {
+    "name": "New Year’s Day",
+    "when": {
+     "fixed": [
+      1,
+      1
+     ]
+    }
+   },
+   {
+    "name": "Day after New Year’s Day",
+    "when": {
+     "fixed": [
+      1,
+      2
+     ]
+    }
+   },
+   {
+    "name": "Good Friday",
+    "when": {
+     "easter": -2
+    }
+   },
+   {
+    "name": "Easter Monday",
+    "when": {
+     "easter": 1
+    }
+   },
+   {
+    "name": "Anzac Day",
+    "when": {
+     "fixed": [
+      4,
+      25
+     ]
+    },
+    "fixed": true
+   },
+   {
+    "name": "King’s Birthday",
+    "when": {
+     "nth": [
+      6,
+      1,
+      1
+     ]
+    }
+   },
+   {
+    "name": "Ra o te Ui Ariki",
+    "when": {
+     "nth": [
+      7,
+      5,
+      1
+     ]
+    }
+   },
+   {
+    "name": "Constitution Day",
+    "when": {
+     "fixed": [
+      8,
+      4
+     ]
+    }
+   },
+   {
+    "name": "Cook Islands Gospel Day",
+    "when": {
+     "fixed": [
+      10,
+      26
+     ]
+    }
+   },
+   {
+    "name": "Christmas Day",
+    "when": {
+     "fixed": [
+      12,
+      25
+     ]
+    }
+   },
+   {
+    "name": "Boxing Day",
+    "when": {
+     "fixed": [
+      12,
+      26
+     ]
+    }
    }
   ]
  },
@@ -9958,6 +11566,193 @@
     },
     "regions": [
      "CL.16"
+    ]
+   }
+  ]
+ },
+ "CM": {
+  "announcedTo": 2026,
+  "holidays": [
+   {
+    "name": "Vendredi saint",
+    "when": {
+     "easter": -2
+    }
+   },
+   {
+    "name": "Ascension",
+    "when": {
+     "easter": 39
+    }
+   },
+   {
+    "name": "Aïd el-Fitr",
+    "when": {
+     "dates": [
+      "2026-03-20"
+     ]
+    }
+   },
+   {
+    "name": "Aïd el-Adha (fête du mouton)",
+    "when": {
+     "dates": [
+      "2026-05-27"
+     ]
+    }
+   },
+   {
+    "name": "Assomption",
+    "when": {
+     "fixed": [
+      8,
+      15
+     ]
+    }
+   },
+   {
+    "name": "Noël",
+    "when": {
+     "fixed": [
+      12,
+      25
+     ]
+    }
+   },
+   {
+    "name": "Jour de l'an",
+    "when": {
+     "fixed": [
+      1,
+      1
+     ]
+    },
+    "move": [
+     {
+      "on": [
+       0
+      ],
+      "to": "next",
+      "as": "well"
+     },
+     {
+      "on": [
+       1,
+       2,
+       3,
+       4,
+       5,
+       6
+      ],
+      "to": "next",
+      "as": "well",
+      "over": true,
+      "skip": [
+       0
+      ]
+     }
+    ]
+   },
+   {
+    "name": "Fête de la jeunesse",
+    "when": {
+     "fixed": [
+      2,
+      11
+     ]
+    },
+    "move": [
+     {
+      "on": [
+       0
+      ],
+      "to": "next",
+      "as": "well"
+     },
+     {
+      "on": [
+       1,
+       2,
+       3,
+       4,
+       5,
+       6
+      ],
+      "to": "next",
+      "as": "well",
+      "over": true,
+      "skip": [
+       0
+      ]
+     }
+    ]
+   },
+   {
+    "name": "Fête du travail",
+    "when": {
+     "fixed": [
+      5,
+      1
+     ]
+    },
+    "move": [
+     {
+      "on": [
+       0
+      ],
+      "to": "next",
+      "as": "well"
+     },
+     {
+      "on": [
+       1,
+       2,
+       3,
+       4,
+       5,
+       6
+      ],
+      "to": "next",
+      "as": "well",
+      "over": true,
+      "skip": [
+       0
+      ]
+     }
+    ]
+   },
+   {
+    "name": "Fête nationale",
+    "when": {
+     "fixed": [
+      5,
+      20
+     ]
+    },
+    "move": [
+     {
+      "on": [
+       0
+      ],
+      "to": "next",
+      "as": "well"
+     },
+     {
+      "on": [
+       1,
+       2,
+       3,
+       4,
+       5,
+       6
+      ],
+      "to": "next",
+      "as": "well",
+      "over": true,
+      "skip": [
+       0
+      ]
+     }
     ]
    }
   ]
@@ -11938,6 +13733,291 @@
    }
   ]
  },
+ "CW": {
+  "holidays": [
+   {
+    "name": "Nieuwjaarsdag",
+    "when": {
+     "fixed": [
+      1,
+      1
+     ]
+    }
+   },
+   {
+    "name": "Karnaval maandag",
+    "when": {
+     "easter": -48
+    }
+   },
+   {
+    "name": "Goede Vrijdag",
+    "when": {
+     "easter": -2
+    }
+   },
+   {
+    "name": "Eerste Paasdag",
+    "when": {
+     "easter": 0
+    }
+   },
+   {
+    "name": "Tweede Paasdag",
+    "when": {
+     "easter": 1
+    }
+   },
+   {
+    "name": "Koningsdag",
+    "when": {
+     "fixed": [
+      4,
+      27
+     ]
+    },
+    "move": [
+     {
+      "on": [
+       0
+      ],
+      "to": "previous"
+     }
+    ]
+   },
+   {
+    "name": "Dag van de Arbeid",
+    "when": {
+     "fixed": [
+      5,
+      1
+     ]
+    },
+    "move": [
+     {
+      "on": [
+       0
+      ],
+      "to": "next"
+     }
+    ]
+   },
+   {
+    "name": "Hemelvaartsdag",
+    "when": {
+     "easter": 39
+    }
+   },
+   {
+    "name": "Pinksterzondag",
+    "when": {
+     "easter": 49
+    }
+   },
+   {
+    "name": "Dia di Himno i Bandera",
+    "when": {
+     "fixed": [
+      7,
+      2
+     ]
+    }
+   },
+   {
+    "name": "Dia di Pais Kòrsou",
+    "when": {
+     "fixed": [
+      10,
+      10
+     ]
+    }
+   },
+   {
+    "name": "Eerste Kerstdag",
+    "when": {
+     "fixed": [
+      12,
+      25
+     ]
+    }
+   },
+   {
+    "name": "Tweede Kerstdag",
+    "when": {
+     "fixed": [
+      12,
+      26
+     ]
+    }
+   }
+  ]
+ },
+ "CX": {
+  "announcedTo": 2027,
+  "holidays": [
+   {
+    "name": "New Year’s Day",
+    "when": {
+     "fixed": [
+      1,
+      1
+     ]
+    },
+    "move": [
+     {
+      "on": [
+       6,
+       0
+      ],
+      "to": "next"
+     }
+    ]
+   },
+   {
+    "name": "Australia Day",
+    "when": {
+     "fixed": [
+      1,
+      26
+     ]
+    },
+    "fixed": true
+   },
+   {
+    "name": "Chinese New Year",
+    "when": {
+     "dates": [
+      "2026-02-17",
+      "2027-02-08"
+     ]
+    },
+    "fixed": true
+   },
+   {
+    "name": "Chinese New Year (Day 2)",
+    "when": {
+     "dates": [
+      "2026-02-18",
+      "2027-02-09"
+     ]
+    },
+    "fixed": true
+   },
+   {
+    "name": "Hari Raya Puasa",
+    "when": {
+     "dates": [
+      "2026-03-20",
+      "2027-03-09"
+     ]
+    },
+    "fixed": true
+   },
+   {
+    "name": "Labour Day",
+    "when": {
+     "dates": [
+      "2026-03-23",
+      "2027-03-22"
+     ]
+    },
+    "fixed": true
+   },
+   {
+    "name": "Good Friday",
+    "when": {
+     "easter": -2
+    },
+    "fixed": true
+   },
+   {
+    "name": "Anzac Day",
+    "when": {
+     "fixed": [
+      4,
+      25
+     ]
+    },
+    "move": [
+     {
+      "on": [
+       6,
+       0
+      ],
+      "to": "next"
+     }
+    ]
+   },
+   {
+    "name": "Hari Raya Haji",
+    "when": {
+     "dates": [
+      "2026-05-27",
+      "2027-05-17"
+     ]
+    },
+    "fixed": true
+   },
+   {
+    "name": "Territory Day",
+    "when": {
+     "nth": [
+      10,
+      1,
+      1
+     ]
+    },
+    "fixed": true
+   },
+   {
+    "name": "Christmas Day",
+    "when": {
+     "fixed": [
+      12,
+      25
+     ]
+    },
+    "move": [
+     {
+      "on": [
+       6,
+       0
+      ],
+      "to": "next",
+      "shared": true
+     }
+    ]
+   },
+   {
+    "name": "Boxing Day",
+    "when": {
+     "fixed": [
+      12,
+      26
+     ]
+    },
+    "move": [
+     {
+      "on": [
+       6
+      ],
+      "to": "next",
+      "skip": [
+       6,
+       0
+      ]
+     },
+     {
+      "on": [
+       0,
+       1
+      ],
+      "to": "next"
+     }
+    ]
+   }
+  ]
+ },
  "CY": {
   "holidays": [
    {
@@ -12375,6 +14455,98 @@
      "fixed": [
       12,
       26
+     ]
+    }
+   }
+  ]
+ },
+ "DJ": {
+  "announcedTo": 2026,
+  "holidays": [
+   {
+    "name": "Nouvel An",
+    "when": {
+     "fixed": [
+      1,
+      1
+     ]
+    }
+   },
+   {
+    "name": "Fête du Travail",
+    "when": {
+     "fixed": [
+      5,
+      1
+     ]
+    }
+   },
+   {
+    "name": "Fête de l'Indépendance",
+    "when": {
+     "fixed": [
+      6,
+      27
+     ]
+    }
+   },
+   {
+    "name": "Fête de l'Indépendance",
+    "when": {
+     "fixed": [
+      6,
+      28
+     ]
+    }
+   },
+   {
+    "name": "Noël",
+    "when": {
+     "fixed": [
+      12,
+      25
+     ]
+    }
+   },
+   {
+    "name": "Al Isra et Al Miraj",
+    "when": {
+     "dates": [
+      "2026-01-16"
+     ]
+    }
+   },
+   {
+    "name": "Aïd el-Fitr",
+    "when": {
+     "dates": [
+      "2026-03-20",
+      "2026-03-21"
+     ]
+    }
+   },
+   {
+    "name": "Aïd el-Adha",
+    "when": {
+     "dates": [
+      "2026-05-27",
+      "2026-05-28"
+     ]
+    }
+   },
+   {
+    "name": "Awal Mouharam (Nouvel An musulman)",
+    "when": {
+     "dates": [
+      "2026-06-16"
+     ]
+    }
+   },
+   {
+    "name": "Mouloud",
+    "when": {
+     "dates": [
+      "2026-08-25"
      ]
     }
    }
@@ -12884,6 +15056,180 @@
    }
   ]
  },
+ "EC": {
+  "announcedTo": 2030,
+  "substitute": [
+   {
+    "on": [
+     2
+    ],
+    "to": "previous"
+   },
+   {
+    "on": [
+     3,
+     4
+    ],
+    "to": "next"
+   },
+   {
+    "on": [
+     6
+    ],
+    "to": "previous"
+   },
+   {
+    "on": [
+     0
+    ],
+    "to": "next"
+   }
+  ],
+  "holidays": [
+   {
+    "name": "Año Nuevo",
+    "when": {
+     "fixed": [
+      1,
+      1
+     ]
+    },
+    "fixed": true
+   },
+   {
+    "name": "Puente de Año Nuevo",
+    "when": {
+     "dates": [
+      "2026-01-02"
+     ]
+    },
+    "fixed": true
+   },
+   {
+    "name": "Carnaval",
+    "when": {
+     "easter": -48
+    },
+    "fixed": true
+   },
+   {
+    "name": "Carnaval",
+    "when": {
+     "easter": -47
+    },
+    "fixed": true
+   },
+   {
+    "name": "Viernes Santo",
+    "when": {
+     "easter": -2
+    },
+    "fixed": true
+   },
+   {
+    "name": "Día del Trabajo",
+    "when": {
+     "fixed": [
+      5,
+      1
+     ]
+    }
+   },
+   {
+    "name": "Batalla del Pichincha",
+    "when": {
+     "fixed": [
+      5,
+      24
+     ]
+    }
+   },
+   {
+    "name": "Primer Grito de la Independencia",
+    "when": {
+     "fixed": [
+      8,
+      10
+     ]
+    }
+   },
+   {
+    "name": "Independencia de Guayaquil",
+    "when": {
+     "fixed": [
+      10,
+      9
+     ]
+    }
+   },
+   {
+    "name": "Día de los Difuntos",
+    "when": {
+     "fixed": [
+      11,
+      2
+     ]
+    },
+    "move": [
+     {
+      "on": [
+       6
+      ],
+      "to": "previous"
+     },
+     {
+      "on": [
+       0
+      ],
+      "to": "next"
+     }
+    ]
+   },
+   {
+    "name": "Independencia de Cuenca",
+    "when": {
+     "fixed": [
+      11,
+      3
+     ]
+    },
+    "move": [
+     {
+      "on": [
+       3
+      ],
+      "to": "previous",
+      "skip": [
+       2,
+       3
+      ]
+     },
+     {
+      "on": [
+       6
+      ],
+      "to": "previous"
+     },
+     {
+      "on": [
+       0
+      ],
+      "to": "next"
+     }
+    ]
+   },
+   {
+    "name": "Navidad",
+    "when": {
+     "fixed": [
+      12,
+      25
+     ]
+    },
+    "fixed": true
+   }
+  ]
+ },
  "EE": {
   "holidays": [
    {
@@ -13088,6 +15434,9 @@
     }
    }
   ]
+ },
+ "EH": {
+  "of": "MA"
  },
  "ES": {
   "announcedTo": 2027,
@@ -14447,6 +16796,96 @@
    }
   ]
  },
+ "FM": {
+  "substitute": [
+   {
+    "on": [
+     6
+    ],
+    "to": "previous"
+   },
+   {
+    "on": [
+     0
+    ],
+    "to": "next"
+   }
+  ],
+  "holidays": [
+   {
+    "name": "New Year’s Day",
+    "when": {
+     "fixed": [
+      1,
+      1
+     ]
+    }
+   },
+   {
+    "name": "Micronesian Culture and Tradition Day",
+    "when": {
+     "fixed": [
+      3,
+      31
+     ]
+    }
+   },
+   {
+    "name": "Federated States of Micronesia Day",
+    "when": {
+     "fixed": [
+      5,
+      10
+     ]
+    }
+   },
+   {
+    "name": "United Nations Day",
+    "when": {
+     "fixed": [
+      10,
+      24
+     ]
+    }
+   },
+   {
+    "name": "Independence Day",
+    "when": {
+     "fixed": [
+      11,
+      3
+     ]
+    }
+   },
+   {
+    "name": "Veterans Day",
+    "when": {
+     "fixed": [
+      11,
+      11
+     ]
+    }
+   },
+   {
+    "name": "Presidents Day",
+    "when": {
+     "fixed": [
+      11,
+      23
+     ]
+    }
+   },
+   {
+    "name": "Christmas Day",
+    "when": {
+     "fixed": [
+      12,
+      25
+     ]
+    }
+   }
+  ]
+ },
  "FR": {
   "holidays": [
    {
@@ -14817,6 +17256,132 @@
     "regions": [
      "GB.SCT"
     ]
+   },
+   {
+    "name": "Christmas Day",
+    "when": {
+     "fixed": [
+      12,
+      25
+     ]
+    }
+   },
+   {
+    "name": "Boxing Day",
+    "when": {
+     "fixed": [
+      12,
+      26
+     ]
+    }
+   }
+  ]
+ },
+ "GD": {
+  "announcedTo": 2026,
+  "substitute": [
+   {
+    "on": [
+     0
+    ],
+    "to": "next",
+    "as": "well"
+   }
+  ],
+  "holidays": [
+   {
+    "name": "New Year's Day",
+    "when": {
+     "fixed": [
+      1,
+      1
+     ]
+    }
+   },
+   {
+    "name": "Independence Day",
+    "when": {
+     "fixed": [
+      2,
+      7
+     ]
+    }
+   },
+   {
+    "name": "Good Friday",
+    "when": {
+     "easter": -2
+    }
+   },
+   {
+    "name": "Easter Monday",
+    "when": {
+     "easter": 1
+    }
+   },
+   {
+    "name": "Labour Day",
+    "when": {
+     "fixed": [
+      5,
+      1
+     ]
+    }
+   },
+   {
+    "name": "Whit Monday",
+    "when": {
+     "easter": 50
+    }
+   },
+   {
+    "name": "Corpus Christi",
+    "when": {
+     "easter": 60
+    }
+   },
+   {
+    "name": "Emancipation Day",
+    "when": {
+     "fixed": [
+      8,
+      1
+     ]
+    }
+   },
+   {
+    "name": "Carnival Monday",
+    "when": {
+     "dates": [
+      "2026-08-10"
+     ]
+    }
+   },
+   {
+    "name": "Carnival Tuesday",
+    "when": {
+     "dates": [
+      "2026-08-11"
+     ]
+    }
+   },
+   {
+    "name": "National Heroes' Day",
+    "when": {
+     "fixed": [
+      10,
+      19
+     ]
+    }
+   },
+   {
+    "name": "Thanksgiving Day",
+    "when": {
+     "fixed": [
+      10,
+      25
+     ]
+    }
    },
    {
     "name": "Christmas Day",
@@ -15673,6 +18238,73 @@
    }
   ]
  },
+ "GL": {
+  "holidays": [
+   {
+    "name": "Nytårsdag",
+    "when": {
+     "fixed": [
+      1,
+      1
+     ]
+    }
+   },
+   {
+    "name": "Skærtorsdag",
+    "when": {
+     "easter": -3
+    }
+   },
+   {
+    "name": "Langfredag",
+    "when": {
+     "easter": -2
+    }
+   },
+   {
+    "name": "2. påskedag",
+    "when": {
+     "easter": 1
+    }
+   },
+   {
+    "name": "Store bededag",
+    "when": {
+     "easter": 26
+    }
+   },
+   {
+    "name": "Kristi himmelfartsdag",
+    "when": {
+     "easter": 39
+    }
+   },
+   {
+    "name": "2. pinsedag",
+    "when": {
+     "easter": 50
+    }
+   },
+   {
+    "name": "1. juledag",
+    "when": {
+     "fixed": [
+      12,
+      25
+     ]
+    }
+   },
+   {
+    "name": "2. juledag",
+    "when": {
+     "fixed": [
+      12,
+      26
+     ]
+    }
+   }
+  ]
+ },
  "GN": {
   "announcedTo": 2026,
   "holidays": [
@@ -16340,6 +18972,232 @@
       25
      ]
     }
+   }
+  ]
+ },
+ "GY": {
+  "announcedTo": 2026,
+  "holidays": [
+   {
+    "name": "New Year's Day",
+    "when": {
+     "fixed": [
+      1,
+      1
+     ]
+    },
+    "move": [
+     {
+      "on": [
+       6,
+       0
+      ],
+      "to": "next"
+     }
+    ]
+   },
+   {
+    "name": "Republic Day",
+    "when": {
+     "dates": [
+      "2026-02-23"
+     ]
+    }
+   },
+   {
+    "name": "Phagwah",
+    "when": {
+     "dates": [
+      "2026-03-03"
+     ]
+    },
+    "move": [
+     {
+      "on": [
+       0
+      ],
+      "to": "next",
+      "as": "well"
+     }
+    ]
+   },
+   {
+    "name": "Good Friday",
+    "when": {
+     "easter": -2
+    }
+   },
+   {
+    "name": "Easter Monday",
+    "when": {
+     "easter": 1
+    }
+   },
+   {
+    "name": "Labour Day",
+    "when": {
+     "fixed": [
+      5,
+      1
+     ]
+    },
+    "move": [
+     {
+      "on": [
+       0
+      ],
+      "to": "next",
+      "as": "well"
+     }
+    ]
+   },
+   {
+    "name": "Arrival Day",
+    "when": {
+     "dates": [
+      "2026-05-05"
+     ]
+    }
+   },
+   {
+    "name": "Independence Day",
+    "when": {
+     "dates": [
+      "2026-05-26"
+     ]
+    }
+   },
+   {
+    "name": "Eid-ul-Adha",
+    "when": {
+     "dates": [
+      "2026-05-27"
+     ]
+    },
+    "move": [
+     {
+      "on": [
+       0
+      ],
+      "to": "next",
+      "as": "well"
+     }
+    ]
+   },
+   {
+    "name": "CARICOM Day",
+    "when": {
+     "dates": [
+      "2026-07-06"
+     ]
+    }
+   },
+   {
+    "name": "Emancipation Day",
+    "when": {
+     "dates": [
+      "2026-08-01"
+     ]
+    }
+   },
+   {
+    "name": "Youman Nabi",
+    "when": {
+     "dates": [
+      "2026-08-25"
+     ]
+    },
+    "move": [
+     {
+      "on": [
+       0
+      ],
+      "to": "next",
+      "as": "well"
+     }
+    ]
+   },
+   {
+    "name": "Deepavali",
+    "when": {
+     "dates": [
+      "2026-11-08"
+     ]
+    },
+    "move": [
+     {
+      "on": [
+       0
+      ],
+      "to": "next",
+      "as": "well"
+     }
+    ]
+   },
+   {
+    "name": "Christmas Day",
+    "when": {
+     "fixed": [
+      12,
+      25
+     ]
+    },
+    "move": [
+     {
+      "on": [
+       0
+      ],
+      "to": "next",
+      "as": "well"
+     }
+    ]
+   },
+   {
+    "name": "Boxing Day",
+    "when": {
+     "fixed": [
+      12,
+      26
+     ]
+    },
+    "when_": {
+     "on": [
+      12,
+      25
+     ],
+     "weekdays": [
+      0
+     ],
+     "not": true
+    },
+    "move": [
+     {
+      "on": [
+       0
+      ],
+      "to": "next",
+      "as": "well"
+     }
+    ]
+   },
+   {
+    "name": "Boxing Day",
+    "when": {
+     "fixed": [
+      12,
+      27
+     ]
+    },
+    "when_": {
+     "on": [
+      12,
+      25
+     ],
+     "weekdays": [
+      0
+     ]
+    },
+    "fixed": true
    }
   ]
  },
@@ -19890,6 +22748,202 @@
    "IN.52"
   ]
  },
+ "IQ": {
+  "announcedTo": 2027,
+  "holidays": [
+   {
+    "name": "رأس السنة الميلادية",
+    "when": {
+     "fixed": [
+      1,
+      1
+     ]
+    }
+   },
+   {
+    "name": "مناسبة دينية",
+    "when": {
+     "dates": [
+      "2027-01-04",
+      "2027-07-24"
+     ]
+    }
+   },
+   {
+    "name": "عيد الجيش",
+    "when": {
+     "fixed": [
+      1,
+      6
+     ]
+    }
+   },
+   {
+    "name": "عيد الفطر",
+    "when": {
+     "lunar": [
+      "islamic-umalqura",
+      "10",
+      1
+     ]
+    }
+   },
+   {
+    "name": "عيد الفطر",
+    "when": {
+     "lunar": [
+      "islamic-umalqura",
+      "10",
+      2
+     ]
+    }
+   },
+   {
+    "name": "عيد الفطر",
+    "when": {
+     "lunar": [
+      "islamic-umalqura",
+      "10",
+      3
+     ]
+    }
+   },
+   {
+    "name": "حلبجة",
+    "when": {
+     "fixed": [
+      3,
+      16
+     ]
+    }
+   },
+   {
+    "name": "عيد نوروز (الربيع)",
+    "when": {
+     "fixed": [
+      3,
+      21
+     ]
+    }
+   },
+   {
+    "name": "عيد العمال",
+    "when": {
+     "fixed": [
+      5,
+      1
+     ]
+    }
+   },
+   {
+    "name": "عيد الاضحى",
+    "when": {
+     "lunar": [
+      "islamic-umalqura",
+      "12",
+      10
+     ]
+    }
+   },
+   {
+    "name": "عيد الاضحى",
+    "when": {
+     "lunar": [
+      "islamic-umalqura",
+      "12",
+      11
+     ]
+    }
+   },
+   {
+    "name": "عيد الاضحى",
+    "when": {
+     "lunar": [
+      "islamic-umalqura",
+      "12",
+      12
+     ]
+    }
+   },
+   {
+    "name": "عيد الاضحى",
+    "when": {
+     "lunar": [
+      "islamic-umalqura",
+      "12",
+      13
+     ]
+    }
+   },
+   {
+    "name": "عيد الغدير",
+    "when": {
+     "lunar": [
+      "islamic-umalqura",
+      "12",
+      18
+     ]
+    }
+   },
+   {
+    "name": "رأس السنة الهجرية",
+    "when": {
+     "lunar": [
+      "islamic-umalqura",
+      "1",
+      1
+     ]
+    }
+   },
+   {
+    "name": "يوم عاشوراء",
+    "when": {
+     "lunar": [
+      "islamic-umalqura",
+      "1",
+      10
+     ]
+    }
+   },
+   {
+    "name": "المولد النبوي الشريف",
+    "when": {
+     "lunar": [
+      "islamic-umalqura",
+      "3",
+      12
+     ]
+    }
+   },
+   {
+    "name": "اليوم الوطني",
+    "when": {
+     "fixed": [
+      10,
+      3
+     ]
+    }
+   },
+   {
+    "name": "يوم النصر",
+    "when": {
+     "fixed": [
+      12,
+      10
+     ]
+    }
+   },
+   {
+    "name": "عيد الميلاد المجيد",
+    "when": {
+     "fixed": [
+      12,
+      25
+     ]
+    }
+   }
+  ]
+ },
  "IS": {
   "holidays": [
    {
@@ -21267,6 +24321,170 @@
    }
   ]
  },
+ "KM": {
+  "announcedTo": 2026,
+  "holidays": [
+   {
+    "name": "Jour de l'An",
+    "when": {
+     "fixed": [
+      1,
+      1
+     ]
+    }
+   },
+   {
+    "name": "Jour de la Réconciliation nationale",
+    "when": {
+     "fixed": [
+      2,
+      17
+     ]
+    }
+   },
+   {
+    "name": "Fête internationale du Travail",
+    "when": {
+     "fixed": [
+      5,
+      1
+     ]
+    }
+   },
+   {
+    "name": "Fête de l'Indépendance",
+    "when": {
+     "fixed": [
+      7,
+      6
+     ]
+    }
+   },
+   {
+    "name": "Lendemain de la Fête de l'Indépendance",
+    "when": {
+     "fixed": [
+      7,
+      7
+     ]
+    }
+   },
+   {
+    "name": "Jour de l'admission des Comores aux Nations unies",
+    "when": {
+     "fixed": [
+      11,
+      12
+     ]
+    }
+   },
+   {
+    "name": "Premier jour de l'An musulman",
+    "when": {
+     "lunar": [
+      "islamic-umalqura",
+      "1",
+      1
+     ]
+    }
+   },
+   {
+    "name": "Naissance du prophète Muhammad",
+    "when": {
+     "lunar": [
+      "islamic-umalqura",
+      "3",
+      12
+     ]
+    }
+   },
+   {
+    "name": "Fin du Ramadan",
+    "when": {
+     "lunar": [
+      "islamic-umalqura",
+      "9",
+      29
+     ]
+    },
+    "plus": 1,
+    "from": 2027
+   },
+   {
+    "name": "Fin du Ramadan",
+    "when": {
+     "lunar": [
+      "islamic-umalqura",
+      "9",
+      29
+     ]
+    },
+    "plus": 2,
+    "from": 2027
+   },
+   {
+    "name": "Fin du Ramadan",
+    "when": {
+     "lunar": [
+      "islamic-umalqura",
+      "9",
+      29
+     ]
+    },
+    "plus": 3,
+    "from": 2027
+   },
+   {
+    "name": "Fin du Ramadan",
+    "when": {
+     "dates": [
+      "2026-03-20",
+      "2026-03-21",
+      "2026-03-22"
+     ]
+    }
+   },
+   {
+    "name": "Ide El Kabir",
+    "when": {
+     "lunar": [
+      "islamic-umalqura",
+      "12",
+      10
+     ]
+    },
+    "from": 2027
+   },
+   {
+    "name": "Lendemain de l'Ide El Kabir",
+    "when": {
+     "lunar": [
+      "islamic-umalqura",
+      "12",
+      10
+     ]
+    },
+    "plus": 1,
+    "from": 2027
+   },
+   {
+    "name": "Ide El Kabir",
+    "when": {
+     "dates": [
+      "2026-05-28"
+     ]
+    }
+   },
+   {
+    "name": "Lendemain de l'Ide El Kabir",
+    "when": {
+     "dates": [
+      "2026-05-29"
+     ]
+    }
+   }
+  ]
+ },
  "KN": {
   "announcedTo": 2026,
   "holidays": [
@@ -22433,6 +25651,383 @@
    }
   ]
  },
+ "LB": {
+  "announcedTo": 2026,
+  "holidays": [
+   {
+    "name": "رأس السنة الميلادية",
+    "when": {
+     "fixed": [
+      1,
+      1
+     ]
+    }
+   },
+   {
+    "name": "عيد الميلاد عند الطوائف الأرمنية الأرثوذكسية",
+    "when": {
+     "fixed": [
+      1,
+      6
+     ]
+    }
+   },
+   {
+    "name": "عيد مار مارون",
+    "when": {
+     "fixed": [
+      2,
+      9
+     ]
+    }
+   },
+   {
+    "name": "عيد بشارة السيدة مريم العذراء",
+    "when": {
+     "fixed": [
+      3,
+      25
+     ]
+    }
+   },
+   {
+    "name": "عيد العمل",
+    "when": {
+     "fixed": [
+      5,
+      1
+     ]
+    },
+    "move": [
+     {
+      "on": [
+       0
+      ],
+      "to": "next",
+      "as": "well"
+     }
+    ]
+   },
+   {
+    "name": "ذكرى انفجار مرفأ بيروت",
+    "when": {
+     "fixed": [
+      8,
+      4
+     ]
+    }
+   },
+   {
+    "name": "عيد انتقال السيدة العذراء",
+    "when": {
+     "fixed": [
+      8,
+      15
+     ]
+    }
+   },
+   {
+    "name": "عيد الاستقلال",
+    "when": {
+     "fixed": [
+      11,
+      22
+     ]
+    }
+   },
+   {
+    "name": "عيد الميلاد",
+    "when": {
+     "fixed": [
+      12,
+      25
+     ]
+    }
+   },
+   {
+    "name": "الجمعة العظيمة عند الطوائف الكاثوليكية",
+    "when": {
+     "easter": -2
+    }
+   },
+   {
+    "name": "إثنين الفصح عند الطوائف الكاثوليكية",
+    "when": {
+     "easter": 1
+    }
+   },
+   {
+    "name": "الجمعة العظيمة عند الطوائف الأرثوذكسية",
+    "when": {
+     "easter": -2,
+     "orthodox": true
+    }
+   },
+   {
+    "name": "إثنين الفصح عند الطوائف الأرثوذكسية",
+    "when": {
+     "easter": 1,
+     "orthodox": true
+    }
+   },
+   {
+    "name": "رأس السنة الهجرية",
+    "when": {
+     "lunar": [
+      "islamic-umalqura",
+      "1",
+      1
+     ]
+    },
+    "from": 2027
+   },
+   {
+    "name": "ذكرى عاشوراء",
+    "when": {
+     "lunar": [
+      "islamic-umalqura",
+      "1",
+      10
+     ]
+    },
+    "from": 2027
+   },
+   {
+    "name": "ذكرى المولد النبوي",
+    "when": {
+     "lunar": [
+      "islamic-umalqura",
+      "3",
+      12
+     ]
+    },
+    "from": 2027
+   },
+   {
+    "name": "عيد الفطر",
+    "when": {
+     "lunar": [
+      "islamic-umalqura",
+      "10",
+      1
+     ]
+    },
+    "from": 2027
+   },
+   {
+    "name": "عيد الفطر",
+    "when": {
+     "lunar": [
+      "islamic-umalqura",
+      "10",
+      2
+     ]
+    },
+    "from": 2027
+   },
+   {
+    "name": "عيد الأضحى",
+    "when": {
+     "lunar": [
+      "islamic-umalqura",
+      "12",
+      10
+     ]
+    },
+    "from": 2027
+   },
+   {
+    "name": "عيد الأضحى",
+    "when": {
+     "lunar": [
+      "islamic-umalqura",
+      "12",
+      11
+     ]
+    },
+    "from": 2027
+   },
+   {
+    "name": "رأس السنة الهجرية",
+    "when": {
+     "dates": [
+      "2026-06-16"
+     ]
+    }
+   },
+   {
+    "name": "ذكرى عاشوراء",
+    "when": {
+     "dates": [
+      "2026-06-26"
+     ]
+    }
+   },
+   {
+    "name": "ذكرى المولد النبوي",
+    "when": {
+     "dates": [
+      "2026-08-25"
+     ]
+    }
+   },
+   {
+    "name": "عيد الفطر",
+    "when": {
+     "dates": [
+      "2026-03-20",
+      "2026-03-21",
+      "2026-03-22",
+      "2026-03-23"
+     ]
+    }
+   },
+   {
+    "name": "عيد الأضحى",
+    "when": {
+     "dates": [
+      "2026-05-27",
+      "2026-05-28",
+      "2026-05-29"
+     ]
+    }
+   },
+   {
+    "name": "حداد وطني على شهداء وجرحى الاعتداءات الإسرائيلية",
+    "when": {
+     "dates": [
+      "2026-04-09"
+     ]
+    }
+   },
+   {
+    "name": "عيد المقاومة والتحرير",
+    "when": {
+     "dates": [
+      "2026-05-25"
+     ]
+    }
+   }
+  ]
+ },
+ "LC": {
+  "substitute": [
+   {
+    "on": [
+     0
+    ],
+    "to": "next"
+   }
+  ],
+  "holidays": [
+   {
+    "name": "New Year’s Day",
+    "when": {
+     "fixed": [
+      1,
+      1
+     ]
+    }
+   },
+   {
+    "name": "New Year’s Holiday",
+    "when": {
+     "fixed": [
+      1,
+      2
+     ]
+    }
+   },
+   {
+    "name": "Saint Lucia Independence Day",
+    "when": {
+     "fixed": [
+      2,
+      22
+     ]
+    }
+   },
+   {
+    "name": "Good Friday",
+    "when": {
+     "easter": -2
+    }
+   },
+   {
+    "name": "Easter Monday",
+    "when": {
+     "easter": 1
+    }
+   },
+   {
+    "name": "Whit Monday",
+    "when": {
+     "easter": 50
+    }
+   },
+   {
+    "name": "Labour Day",
+    "when": {
+     "fixed": [
+      5,
+      1
+     ]
+    }
+   },
+   {
+    "name": "Corpus Christi",
+    "when": {
+     "easter": 60
+    }
+   },
+   {
+    "name": "Emancipation Day",
+    "when": {
+     "fixed": [
+      8,
+      1
+     ]
+    }
+   },
+   {
+    "name": "Thanksgiving Day",
+    "when": {
+     "nth": [
+      10,
+      1,
+      1
+     ]
+    }
+   },
+   {
+    "name": "Saint Lucia Day",
+    "when": {
+     "fixed": [
+      12,
+      13
+     ]
+    }
+   },
+   {
+    "name": "Christmas Day",
+    "when": {
+     "fixed": [
+      12,
+      25
+     ]
+    }
+   },
+   {
+    "name": "Boxing Day",
+    "when": {
+     "fixed": [
+      12,
+      26
+     ]
+    }
+   }
+  ]
+ },
  "LI": {
   "holidays": [
    {
@@ -22763,6 +26358,120 @@
      "dates": [
       "2026-12-23",
       "2027-12-13"
+     ]
+    }
+   },
+   {
+    "name": "Christmas Day",
+    "when": {
+     "fixed": [
+      12,
+      25
+     ]
+    }
+   }
+  ]
+ },
+ "LR": {
+  "substitute": [
+   {
+    "on": [
+     0
+    ],
+    "to": "next"
+   }
+  ],
+  "holidays": [
+   {
+    "name": "New Year’s Day",
+    "when": {
+     "fixed": [
+      1,
+      1
+     ]
+    }
+   },
+   {
+    "name": "Armed Forces Day",
+    "when": {
+     "fixed": [
+      2,
+      11
+     ]
+    }
+   },
+   {
+    "name": "Decoration Day",
+    "when": {
+     "nth": [
+      3,
+      3,
+      2
+     ]
+    }
+   },
+   {
+    "name": "J.J. Roberts’ Birthday",
+    "when": {
+     "fixed": [
+      3,
+      15
+     ]
+    }
+   },
+   {
+    "name": "National Fast and Prayer Day",
+    "when": {
+     "nth": [
+      4,
+      5,
+      2
+     ]
+    }
+   },
+   {
+    "name": "National Unification Day",
+    "when": {
+     "fixed": [
+      5,
+      14
+     ]
+    }
+   },
+   {
+    "name": "Independence Day",
+    "when": {
+     "fixed": [
+      7,
+      26
+     ]
+    }
+   },
+   {
+    "name": "National Flag Day",
+    "when": {
+     "fixed": [
+      8,
+      24
+     ]
+    }
+   },
+   {
+    "name": "National Thanksgiving Day",
+    "when": {
+     "nth": [
+      11,
+      4,
+      1
+     ]
+    }
+   },
+   {
+    "name": "President Tubman’s Birthday",
+    "when": {
+     "fixed": [
+      11,
+      29
      ]
     }
    },
@@ -23141,6 +26850,146 @@
      "fixed": [
       12,
       31
+     ]
+    }
+   }
+  ]
+ },
+ "LY": {
+  "announcedTo": 2026,
+  "holidays": [
+   {
+    "name": "ذكرى المولد النبوي الشريف",
+    "when": {
+     "lunar": [
+      "islamic-umalqura",
+      "3",
+      12
+     ]
+    }
+   },
+   {
+    "name": "عيد رأس السنة الهجرية",
+    "when": {
+     "lunar": [
+      "islamic-umalqura",
+      "1",
+      1
+     ]
+    }
+   },
+   {
+    "name": "عيد الفطر المبارك",
+    "when": {
+     "lunar": [
+      "islamic-umalqura",
+      "10",
+      1
+     ]
+    }
+   },
+   {
+    "name": "عيد الفطر المبارك",
+    "when": {
+     "lunar": [
+      "islamic-umalqura",
+      "10",
+      2
+     ]
+    }
+   },
+   {
+    "name": "عيد الفطر المبارك",
+    "when": {
+     "lunar": [
+      "islamic-umalqura",
+      "10",
+      3
+     ]
+    }
+   },
+   {
+    "name": "يوم الوقوف بعرفة",
+    "when": {
+     "lunar": [
+      "islamic-umalqura",
+      "12",
+      9
+     ]
+    }
+   },
+   {
+    "name": "عيد الأضحى المبارك",
+    "when": {
+     "lunar": [
+      "islamic-umalqura",
+      "12",
+      10
+     ]
+    }
+   },
+   {
+    "name": "عيد الأضحى المبارك",
+    "when": {
+     "lunar": [
+      "islamic-umalqura",
+      "12",
+      11
+     ]
+    }
+   },
+   {
+    "name": "عيد الأضحى المبارك",
+    "when": {
+     "lunar": [
+      "islamic-umalqura",
+      "12",
+      12
+     ]
+    }
+   },
+   {
+    "name": "عيد الثورة الليبية 2011 م",
+    "when": {
+     "fixed": [
+      2,
+      17
+     ]
+    }
+   },
+   {
+    "name": "عيد العمل (عالمي)",
+    "when": {
+     "fixed": [
+      5,
+      1
+     ]
+    }
+   },
+   {
+    "name": "عيد التحرير (2011 م)",
+    "when": {
+     "fixed": [
+      10,
+      23
+     ]
+    }
+   },
+   {
+    "name": "يوم الشهيد (ذكرى استشهاد عمر المختار)",
+    "when": {
+     "fixed": [
+      9,
+      16
+     ]
+    }
+   },
+   {
+    "name": "عيد الاستقلال (1951 م)",
+    "when": {
+     "fixed": [
+      12,
+      24
      ]
     }
    }
@@ -24459,6 +28308,147 @@
    }
   ]
  },
+ "MG": {
+  "announcedTo": 2026,
+  "holidays": [
+   {
+    "name": "Jour de l'An",
+    "when": {
+     "dates": [
+      "2026-01-01"
+     ]
+    }
+   },
+   {
+    "name": "Journée fériée du 2 janvier",
+    "when": {
+     "dates": [
+      "2026-01-02"
+     ]
+    }
+   },
+   {
+    "name": "Eid al-Fitr",
+    "when": {
+     "dates": [
+      "2026-03-20"
+     ]
+    }
+   },
+   {
+    "name": "Journée commémorative des morts des évènements de 1947",
+    "when": {
+     "dates": [
+      "2026-03-29"
+     ]
+    }
+   },
+   {
+    "name": "Pâques",
+    "when": {
+     "dates": [
+      "2026-04-05"
+     ]
+    }
+   },
+   {
+    "name": "Lundi de Pâques",
+    "when": {
+     "dates": [
+      "2026-04-06"
+     ]
+    }
+   },
+   {
+    "name": "Fête du Travail",
+    "when": {
+     "dates": [
+      "2026-05-01"
+     ]
+    }
+   },
+   {
+    "name": "Ascension",
+    "when": {
+     "dates": [
+      "2026-05-14"
+     ]
+    }
+   },
+   {
+    "name": "Pentecôte",
+    "when": {
+     "dates": [
+      "2026-05-24"
+     ]
+    }
+   },
+   {
+    "name": "Lundi de Pentecôte",
+    "when": {
+     "dates": [
+      "2026-05-25"
+     ]
+    }
+   },
+   {
+    "name": "Eid al-Adha",
+    "when": {
+     "dates": [
+      "2026-05-27"
+     ]
+    }
+   },
+   {
+    "name": "Fête nationale de l’Indépendance",
+    "when": {
+     "dates": [
+      "2026-06-26"
+     ]
+    }
+   },
+   {
+    "name": "Journée de deuil national",
+    "when": {
+     "dates": [
+      "2026-07-24"
+     ]
+    }
+   },
+   {
+    "name": "Assomption",
+    "when": {
+     "dates": [
+      "2026-08-15"
+     ]
+    }
+   },
+   {
+    "name": "Commémoration des événements du 25 septembre 2025",
+    "when": {
+     "dates": [
+      "2026-09-25"
+     ]
+    }
+   },
+   {
+    "name": "Toussaint",
+    "when": {
+     "dates": [
+      "2026-11-01"
+     ]
+    }
+   },
+   {
+    "name": "Noël",
+    "when": {
+     "dates": [
+      "2026-12-25"
+     ]
+    }
+   }
+  ]
+ },
  "MH": {
   "substitute": [
    {
@@ -25705,6 +29695,124 @@
    }
   ]
  },
+ "MR": {
+  "announcedTo": 2026,
+  "holidays": [
+   {
+    "name": "عيد الاستقلال الوطني",
+    "when": {
+     "fixed": [
+      11,
+      28
+     ]
+    }
+   },
+   {
+    "name": "فاتح مايو (عيد الشغيلة)",
+    "when": {
+     "fixed": [
+      5,
+      1
+     ]
+    }
+   },
+   {
+    "name": "يوم تحرر إفريقيا",
+    "when": {
+     "fixed": [
+      5,
+      25
+     ]
+    }
+   },
+   {
+    "name": "المولد النبوي",
+    "when": {
+     "dates": [
+      "2026-08-26"
+     ]
+    }
+   },
+   {
+    "name": "عيد الفطر",
+    "when": {
+     "dates": [
+      "2026-03-20"
+     ]
+    }
+   },
+   {
+    "name": "عيد الأضحى",
+    "when": {
+     "dates": [
+      "2026-05-27"
+     ]
+    }
+   },
+   {
+    "name": "فاتح محرم",
+    "when": {
+     "dates": [
+      "2026-06-17"
+     ]
+    }
+   },
+   {
+    "name": "المولد النبوي",
+    "when": {
+     "lunar": [
+      "islamic-umalqura",
+      "3",
+      12
+     ]
+    },
+    "from": 2027
+   },
+   {
+    "name": "عيد الفطر",
+    "when": {
+     "lunar": [
+      "islamic-umalqura",
+      "10",
+      1
+     ]
+    },
+    "from": 2027
+   },
+   {
+    "name": "عيد الأضحى",
+    "when": {
+     "lunar": [
+      "islamic-umalqura",
+      "12",
+      10
+     ]
+    },
+    "from": 2027
+   },
+   {
+    "name": "فاتح محرم",
+    "when": {
+     "lunar": [
+      "islamic-umalqura",
+      "1",
+      1
+     ]
+    },
+    "from": 2027
+   },
+   {
+    "name": "عطلة معوضة",
+    "when": {
+     "dates": [
+      "2026-01-02",
+      "2026-05-28",
+      "2026-05-29"
+     ]
+    }
+   }
+  ]
+ },
  "MS": {
   "substitute": [
    {
@@ -26435,6 +30543,2820 @@
    }
   ]
  },
+ "MY": {
+  "announcedTo": 2027,
+  "regional": [
+   "MY.01",
+   "MY.02",
+   "MY.03",
+   "MY.04",
+   "MY.05",
+   "MY.06",
+   "MY.07",
+   "MY.08",
+   "MY.09",
+   "MY.11",
+   "MY.12",
+   "MY.13",
+   "MY.14",
+   "MY.15",
+   "MY.16",
+   "MY.17"
+  ],
+  "unmoved": [
+   "MY.02",
+   "MY.03",
+   "MY.13"
+  ],
+  "holidays": [
+   {
+    "name": "Cuti Peristiwa Karnival Sambutan Tahun Baharu",
+    "when": {
+     "dates": [
+      "2026-01-01"
+     ]
+    },
+    "regions": [
+     "MY.08"
+    ],
+    "move": [
+     {
+      "on": [
+       0
+      ],
+      "to": "next",
+      "as": "well",
+      "following": true
+     }
+    ]
+   },
+   {
+    "name": "Tahun Baharu",
+    "when": {
+     "dates": [
+      "2026-01-01",
+      "2027-01-01"
+     ]
+    },
+    "regions": [
+     "MY.04",
+     "MY.05",
+     "MY.06",
+     "MY.07",
+     "MY.09",
+     "MY.12",
+     "MY.14",
+     "MY.15",
+     "MY.17"
+    ],
+    "move": [
+     {
+      "on": [
+       0
+      ],
+      "to": "next",
+      "as": "well",
+      "following": true
+     }
+    ]
+   },
+   {
+    "name": "Tahun Baharu",
+    "when": {
+     "dates": [
+      "2026-01-01",
+      "2027-01-01"
+     ]
+    },
+    "regions": [
+     "MY.16"
+    ],
+    "move": [
+     {
+      "on": [
+       0
+      ],
+      "to": "next",
+      "as": "well"
+     }
+    ]
+   },
+   {
+    "name": "Tahun Baharu",
+    "when": {
+     "dates": [
+      "2026-01-01",
+      "2027-01-01"
+     ]
+    },
+    "regions": [
+     "MY.11"
+    ],
+    "move": [
+     {
+      "on": [
+       0
+      ],
+      "to": "next",
+      "as": "well"
+     },
+     {
+      "on": [
+       1,
+       2,
+       3,
+       4,
+       5,
+       6
+      ],
+      "to": "next",
+      "as": "well",
+      "over": true,
+      "skip": [
+       0
+      ]
+     }
+    ]
+   },
+   {
+    "name": "Hari Keputeraan Yang di-Pertuan Besar Negeri Sembilan",
+    "when": {
+     "dates": [
+      "2026-01-14",
+      "2027-01-14"
+     ]
+    },
+    "regions": [
+     "MY.05"
+    ],
+    "move": [
+     {
+      "on": [
+       0
+      ],
+      "to": "next",
+      "as": "well",
+      "following": true
+     }
+    ]
+   },
+   {
+    "name": "Israk dan Mikraj",
+    "when": {
+     "dates": [
+      "2026-01-17",
+      "2027-01-06",
+      "2027-12-26"
+     ]
+    },
+    "regions": [
+     "MY.05",
+     "MY.08"
+    ],
+    "move": [
+     {
+      "on": [
+       0
+      ],
+      "to": "next",
+      "as": "well",
+      "following": true
+     }
+    ]
+   },
+   {
+    "name": "Israk dan Mikraj",
+    "when": {
+     "dates": [
+      "2026-01-17",
+      "2027-01-06",
+      "2027-12-26"
+     ]
+    },
+    "regions": [
+     "MY.02",
+     "MY.13"
+    ]
+   },
+   {
+    "name": "Hari Thaipusam",
+    "when": {
+     "dates": [
+      "2026-02-01",
+      "2027-01-22"
+     ]
+    },
+    "regions": [
+     "MY.01",
+     "MY.05",
+     "MY.07",
+     "MY.09",
+     "MY.12",
+     "MY.14",
+     "MY.17"
+    ],
+    "move": [
+     {
+      "on": [
+       0
+      ],
+      "to": "next",
+      "as": "well",
+      "following": true
+     }
+    ]
+   },
+   {
+    "name": "Hari Wilayah Persekutuan",
+    "when": {
+     "dates": [
+      "2026-02-01",
+      "2027-02-01"
+     ]
+    },
+    "regions": [
+     "MY.14",
+     "MY.15",
+     "MY.17"
+    ],
+    "move": [
+     {
+      "on": [
+       0
+      ],
+      "to": "next",
+      "as": "well",
+      "following": true
+     }
+    ]
+   },
+   {
+    "name": "Tahun Baharu Cina",
+    "when": {
+     "dates": [
+      "2026-02-17",
+      "2027-02-06"
+     ]
+    }
+   },
+   {
+    "name": "Tahun Baharu Cina",
+    "when": {
+     "dates": [
+      "2026-02-17",
+      "2027-02-06"
+     ]
+    },
+    "regions": [
+     "MY.01",
+     "MY.04",
+     "MY.05",
+     "MY.06",
+     "MY.07",
+     "MY.08",
+     "MY.09",
+     "MY.12",
+     "MY.14",
+     "MY.15",
+     "MY.17"
+    ],
+    "move": [
+     {
+      "on": [
+       0
+      ],
+      "to": "next",
+      "as": "well",
+      "following": true
+     }
+    ]
+   },
+   {
+    "name": "Tahun Baharu Cina",
+    "when": {
+     "dates": [
+      "2026-02-17",
+      "2027-02-06"
+     ]
+    },
+    "regions": [
+     "MY.16"
+    ],
+    "move": [
+     {
+      "on": [
+       0
+      ],
+      "to": "next",
+      "as": "well"
+     }
+    ]
+   },
+   {
+    "name": "Tahun Baharu Cina",
+    "when": {
+     "dates": [
+      "2026-02-17",
+      "2027-02-06"
+     ]
+    },
+    "regions": [
+     "MY.11"
+    ],
+    "move": [
+     {
+      "on": [
+       0
+      ],
+      "to": "next",
+      "as": "well"
+     },
+     {
+      "on": [
+       1,
+       2,
+       3,
+       4,
+       5,
+       6
+      ],
+      "to": "next",
+      "as": "well",
+      "over": true,
+      "skip": [
+       0
+      ]
+     }
+    ]
+   },
+   {
+    "name": "Tahun Baharu Cina",
+    "when": {
+     "dates": [
+      "2026-02-17",
+      "2027-02-06"
+     ]
+    },
+    "regions": [
+     "MY.02",
+     "MY.03",
+     "MY.13"
+    ]
+   },
+   {
+    "name": "Tahun Baharu Cina (Hari Kedua)",
+    "when": {
+     "dates": [
+      "2026-02-18",
+      "2027-02-07"
+     ]
+    },
+    "regions": [
+     "MY.01",
+     "MY.04",
+     "MY.05",
+     "MY.06",
+     "MY.07",
+     "MY.08",
+     "MY.09",
+     "MY.12",
+     "MY.14",
+     "MY.15",
+     "MY.17"
+    ],
+    "move": [
+     {
+      "on": [
+       0
+      ],
+      "to": "next",
+      "as": "well",
+      "following": true
+     }
+    ]
+   },
+   {
+    "name": "Tahun Baharu Cina (Hari Kedua)",
+    "when": {
+     "dates": [
+      "2026-02-18",
+      "2027-02-07"
+     ]
+    },
+    "regions": [
+     "MY.16"
+    ],
+    "move": [
+     {
+      "on": [
+       0
+      ],
+      "to": "next",
+      "as": "well"
+     }
+    ]
+   },
+   {
+    "name": "Tahun Baharu Cina (Hari Kedua)",
+    "when": {
+     "dates": [
+      "2026-02-18",
+      "2027-02-07"
+     ]
+    },
+    "regions": [
+     "MY.11"
+    ],
+    "move": [
+     {
+      "on": [
+       0
+      ],
+      "to": "next",
+      "as": "well"
+     },
+     {
+      "on": [
+       1,
+       2,
+       3,
+       4,
+       5,
+       6
+      ],
+      "to": "next",
+      "as": "well",
+      "over": true,
+      "skip": [
+       0
+      ]
+     }
+    ]
+   },
+   {
+    "name": "Tahun Baharu Cina (Hari Kedua)",
+    "when": {
+     "dates": [
+      "2026-02-18",
+      "2027-02-07"
+     ]
+    },
+    "regions": [
+     "MY.02"
+    ]
+   },
+   {
+    "name": "Tahun Baharu Cina (Hari Kedua)",
+    "when": {
+     "dates": [
+      "2026-02-18",
+      "2027-02-07"
+     ]
+    },
+    "regions": [
+     "MY.03",
+     "MY.13"
+    ]
+   },
+   {
+    "name": "Awal Ramadan",
+    "when": {
+     "dates": [
+      "2026-02-19",
+      "2027-02-08"
+     ]
+    },
+    "regions": [
+     "MY.01"
+    ],
+    "move": [
+     {
+      "on": [
+       0
+      ],
+      "to": "next",
+      "as": "well",
+      "following": true
+     }
+    ]
+   },
+   {
+    "name": "Awal Ramadan",
+    "when": {
+     "dates": [
+      "2026-02-19",
+      "2027-02-08"
+     ]
+    },
+    "regions": [
+     "MY.02"
+    ]
+   },
+   {
+    "name": "Hari Pengisytiharan Tarikh Kemerdekaan",
+    "when": {
+     "dates": [
+      "2026-02-20",
+      "2027-02-20"
+     ]
+    },
+    "regions": [
+     "MY.04"
+    ],
+    "move": [
+     {
+      "on": [
+       0
+      ],
+      "to": "next",
+      "as": "well",
+      "following": true
+     }
+    ]
+   },
+   {
+    "name": "Hari Ulang Tahun Pertabalan Sultan Terengganu",
+    "when": {
+     "dates": [
+      "2026-03-04",
+      "2027-03-04"
+     ]
+    },
+    "regions": [
+     "MY.13"
+    ]
+   },
+   {
+    "name": "Hari Nuzul Al-Quran",
+    "when": {
+     "dates": [
+      "2026-03-07",
+      "2027-02-24"
+     ]
+    },
+    "regions": [
+     "MY.06",
+     "MY.07",
+     "MY.08",
+     "MY.09",
+     "MY.12",
+     "MY.14",
+     "MY.15",
+     "MY.17"
+    ],
+    "move": [
+     {
+      "on": [
+       0
+      ],
+      "to": "next",
+      "as": "well",
+      "following": true
+     }
+    ]
+   },
+   {
+    "name": "Hari Nuzul Al-Quran",
+    "when": {
+     "dates": [
+      "2026-03-07",
+      "2027-02-24"
+     ]
+    },
+    "regions": [
+     "MY.03",
+     "MY.13"
+    ]
+   },
+   {
+    "name": "Cuti Peristiwa Aidilfitri",
+    "when": {
+     "dates": [
+      "2026-03-19"
+     ]
+    },
+    "regions": [
+     "MY.03"
+    ]
+   },
+   {
+    "name": "Cuti Tambahan Hari Raya Puasa",
+    "when": {
+     "dates": [
+      "2026-03-20"
+     ]
+    }
+   },
+   {
+    "name": "Cuti Tambahan Hari Raya Puasa",
+    "when": {
+     "dates": [
+      "2026-03-20"
+     ]
+    },
+    "regions": [
+     "MY.01",
+     "MY.04",
+     "MY.05",
+     "MY.06",
+     "MY.07",
+     "MY.08",
+     "MY.09",
+     "MY.12",
+     "MY.14",
+     "MY.15",
+     "MY.17"
+    ],
+    "move": [
+     {
+      "on": [
+       0
+      ],
+      "to": "next",
+      "as": "well",
+      "following": true
+     }
+    ]
+   },
+   {
+    "name": "Cuti Tambahan Hari Raya Puasa",
+    "when": {
+     "dates": [
+      "2026-03-20"
+     ]
+    },
+    "regions": [
+     "MY.16"
+    ],
+    "move": [
+     {
+      "on": [
+       0
+      ],
+      "to": "next",
+      "as": "well"
+     }
+    ]
+   },
+   {
+    "name": "Cuti Tambahan Hari Raya Puasa",
+    "when": {
+     "dates": [
+      "2026-03-20"
+     ]
+    },
+    "regions": [
+     "MY.11"
+    ],
+    "move": [
+     {
+      "on": [
+       0
+      ],
+      "to": "next",
+      "as": "well"
+     },
+     {
+      "on": [
+       1,
+       2,
+       3,
+       4,
+       5,
+       6
+      ],
+      "to": "next",
+      "as": "well",
+      "over": true,
+      "skip": [
+       0
+      ]
+     }
+    ]
+   },
+   {
+    "name": "Cuti Tambahan Hari Raya Puasa",
+    "when": {
+     "dates": [
+      "2026-03-20"
+     ]
+    },
+    "regions": [
+     "MY.02",
+     "MY.03",
+     "MY.13"
+    ]
+   },
+   {
+    "name": "Hari Raya Puasa",
+    "when": {
+     "dates": [
+      "2026-03-21",
+      "2027-03-10"
+     ]
+    }
+   },
+   {
+    "name": "Hari Raya Puasa",
+    "when": {
+     "dates": [
+      "2026-03-21",
+      "2027-03-10"
+     ]
+    },
+    "regions": [
+     "MY.01",
+     "MY.04",
+     "MY.05",
+     "MY.06",
+     "MY.07",
+     "MY.08",
+     "MY.09",
+     "MY.12",
+     "MY.14",
+     "MY.15",
+     "MY.17"
+    ],
+    "move": [
+     {
+      "on": [
+       0
+      ],
+      "to": "next",
+      "as": "well",
+      "following": true
+     }
+    ]
+   },
+   {
+    "name": "Hari Raya Puasa",
+    "when": {
+     "dates": [
+      "2026-03-21",
+      "2027-03-10"
+     ]
+    },
+    "regions": [
+     "MY.16"
+    ],
+    "move": [
+     {
+      "on": [
+       0
+      ],
+      "to": "next",
+      "as": "well"
+     }
+    ]
+   },
+   {
+    "name": "Hari Raya Puasa",
+    "when": {
+     "dates": [
+      "2026-03-21",
+      "2027-03-10"
+     ]
+    },
+    "regions": [
+     "MY.11"
+    ],
+    "move": [
+     {
+      "on": [
+       0
+      ],
+      "to": "next",
+      "as": "well"
+     },
+     {
+      "on": [
+       1,
+       2,
+       3,
+       4,
+       5,
+       6
+      ],
+      "to": "next",
+      "as": "well",
+      "over": true,
+      "skip": [
+       0
+      ]
+     }
+    ]
+   },
+   {
+    "name": "Hari Raya Puasa",
+    "when": {
+     "dates": [
+      "2026-03-21",
+      "2027-03-10"
+     ]
+    },
+    "regions": [
+     "MY.02",
+     "MY.03",
+     "MY.13"
+    ]
+   },
+   {
+    "name": "Hari Raya Puasa (Hari Kedua)",
+    "when": {
+     "dates": [
+      "2026-03-22",
+      "2027-03-11"
+     ]
+    }
+   },
+   {
+    "name": "Hari Raya Puasa (Hari Kedua)",
+    "when": {
+     "dates": [
+      "2026-03-22",
+      "2027-03-11"
+     ]
+    },
+    "regions": [
+     "MY.01",
+     "MY.04",
+     "MY.05",
+     "MY.06",
+     "MY.07",
+     "MY.08",
+     "MY.09",
+     "MY.12",
+     "MY.14",
+     "MY.15",
+     "MY.17"
+    ],
+    "move": [
+     {
+      "on": [
+       0
+      ],
+      "to": "next",
+      "as": "well",
+      "following": true
+     }
+    ]
+   },
+   {
+    "name": "Hari Raya Puasa (Hari Kedua)",
+    "when": {
+     "dates": [
+      "2026-03-22",
+      "2027-03-11"
+     ]
+    },
+    "regions": [
+     "MY.16"
+    ],
+    "move": [
+     {
+      "on": [
+       0
+      ],
+      "to": "next",
+      "as": "well"
+     }
+    ]
+   },
+   {
+    "name": "Hari Raya Puasa (Hari Kedua)",
+    "when": {
+     "dates": [
+      "2026-03-22",
+      "2027-03-11"
+     ]
+    },
+    "regions": [
+     "MY.11"
+    ],
+    "move": [
+     {
+      "on": [
+       0
+      ],
+      "to": "next",
+      "as": "well"
+     },
+     {
+      "on": [
+       1,
+       2,
+       3,
+       4,
+       5,
+       6
+      ],
+      "to": "next",
+      "as": "well",
+      "over": true,
+      "skip": [
+       0
+      ]
+     }
+    ]
+   },
+   {
+    "name": "Hari Raya Puasa (Hari Kedua)",
+    "when": {
+     "dates": [
+      "2026-03-22",
+      "2027-03-11"
+     ]
+    },
+    "regions": [
+     "MY.02",
+     "MY.03",
+     "MY.13"
+    ]
+   },
+   {
+    "name": "Hari Keputeraan Sultan Johor",
+    "when": {
+     "dates": [
+      "2026-03-23",
+      "2027-03-23"
+     ]
+    },
+    "regions": [
+     "MY.01"
+    ],
+    "move": [
+     {
+      "on": [
+       0
+      ],
+      "to": "next",
+      "as": "well",
+      "following": true
+     }
+    ]
+   },
+   {
+    "name": "Hari Raya Puasa (Hari Ketiga)",
+    "when": {
+     "dates": [
+      "2026-03-23",
+      "2027-03-12"
+     ]
+    },
+    "regions": [
+     "MY.04"
+    ],
+    "move": [
+     {
+      "on": [
+       0
+      ],
+      "to": "next",
+      "as": "well",
+      "following": true
+     }
+    ]
+   },
+   {
+    "name": "Hari Jadi Yang di-Pertua Negeri Sabah",
+    "when": {
+     "dates": [
+      "2026-03-30",
+      "2027-03-30"
+     ]
+    },
+    "regions": [
+     "MY.16"
+    ],
+    "move": [
+     {
+      "on": [
+       0
+      ],
+      "to": "next",
+      "as": "well"
+     }
+    ]
+   },
+   {
+    "name": "Good Friday",
+    "when": {
+     "dates": [
+      "2026-04-03",
+      "2027-03-26"
+     ]
+    },
+    "regions": [
+     "MY.16"
+    ],
+    "move": [
+     {
+      "on": [
+       0
+      ],
+      "to": "next",
+      "as": "well"
+     }
+    ]
+   },
+   {
+    "name": "Good Friday",
+    "when": {
+     "dates": [
+      "2026-04-03",
+      "2027-03-26"
+     ]
+    },
+    "regions": [
+     "MY.11"
+    ],
+    "move": [
+     {
+      "on": [
+       0
+      ],
+      "to": "next",
+      "as": "well"
+     },
+     {
+      "on": [
+       1,
+       2,
+       3,
+       4,
+       5,
+       6
+      ],
+      "to": "next",
+      "as": "well",
+      "over": true,
+      "skip": [
+       0
+      ]
+     }
+    ]
+   },
+   {
+    "name": "Hari Keputeraan Sultan Terengganu",
+    "when": {
+     "dates": [
+      "2026-04-26",
+      "2027-04-26"
+     ]
+    },
+    "regions": [
+     "MY.13"
+    ]
+   },
+   {
+    "name": "Hari Pekerja",
+    "when": {
+     "dates": [
+      "2026-05-01",
+      "2027-05-01"
+     ]
+    }
+   },
+   {
+    "name": "Hari Pekerja",
+    "when": {
+     "dates": [
+      "2026-05-01",
+      "2027-05-01"
+     ]
+    },
+    "regions": [
+     "MY.01",
+     "MY.04",
+     "MY.05",
+     "MY.06",
+     "MY.07",
+     "MY.08",
+     "MY.09",
+     "MY.12",
+     "MY.14",
+     "MY.15",
+     "MY.17"
+    ],
+    "move": [
+     {
+      "on": [
+       0
+      ],
+      "to": "next",
+      "as": "well",
+      "following": true
+     }
+    ]
+   },
+   {
+    "name": "Hari Pekerja",
+    "when": {
+     "dates": [
+      "2026-05-01",
+      "2027-05-01"
+     ]
+    },
+    "regions": [
+     "MY.16"
+    ],
+    "move": [
+     {
+      "on": [
+       0
+      ],
+      "to": "next",
+      "as": "well"
+     }
+    ]
+   },
+   {
+    "name": "Hari Pekerja",
+    "when": {
+     "dates": [
+      "2026-05-01",
+      "2027-05-01"
+     ]
+    },
+    "regions": [
+     "MY.11"
+    ],
+    "move": [
+     {
+      "on": [
+       0
+      ],
+      "to": "next",
+      "as": "well"
+     },
+     {
+      "on": [
+       1,
+       2,
+       3,
+       4,
+       5,
+       6
+      ],
+      "to": "next",
+      "as": "well",
+      "over": true,
+      "skip": [
+       0
+      ]
+     }
+    ]
+   },
+   {
+    "name": "Hari Pekerja",
+    "when": {
+     "dates": [
+      "2026-05-01",
+      "2027-05-01"
+     ]
+    },
+    "regions": [
+     "MY.02",
+     "MY.03",
+     "MY.13"
+    ]
+   },
+   {
+    "name": "Hari Ulang Tahun Keputeraan Raja Perlis",
+    "when": {
+     "dates": [
+      "2026-05-17",
+      "2027-05-17"
+     ]
+    },
+    "regions": [
+     "MY.08"
+    ],
+    "move": [
+     {
+      "on": [
+       0
+      ],
+      "to": "next",
+      "as": "well",
+      "following": true
+     }
+    ]
+   },
+   {
+    "name": "Hari Hol Almarhum Sultan Ahmad Shah Al-Musta'in Billah ibni Almarhum Sultan Abu Bakar",
+    "when": {
+     "dates": [
+      "2026-05-22",
+      "2027-05-22"
+     ]
+    },
+    "regions": [
+     "MY.06"
+    ],
+    "move": [
+     {
+      "on": [
+       0
+      ],
+      "to": "next",
+      "as": "well",
+      "following": true
+     }
+    ]
+   },
+   {
+    "name": "Cuti Peristiwa Johor Darul Ta’zim Juara Piala Malaysia",
+    "when": {
+     "dates": [
+      "2026-05-25"
+     ]
+    },
+    "regions": [
+     "MY.01"
+    ],
+    "move": [
+     {
+      "on": [
+       0
+      ],
+      "to": "next",
+      "as": "well",
+      "following": true
+     }
+    ]
+   },
+   {
+    "name": "Hari Arafah",
+    "when": {
+     "dates": [
+      "2026-05-26",
+      "2027-05-16"
+     ]
+    },
+    "regions": [
+     "MY.03",
+     "MY.13"
+    ]
+   },
+   {
+    "name": "Hari Raya Qurban",
+    "when": {
+     "dates": [
+      "2026-05-27",
+      "2027-05-17"
+     ]
+    }
+   },
+   {
+    "name": "Hari Raya Qurban",
+    "when": {
+     "dates": [
+      "2026-05-27",
+      "2027-05-17"
+     ]
+    },
+    "regions": [
+     "MY.01",
+     "MY.04",
+     "MY.05",
+     "MY.06",
+     "MY.07",
+     "MY.08",
+     "MY.09",
+     "MY.12",
+     "MY.14",
+     "MY.15",
+     "MY.17"
+    ],
+    "move": [
+     {
+      "on": [
+       0
+      ],
+      "to": "next",
+      "as": "well",
+      "following": true
+     }
+    ]
+   },
+   {
+    "name": "Hari Raya Qurban",
+    "when": {
+     "dates": [
+      "2026-05-27",
+      "2027-05-17"
+     ]
+    },
+    "regions": [
+     "MY.16"
+    ],
+    "move": [
+     {
+      "on": [
+       0
+      ],
+      "to": "next",
+      "as": "well"
+     }
+    ]
+   },
+   {
+    "name": "Hari Raya Qurban",
+    "when": {
+     "dates": [
+      "2026-05-27",
+      "2027-05-17"
+     ]
+    },
+    "regions": [
+     "MY.11"
+    ],
+    "move": [
+     {
+      "on": [
+       0
+      ],
+      "to": "next",
+      "as": "well"
+     },
+     {
+      "on": [
+       1,
+       2,
+       3,
+       4,
+       5,
+       6
+      ],
+      "to": "next",
+      "as": "well",
+      "over": true,
+      "skip": [
+       0
+      ]
+     }
+    ]
+   },
+   {
+    "name": "Hari Raya Qurban",
+    "when": {
+     "dates": [
+      "2026-05-27",
+      "2027-05-17"
+     ]
+    },
+    "regions": [
+     "MY.02",
+     "MY.03",
+     "MY.13"
+    ]
+   },
+   {
+    "name": "Hari Raya Qurban (Hari Kedua)",
+    "when": {
+     "dates": [
+      "2026-05-28",
+      "2027-05-18"
+     ]
+    },
+    "regions": [
+     "MY.08"
+    ],
+    "move": [
+     {
+      "on": [
+       0
+      ],
+      "to": "next",
+      "as": "well",
+      "following": true
+     }
+    ]
+   },
+   {
+    "name": "Hari Raya Qurban (Hari Kedua)",
+    "when": {
+     "dates": [
+      "2026-05-28",
+      "2027-05-18"
+     ]
+    },
+    "regions": [
+     "MY.02"
+    ]
+   },
+   {
+    "name": "Hari Raya Qurban (Hari Kedua)",
+    "when": {
+     "dates": [
+      "2026-05-28",
+      "2027-05-18"
+     ]
+    },
+    "regions": [
+     "MY.03",
+     "MY.13"
+    ]
+   },
+   {
+    "name": "Pesta Kaamatan (Pesta Menuai)",
+    "when": {
+     "dates": [
+      "2026-05-30",
+      "2026-05-31",
+      "2027-05-30",
+      "2027-05-31"
+     ]
+    },
+    "regions": [
+     "MY.15"
+    ],
+    "move": [
+     {
+      "on": [
+       0
+      ],
+      "to": "next",
+      "as": "well",
+      "following": true
+     }
+    ]
+   },
+   {
+    "name": "Pesta Kaamatan (Pesta Menuai)",
+    "when": {
+     "dates": [
+      "2026-05-30",
+      "2026-05-31",
+      "2027-05-30",
+      "2027-05-31"
+     ]
+    },
+    "regions": [
+     "MY.16"
+    ],
+    "move": [
+     {
+      "on": [
+       0
+      ],
+      "to": "next",
+      "as": "well"
+     }
+    ]
+   },
+   {
+    "name": "Hari Wesak",
+    "when": {
+     "dates": [
+      "2026-05-31",
+      "2027-05-20"
+     ]
+    }
+   },
+   {
+    "name": "Hari Wesak",
+    "when": {
+     "dates": [
+      "2026-05-31",
+      "2027-05-20"
+     ]
+    },
+    "regions": [
+     "MY.01",
+     "MY.04",
+     "MY.05",
+     "MY.06",
+     "MY.07",
+     "MY.08",
+     "MY.09",
+     "MY.12",
+     "MY.14",
+     "MY.15",
+     "MY.17"
+    ],
+    "move": [
+     {
+      "on": [
+       0
+      ],
+      "to": "next",
+      "as": "well",
+      "following": true
+     }
+    ]
+   },
+   {
+    "name": "Hari Wesak",
+    "when": {
+     "dates": [
+      "2026-05-31",
+      "2027-05-20"
+     ]
+    },
+    "regions": [
+     "MY.16"
+    ],
+    "move": [
+     {
+      "on": [
+       0
+      ],
+      "to": "next",
+      "as": "well"
+     }
+    ]
+   },
+   {
+    "name": "Hari Wesak",
+    "when": {
+     "dates": [
+      "2026-05-31",
+      "2027-05-20"
+     ]
+    },
+    "regions": [
+     "MY.11"
+    ],
+    "move": [
+     {
+      "on": [
+       0
+      ],
+      "to": "next",
+      "as": "well"
+     },
+     {
+      "on": [
+       1,
+       2,
+       3,
+       4,
+       5,
+       6
+      ],
+      "to": "next",
+      "as": "well",
+      "over": true,
+      "skip": [
+       0
+      ]
+     }
+    ]
+   },
+   {
+    "name": "Hari Wesak",
+    "when": {
+     "dates": [
+      "2026-05-31",
+      "2027-05-20"
+     ]
+    },
+    "regions": [
+     "MY.02",
+     "MY.03",
+     "MY.13"
+    ]
+   },
+   {
+    "name": "Hari Keputeraan Rasmi Seri Paduka Baginda Yang di-Pertuan Agong",
+    "when": {
+     "dates": [
+      "2026-06-01",
+      "2027-06-07"
+     ]
+    }
+   },
+   {
+    "name": "Hari Keputeraan Rasmi Seri Paduka Baginda Yang di-Pertuan Agong",
+    "when": {
+     "dates": [
+      "2026-06-01",
+      "2027-06-07"
+     ]
+    },
+    "regions": [
+     "MY.01",
+     "MY.04",
+     "MY.05",
+     "MY.06",
+     "MY.07",
+     "MY.08",
+     "MY.09",
+     "MY.12",
+     "MY.14",
+     "MY.15",
+     "MY.17"
+    ],
+    "move": [
+     {
+      "on": [
+       0
+      ],
+      "to": "next",
+      "as": "well",
+      "following": true
+     }
+    ]
+   },
+   {
+    "name": "Hari Keputeraan Rasmi Seri Paduka Baginda Yang di-Pertuan Agong",
+    "when": {
+     "dates": [
+      "2026-06-01",
+      "2027-06-07"
+     ]
+    },
+    "regions": [
+     "MY.16"
+    ],
+    "move": [
+     {
+      "on": [
+       0
+      ],
+      "to": "next",
+      "as": "well"
+     }
+    ]
+   },
+   {
+    "name": "Hari Keputeraan Rasmi Seri Paduka Baginda Yang di-Pertuan Agong",
+    "when": {
+     "dates": [
+      "2026-06-01",
+      "2027-06-07"
+     ]
+    },
+    "regions": [
+     "MY.11"
+    ],
+    "move": [
+     {
+      "on": [
+       0
+      ],
+      "to": "next",
+      "as": "well"
+     },
+     {
+      "on": [
+       1,
+       2,
+       3,
+       4,
+       5,
+       6
+      ],
+      "to": "next",
+      "as": "well",
+      "over": true,
+      "skip": [
+       0
+      ]
+     }
+    ]
+   },
+   {
+    "name": "Hari Keputeraan Rasmi Seri Paduka Baginda Yang di-Pertuan Agong",
+    "when": {
+     "dates": [
+      "2026-06-01",
+      "2027-06-07"
+     ]
+    },
+    "regions": [
+     "MY.02",
+     "MY.03",
+     "MY.13"
+    ]
+   },
+   {
+    "name": "Perayaan Hari Gawai Dayak",
+    "when": {
+     "dates": [
+      "2026-06-01",
+      "2026-06-02",
+      "2027-06-01",
+      "2027-06-02"
+     ]
+    },
+    "regions": [
+     "MY.11"
+    ],
+    "move": [
+     {
+      "on": [
+       0
+      ],
+      "to": "next",
+      "as": "well"
+     },
+     {
+      "on": [
+       1,
+       2,
+       3,
+       4,
+       5,
+       6
+      ],
+      "to": "next",
+      "as": "well",
+      "over": true,
+      "skip": [
+       0
+      ]
+     }
+    ]
+   },
+   {
+    "name": "Awal Muharam (Maal Hijrah)",
+    "when": {
+     "dates": [
+      "2026-06-17",
+      "2027-06-06"
+     ]
+    }
+   },
+   {
+    "name": "Awal Muharam (Maal Hijrah)",
+    "when": {
+     "dates": [
+      "2026-06-17",
+      "2027-06-06"
+     ]
+    },
+    "regions": [
+     "MY.01",
+     "MY.04",
+     "MY.05",
+     "MY.06",
+     "MY.07",
+     "MY.08",
+     "MY.09",
+     "MY.12",
+     "MY.14",
+     "MY.15",
+     "MY.17"
+    ],
+    "move": [
+     {
+      "on": [
+       0
+      ],
+      "to": "next",
+      "as": "well",
+      "following": true
+     }
+    ]
+   },
+   {
+    "name": "Awal Muharam (Maal Hijrah)",
+    "when": {
+     "dates": [
+      "2026-06-17",
+      "2027-06-06"
+     ]
+    },
+    "regions": [
+     "MY.16"
+    ],
+    "move": [
+     {
+      "on": [
+       0
+      ],
+      "to": "next",
+      "as": "well"
+     }
+    ]
+   },
+   {
+    "name": "Awal Muharam (Maal Hijrah)",
+    "when": {
+     "dates": [
+      "2026-06-17",
+      "2027-06-06"
+     ]
+    },
+    "regions": [
+     "MY.11"
+    ],
+    "move": [
+     {
+      "on": [
+       0
+      ],
+      "to": "next",
+      "as": "well"
+     },
+     {
+      "on": [
+       1,
+       2,
+       3,
+       4,
+       5,
+       6
+      ],
+      "to": "next",
+      "as": "well",
+      "over": true,
+      "skip": [
+       0
+      ]
+     }
+    ]
+   },
+   {
+    "name": "Awal Muharam (Maal Hijrah)",
+    "when": {
+     "dates": [
+      "2026-06-17",
+      "2027-06-06"
+     ]
+    },
+    "regions": [
+     "MY.02",
+     "MY.03",
+     "MY.13"
+    ]
+   },
+   {
+    "name": "Hari Keputeraan Sultan Kedah",
+    "when": {
+     "dates": [
+      "2026-06-21",
+      "2027-06-20"
+     ]
+    },
+    "regions": [
+     "MY.02"
+    ]
+   },
+   {
+    "name": "Hari Ulang Tahun Perisytiharan Tapak Warisan Dunia",
+    "when": {
+     "dates": [
+      "2026-07-07",
+      "2027-07-07"
+     ]
+    },
+    "regions": [
+     "MY.09"
+    ],
+    "move": [
+     {
+      "on": [
+       0
+      ],
+      "to": "next",
+      "as": "well",
+      "following": true
+     }
+    ]
+   },
+   {
+    "name": "Hari Jadi Yang di-Pertua Negeri Pulau Pinang",
+    "when": {
+     "dates": [
+      "2026-07-11",
+      "2027-07-10"
+     ]
+    },
+    "regions": [
+     "MY.09"
+    ],
+    "move": [
+     {
+      "on": [
+       0
+      ],
+      "to": "next",
+      "as": "well",
+      "following": true
+     }
+    ]
+   },
+   {
+    "name": "Cuti Peristiwa Pilihan Raya Negeri Johor",
+    "when": {
+     "dates": [
+      "2026-07-13"
+     ]
+    },
+    "regions": [
+     "MY.01"
+    ],
+    "move": [
+     {
+      "on": [
+       0
+      ],
+      "to": "next",
+      "as": "well",
+      "following": true
+     }
+    ]
+   },
+   {
+    "name": "Hari Hol Almarhum Sultan Iskandar",
+    "when": {
+     "dates": [
+      "2026-07-21",
+      "2027-07-11"
+     ]
+    },
+    "regions": [
+     "MY.01"
+    ],
+    "move": [
+     {
+      "on": [
+       0
+      ],
+      "to": "next",
+      "as": "well",
+      "following": true
+     }
+    ]
+   },
+   {
+    "name": "Hari Kemerdekaan Sarawak",
+    "when": {
+     "dates": [
+      "2026-07-22",
+      "2027-07-22"
+     ]
+    },
+    "regions": [
+     "MY.11"
+    ],
+    "move": [
+     {
+      "on": [
+       0
+      ],
+      "to": "next",
+      "as": "well"
+     },
+     {
+      "on": [
+       1,
+       2,
+       3,
+       4,
+       5,
+       6
+      ],
+      "to": "next",
+      "as": "well",
+      "over": true,
+      "skip": [
+       0
+      ]
+     }
+    ]
+   },
+   {
+    "name": "Hari Keputeraan Sultan Pahang",
+    "when": {
+     "dates": [
+      "2026-07-31",
+      "2027-07-30"
+     ]
+    },
+    "regions": [
+     "MY.06"
+    ],
+    "move": [
+     {
+      "on": [
+       0
+      ],
+      "to": "next",
+      "as": "well",
+      "following": true
+     }
+    ]
+   },
+   {
+    "name": "Cuti Peristiwa Pilihan Raya Negeri Sembilan",
+    "when": {
+     "dates": [
+      "2026-08-03"
+     ]
+    },
+    "regions": [
+     "MY.05"
+    ],
+    "move": [
+     {
+      "on": [
+       0
+      ],
+      "to": "next",
+      "as": "well",
+      "following": true
+     }
+    ]
+   },
+   {
+    "name": "Hari Jadi Yang di-Pertua Negeri Melaka",
+    "when": {
+     "dates": [
+      "2026-08-24",
+      "2027-08-24"
+     ]
+    },
+    "regions": [
+     "MY.04"
+    ],
+    "move": [
+     {
+      "on": [
+       0
+      ],
+      "to": "next",
+      "as": "well",
+      "following": true
+     }
+    ]
+   },
+   {
+    "name": "Hari Keputeraan Nabi Muhammad S.A.W. (Maulidur Rasul)",
+    "when": {
+     "dates": [
+      "2026-08-25",
+      "2027-08-15"
+     ]
+    }
+   },
+   {
+    "name": "Hari Keputeraan Nabi Muhammad S.A.W. (Maulidur Rasul)",
+    "when": {
+     "dates": [
+      "2026-08-25",
+      "2027-08-15"
+     ]
+    },
+    "regions": [
+     "MY.01",
+     "MY.04",
+     "MY.05",
+     "MY.06",
+     "MY.07",
+     "MY.08",
+     "MY.09",
+     "MY.12",
+     "MY.14",
+     "MY.15",
+     "MY.17"
+    ],
+    "move": [
+     {
+      "on": [
+       0
+      ],
+      "to": "next",
+      "as": "well",
+      "following": true
+     }
+    ]
+   },
+   {
+    "name": "Hari Keputeraan Nabi Muhammad S.A.W. (Maulidur Rasul)",
+    "when": {
+     "dates": [
+      "2026-08-25",
+      "2027-08-15"
+     ]
+    },
+    "regions": [
+     "MY.16"
+    ],
+    "move": [
+     {
+      "on": [
+       0
+      ],
+      "to": "next",
+      "as": "well"
+     }
+    ]
+   },
+   {
+    "name": "Hari Keputeraan Nabi Muhammad S.A.W. (Maulidur Rasul)",
+    "when": {
+     "dates": [
+      "2026-08-25",
+      "2027-08-15"
+     ]
+    },
+    "regions": [
+     "MY.11"
+    ],
+    "move": [
+     {
+      "on": [
+       0
+      ],
+      "to": "next",
+      "as": "well"
+     },
+     {
+      "on": [
+       1,
+       2,
+       3,
+       4,
+       5,
+       6
+      ],
+      "to": "next",
+      "as": "well",
+      "over": true,
+      "skip": [
+       0
+      ]
+     }
+    ]
+   },
+   {
+    "name": "Hari Keputeraan Nabi Muhammad S.A.W. (Maulidur Rasul)",
+    "when": {
+     "dates": [
+      "2026-08-25",
+      "2027-08-15"
+     ]
+    },
+    "regions": [
+     "MY.02",
+     "MY.03",
+     "MY.13"
+    ]
+   },
+   {
+    "name": "Hari Kebangsaan",
+    "when": {
+     "dates": [
+      "2026-08-31",
+      "2027-08-31"
+     ]
+    }
+   },
+   {
+    "name": "Hari Kebangsaan",
+    "when": {
+     "dates": [
+      "2026-08-31",
+      "2027-08-31"
+     ]
+    },
+    "regions": [
+     "MY.01",
+     "MY.04",
+     "MY.05",
+     "MY.06",
+     "MY.07",
+     "MY.08",
+     "MY.09",
+     "MY.12",
+     "MY.14",
+     "MY.15",
+     "MY.17"
+    ],
+    "move": [
+     {
+      "on": [
+       0
+      ],
+      "to": "next",
+      "as": "well",
+      "following": true
+     }
+    ]
+   },
+   {
+    "name": "Hari Kebangsaan",
+    "when": {
+     "dates": [
+      "2026-08-31",
+      "2027-08-31"
+     ]
+    },
+    "regions": [
+     "MY.16"
+    ],
+    "move": [
+     {
+      "on": [
+       0
+      ],
+      "to": "next",
+      "as": "well"
+     }
+    ]
+   },
+   {
+    "name": "Hari Kebangsaan",
+    "when": {
+     "dates": [
+      "2026-08-31",
+      "2027-08-31"
+     ]
+    },
+    "regions": [
+     "MY.11"
+    ],
+    "move": [
+     {
+      "on": [
+       0
+      ],
+      "to": "next",
+      "as": "well"
+     },
+     {
+      "on": [
+       1,
+       2,
+       3,
+       4,
+       5,
+       6
+      ],
+      "to": "next",
+      "as": "well",
+      "over": true,
+      "skip": [
+       0
+      ]
+     }
+    ]
+   },
+   {
+    "name": "Hari Kebangsaan",
+    "when": {
+     "dates": [
+      "2026-08-31",
+      "2027-08-31"
+     ]
+    },
+    "regions": [
+     "MY.02",
+     "MY.03",
+     "MY.13"
+    ]
+   },
+   {
+    "name": "Cuti Peristiwa Juara SUKMA 2026",
+    "when": {
+     "dates": [
+      "2026-09-01"
+     ]
+    },
+    "regions": [
+     "MY.12"
+    ],
+    "move": [
+     {
+      "on": [
+       0
+      ],
+      "to": "next",
+      "as": "well",
+      "following": true
+     }
+    ]
+   },
+   {
+    "name": "Hari Malaysia",
+    "when": {
+     "dates": [
+      "2026-09-16",
+      "2027-09-16"
+     ]
+    }
+   },
+   {
+    "name": "Hari Malaysia",
+    "when": {
+     "dates": [
+      "2026-09-16",
+      "2027-09-16"
+     ]
+    },
+    "regions": [
+     "MY.01",
+     "MY.04",
+     "MY.05",
+     "MY.06",
+     "MY.07",
+     "MY.08",
+     "MY.09",
+     "MY.12",
+     "MY.14",
+     "MY.15",
+     "MY.17"
+    ],
+    "move": [
+     {
+      "on": [
+       0
+      ],
+      "to": "next",
+      "as": "well",
+      "following": true
+     }
+    ]
+   },
+   {
+    "name": "Hari Malaysia",
+    "when": {
+     "dates": [
+      "2026-09-16",
+      "2027-09-16"
+     ]
+    },
+    "regions": [
+     "MY.16"
+    ],
+    "move": [
+     {
+      "on": [
+       0
+      ],
+      "to": "next",
+      "as": "well"
+     }
+    ]
+   },
+   {
+    "name": "Hari Malaysia",
+    "when": {
+     "dates": [
+      "2026-09-16",
+      "2027-09-16"
+     ]
+    },
+    "regions": [
+     "MY.11"
+    ],
+    "move": [
+     {
+      "on": [
+       0
+      ],
+      "to": "next",
+      "as": "well"
+     },
+     {
+      "on": [
+       1,
+       2,
+       3,
+       4,
+       5,
+       6
+      ],
+      "to": "next",
+      "as": "well",
+      "over": true,
+      "skip": [
+       0
+      ]
+     }
+    ]
+   },
+   {
+    "name": "Hari Malaysia",
+    "when": {
+     "dates": [
+      "2026-09-16",
+      "2027-09-16"
+     ]
+    },
+    "regions": [
+     "MY.02",
+     "MY.03",
+     "MY.13"
+    ]
+   },
+   {
+    "name": "Hari Keputeraan Sultan Kelantan",
+    "when": {
+     "dates": [
+      "2026-09-29",
+      "2026-09-30",
+      "2027-09-29",
+      "2027-09-30"
+     ]
+    },
+    "regions": [
+     "MY.03"
+    ]
+   },
+   {
+    "name": "Hari Jadi Yang di-Pertua Negeri Sarawak",
+    "when": {
+     "dates": [
+      "2026-10-10",
+      "2027-10-09"
+     ]
+    },
+    "regions": [
+     "MY.11"
+    ],
+    "move": [
+     {
+      "on": [
+       0
+      ],
+      "to": "next",
+      "as": "well"
+     },
+     {
+      "on": [
+       1,
+       2,
+       3,
+       4,
+       5,
+       6
+      ],
+      "to": "next",
+      "as": "well",
+      "over": true,
+      "skip": [
+       0
+      ]
+     }
+    ]
+   },
+   {
+    "name": "Cuti Peristiwa Jubli Perak Sultan Selangor",
+    "when": {
+     "dates": [
+      "2026-10-25"
+     ]
+    },
+    "regions": [
+     "MY.12"
+    ],
+    "move": [
+     {
+      "on": [
+       0
+      ],
+      "to": "next",
+      "as": "well",
+      "following": true
+     }
+    ]
+   },
+   {
+    "name": "Hari Keputeraan Sultan Perak",
+    "when": {
+     "dates": [
+      "2026-11-06",
+      "2027-11-05"
+     ]
+    },
+    "regions": [
+     "MY.07"
+    ],
+    "move": [
+     {
+      "on": [
+       0
+      ],
+      "to": "next",
+      "as": "well",
+      "following": true
+     }
+    ]
+   },
+   {
+    "name": "Hari Deepavali",
+    "when": {
+     "dates": [
+      "2026-11-08",
+      "2027-10-28"
+     ]
+    },
+    "regions": [
+     "MY.01",
+     "MY.04",
+     "MY.05",
+     "MY.06",
+     "MY.07",
+     "MY.08",
+     "MY.09",
+     "MY.12",
+     "MY.14",
+     "MY.15",
+     "MY.17"
+    ],
+    "move": [
+     {
+      "on": [
+       0
+      ],
+      "to": "next",
+      "as": "well",
+      "following": true
+     }
+    ]
+   },
+   {
+    "name": "Hari Deepavali",
+    "when": {
+     "dates": [
+      "2026-11-08",
+      "2027-10-28"
+     ]
+    },
+    "regions": [
+     "MY.16"
+    ],
+    "move": [
+     {
+      "on": [
+       0
+      ],
+      "to": "next",
+      "as": "well"
+     }
+    ]
+   },
+   {
+    "name": "Hari Deepavali",
+    "when": {
+     "dates": [
+      "2026-11-08",
+      "2027-10-28"
+     ]
+    },
+    "regions": [
+     "MY.02",
+     "MY.03",
+     "MY.13"
+    ]
+   },
+   {
+    "name": "Hari Keputeraan Sultan Selangor",
+    "when": {
+     "dates": [
+      "2026-12-11",
+      "2027-12-11"
+     ]
+    },
+    "regions": [
+     "MY.12"
+    ],
+    "move": [
+     {
+      "on": [
+       0
+      ],
+      "to": "next",
+      "as": "well",
+      "following": true
+     }
+    ]
+   },
+   {
+    "name": "Christmas Eve",
+    "when": {
+     "dates": [
+      "2026-12-24",
+      "2027-12-24"
+     ]
+    },
+    "regions": [
+     "MY.16"
+    ],
+    "move": [
+     {
+      "on": [
+       0
+      ],
+      "to": "next",
+      "as": "well"
+     }
+    ]
+   },
+   {
+    "name": "Hari Krismas",
+    "when": {
+     "dates": [
+      "2026-12-25",
+      "2027-12-25"
+     ]
+    }
+   },
+   {
+    "name": "Hari Krismas",
+    "when": {
+     "dates": [
+      "2026-12-25",
+      "2027-12-25"
+     ]
+    },
+    "regions": [
+     "MY.01",
+     "MY.04",
+     "MY.05",
+     "MY.06",
+     "MY.07",
+     "MY.08",
+     "MY.09",
+     "MY.12",
+     "MY.14",
+     "MY.15",
+     "MY.17"
+    ],
+    "move": [
+     {
+      "on": [
+       0
+      ],
+      "to": "next",
+      "as": "well",
+      "following": true
+     }
+    ]
+   },
+   {
+    "name": "Hari Krismas",
+    "when": {
+     "dates": [
+      "2026-12-25",
+      "2027-12-25"
+     ]
+    },
+    "regions": [
+     "MY.16"
+    ],
+    "move": [
+     {
+      "on": [
+       0
+      ],
+      "to": "next",
+      "as": "well"
+     }
+    ]
+   },
+   {
+    "name": "Hari Krismas",
+    "when": {
+     "dates": [
+      "2026-12-25",
+      "2027-12-25"
+     ]
+    },
+    "regions": [
+     "MY.11"
+    ],
+    "move": [
+     {
+      "on": [
+       0
+      ],
+      "to": "next",
+      "as": "well"
+     },
+     {
+      "on": [
+       1,
+       2,
+       3,
+       4,
+       5,
+       6
+      ],
+      "to": "next",
+      "as": "well",
+      "over": true,
+      "skip": [
+       0
+      ]
+     }
+    ]
+   },
+   {
+    "name": "Hari Krismas",
+    "when": {
+     "dates": [
+      "2026-12-25",
+      "2027-12-25"
+     ]
+    },
+    "regions": [
+     "MY.02",
+     "MY.03",
+     "MY.13"
+    ]
+   }
+  ]
+ },
+ "MZ": {
+  "substitute": [
+   {
+    "on": [
+     0
+    ],
+    "to": "next"
+   }
+  ],
+  "holidays": [
+   {
+    "name": "Ano Novo",
+    "when": {
+     "fixed": [
+      1,
+      1
+     ]
+    }
+   },
+   {
+    "name": "Dia dos Heróis Moçambicanos",
+    "when": {
+     "fixed": [
+      2,
+      3
+     ]
+    }
+   },
+   {
+    "name": "Dia da Mulher Moçambicana",
+    "when": {
+     "fixed": [
+      4,
+      7
+     ]
+    }
+   },
+   {
+    "name": "Dia Internacional do Trabalhador",
+    "when": {
+     "fixed": [
+      5,
+      1
+     ]
+    }
+   },
+   {
+    "name": "Dia da Independência Nacional",
+    "when": {
+     "fixed": [
+      6,
+      25
+     ]
+    }
+   },
+   {
+    "name": "Dia dos Acordos de Lusaka",
+    "when": {
+     "fixed": [
+      9,
+      7
+     ]
+    }
+   },
+   {
+    "name": "Dia das Forças Armadas",
+    "when": {
+     "fixed": [
+      9,
+      25
+     ]
+    }
+   },
+   {
+    "name": "Dia da Paz e Reconciliação Nacional",
+    "when": {
+     "fixed": [
+      10,
+      4
+     ]
+    }
+   },
+   {
+    "name": "Dia da Família",
+    "when": {
+     "fixed": [
+      12,
+      25
+     ]
+    }
+   }
+  ]
+ },
  "NA": {
   "substitute": [
    {
@@ -26787,6 +33709,202 @@
    }
   ]
  },
+ "NF": {
+  "holidays": [
+   {
+    "name": "New Year's Day",
+    "when": {
+     "fixed": [
+      1,
+      1
+     ]
+    },
+    "move": [
+     {
+      "on": [
+       6,
+       0
+      ],
+      "to": "next",
+      "as": "well"
+     }
+    ]
+   },
+   {
+    "name": "Australia Day",
+    "when": {
+     "fixed": [
+      1,
+      26
+     ]
+    },
+    "move": [
+     {
+      "on": [
+       6,
+       0
+      ],
+      "to": "next"
+     }
+    ]
+   },
+   {
+    "name": "Foundation Day",
+    "when": {
+     "fixed": [
+      3,
+      6
+     ]
+    },
+    "move": [
+     {
+      "on": [
+       0
+      ],
+      "to": "next",
+      "as": "well"
+     }
+    ]
+   },
+   {
+    "name": "Good Friday",
+    "when": {
+     "easter": -2
+    }
+   },
+   {
+    "name": "Easter Monday",
+    "when": {
+     "easter": 1
+    }
+   },
+   {
+    "name": "Anzac Day",
+    "when": {
+     "fixed": [
+      4,
+      25
+     ]
+    }
+   },
+   {
+    "name": "Bounty Day",
+    "when": {
+     "fixed": [
+      6,
+      8
+     ]
+    },
+    "move": [
+     {
+      "on": [
+       6,
+       0
+      ],
+      "to": "next",
+      "as": "well"
+     }
+    ]
+   },
+   {
+    "name": "Sovereign's Birthday",
+    "when": {
+     "after": [
+      6,
+      10,
+      1
+     ]
+    },
+    "except": [
+     2030,
+     2041,
+     2047,
+     2052,
+     2058,
+     2069,
+     2075,
+     2080,
+     2086,
+     2097
+    ]
+   },
+   {
+    "name": "Sovereign's Birthday",
+    "when": {
+     "dates": [
+      "2030-06-17",
+      "2041-06-17",
+      "2047-06-17",
+      "2052-06-17",
+      "2058-06-17",
+      "2069-06-17",
+      "2075-06-17",
+      "2080-06-17",
+      "2086-06-17",
+      "2097-06-17"
+     ]
+    }
+   },
+   {
+    "name": "Show Day",
+    "when": {
+     "nth": [
+      10,
+      1,
+      2
+     ]
+    }
+   },
+   {
+    "name": "Thanksgiving",
+    "when": {
+     "nth": [
+      11,
+      3,
+      -1
+     ]
+    }
+   },
+   {
+    "name": "Christmas Day",
+    "when": {
+     "fixed": [
+      12,
+      25
+     ]
+    },
+    "move": [
+     {
+      "on": [
+       6,
+       0
+      ],
+      "to": "next",
+      "as": "well"
+     }
+    ]
+   },
+   {
+    "name": "Boxing Day",
+    "when": {
+     "fixed": [
+      12,
+      26
+     ]
+    },
+    "move": [
+     {
+      "on": [
+       6,
+       0
+      ],
+      "to": "next",
+      "as": "well"
+     }
+    ]
+   }
+  ]
+ },
  "NG": {
   "announcedTo": 2026,
   "holidays": [
@@ -26920,6 +34038,130 @@
    },
    {
     "name": "Christmas Day",
+    "when": {
+     "fixed": [
+      12,
+      25
+     ]
+    }
+   }
+  ]
+ },
+ "NI": {
+  "holidays": [
+   {
+    "name": "Año Nuevo",
+    "when": {
+     "fixed": [
+      1,
+      1
+     ]
+    }
+   },
+   {
+    "name": "Natalicio del poeta Rubén Darío",
+    "when": {
+     "fixed": [
+      1,
+      18
+     ]
+    }
+   },
+   {
+    "name": "Natalicio del cardenal Miguel Obando y Bravo",
+    "when": {
+     "fixed": [
+      2,
+      2
+     ]
+    }
+   },
+   {
+    "name": "Fallecimiento de Augusto C. Sandino",
+    "when": {
+     "fixed": [
+      2,
+      21
+     ]
+    }
+   },
+   {
+    "name": "Jueves Santo",
+    "when": {
+     "easter": -3
+    }
+   },
+   {
+    "name": "Viernes Santo",
+    "when": {
+     "easter": -2
+    }
+   },
+   {
+    "name": "Día Internacional de los Trabajadores",
+    "when": {
+     "fixed": [
+      5,
+      1
+     ]
+    }
+   },
+   {
+    "name": "Día de las Madres",
+    "when": {
+     "fixed": [
+      5,
+      30
+     ]
+    }
+   },
+   {
+    "name": "Aniversario de la Revolución Sandinista",
+    "when": {
+     "fixed": [
+      7,
+      19
+     ]
+    }
+   },
+   {
+    "name": "Aniversario de la Batalla de San Jacinto",
+    "when": {
+     "fixed": [
+      9,
+      14
+     ]
+    }
+   },
+   {
+    "name": "Aniversario de la Independencia de Centroamérica",
+    "when": {
+     "fixed": [
+      9,
+      15
+     ]
+    }
+   },
+   {
+    "name": "Fallecimiento de Carlos Fonseca",
+    "when": {
+     "fixed": [
+      11,
+      8
+     ]
+    }
+   },
+   {
+    "name": "Día de la Inmaculada Concepción de María",
+    "when": {
+     "fixed": [
+      12,
+      8
+     ]
+    }
+   },
+   {
+    "name": "Navidad",
     "when": {
      "fixed": [
       12,
@@ -29707,6 +36949,100 @@
    }
   ]
  },
+ "PM": {
+  "holidays": [
+   {
+    "name": "New Year’s Day",
+    "when": {
+     "fixed": [
+      1,
+      1
+     ]
+    }
+   },
+   {
+    "name": "Easter Monday",
+    "when": {
+     "easter": 1
+    }
+   },
+   {
+    "name": "Labour Day",
+    "when": {
+     "fixed": [
+      5,
+      1
+     ]
+    }
+   },
+   {
+    "name": "Victory in Europe Day",
+    "when": {
+     "fixed": [
+      5,
+      8
+     ]
+    }
+   },
+   {
+    "name": "Ascension Day",
+    "when": {
+     "easter": 39
+    }
+   },
+   {
+    "name": "Whit Monday",
+    "when": {
+     "easter": 50
+    }
+   },
+   {
+    "name": "Bastille Day",
+    "when": {
+     "fixed": [
+      7,
+      14
+     ]
+    }
+   },
+   {
+    "name": "Assumption Day",
+    "when": {
+     "fixed": [
+      8,
+      15
+     ]
+    }
+   },
+   {
+    "name": "All Saints’ Day",
+    "when": {
+     "fixed": [
+      11,
+      1
+     ]
+    }
+   },
+   {
+    "name": "Armistice Day",
+    "when": {
+     "fixed": [
+      11,
+      11
+     ]
+    }
+   },
+   {
+    "name": "Christmas Day",
+    "when": {
+     "fixed": [
+      12,
+      25
+     ]
+    }
+   }
+  ]
+ },
  "PN": {
   "holidays": [
    {
@@ -29946,6 +37282,198 @@
    },
    {
     "name": "Día de Navidad",
+    "when": {
+     "fixed": [
+      12,
+      25
+     ]
+    }
+   }
+  ]
+ },
+ "PS": {
+  "announcedTo": 2026,
+  "holidays": [
+   {
+    "name": "رأس السنة الميلادية",
+    "when": {
+     "fixed": [
+      1,
+      1
+     ]
+    }
+   },
+   {
+    "name": "عيد الميلاد المجيد الشرقي",
+    "when": {
+     "fixed": [
+      1,
+      7
+     ]
+    }
+   },
+   {
+    "name": "ذكرى الإسراء والمعراج",
+    "when": {
+     "lunar": [
+      "islamic-umalqura",
+      "7",
+      27
+     ]
+    }
+   },
+   {
+    "name": "يوم المرأة العالمي",
+    "when": {
+     "fixed": [
+      3,
+      8
+     ]
+    }
+   },
+   {
+    "name": "وقفة عيد الفطر",
+    "when": {
+     "lunar": [
+      "islamic-umalqura",
+      "10",
+      1
+     ]
+    },
+    "plus": -1
+   },
+   {
+    "name": "عيد الفطر السعيد",
+    "when": {
+     "lunar": [
+      "islamic-umalqura",
+      "10",
+      1
+     ]
+    }
+   },
+   {
+    "name": "عيد الفطر السعيد",
+    "when": {
+     "lunar": [
+      "islamic-umalqura",
+      "10",
+      1
+     ]
+    },
+    "plus": 1
+   },
+   {
+    "name": "عيد الفطر السعيد",
+    "when": {
+     "lunar": [
+      "islamic-umalqura",
+      "10",
+      1
+     ]
+    },
+    "plus": 2
+   },
+   {
+    "name": "عيد الفصح المجيد",
+    "when": {
+     "easter": 0,
+     "orthodox": true
+    }
+   },
+   {
+    "name": "عيد العمال",
+    "when": {
+     "fixed": [
+      5,
+      1
+     ]
+    }
+   },
+   {
+    "name": "وقفة عيد الأضحى",
+    "when": {
+     "lunar": [
+      "islamic-umalqura",
+      "12",
+      9
+     ]
+    }
+   },
+   {
+    "name": "عيد الأضحى المبارك",
+    "when": {
+     "lunar": [
+      "islamic-umalqura",
+      "12",
+      10
+     ]
+    }
+   },
+   {
+    "name": "عيد الأضحى المبارك",
+    "when": {
+     "lunar": [
+      "islamic-umalqura",
+      "12",
+      10
+     ]
+    },
+    "plus": 1
+   },
+   {
+    "name": "عيد الأضحى المبارك",
+    "when": {
+     "lunar": [
+      "islamic-umalqura",
+      "12",
+      10
+     ]
+    },
+    "plus": 2
+   },
+   {
+    "name": "عيد الأضحى المبارك",
+    "when": {
+     "lunar": [
+      "islamic-umalqura",
+      "12",
+      10
+     ]
+    },
+    "plus": 3
+   },
+   {
+    "name": "رأس السنة الهجرية",
+    "when": {
+     "lunar": [
+      "islamic-umalqura",
+      "1",
+      1
+     ]
+    }
+   },
+   {
+    "name": "ذكرى المولد النبوي الشريف",
+    "when": {
+     "lunar": [
+      "islamic-umalqura",
+      "3",
+      12
+     ]
+    }
+   },
+   {
+    "name": "عيد الاستقلال",
+    "when": {
+     "fixed": [
+      11,
+      15
+     ]
+    }
+   },
+   {
+    "name": "عيد الميلاد المجيد الغربي",
     "when": {
      "fixed": [
       12,
@@ -33927,6 +41455,249 @@
    }
   ]
  },
+ "SC": {
+  "substitute": [
+   {
+    "on": [
+     0
+    ],
+    "to": "next",
+    "as": "well"
+   }
+  ],
+  "announcedTo": 2026,
+  "holidays": [
+   {
+    "name": "New Year’s Day",
+    "when": {
+     "fixed": [
+      1,
+      1
+     ]
+    }
+   },
+   {
+    "name": "New Year Holiday",
+    "when": {
+     "fixed": [
+      1,
+      2
+     ]
+    }
+   },
+   {
+    "name": "Abolition of Slavery Day",
+    "when": {
+     "dates": [
+      "2026-02-01"
+     ]
+    }
+   },
+   {
+    "name": "Good Friday",
+    "when": {
+     "easter": -2
+    }
+   },
+   {
+    "name": "Easter Saturday",
+    "when": {
+     "easter": -1
+    }
+   },
+   {
+    "name": "Easter Monday",
+    "when": {
+     "easter": 1
+    }
+   },
+   {
+    "name": "Labour Day",
+    "when": {
+     "fixed": [
+      5,
+      1
+     ]
+    }
+   },
+   {
+    "name": "The Fête Dieu (Corpus Christi)",
+    "when": {
+     "easter": 60
+    }
+   },
+   {
+    "name": "Constitution Day",
+    "when": {
+     "fixed": [
+      6,
+      18
+     ]
+    }
+   },
+   {
+    "name": "Independence (National) Day",
+    "when": {
+     "fixed": [
+      6,
+      29
+     ]
+    }
+   },
+   {
+    "name": "Independence (National) Day",
+    "when": {
+     "dates": [
+      "2026-06-30"
+     ]
+    }
+   },
+   {
+    "name": "Assumption Day",
+    "when": {
+     "fixed": [
+      8,
+      15
+     ]
+    }
+   },
+   {
+    "name": "All Saints Day",
+    "when": {
+     "fixed": [
+      11,
+      1
+     ]
+    }
+   },
+   {
+    "name": "The Feast of the Immaculate Conception",
+    "when": {
+     "fixed": [
+      12,
+      8
+     ]
+    }
+   },
+   {
+    "name": "Christmas Day",
+    "when": {
+     "fixed": [
+      12,
+      25
+     ]
+    }
+   }
+  ]
+ },
+ "SD": {
+  "announcedTo": 2026,
+  "holidays": [
+   {
+    "name": "عيد الاستقلال",
+    "when": {
+     "fixed": [
+      1,
+      1
+     ]
+    }
+   },
+   {
+    "name": "عيد الميلاد المجيد",
+    "when": {
+     "fixed": [
+      12,
+      25
+     ]
+    }
+   },
+   {
+    "name": "عيد الفطر المبارك",
+    "when": {
+     "lunar": [
+      "islamic-umalqura",
+      "10",
+      1
+     ]
+    },
+    "from": 2027
+   },
+   {
+    "name": "عيد الأضحى المبارك",
+    "when": {
+     "lunar": [
+      "islamic-umalqura",
+      "12",
+      10
+     ]
+    },
+    "from": 2027
+   },
+   {
+    "name": "رأس السنة الهجرية",
+    "when": {
+     "lunar": [
+      "islamic-umalqura",
+      "1",
+      1
+     ]
+    },
+    "from": 2027
+   },
+   {
+    "name": "المولد النبوي الشريف",
+    "when": {
+     "lunar": [
+      "islamic-umalqura",
+      "3",
+      12
+     ]
+    },
+    "from": 2027
+   },
+   {
+    "name": "عيد الفطر المبارك",
+    "when": {
+     "dates": [
+      "2026-03-19",
+      "2026-03-20",
+      "2026-03-21",
+      "2026-03-22",
+      "2026-03-23",
+      "2026-03-24"
+     ]
+    }
+   },
+   {
+    "name": "عيد الأضحى المبارك",
+    "when": {
+     "dates": [
+      "2026-05-26",
+      "2026-05-27",
+      "2026-05-28",
+      "2026-05-29",
+      "2026-05-30"
+     ]
+    }
+   },
+   {
+    "name": "رأس السنة الهجرية",
+    "when": {
+     "dates": [
+      "2026-06-17"
+     ]
+    }
+   },
+   {
+    "name": "المولد النبوي الشريف",
+    "when": {
+     "dates": [
+      "2026-08-25"
+     ]
+    }
+   }
+  ]
+ },
  "SE": {
   "holidays": [
    {
@@ -34855,6 +42626,159 @@
    }
   ]
  },
+ "ST": {
+  "substitute": [
+   {
+    "on": [
+     0
+    ],
+    "to": "next"
+   }
+  ],
+  "holidays": [
+   {
+    "name": "Ano Novo",
+    "when": {
+     "fixed": [
+      1,
+      1
+     ]
+    }
+   },
+   {
+    "name": "Dia do Rei Amador",
+    "when": {
+     "fixed": [
+      1,
+      4
+     ]
+    }
+   },
+   {
+    "name": "Descoberta da Ilha do Príncipe",
+    "when": {
+     "fixed": [
+      1,
+      17
+     ]
+    }
+   },
+   {
+    "name": "Dia dos Mártires da Liberdade",
+    "when": {
+     "fixed": [
+      2,
+      3
+     ]
+    }
+   },
+   {
+    "name": "Autonomia da Ilha do Príncipe",
+    "when": {
+     "fixed": [
+      4,
+      29
+     ]
+    }
+   },
+   {
+    "name": "Dia do Trabalhador",
+    "when": {
+     "fixed": [
+      5,
+      1
+     ]
+    }
+   },
+   {
+    "name": "Dia Mundial da Criança",
+    "when": {
+     "fixed": [
+      6,
+      1
+     ]
+    }
+   },
+   {
+    "name": "Dia da Independência",
+    "when": {
+     "fixed": [
+      7,
+      12
+     ]
+    }
+   },
+   {
+    "name": "Festa de São Lourenço",
+    "when": {
+     "fixed": [
+      8,
+      15
+     ]
+    }
+   },
+   {
+    "name": "Dia das Forças Armadas",
+    "when": {
+     "fixed": [
+      9,
+      6
+     ]
+    }
+   },
+   {
+    "name": "Dia da Reforma Agrícola",
+    "when": {
+     "fixed": [
+      9,
+      30
+     ]
+    }
+   },
+   {
+    "name": "Dia dos Finados",
+    "when": {
+     "fixed": [
+      11,
+      2
+     ]
+    }
+   },
+   {
+    "name": "Dia da Assinatura do Acordo de Argel",
+    "when": {
+     "fixed": [
+      11,
+      26
+     ]
+    }
+   },
+   {
+    "name": "Dia de São Tomé e do Governo de Transição",
+    "when": {
+     "fixed": [
+      12,
+      21
+     ]
+    }
+   },
+   {
+    "name": "Dia de Natal ou da Família",
+    "when": {
+     "fixed": [
+      12,
+      25
+     ]
+    }
+   },
+   {
+    "name": "Dia de Cinzas",
+    "when": {
+     "easter": -46
+    }
+   }
+  ]
+ },
  "SV": {
   "holidays": [
    {
@@ -34945,6 +42869,319 @@
       12,
       25
      ]
+    }
+   }
+  ]
+ },
+ "SX": {
+  "announcedTo": 2028,
+  "holidays": [
+   {
+    "name": "New Year's Day",
+    "when": {
+     "fixed": [
+      1,
+      1
+     ]
+    }
+   },
+   {
+    "name": "Good Friday",
+    "when": {
+     "easter": -2
+    }
+   },
+   {
+    "name": "Easter Sunday",
+    "when": {
+     "easter": 0
+    }
+   },
+   {
+    "name": "Easter Monday",
+    "when": {
+     "easter": 1
+    }
+   },
+   {
+    "name": "King's Day",
+    "when": {
+     "fixed": [
+      4,
+      27
+     ]
+    },
+    "move": [
+     {
+      "on": [
+       0
+      ],
+      "to": "previous"
+     }
+    ]
+   },
+   {
+    "name": "Carnival Day",
+    "when": {
+     "dates": [
+      "2026-04-30",
+      "2027-04-30",
+      "2028-05-02"
+     ]
+    }
+   },
+   {
+    "name": "Labour Day",
+    "when": {
+     "fixed": [
+      5,
+      1
+     ]
+    },
+    "move": [
+     {
+      "on": [
+       0
+      ],
+      "to": "next"
+     }
+    ]
+   },
+   {
+    "name": "Ascension Day",
+    "when": {
+     "easter": 39
+    }
+   },
+   {
+    "name": "Whit Sunday",
+    "when": {
+     "easter": 49
+    }
+   },
+   {
+    "name": "Emancipation Day",
+    "when": {
+     "fixed": [
+      7,
+      1
+     ]
+    },
+    "move": [
+     {
+      "on": [
+       0
+      ],
+      "to": "next"
+     }
+    ]
+   },
+   {
+    "name": "Constitution Day",
+    "when": {
+     "nth": [
+      10,
+      1,
+      2
+     ]
+    }
+   },
+   {
+    "name": "St. Maarten's Day",
+    "when": {
+     "fixed": [
+      11,
+      11
+     ]
+    }
+   },
+   {
+    "name": "Christmas Day",
+    "when": {
+     "fixed": [
+      12,
+      25
+     ]
+    }
+   },
+   {
+    "name": "Boxing Day",
+    "when": {
+     "fixed": [
+      12,
+      26
+     ]
+    }
+   }
+  ]
+ },
+ "SY": {
+  "announcedTo": 2026,
+  "holidays": [
+   {
+    "name": "عيد الفطر السعيد",
+    "when": {
+     "lunar": [
+      "islamic-umalqura",
+      "10",
+      1
+     ]
+    }
+   },
+   {
+    "name": "عيد الفطر السعيد",
+    "when": {
+     "lunar": [
+      "islamic-umalqura",
+      "10",
+      2
+     ]
+    }
+   },
+   {
+    "name": "عيد الفطر السعيد",
+    "when": {
+     "lunar": [
+      "islamic-umalqura",
+      "10",
+      3
+     ]
+    }
+   },
+   {
+    "name": "عيد الأضحى المبارك",
+    "when": {
+     "lunar": [
+      "islamic-umalqura",
+      "12",
+      9
+     ]
+    }
+   },
+   {
+    "name": "عيد الأضحى المبارك",
+    "when": {
+     "lunar": [
+      "islamic-umalqura",
+      "12",
+      10
+     ]
+    }
+   },
+   {
+    "name": "عيد الأضحى المبارك",
+    "when": {
+     "lunar": [
+      "islamic-umalqura",
+      "12",
+      11
+     ]
+    }
+   },
+   {
+    "name": "عيد الأضحى المبارك",
+    "when": {
+     "lunar": [
+      "islamic-umalqura",
+      "12",
+      12
+     ]
+    }
+   },
+   {
+    "name": "عيد رأس السنة الهجرية",
+    "when": {
+     "lunar": [
+      "islamic-umalqura",
+      "1",
+      1
+     ]
+    }
+   },
+   {
+    "name": "عيد المولد النبوي الشريف",
+    "when": {
+     "lunar": [
+      "islamic-umalqura",
+      "3",
+      12
+     ]
+    }
+   },
+   {
+    "name": "عيد رأس السنة الميلادية",
+    "when": {
+     "fixed": [
+      1,
+      1
+     ]
+    }
+   },
+   {
+    "name": "عيد الثورة السورية",
+    "when": {
+     "fixed": [
+      3,
+      18
+     ]
+    }
+   },
+   {
+    "name": "عيد الأم",
+    "when": {
+     "fixed": [
+      3,
+      21
+     ]
+    }
+   },
+   {
+    "name": "عيد الجلاء",
+    "when": {
+     "fixed": [
+      4,
+      17
+     ]
+    }
+   },
+   {
+    "name": "عيد العمال",
+    "when": {
+     "fixed": [
+      5,
+      1
+     ]
+    }
+   },
+   {
+    "name": "عيد التحرير",
+    "when": {
+     "fixed": [
+      12,
+      8
+     ]
+    }
+   },
+   {
+    "name": "عيد الميلاد",
+    "when": {
+     "fixed": [
+      12,
+      25
+     ]
+    }
+   },
+   {
+    "name": "عيد الفصح لدى الطوائف المسيحية الغربية",
+    "when": {
+     "easter": 0
+    }
+   },
+   {
+    "name": "عيد الفصح لدى الطوائف المسيحية الشرقية",
+    "when": {
+     "easter": 0,
+     "orthodox": true
     }
    }
   ]
@@ -35589,6 +43826,187 @@
    "TH.70": 2026
   }
  },
+ "TL": {
+  "announcedTo": 2026,
+  "holidays": [
+   {
+    "name": "Dia de Ano Novo",
+    "when": {
+     "fixed": [
+      1,
+      1
+     ]
+    }
+   },
+   {
+    "name": "Dia dos Veteranos",
+    "when": {
+     "fixed": [
+      3,
+      3
+     ]
+    }
+   },
+   {
+    "name": "Idul Fitri",
+    "when": {
+     "dates": [
+      "2026-03-20"
+     ]
+    }
+   },
+   {
+    "name": "Idul Fitri",
+    "when": {
+     "lunar": [
+      "islamic-umalqura",
+      "10",
+      1
+     ]
+    },
+    "from": 2027
+   },
+   {
+    "name": "Sexta-Feira Santa",
+    "when": {
+     "easter": -2
+    }
+   },
+   {
+    "name": "Dia Mundial do Trabalhador",
+    "when": {
+     "fixed": [
+      5,
+      1
+     ]
+    }
+   },
+   {
+    "name": "Dia da Restauração da Independência",
+    "when": {
+     "fixed": [
+      5,
+      20
+     ]
+    }
+   },
+   {
+    "name": "Idul Adha",
+    "when": {
+     "dates": [
+      "2026-05-27"
+     ]
+    }
+   },
+   {
+    "name": "Idul Adha",
+    "when": {
+     "lunar": [
+      "islamic-umalqura",
+      "12",
+      10
+     ]
+    },
+    "from": 2027
+   },
+   {
+    "name": "Festa do Corpo de Deus",
+    "when": {
+     "easter": 60
+    }
+   },
+   {
+    "name": "Dia da Consulta Popular",
+    "when": {
+     "fixed": [
+      8,
+      30
+     ]
+    }
+   },
+   {
+    "name": "Dia de Todos os Santos",
+    "when": {
+     "fixed": [
+      11,
+      1
+     ]
+    }
+   },
+   {
+    "name": "Dia de Todos os Fiéis Defuntos",
+    "when": {
+     "fixed": [
+      11,
+      2
+     ]
+    }
+   },
+   {
+    "name": "Dia Nacional da Mulher",
+    "when": {
+     "fixed": [
+      11,
+      3
+     ]
+    }
+   },
+   {
+    "name": "Dia Nacional da Juventude",
+    "when": {
+     "fixed": [
+      11,
+      12
+     ]
+    }
+   },
+   {
+    "name": "Dia da Proclamação da Independência",
+    "when": {
+     "fixed": [
+      11,
+      28
+     ]
+    }
+   },
+   {
+    "name": "Dia da Memória",
+    "when": {
+     "fixed": [
+      12,
+      7
+     ]
+    }
+   },
+   {
+    "name": "Dia de Nossa Senhora da Imaculada Conceição",
+    "when": {
+     "fixed": [
+      12,
+      8
+     ]
+    }
+   },
+   {
+    "name": "Dia de Natal",
+    "when": {
+     "fixed": [
+      12,
+      25
+     ]
+    }
+   },
+   {
+    "name": "Dia dos Heróis Nacionais",
+    "when": {
+     "fixed": [
+      12,
+      31
+     ]
+    }
+   }
+  ]
+ },
  "TM": {
   "substitute": [
    {
@@ -35695,6 +44113,118 @@
      "fixed": [
       12,
       12
+     ]
+    }
+   }
+  ]
+ },
+ "TN": {
+  "announcedTo": 2026,
+  "holidays": [
+   {
+    "name": "Nouvel an",
+    "when": {
+     "fixed": [
+      1,
+      1
+     ]
+    }
+   },
+   {
+    "name": "Fête de l'indépendance",
+    "when": {
+     "fixed": [
+      3,
+      20
+     ]
+    }
+   },
+   {
+    "name": "Commémoration des martyrs",
+    "when": {
+     "fixed": [
+      4,
+      9
+     ]
+    }
+   },
+   {
+    "name": "Fête du travail",
+    "when": {
+     "fixed": [
+      5,
+      1
+     ]
+    }
+   },
+   {
+    "name": "Fête de la République",
+    "when": {
+     "fixed": [
+      7,
+      25
+     ]
+    }
+   },
+   {
+    "name": "Fête de la femme",
+    "when": {
+     "fixed": [
+      8,
+      13
+     ]
+    }
+   },
+   {
+    "name": "Fête de l'évacuation",
+    "when": {
+     "fixed": [
+      10,
+      15
+     ]
+    }
+   },
+   {
+    "name": "Fête de la révolution",
+    "when": {
+     "fixed": [
+      12,
+      17
+     ]
+    }
+   },
+   {
+    "name": "Aïd el-Fitr",
+    "when": {
+     "dates": [
+      "2026-03-20",
+      "2026-03-21",
+      "2026-03-22"
+     ]
+    }
+   },
+   {
+    "name": "Aïd el-Idha",
+    "when": {
+     "dates": [
+      "2026-05-27",
+      "2026-05-28"
+     ]
+    }
+   },
+   {
+    "name": "Nouvel an de l'hégire",
+    "when": {
+     "dates": [
+      "2026-06-16"
+     ]
+    }
+   },
+   {
+    "name": "Le Mouled",
+    "when": {
+     "dates": [
+      "2026-08-25"
      ]
     }
    }
@@ -37020,6 +45550,134 @@
     "except": [
      2026
     ]
+   }
+  ]
+ },
+ "UG": {
+  "announcedTo": 2026,
+  "holidays": [
+   {
+    "name": "New Year's Day",
+    "when": {
+     "fixed": [
+      1,
+      1
+     ]
+    }
+   },
+   {
+    "name": "Archbishop Janani Luwum Day",
+    "when": {
+     "fixed": [
+      2,
+      16
+     ]
+    }
+   },
+   {
+    "name": "Women's Day",
+    "when": {
+     "fixed": [
+      3,
+      8
+     ]
+    }
+   },
+   {
+    "name": "Good Friday",
+    "when": {
+     "easter": -2
+    }
+   },
+   {
+    "name": "Easter Monday",
+    "when": {
+     "easter": 1
+    }
+   },
+   {
+    "name": "Labour Day",
+    "when": {
+     "fixed": [
+      5,
+      1
+     ]
+    }
+   },
+   {
+    "name": "Martyrs' Day",
+    "when": {
+     "fixed": [
+      6,
+      3
+     ]
+    }
+   },
+   {
+    "name": "National Heroes Day",
+    "when": {
+     "fixed": [
+      6,
+      9
+     ]
+    }
+   },
+   {
+    "name": "Independence Day",
+    "when": {
+     "fixed": [
+      10,
+      9
+     ]
+    }
+   },
+   {
+    "name": "Christmas Day",
+    "when": {
+     "fixed": [
+      12,
+      25
+     ]
+    }
+   },
+   {
+    "name": "Boxing Day",
+    "when": {
+     "fixed": [
+      12,
+      26
+     ]
+    }
+   },
+   {
+    "name": "Idd el-Fitr Day",
+    "when": {
+     "lunar": [
+      "islamic-umalqura",
+      "10",
+      1
+     ]
+    }
+   },
+   {
+    "name": "Idd-ul-Adha Day",
+    "when": {
+     "lunar": [
+      "islamic-umalqura",
+      "12",
+      10
+     ]
+    }
+   },
+   {
+    "name": "Birth of Prophet Muhammed Day",
+    "when": {
+     "lunar": [
+      "islamic-umalqura",
+      "3",
+      12
+     ]
+    }
    }
   ]
  },
@@ -39204,6 +47862,134 @@
    }
   ]
  },
+ "VE": {
+  "regional": [],
+  "announcedTo": 2026,
+  "holidays": [
+   {
+    "name": "Día de júbilo nacional",
+    "when": {
+     "dates": [
+      "2026-03-18"
+     ]
+    }
+   },
+   {
+    "name": "Año Nuevo",
+    "when": {
+     "fixed": [
+      1,
+      1
+     ]
+    }
+   },
+   {
+    "name": "Lunes de Carnaval",
+    "when": {
+     "easter": -48
+    }
+   },
+   {
+    "name": "Martes de Carnaval",
+    "when": {
+     "easter": -47
+    }
+   },
+   {
+    "name": "Jueves Santo",
+    "when": {
+     "easter": -3
+    }
+   },
+   {
+    "name": "Viernes Santo",
+    "when": {
+     "easter": -2
+    }
+   },
+   {
+    "name": "Declaración de la Independencia",
+    "when": {
+     "fixed": [
+      4,
+      19
+     ]
+    }
+   },
+   {
+    "name": "Día del Trabajador",
+    "when": {
+     "fixed": [
+      5,
+      1
+     ]
+    }
+   },
+   {
+    "name": "Batalla de Carabobo",
+    "when": {
+     "fixed": [
+      6,
+      24
+     ]
+    }
+   },
+   {
+    "name": "Día de la Independencia",
+    "when": {
+     "fixed": [
+      7,
+      5
+     ]
+    }
+   },
+   {
+    "name": "Natalicio del Libertador",
+    "when": {
+     "fixed": [
+      7,
+      24
+     ]
+    }
+   },
+   {
+    "name": "Día de la Resistencia Indígena",
+    "when": {
+     "fixed": [
+      10,
+      12
+     ]
+    }
+   },
+   {
+    "name": "Nochebuena",
+    "when": {
+     "fixed": [
+      12,
+      24
+     ]
+    }
+   },
+   {
+    "name": "Navidad",
+    "when": {
+     "fixed": [
+      12,
+      25
+     ]
+    }
+   },
+   {
+    "name": "Fin de Año",
+    "when": {
+     "fixed": [
+      12,
+      31
+     ]
+    }
+   }
+  ]
+ },
  "VG": {
   "substitute": [
    {
@@ -39347,6 +48133,203 @@
    }
   ]
  },
+ "VI": {
+  "announcedTo": 2026,
+  "holidays": [
+   {
+    "name": "New Year’s Day",
+    "when": {
+     "fixed": [
+      1,
+      1
+     ]
+    }
+   },
+   {
+    "name": "Three Kings’ Day",
+    "when": {
+     "fixed": [
+      1,
+      6
+     ]
+    }
+   },
+   {
+    "name": "Martin Luther King, Jr., Birthday",
+    "when": {
+     "nth": [
+      1,
+      1,
+      3
+     ]
+    }
+   },
+   {
+    "name": "Presidents’ Day",
+    "when": {
+     "nth": [
+      2,
+      1,
+      3
+     ]
+    }
+   },
+   {
+    "name": "Transfer Day",
+    "when": {
+     "fixed": [
+      3,
+      31
+     ]
+    }
+   },
+   {
+    "name": "Holy Thursday",
+    "when": {
+     "easter": -3
+    }
+   },
+   {
+    "name": "Good Friday",
+    "when": {
+     "easter": -2
+    }
+   },
+   {
+    "name": "Easter Monday",
+    "when": {
+     "easter": 1
+    }
+   },
+   {
+    "name": "Memorial Day",
+    "when": {
+     "nth": [
+      5,
+      1,
+      -1
+     ]
+    }
+   },
+   {
+    "name": "Juneteenth",
+    "when": {
+     "fixed": [
+      6,
+      19
+     ]
+    }
+   },
+   {
+    "name": "V.I. Emancipation Day",
+    "when": {
+     "fixed": [
+      7,
+      3
+     ]
+    }
+   },
+   {
+    "name": "Independence Day",
+    "when": {
+     "fixed": [
+      7,
+      4
+     ]
+    }
+   },
+   {
+    "name": "Labor Day",
+    "when": {
+     "nth": [
+      9,
+      1,
+      1
+     ]
+    }
+   },
+   {
+    "name": "Columbus Day and Puerto Rico Friendship Day",
+    "when": {
+     "nth": [
+      10,
+      1,
+      2
+     ]
+    }
+   },
+   {
+    "name": "D. Hamilton Jackson Day",
+    "when": {
+     "fixed": [
+      11,
+      1
+     ]
+    }
+   },
+   {
+    "name": "Veterans Day",
+    "when": {
+     "fixed": [
+      11,
+      11
+     ]
+    }
+   },
+   {
+    "name": "Thanksgiving Day",
+    "when": {
+     "nth": [
+      11,
+      4,
+      4
+     ]
+    }
+   },
+   {
+    "name": "Christmas Day",
+    "when": {
+     "fixed": [
+      12,
+      25
+     ]
+    }
+   },
+   {
+    "name": "Christmas Second Day",
+    "when": {
+     "fixed": [
+      12,
+      26
+     ]
+    }
+   },
+   {
+    "name": "Crucian Christmas Festival Children’s Parade",
+    "when": {
+     "dates": [
+      "2026-01-02"
+     ]
+    }
+   },
+   {
+    "name": "D. Hamilton Jackson Day",
+    "when": {
+     "dates": [
+      "2026-11-02"
+     ]
+    }
+   },
+   {
+    "name": "Day after Thanksgiving",
+    "when": {
+     "dates": [
+      "2026-11-27"
+     ]
+    }
+   }
+  ]
+ },
  "VN": {
   "substitute": [
    {
@@ -39463,6 +48446,334 @@
      "fixed": [
       9,
       2
+     ]
+    }
+   }
+  ]
+ },
+ "VU": {
+  "substitute": [
+   {
+    "on": [
+     0
+    ],
+    "to": "next"
+   }
+  ],
+  "holidays": [
+   {
+    "name": "New Year’s Day",
+    "when": {
+     "fixed": [
+      1,
+      1
+     ]
+    }
+   },
+   {
+    "name": "Lini Day",
+    "when": {
+     "fixed": [
+      2,
+      21
+     ]
+    }
+   },
+   {
+    "name": "Custom Chiefs’ Day",
+    "when": {
+     "fixed": [
+      3,
+      5
+     ]
+    }
+   },
+   {
+    "name": "Good Friday",
+    "when": {
+     "easter": -2
+    }
+   },
+   {
+    "name": "Easter Monday",
+    "when": {
+     "easter": 1
+    }
+   },
+   {
+    "name": "Labour Day",
+    "when": {
+     "fixed": [
+      5,
+      1
+     ]
+    }
+   },
+   {
+    "name": "Ascension Day",
+    "when": {
+     "easter": 39
+    }
+   },
+   {
+    "name": "Children’s Day",
+    "when": {
+     "fixed": [
+      7,
+      24
+     ]
+    }
+   },
+   {
+    "name": "Independence Day",
+    "when": {
+     "fixed": [
+      7,
+      30
+     ]
+    }
+   },
+   {
+    "name": "Assumption Day",
+    "when": {
+     "fixed": [
+      8,
+      15
+     ]
+    }
+   },
+   {
+    "name": "Constitution Day",
+    "when": {
+     "fixed": [
+      10,
+      5
+     ]
+    }
+   },
+   {
+    "name": "Unity Day",
+    "when": {
+     "fixed": [
+      11,
+      29
+     ]
+    }
+   },
+   {
+    "name": "Christmas Day",
+    "when": {
+     "fixed": [
+      12,
+      25
+     ]
+    }
+   },
+   {
+    "name": "Family Day",
+    "when": {
+     "fixed": [
+      12,
+      26
+     ]
+    }
+   },
+   {
+    "name": "Shefa Day",
+    "when": {
+     "fixed": [
+      6,
+      18
+     ]
+    },
+    "fixed": true,
+    "regions": [
+     "VU.18"
+    ]
+   },
+   {
+    "name": "Penama Day",
+    "when": {
+     "fixed": [
+      9,
+      16
+     ]
+    },
+    "fixed": true,
+    "regions": [
+     "VU.17"
+    ]
+   },
+   {
+    "name": "Sanma Day",
+    "when": {
+     "fixed": [
+      9,
+      24
+     ]
+    },
+    "fixed": true,
+    "regions": [
+     "VU.13"
+    ]
+   },
+   {
+    "name": "Torba Day",
+    "when": {
+     "fixed": [
+      10,
+      2
+     ]
+    },
+    "fixed": true,
+    "regions": [
+     "VU.07"
+    ]
+   },
+   {
+    "name": "Tafea Day",
+    "when": {
+     "fixed": [
+      10,
+      8
+     ]
+    },
+    "fixed": true,
+    "regions": [
+     "VU.15"
+    ]
+   },
+   {
+    "name": "Malampa Day",
+    "when": {
+     "fixed": [
+      10,
+      10
+     ]
+    },
+    "fixed": true,
+    "regions": [
+     "VU.16"
+    ]
+   }
+  ]
+ },
+ "WF": {
+  "holidays": [
+   {
+    "name": "Jour de l’An",
+    "when": {
+     "fixed": [
+      1,
+      1
+     ]
+    }
+   },
+   {
+    "name": "Lundi de Pâques",
+    "when": {
+     "easter": 1
+    }
+   },
+   {
+    "name": "Fête du Travail",
+    "when": {
+     "fixed": [
+      5,
+      1
+     ]
+    }
+   },
+   {
+    "name": "Victoire 1945",
+    "when": {
+     "fixed": [
+      5,
+      8
+     ]
+    }
+   },
+   {
+    "name": "Ascension",
+    "when": {
+     "easter": 39
+    }
+   },
+   {
+    "name": "Lundi de Pentecôte",
+    "when": {
+     "easter": 50
+    }
+   },
+   {
+    "name": "Fête nationale",
+    "when": {
+     "fixed": [
+      7,
+      14
+     ]
+    }
+   },
+   {
+    "name": "Assomption",
+    "when": {
+     "fixed": [
+      8,
+      15
+     ]
+    }
+   },
+   {
+    "name": "Toussaint",
+    "when": {
+     "fixed": [
+      11,
+      1
+     ]
+    }
+   },
+   {
+    "name": "Armistice 1918",
+    "when": {
+     "fixed": [
+      11,
+      11
+     ]
+    }
+   },
+   {
+    "name": "Noël",
+    "when": {
+     "fixed": [
+      12,
+      25
+     ]
+    }
+   },
+   {
+    "name": "Saint Pierre Chanel",
+    "when": {
+     "fixed": [
+      4,
+      28
+     ]
+    }
+   },
+   {
+    "name": "Saints Pierre et Paul",
+    "when": {
+     "fixed": [
+      6,
+      29
+     ]
+    }
+   },
+   {
+    "name": "Fête du Territoire",
+    "when": {
+     "fixed": [
+      7,
+      29
      ]
     }
    }
@@ -39713,6 +49024,191 @@
    }
   ]
  },
+ "YE": {
+  "announcedTo": 2026,
+  "substitute": [
+   {
+    "on": [
+     5
+    ],
+    "to": "next",
+    "as": "well"
+   },
+   {
+    "on": [
+     0,
+     1,
+     2,
+     3,
+     4,
+     6
+    ],
+    "to": "next",
+    "as": "well",
+    "over": true,
+    "skip": [
+     5
+    ]
+   }
+  ],
+  "holidays": [
+   {
+    "name": "عيد الفطر المبارك",
+    "when": {
+     "lunar": [
+      "islamic-umalqura",
+      "9",
+      29
+     ]
+    }
+   },
+   {
+    "name": "عيد الفطر المبارك",
+    "when": {
+     "lunar": [
+      "islamic-umalqura",
+      "9",
+      30
+     ]
+    }
+   },
+   {
+    "name": "عيد الفطر المبارك",
+    "when": {
+     "lunar": [
+      "islamic-umalqura",
+      "10",
+      1
+     ]
+    }
+   },
+   {
+    "name": "عيد الفطر المبارك",
+    "when": {
+     "lunar": [
+      "islamic-umalqura",
+      "10",
+      2
+     ]
+    }
+   },
+   {
+    "name": "عيد الفطر المبارك",
+    "when": {
+     "lunar": [
+      "islamic-umalqura",
+      "10",
+      3
+     ]
+    }
+   },
+   {
+    "name": "عيد الأضحى المبارك",
+    "when": {
+     "lunar": [
+      "islamic-umalqura",
+      "12",
+      9
+     ]
+    }
+   },
+   {
+    "name": "عيد الأضحى المبارك",
+    "when": {
+     "lunar": [
+      "islamic-umalqura",
+      "12",
+      10
+     ]
+    }
+   },
+   {
+    "name": "عيد الأضحى المبارك",
+    "when": {
+     "lunar": [
+      "islamic-umalqura",
+      "12",
+      11
+     ]
+    }
+   },
+   {
+    "name": "عيد الأضحى المبارك",
+    "when": {
+     "lunar": [
+      "islamic-umalqura",
+      "12",
+      12
+     ]
+    }
+   },
+   {
+    "name": "عيد الأضحى المبارك",
+    "when": {
+     "lunar": [
+      "islamic-umalqura",
+      "12",
+      13
+     ]
+    }
+   },
+   {
+    "name": "ذكرى الهجرة النبوية الشريفة",
+    "when": {
+     "lunar": [
+      "islamic-umalqura",
+      "1",
+      1
+     ]
+    }
+   },
+   {
+    "name": "ذكرى يوم العمال العالمي",
+    "when": {
+     "fixed": [
+      5,
+      1
+     ]
+    }
+   },
+   {
+    "name": "اليوم الوطني للجمهورية",
+    "when": {
+     "fixed": [
+      5,
+      22
+     ]
+    }
+   },
+   {
+    "name": "ذكرى ثورة 26 سبتمبر",
+    "when": {
+     "fixed": [
+      9,
+      26
+     ]
+    }
+   },
+   {
+    "name": "ذكرى ثورة 14 أكتوبر",
+    "when": {
+     "fixed": [
+      10,
+      14
+     ]
+    }
+   },
+   {
+    "name": "ذكرى يوم الاستقلال",
+    "when": {
+     "fixed": [
+      11,
+      30
+     ]
+    }
+   }
+  ]
+ },
  "YT": {
   "holidays": [
    {
@@ -39930,6 +49426,311 @@
    },
    {
     "name": "Day of Goodwill",
+    "when": {
+     "fixed": [
+      12,
+      26
+     ]
+    }
+   }
+  ]
+ },
+ "ZM": {
+  "announcedTo": 2026,
+  "substitute": [
+   {
+    "on": [
+     0
+    ],
+    "to": "next"
+   }
+  ],
+  "holidays": [
+   {
+    "name": "New Year's Day",
+    "when": {
+     "fixed": [
+      1,
+      1
+     ]
+    }
+   },
+   {
+    "name": "Youth Day",
+    "when": {
+     "fixed": [
+      3,
+      12
+     ]
+    }
+   },
+   {
+    "name": "Good Friday",
+    "when": {
+     "easter": -2
+    }
+   },
+   {
+    "name": "Holy Saturday",
+    "when": {
+     "easter": -1
+    }
+   },
+   {
+    "name": "Labour Day",
+    "when": {
+     "fixed": [
+      5,
+      1
+     ]
+    }
+   },
+   {
+    "name": "African Freedom Day",
+    "when": {
+     "fixed": [
+      5,
+      25
+     ]
+    }
+   },
+   {
+    "name": "Heroes Day",
+    "when": {
+     "nth": [
+      7,
+      1,
+      1
+     ]
+    }
+   },
+   {
+    "name": "Unity Day",
+    "when": {
+     "nth": [
+      7,
+      1,
+      1
+     ]
+    },
+    "plus": 1
+   },
+   {
+    "name": "Farmers' Day",
+    "when": {
+     "nth": [
+      8,
+      1,
+      1
+     ]
+    }
+   },
+   {
+    "name": "Independence Day",
+    "when": {
+     "fixed": [
+      10,
+      24
+     ]
+    }
+   },
+   {
+    "name": "Christmas Day",
+    "when": {
+     "fixed": [
+      12,
+      25
+     ]
+    }
+   },
+   {
+    "name": "International Women's Day",
+    "when": {
+     "fixed": [
+      3,
+      8
+     ]
+    },
+    "fixed": true
+   },
+   {
+    "name": "Kenneth Kaunda Day",
+    "when": {
+     "fixed": [
+      4,
+      28
+     ]
+    },
+    "fixed": true
+   },
+   {
+    "name": "Easter Monday",
+    "when": {
+     "easter": 1
+    },
+    "fixed": true
+   },
+   {
+    "name": "National Day of Prayer, Fasting, Repentance and Reconciliation",
+    "when": {
+     "fixed": [
+      12,
+      29
+     ]
+    },
+    "fixed": true
+   },
+   {
+    "name": "General Election Day",
+    "when": {
+     "dates": [
+      "2026-08-13"
+     ]
+    },
+    "fixed": true
+   },
+   {
+    "name": "Presidential Inauguration Day",
+    "when": {
+     "dates": [
+      "2026-09-01"
+     ]
+    },
+    "fixed": true
+   }
+  ]
+ },
+ "ZW": {
+  "substitute": [
+   {
+    "on": [
+     0
+    ],
+    "to": "next"
+   }
+  ],
+  "holidays": [
+   {
+    "name": "New Year’s Day",
+    "when": {
+     "fixed": [
+      1,
+      1
+     ]
+    }
+   },
+   {
+    "name": "National Youth Day",
+    "when": {
+     "fixed": [
+      2,
+      21
+     ]
+    }
+   },
+   {
+    "name": "Good Friday",
+    "when": {
+     "easter": -2
+    }
+   },
+   {
+    "name": "Easter Saturday",
+    "when": {
+     "easter": -1
+    }
+   },
+   {
+    "name": "Easter Sunday",
+    "when": {
+     "easter": 0
+    },
+    "fixed": true
+   },
+   {
+    "name": "Easter Monday",
+    "when": {
+     "easter": 1
+    }
+   },
+   {
+    "name": "Independence Day",
+    "when": {
+     "fixed": [
+      4,
+      18
+     ]
+    }
+   },
+   {
+    "name": "Workers Day",
+    "when": {
+     "fixed": [
+      5,
+      1
+     ]
+    }
+   },
+   {
+    "name": "Africa Day",
+    "when": {
+     "fixed": [
+      5,
+      25
+     ]
+    }
+   },
+   {
+    "name": "Heroes Day",
+    "when": {
+     "nth": [
+      8,
+      1,
+      2
+     ]
+    }
+   },
+   {
+    "name": "Defence Forces National Day",
+    "when": {
+     "nth": [
+      8,
+      1,
+      2
+     ]
+    },
+    "plus": 1
+   },
+   {
+    "name": "Munhumutapa Day",
+    "when": {
+     "fixed": [
+      9,
+      15
+     ]
+    },
+    "from": 2026
+   },
+   {
+    "name": "National Unity Day",
+    "when": {
+     "fixed": [
+      12,
+      22
+     ]
+    }
+   },
+   {
+    "name": "Christmas Day",
+    "when": {
+     "fixed": [
+      12,
+      25
+     ]
+    }
+   },
+   {
+    "name": "Boxing Day",
     "when": {
      "fixed": [
       12,

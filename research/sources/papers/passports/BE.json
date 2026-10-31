@@ -1,0 +1,31 @@
+{
+ "country": "BE",
+ "office": "the municipality, for the FPS Foreign Affairs",
+ "currency": "EUR",
+ "routes": [
+  {"id": "ordinary", "where": "home", "speed": "standard", "within": {"n": 5, "unit": "working day"}, "label": "ordinary, in the municipality: delivered by the 5th working day after the day of application"},
+  {"id": "urgent", "where": "home", "speed": "urgent", "within": {"n": 1, "unit": "working day"}, "label": "urgent, in the municipality: the next working day if applied for before 15:00"},
+  {"id": "very-urgent", "where": "home", "speed": "urgent", "within": {"n": 270, "unit": "minute"}, "label": "very urgent, in the municipality: within 4.5 hours if applied for Monday to Friday before 15:00"},
+  {"id": "very-urgent-brussels", "where": "home", "speed": "urgent", "within": {"n": 270, "unit": "minute"}, "label": "very urgent, at the Brussels counter"},
+  {"id": "embassy", "where": "abroad", "speed": "standard", "within": {"n": 2, "unit": "week"}, "label": "at an embassy or consulate: about 2 weeks"}
+ ],
+ "passports": [
+  {"for": "adult", "from": 18, "pages": 34, "validYears": 7, "pay": {"ordinary": "65", "urgent": "240", "very-urgent": "300", "very-urgent-brussels": "350", "embassy": "75"}},
+  {"for": "minor", "under": 18, "pages": 34, "validYears": 5, "pay": {"ordinary": "35", "urgent": "210", "very-urgent": "270", "very-urgent-brussels": "320", "embassy": "35"}}
+ ],
+ "note": "The amounts are what the municipality owes the FPS Foreign Affairs (an adult's includes a federal tax of 30 euros); a municipality may charge more on top. A 66-page passport is issued only in the urgent and very urgent procedures (and abroad, at 240 and 210 euros).",
+ "sources": [
+  {
+   "url": "https://diplomatie.belgium.be/en/belgians-abroad/belgian-passport/ordinary-urgent-and-very-urgent-procedures-tariffs",
+   "title": "FPS Foreign Affairs, Foreign Trade and Development Cooperation, Belgian passport: Ordinary, urgent and very urgent procedures - tariffs (last updated on February 6, 2026)",
+   "read": "2026-10-28",
+   "said": "Delivery times and prices of a passport Passport Delivery times Price <18 years ≥ 18 years applied for in the municipality Passport 34 p. Ordinary procedure Delivery of the passport no later than the 5th working day following the (working) day of application. 35 € 65 € Passport 34 p. Urgent procedure Delivery of the passport the next working day if you apply before 15:00. 210 € 240 € Passport 66 p. (only in urgent procedure) Passport 34 p. or 66 p. Very urgent procedure Delivery of the passport at the counter very urgent procedure within 4.5 hours at the latest in the case of an application from Monday to Friday before 15:00 ... 270 € 300 € ... at the very urgent procedure counter in Brussels ... 320 € 350 € applied for in the embassy or the consulate Passport 34 p. Delivery of the passport within approximately 2 weeks. 35 € 75 € Passport 66 p. 210 € 240 € Explanation: For passports for adults, the Belgian government levies a federal tax of €30 ... The amounts stated are the sums of money that the municipality owes to the Ministry of Foreign Affairs for passport applications. Municipalities can charge an additional fee above this."
+  },
+  {
+   "url": "https://greece.diplomatie.belgium.be/en/consular-services/passport",
+   "title": "Embassy of Belgium in Greece (FPS Foreign Affairs), Passport (last updated on June 24, 2026)",
+   "read": "2026-10-28",
+   "said": "Belgian passports are valid 7 years (5 years for minors). Any Belgian citizen can be issued his or her own passport starting at birth."
+  }
+ ]
+}

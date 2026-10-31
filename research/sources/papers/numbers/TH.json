@@ -1,0 +1,25 @@
+{
+ "country": "TH",
+ "name": "national identification number",
+ "issuer": "the Department of Provincial Administration, Ministry of Interior",
+ "format": {
+  "length": 13,
+  "pattern": "^\\d{13}$"
+ },
+ "when": "registration",
+ "who": [
+  "residents"
+ ],
+ "needed": [
+  "tax"
+ ],
+ "note": "Thailand's sheet (its government's own sheet on the OECD's automatic-exchange portal ('Information on Tax Identification Numbers'; the OECD's index page sits behind a bot check and wasn't opened, the sheet itself came straight back)), read 2026-10-30: an individual taxpayer who already has a national identification number under the law on civil registration uses it as the TIN with no separate application; 13 digits, the first three naming the issuing agency (100 to 999 the Department of Provincial Administration, Ministry of Interior), the thirteenth a check digit whose rule the sheet doesn't give (`check` left out). Foreign individuals without one apply to the Revenue Department within 60 days of first income (a 0991 number, not modelled). Read as given on registration, to residents. No fee or time is stated.",
+ "sources": [
+  {
+   "url": "https://www.oecd.org/content/dam/oecd/en/topics/policy-issue-focus/aeoi/thailand-tin.pdf",
+   "title": "OECD AEOI portal, Thailand: Information on Tax Identification Numbers (the jurisdiction's own sheet)",
+   "read": "2026-10-30",
+   "said": "If the individual income taxpayer already has a national identification number under the law on civil registration, that national ID number shall be used as the TIN without the need to apply separately for a TIN and taxpayer card. ... A Tax Identification Number (TIN) consists of 13 digits ... Numbers 100–999: issued by the Department of Provincial Administration, Ministry of Interior (except 601)."
+  }
+ ]
+}

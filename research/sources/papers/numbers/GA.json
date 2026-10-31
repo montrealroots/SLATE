@@ -1,0 +1,37 @@
+{
+ "country": "GA",
+ "name": "Numéro d'Identification Personnel (NIP)",
+ "issuer": "the Centre National de l'Etat Civil",
+ "format": {
+  "length": 14,
+  "pattern": "^[0-9A-Z]{14}$"
+ },
+ "when": "registration",
+ "who": [
+  "citizens",
+  "residents"
+ ],
+ "note": "Gabon's Loi n° 027/2020 of 24 December 2020 on the numéro d'identification personnel, read 2026-10-30 in the Journal officiel de la République gabonaise's own site. Art. 2: it applies to every Gabonese citizen, resident in Gabon or not, and to foreign nationals resident in Gabon, so `who` is citizens and residents. Art. 4: the NIP is a string of 14 alphanumeric characters, given by a computer process run when the person is entered in the register of citizens or residents; so `when` is registration. The law gives no structure within the 14 characters and no check, so the pattern takes any 14 digits or capital letters (the case is read as capitals; the law doesn't say). Art. 6: its data come from a civil-status declaration, an application for an identity paper (the national identity card, passport, residence card), public-servant and health-insurance identification, or the biometric electoral list. Art. 7: the Centre National de l'Etat Civil establishes and manages it. The law sets no age, fee or time and names nothing that needs a NIP (its interconnection and application are left to regulations, art. 9 and 10, not read), so those terms are left out. The tax administration's numéro d'identification fiscale (NIF), given on registration with the DGI (its immatriculation page, read the same day), is a different number whose form the DGI's pages don't give; it isn't this file's number. Gabonreview (3 April 2024, press) reports the Minister of the Interior's announcement that applications for the NIP opened on 3 April 2024, for the new electronic identity card, starting with citizens of 16 and over; that is the campaign's first stage, not an age the law sets, so `from` is left out.",
+ "sources": [
+  {
+   "url": "https://journal-officiel.ga/12122-027-2020-/",
+   "title": "Journal officiel de la République gabonaise: Loi n° 027/2020 du 24/12/2020 relative au numéro d'identification personnel",
+   "read": "2026-10-30",
+   "said": "Article 2 : La présente loi s'applique à tous les citoyens gabonais résidant sur le territoire national ou non et aux personnes de nationalité étrangère résidant au Gabon ... Article 4 : Le Numéro d'Identification Personnel est une suite de 14 caractères alphanumériques destinés à authentifier l'identité d'un individu au moyen d'un traitement informatique exécuté au moment de son inscription dans le répertoire des citoyens ou des résidents en République Gabonaise. ... Article 7 : Le Centre National de l'Etat Civil établit le NIP et en assure la gestion et la sécurité."
+  },
+  {
+   "url": "https://dgi.ga/entreprises/immatriculationmodification-et-cessation-dactivite/immatriculation/entreprises-droit-prve-et-droit-public/",
+   "title": "Direction générale des impôts du Gabon, Immatriculation",
+   "read": "2026-10-30",
+   "said": "L’immatriculation est l’opération qui consiste à attribuer un Numéro d’Identification Fiscale unique et personnel"
+  },
+  {
+   "url": "https://www.gabonreview.com/cnie-3-avril-2024-le-gabon-embarque-dans-lere-de-lidentite-numerique-avec-le-nip/",
+   "title": "Gabonreview, 'CNIE : 3 avril 2024, le Gabon embarque dans l'ère de l'identité numérique avec le NIP'",
+   "read": "2026-10-30",
+   "kind": "secondary",
+   "quotes": "https://journal-officiel.ga/12122-027-2020-/",
+   "said": "l’enregistrement débutera le 3 avril 2024, par les citoyens gabonais âgés de 16 ans et plus qui n’ont jamais été soumis à un prélèvement biométrique dans le cadre du projet Iboga"
+  }
+ ]
+}

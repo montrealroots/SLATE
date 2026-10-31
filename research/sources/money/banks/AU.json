@@ -1,0 +1,56 @@
+{
+ "country": "AU",
+ "banks": [
+  {
+   "bank": "Commonwealth Bank",
+   "account": "Everyday Account Smart Access",
+   "fees": [
+    {
+     "fee": "4.00",
+     "per": "month",
+     "waived": [
+      {
+       "under": 30
+      },
+      {
+       "deposits": "2000.00"
+      }
+     ]
+    }
+   ],
+   "overdraft": {
+    "rate": {
+     "percent": "14.90",
+     "per": "year"
+    },
+    "fee": "15.00"
+   },
+   "returned": "5.00",
+   "debit": {
+    "fx": "3.5"
+   },
+   "atm": {
+    "other": "0",
+    "abroad": {
+     "fixed": "5.00",
+     "percent": "3.5"
+    }
+   }
+  }
+ ],
+ "note": "Commonwealth Bank's Everyday Account Smart Access: a monthly account fee of 4 dollars, waived for a holder under 30, in a month at least 2,000 dollars is deposited (bank-initiated transactions excluded), or in a month the holder qualifies for CommBank Yello Plus, Gold or Diamond (not modelled). Read again 2026-10-30: an overdraw fee of $15 when payments go through past the available funds (at most one a day, which the form doesn't hold) and 14.90% a year for each day overdrawn; a cheque or direct debit dishonoured for want of funds $5.00; a debit card purchase in another currency 3.5%; a withdrawal overseas at any other bank AUD$5.00 plus 3.5% ($2.00 at ASB in New Zealand and CommBank machines abroad); CommBank charges nothing at another bank's ATM in Australia (the owner's own fee, shown at the machine, isn't the bank's). Not stated on this page: interest on the account, its own ATMs, transfers, what opening asks, a savings account.",
+ "sources": [
+  {
+   "url": "https://www.commbank.com.au/banking/everyday-account-smart-access/rates-fees.html",
+   "title": "Commonwealth Bank, Everyday Account Smart Access: rates & fees",
+   "read": "2026-10-30",
+   "said": "Everyday Smart Access Account $4.00 or $0 if conditions are met 1 The fee will be waived if: You're under 30 years of age, or You deposit at least $2,000 per month (excludes Bank initiated transactions)"
+  },
+  {
+   "url": "https://www.commbank.com.au/banking/everyday-account-smart-access/rates-fees.html",
+   "title": "Commonwealth Bank, Everyday Account Smart Access: rates and fees (the other terms)",
+   "read": "2026-10-30",
+   "said": "ATM owners may charge a fee, which will be disclosed at the time of the transaction. ... AUD$5.00 plus 3.5% of the transaction value ... Maestro (EFTPOS) purchase or Debit Mastercard purchase that involves currency conversion. ... $5.00 for each cheque/direct debit ... $15.00 ... You can only incur one overdraw fee per account per day ... 14.90% p.a."
+  }
+ ]
+}

@@ -1,0 +1,33 @@
+{
+ "country": "IM",
+ "name": "National Insurance Number (NINO)",
+ "issuer": "the Isle of Man Income Tax Division",
+ "format": {
+  "length": 9,
+  "pattern": "^(?!BG|GB|KN|NK|NT|TN|ZZ)[A-CEGHJ-PR-TW-Z][A-CEGHJ-NPR-TW-Z]\\d{6}[A-D]$"
+ },
+ "when": "work",
+ "who": [
+  "workers"
+ ],
+ "needed": [
+  "work",
+  "tax"
+ ],
+ "note": "The Isle of Man's sheet (its government's own sheet on the OECD's automatic-exchange portal ('Information on Tax Identification Numbers'; the OECD's index page sits behind a bot check and wasn't opened, the sheet itself came straight back)), read 2026-10-30: everyone of working age (16 to 65) in employment must have a National Insurance number, issued by the Isle of Man Income Tax Division (or HMRC, if the person lived and worked in the UK first); the island's own tax reference number (H and six digits) is a second number not modelled. Read as given on work from 16. The form is the UK's (HMRC's NIM39110, read the same day for GB: two letters, six digits, A to D), a reading flagged: the sheet doesn't print the NINO's form. No fee or time is stated.",
+ "sources": [
+  {
+   "url": "https://www.oecd.org/content/dam/oecd/en/topics/policy-issue-focus/aeoi/isle-of-man-tin.pdf",
+   "title": "OECD AEOI portal, Isle-of-man: Information on Tax Identification Numbers (the jurisdiction's own sheet)",
+   "read": "2026-10-30",
+   "said": "The other reference that can be used in the Isle of Man, for individuals, is their National ... All individuals of working age (16-65) in employment are required to have a NINO which is issued ... either by the Isle of Man Income Tax Division or His Majesty’s Revenue & Customs (HMRC)"
+  },
+  {
+   "url": "https://www.gov.uk/hmrc-internal-manuals/national-insurance-manual/nim39110",
+   "title": "HMRC internal manual, NIM39110 What a NINO looks like",
+   "read": "2026-10-30",
+   "said": "A NINO is made up of 2 letters, 6 numbers and a final letter, which is always A, B, C, or D."
+  }
+ ],
+ "from": 16
+}

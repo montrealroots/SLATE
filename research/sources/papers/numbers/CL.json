@@ -1,0 +1,26 @@
+{
+ "country": "CL",
+ "name": "National Identity Number (RUN)",
+ "issuer": "the Civil Registry",
+ "format": {
+  "length": 9,
+  "pattern": "^\\d{8}[0-9K]$"
+ },
+ "when": "registration",
+ "who": [
+  "citizens",
+  "residents"
+ ],
+ "needed": [
+  "tax"
+ ],
+ "note": "Chile's sheet (its government's own sheet on the OECD's automatic-exchange portal ('Information on Tax Identification Numbers'; the OECD's index page sits behind a bot check and wasn't opened, the sheet itself came straight back)), read 2026-10-30: for Chileans and foreigners resident in Chile the National Identity Number (RUN) the Civil Registry gives is also the tax number (RUT); one number for life, never reassigned; written xx.xxx.xxx-x, the check digit 0 to 9 or K by a modulus-11 rule (K for 10, 0 for 11), which the game doesn't compute, so `check` is left out. Older numbers with seven digits before the check digit aren't drawn (the pattern holds eight). Read as given on registration with the Civil Registry; when (at birth registration) the sheet doesn't say. The name and issuer are as the sheet gives them, in English.",
+ "sources": [
+  {
+   "url": "https://www.oecd.org/content/dam/oecd/en/topics/policy-issue-focus/aeoi/chile-tin.pdf",
+   "title": "OECD AEOI portal, Chile: Information on Tax Identification Numbers (the jurisdiction's own sheet)",
+   "read": "2026-10-30",
+   "said": "In the case of Chileans and of foreigners resident in Chile, the National ... Identity Number (RUN) given by the Civil Registry also serves as Tax Identification Number (RUT). ... The TIN consists of two parts: the serial number, a dash (-) and the check digit, (xx.xxx.xxx-x) which ... K if the result is 10;"
+  }
+ ]
+}

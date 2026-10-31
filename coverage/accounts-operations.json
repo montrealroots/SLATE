@@ -1,0 +1,58 @@
+{
+ "engine": "money.accounts",
+ "axis": "account-operation",
+ "universe": {
+  "keys": [
+   "open",
+   "opening-rules",
+   "fees-and-interest",
+   "payments-and-overdraft",
+   "first-morning",
+   "declarations"
+  ]
+ },
+ "rows": [
+  {
+   "key": "open",
+   "status": "proven",
+   "tests": [
+    "tests/money/accounts/accounts.test.ts::an account at a bank > opens on the bank's terms, its first month scheduled in the holder's zone"
+   ]
+  },
+  {
+   "key": "opening-rules",
+   "status": "proven",
+   "tests": [
+    "tests/money/accounts/accounts.test.ts::an account at a bank > opens only to whom the bank sells, with the first deposit it asks, from an account held"
+   ]
+  },
+  {
+   "key": "fees-and-interest",
+   "status": "proven",
+   "tests": [
+    "tests/money/accounts/accounts.test.ts::an account at a bank > charges its fees in their periods, waived as the bank waives them, and pays its interest on the average balance"
+   ]
+  },
+  {
+   "key": "payments-and-overdraft",
+   "status": "proven",
+   "tests": [
+    "tests/money/accounts/accounts.test.ts::an account at a bank > runs an overdraft as the bank runs it, and refuses a payment past the balance where it has none"
+   ]
+  },
+  {
+   "key": "first-morning",
+   "status": "proven",
+   "tests": [
+    "tests/money/accounts/accounts.test.ts::an account at a bank > pays the family's means into the first morning's accounts, at the day's rate where the account's currency differs"
+   ]
+  },
+  {
+   "key": "declarations",
+   "status": "proven",
+   "tests": [
+    "tests/money/accounts/accounts.test.ts::an account at a bank > is run through the frame, each command and kind declaring what it reads and writes"
+   ]
+  }
+ ]
+}

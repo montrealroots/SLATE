@@ -1,0 +1,35 @@
+{
+ "country": "DE",
+ "document": "Personalausweis",
+ "office": "the identity card authority (Personalausweisbehörde) of the place of residence; abroad, a German mission",
+ "currency": "EUR",
+ "routes": [
+  {"id": "home", "where": "home", "speed": "standard", "within": null, "label": "at the identity card authority"},
+  {"id": "abroad", "where": "abroad", "speed": "standard", "within": null, "label": "at a German embassy or consulate"}
+ ],
+ "cards": [
+  {"for": "24 and over", "from": 24, "validYears": 10, "pay": {"home": "46.00", "abroad": "89.00"}},
+  {"for": "under 24", "under": 24, "validYears": 6, "pay": {"home": "27.60", "abroad": "70.60"}}
+ ],
+ "note": "The Identity Card Act (PAuswG) obliges Germans to hold a valid card (or passport) from 16 if registered or living mainly in Germany (§ 1), valid ten years, six under 24 (§ 6). The fee ordinance (PAuswGebV § 1) sets 46 euros, 27.60 under 24, and 43 euros more when a German mission abroad issues it, summed here; the 6 euros for a photo taken by the authority and the surcharges out of hours aren't modelled. The law publishes no processing time.",
+ "sources": [
+  {
+   "url": "https://www.gesetze-im-internet.de/pauswg/__1.html",
+   "title": "Gesetze im Internet, Personalausweisgesetz (PAuswG) § 1 Ausweispflicht; Ausweisrecht",
+   "read": "2026-10-28",
+   "said": "(1) Deutsche im Sinne des Artikels 116 Abs. 1 des Grundgesetzes sind verpflichtet, einen gültigen Ausweis zu besitzen, sobald sie 16 Jahre alt sind und der allgemeinen Meldepflicht unterliegen oder, ohne ihr zu unterliegen, sich überwiegend in Deutschland aufhalten."
+  },
+  {
+   "url": "https://www.gesetze-im-internet.de/pauswg/__6.html",
+   "title": "Gesetze im Internet, Personalausweisgesetz (PAuswG) § 6 Gültigkeitsdauer des Ausweises",
+   "read": "2026-10-28",
+   "said": "(1) Personalausweise werden für eine Gültigkeitsdauer von zehn Jahren ausgestellt. ... (3) Bei Personen, die noch nicht 24 Jahre alt sind, beträgt die Gültigkeitsdauer des Personalausweises sechs Jahre."
+  },
+  {
+   "url": "https://www.gesetze-im-internet.de/pauswgebv/__1.html",
+   "title": "Gesetze im Internet, Personalausweis- und eID-Karten-Gebührenverordnung (PAuswGebV) § 1 Gebühren für Ausweise",
+   "read": "2026-10-28",
+   "said": "(1) Für die Ausstellung eines Personalausweises sind folgende Gebühren zu erheben: 1. 27,60 Euro Euro für einen Personalausweis, dessen Inhaber im Zeitpunkt der Antragstellung noch nicht 24 Jahre alt ist, 2. 46 Euro in allen anderen Fällen. ... (4) Die Gebühr nach Absatz 1 ist anzuheben ... 2. um 43 Euro, wenn die Amtshandlung von einer konsularischen oder diplomatischen Vertretung der Bundesrepublik Deutschland im Ausland vorgenommen wird,"
+  }
+ ]
+}

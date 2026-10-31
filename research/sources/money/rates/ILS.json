@@ -1,0 +1,34 @@
+{
+ "currency": "ILS",
+ "rates": [
+  {
+   "from": "2025-12-31",
+   "perUSD": "3.191"
+  },
+  {
+   "from": "2026-03-31",
+   "perUSD": "3.165"
+  },
+  {
+   "from": "2026-05-29",
+   "perUSD": "2.807"
+  },
+  {
+   "from": "2026-06-30",
+   "perUSD": "2.977"
+  },
+  {
+   "from": "2026-09-30",
+   "perUSD": "3.074"
+  }
+ ],
+ "note": "The US Treasury's Reporting Rates of Exchange (Bureau of the Fiscal Service), the rates US government agencies use for foreign currency, its 'Israel-Shekel' row: 3.191 from 2025-12-31; 3.165 from 2026-03-31; 2.807 from 2026-05-29; 2.977 from 2026-06-30; 3.074 from 2026-09-30 per US dollar, each holding until the next. Read from the Fiscal Data API on 2026-10-30.",
+ "sources": [
+  {
+   "url": "https://api.fiscaldata.treasury.gov/services/api/fiscal_service/v1/accounting/od/rates_of_exchange?filter=record_date:gte:2025-12-31&sort=country_currency_desc,effective_date&page%5Bsize%5D=2000&fields=record_date,country,currency,country_currency_desc,exchange_rate,effective_date&format=csv",
+   "title": "U.S. Department of the Treasury, Bureau of the Fiscal Service: Treasury Reporting Rates of Exchange (Fiscal Data API), record dates 31 December 2025 to 30 September 2026",
+   "read": "2026-10-30",
+   "said": "\"2025-12-31\",\"Israel\",\"Shekel\",\"Israel-Shekel\",\"3.191\",\"2025-12-31\" ... \"2026-03-31\",\"Israel\",\"Shekel\",\"Israel-Shekel\",\"3.165\",\"2026-03-31\" ... \"2026-03-31\",\"Israel\",\"Shekel\",\"Israel-Shekel\",\"2.807\",\"2026-05-29\" ... \"2026-06-30\",\"Israel\",\"Shekel\",\"Israel-Shekel\",\"2.977\",\"2026-06-30\" ... \"2026-09-30\",\"Israel\",\"Shekel\",\"Israel-Shekel\",\"3.074\",\"2026-09-30\""
+  }
+ ]
+}

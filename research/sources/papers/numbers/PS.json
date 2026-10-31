@@ -1,0 +1,24 @@
+{
+ "country": "PS",
+ "name": "identity number (raqam al-huwiyya)",
+ "issuer": "the Ministry of the Interior's General Directorate of Civil Status, from the Palestinian population register",
+ "format": {
+  "length": 9,
+  "pattern": "^[489]\\d{8}$"
+ },
+ "when": "birth",
+ "who": [
+  "citizens"
+ ],
+ "note": "Landinfo's thematic note on Palestine's population registration, identity documents and passports (4 May 2026), read 2026-10-30 (secondary: its account rests on meetings with the Palestinian Ministry of the Interior in 2016 and 2019 and with Gisha in 2016, which have no published text; the Ministry's own site, moi.pna.ps, was searched that day and gives no page on the number). Section 4.1: after Israel's census of 1967 Palestinians in the West Bank and Gaza were given a nine-digit ID number, all then beginning with 9; from 1990-91, with 8; numbers given from 1994 begin with 4, every new entry in the Palestinian population register since then. Everyone born in Palestine with a Palestinian-registered father or mother automatically receives an ID number (since Israeli military order 1206 of 12 August 1987, at the registration of the birth), printed on the birth certificate the General Directorate of Civil Status under the Ministry of the Interior issues; a child with neither parent registered can't be entered. So `when` is birth and `who` citizens (those entered in the register). The pattern takes nine digits beginning 4, 8 or 9, the three series the note names (a number drawn now begins with 4, which the form can't hold apart). No check digit is stated (the note names none), so none is held. The note says the number stands on ID cards, passports and other documents, but no law read says what needs one, so `needed` is left out; no fee or time for the number is stated. The register is the one Annex III, art. 28 of the 1995 Interim Agreement leaves the Palestinian side to keep, informing Israel of every change (the note's chapter 4; the Agreement itself wasn't read).",
+ "sources": [
+  {
+   "url": "https://www.ecoi.net/en/file/local/2144528/Palestina-temanotat-Folkeregistrering-identitetsdokumenter-og-pass-04052026.pdf",
+   "title": "Landinfo, Temanotat Palestina: Folkeregistrering, identitetsdokumenter og pass (4 May 2026), as ecoi.net holds it",
+   "read": "2026-10-30",
+   "kind": "secondary",
+   "quotes": "https://www.moi.pna.ps/",
+   "said": "Etter Israels folketelling i 1967 fikk palestinere på Vestbredden og Gaza et ni- sifret ID-nummer, som alle den gang begynte med tallet 9. ... ID-numre gitt fra 1994, begynner med 4. Alle nye registreringer i det palestinske folkeregisteret fra 1994 og frem til i dag starter altså med 4. ... Alle som fødes i Palestina, med en palestinskregistrert far og/eller mor, får automatisk et ID-nummer (raqam al-huwiyya) (Palestinas innenriksdepartement, møte 2019). ... Barn med minst én palestinskregistrert forelder, får påført palestinsk ID-nummer på fødselsattesten, som utstedes av General Directorate of Civil Status, underlagt Innenriksdepartementet."
+  }
+ ]
+}

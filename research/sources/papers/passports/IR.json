@@ -1,0 +1,63 @@
+{
+ "country": "IR",
+ "office": "the passport police at home; abroad, Iran's missions (here the Interests Section of the Islamic Republic of Iran in Washington, D.C., in the Embassy of Pakistan)",
+ "currency": "IRR",
+ "abroad": {
+  "currency": "USD"
+ },
+ "routes": [
+  {
+   "id": "home",
+   "where": "home",
+   "speed": "standard",
+   "within": null,
+   "label": "from the passport police in Iran"
+  },
+  {
+   "id": "abroad",
+   "where": "abroad",
+   "speed": "standard",
+   "within": null,
+   "label": "at the Interests Section in Washington"
+  },
+  {
+   "id": "abroad-lost",
+   "where": "abroad",
+   "speed": "standard",
+   "within": null,
+   "replacement": true,
+   "label": "replacing a passport lost, damaged or water-damaged for the first time, at the Interests Section in Washington"
+  }
+ ],
+ "passports": [
+  {
+   "for": "aged 2 and over",
+   "from": 2,
+   "validYears": null,
+   "pay": {
+    "home": null,
+    "abroad": "144",
+    "abroad-lost": "259"
+   }
+  },
+  {
+   "for": "under 2, a first passport",
+   "under": 2,
+   "validYears": null,
+   "pay": {
+    "home": null,
+    "abroad": "73",
+    "abroad-lost": null
+   }
+  }
+ ],
+ "note": "Abroad, the list of consular fees of the Interests Section of the Islamic Republic of Iran in Washington, D.C. (updated 1405/07/22, 14 October 2026), paid in US dollars by money order: issuing a passport to a person aged 2 and over, other than a first passport for a dual national or a refugee or a first replacement, US$144; a first passport for a child under 2, US$73; a first replacement of a passport lost, damaged or water-damaged (and a dual national's or refugee's first passport), US$259, written as the replacement route for the band aged 2 and over only, the page not giving a separate amount under 2; a second or later replacement, US$432 (not modelled); recording a residence abroad in the passport adds US$29 (not modelled); return postage US$40 per envelope (not modelled). These are the Washington section's fees; other missions set theirs under the same consular tariff (the Cabinet's regulation of 1404/7/16, not read: its hosts don't answer this client), and their amounts were not read. At home, the passport police's fee for 1405 was not found (Iranian hosts don't answer this client), so the home route is left unpaid; the time and the validity are not stated on the page.",
+ "sources": [
+  {
+   "url": "https://www.daftar.org/fa/fees",
+   "title": "Interests Section of the Islamic Republic of Iran, Washington, D.C. (Embassy of Pakistan), list of consular fees (updated 1405/07/22), rendered 2026-10-31",
+   "read": "2026-10-31",
+   "said": "فهرست هزينه خدمات کنسولي ... مجموع هزينه کنسولي خود را به دلار آمريکا، در قالب يک Money Order ... و آبديده (در صورت تقاضاي تغيير محل اقامت در گذرنامه هزينه آن به اين مبلغ اضافه گردد)* 144 صدور اولين گذرنامه براي افراد زير 2 سال (در صورت تقاضاي تغيير محل اقامت هزينه به اين مبلغ اضافه گردد)* 73 ... و يا صدور گذرنامه آبديده بار اول 259 ... به روز شده در 1405/07/22"
+  }
+ ]
+}

@@ -1,0 +1,32 @@
+{
+ "country": "IL",
+ "office": "the Population and Immigration Authority, at its bureaus, which delivers the passport by courier",
+ "currency": "ILS",
+ "routes": [
+  {"id": "bureau", "where": "home", "speed": "standard", "within": {"n": 6, "unit": "week"}, "label": "paid at the bureau"},
+  {"id": "online-winter", "where": "home", "speed": "standard", "within": {"n": 6, "unit": "week"}, "months": [11, 12, 1, 2], "label": "paid online in winter, then at the bureau"}
+ ],
+ "passports": [
+  {"for": "adult", "from": 18, "validYears": null, "pay": {"bureau": "300", "online-winter": "175"}},
+  {"for": "child", "under": 18, "validYears": null, "pay": {"bureau": "160", "online-winter": "105"}}
+ ],
+ "note": "The fees ice reported on 23 February 2026 from the Population and Immigration Authority: 300 shekels for an adult's first or renewed passport at the bureau, 175 paid online, and 160 or 105 for a child, the online price being the winter rate (November to February, by the payment's date). The online price outside winter isn't stated for 2026 and isn't modelled. A child is taken as under 18, the line the Authority draws for applicants. The passport arrives by courier 4 to 6 weeks after applying, as Nefesh B'Nefesh's guide (updated August 2026) says; validity isn't stated. gov.il answers 403 and Kol Zchut a browser check, so both sources are secondary.",
+ "sources": [
+  {
+   "kind": "secondary",
+   "url": "https://www.ice.co.il/consumerism/news/article/1103897",
+   "quotes": "https://www.gov.il/he/departments/population_and_immigration_authority",
+   "title": "ice, שינוי בדרכונים בישראל: זה מה שיקרה מהשבוע הבא (23 February 2026)",
+   "read": "2026-10-28",
+   "said": "רשות האוכלוסין קוראת לציבור לחדש דרכון כעת ולחסוך מאות שקלים, לפני שהטבת \"דרכון חורף\" תסתיים. ... מבוגר שישלם עבור דרכון ראשון או חידוש דרכון שפג תוקפו דרך אתר האינטרנט ישלם 175 שקל בלבד - חיסכון ניכר לעומת תשלום של 300 שקל בלשכה עצמה. עבור ילדים, המחיר המקוון עומד על 105 שקל לעומת 160 שקל במשרד."
+  },
+  {
+   "kind": "secondary",
+   "url": "https://www.nbn.org.il/life-in-israel/government-services/obtaining-an-israeli-passport/",
+   "quotes": "https://www.gov.il/he/departments/population_and_immigration_authority",
+   "title": "Nefesh B'Nefesh, Obtaining or Renewing an Israeli Passport (updated 24 August 2026)",
+   "read": "2026-10-28",
+   "said": "Pricing from November 1-February 28 th is less expensive than from March 1-October 31. Generally, you can benefit from the winter rate as long as you apply for your passport at The Population and Immigration Authority within 3 months of your payment date or prior to April 30th of the same year (whichever is earlier). ... Your Israeli passport will be delivered to a post office or package pick up point (such as a candy store) near the home address listed on your Teudat Zehut 4-6 weeks after you applied for it. ... A citizen under the age of 18 who wishes to obtain a biometric travel document (passport or Laissez-passer), must personally appear at a Population and Immigration Authority bureau"
+  }
+ ]
+}

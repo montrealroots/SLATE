@@ -1,0 +1,38 @@
+{
+ "country": "SG",
+ "national": {
+  "name": "Bank Code And Account Number",
+  "parts": [
+   {
+    "name": "Bank Code",
+    "length": 4,
+    "kind": "n"
+   },
+   {
+    "name": "Account Number",
+    "length": 10,
+    "min": 9,
+    "kind": "n"
+   }
+  ],
+  "bank": [
+   1,
+   4
+  ]
+ },
+ "note": "No rule of the Monetary Authority of Singapore or the Singapore Clearing House Association fixing an account number's length was read. A transfer between banks (Interbank GIRO, OCBC's ACH guide, read 2026-10-30) carries a four-digit ACH bank code, a three-digit branch code and the account number. DBS, the largest bank, gives on its own page (read 2026-10-30) its bank code, 7171, for DBS and POSB alike, and its account numbers as ten digits for DBS (the branch code is the first three of them) and nine for POSB (whose branch code is always 081, not part of the number). So the number is written as the four-digit bank code followed by an account number of nine or ten digits, the lengths DBS and POSB state; the branch code is left out, being the account number's first three digits at DBS and a constant at POSB. OCBC's guide gives UOB's and Far Eastern Bank's numbers as ten digits and says OCBC's own vary in length (its example is ten): a payee's number at a bank with a longer one would be refused, and no bank's maximum beyond ten was read. No check digit is published.",
+ "sources": [
+  {
+   "url": "https://www.dbs.com.sg/personal/support/bank-general-bank-branch-names-codes.html",
+   "title": "DBS Bank Singapore, Bank & Branch Codes",
+   "read": "2026-10-30",
+   "said": "DBS/POSB's Bank code is 7171. All POSB accounts have a standard branch code of 081 while DBS accounts' branch code is the first 3 digits of the account number. ... For DBS Accounts (10 digit account number) ... e.g. Account no. 123-4-567890 → Branch Code: 123 ... For POSB Accounts (9 digit account number)"
+  },
+  {
+   "url": "https://www.ocbc.com/assets/pdf/ACH-Bank-and-Branch-Code-Guide.pdf",
+   "title": "OCBC Bank, ACH Bank and Branch Code Guide (Interbank GIRO)",
+   "read": "2026-10-30",
+   "said": "The ACH Bank Code, Branch Code and Account Number are key fields in the ... required information to be provided for Interbank GIRO transactions. ... Length of Account No varies ... OCBC 7339 550 1089550 ... 10-digit Account No ... UOB 7375 030 9102031012"
+  }
+ ]
+}

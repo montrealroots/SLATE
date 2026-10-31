@@ -1,0 +1,25 @@
+{
+ "country": "NZ",
+ "name": "IRD number",
+ "issuer": "Inland Revenue",
+ "format": {
+  "length": 9,
+  "pattern": "^\\d{9}$"
+ },
+ "when": "application",
+ "who": [
+  "anyone"
+ ],
+ "needed": [
+  "tax"
+ ],
+ "note": "New Zealand's sheet (its government's own sheet on the OECD's automatic-exchange portal ('Information on Tax Identification Numbers'; the OECD's index page sits behind a bot check and wasn't opened, the sheet itself came straight back)), read 2026-10-30: Inland Revenue issues the IRD number on application with proof of identity (an adult in person); it can also be issued when a child's birth is registered online with Internal Affairs (not modelled as the default). Eight or nine digits, a base and a trailing check digit whose rule the sheet doesn't give (`check` left out); eight-digit numbers are increasingly written with a leading 0, so the pattern draws nine. No fee or time is stated.",
+ "sources": [
+  {
+   "url": "https://www.oecd.org/content/dam/oecd/en/topics/policy-issue-focus/aeoi/new-zealand-tin.pdf",
+   "title": "OECD AEOI portal, New-Zealand: Information on Tax Identification Numbers (the jurisdiction's own sheet)",
+   "read": "2026-10-30",
+   "said": "NZ’s IRD number is a unique number issued by Inland Revenue to customers, both ... Individual customers (other than children) need to undergo an in-person verification by ... IRD numbers can also be issued as part of the online process of registering a child’s ... Depending on age of the IRD number the format is either an eight or nine digit number in ... A trailing check digit. ... It is increasingly common to add a 0 to the eight digit numbers to make it nine digits long,"
+  }
+ ]
+}
