@@ -1932,3 +1932,11 @@ alike. What returns is the researched lists (research/sources/person/attributes/
 the first SLATE's twelve abilities, techniques, readiness or mastery by habit; the rest of entries 10 and 11 (Yale,
 School, the pro.* engine) and the dispositions and traits stay out until the owner says otherwise. Still to be asked: which of them, shown
 how, and what each reads and changes; each returns only with a reader that changes an outcome the player meets.
+Ruled 2026-10-31, the owner, on which attributes and how shown: each role keeps its "most-backed set", the lead
+proposing the cut from the source counts and the owner approving it; shown as a number: "It should read for example
+'Dialogue - 92' or something like that." Then: "I want to put an engine/downstream effect behind each attribute. We
+can get into perfectly balancing them later. Lets start with 'Screenwriter'." The screenwriter's proposal is
+workbench/plans/screenwriter-attributes.md: 27 attributes (those named by at least four institutions, less two that
+are readers' conclusions and two folded into others), each with the engine that reads it and the outcome it changes,
+waiting for the owner's approval before anything is built.
+
