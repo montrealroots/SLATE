@@ -765,9 +765,11 @@ The sources that refused all four roles alike: bls.gov, oscars.org, bafta.org, S
 Jobs and Skills Australia and Your Career, CareersPortal, BERUFENET's keyed API, Telefilm; web.archive.org reset
 every connection all day. Each role's blockers are in its file, with the five methods.
 
-Next: the four lists go to the owner for layer 4's plan: whether attributes return (KEEP entry 11 removed them), which,
-shown how (as numbers or not), and what each one reads and changes (read, bite, downstream). Nothing is built from
-them until the owner rules.
+The four lists went to the owner on 2026-10-31 as a private page to browse by role and category (the artifact "SLATE
+Role Attributes", built from the four files; not kept in the repository). Ruled the same day: attributes return for
+all four roles (see Questions for the owner). Still the owner's to rule before anything is built: which attributes
+(all researched, or a set chosen from the lists), how they are shown (as numbers or not), and what each one reads and
+changes (read, bite, downstream).
 
 **Saved before layer 4 planning (2026-10-31).** The working files that lived only in the session's scratchpad are
 in `workbench/` (its README says what each holds): the waves' briefs and the four audits' reports (`workbench/briefs/`,
@@ -1924,3 +1926,9 @@ producers' guilds and minimums, its incentives and film agency, its child perfor
 and whether acting is split by sex, its rating body, and its industry's size; a territory follows its sovereign's only
 where a source says so. The coverage of every country is tracked from the first wave and becomes the engine's matrix
 when layer 4 builds it.
+Ruled 2026-10-31, the owner, on the four roles' researched attributes: "Yes, attributes come back for all four roles."
+This overrules KEEP entry 11's "All the attributes" for the screenwriter, the producer, the director and the actor
+alike. What returns is the researched lists (research/sources/person/attributes/<role>.json, R-4601 to R-4604), not
+the first SLATE's twelve abilities, techniques, readiness or mastery by habit; the rest of entries 10 and 11 (Yale,
+School, the pro.* engine) and the dispositions and traits stay out until the owner says otherwise. Still to be asked: which of them, shown
+how, and what each reads and changes; each returns only with a reader that changes an outcome the player meets.
