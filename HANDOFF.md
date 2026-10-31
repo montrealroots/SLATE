@@ -1817,3 +1817,13 @@ runs from that day; how far forward is the person layer's to set by the years th
 clock action ("Keep Sleep"). The premise's detail: "We will get to all of this when you're done with layer 3."
 Still to be asked when the build reaches them: the rest of the premise's detail (what the four roles' work is and
 what it changes), after layer 3 is proven.
+Ruled 2026-10-31: "Male and Female should matter in this game and as it pertain to things like roles, awards, and
+etc. also age too as far as being legally able to get this as far as ids and etc if that makes sense. Realism is still
+something I want throughout this." So the person's sex and age are read wherever a real rule reads them: casting and
+the acting awards' categories split by sex (and those that went gender-neutral), and every paper or account a person
+can hold only from an age. Layer 3 already holds the ages of licences, ID cards (`must`, `from`), passport bands, a
+bank's opening age and waivers, and citizenship's descent from the father only. Taken up from this ruling, by the
+lead, before layer 3 is proven: the age of majority (contracts) by country and US state; the working age and a child
+performer's permit, hours and set-aside earnings; military service by sex and age; a card's eligibility age; papers a
+sex limits (a married woman's passport needing a husband's consent where the law says so; whether a passport or ID
+offers a sex marker other than M or F). The four roles' research carries a "Sex and age" topic.
