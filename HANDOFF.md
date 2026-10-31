@@ -722,6 +722,13 @@ What layer 0 holds:
 
 ## Next step
 
+**Saved before layer 4 planning (2026-10-31).** The working files that lived only in the session's scratchpad are
+in `workbench/` (its README says what each holds): the waves' briefs and the four audits' reports (`workbench/briefs/`,
+where `audit/{core,world,papers,money}.md` below now are), the unlaunched per-country industry brief and its ten lists
+(`workbench/briefs/industry/`), the writer and integration scripts (`workbench/tools/`), the lead's notes and the
+per-engine mutation configs. Nothing in it is read by the game or the gate. Layer 4 waits on planning with the owner;
+no research runs until then.
+
 **The depth audit and the owner's rulings of 2026-10-30.** At the owner's word ("make sure everything in layers 0-3 is
 fully fleshed out in their certain department covering every single detail leaving no basis untouched"), four read-only
 auditors compared layers 0 to 3 with the owner's documents and the first SLATE (/home/user/1221). Their reports were

@@ -1,0 +1,10 @@
+#!/bin/bash
+# wp SITE "search terms" [after-date]: list WP posts matching
+q=$(python3 -c "import urllib.parse,sys;print(urllib.parse.quote(sys.argv[1]))" "$2")
+a=${3:+&after=${3}T00:00:00}
+for t in 1 2 3; do curl -sSL -m ${T:-60} -A "SLATE-research/0.1 (curl)" "$1/wp-json/wp/v2/posts?search=$q&per_page=50&_fields=id,date,link,title$a" -o /tmp/wp.$$ && break; sleep 2; done; cat /tmp/wp.$$ | python3 -c "
+import sys,json
+t=sys.stdin.read()
+try:
+  for p in json.loads(t): print(p['date'][:10], p['id'], p['title']['rendered'][:110], p['link'])
+except Exception as e: print('nojson', t[:200])"

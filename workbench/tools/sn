@@ -1,0 +1,13 @@
+#!/bin/bash
+# sn URL : print dated holiday sentences from a Samoa News article
+f=/tmp/claude-0/-home-user-SLATE/c8b0b159-b4a5-540a-bbd6-18661cbe240c/scratchpad/dl/sn_$(echo "$1"|md5sum|cut -c1-8).html
+for i in 1 2 3; do curl -sSL -m 40 -A "SLATE-research/0.1 (curl)" -o $f "$1" 2>/dev/null; [ -s $f ] && break; done
+python3 -I -c "
+import bs4,re,sys
+s=bs4.BeautifulSoup(open(sys.argv[1],'rb').read(),'lxml')
+for t in s(['script','style','nav','footer']): t.decompose()
+art=s.find('article') or s
+t=re.sub(r'\s+',' ',art.get_text(' '))
+d=re.search(r'(Mon|Tue|Wed|Thu|Fri|Sat|Sun), \d\d/\d\d/\d{4}',t); print('DATE',d.group(0) if d else '?', sys.argv[2])
+for m in re.finditer(r'[^.]*(holiday|memorandum|day off|closed|excused|observed)[^.]*\.',t): print('-',m.group(0).strip()[:300])
+" $f "$1" | head -${2:-10}

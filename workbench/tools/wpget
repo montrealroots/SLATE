@@ -1,0 +1,6 @@
+#!/bin/bash
+# wpget SITE ID : print post text
+curl -sSL -m ${T:-60} -A "SLATE-research/0.1 (curl)" "$1/wp-json/wp/v2/posts/$2?_fields=date,link,title,content" | python3 -c "
+import sys,json,bs4,re
+p=json.load(sys.stdin); print(p['date'],p['link']); print(p['title']['rendered'])
+print(re.sub(r'\n\s*\n+','\n',bs4.BeautifulSoup(p['content']['rendered'],'lxml').get_text('\n')))"
