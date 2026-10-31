@@ -748,9 +748,26 @@ physical 32, business and career 29, tools and format 12); O*NET's ratings are k
 researched by parallel subagents (registers, judging, teaching), the synonyms grouped by a fourth, each result checked
 by the lead before it landed (`workbench/briefs/BRIEF-attrs.md`; the other roles' form is
 `workbench/briefs/BRIEF-attrs-roles.md`; the file is written by `workbench/tools/attrs-build.py`). The producer, the
-director and the actor are being researched the same way (nine subagents launched the same day): their files go to
-`research/sources/person/attributes/<role>.json` as `person.attributes.<role>`. Then the four lists go to the owner
-for layer 4's plan.
+director and the actor were researched the same way the same day (nine subagents, then one grouping each), each
+file checked as the screenwriter's:
+
+- `producer.json` (R-4603): 703 attributes, 927 terms, 152 pages, 28 blockers. The PGA's Producers Mark weighs
+  development 35%, pre-production 20%, production 20%, post-production 25% (animation 35/20/25/20). O*NET's
+  27-2012.01 is retired from O*NET OnLine, so it is read from database 24.3. Left out and named in the note: six
+  music-only ESCO skills, and camera-operating skills on CPNEF-AV's Chargé de production fiche, evidently copied there.
+- `director.json` (R-4602): 656 attributes, 850 terms, 134 pages, 23 blockers. 27-2012.02 is retired, its ratings
+  from database 24.3. Ten terms left out under `excluded` (UCLA's theatre Directing MFA, KABC's live-newscast post).
+- `actor.json` (R-4604): 683 attributes, 1,021 terms, 158 pages, 35 blockers. Québec, WorkBC and ANZSCO file actors
+  with circus, dance and teaching occupations, so some of their abilities are those occupations'; Spotlight's playing
+  age kept, appearance and nationality left out (who the person is); the SAG-AFTRA agreement read is the 2014 text.
+
+The sources that refused all four roles alike: bls.gov, oscars.org, bafta.org, ScreenSkills, Canada's Job Bank,
+Jobs and Skills Australia and Your Career, CareersPortal, BERUFENET's keyed API, Telefilm; web.archive.org reset
+every connection all day. Each role's blockers are in its file, with the five methods.
+
+Next: the four lists go to the owner for layer 4's plan: whether attributes return (KEEP entry 11 removed them), which,
+shown how (as numbers or not), and what each one reads and changes (read, bite, downstream). Nothing is built from
+them until the owner rules.
 
 **Saved before layer 4 planning (2026-10-31).** The working files that lived only in the session's scratchpad are
 in `workbench/` (its README says what each holds): the waves' briefs and the four audits' reports (`workbench/briefs/`,
