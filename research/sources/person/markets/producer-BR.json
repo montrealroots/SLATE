@@ -1,0 +1,327 @@
+{
+ "topic": "markets.producer.BR",
+ "read": "2026-11-01",
+ "note": "Read 2026-11-01 at the owner's word (\"Now add markets for writers, directors and producers\"): the terms a producer works on (funds, incentives, fee caps, outcomes) in Brazil. Research and retry subagents (workbench/briefs/BRIEF-roles-markets*.md); every quote checked by the lead against its saved page; a scan read by OCR is marked so and its figures checked against the image.",
+ "figures": [
+  {
+   "item": "fund",
+   "finding": "Brazil's federal Audiovisual Sector Fund (FSA, run by ANCINE with BRDE as agent) is highly selective: its 'Produção Seletivo Cinema 2024' call for cinema features drew 1,513 applications and selected 92 (about 6%), its international co-production cinema call 76 of 478, and across all calls with 2025 results 438 of 5,851 projects were chosen.",
+   "value": {
+    "fund": "Fundo Setorial do Audiovisual (FSA)",
+    "calls": {
+     "producaoSeletivoCinema2024": {
+      "applied": 1513,
+      "selected": 92,
+      "rate": 0.061
+     },
+     "coproducaoInternacionalCinema2023": {
+      "applied": 478,
+      "selected": 76
+     },
+     "desempenhoComercialProdutoras2024": {
+      "companiesApplied": 86,
+      "selected": 21
+     },
+     "desempenhoArtistico2024": {
+      "companiesApplied": 39,
+      "selected": 15
+     },
+     "rioFilmeArranjo2025": {
+      "applied": 1302,
+      "selected": 89
+     },
+     "brasilPortugal2025": {
+      "applied": 24,
+      "selected": 5
+     }
+    },
+    "allCalls2025": {
+     "projectsApplied": 5851,
+     "projectsSelected": 438,
+     "companiesApplied": 211,
+     "companiesSelected": 85
+    },
+    "rioFilme2025FeatureFictionAnimationBRL": 59000000
+   },
+   "applies": "Brazil, FSA public calls with results published in 2025 (ANCINE management report 2025).",
+   "sources": [
+    {
+     "src": 0,
+     "said": "PRODUÇÃO CINEMA: COPRODUÇÃO INTERNACIONAL 2023 Produção 478 76 Projeto PRODUÇÃO SELETIVO CINEMA 2024 Produção 1513 92 Projeto … verifica-se a inscrição de 5.851 projetos, sendo selecionados 438. Quanto às empresas, foram inscritas 211 e selecionadas 85. … (a) Produção de Longa-Metragem – Ficção ou Animação – R$ 59 milhões"
+    }
+   ]
+  },
+  {
+   "item": "feecap",
+   "finding": "In a project financed through ANCINE's incentives or the FSA, the producing company's management fee (gerenciamento, which includes the project's overheads) may be at most 10% of the production budget, and a fundraising agent's fee at most 10% of the amount authorised to raise, never payable to the producer itself or for money won in public calls; at least 80% of the budget must be secured before funds are released.",
+   "value": {
+    "managementFeeMaxShareOfProductionBudget": 0.1,
+    "managementFeeIncludes": "project infrastructure (overheads)",
+    "agencyFeeMaxShareOfAuthorisedRaise": 0.1,
+    "agencyFeeBannedFor": [
+     "the producer, co-producers or related companies",
+     "money from public selections including the FSA"
+    ],
+    "financingSecuredBeforeRelease": 0.8
+   },
+   "applies": "Brazil, audiovisual projects under ANCINE's indirect (tax-incentive) and direct (FSA) support, IN ANCINE 158/2021 (replacing IN 125/2015), as published 27 December 2021.",
+   "sources": [
+    {
+     "src": 1,
+     "said": "gerenciamento: remuneração da empresa produtora brasileira pelos serviços de gestão da obra audiovisual realizada, incluindo as despesas de infraestrutura do projeto … I - gerenciamento do projeto, no limite máximo de 10% (dez por cento) do orçamento do projeto da modalidade de produção, limitado ao montante efetivamente executado com recursos administrados pela ANCINE … II - agenciamento, no limite máximo de 10% (dez por cento) do valor autorizado para captação … comprovação da garantia de financiamento de, no mínimo, 80% (oitenta por cento) do valor do orçamento total do projeto"
+    }
+   ]
+  },
+  {
+   "item": "incentive",
+   "finding": "Brazil's main incentive is not a rebate but tax money steered into productions: under articles 3 and 3-A of the Audiovisual Law foreign distributors and broadcasters may invest 70% of withheld income tax in independent Brazilian works, and under articles 1 and 1-A investors and sponsors deduct what they put in; since Lei 15.132 of 30 April 2025 a project may raise up to R$9 million under articles 3 and 3-A and R$12 million under 1 and 1-A (R$3 million and R$4 million before), with at least 5% of the budget from the producer's own or third-party money and all incentives together held to 95% of the approved budget; the deductions run to 2029.",
+   "value": {
+    "mechanisms": [
+     "Lei 8.685/93 art. 3 (foreign distributors' withheld income tax)",
+     "art. 3-A (broadcasters' withheld income tax)"
+    ],
+    "capPerProjectBRL": 9000000,
+    "capSince": "2025-04-30 (Lei 15.132/2025)",
+    "recommendedCapBRL2021": 7000000,
+    "shareOfIndirectFunding": {
+     "2011": 0.25,
+     "2020": 0.7
+    },
+    "status": "current consolidated text (Câmara dos Deputados), read 2026-11-01",
+    "capPerProjectArts1and1A_BRL": 12000000,
+    "capBeforeLei15132_BRL": {
+     "arts3and3A": 3000000,
+     "arts1and1A": 4000000
+    },
+    "withheldTaxAbatement": 0.7,
+    "producerCounterpartMinShareOfBudget": 0.05,
+    "allIncentivesMaxShareOfBudget": 0.95,
+    "deductionsRunTo": 2029
+   },
+   "applies": "Brazil, Lei do Audiovisual (8.685/93) as amended to Lei 15.132/2025, independent Brazilian producers; share of indirect funding from ANCINE regulatory impact analysis, November 2021.",
+   "sources": [
+    {
+     "src": 2,
+     "said": "os limites do aporte de recursos oriundos dos incentivos previstos nos artigos 3º e 3º-A não sofrem revisão desde a redação dada pela Lei nº 11.437/2006. … A AIR mostrou que, desde 2006, o teto de R$ 3 milhões teve uma perda real no poder de compra superior a 50% … Se em 2011 os recursos dos arts. 3º- e 3º-A representaram 25% do total captado naquele ano, em 2020 essa participação subiu para quase 70%. … A Análise de Impacto Regulatório recomendou a opção de ação “III”, com a ampliação do teto de aporte, de R$ 3 milhões para R$ 7 milhões ."
+    },
+    {
+     "src": 3,
+     "said": "Art. 1º Até o exercício fiscal de 2029, inclusive … abatimento de 70% (setenta por cento) do imposto devido … I - contrapartida de recursos próprios ou de terceiros correspondente a 5% (cinco por cento) do orçamento global aprovado … II - limite do aporte de recursos objeto dos incentivos previstos nos arts. 1º e 1º-A, somados, de R$ 12.000.000,00 (doze milhões de reais) e, para os incentivos previstos nos arts. 3º e 3º-A desta Lei, somados, de R$ 9.000.000,00 (nove milhões de reais), podendo esses limites ser utilizados concomitantemente; (Inciso com redação dada pela Lei nº 15.132, de 30/4/2025) … limitado o total destes incentivos a 95% (noventa e cinco por cento) do total do orçamento aprovado pela ANCINE."
+    }
+   ]
+  },
+  {
+   "item": "outcomes",
+   "finding": "Brazil released 154 Brazilian films in cinemas in 2025 (197 in 2024) out of 431 releases; they drew 11.1 million admissions, 9.9% of the total, and R$215.6 million.",
+   "value": {
+    "brazilianReleases": {
+     "2019": 169,
+     "2022": 173,
+     "2023": 161,
+     "2024": 197,
+     "2025": 154
+    },
+    "allReleases2025": 431,
+    "brazilianAdmissions": {
+     "2019": 24052777,
+     "2023": 3701853,
+     "2024": 12638143,
+     "2025": 11146577
+    },
+    "brazilianAdmissionsShare": {
+     "2019": 0.135,
+     "2023": 0.032,
+     "2024": 0.101,
+     "2025": 0.099
+    },
+    "brazilianGrossBRL2025": 215572241
+   },
+   "applies": "Brazil, ANCINE/OCA statistical yearbook 2025 (theatrical market).",
+   "sources": [
+    {
+     "src": 4,
+     "said": "Títulos lançados 458 463 472 452 174 309 385 415 456 431 … Público dos títulos brasileiros 30.413.839 17.358.513 24.239.873 24.052.777 8.558.642 911.091 4.032.508 3.701.853 12.638.143 11.146.577 Renda dos títulos brasileiros (R$) 362.780.505 240.767.678 290.102.953 328.444.023 131.413.379 15.691.240 71.201.203 67.095.990 251.981.109 215.572.241 Títulos brasileiros lançados 142 160 183 169 59 129 173 161 197 154 % de público dos filmes brasileiros 16,5% 9,6% 14,8% 13,5% 21,7% 1,7% 4,2% 3,2% 10,1% 9,9%"
+    }
+   ]
+  },
+  {
+   "item": "outcomes",
+   "finding": "Over its first ten years (2009 to 2018) the FSA's cinema production calls drew 4,881 applications and selected 854 (about 17.5%), committing R$1.10 billion, while production and commercialisation projects returned only R$52.7 million to the fund; ANCINE singles out six films that returned more than the FSA invested (the best, Minha Mãe é uma Peça, 191.65%).",
+   "value": {
+    "years": [
+     2009,
+     2018
+    ],
+    "cinemaProduction": {
+     "applied": 4881,
+     "selected": 854,
+     "rate": 0.175,
+     "committedBRL": 1098011190
+    },
+    "returnsFromProductionAndCommercialisationBRLm": 52.7,
+    "filmsReturningMoreThanInvested": 6,
+    "bestRecovery": {
+     "film": "Minha Mãe é uma Peça - O Filme",
+     "investedBRL": 2500000,
+     "returnedBRL": 4791188,
+     "recovery": 1.9165
+    },
+    "returnBasis": "FSA's share of gross distribution revenue and producer net revenue for 7 years after release, per call terms"
+   },
+   "applies": "Brazil, FSA cinema production investments 2009 to 2018 (ANCINE consolidated results).",
+   "sources": [
+    {
+     "src": 5,
+     "said": "Propostas inscritas 4.881 4.142 Projetos selecionados 854 686 Valores destinados aos projetos selecionados R$1.098.011.190 R$810.987.984 … Produção e comercialização de obras audiovisuais 52,7 … Seis projetos audiovisuais se destacaram por apresentar retorno ainda maior do que o investimento realizado pelo FSA … Minha Mãe é uma Peça - O Filme 2.500.000 4.791.188 191,65%"
+    }
+   ]
+  },
+  {
+   "item": "union",
+   "finding": "Brazil's independent producers' association BRAVI (Brasil Audiovisual Independente) groups 675 production companies from all five regions and 21 states; a production company pays R$280 a month as a voting member (R$460 a month to join its Brazilian Content export programme).",
+   "value": {
+    "name": "BRAVI (Brasil Audiovisual Independente)",
+    "members": 675,
+    "offices": [
+     "São Paulo",
+     "Rio de Janeiro"
+    ],
+    "states": 21,
+    "duesBRLPerMonth": {
+     "associadoProdutora": 280,
+     "participanteBrC": 460
+    }
+   },
+   "applies": "Brazil, as published on bravi.tv, read 2026-11-01.",
+   "sources": [
+    {
+     "src": 6,
+     "said": "A BRAVI agrupa hoje 675 produtoras … das cinco regiões do Brasil … Estamos presentes em 21 estados da Federação"
+    },
+    {
+     "src": 7,
+     "said": "Produtora de Conteúdo Audiovisual … ASSOCIADO BRAVI R$ 280,00/mês … PARTICIPANTE BrC R$ 460,00/mês"
+    }
+   ]
+  },
+  {
+   "item": "fund",
+   "finding": "For its 2023 cinema calls the FSA raised the most it would put into producing one work to R$7.5 million (R$5 million for TV and VoD works).",
+   "value": {
+    "capPerWorkBRL": {
+     "cinema2023": 7500000,
+     "tvVod2023": 5000000
+    }
+   },
+   "applies": "Brazil, Fundo Setorial do Audiovisual, 2023 production calls (ANCINE presentation, 2023); per-level caps of later calls not read.",
+   "sources": [
+    {
+     "src": 8,
+     "said": "FSA – Chamadas para Cinema 2023 … Teto de aporte ampliado para R$ 7,5 milhões para produção de obras; … FSA – Chamada para TV/VoD 2023 … Teto de aporte ampliado para R$ 5 milhões para produção de obras, para qualquer"
+    }
+   ]
+  }
+ ],
+ "role": "producer",
+ "country": "BR",
+ "sources": [
+  {
+   "url": "https://www.gov.br/ancine/pt-br/fsa/resultados/Relatorio_Gestao_FSA_2025V.final.pdf",
+   "title": "ANCINE: Relatório de Gestão do Fundo Setorial do Audiovisual 2025 (published 1 May 2026)",
+   "read": "2026-11-01",
+   "kind": "primary",
+   "said": "PRODUÇÃO CINEMA: COPRODUÇÃO INTERNACIONAL 2023 Produção 478 76 Projeto PRODUÇÃO SELETIVO CINEMA 2024 Produção 1513 92 Projeto … verifica-se a inscrição de 5.851 projetos, sendo selecionados 438. Quanto às empresas, foram inscritas 211 e selecionadas 85. … (a) Produção de Longa-Metragem – Ficção ou Animação – R$ 59 milhões"
+  },
+  {
+   "url": "https://www.gov.br/ancine/pt-br/acesso-a-informacao/participacao-social/consulta-publica/consultas-publicas-disponiveis/INSTRUONORMATIVAANCINEN158DE23DEDEZEMBRODE2021DOUImprensaNacional.pdf",
+   "title": "Instrução Normativa ANCINE nº 158, de 23 de dezembro de 2021 (DOU 27/12/2021, Seção 1, p. 190)",
+   "read": "2026-11-01",
+   "kind": "primary",
+   "said": "gerenciamento: remuneração da empresa produtora brasileira pelos serviços de gestão da obra audiovisual realizada, incluindo as despesas de infraestrutura do projeto … I - gerenciamento do projeto, no limite máximo de 10% (dez por cento) do orçamento do projeto da modalidade de produção, limitado ao montante efetivamente executado com recursos administrados pela ANCINE … II - agenciamento, no limite máximo de 10% (dez por cento) do valor autorizado para captação … comprovação da garantia de financiamento de, no mínimo, 80% (oitenta por cento) do valor do orçamento total do projeto"
+  },
+  {
+   "url": "https://www.gov.br/ancine/pt-br/assuntos/noticias/apresentaoairart3e3a.pdf",
+   "title": "ANCINE: Análise de Impacto Regulatório sobre o limite do aporte de recursos objeto dos incentivos previstos nos arts. 3º e 3º-A da Lei nº 8.685/93 (novembro de 2021)",
+   "read": "2026-11-01",
+   "kind": "primary",
+   "said": "os limites do aporte de recursos oriundos dos incentivos previstos nos artigos 3º e 3º-A não sofrem revisão desde a redação dada pela Lei nº 11.437/2006. … A AIR mostrou que, desde 2006, o teto de R$ 3 milhões teve uma perda real no poder de compra superior a 50% … Se em 2011 os recursos dos arts. 3º- e 3º-A representaram 25% do total captado naquele ano, em 2020 essa participação subiu para quase 70%. … A Análise de Impacto Regulatório recomendou a opção de ação “III”, com a ampliação do teto de aporte, de R$ 3 milhões para R$ 7 milhões ."
+  },
+  {
+   "url": "https://www2.camara.leg.br/legin/fed/lei/1993/lei-8685-20-julho-1993-349838-normaatualizada-pl.pdf",
+   "title": "Câmara dos Deputados, Legislação Informatizada: Lei nº 8.685, de 20 de julho de 1993, texto atualizado",
+   "read": "2026-11-01",
+   "kind": "primary",
+   "said": "Art. 1º Até o exercício fiscal de 2029, inclusive … abatimento de 70% (setenta por cento) do imposto devido … I - contrapartida de recursos próprios ou de terceiros correspondente a 5% (cinco por cento) do orçamento global aprovado … II - limite do aporte de recursos objeto dos incentivos previstos nos arts. 1º e 1º-A, somados, de R$ 12.000.000,00 (doze milhões de reais) e, para os incentivos previstos nos arts. 3º e 3º-A desta Lei, somados, de R$ 9.000.000,00 (nove milhões de reais), podendo esses limites ser utilizados concomitantemente; (Inciso com redação dada pela Lei nº 15.132, de 30/4/2025) … limitado o total destes incentivos a 95% (noventa e cinco por cento) do total do orçamento aprovado pela ANCINE."
+  },
+  {
+   "url": "https://www.gov.br/ancine/pt-br/oca/anuario-do-audiovisual-brasileiro-arquivos/anuario-estatistico-do-audiovisual-brasileiro-2025.pdf",
+   "title": "ANCINE/OCA: Anuário Estatístico do Audiovisual Brasileiro 2025",
+   "read": "2026-11-01",
+   "kind": "primary",
+   "said": "Títulos lançados 458 463 472 452 174 309 385 415 456 431 … Público dos títulos brasileiros 30.413.839 17.358.513 24.239.873 24.052.777 8.558.642 911.091 4.032.508 3.701.853 12.638.143 11.146.577 Renda dos títulos brasileiros (R$) 362.780.505 240.767.678 290.102.953 328.444.023 131.413.379 15.691.240 71.201.203 67.095.990 251.981.109 215.572.241 Títulos brasileiros lançados 142 160 183 169 59 129 173 161 197 154 % de público dos filmes brasileiros 16,5% 9,6% 14,8% 13,5% 21,7% 1,7% 4,2% 3,2% 10,1% 9,9%"
+  },
+  {
+   "url": "https://www.gov.br/ancine/pt-br/fsa/resultados/resultados-consolidados-fsa-10-anos-v2.pdf",
+   "title": "ANCINE: Resultados consolidados do Fundo Setorial do Audiovisual, 2009 a 2018",
+   "read": "2026-11-01",
+   "kind": "primary",
+   "said": "Propostas inscritas 4.881 4.142 Projetos selecionados 854 686 Valores destinados aos projetos selecionados R$1.098.011.190 R$810.987.984 … Produção e comercialização de obras audiovisuais 52,7 … Seis projetos audiovisuais se destacaram por apresentar retorno ainda maior do que o investimento realizado pelo FSA … Minha Mãe é uma Peça - O Filme 2.500.000 4.791.188 191,65%"
+  },
+  {
+   "url": "https://bravi.tv/bravi/historico/",
+   "title": "BRAVI: Histórico",
+   "read": "2026-11-01",
+   "kind": "primary",
+   "said": "A BRAVI agrupa hoje 675 produtoras … das cinco regiões do Brasil … Estamos presentes em 21 estados da Federação"
+  },
+  {
+   "url": "https://bravi.tv/associe-se/",
+   "title": "BRAVI: Associe-se",
+   "read": "2026-11-01",
+   "kind": "primary",
+   "said": "Produtora de Conteúdo Audiovisual … ASSOCIADO BRAVI R$ 280,00/mês … PARTICIPANTE BrC R$ 460,00/mês"
+  },
+  {
+   "url": "https://www.gov.br/ancine/pt-br/centrais-de-conteudo/publicacoes/apresentacoes/ANCINEFomentoCenrio2023set.23vportal.pdf/@@download/file",
+   "title": "ANCINE: Cenário 2023, investimentos no setor audiovisual (presentation)",
+   "read": "2026-11-01",
+   "kind": "primary",
+   "said": "FSA – Chamadas para Cinema 2023 … Teto de aporte ampliado para R$ 7,5 milhões para produção de obras; … FSA – Chamada para TV/VoD 2023 … Teto de aporte ampliado para R$ 5 milhões para produção de obras, para qualquer"
+  }
+ ],
+ "blockers": [
+  {
+   "item": "fund",
+   "sought": "The FSA's per-project cap by producer level in its 2024-2026 cinema calls and its share of the budget (the 2023 cap of R$7.5 million is now held).",
+   "tried": {
+    "institution": "BRDE (brde.com.br), which publishes the FSA calls, returned 403 to curl for the 'Produção Seletivo Cinema 2024' call and FAQ PDFs; ANCINE's FSA call page loads its list by script; the ANCINE presentation found (2015) is out of date. | Retry 2026-11-01 (producer retry): gov.br/ancine presentation 'Cenário 2023' fetched through its @@download/file link (saved producer-BR-ancine-fomento-cenario-2023.pdf): 2023 cap used. brde.com.br/wp-content/uploads/2024/10/1-CHAMADA-PUBLICA-PRODUCAO-SELETIVO-CINEMA-2024-ret.pdf and the 2023 call PDF: 403 again.",
+    "official-register": "No DOU publication of the call text located. | Retry 2026-11-01 (producer retry): ANCINE CGFSA minutes (gov.br/ancine/pt-br/fsa/normas/atas-das-reunioes-do-cgfsa) found by search, not reached for a per-level table.",
+    "web-search": "2026-11-01: 'Fundo Setorial do Audiovisual chamada pública 2025 produção longa-metragem cinema valor máximo por projeto'; '\"Produção Seletivo Cinema\" 2024 FSA chamada pública valor máximo de investimento por projeto'. Snippets show a R$250,000 floor and R$10 million for level-5 producers, from the BRDE PDF that could not be read here. | Retry 2026-11-01 (producer retry): \"FSA chamada pública \\\"PRODUÇÃO SELETIVO CINEMA\\\" 2025 regulamento pdf \\\"valor máximo\\\" nível produtora gov.br ancine\": call PDFs on brde.com.br only.",
+    "trade-press": "Meio & Mensagem reports an average FSA feature investment of R$3 million (up to R$6 million) without a primary document to quote; not used. | Retry 2026-11-01 (producer retry): None quoting the per-level table from the call.",
+    "archive": "web.archive.org: availability API returned 429 Too Many Requests and the snapshot fetch was reset (curl 35), 2026-11-01. | Retry 2026-11-01 (producer retry): web.archive.org: http:// refused by the egress policy (\"Blocked by egress policy\"), https:// and the id_ form reset the connection (curl 35); archive.ph reset (curl 35), 2026-11-01."
+   }
+  },
+  {
+   "item": "incentive",
+   "sought": "The Lei Rouanet (8.313/91) deduction rates and caps for audiovisual projects (Lei 8.685 now held: its §5 lets a project combine both up to 95% of budget).",
+   "tried": {
+    "institution": "planalto.gov.br returned an empty reply / connection failure to curl for l8685.htm and l8685compilado.htm. | Retry 2026-11-01 (producer retry): Câmara dos Deputados consolidated Lei 8.685 PDF read (saved producer-BR-camara-lei8685-atualizada.pdf; used). Câmara legin page for Lei 8.313 at a guessed id: 404.",
+    "official-register": "normas.leg.br needs JavaScript; legis.senado.leg.br norm id tried resolved to another law; Câmara legin URL 404. | Retry 2026-11-01 (producer retry): legis.senado.leg.br/norma/550561 found for 8.685; no consolidated 8.313 text located on camara.leg.br by search.",
+    "web-search": "2026-11-01: 'ANCINE fomento indireto mecanismos de incentivo Lei do Audiovisual artigo 1º-A artigo 3º limite captação por projeto' found the ANCINE 2021 AIR (used) and IN 158/2021 (used). | Retry 2026-11-01 (producer retry): \"\\\"8.685\\\" lei do audiovisual texto compilado artigo 1º-A limite 4 milhões ancine legislação\" (found the Câmara text and MP 1.280/2024 memo); \"camara.leg.br legin \\\"lei-8313-23-dezembro-1991\\\" normaatualizada\": no 8.313 result.",
+    "trade-press": "None quoting a primary with the current caps. | Retry 2026-11-01 (producer retry): None for Rouanet audiovisual rates.",
+    "archive": "Not tried after the archive's 429 on the FSA lookup the same session. | Retry 2026-11-01 (producer retry): web.archive.org: http:// refused by the egress policy (\"Blocked by egress policy\"), https:// and the id_ form reset the connection (curl 35); archive.ph reset (curl 35), 2026-11-01."
+   }
+  },
+  {
+   "item": "outcomes",
+   "sought": "How many Brazilian films recoup their full cost (not only the FSA share), by budget.",
+   "tried": {
+    "institution": "ANCINE/OCA yearbook 2025 gives releases, admissions and gross only; FSA management report gives investment and returns to the fund in aggregate, not per-film recoupment. | Retry 2026-11-01 (producer retry): ANCINE Cenário 2023 presentation (saved) gives incentive volumes by mechanism, not per-film recoupment.",
+    "official-register": "No ANCINE series on producer recoupment found. | Retry 2026-11-01 (producer retry): None found.",
+    "web-search": "2026-11-01: 'filmes brasileiros recuperam investimento bilheteria orçamento percentual ANCINE estudo retorno FSA filmes lucrativos' found the FSA 10-year results (used for fund returns) and academic papers, no per-film recoupment rate by budget. | Retry 2026-11-01 (producer retry): \"porcentaje películas mexicanas recuperan su costo IMCINE ... ; filmes brasileiros que se pagaram ANCINE retorno\": no Brazilian result.",
+    "trade-press": "Extraclasse (O Agente Secreto) cites unnamed experts; not used. | Retry 2026-11-01 (producer retry): None quoting an ANCINE recoupment count.",
+    "archive": "Not tried: no candidate primary identified. | Retry 2026-11-01 (producer retry): web.archive.org: http:// refused by the egress policy (\"Blocked by egress policy\"), https:// and the id_ form reset the connection (curl 35); archive.ph reset (curl 35), 2026-11-01."
+   }
+  }
+ ]
+}

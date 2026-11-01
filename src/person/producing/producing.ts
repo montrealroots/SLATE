@@ -1,11 +1,14 @@
 import { defineCommand, type Context } from '../../core/frame/frame.ts';
-import { fromMajor, money, type Money } from '../../core/money/money.ts';
+import { fromMajor, minorUnits, money, type CurrencyCode, type Money } from '../../core/money/money.ts';
 import { addMonths } from '../../core/time/dates.ts';
-import type { LineId } from '../../core/text/text.ts';
+import { t, type LineId } from '../../core/text/text.ts';
+import { countryName, type CountryCode } from '../../world/gazetteer/gazetteer.ts';
+import { AGREEMENTS, COUNTRY, MARKET as WORK, type Agreement } from '../acting/acting.ts';
 import { componentValues, practise, skillOf, type AttributesSlice } from '../attributes/attributes.ts';
 import { FEATURE_SHOOT } from '../directing/directing.ts';
 import { boxOfficeFactor, lovesOrRefuse, type GenresSlice } from '../genres/genres.ts';
 import { spread } from '../work/work.ts';
+import compiled from './markets.json' with { type: 'json' };
 
 /**
  * The producer's work and how it comes out (BUILD-ORDER layer 4; the owner, 2026-10-31: "I want my attributes to effect
@@ -35,12 +38,24 @@ import { spread } from '../work/work.ts';
  *
  * The producer options material in the genres they love (the game's reading of the Genres page, person.genres.model).
  *
- * The producer works in the UK, the one market whose every stage has a published figure here (the BFI's funding,
- * option rule, fee line, release and recoupment by budget; the UK's credits). shortcut: the CNC's, Telefilm's and
- * Screen Australia's terms (R-4612) wait for a release and recoupment figure in their own markets, read when that
- * engine is built. What the trade doesn't publish (how well a producer's eye reads a script, how far a plan is off,
- * how far a shoot slips, how often the market closes a deal, how much a better package or campaign moves a rate) is the
- * game's own until the owner balances it (person.producing.model).
+ * The producer works in the UK unless the material is optioned in another market: the UK's every stage has a published
+ * figure here (the BFI's funding, option rule, fee line, release and recoupment by budget; the UK's credits). Beyond it,
+ * twenty markets (src/person/producing/markets.json, compiled by tools/person/markets-producer from the research,
+ * register facts person.markets.producer.<CC>, and Telefilm's, the CNC's and Screen Australia's terms from R-4612):
+ * the project's budget is in the market's currency, its option runs in the market's city's time (the actor's market
+ * there: one model of where the work is), and each stage is the market's where its research sets it, by the budget
+ * where it sets it by budget: the fee and overheads at each cap a funder sets (none where it sets none), the credit at
+ * the incentive's rate on the share it counts, at most its cap, nothing below its threshold or where the research says
+ * there is none, none where it isn't known; the public fund's yes at its rate as the package sells it, an award at the
+ * most its terms allow (its share, its cap or its fixed sum, and what the cap on all public aid leaves after the
+ * credit), refused where the market's fund isn't known or the budget is outside it; a cinema release at the market's
+ * rate, refused where none is known, and earning back nothing the game can tell. The option is the WGA's everywhere,
+ * and the market's money is sought in the EAO's shares (the game's reading where a market's own aren't researched,
+ * person.markets.producer.model); what a market's research couldn't find is told.
+ *
+ * What the trade doesn't publish (how well a producer's eye reads a script, how far a plan is off, how far a shoot
+ * slips, how often the market closes a deal, how much a better package or campaign moves a rate) is the game's own
+ * until the owner balances it (person.producing.model).
  */
 
 /** The line that tells the player these figures are the game's own (person.producing.model). */
@@ -48,6 +63,44 @@ export const MODEL_LINE: LineId = 'producing.model';
 
 /** The zone the option's months run in: the producer's market. */
 export const ZONE = 'Europe/London';
+
+/** The market the engine keeps itself (R-4612); a project is in it unless optioned in another. */
+export const HOME = 'GB';
+
+/** A rate paid on the part of what is counted from one amount to another (to none: the rest), as compiled. */
+export interface Band {
+  readonly from: number;
+  readonly to: number | null;
+  readonly rate: number;
+}
+/** A term for budgets in a range (both counted, in major units): a fixed sum, or its bands on the share counted, at most so much. */
+export interface Tier {
+  readonly budget: readonly [number, number | null];
+  readonly bands: readonly Band[];
+  readonly base: number;
+  readonly net: boolean;
+  readonly most: number | null;
+  readonly sum: number | null;
+}
+/** What a market's research couldn't find, by the item its blockers name. */
+export type Unknown = 'fund' | 'incentive' | 'feecap' | 'outcomes' | 'market' | 'union' | 'language';
+/** A market as compiled (tools/person/markets-producer/compile.ts). */
+export interface Market {
+  readonly currency: CurrencyCode;
+  readonly fund: { readonly rate: number; readonly tiers: readonly Tier[] } | null;
+  readonly aid: readonly Tier[];
+  readonly credit: readonly Tier[] | null;
+  readonly fees: readonly (readonly Tier[])[];
+  readonly release: readonly { readonly budget: readonly [number, number | null]; readonly rate: number }[] | null;
+  readonly unknown: readonly Unknown[];
+}
+export const MARKETS = compiled as unknown as Readonly<Record<string, Market>>;
+
+/** The zone a market's months run in: its city's, as the actor's market there keeps it. */
+export const zoneOf = (market: string): string => WORK[AGREEMENTS.find((a) => COUNTRY[a] === market) as Agreement].zone;
+
+/** A market's currency. */
+export const currencyOf = (market: string): CurrencyCode => (market === HOME ? 'GBP' : (MARKETS[market] as Market).currency);
 
 /** The WGA's option: 18 months, renewed for 18 more, each at 10% of the minimum (R-4612, the 2026 MBA). */
 export const OPTION_MONTHS = 18;
@@ -122,10 +175,10 @@ export interface Plan {
   needed: number;
   /** The days the plan schedules. */
   scheduled: number;
-  /** The producer's fee and overheads. */
-  fee: Money;
-  /** The UK's tax credit. */
-  credit: Money;
+  /** The producer's fee and overheads; none where the market caps neither. */
+  fee: Money | null;
+  /** The market's tax credit; none where it isn't known. */
+  credit: Money | null;
 }
 
 export interface Shoot {
@@ -134,7 +187,7 @@ export interface Shoot {
   /** What the days past the schedule cost. */
   overrun: Money;
   /** The producer's fee after the overrun is taken from it. */
-  fee: Money;
+  fee: Money | null;
   /** The film, 0 to 100. */
   quality: number;
 }
@@ -144,6 +197,8 @@ export interface Project {
   readonly optioned: number;
   /** The genre of the material, by id. */
   readonly genre: string;
+  /** The market it is made in, by country. */
+  readonly market: string;
   expires: number;
   /** Each option payment, the first and each renewal's, credited against the purchase price. */
   options: Money[];
@@ -154,7 +209,8 @@ export interface Project {
   /** Each source of money closed. */
   raised: { [source: string]: Money };
   shot: Shoot | null;
-  release: { at: number; cinema: boolean; doubled: boolean } | null;
+  /** Twice the budget back, where the market's research tells it. */
+  release: { at: number; cinema: boolean; doubled: boolean | null } | null;
 }
 
 export interface ProducingSlice {
@@ -169,7 +225,7 @@ type Optioning = Producing & { genres: GenresSlice };
 
 const clamp = (n: number, lo: number, hi: number) => Math.min(hi, Math.max(lo, n));
 const of = (v: Values, id: string) => skillOf(v, 'producer', id);
-const pounds = (minor: number) => money('GBP', Math.round(minor));
+const amount = (currency: CurrencyCode, minor: number) => money(currency, Math.round(minor));
 const wholeDays = (days: number) => {
   if (!Number.isInteger(days) || days < 1) throw new RangeError(`the days given are a whole number of at least 1 (${days})`);
 };
@@ -198,7 +254,7 @@ export const C = {
 /** The option still runs a number of months past a moment; refused where it doesn't. */
 function running(p: Project, at: number, months: number): void {
   // @slate:consumer producing.renew
-  if (addMonths(ZONE, at, months) > p.expires) throw new Error(`project ${p.id}'s option ${months === 0 ? 'has lapsed' : `has under ${months} months left`}`);
+  if (addMonths(zoneOf(p.market), at, months) > p.expires) throw new Error(`project ${p.id}'s option ${months === 0 ? 'has lapsed' : `has under ${months} months left`}`);
 }
 
 /** The producer's films released in cinemas in the PGA's seven years before a moment. */
@@ -232,6 +288,8 @@ export interface DaysArgs {
  */
 function option(s: Optioning, a: OptionArgs, c: Context): void {
   wholeDays(a.days);
+  const market = a.market ?? HOME;
+  if (market !== HOME && !Object.hasOwn(MARKETS, market)) throw new Error(`${market} isn't a market a producer works in`);
   // @slate:consumer genres.choose
   lovesOrRefuse(s.genres, a.genre);
   const v = componentValues(s.attributes, 'producer');
@@ -246,7 +304,7 @@ function option(s: Optioning, a: OptionArgs, c: Context): void {
     // Stryker disable next-line EqualityOperator: a draw is continuous, so two judge alike with no probability.
     if (judged > best.judged) best = { worth, judged };
   }
-  s.producing.projects.push({ id, optioned: c.now, genre: a.genre, expires: addMonths(ZONE, c.now, OPTION_MONTHS), options: [OPTION_FEE], material: best.worth, plan: null, applied: false, raised: {}, shot: null, release: null });
+  s.producing.projects.push({ id, optioned: c.now, genre: a.genre, market, expires: addMonths(zoneOf(market), c.now, OPTION_MONTHS), options: [OPTION_FEE], material: best.worth, plan: null, applied: false, raised: {}, shot: null, release: null });
   practise(s.attributes, 'producer', [C.select], a.days);
 }
 
@@ -255,6 +313,8 @@ export interface OptionArgs {
   days: number;
   /** The genre read in, by id: one the producer loves. */
   genre: string;
+  /** The market the material is optioned in, by country: the UK where none is given. */
+  market?: string;
 }
 
 export interface ProjectArgs {
@@ -267,21 +327,50 @@ function renew(s: { producing: ProducingSlice }, a: ProjectArgs, c: Context): vo
   const p = projectOf(s.producing, a.project);
   if (p.shot !== null) throw new Error(`project ${p.id}'s rights are bought`);
   running(p, c.now, 0);
-  p.expires = addMonths(ZONE, p.expires, OPTION_MONTHS);
+  p.expires = addMonths(zoneOf(p.market), p.expires, OPTION_MONTHS);
   p.options.push(OPTION_FEE);
 }
 
 export interface PlanArgs {
   [key: string]: number | string;
   project: number;
-  /** In pounds. */
+  /** In the market's currency. */
   budget: string;
 }
 
 /** The UK's credit on a budget: the IFTC's 53% to £15m (its £6.36m most is 53% of 80% of £15m), the AVEC's 34% above. */
 export function creditOn(budget: Money): Money {
   const rate = budget.minor <= CREDIT.ceiling * 100 ? CREDIT.independent : CREDIT.film;
-  return pounds(budget.minor * CREDIT.core * rate);
+  return amount('GBP', budget.minor * CREDIT.core * rate);
+}
+
+/** The tier of a market's term that holds a budget; none where none does. */
+export function tierFor<T extends { readonly budget: readonly [number, number | null] }>(tiers: readonly T[], budget: Money): T | undefined {
+  const scale = 10 ** minorUnits(budget.currency);
+  return tiers.find(({ budget: [lo, hi] }) => budget.minor >= Math.round(lo * scale) && (hi === null || budget.minor <= Math.round(hi * scale)));
+}
+
+/** What a tier gives a budget, in minor units: its sum, or its bands on the share counted (without end where it has none), at most its most. */
+export function amountOf(tier: Tier, budget: Money): number {
+  const scale = 10 ** minorUnits(budget.currency);
+  if (tier.sum !== null) return tier.sum * scale;
+  // Net of itself as the research's example counts it (Germany's fee: 5% of €3.25m less its 5%, €154,375).
+  const counted = budget.minor * tier.base * (tier.net ? 1 - (tier.bands[0] as Band).rate : 1);
+  const banded = tier.bands.length === 0 ? Infinity : tier.bands.reduce((sum, b) => sum + b.rate * Math.max(0, Math.min(counted, b.to === null ? Infinity : b.to * scale) - b.from * scale), 0);
+  return tier.most === null ? banded : Math.min(banded, tier.most * scale);
+}
+
+/** A market's fee and overheads on a budget: each cap it sets, summed; none where it sets none for the budget. */
+export function feeIn(m: Market, budget: Money): Money | null {
+  const tiers = m.fees.map((part) => tierFor(part, budget)).filter((x): x is Tier => x !== undefined);
+  return tiers.length === 0 ? null : amount(budget.currency, tiers.reduce((sum, x) => sum + amountOf(x, budget), 0));
+}
+
+/** A market's credit on a budget: nothing where no tier holds it (below the threshold, or none at all); none where it isn't known. */
+export function creditIn(m: Market, budget: Money): Money | null {
+  if (m.credit === null) return null;
+  const tier = tierFor(m.credit, budget);
+  return amount(budget.currency, tier === undefined ? 0 : amountOf(tier, budget));
 }
 
 /** How near the need a producer schedules, 0 to 100: the detailed plan and the production's costs. */
@@ -292,12 +381,16 @@ function plan(s: Producing, a: PlanArgs, c: Context): void {
   const v = componentValues(s.attributes, 'producer');
   const p = projectOf(s.producing, a.project);
   if (p.plan !== null) throw new Error(`project ${p.id} is planned`);
-  const budget = fromMajor('GBP', a.budget);
-  if (budget.minor < 100) throw new RangeError(`a budget is at least £1 (${a.budget})`);
+  // @slate:consumer producing.option
+  const currency = currencyOf(p.market);
+  const budget = fromMajor(currency, a.budget);
+  if (budget.minor < 10 ** minorUnits(currency)) throw new RangeError(`a budget is at least 1 ${currency} (${a.budget})`);
   const d = c.draws('producing.work', 'plan', p.id);
   const needed = Math.round(FEATURE_SHOOT * (1 + MODEL.need * (2 * d.float() - 1)));
   const scheduled = Math.max(1, Math.round(needed * (1 + MODEL.planned * (1 - planSkill(v) / 100) * (2 * d.float() - 1))));
-  p.plan = { budget, needed, scheduled, fee: pounds((budget.minor * FEE_SHARE) / (1 + FEE_SHARE)), credit: creditOn(budget) };
+  const m = MARKETS[p.market] as Market;
+  const home = p.market === HOME;
+  p.plan = { budget, needed, scheduled, fee: home ? amount(currency, (budget.minor * FEE_SHARE) / (1 + FEE_SHARE)) : feeIn(m, budget), credit: home ? creditOn(budget) : creditIn(m, budget) };
   practise(s.attributes, 'producer', [C.plan, C.costs], 1);
 }
 
@@ -311,7 +404,7 @@ export function raised(p: Project): number {
   // @slate:consumer producing.plan
   // @slate:consumer producing.apply
   // @slate:consumer producing.raise
-  return Object.values(p.raised).reduce((t, m) => t + m.minor, planOf(p).credit.minor);
+  return Object.values(p.raised).reduce((sum, m) => sum + m.minor, planOf(p).credit?.minor ?? 0);
 }
 
 /** What the sources must close: all but the producer's own share. */
@@ -325,15 +418,34 @@ function seeking(p: Project, at: number, months: number): void {
   running(p, at, months);
 }
 
-/** Applies to the BFI, once a project: a yes at its rate as the package sells it, an award of its share of the budget. */
+/**
+ * A market's fund for a project: how often it says yes, and its award at the most its terms allow, held to what the cap
+ * on all public aid leaves after the credit; refused where the fund isn't known, the budget is outside it, or the credit
+ * takes all the aid the budget may have.
+ */
+export function fundFor(p: Project): { rate: number; award: number } {
+  const m = MARKETS[p.market] as Market;
+  const { budget, credit } = planOf(p);
+  if (m.fund === null) throw new Error(`what a public fund in ${countryName(p.market as CountryCode)} gives a producer's film isn't known to this game`);
+  const tier = tierFor(m.fund.tiers, budget);
+  if (tier === undefined) throw new Error(`project ${p.id}'s budget isn't one ${countryName(p.market as CountryCode)}'s fund backs`);
+  const aid = tierFor(m.aid, budget);
+  const left = aid === undefined ? Infinity : amountOf(aid, budget) - (credit?.minor ?? 0);
+  if (left <= 0) throw new Error(`project ${p.id}'s credit takes all the public aid it may have`);
+  return { rate: m.fund.rate, award: Math.min(amountOf(tier, budget), left) };
+}
+
+/** Applies to the market's fund (the BFI in the UK), once a project: a yes at its rate as the package sells it, and its award. */
 function apply(s: Producing, a: ProjectArgs, c: Context): void {
   const v = componentValues(s.attributes, 'producer');
   const p = projectOf(s.producing, a.project);
   if (p.applied) throw new Error(`project ${p.id} has applied`);
-  seeking(p, c.now, MONTHS_LEFT);
+  const home = p.market === HOME;
+  seeking(p, c.now, home ? MONTHS_LEFT : 0);
+  const { rate, award } = home ? { rate: BFI.rate, award: Math.min(planOf(p).budget.minor * BFI.share, BFI.most * 100) } : fundFor(p);
   p.applied = true;
   // Stryker disable next-line EqualityOperator: a draw is continuous, so it equals the chance with no probability.
-  if (c.draws('producing.work', 'apply', p.id).float() < BFI.rate * factor(s.producing, v, p, c.now)) p.raised['bfi'] = pounds(Math.min(planOf(p).budget.minor * BFI.share, BFI.most * 100));
+  if (c.draws('producing.work', 'apply', p.id).float() < rate * factor(s.producing, v, p, c.now)) p.raised[home ? 'bfi' : 'fund'] = amount(planOf(p).budget.currency, award);
   practise(s.attributes, 'producer', [C.pitch, C.arrange, C.network], 1);
 }
 
@@ -349,7 +461,7 @@ function raise(s: Producing, a: DaysArgs & ProjectArgs, c: Context): void {
     // Stryker disable next-line EqualityOperator: a draw is continuous, so it equals the chance with no probability.
     if (d.float() >= chance) continue;
     const [source, share] = Object.entries(MARKET).find(([k]) => !(k in p.raised)) as [Source, number | null];
-    p.raised[source] = pounds(share === null ? target(p) - raised(p) : planOf(p).budget.minor * share);
+    p.raised[source] = amount(planOf(p).budget.currency, share === null ? target(p) - raised(p) : planOf(p).budget.minor * share);
   }
   practise(s.attributes, 'producer', [C.arrange, C.network], a.days);
 }
@@ -376,7 +488,7 @@ function shoot(s: Producing, a: ProjectArgs, c: Context): void {
   const days = Math.ceil(needed * (1 + MODEL.falter * (1 - t / 100) * d.float()));
   const overrun = (Math.max(0, days - scheduled) * budget.minor) / scheduled;
   const quality = clamp(0.5 * p.material + 0.5 * t + spread(t) * (2 * d.float() - 1), 0, 100);
-  p.shot = { at: c.now, days, overrun: pounds(overrun), fee: pounds(Math.max(0, fee.minor - overrun)), quality };
+  p.shot = { at: c.now, days, overrun: amount(budget.currency, overrun), fee: fee === null ? null : amount(budget.currency, Math.max(0, fee.minor - overrun)), quality };
   practise(s.attributes, 'producer', [C.hire, C.lead], days);
 }
 
@@ -386,24 +498,54 @@ export const sellSkill = (v: Values, quality: number): number => 0.5 * quality +
 /** A rate by budget, from a table of bounds in pounds. */
 export const rateFor = (table: readonly (readonly [number, number])[], budget: Money): number => (table.find(([below]) => budget.minor < below * 100) as readonly [number, number])[1];
 
-/** Releases a film shot: a cinema release, and twice the budget back, at the BFI's rates for its budget as it sells. */
+/**
+ * Releases a film shot: a cinema release, and twice the budget back, at the BFI's rates for its budget as it sells; in
+ * another market, a cinema release at its rate, refused where its research gives none.
+ */
 function release(s: Producing, a: ProjectArgs, c: Context): void {
   const v = componentValues(s.attributes, 'producer');
   const p = projectOf(s.producing, a.project);
   // @slate:consumer producing.shoot
   if (p.shot === null) throw new Error(`project ${p.id} isn't shot`);
   if (p.release !== null) throw new Error(`project ${p.id} is released`);
+  const { budget } = planOf(p);
+  const home = p.market === HOME;
+  const tier = home ? undefined : tierFor((MARKETS[p.market] as Market).release ?? [], budget);
+  if (!home && tier === undefined) throw new Error(`how often a film made in ${countryName(p.market as CountryCode)} reaches cinemas isn't known to this game`);
   const f = 0.5 + sellSkill(v, p.shot.quality) / 100;
   const d = c.draws('producing.work', 'release', p.id);
-  const { budget } = planOf(p);
   // Stryker disable next-line EqualityOperator: a draw is continuous, so it equals the chance with no probability.
-  const cinema = d.float() < rateFor(RELEASE, budget) * f;
+  const cinema = d.float() < (tier === undefined ? rateFor(RELEASE, budget) : tier.rate) * f;
   // @slate:consumer producing.option
   const earns = rateFor(RECOUP, budget) * f * boxOfficeFactor(p.genre);
   // Stryker disable next-line EqualityOperator: as above.
-  p.release = { at: c.now, cinema, doubled: cinema && d.float() < earns };
+  p.release = { at: c.now, cinema, doubled: home ? cinema && d.float() < earns : null };
   practise(s.attributes, 'producer', [C.marketing], 1);
 }
+
+/** The line that tells the player what of a market isn't known. */
+export const UNKEPT_LINE: LineId = 'producing.unkept';
+/** Each item a market's research couldn't find, as the player is told it. */
+export const MISSING: Readonly<Record<Unknown, string>> = {
+  fund: 'what its public fund gives a film, or how often it says yes',
+  incentive: 'the production incentive a film can claim',
+  feecap: "the cap a funder sets on the producer's fee and overheads",
+  outcomes: 'how often a film is released or earns back its cost',
+  market: 'where most of the work is',
+  union: "the producers' association and what it asks",
+  language: 'the language the work is made in',
+};
+
+/** What the player is told of a market where its research couldn't find all of it: "a, b and c"; nothing where it is known whole. */
+export function aboutMarket(market: string): string | undefined {
+  const missing = (MARKETS[market]?.unknown ?? []).map((u) => MISSING[u]);
+  if (missing.length === 0) return undefined;
+  const list = missing.length > 1 ? `${missing.slice(0, -1).join(', ')} and ${missing.at(-1) as string}` : (missing[0] as string);
+  return t(UNKEPT_LINE, { country: countryName(market as CountryCode), missing: list });
+}
+
+/** Where a project's shoot is and the days it is scheduled for, as a permit to work there would ask. */
+export const engagementOf = (p: Project): { country: CountryCode; days: number } => ({ country: p.market as CountryCode, days: planOf(p).scheduled });
 
 // Stryker disable all: a mutant of a declaration made as the module loads changes its shape, so the module loaded
 // again for it is refused as declared twice (as the accounts' and the cards' say). The declarations are held by the

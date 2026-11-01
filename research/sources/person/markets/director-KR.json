@@ -1,0 +1,172 @@
+{
+ "topic": "markets.director.KR",
+ "read": "2026-11-01",
+ "note": "Read 2026-11-01 at the owner's word (\"Now add markets for writers, directors and producers\"): the terms a director works on in South Korea. Research and retry subagents (workbench/briefs/BRIEF-roles-markets*.md); every quote checked by the lead against its saved page; a scan read by OCR is marked so and its figures checked against the image.",
+ "figures": [
+  {
+   "item": "union",
+   "finding": "Korean film directors join the Directors Guild of Korea (DGK): full membership needs one feature released for at least a week in ten or more cinemas including Seoul, or a feature shown on another platform with board approval; other directors, and first-time directors who lodge their directing contract, join as associates. Dues are ₩200,000 to join and ₩20,000 a month, plus 1% of each directing fee (capped at ₩3 million, ₩5 million a year for two or more contracts).",
+   "value": {
+    "body": "사단법인 한국영화감독조합 (Directors Guild of Korea, DGK)",
+    "regularMemberRule": "1+ feature released for at least one week in 10+ cinemas nationwide incl. Seoul, or 1+ feature screened on other platforms with board approval",
+    "associateRule": "directors of other audiovisual works, or new directors submitting their directing contract, with board approval",
+    "joiningFee": 200000,
+    "monthlyDues": 20000,
+    "directingDuesPctOfFee": 1,
+    "directingDuesCapPerFilm": 3000000,
+    "directingDuesCapPerYearTwoPlusContracts": 5000000,
+    "currency": "KRW",
+    "lapse": "suspended after 2 months unpaid; membership lost after 6; no rejoining for 3 years",
+    "regularMembersListed": 563
+   },
+   "applies": "South Korea, film directors; read 2026-11-01.",
+   "sources": [
+    {
+     "src": 0,
+     "said": "정회원 의 자격 서울을 포함한 전국 10개관에서 최소 일주일 이상 극장 개봉을 한 장편영화(독립, 예술, 다큐, 애니메이션 포함) 1편 이상을 연출한 자 극장 외의 플랫폼 (온라인 매체와 영화제 등)을 통해 장편영화 1편 이상을 상영하고 이사회의 승인을 얻은 자 준회원 의 자격 정회원 요건에 해당되지 않는 모든 영상 저작물의 감독으로서 이사회 승인을 얻은 자 신인감독으로서 제작사와 체결한 연출 계약서를 본회에 제출하고, 이사회의 승인을 얻은 자 … 회원이 2개월 이상 월회비를 연체한 경우 회원 자격을 정지하고, 6개월 이상 연체시 자동으로 회원 자격을 상실한다. 회원 자격을 상실한 자는 3년간 재가입 할 수 없다. … 월회비 : 2만원 (매월 5일 CMS출금) 입회비 : 20만원 연출회비 : 작품당 연출료의 1% (300만원 상한, 연 2건 이상의 계약 시 납부 총액 상한 500만원)"
+    },
+    {
+     "src": 1,
+     "said": "정회원 563"
+    }
+   ]
+  },
+  {
+   "item": "agreement",
+   "finding": "The DGK publishes its own model directing contract for theatrical features, recommends that members contract on it, and says its clauses can be changed by negotiation; no collective agreement or government standard contract for directors was found (see blockers).",
+   "value": {
+    "name": "DGK 연출계약서 (제작 단계)",
+    "kind": "model contract recommended by the guild, not a collective agreement",
+    "scope": "극장용 장편영화",
+    "binding": false
+   },
+   "applies": "South Korea, DGK members directing theatrical features.",
+   "sources": [
+    {
+     "src": 2,
+     "said": "회원 감독은 DGK 연출계약서를 사용하여 계약할 것을 권고합니다. 계약서상의 조항은 계약 주체와 협의하여 수정할 수 있습니다."
+    },
+    {
+     "src": 3,
+     "said": "DGK 연출계약서 (제작 단계) … 사단법인 한국영화감독조합의 정회원인 ( )(이하 ‘감독’으로 표기)은/는 극장용 장편영화(이하 ‘본건 영화’로 표기)의 연출에 관한 계약"
+    }
+   ]
+  },
+  {
+   "item": "fees",
+   "finding": "The DGK model contract asks a directing fee of at least 1.5% of the net production budget, paid in three parts (on signing, within a week of the shoot starting, within two weeks of wrap), with 1% of the fee paid to the guild, plus at least 5% of net profit or 2% of gross revenue, paid through the investor.",
+   "value": {
+    "minFeePctOfNetBudget": 1.5,
+    "instalments": [
+     {
+      "stage": "계약금",
+      "due": "within 2 weeks of signing"
+     },
+     {
+      "stage": "중도금",
+      "due": "within 1 week of the start of shooting"
+     },
+     {
+      "stage": "잔금",
+      "due": "within 2 weeks of the end of shooting"
+     }
+    ],
+    "guildSharePctOfFee": 1,
+    "profitShare": {
+     "minPctNetProfit": 5,
+     "orMinPctGrossRevenue": 2,
+     "paidBy": "investor directly",
+     "due": "end of the month after the settlement date"
+    },
+    "vat": "excluded"
+   },
+   "applies": "South Korea, theatrical features contracted on the DGK model; a recommended floor, not a binding minimum.",
+   "sources": [
+    {
+     "src": 3,
+     "said": "(2) 제작사는 감독에게 본건 영화에 대한 용역 제공의 대가로 연출료 ( )원(부가가치세별도, 이하 동일/ 순 제작비의 1.5%이상)을 아래와 같이 지급해야 한다. ① 계약금 : _________원(본 계약 체결 후 2주일 이내) ② 중도금 : _________원(촬영 개시 후 1주일 이내) ③ 잔 금 : _________원(촬영 종료 후 2주일 이내) … (3) 제작사는 계약금 지급시 연출료 총액의 1% 상당의 금액은 사단법인 한국영화감독조합 계좌에 입금하고, 나머지는 감독이 지정한 계좌에 입금하여야 한다. … (1) 제작사는 순이익의 (5% 이상)% 또는 총수익의 (2% 이상)%를 감독 또는 감독이 지정하는 제 3자에게 지급하여야 한다."
+    }
+   ]
+  },
+  {
+   "item": "cut",
+   "finding": "Under the DGK model contract the director presides over the edit and holds the first cut, which only the director, the editor and those the director names take part in; the final cut is agreed with the producer, but if they cannot agree the producer decides, and once fixed it cannot be re-edited without the director's consent. The days allowed for the first cut are left blank for the parties.",
+   "value": {
+    "editPresidedBy": "director",
+    "firstCut": "director's (with editor and director's nominees only)",
+    "firstCutDays": "blank in the model; at expiry the current edit counts as the first cut",
+    "finalCut": "agreed; producer prevails on deadlock",
+    "reEditAfterFinal": "needs director consent",
+    "stages": [
+     "촬영 전",
+     "촬영",
+     "촬영 후(최종본 완료)"
+    ],
+    "stageDates": "blank in the model"
+   },
+   "applies": "South Korea, theatrical features on the DGK model contract.",
+   "sources": [
+    {
+     "src": 3,
+     "said": "(1) 감독은 촬영이 끝난 본건 영화의 편집 과정 전반을 주재한다. 감독의 관여 없이 편집은 진행될 수 없다. (2) 1차 편집본에 대한 편집권은 감독에게 있으며, 1차 편집본 편집 과정에는 감독과 편집기사, 감독이 지정한 자만 참여한다. (3) 감독은 본건 영화의 촬영종료일부터 ( )일 이내에 1차 편집본을 완성해 제작사가 열람할 수 있도록 한다. … (1) 본건 영화의 최종본은 제작사와 감독이 협의로 확정한다. 만약 진지하고 성실한 협의를 거쳤음에도 불구하고 합의가 이뤄지지 않을 경우, 제작사의 의사에 따른다. (2) 제작사와 감독의 협의에 따라 최종본이 확정된 후에는, 감독의 동의 없이 제작사 또는 제 3자가 최종본을 재편집할 수 없다."
+    }
+   ]
+  }
+ ],
+ "role": "director",
+ "country": "KR",
+ "sources": [
+  {
+   "url": "https://dgk.or.kr/home/member/member_info.php",
+   "title": "한국영화감독조합, 회원가입 안내",
+   "read": "2026-11-01",
+   "kind": "primary",
+   "said": "정회원 의 자격 서울을 포함한 전국 10개관에서 최소 일주일 이상 극장 개봉을 한 장편영화(독립, 예술, 다큐, 애니메이션 포함) 1편 이상을 연출한 자 극장 외의 플랫폼 (온라인 매체와 영화제 등)을 통해 장편영화 1편 이상을 상영하고 이사회의 승인을 얻은 자 준회원 의 자격 정회원 요건에 해당되지 않는 모든 영상 저작물의 감독으로서 이사회 승인을 얻은 자 신인감독으로서 제작사와 체결한 연출 계약서를 본회에 제출하고, 이사회의 승인을 얻은 자 … 회원이 2개월 이상 월회비를 연체한 경우 회원 자격을 정지하고, 6개월 이상 연체시 자동으로 회원 자격을 상실한다. 회원 자격을 상실한 자는 3년간 재가입 할 수 없다. … 월회비 : 2만원 (매월 5일 CMS출금) 입회비 : 20만원 연출회비 : 작품당 연출료의 1% (300만원 상한, 연 2건 이상의 계약 시 납부 총액 상한 500만원)"
+  },
+  {
+   "url": "https://dgk.or.kr/home/member/members/regular.php",
+   "title": "한국영화감독조합, 정회원 (member list)",
+   "read": "2026-11-01",
+   "kind": "primary",
+   "said": "정회원 563"
+  },
+  {
+   "url": "https://dgk.or.kr/home/work/contract.php",
+   "title": "한국영화감독조합, DGK 연출계약서 안내",
+   "read": "2026-11-01",
+   "kind": "primary",
+   "said": "회원 감독은 DGK 연출계약서를 사용하여 계약할 것을 권고합니다. 계약서상의 조항은 계약 주체와 협의하여 수정할 수 있습니다."
+  },
+  {
+   "url": "https://dgk.or.kr/home/bbs/download.php?bo_table=contract&wr_id=1&no=0",
+   "title": "DGK 연출계약서 (제작 단계), .docx downloaded from the DGK contract page",
+   "read": "2026-11-01",
+   "kind": "primary",
+   "said": "DGK 연출계약서 (제작 단계) … 사단법인 한국영화감독조합의 정회원인 ( )(이하 ‘감독’으로 표기)은/는 극장용 장편영화(이하 ‘본건 영화’로 표기)의 연출에 관한 계약 … (2) 제작사는 감독에게 본건 영화에 대한 용역 제공의 대가로 연출료 ( )원(부가가치세별도, 이하 동일/ 순 제작비의 1.5%이상)을 아래와 같이 지급해야 한다. ① 계약금 : _________원(본 계약 체결 후 2주일 이내) ② 중도금 : _________원(촬영 개시 후 1주일 이내) ③ 잔 금 : _________원(촬영 종료 후 2주일 이내) … (3) 제작사는 계약금 지급시 연출료 총액의 1% 상당의 금액은 사단법인 한국영화감독조합 계좌에 입금하고, 나머지는 감독이 지정한 계좌에 입금하여야 한다. … (1) 제작사는 순이익의 (5% 이상)% 또는 총수익의 (2% 이상)%를 감독 또는 감독이 지정하는 제 3자에게 지급하여야 한다. … (1) 감독은 촬영이 끝난 본건 영화의 편집 과정 전반을 주재한다. 감독의 관여 없이 편집은 진행될 수 없다. (2) 1차 편집본에 대한 편집권은 감독에게 있으며, 1차 편집본 편집 과정에는 감독과 편집기사, 감독이 지정한 자만 참여한다. (3) 감독은 본건 영화의 촬영종료일부터 ( )일 이내에 1차 편집본을 완성해 제작사가 열람할 수 있도록 한다. … (1) 본건 영화의 최종본은 제작사와 감독이 협의로 확정한다. 만약 진지하고 성실한 협의를 거쳤음에도 불구하고 합의가 이뤄지지 않을 경우, 제작사의 의사에 따른다. (2) 제작사와 감독의 협의에 따라 최종본이 확정된 후에는, 감독의 동의 없이 제작사 또는 제 3자가 최종본을 재편집할 수 없다."
+  }
+ ],
+ "blockers": [
+  {
+   "item": "fees",
+   "sought": "A binding minimum for a Korean film or TV-episode director (government standard contract or collective agreement), and TV drama directors' terms.",
+   "tried": {
+    "institution": "dgk.or.kr read (home, contract, member info, regular members) and its model contract; MCST press release pSeq=14147 (2015 film-staff standard contract) read: covers crew, not directors; MCST pSeq=13854 reset the connection. | Retry 2026-11-01: KOFIC news seq=6457 read: the July 2026 government-producers-agencies pact caps actors' fees only.",
+    "official-register": "No MCST notice of a directors' standard contract found. | Retry 2026-11-01: No MCST directors' standard contract found.",
+    "web-search": "Searched 2026-11-01 \"영화감독 표준계약서 문화체육관광부 연출 표준계약서 한국영화감독조합\" and \"영화진흥위원회 표준계약서 연출 감독 계약서 고시\": none for directors. | Retry 2026-11-01: 한국영화감독조합 연출료 최저 기준 표준계약서 감독 연출 계약 2025: no minimum amount; nocutnews and bizhankook describe the DGK model contract (first cut to the director).",
+    "trade-press": "nocutnews.co.kr articles on the DGK contract answered 403 to this environment and were not read another way. | Retry 2026-11-01: nocutnews not re-fetched (403 earlier).",
+    "archive": "Not tried for this item; the one web.archive.org request made this session (2026-11-01) was reset by the connection. | Retry 2026-11-01: web.archive.org snapshots unreadable from this environment (https reset, http 403); archive.org availability lists a 2026-06-17 snapshot of dgk.or.kr."
+   }
+  },
+  {
+   "item": "periods",
+   "sought": "Guaranteed prep, shoot and cut periods for a Korean director.",
+   "tried": {
+    "institution": "DGK model contract read: stage dates and first-cut days left blank. | Retry 2026-11-01: KOFIC news seq=6457 read: the July 2026 government-producers-agencies pact caps actors' fees only.",
+    "official-register": "None found. | Retry 2026-11-01: No MCST directors' standard contract found.",
+    "web-search": "As for fees. | Retry 2026-11-01: 한국영화감독조합 연출료 최저 기준 표준계약서 감독 연출 계약 2025: no minimum amount; nocutnews and bizhankook describe the DGK model contract (first cut to the director).",
+    "trade-press": "nocutnews refused (403). | Retry 2026-11-01: nocutnews not re-fetched (403 earlier).",
+    "archive": "Not tried for this item; the one web.archive.org request made this session (2026-11-01) was reset by the connection. | Retry 2026-11-01: web.archive.org snapshots unreadable from this environment (https reset, http 403); archive.org availability lists a 2026-06-17 snapshot of dgk.or.kr."
+   }
+  }
+ ]
+}

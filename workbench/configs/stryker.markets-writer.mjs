@@ -1,0 +1,2 @@
+import base from '../../stryker.config.mjs';
+export default { ...base, mutate: ['src/person/work/work.ts', 'src/person/work/career.ts', 'tools/person/markets-writer/compile.ts', 'tools/person/markets-writer/coverage.ts'], reporters: ['clear-text', 'json'], jsonReporter: { fileName: 'reports/mutation/markets-writer.json' }, ignorePatterns: ['.stryker-tmp*', 'reports', 'graphify-out'], tempDirName: '.stryker-tmp-markets-writer', vitest: { configFile: 'workbench/configs/vitest.markets-writer.config.mjs' } };

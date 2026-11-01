@@ -1,0 +1,1556 @@
+{
+ "markets": {
+  "AU": {
+   "agreements": [
+    "au-awg"
+   ],
+   "unknown": [
+    "fees",
+    "option",
+    "language"
+   ]
+  },
+  "BR": {
+   "agreements": [
+    "br"
+   ],
+   "unknown": []
+  },
+  "CA": {
+   "agreements": [
+    "ca-ipa",
+    "ca-sartec"
+   ],
+   "unknown": []
+  },
+  "DE": {
+   "agreements": [
+    "de-cinema",
+    "de-netflix",
+    "de-ard",
+    "de-ard-early",
+    "de-zdf",
+    "de-rtl",
+    "de-p7s1"
+   ],
+   "unknown": [
+    "option"
+   ]
+  },
+  "DK": {
+   "agreements": [
+    "dk-feature",
+    "dk-dr"
+   ],
+   "unknown": [
+    "fees"
+   ]
+  },
+  "ES": {
+   "agreements": [
+    "es"
+   ],
+   "unknown": [
+    "fees"
+   ]
+  },
+  "FR": {
+   "agreements": [
+    "fr-film",
+    "fr-tv"
+   ],
+   "unknown": [
+    "option"
+   ]
+  },
+  "GB": {
+   "agreements": [
+    "gb-pact-film",
+    "gb-bbc",
+    "gb-itv",
+    "gb-pact-tv"
+   ],
+   "unknown": [
+    "language"
+   ]
+  },
+  "IE": {
+   "agreements": [
+    "ie"
+   ],
+   "unknown": [
+    "union",
+    "option"
+   ]
+  },
+  "IN": {
+   "agreements": [
+    "in"
+   ],
+   "unknown": [
+    "union",
+    "fees"
+   ]
+  },
+  "IT": {
+   "agreements": [
+    "it"
+   ],
+   "unknown": []
+  },
+  "JP": {
+   "agreements": [
+    "jp"
+   ],
+   "unknown": [
+    "fees"
+   ]
+  },
+  "KR": {
+   "agreements": [
+    "kr"
+   ],
+   "unknown": [
+    "union",
+    "fees"
+   ]
+  },
+  "MX": {
+   "agreements": [
+    "mx"
+   ],
+   "unknown": [
+    "agreement"
+   ]
+  },
+  "NG": {
+   "agreements": [
+    "ng"
+   ],
+   "unknown": [
+    "union",
+    "fees"
+   ]
+  },
+  "NL": {
+   "agreements": [
+    "nl"
+   ],
+   "unknown": [
+    "fees"
+   ]
+  },
+  "NO": {
+   "agreements": [
+    "no-film",
+    "no-series",
+    "no-nrk"
+   ],
+   "unknown": [
+    "fees"
+   ]
+  },
+  "NZ": {
+   "agreements": [
+    "nz"
+   ],
+   "unknown": [
+    "fees",
+    "option"
+   ]
+  },
+  "SE": {
+   "agreements": [
+    "se-svt",
+    "se-producers",
+    "se-film"
+   ],
+   "unknown": [
+    "fees"
+   ]
+  },
+  "ZA": {
+   "agreements": [
+    "za"
+   ],
+   "unknown": [
+    "fees"
+   ]
+  }
+ },
+ "agreements": {
+  "au-awg": {
+   "country": "AU",
+   "language": "en",
+   "forms": [
+    "feature",
+    "pilot",
+    "episode",
+    "short"
+   ],
+   "currency": null,
+   "none": false,
+   "unknown": true,
+   "fees": [],
+   "option": null
+  },
+  "br": {
+   "country": "BR",
+   "language": "pt",
+   "forms": [
+    "feature",
+    "pilot",
+    "episode",
+    "short"
+   ],
+   "currency": null,
+   "none": true,
+   "unknown": false,
+   "fees": [],
+   "option": "negotiated"
+  },
+  "ca-ipa": {
+   "country": "CA",
+   "language": "en",
+   "forms": [
+    "feature",
+    "pilot",
+    "episode"
+   ],
+   "currency": "CAD",
+   "none": false,
+   "unknown": false,
+   "fees": [
+    {
+     "forms": [
+      "feature"
+     ],
+     "when": {
+      "budget": [
+       0,
+       82000
+      ]
+     },
+     "per": null,
+     "from": "2023-05-22",
+     "amount": null,
+     "share": null,
+     "cap": null,
+     "held": null
+    },
+    {
+     "forms": [
+      "feature"
+     ],
+     "when": {
+      "budget": [
+       82001,
+       null
+      ]
+     },
+     "per": "script",
+     "from": "2023-05-22",
+     "amount": "62998",
+     "share": null,
+     "cap": null,
+     "held": null
+    },
+    {
+     "forms": [
+      "feature"
+     ],
+     "when": {
+      "budget": [
+       82001,
+       null
+      ]
+     },
+     "per": "script",
+     "from": "2024-05-22",
+     "amount": "66148",
+     "share": null,
+     "cap": null,
+     "held": null
+    },
+    {
+     "forms": [
+      "feature"
+     ],
+     "when": {
+      "budget": [
+       82001,
+       null
+      ]
+     },
+     "per": "script",
+     "from": "2025-03-15",
+     "amount": "68794",
+     "share": null,
+     "cap": null,
+     "held": null
+    },
+    {
+     "forms": [
+      "feature"
+     ],
+     "when": {
+      "budget": [
+       82001,
+       null
+      ]
+     },
+     "per": "script",
+     "from": "2026-02-01",
+     "amount": "71202",
+     "share": null,
+     "cap": null,
+     "held": null
+    },
+    {
+     "forms": [
+      "pilot",
+      "episode"
+     ],
+     "when": {
+      "minutes": [
+       1,
+       15
+      ]
+     },
+     "per": "script",
+     "from": "2026-02-01",
+     "amount": "5271",
+     "share": null,
+     "cap": null,
+     "held": null
+    },
+    {
+     "forms": [
+      "pilot",
+      "episode"
+     ],
+     "when": {
+      "minutes": [
+       16,
+       30
+      ]
+     },
+     "per": "script",
+     "from": "2026-02-01",
+     "amount": "10546",
+     "share": null,
+     "cap": null,
+     "held": null
+    },
+    {
+     "forms": [
+      "pilot",
+      "episode"
+     ],
+     "when": {
+      "minutes": [
+       31,
+       60
+      ]
+     },
+     "per": "script",
+     "from": "2026-02-01",
+     "amount": "21088",
+     "share": null,
+     "cap": null,
+     "held": null
+    },
+    {
+     "forms": [
+      "pilot",
+      "episode"
+     ],
+     "when": {
+      "minutes": [
+       61,
+       90
+      ]
+     },
+     "per": "script",
+     "from": "2026-02-01",
+     "amount": "31629",
+     "share": null,
+     "cap": null,
+     "held": null
+    }
+   ],
+   "option": [
+    {
+     "forms": [
+      "feature"
+     ],
+     "share": "0.05",
+     "base": null
+    },
+    {
+     "forms": [
+      "pilot",
+      "episode"
+     ],
+     "share": "0.1",
+     "base": null
+    }
+   ]
+  },
+  "ca-sartec": {
+   "country": "CA",
+   "language": "fr",
+   "forms": [
+    "feature"
+   ],
+   "currency": "CAD",
+   "none": false,
+   "unknown": false,
+   "fees": [
+    {
+     "forms": [
+      "feature"
+     ],
+     "when": {},
+     "per": "script",
+     "from": "2019-03-01",
+     "amount": "49063",
+     "share": null,
+     "cap": null,
+     "held": null
+    },
+    {
+     "forms": [
+      "feature"
+     ],
+     "when": {},
+     "per": "script",
+     "from": "2021-11-28",
+     "amount": "50535",
+     "share": null,
+     "cap": null,
+     "held": null
+    }
+   ],
+   "option": "negotiated"
+  },
+  "de-cinema": {
+   "country": "DE",
+   "language": "de",
+   "forms": [
+    "feature"
+   ],
+   "currency": null,
+   "none": true,
+   "unknown": false,
+   "fees": [],
+   "option": null
+  },
+  "de-netflix": {
+   "country": "DE",
+   "language": "de",
+   "forms": [
+    "feature"
+   ],
+   "currency": "EUR",
+   "none": false,
+   "unknown": false,
+   "fees": [
+    {
+     "forms": [
+      "feature"
+     ],
+     "when": {
+      "budget": [
+       0,
+       5000000
+      ]
+     },
+     "per": "script",
+     "from": "2026-01-01",
+     "amount": "80000",
+     "share": null,
+     "cap": null,
+     "held": null
+    },
+    {
+     "forms": [
+      "feature"
+     ],
+     "when": {
+      "budget": [
+       5000001,
+       7500000
+      ]
+     },
+     "per": "script",
+     "from": "2026-01-01",
+     "amount": "95000",
+     "share": null,
+     "cap": null,
+     "held": null
+    },
+    {
+     "forms": [
+      "feature"
+     ],
+     "when": {
+      "budget": [
+       7500001,
+       10000000
+      ]
+     },
+     "per": "script",
+     "from": "2026-01-01",
+     "amount": "110000",
+     "share": null,
+     "cap": null,
+     "held": null
+    }
+   ],
+   "option": null
+  },
+  "de-ard": {
+   "country": "DE",
+   "language": "de",
+   "forms": [
+    "pilot",
+    "episode"
+   ],
+   "currency": "EUR",
+   "none": false,
+   "unknown": false,
+   "fees": [
+    {
+     "forms": [
+      "pilot",
+      "episode"
+     ],
+     "when": {
+      "minutes": [
+       1,
+       30
+      ]
+     },
+     "per": "script",
+     "from": "2025-09-01",
+     "amount": "20064",
+     "share": null,
+     "cap": null,
+     "held": null
+    },
+    {
+     "forms": [
+      "pilot",
+      "episode"
+     ],
+     "when": {
+      "minutes": [
+       31,
+       45
+      ]
+     },
+     "per": "script",
+     "from": "2025-09-01",
+     "amount": "33410",
+     "share": null,
+     "cap": null,
+     "held": null
+    },
+    {
+     "forms": [
+      "pilot",
+      "episode"
+     ],
+     "when": {
+      "minutes": [
+       46,
+       60
+      ]
+     },
+     "per": "script",
+     "from": "2025-09-01",
+     "amount": "44500",
+     "share": null,
+     "cap": null,
+     "held": null
+    }
+   ],
+   "option": null
+  },
+  "de-ard-early": {
+   "country": "DE",
+   "language": "de",
+   "forms": [
+    "pilot",
+    "episode"
+   ],
+   "currency": "EUR",
+   "none": false,
+   "unknown": false,
+   "fees": [
+    {
+     "forms": [
+      "pilot",
+      "episode"
+     ],
+     "when": {
+      "minutes": [
+       1,
+       30
+      ]
+     },
+     "per": "script",
+     "from": "2025-09-01",
+     "amount": "17160",
+     "share": null,
+     "cap": null,
+     "held": null
+    },
+    {
+     "forms": [
+      "pilot",
+      "episode"
+     ],
+     "when": {
+      "minutes": [
+       31,
+       45
+      ]
+     },
+     "per": "script",
+     "from": "2025-09-01",
+     "amount": "28512",
+     "share": null,
+     "cap": null,
+     "held": null
+    },
+    {
+     "forms": [
+      "pilot",
+      "episode"
+     ],
+     "when": {
+      "minutes": [
+       46,
+       60
+      ]
+     },
+     "per": "script",
+     "from": "2025-09-01",
+     "amount": "38016",
+     "share": null,
+     "cap": null,
+     "held": null
+    }
+   ],
+   "option": null
+  },
+  "de-zdf": {
+   "country": "DE",
+   "language": "de",
+   "forms": [
+    "pilot",
+    "episode"
+   ],
+   "currency": "EUR",
+   "none": false,
+   "unknown": false,
+   "fees": [
+    {
+     "forms": [
+      "pilot",
+      "episode"
+     ],
+     "when": {
+      "minutes": [
+       1,
+       45
+      ]
+     },
+     "per": "script",
+     "from": "2025-07-01",
+     "amount": "27580.8",
+     "share": null,
+     "cap": null,
+     "held": null
+    }
+   ],
+   "option": null
+  },
+  "de-rtl": {
+   "country": "DE",
+   "language": "de",
+   "forms": [
+    "pilot",
+    "episode"
+   ],
+   "currency": "EUR",
+   "none": false,
+   "unknown": false,
+   "fees": [
+    {
+     "forms": [
+      "pilot",
+      "episode"
+     ],
+     "when": {
+      "minutes": [
+       1,
+       22
+      ],
+      "budget": [
+       350000,
+       574999
+      ]
+     },
+     "per": "script",
+     "from": "2026-02-15",
+     "amount": "16750",
+     "share": null,
+     "cap": null,
+     "held": {
+      "share": "0.4"
+     }
+    },
+    {
+     "forms": [
+      "pilot",
+      "episode"
+     ],
+     "when": {
+      "minutes": [
+       1,
+       22
+      ],
+      "budget": [
+       575000,
+       899999
+      ]
+     },
+     "per": "script",
+     "from": "2026-02-15",
+     "amount": "17500",
+     "share": null,
+     "cap": null,
+     "held": {
+      "share": "0.4"
+     }
+    },
+    {
+     "forms": [
+      "pilot",
+      "episode"
+     ],
+     "when": {
+      "minutes": [
+       1,
+       22
+      ],
+      "budget": [
+       900000,
+       null
+      ]
+     },
+     "per": "script",
+     "from": "2026-02-15",
+     "amount": "20000",
+     "share": null,
+     "cap": null,
+     "held": {
+      "share": "0.4"
+     }
+    },
+    {
+     "forms": [
+      "pilot",
+      "episode"
+     ],
+     "when": {
+      "minutes": [
+       23,
+       45
+      ],
+      "budget": [
+       600000,
+       1149999
+      ]
+     },
+     "per": "script",
+     "from": "2026-02-15",
+     "amount": "33500",
+     "share": null,
+     "cap": null,
+     "held": {
+      "share": "0.4"
+     }
+    },
+    {
+     "forms": [
+      "pilot",
+      "episode"
+     ],
+     "when": {
+      "minutes": [
+       23,
+       45
+      ],
+      "budget": [
+       1150000,
+       1899999
+      ]
+     },
+     "per": "script",
+     "from": "2026-02-15",
+     "amount": "35000",
+     "share": null,
+     "cap": null,
+     "held": {
+      "share": "0.4"
+     }
+    },
+    {
+     "forms": [
+      "pilot",
+      "episode"
+     ],
+     "when": {
+      "minutes": [
+       23,
+       45
+      ],
+      "budget": [
+       1900000,
+       null
+      ]
+     },
+     "per": "script",
+     "from": "2026-02-15",
+     "amount": "40000",
+     "share": null,
+     "cap": null,
+     "held": {
+      "share": "0.4"
+     }
+    }
+   ],
+   "option": null
+  },
+  "de-p7s1": {
+   "country": "DE",
+   "language": "de",
+   "forms": [
+    "pilot",
+    "episode"
+   ],
+   "currency": "EUR",
+   "none": false,
+   "unknown": false,
+   "fees": [
+    {
+     "forms": [
+      "pilot",
+      "episode"
+     ],
+     "when": {
+      "minutes": [
+       1,
+       45
+      ]
+     },
+     "per": "script",
+     "from": "2014-06-03",
+     "amount": "30500",
+     "share": null,
+     "cap": null,
+     "held": {
+      "share": "0.5"
+     }
+    }
+   ],
+   "option": null
+  },
+  "dk-feature": {
+   "country": "DK",
+   "language": "da",
+   "forms": [
+    "feature"
+   ],
+   "currency": "DKK",
+   "none": false,
+   "unknown": false,
+   "fees": [
+    {
+     "forms": [
+      "feature"
+     ],
+     "when": {},
+     "per": "script",
+     "from": "2026-01-01",
+     "amount": "598836",
+     "share": null,
+     "cap": null,
+     "held": null
+    }
+   ],
+   "option": null
+  },
+  "dk-dr": {
+   "country": "DK",
+   "language": "da",
+   "forms": [
+    "pilot",
+    "episode"
+   ],
+   "currency": null,
+   "none": true,
+   "unknown": false,
+   "fees": [],
+   "option": null
+  },
+  "es": {
+   "country": "ES",
+   "language": "es",
+   "forms": [
+    "feature",
+    "pilot",
+    "episode",
+    "short"
+   ],
+   "currency": null,
+   "none": true,
+   "unknown": false,
+   "fees": [],
+   "option": "negotiated"
+  },
+  "fr-film": {
+   "country": "FR",
+   "language": "fr",
+   "forms": [
+    "feature"
+   ],
+   "currency": "EUR",
+   "none": false,
+   "unknown": false,
+   "fees": [
+    {
+     "forms": [
+      "feature"
+     ],
+     "when": {},
+     "per": "script",
+     "from": "2026-01-15",
+     "amount": "17000",
+     "share": null,
+     "cap": null,
+     "held": null
+    }
+   ],
+   "option": null
+  },
+  "fr-tv": {
+   "country": "FR",
+   "language": "fr",
+   "forms": [
+    "pilot",
+    "episode"
+   ],
+   "currency": "EUR",
+   "none": false,
+   "unknown": false,
+   "fees": [
+    {
+     "forms": [
+      "pilot",
+      "episode"
+     ],
+     "when": {
+      "hourly": [
+       0,
+       599999
+      ]
+     },
+     "per": null,
+     "from": "2023-07-01",
+     "amount": null,
+     "share": null,
+     "cap": null,
+     "held": null
+    },
+    {
+     "forms": [
+      "pilot",
+      "episode"
+     ],
+     "when": {
+      "hourly": [
+       600000,
+       null
+      ]
+     },
+     "per": "hour",
+     "from": "2023-07-01",
+     "amount": "27550",
+     "share": "0.03",
+     "cap": "1200000",
+     "held": null
+    }
+   ],
+   "option": "negotiated"
+  },
+  "gb-pact-film": {
+   "country": "GB",
+   "language": "en",
+   "forms": [
+    "feature"
+   ],
+   "currency": "GBP",
+   "none": false,
+   "unknown": false,
+   "fees": [
+    {
+     "forms": [
+      "feature"
+     ],
+     "when": {
+      "budget": [
+       0,
+       749999
+      ]
+     },
+     "per": "script",
+     "from": "1990-10-01",
+     "amount": "14000",
+     "share": null,
+     "cap": null,
+     "held": null
+    },
+    {
+     "forms": [
+      "feature"
+     ],
+     "when": {
+      "budget": [
+       750000,
+       2000000
+      ]
+     },
+     "per": "script",
+     "from": "1990-10-01",
+     "amount": "14000",
+     "share": null,
+     "cap": null,
+     "held": null
+    },
+    {
+     "forms": [
+      "feature"
+     ],
+     "when": {
+      "budget": [
+       2000001,
+       null
+      ]
+     },
+     "per": "script",
+     "from": "1990-10-01",
+     "amount": "23200",
+     "share": null,
+     "cap": null,
+     "held": {
+      "amount": "4800"
+     }
+    }
+   ],
+   "option": "negotiated"
+  },
+  "gb-bbc": {
+   "country": "GB",
+   "language": "en",
+   "forms": [
+    "pilot",
+    "episode"
+   ],
+   "currency": "GBP",
+   "none": false,
+   "unknown": false,
+   "fees": [
+    {
+     "forms": [
+      "pilot",
+      "episode"
+     ],
+     "when": {},
+     "per": "minute",
+     "from": "2025-12-15",
+     "amount": "220",
+     "share": null,
+     "cap": null,
+     "held": null
+    }
+   ],
+   "option": null
+  },
+  "gb-itv": {
+   "country": "GB",
+   "language": "en",
+   "forms": [
+    "pilot",
+    "episode"
+   ],
+   "currency": "GBP",
+   "none": false,
+   "unknown": false,
+   "fees": [
+    {
+     "forms": [
+      "pilot",
+      "episode"
+     ],
+     "when": {},
+     "per": "hour",
+     "from": "2026-10-19",
+     "amount": "12882",
+     "share": null,
+     "cap": null,
+     "held": null
+    }
+   ],
+   "option": null
+  },
+  "gb-pact-tv": {
+   "country": "GB",
+   "language": "en",
+   "forms": [
+    "pilot",
+    "episode"
+   ],
+   "currency": "GBP",
+   "none": false,
+   "unknown": false,
+   "fees": [
+    {
+     "forms": [
+      "pilot",
+      "episode"
+     ],
+     "when": {},
+     "per": "hour",
+     "from": "2016-10-01",
+     "amount": "10570",
+     "share": null,
+     "cap": null,
+     "held": null
+    }
+   ],
+   "option": null
+  },
+  "ie": {
+   "country": "IE",
+   "language": "en",
+   "forms": [
+    "feature",
+    "pilot",
+    "episode",
+    "short"
+   ],
+   "currency": null,
+   "none": true,
+   "unknown": false,
+   "fees": [],
+   "option": null
+  },
+  "in": {
+   "country": "IN",
+   "language": "hi",
+   "forms": [
+    "feature",
+    "pilot",
+    "episode",
+    "short"
+   ],
+   "currency": null,
+   "none": true,
+   "unknown": false,
+   "fees": [],
+   "option": null
+  },
+  "it": {
+   "country": "IT",
+   "language": "it",
+   "forms": [
+    "feature",
+    "pilot",
+    "episode",
+    "short"
+   ],
+   "currency": null,
+   "none": true,
+   "unknown": false,
+   "fees": [],
+   "option": "negotiated"
+  },
+  "jp": {
+   "country": "JP",
+   "language": "ja",
+   "forms": [
+    "feature",
+    "pilot",
+    "episode",
+    "short"
+   ],
+   "currency": null,
+   "none": false,
+   "unknown": true,
+   "fees": [],
+   "option": null
+  },
+  "kr": {
+   "country": "KR",
+   "language": "ko",
+   "forms": [
+    "feature",
+    "pilot",
+    "episode",
+    "short"
+   ],
+   "currency": null,
+   "none": true,
+   "unknown": false,
+   "fees": [],
+   "option": "negotiated"
+  },
+  "mx": {
+   "country": "MX",
+   "language": "es",
+   "forms": [
+    "feature",
+    "pilot",
+    "episode",
+    "short"
+   ],
+   "currency": null,
+   "none": false,
+   "unknown": true,
+   "fees": [],
+   "option": null
+  },
+  "ng": {
+   "country": "NG",
+   "language": "en",
+   "forms": [
+    "feature",
+    "pilot",
+    "episode",
+    "short"
+   ],
+   "currency": null,
+   "none": true,
+   "unknown": false,
+   "fees": [],
+   "option": null
+  },
+  "nl": {
+   "country": "NL",
+   "language": "nl",
+   "forms": [
+    "feature",
+    "pilot",
+    "episode",
+    "short"
+   ],
+   "currency": null,
+   "none": true,
+   "unknown": false,
+   "fees": [],
+   "option": null
+  },
+  "no-film": {
+   "country": "NO",
+   "language": "no",
+   "forms": [
+    "feature"
+   ],
+   "currency": "NOK",
+   "none": false,
+   "unknown": false,
+   "fees": [
+    {
+     "forms": [
+      "feature"
+     ],
+     "when": {},
+     "per": "script",
+     "from": "2026-05-01",
+     "amount": "535106",
+     "share": null,
+     "cap": null,
+     "held": null
+    }
+   ],
+   "option": [
+    {
+     "forms": [
+      "feature"
+     ],
+     "share": "0.1",
+     "base": "529883"
+    }
+   ]
+  },
+  "no-series": {
+   "country": "NO",
+   "language": "no",
+   "forms": [
+    "pilot",
+    "episode"
+   ],
+   "currency": null,
+   "none": true,
+   "unknown": false,
+   "fees": [],
+   "option": null
+  },
+  "no-nrk": {
+   "country": "NO",
+   "language": "no",
+   "forms": [
+    "pilot",
+    "episode"
+   ],
+   "currency": "NOK",
+   "none": false,
+   "unknown": false,
+   "fees": [
+    {
+     "forms": [
+      "pilot",
+      "episode"
+     ],
+     "when": {},
+     "per": "minute",
+     "from": "2026-05-01",
+     "amount": "3022",
+     "share": null,
+     "cap": null,
+     "held": null
+    }
+   ],
+   "option": null
+  },
+  "nz": {
+   "country": "NZ",
+   "language": "en",
+   "forms": [
+    "feature",
+    "pilot",
+    "episode",
+    "short"
+   ],
+   "currency": null,
+   "none": true,
+   "unknown": false,
+   "fees": [],
+   "option": "negotiated"
+  },
+  "se-svt": {
+   "country": "SE",
+   "language": "sv",
+   "forms": [
+    "pilot",
+    "episode"
+   ],
+   "currency": "SEK",
+   "none": false,
+   "unknown": false,
+   "fees": [
+    {
+     "forms": [
+      "pilot",
+      "episode"
+     ],
+     "when": {
+      "minutes": [
+       1,
+       19
+      ]
+     },
+     "per": "minute",
+     "from": "2025-01-01",
+     "amount": "2898",
+     "share": null,
+     "cap": null,
+     "held": null
+    },
+    {
+     "forms": [
+      "pilot",
+      "episode"
+     ],
+     "when": {
+      "minutes": [
+       20,
+       29
+      ]
+     },
+     "per": "minute",
+     "from": "2025-01-01",
+     "amount": "4456",
+     "share": null,
+     "cap": null,
+     "held": null
+    },
+    {
+     "forms": [
+      "pilot",
+      "episode"
+     ],
+     "when": {
+      "minutes": [
+       30,
+       60
+      ]
+     },
+     "per": "minute",
+     "from": "2025-01-01",
+     "amount": "4551",
+     "share": null,
+     "cap": null,
+     "held": null
+    },
+    {
+     "forms": [
+      "pilot",
+      "episode"
+     ],
+     "when": {
+      "minutes": [
+       61,
+       null
+      ]
+     },
+     "per": "minute",
+     "from": "2025-01-01",
+     "amount": "3945",
+     "share": null,
+     "cap": null,
+     "held": null
+    }
+   ],
+   "option": null
+  },
+  "se-producers": {
+   "country": "SE",
+   "language": "sv",
+   "forms": [
+    "pilot",
+    "episode"
+   ],
+   "currency": "SEK",
+   "none": false,
+   "unknown": false,
+   "fees": [
+    {
+     "forms": [
+      "pilot",
+      "episode"
+     ],
+     "when": {
+      "minutes": [
+       1,
+       19
+      ]
+     },
+     "per": "minute",
+     "from": "2023-08-30",
+     "amount": "2674",
+     "share": null,
+     "cap": null,
+     "held": null
+    },
+    {
+     "forms": [
+      "pilot",
+      "episode"
+     ],
+     "when": {
+      "minutes": [
+       20,
+       29
+      ]
+     },
+     "per": "minute",
+     "from": "2023-08-30",
+     "amount": "4113",
+     "share": null,
+     "cap": null,
+     "held": null
+    },
+    {
+     "forms": [
+      "pilot",
+      "episode"
+     ],
+     "when": {
+      "minutes": [
+       30,
+       60
+      ]
+     },
+     "per": "minute",
+     "from": "2023-08-30",
+     "amount": "4200",
+     "share": null,
+     "cap": null,
+     "held": null
+    },
+    {
+     "forms": [
+      "pilot",
+      "episode"
+     ],
+     "when": {
+      "minutes": [
+       61,
+       null
+      ]
+     },
+     "per": "minute",
+     "from": "2023-08-30",
+     "amount": "3642",
+     "share": null,
+     "cap": null,
+     "held": null
+    }
+   ],
+   "option": null
+  },
+  "se-film": {
+   "country": "SE",
+   "language": "sv",
+   "forms": [
+    "feature"
+   ],
+   "currency": null,
+   "none": true,
+   "unknown": false,
+   "fees": [],
+   "option": null
+  },
+  "za": {
+   "country": "ZA",
+   "language": "en",
+   "forms": [
+    "feature",
+    "pilot",
+    "episode",
+    "short"
+   ],
+   "currency": null,
+   "none": true,
+   "unknown": false,
+   "fees": [],
+   "option": null
+  }
+ }
+}

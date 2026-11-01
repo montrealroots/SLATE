@@ -199,7 +199,8 @@ export function terms(s: Lives, union: Union, now: number): Terms {
       let units = 0;
       // @slate:consumer script.pitch
       for (const [id, o] of Object.entries(s.career.out)) {
-        if (o.sold !== null && o.sold.fee !== null && dateOf(o.sold.at) >= since) units += UNITS[scriptOf(s.scripts, Number(id)).form as keyof typeof UNITS];
+        // Only a sale under the WGA's own terms is to a signatory: one offered in another market (career's `offered`) isn't.
+        if (o.sold !== null && o.sold.fee !== null && s.career.offered[id] === undefined && dateOf(o.sold.at) >= since) units += UNITS[scriptOf(s.scripts, Number(id)).form as keyof typeof UNITS];
       }
       if (units >= WGA.units) return { standing: 'full', initiation: WGA.initiation, dues: WGA.dues };
       if (units > 0) return { standing: 'associate', initiation: null, dues: WGA.associate };
@@ -207,7 +208,8 @@ export function terms(s: Lives, union: Union, now: number): Terms {
     }
     case 'dga': {
       // @slate:consumer directing.prep
-      const film = s.directing.films.at(-1);
+      // Only a film directed under the DGA's own terms is employment by a signatory: one in another market isn't.
+      const film = s.directing.films.filter((f) => f.agreement === 'dga').at(-1);
       if (film === undefined) throw new Error('the DGA asks employment by a signatory: a film or an episode directed');
       const low = film.form === 'feature' && (film.budget as number) <= DGA.ceiling;
       return { standing: 'full', initiation: low ? DGA.low : DGA.initiation, dues: DGA.dues };

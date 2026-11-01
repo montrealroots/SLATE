@@ -115,7 +115,7 @@ describe('optioning material', () => {
     for (const days of [1, 5, 30]) {
       const l = optioned(60, { development: 70 }, days);
       const e = eye(v(made(60, { development: 70 })));
-      expect(project(l), String(days)).toEqual({ id: 1, optioned: T0, genre: GENRE, expires: addMonths(ZONE, T0, 18), options: [OPTION_FEE], material: picked(e, days, 1), plan: null, applied: false, raised: {}, shot: null, release: null });
+      expect(project(l), String(days)).toEqual({ id: 1, optioned: T0, genre: GENRE, market: 'GB', expires: addMonths(ZONE, T0, 18), options: [OPTION_FEE], material: picked(e, days, 1), plan: null, applied: false, raised: {}, shot: null, release: null });
       expect(held(l)['development']).toBeCloseTo(grown(70, days), 10);
       expect(held(l)['financing']).toBe(60);
     }
@@ -217,8 +217,8 @@ describe('budgeting and scheduling', () => {
   it('is refused twice, under £1, or for an amount that is not one', () => {
     const l = planned(optioned(50));
     expect(() => planned(l)).toThrow('project 1 is planned');
-    expect(() => planned(optioned(50), '0.99')).toThrow('a budget is at least £1 (0.99)');
-    expect(() => planned(optioned(50), '-5')).toThrow('a budget is at least £1 (-5)');
+    expect(() => planned(optioned(50), '0.99')).toThrow('a budget is at least 1 GBP (0.99)');
+    expect(() => planned(optioned(50), '-5')).toThrow('a budget is at least 1 GBP (-5)');
     expect(project(planned(optioned(50), '1')).plan?.budget).toEqual(gbp(1));
     expect(() => planned(optioned(50), 'lots')).toThrow('"lots" is not an amount');
     expect(() => planned(optioned(50), '2', 4)).toThrow("there's no project 4");
@@ -306,7 +306,7 @@ describe('financing', () => {
       const budget = p.plan?.budget.minor ?? 0;
       const t = budget - Math.round(budget * 0.18);
       const got: Record<string, number> = Object.fromEntries(Object.entries(p.raised).map(([k, m]) => [k, m.minor]));
-      const sum = () => (p.plan?.credit.minor ?? 0) + Object.values(got).reduce((a, b) => a + b, 0);
+      const sum = () => (p.plan?.credit?.minor ?? 0) + Object.values(got).reduce((a, b) => a + b, 0);
       const chance = (1 / 30) * factor(l.slices.producing, v(l), p, l.frame.now);
       const d = dr(SEED, 'raise', p.id, l.frame.now);
       for (let i = 0; i < days && sum() < t; i += 1) {
@@ -378,7 +378,7 @@ describe('the shoot', () => {
       const overrun = (Math.max(0, days - scheduled) * 200_000_000) / scheduled;
       const quality = clamp(0.5 * p.material + 0.5 * k + spread(k) * u(d));
       const l = dispatch(ready, shootProject, { project: 1 });
-      const fee = p.plan?.fee.minor ?? 0;
+      const fee = p.plan?.fee?.minor ?? 0;
       expect(project(l).shot, `${all} ${scheduled}`).toEqual({ at: T0, days, overrun: money('GBP', Math.round(overrun)), fee: money('GBP', Math.round(Math.max(0, fee - overrun))), quality });
       expect(held(l)['production']).toBeCloseTo(grown(held(ready)['production'] as number, days), 10);
       expect(held(l)['leadership']).toBeCloseTo(grown(held(ready)['leadership'] as number, days), 10);

@@ -1,0 +1,78 @@
+{
+ "engine": "person.directing",
+ "axis": "director-market-operation",
+ "universe": {
+  "keys": [
+   "markets",
+   "market-pay",
+   "market-periods",
+   "market-refusals",
+   "experience",
+   "aboutMarket"
+  ]
+ },
+ "rows": [
+  {
+   "key": "markets",
+   "status": "game",
+   "register": [
+    "R-5230"
+   ],
+   "tests": [
+    "tests/person/directing/markets.test.ts::the director's markets > are each country's own, every fee and period as the research gives it",
+    "tests/tools/markets-director.test.ts::the director's markets compile > compiles the twenty markets the director's engine reads"
+   ]
+  },
+  {
+   "key": "market-pay",
+   "status": "game",
+   "register": [
+    "R-5230"
+   ],
+   "tests": [
+    "tests/person/directing/markets.test.ts::a film in a market > is paid its agreement's minimum, by form, tier, date and the days it works",
+    "tests/person/directing/markets.test.ts::a film in a market > pays a fee by its own count: whole units in a band, the rest pro rata, a first job's cut, a short engagement's more"
+   ]
+  },
+  {
+   "key": "market-periods",
+   "status": "game",
+   "register": [
+    "R-5230"
+   ],
+   "tests": [
+    "tests/person/directing/markets.test.ts::a film in a market > takes the periods its agreement guarantees, or the contract gives where it guarantees none"
+   ]
+  },
+  {
+   "key": "market-refusals",
+   "status": "game",
+   "register": [
+    "R-5230"
+   ],
+   "tests": [
+    "tests/person/directing/markets.test.ts::a film in a market > is refused where the market, its agreement or its terms say otherwise"
+   ]
+  },
+  {
+   "key": "experience",
+   "status": "game",
+   "register": [
+    "R-5230"
+   ],
+   "tests": [
+    "tests/person/directing/markets.test.ts::a film in a market > reads the director's whole years in the work since the first film, and whether this is the first"
+   ]
+  },
+  {
+   "key": "aboutMarket",
+   "status": "game",
+   "register": [
+    "R-5230"
+   ],
+   "tests": [
+    "tests/person/directing/markets.test.ts::a film in a market > tells the player what of a market isn't known"
+   ]
+  }
+ ]
+}

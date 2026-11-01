@@ -249,10 +249,11 @@ describe('a pitch', () => {
 describe('the solo writer', () => {
   it('works alone, with no room, run through the frame, each command declaring what it reads and writes', () => {
     expect(commandIndex().filter((x) => x.id.startsWith('room.'))).toEqual([]);
-    expect(CAREER_START).toEqual({ contacts: 0, out: {} });
-    expect(commandIndex().filter((x) => ['script.summarise', 'network.meet', 'script.promote', 'script.pitch'].includes(x.id))).toEqual([
+    expect(CAREER_START).toEqual({ contacts: 0, out: {}, offered: {} });
+    expect(commandIndex().filter((x) => ['script.summarise', 'network.meet', 'script.offer', 'script.promote', 'script.pitch'].includes(x.id))).toEqual([
       { id: 'script.summarise', reads: ['scripts'], writes: ['attributes', 'career'] },
       { id: 'network.meet', reads: [], writes: ['attributes', 'career'] },
+      { id: 'script.offer', reads: ['scripts', 'identity'], writes: ['career'] },
       { id: 'script.promote', reads: ['scripts', 'identity'], writes: ['attributes', 'career'] },
       { id: 'script.pitch', reads: ['scripts'], writes: ['attributes', 'career'] },
     ]);

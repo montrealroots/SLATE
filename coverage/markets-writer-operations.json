@@ -1,0 +1,68 @@
+{
+ "engine": "person.work",
+ "axis": "writer-market-operation",
+ "universe": {
+  "keys": [
+   "script.offer",
+   "script.pitch (deal: sale or option)",
+   "minimumOf / paidOf / optionOf",
+   "aboutMarket (writing.unkept)",
+   "saleIn (country and days, for the permit)"
+  ]
+ },
+ "rows": [
+  {
+   "key": "script.offer",
+   "status": "game",
+   "register": [
+    "R-5229"
+   ],
+   "tests": [
+    "tests/person/work/markets.test.ts::a script sold in a market > is offered in a market under its agreement, in its language, refused where the writer doesn't write it or the market doesn't price it",
+    "tests/person/work/markets.test.ts::a script sold in a market > script.offer: a script offered under the BBC's terms sells for pounds a minute, where the WGA's pays its dollars"
+   ]
+  },
+  {
+   "key": "script.pitch (deal: sale or option)",
+   "status": "game",
+   "register": [
+    "R-5229"
+   ],
+   "tests": [
+    "tests/person/work/markets.test.ts::a script sold in a market > is paid on a sale as its market pays, or optioned for a year at its price, the script back on the market when the option lapses"
+   ]
+  },
+  {
+   "key": "minimumOf / paidOf / optionOf",
+   "status": "game",
+   "register": [
+    "R-5229"
+   ],
+   "tests": [
+    "tests/person/work/markets.test.ts::a script sold in a market > is paid its agreement's minimum, by form and tier, on the day it sells",
+    "tests/person/work/markets.test.ts::a script sold in a market > refuses what a market doesn't set: a form, a production's tier unsaid, a market whose figures aren't known",
+    "tests/person/work/markets.test.ts::a script sold in a market > prices an option for a year at its agreement's share, negotiated where nothing sets it, refused where nothing is known"
+   ]
+  },
+  {
+   "key": "aboutMarket (writing.unkept)",
+   "status": "game",
+   "register": [
+    "R-5229"
+   ],
+   "tests": [
+    "tests/person/work/markets.test.ts::a script sold in a market > tells the player what of a market isn't known"
+   ]
+  },
+  {
+   "key": "saleIn (country and days, for the permit)",
+   "status": "game",
+   "register": [
+    "R-5229"
+   ],
+   "tests": [
+    "tests/person/work/markets.test.ts::a script sold in a market > is sold where its market is, the meeting a day there"
+   ]
+  }
+ ]
+}

@@ -1,0 +1,320 @@
+{
+ "topic": "markets.producer.IT",
+ "read": "2026-11-01",
+ "note": "Read 2026-11-01 at the owner's word (\"Now add markets for writers, directors and producers\"): the terms a producer works on (funds, incentives, fee caps, outcomes) in Italy. Research and retry subagents (workbench/briefs/BRIEF-roles-markets*.md); every quote checked by the lead against its saved page; a scan read by OCR is marked so and its figures checked against the image.",
+ "figures": [
+  {
+   "item": "incentive",
+   "finding": "An independent Italian producer of an Italian-nationality feature film gets a tax credit of 30% of eligible cost (cut from 40% by the decree of 6 July 2026), capped at €4 million a film and €7 million a year per company (€6 million a film if at least 40% of the financing comes from abroad); large European companies get 25% on eligible cost from €5m to €10m and 20% above, and non-independent producers 20% up to €3 million a year.",
+   "value": {
+    "independentFeatureRate": 0.3,
+    "previousRate": 0.4,
+    "rateRangeAllWorks": [
+     0.15,
+     0.35
+    ],
+    "highCapacityCompany": {
+     "from5mTo10mEUR": 0.25,
+     "above10mEUR": 0.2
+    },
+    "nonIndependentRate": 0.2,
+    "nonIndependentAnnualCapEUR": 3000000,
+    "capPerFeatureEUR": 4000000,
+    "annualCapPerCompanyFeaturesEUR": 7000000,
+    "capPerFeatureWith40pctForeignFinanceEUR": 6000000,
+    "capPerTvWebWorkEUR": 7000000,
+    "annualCapPerCompanyTvWebEUR": 15000000,
+    "aidIntensityCap": {
+     "default": 0.5,
+     "difficultWorks": 0.8,
+     "DACcopro": 1.0
+    },
+    "producerMustCoverAtLeastTheCredit": true,
+    "applicationWindow": "preliminary request no earlier than 60 days before four consecutive weeks of shooting or half the shooting days",
+    "amendedBy": "D.I. MiC-MEF 6 luglio 2026 n. 281"
+   },
+   "applies": "Italy, independent original producers (EEA seat, taxed in Italy, share capital and net assets of at least EUR 40,000, ATECO 59.11) of films with Italian nationality and the cultural test; rates as amended by the decree of 6 July 2026 (applications for 2026 under D.D. 24 September 2026 rep. 2821).",
+   "sources": [
+    {
+     "src": 0,
+     "said": "Ai produttori indipendenti, in possesso dei requisiti di cui all’articolo 2, commi 2 e 4 del presente decreto, il credito di imposta è concesso nella misura del 40 30 per cento del costo eleggibile di produzione, nel rispetto dei limiti previsti all’articolo 5. … 35 25 per cento per la parte del costo eleggibile superiore a euro 5.000.000 e fino a euro 10.000.000; … opere cinematografiche di cui al Capo II, documentari cinematografici di cui al Capo IV e opere di animazione cinematografiche di cui al Capo V, fino all’ammontare massimo di euro 4.000.000 per opera e fino all’ammontare massimo annuo di euro 7.000.000 per impresa … concorrano, per almeno il 40 per cento, risorse provenienti da Paesi al di fuori dell’Italia, l'ammontare massimo del credito d'imposta è così rideterminato: fino a euro 6.000.000 per le opere cinematografiche di cui al Capo II … I crediti d'imposta e le altre misure di sostegno pubblico non possono superare, complessivamente, la misura del 50 per cento del costo dell'opera audiovisiva."
+    }
+   ]
+  },
+  {
+   "item": "feecap",
+   "finding": "Under the Italian tax credit the producer fee and the company's overheads are not eligible costs, and each may be booked in the film's total production cost at no more than 7.5% of it; above-the-line costs (script, direction, lead cast) are eligible up to 25% of total cost (30% under €3.5 million).",
+   "value": {
+    "producerFeeMaxShareOfTotalCost": 0.075,
+    "overheadsMaxShareOfTotalCost": 0.075,
+    "producerFeeEligibleForCredit": false,
+    "overheadsEligibleForCredit": false,
+    "aboveTheLineEligibleMaxShare": 0.25,
+    "aboveTheLineEligibleMaxShareUnder3_5mEUR": 0.3,
+    "financeInsuranceGuaranteeEligibleMaxShare": 0.075
+   },
+   "applies": "Italy, every work claiming the production tax credit under D.I. 225/2024 as amended to 6 July 2026.",
+   "sources": [
+    {
+     "src": 0,
+     "said": "non sono eleggibili il compenso per la produzione (“producer fee”) e le spese generali dell’impresa; ciascuna delle due voci è imputabile nel costo complessivo di produzione nella misura massima del 7,5 per cento del medesimo costo; … sono eleggibili, nella misura massima del 30 25 per cento del costo complessivo di produzione, innalzato al 30 per cento per le opere con un costo inferiore a euro 3.500.000, i costi relativi alle voci “Soggetto e sceneggiatura”, “Direzione”, “Attori principali”"
+    }
+   ]
+  },
+  {
+   "item": "fund",
+   "finding": "The Ministry's 2026 selective production grants (€32.7 million, non-repayable) fund independent producers' first and second features and young authors' films costing at most €4 million, documentaries, shorts, animation and films of particular artistic quality, paying the lesser of the sum asked and 40% of eligible cost (at most €1.2 million for quality films, €1 million for animation); shooting must start within 18 months.",
+   "value": {
+    "fund": "Contributi selettivi alla produzione (art. 26 L. 220/2016), MiC-DGCA",
+    "budget2026EUR": 32700000,
+    "allocation2026EUR": {
+     "youngAuthorsFeatures": 7800000,
+     "firstAndSecondFeatures": 7500000,
+     "documentaries": 4000000,
+     "shorts": 900000,
+     "animation": 5000000,
+     "particularArtisticQuality": 7500000
+    },
+    "maxShareOfEligibleCost": 0.4,
+    "maxEUR": {
+     "particularArtisticQuality": 1200000,
+     "animation": 1000000,
+     "animationFirstSecondOrYoung": 600000
+    },
+    "firstSecondYoungFeatureMaxCostEUR": 4000000,
+    "aboveTheLineMaxShareFirstSecondYoung": 0.25,
+    "shootWithinMonths": 18,
+    "minimumSpendInItalyShareOfGrant": 1.6,
+    "requires": "independent producer that released at least one eligible work in the last 5 years (new companies excepted), holding the rights to the story and draft script"
+   },
+   "applies": "Italy, 2026 call for selective grants for writing, development and production (art. 26 L. 220/2016), read 2026-11-01.",
+   "sources": [
+    {
+     "src": 1,
+     "said": "RIPARTO RISORSE 2026: € 32.700.000 opere cinematografiche di lungometraggio di giovani autori: €7.800.000; opere cinematografiche di lungometraggio prime e seconde: €7.500.000; … Opere cinematografiche prime e seconde o di giovani autori Costo complessivo: max € 4.000.000 Costi sopra la linea: max 25% dei costi di produzione … CONTRIBUTO MASSIMO Importo minore tra: contributo richiesto 40% costi ammissibili in caso di opere di animazione: €1.000.000 (ridotto a €600.000 per opere di giovani autori e opere prime e seconde) in caso di film di particolare qualità artistica e su personaggi e avvenimenti dell’identità culturale italiana €1.200.000 TIPOLOGIA CONTRIBUTO Fondo perduto … aver prodotto almeno un’opera audiovisiva conforme ai requisiti per l’ammissione ai benefici di legge e diffuso al pubblico negli ultimi 5 anni, fatta eccezione per le società di nuova costituzione … l’inizio delle riprese è previsto non oltre 18 mesi dalla data di scadenza della sessione di partecipazione … SPESA MINIMA SUL TERRITORIO 160% del contributo concesso su territorio italiano"
+    }
+   ]
+  },
+  {
+   "item": "fund",
+   "finding": "In the second 2025 session of the selective production grants, 16 of 64 first-or-second-feature projects were funded (25%, €3.75 million in all, mostly €600,000 or less each) and 11 of 27 young-author features (41%, €3.47 million); refused projects included many below the minimum score.",
+   "value": {
+    "session": "2025 II (decree of 10 July 2026)",
+    "firstAndSecondFeatures": {
+     "applied": 64,
+     "funded": 16,
+     "rate": 0.25,
+     "awardedEUR": 3750000,
+     "largestAwardEUR": 600000
+    },
+    "youngAuthorFeatures": {
+     "applied": 27,
+     "funded": 11,
+     "rate": 0.41,
+     "awardedEUR": 3470000
+    },
+    "documentaries": {
+     "applied": 139,
+     "funded": 37,
+     "awardedEUR": 3057000
+    },
+    "shorts": {
+     "applied": 48,
+     "funded": 15,
+     "awardedEUR": 450000
+    },
+    "animation": {
+     "applied": 17,
+     "funded": 13,
+     "awardedEUR": 4400000
+    },
+    "countBasis": "rows numbered consecutively across admitted and refused lists in each annex"
+   },
+   "applies": "Italy, MiC-DGCA selective production grants, second deliberative session of 2025, resolved by D.D. 10 July 2026 rep. 2211.",
+   "sources": [
+    {
+     "src": 2,
+     "said": "ALLEGATO B - PRODUZIONE DI OPERE CINEMATOGRAFICHE DI LUNGOMETRAGGIO PRIME E SECONDE … 16 26140076 PICCOLE ANOMALIE Gianluca Granocchia BLACK LIGHT FILM (Italia 100%) 1.137.909,70 455.163,88 44 … TOTALE 3.750.000,00 … Progetti non ammessi al contributo … 64 UN GIORNO MIGLIORE Giuseppe Moroniti ROMANA FILM (Italia 100%) 1.664.754,53 … TOTALE 3.470.000,00 … Progetto di opera a cui è attribuito un punteggio inferiore al minimo previsto dalla tabella 4"
+    }
+   ]
+  },
+  {
+   "item": "outcomes",
+   "finding": "Italy classified 403 feature films in 2025 (364 with known budgets: total €798.6 million, mean €2.19 million, median €0.75 million); of 317 Italian-initiative films, 145 cost under €500,000 and 58 between €3m and €10m; 82% of the year's classified films reached cinemas (330 films, €180.3 million, 24.6 million admissions), with one film taking about 42% of that.",
+   "value": {
+    "year": 2025,
+    "filmsClassified": 403,
+    "withBudget": 364,
+    "totalCostEURm": 798.62,
+    "meanCostEURm": 2.19,
+    "medianCostEURm": 0.75,
+    "italianInitiativeByCostClass": {
+     "under0_5m": 145,
+     "0_5to1m": 44,
+     "1to3m": 61,
+     "3to10m": 58,
+     "10to30m": 8,
+     "over30m": 1,
+     "total": 317
+    },
+    "releasedShare": 0.82,
+    "released": 330,
+    "grossEURm": 180.3,
+    "admissionsM": 24.6,
+    "releasedByYear": {
+     "2019": 224,
+     "2020": 152,
+     "2021": 208,
+     "2022": 280,
+     "2023": 296,
+     "2024": 318,
+     "2025": 330
+    },
+    "coproductions": 92,
+    "minorityCoproductions": 47,
+    "topFilmShareOfGross": 0.42
+   },
+   "applies": "Italy, films of Italian nationality that completed classification in 2025, MiC-DGCA report (release window 1 January 2025 to 31 March 2026, Cinetel data).",
+   "sources": [
+    {
+     "src": 3,
+     "said": "Opere con budget disponibile Costo medio Costo mediano Costo totale 364 2,19 € 0,75 € 798,62 € … Nel 2025 i ﬁlm italiani andati in classiﬁcazione sono 403. … 134 28,98 € 145 28,97 € 34 25,35 € 44 32,36 € 76 138,57 € 61 106,48 € 61 337,51 € 58 286,59 € 11 159,08 € 8 137,28 € 1 32,36 € 1 54,18 € 317 721,85 € 317 645,69 € … l’82% dei ﬁlm classiﬁcati è uscito in sala (contro l’80% del 2024) … questo incasso è stato ottenuto da 330 ﬁlm usciti in sala, mentre nel 2019 erano solo 224 … che con 76 milioni di euro copre circa il 42% dell’incasso totale."
+    }
+   ]
+  },
+  {
+   "item": "outcomes",
+   "finding": "Box office earns back little below €3 million: the 37 Italian-initiative fiction films budgeted under €500,000 in 2025 cost €7.7m in all and the 11 such films released grossed €0.51m; the 57 at €1m to €3m cost €99.9m and the 48 released grossed €4.35m; the 56 at €3m to €10m cost €272.9m and the 54 released grossed €66.0m; the 8 at €10m to €30m cost €137.3m and grossed €97.1m.",
+   "value": {
+    "year": 2025,
+    "basis": "Italian-initiative fiction films; cost by class of all classified films, gross (Italian theatrical, Cinetel) for those in the class that claimed the production tax credit and were released",
+    "byCostClass": {
+     "under0_5m": {
+      "films": 37,
+      "costEURm": 7.7,
+      "releasedFilms": 11,
+      "grossEURm": 0.51
+     },
+     "0_5to1m": {
+      "films": 30,
+      "costEURm": 23.2,
+      "releasedFilms": 20,
+      "grossEURm": 0.39
+     },
+     "1to3m": {
+      "films": 57,
+      "costEURm": 99.9,
+      "releasedFilms": 48,
+      "grossEURm": 4.35
+     },
+     "3to10m": {
+      "films": 56,
+      "costEURm": 272.9,
+      "releasedFilms": 54,
+      "grossEURm": 66.01
+     },
+     "10to30m": {
+      "films": 8,
+      "costEURm": 137.3,
+      "releasedFilms": 8,
+      "grossEURm": 97.06
+     },
+     "over30m": {
+      "films": 1,
+      "costEURm": 54.2,
+      "releasedFilms": 1,
+      "grossEURm": 0.97
+     }
+    },
+    "note": "gross is box office before the exhibitor's and distributor's shares; the two populations differ slightly, so the ratio is an indication, not a recoupment rate"
+   },
+   "applies": "Italy, Italian-initiative fiction features classified in 2025, MiC-DGCA report.",
+   "sources": [
+    {
+     "src": 3,
+     "said": "31 7,2 € 37 7,7 € 20 15,4 € 30 23,2 € 68 126,3 € 57 99,9 € 60 333,1 € 56 272,9 € 11 159,1 € 8 137,3 € 1 32,4 € 1 54,2 € 191 673,4 € 189 595,1 € … Film Incasso 11 0,51 € 20 0,39 € 48 4,35 € 54 66,01 € 8 97,06 € 1 0,97 € 17 0,31 € 142 169,30 €"
+    }
+   ]
+  },
+  {
+   "item": "union",
+   "finding": "Italian film producers are represented by ANICA, Confindustria's association for the film, audiovisual and digital industries (founded 10 July 1944), which signs six national collective agreements for the sector, actors' included; producers of series, TV films, documentaries and animation by APA, the Associazione Produttori Audiovisivi.",
+   "value": {
+    "film": "ANICA (Associazione Nazionale Industrie Cinematografiche Audiovisive e Digitali)",
+    "anicaFounded": "1944-07-10",
+    "anicaSignsCCNL": 6,
+    "tvAndSeries": "APA (Associazione Produttori Audiovisivi)"
+   },
+   "applies": "Italy, read 2026-11-01.",
+   "sources": [
+    {
+     "src": 4,
+     "said": "ANICA (Associazione Nazionale Industrie Cinematografiche Audiovisive e Digitali) è l’Associazione di Settore che in Confindustria rappresenta le imprese che operano nella filiera cinematografica, audiovisiva e digitale. Fondata il 10 luglio 1944 … ANICA discute e firma direttamente sei Contratti Collettivi Nazionali di Lavoro della Filiera Cineaudiovisiva (Cineaudiovisivo, Troupes, Doppiaggio, Interpreti e Attori/Attrici, Generici, Stuntmen)"
+    },
+    {
+     "src": 5,
+     "said": "APA – Associazione Produttori Audiovisivi è l’associazione dei produttori di serie, film per la TV e il VOD, intrattenimento, documentari e animazione"
+    }
+   ]
+  }
+ ],
+ "role": "producer",
+ "country": "IT",
+ "sources": [
+  {
+   "url": "https://cinema.cultura.gov.it/wp-content/uploads/2026/10/20260618_Consolidato_TC-art.-15_Modifica-2026_rev-19-ottobre.pdf",
+   "title": "MiC-DGCA: Testo consolidato del D.I. MiC-MEF 10 luglio 2024 n. 225 (tax credit produzione, art. 15 L. 220/2016) con le modifiche del D.I. 6 luglio 2026 n. 281 (rev. 19 ottobre 2026)",
+   "read": "2026-11-01",
+   "kind": "primary",
+   "said": "Ai produttori indipendenti, in possesso dei requisiti di cui all’articolo 2, commi 2 e 4 del presente decreto, il credito di imposta è concesso nella misura del 40 30 per cento del costo eleggibile di produzione, nel rispetto dei limiti previsti all’articolo 5. … 35 25 per cento per la parte del costo eleggibile superiore a euro 5.000.000 e fino a euro 10.000.000; … opere cinematografiche di cui al Capo II, documentari cinematografici di cui al Capo IV e opere di animazione cinematografiche di cui al Capo V, fino all’ammontare massimo di euro 4.000.000 per opera e fino all’ammontare massimo annuo di euro 7.000.000 per impresa … concorrano, per almeno il 40 per cento, risorse provenienti da Paesi al di fuori dell’Italia, l'ammontare massimo del credito d'imposta è così rideterminato: fino a euro 6.000.000 per le opere cinematografiche di cui al Capo II … I crediti d'imposta e le altre misure di sostegno pubblico non possono superare, complessivamente, la misura del 50 per cento del costo dell'opera audiovisiva. … non sono eleggibili il compenso per la produzione (“producer fee”) e le spese generali dell’impresa; ciascuna delle due voci è imputabile nel costo complessivo di produzione nella misura massima del 7,5 per cento del medesimo costo; … sono eleggibili, nella misura massima del 30 25 per cento del costo complessivo di produzione, innalzato al 30 per cento per le opere con un costo inferiore a euro 3.500.000, i costi relativi alle voci “Soggetto e sceneggiatura”, “Direzione”, “Attori principali”"
+  },
+  {
+   "url": "https://cinema.cultura.gov.it/cosa-facciamo/sostegni-economici/linee-di-sostegno/contributi-selettivi/selettivi-produzione/",
+   "title": "MiC-DGCA: Contributi selettivi, Produzione (bando 2026, art. 26 L. 220/2016)",
+   "read": "2026-11-01",
+   "kind": "primary",
+   "said": "RIPARTO RISORSE 2026: € 32.700.000 opere cinematografiche di lungometraggio di giovani autori: €7.800.000; opere cinematografiche di lungometraggio prime e seconde: €7.500.000; … Opere cinematografiche prime e seconde o di giovani autori Costo complessivo: max € 4.000.000 Costi sopra la linea: max 25% dei costi di produzione … CONTRIBUTO MASSIMO Importo minore tra: contributo richiesto 40% costi ammissibili in caso di opere di animazione: €1.000.000 (ridotto a €600.000 per opere di giovani autori e opere prime e seconde) in caso di film di particolare qualità artistica e su personaggi e avvenimenti dell’identità culturale italiana €1.200.000 TIPOLOGIA CONTRIBUTO Fondo perduto … aver prodotto almeno un’opera audiovisiva conforme ai requisiti per l’ammissione ai benefici di legge e diffuso al pubblico negli ultimi 5 anni, fatta eccezione per le società di nuova costituzione … l’inizio delle riprese è previsto non oltre 18 mesi dalla data di scadenza della sessione di partecipazione … SPESA MINIMA SUL TERRITORIO 160% del contributo concesso su territorio italiano"
+  },
+  {
+   "url": "https://cinema.cultura.gov.it/wp-content/uploads/dlm_uploads/2026/07/D.D.-10-luglio-2026-rep-2211-Contributi-Selettivi-Produzione-II-sessione-2025.pdf",
+   "title": "MiC-DGCA: D.D. 10 luglio 2026 rep. 2211, Contributi selettivi produzione, II sessione 2025 (graduatorie, allegati A-E)",
+   "read": "2026-11-01",
+   "kind": "primary",
+   "said": "ALLEGATO B - PRODUZIONE DI OPERE CINEMATOGRAFICHE DI LUNGOMETRAGGIO PRIME E SECONDE … 16 26140076 PICCOLE ANOMALIE Gianluca Granocchia BLACK LIGHT FILM (Italia 100%) 1.137.909,70 455.163,88 44 … TOTALE 3.750.000,00 … Progetti non ammessi al contributo … 64 UN GIORNO MIGLIORE Giuseppe Moroniti ROMANA FILM (Italia 100%) 1.664.754,53 … TOTALE 3.470.000,00 … Progetto di opera a cui è attribuito un punteggio inferiore al minimo previsto dalla tabella 4"
+  },
+  {
+   "url": "https://cinema.cultura.gov.it/wp-content/uploads/2026/09/Report_I-numeri-del-cinema-e-dellaudiovisvo-italiano-2025_digitale-3.pdf",
+   "title": "MiC-DGCA: I numeri del cinema e dell'audiovisivo italiano, anno 2025 (15a edizione, settembre 2026)",
+   "read": "2026-11-01",
+   "kind": "primary",
+   "said": "Opere con budget disponibile Costo medio Costo mediano Costo totale 364 2,19 € 0,75 € 798,62 € … Nel 2025 i ﬁlm italiani andati in classiﬁcazione sono 403. … 134 28,98 € 145 28,97 € 34 25,35 € 44 32,36 € 76 138,57 € 61 106,48 € 61 337,51 € 58 286,59 € 11 159,08 € 8 137,28 € 1 32,36 € 1 54,18 € 317 721,85 € 317 645,69 € … l’82% dei ﬁlm classiﬁcati è uscito in sala (contro l’80% del 2024) … questo incasso è stato ottenuto da 330 ﬁlm usciti in sala, mentre nel 2019 erano solo 224 … che con 76 milioni di euro copre circa il 42% dell’incasso totale. … 31 7,2 € 37 7,7 € 20 15,4 € 30 23,2 € 68 126,3 € 57 99,9 € 60 333,1 € 56 272,9 € 11 159,1 € 8 137,3 € 1 32,4 € 1 54,2 € 191 673,4 € 189 595,1 € … Film Incasso 11 0,51 € 20 0,39 € 48 4,35 € 54 66,01 € 8 97,06 € 1 0,97 € 17 0,31 € 142 169,30 €"
+  },
+  {
+   "url": "https://www.anica.it/chi-siamo",
+   "title": "ANICA: Chi siamo",
+   "read": "2026-11-01",
+   "kind": "primary",
+   "said": "ANICA (Associazione Nazionale Industrie Cinematografiche Audiovisive e Digitali) è l’Associazione di Settore che in Confindustria rappresenta le imprese che operano nella filiera cinematografica, audiovisiva e digitale. Fondata il 10 luglio 1944 … ANICA discute e firma direttamente sei Contratti Collettivi Nazionali di Lavoro della Filiera Cineaudiovisiva (Cineaudiovisivo, Troupes, Doppiaggio, Interpreti e Attori/Attrici, Generici, Stuntmen)"
+  },
+  {
+   "url": "https://www.apaonline.it/chi-siamo/profilo/",
+   "title": "APA - Associazione Produttori Audiovisivi: Profilo",
+   "read": "2026-11-01",
+   "kind": "primary",
+   "said": "APA – Associazione Produttori Audiovisivi è l’associazione dei produttori di serie, film per la TV e il VOD, intrattenimento, documentari e animazione"
+  }
+ ],
+ "blockers": [
+  {
+   "item": "outcomes",
+   "sought": "A recoupment rate (films earning back their full cost, all revenues) for Italian films by budget; the DGCA report gives theatrical gross against cost by class only.",
+   "tried": {
+    "institution": "MiC-DGCA 'I numeri del cinema e dell'audiovisivo italiano 2025' (read): cost classes and Italian theatrical gross by class, no other revenues or producer returns. | Retry 2026-11-01 (producer retry): cinema.cultura.gov.it presentation of I Numeri del cinema 2024 (found by search) gives costs and grosses, not recoupment.",
+    "official-register": "No other official series found on cinema.cultura.gov.it normativa and report pages read. | Retry 2026-11-01 (producer retry): None found.",
+    "web-search": "2026-11-01: '\"Tutti i numeri del cinema italiano\" 2025 film prodotti nazionalità italiana numero costo medio DGCA' led to the DGCA report only. | Retry 2026-11-01 (producer retry): \"film italiani recupero costi produzione percentuale film in utile studio DGCA ANICA \\\"rientro\\\" investimento tutti i ricavi\": only a 2006 BNL cost-income ratio (1.5 in 2005) and press.",
+    "trade-press": "ItaliaOggi reports the DGCA totals; no recoupment data. | Retry 2026-11-01 (producer retry): Il Post (16 Dec 2022) and Il Fatto Quotidiano (2026) discuss returns without a recoupment count; not used.",
+    "archive": "Not tried: no candidate primary. | Retry 2026-11-01 (producer retry): web.archive.org: http:// refused by the egress policy (\"Blocked by egress policy\"), https:// and the id_ form reset the connection (curl 35); archive.ph reset (curl 35), 2026-11-01."
+   }
+  }
+ ]
+}

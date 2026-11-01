@@ -252,7 +252,7 @@ export function readMarkets(root: string): Markets {
   const tz = read(ZONES) as { zones: object; links: object };
   const zones = new Set([...Object.keys(tz.zones), ...Object.keys(tz.links)]);
   // Stryker disable next-line MethodExpression: the directory's order is sorted on the file systems the gate runs on; the sort holds it on any other.
-  const files = existsSync(join(root, SOURCES)) ? readdirSync(join(root, SOURCES)).filter((f) => f.endsWith('.json')).map((f) => f.slice(0, -5)).sort() : [];
+  const files = existsSync(join(root, SOURCES)) ? readdirSync(join(root, SOURCES)).filter((f) => /^[A-Z]{2}\.json$/.test(f)).map((f) => f.slice(0, -5)).sort() : [];
   const out: Markets = { markets: {}, agreements: {} };
   for (const cc of Object.keys(readings).filter((c) => !files.includes(c))) throw new Error(`${cc} has a reading and no research`);
   for (const cc of files) {

@@ -1,9 +1,12 @@
 import { defineCommand, type Context, type Json } from '../../core/frame/frame.ts';
-import { money, type Money } from '../../core/money/money.ts';
-import type { LineId } from '../../core/text/text.ts';
+import { add, compare, fromMajor, money, multiply, rational, roundHalfEven, type CurrencyCode, type Money } from '../../core/money/money.ts';
+import { t, type LineId } from '../../core/text/text.ts';
+import { countryName, type CountryCode } from '../../world/gazetteer/gazetteer.ts';
+import { dateOf, UNIT_DAYS, WEEK_DAYS } from '../acting/acting.ts';
 import { ATTRIBUTES, componentValues, practise, skillOf, type AttributesSlice } from '../attributes/attributes.ts';
 import { inTheBusiness, personOf, type IdentitySlice } from '../identity/identity.ts';
 import { spread } from '../work/work.ts';
+import compiled from './markets.json' with { type: 'json' };
 
 /**
  * The director's work and how good it comes out (BUILD-ORDER layer 4; the owner, 2026-10-31: "I want my attributes to
@@ -24,6 +27,11 @@ import { spread } from '../work/work.ts';
  * its own counts give it; a debut director's chance of a second feature within five years (25.3%; 45% where the debut
  * found an audience; Stephen Follows's count of 146,603 debuts), moved by a family in the business as Follows's debut
  * directors were (72% of those with family in film or TV went on to a second feature against 66% of everyone else; R-4622).
+ *
+ * Beyond the US, twenty markets (src/person/directing/markets.json, compiled by tools/person/markets-director from the
+ * research, person.markets.director.<CC>): a job there is engaged under one of the market's agreements, paid its
+ * minimum fees and given the periods it guarantees; where the research says nothing sets the pay, or couldn't find what
+ * does, there is no minimum, and the player is told what isn't known.
  *
  * The model's own figures (the spreads, how far a short schedule or a short cut carries, what the set takes from a
  * director's plan, a festival's pool and steepness, what a festival's selection says of an audience, what a pitch adds)
@@ -108,14 +116,19 @@ export const kinship = (family: boolean): number => (family ? KIN.family : KIN.o
 export interface Film {
   readonly id: number;
   readonly form: Form;
-  /** A feature's budget, USD; null for an episode. */
+  /** The country of the market it is made in, and the agreement it is directed under (the DGA's in the US). */
+  readonly country: string;
+  readonly agreement: string;
+  /** Its budget, in its market's currency (USD in the US); null where its terms don't read one. */
   readonly budget: number | null;
+  /** Its running time, where its agreement pays by it. */
+  readonly minutes: number | null;
   readonly started: number;
   readonly prepDays: number;
   readonly shootDays: number;
-  /** The Director's Cut the DGA guarantees, in days. */
+  /** The Director's Cut the agreement guarantees (or the contract gives), in days. */
   readonly cutDays: number;
-  /** The DGA's minimum for the job; null where it is left to negotiation. */
+  /** The agreement's minimum for the job; null where it is left to negotiation or isn't known. */
   readonly fee: Money | null;
   /** What prep made of each part, 0 to 100. */
   plan: Record<Planned, number>;
@@ -201,25 +214,205 @@ export function filmOf(s: DirectingSlice, id: number): Film {
 export interface PrepArgs {
   [key: string]: Json;
   form: Form;
-  /** A feature's budget, USD, and its scheduled shooting days; an episode's are the DGA's. */
+  /** The market's country (the US where none is named) and, where several cover the form there, its agreement. */
+  country?: string;
+  agreement?: string;
+  /** Its budget in the market's currency (a feature's in the US; abroad, where the agreement reads it) and its shooting days. */
   budget?: number;
   shoot?: number;
+  /** Abroad, the prep and cut the contract gives, where the agreement guarantees none; the running time, where it pays by it. */
+  prep?: number;
+  cut?: number;
+  minutes?: number;
 }
 
-/** The schedule and the pay of a job, as the DGA sets them. */
-function terms(a: PrepArgs): Pick<Film, 'budget' | 'prepDays' | 'shootDays' | 'cutDays' | 'fee'> {
+type Terms = Pick<Film, 'country' | 'agreement' | 'budget' | 'minutes' | 'prepDays' | 'shootDays' | 'cutDays' | 'fee'>;
+
+/** The schedule and the pay of a job in the US, as the DGA sets them. */
+function dgaTerms(a: PrepArgs): Terms {
+  if (a.agreement !== undefined || a.prep !== undefined || a.cut !== undefined || a.minutes !== undefined) throw new Error("the DGA sets a US job's agreement, prep and cut, and reads no running time");
+  const us = { country: 'US', agreement: 'dga', minutes: null };
   if (a.form === 'feature') {
     wholeAtLeast(a.budget, 1, 'a budget');
     wholeAtLeast(a.shoot, 1, 'the shooting days');
     const budget = a.budget as number;
     const shoot = a.shoot as number;
     const level = levelOf(budget);
-    return { budget, prepDays: FEATURE.prep, shootDays: shoot, cutDays: level.cut(shoot), fee: level.weekly === null ? null : money('USD', level.weekly * FEATURE.weeks * 100) };
+    return { ...us, budget, prepDays: FEATURE.prep, shootDays: shoot, cutDays: level.cut(shoot), fee: level.weekly === null ? null : money('USD', level.weekly * FEATURE.weeks * 100) };
   }
-  if (!(a.form in EPISODES)) throw new Error(`there's no form ${String(a.form)}`);
   if (a.budget !== undefined || a.shoot !== undefined) throw new Error("an episode's budget and schedule are the show's");
   const e = EPISODES[a.form];
-  return { budget: null, prepDays: e.prep, shootDays: e.shoot, cutDays: e.cut, fee: money('USD', e.rate * 100) };
+  return { ...us, budget: null, prepDays: e.prep, shootDays: e.shoot, cutDays: e.cut, fee: money('USD', e.rate * 100) };
+}
+
+/** What a market's research couldn't find, by the item its blockers name. */
+export type Unknown = 'agreement' | 'fees' | 'periods' | 'union' | 'language' | 'none';
+type Range = readonly [number, number | null];
+type Tier = 'budget' | 'years' | 'minutes' | 'days';
+type When = Readonly<Partial<Record<Tier, Range>>>;
+export type Stage = 'prep' | 'shoot' | 'cut';
+export type Per = 'job' | 'share' | 'minute' | 'day' | 'half-day' | 'week' | 'month' | 'hour';
+export interface Fee {
+  readonly form: Form;
+  readonly per: Per;
+  readonly phases: readonly Stage[];
+  readonly when: When;
+  readonly band: Range | null;
+  readonly floor: string | null;
+  readonly first: string | null;
+  readonly steps: readonly (readonly [string, string])[];
+}
+export interface MarketAgreement {
+  readonly country: string;
+  readonly forms: readonly Form[];
+  readonly currency: CurrencyCode | null;
+  readonly none: boolean;
+  readonly month: number | null;
+  readonly short: { readonly upTo: number; readonly share: string } | null;
+  readonly fees: readonly Fee[];
+  readonly periods: readonly { readonly form: Form; readonly part: 'prep-shoot' | 'cut'; readonly when: When; readonly days: number }[];
+}
+export interface Market {
+  readonly agreements: readonly string[];
+  readonly unknown: readonly Unknown[];
+}
+export const MARKETS = (compiled as unknown as { markets: Readonly<Record<string, Market>> }).markets;
+export const AGREEMENTS = (compiled as unknown as { agreements: Readonly<Record<string, MarketAgreement>> }).agreements;
+
+/** The hours of a day the engagement works where a fee is by the hour: the game's eight (person.directing.model). */
+export const HOURS = 8;
+
+const holds = (when: When, values: Readonly<Record<Tier, number>>): boolean => (Object.entries(when) as [Tier, Range][]).every(([k, [lo, hi]]) => values[k] >= lo && (hi === null || values[k] <= hi));
+
+/** The amount of a fee's step in force on a date: the latest begun by then. shortcut: past an agreement's term its last amount is kept (person.markets.model). */
+export function stepAt(steps: Fee['steps'], date: string): string {
+  const step = steps.findLast(([from]) => from <= date);
+  if (step === undefined) throw new Error(`no minimum is known before ${(steps[0] as readonly [string, string])[0]}`);
+  return step[1];
+}
+
+/** The director's whole years in the work on a day: since the first film they prepped, none before it. */
+export function experience(s: DirectingSlice, now: number): number {
+  const first = s.films[0];
+  if (first === undefined) return 0;
+  const [since, today] = [dateOf(first.started), dateOf(now)];
+  return Number(today.slice(0, 4)) - Number(since.slice(0, 4)) - (today.slice(5) < since.slice(5) ? 1 : 0);
+}
+
+/** How many of a count's units a band pays: from its first to its last, every one where none. */
+export const within = (n: number, band: Range | null): number => (band === null ? n : Math.max(0, Math.min(n, band[1] ?? n) - band[0] + 1));
+
+export interface Job {
+  budget: number;
+  minutes: number;
+  days: Readonly<Record<Stage, number>>;
+  years: number;
+  first: boolean;
+}
+
+/**
+ * What one fee pays a job on a date: the job's; a share of the budget, no less than its floor; each minute of the film
+ * it pays; or each day, half-day or hour of the stages it pays (a week five days, as the actor's engine counts it; a
+ * month the agreement's days, or the actor's 21), cut on a first job where the agreement lets it, more for a short one.
+ */
+export function feePays(a: MarketAgreement, f: Fee, job: Job, date: string): Money {
+  const currency = a.currency as CurrencyCode;
+  const v = stepAt(f.steps, date);
+  if (f.per === 'share') {
+    const share = multiply(fromMajor(currency, String(job.budget)), v);
+    const floor = f.floor === null ? share : fromMajor(currency, f.floor);
+    // Stryker disable next-line EqualityOperator: a share equal to its floor is the floor.
+    return compare(share, floor) < 0 ? floor : share;
+  }
+  const rate = fromMajor(currency, v);
+  let pays: Money;
+  if (f.per === 'job') pays = rate;
+  else if (f.per === 'minute') pays = multiply(rate, String(within(job.minutes, f.band)));
+  else {
+    const days = f.phases.reduce((n, p) => n + job.days[p], 0);
+    const unit = rational({ day: '1', 'half-day': '0.5', hour: String(1 / HOURS), week: String(WEEK_DAYS), month: String(a.month ?? UNIT_DAYS.month) }[f.per]);
+    // A banded pay counts whole units (days, half-days); the rest pay the engagement's days pro rata.
+    const [num, den] = f.band === null ? [BigInt(days) * unit.den, unit.num] : [BigInt(within((days * Number(unit.den)) / Number(unit.num), f.band)), 1n];
+    pays = money(currency, Number(roundHalfEven(BigInt(rate.minor) * num, den)));
+    const total = job.days.prep + job.days.shoot + job.days.cut;
+    if (a.short !== null && total <= a.short.upTo) pays = add(pays, multiply(pays, a.short.share));
+  }
+  return f.first !== null && job.first ? multiply(pays, f.first) : pays;
+}
+
+/** A job's minimum under a market's agreement: every fee whose tiers hold for it, added; none where none holds. */
+export function marketFee(a: MarketAgreement, form: Form, job: Job, date: string): Money | null {
+  const total = job.days.prep + job.days.shoot + job.days.cut;
+  const values = { budget: job.budget, minutes: job.minutes, years: job.years, days: total };
+  const fees = a.fees.filter((f) => f.form === form && holds(f.when, values));
+  return fees.length === 0 ? null : fees.map((f) => feePays(a, f, job, date)).reduce(add);
+}
+
+/** The schedule and the pay of a job in a market: its agreement's periods (or the contract's) and its minimum on the day prep starts. */
+function marketTerms(a: PrepArgs, s: DirectingSlice, now: number): Terms {
+  const cc = String(a.country);
+  if (!Object.hasOwn(MARKETS, cc)) throw new Error(`there's no market ${cc}`);
+  const covering = (MARKETS[cc] as Market).agreements.filter((id) => (AGREEMENTS[id] as MarketAgreement).forms.includes(a.form));
+  if (covering.length === 0) throw new Error(`no agreement the game knows covers a ${a.form} in ${cc}`);
+  const id = a.agreement ?? (covering.length === 1 ? covering[0] : undefined);
+  if (id === undefined) throw new Error(`a ${a.form} in ${cc} names its agreement: ${covering.join(', ')}`);
+  if (!covering.includes(id)) throw new Error(`${id} doesn't cover a ${a.form} in ${cc}`);
+  const ag = AGREEMENTS[id] as MarketAgreement;
+  const periods = ag.periods.filter((p) => p.form === a.form);
+  // What the agreement's tiers turn on is asked, what they don't refused (the compile holds a share's and a minute's pay to a tier of theirs).
+  const reads = (k: 'budget' | 'minutes') => [...ag.fees, ...ag.periods].some((x) => k in x.when);
+  const asked = (k: 'budget' | 'minutes', what: string): number | null => {
+    if (reads(k)) return (wholeAtLeast(a[k], 1, `the ${what}`), a[k] as number);
+    if (a[k] !== undefined) throw new Error(`${id} doesn't read a ${a.form}'s ${what}`);
+    return null;
+  };
+  const budget = asked('budget', 'budget');
+  const minutes = asked('minutes', 'running time');
+  wholeAtLeast(a.shoot, 1, 'the shooting days');
+  const shoot = a.shoot as number;
+  const tier = { budget: budget ?? 0, minutes: minutes ?? 0, years: experience(s, now), days: 0 };
+  const guaranteed = (part: 'prep-shoot' | 'cut') => periods.find((p) => p.part === part && holds(p.when, tier))?.days;
+  const contract = (k: 'prep' | 'cut', days: number | undefined): number => {
+    if (days === undefined) return (wholeAtLeast(a[k], 1, `the ${k} days`), a[k] as number);
+    if (a[k] !== undefined) throw new Error(`${id} guarantees a ${a.form}'s ${k}`);
+    return days;
+  };
+  const both = guaranteed('prep-shoot');
+  if (shoot > (both ?? Infinity)) throw new Error(`${id} guarantees a ${a.form} ${both} days of prep and shoot, fewer than its shoot`);
+  const prepDays = contract('prep', both === undefined ? undefined : both - shoot);
+  const cutDays = contract('cut', guaranteed('cut'));
+  // @slate:consumer directing.prep
+  const job: Job = { ...tier, days: { prep: prepDays, shoot, cut: cutDays }, first: s.films.length === 0 };
+  return { country: cc, agreement: id, budget, minutes, prepDays, shootDays: shoot, cutDays, fee: marketFee(ag, a.form, job, dateOf(now)) };
+}
+
+/** The schedule and the pay of a job: the DGA's in the US, a market's agreement's abroad. */
+function terms(a: PrepArgs, s: DirectingSlice, now: number): Terms {
+  if (a.form !== 'feature' && !(a.form in EPISODES)) throw new Error(`there's no form ${String(a.form)}`);
+  return a.country === undefined || a.country === 'US' ? dgaTerms(a) : marketTerms(a, s, now);
+}
+
+/** A job's engagement, for the permit it may need: the country it is made in and the days it works there. */
+export const engagement = (film: Film): { country: string; days: number } => ({ country: film.country, days: film.prepDays + film.shootDays + film.cutDays });
+
+/** The line that tells the player what of a market isn't known. */
+export const UNKEPT_LINE: LineId = 'directing.unkept';
+/** Each item a market's research couldn't find, as the player is told it. */
+export const MISSING: Readonly<Record<Unknown, string>> = {
+  agreement: 'some of the agreements a director is engaged under',
+  fees: 'some of the minimum fees',
+  periods: 'the prep, shoot and cut a director is guaranteed',
+  union: "the guild's fees or how a director joins",
+  language: 'the language the work is made in',
+  none: 'whether anything sets the pay where no agreement does',
+};
+
+/** What the player is told of a market where its research couldn't find all of it: "a, b and c"; nothing where it is known whole, or in the US. */
+export function aboutMarket(country: string): string | undefined {
+  const missing = (Object.hasOwn(MARKETS, country) ? (MARKETS[country] as Market).unknown : []).map((u) => MISSING[u]);
+  if (missing.length === 0) return undefined;
+  const list = missing.length > 1 ? `${missing.slice(0, -1).join(', ')} and ${missing.at(-1) as string}` : (missing[0] as string);
+  return t(UNKEPT_LINE, { country: countryName(country as CountryCode), missing: list });
 }
 
 /** Whether a feature can be prepped: a debut always; a second only once the debut has led to one. */
@@ -229,9 +422,9 @@ function mayDirectFeature(s: DirectingSlice): void {
   if (features === 1 && s.second !== true) throw new Error('a second feature needs the debut to lead to one');
 }
 
-/** Preps a film or an episode: casts it, plans its shots and its story, in the DGA's guaranteed prep. */
+/** Preps a film or an episode: casts it, plans its shots and its story, in the prep its agreement guarantees or its contract gives. */
 function prep(s: Directing, a: PrepArgs, c: Context): void {
-  const t = terms(a);
+  const t = terms(a, s.directing, c.now);
   if (a.form === 'feature') mayDirectFeature(s.directing);
   // @slate:consumer attributes.choose
   const values = componentValues(s.attributes, 'director');
@@ -272,7 +465,7 @@ function finished(film: Film, cut: number): number {
   return mean([...PLANNED.map((p) => shot[p]), cut]);
 }
 
-/** Cuts it, in the Director's Cut the DGA guarantees. */
+/** Cuts it, in the Director's Cut its agreement guarantees or its contract gives. */
 function cut(s: Directing, a: FilmArgs, c: Context): void {
   const values = componentValues(s.attributes, 'director');
   const film = filmOf(s.directing, a.film);

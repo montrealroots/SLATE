@@ -1,0 +1,78 @@
+{
+ "engine": "person.producing",
+ "axis": "producer-market-operation",
+ "universe": {
+  "keys": [
+   "market-terms",
+   "market-zone-currency",
+   "market-plan-fund-release",
+   "market-told",
+   "market-engagement",
+   "market-option"
+  ]
+ },
+ "rows": [
+  {
+   "key": "market-terms",
+   "status": "game",
+   "register": [
+    "R-5231"
+   ],
+   "tests": [
+    "tests/person/producing/markets.test.ts::the markets > are each country's own, every term as the research gives it",
+    "tests/tools/markets-producer.test.ts::the producer's markets compile > compiles the twenty markets the producer's engine reads"
+   ]
+  },
+  {
+   "key": "market-zone-currency",
+   "status": "game",
+   "register": [
+    "R-5231"
+   ],
+   "tests": [
+    "tests/person/producing/markets.test.ts::the markets > runs each market's months in its city's time, the actor's market there, and pays in its currency"
+   ]
+  },
+  {
+   "key": "market-plan-fund-release",
+   "status": "game",
+   "register": [
+    "R-5231"
+   ],
+   "tests": [
+    "tests/person/producing/markets.test.ts::a market's project > is planned, funded and released on its market's terms",
+    "tests/person/producing/markets.test.ts::a market's project > reads a tier by its budgets, both counted, and gives its sum or its bands at most its most"
+   ]
+  },
+  {
+   "key": "market-told",
+   "status": "game",
+   "register": [
+    "R-5231"
+   ],
+   "tests": [
+    "tests/person/producing/markets.test.ts::a market's project > tells the player what of a market isn't known"
+   ]
+  },
+  {
+   "key": "market-engagement",
+   "status": "game",
+   "register": [
+    "R-5231"
+   ],
+   "tests": [
+    "tests/person/producing/markets.test.ts::a market's project > gives the country and days of its shoot for a permit to work there"
+   ]
+  },
+  {
+   "key": "market-option",
+   "status": "game",
+   "register": [
+    "R-5231"
+   ],
+   "tests": [
+    "tests/person/producing/markets.test.ts::a market's project > producing.option: the market a project is optioned in sets what it can claim"
+   ]
+  }
+ ]
+}

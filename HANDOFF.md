@@ -2210,3 +2210,20 @@ beyond its broadcasters, New Zealand's and the Netherlands' screen) pay is left 
 figure. What isn't known is told (acting.unkept). The game's readings (an actor's years in the work, a month's and a
 year's working days) are R-5114. A part abroad now reaches the permit engine; Germany's, the Netherlands', Norway's
 and Sweden's exemptions count the days worked there within their periods, tested.
+Built 2026-11-01, at the owner's word ("Now add markets for writers, directors and producers"): each role's work in
+twenty markets, researched (60 files, research/sources/person/markets/<role>-<CC>.json, register person.markets.<role>
+.<CC> and .blocked.<CC>, 579 sources each checked against its saved page, one retry a role) and compiled
+(tools/person/markets-<role>/ to src/person/{work,directing,producing}/markets.json):
+- The writer (career.ts): script.offer puts a script in a market's agreement (the writer writing its language at C1,
+  the game's line), a pitch sells it at the agreement's minimum by form and tier or takes an option where the
+  agreement prices one (Canada's IPA, Norway's film agreement); 36 agreements in 20 countries, 14 leaving pay to
+  negotiation; Australia's, Japan's and Mexico's refused and told (writing.unkept). WGA units count only WGA sales.
+- The director (directing.ts): directing.prep in a market's agreement, paid by the job, a budget share, the minute or
+  the day as each sets; 32 agreements (13 setting fees, 8 negotiated, 11 unknown and told by directing.unkept); only
+  Quebec's guarantees periods; cut rights not modeled. The DGA counts only DGA films.
+- The producer (producing.ts): producing.option in a market: its currency, fee and overhead caps, its credit (rate,
+  share counted, cap, threshold), its fund's chance and award within the public-aid cap, Italy's release rate beside
+  the UK's; funding and release refused and told (producing.unkept) where the terms aren't known.
+The game's readings are R-5229 to R-5231. Each engine exports where and how long its work is (saleIn, engagement,
+engagementOf); wiring those into the permit, so a director or producer working abroad needs one as the actor does,
+is next.

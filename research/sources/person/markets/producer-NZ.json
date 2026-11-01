@@ -1,0 +1,206 @@
+{
+ "topic": "markets.producer.NZ",
+ "read": "2026-11-01",
+ "note": "Read 2026-11-01 at the owner's word (\"Now add markets for writers, directors and producers\"): the terms a producer works on (funds, incentives, fee caps, outcomes) in New Zealand. Research and retry subagents (workbench/briefs/BRIEF-roles-markets*.md); every quote checked by the lead against its saved page; a scan read by OCR is marked so and its figures checked against the image.",
+ "figures": [
+  {
+   "item": "fund",
+   "finding": "The NZFC invests up to NZ$2.5 million of equity (or a grant up to NZ$500,000) in a feature with significant New Zealand content by an experienced NZ producer; New Zealand government money together may not exceed 90% of the financing (unless the NZFC puts in NZ$500,000 or less), and a grant applies where the NZFC puts in NZ$500,000 or less on a budget of NZ$1 million or less.",
+   "value": {
+    "maxEquityNZD": 2500000,
+    "maxGrantNZD": 500000,
+    "nzGovernmentFundingMaxShare": 0.9,
+    "capWaivedIfEquityAtMostNZD": 500000,
+    "capWaivedInnovationEquityAtMostNZD": 1500000,
+    "grantIfInvestmentAtMostNZD": 500000,
+    "grantIfBudgetAtMostNZD": 1000000,
+    "completionBondIfBudgetOverNZD": 1000000,
+    "boardRounds2027": 4
+   },
+   "applies": "New Zealand, NZFC Feature Film Production Investment (Terms of Trade effective 22 December 2025, page read 2026-11-01).",
+   "sources": [
+    {
+     "src": 0,
+     "said": "Equity investment of up to $2.5 million … Grants of up to $500,000 … The applicant must be an experienced New Zealand producer"
+    },
+    {
+     "src": 1,
+     "said": "A NZFC Investment of NZD$500,000 or less AND where the film’s budget is NZD$1,000,000 or less will be a grant. … must not exceed 90% of the total financing for the film. … the equity investment is no more than $1,500,000 and your film is being funded due to Innovation being the main stated ambition; or … the equity investment is no more than $500,000. … with a budget over NZD$1 million."
+    }
+   ]
+  },
+  {
+   "item": "incentive",
+   "finding": "New Zealand productions get a 40% cash rebate on qualifying NZ spending, capped at NZ$12 million per production (40% of NZ$30 million); a theatrical feature must spend at least NZ$1 million from 1 July 2026 (NZ$2.5 million before) and raise at least 10% of its budget from non-NZ-government sources; international productions get 20%, plus 5% for those passing a points test.",
+   "value": {
+    "rate": 0.4,
+    "maxRebateNZD": 12000000,
+    "qnzpeCapNZD": 30000000,
+    "featureThresholdNZD": 1000000,
+    "featureThresholdFrom": "2026-07-01",
+    "featureThresholdBeforeNZD": 2500000,
+    "minNonNZGovernmentShareFeature": 0.1,
+    "internationalRate": 0.2,
+    "internationalUplift": 0.05,
+    "internationalLiveActionThresholdNZD": 4000000,
+    "producerEngagementMonths": 18
+   },
+   "applies": "New Zealand Screen Production Rebate (administered by the NZFC for the Ministry for Culture and Heritage), criteria effective 1 July 2026.",
+   "sources": [
+    {
+     "src": 2,
+     "said": "The New Zealand Rebate is 40% of QNZPE. The New Zealand Rebate is capped at $12 million per production. … (Maximum Rebate = $12 million)"
+    },
+    {
+     "src": 3,
+     "said": "of Qualifying New Zealand Production Expenditure (QNZPE) up to NZ$30 million … Feature Film (theatrical release) … NZ$1 million … from 1 July 2026 … The expenditure threshold for feature films that started principal photography before 1 July 2026 is NZ$2.5 million. … Feature films: At least 10% of budget from non-NZ government sources. … You, or your production company, need to demonstrate at least 18 months active engagement in the New Zealand screen industry."
+    },
+    {
+     "src": 4,
+     "said": "New Zealand's 20% and 5% Uplift cash rebates … NZ$4 million"
+    }
+   ]
+  },
+  {
+   "item": "feecap",
+   "finding": "The rebate does not count business overheads above 5% of qualifying NZ spending or NZ$400,000, whichever is less, and caps financing fees (executive producer fees included) at 2% of the finance; the NZFC sets no fee percentage, asking that overheads and above-the-line fees be relative to the budget and consistent with industry norms, and gives the producer 50% of any underspend and, on films without the rebate, a 50% corridor and 50% of net profit.",
+   "value": {
+    "overheadCapShareOfQNZPE": 0.05,
+    "overheadCapNZD": 400000,
+    "financingFeeCapShareOfFinance": 0.02,
+    "nzfcFeePercentCap": null,
+    "underspendToProducer": 0.5,
+    "nonRebateProducerCorridor": 0.5,
+    "netProfitToProducer": 0.5
+   },
+   "applies": "New Zealand, NZSPR criteria effective 1 July 2026; NZFC Terms of Trade (22 December 2025) and Feature Film Production Investment FAQs (July 2026).",
+   "sources": [
+    {
+     "src": 2,
+     "said": "Costs generally considered by the NZFC to be “business overheads” above 5% of the QNZPE or $400,000 whichever is the lesser … financing fees (such as loan or arrangement fees and executive producer fees) are capped at 2% of the amount of the finance."
+    },
+    {
+     "src": 5,
+     "said": "Production company overheads and above-the-line fees (e.g. script development, writers, directors, producers, and key cast) should be: … relative to the film’s budget; … consistent with industry norms; and"
+    },
+    {
+     "src": 1,
+     "said": "It is a general requirement that any underspend of the film’s budget is allocated 50% to the producer … For films that are not accessing the NZSPR, we will give the producer a 50% corridor of our recoupment position. … • 50% to the producer; and"
+    }
+   ]
+  },
+  {
+   "item": "union",
+   "finding": "Spada represents New Zealand's independent screen producers; members pay a levy of 0.1% of the total NZ production budget on the first day of principal photography.",
+   "value": {
+    "name": "Spada",
+    "levyShareOfNZBudget": 0.001,
+    "levyDue": "first day of principal photography"
+   },
+   "applies": "New Zealand; read 2026-11-01.",
+   "sources": [
+    {
+     "src": 6,
+     "said": "Spada is proud to represent Aotearoa New Zealand's leading screen producers and production companies. … The levy is a flat rate of 0.1% of the total NZ production budget, regardless of format or genre, and is payable on the first day of principal photography."
+    }
+   ]
+  },
+  {
+   "item": "outcomes",
+   "finding": "In 2024/25 the NZFC funded 12 new feature films and gave finishing grants to seven; its funded features drew 668,160 admissions in New Zealand cinemas (251,386 the year before), two of them over 50,000; sales of NZFC films brought in NZ$3.47 million, of which NZ$1.60 million went back to the NZFC, which recovers at most its own investment in each film.",
+   "value": {
+    "year": "2024/25",
+    "newFeaturesFunded": 12,
+    "finishingGrants": 7,
+    "nzAdmissionsFundedFeatures": {
+     "2024/25": 668160,
+     "2023/24": 251386
+    },
+    "filmsOver50000Admissions": 2,
+    "filmSalesIncomeNZD": 3465536,
+    "distributedToNZFC_NZD": 1601586,
+    "distributedToInvestorsNZD": 1866196
+   },
+   "applies": "New Zealand, NZFC financial year 1 July 2024 to 30 June 2025; applications received are not given.",
+   "sources": [
+    {
+     "src": 7,
+     "said": "A balanced investment strategy funded 12 new feature films and awarded feature film finishing grants to seven projects. … films (During 1 July – 30 June financial year) 251,386 200,000 668,160 … Income from sales of NZFC films 3,465,536 3,465,902 … Less: distributed to NZFC (1,601,586) (1,360,845) … NZFC is only entitled to recover to the maximum extent of its investment in each film."
+    }
+   ]
+  }
+ ],
+ "role": "producer",
+ "country": "NZ",
+ "sources": [
+  {
+   "url": "https://www.nzfilm.co.nz/funding-support-nz-filmmakers/funding/feature-film-production-investment",
+   "title": "NZFC: Feature Film Production Investment",
+   "read": "2026-11-01",
+   "kind": "primary",
+   "said": "Equity investment of up to $2.5 million … Grants of up to $500,000 … The applicant must be an experienced New Zealand producer"
+  },
+  {
+   "url": "https://www.nzfilm.co.nz/assets/resources/TERMS-OF-TRADE-Dec-2025_FINAL.pdf",
+   "title": "NZFC: Terms of Trade (effective 22 December 2025)",
+   "read": "2026-11-01",
+   "kind": "primary",
+   "said": "A NZFC Investment of NZD$500,000 or less AND where the film’s budget is NZD$1,000,000 or less will be a grant. … must not exceed 90% of the total financing for the film. … the equity investment is no more than $1,500,000 and your film is being funded due to Innovation being the main stated ambition; or … the equity investment is no more than $500,000. … with a budget over NZD$1 million. … It is a general requirement that any underspend of the film’s budget is allocated 50% to the producer … For films that are not accessing the NZSPR, we will give the producer a 50% corridor of our recoupment position. … • 50% to the producer; and"
+  },
+  {
+   "url": "https://www.nzfilm.co.nz/assets/resources/NZSPR-New-Zealand-Criteria-1-July-2026-v.1.0_2026-10-23-021725_idvx.docx",
+   "title": "NZFC / Ministry for Culture and Heritage: New Zealand Screen Production Rebate, Criteria for New Zealand Productions (effective 1 July 2026, v1.0)",
+   "read": "2026-11-01",
+   "kind": "primary",
+   "said": "The New Zealand Rebate is 40% of QNZPE. The New Zealand Rebate is capped at $12 million per production. … (Maximum Rebate = $12 million) … Costs generally considered by the NZFC to be “business overheads” above 5% of the QNZPE or $400,000 whichever is the lesser … financing fees (such as loan or arrangement fees and executive producer fees) are capped at 2% of the amount of the finance."
+  },
+  {
+   "url": "https://www.nzfilm.co.nz/incentives/rebate-nz-nzspr",
+   "title": "NZFC: Rebate for New Zealand Productions (NZSPR)",
+   "read": "2026-11-01",
+   "kind": "primary",
+   "said": "of Qualifying New Zealand Production Expenditure (QNZPE) up to NZ$30 million … Feature Film (theatrical release) … NZ$1 million … from 1 July 2026 … The expenditure threshold for feature films that started principal photography before 1 July 2026 is NZ$2.5 million. … Feature films: At least 10% of budget from non-NZ government sources. … You, or your production company, need to demonstrate at least 18 months active engagement in the New Zealand screen industry."
+  },
+  {
+   "url": "https://www.nzfilm.co.nz/incentives/rebate-international-nzspr",
+   "title": "NZFC: Rebate for International Productions",
+   "read": "2026-11-01",
+   "kind": "primary",
+   "said": "New Zealand's 20% and 5% Uplift cash rebates … NZ$4 million"
+  },
+  {
+   "url": "https://www.nzfilm.co.nz/assets/resources/Feature-Film-Production-Investment-FAQs-July-2026.docx",
+   "title": "NZFC: Feature Film Production Investment FAQs (July 2026)",
+   "read": "2026-11-01",
+   "kind": "primary",
+   "said": "Production company overheads and above-the-line fees (e.g. script development, writers, directors, producers, and key cast) should be: … relative to the film’s budget; … consistent with industry norms; and"
+  },
+  {
+   "url": "https://www.spada.co.nz/membership",
+   "title": "Spada: Membership",
+   "read": "2026-11-01",
+   "kind": "primary",
+   "said": "Spada is proud to represent Aotearoa New Zealand's leading screen producers and production companies. … The levy is a flat rate of 0.1% of the total NZ production budget, regardless of format or genre, and is payable on the first day of principal photography."
+  },
+  {
+   "url": "https://www.nzfilm.co.nz/assets/resources/NZFC-Annual-Report-2024-25.pdf",
+   "title": "New Zealand Film Commission: Annual Report 2024/25",
+   "read": "2026-11-01",
+   "kind": "primary",
+   "said": "A balanced investment strategy funded 12 new feature films and awarded feature film finishing grants to seven projects. … films (During 1 July – 30 June financial year) 251,386 200,000 668,160 … Income from sales of NZFC films 3,465,536 3,465,902 … Less: distributed to NZFC (1,601,586) (1,360,845) … NZFC is only entitled to recover to the maximum extent of its investment in each film."
+  }
+ ],
+ "blockers": [
+  {
+   "item": "outcomes",
+   "sought": "How many feature applications the NZFC receives (funded features, admissions and returns to the NZFC for 2024/25 are now held).",
+   "tried": {
+    "institution": "nzfilm.co.nz past-funding-decisions is a filterable list with no counts; the corporate-documents and resource-library listings are script-rendered; the 2023/24 annual report at nzfilm.co.nz/sites/default/files/2024-11/... returned 404, 2026-11-01. | Retry 2026-11-01 (producer retry): nzfilm.co.nz/assets/resources/NZFC-Annual-Report-2024-25.pdf read (saved; used): no applications count for features.",
+    "official-register": "None reached. | Retry 2026-11-01 (producer retry): Statement of Performance Expectations 2024/25 and 2025/26 (nzfilm.co.nz, found by search) not read for counts.",
+    "web-search": "2026-11-01: 'New Zealand Film Commission annual report 2024/25 feature films funded applications received' found the old report URL and a Variety summary. | Retry 2026-11-01 (producer retry): \"nzfilm.co.nz annual report 2024/25 pdf \\\"feature films\\\" \\\"applications\\\" New Zealand Film Commission\": found the report (used).",
+    "trade-press": "au.variety.com summary of the 2024/25 annual report (read and saved as producer-NZ-variety-ar2025.html) gives no counts. | Retry 2026-11-01 (producer retry): au.variety.com summary (saved earlier) gives no counts.",
+    "archive": "web.archive.org snapshot 20250416222944 of the 2023/24 report: connection reset, 2026-11-01; not retried. | Retry 2026-11-01 (producer retry): web.archive.org: http:// refused by the egress policy (\"Blocked by egress policy\"), https:// and the id_ form reset the connection (curl 35); archive.ph reset (curl 35), 2026-11-01."
+   }
+  }
+ ]
+}

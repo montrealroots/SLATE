@@ -1,0 +1,193 @@
+{
+ "topic": "markets.producer.CA",
+ "read": "2026-11-01",
+ "note": "Read 2026-11-01 at the owner's word (\"Now add markets for writers, directors and producers\"): the terms a producer works on (funds, incentives, fee caps, outcomes) in Canada. Research and retry subagents (workbench/briefs/BRIEF-roles-markets*.md); every quote checked by the lead against its saved page; a scan read by OCR is marked so and its figures checked against the image.",
+ "figures": [
+  {
+   "item": "incentive",
+   "finding": "Ontario adds its own refundable credit of 35% of eligible Ontario labour (40% on the first $240,000 for a first-time producer, plus a 10% bonus for shooting outside the Toronto area) for productions spending at least 75% of their costs in Ontario.",
+   "value": {
+    "rate": 0.35,
+    "firstTimeProducerRate": 0.4,
+    "firstTimeProducerLabourCapCAD": 240000,
+    "regionalBonus": 0.1,
+    "minimumOntarioShareOfCosts": 0.75,
+    "base": "eligible Ontario labour expenditure",
+    "harmonizedWith": "federal CPTC"
+   },
+   "applies": "Ontario, Canada (provincial, on top of the federal CPTC already held in world.json); read 2026-11-01.",
+   "sources": [
+    {
+     "src": 0,
+     "said": "The OFTTC is generally calculated as 35% of the eligible Ontario labour expenditures incurred by a qualifying production company with respect to an eligible Ontario production. An enhanced credit rate of 40% on the first $240,000 of qualifying labour expenditure is available for first-time producers. … receive a 10% bonus on all Ontario labour expenditures incurred for the production. … spends at least 75% of its total final costs on Ontario expenditures"
+    }
+   ]
+  },
+  {
+   "item": "outcomes",
+   "finding": "Film and television production in Canada totalled $10.17 billion in 2024/25, up 4.6%, of which foreign location and service work was $5.3 billion; the report says green lights for Canadian projects are getting harder to secure.",
+   "value": {
+    "totalVolumeCAD": 10170000000,
+    "growth": 0.046,
+    "foreignLocationServiceCAD": 5300000000,
+    "foreignGrowth": 0.095,
+    "period": [
+     "2024-04-01",
+     "2025-03-31"
+    ]
+   },
+   "applies": "Canada, all film and television production, fiscal 2024/25 (Profile 2025, compiled from CAVCO, CRTC, CMF and Telefilm data).",
+   "sources": [
+    {
+     "src": 1,
+     "said": "Total production volume in the Canadian film and television industry increased by 4.6 per cent to $10.17 billion in 2024/25. This growth was driven by a 9.5 per cent increase in foreign location and services (FLS) production, reaching $5.3 billion. … Project green lights are becoming increasingly difficult to secure, raising concerns about the commissioning of content in the years ahead."
+    }
+   ]
+  },
+  {
+   "item": "union",
+   "finding": "Quebec's producers are represented by the AQPM, which advises and represents more than 150 independent production companies in film, television and web.",
+   "value": {
+    "name": "Association québécoise de la production médiatique",
+    "members": ">150 companies",
+    "city": "Montréal"
+   },
+   "applies": "Quebec, Canada; read 2026-11-01. The English-language counterpart, the CMPA, refused this environment (403).",
+   "sources": [
+    {
+     "src": 2,
+     "said": "L’Association québécoise de la production médiatique conseille, accompagne et représente plus de 150 entreprises de production indépendante en cinéma, en télévision et en web … Montréal, le 29 octobre 2026"
+    }
+   ]
+  },
+  {
+   "item": "incentive",
+   "finding": "Canada's federal Production Services Tax Credit refunds 16% of qualified Canadian labour (net of assistance) to a production company making an accredited production, one costing over C$1 million within 24 months of the start of principal photography (a series episode over C$100,000 under 30 minutes, C$200,000 otherwise); it cannot be combined with the Canadian-content credit.",
+   "value": {
+    "rate": 0.16,
+    "base": "qualified Canadian labour expenditure, net of assistance",
+    "featureMinCostCAD": 1000000,
+    "episodeMinCostCAD": {
+     "under30min": 100000,
+     "other": 200000
+    },
+    "window": "24 months from start of principal photography",
+    "stacksWithCPTC": false,
+    "law": "Income Tax Act s. 125.5; Income Tax Regulations s. 9300"
+   },
+   "applies": "Canada, federal, eligible production corporations; news, talk, game, sports, award shows, fund-raising and reality television excluded.",
+   "sources": [
+    {
+     "src": 3,
+     "said": "An eligible production corporation in respect of an accredited production for a taxation year is deemed to have paid on its balance-due day for the year an amount on account of its tax payable under this Part for the year equal to 16% of its qualified Canadian labour expenditure for the year in respect of the production … Subsection 125.5(3) does not apply in respect of a production in respect of which an amount is deemed to have been paid under subsection 125.4(3)."
+    },
+    {
+     "src": 4,
+     "said": "accredited production means (a) a film or video production in respect of which the aggregate expenditures, included in the cost of the production, in the period that ends 24 months after the time that the principal filming or taping of the production began, exceeds $1,000,000 … (i) in the case of an episode whose running time is less than 30 minutes, $100,000, and (ii) in any other case, $200,000."
+    }
+   ]
+  },
+  {
+   "item": "market",
+   "finding": "Most Canadian production volume is led from Ontario (37.8% in 2024/25), with Quebec and British Columbia at 26.5% each; 69% of Canadian-content production is in English and 31% in French.",
+   "value": {
+    "year": "2024/25",
+    "shareByLeadProducerProvince": {
+     "Ontario": 0.378,
+     "Quebec": 0.265,
+     "British Columbia": 0.265,
+     "Prairies and Territories": 0.059,
+     "Atlantic": 0.034
+    },
+    "volumeCADm": {
+     "Ontario": 3844,
+     "Quebec": 2689,
+     "British Columbia": 2691,
+     "total": 10165
+    },
+    "canadianContentLanguageShare": {
+     "English (incl. bilingual and other)": 0.69,
+     "French": 0.31
+    },
+    "basis": "province where the lead producer is based; includes foreign location and service work"
+   },
+   "applies": "Canada, film and television production, fiscal 2024/25 (CMPA Profile 2025, CAVCO data); city not given.",
+   "sources": [
+    {
+     "src": 5,
+     "said": "\"title\":\"Exhibit 1-3 Film and television production in Canada, total volume and share by region*\" … {\"x\":\"2024/25\",\"series\":\"Ontario\",\"z_axis\":\"Share of total (%)\",\"value\":0.378 … {\"x\":\"2024/25\",\"series\":\"Quebec\",\"z_axis\":\"Share of total (%)\",\"value\":0.265 … {\"x\":\"2024/25\",\"series\":\"British Columbia\",\"z_axis\":\"Share of total (%)\",\"value\":0.265 … * Based on province or territory where lead producer is based. … \"title\":\"Exhibit 2-3 Share of total volume of Canadian content production, by language\" … {\"x\":\"2024/25\",\"series\":\"English-language*\",\"z_axis\":\"\",\"value\":0.69 … {\"x\":\"2024/25\",\"series\":\"French-language\",\"z_axis\":\"\",\"value\":0.31"
+    }
+   ]
+  }
+ ],
+ "role": "producer",
+ "country": "CA",
+ "sources": [
+  {
+   "url": "https://www.ontariocreates.ca/tax-incentives/ofttc",
+   "title": "Ontario Creates: Ontario Film & Television Tax Credit (OFTTC)",
+   "read": "2026-11-01",
+   "kind": "primary",
+   "said": "The OFTTC is generally calculated as 35% of the eligible Ontario labour expenditures incurred by a qualifying production company with respect to an eligible Ontario production. An enhanced credit rate of 40% on the first $240,000 of qualifying labour expenditure is available for first-time producers. … receive a 10% bonus on all Ontario labour expenditures incurred for the production. … spends at least 75% of its total final costs on Ontario expenditures"
+  },
+  {
+   "url": "https://profile.cmpa.ca/en/introduction",
+   "title": "CMPA / Nordicity: Profile 2025, Introduction (online report, 2024/25 fiscal year)",
+   "read": "2026-11-01",
+   "kind": "primary",
+   "said": "Total production volume in the Canadian film and television industry increased by 4.6 per cent to $10.17 billion in 2024/25. This growth was driven by a 9.5 per cent increase in foreign location and services (FLS) production, reaching $5.3 billion. … Project green lights are becoming increasingly difficult to secure, raising concerns about the commissioning of content in the years ahead."
+  },
+  {
+   "url": "https://www.aqpm.ca/",
+   "title": "Association québécoise de la production médiatique (AQPM): home page",
+   "read": "2026-11-01",
+   "kind": "primary",
+   "said": "L’Association québécoise de la production médiatique conseille, accompagne et représente plus de 150 entreprises de production indépendante en cinéma, en télévision et en web … Montréal, le 29 octobre 2026"
+  },
+  {
+   "url": "https://laws-lois.justice.gc.ca/eng/acts/I-3.3/section-125.5.html",
+   "title": "Justice Laws: Income Tax Act, section 125.5 (Film or Video Production Services Tax Credit)",
+   "read": "2026-11-01",
+   "kind": "primary",
+   "said": "An eligible production corporation in respect of an accredited production for a taxation year is deemed to have paid on its balance-due day for the year an amount on account of its tax payable under this Part for the year equal to 16% of its qualified Canadian labour expenditure for the year in respect of the production … Subsection 125.5(3) does not apply in respect of a production in respect of which an amount is deemed to have been paid under subsection 125.4(3)."
+  },
+  {
+   "url": "https://laws-lois.justice.gc.ca/eng/regulations/C.R.C.,_c._945/section-9300.html",
+   "title": "Justice Laws: Income Tax Regulations, section 9300 (accredited production)",
+   "read": "2026-11-01",
+   "kind": "primary",
+   "said": "accredited production means (a) a film or video production in respect of which the aggregate expenditures, included in the cost of the production, in the period that ends 24 months after the time that the principal filming or taping of the production began, exceeds $1,000,000 … (i) in the case of an episode whose running time is less than 30 minutes, $100,000, and (ii) in any other case, $200,000."
+  },
+  {
+   "url": "https://profile.cmpa.ca/api/cms/graphs?lang=en",
+   "title": "CMPA, Profile 2025 online charts (data feed of profile.cmpa.ca): Exhibits 1-3 and 2-3",
+   "read": "2026-11-01",
+   "kind": "primary",
+   "said": "\"title\":\"Exhibit 1-3 Film and television production in Canada, total volume and share by region*\" … {\"x\":\"2024/25\",\"series\":\"Ontario\",\"z_axis\":\"Share of total (%)\",\"value\":0.378 … {\"x\":\"2024/25\",\"series\":\"Quebec\",\"z_axis\":\"Share of total (%)\",\"value\":0.265 … {\"x\":\"2024/25\",\"series\":\"British Columbia\",\"z_axis\":\"Share of total (%)\",\"value\":0.265 … * Based on province or territory where lead producer is based. … \"title\":\"Exhibit 2-3 Share of total volume of Canadian content production, by language\" … {\"x\":\"2024/25\",\"series\":\"English-language*\",\"z_axis\":\"\",\"value\":0.69 … {\"x\":\"2024/25\",\"series\":\"French-language\",\"z_axis\":\"\",\"value\":0.31"
+  }
+ ],
+ "blockers": [
+  {
+   "item": "market",
+   "sought": "The city where most Canadian production work is made (province shares and language shares are now held from CMPA Profile 2025).",
+   "tried": {
+    "institution": "profile.cmpa.ca renders its provincial and language charts in script (the at-a-glance page holds no figures in its HTML); cmpa.ca (Profile PDFs, membership) returned 403; telefilm.ca returned 403; canada.ca (CAVCO) gave no reply (HTTP/2 error, then empty reply), 2026-11-01. | Retry 2026-11-01 (producer retry): profile.cmpa.ca's chart data feed (/api/cms/graphs?lang=en, saved producer-CA-profile-api-graphs.json) read: province and language shares (used), no city.",
+    "official-register": "CAVCO statistics on canada.ca not reachable for the same reason. | Retry 2026-11-01 (producer retry): Income Tax Act/Regulations (laws-lois.justice.gc.ca) carry no production statistics; canada.ca (CAVCO) still HTTP/2 error then empty reply.",
+    "web-search": "2026-11-01: 'Profile 2025 economic report screen-based media production Canada ... Ontario Quebec British Columbia share': snippets give totals only; the summary PDF is on cmpa.ca (403). | Retry 2026-11-01 (producer retry): Not repeated: the CMPA feed answered the province and language part.",
+    "trade-press": "cartt.ca and senalnews.com summaries not read (only totals in snippets). | Retry 2026-11-01 (producer retry): None read for the city.",
+    "archive": "Not tried: web.archive.org reset connections from this environment on 2026-11-01. | Retry 2026-11-01 (producer retry): web.archive.org: http:// refused by the egress policy (\"Blocked by egress policy\"), https:// and the id_ form reset the connection (curl 35); archive.ph reset (curl 35), 2026-11-01."
+   }
+  },
+  {
+   "item": "union",
+   "sought": "The CMPA (English-language producers' association): membership and dues.",
+   "tried": {
+    "institution": "cmpa.ca/membership/ returned 403 to curl, 2026-11-01; not read another way. | Retry 2026-11-01 (producer retry): cmpa.ca/join-cmpa/ and cmpa.ca/wp-content/uploads/2026/03/Join_the_CMPA_2026.pdf: 403 Cloudflare \"Just a moment...\" challenge; not read another way. profile.cmpa.ca API pages (introduction, methodology, contributors) hold no membership terms.",
+    "official-register": "None. | Retry 2026-11-01 (producer retry): None (an association; no public register of its dues).",
+    "web-search": "Not separately searched. | Retry 2026-11-01 (producer retry): \"Canadian Media Producers Association membership fee annual dues independent producer member categories\": snippets of the Join the CMPA PDFs (start-up producer $300, interactive $500) only from the blocked host; not used.",
+    "trade-press": "None. | Retry 2026-11-01 (producer retry): hrreporter.com CMPA profile (labour relations) gives no dues.",
+    "archive": "Not tried. | Retry 2026-11-01 (producer retry): web.archive.org: http:// refused by the egress policy (\"Blocked by egress policy\"), https:// and the id_ form reset the connection (curl 35); archive.ph reset (curl 35), 2026-11-01."
+   }
+  }
+ ]
+}

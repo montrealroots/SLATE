@@ -1,0 +1,293 @@
+{
+ "topic": "markets.producer.MX",
+ "read": "2026-11-01",
+ "note": "Read 2026-11-01 at the owner's word (\"Now add markets for writers, directors and producers\"): the terms a producer works on (funds, incentives, fee caps, outcomes) in Mexico. Research and retry subagents (workbench/briefs/BRIEF-roles-markets*.md); every quote checked by the lead against its saved page; a scan read by OCR is marked so and its figures checked against the image.",
+ "figures": [
+  {
+   "item": "incentive",
+   "finding": "From February 2026 a producer shooting in Mexico earns a transferable tax credit of up to 30% of the project's total cost spent in Mexico, capped at 40 million pesos a production, if it spends at least 40 million pesos on a narrative or animated feature (20 million on a documentary) with at least 70% Mexican suppliers; the credit can be sold to suppliers or to income-tax payers, and the scheme is capped at 400 million pesos a year.",
+   "value": {
+    "rate": 0.3,
+    "capPerProductionMXN": 40000000,
+    "minimumSpendMXN": {
+     "narrativeOrAnimatedFeatureOrSeriesEpisode": 40000000,
+     "documentary": 20000000,
+     "animationVfxPostProcess": 5000000
+    },
+    "nationalSuppliersMinShare": 0.7,
+    "indirectCostsMaxShareOfCredit": 0.3,
+    "annualTotalCapMXN": 400000000,
+    "transferable": true,
+    "administeredBy": "Comité Técnico (with IMCINE)",
+    "decree": "DOF 2026-02-16; guidelines DOF 2026-03-30"
+   },
+   "applies": "Mexico, Mexican residents and foreign producers (through a Mexican producer) making film or audiovisual productions in Mexican territory, from 16 February 2026.",
+   "sources": [
+    {
+     "src": 0,
+     "said": "Que el proyecto o proceso de producción cinematográfica o audiovisual cuente con al menos el 70% de proveeduría nacional. … Proyecto de producción de largometraje narrativo o de animación y por capítulo de serie narrativa o de animación Al menos 40 millones de pesos Proyecto de producción de largometraje documental o serie documental Al menos 20 millones de pesos … El estímulo fiscal consiste en un crédito fiscal de hasta el 30% del costo total del proyecto o proceso de producción cinematográfica o audiovisual, realizado en territorio nacional, sin que en ningún caso exceda de 40 millones de pesos por producción y por sujeto beneficiado. … el monto total anual del estímulo fiscal que el Comité Técnico autorice a los contribuyentes no excederá de 400 millones de pesos"
+    },
+    {
+     "src": 1,
+     "said": "ACUERDO por el que se emiten los Lineamientos para aplicar el Decreto por el que se otorga un estímulo fiscal a la producción cinematográfica y audiovisual."
+    }
+   ]
+  },
+  {
+   "item": "incentive",
+   "finding": "Under EFICINE (article 189 of the income-tax law) a company that puts cash into a Mexican feature gets an equal income-tax credit; in 2026 up to 25 million pesos a project (750 million pesos in all, 375 million a period), the tax incentive may cover at most 80% of the budget, and the producer must cover at least 20%.",
+   "value": {
+    "mechanism": "investor's cash contribution becomes an equal ISR credit (max 10% of the investor's prior-year ISR)",
+    "capPerProjectMXN2026": 25000000,
+    "annualTotalMXN2026": 750000000,
+    "perPeriodMXN2026": 375000000,
+    "distributionCapPerProjectMXN2026": 3000000,
+    "maxShareOfBudget": 0.8,
+    "producerMinShare": 0.2,
+    "federalFundsMaxShare": 0.8,
+    "averageApplicationBudgetMXN2025": 23414853.02,
+    "periods2026": [
+     "30 Jan to 13 Feb",
+     "1 to 15 Jul"
+    ]
+   },
+   "applies": "Mexico, EFICINE Producción, fiscal year 2026 (amounts set by the 2026 federal revenue law in place of LISR art. 189's 650 million).",
+   "sources": [
+    {
+     "src": 2,
+     "said": "los contribuyentes que aporten recursos en efectivo a proyectos cinematográficos en México pueden obtener un crédito fiscal, equivalente al monto de su aportación, para ejercerlo contra el Impuesto Sobre la Renta (ISR) que generen a partir del ejercicio en el que se determine dicho crédito. … En ningún caso, el estímulo podrá exceder del 10% del ISR causado en el ejercicio inmediato anterior al de su aplicación."
+    },
+    {
+     "src": 3,
+     "said": "750 millones de pesos como monto total a distribuir entre los proyectos de inversión en la producción cinematográfica nacional, sin que exceda de 25 millones de pesos por cada persona contribuyente o proyecto de inversión"
+    },
+    {
+     "src": 4,
+     "said": "La ERPI deberá cubrir al menos el 20% del costo total del proyecto y la aportación del estímulo fiscal no deberá exceder el 80% del costo total del proyecto o hasta 25 millones de pesos. La suma total de los recursos de origen federal, incluido el estímulo fiscal, no podrá exceder del 80% del costo total del proyecto."
+    },
+    {
+     "src": 5,
+     "said": "el presupuesto promedio de las solicitudes de EFICINE Producción en el 2025 fue de $23,414,853.02"
+    }
+   ]
+  },
+  {
+   "item": "incentive",
+   "finding": "EFICINE is heavily oversubscribed: the 140 production projects found eligible in the first 2026 period asked for 2.37 billion pesos against 375 million available, 632% of the period's money.",
+   "value": {
+    "period": "2026 first period",
+    "eligibleProjects": 140,
+    "amountEligibleMXN": 2369990548.07,
+    "availableMXN": 375000000,
+    "oversubscription": 6.32,
+    "averageScore": 95.08
+   },
+   "applies": "Mexico, EFICINE Producción, first period 2026 (committee session of 24 April 2026).",
+   "sources": [
+    {
+     "src": 6,
+     "said": "por un monto total susceptible de autorización de $2,369,990,548.07 … La calificación promedio de los proyectos susceptibles fue de 95.08/100 puntos. … el monto máximo a distribuir entre los aspirantes del beneficio por periodo será de 375 millones de pesos … el monto total susceptible de autorización representa 632% respecto del monto máximo a distribuir en el periodo. … 140 360 OASIS ZAFIRO CINEMA, S.A. DE C.V. $14,960,000.00 TOTAL $2,369,990,548.07"
+    }
+   ]
+  },
+  {
+   "item": "feecap",
+   "finding": "EFICINE money may not pay the fees or salary of a person who is also the responsible producer (ERPI), any profit margin to the producing company, completion bonds or producer services mark-ups, and the fundraiser's fee is capped at 4% of the credit above 10 million pesos (5% below); in-kind fee contributions may not exceed 10% of the budget.",
+   "value": {
+    "producerOwnFeeFromIncentive": false,
+    "producerMarkupFromIncentive": false,
+    "fundraiserFeeMaxShareOfCredit": {
+     "over10mMXN": 0.04,
+     "upTo10mMXN": 0.05
+    },
+    "inKindFeesMaxShareOfBudget": 0.1,
+    "writerMinPayShareOfCost": 0.03
+   },
+   "applies": "Mexico, EFICINE Producción budgets, 2026 guidelines.",
+   "sources": [
+    {
+     "src": 4,
+     "said": "Servicios o productos que generen una ganancia directa para la ERPI, pagos por garantía de buen fin (completion bond), así como pagos para distribuidores, contribuyentes aportantes, gestores de recursos u otros proveedores (mark up, servicios de producción, entre otros). vi. Respecto del pago a gestores de recursos, éste no podrá exceder del 4% del monto autorizado a través del estímulo fiscal, cuando sea de más de 10 millones de pesos y del 5% cuando no supere dicha cantidad. … Honorarios, compensaciones, sueldos o salarios de personas físicas que, al mismo tiempo, sean la ERPI, con independencia de que preste sus servicios al proyecto … El total de aportaciones en especie a través de honorarios profesionales, no podrá exceder el 10% del presupuesto total del proyecto"
+    }
+   ]
+  },
+  {
+   "item": "fund",
+   "finding": "IMCINE's FOCINE grants pay a fiction feature up to 5 million pesos for a first film (8 million for a second or later) across one or two production years, plus up to 2 million more for post-production on re-application, and an animated feature up to 12 million; public money may cover at most 80% of the budget, the applicant at least 20%.",
+   "value": {
+    "fund": "FOCINE (Programa de Fomento al Cine Mexicano), IMCINE",
+    "fictionFeatureMXN": {
+     "firstFilm": 5000000,
+     "secondOrLater": 8000000,
+     "postProductionExtra": 2000000
+    },
+    "animationFeatureMXN": {
+     "total": 12000000,
+     "preProduction": 4000000,
+     "production": 6000000,
+     "productionWithoutPrep": 10000000,
+     "post": 2000000
+    },
+    "childrenFeatureMXN": {
+     "firstFilm": 5000000,
+     "secondOrLater": 8000000
+    },
+    "maxShareOfBudgetAllFederal": 0.8,
+    "applicantMinShare": 0.2,
+    "spendBy": "30 November of the fiscal year"
+   },
+   "applies": "Mexico, FOCINE 2026 operating guidelines, Mexican and international co-production features.",
+   "sources": [
+    {
+     "src": 7,
+     "said": "Los proyectos de ópera prima que no estén respaldados por una escuela de cine podrán solicitar hasta $5,000,000.00 (cinco millones de pesos 00/100 M.N.) y los proyectos dirigidos por personas en su segunda película o más podrán solicitar hasta $8,000,000.00 (ocho millones de pesos 00/100 M.N.). … pudiendo solicitar hasta $2,000,000.00 (dos millones de pesos 00/100 M.N) más. … El monto otorgado podrá ser de hasta el 80% del costo total del proyecto, incluyendo en el porcentaje otros apoyos del IMCINE y de instancias federales en cualquiera de sus etapas. … Los proyectos de largometrajes podrán solicitar hasta $12’000,000.00 (Doce millones de pesos 00/100 M.N.)"
+    }
+   ]
+  },
+  {
+   "item": "outcomes",
+   "finding": "Mexico registered 235 Mexican features in some stage of production in 2025 (141 finished), at an average cost of 15.04 million pesos; 97 (41%) had public support, and 93 Mexican films were released in cinemas, 22% of the 429 releases but only 5% of admissions (9.1 million) and 4% of revenue.",
+   "value": {
+    "year": 2025,
+    "featuresInProduction": 235,
+    "finished": 141,
+    "inPost": 54,
+    "shooting": 40,
+    "fiction": 140,
+    "documentary": 86,
+    "firstFilms": 108,
+    "averageCostMXNm": 15.04,
+    "publiclySupported": 97,
+    "publiclySupportedShare": 0.41,
+    "coproductions": 63,
+    "mexicanReleases": 93,
+    "allReleases": 429,
+    "mexicanAdmissionsM": 9.1,
+    "mexicanAdmissionsShare": 0.05,
+    "mexicanRevenueShare": 0.04
+   },
+   "applies": "Mexico, IMCINE statistical yearbook 2025 (Comscore data for cinemas).",
+   "sources": [
+    {
+     "src": 8,
+     "said": "40 en rodaje o con rodaje terminado (17 %), 54 en postproducción (23 %) y 141 terminados (60 %). … 108 películas correspondieron a óperas primas … De los largometrajes registrados, 97 recibieron algún tipo de apoyo público (41 %) … El costo promedio de las películas fue de 15.04 millones de pesos. Se registraron 63 coproducciones con 27 países. … En 2025 se estrenaron 429 películas en salas y complejos de ex- hibición comercial en México, con un acumulado de 186 millones de boletos vendidos. El cine mexicano registró 93 (22 %) títulos, 9.1 millones (5 %) de asistentes y 4 % de los ingresos totales."
+    }
+   ]
+  },
+  {
+   "item": "market",
+   "finding": "Most Mexican features originate in Mexico City (57.3% in 2025, then Jalisco 11.9%), and Mexico City also has the most shoots (42.6%).",
+   "value": {
+    "year": 2025,
+    "originShare": {
+     "Ciudad de México": 0.573,
+     "Jalisco": 0.119,
+     "Baja California": 0.057
+    },
+    "shootShare": {
+     "Ciudad de México": 0.426,
+     "Jalisco": 0.124,
+     "Baja California": 0.07
+    }
+   },
+   "applies": "Mexico, features registered in production in 2025 (IMCINE yearbook); complements markets/MX.json, whose market figure counts production companies.",
+   "sources": [
+    {
+     "src": 8,
+     "said": "la mayoría de los largometrajes tuvo origen en Ciudad de México (57.3 %), Jalisco"
+    }
+   ]
+  }
+ ],
+ "role": "producer",
+ "country": "MX",
+ "sources": [
+  {
+   "url": "https://sidof.segob.gob.mx/notas/docFuente/5780237",
+   "title": "DOF 16/02/2026 (edición vespertina): Decreto por el que se otorga un estímulo fiscal a la producción cinematográfica y audiovisual (SIDOF nota 5780237)",
+   "read": "2026-11-01",
+   "kind": "primary",
+   "said": "Que el proyecto o proceso de producción cinematográfica o audiovisual cuente con al menos el 70% de proveeduría nacional. … Proyecto de producción de largometraje narrativo o de animación y por capítulo de serie narrativa o de animación Al menos 40 millones de pesos Proyecto de producción de largometraje documental o serie documental Al menos 20 millones de pesos … El estímulo fiscal consiste en un crédito fiscal de hasta el 30% del costo total del proyecto o proceso de producción cinematográfica o audiovisual, realizado en territorio nacional, sin que en ningún caso exceda de 40 millones de pesos por producción y por sujeto beneficiado. … el monto total anual del estímulo fiscal que el Comité Técnico autorice a los contribuyentes no excederá de 400 millones de pesos"
+  },
+  {
+   "url": "https://www.imcine.gob.mx/media/2026/3/dof-acuerdoporelqueseemitenloslineamientosparaaplicareldecretoporelqueseotorgaunestimulofiscalalaproduccioncinematograficayaudiovisual-file_69cae444e0327.pdf",
+   "title": "DOF 30/03/2026: Acuerdo por el que se emiten los Lineamientos para aplicar el Decreto por el que se otorga un estímulo fiscal a la producción cinematográfica y audiovisual (copy on imcine.gob.mx)",
+   "read": "2026-11-01",
+   "kind": "primary",
+   "said": "ACUERDO por el que se emiten los Lineamientos para aplicar el Decreto por el que se otorga un estímulo fiscal a la producción cinematográfica y audiovisual."
+  },
+  {
+   "url": "https://www.imcine.gob.mx/eficine",
+   "title": "IMCINE: EFICINE (artículo 189 LISR)",
+   "read": "2026-11-01",
+   "kind": "primary",
+   "said": "los contribuyentes que aporten recursos en efectivo a proyectos cinematográficos en México pueden obtener un crédito fiscal, equivalente al monto de su aportación, para ejercerlo contra el Impuesto Sobre la Renta (ISR) que generen a partir del ejercicio en el que se determine dicho crédito. … En ningún caso, el estímulo podrá exceder del 10% del ISR causado en el ejercicio inmediato anterior al de su aplicación."
+  },
+  {
+   "url": "https://www.imcine.gob.mx/media/2026/1/decretoleydeingresosdelafederacionejerciciofiscal2026pag25-file_6977fff6866de.pdf",
+   "title": "Decreto de la Ley de Ingresos de la Federación para el Ejercicio Fiscal 2026, artículo 25 (copy on imcine.gob.mx)",
+   "read": "2026-11-01",
+   "kind": "primary",
+   "said": "750 millones de pesos como monto total a distribuir entre los proyectos de inversión en la producción cinematográfica nacional, sin que exceda de 25 millones de pesos por cada persona contribuyente o proyecto de inversión"
+  },
+  {
+   "url": "https://www.imcine.gob.mx/media/2026/1/lineamientosyrequisitosparalaevaluaciondeproyectosdeeficineproduccion-file_6971706c4a932.pdf",
+   "title": "IMCINE: Lineamientos y requisitos para la evaluación de los proyectos de EFICINE Producción (2026)",
+   "read": "2026-11-01",
+   "kind": "primary",
+   "said": "La ERPI deberá cubrir al menos el 20% del costo total del proyecto y la aportación del estímulo fiscal no deberá exceder el 80% del costo total del proyecto o hasta 25 millones de pesos. La suma total de los recursos de origen federal, incluido el estímulo fiscal, no podrá exceder del 80% del costo total del proyecto. … Servicios o productos que generen una ganancia directa para la ERPI, pagos por garantía de buen fin (completion bond), así como pagos para distribuidores, contribuyentes aportantes, gestores de recursos u otros proveedores (mark up, servicios de producción, entre otros). vi. Respecto del pago a gestores de recursos, éste no podrá exceder del 4% del monto autorizado a través del estímulo fiscal, cuando sea de más de 10 millones de pesos y del 5% cuando no supere dicha cantidad. … Honorarios, compensaciones, sueldos o salarios de personas físicas que, al mismo tiempo, sean la ERPI, con independencia de que preste sus servicios al proyecto … El total de aportaciones en especie a través de honorarios profesionales, no podrá exceder el 10% del presupuesto total del proyecto"
+  },
+  {
+   "url": "https://www.imcine.gob.mx/media/2026/1/presupuestopromedioeficineproduccion2025-file_697142b8ce76d.pdf",
+   "title": "IMCINE: Presupuesto promedio de las solicitudes de EFICINE Producción 2025",
+   "read": "2026-11-01",
+   "kind": "primary",
+   "said": "el presupuesto promedio de las solicitudes de EFICINE Producción en el 2025 fue de $23,414,853.02"
+  },
+  {
+   "url": "https://www.imcine.gob.mx/media/2026/4/eficine_p_1p_2026_btb-file_69f11c22b285c.pdf",
+   "title": "Comité Interinstitucional EFICINE (SHCP): Listado de proyectos susceptibles de autorización, producción, primer periodo 2026 (24 de abril de 2026)",
+   "read": "2026-11-01",
+   "kind": "primary",
+   "said": "por un monto total susceptible de autorización de $2,369,990,548.07 … La calificación promedio de los proyectos susceptibles fue de 95.08/100 puntos. … el monto máximo a distribuir entre los aspirantes del beneficio por periodo será de 375 millones de pesos … el monto total susceptible de autorización representa 632% respecto del monto máximo a distribuir en el periodo. … 140 360 OASIS ZAFIRO CINEMA, S.A. DE C.V. $14,960,000.00 TOTAL $2,369,990,548.07"
+  },
+  {
+   "url": "https://www.imcine.gob.mx/media/2026/1/lineamientosdeoperacionfocine2026-file_69586621327c6.pdf",
+   "title": "IMCINE: Lineamientos de Operación del Programa de Fomento al Cine Mexicano (FOCINE) 2026",
+   "read": "2026-11-01",
+   "kind": "primary",
+   "said": "Los proyectos de ópera prima que no estén respaldados por una escuela de cine podrán solicitar hasta $5,000,000.00 (cinco millones de pesos 00/100 M.N.) y los proyectos dirigidos por personas en su segunda película o más podrán solicitar hasta $8,000,000.00 (ocho millones de pesos 00/100 M.N.). … pudiendo solicitar hasta $2,000,000.00 (dos millones de pesos 00/100 M.N) más. … El monto otorgado podrá ser de hasta el 80% del costo total del proyecto, incluyendo en el porcentaje otros apoyos del IMCINE y de instancias federales en cualquiera de sus etapas. … Los proyectos de largometrajes podrán solicitar hasta $12’000,000.00 (Doce millones de pesos 00/100 M.N.)"
+  },
+  {
+   "url": "https://www.imcine.gob.mx/pdf/anuarios/bbf093980f29f793.pdf",
+   "title": "IMCINE: Anuario Estadístico de Cine Mexicano 2025 (16a edición)",
+   "read": "2026-11-01",
+   "kind": "primary",
+   "said": "40 en rodaje o con rodaje terminado (17 %), 54 en postproducción (23 %) y 141 terminados (60 %). … 108 películas correspondieron a óperas primas … De los largometrajes registrados, 97 recibieron algún tipo de apoyo público (41 %) … El costo promedio de las películas fue de 15.04 millones de pesos. Se registraron 63 coproducciones con 27 países. … En 2025 se estrenaron 429 películas en salas y complejos de ex- hibición comercial en México, con un acumulado de 186 millones de boletos vendidos. El cine mexicano registró 93 (22 %) títulos, 9.1 millones (5 %) de asistentes y 4 % de los ingresos totales. … la mayoría de los largometrajes tuvo origen en Ciudad de México (57.3 %), Jalisco"
+  }
+ ],
+ "blockers": [
+  {
+   "item": "union",
+   "sought": "The producers' association(s) of Mexican film, from the association's own pages or an official register.",
+   "tried": {
+    "institution": "IMCINE pages read (eficine, focine, anuario) name no producers' association; no site found for the Asociación Mexicana de Productores Independientes. | Retry 2026-11-01 (producer retry): egeda.com.mx, egeda.mx and fmpc.mx: no connection (curl 000); ampi.mx 403 (a real-estate body).",
+    "official-register": "Not found: no public register of film producers' associations located. | Retry 2026-11-01 (producer retry): None located.",
+    "web-search": "2026-11-01: 'asociación de productores de cine México AMPI \"productores independientes\" sitio oficial agremiados' returned only press (El Universal, Vanguardia) on a 2025 Federación Mexicana de Productores de Cine (AMPI, APDPM, EGEDA) and real-estate AMPI results. | Retry 2026-11-01 (producer retry): \"\\\"Asociación de Productores\\\" cine México sitio oficial APDPM OR AMPI \\\"productores independientes\\\" socios requisitos membresía\": only the Vanguardia report on the Federación Mexicana de Productores de Cine (AMPI, APDPM, EGEDA) from FICG 2025.",
+    "trade-press": "El Universal and Vanguardia report the federation's founding but quote no document of the association; not used without a primary. | Retry 2026-11-01 (producer retry): vanguardia.com.mx (FICG 2025) names the federation's members, quoting no document of the associations; not used.",
+    "archive": "Not tried: no association URL found to look up. | Retry 2026-11-01 (producer retry): web.archive.org: http:// refused by the egress policy (\"Blocked by egress policy\"), https:// and the id_ form reset the connection (curl 35); archive.ph reset (curl 35), 2026-11-01."
+   }
+  },
+  {
+   "item": "outcomes",
+   "sought": "How many Mexican films earn back their cost (recoupment or box office against budget, by budget).",
+   "tried": {
+    "institution": "IMCINE yearbook 2025 gives production counts, average cost, releases and admissions, no recoupment measure. | Retry 2026-11-01 (producer retry): IMCINE bulletins on the 2024 and 2025 yearbooks (imcine.gob.mx/media/2025/4/bol._anuario_cine_mexicano_2024.pdf, found by search) give production and attendance, no recoupment.",
+    "official-register": "EFICINE and FOCINE results lists give awards only. | Retry 2026-11-01 (producer retry): IMCINE financial-statement notes (imcine.gob.mx/media/2023/4/11_notas_a_los_estados_financieros.pdf) concern the institute, not films.",
+    "web-search": "2026-11-01: 'IMCINE películas mexicanas recuperan inversión taquilla porcentaje rentables costo de producción estudio' found only dated press (Expansión 2011: one or two in ten recoup; Forbes México) with no primary count. | Retry 2026-11-01 (producer retry): \"porcentaje películas mexicanas recuperan su costo IMCINE anuario 2025 \\\"recuperación\\\" taquilla presupuesto ...\": Expansión 2011 (one or two in ten) and El Universal, no primary count.",
+    "trade-press": "Expansión (2011) and Forbes México quote no IMCINE or primary dataset; not used. | Retry 2026-11-01 (producer retry): El Universal (FIDECINE) quotes a specialist only; not used.",
+    "archive": "Not tried: no primary document identified to look up. | Retry 2026-11-01 (producer retry): web.archive.org: http:// refused by the egress policy (\"Blocked by egress policy\"), https:// and the id_ form reset the connection (curl 35); archive.ph reset (curl 35), 2026-11-01."
+   }
+  }
+ ]
+}

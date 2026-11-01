@@ -46,9 +46,9 @@ const part = (agreement: Agreement, budget = 5_000_000): Part => ({ agreement, b
 /** A part played at a moment, paid as given. */
 const played = (agreement: Agreement, at: number, budget = 5_000_000, pay: Money | null = usd('1')): Audition => ({ id: 0, at, breakdown: 0, part: part(agreement, budget), taped: true, score: 50, booked: true, work: { at, quality: 50, pay } });
 const unplayed = (agreement: Agreement): Audition => ({ ...played(agreement, 0), work: null });
-const film = (form: FilmForm, budget: number | null, started = 0, fee: Money | null = usd('1')): Film => ({ id: 0, form, budget, started, prepDays: 1, shootDays: 1, cutDays: 1, fee, plan: { story: 0, performances: 0, images: 0 }, needed: null, shot: null, cut: null, quality: null, festivals: {} });
+const film = (form: FilmForm, budget: number | null, started = 0, fee: Money | null = usd('1')): Film => ({ id: 0, country: 'US', agreement: 'dga', minutes: null, form, budget, started, prepDays: 1, shootDays: 1, cutDays: 1, fee, plan: { story: 0, performances: 0, images: 0 }, needed: null, shot: null, cut: null, quality: null, festivals: {} });
 /** A script sold, by its form, at a moment, for a fee. */
-const sale = (form: Form, at: number, fee: Money | null = usd('1')) => ({ form, at, fee });
+const sale = (form: Form, at: number, fee: Money | null = usd('1'), agreement: string | null = null) => ({ form, at, fee, agreement });
 const card = (union: Union, at: number, standing: Membership['standing'] = 'full'): Membership => ({ union, at, standing, name: 'Ada Reyes', initiation: null, dues: null });
 
 interface Given {
@@ -66,6 +66,7 @@ function life(g: Given = {}): Life<Lives> {
   (g.sold ?? []).forEach((s, i) => {
     scripts.written.push({ id: i + 1, form: s.form } as unknown as Script);
     career.out[String(i + 1)] = { documents: {}, requests: 0, sold: { at: s.at, fee: s.fee } };
+    if (s.agreement !== null) career.offered[String(i + 1)] = { agreement: s.agreement, budget: null, minutes: null, options: [] };
   });
   career.out['99'] = { documents: {}, requests: 0, sold: null };
   return begin(SEED, g.now ?? NOW, {
@@ -266,6 +267,9 @@ describe('the WGA West', () => {
     expect(joined({ sold: [sale('pilot', at), sale('episode', at)] }, 'wga-west')?.standing).toBe('associate');
     expect(joined({ sold: [sale('pilot', at), sale('episode', at), sale('episode', at)] }, 'wga-west')?.standing).toBe('full');
     expect(joined({ sold: [sale('feature', day(2023, 11, 1))] }, 'wga-west')?.standing).toBe('full');
+    // A sale in another market (offered under its agreement) is not to a WGA signatory: it earns no units.
+    expect(() => join({ sold: [sale('feature', at, usd('1'), 'ca-ipa')] }, 'wga-west')).toThrow('the WGA asks a sale to a signatory in the last three years');
+    expect(joined({ sold: [sale('feature', at, usd('1'), 'ca-ipa'), sale('pilot', at)] }, 'wga-west')?.standing).toBe('associate');
     expect(() => join({ sold: [sale('feature', day(2023, 10, 31))] }, 'wga-west')).toThrow(refused);
     expect(joined({ sold: [sale('feature', day(2023, 10, 31)), sale('episode', at)] }, 'wga-west')?.standing).toBe('associate');
     expect(join({ sold: [sale('feature', at)], joined: [card('wga-west', 0, 'associate')] }, 'wga-west')).toHaveLength(2);
@@ -280,6 +284,10 @@ describe('the DGA', () => {
     expect(join({ films: [film('feature', 11_000_000)] }, 'dga')).toEqual([{ union: 'dga', at: NOW, standing: 'full', name: 'Ada Reyes', initiation: usd('5000'), dues: usd('200') }]);
     expect(joined({ films: [film('feature', 11_000_001)] }, 'dga')?.initiation).toEqual(usd('15703'));
     expect(joined({ films: [film('hour', null)] }, 'dga')?.initiation).toEqual(usd('15703'));
+    // A film directed in another market isn't employment by a DGA signatory; the DGA reads its own films, the latest last.
+    const abroad: Film = { ...film('feature', 11_000_001), country: 'FR', agreement: 'fr-idcc-3097' };
+    expect(() => join({ films: [abroad] }, 'dga')).toThrow('the DGA asks employment by a signatory: a film or an episode directed');
+    expect(joined({ films: [film('feature', 1_000_000), abroad] }, 'dga')?.initiation).toEqual(joined({ films: [film('feature', 1_000_000)] }, 'dga')?.initiation);
     expect(joined({ films: [film('feature', 1_000_000), film('half-hour', null)] }, 'dga')?.initiation).toEqual(usd('15703'));
     expect(joined({ films: [film('half-hour', null), film('feature', 1_000_000)] }, 'dga')?.initiation).toEqual(usd('5000'));
   });

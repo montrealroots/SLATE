@@ -1,0 +1,200 @@
+{
+ "topic": "markets.producer.US",
+ "read": "2026-11-01",
+ "note": "Read 2026-11-01 at the owner's word (\"Now add markets for writers, directors and producers\"): the terms a producer works on (funds, incentives, fee caps, outcomes) in United States. Research and retry subagents (workbench/briefs/BRIEF-roles-markets*.md); every quote checked by the lead against its saved page; a scan read by OCR is marked so and its figures checked against the image.",
+ "figures": [
+  {
+   "item": "incentive",
+   "finding": "The federal election to deduct a film's production costs at once (Section 181, up to $15 million of cost, $20 million in low-income or distressed areas) does not apply to productions that began after 31 December 2025, so a film starting now has no federal production incentive.",
+   "value": {
+    "deductionCapUSD": 15000000,
+    "deductionCapDistressedAreaUSD": 20000000,
+    "appliesToProductionsCommencingOnOrBefore": "2025-12-31",
+    "lastAmended": "2025-07-04 (Pub. L. 119-21, which added sound recordings but kept the end date)"
+   },
+   "applies": "United States, federal income tax; productions commencing after 31 December 2025 are outside it (statute as published by LII, read 2026-11-01; a later extension, if any, was not found).",
+   "sources": [
+    {
+     "src": 0,
+     "said": "Paragraph (1) shall not apply to so much of the aggregate cost of any qualified film or television production or any qualified live theatrical production as exceeds $15,000,000. … subparagraph (A) shall be applied by substituting “$20,000,000” for “$15,000,000”. … This section shall not apply to qualified film and television productions, qualified live theatrical productions … or qualified sound recording productions commencing after December 31, 2025"
+    }
+   ]
+  },
+  {
+   "item": "incentive",
+   "finding": "California, the largest state program, allocates $750 million of credits a year from July 2025 to June 2030: 35% of qualified spending for studio features (up to $120 million of spending, a $42 million credit) and 35% on up to $20 million for independent films (a $7 million credit, which an independent may sell); the wages of producers, writers, directors and actors do not count.",
+   "value": {
+    "annualAllocationUSD": 750000000,
+    "programYears": [
+     "2025-07-01",
+     "2030-06-30"
+    ],
+    "rate": 0.35,
+    "nonIndependentFeature": {
+     "maxQualifiedExpenditureUSD": 120000000,
+     "maxCreditUSD": 42000000,
+     "allocationUSD": 262500000,
+     "shareOfAllocation": 0.35
+    },
+    "independentFilm": {
+     "maxQualifiedExpenditureUSD": 20000000,
+     "maxCreditUSD": 7000000,
+     "allocationUSD": 75000000,
+     "shareOfAllocation": 0.1,
+     "transferable": true,
+     "minimumBudgetUSD": 1000000,
+     "definition": "producer not publicly traded and not more than 30% owned by a publicly traded company"
+    },
+    "uplifts": [
+     0.05,
+     0.1
+    ],
+    "excludedWages": [
+     "producers",
+     "writers",
+     "directors",
+     "actors"
+    ],
+    "minimumCaliforniaShare": 0.75
+   },
+   "applies": "California (state, not federal), Film and Television Tax Credit Program 4.0, guidelines dated 1 January 2026; features of at least 75 minutes and $1 million budget with 75% of budget or shoot days in California.",
+   "sources": [
+    {
+     "src": 1,
+     "said": "The five-year program began on July 1, 2025, and will continue through fiscal year 2029-2030. … The program allocates $750 million of tax credits each fiscal year. … 3. 35% Non-Independent Feature Films ($262.5 million) … 4. 10% Independent Films ($75 million) … The 35% tax credit applies up to a maximum of $120 million of qualified expenditures, which serves as an effective cap on the tax credit amount of $42 million, excluding uplifts. … Independent Film applicants are eligible to receive 35% of qualified expenditures, applied to a maximum of $20 million of the qualified expenditure budget. This serves as an effective cap on the tax credit amount of $7 million, excluding Uplifts. … a. Wages paid to producers, writers, directors, actors, stunt performers, music directors, music composers, music supervisors, and performers. … It is produced by a company that is not publicly traded and publicly traded companies do not own, directly or indirectly, more than 30% of the producing company."
+    }
+   ]
+  },
+  {
+   "item": "fund",
+   "finding": "The federal arts endowment's media-arts grants go to organizations (with 501(c)(3) status, or units of government or tribes) such as film centers, festivals and public broadcasters, for $10,000 to $100,000 with at least a matching non-federal share; no federal fund that finances a producer's feature was found.",
+   "value": {
+    "grantMinUSD": 10000,
+    "grantMaxUSD": 100000,
+    "minimumCostShare": "1:1 non-federal",
+    "minimumProjectUSD": 20000,
+    "applicants": "501(c)(3) organizations, state or local government units, federally recognized tribes"
+   },
+   "applies": "United States, National Endowment for the Arts Grants for Arts Projects (FY27 round, instructions published May 2026); not open to a commercial production company as such.",
+   "sources": [
+    {
+     "src": 2,
+     "said": "The media arts sector includes community film and media arts centers, presenting organizations, independent cinemas, non-commercial distributors, public broadcast stations, and colleges and universities. … Production of all genres and forms of media art that use electronic media, film, and creative technology … Enter the applicant's legal name as it appears in the current IRS 501(c)(3) status letter or in the official document that identifies the organization as a unit of state or local government, or as a federally recognized tribal community or tribe. … Applicants must provide a minimum 1:1 non-federal cost share. … GAP Visual & Media Arts applicants may request $10,000 to $100,000."
+    }
+   ]
+  },
+  {
+   "item": "market",
+   "finding": "The Los Angeles-Long Beach-Anaheim metro area holds most US film and video production employment: 99,061 of 158,632 payroll jobs (62%) and 5,706 of 17,366 companies in 2023, against 12,928 in the New York metro and 4,762 in Atlanta.",
+   "value": {
+    "year": 2023,
+    "naics": "512110 Motion picture and video production",
+    "usEmployees": 158632,
+    "usEstablishments": 17366,
+    "metros": {
+     "Los Angeles-Long Beach-Anaheim": {
+      "employees": 99061,
+      "establishments": 5706
+     },
+     "New York-Newark-Jersey City": {
+      "employees": 12928,
+      "establishments": 2168
+     },
+     "Atlanta-Sandy Springs-Roswell": {
+      "employees": 4762,
+      "establishments": 509
+     }
+    },
+    "laShareOfEmployment": 0.624,
+    "city": "Los Angeles",
+    "basis": "mid-March payroll employment (excludes the self-employed)"
+   },
+   "applies": "United States, County Business Patterns 2023 (Census Bureau), metro areas by CBP code (names from the CBP 2022 reference file).",
+   "sources": [
+    {
+     "src": 3,
+     "said": "\"msa\",\"naics\",\"emp_nf\",\"emp\",\"qp1_nf\",\"qp1\",\"ap_nf\",\"ap\",\"est\" … \"31080\",\"512110\",\"H\",99061,\"G\",2206907,\"G\",8772080,5706 … \"35620\",\"512110\",\"H\",12928,\"H\",300154,\"G\",1203371,2168 … \"12060\",\"512110\",\"G\",4762,\"G\",67671,\"G\",254289,509"
+    },
+    {
+     "src": 4,
+     "said": "\"98\",\"512110\",\"-\",\"G\",158632,\"G\",3399475,\"G\",13691268,17366"
+    },
+    {
+     "src": 5,
+     "said": "\"31080\",\"Los Angeles-Long Beach-Anaheim, CA Metro Area\" … \"35620\",\"New York-Newark-Jersey City, NY-NJ Metro Area\" … \"12060\",\"Atlanta-Sandy Springs-Roswell, GA Metro Area\""
+    }
+   ]
+  }
+ ],
+ "role": "producer",
+ "country": "US",
+ "sources": [
+  {
+   "url": "https://www.law.cornell.edu/uscode/text/26/181",
+   "title": "Legal Information Institute (Cornell): 26 U.S. Code § 181, Treatment of certain qualified productions (as amended by Pub. L. 119-21, July 4, 2025)",
+   "read": "2026-11-01",
+   "kind": "secondary",
+   "quotes": "https://uscode.house.gov/view.xhtml?req=granuleid:USC-prelim-title26-section181&num=0&edition=prelim",
+   "said": "Paragraph (1) shall not apply to so much of the aggregate cost of any qualified film or television production or any qualified live theatrical production as exceeds $15,000,000. … subparagraph (A) shall be applied by substituting “$20,000,000” for “$15,000,000”. … This section shall not apply to qualified film and television productions, qualified live theatrical productions … or qualified sound recording productions commencing after December 31, 2025"
+  },
+  {
+   "url": "http://film.ca.gov/wp-content/uploads/2025/08/4.0-Program-Guidelines-1.pdf",
+   "title": "California Film Commission: California Film and Television Tax Credit Program 4.0 Program Guidelines (dated January 1, 2026)",
+   "read": "2026-11-01",
+   "kind": "primary",
+   "said": "The five-year program began on July 1, 2025, and will continue through fiscal year 2029-2030. … The program allocates $750 million of tax credits each fiscal year. … 3. 35% Non-Independent Feature Films ($262.5 million) … 4. 10% Independent Films ($75 million) … The 35% tax credit applies up to a maximum of $120 million of qualified expenditures, which serves as an effective cap on the tax credit amount of $42 million, excluding uplifts. … Independent Film applicants are eligible to receive 35% of qualified expenditures, applied to a maximum of $20 million of the qualified expenditure budget. This serves as an effective cap on the tax credit amount of $7 million, excluding Uplifts. … a. Wages paid to producers, writers, directors, actors, stunt performers, music directors, music composers, music supervisors, and performers. … It is produced by a company that is not publicly traded and publicly traded companies do not own, directly or indirectly, more than 30% of the producing company."
+  },
+  {
+   "url": "https://www.arts.gov/sites/default/files/fy27-gap-visual-media-arts-instructions-gap2-v2.pdf",
+   "title": "National Endowment for the Arts: FY27 Grants for Arts Projects, Application Instructions: Visual & Media Arts (published May 2026)",
+   "read": "2026-11-01",
+   "kind": "primary",
+   "said": "The media arts sector includes community film and media arts centers, presenting organizations, independent cinemas, non-commercial distributors, public broadcast stations, and colleges and universities. … Production of all genres and forms of media art that use electronic media, film, and creative technology … Enter the applicant's legal name as it appears in the current IRS 501(c)(3) status letter or in the official document that identifies the organization as a unit of state or local government, or as a federally recognized tribal community or tribe. … Applicants must provide a minimum 1:1 non-federal cost share. … GAP Visual & Media Arts applicants may request $10,000 to $100,000."
+  },
+  {
+   "url": "https://www2.census.gov/programs-surveys/cbp/datasets/2023/cbp23msa.zip",
+   "title": "US Census Bureau: County Business Patterns 2023, metropolitan areas (cbp23msa.txt)",
+   "read": "2026-11-01",
+   "kind": "primary",
+   "said": "\"msa\",\"naics\",\"emp_nf\",\"emp\",\"qp1_nf\",\"qp1\",\"ap_nf\",\"ap\",\"est\" … \"31080\",\"512110\",\"H\",99061,\"G\",2206907,\"G\",8772080,5706 … \"35620\",\"512110\",\"H\",12928,\"H\",300154,\"G\",1203371,2168 … \"12060\",\"512110\",\"G\",4762,\"G\",67671,\"G\",254289,509"
+  },
+  {
+   "url": "https://www2.census.gov/programs-surveys/cbp/datasets/2023/cbp23us.zip",
+   "title": "US Census Bureau: County Business Patterns 2023, national (cbp23us.txt)",
+   "read": "2026-11-01",
+   "kind": "primary",
+   "said": "\"98\",\"512110\",\"-\",\"G\",158632,\"G\",3399475,\"G\",13691268,17366"
+  },
+  {
+   "url": "https://www2.census.gov/programs-surveys/cbp/technical-documentation/reference/metro-area-geography-reference/msa_county_reference22.txt",
+   "title": "US Census Bureau: CBP metro area geography reference (2022)",
+   "read": "2026-11-01",
+   "kind": "primary",
+   "said": "\"31080\",\"Los Angeles-Long Beach-Anaheim, CA Metro Area\" … \"35620\",\"New York-Newark-Jersey City, NY-NJ Metro Area\" … \"12060\",\"Atlanta-Sandy Springs-Roswell, GA Metro Area\""
+  }
+ ],
+ "blockers": [
+  {
+   "item": "market",
+   "sought": "A source for the language US production work is made in (the city is now held from County Business Patterns 2023).",
+   "tried": {
+    "institution": "BLS OES page for producers and directors by metropolitan area (bls.gov/oes/current/oes272012.htm) returned 403 to curl, 2026-11-01; not read another way. FilmLA data-reports page returned 404. | Retry 2026-11-01 (producer retry): www2.census.gov County Business Patterns 2023 files read (saved; used for the city). api.census.gov requires a key (redirect to missing_key.html), not used. bls.gov still 403.",
+    "official-register": "California Film Commission 4.0 guidelines give program rules, not the national share; no US Census or BLS page reachable. | Retry 2026-11-01 (producer retry): CBP counts establishments and employment, not production language.",
+    "web-search": "2026-11-01: 'FilmLA feature film study 2025 pdf share of top-grossing films filmed in California Los Angeles': found only the 2018-data study (via TheWrap) and FilmLA's 2015 study; no current national count. | Retry 2026-11-01 (producer retry): Not repeated for language: no federal or state body publishes production by language.",
+    "trade-press": "TheWrap on FilmLA's 2018 film study (Georgia 22 of the top 100, California 11) is old and counts top-grossing films only; not used. | Retry 2026-11-01 (producer retry): None.",
+    "archive": "Not tried: web.archive.org reset connections from this environment on 2026-11-01. | Retry 2026-11-01 (producer retry): web.archive.org: http:// refused by the egress policy (\"Blocked by egress policy\"), https:// and the id_ form reset the connection (curl 35); archive.ph reset (curl 35), 2026-11-01."
+   }
+  },
+  {
+   "item": "feecap",
+   "sought": "A cap on the producer's fee or overheads set by a US funder.",
+   "tried": {
+    "institution": "California 4.0 guidelines exclude producers' wages from qualified expenditure but set no cap on them; the NEA sets no fee rule for features; PGA rules (held in producer-calibration) set none. | Retry 2026-11-01 (producer retry): California 4.0 guidelines (saved) exclude producers' wages from credit but cap none; NEA media grants go to organisations only.",
+    "official-register": "None found. | Retry 2026-11-01 (producer retry): No federal funder of features exists to set one (Section 181 expired for productions after 2025).",
+    "web-search": "Not separately searched (no US public funder of features was found to set one). | Retry 2026-11-01 (producer retry): Not repeated: no US public funder of features found.",
+    "trade-press": "None found. | Retry 2026-11-01 (producer retry): None.",
+    "archive": "Not tried. | Retry 2026-11-01 (producer retry): web.archive.org: http:// refused by the egress policy (\"Blocked by egress policy\"), https:// and the id_ form reset the connection (curl 35); archive.ph reset (curl 35), 2026-11-01."
+   }
+  }
+ ]
+}

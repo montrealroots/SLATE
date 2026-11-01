@@ -96,7 +96,7 @@
     "what": "Plays a booked part: its quality from every component the part asks, and its pay at the agreement's minimum on the day the work starts; the quality is read by every later audition's booking chance (the best work casting has seen)."
   },
   "producing.option": {
-    "what": "Options a script for a new project: the one the producer's eye judges best of a script read a day, its worth the project's material, the option running 18 months at the WGA's 10% of minimum."
+    "what": "No new command: producing.option takes an optional market (a country code; the UK where none is given), which sets the project's currency, the zone its option's months run in, and every later stage's terms (plan, apply, release); a falsifier holds it (tests/person/producing/markets.test.ts::a market's project > producing.option: the market a project is optioned in sets what it can claim)."
   },
   "producing.renew": {
     "what": "Renews a running option for another 18 months from when it would lapse, at another 10% of minimum."
@@ -139,5 +139,8 @@
   },
   "permits.decision": {
     "what": "Decides an application at its processing time: granted for the research's term from that day, or refused where the country's eligibility is a test the life's records answer and they don't meet it (the O-1's distinction from the parts played, the Turks and Caicos Islands' English, Laos's age); read by permitted(), which acting.perform asks before a part abroad is played."
+  },
+  "script.offer": {
+    "what": "Offers a script in a market under one of its agreements (with the production's budget and running time where its minimums turn on them), in a language the writer writes at C1; a pitch then sells it at that agreement's minimum, less what waits for photography, or options it for a year at the agreement's option price."
   }
 }
