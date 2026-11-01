@@ -2304,3 +2304,8 @@ have no clue what stopped that from happening." The lead's own scoping: the tax 
 markets where work is paid, against the coverage law (an engine that reads a place covers all 252). Corrected: eight
 subagents research the other 231 under BRIEF-tax.md (a territory that takes its sovereign's tax, or none, says so from
 a source), then their retry. The age research, briefed for the 21 too, goes to every country the same way.
+Owner, 2026-11-01, asked whether the four roles' markets (21 countries) should reach the other 231 now: "Want it done
+now." Eight subagents (workbench/briefs/BRIEF-markets-world.md) research every other country for all four roles at
+once: any agreement, rate card or rule that sets a performer's, a writer's or a director's pay, the producer's fund,
+incentive and caps, the language and the market's city; where nothing sets it, a source saying so is a finding (pay
+negotiated), and a territory that follows its sovereign says so.
