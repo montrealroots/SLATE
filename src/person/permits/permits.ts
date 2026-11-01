@@ -6,7 +6,10 @@ import { addMonths } from '../../core/time/dates.ts';
 import { t, type LineId } from '../../core/text/text.ts';
 import { countryName, type CountryCode } from '../../world/gazetteer/gazetteer.ts';
 import { holidayOn } from '../../world/holidays/holidays.ts';
-import { auditionOf, COUNTRY, credit, dateOf, daysWorked, pay, type ActingSlice, type Part } from '../acting/acting.ts';
+import { auditionOf, COUNTRY, credit, dateOf, daysWorked, pay, type ActingSlice } from '../acting/acting.ts';
+import { engagement, filmOf, type DirectingSlice } from '../directing/directing.ts';
+import { engagementOf, projectOf, type ProducingSlice } from '../producing/producing.ts';
+import { aboutVisits, keepsVisits, visit } from '../../papers/visits/visits.ts';
 import { ageOf, personOf, speaks, type IdentitySlice, type Level, type Person } from '../identity/identity.ts';
 import { mayWorkIn } from '../unions/unions.ts';
 import { aboutWork, keepsWork, work, type Work } from '../../papers/work/work.ts';
@@ -63,13 +66,13 @@ export interface Fee {
 export const MONTH_DAYS = { num: 260n, den: 12n } as const;
 
 /**
- * What a fee comes to for an engagement: its amount, or, set on the pay, the part's pay for the days it works scaled to
- * a month, so many months of it by the worker's citizenship, less the abatement, in the fee's currency at the day's
- * rate (half to even); none where the part's agreement sets no pay or no rate is known that day.
+ * What a fee comes to for an engagement: its amount, or, set on the pay, the engagement's pay for the days it works
+ * scaled to a month, so many months of it by the worker's citizenship, less the abatement, in the fee's currency at the
+ * day's rate (half to even); none where the engagement sets no pay or no rate is known that day.
  */
-export function priced(f: Fee, p: Person, part: Part, date: string): Money | null {
+export function priced(f: Fee, p: Person, job: Pick<Engagement, 'days' | 'earned'>, date: string): Money | null {
   if (f.salary === undefined) return f.money;
-  const earned = pay(part, date);
+  const earned = job.earned(date);
   const local = earned === null ? undefined : exchangeOn(earned, f.salary.currency, date)?.money;
   if (local === undefined) return null;
   const sal = f.salary;
@@ -77,7 +80,7 @@ export function priced(f: Fee, p: Person, part: Part, date: string): Money | nul
   const months = rational(p.citizenship.some((c) => sal.african.includes(c)) ? sal.monthsAfrican : sal.months);
   const cut = rational(sal.abatement);
   const num = BigInt(local.minor) * MONTH_DAYS.num * months.num * (cut.den - cut.num);
-  const den = MONTH_DAYS.den * BigInt(daysWorked(part)) * months.den * cut.den;
+  const den = MONTH_DAYS.den * BigInt(job.days) * months.den * cut.den;
   return money(sal.currency, Number(roundHalfEven(num, den)));
 }
 
@@ -155,8 +158,9 @@ export interface Application {
   readonly id: number;
   readonly at: number;
   readonly country: CountryCode;
-  /** The audition that booked the engagement it is for. */
-  readonly audition: number;
+  /** The role the engagement is in, and its id in that role's engine: an audition booked, a film prepped, a project planned. */
+  readonly role: Role;
+  readonly engagement: number;
   /** The application whose permit it renews; none for a first grant. */
   readonly renews: number | null;
   readonly by: By;
@@ -176,7 +180,90 @@ export const PERMITS_START: PermitsSlice = { applications: [] };
 /** The kind of the decision on an application, at its processing time. */
 export const DECISION_KIND = 'permits.decision';
 
-type Lives = { identity: IdentitySlice; acting: ActingSlice; permits: PermitsSlice };
+type Lives = { identity: IdentitySlice; acting: ActingSlice; directing: DirectingSlice; producing: ProducingSlice; permits: PermitsSlice };
+type Work3 = Pick<Lives, 'acting' | 'directing' | 'producing'>;
+
+/** The roles whose work abroad takes a permit: a writer's sale is a meeting, a visit (mayVisit). */
+export const ROLES = ['actor', 'director', 'producer'] as const;
+export type Role = (typeof ROLES)[number];
+const A_ROLE: Readonly<Record<Role, string>> = { actor: 'an actor', director: 'a director', producer: 'a producer' };
+
+/**
+ * Whom a country's rule covers, where the research names them (the game's reading of its words, papers.permits.model):
+ * the right to work freely, or the permit's route; every role elsewhere. Kazakhstan's freedom is for artists and
+ * directors (Decree 1041, item 11); Armenia's for performers on tour (Law On Foreigners, art. 23(1)(4)); Japan's
+ * Entertainer status is a performer's (directors and screenwriters not performing take other statuses); Sweden's
+ * artist permit names singers, musicians, dancers, actors and directors; Egypt's syndicate permit is for actors and
+ * directors (acting and cinema).
+ */
+export const COVERS: Readonly<Partial<Record<CountryCode, { readonly free?: readonly Role[]; readonly permit?: readonly Role[] }>>> = {
+  KZ: { free: ['actor', 'director'] },
+  AM: { free: ['actor'] },
+  JP: { permit: ['actor'] },
+  SE: { permit: ['actor', 'director'] },
+  EG: { permit: ['actor', 'director'] },
+};
+const covers = (country: CountryCode, which: 'free' | 'permit', role: Role) => COVERS[country]?.[which]?.includes(role) ?? true;
+
+/** Whether a citizenship lets the person work in a country in a role: their own, or a freedom that covers the role. */
+function freeIn(p: Person, country: CountryCode, role: Role): boolean {
+  if (!mayWorkIn(p, country)) return false;
+  // @slate:consumer identity.make
+  return p.citizenship.some((c) => work(c, country) === 'home') || covers(country, 'free', role);
+}
+
+/** An engagement, in whichever role: where it is, the days it works there, whether it is done, and its pay. */
+export interface Engagement {
+  readonly country: CountryCode;
+  readonly days: number;
+  readonly done: boolean;
+  readonly earned: (date: string) => Money | null;
+}
+
+/** The engagement an application is for: an audition that booked a part, a film prepped, a project planned. */
+export function engagedIn(s: Work3, role: Role, id: number): Engagement {
+  switch (role) {
+    case 'actor': {
+      // @slate:consumer acting.audition
+      const job = auditionOf(s.acting, id);
+      if (!job.booked) throw new Error(`audition ${id} didn't book a part`);
+      // @slate:consumer acting.perform
+      return { country: COUNTRY[job.part.agreement], days: daysWorked(job.part), done: job.work !== null, earned: (date) => pay(job.part, date) };
+    }
+    case 'director': {
+      // @slate:consumer directing.prep
+      const film = filmOf(s.directing, id);
+      const e = engagement(film);
+      // @slate:consumer directing.cut
+      return { country: e.country as CountryCode, days: e.days, done: film.cut !== null, earned: () => film.fee };
+    }
+    case 'producer': {
+      // @slate:consumer producing.plan
+      const project = projectOf(s.producing, id);
+      const e = engagementOf(project);
+      // @slate:consumer producing.shoot
+      return { ...e, done: project.shot !== null, earned: () => (project.plan as { fee: Money | null }).fee };
+    }
+    default:
+      throw new Error(`there's no role ${String(role)} a permit is applied for in`);
+  }
+}
+
+/**
+ * Whether a visit for a meeting is open to the person: their own country, or entry their passport is given without a
+ * visa applied for beforehand (free, an electronic authorisation, an e-visa, a visa on arrival; papers.visits).
+ * shortcut: the game holds no visitor visa applied for at a consulate, so a passport that needs one can't visit.
+ */
+export function mayVisit(p: Person, country: CountryCode): boolean {
+  // @slate:consumer identity.make
+  return p.citizenship.some((c) => {
+    const v = visit(c, country);
+    return v === 'home' || (v !== undefined && v.entry !== 'visa');
+  });
+}
+
+/** Why the person can't visit a country for a meeting: its list not kept, or a visa their passports need beforehand. */
+export const whyNoVisit = (country: CountryCode): string => (keepsVisits(country) ? `a visit to ${country} takes a visa applied for beforehand, which the game doesn't hold` : (aboutVisits(country) as string));
 type Test = (s: Pick<Lives, 'identity' | 'acting'>, now: number) => string | null;
 
 const HOUR = 3600;
@@ -238,12 +325,14 @@ export const ELIGIBILITY: Readonly<Partial<Record<CountryCode, Test>>> = {
 };
 
 /** The permit a person may apply for in a country: refused where they need none, or the permit their passport takes isn't known well enough. */
-export function permitFor(s: Pick<Lives, 'identity'>, country: CountryCode, premium: boolean): Permit {
+export function permitFor(s: Pick<Lives, 'identity'>, country: CountryCode, premium: boolean, role: Role = 'actor'): Permit {
   if (!keepsWork(country)) throw new Error(aboutWork(country));
   const p = personOf(s.identity);
-  if (mayWorkIn(p, country)) throw new Error(`you need no permit to work in ${country}`);
+  if (freeIn(p, country, role)) throw new Error(`you need no permit to work in ${country}`);
   const permit = permitOf(country);
-  if (permit === undefined) throw new Error(aboutPermit(country));
+  const theirs = `the permit ${A_ROLE[role]} takes`;
+  if (permit === undefined) throw new Error(aboutPermit(country) ?? untold(country, [theirs]));
+  if (!covers(country, 'permit', role)) throw new Error(untold(country, [theirs]));
   const route = (KEPT[country] as { others: { route?: string } }).others.route;
   // @slate:consumer identity.make
   if (!p.citizenship.some((c) => (work(c, country) as Work).route === route)) throw new Error(`the permit your passport takes in ${country} isn't known`);
@@ -261,14 +350,13 @@ export function permitFor(s: Pick<Lives, 'identity'>, country: CountryCode, prem
  * the research names for a renewal. shortcut: where the research lists several premium
  * services (the UK's priority and super priority), the first is taken as the premium processing's.
  */
-function lodge(s: Lives, c: Context, country: CountryCode, audition: number, renews: number | null, premium: boolean, permit: Permit): void {
+function lodge(s: Lives, c: Context, country: CountryCode, role: Role, engaged: number, renews: number | null, premium: boolean, permit: Permit): void {
   const id = s.permits.applications.length + 1;
   const when = renews === null ? 'grant' : 'renewal';
-  // @slate:consumer acting.audition
-  const part = auditionOf(s.acting, audition).part;
-  const price = (f: Fee) => priced(f, personOf(s.identity), part, dateOf(c.now));
+  const job = engagedIn(s, role, engaged);
+  const price = (f: Fee) => priced(f, personOf(s.identity), job, dateOf(c.now));
   const fees = permit.fees === null ? null : chosen(permit.fees, when, premium, price);
-  s.permits.applications.push({ id, at: c.now, country, audition, renews, by: permit.by as By, premium, fees, decided: null });
+  s.permits.applications.push({ id, at: c.now, country, role, engagement: engaged, renews, by: permit.by as By, premium, fees, decided: null });
   c.schedule(DECISION_KIND, after(c.now, (premium ? permit.premium : permit.standard) as Span, country), { application: id });
 }
 
@@ -280,31 +368,33 @@ function chosen(all: readonly Fee[], when: 'grant' | 'renewal', premium: boolean
 }
 
 /** Whether a permit applied for is pending or granted and in force: another isn't applied for beside it. */
-const live = (a: Application, s: ActingSlice, now: number) => a.decided === null || inForce(a, s, now);
+const live = (a: Application, s: Work3, now: number) => a.decided === null || inForce(a, s, now);
 
 /** Whether a permit granted is in force: before its term ends, or, for one granted for its engagement, until that is played. */
-function inForce(a: Application, s: ActingSlice, now: number): boolean {
+function inForce(a: Application, s: Work3, now: number): boolean {
   if (a.decided === null || !('until' in a.decided)) return false;
-  // @slate:consumer acting.perform
-  return a.decided.until === null ? auditionOf(s, a.audition).work === null : now < a.decided.until;
+  return a.decided.until === null ? !engagedIn(s, a.role, a.engagement).done : now < a.decided.until;
 }
 
 export interface ApplyArgs {
-  [key: string]: number | boolean;
-  audition: number;
+  [key: string]: number | boolean | string;
+  /** The role the engagement is in: an actor's audition booked, a director's film prepped, a producer's project planned. */
+  role: string;
+  engagement: number;
   premium: boolean;
 }
 
-/** Applies for the permit an engagement booked abroad needs. */
+const DONE: Readonly<Record<Role, string>> = { actor: 'the part from audition {id} is played', director: 'film {id} is cut', producer: 'project {id} is shot' };
+
+/** Applies for the permit an engagement abroad needs, in its own country, as the research says who applies. */
 function apply(s: Lives, a: ApplyArgs, c: Context): void {
-  // @slate:consumer acting.audition
-  const job = auditionOf(s.acting, a.audition);
-  if (!job.booked) throw new Error(`audition ${a.audition} didn't book a part`);
-  if (job.work !== null) throw new Error(`the part from audition ${a.audition} is played`);
-  const country = COUNTRY[job.part.agreement];
-  const permit = permitFor(s, country, a.premium);
-  if (s.permits.applications.some((x) => x.audition === job.id && x.renews === null && live(x, s.acting, c.now))) throw new Error(`a permit is applied for already for audition ${job.id}`);
-  lodge(s, c, country, job.id, null, a.premium, permit);
+  const role = a.role as Role;
+  const job = engagedIn(s, role, a.engagement);
+  if (job.done) throw new Error(DONE[role].replace('{id}', String(a.engagement)));
+  const permit = permitFor(s, job.country, a.premium, role);
+  const same = (x: Application) => x.role === role && x.engagement === a.engagement && x.renews === null;
+  if (s.permits.applications.some((x) => same(x) && live(x, s, c.now))) throw new Error(`a permit is applied for already for that engagement`);
+  lodge(s, c, job.country, role, a.engagement, null, a.premium, permit);
 }
 
 export interface RenewArgs {
@@ -318,12 +408,12 @@ function renew(s: Lives, a: RenewArgs, c: Context): void {
   const held = s.permits.applications.find((x) => x.id === a.application);
   if (held === undefined) throw new Error(`there's no application ${a.application}`);
   if (held.decided === null || !('until' in held.decided)) throw new Error(`application ${a.application} wasn't granted`);
-  if (!inForce(held, s.acting, c.now)) throw new Error(`the permit from application ${a.application} has lapsed`);
-  const permit = permitFor(s, held.country, a.premium);
+  if (!inForce(held, s, c.now)) throw new Error(`the permit from application ${a.application} has lapsed`);
+  const permit = permitFor(s, held.country, a.premium, held.role);
   if (permit.renews === false) throw new Error(`${held.country}'s permit doesn't renew`);
   if (permit.renews === null) throw new Error(untold(held.country, ['whether it renews']));
-  if (s.permits.applications.some((x) => x.renews === held.id && live(x, s.acting, c.now))) throw new Error(`the permit from application ${held.id} is renewed already`);
-  lodge(s, c, held.country, held.audition, held.id, a.premium, permit);
+  if (s.permits.applications.some((x) => x.renews === held.id && live(x, s, c.now))) throw new Error(`the permit from application ${held.id} is renewed already`);
+  lodge(s, c, held.country, held.role, held.engagement, held.id, a.premium, permit);
 }
 
 /** The decision on an application: granted for the term from that day, or refused by the eligibility the life's records answer. */
@@ -338,11 +428,19 @@ function decide(s: Lives, item: Item, c: Context): void {
   app.decided = why === null ? { at: c.now, until: term === 'engagement' ? null : after(c.now, term, app.country) } : { at: c.now, refused: why };
 }
 
-/** The days worked in a country within a period before now, by the parts played there. */
-export function daysWorkedIn(s: ActingSlice, country: CountryCode, now: number, within: number): number {
+/**
+ * The days worked in a country within a period before now: the parts played there, the films made there (from the day
+ * prep began, all their days), the projects shot there. shortcut: a film's days are counted on the day its prep began.
+ */
+export function daysWorkedIn(s: Work3, country: CountryCode, now: number, within: number): number {
+  const since = now - within * SECONDS_PER_DAY;
   // @slate:consumer acting.perform
-  const there = s.auditions.filter((a) => a.work !== null && COUNTRY[a.part.agreement] === country && a.work.at > now - within * SECONDS_PER_DAY);
-  return there.reduce((t, a) => t + daysWorked(a.part), 0);
+  const parts = s.acting.auditions.filter((a) => a.work !== null && COUNTRY[a.part.agreement] === country && a.work.at > since).map((a) => daysWorked(a.part));
+  // @slate:consumer directing.prep
+  const films = s.directing.films.filter((f) => f.country === country && f.started > since).map((f) => engagement(f).days);
+  // @slate:consumer producing.shoot
+  const shot = s.producing.projects.filter((p) => p.shot !== null && p.market === country && p.shot.at > since).map((p) => (p.shot as { days: number }).days);
+  return [...parts, ...films, ...shot].reduce((t, d) => t + d, 0);
 }
 
 /**
@@ -362,24 +460,24 @@ function shortEngagement(s: Pick<Lives, 'acting'>, w: Work, now: number): boolea
  * days worked there in the period the law counts, is within the days papers.work lets a short engagement be worked
  * without one. shortcut: a permit is read as the person's to work there, whoever engaged them; most are the engager's.
  */
-export function permitted(s: Lives, country: CountryCode, now: number, days: number): boolean {
+export function permitted(s: Lives, country: CountryCode, now: number, days: number, role: Role = 'actor'): boolean {
   const p = personOf(s.identity);
-  if (mayWorkIn(p, country)) return true;
+  if (freeIn(p, country, role)) return true;
   // @slate:consumer permits.decision
-  if (s.permits.applications.some((a) => a.country === country && inForce(a, s.acting, now))) return true;
+  if (s.permits.applications.some((a) => a.country === country && inForce(a, s, now))) return true;
   // @slate:consumer identity.make
   return p.citizenship.some((c) => {
     const w = work(c, country) as Work | undefined;
     if (w?.days === undefined || !shortEngagement(s, w, now)) return false;
     // Where the law counts no period (the UK), the engagement is counted alone; where it counts one (Germany's 90 days
     // in a year, the Netherlands' 42 in 91, Norway's and Sweden's 14 in a year), the days worked there within it too.
-    return (w.within === undefined ? 0 : daysWorkedIn(s.acting, country, now, w.within)) + days <= w.days;
+    return (w.within === undefined ? 0 : daysWorkedIn(s, country, now, w.within)) + days <= w.days;
   });
 }
 
 // Stryker disable all: a mutant of a declaration made as the module loads changes its shape, so the module loaded
 // again for it is refused as declared twice (as the accounts' and the cards' say). The declarations are held by the
 // test that lists each command with what it reads and writes; what each does is mutated above.
-export const applyForPermit = defineCommand<Lives, ApplyArgs>({ id: 'permits.apply', reads: ['identity', 'acting'], writes: ['permits', 'schedule'], run: apply });
-export const renewPermit = defineCommand<Lives, RenewArgs>({ id: 'permits.renew', reads: ['identity', 'acting'], writes: ['permits', 'schedule'], run: renew });
+export const applyForPermit = defineCommand<Lives, ApplyArgs>({ id: 'permits.apply', reads: ['identity', 'acting', 'directing', 'producing'], writes: ['permits', 'schedule'], run: apply });
+export const renewPermit = defineCommand<Lives, RenewArgs>({ id: 'permits.renew', reads: ['identity', 'acting', 'directing', 'producing'], writes: ['permits', 'schedule'], run: renew });
 export const decision = defineKind<Lives>({ kind: DECISION_KIND, wants: false, reads: ['identity', 'acting'], writes: ['permits'], happen: decide });

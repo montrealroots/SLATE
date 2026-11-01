@@ -37,11 +37,13 @@ import {
 } from '../../../src/person/acting/acting.ts';
 import type { IdentitySlice } from '../../../src/person/identity/identity.ts';
 import { PERMITS_START, type PermitsSlice } from '../../../src/person/permits/permits.ts';
+import { DIRECTING_START, type DirectingSlice } from '../../../src/person/directing/directing.ts';
+import { PRODUCING_START, type ProducingSlice } from '../../../src/person/producing/producing.ts';
 import { UNIONS_START, type UnionsSlice } from '../../../src/person/unions/unions.ts';
 import compiled from '../../../src/person/acting/markets.json' with { type: 'json' };
 import { identity, person } from '../../support/person.ts';
 
-type Acting = { attributes: AttributesSlice; acting: ActingSlice; identity: IdentitySlice; unions: UnionsSlice; permits: PermitsSlice };
+type Acting = { attributes: AttributesSlice; acting: ActingSlice; identity: IdentitySlice; unions: UnionsSlice; permits: PermitsSlice; directing: DirectingSlice; producing: ProducingSlice };
 const day = (y: number, m: number, d: number) => daysFromCivil(y, m, d) * SECONDS_PER_DAY;
 const part = (agreement: Agreement, p: Partial<Part> = {}): Part => ({ agreement, budget: 5_000_000, seats: 0, lines: 20, term: 'day', length: 1, rehearsal: 0, asks: [], ...p });
 const money = (c: CurrencyCode, n: string) => fromMajor(c, n);
@@ -683,7 +685,7 @@ describe("a market's part", () => {
 
 describe("a market's part, played", () => {
   const made = (now: number, who: IdentitySlice, auditions: Audition[]): Life<Acting> =>
-    dispatch(begin('0123456789abcdef', now, { attributes: structuredClone(ATTRIBUTES_START), acting: { breakdowns: [], auditions }, identity: who, unions: structuredClone(UNIONS_START), permits: structuredClone(PERMITS_START) }), chooseAttributes, { role: 'actor', all: 50, each: {} });
+    dispatch(begin('0123456789abcdef', now, { attributes: structuredClone(ATTRIBUTES_START), acting: { breakdowns: [], auditions }, identity: who, unions: structuredClone(UNIONS_START), permits: structuredClone(PERMITS_START), directing: structuredClone(DIRECTING_START), producing: structuredClone(PRODUCING_START) }), chooseAttributes, { role: 'actor', all: 50, each: {} });
   const booked = (p: Part, id = 1, work: Audition['work'] = null): Audition => ({ id, at: 0, breakdown: 0, part: p, taped: true, score: 50, booked: true, work });
   const NOW = day(2026, 7, 1);
 

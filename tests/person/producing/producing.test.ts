@@ -1,3 +1,9 @@
+import { ACTING_START, type ActingSlice } from '../../../src/person/acting/acting.ts';
+import { DIRECTING_START, type DirectingSlice } from '../../../src/person/directing/directing.ts';
+import type { IdentitySlice } from '../../../src/person/identity/identity.ts';
+import type { PermitsSlice } from '../../../src/person/permits/permits.ts';
+import { permitsEverywhere } from '../../support/permits.ts';
+import { identity } from '../../support/person.ts';
 import { describe, expect, it } from 'vitest';
 import { begin, commandIndex, dispatch, pass, type Life } from '../../../src/core/frame/frame.ts';
 import { money } from '../../../src/core/money/money.ts';
@@ -53,7 +59,7 @@ import { spread } from '../../../src/person/work/work.ts';
 import { t } from '../../../src/core/text/text.ts';
 import { falsifyAny } from '../../support/falsify-core.ts';
 
-type Producing = { attributes: AttributesSlice; producing: ProducingSlice; genres: GenresSlice };
+type Producing = { attributes: AttributesSlice; producing: ProducingSlice; genres: GenresSlice; identity: IdentitySlice; acting: ActingSlice; directing: DirectingSlice; permits: PermitsSlice };
 /** The genres the producer loves in these tests, and the one their material is in. */
 const LOVED = { loved: ['action', 'documentary', 'family'] };
 const GENRE = 'action';
@@ -71,7 +77,7 @@ const grown = (from: number, days: number) => 100 - (100 - from) * (1 - DAILY) *
 const gbp = (pounds: number) => money('GBP', Math.round(pounds * 100));
 
 const made = (all: number, each: Partial<Record<Broad, number>> = {}, seed = SEED, at = T0): Life<Producing> =>
-  dispatch(begin(seed, at, { attributes: structuredClone(ATTRIBUTES_START), producing: structuredClone(PRODUCING_START), genres: structuredClone(LOVED) }), chooseAttributes, { role: 'producer', all, each });
+  dispatch(begin(seed, at, { attributes: structuredClone(ATTRIBUTES_START), producing: structuredClone(PRODUCING_START), genres: structuredClone(LOVED), identity: identity(), acting: structuredClone(ACTING_START), directing: structuredClone(DIRECTING_START), permits: permitsEverywhere() }), chooseAttributes, { role: 'producer', all, each });
 const v = (l: Life<Producing>) => componentValues(l.slices.attributes, 'producer');
 const held = (l: Life<Producing>) => l.slices.attributes['producer'] as Record<string, number>;
 const of = (w: Record<string, number>, id: string) => skillOf(w, 'producer', id);
@@ -519,10 +525,10 @@ describe('the producer', () => {
       { id: 'producing.plan', reads: [], writes: ['attributes', 'producing'] },
       { id: 'producing.apply', reads: [], writes: ['attributes', 'producing'] },
       { id: 'producing.raise', reads: [], writes: ['attributes', 'producing'] },
-      { id: 'producing.shoot', reads: [], writes: ['attributes', 'producing'] },
+      { id: 'producing.shoot', reads: ['identity', 'acting', 'directing', 'permits'], writes: ['attributes', 'producing'] },
       { id: 'producing.release', reads: [], writes: ['attributes', 'producing'] },
     ]);
-    const bare = begin(SEED, T0, { attributes: structuredClone(ATTRIBUTES_START), producing: structuredClone(PRODUCING_START), genres: structuredClone(LOVED) });
+    const bare = begin(SEED, T0, { attributes: structuredClone(ATTRIBUTES_START), producing: structuredClone(PRODUCING_START), genres: structuredClone(LOVED), identity: identity(), acting: structuredClone(ACTING_START), directing: structuredClone(DIRECTING_START), permits: permitsEverywhere() });
     expect(() => dispatch(bare, optionMaterial, { days: 3, genre: GENRE })).toThrow("the producer's attributes haven't been chosen");
   });
 });

@@ -6,6 +6,8 @@ import { countryName, type CountryCode } from '../../world/gazetteer/gazetteer.t
 import { componentOf, componentValues, practise, skillOf, type AttributesSlice } from '../attributes/attributes.ts';
 import { identifiesAs, personOf, playingAge, speaks, type Ethnicity, type IdentitySlice, type Level, type Person } from '../identity/identity.ts';
 import { permitted, type PermitsSlice } from '../permits/permits.ts';
+import type { DirectingSlice } from '../directing/directing.ts';
+import type { ProducingSlice } from '../producing/producing.ts';
 import { mayTakeUnionWork, type UnionsSlice } from '../unions/unions.ts';
 import { spread } from '../work/work.ts';
 import compiled from './markets.json' with { type: 'json' };
@@ -613,7 +615,10 @@ export function aboutMarket(agreement: Agreement): string | undefined {
   return t(UNKEPT_LINE, { country: countryName(a.country), missing: list });
 }
 
-function play(s: Acting & { unions: UnionsSlice; permits: PermitsSlice }, a: PlayArgs, c: Context): void {
+/** The slices a part played reads besides its own: whether the person may work there reads every role's days and permits. */
+type Playing = Acting & { unions: UnionsSlice; permits: PermitsSlice; directing: DirectingSlice; producing: ProducingSlice };
+
+function play(s: Playing, a: PlayArgs, c: Context): void {
   const job = auditionOf(s.acting, a.audition);
   // @slate:consumer acting.audition
   if (!job.booked) throw new Error(`audition ${a.audition} didn't book the part`);
@@ -635,4 +640,4 @@ function play(s: Acting & { unions: UnionsSlice; permits: PermitsSlice }, a: Pla
 // test that lists each command with what it reads and writes; what each does is mutated above.
 export const postBreakdown = defineCommand<{ acting: ActingSlice }, Part>({ id: 'acting.breakdown', reads: [], writes: ['acting'], run: post });
 export const auditionForPart = defineCommand<Acting, AuditionArgs>({ id: 'acting.audition', reads: ['identity'], writes: ['attributes', 'acting'], run: audition });
-export const playPart = defineCommand<Acting & { unions: UnionsSlice; permits: PermitsSlice }, PlayArgs>({ id: 'acting.perform', reads: ['identity', 'unions', 'permits'], writes: ['attributes', 'acting'], run: play });
+export const playPart = defineCommand<Playing, PlayArgs>({ id: 'acting.perform', reads: ['identity', 'unions', 'permits', 'directing', 'producing'], writes: ['attributes', 'acting'], run: play });

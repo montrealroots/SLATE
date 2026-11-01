@@ -10,6 +10,12 @@ import { optionMaterial, planProject, PRODUCING_START, projectOf, raised, releas
 import { SCRIPTS_START, writeScript, type ScriptsSlice } from '../../../src/person/work/work.ts';
 import { BFI_UNIT, cited, compile, DEFINITIONS, GROUPS, idOf, MARKET, OUTPUT, serialize, type Genres } from '../../../tools/person/genres/compile.ts';
 import { falsifyAny } from '../../support/falsify-core.ts';
+import { ACTING_START, type ActingSlice } from '../../../src/person/acting/acting.ts';
+import { DIRECTING_START, type DirectingSlice } from '../../../src/person/directing/directing.ts';
+import type { IdentitySlice } from '../../../src/person/identity/identity.ts';
+import type { PermitsSlice } from '../../../src/person/permits/permits.ts';
+import { permitsEverywhere } from '../../support/permits.ts';
+import { identity } from '../../support/person.ts';
 
 const ROOT = resolve(import.meta.dirname, '../../..');
 const SEED = '0123456789abcdef';
@@ -191,10 +197,10 @@ describe('the genres a person loves', () => {
   });
 
   it("genres.choose: the producer's film earns as its loved genre's market does", () => {
-    type Producing = { attributes: AttributesSlice; producing: ProducingSlice; genres: GenresSlice };
+    type Producing = { attributes: AttributesSlice; producing: ProducingSlice; genres: GenresSlice; identity: IdentitySlice; acting: ActingSlice; directing: DirectingSlice; permits: PermitsSlice };
     const doubled = (genre: string) => {
       let l: Life<Producing> = dispatch(
-        dispatch(begin(SEED, 0, { attributes: structuredClone(ATTRIBUTES_START), producing: structuredClone(PRODUCING_START), genres: structuredClone(GENRES_START) }), chooseGenres, { loved: [genre] }),
+        dispatch(begin(SEED, 0, { attributes: structuredClone(ATTRIBUTES_START), producing: structuredClone(PRODUCING_START), genres: structuredClone(GENRES_START), identity: identity(), acting: structuredClone(ACTING_START), directing: structuredClone(DIRECTING_START), permits: permitsEverywhere() }), chooseGenres, { loved: [genre] }),
         chooseAttributes,
         { role: 'producer', all: 70, each: {} },
       );

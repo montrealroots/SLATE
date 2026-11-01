@@ -8,6 +8,10 @@ import { componentValues, practise, skillOf, type AttributesSlice } from '../att
 import { FEATURE_SHOOT } from '../directing/directing.ts';
 import { boxOfficeFactor, lovesOrRefuse, type GenresSlice } from '../genres/genres.ts';
 import { spread } from '../work/work.ts';
+import type { ActingSlice } from '../acting/acting.ts';
+import type { DirectingSlice } from '../directing/directing.ts';
+import type { IdentitySlice } from '../identity/identity.ts';
+import { permitted, type PermitsSlice } from '../permits/permits.ts';
 import compiled from './markets.json' with { type: 'json' };
 
 /**
@@ -222,6 +226,8 @@ export const PRODUCING_START: ProducingSlice = { projects: [] };
 type Values = Readonly<Record<string, number>>;
 type Producing = { attributes: AttributesSlice; producing: ProducingSlice };
 type Optioning = Producing & { genres: GenresSlice };
+/** A project shot: where the producer works, so whether they may work there reads the person, every role's days and the permits. */
+type Shooting = Producing & { identity: IdentitySlice; acting: ActingSlice; directing: DirectingSlice; permits: PermitsSlice };
 
 const clamp = (n: number, lo: number, hi: number) => Math.min(hi, Math.max(lo, n));
 const of = (v: Values, id: string) => skillOf(v, 'producer', id);
@@ -475,12 +481,16 @@ export const leadSkill = (v: Values): number => 0.4 * of(v, C.lead) + 0.2 * of(v
 export const team = (v: Values): number => (crewSkill(v) + leadSkill(v)) / 2;
 
 /** Shoots a financed project: the days it takes, what the days past the schedule cost, the fee left, and the film. */
-function shoot(s: Producing, a: ProjectArgs, c: Context): void {
+function shoot(s: Shooting, a: ProjectArgs, c: Context): void {
   const v = componentValues(s.attributes, 'producer');
   const p = projectOf(s.producing, a.project);
   // @slate:consumer producing.raise
   if (!financed(p)) throw new Error(`project ${p.id} isn't financed`);
   running(p, c.now, 0);
+  const e = engagementOf(p);
+  // @slate:consumer permits.decision
+  // Stryker disable next-line StringLiteral: no rule the research names covers a producer apart (papers.permits' COVERS), so another name is refused alike; the permits engine's tests hold the reading.
+  if (!permitted(s, e.country, c.now, e.days, 'producer')) throw new Error(`the person may not work in ${e.country} without a permit`);
   // @slate:consumer producing.plan
   const { budget, needed, scheduled, fee } = planOf(p);
   const t = team(v);
@@ -555,5 +565,5 @@ export const renewOption = defineCommand<{ producing: ProducingSlice }, ProjectA
 export const planProject = defineCommand<Producing, PlanArgs>({ id: 'producing.plan', reads: [], writes: ['attributes', 'producing'], run: plan });
 export const applyToFunder = defineCommand<Producing, ProjectArgs>({ id: 'producing.apply', reads: [], writes: ['attributes', 'producing'], run: apply });
 export const raiseMoney = defineCommand<Producing, DaysArgs & ProjectArgs>({ id: 'producing.raise', reads: [], writes: ['attributes', 'producing'], run: raise });
-export const shootProject = defineCommand<Producing, ProjectArgs>({ id: 'producing.shoot', reads: [], writes: ['attributes', 'producing'], run: shoot });
+export const shootProject = defineCommand<Shooting, ProjectArgs>({ id: 'producing.shoot', reads: ['identity', 'acting', 'directing', 'permits'], writes: ['attributes', 'producing'], run: shoot });
 export const releaseFilm = defineCommand<Producing, ProjectArgs>({ id: 'producing.release', reads: [], writes: ['attributes', 'producing'], run: release });

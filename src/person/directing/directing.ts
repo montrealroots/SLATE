@@ -6,6 +6,9 @@ import { dateOf, UNIT_DAYS, WEEK_DAYS } from '../acting/acting.ts';
 import { ATTRIBUTES, componentValues, practise, skillOf, type AttributesSlice } from '../attributes/attributes.ts';
 import { inTheBusiness, personOf, type IdentitySlice } from '../identity/identity.ts';
 import { spread } from '../work/work.ts';
+import type { ActingSlice } from '../acting/acting.ts';
+import { permitted, type PermitsSlice } from '../permits/permits.ts';
+import type { ProducingSlice } from '../producing/producing.ts';
 import compiled from './markets.json' with { type: 'json' };
 
 /**
@@ -154,6 +157,15 @@ export const DIRECTING_START: DirectingSlice = { films: [], second: null };
 type Values = Readonly<Record<string, number>>;
 type Directing = { attributes: AttributesSlice; directing: DirectingSlice };
 type Pursuing = Directing & { identity: IdentitySlice };
+/** A film shot or cut: where the director works, so whether they may work there reads the person, every role's days and the permits. */
+type Working = Directing & { identity: IdentitySlice; acting: ActingSlice; producing: ProducingSlice; permits: PermitsSlice };
+
+/** Refuses the work where the person may not work in the film's country for its days (papers.permits); prep books it, as an audition books a part. */
+function mayWorkOn(s: Working, film: Film, now: number): void {
+  const e = engagement(film);
+  // @slate:consumer permits.decision
+  if (!permitted(s, e.country as CountryCode, now, e.days, 'director')) throw new Error(`the person may not work in ${e.country} without a permit`);
+}
 
 const clamp = (n: number, lo: number, hi: number) => Math.min(hi, Math.max(lo, n));
 const mean = (xs: readonly number[]) => xs.reduce((t, x) => t + x, 0) / xs.length;
@@ -444,10 +456,11 @@ export interface FilmArgs {
 }
 
 /** Shoots it: what prep planned, as far as the schedule and the set carry it. */
-function shoot(s: Directing, a: FilmArgs): void {
+function shoot(s: Working, a: FilmArgs, c: Context): void {
   const values = componentValues(s.attributes, 'director');
   const film = filmOf(s.directing, a.film);
   if (film.shot !== null) throw new Error(`film ${a.film} is shot`);
+  mayWorkOn(s, film, c.now);
   const needed = shootNeeded(values, film);
   const carried = finish(values, film.shootDays, needed) * onSet(values);
   const shot = {} as Record<Planned, number>;
@@ -466,11 +479,13 @@ function finished(film: Film, cut: number): number {
 }
 
 /** Cuts it, in the Director's Cut its agreement guarantees or its contract gives. */
-function cut(s: Directing, a: FilmArgs, c: Context): void {
+function cut(s: Working, a: FilmArgs, c: Context): void {
   const values = componentValues(s.attributes, 'director');
   const film = filmOf(s.directing, a.film);
   if (film.shot === null) throw new Error(`film ${a.film} isn't shot`);
   if (film.cut !== null) throw new Error(`film ${a.film} is cut`);
+  // Cut where the shoot was: the research and the agreements place the cut nowhere else.
+  mayWorkOn(s, film, c.now);
   const k = partSkill(values, 'cut');
   // @slate:consumer directing.prep
   const f = finish(values, film.cutDays, cutNeeded(values, film.shootDays));
@@ -526,7 +541,7 @@ function pursue(s: Pursuing, _a: Record<string, never>, c: Context): void {
 // again for it is refused as declared twice (as the accounts' and the cards' say). The declarations are held by the
 // test that lists each command with what it reads and writes; what each does is mutated above.
 export const prepFilm = defineCommand<Directing, PrepArgs>({ id: 'directing.prep', reads: [], writes: ['attributes', 'directing'], run: prep });
-export const shootFilm = defineCommand<Directing, FilmArgs>({ id: 'directing.shoot', reads: [], writes: ['attributes', 'directing'], run: shoot });
-export const cutFilm = defineCommand<Directing, FilmArgs>({ id: 'directing.cut', reads: [], writes: ['attributes', 'directing'], run: cut });
+export const shootFilm = defineCommand<Working, FilmArgs>({ id: 'directing.shoot', reads: ['identity', 'acting', 'producing', 'permits'], writes: ['attributes', 'directing'], run: shoot });
+export const cutFilm = defineCommand<Working, FilmArgs>({ id: 'directing.cut', reads: ['identity', 'acting', 'producing', 'permits'], writes: ['attributes', 'directing'], run: cut });
 export const submitFilm = defineCommand<{ directing: DirectingSlice }, SubmitArgs>({ id: 'directing.submit', reads: [], writes: ['directing'], run: submit });
 export const pursueSecond = defineCommand<Pursuing, Record<string, never>>({ id: 'directing.pursue', reads: ['identity'], writes: ['attributes', 'directing'], run: pursue });

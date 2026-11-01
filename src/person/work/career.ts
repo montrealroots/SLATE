@@ -6,6 +6,7 @@ import { dateOf } from '../acting/acting.ts';
 import { componentOf, componentValues, facetSkill, practise, skillOf, type AttributesSlice } from '../attributes/attributes.ts';
 import { inTheBusiness, personOf, speaks, type IdentitySlice, type Level } from '../identity/identity.ts';
 import compiled from './markets.json' with { type: 'json' };
+import { mayVisit, whyNoVisit } from '../permits/permits.ts';
 import { partScore, PARTS, scriptOf, spread, type Form, type Script, type ScriptsSlice } from './work.ts';
 
 /**
@@ -442,11 +443,16 @@ export interface ScriptArgs {
 const yearsOn = (date: string, by: number) => `${Number(date.slice(0, 4)) + by}${date.slice(4)}`;
 
 /** A pitch meeting with someone who asked to read the script: a sale or an option, at the terms of the market it is offered in. */
-function pitch(s: Career, a: ScriptArgs, c: Context): void {
+function pitch(s: Promoting, a: ScriptArgs, c: Context): void {
   const deal = a.deal ?? 'sale';
   if (!DEALS.includes(deal)) throw new Error(`there's no deal ${String(deal)}`);
   const values = componentValues(s.attributes, 'screenwriter');
   const { script, out } = onTheMarket(s, a.script, c.now);
+  // The meeting is a visit to the market's country, not work there (the script was written at home): refused where the
+  // person's passports can't visit (papers.visits).
+  const where = saleIn(s.career, a.script).country;
+  // @slate:consumer identity.make
+  if (!mayVisit(personOf(s.identity), where)) throw new Error(whyNoVisit(where));
   // @slate:consumer script.promote
   if (out.requests < 1) throw new Error(`no one has asked to read script ${a.script}`);
   // @slate:consumer script.offer
@@ -472,4 +478,4 @@ export const summariseScript = defineCommand<Career, DocumentArgs>({ id: 'script
 export const meetPeople = defineCommand<Career, DaysArgs>({ id: 'network.meet', reads: [], writes: ['attributes', 'career'], run: network });
 export const offerScript = defineCommand<Career & { identity: IdentitySlice }, OfferArgs>({ id: 'script.offer', reads: ['scripts', 'identity'], writes: ['career'], run: offer });
 export const promoteScript = defineCommand<Promoting, ScriptDaysArgs>({ id: 'script.promote', reads: ['scripts', 'identity'], writes: ['attributes', 'career'], run: promote });
-export const pitchScript = defineCommand<Career, ScriptArgs>({ id: 'script.pitch', reads: ['scripts'], writes: ['attributes', 'career'], run: pitch });
+export const pitchScript = defineCommand<Promoting, ScriptArgs>({ id: 'script.pitch', reads: ['scripts', 'identity'], writes: ['attributes', 'career'], run: pitch });

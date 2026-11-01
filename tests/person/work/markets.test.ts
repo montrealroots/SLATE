@@ -415,3 +415,12 @@ describe('a script sold in a market', () => {
     falsifyAny({ feature: 'script.offer', claim: 'bites', says: 'an episode offered under the BBC agreement sells at its minimum a minute, not the WGA minimum', base: null, twin: 'gb-bbc', outcome: sale });
   });
 });
+
+describe("a sale meeting abroad", () => {
+  it("is a visit, not work there: open where the person's passport visits the market's country without a visa applied for beforehand", () => {
+    // The WGA's market, the US: a British writer enters on the electronic travel authorisation; an Indian passport needs a visa first.
+    expect(dispatch(asked(writer({ citizenship: ['GB'] })), pitchScript, { script: 1 }).slices.career.out['1']?.requests).toBe(0);
+    expect(() => dispatch(asked(writer({ citizenship: ['IN'] })), pitchScript, { script: 1 })).toThrow("a visit to US takes a visa applied for beforehand, which the game doesn't hold");
+    expect(dispatch(asked(writer({ citizenship: ['IN', 'GB'] })), pitchScript, { script: 1 }).slices.career.out['1']?.requests).toBe(0);
+  });
+});

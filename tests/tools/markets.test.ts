@@ -189,6 +189,9 @@ describe('the markets compile', () => {
     put(`${SOURCES}/AA.json`, aa);
     put(`${SOURCES}/BB.json`, bb);
     put(`${SOURCES}/notes.txt`, 'not research');
+    // Only a market's own file is read: another role's research beside it (writer-AA.json) and a copy (AA.json.bak) aren't.
+    put(`${SOURCES}/writer-AA.json`, aa);
+    put(`${SOURCES}/AA.json.bak`, aa);
     const cite = (cc: string, text: string) => ({ fact: `${FACT}${cc}`, value: { file: `${SOURCES}/${cc}.json`, sha256: sha(text) } });
     const register = (entries: unknown[]) => put('research/register.json', { entries });
     const all = [cite('AA', aa), cite('BB', bb), { fact: `${BLOCKED}BB` }];

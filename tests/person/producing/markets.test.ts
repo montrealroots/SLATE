@@ -1,3 +1,9 @@
+import { ACTING_START, type ActingSlice } from '../../../src/person/acting/acting.ts';
+import { DIRECTING_START, type DirectingSlice } from '../../../src/person/directing/directing.ts';
+import type { IdentitySlice } from '../../../src/person/identity/identity.ts';
+import type { PermitsSlice } from '../../../src/person/permits/permits.ts';
+import { permitsEverywhere } from '../../support/permits.ts';
+import { identity } from '../../support/person.ts';
 import { describe, expect, it } from 'vitest';
 import { begin, dispatch, pass, type Life } from '../../../src/core/frame/frame.ts';
 import { fromMajor, money, type CurrencyCode, type Money } from '../../../src/core/money/money.ts';
@@ -45,12 +51,12 @@ import type { GenresSlice } from '../../../src/person/genres/genres.ts';
 import compiled from '../../../src/person/producing/markets.json' with { type: 'json' };
 import { falsifyAny } from '../../support/falsify-core.ts';
 
-type Producing = { attributes: AttributesSlice; producing: ProducingSlice; genres: GenresSlice };
+type Producing = { attributes: AttributesSlice; producing: ProducingSlice; genres: GenresSlice; identity: IdentitySlice; acting: ActingSlice; directing: DirectingSlice; permits: PermitsSlice };
 const SEED = '0123456789abcdef';
 const T0 = daysFromCivil(2026, 11, 1) * SECONDS_PER_DAY;
 const GENRE = 'action';
 const made = (all = 50): Life<Producing> =>
-  dispatch(begin(SEED, T0, { attributes: structuredClone(ATTRIBUTES_START), producing: structuredClone(PRODUCING_START), genres: { loved: [GENRE] } }), chooseAttributes, { role: 'producer', all, each: {} });
+  dispatch(begin(SEED, T0, { attributes: structuredClone(ATTRIBUTES_START), producing: structuredClone(PRODUCING_START), genres: { loved: [GENRE] }, identity: identity(), acting: structuredClone(ACTING_START), directing: structuredClone(DIRECTING_START), permits: permitsEverywhere() }), chooseAttributes, { role: 'producer', all, each: {} });
 const project = (l: Life<Producing>, id = l.slices.producing.projects.length) => projectOf(l.slices.producing, id);
 const optioned = (market: string, l = made()) => dispatch(l, optionMaterial, { days: 3, genre: GENRE, market });
 const planned = (market: string, budget: string, l = made()) => {
@@ -385,5 +391,16 @@ describe("a market's project", () => {
 
   it("producing.option: the market a project is optioned in sets what it can claim", () => {
     falsifyAny({ feature: 'producing.option', claim: 'downstream', says: "the same £2m project optioned in Ireland rather than the UK is credited at Section 481's 32%, not the IFTC's 53% of 80%", base: 'GB', twin: 'IE', outcome: (market: string) => project(planned(market, '2000000')).plan?.credit });
+  });
+});
+
+describe('a project shot abroad', () => {
+  it('is shot only where the person may work: a permit in force, else refused', () => {
+    const none = (l: Life<Producing>): Life<Producing> => ({ ...l, slices: { ...l.slices, permits: { applications: [] } } });
+    expect(() => dispatch(none(funded(planned('IT', '2000000'))), shootProject, { project: 1 })).toThrow('the person may not work in IT without a permit');
+    expect(project(dispatch(funded(planned('IT', '2000000')), shootProject, { project: 1 })).shot).not.toBeNull();
+    // A British citizen shoots in the UK with none.
+    const brit = (l: Life<Producing>): Life<Producing> => ({ ...none(l), slices: { ...none(l).slices, identity: identity({ citizenship: ['GB'] }) } });
+    expect(project(dispatch(brit(funded(planned('GB', '2000000'))), shootProject, { project: 1 })).shot).not.toBeNull();
   });
 });

@@ -17,6 +17,8 @@ import {
   marketFee,
   MISSING,
   prepFilm,
+  shootFilm,
+  cutFilm,
   stepAt,
   UNKEPT_LINE,
   within,
@@ -28,13 +30,17 @@ import {
   type PrepArgs,
 } from '../../../src/person/directing/directing.ts';
 import type { IdentitySlice } from '../../../src/person/identity/identity.ts';
+import { ACTING_START, type ActingSlice } from '../../../src/person/acting/acting.ts';
+import { PRODUCING_START, type ProducingSlice } from '../../../src/person/producing/producing.ts';
+import type { PermitsSlice } from '../../../src/person/permits/permits.ts';
+import { permitsEverywhere } from '../../support/permits.ts';
 import { identity } from '../../support/person.ts';
 
-type D = { attributes: AttributesSlice; directing: DirectingSlice; identity: IdentitySlice };
+type D = { attributes: AttributesSlice; directing: DirectingSlice; identity: IdentitySlice; acting: ActingSlice; producing: ProducingSlice; permits: PermitsSlice };
 const day = (y: number, m: number, d: number) => daysFromCivil(y, m, d) * SECONDS_PER_DAY;
 const NOW = day(2026, 7, 1);
 const made = (now = NOW, directing: DirectingSlice = DIRECTING_START): Life<D> =>
-  dispatch(begin('0123456789abcdef', now, { attributes: structuredClone(ATTRIBUTES_START), directing: structuredClone(directing), identity: identity() }), chooseAttributes, { role: 'director', all: 50, each: {} });
+  dispatch(begin('0123456789abcdef', now, { attributes: structuredClone(ATTRIBUTES_START), directing: structuredClone(directing), identity: identity(), acting: structuredClone(ACTING_START), producing: structuredClone(PRODUCING_START), permits: permitsEverywhere() }), chooseAttributes, { role: 'director', all: 50, each: {} });
 const job = (args: PrepArgs, now = NOW, directing: DirectingSlice = DIRECTING_START): Film => {
   const l = dispatch(made(now, directing), prepFilm, args);
   return filmOf(l.slices.directing, l.slices.directing.films.length);
@@ -339,5 +345,23 @@ describe('a film in a market', () => {
     expect(aboutMarket('BR')).toContain('some of the agreements a director is engaged under.');
     for (const cc of ['AU', 'US', 'XX', 'toString']) expect(aboutMarket(cc), cc).toBeUndefined();
     expect(Object.keys(MARKETS).filter((cc) => aboutMarket(cc) !== undefined)).toEqual(Object.keys(MARKETS).filter((cc) => cc !== 'AU'));
+  });
+});
+
+describe('a film directed abroad', () => {
+  it("is shot and cut only where the person may work: a permit in force, else refused; prep books it", () => {
+    const none = (l: Life<D>): Life<D> => ({ ...l, slices: { ...l.slices, permits: { applications: [] } } });
+    const prepped = none(dispatch(made(), prepFilm, { form: 'feature', country: 'NO', prep: 10, shoot: 20, cut: 10 }));
+    expect(prepped.slices.directing.films).toHaveLength(1);
+    expect(() => dispatch(prepped, shootFilm, { film: 1 })).toThrow('the person may not work in NO without a permit');
+    const shot = dispatch(dispatch(made(), prepFilm, { form: 'feature', country: 'NO', prep: 10, shoot: 20, cut: 10 }), shootFilm, { film: 1 });
+    expect(() => dispatch(none(shot), cutFilm, { film: 1 })).toThrow('the person may not work in NO without a permit');
+    expect(dispatch(shot, cutFilm, { film: 1 }).slices.directing.films[0]?.cut).not.toBeNull();
+    // Kazakhstan's freedom covers a director's work (Decree 1041, item 11), so a film there is shot with no permit.
+    const kz = (l: Life<D>): Life<D> => ({ ...l, slices: { ...l.slices, directing: { ...l.slices.directing, films: l.slices.directing.films.map((f) => ({ ...f, country: 'KZ' })) } } });
+    expect(dispatch(kz(prepped), shootFilm, { film: 1 }).slices.directing.films[0]?.shot).not.toBeNull();
+    // At home, no permit is asked.
+    const home = none(dispatch(made(), prepFilm, { form: 'feature', budget: 5_000_000, shoot: 30 }));
+    expect(dispatch(home, shootFilm, { film: 1 }).slices.directing.films[0]?.shot).not.toBeNull();
   });
 });

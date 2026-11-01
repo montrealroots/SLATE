@@ -2232,3 +2232,41 @@ permit: permits.apply takes a directing, producing or acting engagement by its o
 producing's shoots ask permitted() as acting.perform does; a writer's sale meeting reads papers.visits (a business
 visit where the passport allows it), and a permit only where the research says writing there needs one; a route that
 doesn't cover the role (the research names whom it covers) can't be used, and the player is told.
+Ruled 2026-11-01, the owner: "Build those first 3 starting with ledger first, then build that yes for tv and film.
+This is the direction I want to take in the game instead of being casted. Any tv or film i'm in will be a product of
+mines." Asked how far it reaches, the owner chose "Own productions only": all four roles work only on the player's own
+productions; no auditions for others' parts, no selling scripts to others, no directing or producing others'
+projects. The order: (1) pay into the ledger with each country's tax, (2) the age readers (majority, working age, a
+minor's permits, for all four roles), (3) the main law's audit of every engine built, (4) the own production, film and
+TV: one production record every role reads: the player's script, produced from their own rights (no option to
+themselves) and financed in a market, directed by them (its story from the script's real grades), with themselves cast
+(no audition), each role paid and treated under that market's agreements, the guilds' rules for one person in
+several roles researched first. With (4), the casting market (acting.breakdown, auditions for others) and the
+spec-sale engines (networking, sending out, pitch, offer, sale, option by others) are removed; the markets, unions,
+permits and pay rules stay, read by the player's own productions.
+Owner, 2026-11-01: "And i'll be able to cast other people too correct?" Yes, in step 4: on the player's own production
+the player casts the other parts, writing each breakdown (gender, playing age, a named ethnicity where the part needs
+one, language, as the trade writes them), paying each actor at least the market's minimum for the part (the actor's
+markets, through the ledger from the production's budget), with the unions' rules (Taft-Hartley for a non-member on a
+SAG-AFTRA production) and the permits for a foreign cast; the cast's quality with the director's Working With Actors
+makes the performances. Researched first: the pool of actors one can cast and how their quality and price run,
+casting directors' fees and how auditions are held, and the crew's hiring and minimums (IATSE, Bectu and their peers).
+Ruled 2026-11-01, the owner: "And crew too, like cinematographers, editors, and etc. You know I want depth and to
+cover every single basis leaving no stone left unturned. I also want to control every step of the process of putting
+everything together manually also. We'll get into deeper much later after all the research, but I trust you know
+where my idea is headed." So step 4's production is the player's to build by hand, step by step, with nothing done
+for them: every department's crew hired by the player (the cinematographer, the editor, the production designer, the
+composer, the sound, costume, make-up and hair, the casting director, the first assistant director, the line producer
+and the rest the trade's own department lists name), each at its market's own minimums and terms (the crew unions:
+IATSE, Bectu and their peers; the film agreements' crew schedules), with permits for a foreign crew; and every stage
+of making the work (development, financing, pre-production, the shoot, post, delivery, release; a series' rooms,
+episodes and seasons) a step the player takes. Research first, for every department and stage, before any design is
+fixed: what each does, who hires whom, what each is paid and what each changes in the finished work.
+Built 2026-11-01, at the owner's word ("Let's do that next step then"): every role's work abroad reads the permit.
+permits.apply takes an engagement of any role (an audition booked, a film prepped, a project planned) by its own
+country and days; directing.shoot and directing.cut, and producing's shoot, are refused without a permit in force,
+as acting.perform is (prep books the engagement, so the permit can be applied for on it); a short engagement's days
+count every role's work in that country. A writer writes at home and travels only to the sale meeting, a business
+visit: the pitch reads papers.visits and is refused where every passport needs a visa applied for beforehand (the game
+holds none). Routes whose research names whom they cover (Kazakhstan, Armenia, Japan, Sweden, Egypt) refuse the other
+roles and say so. The permit line reads for any role now ("someone from abroad").

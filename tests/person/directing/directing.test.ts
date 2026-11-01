@@ -41,10 +41,14 @@ import {
 import { spread } from '../../../src/person/work/work.ts';
 import { t } from '../../../src/core/text/text.ts';
 import { FAMILY, type Family, type IdentitySlice } from '../../../src/person/identity/identity.ts';
+import { ACTING_START, type ActingSlice } from '../../../src/person/acting/acting.ts';
+import { PRODUCING_START, type ProducingSlice } from '../../../src/person/producing/producing.ts';
+import type { PermitsSlice } from '../../../src/person/permits/permits.ts';
+import { permitsEverywhere } from '../../support/permits.ts';
 import { identity } from '../../support/person.ts';
 import { falsifyAny } from '../../support/falsify-core.ts';
 
-type D = { attributes: AttributesSlice; directing: DirectingSlice; identity: IdentitySlice };
+type D = { attributes: AttributesSlice; directing: DirectingSlice; identity: IdentitySlice; acting: ActingSlice; producing: ProducingSlice; permits: PermitsSlice };
 const SEED = '0123456789abcdef';
 const seedOf = (i: number) => i.toString(16).padStart(16, '0');
 const u = (seed: string, ...keys: (string | number)[]) => draws(seedFromText(seed), 'directing.work', ...keys).float();
@@ -57,7 +61,7 @@ const of = (v: Record<string, number>, id: string) => skillOf(v, 'director', id)
 
 const STUDIO: PrepArgs = { form: 'feature', budget: 20_000_000, shoot: 40 };
 const made = (all: number, each: Record<string, number> = {}, seed = SEED): Life<D> =>
-  dispatch(begin(seed, 0, { attributes: structuredClone(ATTRIBUTES_START), directing: structuredClone(DIRECTING_START), identity: identity() }), chooseAttributes, { role: 'director', all, each });
+  dispatch(begin(seed, 0, { attributes: structuredClone(ATTRIBUTES_START), directing: structuredClone(DIRECTING_START), identity: identity(), acting: structuredClone(ACTING_START), producing: structuredClone(PRODUCING_START), permits: permitsEverywhere() }), chooseAttributes, { role: 'director', all, each });
 const prepped = (all: number, args: PrepArgs = STUDIO, each: Record<string, number> = {}, seed = SEED) => dispatch(made(all, each, seed), prepFilm, args);
 const shot = (all: number, args: PrepArgs = STUDIO, each: Record<string, number> = {}, seed = SEED) => dispatch(prepped(all, args, each, seed), shootFilm, { film: 1 });
 const cutOf = (all: number, args: PrepArgs = STUDIO, each: Record<string, number> = {}, seed = SEED) => dispatch(shot(all, args, each, seed), cutFilm, { film: 1 });
@@ -172,7 +176,7 @@ describe('prep', () => {
     expect(() => prepped(50, { form: 'feature', budget: 1 })).toThrow(RangeError);
     expect(() => prepped(50, { form: 'hour', budget: 5 })).toThrow("an episode's budget and schedule are the show's");
     expect(() => prepped(50, { form: 'hour', shoot: 5 })).toThrow("an episode's budget and schedule are the show's");
-    const bare = begin(SEED, 0, { attributes: structuredClone(ATTRIBUTES_START), directing: structuredClone(DIRECTING_START), identity: identity() });
+    const bare = begin(SEED, 0, { attributes: structuredClone(ATTRIBUTES_START), directing: structuredClone(DIRECTING_START), identity: identity(), acting: structuredClone(ACTING_START), producing: structuredClone(PRODUCING_START), permits: permitsEverywhere() });
     expect(() => dispatch(bare, prepFilm, { form: 'hour' })).toThrow("the director's attributes haven't been chosen");
     expect(() => filmOf(DIRECTING_START, 1)).toThrow("there's no film 1");
   });
@@ -483,8 +487,8 @@ describe('the director', () => {
   it('is run through the frame, each command declaring what it reads and writes', () => {
     expect(commandIndex().filter((x) => x.id.startsWith('directing.'))).toEqual([
       { id: 'directing.prep', reads: [], writes: ['attributes', 'directing'] },
-      { id: 'directing.shoot', reads: [], writes: ['attributes', 'directing'] },
-      { id: 'directing.cut', reads: [], writes: ['attributes', 'directing'] },
+      { id: 'directing.shoot', reads: ['identity', 'acting', 'producing', 'permits'], writes: ['attributes', 'directing'] },
+      { id: 'directing.cut', reads: ['identity', 'acting', 'producing', 'permits'], writes: ['attributes', 'directing'] },
       { id: 'directing.submit', reads: [], writes: ['directing'] },
       { id: 'directing.pursue', reads: ['identity'], writes: ['attributes', 'directing'] },
     ]);

@@ -255,7 +255,7 @@ describe('the solo writer', () => {
       { id: 'network.meet', reads: [], writes: ['attributes', 'career'] },
       { id: 'script.offer', reads: ['scripts', 'identity'], writes: ['career'] },
       { id: 'script.promote', reads: ['scripts', 'identity'], writes: ['attributes', 'career'] },
-      { id: 'script.pitch', reads: ['scripts'], writes: ['attributes', 'career'] },
+      { id: 'script.pitch', reads: ['scripts', 'identity'], writes: ['attributes', 'career'] },
     ]);
   });
 });
