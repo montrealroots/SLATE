@@ -1,0 +1,269 @@
+{
+ "topic": "tax.CI",
+ "read": "2026-11-01",
+ "note": "Read 2026-11-01 at the owner's word (\"Build those first 3 starting with ledger first\"; of the 21 countries read first: \"It should cover across every country\"; \"Retry the blocked tax facts once all countries land\"): the tax on a screen worker's pay in Ivory Coast: a resident's income tax, social contributions, what is withheld at source, a non-resident artiste's withholding, an author's treatment, VAT and the tax year. Research and retry subagents (workbench/briefs/BRIEF-tax.md, BRIEF-tax-retry.md), every quote checked by the lead against its saved page.",
+ "figures": [
+  {
+   "item": "residents",
+   "finding": "Since the 2023 reform a single tax on salaries and wages is charged on gross monthly pay by brackets: nothing to XOF 75,000 a month, then 16%, 21%, 24%, 28% and 32% above XOF 8,000,000, with a reduction for family charges replacing the family quotient.",
+   "value": {
+    "currency": "XOF",
+    "period": "month",
+    "brackets": [
+     {
+      "from": 0,
+      "to": 75000,
+      "rate": 0
+     },
+     {
+      "from": 75000,
+      "to": 240000,
+      "rate": 0.16
+     },
+     {
+      "from": 240000,
+      "to": 800000,
+      "rate": 0.21
+     },
+     {
+      "from": 800000,
+      "to": 2400000,
+      "rate": 0.24
+     },
+     {
+      "from": 2400000,
+      "to": 8000000,
+      "rate": 0.28
+     },
+     {
+      "from": 8000000,
+      "to": null,
+      "rate": 0.32
+     }
+    ],
+    "allowance": 75000,
+    "regional": null
+   },
+   "applies": "Salaries, wages, pensions (Ordinance No. 2023-718)",
+   "sources": [
+    {
+     "src": 0,
+     "said": "The tax on salaries and wages is now calculated on the gross amount of the salary and according to a monthly progressive scale per bracket to which a determined rate is applied. This scale allows the gross tax to be calculated as follows: Monthly income brackets (XOF*) Tax rate (%) Over Not over 0 75,000 0 75,000 240,000 16 240,000 800,000 21 800,000 2,400,000 24 2,400,000 8,000,000 28 8,000,000 32"
+    }
+   ]
+  },
+  {
+   "item": "social",
+   "finding": "An employee pays 6.3% to the CNPS retirement fund and the employer 7.7% (to XOF 3,375,000 a month), and the employer alone pays family allowances of 5.75% and work injury of 2% to 5% (to XOF 70,000 a month); the employer also bears a payroll tax of 2.8% on local and 12% on expatriate staff.",
+   "value": {
+    "currency": "XOF",
+    "employee": {
+     "pension": 0.063
+    },
+    "employer": {
+     "pension": 0.077,
+     "familyAllowances": 0.0575,
+     "workInjury": [
+      0.02,
+      0.05
+     ],
+     "payrollTaxLocal": 0.028,
+     "payrollTaxExpatriate": 0.12
+    },
+    "ceilingMonthly": {
+     "pension": 3375000,
+     "other": 70000
+    }
+   },
+   "applies": "Employees",
+   "sources": [
+    {
+     "src": 1,
+     "said": "The employees only pay 6.3% for the CNPS Retirement Fund and the employer pays 7.7% of the taxable salary to the CNPS Retirement Fund (total 14%). The other contributions are paid by the employer (i.e. family allowances 5.75%, work injury from 2% to 5%). The monthly ceiling for the CNPS Retirement Fund is XOF 3,375,000, and the monthly ceiling for the other contributions is XOF 70,000. … Taxes are levied at the rates of 2.8% for local employees and 12% for expatriate employees on the total taxable remuneration, including salaries, benefits, and benefits in kind."
+    }
+   ]
+  },
+  {
+   "item": "withholding",
+   "finding": "Employers calculate and withhold the employee's tax each month and file monthly returns.",
+   "value": {
+    "kind": "monthly employer withholding on the monthly scale"
+   },
+   "applies": "Employees",
+   "sources": [
+    {
+     "src": 2,
+     "said": "Employers must calculate and withhold taxes due by employees, and they must file monthly returns for both employee tax and the employer’s payroll tax."
+    }
+   ]
+  },
+  {
+   "item": "nonResident",
+   "finding": "Fees for services paid by Ivorian payers to foreign recipients bear the non-commercial profits tax (BNC) at 25% of 80% of the amount, an effective 20%, subject to treaties.",
+   "value": {
+    "rate": 0.2,
+    "base": "gross fee (25% of 80%)",
+    "threshold": null,
+    "final": null
+   },
+   "applies": "Royalties and service fees paid abroad (PwC states it for foreign companies)",
+   "sources": [
+    {
+     "src": 3,
+     "said": "Impôt sur les benefices non commerciaux (BNC): 25% of 80% of revenues on royalties, licence fees, and management and service fees paid by Ivorian companies to foreign companies (effective rate: 20% of net amount paid)."
+    }
+   ]
+  },
+  {
+   "item": "vat",
+   "finding": "VAT is charged at 18%.",
+   "value": {
+    "standard": 0.18
+   },
+   "applies": "Goods and services",
+   "sources": [
+    {
+     "src": 1,
+     "said": "VAT is a non-cumulative tax levied on the sale of goods and services at the rate of 18%."
+    }
+   ]
+  },
+  {
+   "item": "year",
+   "finding": "The tax period is the calendar year; employees' tax is settled by the employer's monthly withholding.",
+   "value": {
+    "start": "01-01",
+    "end": "12-31"
+   },
+   "applies": "Individuals",
+   "sources": [
+    {
+     "src": 2,
+     "said": "The taxable period in Côte d’Ivoire is the calendar year."
+    }
+   ]
+  },
+  {
+   "item": "withholding",
+   "finding": "Anyone paying a non-salaried artist, performer, show organiser or sportsperson withholds 7.5% of the gross amount at source as non-commercial profits tax (CGI art. 96); from 2026 this also covers actors, extras and other non-salaried contributors to radio, television and film productions.",
+   "value": {
+    "rate": 0.075,
+    "base": "gross amount paid",
+    "tax": "BNC (impôt sur les bénéfices non commerciaux)",
+    "covers": [
+     "artistes musiciens du spectacle",
+     "organisateurs de spectacle",
+     "sportifs",
+     "acteurs, figurants (radio, TV, cinéma) from 2026"
+    ],
+    "final": null
+   },
+   "applies": "CGI art. 96 as amended by the Annexe fiscale to loi de finances n° 2025-987 of 19 December 2025 (budget 2026); whether the 7.5% is final or a credit, and whether it reaches non-residents, is not stated in the annex.",
+   "sources": [
+    {
+     "src": 4,
+     "said": "Aux termes des dispositions de l’article 96 du Code général des Impôts, les personnes physiques ou morales versant des sommes au profit des artistes musiciens du spectacle, aux organisateurs de spectacle, aux sportifs et autres intervenants dans ces secteurs, non-salariés, sont tenues de prélever à la source une retenue de 7,5 % des sommes brutes mises en paiement. … « Cette retenue s’applique également aux sommes et autres rémunérations versées aux acteurs, figurants, personnes assimilées et autres intervenants non-salariés des productions radiophoniques, télévisuelles ou cinématographiques. »"
+    }
+   ]
+  }
+ ],
+ "country": "CI",
+ "sources": [
+  {
+   "url": "https://taxsummaries.pwc.com/ivory-coast/individual/taxes-on-personal-income",
+   "title": "PwC Worldwide Tax Summaries: Ivory Coast, Taxes on personal income, quoting Ordonnance n° 2023-718 du 13 septembre 2023 (dgi.gouv.ci)",
+   "read": "2026-11-01",
+   "kind": "secondary",
+   "quotes": "https://www.dgi.gouv.ci/",
+   "said": "The tax on salaries and wages is now calculated on the gross amount of the salary and according to a monthly progressive scale per bracket to which a determined rate is applied. This scale allows the gross tax to be calculated as follows: Monthly income brackets (XOF*) Tax rate (%) Over Not over 0 75,000 0 75,000 240,000 16 240,000 800,000 21 800,000 2,400,000 24 2,400,000 8,000,000 28 8,000,000 32"
+  },
+  {
+   "url": "https://taxsummaries.pwc.com/ivory-coast/individual/other-taxes",
+   "title": "PwC Worldwide Tax Summaries: Ivory Coast, Other taxes",
+   "read": "2026-11-01",
+   "kind": "secondary",
+   "quotes": "https://www.cnps.ci/",
+   "said": "The employees only pay 6.3% for the CNPS Retirement Fund and the employer pays 7.7% of the taxable salary to the CNPS Retirement Fund (total 14%). The other contributions are paid by the employer (i.e. family allowances 5.75%, work injury from 2% to 5%). The monthly ceiling for the CNPS Retirement Fund is XOF 3,375,000, and the monthly ceiling for the other contributions is XOF 70,000. … Taxes are levied at the rates of 2.8% for local employees and 12% for expatriate employees on the total taxable remuneration, including salaries, benefits, and benefits in kind. … VAT is a non-cumulative tax levied on the sale of goods and services at the rate of 18%."
+  },
+  {
+   "url": "https://taxsummaries.pwc.com/ivory-coast/individual/tax-administration",
+   "title": "PwC Worldwide Tax Summaries: Ivory Coast, Tax administration, quoting Ordonnance n° 2023-718 du 13 septembre 2023 (dgi.gouv.ci)",
+   "read": "2026-11-01",
+   "kind": "secondary",
+   "quotes": "https://www.dgi.gouv.ci/",
+   "said": "Employers must calculate and withhold taxes due by employees, and they must file monthly returns for both employee tax and the employer’s payroll tax. … The taxable period in Côte d’Ivoire is the calendar year."
+  },
+  {
+   "url": "https://taxsummaries.pwc.com/ivory-coast/corporate/withholding-taxes",
+   "title": "PwC Worldwide Tax Summaries: Ivory Coast, Withholding taxes, quoting the Code Général des Impôts de Côte d'Ivoire (dgi.gouv.ci)",
+   "read": "2026-11-01",
+   "kind": "secondary",
+   "quotes": "https://www.dgi.gouv.ci/",
+   "said": "Impôt sur les benefices non commerciaux (BNC): 25% of 80% of revenues on royalties, licence fees, and management and service fees paid by Ivorian companies to foreign companies (effective rate: 20% of net amount paid)."
+  },
+  {
+   "url": "https://www.dgi.gouv.ci/assets/documents/ANNEXE_FISCALE_2026/files/basic-html/page43.html",
+   "title": "DGI Côte d'Ivoire: Annexe fiscale à la loi de Finances n° 2025-987 du 19 décembre 2025 portant Budget de l'Etat pour l'année 2026 (basic-HTML pages 43-44)",
+   "read": "2026-11-01",
+   "kind": "primary",
+   "said": "Aux termes des dispositions de l’article 96 du Code général des Impôts, les personnes physiques ou morales versant des sommes au profit des artistes musiciens du spectacle, aux organisateurs de spectacle, aux sportifs et autres intervenants dans ces secteurs, non-salariés, sont tenues de prélever à la source une retenue de 7,5 % des sommes brutes mises en paiement. … « Cette retenue s’applique également aux sommes et autres rémunérations versées aux acteurs, figurants, personnes assimilées et autres intervenants non-salariés des productions radiophoniques, télévisuelles ou cinématographiques. »"
+  }
+ ],
+ "blockers": [
+  {
+   "item": "residents",
+   "sought": "The primary text of the 2023 salary-tax scale and the 2026 Annexe fiscale (loi de finances n° 2025-987) that confirms it for 2026.",
+   "tried": {
+    "institution": "dgi.gouv.ci is a JavaScript application whose pages and documents did not load by curl (only the shell page, 3,457 bytes) || 2026-11-01 retry: dgi.gouv.ci's Angular bundle names its document folders; the Annexe fiscale 2026 flipbook (assets/documents/ANNEXE_FISCALE_2026/, 140 basic-HTML pages) read in full, saved /tmp/claude-0/-home-user-SLATE/cfe06f79-0641-529e-b709-1fcd46045c09/scratchpad/dl/tax/CI-annexe-fiscale-2026-basichtml.txt (pages in /tmp/claude-0/-home-user-SLATE/cfe06f79-0641-529e-b709-1fcd46045c09/scratchpad/dl/tax/CI-af2026/; the pages are UTF-16 with double-encoded UTF-8, repaired cp1252 to UTF-8): it amends art. 96 and others but carries no salary-tax scale, so the 2023 scale is not re-enacted there",
+    "official-register": "Journal officiel and the 2026 Annexe fiscale not found online; DGBF hosts only a draft presentation note || 2026-11-01 retry: the CGI 2026 itself not found among the DGI's document folders (only DOCTRINE_FISCALE_2026, BODGI_2026 and LE_SYTEME_FISCAL_IVOIRIEN flipbooks named)",
+    "web-search": "searched for the CGI 2026 and the Annexe fiscale 2026 salary scale; only calculators and press returned || 2026-11-01 retry: query (French): Côte d'Ivoire annexe fiscale 2026 pdf impôt sur les traitements et salaires barème 75 000: press (abidjan.net, allAfrica, Bloomberg Tax) and calculators only, conflicting",
+    "trade-press": "PwC Worldwide Tax Summaries read (the figure it gives is recorded where it names its primary) || 2026-11-01 retry: Deloitte Avocats blog on Ordonnance n° 2023-719 seen in results (names the ordinance); not read",
+    "archive": "web.archive.org unreachable from this environment || 2026-11-01 retry: web.archive.org resets the connection from this environment"
+   }
+  },
+  {
+   "item": "nonResident",
+   "sought": "The withholding on fees paid to a non-resident individual performer, writer or director, and whether it is final.",
+   "tried": {
+    "institution": "dgi.gouv.ci not readable || 2026-11-01 retry: Annexe fiscale 2026 read (above): art. 96's 7.5% withholding on artists and, from 2026, actors and extras does not say whether it reaches non-residents; no other non-resident artiste rule in it",
+    "official-register": "CGI not reached || 2026-11-01 retry: CGI 2026 text not found on dgi.gouv.ci",
+    "web-search": "one search; no primary returned || 2026-11-01 retry: WebSearch refused by the tool: this turn's shared limit of 200 searches was used up by the agents (2026-11-01)",
+    "trade-press": "PwC Worldwide Tax Summaries read (the figure it gives is recorded where it names its primary) || 2026-11-01 retry: PwC (Côte d'Ivoire corporate withholding) kept for the 20% effective BNC on fees to foreign recipients",
+    "archive": "web.archive.org unreachable from this environment || 2026-11-01 retry: web.archive.org resets the connection from this environment"
+   }
+  },
+  {
+   "item": "vat",
+   "sought": "The turnover above which a freelancer must charge VAT.",
+   "tried": {
+    "institution": "dgi.gouv.ci not readable || 2026-11-01 retry: Annexe fiscale 2026 read: it mentions a XOF 50,000,000 turnover threshold for an option under CGI arts. 348 and 355, not the VAT registration threshold for a freelancer",
+    "official-register": "CGI not reached || 2026-11-01 retry: CGI 2026 text not found on dgi.gouv.ci",
+    "web-search": "not found in searches || 2026-11-01 retry: WebSearch refused by the tool: this turn's shared limit of 200 searches was used up by the agents (2026-11-01)",
+    "trade-press": "PwC Worldwide Tax Summaries read (the figure it gives is recorded where it names its primary) || 2026-11-01 retry: PwC (Côte d'Ivoire other taxes): rate only",
+    "archive": "web.archive.org unreachable from this environment || 2026-11-01 retry: web.archive.org resets the connection from this environment"
+   }
+  },
+  {
+   "item": "authors",
+   "sought": "Any special treatment of authors' royalties.",
+   "tried": {
+    "institution": "dgi.gouv.ci not readable || 2026-11-01 retry: Annexe fiscale 2026 read: no measure on authors' royalties",
+    "official-register": "CGI not reached || 2026-11-01 retry: CGI 2026 text not found on dgi.gouv.ci",
+    "web-search": "not searched separately || 2026-11-01 retry: WebSearch refused by the tool: this turn's shared limit of 200 searches was used up by the agents (2026-11-01)",
+    "trade-press": "PwC Worldwide Tax Summaries read (the figure it gives is recorded where it names its primary) || 2026-11-01 retry: PwC: none stated",
+    "archive": "web.archive.org unreachable from this environment || 2026-11-01 retry: web.archive.org resets the connection from this environment"
+   }
+  },
+  {
+   "item": "year",
+   "sought": "The date an individual with income other than wages files a return.",
+   "tried": {
+    "institution": "dgi.gouv.ci not readable || 2026-11-01 retry: Annexe fiscale 2026 read: no filing-date measure; the DGI's CALENDRIER DES OBLIGATIONS FISCALES 2023 (assets/documents/) is the 2023 calendar",
+    "official-register": "CGI not reached || 2026-11-01 retry: CGI 2026 text not found on dgi.gouv.ci",
+    "web-search": "not found || 2026-11-01 retry: WebSearch refused by the tool: this turn's shared limit of 200 searches was used up by the agents (2026-11-01)",
+    "trade-press": "PwC Worldwide Tax Summaries read (the figure it gives is recorded where it names its primary) || 2026-11-01 retry: PwC tax administration: no date for non-wage income",
+    "archive": "web.archive.org unreachable from this environment || 2026-11-01 retry: web.archive.org resets the connection from this environment"
+   }
+  }
+ ]
+}

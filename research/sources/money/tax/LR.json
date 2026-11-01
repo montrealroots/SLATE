@@ -1,0 +1,274 @@
+{
+ "topic": "tax.LR",
+ "read": "2026-11-01",
+ "note": "Read 2026-11-01 at the owner's word (\"Build those first 3 starting with ledger first\"; of the 21 countries read first: \"It should cover across every country\"; \"Retry the blocked tax facts once all countries land\"): the tax on a screen worker's pay in Liberia: a resident's income tax, social contributions, what is withheld at source, a non-resident artiste's withholding, an author's treatment, VAT and the tax year. Research and retry subagents (workbench/briefs/BRIEF-tax.md, BRIEF-tax-retry.md), every quote checked by the lead against its saved page.",
+ "figures": [
+  {
+   "item": "residents",
+   "finding": "A resident's annual taxable income is free to LRD 70,000, then 5% to 200,000, LRD 6,500 plus 15% to 800,000, and LRD 96,500 plus 25% above; there are no local income taxes.",
+   "value": {
+    "currency": "LRD",
+    "brackets": [
+     {
+      "from": 0,
+      "to": 70000,
+      "rate": 0
+     },
+     {
+      "from": 70000,
+      "to": 200000,
+      "rate": 0.05
+     },
+     {
+      "from": 200000,
+      "to": 800000,
+      "rate": 0.15
+     },
+     {
+      "from": 800000,
+      "to": null,
+      "rate": 0.25
+     }
+    ],
+    "regional": null
+   },
+   "applies": "Resident natural persons (Liberia Revenue Code)",
+   "sources": [
+    {
+     "src": 0,
+     "said": "Step 1 ​0 to 70,000 ​Nil ​Step 2 ​70,001 to 200,000 ​5% of the excess over LRD 70,000 ​Step 3 ​200,001 to 800,000 LRD ​6,500 + 15% of the excess over LRD 200,000 ​Step 4 ​800,001 and above LRD ​96,500 + 25% of the excess over LRD 800,000​"
+    },
+    {
+     "src": 0,
+     "said": "There are no special local income taxes on individuals in Liberia."
+    }
+   ]
+  },
+  {
+   "item": "year",
+   "finding": "The tax period is the calendar year; returns are due by 31 March of the next year; employees with at least 90% of income from employment are covered by withholding.",
+   "value": {
+    "start": "01-01",
+    "end": "12-31",
+    "returnDue": "03-31"
+   },
+   "applies": "Individuals",
+   "sources": [
+    {
+     "src": 1,
+     "said": "The taxable period for individuals is the calendar year, unless a taxpayer is authorised to use a different fiscal year. Tax returns PIT returns must be filed by 31 March of the following year."
+    }
+   ]
+  },
+  {
+   "item": "social",
+   "finding": "Social security is 10% of gross income: the employer pays 6% (2% injury, 4% pension) and the employee 4% (pension), remitted monthly to NASSCORP; the self-employed may contribute voluntarily.",
+   "value": {
+    "employee": 0.04,
+    "employer": 0.06,
+    "selfEmployed": "voluntary"
+   },
+   "applies": "Employees",
+   "sources": [
+    {
+     "src": 2,
+     "said": "The social security contribution rate is 10% of gross income. The employer contributes a total of 6%, consisting of 2% for injury scheme and 4% for the pension scheme, while the employee contributes 4% to the pension scheme."
+    },
+    {
+     "src": 2,
+     "said": "Self-employed individuals may voluntarily contribute to the pension scheme."
+    }
+   ]
+  },
+  {
+   "item": "withholding",
+   "finding": "Employers withhold payroll tax at the graduated rates and remit it by the 10th of the next month; payments to resident service providers bear 10% withholding, royalties 15%.",
+   "value": {
+    "employee": "graduated 5%-25%",
+    "residentServices": 0.1,
+    "residentRoyalties": 0.15
+   },
+   "applies": "Payments in Liberia",
+   "sources": [
+    {
+     "src": 3,
+     "said": "Resident: Payment of salaries Graduated rates (5%-25%) Rent on residential property 10% Management and consultancy fees 10% Payment for services rendered 10%"
+    },
+    {
+     "src": 1,
+     "said": "This payment must be made on or before the 10th day of the month following the month in which the salary was paid."
+    }
+   ]
+  },
+  {
+   "item": "nonResident",
+   "finding": "A non-resident individual is taxed at a flat 20%; payments for services to a non-resident bear 20% withholding, royalties 15%; finality was not stated in the source read.",
+   "value": {
+    "rate": 0.2,
+    "base": "gross payment",
+    "royalties": 0.15,
+    "final": null
+   },
+   "applies": "Non-residents",
+   "sources": [
+    {
+     "src": 0,
+     "said": "The non-resident individual tax rate is currently a flat rate of 20% (previously 15%)."
+    },
+    {
+     "src": 3,
+     "said": "Non-resident: Interest 15% Dividends 15% Royalties 15% License fees 15% Gaming winnings 30% Payments on rent 15% Payments for services 20%"
+    }
+   ]
+  },
+  {
+   "item": "authors",
+   "finding": "Royalties bear 15% withholding for resident and non-resident payees; no special regime for authors was found.",
+   "value": {
+    "royalties": 0.15
+   },
+   "applies": "Royalties",
+   "sources": [
+    {
+     "src": 3,
+     "said": "Royalties 15%"
+    },
+    {
+     "src": 4,
+     "said": "is required to withhold tax at a rate of 15 percent of the amount of the payment."
+    }
+   ]
+  },
+  {
+   "item": "vat",
+   "finding": "In 2026 goods tax and services tax are each 13% (the December 2025 Code amendment); VAT replaces GST from 1 January 2027 at 15%, with mandatory registration at USD 20,000 of turnover and a registration window July-December 2026.",
+   "value": {
+    "gst2026": {
+     "goods": 0.13,
+     "services": 0.13
+    },
+    "vatFrom": "2027-01-01",
+    "vatRate": 0.15,
+    "vatThreshold": {
+     "currency": "USD",
+     "amount": 20000
+    }
+   },
+   "applies": "Supplies in Liberia",
+   "sources": [
+    {
+     "src": 4,
+     "said": "(3) The rate of goods tax is 13 percent of the Section 1004 taxable amount"
+    },
+    {
+     "src": 4,
+     "said": "The rate of services tax is 13 percent of the taxable amount"
+    },
+    {
+     "src": 5,
+     "said": "Currently, the general rate of GST is 13%. VAT system goes live on January 1, 2027, officially replacing the GST regime."
+    },
+    {
+     "src": 5,
+     "said": "Mandatory registration threshold: US$ 20,000 (or it's equivalent in LRD). The transition registration window: July-December 2026. Rate: VAT standard rate is 15%"
+    },
+    {
+     "src": 2,
+     "said": "The general rate of GST is 12%."
+    }
+   ]
+  },
+  {
+   "item": "nonResident",
+   "finding": "A non-resident is taxed on Liberia-source income, including pay for services performed in Liberia, by withholding in place of the income tax, so the withholding is final unless the non-resident elects to file a return (the election binds that year and the next four, and the tax withheld is then a credit); the payer remits within 10 days after the month. The Code as amended to 2020 sets 15% on payments for services and 15% on royalties.",
+   "value": {
+    "final": true,
+    "electionToFile": {
+     "available": true,
+     "binds": "that tax period and the next four"
+    },
+    "servicesRate2020Text": 0.15,
+    "royalties": 0.15,
+    "remitDays": 10,
+    "rateConflict": "PwC (reviewed 24 September 2026) gives 20% on services; the LRA's 2020 consolidation gives 15%; the December 2025 amendment read does not touch s. 806(e)"
+   },
+   "applies": "Non-residents receiving Liberia-source payments (ss. 804-806 of the Liberia Revenue Code)",
+   "sources": [
+    {
+     "src": 6,
+     "said": "Section 804. Imposition of Tax (a) General Rule. A nonresident person is subject to tax on Liberia-source income (deﬁned in Section 805). In lieu of the generally applicable income tax of Part II, The Personal and Business Income Tax, tax is collected by withholding on payments as speciﬁed in Section 806. … (2) derived in respect of the performance of services or employment exercised in Liberia … (e) Payments for Services Rendered. A payor who makes a payment to a nonresident for services rendered is required to withhold tax at the rate of 15 percent of the amount of the payment … (i) Election. A nonresident subject to tax under this section may elect to ﬁle an income tax return … An amount of tax withheld pursuant to Section 806 is creditable against income tax liability"
+    }
+   ]
+  }
+ ],
+ "country": "LR",
+ "sources": [
+  {
+   "url": "https://taxsummaries.pwc.com/republic-of-liberia/individual/taxes-on-personal-income",
+   "title": "PwC Worldwide Tax Summaries, Republic Of Liberia, Individual - Taxes on personal income (last reviewed 24 September 2026)",
+   "read": "2026-11-01",
+   "kind": "secondary",
+   "quotes": "https://revenue.lra.gov.lr/tax-laws-and-amendments/",
+   "said": "Step 1 ​0 to 70,000 ​Nil ​Step 2 ​70,001 to 200,000 ​5% of the excess over LRD 70,000 ​Step 3 ​200,001 to 800,000 LRD ​6,500 + 15% of the excess over LRD 200,000 ​Step 4 ​800,001 and above LRD ​96,500 + 25% of the excess over LRD 800,000​ … There are no special local income taxes on individuals in Liberia. … The non-resident individual tax rate is currently a flat rate of 20% (previously 15%)."
+  },
+  {
+   "url": "https://taxsummaries.pwc.com/republic-of-liberia/individual/tax-administration",
+   "title": "PwC Worldwide Tax Summaries, Republic Of Liberia, Individual - Tax administration (last reviewed 24 September 2026)",
+   "read": "2026-11-01",
+   "kind": "secondary",
+   "quotes": "https://revenue.lra.gov.lr/tax-laws-and-amendments/",
+   "said": "The taxable period for individuals is the calendar year, unless a taxpayer is authorised to use a different fiscal year. Tax returns PIT returns must be filed by 31 March of the following year. … This payment must be made on or before the 10th day of the month following the month in which the salary was paid."
+  },
+  {
+   "url": "https://taxsummaries.pwc.com/republic-of-liberia/individual/other-taxes",
+   "title": "PwC Worldwide Tax Summaries, Republic Of Liberia, Individual - Other taxes (last reviewed 24 September 2026)",
+   "read": "2026-11-01",
+   "kind": "secondary",
+   "quotes": "https://www.nasscorp.gov.lr/",
+   "said": "The social security contribution rate is 10% of gross income. The employer contributes a total of 6%, consisting of 2% for injury scheme and 4% for the pension scheme, while the employee contributes 4% to the pension scheme. … Self-employed individuals may voluntarily contribute to the pension scheme. … The general rate of GST is 12%."
+  },
+  {
+   "url": "https://taxsummaries.pwc.com/republic-of-liberia/corporate/withholding-taxes",
+   "title": "PwC Worldwide Tax Summaries, Republic Of Liberia, Corporate - Withholding taxes (last reviewed 24 September 2026)",
+   "read": "2026-11-01",
+   "kind": "secondary",
+   "quotes": "https://revenue.lra.gov.lr/tax-laws-and-amendments/",
+   "said": "Resident: Payment of salaries Graduated rates (5%-25%) Rent on residential property 10% Management and consultancy fees 10% Payment for services rendered 10% … Non-resident: Interest 15% Dividends 15% Royalties 15% License fees 15% Gaming winnings 30% Payments on rent 15% Payments for services 20%"
+  },
+  {
+   "url": "https://revenue.lra.gov.lr/wp-content/uploads/2026/04/LRC-Amendment-December-2025.pdf",
+   "title": "Act amending the Liberia Revenue Code, December 2025 (Liberia Revenue Authority; scanned, OCR read)",
+   "read": "2026-11-01",
+   "kind": "primary",
+   "said": "is required to withhold tax at a rate of 15 percent of the amount of the payment. … (3) The rate of goods tax is 13 percent of the Section 1004 taxable amount … The rate of services tax is 13 percent of the taxable amount"
+  },
+  {
+   "url": "https://taxsummaries.pwc.com/republic-of-liberia/corporate/other-taxes",
+   "title": "PwC Worldwide Tax Summaries, Republic Of Liberia, Corporate - Other taxes (last reviewed 24 September 2026)",
+   "read": "2026-11-01",
+   "kind": "secondary",
+   "quotes": "https://revenue.lra.gov.lr/tax-laws-and-amendments/",
+   "said": "Currently, the general rate of GST is 13%. VAT system goes live on January 1, 2027, officially replacing the GST regime. … Mandatory registration threshold: US$ 20,000 (or it's equivalent in LRD). The transition registration window: July-December 2026. Rate: VAT standard rate is 15%"
+  },
+  {
+   "url": "https://revenue.lra.gov.lr/wp-content/uploads/2021/08/REVENUE-CODE-LIBERIA-REVENUE-CODE-AMENDEMENT-2020-min.pdf",
+   "title": "Liberia Revenue Code as amended (2020), Liberia Revenue Authority, ss. 804-806",
+   "read": "2026-11-01",
+   "kind": "primary",
+   "said": "Section 804. Imposition of Tax (a) General Rule. A nonresident person is subject to tax on Liberia-source income (deﬁned in Section 805). In lieu of the generally applicable income tax of Part II, The Personal and Business Income Tax, tax is collected by withholding on payments as speciﬁed in Section 806. … (2) derived in respect of the performance of services or employment exercised in Liberia … (e) Payments for Services Rendered. A payor who makes a payment to a nonresident for services rendered is required to withhold tax at the rate of 15 percent of the amount of the payment … (i) Election. A nonresident subject to tax under this section may elect to ﬁle an income tax return … An amount of tax withheld pursuant to Section 806 is creditable against income tax liability"
+  }
+ ],
+ "blockers": [
+  {
+   "item": "nonResident",
+   "sought": "The rate on a non-resident's service fee in force for 2026: 15% in the LRA's 2020 consolidation of s. 806(e), 20% per PwC (finality is found: final unless the non-resident elects to file)",
+   "tried": {
+    "institution": "revenue.lra.gov.lr reached; the December 2025 Revenue Code amendment (scan) OCR read: no rule on non-resident performers' finality in it || retry-8 2026-11-01: revenue.lra.gov.lr 'Domestic Tax Laws & Regulations' page read; the Liberia Revenue Code as amended 2020 (250 pages) downloaded and read: s. 804 (withholding in lieu of income tax) and s. 806(e) 15% on services, (i) election; the December 2025 amendment (OCR) re-read: s. 806(b) only",
+    "official-register": "Liberia Consolidated Revenue Code text not read as text || retry-8 2026-11-01: the LRA's consolidated Code stands for the official text; no later consolidation (2022-2025 amendments to s. 806(e)) is on the LRA pages read",
+    "web-search": "not separately searched; PwC (reviewed 24 September 2026) current || retry-8 2026-11-01: a search for 'Liberia Revenue Code section 806(e) nonresident services withholding 20 percent amendment' was refused by the search tool (shared per-turn limit of 200 searches reached)",
+    "trade-press": "PwC Worldwide Tax Summaries used || retry-8 2026-11-01: PwC Worldwide Tax Summaries (reviewed 24 September 2026) re-read: 20% on services to non-residents, no primary named for the change",
+    "archive": "web.archive.org resets the connection from this environment (2026-11-01) || retry-8 2026-11-01: web.archive.org: connection reset and availability API 429 on 2026-11-01"
+   }
+  }
+ ]
+}

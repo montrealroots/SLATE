@@ -1,0 +1,334 @@
+{
+ "topic": "tax.CH",
+ "read": "2026-11-01",
+ "note": "Read 2026-11-01 at the owner's word (\"Build those first 3 starting with ledger first\"; of the 21 countries read first: \"It should cover across every country\"; \"Retry the blocked tax facts once all countries land\"): the tax on a screen worker's pay in Switzerland: a resident's income tax, social contributions, what is withheld at source, a non-resident artiste's withholding, an author's treatment, VAT and the tax year. Research and retry subagents (workbench/briefs/BRIEF-tax.md, BRIEF-tax-retry.md), every quote checked by the lead against its saved page.",
+ "figures": [
+  {
+   "item": "residents",
+   "finding": "Income is taxed three times: the direct federal tax (the same everywhere; for a single person 2026 nothing to CHF 15,200, then marginal rates from 0.77% to 13.2%, and a flat 11.5% of all income above CHF 793,900), plus cantonal and municipal taxes set by each canton and municipality.",
+   "value": {
+    "currency": "CHF",
+    "federalSingle": {
+     "table": [
+      {
+       "from": 0,
+       "to": 15200,
+       "fixed": 0,
+       "rate": 0,
+       "over": 0
+      },
+      {
+       "from": 15200,
+       "to": 33200,
+       "fixed": 0,
+       "rate": 0.0077,
+       "over": 15200
+      },
+      {
+       "from": 33200,
+       "to": 43500,
+       "fixed": 138.6,
+       "rate": 0.0088,
+       "over": 33200
+      },
+      {
+       "from": 43500,
+       "to": 58000,
+       "fixed": 229.2,
+       "rate": 0.0264,
+       "over": 43500
+      },
+      {
+       "from": 58000,
+       "to": 76200,
+       "fixed": 612.0,
+       "rate": 0.0297,
+       "over": 58000
+      },
+      {
+       "from": 76200,
+       "to": 82100,
+       "fixed": 1152.5,
+       "rate": 0.0594,
+       "over": 76200
+      },
+      {
+       "from": 82100,
+       "to": 108900,
+       "fixed": 1502.95,
+       "rate": 0.066,
+       "over": 82100
+      },
+      {
+       "from": 108900,
+       "to": 141500,
+       "fixed": 3271.75,
+       "rate": 0.088,
+       "over": 108900
+      },
+      {
+       "from": 141500,
+       "to": 185100,
+       "fixed": 6140.55,
+       "rate": 0.11,
+       "over": 141500
+      },
+      {
+       "from": 185100,
+       "to": 793900,
+       "fixed": 10936.55,
+       "rate": 0.132,
+       "over": 185100
+      }
+     ],
+     "above793900": "11.5% of total taxable income"
+    },
+    "regional": {
+     "layers": [
+      "canton",
+      "municipality",
+      "church (optional)"
+     ],
+     "setBy": "each canton's law and rates; municipalities set a factor",
+     "example": "Zurich: basic cantonal tariff x 0.95, municipal factor 0.71-1.28 (City of Zurich 1.19)"
+    }
+   },
+   "applies": "Tax year 2026, single taxpayers (married/single parents have their own federal tariff in the same ESTV table).",
+   "sources": [
+    {
+     "src": 0,
+     "said": "Income taxes are levied at three different levels: at the federal level (which is the same all over Switzerland), at the cantonal level (which is the same within a certain canton and is based on the canton's own tax law and tax rates), and at the municipal level (municipalities follow the cantonal tax law, but are entitled to set their own communal tax rate within certain parameters)."
+    },
+    {
+     "src": 0,
+     "said": "0 15,200 - - 15,200 33,200 - 0.77 33,200 43,500 138.60 0.88 43,500 58,000 229.20 2.64 58,000 76,200 612.00 2.97 76,200 82,100 1,152.50 5.94 82,100 108,900 1,502.95 6.60 108,900 141,500 3,271.75 8.80 141,500 185,100 6.140.55 11.00 185,100 793,900 10,936.55 13.20"
+    },
+    {
+     "src": 1,
+     "said": "793900 91298.15"
+    },
+    {
+     "src": 1,
+     "said": "Für höhere steuerbare Einkünfte beträgt die Jahressteuer einheitlich 11.5%."
+    },
+    {
+     "src": 0,
+     "said": "For Zurich cantonal taxes, the above rates have to be multiplied with 0.95. For the additional municipal taxes, the above rate has to be multiplied by the respective municipal tax factor, which varies between 0.71 and 1.28 (City of Zurich: 1.19)."
+    }
+   ]
+  },
+  {
+   "item": "year",
+   "finding": "The tax year is the calendar year; the return is due by 31 March of the next year in the canton of residence at year-end (a few cantons differ; extensions usual); federal tax is paid provisionally by 31 March after the year.",
+   "value": {
+    "start": "01-01",
+    "end": "12-31",
+    "returnDue": "03-31 (canton-dependent; extensions to September/November)"
+   },
+   "applies": "Individuals.",
+   "sources": [
+    {
+     "src": 2,
+     "said": "The tax year in Switzerland is the calendar year. Tax returns The respective tax return has to be filed by 31 March of the following year (a few cantons have different deadlines) in the canton where the taxpayer has been resident at the end of the respective tax period."
+    }
+   ]
+  },
+  {
+   "item": "withholding",
+   "finding": "A resident foreign national without a settlement permit is taxed through wage withholding (Quellensteuer) by the employer, filing an ordinary return only above CHF 120,000 gross employment income; Swiss residents with a permit file a return and pay provisionally.",
+   "value": {
+    "wageWithholdingFor": "resident foreign nationals (and non-residents)",
+    "ordinaryAssessmentAbove": 120000
+   },
+   "applies": "2026.",
+   "sources": [
+    {
+     "src": 2,
+     "said": "Resident foreign nationals, who are taxed through the wage withholding system, can only (and have to) file a tax return if their gross employment income exceeds CHF 120,000 per year."
+    }
+   ]
+  },
+  {
+   "item": "nonResident",
+   "finding": "A non-resident's Swiss employment income is taxed by wage withholding with no return (a correction may be claimed by 31 March); one with 90% of worldwide family income taxable in Switzerland may ask for ordinary assessment (quasi-residency).",
+   "value": {
+    "method": "wage withholding",
+    "returnAllowed": false,
+    "correctionBy": "03-31",
+    "quasiResidency": 0.9
+   },
+   "applies": "2026; the cantonal artists' withholding rates were not read.",
+   "sources": [
+    {
+     "src": 2,
+     "said": "Non-resident individuals (Swiss and foreign nationals) subject to wage withholding taxes usually cannot file a tax return for their employment income."
+    },
+    {
+     "src": 2,
+     "said": "The requirements for a subsequent ordinary assessment in the case of quasi-residence are met if at least 90% of the worldwide gross family income is taxable in Switzerland in the corresponding tax year."
+    }
+   ]
+  },
+  {
+   "item": "social",
+   "finding": "Employer and employee each pay 5.3% AHV/IV/EO (no cap) and 1.1% unemployment insurance up to CHF 148,200; the employer also pays 1–2% family compensation and occupational accident insurance, the employee non-occupational accident insurance; a self-employed person basically covers both shares.",
+   "value": {
+    "currency": "CHF",
+    "employee": {
+     "ahvIvEo": 0.053,
+     "alv": 0.011,
+     "alvCap": 148200
+    },
+    "employer": {
+     "ahvIvEo": 0.053,
+     "alv": 0.011,
+     "family": "0.01-0.02"
+    },
+    "selfEmployed": "both shares, different rates may apply"
+   },
+   "applies": "From 1 January 2026.",
+   "sources": [
+    {
+     "src": 3,
+     "said": "Old age, survivors’ and disability insurance 5.3 5.3 No cap Unemployment Insurance 1.1 1.1 148,200 Family Compensation Fund 1 to 2 0 No cap"
+    },
+    {
+     "src": 3,
+     "said": "If the individual is self-employed, they basically have to cover the employer’s and the employee’s share, however different contribution rates may be applicable."
+    }
+   ]
+  },
+  {
+   "item": "vat",
+   "finding": "VAT is 8.1% at the standard rate (2.6% reduced, 3.8% lodging); a business with under CHF 100,000 a year of taxable turnover in Switzerland and abroad is exempt from VAT liability, though it may opt in.",
+   "value": {
+    "standard": 0.081,
+    "reduced": 0.026,
+    "lodging": 0.038,
+    "currency": "CHF",
+    "registrationThreshold": 100000
+   },
+   "applies": "2026 (MWSTG as consolidated at 1 January 2025; no later change to art. 10 or 25 was found on fedlex). The threshold counts turnover in Switzerland and abroad from services not excluded under art. 21(2).",
+   "sources": [
+    {
+     "src": 4,
+     "said": "Die Steuer beträgt 8,1 Prozent (Normalsatz) … Der reduzierte Steuersatz von 2,6 Prozent findet Anwendung … Die Steuer auf Beherbergungsleistungen beträgt 3,8 Prozent (Sondersatz)."
+    },
+    {
+     "src": 4,
+     "said": "Von der Steuerpflicht ist befreit, wer: … innerhalb eines Jahres im In- und Ausland weniger als 100 000 Franken Umsatz aus Leistungen erzielt, die nicht nach Artikel 21 Absatz 2 von der Steuer ausgenommen sind … Verzicht auf die Befreiung von der Steuerpflicht"
+    }
+   ]
+  },
+  {
+   "item": "nonResident",
+   "finding": "A non-resident performer (stage, film, radio or TV artist) has Swiss withholding taken by the organiser: the federal share is 0.8% of daily income to CHF 200, 2.4% to CHF 1,000, 5.0% to CHF 3,000 and 7.0% above, after a flat 50% cost deduction for artists, nothing below CHF 300 gross per event; the canton of performance adds its own share. A director, producer or crew member making a film is not an artist here and is taxed at the ordinary withholding tariff.",
+   "value": {
+    "currency": "CHF",
+    "federalShare": [
+     {
+      "from": 0,
+      "to": 200,
+      "rate": 0.008
+     },
+     {
+      "from": 200,
+      "to": 1000,
+      "rate": 0.024
+     },
+     {
+      "from": 1000,
+      "to": 3000,
+      "rate": 0.05
+     },
+     {
+      "from": 3000,
+      "to": null,
+      "rate": 0.07
+     }
+    ],
+    "base": "daily income: gross less 50% flat costs (artists), divided by contracted performance and rehearsal days and by performers",
+    "minimumGrossPerEvent": 300,
+    "excluded": "film or theatre makers (directors, camera, sound, producers): ordinary withholding tariff",
+    "employedAtLeast30Days": "ordinary withholding tariff",
+    "treaties": "reserved"
+   },
+   "applies": "From 1 January 2026, federal share (Art. 92 DBG); the cantonal and communal share is set by the tariff of the canton where the performance takes place (see blocker).",
+   "sources": [
+    {
+     "src": 5,
+     "said": "Der Quellensteuer unterliegen alle selbstständig oder unselbst … Nicht als K/S/R gelten deshalb Personen, die an der Herstellung eines Films oder eines Theaterstücks beteiligt sind (Regisseure, Kameraleute, Tontechniker, Choreographen, Produzenten etc.)"
+    },
+    {
+     "src": 5,
+     "said": "Die Quellensteuer für K/S/R beträgt (Anteil direkte Bundessteuer) … Bei Tageseinkünften bis CHF 200 … 0,8 % … Bei Tageseinkünften von CHF 201 bis 1000 … 2,4 % … Bei Tageseinkünften von CHF 1001 bis 3000 … 5,0 % … Bei Tageseinkünften über CHF 3000 … 7,0 %"
+    },
+    {
+     "src": 5,
+     "said": "50 Prozent der Bruttoeinkünfte bei K … Ein Abzug der effektiven Gewinnungskosten ist nicht zulässig. … Die Quellensteuer wird nicht erhoben, wenn die steuerbaren Bruttoeinkünfte weniger betragen als CHF 300 … Die Besteuerung richtet sich nach dem Recht des Auftrittskantons."
+    }
+   ]
+  }
+ ],
+ "country": "CH",
+ "sources": [
+  {
+   "url": "https://taxsummaries.pwc.com/switzerland/individual/taxes-on-personal-income",
+   "title": "PwC Worldwide Tax Summaries, Switzerland, Individual - Taxes on personal income (last reviewed 1 July 2026)",
+   "read": "2026-11-01",
+   "kind": "secondary",
+   "quotes": "https://www.estv.admin.ch/dam/de/sd-web/gnde9CmEsalK/dbst-tairfe-58c-2026-dfi.pdf",
+   "said": "Income taxes are levied at three different levels: at the federal level (which is the same all over Switzerland), at the cantonal level (which is the same within a certain canton and is based on the canton's own tax law and tax rates), and at the municipal level (municipalities follow the cantonal tax law, but are entitled to set their own communal tax rate within certain parameters). … 0 15,200 - - 15,200 33,200 - 0.77 33,200 43,500 138.60 0.88 43,500 58,000 229.20 2.64 58,000 76,200 612.00 2.97 76,200 82,100 1,152.50 5.94 82,100 108,900 1,502.95 6.60 108,900 141,500 3,271.75 8.80 141,500 185,100 6.140.55 11.00 185,100 793,900 10,936.55 13.20 … For Zurich cantonal taxes, the above rates have to be multiplied with 0.95. For the additional municipal taxes, the above rate has to be multiplied by the respective municipal tax factor, which varies between 0.71 and 1.28 (City of Zurich: 1.19)."
+  },
+  {
+   "url": "https://www.estv.admin.ch/dam/de/sd-web/gnde9CmEsalK/dbst-tairfe-58c-2026-dfi.pdf",
+   "title": "Tarife 2026: Tabelle für die Berechnung der direkten Bundessteuer der natürlichen Personen (ESTV)",
+   "read": "2026-11-01",
+   "kind": "primary",
+   "said": "793900 91298.15 … Für höhere steuerbare Einkünfte beträgt die Jahressteuer einheitlich 11.5%."
+  },
+  {
+   "url": "https://taxsummaries.pwc.com/switzerland/individual/tax-administration",
+   "title": "PwC Worldwide Tax Summaries, Switzerland, Individual - Tax administration (last reviewed 1 July 2026)",
+   "read": "2026-11-01",
+   "kind": "secondary",
+   "quotes": "https://www.estv.admin.ch/dam/de/sd-web/gnde9CmEsalK/dbst-tairfe-58c-2026-dfi.pdf",
+   "said": "The tax year in Switzerland is the calendar year. Tax returns The respective tax return has to be filed by 31 March of the following year (a few cantons have different deadlines) in the canton where the taxpayer has been resident at the end of the respective tax period. … Resident foreign nationals, who are taxed through the wage withholding system, can only (and have to) file a tax return if their gross employment income exceeds CHF 120,000 per year. … Non-resident individuals (Swiss and foreign nationals) subject to wage withholding taxes usually cannot file a tax return for their employment income. … The requirements for a subsequent ordinary assessment in the case of quasi-residence are met if at least 90% of the worldwide gross family income is taxable in Switzerland in the corresponding tax year."
+  },
+  {
+   "url": "https://taxsummaries.pwc.com/switzerland/individual/other-taxes",
+   "title": "PwC Worldwide Tax Summaries, Switzerland, Individual - Other taxes (last reviewed 1 July 2026)",
+   "read": "2026-11-01",
+   "kind": "secondary",
+   "quotes": "https://www.estv.admin.ch/dam/de/sd-web/gnde9CmEsalK/dbst-tairfe-58c-2026-dfi.pdf",
+   "said": "Old age, survivors’ and disability insurance 5.3 5.3 No cap Unemployment Insurance 1.1 1.1 148,200 Family Compensation Fund 1 to 2 0 No cap … If the individual is self-employed, they basically have to cover the employer’s and the employee’s share, however different contribution rates may be applicable."
+  },
+  {
+   "url": "https://www.fedlex.admin.ch/filestore/fedlex.data.admin.ch/eli/cc/2009/615/20250101/de/pdf-a/fedlex-data-admin-ch-eli-cc-2009-615-20250101-de-pdf-a.pdf",
+   "title": "Bundesgesetz über die Mehrwertsteuer (MWSTG, SR 641.20), Stand am 1. Januar 2025 (fedlex)",
+   "read": "2026-11-01",
+   "kind": "primary",
+   "said": "Die Steuer beträgt 8,1 Prozent (Normalsatz) … Der reduzierte Steuersatz von 2,6 Prozent findet Anwendung … Die Steuer auf Beherbergungsleistungen beträgt 3,8 Prozent (Sondersatz). … Von der Steuerpflicht ist befreit, wer: … innerhalb eines Jahres im In- und Ausland weniger als 100 000 Franken Umsatz aus Leistungen erzielt, die nicht nach Artikel 21 Absatz 2 von der Steuer ausgenommen sind … Verzicht auf die Befreiung von der Steuerpflicht"
+  },
+  {
+   "url": "https://www.estv.admin.ch/dam/de/sd-web/rvrM54pOsUZ5/2-217-D-2026-d.pdf",
+   "title": "ESTV Rundschreiben 2-217-D-2026 (22. Januar 2026) with the Merkblatt über die Quellenbesteuerung von Künstlern, Sportlern und Referenten ohne steuerrechtlichen Wohnsitz oder Aufenthalt in der Schweiz, gültig ab 1. Januar 2026 (Art. 92 DBG)",
+   "read": "2026-11-01",
+   "kind": "primary",
+   "said": "Der Quellensteuer unterliegen alle selbstständig oder unselbst … Nicht als K/S/R gelten deshalb Personen, die an der Herstellung eines Films oder eines Theaterstücks beteiligt sind (Regisseure, Kameraleute, Tontechniker, Choreographen, Produzenten etc.) … Die Quellensteuer für K/S/R beträgt (Anteil direkte Bundessteuer) … Bei Tageseinkünften bis CHF 200 … 0,8 % … Bei Tageseinkünften von CHF 201 bis 1000 … 2,4 % … Bei Tageseinkünften von CHF 1001 bis 3000 … 5,0 % … Bei Tageseinkünften über CHF 3000 … 7,0 % … 50 Prozent der Bruttoeinkünfte bei K … Ein Abzug der effektiven Gewinnungskosten ist nicht zulässig. … Die Quellensteuer wird nicht erhoben, wenn die steuerbaren Bruttoeinkünfte weniger betragen als CHF 300 … Die Besteuerung richtet sich nach dem Recht des Auftrittskantons."
+  }
+ ],
+ "blockers": [
+  {
+   "item": "nonResident",
+   "sought": "The cantonal and communal share of the withholding on a non-resident artist's fee in each of the 26 cantons (each canton's 2026 K/S/R tariff); the federal share is now recorded.",
+   "tried": {
+    "institution": "estv.admin.ch: federal tariff 2026 PDF read; Quellensteuer artists' tariffs not reached in this pass (2026-11-01) || 2026-11-01 retry: ESTV Rundschreiben 2-217-D-2026 (https://www.estv.admin.ch/dam/de/sd-web/rvrM54pOsUZ5/2-217-D-2026-d.pdf) read: federal share recorded; it sends the cantonal share to the performance canton's law.",
+    "official-register": "QStV (SR 642.118.2) on fedlex not fetched || 2026-11-01 retry: fedlex filestore reached (MWSTG read); the 26 cantonal tax laws and tariffs not each read in this pass.",
+    "web-search": "not run || 2026-11-01 retry: 'ESTV Quellensteuer Künstler Sportler Referenten Tarif 2026 Tagesgage' and 'Merkblatt Quellenbesteuerung von Künstlern ... Stand 1.1.2026 pdf': cantonal 2026 Merkblätter exist (AG qust-k-nstler-2026.pdf, ZG 2026_merk_102, SZ ab 1 Januar 2026, GL), not read for all 26 cantons.",
+    "trade-press": "PwC Switzerland: no artists' rate || 2026-11-01 retry: none needed for the federal share; no firm table of all 26 cantonal shares found.",
+    "archive": "not tried || 2026-11-01 retry: web.archive.org connection reset through the proxy (curl 000)."
+   }
+  }
+ ]
+}

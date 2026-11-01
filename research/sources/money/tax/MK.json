@@ -1,0 +1,207 @@
+{
+ "topic": "tax.MK",
+ "read": "2026-11-01",
+ "note": "Read 2026-11-01 at the owner's word (\"Build those first 3 starting with ledger first\"; of the 21 countries read first: \"It should cover across every country\"; \"Retry the blocked tax facts once all countries land\"): the tax on a screen worker's pay in North Macedonia: a resident's income tax, social contributions, what is withheld at source, a non-resident artiste's withholding, an author's treatment, VAT and the tax year. Research and retry subagents (workbench/briefs/BRIEF-tax.md, BRIEF-tax-retry.md), every quote checked by the lead against its saved page.",
+ "figures": [
+  {
+   "item": "residents",
+   "finding": "A resident pays a flat 10% personal income tax on pay, self-employment income and royalties (15% on gambling gains); no regional layer was found.",
+   "value": {
+    "currency": "MKD",
+    "brackets": [
+     {
+      "from": 0,
+      "to": null,
+      "rate": 0.1
+     }
+    ],
+    "regional": null
+   },
+   "applies": "Residents (worldwide income)",
+   "sources": [
+    {
+     "src": 0,
+     "said": "As of 1 January 2023 onwards, a 10% flat tax rate is applicable on individual's income from work, self-employment income, income from royalties and industrial property rights"
+    }
+   ]
+  },
+  {
+   "item": "social",
+   "finding": "Social contributions on gross pay are withheld from the employee: pension and disability 18.8%, health 7.5%, employment 1.2% and additional health 0.5% (28% in all), on a monthly base from 50% of the average salary up to 16 average salaries.",
+   "value": {
+    "employee": {
+     "pension": 0.188,
+     "health": 0.075,
+     "employment": 0.012,
+     "additionalHealth": 0.005,
+     "total": 0.28
+    },
+    "employer": 0,
+    "baseMinMonthly": "50% of average salary",
+    "baseMaxMonthly": "16 average salaries"
+   },
+   "applies": "Employees",
+   "sources": [
+    {
+     "src": 1,
+     "said": "which on a monthly basis is 50% of the average salary paid in North Macedonia. The highest base for payment of mandatory social security contributions on a monthly basis is 16 average salaries paid in North Macedonia. … Employers are obligated to calculate, withhold from employees’ gross salary, and pay into the accounts of respective funds the compulsory social contributions and personal income tax (PIT). The current level of the compulsory social contributions on gross salary is as follows: Pension and disability insurance: 18.8%. Health insurance: 7.5%. Employment insurance: 1.2%. Additional health insurance: 0.5%."
+    }
+   ]
+  },
+  {
+   "item": "withholding",
+   "finding": "A domestic company or other payer keeping accounts must calculate, withhold and pay the 10% income tax before paying any taxable income to an individual (pay or fee).",
+   "value": {
+    "rate": 0.1,
+    "when": "before payment"
+   },
+   "applies": "Employees and individuals paid by domestic payers",
+   "sources": [
+    {
+     "src": 2,
+     "said": "Before payment of any taxable income to individuals, taxpayers that are domestic companies and domestic taxpayers that keep accounting records are obligated to calculate, withhold, and pay PIT on behalf of the individuals."
+    }
+   ]
+  },
+  {
+   "item": "nonResident",
+   "finding": "A non-resident is taxed on income derived in North Macedonia at the same 10% rate, withheld by the payer; payments abroad for entertainment or sporting activities in the country are listed for withholding (10% without a treaty).",
+   "value": {
+    "rate": 0.1,
+    "base": "income derived in North Macedonia",
+    "final": "withheld by payer"
+   },
+   "applies": "Non-residents",
+   "sources": [
+    {
+     "src": 0,
+     "said": "Non-residents are taxed on their income derived in the Macedonian territory."
+    },
+    {
+     "src": 3,
+     "said": "Income from entertainment or sporting activities in North Macedonia. … Non-treaty 10 10 10 10"
+    }
+   ]
+  },
+  {
+   "item": "authors",
+   "finding": "Income from copyright and related rights (film work included) is taxed at 10% on a base reduced by recognised expenses of 20% to 50%.",
+   "value": {
+    "rate": 0.1,
+    "expenseDeduction": [
+     0.2,
+     0.5
+    ]
+   },
+   "applies": "Authors and holders of related rights",
+   "sources": [
+    {
+     "src": 4,
+     "said": "Income from copyrights is the compensation realised by the individual from artwork and related rights regulated under the Law on Copyrights and Related rights (e.g. paintings, artistic work in music, film, etc.). The tax base is decreased by the amount of recognised expenses that range between 20% and 50%."
+    }
+   ]
+  },
+  {
+   "item": "vat",
+   "finding": "A freelancer's fee bears VAT at 18% once annual turnover exceeds MKD 2 million (or is projected to).",
+   "value": {
+    "currency": "MKD",
+    "rate": 0.18,
+    "reduced": [
+     0.05,
+     0.1
+    ],
+    "threshold": 2000000
+   },
+   "applies": "Taxable persons",
+   "sources": [
+    {
+     "src": 5,
+     "said": "The standard VAT rate is 18%. … All taxpayers whose total annual turnover exceeds MKD 2 million or whose total supplies, as projected at the beginning of the business activity, will exceed this amount are liable to register for VAT purposes."
+    }
+   ]
+  },
+  {
+   "item": "year",
+   "finding": "The tax year is the calendar year; the Public Revenue Office sends a draft annual return by 30 April, to be confirmed or corrected by 31 May; those with business income file by 15 March.",
+   "value": {
+    "start": "01-01",
+    "end": "12-31",
+    "draftReturnBy": "04-30",
+    "confirmBy": "05-31",
+    "businessReturnDue": "03-15"
+   },
+   "applies": "Individuals",
+   "sources": [
+    {
+     "src": 2,
+     "said": "The tax year is the calendar year. … The PRO would deliver to each taxpayer the draft annual tax return for the calendar year by 30 April of the following year. Within the next month (until 31 May), the taxpayer should confirm the correctness of the data included in the draft return … submit annual accounts and annual tax return by 15 March of the following year"
+    }
+   ]
+  }
+ ],
+ "country": "MK",
+ "sources": [
+  {
+   "url": "https://taxsummaries.pwc.com/north-macedonia/individual/taxes-on-personal-income",
+   "title": "North Macedonia - Individual - Taxes on personal income (PwC, reviewed 23 July 2026)",
+   "read": "2026-11-01",
+   "kind": "secondary",
+   "quotes": "https://www.ujp.gov.mk/",
+   "said": "As of 1 January 2023 onwards, a 10% flat tax rate is applicable on individual's income from work, self-employment income, income from royalties and industrial property rights … Non-residents are taxed on their income derived in the Macedonian territory."
+  },
+  {
+   "url": "https://taxsummaries.pwc.com/north-macedonia/individual/other-taxes",
+   "title": "North Macedonia - Individual - Other taxes (PwC, reviewed 23 July 2026)",
+   "read": "2026-11-01",
+   "kind": "secondary",
+   "quotes": "https://www.ujp.gov.mk/",
+   "said": "which on a monthly basis is 50% of the average salary paid in North Macedonia. The highest base for payment of mandatory social security contributions on a monthly basis is 16 average salaries paid in North Macedonia. … Employers are obligated to calculate, withhold from employees’ gross salary, and pay into the accounts of respective funds the compulsory social contributions and personal income tax (PIT). The current level of the compulsory social contributions on gross salary is as follows: Pension and disability insurance: 18.8%. Health insurance: 7.5%. Employment insurance: 1.2%. Additional health insurance: 0.5%."
+  },
+  {
+   "url": "https://taxsummaries.pwc.com/north-macedonia/individual/tax-administration",
+   "title": "North Macedonia - Individual - Tax administration (PwC, reviewed 23 July 2026)",
+   "read": "2026-11-01",
+   "kind": "secondary",
+   "quotes": "https://www.ujp.gov.mk/",
+   "said": "Before payment of any taxable income to individuals, taxpayers that are domestic companies and domestic taxpayers that keep accounting records are obligated to calculate, withhold, and pay PIT on behalf of the individuals. … The tax year is the calendar year. … The PRO would deliver to each taxpayer the draft annual tax return for the calendar year by 30 April of the following year. Within the next month (until 31 May), the taxpayer should confirm the correctness of the data included in the draft return … submit annual accounts and annual tax return by 15 March of the following year"
+  },
+  {
+   "url": "https://taxsummaries.pwc.com/north-macedonia/corporate/withholding-taxes",
+   "title": "North Macedonia - Corporate - Withholding taxes (PwC, reviewed 23 July 2026)",
+   "read": "2026-11-01",
+   "kind": "secondary",
+   "quotes": "https://www.ujp.gov.mk/",
+   "said": "Income from entertainment or sporting activities in North Macedonia. … Non-treaty 10 10 10 10"
+  },
+  {
+   "url": "https://taxsummaries.pwc.com/north-macedonia/individual/income-determination",
+   "title": "North Macedonia - Individual - Income determination (PwC, reviewed 23 July 2026)",
+   "read": "2026-11-01",
+   "kind": "secondary",
+   "quotes": "https://www.ujp.gov.mk/",
+   "said": "Income from copyrights is the compensation realised by the individual from artwork and related rights regulated under the Law on Copyrights and Related rights (e.g. paintings, artistic work in music, film, etc.). The tax base is decreased by the amount of recognised expenses that range between 20% and 50%."
+  },
+  {
+   "url": "https://taxsummaries.pwc.com/north-macedonia/corporate/other-taxes",
+   "title": "North Macedonia - Corporate - Other taxes (PwC, reviewed 23 July 2026)",
+   "read": "2026-11-01",
+   "kind": "secondary",
+   "quotes": "https://www.ujp.gov.mk/",
+   "said": "The standard VAT rate is 18%. … All taxpayers whose total annual turnover exceeds MKD 2 million or whose total supplies, as projected at the beginning of the business activity, will exceed this amount are liable to register for VAT purposes."
+  }
+ ],
+ "blockers": [
+  {
+   "item": "residents",
+   "sought": "The personal exemption (лично ослободување) deducted from monthly pay for 2026, and the 2026 average salary that sets the contribution base",
+   "tried": {
+    "institution": "2026-11-01: ujp.gov.mk/mk read: a near-empty page (80 words); /mk/vodic/category/1013 returned HTTP 500 || retry 2026-11-01 (world round): ujp.gov.mk answers: its guide on employment income (vodic/category/144, saved MK-ujp-vodic-144.html) names the monthly 'даночно намалување' (tax reduction) deducted from pay but gives no amount; category 595 (exemptions) read: no amount; the Personal Income Tax Law as updated to Sl. vesnik 274 of 20.12.2022 (saved MK-zdld-2022.pdf) is a 39-page scan, and no Macedonian OCR data is installed here (tesseract has eng, nor only), so it could not be read",
+    "official-register": "2026-11-01: Службен весник text of the PIT Law not reached || retry 2026-11-01 (world round): slvesnik.com.mk (Služben vesnik) does not answer (curl 000); finance.gov.mk answers (home page), no 2026 amount found on it",
+    "web-search": "2026-11-01: \"УЈП лично ослободување 2026 износ денари месечно данок на личен доход\": no Macedonian result || retry 2026-11-01 (world round): WebSearch refused 2026-11-01 (the turn's shared 200-search budget exhausted)",
+    "trade-press": "2026-11-01: PwC North Macedonia individual pages read: no exemption figure || retry 2026-11-01 (world round): PwC North Macedonia (read before): no exemption figure",
+    "archive": "2026-11-01: web.archive.org unreachable through the proxy this session || retry 2026-11-01 (world round): web.archive.org and archive.ph reset the connection; arquivo.pt 403"
+   }
+  }
+ ]
+}

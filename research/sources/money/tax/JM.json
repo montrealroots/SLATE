@@ -1,0 +1,209 @@
+{
+ "topic": "tax.JM",
+ "read": "2026-11-01",
+ "note": "Read 2026-11-01 at the owner's word (\"Build those first 3 starting with ledger first\"; of the 21 countries read first: \"It should cover across every country\"; \"Retry the blocked tax facts once all countries land\"): the tax on a screen worker's pay in Jamaica: a resident's income tax, social contributions, what is withheld at source, a non-resident artiste's withholding, an author's treatment, VAT and the tax year. Research and retry subagents (workbench/briefs/BRIEF-tax.md, BRIEF-tax-retry.md), every quote checked by the lead against its saved page.",
+ "figures": [
+  {
+   "item": "residents",
+   "finding": "A resident pays nothing on the first JMD 1,799,376 of income (JMD 1,902,360 from 1 April 2026), 25% above that to JMD 6 million and 30% above; there are no other personal allowances.",
+   "value": {
+    "currency": "JMD",
+    "throughMarch2026": [
+     {
+      "from": 0,
+      "to": 1799376,
+      "rate": 0
+     },
+     {
+      "from": 1799376,
+      "to": 6000000,
+      "rate": 0.25
+     },
+     {
+      "from": 6000000,
+      "to": null,
+      "rate": 0.3
+     }
+    ],
+    "fromApril2026": [
+     {
+      "from": 0,
+      "to": 1902360,
+      "rate": 0
+     },
+     {
+      "from": 1902360,
+      "to": 6000000,
+      "rate": 0.25
+     },
+     {
+      "from": 6000000,
+      "to": null,
+      "rate": 0.3
+     }
+    ],
+    "regionalLayer": null
+   },
+   "applies": "Jamaican residents; the year of assessment is the calendar year 2026, with the threshold rising on 1 April 2026.",
+   "sources": [
+    {
+     "src": 0,
+     "said": "Rates: The first JMD 1,799,376 (JMD 1,902,360 as from 1 April 2026) of an individual resident’s income is tax free. Income earned in excess of the tax free threshold up to a total income of JMD 6 million is taxed at a rate of 25%. Taxable income exceeding JMD 6 million is taxed at 30%."
+    },
+    {
+     "src": 0,
+     "said": "There are no personal allowances."
+    }
+   ]
+  },
+  {
+   "item": "year",
+   "finding": "The tax year is the calendar year; the return and any balance are due by 15 March 2027, with quarterly advance payments by 15 March, June, September and December where tax is not withheld.",
+   "value": {
+    "taxYear": {
+     "from": "2026-01-01",
+     "to": "2026-12-31"
+    },
+    "returnDue": "2027-03-15",
+    "advances": [
+     "03-15",
+     "06-15",
+     "09-15",
+     "12-15"
+    ],
+    "currency": "JMD"
+   },
+   "applies": "Jamaican individuals.",
+   "sources": [
+    {
+     "src": 0,
+     "said": "Tax year: The tax year is the calendar year."
+    },
+    {
+     "src": 0,
+     "said": "Individuals must file a tax return and pay any tax due on or before 15 March of the year following the year of assessment. Advance payments of income tax are payable in four equal installments, due on or before the 15th day of March, June, September, and December of the year of assessment."
+    }
+   ]
+  },
+  {
+   "item": "withholding",
+   "finding": "Income tax is usually withheld from pay by the employer (PAYE); a self-employed person, or one paid by a non-resident employer, makes the quarterly advance payments.",
+   "value": {
+    "scheme": "PAYE by employer; quarterly advances otherwise"
+   },
+   "applies": "Jamaican individuals.",
+   "sources": [
+    {
+     "src": 0,
+     "said": "This tax usually is withheld from employment income by employers; however, where the income of an individual is not an emolument or where an employer is nonresident, the liable individual taxpayer must make the advance payments."
+    }
+   ]
+  },
+  {
+   "item": "social",
+   "finding": "Pay bears NIS 3% employee and 3% employer up to JMD 5 million a year (self-employed 6%); NHT 2% employee, 3% employer (self-employed 3%); education tax 2.25% employee, 3.5% employer (self-employed 2.25%) after NIS and approved pension; and the employer's 3% HEART/NSTA levy where payroll exceeds JMD 173,328.",
+   "value": {
+    "currency": "JMD",
+    "nis": {
+     "employee": 0.03,
+     "employer": 0.03,
+     "selfEmployed": 0.06,
+     "ceilingAnnual": 5000000
+    },
+    "nht": {
+     "employee": 0.02,
+     "employer": 0.03,
+     "selfEmployed": 0.03
+    },
+    "educationTax": {
+     "employee": 0.0225,
+     "employer": 0.035,
+     "selfEmployed": 0.0225
+    },
+    "heart": {
+     "employer": 0.03,
+     "payrollAbove": 173328
+    }
+   },
+   "applies": "Employees and self-employed persons in Jamaica.",
+   "sources": [
+    {
+     "src": 0,
+     "said": "Employers are required to pay National Insurance Scheme (NIS) contributions at a rate of 3% of the remuneration paid to each employee, up to JMD 5 million per year per employee. Employers also are required to withhold 3% of each employee’s emoluments up to JMD 5 million per year and remit this amount to the NIS. Self-employed persons are required to contribute at a rate of 6% of earnings. Employers are required to make National Housing Trust contributions at a rate of 3%, while employees contribute at a rate of 2% on all taxable emoluments received from employment. Self-employed persons also are required to contribute at a rate of 3% of earnings."
+    },
+    {
+     "src": 0,
+     "said": "Where an employer’s gross annual payroll exceeds JMD 173,328, the employer is required to make Human Employment and Resource Training Trust contributions, payable at a rate of 3% of the total emoluments of its employees."
+    },
+    {
+     "src": 0,
+     "said": "An education tax is charged at a rate of 3.5% for employers and 2.25% for employees on emoluments after the deduction of NIS and approved superannuation scheme contributions. Self-employed persons are required to contribute at a rate of 2.25% of earnings."
+    }
+   ]
+  },
+  {
+   "item": "authors",
+   "finding": "Royalties paid to a resident bear no withholding; paid to a non-resident individual they bear 25% of the gross (15% to a CARICOM resident), as do technical-service fees.",
+   "value": {
+    "residents": 0,
+    "nonResidentIndividual": 0.25,
+    "caricom": 0.15
+   },
+   "applies": "Royalty payments from Jamaica.",
+   "sources": [
+    {
+     "src": 0,
+     "said": "Royalties: Royalties paid to residents are not subject to withholding tax."
+    },
+    {
+     "src": 0,
+     "said": "The withholding tax rate is 15% on royalties paid to a resident of a CARICOM jurisdiction; otherwise, royalties paid to nonresident companies and individuals are subject to withholding tax at rates of 33.33% and 25% on the gross amount, respectively."
+    }
+   ]
+  },
+  {
+   "item": "vat",
+   "finding": "A freelancer must register for general consumption tax once annual turnover exceeds JMD 15 million; the standard rate is 15%.",
+   "value": {
+    "currency": "JMD",
+    "threshold": 15000000,
+    "standardRate": 0.15
+   },
+   "applies": "Taxable activity in Jamaica.",
+   "sources": [
+    {
+     "src": 0,
+     "said": "The standard GCT rate is 15%."
+    },
+    {
+     "src": 0,
+     "said": "Registration: Registration is required by any person carrying on a taxable activity that has an annual turnover exceeding JMD 15 million."
+    }
+   ]
+  }
+ ],
+ "country": "JM",
+ "sources": [
+  {
+   "url": "https://www.deloitte.com/content/dam/assets-shared/docs/services/tax/2026/dttl-tax-jamaicahighlights-2026.pdf",
+   "title": "Jamaica Highlights 2026 (Deloitte International Tax)",
+   "read": "2026-11-01",
+   "kind": "secondary",
+   "quotes": "https://www.jamaicatax.gov.jm",
+   "said": "Rates: The first JMD 1,799,376 (JMD 1,902,360 as from 1 April 2026) of an individual resident’s income is tax free. Income earned in excess of the tax free threshold up to a total income of JMD 6 million is taxed at a rate of 25%. Taxable income exceeding JMD 6 million is taxed at 30%. … There are no personal allowances. … Tax year: The tax year is the calendar year. … Individuals must file a tax return and pay any tax due on or before 15 March of the year following the year of assessment. Advance payments of income tax are payable in four equal installments, due on or before the 15th day of March, June, September, and December of the year of assessment. … This tax usually is withheld from employment income by employers; however, where the income of an individual is not an emolument or where an employer is nonresident, the liable individual taxpayer must make the advance payments. … Employers are required to pay National Insurance Scheme (NIS) contributions at a rate of 3% of the remuneration paid to each employee, up to JMD 5 million per year per employee. Employers also are required to withhold 3% of each employee’s emoluments up to JMD 5 million per year and remit this amount to the NIS. Self-employed persons are required to contribute at a rate of 6% of earnings. Employers are required to make National Housing Trust contributions at a rate of 3%, while employees contribute at a rate of 2% on all taxable emoluments received from employment. Self-employed persons also are required to contribute at a rate of 3% of earnings. … Where an employer’s gross annual payroll exceeds JMD 173,328, the employer is required to make Human Employment and Resource Training Trust contributions, payable at a rate of 3% of the total emoluments of its employees. … An education tax is charged at a rate of 3.5% for employers and 2.25% for employees on emoluments after the deduction of NIS and approved superannuation scheme contributions. Self-employed persons are required to contribute at a rate of 2.25% of earnings. … Royalties: Royalties paid to residents are not subject to withholding tax. … The withholding tax rate is 15% on royalties paid to a resident of a CARICOM jurisdiction; otherwise, royalties paid to nonresident companies and individuals are subject to withholding tax at rates of 33.33% and 25% on the gross amount, respectively. … The standard GCT rate is 15%. … Registration: Registration is required by any person carrying on a taxable activity that has an annual turnover exceeding JMD 15 million."
+  }
+ ],
+ "blockers": [
+  {
+   "item": "nonResident",
+   "sought": "The tax on a non-resident performer's, writer's or director's fee for work in Jamaica (rate, base, finality)",
+   "tried": {
+    "institution": "jamaicatax.gov.jm reachable (HTTP 200); the 2026 threshold notice and the non-resident entertainer guidance not located in this pass || 2026-11-01 retry: jamaicatax.gov.jm read: Withholding Tax page (saved JM-taj-withholding-tax.html) covers only the 3% withholding on specified services; Withholding Tax Hub and Rates and Fees pages fetched: nothing on non-resident entertainers.",
+    "official-register": "laws.moj.gov.jm not reachable (curl 000) 2026-11-01 || 2026-11-01 retry: laws.moj.gov.jm still does not answer (curl 000); Income Tax Act s. 30/31 (payments to non-residents) not read.",
+    "web-search": "not searched beyond the Deloitte summary || 2026-11-01 retry: WebSearch refused by the tool on 2026-11-01: the turn's shared 200-search limit was reached before this query; no other search route used.",
+    "trade-press": "Deloitte Jamaica Highlights 2026 read || 2026-11-01 retry: Deloitte Jamaica Highlights 2026 re-read (saved JM-deloitte-2026.pdf): non-resident individuals 25% on interest, royalties and technical service fees (15% CARICOM); no entertainer rule or finality.",
+    "archive": "web.archive.org not reachable (curl 000) 2026-11-01 || 2026-11-01 retry: archive.org/wayback/available lists a 2022-02-16 snapshot of the TAJ withholding page; web.archive.org resets https and returns 403 on http from this environment (2026-11-01), so it was not read."
+   }
+  }
+ ]
+}

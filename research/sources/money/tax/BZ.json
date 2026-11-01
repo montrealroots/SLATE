@@ -1,0 +1,252 @@
+{
+ "topic": "tax.BZ",
+ "read": "2026-11-01",
+ "note": "Read 2026-11-01 at the owner's word (\"Build those first 3 starting with ledger first\"; of the 21 countries read first: \"It should cover across every country\"; \"Retry the blocked tax facts once all countries land\"): the tax on a screen worker's pay in Belize: a resident's income tax, social contributions, what is withheld at source, a non-resident artiste's withholding, an author's treatment, VAT and the tax year. Research and retry subagents (workbench/briefs/BRIEF-tax.md, BRIEF-tax-retry.md), every quote checked by the lead against its saved page.",
+ "figures": [
+  {
+   "item": "residents",
+   "finding": "An employed resident of Belize pays income tax (PAYE) of 25% on taxable income, with a basic allowance of BZ$25,600; a person earning BZ$26,000 a year or less is exempt.",
+   "value": {
+    "currency": "BZD",
+    "brackets": [
+     {
+      "from": 0,
+      "to": 25600,
+      "rate": 0
+     },
+     {
+      "from": 25600,
+      "to": null,
+      "rate": 0.25
+     }
+    ],
+    "exemptAtOrBelow": 26000
+   },
+   "applies": "Employment income. The same page's summary line reads \"25% on incomes above BZ$29,000 per year\"; the detailed figures are held. Bts.gov.bz could not be read (see blockers).",
+   "sources": [
+    {
+     "src": 0,
+     "said": "Income tax is levied at a rate of 25% on the taxable income of employed residents in Belize whose annual earnings exceed BZ$26,000 (US$13,000). Individuals earning less than this amount are exempt from income tax. The basic allowance is BZ$25,600 (US$12,800)."
+    },
+    {
+     "src": 0,
+     "said": "Income Tax 25% on incomes above BZ$29,000 per year."
+    }
+   ]
+  },
+  {
+   "item": "withholding",
+   "finding": "Income tax on employment is collected as PAYE, applying only to employee income.",
+   "value": {
+    "method": "PAYE"
+   },
+   "applies": "Tables not read.",
+   "sources": [
+    {
+     "src": 0,
+     "said": "This tax, known as PAYE, applies exclusively to employee income and is not considered a cost to be borne by the employer or business."
+    }
+   ]
+  },
+  {
+   "item": "social",
+   "finding": "Social security is 10% of weekly insurable earnings by wage band, split so the employee pays 1.88% at the lowest band rising to 4.5% (employer 8.13% falling to 5.5%) from BZ$500 a week, on insurable earnings capped at BZ$520 a week.",
+   "value": {
+    "currency": "BZD",
+    "total": 0.1,
+    "weeklyCeiling": 520,
+    "top": {
+     "from": 500,
+     "employee": 0.045,
+     "employer": 0.055
+    },
+    "bottom": {
+     "employee": 0.0188,
+     "employer": 0.0813
+    }
+   },
+   "applies": "Schedule effective 4 April 2022 (latest found).",
+   "sources": [
+    {
+     "src": 1,
+     "said": "$500.00 - OVER $520.00 $23.40 $28.60 $52.00 4.50% 5.50% 10%"
+    },
+    {
+     "src": 1,
+     "said": "UNDER $70.00 $55.00 $1.03 $4.47 $5.50 1.88% 8.13% 10%"
+    }
+   ]
+  },
+  {
+   "item": "authors",
+   "finding": "A self-employed person with annual earnings above BZ$75,000 pays business tax on receipts: 6% for professional services, 5% to 15% on commissions and royalties.",
+   "value": {
+    "currency": "BZD",
+    "threshold": 75000,
+    "professionalServices": 0.06,
+    "commissionsRoyalties": [
+     0.05,
+     0.15
+    ]
+   },
+   "applies": "2026.",
+   "sources": [
+    {
+     "src": 0,
+     "said": "Businesses, companies, and self-employed persons with annual earnings exceeding BZ$75,000 are required to pay business tax."
+    },
+    {
+     "src": 0,
+     "said": "Professional Services 6.0% Commissions & Royalties 5.0% - 15.0%"
+    }
+   ]
+  },
+  {
+   "item": "vat",
+   "finding": "General Sales Tax is 12.5%; businesses with annual taxable turnover above BZ$75,000 must register.",
+   "value": {
+    "currency": "BZD",
+    "rate": 0.125,
+    "threshold": 75000
+   },
+   "applies": "2026.",
+   "sources": [
+    {
+     "src": 0,
+     "said": "Belize's General Sales Tax (GST) is a 12.5% consumer tax on goods and services."
+    },
+    {
+     "src": 0,
+     "said": "Businesses with annual turnover exceeding $75,000 (US$37,500) from taxable activities must register for GST with the Department of GST."
+    }
+   ]
+  },
+  {
+   "item": "residents",
+   "finding": "The Act as revised to 2020 taxes an employed resident at 25% of chargeable income after a basic deduction that falls with income ($25,600 up to $26,000, $24,600 to $27,000, $22,600 to $29,000, $19,600 above); from 1 January 2025 the Government raised the exemption so that those earning under $29,000 pay nothing.",
+   "value": {
+    "currency": "BZD",
+    "rate": 0.25,
+    "basicDeduction2020Edition": [
+     {
+      "incomeTo": 26000,
+      "deduction": 25600
+     },
+     {
+      "incomeTo": 27000,
+      "deduction": 24600
+     },
+     {
+      "incomeTo": 29000,
+      "deduction": 22600
+     },
+     {
+      "incomeTo": null,
+      "deduction": 19600
+     }
+    ],
+    "exemptBelowFrom2025": 29000
+   },
+   "applies": "Employed residents; Act No. 40 of 2024's own text (the change from 2025) was not read: nationalassembly.gov.bz is suspended.",
+   "sources": [
+    {
+     "src": 2,
+     "said": "does not exceed twenty six thousand dollars … $25,600.00 … in the case of all other employed individuals … $19,600.00 … income of every employed person shall be charged at the rate of … twenty-five per centum of the chargeable income"
+    },
+    {
+     "src": 3,
+     "said": "Effective Janu … ary 1, 2025, Be … lizean workers earning less than $29,000 annually will be exempt from paying in … come tax"
+    }
+   ]
+  },
+  {
+   "item": "year",
+   "finding": "The basis year is the calendar year, and a return is due by the last day of the third month after it (31 March); an employee whose only income is pay need not file unless claiming a refund or asked.",
+   "value": {
+    "start": "01-01",
+    "end": "12-31",
+    "returnDue": "03-31"
+   },
+   "applies": "Every person chargeable, s.2 and s.31 of Cap. 55.",
+   "sources": [
+    {
+     "src": 2,
+     "said": "“basis year” means the calendar year coinciding with the year of … last day of the third month following the end of the basis year a … return of income for that year in the form prescribed and … employee need not file a return if his only income was"
+    }
+   ]
+  },
+  {
+   "item": "nonResident",
+   "finding": "A non-resident is charged as if resident, through the agent or payer in Belize; a payer withholds 25% of management fees, technical services or similar services paid to a non-resident, and 3% of any gross contract payment for services of $3,000 or more, which is a credit against the tax due.",
+   "value": {
+    "s113_3_rate": 0.25,
+    "s112_contractRate": 0.03,
+    "s112_threshold": 3000,
+    "currency": "BZD"
+   },
+   "applies": "Whether a performer's fee is a 'similar service' under s.113(3) is not stated (see blocker).",
+   "sources": [
+    {
+     "src": 2,
+     "said": "A person not resident in Belize, in this section referred … to as a non-resident person, shall be assessable and chargeable … Every person who pays any management fees, rental of … plant or equipment, or charges for technical services and … insurance premium to a non-resident shall deduct therefrom tax … at the rate of twenty-five percent of such payment … “management fees” means payment for the provision of … industrial or commercial advice or for management or technical … services or similar services or facilities … withholding tax at the rate of three per centum of such payments … Where the gross contract payment is less than three … thousand dollars the provisions of this section shall not apply"
+    }
+   ]
+  }
+ ],
+ "country": "BZ",
+ "sources": [
+  {
+   "url": "https://beltraide.bz/?p=5252",
+   "title": "Taxes in Belize (BELTRAIDE, Belize Trade and Investment Development Service)",
+   "read": "2026-11-01",
+   "kind": "primary",
+   "said": "Income tax is levied at a rate of 25% on the taxable income of employed residents in Belize whose annual earnings exceed BZ$26,000 (US$13,000). Individuals earning less than this amount are exempt from income tax. The basic allowance is BZ$25,600 (US$12,800). … Income Tax 25% on incomes above BZ$29,000 per year. … This tax, known as PAYE, applies exclusively to employee income and is not considered a cost to be borne by the employer or business. … Businesses, companies, and self-employed persons with annual earnings exceeding BZ$75,000 are required to pay business tax. … Professional Services 6.0% Commissions & Royalties 5.0% - 15.0% … Belize's General Sales Tax (GST) is a 12.5% consumer tax on goods and services. … Businesses with annual turnover exceeding $75,000 (US$37,500) from taxable activities must register for GST with the Department of GST."
+  },
+  {
+   "url": "https://socialsecurity.org.bz/wp-content/uploads/2022/03/Cont_Ben_Schedule.pdf",
+   "title": "Contribution & Benefit Schedule, effective 4 April 2022 (Social Security Board, Belize)",
+   "read": "2026-11-01",
+   "kind": "primary",
+   "said": "$500.00 - OVER $520.00 $23.40 $28.60 $52.00 4.50% 5.50% 10% … UNDER $70.00 $55.00 $1.03 $4.47 $5.50 1.88% 8.13% 10%"
+  },
+  {
+   "url": "https://www.agm.gov.bz/uploads/laws/63976e6032352_Cap_55_Income_and_Business_Tax_Act.pdf",
+   "title": "Income and Business Tax Act, Chapter 55, Revised Edition 2020 (laws as at 31 December 2020), Attorney General's Ministry of Belize",
+   "read": "2026-11-01",
+   "kind": "primary",
+   "said": "does not exceed twenty six thousand dollars … $25,600.00 … in the case of all other employed individuals … $19,600.00 … income of every employed person shall be charged at the rate of … twenty-five per centum of the chargeable income … “basis year” means the calendar year coinciding with the year of … last day of the third month following the end of the basis year a … return of income for that year in the form prescribed and … employee need not file a return if his only income was … A person not resident in Belize, in this section referred … to as a non-resident person, shall be assessable and chargeable … Every person who pays any management fees, rental of … plant or equipment, or charges for technical services and … insurance premium to a non-resident shall deduct therefrom tax … at the rate of twenty-five percent of such payment … “management fees” means payment for the provision of … industrial or commercial advice or for management or technical … services or similar services or facilities … withholding tax at the rate of three per centum of such payments … Where the gross contract payment is less than three … thousand dollars the provisions of this section shall not apply"
+  },
+  {
+   "url": "https://www.thereporter.bz/post/income-tax-threshold-raised-wider-relief-for-middle-class-workers",
+   "title": "Income Tax Threshold Raised, Wider Relief for Middle-Class Workers (The Reporter, 22 September 2024)",
+   "read": "2026-11-01",
+   "kind": "secondary",
+   "quotes": "https://nationalassembly.gov.bz/wp-content/uploads/2024/12/Act-No.-40-of-2024-Income-and-Business-Tax-Amendment-Act-2024.pdf",
+   "said": "Effective Janu … ary 1, 2025, Be … lizean workers earning less than $29,000 annually will be exempt from paying in … come tax"
+  }
+ ],
+ "blockers": [
+  {
+   "item": "residents",
+   "sought": "The Belize Tax Service's own 2026 statement of the income tax allowance and rate (Income and Business Tax Act).",
+   "tried": {
+    "institution": "bts.gov.bz serves a script-only page (\"You need to enable JavaScript\"); not read another way. || 2026-11-01 retry: bts.gov.bz is a script app whose text loads from an API (media.bts.gov.bz) with the page's own key; its wp-content PDFs (TD4 deadline notice 2026, employee return guide) now return the app shell, not the files; not read another way",
+    "official-register": "Belize laws online not reached in the time. || 2026-11-01 retry: agm.gov.bz (Attorney General's Ministry) read: Cap. 55 Revised Edition 2020, s.16 (allowances to $29,000) and s.20 (25%): now a figure. Act No. 40 of 2024 (the amendment raising the threshold) at nationalassembly.gov.bz returns 'Account Suspended'",
+    "web-search": "Searched; payroll sites only. || 2026-11-01 retry: 'Belize Income and Business Tax Act chargeable income $26,000 25% personal allowance employees 2026 Belize Tax Service' and 'media.bts.gov.bz uploads income tax PAYE pdf': found the Act on agm.gov.bz, Act 40 of 2024 on nationalassembly.gov.bz (down), and The Reporter on the $29,000 threshold",
+    "trade-press": "KPMG TaxNewsFlash on the 2026/27 budget (e-invoicing) fetched as a script page. || 2026-11-01 retry: The Reporter (22 September 2024) quoting the Prime Minister's State of the Nation address: under $29,000 exempt from 1 January 2025: now a figure, secondary",
+    "archive": "web.archive.org reset the connection. || 2026-11-01 retry: archive.org availability API reachable, but web.archive.org is refused from this environment (http 'Blocked by egress policy', https connection fails), so no snapshot of bts.gov.bz could be read (2026-11-01)"
+   }
+  },
+  {
+   "item": "nonResident",
+   "sought": "Whether a non-resident performer's or director's fee falls under s.113(3)'s 25% (management fees, 'technical services or similar services') or is assessed under s.25, and whether the withholding is final",
+   "tried": {
+    "institution": "bts.gov.bz unreadable. || 2026-11-01 retry: bts.gov.bz unreadable as above",
+    "official-register": "None. || 2026-11-01 retry: Cap. 55 Revised Edition 2020 read: s.25 charges a non-resident through his agent as if resident; s.113(3) withholds 25% on management fees, technical services and similar services paid to a non-resident; s.112 withholds 3% on gross contract payments for services of $3,000 or more; no section names a performer's fee: now a figure, the classification of a performer's fee left as the blocker",
+    "web-search": "Not found. || 2026-11-01 retry: 'Belize withholding tax non-resident 25% services entertainers \"Income and Business Tax Act\" section': no source names entertainers",
+    "trade-press": "None. || 2026-11-01 retry: San Pedro Sun (2014) and belize.org tax regime page cite s.113(3) 25% on management, professional or technical fees to non-residents; none names performers",
+    "archive": "Archive unreachable. || 2026-11-01 retry: archive.org availability API reachable, but web.archive.org is refused from this environment (http 'Blocked by egress policy', https connection fails), so no snapshot of bts.gov.bz could be read (2026-11-01)"
+   }
+  }
+ ]
+}

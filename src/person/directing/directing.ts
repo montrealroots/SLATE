@@ -32,10 +32,11 @@ import compiled from './markets.json' with { type: 'json' };
  * found an audience; Stephen Follows's count of 146,603 debuts), moved by a family in the business as Follows's debut
  * directors were (72% of those with family in film or TV went on to a second feature against 66% of everyone else; R-4622).
  *
- * Beyond the US, twenty markets (src/person/directing/markets.json, compiled by tools/person/markets-director from the
- * research, person.markets.director.<CC>): a job there is engaged under one of the market's agreements, paid its
- * minimum fees and given the periods it guarantees; where the research says nothing sets the pay, or couldn't find what
- * does, there is no minimum, and the player is told what isn't known.
+ * Beyond the US, the market of every country and territory whose research the engine can read (src/person/directing/
+ * markets.json, compiled by tools/person/markets-director from the research, person.markets.director.<CC>): a job there
+ * is engaged under one of the market's agreements, paid its minimum fees (a statute's floor of a director's pay where
+ * the research reads one as theirs) and given the periods it guarantees; where the research says nothing sets the pay,
+ * or couldn't find what does, there is no minimum, and the player is told what isn't known.
  *
  * The model's own figures (the spreads, how far a short schedule or a short cut carries, what the set takes from a
  * director's plan, a festival's pool and steepness, what a festival's selection says of an audience, what a pitch adds)
@@ -263,7 +264,7 @@ function dgaTerms(a: PrepArgs): Terms {
 }
 
 /** What a market's research couldn't find, by the item its blockers name. */
-export type Unknown = 'agreement' | 'fees' | 'periods' | 'union' | 'language' | 'none';
+export type Unknown = 'agreement' | 'fees' | 'periods' | 'union' | 'language' | 'none' | 'terms';
 type Range = readonly [number, number | null];
 type Tier = 'budget' | 'years' | 'minutes' | 'days';
 type When = Readonly<Partial<Record<Tier, Range>>>;
@@ -287,7 +288,7 @@ export interface MarketAgreement {
   readonly month: number | null;
   readonly short: { readonly upTo: number; readonly share: string } | null;
   readonly fees: readonly Fee[];
-  readonly periods: readonly { readonly form: Form; readonly part: 'prep-shoot' | 'cut'; readonly when: When; readonly days: number }[];
+  readonly periods: readonly { readonly form: Form; readonly part: 'prep-shoot' | 'cut' | 'prep'; readonly when: When; readonly days: number }[];
 }
 export interface Market {
   readonly agreements: readonly string[];
@@ -388,7 +389,7 @@ function marketTerms(a: PrepArgs, s: DirectingSlice, now: number): Terms {
   wholeAtLeast(a.shoot, 1, 'the shooting days');
   const shoot = a.shoot as number;
   const tier = { budget: budget ?? 0, minutes: minutes ?? 0, years: experience(s, now), days: 0 };
-  const guaranteed = (part: 'prep-shoot' | 'cut') => periods.find((p) => p.part === part && holds(p.when, tier))?.days;
+  const guaranteed = (part: 'prep-shoot' | 'cut' | 'prep') => periods.find((p) => p.part === part && holds(p.when, tier))?.days;
   const contract = (k: 'prep' | 'cut', days: number | undefined): number => {
     if (days === undefined) return (wholeAtLeast(a[k], 1, `the ${k} days`), a[k] as number);
     if (a[k] !== undefined) throw new Error(`${id} guarantees a ${a.form}'s ${k}`);
@@ -396,7 +397,8 @@ function marketTerms(a: PrepArgs, s: DirectingSlice, now: number): Terms {
   };
   const both = guaranteed('prep-shoot');
   if (shoot > (both ?? Infinity)) throw new Error(`${id} guarantees a ${a.form} ${both} days of prep and shoot, fewer than its shoot`);
-  const prepDays = contract('prep', both === undefined ? undefined : both - shoot);
+  // A prep guaranteed apart from the shoot is its own; one guaranteed with it is what the shoot leaves (the compile allows one of the two to a form).
+  const prepDays = contract('prep', guaranteed('prep') ?? (both === undefined ? undefined : both - shoot));
   const cutDays = contract('cut', guaranteed('cut'));
   // @slate:consumer directing.prep
   const job: Job = { ...tier, days: { prep: prepDays, shoot, cut: cutDays }, first: s.films.length === 0 };
@@ -422,6 +424,7 @@ export const MISSING: Readonly<Record<Unknown, string>> = {
   union: "the guild's fees or how a director joins",
   language: 'the language the work is made in',
   none: 'whether anything sets the pay where no agreement does',
+  terms: "whether any agreement, guild's rate or law sets a director's terms",
 };
 
 /** What the player is told of a market where its research couldn't find all of it: "a, b and c"; nothing where it is known whole, or in the US. */

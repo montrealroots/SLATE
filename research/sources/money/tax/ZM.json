@@ -1,0 +1,217 @@
+{
+ "topic": "tax.ZM",
+ "read": "2026-11-01",
+ "note": "Read 2026-11-01 at the owner's word (\"Build those first 3 starting with ledger first\"; of the 21 countries read first: \"It should cover across every country\"; \"Retry the blocked tax facts once all countries land\"): the tax on a screen worker's pay in Zambia: a resident's income tax, social contributions, what is withheld at source, a non-resident artiste's withholding, an author's treatment, VAT and the tax year. Research and retry subagents (workbench/briefs/BRIEF-tax.md, BRIEF-tax-retry.md), every quote checked by the lead against its saved page.",
+ "figures": [
+  {
+   "item": "residents",
+   "finding": "For the 2026 charge year the first ZMW 61,200 of taxable income is tax-free, then 20% to 85,200, 30% to 110,400 and 37% above; the same rates apply to non-residents.",
+   "value": {
+    "currency": "ZMW",
+    "brackets": [
+     {
+      "from": 0,
+      "to": 61200,
+      "rate": 0
+     },
+     {
+      "from": 61200,
+      "to": 85200,
+      "rate": 0.2
+     },
+     {
+      "from": 85200,
+      "to": 110400,
+      "rate": 0.3
+     },
+     {
+      "from": 110400,
+      "to": null,
+      "rate": 0.37
+     }
+    ]
+   },
+   "applies": "Charge year 2026.",
+   "sources": [
+    {
+     "src": 0,
+     "said": "The rates of income tax applicable to an individual for the 2026 charge year are as follows: Annual taxable income (ZMW) Rate of income tax (%) Up to 61,200 0 61,201 to 85,200 20 85,201 to 110,400 30 Over 110,400 37 In principle, the same rates apply to both Zambian and non-Zambian residents."
+    }
+   ]
+  },
+  {
+   "item": "year",
+   "finding": "The charge year ends 31 December; a person with income outside PAYE files quarterly provisional returns and the final return and balance by 21 June of the next year.",
+   "value": {
+    "start": "01-01",
+    "end": "12-31",
+    "returnDue": "06-21 following year",
+    "provisional": [
+     "03-31",
+     "06-30",
+     "09-30",
+     "12-31"
+    ]
+   },
+   "applies": "Charge year 2026.",
+   "sources": [
+    {
+     "src": 1,
+     "said": "Income tax is determined by reference to a charge year, being the period of 12 months ending on 31 December."
+    },
+    {
+     "src": 1,
+     "said": "The personal income tax return needs to be submitted by 21 June following the end of the tax year."
+    }
+   ]
+  },
+  {
+   "item": "social",
+   "finding": "Employer and employee each pay 5% of gross earnings to NAPSA, capped at ZMW 1,861.80 a month each for 2026, and 1% of basic salary each to National Health Insurance.",
+   "value": {
+    "currency": "ZMW",
+    "NAPSA": {
+     "employee": 0.05,
+     "employer": 0.05,
+     "monthlyCapEach": 1861.8
+    },
+    "NHI": {
+     "employee": 0.01,
+     "employer": 0.01,
+     "base": "basic salary"
+    }
+   },
+   "applies": "2026; self-employed terms not read.",
+   "sources": [
+    {
+     "src": 2,
+     "said": "the employee each make pension contributions to NAPSA at a rate of 5% of the employee’s gross earnings."
+    },
+    {
+     "src": 2,
+     "said": "Zambian and foreign employees and is capped at ZMW 1,861.80 for 2026 (ZMW 3,723.60 in total)."
+    },
+    {
+     "src": 2,
+     "said": "The National Health Insurance (NHI) Act requires that the employer and the employee each contribute 1% of the employee’s"
+    }
+   ]
+  },
+  {
+   "item": "withholding",
+   "finding": "Pay is taxed through PAYE; a small business with turnover between ZMW 12,000 and ZMW 5 million pays a 5% turnover tax instead of income tax and VAT (royalties excluded).",
+   "value": {
+    "turnoverTax": {
+     "rate": 0.05,
+     "from": 12000,
+     "to": 5000000
+    }
+   },
+   "applies": "2026.",
+   "sources": [
+    {
+     "src": 3,
+     "said": "A flat rate of 5% on business turnover will be applied where turnover is between ZMW 12,000 and ZMW 5 million per annum . Income that is subject to turnover tax will not be subject to income tax or VAT."
+    }
+   ]
+  },
+  {
+   "item": "nonResident",
+   "finding": "Public entertainment fees paid to a non-resident entertainer bear 20% withholding, a final tax for non-residents unless a treaty reduces it.",
+   "value": {
+    "rate": 0.2,
+    "final": true
+   },
+   "applies": "2026.",
+   "sources": [
+    {
+     "src": 4,
+     "said": "Public entertainment fees to entertainers/sports persons N/A 20"
+    },
+    {
+     "src": 2,
+     "said": "Withholding tax is a final tax for nonresidents. The rates may be reduced under an applicable tax treaty."
+    }
+   ]
+  },
+  {
+   "item": "authors",
+   "finding": "Royalties bear 15% withholding when paid to a resident and 20% to a non-resident.",
+   "value": {
+    "resident": 0.15,
+    "nonResident": 0.2
+   },
+   "applies": "2026.",
+   "sources": [
+    {
+     "src": 4,
+     "said": "Royalties 15 20"
+    }
+   ]
+  },
+  {
+   "item": "vat",
+   "finding": "VAT is 16%; registration is required once turnover exceeds or is expected to exceed ZMW 800,000 a year.",
+   "value": {
+    "currency": "ZMW",
+    "standard": 0.16,
+    "registrationThreshold": 800000
+   },
+   "applies": "2026.",
+   "sources": [
+    {
+     "src": 2,
+     "said": "of electronic services, to register for VAT if their turnover exceeds or is expected to exceed ZMW 800,000 per annum."
+    },
+    {
+     "src": 3,
+     "said": "VAT applies to standard rated supplies of goods and services at 16%."
+    }
+   ]
+  }
+ ],
+ "country": "ZM",
+ "sources": [
+  {
+   "url": "https://taxsummaries.pwc.com/zambia/individual/taxes-on-personal-income",
+   "title": "PwC Worldwide Tax Summaries: zambia Individual - Taxes on personal income",
+   "read": "2026-11-01",
+   "kind": "secondary",
+   "quotes": "https://www.zra.org.zm/",
+   "said": "The rates of income tax applicable to an individual for the 2026 charge year are as follows: Annual taxable income (ZMW) Rate of income tax (%) Up to 61,200 0 61,201 to 85,200 20 85,201 to 110,400 30 Over 110,400 37 In principle, the same rates apply to both Zambian and non-Zambian residents."
+  },
+  {
+   "url": "https://taxsummaries.pwc.com/zambia/individual/tax-administration",
+   "title": "PwC Worldwide Tax Summaries: zambia Individual - Tax administration",
+   "read": "2026-11-01",
+   "kind": "secondary",
+   "quotes": "https://www.zra.org.zm/",
+   "said": "Income tax is determined by reference to a charge year, being the period of 12 months ending on 31 December. … The personal income tax return needs to be submitted by 21 June following the end of the tax year."
+  },
+  {
+   "url": "https://www.deloitte.com/content/dam/assets-shared/docs/services/tax/2026/dttl-tax-zambiahighlights-2026.pdf",
+   "title": "Deloitte International Tax: Zambia Highlights 2026",
+   "read": "2026-11-01",
+   "kind": "secondary",
+   "quotes": "https://www.napsa.co.zm/",
+   "said": "the employee each make pension contributions to NAPSA at a rate of 5% of the employee’s gross earnings. … Zambian and foreign employees and is capped at ZMW 1,861.80 for 2026 (ZMW 3,723.60 in total). … The National Health Insurance (NHI) Act requires that the employer and the employee each contribute 1% of the employee’s … Withholding tax is a final tax for nonresidents. The rates may be reduced under an applicable tax treaty. … of electronic services, to register for VAT if their turnover exceeds or is expected to exceed ZMW 800,000 per annum."
+  },
+  {
+   "url": "https://taxsummaries.pwc.com/zambia/individual/other-taxes",
+   "title": "PwC Worldwide Tax Summaries: zambia Individual - Other taxes",
+   "read": "2026-11-01",
+   "kind": "secondary",
+   "quotes": "https://www.zra.org.zm/",
+   "said": "A flat rate of 5% on business turnover will be applied where turnover is between ZMW 12,000 and ZMW 5 million per annum . Income that is subject to turnover tax will not be subject to income tax or VAT. … VAT applies to standard rated supplies of goods and services at 16%."
+  },
+  {
+   "url": "https://taxsummaries.pwc.com/zambia/corporate/withholding-taxes",
+   "title": "PwC Worldwide Tax Summaries: zambia Corporate - Withholding taxes",
+   "read": "2026-11-01",
+   "kind": "secondary",
+   "quotes": "https://www.zra.org.zm/",
+   "said": "Public entertainment fees to entertainers/sports persons N/A 20 … Royalties 15 20"
+  }
+ ],
+ "blockers": []
+}

@@ -4,7 +4,10 @@ import type { IdentitySlice } from '../../../src/person/identity/identity.ts';
 import type { PermitsSlice } from '../../../src/person/permits/permits.ts';
 import { permitsEverywhere } from '../../support/permits.ts';
 import { identity } from '../../support/person.ts';
+import { readFileSync } from 'node:fs';
+import { join, resolve } from 'node:path';
 import { describe, expect, it } from 'vitest';
+import countries from '../../../src/world/gazetteer/countries.json' with { type: 'json' };
 import { begin, dispatch, pass, type Life } from '../../../src/core/frame/frame.ts';
 import { fromMajor, money, type CurrencyCode, type Money } from '../../../src/core/money/money.ts';
 import { draws, seedFromText } from '../../../src/core/rng/rng.ts';
@@ -12,7 +15,7 @@ import { daysFromCivil, SECONDS_PER_DAY } from '../../../src/core/time/calendar.
 import { addMonths } from '../../../src/core/time/dates.ts';
 import { t } from '../../../src/core/text/text.ts';
 import { ATTRIBUTES_START, chooseAttributes, componentValues } from '../../../src/person/attributes/attributes.ts';
-import { MARKET as WORK } from '../../../src/person/acting/acting.ts';
+import { AGREEMENTS, COUNTRY, MARKET as WORK, MARKETS as ACTED } from '../../../src/person/acting/acting.ts';
 import {
   aboutMarket,
   amountOf,
@@ -53,6 +56,7 @@ import { falsifyAny } from '../../support/falsify-core.ts';
 import { ACCOUNT, purse } from '../../support/purse.ts';
 
 type Producing = { attributes: AttributesSlice; producing: ProducingSlice; genres: GenresSlice; identity: IdentitySlice; acting: ActingSlice; directing: DirectingSlice; permits: PermitsSlice } & ReturnType<typeof purse>;
+const ROOT = resolve(import.meta.dirname, '../../..');
 const SEED = '0123456789abcdef';
 const T0 = daysFromCivil(2026, 11, 1) * SECONDS_PER_DAY;
 const GENRE = 'action';
@@ -78,6 +82,16 @@ const funded = (l: Life<Producing>) =>
     const p = projectOf(s, s.projects.length);
     p.raised['equity'] = money(p.plan?.budget.currency ?? 'GBP', target(p) - raised(p));
   });
+
+/** The three no producer works in: the Netherlands Antilles and Serbia and Montenegro, dissolved; Antarctica, with no sovereign. */
+const NO_MARKET = ['AN', 'AQ', 'CS'];
+/** Items as the player reads them: "a, b and c". */
+const list = (xs: readonly string[]): string => (xs.length > 1 ? `${xs.slice(0, -1).join(', ')} and ${xs.at(-1) ?? ''}` : (xs[0] ?? ''));
+/** What a country's research couldn't find, as its file's blockers name it, each once. */
+const blockers = (cc: string): string => [...new Set((JSON.parse(readFileSync(join(ROOT, `research/sources/person/markets/producer-${cc}.json`), 'utf8')) as { blockers: { item: string }[] }).blockers.map((b) => b.item))].join(' ');
+/** A market of which the engine can read nothing: its country's currency, and what wasn't found. */
+const bare = (cc: string) => ({ currency: (countries as Record<string, { currency: string }>)[cc]?.currency, fund: null, aid: [], credit: null, fees: [], release: null, unknown: blockers(cc) });
+const REST = 'AD AF AG AI AL AO AW AX AZ BD BE BF BH BI BJ BL BM BN BO BQ BS BT BV BW BY CC CD CF CG CI CK CM CN CU CV CX CY CZ DJ DM DZ EC EG EH ER ET FK FM GA GD GG GH GI GM GN GP GQ GT GW HK HM HN HT ID IL IM IO IQ IR KE KG KI KM KN KP KW KY LA LB LC LI LK LR LS LU LV LY MF MG MH ML MM MO MP MQ MR MS MV MW MZ NC NE NF NI NP NR NU OM PE PF PG PM PN PR PS PW PY QA RE RU RW SA SB SC SD SG SJ SM SO SR SS ST SV SX SY SZ TC TD TF TG TJ TK TL TM TN TO TV TW UA UG UZ VA VC VE VU WF WS YE YT ZM ZW'.split(' ');
 
 /** A tier as a line: its budgets, then its sum, or its bands (from-to: rate), base, net and most. */
 const line = (x: Tier) =>
@@ -192,13 +206,109 @@ describe('the markets', () => {
       US: { currency: 'USD', fund: null, aid: [], credit: ['1000000- 0-:0.35 most 7000000'], fees: [], release: null, unknown: 'market feecap' },
       // The dtic's 35% to R25m from R1.5m; fees 10% to R1m, overheads 2% to R200,000.
       ZA: { currency: 'ZAR', fund: null, aid: [], credit: ['1500000- 0-:0.35 most 25000000'], fees: [['0- 0-:0.1 most 1000000'], ['0- 0-:0.02 most 200000']], release: null, unknown: 'fund' },
+      // Every country beyond the twenty, each term at its place in the research (tools/person/markets-producer/readings.json):
+      // a rate, a threshold of spend, a cap, a fund's award and how often it says yes, a fee cap, a release's rate; an
+      // incentive the research says there's none of pays nothing; a market's currency is its country's unless its terms are in another.
+      AE: { currency: 'USD', fund: null, aid: [], credit: ['0- 0-:0.35 most 10000000'], fees: [], release: null, unknown: '' },
+      AM: { currency: 'AMD', fund: null, aid: [], credit: ['0- 0-:0.25'], fees: [], release: null, unknown: 'fund' },
+      AR: { currency: 'ARS', fund: null, aid: [], credit: ['0- 0-:0.2 most 75000000'], fees: [], release: null, unknown: 'fund' },
+      AS: { currency: 'USD', fund: null, aid: [], credit: [], fees: [], release: null, unknown: '' },
+      AT: { currency: 'EUR', fund: null, aid: [], credit: ['0- 0-:0.3 most 5000000'], fees: [['2500000- 0-:0.05 most 250000'], ['2500000- 0-:0.075 most 375000']], release: null, unknown: '' },
+      BA: { currency: 'BAM', fund: null, aid: [], credit: null, fees: [['0- 0-:0.1']], release: null, unknown: 'fund incentive' },
+      BB: { currency: 'BBD', fund: null, aid: [], credit: [], fees: [], release: null, unknown: '' },
+      BG: { currency: 'EUR', fund: null, aid: [], credit: ['0- 0-:0.25 most 5000000'], fees: [], release: null, unknown: '' },
+      BZ: { currency: 'BZD', fund: null, aid: [], credit: [], fees: [], release: null, unknown: '' },
+      CH: { currency: 'CHF', fund: null, aid: [], credit: ['1200000- 0-:0.2 most 600000'], fees: [], release: null, unknown: '' },
+      CL: { currency: 'CLP', fund: null, aid: [], credit: ['0- 0-:0.3'], fees: [], release: null, unknown: '' },
+      CO: { currency: 'COP', fund: null, aid: [], credit: ['3151629000- 0-:0.35'], fees: [], release: null, unknown: 'feecap' },
+      CR: { currency: 'CRC', fund: null, aid: [], credit: [], fees: [], release: null, unknown: '' },
+      CW: { currency: 'XCG', fund: null, aid: [], credit: [], fees: [], release: null, unknown: 'terms' },
+      DO: { currency: 'USD', fund: null, aid: [], credit: ['500000- 0-:0.25'], fees: [], release: null, unknown: '' },
+      EE: { currency: 'EUR', fund: null, aid: [], credit: ['0- 0-:0.4'], fees: [], release: null, unknown: 'incentive fund' },
+      FI: { currency: 'EUR', fund: [`rate ${55 / 261}`, '0- 0-:0.9 most 1200000'], aid: [], credit: null, fees: [['0- 0-:0.05']], release: null, unknown: '' },
+      FJ: { currency: 'FJD', fund: null, aid: [], credit: ['250000- 0-:0.2 most 4000000'], fees: [], release: null, unknown: 'fund' },
+      FO: { currency: 'DKK', fund: null, aid: [], credit: ['0- 0-:0.25 most 5000000'], fees: [], release: null, unknown: '' },
+      GE: { currency: 'GEL', fund: null, aid: [], credit: ['500000- 0-:0.2'], fees: [], release: null, unknown: 'incentive fund' },
+      GF: { currency: 'EUR', fund: null, aid: [], credit: ['0- 0-:0.3'], fees: [], release: null, unknown: '' },
+      GL: { currency: 'DKK', fund: null, aid: [], credit: ['0- 0-:0.25'], fees: [], release: null, unknown: 'fund' },
+      GR: { currency: 'EUR', fund: null, aid: [], credit: ['200000- 0-:0.4 base 0.8 most 8000000'], fees: [], release: null, unknown: '' },
+      GS: { currency: 'GBP', fund: null, aid: [], credit: [], fees: [], release: null, unknown: '' },
+      GU: { currency: 'USD', fund: null, aid: [], credit: [], fees: [], release: null, unknown: 'incentive none' },
+      GY: { currency: 'GYD', fund: null, aid: [], credit: [], fees: [], release: null, unknown: '' },
+      HR: { currency: 'EUR', fund: null, aid: [], credit: ['250000- 0-:0.25'], fees: [], release: null, unknown: '' },
+      HU: { currency: 'HUF', fund: null, aid: [], credit: ['0- 0-:0.3'], fees: [], release: null, unknown: 'fund' },
+      IS: { currency: 'ISK', fund: null, aid: [], credit: ['0- 0-:0.25'], fees: [], release: null, unknown: '' },
+      JE: { currency: 'GBP', fund: null, aid: [], credit: [], fees: [], release: null, unknown: 'incentive' },
+      JM: { currency: 'JMD', fund: null, aid: [], credit: [], fees: [], release: null, unknown: 'none' },
+      JO: { currency: 'USD', fund: null, aid: [], credit: ['250000-999999.99 0-:0.25 most 5250000', '1000000-10000000 0-:0.3 most 5250000', '10000000.01- 0-:0.35 most 5250000'], fees: [], release: null, unknown: '' },
+      KH: { currency: 'KHR', fund: null, aid: [], credit: [], fees: [], release: null, unknown: 'fund' },
+      KZ: { currency: 'KZT', fund: null, aid: [], credit: ['0- 0-:0.3'], fees: [], release: null, unknown: 'incentive' },
+      LT: { currency: 'EUR', fund: null, aid: [], credit: ['43000- 0-:0.3'], fees: [], release: null, unknown: '' },
+      MA: { currency: 'MAD', fund: null, aid: [], credit: ['0- 0-:0.3'], fees: [], release: null, unknown: '' },
+      MC: { currency: 'EUR', fund: null, aid: [], credit: [], fees: [], release: null, unknown: 'none' },
+      MD: { currency: 'EUR', fund: null, aid: [], credit: ['100000- 0-:0.25'], fees: [], release: [`0- ${50 / 62}`], unknown: '' },
+      ME: { currency: 'EUR', fund: null, aid: [], credit: ['100000- 0-:0.25'], fees: [], release: null, unknown: 'incentive fund' },
+      MK: { currency: 'EUR', fund: null, aid: [], credit: ['100000- 0-:0.2'], fees: [], release: null, unknown: 'fund' },
+      MN: { currency: 'USD', fund: null, aid: [], credit: ['500000- 0-:0.3'], fees: [], release: null, unknown: '' },
+      MT: { currency: 'EUR', fund: null, aid: [], credit: ['0- 0-:0.3 most 5000000'], fees: [], release: null, unknown: '' },
+      MU: { currency: 'USD', fund: null, aid: [], credit: ['50000- 0-:0.3'], fees: [], release: null, unknown: '' },
+      MY: { currency: 'MYR', fund: null, aid: [], credit: ['1000000- 0-:0.3'], fees: [], release: null, unknown: 'fund' },
+      NA: { currency: 'NAD', fund: null, aid: [], credit: [], fees: [], release: null, unknown: '' },
+      PA: { currency: 'PAB', fund: null, aid: [], credit: ['3000000.01-40000000 0-:0.15'], fees: [], release: null, unknown: 'fund' },
+      PH: { currency: 'PHP', fund: null, aid: [], credit: ['0- 0-:0.2 most 25000000'], fees: [], release: null, unknown: 'fund' },
+      PK: { currency: 'PKR', fund: null, aid: [], credit: [], fees: [], release: null, unknown: '' },
+      PL: { currency: 'PLN', fund: null, aid: [], credit: ['4000000.01- 0-:0.3'], fees: [], release: null, unknown: '' },
+      PT: { currency: 'EUR', fund: null, aid: [], credit: ['500000-2499999.99 0-:0.25 most 1500000', '2500000- 0-2000000:0.3 2000000-:0.25 most 6000000'], fees: [], release: null, unknown: '' },
+      RO: { currency: 'EUR', fund: null, aid: [], credit: ['100000- 0-:0.3 most 10000000'], fees: [], release: null, unknown: 'fund' },
+      RS: { currency: 'EUR', fund: null, aid: [], credit: ['300000-4999999.99 0-:0.25', '5000000- 0-:0.3'], fees: [], release: null, unknown: '' },
+      SH: { currency: 'SHP', fund: null, aid: [], credit: [], fees: [], release: null, unknown: 'none' },
+      SI: { currency: 'EUR', fund: [`rate ${14 / 37}`, '0-  most 1000000'], aid: ['0- 0-:0.5'], credit: null, fees: [], release: null, unknown: '' },
+      SK: { currency: 'EUR', fund: null, aid: [], credit: ['100000- 0-:0.33'], fees: [], release: null, unknown: 'incentive' },
+      SL: { currency: 'SLE', fund: null, aid: [], credit: [], fees: [], release: null, unknown: 'fund incentive' },
+      SN: { currency: 'XOF', fund: [`rate ${49 / 213}`, '0-  most 150000000'], aid: [], credit: null, fees: [], release: null, unknown: '' },
+      TH: { currency: 'THB', fund: null, aid: [], credit: ['50000000-99999999.99 0-:0.15', '100000000-150000000 0-:0.2', '150000000.01- 0-:0.25'], fees: [], release: null, unknown: 'incentive' },
+      TR: { currency: 'TRY', fund: null, aid: [], credit: ['40000000- 0-:0.3'], fees: [], release: null, unknown: '' },
+      TT: { currency: 'USD', fund: null, aid: [], credit: ['15000-8000000 0-:0.35'], fees: [], release: null, unknown: '' },
+      TZ: { currency: 'TZS', fund: null, aid: [], credit: [], fees: [], release: null, unknown: '' },
+      UM: { currency: 'USD', fund: null, aid: [], credit: [], fees: [], release: null, unknown: '' },
+      UY: { currency: 'UYU', fund: null, aid: [], credit: ['0- 0-:0.3'], fees: [['0- 0-:0.09']], release: null, unknown: '' },
+      VG: { currency: 'USD', fund: null, aid: [], credit: [], fees: [], release: null, unknown: 'none' },
+      VI: { currency: 'USD', fund: null, aid: [], credit: ['250000- 0-:0.09'], fees: [], release: null, unknown: 'incentive' },
+      VN: { currency: 'VND', fund: null, aid: [], credit: [], fees: [], release: null, unknown: 'outcomes none' },
+      XK: { currency: 'EUR', fund: null, aid: [], credit: ['0- 0-:0.3'], fees: [], release: null, unknown: '' },
+      // The rest: their country's currency, nothing the engine can read, what wasn't found told.
+      ...Object.fromEntries(REST.map((cc) => [cc, bare(cc)])),
     });
+    // Every country of the map is a market but the UK, kept by the engine itself, and the three no producer works in.
+    expect(Object.keys(MARKETS).length + 4).toBe(Object.keys(countries).length);
+    for (const cc of ['GB', ...NO_MARKET]) expect(Object.hasOwn(MARKETS, cc), cc).toBe(false);
+    // Only where the research's terms are in another currency is a market's not its country's.
+    expect(Object.keys(MARKETS).filter((cc) => (MARKETS[cc] as Market).currency !== (countries as Record<string, { currency: string }>)[cc]?.currency)).toEqual(['AE', 'DO', 'JO', 'MD', 'MK', 'MN', 'MU', 'RO', 'RS', 'TT']);
+  });
+
+  it('refuses a country no producer works in: one dissolved, or with no sovereign', () => {
+    for (const cc of NO_MARKET) expect(() => optioned(cc), cc).toThrow(`${cc} isn't a market a producer works in`);
+    expect(aboutMarket('AN')).toBeUndefined();
   });
 
   it("runs each market's months in its city's time, the actor's market there, and pays in its currency", () => {
     expect(zoneOf(HOME)).toBe(ZONE);
     expect([zoneOf('US'), zoneOf('CA'), zoneOf('JP'), zoneOf('NZ')]).toEqual(['America/Los_Angeles', 'America/Toronto', 'Asia/Tokyo', 'Pacific/Auckland']);
-    for (const cc of Object.keys(MARKETS)) expect(Object.values(WORK).map((w) => w.zone), cc).toContain(zoneOf(cc));
+    // Each market's city is the actor's there; where the actor's engine has none, its most populous place's on the map;
+    // where the map has no place, the work there can't be dated, so it is refused.
+    for (const cc of Object.keys(MARKETS)) {
+      const agreement = AGREEMENTS.find((a) => COUNTRY[a] === cc);
+      const zone = ACTED[cc]?.zone ?? (agreement === undefined ? MARKETS[cc]?.zone : WORK[agreement].zone);
+      if (zone === null) expect(() => optioned(cc), cc).toThrow(`where the work in ${cc} is made isn't known to this game`);
+      else expect(zoneOf(cc), cc).toBe(zone);
+    }
+    expect(Object.keys(MARKETS).filter((cc) => MARKETS[cc]?.zone === null)).toEqual(['BV', 'HM', 'UM']);
+    expect(() => zoneOf('XX')).toThrow("where the work in XX is made isn't known to this game");
+    expect(() => zoneOf('BV')).toThrow("where the work in BV is made isn't known to this game");
+    expect([zoneOf('JP'), zoneOf('US')]).toEqual([ACTED['JP']?.zone, 'America/Los_Angeles']);
+    // Where the actor's engine keeps no market, the map's: Ho Chi Minh City's, Afghanistan's Kabul's.
+    for (const [cc, zone] of [['VN', 'Asia/Ho_Chi_Minh'], ['AF', 'Asia/Kabul']] as const) if (!Object.hasOwn(ACTED, cc)) expect(zoneOf(cc), cc).toBe(zone);
+    expect([MARKETS['VN']?.zone, MARKETS['AF']?.zone, MARKETS['US']?.zone]).toEqual(['Asia/Ho_Chi_Minh', 'Asia/Kabul', 'America/New_York']);
     expect(currencyOf(HOME)).toBe('GBP');
     expect([currencyOf('JP'), currencyOf('FR')]).toEqual(['JPY', 'EUR']);
     const l = optioned('JP');
@@ -335,6 +445,54 @@ describe("a market's project", () => {
     expect(cinemas).toContain(true);
     expect(cinemas).toContain(false);
     expect(() => dispatch(dispatch(funded(planned('FR', '2000000')), shootProject, { project: 1, account: ACCOUNT }), releaseFilm, { project: 1 })).toThrow("how often a film made in France reaches cinemas isn't known to this game");
+
+    // Beyond the twenty: each incentive at its rate, its threshold's edge, its tiers' edges and its cap, in the market's currency.
+    const credits: [string, string, string][] = [
+      ['AE', '1000000', '350000'], ['AE', '100000000', '10000000'], ['AM', '1000000', '250000'], ['AR', '100000000', '20000000'], ['AR', '1000000000', '75000000'],
+      ['AT', '1000000', '300000'], ['AT', '20000000', '5000000'], ['BG', '1000000', '250000'], ['BG', '40000000', '5000000'],
+      ['CH', '1199999.99', '0'], ['CH', '1200000', '240000'], ['CH', '10000000', '600000'], ['CL', '1000000', '300000'], ['CO', '3151628999.99', '0'], ['CO', '3151629000', '1103070150'],
+      ['DO', '499999.99', '0'], ['DO', '500000', '125000'], ['EE', '1000000', '400000'], ['FJ', '249999.99', '0'], ['FJ', '250000', '50000'], ['FJ', '30000000', '4000000'],
+      ['FO', '1000000', '250000'], ['FO', '40000000', '5000000'], ['GE', '499999.99', '0'], ['GE', '500000', '100000'], ['GF', '1000000', '300000'], ['GL', '1000000', '250000'],
+      ['GR', '199999.99', '0'], ['GR', '200000', '64000'], ['GR', '1000000', '320000'], ['GR', '50000000', '8000000'], ['HR', '249999.99', '0'], ['HR', '250000', '62500'],
+      ['HU', '1000000', '300000'], ['IS', '1000000', '250000'],
+      ['JO', '249999.99', '0'], ['JO', '250000', '62500'], ['JO', '500000', '125000'], ['JO', '1000000', '300000'], ['JO', '10000000', '3000000'], ['JO', '12000000', '4200000'], ['JO', '20000000', '5250000'],
+      ['KZ', '1000000', '300000'], ['LT', '42999.99', '0'], ['LT', '43000', '12900'], ['MA', '1000000', '300000'], ['MD', '99999.99', '0'], ['MD', '100000', '25000'], ['ME', '99999.99', '0'], ['ME', '100000', '25000'],
+      ['MK', '99999.99', '0'], ['MK', '100000', '20000'], ['MN', '499999.99', '0'], ['MN', '500000', '150000'], ['MT', '1000000', '300000'], ['MT', '20000000', '5000000'],
+      ['MU', '49999.99', '0'], ['MU', '50000', '15000'], ['MY', '999999.99', '0'], ['MY', '1000000', '300000'],
+      ['PA', '3000000', '0'], ['PA', '4000000', '600000'], ['PA', '40000000', '6000000'], ['PA', '40000000.01', '0'], ['PH', '1000000', '200000'], ['PH', '200000000', '25000000'],
+      ['PL', '4000000', '0'], ['PL', '5000000', '1500000'],
+      ['PT', '499999.99', '0'], ['PT', '500000', '125000'], ['PT', '2000000', '500000'], ['PT', '2500000', '725000'], ['PT', '10000000', '2600000'], ['PT', '30000000', '6000000'],
+      ['RO', '99999.99', '0'], ['RO', '100000', '30000'], ['RO', '50000000', '10000000'], ['RS', '299999.99', '0'], ['RS', '300000', '75000'], ['RS', '4000000', '1000000'], ['RS', '5000000', '1500000'],
+      ['SK', '99999.99', '0'], ['SK', '100000', '33000'],
+      ['TH', '49999999.99', '0'], ['TH', '50000000', '7500000'], ['TH', '100000000', '20000000'], ['TH', '150000000', '30000000'], ['TH', '200000000', '50000000'],
+      ['TR', '39999999.99', '0'], ['TR', '40000000', '12000000'], ['TT', '14999.99', '0'], ['TT', '15000', '5250'], ['TT', '8000000', '2800000'], ['TT', '8000000.01', '0'],
+      ['UY', '1000000', '300000'], ['VI', '249999.99', '0'], ['VI', '250000', '22500'], ['XK', '1000000', '300000'],
+    ];
+    for (const [cc, budget, credit] of credits) expect(plan(cc, budget)?.credit, `${cc} ${budget}`).toEqual(of(currencyOf(cc), credit));
+    // The research says there's none: nothing; it doesn't say: none carried.
+    for (const cc of ['AS', 'BB', 'BZ', 'CR', 'CW', 'GS', 'GU', 'GY', 'JE', 'JM', 'KH', 'MC', 'NA', 'PK', 'SH', 'SL', 'TZ', 'VG', 'VN']) expect(plan(cc, '1000000')?.credit, cc).toEqual(of(currencyOf(cc), '0'));
+    for (const cc of ['AD', 'BE', 'CZ', 'FI', 'SI', 'UA']) expect(plan(cc, '1000000')?.credit, cc).toBeNull();
+    // The fee caps: Austria's 5% and 7.5% from €2.5m, to €250,000 and €375,000; Sarajevo's 10%, Finland's 5%, Uruguay's 9%.
+    expect([plan('AT', '2499999.99')?.fee, plan('AT', '2500000')?.fee, plan('AT', '4000000')?.fee, plan('AT', '10000000')?.fee]).toEqual([null, of('EUR', '312500'), of('EUR', '500000'), of('EUR', '625000')]);
+    expect([plan('BA', '1000000')?.fee, plan('FI', '2000000')?.fee, plan('UY', '1000000')?.fee]).toEqual([of('BAM', '100000'), of('EUR', '100000'), of('UYU', '90000')]);
+    // The funds: Finland's 90% to €1.2m, 55 of 261; Slovenia's €1m held to the 50% of all public aid, 14 of 37; Senegal's FOPICA, CFA 150m, 49 of 213.
+    expect([award('FI', '1000000'), award('FI', '2000000'), award('SI', '1000000'), award('SI', '4000000'), award('SN', '100000000')]).toEqual([90_000_000, 120_000_000, 50_000_000, 100_000_000, 150_000_000]);
+    expect([fundFor(project(planned('FI', '1000000'))).rate, fundFor(project(planned('SI', '1000000'))).rate, fundFor(project(planned('SN', '1000000'))).rate]).toEqual([55 / 261, 14 / 37, 49 / 213]);
+    for (const cc of ['AD', 'AL', 'HK', 'LV', 'PY']) expect(() => award(cc, '1000000'), cc).toThrow(/^what a public fund in .+ gives a producer's film isn't known to this game$/);
+    // Moldova's release: 50 of the 62 films finished from 2017 to 2024.
+    let md = made(30);
+    for (let i = 0; i < 12; i += 1) md = dispatch(funded(planned('MD', '200000', md)), shootProject, { project: i + 1, account: ACCOUNT });
+    const released: boolean[] = [];
+    for (let id = 1; id <= 12; id += 1) {
+      const p = project(md, id);
+      const f = 0.5 + sellSkill(componentValues(md.slices.attributes, 'producer'), p.shot?.quality ?? 0) / 100;
+      const cinema = draws(seedFromText(SEED), 'producing.work', 'release', id).float() < (50 / 62) * f;
+      md = dispatch(md, releaseFilm, { project: id });
+      expect(project(md, id).release, String(id)).toEqual({ at: T0, cinema, doubled: null });
+      released.push(cinema);
+    }
+    expect(released).toContain(true);
+    expect(released).toContain(false);
   });
 
   it('reads a tier by its budgets, both counted, and gives its sum or its bands at most its most', () => {
@@ -375,13 +533,26 @@ describe("a market's project", () => {
       market: 'where most of the work is',
       union: "the producers' association and what it asks",
       language: 'the language the work is made in',
+      terms: "what fund, incentive or agreement sets a producer's terms",
+      none: 'whether any fund, incentive or agreement exists for a producer at all',
+      rules: 'the rules a production must follow',
+      'fund.primary': "the public fund's own published terms",
     });
+    expect(aboutMarket('AF')).toBe("Some of what a producer can raise, claim or expect in Afghanistan isn't known to this game yet: what its public fund gives a film, or how often it says yes.");
+    expect(aboutMarket('AG')).toBe(t(UNKEPT_LINE, { country: 'Antigua and Barbuda', missing: "what fund, incentive or agreement sets a producer's terms" }));
+    expect(aboutMarket('BS')).toBe(t(UNKEPT_LINE, { country: 'Bahamas', missing: 'what its public fund gives a film, or how often it says yes and whether any fund, incentive or agreement exists for a producer at all' }));
+    expect(aboutMarket('MV')).toBe(t(UNKEPT_LINE, { country: 'Maldives', missing: 'the rules a production must follow and what its public fund gives a film, or how often it says yes' }));
+    expect(aboutMarket('RE')).toBe(t(UNKEPT_LINE, { country: 'Reunion', missing: "the public fund's own published terms" }));
     expect(aboutMarket('AU')).toBe("Some of what a producer can raise, claim or expect in Australia isn't known to this game yet: the language the work is made in.");
     expect(aboutMarket('BR')).toBe(t(UNKEPT_LINE, { country: 'Brazil', missing: 'what its public fund gives a film, or how often it says yes, the production incentive a film can claim and how often a film is released or earns back its cost' }));
     expect(aboutMarket('US')).toBe(t(UNKEPT_LINE, { country: 'United States', missing: "where most of the work is and the cap a funder sets on the producer's fee and overheads" }));
     for (const cc of ['FR', 'NL', 'GB', 'XX']) expect(aboutMarket(cc), cc).toBeUndefined();
     // Every market the register holds blockers for tells the player; none other does.
-    expect(Object.keys(MARKETS).filter((cc) => aboutMarket(cc) !== undefined)).toEqual(['AU', 'BR', 'CA', 'DE', 'DK', 'ES', 'IE', 'IN', 'IT', 'JP', 'KR', 'MX', 'NG', 'NO', 'NZ', 'SE', 'US', 'ZA']);
+    const register = JSON.parse(readFileSync(join(ROOT, 'research/register.json'), 'utf8')) as { entries: { fact: string }[] };
+    const blocked = Object.keys(MARKETS).filter((cc) => register.entries.some((e) => e.fact === `person.markets.producer.blocked.${cc}`));
+    expect(blocked.length).toBe(186);
+    expect(Object.keys(MARKETS).filter((cc) => aboutMarket(cc) !== undefined)).toEqual(blocked);
+    for (const cc of blocked) expect(aboutMarket(cc), cc).toBe(t(UNKEPT_LINE, { country: countries[cc as keyof typeof countries].name, missing: list(blockers(cc).split(' ').map((u) => MISSING[u as keyof typeof MISSING])) }));
   });
 
   it('gives the country and days of its shoot for a permit to work there', () => {

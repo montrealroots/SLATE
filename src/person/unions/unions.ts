@@ -8,7 +8,7 @@ import type { CountryCode } from '../../world/gazetteer/gazetteer.ts';
 import { dateOf, SAG_TIERS, type ActingSlice, type Agreement, type Part, type Work } from '../acting/acting.ts';
 import type { DirectingSlice } from '../directing/directing.ts';
 import { ageOf, personOf, type IdentitySlice, type Person } from '../identity/identity.ts';
-import type { CareerSlice } from '../work/career.ts';
+import { KEPT, type CareerSlice } from '../work/career.ts';
 import { scriptOf, type Form, type ScriptsSlice } from '../work/work.ts';
 import type { LineId } from '../../core/text/text.ts';
 
@@ -201,8 +201,9 @@ export function terms(s: Lives, union: Union, now: number): Terms {
       let units = 0;
       // @slate:consumer script.pitch
       for (const [id, o] of Object.entries(s.career.out)) {
-        // Only a sale under the WGA's own terms is to a signatory: one offered in another market (career's `offered`) isn't.
-        if (o.sold !== null && o.sold.fee !== null && s.career.offered[id] === undefined && dateOf(o.sold.at) >= since) units += UNITS[scriptOf(s.scripts, Number(id)).form as keyof typeof UNITS];
+        // Only a sale under the WGA's own terms is to a signatory (one not offered elsewhere, or offered under the WGA's
+        // own agreement, as a script sold in Puerto Rico is); one offered under another market's agreement isn't.
+        if (o.sold !== null && o.sold.fee !== null && (s.career.offered[id]?.agreement ?? KEPT) === KEPT && dateOf(o.sold.at) >= since) units += UNITS[scriptOf(s.scripts, Number(id)).form as keyof typeof UNITS];
       }
       if (units >= WGA.units) return { standing: 'full', initiation: WGA.initiation, dues: WGA.dues };
       if (units > 0) return { standing: 'associate', initiation: null, dues: WGA.associate };

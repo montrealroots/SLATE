@@ -1,0 +1,261 @@
+{
+ "topic": "tax.CD",
+ "read": "2026-11-01",
+ "note": "Read 2026-11-01 at the owner's word (\"Build those first 3 starting with ledger first\"; of the 21 countries read first: \"It should cover across every country\"; \"Retry the blocked tax facts once all countries land\"): the tax on a screen worker's pay in Democratic Republic of the Congo: a resident's income tax, social contributions, what is withheld at source, a non-resident artiste's withholding, an author's treatment, VAT and the tax year. Research and retry subagents (workbench/briefs/BRIEF-tax.md, BRIEF-tax-retry.md), every quote checked by the lead against its saved page.",
+ "figures": [
+  {
+   "item": "residents",
+   "finding": "Pay is taxed by the professional income tax (IPR): 3% on the first CDF 1,944,000 a year, 15% to 21,600,000, 30% to 43,200,000 and 40% above, with the tax capped at 30% of taxable pay; income other than pay is in practice not taxed under IPR.",
+   "value": {
+    "currency": "CDF",
+    "brackets": [
+     {
+      "from": 0,
+      "to": 1944000,
+      "rate": 0.03
+     },
+     {
+      "from": 1944000,
+      "to": 21600000,
+      "rate": 0.15
+     },
+     {
+      "from": 21600000,
+      "to": 43200000,
+      "rate": 0.3
+     },
+     {
+      "from": 43200000,
+      "to": null,
+      "rate": 0.4
+     }
+    ],
+    "capShareOfPay": 0.3,
+    "casualWorkers": 0.15
+   },
+   "applies": "Page reviewed 21 April 2026.",
+   "sources": [
+    {
+     "src": 0,
+     "said": "Bracket number Taxable bracket (CDF) Gap (CDF) Rates (%) Tax due as per bracket (CDF) Cumulative tax (CDF) From To 1 0 1,944,000 1,944,000 3 58,320.00 58,320.00 2 1,944,001 21,600,000 19,655,999 15 2,948,399.85 3,006,719.85 3 21,600,001 43,200,000 21,599,999 30 6,479,999.70 9,486,716.55 4 43,200,001 And more 40 - - IPR cannot exceed 30% of the taxable salary."
+    },
+    {
+     "src": 0,
+     "said": "Moreover, the sums paid to casual employees (employees hired on a day-to-day basis) are subject to IPR, but at a preferential rate of 15%. Incomes other than salaries are not subject, in practice, to IPR."
+    }
+   ]
+  },
+  {
+   "item": "social",
+   "finding": "INSS: the employee pays 5% (pension) and the employer 13% (5% pension, 1.5% occupational risks, 6.5% family benefits), plus employer-only INPP training (1% to 3%) and ONEM 0.2%.",
+   "value": {
+    "employee": 0.05,
+    "employer": {
+     "pension": 0.05,
+     "risks": 0.015,
+     "family": 0.065
+    },
+    "INPP": [
+     0.01,
+     0.03
+    ],
+    "ONEM": 0.002
+   },
+   "applies": "2026.",
+   "sources": [
+    {
+     "src": 1,
+     "said": "1.5% borne by the employer (branch of occupational risks). 5% borne by the employer (pension branch). 5% borne by the worker (pension branch). 6.5% exclusively borne by the employer (family benefits branch)."
+    }
+   ]
+  },
+  {
+   "item": "withholding",
+   "finding": "The employer withholds IPR under PAYE and pays it by the 15th of the next month.",
+   "value": {
+    "employee": "PAYE, paid by the 15th"
+   },
+   "applies": "2026.",
+   "sources": [
+    {
+     "src": 2,
+     "said": "IPR is withheld at source by the employer via the pay-as-you-earn (PAYE)"
+    },
+    {
+     "src": 2,
+     "said": "IPR is paid monthly by the employer by the 15th day of the month followin"
+    }
+   ]
+  },
+  {
+   "item": "nonResident",
+   "finding": "Payments for services by foreign individuals bear 14% withholding on the gross; royalties bear 20% on 70% of the amount invoiced.",
+   "value": {
+    "servicesWithholding": 0.14,
+    "royalty": {
+     "rate": 0.2,
+     "base": "70% of invoiced"
+    }
+   },
+   "applies": "Treaties (Belgium, South Africa) may exempt services.",
+   "sources": [
+    {
+     "src": 3,
+     "said": "The rate of WHT on amounts paid as compensation for services provided by foreign individuals/entities is 14%, which is based on the gross amount of sums paid."
+    },
+    {
+     "src": 3,
+     "said": "The tax authorities consider that the net amount of royalties is calculated by deducting 30% from the royalties invoiced (i.e. the taxable basis will be 70% of the royalties invoiced)."
+    }
+   ]
+  },
+  {
+   "item": "authors",
+   "finding": "Royalties bear 20% withholding on 70% of the invoiced amount (14% of the gross), for residents and non-residents.",
+   "value": {
+    "rate": 0.2,
+    "base": 0.7,
+    "effective": 0.14
+   },
+   "applies": "2026.",
+   "sources": [
+    {
+     "src": 3,
+     "said": "The standard rate of WHT on dividends, royalties, interest, and directorship fees is 20%, which is based on the gross amount of sums paid."
+    }
+   ]
+  },
+  {
+   "item": "vat",
+   "finding": "VAT is 16% (reduced 8%); a person is liable once annual turnover reaches CDF 80,000,000, but members of the liberal professions are liable whatever their turnover.",
+   "value": {
+    "standard": 0.16,
+    "reduced": 0.08,
+    "registrationThreshold": 80000000,
+    "liberalProfessionsAnyTurnover": true,
+    "currency": "CDF"
+   },
+   "applies": "Threshold not read.",
+   "sources": [
+    {
+     "src": 1,
+     "said": "There are three rates: A standard rate of 16%. A reduced rate of 8% applicable to certain products"
+    },
+    {
+     "src": 4,
+     "said": "qui effectuent de manière indépendante, à titre habituel ou occasionnel, des opérations imposables à la TVA et qui réalise un chiffre d’affaires annuel égal ou supérieur à 80 000 000 de Francs congolais. $ Il sied de préciser que les membres des professions libérales sont assujettis à la TVA sans considération de leur chiffre d’affaires"
+    }
+   ]
+  },
+  {
+   "item": "year",
+   "finding": "The individual income tax (IRPP) is assessed on the income of a tax year and declared by 30 April of the year after the income was earned.",
+   "value": {
+    "taxYear": "the year in which the income is earned",
+    "returnDue": "30 April of the following year"
+   },
+   "applies": "From the IS-IRPP law (Loi n° 23/053 of 30 November 2023), as the DGI states it in October 2025.",
+   "sources": [
+    {
+     "src": 5,
+     "said": "L’impôt sur le revenu des personnes physiques est déclaré au plus tard le 30 avril de l’année qui suit celle de la réalisation des revenus."
+    }
+   ]
+  },
+  {
+   "item": "residents",
+   "finding": "Under the IS-IRPP law (Loi n° 23/053) a resident's individual income tax (IRPP) is charged on his net global income, the sum of his category incomes (salaries, investment income, gains, business and professional profits), by the same scale: 3% to CDF 1,944,000, 15% to 21,600,000, 30% to 43,200,000 and 40% above, never more than 30% of the base; a non-resident is charged on Congolese-source income.",
+   "value": {
+    "currency": "CDF",
+    "brackets": [
+     {
+      "from": 0,
+      "to": 1944000,
+      "rate": 0.03
+     },
+     {
+      "from": 1944000,
+      "to": 21600000,
+      "rate": 0.15
+     },
+     {
+      "from": 21600000,
+      "to": 43200000,
+      "rate": 0.3
+     },
+     {
+      "from": 43200000,
+      "to": null,
+      "rate": 0.4
+     }
+    ],
+    "capShareOfBase": 0.3,
+    "base": "net global income"
+   },
+   "applies": "The IRPP as the DGI presents it in 2025-2026; the IPR entry above is the tax on pay within it.",
+   "sources": [
+    {
+     "src": 6,
+     "said": "La personne physique résidant en République Démocratique du Congo, quelle que soit sa nationalité et la source de ses revenus ; $ La personne physique non résidente qui recueille des revenus de source congolaise ; … L’impôt sur le revenu des personnes physiques est calculé par application du barème à taux progressifs sur le revenu net global qui est la somme de revenus nets catégoriels. En aucun cas, l’impôt calculé ne peut dépasser 30 % de la base imposable. Ce barème est décliné de la manière ci-après : $ 3% pour la tranche de revenus de 0,00 FC à 1.944.000,00 FC ; $ 15% pour la tranche de revenus de 1.944.001,00 FC à 21.600.000,00 FC ; $ 30% pour la tranche de revenus de 21.600.001,00 FC à 43.200.000,00 FC ; $ 40% pour la tranche de revenus excédant 43.200.000,00 FC."
+    }
+   ]
+  }
+ ],
+ "country": "CD",
+ "sources": [
+  {
+   "url": "https://taxsummaries.pwc.com/democratic-republic-of-the-congo/individual/taxes-on-personal-income",
+   "title": "PwC Worldwide Tax Summaries: democratic-republic-of-the-congo Individual - Taxes on personal income",
+   "read": "2026-11-01",
+   "kind": "secondary",
+   "quotes": "https://www.dgi.gouv.cd/",
+   "said": "Bracket number Taxable bracket (CDF) Gap (CDF) Rates (%) Tax due as per bracket (CDF) Cumulative tax (CDF) From To 1 0 1,944,000 1,944,000 3 58,320.00 58,320.00 2 1,944,001 21,600,000 19,655,999 15 2,948,399.85 3,006,719.85 3 21,600,001 43,200,000 21,599,999 30 6,479,999.70 9,486,716.55 4 43,200,001 And more 40 - - IPR cannot exceed 30% of the taxable salary. … Moreover, the sums paid to casual employees (employees hired on a day-to-day basis) are subject to IPR, but at a preferential rate of 15%. Incomes other than salaries are not subject, in practice, to IPR."
+  },
+  {
+   "url": "https://taxsummaries.pwc.com/democratic-republic-of-the-congo/individual/other-taxes",
+   "title": "PwC Worldwide Tax Summaries: democratic-republic-of-the-congo Individual - Other taxes",
+   "read": "2026-11-01",
+   "kind": "secondary",
+   "quotes": "https://www.inss.cd/",
+   "said": "1.5% borne by the employer (branch of occupational risks). 5% borne by the employer (pension branch). 5% borne by the worker (pension branch). 6.5% exclusively borne by the employer (family benefits branch). … There are three rates: A standard rate of 16%. A reduced rate of 8% applicable to certain products"
+  },
+  {
+   "url": "https://taxsummaries.pwc.com/democratic-republic-of-the-congo/individual/tax-administration",
+   "title": "PwC Worldwide Tax Summaries: democratic-republic-of-the-congo Individual - Tax administration",
+   "read": "2026-11-01",
+   "kind": "secondary",
+   "quotes": "https://www.dgi.gouv.cd/",
+   "said": "IPR is withheld at source by the employer via the pay-as-you-earn (PAYE) … IPR is paid monthly by the employer by the 15th day of the month followin"
+  },
+  {
+   "url": "https://taxsummaries.pwc.com/democratic-republic-of-the-congo/corporate/withholding-taxes",
+   "title": "PwC Worldwide Tax Summaries: democratic-republic-of-the-congo Corporate - Withholding taxes",
+   "read": "2026-11-01",
+   "kind": "secondary",
+   "quotes": "https://www.dgi.gouv.cd/",
+   "said": "The rate of WHT on amounts paid as compensation for services provided by foreign individuals/entities is 14%, which is based on the gross amount of sums paid. … The tax authorities consider that the net amount of royalties is calculated by deducting 30% from the royalties invoiced (i.e. the taxable basis will be 70% of the royalties invoiced). … The standard rate of WHT on dividends, royalties, interest, and directorship fees is 20%, which is based on the gross amount of sums paid."
+  },
+  {
+   "url": "https://dgi.gouv.cd/taxe-sur-la-valeur-ajoutee-tva/",
+   "title": "DGI, Taxe sur la Valeur Ajoutée (TVA)",
+   "read": "2026-11-01",
+   "kind": "primary",
+   "said": "qui effectuent de manière indépendante, à titre habituel ou occasionnel, des opérations imposables à la TVA et qui réalise un chiffre d’affaires annuel égal ou supérieur à 80 000 000 de Francs congolais. $ Il sied de préciser que les membres des professions libérales sont assujettis à la TVA sans considération de leur chiffre d’affaires"
+  },
+  {
+   "url": "https://dgi.gouv.cd/wp-content/uploads/2025/10/DEPLIANT-IRPP-BON.pdf",
+   "title": "DGI, IS-IRPP: Impôt sur le Revenu des Personnes Physiques (dépliant, octobre 2025; Loi n° 23/053 du 30 novembre 2023)",
+   "read": "2026-11-01",
+   "kind": "primary",
+   "said": "L’impôt sur le revenu des personnes physiques est déclaré au plus tard le 30 avril de l’année qui suit celle de la réalisation des revenus."
+  },
+  {
+   "url": "https://dgi.gouv.cd/impot-sur-le-revenu-des-personnes-physiques-irpp/",
+   "title": "DGI, Impôt sur le Revenu des Personnes Physiques (IRPP)",
+   "read": "2026-11-01",
+   "kind": "primary",
+   "said": "La personne physique résidant en République Démocratique du Congo, quelle que soit sa nationalité et la source de ses revenus ; $ La personne physique non résidente qui recueille des revenus de source congolaise ; … L’impôt sur le revenu des personnes physiques est calculé par application du barème à taux progressifs sur le revenu net global qui est la somme de revenus nets catégoriels. En aucun cas, l’impôt calculé ne peut dépasser 30 % de la base imposable. Ce barème est décliné de la manière ci-après : $ 3% pour la tranche de revenus de 0,00 FC à 1.944.000,00 FC ; $ 15% pour la tranche de revenus de 1.944.001,00 FC à 21.600.000,00 FC ; $ 30% pour la tranche de revenus de 21.600.001,00 FC à 43.200.000,00 FC ; $ 40% pour la tranche de revenus excédant 43.200.000,00 FC."
+  }
+ ],
+ "blockers": []
+}

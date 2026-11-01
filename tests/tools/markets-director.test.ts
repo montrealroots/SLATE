@@ -8,6 +8,7 @@ import {
   agreementOf,
   BANDED,
   BLOCKED,
+  blockedItems,
   cutTo,
   daysOf,
   edged,
@@ -25,9 +26,11 @@ import {
   PERS,
   PHASES,
   PREFIX,
+  PRICED,
   READINGS,
   readMarkets,
   readResearch,
+  SAYING,
   serialize,
   shortOf,
   SOURCES,
@@ -38,7 +41,7 @@ import {
   WEEK,
   type Evidence,
 } from '../../tools/person/markets-director/compile.ts';
-import { COVERAGE, coverageOf, marketsCoverage, serializeCoverage, TESTS, TOLD } from '../../tools/person/markets-director/coverage.ts';
+import { COUNTRIES, COVERAGE, coverageOf, DGA, HOME, HOME_TESTS, marketsCoverage, serializeCoverage, TESTS, TOLD } from '../../tools/person/markets-director/coverage.ts';
 
 const ROOT = resolve(import.meta.dirname, '../..');
 
@@ -53,6 +56,8 @@ const RESEARCH: Research = {
     { item: 'union', value: { fee: 5 } },
     { item: 'agreement', value: { collectiveAgreement: null, setsFees: false, present: 'yes', zero: 0 } },
     { item: 'fees', value: { a: 5 } },
+    { item: 'rates', value: { floor: { currency: 'EUR', day: 72.4, from: '2026-07-01' }, kv: 'freie Vereinbarung (none)', kvOther: 'freie Vereinbarung', agreement: null } },
+    { item: 'rules', value: { minimumFee: null } },
   ],
   blockers: [{ item: 'fees' }, { item: 'periods' }, { item: 'fees' }],
 };
@@ -74,16 +79,18 @@ const reading = (id: string) => ({ agreements: { [id]: { forms: ['feature'], non
 describe("the director's markets compile", () => {
   it('reads its places, the forms, pays, stages, tiers and periods it knows', () => {
     expect([SOURCES, PREFIX, READINGS, OUTPUT, FACT, BLOCKED, KEPT, WEEK]).toEqual(['research/sources/person/markets', 'director-', 'tools/person/markets-director/readings.json', 'src/person/directing/markets.json', 'person.markets.director.', 'person.markets.director.blocked.', 'dga', 5]);
-    expect([FORMS, PERS, BANDED, PHASES, TIERS, EDGED, PERIODS, ITEMS, UNKNOWING]).toEqual([
+    expect([FORMS, PERS, BANDED, PHASES, TIERS, EDGED, PERIODS, ITEMS, UNKNOWING, PRICED, SAYING]).toEqual([
       ['feature', 'hour', 'half-hour'],
       ['job', 'share', 'minute', 'day', 'half-day', 'week', 'month', 'hour'],
       ['minute', 'day', 'half-day'],
       ['prep', 'shoot', 'cut'],
       ['budget', 'years', 'minutes', 'days'],
       ['budget', 'minutes'],
-      ['prep-shoot', 'cut'],
-      ['agreement', 'fees', 'periods', 'union', 'language', 'none'],
-      ['agreement', 'fees', 'union', 'none'],
+      ['prep-shoot', 'cut', 'prep'],
+      ['agreement', 'fees', 'periods', 'union', 'language', 'none', 'terms'],
+      ['agreement', 'fees', 'union', 'none', 'terms'],
+      ['fees', 'agreement', 'periods', 'rates'],
+      ['none', 'agreement', 'fees', 'union', 'rules', 'rates'],
     ]);
   });
 
@@ -132,7 +139,9 @@ describe("the director's markets compile", () => {
     expect(() => fee({ fig: 7, steps: [{ from: '2026-02-01', path: ['a'] }] }, { ...E, currency: 'NOK', own: RESEARCH.figures[0] as never })).toThrow("XX's figure 7 doesn't date a fee from 2026-02-01");
     expect(() => fee({ note: 1 })).toThrow("a fee names note, which the game doesn't read");
     for (const x of ['x', null, []]) expect(() => feeOf(E, x), JSON.stringify(x)).toThrow('a fee is not an object');
-    for (const fig of [2, 5, 9]) expect(() => fee({ fig }), String(fig)).toThrow(`XX's figure ${fig} isn't one of its fees or agreement or periods`);
+    for (const fig of [2, 5, 9, 11]) expect(() => fee({ fig }), String(fig)).toThrow(`XX's figure ${fig} isn't one of its fees or agreement or periods or rates`);
+    // A statute's floor of a director's pay (rates) is read as a fee where the research gives it as theirs.
+    expect(fee({ fig: 8, per: 'day', steps: [{ from: '2026-07-01', path: ['floor', 'day'] }] })).toEqual({ ...BASE, per: 'day', steps: [['2026-07-01', '72.4']] });
     expect(() => fee({ form: 'half-hour' })).toThrow("a fee's form half-hour isn't its agreement's");
     expect(() => fee({ per: 'year' })).toThrow("a fee is paid by year, which the game doesn't pay by");
     expect(() => fee({ phases: [] })).toThrow("a fee by the week pays some of the engagement's days");
@@ -167,7 +176,8 @@ describe("the director's markets compile", () => {
     expect(() => periodOf(E, 'x')).toThrow('a period is not an object');
     expect(() => period({ fig: 2 })).toThrow("XX's figure 2 isn't one of its fees or periods or cut");
     expect(() => period({ form: 'half-hour' })).toThrow("a period's form half-hour isn't its agreement's");
-    expect(() => period({ part: 'prep' })).toThrow('a period is the prep and shoot or the cut, not prep');
+    expect(period({ part: 'prep', unit: 'day', path: ['seven'] })).toEqual({ form: 'feature', part: 'prep', when: {}, days: 7 });
+    expect(() => period({ part: 'shoot' })).toThrow('a period is the prep and shoot, the cut or the prep, not shoot');
     expect(() => period({ unit: 'month' })).toThrow('a period is in weeks or days, not month');
     expect(() => period({ path: ['none'] })).toThrow('has nothing at none');
     expect(() => period({ when: { budget: [1, 2] } })).toThrow("the research doesn't write the budget tier [1,2]");
@@ -182,7 +192,11 @@ describe("the director's markets compile", () => {
     expect(agreementOf('a', RESEARCH, { forms: ['feature'], none: { fig: 2, path: ['agreement'] } }).none).toBe(true);
     for (const path of [['present'], ['zero']]) expect(() => agreementOf('a', RESEARCH, { forms: ['feature'], none: { fig: 6, path } }), path[0]).toThrow("XX's figure 6 doesn't say nothing sets the pay");
     expect(() => agreementOf('a', RESEARCH, { forms: ['feature'], none: { fig: 6 } })).toThrow("XX's figure 6 isn't one of its none");
-    expect(() => agreementOf('a', RESEARCH, { forms: ['feature'], none: { fig: 1, path: ['zero'] } })).toThrow("XX's figure 1 isn't one of its none or agreement");
+    expect(() => agreementOf('a', RESEARCH, { forms: ['feature'], none: { fig: 4, path: ['weeks'] } })).toThrow("XX's figure 4 isn't one of its none or agreement or fees or union or rules or rates");
+    // A guild's, a law's or a floor's figure may say it: no minimum at its place, or a fee left free in the research's own word.
+    for (const [fig, path] of [[7, ['a']], [1, ['zero']], [8, ['kvOther']], [8, ['floor']]] as const) expect(() => agreementOf('a', RESEARCH, { forms: ['feature'], none: { fig, path } }), path.join()).toThrow(`XX's figure ${fig} doesn't say nothing sets the pay`);
+    for (const [fig, path] of [[8, ['kv']], [8, ['agreement']], [9, ['minimumFee']]] as const) expect(agreementOf('a', RESEARCH, { forms: ['feature'], none: { fig, path } }).none, path.join()).toBe(true);
+    expect(() => agreementOf('a', RESEARCH, { forms: ['feature'], none: { fig: 5, path: ['fee'] } })).toThrow("XX's figure 5 doesn't say nothing sets the pay");
     expect(() => agreementOf('a', RESEARCH, { forms: ['feature'], none: 2 })).toThrow('none is not an object');
     expect(agreementOf('a', RESEARCH, { forms: ['feature', 'hour'], unknown: true })).toEqual({ ...bare, forms: ['feature', 'hour'], none: false });
     for (const item of ['agreement', 'union', 'none']) expect(agreementOf('a', { ...RESEARCH, blockers: [{ item: 'periods' }, { item }] }, { forms: ['hour'], unknown: true }).none, item).toBe(false);
@@ -194,6 +208,10 @@ describe("the director's markets compile", () => {
     const set = { forms: ['feature', 'hour'], currency: 'EUR', fees: [one] };
     expect(agreementOf('a', RESEARCH, set)).toEqual({ country: 'XX', forms: ['feature', 'hour'], currency: 'EUR', none: false, month: null, short: null, fees: [BASE], periods: [] });
     expect(agreementOf('a', RESEARCH, { ...set, periods: [{ form: 'hour', part: 'cut', fig: 4, path: ['weeks'], unit: 'day' }] }).periods).toEqual([{ form: 'hour', part: 'cut', when: {}, days: 4 }]);
+    const prep = { form: 'hour', part: 'prep', fig: 3, path: ['seven'], unit: 'day' };
+    expect(agreementOf('a', RESEARCH, { ...set, periods: [prep, { ...prep, form: 'feature', part: 'prep-shoot' }] }).periods.map((p) => p.part)).toEqual(['prep', 'prep-shoot']);
+    expect(() => agreementOf('a', RESEARCH, { ...set, periods: [{ ...prep, form: 'feature' }, { ...prep, form: 'hour', part: 'prep-shoot' }, { ...prep, form: 'hour' }] })).toThrow("a guarantees a hour's prep both alone and with its shoot");
+    expect(() => agreementOf('a', RESEARCH, { ...set, periods: [{ ...prep, form: 'feature', part: 'prep-shoot' }, { ...prep, form: 'feature' }] })).toThrow("a guarantees a feature's prep both alone and with its shoot");
     expect(agreementOf('a', RESEARCH, { ...set, month: { fig: 1, path: ['month'], days: 21.67 }, short: { fig: 1, path: ['short'] } })).toMatchObject({ month: 21.67, short: { upTo: 5, share: '0.1' } });
     expect(agreementOf('a', RESEARCH, { ...set, month: { fig: 1, path: ['month'], days: 21 } }).month).toBe(21);
     for (const m of [{ fig: 1, path: ['month'], days: 22 }, { fig: 1, path: ['month'], days: '21' }, { fig: 1, path: ['odd'], days: 0 }, { fig: 1, path: ['odd'], days: -21 }]) expect(() => agreementOf('a', RESEARCH, { ...set, month: m }), JSON.stringify(m)).toThrow(`XX's figure 1 doesn't make a month ${String(m.days)} days`);
@@ -218,6 +236,23 @@ describe("the director's markets compile", () => {
       agreements: { 'xx-none': { country: 'XX', forms: ['feature'], currency: null, none: true, month: null, short: null, fees: [], periods: [] }, 'xx-tv': { country: 'XX', forms: ['hour'], currency: null, none: false, month: null, short: null, fees: [], periods: [] } },
     });
     expect(() => marketOf(RESEARCH, { agreements: {} })).toThrow('XX has no agreements');
+    // A territory whose research says a director's work there follows its sovereign's terms takes the sovereign's market as compiled.
+    const sovereign = marketOf({ ...RESEARCH, country: 'SV' }, { agreements: { 'sv-a': { forms: ['feature'], none: { fig: 2 } }, 'sv-b': { forms: ['hour'], unknown: true } } });
+    const done = { markets: { SV: sovereign.market }, agreements: sovereign.agreements };
+    const territory = (follows: unknown, figures: Research['figures'] = [{ item: 'follows', value: { follows: 'SV' } }], blockers: { item: string }[] = [{ item: 'none' }, { item: 'fees' }]) => marketOf({ country: 'TT', figures, blockers }, { follows }, done);
+    expect(territory({ fig: 0, market: 'SV' })).toEqual({
+      market: { agreements: ['tt-sv-a', 'tt-sv-b'], unknown: ['none', 'fees', 'periods'] },
+      agreements: { 'tt-sv-a': { ...sovereign.agreements['sv-a'], country: 'TT' }, 'tt-sv-b': { ...sovereign.agreements['sv-b'], country: 'TT' } },
+    });
+    expect(territory({ fig: 0, market: 'SV' }, [{ item: 'none', value: { follows: 'SV' } }], []).market).toEqual({ agreements: ['tt-sv-a', 'tt-sv-b'], unknown: ['fees', 'periods'] });
+    expect(() => territory({ fig: 0, market: 'XX' }, [{ item: 'follows', value: { follows: 'XX' } }])).toThrow("XX isn't a market to follow");
+    expect(() => territory({ fig: 0, market: 'toString' }, [{ item: 'follows', value: { follows: 'toString' } }])).toThrow("toString isn't a market to follow");
+    expect(() => territory({ fig: 0, market: 'SV' }, [{ item: 'follows', value: { follows: 'FR' } }])).toThrow("TT's figure 0 doesn't say a director's work there follows SV's terms");
+    expect(() => territory({ fig: 0, market: 'SV' }, [{ item: 'union', value: { follows: 'SV' } }])).toThrow("TT's figure 0 isn't one of its follows or none");
+    expect(() => territory({ fig: 0, market: 'SV' }, [{ item: 'none', value: 'SV' }])).toThrow('a figure is not an object');
+    expect(() => territory(5)).toThrow('what a market follows is not an object');
+    expect(() => marketOf({ country: 'TT', figures: [{ item: 'follows', value: { follows: 'SV' } }], blockers: [] }, { follows: { fig: 0, market: 'SV' } })).toThrow("SV isn't a market to follow");
+    expect(() => marketOf(RESEARCH, { follows: { fig: 0, market: 'SV' }, agreements: {} }, done)).toThrow("the reading of XX names agreements, which the game doesn't read");
     expect(() => marketOf(RESEARCH, { agreements: [] })).toThrow('the agreements is not an object');
     expect(() => marketOf(RESEARCH, { agreements: {}, zone: 'x' })).toThrow("the reading of XX names zone, which the game doesn't read");
     expect(() => marketOf(RESEARCH, 'x')).toThrow('the reading of XX is not an object');
@@ -257,6 +292,53 @@ describe("the director's markets compile", () => {
     expect(() => readMarkets(root)).toThrow(`${SOURCES}/${PREFIX}CC.json isn't cited by the register`);
   });
 
+  it('reads a market the research found nothing of from its blocker in the register alone, the file beside it unread', () => {
+    const entry = (results: (string | undefined)[]) => ({ fact: `${BLOCKED}AA`, attempts: results.map((result) => (result === undefined ? {} : { result })) });
+    expect(blockedItems(entry(['not found: fees', 'not found: fees, terms', 'not found: none']))).toEqual([{ item: 'fees' }, { item: 'terms' }, { item: 'none' }]);
+    for (const r of ['found: fees', 'not found:', 'not found: ', 'x not found: fees', 'not found: fees\nand more', undefined]) expect(() => blockedItems(entry([r])), String(r)).toThrow(`${BLOCKED}AA has an attempt whose result names nothing not found`);
+    for (const e of [entry([]), { fact: `${BLOCKED}AA` }]) expect(() => blockedItems(e)).toThrow(`${BLOCKED}AA names nothing not found`);
+    const { root, put } = lay();
+    put(`${SOURCES}/${PREFIX}AA.json`, 'not read');
+    const blocker = entry(['not found: fees', 'not found: terms']);
+    expect(readResearch(root, { entries: [blocker] }, 'AA')).toEqual({ research: { country: 'AA', figures: [], blockers: [{ item: 'fees' }, { item: 'terms' }] }, blocked: true });
+    // A found entry that names another file is no citation of this one, and the blocker doesn't stand in for it.
+    expect(() => readResearch(root, { entries: [blocker, { fact: `${FACT}AA`, value: { file: 'elsewhere.json', sha256: sha('x') } }] }, 'AA')).toThrow(`${SOURCES}/${PREFIX}AA.json isn't cited by the register`);
+    expect(() => readResearch(root, { entries: [{ fact: `${BLOCKED}BB`, attempts: [{ result: 'not found: fees' }] }] }, 'AA')).toThrow(`${SOURCES}/${PREFIX}AA.json isn't cited by the register`);
+    put('research/register.json', { entries: [blocker] });
+    put(READINGS, { AA: { agreements: { 'aa-screen': { forms: ['feature'], unknown: true } } } });
+    expect(readMarkets(root).markets).toEqual({ AA: { agreements: ['aa-screen'], unknown: ['fees', 'terms'] } });
+  });
+
+  it('reads a territory after the sovereign it follows, whatever their order, its blockers its own, the markets kept in the countries\' order', () => {
+    const { root, put } = lay();
+    const entries: unknown[] = [];
+    const file = (cc: string, research: Research) => {
+      const text = JSON.stringify(research);
+      put(`${SOURCES}/${PREFIX}${cc}.json`, text);
+      entries.push({ fact: `${FACT}${cc}`, value: { file: `${SOURCES}/${PREFIX}${cc}.json`, sha256: sha(text) } });
+    };
+    file('AA', { country: 'AA', figures: [{ item: 'none', value: { follows: 'BB' } }], blockers: [] });
+    file('BB', { ...RESEARCH, country: 'BB' });
+    file('CC', { ...RESEARCH, country: 'CC', blockers: [] });
+    entries.push({ fact: `${BLOCKED}BB` });
+    put('research/register.json', { entries });
+    put(READINGS, { AA: { follows: { fig: 0, market: 'BB' } }, BB: reading('bb'), CC: reading('cc') });
+    const out = readMarkets(root);
+    expect(Object.keys(out.markets)).toEqual(['AA', 'BB', 'CC']);
+    expect(out.markets['AA']).toEqual({ agreements: ['aa-bb'], unknown: ['fees', 'periods'] });
+    expect(out.agreements['aa-bb']).toMatchObject({ country: 'AA', none: true });
+    // A territory follows only a market read on its own, even one read before it.
+    entries.length = 0;
+    file('AA', { country: 'AA', figures: [{ item: 'none', value: { follows: 'CC' } }], blockers: [] });
+    file('BB', { country: 'BB', figures: [{ item: 'none', value: { follows: 'AA' } }], blockers: [] });
+    file('CC', { ...RESEARCH, country: 'CC', blockers: [] });
+    put('research/register.json', { entries });
+    put(READINGS, { AA: { follows: { fig: 0, market: 'CC' } }, BB: { follows: { fig: 0, market: 'AA' } }, CC: reading('cc') });
+    expect(() => readMarkets(root)).toThrow("AA isn't a market to follow");
+    put(READINGS, { AA: 5, BB: reading('bb'), CC: reading('cc') });
+    expect(() => readMarkets(root)).toThrow('the reading of AA is not an object');
+  });
+
   it('refuses a market whose blockers the register and the research hold apart, or an id taken', () => {
     const { root, put } = lay();
     const set = (files: Record<string, { item: string }[]>, blocked: string[], readings: Record<string, string>) => {
@@ -290,7 +372,7 @@ describe("the director's markets compile", () => {
     expect(() => readMarkets(root)).toThrow('the readings is not an object');
   });
 
-  it("compiles the twenty markets the director's engine reads", () => {
+  it("compiles every market the director's engine reads", () => {
     expect(readMarkets(ROOT)).toEqual(JSON.parse(readFileSync(join(ROOT, OUTPUT), 'utf8')));
   });
 
@@ -300,32 +382,45 @@ describe("the director's markets compile", () => {
 });
 
 describe("the director's markets coverage", () => {
-  it('is blocked where the register holds a blocker, researched where it cites the research alone, pending where neither', () => {
+  it('is the DGA in the US, blocked where the register holds a blocker, researched where it cites the research alone, pending where neither or where no market is compiled', () => {
     const facts = new Map([
       ['person.markets.director.AA', 'R-1'],
       ['person.markets.director.BB', 'R-2'],
       ['person.markets.director.blocked.BB', 'R-3'],
       ['person.markets.director.blocked.CC', 'R-4'],
       ['person.markets.DD', 'R-5'],
+      ['person.markets.director.EE', 'R-6'],
+      ['person.markets.director.blocked.FF', 'R-7'],
+      [DGA, 'R-8'],
     ]);
-    const rows = marketsCoverage(['AA', 'BB', 'CC', 'DD'], facts);
+    const one = { agreements: ['x'], unknown: [] };
+    const markets = { AA: one, BB: one, CC: one, DD: one } as never;
+    const rows = marketsCoverage(['AA', 'BB', 'CC', 'DD', 'EE', 'FF', 'GG', 'US'], markets, facts);
     expect(rows).toEqual([
       { key: 'AA', status: 'researched', register: ['R-1'], tests: TESTS },
       { key: 'BB', status: 'blocked', register: ['R-3', 'R-2'], tests: [...TESTS, TOLD] },
       { key: 'CC', status: 'blocked', register: ['R-4'], tests: [...TESTS, TOLD] },
       { key: 'DD', status: 'pending' },
+      { key: 'EE', status: 'pending' },
+      { key: 'FF', status: 'pending' },
+      { key: 'GG', status: 'pending' },
+      { key: 'US', status: 'researched', register: ['R-8'], tests: HOME_TESTS },
     ]);
+    expect(marketsCoverage(['US'], {}, new Map())).toEqual([{ key: 'US', status: 'pending' }]);
+    expect([HOME, DGA, COUNTRIES]).toEqual(['US', 'person.work.director.calibration', 'src/world/gazetteer/countries.json']);
     expect(TESTS).toEqual(["tests/person/directing/markets.test.ts::the director's markets > are each country's own, every fee and period as the research gives it", "tests/person/directing/markets.test.ts::a film in a market > is paid its agreement's minimum, by form, tier, date and the days it works"]);
     expect(TOLD).toBe("tests/person/directing/markets.test.ts::a film in a market > tells the player what of a market isn't known");
-    expect(serializeCoverage(rows.slice(0, 2))).toBe(`${JSON.stringify({ engine: 'person.directing', axis: 'market', universe: { keys: ['AA', 'BB'] }, rows: rows.slice(0, 2) }, null, 1)}\n`);
+    expect(HOME_TESTS).toEqual(["tests/person/directing/directing.test.ts::the DGA terms > set a feature by its budget: pay, prep and the Director's Cut at every level's edge", "tests/person/directing/directing.test.ts::the DGA terms > set an episode by the show: the network program rate, the guaranteed prep and shoot, the episode's cut"]);
+    expect(serializeCoverage(rows.slice(0, 2))).toBe(`${JSON.stringify({ engine: 'person.directing', axis: 'country', rows: rows.slice(0, 2) }, null, 1)}\n`);
   });
 
-  it('is built from the compiled markets and the register', () => {
+  it('is built from the map, the compiled markets and the register', () => {
     const { root, put } = lay();
-    put(OUTPUT, { markets: { AA: {}, BB: {} }, agreements: {} });
-    put('research/register.json', { entries: [{ id: 'R-1', fact: 'person.markets.director.AA' }, { id: 'R-2', fact: 'person.markets.director.blocked.BB' }] });
+    put(OUTPUT, { markets: { AA: { agreements: ['a'] }, BB: { agreements: ['b'] } }, agreements: {} });
+    put(COUNTRIES, { AA: {}, BB: {}, US: {} });
+    put('research/register.json', { entries: [{ id: 'R-1', fact: 'person.markets.director.AA' }, { id: 'R-2', fact: 'person.markets.director.blocked.BB' }, { id: 'R-3', fact: DGA }] });
     expect(COVERAGE).toBe('coverage/markets-director-countries.json');
-    expect(coverageOf(root)).toBe(serializeCoverage([{ key: 'AA', status: 'researched', register: ['R-1'], tests: TESTS }, { key: 'BB', status: 'blocked', register: ['R-2'], tests: [...TESTS, TOLD] }]));
+    expect(coverageOf(root)).toBe(serializeCoverage([{ key: 'AA', status: 'researched', register: ['R-1'], tests: TESTS }, { key: 'BB', status: 'blocked', register: ['R-2'], tests: [...TESTS, TOLD] }, { key: 'US', status: 'researched', register: ['R-3'], tests: HOME_TESTS }]));
   });
 
   it('is the matrix the gate holds, as built from the repository', () => {

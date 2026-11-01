@@ -1,0 +1,209 @@
+{
+ "topic": "tax.EC",
+ "read": "2026-11-01",
+ "note": "Read 2026-11-01 at the owner's word (\"Build those first 3 starting with ledger first\"; of the 21 countries read first: \"It should cover across every country\"; \"Retry the blocked tax facts once all countries land\"): the tax on a screen worker's pay in Ecuador: a resident's income tax, social contributions, what is withheld at source, a non-resident artiste's withholding, an author's treatment, VAT and the tax year. Research and retry subagents (workbench/briefs/BRIEF-tax.md, BRIEF-tax-retry.md), every quote checked by the lead against its saved page.",
+ "figures": [
+  {
+   "item": "residents",
+   "finding": "For 2026 an Ecuadorian resident pays nothing on taxable income up to US$12,208, then 5%, 10%, 12%, 15%, 20%, 25%, 30%, 35%, and 37% above US$109,956; there is no local income tax.",
+   "value": {
+    "currency": "USD",
+    "brackets": [
+     {
+      "from": 0,
+      "to": 12208,
+      "rate": 0
+     },
+     {
+      "from": 12208,
+      "to": 15549,
+      "rate": 0.05
+     },
+     {
+      "from": 15549,
+      "to": 20188,
+      "rate": 0.1
+     },
+     {
+      "from": 20188,
+      "to": 26700,
+      "rate": 0.12
+     },
+     {
+      "from": 26700,
+      "to": 35136,
+      "rate": 0.15
+     },
+     {
+      "from": 35136,
+      "to": 46575,
+      "rate": 0.2
+     },
+     {
+      "from": 46575,
+      "to": 62005,
+      "rate": 0.25
+     },
+     {
+      "from": 62005,
+      "to": 82679,
+      "rate": 0.3
+     },
+     {
+      "from": 82679,
+      "to": 109956,
+      "rate": 0.35
+     },
+     {
+      "from": 109956,
+      "to": null,
+      "rate": 0.37
+     }
+    ]
+   },
+   "applies": "Fiscal year 2026.",
+   "sources": [
+    {
+     "src": 0,
+     "said": "0 12,208 - 0 12,208 15,549 - 5 15,549 20,188 167 10 20,188 26,700 631 12 26,700 35,136 1,412 15 35,136 46,575 2,678 20 46,575 62,005 4,965 25 62,005 82,679 8,823 30 82,679 109,956 15,025 35 109,956 Onwards 24,572 37"
+    },
+    {
+     "src": 0,
+     "said": "There are no local (provincial, county, or municipal) taxes on income."
+    }
+   ]
+  },
+  {
+   "item": "social",
+   "finding": "A private employee pays 9.45% of remuneration to social security and the employer 12.15%; a voluntary contributor (self-employed) pays 17.6% of income.",
+   "value": {
+    "employee": 0.0945,
+    "employer": 0.1215,
+    "voluntary": 0.176
+   },
+   "applies": "2026; ceiling not given.",
+   "sources": [
+    {
+     "src": 1,
+     "said": "Private employees under a labour relationship will contribute at the rate of 9.45% of remuneration arising from employment"
+    },
+    {
+     "src": 1,
+     "said": "Voluntary contributors must pay a rate of 17.6% over their income. The employer contribution amounts to 12.15% of total remuneration."
+    }
+   ]
+  },
+  {
+   "item": "withholding",
+   "finding": "The employer withholds income tax monthly where the employee's annual net income exceeds US$12,208, and its annual withholding return stands as the employee's return.",
+   "value": {
+    "threshold": 12208
+   },
+   "applies": "2026.",
+   "sources": [
+    {
+     "src": 2,
+     "said": "In the case of employees, there is mandatory monthly withholding by the employer as long as the total annual net income exceeds the non-taxable base of USD 12,208."
+    },
+    {
+     "src": 2,
+     "said": "The employer's annual withholding return is considered the employee's income tax return."
+    }
+   ]
+  },
+  {
+   "item": "nonResident",
+   "finding": "A non-resident pays 25% income tax, withheld at source, on Ecuador-source income; payments to a non-resident occasionally working in Ecuador not charged to an Ecuadorian company or branch give rise to no tax.",
+   "value": {
+    "rate": 0.25,
+    "withheld": true,
+    "final": null
+   },
+   "applies": "2026.",
+   "sources": [
+    {
+     "src": 0,
+     "said": "Non-residents are subject to 25% income tax on income received from local sources, which is withheld at source. Payments made to non-residents occasionally working in Ecuador, when not charged to an Ecuadorian company or branch of a foreign entity, do not give rise to income tax."
+    }
+   ]
+  },
+  {
+   "item": "vat",
+   "finding": "Services under a professional fee contract bear 15% VAT (wholly withheld when supplied to companies), and the professional files VAT returns; employment bears none.",
+   "value": {
+    "rate": 0.15,
+    "threshold": 0,
+    "withheldByCompanies": 1.0
+   },
+   "applies": "2026.",
+   "sources": [
+    {
+     "src": 1,
+     "said": "Personal services provided under a professional fee contract relationship are subject to VAT at 15%, which, when provided to companies, is subject to 100% withholding by them. Professionals are required to file VAT returns."
+    }
+   ]
+  },
+  {
+   "item": "year",
+   "finding": "The fiscal year is the calendar year; individuals other than employees file in March of the following year, on a day set by the ninth digit of the tax number.",
+   "value": {
+    "start": "01-01",
+    "due": {
+     "on": "03-31",
+     "after": 1
+    }
+   },
+   "applies": "Latest March date taken.",
+   "sources": [
+    {
+     "src": 2,
+     "said": "The fiscal year is the calendar year."
+    },
+    {
+     "src": 2,
+     "said": "Other individuals must file their income tax return in March of the following year."
+    }
+   ]
+  }
+ ],
+ "country": "EC",
+ "sources": [
+  {
+   "url": "https://taxsummaries.pwc.com/ecuador/individual/taxes-on-personal-income",
+   "title": "Ecuador: individual/taxes-on-personal-income (PwC Worldwide Tax Summaries, reviewed 23 July 2026)",
+   "read": "2026-11-01",
+   "kind": "secondary",
+   "quotes": "https://www.sri.gob.ec/impuesto-renta",
+   "said": "0 12,208 - 0 12,208 15,549 - 5 15,549 20,188 167 10 20,188 26,700 631 12 26,700 35,136 1,412 15 35,136 46,575 2,678 20 46,575 62,005 4,965 25 62,005 82,679 8,823 30 82,679 109,956 15,025 35 109,956 Onwards 24,572 37 … There are no local (provincial, county, or municipal) taxes on income. … Non-residents are subject to 25% income tax on income received from local sources, which is withheld at source. Payments made to non-residents occasionally working in Ecuador, when not charged to an Ecuadorian company or branch of a foreign entity, do not give rise to income tax."
+  },
+  {
+   "url": "https://taxsummaries.pwc.com/ecuador/individual/other-taxes",
+   "title": "Ecuador: individual/other-taxes (PwC Worldwide Tax Summaries, reviewed 23 July 2026)",
+   "read": "2026-11-01",
+   "kind": "secondary",
+   "quotes": "https://www.iess.gob.ec/",
+   "said": "Private employees under a labour relationship will contribute at the rate of 9.45% of remuneration arising from employment … Voluntary contributors must pay a rate of 17.6% over their income. The employer contribution amounts to 12.15% of total remuneration. … Personal services provided under a professional fee contract relationship are subject to VAT at 15%, which, when provided to companies, is subject to 100% withholding by them. Professionals are required to file VAT returns."
+  },
+  {
+   "url": "https://taxsummaries.pwc.com/ecuador/individual/tax-administration",
+   "title": "Ecuador: individual/tax-administration (PwC Worldwide Tax Summaries, reviewed 23 July 2026)",
+   "read": "2026-11-01",
+   "kind": "secondary",
+   "quotes": "https://www.sri.gob.ec/impuesto-renta",
+   "said": "In the case of employees, there is mandatory monthly withholding by the employer as long as the total annual net income exceeds the non-taxable base of USD 12,208. … The employer's annual withholding return is considered the employee's income tax return. … The fiscal year is the calendar year. … Other individuals must file their income tax return in March of the following year."
+  }
+ ],
+ "blockers": [
+  {
+   "item": "withholding",
+   "sought": "The withholding rate on a resident freelancer's professional fees (honorarios).",
+   "tried": {
+    "institution": "sri.gob.ec not reached in the time. || 2026-11-01 retry: sri.gob.ec resets the connection (curl 000); iess.gob.ec, finanzas.gob.ec and ces.gob.ec reachable but none publishes the SRI withholding percentages",
+    "official-register": "Registro Oficial not reached. || 2026-11-01 retry: registroficial.gob.ec home reachable; the SRI withholding resolution was not located without its number",
+    "web-search": "Not searched. || 2026-11-01 retry: refused by the tool on 2026-11-01: 'this turn's web search budget is used up (limit: 200 WebSearch calls per turn, shared by every agent)'; queries sent and refused this turn: 'Налоговый кодекс Республики Беларусь статья 199 ставки подоходного налога 2026 13 25 процентов' and 'Eswatini Revenue Service PAYE tax tables 1 July 2026'; no search engine was queried any other way",
+    "trade-press": "PwC: not stated. || 2026-11-01 retry: PwC Ecuador (already read): not stated",
+    "archive": "Archive unreachable. || 2026-11-01 retry: archive.org's availability API now answers (snapshots of the institution's site exist), but web.archive.org snapshot pages return HTTP 403 over http and reset over https from this environment (2026-11-01)"
+   }
+  }
+ ]
+}

@@ -1,0 +1,220 @@
+{
+ "topic": "tax.MU",
+ "read": "2026-11-01",
+ "note": "Read 2026-11-01 at the owner's word (\"Build those first 3 starting with ledger first\"; of the 21 countries read first: \"It should cover across every country\"; \"Retry the blocked tax facts once all countries land\"): the tax on a screen worker's pay in Mauritius: a resident's income tax, social contributions, what is withheld at source, a non-resident artiste's withholding, an author's treatment, VAT and the tax year. Research and retry subagents (workbench/briefs/BRIEF-tax.md, BRIEF-tax-retry.md), every quote checked by the lead against its saved page.",
+ "figures": [
+  {
+   "item": "residents",
+   "finding": "A resident pays nothing on the first MUR 500,000 of annual chargeable income, 10% on the next MUR 500,000 and 20% on the rest, plus a 15% fair share contribution on net income above MUR 12 million (income years from 1 July 2025 for three years); dependants' deductions run from MUR 110,000 to 355,000.",
+   "value": {
+    "currency": "MUR",
+    "brackets": [
+     {
+      "from": 0,
+      "to": 500000,
+      "rate": 0
+     },
+     {
+      "from": 500000,
+      "to": 1000000,
+      "rate": 0.1
+     },
+     {
+      "from": 1000000,
+      "to": null,
+      "rate": 0.2
+     }
+    ],
+    "fairShare": {
+     "rate": 0.15,
+     "above": 12000000,
+     "years": "2025-26 to 2027-28"
+    },
+    "dependentDeductions": {
+     "1": 110000,
+     "2": 190000,
+     "3": 275000,
+     "4+": 355000
+    },
+    "regionalLayer": null
+   },
+   "applies": "Mauritian residents, income years 1 July 2025 - 30 June 2026 and 1 July 2026 - 30 June 2027.",
+   "sources": [
+    {
+     "src": 0,
+     "said": "Annual Chargeable Income Rate of Income tax First Rs 500,000 0% Next Rs 500,000 10% Remainder 20%"
+    },
+    {
+     "src": 1,
+     "said": "All individuals with a net annual income exceeding MUR 12 million are liable to pay a fair share contribution of 15% on the amount in excess of MUR 12 million, for the three consecutive income years commencing on 1 July 2025."
+    },
+    {
+     "src": 1,
+     "said": "One dependent: MUR 110,000; • Two dependents: MUR 190,000; • Three dependents: MUR 275,000; and • Four or more dependents: MUR 355,000."
+    }
+   ]
+  },
+  {
+   "item": "year",
+   "finding": "The income year runs 1 July to 30 June; the annual return is due by 15 October after the year ends; income outside PAYE is paid in quarterly instalments.",
+   "value": {
+    "taxYear": {
+     "from": "2025-07-01",
+     "to": "2026-06-30"
+    },
+    "nextYear": {
+     "from": "2026-07-01",
+     "to": "2027-06-30"
+    },
+    "returnDue": "15 October after year end",
+    "currency": "MUR"
+   },
+   "applies": "Mauritian individuals.",
+   "sources": [
+    {
+     "src": 1,
+     "said": "Tax year: The tax year is from 1 July through 30 June."
+    },
+    {
+     "src": 1,
+     "said": "Income not subject to PAYE is self-assessed, and the individual must make quarterly tax payments. An annual income tax return must be filed by 15 October following the end of the tax year."
+    }
+   ]
+  },
+  {
+   "item": "withholding",
+   "finding": "The employer withholds PAYE monthly at the bracket rates and remits it to the MRA every month; pay up to MUR 38,462 a month is not subject to PAYE.",
+   "value": {
+    "scheme": "PAYE, monthly",
+    "exemptMonthlyUpTo": 38462
+   },
+   "applies": "Employees in Mauritius.",
+   "sources": [
+    {
+     "src": 0,
+     "said": "Pay As You Earn (PAYE) is a system whereby employers are required to withhold tax from the emoluments of employees chargeable to tax at the time the emoluments are received by or made available to the employees. The tax withheld is then remitted to the Mauritius Revenue Authority (MRA) every month."
+    },
+    {
+     "src": 0,
+     "said": "Employees drawing monthly emoluments not exceeding Rs 38,462 are not subject to PAYE"
+    }
+   ]
+  },
+  {
+   "item": "social",
+   "finding": "The employer pays 2.5% to the National Solidarity Fund (capped) and the 1.5% HRDC levy on basic salary, and the employee 1% NSF (capped); both also pay the Contribution Sociale Généralisée by uncapped pay brackets.",
+   "value": {
+    "employer": {
+     "nsf": 0.025,
+     "hrdc": 0.015,
+     "csg": "by pay bracket"
+    },
+    "employee": {
+     "nsf": 0.01,
+     "csg": "by pay bracket"
+    },
+    "nsfCap": "monthly salary cap (amount not stated)"
+   },
+   "applies": "Employees in Mauritius.",
+   "sources": [
+    {
+     "src": 1,
+     "said": "The employer must make pay-related social security contributions equal to 2.5% (for the National Solidarity Fund (NSF)) and 1.5% (for the Human Resource Development Council levy) of the monthly basic salary (the monthly salary is capped for NSF contributions). Contributions to the Contribution Sociale Généralisée (CSG) payable by the employer are based on specific remuneration brackets and are not capped. The employee must make pay-related social security contributions equal to 1% (in respect of the NSF) of the monthly basic salary, subject to a cap."
+    }
+   ]
+  },
+  {
+   "item": "nonResident",
+   "finding": "A non-resident is taxed only on Mauritius-source income; fees for technical services rendered in Mauritius bear a 10% withholding and royalties paid to non-residents 15%.",
+   "value": {
+    "technicalServices": 0.1,
+    "royalties": 0.15,
+    "basis": "Mauritius-source income"
+   },
+   "applies": "Non-residents; whether a performer's fee counts as a technical service fee is not stated.",
+   "sources": [
+    {
+     "src": 1,
+     "said": "Nonresidents are taxed only on Mauritius-source income."
+    },
+    {
+     "src": 1,
+     "said": "A 10% withholding tax generally is imposed on technical service fees paid to nonresidents for services rendered in Mauritius unless the fees are specifically exempted or the rate is reduced under an applicable tax treaty."
+    }
+   ]
+  },
+  {
+   "item": "authors",
+   "finding": "Royalties bear a 10% withholding when paid to a resident and 15% when paid to a non-resident.",
+   "value": {
+    "resident": 0.1,
+    "nonResident": 0.15
+   },
+   "applies": "Royalty payments.",
+   "sources": [
+    {
+     "src": 1,
+     "said": "The general rate of withholding tax on royalties paid to nonresidents is 15% unless the rate is reduced under an applicable tax treaty. A 10% withholding tax generally applies to royalties paid to residents."
+    }
+   ]
+  },
+  {
+   "item": "vat",
+   "finding": "A freelancer registers for VAT above MUR 3 million of turnover; the standard rate is 15%.",
+   "value": {
+    "currency": "MUR",
+    "threshold": 3000000,
+    "standardRate": 0.15
+   },
+   "applies": "Taxable supplies in Mauritius.",
+   "sources": [
+    {
+     "src": 1,
+     "said": "The standard VAT rate is 15%. Some supplies are zero rated or exempt. Registration: The registration threshold is MUR 3 million."
+    }
+   ]
+  }
+ ],
+ "country": "MU",
+ "sources": [
+  {
+   "url": "https://www.mra.mu/index.php/employers/paye",
+   "title": "Pay As You Earn (PAYE) – Employers (Mauritius Revenue Authority)",
+   "read": "2026-11-01",
+   "kind": "primary",
+   "said": "Annual Chargeable Income Rate of Income tax First Rs 500,000 0% Next Rs 500,000 10% Remainder 20% … Pay As You Earn (PAYE) is a system whereby employers are required to withhold tax from the emoluments of employees chargeable to tax at the time the emoluments are received by or made available to the employees. The tax withheld is then remitted to the Mauritius Revenue Authority (MRA) every month. … Employees drawing monthly emoluments not exceeding Rs 38,462 are not subject to PAYE"
+  },
+  {
+   "url": "https://www.deloitte.com/content/dam/assets-shared/docs/services/tax/2026/dttl-tax-mauritiushighlights-2026.pdf",
+   "title": "Mauritius Highlights 2026 (Deloitte International Tax)",
+   "read": "2026-11-01",
+   "kind": "secondary",
+   "quotes": "https://www.mra.mu",
+   "said": "All individuals with a net annual income exceeding MUR 12 million are liable to pay a fair share contribution of 15% on the amount in excess of MUR 12 million, for the three consecutive income years commencing on 1 July 2025. … One dependent: MUR 110,000; • Two dependents: MUR 190,000; • Three dependents: MUR 275,000; and • Four or more dependents: MUR 355,000. … Tax year: The tax year is from 1 July through 30 June. … Income not subject to PAYE is self-assessed, and the individual must make quarterly tax payments. An annual income tax return must be filed by 15 October following the end of the tax year. … The employer must make pay-related social security contributions equal to 2.5% (for the National Solidarity Fund (NSF)) and 1.5% (for the Human Resource Development Council levy) of the monthly basic salary (the monthly salary is capped for NSF contributions). Contributions to the Contribution Sociale Généralisée (CSG) payable by the employer are based on specific remuneration brackets and are not capped. The employee must make pay-related social security contributions equal to 1% (in respect of the NSF) of the monthly basic salary, subject to a cap. … Nonresidents are taxed only on Mauritius-source income. … A 10% withholding tax generally is imposed on technical service fees paid to nonresidents for services rendered in Mauritius unless the fees are specifically exempted or the rate is reduced under an applicable tax treaty. … The general rate of withholding tax on royalties paid to nonresidents is 15% unless the rate is reduced under an applicable tax treaty. A 10% withholding tax generally applies to royalties paid to residents. … The standard VAT rate is 15%. Some supplies are zero rated or exempt. Registration: The registration threshold is MUR 3 million."
+  }
+ ],
+ "blockers": [
+  {
+   "item": "social",
+   "sought": "The CSG rates by pay bracket and the NSF salary cap for 2026",
+   "tried": {
+    "institution": "mra.mu reachable; PAYE page read; CSG bracket tables and non-resident entertainer rules not located in this pass || retry 2026-11-01 (world round): mra.mu: the employers' PAYE page and its PDFs read (PayrollTaxes.pdf of 6 October 2025, PAYEGuide.pdf of December 2025, saved MU-mra-payroll-taxes.pdf, MU-mra-paye-guide.pdf): income tax, PAYE and the Fair Share Contribution only, no CSG table; socialsecurity.govmu.org searched by its WordPress search API ('contribution rate', 'CSG'): its National Savings Fund page (MU-ss-nsf.html: employer 2.5%, employee 1%) and FAQs (MU-ss-faqs.html: pre-2020 NPF rates and ceilings) carry no date and no CSG brackets, not used",
+    "official-register": "Income Tax Act 1995 not read || retry 2026-11-01 (world round): legislation.govmu.org does not answer (curl 000); attorneygeneral.govmu.org and mof.govmu.org answer (home pages); the Social Contribution and Social Benefits Act 2021 not located on them",
+    "web-search": "not searched beyond the summary || retry 2026-11-01 (world round): WebSearch refused 2026-11-01 (the turn's shared 200-search budget exhausted)",
+    "trade-press": "Deloitte Mauritius Highlights 2026 read || retry 2026-11-01 (world round): Deloitte Mauritius Highlights 2026 (read before): CSG summary without the primary's brackets",
+    "archive": "web.archive.org not reachable (curl 000) 2026-11-01 || retry 2026-11-01 (world round): web.archive.org and archive.ph reset the connection; arquivo.pt 403"
+   }
+  },
+  {
+   "item": "nonResident",
+   "sought": "Any specific withholding on a non-resident entertainer's fee in Mauritius",
+   "tried": {
+    "institution": "mra.mu reachable; PAYE page read; CSG bracket tables and non-resident entertainer rules not located in this pass || retry 2026-11-01 (world round): mra.mu PAYE guide (December 2025) and payroll-tax notice read: no entertainer or non-resident fee rule; mra.mu FAQs and downloadable-forms pages list nothing on it",
+    "official-register": "Income Tax Act 1995 not read || retry 2026-11-01 (world round): legislation.govmu.org unreachable; the Income Tax Act 1995 (s. 111B, payments to non-residents) not located on attorneygeneral.govmu.org",
+    "web-search": "not searched beyond the summary || retry 2026-11-01 (world round): WebSearch refused 2026-11-01 (the turn's shared 200-search budget exhausted)",
+    "trade-press": "Deloitte Mauritius Highlights 2026 read || retry 2026-11-01 (world round): Deloitte Mauritius Highlights 2026 (read before): no entertainer line",
+    "archive": "web.archive.org not reachable (curl 000) 2026-11-01 || retry 2026-11-01 (world round): web.archive.org and archive.ph reset the connection; arquivo.pt 403"
+   }
+  }
+ ]
+}

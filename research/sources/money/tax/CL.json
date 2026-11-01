@@ -1,0 +1,331 @@
+{
+ "topic": "tax.CL",
+ "read": "2026-11-01",
+ "note": "Read 2026-11-01 at the owner's word (\"Build those first 3 starting with ledger first\"; of the 21 countries read first: \"It should cover across every country\"; \"Retry the blocked tax facts once all countries land\"): the tax on a screen worker's pay in Chile: a resident's income tax, social contributions, what is withheld at source, a non-resident artiste's withholding, an author's treatment, VAT and the tax year. Research and retry subagents (workbench/briefs/BRIEF-tax.md, BRIEF-tax-retry.md), every quote checked by the lead against its saved page.",
+ "figures": [
+  {
+   "item": "residents",
+   "finding": "A Chilean resident pays the annual Global Complementary Tax, progressive in annual tax units (UTA): nothing to 13.5 UTA, then 4%, 8%, 13.5%, 23%, 30.4%, 35%, and 40% above 310 UTA; there is no local income tax.",
+   "value": {
+    "currency": "CLP",
+    "unit": "UTA",
+    "bracketsUTA": [
+     {
+      "from": 0,
+      "to": 13.5,
+      "rate": 0
+     },
+     {
+      "from": 13.5,
+      "to": 30,
+      "rate": 0.04
+     },
+     {
+      "from": 30,
+      "to": 50,
+      "rate": 0.08
+     },
+     {
+      "from": 50,
+      "to": 70,
+      "rate": 0.135
+     },
+     {
+      "from": 70,
+      "to": 90,
+      "rate": 0.23
+     },
+     {
+      "from": 90,
+      "to": 120,
+      "rate": 0.304
+     },
+     {
+      "from": 120,
+      "to": 310,
+      "rate": 0.35
+     },
+     {
+      "from": 310,
+      "to": null,
+      "rate": 0.4
+     }
+    ],
+    "UTMNovember2026": 72440,
+    "UTANovember2026": 869280
+   },
+   "applies": "2026. The same bands monthly in UTM give the employment tax (Impuesto Único de Segunda Categoría); PwC's table at 35.5% top is dated 2017 and not used.",
+   "sources": [
+    {
+     "src": 0,
+     "said": "Up to 13.5 0% Over 13.5–30 4% Over 30–50 8% Over 50–70 13.5% Over 70–90 23% Over 90–120 30.4% Over 120–310 35% Over 310 40%"
+    },
+    {
+     "src": 1,
+     "said": "Noviembre 72.440 869.280"
+    },
+    {
+     "src": 2,
+     "said": "There are no local income taxes to be paid in Chile, only central government taxes."
+    }
+   ]
+  },
+  {
+   "item": "withholding",
+   "finding": "The employer withholds the monthly employment tax by the SII table; for November 2026 nothing is due on monthly taxable pay up to CLP 977,940 (13.5 UTM), then 4% up to 40% above CLP 22,456,400. A freelancer's fee invoice (boleta de honorarios) bears 15.25% withholding in 2026 (16% in 2027, 17% from 2028).",
+   "value": {
+    "currency": "CLP",
+    "monthlyNovember2026": [
+     {
+      "from": 0,
+      "to": 977940,
+      "rate": 0
+     },
+     {
+      "from": 977940,
+      "to": 2173200,
+      "rate": 0.04
+     },
+     {
+      "from": 2173200,
+      "to": 3622000,
+      "rate": 0.08
+     },
+     {
+      "from": 3622000,
+      "to": 5070800,
+      "rate": 0.135
+     },
+     {
+      "from": 5070800,
+      "to": 6519600,
+      "rate": 0.23
+     },
+     {
+      "from": 6519600,
+      "to": 8692800,
+      "rate": 0.304
+     },
+     {
+      "from": 8692800,
+      "to": 22456400,
+      "rate": 0.35
+     },
+     {
+      "from": 22456400,
+      "to": null,
+      "rate": 0.4
+     }
+    ],
+    "honorariosRetention": {
+     "2025": 0.145,
+     "2026": 0.1525,
+     "2027": 0.16,
+     "2028": 0.17
+    }
+   },
+   "applies": "Monthly table changes with the UTM each month.",
+   "sources": [
+    {
+     "src": 3,
+     "said": "Noviembre 2026 Monto de Cálculo del Impuesto Único de Segunda Categoría"
+    },
+    {
+     "src": 3,
+     "said": "MENSUAL -.- $ 977.940,00 Exento -.- Exento $ 977.940,01 $ 2.173.200,00 0,04 $ 39.117,60 2,20%"
+    },
+    {
+     "src": 3,
+     "said": "$ 22.456.400,01 Y MÁS 0,4 $ 2.812.120,80 MÁS DE 27,48%"
+    },
+    {
+     "src": 3,
+     "said": "cuyo monto excede mensualmente las 13,5 UTM"
+    },
+    {
+     "src": 4,
+     "said": "La ley 21.133 establece que a partir del 1 de enero de 2026 el porcentaje de retención pasa de 14,5% a 15,25% llegando a 17% en 2028."
+    },
+    {
+     "src": 4,
+     "said": "15.25% 2026 16% 2027"
+    }
+   ]
+  },
+  {
+   "item": "social",
+   "finding": "An employee pays about 20% of salary (pension, health and related) on pay up to UF 75.7 a month, and 0.6% unemployment insurance (employer 2.4%) up to UF 113.5; the employer also pays a 0.93% accident premium plus a risk surcharge.",
+   "value": {
+    "employee": 0.2,
+    "ceilingUFMonthly": 75.7,
+    "unemployment": {
+     "employee": 0.006,
+     "employer": 0.024,
+     "ceilingUFMonthly": 113.5
+    },
+    "employerAccident": 0.0093
+   },
+   "applies": "Foreigners covered by a home scheme may be exempt. The fee-earner's 15.25% retention funds the self-employed's compulsory contributions under Ley 21.133.",
+   "sources": [
+    {
+     "src": 5,
+     "said": "salaries are subject to Chilean social security contribution of 20%, computed on the monthly salary capped at 75.7 unidades de fomento"
+    },
+    {
+     "src": 5,
+     "said": "of 3% in connection with unemployment insurance (0.6% contributed by the employee and 2.4% contributed by the employer) with a cap of UF 113.5"
+    },
+    {
+     "src": 0,
+     "said": "a monthly 0.93% premium on remuneration"
+    }
+   ]
+  },
+  {
+   "item": "nonResident",
+   "finding": "A non-resident performer, writer or director paid for cultural work done in Chile bears a 20% additional tax on the whole fee with no deduction, withheld by whoever hired them before they leave; it is a single, final tax replacing the second-category tax. Other non-resident income bears 35% (15% for technical or professional services per PwC).",
+   "value": {
+    "professionalServices": 0.15,
+    "final": true,
+    "culturalActivities": 0.2,
+    "base": "gross, no deduction",
+    "general": 0.35
+   },
+   "applies": "Non-resident individuals with cultural, scientific or sporting activities in Chile (Ley sobre Impuesto a la Renta art. 60, inciso 2). The SII's copy of the law is updated to Ley 21.047 (2017); later amendments to art. 60 are not shown in it.",
+   "sources": [
+    {
+     "src": 6,
+     "said": "pagarán respecto de ellas un impuesto adicional de 35%. … No obstante, la citada tasa será de 20% cuando se trate de remuneraciones provenientes exclusivamente del trabajo o habilidad de personas, percibidas por las personas naturales a que se refiere el inciso anterior, sólo cuando éstas hubieren desarrollado en Chile actividades científicas, culturales o deportivas. Este impuesto deberá ser retenido y pagado antes de que dichas personas se ausenten del país, por quien o quienes contrataron sus servicios, de acuerdo con las normas de los artículos 74 y 79. … El impuesto establecido en este artículo tendrá el carácter de impuesto único a la renta respecto de las rentas referidas en el inciso segundo, en reemplazo del impuesto de la Segunda Categoría, y se aplicará sobre las cantidades que se paguen, se abonen en cuenta o se pongan a disposición de las personas mencionadas en dicho inciso, sin deducción alguna."
+    },
+    {
+     "src": 2,
+     "said": "Before residence is acquired, a flat 15% tax generally is levied if the activities can be qualified as technical or engineering work or professional services that an individual renders through a report, advice, or plan development. In the case of other activities, or where the paying company is located in a tax haven, other rates would apply."
+    },
+    {
+     "src": 0,
+     "said": "nonresident individuals are taxed only on their Chilean- source income."
+    }
+   ]
+  },
+  {
+   "item": "vat",
+   "finding": "VAT is 19% on transfers and services.",
+   "value": {
+    "rate": 0.19,
+    "threshold": null
+   },
+   "applies": "In the SII's 2017 text a 'service' for VAT is one from the activities of LIR art. 20 Nos. 3 and 4 (commerce, industry and the like), which leaves an individual's honorarios (second-category income, LIR art. 42 No. 2) outside VAT; the 2022 reform widening VAT to services (Ley 21.420) is not in that copy, so the current treatment is still open (see blocker).",
+   "sources": [
+    {
+     "src": 7,
+     "said": "Por “servicio”, la acción o prestación que una persona realiza para otra y por la cual percibe un interés, prima, comisión o cualquiera otra forma de remuneración, siempre que provenga del ejercicio de las actividades comprendidas en los Nºs. 3 y 4, del artículo 20, de la Ley sobre Impuesto a la Renta."
+    },
+    {
+     "src": 5,
+     "said": "VAT is payable on transfers and services at a rate of 19%."
+    },
+    {
+     "src": 0,
+     "said": "The standard VAT rate is 19%."
+    }
+   ]
+  },
+  {
+   "item": "year",
+   "finding": "The tax year is the calendar year; the annual return is filed, and any tax paid, in April of the following year.",
+   "value": {
+    "start": "01-01",
+    "due": {
+     "on": "04-30",
+     "after": 1
+    }
+   },
+   "applies": "Due date read as the end of April.",
+   "sources": [
+    {
+     "src": 0,
+     "said": "Tax year: The tax year is a calendar year. Filing status:"
+    },
+    {
+     "src": 0,
+     "said": "An annual income tax return must be filed in April of the year following the end of the tax year, and any tax due must be paid at that time."
+    }
+   ]
+  }
+ ],
+ "country": "CL",
+ "sources": [
+  {
+   "url": "https://www.deloitte.com/content/dam/assets-shared/docs/services/tax/2026/dttl-tax-chilehighlights-2026.pdf",
+   "title": "Chile Highlights 2026 (Deloitte)",
+   "read": "2026-11-01",
+   "kind": "secondary",
+   "quotes": "https://www.sii.cl/valores_y_fechas/impuesto_2da_categoria/impuesto2026.htm",
+   "said": "Up to 13.5 0% Over 13.5–30 4% Over 30–50 8% Over 50–70 13.5% Over 70–90 23% Over 90–120 30.4% Over 120–310 35% Over 310 40% … a monthly 0.93% premium on remuneration … nonresident individuals are taxed only on their Chilean- source income. … The standard VAT rate is 19%. … Tax year: The tax year is a calendar year. Filing status: … An annual income tax return must be filed in April of the year following the end of the tax year, and any tax due must be paid at that time."
+  },
+  {
+   "url": "https://www.sii.cl/valores_y_fechas/utm/utm2026.htm",
+   "title": "UTM, UTA e IPC 2026 (Servicio de Impuestos Internos)",
+   "read": "2026-11-01",
+   "kind": "primary",
+   "said": "Noviembre 72.440 869.280"
+  },
+  {
+   "url": "https://taxsummaries.pwc.com/chile/individual/taxes-on-personal-income",
+   "title": "Chile: individual/taxes-on-personal-income (PwC Worldwide Tax Summaries, reviewed 30 October 2026)",
+   "read": "2026-11-01",
+   "kind": "secondary",
+   "quotes": "https://www.sii.cl/valores_y_fechas/impuesto_2da_categoria/impuesto2026.htm",
+   "said": "There are no local income taxes to be paid in Chile, only central government taxes. … Before residence is acquired, a flat 15% tax generally is levied if the activities can be qualified as technical or engineering work or professional services that an individual renders through a report, advice, or plan development. In the case of other activities, or where the paying company is located in a tax haven, other rates would apply."
+  },
+  {
+   "url": "https://www.sii.cl/valores_y_fechas/impuesto_2da_categoria/impuesto2026.htm",
+   "title": "Impuesto Único de Segunda Categoría 2026, tablas mensuales (Servicio de Impuestos Internos)",
+   "read": "2026-11-01",
+   "kind": "primary",
+   "said": "Noviembre 2026 Monto de Cálculo del Impuesto Único de Segunda Categoría … MENSUAL -.- $ 977.940,00 Exento -.- Exento $ 977.940,01 $ 2.173.200,00 0,04 $ 39.117,60 2,20% … $ 22.456.400,01 Y MÁS 0,4 $ 2.812.120,80 MÁS DE 27,48% … cuyo monto excede mensualmente las 13,5 UTM"
+  },
+  {
+   "url": "https://www.sii.cl/destacados/boletas_honorarios/index.html",
+   "title": "Boletas de honorarios: nueva retención del 15,25% (Servicio de Impuestos Internos)",
+   "read": "2026-11-01",
+   "kind": "primary",
+   "said": "La ley 21.133 establece que a partir del 1 de enero de 2026 el porcentaje de retención pasa de 14,5% a 15,25% llegando a 17% en 2028. … 15.25% 2026 16% 2027"
+  },
+  {
+   "url": "https://taxsummaries.pwc.com/chile/individual/other-taxes",
+   "title": "Chile: individual/other-taxes (PwC Worldwide Tax Summaries, reviewed 30 October 2026)",
+   "read": "2026-11-01",
+   "kind": "secondary",
+   "quotes": "https://www.spensiones.cl/",
+   "said": "salaries are subject to Chilean social security contribution of 20%, computed on the monthly salary capped at 75.7 unidades de fomento … of 3% in connection with unemployment insurance (0.6% contributed by the employee and 2.4% contributed by the employer) with a cap of UF 113.5 … VAT is payable on transfers and services at a rate of 19%."
+  },
+  {
+   "url": "https://www.sii.cl/normativa_legislacion/dl824.pdf",
+   "title": "Ley sobre Impuesto a la Renta (DL 824), art. 60, as published by the Servicio de Impuestos Internos (updated to Ley 21.047, 2017)",
+   "read": "2026-11-01",
+   "kind": "primary",
+   "said": "pagarán respecto de ellas un impuesto adicional de 35%. … No obstante, la citada tasa será de 20% cuando se trate de remuneraciones provenientes exclusivamente del trabajo o habilidad de personas, percibidas por las personas naturales a que se refiere el inciso anterior, sólo cuando éstas hubieren desarrollado en Chile actividades científicas, culturales o deportivas. Este impuesto deberá ser retenido y pagado antes de que dichas personas se ausenten del país, por quien o quienes contrataron sus servicios, de acuerdo con las normas de los artículos 74 y 79. … El impuesto establecido en este artículo tendrá el carácter de impuesto único a la renta respecto de las rentas referidas en el inciso segundo, en reemplazo del impuesto de la Segunda Categoría, y se aplicará sobre las cantidades que se paguen, se abonen en cuenta o se pongan a disposición de las personas mencionadas en dicho inciso, sin deducción alguna."
+  },
+  {
+   "url": "https://www.sii.cl/normativa_legislacion/dl825.pdf",
+   "title": "Ley sobre Impuesto a las Ventas y Servicios (DL 825), art. 2 Nº 2, as published by the SII (updated to Ley 21.045, 2017)",
+   "read": "2026-11-01",
+   "kind": "primary",
+   "said": "Por “servicio”, la acción o prestación que una persona realiza para otra y por la cual percibe un interés, prima, comisión o cualquiera otra forma de remuneración, siempre que provenga del ejercicio de las actividades comprendidas en los Nºs. 3 y 4, del artículo 20, de la Ley sobre Impuesto a la Renta."
+  }
+ ],
+ "blockers": [
+  {
+   "item": "vat",
+   "sought": "Whether an individual's honorarios bear VAT after Ley 21.420 (VAT on services from 2023), from the current DL 825 text (art. 12 E) or an SII circular.",
+   "tried": {
+    "institution": "sii.cl not found on this point in the time. || 2026-11-01 retry: sii.cl answers: DL 825 PDF read (saved CL-sii-dl825.pdf), updated only to Ley 21.045 (2017); its art. 2 Nº 2 (quoted) confines VAT services to LIR art. 20 Nos. 3-4.",
+    "official-register": "bcn.cl empty. || 2026-11-01 retry: bcn.cl/leychile (idNorma 6369 and the get_norma_json service) returns HTTP 401 to curl; not read another way.",
+    "web-search": "Not resolved. || 2026-11-01 retry: WebSearch refused by the tool on 2026-11-01: the turn's shared 200-search limit was reached before this query; no other search route used.",
+    "trade-press": "None. || 2026-11-01 retry: Deloitte Chile Highlights 2026 (saved CL-deloitte-2026.pdf, already cited for the 19% rate) read: no statement on honorarios.",
+    "archive": "Archive unreachable. || 2026-11-01 retry: archive.org/wayback/available answers; web.archive.org snapshots reset https and return 403 on http from this environment (2026-11-01)."
+   }
+  }
+ ]
+}

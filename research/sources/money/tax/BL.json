@@ -1,0 +1,91 @@
+{
+ "topic": "tax.BL",
+ "read": "2026-11-01",
+ "note": "Read 2026-11-01 at the owner's word (\"Build those first 3 starting with ledger first\"; of the 21 countries read first: \"It should cover across every country\"; \"Retry the blocked tax facts once all countries land\"): the tax on a screen worker's pay in Saint Barthelemy: a resident's income tax, social contributions, what is withheld at source, a non-resident artiste's withholding, an author's treatment, VAT and the tax year. Research and retry subagents (workbench/briefs/BRIEF-tax.md, BRIEF-tax-retry.md), every quote checked by the lead against its saved page.",
+ "figures": [
+  {
+   "item": "residents",
+   "finding": "Saint-Barthélemy's taxes are set by its Code des contributions, and it levies no personal income tax, so a resident of the island pays none on pay or fees.",
+   "value": {
+    "none": true,
+    "brackets": []
+   },
+   "applies": "Persons fiscally domiciled in Saint-Barthélemy",
+   "sources": [
+    {
+     "src": 0,
+     "said": "Les différents impôts et taxes perçus dans la collectivité sont prévus par le code des contributions de Saint Barthélemy. Il n'y existe ni impôt sur le bénéfice des sociétés ni impôt sur le revenu des personnes physiques."
+    }
+   ]
+  },
+  {
+   "item": "follows",
+   "finding": "A person who moved to Saint-Barthélemy after 15 July 2007 is fiscally domiciled there only after five years' residence, and until then remains a French tax resident under France's income tax.",
+   "value": {
+    "follows": "FR",
+    "until": "five years' residence",
+    "appliesTo": "anyone not already resident of the island on 15 July 2007"
+   },
+   "applies": "Newcomers",
+   "sources": [
+    {
+     "src": 1,
+     "said": "les personnes résidant à Saint-Martin ou à Saint-Barthélemy qui ont transféré leur domicile fiscal dans ces collectivités après le 15 juillet 2007 et qui ne remplissent pas la règle de domiciliation fiscale de cinq ans dans ces collectivités(2) … Sont considérées comme fiscalement domiciliées à Saint-Barthélemy les personnes physiques qui y ont résidé pendant cinq ans au moins. Cette disposition est applicable à toute personne ne possédant pas déjà la qualité de résidente de l’île."
+    }
+   ]
+  }
+ ],
+ "country": "BL",
+ "sources": [
+  {
+   "url": "https://www.senat.fr/rap/l10-273/l10-27316.html",
+   "title": "Sénat, rapport n° 273 (2010-2011): Présentation de la fiscalité de Saint-Barthélemy, quoting the Code des contributions de Saint-Barthélemy (comstbarth.fr, Collectivité de Saint-Barthélemy)",
+   "read": "2026-11-01",
+   "kind": "secondary",
+   "quotes": "https://www.comstbarth.fr/",
+   "said": "Les différents impôts et taxes perçus dans la collectivité sont prévus par le code des contributions de Saint Barthélemy. Il n'y existe ni impôt sur le bénéfice des sociétés ni impôt sur le revenu des personnes physiques."
+  },
+  {
+   "url": "https://www.impots.gouv.fr/sites/default/files/formulaires/2041-e/2024/2041-e_4807.pdf",
+   "title": "Notice 2041-E: Personnes fiscalement domiciliées hors de France (DGFiP)",
+   "read": "2026-11-01",
+   "kind": "primary",
+   "said": "les personnes résidant à Saint-Martin ou à Saint-Barthélemy qui ont transféré leur domicile fiscal dans ces collectivités après le 15 juillet 2007 et qui ne remplissent pas la règle de domiciliation fiscale de cinq ans dans ces collectivités(2) … Sont considérées comme fiscalement domiciliées à Saint-Barthélemy les personnes physiques qui y ont résidé pendant cinq ans au moins. Cette disposition est applicable à toute personne ne possédant pas déjà la qualité de résidente de l’île."
+  }
+ ],
+ "blockers": [
+  {
+   "item": "residents",
+   "sought": "The Code des contributions itself (current), to confirm the absence of income tax in 2026 and any tax on non-residents' local income.",
+   "tried": {
+    "institution": "comstbarth.fr is a JavaScript app; no text by curl || 2026-11-01 retry: comstbarth.fr again a 760-byte JavaScript shell; impots.gouv.fr/international-particulier/saint-barthelemy 404; cgss-guadeloupe.fr 503.",
+    "official-register": "Légifrance (LO 6214-4 CGCT) refused this environment (bot check) || 2026-11-01 retry: legifrance.gouv.fr again 403 (bot check, not bypassed).",
+    "web-search": "searched BOFiP and impots.gouv for Saint-Barthélemy residence: 2041-E found || 2026-11-01 retry: refused: the session's web-search limit (200 calls per turn, shared) was reached before this query ('Saint-Barthélemy code des contributions residents 2026 CPS cotisations').",
+    "trade-press": "Senate report 2010-11 read (dated) || 2026-11-01 retry: taxsummaries.pwc.com/saint-barthelemy 404 (checked 2026-11-01).",
+    "archive": "web.archive.org unreachable from this environment || 2026-11-01 retry: web.archive.org connection reset through the proxy (curl 000)."
+   }
+  },
+  {
+   "item": "vat",
+   "sought": "Whether a turnover or service tax applies in Saint-Barthélemy instead of VAT.",
+   "tried": {
+    "institution": "comstbarth.fr not readable || 2026-11-01 retry: comstbarth.fr again a 760-byte JavaScript shell; impots.gouv.fr/international-particulier/saint-barthelemy 404; cgss-guadeloupe.fr 503.",
+    "official-register": "not reached || 2026-11-01 retry: legifrance.gouv.fr again 403 (bot check, not bypassed).",
+    "web-search": "not run || 2026-11-01 retry: refused: the session's web-search limit (200 calls per turn, shared) was reached before this query ('Saint-Barthélemy code des contributions vat 2026 CPS cotisations').",
+    "trade-press": "Senate report lists the collectivity's taxes without a VAT || 2026-11-01 retry: taxsummaries.pwc.com/saint-barthelemy 404 (checked 2026-11-01).",
+    "archive": "web.archive.org unreachable from this environment || 2026-11-01 retry: web.archive.org connection reset through the proxy (curl 000)."
+   }
+  },
+  {
+   "item": "social",
+   "sought": "Social contributions on pay in Saint-Barthélemy.",
+   "tried": {
+    "institution": "not tried || 2026-11-01 retry: comstbarth.fr again a 760-byte JavaScript shell; impots.gouv.fr/international-particulier/saint-barthelemy 404; cgss-guadeloupe.fr 503.",
+    "official-register": "not tried || 2026-11-01 retry: legifrance.gouv.fr again 403 (bot check, not bypassed).",
+    "web-search": "not run || 2026-11-01 retry: refused: the session's web-search limit (200 calls per turn, shared) was reached before this query ('Saint-Barthélemy code des contributions social 2026 CPS cotisations').",
+    "trade-press": "not tried || 2026-11-01 retry: taxsummaries.pwc.com/saint-barthelemy 404 (checked 2026-11-01).",
+    "archive": "web.archive.org unreachable from this environment || 2026-11-01 retry: web.archive.org connection reset through the proxy (curl 000)."
+   }
+  }
+ ]
+}

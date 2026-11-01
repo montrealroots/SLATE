@@ -1,0 +1,227 @@
+{
+ "topic": "tax.MO",
+ "read": "2026-11-01",
+ "note": "Read 2026-11-01 at the owner's word (\"Build those first 3 starting with ledger first\"; of the 21 countries read first: \"It should cover across every country\"; \"Retry the blocked tax facts once all countries land\"): the tax on a screen worker's pay in Macao: a resident's income tax, social contributions, what is withheld at source, a non-resident artiste's withholding, an author's treatment, VAT and the tax year. Research and retry subagents (workbench/briefs/BRIEF-tax.md, BRIEF-tax-retry.md), every quote checked by the lead against its saved page.",
+ "figures": [
+  {
+   "item": "residents",
+   "finding": "Professional tax for 2026 is 0% on the first MOP 144,000 of assessable income, then 7% to 164,000, 8% to 184,000, 9% to 224,000, 10% to 304,000, 11% to 424,000 and 12% above, after a standard 25% deduction; the 2026 budget cuts the resulting tax by 30%.",
+   "value": {
+    "currency": "MOP",
+    "brackets": [
+     {
+      "from": 0,
+      "to": 144000,
+      "rate": 0
+     },
+     {
+      "from": 144000,
+      "to": 164000,
+      "rate": 0.07
+     },
+     {
+      "from": 164000,
+      "to": 184000,
+      "rate": 0.08
+     },
+     {
+      "from": 184000,
+      "to": 224000,
+      "rate": 0.09
+     },
+     {
+      "from": 224000,
+      "to": 304000,
+      "rate": 0.1
+     },
+     {
+      "from": 304000,
+      "to": 424000,
+      "rate": 0.11
+     },
+     {
+      "from": 424000,
+      "to": null,
+      "rate": 0.12
+     }
+    ],
+    "standardDeduction": 0.25,
+    "reduction2026": 0.3,
+    "thresholdOver65orDisabled": 198000,
+    "regional": null
+   },
+   "applies": "Tax year 2026, employees and self-employed. The MOP 144,000 exemption, the MOP 198,000 exemption at 65 or 60% disability and the 30% reduction are the DSF's own (Law 13/2025, the 2026 Budget Law); the band edges above 144,000 and their rates are PwC's, the DSF's scale page and the Regulamento do Imposto Profissional not being readable here.",
+   "sources": [
+    {
+     "src": 0,
+     "said": "根據第13/2025號法律《2026年財政年度預算案》，2026年由財政局專責處理之稅務優惠包括如下： … 職業稅稅額扣減項目之扣減率訂定為百分之三十，豁免額訂定為$144,000（澳門元壹拾肆萬肆仟元）。另外，年齡六十五歲以上或經證實為永久傷殘程度等於或高於百分之六十的僱員及散工，年度豁免額調升至$198,000（澳門元壹拾玖萬捌仟元）。"
+    },
+    {
+     "src": 1,
+     "said": "For the tax year 2026, the professional tax rates are progressive and cumulative up to a maximum rate of 12%. Assessable income (MOP) Marginal cumulative tax liability (MOP) Each range (%) Over Not over 0 144,000 0 0 144,000 164,000 1,400 7 164,000 184,000 3,000 8 184,000 224,000 6,600 9 224,000 304,000 14,600 10 304,000 424,000 27,800 11 424,000 and above 12"
+    },
+    {
+     "src": 2,
+     "said": "There will be a 30% reduction in the Macau professional tax liabilities for income derived in the tax year 2026. Together with the standard 25% deduction on the taxable income granted under the Macau Professional Tax Law, the effective tax rate for Macau professional tax is below 6.3%."
+    },
+    {
+     "src": 2,
+     "said": "For employees over the age of 65 or proved to be 60% disabled or above, the tax-free income threshold will be further increased to MOP 198,000 for the tax year 2026."
+    },
+    {
+     "src": 3,
+     "said": "A standard deduction of 25% of taxable income is available for both self-employed individuals and salaried employees."
+    }
+   ]
+  },
+  {
+   "item": "year",
+   "finding": "The tax year is the calendar year; the employer files quarterly returns (15 January, April, July, October) and the annual M3/M4 return by the end of February.",
+   "value": {
+    "start": "01-01",
+    "end": "12-31",
+    "employerQuarterly": [
+     "01-15",
+     "04-15",
+     "07-15",
+     "10-15"
+    ],
+    "annualReturn": "end of February of the following year"
+   },
+   "applies": "Employers of salaried individuals.",
+   "sources": [
+    {
+     "src": 4,
+     "said": "The Macau tax year is the calendar year."
+    },
+    {
+     "src": 4,
+     "said": "The quarterly professional tax return is due on 15 of January, April, July, and October of each year. The annual professional tax return (namely 'M3/M4') is due by the end of February of the following year."
+    }
+   ]
+  },
+  {
+   "item": "withholding",
+   "finding": "Employers withhold professional tax monthly from salaries (PAYE) and remit it by the 15th of the month after each quarter.",
+   "value": {
+    "employment": "PAYE, monthly withholding, quarterly remittance"
+   },
+   "applies": "2026.",
+   "sources": [
+    {
+     "src": 4,
+     "said": "There is a pay-as-you-earn (PAYE) system, similar to those used in other countries, which is applicable to salaried individuals only."
+    }
+   ]
+  },
+  {
+   "item": "nonResident",
+   "finding": "Professional tax applies to anyone paid for work performed in Macau, resident or not; a foreign freelancer or artist engaged by a Macau entity without a valid work visa pays the higher of 5% of taxable income and the progressive scale.",
+   "value": {
+    "rate": "max(5% of taxable income, progressive scale)",
+    "appliesTo": "foreign freelancers and artists without valid work visas"
+   },
+   "applies": "Tax year 2026.",
+   "sources": [
+    {
+     "src": 1,
+     "said": "Foreign freelancers and artists engaged by Macau entities without valid work visas are taxed at the higher of 5% on taxable income and the tax amount arrived by applying the progressive tax rate table on taxable income."
+    }
+   ]
+  },
+  {
+   "item": "social",
+   "finding": "Social security is a flat MOP 90 a month for a resident employee: MOP 60 from the employer and MOP 30 from the employee.",
+   "value": {
+    "currency": "MOP",
+    "monthlyTotal": 90,
+    "employer": 60,
+    "employee": 30
+   },
+   "applies": "2026.",
+   "sources": [
+    {
+     "src": 5,
+     "said": "A total contribution of MOP 90 per month is payable for resident employees. The employer contributes two-thirds of the amount (i.e. MOP 60) and the employee contributes one-third of the amount (i.e. MOP 30)."
+    }
+   ]
+  },
+  {
+   "item": "vat",
+   "finding": "Macau has no VAT or general sales tax: consumption tax falls only on tobacco and spirits.",
+   "value": {
+    "vat": null
+   },
+   "applies": "2026.",
+   "sources": [
+    {
+     "src": 5,
+     "said": "Consumption tax is imposed only on tobacco and spirits entering into Macau SAR."
+    }
+   ]
+  }
+ ],
+ "country": "MO",
+ "sources": [
+  {
+   "url": "https://www.dsf.gov.mo/zh-hant/tax/tax_benefit",
+   "title": "稅務優惠 (Tax benefits), Financial Services Bureau of Macao (DSF)",
+   "read": "2026-11-01",
+   "kind": "primary",
+   "said": "根據第13/2025號法律《2026年財政年度預算案》，2026年由財政局專責處理之稅務優惠包括如下： … 職業稅稅額扣減項目之扣減率訂定為百分之三十，豁免額訂定為$144,000（澳門元壹拾肆萬肆仟元）。另外，年齡六十五歲以上或經證實為永久傷殘程度等於或高於百分之六十的僱員及散工，年度豁免額調升至$198,000（澳門元壹拾玖萬捌仟元）。"
+  },
+  {
+   "url": "https://taxsummaries.pwc.com/macau-sar/individual/taxes-on-personal-income",
+   "title": "PwC Worldwide Tax Summaries, Macau SAR, Individual - Taxes on personal income (last reviewed 2 June 2026)",
+   "read": "2026-11-01",
+   "kind": "secondary",
+   "quotes": "https://www.dsf.gov.mo/",
+   "said": "For the tax year 2026, the professional tax rates are progressive and cumulative up to a maximum rate of 12%. Assessable income (MOP) Marginal cumulative tax liability (MOP) Each range (%) Over Not over 0 144,000 0 0 144,000 164,000 1,400 7 164,000 184,000 3,000 8 184,000 224,000 6,600 9 224,000 304,000 14,600 10 304,000 424,000 27,800 11 424,000 and above 12 … Foreign freelancers and artists engaged by Macau entities without valid work visas are taxed at the higher of 5% on taxable income and the tax amount arrived by applying the progressive tax rate table on taxable income."
+  },
+  {
+   "url": "https://taxsummaries.pwc.com/macau-sar/individual/significant-developments",
+   "title": "PwC Worldwide Tax Summaries, Macau SAR, Individual - Significant developments (last reviewed 2 June 2026)",
+   "read": "2026-11-01",
+   "kind": "secondary",
+   "quotes": "https://www.dsf.gov.mo/",
+   "said": "There will be a 30% reduction in the Macau professional tax liabilities for income derived in the tax year 2026. Together with the standard 25% deduction on the taxable income granted under the Macau Professional Tax Law, the effective tax rate for Macau professional tax is below 6.3%. … For employees over the age of 65 or proved to be 60% disabled or above, the tax-free income threshold will be further increased to MOP 198,000 for the tax year 2026."
+  },
+  {
+   "url": "https://taxsummaries.pwc.com/macau-sar/individual/deductions",
+   "title": "PwC Worldwide Tax Summaries, Macau SAR, Individual - Deductions (last reviewed 2 June 2026)",
+   "read": "2026-11-01",
+   "kind": "secondary",
+   "quotes": "https://www.dsf.gov.mo/",
+   "said": "A standard deduction of 25% of taxable income is available for both self-employed individuals and salaried employees."
+  },
+  {
+   "url": "https://taxsummaries.pwc.com/macau-sar/individual/tax-administration",
+   "title": "PwC Worldwide Tax Summaries, Macau SAR, Individual - Tax administration (last reviewed 2 June 2026)",
+   "read": "2026-11-01",
+   "kind": "secondary",
+   "quotes": "https://www.dsf.gov.mo/",
+   "said": "The Macau tax year is the calendar year. … The quarterly professional tax return is due on 15 of January, April, July, and October of each year. The annual professional tax return (namely 'M3/M4') is due by the end of February of the following year. … There is a pay-as-you-earn (PAYE) system, similar to those used in other countries, which is applicable to salaried individuals only."
+  },
+  {
+   "url": "https://taxsummaries.pwc.com/macau-sar/individual/other-taxes",
+   "title": "PwC Worldwide Tax Summaries, Macau SAR, Individual - Other taxes (last reviewed 2 June 2026)",
+   "read": "2026-11-01",
+   "kind": "secondary",
+   "quotes": "https://www.dsf.gov.mo/",
+   "said": "A total contribution of MOP 90 per month is payable for resident employees. The employer contributes two-thirds of the amount (i.e. MOP 60) and the employee contributes one-third of the amount (i.e. MOP 30). … Consumption tax is imposed only on tobacco and spirits entering into Macau SAR."
+  }
+ ],
+ "blockers": [
+  {
+   "item": "residents",
+   "sought": "The professional-tax band edges and rates above MOP 144,000 (Regulamento do Imposto Profissional, Lei 2/78/M art. 7 as amended) from the DSF or the Boletim Oficial; the exemption and 30% reduction are now quoted from the DSF.",
+   "tried": {
+    "institution": "dsf.gov.mo: no page found in this pass (2026-11-01) || 2026-11-01 retry: dsf.gov.mo answers with -L (https://www.dsf.gov.mo/zh-hant): tax_benefit page read and saved (MO-dsf-benefit.html), giving Law 13/2025, the MOP 144,000 and 198,000 exemptions and the 30% reduction; tax-list/Fi/home read (MO-dsf-taxlist-fi.html): client-rendered, no professional-tax scale in its text; professional-tax slugs tried (tax-list/professional|Pr|pt|prof|Profissional/home) return the same shell.",
+    "official-register": "bo.io.gov.mo (Boletim Oficial) not reached in this pass || 2026-11-01 retry: images.io.gov.mo and bo.io.gov.mo (Boletim Oficial; Lei 12/2003 at images.io.gov.mo/bo/i/2003/32/lei-12-2003.pdf, Despacho 267/2003 republishing the Regulamento) do not answer this environment (curl 000); al.gov.mo copies (uploads/lei/leis/2003/12-2003/proposta.pdf) redirect curl to the Assembly home page, not read another way.",
+    "web-search": "2026-11-01 'dsf.gov.mo professional tax 2026 144,000 exemption 30% reduction budget law 2026 imposto profissional': no dsf.gov.mo page returned || 2026-11-01 retry: 'imposto profissional tabela taxas 7% 12% Lei n.º 2/78/M rendimento colectável Macau' and 'Lei n.º 13/2025 Orçamento de 2026 Macau imposto profissional isenção 144 000 patacas dedução 30%' and 'dsf.gov.mo 職業稅 2026 不課稅收益 144,000 減免30%': Boletim Oficial links (unreachable) and secondary pages only.",
+    "trade-press": "PwC Macau (quoted here); Bloomberg Tax on the 2026 Budget Law (paywalled, not read) || 2026-11-01 retry: Bloomberg Tax \"Macau Gazettes 2026 Budget Law\" (paywalled); citiesinsider and HR Online are not tax firms quoting the scale; PwC kept for the band edges.",
+    "archive": "not tried || 2026-11-01 retry: archive.org/wayback/available for images.io.gov.mo/bo/i/2025/52/lei-13-2025.pdf: no snapshot; web.archive.org itself resets https and returns 403 on http from this environment."
+   }
+  }
+ ]
+}

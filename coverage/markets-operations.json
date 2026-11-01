@@ -8,7 +8,11 @@
    "part",
    "experience",
    "aboutMarket",
-   "casting"
+   "casting",
+   "acting.perform (a part in any compiled market: paid at its minimum or left to negotiation, refused a term, role, medium or rehearsal it doesn't set, permitted in its own country)",
+   "aboutMarket (a country's or an agreement's unknowns, compiled or not; a follower's with its followed country's)",
+   "coverage: all 252 countries (axis country), the kept three on R-4614",
+   "compile: unread readings, blockers-only countries, followers, the zone without a city, undated rates"
   ]
  },
  "rows": [
@@ -20,7 +24,7 @@
    ],
    "tests": [
     "tests/person/acting/markets.test.ts::the markets > are each country's own, every minimum as the research gives it",
-    "tests/tools/markets.test.ts::the markets compile > compiles the eighteen markets the engine reads"
+    "tests/tools/markets.test.ts::the markets compile > compiles the markets the engine reads"
    ]
   },
   {
@@ -74,6 +78,39 @@
    ],
    "tests": [
     "tests/person/acting/markets.test.ts::a market's part, played > is cast in the market's language, the age reckoned in its city"
+   ]
+  },
+  {
+   "key": "acting.perform (a part in any compiled market: paid at its minimum or left to negotiation, refused a term, role, medium or rehearsal it doesn't set, permitted in its own country)",
+   "status": "proven",
+   "tests": [
+    "tests/person/acting/markets.test.ts::a market's part > is paid at its agreement's minimum, by medium, role, term and tier",
+    "tests/person/acting/markets.test.ts::a market's part > is refused a medium, a role, a term or a rehearsal its agreement does not set",
+    "tests/person/acting/markets.test.ts::a market's part, played > pays the minimum for the actor's years, where the person may work in the market's country"
+   ]
+  },
+  {
+   "key": "aboutMarket (a country's or an agreement's unknowns, compiled or not; a follower's with its followed country's)",
+   "status": "proven",
+   "tests": [
+    "tests/person/acting/markets.test.ts::a market's part > tells the player what of a market isn't known"
+   ]
+  },
+  {
+   "key": "coverage: all 252 countries (axis country), the kept three on R-4614",
+   "status": "proven",
+   "tests": [
+    "tests/tools/markets.test.ts::the markets coverage > is blocked where the register holds a blocker, researched where it cites the research alone, the kept three on theirs, pending where neither",
+    "tests/tools/markets.test.ts::the markets coverage > is the matrix the gate holds, as built from the repository"
+   ]
+  },
+  {
+   "key": "compile: unread readings, blockers-only countries, followers, the zone without a city, undated rates",
+   "status": "proven",
+   "tests": [
+    "tests/tools/markets.test.ts::the markets compile > reads a country cited only by its blockers from them, one that says why it isn't read without a market, and a follower after the rest",
+    "tests/tools/markets.test.ts::the markets compile > reads a territory that follows another country's terms under that country's agreements, as its own",
+    "tests/person/acting/markets.test.ts::the markets > read every country the register cites, or say why not"
    ]
   }
  ]

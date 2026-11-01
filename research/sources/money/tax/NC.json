@@ -1,0 +1,327 @@
+{
+ "topic": "tax.NC",
+ "read": "2026-11-01",
+ "note": "Read 2026-11-01 at the owner's word (\"Build those first 3 starting with ledger first\"; of the 21 countries read first: \"It should cover across every country\"; \"Retry the blocked tax facts once all countries land\"): the tax on a screen worker's pay in New Caledonia: a resident's income tax, social contributions, what is withheld at source, a non-resident artiste's withholding, an author's treatment, VAT and the tax year. Research and retry subagents (workbench/briefs/BRIEF-tax.md, BRIEF-tax-retry.md), every quote checked by the lead against its saved page.",
+ "figures": [
+  {
+   "item": "follows",
+   "finding": "New Caledonia has its own tax code and social security (CAFAT); French income tax and VAT do not apply there.",
+   "value": {
+    "sovereign": "FR",
+    "takesSovereignTax": false,
+    "levies": "own income tax, TGC and CAFAT"
+   },
+   "applies": "New Caledonia",
+   "sources": [
+    {
+     "src": 0,
+     "said": "Individuals, whether New Caledonian or foreign nationals, who have their tax domicile in New Caledonia are generally subject to personal income tax (PIT) on worldwide income (unless provided otherwise by a tax treaty between France and New Caledonia)."
+    },
+    {
+     "src": 1,
+     "said": "The TGC ( taxe Générale sur la consummation ) is a value-added tax (VAT)-like tax that is applied to the consumer prices of goods and services since 1 October 2018"
+    }
+   ]
+  },
+  {
+   "item": "residents",
+   "finding": "A resident's income, after allowances and divided by family shares (benefit capped at XPF 300,000), is taxed at 0% to XPF 1,000,000, 4% to 1,800,000, 12% to 3,000,000, 25% to 4,500,000 and 40% above.",
+   "value": {
+    "currency": "XPF",
+    "brackets": [
+     {
+      "from": 0,
+      "to": 1000000,
+      "rate": 0
+     },
+     {
+      "from": 1000000,
+      "to": 1800000,
+      "rate": 0.04
+     },
+     {
+      "from": 1800000,
+      "to": 3000000,
+      "rate": 0.12
+     },
+     {
+      "from": 3000000,
+      "to": 4500000,
+      "rate": 0.25
+     },
+     {
+      "from": 4500000,
+      "to": null,
+      "rate": 0.4
+     }
+    ],
+    "familyQuotient": {
+     "single": 1,
+     "married": 2,
+     "perChild": 0.5,
+     "capPerHousehold": 300000
+    },
+    "allowance": 1000000
+   },
+   "applies": "Persons with tax domicile in New Caledonia",
+   "sources": [
+    {
+     "src": 0,
+     "said": "However, the tax saved from income splitting is generally limited to 300,000 CFP ( Communauté Française du Pacifique ) francs (XPF). For residents, progressive income tax rates are then applied as follows: Taxable income (XPF) Rate (%) Over Not over 0 1,000,000 0 1,000,000 1,800,000 4 1,800,000 3,000,000 12 3,000,000 4,500,000 25 4,500,000 40"
+    }
+   ]
+  },
+  {
+   "item": "social",
+   "finding": "In 2026 an employee pays health (RUAMM) 2.85% to XPF 548,600 a month and 1.25% above, retirement 4.20% to XPF 548,600, unemployment 0.34% to XPF 390,900, and the solidarity contribution (CCS) of 3% on all pay; the employer pays RUAMM 11.67%/3.75%, retirement 9.80%, family 5.63%, unemployment 1.72%, work accidents 0.72% to 6.48%, housing fund 2% and training levies. A self-employed person pays RUAMM by income band plus 3% CCS.",
+   "value": {
+    "currency": "XPF",
+    "year": 2026,
+    "employee": {
+     "health": [
+      {
+       "to": 548600,
+       "rate": 0.0285
+      },
+      {
+       "from": 548600,
+       "to": null,
+       "rate": 0.0125
+      }
+     ],
+     "retirement": {
+      "rate": 0.042,
+      "ceilingMonthly": 548600
+     },
+     "unemployment": {
+      "rate": 0.0034,
+      "ceilingMonthly": 390900
+     },
+     "ccs": 0.03
+    },
+    "employer": {
+     "health": [
+      {
+       "to": 548600,
+       "rate": 0.1167
+      },
+      {
+       "from": 548600,
+       "to": null,
+       "rate": 0.0375
+      }
+     ],
+     "retirement": {
+      "rate": 0.098,
+      "ceilingMonthly": 548600
+     },
+     "family": 0.0563,
+     "unemployment": {
+      "rate": 0.0172,
+      "ceilingMonthly": 390900
+     },
+     "workAccidents": [
+      0.0072,
+      0.0648
+     ],
+     "housingFund": {
+      "rate": 0.02,
+      "ceilingMonthly": 329700
+     },
+     "training": 0.0025,
+     "fiaf": 0.002,
+     "fds": 0.00075
+    },
+    "selfEmployed": {
+     "ruamm": "by income band, e.g. 4% to 6% between 12 and 24 minimum wages",
+     "ccs": 0.03
+    }
+   },
+   "applies": "Employees and self-employed workers (CAFAT)",
+   "sources": [
+    {
+     "src": 2,
+     "said": "• RUAMM tranche 1 11,67 2,85 14,52 de 1 à 548 600XPF … tranche 2 3,75 1,25 5 à partir de 548 601 XPF … • RETRAITE 9,80 4,20 14 de 1 à 548 600XPF … • PRESTATIONS FAMILIALES 5,63 0 5,63 … • CHÔMAGE 1,72 0,34 2,06 de 1 à 390 900 XPF … • ACCIDENTS DU TRAVAIL 0,72 à 6,48 0 0,72 à 6,48 … • FONDS SOCIAL DE L'HABITAT (FSH) 2 0 2 de 1 à 329 700 XPF … 0 3,0 3,0 Salaire TOTAL … La CCS de 3% s'applique aux ressources réelles du TI sur l'assiette de cotisation retenue sans limite de plafond et s'ajoute aux cotisations RUAMM du tableau."
+    }
+   ]
+  },
+  {
+   "item": "nonResident",
+   "finding": "A non-resident's New Caledonian income (employment, professional income, royalties) generally bears a flat 25% levy, or the progressive scale if that would be lower.",
+   "value": {
+    "rate": 0.25,
+    "alternative": "progressive scale if lower",
+    "final": "flat levy (prélèvement forfaitaire)"
+   },
+   "applies": "Non-resident individuals",
+   "sources": [
+    {
+     "src": 0,
+     "said": "Generally, income derived by non-resident individuals is subject to a flat tax rate ( prélèvement forfaitaire ) of 25%. This tax applies to very broad types of revenues, notably employment and business or professional related income, pensions, investment income (unless subject to tax on financial incomes [IRVM]), royalties, and income from immovable property. A taxpayer is allowed to claim for the application of the progressive tax rate (as for resident) if one is in position to demonstrate that the progressive PIT would have been less than 25%."
+    }
+   ]
+  },
+  {
+   "item": "authors",
+   "finding": "Royalties paid to a non-resident individual bear the 25% flat tax; no resident-author regime was read.",
+   "value": {
+    "nonResidentRoyalties": 0.25
+   },
+   "applies": "Authors",
+   "sources": [
+    {
+     "src": 3,
+     "said": "Interests, royalties, and other incomes paid to non-resident individual are generally subject to a 25% flat tax."
+    }
+   ]
+  },
+  {
+   "item": "vat",
+   "finding": "Services in New Caledonia bear the general consumption tax (TGC) at the normal rate of 11% (3%, 6% and 22% for listed items); a provider stays under the franchise en base (no TGC charged, none deducted) while total turnover is at most XPF 25 million and service turnover at most XPF 7.5 million, and may opt in irrevocably.",
+   "value": {
+    "rate": 0.11,
+    "other": [
+     0.03,
+     0.06,
+     0.22
+    ],
+    "threshold": null,
+    "franchiseTotalTurnover": 25000000,
+    "franchiseServiceTurnover": 7500000,
+    "currency": "XPF"
+   },
+   "applies": "2026 (CINC art. Lp 509; the TGC changes in force from 1 July 2025 add exclusions, not new thresholds).",
+   "sources": [
+    {
+     "src": 4,
+     "said": "There are four rates of TGC: Reduced rate: 3% Specific rate: 6% Normal rate: 11% for all the operations that are not subject to another rate. Higher rate: 22%"
+    },
+    {
+     "src": 5,
+     "said": "le bénéfice de la franchise est acquis lorsqu’il ne réalise pas un chiffre d’affaires global supérieur à 25 M XPF et si au sein de ce chiffre d’affaires, celui généré par les seules prestations de services ne dépasse pas 7,5 M XPF."
+    },
+    {
+     "src": 5,
+     "said": "Les assujettis dont le chiffre d’affaires est inférieur aux seuils prévus à l’article Lp 509 du CINC qui le souhaitent peuvent décider d’opter pour la TGC et ce dès la création de l’entreprise. Une fois cette option choisie, elle est irrévocable"
+    },
+    {
+     "src": 6,
+     "said": "De nouvelles dispositions concernant la TGC ont été adoptées par la loi du pays n° 2025-3 du 6 février 2025 puis ont été complétées par la délibération n° 492 du 23 juin 2025"
+    }
+   ]
+  },
+  {
+   "item": "year",
+   "finding": "The tax year is the calendar year; the return is due before 1 April (30 April under the actual-profit regime, 30 June online or for non-residents); two advance payments of one third each fall by 31 March and 15 July, the balance in October.",
+   "value": {
+    "currency": "XPF",
+    "start": "01-01",
+    "end": "12-31",
+    "returnDue": "03-31",
+    "returnDueOnline": "06-30",
+    "advances": [
+     "03-31",
+     "07-15"
+    ]
+   },
+   "applies": "Individuals",
+   "sources": [
+    {
+     "src": 7,
+     "said": "Generally, the New Caledonian tax year runs from 1 January to 31 December. … each year before 1 April. … This deadline is extended to 30 June for taxpayers who do not have their tax domicile in New Caledonia. The income declaration filed electronically must reach the administration by 30 June at the latest … These payments should be made by 31 March and 15 July of each fiscal year."
+    }
+   ]
+  },
+  {
+   "item": "withholding",
+   "finding": "New Caledonia withholds income tax at source only from pay that firms established outside New Caledonia pay to workers posted there, on the net amount after the standard deduction and the 20% allowance, at the rate of article R 59-2, and that withholding is final; a resident employee or freelancer pays income tax by assessment, in advance instalments (see year).",
+   "value": {
+    "residentPay": "no withholding; assessment with advance payments",
+    "postedWorkersOfNonNCFirms": {
+     "base": "net pay after the Lp 97 B deduction and 20% allowance",
+     "rate": "article R 59-2 tariff (not read)",
+     "final": true
+    }
+   },
+   "applies": "2026 (Code des impôts de Nouvelle-Calédonie arts. Lp 59-1 to R 59-2).",
+   "sources": [
+    {
+     "src": 8,
+     "said": "La retenue à la source s'applique aux rémunérations versées à des salariés détachés en Nouvelle-Calédonie par des entreprises établies hors de la Nouvelle-Calédonie. La base imposable de cette retenue est constituée par le montant net des sommes versées, après application de la déduction forfaitaire prévue au B de l'article Lp 97 et de l'abattement de 20 % résultant du II de l'article Lp 97, sous les mêmes conditions de plafond et limites. La retenue est calculée selon le tarif mentionné à l'article R 59-2 . Elle est libératoire de l'impôt sur le revenu."
+    }
+   ]
+  }
+ ],
+ "country": "NC",
+ "sources": [
+  {
+   "url": "https://taxsummaries.pwc.com/new-caledonia/individual/taxes-on-personal-income",
+   "title": "New Caledonia - Individual - Taxes on personal income (PwC, reviewed 9 September 2026)",
+   "read": "2026-11-01",
+   "kind": "secondary",
+   "quotes": "https://dsf.gouv.nc/",
+   "said": "Individuals, whether New Caledonian or foreign nationals, who have their tax domicile in New Caledonia are generally subject to personal income tax (PIT) on worldwide income (unless provided otherwise by a tax treaty between France and New Caledonia). … However, the tax saved from income splitting is generally limited to 300,000 CFP ( Communauté Française du Pacifique ) francs (XPF). For residents, progressive income tax rates are then applied as follows: Taxable income (XPF) Rate (%) Over Not over 0 1,000,000 0 1,000,000 1,800,000 4 1,800,000 3,000,000 12 3,000,000 4,500,000 25 4,500,000 40 … Generally, income derived by non-resident individuals is subject to a flat tax rate ( prélèvement forfaitaire ) of 25%. This tax applies to very broad types of revenues, notably employment and business or professional related income, pensions, investment income (unless subject to tax on financial incomes [IRVM]), royalties, and income from immovable property. A taxpayer is allowed to claim for the application of the progressive tax rate (as for resident) if one is in position to demonstrate that the progressive PIT would have been less than 25%."
+  },
+  {
+   "url": "https://taxsummaries.pwc.com/new-caledonia/individual/other-taxes",
+   "title": "New Caledonia - Individual - Other taxes (PwC, reviewed 9 September 2026)",
+   "read": "2026-11-01",
+   "kind": "secondary",
+   "quotes": "https://dsf.gouv.nc/",
+   "said": "The TGC ( taxe Générale sur la consummation ) is a value-added tax (VAT)-like tax that is applied to the consumer prices of goods and services since 1 October 2018"
+  },
+  {
+   "url": "https://www.cafat.nc/wp-content/uploads/01_Fiche-des-parametres-Janvier-2026.pdf",
+   "title": "Fiche des paramètres, janvier 2026 (CAFAT)",
+   "read": "2026-11-01",
+   "kind": "primary",
+   "said": "• RUAMM tranche 1 11,67 2,85 14,52 de 1 à 548 600XPF … tranche 2 3,75 1,25 5 à partir de 548 601 XPF … • RETRAITE 9,80 4,20 14 de 1 à 548 600XPF … • PRESTATIONS FAMILIALES 5,63 0 5,63 … • CHÔMAGE 1,72 0,34 2,06 de 1 à 390 900 XPF … • ACCIDENTS DU TRAVAIL 0,72 à 6,48 0 0,72 à 6,48 … • FONDS SOCIAL DE L'HABITAT (FSH) 2 0 2 de 1 à 329 700 XPF … 0 3,0 3,0 Salaire TOTAL … La CCS de 3% s'applique aux ressources réelles du TI sur l'assiette de cotisation retenue sans limite de plafond et s'ajoute aux cotisations RUAMM du tableau."
+  },
+  {
+   "url": "https://taxsummaries.pwc.com/new-caledonia/corporate/withholding-taxes",
+   "title": "New Caledonia - Corporate - Withholding taxes (PwC, reviewed 9 September 2026)",
+   "read": "2026-11-01",
+   "kind": "secondary",
+   "quotes": "https://dsf.gouv.nc/",
+   "said": "Interests, royalties, and other incomes paid to non-resident individual are generally subject to a 25% flat tax."
+  },
+  {
+   "url": "https://taxsummaries.pwc.com/new-caledonia/corporate/other-taxes",
+   "title": "New Caledonia - Corporate - Other taxes (PwC, reviewed 9 September 2026)",
+   "read": "2026-11-01",
+   "kind": "secondary",
+   "quotes": "https://dsf.gouv.nc/",
+   "said": "There are four rates of TGC: Reduced rate: 3% Specific rate: 6% Normal rate: 11% for all the operations that are not subject to another rate. Higher rate: 22%"
+  },
+  {
+   "url": "https://dsf.gouv.nc/faq-tgc",
+   "title": "Questions fréquentes TGC (Direction des Services Fiscaux de Nouvelle-Calédonie)",
+   "read": "2026-11-01",
+   "kind": "primary",
+   "said": "le bénéfice de la franchise est acquis lorsqu’il ne réalise pas un chiffre d’affaires global supérieur à 25 M XPF et si au sein de ce chiffre d’affaires, celui généré par les seules prestations de services ne dépasse pas 7,5 M XPF. … Les assujettis dont le chiffre d’affaires est inférieur aux seuils prévus à l’article Lp 509 du CINC qui le souhaitent peuvent décider d’opter pour la TGC et ce dès la création de l’entreprise. Une fois cette option choisie, elle est irrévocable"
+  },
+  {
+   "url": "https://dsf.gouv.nc/synthese-des-nouvelles-dispositions-applicables-compter-du-1er-juillet-2025",
+   "title": "Synthèse des nouvelles dispositions applicables à compter du 1er Juillet 2025 (TGC), DSF Nouvelle-Calédonie",
+   "read": "2026-11-01",
+   "kind": "primary",
+   "said": "De nouvelles dispositions concernant la TGC ont été adoptées par la loi du pays n° 2025-3 du 6 février 2025 puis ont été complétées par la délibération n° 492 du 23 juin 2025"
+  },
+  {
+   "url": "https://taxsummaries.pwc.com/new-caledonia/individual/tax-administration",
+   "title": "New Caledonia - Individual - Tax administration (PwC, reviewed 9 September 2026)",
+   "read": "2026-11-01",
+   "kind": "secondary",
+   "quotes": "https://dsf.gouv.nc/",
+   "said": "Generally, the New Caledonian tax year runs from 1 January to 31 December. … each year before 1 April. … This deadline is extended to 30 June for taxpayers who do not have their tax domicile in New Caledonia. The income declaration filed electronically must reach the administration by 30 June at the latest … These payments should be made by 31 March and 15 July of each fiscal year."
+  },
+  {
+   "url": "https://dsf.gouv.nc/impots/declaration-de-la-retenue-la-source",
+   "title": "Déclaration de la retenue à la source (Direction des Services Fiscaux de Nouvelle-Calédonie)",
+   "read": "2026-11-01",
+   "kind": "primary",
+   "said": "La retenue à la source s'applique aux rémunérations versées à des salariés détachés en Nouvelle-Calédonie par des entreprises établies hors de la Nouvelle-Calédonie. La base imposable de cette retenue est constituée par le montant net des sommes versées, après application de la déduction forfaitaire prévue au B de l'article Lp 97 et de l'abattement de 20 % résultant du II de l'article Lp 97, sous les mêmes conditions de plafond et limites. La retenue est calculée selon le tarif mentionné à l'article R 59-2 . Elle est libératoire de l'impôt sur le revenu."
+  }
+ ],
+ "blockers": []
+}

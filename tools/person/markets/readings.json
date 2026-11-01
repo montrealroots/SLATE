@@ -1,4 +1,74 @@
 {
+ "AD": {
+  "market": 1, "zone": "Europe/Andorra", "language": {"code": "ca", "fig": 0},
+  "agreements": {
+   "ad-artists": {"media": ["film", "television", "stage"], "currency": "EUR", "minimums": [
+    {"medium": "film", "per": "day", "from": "2026-07-01", "fig": 2, "path": ["floor", "day"]},
+    {"medium": "film", "per": "month", "from": "2026-07-01", "fig": 2, "path": ["floor", "month"]},
+    {"medium": "television", "per": "day", "from": "2026-07-01", "fig": 2, "path": ["floor", "day"]},
+    {"medium": "television", "per": "month", "from": "2026-07-01", "fig": 2, "path": ["floor", "month"]},
+    {"medium": "stage", "per": "day", "from": "2026-07-01", "fig": 2, "path": ["floor", "day"]},
+    {"medium": "stage", "per": "month", "from": "2026-07-01", "fig": 2, "path": ["floor", "month"]}
+   ]}
+  }
+ },
+ "AE": {"unread": "the only floor its research gives is the general minimum wage of Emiratis in the private sector, by the month, whose source doesn't say it is a performer's; no agreement sets an actor's pay"},
+ "AF": {"unread": "its research gives no minimum, nor that none sets the pay: only the language and the market's city"},
+ "AG": {"unread": "its research gives no minimum, nor that none sets the pay: only the language"},
+ "AI": {
+  "market": null, "zone": "America/Anguilla", "language": {"code": "en", "fig": 1},
+  "agreements": {
+   "ai-all": {"media": ["film", "television", "stage"], "none": {"fig": 0}}
+  }
+ },
+ "AL": {"unread": "its research gives no minimum, nor that none sets the pay: only the language and the market's city"},
+ "AM": {"unread": "its research gives no minimum, nor that none sets the pay: only the language and the market's city"},
+ "AN": {"unread": "the Netherlands Antilles were dissolved on 10 October 2010; their work follows Curaçao's, Sint Maarten's and the Caribbean Netherlands'"},
+ "AO": {"unread": "the only floor its research gives is the general minimum wage, by the month, whose source doesn't say it is a performer's; no agreement sets an actor's pay"},
+ "AQ": {"unread": "no state's law reaches Antarctica, and the production's own country's terms aren't modeled"},
+ "AR": {
+  "market": 6, "zone": "America/Argentina/Buenos_Aires", "language": {"code": "es", "fig": 5},
+  "agreements": {
+   "ar-film": {"media": ["film"], "currency": "ARS", "minimums": [
+    {"medium": "film", "per": "day", "role": "day-player", "from": "2026-07-01", "fig": 1, "path": ["dayPlayerPerDay", "bolo_mayor", "2026-07"]},
+    {"medium": "film", "per": "day", "role": "day-player", "from": "2026-10-01", "fig": 1, "path": ["dayPlayerPerDay", "bolo_mayor", "2026-10"]},
+    {"medium": "film", "per": "day", "role": "minor-day-player", "from": "2026-07-01", "fig": 1, "path": ["dayPlayerPerDay", "bolo_menor", "2026-07"]},
+    {"medium": "film", "per": "day", "role": "minor-day-player", "from": "2026-10-01", "fig": 1, "path": ["dayPlayerPerDay", "bolo_menor", "2026-10"]}
+   ]},
+   "ar-tv": {"media": ["television"], "currency": "ARS", "minimums": [
+    {"medium": "television", "per": "month", "role": "serial", "from": "2026-09-01", "fig": 2, "path": ["monthlyContract", "tira", "2026-09"]},
+    {"medium": "television", "per": "month", "role": "serial", "from": "2026-10-01", "fig": 2, "path": ["monthlyContract", "tira", "2026-10"]},
+    {"medium": "television", "per": "month", "role": "serial", "from": "2026-11-01", "fig": 2, "path": ["monthlyContract", "tira", "2026-11"]},
+    {"medium": "television", "per": "month", "role": "series", "from": "2026-09-01", "fig": 2, "path": ["monthlyContract", "unitarios", "2026-09"]},
+    {"medium": "television", "per": "month", "role": "series", "from": "2026-10-01", "fig": 2, "path": ["monthlyContract", "unitarios", "2026-10"]},
+    {"medium": "television", "per": "month", "role": "series", "from": "2026-11-01", "fig": 2, "path": ["monthlyContract", "unitarios", "2026-11"]},
+    {"medium": "television", "per": "episode", "role": "day-player", "when": {"minutes": [60, 60]}, "from": "2026-10-01", "fig": 2, "path": ["boloUnitario60min", "2026-10", "fee"]}
+   ]},
+   "ar-stage": {"media": ["stage"], "currency": "ARS", "minimums": [
+    {"medium": "stage", "per": "month", "role": "category-a", "when": {"seats": [200, null]}, "from": "2026-09-01", "fig": 3, "path": ["large", "A", "2026-09"]},
+    {"medium": "stage", "per": "month", "role": "category-a", "when": {"seats": [200, null]}, "from": "2026-10-01", "fig": 3, "path": ["large", "A", "2026-10"]},
+    {"medium": "stage", "per": "month", "role": "category-a", "when": {"seats": [200, null]}, "from": "2026-11-01", "fig": 3, "path": ["large", "A", "2026-11"]},
+    {"medium": "stage", "per": "month", "role": "category-a", "rehearsal": true, "when": {"seats": [200, null]}, "from": "2026-10-01", "fig": 3, "path": ["large", "rehearsal", "2026-10"]},
+    {"medium": "stage", "per": "month", "role": "category-b", "when": {"seats": [200, null]}, "from": "2026-10-01", "fig": 3, "path": ["large", "B", "2026-10"]},
+    {"medium": "stage", "per": "month", "role": "category-b", "rehearsal": true, "when": {"seats": [200, null]}, "from": "2026-10-01", "fig": 3, "path": ["large", "rehearsal", "2026-10"]},
+    {"medium": "stage", "per": "month", "role": "category-c", "when": {"seats": [200, null]}, "from": "2026-10-01", "fig": 3, "path": ["large", "C", "2026-10"]},
+    {"medium": "stage", "per": "month", "role": "category-c", "rehearsal": true, "when": {"seats": [200, null]}, "from": "2026-10-01", "fig": 3, "path": ["large", "rehearsal", "2026-10"]},
+    {"medium": "stage", "per": "month", "role": "category-a", "when": {"seats": [0, 199]}, "from": "2026-10-01", "fig": 3, "path": ["under200Seats", "A", "2026-10"]},
+    {"medium": "stage", "per": "month", "role": "category-a", "rehearsal": true, "when": {"seats": [0, 199]}, "from": "2026-10-01", "fig": 3, "path": ["under200Seats", "rehearsal", "2026-10"]},
+    {"medium": "stage", "per": "month", "role": "category-b", "when": {"seats": [0, 199]}, "from": "2026-10-01", "fig": 3, "path": ["under200Seats", "B", "2026-10"]},
+    {"medium": "stage", "per": "month", "role": "category-b", "rehearsal": true, "when": {"seats": [0, 199]}, "from": "2026-10-01", "fig": 3, "path": ["under200Seats", "rehearsal", "2026-10"]},
+    {"medium": "stage", "per": "month", "role": "category-c", "when": {"seats": [0, 199]}, "from": "2026-10-01", "fig": 3, "path": ["under200Seats", "C", "2026-10"]},
+    {"medium": "stage", "per": "month", "role": "category-c", "rehearsal": true, "when": {"seats": [0, 199]}, "from": "2026-10-01", "fig": 3, "path": ["under200Seats", "rehearsal", "2026-10"]}
+   ]}
+  }
+ },
+ "AS": {"unread": "the only floor its research gives is the general minimum wage of the industry the FLSA names, by the hour, a term no part is paid by, whose source doesn't say it is a performer's; no agreement sets an actor's pay"},
+ "AT": {
+  "market": 2, "zone": "Europe/Vienna", "language": {"code": "de", "fig": 3},
+  "agreements": {
+   "at-screen": {"media": ["film", "television"], "none": {"fig": 0}}
+  }
+ },
  "AU": {
   "market": 5, "zone": "Australia/Sydney", "language": {"code": "en", "fig": null},
   "agreements": {
@@ -18,6 +88,42 @@
    ]}
   }
  },
+ "AX": {
+  "market": 2, "zone": "Europe/Mariehamn", "language": {"code": "sv", "fig": 1}, "follows": {"fig": 0, "market": "FI"}
+ },
+ "AZ": {"unread": "its research gives no minimum, nor that none sets the pay: only the language, the market's city and the union"},
+ "BA": {"unread": "its research gives no minimum, nor that none sets the pay: only the language, the market's city and the union"},
+ "BD": {"unread": "its research gives no minimum, nor that none sets the pay: only the language and the market's city"},
+ "BE": {
+  "market": 4, "zone": "Europe/Brussels", "language": {"code": "nl", "fig": 3},
+  "agreements": {
+   "be-screen": {"media": ["film", "television"], "none": {"fig": 1}}
+  }
+ },
+ "BG": {
+  "market": null, "zone": "Europe/Sofia", "language": {"code": "bg", "fig": 3},
+  "agreements": {
+   "bg-foreign-film": {"media": ["film"], "currency": "EUR", "minimums": [
+    {"medium": "film", "per": "day", "role": "lead", "from": "2018-12-01", "fig": 0, "path": ["foreignFilm", "lead"]},
+    {"medium": "film", "per": "day", "role": "supporting", "from": "2018-12-01", "fig": 0, "path": ["foreignFilm", "supporting"]},
+    {"medium": "film", "per": "day", "role": "episodic", "from": "2018-12-01", "fig": 0, "path": ["foreignFilm", "episodic"]}
+   ]}
+  }
+ },
+ "BH": {"unread": "its research gives no minimum, nor that none sets the pay: only the language"},
+ "BI": {"unread": "its research gives no minimum, nor that none sets the pay: only the language and the market's city"},
+ "BJ": {"unread": "the only floor its research gives is the general minimum wage, for no stated period, whose source doesn't say it is a performer's; no agreement sets an actor's pay"},
+ "BL": {
+  "market": null, "zone": "America/St_Barthelemy", "language": {"code": "fr", "fig": null}, "follows": {"fig": 0, "market": "FR"}
+ },
+ "BN": {
+  "market": null, "zone": "Asia/Brunei", "language": {"code": "ms", "fig": 0},
+  "agreements": {
+   "bn-screen": {"media": ["film", "television"], "none": {"fig": 1}}
+  }
+ },
+ "BO": {"unread": "its research gives no minimum, nor that none sets the pay: only the language"},
+ "BQ": {"unread": "the only floor its research gives is the general minimum wage, by the hour, a term no part is paid by, whose source doesn't say it is a performer's; no agreement sets an actor's pay"},
  "BR": {
   "market": 9, "zone": "America/Sao_Paulo", "language": {"code": "pt", "fig": 8},
   "agreements": {
@@ -46,6 +152,59 @@
    ]}
   }
  },
+ "BS": {"unread": "its research gives no minimum, nor that none sets the pay: only the market's city"},
+ "BT": {"unread": "its research gives no minimum, nor that none sets the pay: only the language"},
+ "BV": {"unread": "the island is uninhabited, and Norway's labour law reaches it only where it says so"},
+ "BW": {
+  "market": null, "zone": "Africa/Gaborone", "language": {"code": "en", "fig": null},
+  "agreements": {
+   "bw-screen": {"media": ["film", "television"], "none": {"fig": 0}}
+  }
+ },
+ "BY": {"unread": "its research gives no minimum, nor that none sets the pay: only the language and the market's city"},
+ "BZ": {"unread": "its research gives no minimum, nor that none sets the pay: only the language"},
+ "CC": {
+  "market": null, "zone": "Indian/Cocos", "language": {"code": "en", "fig": null}, "follows": {"fig": 0, "market": "AU"}
+ },
+ "CD": {"unread": "its research gives no minimum, nor that none sets the pay: only the language and the market's city"},
+ "CF": {"unread": "its research gives no minimum, nor that none sets the pay: only the language and the market's city"},
+ "CG": {"unread": "its research gives no minimum, nor that none sets the pay: only the language and the market's city"},
+ "CH": {"unread": "the screen fees are the actors' associations' recommendations, which bind no one, and the stage agreements' monthly minimums are by the house, which no part names"},
+ "CI": {"unread": "its research gives no minimum, nor that none sets the pay: only the language"},
+ "CK": {"unread": "its research gives no minimum, nor that none sets the pay: only the territory's status"},
+ "CL": {
+  "market": 3, "zone": "America/Santiago", "language": {"code": "es", "fig": null},
+  "agreements": {
+   "cl-screen": {"media": ["film", "television"], "none": {"fig": 0}}
+  }
+ },
+ "CM": {"unread": "its research gives no minimum, nor that none sets the pay: only the language"},
+ "CN": {"unread": "its research gives no minimum, nor that none sets the pay: only the language and the market's city"},
+ "CO": {
+  "market": 2, "zone": "America/Bogota", "language": {"code": "es", "fig": 3},
+  "agreements": {
+   "co-all": {"media": ["film", "television", "stage"], "none": {"fig": 0}}
+  }
+ },
+ "CR": {"unread": "its research gives no minimum, nor that none sets the pay: only the language"},
+ "CS": {"unread": "Serbia and Montenegro was dissolved in 2006; its work follows Serbia's or Montenegro's"},
+ "CU": {
+  "market": null, "zone": "America/Havana", "language": {"code": "es", "fig": 0},
+  "agreements": {
+   "cu-stage": {"media": ["stage"], "currency": "CUP", "minimums": [
+    {"medium": "stage", "per": "month", "role": "level-1", "from": "2026-07-01", "fig": 1, "path": ["levels", "1", "pay44h"]},
+    {"medium": "stage", "per": "month", "role": "level-2", "from": "2026-07-01", "fig": 1, "path": ["levels", "2", "pay44h"]},
+    {"medium": "stage", "per": "month", "role": "level-3", "from": "2026-07-01", "fig": 1, "path": ["levels", "3", "pay44h"]}
+   ]}
+  }
+ },
+ "CV": {"unread": "its research gives no minimum, nor that none sets the pay: only the market's city"},
+ "CW": {"unread": "its research gives no minimum, nor that none sets the pay: only the language"},
+ "CX": {
+  "market": null, "zone": "Indian/Christmas", "language": {"code": "en", "fig": null}, "follows": {"fig": 0, "market": "AU"}
+ },
+ "CY": {"unread": "its research gives no minimum, nor that none sets the pay: only the language"},
+ "CZ": {"unread": "its research gives no minimum, nor that none sets the pay: only the language, the market's city and the union"},
  "DE": {
   "market": 7, "zone": "Europe/Berlin", "language": {"code": "de", "fig": 6},
   "agreements": {
@@ -75,6 +234,7 @@
    ]}
   }
  },
+ "DJ": {"unread": "its research gives no minimum, nor that none sets the pay: only the language"},
  "DK": {
   "market": 12, "zone": "Europe/Copenhagen", "language": {"code": "da", "fig": 11},
   "agreements": {
@@ -94,6 +254,12 @@
    ]}
   }
  },
+ "DO": {"unread": "its research gives no minimum, nor that none sets the pay: only the language and the market's city"},
+ "DZ": {"unread": "its research gives no minimum, nor that none sets the pay: only the language and the market's city"},
+ "EC": {"unread": "its research gives no minimum, nor that none sets the pay: only the language and the market's city"},
+ "EE": {"unread": "the state's minimum salary is a culture worker's with higher education, which the person's papers don't say"},
+ "EG": {"unread": "its research gives no minimum, nor that none sets the pay: only the language, the market's city and the union"},
+ "ER": {"unread": "its research gives no minimum, nor that none sets the pay: only the language"},
  "ES": {
   "market": 15, "zone": "Europe/Madrid", "language": {"code": "es", "fig": 14},
   "agreements": {
@@ -171,6 +337,33 @@
    ]}
   }
  },
+ "ET": {"unread": "its research gives no minimum, nor that none sets the pay: only the language and the market's city"},
+ "FI": {
+  "market": 5, "zone": "Europe/Helsinki", "language": {"code": "fi", "fig": 6},
+  "agreements": {
+   "fi-stage": {"media": ["stage"], "currency": "EUR", "minimums": [
+    {"medium": "stage", "per": "month", "from": "2025-04-02", "fig": 1, "path": ["rates", 0, "amount"]},
+    {"medium": "stage", "per": "month", "from": "2025-08-01", "fig": 1, "path": ["rates", 1, "amount"]},
+    {"medium": "stage", "per": "month", "from": "2026-06-01", "fig": 1, "path": ["rates", 2, "amount"]},
+    {"medium": "stage", "per": "month", "from": "2027-06-01", "fig": 1, "path": ["rates", 3, "amount"]}
+   ]},
+   "fi-guest": {"media": ["stage"], "currency": "EUR", "minimums": [
+    {"medium": "stage", "per": "performance", "role": "a-role", "from": "2025-04-02", "fig": 2, "path": ["roles", "A", 0, "amount"]},
+    {"medium": "stage", "per": "performance", "role": "a-role", "from": "2025-08-01", "fig": 2, "path": ["roles", "A", 1, "amount"]},
+    {"medium": "stage", "per": "performance", "role": "a-role", "from": "2026-06-01", "fig": 2, "path": ["roles", "A", 2, "amount"]},
+    {"medium": "stage", "per": "performance", "role": "a-role", "from": "2027-06-01", "fig": 2, "path": ["roles", "A", 3, "amount"]},
+    {"medium": "stage", "per": "performance", "role": "b-role", "from": "2025-04-02", "fig": 2, "path": ["roles", "B", 0, "amount"]},
+    {"medium": "stage", "per": "performance", "role": "b-role", "from": "2025-08-01", "fig": 2, "path": ["roles", "B", 1, "amount"]},
+    {"medium": "stage", "per": "performance", "role": "b-role", "from": "2026-06-01", "fig": 2, "path": ["roles", "B", 2, "amount"]},
+    {"medium": "stage", "per": "performance", "role": "b-role", "from": "2027-06-01", "fig": 2, "path": ["roles", "B", 3, "amount"]}
+   ]},
+   "fi-screen": {"media": ["film", "television"], "none": {"fig": 3}}
+  }
+ },
+ "FJ": {"unread": "the research gives the tax deduction for hiring local artists, not a minimum"},
+ "FK": {"unread": "its research gives no minimum, nor that none sets the pay: only the market's city"},
+ "FM": {"unread": "its research gives no minimum, nor that none sets the pay: only the language"},
+ "FO": {"unread": "its research gives no minimum, nor that none sets the pay: only the language and the market's city"},
  "FR": {
   "market": 10, "zone": "Europe/Paris", "language": {"code": "fr", "fig": 9},
   "agreements": {
@@ -212,11 +405,65 @@
    ]}
   }
  },
+ "GA": {"unread": "its research gives no minimum, nor that none sets the pay: only the language and the market's city"},
+ "GD": {"unread": "its research gives no minimum, nor that none sets the pay: only the language"},
+ "GE": {"unread": "its research gives no minimum, nor that none sets the pay: only the language and the market's city"},
+ "GF": {
+  "market": null, "zone": "America/Cayenne", "language": {"code": "fr", "fig": null}, "follows": {"fig": 0, "market": "FR"}
+ },
+ "GG": {"unread": "the only floor its research gives is the general minimum wage, by the hour, a term no part is paid by, whose source doesn't say it is a performer's; no agreement sets an actor's pay"},
+ "GH": {"unread": "its research gives no minimum, nor that none sets the pay: only the union"},
+ "GI": {
+  "market": 2, "zone": "Europe/Gibraltar", "language": {"code": "en", "fig": 1},
+  "agreements": {
+   "gi-all": {"media": ["film", "television", "stage"], "none": {"fig": 0}}
+  }
+ },
+ "GL": {"unread": "its research gives no minimum, nor that none sets the pay: only the language"},
+ "GM": {"unread": "its research gives no minimum, nor that none sets the pay: only the language"},
+ "GP": {
+  "market": null, "zone": "America/Guadeloupe", "language": {"code": "fr", "fig": null}, "follows": {"fig": 0, "market": "FR"}
+ },
+ "GQ": {"unread": "its research gives no minimum, nor that none sets the pay: only the language"},
+ "GR": {
+  "market": null, "zone": "Europe/Athens", "language": {"code": "el", "fig": null},
+  "agreements": {
+   "gr-private-stage": {"media": ["stage"], "none": {"fig": 1}}
+  }
+ },
+ "GS": {"unread": "the territory has no residents, actors or agreement; who engages a performer on a media visit there isn't modeled"},
+ "GT": {"unread": "its research gives no minimum, nor that none sets the pay: only the language and the market's city"},
+ "GU": {"unread": "its research gives no minimum, nor that none sets the pay: only whose law it follows and the market's city"},
+ "GW": {"unread": "its research gives no minimum, nor that none sets the pay: only the market's city"},
+ "GY": {"unread": "its research gives no minimum, nor that none sets the pay: only the market's city"},
+ "HK": {
+  "market": 3, "zone": "Asia/Hong_Kong", "language": {"code": "zh", "fig": 4},
+  "agreements": {
+   "hk-film": {"media": ["film"], "none": {"fig": 0}}
+  }
+ },
+ "HM": {"unread": "the islands are uninhabited; work there would be engaged from Australia, which isn't modeled"},
+ "HN": {"unread": "its research gives no minimum, nor that none sets the pay: only the language and the market's city"},
+ "HR": {"unread": "its research gives no minimum, nor that none sets the pay: only the language and the market's city"},
+ "HT": {"unread": "its research gives no minimum, nor that none sets the pay: only the language and the market's city"},
+ "HU": {"unread": "its research gives no minimum, nor that none sets the pay: only the language and the union"},
+ "ID": {"unread": "its research gives no minimum, nor that none sets the pay: only the language"},
  "IE": {
   "market": 8, "zone": "Europe/Dublin", "language": {"code": "en", "fig": 7},
   "agreements": {
    "ie-stage": {"media": ["stage"], "currency": "EUR", "minimums": [
     {"medium": "stage", "per": "week", "from": "2008-10-01", "fig": 4, "path": ["weekly_min"]}
+   ]}
+  }
+ },
+ "IL": {
+  "market": 4, "zone": "Asia/Jerusalem", "language": {"code": "he", "fig": 3},
+  "agreements": {
+   "il-screen": {"media": ["film", "television"], "currency": "ILS", "minimums": [
+    {"medium": "television", "per": "day", "role": "lead", "from": "2019-02-01", "fig": 1, "path": ["perFilmingDay", "tvLead"], "dated": 0},
+    {"medium": "television", "per": "day", "role": "supporting", "from": "2019-02-01", "fig": 1, "path": ["perFilmingDay", "tvNonLead"], "dated": 0},
+    {"medium": "film", "per": "day", "role": "actor", "from": "2019-02-01", "fig": 1, "path": ["perFilmingDay", "film"], "dated": 0},
+    {"medium": "film", "per": "day", "role": "beginner", "from": "2019-02-01", "fig": 1, "path": ["perFilmingDay", "filmBeginner"], "dated": 0}
    ]}
   }
  },
@@ -226,6 +473,10 @@
    "in-screen": {"media": ["film", "television"], "none": {"fig": 1}}
   }
  },
+ "IO": {"unread": "the territory has no film work; work there would be engaged from the United Kingdom, which isn't modeled"},
+ "IQ": {"unread": "its research gives no minimum, nor that none sets the pay: only the language and the market's city"},
+ "IR": {"unread": "its research gives no minimum, nor that none sets the pay: only the language"},
+ "IS": {"unread": "RÚV's drama agreement pays by the hour of a half or a full day, a term no part is paid by"},
  "IT": {
   "market": 7, "zone": "Europe/Rome", "language": {"code": "it", "fig": 6},
   "agreements": {
@@ -251,6 +502,8 @@
    ]}
   }
  },
+ "JE": {"unread": "the research gives Jersey's lack of a film fund, not who sets an actor's pay"},
+ "JO": {"unread": "its research gives no minimum, nor that none sets the pay: only the language"},
  "JP": {
   "market": 4, "zone": "Asia/Tokyo", "language": {"code": "ja", "fig": null},
   "agreements": {
@@ -260,6 +513,12 @@
    "jp-live": {"media": ["film", "stage"], "none": {"fig": 2}}
   }
  },
+ "KE": {"unread": "its research gives no minimum, nor that none sets the pay: only the language"},
+ "KG": {"unread": "its research gives no minimum, nor that none sets the pay: only the language, the market's city and the union"},
+ "KH": {"unread": "its research gives no minimum, nor that none sets the pay: only the language and the market's city"},
+ "KI": {"unread": "its research gives no minimum, nor that none sets the pay: only the language"},
+ "KM": {"unread": "its research gives no minimum, nor that none sets the pay: only the language and the market's city"},
+ "KP": {"unread": "its research gives no minimum, nor that none sets the pay: only the language and the market's city"},
  "KR": {
   "market": 7, "zone": "Asia/Seoul", "language": {"code": "ko", "fig": 6},
   "agreements": {
@@ -276,6 +535,50 @@
    ]}
   }
  },
+ "KW": {"unread": "its research gives no minimum, nor that none sets the pay: only the language"},
+ "KY": {"unread": "the only floor its research gives is the general minimum wage, by the hour, a term no part is paid by, whose source doesn't say it is a performer's; no agreement sets an actor's pay"},
+ "KZ": {"unread": "its research gives no minimum, nor that none sets the pay: only the language and the market's city"},
+ "LA": {"unread": "its research gives no minimum, nor that none sets the pay: only the language and the market's city"},
+ "LB": {"unread": "the research gives the artists' syndicates and the 10% levied on a foreign artist's contract, not a minimum"},
+ "LC": {"unread": "its research gives no minimum, nor that none sets the pay: only the language"},
+ "LI": {
+  "market": 2, "zone": "Europe/Vaduz", "language": {"code": "de", "fig": 1},
+  "agreements": {
+   "li-film": {"media": ["film"], "none": {"fig": 0}}
+  }
+ },
+ "LK": {"unread": "its research gives no minimum, nor that none sets the pay: only the language, the market's city and the union"},
+ "LS": {"unread": "its research gives no minimum, nor that none sets the pay: only the language"},
+ "LT": {"unread": "its research gives no minimum, nor that none sets the pay: only the language"},
+ "LU": {"unread": "the research gives the state's benefit for an intermittent performer between engagements, not a minimum"},
+ "LV": {"unread": "its research gives no minimum, nor that none sets the pay: only the language, the market's city and the union"},
+ "LY": {"unread": "its research gives no minimum, nor that none sets the pay: only the language and the market's city"},
+ "MA": {"unread": "its research gives no minimum, nor that none sets the pay: only the language"},
+ "MC": {"unread": "its research gives no minimum, nor that none sets the pay: only the language"},
+ "ME": {"unread": "its research gives no minimum, nor that none sets the pay: only the language"},
+ "MF": {
+  "market": null, "zone": "America/Marigot", "language": {"code": "fr", "fig": null}, "follows": {"fig": 0, "market": "FR"}
+ },
+ "MG": {"unread": "its research gives no minimum, nor that none sets the pay: only the language and the market's city"},
+ "MH": {"unread": "its research gives no minimum, nor that none sets the pay: only the language"},
+ "MK": {"unread": "its research gives no minimum, nor that none sets the pay: only the language and the market's city"},
+ "ML": {"unread": "its research gives no minimum, nor that none sets the pay: only the language and the market's city"},
+ "MM": {"unread": "its research gives no minimum, nor that none sets the pay: only the language"},
+ "MN": {"unread": "its research gives no minimum, nor that none sets the pay: only the language and the market's city"},
+ "MO": {"unread": "the only floor its research gives is the general minimum wage of private-sector employees, whose source doesn't say it is a performer's; no agreement sets an actor's pay"},
+ "MP": {"unread": "the only floor its research gives is the general minimum wage of the FLSA, by the hour, a term no part is paid by, whose source doesn't say it is a performer's; no agreement sets an actor's pay"},
+ "MQ": {"unread": "its research gives no minimum, nor that none sets the pay: only the territory's status"},
+ "MR": {"unread": "its research gives no minimum, nor that none sets the pay: only the language and the market's city"},
+ "MS": {
+  "market": null, "zone": "America/Montserrat", "language": {"code": "en", "fig": null},
+  "agreements": {
+   "ms-all": {"media": ["film", "television", "stage"], "none": {"fig": 0}}
+  }
+ },
+ "MT": {"unread": "its research gives no minimum, nor that none sets the pay: only the language"},
+ "MU": {"unread": "its research gives no minimum, nor that none sets the pay: only the language"},
+ "MV": {"unread": "its research gives no minimum, nor that none sets the pay: only the language and the market's city"},
+ "MW": {"unread": "its research gives no minimum, nor that none sets the pay: only the language"},
  "MX": {
   "market": 7, "zone": "America/Mexico_City", "language": {"code": "es", "fig": 6},
   "agreements": {
@@ -362,12 +665,26 @@
    "mx-other": {"media": ["film", "stage"], "none": {"fig": 1}}
   }
  },
+ "MY": {"unread": "its research gives no minimum, nor that none sets the pay: only the language"},
+ "MZ": {"unread": "its research gives no minimum, nor that none sets the pay: only the language and the market's city"},
+ "NA": {"unread": "its research gives no minimum, nor that none sets the pay: only the language and the market's city"},
+ "NC": {
+  "market": null, "zone": "Pacific/Noumea", "language": {"code": "fr", "fig": null},
+  "agreements": {
+   "nc-all": {"media": ["film", "television", "stage"], "none": {"fig": 0}}
+  }
+ },
+ "NE": {"unread": "its research gives no minimum, nor that none sets the pay: only the language and the market's city"},
+ "NF": {
+  "market": null, "zone": "Pacific/Norfolk", "language": {"code": "en", "fig": null}, "follows": {"fig": 0, "market": "AU"}
+ },
  "NG": {
   "market": 4, "zone": "Africa/Lagos", "language": {"code": "en", "fig": 3},
   "agreements": {
    "ng-screen": {"media": ["film", "television"], "none": {"fig": 0}}
   }
  },
+ "NI": {"unread": "its research gives no minimum, nor that none sets the pay: only the language"},
  "NL": {
   "market": 6, "zone": "Europe/Amsterdam", "language": {"code": "nl", "fig": 5},
   "agreements": {
@@ -414,6 +731,8 @@
    ]}
   }
  },
+ "NP": {"unread": "its research gives no minimum, nor that none sets the pay: only the market's city"},
+ "NU": {"unread": "its research gives no minimum, nor that none sets the pay: only the language, the market's city and the territory's status"},
  "NZ": {
   "market": 6, "zone": "Pacific/Auckland", "language": {"code": "en", "fig": 5},
   "agreements": {
@@ -448,6 +767,44 @@
    ]}
   }
  },
+ "OM": {"unread": "its research gives no minimum, nor that none sets the pay: only the language and the market's city"},
+ "PA": {"unread": "its research gives no minimum, nor that none sets the pay: only the language"},
+ "PE": {"unread": "the Performers Law sets no amount, and its research doesn't say none sets the pay"},
+ "PH": {
+  "market": 3, "zone": "Asia/Manila", "language": {"code": "en", "fig": null},
+  "agreements": {
+   "ph-screen": {"media": ["film", "television"], "currency": "PHP", "minimums": [
+    {"medium": "film", "per": "day", "from": "2026-09-26", "fig": 1, "path": ["dailyPHP"]},
+    {"medium": "television", "per": "day", "from": "2026-09-26", "fig": 1, "path": ["dailyPHP"]}
+   ]}
+  }
+ },
+ "PK": {"unread": "its research gives no minimum, nor that none sets the pay: only the language"},
+ "PL": {"unread": "the research reports a public theatre's base as the national minimum wage, giving no amount"},
+ "PM": {
+  "market": null, "zone": "America/Miquelon", "language": {"code": "fr", "fig": 0}, "follows": {"fig": 1, "market": "FR"}
+ },
+ "PN": {
+  "market": null, "zone": "Pacific/Pitcairn", "language": {"code": "en", "fig": 1},
+  "agreements": {
+   "pn-all": {"media": ["film", "stage"], "none": {"fig": 0}}
+  }
+ },
+ "PR": {"unread": "its work follows the US agreements, whose terms the engine keeps as SAG-AFTRA's own, not as a market's"},
+ "PS": {"unread": "its research gives no minimum, nor that none sets the pay: only the language"},
+ "PT": {"unread": "its research gives no minimum, nor that none sets the pay: only the language and the union"},
+ "PW": {"unread": "its research gives no minimum, nor that none sets the pay: only the language and the market's city"},
+ "PY": {"unread": "its research gives no minimum, nor that none sets the pay: only the language"},
+ "QA": {"unread": "its research gives no minimum, nor that none sets the pay: only the language and the market's city"},
+ "RE": {
+  "market": null, "zone": "Indian/Reunion", "language": {"code": "fr", "fig": 1}, "follows": {"fig": 0, "market": "FR"}
+ },
+ "RO": {"unread": "its research gives no minimum, nor that none sets the pay: only the language and the market's city"},
+ "RS": {"unread": "its research gives no minimum, nor that none sets the pay: only the language, the market's city and the union"},
+ "RU": {"unread": "its research gives no minimum, nor that none sets the pay: only the language, the market's city and the union"},
+ "RW": {"unread": "its research gives no minimum, nor that none sets the pay: only the language"},
+ "SA": {"unread": "its research gives no minimum, nor that none sets the pay: only the market's city"},
+ "SC": {"unread": "its research gives no minimum, nor that none sets the pay: only the language"},
  "SE": {
   "market": 8, "zone": "Europe/Stockholm", "language": {"code": "sv", "fig": 7},
   "agreements": {
@@ -485,10 +842,80 @@
    ]}
   }
  },
+ "SG": {"unread": "its research gives no minimum, nor that none sets the pay: only the language"},
+ "SH": {
+  "market": 1, "zone": "Atlantic/St_Helena", "language": {"code": "en", "fig": null},
+  "agreements": {
+   "sh-all": {"media": ["film", "television", "stage"], "none": {"fig": 0}}
+  }
+ },
+ "SI": {"unread": "its research gives no minimum, nor that none sets the pay: only the language, the market's city and the union"},
+ "SK": {"unread": "its research gives no minimum, nor that none sets the pay: only the language and the market's city"},
+ "SL": {"unread": "its research gives no minimum, nor that none sets the pay: only the language"},
+ "SN": {"unread": "its research gives no minimum, nor that none sets the pay: only the language and the market's city"},
+ "SO": {"unread": "its research gives no minimum, nor that none sets the pay: only the language"},
+ "SS": {"unread": "its research gives no minimum, nor that none sets the pay: only the language and the market's city"},
+ "ST": {"unread": "its research gives no minimum, nor that none sets the pay: only the market's city"},
+ "SV": {"unread": "its research gives no minimum, nor that none sets the pay: only the language"},
+ "SX": {"unread": "the only floor its research gives is the general minimum wage, by the hour, a term no part is paid by, whose source doesn't say it is a performer's; no agreement sets an actor's pay"},
+ "SZ": {"unread": "its research gives no minimum, nor that none sets the pay: only the language"},
+ "TD": {"unread": "its research gives no minimum, nor that none sets the pay: only the language and the market's city"},
+ "TF": {"unread": "its research gives no minimum, nor that none sets the pay: only the market's city and the territory's status"},
+ "TH": {
+  "market": 1, "zone": "Asia/Bangkok", "language": {"code": "th", "fig": null},
+  "agreements": {
+   "th-screen": {"media": ["film", "television"], "none": {"fig": 0}}
+  }
+ },
+ "TJ": {"unread": "its research gives no minimum, nor that none sets the pay: only the language, the market's city and the union"},
+ "TK": {"unread": "its research gives no minimum, nor that none sets the pay: only the territory's status"},
+ "TL": {"unread": "its research gives no minimum, nor that none sets the pay: only the language"},
+ "TM": {"unread": "its research gives no minimum, nor that none sets the pay: only the language and the market's city"},
+ "TN": {"unread": "its research gives no minimum, nor that none sets the pay: only the language"},
+ "TO": {"unread": "its research gives no minimum, nor that none sets the pay: only the language and the market's city"},
+ "TR": {
+  "market": null, "zone": "Europe/Istanbul", "language": {"code": "tr", "fig": null},
+  "agreements": {
+   "tr-screen": {"media": ["film", "television"], "none": {"fig": 0}}
+  }
+ },
+ "TW": {"unread": "its research gives no minimum, nor that none sets the pay: only the language"},
+ "TZ": {"unread": "its research gives no minimum, nor that none sets the pay: only the language, the market's city and the union"},
+ "UA": {"unread": "its research gives no minimum, nor that none sets the pay: only an agreement without its rates and the language"},
+ "UG": {"unread": "its research gives no minimum, nor that none sets the pay: only the language and the market's city"},
+ "UM": {"unread": "the islands have no inhabitants and no local market; filming there is a federal permit's"},
+ "UY": {"unread": "SUA's minimums are a fee for the part beside a day rate, which no term pays"},
+ "UZ": {"unread": "its research gives no minimum, nor that none sets the pay: only the language and the market's city"},
+ "VA": {
+  "market": null, "zone": "Europe/Vatican", "language": {"code": "it", "fig": null},
+  "agreements": {
+   "va-screen": {"media": ["film", "television"], "none": {"fig": 0}}
+  }
+ },
+ "VC": {"unread": "its research gives no minimum, nor that none sets the pay: only the language"},
+ "VE": {"unread": "its research gives no minimum, nor that none sets the pay: only the language and the market's city"},
+ "VG": {
+  "market": null, "zone": "America/Tortola", "language": {"code": "en", "fig": null},
+  "agreements": {
+   "vg-all": {"media": ["film", "television", "stage"], "none": {"fig": 0}}
+  }
+ },
+ "VI": {"unread": "the only floor its research gives is the general minimum wage, by the hour, a term no part is paid by, whose source doesn't say it is a performer's; no agreement sets an actor's pay"},
+ "VN": {"unread": "its research gives no minimum, nor that none sets the pay: only the language and the market's city"},
+ "VU": {"unread": "its research gives no minimum, nor that none sets the pay: only the language"},
+ "WF": {"unread": "the only floor its research gives is the general minimum wage, by the hour or month from a quarter, not a day, whose source doesn't say it is a performer's; no agreement sets an actor's pay"},
+ "WS": {"unread": "the only floor its research gives is the general minimum wage, by the hour, a term no part is paid by, whose source doesn't say it is a performer's; no agreement sets an actor's pay"},
+ "XK": {"unread": "its research gives no minimum, nor that none sets the pay: only the language, the market's city and the union"},
+ "YE": {"unread": "its research gives no minimum, nor that none sets the pay: only the language and the market's city"},
+ "YT": {
+  "market": 2, "zone": "Indian/Mayotte", "language": {"code": "fr", "fig": 1}, "follows": {"fig": 0, "market": "FR"}
+ },
  "ZA": {
   "market": 6, "zone": "Africa/Johannesburg", "language": {"code": "en", "fig": 5},
   "agreements": {
    "za-all": {"media": ["film", "television", "stage"], "none": {"fig": 0}}
   }
- }
+ },
+ "ZM": {"unread": "its research gives no minimum, nor that none sets the pay: only the language"},
+ "ZW": {"unread": "its research gives no minimum, nor that none sets the pay: only the language"}
 }

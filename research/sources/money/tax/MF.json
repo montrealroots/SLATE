@@ -1,0 +1,216 @@
+{
+ "topic": "tax.MF",
+ "read": "2026-11-01",
+ "note": "Read 2026-11-01 at the owner's word (\"Build those first 3 starting with ledger first\"; of the 21 countries read first: \"It should cover across every country\"; \"Retry the blocked tax facts once all countries land\"): the tax on a screen worker's pay in Saint Martin: a resident's income tax, social contributions, what is withheld at source, a non-resident artiste's withholding, an author's treatment, VAT and the tax year. Research and retry subagents (workbench/briefs/BRIEF-tax.md, BRIEF-tax-retry.md), every quote checked by the lead against its saved page.",
+ "figures": [
+  {
+   "item": "residents",
+   "finding": "Saint-Martin levies its own income tax: on 2024 income each part is taxed at 0% to €7,236, 5.5% to €14,364, 14% to €31,745, 30% to €85,286 and 41% above, and the tax is then reduced by 40%, up to €6,700.",
+   "value": {
+    "currency": "EUR",
+    "incomeYear": 2024,
+    "perPart": true,
+    "brackets": [
+     {
+      "from": 0,
+      "to": 7236,
+      "rate": 0
+     },
+     {
+      "from": 7236,
+      "to": 14364,
+      "rate": 0.055
+     },
+     {
+      "from": 14364,
+      "to": 31745,
+      "rate": 0.14
+     },
+     {
+      "from": 31745,
+      "to": 85286,
+      "rate": 0.3
+     },
+     {
+      "from": 85286,
+      "to": null,
+      "rate": 0.41
+     }
+    ],
+    "reduction": {
+     "rate": 0.4,
+     "cap": 6700
+    },
+    "regional": null
+   },
+   "applies": "Residents of Saint-Martin (after the five-year rule for those coming from France), income of 2024",
+   "sources": [
+    {
+     "src": 0,
+     "said": "L'impôt des résidents saint-martinois est calculé par application d'un barème progressif. L’impôt sur les revenus de l’année 2024 est calculé en appliquant à la fraction de chaque part de revenu qui excède 7 236 € le taux de : - 0 % pour la fraction de revenus inférieure ou égale à 7 236 € ; - 5,50 % pour la fraction supérieure à 7 236 € et inférieure ou égale à 14 364 € ; - 14 % pour la fraction supérieure à 14 364 € et inférieure ou égale à 31 745 € ; - 30 % pour la fraction supérieure à 31 745 € et inférieure ou égale à 85 286 € ; - 41 % pour la fraction supérieure à 85 286 €. Une réduction de 40 %, plafonnée à 6 700 €, est ensuite appliquée au montant de l'impôt ainsi déterminé."
+    }
+   ]
+  },
+  {
+   "item": "follows",
+   "finding": "A person who moved to Saint-Martin from mainland France or an overseas department after 15 July 2007 remains a French tax resident until five years' residence, and so takes France's tax until then.",
+   "value": {
+    "follows": "FR",
+    "until": "five years' residence in Saint-Martin",
+    "appliesTo": "persons previously domiciled in France (metropole or DOM)"
+   },
+   "applies": "Newcomers from France",
+   "sources": [
+    {
+     "src": 1,
+     "said": "les personnes résidant à Saint-Martin ou à Saint-Barthélemy qui ont transféré leur domicile fiscal dans ces collectivités après le 15 juillet 2007 et qui ne remplissent pas la règle de domiciliation fiscale de cinq ans dans ces collectivités(2) … Pour Saint-Martin, contrairement à Saint-Barthélemy, la règle de domiciliation fiscale de cinq ans s’applique seulement aux personnes physiques qui avaient leur domicile fiscal en France, en métropole ou dans les DOM avant de le transférer à Saint-Martin."
+    }
+   ]
+  },
+  {
+   "item": "nonResident",
+   "finding": "A person not domiciled in Saint-Martin who earns income there (rent, work on the island, dividends) can be taxed by Saint-Martin on that income alone, declared by 31 May; where it is at least 75% of total income the ordinary rules apply.",
+   "value": {
+    "base": "Saint-Martin-source income",
+    "returnDue": "05-31",
+    "ordinaryRulesIfShareAtLeast": 0.75,
+    "rate": null,
+    "final": null
+   },
+   "applies": "Non-residents of Saint-Martin",
+   "sources": [
+    {
+     "src": 2,
+     "said": "Si vous n'avez pas votre domicile fiscal à Saint-Martin mais que vous percevez des revenus ayant leur source à Saint-Martin (loyers d'un bien immobilier, revenus d'une activité exercée sur l'île, dividendes d'une société saint-martinoise…), vous pouvez être soumis à l'impôt saint-martinois sur ces seuls revenus. … La déclaration est à déposer annuellement, au plus tard le 31 mai, pour les revenus perçus l'année précédente. Si vos revenus de source saint-martinoise représentent au moins 75 % de vos revenus totaux, les règles de droit commun s'appliquent."
+    }
+   ]
+  },
+  {
+   "item": "vat",
+   "finding": "EU VAT does not apply; a general turnover tax (TGCA) of 4% falls in practice on retail sales and all services.",
+   "value": {
+    "standard": 0.04,
+    "name": "TGCA"
+   },
+   "applies": "Saint-Martin",
+   "sources": [
+    {
+     "src": 3,
+     "said": "Le système de taxe sur la valeur ajoutée (TVA) existant au sein de l’Union européenne n’est pas applicable à Saint-Martin. Toutefois, une taxe sur le chiffre d’affaires dénommée « taxe générale sur le chiffre d’affaires » (TGCA), au taux de 4 %, porte en pratique sur les ventes au détail de marchandises ainsi que l’ensemble des prestations de services."
+    }
+   ]
+  },
+  {
+   "item": "year",
+   "finding": "The return for the previous calendar year is filed by 31 May; tax is collected by assessment, with instalments by 15 February and 15 May and the balance before 30 September.",
+   "value": {
+    "start": "01-01",
+    "end": "12-31",
+    "returnDue": "05-31",
+    "instalments": [
+     "02-15",
+     "05-15"
+    ],
+    "balanceDue": "09-30"
+   },
+   "applies": "Residents",
+   "sources": [
+    {
+     "src": 4,
+     "said": "La déclaration annuelle doit être déposée au plus tard le 31 mai de chaque année, au titre des revenus perçus l'année précédente. Des acomptes provisionnels sont à régler au plus tard les 15 février et 15 mai.t."
+    },
+    {
+     "src": 0,
+     "said": "Un avis d'imposition est en principe adressé au contribuable vers la fin du mois d'août et l'impôt dû doit être réglé avant le 30 septembre de l'année, sous déduction des acomptes provisionnels payables au plus tard les 15 février et 15 mai."
+    }
+   ]
+  },
+  {
+   "item": "withholding",
+   "finding": "Income tax is assessed by roll after the annual return rather than withheld from pay.",
+   "value": {
+    "kind": "assessment by roll, provisional instalments"
+   },
+   "applies": "Residents",
+   "sources": [
+    {
+     "src": 4,
+     "said": "L'impôt est ensuite calculé, puis recouvré par voie de rôle."
+    }
+   ]
+  }
+ ],
+ "country": "MF",
+ "sources": [
+  {
+   "url": "https://www.impots-saint-martin.fr/fr/34-impots-des-particuliers.html",
+   "title": "Impôts des particuliers - Impôts de Saint-Martin",
+   "read": "2026-11-01",
+   "kind": "primary",
+   "said": "L'impôt des résidents saint-martinois est calculé par application d'un barème progressif. L’impôt sur les revenus de l’année 2024 est calculé en appliquant à la fraction de chaque part de revenu qui excède 7 236 € le taux de : - 0 % pour la fraction de revenus inférieure ou égale à 7 236 € ; - 5,50 % pour la fraction supérieure à 7 236 € et inférieure ou égale à 14 364 € ; - 14 % pour la fraction supérieure à 14 364 € et inférieure ou égale à 31 745 € ; - 30 % pour la fraction supérieure à 31 745 € et inférieure ou égale à 85 286 € ; - 41 % pour la fraction supérieure à 85 286 €. Une réduction de 40 %, plafonnée à 6 700 €, est ensuite appliquée au montant de l'impôt ainsi déterminé. … Un avis d'imposition est en principe adressé au contribuable vers la fin du mois d'août et l'impôt dû doit être réglé avant le 30 septembre de l'année, sous déduction des acomptes provisionnels payables au plus tard les 15 février et 15 mai."
+  },
+  {
+   "url": "https://www.impots.gouv.fr/sites/default/files/formulaires/2041-e/2024/2041-e_4807.pdf",
+   "title": "Notice 2041-E: Personnes fiscalement domiciliées hors de France (DGFiP)",
+   "read": "2026-11-01",
+   "kind": "primary",
+   "said": "les personnes résidant à Saint-Martin ou à Saint-Barthélemy qui ont transféré leur domicile fiscal dans ces collectivités après le 15 juillet 2007 et qui ne remplissent pas la règle de domiciliation fiscale de cinq ans dans ces collectivités(2) … Pour Saint-Martin, contrairement à Saint-Barthélemy, la règle de domiciliation fiscale de cinq ans s’applique seulement aux personnes physiques qui avaient leur domicile fiscal en France, en métropole ou dans les DOM avant de le transférer à Saint-Martin."
+  },
+  {
+   "url": "https://www.com-saint-martin.fr/thematiques/impots-et-fiscalite/fiscalite-pour-les-particuliers/declarer-des-revenus-de-source-saint-martinoise-non-residents",
+   "title": "Déclarer des revenus de source Saint-Martinoise (non-résidents) - Collectivité de Saint-Martin",
+   "read": "2026-11-01",
+   "kind": "primary",
+   "said": "Si vous n'avez pas votre domicile fiscal à Saint-Martin mais que vous percevez des revenus ayant leur source à Saint-Martin (loyers d'un bien immobilier, revenus d'une activité exercée sur l'île, dividendes d'une société saint-martinoise…), vous pouvez être soumis à l'impôt saint-martinois sur ces seuls revenus. … La déclaration est à déposer annuellement, au plus tard le 31 mai, pour les revenus perçus l'année précédente. Si vos revenus de source saint-martinoise représentent au moins 75 % de vos revenus totaux, les règles de droit commun s'appliquent."
+  },
+  {
+   "url": "https://www.impots-saint-martin.fr/fr/6-impots-des-professionnels.html",
+   "title": "Impôts des professionnels - Impôts de Saint-Martin",
+   "read": "2026-11-01",
+   "kind": "primary",
+   "said": "Le système de taxe sur la valeur ajoutée (TVA) existant au sein de l’Union européenne n’est pas applicable à Saint-Martin. Toutefois, une taxe sur le chiffre d’affaires dénommée « taxe générale sur le chiffre d’affaires » (TGCA), au taux de 4 %, porte en pratique sur les ventes au détail de marchandises ainsi que l’ensemble des prestations de services."
+  },
+  {
+   "url": "https://www.com-saint-martin.fr/thematiques/impots-et-fiscalite/fiscalite-pour-les-particuliers/declaration-de-revenus-ir---residents-et-assimile-residents-de-saint-martin",
+   "title": "Déclaration de revenus (IR) - Résidents et assimilé résidents de Saint-Martin",
+   "read": "2026-11-01",
+   "kind": "primary",
+   "said": "La déclaration annuelle doit être déposée au plus tard le 31 mai de chaque année, au titre des revenus perçus l'année précédente. Des acomptes provisionnels sont à régler au plus tard les 15 février et 15 mai.t. … L'impôt est ensuite calculé, puis recouvré par voie de rôle."
+  }
+ ],
+ "blockers": [
+  {
+   "item": "residents",
+   "sought": "The scale for income of 2025 (the 2026 assessment) if Saint-Martin has updated it.",
+   "tried": {
+    "institution": "impots-saint-martin.fr read: gives the 2024-income scale || 2026-11-01 retry: com-saint-martin.fr reachable; impots-saint-martin.fr (already read) gives the 2024-income scale only",
+    "official-register": "CGISM not fetched || 2026-11-01 retry: CGISM text not found on reachable pages",
+    "web-search": "searched com-saint-martin.fr for 2026; none || 2026-11-01 retry: refused by the tool on 2026-11-01: 'this turn's web search budget is used up (limit: 200 WebSearch calls per turn, shared by every agent)'; queries sent and refused this turn: 'Налоговый кодекс Республики Беларусь статья 199 ставки подоходного налога 2026 13 25 процентов' and 'Eswatini Revenue Service PAYE tax tables 1 July 2026'; no search engine was queried any other way",
+    "trade-press": "Senate report l10-273 (2010) confirms the 40%/€6,700 reduction || 2026-11-01 retry: Senate report (already read) only",
+    "archive": "web.archive.org unreachable from this environment || 2026-11-01 retry: archive.org's availability API now answers (snapshots of the institution's site exist), but web.archive.org snapshot pages return HTTP 403 over http and reset over https from this environment (2026-11-01)"
+   }
+  },
+  {
+   "item": "social",
+   "sought": "Social contributions on pay in Saint-Martin.",
+   "tried": {
+    "institution": "not tried || 2026-11-01 retry: CLEISS (cleiss.fr) publishes contribution tables for Mayotte and Saint-Pierre-et-Miquelon but none for Saint-Martin; com-saint-martin.fr reachable, no social-contribution page found",
+    "official-register": "not tried || 2026-11-01 retry: legifrance.gouv.fr returns HTTP 403 (not read another way)",
+    "web-search": "not run || 2026-11-01 retry: refused by the tool on 2026-11-01: 'this turn's web search budget is used up (limit: 200 WebSearch calls per turn, shared by every agent)'; queries sent and refused this turn: 'Налоговый кодекс Республики Беларусь статья 199 ставки подоходного налога 2026 13 25 процентов' and 'Eswatini Revenue Service PAYE tax tables 1 July 2026'; no search engine was queried any other way",
+    "trade-press": "not tried || 2026-11-01 retry: none found",
+    "archive": "web.archive.org unreachable from this environment || 2026-11-01 retry: archive.org's availability API now answers (snapshots of the institution's site exist), but web.archive.org snapshot pages return HTTP 403 over http and reset over https from this environment (2026-11-01)"
+   }
+  },
+  {
+   "item": "nonResident",
+   "sought": "The rate or withholding on a non-resident performer's Saint-Martin fee.",
+   "tried": {
+    "institution": "collectivity and impots-saint-martin.fr read: no rate given || 2026-11-01 retry: com-saint-martin.fr and impots-saint-martin.fr re-read: no rate for a non-resident performer",
+    "official-register": "CGISM not read || 2026-11-01 retry: CGISM not reached",
+    "web-search": "not run || 2026-11-01 retry: refused by the tool on 2026-11-01: 'this turn's web search budget is used up (limit: 200 WebSearch calls per turn, shared by every agent)'; queries sent and refused this turn: 'Налоговый кодекс Республики Беларусь статья 199 ставки подоходного налога 2026 13 25 процентов' and 'Eswatini Revenue Service PAYE tax tables 1 July 2026'; no search engine was queried any other way",
+    "trade-press": "not found || 2026-11-01 retry: none found",
+    "archive": "web.archive.org unreachable from this environment || 2026-11-01 retry: archive.org's availability API now answers (snapshots of the institution's site exist), but web.archive.org snapshot pages return HTTP 403 over http and reset over https from this environment (2026-11-01)"
+   }
+  }
+ ]
+}

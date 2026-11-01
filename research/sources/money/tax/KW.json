@@ -1,0 +1,204 @@
+{
+ "topic": "tax.KW",
+ "read": "2026-11-01",
+ "note": "Read 2026-11-01 at the owner's word (\"Build those first 3 starting with ledger first\"; of the 21 countries read first: \"It should cover across every country\"; \"Retry the blocked tax facts once all countries land\"): the tax on a screen worker's pay in Kuwait: a resident's income tax, social contributions, what is withheld at source, a non-resident artiste's withholding, an author's treatment, VAT and the tax year. Research and retry subagents (workbench/briefs/BRIEF-tax.md, BRIEF-tax-retry.md), every quote checked by the lead against its saved page.",
+ "figures": [
+  {
+   "item": "residents",
+   "finding": "Kuwait levies no personal income tax: the Income Tax Decree, as amended in 2008, imposes income tax only on bodies corporate carrying on business in Kuwait, so an individual's pay and fees are not taxed.",
+   "value": {
+    "currency": "KWD",
+    "incomeTax": null,
+    "brackets": [],
+    "allowance": null
+   },
+   "applies": "Every individual, resident or not",
+   "sources": [
+    {
+     "src": 0,
+     "said": "An annual Income Tax is hereby imposed on the income of every body corporate, wherever incorporated, carrying on trade or business by the activity in the State of Kuwait"
+    },
+    {
+     "src": 0,
+     "said": "The term (taxpayer) means any body corporate subject to the income tax imposed by this Decree."
+    },
+    {
+     "src": 1,
+     "said": "There is no personal income tax (PIT) imposed on individuals in Kuwait."
+    }
+   ]
+  },
+  {
+   "item": "year",
+   "finding": "With no personal income tax there is no individual tax year or return; the taxable period in the Decree is a body corporate's.",
+   "value": {
+    "individualReturn": null
+   },
+   "applies": "Individuals",
+   "sources": [
+    {
+     "src": 0,
+     "said": "The term (taxpayer) means any body corporate subject to the income tax imposed by this Decree."
+    }
+   ]
+  },
+  {
+   "item": "social",
+   "finding": "Social security covers Kuwaiti employees only: the employer pays 11.5% and the employee 8% of monthly salary up to KWD 2,750, plus 2.5% from the employee up to KWD 1,500 from 2015; expatriate workers pay none and are owed an end-of-service indemnity instead.",
+   "value": {
+    "currency": "KWD",
+    "nationalsOnly": true,
+    "employer": {
+     "rate": 0.115,
+     "ceilingMonthly": 2750
+    },
+    "employee": [
+     {
+      "rate": 0.08,
+      "ceilingMonthly": 2750
+     },
+     {
+      "rate": 0.025,
+      "ceilingMonthly": 1500,
+      "from": "2015-01-01"
+     }
+    ],
+    "expatriates": null,
+    "indemnity": "15 days' pay per year for the first three years, 2/3 month's pay per year thereafter (after three years' service)"
+   },
+   "applies": "Kuwaiti employees under the Social Security Law; no performers' scheme found",
+   "sources": [
+    {
+     "src": 2,
+     "said": "For Kuwaiti employees, contributions are payable monthly by both the employer and employee under the Social Security Law. The employer’s contribution is 11.5% and the employee’s is 8% of monthly salary, up to a ceiling of 2,750 Kuwaiti dinars (KWD) per month."
+    },
+    {
+     "src": 2,
+     "said": "effective 1 January 2015, the employee’s contribution under the Social Security Law will increase by 2.5% of the monthly salary, up to a ceiling of KWD 1,500 per month. Currently, there are no social security obligations for expatriate workers in Kuwait."
+    }
+   ]
+  },
+  {
+   "item": "withholding",
+   "finding": "Nothing is withheld from an individual's pay or fee: Kuwaiti law has no withholding tax; the 5% retention pending a tax clearance applies only to payments to incorporated bodies.",
+   "value": {
+    "employee": null,
+    "freelancer": null,
+    "retentionOnCorporatePayees": 0.05
+   },
+   "applies": "Payments to individuals",
+   "sources": [
+    {
+     "src": 3,
+     "said": "Kuwaiti tax law does not impose withholding tax (WHT). However, all public bodies and private entities are required to retain 5% from the contract, agreement, or transaction value or from each payment made to any incorporated body"
+    }
+   ]
+  },
+  {
+   "item": "nonResident",
+   "finding": "A non-resident performer, writer or director working in Kuwait as an individual pays no Kuwaiti income tax and has nothing withheld; only a body corporate (a loan-out company, for one) carrying on business in Kuwait is taxed.",
+   "value": {
+    "rate": 0,
+    "final": true,
+    "artistesWithholding": null,
+    "note": "a body corporate is taxed at 15% under the Decree (not read here)"
+   },
+   "applies": "Non-resident individuals",
+   "sources": [
+    {
+     "src": 0,
+     "said": "An annual Income Tax is hereby imposed on the income of every body corporate, wherever incorporated, carrying on trade or business by the activity in the State of Kuwait"
+    },
+    {
+     "src": 3,
+     "said": "The domestic tax law in Kuwait does not provide for WHTs."
+    }
+   ]
+  },
+  {
+   "item": "authors",
+   "finding": "With no personal income tax and no withholding, an author's fees and royalties paid to an individual are untaxed; no special regime exists or is needed.",
+   "value": {
+    "royalties": 0
+   },
+   "applies": "Individual authors",
+   "sources": [
+    {
+     "src": 1,
+     "said": "There is no personal income tax (PIT) imposed on individuals in Kuwait."
+    }
+   ]
+  },
+  {
+   "item": "vat",
+   "finding": "Kuwait has no VAT: it signed the GCC VAT framework in 2017 but has not enacted it.",
+   "value": {
+    "standard": null,
+    "threshold": null
+   },
+   "applies": "All supplies",
+   "sources": [
+    {
+     "src": 4,
+     "said": "In Kuwait, the GCC framework agreement is currently under discussion in the Parliament while the draft Law is under preparation by the government."
+    }
+   ]
+  }
+ ],
+ "country": "KW",
+ "sources": [
+  {
+   "url": "https://s3.amazonaws.com/rgi-documents/611a5eafe972d3ccc0b2ca924df32bd6633b3793.pdf",
+   "title": "Law No. 2 of 2008 amending some provisions of Kuwait Income Tax Decree No. (3) of 1955 (English translation, Natural Resource Governance Institute document library)",
+   "read": "2026-11-01",
+   "kind": "secondary",
+   "quotes": "https://www.mof.gov.kw/",
+   "said": "An annual Income Tax is hereby imposed on the income of every body corporate, wherever incorporated, carrying on trade or business by the activity in the State of Kuwait … The term (taxpayer) means any body corporate subject to the income tax imposed by this Decree."
+  },
+  {
+   "url": "https://taxsummaries.pwc.com/kuwait/individual/taxes-on-personal-income",
+   "title": "PwC Worldwide Tax Summaries, Kuwait, Individual - Taxes on personal income (last reviewed 22 July 2026)",
+   "read": "2026-11-01",
+   "kind": "secondary",
+   "quotes": "https://s3.amazonaws.com/rgi-documents/611a5eafe972d3ccc0b2ca924df32bd6633b3793.pdf",
+   "said": "There is no personal income tax (PIT) imposed on individuals in Kuwait."
+  },
+  {
+   "url": "https://taxsummaries.pwc.com/kuwait/individual/other-taxes",
+   "title": "PwC Worldwide Tax Summaries, Kuwait, Individual - Other taxes (last reviewed 22 July 2026)",
+   "read": "2026-11-01",
+   "kind": "secondary",
+   "quotes": "https://www.pifss.gov.kw/",
+   "said": "For Kuwaiti employees, contributions are payable monthly by both the employer and employee under the Social Security Law. The employer’s contribution is 11.5% and the employee’s is 8% of monthly salary, up to a ceiling of 2,750 Kuwaiti dinars (KWD) per month. … effective 1 January 2015, the employee’s contribution under the Social Security Law will increase by 2.5% of the monthly salary, up to a ceiling of KWD 1,500 per month. Currently, there are no social security obligations for expatriate workers in Kuwait."
+  },
+  {
+   "url": "https://taxsummaries.pwc.com/kuwait/corporate/withholding-taxes",
+   "title": "PwC Worldwide Tax Summaries, Kuwait, Corporate - Withholding taxes (last reviewed 22 July 2026)",
+   "read": "2026-11-01",
+   "kind": "secondary",
+   "quotes": "https://s3.amazonaws.com/rgi-documents/611a5eafe972d3ccc0b2ca924df32bd6633b3793.pdf",
+   "said": "Kuwaiti tax law does not impose withholding tax (WHT). However, all public bodies and private entities are required to retain 5% from the contract, agreement, or transaction value or from each payment made to any incorporated body … The domestic tax law in Kuwait does not provide for WHTs."
+  },
+  {
+   "url": "https://taxsummaries.pwc.com/kuwait/corporate/other-taxes",
+   "title": "PwC Worldwide Tax Summaries, Kuwait, Corporate - Other taxes (last reviewed 22 July 2026)",
+   "read": "2026-11-01",
+   "kind": "secondary",
+   "quotes": "https://www.mof.gov.kw/",
+   "said": "In Kuwait, the GCC framework agreement is currently under discussion in the Parliament while the draft Law is under preparation by the government."
+  }
+ ],
+ "blockers": [
+  {
+   "item": "social",
+   "sought": "The Social Security Law's contribution rates from PIFSS itself, and confirmation that no VAT law has been enacted, from the Ministry of Finance",
+   "tried": {
+    "institution": "mof.gov.kw resets the connection (curl 35) on 2026-11-01; pifss.gov.kw home page (Arabic) read, with no rate table on it || 2026-11-01 retry: pifss.gov.kw home (SharePoint) read again: its service pages open only by form postback; its site search (_layouts/15/osssearchresults.aspx?k=نسبة الاشتراك) returns an empty result page; AllNews.aspx holds no rate; mof.gov.kw still fails (connection) on 2026-11-01",
+    "official-register": "Kuwait Al-Youm not reachable online from here; Law 2/2008 read in the NRGI-hosted translation || 2026-11-01 retry: Kuwait Al-Youm (official gazette) not reachable online from here; Law 2/2008 already read in the NRGI-hosted translation",
+    "web-search": "searched 'Kuwait Ministry of Finance Law No. 2 of 2008 amending Income Tax Decree No. 3 of 1955 text' || 2026-11-01 retry: not run: the tool refused searches this turn, the shared limit of 200 having been reached (2026-11-01)",
+    "trade-press": "PwC Worldwide Tax Summaries (reviewed 22 July 2026) used || 2026-11-01 retry: PwC Worldwide Tax Summaries (reviewed 22 July 2026) already held; no other summary read",
+    "archive": "not tried || 2026-11-01 retry: archive.org availability API names snapshots of pifss.gov.kw/sites/Ar/Pages/Home.aspx (2026-09-06) and mof.gov.kw (2026-10-17), but web.archive.org itself is refused from this environment (http 'Blocked by egress policy', https connection fails), so neither was read"
+   }
+  }
+ ]
+}

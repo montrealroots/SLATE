@@ -282,6 +282,8 @@ describe('the WGA West', () => {
     // A sale in another market (offered under its agreement) is not to a WGA signatory: it earns no units.
     expect(() => join({ sold: [sale('feature', at, usd('1'), 'ca-ipa')] }, 'wga-west')).toThrow('the WGA asks a sale to a signatory in the last three years');
     expect(joined({ sold: [sale('feature', at, usd('1'), 'ca-ipa'), sale('pilot', at)] }, 'wga-west')?.standing).toBe('associate');
+    // One offered under the WGA's own agreement in a market that follows it (Puerto Rico) is to a signatory.
+    expect(joined({ sold: [sale('feature', at, usd('1'), 'wga')] }, 'wga-west')?.standing).toBe('full');
     expect(() => join({ sold: [sale('feature', day(2023, 10, 31))] }, 'wga-west')).toThrow(refused);
     expect(joined({ sold: [sale('feature', day(2023, 10, 31)), sale('episode', at)] }, 'wga-west')?.standing).toBe('associate');
     expect(join({ sold: [sale('feature', at)], joined: [card('wga-west', 0, 'associate')] }, 'wga-west')).toHaveLength(2);

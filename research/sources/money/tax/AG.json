@@ -1,0 +1,407 @@
+{
+ "topic": "tax.AG",
+ "read": "2026-11-01",
+ "note": "Read 2026-11-01 at the owner's word (\"Build those first 3 starting with ledger first\"; of the 21 countries read first: \"It should cover across every country\"; \"Retry the blocked tax facts once all countries land\"): the tax on a screen worker's pay in Antigua and Barbuda: a resident's income tax, social contributions, what is withheld at source, a non-resident artiste's withholding, an author's treatment, VAT and the tax year. Research and retry subagents (workbench/briefs/BRIEF-tax.md, BRIEF-tax-retry.md), every quote checked by the lead against its saved page.",
+ "figures": [
+  {
+   "item": "residents",
+   "finding": "Antigua and Barbuda levies no income tax on an individual's pay: the Personal Income Tax ran from April 2005 to June 2016 and was repealed; a self-employed person instead pays the Unincorporated Business Tax on net business income, 0% to EC$42,000, 8% to EC$186,000 and 25% above (sole trader).",
+   "value": {
+    "currency": "XCD",
+    "employment": {
+     "brackets": [
+      {
+       "from": 0,
+       "to": null,
+       "rate": 0
+      }
+     ]
+    },
+    "unincorporatedBusinessTax": {
+     "soleTrader": [
+      {
+       "from": 0,
+       "to": 42000,
+       "rate": 0
+      },
+      {
+       "from": 42000,
+       "to": 186000,
+       "rate": 0.08
+      },
+      {
+       "from": 186000,
+       "to": null,
+       "rate": 0.25
+      }
+     ],
+     "registrationFee": [
+      {
+       "grossFrom": 0,
+       "grossTo": 29999,
+       "fee": 0
+      },
+      {
+       "grossFrom": 30000,
+       "grossTo": 60000,
+       "fee": 200
+      },
+      {
+       "grossFrom": 60001,
+       "grossTo": 300000,
+       "fee": 300
+      },
+      {
+       "grossFrom": 300001,
+       "grossTo": null,
+       "fee": 400
+      }
+     ],
+     "registrationFeeCreditedAgainstTax": true
+    }
+   },
+   "applies": "Employment income: none since 1 July 2016. UBT: self-employment, sole-proprietor and partnership income; partnership bands widen by EC$42,000 per partner.",
+   "sources": [
+    {
+     "src": 0,
+     "said": "The Unincorporated Business Tax came into effect from July 1, 2016 after the repeal of the Personal Income Tax (April 2005-June 2016)"
+    },
+    {
+     "src": 0,
+     "said": "Sole Trader $0 to $42,000 0% $42,001 to $186,000 8% $186,001 and over 25%"
+    },
+    {
+     "src": 0,
+     "said": "All self-employed business income from sole-proprietorships, partnerships and any other businesses deemed an unincorporated business."
+    },
+    {
+     "src": 0,
+     "said": "The registration fee paid goes towards the annual tax liability and is the minimum tax liability for the business."
+    },
+    {
+     "src": 1,
+     "said": "Antigua and Barbuda does not impose income tax on individuals, but the unincorporated business tax may apply"
+    }
+   ]
+  },
+  {
+   "item": "social",
+   "finding": "From 1 January 2025 a private-sector employee pays 7% and the employer 9% of insurable earnings to Social Security (16% in all), on earnings up to EC$6,500 a month; a self-employed person pays 10% of declared earnings between the minimum wage and EC$6,500 a month; Medical Benefits takes 3.5% from employee and employer each, and 5% of a self-employed person's earnings.",
+   "value": {
+    "currency": "XCD",
+    "socialSecurity": {
+     "employee": 0.07,
+     "employer": 0.09,
+     "ceilingMonthly": 6500,
+     "ceilingAnnual": 78000,
+     "selfEmployed": {
+      "rate": 0.1,
+      "base": "declared insurable earnings, from the national minimum wage to EC$6,500 a month",
+      "classes": [
+       {
+        "class": "I",
+        "declaredFrom": "minimum wage"
+       },
+       {
+        "class": "II",
+        "declaredFrom": 2000
+       },
+       {
+        "class": "III",
+        "declaredFrom": 2500
+       },
+       {
+        "class": "IV",
+        "declaredFrom": 3000
+       },
+       {
+        "class": "V",
+        "declaredFrom": 6000
+       }
+      ],
+      "due": "14th of the following month"
+     }
+    },
+    "medicalBenefits": {
+     "employee": 0.035,
+     "employer": 0.035,
+     "selfEmployed": 0.05,
+     "age60to69": {
+      "employee": 0.025,
+      "employer": 0,
+      "selfEmployed": 0.025
+     },
+     "age70plus": 0,
+     "ceiling": null
+    }
+   },
+   "applies": "Private sector, rates from 1 January 2025 (public sector 6% employee, 9% employer); the Board's 2025 notice is the latest found and is held for 2026. The 2021 split (6%/8%) on the Board's Contributions page is superseded.",
+   "sources": [
+    {
+     "src": 2,
+     "said": "Effective 1st January 2021, contribution rate increased to 14% of insurable earnings for private sector workers; of which the employee pays 6% and the employer pays 8%."
+    },
+    {
+     "src": 2,
+     "said": "The maximum annual insurable earnings is $78,000 ($6,500 per month"
+    },
+    {
+     "src": 1,
+     "said": "Employees must make social security contributions of 7% of their earnings and medical benefit scheme contributions of 3.5%."
+    },
+    {
+     "src": 3,
+     "said": "The contribution rates for 2025, will therefore be 15% for the public sector; and 16% for the private sector, while the Self-Employed rate remains at 10% ."
+    },
+    {
+     "src": 4,
+     "said": "PRIVATE SECTOR … Employee - 7% … Employer -9%"
+    },
+    {
+     "src": 5,
+     "said": "The rate of contribution for self-employed … persons is 10% of declared insurable earnings … from a minimum equivalent to the national … minimum wage to a maximum of $6,500 per"
+    },
+    {
+     "src": 6,
+     "said": "Employed - Over 16 not yet 60 Employees: 3.5% of wages Employers: 3.5% of wages Employed - 60 but not yet 70 Employees: 2.5% of wages Employers: 0% of wages Employed - Aged 70 and over Employees: 0% of wages Employers: 0% of wages Self-Employed - Aged 16 but not yet 60 5% of earnings Self-Employed - Aged 60 but not yet 70 2.5% of earnings"
+    }
+   ]
+  },
+  {
+   "item": "withholding",
+   "finding": "Nothing is withheld for income tax from a resident's pay, since none is levied; a self-employed person pays UBT by quarterly instalments due the 15th after each quarter and files the annual return by 31 March.",
+   "value": {
+    "employee": {
+     "rate": 0
+    },
+    "selfEmployed": {
+     "quarterlyInstalments": [
+      "04-15",
+      "07-15",
+      "10-15",
+      "01-15"
+     ],
+     "annualReturn": "03-31"
+    }
+   },
+   "applies": "Social security and medical benefits are still deducted from pay.",
+   "sources": [
+    {
+     "src": 0,
+     "said": "Quarterly Forms (F14)- March 31st due April 15th June 30th due July 15th September 30th due October 15th December 31st due January 15th"
+    },
+    {
+     "src": 0,
+     "said": "Annual return (F15 form) – due March 31st each year"
+    }
+   ]
+  },
+  {
+   "item": "nonResident",
+   "finding": "A person in Antigua and Barbuda paying a non-resident individual income chargeable there (a performer's or director's fee for work done there among it) withholds 25% and remits it by the 15th of the next month; the tax withheld is credited against the non-resident's final liability, so it is not final.",
+   "value": {
+    "currency": "XCD",
+    "ubtOnLocalIncome": true,
+    "withholding": {
+     "chargeablePayments": 0.25,
+     "royalties": 0.25,
+     "technicalServiceFees": 0.25,
+     "interest": 0.25,
+     "dividends": 0
+    },
+    "base": "gross payment",
+    "threshold": null,
+    "remitBy": "15th of the following month",
+    "final": false
+   },
+   "applies": "Non-resident individuals paid for income chargeable in Antigua and Barbuda (Unincorporated Business Tax Act 2016 s. 17; Income Tax Act Cap. 212 s. 40), unless a treaty reduces the rate. No rule specific to performers exists in either Act.",
+   "sources": [
+    {
+     "src": 1,
+     "said": "Nonresident individuals are subject to the unincorporated business tax only on income accruing in or derived from Antigua and Barbuda"
+    },
+    {
+     "src": 1,
+     "said": "The withholding tax rate on fees for technical services paid to nonresidents is 25%, unless the rate is reduced under an applicable tax treaty."
+    },
+    {
+     "src": 1,
+     "said": "The withholding tax rate on royalties paid to nonresidents is 25%, unless the rate is reduced under an applicable tax treaty."
+    },
+    {
+     "src": 7,
+     "said": "(b) a payment of a nature not referred to in paragraph (a) of this section but which, in … the hands of the non-resident individual, fall to be regarded as income chargeable … the payer shall upon paying the interest, rent, annuity or other payment withhold tax at the rate of … twenty-five percent on every dollar of such payment and the payer shall no later than the 15th day … of the month subsequent to the month in which the payment was made, remit to the Commissioner … the amount of tax withheld; and the amount withheld shall be credited towards the ultimate tax … liability of the non-resident individual."
+    },
+    {
+     "src": 8,
+     "said": "deduct therefrom tax at the rate of twenty-five cents on every … dollar and shall render an account in respect of same … The Commissioner shall allow the tax remitted … under this section as a credit against the non-resident per- son's ultimate liability to tax under this Act."
+    },
+    {
+     "src": 9,
+     "said": "WITHHOLDING TAX is deducted from payments made to a non- resident individual or company."
+    }
+   ]
+  },
+  {
+   "item": "vat",
+   "finding": "Antigua and Barbuda Sales Tax is charged at 17% (from 1 January 2024) on supplies of a business with taxable supplies of EC$300,000 or more a year; professional service providers must register whatever their turnover.",
+   "value": {
+    "currency": "XCD",
+    "rate": 0.17,
+    "threshold": 300000,
+    "professionalServicesNoThreshold": true,
+    "from": "2024-01-01"
+   },
+   "applies": "A Cabinet decision reported in 2026 to cut the rate for a relief period could not be read (the press page bot-checks this environment).",
+   "sources": [
+    {
+     "src": 10,
+     "said": "$300,000 or more in taxable supplies."
+    },
+    {
+     "src": 11,
+     "said": "Pursuant to the Antigua and Barbuda Inland Revenue Department announcement on December 22, 2023, the ABST (sales tax) rate increased from 15% to 17% effective January 1, 2024."
+    },
+    {
+     "src": 1,
+     "said": "Registration is mandatory for all professional service providers (except for physicians), with no registration threshold."
+    }
+   ]
+  },
+  {
+   "item": "year",
+   "finding": "The UBT year is the calendar year: the annual return and balance are due 31 March of the following year, with instalments quarterly.",
+   "value": {
+    "start": "01-01",
+    "due": {
+     "on": "03-31",
+     "after": 1
+    }
+   },
+   "applies": "Unincorporated Business Tax.",
+   "sources": [
+    {
+     "src": 0,
+     "said": "Annual return (F15 form) – due March 31st each year"
+    },
+    {
+     "src": 12,
+     "said": "Unincorporated F15 Annual Tax March 31st of the following year"
+    }
+   ]
+  },
+  {
+   "item": "authors",
+   "finding": "Neither the Income Tax Act nor the Unincorporated Business Tax Act treats authors' fees or royalties specially: a resident author's royalties are taxed with other business income under the Unincorporated Business Tax as income arising from property, and royalties paid to a non-resident bear the 25% withholding.",
+   "value": {
+    "special": false,
+    "resident": "Unincorporated Business Tax bands, as income arising from property",
+    "nonResidentWithholding": 0.25
+   },
+   "applies": "Resident and non-resident authors; no author-specific provision is in either Act as published on laws.gov.ag (Cap. 212 revised edition; UBT Act 2016).",
+   "sources": [
+    {
+     "src": 7,
+     "said": "Subject to this Act, tax shall be paid on business income and other income, including - … (a) gains or profits from any trade, business, profession or vocation; … (b) rents, royalties, and any other income, arising from property;"
+    }
+   ]
+  }
+ ],
+ "country": "AG",
+ "sources": [
+  {
+   "url": "http://ird.gov.ag/wp-content/uploads/2021/07/Unincorporated-Business-Tax-FAQ.pdf",
+   "title": "Unincorporated Business Tax (UBT) Frequently Asked Questions (Inland Revenue Department, Antigua and Barbuda)",
+   "read": "2026-11-01",
+   "kind": "primary",
+   "said": "The Unincorporated Business Tax came into effect from July 1, 2016 after the repeal of the Personal Income Tax (April 2005-June 2016) … Sole Trader $0 to $42,000 0% $42,001 to $186,000 8% $186,001 and over 25% … All self-employed business income from sole-proprietorships, partnerships and any other businesses deemed an unincorporated business. … The registration fee paid goes towards the annual tax liability and is the minimum tax liability for the business. … Quarterly Forms (F14)- March 31st due April 15th June 30th due July 15th September 30th due October 15th December 31st due January 15th … Annual return (F15 form) – due March 31st each year"
+  },
+  {
+   "url": "https://www.deloitte.com/content/dam/assets-shared/docs/services/tax/2026/dttl-tax-antiguaandbarbudahighlights-2026.pdf",
+   "title": "Antigua and Barbuda Highlights 2026 (Deloitte, updated January 2026)",
+   "read": "2026-11-01",
+   "kind": "secondary",
+   "quotes": "https://ird.gov.ag/index.php/ubt-tax-bracket/",
+   "said": "Antigua and Barbuda does not impose income tax on individuals, but the unincorporated business tax may apply … Employees must make social security contributions of 7% of their earnings and medical benefit scheme contributions of 3.5%. … Nonresident individuals are subject to the unincorporated business tax only on income accruing in or derived from Antigua and Barbuda … The withholding tax rate on fees for technical services paid to nonresidents is 25%, unless the rate is reduced under an applicable tax treaty. … The withholding tax rate on royalties paid to nonresidents is 25%, unless the rate is reduced under an applicable tax treaty. … Registration is mandatory for all professional service providers (except for physicians), with no registration threshold."
+  },
+  {
+   "url": "https://socialsecurity.gov.ag/contributions/",
+   "title": "Contributions (Antigua and Barbuda Social Security Board)",
+   "read": "2026-11-01",
+   "kind": "primary",
+   "said": "Effective 1st January 2021, contribution rate increased to 14% of insurable earnings for private sector workers; of which the employee pays 6% and the employer pays 8%. … The maximum annual insurable earnings is $78,000 ($6,500 per month"
+  },
+  {
+   "url": "https://socialsecurity.gov.ag/media-release-pension-contribution-rate-adjustments/",
+   "title": "Media Release: Pension & Contribution Rate Adjustments (Antigua and Barbuda Social Security Board)",
+   "read": "2026-11-01",
+   "kind": "primary",
+   "said": "The contribution rates for 2025, will therefore be 15% for the public sector; and 16% for the private sector, while the Self-Employed rate remains at 10% ."
+  },
+  {
+   "url": "https://socialsecurity.gov.ag/wp-content/uploads/2024/12/Table-.png",
+   "title": "Breakdown of the 2025 contribution rates (table image in the Board's media release; read by OCR)",
+   "read": "2026-11-01",
+   "kind": "primary",
+   "said": "PRIVATE SECTOR … Employee - 7% … Employer -9%"
+  },
+  {
+   "url": "https://socialsecurity.gov.ag/wp-content/uploads/2021/03/self-employed-brochure.pdf",
+   "title": "Self-Employed Persons Brochure (Antigua and Barbuda Social Security Board, 2019)",
+   "read": "2026-11-01",
+   "kind": "primary",
+   "said": "The rate of contribution for self-employed … persons is 10% of declared insurable earnings … from a minimum equivalent to the national … minimum wage to a maximum of $6,500 per"
+  },
+  {
+   "url": "https://www.mbs.gov.ag/v2/contribution-rates/",
+   "title": "Contribution Rates (Medical Benefits Scheme, Antigua and Barbuda)",
+   "read": "2026-11-01",
+   "kind": "primary",
+   "said": "Employed - Over 16 not yet 60 Employees: 3.5% of wages Employers: 3.5% of wages Employed - 60 but not yet 70 Employees: 2.5% of wages Employers: 0% of wages Employed - Aged 70 and over Employees: 0% of wages Employers: 0% of wages Self-Employed - Aged 16 but not yet 60 5% of earnings Self-Employed - Aged 60 but not yet 70 2.5% of earnings"
+  },
+  {
+   "url": "https://laws.gov.ag/wp-content/uploads/2019/02/a2016-7.pdf",
+   "title": "Unincorporated Business Tax Act, 2016 (No. 7 of 2016), s. 17 (Laws of Antigua and Barbuda)",
+   "read": "2026-11-01",
+   "kind": "primary",
+   "said": "(b) a payment of a nature not referred to in paragraph (a) of this section but which, in … the hands of the non-resident individual, fall to be regarded as income chargeable … the payer shall upon paying the interest, rent, annuity or other payment withhold tax at the rate of … twenty-five percent on every dollar of such payment and the payer shall no later than the 15th day … of the month subsequent to the month in which the payment was made, remit to the Commissioner … the amount of tax withheld; and the amount withheld shall be credited towards the ultimate tax … liability of the non-resident individual. … Subject to this Act, tax shall be paid on business income and other income, including - … (a) gains or profits from any trade, business, profession or vocation; … (b) rents, royalties, and any other income, arising from property;"
+  },
+  {
+   "url": "https://laws.gov.ag/wp-content/uploads/2018/08/cap-212.pdf",
+   "title": "Income Tax Act, Cap. 212, s. 40 (Laws of Antigua and Barbuda, revised edition)",
+   "read": "2026-11-01",
+   "kind": "primary",
+   "said": "deduct therefrom tax at the rate of twenty-five cents on every … dollar and shall render an account in respect of same … The Commissioner shall allow the tax remitted … under this section as a credit against the non-resident per- son's ultimate liability to tax under this Act."
+  },
+  {
+   "url": "https://ird.gov.ag/wp-content/uploads/2019/09/W02_GUIDE_2019.pdf",
+   "title": "W02 Withholding Tax Remittance Form: Guide 2019 (Inland Revenue Department)",
+   "read": "2026-11-01",
+   "kind": "primary",
+   "said": "WITHHOLDING TAX is deducted from payments made to a non- resident individual or company."
+  },
+  {
+   "url": "http://ird.gov.ag/wp-content/uploads/2020/06/Frequently_asked_questions_ABST.pdf",
+   "title": "ABST Frequently Asked Questions (Inland Revenue Department)",
+   "read": "2026-11-01",
+   "kind": "primary",
+   "said": "$300,000 or more in taxable supplies."
+  },
+  {
+   "url": "https://sovos.com/regulatory-updates/sut/antigua-and-barbuda-standard-sales-tax-rate-increase-from-january-1-2024/",
+   "title": "Antigua and Barbuda: Standard Sales Tax Rate Increase from January 1, 2024 (Sovos)",
+   "read": "2026-11-01",
+   "kind": "secondary",
+   "quotes": "https://ird.gov.ag/index.php/antigua-and-barbuda-sales-tax/",
+   "said": "Pursuant to the Antigua and Barbuda Inland Revenue Department announcement on December 22, 2023, the ABST (sales tax) rate increased from 15% to 17% effective January 1, 2024."
+  },
+  {
+   "url": "http://ird.gov.ag/wp-content/uploads/2021/07/Tip-Tuesday-Ver-1.pdf",
+   "title": "Taxes, Duties, Levies & Fees administered by the Inland Revenue Department",
+   "read": "2026-11-01",
+   "kind": "primary",
+   "said": "Unincorporated F15 Annual Tax March 31st of the following year"
+  }
+ ],
+ "blockers": []
+}

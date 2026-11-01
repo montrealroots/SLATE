@@ -1,0 +1,80 @@
+{
+ "topic": "markets.PM",
+ "read": "2026-11-01",
+ "note": "Read 2026-11-01 at the owner's word (\"Want it done now\", of the markets of every country beyond the 21; then \"Retry the blocked market facts once all countries land\"): the terms a professional actor is engaged on in Saint Pierre and Miquelon. Research, retry and web-search subagents (workbench/briefs/BRIEF-markets-world.md, -retry.md, -search.md), every quote checked by the lead against its saved page.",
+ "figures": [
+  {
+   "item": "language",
+   "finding": "French is the language of the Republic, Saint-Pierre-et-Miquelon included.",
+   "value": {
+    "languages": [
+     "fr"
+    ]
+   },
+   "applies": "Saint-Pierre-et-Miquelon.",
+   "sources": [
+    {
+     "src": 0,
+     "said": "The language of the Republic shall be French."
+    }
+   ]
+  },
+  {
+   "item": "none",
+   "finding": "Saint-Pierre-et-Miquelon has no actors' agreement of its own: the French Labour Code, including its rules on collective agreements, applies there subject to local adaptations, so an actor is engaged on France's terms.",
+   "value": {
+    "role": "actor",
+    "follows": "FR",
+    "basis": "Code du travail L1521-1, L2621-1"
+   },
+   "applies": "Saint-Pierre-et-Miquelon (PM); France's terms are in the FR market files; local adaptations not read.",
+   "sources": [
+    {
+     "src": 1,
+     "said": "Les dispositions de la présente partie s'appliquent en Guadeloupe, en Guyane, en Martinique, à Mayotte et à La Réunion, à Saint-Barthélemy, à Saint-Martin et à Saint-Pierre-et-Miquelon, sous réserve des adaptations prévues par le présent titre."
+    },
+    {
+     "src": 2,
+     "said": "Les dispositions générales prévues par les articles L. 1521-1 à L. 1521-4 sont également applicables aux dispositions du présent titre."
+    }
+   ]
+  }
+ ],
+ "country": "PM",
+ "sources": [
+  {
+   "url": "https://www.constituteproject.org/constitution/France_2008?lang=en",
+   "title": "France's Constitution of 1958 with amendments through 2008 (Constitute Project)",
+   "read": "2026-11-01",
+   "kind": "primary",
+   "said": "The language of the Republic shall be French."
+  },
+  {
+   "url": "https://code.travail.gouv.fr/code-du-travail/l1521-1",
+   "title": "Code du travail, article L1521-1 (code.travail.gouv.fr, Ministère du Travail)",
+   "read": "2026-11-01",
+   "kind": "primary",
+   "said": "Les dispositions de la présente partie s'appliquent en Guadeloupe, en Guyane, en Martinique, à Mayotte et à La Réunion, à Saint-Barthélemy, à Saint-Martin et à Saint-Pierre-et-Miquelon, sous réserve des adaptations prévues par le présent titre."
+  },
+  {
+   "url": "https://code.travail.gouv.fr/code-du-travail/l2621-1",
+   "title": "Code du travail, article L2621-1 (collective relations: overseas application)",
+   "read": "2026-11-01",
+   "kind": "primary",
+   "said": "Les dispositions générales prévues par les articles L. 1521-1 à L. 1521-4 sont également applicables aux dispositions du présent titre."
+  }
+ ],
+ "blockers": [
+  {
+   "item": "market",
+   "sought": "Where screen work is made in Saint-Pierre-et-Miquelon",
+   "tried": {
+    "institution": "legifrance 403; no territorial film office found || retry 2026-11-01: https://www.saint-pierre-et-miquelon.gouv.fr/ answered HTTP/2 ENHANCE_YOUR_CALM (rate limit) then 200 on a later probe with no film page found; https://www.spm-ct975.fr/ answered 418 (refusal; not read another way)",
+    "official-register": "not tried || retry 2026-11-01: Légifrance still 403; Assemblée nationale question 9413 read (overseas tax credits, does not name Saint-Pierre-et-Miquelon)",
+    "web-search": "budget exhausted || retry 2026-11-01: \"Saint-Pierre-et-Miquelon code du travail applicable tournage aide audiovisuelle collectivité territoriale cinéma\": Code du travail L1521-1 and L1521-3 (used), a prefecture note on posted workers; no audiovisual aid || web search 2026-11-01 (second pass): not run again: the turn's shared web-search budget (200 calls across all agents) ran out at 19:18 UTC before this blocker was reached",
+    "trade-press": "none || retry 2026-11-01: none",
+    "archive": "not tried || retry 2026-11-01: archive.org availability API answered 429 Too Many Requests and web.archive.org/web/2025/https://spm-ct975.fr/ reset the connection (curl 35), 2026-11-01; no snapshot read"
+   }
+  }
+ ]
+}

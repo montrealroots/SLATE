@@ -1,0 +1,158 @@
+{
+ "topic": "tax.SM",
+ "read": "2026-11-01",
+ "note": "Read 2026-11-01 at the owner's word (\"Build those first 3 starting with ledger first\"; of the 21 countries read first: \"It should cover across every country\"; \"Retry the blocked tax facts once all countries land\"): the tax on a screen worker's pay in San Marino: a resident's income tax, social contributions, what is withheld at source, a non-resident artiste's withholding, an author's treatment, VAT and the tax year. Research and retry subagents (workbench/briefs/BRIEF-tax.md, BRIEF-tax-retry.md), every quote checked by the lead against its saved page.",
+ "figures": [
+  {
+   "item": "nonResident",
+   "finding": "Anyone paying a person resident abroad for self-employed or similar work (as an artist or professional) must withhold a final 20%.",
+   "value": {
+    "rate": 0.2,
+    "final": true,
+    "base": "fees for self-employed or assimilated work (art. 27)"
+   },
+   "applies": "Law 166/2013 art. 102(1) as replaced by Law 141/2025 art. 32, in force from November 2025.",
+   "sources": [
+    {
+     "src": 0,
+     "said": "che corrispondano, anche occasionalmente, compensi in denaro o natura o comunque denominati per prestazioni di lavoro autonomo o assimilate, così come definite dall’articolo 27, a soggetti residenti all’estero, anche quando le prestazioni siano effettuate in regime d’impresa, devono operare una ritenuta a titolo d’imposta del 20 per cento."
+    },
+    {
+     "src": 0,
+     "said": "LEGGE 12 novembre 2025 n.141 MODIFICHE ALLA LEGGE 16 DICEMBRE 2013 N.166 “IMPOSTA GENERALE SUI REDDITI” E SUCCESSIVE MODIFICHE"
+    }
+   ]
+  },
+  {
+   "item": "residents",
+   "finding": "The resident's progressive brackets (Annex C of Law 166/2013) are indexed every two years to the cost of living, capped at six points, the first indexation in tax year 2028; the 2026 bracket amounts themselves were not read.",
+   "value": {
+    "currency": "EUR",
+    "brackets": null,
+    "indexation": "biennial, from 2028, max 6 points"
+   },
+   "applies": "Law 141/2025 art. 51.",
+   "sources": [
+    {
+     "src": 0,
+     "said": "Gli scaglioni sono adeguati automaticamente ogni biennio in funzione dell’incremento dell’indice del costo della vita."
+    },
+    {
+     "src": 0,
+     "said": "Il primo adeguamento è effettuato nel periodo di imposta 2028."
+    }
+   ]
+  },
+  {
+   "item": "social",
+   "finding": "For 2026 an employee pays 7.80% of pay in social contributions (6.90% of it to the Pension Fund) and the employer 17.60% to the Pension Fund; a self-employed professional or worker (a freelance screen worker) pays 24% to the Pension Fund and 2% social security on declared income up to €50,294.28, on a minimum income of €30,164.57, plus 2% on income above that ceiling.",
+   "value": {
+    "currency": "EUR",
+    "year": 2026,
+    "employee": {
+     "total": 0.078,
+     "pensionFund": 0.069
+    },
+    "employer": {
+     "pensionFund": 0.176,
+     "other": null
+    },
+    "pensionFundTotal": 0.245,
+    "selfEmployed": {
+     "pensionFund": 0.24,
+     "socialSecurity": 0.02,
+     "minimumIncome": 30164.57,
+     "ceiling": 50294.28,
+     "aboveCeiling": 0.02,
+     "balanceDue": "31 July",
+     "firstInstalmentDue": "31 August"
+    }
+   },
+   "applies": "Employees and self-employed workers (libero professionista, lavoratore autonomo) in 2026 under Law 157/2022; the employer's contributions other than the Pension Fund are not in this circular.",
+   "sources": [
+    {
+     "src": 1,
+     "said": "della Legge 15/1983 e successive modifiche, per I’anno 2026 é pari al 6,90%. … lavoratore subordinato sono complessivamente pari al 7,80%. … Contributo al Fondo Pensioni a carico dei datori di lavoro, per I’anno 2026 é … pari al 17,60%. … Il contributo complessivo del Fondo Pensioni é pari al 24,50%. … Libero € 30.164,57 24,00 % 2,00 % Non Soggetti … € 50.294,28 … 2% sul reddito che eccede la somma di € 50.294,28"
+    }
+   ]
+  },
+  {
+   "item": "withholding",
+   "finding": "An employer withholds tax on account from a resident's pay in proportion to the presumable annual income at the rates in force, after the deductions and credits the employee declares; from 2026.",
+   "value": {
+    "method": "on-account withholding proportional to presumed annual income at the IGR rates",
+    "final": false
+   },
+   "applies": "Resident employees, from tax year 2026 (Law 141/2025 art. 31 amending art. 101 of Law 166/2013).",
+   "sources": [
+    {
+     "src": 0,
+     "said": "4. La ritenuta di acconto è proporzionata al reddito annuo presumibile in relazione alle aliquote in vigore e tenuto conto delle deduzioni di cui all’articolo 15, comma 1, lettera a) e delle eventuali detrazioni di cui all’articolo 16, le quali debbono essere richieste e dichiarate dal dipendente sotto la propria responsabilità. … Le novelle introdotte dalla presente legge si applicano a decorrere dal periodo d’imposta 2026"
+    }
+   ]
+  }
+ ],
+ "country": "SM",
+ "sources": [
+  {
+   "url": "https://www.consigliograndeegenerale.sm/on-line/home/archivio-leggi-decreti-e-regolamenti/documento17155359.html",
+   "title": "Legge 12 novembre 2025 n.141, Modifiche alla Legge 16 dicembre 2013 n.166 «Imposta Generale sui Redditi» (Consiglio Grande e Generale)",
+   "read": "2026-11-01",
+   "kind": "primary",
+   "said": "che corrispondano, anche occasionalmente, compensi in denaro o natura o comunque denominati per prestazioni di lavoro autonomo o assimilate, così come definite dall’articolo 27, a soggetti residenti all’estero, anche quando le prestazioni siano effettuate in regime d’impresa, devono operare una ritenuta a titolo d’imposta del 20 per cento. … LEGGE 12 novembre 2025 n.141 MODIFICHE ALLA LEGGE 16 DICEMBRE 2013 N.166 “IMPOSTA GENERALE SUI REDDITI” E SUCCESSIVE MODIFICHE … Gli scaglioni sono adeguati automaticamente ogni biennio in funzione dell’incremento dell’indice del costo della vita. … Il primo adeguamento è effettuato nel periodo di imposta 2028. … 4. La ritenuta di acconto è proporzionata al reddito annuo presumibile in relazione alle aliquote in vigore e tenuto conto delle deduzioni di cui all’articolo 15, comma 1, lettera a) e delle eventuali detrazioni di cui all’articolo 16, le quali debbono essere richieste e dichiarate dal dipendente sotto la propria responsabilità. … Le novelle introdotte dalla presente legge si applicano a decorrere dal periodo d’imposta 2026"
+  },
+  {
+   "url": "https://www.iss.sm/on-line/home/servizi-generali-e-amministrativi/settore-previdenza/ufficio-contributi-ispettorato-e-fondiss/documento49157580.html",
+   "title": "Circolare Prot. n. 1376/UC/2026 of 2 March 2026: Adeguamento dei redditi minimi ed aliquote contributive per l'anno 2026 (Istituto per la Sicurezza Sociale, Ufficio Contributi; scanned, read by OCR)",
+   "read": "2026-11-01",
+   "kind": "primary",
+   "said": "della Legge 15/1983 e successive modifiche, per I’anno 2026 é pari al 6,90%. … lavoratore subordinato sono complessivamente pari al 7,80%. … Contributo al Fondo Pensioni a carico dei datori di lavoro, per I’anno 2026 é … pari al 17,60%. … Il contributo complessivo del Fondo Pensioni é pari al 24,50%. … Libero € 30.164,57 24,00 % 2,00 % Non Soggetti … € 50.294,28 … 2% sul reddito che eccede la somma di € 50.294,28"
+  }
+ ],
+ "blockers": [
+  {
+   "item": "residents",
+   "sought": "The IGR bracket amounts and rates for 2026 (Annex C) and any allowance",
+   "tried": {
+    "institution": "finanze.sm home page reachable (14 kB) with no rate tables; Annex C of Law 166/2013 not located on consigliograndeegenerale.sm || 2026-11-01 retry: finanze.sm home page has no rate tables; ufficiotributario.sm resets (curl 000); iss.sm reached (social found there)",
+    "official-register": "Consiglio Grande e Generale archive: Law 141/2025 read; Law 166/2013 consolidated text not found || 2026-11-01 retry: consigliograndeegenerale.sm archive search is script-driven: GET queries and /on-line/search.jsp for Law 166/2013 returned no document link; Law 141/2025 (saved SM-cgg-17155359.pdf) read in full: separate-taxation rates (art. 13), withholding (arts. 101, 102), Annex C indexing from 2028, nothing on this item",
+    "web-search": "'San Marino imposta generale sui redditi aliquote 2026 scaglioni ... legge 166/2013 riforma 2025' (2026-11-01): found Law 141/2025 (used); secondary sources give 9% to 35% in eight brackets without amounts || 2026-11-01 retry: refused by the tool on 2026-11-01: 'this turn's web search budget is used up (limit: 200 WebSearch calls per turn, shared by every agent)'; queries sent and refused this turn: 'Налоговый кодекс Республики Беларусь статья 199 ставки подоходного налога 2026 13 25 процентов' and 'Eswatini Revenue Service PAYE tax tables 1 July 2026'; no search engine was queried any other way",
+    "trade-press": "no PwC San Marino summary; taxravens.com and fiscomania.com seen only || 2026-11-01 retry: no PwC or Deloitte San Marino summary",
+    "archive": "web.archive.org resets the connection from this environment (2026-11-01). || 2026-11-01 retry: archive.org's availability API now answers (snapshots of the institution's site exist), but web.archive.org snapshot pages return HTTP 403 over http and reset over https from this environment (2026-11-01)"
+   }
+  },
+  {
+   "item": "year",
+   "sought": "The tax year and return due date",
+   "tried": {
+    "institution": "finanze.sm home page reachable (14 kB) with no rate tables; Annex C of Law 166/2013 not located on consigliograndeegenerale.sm || 2026-11-01 retry: finanze.sm home page has no rate tables; ufficiotributario.sm resets (curl 000); iss.sm reached (social found there)",
+    "official-register": "Consiglio Grande e Generale archive: Law 141/2025 read; Law 166/2013 consolidated text not found || 2026-11-01 retry: consigliograndeegenerale.sm archive search is script-driven: GET queries and /on-line/search.jsp for Law 166/2013 returned no document link; Law 141/2025 (saved SM-cgg-17155359.pdf) read in full: separate-taxation rates (art. 13), withholding (arts. 101, 102), Annex C indexing from 2028, nothing on this item",
+    "web-search": "'San Marino imposta generale sui redditi aliquote 2026 scaglioni ... legge 166/2013 riforma 2025' (2026-11-01): found Law 141/2025 (used); secondary sources give 9% to 35% in eight brackets without amounts || 2026-11-01 retry: refused by the tool on 2026-11-01: 'this turn's web search budget is used up (limit: 200 WebSearch calls per turn, shared by every agent)'; queries sent and refused this turn: 'Налоговый кодекс Республики Беларусь статья 199 ставки подоходного налога 2026 13 25 процентов' and 'Eswatini Revenue Service PAYE tax tables 1 July 2026'; no search engine was queried any other way",
+    "trade-press": "no PwC San Marino summary; taxravens.com and fiscomania.com seen only || 2026-11-01 retry: no PwC or Deloitte San Marino summary",
+    "archive": "web.archive.org resets the connection from this environment (2026-11-01). || 2026-11-01 retry: archive.org's availability API now answers (snapshots of the institution's site exist), but web.archive.org snapshot pages return HTTP 403 over http and reset over https from this environment (2026-11-01)"
+   }
+  },
+  {
+   "item": "vat",
+   "sought": "San Marino's single-stage import tax (monofase) and the new VAT, if any, on a freelancer's fee",
+   "tried": {
+    "institution": "finanze.sm home page reachable (14 kB) with no rate tables; Annex C of Law 166/2013 not located on consigliograndeegenerale.sm || 2026-11-01 retry: finanze.sm home page has no rate tables; ufficiotributario.sm resets (curl 000); iss.sm reached (social found there)",
+    "official-register": "Consiglio Grande e Generale archive: Law 141/2025 read; Law 166/2013 consolidated text not found || 2026-11-01 retry: consigliograndeegenerale.sm archive search is script-driven: GET queries and /on-line/search.jsp for Law 166/2013 returned no document link; Law 141/2025 (saved SM-cgg-17155359.pdf) read in full: separate-taxation rates (art. 13), withholding (arts. 101, 102), Annex C indexing from 2028, nothing on this item",
+    "web-search": "'San Marino imposta generale sui redditi aliquote 2026 scaglioni ... legge 166/2013 riforma 2025' (2026-11-01): found Law 141/2025 (used); secondary sources give 9% to 35% in eight brackets without amounts || 2026-11-01 retry: refused by the tool on 2026-11-01: 'this turn's web search budget is used up (limit: 200 WebSearch calls per turn, shared by every agent)'; queries sent and refused this turn: 'Налоговый кодекс Республики Беларусь статья 199 ставки подоходного налога 2026 13 25 процентов' and 'Eswatini Revenue Service PAYE tax tables 1 July 2026'; no search engine was queried any other way",
+    "trade-press": "no PwC San Marino summary; taxravens.com and fiscomania.com seen only || 2026-11-01 retry: no PwC or Deloitte San Marino summary",
+    "archive": "web.archive.org resets the connection from this environment (2026-11-01). || 2026-11-01 retry: archive.org's availability API now answers (snapshots of the institution's site exist), but web.archive.org snapshot pages return HTTP 403 over http and reset over https from this environment (2026-11-01)"
+   }
+  },
+  {
+   "item": "authors",
+   "sought": "Any special treatment of authors' fees",
+   "tried": {
+    "institution": "finanze.sm home page reachable (14 kB) with no rate tables; Annex C of Law 166/2013 not located on consigliograndeegenerale.sm || 2026-11-01 retry: finanze.sm home page has no rate tables; ufficiotributario.sm resets (curl 000); iss.sm reached (social found there)",
+    "official-register": "Consiglio Grande e Generale archive: Law 141/2025 read; Law 166/2013 consolidated text not found || 2026-11-01 retry: consigliograndeegenerale.sm archive search is script-driven: GET queries and /on-line/search.jsp for Law 166/2013 returned no document link; Law 141/2025 (saved SM-cgg-17155359.pdf) read in full: separate-taxation rates (art. 13), withholding (arts. 101, 102), Annex C indexing from 2028, nothing on this item",
+    "web-search": "'San Marino imposta generale sui redditi aliquote 2026 scaglioni ... legge 166/2013 riforma 2025' (2026-11-01): found Law 141/2025 (used); secondary sources give 9% to 35% in eight brackets without amounts || 2026-11-01 retry: refused by the tool on 2026-11-01: 'this turn's web search budget is used up (limit: 200 WebSearch calls per turn, shared by every agent)'; queries sent and refused this turn: 'Налоговый кодекс Республики Беларусь статья 199 ставки подоходного налога 2026 13 25 процентов' and 'Eswatini Revenue Service PAYE tax tables 1 July 2026'; no search engine was queried any other way",
+    "trade-press": "no PwC San Marino summary; taxravens.com and fiscomania.com seen only || 2026-11-01 retry: no PwC or Deloitte San Marino summary",
+    "archive": "web.archive.org resets the connection from this environment (2026-11-01). || 2026-11-01 retry: archive.org's availability API now answers (snapshots of the institution's site exist), but web.archive.org snapshot pages return HTTP 403 over http and reset over https from this environment (2026-11-01)"
+   }
+  }
+ ]
+}

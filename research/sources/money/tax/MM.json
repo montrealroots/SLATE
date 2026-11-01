@@ -1,0 +1,255 @@
+{
+ "topic": "tax.MM",
+ "read": "2026-11-01",
+ "note": "Read 2026-11-01 at the owner's word (\"Build those first 3 starting with ledger first\"; of the 21 countries read first: \"It should cover across every country\"; \"Retry the blocked tax facts once all countries land\"): the tax on a screen worker's pay in Myanmar: a resident's income tax, social contributions, what is withheld at source, a non-resident artiste's withholding, an author's treatment, VAT and the tax year. Research and retry subagents (workbench/briefs/BRIEF-tax.md, BRIEF-tax-retry.md), every quote checked by the lead against its saved page.",
+ "figures": [
+  {
+   "item": "residents",
+   "finding": "A resident pays 0% to MMK 2 million, 5% to 10 million, 10% to 30 million, 15% to 50 million, 20% to 70 million and 25% above on salary, professional and business income, after a basic allowance of 20% of total income (at most MMK 10 million) and family allowances.",
+   "value": {
+    "currency": "MMK",
+    "brackets": [
+     {
+      "from": 0,
+      "to": 2000000,
+      "rate": 0
+     },
+     {
+      "from": 2000000,
+      "to": 10000000,
+      "rate": 0.05
+     },
+     {
+      "from": 10000000,
+      "to": 30000000,
+      "rate": 0.1
+     },
+     {
+      "from": 30000000,
+      "to": 50000000,
+      "rate": 0.15
+     },
+     {
+      "from": 50000000,
+      "to": 70000000,
+      "rate": 0.2
+     },
+     {
+      "from": 70000000,
+      "to": null,
+      "rate": 0.25
+     }
+    ],
+    "basicAllowance": {
+     "share": 0.2,
+     "cap": 10000000
+    },
+    "regionalLayer": null
+   },
+   "applies": "Myanmar residents; income year 1 April 2026 - 31 March 2027 (and 2025-26 for January to March 2026).",
+   "sources": [
+    {
+     "src": 0,
+     "said": "Taxable income (MMK) Rate Up to 2,000,000 0% 2,000,001–10,000,000 5% 10,000,001–30,000,000 10% 30,000,001–50,000,000 15%"
+    },
+    {
+     "src": 0,
+     "said": "50,000,001–70,000,000 20% Over 70,000,000 25%"
+    },
+    {
+     "src": 0,
+     "said": "Resident individuals are granted a basic allowance deduction of 20% of total taxable income, up to a maximum threshold of MMK 10 million in a tax year."
+    }
+   ]
+  },
+  {
+   "item": "year",
+   "finding": "The income year runs 1 April to 31 March.",
+   "value": {
+    "taxYear": {
+     "from": "2026-04-01",
+     "to": "2027-03-31"
+    },
+    "currency": "MMK"
+   },
+   "applies": "Myanmar.",
+   "sources": [
+    {
+     "src": 0,
+     "said": "Tax year: The tax year is 1 April through 31 March."
+    }
+   ]
+  },
+  {
+   "item": "withholding",
+   "finding": "The employer deducts income tax from salary when it is paid and pays it to the IRD within 15 days.",
+   "value": {
+    "scheme": "employer deduction at payment",
+    "remitWithinDays": 15
+   },
+   "applies": "Employees in Myanmar.",
+   "sources": [
+    {
+     "src": 0,
+     "said": "The employer is responsible for deducting income tax due from salary at the time the salary is paid. The tax withheld must be paid to the tax authorities within 15 days from the date of deduction."
+    }
+   ]
+  },
+  {
+   "item": "social",
+   "finding": "The employer pays 3% of basic salary (capped at MMK 9,000) and the employee 2% (capped at MMK 6,000) to social security.",
+   "value": {
+    "currency": "MMK",
+    "employer": 0.03,
+    "employerCap": 9000,
+    "employee": 0.02,
+    "employeeCap": 6000
+   },
+   "applies": "Employees in Myanmar.",
+   "sources": [
+    {
+     "src": 0,
+     "said": "The employer must contribute 3% of an employee’s basic salary and wages (capped at MMK 9,000) to social security. Employees must contribute 2% of their total salary and wages, capped at MMK 6,000."
+    }
+   ]
+  },
+  {
+   "item": "nonResident",
+   "finding": "A non-resident foreigner is taxed on Myanmar-source salary at 0%-25% and on other income (a performer's fee) at 22%; payments to non-residents for services within Myanmar bear a 2.5% withholding paid to the IRD within 15 days.",
+   "value": {
+    "salary": "0%-25% progressive",
+    "otherIncome": 0.22,
+    "withholdingOnServices": 0.025
+   },
+   "applies": "Non-resident foreigners.",
+   "sources": [
+    {
+     "src": 0,
+     "said": "Nonresident foreigners are subject to tax on their salary income at progressive rates ranging from 0% to 25%, and income other than salary is subject to a 22% income tax rate, before reliefs and exemptions."
+    },
+    {
+     "src": 0,
+     "said": "Other: Payments to nonresidents for the procurement of goods and services within Myanmar are subject to a 2.5% withholding tax."
+    }
+   ]
+  },
+  {
+   "item": "authors",
+   "finding": "Royalties bear a 10% withholding paid to a resident and 15% paid to a non-resident.",
+   "value": {
+    "resident": 0.1,
+    "nonResident": 0.15
+   },
+   "applies": "Royalty payments.",
+   "sources": [
+    {
+     "src": 0,
+     "said": "Royalties: Royalties paid to a resident are subject to a 10% withholding tax; the rate is 15% for royalties paid to a nonresident, unless the rate is reduced under an applicable tax treaty."
+    }
+   ]
+  },
+  {
+   "item": "vat",
+   "finding": "Myanmar has no VAT; a 5% commercial tax is charged on services.",
+   "value": {
+    "vat": null,
+    "commercialTax": 0.05,
+    "threshold": "not stated in the source"
+   },
+   "applies": "Services in Myanmar.",
+   "sources": [
+    {
+     "src": 0,
+     "said": "Myanmar does not levy VAT, but commercial tax is levied as a turnover tax on goods and services."
+    },
+    {
+     "src": 0,
+     "said": "The commercial tax rate generally is 5%, payable on services, imports, exports, and goods manufactured within Myanmar."
+    }
+   ]
+  },
+  {
+   "item": "vat",
+   "finding": "A self-employed person's services liable to commercial tax pay 5%, but nothing is due while the year's taxable sales and service receipts together do not exceed MMK 50 million (500 lakh), under s. 15 of the Union Taxation Law 2025 as the Internal Revenue Department states it.",
+   "value": {
+    "currency": "MMK",
+    "commercialTax": 0.05,
+    "threshold": 50000000,
+    "thresholdBasis": "annual total of commercial-tax-liable sales and service receipts",
+    "law": "Union Taxation Law 2025, s. 15"
+   },
+   "applies": "Self-employed professionals and businesses, 2025-26 (the 2026-27 law's own text not read)",
+   "sources": [
+    {
+     "src": 1,
+     "said": "ကုန်သွယ်လုပ်ငန်းခွန် ကုန်သွယ်လုပ်ငန်းခွန် ၅ ရာခိုင်နှုန်း ကျသင့်ပါမည်။ … ကုန်သွယ်လုပ်ငန်းခွန်ကျသင့်သည့် ကုန်စည်များ ထုတ်လုပ်ရောင်းရငွေ၊ ကုန်သွယ်မှုရငွေနှင့် ကုန်သွယ်လုပ်ငန်းခွန်ကျသင့်သည့် ဝန်ဆောင်မှုရငွေသည် တစ်နှစ်အတွင်း စုစုပေါင်းကျပ်သိန်း(၅၀၀) မကျော်လျှင် ကုန်သွယ်လုပ်ငန်းခွန် မကျသင့်ပါ။ (၂၀၂၅ခုနှစ် ပြည်ထောင်စု၏အခွန်အကောက် ဥပဒေပုဒ်မ(၁၅)"
+    }
+   ]
+  },
+  {
+   "item": "residents",
+   "finding": "Salary up to MMK 4.8 million (48 lakh) a year is exempt from income tax; residents then deduct a basic relief of 20% of total income (at most MMK 10 million), MMK 1 million for each parent living with them and MMK 1 million for a spouse; a non-resident foreigner gets none of these reliefs.",
+   "value": {
+    "currency": "MMK",
+    "salaryExemptUpTo": 4800000,
+    "basicRelief": {
+     "rate": 0.2,
+     "cap": 10000000
+    },
+    "parentRelief": 1000000,
+    "spouseRelief": 1000000,
+    "nonResidentForeigner": "no reliefs",
+    "law": "Union Taxation Law 2025, ss. 19(a) and 24; Income Tax Law s. 6"
+   },
+   "applies": "Individuals' salary income, 2025-26 (the 2026-27 law's own text not read)",
+   "sources": [
+    {
+     "src": 2,
+     "said": "အခြေခံသက်သာခွင့် (စုစုပေါင်းဝင်ငွေ၏ ၂၀ ရာခိုင်နှုန်း၊ ကျပ်သိန်း ၁၀၀ ထက်မပိုစေရ) အတူနေမိဘအတွက် သက်သာခွင့် (တစ်ဦးလျှင် ၁၀ သိန်းစီ) … တစ်ဦးချင်းပုဂ္ဂိုလ်(ပြည်ပနေနိုင်ငံခြားသား)များအနေဖြင့် အထက်ပါသက်သာခွင့်များ မရရှိပါ။ (၂၀၂၅ ခုနှစ် ပြည်ထောင်စု၏အခွန်အကောက်ဥပဒေပုဒ်မ (၂၄)) ကင်းလွတ်ခွင့် ( Exemption ) နှစ်တစ်နှစ်အတွက် လစာဝင်ငွေ (၄၈) သိန်းထိ ဝင်ငွေခွန် ကင်းလွတ်ပါသည်။ (၂၀၂၅ ခုနှစ် ပြည်ထောင်စု၏အခွန်အကောက်ဥပဒေ ပုဒ်မ ၁၉(က))"
+    },
+    {
+     "src": 1,
+     "said": "အိမ်ထောင်ဖက်တစ်ဦးအတွက်သာလျှင်သက်သာခွင့်(ကျပ် ၁၀ သိန်း)"
+    }
+   ]
+  }
+ ],
+ "country": "MM",
+ "sources": [
+  {
+   "url": "https://www.deloitte.com/content/dam/assets-shared/docs/services/tax/2026/dttl-tax-myanmarhighlights-2026.pdf",
+   "title": "Myanmar Highlights 2026 (Deloitte International Tax)",
+   "read": "2026-11-01",
+   "kind": "secondary",
+   "quotes": "https://www.irdmyanmar.gov.mm",
+   "said": "Taxable income (MMK) Rate Up to 2,000,000 0% 2,000,001–10,000,000 5% 10,000,001–30,000,000 10% 30,000,001–50,000,000 15% … 50,000,001–70,000,000 20% Over 70,000,000 25% … Resident individuals are granted a basic allowance deduction of 20% of total taxable income, up to a maximum threshold of MMK 10 million in a tax year. … Tax year: The tax year is 1 April through 31 March. … The employer is responsible for deducting income tax due from salary at the time the salary is paid. The tax withheld must be paid to the tax authorities within 15 days from the date of deduction. … The employer must contribute 3% of an employee’s basic salary and wages (capped at MMK 9,000) to social security. Employees must contribute 2% of their total salary and wages, capped at MMK 6,000. … Nonresident foreigners are subject to tax on their salary income at progressive rates ranging from 0% to 25%, and income other than salary is subject to a 22% income tax rate, before reliefs and exemptions. … Other: Payments to nonresidents for the procurement of goods and services within Myanmar are subject to a 2.5% withholding tax. … Royalties: Royalties paid to a resident are subject to a 10% withholding tax; the rate is 15% for royalties paid to a nonresident, unless the rate is reduced under an applicable tax treaty. … Myanmar does not levy VAT, but commercial tax is levied as a turnover tax on goods and services. … The commercial tax rate generally is 5%, payable on services, imports, exports, and goods manufactured within Myanmar."
+  },
+  {
+   "url": "https://www.ird.gov.mm/tax-knowledge/taxes/self-employ",
+   "title": "ကိုယ်ပိုင်လုပ်ငန်း (Self-employed), Internal Revenue Department, Myanmar",
+   "read": "2026-11-01",
+   "kind": "primary",
+   "said": "ကုန်သွယ်လုပ်ငန်းခွန် ကုန်သွယ်လုပ်ငန်းခွန် ၅ ရာခိုင်နှုန်း ကျသင့်ပါမည်။ … ကုန်သွယ်လုပ်ငန်းခွန်ကျသင့်သည့် ကုန်စည်များ ထုတ်လုပ်ရောင်းရငွေ၊ ကုန်သွယ်မှုရငွေနှင့် ကုန်သွယ်လုပ်ငန်းခွန်ကျသင့်သည့် ဝန်ဆောင်မှုရငွေသည် တစ်နှစ်အတွင်း စုစုပေါင်းကျပ်သိန်း(၅၀၀) မကျော်လျှင် ကုန်သွယ်လုပ်ငန်းခွန် မကျသင့်ပါ။ (၂၀၂၅ခုနှစ် ပြည်ထောင်စု၏အခွန်အကောက် ဥပဒေပုဒ်မ(၁၅) … အိမ်ထောင်ဖက်တစ်ဦးအတွက်သာလျှင်သက်သာခွင့်(ကျပ် ၁၀ သိန်း)"
+  },
+  {
+   "url": "https://www.ird.gov.mm/tax-knowledge/taxes/individual",
+   "title": "တစ်ဦးချင်းပုဂ္ဂိုလ် (Individuals), Internal Revenue Department, Myanmar",
+   "read": "2026-11-01",
+   "kind": "primary",
+   "said": "အခြေခံသက်သာခွင့် (စုစုပေါင်းဝင်ငွေ၏ ၂၀ ရာခိုင်နှုန်း၊ ကျပ်သိန်း ၁၀၀ ထက်မပိုစေရ) အတူနေမိဘအတွက် သက်သာခွင့် (တစ်ဦးလျှင် ၁၀ သိန်းစီ) … တစ်ဦးချင်းပုဂ္ဂိုလ်(ပြည်ပနေနိုင်ငံခြားသား)များအနေဖြင့် အထက်ပါသက်သာခွင့်များ မရရှိပါ။ (၂၀၂၅ ခုနှစ် ပြည်ထောင်စု၏အခွန်အကောက်ဥပဒေပုဒ်မ (၂၄)) ကင်းလွတ်ခွင့် ( Exemption ) နှစ်တစ်နှစ်အတွက် လစာဝင်ငွေ (၄၈) သိန်းထိ ဝင်ငွေခွန် ကင်းလွတ်ပါသည်။ (၂၀၂၅ ခုနှစ် ပြည်ထောင်စု၏အခွန်အကောက်ဥပဒေ ပုဒ်မ ၁၉(က))"
+  }
+ ],
+ "blockers": [
+  {
+   "item": "residents",
+   "sought": "The Union Taxation Law for 2026-27 in its own text",
+   "tried": {
+    "institution": "irdmyanmar.gov.mm not reachable (curl 000) 2026-11-01 || retry-8 2026-11-01: irdmyanmar.gov.mm still no answer, but the Internal Revenue Department's site at ird.gov.mm answers: its Individuals and Self-employed pages read (salary exemption, reliefs and commercial-tax threshold under the Union Taxation Law 2025 recorded); no rate table or 2026-27 law text on them; its laws link returns 404",
+    "official-register": "Union Taxation Law 2025/2026 text not found online || retry-8 2026-11-01: mlis.gov.mm (Myanmar Law Information System), pyidaungsu.hluttaw.mm, mopf.gov.mm and mof.gov.mm: no answer (curl 000)",
+    "web-search": "not searched beyond the summary || retry-8 2026-11-01: a search for 'Union Taxation Law 2026 Myanmar' (and in Burmese ၂၀၂၆ ပြည်ထောင်စု၏အခွန်အကောက်ဥပဒေ) was refused by the search tool (shared per-turn limit of 200 searches reached)",
+    "trade-press": "Deloitte Myanmar Highlights 2026 read || retry-8 2026-11-01: Deloitte Myanmar Highlights 2026 (used); no other summary reachable this turn",
+    "archive": "web.archive.org not reachable (curl 000) 2026-11-01 || retry-8 2026-11-01: web.archive.org: connection reset and availability API 429 on 2026-11-01"
+   }
+  }
+ ]
+}

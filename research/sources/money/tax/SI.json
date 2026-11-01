@@ -1,0 +1,213 @@
+{
+ "topic": "tax.SI",
+ "read": "2026-11-01",
+ "note": "Read 2026-11-01 at the owner's word (\"Build those first 3 starting with ledger first\"; of the 21 countries read first: \"It should cover across every country\"; \"Retry the blocked tax facts once all countries land\"): the tax on a screen worker's pay in Slovenia: a resident's income tax, social contributions, what is withheld at source, a non-resident artiste's withholding, an author's treatment, VAT and the tax year. Research and retry subagents (workbench/briefs/BRIEF-tax.md, BRIEF-tax-retry.md), every quote checked by the lead against its saved page.",
+ "figures": [
+  {
+   "item": "residents",
+   "finding": "A resident pays dohodnina on the net annual base at 16% to EUR 9,721.43, 26% to 28,592.44, 33% to 57,184.88, 39% to 82,346.23 and 50% above, after a general allowance of EUR 5,551.93 (raised for total income under EUR 17,766.18 by 20,832.39 - 1.17259 x income); there is no regional layer.",
+   "value": {
+    "currency": "EUR",
+    "brackets": [
+     {
+      "from": 0,
+      "to": 9721.43,
+      "rate": 0.16,
+      "taxAtFloor": 0
+     },
+     {
+      "from": 9721.43,
+      "to": 28592.44,
+      "rate": 0.26,
+      "taxAtFloor": 1555.43
+     },
+     {
+      "from": 28592.44,
+      "to": 57184.88,
+      "rate": 0.33,
+      "taxAtFloor": 6461.89
+     },
+     {
+      "from": 57184.88,
+      "to": 82346.23,
+      "rate": 0.39,
+      "taxAtFloor": 15897.4
+     },
+     {
+      "from": 82346.23,
+      "to": null,
+      "rate": 0.5,
+      "taxAtFloor": 25710.33
+     }
+    ],
+    "generalAllowance": 5551.93,
+    "additionalAllowance": {
+     "belowTotalIncome": 17766.18,
+     "formula": "20832.39 - 1.17259 x total income"
+    },
+    "regionalLayer": null
+   },
+   "applies": "Slovenian residents, tax year 2026 (in force 1 January 2026).",
+   "sources": [
+    {
+     "src": 0,
+     "said": "za leto 2026 znašajo: 1. splošna olajšava 5.551,93 eura"
+    },
+    {
+     "src": 0,
+     "said": "(1) Usklajeni znesek skupnega dohodka iz tretjega odstavka 111. člena ZDoh-2 za leto 2026 znaša 17 .766,18 eura. (2) Enačba za določitev dodatne splošne olajšave v skladu s tretjim odstavkom 111. člena ZDoh-2 je za leto 2026 : zmanjšanje = 20.832,39 eura – 1,17259 x skupni dohodek."
+    },
+    {
+     "src": 0,
+     "said": "Če znaša neto letna osnova v eurih znaša dohodnina v eurih nad do 9.721,43 16 % 9.721,43 28.592,44 1.555,43 + 26 % nad 9.721,43 28.592,44 57.184,88 6.461,89 + 33 % nad 28.592,44 57.184,88 82.346,23 15.897,40 + 39 % nad 57.184,88 82.346,23 25.710,33 + 50 % nad 82.346,23"
+    }
+   ]
+  },
+  {
+   "item": "year",
+   "finding": "The tax year is the calendar year; tax is mostly withheld during the year by Slovenian payers. The Financial Administration sends an informative calculation by 31 May of the next year (for 2025: in two batches, by the end of March and of May 2026); it becomes the assessment unless the taxpayer objects within 15 days of service; a taxpayer who has none by 15 June files a return, due 31 July (2026 for the 2025 year).",
+   "value": {
+    "taxYear": {
+     "from": "2026-01-01",
+     "to": "2026-12-31"
+    },
+    "currency": "EUR",
+    "informativeCalculationBy": "05-31",
+    "objectionDays": 15,
+    "returnIfNoneBy": "06-15",
+    "returnDue": "07-31"
+   },
+   "applies": "Slovenian individuals.",
+   "sources": [
+    {
+     "src": 1,
+     "said": "Finančna uprava davčnim zavezancem informativni izračun posreduje najkasneje do 31. maja tekočega leta za preteklo leto (informativni izračun za leto 2025 bo davčnim zavezancem posredovan v dveh tranšah, prvi do konca meseca marca 2026 in drugi do konca meseca maja 2026). … Po poteku roka za ugovor (tj. 15 dni od vročitve informativnega izračuna … Davčni zavezanec mora vložiti napoved za odmero dohodnine, če mu informativni izračun dohodnine ni bil vročen do 15. junija tekočega leta za preteklo davčno leto, ne glede na višino prejeta dohodka. Rok za vložitev napovedi za leto 2025 je 31. julij 2026."
+    },
+    {
+     "src": 2,
+     "said": "Tax year: The tax year is the calendar year."
+    }
+   ]
+  },
+  {
+   "item": "withholding",
+   "finding": "Personal income tax is collected by withholding during the year where the payer is a Slovenian legal entity; the employer withholds on employment income.",
+   "value": {
+    "scheme": "advance withholding by the payer"
+   },
+   "applies": "Income paid by Slovenian payers.",
+   "sources": [
+    {
+     "src": 2,
+     "said": "Personal income tax is generally collected by way of withholding during the year if the payer of the income is a Slovenian legal entity."
+    }
+   ]
+  },
+  {
+   "item": "social",
+   "finding": "The employer withholds the employee's social contributions of 22.1% of gross pay and pays its own 16.1%; a flat compulsory health contribution of EUR 35 a month applies; the self-employed pay their own.",
+   "value": {
+    "currency": "EUR",
+    "employee": 0.221,
+    "employer": 0.161,
+    "healthFlatMonthly": 35
+   },
+   "applies": "Employees in Slovenia, 2026.",
+   "sources": [
+    {
+     "src": 2,
+     "said": "The employer is required to withhold employee social security contributions at 22.1% from the employee’s gross salary and pay them together with the employer’s contribution of 16.1% of gross salary each month as part of payroll accounting. A mandatory health insurance contribution of EUR 35 per month applies, which replaces a previous supplementary voluntary health insurance contribution. Self-employed individuals must remit their own social security contributions."
+    }
+   ]
+  },
+  {
+   "item": "authors",
+   "finding": "Royalties paid to an individual bear a 25% withholding (or progressive rates where they are employment income), for residents and non-residents alike. A self-employed person in culture may also cut the business tax base by 15% of revenue, on revenue up to EUR 25,000 a year.",
+   "value": {
+    "royaltiesToIndividuals": 0.25,
+    "culturalSelfEmployedBaseReduction": {
+     "rate": 0.15,
+     "revenueCap": 25000
+    }
+   },
+   "applies": "Royalty payments to individuals.",
+   "sources": [
+    {
+     "src": 1,
+     "said": "Pod določenimi pogoji se samozaposlenim v kulturi, samostojnim novinarjem in samostojnim poklicnim športnikom prizna zmanjšanje davčne osnove iz dejavnosti v višini 15 % prihodkov letno do zneska 25.000 EUR prihodkov iz dejavnosti v letu, za katero se odmerja dohodnina."
+    },
+    {
+     "src": 2,
+     "said": "Royalties 25% or progressive 25% or progressive 0% individual tax rates if 15% individual tax rates if employment income employment income"
+    }
+   ]
+  },
+  {
+   "item": "vat",
+   "finding": "A freelancer must register for VAT once supplies in the previous 12 months exceed EUR 60,000; the standard rate is 22% (9.5% and 5% reduced).",
+   "value": {
+    "currency": "EUR",
+    "threshold12Months": 60000,
+    "standardRate": 0.22,
+    "reduced": [
+     0.095,
+     0.05
+    ]
+   },
+   "applies": "Taxable persons in Slovenia.",
+   "sources": [
+    {
+     "src": 2,
+     "said": "The standard rate is 22%; a reduced rate of 9.5% applies to specific goods and services"
+    },
+    {
+     "src": 2,
+     "said": "A taxable person must register for VAT purposes if the value of their supplies within the previous 12 months exceeds EUR 60,000."
+    }
+   ]
+  },
+  {
+   "item": "nonResident",
+   "finding": "A non-resident paid for work under a contract (an authored work, a single engagement) has 25% advance tax withheld on the fee less compulsory social contributions and 10% standard costs; for a non-resident who is not otherwise a Slovenian taxpayer that advance is the final tax.",
+   "value": {
+    "rate": 0.25,
+    "standardCosts": 0.1,
+    "final": true
+   },
+   "applies": "Non-residents' income from 'other contractual relationships' (drugo pogodbeno razmerje); treaty relief may lower it; a performer contracting through a company is not covered here.",
+   "sources": [
+    {
+     "src": 1,
+     "said": "Dohodek iz drugega pogodbenega razmerja je vsak dohodek iz odvisnega pogodbenega razmerja, ki ni delovno razmerje, kot npr. dohodek za delo po študentski napotnici, dohodek za stvaritev avtorskega dela, dohodek po podjemni pogodbi, dohodek verskih delavcev. … Davčna osnova od dohodka iz drugega pogodbenega razmerja je bruto dohodek, zmanjšan za obvezne prispevke za socialno varnost, ki jih je na podlagi predpisov dolžan plačati delojemalec in 10 % normirane stroške. Od tako ugotovljene davčne osnove se akontacija dohodnine izračuna in plača po stopnji 25 %. … Za dokončni davek velja tudi akontacija dohodnine, plačana za nerezidenta RS, ki ni davčni zavezanec za dohodnino."
+    }
+   ]
+  }
+ ],
+ "country": "SI",
+ "sources": [
+  {
+   "url": "https://www.racunovodstvo.net/zakonodaja/pravilnik-o-dolocitvi-usklajenih-zneskov-olajsav-enacbe-za-dolocitev-olajsave-in-lestvice-za-odmero-dohodnine",
+   "title": "Pravilnik o določitvi usklajenih zneskov olajšav, enačbe za določitev olajšave in lestvice za odmero dohodnine za leto 2026 (Uradni list RS, št. 104/2025, 12.12.2025), text as reproduced by racunovodstvo.net",
+   "read": "2026-11-01",
+   "kind": "secondary",
+   "quotes": "https://www.uradni-list.si",
+   "said": "za leto 2026 znašajo: 1. splošna olajšava 5.551,93 eura … (1) Usklajeni znesek skupnega dohodka iz tretjega odstavka 111. člena ZDoh-2 za leto 2026 znaša 17 .766,18 eura. (2) Enačba za določitev dodatne splošne olajšave v skladu s tretjim odstavkom 111. člena ZDoh-2 je za leto 2026 : zmanjšanje = 20.832,39 eura – 1,17259 x skupni dohodek. … Če znaša neto letna osnova v eurih znaša dohodnina v eurih nad do 9.721,43 16 % 9.721,43 28.592,44 1.555,43 + 26 % nad 9.721,43 28.592,44 57.184,88 6.461,89 + 33 % nad 28.592,44 57.184,88 82.346,23 15.897,40 + 39 % nad 57.184,88 82.346,23 25.710,33 + 50 % nad 82.346,23"
+  },
+  {
+   "url": "https://www.fu.gov.si/fileadmin/Internet/Davki_in_druge_dajatve/Podrocja/Dohodnina/Letna_odmera_dohodnine/Opis/Odmera_dohodnine_za_leto_2025.doc",
+   "title": "Odmera dohodnine za leto 2025, 2. izdaja, september 2026 (Finančna uprava RS); the .doc converted to UTF-8 text with LibreOffice and saved beside it",
+   "read": "2026-11-01",
+   "kind": "primary",
+   "said": "Finančna uprava davčnim zavezancem informativni izračun posreduje najkasneje do 31. maja tekočega leta za preteklo leto (informativni izračun za leto 2025 bo davčnim zavezancem posredovan v dveh tranšah, prvi do konca meseca marca 2026 in drugi do konca meseca maja 2026). … Po poteku roka za ugovor (tj. 15 dni od vročitve informativnega izračuna … Davčni zavezanec mora vložiti napoved za odmero dohodnine, če mu informativni izračun dohodnine ni bil vročen do 15. junija tekočega leta za preteklo davčno leto, ne glede na višino prejeta dohodka. Rok za vložitev napovedi za leto 2025 je 31. julij 2026. … Pod določenimi pogoji se samozaposlenim v kulturi, samostojnim novinarjem in samostojnim poklicnim športnikom prizna zmanjšanje davčne osnove iz dejavnosti v višini 15 % prihodkov letno do zneska 25.000 EUR prihodkov iz dejavnosti v letu, za katero se odmerja dohodnina. … Dohodek iz drugega pogodbenega razmerja je vsak dohodek iz odvisnega pogodbenega razmerja, ki ni delovno razmerje, kot npr. dohodek za delo po študentski napotnici, dohodek za stvaritev avtorskega dela, dohodek po podjemni pogodbi, dohodek verskih delavcev. … Davčna osnova od dohodka iz drugega pogodbenega razmerja je bruto dohodek, zmanjšan za obvezne prispevke za socialno varnost, ki jih je na podlagi predpisov dolžan plačati delojemalec in 10 % normirane stroške. Od tako ugotovljene davčne osnove se akontacija dohodnine izračuna in plača po stopnji 25 %. … Za dokončni davek velja tudi akontacija dohodnine, plačana za nerezidenta RS, ki ni davčni zavezanec za dohodnino."
+  },
+  {
+   "url": "https://www.deloitte.com/content/dam/assets-shared/docs/services/tax/2026/dttl-tax-sloveniahighlights-2026.pdf",
+   "title": "Slovenia Highlights 2026 (Deloitte International Tax)",
+   "read": "2026-11-01",
+   "kind": "secondary",
+   "quotes": "https://www.fu.gov.si",
+   "said": "Tax year: The tax year is the calendar year. … Personal income tax is generally collected by way of withholding during the year if the payer of the income is a Slovenian legal entity. … The employer is required to withhold employee social security contributions at 22.1% from the employee’s gross salary and pay them together with the employer’s contribution of 16.1% of gross salary each month as part of payroll accounting. A mandatory health insurance contribution of EUR 35 per month applies, which replaces a previous supplementary voluntary health insurance contribution. Self-employed individuals must remit their own social security contributions. … Royalties 25% or progressive 25% or progressive 0% individual tax rates if 15% individual tax rates if employment income employment income … The standard rate is 22%; a reduced rate of 9.5% applies to specific goods and services … A taxable person must register for VAT purposes if the value of their supplies within the previous 12 months exceeds EUR 60,000."
+  }
+ ],
+ "blockers": []
+}

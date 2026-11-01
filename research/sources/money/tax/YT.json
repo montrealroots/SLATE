@@ -1,0 +1,175 @@
+{
+ "topic": "tax.YT",
+ "read": "2026-11-01",
+ "note": "Read 2026-11-01 at the owner's word (\"Build those first 3 starting with ledger first\"; of the 21 countries read first: \"It should cover across every country\"; \"Retry the blocked tax facts once all countries land\"): the tax on a screen worker's pay in Mayotte: a resident's income tax, social contributions, what is withheld at source, a non-resident artiste's withholding, an author's treatment, VAT and the tax year. Research and retry subagents (workbench/briefs/BRIEF-tax.md, BRIEF-tax-retry.md), every quote checked by the lead against its saved page.",
+ "figures": [
+  {
+   "item": "follows",
+   "finding": "Mayotte is a French overseas department: income tax there follows the French rules, the same scale and the family quotient as in metropolitan France, so France's withholding, non-resident and author rules and tax year apply.",
+   "value": {
+    "sovereign": "FR",
+    "scope": [
+     "residents",
+     "withholding",
+     "nonResident",
+     "authors",
+     "year"
+    ],
+    "except": [
+     "residents: 40% reduction",
+     "social",
+     "vat"
+    ]
+   },
+   "applies": "Income tax of persons domiciled in Mayotte",
+   "sources": [
+    {
+     "src": 0,
+     "said": "le calcul de l'impôt sur le revenu obéit aux mêmes règles dans les départements d'outre-mer (DOM) (Guadeloupe, Martinique, Guyane, La Réunion et Mayotte) qu'en France métropolitaine. Ainsi, le système du quotient familial, tel qu'il est défini au BOI-IR-LIQ-10-20 y est applicable. L'impôt est calculé par application du même barème qu'en métropole (BOI-IR-LIQ-20-10)."
+    }
+   ]
+  },
+  {
+   "item": "residents",
+   "finding": "A taxpayer domiciled in Mayotte has the tax from the French scale cut by 40%, up to €4,050 (the cap applying since 2018 income), after the family-quotient ceiling.",
+   "value": {
+    "currency": "EUR",
+    "reduction": 0.4,
+    "cap": 4050,
+    "since": "2018 income",
+    "order": "after family-quotient ceiling, before the décote"
+   },
+   "applies": "Persons domiciled in Mayotte (CGI art. 197 I 3)",
+   "sources": [
+    {
+     "src": 0,
+     "said": "de 40 % dans la limite de 4 050 €, pour les contribuables domiciliés dans le département de Guyane et de Mayotte. … Les plafonds de 2 450 € et 4 050 € s'appliquent à compter de l'imposition des revenus de l'année 2018."
+    }
+   ]
+  },
+  {
+   "item": "social",
+   "finding": "Mayotte has its own social security scheme: from 1 January 2025 an employee pays old-age 5.43% (on pay up to €2,821 a month) and health and contributions 4.87% on all pay, 10.3% in all; the employer pays 28.016% to 29.366% (old-age 9.90%, health 5.1%, family 5.40%, unemployment 2.80% to €4,728, among others). The ceiling for 2026 is €3,022 a month, raised each year with the metropolitan one plus 5.1%.",
+   "value": {
+    "currency": "EUR",
+    "asOf": "2025-01-01",
+    "employee": {
+     "oldAge": {
+      "rate": 0.0543,
+      "ceilingMonthly": 2821
+     },
+     "healthAndContributions": {
+      "rate": 0.0487,
+      "ceiling": null
+     },
+     "total": 0.103
+    },
+    "employer": {
+     "oldAge": {
+      "rate": 0.099,
+      "ceilingMonthly": 2821
+     },
+     "health": 0.051,
+     "family": {
+      "rate": 0.054,
+      "ceilingMonthly": 2821
+     },
+     "unemployment": {
+      "rate": 0.028,
+      "ceilingMonthly": 4728
+     },
+     "ags": 0.0025,
+     "totalRange": [
+      0.28016,
+      0.29366
+     ]
+    },
+    "ceiling2026Monthly": 3022,
+    "ceiling2026Yearly": 36264,
+    "ceilingRule": "metropolitan ceiling raised in the same proportion, plus 5.1%",
+    "rateSchedule": "Décret n° 2012-1168 sets rates to 2036"
+   },
+   "applies": "Employees in Mayotte",
+   "sources": [
+    {
+     "src": 1,
+     "said": "Le plafond de la sécurité sociale à Mayotte est fixé à 3 022 euros par mois pour les rémunérations ou gains versés pour la période du 1er janvier au 31 décembre 2026."
+    },
+    {
+     "src": 2,
+     "said": "Le Décret n° 2010-1326 du 5 novembre 2010 fixe le montant du plafond de la sécurité sociale à Mayotte, à compter du 1 er janvier 2011. Il détermine également la règle de revalorisation de ce plafond pour les années postérieures. Depuis 2012, il est revalorisé dans les mêmes proportions que celui de métropole majoré de 5,1 %. Travailleurs salariés Cotisations au 1 er janvier 2025 Risques Employeur Salarié Plafond mensuel Vieillesse 9,90 % 5,43 % 2 821 € Maladie-maternité , Invalidité-décès 5,1 % 4,87 % 1 Sur la totalité du salaire Allocations familiales 5,40 % - 2 821 € … Chômage 2 2,80 % - 4 728 € AGS 3 0,25 % - 4 728 € … Total Entre 28,016 % et 29,366 % 10,3 %"
+    }
+   ]
+  },
+  {
+   "item": "vat",
+   "finding": "VAT is provisionally not applicable in Mayotte: services and goods supplied there bear no TVA.",
+   "value": {
+    "rate": 0,
+    "basis": "CGI art. 294-1"
+   },
+   "applies": "Operations located in Mayotte",
+   "sources": [
+    {
+     "src": 3,
+     "said": "Aux termes du 1 de l'article 294 du CGI, la TVA n'est provisoirement pas applicable dans les collectivités de Guyane et de Mayotte. En conséquence, les opérations territorialisées dans ces collectivités, qu'il s'agissent des livraisons de biens, des prestations de services ou des importations ne sont pas soumises à la TVA"
+    },
+    {
+     "src": 4,
+     "said": "La taxe sur la valeur ajoutée n'est provisoirement pas applicable dans les départements de la Guyane et de Mayotte (cf. Art 294-1 du CGI )."
+    }
+   ]
+  }
+ ],
+ "country": "YT",
+ "sources": [
+  {
+   "url": "https://bofip.impots.gouv.fr/bofip/4618-PGP.html/identifiant=BOI-IR-LIQ-20-30-10-20190226",
+   "title": "BOI-IR-LIQ-20-30-10-20190226, IR - Calcul de l'impôt - Départements d'outre-mer (BOFiP-Impôts)",
+   "read": "2026-11-01",
+   "kind": "primary",
+   "said": "le calcul de l'impôt sur le revenu obéit aux mêmes règles dans les départements d'outre-mer (DOM) (Guadeloupe, Martinique, Guyane, La Réunion et Mayotte) qu'en France métropolitaine. Ainsi, le système du quotient familial, tel qu'il est défini au BOI-IR-LIQ-10-20 y est applicable. L'impôt est calculé par application du même barème qu'en métropole (BOI-IR-LIQ-20-10). … de 40 % dans la limite de 4 050 €, pour les contribuables domiciliés dans le département de Guyane et de Mayotte. … Les plafonds de 2 450 € et 4 050 € s'appliquent à compter de l'imposition des revenus de l'année 2018."
+  },
+  {
+   "url": "https://legislation.lassuranceretraite.fr/Pdf/circulaire_cnav_2026_02_05012026.pdf",
+   "title": "Circulaire Cnav 2026-02 du 5 janvier 2026, Plafond de la sécurité sociale à Mayotte – Montant au 1er janvier 2026",
+   "read": "2026-11-01",
+   "kind": "primary",
+   "said": "Le plafond de la sécurité sociale à Mayotte est fixé à 3 022 euros par mois pour les rémunérations ou gains versés pour la période du 1er janvier au 31 décembre 2026."
+  },
+  {
+   "url": "https://www.cleiss.fr/docs/cotisations/mayotte.html",
+   "title": "Mayotte - taux de cotisations (CLEISS)",
+   "read": "2026-11-01",
+   "kind": "primary",
+   "said": "Le Décret n° 2010-1326 du 5 novembre 2010 fixe le montant du plafond de la sécurité sociale à Mayotte, à compter du 1 er janvier 2011. Il détermine également la règle de revalorisation de ce plafond pour les années postérieures. Depuis 2012, il est revalorisé dans les mêmes proportions que celui de métropole majoré de 5,1 %. Travailleurs salariés Cotisations au 1 er janvier 2025 Risques Employeur Salarié Plafond mensuel Vieillesse 9,90 % 5,43 % 2 821 € Maladie-maternité , Invalidité-décès 5,1 % 4,87 % 1 Sur la totalité du salaire Allocations familiales 5,40 % - 2 821 € … Chômage 2 2,80 % - 4 728 € AGS 3 0,25 % - 4 728 € … Total Entre 28,016 % et 29,366 % 10,3 %"
+  },
+  {
+   "url": "https://bofip.impots.gouv.fr/bofip/341-PGP.html/identifiant=BOI-TVA-GEO-20-20230118",
+   "title": "BOI-TVA-GEO-20-20230118, TVA - Champ d'application territorial - DOM (BOFiP-Impôts)",
+   "read": "2026-11-01",
+   "kind": "primary",
+   "said": "Aux termes du 1 de l'article 294 du CGI, la TVA n'est provisoirement pas applicable dans les collectivités de Guyane et de Mayotte. En conséquence, les opérations territorialisées dans ces collectivités, qu'il s'agissent des livraisons de biens, des prestations de services ou des importations ne sont pas soumises à la TVA"
+  },
+  {
+   "url": "https://www.douane.gouv.fr/fiche/tva-dans-les-dom",
+   "title": "TVA dans les DOM (douane.gouv.fr)",
+   "read": "2026-11-01",
+   "kind": "primary",
+   "said": "La taxe sur la valeur ajoutée n'est provisoirement pas applicable dans les départements de la Guyane et de Mayotte (cf. Art 294-1 du CGI )."
+  }
+ ],
+ "blockers": [
+  {
+   "item": "social",
+   "sought": "Mayotte employee and employer contribution rates as at 1 January 2026 (only the 2025 rate table was read; the 2026 ceiling of €3,022 was read in the Cnav circular)",
+   "tried": {
+    "institution": "2026-11-01: cssm.fr/page/infos-aux-entreprises read (saved YT-cssm-infos-aux-entreprises.html): heading \"Tableau des taux de cotisations et plafonds\" with no table beneath; /page/taux-de-cotisations is 404; CLEISS page read gives rates \"au 1er janvier 2025\" || 2026-11-01 retry: cssm.fr home and /page/infos-aux-entreprises re-read: forms only, no 2026 table; CLEISS Mayotte page re-read on 2026-11-01: still 'Cotisations au 1er janvier 2025'",
+    "official-register": "2026-11-01: legifrance.gouv.fr (Décret n° 2012-1168, CGI) returns HTTP 403 to this environment; not read another way || 2026-11-01 retry: legifrance.gouv.fr HTTP 403 (not read another way)",
+    "web-search": "2026-11-01: \"CSSM Mayotte taux de cotisations 2026 salariés vieillesse plafond\": Cnav circulars for 2026 Mayotte ceiling found but not the rate table; Village de la justice (secondary) gives a 2026 ceiling of €3,021 without the primary text || 2026-11-01 retry: refused by the tool on 2026-11-01: 'this turn's web search budget is used up (limit: 200 WebSearch calls per turn, shared by every agent)'; queries sent and refused this turn: 'Налоговый кодекс Республики Беларусь статья 199 ставки подоходного налога 2026 13 25 процентов' and 'Eswatini Revenue Service PAYE tax tables 1 July 2026'; no search engine was queried any other way",
+    "trade-press": "2026-11-01: Mayotte Hebdo on convergence to 2036, no 2026 table || 2026-11-01 retry: none with a 2026 table",
+    "archive": "2026-11-01: Cnav circulars 2026-01 and 2026-02 read (ceiling only, \"hors cotisations\"); web.archive.org connections reset through the proxy this session || 2026-11-01 retry: archive.org's availability API now answers (snapshots of the institution's site exist), but web.archive.org snapshot pages return HTTP 403 over http and reset over https from this environment (2026-11-01)"
+   }
+  }
+ ]
+}

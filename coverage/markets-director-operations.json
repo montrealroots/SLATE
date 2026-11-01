@@ -8,7 +8,8 @@
    "market-periods",
    "market-refusals",
    "experience",
-   "aboutMarket"
+   "aboutMarket",
+   "register-only"
   ]
  },
  "rows": [
@@ -20,7 +21,7 @@
    ],
    "tests": [
     "tests/person/directing/markets.test.ts::the director's markets > are each country's own, every fee and period as the research gives it",
-    "tests/tools/markets-director.test.ts::the director's markets compile > compiles the twenty markets the director's engine reads"
+    "tests/tools/markets-director.test.ts::the director's markets compile > compiles every market the director's engine reads"
    ]
   },
   {
@@ -72,6 +73,13 @@
    ],
    "tests": [
     "tests/person/directing/markets.test.ts::a film in a market > tells the player what of a market isn't known"
+   ]
+  },
+  {
+   "key": "register-only",
+   "status": "proven",
+   "tests": [
+    "tests/tools/markets-director.test.ts::the director's markets compile > reads a market the research found nothing of from its blocker in the register alone, the file beside it unread"
    ]
   }
  ]

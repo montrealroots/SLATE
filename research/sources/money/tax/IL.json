@@ -1,0 +1,352 @@
+{
+ "topic": "tax.IL",
+ "read": "2026-11-01",
+ "note": "Read 2026-11-01 at the owner's word (\"Build those first 3 starting with ledger first\"; of the 21 countries read first: \"It should cover across every country\"; \"Retry the blocked tax facts once all countries land\"): the tax on a screen worker's pay in Israel: a resident's income tax, social contributions, what is withheld at source, a non-resident artiste's withholding, an author's treatment, VAT and the tax year. Research and retry subagents (workbench/briefs/BRIEF-tax.md, BRIEF-tax-retry.md), every quote checked by the lead against its saved page.",
+ "figures": [
+  {
+   "item": "residents",
+   "finding": "Income from personal exertion is taxed on annual brackets for 2026 of 10% to ILS 84,120, 14% to 120,720, 20% to 228,000, 31% to 301,200, 35% to 560,280, 47% to 721,560 and 50% above (47% plus the 3% surtax); a resident's tax is reduced by credit points (2.25 for every resident, worth ILS 242 a month each in 2026); there is no local income tax.",
+   "value": {
+    "currency": "ILS",
+    "brackets": [
+     {
+      "from": 0,
+      "to": 84120,
+      "rate": 0.1
+     },
+     {
+      "from": 84120,
+      "to": 120720,
+      "rate": 0.14
+     },
+     {
+      "from": 120720,
+      "to": 228000,
+      "rate": 0.2
+     },
+     {
+      "from": 228000,
+      "to": 301200,
+      "rate": 0.31
+     },
+     {
+      "from": 301200,
+      "to": 560280,
+      "rate": 0.35
+     },
+     {
+      "from": 560280,
+      "to": 721560,
+      "rate": 0.47
+     },
+     {
+      "from": 721560,
+      "to": null,
+      "rate": 0.5
+     }
+    ],
+    "surtax": {
+     "rate": 0.03,
+     "above": 721560,
+     "includedInTopRate": true
+    },
+    "creditPoint": {
+     "monthly": 242,
+     "basicPointsPerResident": 2.25
+    },
+    "regional": null
+   },
+   "applies": "Tax year 2026; residents on worldwide income, non-residents on Israeli-source income at the same rates",
+   "sources": [
+    {
+     "src": 0,
+     "said": "Annual taxable income (ILS) Tax on column 1 (ILS) Tax on excess (%) Over (column 1) Not over 0 84,120 0 10 84,120 120,720 8,412 14 120,720 228,000 13,536 20 228,000 301,200 28,152 31 301,200 560,280 51,551 35 560,280 721,560 153,401 47 721,560 229,203 50"
+    },
+    {
+     "src": 0,
+     "said": "Additionally, a 3% surtax applies on annual taxable income exceeding ILS 721,560, resulting in a 50% maximum income tax rate. Non-residents are taxed at the same rates as Israeli residents."
+    },
+    {
+     "src": 0,
+     "said": "There are no local taxes on income in Israel."
+    },
+    {
+     "src": 1,
+     "said": "‫זיכוי‬ ‫נקודת‬ ‫שווי‬ ₪242"
+    }
+   ]
+  },
+  {
+   "item": "year",
+   "finding": "The tax year is the calendar year; a required return is due by 30 April of the next year; employees whose tax is fully withheld generally need not file below set thresholds (wages under ILS 723,000 in 2025).",
+   "value": {
+    "start": "01-01",
+    "end": "12-31",
+    "returnDue": "04-30"
+   },
+   "applies": "Individuals",
+   "sources": [
+    {
+     "src": 2,
+     "said": "Tax returns are filed on a calendar-year basis."
+    },
+    {
+     "src": 2,
+     "said": "Should a tax return be required, 30 April is the prescribed filing due date, subject to extensions."
+    }
+   ]
+  },
+  {
+   "item": "social",
+   "finding": "A resident employee pays national insurance of 1.04% on monthly pay up to ILS 7,703 and 7% above, to a ceiling of ILS 51,910, plus health tax of 3.23% and 5.17% on the same bands; the employer pays 4.51% and 7.6%; a non-resident employee pays 0.1% and 0.87% (employer 0.75% and 2.65%) and no health tax; a self-employed person aged 18 to pension age pays 4.47% national insurance plus 3.23% health tax (7.7%) on monthly income up to ILS 7,703 and 12.83% plus 5.17% (18%) above it to ILS 51,910.",
+   "value": {
+    "currency": "ILS",
+    "period": "monthly",
+    "reducedBandTo": 7703,
+    "ceiling": 51910,
+    "resident": {
+     "employeeNI": [
+      0.0104,
+      0.07
+     ],
+     "health": [
+      0.0323,
+      0.0517
+     ],
+     "employerNI": [
+      0.0451,
+      0.076
+     ]
+    },
+    "nonResident": {
+     "employeeNI": [
+      0.001,
+      0.0087
+     ],
+     "employerNI": [
+      0.0075,
+      0.0265
+     ],
+     "health": 0
+    },
+    "selfEmployed": {
+     "NI": [
+      0.0447,
+      0.1283
+     ],
+     "health": [
+      0.0323,
+      0.0517
+     ],
+     "total": [
+      0.077,
+      0.18
+     ],
+     "reducedBandTo": 7703,
+     "ceiling": 51910
+    }
+   },
+   "applies": "2026 (bands from 1 January 2026)",
+   "sources": [
+    {
+     "src": 3,
+     "said": "(שיעור מופחת) - 7,703 ש\"ח (החל ב- 01.01.2026) … (שיעור מלא) - 51,910 ש\"ח (החל ב- 01.01.2026)"
+    },
+    {
+     "src": 3,
+     "said": "דמי ביטוח לאומי 4.51% (החל ב- 01.01.2025) 1.04% (החל ב- 01.01.2025) 5.55% (החל ב- 01.01.2025) 7.6% (החל ב- 01.01.2019) 7% (החל ב- 01.01.2006) 14.6% (החל ב- 01.02.2025) דמי ביטוח בריאות - 3.23% (החל ב- 01.01.2025) 3.23% (החל ב- 01.01.2025) - 5.17% (החל ב- 01.02.2025)"
+    },
+    {
+     "src": 4,
+     "said": "על הכנסה חודשית 7,703 ש\"ח - (שיעור מופחת) … על הכנסה חודשית מעל 7,703 ש\"ח ועד ההכנסה המרבית החייבת בדמי ביטוח בסך 51,910 ש\"ח לחודש - (שיעור רגיל) דמי ביטוח לאומי 4.47% … 12.83% דמי ביטוח בריאות 3.23% 5.17% סך הכול 7.7% 18%"
+    },
+    {
+     "src": 4,
+     "said": "החל מ- 01.01.2026"
+    },
+    {
+     "src": 5,
+     "said": "Employees’ national insurance contribution for non-resident employees is 0.1% on the first ILS 7,703 of income per month and 0.87% on the difference between ILS 7,703 and the maximum monthly compensation amount of ILS 51,910. Employers' national insurance contribution for non-resident employees is 0.75% on the first ILS 7,703 of income per month and 2.65% on the difference between ILS 7,703 and the maximum monthly compensation amount of ILS 51,910."
+    }
+   ]
+  },
+  {
+   "item": "withholding",
+   "finding": "Income tax and social contributions are withheld from all pay by statute, whoever the employer, and remitted on the 15th of the next month; the self-employed pay monthly or bimonthly advances, usually a percentage of turnover.",
+   "value": {
+    "employee": "statutory payroll withholding",
+    "selfEmployed": "monthly or bimonthly advances on turnover"
+   },
+   "applies": "Employees and the self-employed",
+   "sources": [
+    {
+     "src": 2,
+     "said": "Payroll withholding of income and social tax is statutory, irrespective of the residence of the employer or employee."
+    },
+    {
+     "src": 2,
+     "said": "Self-employed individuals are generally required to make monthly or bimonthly advance tax payments, usually based on a percentage of turnover."
+    }
+   ]
+  },
+  {
+   "item": "nonResident",
+   "finding": "A non-resident performer, writer or director is taxed on Israeli-source income; the payer must withhold 25% (25 agorot per shekel) from income paid to a non-resident individual (23%, the corporate rate, to a company), unless the Tax Authority certifies an exemption or a treaty rate; whether the withholding is final was not found.",
+   "value": {
+    "individual": 0.25,
+    "company": 0.23,
+    "base": "gross payment",
+    "final": null,
+    "ratesOnAssessment": "resident brackets"
+   },
+   "applies": "Non-residents",
+   "sources": [
+    {
+     "src": 6,
+     "said": "כל המשלם לאדם שאינו תושב ישראל, לו או לאחר בשבילו, כל הכנסה חייבת לפי פקודה זו, שאינה הכנסה שממנה נוכה מס לפי הסעיפים 161 ו-164 חייב לנכות מאותה הכנסה, בעת תשלומה, מס של 25 אגורות לכל שקל אם מקבל התשלום הוא יחיד, ומס בשיעור המוטל לפי הסעיפים 126 ו-127 אם מקבל התשלום הוא חבר-בני-אדם"
+    },
+    {
+     "src": 7,
+     "said": "Under Israeli domestic tax law, WHT on payments of Israeli-source income is generally deducted at the corporate tax rate from all income remittances abroad, unless a tax certificate is obtained from the ITA authorising withholding-exempt remittances or a reduced rate of tax pursuant to an applicable tax treaty."
+    },
+    {
+     "src": 7,
+     "said": "Non-resident corporations: Non-treaty 25/30 (2) 23 23"
+    }
+   ]
+  },
+  {
+   "item": "authors",
+   "finding": "Royalties paid to a non-resident are withheld at 23% (treaty rates often 0 to 10%); a resident's passive royalties count toward the 2% capital-income surtax above ILS 721,560; no special regime for authors' earned royalties was found.",
+   "value": {
+    "nonResidentRoyalties": 0.23,
+    "passiveRoyaltySurtax": {
+     "rate": 0.02,
+     "above": 721560
+    }
+   },
+   "applies": "Royalties",
+   "sources": [
+    {
+     "src": 7,
+     "said": "Non-resident corporations: Non-treaty 25/30 (2) 23 23"
+    },
+    {
+     "src": 0,
+     "said": "the portion of an individual's annual income from capital sources (e.g. capital gains, real estate appreciation, dividends, interest, CPI linkage differentials, rental income, passive royalties) exceeding a certain threshold (ILS 721,560 in 2026) is subject to an additional surtax of 2%."
+    }
+   ]
+  },
+  {
+   "item": "vat",
+   "finding": "VAT is 18%; a freelancer whose annual turnover stays under ILS 122,833 in 2026 (set yearly by the Tax Authority) may be an exempt dealer (osek patur) and charges no VAT.",
+   "value": {
+    "standard": 0.18,
+    "threshold": 122833,
+    "currency": "ILS",
+    "thresholdYear": 2026
+   },
+   "applies": "Supplies in Israel; the 2026 ceiling is from a secondary source, as gov.il refuses this environment; some liberal professions must register whatever their turnover (not read for performers).",
+   "sources": [
+    {
+     "src": 5,
+     "said": "The current rate of VAT is 18%."
+    },
+    {
+     "src": 8,
+     "said": "תקרת ההכנסות נקבעת מדי שנה על ידי רשות המסים."
+    },
+    {
+     "src": 8,
+     "said": "שנת המס סכום תקרת ההכנסות לעוסק פטור 2026 122,833 ש\"ח 2025 120,000 ש\"ח"
+    }
+   ]
+  }
+ ],
+ "country": "IL",
+ "sources": [
+  {
+   "url": "https://taxsummaries.pwc.com/israel/individual/taxes-on-personal-income",
+   "title": "PwC Worldwide Tax Summaries, Israel, Individual - Taxes on personal income (last reviewed 29 June 2026)",
+   "read": "2026-11-01",
+   "kind": "secondary",
+   "quotes": "https://www.gov.il/en/departments/israel_tax_authority",
+   "said": "Annual taxable income (ILS) Tax on column 1 (ILS) Tax on excess (%) Over (column 1) Not over 0 84,120 0 10 84,120 120,720 8,412 14 120,720 228,000 13,536 20 228,000 301,200 28,152 31 301,200 560,280 51,551 35 560,280 721,560 153,401 47 721,560 229,203 50 … Additionally, a 3% surtax applies on annual taxable income exceeding ILS 721,560, resulting in a 50% maximum income tax rate. Non-residents are taxed at the same rates as Israeli residents. … There are no local taxes on income in Israel. … the portion of an individual's annual income from capital sources (e.g. capital gains, real estate appreciation, dividends, interest, CPI linkage differentials, rental income, passive royalties) exceeding a certain threshold (ILS 721,560 in 2026) is subject to an additional surtax of 2%."
+  },
+  {
+   "url": "https://www.moreinvest.co.il/media/ob5nzn0o/%D7%AA%D7%A7%D7%A8%D7%95%D7%AA-%D7%95%D7%A1%D7%9B%D7%95%D7%9E%D7%99%D7%9D-2026.pdf",
+   "title": "More Investment House, תקרות וסכומים לשנת 2026 (ceilings and amounts for 2026)",
+   "read": "2026-11-01",
+   "kind": "secondary",
+   "quotes": "https://www.gov.il/en/departments/israel_tax_authority",
+   "said": "‫זיכוי‬ ‫נקודת‬ ‫שווי‬ ₪242"
+  },
+  {
+   "url": "https://taxsummaries.pwc.com/israel/individual/tax-administration",
+   "title": "PwC Worldwide Tax Summaries, Israel, Individual - Tax administration (last reviewed 29 June 2026)",
+   "read": "2026-11-01",
+   "kind": "secondary",
+   "quotes": "https://www.gov.il/en/departments/israel_tax_authority",
+   "said": "Tax returns are filed on a calendar-year basis. … Should a tax return be required, 30 April is the prescribed filing due date, subject to extensions. … Payroll withholding of income and social tax is statutory, irrespective of the residence of the employer or employee. … Self-employed individuals are generally required to make monthly or bimonthly advance tax payments, usually based on a percentage of turnover."
+  },
+  {
+   "url": "https://www.btl.gov.il/Insurance/Rates/Pages/%d7%9c%d7%a2%d7%95%d7%91%d7%93%d7%99%d7%9d%20%d7%a9%d7%9b%d7%99%d7%a8%d7%99%d7%9d.aspx",
+   "title": "Bituah Leumi, שיעורי דמי ביטוח לעובדים שכירים (rates for employees)",
+   "read": "2026-11-01",
+   "kind": "primary",
+   "said": "(שיעור מופחת) - 7,703 ש\"ח (החל ב- 01.01.2026) … (שיעור מלא) - 51,910 ש\"ח (החל ב- 01.01.2026) … דמי ביטוח לאומי 4.51% (החל ב- 01.01.2025) 1.04% (החל ב- 01.01.2025) 5.55% (החל ב- 01.01.2025) 7.6% (החל ב- 01.01.2019) 7% (החל ב- 01.01.2006) 14.6% (החל ב- 01.02.2025) דמי ביטוח בריאות - 3.23% (החל ב- 01.01.2025) 3.23% (החל ב- 01.01.2025) - 5.17% (החל ב- 01.02.2025)"
+  },
+  {
+   "url": "https://www.btl.gov.il/Insurance/National%20Insurance/type_list/Self_Employed/Pages/rates.aspx",
+   "title": "Bituah Leumi (National Insurance Institute), שיעורי דמי ביטוח לעצמאים (rates for the self-employed, from 01.01.2026)",
+   "read": "2026-11-01",
+   "kind": "primary",
+   "said": "על הכנסה חודשית 7,703 ש\"ח - (שיעור מופחת) … על הכנסה חודשית מעל 7,703 ש\"ח ועד ההכנסה המרבית החייבת בדמי ביטוח בסך 51,910 ש\"ח לחודש - (שיעור רגיל) דמי ביטוח לאומי 4.47% … 12.83% דמי ביטוח בריאות 3.23% 5.17% סך הכול 7.7% 18% … החל מ- 01.01.2026"
+  },
+  {
+   "url": "https://taxsummaries.pwc.com/israel/individual/other-taxes",
+   "title": "PwC Worldwide Tax Summaries, Israel, Individual - Other taxes (last reviewed 29 June 2026)",
+   "read": "2026-11-01",
+   "kind": "secondary",
+   "quotes": "https://www.btl.gov.il/",
+   "said": "Employees’ national insurance contribution for non-resident employees is 0.1% on the first ILS 7,703 of income per month and 0.87% on the difference between ILS 7,703 and the maximum monthly compensation amount of ILS 51,910. Employers' national insurance contribution for non-resident employees is 0.75% on the first ILS 7,703 of income per month and 2.65% on the difference between ILS 7,703 and the maximum monthly compensation amount of ILS 51,910. … The current rate of VAT is 18%."
+  },
+  {
+   "url": "https://www.bizportal.co.il/general/news/article/183620",
+   "title": "Bizportal, ניכוי מס במקור מתשלומים על הכנסה של תושב חוץ (Q&A quoting the Income Tax Ordinance [New Version] 1961, s. 170(a))",
+   "read": "2026-11-01",
+   "kind": "secondary",
+   "quotes": "https://main.knesset.gov.il/",
+   "said": "כל המשלם לאדם שאינו תושב ישראל, לו או לאחר בשבילו, כל הכנסה חייבת לפי פקודה זו, שאינה הכנסה שממנה נוכה מס לפי הסעיפים 161 ו-164 חייב לנכות מאותה הכנסה, בעת תשלומה, מס של 25 אגורות לכל שקל אם מקבל התשלום הוא יחיד, ומס בשיעור המוטל לפי הסעיפים 126 ו-127 אם מקבל התשלום הוא חבר-בני-אדם"
+  },
+  {
+   "url": "https://taxsummaries.pwc.com/israel/corporate/withholding-taxes",
+   "title": "PwC Worldwide Tax Summaries, Israel, Corporate - Withholding taxes (last reviewed 29 June 2026)",
+   "read": "2026-11-01",
+   "kind": "secondary",
+   "quotes": "https://www.gov.il/en/departments/israel_tax_authority",
+   "said": "Under Israeli domestic tax law, WHT on payments of Israeli-source income is generally deducted at the corporate tax rate from all income remittances abroad, unless a tax certificate is obtained from the ITA authorising withholding-exempt remittances or a reduced rate of tax pursuant to an applicable tax treaty. … Non-resident corporations: Non-treaty 25/30 (2) 23 23"
+  },
+  {
+   "url": "https://www.greeninvoice.co.il/magazine/%d7%aa%d7%a7%d7%a8%d7%aa-%d7%a2%d7%95%d7%a1%d7%a7-%d7%a4%d7%98%d7%95%d7%a8/",
+   "title": "Green Invoice magazine, תקרת עוסק פטור (on the Tax Authority's yearly ceiling)",
+   "read": "2026-11-01",
+   "kind": "secondary",
+   "quotes": "https://www.gov.il/en/departments/israel_tax_authority",
+   "said": "תקרת ההכנסות נקבעת מדי שנה על ידי רשות המסים. … שנת המס סכום תקרת ההכנסות לעוסק פטור 2026 122,833 ש\"ח 2025 120,000 ש\"ח"
+  }
+ ],
+ "blockers": [
+  {
+   "item": "nonResident",
+   "sought": "Whether the 25% withholding on a non-resident individual performer's fee (Ordinance s. 170) is final, and any rule specific to foreign artists",
+   "tried": {
+    "institution": "gov.il (Israel Tax Authority and its pages) returns HTTP 403 to this environment; btl.gov.il not tried after that || retry 2026-11-01 (world round): gov.il (Israel Tax Authority) answered 403 again, landing page and departments page; not read another way",
+    "official-register": "Nevo/Knesset texts not read || retry 2026-11-01 (world round): nevo.co.il 403; main.knesset.gov.il reachable but holds no consolidated Income Tax Ordinance; s. 170(a) found quoted (below)",
+    "web-search": "searched 'שווי נקודת זיכוי 2026 242 ש\"ח תקרת עוסק פטור 2026' (a press figure of ILS 122,833 was reported, not confirmed from a primary page) || retry 2026-11-01 (world round): Hebrew 'ניכוי מס במקור תשלום לאמן תושב חוץ הופעה בישראל שיעור ניכוי רשות המסים אמנים זרים': Bizportal Q&A quoting s. 170(a) (25% for an individual) saved as IL-bizportal-170.html; Globes / tax advisers' chamber note mentions reduced-rate regulations for foreign athletes and journalists, none for artists",
+    "trade-press": "PwC (reviewed 29 June 2026) and More Investment House's 2026 ceilings table read; kolzchut.org.il returned 403 || retry 2026-11-01 (world round): Bizportal (quoting the Ordinance) read; Shibolet law firm note in results, on withholding checks generally, no finality rule",
+    "archive": "web.archive.org resets the connection from this environment (2026-11-01) || retry 2026-11-01 (world round): web.archive.org and archive.ph reset the connection; arquivo.pt 403"
+   }
+  }
+ ]
+}

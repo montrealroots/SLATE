@@ -1,0 +1,251 @@
+{
+ "topic": "tax.CY",
+ "read": "2026-11-01",
+ "note": "Read 2026-11-01 at the owner's word (\"Build those first 3 starting with ledger first\"; of the 21 countries read first: \"It should cover across every country\"; \"Retry the blocked tax facts once all countries land\"): the tax on a screen worker's pay in Cyprus: a resident's income tax, social contributions, what is withheld at source, a non-resident artiste's withholding, an author's treatment, VAT and the tax year. Research and retry subagents (workbench/briefs/BRIEF-tax.md, BRIEF-tax-retry.md), every quote checked by the lead against its saved page.",
+ "figures": [
+  {
+   "item": "residents",
+   "finding": "From 2026 the first EUR 22,000 of a resident's taxable income is tax-free, then 20% to EUR 32,000, 25% to EUR 42,000, 30% to EUR 72,000 and 35% above; there is no regional or municipal income tax.",
+   "value": {
+    "currency": "EUR",
+    "brackets": [
+     {
+      "from": 0,
+      "to": 22000,
+      "rate": 0
+     },
+     {
+      "from": 22000,
+      "to": 32000,
+      "rate": 0.2
+     },
+     {
+      "from": 32000,
+      "to": 42000,
+      "rate": 0.25
+     },
+     {
+      "from": 42000,
+      "to": 72000,
+      "rate": 0.3
+     },
+     {
+      "from": 72000,
+      "to": null,
+      "rate": 0.35
+     }
+    ]
+   },
+   "applies": "Tax year 2026, after the 2026 reform.",
+   "sources": [
+    {
+     "src": 0,
+     "said": "Individual income tax rate Taxable income (EUR) Rate Up to 22,000 0% 22,001–32,000 20% 32,001–42,000 25% 42,001–72,000 30% Over 72,000 35%"
+    },
+    {
+     "src": 0,
+     "said": "Rates: The first EUR 22,000 of taxable income is tax free, with progressive tax rates up to 35% imposed on the remaining amount, as shown in the table above."
+    }
+   ]
+  },
+  {
+   "item": "year",
+   "finding": "The tax year is the calendar year; employees and the self-employed without audited accounts file by 31 July of the next year, and the self-employed with audited accounts (turnover above EUR 120,000) by 31 January of the second year after.",
+   "value": {
+    "start": "01-01",
+    "end": "12-31",
+    "returnDue": {
+     "employees": "07-31 following year",
+     "selfEmployedUnaudited": "07-31 following year",
+     "selfEmployedAudited": "01-31 of second following year"
+    },
+    "auditThreshold": 120000
+   },
+   "applies": "From tax year 2026.",
+   "sources": [
+    {
+     "src": 0,
+     "said": "Tax year: The tax year is the calendar year."
+    },
+    {
+     "src": 0,
+     "said": "must be filed by 31 July following the tax year for employees and self-employed individuals who are not required to file audited accounts, and 31 January of the second year following the tax year for a self-employed person whose return is accompanied by audited accounts. Self-employed individuals with annual turnover of more than EUR 120,000 must prepare audited accounts."
+    }
+   ]
+  },
+  {
+   "item": "social",
+   "finding": "Employee and employer each pay 8.8% social insurance on earnings up to EUR 68,904 in 2026; the employer adds 1.2% redundancy, 0.5% training and 2% social cohesion (uncapped); health (GHS) is 2.65% for the employee and 2.9% for the employer on income up to EUR 180,000; the self-employed pay 16.6% social insurance on a notional income set by trade or profession, and 4% GHS.",
+   "value": {
+    "currency": "EUR",
+    "employee": {
+     "social": 0.088,
+     "ghs": 0.0265
+    },
+    "employer": {
+     "social": 0.088,
+     "redundancy": 0.012,
+     "training": 0.005,
+     "socialCohesion": 0.02,
+     "ghs": 0.029
+    },
+    "socialCeiling2026": 68904,
+    "ghsCeiling": 180000,
+    "selfEmployed": {
+     "social": 0.166,
+     "base": "notional income by trade",
+     "ghs": 0.04
+    }
+   },
+   "applies": "2026; no performers' scheme was found.",
+   "sources": [
+    {
+     "src": 1,
+     "said": "Social insurance fund 8.8 (2, 3) Redundancy fund 1.2 Training development fund 0.5 Social cohesion fund 2.0 GHS contributions 2.90 (3, 4)"
+    },
+    {
+     "src": 1,
+     "said": "the maximum amount of earnings on which the contributions are paid for 2026 is EUR 68,904 (weekly EUR 1,325 / monthly EUR 5,742)"
+    },
+    {
+     "src": 1,
+     "said": "The employee must also contribute at the same rate as the employer to the social insurance fund and the GHS fund at 8.8% and 2.65%, respectively"
+    },
+    {
+     "src": 0,
+     "said": "Self-employed individuals contribute at 16.6%. The contribution for self-employed individuals is calculated on notional income, which varies according to the trade or profession."
+    },
+    {
+     "src": 0,
+     "said": "A resident individual is required to pay general healthcare system (GHS) contributions on various types of income (capped at EUR 180,000 per year) at rates of 2.65% or 4%."
+    }
+   ]
+  },
+  {
+   "item": "withholding",
+   "finding": "The employer withholds tax from pay under PAYE; a self-employed person pays provisional tax in two equal instalments on 31 July and 31 December of the tax year.",
+   "value": {
+    "employee": "PAYE",
+    "selfEmployed": {
+     "provisional": [
+      "07-31",
+      "12-31"
+     ]
+    }
+   },
+   "applies": "2026.",
+   "sources": [
+    {
+     "src": 0,
+     "said": "Filing and payment: Employers withhold tax on employment income under the Pay As You Earn (PAYE) system. Self-employed individuals pay tax through the provisional and self-assessment systems."
+    },
+    {
+     "src": 2,
+     "said": "payments of estimated tax must be generally paid in two equal instalments on 31 July and 31 December within the same tax year."
+    }
+   ]
+  },
+  {
+   "item": "nonResident",
+   "finding": "The gross income a non-resident earns from a profession or vocation exercised in Cyprus, and the pay of a non-resident who provides public entertainment (a performer, a theatre or music group) for performances in Cyprus, is taxed at 10% of the gross; whoever contracts with the non-resident deducts it from each payment and remits it to the Commissioner, and the law levies no other income tax on that income, so the 10% is final.",
+   "value": {
+    "rate": 0.1,
+    "base": "gross receipts",
+    "withheldBy": "the contracting party",
+    "final": true
+   },
+   "applies": "Income Tax Law 118(I)/2002, arts. 23 and 24 (as consolidated on CyLaw).",
+   "sources": [
+    {
+     "src": 3,
+     "said": "23. Το ακαθάριστο εισόδημα το οποίο αποκτά οποιοδήποτε άτομο το οποίο δεν είναι κάτοικος στη Δημοκρατία από την άσκηση στη Δημοκρατία οποιουδήποτε επαγγέλματος ή επιτηδεύματος, η αμοιβή προσώπων, τα οποία δεν είναι κάτοικοι στη Δημοκρατία, που παρέχουν υπηρεσίες ψυχαγωγίας στο κοινό … που προκύπτουν από παραστάσεις στη Δημοκρατία, υπόκεινται σε φορολογία με συντελεστή δέκα σεντ για κάθε λίρα … 24. (1) Οποιοδήποτε πρόσωπο το οποίο συνάπτει οποιαδήποτε σύμβαση με οποιοδήποτε άτομο το οποίο δεν είναι κάτοικος στη Δημοκρατία … σε σχέση με δοσοληψίες της φύσεως που εκτίθενται στα άρθρα 21, 21Α, 22, 23 και 23Α, οφείλει να παρακρατεί φόρο με το συντελεστή που καθορίζεται στα εν λόγω άρθρα"
+    }
+   ]
+  },
+  {
+   "item": "authors",
+   "finding": "Royalties paid to a non-resident for rights used in Cyprus bear 5% withholding on film royalties and 10% on others (treaties may reduce); no special treatment of a resident author's royalties was found.",
+   "value": {
+    "nonResidentRoyalty": {
+     "film": 0.05,
+     "other": 0.1
+    }
+   },
+   "applies": "2026.",
+   "sources": [
+    {
+     "src": 0,
+     "said": "nonresident company or individual for the use of rights in Cyprus are subject to a withholding tax of 5% on film royalties, and"
+    }
+   ]
+  },
+  {
+   "item": "vat",
+   "finding": "VAT is 19%; a freelancer must register once taxable turnover passes EUR 15,600.",
+   "value": {
+    "currency": "EUR",
+    "standard": 0.19,
+    "reduced": [
+     0.09,
+     0.05,
+     0.03
+    ],
+    "registrationThreshold": 15600
+   },
+   "applies": "2026.",
+   "sources": [
+    {
+     "src": 0,
+     "said": "Registration: The registration threshold for VAT purposes is EUR 15,600"
+    },
+    {
+     "src": 4,
+     "said": "The standard VAT rate in Cyprus is 19%."
+    }
+   ]
+  }
+ ],
+ "country": "CY",
+ "sources": [
+  {
+   "url": "https://www.deloitte.com/content/dam/assets-shared/docs/services/tax/2026/dttl-tax-cyprushighlights-2026.pdf",
+   "title": "Deloitte International Tax: Cyprus Highlights 2026",
+   "read": "2026-11-01",
+   "kind": "secondary",
+   "quotes": "https://www.tax.gov.cy/",
+   "said": "Individual income tax rate Taxable income (EUR) Rate Up to 22,000 0% 22,001–32,000 20% 32,001–42,000 25% 42,001–72,000 30% Over 72,000 35% … Rates: The first EUR 22,000 of taxable income is tax free, with progressive tax rates up to 35% imposed on the remaining amount, as shown in the table above. … Tax year: The tax year is the calendar year. … must be filed by 31 July following the tax year for employees and self-employed individuals who are not required to file audited accounts, and 31 January of the second year following the tax year for a self-employed person whose return is accompanied by audited accounts. Self-employed individuals with annual turnover of more than EUR 120,000 must prepare audited accounts. … Self-employed individuals contribute at 16.6%. The contribution for self-employed individuals is calculated on notional income, which varies according to the trade or profession. … A resident individual is required to pay general healthcare system (GHS) contributions on various types of income (capped at EUR 180,000 per year) at rates of 2.65% or 4%. … Filing and payment: Employers withhold tax on employment income under the Pay As You Earn (PAYE) system. Self-employed individuals pay tax through the provisional and self-assessment systems. … nonresident company or individual for the use of rights in Cyprus are subject to a withholding tax of 5% on film royalties, and … Registration: The registration threshold for VAT purposes is EUR 15,600"
+  },
+  {
+   "url": "https://taxsummaries.pwc.com/cyprus/corporate/other-taxes",
+   "title": "PwC Worldwide Tax Summaries: cyprus Corporate - Other taxes",
+   "read": "2026-11-01",
+   "kind": "secondary",
+   "quotes": "https://www.mlsi.gov.cy/mlsi/sid/sidv2.nsf",
+   "said": "Social insurance fund 8.8 (2, 3) Redundancy fund 1.2 Training development fund 0.5 Social cohesion fund 2.0 GHS contributions 2.90 (3, 4) … the maximum amount of earnings on which the contributions are paid for 2026 is EUR 68,904 (weekly EUR 1,325 / monthly EUR 5,742) … The employee must also contribute at the same rate as the employer to the social insurance fund and the GHS fund at 8.8% and 2.65%, respectively"
+  },
+  {
+   "url": "https://taxsummaries.pwc.com/cyprus/individual/tax-administration",
+   "title": "PwC Worldwide Tax Summaries: cyprus Individual - Tax administration",
+   "read": "2026-11-01",
+   "kind": "secondary",
+   "quotes": "https://www.tax.gov.cy/",
+   "said": "payments of estimated tax must be generally paid in two equal instalments on 31 July and 31 December within the same tax year."
+  },
+  {
+   "url": "https://www.cylaw.org/nomoi/enop/non-ind/2002_1_118/full.html",
+   "title": "Ο περί Φορολογίας του Εισοδήματος Νόμος του 2002 (118(I)/2002), ενοποιημένο κείμενο, CyLaw",
+   "read": "2026-11-01",
+   "kind": "primary",
+   "said": "23. Το ακαθάριστο εισόδημα το οποίο αποκτά οποιοδήποτε άτομο το οποίο δεν είναι κάτοικος στη Δημοκρατία από την άσκηση στη Δημοκρατία οποιουδήποτε επαγγέλματος ή επιτηδεύματος, η αμοιβή προσώπων, τα οποία δεν είναι κάτοικοι στη Δημοκρατία, που παρέχουν υπηρεσίες ψυχαγωγίας στο κοινό … που προκύπτουν από παραστάσεις στη Δημοκρατία, υπόκεινται σε φορολογία με συντελεστή δέκα σεντ για κάθε λίρα … 24. (1) Οποιοδήποτε πρόσωπο το οποίο συνάπτει οποιαδήποτε σύμβαση με οποιοδήποτε άτομο το οποίο δεν είναι κάτοικος στη Δημοκρατία … σε σχέση με δοσοληψίες της φύσεως που εκτίθενται στα άρθρα 21, 21Α, 22, 23 και 23Α, οφείλει να παρακρατεί φόρο με το συντελεστή που καθορίζεται στα εν λόγω άρθρα"
+  },
+  {
+   "url": "https://taxsummaries.pwc.com/cyprus/individual/other-taxes",
+   "title": "PwC Worldwide Tax Summaries: cyprus Individual - Other taxes",
+   "read": "2026-11-01",
+   "kind": "secondary",
+   "quotes": "https://www.tax.gov.cy/",
+   "said": "The standard VAT rate in Cyprus is 19%."
+  }
+ ],
+ "blockers": []
+}

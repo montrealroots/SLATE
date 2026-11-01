@@ -8,7 +8,8 @@
    "market-plan-fund-release",
    "market-told",
    "market-engagement",
-   "market-option"
+   "market-option",
+   "market-none"
   ]
  },
  "rows": [
@@ -20,7 +21,7 @@
    ],
    "tests": [
     "tests/person/producing/markets.test.ts::the markets > are each country's own, every term as the research gives it",
-    "tests/tools/markets-producer.test.ts::the producer's markets compile > compiles the twenty markets the producer's engine reads"
+    "tests/tools/markets-producer.test.ts::the producer's markets compile > compiles every market the producer's engine reads"
    ]
   },
   {
@@ -30,7 +31,8 @@
     "R-5231"
    ],
    "tests": [
-    "tests/person/producing/markets.test.ts::the markets > runs each market's months in its city's time, the actor's market there, and pays in its currency"
+    "tests/person/producing/markets.test.ts::the markets > runs each market's months in its city's time, the actor's market there, and pays in its currency",
+    "tests/tools/markets-producer.test.ts::the producer's markets compile > dates a market's work in its most populous place's zone on the map, one the clock keeps"
    ]
   },
   {
@@ -72,6 +74,14 @@
    ],
    "tests": [
     "tests/person/producing/markets.test.ts::a market's project > producing.option: the market a project is optioned in sets what it can claim"
+   ]
+  },
+  {
+   "key": "market-none",
+   "status": "proven",
+   "tests": [
+    "tests/person/producing/markets.test.ts::the markets > refuses a country no producer works in: one dissolved, or with no sovereign",
+    "tests/tools/markets-producer.test.ts::the producer's markets compile > reads a country whose research found nothing from its blockers, and a country no producer works in as none"
    ]
   }
  ]

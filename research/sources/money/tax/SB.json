@@ -1,0 +1,246 @@
+{
+ "topic": "tax.SB",
+ "read": "2026-11-01",
+ "note": "Read 2026-11-01 at the owner's word (\"Build those first 3 starting with ledger first\"; of the 21 countries read first: \"It should cover across every country\"; \"Retry the blocked tax facts once all countries land\"): the tax on a screen worker's pay in Solomon Islands: a resident's income tax, social contributions, what is withheld at source, a non-resident artiste's withholding, an author's treatment, VAT and the tax year. Research and retry subagents (workbench/briefs/BRIEF-tax.md, BRIEF-tax-retry.md), every quote checked by the lead against its saved page.",
+ "figures": [
+  {
+   "item": "residents",
+   "finding": "The first SBD 30,080 of an individual's income is tax-free; above it the next $15,000 is taxed at 11%, the next $15,000 at 23%, the next $30,000 at 35% and the rest at 40%.",
+   "value": {
+    "currency": "SBD",
+    "from": "2020-01-01",
+    "allowance": 30080,
+    "brackets": [
+     {
+      "from": 0,
+      "to": 30080,
+      "rate": 0
+     },
+     {
+      "from": 30080,
+      "to": 45080,
+      "rate": 0.11
+     },
+     {
+      "from": 45080,
+      "to": 60080,
+      "rate": 0.23
+     },
+     {
+      "from": 60080,
+      "to": 90080,
+      "rate": 0.35
+     },
+     {
+      "from": 90080,
+      "to": null,
+      "rate": 0.4
+     }
+    ],
+    "bracketsAboveExemption": [
+     {
+      "from": 0,
+      "to": 15000,
+      "rate": 0.11
+     },
+     {
+      "from": 15000,
+      "to": 30000,
+      "rate": 0.23
+     },
+     {
+      "from": 30000,
+      "to": 60000,
+      "rate": 0.35
+     },
+     {
+      "from": 60000,
+      "to": null,
+      "rate": 0.4
+     }
+    ],
+    "regional": null
+   },
+   "applies": "Individuals, employees and self-employed, from January 2020",
+   "sources": [
+    {
+     "src": 0,
+     "said": "From January 2020, the personal tax exemption threshold for individuals was increased from $15,080 to $30,080. This means that individuals – both employees and self‑employed persons are not required to pay tax on the first $30,080 of their income. For any income earnt over $30,080.00 the rates of tax remain the same as set out below: Income Bracket Rate $1 to $15 000 11% $15 001 to $30 000 $1,650 + 23% of excess $30 001 to $60 000 $5,100 + 35% of excess $60 001 and over $15,600 + 40% of excess"
+    }
+   ]
+  },
+  {
+   "item": "social",
+   "finding": "To the National Provident Fund the employee pays at least 5% and the employer 7.5% of gross wages, once an employee has worked six or more days and earned $20 or more in a month.",
+   "value": {
+    "currency": "SBD",
+    "employee": 0.05,
+    "employer": 0.075,
+    "ceiling": null,
+    "liableFrom": {
+     "days": 6,
+     "wageMonthly": 20
+    }
+   },
+   "applies": "Employees, including under a contract for service",
+   "sources": [
+    {
+     "src": 1,
+     "said": "Under the SINPF Act, members contribute a minimum of 5% of their wages and employers contribute 7.5% on behalf of each employee. Together this makes a total monthly contribution of 12.5%, which is credited to the employee's individual member account. … An employer is any person, company, association or body of persons employing an employee under a contract of service, apprenticeship or a contract for service. An employer becomes liable to pay monthly contributions once an employee has worked six or more days and been paid a wage of $20.00 or more in a month."
+    }
+   ]
+  },
+  {
+   "item": "withholding",
+   "finding": "Employers deduct PAYE at each payment using IRD tables and pay it by the 15th of the next month.",
+   "value": {
+    "kind": "PAYE tables per pay period",
+    "remitBy": "15th of following month"
+   },
+   "applies": "Wages, salaries, fees, allowances",
+   "sources": [
+    {
+     "src": 2,
+     "said": "Inland Revenue provides tables that tell you how much to deduct depending on whether you pay weekly, fortnightly, bi-monthly or monthly. … All PAYE taxes deducted during the month must be paid to IRD by the 15th day of the following month."
+    }
+   ]
+  },
+  {
+   "item": "nonResident",
+   "finding": "Payments to non-residents for professional services bear 20% withholding, royalties 15% and film-hire rent 5%; the tax deducted under section 38 is a final tax when correctly deducted and paid; \"professional services\" means professional or technical services or those of an adviser or consultant, and the Act names no separate rule for performers.",
+   "value": {
+    "rate": 0.2,
+    "royalties": 0.15,
+    "filmHire": 0.05,
+    "base": "payment",
+    "threshold": null,
+    "final": true
+   },
+   "applies": "Payments made to non-residents; whether a performer's fee is \"professional services\" is not stated in the Act (the game reads it so).",
+   "sources": [
+    {
+     "src": 3,
+     "said": "Payments Made to Non-Residents Interest 15% Professional Services 20% Royalties 15% Contracting (installation, maintenance, construction, erection, clearing and draining) 7.5% Income from ships and aircraft 5% Insurance Premiums and premiums on insurance 15% Rent for Hiring of Films 5%"
+    },
+    {
+     "src": 4,
+     "said": "A person who pays non-resident income to a non-resident person shall deduct therefrom tax at the appropriate withholding rate specified in the Sixth Schedule in force at the date on which such income is payable"
+    },
+    {
+     "src": 4,
+     "said": "(e) section 38. … (3) If this section applies, the tax deducted shall be a final tax on the income of the recipient in respect of which the tax has been deducted"
+    },
+    {
+     "src": 4,
+     "said": "“professional services” means any payment for professional or technical services or services of an adviser or consultant on behalf of a person or entity resident in Solomon Islands (whether such services are rendered wholly or partly in Solomon Islands or outside Solomon Islands)"
+    },
+    {
+     "src": 4,
+     "said": "Professional Services 20% in the dollar"
+    }
+   ]
+  },
+  {
+   "item": "authors",
+   "finding": "Royalties paid to a resident bear 10% withholding.",
+   "value": {
+    "royaltiesResidentWithholding": 0.1
+   },
+   "applies": "Payments made to residents",
+   "sources": [
+    {
+     "src": 3,
+     "said": "Payments Made to Residents Contracting (installation, maintenance, construction, erection, clearing and draining) 7.5% Royalties 10%"
+    }
+   ]
+  },
+  {
+   "item": "vat",
+   "finding": "There is no VAT; sales tax of 10% is charged on listed services, including professional services, and returned monthly by the 30th; the Act sets no turnover threshold: every person who sells prescribed services must apply to register.",
+   "value": {
+    "salesTaxProfessionalServices": 0.1,
+    "threshold": 0
+   },
+   "applies": "Registered suppliers",
+   "sources": [
+    {
+     "src": 5,
+     "said": "Services provided by hairdressers, barbers & beauty shops 10% Casino entrance fee $5 Laundry services 10% Tyre services 10% Professional Services 10%"
+    },
+    {
+     "src": 6,
+     "said": "every person who in Solomon Islands sells prescribed goods or services shall apply to the Commissioner in the prescribed form for registration as a seller of prescribed goods and services together with the prescribed fee."
+    }
+   ]
+  },
+  {
+   "item": "year",
+   "finding": "The income year generally ends on 31 December and the return is due by 31 March after it.",
+   "value": {
+    "start": "01-01",
+    "end": "12-31",
+    "returnDue": "03-31"
+   },
+   "applies": "Sole traders and individuals filing",
+   "sources": [
+    {
+     "src": 0,
+     "said": "Returns are due by 31 March following the year of income unless you have approval for an extension of time or operate on a different balance date. … For most businesses, the accounting year ends on 31 December but it may be a different month – this is the balance date."
+    }
+   ]
+  }
+ ],
+ "country": "SB",
+ "sources": [
+  {
+   "url": "https://www.ird.gov.sb/income-tax/",
+   "title": "Income Tax - Inland Revenue Division Solomon Islands",
+   "read": "2026-11-01",
+   "kind": "primary",
+   "said": "From January 2020, the personal tax exemption threshold for individuals was increased from $15,080 to $30,080. This means that individuals – both employees and self‑employed persons are not required to pay tax on the first $30,080 of their income. For any income earnt over $30,080.00 the rates of tax remain the same as set out below: Income Bracket Rate $1 to $15 000 11% $15 001 to $30 000 $1,650 + 23% of excess $30 001 to $60 000 $5,100 + 35% of excess $60 001 and over $15,600 + 40% of excess … Returns are due by 31 March following the year of income unless you have approval for an extension of time or operate on a different balance date. … For most businesses, the accounting year ends on 31 December but it may be a different month – this is the balance date."
+  },
+  {
+   "url": "https://www.sinpf.org.sb/employers/contribution-rates/",
+   "title": "Contribution Rates - SINPF",
+   "read": "2026-11-01",
+   "kind": "primary",
+   "said": "Under the SINPF Act, members contribute a minimum of 5% of their wages and employers contribute 7.5% on behalf of each employee. Together this makes a total monthly contribution of 12.5%, which is credited to the employee's individual member account. … An employer is any person, company, association or body of persons employing an employee under a contract of service, apprenticeship or a contract for service. An employer becomes liable to pay monthly contributions once an employee has worked six or more days and been paid a wage of $20.00 or more in a month."
+  },
+  {
+   "url": "https://www.ird.gov.sb/paye/",
+   "title": "PAYE - Inland Revenue Division Solomon Islands",
+   "read": "2026-11-01",
+   "kind": "primary",
+   "said": "Inland Revenue provides tables that tell you how much to deduct depending on whether you pay weekly, fortnightly, bi-monthly or monthly. … All PAYE taxes deducted during the month must be paid to IRD by the 15th day of the following month."
+  },
+  {
+   "url": "https://www.ird.gov.sb/withholding-tax/",
+   "title": "Withholding Tax - Inland Revenue Division Solomon Islands",
+   "read": "2026-11-01",
+   "kind": "primary",
+   "said": "Payments Made to Non-Residents Interest 15% Professional Services 20% Royalties 15% Contracting (installation, maintenance, construction, erection, clearing and draining) 7.5% Income from ships and aircraft 5% Insurance Premiums and premiums on insurance 15% Rent for Hiring of Films 5% … Payments Made to Residents Contracting (installation, maintenance, construction, erection, clearing and draining) 7.5% Royalties 10%"
+  },
+  {
+   "url": "https://www.ird.gov.sb/wp-content/uploads/2025/10/INCOME-TAX-ACT-CAP-123.pdf",
+   "title": "Income Tax Act [Cap. 123], reprint authorised under the Legislation Act 2023 (Inland Revenue Division, tax legislation page)",
+   "read": "2026-11-01",
+   "kind": "primary",
+   "said": "A person who pays non-resident income to a non-resident person shall deduct therefrom tax at the appropriate withholding rate specified in the Sixth Schedule in force at the date on which such income is payable … (e) section 38. … (3) If this section applies, the tax deducted shall be a final tax on the income of the recipient in respect of which the tax has been deducted … “professional services” means any payment for professional or technical services or services of an adviser or consultant on behalf of a person or entity resident in Solomon Islands (whether such services are rendered wholly or partly in Solomon Islands or outside Solomon Islands) … Professional Services 20% in the dollar"
+  },
+  {
+   "url": "https://www.ird.gov.sb/sales-tax/",
+   "title": "Sales Tax - Inland Revenue Division Solomon Islands",
+   "read": "2026-11-01",
+   "kind": "primary",
+   "said": "Services provided by hairdressers, barbers & beauty shops 10% Casino entrance fee $5 Laundry services 10% Tyre services 10% Professional Services 10%"
+  },
+  {
+   "url": "https://www.ird.gov.sb/wp-content/uploads/2025/10/SALE-TAX-ACT-CAP-125.pdf",
+   "title": "Sales Tax Act [Cap. 125], reprint authorised under the Legislation Act 2023",
+   "read": "2026-11-01",
+   "kind": "primary",
+   "said": "every person who in Solomon Islands sells prescribed goods or services shall apply to the Commissioner in the prescribed form for registration as a seller of prescribed goods and services together with the prescribed fee."
+  }
+ ],
+ "blockers": []
+}

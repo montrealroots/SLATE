@@ -1,0 +1,207 @@
+{
+ "topic": "tax.RO",
+ "read": "2026-11-01",
+ "note": "Read 2026-11-01 at the owner's word (\"Build those first 3 starting with ledger first\"; of the 21 countries read first: \"It should cover across every country\"; \"Retry the blocked tax facts once all countries land\"): the tax on a screen worker's pay in Romania: a resident's income tax, social contributions, what is withheld at source, a non-resident artiste's withholding, an author's treatment, VAT and the tax year. Research and retry subagents (workbench/briefs/BRIEF-tax.md, BRIEF-tax-retry.md), every quote checked by the lead against its saved page.",
+ "figures": [
+  {
+   "item": "residents",
+   "finding": "A resident pays a flat 10% income tax on most income, including pay; there is no local income tax.",
+   "value": {
+    "currency": "RON",
+    "brackets": [
+     {
+      "from": 0,
+      "to": null,
+      "rate": 0.1
+     }
+    ],
+    "allowance": null,
+    "regional": null
+   },
+   "applies": "Residents",
+   "sources": [
+    {
+     "src": 0,
+     "said": "A flat PIT rate of 10% is generally in place. … There are no local taxes on personal income in Romania."
+    }
+   ]
+  },
+  {
+   "item": "social",
+   "finding": "An employee pays social insurance of 25% and health insurance of 10% of gross pay; the employer pays work insurance of 2.25% (plus 4% or 8% social insurance only for uncommon or special conditions). A freelancer pays 25% social insurance on a base of 12 minimum salaries (RON 48,600) or 24 (RON 97,200) once net income reaches 12 minimum salaries, and 10% health insurance on net income capped at 72 minimum salaries (RON 291,600) for 2026.",
+   "value": {
+    "currency": "RON",
+    "year": 2026,
+    "employee": {
+     "pension": 0.25,
+     "health": 0.1
+    },
+    "employer": {
+     "workInsurance": 0.0225,
+     "specialConditions": [
+      0.04,
+      0.08
+     ]
+    },
+    "selfEmployed": {
+     "pension": {
+      "rate": 0.25,
+      "bases": [
+       48600,
+       97200
+      ],
+      "trigger": "net income at least 12 minimum gross salaries"
+     },
+     "health": {
+      "rate": 0.1,
+      "capAnnual": 291600
+     }
+    }
+   },
+   "applies": "Employees and individuals with independent or IP income",
+   "sources": [
+    {
+     "src": 1,
+     "said": "Employee contributions: Social insurance contribution: 25%. Health insurance contribution: 10%. The monthly assessment base is the gross income derived from dependent activities. Employer contributions: Social insurance contribution: 4% for uncommon work conditions or 8% for special work conditions; there is no employer social insurance contribution for normal working conditions. Work insurance contribution: 2.25%. … health insurance contribution of 10%, applicable to the annual net income derived, which cannot, however, exceed 72 minimum gross salaries (RON 291,600 for 2026). … rights are subject to the social insurance contribution of 25% applicable on a calculation base chosen by the individual that cannot be lower than 12 minimum gross salary incomes (48,600 Romanian leu [RON] for 2026) if the annual taxable income derived by the individual from these sources is between 12 and 24 minimum gross salaries or on a contribution base of 24 minimum gross salaries (RON 97,200 for 2026)"
+    }
+   ]
+  },
+  {
+   "item": "withholding",
+   "finding": "The employer withholds income tax and the employee's contributions from pay and pays them by the 25th of the following month.",
+   "value": {
+    "remitBy": "25th of following month"
+   },
+   "applies": "Employees",
+   "sources": [
+    {
+     "src": 2,
+     "said": "The income tax and social contributions have to be reported and paid by the local employer to the tax authorities by the 25th day of the month following the one the salary income relates to."
+    }
+   ]
+  },
+  {
+   "item": "nonResident",
+   "finding": "A non-resident performer's income from entertainment activity in Romania is taxed on the gross at 10% if the performer is resident in an EU state or a treaty state, otherwise 16%, withheld when paid and remitted by the 25th of the following month; an artist may opt to regularise.",
+   "value": {
+    "rate": {
+     "euOrTreatyResident": 0.1,
+     "other": 0.16
+    },
+    "base": "gross income",
+    "final": "withheld at payment; regularisation option (art. 227)"
+   },
+   "applies": "Non-resident individuals (Fiscal Code art. 223(1)(h), 224(4), 227)",
+   "sources": [
+    {
+     "src": 3,
+     "said": "h) venituri din activități sportive și de divertisment desfășurate în România, indiferent dacă veniturile sunt primite de către persoanele care participă efectiv la asemenea activități sau de către alte persoane; … c 1 ) 10% în cazul veniturilor impozabile enumerate la art. 223 alin. (1) lit. b) - i) și k) - p) obținute din România de persoane fizice rezidente într-un stat membru al Uniunii Europene sau într-un stat cu care România are încheiată o convenție de evitare a dublei impuneri; d) 16% în cazul oricăror altor venituri impozabile obținute din România, așa cum sunt enumerate la art. 223 alin. (1)."
+    }
+   ]
+  },
+  {
+   "item": "authors",
+   "finding": "An author's income from intellectual property rights paid by a company bears 10% income tax on the gross less a flat 40% deduction, withheld by the payer, plus social and health contributions above the thresholds.",
+   "value": {
+    "rate": 0.1,
+    "flatDeduction": 0.4,
+    "effectiveRate": 0.06,
+    "withheldBy": "payer keeping accounts"
+   },
+   "applies": "Authors (IP rights income)",
+   "sources": [
+    {
+     "src": 4,
+     "said": "Income from IP rights is subject to income tax and social contributions. In case the income from IP rights is paid by a legal entity or other entity required to keep accounting records, the payer of the income is required to compute, report, withhold, and pay to the tax authorities the following: Income tax of 10% on a calculation base determined by deducting a flat rate of 40% from the gross income."
+    }
+   ]
+  },
+  {
+   "item": "vat",
+   "finding": "A freelancer's fee bears VAT at 21% once annual turnover passes RON 395,000.",
+   "value": {
+    "currency": "RON",
+    "rate": 0.21,
+    "reduced": [
+     0.11
+    ],
+    "threshold": 395000
+   },
+   "applies": "Romanian taxable persons",
+   "sources": [
+    {
+     "src": 5,
+     "said": "The 21% standard VAT rate applies to all taxable transactions that are not exempt and do not qualify for a reduced rate. … The annual turnover threshold for VAT registration in Romania is RON 395,000."
+    }
+   ]
+  },
+  {
+   "item": "year",
+   "finding": "The tax year is the calendar year; the annual single return is due by 25 May of the following year, with payment by the same date.",
+   "value": {
+    "start": "01-01",
+    "end": "12-31",
+    "returnDue": "05-25",
+    "paymentDue": "05-25"
+   },
+   "applies": "Individuals",
+   "sources": [
+    {
+     "src": 2,
+     "said": "The Romanian tax year runs from 1 January to 31 December. … The general filing deadline is 25 May."
+    }
+   ]
+  }
+ ],
+ "country": "RO",
+ "sources": [
+  {
+   "url": "https://taxsummaries.pwc.com/romania/individual/taxes-on-personal-income",
+   "title": "Romania - Individual - Taxes on personal income (PwC, reviewed 25 September 2026)",
+   "read": "2026-11-01",
+   "kind": "secondary",
+   "quotes": "https://static.anaf.ro/static/10/Anaf/legislatie/Cod_fiscal_norme_2023.htm",
+   "said": "A flat PIT rate of 10% is generally in place. … There are no local taxes on personal income in Romania."
+  },
+  {
+   "url": "https://taxsummaries.pwc.com/romania/individual/other-taxes",
+   "title": "Romania - Individual - Other taxes (PwC, reviewed 25 September 2026)",
+   "read": "2026-11-01",
+   "kind": "secondary",
+   "quotes": "https://static.anaf.ro/static/10/Anaf/legislatie/Cod_fiscal_norme_2023.htm",
+   "said": "Employee contributions: Social insurance contribution: 25%. Health insurance contribution: 10%. The monthly assessment base is the gross income derived from dependent activities. Employer contributions: Social insurance contribution: 4% for uncommon work conditions or 8% for special work conditions; there is no employer social insurance contribution for normal working conditions. Work insurance contribution: 2.25%. … health insurance contribution of 10%, applicable to the annual net income derived, which cannot, however, exceed 72 minimum gross salaries (RON 291,600 for 2026). … rights are subject to the social insurance contribution of 25% applicable on a calculation base chosen by the individual that cannot be lower than 12 minimum gross salary incomes (48,600 Romanian leu [RON] for 2026) if the annual taxable income derived by the individual from these sources is between 12 and 24 minimum gross salaries or on a contribution base of 24 minimum gross salaries (RON 97,200 for 2026)"
+  },
+  {
+   "url": "https://taxsummaries.pwc.com/romania/individual/tax-administration",
+   "title": "Romania - Individual - Tax administration (PwC, reviewed 25 September 2026)",
+   "read": "2026-11-01",
+   "kind": "secondary",
+   "quotes": "https://static.anaf.ro/static/10/Anaf/legislatie/Cod_fiscal_norme_2023.htm",
+   "said": "The income tax and social contributions have to be reported and paid by the local employer to the tax authorities by the 25th day of the month following the one the salary income relates to. … The Romanian tax year runs from 1 January to 31 December. … The general filing deadline is 25 May."
+  },
+  {
+   "url": "https://static.anaf.ro/static/10/Anaf/legislatie/Cod_fiscal_norme_2023.htm",
+   "title": "Codul fiscal (Legea nr. 227/2015) cu norme metodologice, ANAF",
+   "read": "2026-11-01",
+   "kind": "primary",
+   "said": "h) venituri din activități sportive și de divertisment desfășurate în România, indiferent dacă veniturile sunt primite de către persoanele care participă efectiv la asemenea activități sau de către alte persoane; … c 1 ) 10% în cazul veniturilor impozabile enumerate la art. 223 alin. (1) lit. b) - i) și k) - p) obținute din România de persoane fizice rezidente într-un stat membru al Uniunii Europene sau într-un stat cu care România are încheiată o convenție de evitare a dublei impuneri; d) 16% în cazul oricăror altor venituri impozabile obținute din România, așa cum sunt enumerate la art. 223 alin. (1)."
+  },
+  {
+   "url": "https://taxsummaries.pwc.com/romania/individual/income-determination",
+   "title": "Romania - Individual - Income determination (PwC, reviewed 25 September 2026)",
+   "read": "2026-11-01",
+   "kind": "secondary",
+   "quotes": "https://static.anaf.ro/static/10/Anaf/legislatie/Cod_fiscal_norme_2023.htm",
+   "said": "Income from IP rights is subject to income tax and social contributions. In case the income from IP rights is paid by a legal entity or other entity required to keep accounting records, the payer of the income is required to compute, report, withhold, and pay to the tax authorities the following: Income tax of 10% on a calculation base determined by deducting a flat rate of 40% from the gross income."
+  },
+  {
+   "url": "https://taxsummaries.pwc.com/romania/corporate/other-taxes",
+   "title": "Romania - Corporate - Other taxes (PwC, reviewed 25 September 2026)",
+   "read": "2026-11-01",
+   "kind": "secondary",
+   "quotes": "https://static.anaf.ro/static/10/Anaf/legislatie/Cod_fiscal_norme_2023.htm",
+   "said": "The 21% standard VAT rate applies to all taxable transactions that are not exempt and do not qualify for a reduced rate. … The annual turnover threshold for VAT registration in Romania is RON 395,000."
+  }
+ ],
+ "blockers": []
+}

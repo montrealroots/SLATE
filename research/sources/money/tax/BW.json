@@ -1,0 +1,284 @@
+{
+ "topic": "tax.BW",
+ "read": "2026-11-01",
+ "note": "Read 2026-11-01 at the owner's word (\"Build those first 3 starting with ledger first\"; of the 21 countries read first: \"It should cover across every country\"; \"Retry the blocked tax facts once all countries land\"): the tax on a screen worker's pay in Botswana: a resident's income tax, social contributions, what is withheld at source, a non-resident artiste's withholding, an author's treatment, VAT and the tax year. Research and retry subagents (workbench/briefs/BRIEF-tax.md, BRIEF-tax-retry.md), every quote checked by the lead against its saved page.",
+ "figures": [
+  {
+   "item": "residents",
+   "finding": "From the 2026-27 tax year (1 July 2026) a resident pays nothing on the first P48,000 of taxable income, then 5%, 12.5%, 18.75%, 25% and, above P400,000, 27.5%; there is no local income tax.",
+   "value": {
+    "currency": "BWP",
+    "from": "2026-07-01",
+    "allowance": 48000,
+    "brackets": [
+     {
+      "from": 0,
+      "to": 48000,
+      "rate": 0
+     },
+     {
+      "from": 48000,
+      "to": 84000,
+      "rate": 0.05
+     },
+     {
+      "from": 84000,
+      "to": 120000,
+      "rate": 0.125
+     },
+     {
+      "from": 120000,
+      "to": 156000,
+      "rate": 0.1875
+     },
+     {
+      "from": 156000,
+      "to": 400000,
+      "rate": 0.25
+     },
+     {
+      "from": 400000,
+      "to": null,
+      "rate": 0.275
+     }
+    ],
+    "previous": {
+     "years": "2020/21 to 2025/26",
+     "brackets": [
+      {
+       "from": 0,
+       "to": 48000,
+       "rate": 0
+      },
+      {
+       "from": 48000,
+       "to": 84000,
+       "rate": 0.05
+      },
+      {
+       "from": 84000,
+       "to": 120000,
+       "rate": 0.125
+      },
+      {
+       "from": 120000,
+       "to": 156000,
+       "rate": 0.1875
+      },
+      {
+       "from": 156000,
+       "to": null,
+       "rate": 0.25
+      }
+     ]
+    },
+    "regional": null
+   },
+   "applies": "Resident individuals, tax year 2026-27 onward",
+   "sources": [
+    {
+     "src": 0,
+     "said": "ANNUAL TAX DEDUCTION TABLE FOR RESIDENT EMPLOYEES (From tax year 2026-27) July 2026 onwards Taxable Income More than but Less than Tax to be deducted 0 48 000 Nil 48 001 84 000 0 + 5% of excess of over P48 000 84 001 120 000 1800 + 12.5% of excess over 84 000 120 001 156 000 6 300 + 18.75% of excess over 120 000 156 001 400 000 13 050 + 25% of excess over P156 000 400 001 and above 74 050 + 27.5% excess over P400 000"
+    },
+    {
+     "src": 1,
+     "said": "Local taxes on income There are no income taxes in addition to central government taxes."
+    },
+    {
+     "src": 2,
+     "said": "1. The rates of income tax for an individual are — … Resident Individuals … 0 – 48,000 0 per cent … 400,001 and above 74, 050 + 27.5 per cent of"
+    }
+   ]
+  },
+  {
+   "item": "social",
+   "finding": "Botswana has no social security taxes or contributions on pay.",
+   "value": {
+    "none": true
+   },
+   "applies": "All workers",
+   "sources": [
+    {
+     "src": 3,
+     "said": "Social security contributions There are no social security taxes or contributions in Botswana."
+    },
+    {
+     "src": 0,
+     "said": "The only deduction allowable from gross income is on contribution made by the employee to an approved superannuation fund."
+    }
+   ]
+  },
+  {
+   "item": "withholding",
+   "finding": "Employers withhold PAYE from employment income using the BURS tax tables (daily, weekly, monthly, annual), unless the Commissioner General issues a directive; non-resident employees have their own table starting at 5% of every pula.",
+   "value": {
+    "kind": "PAYE by BURS tax tables",
+    "nonResidentAnnual": [
+     {
+      "from": 0,
+      "to": 84000,
+      "rate": 0.05
+     },
+     {
+      "from": 84000,
+      "to": 120000,
+      "rate": 0.125
+     },
+     {
+      "from": 120000,
+      "to": 156000,
+      "rate": 0.1875
+     },
+     {
+      "from": 156000,
+      "to": 400000,
+      "rate": 0.25
+     },
+     {
+      "from": 400000,
+      "to": null,
+      "rate": 0.275
+     }
+    ],
+    "currency": "BWP"
+   },
+   "applies": "Employment income from 1 July 2026",
+   "sources": [
+    {
+     "src": 0,
+     "said": "An employer shall use these tables for determining the tax to be withheld from any payment of employment income unless he or she has a Directive(Form ITW 5) from the Commissioner General or written authority from the Commissioner General to use another method."
+    },
+    {
+     "src": 0,
+     "said": "PAYMENTS MADE ANNUALLY Taxable Income More than but Less than Tax to be deducted 0 84 000 5 per cent of every Pula 84 000 120 000 4 200 +12.5 per cent of excess over P84 000 120 000 156 000 8 700 + 18.75 per cent of excess over P120 000 156 000 400 000 15 450 + 25 per cent of excess over P156 000 400 000 and above 76 450.00 + 27.5 per cent of excess over P400 000"
+    }
+   ]
+  },
+  {
+   "item": "nonResident",
+   "finding": "A non-resident entertainer (or group, or whoever receives the fee for them) bears non-resident tax of 10% on the gross entertainment fee for a performance in Botswana, discharged once withheld.",
+   "value": {
+    "rate": 0.1,
+    "base": "gross entertainment fee",
+    "threshold": null,
+    "final": true,
+    "royaltiesToNonResidents": 0.15
+   },
+   "applies": "Non-resident entertainers, from 1 July 2026 (Income Tax Act, 2026, s. 10 and Schedule 1 para. 6(f)); final under s. 140 where withheld under s. 132(1).",
+   "sources": [
+    {
+     "src": 4,
+     "said": "10. (1) A non-resident tax is imposed at a rate specified in Schedule 1 on a non-resident — (a) who has derived interest, a dividend, royalty, technical fee, natural resource amount, director’s fee, or insurance premium, that is Botswana source income; (b) who is an entertainer, or a group of non-resident entertainers,who have derived an entertainment fee from the participation by the entertainer or group, in a performance taking place in Botswana; … (6) The tax payable under subsection (1) (a) or (b) is discharged, if the amount of the tax has been withheld from the payment of the income in accordance with section 132."
+    },
+    {
+     "src": 4,
+     "said": "6. The rates of non-resident withholding tax are — Type of Income Rate (a) Dividends 10 per cent (b) Interest 15 per cent (c) Royalties 15 per cent (d) Technical fees 15 per cent (e) Insurance premium 5 per cent B.944 (f) Payments to entertainer"
+    },
+    {
+     "src": 2,
+     "said": "6. The rates of non-resident withholding tax are — … (f) Payments to entertainer 10 per cent … 140. The withholding of tax from the following payments shall be a … final charge to tax — … (a) payments to non-residents to which section 132 (1) applies;"
+    }
+   ]
+  },
+  {
+   "item": "vat",
+   "finding": "VAT is 14%; a person must register once taxable supplies in a 12-month period exceed P1,000,000 (Value Added Tax Act, 2026).",
+   "value": {
+    "currency": "BWP",
+    "standard": 0.14,
+    "threshold": 1000000
+   },
+   "applies": "From 1 July 2026",
+   "sources": [
+    {
+     "src": 5,
+     "said": "(2) The rate of VAT shall be, for — (a) a taxable supply that is a zero-rated supply, zero per cent; and (b) any other taxable supply, a taxable import, or a reverse charged supply, a rate of 14 per cent. … 2. For purposes of section 12 (2), the amount is P1 000 000."
+    }
+   ]
+  },
+  {
+   "item": "year",
+   "finding": "The tax year runs from 1 July to 30 June, and an individual's return is lodged within three months after it ends (by 30 September).",
+   "value": {
+    "start": "07-01",
+    "end": "06-30",
+    "returnDue": "09-30"
+   },
+   "applies": "Individuals",
+   "sources": [
+    {
+     "src": 4,
+     "said": "“tax year” means a period of 12 months beginning on 1st July and ending on 30th June;"
+    },
+    {
+     "src": 4,
+     "said": "123. (1) A taxpayer liable for income tax shall lodge an income tax return for each tax year – (a) in the case of a company, within four months after the end of the accounting period; or (b) in the case of any other person, within three months after the end of the tax year."
+    }
+   ]
+  },
+  {
+   "item": "authors",
+   "finding": "The Income Tax Act, 2026 gives authors no special treatment: a royalty (any payment for the use of a copyright in a literary or artistic work, films and broadcast tapes among them) is ordinary income of a resident, with no resident withholding on it, and bears 15% non-resident tax when paid abroad.",
+   "value": {
+    "special": false,
+    "residentWithholding": null,
+    "nonResidentRoyalties": 0.15
+   },
+   "applies": "Resident and non-resident authors, from 1 July 2026.",
+   "sources": [
+    {
+     "src": 2,
+     "said": "“royalty” means any amount, whether periodic or lump sum, … payable for the use or the right to use — … (a) any copyright of literary, artistic, or scientific work, … including cinematograph films, and films or tapes for … radio, television, or internet broadcasting; … (c) Royalties 15 per cent … 7. The rates of resident withholding tax are —"
+    }
+   ]
+  }
+ ],
+ "country": "BW",
+ "sources": [
+  {
+   "url": "https://www.burs.org.bw/images/Tax%20Table_2026.pdf",
+   "title": "BURS Tax Table and Guidance Notes (for employee's income), effective from 1st July 2026",
+   "read": "2026-11-01",
+   "kind": "primary",
+   "said": "ANNUAL TAX DEDUCTION TABLE FOR RESIDENT EMPLOYEES (From tax year 2026-27) July 2026 onwards Taxable Income More than but Less than Tax to be deducted 0 48 000 Nil 48 001 84 000 0 + 5% of excess of over P48 000 84 001 120 000 1800 + 12.5% of excess over 84 000 120 001 156 000 6 300 + 18.75% of excess over 120 000 156 001 400 000 13 050 + 25% of excess over P156 000 400 001 and above 74 050 + 27.5% excess over P400 000 … The only deduction allowable from gross income is on contribution made by the employee to an approved superannuation fund. … An employer shall use these tables for determining the tax to be withheld from any payment of employment income unless he or she has a Directive(Form ITW 5) from the Commissioner General or written authority from the Commissioner General to use another method. … PAYMENTS MADE ANNUALLY Taxable Income More than but Less than Tax to be deducted 0 84 000 5 per cent of every Pula 84 000 120 000 4 200 +12.5 per cent of excess over P84 000 120 000 156 000 8 700 + 18.75 per cent of excess over P120 000 156 000 400 000 15 450 + 25 per cent of excess over P156 000 400 000 and above 76 450.00 + 27.5 per cent of excess over P400 000"
+  },
+  {
+   "url": "https://taxsummaries.pwc.com/botswana/individual/taxes-on-personal-income",
+   "title": "PwC Worldwide Tax Summaries: Botswana, Taxes on personal income",
+   "read": "2026-11-01",
+   "kind": "secondary",
+   "quotes": "https://www.burs.org.bw/images/Tax%20Table_2026.pdf",
+   "said": "Local taxes on income There are no income taxes in addition to central government taxes."
+  },
+  {
+   "url": "https://www.burs.org.bw/index.php/tax/tax-laws-2026?download=954:income-tax-act-amendment-2026",
+   "title": "Income Tax Act, 2026 (No. 13 of 2026), Supplement A, Botswana Government Extraordinary Gazette of 1 July 2026 (BURS, listed as Income Tax Act Amendment 2026), Schedule 1 Part I",
+   "read": "2026-11-01",
+   "kind": "primary",
+   "said": "1. The rates of income tax for an individual are — … Resident Individuals … 0 – 48,000 0 per cent … 400,001 and above 74, 050 + 27.5 per cent of … 6. The rates of non-resident withholding tax are — … (f) Payments to entertainer 10 per cent … 140. The withholding of tax from the following payments shall be a … final charge to tax — … (a) payments to non-residents to which section 132 (1) applies; … “royalty” means any amount, whether periodic or lump sum, … payable for the use or the right to use — … (a) any copyright of literary, artistic, or scientific work, … including cinematograph films, and films or tapes for … radio, television, or internet broadcasting; … (c) Royalties 15 per cent … 7. The rates of resident withholding tax are —"
+  },
+  {
+   "url": "https://taxsummaries.pwc.com/botswana/individual/other-taxes",
+   "title": "PwC Worldwide Tax Summaries: Botswana, Other taxes",
+   "read": "2026-11-01",
+   "kind": "secondary",
+   "quotes": "https://www.burs.org.bw/images/Tax%20Table_2026.pdf",
+   "said": "Social security contributions There are no social security taxes or contributions in Botswana."
+  },
+  {
+   "url": "https://www.burs.org.bw/images/Income%20Tax%20Bill,%202025%20Vol136%20Extraordinary.pdf",
+   "title": "Income Tax Bill, 2025 (Government Gazette Extraordinary Vol. 136), enacted as the Income Tax Act in force from 1 July 2026 per the BURS tax table",
+   "read": "2026-11-01",
+   "kind": "primary",
+   "said": "10. (1) A non-resident tax is imposed at a rate specified in Schedule 1 on a non-resident — (a) who has derived interest, a dividend, royalty, technical fee, natural resource amount, director’s fee, or insurance premium, that is Botswana source income; (b) who is an entertainer, or a group of non-resident entertainers,who have derived an entertainment fee from the participation by the entertainer or group, in a performance taking place in Botswana; … (6) The tax payable under subsection (1) (a) or (b) is discharged, if the amount of the tax has been withheld from the payment of the income in accordance with section 132. … 6. The rates of non-resident withholding tax are — Type of Income Rate (a) Dividends 10 per cent (b) Interest 15 per cent (c) Royalties 15 per cent (d) Technical fees 15 per cent (e) Insurance premium 5 per cent B.944 (f) Payments to entertainer … “tax year” means a period of 12 months beginning on 1st July and ending on 30th June; … 123. (1) A taxpayer liable for income tax shall lodge an income tax return for each tax year – (a) in the case of a company, within four months after the end of the accounting period; or (b) in the case of any other person, within three months after the end of the tax year."
+  },
+  {
+   "url": "https://www.burs.org.bw/index.php/tax/tax-laws-2026?download=958%3Avalue-added-tax-act-2026",
+   "title": "Value Added Tax Act, 2026",
+   "read": "2026-11-01",
+   "kind": "primary",
+   "said": "(2) The rate of VAT shall be, for — (a) a taxable supply that is a zero-rated supply, zero per cent; and (b) any other taxable supply, a taxable import, or a reverse charged supply, a rate of 14 per cent. … 2. For purposes of section 12 (2), the amount is P1 000 000."
+  }
+ ],
+ "blockers": []
+}

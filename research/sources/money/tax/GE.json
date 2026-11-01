@@ -1,0 +1,218 @@
+{
+ "topic": "tax.GE",
+ "read": "2026-11-01",
+ "note": "Read 2026-11-01 at the owner's word (\"Build those first 3 starting with ledger first\"; of the 21 countries read first: \"It should cover across every country\"; \"Retry the blocked tax facts once all countries land\"): the tax on a screen worker's pay in Georgia: a resident's income tax, social contributions, what is withheld at source, a non-resident artiste's withholding, an author's treatment, VAT and the tax year. Research and retry subagents (workbench/briefs/BRIEF-tax.md, BRIEF-tax-retry.md), every quote checked by the lead against its saved page.",
+ "figures": [
+  {
+   "item": "residents",
+   "finding": "A resident pays a flat 20% personal income tax on Georgian-source income, with no tax-free allowance or regional layer; small-business status (turnover under GEL 500,000) gives a 1% rate on business income.",
+   "value": {
+    "currency": "GEL",
+    "brackets": [
+     {
+      "from": 0,
+      "to": null,
+      "rate": 0.2
+     }
+    ],
+    "allowance": 0,
+    "regional": null,
+    "smallBusiness": {
+     "turnoverUnder": 500000
+    }
+   },
+   "applies": "2026; the Tax Code text (matsne.gov.ge) refused this environment ('Access Denied', 2026-11-01), so the rate is taken from PwC quoting it.",
+   "sources": [
+    {
+     "src": 0,
+     "said": "Personal income is subject to a flat tax rate of 20%."
+    },
+    {
+     "src": 0,
+     "said": "Individual entrepreneurs with annual turnover of less than GEL 500,000 may register as"
+    }
+   ]
+  },
+  {
+   "item": "year",
+   "finding": "The tax year is the calendar year; a return is due before 1 April of the next year from those whose income was not taxed at source; an entrepreneur pays estimated tax in four instalments (15 May, 15 July, 15 September, 15 December).",
+   "value": {
+    "start": "01-01",
+    "end": "12-31",
+    "returnDue": "03-31 of the following year",
+    "instalments": [
+     "05-15",
+     "07-15",
+     "09-15",
+     "12-15"
+    ]
+   },
+   "applies": "Individuals.",
+   "sources": [
+    {
+     "src": 1,
+     "said": "The tax year in Georgia is the calendar year."
+    },
+    {
+     "src": 1,
+     "said": "submit individual income tax declarations to the tax authorities at their place of registration before 1 April (for income received in the previous calendar year)"
+    },
+    {
+     "src": 1,
+     "said": "An entrepreneur individual has to make estimated payments of PIT amounts proportionally in four instalments (by 15 May, 15 July, 15 September, and 15 December)."
+    }
+   ]
+  },
+  {
+   "item": "social",
+   "finding": "Georgia has no social security contributions; the funded pension takes 2% of salary from the employee and 2% from the employer (a self-employed person pays 4%), and the state adds 2% (to GEL 24,000) or 1% (GEL 24,000 to 60,000).",
+   "value": {
+    "currency": "GEL",
+    "employee": 0.02,
+    "employer": 0.02,
+    "selfEmployed": 0.04,
+    "state": [
+     {
+      "from": 0,
+      "to": 24000,
+      "rate": 0.02
+     },
+     {
+      "from": 24000,
+      "to": 60000,
+      "rate": 0.01
+     }
+    ],
+    "stateCapIncome": 60000
+   },
+   "applies": "2026; pension participation is mandatory for employees, voluntary for the self-employed.",
+   "sources": [
+    {
+     "src": 2,
+     "said": "There are no social security contributions in Georgia."
+    },
+    {
+     "src": 2,
+     "said": "Each employer will transfer 2% of the employee’s salary income to one's private pension account on behalf of its employee. Each self-employed individual will transfer 4% of one's annual income to the individual pension account."
+    },
+    {
+     "src": 2,
+     "said": "The government will transfer (i) 2% of the income of the participant to one's private pension account when the annual salary of the participant/income of the self-employed individual is less than GEL 24,000 and (ii) 1% of the income of the participant when the annual salary of the participant/income of the self-employed individual is between GEL 24,000 and GEL 60,000."
+    }
+   ]
+  },
+  {
+   "item": "withholding",
+   "finding": "Salary is taxed at the source of payment (the 20% rate); only those whose income was not taxed at source file a return.",
+   "value": {
+    "rate": 0.2,
+    "atSource": true
+   },
+   "applies": "Employment income paid by a Georgian payer.",
+   "sources": [
+    {
+     "src": 1,
+     "said": "for whom income is not taxed at the source of payment in Georgia."
+    }
+   ]
+  },
+  {
+   "item": "vat",
+   "finding": "A freelancer's fee bears 18% VAT once taxable turnover exceeds GEL 100,000 in any continuous 12 months.",
+   "value": {
+    "currency": "GEL",
+    "standard": 0.18,
+    "threshold": 100000,
+    "period": "any continuous 12 months"
+   },
+   "applies": "2026.",
+   "sources": [
+    {
+     "src": 2,
+     "said": "The standard VAT rate is 18% and applies to the sale of all goods and services supplied in Georgia carried out as an economic activity."
+    },
+    {
+     "src": 3,
+     "said": "A person established in Georgia must register as a VAT payer when its taxable turnover exceeds 100,000 Georgian lari (GEL) in any continuous 12-month period."
+    }
+   ]
+  },
+  {
+   "item": "nonResident",
+   "finding": "A non-resident's income from services rendered in Georgia, not through a permanent establishment, bears 10% withholding (stated for non-resident enterprises; royalties 5%).",
+   "value": {
+    "servicesRate": 0.1,
+    "royalties": 0.05,
+    "blacklisted": 0.15,
+    "statedFor": "non-resident enterprises"
+   },
+   "applies": "Non-resident payees without a PE; the individual performer's rate under Article 17 terms was not found stated separately.",
+   "sources": [
+    {
+     "src": 4,
+     "said": "Income from services rendered in Georgia 10 Other Georgian-source income 10"
+    },
+    {
+     "src": 4,
+     "said": "Dividends 5 Interest 5 Royalties 5"
+    }
+   ]
+  }
+ ],
+ "country": "GE",
+ "sources": [
+  {
+   "url": "https://taxsummaries.pwc.com/georgia/individual/taxes-on-personal-income",
+   "title": "PwC Worldwide Tax Summaries, Georgia, Individual - Taxes on personal income (last reviewed 2 September 2026)",
+   "read": "2026-11-01",
+   "kind": "secondary",
+   "quotes": "https://matsne.gov.ge/en/document/view/1043717",
+   "said": "Personal income is subject to a flat tax rate of 20%. … Individual entrepreneurs with annual turnover of less than GEL 500,000 may register as"
+  },
+  {
+   "url": "https://taxsummaries.pwc.com/georgia/individual/tax-administration",
+   "title": "PwC Worldwide Tax Summaries, Georgia, Individual - Tax administration (last reviewed 2 September 2026)",
+   "read": "2026-11-01",
+   "kind": "secondary",
+   "quotes": "https://matsne.gov.ge/en/document/view/1043717",
+   "said": "The tax year in Georgia is the calendar year. … submit individual income tax declarations to the tax authorities at their place of registration before 1 April (for income received in the previous calendar year) … An entrepreneur individual has to make estimated payments of PIT amounts proportionally in four instalments (by 15 May, 15 July, 15 September, and 15 December). … for whom income is not taxed at the source of payment in Georgia."
+  },
+  {
+   "url": "https://taxsummaries.pwc.com/georgia/individual/other-taxes",
+   "title": "PwC Worldwide Tax Summaries, Georgia, Individual - Other taxes (last reviewed 2 September 2026)",
+   "read": "2026-11-01",
+   "kind": "secondary",
+   "quotes": "https://pensions.ge/en/",
+   "said": "There are no social security contributions in Georgia. … Each employer will transfer 2% of the employee’s salary income to one's private pension account on behalf of its employee. Each self-employed individual will transfer 4% of one's annual income to the individual pension account. … The government will transfer (i) 2% of the income of the participant to one's private pension account when the annual salary of the participant/income of the self-employed individual is less than GEL 24,000 and (ii) 1% of the income of the participant when the annual salary of the participant/income of the self-employed individual is between GEL 24,000 and GEL 60,000. … The standard VAT rate is 18% and applies to the sale of all goods and services supplied in Georgia carried out as an economic activity."
+  },
+  {
+   "url": "https://taxsummaries.pwc.com/georgia/corporate/other-taxes",
+   "title": "PwC Worldwide Tax Summaries, Georgia, Corporate - Other taxes (last reviewed 2 September 2026)",
+   "read": "2026-11-01",
+   "kind": "secondary",
+   "quotes": "https://matsne.gov.ge/en/document/view/1043717",
+   "said": "A person established in Georgia must register as a VAT payer when its taxable turnover exceeds 100,000 Georgian lari (GEL) in any continuous 12-month period."
+  },
+  {
+   "url": "https://taxsummaries.pwc.com/georgia/corporate/withholding-taxes",
+   "title": "PwC Worldwide Tax Summaries, Georgia, Corporate - Withholding taxes (last reviewed 2 September 2026)",
+   "read": "2026-11-01",
+   "kind": "secondary",
+   "quotes": "https://matsne.gov.ge/en/document/view/1043717",
+   "said": "Income from services rendered in Georgia 10 Other Georgian-source income 10 … Dividends 5 Interest 5 Royalties 5"
+  }
+ ],
+ "blockers": [
+  {
+   "item": "nonResident",
+   "sought": "Rate and finality of the tax withheld from a non-resident individual performer's or director's fee for work in Georgia (Tax Code art. on non-resident individuals)",
+   "tried": {
+    "institution": "rs.ge/en: HTTP 404 2026-11-01; matsne.gov.ge Tax Code 1043717 (two publications): 'Access Denied' page, not read another way || 2026-11-01 retry: rs.ge home answers (HTTP 200, 115 kB, script-built menus); matsne.gov.ge/ka/document/view/1043717 again returns the 840-byte Access Denied page; not read another way.",
+    "official-register": "matsne.gov.ge is the official legislative register; refused as above || 2026-11-01 retry: matsne.gov.ge is the only official consolidation of the Tax Code; refused as above.",
+    "web-search": "2026-11-01 'Georgia Revenue Service personal income tax 20% rate rs.ge English VAT registration 100,000 GEL': secondary results only, none on non-resident individuals' artistes' withholding || 2026-11-01 retry: WebSearch refused by the tool on 2026-11-01: the turn's shared 200-search limit was reached before this query; no other search route used.",
+    "trade-press": "PwC Georgia individual and corporate summaries read 2026-11-01: corporate WHT table only (services 10%); no individual artistes' rule || 2026-11-01 retry: Deloitte Georgia Highlights 2026 read (saved GE-deloitte-2026.pdf): resident and non-resident individuals are taxed on Georgian-source income; employment and self-employment income at a flat 20%; technical service fees to non-residents withheld at 10%; nothing on a non-resident performer's fee or its finality.",
+    "archive": "not tried for matsne: the brief forbids reading a refused page another way || 2026-11-01 retry: archive.org/wayback/available lists a snapshot of matsne.gov.ge/en/document/view/1043717, but the brief bars reading a refused page another way, and web.archive.org resets https and returns 403 on http here anyway (2026-11-01)."
+   }
+  }
+ ]
+}

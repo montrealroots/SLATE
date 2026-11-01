@@ -1,0 +1,243 @@
+{
+ "topic": "tax.PA",
+ "read": "2026-11-01",
+ "note": "Read 2026-11-01 at the owner's word (\"Build those first 3 starting with ledger first\"; of the 21 countries read first: \"It should cover across every country\"; \"Retry the blocked tax facts once all countries land\"): the tax on a screen worker's pay in Panama: a resident's income tax, social contributions, what is withheld at source, a non-resident artiste's withholding, an author's treatment, VAT and the tax year. Research and retry subagents (workbench/briefs/BRIEF-tax.md, BRIEF-tax-retry.md), every quote checked by the lead against its saved page.",
+ "figures": [
+  {
+   "item": "residents",
+   "finding": "Panama taxes Panamanian-source income only: 0% to $11,000, 15% on the excess to $50,000, and $5,850 plus 25% above; there is no local income tax.",
+   "value": {
+    "currency": "USD",
+    "brackets": [
+     {
+      "from": 0,
+      "to": 11000,
+      "rate": 0
+     },
+     {
+      "from": 11000,
+      "to": 50000,
+      "rate": 0.15
+     },
+     {
+      "from": 50000,
+      "to": null,
+      "rate": 0.25
+     }
+    ],
+    "allowance": 11000,
+    "regional": null,
+    "basis": "territorial"
+   },
+   "applies": "Citizens, residents and non-residents on Panamanian-source income",
+   "sources": [
+    {
+     "src": 0,
+     "said": "Taxable income (USD*) Tax on column 1 (USD) Tax on excess (%) Over (column 1) Not over 0 11,000 0 0 11,000 50,000 0 15 50,000 5,850 25 * United States dollars Local income taxes There are no local taxes on income."
+    }
+   ]
+  },
+  {
+   "item": "social",
+   "finding": "From 1 April 2025 the employee pays social security of 9.75% and the employer 13.25% (14.25% from 1 March 2027, 15.25% from 1 March 2029), with no ceiling; educational insurance adds 1.25% (employee) and 1.50% (employer).",
+   "value": {
+    "currency": "USD",
+    "employee": {
+     "socialSecurity": 0.0975,
+     "education": 0.0125
+    },
+    "employer": {
+     "socialSecurity": [
+      {
+       "from": "2025-04-01",
+       "rate": 0.1325
+      },
+      {
+       "from": "2027-03-01",
+       "rate": 0.1425
+      },
+      {
+       "from": "2029-03-01",
+       "rate": 0.1525
+      }
+     ],
+     "education": 0.015
+    },
+    "ceiling": null
+   },
+   "applies": "Employees",
+   "sources": [
+    {
+     "src": 1,
+     "said": "Effective 1 April 2025, social security tax is assessed at a rate of 9.75% for employees. For employers, contributions are subject to a progressive rate, starting at 13.25% from 1 April 2025, increasing to 14.25% from 1 March 2027, and reaching 15.25% from 1 March 2029 on wages … There is no maximum limit on the taxable amount. Educational insurance tax Educational insurance tax is assessed at the rate of 1.25% for employees and 1.50% for employers, on salaries and wages paid."
+    }
+   ]
+  },
+  {
+   "item": "withholding",
+   "finding": "The employer withholds income tax from wages each month; an employee with one wage source and tax so withheld need not file; others pay estimated tax in three instalments (30 June, 30 September, 31 December).",
+   "value": {
+    "wages": "monthly employer withholding",
+    "estimatedInstalments": [
+     "06-30",
+     "09-30",
+     "12-31"
+    ]
+   },
+   "applies": "Employees and other taxpayers",
+   "sources": [
+    {
+     "src": 2,
+     "said": "There is WHT from wages, salaries, and other remuneration for personal services. The total amount of the taxpayer's estimated income tax is payable annually in three equal instalments on 30 June, 30 September, and 31 December."
+    }
+   ]
+  },
+  {
+   "item": "nonResident",
+   "finding": "Tax on any income paid to a non-resident must be withheld by the payer; royalties and service fees paid abroad bear 25% on 50% of the remittance, an effective 12.5%.",
+   "value": {
+    "rate": 0.125,
+    "base": "50% of the payment at 25%",
+    "final": "withheld by payer"
+   },
+   "applies": "Non-residents (performers' fees by the general rule; no artistes rule read)",
+   "sources": [
+    {
+     "src": 0,
+     "said": "Non-residents are taxed only on income from Panamanian sources, and the tax on any type of income paid to a non-resident must be withheld by the payer."
+    },
+    {
+     "src": 3,
+     "said": "Royalties and commissions on services paid to foreign entities are taxed through the application of the corresponding tax rate (i.e. 25%) over 50% of remittance under the concept of WHT (effective tax rate is 12.5%)."
+    }
+   ]
+  },
+  {
+   "item": "authors",
+   "finding": "Royalties paid abroad bear the same effective 12.5% withholding; no special regime for a resident author was read.",
+   "value": {
+    "nonResidentRoyalties": 0.125
+   },
+   "applies": "Authors",
+   "sources": [
+    {
+     "src": 3,
+     "said": "Recipient Dividends (%) Interest (%) Royalties (%) Foreign corporations 5/10/20* 12.5 12.5"
+    }
+   ]
+  },
+  {
+   "item": "vat",
+   "finding": "Services bear ITBMS (Panama's VAT) at 7% (10% on hotel stays and alcohol, 15% on tobacco).",
+   "value": {
+    "rate": 0.07,
+    "other": {
+     "hotelsAlcohol": 0.1,
+     "tobacco": 0.15
+    },
+    "threshold": null
+   },
+   "applies": "Taxable supplies",
+   "sources": [
+    {
+     "src": 4,
+     "said": "The general tax rate is currently 7%. Alcoholic beverages and hotel accommodation are taxed at 10%, and tobacco and tobacco-derive"
+    }
+   ]
+  },
+  {
+   "item": "year",
+   "finding": "The tax year is the calendar year; a return is due by 15 March of the following year.",
+   "value": {
+    "start": "01-01",
+    "end": "12-31",
+    "returnDue": "03-15"
+   },
+   "applies": "Taxpayers other than single-source wage earners",
+   "sources": [
+    {
+     "src": 2,
+     "said": "Tax returns are filed on a calendar-year basis. Tax returns All taxpayers, except employees having only one source of income from wages, salary, or other remuneration for personal services and whose monthly income tax is deducted by the employer, must file a tax return by 15 March of the following year."
+    }
+   ]
+  }
+ ],
+ "country": "PA",
+ "sources": [
+  {
+   "url": "https://taxsummaries.pwc.com/panama/individual/taxes-on-personal-income",
+   "title": "Panama - Individual - Taxes on personal income (PwC, reviewed 4 August 2026)",
+   "read": "2026-11-01",
+   "kind": "secondary",
+   "quotes": "https://dgi.mef.gob.pa/",
+   "said": "Taxable income (USD*) Tax on column 1 (USD) Tax on excess (%) Over (column 1) Not over 0 11,000 0 0 11,000 50,000 0 15 50,000 5,850 25 * United States dollars Local income taxes There are no local taxes on income. … Non-residents are taxed only on income from Panamanian sources, and the tax on any type of income paid to a non-resident must be withheld by the payer."
+  },
+  {
+   "url": "https://taxsummaries.pwc.com/panama/individual/other-taxes",
+   "title": "Panama - Individual - Other taxes (PwC, reviewed 4 August 2026)",
+   "read": "2026-11-01",
+   "kind": "secondary",
+   "quotes": "https://dgi.mef.gob.pa/",
+   "said": "Effective 1 April 2025, social security tax is assessed at a rate of 9.75% for employees. For employers, contributions are subject to a progressive rate, starting at 13.25% from 1 April 2025, increasing to 14.25% from 1 March 2027, and reaching 15.25% from 1 March 2029 on wages … There is no maximum limit on the taxable amount. Educational insurance tax Educational insurance tax is assessed at the rate of 1.25% for employees and 1.50% for employers, on salaries and wages paid."
+  },
+  {
+   "url": "https://taxsummaries.pwc.com/panama/individual/tax-administration",
+   "title": "Panama - Individual - Tax administration (PwC, reviewed 4 August 2026)",
+   "read": "2026-11-01",
+   "kind": "secondary",
+   "quotes": "https://dgi.mef.gob.pa/",
+   "said": "There is WHT from wages, salaries, and other remuneration for personal services. The total amount of the taxpayer's estimated income tax is payable annually in three equal instalments on 30 June, 30 September, and 31 December. … Tax returns are filed on a calendar-year basis. Tax returns All taxpayers, except employees having only one source of income from wages, salary, or other remuneration for personal services and whose monthly income tax is deducted by the employer, must file a tax return by 15 March of the following year."
+  },
+  {
+   "url": "https://taxsummaries.pwc.com/panama/corporate/withholding-taxes",
+   "title": "Panama - Corporate - Withholding taxes (PwC, reviewed 4 August 2026)",
+   "read": "2026-11-01",
+   "kind": "secondary",
+   "quotes": "https://dgi.mef.gob.pa/",
+   "said": "Royalties and commissions on services paid to foreign entities are taxed through the application of the corresponding tax rate (i.e. 25%) over 50% of remittance under the concept of WHT (effective tax rate is 12.5%). … Recipient Dividends (%) Interest (%) Royalties (%) Foreign corporations 5/10/20* 12.5 12.5"
+  },
+  {
+   "url": "https://taxsummaries.pwc.com/panama/corporate/other-taxes",
+   "title": "Panama - Corporate - Other taxes (PwC, reviewed 4 August 2026)",
+   "read": "2026-11-01",
+   "kind": "secondary",
+   "quotes": "https://dgi.mef.gob.pa/",
+   "said": "The general tax rate is currently 7%. Alcoholic beverages and hotel accommodation are taxed at 10%, and tobacco and tobacco-derive"
+  }
+ ],
+ "blockers": [
+  {
+   "item": "vat",
+   "sought": "The ITBMS registration threshold for a freelancer (turnover below which a provider need not charge ITBMS)",
+   "tried": {
+    "institution": "2026-11-01: dgi.mef.gob.pa/ITBMS.php read: \"¡Estamos trabajando en ello!\" maintenance page, no content || 2026-11-01 retry: dgi.mef.gob.pa answers (HTTP 200, 53 KB home page) but its ITBMS page was in maintenance in the first pass; css.gob.pa HTTP 403 (not read another way)",
+    "official-register": "2026-11-01: Código Fiscal text not reached (DGI site in maintenance) || 2026-11-01 retry: Gaceta Oficial texts not reached this turn",
+    "web-search": "2026-11-01: not found in PwC Panama pages read || 2026-11-01 retry: WebSearch refused by the tool: this turn's shared limit of 200 searches was used up by the agents (2026-11-01)",
+    "trade-press": "2026-11-01: PwC Panama summary read and cited || 2026-11-01 retry: none found this turn",
+    "archive": "2026-11-01: web.archive.org unreachable through the proxy this session || 2026-11-01 retry: web.archive.org resets the connection from this environment (2026-11-01)"
+   }
+  },
+  {
+   "item": "nonResident",
+   "sought": "A specific rule for non-resident performers (artistas extranjeros) working in Panama: rate, base and finality",
+   "tried": {
+    "institution": "2026-11-01: dgi.mef.gob.pa in maintenance (see ITBMS page) || 2026-11-01 retry: dgi.mef.gob.pa answers (HTTP 200, 53 KB home page) but its ITBMS page was in maintenance in the first pass; css.gob.pa HTTP 403 (not read another way)",
+    "official-register": "2026-11-01: Código Fiscal text not reached (DGI site in maintenance) || 2026-11-01 retry: Gaceta Oficial texts not reached this turn",
+    "web-search": "2026-11-01: not found in PwC Panama pages read || 2026-11-01 retry: WebSearch refused by the tool: this turn's shared limit of 200 searches was used up by the agents (2026-11-01)",
+    "trade-press": "2026-11-01: PwC Panama summary read and cited || 2026-11-01 retry: none found this turn",
+    "archive": "2026-11-01: web.archive.org unreachable through the proxy this session || 2026-11-01 retry: web.archive.org resets the connection from this environment (2026-11-01)"
+   }
+  },
+  {
+   "item": "social",
+   "sought": "Social security for an independent (self-employed) screen worker",
+   "tried": {
+    "institution": "2026-11-01: www.css.gob.pa returns HTTP 403 to this environment, not read another way; PwC gives employee and employer rates only || 2026-11-01 retry: dgi.mef.gob.pa answers (HTTP 200, 53 KB home page) but its ITBMS page was in maintenance in the first pass; css.gob.pa HTTP 403 (not read another way)",
+    "official-register": "2026-11-01: Gaceta Oficial 25453 (2005) defines the independent worker but sets no current rate; Ley 462 de 2025 text not read || 2026-11-01 retry: Gaceta Oficial texts not reached this turn",
+    "web-search": "2026-11-01: \"Panamá trabajador independiente cuota Caja de Seguro Social porcentaje 2026 Ley 462 independientes\": no rate for independents found || 2026-11-01 retry: WebSearch refused by the tool: this turn's shared limit of 200 searches was used up by the agents (2026-11-01)",
+    "trade-press": "2026-11-01: Revista E&N says Ley 462 extends the duty to contribute to independents, no rate || 2026-11-01 retry: none found this turn",
+    "archive": "2026-11-01: web.archive.org unreachable through the proxy this session || 2026-11-01 retry: web.archive.org resets the connection from this environment (2026-11-01)"
+   }
+  }
+ ]
+}

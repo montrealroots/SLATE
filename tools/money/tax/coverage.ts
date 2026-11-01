@@ -33,5 +33,5 @@ export function coverageOf(root: string): string {
   const all = Object.keys(read('src/world/gazetteer/countries.json') as object);
   const tax = read(OUTPUT) as Tax;
   const facts = new Map((read('research/register.json') as { entries: { id: string; fact: string }[] }).entries.map((e) => [e.fact, e.id] as const));
-  return serializeCoverage(taxCoverage(all, new Set(Object.keys(tax.countries)), facts));
+  return serializeCoverage(taxCoverage(all, new Set([...Object.keys(tax.countries), ...tax.noState]), facts));
 }

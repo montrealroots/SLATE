@@ -1,0 +1,210 @@
+{
+ "topic": "tax.MS",
+ "read": "2026-11-01",
+ "note": "Read 2026-11-01 at the owner's word (\"Build those first 3 starting with ledger first\"; of the 21 countries read first: \"It should cover across every country\"; \"Retry the blocked tax facts once all countries land\"): the tax on a screen worker's pay in Montserrat: a resident's income tax, social contributions, what is withheld at source, a non-resident artiste's withholding, an author's treatment, VAT and the tax year. Research and retry subagents (workbench/briefs/BRIEF-tax.md, BRIEF-tax-retry.md), every quote checked by the lead against its saved page.",
+ "figures": [
+  {
+   "item": "follows",
+   "finding": "Montserrat, a British overseas territory, levies its own income tax under the Income and Corporation Tax Act; United Kingdom tax does not apply.",
+   "value": {
+    "sovereign": "GB",
+    "takesSovereignTax": false,
+    "levies": "own income tax"
+   },
+   "applies": "Montserrat",
+   "sources": [
+    {
+     "src": 0,
+     "said": "The rates of income tax for any year of assessment commencing on or after 1 January 2024 are as follows"
+    }
+   ]
+  },
+  {
+   "item": "residents",
+   "finding": "From 2024 a resident's chargeable income is taxed after a personal allowance of EC$18,000: 5% from $18,001 to $25,000, 20% to $35,000, 25% to $45,000, 30% to $150,000 and 40% above.",
+   "value": {
+    "currency": "XCD",
+    "since": 2024,
+    "allowance": 18000,
+    "brackets": [
+     {
+      "from": 0,
+      "to": 18000,
+      "rate": 0
+     },
+     {
+      "from": 18000,
+      "to": 25000,
+      "rate": 0.05
+     },
+     {
+      "from": 25000,
+      "to": 35000,
+      "rate": 0.2
+     },
+     {
+      "from": 35000,
+      "to": 45000,
+      "rate": 0.25
+     },
+     {
+      "from": 45000,
+      "to": 150000,
+      "rate": 0.3
+     },
+     {
+      "from": 150000,
+      "to": null,
+      "rate": 0.4
+     }
+    ],
+    "regional": null
+   },
+   "applies": "Resident individuals",
+   "sources": [
+    {
+     "src": 0,
+     "said": "(g) $18,000 on any year of assessment commencing on or after 1 January 2024. … The rates of income tax for any year of assessment commencing on or after 1 January 2024 are as follows— On every dollar of the first $7,000 of chargeable income, viz. from $18,001 to $25,000 – 5 cents in the dollar; On every dollar of the next $10,000 of chargeable income, viz. from $25,001 to $35,000 – 20 cents in the dollar; … On every dollar of the next $10,000 of chargeable income, viz. from $35,001 to $45,000 – 25 cents in the dollar; On every dollar of the next $105,000 of chargeable income, viz. from $45,001 to $150,000 – 30 cents in the dollar; On every dollar beyond $150,000 of chargeable income – 40 cents in the dollar."
+    }
+   ]
+  },
+  {
+   "item": "social",
+   "finding": "From 1 January 2026 an employee pays 7% of insurable earnings and the employer 8% (7% plus 1% employment injury), on earnings up to XCD 4,000 a month or 923 a week; a self-employed person pays 12% of the weekly income of the category he selects (the 2023 rates of 5.5% and 6.5% the Fund's page still shows were steps in a schedule rising each January).",
+   "value": {
+    "currency": "XCD",
+    "employee": 0.07,
+    "employer": 0.08,
+    "employerIncludesEmploymentInjury": 0.01,
+    "ceilingMonthly": 4000,
+    "ceilingWeekly": 923,
+    "selfEmployed": 0.12,
+    "from": "2026-01-01"
+   },
+   "applies": "1 January 2026 and after.",
+   "sources": [
+    {
+     "src": 1,
+     "said": "1 January 2026 7% of insurable earnings and after up to a maximum of $4,000 per month or $923 per week, calculated to the nearest dollar … 1 January 2026 8% (7% +1% and after employment injury) of insurable earnings"
+    },
+    {
+     "src": 1,
+     "said": "(2) The rate of contribution payable by a self-employed person is as follows— Date Rate 1 April 2022 – 31 December 2022 9% 1 January 2023 – 31 December 2023 10% 1 January 2024 – 31 December 2024 11% 1 January 2025 – 31 December 2025 11½% 1 January 2026 and after 12%"
+    },
+    {
+     "src": 2,
+     "said": "As of 1st. January 2023 the rates of employee contributions are calculated as percentage deductions of salary where the Employee contributes 5.5% and the Employer 6.5%."
+    }
+   ]
+  },
+  {
+   "item": "withholding",
+   "finding": "Tax is deducted by the payer from any payment of emoluments under the PAYE rules.",
+   "value": {
+    "paye": true
+   },
+   "applies": "Employees",
+   "sources": [
+    {
+     "src": 0,
+     "said": "51. (1) Notwithstanding anything in this Act contained, on the making of any payment of or on account of any emoluments, tax shall, subject to and in accordance with any rules made under section 41, be deducted or withheld by the person making the payment."
+    }
+   ]
+  },
+  {
+   "item": "nonResident",
+   "finding": "Fees paid to a non-resident public entertainer bear 20% deducted from the gross payment, as the final liability on that income (other income payments and independent services by non-residents also 20%).",
+   "value": {
+    "rate": 0.2,
+    "base": "gross payment",
+    "final": true
+   },
+   "applies": "Non-residents (Schedule 1)",
+   "sources": [
+    {
+     "src": 0,
+     "said": "(2) This Schedule also applies to any payment to a non-resident in respect of independent personal services performed in Montserrat other than by way of carrying on a business in Montserrat through a permanent establishment in Montserrat. … (d) fees payable to public entertainers at the rate of 20%; (e) any other payments of the kind specified in paragraph 1 at the rate of 20%, of every dollar of such payment and shall be the final liability in respect of such income."
+    }
+   ]
+  },
+  {
+   "item": "authors",
+   "finding": "Royalties (including for the use of copyright) paid to a non-resident bear the 20% final deduction; no resident-author regime was found in the Act.",
+   "value": {
+    "nonResidentRoyalties": 0.2
+   },
+   "applies": "Authors",
+   "sources": [
+    {
+     "src": 0,
+     "said": "amount paid as consideration for the use of, or for the privilege of using, any copyright, patent, design, secret process or formula, trade-mark, or other like property"
+    }
+   ]
+  },
+  {
+   "item": "year",
+   "finding": "The year of assessment is the calendar year; a resident files a return on or before 31 March each year.",
+   "value": {
+    "currency": "XCD",
+    "start": "01-01",
+    "end": "12-31",
+    "returnDue": "03-31"
+   },
+   "applies": "Residents",
+   "sources": [
+    {
+     "src": 0,
+     "said": "It shall be the duty of every person who is a resident, trust or a resident body of persons or who receives an income to deliver to the Comptroller on or before 31 March in each year … tax return for the period: 1 January to 31 December"
+    }
+   ]
+  },
+  {
+   "item": "vat",
+   "finding": "Montserrat has no VAT or general sales tax on services: its consumption tax is levied only on goods imported for consumption in Montserrat and on goods manufactured or produced there, so a freelancer's fee bears none.",
+   "value": {
+    "vat": null,
+    "consumptionTax": "goods imported or produced only",
+    "servicesTaxed": false
+   },
+   "applies": "Customs Duties and Consumption Tax Act, Cap. 17.05 (revision date 1 January 2025), posted February 2026.",
+   "sources": [
+    {
+     "src": 3,
+     "said": "Imposition of Consumption Tax 5. (1) Subject to subsection (5), there is levied a Consumption Tax on all goods imported into Montserrat for the purpose of consumption in Montserrat, and on all goods manufactured or produced in Montserrat."
+    }
+   ]
+  }
+ ],
+ "country": "MS",
+ "sources": [
+  {
+   "url": "https://www.gov.ms/wp-content/uploads/2026/02/17.01-Income-and-Incorporation-Tax-Act.pdf",
+   "title": "Income and Corporation Tax Act, Cap. 17.01, Laws of Montserrat (revision date 1 January 2025)",
+   "read": "2026-11-01",
+   "kind": "primary",
+   "said": "The rates of income tax for any year of assessment commencing on or after 1 January 2024 are as follows … (g) $18,000 on any year of assessment commencing on or after 1 January 2024. … The rates of income tax for any year of assessment commencing on or after 1 January 2024 are as follows— On every dollar of the first $7,000 of chargeable income, viz. from $18,001 to $25,000 – 5 cents in the dollar; On every dollar of the next $10,000 of chargeable income, viz. from $25,001 to $35,000 – 20 cents in the dollar; … On every dollar of the next $10,000 of chargeable income, viz. from $35,001 to $45,000 – 25 cents in the dollar; On every dollar of the next $105,000 of chargeable income, viz. from $45,001 to $150,000 – 30 cents in the dollar; On every dollar beyond $150,000 of chargeable income – 40 cents in the dollar. … 51. (1) Notwithstanding anything in this Act contained, on the making of any payment of or on account of any emoluments, tax shall, subject to and in accordance with any rules made under section 41, be deducted or withheld by the person making the payment. … (2) This Schedule also applies to any payment to a non-resident in respect of independent personal services performed in Montserrat other than by way of carrying on a business in Montserrat through a permanent establishment in Montserrat. … (d) fees payable to public entertainers at the rate of 20%; (e) any other payments of the kind specified in paragraph 1 at the rate of 20%, of every dollar of such payment and shall be the final liability in respect of such income. … amount paid as consideration for the use of, or for the privilege of using, any copyright, patent, design, secret process or formula, trade-mark, or other like property … It shall be the duty of every person who is a resident, trust or a resident body of persons or who receives an income to deliver to the Comptroller on or before 31 March in each year … tax return for the period: 1 January to 31 December"
+  },
+  {
+   "url": "https://www.gov.ms/wp-content/uploads/2026/02/18.09-Social-Security-Act.pdf",
+   "title": "Social Security Act, Cap. 18.09, Laws of Montserrat (revision date 1 January 2025), with the Social Security (Contributions) Regulations, Schedule as substituted by S.R.O. 8/2022",
+   "read": "2026-11-01",
+   "kind": "primary",
+   "said": "1 January 2026 7% of insurable earnings and after up to a maximum of $4,000 per month or $923 per week, calculated to the nearest dollar … 1 January 2026 8% (7% +1% and after employment injury) of insurable earnings … (2) The rate of contribution payable by a self-employed person is as follows— Date Rate 1 April 2022 – 31 December 2022 9% 1 January 2023 – 31 December 2023 10% 1 January 2024 – 31 December 2024 11% 1 January 2025 – 31 December 2025 11½% 1 January 2026 and after 12%"
+  },
+  {
+   "url": "https://socialsecurity.ms/employer/",
+   "title": "Employer (Montserrat Social Security Fund)",
+   "read": "2026-11-01",
+   "kind": "primary",
+   "said": "As of 1st. January 2023 the rates of employee contributions are calculated as percentage deductions of salary where the Employee contributes 5.5% and the Employer 6.5%."
+  },
+  {
+   "url": "https://www.gov.ms/wp-content/uploads/2026/02/17.05-Customs-Duties-and-Consumption-Tax-Act.pdf",
+   "title": "Customs Duties and Consumption Tax Act, Cap. 17.05, Laws of Montserrat (revision date 1 January 2025)",
+   "read": "2026-11-01",
+   "kind": "primary",
+   "said": "Imposition of Consumption Tax 5. (1) Subject to subsection (5), there is levied a Consumption Tax on all goods imported into Montserrat for the purpose of consumption in Montserrat, and on all goods manufactured or produced in Montserrat."
+  }
+ ],
+ "blockers": []
+}

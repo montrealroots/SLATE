@@ -1,0 +1,80 @@
+{
+ "topic": "markets.producer.GE",
+ "read": "2026-11-01",
+ "note": "Read 2026-11-01 at the owner's word (\"Want it done now\", of the markets of every country beyond the 21; then \"Retry the blocked market facts once all countries land\"): the terms a producer works on in Georgia. Research, retry and web-search subagents (workbench/briefs/BRIEF-markets-world.md, -retry.md, -search.md), every quote checked by the lead against its saved page.",
+ "figures": [
+  {
+   "item": "incentive",
+   "finding": "Film in Georgia (Enterprise Georgia) pays a 20% cash rebate on qualified local spend paid to local companies, plus a 2-5% uplift for projects that promote Georgia and pass a cultural test; minimum spend is GEL 500,000 for film and TV (GEL 300,000 for documentary, reality and commercials); a rebate up to GEL 1 million is approved automatically, more needs the government's approval; a local production company and a CPA audit are required and production must finish within 24 months.",
+   "value": {
+    "name": "Film in Georgia cash rebate",
+    "rate": 0.2,
+    "uplift": [
+     0.02,
+     0.05
+    ],
+    "currency": "GEL",
+    "minSpend": {
+     "filmTV": 500000,
+     "documentaryRealityCommercial": 300000
+    },
+    "automaticApprovalUpTo": 1000000,
+    "aboveThat": "special approval of the government of Georgia",
+    "localProductionCompany": true,
+    "cpaAudit": true,
+    "completeWithinMonths": 24,
+    "decisionWithinDays": 30
+   },
+   "applies": "Georgia, Georgian and foreign productions (as summarised 2026).",
+   "sources": [
+    {
+     "src": 0,
+     "said": "Spend 20% Qualified expenditure includes local costs directly related to production and paid to local companies. See the Cash Rebate Brochure for a list of qualified expenditures. Spend Uplifts 2-5% available if projects include elements designed to promote Georgia as a destination. To qualify, projects must meet the program’s “Cultural Test”. Minimum/Caps Minimum Spend 500K GEL (film and TV); 300K GEL (documentary, reality, and commercials)"
+    },
+    {
+     "src": 0,
+     "said": "If production qualifies for the rebate, a refund up to 1M GEL will be approved automatically. Projects requesting a higher rebate require special approval of the government of Georgia."
+    },
+    {
+     "src": 0,
+     "said": "Production in Georgia must be completed within 24 months after acceptance to the rebate program."
+    }
+   ]
+  }
+ ],
+ "country": "GE",
+ "sources": [
+  {
+   "url": "https://www.ep.com/production-incentives/europe/georgia",
+   "title": "Georgia production incentive (Entertainment Partners)",
+   "read": "2026-11-01",
+   "kind": "secondary",
+   "quotes": "https://www.enterprisegeorgia.gov.ge/en/business-development/filmingeorgia",
+   "said": "Spend 20% Qualified expenditure includes local costs directly related to production and paid to local companies. See the Cash Rebate Brochure for a list of qualified expenditures. Spend Uplifts 2-5% available if projects include elements designed to promote Georgia as a destination. To qualify, projects must meet the program’s “Cultural Test”. Minimum/Caps Minimum Spend 500K GEL (film and TV); 300K GEL (documentary, reality, and commercials) … If production qualifies for the rebate, a refund up to 1M GEL will be approved automatically. Projects requesting a higher rebate require special approval of the government of Georgia. … Production in Georgia must be completed within 24 months after acceptance to the rebate program."
+  }
+ ],
+ "blockers": [
+  {
+   "item": "incentive",
+   "sought": "Enterprise Georgia's own Film in Georgia page and brochure (to read the rate and caps at the source).",
+   "tried": {
+    "institution": "filmingeorgia.ge redirected to enterprisegeorgia.gov.ge: SSL_ERROR_SYSCALL; /en/business-development/filmingeorgia: connection reset. || Retry 2026-11-01: filmingeorgia.ge: 301 to enterprisegeorgia.gov.ge, which timed out (25 s); enterprisegeorgia.gov.ge: timeout; gnfc.ge/en: HTTP 500 (Laravel error page); gnfc.ge: 302",
+    "official-register": "Not located. || Retry 2026-11-01: Constitution of Georgia read: no screen pay rule",
+    "web-search": "2026-11-01: 'Film in Georgia cash rebate 20% 25% minimum qualifying expenditure GEL Enterprise Georgia 2025 2026'. || Retry 2026-11-01: not run again: the session's web-search budget is spent (2026-11-01, retry brief); institutions fetched directly instead || Web search 2026-11-01: not run: the search pass of 2026-11-01 reached this country after the turn's shared web-search budget (200 calls, shared by every agent) was used up again (about 19:20 UTC, after 27 searches for AD to CK); no result returned.",
+    "trade-press": "EP summary read (above). || Retry 2026-11-01: none quoting a primary found among pages read",
+    "archive": "web.archive.org connection reset by proxy this session. || Retry 2026-11-01: archive.org availability API for www.gnfc.ge/: 429 Too Many Requests (19:02 UTC, 3 tries); archive.org availability API for www.filmingeorgia.ge/: 429 Too Many Requests (19:02 UTC, 3 tries)"
+   }
+  },
+  {
+   "item": "fund",
+   "sought": "Georgian National Film Center production grants (share, cap, selection rate).",
+   "tried": {
+    "institution": "gnfc.ge home page read (Georgian menu: competitions, grants, funded films); the competition rules not fetched. || Retry 2026-11-01: filmingeorgia.ge: 301 to enterprisegeorgia.gov.ge, which timed out (25 s); enterprisegeorgia.gov.ge: timeout; gnfc.ge/en: HTTP 500 (Laravel error page); gnfc.ge: 302",
+    "official-register": "Not located. || Retry 2026-11-01: Constitution of Georgia read: no screen pay rule",
+    "web-search": "Not separately searched. || Retry 2026-11-01: not run again: the session's web-search budget is spent (2026-11-01, retry brief); institutions fetched directly instead || Web search 2026-11-01: not run: the search pass of 2026-11-01 reached this country after the turn's shared web-search budget (200 calls, shared by every agent) was used up again (about 19:20 UTC, after 27 searches for AD to CK); no result returned.",
+    "trade-press": "None. || Retry 2026-11-01: none quoting a primary found among pages read",
+    "archive": "Not tried. || Retry 2026-11-01: archive.org availability API for www.gnfc.ge/: 429 Too Many Requests (19:02 UTC, 3 tries); archive.org availability API for www.filmingeorgia.ge/: 429 Too Many Requests (19:02 UTC, 3 tries)"
+   }
+  }
+ ]
+}

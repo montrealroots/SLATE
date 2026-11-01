@@ -1,7 +1,7 @@
 {
  "topic": "tax.JP",
  "read": "2026-11-01",
- "note": "Read 2026-11-01 at the owner's word (\"Build those first 3 starting with ledger first\"; \"Retry the blocked tax facts once all countries land\"): the tax on a screen worker's pay in Japan: a resident's income tax, social contributions, what is withheld at source, a non-resident artiste's withholding, any authors' treatment, VAT's threshold, the tax year. Research and retry subagents (workbench/briefs/BRIEF-tax*.md); every quote checked by the lead against its saved page.",
+ "note": "Read 2026-11-01 at the owner's word (\"Build those first 3 starting with ledger first\"; of the 21 countries read first: \"It should cover across every country\"; \"Retry the blocked tax facts once all countries land\"): the tax on a screen worker's pay in Japan: a resident's income tax, social contributions, what is withheld at source, a non-resident artiste's withholding, an author's treatment, VAT and the tax year. Research and retry subagents (workbench/briefs/BRIEF-tax.md, BRIEF-tax-retry.md), every quote checked by the lead against its saved page.",
  "figures": [
   {
    "item": "residents",
@@ -463,22 +463,22 @@
    "item": "social",
    "sought": "National health insurance rates of every municipality other than Tokyo's special wards (each municipality sets its own; the national caps and the special wards' rates are found)",
    "tried": {
-    "institution": "Not reached: municipal pages vary; mhlw.go.jp national-ceiling page not located this pass; retry 2026-11-01: Setagaya (city.setagaya.lg.jp/02060/297.html) and Minato (広報みなと 2026-04-15) read; no national table of municipal rates exists on mhlw.go.jp",
-    "official-register": "retry 2026-11-01: 国民健康保険法施行令 art. 29-7 read through the e-Gov 法令API (law_data/333CO0000000362): caps only, rates left to each municipality",
-    "web-search": "retry 2026-11-01: '令和8年度 国民健康保険料 賦課限度額 … 政令 厚生労働省' and '令和8年度 国民健康保険料率 特別区 所得割 均等割 …': ward and city pages (Toshima, Minato, Setagaya, Chiba, Okayama, Yokohama R7); no national compilation",
-    "trade-press": "2026-11-01: psrn.jp and kaiketsu-j.com report the FY2026 caps (67/26/17/3万円) from 令和8年政令第2号; not a source of municipal rates",
-    "archive": "2026-11-01: not useful (no national compilation exists to archive); web.archive.org refuses this environment"
+    "institution": "Not reached: municipal pages vary; mhlw.go.jp national-ceiling page not located this pass; retry 2026-11-01: Setagaya (city.setagaya.lg.jp/02060/297.html) and Minato (広報みなと 2026-04-15) read; no national table of municipal rates exists on mhlw.go.jp || retry-8 2026-11-01: no national table of municipal NHI rates exists on mhlw.go.jp (checked earlier); municipalities set their own rates each year, ~1,700 of them; not compiled this turn",
+    "official-register": "retry 2026-11-01: 国民健康保険法施行令 art. 29-7 read through the e-Gov 法令API (law_data/333CO0000000362): caps only, rates left to each municipality || retry-8 2026-11-01: 国民健康保険法施行令 (caps) already read and quoted; rates are set by each municipality's ordinance",
+    "web-search": "retry 2026-11-01: '令和8年度 国民健康保険料 賦課限度額 … 政令 厚生労働省' and '令和8年度 国民健康保険料率 特別区 所得割 均等割 …': ward and city pages (Toshima, Minato, Setagaya, Chiba, Okayama, Yokohama R7); no national compilation || retry-8 2026-11-01: a search for '令和8年度 国民健康保険料率 全市区町村 一覧' was refused by the search tool (shared per-turn limit of 200 searches reached)",
+    "trade-press": "2026-11-01: psrn.jp and kaiketsu-j.com report the FY2026 caps (67/26/17/3万円) from 令和8年政令第2号; not a source of municipal rates || retry-8 2026-11-01: none compiles all municipalities' 2026 rates",
+    "archive": "2026-11-01: not useful (no national compilation exists to archive); web.archive.org refuses this environment || retry-8 2026-11-01: web.archive.org: connection reset and availability API 429 on 2026-11-01"
    }
   },
   {
    "item": "nonResident",
    "sought": "The exemption terms for non-resident entertainers and individuals' service fees in each of Japan's tax treaties (finality and the form-7 procedure are found)",
    "tried": {
-    "institution": "NTA No.2884, No.2885, No.2878 read 2026-11-01: rates given, finality not stated in text extracted; retry 2026-11-01: NTA treaty procedures index (joyaku/mokuji2.htm) and A3-9 form 7 page read: it refers to each treaty ('各租税条約を確認してください')",
-    "official-register": "源泉徴収のあらまし 第12 (pdf/12.pdf) saved but its text extracts with missing CJK glyphs (fonts not embedded); OCR not run; retry 2026-11-01: 所得税法 arts. 161, 164, 169, 170 read through the e-Gov 法令API (finality found); the treaties themselves (mof.go.jp) not read",
-    "web-search": "2026-11-01 '国税庁 非居住者 芸能人 人的役務の提供 20.42% 源泉分離課税 申告不要': results confirm 20.42% and a 15.315% rate for exempt entertainment corporations (nta.go.jp joyaku 1648_33), finality for an individual entertainer without PE not stated on an NTA page; retry 2026-11-01: '国税庁 租税条約 芸能人 免税 芸能人等の役務提供 非居住者 個人 条約 第17条 届出書 様式9': NTA form pages and Q&A sites only",
-    "trade-press": "zeiken.co.jp Q&A cites Income Tax Act art. 161(1)(xii)(a) as the source rule; finality not stated; retry 2026-11-01: zeiri4.com Q&A results cite no treaty text",
-    "archive": "2026-11-01: web.archive.org refuses this environment (connection reset; archive.org availability API reachable)"
+    "institution": "NTA No.2884, No.2885, No.2878 read 2026-11-01: rates given, finality not stated in text extracted; retry 2026-11-01: NTA treaty procedures index (joyaku/mokuji2.htm) and A3-9 form 7 page read: it refers to each treaty ('各租税条約を確認してください') || retry-8 2026-11-01: MOF's list of tax conventions (mof.go.jp tax_convetion_list_jp.html) read 2026-11-01: it links each treaty by country; the artiste articles of the individual treaties were not extracted this turn (no page compiles them; the NTA's form 7 page refers to each treaty)",
+    "official-register": "源泉徴収のあらまし 第12 (pdf/12.pdf) saved but its text extracts with missing CJK glyphs (fonts not embedded); OCR not run; retry 2026-11-01: 所得税法 arts. 161, 164, 169, 170 read through the e-Gov 法令API (finality found); the treaties themselves (mof.go.jp) not read || retry-8 2026-11-01: 源泉徴収のあらまし 第12 (pdf/12.pdf) re-tried: its text layer lacks CJK glyphs and OCR cannot be run here because tesseract has no Japanese language data installed (only eng, nor, osd); not read",
+    "web-search": "2026-11-01 '国税庁 非居住者 芸能人 人的役務の提供 20.42% 源泉分離課税 申告不要': results confirm 20.42% and a 15.315% rate for exempt entertainment corporations (nta.go.jp joyaku 1648_33), finality for an individual entertainer without PE not stated on an NTA page; retry 2026-11-01: '国税庁 租税条約 芸能人 免税 芸能人等の役務提供 非居住者 個人 条約 第17条 届出書 様式9': NTA form pages and Q&A sites only || retry-8 2026-11-01: a search for '租税条約 芸能人 免税 条約別 一覧 第17条 国税庁' was refused by the search tool (shared per-turn limit of 200 searches reached)",
+    "trade-press": "zeiken.co.jp Q&A cites Income Tax Act art. 161(1)(xii)(a) as the source rule; finality not stated; retry 2026-11-01: zeiri4.com Q&A results cite no treaty text || retry-8 2026-11-01: no compilation of treaty artiste exemptions found reachable this turn",
+    "archive": "2026-11-01: web.archive.org refuses this environment (connection reset; archive.org availability API reachable) || retry-8 2026-11-01: web.archive.org: connection reset and availability API 429 on 2026-11-01"
    }
   }
  ]

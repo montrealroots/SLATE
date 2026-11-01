@@ -1,0 +1,294 @@
+{
+ "topic": "tax.CK",
+ "read": "2026-11-01",
+ "note": "Read 2026-11-01 at the owner's word (\"Build those first 3 starting with ledger first\"; of the 21 countries read first: \"It should cover across every country\"; \"Retry the blocked tax facts once all countries land\"): the tax on a screen worker's pay in Cook Islands: a resident's income tax, social contributions, what is withheld at source, a non-resident artiste's withholding, an author's treatment, VAT and the tax year. Research and retry subagents (workbench/briefs/BRIEF-tax.md, BRIEF-tax-retry.md), every quote checked by the lead against its saved page.",
+ "figures": [
+  {
+   "item": "residents",
+   "finding": "A Rarotonga resident pays no tax on the first NZD 14,600, then 17% on the next 15,400 (to 30,000), 27% on the next 50,000 (to 80,000) and 30% above; a resident of the outer islands (Pa Enua) pays nothing on the first 60,000, then 27% to 80,000 and 30% above.",
+   "value": {
+    "currency": "NZD",
+    "brackets": [
+     {
+      "from": 0,
+      "to": 14600,
+      "rate": 0
+     },
+     {
+      "from": 14600,
+      "to": 30000,
+      "rate": 0.17
+     },
+     {
+      "from": 30000,
+      "to": 80000,
+      "rate": 0.27
+     },
+     {
+      "from": 80000,
+      "to": null,
+      "rate": 0.3
+     }
+    ],
+    "paEnua": [
+     {
+      "from": 0,
+      "to": 60000,
+      "rate": 0
+     },
+     {
+      "from": 60000,
+      "to": 80000,
+      "rate": 0.27
+     },
+     {
+      "from": 80000,
+      "to": null,
+      "rate": 0.3
+     }
+    ],
+    "exemptionProRata": "by days present when arriving or leaving in the year"
+   },
+   "applies": "The 2025 income year's returns, the latest issued (no 2026 return or rate change found); the Pa Enua return form for 2025 shows the outer-island scale.",
+   "sources": [
+    {
+     "src": 0,
+     "said": "Less exemption - $14,600 00 Tax Balance 17% - $15,400 00 17%"
+    },
+    {
+     "src": 0,
+     "said": "Less (if balance exceeds $15,400)"
+    },
+    {
+     "src": 0,
+     "said": "Less (if balance exceeds $50,000) - $50,000 00 27%"
+    },
+    {
+     "src": 0,
+     "said": "Balance (if any) taxed at 30% 30%"
+    },
+    {
+     "src": 1,
+     "said": "Less exemption - $60,000 00 Tax Balance 27%"
+    },
+    {
+     "src": 1,
+     "said": "Less (if balance exceeds $80,000) - $80,000 00 27% 30%"
+    }
+   ]
+  },
+  {
+   "item": "year",
+   "finding": "The tax year is the calendar year; an employee's return is due 1 March, a business's (including a sole trader's) 1 May, and any tax owing is paid by 1 November after the year.",
+   "value": {
+    "start": "01-01",
+    "end": "12-31",
+    "returnDueEmployee": "03-01",
+    "returnDueBusiness": "05-01",
+    "paymentDue": "11-01"
+   },
+   "applies": "Individuals.",
+   "sources": [
+    {
+     "src": 2,
+     "said": "The standard tax year is 1st January - 31 December"
+    },
+    {
+     "src": 2,
+     "said": "due date for filing your income tax return is 1st March following the year you are filing."
+    },
+    {
+     "src": 2,
+     "said": "tax is the 1st of November following the tax year."
+    }
+   ]
+  },
+  {
+   "item": "social",
+   "finding": "Every employer contributes 5% of gross salary to the Cook Islands National Superannuation Fund and deducts 5% from the employee, monthly; no other payroll social contribution was found.",
+   "value": {
+    "employee": 0.05,
+    "employer": 0.05,
+    "base": "gross salary",
+    "ceiling": null,
+    "selfEmployed": null
+   },
+   "applies": "Employees under the Cook Islands National Superannuation Act 2000; foreign workers may withdraw on permanent departure.",
+   "sources": [
+    {
+     "src": 3,
+     "said": "The standard contribution rate is 10% of gross salary, split between employer (5%) and employee (5%)."
+    },
+    {
+     "src": 3,
+     "said": "Contributions are compulsory under the CINSF Act 2000"
+    }
+   ]
+  },
+  {
+   "item": "withholding",
+   "finding": "The employer deducts PAYE from wages by the PAYE schedule (from 1 January 2021 on Rarotonga; a separate schedule for the Pa Enua from 1 July 2023), with no tax on weekly income below NZD 281, and pays it by the 20th of the following month.",
+   "value": {
+    "currency": "NZD",
+    "schedule": "PAYE Schedule from 1 January 2021",
+    "weeklyFree": 281,
+    "remitBy": "20th of the following month"
+   },
+   "applies": "Employees; a sole trader pays on assessment.",
+   "sources": [
+    {
+     "src": 4,
+     "said": "No tax on weekly incomes below......... $281 PAYE SCHEDULE FROM 1 JANUARY 2021"
+    },
+    {
+     "src": 5,
+     "said": "any wages paid to employees and PAYE tax deducted from their wages must be declared in the RM205 form and paid every 20th of the month."
+    }
+   ]
+  },
+  {
+   "item": "nonResident",
+   "finding": "Royalties paid to a non-resident bear 15% non-resident withholding tax; no withholding specific to a non-resident performer's fee was found.",
+   "value": {
+    "royalties": 0.15
+   },
+   "applies": "Non-residents; withholding income is interest, dividends, natural resource amounts or royalties.",
+   "sources": [
+    {
+     "src": 6,
+     "said": "Non-resident Withholding Royalty (15%)"
+    },
+    {
+     "src": 5,
+     "said": "Withholding income is interest, dividends, natural resource amounts or royalties derived in the Cook Islands but paid to a person who is not a resident."
+    }
+   ]
+  },
+  {
+   "item": "vat",
+   "finding": "VAT is 15%; a business must register once turnover passes NZD 40,000 over 12 months (voluntary registration needs over 20,000).",
+   "value": {
+    "currency": "NZD",
+    "standard": 0.15,
+    "threshold": 40000,
+    "voluntaryFloor": 20000
+   },
+   "applies": "Taxable activities in the Cook Islands.",
+   "sources": [
+    {
+     "src": 7,
+     "said": "was over $40,000 for the last 12 months,"
+    },
+    {
+     "src": 7,
+     "said": "charge VAT at 15% on all your sales, except those ex- empt from VAT"
+    }
+   ]
+  },
+  {
+   "item": "authors",
+   "finding": "The Income Tax Act gives authors no special treatment: royalties and like payments for the use of any property are ordinary assessable income at the resident scale, and royalties paid to a non-resident bear the 15% non-resident withholding tax.",
+   "value": {
+    "specialRate": null,
+    "nonResidentRoyaltyWithholding": 0.15
+   },
+   "applies": "Income Tax Act 1997 s 46(1)(e) and Part IX; MFEM RM100 return.",
+   "sources": [
+    {
+     "src": 8,
+     "said": "(e) all royalties or other like payments dependent upon production from or the use of any real or personal property, whether or not they are instalments of the purchase price of any property;"
+    }
+   ]
+  }
+ ],
+ "country": "CK",
+ "sources": [
+  {
+   "url": "https://www.mfem.gov.ck/_files/ugd/dbdf40_361c7059c9c64de19354cbfb41203869.pdf",
+   "title": "MFEM Revenue Management Division: RM5 - 2025 Individual Income Tax Return (Raro Residents)",
+   "read": "2026-11-01",
+   "kind": "primary",
+   "said": "Less exemption - $14,600 00 Tax Balance 17% - $15,400 00 17% … Less (if balance exceeds $15,400) … Less (if balance exceeds $50,000) - $50,000 00 27% … Balance (if any) taxed at 30% 30%"
+  },
+  {
+   "url": "https://www.mfem.gov.ck/_files/ugd/dbdf40_bfced603eb0845e5b39e18b9a86aa207.pdf",
+   "title": "MFEM Revenue Management Division: RM5 - 2025 Individual Income Tax Return (Pa Enua)",
+   "read": "2026-11-01",
+   "kind": "primary",
+   "said": "Less exemption - $60,000 00 Tax Balance 27% … Less (if balance exceeds $80,000) - $80,000 00 27% 30%"
+  },
+  {
+   "url": "https://www.mfem.gov.ck/_files/ugd/dbdf40_dc9bf18c498944e49114e389cc539f03.pdf",
+   "title": "MFEM Revenue Management Division: Income Tax - Quick Reference Guide",
+   "read": "2026-11-01",
+   "kind": "primary",
+   "said": "The standard tax year is 1st January - 31 December … due date for filing your income tax return is 1st March following the year you are filing. … tax is the 1st of November following the tax year."
+  },
+  {
+   "url": "https://cinsf.com/employer/",
+   "title": "Cook Islands National Superannuation Fund: Information for Employers",
+   "read": "2026-11-01",
+   "kind": "primary",
+   "said": "The standard contribution rate is 10% of gross salary, split between employer (5%) and employee (5%). … Contributions are compulsory under the CINSF Act 2000"
+  },
+  {
+   "url": "https://www.mfem.gov.ck/_files/ugd/dbdf40_6bbd0b3416034140bf4810fd31fea29a.pdf",
+   "title": "MFEM: PAYE Schedule from 1 January 2021",
+   "read": "2026-11-01",
+   "kind": "primary",
+   "said": "No tax on weekly incomes below......... $281 PAYE SCHEDULE FROM 1 JANUARY 2021"
+  },
+  {
+   "url": "https://www.mfem.gov.ck/filing-forms",
+   "title": "MFEM: Filing and Forms",
+   "read": "2026-11-01",
+   "kind": "primary",
+   "said": "any wages paid to employees and PAYE tax deducted from their wages must be declared in the RM205 form and paid every 20th of the month. … Withholding income is interest, dividends, natural resource amounts or royalties derived in the Cook Islands but paid to a person who is not a resident."
+  },
+  {
+   "url": "https://www.mfem.gov.ck/_files/ugd/dbdf40_754de6a1d2fa41409ab33d556d6a31fc.pdf",
+   "title": "MFEM Revenue Management Division: Withholding Tax Return RM100",
+   "read": "2026-11-01",
+   "kind": "primary",
+   "said": "Non-resident Withholding Royalty (15%)"
+  },
+  {
+   "url": "https://www.mfem.gov.ck/_files/ugd/dbdf40_980f74bf1d4d4b77a9b43ab0913e5126.pdf",
+   "title": "MFEM Revenue Management Division: VAT - Quick Reference Guide",
+   "read": "2026-11-01",
+   "kind": "primary",
+   "said": "was over $40,000 for the last 12 months, … charge VAT at 15% on all your sales, except those ex- empt from VAT"
+  },
+  {
+   "url": "https://www.mfem.gov.ck/_files/ugd/dbdf40_ef039a088ac247b2aeaf8dcc59fb90a6.pdf",
+   "title": "Cook Islands Income Tax Act 1997 (MFEM legislation page)",
+   "read": "2026-11-01",
+   "kind": "primary",
+   "said": "(e) all royalties or other like payments dependent upon production from or the use of any real or personal property, whether or not they are instalments of the purchase price of any property;"
+  }
+ ],
+ "blockers": [
+  {
+   "item": "nonResident",
+   "sought": "Whether a non-resident performer's or director's fee for work in the Cook Islands is withheld at source (the Act's withholding covers dividends, interest, royalties and payments declared by regulation; no regulation for performers found), at what rate, and whether final",
+   "tried": {
+    "institution": "MFEM filing page, RM100 return and quick reference guides read: no entertainer rule || 2026-11-01 retry: MFEM legislation page and the Income Tax Act 1997 read: income from contracts performed in the Cook Islands is Cook Islands-source (s 2 source rules, 'income derived from contracts made or wholly or partly performed in the Cook Islands'); Part IX withholding covers dividends, interest and royalties and any 'withholding payment' declared by regulations; no such regulation for performers is on MFEM's list",
+    "official-register": "paclii.org (Income Tax Act 1997 text) blocks this environment (Cloudflare HTTP 403, 2026-11-01). || 2026-11-01 retry: MFEM's own legislation page (mfem.gov.ck/information-process) lists the Income Tax Act 1997 and every amendment to 2023 No. 3; the Act read (saved CK-ita-1997.pdf); the 2023 amendment is a 12-page scan (saved CK-ita-amend-2023.pdf) and OCR here did not finish (tesseract over 100 s a page under load)",
+    "web-search": "'mfem.gov.ck Revenue Management income tax rates individuals ... PAYE' led to the MFEM guides (used); no entertainer rule || 2026-11-01 retry: WebSearch refused by the tool: this turn's shared limit of 200 searches was used up by the agents (2026-11-01)",
+    "trade-press": "none found || 2026-11-01 retry: none found this turn",
+    "archive": "web.archive.org resets the connection from this environment (2026-11-01). || 2026-11-01 retry: web.archive.org resets the connection from this environment (2026-11-01)"
+   }
+  },
+  {
+   "item": "residents",
+   "sought": "Confirmation that the 2025 scale also applies to the 2026 income year",
+   "tried": {
+    "institution": "MFEM filing page lists returns to 2025 only (2026-11-01) || 2026-11-01 retry: MFEM filing page still lists returns to 2025 only; revenue-management and public-notices pages carry no 2026 rate notice",
+    "official-register": "paclii.org (Income Tax Act 1997 text) blocks this environment (Cloudflare HTTP 403, 2026-11-01). || 2026-11-01 retry: MFEM's own legislation page (mfem.gov.ck/information-process) lists the Income Tax Act 1997 and every amendment to 2023 No. 3; the Act read (saved CK-ita-1997.pdf); the 2023 amendment is a 12-page scan (saved CK-ita-amend-2023.pdf) and OCR here did not finish (tesseract over 100 s a page under load)",
+    "web-search": "no 2026 rate change found in the search above || 2026-11-01 retry: WebSearch refused by the tool: this turn's shared limit of 200 searches was used up by the agents (2026-11-01)",
+    "trade-press": "none found || 2026-11-01 retry: none found this turn",
+    "archive": "web.archive.org resets the connection from this environment (2026-11-01). || 2026-11-01 retry: web.archive.org resets the connection from this environment (2026-11-01)"
+   }
+  }
+ ]
+}

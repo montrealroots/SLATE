@@ -1,0 +1,118 @@
+{
+ "topic": "tax.FO",
+ "read": "2026-11-01",
+ "note": "Read 2026-11-01 at the owner's word (\"Build those first 3 starting with ledger first\"; of the 21 countries read first: \"It should cover across every country\"; \"Retry the blocked tax facts once all countries land\"): the tax on a screen worker's pay in Faroe Islands: a resident's income tax, social contributions, what is withheld at source, a non-resident artiste's withholding, an author's treatment, VAT and the tax year. Research and retry subagents (workbench/briefs/BRIEF-tax.md, BRIEF-tax-retry.md), every quote checked by the lead against its saved page.",
+ "figures": [
+  {
+   "item": "residents",
+   "finding": "The Faroe Islands levy their own income tax (national landsskattur plus a municipal tax each municipality sets); Tvøroyri's municipal rate for 2026 is 20.9%, with a child deduction of DKK 8,000.",
+   "value": {
+    "currency": "DKK",
+    "ownSystem": true,
+    "sovereign": "DK",
+    "municipal": {
+     "setBy": "each municipality",
+     "Tvøroyri2026": 0.209,
+     "childDeduction": 8000
+    },
+    "national": null
+   },
+   "applies": "2026. Only one municipality's rate was read; the national scale and the other municipalities' rates were not reachable (see blocker).",
+   "sources": [
+    {
+     "src": 0,
+     "said": "Í uppskotinum til fíggjarætlan 2026 er roknað við, at kommunuskattaprosentið og barnafrádrátturin framhaldandi verða ávikavist 20,9% og 8.000 kr."
+    }
+   ]
+  }
+ ],
+ "country": "FO",
+ "sources": [
+  {
+   "url": "https://tvk.fo/media/dcspft3j/bf10112025_272215.pdf",
+   "title": "Tvøroyrar kommuna, býráðsfundur 10.11.2025 (budget 2026)",
+   "read": "2026-11-01",
+   "kind": "primary",
+   "said": "Í uppskotinum til fíggjarætlan 2026 er roknað við, at kommunuskattaprosentið og barnafrádrátturin framhaldandi verða ávikavist 20,9% og 8.000 kr."
+  }
+ ],
+ "blockers": [
+  {
+   "item": "residents",
+   "sought": "The 2026 landsskattur scale and allowance (personfrádráttur), and every municipality's rate.",
+   "tried": {
+    "institution": "taks.fo (TAKS, the Faroese tax authority) returns 403 to this environment on every page (2026-11-01). || 2026-11-01 retry: taks.fo again returns HTTP 403 (not read another way). Hagstova Føroya (hagstova.fo, the statistics office) answers: its \"Skattir\" page (saved FO-hagstova-skattir.html) describes tax revenue by type, with no rates or allowances.",
+    "official-register": "logir.fo (law database) answers but finds laws only by form postback; the direct URL for Skattalógin returned LawNotFound (2026-11-01). || 2026-11-01 retry: logir.fo answers, but its law database (LawDatabase.aspx) works only by ASP.NET postback; logir.fo/Skattalog returns 404.",
+    "web-search": "'logir.fo skattalóg landsskattur skattstig 2026 kommunuskattur prosent' (2026-11-01): one municipal budget (Tvøroyri, read), no national scale. || 2026-11-01 retry: WebSearch refused by the tool on 2026-11-01: the turn's shared 200-search limit was reached before this query; no other search route used.",
+    "trade-press": "No PwC or Deloitte summary for the Faroe Islands (Deloitte 2026: 404). || 2026-11-01 retry: No Deloitte Faroe Islands 2026 Highlights (HTTP 404); no PwC summary.",
+    "archive": "web.archive.org resets the connection from this environment (2026-11-01). || 2026-11-01 retry: archive.org/wayback/available lists a 2025-07-16 snapshot of taks.fo/fo/borgari/skattur; the brief bars reading a refused page another way, and web.archive.org itself resets https and returns 403 on http from this environment (2026-11-01), so none was read."
+   }
+  },
+  {
+   "item": "social",
+   "sought": "AMEG, ALS, pension (samhaldsfasti) and health contributions on pay, and the self-employed terms.",
+   "tried": {
+    "institution": "taks.fo (TAKS, the Faroese tax authority) returns 403 to this environment on every page (2026-11-01). || 2026-11-01 retry: taks.fo again returns HTTP 403 (not read another way). Hagstova Føroya (hagstova.fo, the statistics office) answers: its \"Skattir\" page (saved FO-hagstova-skattir.html) describes tax revenue by type, with no rates or allowances.",
+    "official-register": "logir.fo (law database) answers but finds laws only by form postback; the direct URL for Skattalógin returned LawNotFound (2026-11-01). || 2026-11-01 retry: logir.fo answers, but its law database (LawDatabase.aspx) works only by ASP.NET postback; logir.fo/Skattalog returns 404.",
+    "web-search": "'logir.fo skattalóg landsskattur skattstig 2026 kommunuskattur prosent' (2026-11-01): one municipal budget (Tvøroyri, read), no national scale. || 2026-11-01 retry: WebSearch refused by the tool on 2026-11-01: the turn's shared 200-search limit was reached before this query; no other search route used.",
+    "trade-press": "No PwC or Deloitte summary for the Faroe Islands (Deloitte 2026: 404). || 2026-11-01 retry: No Deloitte Faroe Islands 2026 Highlights (HTTP 404); no PwC summary.",
+    "archive": "web.archive.org resets the connection from this environment (2026-11-01). || 2026-11-01 retry: archive.org/wayback/available lists a 2025-07-16 snapshot of taks.fo/fo/borgari/skattur; the brief bars reading a refused page another way, and web.archive.org itself resets https and returns 403 on http from this environment (2026-11-01), so none was read."
+   }
+  },
+  {
+   "item": "withholding",
+   "sought": "The A-tax (kildeskattur) withholding by tax card.",
+   "tried": {
+    "institution": "taks.fo (TAKS, the Faroese tax authority) returns 403 to this environment on every page (2026-11-01). || 2026-11-01 retry: taks.fo again returns HTTP 403 (not read another way). Hagstova Føroya (hagstova.fo, the statistics office) answers: its \"Skattir\" page (saved FO-hagstova-skattir.html) describes tax revenue by type, with no rates or allowances.",
+    "official-register": "logir.fo (law database) answers but finds laws only by form postback; the direct URL for Skattalógin returned LawNotFound (2026-11-01). || 2026-11-01 retry: logir.fo answers, but its law database (LawDatabase.aspx) works only by ASP.NET postback; logir.fo/Skattalog returns 404.",
+    "web-search": "'logir.fo skattalóg landsskattur skattstig 2026 kommunuskattur prosent' (2026-11-01): one municipal budget (Tvøroyri, read), no national scale. || 2026-11-01 retry: WebSearch refused by the tool on 2026-11-01: the turn's shared 200-search limit was reached before this query; no other search route used.",
+    "trade-press": "No PwC or Deloitte summary for the Faroe Islands (Deloitte 2026: 404). || 2026-11-01 retry: No Deloitte Faroe Islands 2026 Highlights (HTTP 404); no PwC summary.",
+    "archive": "web.archive.org resets the connection from this environment (2026-11-01). || 2026-11-01 retry: archive.org/wayback/available lists a 2025-07-16 snapshot of taks.fo/fo/borgari/skattur; the brief bars reading a refused page another way, and web.archive.org itself resets https and returns 403 on http from this environment (2026-11-01), so none was read."
+   }
+  },
+  {
+   "item": "nonResident",
+   "sought": "Tax on a non-resident performer's fee and whether final.",
+   "tried": {
+    "institution": "taks.fo (TAKS, the Faroese tax authority) returns 403 to this environment on every page (2026-11-01). || 2026-11-01 retry: taks.fo again returns HTTP 403 (not read another way). Hagstova Føroya (hagstova.fo, the statistics office) answers: its \"Skattir\" page (saved FO-hagstova-skattir.html) describes tax revenue by type, with no rates or allowances.",
+    "official-register": "logir.fo (law database) answers but finds laws only by form postback; the direct URL for Skattalógin returned LawNotFound (2026-11-01). || 2026-11-01 retry: logir.fo answers, but its law database (LawDatabase.aspx) works only by ASP.NET postback; logir.fo/Skattalog returns 404.",
+    "web-search": "'logir.fo skattalóg landsskattur skattstig 2026 kommunuskattur prosent' (2026-11-01): one municipal budget (Tvøroyri, read), no national scale. || 2026-11-01 retry: WebSearch refused by the tool on 2026-11-01: the turn's shared 200-search limit was reached before this query; no other search route used.",
+    "trade-press": "No PwC or Deloitte summary for the Faroe Islands (Deloitte 2026: 404). || 2026-11-01 retry: No Deloitte Faroe Islands 2026 Highlights (HTTP 404); no PwC summary.",
+    "archive": "web.archive.org resets the connection from this environment (2026-11-01). || 2026-11-01 retry: archive.org/wayback/available lists a 2025-07-16 snapshot of taks.fo/fo/borgari/skattur; the brief bars reading a refused page another way, and web.archive.org itself resets https and returns 403 on http from this environment (2026-11-01), so none was read."
+   }
+  },
+  {
+   "item": "authors",
+   "sought": "Any special treatment of authors' royalties.",
+   "tried": {
+    "institution": "taks.fo (TAKS, the Faroese tax authority) returns 403 to this environment on every page (2026-11-01). || 2026-11-01 retry: taks.fo again returns HTTP 403 (not read another way). Hagstova Føroya (hagstova.fo, the statistics office) answers: its \"Skattir\" page (saved FO-hagstova-skattir.html) describes tax revenue by type, with no rates or allowances.",
+    "official-register": "logir.fo (law database) answers but finds laws only by form postback; the direct URL for Skattalógin returned LawNotFound (2026-11-01). || 2026-11-01 retry: logir.fo answers, but its law database (LawDatabase.aspx) works only by ASP.NET postback; logir.fo/Skattalog returns 404.",
+    "web-search": "'logir.fo skattalóg landsskattur skattstig 2026 kommunuskattur prosent' (2026-11-01): one municipal budget (Tvøroyri, read), no national scale. || 2026-11-01 retry: WebSearch refused by the tool on 2026-11-01: the turn's shared 200-search limit was reached before this query; no other search route used.",
+    "trade-press": "No PwC or Deloitte summary for the Faroe Islands (Deloitte 2026: 404). || 2026-11-01 retry: No Deloitte Faroe Islands 2026 Highlights (HTTP 404); no PwC summary.",
+    "archive": "web.archive.org resets the connection from this environment (2026-11-01). || 2026-11-01 retry: archive.org/wayback/available lists a 2025-07-16 snapshot of taks.fo/fo/borgari/skattur; the brief bars reading a refused page another way, and web.archive.org itself resets https and returns 403 on http from this environment (2026-11-01), so none was read."
+   }
+  },
+  {
+   "item": "vat",
+   "sought": "MVG (VAT) rate and the turnover threshold for registration.",
+   "tried": {
+    "institution": "taks.fo (TAKS, the Faroese tax authority) returns 403 to this environment on every page (2026-11-01). || 2026-11-01 retry: taks.fo again returns HTTP 403 (not read another way). Hagstova Føroya (hagstova.fo, the statistics office) answers: its \"Skattir\" page (saved FO-hagstova-skattir.html) describes tax revenue by type, with no rates or allowances.",
+    "official-register": "logir.fo (law database) answers but finds laws only by form postback; the direct URL for Skattalógin returned LawNotFound (2026-11-01). || 2026-11-01 retry: logir.fo answers, but its law database (LawDatabase.aspx) works only by ASP.NET postback; logir.fo/Skattalog returns 404.",
+    "web-search": "'logir.fo skattalóg landsskattur skattstig 2026 kommunuskattur prosent' (2026-11-01): one municipal budget (Tvøroyri, read), no national scale. || 2026-11-01 retry: WebSearch refused by the tool on 2026-11-01: the turn's shared 200-search limit was reached before this query; no other search route used.",
+    "trade-press": "No PwC or Deloitte summary for the Faroe Islands (Deloitte 2026: 404). || 2026-11-01 retry: No Deloitte Faroe Islands 2026 Highlights (HTTP 404); no PwC summary.",
+    "archive": "web.archive.org resets the connection from this environment (2026-11-01). || 2026-11-01 retry: archive.org/wayback/available lists a 2025-07-16 snapshot of taks.fo/fo/borgari/skattur; the brief bars reading a refused page another way, and web.archive.org itself resets https and returns 403 on http from this environment (2026-11-01), so none was read."
+   }
+  },
+  {
+   "item": "year",
+   "sought": "Tax year and return date.",
+   "tried": {
+    "institution": "taks.fo (TAKS, the Faroese tax authority) returns 403 to this environment on every page (2026-11-01). || 2026-11-01 retry: taks.fo again returns HTTP 403 (not read another way). Hagstova Føroya (hagstova.fo, the statistics office) answers: its \"Skattir\" page (saved FO-hagstova-skattir.html) describes tax revenue by type, with no rates or allowances.",
+    "official-register": "logir.fo (law database) answers but finds laws only by form postback; the direct URL for Skattalógin returned LawNotFound (2026-11-01). || 2026-11-01 retry: logir.fo answers, but its law database (LawDatabase.aspx) works only by ASP.NET postback; logir.fo/Skattalog returns 404.",
+    "web-search": "'logir.fo skattalóg landsskattur skattstig 2026 kommunuskattur prosent' (2026-11-01): one municipal budget (Tvøroyri, read), no national scale. || 2026-11-01 retry: WebSearch refused by the tool on 2026-11-01: the turn's shared 200-search limit was reached before this query; no other search route used.",
+    "trade-press": "No PwC or Deloitte summary for the Faroe Islands (Deloitte 2026: 404). || 2026-11-01 retry: No Deloitte Faroe Islands 2026 Highlights (HTTP 404); no PwC summary.",
+    "archive": "web.archive.org resets the connection from this environment (2026-11-01). || 2026-11-01 retry: archive.org/wayback/available lists a 2025-07-16 snapshot of taks.fo/fo/borgari/skattur; the brief bars reading a refused page another way, and web.archive.org itself resets https and returns 403 on http from this environment (2026-11-01), so none was read."
+   }
+  }
+ ]
+}

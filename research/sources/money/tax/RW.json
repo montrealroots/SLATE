@@ -1,0 +1,299 @@
+{
+ "topic": "tax.RW",
+ "read": "2026-11-01",
+ "note": "Read 2026-11-01 at the owner's word (\"Build those first 3 starting with ledger first\"; of the 21 countries read first: \"It should cover across every country\"; \"Retry the blocked tax facts once all countries land\"): the tax on a screen worker's pay in Rwanda: a resident's income tax, social contributions, what is withheld at source, a non-resident artiste's withholding, an author's treatment, VAT and the tax year. Research and retry subagents (workbench/briefs/BRIEF-tax.md, BRIEF-tax-retry.md), every quote checked by the lead against its saved page.",
+ "figures": [
+  {
+   "item": "residents",
+   "finding": "Employment income is taxed on monthly bands: nothing to RWF 60,000, 10% to 100,000, 20% to 200,000 and 30% above; the same rates apply to residents and non-residents; there are no local income taxes.",
+   "value": {
+    "currency": "RWF",
+    "period": "monthly",
+    "brackets": [
+     {
+      "from": 0,
+      "to": 60000,
+      "rate": 0
+     },
+     {
+      "from": 60000,
+      "to": 100000,
+      "rate": 0.1
+     },
+     {
+      "from": 100000,
+      "to": 200000,
+      "rate": 0.2
+     },
+     {
+      "from": 200000,
+      "to": null,
+      "rate": 0.3
+     }
+    ],
+    "regional": null
+   },
+   "applies": "Individuals; residents on worldwide income, non-residents on Rwandan-source income The law's annual scale (Art. 14, Table 2, from the second year after the law's commencement) is RWF 0-720,000 0%, to 1,200,000 10%, to 2,400,000 20%, above 30%, the monthly bands times twelve; the May 2025 amending law leaves Art. 14 unchanged.",
+   "sources": [
+    {
+     "src": 0,
+     "said": "Bands of income (RWF*) Taxable income (RWF) PIT rate (%) From To 0 60,000 60,000 0 60,001 100,000 40,000 10 100,001 200,000 100,000 20 200,001 And above 30"
+    },
+    {
+     "src": 0,
+     "said": "The same tax rates are applicable to both residents and non-residents of Rwanda."
+    },
+    {
+     "src": 0,
+     "said": "There are no local income taxes in Rwanda."
+    },
+    {
+     "src": 1,
+     "said": "Article 14: Rate for personal income tax … From the second year after the … 0 720,000 0% … 720,001 1,200,000 10% … 1,200,001 2,400,000 20% … 2,400,001 More 30%"
+    },
+    {
+     "src": 2,
+     "said": "amended, in Articles 36, 37, 45, 50 and 61"
+    }
+   ]
+  },
+  {
+   "item": "year",
+   "finding": "The tax period is the calendar year; annual returns are due by 31 March of the next year, except for those with only employment income, turnover under RWF 2 million, or (non-residents) income fully subject to withholding.",
+   "value": {
+    "start": "01-01",
+    "end": "12-31",
+    "returnDue": "03-31"
+   },
+   "applies": "Individuals",
+   "sources": [
+    {
+     "src": 3,
+     "said": "Annual tax returns/declarations for individuals are due by 31 March of the following year after the tax period."
+    },
+    {
+     "src": 3,
+     "said": "Non-resident individuals who suffer WHT on income sourced from Rwanda."
+    }
+   ]
+  },
+  {
+   "item": "social",
+   "finding": "Everyone working in Rwanda, foreigners included, contributes to the RSSB: pension 6% employee and 6% employer of gross salary (7% each from 2027, rising to 10% each by 2030), occupational hazards 2% employer, maternity 0.3% each, and community health insurance 0.5% of the employee's net salary.",
+   "value": {
+    "pension": [
+     {
+      "from": "2025-01-01",
+      "employee": 0.06,
+      "employer": 0.06
+     },
+     {
+      "from": "2027-01-01",
+      "employee": 0.07,
+      "employer": 0.07
+     },
+     {
+      "from": "2028-01-01",
+      "employee": 0.08,
+      "employer": 0.08
+     },
+     {
+      "from": "2029-01-01",
+      "employee": 0.09,
+      "employer": 0.09
+     },
+     {
+      "from": "2030-01-01",
+      "employee": 0.1,
+      "employer": 0.1
+     }
+    ],
+    "occupationalHazards": {
+     "employer": 0.02
+    },
+    "maternity": {
+     "employee": 0.003,
+     "employer": 0.003
+    },
+    "cbhi": {
+     "employee": 0.005,
+     "base": "net salary"
+    }
+   },
+   "applies": "All workers in Rwanda",
+   "sources": [
+    {
+     "src": 4,
+     "said": "Scheme details Employee contribution (%) Employer contribution (%) Contribution base Pension scheme 6.0 6.0 Gross salary Occupational hazards scheme Nil 2.0 Gross salary Maternity leave benefits scheme 0.3 0.3 Gross salary Community-based health insurance scheme (CBHIS) 0.5 Nil Net salary"
+    },
+    {
+     "src": 4,
+     "said": "14% equally split 7% (employer) and 7% (employee), effective 1 January 2027. 16% equally split 8% (employer) and 8% (employee), effective 1 January 2028. 18% equally split 9% (employer) and 9% (employee), effective 1 January 2029. 20% equally split 10% (employer) and 10% (employee), effective 1 January 2030."
+    },
+    {
+     "src": 5,
+     "said": "All people working in Rwanda, both nationals and foreigners, are required to contribute to a national social security contribution fund managed by the Rwanda Social Security Board (RSSB)."
+    }
+   ]
+  },
+  {
+   "item": "withholding",
+   "finding": "Employers withhold PAYE monthly and remit it by the 15th of the next month; payers withhold 15% from service fees, royalties and performance payments to an artist or musician where the payee is unregistered or has no recent income tax declaration.",
+   "value": {
+    "employee": "PAYE",
+    "fees": 0.15,
+    "performancePayments": 0.15
+   },
+   "applies": "Payments in Rwanda",
+   "sources": [
+    {
+     "src": 3,
+     "said": "Tax on employment income is withheld by the employer under the Pay-As-You-Earn (PAYE) system and remitted to the RRA on a monthly basis together with PAYE returns by the 15th day of the following month."
+    },
+    {
+     "src": 6,
+     "said": "The WHT is due where such payments or other methods of extinguishing an obligation are made to a person not registered with the tax administration or to a registered person who does not have recent income tax declaration."
+    },
+    {
+     "src": 1,
+     "said": "Article 60: Withholding tax on payments … A withholding tax of fifteen percent (15%) of … performance payments made to a crafts … person, a musician, an artist, a player,"
+    }
+   ]
+  },
+  {
+   "item": "nonResident",
+   "finding": "A non-resident performer has 15% withheld from performance payments (and 15% on royalties and service fees), and a non-resident whose Rwandan income all bore withholding files no return.",
+   "value": {
+    "rate": 0.15,
+    "base": "total amount excluding VAT",
+    "final": true
+   },
+   "applies": "Non-residents",
+   "sources": [
+    {
+     "src": 6,
+     "said": "Performance payments made to a crafts person, a musician, an artist, or a player in sports, cultural, or leisure activities, irrespective of whether paid directly or indirectly."
+    },
+    {
+     "src": 6,
+     "said": "WHT of 15% of the total amount, excluding VAT, is required to be accounted for on payments"
+    },
+    {
+     "src": 3,
+     "said": "Non-resident individuals who suffer WHT on income sourced from Rwanda."
+    },
+    {
+     "src": 1,
+     "said": "Article 60: Withholding tax on payments … A withholding tax of fifteen percent (15%) of … performance payments made to a crafts … person, a musician, an artist, a player,"
+    }
+   ]
+  },
+  {
+   "item": "authors",
+   "finding": "Royalties bear 15% withholding; no special regime for authors was found.",
+   "value": {
+    "royalties": 0.15
+   },
+   "applies": "Royalties",
+   "sources": [
+    {
+     "src": 6,
+     "said": "Royalties. Service fees, including management and technical service fees, except transport services."
+    },
+    {
+     "src": 1,
+     "said": "Article 60: Withholding tax on payments … A withholding tax of fifteen percent (15%) of … performance payments made to a crafts … person, a musician, an artist, a player,"
+    }
+   ]
+  },
+  {
+   "item": "vat",
+   "finding": "VAT is 18%; registration is required at taxable turnover of RWF 20 million in a year or RWF 5 million in a calendar quarter; supplies by unregistered persons bear no VAT.",
+   "value": {
+    "currency": "RWF",
+    "standard": 0.18,
+    "threshold": {
+     "annual": 20000000,
+     "quarter": 5000000
+    }
+   },
+   "applies": "Supplies in Rwanda",
+   "sources": [
+    {
+     "src": 4,
+     "said": "The threshold for VAT registration is taxable turnover of RWF 20 million in any relevant year or RWF 5 million in a calendar quarter. The standard VAT rate is 18%"
+    }
+   ]
+  }
+ ],
+ "country": "RW",
+ "sources": [
+  {
+   "url": "https://taxsummaries.pwc.com/rwanda/individual/taxes-on-personal-income",
+   "title": "PwC Worldwide Tax Summaries, Rwanda, Individual - Taxes on personal income (last reviewed 23 September 2026)",
+   "read": "2026-11-01",
+   "kind": "secondary",
+   "quotes": "https://www.rra.gov.rw/",
+   "said": "Bands of income (RWF*) Taxable income (RWF) PIT rate (%) From To 0 60,000 60,000 0 60,001 100,000 40,000 10 100,001 200,000 100,000 20 200,001 And above 30 … The same tax rates are applicable to both residents and non-residents of Rwanda. … There are no local income taxes in Rwanda."
+  },
+  {
+   "url": "https://www.rra.gov.rw/fileadmin/user_upload/OG_n___Special_of_28.10.2022_Imisoro_ku_musaruro_Taxes_on_income_01.pdf",
+   "title": "Law nº 027/2022 of 20/10/2022 establishing taxes on income, Official Gazette nº Special of 28/10/2022 (Rwanda Revenue Authority, Tax Laws)",
+   "read": "2026-11-01",
+   "kind": "primary",
+   "said": "Article 14: Rate for personal income tax … From the second year after the … 0 720,000 0% … 720,001 1,200,000 10% … 1,200,001 2,400,000 20% … 2,400,001 More 30% … Article 60: Withholding tax on payments … A withholding tax of fifteen percent (15%) of … performance payments made to a crafts … person, a musician, an artist, a player,"
+  },
+  {
+   "url": "https://www.rra.gov.rw/fileadmin/user_upload/Law_amending_the_2022_Income_Tax_May_2025.pdf",
+   "title": "Law amending Law nº 027/2022 establishing taxes on income (May 2025), Rwanda Revenue Authority",
+   "read": "2026-11-01",
+   "kind": "primary",
+   "said": "amended, in Articles 36, 37, 45, 50 and 61"
+  },
+  {
+   "url": "https://taxsummaries.pwc.com/rwanda/individual/tax-administration",
+   "title": "PwC Worldwide Tax Summaries, Rwanda, Individual - Tax administration (last reviewed 23 September 2026)",
+   "read": "2026-11-01",
+   "kind": "secondary",
+   "quotes": "https://www.rra.gov.rw/",
+   "said": "Annual tax returns/declarations for individuals are due by 31 March of the following year after the tax period. … Non-resident individuals who suffer WHT on income sourced from Rwanda. … Tax on employment income is withheld by the employer under the Pay-As-You-Earn (PAYE) system and remitted to the RRA on a monthly basis together with PAYE returns by the 15th day of the following month."
+  },
+  {
+   "url": "https://taxsummaries.pwc.com/rwanda/corporate/other-taxes",
+   "title": "PwC Worldwide Tax Summaries, Rwanda, Corporate - Other taxes (last reviewed 23 September 2026)",
+   "read": "2026-11-01",
+   "kind": "secondary",
+   "quotes": "https://www.rssb.rw/",
+   "said": "Scheme details Employee contribution (%) Employer contribution (%) Contribution base Pension scheme 6.0 6.0 Gross salary Occupational hazards scheme Nil 2.0 Gross salary Maternity leave benefits scheme 0.3 0.3 Gross salary Community-based health insurance scheme (CBHIS) 0.5 Nil Net salary … 14% equally split 7% (employer) and 7% (employee), effective 1 January 2027. 16% equally split 8% (employer) and 8% (employee), effective 1 January 2028. 18% equally split 9% (employer) and 9% (employee), effective 1 January 2029. 20% equally split 10% (employer) and 10% (employee), effective 1 January 2030. … The threshold for VAT registration is taxable turnover of RWF 20 million in any relevant year or RWF 5 million in a calendar quarter. The standard VAT rate is 18%"
+  },
+  {
+   "url": "https://taxsummaries.pwc.com/rwanda/individual/other-taxes",
+   "title": "PwC Worldwide Tax Summaries, Rwanda, Individual - Other taxes (last reviewed 23 September 2026)",
+   "read": "2026-11-01",
+   "kind": "secondary",
+   "quotes": "https://www.rssb.rw/",
+   "said": "All people working in Rwanda, both nationals and foreigners, are required to contribute to a national social security contribution fund managed by the Rwanda Social Security Board (RSSB)."
+  },
+  {
+   "url": "https://taxsummaries.pwc.com/rwanda/corporate/withholding-taxes",
+   "title": "PwC Worldwide Tax Summaries, Rwanda, Corporate - Withholding taxes (last reviewed 23 September 2026)",
+   "read": "2026-11-01",
+   "kind": "secondary",
+   "quotes": "https://www.rra.gov.rw/",
+   "said": "The WHT is due where such payments or other methods of extinguishing an obligation are made to a person not registered with the tax administration or to a registered person who does not have recent income tax declaration. … Performance payments made to a crafts person, a musician, an artist, or a player in sports, cultural, or leisure activities, irrespective of whether paid directly or indirectly. … WHT of 15% of the total amount, excluding VAT, is required to be accounted for on payments … Royalties. Service fees, including management and technical service fees, except transport services."
+  }
+ ],
+ "blockers": [
+  {
+   "item": "nonResident",
+   "sought": "Whether the 15% withholding on a non-resident performer's payments (Law 027/2022 Art. 60, now read) is final; the law's annual-declaration exemptions (Art. 9) cover only turnover under RWF 2 million, employment income only, and investment income subject to withholding.",
+   "tried": {
+    "institution": "rra.gov.rw reached (Kinyarwanda home page); the income tax law and rate pages not located this pass || 2026-11-01 retry: rra.gov.rw/en/laws-policies-and-rulings read; Law 027/2022 (Official Gazette of 28/10/2022) and the May 2025 amending law downloaded and read (Arts. 9, 14, 60, 64).",
+    "official-register": "Law No. 027/2022 on income tax (Official Gazette) not read || 2026-11-01 retry: RwandaLII search API ('law establishing taxes on income') holds only the 2018 law (016/2018), not 027/2022; the Official Gazette copy on rra.gov.rw used instead.",
+    "web-search": "not separately searched; PwC (reviewed 23 September 2026) current || 2026-11-01 retry: refused: the session's web-search limit (200 calls per turn, shared) was reached; query intended 'Rwanda withholding tax non-resident artist final tax Article 60 Law 027/2022'.",
+    "trade-press": "PwC Worldwide Tax Summaries used || 2026-11-01 retry: PwC Rwanda individual pages (already saved) say no return is needed where all Rwandan income bore withholding, without citing the article; not taken as the law.",
+    "archive": "web.archive.org resets the connection from this environment (2026-11-01) || 2026-11-01 retry: web.archive.org connection reset through the proxy (curl 000)."
+   }
+  }
+ ]
+}

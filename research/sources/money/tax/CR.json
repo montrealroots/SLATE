@@ -1,0 +1,343 @@
+{
+ "topic": "tax.CR",
+ "read": "2026-11-01",
+ "note": "Read 2026-11-01 at the owner's word (\"Build those first 3 starting with ledger first\"; of the 21 countries read first: \"It should cover across every country\"; \"Retry the blocked tax facts once all countries land\"): the tax on a screen worker's pay in Costa Rica: a resident's income tax, social contributions, what is withheld at source, a non-resident artiste's withholding, an author's treatment, VAT and the tax year. Research and retry subagents (workbench/briefs/BRIEF-tax.md, BRIEF-tax-retry.md), every quote checked by the lead against its saved page.",
+ "figures": [
+  {
+   "item": "residents",
+   "finding": "From 1 January 2026 an employee's monthly pay is free of tax up to CRC 918,000, then taxed at 10% to 1,347,000, 15% to 2,364,000, 20% to 4,727,000 and 25% above, less monthly credits of CRC 1,710 per child and 2,590 for a spouse; there is no provincial or municipal income tax.",
+   "value": {
+    "currency": "CRC",
+    "period": "monthly",
+    "brackets": [
+     {
+      "from": 0,
+      "to": 918000,
+      "rate": 0
+     },
+     {
+      "from": 918000,
+      "to": 1347000,
+      "rate": 0.1
+     },
+     {
+      "from": 1347000,
+      "to": 2364000,
+      "rate": 0.15
+     },
+     {
+      "from": 2364000,
+      "to": 4727000,
+      "rate": 0.2
+     },
+     {
+      "from": 4727000,
+      "to": null,
+      "rate": 0.25
+     }
+    ],
+    "credits": {
+     "perChild": 1710,
+     "spouse": 2590
+    },
+    "regional": null
+   },
+   "applies": "Salaried income from 1 January 2026 (Ley 7092 art. 33 as updated by Decreto 45333-H); tax is on Costa Rican-source income only",
+   "sources": [
+    {
+     "src": 0,
+     "said": "a) Las rentas de hasta ¢918.000,00 (novecientos dieciocho mil colones) mensuales no estarán sujetas al impuesto. b) Sobre el exceso de ¢918.000,00 (novecientos dieciocho mil colones) mensuales y hasta ¢1.347.000,00 (un millón trescientos cuarenta y siete mil colones) mensuales, se pagará el diez por ciento (10%)."
+    },
+    {
+     "src": 0,
+     "said": "c) Sobre el exceso de ¢1.347.000,00 (un millón trescientos cuarenta y siete mil colones) mensuales y hasta ¢2.364.000,00 (dos millones trescientos sesenta y cuatro mil colones) mensuales, se pagará el quince por ciento (15%). d) Sobre el exceso de ¢2.364.000,00 (dos millones trescientos sesenta y cuatro mil colones) mensuales y hasta ¢4.727.000,00 (cuatro millones setecientos veintisiete mil colones) mensuales, se pagará el veinte por ciento (20%). e) Sobre el exceso de ¢4.727.000,00 (cuatro millones setecientos veintisiete mil colones) mensuales, se pagará el veinticinco por ciento (25%)."
+    },
+    {
+     "src": 0,
+     "said": "i. Por cada hijo, la suma de mil setecientos diez colones (¢1.710,00) ii. Por el cónyuge, la suma de dos mil quinientos noventa colones (¢2.590,00)"
+    },
+    {
+     "src": 1,
+     "said": "None of the provinces or municipalities impose any income taxes on individuals within their jurisdiction."
+    }
+   ]
+  },
+  {
+   "item": "residents",
+   "finding": "A self-employed person (a freelance actor, writer or director) pays on annual net income: nothing to CRC 6,244,000, 10% to 8,329,000, 15% to 10,414,000, 20% to 20,872,000 and 25% above, less annual credits of CRC 20,520 per child and 31,080 for a spouse.",
+   "value": {
+    "currency": "CRC",
+    "period": "annual",
+    "brackets": [
+     {
+      "from": 0,
+      "to": 6244000,
+      "rate": 0
+     },
+     {
+      "from": 6244000,
+      "to": 8329000,
+      "rate": 0.1
+     },
+     {
+      "from": 8329000,
+      "to": 10414000,
+      "rate": 0.15
+     },
+     {
+      "from": 10414000,
+      "to": 20872000,
+      "rate": 0.2
+     },
+     {
+      "from": 20872000,
+      "to": null,
+      "rate": 0.25
+     }
+    ],
+    "credits": {
+     "perChild": 20520,
+     "spouse": 31080
+    }
+   },
+   "applies": "Personas físicas con actividades lucrativas, fiscal year 2026 (Ley 7092 art. 15 c, as set by Ley 10667 and Decreto 45333-H)",
+   "sources": [
+    {
+     "src": 0,
+     "said": "i) Las rentas de hasta ¢6.244.000,00 (seis millones doscientos cuarenta y cuatro mil colones) anuales, no estarán sujetas al impuesto. ii) Sobre el exceso de ¢6.244.000,00 (seis millones doscientos cuarenta y cuatro mil colones) anuales y hasta ¢8.329. 000,00 (ocho millones trescientos veintinueve mil colones) anuales, se pagará el diez por ciento (10%)."
+    },
+    {
+     "src": 0,
+     "said": "iv)Sobre el exceso de ¢10.414.000,00 (diez millones cuatrocientos catorce mil colones) anuales y hasta ¢20.872.000,00 (veinte millones ochocientos setenta y dos mil colones) anuales, se pagará el veinte por ciento (20%). v) Sobre el exceso de ¢20.872.000,00 (veinte millones ochocientos setenta y dos mil colones) anuales, se pagará el veinticinco por ciento (25%)."
+    },
+    {
+     "src": 0,
+     "said": "a) Por cada hijo el crédito fiscal será de veinte mil quinientos veinte colones (¢20.520,00) anuales"
+    }
+   ]
+  },
+  {
+   "item": "year",
+   "finding": "The fiscal year is the calendar year; employees file nothing (tax is withheld monthly); the self-employed file a return and pay the balance two and a half months after the year ends (by 15 March), with instalments during the year.",
+   "value": {
+    "start": "01-01",
+    "end": "12-31",
+    "returnDue": "03-15",
+    "employeesFile": false
+   },
+   "applies": "Individuals",
+   "sources": [
+    {
+     "src": 2,
+     "said": "Income Tax Law, Law number 7092, established the fiscal period will match the calendar year"
+    },
+    {
+     "src": 2,
+     "said": "Self-employed individuals are required to make instalments of estimated taxes, which are computed on the average of the last three fiscal years, and a final payment two and a half months after the end of the fiscal year."
+    }
+   ]
+  },
+  {
+   "item": "social",
+   "finding": "From 2026 to 2028 an employee pays 10.83% of gross pay to the CCSS and allied funds (5.50% health and maternity, 4.33% pensions, 1% Banco Popular) and the employer 26.83% (14.83% to the CCSS plus 12% to other institutions and worker-protection funds), with no ceiling stated.",
+   "value": {
+    "employee": {
+     "total": 0.1083,
+     "SEM": 0.055,
+     "IVM": 0.0433,
+     "bancoPopular": 0.01
+    },
+    "employer": {
+     "total": 0.2683,
+     "SEM": 0.0925,
+     "IVM": 0.0558
+    },
+    "ivmSchedule": [
+     {
+      "from": "2026-01-01",
+      "to": "2028-12-31",
+      "employer": 0.0558,
+      "worker": 0.0433
+     },
+     {
+      "from": "2029-01-01",
+      "employer": 0.0575,
+      "worker": 0.045
+     }
+    ],
+    "ceiling": null
+   },
+   "applies": "Employees, 2026-2028; the self-employed contribute at income-scaled rates not read",
+   "sources": [
+    {
+     "src": 3,
+     "said": "TOTALES 26.67% 10.67% 26.83% 10.83%"
+    },
+    {
+     "src": 3,
+     "said": "Muerte (IVM) Subtotal CCSS 14.67% 9.67% 14.83% 9.83%"
+    },
+    {
+     "src": 4,
+     "said": "Del 1° de enero del 2026 al 31 de diciembre del 2028. 11,66% Patronos: 5,58% Trabajadores: 4,33%"
+    }
+   ]
+  },
+  {
+   "item": "withholding",
+   "finding": "The employer withholds the salary tax monthly from payroll; employees file no annual return for that income.",
+   "value": {
+    "employee": "monthly salary-tax scale, final"
+   },
+   "applies": "Employees",
+   "sources": [
+    {
+     "src": 2,
+     "said": "Employees who receive salaries and other similar or complementary remunerations or benefits must pay a monthly income tax that is withheld by the employer from the monthly payroll. Individuals do not need to file an annual tax return for this type of income."
+    }
+   ]
+  },
+  {
+   "item": "nonResident",
+   "finding": "A non-resident pays only withholding: 25% of a payment for personal services rendered in Costa Rica (a performance, writing or directing), 25% on royalties, 30% on other income; the withholding settles the tax.",
+   "value": {
+    "rate": 0.25,
+    "base": "gross payment",
+    "royalties": 0.25,
+    "other": 0.3,
+    "final": true
+   },
+   "applies": "Non-domiciled individuals (Ley 7092 art. 59)",
+   "sources": [
+    {
+     "src": 1,
+     "said": "Non-residents are liable only for the applicable withholding taxes (WHTs), depending on the nature of the local income."
+    },
+    {
+     "src": 5,
+     "said": "Technical service and management fees, royalties, patents, trademarks, franchises, and formulas 25 Transportation and communication services 8.5 Personal services from a Costa Rican source 25 Others 30"
+    },
+    {
+     "src": 6,
+     "said": "individuals who stay in Costa Rica, continuously or discontinuously, for more than 183 days, including departures and arrivals to the country, during the same fiscal period are considered tax resident in Costa Rica."
+    }
+   ]
+  },
+  {
+   "item": "vat",
+   "finding": "VAT is 13% on goods and services, including services consumed in Costa Rica; the freelancer's registration threshold was not found.",
+   "value": {
+    "standard": 0.13,
+    "threshold": null
+   },
+   "applies": "Services supplied in Costa Rica",
+   "sources": [
+    {
+     "src": 7,
+     "said": "The standard applicable VAT rate is 13%;"
+    }
+   ]
+  }
+ ],
+ "country": "CR",
+ "sources": [
+  {
+   "url": "https://www.imprentanacional.go.cr/pub/2025/12/05/COMP_05_12_2025.pdf",
+   "title": "La Gaceta n.° 229, 5 December 2025: Decreto Ejecutivo n.° 45333-H, Actualización de los tramos del impuesto sobre la renta (salario y utilidades) a partir del 01 de enero de 2026",
+   "read": "2026-11-01",
+   "kind": "primary",
+   "said": "a) Las rentas de hasta ¢918.000,00 (novecientos dieciocho mil colones) mensuales no estarán sujetas al impuesto. b) Sobre el exceso de ¢918.000,00 (novecientos dieciocho mil colones) mensuales y hasta ¢1.347.000,00 (un millón trescientos cuarenta y siete mil colones) mensuales, se pagará el diez por ciento (10%). … c) Sobre el exceso de ¢1.347.000,00 (un millón trescientos cuarenta y siete mil colones) mensuales y hasta ¢2.364.000,00 (dos millones trescientos sesenta y cuatro mil colones) mensuales, se pagará el quince por ciento (15%). d) Sobre el exceso de ¢2.364.000,00 (dos millones trescientos sesenta y cuatro mil colones) mensuales y hasta ¢4.727.000,00 (cuatro millones setecientos veintisiete mil colones) mensuales, se pagará el veinte por ciento (20%). e) Sobre el exceso de ¢4.727.000,00 (cuatro millones setecientos veintisiete mil colones) mensuales, se pagará el veinticinco por ciento (25%). … i. Por cada hijo, la suma de mil setecientos diez colones (¢1.710,00) ii. Por el cónyuge, la suma de dos mil quinientos noventa colones (¢2.590,00) … i) Las rentas de hasta ¢6.244.000,00 (seis millones doscientos cuarenta y cuatro mil colones) anuales, no estarán sujetas al impuesto. ii) Sobre el exceso de ¢6.244.000,00 (seis millones doscientos cuarenta y cuatro mil colones) anuales y hasta ¢8.329. 000,00 (ocho millones trescientos veintinueve mil colones) anuales, se pagará el diez por ciento (10%). … iv)Sobre el exceso de ¢10.414.000,00 (diez millones cuatrocientos catorce mil colones) anuales y hasta ¢20.872.000,00 (veinte millones ochocientos setenta y dos mil colones) anuales, se pagará el veinte por ciento (20%). v) Sobre el exceso de ¢20.872.000,00 (veinte millones ochocientos setenta y dos mil colones) anuales, se pagará el veinticinco por ciento (25%). … a) Por cada hijo el crédito fiscal será de veinte mil quinientos veinte colones (¢20.520,00) anuales"
+  },
+  {
+   "url": "https://taxsummaries.pwc.com/costa-rica/individual/taxes-on-personal-income",
+   "title": "PwC Worldwide Tax Summaries, Costa Rica, Individual - Taxes on personal income (last reviewed 30 June 2026)",
+   "read": "2026-11-01",
+   "kind": "secondary",
+   "quotes": "http://www.pgrweb.go.cr/scij/Busqueda/Normativa/Normas/nrm_texto_completo.aspx?nValor1=1&nValor2=10969",
+   "said": "None of the provinces or municipalities impose any income taxes on individuals within their jurisdiction. … Non-residents are liable only for the applicable withholding taxes (WHTs), depending on the nature of the local income."
+  },
+  {
+   "url": "https://taxsummaries.pwc.com/costa-rica/individual/tax-administration",
+   "title": "PwC Worldwide Tax Summaries, Costa Rica, Individual - Tax administration (last reviewed 30 June 2026)",
+   "read": "2026-11-01",
+   "kind": "secondary",
+   "quotes": "http://www.pgrweb.go.cr/scij/Busqueda/Normativa/Normas/nrm_texto_completo.aspx?nValor1=1&nValor2=10969",
+   "said": "Income Tax Law, Law number 7092, established the fiscal period will match the calendar year … Self-employed individuals are required to make instalments of estimated taxes, which are computed on the average of the last three fiscal years, and a final payment two and a half months after the end of the fiscal year. … Employees who receive salaries and other similar or complementary remunerations or benefits must pay a monthly income tax that is withheld by the employer from the monthly payroll. Individuals do not need to file an annual tax return for this type of income."
+  },
+  {
+   "url": "https://files.griddo.ecija.com/incrementos-ccss.pdf",
+   "title": "ECIJA Costa Rica, Incrementos CCSS 2025-2026 (table of employer and worker contributions)",
+   "read": "2026-11-01",
+   "kind": "secondary",
+   "quotes": "https://www.ccss.sa.cr/",
+   "said": "TOTALES 26.67% 10.67% 26.83% 10.83% … Muerte (IVM) Subtotal CCSS 14.67% 9.67% 14.83% 9.83%"
+  },
+  {
+   "url": "https://kpmg.com/cr/es/insights/2025/10/newsflash-oct-29-2025.html",
+   "title": "KPMG Costa Rica, Newsflash 29 October 2025 (IVM contribution schedule)",
+   "read": "2026-11-01",
+   "kind": "secondary",
+   "quotes": "https://www.ccss.sa.cr/",
+   "said": "Del 1° de enero del 2026 al 31 de diciembre del 2028. 11,66% Patronos: 5,58% Trabajadores: 4,33%"
+  },
+  {
+   "url": "https://taxsummaries.pwc.com/costa-rica/corporate/withholding-taxes",
+   "title": "PwC Worldwide Tax Summaries, Costa Rica, Corporate - Withholding taxes (last reviewed 30 June 2026)",
+   "read": "2026-11-01",
+   "kind": "secondary",
+   "quotes": "http://www.pgrweb.go.cr/scij/Busqueda/Normativa/Normas/nrm_texto_completo.aspx?nValor1=1&nValor2=10969",
+   "said": "Technical service and management fees, royalties, patents, trademarks, franchises, and formulas 25 Transportation and communication services 8.5 Personal services from a Costa Rican source 25 Others 30"
+  },
+  {
+   "url": "https://taxsummaries.pwc.com/costa-rica/individual/residence",
+   "title": "PwC Worldwide Tax Summaries, Costa Rica, Individual - Residence (last reviewed 30 June 2026)",
+   "read": "2026-11-01",
+   "kind": "secondary",
+   "quotes": "http://www.pgrweb.go.cr/scij/Busqueda/Normativa/Normas/nrm_texto_completo.aspx?nValor1=1&nValor2=10969",
+   "said": "individuals who stay in Costa Rica, continuously or discontinuously, for more than 183 days, including departures and arrivals to the country, during the same fiscal period are considered tax resident in Costa Rica."
+  },
+  {
+   "url": "https://taxsummaries.pwc.com/costa-rica/corporate/other-taxes",
+   "title": "PwC Worldwide Tax Summaries, Costa Rica, Corporate - Other taxes (last reviewed 30 June 2026)",
+   "read": "2026-11-01",
+   "kind": "secondary",
+   "quotes": "https://www.hacienda.go.cr/",
+   "said": "The standard applicable VAT rate is 13%;"
+  }
+ ],
+ "blockers": [
+  {
+   "item": "vat",
+   "sought": "Whether a freelance screen worker below some turnover is outside VAT (no threshold found in the sources read)",
+   "tried": {
+    "institution": "hacienda.go.cr home page reached (2026-11-01); no page found there giving the item || 2026-11-01 retry: hacienda.go.cr home page re-read: no IVA, renta or CCSS pages linked (notices only); ccss.sa.cr and www.ccss.sa.cr reset the connection (curl 000)",
+    "official-register": "La Gaceta 229 (5 Dec 2025) read for the 2026 brackets; SCIJ (pgrweb.go.cr) not read || 2026-11-01 retry: pgrweb.go.cr/scij now redirects to sinalevi.go.cr, which returns HTTP 403 (not read another way); imprentanacional.go.cr (La Gaceta) reachable but no issue number to fetch",
+    "web-search": "searched 'Hacienda Costa Rica decreto tramos impuesto sobre la renta 2026' and 'CCSS cuotas obrero patronales 2026' || 2026-11-01 retry: refused by the tool on 2026-11-01: 'this turn's web search budget is used up (limit: 200 WebSearch calls per turn, shared by every agent)'; queries sent and refused this turn: 'Налоговый кодекс Республики Беларусь статья 199 ставки подоходного налога 2026 13 25 процентов' and 'Eswatini Revenue Service PAYE tax tables 1 July 2026'; no search engine was queried any other way",
+    "trade-press": "PwC (reviewed 30 June 2026), EY, ECIJA and KPMG Costa Rica read || 2026-11-01 retry: PwC, EY, KPMG and ECIJA (already read) say nothing more",
+    "archive": "web.archive.org resets the connection from this environment (2026-11-01) || 2026-11-01 retry: archive.org's availability API now answers (snapshots of the institution's site exist), but web.archive.org snapshot pages return HTTP 403 over http and reset over https from this environment (2026-11-01)"
+   }
+  },
+  {
+   "item": "social",
+   "sought": "The self-employed (trabajador independiente) CCSS contribution scale for 2026, and the CCSS's own rate table",
+   "tried": {
+    "institution": "hacienda.go.cr home page reached (2026-11-01); no page found there giving the item || 2026-11-01 retry: hacienda.go.cr home page re-read: no IVA, renta or CCSS pages linked (notices only); ccss.sa.cr and www.ccss.sa.cr reset the connection (curl 000)",
+    "official-register": "La Gaceta 229 (5 Dec 2025) read for the 2026 brackets; SCIJ (pgrweb.go.cr) not read || 2026-11-01 retry: pgrweb.go.cr/scij now redirects to sinalevi.go.cr, which returns HTTP 403 (not read another way); imprentanacional.go.cr (La Gaceta) reachable but no issue number to fetch",
+    "web-search": "searched 'Hacienda Costa Rica decreto tramos impuesto sobre la renta 2026' and 'CCSS cuotas obrero patronales 2026' || 2026-11-01 retry: refused by the tool on 2026-11-01: 'this turn's web search budget is used up (limit: 200 WebSearch calls per turn, shared by every agent)'; queries sent and refused this turn: 'Налоговый кодекс Республики Беларусь статья 199 ставки подоходного налога 2026 13 25 процентов' and 'Eswatini Revenue Service PAYE tax tables 1 July 2026'; no search engine was queried any other way",
+    "trade-press": "PwC (reviewed 30 June 2026), EY, ECIJA and KPMG Costa Rica read || 2026-11-01 retry: ECIJA CCSS note (already saved) gives employee/employer only",
+    "archive": "web.archive.org resets the connection from this environment (2026-11-01) || 2026-11-01 retry: archive.org's availability API now answers (snapshots of the institution's site exist), but web.archive.org snapshot pages return HTTP 403 over http and reset over https from this environment (2026-11-01)"
+   }
+  },
+  {
+   "item": "authors",
+   "sought": "The Ley 7092 art. 59 text on remittances for films, television and recordings, and any special rule for authors' royalties",
+   "tried": {
+    "institution": "hacienda.go.cr home page reached (2026-11-01); no page found there giving the item || 2026-11-01 retry: hacienda.go.cr home page re-read: no IVA, renta or CCSS pages linked (notices only); ccss.sa.cr and www.ccss.sa.cr reset the connection (curl 000)",
+    "official-register": "La Gaceta 229 (5 Dec 2025) read for the 2026 brackets; SCIJ (pgrweb.go.cr) not read || 2026-11-01 retry: pgrweb.go.cr/scij now redirects to sinalevi.go.cr, which returns HTTP 403 (not read another way); imprentanacional.go.cr (La Gaceta) reachable but no issue number to fetch",
+    "web-search": "searched 'Hacienda Costa Rica decreto tramos impuesto sobre la renta 2026' and 'CCSS cuotas obrero patronales 2026' || 2026-11-01 retry: refused by the tool on 2026-11-01: 'this turn's web search budget is used up (limit: 200 WebSearch calls per turn, shared by every agent)'; queries sent and refused this turn: 'Налоговый кодекс Республики Беларусь статья 199 ставки подоходного налога 2026 13 25 процентов' and 'Eswatini Revenue Service PAYE tax tables 1 July 2026'; no search engine was queried any other way",
+    "trade-press": "PwC (reviewed 30 June 2026), EY, ECIJA and KPMG Costa Rica read || 2026-11-01 retry: PwC and KPMG (already read): no Ley 7092 art. 59 text",
+    "archive": "web.archive.org resets the connection from this environment (2026-11-01) || 2026-11-01 retry: archive.org's availability API now answers (snapshots of the institution's site exist), but web.archive.org snapshot pages return HTTP 403 over http and reset over https from this environment (2026-11-01)"
+   }
+  }
+ ]
+}

@@ -1,0 +1,246 @@
+{
+ "topic": "tax.TN",
+ "read": "2026-11-01",
+ "note": "Read 2026-11-01 at the owner's word (\"Build those first 3 starting with ledger first\"; of the 21 countries read first: \"It should cover across every country\"; \"Retry the blocked tax facts once all countries land\"): the tax on a screen worker's pay in Tunisia: a resident's income tax, social contributions, what is withheld at source, a non-resident artiste's withholding, an author's treatment, VAT and the tax year. Research and retry subagents (workbench/briefs/BRIEF-tax.md, BRIEF-tax-retry.md), every quote checked by the lead against its saved page.",
+ "figures": [
+  {
+   "item": "residents",
+   "finding": "From 1 January 2025 a resident pays 0% to TND 5,000 of net income, 15% to 10,000, 25% to 20,000, 30% to 30,000, 33% to 40,000, 36% to 50,000, 38% to 70,000 and 40% above; pay is first reduced by social contributions and a 10% professional-expense deduction capped at TND 2,000.",
+   "value": {
+    "currency": "TND",
+    "brackets": [
+     {
+      "from": 0,
+      "to": 5000,
+      "rate": 0
+     },
+     {
+      "from": 5000,
+      "to": 10000,
+      "rate": 0.15
+     },
+     {
+      "from": 10000,
+      "to": 20000,
+      "rate": 0.25
+     },
+     {
+      "from": 20000,
+      "to": 30000,
+      "rate": 0.3
+     },
+     {
+      "from": 30000,
+      "to": 40000,
+      "rate": 0.33
+     },
+     {
+      "from": 40000,
+      "to": 50000,
+      "rate": 0.36
+     },
+     {
+      "from": 50000,
+      "to": 70000,
+      "rate": 0.38
+     },
+     {
+      "from": 70000,
+      "to": null,
+      "rate": 0.4
+     }
+    ],
+    "salaryExpenseDeduction": {
+     "rate": 0.1,
+     "cap": 2000
+    }
+   },
+   "applies": "Scale of the Finance Law for 2025, still applied in 2026; the 2026 column is read from the page's two-column table (single figures are the 2025 scale).",
+   "sources": [
+    {
+     "src": 0,
+     "said": "Revenue range (TND) PIT rate (%) Up to 2024 As of 1 January 2025 From 0 to 5,000 0 0 From 5,000.001 to 10,000 26 15 From 10,000.001 to 20,000 25 From 20,000.001 to 30,000 28 30 From 30,000.001 to 40,000 32 33 From 40,000.001 to 50,000 36 From 50,000.001 to 70,000 35 38 Beyond 70,000 40"
+    },
+    {
+     "src": 0,
+     "said": "For salaries, the net income is calculated as the gross salary reduced by the mandatory social security contributions paid to Tunisian social security organisations and 10% on the amount net of Tunisian social security contributions as deduction for professional expenses, capped at TND 2,000."
+    }
+   ]
+  },
+  {
+   "item": "year",
+   "finding": "The tax year is the calendar year; returns and payment fall due by type of income, 25 May for a person with a non-commercial (professional) activity or several kinds of income.",
+   "value": {
+    "start": "01-01",
+    "end": "12-31",
+    "returnDue": {
+     "severalOrNonCommercial": "05-25 following year",
+     "movableCapital": "02-25",
+     "realProperty": "04-25"
+    }
+   },
+   "applies": "2026.",
+   "sources": [
+    {
+     "src": 1,
+     "said": "Persons exercising many activities or realising many categories of revenues 25 May (if one of the activities is a commercial, industrial, non-commercial activity, or services)"
+    }
+   ]
+  },
+  {
+   "item": "social",
+   "finding": "CNSS: from 1 January 2025 the employer pays 17.07% and the employee 9.68% of pay (including the 0.5% added by the Finance Law 2025); a self-employed person chooses one of the regimes on offer.",
+   "value": {
+    "employee": 0.0968,
+    "employer": 0.1707,
+    "selfEmployed": "chosen regime"
+   },
+   "applies": "2026; no ceiling stated.",
+   "sources": [
+    {
+     "src": 2,
+     "said": "Hence, as of 1 January 2025, social employer contribution is of 17.07% reduced by 0.5% for industrial wholly exporting companies and the social employee contribution is of 9.68%."
+    },
+    {
+     "src": 2,
+     "said": "For individuals carrying out independent activities, they may opt freely for one social regime among the regimes made available by the social authorities."
+    }
+   ]
+  },
+  {
+   "item": "withholding",
+   "finding": "The employer withholds tax from pay monthly (1/12 of the annual scale) and pays it by the 15th (individual employer) or the 28th/20th of the next month.",
+   "value": {
+    "employee": "monthly, 1/12 of annual tax"
+   },
+   "applies": "2026.",
+   "sources": [
+    {
+     "src": 0,
+     "said": "The monthly income tax is calculated as 1/12 of the annual income tax determined according to the progressive scale below."
+    },
+    {
+     "src": 1,
+     "said": "whether resident in Tunisia or not, is to be withheld at source by the employer and paid to the tax authorities no later than the 15th day of the following month if the employer is an individual or the 28th"
+    }
+   ]
+  },
+  {
+   "item": "nonResident",
+   "finding": "A non-resident employed in Tunisia for six months or less in the year may be taxed at a flat 20% of gross pay; other payments to non-residents, royalties included, bear 15% withholding unless a treaty gives less. Withholding is final (libératoire) for non-residents not established in Tunisia.",
+   "value": {
+    "shortStayEmployeeFlat": {
+     "rate": 0.2,
+     "base": "gross",
+     "maxStay": "6 months"
+    },
+    "otherPayments": 0.15,
+    "royalties": 0.15,
+    "final": true
+   },
+   "applies": "No artiste-specific rule was found.",
+   "sources": [
+    {
+     "src": 3,
+     "said": "L’IRPP est dû par toute personne physique ayant sa résidence habituelle en Tunisie. Les non-résidents sont également soumis à l’impôt sur le revenu au titre de leurs revenus de source tunisienne. … La retenue à la source est libératoire pour les personnes non résidentes et non établies en Tunisie."
+    },
+    {
+     "src": 0,
+     "said": "However, the income tax may be due at a flat rate of 20% of their gross income, before deductions for any reason whatsoever (including compulsory social security contributions for the establishment of their retirement pensions), for: Non-resident employees working in Tunisia for a period or periods not exceeding six months per fiscal year."
+    },
+    {
+     "src": 4,
+     "said": "15% on other payments made to non-Tunisian tax resident persons (subject to more favourable rates provide by DTT)."
+    }
+   ]
+  },
+  {
+   "item": "vat",
+   "finding": "VAT is 19% (13% and 7% reduced), on services used in Tunisia. Liberal professions and services are within VAT with no turnover threshold; the 100,000-dinar threshold applies only to retail trade, and an individual on the flat-rate (forfaitaire) regime for industrial and commercial profits up to TND 100,000 pays a flat tax that discharges VAT.",
+   "value": {
+    "standard": 0.19,
+    "reduced": [
+     0.13,
+     0.07
+    ],
+    "freelancerThreshold": null,
+    "retailThreshold": 100000,
+    "forfaitCeiling": 100000
+   },
+   "applies": "No registration threshold for a freelancer was read.",
+   "sources": [
+    {
+     "src": 3,
+     "said": "Le champ d’application de la TVA couvre : Les importations sous réserve des exonérations, La production industrielle, artisanale et les services, Les opérations relevant des professions libérales, Le commerce de gros autre que celui des produits alimentaires, Le commerce de détail lorsque le chiffre d’affaires annuel global est égal ou supérieur à 100.000D … Le régime forfaitaire s’applique aux entreprises individuelles qui réalisent des revenus dans la catégorie des bénéfices industriels et commerciaux. … dont le chiffre d’affaires annuel n’excède pas 100 mille dinars. … L'impôt forfaitaire ainsi déterminé est libératoire de l’impôt sur le revenu au titre des bénéfices industriels et commerciaux, de la taxe sur la valeur ajoutée en régime réel"
+    },
+    {
+     "src": 5,
+     "said": "The standard rate of VAT is 19%. Lower rates of 13% and 7% apply to specifically designated operations."
+    }
+   ]
+  }
+ ],
+ "country": "TN",
+ "sources": [
+  {
+   "url": "https://taxsummaries.pwc.com/tunisia/individual/taxes-on-personal-income",
+   "title": "PwC Worldwide Tax Summaries: tunisia Individual - Taxes on personal income",
+   "read": "2026-11-01",
+   "kind": "secondary",
+   "quotes": "https://www.finances.gov.tn/",
+   "said": "Revenue range (TND) PIT rate (%) Up to 2024 As of 1 January 2025 From 0 to 5,000 0 0 From 5,000.001 to 10,000 26 15 From 10,000.001 to 20,000 25 From 20,000.001 to 30,000 28 30 From 30,000.001 to 40,000 32 33 From 40,000.001 to 50,000 36 From 50,000.001 to 70,000 35 38 Beyond 70,000 40 … For salaries, the net income is calculated as the gross salary reduced by the mandatory social security contributions paid to Tunisian social security organisations and 10% on the amount net of Tunisian social security contributions as deduction for professional expenses, capped at TND 2,000. … The monthly income tax is calculated as 1/12 of the annual income tax determined according to the progressive scale below. … However, the income tax may be due at a flat rate of 20% of their gross income, before deductions for any reason whatsoever (including compulsory social security contributions for the establishment of their retirement pensions), for: Non-resident employees working in Tunisia for a period or periods not exceeding six months per fiscal year."
+  },
+  {
+   "url": "https://taxsummaries.pwc.com/tunisia/individual/tax-administration",
+   "title": "PwC Worldwide Tax Summaries: tunisia Individual - Tax administration",
+   "read": "2026-11-01",
+   "kind": "secondary",
+   "quotes": "https://www.finances.gov.tn/",
+   "said": "Persons exercising many activities or realising many categories of revenues 25 May (if one of the activities is a commercial, industrial, non-commercial activity, or services) … whether resident in Tunisia or not, is to be withheld at source by the employer and paid to the tax authorities no later than the 15th day of the following month if the employer is an individual or the 28th"
+  },
+  {
+   "url": "https://taxsummaries.pwc.com/tunisia/individual/other-taxes",
+   "title": "PwC Worldwide Tax Summaries: tunisia Individual - Other taxes",
+   "read": "2026-11-01",
+   "kind": "secondary",
+   "quotes": "https://www.cnss.tn/",
+   "said": "Hence, as of 1 January 2025, social employer contribution is of 17.07% reduced by 0.5% for industrial wholly exporting companies and the social employee contribution is of 9.68%. … For individuals carrying out independent activities, they may opt freely for one social regime among the regimes made available by the social authorities."
+  },
+  {
+   "url": "https://www.finances.gov.tn/fr/apercu-general-sur-la-fiscalite",
+   "title": "Aperçu général sur la fiscalité (Ministère des Finances, Tunisie)",
+   "read": "2026-11-01",
+   "kind": "primary",
+   "said": "L’IRPP est dû par toute personne physique ayant sa résidence habituelle en Tunisie. Les non-résidents sont également soumis à l’impôt sur le revenu au titre de leurs revenus de source tunisienne. … La retenue à la source est libératoire pour les personnes non résidentes et non établies en Tunisie. … Le champ d’application de la TVA couvre : Les importations sous réserve des exonérations, La production industrielle, artisanale et les services, Les opérations relevant des professions libérales, Le commerce de gros autre que celui des produits alimentaires, Le commerce de détail lorsque le chiffre d’affaires annuel global est égal ou supérieur à 100.000D … Le régime forfaitaire s’applique aux entreprises individuelles qui réalisent des revenus dans la catégorie des bénéfices industriels et commerciaux. … dont le chiffre d’affaires annuel n’excède pas 100 mille dinars. … L'impôt forfaitaire ainsi déterminé est libératoire de l’impôt sur le revenu au titre des bénéfices industriels et commerciaux, de la taxe sur la valeur ajoutée en régime réel"
+  },
+  {
+   "url": "https://taxsummaries.pwc.com/tunisia/corporate/withholding-taxes",
+   "title": "PwC Worldwide Tax Summaries: tunisia Corporate - Withholding taxes",
+   "read": "2026-11-01",
+   "kind": "secondary",
+   "quotes": "https://www.finances.gov.tn/",
+   "said": "15% on other payments made to non-Tunisian tax resident persons (subject to more favourable rates provide by DTT)."
+  },
+  {
+   "url": "https://taxsummaries.pwc.com/tunisia/corporate/other-taxes",
+   "title": "PwC Worldwide Tax Summaries: tunisia Corporate - Other taxes",
+   "read": "2026-11-01",
+   "kind": "secondary",
+   "quotes": "https://www.finances.gov.tn/",
+   "said": "The standard rate of VAT is 19%. Lower rates of 13% and 7% apply to specifically designated operations."
+  }
+ ],
+ "blockers": [
+  {
+   "item": "authors",
+   "sought": "Any special treatment of a resident author's fees or royalties, and the withholding rate on a non-resident artiste's fee (the withholding's finality is now quoted from the Ministry).",
+   "tried": {
+    "institution": "finances.gov.tn answers; the IRPP code pages were not located in this pass (2026-11-01). || 2026-11-01 retry: finances.gov.tn read: \"Aperçu général sur la fiscalité\" (saved TN-finances-apercu-fiscalite.html): withholding on fees (\"honoraires\") paid by the State, firms and professionals from 1,000 dinars, final for non-residents; no author or artiste rate; /fr/legislation returns 404.",
+    "official-register": "jort.gov.tn (Journal officiel) not read 2026-11-01. || 2026-11-01 retry: jort.gov.tn (Journal officiel) still does not answer (curl 000); Code de l'IRPP et de l'IS not found on a reachable host.",
+    "web-search": "Not run for Tunisia (2026-11-01). || 2026-11-01 retry: WebSearch refused by the tool on 2026-11-01: the turn's shared 200-search limit was reached before this query; no other search route used.",
+    "trade-press": "PwC Worldwide Tax Summaries (Tunisia) read 2026-11-01: treaty royalty rates only. || 2026-11-01 retry: PwC Tunisia (saved) gives treaty royalty rates only; Deloitte has no Tunisia 2026 Highlights (HTTP 404).",
+    "archive": "web.archive.org resets the connection from this environment (2026-11-01). || 2026-11-01 retry: archive.org/wayback/available answers; web.archive.org snapshots reset https and return 403 on http from this environment (2026-11-01), so none was read."
+   }
+  }
+ ]
+}

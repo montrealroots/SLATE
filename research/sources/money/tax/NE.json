@@ -1,0 +1,220 @@
+{
+ "topic": "tax.NE",
+ "read": "2026-11-01",
+ "note": "Read 2026-11-01 at the owner's word (\"Build those first 3 starting with ledger first\"; of the 21 countries read first: \"It should cover across every country\"; \"Retry the blocked tax facts once all countries land\"): the tax on a screen worker's pay in Niger: a resident's income tax, social contributions, what is withheld at source, a non-resident artiste's withholding, an author's treatment, VAT and the tax year. Research and retry subagents (workbench/briefs/BRIEF-tax.md, BRIEF-tax-retry.md), every quote checked by the lead against its saved page.",
+ "figures": [
+  {
+   "item": "residents",
+   "finding": "Under the 2013 Code, pay is taxed by the tax on wages (ITS) on monthly bands: 1% to XOF 25,000, 2% to 50,000, 6% to 100,000, 13% to 150,000, 25% to 300,000, 30% to 400,000, 32% to 700,000, 34% to 1,000,000 and 35% above, less family reductions.",
+   "value": {
+    "currency": "XOF",
+    "monthly": [
+     {
+      "from": 0,
+      "to": 25000,
+      "rate": 0.01
+     },
+     {
+      "from": 25000,
+      "to": 50000,
+      "rate": 0.02
+     },
+     {
+      "from": 50000,
+      "to": 100000,
+      "rate": 0.06
+     },
+     {
+      "from": 100000,
+      "to": 150000,
+      "rate": 0.13
+     },
+     {
+      "from": 150000,
+      "to": 300000,
+      "rate": 0.25
+     },
+     {
+      "from": 300000,
+      "to": 400000,
+      "rate": 0.3
+     },
+     {
+      "from": 400000,
+      "to": 700000,
+      "rate": 0.32
+     },
+     {
+      "from": 700000,
+      "to": 1000000,
+      "rate": 0.34
+     },
+     {
+      "from": 1000000,
+      "to": null,
+      "rate": 0.35
+     }
+    ],
+    "lawYear": 2013
+   },
+   "applies": "CGI art. 66. From the Code of 2013 (Loi n°2012-37 of 20 June 2012, in force 1 January 2013); no 2026 text was reachable, so this is the last law read, not a confirmed 2026 figure (see blocker).",
+   "sources": [
+    {
+     "src": 0,
+     "said": "L’impôt sur les traitements, salaires et revenus assimilés est un impôt progressif calculé par tranches mensuelles comme suit :"
+    },
+    {
+     "src": 0,
+     "said": "De 0 A 25 000 1% De 25 001 A 50 000 2% De 50 001 A 100 000 6% De 100 001 A 150 000 13% De 150 001 A 300 000 25% De 300 001 A 400 000 30% De 400 001 A 700 000 32% De 700 001 A 1 000 000 34% Au-delà De 1 000 000 35%"
+    }
+   ]
+  },
+  {
+   "item": "vat",
+   "finding": "Under the 2013 Code the standard VAT rate is 19%.",
+   "value": {
+    "standard": 0.19,
+    "lawYear": 2013
+   },
+   "applies": "CGI art. 226. From the Code of 2013 (Loi n°2012-37 of 20 June 2012, in force 1 January 2013); no 2026 text was reachable, so this is the last law read, not a confirmed 2026 figure (see blocker).",
+   "sources": [
+    {
+     "src": 0,
+     "said": "Art. 226- Le taux normal de la taxe sur la valeur ajoutée est de 19%."
+    }
+   ]
+  },
+  {
+   "item": "authors",
+   "finding": "The 2013 Code also lets communes levy a flat tax on artists: XOF 10,000 for an artist without a troupe and XOF 20,000 with one.",
+   "value": {
+    "communalArtistTax": {
+     "solo": 10000,
+     "withTroupe": 20000
+    },
+    "lawYear": 2013
+   },
+   "applies": "Communal taxes, art. 42 of the local taxes part. From the Code of 2013 (Loi n°2012-37 of 20 June 2012, in force 1 January 2013); no 2026 text was reachable, so this is the last law read, not a confirmed 2026 figure (see blocker).",
+   "sources": [
+    {
+     "src": 0,
+     "said": "Art.42- Il est institué au profit des budgets des communes une taxe sur les artistes."
+    },
+    {
+     "src": 0,
+     "said": "- artiste sans troupe : 10 000 F CFA ;"
+    }
+   ]
+  },
+  {
+   "item": "social",
+   "finding": "The CNSS pension branch takes 11.5% of monthly pay between FCFA 30,047 and 500,000 (FCFA 6,000,000 a year): 6.25% from the employer and 5.25% from the employee; a voluntary insured person pays the whole 11.5%; work-injury cover is 1.75%, paid by the employer alone.",
+   "value": {
+    "currency": "XOF",
+    "pension": {
+     "employer": 0.0625,
+     "employee": 0.0525,
+     "voluntary": 0.115,
+     "floorMonthly": 30047,
+     "ceilingMonthly": 500000
+    },
+    "workInjury": {
+     "employer": 0.0175
+    },
+    "family": "not stated"
+   },
+   "applies": "Salaried workers under art. 2 of the Labour Code; a self-employed screen worker may join as a voluntary insured (assuré volontaire).",
+   "sources": [
+    {
+     "src": 1,
+     "said": "Travailleur salarié : 5,25% du salaire mensuel fixé à 30.047 Fcfa minimum et 500.000 Fcfa maximum. Employeur : 6,25% du salaire mensuel fixé à 30.047 Fcfa minimum et 500.000 Fcfa maximum. Assuré volontaire : 11.50% du salaire mensuel déclaré fixé à 30.047 Fcfa minimum et 500.000 Fcfa maximum"
+    },
+    {
+     "src": 2,
+     "said": "son financement est assuré par les cotisations sociales entièrement supportées par l’employeur au taux de 1,75%"
+    }
+   ]
+  }
+ ],
+ "country": "NE",
+ "sources": [
+  {
+   "url": "https://ambassadeniger-fr.org/uploads/textes-de-reference/CGI%202013.pdf",
+   "title": "Code Général des Impôts 2013 (Loi n°2012-37), as published by the Embassy of Niger in France",
+   "read": "2026-11-01",
+   "kind": "primary",
+   "said": "L’impôt sur les traitements, salaires et revenus assimilés est un impôt progressif calculé par tranches mensuelles comme suit : … De 0 A 25 000 1% De 25 001 A 50 000 2% De 50 001 A 100 000 6% De 100 001 A 150 000 13% De 150 001 A 300 000 25% De 300 001 A 400 000 30% De 400 001 A 700 000 32% De 700 001 A 1 000 000 34% Au-delà De 1 000 000 35% … Art. 226- Le taux normal de la taxe sur la valeur ajoutée est de 19%. … Art.42- Il est institué au profit des budgets des communes une taxe sur les artistes. … - artiste sans troupe : 10 000 F CFA ;"
+  },
+  {
+   "url": "https://cnss.ne/prestations/branche-des-pensions/",
+   "title": "Branche des pensions (Caisse Nationale de Sécurité Sociale du Niger)",
+   "read": "2026-11-01",
+   "kind": "primary",
+   "said": "Travailleur salarié : 5,25% du salaire mensuel fixé à 30.047 Fcfa minimum et 500.000 Fcfa maximum. Employeur : 6,25% du salaire mensuel fixé à 30.047 Fcfa minimum et 500.000 Fcfa maximum. Assuré volontaire : 11.50% du salaire mensuel déclaré fixé à 30.047 Fcfa minimum et 500.000 Fcfa maximum"
+  },
+  {
+   "url": "https://cnss.ne/prestations/branche-des-accidents-de-travail-et-maladies-professionnelles/",
+   "title": "Branche des accidents de travail et maladies professionnelles (CNSS Niger)",
+   "read": "2026-11-01",
+   "kind": "primary",
+   "said": "son financement est assuré par les cotisations sociales entièrement supportées par l’employeur au taux de 1,75%"
+  }
+ ],
+ "blockers": [
+  {
+   "item": "residents",
+   "sought": "The 2026 wage tax scale, VAT rate and threshold under the Finance Law for 2026.",
+   "tried": {
+    "institution": "impots.gouv.ne and finances.gouv.ne are refused by this environment's proxy; finance.gov.ne gives CONNECT 502 (2026-11-01). || 2026-11-01 retry: impots.gouv.ne, finances.gouv.ne, sggouv.ne and assemblee.ne fail (connection, curl 000) on 2026-11-01; presidence.ne answers with no tax text",
+    "official-register": "No 2026 Journal officiel or Finance Law for Niger was reachable; the embassy's copy of the 2013 Code was read (2026-11-01). || 2026-11-01 retry: No Journal officiel of Niger reachable (sggouv.ne fails); the 2013 Code already held",
+    "web-search": "'Niger Code général des impôts 2025 barème impôt sur les traitements et salaires IUTS taux TVA 19% pdf' (2026-11-01): only the 2013 Code and old UN and budget documents. || 2026-11-01 retry: not run: the tool refused searches this turn, the shared limit of 200 having been reached (2026-11-01)",
+    "trade-press": "No PwC or Deloitte summary for Niger (Deloitte 2026: 404). || 2026-11-01 retry: No PwC or Deloitte summary for Niger; none read",
+    "archive": "web.archive.org resets the connection from this environment (2026-11-01). || 2026-11-01 retry: archive.org availability API answers, but web.archive.org is refused from this environment (http 'Blocked by egress policy', https connection fails), not read (2026-11-01)"
+   }
+  },
+  {
+   "item": "social",
+   "sought": "The CNSS family-benefits (prestations familiales) contribution rate and any 2026 change to the ceiling",
+   "tried": {
+    "institution": "impots.gouv.ne and finances.gouv.ne are refused by this environment's proxy; finance.gov.ne gives CONNECT 502 (2026-11-01). || 2026-11-01 retry: cnss.ne read (branche des pensions, branche des accidents du travail, saved NE-cnss-*.html): pension and injury rates now a figure; the family-benefits page states no rate, and the CNSS site search ('taux') finds nothing more",
+    "official-register": "No 2026 Journal officiel or Finance Law for Niger was reachable; the embassy's copy of the 2013 Code was read (2026-11-01). || 2026-11-01 retry: No Journal officiel of Niger reachable (sggouv.ne fails); the 2013 Code already held",
+    "web-search": "'Niger Code général des impôts 2025 barème impôt sur les traitements et salaires IUTS taux TVA 19% pdf' (2026-11-01): only the 2013 Code and old UN and budget documents. || 2026-11-01 retry: not run: the tool refused searches this turn, the shared limit of 200 having been reached (2026-11-01)",
+    "trade-press": "None. || 2026-11-01 retry: No PwC or Deloitte summary for Niger; none read",
+    "archive": "web.archive.org resets the connection from this environment (2026-11-01). || 2026-11-01 retry: archive.org availability API answers, but web.archive.org is refused from this environment (http 'Blocked by egress policy', https connection fails), not read (2026-11-01)"
+   }
+  },
+  {
+   "item": "withholding",
+   "sought": "Withholding on a resident freelancer's fee.",
+   "tried": {
+    "institution": "impots.gouv.ne and finances.gouv.ne are refused by this environment's proxy; finance.gov.ne gives CONNECT 502 (2026-11-01). || 2026-11-01 retry: impots.gouv.ne, finances.gouv.ne, sggouv.ne and assemblee.ne fail (connection, curl 000) on 2026-11-01; presidence.ne answers with no tax text",
+    "official-register": "No 2026 Journal officiel or Finance Law for Niger was reachable; the embassy's copy of the 2013 Code was read (2026-11-01). || 2026-11-01 retry: No Journal officiel of Niger reachable (sggouv.ne fails); the 2013 Code already held",
+    "web-search": "'Niger Code général des impôts 2025 barème impôt sur les traitements et salaires IUTS taux TVA 19% pdf' (2026-11-01): only the 2013 Code and old UN and budget documents. || 2026-11-01 retry: not run: the tool refused searches this turn, the shared limit of 200 having been reached (2026-11-01)",
+    "trade-press": "None. || 2026-11-01 retry: No PwC or Deloitte summary for Niger; none read",
+    "archive": "web.archive.org resets the connection from this environment (2026-11-01). || 2026-11-01 retry: archive.org availability API answers, but web.archive.org is refused from this environment (http 'Blocked by egress policy', https connection fails), not read (2026-11-01)"
+   }
+  },
+  {
+   "item": "nonResident",
+   "sought": "The withholding on a non-resident artiste's fee and whether final.",
+   "tried": {
+    "institution": "impots.gouv.ne and finances.gouv.ne are refused by this environment's proxy; finance.gov.ne gives CONNECT 502 (2026-11-01). || 2026-11-01 retry: impots.gouv.ne, finances.gouv.ne, sggouv.ne and assemblee.ne fail (connection, curl 000) on 2026-11-01; presidence.ne answers with no tax text",
+    "official-register": "No 2026 Journal officiel or Finance Law for Niger was reachable; the embassy's copy of the 2013 Code was read (2026-11-01). || 2026-11-01 retry: No Journal officiel of Niger reachable (sggouv.ne fails); the 2013 Code already held",
+    "web-search": "'Niger Code général des impôts 2025 barème impôt sur les traitements et salaires IUTS taux TVA 19% pdf' (2026-11-01): only the 2013 Code and old UN and budget documents. || 2026-11-01 retry: not run: the tool refused searches this turn, the shared limit of 200 having been reached (2026-11-01)",
+    "trade-press": "None. || 2026-11-01 retry: No PwC or Deloitte summary for Niger; none read",
+    "archive": "web.archive.org resets the connection from this environment (2026-11-01). || 2026-11-01 retry: archive.org availability API answers, but web.archive.org is refused from this environment (http 'Blocked by egress policy', https connection fails), not read (2026-11-01)"
+   }
+  },
+  {
+   "item": "year",
+   "sought": "The tax year and return dates.",
+   "tried": {
+    "institution": "impots.gouv.ne and finances.gouv.ne are refused by this environment's proxy; finance.gov.ne gives CONNECT 502 (2026-11-01). || 2026-11-01 retry: impots.gouv.ne, finances.gouv.ne, sggouv.ne and assemblee.ne fail (connection, curl 000) on 2026-11-01; presidence.ne answers with no tax text",
+    "official-register": "No 2026 Journal officiel or Finance Law for Niger was reachable; the embassy's copy of the 2013 Code was read (2026-11-01). || 2026-11-01 retry: No Journal officiel of Niger reachable (sggouv.ne fails); the 2013 Code already held",
+    "web-search": "'Niger Code général des impôts 2025 barème impôt sur les traitements et salaires IUTS taux TVA 19% pdf' (2026-11-01): only the 2013 Code and old UN and budget documents. || 2026-11-01 retry: not run: the tool refused searches this turn, the shared limit of 200 having been reached (2026-11-01)",
+    "trade-press": "None. || 2026-11-01 retry: No PwC or Deloitte summary for Niger; none read",
+    "archive": "web.archive.org resets the connection from this environment (2026-11-01). || 2026-11-01 retry: archive.org availability API answers, but web.archive.org is refused from this environment (http 'Blocked by egress policy', https connection fails), not read (2026-11-01)"
+   }
+  }
+ ]
+}

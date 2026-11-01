@@ -1,0 +1,115 @@
+{
+ "topic": "tax.SD",
+ "read": "2026-11-01",
+ "note": "Read 2026-11-01 at the owner's word (\"Build those first 3 starting with ledger first\"; of the 21 countries read first: \"It should cover across every country\"; \"Retry the blocked tax facts once all countries land\"): the tax on a screen worker's pay in Sudan: a resident's income tax, social contributions, what is withheld at source, a non-resident artiste's withholding, an author's treatment, VAT and the tax year. Research and retry subagents (workbench/briefs/BRIEF-tax.md, BRIEF-tax-retry.md), every quote checked by the lead against its saved page.",
+ "figures": [
+  {
+   "item": "withholding",
+   "finding": "Every employer in Sudan must deduct personal income tax from all employees' pay and remit it to the Taxation Chamber on or before the 15th of the following month.",
+   "value": {
+    "monthly": true,
+    "remitBy": "15th of next month"
+   },
+   "applies": "Personal income tax on wages and salaries (Income Tax Law, arts. 12, 26 and 41, and its regulation).",
+   "sources": [
+    {
+     "src": 0,
+     "said": "إستقطاع ضريبة الدخل الشخصي من جميع العاملين وفقاً للقوانين والمنشورات السارية المنظمة للمرتبات والأجور والبدلات والعلاوات والمزايا العينية والنقدية والمقبوضات الأخرى ، وتوريد المبالغ المستقطعة لحساب ضريبة الدخل الشخصي في أو قبل الخامس عشر من الشهر التالي."
+    },
+    {
+     "src": 0,
+     "said": "يمكن تعريف الدخل الشخصي بأنه هو الدخل الناتج عن المرتبات والأجوروما في حكمها من المزايا النقدية أو العينية"
+    }
+   ]
+  },
+  {
+   "item": "vat",
+   "finding": "Sudan levies value added tax under the Value Added Tax Law of 2001 and its 2017 regulation.",
+   "value": {
+    "rate": null,
+    "threshold": null
+   },
+   "applies": "The rate and threshold were not found on the Chamber's page (see blockers).",
+   "sources": [
+    {
+     "src": 1,
+     "said": "قانون الضريبة على القيمة المضافة لسنة 2001 لائحة الضريبة على القيمة المضافة لسنة 2017"
+    }
+   ]
+  }
+ ],
+ "country": "SD",
+ "sources": [
+  {
+   "url": "https://tax.gov.sd/income/",
+   "title": "ضريبة الدخل الشخصي (ديوان الضرائب، السودان)",
+   "read": "2026-11-01",
+   "kind": "primary",
+   "said": "إستقطاع ضريبة الدخل الشخصي من جميع العاملين وفقاً للقوانين والمنشورات السارية المنظمة للمرتبات والأجور والبدلات والعلاوات والمزايا العينية والنقدية والمقبوضات الأخرى ، وتوريد المبالغ المستقطعة لحساب ضريبة الدخل الشخصي في أو قبل الخامس عشر من الشهر التالي. … يمكن تعريف الدخل الشخصي بأنه هو الدخل الناتج عن المرتبات والأجوروما في حكمها من المزايا النقدية أو العينية"
+  },
+  {
+   "url": "https://tax.gov.sd/%d8%a7%d9%84%d9%82%d9%8a%d9%85%d8%a9-%d8%a7%d9%84%d9%85%d8%b6%d8%a7%d9%81%d8%a9/",
+   "title": "القيمة المضافة (ديوان الضرائب، السودان)",
+   "read": "2026-11-01",
+   "kind": "primary",
+   "said": "قانون الضريبة على القيمة المضافة لسنة 2001 لائحة الضريبة على القيمة المضافة لسنة 2017"
+  }
+ ],
+ "blockers": [
+  {
+   "item": "residents",
+   "sought": "Sudan's personal income tax brackets on employment income and the exemption, for 2026.",
+   "tried": {
+    "institution": "tax.gov.sd/income/ read 2026-11-01: regulation text on deductions and withholding, no rate table. || retry 2026-11-01 (world round): tax.gov.sd answers: its laws page (SD-tax-laws.html) lists the Income Tax Act 1986 in English (saved SD-income-tax-act-1986.pdf): the original 1986 text with its 1986 schedules, not the rates in force for 2026, so not used; the VAT Act PDF (SD-vat-act.pdf) extracts as unreadable glyphs (Arabic font without a text map); its Arabic income page (SD-tax-ar-income.html) and FAQ (SD-tax-questions.html) give no rates or dates",
+    "official-register": "The Income Tax Law 1986 (as amended) and the Finance Act for 2026 not found online as text. || retry 2026-11-01 (world round): tax.gov.sd lists the amending laws as scans (law1_2.pdf to law31-37.pdf) without titles or years; the Finance Act for 2026 is not among them",
+    "web-search": "Searched \"Sudan personal income tax rates employment monthly exemption 2025 Taxation Chamber\"; only payroll-firm pages (Rivermate, Playroll) with conflicting figures and no primary citation. || retry 2026-11-01 (world round): WebSearch refused 2026-11-01 (the turn's shared 200-search budget exhausted)",
+    "trade-press": "None quoting a primary source; Trading Economics cites the Chamber for a 15% top rate without the scale (not used). || retry 2026-11-01 (world round): none quoting a primary (PwC has no Sudan summary)",
+    "archive": "web.archive.org reset the connection. || retry 2026-11-01 (world round): web.archive.org and archive.ph reset the connection; arquivo.pt answers 403"
+   }
+  },
+  {
+   "item": "social",
+   "sought": "Social insurance contribution rates (National Social Insurance Fund).",
+   "tried": {
+    "institution": "tax.gov.sd does not cover it; the Fund's site not found. || retry 2026-11-01 (world round): tax.gov.sd answers: its laws page (SD-tax-laws.html) lists the Income Tax Act 1986 in English (saved SD-income-tax-act-1986.pdf): the original 1986 text with its 1986 schedules, not the rates in force for 2026, so not used; the VAT Act PDF (SD-vat-act.pdf) extracts as unreadable glyphs (Arabic font without a text map); its Arabic income page (SD-tax-ar-income.html) and FAQ (SD-tax-questions.html) give no rates or dates",
+    "official-register": "None. || retry 2026-11-01 (world round): tax.gov.sd lists the amending laws as scans (law1_2.pdf to law31-37.pdf) without titles or years; the Finance Act for 2026 is not among them",
+    "web-search": "Searched with the income tax query; nothing primary. || retry 2026-11-01 (world round): WebSearch refused 2026-11-01 (the turn's shared 200-search budget exhausted)",
+    "trade-press": "None. || retry 2026-11-01 (world round): none quoting a primary (PwC has no Sudan summary)",
+    "archive": "Archive unreachable. || retry 2026-11-01 (world round): web.archive.org and archive.ph reset the connection; arquivo.pt answers 403"
+   }
+  },
+  {
+   "item": "nonResident",
+   "sought": "The tax on a non-resident performer's or director's fee.",
+   "tried": {
+    "institution": "tax.gov.sd: nothing found. || retry 2026-11-01 (world round): tax.gov.sd answers: its laws page (SD-tax-laws.html) lists the Income Tax Act 1986 in English (saved SD-income-tax-act-1986.pdf): the original 1986 text with its 1986 schedules, not the rates in force for 2026, so not used; the VAT Act PDF (SD-vat-act.pdf) extracts as unreadable glyphs (Arabic font without a text map); its Arabic income page (SD-tax-ar-income.html) and FAQ (SD-tax-questions.html) give no rates or dates",
+    "official-register": "None. || retry 2026-11-01 (world round): tax.gov.sd lists the amending laws as scans (law1_2.pdf to law31-37.pdf) without titles or years; the Finance Act for 2026 is not among them",
+    "web-search": "Searched \"Sudan personal income tax rates employment monthly exemption 2025 Taxation Chamber\"; only payroll-firm pages (Rivermate, Playroll) with conflicting figures and no primary citation. || retry 2026-11-01 (world round): WebSearch refused 2026-11-01 (the turn's shared 200-search budget exhausted)",
+    "trade-press": "None. || retry 2026-11-01 (world round): none quoting a primary (PwC has no Sudan summary)",
+    "archive": "Archive unreachable. || retry 2026-11-01 (world round): web.archive.org and archive.ph reset the connection; arquivo.pt answers 403"
+   }
+  },
+  {
+   "item": "vat",
+   "sought": "The VAT standard rate and registration threshold for 2026.",
+   "tried": {
+    "institution": "tax.gov.sd VAT page read: exemptions and penalties only. || retry 2026-11-01 (world round): tax.gov.sd answers: its laws page (SD-tax-laws.html) lists the Income Tax Act 1986 in English (saved SD-income-tax-act-1986.pdf): the original 1986 text with its 1986 schedules, not the rates in force for 2026, so not used; the VAT Act PDF (SD-vat-act.pdf) extracts as unreadable glyphs (Arabic font without a text map); its Arabic income page (SD-tax-ar-income.html) and FAQ (SD-tax-questions.html) give no rates or dates",
+    "official-register": "VAT Law 2001 text not reached. || retry 2026-11-01 (world round): tax.gov.sd lists the amending laws as scans (law1_2.pdf to law31-37.pdf) without titles or years; the Finance Act for 2026 is not among them",
+    "web-search": "Search gave 17% (Trading Economics) and 16% (an expat blog), neither primary. || retry 2026-11-01 (world round): WebSearch refused 2026-11-01 (the turn's shared 200-search budget exhausted)",
+    "trade-press": "None reliable. || retry 2026-11-01 (world round): none quoting a primary (PwC has no Sudan summary)",
+    "archive": "Archive unreachable. || retry 2026-11-01 (world round): web.archive.org and archive.ph reset the connection; arquivo.pt answers 403"
+   }
+  },
+  {
+   "item": "year",
+   "sought": "The tax year and return due date.",
+   "tried": {
+    "institution": "tax.gov.sd: not stated on the pages read. || retry 2026-11-01 (world round): tax.gov.sd answers: its laws page (SD-tax-laws.html) lists the Income Tax Act 1986 in English (saved SD-income-tax-act-1986.pdf): the original 1986 text with its 1986 schedules, not the rates in force for 2026, so not used; the VAT Act PDF (SD-vat-act.pdf) extracts as unreadable glyphs (Arabic font without a text map); its Arabic income page (SD-tax-ar-income.html) and FAQ (SD-tax-questions.html) give no rates or dates",
+    "official-register": "None. || retry 2026-11-01 (world round): tax.gov.sd lists the amending laws as scans (law1_2.pdf to law31-37.pdf) without titles or years; the Finance Act for 2026 is not among them",
+    "web-search": "Not found. || retry 2026-11-01 (world round): WebSearch refused 2026-11-01 (the turn's shared 200-search budget exhausted)",
+    "trade-press": "None. || retry 2026-11-01 (world round): none quoting a primary (PwC has no Sudan summary)",
+    "archive": "Archive unreachable. || retry 2026-11-01 (world round): web.archive.org and archive.ph reset the connection; arquivo.pt answers 403"
+   }
+  }
+ ]
+}

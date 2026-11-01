@@ -1,0 +1,235 @@
+{
+ "topic": "tax.ET",
+ "read": "2026-11-01",
+ "note": "Read 2026-11-01 at the owner's word (\"Build those first 3 starting with ledger first\"; of the 21 countries read first: \"It should cover across every country\"; \"Retry the blocked tax facts once all countries land\"): the tax on a screen worker's pay in Ethiopia: a resident's income tax, social contributions, what is withheld at source, a non-resident artiste's withholding, an author's treatment, VAT and the tax year. Research and retry subagents (workbench/briefs/BRIEF-tax.md, BRIEF-tax-retry.md), every quote checked by the lead against its saved page.",
+ "figures": [
+  {
+   "item": "residents",
+   "finding": "Monthly employment income is exempt to ETB 2,000 and then taxed at 15% to 4,000, 20% to 7,000, 25% to 10,000, 30% to 14,000 and 35% above; the same rates apply to residents and non-residents.",
+   "value": {
+    "currency": "ETB",
+    "period": "month",
+    "brackets": [
+     {
+      "from": 0,
+      "to": 2000,
+      "rate": 0
+     },
+     {
+      "from": 2000,
+      "to": 4000,
+      "rate": 0.15
+     },
+     {
+      "from": 4000,
+      "to": 7000,
+      "rate": 0.2
+     },
+     {
+      "from": 7000,
+      "to": 10000,
+      "rate": 0.25
+     },
+     {
+      "from": 10000,
+      "to": 14000,
+      "rate": 0.3
+     },
+     {
+      "from": 14000,
+      "to": null,
+      "rate": 0.35
+     }
+    ],
+    "regional": null
+   },
+   "applies": "2026 (Ethiopian fiscal year 2018/19 E.C.); mor.gov.et not read in this pass, so PwC is quoted.",
+   "sources": [
+    {
+     "src": 0,
+     "said": "Summary of monthly employment income tax brackets Sala ry (ETB) Income tax payable (%) From To 0 2,000 Exempt threshold 2,001 4,000 15 4,001 7,000 20 7,001 10,000 25 10,001 14,000 30 Over 14,000 35"
+    },
+    {
+     "src": 0,
+     "said": "The same rates of tax are applicable to both residents and non-residents."
+    }
+   ]
+  },
+  {
+   "item": "year",
+   "finding": "The tax year runs from 8 July to 7 July; an employee with only employment income files no return, the employer remitting PAYE by the end of the following (Ethiopian) month.",
+   "value": {
+    "start": "07-08",
+    "end": "07-07",
+    "employmentOnlyNoReturn": true
+   },
+   "applies": "Individuals.",
+   "sources": [
+    {
+     "src": 1,
+     "said": "The tax year in Ethiopia runs from 8 July to 7 July."
+    },
+    {
+     "src": 1,
+     "said": "Individuals who receive employment income only are not required to file personal income tax returns."
+    }
+   ]
+  },
+  {
+   "item": "withholding",
+   "finding": "The employer withholds PAYE from each payment; a payer withholds 3% from payments for services of ETB 10,000 or more to a resident with a TIN and licence (30% without).",
+   "value": {
+    "employment": "PAYE",
+    "servicesResident": {
+     "rate": 0.03,
+     "minPayment": 10000,
+     "withoutTIN": 0.3
+    }
+   },
+   "applies": "2026.",
+   "sources": [
+    {
+     "src": 1,
+     "said": "employers must withhold PAYE taxes from each payment to an employee and remit the payment to the tax authorities based on the amount withheld during each calendar month."
+    },
+    {
+     "src": 2,
+     "said": "Generally, payments for supply of goods (worth ETB 20,000 or more) and provision of services (worth ETB 10,000 or more) to a resident person are subject to WHT at the rate of 3%."
+    }
+   ]
+  },
+  {
+   "item": "nonResident",
+   "finding": "A non-resident is taxed on Ethiopian-source income at the same rates as a resident; royalties to a non-resident bear 10% withholding, and management or technical fees 15%.",
+   "value": {
+    "rates": "as residents",
+    "royalties": 0.1,
+    "management": 0.15,
+    "technical": 0.15
+   },
+   "applies": "2026; no separate entertainers' rule was found in the pages read.",
+   "sources": [
+    {
+     "src": 0,
+     "said": "Non-residents are taxed on their Ethiopian-sourced income."
+    },
+    {
+     "src": 2,
+     "said": "Royalties 10 (5 for art and culture) 10 Management fees 3 15 Technical fees 3 15"
+    }
+   ]
+  },
+  {
+   "item": "authors",
+   "finding": "Royalties for art and culture paid to a resident bear withholding at 5% (10% for other royalties).",
+   "value": {
+    "residentArtCultureRoyalties": 0.05,
+    "otherRoyalties": 0.1
+   },
+   "applies": "2026.",
+   "sources": [
+    {
+     "src": 2,
+     "said": "Royalties 10 (5 for art and culture) 10"
+    }
+   ]
+  },
+  {
+   "item": "social",
+   "finding": "Ethiopian citizens in private employment contribute 7% of basic salary to the pension fund and the employer 11%; foreign citizens without Ethiopian origin may not join.",
+   "value": {
+    "employee": 0.07,
+    "employer": 0.11,
+    "base": "basic salary",
+    "foreigners": "excluded"
+   },
+   "applies": "2026.",
+   "sources": [
+    {
+     "src": 3,
+     "said": "Employers are required to contribute 11% of the employee’s basic salary to the scheme, while the employee’s contribution is at 7%."
+    },
+    {
+     "src": 3,
+     "said": "Foreign citizens with no Ethiopian origin are not allowed to contribute to the fund."
+    }
+   ]
+  },
+  {
+   "item": "vat",
+   "finding": "VAT is 15%; a business registers when its taxable supplies reach ETB 2 million in 12 months.",
+   "value": {
+    "currency": "ETB",
+    "standard": 0.15,
+    "threshold": 2000000
+   },
+   "applies": "2026.",
+   "sources": [
+    {
+     "src": 3,
+     "said": "Value-added tax (VAT) is levied at a standard rate of 15% on the supply of taxable goods and services in Ethiopia."
+    },
+    {
+     "src": 4,
+     "said": "A person who, in the course of business, has supplied or expects to supply taxable goods or services whose value is ETB 2 million or more in a period of 12 months should register for VAT."
+    }
+   ]
+  }
+ ],
+ "country": "ET",
+ "sources": [
+  {
+   "url": "https://taxsummaries.pwc.com/ethiopia/individual/taxes-on-personal-income",
+   "title": "PwC Worldwide Tax Summaries, Ethiopia, Individual - Taxes on personal income (last reviewed 15 July 2026)",
+   "read": "2026-11-01",
+   "kind": "secondary",
+   "quotes": "https://www.mor.gov.et/",
+   "said": "Summary of monthly employment income tax brackets Sala ry (ETB) Income tax payable (%) From To 0 2,000 Exempt threshold 2,001 4,000 15 4,001 7,000 20 7,001 10,000 25 10,001 14,000 30 Over 14,000 35 … The same rates of tax are applicable to both residents and non-residents. … Non-residents are taxed on their Ethiopian-sourced income."
+  },
+  {
+   "url": "https://taxsummaries.pwc.com/ethiopia/individual/tax-administration",
+   "title": "PwC Worldwide Tax Summaries, Ethiopia, Individual - Tax administration (last reviewed 15 July 2026)",
+   "read": "2026-11-01",
+   "kind": "secondary",
+   "quotes": "https://www.mor.gov.et/",
+   "said": "The tax year in Ethiopia runs from 8 July to 7 July. … Individuals who receive employment income only are not required to file personal income tax returns. … employers must withhold PAYE taxes from each payment to an employee and remit the payment to the tax authorities based on the amount withheld during each calendar month."
+  },
+  {
+   "url": "https://taxsummaries.pwc.com/ethiopia/corporate/withholding-taxes",
+   "title": "PwC Worldwide Tax Summaries, Ethiopia, Corporate - Withholding taxes (last reviewed 15 July 2026)",
+   "read": "2026-11-01",
+   "kind": "secondary",
+   "quotes": "https://www.mor.gov.et/",
+   "said": "Generally, payments for supply of goods (worth ETB 20,000 or more) and provision of services (worth ETB 10,000 or more) to a resident person are subject to WHT at the rate of 3%. … Royalties 10 (5 for art and culture) 10 Management fees 3 15 Technical fees 3 15"
+  },
+  {
+   "url": "https://taxsummaries.pwc.com/ethiopia/individual/other-taxes",
+   "title": "PwC Worldwide Tax Summaries, Ethiopia, Individual - Other taxes (last reviewed 15 July 2026)",
+   "read": "2026-11-01",
+   "kind": "secondary",
+   "quotes": "https://www.mor.gov.et/",
+   "said": "Employers are required to contribute 11% of the employee’s basic salary to the scheme, while the employee’s contribution is at 7%. … Foreign citizens with no Ethiopian origin are not allowed to contribute to the fund. … Value-added tax (VAT) is levied at a standard rate of 15% on the supply of taxable goods and services in Ethiopia."
+  },
+  {
+   "url": "https://taxsummaries.pwc.com/ethiopia/corporate/other-taxes",
+   "title": "PwC Worldwide Tax Summaries, Ethiopia, Corporate - Other taxes (last reviewed 15 July 2026)",
+   "read": "2026-11-01",
+   "kind": "secondary",
+   "quotes": "https://www.mor.gov.et/",
+   "said": "A person who, in the course of business, has supplied or expects to supply taxable goods or services whose value is ETB 2 million or more in a period of 12 months should register for VAT."
+  }
+ ],
+ "blockers": [
+  {
+   "item": "nonResident",
+   "sought": "Ethiopia's withholding on a non-resident entertainer's fee (Income Tax Proclamation 979/2016, Schedule E / art. 54) and the amended 2025 brackets from the Ministry of Revenues",
+   "tried": {
+    "institution": "mor.gov.et not fetched in this pass (2026-11-01) || retry 2026-11-01 (world round): mor.gov.et, mor.gov.et/en, mof.gov.et and mofed.gov.et do not answer this environment (curl 000)",
+    "official-register": "Federal Negarit Gazeta not reached || retry 2026-11-01 (world round): negaritgazette.gov.et does not answer (curl 000)",
+    "web-search": "not run || retry 2026-11-01 (world round): WebSearch refused 2026-11-01 (the turn's shared 200-search budget exhausted)",
+    "trade-press": "PwC Ethiopia (quoted): no entertainer line || retry 2026-11-01 (world round): PwC Ethiopia (read before): no entertainer line",
+    "archive": "not tried || retry 2026-11-01 (world round): web.archive.org and archive.ph reset the connection; arquivo.pt answers 403"
+   }
+  }
+ ]
+}

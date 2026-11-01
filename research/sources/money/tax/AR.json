@@ -1,0 +1,399 @@
+{
+ "topic": "tax.AR",
+ "read": "2026-11-01",
+ "note": "Read 2026-11-01 at the owner's word (\"Build those first 3 starting with ledger first\"; of the 21 countries read first: \"It should cover across every country\"; \"Retry the blocked tax facts once all countries land\"): the tax on a screen worker's pay in Argentina: a resident's income tax, social contributions, what is withheld at source, a non-resident artiste's withholding, an author's treatment, VAT and the tax year. Research and retry subagents (workbench/briefs/BRIEF-tax.md, BRIEF-tax-retry.md), every quote checked by the lead against its saved page.",
+ "figures": [
+  {
+   "item": "residents",
+   "finding": "For 2026 a resident's net taxable income is taxed on ARCA's annual scale of article 94, from 5% on the first ARS 2,336,953.69 to 35% above ARS 70,984,968.25, after the personal deductions of article 30 (non-taxable minimum ARS 6,019,671.36; spouse ARS 5,669,323.06; child ARS 2,859,060.31; special deduction ARS 21,068,849.78 for the self-employed, ARS 24,078,685.46 for new professionals, ARS 28,894,422.56 for employees), all updated by the INDEC consumer price index.",
+   "value": {
+    "currency": "ARS",
+    "brackets": [
+     {
+      "from": 0,
+      "to": 2336953.69,
+      "rate": 0.05
+     },
+     {
+      "from": 2336953.69,
+      "to": 4673907.36,
+      "rate": 0.09
+     },
+     {
+      "from": 4673907.36,
+      "to": 7010861.05,
+      "rate": 0.12
+     },
+     {
+      "from": 7010861.05,
+      "to": 10516291.59,
+      "rate": 0.15
+     },
+     {
+      "from": 10516291.59,
+      "to": 21032583.18,
+      "rate": 0.19
+     },
+     {
+      "from": 21032583.18,
+      "to": 31548874.77,
+      "rate": 0.23
+     },
+     {
+      "from": 31548874.77,
+      "to": 47323312.16,
+      "rate": 0.27
+     },
+     {
+      "from": 47323312.16,
+      "to": 70984968.25,
+      "rate": 0.31
+     },
+     {
+      "from": 70984968.25,
+      "to": null,
+      "rate": 0.35
+     }
+    ],
+    "fixedAtBandStart": [
+     0,
+     116847.68,
+     327173.52,
+     607607.96,
+     1133422.54,
+     3131517.94,
+     5550265.01,
+     9809363.1,
+     17144476.49
+    ],
+    "deductions": {
+     "nonTaxableMinimum": 6019671.36,
+     "spouse": 5669323.06,
+     "child": 2859060.31,
+     "childUnableToWork": 5718120.6,
+     "specialSelfEmployed": 21068849.78,
+     "specialNewProfessionals": 24078685.46,
+     "specialEmployees": 28894422.56
+    },
+    "indexation": "IPC INDEC",
+    "regional": null
+   },
+   "applies": "Annual 2026 values (final and annual settlement, RG 4.003); ARCA also publishes half-year withholding tables (January to June and July to December 2026).",
+   "sources": [
+    {
+     "src": 0,
+     "said": "Escala del Tributo del artículo 94 de la ley de impuesto a las ganancias, aplicables a las remuneraciones percibidas en el período anual 2026 … 0,00 2.336.953,69 0,00 5 0,00 … 70.984.968,25 en adelante 17.144.476,49 35 70.984.968,25"
+    },
+    {
+     "src": 1,
+     "said": "Ganancias no imponibles [Artículo 30, … inciso a)]: … 6.019.671,36 … 1. Cónyuge: 5.669.323,06 2. Hijo: 2.859.060,31 … 21.068.849,78 … 24.078.685,46 … 28.894.422,56"
+    }
+   ]
+  },
+  {
+   "item": "year",
+   "finding": "The tax year is the calendar year; the self-employed file their annual return in June and pay advances during the year; employees with only salary file none.",
+   "value": {
+    "start": "01-01",
+    "end": "12-31",
+    "returnDue": "June of the following year"
+   },
+   "applies": "Individuals.",
+   "sources": [
+    {
+     "src": 2,
+     "said": "Tax for individuals in Argentina is assessable on a calendar-year basis."
+    },
+    {
+     "src": 2,
+     "said": "Self-employed workers (including members of boards of directors) must register with the tax authorities and file an annual PIT return in June of every year."
+    }
+   ]
+  },
+  {
+   "item": "social",
+   "finding": "An employee pays 17% (11% pension, 3% health, 3% social services) on pay up to ARS 4,414,652.38 a month (from 1 June 2026, indexed monthly); the employer pays 26.4% (large service or trade companies) or 24% on uncapped pay.",
+   "value": {
+    "currency": "ARS",
+    "employee": 0.17,
+    "employeeMonthlyCap": 4414652.38,
+    "employer": {
+     "largeServicesTrade": 0.264,
+     "other": 0.24
+    },
+    "employerCap": null
+   },
+   "applies": "2026.",
+   "sources": [
+    {
+     "src": 3,
+     "said": "The total employee Social Security Tax rate is 17%, which consists of contributions of 11% to the pension fund, 3% to healthcare, and 3% to social services."
+    },
+    {
+     "src": 3,
+     "said": "up to a monthly cap of ARS 4,414,652.38 (as of 1 June 2026),"
+    },
+    {
+     "src": 3,
+     "said": "The total employer contribution is 26.4% for companies mainly engaged in the provision of services or trade,"
+    }
+   ]
+  },
+  {
+   "item": "withholding",
+   "finding": "The employer withholds income tax monthly on each employee's net taxable pay at the personal rates.",
+   "value": {
+    "employee": "monthly withholding on the scale"
+   },
+   "applies": "Employees.",
+   "sources": [
+    {
+     "src": 2,
+     "said": "Employers are required to withhold these taxes on a monthly and actual basis at the appropriate personal rates applied to the net taxable remuneration of each employee."
+    }
+   ]
+  },
+  {
+   "item": "nonResident",
+   "finding": "A foreign beneficiary working in Argentina for up to six months a year in the visual or performing arts or another profession is taxed at an effective 24.5% (35% on a deemed profit of 70% of gross), withheld by the payer, final.",
+   "value": {
+    "rate": 0.245,
+    "base": "gross (35% x 70%)",
+    "final": true
+   },
+   "applies": "Foreign beneficiaries.",
+   "sources": [
+    {
+     "src": 4,
+     "said": "Foreign beneficiaries working temporarily in Argentina for no more than six months during the year, who earn income through either the visual or performing arts or other profession, are subject to income tax on these earnings at the rate of 24.5% (35% on assumed profit of 70% of gross income) to be withheld by the local payer."
+    },
+    {
+     "src": 2,
+     "said": "Foreign beneficiaries have no filing obligations, since they are subject to income tax withholding at source by the local paying entity on a final and definite basis."
+    }
+   ]
+  },
+  {
+   "item": "vat",
+   "finding": "VAT is 21% (10.5% and 27% for some items) and applies to a self-employed person's fees.",
+   "value": {
+    "standard": 0.21,
+    "reduced": 0.105,
+    "increased": 0.27
+   },
+   "applies": "2026.",
+   "sources": [
+    {
+     "src": 3,
+     "said": "The VAT is also applicable on earning derived from a self-employed activity, at a general rate of 21%."
+    }
+   ]
+  },
+  {
+   "item": "vat",
+   "finding": "A freelancer whose annual gross receipts from services stay within ARS 81,924,660.37 may join the monotributo, a single monthly payment in place of VAT and income tax (with pension and health contributions included): from ARS 49,527.18 a month in category A (receipts to ARS 12,009,410.45) to ARS 522,706.68 in category H, values in force from 1 August 2026.",
+   "value": {
+    "currency": "ARS",
+    "from": "2026-08-01",
+    "services": [
+     {
+      "category": "A",
+      "annualGrossReceiptsMax": 12009410.45,
+      "monthlyTax": 5585.77,
+      "monthlyPension": 18246.86,
+      "monthlyHealth": 25694.55,
+      "monthlyTotal": 49527.18
+     },
+     {
+      "category": "B",
+      "annualGrossReceiptsMax": 17595182.74,
+      "monthlyTax": 10612.98,
+      "monthlyPension": 20071.55,
+      "monthlyHealth": 25694.55,
+      "monthlyTotal": 56379.08
+     },
+     {
+      "category": "C",
+      "annualGrossReceiptsMax": 24670494.31,
+      "monthlyTax": 18246.86,
+      "monthlyPension": 22078.71,
+      "monthlyHealth": 25694.55,
+      "monthlyTotal": 66020.12
+     },
+     {
+      "category": "D",
+      "annualGrossReceiptsMax": 30628651.43,
+      "monthlyTax": 29790.79,
+      "monthlyPension": 24286.58,
+      "monthlyHealth": 30535.56,
+      "monthlyTotal": 84612.93
+     },
+     {
+      "category": "E",
+      "annualGrossReceiptsMax": 36028231.33,
+      "monthlyTax": 55857.73,
+      "monthlyPension": 26715.24,
+      "monthlyHealth": 37238.48,
+      "monthlyTotal": 119811.45
+     },
+     {
+      "category": "F",
+      "annualGrossReceiptsMax": 45151659.41,
+      "monthlyTax": 78573.2,
+      "monthlyPension": 29386.76,
+      "monthlyHealth": 42824.25,
+      "monthlyTotal": 150784.21
+     },
+     {
+      "category": "G",
+      "annualGrossReceiptsMax": 53995798.87,
+      "monthlyTax": 142995.76,
+      "monthlyPension": 41141.46,
+      "monthlyHealth": 46175.72,
+      "monthlyTotal": 230312.94
+     },
+     {
+      "category": "H",
+      "annualGrossReceiptsMax": 81924660.37,
+      "monthlyTax": 409623.31,
+      "monthlyPension": 57598.04,
+      "monthlyHealth": 55485.33,
+      "monthlyTotal": 522706.68
+     }
+    ],
+    "healthPerAdherent": "same health amount again per adherent"
+   },
+   "applies": "Régimen simplificado (monotributo), services; above category H a freelancer is in the general regime (VAT 21% and income tax).",
+   "sources": [
+    {
+     "src": 5,
+     "said": "Valores de aplicación desde el 1/08/2026 … A $12.009.410,45 No excluida --> Hasta 30 m2 Hasta 3330 Kw $2.792.886,15 $716.840,77 $5.585,77 $5.585,77 $18.246,86 $25.694,55 $49.527,18 $49.527,18 … H $81.924.660,37 No excluida --> Hasta 200 m2 Hasta 20000 Kw $8.378.658,45 $716.840,77 $409.623,31 $204.811,64 $57.598,04 $55.485,33 $522.706,68 $317.895,01"
+    }
+   ]
+  },
+  {
+   "item": "social",
+   "finding": "A self-employed worker outside the monotributo (an autónomo) pays a fixed monthly pension contribution by category, from 15 October 2026 ARS 78,271.56 (category I) to ARS 344,390.34 (category V), on reference incomes of ARS 244,598.64 to ARS 1,076,219.83.",
+   "value": {
+    "currency": "ARS",
+    "from": "2026-10-15",
+    "monthly": {
+     "I": 78271.56,
+     "II": 109578.51,
+     "III": 156541.75,
+     "IV": 250466.7,
+     "V": 344390.34
+    },
+    "referenceIncome": {
+     "I": 244598.64,
+     "II": 342432.85,
+     "III": 489192.97,
+     "IV": 782708.42,
+     "V": 1076219.83
+    }
+   },
+   "applies": "Trabajadores autónomos (Ley 24.241, art. 8); the rule placing a worker in a category was not read.",
+   "sources": [
+    {
+     "src": 6,
+     "said": "Estos valores entrarán en vigencia a partir del día 15/10/2026 … I $ 78.271,56 II $ 109.578,51 III $ 156.541,75 IV $ 250.466,70 V $ 344.390,34 … I 244.598,64 II 342.432,85 III 489.192,97 IV 782.708,42 V 1.076.219,83"
+    }
+   ]
+  },
+  {
+   "item": "authors",
+   "finding": "A resident author's income from copyright (publication, performance, translation or other reproduction of a registered work) is exempt only up to ARS 10,000 a year, an amount unchanged since 1996, and not at all for commissioned work or a non-resident; the rest is taxed at the ordinary scale.",
+   "value": {
+    "currency": "ARS",
+    "exemptPerYear": 10000,
+    "conditions": [
+     "tax falls on the author or heirs",
+     "work registered with the Dirección Nacional del Derecho de Autor",
+     "not commissioned work"
+    ],
+    "nonResident": false
+   },
+   "applies": "Ley de Impuesto a las Ganancias t.o. 2019, art. 26(j), as updated on argentina.gob.ar.",
+   "sources": [
+    {
+     "src": 7,
+     "said": "j) Hasta la suma de PESOS DIEZ MIL ($ 10.000) por período fiscal, las ganancias provenientes de la explotación de derechos de autor y las restantes ganancias derivadas de derechos amparados por la Ley N° 11.723, siempre que el impuesto recaiga directamente sobre los autores o sus derechohabientes, que las respectivas obras sean debidamente inscriptas en la DIRECCIÓN NACIONAL DEL DERECHO DE AUTOR, que el beneficio proceda de la publicación, ejecución, representación, exposición, enajenación, traducción u otra forma de reproducción y no derive de obras realizadas por encargo o que reconozcan su origen en una locación de obra o de servicios formalizada o no contractualmente. Esta exención no será de aplicación para beneficiarios del exterior."
+    },
+    {
+     "src": 8,
+     "said": "desde el año 1996 (sancionada el 25/09/1996) el monto de exención por período fiscal anual se encuentra fijado en la suma de $ 10.000"
+    }
+   ]
+  }
+ ],
+ "country": "AR",
+ "sources": [
+  {
+   "url": "https://www.afip.gob.ar/gananciasYBienes/ganancias/personas-humanas-sucesiones-indivisas/declaracion-jurada/documentos/Tabla-Art-94-LIG-liquidacion-anual-y-final-2026.pdf",
+   "title": "ARCA: Escala del artículo 94 de la Ley de Impuesto a las Ganancias, régimen de retención, período anual 2026",
+   "read": "2026-11-01",
+   "kind": "primary",
+   "said": "Escala del Tributo del artículo 94 de la ley de impuesto a las ganancias, aplicables a las remuneraciones percibidas en el período anual 2026 … 0,00 2.336.953,69 0,00 5 0,00 … 70.984.968,25 en adelante 17.144.476,49 35 70.984.968,25"
+  },
+  {
+   "url": "https://www.afip.gob.ar/gananciasYBienes/ganancias/personas-humanas-sucesiones-indivisas/deducciones/documentos/Deducciones-personales-art-30-liq-anual-2026.pdf",
+   "title": "ARCA: Deducciones del artículo 30 de la Ley del Impuesto a las Ganancias, régimen de retención, período anual 2026",
+   "read": "2026-11-01",
+   "kind": "primary",
+   "said": "Ganancias no imponibles [Artículo 30, … inciso a)]: … 6.019.671,36 … 1. Cónyuge: 5.669.323,06 2. Hijo: 2.859.060,31 … 21.068.849,78 … 24.078.685,46 … 28.894.422,56"
+  },
+  {
+   "url": "https://taxsummaries.pwc.com/argentina/individual/tax-administration",
+   "title": "PwC Worldwide Tax Summaries: Argentina, Individual - Tax administration (reviewed 16 June 2026)",
+   "read": "2026-11-01",
+   "kind": "secondary",
+   "quotes": "https://www.afip.gob.ar/gananciasYBienes/",
+   "said": "Tax for individuals in Argentina is assessable on a calendar-year basis. … Self-employed workers (including members of boards of directors) must register with the tax authorities and file an annual PIT return in June of every year. … Employers are required to withhold these taxes on a monthly and actual basis at the appropriate personal rates applied to the net taxable remuneration of each employee. … Foreign beneficiaries have no filing obligations, since they are subject to income tax withholding at source by the local paying entity on a final and definite basis."
+  },
+  {
+   "url": "https://taxsummaries.pwc.com/argentina/individual/other-taxes",
+   "title": "PwC Worldwide Tax Summaries: Argentina, Individual - Other taxes (reviewed 16 June 2026)",
+   "read": "2026-11-01",
+   "kind": "secondary",
+   "quotes": "https://www.afip.gob.ar/gananciasYBienes/",
+   "said": "The total employee Social Security Tax rate is 17%, which consists of contributions of 11% to the pension fund, 3% to healthcare, and 3% to social services. … up to a monthly cap of ARS 4,414,652.38 (as of 1 June 2026), … The total employer contribution is 26.4% for companies mainly engaged in the provision of services or trade, … The VAT is also applicable on earning derived from a self-employed activity, at a general rate of 21%."
+  },
+  {
+   "url": "https://taxsummaries.pwc.com/argentina/individual/taxes-on-personal-income",
+   "title": "PwC Worldwide Tax Summaries: Argentina, Individual - Taxes on personal income (reviewed 16 June 2026)",
+   "read": "2026-11-01",
+   "kind": "secondary",
+   "quotes": "https://www.afip.gob.ar/gananciasYBienes/",
+   "said": "Foreign beneficiaries working temporarily in Argentina for no more than six months during the year, who earn income through either the visual or performing arts or other profession, are subject to income tax on these earnings at the rate of 24.5% (35% on assumed profit of 70% of gross income) to be withheld by the local payer."
+  },
+  {
+   "url": "https://www.arca.gob.ar/monotributo/categorias.asp",
+   "title": "ARCA: Monotributo, montos y categorías vigentes (valores de aplicación desde el 1/08/2026)",
+   "read": "2026-11-01",
+   "kind": "primary",
+   "said": "Valores de aplicación desde el 1/08/2026 … A $12.009.410,45 No excluida --> Hasta 30 m2 Hasta 3330 Kw $2.792.886,15 $716.840,77 $5.585,77 $5.585,77 $18.246,86 $25.694,55 $49.527,18 $49.527,18 … H $81.924.660,37 No excluida --> Hasta 200 m2 Hasta 20000 Kw $8.378.658,45 $716.840,77 $409.623,31 $204.811,64 $57.598,04 $55.485,33 $522.706,68 $317.895,01"
+  },
+  {
+   "url": "https://www.arca.gob.ar/autonomos/documentos/Valores-autonomos-desde-octubre-2026.pdf",
+   "title": "ARCA: Trabajadores autónomos, valores vigentes a partir de octubre 2026",
+   "read": "2026-11-01",
+   "kind": "primary",
+   "said": "Estos valores entrarán en vigencia a partir del día 15/10/2026 … I $ 78.271,56 II $ 109.578,51 III $ 156.541,75 IV $ 250.466,70 V $ 344.390,34 … I 244.598,64 II 342.432,85 III 489.192,97 IV 782.708,42 V 1.076.219,83"
+  },
+  {
+   "url": "https://www.argentina.gob.ar/normativa/nacional/decreto-824-2019-332890/actualizacion",
+   "title": "Decreto 824/2019, Ley de Impuesto a las Ganancias, texto ordenado 2019 (texto actualizado)",
+   "read": "2026-11-01",
+   "kind": "primary",
+   "said": "j) Hasta la suma de PESOS DIEZ MIL ($ 10.000) por período fiscal, las ganancias provenientes de la explotación de derechos de autor y las restantes ganancias derivadas de derechos amparados por la Ley N° 11.723, siempre que el impuesto recaiga directamente sobre los autores o sus derechohabientes, que las respectivas obras sean debidamente inscriptas en la DIRECCIÓN NACIONAL DEL DERECHO DE AUTOR, que el beneficio proceda de la publicación, ejecución, representación, exposición, enajenación, traducción u otra forma de reproducción y no derive de obras realizadas por encargo o que reconozcan su origen en una locación de obra o de servicios formalizada o no contractualmente. Esta exención no será de aplicación para beneficiarios del exterior."
+  },
+  {
+   "url": "https://www4.hcdn.gob.ar/dependencias/dsecretaria/Periodo2021/PDF2021/TP2021/2421-D-2021.pdf",
+   "title": "Cámara de Diputados, expediente 2421-D-2021 (bill to raise the art. 26(j) exemption)",
+   "read": "2026-11-01",
+   "kind": "primary",
+   "said": "desde el año 1996 (sancionada el 25/09/1996) el monto de exención por período fiscal anual se encuentra fijado en la suma de $ 10.000"
+  }
+ ],
+ "blockers": []
+}

@@ -1,0 +1,225 @@
+{
+ "topic": "tax.BN",
+ "read": "2026-11-01",
+ "note": "Read 2026-11-01 at the owner's word (\"Build those first 3 starting with ledger first\"; of the 21 countries read first: \"It should cover across every country\"; \"Retry the blocked tax facts once all countries land\"): the tax on a screen worker's pay in Brunei: a resident's income tax, social contributions, what is withheld at source, a non-resident artiste's withholding, an author's treatment, VAT and the tax year. Research and retry subagents (workbench/briefs/BRIEF-tax.md, BRIEF-tax-retry.md), every quote checked by the lead against its saved page.",
+ "figures": [
+  {
+   "item": "residents",
+   "finding": "Brunei levies no income tax on individuals: the Income Tax Act charges a person other than a company at the rates of its Schedule 2, and Schedule 2 sets no rate.",
+   "value": {
+    "currency": "BND",
+    "brackets": [
+     {
+      "from": 0,
+      "to": null,
+      "rate": 0
+     }
+    ]
+   },
+   "applies": "All individuals, resident or not, 2026.",
+   "sources": [
+    {
+     "src": 0,
+     "said": "There shall be levied and paid for each year of assessment upon the chargeable income of every person, other than a company, tax at the rates specified in Schedule 2."
+    },
+    {
+     "src": 0,
+     "said": "RATE OF TAX ON CHARGEABLE INCOME Chargeable Income Rate of Tax LAWS OF BRUNEI Income Tax CAP. 35 141 SCHEDULE 3"
+    },
+    {
+     "src": 1,
+     "said": "Brunei does not impose personal income tax on individuals."
+    },
+    {
+     "src": 2,
+     "said": "Although the Income Tax Act provides for the taxation of income derived by individuals, such income is exempt from tax under the second schedule of the act."
+    }
+   ]
+  },
+  {
+   "item": "social",
+   "finding": "A Brunei citizen or permanent resident pays 8.5% of basic salary to the National Retirement Scheme (SPK); the employer pays BND 57.50 a month on salary up to BND 500, 10.5% to BND 1,500, 9.5% to BND 2,800 and 8.5% above.",
+   "value": {
+    "currency": "BND",
+    "SPK": {
+     "employee": 0.085,
+     "employerMonthly": [
+      {
+       "from": 0,
+       "to": 500,
+       "fixed": 57.5
+      },
+      {
+       "from": 500,
+       "to": 1500,
+       "rate": 0.105,
+       "minimum": 57.5
+      },
+      {
+       "from": 1500,
+       "to": 2800,
+       "rate": 0.095
+      },
+      {
+       "from": 2800,
+       "to": null,
+       "rate": 0.085
+      }
+     ]
+    },
+    "foreigners": "not covered"
+   },
+   "applies": "From July 2023; citizens and permanent residents only, so a foreign screen worker pays none. A self-employed scheme was not found.",
+   "sources": [
+    {
+     "src": 3,
+     "said": "SPK applies to citizens and permanent residents of Brunei only. Under this scheme, the employee’s contribution rate is 8.5% from the basic salary"
+    },
+    {
+     "src": 2,
+     "said": "The employer contribution rates are BND 57.50 (for a monthly salary up to BND 500), 10.5% (for a monthly salary above BND 500 and up to BND 1,500), 9.5% (for a monthly salary above BND 1,500 and up to BND 2,800), and 8.5% (for a monthly salary above BND 2,800)."
+    }
+   ]
+  },
+  {
+   "item": "withholding",
+   "finding": "No income tax is withheld from pay in Brunei; withholding applies only to certain payments to non-residents.",
+   "value": {
+    "employee": {
+     "rate": 0
+    }
+   },
+   "applies": "2026.",
+   "sources": [
+    {
+     "src": 1,
+     "said": "Brunei does not impose personal income tax on individuals."
+    }
+   ]
+  },
+  {
+   "item": "nonResident",
+   "finding": "A non-resident individual performing in Brunei owes no income tax on the fee; withholding of 10% applies only to listed payments to non-residents (royalties, technical and management fees, a non-resident director's remuneration, rent of movable property).",
+   "value": {
+    "currency": "BND",
+    "performerFee": 0,
+    "withholding": {
+     "royalties": 0.1,
+     "technicalServices": 0.1,
+     "managementFees": 0.1,
+     "nonResidentDirector": 0.1,
+     "interest": 0.025
+    },
+    "final": null
+   },
+   "applies": "A royalty paid to a non-resident writer or director bears 10% unless a treaty reduces it.",
+   "sources": [
+    {
+     "src": 0,
+     "said": "Witholding of tax in respect of interest paid to non-resident"
+    },
+    {
+     "src": 4,
+     "said": "Royalties, lump sum payments, or otherwise for the use of movable properties. 10.0"
+    },
+    {
+     "src": 2,
+     "said": "Royalties paid to a nonresident are subject to a 10% withholding tax, unless the rate is reduced under an applicable tax treaty."
+    }
+   ]
+  },
+  {
+   "item": "vat",
+   "finding": "Brunei has no VAT or sales tax, so a freelancer's fee bears none.",
+   "value": {
+    "rate": 0,
+    "threshold": null
+   },
+   "applies": "2026.",
+   "sources": [
+    {
+     "src": 5,
+     "said": "Brunei does not impose VAT or sales tax."
+    },
+    {
+     "src": 2,
+     "said": "Brunei does not have a VAT or sales tax."
+    }
+   ]
+  },
+  {
+   "item": "year",
+   "finding": "With no income tax on individuals no individual files a return or pays a balance.",
+   "value": {
+    "start": null,
+    "due": null
+   },
+   "applies": "Companies only file.",
+   "sources": [
+    {
+     "src": 6,
+     "said": "Brunei does not impose personal income tax on individuals."
+    }
+   ]
+  }
+ ],
+ "country": "BN",
+ "sources": [
+  {
+   "url": "https://www.mof.gov.bn/wp-content/uploads/2025/10/TR_Relevant-Acts_Income-Tax-Act-Chapter-35.pdf",
+   "title": "Income Tax Act, Chapter 35 (Laws of Brunei, Ministry of Finance and Economy)",
+   "read": "2026-11-01",
+   "kind": "primary",
+   "said": "There shall be levied and paid for each year of assessment upon the chargeable income of every person, other than a company, tax at the rates specified in Schedule 2. … RATE OF TAX ON CHARGEABLE INCOME Chargeable Income Rate of Tax LAWS OF BRUNEI Income Tax CAP. 35 141 SCHEDULE 3 … Witholding of tax in respect of interest paid to non-resident"
+  },
+  {
+   "url": "https://taxsummaries.pwc.com/brunei-darussalam/individual/taxes-on-personal-income",
+   "title": "Brunei Darussalam: individual/taxes-on-personal-income (PwC Worldwide Tax Summaries, reviewed 3 August 2026)",
+   "read": "2026-11-01",
+   "kind": "secondary",
+   "quotes": "https://www.mof.gov.bn/wp-content/uploads/2025/10/TR_Relevant-Acts_Income-Tax-Act-Chapter-35.pdf",
+   "said": "Brunei does not impose personal income tax on individuals."
+  },
+  {
+   "url": "https://www.deloitte.com/content/dam/assets-shared/docs/services/tax/2026/dttl-tax-bruneihighlights-2026.pdf",
+   "title": "Brunei Highlights 2026 (Deloitte)",
+   "read": "2026-11-01",
+   "kind": "secondary",
+   "quotes": "https://www.mof.gov.bn/wp-content/uploads/2025/10/TR_Relevant-Acts_Income-Tax-Act-Chapter-35.pdf",
+   "said": "Although the Income Tax Act provides for the taxation of income derived by individuals, such income is exempt from tax under the second schedule of the act. … The employer contribution rates are BND 57.50 (for a monthly salary up to BND 500), 10.5% (for a monthly salary above BND 500 and up to BND 1,500), 9.5% (for a monthly salary above BND 1,500 and up to BND 2,800), and 8.5% (for a monthly salary above BND 2,800). … Royalties paid to a nonresident are subject to a 10% withholding tax, unless the rate is reduced under an applicable tax treaty. … Brunei does not have a VAT or sales tax."
+  },
+  {
+   "url": "https://taxsummaries.pwc.com/brunei-darussalam/individual/other-taxes",
+   "title": "Brunei Darussalam: individual/other-taxes (PwC Worldwide Tax Summaries, reviewed 3 August 2026)",
+   "read": "2026-11-01",
+   "kind": "secondary",
+   "quotes": "https://www.tap.com.bn/",
+   "said": "SPK applies to citizens and permanent residents of Brunei only. Under this scheme, the employee’s contribution rate is 8.5% from the basic salary"
+  },
+  {
+   "url": "https://taxsummaries.pwc.com/brunei-darussalam/corporate/withholding-taxes",
+   "title": "Brunei Darussalam: corporate/withholding-taxes (PwC Worldwide Tax Summaries, reviewed 3 August 2026)",
+   "read": "2026-11-01",
+   "kind": "secondary",
+   "quotes": "https://www.mof.gov.bn/wp-content/uploads/2025/10/TR_Relevant-Acts_Income-Tax-Act-Chapter-35.pdf",
+   "said": "Royalties, lump sum payments, or otherwise for the use of movable properties. 10.0"
+  },
+  {
+   "url": "https://taxsummaries.pwc.com/brunei-darussalam/corporate/other-taxes",
+   "title": "Brunei Darussalam: corporate/other-taxes (PwC Worldwide Tax Summaries, reviewed 3 August 2026)",
+   "read": "2026-11-01",
+   "kind": "secondary",
+   "quotes": "https://www.mof.gov.bn/div_revenue_typesoftaxes_incometax/",
+   "said": "Brunei does not impose VAT or sales tax."
+  },
+  {
+   "url": "https://taxsummaries.pwc.com/brunei-darussalam/individual/tax-administration",
+   "title": "Brunei Darussalam: individual/tax-administration (PwC Worldwide Tax Summaries, reviewed 3 August 2026)",
+   "read": "2026-11-01",
+   "kind": "secondary",
+   "quotes": "https://www.mof.gov.bn/wp-content/uploads/2025/10/TR_Relevant-Acts_Income-Tax-Act-Chapter-35.pdf",
+   "said": "Brunei does not impose personal income tax on individuals."
+  }
+ ],
+ "blockers": []
+}

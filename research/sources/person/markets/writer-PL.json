@@ -1,0 +1,80 @@
+{
+ "topic": "markets.writer.PL",
+ "read": "2026-11-01",
+ "note": "Read 2026-11-01 at the owner's word (\"Want it done now\", of the markets of every country beyond the 21; then \"Retry the blocked market facts once all countries land\"): the terms a screenwriter works on in Poland. Research, retry and web-search subagents (workbench/briefs/BRIEF-markets-world.md, -retry.md, -search.md), every quote checked by the lead against its saved page.",
+ "figures": [
+  {
+   "item": "union",
+   "finding": "The Polish Screenwriters' Guild (Związek Zawodowy Scenarzystów Polskich - Gildia Scenarzystów) is a trade union: a full member needs one produced feature screenplay or series episodes (5 over 40 min or 10 under 40 min), and pays PLN 600 a year; an associate pays PLN 200.",
+   "value": {
+    "name": "Związek Zawodowy Scenarzystów Polskich - Gildia Scenarzystów (GSP)",
+    "currency": "PLN",
+    "annualDues": {
+     "full": 600,
+     "associate": 200
+    },
+    "full": "one produced feature screenplay, or 5 episodes over 40 min / 10 under 40 min",
+    "associate": "a year-long screenwriting course, a contest prize, 3 shorts, or a screenplay accepted but not yet produced"
+   },
+   "applies": "Poland, screenwriters (read 2026-11-01).",
+   "sources": [
+    {
+     "src": 0,
+     "said": "ma w dorobku min. jeden zrealizowany scenariusz filmu fabularnego (autor lub współautor) ma w dorobku scenariusze seriali (5 odc. serialu powyżej 40 min, 10 odc. serialu mniej niż 40 min) … Roczna składka dla Członka Stowarzyszonego wynosi 200 zł. Roczna składka dla Członka Zwyczajnego wynosi 600zł. … Związek Zawodowy Scenarzystów Polskich-Gildia Scenarzystów"
+    }
+   ]
+  },
+  {
+   "item": "option",
+   "finding": "The Polish Film Institute makes producers pay the screenwriter before applying: at least 20% of the fee for the screenplay rights (100% of an option fee) when applying for development or production, and at least 70% of the whole screenplay fee when applying for production after funded development.",
+   "value": {
+    "atApplication": {
+     "rightsFeeShareMin": 0.2,
+     "optionFeeShare": 1.0
+    },
+    "atProductionAfterDevelopment": {
+     "screenplayFeeShareMin": 0.7,
+     "sourceRightsShare": 1.0
+    },
+    "developmentMaxMonths": 36
+   },
+   "applies": "Poland, projects applying to PISF under the 2026 operational programmes.",
+   "sources": [
+    {
+     "src": 1,
+     "said": "jest zobowiązany do zapłacenia scenarzyście co najmniej 20% honorarium za nabycie autorskich praw majątkowych do scenariusza … W takim przypadku 100% honorarium z tytułu udzielenia prawa/praw opcji powinno być wypłacone przed złożeniem wniosku do PISF. … scenarzyście co najmniej 70% całości wynagrodzenia za nabycie autorskich praw majątkowych do scenariusza"
+    }
+   ]
+  }
+ ],
+ "country": "PL",
+ "sources": [
+  {
+   "url": "https://gildiascenarzystow.pl/dolacz-do-nas/",
+   "title": "Gildia Scenarzystów Polskich: Dołącz do nas",
+   "read": "2026-11-01",
+   "kind": "primary",
+   "said": "ma w dorobku min. jeden zrealizowany scenariusz filmu fabularnego (autor lub współautor) ma w dorobku scenariusze seriali (5 odc. serialu powyżej 40 min, 10 odc. serialu mniej niż 40 min) … Roczna składka dla Członka Stowarzyszonego wynosi 200 zł. Roczna składka dla Członka Zwyczajnego wynosi 600zł. … Związek Zawodowy Scenarzystów Polskich-Gildia Scenarzystów"
+  },
+  {
+   "url": "https://pisf.pl/wp-content/uploads/2026/04/Programy-Operacyjne-2026-ver.-24-04-2026.pdf",
+   "title": "PISF: Programy Operacyjne Polskiego Instytutu Sztuki Filmowej na rok 2026 (ver. 24-04-2026)",
+   "read": "2026-11-01",
+   "kind": "primary",
+   "said": "jest zobowiązany do zapłacenia scenarzyście co najmniej 20% honorarium za nabycie autorskich praw majątkowych do scenariusza … W takim przypadku 100% honorarium z tytułu udzielenia prawa/praw opcji powinno być wypłacone przed złożeniem wniosku do PISF. … scenarzyście co najmniej 70% całości wynagrodzenia za nabycie autorskich praw majątkowych do scenariusza"
+  }
+ ],
+ "blockers": [
+  {
+   "item": "fees",
+   "sought": "Any minimum screenplay fee in Poland.",
+   "tried": {
+    "institution": "gildiascenarzystow.pl: membership only. || Retry 2026-11-01: zasp.pl read again: links to ZASP Stowarzyszenie and ZASP OZZ only, no rate card; gildiarezyserow.pl: CONNECT 502 again",
+    "official-register": "PISF 2026 programmes set payment shares, not amounts. || Retry 2026-11-01: Constitution of Poland read: capital only; PISF 2026 operating programmes (earlier) set payment shares, not amounts",
+    "web-search": "Not found. || Retry 2026-11-01: not run again: the session's web-search budget is spent (2026-11-01, retry brief); institutions fetched directly instead || Web search 2026-11-01: not run: the search pass of 2026-11-01 reached this country after the turn's shared web-search budget (200 calls, shared by every agent) was used up again (about 19:20 UTC, after 27 searches for AD to CK); no result returned.",
+    "trade-press": "None. || Retry 2026-11-01: none quoting a primary found among pages read",
+    "archive": "web.archive.org unreachable. || Retry 2026-11-01: archive.org availability API for www.gildiarezyserow.pl/: 429 Too Many Requests (19:03 UTC, 3 tries)"
+   }
+  }
+ ]
+}

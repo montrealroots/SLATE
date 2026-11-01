@@ -1,0 +1,294 @@
+{
+ "topic": "tax.TH",
+ "read": "2026-11-01",
+ "note": "Read 2026-11-01 at the owner's word (\"Build those first 3 starting with ledger first\"; of the 21 countries read first: \"It should cover across every country\"; \"Retry the blocked tax facts once all countries land\"): the tax on a screen worker's pay in Thailand: a resident's income tax, social contributions, what is withheld at source, a non-resident artiste's withholding, an author's treatment, VAT and the tax year. Research and retry subagents (workbench/briefs/BRIEF-tax.md, BRIEF-tax-retry.md), every quote checked by the lead against its saved page.",
+ "figures": [
+  {
+   "item": "residents",
+   "finding": "Net income is taxed at 0% to THB 150,000, then 5%, 10%, 15%, 20%, 25% and 30% up to THB 5 million, and 35% above; there is no regional layer.",
+   "value": {
+    "currency": "THB",
+    "brackets": [
+     {
+      "from": 0,
+      "to": 150000,
+      "rate": 0
+     },
+     {
+      "from": 150000,
+      "to": 300000,
+      "rate": 0.05
+     },
+     {
+      "from": 300000,
+      "to": 500000,
+      "rate": 0.1
+     },
+     {
+      "from": 500000,
+      "to": 750000,
+      "rate": 0.15
+     },
+     {
+      "from": 750000,
+      "to": 1000000,
+      "rate": 0.2
+     },
+     {
+      "from": 1000000,
+      "to": 2000000,
+      "rate": 0.25
+     },
+     {
+      "from": 2000000,
+      "to": 5000000,
+      "rate": 0.3
+     },
+     {
+      "from": 5000000,
+      "to": null,
+      "rate": 0.35
+     }
+    ],
+    "regional": null
+   },
+   "applies": "Tax years 2017 (B.E. 2560) onwards, so 2026.",
+   "sources": [
+    {
+     "src": 0,
+     "said": "เกิน 2,000,000 - 5,000,000 3,000,000 30 900,000 1,265,000 เกิน 5,000,000 บาท ขึ้นไป 35"
+    },
+    {
+     "src": 0,
+     "said": "0 - 150,000 150,000 5 ยกเว้น* 0 เกิน 150,000 - 300,000 150,000 5 7,500 7,500 เกิน 300,000 - 500,000 200,000 10 20,000 27,500 เกิน 500,000 - 750,000 250,000 15 37,500 65,000 เกิน 750,000 - 1,000,000 250,000 20 50,000 115,000 เกิน 1,000,000 - 2,000,000 1,000,000 25 250,000 365,000"
+    }
+   ]
+  },
+  {
+   "item": "residents",
+   "finding": "Before the scale, employment income gets a 50% standard deduction capped at THB 100,000, and each taxpayer a personal allowance of THB 60,000; social security contributions are deductible.",
+   "value": {
+    "currency": "THB",
+    "personalAllowance": 60000,
+    "employmentDeduction": {
+     "rate": 0.5,
+     "max": 100000
+    }
+   },
+   "applies": "2026.",
+   "sources": [
+    {
+     "src": 1,
+     "said": "A standard deduction of 50%, with a limit of THB 100,000, is permitted in respect of income from employment."
+    },
+    {
+     "src": 1,
+     "said": "Personal allowances There is a personal allowance of THB 60,000 each for the taxpayer"
+    }
+   ]
+  },
+  {
+   "item": "year",
+   "finding": "The tax year is the calendar year; the return is due by 31 March (8 April online); business and some other income also needs a half-year return by 30 September.",
+   "value": {
+    "start": "01-01",
+    "end": "12-31",
+    "returnDue": "03-31",
+    "returnDueOnline": "04-08",
+    "halfYearReturn": "09-30"
+   },
+   "applies": "Individuals.",
+   "sources": [
+    {
+     "src": 2,
+     "said": "The tax year is the calendar year."
+    },
+    {
+     "src": 2,
+     "said": "All persons earning income are required to file a tax return no later than 31 March of the following year for hardcopy filing and 8 April for online filing"
+    },
+    {
+     "src": 2,
+     "said": "Individuals engaged in most forms of business are also required to file a return of their income for the first six months of the year by 30 September and pay the tax due."
+    }
+   ]
+  },
+  {
+   "item": "withholding",
+   "finding": "The payer withholds from employment income at the progressive rates, 3% from service and professional fees, and 5% from a Thai-resident public entertainer's pay; tax withheld is credited on the annual return.",
+   "value": {
+    "employment": "progressive",
+    "professionalFees": 0.03,
+    "entertainerResident": 0.05,
+    "final": false
+   },
+   "applies": "2026.",
+   "sources": [
+    {
+     "src": 3,
+     "said": "The tax withheld shall then be credited against tax liability of a taxpayer at the time of filing PIT return."
+    },
+    {
+     "src": 3,
+     "said": "4. Service and professional fees 3 % 5. Public entertainer remuneration - Thai resident - non resident 5 % 5 - 37 %"
+    }
+   ]
+  },
+  {
+   "item": "nonResident",
+   "finding": "A non-resident is taxed on Thai-source income. A public entertainer (actor in theatre, film, radio or TV, singer, musician) domiciled abroad has tax withheld at the personal income tax schedule's progressive rates, except a foreign-domiciled film or TV actor in a foreign company's production permitted to shoot in Thailand, withheld at 10%; tax withheld is credited on the annual return, so it is not final. A non-resident's other fees for work (Section 40(2)) are withheld at 15%.",
+   "value": {
+    "base": "Thai-source income",
+    "entertainerNonResident": "progressive schedule rates (0-35%)",
+    "foreignFilmTvActorInPermittedForeignProduction": 0.1,
+    "otherFeesSection40_2": 0.15,
+    "final": false
+   },
+   "applies": "2026 (Order Tor.Por.4/2528 clause 9(2) as amended by Tor.Por.111/2545; Revenue Code s. 50(1)). The RD's English table still prints the pre-2017 scale '5 - 37 %'; the schedule now in force is in the residents figure.",
+   "sources": [
+    {
+     "src": 3,
+     "said": "A non-resident is, however, subject to tax only on income from sources in Thailand."
+    },
+    {
+     "src": 3,
+     "said": "Public entertainer remuneration - Thai resident - non resident 5 % 5 - 37 %"
+    },
+    {
+     "src": 4,
+     "said": "(2) นักแสดงสาธารณะ … (ก) กรณีมีภูมิลำเนาอยู่ในต่างประเทศ หักภาษี ณ ที่จ่ายโดยคำนวณหักไว้ตามอัตราที่กำหนดในบัญชีอัตราภาษีเงินได้สำหรับบุคคลธรรมดา เว้นแต่นักแสดงสาธารณะที่เป็น นักแสดงภาพยนตร์หรือโทรทัศน์ซึ่งมีภูมิลำเนาอยู่ในต่างประเทศ เฉพาะกรณีที่มีการดำเนินการถ่ายทำ ภาพยนตร์หรือโทรทัศน์ในประเทศไทยโดยบริษัทหรือห้างหุ้นส่วนนิติบุคคลที่ตั้งขึ้นตามกฎหมายของต่างประเทศ … หักภาษี ณ ที่จ่ายโดยคำนวณหักไว้ในอัตราร้อยละ 10.0 … นักแสดงละคร ภาพยนตร์ วิทยุและโทรทัศน์ นักร้อง นักดนตรี นักกีฬาอาชีพหรือนักแสดงเพื่อความบันเทิงใด ๆ"
+    },
+    {
+     "src": 5,
+     "said": "In the case of paying assessable income under Section 40 (2), other than as described in paragraph 3, to a non-resident, withholding tax shall be made at the rate of 15.0 per cent of the income."
+    },
+    {
+     "src": 3,
+     "said": "The tax withheld shall then be credited against tax liability of a taxpayer at the time of filing PIT return."
+    }
+   ]
+  },
+  {
+   "item": "social",
+   "finding": "Employee, employer and government each pay 5% of salary to the social security fund, the employee's share capped at THB 875 a month.",
+   "value": {
+    "currency": "THB",
+    "employee": 0.05,
+    "employer": 0.05,
+    "government": 0.05,
+    "capMonthly": 875
+   },
+   "applies": "2026.",
+   "sources": [
+    {
+     "src": 6,
+     "said": "All employees are required to contribute to a social security fund an amount equal to 5% of their salary, up to a maximum contribution of THB 875 per month. Employers and the government are also required to contribute an equal amount."
+    }
+   ]
+  },
+  {
+   "item": "vat",
+   "finding": "VAT is 10% by law but reduced to 7% until 30 September 2027; a business whose tax base (turnover) does not exceed THB 1.8 million a year, counted by calendar year for an individual, is exempt from VAT but may register.",
+   "value": {
+    "standard": 0.07,
+    "statutory": 0.1,
+    "reducedUntil": "2027-09-30",
+    "registrationThreshold": 1800000,
+    "currency": "THB"
+   },
+   "applies": "2026 (Royal Decree No. 432 B.E. 2548 in force from 1 April 2005 under Revenue Code s. 81/1).",
+   "sources": [
+    {
+     "src": 7,
+     "said": "The standard rate of VAT is 10%, but the rate is currently reduced to 7% until 30 September 2027 (unless further extended by the government)."
+    },
+    {
+     "src": 8,
+     "said": "Section 80 The tax rate of 10.00% shall be used in value added tax calculation … Section 81/1 Business person, carrying on the business of sale of goods or provision of services subject to value added tax and the value of tax base not exceeding that of small business as prescribed by Royal Decree, shall be exempt from value added tax."
+    },
+    {
+     "src": 9,
+     "said": "มาตรา 4 มูลค่าของฐานภาษีของกิจการขนาดย่อมตามมาตรา 81/1 แห่งประมวลรัษฎากร จะต้องไม่เกินหนึ่งล้านแปดแสนบาทต่อปี มาตรา 5 คำว่า … ปี … ตามมาตรา 4 หมายความว่า (1) ในกรณีที่ผู้ประกอบการเป็นบุคคลธรรมดาหรือคณะบุคคลที่มิใช่นิติบุคคลให้นับตามปีประดิทิน"
+    }
+   ]
+  }
+ ],
+ "country": "TH",
+ "sources": [
+  {
+   "url": "https://rd.go.th/59670.html",
+   "title": "อัตราภาษีเงินได้บุคคลธรรมดา สำหรับปีภาษี 2560 เป็นต้นไป (กรมสรรพากร)",
+   "read": "2026-11-01",
+   "kind": "primary",
+   "said": "เกิน 2,000,000 - 5,000,000 3,000,000 30 900,000 1,265,000 เกิน 5,000,000 บาท ขึ้นไป 35 … 0 - 150,000 150,000 5 ยกเว้น* 0 เกิน 150,000 - 300,000 150,000 5 7,500 7,500 เกิน 300,000 - 500,000 200,000 10 20,000 27,500 เกิน 500,000 - 750,000 250,000 15 37,500 65,000 เกิน 750,000 - 1,000,000 250,000 20 50,000 115,000 เกิน 1,000,000 - 2,000,000 1,000,000 25 250,000 365,000"
+  },
+  {
+   "url": "https://taxsummaries.pwc.com/thailand/individual/deductions",
+   "title": "PwC Worldwide Tax Summaries, Thailand, Individual - Deductions (last reviewed 24 August 2026)",
+   "read": "2026-11-01",
+   "kind": "secondary",
+   "quotes": "https://www.rd.go.th/english/6045.html",
+   "said": "A standard deduction of 50%, with a limit of THB 100,000, is permitted in respect of income from employment. … Personal allowances There is a personal allowance of THB 60,000 each for the taxpayer"
+  },
+  {
+   "url": "https://taxsummaries.pwc.com/thailand/individual/tax-administration",
+   "title": "PwC Worldwide Tax Summaries, Thailand, Individual - Tax administration (last reviewed 24 August 2026)",
+   "read": "2026-11-01",
+   "kind": "secondary",
+   "quotes": "https://www.rd.go.th/english/6045.html",
+   "said": "The tax year is the calendar year. … All persons earning income are required to file a tax return no later than 31 March of the following year for hardcopy filing and 8 April for online filing … Individuals engaged in most forms of business are also required to file a return of their income for the first six months of the year by 30 September and pay the tax due."
+  },
+  {
+   "url": "https://www.rd.go.th/english/6045.html",
+   "title": "Personal Income Tax (The Revenue Department, English site, last updated 21.03.2024)",
+   "read": "2026-11-01",
+   "kind": "primary",
+   "said": "The tax withheld shall then be credited against tax liability of a taxpayer at the time of filing PIT return. … 4. Service and professional fees 3 % 5. Public entertainer remuneration - Thai resident - non resident 5 % 5 - 37 % … A non-resident is, however, subject to tax only on income from sources in Thailand."
+  },
+  {
+   "url": "https://www.rd.go.th/3479.html",
+   "title": "คำสั่งกรมสรรพากร ที่ ท.ป.4/2528 (Revenue Departmental Order Tor.Por.4/2528 on withholding by payers of assessable income under Section 40, as amended to Tor.Por.354/2566), Revenue Department",
+   "read": "2026-11-01",
+   "kind": "primary",
+   "said": "(2) นักแสดงสาธารณะ … (ก) กรณีมีภูมิลำเนาอยู่ในต่างประเทศ หักภาษี ณ ที่จ่ายโดยคำนวณหักไว้ตามอัตราที่กำหนดในบัญชีอัตราภาษีเงินได้สำหรับบุคคลธรรมดา เว้นแต่นักแสดงสาธารณะที่เป็น นักแสดงภาพยนตร์หรือโทรทัศน์ซึ่งมีภูมิลำเนาอยู่ในต่างประเทศ เฉพาะกรณีที่มีการดำเนินการถ่ายทำ ภาพยนตร์หรือโทรทัศน์ในประเทศไทยโดยบริษัทหรือห้างหุ้นส่วนนิติบุคคลที่ตั้งขึ้นตามกฎหมายของต่างประเทศ … หักภาษี ณ ที่จ่ายโดยคำนวณหักไว้ในอัตราร้อยละ 10.0 … นักแสดงละคร ภาพยนตร์ วิทยุและโทรทัศน์ นักร้อง นักดนตรี นักกีฬาอาชีพหรือนักแสดงเพื่อความบันเทิงใด ๆ"
+  },
+  {
+   "url": "https://www.rd.go.th/english/37749.html",
+   "title": "Revenue Code, Chapter 3 Income Tax, Sections 38-64 (Revenue Department, English site)",
+   "read": "2026-11-01",
+   "kind": "primary",
+   "said": "In the case of paying assessable income under Section 40 (2), other than as described in paragraph 3, to a non-resident, withholding tax shall be made at the rate of 15.0 per cent of the income."
+  },
+  {
+   "url": "https://taxsummaries.pwc.com/thailand/individual/other-taxes",
+   "title": "PwC Worldwide Tax Summaries, Thailand, Individual - Other taxes (last reviewed 24 August 2026)",
+   "read": "2026-11-01",
+   "kind": "secondary",
+   "quotes": "https://www.rd.go.th/english/6045.html",
+   "said": "All employees are required to contribute to a social security fund an amount equal to 5% of their salary, up to a maximum contribution of THB 875 per month. Employers and the government are also required to contribute an equal amount."
+  },
+  {
+   "url": "https://taxsummaries.pwc.com/thailand/corporate/other-taxes",
+   "title": "PwC Worldwide Tax Summaries, Thailand, Corporate - Other taxes (last reviewed 24 August 2026)",
+   "read": "2026-11-01",
+   "kind": "secondary",
+   "quotes": "https://www.rd.go.th/english/6045.html",
+   "said": "The standard rate of VAT is 10%, but the rate is currently reduced to 7% until 30 September 2027 (unless further extended by the government)."
+  },
+  {
+   "url": "https://www.rd.go.th/english/37732.html",
+   "title": "Revenue Code, Chapter 4 Value Added Tax, Sections 80-82 (Revenue Department, English site)",
+   "read": "2026-11-01",
+   "kind": "primary",
+   "said": "Section 80 The tax rate of 10.00% shall be used in value added tax calculation … Section 81/1 Business person, carrying on the business of sale of goods or provision of services subject to value added tax and the value of tax base not exceeding that of small business as prescribed by Royal Decree, shall be exempt from value added tax."
+  },
+  {
+   "url": "https://rd.go.th/22646.html",
+   "title": "พระราชกฤษฎีกาฉบับที่ 432/2548 (Royal Decree No. 432 on the tax base of small businesses exempt from VAT), Revenue Department",
+   "read": "2026-11-01",
+   "kind": "primary",
+   "said": "มาตรา 4 มูลค่าของฐานภาษีของกิจการขนาดย่อมตามมาตรา 81/1 แห่งประมวลรัษฎากร จะต้องไม่เกินหนึ่งล้านแปดแสนบาทต่อปี มาตรา 5 คำว่า … ปี … ตามมาตรา 4 หมายความว่า (1) ในกรณีที่ผู้ประกอบการเป็นบุคคลธรรมดาหรือคณะบุคคลที่มิใช่นิติบุคคลให้นับตามปีประดิทิน"
+  }
+ ],
+ "blockers": []
+}

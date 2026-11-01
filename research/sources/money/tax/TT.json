@@ -1,0 +1,242 @@
+{
+ "topic": "tax.TT",
+ "read": "2026-11-01",
+ "note": "Read 2026-11-01 at the owner's word (\"Build those first 3 starting with ledger first\"; of the 21 countries read first: \"It should cover across every country\"; \"Retry the blocked tax facts once all countries land\"): the tax on a screen worker's pay in Trinidad and Tobago: a resident's income tax, social contributions, what is withheld at source, a non-resident artiste's withholding, an author's treatment, VAT and the tax year. Research and retry subagents (workbench/briefs/BRIEF-tax.md, BRIEF-tax-retry.md), every quote checked by the lead against its saved page.",
+ "figures": [
+  {
+   "item": "residents",
+   "finding": "Chargeable income is taxed at 25% up to TTD 1 million and 30% above, after a personal allowance of TTD 90,000 for every resident.",
+   "value": {
+    "currency": "TTD",
+    "brackets": [
+     {
+      "from": 0,
+      "to": 1000000,
+      "rate": 0.25
+     },
+     {
+      "from": 1000000,
+      "to": null,
+      "rate": 0.3
+     }
+    ],
+    "allowance": 90000,
+    "regional": null
+   },
+   "applies": "2026 (allowance TTD 90,000 from 1 January 2023).",
+   "sources": [
+    {
+     "src": 0,
+     "said": "The income tax rate for individuals with chargeable income less than TTD 1 million is 25%. For chargeable income in excess of TTD 1 million, the rate of tax applicable is 30%."
+    },
+    {
+     "src": 1,
+     "said": "The Personal Allowance - $90,000 as of 01/01/2023"
+    }
+   ]
+  },
+  {
+   "item": "residents",
+   "finding": "A self-employed person with receipts over TTD 360,000 a year pays business levy of 0.6% of gross receipts where it exceeds the income tax (not in the first three years).",
+   "value": {
+    "currency": "TTD",
+    "businessLevy": 0.006,
+    "threshold": 360000
+   },
+   "applies": "Sole traders and the self-employed, 2026.",
+   "sources": [
+    {
+     "src": 0,
+     "said": "Business levy of 0.6% is applicable to sole traders and self-employed individuals having gross income or receipts in excess of TTD 360,000 per annum ."
+    }
+   ]
+  },
+  {
+   "item": "year",
+   "finding": "The tax year is the calendar year; a return is due by 30 April of the next year (residents with only employment income need not file), and any shortfall is paid by the same date.",
+   "value": {
+    "start": "01-01",
+    "end": "12-31",
+    "returnDue": "04-30",
+    "employmentOnlyNoReturn": true
+   },
+   "applies": "Individuals.",
+   "sources": [
+    {
+     "src": 2,
+     "said": "The tax year corresponds to the calendar year in Trinidad and Tobago. Tax returns Tax returns must be filed by 30 April of the year following the calendar or accounting year-end."
+    },
+    {
+     "src": 2,
+     "said": "Resident individuals earning only employment income are not required to file a tax return."
+    }
+   ]
+  },
+  {
+   "item": "withholding",
+   "finding": "Tax is withheld from emoluments under PAYE, using the employee's TD1 form; deductions are remitted by the 15th of the next month.",
+   "value": {
+    "employment": "PAYE",
+    "remitBy": "15th of the following month"
+   },
+   "applies": "2026.",
+   "sources": [
+    {
+     "src": 3,
+     "said": "It is the system by which tax is withheld from emolument Income (The PAYE System). Therefore it is necessary for the employee to submit a TD 1 Form to the employer."
+    },
+    {
+     "src": 3,
+     "said": "Deductions made in January must be remitted by the 15th February"
+    }
+   ]
+  },
+  {
+   "item": "nonResident",
+   "finding": "A foreign artiste's fee, paid by a promoter to a non-resident not engaged in trade or business in Trinidad and Tobago, bears 15% withholding tax on the gross payment (fees and charges for personal services), remitted within thirty days; the withholding replaces income tax on that payment, so it is final, and a treaty may lower it.",
+   "value": {
+    "rate": 0.15,
+    "base": "gross payment (no deductions)",
+    "threshold": null,
+    "final": true,
+    "remitWithin": "30 days",
+    "treatyMayReduce": true
+   },
+   "applies": "Non-resident individuals not engaged in trade or business in Trinidad and Tobago (Income Tax Act ss. 50, 51 and Third Schedule Part II, as revised to 31 December 2016; later amendments to the rate were not seen).",
+   "sources": [
+    {
+     "src": 4,
+     "said": "FOREIGN ARTISTES LIABLE FOR WITHHOLDING TAX ( Deducted and Remitted by Promoter )"
+    },
+    {
+     "src": 4,
+     "said": "LOCAL ARTISTES PAY HEALTH SURCHARGE PAY INCOME TAX ( note: you are charged to tax on your world income) SUBMIT RETURNS"
+    },
+    {
+     "src": 5,
+     "said": "WHT is imposed at varying rates up to 15%, depending on the nature of the payment, the status of the payee, and the applicability of DTTs."
+    },
+    {
+     "src": 6,
+     "said": "(b) on any payment made to any person not resident … in Trinidad and Tobago or to any person on … behalf of such non-resident person, … (5) Notwithstanding the provisions of section 5, where … a payment or distribution that is subject to withholding tax is … made to any person not resident in Trinidad and Tobago or to any … non-resident company, income tax under section 5 or … corporation tax shall not be payable in respect of such payment … or distribution. … “payment” means a payment without any deductions whatsoever, … (d) management charges or charges for the … provision of personal services and technical and … managerial skills; … (e) premiums (other than premiums paid to … insurance companies and contributions to … pension funds and schemes), commissions, fees … (ii) on any payment made to a person other than a … company—15 per cent;"
+    }
+   ]
+  },
+  {
+   "item": "social",
+   "finding": "National Insurance is 16.2% from January 2026, up to TTD 508.50 a week (TTD 339.00 employer, 169.50 employee) at monthly income of TTD 13,600 or more, rising to 19.2% in January 2027; a health surcharge of up to TTD 8.25 a week is also withheld.",
+   "value": {
+    "currency": "TTD",
+    "nis2026": {
+     "rate": 0.162,
+     "maxWeekly": 508.5,
+     "employerMaxWeekly": 339.0,
+     "employeeMaxWeekly": 169.5,
+     "ceilingMonthlyIncome": 13600
+    },
+    "nis2027": {
+     "rate": 0.192,
+     "maxWeekly": 602.4,
+     "employerMaxWeekly": 401.6,
+     "employeeMaxWeekly": 200.8
+    },
+    "healthSurchargeMaxWeekly": 8.25
+   },
+   "applies": "2026 and 2027.",
+   "sources": [
+    {
+     "src": 7,
+     "said": "Effective January 2026, the contribution rate is 16.2%. The maximum total weekly contribution is TTD 508.50 for monthly income of TTD 13,600 and over, payable as TTD 339.00 by the employer and TTD 169.50 by the employee. Effective January 2027, the contribution rate increases to 19.2%."
+    },
+    {
+     "src": 7,
+     "said": "The maximum rate is TTD 8.25 per week for monthly income over TTD 470."
+    }
+   ]
+  },
+  {
+   "item": "vat",
+   "finding": "A fee bears 12.5% VAT once gross receipts reach TTD 600,000 in 12 months (artistes' promoters and bandleaders included).",
+   "value": {
+    "currency": "TTD",
+    "standard": 0.125,
+    "threshold": 600000
+   },
+   "applies": "From 1 January 2023.",
+   "sources": [
+    {
+     "src": 7,
+     "said": "The standard rate applicable to commercial supplies is 12.5%."
+    },
+    {
+     "src": 4,
+     "said": "PROMOTERS ARE TO BE REGISTERED FOR VAT where gross receipts of six hundred thousand dollars ($600 000) is attained (as of 1/1/2023)"
+    }
+   ]
+  }
+ ],
+ "country": "TT",
+ "sources": [
+  {
+   "url": "https://taxsummaries.pwc.com/trinidad-and-tobago/individual/taxes-on-personal-income",
+   "title": "PwC Worldwide Tax Summaries, Trinidad and Tobago, Individual - Taxes on personal income (last reviewed 2 June 2026)",
+   "read": "2026-11-01",
+   "kind": "secondary",
+   "quotes": "https://www.ird.gov.tt/",
+   "said": "The income tax rate for individuals with chargeable income less than TTD 1 million is 25%. For chargeable income in excess of TTD 1 million, the rate of tax applicable is 30%. … Business levy of 0.6% is applicable to sole traders and self-employed individuals having gross income or receipts in excess of TTD 360,000 per annum ."
+  },
+  {
+   "url": "https://www.ird.gov.tt/individual/deductions-and-required-supporting-documents",
+   "title": "Deductions And Required Supporting Documents, Individual Income Tax Return (Board of Inland Revenue)",
+   "read": "2026-11-01",
+   "kind": "primary",
+   "said": "The Personal Allowance - $90,000 as of 01/01/2023"
+  },
+  {
+   "url": "https://taxsummaries.pwc.com/trinidad-and-tobago/individual/tax-administration",
+   "title": "PwC Worldwide Tax Summaries, Trinidad and Tobago, Individual - Tax administration (last reviewed 2 June 2026)",
+   "read": "2026-11-01",
+   "kind": "secondary",
+   "quotes": "https://www.ird.gov.tt/",
+   "said": "The tax year corresponds to the calendar year in Trinidad and Tobago. Tax returns Tax returns must be filed by 30 April of the year following the calendar or accounting year-end. … Resident individuals earning only employment income are not required to file a tax return."
+  },
+  {
+   "url": "https://www.ird.gov.tt/PAYE",
+   "title": "Pay-As-You-Earn (PAYE) (Board of Inland Revenue)",
+   "read": "2026-11-01",
+   "kind": "primary",
+   "said": "It is the system by which tax is withheld from emolument Income (The PAYE System). Therefore it is necessary for the employee to submit a TD 1 Form to the employer. … Deductions made in January must be remitted by the 15th February"
+  },
+  {
+   "url": "https://www.ird.gov.tt/promoters-artistes-band-leaders",
+   "title": "Promoters, Artistes, Band Leaders (Board of Inland Revenue, Trinidad and Tobago)",
+   "read": "2026-11-01",
+   "kind": "primary",
+   "said": "FOREIGN ARTISTES LIABLE FOR WITHHOLDING TAX ( Deducted and Remitted by Promoter ) … LOCAL ARTISTES PAY HEALTH SURCHARGE PAY INCOME TAX ( note: you are charged to tax on your world income) SUBMIT RETURNS … PROMOTERS ARE TO BE REGISTERED FOR VAT where gross receipts of six hundred thousand dollars ($600 000) is attained (as of 1/1/2023)"
+  },
+  {
+   "url": "https://taxsummaries.pwc.com/trinidad-and-tobago/corporate/withholding-taxes",
+   "title": "PwC Worldwide Tax Summaries, Trinidad and Tobago, Corporate - Withholding taxes (last reviewed 2 June 2026)",
+   "read": "2026-11-01",
+   "kind": "secondary",
+   "quotes": "https://www.ird.gov.tt/",
+   "said": "WHT is imposed at varying rates up to 15%, depending on the nature of the payment, the status of the payee, and the applicability of DTTs."
+  },
+  {
+   "url": "http://laws.gov.tt/ttdll-web/revision/download/106658?type=act",
+   "title": "Income Tax Act, Chap. 75:01 (Laws of Trinidad and Tobago, Ministry of the Attorney General and Legal Affairs, unofficial version updated to 31 December 2016), ss. 50-51 and Third Schedule",
+   "read": "2026-11-01",
+   "kind": "primary",
+   "said": "(b) on any payment made to any person not resident … in Trinidad and Tobago or to any person on … behalf of such non-resident person, … (5) Notwithstanding the provisions of section 5, where … a payment or distribution that is subject to withholding tax is … made to any person not resident in Trinidad and Tobago or to any … non-resident company, income tax under section 5 or … corporation tax shall not be payable in respect of such payment … or distribution. … “payment” means a payment without any deductions whatsoever, … (d) management charges or charges for the … provision of personal services and technical and … managerial skills; … (e) premiums (other than premiums paid to … insurance companies and contributions to … pension funds and schemes), commissions, fees … (ii) on any payment made to a person other than a … company—15 per cent;"
+  },
+  {
+   "url": "https://taxsummaries.pwc.com/trinidad-and-tobago/individual/other-taxes",
+   "title": "PwC Worldwide Tax Summaries, Trinidad and Tobago, Individual - Other taxes (last reviewed 2 June 2026)",
+   "read": "2026-11-01",
+   "kind": "secondary",
+   "quotes": "https://www.ird.gov.tt/",
+   "said": "Effective January 2026, the contribution rate is 16.2%. The maximum total weekly contribution is TTD 508.50 for monthly income of TTD 13,600 and over, payable as TTD 339.00 by the employer and TTD 169.50 by the employee. Effective January 2027, the contribution rate increases to 19.2%. … The maximum rate is TTD 8.25 per week for monthly income over TTD 470. … The standard rate applicable to commercial supplies is 12.5%."
+  }
+ ],
+ "blockers": []
+}

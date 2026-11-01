@@ -2,6 +2,7 @@ import { createHash } from 'node:crypto';
 import { existsSync, readdirSync, readFileSync } from 'node:fs';
 import { join } from 'node:path';
 import { fromMajor, isCurrency, minorUnits, type CurrencyCode } from '../../../src/core/money/money.ts';
+import countries from '../../../src/world/gazetteer/countries.json' with { type: 'json' };
 
 /**
  * Compiles the markets a producer works in beyond the UK (src/person/producing/markets.json), from the research's files,
@@ -20,11 +21,20 @@ import { fromMajor, isCurrency, minorUnits, type CurrencyCode } from '../../../s
  * bound of a tier or a band is; every amount's figure names the market's currency. A term the research doesn't give is
  * none (null): the engine refuses what rests on it and tells the player; an incentive the research says doesn't exist
  * pays nothing.
+ *
+ * Every country's research is read (the gazetteer's 251 beyond the UK): a market's currency is its country's (the
+ * gazetteer's) unless its reading names another its research's terms are given in; a reading of none (null) is a
+ * country no producer works in (one dissolved, or with no sovereign), which may hold no blockers, since none of its
+ * market is told. A market's zone, where the actor's engine keeps no city there, is its most populous place's on the
+ * map (GeoNames' first of the most populous, in the gazetteer's file; none where the map has no place there).
  */
 export const SOURCES = 'research/sources/person/markets';
 export const CALIBRATION = 'research/sources/person/work/producer-calibration.json';
 export const READINGS = 'tools/person/markets-producer/readings.json';
 export const OUTPUT = 'src/person/producing/markets.json';
+/** The map's places, a file a country, and the zones the clock keeps. */
+export const PLACES = 'src/world/gazetteer/places';
+export const ZONES = 'src/core/time/tzdb.json';
 /** The register's facts: a market's research, its blockers, and the calibration. */
 export const FACT = 'person.markets.producer.';
 export const BLOCKED = 'person.markets.producer.blocked.';
@@ -32,7 +42,7 @@ export const CALIBRATED = 'person.work.producer.calibration';
 /** The market the producer's engine keeps itself (R-4612). */
 export const KEPT = 'GB';
 /** What a market's research can leave unknown, as its blockers name it. */
-export const ITEMS = ['fund', 'incentive', 'feecap', 'outcomes', 'market', 'union', 'language'] as const;
+export const ITEMS = ['fund', 'incentive', 'feecap', 'outcomes', 'market', 'union', 'language', 'terms', 'none', 'rules', 'fund.primary'] as const;
 
 export type Item = (typeof ITEMS)[number];
 /** From one amount to another, both counted; to none, without end. */
@@ -70,6 +80,8 @@ export interface Market {
   fees: Tier[][];
   release: { budget: Range; rate: number }[] | null;
   unknown: Item[];
+  /** The zone of its most populous place on the map; none where the map has none. */
+  zone: string | null;
 }
 export type Markets = Record<string, Market>;
 
@@ -89,7 +101,7 @@ export interface Sources {
   calibration: Research;
 }
 interface Register {
-  entries: { fact: string; value?: { file?: string; sha256?: string } }[];
+  entries: { fact: string; value?: { file?: string; sha256?: string }; attempts?: { result: string }[] }[];
 }
 
 const record = (v: unknown, what: string): Record<string, unknown> => {
@@ -202,6 +214,14 @@ export function boundOf(r: Reading, v: unknown, what: string): number {
   return v;
 }
 
+/** A bound of a range: in the range's figure, or (`{fig, in, bound}`) in another, where a term ends at another's start. */
+function endOf(r: Reading, v: unknown): number {
+  if (typeof v !== 'object' || v === null) return boundOf(r, v, 'budget');
+  const ref = record(v, `${r.s.country}'s bound`);
+  only(ref, ['fig', 'in', 'bound'], `${r.s.country}'s bound`);
+  return boundOf({ ...r, fig: figureOf(r.s, ref) }, ref['bound'], 'budget');
+}
+
 /** A range of budgets, from one bound to a greater one or none; given bare (in the tier's figure) or as `{fig, in, range}`. */
 export function rangeOf(r: Reading, v: unknown): Range {
   let here = r;
@@ -213,8 +233,8 @@ export function rangeOf(r: Reading, v: unknown): Range {
     pair = ref['range'];
   }
   if (!Array.isArray(pair) || pair.length !== 2) throw new Error(`${r.s.country}'s budget is a pair`);
-  const lo = boundOf(here, pair[0], 'budget');
-  const hi = pair[1] === null ? null : boundOf(here, pair[1], 'budget');
+  const lo = endOf(here, pair[0]);
+  const hi = pair[1] === null ? null : endOf(here, pair[1]);
   if (hi !== null && hi < lo) throw new Error(`${r.s.country}'s budget runs from ${lo} down to ${hi}`);
   return [lo, hi];
 }
@@ -274,10 +294,15 @@ export function rateOf(s: Sources, reading: unknown): number {
     if (typeof n !== 'number' || !(n > 0 && n <= 1)) throw new Error(`${s.country}'s rate isn't a chance`);
     return n;
   }
-  const of = r['of'];
-  if (r['path'] !== undefined || !Array.isArray(of) || of.length !== 2) throw new Error(`${s.country}'s rate is so many of so many`);
+  if (r['path'] !== undefined) throw new Error(`${s.country}'s rate is so many of so many`);
+  return ofIn(s, fig, r['of'], 'rate');
+}
+
+/** So many of so many, at two places in a figure: a count of some, and of all, the some at least one. */
+export function ofIn(s: Sources, fig: Figure, of: unknown, what: string): number {
+  if (!Array.isArray(of) || of.length !== 2) throw new Error(`${s.country}'s ${what} is so many of so many`);
   const [yes, all] = (of as (string | number)[][]).map((p) => at(fig.value, p));
-  if (!Number.isSafeInteger(yes) || !Number.isSafeInteger(all) || !((yes as number) > 0 && (yes as number) <= (all as number))) throw new Error(`${s.country}'s rate isn't so many of so many`);
+  if (!Number.isSafeInteger(yes) || !Number.isSafeInteger(all) || !((yes as number) > 0 && (yes as number) <= (all as number))) throw new Error(`${s.country}'s ${what} isn't so many of so many`);
   return (yes as number) / (all as number);
 }
 
@@ -286,7 +311,9 @@ export function fundOf(s: Sources, currency: CurrencyCode, reading: unknown, aid
   if (reading === null) return null;
   const f = record(reading, `${s.country}'s fund`);
   only(f, ['rate', 'tiers'], `${s.country}'s fund`);
-  const tiers = tiersOf(s, currency, f['tiers'], 'fund', aid.length > 0);
+  const tiers = tiersOf(s, currency, f['tiers'], 'fund', true);
+  // An award up to so much gives that much; a tier with nothing at all is held only by the cap on all public aid.
+  if (aid.length === 0 && tiers.some((t) => t.bands.length === 0 && t.most === null && t.sum === null)) throw new Error(`${s.country}'s tier gives nothing`);
   return { rate: rateOf(s, f['rate']), tiers };
 }
 
@@ -298,7 +325,10 @@ export function creditOf(s: Sources, currency: CurrencyCode, reading: unknown): 
   only(n, ['none'], `${s.country}'s incentive`);
   const none = record(n['none'], `${s.country}'s none`);
   only(none, ['fig', 'in', 'path'], `${s.country}'s none`);
-  if (at(figureOf(s, none).value, none['path'] as (string | number)[]) !== false) throw new Error(`${s.country}'s research doesn't say it has no incentive`);
+  const path = none['path'] as (string | number)[];
+  const v = at(figureOf(s, none).value, path);
+  // False, or none (null) where the place itself names the incentive (a rebate, an incentive, cash), as the research writes there's none.
+  if (v !== false && !(v === null && /rebate|incentive|^cash$/i.test(String(path.at(-1))))) throw new Error(`${s.country}'s research doesn't say it has no incentive`);
   return [];
 }
 
@@ -310,7 +340,10 @@ export function releaseOf(s: Sources, currency: CurrencyCode, reading: unknown):
     const t = record(x, `${s.country}'s release`);
     only(t, ['fig', 'in', 'budget', 'rate'], `${s.country}'s release`);
     const r: Reading = { s, currency, fig: figureOf(s, t) };
-    return { budget: rangeOf(r, t['budget']), rate: valueOf(r, t['rate'], 'rate', 'release rate') };
+    const rate = t['rate'];
+    const of = Object.hasOwn(Object(rate), 'of');
+    if (of) only(rate as Record<string, unknown>, ['of'], `${s.country}'s release rate`);
+    return { budget: rangeOf(r, t['budget']), rate: of ? ofIn(s, r.fig as Figure, (rate as Record<string, unknown>)['of'], 'release rate') : valueOf(r, rate, 'rate', 'release rate') };
   });
   tiers.sort((a, b) => a.budget[0] - b.budget[0]);
   for (const [i, t] of tiers.entries()) if (i > 0 && meet((tiers[i - 1] as { budget: Range }).budget, t.budget)) throw new Error(`${s.country}'s release has two tiers for one budget`);
@@ -327,12 +360,28 @@ export function unknownOf(blockers: readonly { item: string }[]): Item[] {
   return out;
 }
 
+/** The zone of a country's most populous place on the map (the first of them in its file), one the clock keeps; none where it has no place. */
+export function zoneIn(root: string, cc: string, zones: ReadonlySet<string>): string | null {
+  const file = join(root, PLACES, `${cc}.tsv`);
+  if (!existsSync(file)) return null;
+  let best = { zone: '', population: -1 };
+  for (const line of readFileSync(file, 'utf8').split('\n')) {
+    const cells = line.split('\t');
+    const population = Number(cells[7]);
+    if (cells.length === 9 && population > best.population) best = { zone: cells[6] as string, population };
+  }
+  if (!zones.has(best.zone)) throw new Error(`${cc}'s most populous place is in ${best.zone}, which isn't a zone the clock keeps`);
+  return best.zone;
+}
+
 /** A market, as its reading reads its research. */
-export function marketOf(s: Sources, reading: unknown): Market {
+export function marketOf(s: Sources, reading: unknown): Omit<Market, 'zone'> {
   const m = record(reading, `the reading of ${s.country}`);
   only(m, ['currency', 'fund', 'aid', 'credit', 'fees', 'release'], `the reading of ${s.country}`);
-  const currency = String(m['currency']);
+  const own = (countries as Record<string, { currency: string }>)[s.country]?.currency;
+  const currency = String(m['currency'] ?? own);
   if (!isCurrency(currency)) throw new Error(`${s.country} pays in ${currency}, which isn't a currency`);
+  if (currency !== own && !JSON.stringify(s.own.figures).includes(currency)) throw new Error(`${s.country}'s research gives no term in ${currency}, which isn't its country's`);
   const aid = m['aid'] === undefined ? [] : tiersOf(s, currency, m['aid'], 'aid');
   const fund = fundOf(s, currency, m['fund'] ?? null, aid);
   if (fund === null && aid.length > 0) throw new Error(`${s.country}'s cap on public aid holds no fund`);
@@ -354,9 +403,12 @@ export function cited(root: string, register: Register, fact: string, file: stri
 /** A market's research, and whether the register holds its blockers. */
 export function readResearch(root: string, register: Register, cc: string): { research: Research; blocked: boolean } {
   const file = `${SOURCES}/producer-${cc}.json`;
+  const blocker = register.entries.find((e) => e.fact === `${BLOCKED}${cc}`);
+  // A country whose research found nothing is cited by its blockers alone: what wasn't found is each attempt's.
+  if (blocker !== undefined && !register.entries.some((e) => e.fact === `${FACT}${cc}`)) return { research: { country: cc, figures: [], blockers: (blocker.attempts ?? []).map(({ result }) => ({ item: result.replace(/^not found: /, '') })) }, blocked: true };
   const research = cited(root, register, `${FACT}${cc}`, file);
   if (research.country !== cc) throw new Error(`${file} is ${research.country}'s`);
-  return { research, blocked: register.entries.some((e) => e.fact === `${BLOCKED}${cc}`) };
+  return { research, blocked: blocker !== undefined };
 }
 
 /** Every market the research holds, read as the readings say; a file without a reading, or a reading without a file, is refused. */
@@ -365,6 +417,8 @@ export function readMarkets(root: string): Markets {
   const readings = record(read(READINGS), 'the readings');
   const register = read('research/register.json') as Register;
   const calibration = cited(root, register, CALIBRATED, CALIBRATION);
+  const tz = read(ZONES) as { zones: object; links: object };
+  const zones = new Set([...Object.keys(tz.zones), ...Object.keys(tz.links)]);
   // Stryker disable next-line MethodExpression: the directory's order is sorted on the file systems the gate runs on; the sort holds it on any other.
   const files = existsSync(join(root, SOURCES)) ? readdirSync(join(root, SOURCES)).filter((f) => /^producer-[A-Z]{2}\.json$/.test(f)).map((f) => f.slice(9, 11)).sort() : [];
   for (const cc of Object.keys(readings).filter((c) => !files.includes(c))) throw new Error(`${cc} has a reading and no research`);
@@ -373,9 +427,13 @@ export function readMarkets(root: string): Markets {
     if (cc === KEPT) throw new Error(`${KEPT} is the market the engine keeps itself`);
     if (!Object.hasOwn(readings, cc)) throw new Error(`${SOURCES}/producer-${cc}.json has no reading`);
     const { research, blocked } = readResearch(root, register, cc);
+    if (readings[cc] === null) {
+      if (research.blockers.length > 0 || blocked) throw new Error(`${cc} is no market, so what of it isn't known can't be told`);
+      continue;
+    }
     const market = marketOf({ country: cc, own: research, calibration }, readings[cc]);
     if (blocked !== market.unknown.length > 0) throw new Error(blocked ? `the register holds ${cc}'s blockers, which its research doesn't` : `${cc}'s research has blockers the register doesn't hold`);
-    out[cc] = market;
+    out[cc] = { ...market, zone: zoneIn(root, cc, zones) };
   }
   return out;
 }

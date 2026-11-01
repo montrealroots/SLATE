@@ -36,14 +36,17 @@ import compiled from './markets.json' with { type: 'json' };
  * rehearsal weeks at the rehearsal rate; ACTRA's Independent Production Agreement, a principal by the day or week and a
  * part of five lines or fewer by the day.
  *
- * Beyond them, eighteen markets (src/person/acting/markets.json, compiled by tools/person/markets from the research,
- * register facts person.markets.<CC>): each agreement a part can be engaged under in the market's city, its minimums
+ * Beyond them, every market the research gives terms for (src/person/acting/markets.json, compiled by
+ * tools/person/markets from the research, register facts person.markets.<CC>): each agreement a part can be engaged
+ * under in the market's city, a territory whose work follows another country's terms engaged under that country's
+ * agreements as its own (Saint-Barthélemy under France's, the Cocos Islands under Australia's), its minimums
  * by medium (film, television, the stage), by role where it names roles, by the term it pays (a day, a week, a month, a
  * year, a session, a performance or an episode) and by the tier it sets (the budget, the lines, the seats, an
  * episode's minutes, the engagement's length, the actor's years in the work, the day or performance of the engagement),
  * each from the date it applies, in the agreement's currency. Where the research says no agreement sets an actor's
  * pay, it is left to negotiation, as under the Micro-Budget agreement. The actor's years are the whole years since the
- * first part they played, the game's reading (person.markets.model); what a market's research couldn't find is told.
+ * first part they played, the game's reading (person.markets.model); what a country's research couldn't find is told,
+ * whether its market is compiled or not.
  *
  * Casting puts a part out as a breakdown (R-4620): written for men, women, either or a non-binary performer at the
  * shares of Sowa's count of 3,714 SAG-AFTRA television breakdowns (2017); naming an ethnicity, open to all, or silent
@@ -56,11 +59,17 @@ import compiled from './markets.json' with { type: 'json' };
 /** The line that tells the player these figures are the game's own (person.acting.model). */
 export const MODEL_LINE: LineId = 'acting.model';
 
-/** The agreements the eighteen markets engage parts under, as markets.json compiles them (a test holds the two lists one). */
+/** The agreements the markets engage parts under, as markets.json compiles them (a test holds the two lists one). */
 export const MARKET_AGREEMENTS = [
-  'au-screen', 'au-stage', 'br-rj-tv', 'br-sp-screen', 'br-rj-stage', 'de-screen', 'de-stage', 'de-guest', 'dk-film', 'dk-tv', 'dk-soejle-a', 'dk-copenhagen-stage', 'es-screen', 'es-madrid-stage', 'fr-film',
-  'fr-tv', 'fr-subsidised-stage', 'fr-private-stage', 'ie-stage', 'in-screen', 'it-screen', 'it-stage', 'jp-nhk', 'jp-live', 'kr-kbs', 'kr-mbc-sbs', 'mx-televisa', 'mx-azteca', 'mx-other', 'ng-screen',
-  'nl-stage', 'nl-screen', 'no-film', 'no-tv', 'no-nrk', 'no-stage', 'nz-screen', 'nz-court', 'nz-atc', 'se-screen', 'se-stage', 'se-private-stage', 'se-free-stage', 'za-all',
+  'ad-artists', 'ai-all', 'ar-film', 'ar-tv', 'ar-stage', 'at-screen', 'au-screen', 'au-stage', 'be-screen', 'bg-foreign-film', 'bn-screen', 'br-rj-tv', 'br-sp-screen', 'br-rj-stage', 'bw-screen',
+  'cl-screen', 'co-all', 'cu-stage', 'de-screen', 'de-stage', 'de-guest', 'dk-film', 'dk-tv', 'dk-soejle-a', 'dk-copenhagen-stage', 'es-screen', 'es-madrid-stage', 'fi-stage', 'fi-guest',
+  'fi-screen', 'fr-film', 'fr-tv', 'fr-subsidised-stage', 'fr-private-stage', 'gi-all', 'gr-private-stage', 'hk-film', 'ie-stage', 'il-screen', 'in-screen', 'it-screen', 'it-stage', 'jp-nhk',
+  'jp-live', 'kr-kbs', 'kr-mbc-sbs', 'li-film', 'ms-all', 'mx-televisa', 'mx-azteca', 'mx-other', 'nc-all', 'ng-screen', 'nl-stage', 'nl-screen', 'no-film', 'no-tv', 'no-nrk', 'no-stage',
+  'nz-screen', 'nz-court', 'nz-atc', 'ph-screen', 'pn-all', 'se-screen', 'se-stage', 'se-private-stage', 'se-free-stage', 'sh-all', 'th-screen', 'tr-screen', 'va-screen', 'vg-all', 'za-all',
+  'ax-fi-stage', 'ax-fi-guest', 'ax-fi-screen', 'bl-fr-film', 'bl-fr-tv', 'bl-fr-subsidised-stage', 'bl-fr-private-stage', 'cc-au-screen', 'cc-au-stage', 'cx-au-screen', 'cx-au-stage', 'gf-fr-film',
+  'gf-fr-tv', 'gf-fr-subsidised-stage', 'gf-fr-private-stage', 'gp-fr-film', 'gp-fr-tv', 'gp-fr-subsidised-stage', 'gp-fr-private-stage', 'mf-fr-film', 'mf-fr-tv', 'mf-fr-subsidised-stage',
+  'mf-fr-private-stage', 'nf-au-screen', 'nf-au-stage', 'pm-fr-film', 'pm-fr-tv', 'pm-fr-subsidised-stage', 'pm-fr-private-stage', 're-fr-film', 're-fr-tv', 're-fr-subsidised-stage',
+  're-fr-private-stage', 'yt-fr-film', 'yt-fr-tv', 'yt-fr-subsidised-stage', 'yt-fr-private-stage',
 ] as const;
 /** The agreement a part is engaged under. */
 export type Agreement = 'sag-aftra' | 'pact-equity' | 'uk-theatre' | 'actra' | (typeof MARKET_AGREEMENTS)[number];
@@ -235,16 +244,19 @@ export interface MarketAgreement {
   readonly media: readonly Medium[];
   readonly none: boolean;
   readonly minimums: readonly Minimum[];
+  /** The agreement whose terms a territory's work follows. */
+  readonly follows?: Agreement;
 }
 /** What a market's research couldn't find, by the item its blockers name. */
-export type Unknown = 'agreements' | 'rates' | 'none' | 'union' | 'language' | 'market';
+export type Unknown = 'agreements' | 'rates' | 'none' | 'union' | 'language' | 'market' | 'terms' | 'successors';
 export interface Market {
   readonly language: string;
   readonly zone: string;
   readonly agreements: readonly Agreement[];
-  readonly unknown: readonly Unknown[];
 }
 export const MARKETS = (compiled as unknown as { markets: Readonly<Record<string, Market>> }).markets;
+/** What each country's research couldn't find, its market compiled or not. */
+export const UNKNOWN = (compiled as unknown as { unknown: Readonly<Record<string, readonly Unknown[]>> }).unknown;
 const COMPILED = (compiled as unknown as { agreements: Readonly<Record<string, MarketAgreement>> }).agreements;
 
 /** A market's agreement as compiled; none for the four this engine keeps itself. */
@@ -484,7 +496,7 @@ export function ageWeights(g: Gender): number[] {
 
 /**
  * Each agreement's market: the language its breakdowns are written in (R-4620: the US breakdowns are English; the
- * game's for the UK's and Canada's English-language agreements; each of the eighteen markets' own, as compiled) and
+ * game's for the UK's and Canada's English-language agreements; each market's own, as compiled) and
  * where casting reckons the actor's age (the market's city's zone).
  */
 export const MARKET: Readonly<Record<Agreement, { readonly language: string; readonly zone: string }>> = {
@@ -606,16 +618,23 @@ export const MISSING: Readonly<Record<Unknown, string>> = {
   union: "the union's fees or whether a part needs it",
   language: 'the language parts are cast in',
   market: 'where most of the work is',
+  terms: 'what terms a part is engaged on',
+  successors: 'the terms of the places that succeeded it',
 };
 
-/** What the player is told of an agreement's market where its research couldn't find all of it: "a, b and c"; nothing where it is known whole. */
-export function aboutMarket(agreement: Agreement): string | undefined {
-  const a = marketOf(agreement);
-  if (a === undefined) return undefined;
-  const missing = (MARKETS[a.country] as Market).unknown.map((u) => MISSING[u]);
+/**
+ * What the player is told of a country, or of an agreement's, where its research couldn't find all of it: "a, b and
+ * c"; nothing where it is known whole. A territory's agreement that follows another country's tells what neither
+ * country's research found.
+ */
+export function aboutMarket(where: Agreement | CountryCode): string | undefined {
+  const a = marketOf(where as Agreement);
+  const country = a?.country ?? (where as CountryCode);
+  const followed = a?.follows === undefined ? [] : (UNKNOWN[(marketOf(a.follows) as MarketAgreement).country] as readonly Unknown[]);
+  const missing = [...new Set([...(UNKNOWN[country] ?? []), ...followed])].map((u) => MISSING[u]);
   if (missing.length === 0) return undefined;
   const list = missing.length > 1 ? `${missing.slice(0, -1).join(', ')} and ${missing.at(-1) as string}` : (missing[0] as string);
-  return t(UNKEPT_LINE, { country: countryName(a.country), missing: list });
+  return t(UNKEPT_LINE, { country: countryName(country), missing: list });
 }
 
 /** The slices a part played reads besides its own: whether the person may work there reads every role's days and permits; its pay goes into an account, taxed. */

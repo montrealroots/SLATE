@@ -1,0 +1,251 @@
+{
+ "topic": "tax.CV",
+ "read": "2026-11-01",
+ "note": "Read 2026-11-01 at the owner's word (\"Build those first 3 starting with ledger first\"; of the 21 countries read first: \"It should cover across every country\"; \"Retry the blocked tax facts once all countries land\"): the tax on a screen worker's pay in Cabo Verde: a resident's income tax, social contributions, what is withheld at source, a non-resident artiste's withholding, an author's treatment, VAT and the tax year. Research and retry subagents (workbench/briefs/BRIEF-tax.md, BRIEF-tax-retry.md), every quote checked by the lead against its saved page.",
+ "figures": [
+  {
+   "item": "residents",
+   "finding": "A resident filing under the declarative method pays 16.5% on taxable income to CVE 960,000, 23.1% to 1,800,000 and 27.5% above, with net income up to CVE 220,000 a year exempt; salaried income is normally taxed by final withholding instead.",
+   "value": {
+    "currency": "CVE",
+    "brackets": [
+     {
+      "from": 0,
+      "to": 960000,
+      "rate": 0.165
+     },
+     {
+      "from": 960000,
+      "to": 1800000,
+      "rate": 0.231
+     },
+     {
+      "from": 1800000,
+      "to": null,
+      "rate": 0.275
+     }
+    ],
+    "exempt": 220000,
+    "regional": null
+   },
+   "applies": "2026.",
+   "sources": [
+    {
+     "src": 0,
+     "said": "Taxable income (CVE*) Tax rate (%) Over Not over 0 960,000 16.5 960,000 1,800,000 23.1 1,800,000 27.5"
+    },
+    {
+     "src": 0,
+     "said": "An exemption from taxation applies to net income of up to CVE 220,000 annually."
+    }
+   ]
+  },
+  {
+   "item": "year",
+   "finding": "The tax year is the calendar year; a salaried taxpayer who opts to file does so by 31 March, others by 31 May, and any balance is paid by 31 August.",
+   "value": {
+    "start": "01-01",
+    "end": "12-31",
+    "returnDueCategoryA": "03-31",
+    "returnDueOther": "05-31",
+    "paymentDue": "08-31"
+   },
+   "applies": "Individuals.",
+   "sources": [
+    {
+     "src": 1,
+     "said": "As a rule, the tax year coincides with the calendar year (i.e. 1 January to 31 December)."
+    },
+    {
+     "src": 1,
+     "said": "taxpayers must compute the tax due and file a tax return by 31 May of the following year."
+    },
+    {
+     "src": 1,
+     "said": "Any outstanding tax liability must be paid by 31 August of the year in which the return is due."
+    }
+   ]
+  },
+  {
+   "item": "social",
+   "finding": "Social security is 8.5% from the employee and 16% from the employer on gross pay; a self-employed person pays a fixed 19.5%.",
+   "value": {
+    "employee": 0.085,
+    "employer": 0.16,
+    "selfEmployed": 0.195
+   },
+   "applies": "2026.",
+   "sources": [
+    {
+     "src": 2,
+     "said": "the contributions are due on the employee’s gross remuneration at rates of 8.5% and 16% by the employee and the employer, respectively."
+    },
+    {
+     "src": 2,
+     "said": "The contributions applicable to self-employees corresponds to a fixed rate of 19.5%."
+    }
+   ]
+  },
+  {
+   "item": "withholding",
+   "finding": "Monthly salaries are withheld at 15% to CVE 80,000 (less 5,500), 21% to 150,000 (less 10,300) and 25% above (less 16,300); business and professional income under organised accounting is withheld at 20% on account.",
+   "value": {
+    "currency": "CVE",
+    "monthly": [
+     {
+      "from": 0,
+      "to": 80000,
+      "rate": 0.15,
+      "deduction": 5500
+     },
+     {
+      "from": 80000,
+      "to": 150000,
+      "rate": 0.21,
+      "deduction": 10300
+     },
+     {
+      "from": 150000,
+      "to": null,
+      "rate": 0.25,
+      "deduction": 16300
+     }
+    ],
+    "professional": 0.2
+   },
+   "applies": "2026.",
+   "sources": [
+    {
+     "src": 3,
+     "said": "1 0 80,000 15 5,500 2 80,000 150,000 21 10,300 3 150,000 25 16,300"
+    },
+    {
+     "src": 3,
+     "said": "Business and professional income earned by individual entrepreneurs under standard organised accounting are subject to WHT at the rate of 20% as an advance payment on account of the final annual income tax liability."
+    }
+   ]
+  },
+  {
+   "item": "nonResident",
+   "finding": "A non-resident is taxed only on Cabo Verde-source income at flat rates equal to residents', and cannot file a return; royalties bear 20% withholding.",
+   "value": {
+    "royalties": 0.2,
+    "canFile": false
+   },
+   "applies": "Non-residents.",
+   "sources": [
+    {
+     "src": 0,
+     "said": "Non-resident individuals are subject to PIT only on Cabo Verdean-source income at flat tax rates that are the same as those applicable for resident taxpayers."
+    },
+    {
+     "src": 4,
+     "said": "Royalty payments are subject to WHT at the rate of 20%."
+    }
+   ]
+  },
+  {
+   "item": "vat",
+   "finding": "VAT is 15%.",
+   "value": {
+    "standard": 0.15
+   },
+   "applies": "2026.",
+   "sources": [
+    {
+     "src": 2,
+     "said": "The VAT system in Cabo Verde closely follows the European Union (EU) VAT system and is assessed at the standard rate of 15%."
+    }
+   ]
+  }
+ ],
+ "country": "CV",
+ "sources": [
+  {
+   "url": "https://taxsummaries.pwc.com/cabo-verde/individual/taxes-on-personal-income",
+   "title": "PwC Worldwide Tax Summaries: Cabo Verde, Individual - Taxes on personal income (reviewed 29 May 2026)",
+   "read": "2026-11-01",
+   "kind": "secondary",
+   "quotes": "https://www.mf.gov.cv/",
+   "said": "Taxable income (CVE*) Tax rate (%) Over Not over 0 960,000 16.5 960,000 1,800,000 23.1 1,800,000 27.5 … An exemption from taxation applies to net income of up to CVE 220,000 annually. … Non-resident individuals are subject to PIT only on Cabo Verdean-source income at flat tax rates that are the same as those applicable for resident taxpayers."
+  },
+  {
+   "url": "https://taxsummaries.pwc.com/cabo-verde/individual/tax-administration",
+   "title": "PwC Worldwide Tax Summaries: Cabo Verde, Individual - Tax administration (reviewed 29 May 2026)",
+   "read": "2026-11-01",
+   "kind": "secondary",
+   "quotes": "https://www.mf.gov.cv/",
+   "said": "As a rule, the tax year coincides with the calendar year (i.e. 1 January to 31 December). … taxpayers must compute the tax due and file a tax return by 31 May of the following year. … Any outstanding tax liability must be paid by 31 August of the year in which the return is due."
+  },
+  {
+   "url": "https://taxsummaries.pwc.com/cabo-verde/individual/other-taxes",
+   "title": "PwC Worldwide Tax Summaries: Cabo Verde, Individual - Other taxes (reviewed 29 May 2026)",
+   "read": "2026-11-01",
+   "kind": "secondary",
+   "quotes": "https://www.mf.gov.cv/",
+   "said": "the contributions are due on the employee’s gross remuneration at rates of 8.5% and 16% by the employee and the employer, respectively. … The contributions applicable to self-employees corresponds to a fixed rate of 19.5%. … The VAT system in Cabo Verde closely follows the European Union (EU) VAT system and is assessed at the standard rate of 15%."
+  },
+  {
+   "url": "https://taxsummaries.pwc.com/cabo-verde/individual/income-determination",
+   "title": "PwC Worldwide Tax Summaries: Cabo Verde, Individual - Income determination (reviewed 29 May 2026)",
+   "read": "2026-11-01",
+   "kind": "secondary",
+   "quotes": "https://www.mf.gov.cv/",
+   "said": "1 0 80,000 15 5,500 2 80,000 150,000 21 10,300 3 150,000 25 16,300 … Business and professional income earned by individual entrepreneurs under standard organised accounting are subject to WHT at the rate of 20% as an advance payment on account of the final annual income tax liability."
+  },
+  {
+   "url": "https://taxsummaries.pwc.com/cabo-verde/corporate/withholding-taxes",
+   "title": "PwC Worldwide Tax Summaries: Cabo Verde, Corporate - Withholding taxes (reviewed 29 May 2026)",
+   "read": "2026-11-01",
+   "kind": "secondary",
+   "quotes": "https://www.mf.gov.cv/",
+   "said": "Royalty payments are subject to WHT at the rate of 20%."
+  }
+ ],
+ "blockers": [
+  {
+   "item": "residents",
+   "sought": "The PIT Code's own text and DNRE pages",
+   "tried": {
+    "institution": "mf.gov.cv home page reachable but its tax pages and the PIT Code were not located (2026-11-01) || 2026-11-01 retry: mf.gov.cv/web/dnre and /web/dnre/legislacao read: the document list loads by script and carries no code text; the DNRE brochure 'Principais Alterações Códigos Tributários 2020' read (saved CV-dnre-alteracoes-2020.pdf): REMPE rules only, nothing on this item; dnre.cv resets",
+    "official-register": "Boletim Oficial not read || 2026-11-01 retry: boe.incv.cv (Boletim Oficial) reachable but its texts sit behind an account (Login/Register); not read",
+    "web-search": "not run separately || 2026-11-01 retry: refused by the tool on 2026-11-01: 'this turn's web search budget is used up (limit: 200 WebSearch calls per turn, shared by every agent)'; queries sent and refused this turn: 'Налоговый кодекс Республики Беларусь статья 199 ставки подоходного налога 2026 13 25 процентов' and 'Eswatini Revenue Service PAYE tax tables 1 July 2026'; no search engine was queried any other way",
+    "trade-press": "PwC Cabo Verde used || 2026-11-01 retry: PwC Cabo Verde (already used); nothing further",
+    "archive": "web.archive.org resets the connection from this environment (2026-11-01). || 2026-11-01 retry: archive.org's availability API now answers (snapshots of the institution's site exist), but web.archive.org snapshot pages return HTTP 403 over http and reset over https from this environment (2026-11-01)"
+   }
+  },
+  {
+   "item": "nonResident",
+   "sought": "The flat rate on a non-resident performer's or director's fee and whether final",
+   "tried": {
+    "institution": "mf.gov.cv home page reachable but its tax pages and the PIT Code were not located (2026-11-01) || 2026-11-01 retry: mf.gov.cv/web/dnre and /web/dnre/legislacao read: the document list loads by script and carries no code text; the DNRE brochure 'Principais Alterações Códigos Tributários 2020' read (saved CV-dnre-alteracoes-2020.pdf): REMPE rules only, nothing on this item; dnre.cv resets",
+    "official-register": "Boletim Oficial not read || 2026-11-01 retry: boe.incv.cv (Boletim Oficial) reachable but its texts sit behind an account (Login/Register); not read",
+    "web-search": "not run separately || 2026-11-01 retry: refused by the tool on 2026-11-01: 'this turn's web search budget is used up (limit: 200 WebSearch calls per turn, shared by every agent)'; queries sent and refused this turn: 'Налоговый кодекс Республики Беларусь статья 199 ставки подоходного налога 2026 13 25 процентов' and 'Eswatini Revenue Service PAYE tax tables 1 July 2026'; no search engine was queried any other way",
+    "trade-press": "PwC Cabo Verde used || 2026-11-01 retry: PwC Cabo Verde (already used); nothing further",
+    "archive": "web.archive.org resets the connection from this environment (2026-11-01). || 2026-11-01 retry: archive.org's availability API now answers (snapshots of the institution's site exist), but web.archive.org snapshot pages return HTTP 403 over http and reset over https from this environment (2026-11-01)"
+   }
+  },
+  {
+   "item": "vat",
+   "sought": "The VAT registration threshold for a freelancer",
+   "tried": {
+    "institution": "mf.gov.cv home page reachable but its tax pages and the PIT Code were not located (2026-11-01) || 2026-11-01 retry: mf.gov.cv/web/dnre and /web/dnre/legislacao read: the document list loads by script and carries no code text; the DNRE brochure 'Principais Alterações Códigos Tributários 2020' read (saved CV-dnre-alteracoes-2020.pdf): REMPE rules only, nothing on this item; dnre.cv resets",
+    "official-register": "Boletim Oficial not read || 2026-11-01 retry: boe.incv.cv (Boletim Oficial) reachable but its texts sit behind an account (Login/Register); not read",
+    "web-search": "not run separately || 2026-11-01 retry: refused by the tool on 2026-11-01: 'this turn's web search budget is used up (limit: 200 WebSearch calls per turn, shared by every agent)'; queries sent and refused this turn: 'Налоговый кодекс Республики Беларусь статья 199 ставки подоходного налога 2026 13 25 процентов' and 'Eswatini Revenue Service PAYE tax tables 1 July 2026'; no search engine was queried any other way",
+    "trade-press": "PwC Cabo Verde used || 2026-11-01 retry: PwC Cabo Verde (already used); nothing further",
+    "archive": "web.archive.org resets the connection from this environment (2026-11-01). || 2026-11-01 retry: archive.org's availability API now answers (snapshots of the institution's site exist), but web.archive.org snapshot pages return HTTP 403 over http and reset over https from this environment (2026-11-01)"
+   }
+  },
+  {
+   "item": "authors",
+   "sought": "Any special treatment of authors' fees or royalties",
+   "tried": {
+    "institution": "mf.gov.cv home page reachable but its tax pages and the PIT Code were not located (2026-11-01) || 2026-11-01 retry: mf.gov.cv/web/dnre and /web/dnre/legislacao read: the document list loads by script and carries no code text; the DNRE brochure 'Principais Alterações Códigos Tributários 2020' read (saved CV-dnre-alteracoes-2020.pdf): REMPE rules only, nothing on this item; dnre.cv resets",
+    "official-register": "Boletim Oficial not read || 2026-11-01 retry: boe.incv.cv (Boletim Oficial) reachable but its texts sit behind an account (Login/Register); not read",
+    "web-search": "not run separately || 2026-11-01 retry: refused by the tool on 2026-11-01: 'this turn's web search budget is used up (limit: 200 WebSearch calls per turn, shared by every agent)'; queries sent and refused this turn: 'Налоговый кодекс Республики Беларусь статья 199 ставки подоходного налога 2026 13 25 процентов' and 'Eswatini Revenue Service PAYE tax tables 1 July 2026'; no search engine was queried any other way",
+    "trade-press": "PwC Cabo Verde used || 2026-11-01 retry: PwC Cabo Verde (already used); nothing further",
+    "archive": "web.archive.org resets the connection from this environment (2026-11-01). || 2026-11-01 retry: archive.org's availability API now answers (snapshots of the institution's site exist), but web.archive.org snapshot pages return HTTP 403 over http and reset over https from this environment (2026-11-01)"
+   }
+  }
+ ]
+}

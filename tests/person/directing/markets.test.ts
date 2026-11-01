@@ -1,3 +1,4 @@
+import { readFileSync } from 'node:fs';
 import { describe, expect, it } from 'vitest';
 import { begin, dispatch, type Life } from '../../../src/core/frame/frame.ts';
 import { fromMajor, type CurrencyCode } from '../../../src/core/money/money.ts';
@@ -36,7 +37,7 @@ import type { PermitsSlice } from '../../../src/person/permits/permits.ts';
 import { permitsEverywhere } from '../../support/permits.ts';
 import { identity } from '../../support/person.ts';
 import { ACCOUNT, purse } from '../../support/purse.ts';
-import { currencyOf, isCountry, type CountryCode } from '../../../src/world/gazetteer/gazetteer.ts';
+import { COUNTRY_CODES, countryName, currencyOf, isCountry, type CountryCode } from '../../../src/world/gazetteer/gazetteer.ts';
 
 type D = { attributes: AttributesSlice; directing: DirectingSlice; identity: IdentitySlice; acting: ActingSlice; producing: ProducingSlice; permits: PermitsSlice } & ReturnType<typeof purse>;
 const day = (y: number, m: number, d: number) => daysFromCivil(y, m, d) * SECONDS_PER_DAY;
@@ -56,6 +57,7 @@ const m = (c: CurrencyCode, n: string) => fromMajor(c, n);
 /** An earlier job, so the director has years in the work and this one isn't the first. */
 const before = (started: number): DirectingSlice => ({ films: [{ ...job({ form: 'hour' }), started }], second: null });
 
+const ALL = ['feature', 'hour', 'half-hour'];
 const f = (x: Fee) => [x.form, x.per, x.phases.join('+'), JSON.stringify(x.when), x.band === null ? '' : x.band.join('-'), x.floor ?? '', x.first ?? '', x.steps.map((s) => s.join(' ')).join(' | ')].join(' ');
 /** Every fee as the research gives it (each country's file, read 2026-11-01): form, pay, stages, tiers, band, floor, first-job cut, steps. */
 const EXPECTED: Record<string, string[]> = {
@@ -134,25 +136,60 @@ const EXPECTED: Record<string, string[]> = {
     `${x} month prep+shoot+cut {"minutes":[15,null]}    2025-06-01 31147 | 2026-06-01 32082`,
   ]),
   svt: ['hour', 'half-hour'].flatMap((x) => [`${x} minute  {"minutes":[15,null]} 1-60  0.75 2024-12-23 2134`, `${x} minute  {"minutes":[15,null]} 61-  0.75 2024-12-23 543`, `${x} month prep+shoot+cut {"minutes":[15,null]}    2024-12-23 31326`]),
+  // Andorra's artists' statute (Llei 46/2022, art. 25.1): never below the minimum wage, EUR 72.40 a day from 1 July 2026.
+  'ad-artist': ALL.map((x) => `${x} day prep+shoot+cut {}    2026-07-01 72.4`),
+  // DAC's minimums, March 2026: an episode's total by its running time.
+  'ar-dac': ['hour', 'half-hour'].flatMap((x) => [[0, 20, 10530000], [21, 60, 16380000], [61, 90, 27300000]].map(([lo, hi, a]) => `${x} job  {"minutes":[${lo},${hi}]}    2026-03-01 ${a}`)),
+  // American Samoa's minimum wage for Miscellaneous Activities, from 30 September 2024.
+  'as-screen': ALL.map((x) => `${x} hour prep+shoot+cut {}    2024-09-30 5.8`),
+  // Azerbaijan's least author fee for a film made to state order (Cabinet of Ministers, 10 January 2025).
+  'az-state-order': ['feature job  {}    2025-01-10 9000', 'hour job  {}    2025-01-10 1400', 'half-hour job  {}    2025-01-10 1400'],
+  // Belgium's SCP 303.01: a feature's flat fee, or the production manager's scale (category 10) by the week.
+  'be-303-flat': ['feature job  {}    2026-06-01 20000'],
+  'be-303': ALL.map((x) => `${x} week prep+shoot+cut {}    2026-06-01 1237.47`),
+  // Cuba's scale for a subsidised director: group XIV, the lowest level's, on a 44-hour week, from 1 July 2026.
+  'cu-icaic': ALL.map((x) => `${x} month prep+shoot+cut {}    2026-07-01 6130`),
+  // The Philippines' Eddie Garcia Act: no less than the region's minimum wage, Metro Manila's PHP 755 a day from 26 September 2026.
+  'ph-screen': ALL.map((x) => `${x} day prep+shoot+cut {}    2026-09-26 755`),
 };
+
+/** The twenty markets read before the world's (2026-11-01, R-5230), held as they were. */
+const TWENTY = ['AU', 'BR', 'CA', 'DE', 'DK', 'ES', 'FR', 'GB', 'IE', 'IN', 'IT', 'JP', 'KR', 'MX', 'NG', 'NL', 'NO', 'NZ', 'SE', 'ZA'];
+const old = <T,>(o: Readonly<Record<string, T>>) => Object.fromEntries(Object.entries(o).filter(([cc]) => TWENTY.includes(cc)));
+const oldIds = new Set(TWENTY.flatMap((cc) => (MARKETS[cc] as { agreements: readonly string[] }).agreements));
+/**
+ * The world's markets read by hand (each as its research gives it): an agreement with fees, one whose pay its research
+ * says nothing sets at a place in a guild's, a law's or a fee's figure (none). The rest follow from their research:
+ * blocked, their terms unknown; or none; or a sovereign's terms (FOLLOWS).
+ */
+const BY_HAND: Record<string, Record<string, 'fees' | 'none' | 'unknown'>> = {
+  AD: { 'ad-artist': 'fees' }, AR: { 'ar-dac': 'fees' }, AS: { 'as-screen': 'fees' }, AT: { 'at-screen': 'none' }, AZ: { 'az-state-order': 'fees', 'az-screen': 'none' }, BA: { 'ba-screen': 'none' }, BE: { 'be-303-flat': 'fees', 'be-303': 'fees' }, CH: { 'ch-screen': 'none' }, CU: { 'cu-icaic': 'fees' }, GR: { 'gr-ert': 'unknown', 'gr-screen': 'unknown' }, HK: { 'hk-screen': 'none' }, LV: { 'lv-screen': 'none' }, ME: { 'me-screen': 'none' }, PA: { 'pa-screen': 'none' }, PH: { 'ph-screen': 'fees' }, SK: { 'sk-screen': 'none' },
+};
+/** The territories whose research says a director's work there follows its sovereign's terms: the sovereign's agreements, as the territory's own. */
+const FOLLOWS: Record<string, string> = { AX: 'FI', BL: 'FR', CC: 'AU', CX: 'AU', GF: 'FR', GP: 'FR', MF: 'FR', NF: 'AU', PM: 'FR', RE: 'FR', YT: 'FR' };
+const kind = (a: MarketAgreement) => (a.fees.length > 0 ? 'fees' : a.none ? 'none' : 'unknown');
+/** The agreements read from each market's own research: a territory's copies of its sovereign's are held beside them below. */
+const OWN = () => Object.entries(AGREEMENTS).filter(([, a]) => !Object.hasOwn(FOLLOWS, a.country));
+const REGISTER = (JSON.parse(readFileSync('research/register.json', 'utf8')) as { entries: { fact: string }[] }).entries.map((e) => e.fact);
 
 describe("the director's markets", () => {
   it("are each country's own, every fee and period as the research gives it", () => {
-    expect(Object.keys(MARKETS)).toEqual(['AU', 'BR', 'CA', 'DE', 'DK', 'ES', 'FR', 'GB', 'IE', 'IN', 'IT', 'JP', 'KR', 'MX', 'NG', 'NL', 'NO', 'NZ', 'SE', 'ZA']);
-    expect(Object.fromEntries(Object.entries(MARKETS).map(([cc, x]) => [cc, x.agreements]))).toEqual({
+    // Every country and territory of the map but the US, whose terms are the DGA's.
+    expect(Object.keys(MARKETS)).toEqual(COUNTRY_CODES.filter((cc) => cc !== 'US').sort());
+    expect(old(Object.fromEntries(Object.entries(MARKETS).map(([cc, x]) => [cc, x.agreements])))).toEqual({
       AU: ['au-award'], BR: ['br-sp', 'br-rj'], CA: ['cmpa-dgc', 'dgc-bc', 'dgc-qc', 'arrq', 'nfb'], DE: ['bvr-cinema', 'netflix-de'], DK: ['dk-feature', 'dr'], ES: ['es-screen'], FR: ['idcc-3097', 'idcc-2642'], GB: ['gb-feature', 'pact-duk'], IE: ['ie-screen'], IN: ['in-screen'], IT: ['it-screen'], JP: ['dgj-eiren'], KR: ['kr-screen'], MX: ['mx-screen'], NG: ['ng-screen'], NL: ['nl-fair-pay', 'nl-none'], NO: ['virke-feature', 'virke-tv'], NZ: ['nz-screen'], SE: ['medieforetagen', 'svt'], ZA: ['za-screen'],
     });
-    const fees = Object.fromEntries(Object.entries(AGREEMENTS).filter(([, a]) => a.fees.length > 0).map(([id, a]) => [id, a.fees.map(f)]));
+    const fees = Object.fromEntries(OWN().filter(([, a]) => a.fees.length > 0).map(([id, a]) => [id, a.fees.map(f)]));
     expect(fees).toEqual(EXPECTED);
     // Where the research says no agreement sets a director's pay, it is left to negotiation; where it couldn't find the terms, they're unknown.
-    const bare = Object.entries(AGREEMENTS).filter(([, a]) => a.fees.length === 0);
+    const bare = Object.entries(AGREEMENTS).filter(([id, a]) => a.fees.length === 0 && oldIds.has(id));
     expect(bare.filter(([, a]) => a.none).map(([id]) => id)).toEqual(['dk-feature', 'es-screen', 'gb-feature', 'ie-screen', 'it-screen', 'nl-none', 'nz-screen', 'za-screen']);
     expect(bare.filter(([, a]) => !a.none).map(([id]) => id)).toEqual(['br-rj', 'cmpa-dgc', 'dgc-bc', 'dr', 'idcc-2642', 'pact-duk', 'in-screen', 'dgj-eiren', 'kr-screen', 'mx-screen', 'ng-screen']);
-    for (const [id, a] of bare) expect([a.currency, a.month, a.short, a.periods], id).toEqual([null, null, null, []]);
-    expect(Object.entries(AGREEMENTS).map(([id, a]) => [id, a.country, a.currency ?? '-', a.forms.join('/')].join(' ')).filter((x) => !x.includes(' - '))).toEqual([
-      'au-award AU AUD feature/hour/half-hour', 'br-sp BR BRL feature/hour/half-hour', 'dgc-qc CA CAD feature/hour/half-hour', 'arrq CA CAD hour/half-hour', 'nfb CA CAD feature', 'bvr-cinema DE EUR feature', 'netflix-de DE EUR hour', 'idcc-3097 FR EUR feature', 'nl-fair-pay NL EUR feature/hour/half-hour', 'virke-feature NO NOK feature', 'virke-tv NO NOK hour/half-hour', 'medieforetagen SE SEK feature/hour/half-hour', 'svt SE SEK hour/half-hour',
+    for (const [id, a] of OWN().filter(([, x]) => x.fees.length === 0)) expect([a.currency, a.month, a.short, a.periods], id).toEqual([null, null, null, []]);
+    expect(OWN().map(([id, a]) => [id, a.country, a.currency ?? '-', a.forms.join('/')].join(' ')).filter((x) => !x.includes(' - '))).toEqual([
+      'ad-artist AD EUR feature/hour/half-hour', 'ar-dac AR ARS feature/hour/half-hour', 'as-screen AS USD feature/hour/half-hour', 'au-award AU AUD feature/hour/half-hour', 'az-state-order AZ AZN feature/hour/half-hour', 'be-303-flat BE EUR feature', 'be-303 BE EUR feature/hour/half-hour', 'br-sp BR BRL feature/hour/half-hour', 'dgc-qc CA CAD feature/hour/half-hour', 'arrq CA CAD hour/half-hour', 'nfb CA CAD feature', 'cu-icaic CU CUP feature/hour/half-hour', 'bvr-cinema DE EUR feature', 'netflix-de DE EUR hour', 'idcc-3097 FR EUR feature', 'nl-fair-pay NL EUR feature/hour/half-hour', 'virke-feature NO NOK feature', 'virke-tv NO NOK hour/half-hour', 'ph-screen PH PHP feature/hour/half-hour', 'medieforetagen SE SEK feature/hour/half-hour', 'svt SE SEK hour/half-hour',
     ]);
-    expect(Object.entries(AGREEMENTS).filter(([, a]) => a.month !== null || a.short !== null).map(([id, a]) => [id, a.month, a.short])).toEqual([['virke-tv', 21.67, { upTo: 5, share: '0.1' }], ['medieforetagen', 21, null]]);
+    expect(OWN().filter(([, a]) => a.month !== null || a.short !== null).map(([id, a]) => [id, a.month, a.short])).toEqual([['virke-tv', 21.67, { upTo: 5, share: '0.1' }], ['medieforetagen', 21, null]]);
     // The DGC Quebec/AQPM agreement's guaranteed prep and shoot (its weeks, five days each) and Director's Cut.
     const qc = AGREEMENTS['dgc-qc'] as MarketAgreement;
     expect(qc.periods.map((p) => [p.form, p.part, JSON.stringify(p.when), p.days].join(' '))).toEqual([
@@ -160,8 +197,33 @@ describe("the director's markets", () => {
       'feature cut {"budget":[0,1000000]} 20', 'feature cut {"budget":[1000001,2000000]} 30', 'feature cut {"budget":[2000001,null]} 40',
       'half-hour prep-shoot {} 10', 'hour prep-shoot {} 18', 'half-hour cut {} 2', 'hour cut {} 2',
     ]);
-    expect(Object.entries(AGREEMENTS).filter(([, a]) => a.periods.length > 0).map(([id]) => id)).toEqual(['dgc-qc']);
-    expect(Object.fromEntries(Object.entries(MARKETS).map(([cc, x]) => [cc, x.unknown]))).toEqual({
+    // DAC's minimums: a feature's prep, and the director's cut by the running time; an episode's prep and cut by its own.
+    expect((AGREEMENTS['ar-dac'] as MarketAgreement).periods.map((p) => [p.form, p.part, JSON.stringify(p.when), p.days].join(' '))).toEqual([
+      'feature prep {} 50',
+      ...[[0, 20, 5], [21, 60, 10], [61, 90, 15], [91, null, 20]].map(([lo, hi, d]) => `feature cut {"minutes":[${lo},${hi}]} ${d}`),
+      ...['prep', 'cut'].flatMap((part) => ['hour', 'half-hour'].flatMap((x) => [[0, 20, part === 'prep' ? 8 : 2], [21, 60, part === 'prep' ? 12 : 4], [61, 90, part === 'prep' ? 14 : 10]].map(([lo, hi, d]) => `${x} ${part} {"minutes":[${lo},${hi}]} ${d}`))),
+    ]);
+    expect(OWN().filter(([, a]) => a.periods.length > 0).map(([id]) => id)).toEqual(['ar-dac', 'dgc-qc']);
+    // The world's markets: what isn't known is what each one's research couldn't find, as the register holds it; their
+    // agreements as read by hand, or else unknown where blocked and left to negotiation where the research says so.
+    for (const cc of Object.keys(MARKETS).filter((c) => !TWENTY.includes(c))) {
+      const research = JSON.parse(readFileSync(`research/sources/person/markets/director-${cc}.json`, 'utf8')) as { figures: { item: string }[]; blockers: { item: string }[] };
+      const items = [...new Set(research.blockers.map((b) => b.item))];
+      const market = MARKETS[cc] as { agreements: readonly string[]; unknown: readonly string[] };
+      expect(REGISTER.includes(`person.markets.director.blocked.${cc}`), cc).toBe(items.length > 0);
+      const sovereign = FOLLOWS[cc];
+      if (sovereign !== undefined) {
+        const own = MARKETS[sovereign] as { agreements: readonly string[]; unknown: readonly string[] };
+        expect([market.unknown, market.agreements], cc).toEqual([[...new Set([...items, ...own.unknown])], own.agreements.map((id) => `${cc.toLowerCase()}-${id}`)]);
+        for (const id of own.agreements) expect(AGREEMENTS[`${cc.toLowerCase()}-${id}`], id).toEqual({ ...AGREEMENTS[id], country: cc });
+        continue;
+      }
+      expect(market.unknown, cc).toEqual(items);
+      const want = BY_HAND[cc] ?? { [`${cc.toLowerCase()}-screen`]: items.length > 0 ? 'unknown' : (expect(research.figures.map((x) => x.item), cc).toContain('none'), 'none') };
+      expect(Object.fromEntries(market.agreements.map((id) => [id, kind(AGREEMENTS[id] as MarketAgreement)])), cc).toEqual(want);
+      for (const id of market.agreements) expect((AGREEMENTS[id] as MarketAgreement).forms, id).toEqual(id === 'be-303-flat' || id === 'ch-screen' ? ['feature'] : id === 'gr-ert' ? ['hour', 'half-hour'] : id === 'gr-screen' ? ['feature'] : ALL);
+    }
+    expect(old(Object.fromEntries(Object.entries(MARKETS).map(([cc, x]) => [cc, x.unknown])))).toEqual({
       AU: [], BR: ['periods', 'agreement'], CA: ['fees', 'union'], DE: ['periods'], DK: ['fees', 'agreement'], ES: ['periods', 'fees'], FR: ['fees', 'periods'], GB: ['fees', 'periods', 'union'], IE: ['periods'], IN: ['fees', 'periods'], IT: ['fees', 'periods'], JP: ['fees', 'periods', 'language'], KR: ['fees', 'periods'], MX: ['union', 'fees', 'periods'], NG: ['none', 'union'], NL: ['fees', 'periods'], NO: ['fees'], NZ: ['periods'], SE: ['fees'], ZA: ['union'],
     });
   });
@@ -237,6 +299,40 @@ describe('a film in a market', () => {
     // SVT: each of the first 60 minutes, less from the 61st, and the month.
     const svt = (minutes: number, directing: DirectingSlice = before(day(2025, 1, 1))) => fee({ form: 'hour', country: 'SE', agreement: 'svt', minutes, prep: 10, shoot: 10, cut: 10 }, NOW, directing);
     expect([svt(14), svt(60), svt(61), svt(15, DIRECTING_START)]).toEqual([null, m('SEK', '172791.43'), m('SEK', '173334.43'), m('SEK', '68758.93')]);
+    // A statute's floor where the research reads it as a director's: Andorra's day, American Samoa's hour (of the game's
+    // eight a day), Metro Manila's day; none known before each began.
+    const forty = { prep: 10, shoot: 20, cut: 10 };
+    expect(fee({ form: 'feature', country: 'AD', ...forty })).toEqual(m('EUR', '2896'));
+    expect(fee({ form: 'half-hour', country: 'AD', prep: 1, shoot: 1, cut: 1 })).toEqual(m('EUR', '217.20'));
+    expect(() => job({ form: 'feature', country: 'AD', ...forty }, day(2026, 6, 30))).toThrow('no minimum is known before 2026-07-01');
+    expect(fee({ form: 'hour', country: 'AS', ...forty })).toEqual(m('USD', '1856'));
+    expect(fee({ form: 'feature', country: 'AS', ...forty }, day(2024, 9, 30))).toEqual(m('USD', '1856'));
+    expect(() => job({ form: 'feature', country: 'AS', ...forty }, day(2024, 9, 29))).toThrow('no minimum is known before 2024-09-30');
+    expect(fee({ form: 'feature', country: 'PH', ...forty }, day(2026, 9, 26))).toEqual(m('PHP', '30200'));
+    expect(() => job({ form: 'feature', country: 'PH', ...forty }, day(2026, 9, 25))).toThrow('no minimum is known before 2026-09-26');
+    // Cuba's scale by the month (the actor's 21 days), Belgium's by the week or a feature's flat fee, Azerbaijan's by the job made to state order.
+    expect(fee({ form: 'feature', country: 'CU', ...forty })).toEqual(m('CUP', '11676.19'));
+    expect(fee({ form: 'feature', country: 'BE', agreement: 'be-303', ...forty })).toEqual(m('EUR', '9899.76'));
+    expect(fee({ form: 'hour', country: 'BE', prep: 5, shoot: 8, cut: 4 })).toEqual(m('EUR', '4207.40'));
+    expect(fee({ form: 'feature', country: 'BE', agreement: 'be-303-flat', ...forty })).toEqual(m('EUR', '20000'));
+    expect(() => job({ form: 'feature', country: 'BE', ...forty }, day(2026, 5, 31))).toThrow('a feature in BE names its agreement: be-303-flat, be-303');
+    expect(() => job({ form: 'feature', country: 'BE', agreement: 'be-303-flat', ...forty }, day(2026, 5, 31))).toThrow('no minimum is known before 2026-06-01');
+    expect(fee({ form: 'feature', country: 'AZ', agreement: 'az-state-order', ...forty })).toEqual(m('AZN', '9000'));
+    expect(fee({ form: 'hour', country: 'AZ', agreement: 'az-state-order', ...forty })).toEqual(m('AZN', '1400'));
+    expect(fee({ form: 'half-hour', country: 'AZ', agreement: 'az-state-order', ...forty })).toEqual(m('AZN', '1400'));
+    expect(fee({ form: 'feature', country: 'AZ', agreement: 'az-screen', ...forty })).toBeNull();
+    // DAC's episode minimums by the running time, at every edge; none past 90 minutes, nor for a feature.
+    const dac = (minutes: number, form: PrepArgs['form'] = 'hour') => fee({ form, country: 'AR', minutes, shoot: 5, ...(minutes > 90 ? { prep: 10, cut: 5 } : {}) });
+    expect([dac(1), dac(20), dac(21), dac(60), dac(61), dac(90), dac(30, 'half-hour')]).toEqual(['10530000', '10530000', '16380000', '16380000', '27300000', '27300000', '16380000'].map((x) => m('ARS', x)));
+    expect(dac(91)).toBeNull();
+    expect(fee({ form: 'feature', country: 'AR', minutes: 100, shoot: 22 })).toBeNull();
+    // A territory following its sovereign is paid the sovereign's minimum (France's film agreement in Guadeloupe and La Réunion, Australia's award on Christmas Island).
+    for (const cc of ['GP', 'RE']) expect(fee({ form: 'feature', country: cc, agreement: `${cc.toLowerCase()}-idcc-3097`, prep: 34, shoot: 40, cut: 30 }), cc).toEqual(m('EUR', '62717.62'));
+    expect(fee({ form: 'hour', country: 'CX', prep: 5, shoot: 8, cut: 4 })).toEqual(m('AUD', '5265.92'));
+    expect(fee({ form: 'feature', country: 'AX', ...forty })).toBeNull();
+    // The world's markets whose research says nothing sets the pay, or can't find what does.
+    for (const cc of ['FI', 'HU', 'AT', 'HK', 'AE', 'PL', 'RU', 'HR', 'TZ']) expect(fee({ form: 'feature', country: cc, ...forty }), cc).toBeNull();
+    expect(fee({ form: 'hour', country: 'GR', ...forty })).toBeNull();
     // Where nothing sets the pay, or the game doesn't know what does, there is no minimum.
     for (const cc of ['ES', 'IE', 'IT', 'NZ', 'ZA', 'IN', 'JP', 'KR', 'MX', 'NG']) expect(fee({ form: 'feature', country: cc, prep: 10, shoot: 20, cut: 10 }), cc).toBeNull();
     expect(fee({ form: 'feature', country: 'GB', prep: 10, shoot: 20, cut: 10 })).toBeNull();
@@ -254,6 +350,12 @@ describe('a film in a market', () => {
     expect(job({ form: 'hour', country: 'SE', agreement: 'svt', minutes: 58, prep: 1, shoot: 2, cut: 3 })).toMatchObject({ minutes: 58, prepDays: 1, shootDays: 2, cutDays: 3 });
     expect(job({ form: 'hour' })).toMatchObject({ country: 'US', agreement: 'dga', minutes: null });
     expect(job({ form: 'hour', country: 'US' })).toMatchObject({ country: 'US', agreement: 'dga' });
+    // DAC's guaranteed prep, apart from the shoot, and the director's cut by the running time.
+    const ar = (form: PrepArgs['form'], minutes: number, shoot = 5) => job({ form, country: 'AR', minutes, shoot });
+    expect(ar('feature', 100, 22)).toMatchObject({ country: 'AR', agreement: 'ar-dac', budget: null, minutes: 100, prepDays: 50, shootDays: 22, cutDays: 20 });
+    expect([ar('feature', 20), ar('feature', 21), ar('feature', 60), ar('feature', 61), ar('feature', 90), ar('feature', 91)].map((x) => [x.prepDays, x.cutDays])).toEqual([[50, 5], [50, 10], [50, 10], [50, 15], [50, 15], [50, 20]]);
+    expect([ar('hour', 20), ar('hour', 21), ar('half-hour', 60), ar('hour', 61), ar('hour', 90)].map((x) => [x.prepDays, x.cutDays])).toEqual([[8, 2], [12, 4], [12, 4], [14, 10], [14, 10]]);
+    expect(job({ form: 'hour', country: 'AR', minutes: 91, prep: 3, shoot: 5, cut: 6 })).toMatchObject({ prepDays: 3, cutDays: 6 });
     // A job abroad is engaged for its prep, shoot and cut, in the market's country.
     expect(engagement(job({ form: 'feature', country: 'NO', prep: 12, shoot: 25, cut: 30 }))).toEqual({ country: 'NO', days: 67 });
     expect(engagement(job({ form: 'hour' }))).toEqual({ country: 'US', days: 19 });
@@ -281,6 +383,12 @@ describe('a film in a market', () => {
     expect(go({ ...qc, cut: 5 })).toThrow("dgc-qc guarantees a feature's cut");
     expect(go({ ...qc, shoot: 41 })).toThrow('dgc-qc guarantees a feature 40 days of prep and shoot, fewer than its shoot');
     expect(go({ ...qc, shoot: 40 })).not.toThrow();
+    expect(go({ country: 'AR', minutes: 100, prep: 10, cut: undefined })).toThrow("ar-dac guarantees a feature's prep");
+    expect(go({ country: 'AR', minutes: 100, prep: undefined })).toThrow("ar-dac guarantees a feature's cut");
+    expect(go({ country: 'AR', prep: undefined, cut: undefined })).toThrow('the running time is a whole number of at least 1 (undefined)');
+    expect(go({ country: 'AR', form: 'hour', minutes: 91, cut: undefined })).toThrow('the cut days is a whole number of at least 1 (undefined)');
+    expect(go({ country: 'CH', form: 'hour' })).toThrow('no agreement the game knows covers a hour in CH');
+    expect(go({ country: 'AZ' })).toThrow('a feature in AZ names its agreement: az-state-order, az-screen');
     // In the US the DGA sets all of it.
     for (const k of ['agreement', 'prep', 'cut', 'minutes'] as const) expect(() => job({ form: 'hour', [k]: k === 'agreement' ? 'dga' : 5 }), k).toThrow("the DGA sets a US job's agreement, prep and cut, and reads no running time");
   });
@@ -343,14 +451,22 @@ describe('a film in a market', () => {
 
   it("tells the player what of a market isn't known", () => {
     expect(UNKEPT_LINE).toBe('directing.unkept');
-    expect(Object.keys(MISSING)).toEqual(['agreement', 'fees', 'periods', 'union', 'language', 'none']);
+    expect(Object.keys(MISSING)).toEqual(['agreement', 'fees', 'periods', 'union', 'language', 'none', 'terms']);
+    // A market whose research found nothing: what its blocker couldn't find, as the register holds it.
+    expect(aboutMarket('AE')).toBe("Some of what a director is paid or given in United Arab Emirates isn't known to this game yet: some of the minimum fees.");
+    expect(aboutMarket('AG')).toBe(t(UNKEPT_LINE, { country: 'Antigua and Barbuda', missing: "whether any agreement, guild's rate or law sets a director's terms" }));
+    expect(aboutMarket('CD')).toBe(t(UNKEPT_LINE, { country: countryName('CD'), missing: 'some of the minimum fees and whether anything sets the pay where no agreement does' }));
+    // Known whole, its own or its sovereign's: nothing to tell; a territory following France is told what isn't known of France's.
+    for (const cc of ['AD', 'FI', 'AX', 'CC']) expect(aboutMarket(cc), cc).toBeUndefined();
+    expect(aboutMarket('GP')).toBe(t(UNKEPT_LINE, { country: countryName('GP'), missing: 'some of the minimum fees and the prep, shoot and cut a director is guaranteed' }));
+    expect(aboutMarket('HR')).toBe(t(UNKEPT_LINE, { country: countryName('HR'), missing: 'some of the minimum fees' }));
     expect(aboutMarket('GB')).toBe(t(UNKEPT_LINE, { country: 'United Kingdom', missing: "some of the minimum fees, the prep, shoot and cut a director is guaranteed and the guild's fees or how a director joins" }));
     expect(aboutMarket('NO')).toBe("Some of what a director is paid or given in Norway isn't known to this game yet: some of the minimum fees.");
     expect(aboutMarket('JP')).toBe(t(UNKEPT_LINE, { country: 'Japan', missing: 'some of the minimum fees, the prep, shoot and cut a director is guaranteed and the language the work is made in' }));
     expect(aboutMarket('NG')).toBe(t(UNKEPT_LINE, { country: 'Nigeria', missing: "whether anything sets the pay where no agreement does and the guild's fees or how a director joins" }));
     expect(aboutMarket('BR')).toContain('some of the agreements a director is engaged under.');
     for (const cc of ['AU', 'US', 'XX', 'toString']) expect(aboutMarket(cc), cc).toBeUndefined();
-    expect(Object.keys(MARKETS).filter((cc) => aboutMarket(cc) !== undefined)).toEqual(Object.keys(MARKETS).filter((cc) => cc !== 'AU'));
+    expect(Object.keys(MARKETS).filter((cc) => aboutMarket(cc) !== undefined)).toEqual(Object.keys(MARKETS).filter((cc) => (MARKETS[cc] as { unknown: readonly string[] }).unknown.length > 0));
   });
 });
 

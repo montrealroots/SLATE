@@ -1,0 +1,225 @@
+{
+ "topic": "tax.GQ",
+ "read": "2026-11-01",
+ "note": "Read 2026-11-01 at the owner's word (\"Build those first 3 starting with ledger first\"; of the 21 countries read first: \"It should cover across every country\"; \"Retry the blocked tax facts once all countries land\"): the tax on a screen worker's pay in Equatorial Guinea: a resident's income tax, social contributions, what is withheld at source, a non-resident artiste's withholding, an author's treatment, VAT and the tax year. Research and retry subagents (workbench/briefs/BRIEF-tax.md, BRIEF-tax-retry.md), every quote checked by the lead against its saved page.",
+ "figures": [
+  {
+   "item": "residents",
+   "finding": "Personal income tax is charged on yearly taxable income at 0% to XAF 1,400,000, then 10%, 15%, 20% and 25% above XAF 15,000,000.",
+   "value": {
+    "currency": "XAF",
+    "brackets": [
+     {
+      "from": 0,
+      "to": 1400000,
+      "rate": 0
+     },
+     {
+      "from": 1400000,
+      "to": 5000000,
+      "rate": 0.1
+     },
+     {
+      "from": 5000000,
+      "to": 10000000,
+      "rate": 0.15
+     },
+     {
+      "from": 10000000,
+      "to": 15000000,
+      "rate": 0.2
+     },
+     {
+      "from": 15000000,
+      "to": null,
+      "rate": 0.25
+     }
+    ],
+    "allowance": 1400000,
+    "regional": null
+   },
+   "applies": "Individuals",
+   "sources": [
+    {
+     "src": 0,
+     "said": "Individuals are subject to personal income tax (PIT) at the following rates. Yearly taxable income (XAF*) Tax rate (%) Over Not over 0 1,400,000 0 1,400,000 5,000,000 10 5,000,000 10,000,000 15 10,000,000 15,000,000 20 15,000,000 and above 25"
+    }
+   ]
+  },
+  {
+   "item": "social",
+   "finding": "The employer pays 21.5% and the employee 4.5% to INSESO, plus 1% and 0.5% to the Work Protection Fund.",
+   "value": {
+    "employee": {
+     "inseso": 0.045,
+     "wpf": 0.005
+    },
+    "employer": {
+     "inseso": 0.215,
+     "wpf": 0.01
+    }
+   },
+   "applies": "Employees",
+   "sources": [
+    {
+     "src": 1,
+     "said": "The employer part of contributions to the National Institute of Social Security (INSESO for its Spanish acronym) is 21.5%. The employee part is 4.5%. The employer part of contributions to the Work Protection Fund (WPF) is 1%. The employee part is 0.5%."
+    }
+   ]
+  },
+  {
+   "item": "withholding",
+   "finding": "The employer withholds tax on the progressive scale each month and pays it to the Treasury within the first 15 days of the next month.",
+   "value": {
+    "kind": "monthly employer withholding",
+    "remitBy": "15th of following month"
+   },
+   "applies": "Employees",
+   "sources": [
+    {
+     "src": 2,
+     "said": "PIT calculated in accordance with the progressive tax scale is withheld monthly by the employer and then refunded to the Public Treasury during the first 15 days of the month following the month of payment of the salaries."
+    }
+   ]
+  },
+  {
+   "item": "nonResident",
+   "finding": "Gross income a non-resident earns from Equatorial Guinea bears a 10% withholding (royalties to non-CEMAC residents 10%), stated by PwC for non-resident entities.",
+   "value": {
+    "rate": 0.1,
+    "base": "gross income",
+    "threshold": null,
+    "final": null
+   },
+   "applies": "Non-resident entities (individuals not stated)",
+   "sources": [
+    {
+     "src": 3,
+     "said": "According to the New EG Tax Code, there is a 10% tax withheld on the gross incomes obtained in Equatorial Guinea by non-resident entities. Therefore, as of 1 January 2025, all services provided to entities located in Equatorial Guinea will be subject to 10% WHT in Equatorial Guinea since the income is from an Equatorial Guinea source. There is a 10% WHT on royalties for non-CEMAC residents."
+    }
+   ]
+  },
+  {
+   "item": "vat",
+   "finding": "VAT is 15% standard, 5% on a short list of basic goods and books.",
+   "value": {
+    "standard": 0.15,
+    "reduced": 0.05
+   },
+   "applies": "Goods and services",
+   "sources": [
+    {
+     "src": 1,
+     "said": "The standard VAT rate is 15%. A rate of 0% is applicable to a specific list of products and equipment provided in the Tax Code (e.g. certain medical products, some equipment for construction). A reduced rate of 5% is applicable to a limited list of basic consumables and books."
+    }
+   ]
+  },
+  {
+   "item": "year",
+   "finding": "The tax period is the calendar year.",
+   "value": {
+    "start": "01-01",
+    "end": "12-31"
+   },
+   "applies": "Individuals",
+   "sources": [
+    {
+     "src": 2,
+     "said": "The taxable period is from 1 January to 31 December."
+    }
+   ]
+  }
+ ],
+ "country": "GQ",
+ "sources": [
+  {
+   "url": "https://taxsummaries.pwc.com/equatorial-guinea/individual/taxes-on-personal-income",
+   "title": "PwC Worldwide Tax Summaries: Equatorial Guinea, Taxes on personal income, quoting the New Equatorial Guinea Tax Code in force from 1 January 2025 (Ministerio de Hacienda y Presupuestos, minhacienda-gob.com)",
+   "read": "2026-11-01",
+   "kind": "secondary",
+   "quotes": "https://www.minhacienda-gob.com/",
+   "said": "Individuals are subject to personal income tax (PIT) at the following rates. Yearly taxable income (XAF*) Tax rate (%) Over Not over 0 1,400,000 0 1,400,000 5,000,000 10 5,000,000 10,000,000 15 10,000,000 15,000,000 20 15,000,000 and above 25"
+  },
+  {
+   "url": "https://taxsummaries.pwc.com/equatorial-guinea/individual/other-taxes",
+   "title": "PwC Worldwide Tax Summaries: Equatorial Guinea, Other taxes, quoting the Instituto Nacional de Seguridad Social, INSESO (inseso.org)",
+   "read": "2026-11-01",
+   "kind": "secondary",
+   "quotes": "https://www.inseso.org/",
+   "said": "The employer part of contributions to the National Institute of Social Security (INSESO for its Spanish acronym) is 21.5%. The employee part is 4.5%. The employer part of contributions to the Work Protection Fund (WPF) is 1%. The employee part is 0.5%. … The standard VAT rate is 15%. A rate of 0% is applicable to a specific list of products and equipment provided in the Tax Code (e.g. certain medical products, some equipment for construction). A reduced rate of 5% is applicable to a limited list of basic consumables and books."
+  },
+  {
+   "url": "https://taxsummaries.pwc.com/equatorial-guinea/individual/tax-administration",
+   "title": "PwC Worldwide Tax Summaries: Equatorial Guinea, Tax administration, quoting the New Equatorial Guinea Tax Code in force from 1 January 2025 (Ministerio de Hacienda y Presupuestos, minhacienda-gob.com)",
+   "read": "2026-11-01",
+   "kind": "secondary",
+   "quotes": "https://www.minhacienda-gob.com/",
+   "said": "PIT calculated in accordance with the progressive tax scale is withheld monthly by the employer and then refunded to the Public Treasury during the first 15 days of the month following the month of payment of the salaries. … The taxable period is from 1 January to 31 December."
+  },
+  {
+   "url": "https://taxsummaries.pwc.com/equatorial-guinea/corporate/withholding-taxes",
+   "title": "PwC Worldwide Tax Summaries: Equatorial Guinea, Withholding taxes, quoting the New Equatorial Guinea Tax Code in force from 1 January 2025 (Ministerio de Hacienda y Presupuestos, minhacienda-gob.com)",
+   "read": "2026-11-01",
+   "kind": "secondary",
+   "quotes": "https://www.minhacienda-gob.com/",
+   "said": "According to the New EG Tax Code, there is a 10% tax withheld on the gross incomes obtained in Equatorial Guinea by non-resident entities. Therefore, as of 1 January 2025, all services provided to entities located in Equatorial Guinea will be subject to 10% WHT in Equatorial Guinea since the income is from an Equatorial Guinea source. There is a 10% WHT on royalties for non-CEMAC residents."
+  }
+ ],
+ "blockers": [
+  {
+   "item": "residents",
+   "sought": "The Tax Code's own text of the scale (Ley 2024 Tax Code) and any 2026 change.",
+   "tried": {
+    "institution": "No tax authority website for Equatorial Guinea was found (Ministerio de Hacienda pages not located) || 2026-11-01 retry: minhacienda-gq.com refused by the egress proxy (curl 000); no other Ministerio de Hacienda host known.",
+    "official-register": "Boletín Oficial not found online || 2026-11-01 retry: no Boletín Oficial del Estado de Guinea Ecuatorial reachable online.",
+    "web-search": "not run in this pass || 2026-11-01 retry: refused: the session's web-search limit (200 calls per turn, shared) was reached before this query ('Guinea Ecuatorial Ley tributaria IRPF residents 2026').",
+    "trade-press": "PwC Worldwide Tax Summaries read (the figure it gives is recorded where it names its primary) || 2026-11-01 retry: taxsummaries.pwc.com/equatorial-guinea (200) already used; it names no primary for this item.",
+    "archive": "web.archive.org unreachable from this environment || 2026-11-01 retry: web.archive.org connection reset through the proxy (curl 000)."
+   }
+  },
+  {
+   "item": "nonResident",
+   "sought": "Withholding on a non-resident individual artist's fee and whether final.",
+   "tried": {
+    "institution": "no authority site found || 2026-11-01 retry: minhacienda-gq.com refused by the egress proxy (curl 000); no other Ministerio de Hacienda host known.",
+    "official-register": "not reached || 2026-11-01 retry: no Boletín Oficial del Estado de Guinea Ecuatorial reachable online.",
+    "web-search": "not run || 2026-11-01 retry: refused: the session's web-search limit (200 calls per turn, shared) was reached before this query ('Guinea Ecuatorial Ley tributaria IRPF nonResident 2026').",
+    "trade-press": "PwC Worldwide Tax Summaries read (the figure it gives is recorded where it names its primary) || 2026-11-01 retry: taxsummaries.pwc.com/equatorial-guinea (200) already used; it names no primary for this item.",
+    "archive": "web.archive.org unreachable from this environment || 2026-11-01 retry: web.archive.org connection reset through the proxy (curl 000)."
+   }
+  },
+  {
+   "item": "vat",
+   "sought": "VAT registration threshold for a freelancer.",
+   "tried": {
+    "institution": "no authority site found || 2026-11-01 retry: minhacienda-gq.com refused by the egress proxy (curl 000); no other Ministerio de Hacienda host known.",
+    "official-register": "not reached || 2026-11-01 retry: no Boletín Oficial del Estado de Guinea Ecuatorial reachable online.",
+    "web-search": "not run || 2026-11-01 retry: refused: the session's web-search limit (200 calls per turn, shared) was reached before this query ('Guinea Ecuatorial Ley tributaria IRPF vat 2026').",
+    "trade-press": "PwC Worldwide Tax Summaries read (the figure it gives is recorded where it names its primary) || 2026-11-01 retry: taxsummaries.pwc.com/equatorial-guinea (200) already used; it names no primary for this item.",
+    "archive": "web.archive.org unreachable from this environment || 2026-11-01 retry: web.archive.org connection reset through the proxy (curl 000)."
+   }
+  },
+  {
+   "item": "authors",
+   "sought": "Special treatment of authors' fees.",
+   "tried": {
+    "institution": "no authority site found || 2026-11-01 retry: minhacienda-gq.com refused by the egress proxy (curl 000); no other Ministerio de Hacienda host known.",
+    "official-register": "not reached || 2026-11-01 retry: no Boletín Oficial del Estado de Guinea Ecuatorial reachable online.",
+    "web-search": "not run || 2026-11-01 retry: refused: the session's web-search limit (200 calls per turn, shared) was reached before this query ('Guinea Ecuatorial Ley tributaria IRPF authors 2026').",
+    "trade-press": "PwC Worldwide Tax Summaries read (the figure it gives is recorded where it names its primary) || 2026-11-01 retry: taxsummaries.pwc.com/equatorial-guinea (200) already used; it names no primary for this item.",
+    "archive": "web.archive.org unreachable from this environment || 2026-11-01 retry: web.archive.org connection reset through the proxy (curl 000)."
+   }
+  },
+  {
+   "item": "year",
+   "sought": "Return due date for individuals.",
+   "tried": {
+    "institution": "no authority site found || 2026-11-01 retry: minhacienda-gq.com refused by the egress proxy (curl 000); no other Ministerio de Hacienda host known.",
+    "official-register": "not reached || 2026-11-01 retry: no Boletín Oficial del Estado de Guinea Ecuatorial reachable online.",
+    "web-search": "not run || 2026-11-01 retry: refused: the session's web-search limit (200 calls per turn, shared) was reached before this query ('Guinea Ecuatorial Ley tributaria IRPF year 2026').",
+    "trade-press": "PwC Worldwide Tax Summaries read (the figure it gives is recorded where it names its primary) || 2026-11-01 retry: taxsummaries.pwc.com/equatorial-guinea (200) already used; it names no primary for this item.",
+    "archive": "web.archive.org unreachable from this environment || 2026-11-01 retry: web.archive.org connection reset through the proxy (curl 000)."
+   }
+  }
+ ]
+}

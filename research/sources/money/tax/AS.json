@@ -1,0 +1,286 @@
+{
+ "topic": "tax.AS",
+ "read": "2026-11-01",
+ "note": "Read 2026-11-01 at the owner's word (\"Build those first 3 starting with ledger first\"; of the 21 countries read first: \"It should cover across every country\"; \"Retry the blocked tax facts once all countries land\"): the tax on a screen worker's pay in American Samoa: a resident's income tax, social contributions, what is withheld at source, a non-resident artiste's withholding, an author's treatment, VAT and the tax year. Research and retry subagents (workbench/briefs/BRIEF-tax.md, BRIEF-tax-retry.md), every quote checked by the lead against its saved page.",
+ "figures": [
+  {
+   "item": "residents",
+   "finding": "American Samoa levies its own income tax, modeled on the US Internal Revenue Code as in effect on 31 December 2000 (A.S.C.A. § 11.0403); the Tax Office issues the 2000 tax table and rate schedules with its Form 390, so a single filer pays 15% to $26,250, 28% to $63,550, 31% to $132,600, 36% to $288,350 and 39.6% above.",
+   "value": {
+    "currency": "USD",
+    "single": [
+     {
+      "from": 0,
+      "to": 26250,
+      "rate": 0.15
+     },
+     {
+      "from": 26250,
+      "to": 63550,
+      "rate": 0.28
+     },
+     {
+      "from": 63550,
+      "to": 132600,
+      "rate": 0.31
+     },
+     {
+      "from": 132600,
+      "to": 288350,
+      "rate": 0.36
+     },
+     {
+      "from": 288350,
+      "to": null,
+      "rate": 0.396
+     }
+    ],
+    "marriedJoint": [
+     {
+      "from": 0,
+      "to": 43850,
+      "rate": 0.15
+     },
+     {
+      "from": 43850,
+      "to": 105950,
+      "rate": 0.28
+     },
+     {
+      "from": 105950,
+      "to": 161450,
+      "rate": 0.31
+     },
+     {
+      "from": 161450,
+      "to": 288350,
+      "rate": 0.36
+     },
+     {
+      "from": 288350,
+      "to": null,
+      "rate": 0.396
+     }
+    ]
+   },
+   "applies": "Rates on taxable income after the 2000 Code's deductions and exemptions (their amounts not read here); territorial changes such as the child tax credit apply.",
+   "sources": [
+    {
+     "src": 0,
+     "said": "American Samoa has its own separate and independent income tax system that is modeled on the U.S. income tax laws in the Internal Revenue Code as in effect on December 31, 2000."
+    },
+    {
+     "src": 1,
+     "said": "IRS 2000 Tax Table and Instructions DOWNLOAD 2023 TAX FORMS HERE: ​ Form 390 American Samoa Individual Tax Return"
+    },
+    {
+     "src": 2,
+     "said": "$0 $26,250 15% $0 26,250 63,550 $3,937.50 + 28% 26,250 63,550 132,600 14,381.50 + 31% 63,550 132,600 288,350 35,787.00 + 36% 132,600 288,350 91,857.00 + 39.6% 288,350"
+    },
+    {
+     "src": 3,
+     "said": "The Samoan Income Tax Act consists of chapters 4 and 5 of the American Samoa Code and the provisions of the United States Internal Revenue Code adopted by § 11.0403(a)."
+    }
+   ]
+  },
+  {
+   "item": "social",
+   "finding": "US Social Security and Medicare taxes (FICA) apply to employment in American Samoa.",
+   "value": {
+    "follows": "US",
+    "scheme": "FICA"
+   },
+   "applies": "Rates and ceiling as in the United States.",
+   "sources": [
+    {
+     "src": 3,
+     "said": "Employers and employees within American Samoa must pay U.S. Social Security taxes, as the Federal Insurance Contributions Act applies to any employment performed within the United States or to any employment performed outside the United States by her citizens or residents for an American employer."
+    }
+   ]
+  },
+  {
+   "item": "withholding",
+   "finding": "The American Samoa Government collects income tax by withholding from wages, by periodic estimated payments and otherwise.",
+   "value": {
+    "method": "wage withholding under the incorporated Code"
+   },
+   "applies": "Withholding tables not read.",
+   "sources": [
+    {
+     "src": 3,
+     "said": "The American Samoa Government collects income taxes, through wage withholdings, periodic estimated payments and other means"
+    }
+   ]
+  },
+  {
+   "item": "year",
+   "finding": "Returns for a year are filed in the following year's filing season, which for 2024 returns opened on 27 January 2025.",
+   "value": {
+    "start": "01-01",
+    "due": null
+   },
+   "applies": "Calendar year as under the Code; the due date was not read.",
+   "sources": [
+    {
+     "src": 1,
+     "said": "Tax filing season will commence on the 27th of January 2025"
+    }
+   ]
+  },
+  {
+   "item": "residents",
+   "finding": "On top of the income tax, all wages earned in the Territory bear a 2% wage tax, paid by the wage earner with his return (since tax year 2012).",
+   "value": {
+    "wageTax": 0.02,
+    "appliesTo": "all wages earned in the Territory"
+   },
+   "applies": "Since tax year 2012 (PL 32-6).",
+   "sources": [
+    {
+     "src": 4,
+     "said": "(a) All wages earned in the Territory shall be taxed at the rate of two percent (2%). This tax is in addition to American Samoa’s income tax as set forth in Chapters 4 and 5 of this Title. (b) This tax shall be paid by the wage earner and reported on the wage earner’s tax return. (c) Employers shall immediately increase the minimum withholding for all employees from 4% to 6%. (d) This wage tax shall take effect and commence in tax year 2012."
+    }
+   ]
+  },
+  {
+   "item": "withholding",
+   "finding": "Employers must withhold at least 6% of every employee's wages (raised from 4% when the 2% wage tax began in 2012).",
+   "value": {
+    "minimumWithholding": 0.06
+   },
+   "applies": "Since 2012.",
+   "sources": [
+    {
+     "src": 4,
+     "said": "(a) All wages earned in the Territory shall be taxed at the rate of two percent (2%). This tax is in addition to American Samoa’s income tax as set forth in Chapters 4 and 5 of this Title. (b) This tax shall be paid by the wage earner and reported on the wage earner’s tax return. (c) Employers shall immediately increase the minimum withholding for all employees from 4% to 6%. (d) This wage tax shall take effect and commence in tax year 2012."
+    }
+   ]
+  },
+  {
+   "item": "nonResident",
+   "finding": "Withholding on non-resident aliens follows chapter 3 of the US Internal Revenue Code as American Samoa adopted it (as in effect on 31 December 2000), with local amendments to sections 1441 and 1442; wages a non-resident earns in the Territory also bear the 2% wage tax.",
+   "value": {
+    "regime": "IRC chapter 3 (sections 1441-1442) as adopted at 31 December 2000",
+    "wageTax": 0.02,
+    "rate": null
+   },
+   "applies": "The rate itself is the adopted IRC's (not quoted here).",
+   "sources": [
+    {
+     "src": 5,
+     "said": "(c) The provisions of chapter 3 of the Internal Revenue Code, relating to withholding of tax on nonresident aliens and foreign corporations, shall be effective after 31 December 1962."
+    },
+    {
+     "src": 6,
+     "said": "The income tax and the income tax rules in force in the United States of America in effect on December 31, 2000, where not clearly inapplicable or incompatible with the intent of this section, are adopted by American Samoa, and shall be deemed to impose a separate Territorial income tax, payable to the government."
+    },
+    {
+     "src": 4,
+     "said": "(a) All wages earned in the Territory shall be taxed at the rate of two percent (2%). This tax is in addition to American Samoa’s income tax as set forth in Chapters 4 and 5 of this Title. (b) This tax shall be paid by the wage earner and reported on the wage earner’s tax return. (c) Employers shall immediately increase the minimum withholding for all employees from 4% to 6%. (d) This wage tax shall take effect and commence in tax year 2012."
+    }
+   ]
+  },
+  {
+   "item": "vat",
+   "finding": "American Samoa has no VAT, GST or general sales tax: its revenue title (A.S.C.A. Title 11) provides an income tax, a wage tax, a machine and device tax, excise taxes on imports and exports and a secondhand imported items tax, so a freelancer's fee bears none.",
+   "value": {
+    "vat": null,
+    "servicesTaxed": false
+   },
+   "applies": "A.S.C.A. Title 11 as the Bar Association publishes it (2026).",
+   "sources": [
+    {
+     "src": 7,
+     "said": "Chapter 01 - General Provisions … Chapter 02 - Filing of Federal Tax Liens … Chapter 04 - Income Tax … Chapter 05 - Amendments to Internal Revenue Code … Chapter 06 - Miscellaneous Taxes … Chapter 10 - Excise Tax on Imports … Chapter 11 - Secondhand Imported Items Tax … Chapter 15 - Excise Tax on Exports … Chapter 16 - Tax Incentives for Businesses"
+    },
+    {
+     "src": 4,
+     "said": "All wages earned in the Territory shall be taxed at the rate of two percent (2%)."
+    }
+   ]
+  }
+ ],
+ "country": "AS",
+ "sources": [
+  {
+   "url": "https://www.irs.gov/node/86171",
+   "title": "American Samoa (IRS, international taxpayers: territories)",
+   "read": "2026-11-01",
+   "kind": "primary",
+   "said": "American Samoa has its own separate and independent income tax system that is modeled on the U.S. income tax laws in the Internal Revenue Code as in effect on December 31, 2000."
+  },
+  {
+   "url": "https://www.americansamoa.gov/tax-office",
+   "title": "American Samoa Tax Office, Department of the Treasury",
+   "read": "2026-11-01",
+   "kind": "primary",
+   "said": "IRS 2000 Tax Table and Instructions DOWNLOAD 2023 TAX FORMS HERE: ​ Form 390 American Samoa Individual Tax Return … Tax filing season will commence on the 27th of January 2025"
+  },
+  {
+   "url": "https://www.americansamoa.gov/_files/ugd/4bfff9_1996ff9edcd146a3935f528e3a12435a.pdf",
+   "title": "IRS 2000 Tax Table and Tax Rate Schedules, issued by the American Samoa Government Tax Office with Form 390",
+   "read": "2026-11-01",
+   "kind": "primary",
+   "said": "$0 $26,250 15% $0 26,250 63,550 $3,937.50 + 28% 26,250 63,550 132,600 14,381.50 + 31% 63,550 132,600 288,350 35,787.00 + 36% 132,600 288,350 91,857.00 + 39.6% 288,350"
+  },
+  {
+   "url": "https://asbar.org/taxation-d73/",
+   "title": "American Samoa Bar Association, digest of the High Court's rulings: Taxation",
+   "read": "2026-11-01",
+   "kind": "primary",
+   "said": "The Samoan Income Tax Act consists of chapters 4 and 5 of the American Samoa Code and the provisions of the United States Internal Revenue Code adopted by § 11.0403(a). … Employers and employees within American Samoa must pay U.S. Social Security taxes, as the Federal Insurance Contributions Act applies to any employment performed within the United States or to any employment performed outside the United States by her citizens or residents for an American employer. … The American Samoa Government collects income taxes, through wage withholdings, periodic estimated payments and other means"
+  },
+  {
+   "url": "https://asbar.org/code-annotated/11-0607-wage-tax/",
+   "title": "A.S.C.A. § 11.0607 Wage tax (American Samoa Code Annotated, American Samoa Bar Association)",
+   "read": "2026-11-01",
+   "kind": "primary",
+   "said": "(a) All wages earned in the Territory shall be taxed at the rate of two percent (2%). This tax is in addition to American Samoa’s income tax as set forth in Chapters 4 and 5 of this Title. (b) This tax shall be paid by the wage earner and reported on the wage earner’s tax return. (c) Employers shall immediately increase the minimum withholding for all employees from 4% to 6%. (d) This wage tax shall take effect and commence in tax year 2012."
+  },
+  {
+   "url": "https://asbar.org/code-annotated/11-0406-withholding-exemption-certificate-required/",
+   "title": "A.S.C.A. § 11.0406 Withholding exemption certificate required",
+   "read": "2026-11-01",
+   "kind": "primary",
+   "said": "(c) The provisions of chapter 3 of the Internal Revenue Code, relating to withholding of tax on nonresident aliens and foreign corporations, shall be effective after 31 December 1962."
+  },
+  {
+   "url": "https://asbar.org/code-annotated/11-0403-imposition-of-tax-citation/",
+   "title": "A.S.C.A. § 11.0403 Imposition of tax – Citation",
+   "read": "2026-11-01",
+   "kind": "primary",
+   "said": "The income tax and the income tax rules in force in the United States of America in effect on December 31, 2000, where not clearly inapplicable or incompatible with the intent of this section, are adopted by American Samoa, and shall be deemed to impose a separate Territorial income tax, payable to the government."
+  },
+  {
+   "url": "https://asbar.org/legal-resources/code-annotated/code-annotated-by-title-and-chapter/",
+   "title": "American Samoa Code Annotated by Title and Chapter (American Samoa Bar Association): Title 11 Revenue",
+   "read": "2026-11-01",
+   "kind": "primary",
+   "said": "Chapter 01 - General Provisions … Chapter 02 - Filing of Federal Tax Liens … Chapter 04 - Income Tax … Chapter 05 - Amendments to Internal Revenue Code … Chapter 06 - Miscellaneous Taxes … Chapter 10 - Excise Tax on Imports … Chapter 11 - Secondhand Imported Items Tax … Chapter 15 - Excise Tax on Exports … Chapter 16 - Tax Incentives for Businesses"
+  }
+ ],
+ "blockers": [
+  {
+   "item": "nonResident",
+   "sought": "The withholding rate on a non-resident performer's, writer's or director's fee under IRC chapter 3 as American Samoa adopted it, and whether it is final (the regime is found: A.S.C.A. §§ 11.0403, 11.0406(c))",
+   "tried": {
+    "institution": "americansamoa.gov/tax-office read: no non-resident rules. || retry 2026-11-01: americansamoa.gov tax-office page (read before) gives no rate; no Tax Office guide on non-residents found",
+    "official-register": "A.S.C.A. title 11 text not reached (asbar.org digest read; no non-resident rule). || retry 2026-11-01: A.S.C.A. on asbar.org now read: §§ 11.0403, 11.0405, 11.0406, 11.0515, 11.0516 and 11.0607 saved; they adopt IRC chapter 3 and the 2000 IRC but do not restate the rate or the 2000 standard deduction and exemption amounts; the adopted 2000 IRC text itself not reached",
+    "web-search": "Searched \"American Samoa nonresident withholding income tax\"; nothing primary. || retry 2026-11-01: refused by the search tool on 2026-11-01: the turn's shared limit of 200 searches was reached; not worked around",
+    "trade-press": "None found. || retry 2026-11-01: none found (as before)",
+    "archive": "Archive unreachable from this environment. || retry 2026-11-01: web.archive.org: connection reset again 2026-11-01"
+   }
+  },
+  {
+   "item": "residents",
+   "sought": "The 2000 Code's standard deduction and personal exemption amounts as American Samoa applies them in 2026.",
+   "tried": {
+    "institution": "Tax Office forms are spreadsheets; the 2000 instructions PDF holds only the tables. || retry 2026-11-01: americansamoa.gov tax-office page (read before) gives no rate; no Tax Office guide on non-residents found",
+    "official-register": "A.S.C.A. § 11.0403 text not reached. || retry 2026-11-01: A.S.C.A. on asbar.org now read: §§ 11.0403, 11.0405, 11.0406, 11.0515, 11.0516 and 11.0607 saved; they adopt IRC chapter 3 and the 2000 IRC but do not restate the rate or the 2000 standard deduction and exemption amounts; the adopted 2000 IRC text itself not reached",
+    "web-search": "Searched; nothing. || retry 2026-11-01: refused by the search tool on 2026-11-01: the turn's shared limit of 200 searches was reached; not worked around",
+    "trade-press": "None. || retry 2026-11-01: none found (as before)",
+    "archive": "Archive unreachable. || retry 2026-11-01: web.archive.org: connection reset again 2026-11-01"
+   }
+  }
+ ]
+}

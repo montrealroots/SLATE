@@ -722,6 +722,38 @@ What layer 0 holds:
 
 ## Next step
 
+**Every country in tax and the four roles' markets (2026-11-01, session 01XFR5Ut6sxu4Q37Ha2jKNLQ).** At the owner's word
+("It should cover across every country"; "Want it done now"; "Retry the blocked tax facts / market facts once all
+countries land"), the tax and the actor's, writer's, director's and producer's markets now read all 252 countries.
+Research: 235 tax files (the 231 of the world round, CA, JP, US and AU re-quoted) and 924 market files (231 countries,
+four roles), each researched, retried and checked by the lead quote by quote against its saved page
+(`$S/vtools/vq.py`, `vb.py`), landed by `$S/vtools/landtax.py` and `landmw.py`; every secondary names its primary's
+URL; interview-only figures (15) and figures whose primary isn't shown went back to blockers. Engines
+(`BRIEF-tax-world-engine.md`, `BRIEF-markets-world-engine.md`): tax 244 compiled plus AN and AQ as no taxing state
+(coverage 82 researched, 170 blocked); actor 55 markets (26 researched rows, 226 blocked); writer 248 agreements
+(39 / 213); director (45 / 207); producer 248 markets (66 / 186); none pending; every game reading merged into its
+model entry (R-5114, R-5229, R-5230, R-5231, R-5259). A territory follows its sovereign only where a source says the
+sovereign's labour law or agreements reach it (GP and RE now on Code du travail L1521-1, L2621-1, L2222-1 and the
+agreements' scopes; the writer's GP and RE blocked: the screenwriter agreements name no territory). unions.ts counts a
+sale offered under the WGA's own agreement (Puerto Rico's) as a signatory's.
+
+**Next, in order.** (1) The age readers, at the owner's word ("Start the age readers once this lands"):
+`BRIEF-age-readers.md`, two parts at once (layer 3's 168 blocked ages from the new research, Uganda's working age 16
+not 14; and the youth engine read by every role), the age research (`$S/ages-roles/out`, `$S/ages-world/out`, 252
+countries) landing with it. (2) The depth round (`BRIEF-depth-round.md`, the owner: "Again I want depth covering every
+basis for every feature leaving NO STONE UNTURNED"): 2,211 blockers, 1,719 without a web search run (the limit is 200
+a turn, shared); the ages' search ran first (about 215 searched, 109 found; resumes at list 1 IL unions, list 2 IR
+childPerformers, list 3 IM majority, list 4 KM minimumWorkAge), then the tax's and markets' ("Run the tax and markets
+web searches next turn too"). (3) Open in the research: hand-check the scans read by eye (markets BJ minimum wage;
+ages BD grants, DZ 1990 labour law, SR 2018 child labour; MA's decoded font; CK, SC, VU, PE by OCR); conflicts kept as
+two readings (RS allowance, GR employee rate, LR services rate, PF VAT franchise, LS VAT threshold, ID majority); BJ
+childPerformers is wrong (Décret 2011-322 art. 29 asks an authorisation); BF majority rests on a press report, GG
+companies on a front page; Cuba's Ley 189 unread; MY and KP institution pages unconfirmed; the writer's French,
+Australian and Puerto Rican followers to be held to the agreements' own reach, and one rule for Puerto Rico across the
+roles (the director keeps the DGA to the US); funds' yes rates for about 45 countries; actor minimums in the 131
+countries with neither a rate nor a source that pay is negotiated. (4) The main-law audit and the own-production model
+(step 4).
+
 **Layer 3 proven (2026-10-31).** CI's full gate passed at `a0520b2` (Gate run 519): 1,631 of 1,631 tests, 30 engines
 with 0 rows pending, 0 advisories, mutation 100.00% (16,970 of 16,970), 14,343 s; recorded in `registry/layers.json`.
 

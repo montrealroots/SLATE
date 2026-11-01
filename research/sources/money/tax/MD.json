@@ -1,0 +1,232 @@
+{
+ "topic": "tax.MD",
+ "read": "2026-11-01",
+ "note": "Read 2026-11-01 at the owner's word (\"Build those first 3 starting with ledger first\"; of the 21 countries read first: \"It should cover across every country\"; \"Retry the blocked tax facts once all countries land\"): the tax on a screen worker's pay in Moldova: a resident's income tax, social contributions, what is withheld at source, a non-resident artiste's withholding, an author's treatment, VAT and the tax year. Research and retry subagents (workbench/briefs/BRIEF-tax.md, BRIEF-tax-retry.md), every quote checked by the lead against its saved page.",
+ "figures": [
+  {
+   "item": "residents",
+   "finding": "Moldova taxes employment, professional and entrepreneurial income at a flat 12% (no regional layer); a resident deducts a personal allowance of MDL 29,700 in 2026 (only where annual taxable income is not over MDL 360,000), plus MDL 9,900 per dependant.",
+   "value": {
+    "currency": "MDL",
+    "brackets": [
+     {
+      "from": 0,
+      "to": null,
+      "rate": 0.12
+     }
+    ],
+    "allowance": {
+     "personal": 29700,
+     "incomeCap": 360000,
+     "major": 34620,
+     "spouseMajor": 21780,
+     "dependant": 9900,
+     "majorDependant": 21780
+    },
+    "regional": null
+   },
+   "applies": "Fiscal year 2026; residents taxed on Moldovan income and on foreign income for work performed in Moldova",
+   "sources": [
+    {
+     "src": 0,
+     "said": "Income from employment, including benefits in kind and from professional or entrepreneurial activity 12% from the total taxable income"
+    },
+    {
+     "src": 1,
+     "said": "In 2026, allowances are set at: Type of allowance Amount of the allowance (MDL) Personal allowance (1) 29,700 Major personal allowance (2) 34,620 Spouse’s major allowance (3) 21,780 Allowances for dependant 9,900 Major allowances for dependant 21,780 Notes This allowance is granted only to Moldovan resident taxpayers whose annual taxable income (with some exceptions) does not exceed MDL 360,000."
+    }
+   ]
+  },
+  {
+   "item": "year",
+   "finding": "The fiscal year is the calendar year; the annual return and any balance are due by 30 April of the next year; a foreign citizen paid by Moldovan resident individuals files within three days of ending the activity.",
+   "value": {
+    "start": "01-01",
+    "end": "12-31",
+    "returnDue": "04-30",
+    "paymentDue": "04-30"
+   },
+   "applies": "Individuals",
+   "sources": [
+    {
+     "src": 2,
+     "said": "The annual PIT return has to be submitted by taxpayers (if the case) no later than 30 April of the year following the reporting one. Foreign citizens obtaining income from Moldovan resident individuals are required to present the specific tax return no later than three days after ending their activity in Moldova."
+    }
+   ]
+  },
+  {
+   "item": "social",
+   "finding": "The employer pays social security of 24% of gross pay (no employee share) and the employee pays health insurance of 9%; others (the self-employed among them) pay fixed annual amounts in 2026 of MDL 22,878 social security and MDL 12,636 health insurance.",
+   "value": {
+    "currency": "MDL",
+    "employer": 0.24,
+    "employee": 0,
+    "employeeHealth": 0.09,
+    "fixedAnnual": {
+     "social": 22878,
+     "health": 12636
+    },
+    "ceiling": null
+   },
+   "applies": "2026",
+   "sources": [
+    {
+     "src": 3,
+     "said": "Employers must pay SSC of 24% (with some exceptions) of their employees' gross salary, meal tickets, and other remunerations to the Social Security Fund. The legislation provides annual fixed SSC for other categories of taxpayers in an amount approved for each year (e.g. MDL 22,878 applicable in 2026)."
+    },
+    {
+     "src": 3,
+     "said": "The mandatory health insurance contribution, computed as a percentage of wages and other remuneration, is established at 9% and is fully borne by the employees. The legislation also provides for an annual fixed amount of health insurance contribution paid by other categories of taxpayers in an amount approved for each year (e.g. MDL 12,636 applicable in 2026)."
+    }
+   ]
+  },
+  {
+   "item": "withholding",
+   "finding": "Employers withhold 12% from pay; a resident legal entity withholds a preliminary 12% from other payments to resident individuals (a freelancer's fee), credited against the annual tax.",
+   "value": {
+    "employee": 0.12,
+    "freelancerPreliminary": 0.12
+   },
+   "applies": "Payments by resident entities",
+   "sources": [
+    {
+     "src": 4,
+     "said": "Preliminary WHT: 12% preliminary withholding of payments made for the benefit of resident individuals, unless such payments are tax exempt."
+    }
+   ]
+  },
+  {
+   "item": "nonResident",
+   "finding": "A non-resident is taxed on Moldovan-source income, including pay for work in Moldova, at 12%, withheld at source on payments to non-residents ('other revenues'), subject to treaties.",
+   "value": {
+    "rate": 0.12,
+    "base": "gross Moldovan-source income",
+    "final": null
+   },
+   "applies": "Non-residents",
+   "sources": [
+    {
+     "src": 0,
+     "said": "For non-residents: Income from employment, including benefits in kind 12%"
+    },
+    {
+     "src": 4,
+     "said": "12% for other revenues."
+    }
+   ]
+  },
+  {
+   "item": "authors",
+   "finding": "Royalties paid to individuals bear a final 12% withholding, except royalties of individuals aged 60 and over in literature and art; services regarding copyright and related rights are exempt from VAT.",
+   "value": {
+    "royaltyFinal": 0.12,
+    "exemptIfAge60InLiteratureArt": true,
+    "copyrightServicesVat": "exempt without deduction"
+   },
+   "applies": "Authors resident in Moldova",
+   "sources": [
+    {
+     "src": 0,
+     "said": "Royalty paid to individuals 12%"
+    },
+    {
+     "src": 4,
+     "said": "12% from royalty payments (except royalty income of individuals aged 60 and over in the field of literature and art)."
+    },
+    {
+     "src": 1,
+     "said": "services regarding copyright, and related rights, are VAT-exempted supply without deduction right."
+    }
+   ]
+  },
+  {
+   "item": "vat",
+   "finding": "VAT is 20%; from March 2026 registration is required once turnover in the last 12 consecutive months reaches MDL 1.7 million.",
+   "value": {
+    "currency": "MDL",
+    "standard": 0.2,
+    "threshold": 1700000,
+    "from": "2026-03",
+    "period": "last 12 months"
+   },
+   "applies": "Supplies in Moldova",
+   "sources": [
+    {
+     "src": 3,
+     "said": "The standard VAT rate in Moldova is currently 20%."
+    },
+    {
+     "src": 1,
+     "said": "Starting March 2026, a company is required to register for VAT purposes if the total turnover within the last 12 consecutive months reached the threshold of MDL 1.7 million."
+    }
+   ]
+  }
+ ],
+ "country": "MD",
+ "sources": [
+  {
+   "url": "https://taxsummaries.pwc.com/moldova/individual/taxes-on-personal-income",
+   "title": "PwC Worldwide Tax Summaries, Moldova, Individual - Taxes on personal income (last reviewed 24 June 2026)",
+   "read": "2026-11-01",
+   "kind": "secondary",
+   "quotes": "https://sfs.md/",
+   "said": "Income from employment, including benefits in kind and from professional or entrepreneurial activity 12% from the total taxable income … For non-residents: Income from employment, including benefits in kind 12% … Royalty paid to individuals 12%"
+  },
+  {
+   "url": "https://taxsummaries.pwc.com/moldova/corporate/other-taxes",
+   "title": "PwC Worldwide Tax Summaries, Moldova, Corporate - Other taxes (last reviewed 24 June 2026)",
+   "read": "2026-11-01",
+   "kind": "secondary",
+   "quotes": "https://sfs.md/",
+   "said": "In 2026, allowances are set at: Type of allowance Amount of the allowance (MDL) Personal allowance (1) 29,700 Major personal allowance (2) 34,620 Spouse’s major allowance (3) 21,780 Allowances for dependant 9,900 Major allowances for dependant 21,780 Notes This allowance is granted only to Moldovan resident taxpayers whose annual taxable income (with some exceptions) does not exceed MDL 360,000. … services regarding copyright, and related rights, are VAT-exempted supply without deduction right. … Starting March 2026, a company is required to register for VAT purposes if the total turnover within the last 12 consecutive months reached the threshold of MDL 1.7 million."
+  },
+  {
+   "url": "https://taxsummaries.pwc.com/moldova/individual/tax-administration",
+   "title": "PwC Worldwide Tax Summaries, Moldova, Individual - Tax administration (last reviewed 24 June 2026)",
+   "read": "2026-11-01",
+   "kind": "secondary",
+   "quotes": "https://sfs.md/",
+   "said": "The annual PIT return has to be submitted by taxpayers (if the case) no later than 30 April of the year following the reporting one. Foreign citizens obtaining income from Moldovan resident individuals are required to present the specific tax return no later than three days after ending their activity in Moldova."
+  },
+  {
+   "url": "https://taxsummaries.pwc.com/moldova/individual/other-taxes",
+   "title": "PwC Worldwide Tax Summaries, Moldova, Individual - Other taxes (last reviewed 24 June 2026)",
+   "read": "2026-11-01",
+   "kind": "secondary",
+   "quotes": "https://sfs.md/",
+   "said": "Employers must pay SSC of 24% (with some exceptions) of their employees' gross salary, meal tickets, and other remunerations to the Social Security Fund. The legislation provides annual fixed SSC for other categories of taxpayers in an amount approved for each year (e.g. MDL 22,878 applicable in 2026). … The mandatory health insurance contribution, computed as a percentage of wages and other remuneration, is established at 9% and is fully borne by the employees. The legislation also provides for an annual fixed amount of health insurance contribution paid by other categories of taxpayers in an amount approved for each year (e.g. MDL 12,636 applicable in 2026). … The standard VAT rate in Moldova is currently 20%."
+  },
+  {
+   "url": "https://taxsummaries.pwc.com/moldova/corporate/withholding-taxes",
+   "title": "PwC Worldwide Tax Summaries, Moldova, Corporate - Withholding taxes (last reviewed 24 June 2026)",
+   "read": "2026-11-01",
+   "kind": "secondary",
+   "quotes": "https://sfs.md/",
+   "said": "Preliminary WHT: 12% preliminary withholding of payments made for the benefit of resident individuals, unless such payments are tax exempt. … 12% for other revenues. … 12% from royalty payments (except royalty income of individuals aged 60 and over in the field of literature and art)."
+  }
+ ],
+ "blockers": [
+  {
+   "item": "residents",
+   "sought": "The Tax Code's own text of the 2026 rates and allowances (art. 15, 33 to 35) and of the withholding articles 88 to 91",
+   "tried": {
+    "institution": "sfs.md (State Tax Service) returns HTTP 403 to this environment (2026-11-01) || 2026-11-01 retry: sfs.md answers a Cloudflare 'Attention Required!' bot check (403); mf.gov.md (Ministry of Finance) read: its Tax Code entry (https://mf.gov.md/ro/content/codul-fiscal-al-republicii-moldova-nr-1163) only links to legis.md",
+    "official-register": "legis.md (Tax Code) returns HTTP 403 to this environment (2026-11-01) || 2026-11-01 retry: legis.md answers a 'Just a moment...' bot check (403); not read another way",
+    "web-search": "not run: the official pages refuse this environment and a search result would lead back to them; PwC (reviewed 24 June 2026) is the current summary found || 2026-11-01 retry: not run: the tool refused searches this turn, the shared limit of 200 having been reached (2026-11-01)",
+    "trade-press": "PwC Worldwide Tax Summaries (reviewed 24 June 2026) used || 2026-11-01 retry: PwC Worldwide Tax Summaries (reviewed 24 June 2026) already held",
+    "archive": "web.archive.org resets the connection from this environment (2026-11-01) || 2026-11-01 retry: archive.org availability API answers, but web.archive.org is refused from this environment (http 'Blocked by egress policy', https connection fails), not read (2026-11-01)"
+   }
+  },
+  {
+   "item": "nonResident",
+   "sought": "Whether withholding on a non-resident performer's fee is final",
+   "tried": {
+    "institution": "sfs.md (State Tax Service) returns HTTP 403 to this environment (2026-11-01) || 2026-11-01 retry: sfs.md answers a Cloudflare 'Attention Required!' bot check (403); mf.gov.md (Ministry of Finance) read: its Tax Code entry (https://mf.gov.md/ro/content/codul-fiscal-al-republicii-moldova-nr-1163) only links to legis.md",
+    "official-register": "legis.md (Tax Code) returns HTTP 403 to this environment (2026-11-01) || 2026-11-01 retry: legis.md answers a 'Just a moment...' bot check (403); not read another way",
+    "web-search": "not run: the official pages refuse this environment and a search result would lead back to them; PwC (reviewed 24 June 2026) is the current summary found || 2026-11-01 retry: not run: the tool refused searches this turn, the shared limit of 200 having been reached (2026-11-01)",
+    "trade-press": "PwC Worldwide Tax Summaries (reviewed 24 June 2026) used || 2026-11-01 retry: PwC Worldwide Tax Summaries (reviewed 24 June 2026) already held",
+    "archive": "web.archive.org resets the connection from this environment (2026-11-01) || 2026-11-01 retry: archive.org availability API answers, but web.archive.org is refused from this environment (http 'Blocked by egress policy', https connection fails), not read (2026-11-01)"
+   }
+  }
+ ]
+}

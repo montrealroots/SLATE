@@ -84,6 +84,8 @@ export interface Script {
   readonly started: number;
   /** The days the first draft needed from this writer. */
   readonly needed: number;
+  /** The days given to it, its first draft's and every revision's: what a market paying by the day written reads. */
+  days: number;
   drafts: number;
   /** Each part's facets' scores, 0 to 100. */
   facets: Record<Part, Record<string, number>>;
@@ -178,7 +180,7 @@ function write(s: Writing, a: WriteArgs, c: Context): void {
       facets[p][facet.id] = clamp(k * f + spread(k) * (2 * c.draws('work.draft', id, 1, p, facet.id).float() - 1), 0, 100);
     }
   }
-  s.scripts.written.push({ id, form: a.form, genre: a.genre, started: c.now, needed, drafts: 1, facets, reads: [] });
+  s.scripts.written.push({ id, form: a.form, genre: a.genre, started: c.now, needed, days: a.days, drafts: 1, facets, reads: [] });
   practise(s.attributes, 'screenwriter', DRAFTING, a.days);
 }
 
@@ -261,6 +263,7 @@ function revise(s: Working, a: ReviseArgs, c: Context): void {
     script.facets[n.part][n.facet] = clamp(now + (target - now) * Math.min(1, reach * share * 3), 0, 100);
   }
   script.drafts += 1;
+  script.days += a.days;
   // Revision covers Taking Notes, Story Critique and Critical Thinking: a revision teaches all of it at once.
   practise(s.attributes, 'screenwriter', [...focus.map((n) => n.part), 'revision', 'writing'], a.days);
 }

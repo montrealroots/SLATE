@@ -1,0 +1,172 @@
+{
+ "topic": "tax.PS",
+ "read": "2026-11-01",
+ "note": "Read 2026-11-01 at the owner's word (\"Build those first 3 starting with ledger first\"; of the 21 countries read first: \"It should cover across every country\"; \"Retry the blocked tax facts once all countries land\"): the tax on a screen worker's pay in Palestinian Territory: a resident's income tax, social contributions, what is withheld at source, a non-resident artiste's withholding, an author's treatment, VAT and the tax year. Research and retry subagents (workbench/briefs/BRIEF-tax.md, BRIEF-tax-retry.md), every quote checked by the lead against its saved page.",
+ "figures": [
+  {
+   "item": "residents",
+   "finding": "A resident pays 5% on the first NIS 75,000 of taxable income, 10% on the next 75,000 and 15% above, after a standard deduction of NIS 36,000 a year; only Palestinian-source income is taxed.",
+   "value": {
+    "currency": "ILS",
+    "brackets": [
+     {
+      "from": 0,
+      "to": 75000,
+      "rate": 0.05
+     },
+     {
+      "from": 75000,
+      "to": 150000,
+      "rate": 0.1
+     },
+     {
+      "from": 150000,
+      "to": null,
+      "rate": 0.15
+     }
+    ],
+    "standardDeduction": 36000,
+    "transportExemptShareOfSalary": 0.1,
+    "basis": "Palestinian-source only"
+   },
+   "applies": "Palestinian residents (Palestinians present 120 days, others 183), calendar year 2026.",
+   "sources": [
+    {
+     "src": 0,
+     "said": "The first NIS 75,000 is taxed at 5%, the next NIS 75,000 at 10%, and the remainder at 15%."
+    },
+    {
+     "src": 0,
+     "said": "Individual income is reduced by a standard deduction of NIS 36,000 per year."
+    },
+    {
+     "src": 0,
+     "said": "Palestinian residents and nonresidents are taxed only on Palestinian-source income."
+    }
+   ]
+  },
+  {
+   "item": "year",
+   "finding": "The tax year is the calendar year; the self-employed file within four months of year end (by 30 April 2027); employment income is withheld by the employer.",
+   "value": {
+    "taxYear": {
+     "from": "2026-01-01",
+     "to": "2026-12-31"
+    },
+    "returnDue": "2027-04-30",
+    "currency": "ILS"
+   },
+   "applies": "Palestinian individuals.",
+   "sources": [
+    {
+     "src": 0,
+     "said": "Tax year: The tax year is the calendar year."
+    },
+    {
+     "src": 0,
+     "said": "Tax on employment income is withheld by the employer and remitted to the tax authorities. Self- employed individuals and employed individuals with income from other sources must file a self-assessment return within four months following the end of the tax year."
+    }
+   ]
+  },
+  {
+   "item": "withholding",
+   "finding": "The employer withholds income tax on pay; payments for goods and services bear 5% to 10% withholding unless the payee shows a tax certificate.",
+   "value": {
+    "employment": "employer",
+    "servicePayments": [
+     0.05,
+     0.1
+    ],
+    "exemptWithCertificate": true
+   },
+   "applies": "Payments in Palestine.",
+   "sources": [
+    {
+     "src": 0,
+     "said": "Tax on employment income is withheld by the employer and remitted to the tax authorities."
+    },
+    {
+     "src": 0,
+     "said": "Other: Payments for goods and services are subject to withholding tax at rates ranging from 5% to 10%, unless the payee provides a tax certificate issued by the tax department."
+    }
+   ]
+  },
+  {
+   "item": "social",
+   "finding": "No compulsory social security contribution is collected: the new social security law is on hold by presidential decision.",
+   "value": {
+    "contributions": null
+   },
+   "applies": "Private-sector employees in Palestine, 2026.",
+   "sources": [
+    {
+     "src": 0,
+     "said": "The president has put on hold implementation of a new social security law introducing compulsory monthly social security contributions for all Palestinian private sector employers and employees"
+    }
+   ]
+  },
+  {
+   "item": "nonResident",
+   "finding": "A non-resident's fee for services provided bears a 10% withholding, as do royalties paid to non-residents.",
+   "value": {
+    "services": 0.1,
+    "royalties": 0.1
+   },
+   "applies": "Payments to non-residents.",
+   "sources": [
+    {
+     "src": 0,
+     "said": "Payments made for services provided by a nonresident are subject to a 10% withholding tax unless the rate is reduced or an exemption is available under an applicable tax treaty."
+    },
+    {
+     "src": 0,
+     "said": "A 10% withholding tax is imposed on royalties paid to a nonresident unless the rate is reduced or an exemption is available under an applicable tax treaty."
+    }
+   ]
+  },
+  {
+   "item": "vat",
+   "finding": "Every business and individual registers for VAT, with no threshold; the standard rate is 16%.",
+   "value": {
+    "threshold": 0,
+    "standardRate": 0.16,
+    "law": "Law No. 26 of 2024 (from 1 July 2025)"
+   },
+   "applies": "Palestine.",
+   "sources": [
+    {
+     "src": 0,
+     "said": "The standard VAT rate is 16%."
+    },
+    {
+     "src": 0,
+     "said": "Registration: All business entities and individuals must register for VAT purposes; there is no minimum threshold."
+    }
+   ]
+  }
+ ],
+ "country": "PS",
+ "sources": [
+  {
+   "url": "https://www.deloitte.com/content/dam/assets-shared/docs/services/tax/2026/dttl-tax-palestinianterritorieshighlights-2026.pdf",
+   "title": "Palestinian Territories Highlights 2026 (Deloitte International Tax)",
+   "read": "2026-11-01",
+   "kind": "secondary",
+   "quotes": "https://www.pmof.ps",
+   "said": "The first NIS 75,000 is taxed at 5%, the next NIS 75,000 at 10%, and the remainder at 15%. … Individual income is reduced by a standard deduction of NIS 36,000 per year. … Palestinian residents and nonresidents are taxed only on Palestinian-source income. … Tax year: The tax year is the calendar year. … Tax on employment income is withheld by the employer and remitted to the tax authorities. Self- employed individuals and employed individuals with income from other sources must file a self-assessment return within four months following the end of the tax year. … Other: Payments for goods and services are subject to withholding tax at rates ranging from 5% to 10%, unless the payee provides a tax certificate issued by the tax department. … The president has put on hold implementation of a new social security law introducing compulsory monthly social security contributions for all Palestinian private sector employers and employees … Payments made for services provided by a nonresident are subject to a 10% withholding tax unless the rate is reduced or an exemption is available under an applicable tax treaty. … A 10% withholding tax is imposed on royalties paid to a nonresident unless the rate is reduced or an exemption is available under an applicable tax treaty. … The standard VAT rate is 16%. … Registration: All business entities and individuals must register for VAT purposes; there is no minimum threshold."
+  }
+ ],
+ "blockers": [
+  {
+   "item": "residents",
+   "sought": "The income tax law as amended, in its own text, for 2026",
+   "tried": {
+    "institution": "pmof.ps not reachable (curl 000) 2026-11-01 || 2026-11-01 retry: pmof.ps and mof.ps reset the connection (curl 000) on 2026-11-01",
+    "official-register": "Income Tax Law by Decree No. 8 of 2011 as amended not found on a reachable official host || 2026-11-01 retry: Income Tax Law by Decree No. 8 of 2011 as amended: no reachable official host found (the Ministry hosts above are the publishers)",
+    "web-search": "not searched beyond the summary || 2026-11-01 retry: refused by the tool on 2026-11-01: 'this turn's web search budget is used up (limit: 200 WebSearch calls per turn, shared by every agent)'; queries sent and refused this turn: 'Налоговый кодекс Республики Беларусь статья 199 ставки подоходного налога 2026 13 25 процентов' and 'Eswatini Revenue Service PAYE tax tables 1 July 2026'; no search engine was queried any other way",
+    "trade-press": "Deloitte Palestinian Territories Highlights 2026 read || 2026-11-01 retry: Deloitte Palestinian Territories Highlights 2026 (already read); nothing further",
+    "archive": "web.archive.org not reachable (curl 000) 2026-11-01 || 2026-11-01 retry: archive.org's availability API now answers (snapshots of the institution's site exist), but web.archive.org snapshot pages return HTTP 403 over http and reset over https from this environment (2026-11-01)"
+   }
+  }
+ ]
+}

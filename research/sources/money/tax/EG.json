@@ -1,0 +1,252 @@
+{
+ "topic": "tax.EG",
+ "read": "2026-11-01",
+ "note": "Read 2026-11-01 at the owner's word (\"Build those first 3 starting with ledger first\"; of the 21 countries read first: \"It should cover across every country\"; \"Retry the blocked tax facts once all countries land\"): the tax on a screen worker's pay in Egypt: a resident's income tax, social contributions, what is withheld at source, a non-resident artiste's withholding, an author's treatment, VAT and the tax year. Research and retry subagents (workbench/briefs/BRIEF-tax.md, BRIEF-tax-retry.md), every quote checked by the lead against its saved page.",
+ "figures": [
+  {
+   "item": "residents",
+   "finding": "A resident pays 0% on the first EGP 40,000 of net income, then 10%, 15%, 20%, 22.5%, 25% and 27.5% above EGP 1,200,000, with a further annual salary exemption of EGP 20,000; there is no regional income tax.",
+   "value": {
+    "currency": "EGP",
+    "brackets": [
+     {
+      "from": 0,
+      "to": 40000,
+      "rate": 0
+     },
+     {
+      "from": 40000,
+      "to": 55000,
+      "rate": 0.1
+     },
+     {
+      "from": 55000,
+      "to": 70000,
+      "rate": 0.15
+     },
+     {
+      "from": 70000,
+      "to": 200000,
+      "rate": 0.2
+     },
+     {
+      "from": 200000,
+      "to": 400000,
+      "rate": 0.225
+     },
+     {
+      "from": 400000,
+      "to": 1200000,
+      "rate": 0.25
+     },
+     {
+      "from": 1200000,
+      "to": null,
+      "rate": 0.275
+     }
+    ],
+    "salaryExemption": 20000
+   },
+   "applies": "2026. Whether the lower bands are withdrawn at high incomes was not read.",
+   "sources": [
+    {
+     "src": 0,
+     "said": "Earned income (EGP*) Tax rate on bracket (%) From 1 to 40,000 0 40,000 to 55,000 10.0 55,000 to 70,000 15.0 70,000 to 200,000 20.0 200,000 to 400,000 22.5 400,000 to 1,200,000 25.0 More than 1,200,000 27.5"
+    },
+    {
+     "src": 0,
+     "said": "Please note that both residents and non-residents are entitled to an annual salary tax exemption of EGP 20,000."
+    }
+   ]
+  },
+  {
+   "item": "year",
+   "finding": "The tax year is the calendar year; the annual return is due by 31 March of the next year.",
+   "value": {
+    "start": "01-01",
+    "end": "12-31",
+    "returnDue": "03-31 following year"
+   },
+   "applies": "2026.",
+   "sources": [
+    {
+     "src": 1,
+     "said": "The taxable period is the calendar year starting 1 January and closing on 31 December"
+    },
+    {
+     "src": 1,
+     "said": "The submission deadline for an individual is on or before 31 March following the end of the fiscal year to which the return relates."
+    }
+   ]
+  },
+  {
+   "item": "social",
+   "finding": "The employee pays 11% and the employer 18.75% of the social insurance salary, which from 1 January 2026 runs from EGP 2,700 to EGP 16,700 a month (EGP 19,300 in 2027).",
+   "value": {
+    "currency": "EGP",
+    "employee": 0.11,
+    "employer": 0.1875,
+    "monthlyBase": {
+     "2026": {
+      "min": 2700,
+      "max": 16700
+     },
+     "2027": {
+      "min": 3200,
+      "max": 19300
+     }
+    }
+   },
+   "applies": "2026; self-employed and performers' terms not read.",
+   "sources": [
+    {
+     "src": 2,
+     "said": "The employee contribution percentage is 11% of the total social insurance salary."
+    },
+    {
+     "src": 2,
+     "said": "as of 1 January 2026, the minimum social insurance salary is EGP 2,700, whereas the maximum is EGP 16,700."
+    },
+    {
+     "src": 2,
+     "said": "The employer contribution percentage is 18.75% of the total social insurance salary."
+    }
+   ]
+  },
+  {
+   "item": "withholding",
+   "finding": "The employer withholds tax on pay monthly and files quarterly statements.",
+   "value": {
+    "employee": "monthly withholding, quarterly statements"
+   },
+   "applies": "2026.",
+   "sources": [
+    {
+     "src": 1,
+     "said": "Tax on employment income is withheld at source on a monthly basis. Employers are required to file quarterly tax statements in January, April, July, and October of each year."
+    }
+   ]
+  },
+  {
+   "item": "nonResident",
+   "finding": "A non-resident's pay for work done in Egypt is taxed on the same brackets; service payments and royalties paid to a non-resident bear 20% withholding unless a treaty reduces it.",
+   "value": {
+    "employment": "resident brackets",
+    "servicesWithholding": 0.2,
+    "royaltyWithholding": 0.2
+   },
+   "applies": "No artiste-specific rule was found.",
+   "sources": [
+    {
+     "src": 0,
+     "said": "The above-mentioned brackets also apply to non-residents on the income they receive from an Egyptian treasury or against work performed in Egypt."
+    },
+    {
+     "src": 3,
+     "said": "Service payments are subject to the 20% WHT."
+    }
+   ]
+  },
+  {
+   "item": "authors",
+   "finding": "Royalties paid to a non-resident bear 20% withholding; no special treatment of a resident author's fees was found.",
+   "value": {
+    "nonResidentRoyalty": 0.2
+   },
+   "applies": "2026.",
+   "sources": [
+    {
+     "src": 3,
+     "said": "Royalty payments are subject to 20% WHT."
+    }
+   ]
+  },
+  {
+   "item": "vat",
+   "finding": "VAT is 14%; registration is mandatory once annual taxable turnover exceeds EGP 500,000.",
+   "value": {
+    "currency": "EGP",
+    "standard": 0.14,
+    "registrationThreshold": 500000
+   },
+   "applies": "2026.",
+   "sources": [
+    {
+     "src": 4,
+     "said": "VAT registration is mandatory for any person whose annual taxable turnover exceeds EGP 500,000, in accordance with the provisions of the VAT law."
+    },
+    {
+     "src": 4,
+     "said": "the standard VAT rate is 14% (previously 13%)"
+    }
+   ]
+  }
+ ],
+ "country": "EG",
+ "sources": [
+  {
+   "url": "https://taxsummaries.pwc.com/egypt/individual/taxes-on-personal-income",
+   "title": "PwC Worldwide Tax Summaries: egypt Individual - Taxes on personal income",
+   "read": "2026-11-01",
+   "kind": "secondary",
+   "quotes": "https://www.eta.gov.eg/",
+   "said": "Earned income (EGP*) Tax rate on bracket (%) From 1 to 40,000 0 40,000 to 55,000 10.0 55,000 to 70,000 15.0 70,000 to 200,000 20.0 200,000 to 400,000 22.5 400,000 to 1,200,000 25.0 More than 1,200,000 27.5 … Please note that both residents and non-residents are entitled to an annual salary tax exemption of EGP 20,000. … The above-mentioned brackets also apply to non-residents on the income they receive from an Egyptian treasury or against work performed in Egypt."
+  },
+  {
+   "url": "https://taxsummaries.pwc.com/egypt/individual/tax-administration",
+   "title": "PwC Worldwide Tax Summaries: egypt Individual - Tax administration",
+   "read": "2026-11-01",
+   "kind": "secondary",
+   "quotes": "https://www.eta.gov.eg/",
+   "said": "The taxable period is the calendar year starting 1 January and closing on 31 December … The submission deadline for an individual is on or before 31 March following the end of the fiscal year to which the return relates. … Tax on employment income is withheld at source on a monthly basis. Employers are required to file quarterly tax statements in January, April, July, and October of each year."
+  },
+  {
+   "url": "https://taxsummaries.pwc.com/egypt/individual/other-taxes",
+   "title": "PwC Worldwide Tax Summaries: egypt Individual - Other taxes",
+   "read": "2026-11-01",
+   "kind": "secondary",
+   "quotes": "https://www.nosi.gov.eg/",
+   "said": "The employee contribution percentage is 11% of the total social insurance salary. … as of 1 January 2026, the minimum social insurance salary is EGP 2,700, whereas the maximum is EGP 16,700. … The employer contribution percentage is 18.75% of the total social insurance salary."
+  },
+  {
+   "url": "https://taxsummaries.pwc.com/egypt/corporate/withholding-taxes",
+   "title": "PwC Worldwide Tax Summaries: egypt Corporate - Withholding taxes",
+   "read": "2026-11-01",
+   "kind": "secondary",
+   "quotes": "https://www.eta.gov.eg/",
+   "said": "Service payments are subject to the 20% WHT. … Royalty payments are subject to 20% WHT."
+  },
+  {
+   "url": "https://taxsummaries.pwc.com/egypt/corporate/other-taxes",
+   "title": "PwC Worldwide Tax Summaries: egypt Corporate - Other taxes",
+   "read": "2026-11-01",
+   "kind": "secondary",
+   "quotes": "https://www.eta.gov.eg/",
+   "said": "VAT registration is mandatory for any person whose annual taxable turnover exceeds EGP 500,000, in accordance with the provisions of the VAT law. … the standard VAT rate is 14% (previously 13%)"
+  }
+ ],
+ "blockers": [
+  {
+   "item": "nonResident",
+   "sought": "A rate or exemption for a non-resident performer's fee and whether it is final.",
+   "tried": {
+    "institution": "eta.gov.eg answers; its pages for this were not located in this pass (2026-11-01). || 2026-11-01 retry: eta.gov.eg/ar/content/qwanyn-aldrybt-ly-aldkhl lists the income tax laws; Law 91/2005 (eta.gov.eg/sites/default/files/2024-03/law_no.91-2005.pdf, saved /tmp/claude-0/-home-user-SLATE/cfe06f79-0641-529e-b709-1fcd46045c09/scratchpad/dl/tax/EG-law-91-2005.pdf) downloaded: a 71-page scan with no text layer, and this environment's OCR has no Arabic language data, so its articles on non-residents could not be read",
+    "official-register": "Not read (the Official Gazette is not online in a searchable form reachable here), 2026-11-01. || 2026-11-01 retry: the amending laws (e.g. law_no.30-2023.pdf, law_no.7-2024.pdf, law_no.175-2023.pdf) are listed on the same ETA page; not read for this item (scans)",
+    "web-search": "Not run for Egypt (2026-11-01). || 2026-11-01 retry: WebSearch refused by the tool: this turn's shared limit of 200 searches was used up by the agents (2026-11-01)",
+    "trade-press": "PwC Worldwide Tax Summaries (Egypt) read 2026-11-01: service and royalty withholding only. || 2026-11-01 retry: no new tax-firm text found this turn; PwC Egypt withholding page from the first pass stands",
+    "archive": "web.archive.org resets the connection from this environment (2026-11-01). || 2026-11-01 retry: web.archive.org resets the connection from this environment"
+   }
+  },
+  {
+   "item": "social",
+   "sought": "Social insurance terms for a self-employed or freelance screen worker.",
+   "tried": {
+    "institution": "eta.gov.eg answers; its pages for this were not located in this pass (2026-11-01). || 2026-11-01 retry: nosi.gov.eg (National Organization for Social Insurance) returns HTTP 503 (2026-11-01); eta.gov.eg carries tax laws only",
+    "official-register": "Not read (the Official Gazette is not online in a searchable form reachable here), 2026-11-01. || 2026-11-01 retry: Social Insurance and Pensions Law 148/2019 text not found on a reachable government site",
+    "web-search": "Not run for Egypt (2026-11-01). || 2026-11-01 retry: WebSearch refused by the tool: this turn's shared limit of 200 searches was used up by the agents (2026-11-01)",
+    "trade-press": "PwC Worldwide Tax Summaries (Egypt, other taxes) read 2026-11-01: employees only. || 2026-11-01 retry: no new source this turn; PwC Egypt (employees only) stands",
+    "archive": "web.archive.org resets the connection from this environment (2026-11-01). || 2026-11-01 retry: web.archive.org resets the connection from this environment"
+   }
+  }
+ ]
+}

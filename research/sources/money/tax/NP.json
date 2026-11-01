@@ -1,0 +1,194 @@
+{
+ "topic": "tax.NP",
+ "read": "2026-11-01",
+ "note": "Read 2026-11-01 at the owner's word (\"Build those first 3 starting with ledger first\"; of the 21 countries read first: \"It should cover across every country\"; \"Retry the blocked tax facts once all countries land\"): the tax on a screen worker's pay in Nepal: a resident's income tax, social contributions, what is withheld at source, a non-resident artiste's withholding, an author's treatment, VAT and the tax year. Research and retry subagents (workbench/briefs/BRIEF-tax.md, BRIEF-tax-retry.md), every quote checked by the lead against its saved page.",
+ "figures": [
+  {
+   "item": "residents",
+   "finding": "From fiscal year 2083/84 (2026/27) a resident individual pays 1% on income up to Rs 1,000,000, then 10% to Rs 1,500,000, 20% to Rs 2,500,000, 27% to Rs 4,000,000 and 29% above; the top rate fell from 39% to 29%.",
+   "value": {
+    "currency": "NPR",
+    "fiscalYear": "2083/84",
+    "brackets": [
+     {
+      "from": 0,
+      "to": 1000000,
+      "rate": 0.01
+     },
+     {
+      "from": 1000000,
+      "to": 1500000,
+      "rate": 0.1
+     },
+     {
+      "from": 1500000,
+      "to": 2500000,
+      "rate": 0.2
+     },
+     {
+      "from": 2500000,
+      "to": 4000000,
+      "rate": 0.27
+     },
+     {
+      "from": 4000000,
+      "to": null,
+      "rate": 0.29
+     }
+    ],
+    "firstBandIs": "1% social security tax",
+    "regional": null
+   },
+   "applies": "Resident natural persons, Finance Act 2083. The IRD booklet's text extracts with garbled Devanagari conjuncts; the figures are read from it and confirmed by Niti Partners.",
+   "sources": [
+    {
+     "src": 0,
+     "said": "करको दर पर्न रु १० िािमा १ प्रर्तर्त, रु १० देस्ि रु १५ िािमा १० प्रर्तर्त, रु १५ देस्ि रु २५ िािमा २० प्रर्तर्त, रु २५ देस्ि रु ४० िािमा २७ प्रर्तर्त र रु ४० िाि भन्दा बवढमा २९ प्रर्तर्तका दरिे कर िाग्ने व्यवस्था गररएको छ। अर्धकतम करको दर ३९ बाट २९ प्रर्तर्त कायम गररएको छ।"
+    },
+    {
+     "src": 1,
+     "said": "Up to NPR 1,000,000: 1% NPR 1,000,001 to NPR 1,500,000: 10% NPR 1,500,001 to NPR 2,500,000: 20% NPR 2,500,001 to NPR 4,000,000: 27% Above NPR 4,000,000: 29%"
+    }
+   ]
+  },
+  {
+   "item": "withholding",
+   "finding": "For fiscal year 2083/84 an employer withholds tax on employment income at the Schedule 1 rates; a payer withholds 15% on Nepal-source royalties, service fees and commissions, or 1.5% on a service fee paid to a resident provider registered for VAT.",
+   "value": {
+    "employment": "Schedule 1 rates",
+    "serviceFeeOrRoyalty": 0.15,
+    "serviceFeeToVatRegisteredResident": 0.015
+   },
+   "applies": "Fiscal year 2083/84 (from Shrawan 2083, mid-July 2026).",
+   "sources": [
+    {
+     "src": 2,
+     "said": "दफा ८७ (१) रोजगारीको आय (पाररश्रग्रमक) अनुसूची-१ को दफा"
+    },
+    {
+     "src": 2,
+     "said": "दफा ८८(१) नेपालमा स्रोत भएको प्राकृग्रतक स्रोत, रोयल्टी, सेवा शुल्क, कग्रमशन, ग्रबक्री १५"
+    },
+    {
+     "src": 2,
+     "said": "दफा ८८(१)(४) मूल्य अग्रभवृवि करमा दताथ भएको सेवाप्रदायक बाग्रसन्त्दा व्यजक्तलाईथ भुक्तानी १.५"
+    }
+   ]
+  },
+  {
+   "item": "nonResident",
+   "finding": "A Nepal-source fee or royalty paid to a non-resident bears the 15% withholding (5% on a contract paid to a non-resident), and withholding on any payment to a non-resident under sections 87 to 89 is final.",
+   "value": {
+    "serviceFeeOrRoyalty": 0.15,
+    "contract": 0.05,
+    "final": true
+   },
+   "applies": "Fiscal year 2083/84; whether a performance fee is a service fee or a contract is not stated by IRD.",
+   "sources": [
+    {
+     "src": 2,
+     "said": "दफा ८८(१) नेपालमा स्रोत भएको प्राकृग्रतक स्रोत, रोयल्टी, सेवा शुल्क, कग्रमशन, ग्रबक्री १५"
+    },
+    {
+     "src": 2,
+     "said": "गैर बाग्रसन्त्दा व्यजक्तलाई भुक्तानी हुने ठे क्का वा करारमा ५"
+    },
+    {
+     "src": 2,
+     "said": "(च) दफा ८७, ८८, ८८क. वा ८९ बमोजजम गैर बाग्रसन्त्दा व्यजक्तलाई ददइएको कर कट्टी हुनपु ने भुक्तानी,"
+    }
+   ]
+  },
+  {
+   "item": "authors",
+   "finding": "A royalty paid to a resident for a literary article or work bears only 1.5% withholding, and a payment for an article published in a periodical bears none; prizes for contribution to literature, art or culture are free of withholding up to Rs 500,000.",
+   "value": {
+    "literaryRoyaltyToResident": 0.015,
+    "periodicalArticle": 0,
+    "prizeExemptUpTo": 500000,
+    "currency": "NPR"
+   },
+   "applies": "Fiscal year 2083/84.",
+   "sources": [
+    {
+     "src": 2,
+     "said": "सावहजत्यक लेख वा रचना बापत बाग्रसन्त्दा व्यजक्तलाई रोयल्टी भुक्तानी 1.5"
+    },
+    {
+     "src": 2,
+     "said": "परपग्ररकामा प्रकाजशत लेख रचना बापतको भुक्तानी कर कट्टी गनुथ नपने"
+    },
+    {
+     "src": 2,
+     "said": "सावहत्य, कला, सं स्कृग्रत, खेलकुद, परकररता, ववज्ञान, प्रववग्रध, कृवष तर्ा कर कट्टी गनुथ नपने"
+    }
+   ]
+  },
+  {
+   "item": "vat",
+   "finding": "VAT is a single rate of 13%; a registered taxpayer whose taxable turnover in the past twelve months stays under Rs 5,000,000 for goods or Rs 3,000,000 for services or mixed supplies has its registration cancelled, which sets the level below which a freelancer need not charge VAT.",
+   "value": {
+    "rate": 0.13,
+    "currency": "NPR",
+    "turnoverGoods": 5000000,
+    "turnoverServices": 3000000
+   },
+   "applies": "The registration threshold itself is set by the VAT Rules (\"as prescribed\"), not read; the figures are the Act's cancellation thresholds.",
+   "sources": [
+    {
+     "src": 3,
+     "said": "करको दराः 28(१) यस ऐन बमोशजम लाग्ने करको दर तेह्र प्रभतितको एकल … दर हुनेछ।"
+    },
+    {
+     "src": 3,
+     "said": "(च) द्धवगत बाह्र मद्धहनामा वस्तुको हकमा पचास लाि रुपैयाँ र … वस्तु तथा सेवा भमशश्रत कारोबारको र सेवाको हकमा 46तीस … लाि रुपैयाँ करयोग्य कारोबार नपुगेको करदाता िएमा,"
+    }
+   ]
+  }
+ ],
+ "country": "NP",
+ "sources": [
+  {
+   "url": "https://giwmscdnone.gov.np/media/pdf_upload/%E0%A4%9C%E0%A4%BE%E0%A4%A8%E0%A4%95%E0%A4%BE%E0%A4%B0%E0%A5%80%E0%A4%AE%E0%A5%81%E0%A4%B2%E0%A4%95%20%E0%A4%AA%E0%A5%81%E0%A4%B8%E0%A5%8D%E0%A4%A4%E0%A4%BF%E0%A4%95%E0%A4%BE_fajpdfq.pdf",
+   "title": "आर्थिक ऐन, २०८३: कर छुट, सहुलियत र अन्य व्यवस्थासम्बन्धी जानकारीमूलक पुस्तिका (Inland Revenue Department, Nepal; linked from ird.gov.np/content/13632)",
+   "read": "2026-11-01",
+   "kind": "primary",
+   "said": "करको दर पर्न रु १० िािमा १ प्रर्तर्त, रु १० देस्ि रु १५ िािमा १० प्रर्तर्त, रु १५ देस्ि रु २५ िािमा २० प्रर्तर्त, रु २५ देस्ि रु ४० िािमा २७ प्रर्तर्त र रु ४० िाि भन्दा बवढमा २९ प्रर्तर्तका दरिे कर िाग्ने व्यवस्था गररएको छ। अर्धकतम करको दर ३९ बाट २९ प्रर्तर्त कायम गररएको छ।"
+  },
+  {
+   "url": "https://nitipartners.com/income-tax-changes-as-per-budget-2083-84-2026-27/",
+   "title": "Income Tax Changes as per Budget 2083/84 (2026/27) (Niti Partners)",
+   "read": "2026-11-01",
+   "kind": "secondary",
+   "quotes": "https://giwmscdnone.gov.np/media/pdf_upload/%E0%A4%9C%E0%A4%BE%E0%A4%A8%E0%A4%95%E0%A4%BE%E0%A4%B0%E0%A5%80%E0%A4%AE%E0%A5%81%E0%A4%B2%E0%A4%95%20%E0%A4%AA%E0%A5%81%E0%A4%B8%E0%A5%8D%E0%A4%A4%E0%A4%BF%E0%A4%95%E0%A4%BE_fajpdfq.pdf",
+   "said": "Up to NPR 1,000,000: 1% NPR 1,000,001 to NPR 1,500,000: 10% NPR 1,500,001 to NPR 2,500,000: 20% NPR 2,500,001 to NPR 4,000,000: 27% Above NPR 4,000,000: 29%"
+  },
+  {
+   "url": "https://giwmscdnone.gov.np/media/pdf_upload/%E0%A4%86.%E0%A4%B5.%E0%A5%A8%E0%A5%A6%E0%A5%AE%E0%A5%A9%E0%A5%A4%E0%A5%A6%E0%A5%AE%E0%A5%AA%20%E0%A4%B2%E0%A4%BE%E0%A4%97%E0%A4%BF%20%E0%A4%AD%E0%A5%81%E0%A4%95%E0%A5%8D%E0%A4%A4%E0%A4%BE%E0%A4%A8%E0%A5%80%E0%A4%AE%E0%A4%BE%20%E0%A4%95%E0%A4%B0%20%E0%A4%95%E0%A4%9F%E0%A5%8D%E0%A4%9F%E0%A5%80%20%E0%A4%A6%E0%A4%B0_i9a5gpm.pdf",
+   "title": "Inland Revenue Department, आयकर ऐन, २०५८ को दफा ८७, ८८, ८८क. र ८९ बमोजिम भुक्तानीमा अग्रिम कर कट्टी ... (२०८३/०८४) (withholding rates for FY 2083/84, linked from ird.gov.np/content/13607)",
+   "read": "2026-11-01",
+   "kind": "primary",
+   "said": "दफा ८७ (१) रोजगारीको आय (पाररश्रग्रमक) अनुसूची-१ को दफा … दफा ८८(१) नेपालमा स्रोत भएको प्राकृग्रतक स्रोत, रोयल्टी, सेवा शुल्क, कग्रमशन, ग्रबक्री १५ … दफा ८८(१)(४) मूल्य अग्रभवृवि करमा दताथ भएको सेवाप्रदायक बाग्रसन्त्दा व्यजक्तलाईथ भुक्तानी १.५ … गैर बाग्रसन्त्दा व्यजक्तलाई भुक्तानी हुने ठे क्का वा करारमा ५ … (च) दफा ८७, ८८, ८८क. वा ८९ बमोजजम गैर बाग्रसन्त्दा व्यजक्तलाई ददइएको कर कट्टी हुनपु ने भुक्तानी, … सावहजत्यक लेख वा रचना बापत बाग्रसन्त्दा व्यजक्तलाई रोयल्टी भुक्तानी 1.5 … परपग्ररकामा प्रकाजशत लेख रचना बापतको भुक्तानी कर कट्टी गनुथ नपने … सावहत्य, कला, सं स्कृग्रत, खेलकुद, परकररता, ववज्ञान, प्रववग्रध, कृवष तर्ा कर कट्टी गनुथ नपने"
+  },
+  {
+   "url": "https://giwmscdnone.gov.np/media/pdf_upload/%E0%A4%AE%E0%A5%82%E0%A4%B2%E0%A5%8D%E0%A4%AF%20%E0%A4%85%E0%A4%AD%E0%A4%BF%E0%A4%B5%E0%A5%83%E0%A4%A6%E0%A5%8D%E0%A4%A7%E0%A4%BF%20%E0%A4%95%E0%A4%B0%20%E0%A4%90%E0%A4%A8%2C%20%E0%A5%A8%E0%A5%A6%E0%A5%AB%E0%A5%A8%20(%E0%A4%86%E0%A4%B0%E0%A5%8D%E0%A4%A5%E0%A4%BF%E0%A4%95%20%E0%A4%90%E0%A4%A8%2C%E0%A5%A8%E0%A5%A6%E0%A5%AE%E0%A5%A8%20%E0%A4%B2%E0%A5%87%20%E0%A4%97%E0%A4%B0%E0%A5%87%E0%A4%95%E0%A5%8B%20%E0%A4%B8%E0%A4%82%E0%A4%B6%E0%A5%8B%E0%A4%A7%E0%A4%A8%20%E0%A4%B8%E0%A4%B9%E0%A4%BF%E0%A4%A4)_ty8cysa.pdf",
+   "title": "मूल्य अभिवृद्धि कर ऐन, २०५२ (as amended to the Finance Act 2082), Inland Revenue Department (ird.gov.np/content/13407)",
+   "read": "2026-11-01",
+   "kind": "primary",
+   "said": "करको दराः 28(१) यस ऐन बमोशजम लाग्ने करको दर तेह्र प्रभतितको एकल … दर हुनेछ। … (च) द्धवगत बाह्र मद्धहनामा वस्तुको हकमा पचास लाि रुपैयाँ र … वस्तु तथा सेवा भमशश्रत कारोबारको र सेवाको हकमा 46तीस … लाि रुपैयाँ करयोग्य कारोबार नपुगेको करदाता िएमा,"
+  }
+ ],
+ "blockers": [
+  {
+   "item": "year",
+   "sought": "Nepal's fiscal-year dates in the Gregorian calendar (Shrawan 1 to Ashadh end) and the return deadline; Social Security Fund (SSF) contribution rates for employees, employers and the self-employed",
+   "tried": {
+    "institution": "ird.gov.np 2026-11-01: tax-rate and finance-act listings and the Finance Act 2083 booklet read; only the individual rate change was extracted in this pass || retry 2026-11-01 (world round): ird.gov.np read: withholding-rate PDF for 2083/84 (NP-ird-tds-2083.pdf) and the VAT Act 2052 as amended (NP-vat-act-2052.pdf) saved and used; no page giving the Gregorian dates or the return deadline found among its listings; ssf.gov.np/pages/introduction read: no contribution rates; ssf.gov.np/list/act_regulation listed",
+    "official-register": "Nepal Law Commission (Income Tax Act 2058) not fetched || retry 2026-11-01 (world round): lawcommission.gov.np answers (home page); its site search for 'income tax' (lawcommission.gov.np/?s=income+tax) lists no Income Tax Act 2058 or Contribution-based Social Security Act 2074 entry; /en/ answers 404",
+    "web-search": "2026-11-01 'Nepal Inland Revenue Department income tax rates FY 2083/84 individual 1% social security tax ...': rates only || retry 2026-11-01 (world round): WebSearch refused 2026-11-01 (the turn's shared 200-search budget exhausted)",
+    "trade-press": "Niti Partners and ShareSansar read: rates only; PwC has no Nepal summary (HTTP 404) || retry 2026-11-01 (world round): Niti Partners and ShareSansar (read before): rates only",
+    "archive": "not tried || retry 2026-11-01 (world round): web.archive.org and archive.ph reset the connection; arquivo.pt 403"
+   }
+  }
+ ]
+}

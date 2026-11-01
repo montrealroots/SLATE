@@ -1,0 +1,262 @@
+{
+ "topic": "tax.HT",
+ "read": "2026-11-01",
+ "note": "Read 2026-11-01 at the owner's word (\"Build those first 3 starting with ledger first\"; of the 21 countries read first: \"It should cover across every country\"; \"Retry the blocked tax facts once all countries land\"): the tax on a screen worker's pay in Haiti: a resident's income tax, social contributions, what is withheld at source, a non-resident artiste's withholding, an author's treatment, VAT and the tax year. Research and retry subagents (workbench/briefs/BRIEF-tax.md, BRIEF-tax-retry.md), every quote checked by the lead against its saved page.",
+ "figures": [
+  {
+   "item": "residents",
+   "finding": "From the fiscal year beginning 1 October 2026 the new Code fiscal taxes a person's total income at 0% to 360,000 gourdes, 12% to 540,000, 18% to 1,080,000, 25% to 2,160,000 and 30% above; for fiscal year 2025-26 the DGI's pages show the earlier five-band scale (0% to 60,000, 10% to 240,000, 15% to 480,000, 25% to 1,000,000, 30% above), with a special 10% allowance off projected gross salary for pay withholding.",
+   "value": {
+    "currency": "HTG",
+    "from": "2026-10-01",
+    "brackets": [
+     {
+      "from": 0,
+      "to": 360000,
+      "rate": 0
+     },
+     {
+      "from": 360000,
+      "to": 540000,
+      "rate": 0.12
+     },
+     {
+      "from": 540000,
+      "to": 1080000,
+      "rate": 0.18
+     },
+     {
+      "from": 1080000,
+      "to": 2160000,
+      "rate": 0.25
+     },
+     {
+      "from": 2160000,
+      "to": null,
+      "rate": 0.3
+     }
+    ],
+    "previousBrackets": [
+     {
+      "from": 0,
+      "to": 60000,
+      "rate": 0
+     },
+     {
+      "from": 60000,
+      "to": 240000,
+      "rate": 0.1
+     },
+     {
+      "from": 240000,
+      "to": 480000,
+      "rate": 0.15
+     },
+     {
+      "from": 480000,
+      "to": 1000000,
+      "rate": 0.25
+     },
+     {
+      "from": 1000000,
+      "to": null,
+      "rate": 0.3
+     }
+    ],
+    "previousApplies": "fiscal year 2025-26 (DGI pages)",
+    "regional": null
+   },
+   "applies": "Code fiscal art. 132, in force 1 October 2026 (art. 540); the earlier scale from the DGI service pages, whose example year is 2013-2014.",
+   "sources": [
+    {
+     "src": 0,
+     "said": "Article 132.- L'impôt sur le revenu imposable des personnes physiques est calculé sur l'ensemble des revenus du contribuable en appliquant le barème suivant: a. pour la fraction du revenu allant de 1 Gourde à 360 000 Gourdes: 0% ; b. pour la fraction du revenu allant de 360 001 Gourdes à 540 000 Gourdes: 12 % ; … d. pour la fraction du revenu allant de 1 080 001 Gourdes à 2 160 000 Gourdes: 25%; e. pour la fraction du revenu supérieure à 2 160 000 Gourdes: 30%. … Article 540.- Le présent Décret entre en vigueur au 1er octobre 2026."
+    },
+    {
+     "src": 1,
+     "said": "Le revenu global imposable (différence entre le revenu global et les déductions légales) est soumis à un barème progressif à cinq tranches allant de 0% à 30%. De A % 0 Gdes 60 000 Gdes 0% 60 001 Gdes 240 000 Gdes 10% 240 001 Gdes 480 000 Gdes 15% 480 001 Gdes 1 000 000 Gdes 25% 1 000 000 Gdes 30%"
+    },
+    {
+     "src": 2,
+     "said": "Aux fins de calcul de la base imposable à la retenue sur salaire des employés, un abattement spécial de dix pour cent (10%) sera appliqué sur le montant brut du salaire mensuel projeté sur 12 mois."
+    }
+   ]
+  },
+  {
+   "item": "social",
+   "finding": "From pay the employer also withholds 1% for the local-government fund (CFGDCT, on salaries of 5,000 gourdes or more) and 1% each for the Emergency Fund and the Social Assistance Fund; the employer pays a 2% payroll tax.",
+   "value": {
+    "currency": "HTG",
+    "employee": {
+     "cfgdct": {
+      "rate": 0.01,
+      "minSalary": 5000
+     },
+     "fdu": 0.01,
+     "cas": 0.01
+    },
+    "employer": {
+     "payrollTax": 0.02
+    },
+    "pensionAndHealth": null
+   },
+   "applies": "Employees (DGI-collected levies; ONA and OFATMA not read)",
+   "sources": [
+    {
+     "src": 3,
+     "said": "Au titre de Contribution au Fond de Gestion et de Développement des Collectivités Territoriales (CFGDCT) au taux de 1% sur tout salaire but supérieur ou égal à 5,000.00 gourdes. Au titre du Fonds d’Urgence (FDU) et de la Caisse d’Assistance Sociales (CAS) au taux de 1% sur tout salaire brut versé aux employés hormis les vacataires."
+    },
+    {
+     "src": 4,
+     "said": "Taux de l’impôt Un taux unique de deux pour cent (2%) à appliquer sur la masse salariale."
+    }
+   ]
+  },
+  {
+   "item": "withholding",
+   "finding": "The employer computes the year's income tax on the scale and withholds a twelfth each month, paid to the DGI before the 15th of the following month; bonuses, year-end gifts and overtime are taxed separately at 10%.",
+   "value": {
+    "method": "annual tax / 12 monthly",
+    "remitBy": "15th of following month",
+    "bonusesOvertime": 0.1
+   },
+   "applies": "Employees",
+   "sources": [
+    {
+     "src": 3,
+     "said": "Une fois que l’employeur aura calculé sur cette base le montant de l’impôt sur le revenu du salarié, il divise par douze (12) ladite valeur. Il versera chaque mois, à l’office de la DGI, au titre des retenues à la source, le 1/12 de l’impôt sur le revenu considéré. … Les retenus pratiquées sur les revenus doivent être versés à la DGI avant le 15 du mois qui suit celui du paiement aux bénéficiaires. … Commissions et courtages ; bonis ; étrennes et rémunérations pour heures supplémentaires…10%"
+    }
+   ]
+  },
+  {
+   "item": "nonResident",
+   "finding": "Payments for services by a Haitian resident to a provider resident abroad bear a 20% withholding that settles the income tax (a final tax), paid to the tax administration between the 1st and 15th of the next month.",
+   "value": {
+    "rate": 0.2,
+    "final": true
+   },
+   "applies": "Code fiscal art. 97, in force 1 October 2026; the DGI's withholding page gives the same 20%.",
+   "sources": [
+    {
+     "src": 0,
+     "said": "La contrepartie de prestations de services, telles que définies au 3. de l'article 175, versée par une personne physique ou morale, résidant fiscalement en Haïti, à un bénéficiaire, dont la résidence fiscale est hors d'Haïti, subit, au titre de!'Impôt sur le Revenu, une retenue à la source libératoire de vingt pour cent (20%)."
+    },
+    {
+     "src": 3,
+     "said": "Rémunérations accordées à des prestataires de service domiciliés hors d’Haïti…20%"
+    }
+   ]
+  },
+  {
+   "item": "year",
+   "finding": "The fiscal year runs from 1 October to 30 September; the final income tax return is due between 1 October and 31 January for the year just ended.",
+   "value": {
+    "currency": "HTG",
+    "start": "10-01",
+    "end": "09-30",
+    "returnDue": "01-31"
+   },
+   "applies": "Individuals",
+   "sources": [
+    {
+     "src": 1,
+     "said": "La Déclaration Définitive à produire par les personnes susmentionnées devient exigible entre le 1 er octobre et le 31 janvier de chaque exercice fiscal pour l’exercice précédent. Ainsi la Déclaration Définitive afférente à l’exercice fiscal 2013-2014 qui s’est achevé le 30 septembre 2014 devra être déposée au plus tard le 31 janvier 2015."
+    }
+   ]
+  },
+  {
+   "item": "vat",
+   "finding": "A freelancer's services bear the Taxe sur le Chiffre d'Affaires at 10%; a person with turnover under 10,000,000 gourdes is in the franchise regime, charges no TCA and recovers none.",
+   "value": {
+    "currency": "HTG",
+    "rate": 0.1,
+    "franchiseBelow": 10000000
+   },
+   "applies": "Code fiscal arts. 177-179, 186, 193, in force 1 October 2026.",
+   "sources": [
+    {
+     "src": 0,
+     "said": "Article 177.- Sont assujetties à la Taxe sur le Chiffre d' Affaires les personnes physiques ou morales qui réalisent une activité économique de manière indépendante. … Article 186.- Le taux de la Taxe sur le Chiffre d' Affaires est de dix pour cent (10%). … Article 193.- l. Il est établi un régime de franchise de Taxe sur le Chiffre d' Affaires pour toute personne ayant un chiffre d'affaires inférieur à dix millions (10 000 000) de Gourdes."
+    }
+   ]
+  },
+  {
+   "item": "authors",
+   "finding": "Writers' and composers' copyright income is non-commercial profit, taxed on the scale; when a third party declares it in full, it is taxed under the rules for wages and salaries instead.",
+   "value": {
+    "category": "bénéfices non commerciaux",
+    "ifFullyDeclaredByPayer": "wages and salaries rules",
+    "specialRate": null
+   },
+   "applies": "Code fiscal art. 82(c), in force 1 October 2026.",
+   "sources": [
+    {
+     "src": 0,
+     "said": "c. de droits d'auteurs perçus par les écrivains et compositeurs, ou par leurs héritiers légataires. Toutefois, lorsqu'ils sont intégralement déclarés par des tiers, les produits de droits d'auteurs perçus par les écrivains et compositeurs sont soumis à l'impôt sur le revenu selon les règles prévues en matière de traitements et salaires ;"
+    }
+   ]
+  }
+ ],
+ "country": "HT",
+ "sources": [
+  {
+   "url": "https://dgi.gouv.ht/wp-content/uploads/2026/10/Code-Fiscal.pdf",
+   "title": "Décret remplaçant le Décret du 19 décembre 2022 portant le Code fiscal (Le Moniteur, Spécial N° 48-A, 30 septembre 2026), posted by the DGI on 19 October 2026",
+   "read": "2026-11-01",
+   "kind": "primary",
+   "said": "Article 132.- L'impôt sur le revenu imposable des personnes physiques est calculé sur l'ensemble des revenus du contribuable en appliquant le barème suivant: a. pour la fraction du revenu allant de 1 Gourde à 360 000 Gourdes: 0% ; b. pour la fraction du revenu allant de 360 001 Gourdes à 540 000 Gourdes: 12 % ; … d. pour la fraction du revenu allant de 1 080 001 Gourdes à 2 160 000 Gourdes: 25%; e. pour la fraction du revenu supérieure à 2 160 000 Gourdes: 30%. … Article 540.- Le présent Décret entre en vigueur au 1er octobre 2026. … La contrepartie de prestations de services, telles que définies au 3. de l'article 175, versée par une personne physique ou morale, résidant fiscalement en Haïti, à un bénéficiaire, dont la résidence fiscale est hors d'Haïti, subit, au titre de!'Impôt sur le Revenu, une retenue à la source libératoire de vingt pour cent (20%). … Article 177.- Sont assujetties à la Taxe sur le Chiffre d' Affaires les personnes physiques ou morales qui réalisent une activité économique de manière indépendante. … Article 186.- Le taux de la Taxe sur le Chiffre d' Affaires est de dix pour cent (10%). … Article 193.- l. Il est établi un régime de franchise de Taxe sur le Chiffre d' Affaires pour toute personne ayant un chiffre d'affaires inférieur à dix millions (10 000 000) de Gourdes. … c. de droits d'auteurs perçus par les écrivains et compositeurs, ou par leurs héritiers légataires. Toutefois, lorsqu'ils sont intégralement déclarés par des tiers, les produits de droits d'auteurs perçus par les écrivains et compositeurs sont soumis à l'impôt sur le revenu selon les règles prévues en matière de traitements et salaires ;"
+  },
+  {
+   "url": "https://dgi.gouv.ht/dgi_sev/declaration-definitive-impot-revenu/",
+   "title": "Déclaration Définitive d’Impôt sur le Revenu (DGI Haïti)",
+   "read": "2026-11-01",
+   "kind": "primary",
+   "said": "Le revenu global imposable (différence entre le revenu global et les déductions légales) est soumis à un barème progressif à cinq tranches allant de 0% à 30%. De A % 0 Gdes 60 000 Gdes 0% 60 001 Gdes 240 000 Gdes 10% 240 001 Gdes 480 000 Gdes 15% 480 001 Gdes 1 000 000 Gdes 25% 1 000 000 Gdes 30% … La Déclaration Définitive à produire par les personnes susmentionnées devient exigible entre le 1 er octobre et le 31 janvier de chaque exercice fiscal pour l’exercice précédent. Ainsi la Déclaration Définitive afférente à l’exercice fiscal 2013-2014 qui s’est achevé le 30 septembre 2014 devra être déposée au plus tard le 31 janvier 2015."
+  },
+  {
+   "url": "https://dgi.gouv.ht/dgi_sev/les-traitements-et-salaires/",
+   "title": "Les traitements et salaires (DGI Haïti)",
+   "read": "2026-11-01",
+   "kind": "primary",
+   "said": "Aux fins de calcul de la base imposable à la retenue sur salaire des employés, un abattement spécial de dix pour cent (10%) sera appliqué sur le montant brut du salaire mensuel projeté sur 12 mois."
+  },
+  {
+   "url": "https://dgi.gouv.ht/dgi_sev/les-retenus-a-la-source/",
+   "title": "Les retenus à la source (Direction Générale des Impôts, Haïti)",
+   "read": "2026-11-01",
+   "kind": "primary",
+   "said": "Au titre de Contribution au Fond de Gestion et de Développement des Collectivités Territoriales (CFGDCT) au taux de 1% sur tout salaire but supérieur ou égal à 5,000.00 gourdes. Au titre du Fonds d’Urgence (FDU) et de la Caisse d’Assistance Sociales (CAS) au taux de 1% sur tout salaire brut versé aux employés hormis les vacataires. … Une fois que l’employeur aura calculé sur cette base le montant de l’impôt sur le revenu du salarié, il divise par douze (12) ladite valeur. Il versera chaque mois, à l’office de la DGI, au titre des retenues à la source, le 1/12 de l’impôt sur le revenu considéré. … Les retenus pratiquées sur les revenus doivent être versés à la DGI avant le 15 du mois qui suit celui du paiement aux bénéficiaires. … Commissions et courtages ; bonis ; étrennes et rémunérations pour heures supplémentaires…10% … Rémunérations accordées à des prestataires de service domiciliés hors d’Haïti…20%"
+  },
+  {
+   "url": "https://dgi.gouv.ht/dgi_sev/taxe-sur-la-masse-salariale/",
+   "title": "Taxe sur la Masse Salariale (DGI Haïti)",
+   "read": "2026-11-01",
+   "kind": "primary",
+   "said": "Taux de l’impôt Un taux unique de deux pour cent (2%) à appliquer sur la masse salariale."
+  }
+ ],
+ "blockers": [
+  {
+   "item": "social",
+   "sought": "Old-age insurance (ONA) and health/work-accident (OFATMA) contributions on pay, employee and employer",
+   "tried": {
+    "institution": "2026-11-01: not on dgi.gouv.ht; ONA and OFATMA sites not located without search || 2026-11-01 retry: ofatma.gouv.ht answers but its 'Les cotisations' entries are empty links (href '#'); ONA (ona.gouv.ht, ona.ht) gives no answer (curl 000); the new Code fiscal covers taxes only",
+    "official-register": "2026-11-01: the DGI site's \"Code Générale des Impôts\" link points to a page under construction; Le Moniteur texts not reached || 2026-11-01 retry: Le Moniteur not reachable directly (moniteur.ht curl 000)",
+    "web-search": "2026-11-01: refused: the session web-search budget was used up; the DGI site search (WordPress) for \"taxe sur le chiffre d'affaires\", \"retenue à la source\", \"artiste\" returned nothing relevant || 2026-11-01 retry: WebSearch refused by the tool: this turn's shared limit of 200 searches was used up by the agents (2026-11-01)",
+    "trade-press": "2026-11-01: no PwC or Deloitte summary for Haiti (taxsummaries and Deloitte highlights URLs 404) || 2026-11-01 retry: none found this turn",
+    "archive": "2026-11-01: web.archive.org unreachable through the proxy this session || 2026-11-01 retry: web.archive.org resets the connection from this environment"
+   }
+  },
+  {
+   "item": "residents",
+   "sought": "Confirmation that the five-band scale on the DGI pages was the one in force for fiscal year 2025-26 (the new Code fiscal's scale applies from 1 October 2026)",
+   "tried": {
+    "institution": "2026-11-01: DGI pages read carry no date for the scale || 2026-11-01 retry: dgi.gouv.ht 'Textes de loi' lists the new Code fiscal (decree of 30 September 2026, in force 1 October 2026), read and saved; it repeals earlier texts but does not restate the 2025-26 scale",
+    "official-register": "2026-11-01: the DGI site's \"Code Générale des Impôts\" link points to a page under construction; Le Moniteur texts not reached || 2026-11-01 retry: Le Moniteur Spécial N° 48-A (30 September 2026) read through the DGI copy; moniteur.ht gives no answer (curl 000)",
+    "web-search": "2026-11-01: refused: the session web-search budget was used up; the DGI site search (WordPress) for \"taxe sur le chiffre d'affaires\", \"retenue à la source\", \"artiste\" returned nothing relevant || 2026-11-01 retry: WebSearch refused by the tool: this turn's shared limit of 200 searches was used up by the agents (2026-11-01)",
+    "trade-press": "2026-11-01: no PwC or Deloitte summary for Haiti (taxsummaries and Deloitte highlights URLs 404) || 2026-11-01 retry: none found this turn",
+    "archive": "2026-11-01: web.archive.org unreachable through the proxy this session || 2026-11-01 retry: web.archive.org resets the connection from this environment"
+   }
+  }
+ ]
+}

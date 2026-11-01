@@ -1,0 +1,290 @@
+{
+ "topic": "tax.AI",
+ "read": "2026-11-01",
+ "note": "Read 2026-11-01 at the owner's word (\"Build those first 3 starting with ledger first\"; of the 21 countries read first: \"It should cover across every country\"; \"Retry the blocked tax facts once all countries land\"): the tax on a screen worker's pay in Anguilla: a resident's income tax, social contributions, what is withheld at source, a non-resident artiste's withholding, an author's treatment, VAT and the tax year. Research and retry subagents (workbench/briefs/BRIEF-tax.md, BRIEF-tax-retry.md), every quote checked by the lead against its saved page.",
+ "figures": [
+  {
+   "item": "follows",
+   "finding": "Anguilla, a British overseas territory, does not take United Kingdom tax and levies no income tax of its own.",
+   "value": {
+    "sovereign": "GB",
+    "takesSovereignTax": false,
+    "levies": "no income tax"
+   },
+   "applies": "Anguilla",
+   "sources": [
+    {
+     "src": 0,
+     "said": "Taxes & Laws Money Transmission Levy Liquor Licence Vehicle Licences Universal Social Levy Other Services Accommodation Tax Property Tax Business Licence Goods & Services Tax General Services Tax"
+    },
+    {
+     "src": 1,
+     "said": "Anguilla is a zero-tax jurisdiction. There is no income tax, capital gains tax, estate tax, or other form of direct taxation on individuals, regardless of residence status."
+    }
+   ]
+  },
+  {
+   "item": "residents",
+   "finding": "Anguilla levies no income tax on individuals, resident or not; the Inland Revenue Department's list of the taxes and laws it administers carries none.",
+   "value": {
+    "incomeTax": null,
+    "currency": "XCD"
+   },
+   "applies": "All individuals",
+   "sources": [
+    {
+     "src": 0,
+     "said": "Taxes & Laws Money Transmission Levy Liquor Licence Vehicle Licences Universal Social Levy Other Services Accommodation Tax Property Tax Business Licence Goods & Services Tax General Services Tax"
+    },
+    {
+     "src": 1,
+     "said": "Anguilla is a zero-tax jurisdiction. There is no income tax, capital gains tax, estate tax, or other form of direct taxation on individuals, regardless of residence status."
+    },
+    {
+     "src": 2,
+     "said": "SCHEDULE OF TAXES DUE DATE … All Business Licences are due and payable by 30 … Universal Social Levy is due and payable. … General Services Tax is due and payable. … Property Tax first half is due and payable"
+    }
+   ]
+  },
+  {
+   "item": "social",
+   "finding": "From 1 January 2026 social security is 11.5% of wages, 5.75% deducted from the employee and 5.75% from the employer, up to a ceiling (EC$7,000 a month per Deloitte; the Board says to enquire); a self-employed person pays 8% of a weekly income chosen from categories (EC$200 to EC$1,250 in the Board's example).",
+   "value": {
+    "currency": "XCD",
+    "from": "2026-01-01",
+    "employee": 0.0575,
+    "employer": 0.0575,
+    "ceilingMonthly": 7000,
+    "ceilingWeekly": null,
+    "selfEmployed": {
+     "rate": 0.08,
+     "base": "elected weekly income category",
+     "exampleCategories": [
+      200,
+      400,
+      600,
+      800,
+      1000,
+      1250
+     ]
+    },
+    "next": {
+     "from": "2027-01-01",
+     "employee": 0.06,
+     "employer": 0.06
+    }
+   },
+   "applies": "Employees and self-employed persons insured with the Anguilla Social Security Board",
+   "sources": [
+    {
+     "src": 3,
+     "said": "Effective January 1 st 2026 , Employers are entitled to deduct 5.75% of an employees earnings and match with their own portion of 5.75% up to the relevant contribution ceiling stipulated by law."
+    },
+    {
+     "src": 4,
+     "said": "The amount of contribution payable by the self-employed person for each contributory week in respect of his employment shall be 8% of the weekly income elected by him/her … Category Weekly Income EC$ Weekly Contritbution EC$ A 1250.00 100.00 B 1000.00 80.00 C 800.00 64.00 D 600.00 48.00 E 400.00 32.00 F 200.00 16.00"
+    },
+    {
+     "src": 5,
+     "said": "On or after January 1st, 2027: Employees will contribute 6% and employers will contribute 6%, a combined total contribution of 12%."
+    },
+    {
+     "src": 1,
+     "said": "Both the employer and employee contribute 5.75% of an employee’s earnings, up to XCD 7,000 per month, to social security."
+    }
+   ]
+  },
+  {
+   "item": "social",
+   "finding": "The Universal Social Levy takes 3% of gross pay from employees earning over EC$2,000 a month, matched by the employer on pay up to EC$12,000 a month; a self-employed person pays 6% of gross earnings once they exceed EC$2,000 a month; returns are due within 10 days of the month's end.",
+   "value": {
+    "currency": "XCD",
+    "employee": {
+     "rate": 0.03,
+     "threshold": 2000
+    },
+    "employer": {
+     "rate": 0.03,
+     "capPayMonthly": 12000
+    },
+    "selfEmployed": {
+     "rate": 0.06,
+     "threshold": 2000
+    },
+    "due": "10 days after month end"
+   },
+   "applies": "Employees, employers and self-employed persons",
+   "sources": [
+    {
+     "src": 6,
+     "said": "The Universal Social Levy (FKA Interim Stabilization Levy) also referred to as USL is a 3% levy on the gross salary or wages of all employees earning over EC$2,000.00 per month. The employer shall match the levy of 3% on the employee’s amount of remuneration or payment not exceeding EC$12,000.00 of an employee’s salary per month. Self-employed persons are required to pay 6% on their gross earnings once it exceeds EC$2,000.00 per month."
+    }
+   ]
+  },
+  {
+   "item": "withholding",
+   "finding": "No income tax is withheld from pay or fees; the employer deducts only the social security and Universal Social Levy shares.",
+   "value": {
+    "incomeTax": null
+   },
+   "applies": "Employees and contractors",
+   "sources": [
+    {
+     "src": 1,
+     "said": "There are no withholding taxes in Anguilla."
+    }
+   ]
+  },
+  {
+   "item": "nonResident",
+   "finding": "A non-resident performer, writer or director pays no income tax or withholding in Anguilla.",
+   "value": {
+    "rate": 0,
+    "final": true
+   },
+   "applies": "Non-residents",
+   "sources": [
+    {
+     "src": 1,
+     "said": "There is no income tax, capital gains tax, estate tax, or other form of direct taxation on individuals, regardless of residence status. … There are no withholding taxes in Anguilla."
+    }
+   ]
+  },
+  {
+   "item": "authors",
+   "finding": "With no income tax, authors' fees and royalties are untaxed as income.",
+   "value": {
+    "incomeTax": null
+   },
+   "applies": "Authors",
+   "sources": [
+    {
+     "src": 1,
+     "said": "There are no withholding taxes in Anguilla."
+    }
+   ]
+  },
+  {
+   "item": "vat",
+   "finding": "Since 1 August 2025 a service fee bears the General Services Tax at 13%; a service provider must register once taxable supplies reach EC$300,000 in 12 months (promoters of public entertainment must register whatever their revenue, per Deloitte).",
+   "value": {
+    "currency": "XCD",
+    "rate": 0.13,
+    "threshold": 300000,
+    "period": "12 months, past or expected",
+    "since": "2025-08-01",
+    "mandatoryRegardless": [
+     "promoters of public entertainment",
+     "auctioneers",
+     "short-term accommodation providers"
+    ]
+   },
+   "applies": "Services supplied in Anguilla",
+   "sources": [
+    {
+     "src": 7,
+     "said": "The General Services Tax is a tax on services. … General Services Tax came into force on August 1st 2025."
+    },
+    {
+     "src": 8,
+     "said": "there shall be levied and paid a tax known as the General Services Tax, at a positive rate of 13% on the value of … made taxable supplies the total value of which equals or exceeds the amount of EC$300,000"
+    },
+    {
+     "src": 1,
+     "said": "Certain businesses are required to register for GNST regardless of annual revenue, including auctioneers, short-term accommodation providers, promoters of public entertainment, and state and statutory bodies."
+    }
+   ]
+  }
+ ],
+ "country": "AI",
+ "sources": [
+  {
+   "url": "https://ird.gov.ai/",
+   "title": "Inland Revenue Department, Government of Anguilla (home page, Taxes & Laws menu)",
+   "read": "2026-11-01",
+   "kind": "primary",
+   "said": "Taxes & Laws Money Transmission Levy Liquor Licence Vehicle Licences Universal Social Levy Other Services Accommodation Tax Property Tax Business Licence Goods & Services Tax General Services Tax"
+  },
+  {
+   "url": "https://www.deloitte.com/content/dam/assets-shared/docs/services/tax/2026/dttl-tax-anguillahighlights-2026.pdf",
+   "title": "Anguilla Highlights 2026 (Deloitte)",
+   "read": "2026-11-01",
+   "kind": "secondary",
+   "quotes": "https://ird.gov.ai/",
+   "said": "Anguilla is a zero-tax jurisdiction. There is no income tax, capital gains tax, estate tax, or other form of direct taxation on individuals, regardless of residence status. … Both the employer and employee contribute 5.75% of an employee’s earnings, up to XCD 7,000 per month, to social security. … There are no withholding taxes in Anguilla. … There is no income tax, capital gains tax, estate tax, or other form of direct taxation on individuals, regardless of residence status. … There are no withholding taxes in Anguilla. … Certain businesses are required to register for GNST regardless of annual revenue, including auctioneers, short-term accommodation providers, promoters of public entertainment, and state and statutory bodies."
+  },
+  {
+   "url": "https://ird.gov.ai/Content/documents/2026%20TAX%20CALENDAR.pdf",
+   "title": "Inland Revenue Department, Tax Calendar 2026: Schedule of Taxes Due Date",
+   "read": "2026-11-01",
+   "kind": "primary",
+   "said": "SCHEDULE OF TAXES DUE DATE … All Business Licences are due and payable by 30 … Universal Social Levy is due and payable. … General Services Tax is due and payable. … Property Tax first half is due and payable"
+  },
+  {
+   "url": "https://ssbai.com/contributions.php?type=employer",
+   "title": "Social Security Employer Contributions (Anguilla Social Security Board)",
+   "read": "2026-11-01",
+   "kind": "primary",
+   "said": "Effective January 1 st 2026 , Employers are entitled to deduct 5.75% of an employees earnings and match with their own portion of 5.75% up to the relevant contribution ceiling stipulated by law."
+  },
+  {
+   "url": "https://ssbai.com/contributions.php?type=self",
+   "title": "Self Employed Contributions (Anguilla Social Security Board)",
+   "read": "2026-11-01",
+   "kind": "primary",
+   "said": "The amount of contribution payable by the self-employed person for each contributory week in respect of his employment shall be 8% of the weekly income elected by him/her … Category Weekly Income EC$ Weekly Contritbution EC$ A 1250.00 100.00 B 1000.00 80.00 C 800.00 64.00 D 600.00 48.00 E 400.00 32.00 F 200.00 16.00"
+  },
+  {
+   "url": "https://ssbai.com/post.php?post_id=98",
+   "title": "Anguilla Social Security Board Announces Draft Amendment to Legislation for Increase in Contribution Rate (27/07/23)",
+   "read": "2026-11-01",
+   "kind": "primary",
+   "said": "On or after January 1st, 2027: Employees will contribute 6% and employers will contribute 6%, a combined total contribution of 12%."
+  },
+  {
+   "url": "https://ird.gov.ai/Services/Tax/usl",
+   "title": "Universal Social Levy (Inland Revenue Department, Anguilla)",
+   "read": "2026-11-01",
+   "kind": "primary",
+   "said": "The Universal Social Levy (FKA Interim Stabilization Levy) also referred to as USL is a 3% levy on the gross salary or wages of all employees earning over EC$2,000.00 per month. The employer shall match the levy of 3% on the employee’s amount of remuneration or payment not exceeding EC$12,000.00 of an employee’s salary per month. Self-employed persons are required to pay 6% on their gross earnings once it exceeds EC$2,000.00 per month."
+  },
+  {
+   "url": "https://ird.gov.ai/Services/Tax/GenST",
+   "title": "General Services Tax (Inland Revenue Department, Anguilla)",
+   "read": "2026-11-01",
+   "kind": "primary",
+   "said": "The General Services Tax is a tax on services. … General Services Tax came into force on August 1st 2025."
+  },
+  {
+   "url": "https://ird.gov.ai/Content/documents/Act%208%20-%20General%20Services%20Act,%202025%20-%20G.pdf",
+   "title": "General Services Tax Act, 2025 (Act No. 8/2025), ss 8 and 10 (scanned; read by OCR)",
+   "read": "2026-11-01",
+   "kind": "primary",
+   "said": "there shall be levied and paid a tax known as the General Services Tax, at a positive rate of 13% on the value of … made taxable supplies the total value of which equals or exceeds the amount of EC$300,000"
+  }
+ ],
+ "blockers": [
+  {
+   "item": "residents",
+   "sought": "A primary statement (the law or the IRD) that Anguilla levies no income tax on individuals; only the IRD's list of taxes (with none) and Deloitte were read",
+   "tried": {
+    "institution": "2026-11-01: ird.gov.ai home and FAQ read; the FAQ page renders no answers to curl; the Taxes & Laws list names no income tax || retry 2026-11-01: ird.gov.ai MediaCenter/Documents and Brochures lists read: acts and guides for General Services Tax, Goods Tax, Universal Social Levy, Property Tax, Accommodation Tax, licences and levies, none for income tax; the 2026 Tax Calendar (saved AI-ird-2026-tax-calendar.pdf, cited) schedules business licences, USL, GST and property tax and no income tax; no sentence saying there is none",
+    "official-register": "2026-11-01: no Income Tax Act among the IRD laws page links; gov.ai Residency by Investment presentation (2019) read: no statement || retry 2026-11-01: the IRD document list (the laws it administers, incl. Act 26 Universal Social Levy Act 2021, Act 8 General Services Tax Act 2025, Act 9 Goods Tax Act 2025) has no income tax act",
+    "web-search": "2026-11-01: \"gov.ai Anguilla \\\"no income tax\\\" government official investment\": only Deloitte, Mondaq, Chambers (secondary) || retry 2026-11-01: refused by the search tool on 2026-11-01: the turn's shared limit of 200 searches was reached; not worked around",
+    "trade-press": "2026-11-01: Deloitte Anguilla Highlights 2026 read and cited || retry 2026-11-01: Deloitte Anguilla Highlights 2026 (cited) stays the only explicit statement",
+    "archive": "2026-11-01: not reached (web.archive.org connections reset through the proxy this session) || retry 2026-11-01: web.archive.org: connection reset again 2026-11-01"
+   }
+  },
+  {
+   "item": "social",
+   "sought": "The 2026 social security contribution ceiling from the Board or the Contributions Regulations",
+   "tried": {
+    "institution": "2026-11-01: ssbai.com contributions pages say \"Please enquire for current ceilings\"; ssb.ai certificate does not match its host || retry 2026-11-01: ssbai.com 2026-11-01: contributions pages (employee, employer, self-employed) and documents list re-read: no 2026 ceiling (the Board's pages still say to enquire); its 2020 actuarial review is the latest document and predates 2026; ssb.ai: no connection",
+    "official-register": "2026-11-01: Contributions (Amendment) Regulations not found on gov.ai || retry 2026-11-01: gov.ai and the IRD document list carry no Social Security (Contributions) (Amendment) Regulations",
+    "web-search": "2026-11-01: \"Anguilla Social Security Board contribution rate 5.75% ... maximum insurable earnings\": a summary named EC$7,000 monthly and EC$1,617 weekly on the SSB site, page not located || retry 2026-11-01: refused by the search tool on 2026-11-01: the turn's shared limit of 200 searches was reached; not worked around",
+    "trade-press": "2026-11-01: Deloitte 2026 gives XCD 7,000 a month (cited); Anguilla Focus 08/12/2025 gives the rate only || retry 2026-11-01: Deloitte 2026 (XCD 7,000 a month, cited) unchanged",
+    "archive": "2026-11-01: not reached (web.archive.org connections reset through the proxy this session) || retry 2026-11-01: web.archive.org: connection reset again 2026-11-01"
+   }
+  }
+ ]
+}

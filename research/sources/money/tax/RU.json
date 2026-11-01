@@ -1,0 +1,279 @@
+{
+ "topic": "tax.RU",
+ "read": "2026-11-01",
+ "note": "Read 2026-11-01 at the owner's word (\"Build those first 3 starting with ledger first\"; of the 21 countries read first: \"It should cover across every country\"; \"Retry the blocked tax facts once all countries land\"): the tax on a screen worker's pay in Russia: a resident's income tax, social contributions, what is withheld at source, a non-resident artiste's withholding, an author's treatment, VAT and the tax year. Research and retry subagents (workbench/briefs/BRIEF-tax.md, BRIEF-tax-retry.md), every quote checked by the lead against its saved page.",
+ "figures": [
+  {
+   "item": "residents",
+   "finding": "A resident pays personal income tax (NDFL) on the main tax bases at 13% to RUB 2.4 million a year, 15% to 5 million, 18% to 20 million, 20% to 50 million and 22% above (art. 224 NK RF); there is no regional income tax.",
+   "value": {
+    "currency": "RUB",
+    "brackets": [
+     {
+      "from": 0,
+      "to": 2400000,
+      "rate": 0.13,
+      "taxAtFloor": 0
+     },
+     {
+      "from": 2400000,
+      "to": 5000000,
+      "rate": 0.15,
+      "taxAtFloor": 312000
+     },
+     {
+      "from": 5000000,
+      "to": 20000000,
+      "rate": 0.18,
+      "taxAtFloor": 702000
+     },
+     {
+      "from": 20000000,
+      "to": 50000000,
+      "rate": 0.2,
+      "taxAtFloor": 3402000
+     },
+     {
+      "from": 50000000,
+      "to": null,
+      "rate": 0.22,
+      "taxAtFloor": 9402000
+     }
+    ],
+    "regionalLayer": null
+   },
+   "applies": "Russian tax residents; tax period the calendar year 2026.",
+   "sources": [
+    {
+     "src": 0,
+     "said": "1. Налоговая ставка устанавливается в следующих размерах: 13 процентов - если сумма налоговых баз, указанных в пункте 2.1 статьи 210 настоящего Кодекса, за налоговый период равна 2,4 миллиона рублей или менее 2,4 миллиона рублей; 312 тысяч рублей и 15 процентов суммы налоговых баз, указанных в пункте 2.1 статьи 210 настоящего Кодекса, превышающей 2,4 миллиона рублей,"
+    },
+    {
+     "src": 0,
+     "said": "702 тысячи рублей и 18 процентов суммы налоговых баз, указанных в пункте 2.1 статьи 210 настоящего Кодекса, превышающей 5 миллионов рублей,"
+    },
+    {
+     "src": 0,
+     "said": "3402 тысячи рублей и 20 процентов суммы налоговых баз, указанных в пункте 2.1 статьи 210 настоящего Кодекса, превышающей 20 миллионов рублей,"
+    },
+    {
+     "src": 0,
+     "said": "9402 тысячи рублей и 22 процента суммы налоговых баз, указанных в пункте 2.1 статьи 210 настоящего Кодекса, превышающей 50 миллионов рублей, - если сумма налоговых баз, указанных в пункте 2.1 статьи 210 настоящего Кодекса, за налоговый период превышает 50 миллионов рублей."
+    }
+   ]
+  },
+  {
+   "item": "withholding",
+   "finding": "A Russian organisation or entrepreneur paying a person must compute, withhold and pay the NDFL, taking it from the income when actually paid (art. 226).",
+   "value": {
+    "scheme": "tax agent withholds at payment"
+   },
+   "applies": "Pay and fees from Russian organisations and entrepreneurs.",
+   "sources": [
+    {
+     "src": 1,
+     "said": "обязаны исчислить, удержать у налогоплательщика и уплатить сумму налога, исчисленную в соответствии со статьей 225 настоящего Кодекса"
+    },
+    {
+     "src": 1,
+     "said": "4. Налоговые агенты обязаны удержать начисленную сумму налога непосредственно из доходов налогоплательщика при их фактической выплате"
+    }
+   ]
+  },
+  {
+   "item": "year",
+   "finding": "The tax period is the calendar year; where a return is required it is due by 30 April 2027.",
+   "value": {
+    "taxYear": {
+     "from": "2026-01-01",
+     "to": "2026-12-31"
+    },
+    "returnDue": "2027-04-30",
+    "currency": "RUB"
+   },
+   "applies": "Russian individuals filing a 3-NDFL return.",
+   "sources": [
+    {
+     "src": 2,
+     "said": "Налоговая декларация представляется не позднее 30 апреля года, следующего за истекшим налоговым периодом"
+    }
+   ]
+  },
+  {
+   "item": "social",
+   "finding": "From 2023 the employer pays a single insurance contribution of 30% on pay up to the single annual base limit and 15.1% above it (art. 425); a self-employed person on the professional income tax (NPD) pays 4% on income from individuals and 6% on income from businesses and companies, with no insurance contributions, while income stays within RUB 2.4 million a year.",
+   "value": {
+    "employer": {
+     "toLimit": 0.3,
+     "aboveLimit": 0.151,
+     "limit2026": null
+    },
+    "npd": {
+     "fromIndividuals": 0.04,
+     "fromBusinesses": 0.06,
+     "incomeCap": 2400000,
+     "experimentUntil": "2028-12-31"
+    }
+   },
+   "applies": "Payments to employees and contractors in Russia.",
+   "sources": [
+    {
+     "src": 3,
+     "said": "3. Начиная с 2023 года устанавливаются тарифы страховых взносов на обязательное пенсионное страхование, на обязательное социальное страхование на случай временной нетрудоспособности и в связи с материнством, на обязательное медицинское страхование в следующих единых размерах (единый тариф страховых взносов), если иное не предусмотрено настоящей главой: 1) в пределах установленной единой предельной величины базы для исчисления страховых взносов - 30 процентов; 2) свыше установленной единой предельной величины базы для исчисления страховых взносов - 15,1 процента."
+    },
+    {
+     "src": 4,
+     "said": "Налоговые ставки устанавливаются в следующих размерах: 1) 4 процента в отношении доходов, полученных налогоплательщиками от реализации товаров (работ, услуг, имущественных прав) физическим лицам; 2) 6 процентов в отношении доходов, полученных налогоплательщиками от реализации товаров (работ, услуг, имущественных прав) индивидуальным предпринимателям для использования при ведении предпринимательской деятельности и юридическим лицам."
+    },
+    {
+     "src": 5,
+     "said": "8) налогоплательщики, у которых доходы, учитываемые при определении налоговой базы, превысили в текущем календарном году 2,4 миллиона рублей;"
+    }
+   ]
+  },
+  {
+   "item": "nonResident",
+   "finding": "A non-resident pays a flat 30% on all Russian-source income, a performer's or writer's fee included (art. 224(3)), withheld by the Russian payer.",
+   "value": {
+    "rate": 0.3,
+    "base": "all income from Russian sources",
+    "law": "art. 224(3) NK RF"
+   },
+   "applies": "Individuals who are not Russian tax residents.",
+   "sources": [
+    {
+     "src": 0,
+     "said": "3. Налоговая ставка устанавливается в размере 30 процентов в отношении всех доходов, получаемых физическими лицами, не являющимися налоговыми резидентами Российской Федерации,"
+    }
+   ]
+  },
+  {
+   "item": "vat",
+   "finding": "The standard VAT rate is 22%; an entrepreneur whose revenue over three consecutive months does not exceed RUB 2 million may claim exemption (art. 145).",
+   "value": {
+    "currency": "RUB",
+    "standardRate": 0.22,
+    "exemptionIf3MonthRevenueAtMost": 2000000
+   },
+   "applies": "Entrepreneurs on the general regime.",
+   "sources": [
+    {
+     "src": 6,
+     "said": "3. Налогообложение производится по налоговой ставке 22 процента в случаях, не указанных в пунктах 1 , 2 и 4 настоящей статьи."
+    },
+    {
+     "src": 7,
+     "said": "имеют право на освобождение от исполнения обязанностей налогоплательщика, связанных с исчислением и уплатой налога (далее в настоящей статье - освобождение), если за три предшествующих последовательных календарных месяца сумма выручки от реализации товаров (работ, услуг) этих организаций или индивидуальных предпринимателей без учета налога не превысила в совокупности два миллиона рублей."
+    }
+   ]
+  },
+  {
+   "item": "authors",
+   "finding": "An author or performer paid royalties (for creating or performing literary and artistic works) may deduct documented expenses or, without documents, a set share of the fee: 20% for literary works (theatre and film writing included), 30% for audiovisual works (films, television), 20% for performing literary and artistic works, 40% for film and theatre design and for film music.",
+   "value": {
+    "deductionWithoutDocuments": {
+     "literaryWorks": 0.2,
+     "audiovisualWorks": 0.3,
+     "performance": 0.2,
+     "filmTheatreDesign": 0.4,
+     "filmMusic": 0.4,
+     "otherMusic": 0.25,
+     "graphicPhotoDesign": 0.3
+    },
+    "base": "accrued income"
+   },
+   "applies": "Residents receiving author's fees (art. 221(3) NK RF); claimed through the tax agent or the return.",
+   "sources": [
+    {
+     "src": 8,
+     "said": "3) налогоплательщики, получающие авторские вознаграждения или вознаграждения за создание, исполнение или иное использование произведений науки, литературы, искусства, за создание иных результатов интеллектуальной деятельности, вознаграждения патентообладателям изобретений, полезных моделей, промышленных образцов, в сумме фактически произведенных и документально подтвержденных расходов. Если эти расходы не могут быть подтверждены документально, они принимаются к вычету в следующих размерах: … Создание литературных произведений, в том числе для театра, кино, эстрады и цирка 20 … Создание аудиовизуальных произведений (видео-, теле- и кинофильмов) 30 … оригинальной музыки для кино-, теле- и видеофильмов и театральных постановок 40 других музыкальных произведений, в том числе подготовленных к опубликованию 25 Исполнение произведений литературы и искусства 20"
+    }
+   ]
+  }
+ ],
+ "country": "RU",
+ "sources": [
+  {
+   "url": "https://legalacts.ru/kodeks/NK-RF-chast-2/razdel-viii/glava-23/statja-224/",
+   "title": "Налоговый кодекс РФ (часть вторая) N 117-ФЗ, ст. 224 (ред. от 04.08.2026), legalacts.ru",
+   "read": "2026-11-01",
+   "kind": "secondary",
+   "quotes": "https://www.nalog.gov.ru",
+   "said": "1. Налоговая ставка устанавливается в следующих размерах: 13 процентов - если сумма налоговых баз, указанных в пункте 2.1 статьи 210 настоящего Кодекса, за налоговый период равна 2,4 миллиона рублей или менее 2,4 миллиона рублей; 312 тысяч рублей и 15 процентов суммы налоговых баз, указанных в пункте 2.1 статьи 210 настоящего Кодекса, превышающей 2,4 миллиона рублей, … 702 тысячи рублей и 18 процентов суммы налоговых баз, указанных в пункте 2.1 статьи 210 настоящего Кодекса, превышающей 5 миллионов рублей, … 3402 тысячи рублей и 20 процентов суммы налоговых баз, указанных в пункте 2.1 статьи 210 настоящего Кодекса, превышающей 20 миллионов рублей, … 9402 тысячи рублей и 22 процента суммы налоговых баз, указанных в пункте 2.1 статьи 210 настоящего Кодекса, превышающей 50 миллионов рублей, - если сумма налоговых баз, указанных в пункте 2.1 статьи 210 настоящего Кодекса, за налоговый период превышает 50 миллионов рублей. … 3. Налоговая ставка устанавливается в размере 30 процентов в отношении всех доходов, получаемых физическими лицами, не являющимися налоговыми резидентами Российской Федерации,"
+  },
+  {
+   "url": "https://legalacts.ru/kodeks/NK-RF-chast-2/razdel-viii/glava-23/statja-226/",
+   "title": "Налоговый кодекс РФ (часть вторая) N 117-ФЗ, ст. 226 (ред. от 04.08.2026), legalacts.ru",
+   "read": "2026-11-01",
+   "kind": "secondary",
+   "quotes": "https://www.nalog.gov.ru",
+   "said": "обязаны исчислить, удержать у налогоплательщика и уплатить сумму налога, исчисленную в соответствии со статьей 225 настоящего Кодекса … 4. Налоговые агенты обязаны удержать начисленную сумму налога непосредственно из доходов налогоплательщика при их фактической выплате"
+  },
+  {
+   "url": "https://legalacts.ru/kodeks/NK-RF-chast-2/razdel-viii/glava-23/statja-229/",
+   "title": "Налоговый кодекс РФ (часть вторая) N 117-ФЗ, ст. 229 (ред. от 04.08.2026), legalacts.ru",
+   "read": "2026-11-01",
+   "kind": "secondary",
+   "quotes": "https://www.nalog.gov.ru",
+   "said": "Налоговая декларация представляется не позднее 30 апреля года, следующего за истекшим налоговым периодом"
+  },
+  {
+   "url": "https://legalacts.ru/kodeks/NK-RF-chast-2/razdel-xi/glava-34/statja-425/",
+   "title": "Налоговый кодекс РФ (часть вторая), ст. 425 Тарифы страховых взносов, legalacts.ru",
+   "read": "2026-11-01",
+   "kind": "secondary",
+   "quotes": "https://www.nalog.gov.ru",
+   "said": "3. Начиная с 2023 года устанавливаются тарифы страховых взносов на обязательное пенсионное страхование, на обязательное социальное страхование на случай временной нетрудоспособности и в связи с материнством, на обязательное медицинское страхование в следующих единых размерах (единый тариф страховых взносов), если иное не предусмотрено настоящей главой: 1) в пределах установленной единой предельной величины базы для исчисления страховых взносов - 30 процентов; 2) свыше установленной единой предельной величины базы для исчисления страховых взносов - 15,1 процента."
+  },
+  {
+   "url": "https://www.consultant.ru/document/cons_doc_LAW_311977/e08381c7bc85397c1661bdeaa62be996df822d6e/",
+   "title": "Federal Law No. 422-FZ of 27.11.2018 on the professional income tax experiment, art. 10 (as amended 04.08.2026; ConsultantPlus consolidation)",
+   "read": "2026-11-01",
+   "kind": "primary",
+   "said": "Налоговые ставки устанавливаются в следующих размерах: 1) 4 процента в отношении доходов, полученных налогоплательщиками от реализации товаров (работ, услуг, имущественных прав) физическим лицам; 2) 6 процентов в отношении доходов, полученных налогоплательщиками от реализации товаров (работ, услуг, имущественных прав) индивидуальным предпринимателям для использования при ведении предпринимательской деятельности и юридическим лицам."
+  },
+  {
+   "url": "https://www.consultant.ru/document/cons_doc_LAW_311977/30ba0412dfedfe46e8061ea063246bac59da2b69/",
+   "title": "Federal Law No. 422-FZ, art. 4 (ConsultantPlus consolidation)",
+   "read": "2026-11-01",
+   "kind": "primary",
+   "said": "8) налогоплательщики, у которых доходы, учитываемые при определении налоговой базы, превысили в текущем календарном году 2,4 миллиона рублей;"
+  },
+  {
+   "url": "https://legalacts.ru/kodeks/NK-RF-chast-2/razdel-viii/glava-21/statja-164/",
+   "title": "Налоговый кодекс РФ (часть вторая) N 117-ФЗ, ст. 164 (ред. от 04.08.2026), legalacts.ru",
+   "read": "2026-11-01",
+   "kind": "secondary",
+   "quotes": "https://www.nalog.gov.ru",
+   "said": "3. Налогообложение производится по налоговой ставке 22 процента в случаях, не указанных в пунктах 1 , 2 и 4 настоящей статьи."
+  },
+  {
+   "url": "https://legalacts.ru/kodeks/NK-RF-chast-2/razdel-viii/glava-21/statja-145/",
+   "title": "Налоговый кодекс РФ (часть вторая) N 117-ФЗ, ст. 145 (ред. от 04.08.2026), legalacts.ru",
+   "read": "2026-11-01",
+   "kind": "secondary",
+   "quotes": "https://www.nalog.gov.ru",
+   "said": "имеют право на освобождение от исполнения обязанностей налогоплательщика, связанных с исчислением и уплатой налога (далее в настоящей статье - освобождение), если за три предшествующих последовательных календарных месяца сумма выручки от реализации товаров (работ, услуг) этих организаций или индивидуальных предпринимателей без учета налога не превысила в совокупности два миллиона рублей."
+  },
+  {
+   "url": "https://legalacts.ru/kodeks/NK-RF-chast-2/razdel-viii/glava-23/statja-221/",
+   "title": "Tax Code of the Russian Federation, part 2, art. 221 (legalacts.ru consolidation)",
+   "read": "2026-11-01",
+   "kind": "primary",
+   "said": "3) налогоплательщики, получающие авторские вознаграждения или вознаграждения за создание, исполнение или иное использование произведений науки, литературы, искусства, за создание иных результатов интеллектуальной деятельности, вознаграждения патентообладателям изобретений, полезных моделей, промышленных образцов, в сумме фактически произведенных и документально подтвержденных расходов. Если эти расходы не могут быть подтверждены документально, они принимаются к вычету в следующих размерах: … Создание литературных произведений, в том числе для театра, кино, эстрады и цирка 20 … Создание аудиовизуальных произведений (видео-, теле- и кинофильмов) 30 … оригинальной музыки для кино-, теле- и видеофильмов и театральных постановок 40 других музыкальных произведений, в том числе подготовленных к опубликованию 25 Исполнение произведений литературы и искусства 20"
+  }
+ ],
+ "blockers": [
+  {
+   "item": "social",
+   "sought": "The single base limit for insurance contributions for 2026 (the Government decree's figure); the self-employed (NPD) regime is now found in Law 422-FZ.",
+   "tried": {
+    "institution": "nalog.gov.ru pages HTTP 403 to curl 2026-11-01 (not read another way) || 2026-11-01 retry: nalog.gov.ru still HTTP 403 (not read another way); consultant.ru NK RF art. 421 (ed. 04.08.2026) read: it sets how the limit is indexed, not the 2026 figure; consultant.ru 'Календарь бухгалтера на 2026 год' (cons_doc_LAW_520626) read: no base-limit figure.",
+    "official-register": "legalacts.ru read for NK RF arts. 145, 164, 224, 225, 226, 229, 425; the 2026 base-limit decree and the professional income tax law (422-FZ) not read || 2026-11-01 retry: legalacts.ru site search for 'предельной величине базы для исчисления страховых взносов 2026' returned only unrelated federal laws; consultant.ru /law/ref/strahovye-vznosy/ and /law/ref/predelnaya-baza/ are 404.",
+    "web-search": "WebSearch 'consultant.ru статья 224 НК РФ налоговые ставки 13 15 18 20 22 процентов 2026' || 2026-11-01 retry: refused by the tool: 'this turn's web search budget is used up (limit: 200 WebSearch calls per turn, shared by every agent)' when querying 'Налоговый кодекс ... 2026' (2026-11-01).",
+    "trade-press": "no big-four summary for Russia (Deloitte and PwC pages 404) || 2026-11-01 retry: no big-four Russia page exists (earlier 404s); ConsultantPlus is the only consolidator reached and it gives no figure on the pages read.",
+    "archive": "web.archive.org not reachable (curl 000) 2026-11-01 || 2026-11-01 retry: archive.org availability API answers, but web.archive.org snapshots return HTTP 403 (http) or reset (https) from this environment."
+   }
+  }
+ ]
+}

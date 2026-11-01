@@ -1,0 +1,342 @@
+{
+ "topic": "tax.HK",
+ "read": "2026-11-01",
+ "note": "Read 2026-11-01 at the owner's word (\"Build those first 3 starting with ledger first\"; of the 21 countries read first: \"It should cover across every country\"; \"Retry the blocked tax facts once all countries land\"): the tax on a screen worker's pay in Hong Kong: a resident's income tax, social contributions, what is withheld at source, a non-resident artiste's withholding, an author's treatment, VAT and the tax year. Research and retry subagents (workbench/briefs/BRIEF-tax.md, BRIEF-tax-retry.md), every quote checked by the lead against its saved page.",
+ "figures": [
+  {
+   "item": "residents",
+   "finding": "Salaries tax is the lower of progressive rates on net chargeable income (2%, 6%, 10%, 14% on successive HK$50,000 bands, 17% on the remainder) and the standard rate on net income before allowances (15% on the first HK$5 million, 16% above).",
+   "value": {
+    "currency": "HKD",
+    "brackets": [
+     {
+      "from": 0,
+      "to": 50000,
+      "rate": 0.02
+     },
+     {
+      "from": 50000,
+      "to": 100000,
+      "rate": 0.06
+     },
+     {
+      "from": 100000,
+      "to": 150000,
+      "rate": 0.1
+     },
+     {
+      "from": 150000,
+      "to": 200000,
+      "rate": 0.14
+     },
+     {
+      "from": 200000,
+      "to": null,
+      "rate": 0.17
+     }
+    ],
+    "standardRate": [
+     {
+      "from": 0,
+      "to": 5000000,
+      "rate": 0.15
+     },
+     {
+      "from": 5000000,
+      "to": null,
+      "rate": 0.16
+     }
+    ],
+    "rule": "min(progressive on net chargeable income, standard on net income before allowances)",
+    "regional": null
+   },
+   "applies": "Years of assessment 2024/25 onwards until superseded (so 2026/27); no regional layer.",
+   "sources": [
+    {
+     "src": 0,
+     "said": "Tax payable is calculated at progressive rates on your net chargeable income or at standard rate on your net income (before deduction of the allowances), whichever is lower."
+    },
+    {
+     "src": 0,
+     "said": "On the First 50,000 2% 1,000 50,000 2% 1,000 On the Next 50,000 6% 3,000 50,000 6% 3,000 100,000 4,000 100,000 4,000 On the Next 50,000 10% 5,000 50,000 10% 5,000 150,000 9,000 150,000 9,000 On the Next 50,000 14% 7,000 50,000 14% 7,000 200,000 16,000 200,000 16,000 Remainder 17% 17%"
+    },
+    {
+     "src": 0,
+     "said": "Two-tiered Standard Rates On the first $5,000,000 of net income - 15% Remainder - 16%"
+    }
+   ]
+  },
+  {
+   "item": "residents",
+   "finding": "Every salaries taxpayer gets a basic allowance of HK$145,000 from 2026/27 (HK$132,000 before); mandatory MPF contributions are deductible up to HK$18,000; the 2025/26 tax is reduced by 100% up to HK$3,000.",
+   "value": {
+    "currency": "HKD",
+    "allowance": 145000,
+    "allowanceBefore2026_27": 132000,
+    "marriedAllowance": 290000,
+    "mpfDeductionMax": 18000,
+    "oneOffReduction": {
+     "year": "2025/26",
+     "share": 1.0,
+     "max": 3000
+    }
+   },
+   "applies": "Year of assessment 2026/27 onwards (allowances gazetted 22 May 2026).",
+   "sources": [
+    {
+     "src": 0,
+     "said": "Basic Allowance 132,000 132,000 132,000 132,000 145,000"
+    },
+    {
+     "src": 1,
+     "said": "The Financial Secretary proposed to increase the following allowances commencing from the year of assessment 2026/27: Year of Assessment 2025/26 $ From 2026/27 onwards $ Basic Allowance 132,000 145,000"
+    },
+    {
+     "src": 1,
+     "said": "The relevant legislation was passed by the Legislative Council and gazetted on 22 May 2026."
+    },
+    {
+     "src": 0,
+     "said": "Mandatory Contributions to Recognized Retirement Schemes 18,000 18,000 18,000 18,000 18,000"
+    },
+    {
+     "src": 0,
+     "said": "2025/26 100% 3,000 profits tax, salaries tax and tax under personal assessment"
+    }
+   ]
+  },
+  {
+   "item": "year",
+   "finding": "The year of assessment runs from 1 April to 31 March; the individual return (BIR60) is due within one month of issue (three months with a sole-proprietor business); provisional salaries tax for the coming year is charged with the assessment and paid 75% around January and 25% around April.",
+   "value": {
+    "currency": "HKD",
+    "start": "04-01",
+    "end": "03-31",
+    "returnDue": "1 month from issue (3 months with an unincorporated business; +1 month if e-filed for 2025/26)",
+    "provisional": {
+     "firstInstalment": 0.75,
+     "firstAround": "January",
+     "secondInstalment": 0.25,
+     "secondAround": "April"
+    }
+   },
+   "applies": "Individuals.",
+   "sources": [
+    {
+     "src": 2,
+     "said": "A year of assessment runs from 1 April to 31 March of the following year. For example, the year of assessment 2025/26 covers the 12 months from 1.4.2025 to 31.3.2026."
+    },
+    {
+     "src": 3,
+     "said": "within 1 month from the date of issue of the Tax Return if the taxpayer did not solely own any unincorporated business during the year of assessment; or - within 3 months from the date of issue of the Tax Return if the taxpayer solely owned any unincorporated business during the year of assessment"
+    },
+    {
+     "src": 2,
+     "said": "Provisional Salaries Tax for a year is usually based on the income less"
+    },
+    {
+     "src": 2,
+     "said": "($35,890 x 25%) around April 2027"
+    }
+   ]
+  },
+  {
+   "item": "withholding",
+   "finding": "No tax is withheld from pay: salaries tax is assessed on the employee and collected with provisional salaries tax based on the prior year's income; Hong Kong imposes no withholding tax.",
+   "value": {
+    "payeWithholding": false,
+    "collection": "assessment plus provisional salaries tax"
+   },
+   "applies": "Residents' salaries and freelance fees (a self-employed person pays profits tax by assessment).",
+   "sources": [
+    {
+     "src": 4,
+     "said": "Notably, Hong Kong does not impose sales tax, VAT, withholding tax, capital gains tax, estate tax, or dividend tax."
+    },
+    {
+     "src": 2,
+     "said": "Provisional Salaries Tax for a year is usually based on the income less"
+    }
+   ]
+  },
+  {
+   "item": "social",
+   "finding": "Employee and employer each pay 5% of relevant income into MPF, with no employee contribution below HK$7,100 a month and a cap at HK$30,000 (HK$1,500 each); a self-employed person pays 5% between HK$85,200 and HK$360,000 a year (max HK$18,000).",
+   "value": {
+    "currency": "HKD",
+    "employee": {
+     "rate": 0.05,
+     "minMonthly": 7100,
+     "maxMonthly": 30000,
+     "capMonthly": 1500
+    },
+    "employer": {
+     "rate": 0.05,
+     "maxMonthly": 30000,
+     "capMonthly": 1500
+    },
+    "selfEmployed": {
+     "rate": 0.05,
+     "minAnnual": 85200,
+     "maxAnnual": 360000,
+     "capAnnual": 18000
+    }
+   },
+   "applies": "Mandatory Provident Fund, 2026.",
+   "sources": [
+    {
+     "src": 5,
+     "said": "Employees and employers are both required to make mandatory contributions of 5% of the employee’s relevant income into the employee’s MPF account, subject to the minimum and maximum relevant income levels."
+    },
+    {
+     "src": 5,
+     "said": "For monthly paid employees, the current minimum and maximum relevant income levels are $7,100 and $30,000 respectively."
+    },
+    {
+     "src": 6,
+     "said": "Less than $7,100/month (or $85,200/year) Not required $7,100 to $30,000/month (or $85,200 to $360,000/year) Relevant income x 5% More than $30,000/month (or $360,000/year) $1,500/month (or $18,000/year)"
+    }
+   ]
+  },
+  {
+   "item": "social",
+   "finding": "A self-employed screen worker pays profits tax on an unincorporated business at 7.5% on the first HK$2 million of assessable profits and 15% above.",
+   "value": {
+    "currency": "HKD",
+    "brackets": [
+     {
+      "from": 0,
+      "to": 2000000,
+      "rate": 0.075
+     },
+     {
+      "from": 2000000,
+      "to": null,
+      "rate": 0.15
+     }
+    ]
+   },
+   "applies": "Unincorporated businesses, 2018/19 onwards.",
+   "sources": [
+    {
+     "src": 7,
+     "said": "Two-tiered rates Year of Assessment Tax Rates 2018/19 onwards 7.5% on assessable profits up to $2,000,000; and 15% on any part of assessable profits over $2,000,000"
+    }
+   ]
+  },
+  {
+   "item": "nonResident",
+   "finding": "A non-resident entertainer is charged profits tax (15%, or 7.5% on the first HK$2 million) on the gross sum less one-third deemed expenses, assessed in the Hong Kong payer's name; the payer retains 10% of the gross (11% through a corporate agent) to settle it. Performance includes films and television.",
+   "value": {
+    "currency": "HKD",
+    "retained": 0.1,
+    "retainedCorporateAgent": 0.11,
+    "deemedExpenses": 0.3333,
+    "base": "gross amount payable plus tax borne",
+    "rate": "profits tax (individual 15%, two-tier 7.5% to HK$2m)",
+    "coversFilm": true,
+    "final": "assessed to the Hong Kong payer; objection possible"
+   },
+   "applies": "Non-resident entertainers, 2020/21 onwards.",
+   "sources": [
+    {
+     "src": 8,
+     "said": "any participation by the entertainer or sportsman in or for sound recording, films, videos, radio, television or other similar transmissions (whether live or recorded)."
+    },
+    {
+     "src": 8,
+     "said": "the Assessor will allow a deduction equal to one-third of the gross amount received (plus the tax borne by the Hong Kong payer, if any)."
+    },
+    {
+     "src": 8,
+     "said": "If the performance is procured directly 10% with the entertainer / sportsman"
+    },
+    {
+     "src": 7,
+     "said": "Performance procured directly with the non-resident entertainers or sportsmen Standard rate Year of Assessment Tax Rate Amount to be Retained 2008/09 onwards (Note) 15% 10% of gross amount payable"
+    }
+   ]
+  },
+  {
+   "item": "vat",
+   "finding": "Hong Kong has no VAT, GST or sales tax, so a freelancer's fee bears none.",
+   "value": {
+    "vat": null
+   },
+   "applies": "2026.",
+   "sources": [
+    {
+     "src": 4,
+     "said": "Notably, Hong Kong does not impose sales tax, VAT, withholding tax, capital gains tax, estate tax, or dividend tax."
+    }
+   ]
+  }
+ ],
+ "country": "HK",
+ "sources": [
+  {
+   "url": "https://www.ird.gov.hk/eng/pdf/pam61e.pdf",
+   "title": "PAM 61(e) Salaries Tax / Personal Assessment Allowances, Deductions and Tax Rate Table (IRD, August 2026)",
+   "read": "2026-11-01",
+   "kind": "primary",
+   "said": "Tax payable is calculated at progressive rates on your net chargeable income or at standard rate on your net income (before deduction of the allowances), whichever is lower. … On the First 50,000 2% 1,000 50,000 2% 1,000 On the Next 50,000 6% 3,000 50,000 6% 3,000 100,000 4,000 100,000 4,000 On the Next 50,000 10% 5,000 50,000 10% 5,000 150,000 9,000 150,000 9,000 On the Next 50,000 14% 7,000 50,000 14% 7,000 200,000 16,000 200,000 16,000 Remainder 17% 17% … Two-tiered Standard Rates On the first $5,000,000 of net income - 15% Remainder - 16% … Basic Allowance 132,000 132,000 132,000 132,000 145,000 … Mandatory Contributions to Recognized Retirement Schemes 18,000 18,000 18,000 18,000 18,000 … 2025/26 100% 3,000 profits tax, salaries tax and tax under personal assessment"
+  },
+  {
+   "url": "https://www.ird.gov.hk/eng/tax/budget.htm",
+   "title": "2026-27 Budget – Tax Measures (IRD)",
+   "read": "2026-11-01",
+   "kind": "primary",
+   "said": "The Financial Secretary proposed to increase the following allowances commencing from the year of assessment 2026/27: Year of Assessment 2025/26 $ From 2026/27 onwards $ Basic Allowance 132,000 145,000 … The relevant legislation was passed by the Legislative Council and gazetted on 22 May 2026."
+  },
+  {
+   "url": "https://www.ird.gov.hk/eng/pdf/pam39e.pdf",
+   "title": "PAM 39(e) Salaries Tax and Personal Assessment (IRD)",
+   "read": "2026-11-01",
+   "kind": "primary",
+   "said": "A year of assessment runs from 1 April to 31 March of the following year. For example, the year of assessment 2025/26 covers the 12 months from 1.4.2025 to 31.3.2026. … Provisional Salaries Tax for a year is usually based on the income less … ($35,890 x 25%) around April 2027"
+  },
+  {
+   "url": "https://www.ird.gov.hk/eng/tax/ind_ctr.htm",
+   "title": "Completion and Filing of Tax Return - Individuals (BIR60) (IRD)",
+   "read": "2026-11-01",
+   "kind": "primary",
+   "said": "within 1 month from the date of issue of the Tax Return if the taxpayer did not solely own any unincorporated business during the year of assessment; or - within 3 months from the date of issue of the Tax Return if the taxpayer solely owned any unincorporated business during the year of assessment"
+  },
+  {
+   "url": "https://www.hkengage.gov.hk/en/essentials/basics/tax",
+   "title": "Tax (HKEngage, HKSAR Government)",
+   "read": "2026-11-01",
+   "kind": "primary",
+   "said": "Notably, Hong Kong does not impose sales tax, VAT, withholding tax, capital gains tax, estate tax, or dividend tax."
+  },
+  {
+   "url": "https://www.mpfa.org.hk/en/mpf-system/mandatory-contributions/employees",
+   "title": "Mandatory contributions: employees (MPFA)",
+   "read": "2026-11-01",
+   "kind": "primary",
+   "said": "Employees and employers are both required to make mandatory contributions of 5% of the employee’s relevant income into the employee’s MPF account, subject to the minimum and maximum relevant income levels. … For monthly paid employees, the current minimum and maximum relevant income levels are $7,100 and $30,000 respectively."
+  },
+  {
+   "url": "https://www.mpfa.org.hk/en/mpf-system/mandatory-contributions/self-employed-persons",
+   "title": "Mandatory contributions: self-employed persons (MPFA)",
+   "read": "2026-11-01",
+   "kind": "primary",
+   "said": "Less than $7,100/month (or $85,200/year) Not required $7,100 to $30,000/month (or $85,200 to $360,000/year) Relevant income x 5% More than $30,000/month (or $360,000/year) $1,500/month (or $18,000/year)"
+  },
+  {
+   "url": "https://www.gov.hk/en/residents/taxes/taxfiling/taxrates/profitsrates.htm",
+   "title": "Tax Rates of Profits Tax (GovHK)",
+   "read": "2026-11-01",
+   "kind": "primary",
+   "said": "Two-tiered rates Year of Assessment Tax Rates 2018/19 onwards 7.5% on assessable profits up to $2,000,000; and 15% on any part of assessable profits over $2,000,000 … Performance procured directly with the non-resident entertainers or sportsmen Standard rate Year of Assessment Tax Rate Amount to be Retained 2008/09 onwards (Note) 15% 10% of gross amount payable"
+  },
+  {
+   "url": "https://www.ird.gov.hk/eng/pdf/pam48e.pdf",
+   "title": "PAM 48(e) Taxation of non-resident entertainers and sportsmen in Hong Kong (IRD)",
+   "read": "2026-11-01",
+   "kind": "primary",
+   "said": "any participation by the entertainer or sportsman in or for sound recording, films, videos, radio, television or other similar transmissions (whether live or recorded). … the Assessor will allow a deduction equal to one-third of the gross amount received (plus the tax borne by the Hong Kong payer, if any). … If the performance is procured directly 10% with the entertainer / sportsman"
+  }
+ ],
+ "blockers": []
+}

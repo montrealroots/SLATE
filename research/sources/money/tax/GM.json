@@ -1,0 +1,242 @@
+{
+ "topic": "tax.GM",
+ "read": "2026-11-01",
+ "note": "Read 2026-11-01 at the owner's word (\"Build those first 3 starting with ledger first\"; of the 21 countries read first: \"It should cover across every country\"; \"Retry the blocked tax facts once all countries land\"): the tax on a screen worker's pay in Gambia: a resident's income tax, social contributions, what is withheld at source, a non-resident artiste's withholding, an author's treatment, VAT and the tax year. Research and retry subagents (workbench/briefs/BRIEF-tax.md, BRIEF-tax-retry.md), every quote checked by the lead against its saved page.",
+ "figures": [
+  {
+   "item": "residents",
+   "finding": "Employment and individual income is taxed on annual bands: nothing to GMD 36,000, then 5% to 46,000, 10% to 56,000, 15% to 66,000, 20% to 76,000 and 25% above (the Revenue Authority's current PAYE calculator; its 2018 brochure had bands GMD 12,000 lower); a business owner pays the higher of that scale and 1% of audited turnover (2% otherwise), and a business turning over less than GMD 500,000 a year pays 3% of turnover.",
+   "value": {
+    "currency": "GMD",
+    "brackets": [
+     {
+      "from": 0,
+      "to": 36000,
+      "rate": 0
+     },
+     {
+      "from": 36000,
+      "to": 46000,
+      "rate": 0.05
+     },
+     {
+      "from": 46000,
+      "to": 56000,
+      "rate": 0.1
+     },
+     {
+      "from": 56000,
+      "to": 66000,
+      "rate": 0.15
+     },
+     {
+      "from": 66000,
+      "to": 76000,
+      "rate": 0.2
+     },
+     {
+      "from": 76000,
+      "to": null,
+      "rate": 0.25
+     }
+    ],
+    "businessMinimum": {
+     "auditedTurnover": 0.01,
+     "otherTurnover": 0.02
+    },
+    "smallBusiness": {
+     "turnoverBelow": 500000,
+     "rate": 0.03
+    }
+   },
+   "applies": "2026 (GRA PAYE calculator and FAQ read 2026-11-01; the Finance Act setting the 36,000 band was not read).",
+   "sources": [
+    {
+     "src": 0,
+     "said": "0 - 36,000 Bracket … value=\"0.0000\" … 36,001 - 46,000 Bracket … value=\"5.0000\" … 46,001 - 56,000 Bracket … value=\"10.0000\" … 56,001 - 66,000 Bracket … value=\"15.0000\" … 66,001 - 76,000 Bracket … value=\"20.0000\" … 76,001 and over Bracket … value=\"25.0000\""
+    },
+    {
+     "src": 1,
+     "said": "Any employee who earns incomes above D3, 000 per month or above D36, 000 annually arising from employment in The Gambia is subjected to employment income tax."
+    },
+    {
+     "src": 1,
+     "said": "The rate of the PIT is the higher of the applicable tax rates in the 1st schedule or 1% of turnover for audited accounts or (2% of turnover in any other case). However, if business turnover is under D500, 000 per annum, then the tax liability is 3% of turnover."
+    },
+    {
+     "src": 2,
+     "said": "The rates of income tax imposed on the chargeable income of an individual or body of persons is as at 2018."
+    },
+    {
+     "src": 2,
+     "said": "1 D0 – D24,000 0% 2 D24,001 – D34,000 5% 3 D34,001 – D44,000 10% 4 D44,001- D54,000 15% 5 D54,001 – D64,000 20% 6 Above D64,000 25%"
+    },
+    {
+     "src": 2,
+     "said": "However, if business turnover is under D500, 000 per annum, then the tax liability is 3% of turnover. This is a final tax,"
+    }
+   ]
+  },
+  {
+   "item": "year",
+   "finding": "The tax year is the calendar year; quarterly instalments fall due on the 15th of the month after each quarter and the final return and payment three months after year end (31 March 2027).",
+   "value": {
+    "taxYear": {
+     "from": "2026-01-01",
+     "to": "2026-12-31"
+    },
+    "instalments": "15th of the month after each quarter",
+    "returnDue": "2027-03-31",
+    "currency": "GMD"
+   },
+   "applies": "Gambian individuals.",
+   "sources": [
+    {
+     "src": 2,
+     "said": "The tax year is the Calendar Year."
+    },
+    {
+     "src": 2,
+     "said": "The closing dates for the payments of quarterly instalments are the 15th of the month following the end of the quarter. The closing date for filing and payment of final tax liability is 3 months after the end of the tax year."
+    }
+   ]
+  },
+  {
+   "item": "social",
+   "finding": "A private-sector employee in the National Provident Fund pays 5% of basic salary and the employer 10% (15% in all); public-sector employees are in the Federated Pension Scheme, where the employer alone pays 15% of gross salary by the 15th of the next month; the employer also pays 1% of total earnings, at most GMD 15 a month, to the Industrial Injuries Compensation Fund; a self-employed screen worker, outside the Act, may join voluntarily and declares the contribution on earnings.",
+   "value": {
+    "currency": "GMD",
+    "npf": {
+     "employee": 0.05,
+     "employer": 0.1,
+     "base": "basic salary"
+    },
+    "fps": {
+     "employer": 0.15,
+     "base": "gross salary",
+     "due": "15th of next month"
+    },
+    "iicf": {
+     "employer": 0.01,
+     "maxMonthly": 15
+    },
+    "selfEmployed": "voluntary, declared level"
+   },
+   "applies": "2026 (rates as stated 'at present' on the SSHFC pages; the SSHFC Act 2015 itself not read).",
+   "sources": [
+    {
+     "src": 3,
+     "said": "The contribution rate is 15% of basis salary of the employee, Five (5) per cent (%) of which is deducted from the employee’s wages’ while the remaining ten (10) per cent (%) is paid by the employer on behalf of the employee."
+    },
+    {
+     "src": 3,
+     "said": "Any employer or employee to whom the Social Security and Housing Finance Corporation Act does not apply, may voluntarily register with the fund. Members registered voluntarily should declare their level of contribution based on their earnings."
+    },
+    {
+     "src": 4,
+     "said": "The monthly contributions are entirely the responsibility of the employer and payments are calculated at 15% of the employees’ gross salary (i.e. basic plus all other fixed allowances combined)."
+    },
+    {
+     "src": 5,
+     "said": "Under the IICF, the Act requires employers to pay the entire contribution each month on behalf of their workers. At present the contribution rate is 1% of total earnings; that is to say basic salary plus all other fixed allowances subject to a maximum contribution ceiling of D15."
+    }
+   ]
+  },
+  {
+   "item": "withholding",
+   "finding": "Employers withhold income tax from pay under PAYE at the first-schedule rates; a payer retaining a contractor for work, labour or technical or consultancy services withholds 10% of the contract price from a Gambian resident and 15% from a non-resident, as an advance payment of the contractor's tax.",
+   "value": {
+    "employee": "PAYE at the schedule rates",
+    "contractsResident": 0.1,
+    "contractsNonResident": 0.15,
+    "final": false
+   },
+   "applies": "2026; whether a performer's or artiste's fee counts as a contract for services is not stated (see the nonResident blocker).",
+   "sources": [
+    {
+     "src": 1,
+     "said": "Withholding tax is a deduction from payments made to contractors and subcontractors for the carrying out of work, supply of labour or materials and/or provision of technical/consultancy services. … The tax paid is an advance payment on behalf of the contractor/subcontractor. … The withholding tax rate on contracts is based on the contract price; 10% for Gambian residents, and 15% for non-residents"
+    },
+    {
+     "src": 1,
+     "said": "Employment income tax is charged on employment earnings through the Pay As You Earn (PAYE) system."
+    }
+   ]
+  },
+  {
+   "item": "vat",
+   "finding": "VAT is 15% on taxable supplies of goods and services; a business with taxable supplies of at least GMD 2,000,000 in a tax year must register and charge VAT, and one with GMD 1,000,000 or more may register voluntarily.",
+   "value": {
+    "currency": "GMD",
+    "standard": 0.15,
+    "registrationThreshold": 2000000,
+    "voluntaryFrom": 1000000
+   },
+   "applies": "2026 (GRA FAQ read 2026-11-01).",
+   "sources": [
+    {
+     "src": 1,
+     "said": "The standard VAT rate is 15 percent. This rate is applied to all goods and services unless they are specifically exempted. … All businesses with taxable supplies of at least D2, 000, 000 in a tax year are required to compulsorily register and charge VAT. In addition, businesses with taxable supplies of D1, 000, 000 and above in a tax year may voluntarily register."
+    }
+   ]
+  }
+ ],
+ "country": "GM",
+ "sources": [
+  {
+   "url": "https://www.gra.gm/calculators/pay-as-you-earn-paye-",
+   "title": "Pay as You Earn (PAYE) calculator (Gambia Revenue Authority)",
+   "read": "2026-11-01",
+   "kind": "primary",
+   "said": "0 - 36,000 Bracket … value=\"0.0000\" … 36,001 - 46,000 Bracket … value=\"5.0000\" … 46,001 - 56,000 Bracket … value=\"10.0000\" … 56,001 - 66,000 Bracket … value=\"15.0000\" … 66,001 - 76,000 Bracket … value=\"20.0000\" … 76,001 and over Bracket … value=\"25.0000\""
+  },
+  {
+   "url": "https://www.gra.gm/domestic-faqs",
+   "title": "Domestic Taxes FAQs (Gambia Revenue Authority)",
+   "read": "2026-11-01",
+   "kind": "primary",
+   "said": "Any employee who earns incomes above D3, 000 per month or above D36, 000 annually arising from employment in The Gambia is subjected to employment income tax. … The rate of the PIT is the higher of the applicable tax rates in the 1st schedule or 1% of turnover for audited accounts or (2% of turnover in any other case). However, if business turnover is under D500, 000 per annum, then the tax liability is 3% of turnover. … Withholding tax is a deduction from payments made to contractors and subcontractors for the carrying out of work, supply of labour or materials and/or provision of technical/consultancy services. … The tax paid is an advance payment on behalf of the contractor/subcontractor. … The withholding tax rate on contracts is based on the contract price; 10% for Gambian residents, and 15% for non-residents … Employment income tax is charged on employment earnings through the Pay As You Earn (PAYE) system. … The standard VAT rate is 15 percent. This rate is applied to all goods and services unless they are specifically exempted. … All businesses with taxable supplies of at least D2, 000, 000 in a tax year are required to compulsorily register and charge VAT. In addition, businesses with taxable supplies of D1, 000, 000 and above in a tax year may voluntarily register."
+  },
+  {
+   "url": "https://gra.gm/download-file/8d0cd78a-d217-11ed-9b31-029254d29bb1",
+   "title": "Personal Income Tax Brochure (Gambia Revenue Authority; rates \"as at 2018\")",
+   "read": "2026-11-01",
+   "kind": "primary",
+   "said": "The rates of income tax imposed on the chargeable income of an individual or body of persons is as at 2018. … 1 D0 – D24,000 0% 2 D24,001 – D34,000 5% 3 D34,001 – D44,000 10% 4 D44,001- D54,000 15% 5 D54,001 – D64,000 20% 6 Above D64,000 25% … However, if business turnover is under D500, 000 per annum, then the tax liability is 3% of turnover. This is a final tax, … The tax year is the Calendar Year. … The closing dates for the payments of quarterly instalments are the 15th of the month following the end of the quarter. The closing date for filing and payment of final tax liability is 3 months after the end of the tax year."
+  },
+  {
+   "url": "https://www.sshfc.gm/national-provident-fund",
+   "title": "National Provident Fund (Social Security and Housing Finance Corporation, The Gambia)",
+   "read": "2026-11-01",
+   "kind": "primary",
+   "said": "The contribution rate is 15% of basis salary of the employee, Five (5) per cent (%) of which is deducted from the employee’s wages’ while the remaining ten (10) per cent (%) is paid by the employer on behalf of the employee. … Any employer or employee to whom the Social Security and Housing Finance Corporation Act does not apply, may voluntarily register with the fund. Members registered voluntarily should declare their level of contribution based on their earnings."
+  },
+  {
+   "url": "https://www.sshfc.gm/federated-pension-scheme",
+   "title": "Federated Pension Scheme (SSHFC, The Gambia)",
+   "read": "2026-11-01",
+   "kind": "primary",
+   "said": "The monthly contributions are entirely the responsibility of the employer and payments are calculated at 15% of the employees’ gross salary (i.e. basic plus all other fixed allowances combined)."
+  },
+  {
+   "url": "https://www.sshfc.gm/industrial-injury-compensation-fund",
+   "title": "Industrial Injuries Compensation Fund (SSHFC, The Gambia)",
+   "read": "2026-11-01",
+   "kind": "primary",
+   "said": "Under the IICF, the Act requires employers to pay the entire contribution each month on behalf of their workers. At present the contribution rate is 1% of total earnings; that is to say basic salary plus all other fixed allowances subject to a maximum contribution ceiling of D15."
+  }
+ ],
+ "blockers": [
+  {
+   "item": "nonResident",
+   "sought": "Whether a non-resident performer's, writer's or director's fee bears a specific withholding (artistes' rule) in The Gambia, beyond the 15% on non-residents' contracts for services, and whether any is final.",
+   "tried": {
+    "institution": "gra.gm brochure read (download-file link); gra.gov.gm not reachable (curl 000); no 2026 PAYE table or VAT page found || 2026-11-01 retry: gra.gov.gm and gra.gm probed again (gra.gm redirects; no 2026 rate table or VAT page reached); sshfc.gm read for social security only. || 2026-11-01 retry: www.gra.gm domestic FAQs, PAYE and VAT calculators read: no artistes' rule stated.",
+    "official-register": "Income and Value Added Tax Act 2012 and Finance Acts 2025/2026 not found on a reachable host || 2026-11-01 retry: no Gambian legislation database reachable (laws not on sshfc.gm or gra.gm); the Finance Act 2026 not found.",
+    "web-search": "WebSearch 'Gambia Revenue Authority personal income tax rates bands 2026 GMD first 24,000': results report a GMD 36,000 tax-free band from January 2025 (payroll vendors, not read) || 2026-11-01 retry: refused: the session's web-search limit (200 calls per turn, shared) was reached before this query ('Gambia Revenue Authority withholding 2026 Finance Act').",
+    "trade-press": "no big-four summary reachable (Deloitte, PwC 404) || 2026-11-01 retry: taxsummaries.pwc.com/gambia returns 404 (checked 2026-11-01).",
+    "archive": "web.archive.org not reachable (curl 000) 2026-11-01 || 2026-11-01 retry: web.archive.org connection reset through the proxy (curl 000)."
+   }
+  }
+ ]
+}

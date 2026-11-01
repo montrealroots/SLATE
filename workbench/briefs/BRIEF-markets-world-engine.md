@@ -34,3 +34,12 @@ writing a line. The main law in CLAUDE.md binds every line; so do `BRIEF-identit
   Node 22.22.0 first on PATH (`PATH=/opt/node22220/node-v22.22.0-linux-x64/bin:$PATH`) and report its last lines.
   Do not edit research, the register, the registry's other engines, the catalog, HANDOFF or git.
 Report back in under 200 words.
+
+## Split (the lead, 2026-11-01)
+Four agents build this at once, one per role, each owning only its own compile (`tools/person/markets` for the actor,
+`tools/person/markets-<role>` for the others), its engine's `markets.json` and code (`src/person/acting`,
+`src/person/work`, `src/person/directing`, `src/person/producing`), their tests and configs; the proposal is
+`$S/readers/markets-world-<role>.json`. Another agent is extending the tax engine at the same time. Run your own
+configs and mutation, not the whole gate (the lead runs it); read the others' files, never edit them; where your
+engine needs a change in a shared file (`src/person/identity`, `src/person/unions`, `src/person/permits`, the
+registry), put it in the proposal.

@@ -1,0 +1,205 @@
+{
+ "topic": "tax.KN",
+ "read": "2026-11-01",
+ "note": "Read 2026-11-01 at the owner's word (\"Build those first 3 starting with ledger first\"; of the 21 countries read first: \"It should cover across every country\"; \"Retry the blocked tax facts once all countries land\"): the tax on a screen worker's pay in Saint Kitts and Nevis: a resident's income tax, social contributions, what is withheld at source, a non-resident artiste's withholding, an author's treatment, VAT and the tax year. Research and retry subagents (workbench/briefs/BRIEF-tax.md, BRIEF-tax-retry.md), every quote checked by the lead against its saved page.",
+ "figures": [
+  {
+   "item": "residents",
+   "finding": "St Kitts and Nevis levies no income tax on individuals: the Income Tax Act (Chapter 20.22) charged individuals from 1967, but income tax on individuals was abolished in 1980; only companies pay it.",
+   "value": {
+    "incomeTax": null,
+    "law": "Income Tax Act Chap. 20.22 (Revised 2017)",
+    "abolishedForIndividuals": 1980
+   },
+   "applies": "2026.",
+   "sources": [
+    {
+     "src": 0,
+     "said": "The Income Tax Act was passed in 1966 and came into force on the first day of January 1967. It made provisions for income tax to be charged on both individuals and corporate entities. Income tax on individuals was abolished in 1980."
+    },
+    {
+     "src": 1,
+     "said": "Income Tax Act Chapter 20.22 Revised 2017"
+    },
+    {
+     "src": 2,
+     "said": "There is no individual income tax in St. Kitts and Nevis."
+    }
+   ]
+  },
+  {
+   "item": "social",
+   "finding": "Employee and employer each pay 5% social security on monthly earnings up to XCD 6,500; the employer adds 1% employment injury, 3% housing and social development levy and 1% severance. The employee's housing and social development levy is 3.5% on monthly earnings from XCD 2,253.34 to 6,500, 10% to 8,000 and 12% above.",
+   "value": {
+    "currency": "XCD",
+    "employee": {
+     "socialSecurity": 0.05,
+     "ceilingMonthly": 6500,
+     "HSDL": [
+      {
+       "from": 0,
+       "to": 2253.33,
+       "rate": 0
+      },
+      {
+       "from": 2253.33,
+       "to": 6500,
+       "rate": 0.035
+      },
+      {
+       "from": 6500,
+       "to": 8000,
+       "rate": 0.1
+      },
+      {
+       "from": 8000,
+       "to": null,
+       "rate": 0.12
+      }
+     ]
+    },
+    "employer": {
+     "socialSecurity": 0.05,
+     "injury": 0.01,
+     "HSDL": 0.03,
+     "severance": 0.01
+    }
+   },
+   "applies": "2026; the levy (Housing and Social Development Levy Act Chap. 20.21) works as the tax on pay.",
+   "sources": [
+    {
+     "src": 2,
+     "said": "Employers contribute 5% of employee earnings for social security (main scheme) and"
+    },
+    {
+     "src": 2,
+     "said": "1% of employee earnings for employment injury benefits. The contribution ceiling for the main scheme and employment injury"
+    },
+    {
+     "src": 2,
+     "said": "Employees contribute 5% of earnings to social security, up to a contribution ceiling of XCD 6,500. The housing and"
+    },
+    {
+     "src": 2,
+     "said": "3.5% on monthly earnings between XCD 2,253.34 and XCD 6,500, 10% on monthly earnings between XCD 6,500.01 and 8,000,"
+    }
+   ]
+  },
+  {
+   "item": "withholding",
+   "finding": "No income tax is withheld from pay; the employer deducts social security and the housing and social development levy.",
+   "value": {
+    "incomeTax": null,
+    "deducted": [
+     "social security",
+     "HSDL"
+    ]
+   },
+   "applies": "2026.",
+   "sources": [
+    {
+     "src": 2,
+     "said": "development levy also applies, but is not deducted until monthly earnings exceed XCD 2,253.33. The levy is charged at a rate of"
+    }
+   ]
+  },
+  {
+   "item": "nonResident",
+   "finding": "A non-resident pays no individual income tax, but royalties and technical-service fees paid to a non-resident bear 15% withholding unless a treaty reduces it.",
+   "value": {
+    "royalties": 0.15,
+    "technicalServices": 0.15
+   },
+   "applies": "Whether a performance fee counts as a technical-service fee was not found.",
+   "sources": [
+    {
+     "src": 2,
+     "said": "Fees for technical services: There is no withholding tax on technical service fee payments to residents; a 15% withholding tax"
+    },
+    {
+     "src": 2,
+     "said": "Royalties: There is no withholding tax on royalty payments to residents; a 15% withholding tax applies on payments to"
+    }
+   ]
+  },
+  {
+   "item": "authors",
+   "finding": "A resident author's royalties are untaxed (no individual income tax and no withholding to residents); royalties to a non-resident bear 15%.",
+   "value": {
+    "resident": 0,
+    "nonResident": 0.15
+   },
+   "applies": "2026.",
+   "sources": [
+    {
+     "src": 2,
+     "said": "Royalties 0% 0% 15% 15%"
+    }
+   ]
+  },
+  {
+   "item": "vat",
+   "finding": "VAT is 17% (10% on accommodation and restaurants); a provider of specified professional services registers once supplies exceed XCD 96,000, other businesses XCD 150,000.",
+   "value": {
+    "currency": "XCD",
+    "standard": 0.17,
+    "reduced": 0.1,
+    "threshold": {
+     "professionalServices": 96000,
+     "other": 150000
+    }
+   },
+   "applies": "2026.",
+   "sources": [
+    {
+     "src": 2,
+     "said": "Registration: The registration threshold is a total value of supplies exceeding XCD 96,000 for specific professional services,"
+    },
+    {
+     "src": 2,
+     "said": "Rates: The standard rate is 17% and applies to the supply of goods and services."
+    }
+   ]
+  },
+  {
+   "item": "year",
+   "finding": "With no individual income tax, an individual files no income tax return; the levy and contributions are monthly through payroll.",
+   "value": {
+    "individualReturn": null
+   },
+   "applies": "2026.",
+   "sources": [
+    {
+     "src": 0,
+     "said": "Income tax on individuals was abolished in 1980."
+    }
+   ]
+  }
+ ],
+ "country": "KN",
+ "sources": [
+  {
+   "url": "https://www.sknird.com/corporate-income-tax/",
+   "title": "Corporate Income Tax (Inland Revenue Department, St Kitts and Nevis)",
+   "read": "2026-11-01",
+   "kind": "primary",
+   "said": "The Income Tax Act was passed in 1966 and came into force on the first day of January 1967. It made provisions for income tax to be charged on both individuals and corporate entities. Income tax on individuals was abolished in 1980."
+  },
+  {
+   "url": "https://www.sknird.com/tax-laws/",
+   "title": "Tax Laws (Inland Revenue Department, St Kitts and Nevis)",
+   "read": "2026-11-01",
+   "kind": "primary",
+   "said": "Income Tax Act Chapter 20.22 Revised 2017"
+  },
+  {
+   "url": "https://www.deloitte.com/content/dam/assets-shared/docs/services/tax/2026/dttl-tax-stkittsandnevishighlights-2026.pdf",
+   "title": "Deloitte International Tax: St. Kitts and Nevis Highlights 2026",
+   "read": "2026-11-01",
+   "kind": "secondary",
+   "quotes": "https://www.sknird.com/tax-laws/",
+   "said": "There is no individual income tax in St. Kitts and Nevis. … Employers contribute 5% of employee earnings for social security (main scheme) and … 1% of employee earnings for employment injury benefits. The contribution ceiling for the main scheme and employment injury … Employees contribute 5% of earnings to social security, up to a contribution ceiling of XCD 6,500. The housing and … 3.5% on monthly earnings between XCD 2,253.34 and XCD 6,500, 10% on monthly earnings between XCD 6,500.01 and 8,000, … development levy also applies, but is not deducted until monthly earnings exceed XCD 2,253.33. The levy is charged at a rate of … Fees for technical services: There is no withholding tax on technical service fee payments to residents; a 15% withholding tax … Royalties: There is no withholding tax on royalty payments to residents; a 15% withholding tax applies on payments to … Royalties 0% 0% 15% 15% … Registration: The registration threshold is a total value of supplies exceeding XCD 96,000 for specific professional services, … Rates: The standard rate is 17% and applies to the supply of goods and services."
+  }
+ ],
+ "blockers": []
+}

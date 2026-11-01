@@ -1,0 +1,227 @@
+{
+ "topic": "tax.WS",
+ "read": "2026-11-01",
+ "note": "Read 2026-11-01 at the owner's word (\"Build those first 3 starting with ledger first\"; of the 21 countries read first: \"It should cover across every country\"; \"Retry the blocked tax facts once all countries land\"): the tax on a screen worker's pay in Samoa: a resident's income tax, social contributions, what is withheld at source, a non-resident artiste's withholding, an author's treatment, VAT and the tax year. Research and retry subagents (workbench/briefs/BRIEF-tax.md, BRIEF-tax-retry.md), every quote checked by the lead against its saved page.",
+ "figures": [
+  {
+   "item": "residents",
+   "finding": "An individual's salary and wage income is taxed at nothing on the first WST 15,000 a year, 20% from $15,001 to $25,000 and 27% above, the rates in force since 1 January 2018 and still published by the Ministry for Revenue.",
+   "value": {
+    "currency": "WST",
+    "from": "2018-01-01",
+    "allowance": 15000,
+    "brackets": [
+     {
+      "from": 0,
+      "to": 15000,
+      "rate": 0
+     },
+     {
+      "from": 15000,
+      "to": 25000,
+      "rate": 0.2
+     },
+     {
+      "from": 25000,
+      "to": null,
+      "rate": 0.27
+     }
+    ],
+    "regional": null
+   },
+   "applies": "Salary and wage income",
+   "sources": [
+    {
+     "src": 0,
+     "said": "FORTNIGHTLY AND ANNUAL INCOME TAX RATES … The new fortnightly and annual tax deduction from salary & wage income applies to pay periods ending on and after 1 January 2018. FORTNIGHTLY TAX ANNUAL TAX $0 - $576 NIL $0 - $15,000 NIL $577 - $962 20% $15,001 - $25,000 20% Over $962 27% Over $25,000 27%"
+    }
+   ]
+  },
+  {
+   "item": "withholding",
+   "finding": "Employers deduct PAYE fortnightly: nothing to WST 576, 20% to $962 and 27% above.",
+   "value": {
+    "currency": "WST",
+    "period": "fortnight",
+    "brackets": [
+     {
+      "from": 0,
+      "to": 576,
+      "rate": 0
+     },
+     {
+      "from": 576,
+      "to": 962,
+      "rate": 0.2
+     },
+     {
+      "from": 962,
+      "to": null,
+      "rate": 0.27
+     }
+    ]
+   },
+   "applies": "Pay periods ending on or after 1 January 2018",
+   "sources": [
+    {
+     "src": 0,
+     "said": "NOTICE TO EMPLOYERS … FORTNIGHTLY TAX ANNUAL TAX $0 - $576 NIL $0 - $15,000 NIL $577 - $962 20% $15,001 - $25,000 20% Over $962 27% Over $25,000 27%"
+    }
+   ]
+  },
+  {
+   "item": "residents",
+   "finding": "The Ministry for Revenue's own 2025 return (filed in 2026) still taxes an individual's income at nothing to WST 15,000, 20% from 15,000 to 25,000 and WST 2,000 plus 27% above 25,000, the same schedule as 2018.",
+   "value": {
+    "currency": "WST",
+    "brackets": [
+     {
+      "from": 0,
+      "to": 15000,
+      "rate": 0
+     },
+     {
+      "from": 15000,
+      "to": 25000,
+      "rate": 0.2
+     },
+     {
+      "from": 25000,
+      "to": null,
+      "rate": 0.27
+     }
+    ],
+    "incomeYear": 2025
+   },
+   "applies": "Individuals (sole traders and salary earners) for the 2025 income year, returns filed by 31 March 2026",
+   "sources": [
+    {
+     "src": 1,
+     "said": "If the amount in box 21B is below $15,000 go straight to question 22 and enter $0.00 tax to pay in box 22A OR • If the amount in box 21B is over $15,000 and less than $25,000 use column 1 OR • If the amount in box 21B is over $25,000 please use column 2. … Subtract $15,000 from A and print answer in B … Multiply amount in B by 20% and print answer in C … Subtract $25,000 from A and print answer in B … Multiply amount in B by 27% and print answer in C … Add $2,000 to amount in C"
+    }
+   ]
+  },
+  {
+   "item": "year",
+   "finding": "The income year ends 31 December; the return and any tax are due by 31 March of the next year, and provisional tax for the following year is paid in three instalments on 31 March, 31 July and 31 October.",
+   "value": {
+    "taxYear": "calendar",
+    "returnDue": "03-31",
+    "provisionalTax": [
+     "03-31",
+     "07-31",
+     "10-31"
+    ]
+   },
+   "applies": "Individuals with a standard 31 December balance date",
+   "sources": [
+    {
+     "src": 1,
+     "said": "Year Ended 31 Dec … Send your return to Inland Revenue Services, Box 1877, Apia on or before the 31st of March, unless you have an exten- sion of time or a non-standard balance date approved by the CEO of the Ministry for Revenue … If you have tax to pay, this is due by the 31st March 2026. … First provisional tax payment due 31 March 2026 … Second provisional tax payment due 31 July 2026 25B $ Third provisional tax payment due 31 October 2026"
+    }
+   ]
+  },
+  {
+   "item": "social",
+   "finding": "Every employer and every worker pays an Accident Compensation Corporation levy of 1 sene per tala of wages (1% each), with each pay run; the Samoa National Provident Fund contribution was not read.",
+   "value": {
+    "accLevy": {
+     "employer": 0.01,
+     "worker": 0.01,
+     "base": "wages"
+    },
+    "snpf": null
+   },
+   "applies": "Employers and workers in Samoa",
+   "sources": [
+    {
+     "src": 2,
+     "said": "How much levy do I need to pay and when? Every employer and worker pays a levy of $0.01 sene for every $1.00 of wages. Payment time depends on how often wages are paid."
+    }
+   ]
+  },
+  {
+   "item": "vat",
+   "finding": "A business must register for VAGST once annual turnover passes WST 130,000, and files VAGST returns every two months; an unregistered person may not charge VAGST (the rate was not found on the Ministry's pages read).",
+   "value": {
+    "currency": "WST",
+    "threshold": 130000,
+    "filing": "two-monthly",
+    "standard": null
+   },
+   "applies": "VAGST Act 2015",
+   "sources": [
+    {
+     "src": 3,
+     "said": "You are not permitted to charge VAGST on goods or services supplied if you are not registered for VAGST. … A taxable period is how often you file your VAGST returns which is two monthly. … [VAGST Threshold: $130,000 p.a]"
+    }
+   ]
+  }
+ ],
+ "country": "WS",
+ "sources": [
+  {
+   "url": "https://revenue.gov.ws/wp-content/uploads/2022/09/IR58.pdf",
+   "title": "IR58 Notice to Employers: Fortnightly and Annual Income Tax Rates (Ministry for Revenue, Samoa), listed on revenue.gov.ws Tax Forms",
+   "read": "2026-11-01",
+   "kind": "primary",
+   "said": "FORTNIGHTLY AND ANNUAL INCOME TAX RATES … The new fortnightly and annual tax deduction from salary & wage income applies to pay periods ending on and after 1 January 2018. FORTNIGHTLY TAX ANNUAL TAX $0 - $576 NIL $0 - $15,000 NIL $577 - $962 20% $15,001 - $25,000 20% Over $962 27% Over $25,000 27% … NOTICE TO EMPLOYERS … FORTNIGHTLY TAX ANNUAL TAX $0 - $576 NIL $0 - $15,000 NIL $577 - $962 20% $15,001 - $25,000 20% Over $962 27% Over $25,000 27%"
+  },
+  {
+   "url": "https://revenue.gov.ws/wp-content/uploads/2025/01/IR2-2025.pdf",
+   "title": "IR2 2025 Sole Trader Income Tax Return, Ministry for Revenue, Samoa",
+   "read": "2026-11-01",
+   "kind": "primary",
+   "said": "If the amount in box 21B is below $15,000 go straight to question 22 and enter $0.00 tax to pay in box 22A OR • If the amount in box 21B is over $15,000 and less than $25,000 use column 1 OR • If the amount in box 21B is over $25,000 please use column 2. … Subtract $15,000 from A and print answer in B … Multiply amount in B by 20% and print answer in C … Subtract $25,000 from A and print answer in B … Multiply amount in B by 27% and print answer in C … Add $2,000 to amount in C … Year Ended 31 Dec … Send your return to Inland Revenue Services, Box 1877, Apia on or before the 31st of March, unless you have an exten- sion of time or a non-standard balance date approved by the CEO of the Ministry for Revenue … If you have tax to pay, this is due by the 31st March 2026. … First provisional tax payment due 31 March 2026 … Second provisional tax payment due 31 July 2026 25B $ Third provisional tax payment due 31 October 2026"
+  },
+  {
+   "url": "https://acc.gov.ws/index.php/faq/",
+   "title": "Frequently Asked Questions, Accident Compensation Corporation Samoa",
+   "read": "2026-11-01",
+   "kind": "primary",
+   "said": "How much levy do I need to pay and when? Every employer and worker pays a levy of $0.01 sene for every $1.00 of wages. Payment time depends on how often wages are paid."
+  },
+  {
+   "url": "https://revenue.gov.ws/wp-content/uploads/2022/09/IR31-VAGST-Registration-Form-1.pdf",
+   "title": "IR31 VAGST Registration Form (VAGST Act 2015), Ministry for Revenue, Samoa",
+   "read": "2026-11-01",
+   "kind": "primary",
+   "said": "You are not permitted to charge VAGST on goods or services supplied if you are not registered for VAGST. … A taxable period is how often you file your VAGST returns which is two monthly. … [VAGST Threshold: $130,000 p.a]"
+  }
+ ],
+ "blockers": [
+  {
+   "item": "social",
+   "sought": "Samoa National Provident Fund (SNPF) contributions on pay (the ACC levy is found)",
+   "tried": {
+    "institution": "snpf.ws not tried || retry-8 2026-11-01: revenue.gov.ws home answers (after one HTTP/2 error): its forms list read; IR2 2025 return (rates, year, due dates), IR31 VAGST registration form (threshold) and the May 2026 due-date notice downloaded; acc.gov.ws FAQ read (ACC levy); snpf.ws and www.snpf.org.ws: no answer",
+    "official-register": "not reached || retry-8 2026-11-01: PacLII refused in the earlier pass; the VAGST Act 2015 and the National Provident Fund Act not on the Ministry or ACC pages read (ACC 'Legislations' page not opened)",
+    "web-search": "not run || retry-8 2026-11-01: a search for 'Samoa VAGST rate 15% SNPF employer employee contribution non-resident withholding' was refused by the search tool (shared per-turn limit of 200 searches reached)",
+    "trade-press": "not used || retry-8 2026-11-01: none reachable this turn",
+    "archive": "web.archive.org unreachable from this environment || retry-8 2026-11-01: web.archive.org: connection reset and availability API 429 on 2026-11-01"
+   }
+  },
+  {
+   "item": "nonResident",
+   "sought": "Withholding on a non-resident performer's fee.",
+   "tried": {
+    "institution": "revenue.gov.ws inner pages unreachable || retry-8 2026-11-01: revenue.gov.ws forms list read: the only non-resident form is 'International-Transportation-NRWHT' (international transport), none for performers; snpf.ws not relevant",
+    "official-register": "PacLII refused || retry-8 2026-11-01: PacLII refused in the earlier pass; the VAGST Act 2015 and the National Provident Fund Act not on the Ministry or ACC pages read (ACC 'Legislations' page not opened)",
+    "web-search": "not run || retry-8 2026-11-01: a search for 'Samoa VAGST rate 15% SNPF employer employee contribution non-resident withholding' was refused by the search tool (shared per-turn limit of 200 searches reached)",
+    "trade-press": "not found || retry-8 2026-11-01: none reachable this turn",
+    "archive": "web.archive.org unreachable from this environment || retry-8 2026-11-01: web.archive.org: connection reset and availability API 429 on 2026-11-01"
+   }
+  },
+  {
+   "item": "vat",
+   "sought": "The VAGST rate (the WST 130,000 threshold and two-monthly filing are found)",
+   "tried": {
+    "institution": "revenue.gov.ws lists IR31 VAGST form only || retry-8 2026-11-01: revenue.gov.ws home answers (after one HTTP/2 error): its forms list read; IR2 2025 return (rates, year, due dates), IR31 VAGST registration form (threshold) and the May 2026 due-date notice downloaded; acc.gov.ws FAQ read (ACC levy); snpf.ws and www.snpf.org.ws: no answer",
+    "official-register": "not reached || retry-8 2026-11-01: PacLII refused in the earlier pass; the VAGST Act 2015 and the National Provident Fund Act not on the Ministry or ACC pages read (ACC 'Legislations' page not opened)",
+    "web-search": "search budget exhausted || retry-8 2026-11-01: a search for 'Samoa VAGST rate 15% SNPF employer employee contribution non-resident withholding' was refused by the search tool (shared per-turn limit of 200 searches reached)",
+    "trade-press": "not found || retry-8 2026-11-01: none reachable this turn",
+    "archive": "web.archive.org unreachable from this environment || retry-8 2026-11-01: web.archive.org: connection reset and availability API 429 on 2026-11-01"
+   }
+  }
+ ]
+}

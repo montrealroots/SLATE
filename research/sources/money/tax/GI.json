@@ -1,0 +1,270 @@
+{
+ "topic": "tax.GI",
+ "read": "2026-11-01",
+ "note": "Read 2026-11-01 at the owner's word (\"Build those first 3 starting with ledger first\"; of the 21 countries read first: \"It should cover across every country\"; \"Retry the blocked tax facts once all countries land\"): the tax on a screen worker's pay in Gibraltar: a resident's income tax, social contributions, what is withheld at source, a non-resident artiste's withholding, an author's treatment, VAT and the tax year. Research and retry subagents (workbench/briefs/BRIEF-tax.md, BRIEF-tax-retry.md), every quote checked by the lead against its saved page.",
+ "figures": [
+  {
+   "item": "follows",
+   "finding": "Gibraltar, a British overseas territory, has its own income tax and social insurance; United Kingdom tax does not apply.",
+   "value": {
+    "sovereign": "GB",
+    "takesSovereignTax": false,
+    "levies": "own income tax"
+   },
+   "applies": "Gibraltar",
+   "sources": [
+    {
+     "src": 0,
+     "said": "Income tax is charged on income accruing in or derived from Gibraltar."
+    }
+   ]
+  },
+  {
+   "item": "residents",
+   "finding": "An individual is assessed under whichever system gives less tax. Gross Income Based System (income to £25,000): 6% on the first £10,000, 20% on the next £7,000, 28% on the rest; above £25,000 (assessable income to £100,000): 16% on £17,000, 19% on £8,000, 25% on £15,000, 28% on £65,000, 25% on the remainder. Allowances Based System: 14% on the first £4,000, 17% on the next £12,000, 39% on the balance, with taxable income up to £11,450 exempt. These are the 2025/26 rates; the 2026/27 Budget left them unchanged.",
+   "value": {
+    "currency": "GBP",
+    "yearOfRates": "2025/26, unchanged for 2026/27",
+    "gibs": {
+     "upTo25000": [
+      {
+       "from": 0,
+       "to": 10000,
+       "rate": 0.06
+      },
+      {
+       "from": 10000,
+       "to": 17000,
+       "rate": 0.2
+      },
+      {
+       "from": 17000,
+       "to": null,
+       "rate": 0.28
+      }
+     ],
+     "above25000": [
+      {
+       "from": 0,
+       "to": 17000,
+       "rate": 0.16
+      },
+      {
+       "from": 17000,
+       "to": 25000,
+       "rate": 0.19
+      },
+      {
+       "from": 25000,
+       "to": 40000,
+       "rate": 0.25
+      },
+      {
+       "from": 40000,
+       "to": 105000,
+       "rate": 0.28
+      },
+      {
+       "from": 105000,
+       "to": null,
+       "rate": 0.25
+      }
+     ]
+    },
+    "abs": {
+     "brackets": [
+      {
+       "from": 0,
+       "to": 4000,
+       "rate": 0.14
+      },
+      {
+       "from": 4000,
+       "to": 16000,
+       "rate": 0.17
+      },
+      {
+       "from": 16000,
+       "to": null,
+       "rate": 0.39
+      }
+     ],
+     "exemptUpTo": 11450,
+     "taperTo": 19500
+    },
+    "rule": "lower of the two systems",
+    "regional": null
+   },
+   "applies": "Individuals assessable in Gibraltar",
+   "sources": [
+    {
+     "src": 0,
+     "said": "Under the Allowances Based System, the individual will be taxed on their income less allowances ( see the Deductions section ). For the 2025/26 tax year, the applicable tax rates are: Taxable income Rate of tax (%) First GBP 4,000 14 Next GBP 12,000 17 Balance 39 Persons whose taxable income does not exceed GBP 11,450 per annum are exempt from tax. A tapering relief is available for individuals whose taxable income is between GBP 11,451 and GBP 19,500. Gross Income Based System Under the Gross Income Based System, the applicable income bands and tax rates for the 2025/26 tax year are as follows for income up to GBP 25,000: Taxable income Rate of tax (%) First GBP 10,000 6 Next GBP 7,000 20 Balance 28 The income bands and tax rates for income above GBP 25,000 are: Taxable income Rate of tax (%) (gross assessable income GBP 100,000 or less) First GBP 17,000 16 Next GBP 8,000 19 Next GBP 15,000 25 Next GBP 65,000 28 Remainder of assessable income 25"
+    },
+    {
+     "src": 1,
+     "said": "No changes to personal income tax rates that currently apply to individuals were announced."
+    }
+   ]
+  },
+  {
+   "item": "social",
+   "finding": "Social insurance is due every week worked: the employee pays 10% of gross earnings (minimum £14.34, maximum £40.79 a week) and the employer 20% (minimum £30.45, maximum £53.55 a week); a self-employed person pays too. The amounts were left as from 1 July 2025.",
+   "value": {
+    "currency": "GBP",
+    "employee": {
+     "rate": 0.1,
+     "minWeekly": 14.34,
+     "maxWeekly": 40.79,
+     "minMonthly": 62.11,
+     "maxMonthly": 176.76
+    },
+    "employer": {
+     "rate": 0.2,
+     "minWeekly": 30.45,
+     "maxWeekly": 53.55,
+     "minMonthly": 131.95,
+     "maxMonthly": 232.05
+    }
+   },
+   "applies": "Employees and self-employed persons",
+   "sources": [
+    {
+     "src": 2,
+     "said": "Social insurance contributions are payable by every employee or self-employed person in any week in which they work. Employees' contributions are calculated as 10% of gross earnings, subject to a minimum of GBP 14.34 per week (GBP 62.11 per month) and maximum of GBP 40.79 per week (GBP 176.76 per month). … contributions are calculated as 20% of gross earnings, subject to a minimum of GBP 30.45 per week (GBP 131.95 per month) and maximum of GBP 53.55 per week (GBP 232.05 per month)."
+    },
+    {
+     "src": 1,
+     "said": "Social security contributions for both employers and employees remain unchanged with the minimum and maximum amounts for employers' and employees' social security payments being the same as of 1 July 2025."
+    }
+   ]
+  },
+  {
+   "item": "withholding",
+   "finding": "Employers deduct tax through PAYE by the employee's tax code; there is no other withholding except on construction subcontractors (25%); those outside PAYE make payments on account on 31 January and 30 June.",
+   "value": {
+    "paye": true,
+    "paymentsOnAccount": [
+     "01-31",
+     "06-30"
+    ]
+   },
+   "applies": "Employees and the self-employed",
+   "sources": [
+    {
+     "src": 3,
+     "said": "There are no WHTs in Gibraltar, except in the following cases: Payments to subcontractors in the construction industry. … Payments to employees under the PAYE system. Under the PAYE regulations, employers are obligated to deduct an amount of tax in accordance with the employee's tax code."
+    },
+    {
+     "src": 4,
+     "said": "Where the source of income is not collected under the PAYE system, individuals are required to make two payments on account, on 31 January and 30 June, in each year of assessment"
+    }
+   ]
+  },
+  {
+   "item": "nonResident",
+   "finding": "A non-resident pays tax on income accruing in or derived from Gibraltar, but one working there for less than 30 days in aggregate in the year is reimbursed the tax paid on that income; no artistes' withholding exists.",
+   "value": {
+    "rate": "resident rates",
+    "shortStayRelief": "less than 30 days in aggregate: tax reimbursed",
+    "withholding": null
+   },
+   "applies": "Non-resident performers and other visitors",
+   "sources": [
+    {
+     "src": 0,
+     "said": "The 'accrued in and derived from' principle is softened for individuals who carry out activities in Gibraltar for a period of less than 30 days in aggregate during the year of assessment, so that such individuals will be reimbursed for taxes paid on the income from their activities in Gibraltar."
+    }
+   ]
+  },
+  {
+   "item": "authors",
+   "finding": "No author regime was read; the 2026 Budget added an allowance for resident musicians' live-performance fees reinvested in equipment and instruments, backdated to 1 July 2019.",
+   "value": {
+    "musiciansReinvestmentAllowance": true
+   },
+   "applies": "Resident musicians",
+   "sources": [
+    {
+     "src": 1,
+     "said": "A new tax allowance was introduced for fees that Gibraltar-resident musicians receive for live performances, to the extent that earnings are reinvested into equipment and instruments."
+    }
+   ]
+  },
+  {
+   "item": "vat",
+   "finding": "There is no VAT in Gibraltar.",
+   "value": {
+    "rate": 0
+   },
+   "applies": "Supplies in Gibraltar",
+   "sources": [
+    {
+     "src": 2,
+     "said": "There is no VAT in Gibraltar."
+    }
+   ]
+  },
+  {
+   "item": "year",
+   "finding": "The year of assessment runs from 1 July to 30 June; the return is due by 30 November after its end.",
+   "value": {
+    "currency": "GBP",
+    "start": "07-01",
+    "end": "06-30",
+    "returnDue": "11-30"
+   },
+   "applies": "Individuals",
+   "sources": [
+    {
+     "src": 4,
+     "said": "The taxable period for individuals runs from 1 July, or the commencement of the source of income (if later), to 30 June in the year of assessment. … The due date for filing is 30 November."
+    }
+   ]
+  }
+ ],
+ "country": "GI",
+ "sources": [
+  {
+   "url": "https://taxsummaries.pwc.com/gibraltar/individual/taxes-on-personal-income",
+   "title": "Gibraltar - Individual - Taxes on personal income (PwC, reviewed 22 August 2026)",
+   "read": "2026-11-01",
+   "kind": "secondary",
+   "quotes": "https://www.gibraltar.gov.gi/income-tax-office",
+   "said": "Income tax is charged on income accruing in or derived from Gibraltar. … Under the Allowances Based System, the individual will be taxed on their income less allowances ( see the Deductions section ). For the 2025/26 tax year, the applicable tax rates are: Taxable income Rate of tax (%) First GBP 4,000 14 Next GBP 12,000 17 Balance 39 Persons whose taxable income does not exceed GBP 11,450 per annum are exempt from tax. A tapering relief is available for individuals whose taxable income is between GBP 11,451 and GBP 19,500. Gross Income Based System Under the Gross Income Based System, the applicable income bands and tax rates for the 2025/26 tax year are as follows for income up to GBP 25,000: Taxable income Rate of tax (%) First GBP 10,000 6 Next GBP 7,000 20 Balance 28 The income bands and tax rates for income above GBP 25,000 are: Taxable income Rate of tax (%) (gross assessable income GBP 100,000 or less) First GBP 17,000 16 Next GBP 8,000 19 Next GBP 15,000 25 Next GBP 65,000 28 Remainder of assessable income 25 … The 'accrued in and derived from' principle is softened for individuals who carry out activities in Gibraltar for a period of less than 30 days in aggregate during the year of assessment, so that such individuals will be reimbursed for taxes paid on the income from their activities in Gibraltar."
+  },
+  {
+   "url": "https://globaltaxnews.ey.com/news/2026-1485-gibraltar-issues-budget-2026",
+   "title": "Gibraltar issues Budget 2026 (EY Global Tax News, 14 July 2026)",
+   "read": "2026-11-01",
+   "kind": "secondary",
+   "quotes": "https://www.gibraltar.gov.gi/income-tax-office",
+   "said": "No changes to personal income tax rates that currently apply to individuals were announced. … Social security contributions for both employers and employees remain unchanged with the minimum and maximum amounts for employers' and employees' social security payments being the same as of 1 July 2025. … A new tax allowance was introduced for fees that Gibraltar-resident musicians receive for live performances, to the extent that earnings are reinvested into equipment and instruments."
+  },
+  {
+   "url": "https://taxsummaries.pwc.com/gibraltar/individual/other-taxes",
+   "title": "Gibraltar - Individual - Other taxes (PwC, reviewed 22 August 2026)",
+   "read": "2026-11-01",
+   "kind": "secondary",
+   "quotes": "https://www.gibraltar.gov.gi/income-tax-office",
+   "said": "Social insurance contributions are payable by every employee or self-employed person in any week in which they work. Employees' contributions are calculated as 10% of gross earnings, subject to a minimum of GBP 14.34 per week (GBP 62.11 per month) and maximum of GBP 40.79 per week (GBP 176.76 per month). … contributions are calculated as 20% of gross earnings, subject to a minimum of GBP 30.45 per week (GBP 131.95 per month) and maximum of GBP 53.55 per week (GBP 232.05 per month). … There is no VAT in Gibraltar."
+  },
+  {
+   "url": "https://taxsummaries.pwc.com/gibraltar/corporate/withholding-taxes",
+   "title": "Gibraltar - Corporate - Withholding taxes (PwC, reviewed 22 August 2026)",
+   "read": "2026-11-01",
+   "kind": "secondary",
+   "quotes": "https://www.gibraltar.gov.gi/income-tax-office",
+   "said": "There are no WHTs in Gibraltar, except in the following cases: Payments to subcontractors in the construction industry. … Payments to employees under the PAYE system. Under the PAYE regulations, employers are obligated to deduct an amount of tax in accordance with the employee's tax code."
+  },
+  {
+   "url": "https://taxsummaries.pwc.com/gibraltar/individual/tax-administration",
+   "title": "Gibraltar - Individual - Tax administration (PwC, reviewed 22 August 2026)",
+   "read": "2026-11-01",
+   "kind": "secondary",
+   "quotes": "https://www.gibraltar.gov.gi/income-tax-office",
+   "said": "Where the source of income is not collected under the PAYE system, individuals are required to make two payments on account, on 31 January and 30 June, in each year of assessment … The taxable period for individuals runs from 1 July, or the commencement of the source of income (if later), to 30 June in the year of assessment. … The due date for filing is 30 November."
+  }
+ ],
+ "blockers": []
+}

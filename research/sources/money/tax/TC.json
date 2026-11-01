@@ -1,0 +1,175 @@
+{
+ "topic": "tax.TC",
+ "read": "2026-11-01",
+ "note": "Read 2026-11-01 at the owner's word (\"Build those first 3 starting with ledger first\"; of the 21 countries read first: \"It should cover across every country\"; \"Retry the blocked tax facts once all countries land\"): the tax on a screen worker's pay in Turks and Caicos Islands: a resident's income tax, social contributions, what is withheld at source, a non-resident artiste's withholding, an author's treatment, VAT and the tax year. Research and retry subagents (workbench/briefs/BRIEF-tax.md, BRIEF-tax-retry.md), every quote checked by the lead against its saved page.",
+ "figures": [
+  {
+   "item": "follows",
+   "finding": "The Turks and Caicos Islands, a British overseas territory, does not take United Kingdom tax and levies no income tax of its own.",
+   "value": {
+    "sovereign": "GB",
+    "takesSovereignTax": false,
+    "levies": "no income tax"
+   },
+   "applies": "The Turks and Caicos Islands",
+   "sources": [
+    {
+     "src": 0,
+     "said": "1.1 Tax Regimes The Turks and Caicos Islands has no direct taxation of any kind. … 1.3 Income Tax Planning The Turks and Caicos Islands does not have income tax."
+    },
+    {
+     "src": 1,
+     "said": "Other than social security/national insurance payments, referred to in Section 6.6, there are no direct personal taxes in Turks and Caicos Islands (TCI)."
+    }
+   ]
+  },
+  {
+   "item": "residents",
+   "finding": "The Turks and Caicos Islands levy no income tax or other direct personal tax; the only charge on pay is national insurance and national health insurance.",
+   "value": {
+    "incomeTax": null,
+    "currency": "USD"
+   },
+   "applies": "All individuals",
+   "sources": [
+    {
+     "src": 0,
+     "said": "1.1 Tax Regimes The Turks and Caicos Islands has no direct taxation of any kind. … 1.3 Income Tax Planning The Turks and Caicos Islands does not have income tax."
+    },
+    {
+     "src": 1,
+     "said": "Other than social security/national insurance payments, referred to in Section 6.6, there are no direct personal taxes in Turks and Caicos Islands (TCI)."
+    }
+   ]
+  },
+  {
+   "item": "social",
+   "finding": "National insurance was set to reach 12% of pay from 1 April 2024 (employer 6.5%, employee stated as 5.6%), on pay up to $4,000 a month, ignoring earnings under $108 a month; national health insurance adds 6% (3% each) on pay up to $7,800 a month with a $50 minimum monthly contribution. These figures come from a 2022 law-firm guide citing the Regulations.",
+   "value": {
+    "currency": "USD",
+    "nationalInsurance": {
+     "from": "2024-04-01",
+     "total": 0.12,
+     "employer": 0.065,
+     "employeeStated": 0.056,
+     "ceilingMonthly": 4000,
+     "floorMonthly": 108
+    },
+    "nationalHealthInsurance": {
+     "total": 0.06,
+     "employer": 0.03,
+     "employee": 0.03,
+     "ceilingMonthly": 7800,
+     "minimumMonthly": 50
+    }
+   },
+   "applies": "Employees aged 16 to 65",
+   "sources": [
+    {
+     "src": 1,
+     "said": "With effect from April 1, 2022, the total liability for national insurance contributions is equivalent to 10 percent (increasing to 11 percent effective April 1, 2023, and 12 percent effective April 1, 2024), apportioned between the employer and employee as follows: • employers are required to pay 5.5 percent (increasing to 6 percent effective April 1, 2023, and 6.5 percent effective April 1, 2024); • employees are required to pay 4.5 percent (increasing to 5 percent effective April 1, 2023, and 5.6 percent effective April 1, 2024). … For the purposes of the liability, there is a salary cap of 4,000 dollars per month. Earnings of an employee of less than 25 dollars per week, or 108 dollars per month, are ignored. … There is a total liability for national insurance contributions amounting to 6 percent (salary cap for purposes of liability, 7,800 dollars per month, but with a minimum monthly contribution of 50 dollars). Of that 6 percent, the employer and the employee pay 3 percent each."
+    }
+   ]
+  },
+  {
+   "item": "withholding",
+   "finding": "No income tax is withheld; the employee's national insurance and national health insurance shares are withheld from pay and paid in with the employer's.",
+   "value": {
+    "incomeTax": null
+   },
+   "applies": "Employees",
+   "sources": [
+    {
+     "src": 1,
+     "said": "The employee contribution to national insurance and national health insurance is withheld from salary and deposited directly into the relevant funds along with the employer’s contribution."
+    }
+   ]
+  },
+  {
+   "item": "nonResident",
+   "finding": "A non-resident performer, writer or director pays no income tax in the Turks and Caicos Islands.",
+   "value": {
+    "rate": 0,
+    "final": true
+   },
+   "applies": "Non-residents",
+   "sources": [
+    {
+     "src": 1,
+     "said": "There are no residency rules for tax purposes as there are no direct personal taxes in TCI."
+    }
+   ]
+  },
+  {
+   "item": "authors",
+   "finding": "With no income tax, authors' fees and royalties are not taxed as income.",
+   "value": {
+    "incomeTax": null
+   },
+   "applies": "Authors",
+   "sources": [
+    {
+     "src": 0,
+     "said": "The Turks and Caicos Islands does not have income tax."
+    }
+   ]
+  },
+  {
+   "item": "vat",
+   "finding": "There is no VAT or GST on a freelancer's fee.",
+   "value": {
+    "rate": 0
+   },
+   "applies": "Supplies in the Turks and Caicos Islands",
+   "sources": [
+    {
+     "src": 1,
+     "said": "Value Added Tax (VAT) There is no VAT in TCI."
+    }
+   ]
+  }
+ ],
+ "country": "TC",
+ "sources": [
+  {
+   "url": "https://practiceguides.chambers.com/practice-guides/private-wealth-2026/turks-caicos",
+   "title": "Private Wealth 2026 - Turks & Caicos (Chambers and Partners, updated 11 August 2026)",
+   "read": "2026-11-01",
+   "kind": "secondary",
+   "quotes": "https://www.gov.tc/",
+   "said": "1.1 Tax Regimes The Turks and Caicos Islands has no direct taxation of any kind. … 1.3 Income Tax Planning The Turks and Caicos Islands does not have income tax."
+  },
+  {
+   "url": "https://www.misickstanbrook.tc/wp-content/uploads/2022/08/Country-Guides_TurksCaicosIslands_August2022.pdf",
+   "title": "Country Guide: Turks and Caicos Islands (Misick & Stanbrook, August 2022)",
+   "read": "2026-11-01",
+   "kind": "secondary",
+   "quotes": "https://www.tcinib.tc/",
+   "said": "Other than social security/national insurance payments, referred to in Section 6.6, there are no direct personal taxes in Turks and Caicos Islands (TCI). … With effect from April 1, 2022, the total liability for national insurance contributions is equivalent to 10 percent (increasing to 11 percent effective April 1, 2023, and 12 percent effective April 1, 2024), apportioned between the employer and employee as follows: • employers are required to pay 5.5 percent (increasing to 6 percent effective April 1, 2023, and 6.5 percent effective April 1, 2024); • employees are required to pay 4.5 percent (increasing to 5 percent effective April 1, 2023, and 5.6 percent effective April 1, 2024). … For the purposes of the liability, there is a salary cap of 4,000 dollars per month. Earnings of an employee of less than 25 dollars per week, or 108 dollars per month, are ignored. … There is a total liability for national insurance contributions amounting to 6 percent (salary cap for purposes of liability, 7,800 dollars per month, but with a minimum monthly contribution of 50 dollars). Of that 6 percent, the employer and the employee pay 3 percent each. … The employee contribution to national insurance and national health insurance is withheld from salary and deposited directly into the relevant funds along with the employer’s contribution. … There are no residency rules for tax purposes as there are no direct personal taxes in TCI. … Value Added Tax (VAT) There is no VAT in TCI."
+  }
+ ],
+ "blockers": [
+  {
+   "item": "social",
+   "sought": "The 2026 national insurance rates (employee and employer shares), the ceiling, and the self-employed rate, from the National Insurance Board or the Regulations",
+   "tried": {
+    "institution": "2026-11-01: tcinib.tc and www.tcinib.tc: TLS certificate expired, not read another way; NIB press release on app.locowise.com: certificate expired || retry 2026-11-01: tcinib.tc and www.tcinib.tc: curl \"SSL certificate problem: certificate has expired\" again (not read another way)",
+    "official-register": "2026-11-01: gov.tc/mof/?p=7123 \"National Insurance Board\": HTTP 404; gov.tc/revenue/: 404; no Regulations text found online || retry 2026-11-01: gov.tc site search (?s=national insurance contribution) answers HTTP 406, not read another way; no Regulations text reached",
+    "web-search": "2026-11-01: \"Turks and Caicos Islands National Insurance Board contribution rates 2026 ...\": NIB rates of 12% private sector, 9.15% public officers and 10% self-employed from 1 April 2024 quoted from the NIB site (not readable here); Rivermate pages give 5% and 6.5% employee shares inconsistently || retry 2026-11-01: refused by the search tool on 2026-11-01: the turn's shared limit of 200 searches was reached; not worked around",
+    "trade-press": "2026-11-01: Misick & Stanbrook guide (2022) read and cited, its 6.5% + 5.6% split does not add to the 12% it states || retry 2026-11-01: Misick & Stanbrook 2022 (cited) and Deloitte 2026 (saved) unchanged",
+    "archive": "2026-11-01: archive.org lists tcinib.tc snapshot 20260711074221; web.archive.org connection reset through the proxy, not read || retry 2026-11-01: web.archive.org: \"Recv failure: Connection reset by peer\" again 2026-11-01"
+   }
+  },
+  {
+   "item": "social",
+   "sought": "National health insurance rates for 2026 from the National Health Insurance Board",
+   "tried": {
+    "institution": "2026-11-01: tcinhip.tc billing, FAQ and about pages read: deadlines and a 6% payroll contribution in the actuarial explanation, no current split or ceiling || retry 2026-11-01: tcinhip.tc WordPress search (\"contribution rate\", \"ceiling\") returns only the Billing, FAQ and Benefits pages read before; the FAQ re-read: a 6% payroll contribution in the actuarial explanation and \"the 5% contribution, which is lower than NIB\", no current split or wage ceiling",
+    "official-register": "2026-11-01: tcinhip.tc/national-health-insurance-ordinance/ listed but the Contributions Regulations text not found || retry 2026-11-01: tcinhip.tc/national-health-insurance-ordinance/ lists the Ordinance; the Contributions Regulations still not found",
+    "web-search": "2026-11-01: same query as above: Rivermate gives 3% up to $7,800 a month (not primary) || retry 2026-11-01: refused by the search tool on 2026-11-01: the turn's shared limit of 200 searches was reached; not worked around",
+    "trade-press": "2026-11-01: Misick & Stanbrook 2022 (cited) || retry 2026-11-01: Misick & Stanbrook 2022 (cited)",
+    "archive": "2026-11-01: web.archive.org unreachable through the proxy this session || retry 2026-11-01: web.archive.org: \"Recv failure: Connection reset by peer\" again 2026-11-01"
+   }
+  }
+ ]
+}

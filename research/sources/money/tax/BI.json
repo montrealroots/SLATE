@@ -1,0 +1,285 @@
+{
+ "topic": "tax.BI",
+ "read": "2026-11-01",
+ "note": "Read 2026-11-01 at the owner's word (\"Build those first 3 starting with ledger first\"; of the 21 countries read first: \"It should cover across every country\"; \"Retry the blocked tax facts once all countries land\"): the tax on a screen worker's pay in Burundi: a resident's income tax, social contributions, what is withheld at source, a non-resident artiste's withholding, an author's treatment, VAT and the tax year. Research and retry subagents (workbench/briefs/BRIEF-tax.md, BRIEF-tax-retry.md), every quote checked by the lead against its saved page.",
+ "figures": [
+  {
+   "item": "residents",
+   "finding": "A resident individual's annual taxable income is taxed at 0% to BIF 1,800,000, 20% to 3,600,000 and 30% above (rounded to the nearest thousand francs), under art. 21 of the income tax law of 2013 as the Office Burundais des Recettes states it (leaflet of 2016); whether the 2020 amendment changed the scale was not confirmed.",
+   "value": {
+    "currency": "BIF",
+    "brackets": [
+     {
+      "from": 0,
+      "to": 1800000,
+      "rate": 0
+     },
+     {
+      "from": 1800000,
+      "to": 3600000,
+      "rate": 0.2
+     },
+     {
+      "from": 3600000,
+      "to": null,
+      "rate": 0.3
+     }
+    ],
+    "minimumTax": {
+     "rate": 0.01,
+     "base": "turnover"
+    },
+    "regional": null,
+    "asOf": "2016 (Loi n° 1/02 du 24 janvier 2013, art. 21)"
+   },
+   "applies": "Resident individuals; employment income (IRE) and other first-schedule income",
+   "sources": [
+    {
+     "src": 0,
+     "said": "Tranche du revenu annuel imposable en BIF 0 à 1 800 000 : le taux est de 0%. 3 3 Tranche du revenu annuel imposable en BIF 1 800 001 à 3 600 000 : le taux est de 20%. 3 3 Tranche du revenu annuel imposable en BIF 3 600 001 et plus : le taux est de 30%."
+    },
+    {
+     "src": 0,
+     "said": "L’impôt minimal est fixé à un pour cent (1%) du chiffre d’affaires."
+    }
+   ]
+  },
+  {
+   "item": "residents",
+   "finding": "A self-employed person with annual turnover under BIF 24 million is on the flat-rate regime, with gross profit deemed at 35% of turnover for activities other than selling goods (fixed tax of BIF 30,000 to 50,000 below BIF 6 million); BIF 24 to 100 million is the simplified regime.",
+   "value": {
+    "currency": "BIF",
+    "forfait": {
+     "turnoverBelow": 24000000,
+     "deemedProfitServices": 0.35,
+     "fixedTaxServices": [
+      {
+       "turnoverBelow": 3000000,
+       "tax": 30000
+      },
+      {
+       "turnoverBelow": 6000000,
+       "tax": 50000
+      }
+     ]
+    },
+    "simplified": {
+     "from": 24000000,
+     "to": 100000000
+    }
+   },
+   "applies": "Self-employed individuals (2013-2014 ministerial orders)",
+   "sources": [
+    {
+     "src": 0,
+     "said": "les bénéfices bruts d’affaires sont forfaitairement établis à 20% du chiffre d’affaires annuel lorsqu’ils proviennent de la vente des marchandises, et à 35% du chiffre d’affaire annuel dans les autres cas."
+    },
+    {
+     "src": 0,
+     "said": "Le régime d’imposition forfaitaire est prévu pour les contribuables qui réalisent un chiffre d’affaires annuel inférieur à BIF 24 000 000."
+    }
+   ]
+  },
+  {
+   "item": "year",
+   "finding": "The fiscal year for income tax is the calendar year.",
+   "value": {
+    "start": "01-01",
+    "end": "12-31"
+   },
+   "applies": "Taxpayers",
+   "sources": [
+    {
+     "src": 0,
+     "said": "L’année fiscale coïncide avec l’année civile, c’est- à- dire qu’elledébute le 1er janvier et se clôture le 31 Décembre."
+    }
+   ]
+  },
+  {
+   "item": "withholding",
+   "finding": "Employers must withhold tax at source from employment income and pay it to the tax administration.",
+   "value": {
+    "employee": "withholding on employment income (IRE)"
+   },
+   "applies": "Employers",
+   "sources": [
+    {
+     "src": 0,
+     "said": "Pratiquer le système de la retenue à la source sur les revenus d’emploi et la trans- férer à l’Administration Fiscale ;"
+    }
+   ]
+  },
+  {
+   "item": "nonResident",
+   "finding": "The same scale applies to a non-resident's first-schedule (employment) income in Burundi; the withholding on a non-resident performer's fee was not found.",
+   "value": {
+    "rate": "resident scale on employment income",
+    "performanceFee": null
+   },
+   "applies": "Non-residents",
+   "sources": [
+    {
+     "src": 1,
+     "said": "Le même barème s’applique également aux per- sonnes non-résidentes au Burundi pour leurs reve- nus imposables appartenant à la première cédule."
+    }
+   ]
+  },
+  {
+   "item": "vat",
+   "finding": "For 2026/2027 compulsory VAT registration applies once taxable turnover in a financial year reaches BIF 25 million (by option from BIF 5 million), lowered from BIF 100 million; the VAT rate was not found.",
+   "value": {
+    "currency": "BIF",
+    "threshold": 25000000,
+    "optionalThreshold": 5000000,
+    "previousThreshold": 100000000,
+    "standard": null,
+    "from": "budget year 2026/2027"
+   },
+   "applies": "Supplies in Burundi",
+   "sources": [
+    {
+     "src": 2,
+     "said": "L’assujettissent d’office à la TVA est abaissé d’un chiffre d’affaires supérieur à 100 000 000 BIF à un chiffre d’affaires supérieur ou égal à 25 0000 0000 BIF au cours d’un exercice comptable."
+    },
+    {
+     "src": 3,
+     "said": "Au titre de la gestion budgétaire 2026/2027, sans préjudice des dispositions de l'article 37 de la loi n°1/10 du 16 novembre 2020 … les seuils d'assujettissement d'office et par option sont fixés comme suit … a) une personne atteint le seuil d'assujettissement d'office au cours d'un exercice comptable si le chiffre d'affaires taxable est supérieur ou égal à vingt-cinq millions de francs burundais (25 000 000 BIF) ; … b) le seuil d'assujettissement par option est fixé à cinq millions de francs burundais"
+    }
+   ]
+  },
+  {
+   "item": "withholding",
+   "finding": "The employer withholds employment-income tax monthly on the scale 0% to BIF 150,000, 20% of the part over 150,000 to 300,000, and 30% of the part over 300,000; a secondary employer withholds 30%, and an occasional employee is taxed at 15% with the first BIF 150,000 a month at 0% (OBR leaflet of November 2016 on the 2013 law; whether the 2020 amendment changed it was not confirmed).",
+   "value": {
+    "currency": "BIF",
+    "period": "month",
+    "brackets": [
+     {
+      "from": 0,
+      "to": 150000,
+      "rate": 0
+     },
+     {
+      "from": 150000,
+      "to": 300000,
+      "rate": 0.2
+     },
+     {
+      "from": 300000,
+      "to": null,
+      "rate": 0.3
+     }
+    ],
+    "secondaryEmployerRate": 0.3,
+    "occasionalEmployee": {
+     "rate": 0.15,
+     "zeroBandMonthly": 150000
+    },
+    "asOf": "November 2016 (Loi n° 1/02 du 24 janvier 2013, arts 108 to 110)"
+   },
+   "applies": "Employment income of a resident",
+   "sources": [
+    {
+     "src": 4,
+     "said": "L'employeur qui n'est pas l'employeur principal de l'employé est obligé de prélever une retenue à la source sur le revenu d'emploi mensuel imposable de ce dernier au taux de 30% … le revenu d'emploi mensuel imposable d'un employé occasionnel est assujetti à l'impôt au taux spécifique de quinze pour cent (15%) … la tranche inférieure à cent cinquante mille (150.000) francs burundais par mois est taxable au taux de zéro pour cent (0%) … Le barème qui s'applique mensuellement est le suivant … 0 150,000 0% … 150,001 300,000 20% de la part qui dépasse 150,000 Fbu … 300,001 Et plus 30% de la part qui dépasse 300,000 Fbu"
+    }
+   ]
+  }
+ ],
+ "country": "BI",
+ "sources": [
+  {
+   "url": "https://mail.obr.bi/images/PDF/Depliant_Info_de_base_FR_final_site.pdf",
+   "title": "Office Burundais des Recettes, Les informations de base à connaître pour commencer une activité commerciale (dépliant, November 2016)",
+   "read": "2026-11-01",
+   "kind": "primary",
+   "said": "Tranche du revenu annuel imposable en BIF 0 à 1 800 000 : le taux est de 0%. 3 3 Tranche du revenu annuel imposable en BIF 1 800 001 à 3 600 000 : le taux est de 20%. 3 3 Tranche du revenu annuel imposable en BIF 3 600 001 et plus : le taux est de 30%. … L’impôt minimal est fixé à un pour cent (1%) du chiffre d’affaires. … les bénéfices bruts d’affaires sont forfaitairement établis à 20% du chiffre d’affaires annuel lorsqu’ils proviennent de la vente des marchandises, et à 35% du chiffre d’affaire annuel dans les autres cas. … Le régime d’imposition forfaitaire est prévu pour les contribuables qui réalisent un chiffre d’affaires annuel inférieur à BIF 24 000 000. … L’année fiscale coïncide avec l’année civile, c’est- à- dire qu’elledébute le 1er janvier et se clôture le 31 Décembre. … Pratiquer le système de la retenue à la source sur les revenus d’emploi et la trans- férer à l’Administration Fiscale ;"
+  },
+  {
+   "url": "https://mail.obr.bi/images/PDF/Magazine_12_Fr_pr_le_site_compressed.pdf",
+   "title": "Office Burundais des Recettes, La Voix du Contribuable n° 012",
+   "read": "2026-11-01",
+   "kind": "primary",
+   "said": "Le même barème s’applique également aux per- sonnes non-résidentes au Burundi pour leurs reve- nus imposables appartenant à la première cédule."
+  },
+  {
+   "url": "https://www.dlapiperafrica.com/export/sites/africa/burundi/downloads/2026/Reformes-budgetaires.pdf_2063069264.pdf",
+   "title": "DLA Piper Africa (Burundi), Réformes budgétaires 2026 (loi de finances)",
+   "read": "2026-11-01",
+   "kind": "secondary",
+   "quotes": "https://www.obr.bi/",
+   "said": "L’assujettissent d’office à la TVA est abaissé d’un chiffre d’affaires supérieur à 100 000 000 BIF à un chiffre d’affaires supérieur ou égal à 25 0000 0000 BIF au cours d’un exercice comptable."
+  },
+  {
+   "url": "https://www.obr.bi/images/Tableau_des_Nvlles_mesures_LB_2026-2027_V_du_3-7-2026.docx",
+   "title": "Tableau des nouvelles mesures, loi budgétaire 2026/2027 (version du 3-7-2026), Office Burundais des Recettes",
+   "read": "2026-11-01",
+   "kind": "primary",
+   "said": "Au titre de la gestion budgétaire 2026/2027, sans préjudice des dispositions de l'article 37 de la loi n°1/10 du 16 novembre 2020 … les seuils d'assujettissement d'office et par option sont fixés comme suit … a) une personne atteint le seuil d'assujettissement d'office au cours d'un exercice comptable si le chiffre d'affaires taxable est supérieur ou égal à vingt-cinq millions de francs burundais (25 000 000 BIF) ; … b) le seuil d'assujettissement par option est fixé à cinq millions de francs burundais"
+  },
+  {
+   "url": "https://mail.obr.bi/images/PDF/Depliant_IRE_Fr_final_site.pdf",
+   "title": "Impôt sur le Revenu d'Emploi (IRE), Office Burundais des Recettes, novembre 2016",
+   "read": "2026-11-01",
+   "kind": "primary",
+   "said": "L'employeur qui n'est pas l'employeur principal de l'employé est obligé de prélever une retenue à la source sur le revenu d'emploi mensuel imposable de ce dernier au taux de 30% … le revenu d'emploi mensuel imposable d'un employé occasionnel est assujetti à l'impôt au taux spécifique de quinze pour cent (15%) … la tranche inférieure à cent cinquante mille (150.000) francs burundais par mois est taxable au taux de zéro pour cent (0%) … Le barème qui s'applique mensuellement est le suivant … 0 150,000 0% … 150,001 300,000 20% de la part qui dépasse 150,000 Fbu … 300,001 Et plus 30% de la part qui dépasse 300,000 Fbu"
+  }
+ ],
+ "blockers": [
+  {
+   "item": "residents",
+   "sought": "The scale in force for 2026 after Loi n° 1/14 of 2020, and the return deadline",
+   "tried": {
+    "institution": "www.obr.bi home page fails (PHP session error) on 2026-11-01; mail.obr.bi documents read (leaflet 2016, magazine n° 12); other OBR PDFs found by search return 404 || retry-8 2026-11-01: obr.bi home answers 182 bytes only; OBR files fetched directly: Tableau_des_Nvlles_mesures_LB_2026-2027 (docx, read: VAT thresholds 25M/5M BIF found, no IRP scale, INSS, artiste or royalty rule in it), Depliant_IRE (2016, monthly scale and withholding found), Depliant_TVA (no rate; 100M threshold of 2016); IR_SOCIETE_2021, Magazine_17, Magazine_007 return 404; inss.bi refused by the proxy (502); finances.gov.bi connection reset",
+    "official-register": "Loi n° 1/14 du 24 décembre 2020 and the 2026 finance law not found online in full (Senate draft cites it) || retry-8 2026-11-01: assemblee.bi and presidence.gov.bi answer (200) but carry no text of Loi n° 1/14 of 2020, Loi n° 1/10 of 30 June 2026 or the INSS rate decree in their pages read; the OBR measures table cites Loi n° 1/10 du 16 novembre 2020 (TVA) and Loi n° 1/14 du 24 décembre 2020 (IR) by number only",
+    "web-search": "searched 'Burundi loi impôt sur les revenus 2020 barème IRP 150 000 300 000' and '\"Loi n°1/14 du 24 décembre 2020\" impôts sur les revenus Burundi' || retry-8 2026-11-01: 'Burundi loi de finances 2025-2026 impôt sur les revenus barème … INSS cotisation taux pdf', '\"Burundi\" impôt sur les revenus … \"150 001\" \"300 000\" 20% 30% OBR revenu d emploi mensuel', 'INSS Burundi taux de cotisation pension 6% employeur 4% travailleur plafond risques professionnels 3%', 'obr.bi taxe sur la valeur ajoutée taux 18% 10% loi n°1/10 du 16 novembre 2020': only EOR/HR sites (Teamed, Rivermate, Africarrières, Afrotools) in conflict, a thesis quoting the 2013 art. 110 scale; no primary for the item",
+    "trade-press": "DLA Piper Africa's 2026 budget note read || retry-8 2026-11-01: Teamed 2026 guide (6% employer / 4% worker pension to BIF 450,000 a month, 3% employer occupational risk to BIF 80,000) names no primary; not used. DLA Piper 2026 note re-read: VAT threshold matches the OBR table",
+    "archive": "web.archive.org resets the connection from this environment (2026-11-01) || retry-8 2026-11-01: web.archive.org: connection reset again (35) and the availability API answers 429 Too Many Requests on 2026-11-01"
+   }
+  },
+  {
+   "item": "social",
+   "sought": "INSS employee and employer contribution rates and ceilings, and the performers' position",
+   "tried": {
+    "institution": "www.obr.bi home page fails (PHP session error) on 2026-11-01; mail.obr.bi documents read (leaflet 2016, magazine n° 12); other OBR PDFs found by search return 404 || retry-8 2026-11-01: obr.bi home answers 182 bytes only; OBR files fetched directly: Tableau_des_Nvlles_mesures_LB_2026-2027 (docx, read: VAT thresholds 25M/5M BIF found, no IRP scale, INSS, artiste or royalty rule in it), Depliant_IRE (2016, monthly scale and withholding found), Depliant_TVA (no rate; 100M threshold of 2016); IR_SOCIETE_2021, Magazine_17, Magazine_007 return 404; inss.bi refused by the proxy (502); finances.gov.bi connection reset",
+    "official-register": "Loi n° 1/14 du 24 décembre 2020 and the 2026 finance law not found online in full (Senate draft cites it) || retry-8 2026-11-01: assemblee.bi and presidence.gov.bi answer (200) but carry no text of Loi n° 1/14 of 2020, Loi n° 1/10 of 30 June 2026 or the INSS rate decree in their pages read; the OBR measures table cites Loi n° 1/10 du 16 novembre 2020 (TVA) and Loi n° 1/14 du 24 décembre 2020 (IR) by number only",
+    "web-search": "searched 'Burundi loi impôt sur les revenus 2020 barème IRP 150 000 300 000' and '\"Loi n°1/14 du 24 décembre 2020\" impôts sur les revenus Burundi' || retry-8 2026-11-01: 'Burundi loi de finances 2025-2026 impôt sur les revenus barème … INSS cotisation taux pdf', '\"Burundi\" impôt sur les revenus … \"150 001\" \"300 000\" 20% 30% OBR revenu d emploi mensuel', 'INSS Burundi taux de cotisation pension 6% employeur 4% travailleur plafond risques professionnels 3%', 'obr.bi taxe sur la valeur ajoutée taux 18% 10% loi n°1/10 du 16 novembre 2020': only EOR/HR sites (Teamed, Rivermate, Africarrières, Afrotools) in conflict, a thesis quoting the 2013 art. 110 scale; no primary for the item",
+    "trade-press": "DLA Piper Africa's 2026 budget note read || retry-8 2026-11-01: Teamed 2026 guide (6% employer / 4% worker pension to BIF 450,000 a month, 3% employer occupational risk to BIF 80,000) names no primary; not used. DLA Piper 2026 note re-read: VAT threshold matches the OBR table",
+    "archive": "web.archive.org resets the connection from this environment (2026-11-01) || retry-8 2026-11-01: web.archive.org: connection reset again (35) and the availability API answers 429 Too Many Requests on 2026-11-01"
+   }
+  },
+  {
+   "item": "nonResident",
+   "sought": "The withholding on a non-resident artist's fee and on royalties, and whether final",
+   "tried": {
+    "institution": "www.obr.bi home page fails (PHP session error) on 2026-11-01; mail.obr.bi documents read (leaflet 2016, magazine n° 12); other OBR PDFs found by search return 404 || retry-8 2026-11-01: obr.bi home answers 182 bytes only; OBR files fetched directly: Tableau_des_Nvlles_mesures_LB_2026-2027 (docx, read: VAT thresholds 25M/5M BIF found, no IRP scale, INSS, artiste or royalty rule in it), Depliant_IRE (2016, monthly scale and withholding found), Depliant_TVA (no rate; 100M threshold of 2016); IR_SOCIETE_2021, Magazine_17, Magazine_007 return 404; inss.bi refused by the proxy (502); finances.gov.bi connection reset",
+    "official-register": "Loi n° 1/14 du 24 décembre 2020 and the 2026 finance law not found online in full (Senate draft cites it) || retry-8 2026-11-01: assemblee.bi and presidence.gov.bi answer (200) but carry no text of Loi n° 1/14 of 2020, Loi n° 1/10 of 30 June 2026 or the INSS rate decree in their pages read; the OBR measures table cites Loi n° 1/10 du 16 novembre 2020 (TVA) and Loi n° 1/14 du 24 décembre 2020 (IR) by number only",
+    "web-search": "searched 'Burundi loi impôt sur les revenus 2020 barème IRP 150 000 300 000' and '\"Loi n°1/14 du 24 décembre 2020\" impôts sur les revenus Burundi' || retry-8 2026-11-01: 'Burundi loi de finances 2025-2026 impôt sur les revenus barème … INSS cotisation taux pdf', '\"Burundi\" impôt sur les revenus … \"150 001\" \"300 000\" 20% 30% OBR revenu d emploi mensuel', 'INSS Burundi taux de cotisation pension 6% employeur 4% travailleur plafond risques professionnels 3%', 'obr.bi taxe sur la valeur ajoutée taux 18% 10% loi n°1/10 du 16 novembre 2020': only EOR/HR sites (Teamed, Rivermate, Africarrières, Afrotools) in conflict, a thesis quoting the 2013 art. 110 scale; no primary for the item",
+    "trade-press": "DLA Piper Africa's 2026 budget note read || retry-8 2026-11-01: Teamed 2026 guide (6% employer / 4% worker pension to BIF 450,000 a month, 3% employer occupational risk to BIF 80,000) names no primary; not used. DLA Piper 2026 note re-read: VAT threshold matches the OBR table",
+    "archive": "web.archive.org resets the connection from this environment (2026-11-01) || retry-8 2026-11-01: web.archive.org: connection reset again (35) and the availability API answers 429 Too Many Requests on 2026-11-01"
+   }
+  },
+  {
+   "item": "vat",
+   "sought": "The VAT standard rate in force for 2026 (the 2026/2027 registration thresholds are found)",
+   "tried": {
+    "institution": "www.obr.bi home page fails (PHP session error) on 2026-11-01; mail.obr.bi documents read (leaflet 2016, magazine n° 12); other OBR PDFs found by search return 404 || retry-8 2026-11-01: obr.bi home answers 182 bytes only; OBR files fetched directly: Tableau_des_Nvlles_mesures_LB_2026-2027 (docx, read: VAT thresholds 25M/5M BIF found, no IRP scale, INSS, artiste or royalty rule in it), Depliant_IRE (2016, monthly scale and withholding found), Depliant_TVA (no rate; 100M threshold of 2016); IR_SOCIETE_2021, Magazine_17, Magazine_007 return 404; inss.bi refused by the proxy (502); finances.gov.bi connection reset",
+    "official-register": "Loi n° 1/14 du 24 décembre 2020 and the 2026 finance law not found online in full (Senate draft cites it) || retry-8 2026-11-01: assemblee.bi and presidence.gov.bi answer (200) but carry no text of Loi n° 1/14 of 2020, Loi n° 1/10 of 30 June 2026 or the INSS rate decree in their pages read; the OBR measures table cites Loi n° 1/10 du 16 novembre 2020 (TVA) and Loi n° 1/14 du 24 décembre 2020 (IR) by number only",
+    "web-search": "searched 'Burundi loi impôt sur les revenus 2020 barème IRP 150 000 300 000' and '\"Loi n°1/14 du 24 décembre 2020\" impôts sur les revenus Burundi' || retry-8 2026-11-01: 'Burundi loi de finances 2025-2026 impôt sur les revenus barème … INSS cotisation taux pdf', '\"Burundi\" impôt sur les revenus … \"150 001\" \"300 000\" 20% 30% OBR revenu d emploi mensuel', 'INSS Burundi taux de cotisation pension 6% employeur 4% travailleur plafond risques professionnels 3%', 'obr.bi taxe sur la valeur ajoutée taux 18% 10% loi n°1/10 du 16 novembre 2020': only EOR/HR sites (Teamed, Rivermate, Africarrières, Afrotools) in conflict, a thesis quoting the 2013 art. 110 scale; no primary for the item",
+    "trade-press": "DLA Piper Africa's 2026 budget note read || retry-8 2026-11-01: Teamed 2026 guide (6% employer / 4% worker pension to BIF 450,000 a month, 3% employer occupational risk to BIF 80,000) names no primary; not used. DLA Piper 2026 note re-read: VAT threshold matches the OBR table",
+    "archive": "web.archive.org resets the connection from this environment (2026-11-01) || retry-8 2026-11-01: web.archive.org: connection reset again (35) and the availability API answers 429 Too Many Requests on 2026-11-01"
+   }
+  },
+  {
+   "item": "authors",
+   "sought": "Any special treatment of authors' royalties",
+   "tried": {
+    "institution": "www.obr.bi home page fails (PHP session error) on 2026-11-01; mail.obr.bi documents read (leaflet 2016, magazine n° 12); other OBR PDFs found by search return 404 || retry-8 2026-11-01: obr.bi home answers 182 bytes only; OBR files fetched directly: Tableau_des_Nvlles_mesures_LB_2026-2027 (docx, read: VAT thresholds 25M/5M BIF found, no IRP scale, INSS, artiste or royalty rule in it), Depliant_IRE (2016, monthly scale and withholding found), Depliant_TVA (no rate; 100M threshold of 2016); IR_SOCIETE_2021, Magazine_17, Magazine_007 return 404; inss.bi refused by the proxy (502); finances.gov.bi connection reset",
+    "official-register": "Loi n° 1/14 du 24 décembre 2020 and the 2026 finance law not found online in full (Senate draft cites it) || retry-8 2026-11-01: assemblee.bi and presidence.gov.bi answer (200) but carry no text of Loi n° 1/14 of 2020, Loi n° 1/10 of 30 June 2026 or the INSS rate decree in their pages read; the OBR measures table cites Loi n° 1/10 du 16 novembre 2020 (TVA) and Loi n° 1/14 du 24 décembre 2020 (IR) by number only",
+    "web-search": "searched 'Burundi loi impôt sur les revenus 2020 barème IRP 150 000 300 000' and '\"Loi n°1/14 du 24 décembre 2020\" impôts sur les revenus Burundi' || retry-8 2026-11-01: 'Burundi loi de finances 2025-2026 impôt sur les revenus barème … INSS cotisation taux pdf', '\"Burundi\" impôt sur les revenus … \"150 001\" \"300 000\" 20% 30% OBR revenu d emploi mensuel', 'INSS Burundi taux de cotisation pension 6% employeur 4% travailleur plafond risques professionnels 3%', 'obr.bi taxe sur la valeur ajoutée taux 18% 10% loi n°1/10 du 16 novembre 2020': only EOR/HR sites (Teamed, Rivermate, Africarrières, Afrotools) in conflict, a thesis quoting the 2013 art. 110 scale; no primary for the item",
+    "trade-press": "DLA Piper Africa's 2026 budget note read || retry-8 2026-11-01: Teamed 2026 guide (6% employer / 4% worker pension to BIF 450,000 a month, 3% employer occupational risk to BIF 80,000) names no primary; not used. DLA Piper 2026 note re-read: VAT threshold matches the OBR table",
+    "archive": "web.archive.org resets the connection from this environment (2026-11-01) || retry-8 2026-11-01: web.archive.org: connection reset again (35) and the availability API answers 429 Too Many Requests on 2026-11-01"
+   }
+  }
+ ]
+}

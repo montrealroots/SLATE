@@ -13,7 +13,15 @@
    "reckoning",
    "settlement",
    "costs",
-   "told"
+   "told",
+   "no income tax (a scale of none)",
+   "a territory follows its sovereign",
+   "flat taxes, surtaxes and solidarity levies, a cap on the share, the lower of two reckonings",
+   "a progressive scale with capped contributions",
+   "a receipts (turnover) tax; VAT on a self-employed worker's fees",
+   "indexed units, quarters, weeks, per thousand, allowances of several",
+   "nothing withheld; no taxing state; told",
+   "every figure exact, determinism"
   ]
  },
  "rows": [
@@ -102,6 +110,71 @@
    "status": "proven",
    "tests": [
     "tests/money/tax/tax.test.ts::a country's tax > tells the player what of it isn't known"
+   ]
+  },
+  {
+   "key": "no income tax (a scale of none)",
+   "status": "proven",
+   "tests": [
+    "tests/money/tax/world.test.ts::the world's shapes > reads no income tax as a scale of none, and tells nothing untold where nothing is",
+    "tests/money/tax/world.test.ts::pay and the reckoning, around the world > in a country with no income tax: nothing withheld, nothing due",
+    "tests/tools/tax.test.ts::the tax compile > reads the world's shapes: none, a sovereign's, indexed units and periods, a cap, the lower of two, a receipts tax"
+   ]
+  },
+  {
+   "key": "a territory follows its sovereign",
+   "status": "proven",
+   "tests": [
+    "tests/money/tax/world.test.ts::every country read > is a territory's sovereign's where its research says the sovereign's law applies there",
+    "tests/money/tax/world.test.ts::pay and the reckoning, around the world > in a territory that follows its sovereign: the sovereign's contributions and scale, its own receipts tax",
+    "tests/tools/tax.test.ts::the tax compile > takes a territory's items from its sovereign where its research says the sovereign's law applies",
+    "tests/tools/tax.test.ts::the tax compile, over the world > reads a sovereign before its territories, a place with no taxing state as none, and no file of blockers the register cites none of"
+   ]
+  },
+  {
+   "key": "flat taxes, surtaxes and solidarity levies, a cap on the share, the lower of two reckonings",
+   "status": "proven",
+   "tests": [
+    "tests/money/tax/world.test.ts::the world's shapes > reads flat taxes, surtaxes and solidarity levies, a cap on the share, and the lower of two reckonings",
+    "tests/money/tax/world.test.ts::pay and the reckoning, around the world > under a flat tax: 22% withheld, refunded past the year's tax on the due date"
+   ]
+  },
+  {
+   "key": "a progressive scale with capped contributions",
+   "status": "proven",
+   "tests": [
+    "tests/money/tax/world.test.ts::pay and the reckoning, around the world > on a progressive scale with capped contributions: the cap reached, the scale climbed"
+   ]
+  },
+  {
+   "key": "a receipts (turnover) tax; VAT on a self-employed worker's fees",
+   "status": "proven",
+   "tests": [
+    "tests/money/tax/world.test.ts::pay and the reckoning, around the world > charges VAT on a self-employed worker's fees, whatever the work, and a receipts tax past its threshold"
+   ]
+  },
+  {
+   "key": "indexed units, quarters, weeks, per thousand, allowances of several",
+   "status": "proven",
+   "tests": [
+    "tests/money/tax/world.test.ts::the world's shapes > reads figures written in an indexed unit, by the quarter, the week or the thousand, an allowance of several"
+   ]
+  },
+  {
+   "key": "nothing withheld; no taxing state; told",
+   "status": "proven",
+   "tests": [
+    "tests/money/tax/world.test.ts::the world's shapes > withholds nothing where the research says nothing is withheld, and tells where a place has no taxing state",
+    "tests/money/tax/tax.test.ts::a country's tax > tells the player what of it isn't known"
+   ]
+  },
+  {
+   "key": "every figure exact, determinism",
+   "status": "proven",
+   "tests": [
+    "tests/money/tax/world.test.ts::every country read > holds each figure the research gives, at its place",
+    "tests/money/tax/world.test.ts::every country read > is read the same every time",
+    "tests/money/tax/tax.test.ts::a country's tax > is each country's own, every figure as the research gives it"
    ]
   }
  ]

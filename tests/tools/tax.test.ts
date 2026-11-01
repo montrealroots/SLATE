@@ -1,10 +1,11 @@
 import { createHash } from 'node:crypto';
-import { mkdirSync, mkdtempSync, readFileSync, writeFileSync } from 'node:fs';
+import { mkdirSync, mkdtempSync, readFileSync, rmSync, writeFileSync } from 'node:fs';
 import { tmpdir } from 'node:os';
 import { join, resolve } from 'node:path';
 import { describe, expect, it } from 'vitest';
 import { at, bands, BLOCKED, compileCountry, day, decimal, EMPLOYED, FACT, ITEMS, num, OUTPUT, READINGS, readTax, serialize, SOURCES, WORKS, zones } from '../../tools/money/tax/compile.ts';
 import { COVERAGE, coverageOf, serializeCoverage, taxCoverage, TESTS, TOLD } from '../../tools/money/tax/coverage.ts';
+import type { Country } from '../../tools/money/tax/compile.ts';
 
 const ROOT = resolve(import.meta.dirname, '../..');
 type Figures = Parameters<typeof num>[1];
@@ -52,6 +53,7 @@ const F: Figures = [
       zoneTo: [{ from: 0, to: 'x', formula: '0' }],
       zoneNoFormula: [{ from: 0, to: null }],
       surely: 'surely yes',
+      oneHalf: 1.5,
     },
   },
 ];
@@ -60,7 +62,7 @@ const ref = (...path: (string | number)[]) => ({ fig: 0, path });
 describe('the tax compile', () => {
   it('reads every figure where its reference places it, as the reference reads it', () => {
     expect([SOURCES, READINGS, OUTPUT, FACT, BLOCKED, WORKS, EMPLOYED]).toEqual(['research/sources/money/tax', 'tools/money/tax/readings.json', 'src/money/tax/tax.json', 'money.tax.', 'money.tax.blocked.', ['performer', 'director', 'producer', 'author'], ['performer', 'director']]);
-    expect(ITEMS).toEqual(['residents', 'credits', 'regional', 'social', 'wages', 'withholding', 'nonResident', 'authors', 'scheme', 'vat', 'year']);
+    expect(ITEMS).toEqual(['residents', 'business', 'credits', 'regional', 'social', 'wages', 'withholding', 'nonResident', 'authors', 'scheme', 'vat', 'year']);
     expect([decimal({ num: 1n, den: 8n }), decimal({ num: -3n, den: 4n }), decimal({ num: 1200n, den: 100n }), decimal({ num: 7n, den: 1n }), decimal({ num: 0n, den: 5n }), decimal({ num: 3n, den: 40n })]).toEqual(['0.125', '-0.75', '12', '7', '0', '0.075']);
     expect(() => decimal({ num: 1n, den: 3n })).toThrow("1/3 isn't a decimal");
     expect(() => decimal({ num: 1n, den: -1n })).toThrow('a decimal has a positive denominator');
@@ -239,6 +241,94 @@ describe('the tax compile', () => {
     expect(() => compileCountry('GB', { ...file(base), figures: [{ item: '', value: { ...base, cur: 'GBP', n: 1, list: (F[0]?.value as Record<string, unknown>)['list'], yes: 7, big: 0.5 } }] }, reading())).toThrow("GB's yes says whether it is final");
   });
 
+  it("reads the world's shapes: none, a sovereign's, indexed units and periods, a cap, the lower of two, a receipts tax", () => {
+    const c = (v: Record<string, unknown>, r: Record<string, unknown> = {}, blockers: { item: string }[] = [], sovereign?: (cc: string) => Country | undefined) =>
+      compileCountry('GB', file({ ...base, ...v }, blockers), reading(r), sovereign);
+    // No currency named: the map's.
+    expect(c({ cur: 'EUR' }, { currency: undefined }).currency).toBe('GBP');
+    // No tax year given: from the 1st of January, its return due nowhere and told; a year with no due date the same.
+    expect([c({}, { year: null }).year, c({}, { year: null }).unknown]).toEqual([{ start: '01-01', due: null }, ['year']]);
+    expect([c({}, { year: { start: ref('start') } }).year, c({}, { year: { start: ref('start') } }).unknown]).toEqual([{ start: '04-06', due: null }, ['year']]);
+    // No income tax, as the research says it: no layers, and no return to tell of.
+    const untaxed = { residents: [{ none: ref('nul') }], year: { start: ref('start'), due: null } };
+    expect(c({}, untaxed)).toMatchObject({ residents: [{ from: '0000-01-01', layers: [] }], year: { start: '04-06', due: null }, unknown: [] });
+    expect(c({}, { ...untaxed, year: null }).unknown).toEqual([]);
+    expect(c({}, { residents: [], year: null }).unknown).toEqual(['year']);
+    expect(() => c({}, { year: { start: ref('start'), due: null } })).toThrow("GB has a return to file: its tax isn't none");
+    expect(() => c({}, { residents: [{ none: ref('nul') }, { from: '2027-01-01', layers: [{ bands: ref('list') }] }], year: { start: ref('start'), due: null } })).toThrow("GB has a return to file: its tax isn't none");
+    const none = (v: unknown) => c({ v }, { residents: [{ none: ref('v') }] }).residents[0]?.layers;
+    for (const v of [true, false, null, 0, [], [{ from: 0, to: null, rate: 0 }], 'no withholding; assessment', 'No tax'] as unknown[]) expect(none(v), JSON.stringify(v)).toEqual([]);
+    for (const v of ['yes', 'none', 'not stated', 'NO', 'no;', 'x no tax', ['no tax'], 7, 1, [{ from: 0, to: null, rate: 0.1 }], [{ from: 0, to: null, rate: 0 }, { from: 1, to: null, rate: 0.2 }], [7], 'x no']) expect(() => none(v), JSON.stringify(v)).toThrow("GB's v doesn't say there is none");
+    // Nothing withheld: no bands, final unless the research says otherwise.
+    expect(c({}, { withholding: { performer: { none: ref('nul') }, director: { none: ref('nul'), final: ref('no') } } }).withholding).toEqual({ performer: { bands: [], final: true }, director: { bands: [], final: false } });
+    expect(() => c({}, { withholding: { performer: { none: ref('n') } } })).toThrow("GB's n doesn't say there is none");
+    // A finality not stated is not final; the work an employee does, the readings' own.
+    expect(c({}, { nonResident: { performer: { bands: ref('list'), final: ref('nul') } } })).toMatchObject({ nonResident: { performer: { final: false } }, unknown: ['nonResident'] });
+    expect(c({}, { employed: [], withholding: {} })).toMatchObject({ employed: [], unknown: [] });
+    // A blocker on what a territory follows is on its residents' tax; one on VAT's threshold, on VAT.
+    expect(c({}, {}, [{ item: 'follows' }, { item: 'vat-threshold' }]).unknown).toEqual(['residents', 'vat']);
+    // A receipts tax: its rate, and its threshold where the research gives one.
+    expect([c({}, { turnover: { rate: ref('big') } }).turnover, c({}, { turnover: { rate: ref('big'), threshold: ref('n') } }).turnover, c({}, { turnover: { rate: ref('big'), threshold: ref('nul') } }).turnover]).toEqual([
+      { rate: '0.5', threshold: null },
+      { rate: '0.5', threshold: '12570' },
+      { rate: '0.5', threshold: null },
+    ]);
+    expect(Object.hasOwn(c({}), 'turnover')).toBe(false);
+    expect(() => c({}, { turnover: { rate: ref('high') } })).toThrow("GB's high is a number, not below nothing");
+    // A layer's cap as a share of its income, the other reckoning the law allows, an allowance of several, a surtax above the tax.
+    const l = c({}, { residents: [{ layers: [{ bands: ref('list'), most: ref('quarter'), less: [ref('n'), ref('figure')], or: { bands: ref('floor'), surtax: { rate: ref('oneHalf') } } }] }] }).residents[0]?.layers[0];
+    expect(l).toEqual({ bands: [{ from: '0', to: '100', rate: '0.1' }, { from: '100', to: null, rate: '0.2' }], less: '12577', most: '0.25', or: { bands: [{ from: '50', to: '100', rate: '0.1' }, { from: '100', to: '200', rate: '0.2' }], surtax: { rate: '1.5' } } });
+    expect(c({}, { residents: [{ layers: [{ bands: ref('list'), less: ref('n') }] }] }).residents[0]?.layers[0]?.less).toBe('12570');
+    expect(() => c({}, { residents: [{ layers: [{ bands: ref('list'), most: ref('oneHalf') }] }] })).toThrow("GB's oneHalf is a rate above the whole");
+    // A figure in an indexed unit, by the quarter, the week or the thousand.
+    expect([num('GB', F, { ...ref('n'), by: ref('big') }), num('GB', F, { ...ref('n'), quarters: true }), num('GB', F, { ...ref('n'), weeks: true }), num('GB', F, { ...ref('n'), permille: true })]).toEqual(['6285', '50280', '653640', '12.57']);
+    expect(bands('GB', F, { ...ref('list'), by: ref('quarter') })).toEqual([{ from: '0', to: '25', rate: '0.1' }, { from: '25', to: null, rate: '0.2' }]);
+    expect(bands('GB', F, { ...ref('list'), months: true, by: ref('quarter') })).toEqual([{ from: '0', to: '300', rate: '0.1' }, { from: '300', to: null, rate: '0.2' }]);
+    // The calendar year, and a day of the following year in words.
+    const said = (m: string) => day('GB', [{ item: '', value: { m } }], ref('m'));
+    expect([said('calendar year (1 January to 31 December)'), said('calendar'), said('Calendar year'), said('30 April of the following year'), said('1 May of the next year')]).toEqual([
+      { on: '01-01', year: null },
+      { on: '01-01', year: null },
+      { on: '01-01', year: null },
+      { on: '04-30', year: null },
+      { on: '05-01', year: null },
+    ]);
+    for (const m of ['calendars', 'the calendar year', '30 April of the year', '30 April of the following year x']) expect(() => said(m), m).toThrow("GB's m writes no day");
+  });
+
+  it("takes a territory's items from its sovereign where its research says the sovereign's law applies", () => {
+    const sov = compileCountry('GB', file({ ...base, cur: 'EUR' }, [{ item: 'credits' }, { item: 'vat' }]), reading({ withholding: {}, unmodeled: ['nonResident', 'year', 'business', 'regional', 'scheme', 'withholding', 'authors'], residents: [{ layers: [{ zones: ref('zones') }] }], social: { employee: [ref('floor')], self: [ref('list')] } }));
+    const seen: string[] = [];
+    const look = (cc: string) => (seen.push(cc), cc === 'FR' ? sov : undefined);
+    const own = (v: Record<string, unknown>, r: Record<string, unknown>, blockers: { item: string }[] = []) => compileCountry('GB', file({ ...base, cur: 'EUR', sov: 'FR', ...v }, blockers), reading({ follows: { country: ref('sov'), items: ['residents', 'social', 'withholding'] }, ...r }), look);
+    const t = own({}, { unmodeled: ['regional'] }, [{ item: 'residents' }]);
+    // The items followed are the sovereign's, with what its research leaves untold of them; the rest the territory's own, with what it leaves untold.
+    expect(t).toEqual({ ...sov, year: { start: '04-06', due: { on: '01-31', after: 1 }, }, nonResident: t.nonResident, vat: t.vat, unknown: ['residents', 'business', 'credits', 'regional', 'wages', 'withholding', 'scheme'] });
+    expect([t.residents, t.social, t.withholding, t.employed]).toEqual([sov.residents, sov.social, sov.withholding, sov.employed]);
+    expect(seen).toEqual(['FR']);
+    // The territory's own non-final withholding stays told when it follows the sovereign only for the residents' scale; the sovereign's untold items reach it only for what it follows.
+    const only = own({}, { follows: { country: ref('sov'), items: ['residents'] }, nonResident: { performer: { bands: ref('list') } } });
+    expect(only.unknown).toEqual(['business', 'credits', 'regional', 'nonResident', 'scheme']);
+    const lent = own({}, { vat: null, year: { start: ref('start') }, follows: { country: ref('sov'), items: ['vat', 'year', 'nonResident', 'authors'] } });
+    expect(lent).toMatchObject({ vat: sov.vat, year: sov.year, unknown: ['nonResident', 'authors', 'vat', 'year'] });
+    // Nothing but a country's own parts.
+    expect(Object.keys(lent).sort()).toEqual(Object.keys(sov).sort());
+    // An employer's withholding the territory takes is the sovereign's, its own want of one no longer told.
+    const full = compileCountry('GB', file({ ...base, cur: 'EUR' }), reading());
+    const takes = compileCountry('GB', file({ ...base, cur: 'EUR', sov: 'FR' }), reading({ withholding: {}, employed: [], follows: { country: ref('sov'), items: ['withholding'] } }), () => full);
+    expect([takes.unknown, takes.employed]).toEqual([[], full.employed]);
+    // A sovereign that keeps another currency lends only its year.
+    expect(own({ cur: 'GBP' }, { follows: { country: ref('sov'), items: ['year'] } }).year).toEqual(sov.year);
+    expect(() => own({ cur: 'GBP' }, {})).toThrow("GB keeps GBP, not its sovereign's EUR");
+    expect(() => own({ cur: 'GBP' }, { follows: { country: ref('sov'), items: ['year', 'vat'] } })).toThrow("GB keeps GBP, not its sovereign's EUR");
+    expect(() => own({ sov: 'US' }, {})).toThrow("GB follows a country whose tax isn't read (US)");
+    expect(() => own({ sov: 7 }, {})).toThrow("GB follows a country whose tax isn't read (7)");
+    // A figure that names no country isn't looked up.
+    expect(seen.filter((x) => typeof x !== 'string')).toEqual([]);
+    expect(() => own({}, { follows: { country: ref('sov'), items: ['dancers'] } })).toThrow('GB follows an item there isn\'t (dancers)');
+    expect(() => compileCountry('GB', file({ ...base, sov: 'FR' }), reading({ follows: { country: ref('sov'), items: ['year'] } }))).toThrow("GB follows a country whose tax isn't read (FR)");
+  });
+
   it('reads only the files the register cites, each read', () => {
     const tax = readTax(ROOT);
     expect(serialize(tax)).toBe(readFileSync(join(ROOT, OUTPUT), 'utf8'));
@@ -256,7 +346,7 @@ describe('the tax compile', () => {
     const readings = JSON.parse(readFileSync(join(ROOT, READINGS), 'utf8')) as Record<string, unknown>;
     const register = (s: string) => ({ entries: [{ fact: 'money.tax.GB', value: { file: `${SOURCES}/GB.json`, sha256: s } }, { fact: 'other' }] });
     copy(register(sha), { GB: readings['GB'] }, { 'GB.json': gb, 'notes.txt': 'x' });
-    expect(readTax(dir)).toEqual({ countries: { GB: tax.countries['GB'] } });
+    expect(readTax(dir)).toEqual({ countries: { GB: tax.countries['GB'] }, noState: [] });
     copy(register('0'.repeat(64)), { GB: readings['GB'] }, { 'GB.json': gb });
     expect(() => readTax(dir)).toThrow(`${SOURCES}/GB.json isn't the file the register cites`);
     copy({ entries: [] }, { GB: readings['GB'] }, { 'GB.json': gb });
@@ -265,6 +355,51 @@ describe('the tax compile', () => {
     expect(() => readTax(dir)).toThrow("GB's research has no reading");
     copy(register(sha), { GB: readings['GB'], US: readings['US'] }, { 'GB.json': gb });
     expect(() => readTax(dir)).toThrow('US is read with no research');
+  });
+});
+
+describe('the tax compile, over the world', () => {
+  it('reads a sovereign before its territories, a place with no taxing state as none, and no file of blockers the register cites none of', () => {
+    const dir = mkdtempSync(join(tmpdir(), 'tax-world-'));
+    mkdirSync(join(dir, SOURCES), { recursive: true });
+    mkdirSync(join(dir, 'tools/money/tax'), { recursive: true });
+    mkdirSync(join(dir, 'research'), { recursive: true });
+    const sha = (t: string) => createHash('sha256').update(t).digest('hex');
+    const gb = readFileSync(join(ROOT, SOURCES, 'GB.json'), 'utf8');
+    const own = (cc: string, value: Record<string, unknown>) => JSON.stringify({ country: cc, figures: [{ item: 'follows', value }], blockers: [] });
+    const follower = { follows: { country: { fig: 0, path: ['sovereign'] }, items: ['year'] }, year: null, residents: [], social: { employee: [], self: [] }, withholding: {}, nonResident: {}, vat: null, unmodeled: [] };
+    const readings = JSON.parse(readFileSync(join(ROOT, READINGS), 'utf8')) as Record<string, unknown>;
+    const write = (files: Record<string, string>, cites: string[], blocked: string[], r: Record<string, unknown>, extra: string[] = []) => {
+      for (const [n, text] of Object.entries(files)) writeFileSync(join(dir, SOURCES, `${n}.json`), text);
+      const entries = [...cites.map((n) => ({ fact: `${FACT}${n}`, value: { file: `${SOURCES}/${n}.json`, sha256: sha(files[n] as string) } })), ...blocked.map((n) => ({ fact: `${BLOCKED}${n}` })), ...extra.map((fact) => ({ fact }))];
+      writeFileSync(join(dir, 'research/register.json'), JSON.stringify({ entries }));
+      writeFileSync(join(dir, READINGS), JSON.stringify(r));
+    };
+    const files = { AI: own('AI', { sovereign: 'GB' }), AQ: own('AQ', { follows: null }), CU: own('CU', {}), GB: gb };
+    write(files, ['AI', 'AQ', 'GB'], ['CU', 'AQ'], { AI: follower, AQ: { noState: { fig: 0, path: ['follows'] } }, GB: readings['GB'] });
+    const out = readTax(dir);
+    const gbTax = readTax(ROOT).countries['GB'];
+    expect(Object.keys(out.countries)).toEqual(['AI', 'GB']);
+    expect([out.countries['GB'], out.countries['AI']?.year, out.countries['AI']?.currency, out.noState]).toEqual([gbTax, gbTax?.year, 'XCD', ['AQ']]);
+    // A file of blockers is left unread only where its register entry is a blocker; any other uncited file is refused.
+    write({ ...files, ER: own('ER', {}) }, ['AI', 'AQ', 'GB'], ['CU'], { AI: follower, AQ: { noState: { fig: 0, path: ['follows'] } }, GB: readings['GB'] }, ['money.tax.blocker.ER']);
+    expect(() => readTax(dir)).toThrow(`${SOURCES}/ER.json isn't cited by the register`);
+    writeFileSync(join(dir, SOURCES, 'ER.json'), 'x');
+    rmSync(join(dir, SOURCES, 'ER.json'));
+    // A place with no taxing state is one the research says has none.
+    write({ ...files, AQ: own('AQ', { follows: 'NO' }) }, ['AI', 'AQ', 'GB'], ['CU'], { AI: follower, AQ: { noState: { fig: 0, path: ['follows'] } }, GB: readings['GB'] });
+    expect(() => readTax(dir)).toThrow("AQ's follows doesn't say there is none");
+    // Two territories following each other are refused; so is a reading of a place with no taxing state taken as a sovereign.
+    write({ ...files, AQ: own('AQ', { follows: null }), AG: own('AG', { sovereign: 'AI' }), AI: own('AI', { sovereign: 'AG' }) }, ['AG', 'AI', 'AQ', 'GB'], ['CU'], { AG: follower, AI: follower, AQ: { noState: { fig: 0, path: ['follows'] } }, GB: readings['GB'] });
+    expect(() => readTax(dir)).toThrow('AG follows a country that follows it');
+    write({ ...files, AG: own('AG', { sovereign: 'AQ' }), AI: own('AI', { sovereign: 'GB' }) }, ['AG', 'AI', 'AQ', 'GB'], ['CU'], { AG: follower, AI: follower, AQ: { noState: { fig: 0, path: ['follows'] } }, GB: readings['GB'] });
+    expect(() => readTax(dir)).toThrow("AG follows a country whose tax isn't read (AQ)");
+    // So is a sovereign read with no research.
+    write({ ...files, AG: own('AG', { sovereign: 'KY' }), AI: own('AI', { sovereign: 'GB' }) }, ['AG', 'AI', 'AQ', 'GB'], ['CU'], { AG: follower, AI: follower, AQ: { noState: { fig: 0, path: ['follows'] } }, GB: readings['GB'], KY: follower });
+    expect(() => readTax(dir)).toThrow("AG follows a country whose tax isn't read (KY)");
+    // A reading with no research, a place with no taxing state among them, is refused.
+    write({ ...files, AG: own('AG', { sovereign: 'GB' }) }, ['AG', 'AI', 'AQ', 'GB'], ['CU'], { AG: follower, AI: follower, AQ: { noState: { fig: 0, path: ['follows'] } }, GB: readings['GB'], KY: follower });
+    expect(() => readTax(dir)).toThrow('KY is read with no research');
   });
 });
 

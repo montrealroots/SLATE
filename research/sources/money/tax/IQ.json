@@ -1,0 +1,209 @@
+{
+ "topic": "tax.IQ",
+ "read": "2026-11-01",
+ "note": "Read 2026-11-01 at the owner's word (\"Build those first 3 starting with ledger first\"; of the 21 countries read first: \"It should cover across every country\"; \"Retry the blocked tax facts once all countries land\"): the tax on a screen worker's pay in Iraq: a resident's income tax, social contributions, what is withheld at source, a non-resident artiste's withholding, an author's treatment, VAT and the tax year. Research and retry subagents (workbench/briefs/BRIEF-tax.md, BRIEF-tax-retry.md), every quote checked by the lead against its saved page.",
+ "figures": [
+  {
+   "item": "residents",
+   "finding": "Iraq taxes all Iraq-source income on a scale of 3% to IQD 250,000, 5% to 500,000, 10% to 1,000,000 and 15% above.",
+   "value": {
+    "currency": "IQD",
+    "brackets": [
+     {
+      "from": 0,
+      "to": 250000,
+      "rate": 0.03
+     },
+     {
+      "from": 250000,
+      "to": 500000,
+      "rate": 0.05
+     },
+     {
+      "from": 500000,
+      "to": 1000000,
+      "rate": 0.1
+     },
+     {
+      "from": 1000000,
+      "to": null,
+      "rate": 0.15
+     }
+    ],
+    "regional": "Kurdistan region applies its own instructions"
+   },
+   "applies": "2026; federal Iraq.",
+   "sources": [
+    {
+     "src": 0,
+     "said": "0 250,000 3 250,000 500,000 5 500,000 1,000,000 10 1,000,000 15"
+    }
+   ]
+  },
+  {
+   "item": "withholding",
+   "finding": "The employer deducts income tax from salaries monthly (PAYE) and pays it within the first 15 days of the next month; the year is reconciled at year end.",
+   "value": {
+    "remitBy": "15th of the following month"
+   },
+   "applies": "Employees.",
+   "sources": [
+    {
+     "src": 1,
+     "said": "The employer is responsible for deducting the staff income tax from their salaries, and forwarding that amount to the General Commission of Taxes/Direct Deduction Division within a period not exceeding the first 15 days of the next month in which the assessment was incurred."
+    }
+   ]
+  },
+  {
+   "item": "social",
+   "finding": "Social security is 5% from the employee and 12% from the employer (25% for employers classed as prime), on net salary after allowances, for local and expatriate staff.",
+   "value": {
+    "employee": 0.05,
+    "employer": 0.12,
+    "employerPrime": 0.25
+   },
+   "applies": "2026.",
+   "sources": [
+    {
+     "src": 2,
+     "said": "The employer's contribution is 12% and the employee's contribution is 5% from net salaries. The contribution of employers that are categorised as prime will be 25%."
+    }
+   ]
+  },
+  {
+   "item": "nonResident",
+   "finding": "In the Kurdistan region a non-resident's contract as an athlete or artist is taxed at 15% on a deemed profit of 30% of the contract; federally, payments to non-residents for interest and similar items bear 15%.",
+   "value": {
+    "kurdistanArtist": {
+     "rate": 0.15,
+     "deemedProfit": 0.3
+    },
+    "federal": "15% on listed payments"
+   },
+   "applies": "Non-residents.",
+   "sources": [
+    {
+     "src": 3,
+     "said": "The non-resident entity in Iraq will be subject to WHT at a rate of 15% from the deemed profit determined by the Ministry of Finance."
+    },
+    {
+     "src": 3,
+     "said": "8. The contract of athletes and artists 30"
+    }
+   ]
+  },
+  {
+   "item": "vat",
+   "finding": "Iraq has no general VAT; a 2015 sales tax applies to listed goods and services (10% on luxury hotel and restaurant services).",
+   "value": {
+    "standard": null
+   },
+   "applies": "2026.",
+   "sources": [
+    {
+     "src": 2,
+     "said": "A new sales tax law was issued in early 2015 whereby a sales tax of 300% will be imposed on alcohol and tobacco (cigarettes), 15% on travel tickets, 15% on cars, and 20% on mobile recharge cards and internet."
+    }
+   ]
+  },
+  {
+   "item": "year",
+   "finding": "Income tax falls due at the end of the financial year in which the income arose, and the income tax return must be filed on or before 31 May each year; a late return costs 10% of the tax, at most IQD 500,000.",
+   "value": {
+    "due": {
+     "on": "05-31",
+     "after": 1
+    },
+    "lateFiling": {
+     "rate": 0.1,
+     "maxIQD": 500000
+    },
+    "taxYear": "financial year (assessment in the following year)"
+   },
+   "applies": "Taxpayers under Income Tax Law No. 113 of 1982 as amended (General Commission for Taxes guide).",
+   "sources": [
+    {
+     "src": 4,
+     "said": "ومنها أيضاً عدم تقديم تقرير ضريبة الدخل في أو قبل 31/5 من كل سنة وفي هذه الحالة تكون العقوبة غرامة مالية تعادل (10%) من الضريبة المتحققة على أن لا تزيد عن خمسمائة ألف دينار … ينشأ الحق بضريبة الدخل عند انتهاء السنة المالية التي يمارس المكلف فيها نشاطا يتحقق منه دخل خاضع"
+    }
+   ]
+  }
+ ],
+ "country": "IQ",
+ "sources": [
+  {
+   "url": "https://taxsummaries.pwc.com/iraq/individual/taxes-on-personal-income",
+   "title": "PwC Worldwide Tax Summaries: Iraq, Individual - Taxes on personal income (reviewed 24 June 2026)",
+   "read": "2026-11-01",
+   "kind": "secondary",
+   "quotes": "https://tax.mof.gov.iq/",
+   "said": "0 250,000 3 250,000 500,000 5 500,000 1,000,000 10 1,000,000 15"
+  },
+  {
+   "url": "https://taxsummaries.pwc.com/iraq/individual/tax-administration",
+   "title": "PwC Worldwide Tax Summaries: Iraq, Individual - Tax administration (reviewed 24 June 2026)",
+   "read": "2026-11-01",
+   "kind": "secondary",
+   "quotes": "https://tax.mof.gov.iq/",
+   "said": "The employer is responsible for deducting the staff income tax from their salaries, and forwarding that amount to the General Commission of Taxes/Direct Deduction Division within a period not exceeding the first 15 days of the next month in which the assessment was incurred."
+  },
+  {
+   "url": "https://taxsummaries.pwc.com/iraq/individual/other-taxes",
+   "title": "PwC Worldwide Tax Summaries: Iraq, Individual - Other taxes (reviewed 24 June 2026)",
+   "read": "2026-11-01",
+   "kind": "secondary",
+   "quotes": "https://tax.mof.gov.iq/",
+   "said": "The employer's contribution is 12% and the employee's contribution is 5% from net salaries. The contribution of employers that are categorised as prime will be 25%. … A new sales tax law was issued in early 2015 whereby a sales tax of 300% will be imposed on alcohol and tobacco (cigarettes), 15% on travel tickets, 15% on cars, and 20% on mobile recharge cards and internet."
+  },
+  {
+   "url": "https://taxsummaries.pwc.com/iraq/corporate/withholding-taxes",
+   "title": "PwC Worldwide Tax Summaries: Iraq, Corporate - Withholding taxes (reviewed 24 June 2026)",
+   "read": "2026-11-01",
+   "kind": "secondary",
+   "quotes": "https://tax.mof.gov.iq/",
+   "said": "The non-resident entity in Iraq will be subject to WHT at a rate of 15% from the deemed profit determined by the Ministry of Finance. … 8. The contract of athletes and artists 30"
+  },
+  {
+   "url": "https://tax.mof.gov.iq/%d8%af%d9%84%d9%8a%d9%84-%d8%b6%d8%b1%d9%8a%d8%a8%d8%a9-%d8%a7%d9%84%d8%af%d8%ae%d9%84/",
+   "title": "دليل ضريبة الدخل (Income tax guide, General Commission for Taxes, Ministry of Finance of Iraq)",
+   "read": "2026-11-01",
+   "kind": "primary",
+   "said": "ومنها أيضاً عدم تقديم تقرير ضريبة الدخل في أو قبل 31/5 من كل سنة وفي هذه الحالة تكون العقوبة غرامة مالية تعادل (10%) من الضريبة المتحققة على أن لا تزيد عن خمسمائة ألف دينار … ينشأ الحق بضريبة الدخل عند انتهاء السنة المالية التي يمارس المكلف فيها نشاطا يتحقق منه دخل خاضع"
+  }
+ ],
+ "blockers": [
+  {
+   "item": "residents",
+   "sought": "The current scale and personal allowances from the General Commission for Taxes",
+   "tried": {
+    "institution": "tax.mof.gov.iq home page reachable; Income Tax Law No. 113 of 1982 and the current scale were not located there (2026-11-01) || 2026-11-01 retry: tax.mof.gov.iq income tax guide read (saved IQ-gct-income-tax-guide.html): gives scales and allowances only for assessment years 2010-2013, and the 31 May return date (used for year); the 2019 guidelines linked from the withholding guide read (IQ-gct-wht-rules-2019.pdf, deemed-profit rules for trades and professions): nothing on this item",
+    "official-register": "Iraqi Gazette (Al-Waqa'i al-Iraqiya) not read || 2026-11-01 retry: Al-Waqa'i al-Iraqiya not reachable as text; the Commission's site has no text of Income Tax Law No. 113 of 1982",
+    "web-search": "not run separately || 2026-11-01 retry: refused by the tool on 2026-11-01: 'this turn's web search budget is used up (limit: 200 WebSearch calls per turn, shared by every agent)'; queries sent and refused this turn: 'Налоговый кодекс Республики Беларусь статья 199 ставки подоходного налога 2026 13 25 процентов' and 'Eswatini Revenue Service PAYE tax tables 1 July 2026'; no search engine was queried any other way",
+    "trade-press": "PwC Iraq used || 2026-11-01 retry: PwC Iraq (already used); nothing further",
+    "archive": "web.archive.org resets the connection from this environment (2026-11-01). || 2026-11-01 retry: archive.org's availability API now answers (snapshots of the institution's site exist), but web.archive.org snapshot pages return HTTP 403 over http and reset over https from this environment (2026-11-01)"
+   }
+  },
+  {
+   "item": "nonResident",
+   "sought": "The federal tax on a non-resident performer's or director's fee",
+   "tried": {
+    "institution": "tax.mof.gov.iq home page reachable; Income Tax Law No. 113 of 1982 and the current scale were not located there (2026-11-01) || 2026-11-01 retry: tax.mof.gov.iq income tax guide read (saved IQ-gct-income-tax-guide.html): gives scales and allowances only for assessment years 2010-2013, and the 31 May return date (used for year); the 2019 guidelines linked from the withholding guide read (IQ-gct-wht-rules-2019.pdf, deemed-profit rules for trades and professions): nothing on this item",
+    "official-register": "Iraqi Gazette (Al-Waqa'i al-Iraqiya) not read || 2026-11-01 retry: Al-Waqa'i al-Iraqiya not reachable as text; the Commission's site has no text of Income Tax Law No. 113 of 1982",
+    "web-search": "not run separately || 2026-11-01 retry: refused by the tool on 2026-11-01: 'this turn's web search budget is used up (limit: 200 WebSearch calls per turn, shared by every agent)'; queries sent and refused this turn: 'Налоговый кодекс Республики Беларусь статья 199 ставки подоходного налога 2026 13 25 процентов' and 'Eswatini Revenue Service PAYE tax tables 1 July 2026'; no search engine was queried any other way",
+    "trade-press": "PwC Iraq used || 2026-11-01 retry: PwC Iraq (already used); nothing further",
+    "archive": "web.archive.org resets the connection from this environment (2026-11-01). || 2026-11-01 retry: archive.org's availability API now answers (snapshots of the institution's site exist), but web.archive.org snapshot pages return HTTP 403 over http and reset over https from this environment (2026-11-01)"
+   }
+  },
+  {
+   "item": "authors",
+   "sought": "Any special treatment of authors' fees",
+   "tried": {
+    "institution": "tax.mof.gov.iq home page reachable; Income Tax Law No. 113 of 1982 and the current scale were not located there (2026-11-01) || 2026-11-01 retry: tax.mof.gov.iq income tax guide read (saved IQ-gct-income-tax-guide.html): gives scales and allowances only for assessment years 2010-2013, and the 31 May return date (used for year); the 2019 guidelines linked from the withholding guide read (IQ-gct-wht-rules-2019.pdf, deemed-profit rules for trades and professions): nothing on this item",
+    "official-register": "Iraqi Gazette (Al-Waqa'i al-Iraqiya) not read || 2026-11-01 retry: Al-Waqa'i al-Iraqiya not reachable as text; the Commission's site has no text of Income Tax Law No. 113 of 1982",
+    "web-search": "not run separately || 2026-11-01 retry: refused by the tool on 2026-11-01: 'this turn's web search budget is used up (limit: 200 WebSearch calls per turn, shared by every agent)'; queries sent and refused this turn: 'Налоговый кодекс Республики Беларусь статья 199 ставки подоходного налога 2026 13 25 процентов' and 'Eswatini Revenue Service PAYE tax tables 1 July 2026'; no search engine was queried any other way",
+    "trade-press": "PwC Iraq used || 2026-11-01 retry: PwC Iraq (already used); nothing further",
+    "archive": "web.archive.org resets the connection from this environment (2026-11-01). || 2026-11-01 retry: archive.org's availability API now answers (snapshots of the institution's site exist), but web.archive.org snapshot pages return HTTP 403 over http and reset over https from this environment (2026-11-01)"
+   }
+  }
+ ]
+}

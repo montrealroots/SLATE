@@ -1,0 +1,217 @@
+{
+ "topic": "tax.TV",
+ "read": "2026-11-01",
+ "note": "Read 2026-11-01 at the owner's word (\"Build those first 3 starting with ledger first\"; of the 21 countries read first: \"It should cover across every country\"; \"Retry the blocked tax facts once all countries land\"): the tax on a screen worker's pay in Tuvalu: a resident's income tax, social contributions, what is withheld at source, a non-resident artiste's withholding, an author's treatment, VAT and the tax year. Research and retry subagents (workbench/briefs/BRIEF-tax.md, BRIEF-tax-retry.md), every quote checked by the lead against its saved page.",
+ "figures": [
+  {
+   "item": "residents",
+   "finding": "Under Schedule 6 of the Income Tax Act 1992 as read, a resident individual's taxable income is taxed at 30%, less a rebate of $15 for each completed week (up to 52), so that income up to a set level bears no tax; later amendments (2008, 2017, 2019) were not read.",
+   "value": {
+    "currency": "AUD",
+    "rate": 0.3,
+    "brackets": [
+     {
+      "from": 0,
+      "to": null,
+      "rate": 0.3
+     }
+    ],
+    "rebate": {
+     "perWeek": 15,
+     "maxWeeks": 52,
+     "nonResident": "increased by one third, weeks present only"
+    },
+    "regional": null,
+    "version": "Act 5 of 1992 text as hosted by ICNL"
+   },
+   "applies": "Resident individuals (text of uncertain revision date)",
+   "sources": [
+    {
+     "src": 0,
+     "said": "1. In relation to any person in any year, income tax shall be payable at the rates set out below in respect of that person's taxable income for that year: % of taxable income (a) Taxable income of a resident individual in their personal capacity 30%"
+    },
+    {
+     "src": 0,
+     "said": "year (not exceeding 52 in aggregate) for which the person was a taxpayer a rebate of: $15 Provided that: … b) the purpose of the rebate is that for any person who is a resident individual, who is entitled to the rebate in relation to any year, a zero rate of income tax applies to so much of that person's taxable income as does not exceed the specified level of taxable income (as defined in section 2); and (c) where the individual is non resident, the rebate: (i) shall be increased by one third; and (ii) shall only be available in relation to completed weeks of presence in Tuvalu."
+    }
+   ]
+  },
+  {
+   "item": "year",
+   "finding": "The tax year is the calendar year, and the annual return of income is due within 2 months of its end (by 28 or 29 February) unless the Secretary extends the time.",
+   "value": {
+    "start": "01-01",
+    "end": "12-31",
+    "returnDue": "within 2 months after year end"
+   },
+   "applies": "Income Tax Act Cap. 26.16, 2008 Revised Edition, ss. 2 and 41(6).",
+   "sources": [
+    {
+     "src": 1,
+     "said": "“year” means the calendar year: … Where the person had not been accorded an extension of time pursuant … to section 43, within 2 months of the end of the year"
+    }
+   ]
+  },
+  {
+   "item": "nonResident",
+   "finding": "A service fee paid to a non-resident for work done in Tuvalu is non-resident withholding income: the payer withholds 15% of the gross fee (less under a treaty), and the non-resident owes the greater of that withholding and the tax on the fee figured as ordinary taxable income; for services rendered outside Tuvalu the 15% is final.",
+   "value": {
+    "rate": 0.15,
+    "base": "gross service fee",
+    "final": "final for services outside Tuvalu; otherwise the greater of 15% and the ordinary tax"
+   },
+   "applies": "Income Tax Act, 2008 Revised Edition, s. 2 (definitions), s. 38, Schedule 5 Part A; later amendments not read.",
+   "sources": [
+    {
+     "src": 1,
+     "said": "“non resident withholding income” comprises gross income from a source … (g)   service fees; or … non resident withholding income comprising: … (b)   service fees                                                 15% … The amount of income tax which shall be payable by any person in respect of … each category of non resident withholding income derived by him shall be the … greater of"
+    }
+   ]
+  },
+  {
+   "item": "residents",
+   "finding": "The 2008 Revised Edition taxes a resident individual's taxable income at 30%, less a rebate of $23.07 for each completed week (at most 52) so that income up to a set level bears none; an employer withholds 30% of pay less $15 a week for a principal job, after the provident fund contribution.",
+   "value": {
+    "currency": "AUD",
+    "rate": 0.3,
+    "weeklyRebate": 23.07,
+    "payeRate": 0.3,
+    "payeWeeklyReduction": 15
+   },
+   "applies": "Income Tax Act, 2008 Revised Edition, Schedules 5 and 6; the 2017 and 2019 amendments (see blocker) may have changed these.",
+   "sources": [
+    {
+     "src": 1,
+     "said": "(a) Taxable income of a resident individual in their       30% … a rebate of:                           $23.07 … emoluments derived by a person from any income employment in         30% … reduced by the amount of $15 for … each completed week in the period in respect of which"
+    }
+   ]
+  },
+  {
+   "item": "vat",
+   "finding": "Consumption Tax falls on taxable supplies, services included, by a person registered or liable to register, which a person must do when taxable supplies reach $100,000 in a 12-month period; the rate is set by Regulation within 3% to 10%.",
+   "value": {
+    "currency": "AUD",
+    "registrationThreshold": 100000,
+    "rateRange": [
+     0.03,
+     0.1
+    ],
+    "rate": "not read"
+   },
+   "applies": "Consumption Tax Act 2008; a freelancer below $100,000 a year charges none.",
+   "sources": [
+    {
+     "src": 2,
+     "said": "The rate of Consumption Tax shall be an amount determined by the Minister … by Regulation, but shall be an amount within the range from 3% to 10% … the person's enterprise in that period will be $100,000 or"
+    }
+   ]
+  },
+  {
+   "item": "social",
+   "finding": "Every employee in Tuvalu is a member of the Tuvalu National Provident Fund: the employee pays 13% of gross monthly earnings and the employer 10% (the TNPF's employers' page reads 'a minimum of 13%'), due by the 15th of the next month; an employer may add up to 3% more; the self-employed may join voluntarily.",
+   "value": {
+    "currency": "AUD",
+    "employee": 0.13,
+    "employer": 0.1,
+    "employerReadingB": 0.13,
+    "employerVoluntaryExtra": 0.03,
+    "due": "15th of the next month"
+   },
+   "applies": "Employees; the employer's share conflict is kept as a blocker.",
+   "sources": [
+    {
+     "src": 3,
+     "said": "Employee Contribution 13% Employer Contribution 10% … All employees are required to deduct 13% of their gross earnings per month to TNPF and their Employer will need to pay 10%"
+    },
+    {
+     "src": 4,
+     "said": "Employers are required by law to contribute a minimum of 13% of employees' monthly wages … Voluntary Incentive 3% of employees' monthly wages Due Date: Contributions must be paid on or before the 15th of each month"
+    },
+    {
+     "src": 5,
+     "said": "in paragraph 1 by deleting “10%” and substituting “13%”"
+    }
+   ]
+  }
+ ],
+ "country": "TV",
+ "sources": [
+  {
+   "url": "https://www.icnl.org/wp-content/uploads/Tuvalu_IncomeTaxAct1992.pdf",
+   "title": "Income Tax Act 1992 (Act 5 of 1992), Tuvalu, as hosted by ICNL (revision date not stated)",
+   "read": "2026-11-01",
+   "kind": "primary",
+   "said": "1. In relation to any person in any year, income tax shall be payable at the rates set out below in respect of that person's taxable income for that year: % of taxable income (a) Taxable income of a resident individual in their personal capacity 30% … year (not exceeding 52 in aggregate) for which the person was a taxpayer a rebate of: $15 Provided that: … b) the purpose of the rebate is that for any person who is a resident individual, who is entitled to the rebate in relation to any year, a zero rate of income tax applies to so much of that person's taxable income as does not exceed the specified level of taxable income (as defined in section 2); and (c) where the individual is non resident, the rebate: (i) shall be increased by one third; and (ii) shall only be available in relation to completed weeks of presence in Tuvalu."
+  },
+  {
+   "url": "https://finance.gov.tv/wp-content/uploads/2022/05/Income-Tax-Act.pdf",
+   "title": "Income Tax Act, Cap. 26.16, 2008 Revised Edition (Ministry of Finance and Economic Development, Tuvalu)",
+   "read": "2026-11-01",
+   "kind": "primary",
+   "said": "“year” means the calendar year: … Where the person had not been accorded an extension of time pursuant … to section 43, within 2 months of the end of the year … “non resident withholding income” comprises gross income from a source … (g)   service fees; or … non resident withholding income comprising: … (b)   service fees                                                 15% … The amount of income tax which shall be payable by any person in respect of … each category of non resident withholding income derived by him shall be the … greater of … (a) Taxable income of a resident individual in their       30% … a rebate of:                           $23.07 … emoluments derived by a person from any income employment in         30% … reduced by the amount of $15 for … each completed week in the period in respect of which"
+  },
+  {
+   "url": "https://finance.gov.tv/wp-content/uploads/2022/05/Consumption-Tax-Act-2008.pdf",
+   "title": "Consumption Tax Act 2008 (Act 9 of 2008), Ministry of Finance and Economic Development, Tuvalu",
+   "read": "2026-11-01",
+   "kind": "primary",
+   "said": "The rate of Consumption Tax shall be an amount determined by the Minister … by Regulation, but shall be an amount within the range from 3% to 10% … the person's enterprise in that period will be $100,000 or"
+  },
+  {
+   "url": "https://tnpf.tv/members/become-a-member",
+   "title": "Become a Member (Tuvalu National Provident Fund)",
+   "read": "2026-11-01",
+   "kind": "primary",
+   "said": "Employee Contribution 13% Employer Contribution 10% … All employees are required to deduct 13% of their gross earnings per month to TNPF and their Employer will need to pay 10%"
+  },
+  {
+   "url": "https://tnpf.tv/employer/become-an-employer",
+   "title": "Become an Employer (Tuvalu National Provident Fund)",
+   "read": "2026-11-01",
+   "kind": "primary",
+   "said": "Employers are required by law to contribute a minimum of 13% of employees' monthly wages … Voluntary Incentive 3% of employees' monthly wages Due Date: Contributions must be paid on or before the 15th of each month"
+  },
+  {
+   "url": "https://tnpf.tv/PF%20Contribution%202008.pdf",
+   "title": "Provident Fund (Contributions) (Amendment) Regulations 2008, LN 12 of 2009 (TNPF legislation page)",
+   "read": "2026-11-01",
+   "kind": "primary",
+   "said": "in paragraph 1 by deleting “10%” and substituting “13%”"
+  }
+ ],
+ "blockers": [
+  {
+   "item": "residents",
+   "sought": "The Income Tax Act as amended to 2026 (amendments of 2008, 2017 and 2019 change the Schedule 6 threshold and rates).",
+   "tried": {
+    "institution": "mof.gov.tv did not answer; tuvalu.tv not a tax site || 2026-11-01 retry: finance.gov.tv (Ministry of Finance and Economic Development) answers; its media library holds the Income Tax Act 2008 Revised Edition, the Income Tax Amendment Act 2008 and the Consumption Tax Act 2008 (saved TV-mof-*.pdf), now figures; the 2017 and 2019 amendments to Schedule 6 are not among its files",
+    "official-register": "PacLII (paclii.org, pacliirms) refused this environment (403); AustLII mirror reset the connection || 2026-11-01 retry: tuvalu-legislation.tv/cms answers, but its act listings load by script and its search returned no PDF for 'Income Tax' or 'Consumption Tax'; PacLII still answers a Cloudflare check (403)",
+    "web-search": "searched Tuvalu income tax rates: PacLII amendment listings only || 2026-11-01 retry: not run: the tool refused searches this turn, the shared limit of 200 having been reached (2026-11-01)",
+    "trade-press": "taxatlas/rivermate conflict (0-30% vs no tax), not used || 2026-11-01 retry: taxatlas/rivermate conflict, not used",
+    "archive": "web.archive.org unreachable from this environment || 2026-11-01 retry: archive.org availability API answers, but web.archive.org is refused from this environment (http 'Blocked by egress policy', https connection fails), not read (2026-11-01)"
+   }
+  },
+  {
+   "item": "social",
+   "sought": "Which employer share the TNPF levies on a member's gross earnings (10% on the members' page, 'a minimum of 13%' on the employers' page), in the regulation's own text",
+   "tried": {
+    "institution": "not tried || 2026-11-01 retry: tnpf.tv read: 'Become a Member' (employee 13%, employer 10%) and 'Become an Employer' (employer 'a minimum of 13%'), and the Contribution Regulations 1984 and 2008 amendment (employee rate 10% to 13%): now a figure; the two TNPF pages disagree on the employer's share",
+    "official-register": "not tried || 2026-11-01 retry: TNPF legislation page lists the Contribution Regulation (Amendment) 2021 (employer may add up to 3%); the regulation raising the employer's share to 10% was not found among the PDFs",
+    "web-search": "not run || 2026-11-01 retry: not run: the tool refused searches this turn, the shared limit of 200 having been reached (2026-11-01)",
+    "trade-press": "not tried || 2026-11-01 retry: No firm summary for Tuvalu read",
+    "archive": "web.archive.org unreachable from this environment || 2026-11-01 retry: archive.org availability API answers, but web.archive.org is refused from this environment (http 'Blocked by egress policy', https connection fails), not read (2026-11-01)"
+   }
+  },
+  {
+   "item": "vat",
+   "sought": "The Consumption Tax rate fixed by Regulation under s.5(3) of the Consumption Tax Act 2008 (within 3% to 10%) as in force for 2026",
+   "tried": {
+    "institution": "not tried || 2026-11-01 retry: finance.gov.tv (Ministry of Finance and Economic Development) answers; its media library holds the Income Tax Act 2008 Revised Edition, the Income Tax Amendment Act 2008 and the Consumption Tax Act 2008 (saved TV-mof-*.pdf), now figures: the Consumption Tax Act sets the rate by Regulation within 3% to 10% and registration at $100,000 of taxable supplies a year; the Regulation fixing the rate is not among the Ministry's files",
+    "official-register": "not tried || 2026-11-01 retry: tuvalu-legislation.tv/cms answers, but its act listings load by script and its search returned no PDF for 'Income Tax' or 'Consumption Tax'; PacLII still answers a Cloudflare check (403)",
+    "web-search": "not run || 2026-11-01 retry: not run: the tool refused searches this turn, the shared limit of 200 having been reached (2026-11-01)",
+    "trade-press": "not tried || 2026-11-01 retry: No firm summary for Tuvalu read",
+    "archive": "web.archive.org unreachable from this environment || 2026-11-01 retry: archive.org availability API answers, but web.archive.org is refused from this environment (http 'Blocked by egress policy', https connection fails), not read (2026-11-01)"
+   }
+  }
+ ]
+}

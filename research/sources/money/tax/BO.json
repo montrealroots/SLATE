@@ -1,0 +1,235 @@
+{
+ "topic": "tax.BO",
+ "read": "2026-11-01",
+ "note": "Read 2026-11-01 at the owner's word (\"Build those first 3 starting with ledger first\"; of the 21 countries read first: \"It should cover across every country\"; \"Retry the blocked tax facts once all countries land\"): the tax on a screen worker's pay in Bolivia: a resident's income tax, social contributions, what is withheld at source, a non-resident artiste's withholding, an author's treatment, VAT and the tax year. Research and retry subagents (workbench/briefs/BRIEF-tax.md, BRIEF-tax-retry.md), every quote checked by the lead against its saved page.",
+ "figures": [
+  {
+   "item": "residents",
+   "finding": "Bolivia taxes only Bolivian-source income; an employee pays RC-IVA at a flat 13% on gross pay after pension contributions and other legal deductions (input VAT on purchases may be credited), with no local income tax. Since Ley 1448 (2022) a self-employed professional or tradesperson (an actor, writer or director working on their own account) is also taxed under RC-IVA at 13%, no longer under IUE; a non-domiciled person's fees for work in Bolivia fall in RC-IVA too, except artists and sportspeople in international contests.",
+   "value": {
+    "currency": "BOB",
+    "brackets": [
+     {
+      "from": 0,
+      "to": null,
+      "rate": 0.13
+     }
+    ],
+    "base": "gross pay less pension contributions and legal deductions",
+    "creditForInputVat": true,
+    "regional": null,
+    "basis": "territorial",
+    "selfEmployedProfessionals": {
+     "regime": "RC-IVA",
+     "rate": 0.13,
+     "since": "Ley 1448 (2022-07-25)"
+    }
+   },
+   "applies": "Individuals with Bolivian-source income",
+   "sources": [
+    {
+     "src": 0,
+     "said": "Se incorporan los incisos g) y h) en el Artículo 19 de la Ley N° 843 (Texto Ordenado vigente), con el siguiente texto: \"g. Los provenientes del ejercicio de la profesión u oficios en forma libre o independiente. h. Los honorarios, retribuciones o ingresos por pagos, cualquiera sea su denominación, de personas no domiciliadas en el Estado Plurinacional de Bolivia, provenientes del trabajo desarrollado en territorio nacional. No están alcanzados por este impuesto los ingresos de deportistas y artistas, no domiciliados, por trabajos en actividades de concurso, competencia o torneos internacionales.\" … a. La frase \"el ejercicio de profesiones liberales y oficios sujetos a reglamentación\", del Artículo 39 de la Ley N° 843 (Texto Ordenado Vigente)."
+    },
+    {
+     "src": 1,
+     "said": "The personal income tax ( Regimen Complementario del Impuesto al Valor Agregado or RC-IVA) rate is 13%. Employers have the obligation to withhold and pay to the tax authorities the RC-IVA on gross income after deduction of social contributions and other concepts established by tax law. … There are no local taxes on personal income in Bolivia."
+    },
+    {
+     "src": 2,
+     "said": "Self-employed professionals also are subject to RC-IVA, while income from other business activities remains subject to IUE. … Rates: The RC-IVA rate generally is 13%. … Deductions and allowances: A credit is allowed for the 13% VAT included in invoices issued to the taxpayer for purchases of goods and services."
+    }
+   ]
+  },
+  {
+   "item": "social",
+   "finding": "The employee pays 12.71% of gross salary to the pension system (to 60 minimum salaries a month), plus a solidarity contribution of 1.15% to 11.48% on pay above BOB 13,000; the employer pays 15.21% of pay (17.21% in mining), including 2% to the National Housing Fund.",
+   "value": {
+    "currency": "BOB",
+    "employee": {
+     "pension": 0.1271,
+     "ceiling": "60 minimum national salaries per month",
+     "solidarity": {
+      "above": 13000,
+      "range": [
+       0.0115,
+       0.1148
+      ]
+     }
+    },
+    "employer": {
+     "total": 0.1521,
+     "mining": 0.1721,
+     "housingFund": 0.02
+    }
+   },
+   "applies": "Employees. The earlier reading that only the employee contributes (PwC's pension paragraph) is corrected by Deloitte's employer 15.21%; the split of that 15.21% (health, professional risk, solidarity, housing) is not stated (see blocker).",
+   "sources": [
+    {
+     "src": 3,
+     "said": "Pension funds are administered privately, and only employees contribute toward their retirement pension. The contribution rate is 12.71% calculated on gross salary with a threshold of 60 minimum national salaries per month (i.e. approximately 28,450 United States dollars [USD]). … employees who earn more than 13,000 bolivianos (BOB) per month are subject to a supportive social contribution determined on a scale system from 1.15% up to 11.48% over the gross salary."
+    },
+    {
+     "src": 2,
+     "said": "The employer must contribute 15.21% (17.21% for mining companies) of the employee’s income, and the employee must contribute 12.71%. … The employer also must contribute 2% to the National Housing Fund."
+    }
+   ]
+  },
+  {
+   "item": "withholding",
+   "finding": "The employer withholds RC-IVA at 13% from pay monthly and files a consolidated return; an employee files no annual return, while a non-employee subject to RC-IVA files quarterly.",
+   "value": {
+    "rate": 0.13,
+    "frequency": "monthly",
+    "nonEmployees": "quarterly return"
+   },
+   "applies": "Employees and other RC-IVA payers",
+   "sources": [
+    {
+     "src": 4,
+     "said": "The employer submits a consolidated tax return on a monthly basis and withholds the tax (RC-IVA) on employee's income. … Individuals working as employees are not required to submit an annual tax return. … Individuals who are not employees and are subject to RC-IVA need to submit a tax return on a quarterly basis."
+    }
+   ]
+  },
+  {
+   "item": "nonResident",
+   "finding": "A payment to a non-domiciled individual for activities performed in Bolivia bears 16% withholding (3% transaction tax plus 13% RC-IVA).",
+   "value": {
+    "rate": 0.16,
+    "parts": {
+     "transactionTax": 0.03,
+     "rcIva": 0.13
+    },
+    "final": "withheld at source"
+   },
+   "applies": "Non-domiciled individuals working in Bolivia",
+   "sources": [
+    {
+     "src": 5,
+     "said": "Payments to non-domiciled individuals for their activities performed within Bolivian territory are subject to a WHT at a rate of 16%, such rate refers to transaction tax at rate of 3% and personal income tax ( Regimen Complementario del Impuesto al Valor Agregado or RC-IVA) at a rate of 13%."
+    }
+   ]
+  },
+  {
+   "item": "authors",
+   "finding": "Royalties paid to a non-resident bear 12.5% withholding; activities such as the production or distribution of films only partly performed in Bolivia bear a reduced 2.5%.",
+   "value": {
+    "nonResidentRoyalties": 0.125,
+    "partlyInBolivia": 0.025
+   },
+   "applies": "Authors and rights holders abroad",
+   "sources": [
+    {
+     "src": 5,
+     "said": "Dividend payments, distributions of profits to the head office by Bolivian branches, interest payments, royalty payments, and fees paid for any type of services made to non-residents are subject to a WHT of 12.5%. … Activities considered partially performed within Bolivian territory (e.g. telecommunication services, insurance, transportation, production/distribution of cinematographic films … by non-residents are subject to a reduced WHT of 2.5%."
+    }
+   ]
+  },
+  {
+   "item": "vat",
+   "finding": "Services in Bolivia bear VAT at 13%, and gross income from any activity bears the 3% transaction tax monthly.",
+   "value": {
+    "rate": 0.13,
+    "transactionTax": 0.03,
+    "threshold": null
+   },
+   "applies": "Services within Bolivia",
+   "sources": [
+    {
+     "src": 3,
+     "said": "VAT is levied on the sale of movable goods and provision of services carried out within Bolivian territory at a standard rate of 13%"
+    },
+    {
+     "src": 6,
+     "said": "The tax on gross income (also known as transaction tax) generally taxes gross income arising from the performance of any economic or commercial activity (including non-profitable activities) at a rate of 3% on a monthly basis."
+    }
+   ]
+  },
+  {
+   "item": "year",
+   "finding": "RC-IVA for an independent is assessed by calendar quarter (to 31 March, 30 June, 30 September, 31 December); employment income is settled by monthly withholding with no annual return.",
+   "value": {
+    "independentPeriod": "calendar quarter",
+    "employees": "monthly withholding"
+   },
+   "applies": "Individuals under RC-IVA, 2026",
+   "sources": [
+    {
+     "src": 2,
+     "said": "Tax period: The tax period is the calendar quarter ending 31 March, 30 June, 30 September, and 31 December of each year. … Filing and payment: Employment income is taxed by withholding."
+    }
+   ]
+  }
+ ],
+ "country": "BO",
+ "sources": [
+  {
+   "url": "https://www.impuestos.gob.bo/wp-content/uploads/2025/09/LEY-1448.pdf",
+   "title": "Ley N° 1448 de 25 de julio de 2022, art. 3 (texto de consulta, Gaceta Oficial), as published by the Servicio de Impuestos Nacionales",
+   "read": "2026-11-01",
+   "kind": "primary",
+   "said": "Se incorporan los incisos g) y h) en el Artículo 19 de la Ley N° 843 (Texto Ordenado vigente), con el siguiente texto: \"g. Los provenientes del ejercicio de la profesión u oficios en forma libre o independiente. h. Los honorarios, retribuciones o ingresos por pagos, cualquiera sea su denominación, de personas no domiciliadas en el Estado Plurinacional de Bolivia, provenientes del trabajo desarrollado en territorio nacional. No están alcanzados por este impuesto los ingresos de deportistas y artistas, no domiciliados, por trabajos en actividades de concurso, competencia o torneos internacionales.\" … a. La frase \"el ejercicio de profesiones liberales y oficios sujetos a reglamentación\", del Artículo 39 de la Ley N° 843 (Texto Ordenado Vigente)."
+  },
+  {
+   "url": "https://taxsummaries.pwc.com/bolivia/individual/taxes-on-personal-income",
+   "title": "Bolivia - Individual - Taxes on personal income (PwC, reviewed 21 July 2026)",
+   "read": "2026-11-01",
+   "kind": "secondary",
+   "quotes": "https://www.impuestos.gob.bo/",
+   "said": "The personal income tax ( Regimen Complementario del Impuesto al Valor Agregado or RC-IVA) rate is 13%. Employers have the obligation to withhold and pay to the tax authorities the RC-IVA on gross income after deduction of social contributions and other concepts established by tax law. … There are no local taxes on personal income in Bolivia."
+  },
+  {
+   "url": "https://www.deloitte.com/content/dam/assets-shared/docs/services/tax/2026/dttl-tax-boliviahighlights-2026.pdf",
+   "title": "Bolivia Highlights 2026 (Deloitte), on Ley 843 (Texto Ordenado) and the social security laws",
+   "read": "2026-11-01",
+   "kind": "secondary",
+   "quotes": "https://www.impuestos.gob.bo/",
+   "said": "Self-employed professionals also are subject to RC-IVA, while income from other business activities remains subject to IUE. … Rates: The RC-IVA rate generally is 13%. … Deductions and allowances: A credit is allowed for the 13% VAT included in invoices issued to the taxpayer for purchases of goods and services. … The employer must contribute 15.21% (17.21% for mining companies) of the employee’s income, and the employee must contribute 12.71%. … The employer also must contribute 2% to the National Housing Fund. … Tax period: The tax period is the calendar quarter ending 31 March, 30 June, 30 September, and 31 December of each year. … Filing and payment: Employment income is taxed by withholding."
+  },
+  {
+   "url": "https://taxsummaries.pwc.com/bolivia/individual/other-taxes",
+   "title": "Bolivia - Individual - Other taxes (PwC, reviewed 21 July 2026)",
+   "read": "2026-11-01",
+   "kind": "secondary",
+   "quotes": "https://www.impuestos.gob.bo/",
+   "said": "Pension funds are administered privately, and only employees contribute toward their retirement pension. The contribution rate is 12.71% calculated on gross salary with a threshold of 60 minimum national salaries per month (i.e. approximately 28,450 United States dollars [USD]). … employees who earn more than 13,000 bolivianos (BOB) per month are subject to a supportive social contribution determined on a scale system from 1.15% up to 11.48% over the gross salary. … VAT is levied on the sale of movable goods and provision of services carried out within Bolivian territory at a standard rate of 13%"
+  },
+  {
+   "url": "https://taxsummaries.pwc.com/bolivia/individual/tax-administration",
+   "title": "Bolivia - Individual - Tax administration (PwC, reviewed 21 July 2026)",
+   "read": "2026-11-01",
+   "kind": "secondary",
+   "quotes": "https://www.impuestos.gob.bo/",
+   "said": "The employer submits a consolidated tax return on a monthly basis and withholds the tax (RC-IVA) on employee's income. … Individuals working as employees are not required to submit an annual tax return. … Individuals who are not employees and are subject to RC-IVA need to submit a tax return on a quarterly basis."
+  },
+  {
+   "url": "https://taxsummaries.pwc.com/bolivia/corporate/withholding-taxes",
+   "title": "Bolivia - Corporate - Withholding taxes (PwC, reviewed 21 July 2026)",
+   "read": "2026-11-01",
+   "kind": "secondary",
+   "quotes": "https://www.impuestos.gob.bo/",
+   "said": "Payments to non-domiciled individuals for their activities performed within Bolivian territory are subject to a WHT at a rate of 16%, such rate refers to transaction tax at rate of 3% and personal income tax ( Regimen Complementario del Impuesto al Valor Agregado or RC-IVA) at a rate of 13%. … Dividend payments, distributions of profits to the head office by Bolivian branches, interest payments, royalty payments, and fees paid for any type of services made to non-residents are subject to a WHT of 12.5%. … Activities considered partially performed within Bolivian territory (e.g. telecommunication services, insurance, transportation, production/distribution of cinematographic films … by non-residents are subject to a reduced WHT of 2.5%."
+  },
+  {
+   "url": "https://taxsummaries.pwc.com/bolivia/corporate/taxes-on-corporate-income",
+   "title": "Bolivia - Corporate - Taxes on corporate income (PwC, reviewed 21 July 2026)",
+   "read": "2026-11-01",
+   "kind": "secondary",
+   "quotes": "https://www.impuestos.gob.bo/",
+   "said": "The tax on gross income (also known as transaction tax) generally taxes gross income arising from the performance of any economic or commercial activity (including non-profitable activities) at a rate of 3% on a monthly basis."
+  }
+ ],
+ "blockers": [
+  {
+   "item": "social",
+   "sought": "The split of the employer's 15.21% (Caja Nacional de Salud 10%, professional risk, employer solidarity, housing 2%) from the APS, the Ministry of Labour or the law.",
+   "tried": {
+    "institution": "2026-11-01: impuestos.gob.bo home read (saved BO-sin.html): institutional menu only; its WordPress search for \"profesionales independientes IUE\": connection reset || 2026-11-01 retry: impuestos.gob.bo answers this time: RC-IVA Profesionales Independientes page (saved BO-sin-rciva-independientes.html) carries its content as an image only; Leyes page read and Ley 1448 saved (BO-sin-ley1448.pdf); a file named LEY843.pdf there is a 2016 loan law, discarded; aps.gob.bo and mintrabajo.gob.bo answer (HTTP 200) but their rate pages were not located without search.",
+    "official-register": "2026-11-01: Ley 843 text not read || 2026-11-01 retry: gacetaoficialdebolivia.gob.bo does not answer (curl 000); Ley 065 (pensions) not read.",
+    "web-search": "2026-11-01: not found in PwC Bolivia pages read || 2026-11-01 retry: WebSearch refused by the tool on 2026-11-01: the turn's shared 200-search limit was reached before this query; no other search route used.",
+    "trade-press": "2026-11-01: PwC Bolivia (cited) || 2026-11-01 retry: Deloitte Bolivia Highlights 2026 read (saved BO-deloitte-2026.pdf, quoted): employer 15.21%, housing 2%; no split.",
+    "archive": "2026-11-01: web.archive.org unreachable through the proxy this session || 2026-11-01 retry: archive.org/wayback/available answers; web.archive.org snapshots reset https and return 403 on http from this environment (2026-11-01), so none was read."
+   }
+  }
+ ]
+}

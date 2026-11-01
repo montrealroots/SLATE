@@ -1,0 +1,105 @@
+{
+ "topic": "tax.GF",
+ "read": "2026-11-01",
+ "note": "Read 2026-11-01 at the owner's word (\"Build those first 3 starting with ledger first\"; of the 21 countries read first: \"It should cover across every country\"; \"Retry the blocked tax facts once all countries land\"): the tax on a screen worker's pay in French Guiana: a resident's income tax, social contributions, what is withheld at source, a non-resident artiste's withholding, an author's treatment, VAT and the tax year. Research and retry subagents (workbench/briefs/BRIEF-tax.md, BRIEF-tax-retry.md), every quote checked by the lead against its saved page.",
+ "figures": [
+  {
+   "item": "follows",
+   "finding": "French Guiana is a French overseas department: a person domiciled there pays French income tax on all income, under France's rules.",
+   "value": {
+    "follows": "FR"
+   },
+   "applies": "Individuals domiciled in Guyane",
+   "sources": [
+    {
+     "src": 0,
+     "said": "Les entreprises domiciliées dans un DOM (Guadeloupe, Martinique, Guyane, La Réunion et Mayotte) sont soumises,en raison de leur forme ou de leur objet, à l'impôt sur le revenu (IR) ou l'impôt sur les sociétés (IS). Impôt sur le revenu Si vous êtes domicilié fiscalement dans un DOM, vous êtes passible de l’impôt sur le revenu à raison de l’ensemble de vos revenus."
+    }
+   ]
+  },
+  {
+   "item": "residents",
+   "finding": "The French income tax from the scale is cut by 40% for a household domiciled in Guyane on 31 December, up to €4,050, after the family-quotient cap and before the décote and reductions (CGI art. 197-I-3).",
+   "value": {
+    "follows": "FR",
+    "reduction": {
+     "rate": 0.4,
+     "cap": 4050,
+     "currency": "EUR",
+     "order": "after quotient familial cap, before décote and reductions",
+     "test": "address on 31 December of the income year"
+    }
+   },
+   "applies": "Income of 2025 (2026 brochure)",
+   "sources": [
+    {
+     "src": 1,
+     "said": "CONTRIBUABLES DOMICILIÉS DANS LES DOM (CGI, art. 197-I-3) L’impôt issu du barème dû par les contribuables domiciliés dans les DOM (après plafonnement des effets du quotient familial et avant application de la décote et des réductions d’impôt) fait l’objet d’un abattement de: – 30% pour la Guadeloupe, la Martinique et la Réunion (limité à 2450€); – 40% pour la Guyane et Mayotte (limité à 4050€). Le taux de l’abattement est fixé en fonction de l’adresse au 31décembre de l’année des revenus."
+    },
+    {
+     "src": 0,
+     "said": "30 % pour la Guadeloupe, la Martinique et la Réunion (limité à 2 450 €) ; 40 % pour la Guyane et Mayotte (limité à 4 050 €)."
+    }
+   ]
+  },
+  {
+   "item": "vat",
+   "finding": "VAT does not apply in Guyane for the time being, so a freelancer's fee there bears none.",
+   "value": {
+    "standard": 0,
+    "none": true
+   },
+   "applies": "Guyane",
+   "sources": [
+    {
+     "src": 0,
+     "said": "La TVA n’est provisoirement pas applicable en Guyane ni à Mayotte."
+    }
+   ]
+  },
+  {
+   "item": "wages",
+   "finding": "The employer's payroll tax (taxe sur les salaires), where due, has a single rate of 2.55% in Guyane.",
+   "value": {
+    "payrollTaxRate": 0.0255
+   },
+   "applies": "Employers liable to taxe sur les salaires",
+   "sources": [
+    {
+     "src": 0,
+     "said": "Toutefois, il n'existe qu'un seul taux de taxe sur les salaires dans les DOM qui diffère selon les départements : 2,95% pour la Guadeloupe, la Martinique et la Réunion ; 2,55 % pour la Guyane et Mayotte."
+    }
+   ]
+  }
+ ],
+ "country": "GF",
+ "sources": [
+  {
+   "url": "https://www.impots.gouv.fr/professionnel/impots-professionnels-dom",
+   "title": "Impôts dus par les professionnels dans les DOM | impots.gouv.fr",
+   "read": "2026-11-01",
+   "kind": "primary",
+   "said": "Les entreprises domiciliées dans un DOM (Guadeloupe, Martinique, Guyane, La Réunion et Mayotte) sont soumises,en raison de leur forme ou de leur objet, à l'impôt sur le revenu (IR) ou l'impôt sur les sociétés (IS). Impôt sur le revenu Si vous êtes domicilié fiscalement dans un DOM, vous êtes passible de l’impôt sur le revenu à raison de l’ensemble de vos revenus. … 30 % pour la Guadeloupe, la Martinique et la Réunion (limité à 2 450 €) ; 40 % pour la Guyane et Mayotte (limité à 4 050 €). … La TVA n’est provisoirement pas applicable en Guyane ni à Mayotte. … Toutefois, il n'existe qu'un seul taux de taxe sur les salaires dans les DOM qui diffère selon les départements : 2,95% pour la Guadeloupe, la Martinique et la Réunion ; 2,55 % pour la Guyane et Mayotte."
+  },
+  {
+   "url": "https://www.impots.gouv.fr/www2/fichiers/documentation/brochure/ir_2026/pdf_som/21-calcul_impot_369a382.pdf",
+   "title": "Brochure pratique IR 2026: Calcul de l'impôt (DGFiP)",
+   "read": "2026-11-01",
+   "kind": "primary",
+   "said": "CONTRIBUABLES DOMICILIÉS DANS LES DOM (CGI, art. 197-I-3) L’impôt issu du barème dû par les contribuables domiciliés dans les DOM (après plafonnement des effets du quotient familial et avant application de la décote et des réductions d’impôt) fait l’objet d’un abattement de: – 30% pour la Guadeloupe, la Martinique et la Réunion (limité à 2450€); – 40% pour la Guyane et Mayotte (limité à 4050€). Le taux de l’abattement est fixé en fonction de l’adresse au 31décembre de l’année des revenus."
+  }
+ ],
+ "blockers": [
+  {
+   "item": "social",
+   "sought": "Whether social contributions in Guyane differ from mainland France (CGSS Guyane rates, overseas employer exemptions).",
+   "tried": {
+    "institution": "impots.gouv.fr DOM page read (tax only) || 2026-11-01 retry: CGSS Guyane read (https://www.cgss-guyane.fr/employeurs/mes-demarches/creer-mon-entreprise/, calculer-mes-cotisations/, employer-du-personnel/, profil/travailleurs-independants/; saved /tmp/claude-0/-home-user-SLATE/cfe06f79-0641-529e-b709-1fcd46045c09/scratchpad/dl/tax/GF-cgss-*.html): it affiliates employers and the self-employed to the mandatory French social security scheme, but states no rate and no overseas exemption; its site search (wp-json search 'lodeom', 'exonerations') finds only the farmers' exemption page",
+    "official-register": "not tried (urssaf.fr / cgss not fetched) || 2026-11-01 retry: urssaf.fr pages on overseas exemptions (exonerations-outre-mer.html, sitemap.xml) give an empty reply to curl; legifrance.gouv.fr (Code de la sécurité sociale art. L752-3-2, the Lodeom exemption) answers a 'Just a moment...' bot check (403); neither read another way",
+    "web-search": "not run || 2026-11-01 retry: not run: 'urssaf.fr exonération Lodeom Guyane employeur cotisations patronales outre-mer 2026' was refused by the tool, the turn's shared limit of 200 searches having been reached (2026-11-01)",
+    "trade-press": "not tried || 2026-11-01 retry: No firm summary read: PwC and Deloitte publish France-wide summaries only; the CGSS pages above are the closest primary",
+    "archive": "web.archive.org unreachable from this environment || 2026-11-01 retry: archive.org availability API answers, but web.archive.org is refused from this environment (http 'Blocked by egress policy', https connection fails), not read"
+   }
+  }
+ ]
+}

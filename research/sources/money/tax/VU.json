@@ -1,0 +1,176 @@
+{
+ "topic": "tax.VU",
+ "read": "2026-11-01",
+ "note": "Read 2026-11-01 at the owner's word (\"Build those first 3 starting with ledger first\"; of the 21 countries read first: \"It should cover across every country\"; \"Retry the blocked tax facts once all countries land\"): the tax on a screen worker's pay in Vanuatu: a resident's income tax, social contributions, what is withheld at source, a non-resident artiste's withholding, an author's treatment, VAT and the tax year. Research and retry subagents (workbench/briefs/BRIEF-tax.md, BRIEF-tax-retry.md), every quote checked by the lead against its saved page.",
+ "figures": [
+  {
+   "item": "residents",
+   "finding": "Vanuatu levies no personal income tax: no tax falls on an individual's pay or fees (a 15% tax on rental income over VT 200,000 in six months is the only income levy, and it does not touch screen work).",
+   "value": {
+    "currency": "VUV",
+    "incomeTax": null,
+    "brackets": [],
+    "allowance": null
+   },
+   "applies": "Every individual, resident or not",
+   "sources": [
+    {
+     "src": 0,
+     "said": "With no taxes affecting individuals other than import duties (at varying rates), there is effectively no corporate and personal income tax in vanuatu"
+    },
+    {
+     "src": 0,
+     "said": "No Income Taxes Vanuatu offers NO Income Tax"
+    }
+   ]
+  },
+  {
+   "item": "year",
+   "finding": "With no income tax there is no individual tax year or return.",
+   "value": {
+    "individualReturn": null
+   },
+   "applies": "Individuals",
+   "sources": [
+    {
+     "src": 0,
+     "said": "With no taxes affecting individuals other than import duties (at varying rates), there is effectively no corporate and personal income tax in vanuatu"
+    }
+   ]
+  },
+  {
+   "item": "social",
+   "finding": "The Vanuatu National Provident Fund takes 8% of an employee's monthly remuneration, 4% from the employee and 4% from the employer, with no ceiling stated; expatriate employees contribute too unless approved to pay into an overseas fund; the self-employed (a freelancer) need not join but may as voluntary members.",
+   "value": {
+    "currency": "VUV",
+    "employee": 0.04,
+    "employer": 0.04,
+    "ceiling": null,
+    "expatriates": true,
+    "selfEmployed": "voluntary"
+   },
+   "applies": "Employees in Vanuatu",
+   "sources": [
+    {
+     "src": 1,
+     "said": "Currently, the rate of contribution is 8% of the employee's remuneration, of which 4% is from the employee's monthly remuneration while 4% is contributed by the employer."
+    },
+    {
+     "src": 1,
+     "said": "Expatriate employees are also subject to Vanuatu law and must make contributions, unless they have been approved by VNPF to have their contributions directed to an alternative overseas superannuation fund"
+    },
+    {
+     "src": 1,
+     "said": "Self-employed workers, including employers, are not obliged to join, however they can join and contribute as a Voluntary Member"
+    }
+   ]
+  },
+  {
+   "item": "withholding",
+   "finding": "No income tax is withheld from pay or fees; only the employee's 4% provident fund contribution is deducted.",
+   "value": {
+    "employee": null,
+    "freelancer": null
+   },
+   "applies": "Payments to individuals",
+   "sources": [
+    {
+     "src": 0,
+     "said": "No withholding taxes"
+    }
+   ]
+  },
+  {
+   "item": "nonResident",
+   "finding": "A non-resident performer, writer or director pays no Vanuatu income tax and has nothing withheld from a fee.",
+   "value": {
+    "rate": 0,
+    "final": true
+   },
+   "applies": "Non-residents",
+   "sources": [
+    {
+     "src": 0,
+     "said": "With no taxes affecting individuals other than import duties (at varying rates), there is effectively no corporate and personal income tax in vanuatu"
+    },
+    {
+     "src": 0,
+     "said": "No withholding taxes"
+    }
+   ]
+  },
+  {
+   "item": "authors",
+   "finding": "With no income tax, authors' fees and royalties are untaxed.",
+   "value": {
+    "royalties": 0
+   },
+   "applies": "Individual authors",
+   "sources": [
+    {
+     "src": 0,
+     "said": "With no taxes affecting individuals other than import duties (at varying rates), there is effectively no corporate and personal income tax in vanuatu"
+    }
+   ]
+  },
+  {
+   "item": "vat",
+   "finding": "VAT is 15% on most supplies by a registered person in a taxable activity; registration is required once taxable supplies in any 12 months exceed, or are expected to exceed, VT 4 million, and is voluntary below.",
+   "value": {
+    "currency": "VUV",
+    "standard": 0.15,
+    "threshold": 4000000,
+    "period": "any 12 months",
+    "voluntaryBelow": true
+   },
+   "applies": "A freelancer carrying on a taxable activity",
+   "sources": [
+    {
+     "src": 2,
+     "said": "VAT is an indirect consumption tax imposed at the rate of 15% on most goods and services supplied in Vanuatu by registered persons in the course of a taxable activity."
+    },
+    {
+     "src": 2,
+     "said": "A person must be registered for VAT if they carry on a taxable activity and their total taxable supplies in any 12-month period exceeds, or is expected to exceed, VT4 million. Persons with an annual turnover of less than VT 4 million have the option of registering for VAT"
+    }
+   ]
+  }
+ ],
+ "country": "VU",
+ "sources": [
+  {
+   "url": "https://investvanuatu.vu/untapped-potential/low-tax-jurisdiction/",
+   "title": "Vanuatu Foreign Investment Promotion Agency, Low tax jurisdiction",
+   "read": "2026-11-01",
+   "kind": "primary",
+   "said": "With no taxes affecting individuals other than import duties (at varying rates), there is effectively no corporate and personal income tax in vanuatu … No Income Taxes Vanuatu offers NO Income Tax … No withholding taxes"
+  },
+  {
+   "url": "https://www.vnpf.com.vu/employers.html",
+   "title": "Vanuatu National Provident Fund, Employers",
+   "read": "2026-11-01",
+   "kind": "primary",
+   "said": "Currently, the rate of contribution is 8% of the employee's remuneration, of which 4% is from the employee's monthly remuneration while 4% is contributed by the employer. … Expatriate employees are also subject to Vanuatu law and must make contributions, unless they have been approved by VNPF to have their contributions directed to an alternative overseas superannuation fund … Self-employed workers, including employers, are not obliged to join, however they can join and contribute as a Voluntary Member"
+  },
+  {
+   "url": "https://vanuatucustoms.gov.vu/taxes-and-licensing/taxes/value-added-tax-vat/introduction.html",
+   "title": "Department of Customs and Inland Revenue, Value Added Tax (VAT): Introduction",
+   "read": "2026-11-01",
+   "kind": "primary",
+   "said": "VAT is an indirect consumption tax imposed at the rate of 15% on most goods and services supplied in Vanuatu by registered persons in the course of a taxable activity. … A person must be registered for VAT if they carry on a taxable activity and their total taxable supplies in any 12-month period exceeds, or is expected to exceed, VT4 million. Persons with an annual turnover of less than VT 4 million have the option of registering for VAT"
+  }
+ ],
+ "blockers": [
+  {
+   "item": "residents",
+   "sought": "The Value Added Tax Act [CAP 247] text and a statement from Customs and Inland Revenue itself that no income tax is levied",
+   "tried": {
+    "institution": "customsinlandrevenue.gov.vu: CONNECT tunnel failed (502) on 2026-11-01; vanuatucustoms.gov.vu VAT introduction read; no income-tax page there || 2026-11-01 retry: customsinlandrevenue.gov.vu and revenue.gov.vu give no answer from this environment (curl 000, 2026-11-01)",
+    "official-register": "paclii.org returned HTTP 403 for the consolidated VAT Act || 2026-11-01 retry: laws.gov.vu gives no answer (curl 000); paclii.org HTTP 403 (Cloudflare) again",
+    "web-search": "searched 'Vanuatu income tax introduction 2026 Parliament bill' (no 2026 bill found) and 'Vanuatu Value Added Tax Act registration 4,000,000 vatu' || 2026-11-01 retry: WebSearch refused by the tool: this turn's shared limit of 200 searches was used up by the agents (2026-11-01)",
+    "trade-press": "not needed beyond the agency pages || 2026-11-01 retry: none found this turn",
+    "archive": "web.archive.org reset the connection (2026-11-01) || 2026-11-01 retry: web.archive.org resets the connection from this environment (2026-11-01)"
+   }
+  }
+ ]
+}

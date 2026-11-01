@@ -1,0 +1,436 @@
+{
+ "topic": "tax.LU",
+ "read": "2026-11-01",
+ "note": "Read 2026-11-01 at the owner's word (\"Build those first 3 starting with ledger first\"; of the 21 countries read first: \"It should cover across every country\"; \"Retry the blocked tax facts once all countries land\"): the tax on a screen worker's pay in Luxembourg: a resident's income tax, social contributions, what is withheld at source, a non-resident artiste's withholding, an author's treatment, VAT and the tax year. Research and retry subagents (workbench/briefs/BRIEF-tax.md, BRIEF-tax-retry.md), every quote checked by the lead against its saved page.",
+ "figures": [
+  {
+   "item": "residents",
+   "finding": "A single resident (tax class 1) pays nothing on the first EUR 13,230 and then rising slices from 8% to 42% above EUR 234,870, the scale in force from 2025; a solidarity surcharge for the employment fund of 7% of the tax (9% above EUR 150,000 in classes 1 and 1a, EUR 300,000 in class 2) is added; no municipal income tax.",
+   "value": {
+    "currency": "EUR",
+    "brackets": [
+     {
+      "from": 0,
+      "to": 13230,
+      "rate": 0
+     },
+     {
+      "from": 13230,
+      "to": 15435,
+      "rate": 0.08
+     },
+     {
+      "from": 15435,
+      "to": 17640,
+      "rate": 0.09
+     },
+     {
+      "from": 17640,
+      "to": 19845,
+      "rate": 0.1
+     },
+     {
+      "from": 19845,
+      "to": 22050,
+      "rate": 0.11
+     },
+     {
+      "from": 22050,
+      "to": 24255,
+      "rate": 0.12
+     },
+     {
+      "from": 24255,
+      "to": 26550,
+      "rate": 0.14
+     },
+     {
+      "from": 26550,
+      "to": 28845,
+      "rate": 0.16
+     },
+     {
+      "from": 28845,
+      "to": 31140,
+      "rate": 0.18
+     },
+     {
+      "from": 31140,
+      "to": 33435,
+      "rate": 0.2
+     },
+     {
+      "from": 33435,
+      "to": 35730,
+      "rate": 0.22
+     },
+     {
+      "from": 35730,
+      "to": 38025,
+      "rate": 0.24
+     },
+     {
+      "from": 38025,
+      "to": 40320,
+      "rate": 0.26
+     },
+     {
+      "from": 40320,
+      "to": 42615,
+      "rate": 0.28
+     },
+     {
+      "from": 42615,
+      "to": 44910,
+      "rate": 0.3
+     },
+     {
+      "from": 44910,
+      "to": 47205,
+      "rate": 0.32
+     },
+     {
+      "from": 47205,
+      "to": 49500,
+      "rate": 0.34
+     },
+     {
+      "from": 49500,
+      "to": 51795,
+      "rate": 0.36
+     },
+     {
+      "from": 51795,
+      "to": 54090,
+      "rate": 0.38
+     },
+     {
+      "from": 54090,
+      "to": 117450,
+      "rate": 0.39
+     },
+     {
+      "from": 117450,
+      "to": 176160,
+      "rate": 0.4
+     },
+     {
+      "from": 176160,
+      "to": 234870,
+      "rate": 0.41
+     },
+     {
+      "from": 234870,
+      "to": null,
+      "rate": 0.42
+     }
+    ],
+    "class": "1 (single); class 2 applies splitting for couples",
+    "solidaritySurcharge": {
+     "rate": 0.07,
+     "higherRate": 0.09,
+     "higherAbove": {
+      "class1": 150000,
+      "class2": 300000
+     }
+    },
+    "regional": null
+   },
+   "applies": "Tax years from 2025, still the latest tariff in November 2026 ('La dernière adaptation tarifaire est celle en vigueur à partir du 1er janvier 2025').",
+   "sources": [
+    {
+     "src": 0,
+     "said": "Le tarif de base applicable à partir de l'année d'imposition 2025 se présente de la manière suivante en fonction des différentes tranches de revenu imposable : 0 % pour la tranche de revenu inférieure à 13 230 euros 8 % pour la tranche de revenu comprise entre 13 230 et 15 435 euros"
+    },
+    {
+     "src": 0,
+     "said": "39 % pour la tranche de revenu comprise entre 54 090 et 117 450 euros 40 % pour la tranche de revenu comprise entre 117 450 et 176 160 euros 41 % pour la tranche de revenu comprise entre 176 160 et 234 870 euros 42 % pour la tranche de revenu dépassant 234 870 euros."
+    },
+    {
+     "src": 1,
+     "said": "La dernière adaptation tarifaire est celle en vigueur à partir du 1er janvier 2025."
+    },
+    {
+     "src": 2,
+     "said": "A solidarity tax of 7% of taxes (9% for taxpayers earning more than EUR 150,000 in tax class 1 and 1a or more than EUR 300,000 in tax class 2) must also be paid."
+    }
+   ]
+  },
+  {
+   "item": "year",
+   "finding": "The tax year is the calendar year; a return is due by 31 December of the following year; salaries are taxed by withholding and other income by quarterly advances.",
+   "value": {
+    "start": "01-01",
+    "end": "12-31",
+    "returnDue": "12-31 of the following year"
+   },
+   "applies": "Individuals.",
+   "sources": [
+    {
+     "src": 3,
+     "said": "The Luxembourg tax year is the calendar year."
+    },
+    {
+     "src": 3,
+     "said": "individual income tax returns of a given year should, as of tax year 2022, be filed by 31 December of the following year."
+    }
+   ]
+  },
+  {
+   "item": "social",
+   "finding": "An employee pays 8.5% for pension, 2.8% for sickness and 0.25% for cash benefits on pay up to five times the minimum wage a month (EUR 13,518.68 from 1 January 2026, EUR 13,856.63 after the June 2026 index step), plus 1.4% dependency insurance uncapped (less a quarter of the minimum wage); the employer matches the 8.5%, 2.8% and 0.25% and adds 1.7% family benefits, 0.14% health at work, accident insurance (0.65% at a bonus-malus factor of 1.00) and 0.23% to 2.66% to the employers' mutual; a self-employed person pays 17% pension, 5.6% sickness plus 0.5% for cash benefits, 1.4% dependency and accident insurance, on income between the minimum wage (EUR 2,703.74 a month) and five times it (EUR 13,518.68) from 1 January 2026.",
+   "value": {
+    "currency": "EUR",
+    "employee": {
+     "pension": 0.085,
+     "sickness": 0.028,
+     "dependency": 0.014,
+     "monthlyCeiling": 13856.63,
+     "cashBenefits": 0.0025,
+     "monthlyCeilingFrom20260101": 13518.68,
+     "monthlyCeilingFrom20260601": 13856.63
+    },
+    "selfEmployed": {
+     "pension": 0.17,
+     "sickness": 0.056,
+     "cashBenefits": 0.005,
+     "dependency": 0.014,
+     "accidentBase": 0.0065,
+     "monthlyMinimum": 2703.74,
+     "monthlyMaximum": 13518.68
+    },
+    "employer": {
+     "sickness": 0.028,
+     "cashBenefits": 0.0025,
+     "pension": 0.085,
+     "familyBenefits": 0.017,
+     "healthAtWork": 0.0014,
+     "accidentAtBonusMalus1": 0.0065,
+     "employersMutualFromTo": [
+      0.0023,
+      0.0266
+     ]
+    }
+   },
+   "applies": "2026: the CCSS notice gives the rates and limits at 1 January 2026; the ceiling of EUR 13,856.63 is PwC's, after the index step of 1 June 2026 (the CCSS notice for it was not found).",
+   "sources": [
+    {
+     "src": 4,
+     "said": "Taux de cotisation au 01.01.2026 pour salariés Risque Part assuré Part employeur Assurance maladie-maternité 2,80 % 2,80 % Majoration pour prestations en espèces 1 0,25 % 0,25 % Assurance pension 8,50 % 8,50 %"
+    },
+    {
+     "src": 4,
+     "said": "Prestations familiales … 1,70 % … Santé au travail … 0,14 % … Facteur bonus-malus 1,00 - 0,6500 %"
+    },
+    {
+     "src": 4,
+     "said": "Classe 1 (Taux d’absentéisme financier <0,65 %) - 0,23 % … Classe 4 (Taux d’absentéisme financier ≥2,50 %) - 2,66 %"
+    },
+    {
+     "src": 4,
+     "said": "Minimum cotisable 18 ans et plus non qualifié (SSM) 2,6 2.703,74 € … Maximum cotisable (5 x SSM) 2 13.518,68 € … un abattement correspondant à ¼ du salaire social minimum (675,93 EUR) est à prendre en considération pour fixer l’assiette cotisable pour l’assurance dépendance."
+    },
+    {
+     "src": 5,
+     "said": "For sickness: 2.80% of gross periodic remuneration, which is limited to a monthly ceiling of EUR 13,856.63. For pension: 8.5% of gross remuneration, which is limited to a monthly ceiling of EUR 13,856.63."
+    },
+    {
+     "src": 5,
+     "said": "The dependency contribution rate amounts to 1.4% (flat rate)."
+    },
+    {
+     "src": 6,
+     "said": "Assurance maladie-maternité 5,60 % Majoration pour prestations en espèces 0,50 % Assurance pension 17,00 %"
+    },
+    {
+     "src": 6,
+     "said": "Minimum cotisable (salaire social minimum, SSM) 1 2.703,74 €"
+    },
+    {
+     "src": 6,
+     "said": "Maximum cotisable (5 x SSM) 1 13.518,68 €"
+    }
+   ]
+  },
+  {
+   "item": "withholding",
+   "finding": "Salaries and pensions are taxed at source from the tax card (fiche de retenue) using the monthly withholding tables, which include the employment-fund surcharge; the withholding is an advance regularised by an annual adjustment or return.",
+   "value": {
+    "tables": "Barème de la retenue mensuelle sur les salaires, Mémorial A N° 590 du 24 décembre 2024",
+    "includesSolidarity": true
+   },
+   "applies": "From tax year 2025.",
+   "sources": [
+    {
+     "src": 1,
+     "said": "Les barèmes de la retenue d'impôt sur les traitements et salaires et les barèmes de la retenue d'impôt sur les pensions et rentes sont basés sur le barème de l'impôt sur le revenu, mais tiennent compte des particularités inhérentes au mode de perception et aux catégories de revenu en cause et englobent le supplément perçu pour le fonds pour l'emploi ."
+    },
+    {
+     "src": 1,
+     "said": "La retenue d'impôt à la source est à comparer à un acompte pouvant être trop élevé ou trop bas."
+    }
+   ]
+  },
+  {
+   "item": "nonResident",
+   "finding": "A non-resident's income from independent literary or artistic activity exercised or exploited in Luxembourg is withheld at 10% of gross receipts with no deduction (11.11% where the payer bears the tax).",
+   "value": {
+    "rate": 0.1,
+    "grossedUpRate": 0.1111,
+    "base": "gross receipts, no deduction"
+   },
+   "applies": "Non-resident artists, writers and other independent literary or artistic workers; treaty rates may reduce it.",
+   "sources": [
+    {
+     "src": 7,
+     "said": "la retenue d'impôt sur les revenus provenant de l'exercice d'une activité indépendante de nature littéraire ou artistique lorsque cette activité est ou a été exercée ou mise en valeur au Grand-Duché de Luxembourg;"
+    },
+    {
+     "src": 7,
+     "said": "Le taux de la retenue des revenus énumérés sous est fixé à 10 % des recettes sans aucune déduction. La retenue s'élève à 11,11 % lorsque le débiteur de l'allocation prend à sa charge l'impôt à retenir."
+    }
+   ]
+  },
+  {
+   "item": "vat",
+   "finding": "VAT's standard rate is 17%; a small business is exempt (franchise) while its turnover stays at or below EUR 50,000 a year (from 1 January 2025), with a 10% tolerance in the year it is passed.",
+   "value": {
+    "currency": "EUR",
+    "standard": 0.17,
+    "reduced": [
+     0.14,
+     0.08,
+     0.03
+    ],
+    "threshold": 50000,
+    "tolerance": 55000
+   },
+   "applies": "From 2025.",
+   "sources": [
+    {
+     "src": 8,
+     "said": "À partir du 1er janvier 2025, le seuil national au Luxembourg sera relevé de 35 000 euros à 50 000 euros, avec une tolérance de 10 %."
+    },
+    {
+     "src": 5,
+     "said": "subject to VAT at the standard rate of 17%"
+    }
+   ]
+  },
+  {
+   "item": "authors",
+   "finding": "Luxembourg's one partial exemption for intellectual-property income (80% of net eligible income, LIR art. 50ter) covers patents, utility models, supplementary protection certificates, orphan drugs, plant varieties and software copyright, not the copyright in a book, script or film; a writer's or director's fees and royalties are taxed as ordinary income on the scale.",
+   "value": {
+    "ipExemption": {
+     "rate": 0.8,
+     "law": "LIR art. 50ter",
+     "eligible": [
+      "patent",
+      "supplementary protection certificate",
+      "utility model",
+      "orphan drug",
+      "software copyright",
+      "plant variety"
+     ],
+     "coversLiteraryOrArtisticCopyright": false
+    }
+   },
+   "applies": "From 2018; read on the 2024 form, the latest the ACD lists for it.",
+   "sources": [
+    {
+     "src": 9,
+     "said": "Exonération partielle en vertu de l'article 50ter L.I.R. … Brevet (demande de brevet) Médicament orphelin … Certificat complémentaire de protection Droit d'auteur sur un logiciel informatique … Modèle d'utilité (demande de modèle d'utilité) Certificat d'obtention végétale (demande d'obtention végétale) … l’exonérationpartielle de 80% des revenus nets éligibles ajustés et compensés dégagés par un actif visé à l’article 50ter, alinéa 1er, numéro 1"
+    }
+   ]
+  }
+ ],
+ "country": "LU",
+ "sources": [
+  {
+   "url": "https://impotsdirects.public.lu/fr/az/t/tarif_pers.html",
+   "title": "ACD: Tarif de base applicable aux personnes physiques (impôt sur le revenu)",
+   "read": "2026-11-01",
+   "kind": "primary",
+   "said": "Le tarif de base applicable à partir de l'année d'imposition 2025 se présente de la manière suivante en fonction des différentes tranches de revenu imposable : 0 % pour la tranche de revenu inférieure à 13 230 euros 8 % pour la tranche de revenu comprise entre 13 230 et 15 435 euros … 39 % pour la tranche de revenu comprise entre 54 090 et 117 450 euros 40 % pour la tranche de revenu comprise entre 117 450 et 176 160 euros 41 % pour la tranche de revenu comprise entre 176 160 et 234 870 euros 42 % pour la tranche de revenu dépassant 234 870 euros."
+  },
+  {
+   "url": "https://impotsdirects.public.lu/fr/baremes.html",
+   "title": "ACD: Barèmes",
+   "read": "2026-11-01",
+   "kind": "primary",
+   "said": "La dernière adaptation tarifaire est celle en vigueur à partir du 1er janvier 2025. … Les barèmes de la retenue d'impôt sur les traitements et salaires et les barèmes de la retenue d'impôt sur les pensions et rentes sont basés sur le barème de l'impôt sur le revenu, mais tiennent compte des particularités inhérentes au mode de perception et aux catégories de revenu en cause et englobent le supplément perçu pour le fonds pour l'emploi . … La retenue d'impôt à la source est à comparer à un acompte pouvant être trop élevé ou trop bas."
+  },
+  {
+   "url": "https://taxsummaries.pwc.com/luxembourg/individual/taxes-on-personal-income",
+   "title": "PwC Worldwide Tax Summaries: Luxembourg, Individual - Taxes on personal income (reviewed 3 August 2026)",
+   "read": "2026-11-01",
+   "kind": "secondary",
+   "quotes": "https://impotsdirects.public.lu/fr/legislation/LIR.html",
+   "said": "A solidarity tax of 7% of taxes (9% for taxpayers earning more than EUR 150,000 in tax class 1 and 1a or more than EUR 300,000 in tax class 2) must also be paid."
+  },
+  {
+   "url": "https://taxsummaries.pwc.com/luxembourg/individual/tax-administration",
+   "title": "PwC Worldwide Tax Summaries: Luxembourg, Individual - Tax administration (reviewed 3 August 2026)",
+   "read": "2026-11-01",
+   "kind": "secondary",
+   "quotes": "https://impotsdirects.public.lu/fr/legislation/LIR.html",
+   "said": "The Luxembourg tax year is the calendar year. … individual income tax returns of a given year should, as of tax year 2022, be filed by 31 December of the following year."
+  },
+  {
+   "url": "https://ccss.public.lu/dam-assets/publications/2026/ccss-20260116-avis-80-99-fr-de.pdf",
+   "title": "CCSS, Avis aux employeurs: Taux de cotisation au 01.01.2026 pour salariés (16 janvier 2026)",
+   "read": "2026-11-01",
+   "kind": "primary",
+   "said": "Taux de cotisation au 01.01.2026 pour salariés Risque Part assuré Part employeur Assurance maladie-maternité 2,80 % 2,80 % Majoration pour prestations en espèces 1 0,25 % 0,25 % Assurance pension 8,50 % 8,50 % … Prestations familiales … 1,70 % … Santé au travail … 0,14 % … Facteur bonus-malus 1,00 - 0,6500 % … Classe 1 (Taux d’absentéisme financier <0,65 %) - 0,23 % … Classe 4 (Taux d’absentéisme financier ≥2,50 %) - 2,66 % … Minimum cotisable 18 ans et plus non qualifié (SSM) 2,6 2.703,74 € … Maximum cotisable (5 x SSM) 2 13.518,68 € … un abattement correspondant à ¼ du salaire social minimum (675,93 EUR) est à prendre en considération pour fixer l’assiette cotisable pour l’assurance dépendance."
+  },
+  {
+   "url": "https://taxsummaries.pwc.com/luxembourg/individual/other-taxes",
+   "title": "PwC Worldwide Tax Summaries: Luxembourg, Individual - Other taxes (reviewed 3 August 2026)",
+   "read": "2026-11-01",
+   "kind": "secondary",
+   "quotes": "https://ccss.public.lu/dam-assets/publications/2026/ccss-20260313-avis-60-fr-de.pdf",
+   "said": "For sickness: 2.80% of gross periodic remuneration, which is limited to a monthly ceiling of EUR 13,856.63. For pension: 8.5% of gross remuneration, which is limited to a monthly ceiling of EUR 13,856.63. … The dependency contribution rate amounts to 1.4% (flat rate). … subject to VAT at the standard rate of 17%"
+  },
+  {
+   "url": "https://ccss.public.lu/dam-assets/publications/2026/ccss-20260313-avis-60-fr-de.pdf",
+   "title": "CCSS: Avis aux non-salariés, taux de cotisation au 01.01.2026 (13 mars 2026)",
+   "read": "2026-11-01",
+   "kind": "primary",
+   "said": "Assurance maladie-maternité 5,60 % Majoration pour prestations en espèces 0,50 % Assurance pension 17,00 % … Minimum cotisable (salaire social minimum, SSM) 1 2.703,74 € … Maximum cotisable (5 x SSM) 1 13.518,68 €"
+  },
+  {
+   "url": "https://impotsdirects.public.lu/fr/az/r/reten_impot.html",
+   "title": "ACD: Retenues d'impôt à la source",
+   "read": "2026-11-01",
+   "kind": "primary",
+   "said": "la retenue d'impôt sur les revenus provenant de l'exercice d'une activité indépendante de nature littéraire ou artistique lorsque cette activité est ou a été exercée ou mise en valeur au Grand-Duché de Luxembourg; … Le taux de la retenue des revenus énumérés sous est fixé à 10 % des recettes sans aucune déduction. La retenue s'élève à 11,11 % lorsque le débiteur de l'allocation prend à sa charge l'impôt à retenir."
+  },
+  {
+   "url": "https://pfi.public.lu/dam-assets/pdf/tva/sme/faq-fr.pdf",
+   "title": "Portail de la fiscalité indirecte: Le nouveau régime de franchise des petites entreprises - FAQ 2024",
+   "read": "2026-11-01",
+   "kind": "primary",
+   "said": "À partir du 1er janvier 2025, le seuil national au Luxembourg sera relevé de 35 000 euros à 50 000 euros, avec une tolérance de 10 %."
+  },
+  {
+   "url": "https://impotsdirects.public.lu/dam-assets/fr/formulaires/entreprises_annexes/2024/760f-2024.pdf",
+   "title": "ACD, Modèle 760: Exonération partielle en vertu de l'article 50ter L.I.R. (année d'imposition 2024)",
+   "read": "2026-11-01",
+   "kind": "primary",
+   "said": "Exonération partielle en vertu de l'article 50ter L.I.R. … Brevet (demande de brevet) Médicament orphelin … Certificat complémentaire de protection Droit d'auteur sur un logiciel informatique … Modèle d'utilité (demande de modèle d'utilité) Certificat d'obtention végétale (demande d'obtention végétale) … l’exonérationpartielle de 80% des revenus nets éligibles ajustés et compensés dégagés par un actif visé à l’article 50ter, alinéa 1er, numéro 1"
+  }
+ ],
+ "blockers": [
+  {
+   "item": "authors",
+   "sought": "A primary statement that no rule other than art. 50ter (which excludes literary and artistic copyright) treats a resident author's or director's royalties specially",
+   "tried": {
+    "institution": "ACD tariff, withholding and barème pages read; none states a special rate for authors' royalties || retry 2026-11-01: ACD form 760 (art. 50ter) saved and cited: software copyright only, no literary or artistic copyright; ACD legislation pages legi26.html and textes-coordonnes.html list no coordinated LIR text with an author rule",
+    "official-register": "LIR text on impotsdirects.public.lu not read for this point || retry 2026-11-01: legilux.public.lu/eli/etat/leg/loi/1967/12/04/n1/consolide/20260101 serves a 2 KB script shell to curl; the LIR article text (art. 91 libérales, art. 50ter) not readable",
+    "web-search": "not run for this point (budget kept for other countries) || retry 2026-11-01: \"Luxembourg impôt revenu droits d'auteur écrivain artiste régime spécial LIR article 91 activité artistique \\\"droits d'auteur\\\" impotsdirects\" and \"impotsdirects.public.lu circulaire L.I.R. n° 50ter droits d'auteur sur logiciels brevets actifs éligibles\": the 760 form (used) and WIPO's note of the 2018 law; no author-specific rule",
+    "trade-press": "PwC Luxembourg individual summary read: no author-specific rule quoted || retry 2026-11-01: search results quoted no Luxembourg author rule (French BOFiP and l-expert-comptable pages are on French law)",
+    "archive": "web.archive.org resets the connection from this environment (2026-11-01). || retry 2026-11-01: web.archive.org: curl \"Recv failure: Connection reset by peer\" again 2026-11-01"
+   }
+  }
+ ]
+}

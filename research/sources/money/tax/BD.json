@@ -1,0 +1,258 @@
+{
+ "topic": "tax.BD",
+ "read": "2026-11-01",
+ "note": "Read 2026-11-01 at the owner's word (\"Build those first 3 starting with ledger first\"; of the 21 countries read first: \"It should cover across every country\"; \"Retry the blocked tax facts once all countries land\"): the tax on a screen worker's pay in Bangladesh: a resident's income tax, social contributions, what is withheld at source, a non-resident artiste's withholding, an author's treatment, VAT and the tax year. Research and retry subagents (workbench/briefs/BRIEF-tax.md, BRIEF-tax-retry.md), every quote checked by the lead against its saved page.",
+ "figures": [
+  {
+   "item": "residents",
+   "finding": "For income years 2025-26 and 2026-27 a resident pays nothing up to the tax-free threshold (BDT 400,000 for most; 450,000 for women and those 65 or older), then 10% on the next 300,000, 15% on the next 400,000, 20% on the next 500,000, 25% on the next 2 million and 30% above.",
+   "value": {
+    "currency": "BDT",
+    "threshold": 400000,
+    "thresholdWomenOver65": 450000,
+    "brackets": [
+     {
+      "from": 0,
+      "to": 400000,
+      "rate": 0
+     },
+     {
+      "from": 400000,
+      "to": 700000,
+      "rate": 0.1
+     },
+     {
+      "from": 700000,
+      "to": 1100000,
+      "rate": 0.15
+     },
+     {
+      "from": 1100000,
+      "to": 1600000,
+      "rate": 0.2
+     },
+     {
+      "from": 1600000,
+      "to": 3600000,
+      "rate": 0.25
+     },
+     {
+      "from": 3600000,
+      "to": null,
+      "rate": 0.3
+     }
+    ],
+    "regional": null
+   },
+   "applies": "FY 2025/26 and 2026/27 (a 35% top band is legislated from 2027/28); brackets shown for the general threshold. Primary: the Finance Act 2026 (in force 1 July 2026) sets these bands and the BDT 400,000 / 450,000 thresholds for tax years 2026-27 and 2027-28 (income years 2025-26 and 2026-27), with a 35% band above BDT 3.0 crore and higher thresholds from tax year 2028-29.",
+   "sources": [
+    {
+     "src": 0,
+     "said": "২০২৬-২০২৭ এবং ২০২৭-২০২৮ করবেষর্র জ� করহার … ৪,০০,০০০ টাকা পযর্� শূ� … পরবত� ৩,০০,০০০ টাকা পযর্� ১০% … পরবত� ৪,০০,০০০ টাকা পযর্� ১৫% … পরবত� ৫,০০,০০০ টাকা পযর্� ২০% … পরবত� ২০,০০,০০০ টাকা পযর্� ২৫% … অবিশ� টাকার উপর ৩০% … (ক) মিহলা করদাতা এবং ৬৫ বৎসর বা তদূ�র্ বয়েসর করদাতার করমু� আেয়র সীমা হইেব ৪,৫০,০০০ টাকা;"
+    },
+    {
+     "src": 1,
+     "said": "২০২৬-২০২৭ হইতে ২০৩০-২০৩১ করবর্ষের জন্য কোনো কর নির্ধারণের ক্ষেত্রে এই আইনের তফসিল-২ এর প্রথম অংশে নির্দিষ্ট করহার অনুযায়ী আয়কর ধার্য হইবে।"
+    },
+    {
+     "src": 2,
+     "said": "Up to tax free threshold Nil Next 300,000 10 Next 400,000 15 Next 500,000 20 Next 2 million 25 On rest of the income 30"
+    },
+    {
+     "src": 2,
+     "said": "The basic exemption limit for general taxpayers is BDT 400,000. The basic exemption limit for women and senior citizens aged 65 years or older is BDT 450,000."
+    }
+   ]
+  },
+  {
+   "item": "year",
+   "finding": "The income year runs from 1 July to 30 June; a return may be filed during the following tax year, with a 5% rebate (up to BDT 25,000) for filing by 30 September and surcharges after 31 December.",
+   "value": {
+    "start": "07-01",
+    "end": "06-30",
+    "earlyRebateBy": "09-30",
+    "noSurchargeBy": "12-31"
+   },
+   "applies": "Individuals.",
+   "sources": [
+    {
+     "src": 3,
+     "said": "The income year in Bangladesh for an individual is 1 July to 30 June."
+    },
+    {
+     "src": 3,
+     "said": "1 July - 30 September Rebate of 5% of tax liability (maximum BDT 25,000) 1 October - 31 December No rebate / additional tax"
+    }
+   ]
+  },
+  {
+   "item": "social",
+   "finding": "There is no general social-security tax; where a provident fund applies, the employee contributes 7% to 8% of salary and the employer matches.",
+   "value": {
+    "providentFund": {
+     "employee": [
+      0.07,
+      0.08
+     ],
+     "employerMatch": true
+    },
+    "general": null
+   },
+   "applies": "Establishments covered by the Bangladesh Labour Act 2006.",
+   "sources": [
+    {
+     "src": 4,
+     "said": "Employees (including foreign nationals) working with an establishment in Bangladesh to which the social security regulations apply are liable to contribute towards the provident fund at the fixed rate of 7% to 8% of salary."
+    }
+   ]
+  },
+  {
+   "item": "withholding",
+   "finding": "A professional or consultancy fee paid to a resident individual is withheld at 15%; salaries are taxed at source by the employer.",
+   "value": {
+    "residentProfessionalFee": 0.15
+   },
+   "applies": "Residents (Income-tax Act 2023).",
+   "sources": [
+    {
+     "src": 5,
+     "said": "Advisory or consultancy services and professional services - payment to individual 15%"
+    }
+   ]
+  },
+  {
+   "item": "nonResident",
+   "finding": "Payments to a non-resident artist, singer or player bear 30% withholding; a non-resident's salary 30%, professional services 20% and royalties 20%.",
+   "value": {
+    "artistSingerPlayer": 0.3,
+    "salary": 0.3,
+    "professionalService": 0.2,
+    "royalty": 0.2
+   },
+   "applies": "Non-residents.",
+   "sources": [
+    {
+     "src": 5,
+     "said": "Artist, singer, or player 30.00 Salary or remuneration 30.00"
+    },
+    {
+     "src": 5,
+     "said": "Advisory or consultancy service and professional service - individual 20.00"
+    },
+    {
+     "src": 5,
+     "said": "Royalty, license fee, or payments related to intangibles 20.00"
+    }
+   ]
+  },
+  {
+   "item": "vat",
+   "finding": "VAT is 15% for most goods and services; registration is required once turnover exceeds BDT 5 million.",
+   "value": {
+    "currency": "BDT",
+    "standard": 0.15,
+    "threshold": 5000000
+   },
+   "applies": "VAT and Supplementary Duty Act 2012.",
+   "sources": [
+    {
+     "src": 6,
+     "said": "The standard VAT rate in Bangladesh is 15% for the majority of goods and services."
+    },
+    {
+     "src": 6,
+     "said": "VAT registration is to be obtained once turnover exceeds 5 million Bangladeshi takas (BDT)."
+    }
+   ]
+  },
+  {
+   "item": "authors",
+   "finding": "No special relief for authors' fees or royalties was found in the Income Tax Act 2023 or its Sixth Schedule; whoever pays a royalty or copyright fee deducts 10% at source (12% where the base exceeds BDT 25 lakh).",
+   "value": {
+    "royaltyWithholding": [
+     {
+      "upTo": 2500000,
+      "rate": 0.1
+     },
+     {
+      "above": 2500000,
+      "rate": 0.12
+     }
+    ],
+    "authorRelief": null
+   },
+   "applies": "Royalties and copyright payments to residents (Income Tax Act 2023 s. 91); the Sixth Schedule (exemptions) has no author-specific entry.",
+   "sources": [
+    {
+     "src": 7,
+     "said": "91. Deduction from amount paid for intangible property.—The person responsible for making payment in respect of royalty, franchise or license, trademark, patent, copyright, industrial design, plant variety, geographical indication product or any other property related to intellectual property or immaterial or abstract or intangible thing shall, at the time of such payment or credit, deduct tax at the rate specified in the following table … Where base amount does not exceed 25(twenty five) 10% (ten percent) … Where base amount exceeds 25 (twenty five) lakh Taka 12% (twelve percent)"
+    }
+   ]
+  }
+ ],
+ "country": "BD",
+ "sources": [
+  {
+   "url": "http://bdlaws.minlaw.gov.bd/upload/act/2026-08-17-10-27-29-%E0%A6%A4%E0%A6%AB%E0%A6%B8%E0%A6%BF%E0%A6%B2_Act-No-96.pdf",
+   "title": "অর্থ আইন, ২০২৬ (Finance Act 2026, Act No. 96 of 2026), তফসিল-২ প্রথম অংশ অনুচ্ছেদ-ক, on bdlaws.minlaw.gov.bd (Legislative and Parliamentary Affairs Division); quoted from the PDF text layer, which maps some Bengali conjuncts to U+FFFD",
+   "read": "2026-11-01",
+   "kind": "primary",
+   "said": "২০২৬-২০২৭ এবং ২০২৭-২০২৮ করবেষর্র জ� করহার … ৪,০০,০০০ টাকা পযর্� শূ� … পরবত� ৩,০০,০০০ টাকা পযর্� ১০% … পরবত� ৪,০০,০০০ টাকা পযর্� ১৫% … পরবত� ৫,০০,০০০ টাকা পযর্� ২০% … পরবত� ২০,০০,০০০ টাকা পযর্� ২৫% … অবিশ� টাকার উপর ৩০% … (ক) মিহলা করদাতা এবং ৬৫ বৎসর বা তদূ�র্ বয়েসর করদাতার করমু� আেয়র সীমা হইেব ৪,৫০,০০০ টাকা;"
+  },
+  {
+   "url": "http://bdlaws.minlaw.gov.bd/act-1725/section-59534.html",
+   "title": "অর্থ আইন, ২০২৬, ধারা ১৬০ (bdlaws.minlaw.gov.bd; saved as UTF-8 from the UTF-16 page)",
+   "read": "2026-11-01",
+   "kind": "primary",
+   "said": "২০২৬-২০২৭ হইতে ২০৩০-২০৩১ করবর্ষের জন্য কোনো কর নির্ধারণের ক্ষেত্রে এই আইনের তফসিল-২ এর প্রথম অংশে নির্দিষ্ট করহার অনুযায়ী আয়কর ধার্য হইবে।"
+  },
+  {
+   "url": "https://taxsummaries.pwc.com/bangladesh/individual/taxes-on-personal-income",
+   "title": "PwC Worldwide Tax Summaries: Bangladesh, Individual - Taxes on personal income (reviewed 31 July 2026)",
+   "read": "2026-11-01",
+   "kind": "secondary",
+   "quotes": "https://nbr.gov.bd/",
+   "said": "Up to tax free threshold Nil Next 300,000 10 Next 400,000 15 Next 500,000 20 Next 2 million 25 On rest of the income 30 … The basic exemption limit for general taxpayers is BDT 400,000. The basic exemption limit for women and senior citizens aged 65 years or older is BDT 450,000."
+  },
+  {
+   "url": "https://taxsummaries.pwc.com/bangladesh/individual/tax-administration",
+   "title": "PwC Worldwide Tax Summaries: Bangladesh, Individual - Tax administration (reviewed 31 July 2026)",
+   "read": "2026-11-01",
+   "kind": "secondary",
+   "quotes": "https://nbr.gov.bd/",
+   "said": "The income year in Bangladesh for an individual is 1 July to 30 June. … 1 July - 30 September Rebate of 5% of tax liability (maximum BDT 25,000) 1 October - 31 December No rebate / additional tax"
+  },
+  {
+   "url": "https://taxsummaries.pwc.com/bangladesh/individual/other-taxes",
+   "title": "PwC Worldwide Tax Summaries: Bangladesh, Individual - Other taxes (reviewed 31 July 2026)",
+   "read": "2026-11-01",
+   "kind": "secondary",
+   "quotes": "https://nbr.gov.bd/",
+   "said": "Employees (including foreign nationals) working with an establishment in Bangladesh to which the social security regulations apply are liable to contribute towards the provident fund at the fixed rate of 7% to 8% of salary."
+  },
+  {
+   "url": "https://taxsummaries.pwc.com/bangladesh/corporate/withholding-taxes",
+   "title": "PwC Worldwide Tax Summaries: Bangladesh, Corporate - Withholding taxes (reviewed 31 July 2026)",
+   "read": "2026-11-01",
+   "kind": "secondary",
+   "quotes": "https://nbr.gov.bd/",
+   "said": "Advisory or consultancy services and professional services - payment to individual 15% … Artist, singer, or player 30.00 Salary or remuneration 30.00 … Advisory or consultancy service and professional service - individual 20.00 … Royalty, license fee, or payments related to intangibles 20.00"
+  },
+  {
+   "url": "https://taxsummaries.pwc.com/bangladesh/corporate/other-taxes",
+   "title": "PwC Worldwide Tax Summaries: Bangladesh, Corporate - Other taxes (reviewed 31 July 2026)",
+   "read": "2026-11-01",
+   "kind": "secondary",
+   "quotes": "https://nbr.gov.bd/",
+   "said": "The standard VAT rate in Bangladesh is 15% for the majority of goods and services. … VAT registration is to be obtained once turnover exceeds 5 million Bangladeshi takas (BDT)."
+  },
+  {
+   "url": "http://bdlaws.minlaw.gov.bd/upload/act/2026-01-18-15-24-07-123.-Income-tax-Act,-2023.pdf",
+   "title": "The Income Tax Act, 2023, Authentic English Text (NBR S.R.O. 404-Law/2025), on bdlaws.minlaw.gov.bd",
+   "read": "2026-11-01",
+   "kind": "primary",
+   "said": "91. Deduction from amount paid for intangible property.—The person responsible for making payment in respect of royalty, franchise or license, trademark, patent, copyright, industrial design, plant variety, geographical indication product or any other property related to intellectual property or immaterial or abstract or intangible thing shall, at the time of such payment or credit, deduct tax at the rate specified in the following table … Where base amount does not exceed 25(twenty five) 10% (ten percent) … Where base amount exceeds 25 (twenty five) lakh Taka 12% (twelve percent)"
+  }
+ ],
+ "blockers": []
+}

@@ -1,0 +1,199 @@
+{
+ "topic": "tax.NU",
+ "read": "2026-11-01",
+ "note": "Read 2026-11-01 at the owner's word (\"Build those first 3 starting with ledger first\"; of the 21 countries read first: \"It should cover across every country\"; \"Retry the blocked tax facts once all countries land\"): the tax on a screen worker's pay in Niue: a resident's income tax, social contributions, what is withheld at source, a non-resident artiste's withholding, an author's treatment, VAT and the tax year. Research and retry subagents (workbench/briefs/BRIEF-tax.md, BRIEF-tax-retry.md), every quote checked by the lead against its saved page.",
+ "figures": [
+  {
+   "item": "residents",
+   "finding": "An individual pays 10 cents a dollar on taxable income up to NZD 10,000, 20 cents from 10,000 to 20,000 and 30 cents above, as an effective rate on the whole income; a low-income rebate (up to NZD 2,000 outside the public service, up to 1,000 otherwise) reduces it for incomes up to 20,000.",
+   "value": {
+    "currency": "NZD",
+    "brackets": [
+     {
+      "from": 0,
+      "to": 10000,
+      "rate": 0.1
+     },
+     {
+      "from": 10000,
+      "to": 20000,
+      "rate": 0.2
+     },
+     {
+      "from": 20000,
+      "to": null,
+      "rate": 0.3
+     }
+    ],
+    "lowIncomeRebate": {
+     "privateSectorAtOrBelow20000": 2000,
+     "otherAtOrBelow10000": "tax or 1,000, the lesser",
+     "other10000to20000": "1,000 less 10 cents per dollar over 10,000"
+    },
+    "regional": null
+   },
+   "applies": "Income Tax Act 1961 Schedules 1 and 3 as consolidated in the Niue Legislation Act 2019; no later amendment was found on the Ministry of Finance's site.",
+   "sources": [
+    {
+     "src": 0,
+     "said": "On so much income as – The rate of tax for every dollar is – is not more than $10,000 10 cents is more than $10,000 but is not more than $20,000 20 cents is more than $20,000 30 cents"
+    },
+    {
+     "src": 0,
+     "said": "On all income not included within clause 2 the rate of income tax for every dollar of taxable income shall be the effective rate of tax ascertained by calculating tax on that income in accordance with the rates of tax specified in Part B"
+    },
+    {
+     "src": 0,
+     "said": "primary employment earnings are not derived from employment in the Niue Public Service or a statutory body $20,000 a year or less $2,000"
+    }
+   ]
+  },
+  {
+   "item": "year",
+   "finding": "The tax year runs from 1 April to 31 March; the individual return (TF1) is due 31 May and any balance by 31 January.",
+   "value": {
+    "start": "04-01",
+    "end": "03-31",
+    "returnDue": "05-31",
+    "paymentDue": "01-31"
+   },
+   "applies": "Individuals.",
+   "sources": [
+    {
+     "src": 0,
+     "said": "“year” means a year commencing on 1 April and ending on 31 March, both of these days being included;"
+    },
+    {
+     "src": 1,
+     "said": "Tax Filing Due Dates 31 May Income Tax Form TF1"
+    },
+    {
+     "src": 1,
+     "said": "Payment Due Dates 31January Income Tax debt payments"
+    }
+   ]
+  },
+  {
+   "item": "withholding",
+   "finding": "Employers deduct tax from salary and wages (PAYE, Part 6A of the act) and pay it by the 20th of the following month; a secondary employment taxed under code SEC is withheld at 10 cents a dollar.",
+   "value": {
+    "remitBy": "20th of the following month",
+    "secondaryCode": {
+     "code": "SEC",
+     "rate": 0.1
+    }
+   },
+   "applies": "Employees.",
+   "sources": [
+    {
+     "src": 0,
+     "said": "PART 6A TAX DEDUCTIONS BY EMPLOYERS"
+    },
+    {
+     "src": 0,
+     "said": "In the case of an employee to whom the tax code “SEC” under section 113D applies, the rate of withholding from the salary or wages or other source deduction payment of the employee arising from an employment other than the employee’s primary employment is 10 cants in every dollar."
+    },
+    {
+     "src": 1,
+     "said": "20th Every Month PAYE"
+    }
+   ]
+  },
+  {
+   "item": "vat",
+   "finding": "Niue Consumption Tax is 12.5%; registration is required once taxable supplies reach NZD 200,000 in 12 months.",
+   "value": {
+    "currency": "NZD",
+    "standard": 0.125,
+    "threshold": 200000
+   },
+   "applies": "Niue Consumption Tax Act 2009.",
+   "sources": [
+    {
+     "src": 2,
+     "said": "(b) in any other case, 12.5 percent."
+    },
+    {
+     "src": 2,
+     "said": "a person exceeds the registration threshold in a particular period if the total value of taxable supplies made or reasonably expected to be made by the person during the period is equal to or greater than $200,000."
+    }
+   ]
+  },
+  {
+   "item": "withholding",
+   "finding": "The Financial Secretary may withhold up to 10% of any account paid to a supplier of goods or services to the Niue Government, as a payment towards that supplier's income tax for the year, particularly where the supplier is non-compliant or in arrears.",
+   "value": {
+    "rate": 0.1,
+    "discretionary": true,
+    "payer": "Niue Government",
+    "final": false
+   },
+   "applies": "Suppliers (including freelancers) paid by the Niue Government (Income Tax Act 1961, s. 113R)",
+   "sources": [
+    {
+     "src": 0,
+     "said": "113R Withholding payments (1) The Financial Secretary may exercise discretion and withhold up to 10 percent of the total account to be paid to a supplier of goods or services to the Niue Government, as a contribution towards the total tax payable by the supplier in respect of his income in that income year."
+    }
+   ]
+  }
+ ],
+ "country": "NU",
+ "sources": [
+  {
+   "url": "https://mof.gov.nu/wp-content/uploads/2024/04/IncomeTax_1961.pdf",
+   "title": "Income Tax Act 1961 (Niue Legislation Act 2019 consolidation), Government of Niue Ministry of Finance",
+   "read": "2026-11-01",
+   "kind": "primary",
+   "said": "On so much income as – The rate of tax for every dollar is – is not more than $10,000 10 cents is more than $10,000 but is not more than $20,000 20 cents is more than $20,000 30 cents … On all income not included within clause 2 the rate of income tax for every dollar of taxable income shall be the effective rate of tax ascertained by calculating tax on that income in accordance with the rates of tax specified in Part B … primary employment earnings are not derived from employment in the Niue Public Service or a statutory body $20,000 a year or less $2,000 … “year” means a year commencing on 1 April and ending on 31 March, both of these days being included; … PART 6A TAX DEDUCTIONS BY EMPLOYERS … In the case of an employee to whom the tax code “SEC” under section 113D applies, the rate of withholding from the salary or wages or other source deduction payment of the employee arising from an employment other than the employee’s primary employment is 10 cants in every dollar. … 113R Withholding payments (1) The Financial Secretary may exercise discretion and withhold up to 10 percent of the total account to be paid to a supplier of goods or services to the Niue Government, as a contribution towards the total tax payable by the supplier in respect of his income in that income year."
+  },
+  {
+   "url": "https://mof.gov.nu/niuetaxold/",
+   "title": "Government of Niue Ministry of Finance: Niue Tax Office (tax filing and payment dates)",
+   "read": "2026-11-01",
+   "kind": "primary",
+   "said": "Tax Filing Due Dates 31 May Income Tax Form TF1 … Payment Due Dates 31January Income Tax debt payments … 20th Every Month PAYE"
+  },
+  {
+   "url": "https://mof.gov.nu/wp-content/uploads/2024/04/Niue-Consumption-Tax-Act-2009.pdf",
+   "title": "Niue Consumption Tax Act 2009, Government of Niue Ministry of Finance",
+   "read": "2026-11-01",
+   "kind": "primary",
+   "said": "(b) in any other case, 12.5 percent. … a person exceeds the registration threshold in a particular period if the total value of taxable supplies made or reasonably expected to be made by the person during the period is equal to or greater than $200,000."
+  }
+ ],
+ "blockers": [
+  {
+   "item": "social",
+   "sought": "Any compulsory social or superannuation contribution on pay in Niue",
+   "tried": {
+    "institution": "mof.gov.nu tax pages and media library searched (income, regulation, PAYE, amendment, schedule): none found || retry-8 2026-11-01: mof.gov.nu searched again (site search 'superannuation', 'withholding'; Downloads page; 'niue-tax-office' 404): nothing on the item",
+    "official-register": "paclii.org blocks this environment (Cloudflare HTTP 403, 2026-11-01). || retry-8 2026-11-01: Income Tax Act 1961 (MoF copy, Niue Legislation Act 2019 consolidation) re-read: superannuation appears only as an approved fund whose contributions reduce PAYE (s. 113H, at most $30.76 a fortnight), no compulsory contribution; Part 6 (absentees and non-residents) and s. 113R (discretionary 10% withholding on suppliers to Government, recorded) carry no entertainer or royalty rule; paclii.org still answers 403",
+    "web-search": "'Niue Inland Revenue income tax rates PAYE consumption tax 12.5% gov.nu' (2026-11-01): led to MoF pages and acts (used); no rule found on this point || retry-8 2026-11-01: a search for 'Niue non-resident entertainer tax superannuation contribution royalties' was refused by the search tool (shared per-turn limit of 200 searches reached)",
+    "trade-press": "secondary guides (Rivermate, Expanship) seen in results only; not relied on || retry-8 2026-11-01: none reachable this turn",
+    "archive": "web.archive.org resets the connection from this environment (2026-11-01). || retry-8 2026-11-01: web.archive.org: connection reset and availability API 429 on 2026-11-01"
+   }
+  },
+  {
+   "item": "nonResident",
+   "sought": "The tax on a non-resident performer's, writer's or director's fee earned in Niue, its rate and whether final",
+   "tried": {
+    "institution": "Income Tax Act 1961 Part 6 (agents and absentees) read: no entertainer rule or rate found || retry-8 2026-11-01: mof.gov.nu searched again (site search 'superannuation', 'withholding'; Downloads page; 'niue-tax-office' 404): nothing on the item",
+    "official-register": "paclii.org blocks this environment (Cloudflare HTTP 403, 2026-11-01). || retry-8 2026-11-01: Income Tax Act 1961 (MoF copy, Niue Legislation Act 2019 consolidation) re-read: superannuation appears only as an approved fund whose contributions reduce PAYE (s. 113H, at most $30.76 a fortnight), no compulsory contribution; Part 6 (absentees and non-residents) and s. 113R (discretionary 10% withholding on suppliers to Government, recorded) carry no entertainer or royalty rule; paclii.org still answers 403",
+    "web-search": "'Niue Inland Revenue income tax rates PAYE consumption tax 12.5% gov.nu' (2026-11-01): led to MoF pages and acts (used); no rule found on this point || retry-8 2026-11-01: a search for 'Niue non-resident entertainer tax superannuation contribution royalties' was refused by the search tool (shared per-turn limit of 200 searches reached)",
+    "trade-press": "none found || retry-8 2026-11-01: none reachable this turn",
+    "archive": "web.archive.org resets the connection from this environment (2026-11-01). || retry-8 2026-11-01: web.archive.org: connection reset and availability API 429 on 2026-11-01"
+   }
+  },
+  {
+   "item": "authors",
+   "sought": "Any special treatment of authors' fees or royalties",
+   "tried": {
+    "institution": "Income Tax Act 1961 read: none found || retry-8 2026-11-01: mof.gov.nu searched again (site search 'superannuation', 'withholding'; Downloads page; 'niue-tax-office' 404): nothing on the item",
+    "official-register": "paclii.org blocks this environment (Cloudflare HTTP 403, 2026-11-01). || retry-8 2026-11-01: Income Tax Act 1961 (MoF copy, Niue Legislation Act 2019 consolidation) re-read: superannuation appears only as an approved fund whose contributions reduce PAYE (s. 113H, at most $30.76 a fortnight), no compulsory contribution; Part 6 (absentees and non-residents) and s. 113R (discretionary 10% withholding on suppliers to Government, recorded) carry no entertainer or royalty rule; paclii.org still answers 403",
+    "web-search": "'Niue Inland Revenue income tax rates PAYE consumption tax 12.5% gov.nu' (2026-11-01): led to MoF pages and acts (used); no rule found on this point || retry-8 2026-11-01: a search for 'Niue non-resident entertainer tax superannuation contribution royalties' was refused by the search tool (shared per-turn limit of 200 searches reached)",
+    "trade-press": "none found || retry-8 2026-11-01: none reachable this turn",
+    "archive": "web.archive.org resets the connection from this environment (2026-11-01). || retry-8 2026-11-01: web.archive.org: connection reset and availability API 429 on 2026-11-01"
+   }
+  }
+ ]
+}

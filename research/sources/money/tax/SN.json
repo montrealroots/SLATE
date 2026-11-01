@@ -1,0 +1,293 @@
+{
+ "topic": "tax.SN",
+ "read": "2026-11-01",
+ "note": "Read 2026-11-01 at the owner's word (\"Build those first 3 starting with ledger first\"; of the 21 countries read first: \"It should cover across every country\"; \"Retry the blocked tax facts once all countries land\"): the tax on a screen worker's pay in Senegal: a resident's income tax, social contributions, what is withheld at source, a non-resident artiste's withholding, an author's treatment, VAT and the tax year. Research and retry subagents (workbench/briefs/BRIEF-tax.md, BRIEF-tax-retry.md), every quote checked by the lead against its saved page.",
+ "figures": [
+  {
+   "item": "residents",
+   "finding": "A Senegalese resident pays income tax by family shares: nothing to XOF 630,000, then 20%, 30%, 35%, 37%, 40%, and 43% above XOF 50,000,000, after a 30% deduction on employment income capped at XOF 900,000; a minimum tax of XOF 900 to 36,000 applies to every employee.",
+   "value": {
+    "currency": "XOF",
+    "brackets": [
+     {
+      "from": 0,
+      "to": 630000,
+      "rate": 0
+     },
+     {
+      "from": 630000,
+      "to": 1500000,
+      "rate": 0.2
+     },
+     {
+      "from": 1500000,
+      "to": 4000000,
+      "rate": 0.3
+     },
+     {
+      "from": 4000000,
+      "to": 8000000,
+      "rate": 0.35
+     },
+     {
+      "from": 8000000,
+      "to": 13500000,
+      "rate": 0.37
+     },
+     {
+      "from": 13500000,
+      "to": 50000000,
+      "rate": 0.4
+     },
+     {
+      "from": 50000000,
+      "to": null,
+      "rate": 0.43
+     }
+    ],
+    "perShare": true,
+    "employmentDeduction": {
+     "rate": 0.3,
+     "cap": 900000
+    },
+    "minimumTax": [
+     {
+      "from": 0,
+      "to": 599999,
+      "tax": 900
+     },
+     {
+      "from": 600000,
+      "to": 999999,
+      "tax": 3600
+     },
+     {
+      "from": 1000000,
+      "to": 1999999,
+      "tax": 4800
+     },
+     {
+      "from": 2000000,
+      "to": 6999999,
+      "tax": 12000
+     },
+     {
+      "from": 7000000,
+      "to": 11999999,
+      "tax": 18000
+     },
+     {
+      "from": 12000000,
+      "to": null,
+      "tax": 36000
+     }
+    ]
+   },
+   "applies": "2026; the scale applies per share (quotient familial) and is multiplied back.",
+   "sources": [
+    {
+     "src": 0,
+     "said": "0 630,000 0 630,001 1,500,000 20 1,500,001 4,000,000 30 4,000,001 8,000,000 35 8,000,001 13,500,000 37 13,500,001 50,000,000 40 50,000,001 And over 43"
+    },
+    {
+     "src": 0,
+     "said": "To calculate the total tax payable, the tax corresponding to each share is thereafter multiplied by the number of shares."
+    },
+    {
+     "src": 0,
+     "said": "0 599,999 900 600,000 999,999 3,600 1,000,000 1,999,999 4,800 2,000,000 6,999,999 12,000 7,000,000 11,999,999 18,000 12,000,000 And over 36,000"
+    },
+    {
+     "src": 1,
+     "said": "A lump-sum deduction of 30% of earnings, capped at XOF 900,000, is available when determining the taxable base for employment income tax purposes."
+    }
+   ]
+  },
+  {
+   "item": "social",
+   "finding": "Retirement contributions (IPRES) are 8.4% employer and 5.6% employee on pay up to XOF 432,000 a month (executives a further 3.6%/2.4% to XOF 1,296,000); the employer alone pays family benefits 7% and work injury 1–5% on pay up to XOF 63,000 a month; medical coverage is 6% shared on XOF 60,000–250,000.",
+   "value": {
+    "currency": "XOF",
+    "retirementGeneral": {
+     "employer": 0.084,
+     "employee": 0.056,
+     "ceilingMonthly": 432000
+    },
+    "retirementExecutive": {
+     "employer": 0.036,
+     "employee": 0.024,
+     "ceilingMonthly": 1296000
+    },
+    "family": {
+     "employer": 0.07,
+     "ceilingMonthly": 63000
+    },
+    "workInjury": {
+     "employer": [
+      0.01,
+      0.03,
+      0.05
+     ],
+     "ceilingMonthly": 63000
+    }
+   },
+   "applies": "2026.",
+   "sources": [
+    {
+     "src": 2,
+     "said": "General 8.4 5.6 432,000 Executive 3.6 2.4 1,296,000"
+    },
+    {
+     "src": 2,
+     "said": "Family 7 0 63,000 Industrial accident / Occupational disease 1/3/5 0 63,000"
+    }
+   ]
+  },
+  {
+   "item": "withholding",
+   "finding": "Employers withhold income tax and social contributions monthly from gross pay; a Senegalese payer withholds 5% from a resident individual's service fee where the provider is on the lump-sum regime or cannot show a tax number.",
+   "value": {
+    "employee": "monthly at the scale",
+    "residentServiceFee": 0.05
+   },
+   "applies": "2026.",
+   "sources": [
+    {
+     "src": 3,
+     "said": "Social security contributions and PIT on an individual’s wages are withheld monthly by employers and are computed on the basis of gross remuneration paid, including fringe benefits and bonuses."
+    },
+    {
+     "src": 0,
+     "said": "The Senegalese debtor must withhold 5% on remuneration paid to individuals who are resident in Senegal in exchange for services."
+    }
+   ]
+  },
+  {
+   "item": "nonResident",
+   "finding": "Remuneration for services, including royalties, rendered by a foreign individual bears 20% withholding unless a treaty limits it.",
+   "value": {
+    "rate": 0.2,
+    "includesRoyalties": true,
+    "final": null
+   },
+   "applies": "2026.",
+   "sources": [
+    {
+     "src": 4,
+     "said": "20% WHT on remuneration paid for services (including royalties) rendered by a foreign individual or foreign company."
+    }
+   ]
+  },
+  {
+   "item": "vat",
+   "finding": "VAT is 18% on most commercial operations (10% for tourist accommodation).",
+   "value": {
+    "rate": 0.18,
+    "threshold": null
+   },
+   "applies": "The threshold below which an individual provider is outside VAT was not found.",
+   "sources": [
+    {
+     "src": 2,
+     "said": "Subject to certain exclusions, most commercial operations are subject to an 18% VAT."
+    },
+    {
+     "src": 1,
+     "said": "The standard VAT rate is 18%."
+    }
+   ]
+  },
+  {
+   "item": "year",
+   "finding": "The tax year is the calendar year; a return of all income is filed before 1 May of the next year, unless salary taxed at source is the only income.",
+   "value": {
+    "start": "01-01",
+    "due": {
+     "on": "04-30",
+     "after": 1
+    }
+   },
+   "applies": "2026.",
+   "sources": [
+    {
+     "src": 1,
+     "said": "Tax year: The tax year is the calendar year. Filing status:"
+    },
+    {
+     "src": 3,
+     "said": "All individuals subject to PIT must file a tax return before 1 May of each year for all income"
+    }
+   ]
+  },
+  {
+   "item": "vat",
+   "finding": "Anyone carrying on an independent economic activity, liberal professions included, is liable to VAT; an individual in commerce or services with turnover up to XOF 50 million pays the single global contribution (CGU), which replaces VAT among other taxes, but the CGU does not apply to individuals whose income is non-commercial profits (bénéfices non commerciaux, the category of independent professions), so the code read sets no turnover floor for them.",
+   "value": {
+    "currency": "XOF",
+    "liability": "any independent economic activity, including liberal professions",
+    "cguThreshold": 50000000,
+    "cguReplacesVat": true,
+    "cguExcludes": "individuals in the bénéfices non commerciaux category",
+    "thresholdForBNC": null
+   },
+   "applies": "CGI (annotated, January 2025), arts 134 to 136 and 354",
+   "sources": [
+    {
+     "src": 5,
+     "said": "Article 134. Il est établi, au profit de l’Etat et des collectivités locales, un régime de fiscalité globale dénommé contribution globale unique, représentatif des impôts et taxes ci-après : … - taxe sur la valeur ajoutée ; … Article 135. Sont assujetties à la contribution globale unique, les personnes physiques dont le chiffre d’affaires annuel, tous droits et taxes compris, n’excède pas cinquante (50) millions de francs lorsqu’elles effectuent des opérations de livraison de biens ou des opérations de prestation de services. … Article 136. La contribution globale unique ne s’applique pas : - aux personnes physiques dont l’activité relève de la catégorie des bénéfices non commerciaux; … Article 354. 1. Est assujettie à la TVA toute personne qui exerce de manière indépendante et quel qu’en soit le lieu, une activité économique, quels que soient les buts poursuivis ou les résultats obtenus. 2. Est considérée comme activité économique toute activité de production, de commerce ou de prestation de services, ainsi que toutes les opérations annexes qui y sont liées y compris les activités extractives et celles des professions libérales ou assimilées."
+    }
+   ]
+  }
+ ],
+ "country": "SN",
+ "sources": [
+  {
+   "url": "https://taxsummaries.pwc.com/senegal/individual/taxes-on-personal-income",
+   "title": "Senegal: individual/taxes-on-personal-income (PwC Worldwide Tax Summaries, reviewed 7 August 2026)",
+   "read": "2026-11-01",
+   "kind": "secondary",
+   "quotes": "https://www.dgid.sn/",
+   "said": "0 630,000 0 630,001 1,500,000 20 1,500,001 4,000,000 30 4,000,001 8,000,000 35 8,000,001 13,500,000 37 13,500,001 50,000,000 40 50,000,001 And over 43 … To calculate the total tax payable, the tax corresponding to each share is thereafter multiplied by the number of shares. … 0 599,999 900 600,000 999,999 3,600 1,000,000 1,999,999 4,800 2,000,000 6,999,999 12,000 7,000,000 11,999,999 18,000 12,000,000 And over 36,000 … The Senegalese debtor must withhold 5% on remuneration paid to individuals who are resident in Senegal in exchange for services."
+  },
+  {
+   "url": "https://www.deloitte.com/content/dam/assets-shared/docs/services/tax/2026/dttl-tax-senegalhighlights-2026.pdf",
+   "title": "Senegal Highlights 2026 (Deloitte)",
+   "read": "2026-11-01",
+   "kind": "secondary",
+   "quotes": "https://www.dgid.sn/",
+   "said": "A lump-sum deduction of 30% of earnings, capped at XOF 900,000, is available when determining the taxable base for employment income tax purposes. … The standard VAT rate is 18%. … Tax year: The tax year is the calendar year. Filing status:"
+  },
+  {
+   "url": "https://taxsummaries.pwc.com/senegal/individual/other-taxes",
+   "title": "Senegal: individual/other-taxes (PwC Worldwide Tax Summaries, reviewed 7 August 2026)",
+   "read": "2026-11-01",
+   "kind": "secondary",
+   "quotes": "https://www.ipres.sn/",
+   "said": "General 8.4 5.6 432,000 Executive 3.6 2.4 1,296,000 … Family 7 0 63,000 Industrial accident / Occupational disease 1/3/5 0 63,000 … Subject to certain exclusions, most commercial operations are subject to an 18% VAT."
+  },
+  {
+   "url": "https://taxsummaries.pwc.com/senegal/individual/tax-administration",
+   "title": "Senegal: individual/tax-administration (PwC Worldwide Tax Summaries, reviewed 7 August 2026)",
+   "read": "2026-11-01",
+   "kind": "secondary",
+   "quotes": "https://www.dgid.sn/",
+   "said": "Social security contributions and PIT on an individual’s wages are withheld monthly by employers and are computed on the basis of gross remuneration paid, including fringe benefits and bonuses. … All individuals subject to PIT must file a tax return before 1 May of each year for all income"
+  },
+  {
+   "url": "https://taxsummaries.pwc.com/senegal/corporate/withholding-taxes",
+   "title": "Senegal: corporate/withholding-taxes (PwC Worldwide Tax Summaries, reviewed 7 August 2026)",
+   "read": "2026-11-01",
+   "kind": "secondary",
+   "quotes": "https://www.dgid.sn/",
+   "said": "20% WHT on remuneration paid for services (including royalties) rendered by a foreign individual or foreign company."
+  },
+  {
+   "url": "https://www.dgid.sn/storage/docs/CGI-2025.pdf",
+   "title": "Code général des impôts du Sénégal, annoté janvier 2025, Direction générale des Impôts et des Domaines, arts 134-136 and 354",
+   "read": "2026-11-01",
+   "kind": "primary",
+   "said": "Article 134. Il est établi, au profit de l’Etat et des collectivités locales, un régime de fiscalité globale dénommé contribution globale unique, représentatif des impôts et taxes ci-après : … - taxe sur la valeur ajoutée ; … Article 135. Sont assujetties à la contribution globale unique, les personnes physiques dont le chiffre d’affaires annuel, tous droits et taxes compris, n’excède pas cinquante (50) millions de francs lorsqu’elles effectuent des opérations de livraison de biens ou des opérations de prestation de services. … Article 136. La contribution globale unique ne s’applique pas : - aux personnes physiques dont l’activité relève de la catégorie des bénéfices non commerciaux; … Article 354. 1. Est assujettie à la TVA toute personne qui exerce de manière indépendante et quel qu’en soit le lieu, une activité économique, quels que soient les buts poursuivis ou les résultats obtenus. 2. Est considérée comme activité économique toute activité de production, de commerce ou de prestation de services, ainsi que toutes les opérations annexes qui y sont liées y compris les activités extractives et celles des professions libérales ou assimilées."
+  }
+ ],
+ "blockers": []
+}

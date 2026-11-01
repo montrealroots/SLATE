@@ -1,0 +1,76 @@
+{
+ "topic": "markets.writer.AR",
+ "read": "2026-11-01",
+ "note": "Read 2026-11-01 at the owner's word (\"Want it done now\", of the markets of every country beyond the 21; then \"Retry the blocked market facts once all countries land\"): the terms a screenwriter works on in Argentina. Research, retry and web-search subagents (workbench/briefs/BRIEF-markets-world.md, -retry.md, -search.md), every quote checked by the lead against its saved page.",
+ "figures": [
+  {
+   "item": "agreement",
+   "finding": "A screenwriter is engaged through Argentores, the authors' society: by Law 20.115 (1973) the producer contracts the writer with Argentores' intervention, on a standard contract agreed with the producers that licenses the screenplay for five years for a fixed sum with a minimum Argentores sets, plus royalties.",
+   "value": {
+    "body": "Argentores (Sociedad General de Autores de la Argentina)",
+    "law": "Ley 20.115 (1973)",
+    "contract": "contrato tipo agreed with film producers",
+    "licenceYears": 5,
+    "pay": "fixed sum, with a minimum set by Argentores, plus exploitation royalties",
+    "asOf": "2005-03-17"
+   },
+   "applies": "Argentina, screenwriters for film; described by WIPO in March 2005.",
+   "sources": [
+    {
+     "src": 0,
+     "said": "Por imperio de la ley 20.115 de 1973, la contratación del guionista por parte del productor se hace con la intervención de ARGENTORES … ARGENTORES y los productores cinematográficos han consensuado un contrato tipo … a) Los autores conceden autorización al productor para la incluir el libro cinematográfico –o el aporte respectivo a éste– en un film y a explotarlo en forma exclusiva por cinco años. … (ARGENTORES arancela un importe mínimo), sin perjuicio de los porcentajes, aranceles o “royalties”"
+    }
+   ]
+  },
+  {
+   "item": "fees",
+   "finding": "The screenplay of a national feature is costed at 5% of the below-the-line cost \"as Argentores sets\": ARS 86,656,713 in the March 2026 average-cost budget, plus ARS 10,000,000 for the rights to an original book.",
+   "value": {
+    "currency": "ARS",
+    "screenplayShareOfBTL": 0.05,
+    "screenplayInAverageBudget": 86656713,
+    "sourceRights": 10000000,
+    "budget": "Costo medio largometraje nacional proyectado, marzo 2026"
+   },
+   "applies": "Argentina, national feature films, March 2026 projection by DAC.",
+   "sources": [
+    {
+     "src": 1,
+     "said": "1.1 LIBRO ORIGINAL - Derecho de Autor Total 10.000.000 … 1.2 GUION Cinematografico (Conforme ARGENTORES, 5% del costo Bajo la Línea sin impuestos) Total 86.656.713"
+    }
+   ]
+  }
+ ],
+ "country": "AR",
+ "sources": [
+  {
+   "url": "https://www.wipo.int/edocs/mdocs/lac/es/ompi_da_bue_05/ompi_da_bue_05_3.pdf",
+   "title": "WIPO, OMPI/DA/BUE/05/3 (17 March 2005): the film contract between producer and authors through Argentores",
+   "read": "2026-11-01",
+   "kind": "secondary",
+   "quotes": "https://argentores.org.ar/",
+   "said": "Por imperio de la ley 20.115 de 1973, la contratación del guionista por parte del productor se hace con la intervención de ARGENTORES … ARGENTORES y los productores cinematográficos han consensuado un contrato tipo … a) Los autores conceden autorización al productor para la incluir el libro cinematográfico –o el aporte respectivo a éste– en un film y a explotarlo en forma exclusiva por cinco años. … (ARGENTORES arancela un importe mínimo), sin perjuicio de los porcentajes, aranceles o “royalties”"
+  },
+  {
+   "url": "https://dac.org.ar/documentos/presupuesto-medio/2026/COSTO-MEDIO-LARGOMETRAJE-MARZO-2026.pdf",
+   "title": "DAC: Costo medio largometraje nacional proyectado, marzo 2026",
+   "read": "2026-11-01",
+   "kind": "secondary",
+   "quotes": "https://argentores.org.ar/",
+   "said": "1.1 LIBRO ORIGINAL - Derecho de Autor Total 10.000.000 … 1.2 GUION Cinematografico (Conforme ARGENTORES, 5% del costo Bajo la Línea sin impuestos) Total 86.656.713"
+  }
+ ],
+ "blockers": [
+  {
+   "item": "fees",
+   "sought": "Argentores' current minimum fee (arancel mínimo) for a feature screenplay, a TV episode and a treatment, and its membership terms.",
+   "tried": {
+    "institution": "https://argentores.org.ar/ returns 403 to this environment (2026-11-01); not read another way. || retry 2026-11-01: argentores.org.ar: 403 again (not read another way); incaa.gob.ar financing page read earlier",
+    "official-register": "Boletín Oficial (boletinoficial.gob.ar) resets the connection from this environment; Argentores' fees are not a gazetted agreement in any case. || retry 2026-11-01: Boletín Oficial (boletinoficial.gob.ar): no answer from this environment (connection timeout)",
+    "web-search": "\"Argentores tarifas mínimas guion cinematográfico largometraje 2026\": no tariff found; only the 2005 WIPO paper and INCAA items. || retry 2026-11-01: WebSearch not repeated for Argentina this turn || search pass 2026-11-01: WebSearch 2026-11-01: 'Argentores aranceles mínimos guion largometraje 2025' (results: Boletín Oficial notices on Decree 138/2025 and Res. 1135/2025 caps on collective-management tariffs, the undated WIPO paper saying Argentores sets a minimum in its model film contract; no fee figure); 'Argentores minimum fee screenplay feature film Argentina screenwriters' (results: a BARS script-contest call on escritores.org citing 'el monto mínimo exigido por Argentores' without the amount, WGC Canada pages; no figure). Fact not found.",
+    "trade-press": "DAC's March 2026 average-budget costs the screenplay at 5% of below-the-line \"conforme Argentores\" (recorded as writer.fees); no trade report of a peso figure found. || retry 2026-11-01: DAC average-cost document read earlier (writer line in the budget, not an Argentores minimum)",
+    "archive": "web.archive.org reset the connection / returned 429 to this environment on 2026-11-01. || retry 2026-11-01: archive.org availability API: 429 Too Many Requests this turn; web.archive.org resets the connection from this environment (2026-11-01)"
+   }
+  }
+ ]
+}

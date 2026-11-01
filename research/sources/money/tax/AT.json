@@ -1,0 +1,336 @@
+{
+ "topic": "tax.AT",
+ "read": "2026-11-01",
+ "note": "Read 2026-11-01 at the owner's word (\"Build those first 3 starting with ledger first\"; of the 21 countries read first: \"It should cover across every country\"; \"Retry the blocked tax facts once all countries land\"): the tax on a screen worker's pay in Austria: a resident's income tax, social contributions, what is withheld at source, a non-resident artiste's withholding, an author's treatment, VAT and the tax year. Research and retry subagents (workbench/briefs/BRIEF-tax.md, BRIEF-tax-retry.md), every quote checked by the lead against its saved page.",
+ "figures": [
+  {
+   "item": "residents",
+   "finding": "A resident pays federal income tax on the year's taxable income at 0% to €13,539, 20% to €21,992, 30% to €36,458, 40% to €70,365, 48% to €104,859, 50% to €1,000,000 and 55% above (the 55% step runs to 2029); there is no regional or municipal income tax layer in the sources read.",
+   "value": {
+    "currency": "EUR",
+    "year": 2026,
+    "brackets": [
+     {
+      "from": 0,
+      "to": 13539,
+      "rate": 0
+     },
+     {
+      "from": 13539,
+      "to": 21992,
+      "rate": 0.2
+     },
+     {
+      "from": 21992,
+      "to": 36458,
+      "rate": 0.3
+     },
+     {
+      "from": 36458,
+      "to": 70365,
+      "rate": 0.4
+     },
+     {
+      "from": 70365,
+      "to": 104859,
+      "rate": 0.48
+     },
+     {
+      "from": 104859,
+      "to": 1000000,
+      "rate": 0.5
+     },
+     {
+      "from": 1000000,
+      "to": null,
+      "rate": 0.55,
+      "until": 2029
+     }
+    ],
+    "allowance": 13539,
+    "indexation": "bracket limits raised by two thirds of the inflation rate (1.7333% for 2026)"
+   },
+   "applies": "Unlimited taxpayers, 2026 income",
+   "sources": [
+    {
+     "src": 0,
+     "said": "Tarifstufen Einkommen in Euro Grenzsteuersatz 2026 13.539 und darunter 0 Prozent über 13.539 bis 21.992 20 Prozent über 21.992 bis 36.458 30 Prozent über 36.458 bis 70.365 40 Prozent über 70.365 bis 104.859 48 Prozent über 104.859 bis 1.000.000 50 Prozent über 1.000.000 1) 55 Prozent 1) 1) Befristet bis zum Jahr 2029, danach 50 Prozent."
+    }
+   ]
+  },
+  {
+   "item": "social",
+   "finding": "An employee pays 18.07% of pay (health 3.87%, pension 10.25%, unemployment 2.95%, housing 0.50%, chamber 0.50%) and the employer 20.98% plus 1.53% severance fund, on pay up to €6,930 a month (€231 a day; €13,860 a year on special payments); unemployment contribution falls to 0-2% on low pay up to €2,630.",
+   "value": {
+    "currency": "EUR",
+    "year": 2026,
+    "employee": {
+     "health": 0.0387,
+     "pension": 0.1025,
+     "unemployment": 0.0295,
+     "housing": 0.005,
+     "chamber": 0.005,
+     "total": 0.1807
+    },
+    "employer": {
+     "health": 0.0378,
+     "accident": 0.011,
+     "pension": 0.1255,
+     "unemployment": 0.0295,
+     "insolvency": 0.001,
+     "housing": 0.005,
+     "total": 0.2098,
+     "severanceFund": 0.0153
+    },
+    "ceiling": {
+     "monthly": 6930,
+     "daily": 231,
+     "specialPaymentsYear": 13860
+    },
+    "lowPayUnemployment": [
+     {
+      "to": 2225,
+      "rate": 0
+     },
+     {
+      "from": 2225,
+      "to": 2427,
+      "rate": 0.01
+     },
+     {
+      "from": 2427,
+      "to": 2630,
+      "rate": 0.02
+     }
+    ]
+   },
+   "applies": "Employees (Arbeiter/Angestellte) under the ASVG, 2026",
+   "sources": [
+    {
+     "src": 1,
+     "said": "Höchstbeitragsgrundlagen Dienstnehmer kalendertäglich monatlich Sonderzahlungen im Kalenderjahr € 231,- € 6.930,- € 13.860,- … Beitragssätze Arbeiter/Angestellte DN DG Summe KV 3,87 % 3,78 % 7,65 % UV 1,10 % 1,10 % PV 10,25 % 12,55 % 22,80 % ALV IESG 2,95 % 2,95 % 0,10 % 6,00 % WBF 0,50 % 0,50 % 1,00 % AK 0,50 % 0,50 % Summe 18,07 % 20,98 % 39,05 % BMSVG 1,53 % 1,53 % … bei einem Einkommen bis € 2.225,- 0 % bei einem Einkommen über € 2.225,- bis € 2.427,- 1 % bei einem Einkommen über € 2.427,- bis € 2.630,- 2 %"
+    }
+   ]
+  },
+  {
+   "item": "social",
+   "finding": "A self-employed worker (a freelance screen worker included) pays health 6.80% and pension 18.50% of the profit-based contribution base between €6,613.20 and €97,020 a year, accident insurance €12.95 a month, and 1.53% to the self-employed provision fund.",
+   "value": {
+    "currency": "EUR",
+    "year": 2026,
+    "health": 0.068,
+    "pension": 0.185,
+    "accidentMonthly": 12.95,
+    "provisionFund": 0.0153,
+    "baseMinYear": 6613.2,
+    "baseMaxYear": 97020,
+    "baseMaxMonth": 8085,
+    "base": "profit before tax per the income tax assessment plus social contributions prepaid that year"
+   },
+   "applies": "Self-employed under the GSVG (new self-employed included), 2026",
+   "sources": [
+    {
+     "src": 2,
+     "said": "Krankenversicherung 6,80 % der Beitragsgrundlage … Pensionsversicherung 18,50 % der Beitragsgrundlage … Unfallversicherung 12,95 € pauschal pro Monat … Selbständigenvorsorge 1,53 % der vorläufigen Beitragsgrundlage (keine Nachbemessung) … Die Mindestbeitragsgrundlage liegt in der Krankenversicherung und in der Pensions- versicherung bei € 6.613,20. Die Höchstbeitragsgrundlage liegt in der Kranken- und Pensionsversicherung bei € 97.020,00 jährlich (monatl. € 8.085,00)."
+    }
+   ]
+  },
+  {
+   "item": "social",
+   "finding": "A self-employed artist can claim a subsidy from the Künstler-Sozialversicherungsfonds towards social insurance contributions of at most €158 a month (€1,896 a year) since 2018, within a minimum and maximum income limit (the maximum is 65 times the monthly marginal-earnings limit, €35,821.50 for 2025).",
+   "value": {
+    "currency": "EUR",
+    "maxMonthly": 158,
+    "maxYearly": 1896,
+    "since": 2018,
+    "upperIncomeLimit": {
+     "2025": 35821.5,
+     "rule": "65 x monthly ASVG marginal-earnings limit"
+    }
+   },
+   "applies": "Self-employed artists approved by the KSVF",
+   "sources": [
+    {
+     "src": 3,
+     "said": "Höhe des Zuschusses Jahr maximal pro Monat maximal pro Jahr 2001 bis 2004 € 72,67 € 872,04 2005 bis 2008 € 85,50 € 1.026,00 2009 € 102,50 € 1.230,00 2010 bis 2011 € 112,50 € 1.350,00 2012 € 130,00 € 1.560,00 2013 bis 2017 € 143,50 € 1.722,00 ab 2018 € 158,00 € 1.896,00"
+    },
+    {
+     "src": 4,
+     "said": "Die Höchstgrenze entspricht dem 65-fachen der monatlichen ASVG-Geringfügigkeitsgrenze und beträgt aktuell € 35.821,50 (2025)."
+    }
+   ]
+  },
+  {
+   "item": "withholding",
+   "finding": "An employer withholds wage tax (0% to 55% of the wage-tax base, by the income tax tariff) from pay and remits it by the 15th of the following month.",
+   "value": {
+    "rates": "income tax tariff, 0 to 0.55",
+    "remitBy": "15th of the following month"
+   },
+   "applies": "Employees",
+   "sources": [
+    {
+     "src": 5,
+     "said": "Lohnsteuer 0 Prozent bis 55 Prozent der Lohnsteuerbemessungsgr … Lohnabgaben wie Lohnsteuer (§ 79 Abs 1 EStG )"
+    }
+   ]
+  },
+  {
+   "item": "nonResident",
+   "finding": "A non-resident writer, artist or entertainment participant performing in Austria has 20% of gross receipts withheld (net basis on request: 20% to €20,000 a year and 25% above); the payer may skip it where the person's Austrian income does not exceed €2,000 a year; most treaties limit it to performing artists.",
+   "value": {
+    "rate": 0.2,
+    "base": "gross receipts without expenses",
+    "net": [
+     {
+      "to": 20000,
+      "rate": 0.2
+     },
+     {
+      "from": 20000,
+      "to": null,
+      "rate": 0.25
+     }
+    ],
+    "deMinimis": 2000,
+    "final": "yes unless the person applies for assessment (not stated on the page)"
+   },
+   "applies": "Limited taxpayers working in Austria as writers, lecturers, artists or entertainers (§ 99 EStG)",
+   "sources": [
+    {
+     "src": 6,
+     "said": "als Schriftstellerin/Schriftsteller Vortragende/Vortragender Künstlerin/Künstler Architektin/Architekt Sportlerin/Sportler Artistin/Artist … Mitwirkende/Mitwirkender an Unterhaltungsdarbietungen … Bruttobesteuerung Der Steuersatz beträgt 20 Prozent … Bei der Nettobesteuerung beträgt der Steuersatz für Einkünfte bis 20.000 Euro pro Kalenderjahr 20 Prozent, für den übersteigenden Teil 25 Prozent. … deren \"Österreich-Einkünfte\" im Jahr den Schwellenwert von 2.000 Euro nicht überschreiten, kann die österreichische Veranstalterin/der österreichische Veranstalter unter bestimmten Voraussetzungen den besonderen Steuerabzug unterlassen"
+    }
+   ]
+  },
+  {
+   "item": "authors",
+   "finding": "No separate rate for a resident author's fees was found; royalties paid abroad bear the same § 99 withholding, which most treaties remove.",
+   "value": {
+    "nonResidentRoyalties": {
+     "rate": 0.2,
+     "treatyUsuallyRemoves": true
+    }
+   },
+   "applies": "Licence fees paid to non-residents",
+   "sources": [
+    {
+     "src": 6,
+     "said": "Weitere Fälle der Abzugsteuer betreffen ins Ausland zu zahlende Lizenzgebühren … Nach den meisten Doppelbesteuerungsabkommen (DBA) dürfen Lizenzgebühren, die eine österreichische Unternehmerin/ein österreichischer Unternehmer an eine ausländische Unternehmerin/einen ausländischen Unternehmer bezahlt, in Österreich nicht besteuert werden."
+    }
+   ]
+  },
+  {
+   "item": "vat",
+   "finding": "A freelancer's fee bears VAT at 20% (13% or 10% for some supplies) unless turnover stayed at or under €55,000 in both the previous and the current year (small-business exemption, no input tax deduction).",
+   "value": {
+    "currency": "EUR",
+    "rate": 0.2,
+    "reduced": [
+     0.13,
+     0.1
+    ],
+    "threshold": 55000,
+    "thresholdRule": "not exceeded in the previous or current calendar year"
+   },
+   "applies": "Entrepreneurs based in the EU",
+   "sources": [
+    {
+     "src": 7,
+     "said": "Die Kleinunternehmergrenze in Höhe von 55.000 Euro (bis 31. Dezember 2024: 35.000 Euro) wurde weder im vorangegangenen noch im laufenden Kalenderjahr überschritten."
+    },
+    {
+     "src": 5,
+     "said": "Umsatzsteuer 20 Prozent, 13 Prozent oder 10 Prozent vom Entgelt (Nettobetrag)"
+    }
+   ]
+  },
+  {
+   "item": "year",
+   "finding": "The tax year is the calendar year; the annual income tax return is due by 30 April of the following year, or 30 June when filed through FinanzOnline.",
+   "value": {
+    "currency": "EUR",
+    "start": "01-01",
+    "end": "12-31",
+    "returnDue": "04-30",
+    "returnDueElectronic": "06-30"
+   },
+   "applies": "Income tax returns",
+   "sources": [
+    {
+     "src": 8,
+     "said": "sind samt Beilagen bis 30. April des Folgejahres beim Finanzamt ( → BMF ) einzureichen. Werden die Jahressteuererklärungen elektronisch über FinanzOnline eingebracht, so verlängert sich die Frist bis 30. Juni des Folgejahres."
+    }
+   ]
+  }
+ ],
+ "country": "AT",
+ "sources": [
+  {
+   "url": "https://www.usp.gv.at/themen/steuern-finanzen/einkommensteuer-ueberblick/weitere-informationen-est/tarifstufen.html",
+   "title": "Tarifstufen (Unternehmensserviceportal, BMF)",
+   "read": "2026-11-01",
+   "kind": "primary",
+   "said": "Tarifstufen Einkommen in Euro Grenzsteuersatz 2026 13.539 und darunter 0 Prozent über 13.539 bis 21.992 20 Prozent über 21.992 bis 36.458 30 Prozent über 36.458 bis 70.365 40 Prozent über 70.365 bis 104.859 48 Prozent über 104.859 bis 1.000.000 50 Prozent über 1.000.000 1) 55 Prozent 1) 1) Befristet bis zum Jahr 2029, danach 50 Prozent."
+  },
+  {
+   "url": "https://www.wko.at/entlohnung/beitragswesen-dienstnehmer-2026",
+   "title": "Beitragswesen Dienstnehmer 2026 (Wirtschaftskammer Österreich)",
+   "read": "2026-11-01",
+   "kind": "secondary",
+   "quotes": "https://www.gesundheitskasse.at/",
+   "said": "Höchstbeitragsgrundlagen Dienstnehmer kalendertäglich monatlich Sonderzahlungen im Kalenderjahr € 231,- € 6.930,- € 13.860,- … Beitragssätze Arbeiter/Angestellte DN DG Summe KV 3,87 % 3,78 % 7,65 % UV 1,10 % 1,10 % PV 10,25 % 12,55 % 22,80 % ALV IESG 2,95 % 2,95 % 0,10 % 6,00 % WBF 0,50 % 0,50 % 1,00 % AK 0,50 % 0,50 % Summe 18,07 % 20,98 % 39,05 % BMSVG 1,53 % 1,53 % … bei einem Einkommen bis € 2.225,- 0 % bei einem Einkommen über € 2.225,- bis € 2.427,- 1 % bei einem Einkommen über € 2.427,- bis € 2.630,- 2 %"
+  },
+  {
+   "url": "https://www.wko.at/vlbg/gewerbe-handwerk/personenberatung-betreuung/infoblatt-sozialversicherung2026.pdf",
+   "title": "Infoblatt Sozialversicherung (GSVG), Beiträge bei Neugründungen ab 1.1.2026 (WKO Vorarlberg)",
+   "read": "2026-11-01",
+   "kind": "secondary",
+   "quotes": "https://www.svs.at/",
+   "said": "Krankenversicherung 6,80 % der Beitragsgrundlage … Pensionsversicherung 18,50 % der Beitragsgrundlage … Unfallversicherung 12,95 € pauschal pro Monat … Selbständigenvorsorge 1,53 % der vorläufigen Beitragsgrundlage (keine Nachbemessung) … Die Mindestbeitragsgrundlage liegt in der Krankenversicherung und in der Pensions- versicherung bei € 6.613,20. Die Höchstbeitragsgrundlage liegt in der Kranken- und Pensionsversicherung bei € 97.020,00 jährlich (monatl. € 8.085,00)."
+  },
+  {
+   "url": "https://www.ksvf.at/hoehe-des-zuschusses",
+   "title": "Höhe des Zuschusses (Künstler-Sozialversicherungsfonds)",
+   "read": "2026-11-01",
+   "kind": "primary",
+   "said": "Höhe des Zuschusses Jahr maximal pro Monat maximal pro Jahr 2001 bis 2004 € 72,67 € 872,04 2005 bis 2008 € 85,50 € 1.026,00 2009 € 102,50 € 1.230,00 2010 bis 2011 € 112,50 € 1.350,00 2012 € 130,00 € 1.560,00 2013 bis 2017 € 143,50 € 1.722,00 ab 2018 € 158,00 € 1.896,00"
+  },
+  {
+   "url": "https://www.ksvf.at/f-a-q/hoechstgrenze-beim-beitragszuschuss",
+   "title": "FAQ – Höchstgrenze beim Beitragszuschuss (KSVF)",
+   "read": "2026-11-01",
+   "kind": "primary",
+   "said": "Die Höchstgrenze entspricht dem 65-fachen der monatlichen ASVG-Geringfügigkeitsgrenze und beträgt aktuell € 35.821,50 (2025)."
+  },
+  {
+   "url": "https://www.bmf.gv.at/themen/steuern/fristen-verfahren/fristen-faelligkeiten.html",
+   "title": "Fristen & Fälligkeiten (BMF)",
+   "read": "2026-11-01",
+   "kind": "primary",
+   "said": "Lohnsteuer 0 Prozent bis 55 Prozent der Lohnsteuerbemessungsgr … Lohnabgaben wie Lohnsteuer (§ 79 Abs 1 EStG ) … Umsatzsteuer 20 Prozent, 13 Prozent oder 10 Prozent vom Entgelt (Nettobetrag)"
+  },
+  {
+   "url": "https://www.usp.gv.at/themen/steuern-finanzen/einkommensteuer-ueberblick/weitere-informationen-est/internationales-steuerrecht/pflichten-bei-inlandsaktivitaeten-auslaendischer-unternehmer.html",
+   "title": "Pflichten österreichischer Unternehmer bei Inlandsaktivitäten ausländischer Unternehmer (USP)",
+   "read": "2026-11-01",
+   "kind": "primary",
+   "said": "als Schriftstellerin/Schriftsteller Vortragende/Vortragender Künstlerin/Künstler Architektin/Architekt Sportlerin/Sportler Artistin/Artist … Mitwirkende/Mitwirkender an Unterhaltungsdarbietungen … Bruttobesteuerung Der Steuersatz beträgt 20 Prozent … Bei der Nettobesteuerung beträgt der Steuersatz für Einkünfte bis 20.000 Euro pro Kalenderjahr 20 Prozent, für den übersteigenden Teil 25 Prozent. … deren \"Österreich-Einkünfte\" im Jahr den Schwellenwert von 2.000 Euro nicht überschreiten, kann die österreichische Veranstalterin/der österreichische Veranstalter unter bestimmten Voraussetzungen den besonderen Steuerabzug unterlassen … Weitere Fälle der Abzugsteuer betreffen ins Ausland zu zahlende Lizenzgebühren … Nach den meisten Doppelbesteuerungsabkommen (DBA) dürfen Lizenzgebühren, die eine österreichische Unternehmerin/ein österreichischer Unternehmer an eine ausländische Unternehmerin/einen ausländischen Unternehmer bezahlt, in Österreich nicht besteuert werden."
+  },
+  {
+   "url": "https://www.usp.gv.at/themen/steuern-finanzen/umsatzsteuer-ueberblick/weitere-informationen-zur-umsatzsteuer/weitere-steuertatbestaende-und-befreiungen/kleinunternehmen.html",
+   "title": "Kleinunternehmen (Regelung seit 1. Jänner 2025) (USP)",
+   "read": "2026-11-01",
+   "kind": "primary",
+   "said": "Die Kleinunternehmergrenze in Höhe von 55.000 Euro (bis 31. Dezember 2024: 35.000 Euro) wurde weder im vorangegangenen noch im laufenden Kalenderjahr überschritten."
+  },
+  {
+   "url": "https://www.usp.gv.at/themen/steuern-finanzen/steuerliche-rechte-und-pflichten/weitere-informationen-zu-steuerlichen-rechten-und-pflichten-als-unternehmen/einreichen-von-steuererklaerungen.html",
+   "title": "Einreichen von Steuererklärungen (USP)",
+   "read": "2026-11-01",
+   "kind": "primary",
+   "said": "sind samt Beilagen bis 30. April des Folgejahres beim Finanzamt ( → BMF ) einzureichen. Werden die Jahressteuererklärungen elektronisch über FinanzOnline eingebracht, so verlängert sich die Frist bis 30. Juni des Folgejahres."
+  }
+ ],
+ "blockers": []
+}

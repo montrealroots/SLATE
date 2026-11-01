@@ -1,0 +1,198 @@
+{
+ "topic": "tax.VC",
+ "read": "2026-11-01",
+ "note": "Read 2026-11-01 at the owner's word (\"Build those first 3 starting with ledger first\"; of the 21 countries read first: \"It should cover across every country\"; \"Retry the blocked tax facts once all countries land\"): the tax on a screen worker's pay in Saint Vincent and the Grenadines: a resident's income tax, social contributions, what is withheld at source, a non-resident artiste's withholding, an author's treatment, VAT and the tax year. Research and retry subagents (workbench/briefs/BRIEF-tax.md, BRIEF-tax-retry.md), every quote checked by the lead against its saved page.",
+ "figures": [
+  {
+   "item": "residents",
+   "finding": "After a personal allowance of XCD 25,000, a resident pays 10% on the first XCD 5,000 of taxable income, 20% on the next 5,000 and 28% above.",
+   "value": {
+    "currency": "XCD",
+    "allowance": 25000,
+    "brackets": [
+     {
+      "from": 0,
+      "to": 25000,
+      "rate": 0
+     },
+     {
+      "from": 25000,
+      "to": 30000,
+      "rate": 0.1
+     },
+     {
+      "from": 30000,
+      "to": 35000,
+      "rate": 0.2
+     },
+     {
+      "from": 35000,
+      "to": null,
+      "rate": 0.28
+     }
+    ],
+    "regional": null
+   },
+   "applies": "As at January 2026; a higher 2026 threshold announced in December 2025 (reported by KPMG) was not confirmed.",
+   "sources": [
+    {
+     "src": 0,
+     "said": "The rate is 10% on the first XCD 5,000 of taxable income (after deduction of the XCD 25,000 allowance; see “Deductions and allowances,” below), 20% on the next XCD 5,000, and 28% thereafter."
+    },
+    {
+     "src": 0,
+     "said": "Deductions and allowances: Individuals are entitled to a personal allowance of XCD 25,000."
+    }
+   ]
+  },
+  {
+   "item": "year",
+   "finding": "The tax year is the calendar year; the return is filed and tax paid by 31 March.",
+   "value": {
+    "start": "01-01",
+    "end": "12-31",
+    "returnDue": "03-31"
+   },
+   "applies": "Individuals.",
+   "sources": [
+    {
+     "src": 0,
+     "said": "Tax year: The tax year is the calendar year."
+    },
+    {
+     "src": 0,
+     "said": "Filing and payment: The tax return must be filed by 31 March, with tax paid on the same date."
+    }
+   ]
+  },
+  {
+   "item": "social",
+   "finding": "Social security (NIS) is 7.5% from the employer and 6.5% from the employee on earnings up to XCD 5,200 a month.",
+   "value": {
+    "currency": "XCD",
+    "employer": 0.075,
+    "employee": 0.065,
+    "monthlyCeiling": 5200
+   },
+   "applies": "2026.",
+   "sources": [
+    {
+     "src": 0,
+     "said": "Employers and employees are required to make social security contributions of 7.5% and 6.5% of employee earnings, respectively. The ceiling is XCD 5,200 per month for both employers and employees."
+    }
+   ]
+  },
+  {
+   "item": "withholding",
+   "finding": "Tax is deducted from employees' salaries under PAYE.",
+   "value": {
+    "employee": "PAYE"
+   },
+   "applies": "Employees.",
+   "sources": [
+    {
+     "src": 0,
+     "said": "A “pay as you earn” system is used to deduct tax from the salaries of employees."
+    }
+   ]
+  },
+  {
+   "item": "nonResident",
+   "finding": "Royalties and fees for technical services paid to a non-resident bear 20% withholding, unless a treaty reduces it.",
+   "value": {
+    "royalties": 0.2,
+    "technicalServices": 0.2
+   },
+   "applies": "Non-residents.",
+   "sources": [
+    {
+     "src": 0,
+     "said": "A 20% withholding tax applies to royalties paid to nonresident companies and individuals, unless the rate is reduced under an applicable tax treaty."
+    },
+    {
+     "src": 0,
+     "said": "A 20% withholding tax applies to fees for technical services paid to nonresident companies and individuals,"
+    }
+   ]
+  },
+  {
+   "item": "vat",
+   "finding": "VAT is 16% (11% for hotel services); registration is mandatory above XCD 300,000 of annual supplies.",
+   "value": {
+    "currency": "XCD",
+    "standard": 0.16,
+    "reduced": 0.11,
+    "threshold": 300000
+   },
+   "applies": "2026.",
+   "sources": [
+    {
+     "src": 0,
+     "said": "The standard rate is 16% and a reduced rate of 11% applies to goods and services supplied by hotels,"
+    },
+    {
+     "src": 0,
+     "said": "Registration is mandatory where the annual total value of supplies exceeds XCD 300,000."
+    }
+   ]
+  },
+  {
+   "item": "nonResident",
+   "finding": "Whoever pays a non-resident a fee, royalty or any other income payment, including pay for independent personal services performed in Saint Vincent and the Grenadines, deducts 20% of the gross amount, and that is the final tax; a visiting entertainer's employment income stays taxable even for a stay of 30 days or less.",
+   "value": {
+    "rate": 0.2,
+    "base": "gross payment",
+    "final": true
+   },
+   "applies": "Cap. 435 s. 66 and Third Schedule; a treaty may lower it; later Finance Acts not read.",
+   "sources": [
+    {
+     "src": 1,
+     "said": "Every person who makes any payments to a non-resident, shall deduct tax from … such payments in accordance with and in the manner specified in the Third Schedule … This Schedule also applies to any payment to a non-resident person in respect of … independent personal services performed in Saint Vincent and the Grenadines other … any other payments, at the rate of twenty per cent, … of every dollar of such payment and shall be the final liability in respect of such income … public entertainers, including theatre, motion picture, radio or television … artistes and musicians, or"
+    }
+   ]
+  }
+ ],
+ "country": "VC",
+ "sources": [
+  {
+   "url": "https://www.deloitte.com/content/dam/assets-shared/docs/services/tax/2026/dttl-tax-stvincentandthegrenadineshighlights-2026.pdf",
+   "title": "Deloitte International Tax: St. Vincent and the Grenadines Highlights 2026 (updated January 2026)",
+   "read": "2026-11-01",
+   "kind": "secondary",
+   "quotes": "https://www.ird.gov.vc/",
+   "said": "The rate is 10% on the first XCD 5,000 of taxable income (after deduction of the XCD 25,000 allowance; see “Deductions and allowances,” below), 20% on the next XCD 5,000, and 28% thereafter. … Deductions and allowances: Individuals are entitled to a personal allowance of XCD 25,000. … Tax year: The tax year is the calendar year. … Filing and payment: The tax return must be filed by 31 March, with tax paid on the same date. … Employers and employees are required to make social security contributions of 7.5% and 6.5% of employee earnings, respectively. The ceiling is XCD 5,200 per month for both employers and employees. … A “pay as you earn” system is used to deduct tax from the salaries of employees. … A 20% withholding tax applies to royalties paid to nonresident companies and individuals, unless the rate is reduced under an applicable tax treaty. … A 20% withholding tax applies to fees for technical services paid to nonresident companies and individuals, … The standard rate is 16% and a reduced rate of 11% applies to goods and services supplied by hotels, … Registration is mandatory where the annual total value of supplies exceeds XCD 300,000."
+  },
+  {
+   "url": "https://ird.gov.vc/images/pdf/Cap435.pdf",
+   "title": "Income Tax Act, Cap. 435 (Act No. 2 of 1979 as amended), Inland Revenue Department, Saint Vincent and the Grenadines",
+   "read": "2026-11-01",
+   "kind": "primary",
+   "said": "Every person who makes any payments to a non-resident, shall deduct tax from … such payments in accordance with and in the manner specified in the Third Schedule … This Schedule also applies to any payment to a non-resident person in respect of … independent personal services performed in Saint Vincent and the Grenadines other … any other payments, at the rate of twenty per cent, … of every dollar of such payment and shall be the final liability in respect of such income … public entertainers, including theatre, motion picture, radio or television … artistes and musicians, or"
+  }
+ ],
+ "blockers": [
+  {
+   "item": "residents",
+   "sought": "The 2026 personal threshold announced in the 2026 budget",
+   "tried": {
+    "institution": "ird.gov.vc is unreachable from this environment (proxy CONNECT 502, 2026-11-01); gov.vc home page reachable but no tax tables found || 2026-11-01 retry: ird.gov.vc now answers (without www): its legislation page (Cap. 435, VAT Act Cap. 445, Finance Act No. 10 of 2023) and taxes page read; the newest tax table it posts is tax-tables-2024.pdf; finance.gov.vc answers 503",
+    "official-register": "Income Tax Act (Cap. 435) and Finance Act 2026 not read || 2026-11-01 retry: Cap. 435 read from ird.gov.vc; no Finance Act 2026 or 2026 budget text found on ird.gov.vc, and finance.gov.vc (which hosts the Acts) answers 503",
+    "web-search": "'Saint Vincent and the Grenadines income tax rates individuals 2026 personal allowance ...' (2026-11-01): found Deloitte 2026 highlights (used) and a KPMG note of a 2026 threshold rise without a figure || 2026-11-01 retry: not run: the tool refused searches this turn, the shared limit of 200 having been reached (2026-11-01)",
+    "trade-press": "Deloitte highlights used; KPMG December 2025 note seen || 2026-11-01 retry: Deloitte 2026 highlights already held; KPMG December 2025 note names a rise without a figure",
+    "archive": "web.archive.org resets the connection from this environment (2026-11-01). || 2026-11-01 retry: archive.org availability API answers, but web.archive.org is refused from this environment (http 'Blocked by egress policy', https connection fails), not read (2026-11-01)"
+   }
+  },
+  {
+   "item": "authors",
+   "sought": "Any special treatment of authors' fees",
+   "tried": {
+    "institution": "ird.gov.vc is unreachable from this environment (proxy CONNECT 502, 2026-11-01); gov.vc home page reachable but no tax tables found || 2026-11-01 retry: ird.gov.vc now answers (without www): its legislation page (Cap. 435, VAT Act Cap. 445, Finance Act No. 10 of 2023) and taxes page read; the newest tax table it posts is tax-tables-2024.pdf; finance.gov.vc answers 503",
+    "official-register": "Income Tax Act (Cap. 435) and Finance Act 2026 not read || 2026-11-01 retry: Cap. 435 read: royalties paid to a non-resident fall under the Third Schedule's 20%; no special rule for a resident author's royalties found",
+    "web-search": "'Saint Vincent and the Grenadines income tax rates individuals 2026 personal allowance ...' (2026-11-01): found Deloitte 2026 highlights (used) and a KPMG note of a 2026 threshold rise without a figure || 2026-11-01 retry: not run: the tool refused searches this turn, the shared limit of 200 having been reached (2026-11-01)",
+    "trade-press": "Deloitte highlights used; KPMG December 2025 note seen || 2026-11-01 retry: Deloitte 2026 highlights already held",
+    "archive": "web.archive.org resets the connection from this environment (2026-11-01). || 2026-11-01 retry: archive.org availability API answers, but web.archive.org is refused from this environment (http 'Blocked by egress policy', https connection fails), not read (2026-11-01)"
+   }
+  }
+ ]
+}

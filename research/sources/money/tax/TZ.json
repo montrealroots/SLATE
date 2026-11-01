@@ -1,0 +1,258 @@
+{
+ "topic": "tax.TZ",
+ "read": "2026-11-01",
+ "note": "Read 2026-11-01 at the owner's word (\"Build those first 3 starting with ledger first\"; of the 21 countries read first: \"It should cover across every country\"; \"Retry the blocked tax facts once all countries land\"): the tax on a screen worker's pay in Tanzania: a resident's income tax, social contributions, what is withheld at source, a non-resident artiste's withholding, an author's treatment, VAT and the tax year. Research and retry subagents (workbench/briefs/BRIEF-tax.md, BRIEF-tax-retry.md), every quote checked by the lead against its saved page.",
+ "figures": [
+  {
+   "item": "residents",
+   "finding": "A Tanzanian resident pays income tax by a monthly scale: nothing on income to TZS 270,000 a month, then 8%, 20%, 25%, and 30% above TZS 1,000,000.",
+   "value": {
+    "currency": "TZS",
+    "monthly": [
+     {
+      "from": 0,
+      "to": 270000,
+      "rate": 0
+     },
+     {
+      "from": 270000,
+      "to": 520000,
+      "rate": 0.08
+     },
+     {
+      "from": 520000,
+      "to": 760000,
+      "rate": 0.2
+     },
+     {
+      "from": 760000,
+      "to": 1000000,
+      "rate": 0.25
+     },
+     {
+      "from": 1000000,
+      "to": null,
+      "rate": 0.3
+     }
+    ],
+    "annual": [
+     {
+      "from": 0,
+      "to": 3240000,
+      "rate": 0
+     },
+     {
+      "from": 3240000,
+      "to": 6240000,
+      "rate": 0.08
+     },
+     {
+      "from": 6240000,
+      "to": 9120000,
+      "rate": 0.2
+     },
+     {
+      "from": 9120000,
+      "to": 12000000,
+      "rate": 0.25
+     },
+     {
+      "from": 12000000,
+      "to": null,
+      "rate": 0.3
+     }
+    ]
+   },
+   "applies": "2026, Tanzania Mainland and Zanzibar alike. Annual bands are the monthly ones times twelve.",
+   "sources": [
+    {
+     "src": 0,
+     "said": "For Tanzania Mainland Monthly Taxable Income Tax Rate Where total Income does not exceed Tshs. 270,000/= NIL Where the total Income exceeds Tshs. 270,000/= but does not exceed Tshs. 520,000/= 8% of the amount in excess of the amount in excess of Tshs. 270,000/= Where total Income exceeds Tshs. 520,000/= but does not exceed Tshs. 760,000/= Tshs. 20,000/= plus 20% of the amount in excess of Tshs. 520,000/= Where total Income exceeds Tshs. 760,000/= but does not exceed Tshs. 1,000,000/= Tshs. 68,000/= plus 25% of the amount in excess of Tshs. 760,000/= Where total Income exceeds Tshs. 1,000,000/= Tshs. 128,000/= plus 30% of the amount in excess of Tshs. 1,000,000/= Note: Threshold per annum : Annual Income of Tshs 3,240,000/= is not taxable … For Zanzibar Monthly Taxable Income Tax Rate Where total Income does not exceed Tshs. 270,000/= NIL"
+    }
+   ]
+  },
+  {
+   "item": "social",
+   "finding": "The private-sector employer pays 20% of remuneration to the National Social Security Fund and may recover up to half (10%) from the employee; the employer also pays a 3.5% skills levy (10 or more employees) and 0.5% workers' compensation.",
+   "value": {
+    "NSSF": {
+     "total": 0.2,
+     "employeeMax": 0.1,
+     "employer": 0.1
+    },
+    "SDL": {
+     "employer": 0.035,
+     "minEmployees": 10
+    },
+    "WCF": {
+     "employer": 0.005
+    }
+   },
+   "applies": "2026; ceiling not given.",
+   "sources": [
+    {
+     "src": 1,
+     "said": "The employer’s contribution is 20% of the employee’s remuneration; however, the employer is entitled to recover up to half of this from the employee."
+    },
+    {
+     "src": 1,
+     "said": "SDL is a tax on the employer calculated as 3.5% of gross cash emoluments of employees."
+    },
+    {
+     "src": 1,
+     "said": "calculated as a percentage of cash sums paid to employees at 0.5%."
+    }
+   ]
+  },
+  {
+   "item": "withholding",
+   "finding": "Employment income is taxed by PAYE withheld by the employer; service fees paid to a resident bear 5% withholding and royalties 15% (10% for film, video or sound recordings).",
+   "value": {
+    "PAYE": true,
+    "serviceFeesResident": 0.05,
+    "royaltiesResident": 0.15,
+    "royaltiesFilmRecording": 0.1
+   },
+   "applies": "2026.",
+   "sources": [
+    {
+     "src": 2,
+     "said": "Tax on employment income is accounted for by the employer WHT at source under the pay-as-you-earn (PAYE) scheme."
+    },
+    {
+     "src": 3,
+     "said": "Service fees 5 15"
+    },
+    {
+     "src": 3,
+     "said": "If payment relates to use of cinematography film, video tape sound recording, or any other like medium, the applicable rate is 10%."
+    }
+   ]
+  },
+  {
+   "item": "nonResident",
+   "finding": "A non-resident pays a final flat 15% on employment income from Tanzania, and 15% withholding on service fees and royalties; personal services have a Tanzanian source where performed in Tanzania.",
+   "value": {
+    "employment": {
+     "rate": 0.15,
+     "final": true
+    },
+    "serviceFees": 0.15,
+    "royalties": 0.15
+   },
+   "applies": "2026.",
+   "sources": [
+    {
+     "src": 4,
+     "said": "Non-resident individuals are subject to tax at a flat rate of 15% on employment income, which is final tax in Tanzania."
+    },
+    {
+     "src": 4,
+     "said": "Personal services have a Tanzanian source if (i) performed in Tanzania or (ii) performed outside Tanzania but where the payer is the government of Tanzania."
+    },
+    {
+     "src": 3,
+     "said": "Royalty* 15 15"
+    }
+   ]
+  },
+  {
+   "item": "vat",
+   "finding": "VAT is 18% on the mainland (15% in Zanzibar); registration is required at TZS 200 million of taxable turnover, or for designated services whatever the turnover.",
+   "value": {
+    "currency": "TZS",
+    "rate": 0.18,
+    "zanzibar": 0.15,
+    "threshold": 200000000
+   },
+   "applies": "2026.",
+   "sources": [
+    {
+     "src": 1,
+     "said": "The standard rate of VAT is 18%"
+    },
+    {
+     "src": 5,
+     "said": "reaching a TZS 200 million threshold of turnover from taxable supplies; (ii) providing designated services, irrespective of turnover"
+    }
+   ]
+  },
+  {
+   "item": "year",
+   "finding": "The tax year is the calendar year; a person with income beyond employment files an estimate by 31 March, pays quarterly instalments, and files the final return within six months of the year's end.",
+   "value": {
+    "start": "01-01",
+    "due": {
+     "on": "06-30",
+     "after": 1
+    }
+   },
+   "applies": "2026.",
+   "sources": [
+    {
+     "src": 2,
+     "said": "The tax year runs from 1 January to 31 December."
+    },
+    {
+     "src": 2,
+     "said": "A final tax return contains a statement of chargeable income for the year of income and is due for filing within six months of the end of the year of income."
+    },
+    {
+     "src": 2,
+     "said": "Any final tax payable is due by the deadline for filing the final tax return."
+    }
+   ]
+  }
+ ],
+ "country": "TZ",
+ "sources": [
+  {
+   "url": "https://www.tra.go.tz/page/income-tax-for-individuals",
+   "title": "Income Tax for Individuals (Tanzania Revenue Authority)",
+   "read": "2026-11-01",
+   "kind": "primary",
+   "said": "For Tanzania Mainland Monthly Taxable Income Tax Rate Where total Income does not exceed Tshs. 270,000/= NIL Where the total Income exceeds Tshs. 270,000/= but does not exceed Tshs. 520,000/= 8% of the amount in excess of the amount in excess of Tshs. 270,000/= Where total Income exceeds Tshs. 520,000/= but does not exceed Tshs. 760,000/= Tshs. 20,000/= plus 20% of the amount in excess of Tshs. 520,000/= Where total Income exceeds Tshs. 760,000/= but does not exceed Tshs. 1,000,000/= Tshs. 68,000/= plus 25% of the amount in excess of Tshs. 760,000/= Where total Income exceeds Tshs. 1,000,000/= Tshs. 128,000/= plus 30% of the amount in excess of Tshs. 1,000,000/= Note: Threshold per annum : Annual Income of Tshs 3,240,000/= is not taxable … For Zanzibar Monthly Taxable Income Tax Rate Where total Income does not exceed Tshs. 270,000/= NIL"
+  },
+  {
+   "url": "https://taxsummaries.pwc.com/tanzania/individual/other-taxes",
+   "title": "Tanzania: individual/other-taxes (PwC Worldwide Tax Summaries, reviewed 9 September 2026)",
+   "read": "2026-11-01",
+   "kind": "secondary",
+   "quotes": "https://www.nssf.go.tz/",
+   "said": "The employer’s contribution is 20% of the employee’s remuneration; however, the employer is entitled to recover up to half of this from the employee. … SDL is a tax on the employer calculated as 3.5% of gross cash emoluments of employees. … calculated as a percentage of cash sums paid to employees at 0.5%. … The standard rate of VAT is 18%"
+  },
+  {
+   "url": "https://taxsummaries.pwc.com/tanzania/individual/tax-administration",
+   "title": "Tanzania: individual/tax-administration (PwC Worldwide Tax Summaries, reviewed 9 September 2026)",
+   "read": "2026-11-01",
+   "kind": "secondary",
+   "quotes": "https://www.tra.go.tz/",
+   "said": "Tax on employment income is accounted for by the employer WHT at source under the pay-as-you-earn (PAYE) scheme. … The tax year runs from 1 January to 31 December. … A final tax return contains a statement of chargeable income for the year of income and is due for filing within six months of the end of the year of income. … Any final tax payable is due by the deadline for filing the final tax return."
+  },
+  {
+   "url": "https://taxsummaries.pwc.com/tanzania/corporate/withholding-taxes",
+   "title": "Tanzania: corporate/withholding-taxes (PwC Worldwide Tax Summaries, reviewed 9 September 2026)",
+   "read": "2026-11-01",
+   "kind": "secondary",
+   "quotes": "https://www.tra.go.tz/",
+   "said": "Service fees 5 15 … If payment relates to use of cinematography film, video tape sound recording, or any other like medium, the applicable rate is 10%. … Royalty* 15 15"
+  },
+  {
+   "url": "https://taxsummaries.pwc.com/tanzania/individual/taxes-on-personal-income",
+   "title": "Tanzania: individual/taxes-on-personal-income (PwC Worldwide Tax Summaries, reviewed 9 September 2026)",
+   "read": "2026-11-01",
+   "kind": "secondary",
+   "quotes": "https://www.tra.go.tz/",
+   "said": "Non-resident individuals are subject to tax at a flat rate of 15% on employment income, which is final tax in Tanzania. … Personal services have a Tanzanian source if (i) performed in Tanzania or (ii) performed outside Tanzania but where the payer is the government of Tanzania."
+  },
+  {
+   "url": "https://www.deloitte.com/content/dam/assets-shared/docs/services/tax/2026/dttl-tax-tanzaniahighlights-2026.pdf",
+   "title": "Tanzania Highlights 2026 (Deloitte)",
+   "read": "2026-11-01",
+   "kind": "secondary",
+   "quotes": "https://www.tra.go.tz/",
+   "said": "reaching a TZS 200 million threshold of turnover from taxable supplies; (ii) providing designated services, irrespective of turnover"
+  }
+ ],
+ "blockers": []
+}

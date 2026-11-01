@@ -1,0 +1,137 @@
+{
+ "topic": "tax.GS",
+ "read": "2026-11-01",
+ "note": "Read 2026-11-01 at the owner's word (\"Build those first 3 starting with ledger first\"; of the 21 countries read first: \"It should cover across every country\"; \"Retry the blocked tax facts once all countries land\"): the tax on a screen worker's pay in South Georgia and the South Sandwich Islands: a resident's income tax, social contributions, what is withheld at source, a non-resident artiste's withholding, an author's treatment, VAT and the tax year. Research and retry subagents (workbench/briefs/BRIEF-tax.md, BRIEF-tax-retry.md), every quote checked by the lead against its saved page.",
+ "figures": [
+  {
+   "item": "residents",
+   "finding": "South Georgia and the South Sandwich Islands levy their own income tax, a flat 7% with no personal allowance and no higher bands, on income from work in the Territory by a person present there 183 days or more in the tax year.",
+   "value": {
+    "currency": "GBP",
+    "brackets": [
+     {
+      "from": 0,
+      "to": null,
+      "rate": 0.07
+     }
+    ],
+    "allowance": 0,
+    "liableFromDaysPresent": 183
+   },
+   "applies": "Income Tax Ordinance 2016; exempt: fishing, tourist and transit vessels' crews and the armed forces. Under 183 days no tax is due.",
+   "sources": [
+    {
+     "src": 0,
+     "said": "The rate of income tax is 7%. The tax system does not give any personal allowances and does not have any additional tax bands for higher earners. The 7% rate applies to all those liable to pay tax."
+    },
+    {
+     "src": 0,
+     "said": "A person who earns income from work carried out in the Territory will pay income tax if they are resident in the Territory for either a continuous period of 183 days or more, or several shorter periods which total 183 days in a tax year."
+    }
+   ]
+  },
+  {
+   "item": "withholding",
+   "finding": "The employer of a person expected to stay 183 days or more deducts the 7% from pay and pays it within 14 days of the end of each quarter; tax deducted is refunded if the stay falls short of 183 days.",
+   "value": {
+    "rate": 0.07,
+    "remitDaysAfterQuarter": 14
+   },
+   "applies": "Employers notify the Tax Office (administered by the Falkland Islands Government) of each employee.",
+   "sources": [
+    {
+     "src": 0,
+     "said": "pay the income tax that will be due on the employee’s earnings within 14 days of the end of each quarter. The employer will then make the appropriate deduction of tax from the person's pay."
+    },
+    {
+     "src": 0,
+     "said": "If tax is deducted, and because of a change in circumstances the employee does not reside in the Territory for 183 days or more, then any tax paid will be refunded."
+    }
+   ]
+  },
+  {
+   "item": "nonResident",
+   "finding": "A visiting performer, writer or director present fewer than 183 days in the tax year pays no income tax there.",
+   "value": {
+    "rate": 0,
+    "below": "183 days present"
+   },
+   "applies": "Above 183 days the 7% flat rate applies as for anyone.",
+   "sources": [
+    {
+     "src": 0,
+     "said": "the obligation to pay income tax still starts once a person has been present in the Territory for 183 days."
+    }
+   ]
+  },
+  {
+   "item": "year",
+   "finding": "The tax year is the calendar year, in four quarters; the employer gives the employee a return for the year within a month of its end.",
+   "value": {
+    "start": "01-01",
+    "due": null
+   },
+   "applies": "A shortfall is payable within 60 days of a demand.",
+   "sources": [
+    {
+     "src": 0,
+     "said": "The tax year runs from 1st January to the 31st December each year."
+    },
+    {
+     "src": 0,
+     "said": "Tax must be paid within 60 days from the date of the demand."
+    }
+   ]
+  },
+  {
+   "item": "social",
+   "finding": "No social security contribution is levied on pay in the Territory: its enactments since 1985 include an Income Tax Ordinance 2016, a Customs Ordinance 2016 and amendments to the public-service Pensions Ordinance, but no social insurance law.",
+   "value": {
+    "socialContribution": 0
+   },
+   "applies": "Read from the Territory's list of its own laws since 1985 (an absence; the laws search for \"social security\" returned nothing).",
+   "sources": [
+    {
+     "src": 1,
+     "said": "2016: Customs Ordinance 2016 358 KB pdf Download Preview pdf 2016: Income Tax Ordinance 2016"
+    },
+    {
+     "src": 1,
+     "said": "1994: Pensions (Amend) Ordinance (No. 1)"
+    }
+   ]
+  },
+  {
+   "item": "vat",
+   "finding": "No VAT, GST or sales tax applies to a fee in the Territory: its enactments since 1985 hold no such ordinance, only customs and income tax.",
+   "value": {
+    "vat": 0
+   },
+   "applies": "Read from the Territory's list of its own laws since 1985 (an absence; the laws search for \"sales tax\" and \"value added\" found no such ordinance).",
+   "sources": [
+    {
+     "src": 1,
+     "said": "2016: Customs Ordinance 2016 358 KB pdf Download Preview pdf 2016: Income Tax Ordinance 2016"
+    }
+   ]
+  }
+ ],
+ "country": "GS",
+ "sources": [
+  {
+   "url": "https://laws.gov.gs/wp-content/uploads/2022/06/2016-G-Guidance-to-Income-Tax.pdf",
+   "title": "Guide to the Income Tax Ordinance (Government of South Georgia & the South Sandwich Islands, 2016)",
+   "read": "2026-11-01",
+   "kind": "primary",
+   "said": "The rate of income tax is 7%. The tax system does not give any personal allowances and does not have any additional tax bands for higher earners. The 7% rate applies to all those liable to pay tax. … A person who earns income from work carried out in the Territory will pay income tax if they are resident in the Territory for either a continuous period of 183 days or more, or several shorter periods which total 183 days in a tax year. … pay the income tax that will be due on the employee’s earnings within 14 days of the end of each quarter. The employer will then make the appropriate deduction of tax from the person's pay. … If tax is deducted, and because of a change in circumstances the employee does not reside in the Territory for 183 days or more, then any tax paid will be refunded. … the obligation to pay income tax still starts once a person has been present in the Territory for 183 days. … The tax year runs from 1st January to the 31st December each year. … Tax must be paid within 60 days from the date of the demand."
+  },
+  {
+   "url": "https://laws.gov.gs/1985-onwards-laws-of-sgssi/",
+   "title": "Government of South Georgia & the South Sandwich Islands, Laws of SGSSI: 1985 onwards (the Territory's own enactments)",
+   "read": "2026-11-01",
+   "kind": "primary",
+   "said": "2016: Customs Ordinance 2016 358 KB pdf Download Preview pdf 2016: Income Tax Ordinance 2016 … 1994: Pensions (Amend) Ordinance (No. 1)"
+  }
+ ],
+ "blockers": []
+}

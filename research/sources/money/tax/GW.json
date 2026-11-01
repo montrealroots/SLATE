@@ -1,0 +1,223 @@
+{
+ "topic": "tax.GW",
+ "read": "2026-11-01",
+ "note": "Read 2026-11-01 at the owner's word (\"Build those first 3 starting with ledger first\"; of the 21 countries read first: \"It should cover across every country\"; \"Retry the blocked tax facts once all countries land\"): the tax on a screen worker's pay in Guinea-Bissau: a resident's income tax, social contributions, what is withheld at source, a non-resident artiste's withholding, an author's treatment, VAT and the tax year. Research and retry subagents (workbench/briefs/BRIEF-tax.md, BRIEF-tax-retry.md), every quote checked by the lead against its saved page.",
+ "figures": [
+  {
+   "item": "nonResident",
+   "finding": "Under the Portugal-Guinea-Bissau treaty, employment and independent-work income of a Guinea-Bissau resident is as a rule taxable only in Guinea-Bissau, unless the independent worker has a fixed base in Portugal.",
+   "value": {
+    "treaty": "PT-GW",
+    "rule": "taxable only in the state of residence, save a fixed base"
+   },
+   "applies": "Workers moving between Portugal and Guinea-Bissau only.",
+   "sources": [
+    {
+     "src": 0,
+     "said": "Em regra, os rendimentos de trabalho de trabalho em Portugal ou independente gerados por independente Crédito de contribuintes residentes na Guiné- imposto em Bissau só podem ser tributados na Guiné-Bissau"
+    }
+   ]
+  },
+  {
+   "item": "residents",
+   "finding": "Employment income bears Imposto Profissional at marginal rates from 1% (to XOF 41,667 a month) through 6, 8, 10, 12, 14, 16 and 18% to 20% above XOF 1,500,000 a month, applied as rate times income less a fixed deduction; self-employed income and authors' rights pay 10% to XOF 183,333 a month, 20% to 833,333 and 25% above; occasional income of a resident pays 10%.",
+   "value": {
+    "currency": "XOF",
+    "period": "month",
+    "employment": [
+     {
+      "from": 0,
+      "to": 41667,
+      "rate": 0.01,
+      "deduct": 0
+     },
+     {
+      "from": 41667,
+      "to": 83333,
+      "rate": 0.06,
+      "deduct": 2083
+     },
+     {
+      "from": 83333,
+      "to": 208333,
+      "rate": 0.08,
+      "deduct": 3750
+     },
+     {
+      "from": 208333,
+      "to": 300000,
+      "rate": 0.1,
+      "deduct": 7917
+     },
+     {
+      "from": 300000,
+      "to": 400500,
+      "rate": 0.12,
+      "deduct": 13917
+     },
+     {
+      "from": 400500,
+      "to": 750000,
+      "rate": 0.14,
+      "deduct": 37947
+     },
+     {
+      "from": 750000,
+      "to": 1100000,
+      "rate": 0.16,
+      "deduct": 52947
+     },
+     {
+      "from": 1100000,
+      "to": 1500000,
+      "rate": 0.18,
+      "deduct": 74947
+     },
+     {
+      "from": 1500000,
+      "to": null,
+      "rate": 0.2,
+      "deduct": 104947
+     }
+    ],
+    "selfEmployedAndAuthors": [
+     {
+      "from": 0,
+      "to": 183333,
+      "rate": 0.1,
+      "deduct": 0
+     },
+     {
+      "from": 183333,
+      "to": 833333,
+      "rate": 0.2,
+      "deduct": 18333
+     },
+     {
+      "from": 833333,
+      "to": null,
+      "rate": 0.25,
+      "deduct": 60000
+     }
+    ],
+    "occasionalResident": 0.1,
+    "method": "tax = income x rate - deduction (parcela a abater)",
+    "asOf": "Código do Imposto Profissional as consolidated by the DGCI to 31 January 2021 (Lei n.º 1/2021); later budget laws not checked"
+   },
+   "applies": "Work income earned in Guinea-Bissau, including artists' fees ('cachets') and authors' rights",
+   "sources": [
+    {
+     "src": 1,
+     "said": "b) As remunerações pagas a cientistas, artistas ou técnicos pela prestação de qualquer serviço de natureza permanente ou acidental, designadamente os “cachets” pagos pela participação em conferências, espetáculos, exposições, ou outras manifestações de carácter técnico, científico ou artístico; c) Os direitos de autor de obras intelectuais. … 1 – As taxas do Imposto Profissional aplicáveis aos trabalhadores por conta de outrem são as constantes da tabela seguinte: (Redação atribuída pelo artigo 10º da Lei nº 1/2021). … De 0 até 41.667 | De 0 até 500.004 | 1% | 0 | 0 … De 41.668 a 83.333 | De 500.016 a 999.996 | 6% … Superior a 1.500.000 | Superior a 18.000.000 | 20% … 2 – As Taxas aplicáveis aos trabalhadores por conta própria e aos titulares de rendimentos de direito de autor são as constantes da tabela seguinte: (Redação atribuída pelo artigo 17º da Lei nº 8/2020 e artigo 17º da Lei nº 1/2021). … De 0 até 183.333 | De 0 até 2.199.996 | 10% | 0 | 0 | | De 183.334 a 833.333 | De 2.199.997 a 9.999.996 | 20% | 18.333 | 220.000 | | Superior a 833.333 | Superior a 9.999.996 | 25% | 60.000 | 720.000 … 4 – Aos rendimentos ocasionais de contribuintes residentes aplica-se a taxa de 10%."
+    }
+   ]
+  },
+  {
+   "item": "withholding",
+   "finding": "Every payer deducts Imposto Profissional from all pay, including occasional pay, at the art. 27 rates and pays it within 10 days after the month; an entity with organised accounts withholds 10% of the gross from a self-employed person's fee or authors' rights, as a payment on account; the self-employed also pay 25% of the last tax in March, June, September and December.",
+   "value": {
+    "employees": "art. 27 scale, monthly",
+    "dueDays": 10,
+    "freelanceAndAuthors": {
+     "rate": 0.1,
+     "base": "gross",
+     "final": false
+    },
+    "selfEmployedInstalments": {
+     "months": [
+      "March",
+      "June",
+      "September",
+      "December"
+     ],
+     "share": 0.25
+    },
+    "asOf": "Código do Imposto Profissional as consolidated by the DGCI to 31 January 2021 (Lei n.º 1/2021); later budget laws not checked"
+   },
+   "applies": "Arts 18, 29 and 31-A of the Código do Imposto Profissional",
+   "sources": [
+    {
+     "src": 1,
+     "said": "1 – As entidades referidas no artigo 5º deduzirão em todas as remunerações pagas a trabalhadores ao seu serviço e bem assim aos titulares de remunerações acidentais, o imposto profissional correspondente às mesmas remunerações, calculado pela aplicação à respectiva importância das taxas previstas no artigo 27º. 2 - Sem prejuízo da liquidação prevista no artigo seguinte, as entidades que possuindo ou devendo possuir contabilidade devidamente organizada, paguem remunerações pelo exercício por conta própria de actividades constantes da lista anexa a este código, ou direitos de autor, são obrigadas a reter imposto mediante aplicação da taxa de 10% aos rendimentos ilíquidos. O imposto retido tem a natureza de pagamento por conta do imposto que será liquidado a final. … O imposto liquidado nos termos do artigo 18º será pago eventualmente, pelas entidades patronais, mediante guia processada em triplicado, nos 10 dias seguintes ao fim do mês a que respeita. … 1 – Os titulares de rendimentos do trabalho por conta própria sujeito a imposto profissional devem efectuar durante os meses de Março, Junho, Setembro e Dezembro, pagamentos por conta do imposto que vier a ser liquidado. 2 - Cada pagamento por conta, corresponderá a 25% do montante do último imposto liquidado"
+    }
+   ]
+  },
+  {
+   "item": "nonResident",
+   "finding": "A non-resident working in Guinea-Bissau for under six months, paid by a resident entity, is taxed under the Contribuição Industrial on gross receipts: the payer deducts 25% of the amounts paid, definitively.",
+   "value": {
+    "rate": 0.25,
+    "base": "gross amounts paid",
+    "final": true,
+    "condition": "activity in Guinea-Bissau for less than 6 months, paid by a resident entity",
+    "asOf": "Código da Contribuição Industrial as consolidated by the DGCI (art. 48 as worded by Lei n.º 03/2015)"
+   },
+   "applies": "Non-residents, arts 45, 47 and 48 of the Código da Contribuição Industrial",
+   "sources": [
+    {
+     "src": 1,
+     "said": "Artigo 45º Os contribuintes não residentes na Guiné-Bissau, que desenvolvam atividades remuneradas, por um período inferior a 6 meses, cujos rendimentos foram disponibilizados por empresas e demais pessoas coletivas de direito público e privado residente no País, ficarão sujeitos a Contribuição Industrial a liquidar nos termos dos artigos seguintes. … A matéria colectável será o volume de negócios, calculado pela soma de todas as vendas efectuadas ou receitas de serviços prestados na Guiné-Bissau no período considerado para liquidação. … As operações de liquidação serão efectuadas pela entidade que, na Guiné-Bissau, for responsável pelo pagamento dos bens ou serviços, a qual deduzirá sempre, a título definitivo, à taxa de 25%, o imposto dos montantes a pagar ao contribuinte não residente."
+    }
+   ]
+  },
+  {
+   "item": "year",
+   "finding": "Income is assessed by calendar year: payers file the annual statement of pay and tax withheld by 31 January, a self-employed person files declaration model 1 for the previous year's work income by 28 February, and assessments are completed by 15 April.",
+   "value": {
+    "taxYear": "calendar",
+    "employerReturnBy": "01-31",
+    "selfEmployedReturnBy": "02-28",
+    "assessmentBy": "04-15",
+    "asOf": "Código do Imposto Profissional as consolidated by the DGCI to 31 January 2021 (Lei n.º 1/2021); later budget laws not checked"
+   },
+   "applies": "Imposto Profissional, arts 7, 11 and 24",
+   "sources": [
+    {
+     "src": 1,
+     "said": "Até 31 de Janeiro de cada ano, as entidades referidas no artigo 5º que paguem ou coloquem à disposição dos respetivos titulares os rendimentos sujeitos à tributação estão obrigadas a … Os contribuintes referidos no artigo anterior entregarão até 28 de Fevereiro de cada ano, na Repartição de Finanças da área do seu domicílio, uma declaração modelo 1 respeitante à totalidade dos rendimentos de trabalho subordinado e autónomo, auferidos ou colocados à disposição no ano anterior. … Todas as operações de liquidação, designadamente as previstas no artigo 20º, deverão estar concluídas até 15 de Abril de cada ano"
+    }
+   ]
+  }
+ ],
+ "country": "GW",
+ "sources": [
+  {
+   "url": "https://info.portaldasfinancas.gov.pt/pt/apoio_contribuinte/Guias/Guia_fiscal_Comunidades_Portuguesas/Guia_fiscal_Comunidades_Portuguesas_Guine_Bissau.pdf",
+   "title": "Guia fiscal Comunidades Portuguesas – Guiné-Bissau (Autoridade Tributária e Aduaneira, Portugal, 2026)",
+   "read": "2026-11-01",
+   "kind": "primary",
+   "said": "Em regra, os rendimentos de trabalho de trabalho em Portugal ou independente gerados por independente Crédito de contribuintes residentes na Guiné- imposto em Bissau só podem ser tributados na Guiné-Bissau"
+  },
+  {
+   "url": "https://kontaktu.mef.gw/legislation",
+   "title": "Kontaktu, Direção-Geral das Contribuições e Impostos (Ministério da Economia e Finanças): Legislação, Código do Imposto Profissional (atualizado até 31-01-2021 e LGT de 2022), arts 1 and 27",
+   "read": "2026-11-01",
+   "kind": "primary",
+   "said": "b) As remunerações pagas a cientistas, artistas ou técnicos pela prestação de qualquer serviço de natureza permanente ou acidental, designadamente os “cachets” pagos pela participação em conferências, espetáculos, exposições, ou outras manifestações de carácter técnico, científico ou artístico; c) Os direitos de autor de obras intelectuais. … 1 – As taxas do Imposto Profissional aplicáveis aos trabalhadores por conta de outrem são as constantes da tabela seguinte: (Redação atribuída pelo artigo 10º da Lei nº 1/2021). … De 0 até 41.667 | De 0 até 500.004 | 1% | 0 | 0 … De 41.668 a 83.333 | De 500.016 a 999.996 | 6% … Superior a 1.500.000 | Superior a 18.000.000 | 20% … 2 – As Taxas aplicáveis aos trabalhadores por conta própria e aos titulares de rendimentos de direito de autor são as constantes da tabela seguinte: (Redação atribuída pelo artigo 17º da Lei nº 8/2020 e artigo 17º da Lei nº 1/2021). … De 0 até 183.333 | De 0 até 2.199.996 | 10% | 0 | 0 | | De 183.334 a 833.333 | De 2.199.997 a 9.999.996 | 20% | 18.333 | 220.000 | | Superior a 833.333 | Superior a 9.999.996 | 25% | 60.000 | 720.000 … 4 – Aos rendimentos ocasionais de contribuintes residentes aplica-se a taxa de 10%. … 1 – As entidades referidas no artigo 5º deduzirão em todas as remunerações pagas a trabalhadores ao seu serviço e bem assim aos titulares de remunerações acidentais, o imposto profissional correspondente às mesmas remunerações, calculado pela aplicação à respectiva importância das taxas previstas no artigo 27º. 2 - Sem prejuízo da liquidação prevista no artigo seguinte, as entidades que possuindo ou devendo possuir contabilidade devidamente organizada, paguem remunerações pelo exercício por conta própria de actividades constantes da lista anexa a este código, ou direitos de autor, são obrigadas a reter imposto mediante aplicação da taxa de 10% aos rendimentos ilíquidos. O imposto retido tem a natureza de pagamento por conta do imposto que será liquidado a final. … O imposto liquidado nos termos do artigo 18º será pago eventualmente, pelas entidades patronais, mediante guia processada em triplicado, nos 10 dias seguintes ao fim do mês a que respeita. … 1 – Os titulares de rendimentos do trabalho por conta própria sujeito a imposto profissional devem efectuar durante os meses de Março, Junho, Setembro e Dezembro, pagamentos por conta do imposto que vier a ser liquidado. 2 - Cada pagamento por conta, corresponderá a 25% do montante do último imposto liquidado … Artigo 45º Os contribuintes não residentes na Guiné-Bissau, que desenvolvam atividades remuneradas, por um período inferior a 6 meses, cujos rendimentos foram disponibilizados por empresas e demais pessoas coletivas de direito público e privado residente no País, ficarão sujeitos a Contribuição Industrial a liquidar nos termos dos artigos seguintes. … A matéria colectável será o volume de negócios, calculado pela soma de todas as vendas efectuadas ou receitas de serviços prestados na Guiné-Bissau no período considerado para liquidação. … As operações de liquidação serão efectuadas pela entidade que, na Guiné-Bissau, for responsável pelo pagamento dos bens ou serviços, a qual deduzirá sempre, a título definitivo, à taxa de 25%, o imposto dos montantes a pagar ao contribuinte não residente. … Até 31 de Janeiro de cada ano, as entidades referidas no artigo 5º que paguem ou coloquem à disposição dos respetivos titulares os rendimentos sujeitos à tributação estão obrigadas a … Os contribuintes referidos no artigo anterior entregarão até 28 de Fevereiro de cada ano, na Repartição de Finanças da área do seu domicílio, uma declaração modelo 1 respeitante à totalidade dos rendimentos de trabalho subordinado e autónomo, auferidos ou colocados à disposição no ano anterior. … Todas as operações de liquidação, designadamente as previstas no artigo 20º, deverão estar concluídas até 15 de Abril de cada ano"
+  }
+ ],
+ "blockers": [
+  {
+   "item": "social",
+   "sought": "INSS contributions on pay",
+   "tried": {
+    "institution": "no reachable Guinea-Bissau tax authority site found (DGCI not located) || retry-8 2026-11-01: dgci.mef.gw found (linked from mef.gw); its Kontaktu legislation page (kontaktu.mef.gw/legislation) read in full: Imposto Profissional, Contribuição Industrial and the IVA invoicing regulation found (IP rates, withholding, non-resident 25%, dates recorded); INSS site inss.gw answers but publishes no contribution table (only a news item on revising the laws)",
+    "official-register": "Boletim Oficial / Código do Imposto Profissional not found online || retry-8 2026-11-01: the DGCI's consolidated codes on Kontaktu stand in for the Boletim Oficial; the Código do IVA (Lei n.º 4/2022) itself and the INSS contribution law are not among its texts",
+    "web-search": "WebSearch 'Guiné-Bissau imposto profissional taxas trabalho por conta de outrem ... IRPS': no rate schedule || retry-8 2026-11-01: a search for 'Guiné-Bissau IVA taxa Lei 4/2022' / 'INSS Guiné-Bissau taxa de contribuição' was refused by the search tool (shared per-turn limit of 200 searches reached)",
+    "trade-press": "Miranda 2015 newsletter (no rates) and World Bank 2025 update (indicative chart) seen; no big-four summary (Deloitte, PwC 404) || retry-8 2026-11-01: mirandalawfirm.com home answers; no newer Guinea-Bissau tax note found linked from it",
+    "archive": "web.archive.org not reachable (curl 000) 2026-11-01 || retry-8 2026-11-01: web.archive.org: connection reset and availability API 429 on 2026-11-01"
+   }
+  },
+  {
+   "item": "vat",
+   "sought": "The IVA rate and registration threshold under the Código do IVA (Lei n.º 4/2022), which replaced the IGV",
+   "tried": {
+    "institution": "no reachable Guinea-Bissau tax authority site found (DGCI not located) || retry-8 2026-11-01: dgci.mef.gw found (linked from mef.gw); its Kontaktu legislation page (kontaktu.mef.gw/legislation) read in full: Imposto Profissional, Contribuição Industrial and the IVA invoicing regulation found (IP rates, withholding, non-resident 25%, dates recorded); INSS site inss.gw answers but publishes no contribution table (only a news item on revising the laws)",
+    "official-register": "Boletim Oficial / Código do Imposto Profissional not found online || retry-8 2026-11-01: the DGCI's consolidated codes on Kontaktu stand in for the Boletim Oficial; the Código do IVA (Lei n.º 4/2022) itself and the INSS contribution law are not among its texts",
+    "web-search": "WebSearch 'Guiné-Bissau imposto profissional taxas trabalho por conta de outrem ... IRPS': no rate schedule || retry-8 2026-11-01: a search for 'Guiné-Bissau IVA taxa Lei 4/2022' / 'INSS Guiné-Bissau taxa de contribuição' was refused by the search tool (shared per-turn limit of 200 searches reached)",
+    "trade-press": "Miranda 2015 newsletter (no rates) and World Bank 2025 update (indicative chart) seen; no big-four summary (Deloitte, PwC 404) || retry-8 2026-11-01: mirandalawfirm.com home answers; no newer Guinea-Bissau tax note found linked from it",
+    "archive": "web.archive.org not reachable (curl 000) 2026-11-01 || retry-8 2026-11-01: web.archive.org: connection reset and availability API 429 on 2026-11-01"
+   }
+  }
+ ]
+}

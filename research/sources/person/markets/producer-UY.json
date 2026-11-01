@@ -1,0 +1,129 @@
+{
+ "topic": "markets.producer.UY",
+ "read": "2026-11-01",
+ "note": "Read 2026-11-01 at the owner's word (\"Want it done now\", of the markets of every country beyond the 21; then \"Retry the blocked market facts once all countries land\"): the terms a producer works on in Uruguay. Research, retry and web-search subagents (workbench/briefs/BRIEF-markets-world.md, -retry.md, -search.md), every quote checked by the lead against its saved page.",
+ "figures": [
+  {
+   "item": "fund",
+   "finding": "The film agency ACAU's Fondo de Fomento (Law 18.284) set 2023 competitive ceilings of $24.95 million for production, $3.34 million for development and $6 million for minority co-productions, in Uruguayan pesos.",
+   "value": {
+    "fund": "Fondo de Fomento Cinematográfico y Audiovisual (ACAU)",
+    "currency": "UYU",
+    "year": 2023,
+    "annualCeilings": {
+     "production": 24950000,
+     "development": 3340000,
+     "minorityCoproduction": 6000000
+    }
+   },
+   "applies": "Uruguay, 2023 plan.",
+   "sources": [
+    {
+     "src": 0,
+     "said": "Producción de contenidos $ 24.950.000 Desarrollo de contenidos $ 3.340.000 Coproducción minoritaria y protocolo ACAU - ANCINE $ 6.000.000"
+    }
+   ]
+  },
+  {
+   "item": "incentive",
+   "finding": "Under Decree 153/2026 (promulgated 3 July 2026), companies producing international audiovisual works or Uruguayan features in Uruguay get a tax credit of 30% of admitted spend in the country, paid as credit certificates valid 36 months.",
+   "value": {
+    "name": "Crédito fiscal audiovisual (Decreto 153/2026, Ley 20.446 art. 686)",
+    "rate": 0.3,
+    "base": "admitted spend in Uruguay",
+    "form": "tax credit certificates, 36 months",
+    "promulgated": "2026-07-03",
+    "published": "2026-07-17"
+   },
+   "applies": "Uruguay, from July 2026.",
+   "sources": [
+    {
+     "src": 1,
+     "said": "obtendrán un crédito fiscal por el 30% (treinta por ciento) de los gastos admitidos erogados en el territorio de la República"
+    }
+   ]
+  },
+  {
+   "item": "incentive",
+   "finding": "The Programa Uruguay Audiovisual's 2024 cash rebate for international productions repaid 25% for projects of USD 300,000 to 3 million (capped at USD 750,000) and 20% above USD 3 million (capped at USD 1 million), plus 5% more on a feature with a Uruguayan director or lead writer.",
+   "value": {
+    "name": "Programa Uruguay Audiovisual (PUA) – Cash Rebate internacional 2024",
+    "currency": "USD",
+    "tiers": [
+     {
+      "from": 300000,
+      "to": 3000000,
+      "rate": 0.25,
+      "cap": 750000
+     },
+     {
+      "from": 3000000,
+      "rate": 0.2,
+      "cap": 1000000
+     }
+    ],
+    "uruguayanDirectorOrWriterBonus": 0.05
+   },
+   "applies": "Uruguay, international productions, 2024 call.",
+   "sources": [
+    {
+     "src": 2,
+     "said": "Entre USD 300.000 y USD 3.000.000 25% USD 750.000 A partir de USD 3.000.000 20% USD 1.000.000"
+    },
+    {
+     "src": 2,
+     "said": "Para largometrajes, será el equivalente al 5% del reembolso correspondiente."
+    }
+   ]
+  },
+  {
+   "item": "feecap",
+   "finding": "In the Programa Uruguay Audiovisual's 2022 national-production line, eligible executive-producer fees may not exceed 9% of the project's total eligible amount, and crew and cast fees must respect the Wage Council's Group 18 minimums.",
+   "value": {
+    "execProducerFeeCap": 0.09,
+    "base": "total eligible amount of the project",
+    "castCrewFloor": "Consejo de Salarios Grupo 18 laudos",
+    "round": 2022
+   },
+   "applies": "Uruguay; PUA Línea A (production and post-production), 2022 call.",
+   "sources": [
+    {
+     "src": 3,
+     "said": "3 La suma de honorarios elegibles de producción ejecutiva no podrá superar el 9% del monto total elegible del proyecto. … 4 Respetando los laudos mínimos correspondientes del Consejo de Salarios del Grupo 18"
+    }
+   ]
+  }
+ ],
+ "country": "UY",
+ "sources": [
+  {
+   "url": "https://icau.mec.gub.uy/innovaportal/file/127693/1/fondo-de-fomento--bases-generales-y-de-desarrollo-de-contenidos-2023.pdf",
+   "title": "Fondo de Fomento: bases generales y de desarrollo de contenidos 2023",
+   "read": "2026-11-01",
+   "kind": "primary",
+   "said": "Producción de contenidos $ 24.950.000 Desarrollo de contenidos $ 3.340.000 Coproducción minoritaria y protocolo ACAU - ANCINE $ 6.000.000"
+  },
+  {
+   "url": "https://www.impo.com.uy/bases/decretos/153-2026",
+   "title": "Decreto N° 153/2026 – IMPO",
+   "read": "2026-11-01",
+   "kind": "primary",
+   "said": "obtendrán un crédito fiscal por el 30% (treinta por ciento) de los gastos admitidos erogados en el territorio de la República"
+  },
+  {
+   "url": "https://uruguayaudiovisual.com/wp-content/uploads/2023/12/bases-pua-internacional-2024.pdf",
+   "title": "Bases PUA Internacional 2024",
+   "read": "2026-11-01",
+   "kind": "primary",
+   "said": "Entre USD 300.000 y USD 3.000.000 25% USD 750.000 A partir de USD 3.000.000 20% USD 1.000.000 … Para largometrajes, será el equivalente al 5% del reembolso correspondiente."
+  },
+  {
+   "url": "https://mna.gub.uy/innovaportal/file/127306/1/bases-pua-linea-a-2022.pdf",
+   "title": "Programa Uruguay Audiovisual, Línea A – Producción y postproducción, bases específicas de la Convocatoria 2022 (Ministerio de Industria / mna.gub.uy)",
+   "read": "2026-11-01",
+   "kind": "primary",
+   "said": "3 La suma de honorarios elegibles de producción ejecutiva no podrá superar el 9% del monto total elegible del proyecto. … 4 Respetando los laudos mínimos correspondientes del Consejo de Salarios del Grupo 18"
+  }
+ ],
+ "blockers": []
+}

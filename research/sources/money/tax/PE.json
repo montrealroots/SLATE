@@ -1,0 +1,273 @@
+{
+ "topic": "tax.PE",
+ "read": "2026-11-01",
+ "note": "Read 2026-11-01 at the owner's word (\"Build those first 3 starting with ledger first\"; of the 21 countries read first: \"It should cover across every country\"; \"Retry the blocked tax facts once all countries land\"): the tax on a screen worker's pay in Peru: a resident's income tax, social contributions, what is withheld at source, a non-resident artiste's withholding, an author's treatment, VAT and the tax year. Research and retry subagents (workbench/briefs/BRIEF-tax.md, BRIEF-tax-retry.md), every quote checked by the lead against its saved page.",
+ "figures": [
+  {
+   "item": "residents",
+   "finding": "A domiciled individual's labour income (pay and independent services) is taxed at 8% up to 5 tax units (UIT), 14% to 20, 17% to 35, 20% to 45 and 30% above, after the first seven UIT are exempt (plus up to three UIT of qualifying expenses); the 2026 UIT is PEN 5,500. There is no regional income tax.",
+   "value": {
+    "currency": "PEN",
+    "UIT2026": 5500,
+    "bracketsInUIT": [
+     {
+      "from": 0,
+      "to": 5,
+      "rate": 0.08
+     },
+     {
+      "from": 5,
+      "to": 20,
+      "rate": 0.14
+     },
+     {
+      "from": 20,
+      "to": 35,
+      "rate": 0.17
+     },
+     {
+      "from": 35,
+      "to": 45,
+      "rate": 0.2
+     },
+     {
+      "from": 45,
+      "to": null,
+      "rate": 0.3
+     }
+    ],
+    "bracketsPEN": [
+     {
+      "from": 0,
+      "to": 27500,
+      "rate": 0.08
+     },
+     {
+      "from": 27500,
+      "to": 110000,
+      "rate": 0.14
+     },
+     {
+      "from": 110000,
+      "to": 192500,
+      "rate": 0.17
+     },
+     {
+      "from": 192500,
+      "to": 247500,
+      "rate": 0.2
+     },
+     {
+      "from": 247500,
+      "to": null,
+      "rate": 0.3
+     }
+    ],
+    "exemptUIT": 7,
+    "exemptPEN": 38500,
+    "extraExpensesUIT": 3
+   },
+   "applies": "Tax year 2026; PEN bands are the UIT bands times PEN 5,500.",
+   "sources": [
+    {
+     "src": 0,
+     "said": "Bracket Reference in tax units * Tax rate (%) First Up to 5 8 Second 5 to 20 14 Third 20 to 35 17 Fourth 35 to 45 20 Fifth Over 45 30 * For 2026, a tax unit is equivalent to 5,500 Peruvian soles (PEN). The first seven tax units are exempted from tax, and, provided that certain requirements are met, individuals may deduct three additional tax units on expenses related to the lease of immovable property, independent professio"
+    }
+   ]
+  },
+  {
+   "item": "year",
+   "finding": "The tax year is the calendar year, without exception; the annual return is due within three months of its end (by SUNAT's schedule in March-April).",
+   "value": {
+    "start": "01-01",
+    "end": "12-31",
+    "returnDue": "within 3 months after year end"
+   },
+   "applies": "2026.",
+   "sources": [
+    {
+     "src": 1,
+     "said": "Tax year: The tax year is the calendar year (there are no exceptions)."
+    },
+    {
+     "src": 1,
+     "said": "Filing and payment: An annual income tax return must be filed within three months of the end of the tax year."
+    }
+   ]
+  },
+  {
+   "item": "social",
+   "finding": "The employer pays 9% of pay for health (EsSalud); the employee has 13% withheld for the National Pension System or about 12.5% for a private fund.",
+   "value": {
+    "employer": {
+     "health": 0.09
+    },
+    "employee": {
+     "ONP": 0.13,
+     "AFP": 0.125
+    }
+   },
+   "applies": "2026; independent workers' terms not read.",
+   "sources": [
+    {
+     "src": 2,
+     "said": "Employers are obligated to make monthly health contribution payments equal to 9% of the total compensation paid to the employee."
+    },
+    {
+     "src": 2,
+     "said": "Employers must apply monthly withholdings for pension funds contributions equal to (i) 13% of the compensation received by the employee in cases where the employee is affiliated with the Nat"
+    }
+   ]
+  },
+  {
+   "item": "withholding",
+   "finding": "The employer withholds monthly on the annual scale; a Peruvian payer withholds 8% from a resident individual's service fee.",
+   "value": {
+    "freelancerFee": 0.08
+   },
+   "applies": "2026; the receipt threshold below which no 8% is withheld was not read.",
+   "sources": [
+    {
+     "src": 1,
+     "said": "withholding tax applies to fees for technical services paid to a resident individual."
+    }
+   ]
+  },
+  {
+   "item": "nonResident",
+   "finding": "A non-domiciled individual pays a flat 30% on gross Peruvian-source pay with no deductions; royalties to a non-resident bear 30%.",
+   "value": {
+    "rate": 0.3,
+    "base": "gross",
+    "deductions": false,
+    "royalties": 0.3
+   },
+   "applies": "No separate artiste rule was read.",
+   "sources": [
+    {
+     "src": 0,
+     "said": "Income tax on non-domiciled employees is imposed at a flat rate of 30% on their gross Peruvian-source income. No deductions or credits apply to non-domiciled individuals."
+    },
+    {
+     "src": 1,
+     "said": "Royalties paid by a Peruvian resident to a nonresident are considered Peruvian-source income and are subject to a 30%"
+    }
+   ]
+  },
+  {
+   "item": "authors",
+   "finding": "Royalties paid to a resident individual have 6.25% withheld on the net after a 20% deduction, 5% of the gross.",
+   "value": {
+    "rate": 0.0625,
+    "deduction": 0.2,
+    "effective": 0.05
+   },
+   "applies": "2026.",
+   "sources": [
+    {
+     "src": 1,
+     "said": "Royalty payments made to a resident individual are subject to a 6.25% withholding tax rate that is applied to the net income determined by applying a 20% discount to the gross income, for an effective rate of 5% of the gross income."
+    }
+   ]
+  },
+  {
+   "item": "vat",
+   "finding": "IGV (VAT) is 18% in general.",
+   "value": {
+    "standard": 0.18
+   },
+   "applies": "Whether an individual's independent services bear IGV, and any threshold, was not confirmed; see blocker.",
+   "sources": [
+    {
+     "src": 2,
+     "said": "The general rate of VAT is 18%."
+    }
+   ]
+  },
+  {
+   "item": "nonResident",
+   "finding": "Whoever pays a non-domiciled person Peruvian-source income withholds the income tax as a final tax and pays it monthly; a live show with non-domiciled artistes as its main performers bears 15% when paid to a non-domiciled company, and other income 30%.",
+   "value": {
+    "final": true,
+    "liveShowRateCompany": 0.15,
+    "otherIncomeRateCompany": 0.3
+   },
+   "applies": "2026; the 15% and 30% are the companies' rates on SUNAT's page; an individual artiste's own rate is the blocker.",
+   "sources": [
+    {
+     "src": 3,
+     "said": "Las personas o entidades que paguen a no domiciliados rentas de fuente peruana de cualquier naturaleza, deberán retener y abonar al fisco con carácter definitivo dentro de los plazos previstos por el Código Tributario para las obligaciones de periodicidad mensual el impuesto a la renta"
+    },
+    {
+     "src": 4,
+     "said": "Espectáculos en vivo con la participación principal de artistas intérpretes y ejecutantes no domiciliados: (15%) … Otras rentas: (30%)"
+    }
+   ]
+  }
+ ],
+ "country": "PE",
+ "sources": [
+  {
+   "url": "https://taxsummaries.pwc.com/peru/individual/taxes-on-personal-income",
+   "title": "PwC Worldwide Tax Summaries: peru Individual - Taxes on personal income",
+   "read": "2026-11-01",
+   "kind": "secondary",
+   "quotes": "https://www.sunat.gob.pe/",
+   "said": "Bracket Reference in tax units * Tax rate (%) First Up to 5 8 Second 5 to 20 14 Third 20 to 35 17 Fourth 35 to 45 20 Fifth Over 45 30 * For 2026, a tax unit is equivalent to 5,500 Peruvian soles (PEN). The first seven tax units are exempted from tax, and, provided that certain requirements are met, individuals may deduct three additional tax units on expenses related to the lease of immovable property, independent professio … Income tax on non-domiciled employees is imposed at a flat rate of 30% on their gross Peruvian-source income. No deductions or credits apply to non-domiciled individuals."
+  },
+  {
+   "url": "https://www.deloitte.com/content/dam/assets-shared/docs/services/tax/2026/dttl-tax-peruhighlights-2026.pdf",
+   "title": "Deloitte International Tax: Peru Highlights 2026",
+   "read": "2026-11-01",
+   "kind": "secondary",
+   "quotes": "https://www.sunat.gob.pe/",
+   "said": "Tax year: The tax year is the calendar year (there are no exceptions). … Filing and payment: An annual income tax return must be filed within three months of the end of the tax year. … withholding tax applies to fees for technical services paid to a resident individual. … Royalties paid by a Peruvian resident to a nonresident are considered Peruvian-source income and are subject to a 30% … Royalty payments made to a resident individual are subject to a 6.25% withholding tax rate that is applied to the net income determined by applying a 20% discount to the gross income, for an effective rate of 5% of the gross income."
+  },
+  {
+   "url": "https://taxsummaries.pwc.com/peru/individual/other-taxes",
+   "title": "PwC Worldwide Tax Summaries: peru Individual - Other taxes",
+   "read": "2026-11-01",
+   "kind": "secondary",
+   "quotes": "https://www.sunat.gob.pe/",
+   "said": "Employers are obligated to make monthly health contribution payments equal to 9% of the total compensation paid to the employee. … Employers must apply monthly withholdings for pension funds contributions equal to (i) 13% of the compensation received by the employee in cases where the employee is affiliated with the Nat … The general rate of VAT is 18%."
+  },
+  {
+   "url": "https://orientacion.sunat.gob.pe/3262-03-retenciones-a-no-domiciliados",
+   "title": "04. Retenciones para no domiciliados (SUNAT, Orientación)",
+   "read": "2026-11-01",
+   "kind": "primary",
+   "said": "Las personas o entidades que paguen a no domiciliados rentas de fuente peruana de cualquier naturaleza, deberán retener y abonar al fisco con carácter definitivo dentro de los plazos previstos por el Código Tributario para las obligaciones de periodicidad mensual el impuesto a la renta"
+  },
+  {
+   "url": "https://orientacion.sunat.gob.pe/03-tasas-aplicables",
+   "title": "03. Tasas Aplicables (SUNAT, Orientación, No domiciliados - Empresas)",
+   "read": "2026-11-01",
+   "kind": "primary",
+   "said": "Espectáculos en vivo con la participación principal de artistas intérpretes y ejecutantes no domiciliados: (15%) … Otras rentas: (30%)"
+  }
+ ],
+ "blockers": [
+  {
+   "item": "vat",
+   "sought": "Whether a freelancer's fourth-category services bear IGV.",
+   "tried": {
+    "institution": "sunat.gob.pe answers; the orientation pages for this were not located in this pass (2026-11-01). || 2026-11-01 retry: orientacion.sunat.gob.pe searched ('cuarta categoria'): the fourth-category FAQ (preguntas-frecuentes-renta-de-cuarta-categoria) and concept pages read; none says whether an independent's fee bears IGV",
+    "official-register": "El Peruano (official gazette) not read 2026-11-01. || 2026-11-01 retry: busquedas.elperuano.pe answers (HTTP 200) but its search is a script app; the IGV Law (TUO, D.S. 055-99-EF) was not reached in the time",
+    "web-search": "Not run for Peru (2026-11-01). || 2026-11-01 retry: not run: the tool refused searches this turn, the shared limit of 200 having been reached (2026-11-01)",
+    "trade-press": "PwC and Deloitte Peru 2026: rate only. || 2026-11-01 retry: PwC and Deloitte Peru 2026 already held: rate only",
+    "archive": "web.archive.org resets the connection from this environment (2026-11-01). || 2026-11-01 retry: archive.org availability API answers, but web.archive.org is refused from this environment (http 'Blocked by egress policy', https connection fails), not read (2026-11-01)"
+   }
+  },
+  {
+   "item": "nonResident",
+   "sought": "The rate for a non-domiciled individual artiste (Income Tax Law art. 54) where the 15% live-show rate of art. 56 is stated only for non-domiciled companies",
+   "tried": {
+    "institution": "sunat.gob.pe answers; the orientation pages for this were not located in this pass (2026-11-01). || 2026-11-01 retry: orientacion.sunat.gob.pe read: 'Retenciones para no domiciliados' (withholding is final, now a figure) and 'Tasas Aplicables' (15% on live shows with non-domiciled artistes, in the companies' section, art. 56); the individuals' section (impuesto-a-la-renta-personas, non-domiciled-taxation) gives no rate for an individual artiste",
+    "official-register": "El Peruano (official gazette) not read 2026-11-01. || 2026-11-01 retry: busquedas.elperuano.pe answers but its search is a script app; the Income Tax Law (TUO, D.S. 179-2004-EF) art. 54 not reached in the time",
+    "web-search": "Not run for Peru (2026-11-01). || 2026-11-01 retry: not run: the tool refused searches this turn, the shared limit of 200 having been reached (2026-11-01)",
+    "trade-press": "PwC and Deloitte Peru 2026: employees' 30% and royalty withholding only. || 2026-11-01 retry: PwC and Deloitte Peru 2026 already held: employees' 30% and royalty withholding only",
+    "archive": "web.archive.org resets the connection from this environment (2026-11-01). || 2026-11-01 retry: archive.org availability API answers, but web.archive.org is refused from this environment (http 'Blocked by egress policy', https connection fails), not read (2026-11-01)"
+   }
+  }
+ ]
+}

@@ -1,0 +1,164 @@
+{
+ "topic": "tax.KY",
+ "read": "2026-11-01",
+ "note": "Read 2026-11-01 at the owner's word (\"Build those first 3 starting with ledger first\"; of the 21 countries read first: \"It should cover across every country\"; \"Retry the blocked tax facts once all countries land\"): the tax on a screen worker's pay in Cayman Islands: a resident's income tax, social contributions, what is withheld at source, a non-resident artiste's withholding, an author's treatment, VAT and the tax year. Research and retry subagents (workbench/briefs/BRIEF-tax.md, BRIEF-tax-retry.md), every quote checked by the lead against its saved page.",
+ "figures": [
+  {
+   "item": "follows",
+   "finding": "The Cayman Islands, a British Overseas Territory, levy no direct taxes of their own and do not take the United Kingdom's: there is no income tax, so a screen worker's pay bears no income tax.",
+   "value": {
+    "sovereign": "GB",
+    "takesSovereignTax": false,
+    "incomeTax": null
+   },
+   "applies": "All residents and non-residents, 2026.",
+   "sources": [
+    {
+     "src": 0,
+     "said": "Following the abolition in 1985 of an annual head tax of CI$10 on all adult male residents up to 60 years, there are no direct taxes in the Cayman Islands. There is no income tax, company or corporation tax, inheritance tax, capital gains or gift tax."
+    },
+    {
+     "src": 0,
+     "said": "There are no income, corporate, capital gains, inheritance, or property taxes. Government revenue is primarily derived from import duties, stamp duties, and various service-related fees."
+    }
+   ]
+  },
+  {
+   "item": "residents",
+   "finding": "No personal income tax is levied, on residents or anyone else.",
+   "value": {
+    "currency": "KYD",
+    "brackets": [],
+    "incomeTax": null
+   },
+   "applies": "2026.",
+   "sources": [
+    {
+     "src": 0,
+     "said": "There is no income tax, company or corporation tax, inheritance tax, capital gains or gift tax."
+    }
+   ]
+  },
+  {
+   "item": "withholding",
+   "finding": "Nothing is withheld for tax from pay or fees; the only deduction an employer may make is the employee's pension contribution of up to 5%.",
+   "value": {
+    "taxWithholding": null,
+    "pensionDeductionMax": 0.05
+   },
+   "applies": "2026.",
+   "sources": [
+    {
+     "src": 1,
+     "said": "There are no income or withholding taxes imposed on individuals in the Cayman Islands."
+    },
+    {
+     "src": 2,
+     "said": "As a result, an employer has the legal right to deduct up to 5% of an employee’s earnings in order to pay that amount into the employee’s pension plan."
+    }
+   ]
+  },
+  {
+   "item": "nonResident",
+   "finding": "A non-resident performer pays no income tax on work in the Cayman Islands, since none is levied.",
+   "value": {
+    "incomeTax": null,
+    "withholding": null
+   },
+   "applies": "2026.",
+   "sources": [
+    {
+     "src": 1,
+     "said": "There are no income or withholding taxes imposed on individuals in the Cayman Islands."
+    }
+   ]
+  },
+  {
+   "item": "social",
+   "finding": "Pension contributions are 10% of earnings up to CI$87,000 a year, generally 5% from the employee and at least 5% from the employer; a self-employed person pays the full 10%; contributions are due by the 15th of the next month.",
+   "value": {
+    "currency": "KYD",
+    "employee": 0.05,
+    "employerMin": 0.05,
+    "total": 0.1,
+    "selfEmployed": 0.1,
+    "ceilingAnnual": 87000,
+    "due": "15th of the following month"
+   },
+   "applies": "Caymanians and other covered employees, 2026 (household domestics who are non-Caymanian are exempt).",
+   "sources": [
+    {
+     "src": 2,
+     "said": "The contribution rate in the Cayman Islands is presently set at 10%. The 10% rate is, generally, comprised of 5% from the employee and 5% from the employer."
+    },
+    {
+     "src": 2,
+     "said": "The requirement to pay pension contributions is up to the year’s maximum pensionable earnings ($87,000) for each employee."
+    },
+    {
+     "src": 3,
+     "said": "A self-employed person shall contribute to a pension plan or an individual pension entitlement account every year during that person’s employment a sum equivalent to ten per cent of that person’s earnings, up to the year’s maximum pensionable earnings for that year."
+    },
+    {
+     "src": 3,
+     "said": "An employer may not contribute to a defined contribution plan less than five per cent of the member’s earnings up to the year’s maximum pensionable earnings."
+    }
+   ]
+  },
+  {
+   "item": "vat",
+   "finding": "There is no VAT, so a freelancer's fee bears none.",
+   "value": {
+    "vat": null
+   },
+   "applies": "2026.",
+   "sources": [
+    {
+     "src": 4,
+     "said": "There is no VAT imposed in the Cayman Islands."
+    }
+   ]
+  }
+ ],
+ "country": "KY",
+ "sources": [
+  {
+   "url": "https://gov.ky/finance-economy",
+   "title": "Our Finance & Economy (Cayman Islands Government, gov.ky)",
+   "read": "2026-11-01",
+   "kind": "primary",
+   "said": "Following the abolition in 1985 of an annual head tax of CI$10 on all adult male residents up to 60 years, there are no direct taxes in the Cayman Islands. There is no income tax, company or corporation tax, inheritance tax, capital gains or gift tax. … There are no income, corporate, capital gains, inheritance, or property taxes. Government revenue is primarily derived from import duties, stamp duties, and various service-related fees."
+  },
+  {
+   "url": "https://taxsummaries.pwc.com/cayman-islands/individual/taxes-on-personal-income",
+   "title": "PwC Worldwide Tax Summaries, Cayman Islands, Individual - Taxes on personal income (last reviewed 29 May 2026)",
+   "read": "2026-11-01",
+   "kind": "secondary",
+   "quotes": "https://gov.ky/finance-economy",
+   "said": "There are no income or withholding taxes imposed on individuals in the Cayman Islands."
+  },
+  {
+   "url": "https://gov.ky/web/dlp/pensions-investigation-unit",
+   "title": "Pensions Investigation Unit (Department of Labour and Pensions, gov.ky)",
+   "read": "2026-11-01",
+   "kind": "primary",
+   "said": "As a result, an employer has the legal right to deduct up to 5% of an employee’s earnings in order to pay that amount into the employee’s pension plan. … The contribution rate in the Cayman Islands is presently set at 10%. The 10% rate is, generally, comprised of 5% from the employee and 5% from the employer. … The requirement to pay pension contributions is up to the year’s maximum pensionable earnings ($87,000) for each employee."
+  },
+  {
+   "url": "https://www.procure.gov.ky/upimages/commonfiles/1751266504NationalPensionsAct2024Revision_1751266507.pdf",
+   "title": "National Pensions Act (2024 Revision)",
+   "read": "2026-11-01",
+   "kind": "primary",
+   "said": "A self-employed person shall contribute to a pension plan or an individual pension entitlement account every year during that person’s employment a sum equivalent to ten per cent of that person’s earnings, up to the year’s maximum pensionable earnings for that year. … An employer may not contribute to a defined contribution plan less than five per cent of the member’s earnings up to the year’s maximum pensionable earnings."
+  },
+  {
+   "url": "https://taxsummaries.pwc.com/cayman-islands/individual/other-taxes",
+   "title": "PwC Worldwide Tax Summaries, Cayman Islands, Individual - Other taxes (last reviewed 29 May 2026)",
+   "read": "2026-11-01",
+   "kind": "secondary",
+   "quotes": "https://gov.ky/finance-economy",
+   "said": "There is no VAT imposed in the Cayman Islands."
+  }
+ ],
+ "blockers": []
+}

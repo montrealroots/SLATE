@@ -1,0 +1,279 @@
+{
+ "topic": "tax.AL",
+ "read": "2026-11-01",
+ "note": "Read 2026-11-01 at the owner's word (\"Build those first 3 starting with ledger first\"; of the 21 countries read first: \"It should cover across every country\"; \"Retry the blocked tax facts once all countries land\"): the tax on a screen worker's pay in Albania: a resident's income tax, social contributions, what is withheld at source, a non-resident artiste's withholding, an author's treatment, VAT and the tax year. Research and retry subagents (workbench/briefs/BRIEF-tax.md, BRIEF-tax-retry.md), every quote checked by the lead against its saved page.",
+ "figures": [
+  {
+   "item": "residents",
+   "finding": "Employment income is taxed at 13% on an annual base up to ALL 2,040,000 and 23% above, with the lowest monthly pay (to ALL 50,000) tax-free; a self-employed person's net business income is taxed at 0% while gross income stays up to ALL 14 million (until 31 December 2029) and 23% above.",
+   "value": {
+    "currency": "ALL",
+    "employmentAnnual": [
+     {
+      "from": 0,
+      "to": 2040000,
+      "rate": 0.13
+     },
+     {
+      "from": 2040000,
+      "to": null,
+      "rate": 0.23
+     }
+    ],
+    "employmentMonthlyWithholding": {
+     "taxFreeUpToMonthlyPay": 50000,
+     "pay50001to60000": {
+      "taxFreeAmount": 35000,
+      "rate": 0.13
+     },
+     "payAbove60000": {
+      "taxFreeAmount": 30000,
+      "rate": 0.13,
+      "from200000": "ALL 22,100 + 23%"
+     }
+    },
+    "business": [
+     {
+      "from": 0,
+      "to": 14000000,
+      "rate": 0.0,
+      "until": "2029-12-31",
+      "statutoryRate": 0.15
+     },
+     {
+      "from": 14000000,
+      "to": null,
+      "rate": 0.23
+     }
+    ]
+   },
+   "applies": "Law No. 29/2023 'On Income Tax', in force from 1 January 2024; one national tax, no regional layer.",
+   "sources": [
+    {
+     "src": 0,
+     "said": "0 50,000 0 50,000 0% 50,001 60,000 0 35,000 0% 35,001 60,000 13% of the amount exceeding ALL 35,000 60,001 Above 0 30,000 0% 30,001 200,000 13% of the amount exceeding ALL 30,000 200,001 Above ALL 22,100 + 23% of the amount exceeding ALL 200,000"
+    },
+    {
+     "src": 0,
+     "said": "From 1 January 2025, taxable income from employment is taxed at the following progressive rates: Annual tax base (ALL) PIT rate (%) 0 to 2,040,000 13 Over 2,040,000 23"
+    },
+    {
+     "src": 0,
+     "said": "Annual tax base (ALL) PIT rate (%) 0 to 14 million 15* Over 14 million 23 * Note that for commercial individuals and the self-employed (as well as entities) with an annual gross income up to ALL 14 million, the PIT rate will be 0%, applicable until 31 December 2029."
+    }
+   ]
+  },
+  {
+   "item": "year",
+   "finding": "The tax year is the calendar year; the annual income declaration and any balance of tax are due by 31 March of the following year.",
+   "value": {
+    "start": "01-01",
+    "end": "12-31",
+    "returnDue": "03-31 following year",
+    "paymentDue": "03-31 following year"
+   },
+   "applies": "From the 2025 return onward.",
+   "sources": [
+    {
+     "src": 1,
+     "said": "ania’s tax year is the calendar year (i.e. 1 January to 31 December)."
+    },
+    {
+     "src": 1,
+     "said": "Individuals are required to submit an annual income declaration at the central tax administration not later than 31 March of the year following the tax period for which the declaration is made."
+    }
+   ]
+  },
+  {
+   "item": "social",
+   "finding": "An employee pays 11.2% (9.5% social, 1.7% health) and the employer 16.7% (15% social, 1.7% health); social contributions are on monthly pay between ALL 50,000 and ALL 186,416 from 1 January 2026, health on the whole gross pay. The self-employed pay 23% social on at least the minimum wage (ALL 50,000) and 3.4% health on at least ALL 100,000.",
+   "value": {
+    "currency": "ALL",
+    "employee": {
+     "social": 0.095,
+     "health": 0.017
+    },
+    "employer": {
+     "social": 0.15,
+     "health": 0.017
+    },
+    "monthlyBase": {
+     "min": 50000,
+     "max": 186416,
+     "healthCeiling": null
+    },
+    "selfEmployed": {
+     "social": 0.23,
+     "socialMinBase": 50000,
+     "health": 0.034,
+     "healthMinBase": 100000
+    }
+   },
+   "applies": "From 1 January 2026; no performers' scheme was found.",
+   "sources": [
+    {
+     "src": 2,
+     "said": "Employees pay social security contributions at the rate of 11.2%. The employee contributions are composed of 9.5% social insurance contribution and 1.7% health insurance contribution. Employers are liable to pay social security contributions for their employees at the rate of 16.7%."
+    },
+    {
+     "src": 3,
+     "said": "The social contributions are paid between the minimum and maximum gross salary for SHC purposes, which are ALL 50,000 from 1 January 2026 (previously ALL 40,000) and ALL 186,416 from 1 January 2026 (previously ALL 176,416), respectively. The health contributions are calculated on the total gross salary."
+    },
+    {
+     "src": 2,
+     "said": "are liable to pay for themselves a mandatory social and health contribution made up of social insurance contribution of no less than 23% of the monthly minimum salary of ALL 50,000 and health insurance contribution of 3.4% on no less than the double minimum salary, i.e. ALL 100,000."
+    },
+    {
+     "src": 4,
+     "said": "Ligj nr. 9136, datë 11.09.2003 “Për mbledhjen e kontributeve të detyrueshme të sigurimeve shoqërore dhe shëndetësore në Republikën e Shqipërisë"
+    }
+   ]
+  },
+  {
+   "item": "withholding",
+   "finding": "The employer withholds income tax from pay monthly (by the scale above) and files the payroll with tax and contributions by the 20th of the next month.",
+   "value": {
+    "employee": "monthly scale, filed and paid by the 20th of the following month"
+   },
+   "applies": "2026.",
+   "sources": [
+    {
+     "src": 1,
+     "said": "Employers are required to withhold PIT for salaries and other compensations related to current employment."
+    },
+    {
+     "src": 2,
+     "said": "The submission of monthly payrolls and tax returns, including the declaration and payment of PIT and social and health contribution, must be done electronically within the 20 th day of the consecutive month."
+    }
+   ]
+  },
+  {
+   "item": "nonResident",
+   "finding": "A non-resident is taxed on Albanian-source income, which includes cultural, artistic and sporting work done in Albania; a resident payer withholds a final 15% from payments for the performance of actors, musicians or sportspeople (and to those who employ them or broker the shows) and from payments for services received in Albania, unless a treaty gives less; a foreign national in an artistic profession is not tax resident for 24 months from first entry.",
+   "value": {
+    "scope": "Albania-source income",
+    "performers": {
+     "rate": 0.15,
+     "base": "gross payment",
+     "final": true
+    },
+    "services": {
+     "rate": 0.15,
+     "final": true
+    },
+    "foreignArtistNonResidenceMonths": 24
+   },
+   "applies": "Law 29/2023 arts. 4, 58(2)(c),(e), 59, consolidated to 2024; Law 81/2025 amendments not read (the 24-month rule is from Deloitte's 2026 highlights, which do not cite the article).",
+   "sources": [
+    {
+     "src": 5,
+     "said": "b) të ardhurat nga veprimtari kulturore, artistike ose sportive të kryera në Republikën e Shqipërisë; … 2. Pagesat e mëposhtme janë subjekt i mbajtjes përfundimtare të tatimit në burim kur paguhen nga një tatimpagues rezident apo një seli e përhershme në Republikën e Shqipërisë për një person fizik jorezident ose një entitet jorezident pa një seli të përhershme në Republikën e Shqipërisë: … e) pagesat për performancën e aktorëve, muzikantëve ose sportistëve, përfshirë pagesa të tilla të bëra për personat që punësojnë artistë ose sportistë ose që veprojnë si ndërmjetës në organizimin e shfaqjeve apo performancave. … Norma e tatimit të mbajtur në burim mbi të ardhurat dhe pagesat sipas nenit 58 të këtij ligji është 15%."
+    },
+    {
+     "src": 6,
+     "said": "As an exception to these provisions, individuals involved in artistic professions who are not Albanian citizens are not considered tax resident in Albania for 24 months from the date of their first entry into the country, regardless of the length of their stay."
+    }
+   ]
+  },
+  {
+   "item": "authors",
+   "finding": "Authors get no special rate: royalties, which include the use of copyright in a literary, artistic or scientific work, films and recordings included, are withheld at 15% when paid to a resident (against the final liability) and at a final 15% when paid to a non-resident, unless a treaty gives less.",
+   "value": {
+    "specialRate": null,
+    "royaltyWithholdingResident": {
+     "rate": 0.15,
+     "final": false
+    },
+    "royaltyWithholdingNonResident": {
+     "rate": 0.15,
+     "final": true
+    }
+   },
+   "applies": "Law 29/2023 arts. 3(21), 58, 59, consolidated to 2024.",
+   "sources": [
+    {
+     "src": 5,
+     "said": "21. “Honorare” janë pagesat për përdorimin ose të drejtën e përdorimit të një aktivi jomaterial dhe përfshijnë sa vijon: a) përdorimin ose të drejtën për të përdorur një të drejtë autori të veprës letrare, artistike ose shkencore, duke përfshirë filmat ose regjistrimet video ose audio … 1. Të ardhurat dhe pagesat në vijim janë objekt i mbajtjes së tatimit në burim, kundrejt detyrimit tatimor përfundimtar, kur i paguhen një tatimpaguesi rezident ose një selie të përhershme në Republikën e Shqipërisë të një tatimpaguesi jorezident: … c) honoraret; … Norma e tatimit të mbajtur në burim mbi të ardhurat dhe pagesat sipas nenit 58 të këtij ligji është 15%."
+    }
+   ]
+  },
+  {
+   "item": "vat",
+   "finding": "VAT is 20%; a freelancer must register once annual turnover is over ALL 10 million and may register voluntarily below it.",
+   "value": {
+    "currency": "ALL",
+    "standard": 0.2,
+    "registrationThreshold": 10000000
+   },
+   "applies": "2026.",
+   "sources": [
+    {
+     "src": 3,
+     "said": "The VAT registration threshold in Albania is annual turnover over ALL 10 million. Any person providing taxable supplies and whose annual turnover does not exceed ALL 10 million is not required to register, although voluntary registration is possible."
+    },
+    {
+     "src": 3,
+     "said": "The standard VAT rate is 20%, and the standard VAT period is the calendar month."
+    }
+   ]
+  }
+ ],
+ "country": "AL",
+ "sources": [
+  {
+   "url": "https://taxsummaries.pwc.com/albania/individual/taxes-on-personal-income",
+   "title": "PwC Worldwide Tax Summaries: albania Individual - Taxes on personal income",
+   "read": "2026-11-01",
+   "kind": "secondary",
+   "quotes": "https://www.tatime.gov.al/eng/d/8/45/0/634/on-the-key-amendments-to-the-law-on-income-tax",
+   "said": "0 50,000 0 50,000 0% 50,001 60,000 0 35,000 0% 35,001 60,000 13% of the amount exceeding ALL 35,000 60,001 Above 0 30,000 0% 30,001 200,000 13% of the amount exceeding ALL 30,000 200,001 Above ALL 22,100 + 23% of the amount exceeding ALL 200,000 … From 1 January 2025, taxable income from employment is taxed at the following progressive rates: Annual tax base (ALL) PIT rate (%) 0 to 2,040,000 13 Over 2,040,000 23 … Annual tax base (ALL) PIT rate (%) 0 to 14 million 15* Over 14 million 23 * Note that for commercial individuals and the self-employed (as well as entities) with an annual gross income up to ALL 14 million, the PIT rate will be 0%, applicable until 31 December 2029."
+  },
+  {
+   "url": "https://taxsummaries.pwc.com/albania/individual/tax-administration",
+   "title": "PwC Worldwide Tax Summaries: albania Individual - Tax administration",
+   "read": "2026-11-01",
+   "kind": "secondary",
+   "quotes": "https://www.tatime.gov.al/eng/d/8/45/0/634/on-the-key-amendments-to-the-law-on-income-tax",
+   "said": "ania’s tax year is the calendar year (i.e. 1 January to 31 December). … Individuals are required to submit an annual income declaration at the central tax administration not later than 31 March of the year following the tax period for which the declaration is made. … Employers are required to withhold PIT for salaries and other compensations related to current employment."
+  },
+  {
+   "url": "https://taxsummaries.pwc.com/albania/individual/other-taxes",
+   "title": "PwC Worldwide Tax Summaries: albania Individual - Other taxes",
+   "read": "2026-11-01",
+   "kind": "secondary",
+   "quotes": "https://www.issh.gov.al/sigurimi-i-detyruar/",
+   "said": "Employees pay social security contributions at the rate of 11.2%. The employee contributions are composed of 9.5% social insurance contribution and 1.7% health insurance contribution. Employers are liable to pay social security contributions for their employees at the rate of 16.7%. … are liable to pay for themselves a mandatory social and health contribution made up of social insurance contribution of no less than 23% of the monthly minimum salary of ALL 50,000 and health insurance contribution of 3.4% on no less than the double minimum salary, i.e. ALL 100,000. … The submission of monthly payrolls and tax returns, including the declaration and payment of PIT and social and health contribution, must be done electronically within the 20 th day of the consecutive month."
+  },
+  {
+   "url": "https://taxsummaries.pwc.com/albania/corporate/other-taxes",
+   "title": "PwC Worldwide Tax Summaries: albania Corporate - Other taxes",
+   "read": "2026-11-01",
+   "kind": "secondary",
+   "quotes": "https://www.issh.gov.al/sigurimi-i-detyruar/",
+   "said": "The social contributions are paid between the minimum and maximum gross salary for SHC purposes, which are ALL 50,000 from 1 January 2026 (previously ALL 40,000) and ALL 186,416 from 1 January 2026 (previously ALL 176,416), respectively. The health contributions are calculated on the total gross salary. … The VAT registration threshold in Albania is annual turnover over ALL 10 million. Any person providing taxable supplies and whose annual turnover does not exceed ALL 10 million is not required to register, although voluntary registration is possible. … The standard VAT rate is 20%, and the standard VAT period is the calendar month."
+  },
+  {
+   "url": "https://www.issh.gov.al/sigurimi-i-detyruar/",
+   "title": "Sigurimi i detyruar (Instituti i Sigurimeve Shoqërore)",
+   "read": "2026-11-01",
+   "kind": "primary",
+   "said": "Ligj nr. 9136, datë 11.09.2003 “Për mbledhjen e kontributeve të detyrueshme të sigurimeve shoqërore dhe shëndetësore në Republikën e Shqipërisë"
+  },
+  {
+   "url": "https://www.aksesdrejtesi.al/dokumenta/1726127084ligj-2023-03-30-29%20-%20i%20p%C3%ABrdit%C3%ABsuar.pdf",
+   "title": "Ligj Nr. 29/2023 për tatimin mbi të ardhurat (i përditësuar: akti normativ nr. 2, 7.6.2023; akti normativ nr. 7, 14.12.2023; Vendimi i Gjykatës Kushtetuese nr. 52, 27.6.2024)",
+   "read": "2026-11-01",
+   "kind": "primary",
+   "said": "b) të ardhurat nga veprimtari kulturore, artistike ose sportive të kryera në Republikën e Shqipërisë; … 2. Pagesat e mëposhtme janë subjekt i mbajtjes përfundimtare të tatimit në burim kur paguhen nga një tatimpagues rezident apo një seli e përhershme në Republikën e Shqipërisë për një person fizik jorezident ose një entitet jorezident pa një seli të përhershme në Republikën e Shqipërisë: … e) pagesat për performancën e aktorëve, muzikantëve ose sportistëve, përfshirë pagesa të tilla të bëra për personat që punësojnë artistë ose sportistë ose që veprojnë si ndërmjetës në organizimin e shfaqjeve apo performancave. … Norma e tatimit të mbajtur në burim mbi të ardhurat dhe pagesat sipas nenit 58 të këtij ligji është 15%. … 21. “Honorare” janë pagesat për përdorimin ose të drejtën e përdorimit të një aktivi jomaterial dhe përfshijnë sa vijon: a) përdorimin ose të drejtën për të përdorur një të drejtë autori të veprës letrare, artistike ose shkencore, duke përfshirë filmat ose regjistrimet video ose audio … 1. Të ardhurat dhe pagesat në vijim janë objekt i mbajtjes së tatimit në burim, kundrejt detyrimit tatimor përfundimtar, kur i paguhen një tatimpaguesi rezident ose një selie të përhershme në Republikën e Shqipërisë të një tatimpaguesi jorezident: … c) honoraret; … Norma e tatimit të mbajtur në burim mbi të ardhurat dhe pagesat sipas nenit 58 të këtij ligji është 15%."
+  },
+  {
+   "url": "https://www.deloitte.com/content/dam/assets-shared/docs/services/tax/2026/dttl-tax-albaniahighlights-2026.pdf",
+   "title": "Deloitte International Tax: Albania Highlights 2026 (quoting Ligj Nr. 29/2023 për tatimin mbi të ardhurat, as amended)",
+   "read": "2026-11-01",
+   "kind": "secondary",
+   "quotes": "https://qbz.gov.al/",
+   "said": "As an exception to these provisions, individuals involved in artistic professions who are not Albanian citizens are not considered tax resident in Albania for 24 months from the date of their first entry into the country, regardless of the length of their stay."
+  }
+ ],
+ "blockers": []
+}

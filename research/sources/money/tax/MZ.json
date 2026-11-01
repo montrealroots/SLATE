@@ -1,0 +1,192 @@
+{
+ "topic": "tax.MZ",
+ "read": "2026-11-01",
+ "note": "Read 2026-11-01 at the owner's word (\"Build those first 3 starting with ledger first\"; of the 21 countries read first: \"It should cover across every country\"; \"Retry the blocked tax facts once all countries land\"): the tax on a screen worker's pay in Mozambique: a resident's income tax, social contributions, what is withheld at source, a non-resident artiste's withholding, an author's treatment, VAT and the tax year. Research and retry subagents (workbench/briefs/BRIEF-tax.md, BRIEF-tax-retry.md), every quote checked by the lead against its saved page.",
+ "figures": [
+  {
+   "item": "residents",
+   "finding": "A resident's income is taxed on an annual scale of 10% to MZN 42,000, 15% to 168,000, 20% to 504,000, 25% to 1,512,000 and 32% above (applied to the whole income less a deduction per band); a municipal tax is also withheld (MZN 510 in Maputo for 2024).",
+   "value": {
+    "currency": "MZN",
+    "brackets": [
+     {
+      "from": 0,
+      "to": 42000,
+      "rate": 0.1
+     },
+     {
+      "from": 42000,
+      "to": 168000,
+      "rate": 0.15
+     },
+     {
+      "from": 168000,
+      "to": 504000,
+      "rate": 0.2
+     },
+     {
+      "from": 504000,
+      "to": 1512000,
+      "rate": 0.25
+     },
+     {
+      "from": 1512000,
+      "to": null,
+      "rate": 0.32
+     }
+    ],
+    "municipal": "set by municipality"
+   },
+   "applies": "2026.",
+   "sources": [
+    {
+     "src": 0,
+     "said": "0 42,000 10 42,000 168,000 15 2,100 168,000 504,000 20 10,500 504,000 1,512,000 25 37,500 1,512,000 32 141,540"
+    }
+   ]
+  },
+  {
+   "item": "year",
+   "finding": "The tax year is the calendar year; returns are filed January to April of the following year and any balance paid by the end of May (employment) or June.",
+   "value": {
+    "start": "01-01",
+    "end": "12-31",
+    "returnWindow": [
+     "01-01",
+     "04-30"
+    ]
+   },
+   "applies": "Individuals.",
+   "sources": [
+    {
+     "src": 1,
+     "said": "The tax year is the calendar year."
+    },
+    {
+     "src": 1,
+     "said": "Individual tax returns must be submitted from January to April of the year following the tax year."
+    }
+   ]
+  },
+  {
+   "item": "social",
+   "finding": "Social security is 3% from the employee and 4% from the employer on monthly pay; foreign employees covered at home may be exempted.",
+   "value": {
+    "employee": 0.03,
+    "employer": 0.04
+   },
+   "applies": "2026.",
+   "sources": [
+    {
+     "src": 2,
+     "said": "The employer contributes an amount equal to 4% of monthly salary, and the employee contributes 3% of monthly salary."
+    }
+   ]
+  },
+  {
+   "item": "withholding",
+   "finding": "Employers withhold income tax monthly at the legal rates (0% to 32%) and pay it by the 20th of the following month.",
+   "value": {
+    "remitBy": "20th of the following month"
+   },
+   "applies": "Employees.",
+   "sources": [
+    {
+     "src": 1,
+     "said": "Employers withhold earned income tax on a monthly basis for work carried out in Mozambique at the WHT rates approved by law, which currently vary from 0% to 32%."
+    }
+   ]
+  },
+  {
+   "item": "nonResident",
+   "finding": "A non-resident's earned income is withheld by the payer at a definitive flat 20% in most cases.",
+   "value": {
+    "rate": 0.2,
+    "final": true
+   },
+   "applies": "Non-residents.",
+   "sources": [
+    {
+     "src": 0,
+     "said": "For non-Mozambican residents, the earned income tax is withheld and remitted by the employer or other payer at a definitive flat rate of 20% (in the majority of the income received)."
+    }
+   ]
+  },
+  {
+   "item": "vat",
+   "finding": "VAT is 16%.",
+   "value": {
+    "standard": 0.16
+   },
+   "applies": "2026.",
+   "sources": [
+    {
+     "src": 2,
+     "said": "The standard rate is 16%."
+    }
+   ]
+  }
+ ],
+ "country": "MZ",
+ "sources": [
+  {
+   "url": "https://taxsummaries.pwc.com/mozambique/individual/taxes-on-personal-income",
+   "title": "PwC Worldwide Tax Summaries: Mozambique, Individual - Taxes on personal income (reviewed 11 August 2026)",
+   "read": "2026-11-01",
+   "kind": "secondary",
+   "quotes": "https://www.at.gov.mz/",
+   "said": "0 42,000 10 42,000 168,000 15 2,100 168,000 504,000 20 10,500 504,000 1,512,000 25 37,500 1,512,000 32 141,540 … For non-Mozambican residents, the earned income tax is withheld and remitted by the employer or other payer at a definitive flat rate of 20% (in the majority of the income received)."
+  },
+  {
+   "url": "https://taxsummaries.pwc.com/mozambique/individual/tax-administration",
+   "title": "PwC Worldwide Tax Summaries: Mozambique, Individual - Tax administration (reviewed 11 August 2026)",
+   "read": "2026-11-01",
+   "kind": "secondary",
+   "quotes": "https://www.at.gov.mz/",
+   "said": "The tax year is the calendar year. … Individual tax returns must be submitted from January to April of the year following the tax year. … Employers withhold earned income tax on a monthly basis for work carried out in Mozambique at the WHT rates approved by law, which currently vary from 0% to 32%."
+  },
+  {
+   "url": "https://taxsummaries.pwc.com/mozambique/individual/other-taxes",
+   "title": "PwC Worldwide Tax Summaries: Mozambique, Individual - Other taxes (reviewed 11 August 2026)",
+   "read": "2026-11-01",
+   "kind": "secondary",
+   "quotes": "https://www.at.gov.mz/",
+   "said": "The employer contributes an amount equal to 4% of monthly salary, and the employee contributes 3% of monthly salary. … The standard rate is 16%."
+  }
+ ],
+ "blockers": [
+  {
+   "item": "residents",
+   "sought": "The IRPS Code's own scale and personal deductions",
+   "tried": {
+    "institution": "at.gov.mz resets the connection from this environment (2026-11-01) || 2026-11-01 retry: at.gov.mz: https does not answer (curl 000), http returns 503; inss.gov.mz does not answer; mef.gov.mz returns HTTP 403 (not read another way).",
+    "official-register": "Código do IRPS not read || 2026-11-01 retry: portaldogoverno.gov.mz answers (HTTP 200) but its home page links no tax code, legislation or IRPS page; the Boletim da República is not on a reachable host.",
+    "web-search": "not run separately || 2026-11-01 retry: WebSearch refused by the tool on 2026-11-01: the turn's shared 200-search limit was reached before this query; no other search route used.",
+    "trade-press": "PwC Mozambique used || 2026-11-01 retry: No Deloitte Mozambique 2026 Highlights (HTTP 404); PwC Mozambique kept.",
+    "archive": "web.archive.org resets the connection from this environment (2026-11-01). || 2026-11-01 retry: archive.org/wayback/available lists a 2026-06-05 snapshot of at.gov.mz; web.archive.org itself resets https and returns 403 on http from this environment (2026-11-01), so none was read."
+   }
+  },
+  {
+   "item": "vat",
+   "sought": "The VAT simplified-regime threshold for a freelancer",
+   "tried": {
+    "institution": "at.gov.mz resets the connection from this environment (2026-11-01) || 2026-11-01 retry: at.gov.mz: https does not answer (curl 000), http returns 503; inss.gov.mz does not answer; mef.gov.mz returns HTTP 403 (not read another way).",
+    "official-register": "Código do IRPS not read || 2026-11-01 retry: portaldogoverno.gov.mz answers (HTTP 200) but its home page links no tax code, legislation or IRPS page; the Boletim da República is not on a reachable host.",
+    "web-search": "not run separately || 2026-11-01 retry: WebSearch refused by the tool on 2026-11-01: the turn's shared 200-search limit was reached before this query; no other search route used.",
+    "trade-press": "PwC Mozambique used || 2026-11-01 retry: No Deloitte Mozambique 2026 Highlights (HTTP 404); PwC Mozambique kept.",
+    "archive": "web.archive.org resets the connection from this environment (2026-11-01). || 2026-11-01 retry: archive.org/wayback/available lists a 2026-06-05 snapshot of at.gov.mz; web.archive.org itself resets https and returns 403 on http from this environment (2026-11-01), so none was read."
+   }
+  },
+  {
+   "item": "authors",
+   "sought": "Any special treatment of authors' fees",
+   "tried": {
+    "institution": "at.gov.mz resets the connection from this environment (2026-11-01) || 2026-11-01 retry: at.gov.mz: https does not answer (curl 000), http returns 503; inss.gov.mz does not answer; mef.gov.mz returns HTTP 403 (not read another way).",
+    "official-register": "Código do IRPS not read || 2026-11-01 retry: portaldogoverno.gov.mz answers (HTTP 200) but its home page links no tax code, legislation or IRPS page; the Boletim da República is not on a reachable host.",
+    "web-search": "not run separately || 2026-11-01 retry: WebSearch refused by the tool on 2026-11-01: the turn's shared 200-search limit was reached before this query; no other search route used.",
+    "trade-press": "PwC Mozambique used || 2026-11-01 retry: No Deloitte Mozambique 2026 Highlights (HTTP 404); PwC Mozambique kept.",
+    "archive": "web.archive.org resets the connection from this environment (2026-11-01). || 2026-11-01 retry: archive.org/wayback/available lists a 2026-06-05 snapshot of at.gov.mz; web.archive.org itself resets https and returns 403 on http from this environment (2026-11-01), so none was read."
+   }
+  }
+ ]
+}

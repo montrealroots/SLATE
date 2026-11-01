@@ -6,6 +6,7 @@ import { earn, type Earning } from '../../money/tax/tax.ts';
 import { countryName, type CountryCode } from '../../world/gazetteer/gazetteer.ts';
 import { dateOf } from '../acting/acting.ts';
 import { componentOf, componentValues, facetSkill, practise, skillOf, type AttributesSlice } from '../attributes/attributes.ts';
+import { genreOf } from '../genres/genres.ts';
 import { inTheBusiness, personOf, residenceOf, speaks, type IdentitySlice, type Level } from '../identity/identity.ts';
 import compiled from './markets.json' with { type: 'json' };
 import { mayVisit, whyNoVisit } from '../permits/permits.ts';
@@ -27,14 +28,18 @@ import { partScore, PARTS, scriptOf, spread, type Form, type Script, type Script
  *   in 2012 (the Scoggins Report), the share for a script at the market's level, better scripts and meetings selling
  *   more. A script sold pays the WGA's minimum for its form (R-4241), goes off the market, and leaves its buyer a contact.
  * - Offering a script in a market (src/person/work/markets.json, compiled by tools/person/markets-writer from the
- *   research, register facts person.markets.writer.<CC>): under one of its agreements, for a production of a budget and
- *   a running time where its minimums turn on them, in the agreement's language, which the writer must write (identity's
- *   languages). A sale there pays the agreement's minimum for the form and tier on the day it sells, less what the
- *   agreement holds for the first day of photography (which the game doesn't reach: a script sold isn't shot in it);
- *   none where the research says no agreement sets the pay, left to negotiation; refused, and told, where an agreement
- *   sets it and its figures aren't known. Where the agreement sets an option's price, a pitch can take an option for a
- *   year at it instead (negotiated where the research says nothing sets it): the script comes back on the market when it
- *   lapses, as it does here, no film being made of it. What a market's research couldn't find is told.
+ *   research of every country, register facts person.markets.writer.<CC>): under one of its agreements (or, where the
+ *   research says a writer there is engaged on another market's terms, as in France's overseas departments, that
+ *   market's), for a production of a budget and a running time where its minimums turn on them, in one of the
+ *   agreement's languages, which the writer must write (identity's languages). A sale there pays the agreement's minimum
+ *   for the form, the kind of script (fiction, documentary, animation: its genre's BFI group) and tier on the day it
+ *   sells, or its wage floor for each day the script was written where the research's source says the floor reaches a
+ *   writer (Andorra's artists' statute), less what the agreement holds for the first day of photography (which the game
+ *   doesn't reach: a script sold isn't shot in it); none where the research says no agreement sets the pay, left to
+ *   negotiation; refused, and told, where the research couldn't find whether an agreement sets it, or its figures.
+ *   Where the agreement sets an option's price, a pitch can take an option for a year at it instead (negotiated where
+ *   the research says nothing sets it): the script comes back on the market when it lapses, as it does here, no film
+ *   being made of it. What a market's research couldn't find is told.
 
  * The writer works alone (the owner, 2026-11-01: "just get rid of all the team stuff because I will be a solo writer"):
  * no writers' room, staffing or ladder of titles; a pilot or an episode is written and sold as a spec.
@@ -99,9 +104,10 @@ export interface Optioned {
   fee: Money | null;
 }
 
-/** Where a script is offered: an agreement, and the production's budget and running time where its minimums turn on them. */
+/** Where a script is offered: an agreement, the country it is sold in where it isn't the agreement's own, and the production's budget and running time where its minimums turn on them. */
 export interface Offer {
   agreement: string;
+  country?: CountryCode;
   budget: number | null;
   minutes: number | null;
   options: Optioned[];
@@ -121,10 +127,13 @@ export const KEPT = 'wga';
 
 /** A market's minimum as compiled (tools/person/markets-writer/compile.ts). */
 type Tier = 'budget' | 'minutes' | 'hourly';
+/** The kinds of script an agreement can set its minimums by. */
+export type Kind = 'fiction' | 'documentary' | 'animation';
 export interface Fee {
   readonly forms: readonly Form[];
+  readonly kind: Kind | null;
   readonly when: Readonly<Partial<Record<Tier, readonly [number, number | null]>>>;
-  readonly per: 'script' | 'minute' | 'hour' | null;
+  readonly per: 'script' | 'minute' | 'hour' | 'day' | null;
   readonly from: string;
   readonly amount: string | null;
   readonly share: string | null;
@@ -133,7 +142,8 @@ export interface Fee {
 }
 export interface MarketAgreement {
   readonly country: CountryCode;
-  readonly language: string;
+  /** None where its figures aren't known. */
+  readonly languages: readonly string[];
   readonly currency: CurrencyCode | null;
   readonly forms: readonly Form[];
   readonly none: boolean;
@@ -142,7 +152,7 @@ export interface MarketAgreement {
   readonly option: readonly { readonly forms: readonly Form[]; readonly share: string; readonly base: string | null }[] | 'negotiated' | null;
 }
 /** What a market's research couldn't find, by the item its blockers name. */
-export type Unknown = 'agreement' | 'fees' | 'option' | 'language' | 'union';
+export type Unknown = 'agreement' | 'fees' | 'option' | 'language' | 'union' | 'terms' | 'none' | 'follows';
 export interface Market {
   readonly agreements: readonly string[];
   readonly unknown: readonly Unknown[];
@@ -157,9 +167,18 @@ export function marketOf(agreement: string): MarketAgreement | null {
   return COMPILED[agreement] as MarketAgreement;
 }
 
-/** The country an agreement's scripts are sold in, and the language they're written in: the WGA's the US's and English. */
+/** The country an agreement is made in, and the languages its scripts are written in: the WGA's the US's and English. */
 export const countryOf = (agreement: string): CountryCode => marketOf(agreement)?.country ?? 'US';
-export const languageOf = (agreement: string): string => marketOf(agreement)?.language ?? 'en';
+export const languagesOf = (agreement: string): readonly string[] => marketOf(agreement)?.languages ?? ['en'];
+
+/** Whether a script is sold under an agreement in a country: the agreement's own, or one whose market follows its terms. */
+export const soldIn = (agreement: string, country: string): boolean => country === countryOf(agreement) || (Object.hasOwn(MARKETS, country) && (MARKETS[country] as Market).agreements.includes(agreement));
+
+/** A script's kind, as an agreement setting its minimums by kind reads it: its genre's BFI group (Documentary, Animation), fiction otherwise. */
+export function kindOf(genre: string): Kind {
+  const group = genreOf(genre).bfi;
+  return group === 'Documentary' ? 'documentary' : group === 'Animation' ? 'animation' : 'fiction';
+}
 
 /** How well a writer must write a language to offer a script in it, the game's own (person.markets.writer.model). */
 export const WRITES_IN: Level = 'C1';
@@ -173,19 +192,29 @@ export const MISSING: Readonly<Record<Unknown, string>> = {
   option: "the terms of an option on a script",
   language: 'the language scripts are written in',
   union: "the guild's fees or whom it takes",
+  terms: "whether any agreement, guild rate or law sets a script's terms",
+  none: 'whether any fund, guild or agreement serves a writer there',
+  follows: "whether the agreements of the country whose law it follows reach a script sold there",
 };
 
-/** What the player is told of an agreement's market where its research couldn't find all of it: "a, b and c"; nothing where it is known whole. */
-export function aboutMarket(agreement: string): string | undefined {
-  const a = marketOf(agreement);
-  if (a === null) return undefined;
-  const missing = (MARKETS[a.country] as Market).unknown.map((u) => MISSING[u]);
+/** What the player is told of a country's market where its research couldn't find all of it: "a, b and c"; nothing where it is known whole, or there's no research of it. */
+export function aboutCountry(country: string): string | undefined {
+  if (!Object.hasOwn(MARKETS, country)) return undefined;
+  const missing = (MARKETS[country] as Market).unknown.map((u) => MISSING[u]);
   if (missing.length === 0) return undefined;
   const list = missing.length > 1 ? `${missing.slice(0, -1).join(', ')} and ${missing.at(-1) as string}` : (missing[0] as string);
-  return t(UNKEPT_LINE, { country: countryName(a.country), missing: list });
+  return t(UNKEPT_LINE, { country: countryName(country as CountryCode), missing: list });
+}
+
+/** What the player is told of an agreement's market where its research couldn't find all of it; nothing for the WGA's. */
+export function aboutMarket(agreement: string): string | undefined {
+  const a = marketOf(agreement);
+  return a === null ? undefined : aboutCountry(a.country);
 }
 
 type Terms = Pick<Offer, 'agreement' | 'budget' | 'minutes'>;
+/** What of the script itself a minimum can turn on: its genre (for its kind) and the days written into it. */
+export type Work = Pick<Script, 'genre' | 'days'>;
 
 /** What a tier turns on, for the production: its budget, the script's minutes, the budget an hour of it; refused where the production doesn't say. */
 function tierOf(k: Tier, o: Terms, form: Form): number {
@@ -206,10 +235,14 @@ function holds(f: Fee, o: Terms, form: Form): boolean {
 /** An amount an hour, for so many minutes: rounded half to even to a minor unit. */
 const forMinutes = (m: Money, minutes: number): Money => money(m.currency, Number(roundHalfEven(BigInt(m.minor) * BigInt(minutes), 60n)));
 
-/** A minimum's amount for the production: by the script, the minute or the hour; at least its share of the budget, at most its ceiling. */
-function amountOf(currency: CurrencyCode, f: Fee, o: Terms, form: Form): Money {
+/** A minimum's amount for the production: by the script, each day written, the minute or the hour; at least its share of the budget, at most its ceiling. */
+function amountOf(currency: CurrencyCode, f: Fee, o: Terms, form: Form, work: Work | null): Money {
   const base = fromMajor(currency, f.amount as string);
   if (f.per === 'script') return base;
+  if (f.per === 'day') {
+    if (work === null) throw new Error(`a ${form} under ${o.agreement} is paid by the days it was written`);
+    return multiply(base, String(work.days));
+  }
   if (o.minutes === null) throw new Error(`a ${form} under ${o.agreement} names its running time`);
   const minutes = o.minutes;
   let m = f.per === 'minute' ? multiply(base, String(minutes)) : forMinutes(base, minutes);
@@ -228,30 +261,35 @@ function amountOf(currency: CurrencyCode, f: Fee, o: Terms, form: Form): Money {
 
 /**
  * The minimum a script of a form is sold for under an agreement on a date, and what of it waits for photography: the
- * WGA's for the form; a market's for the form and tier, the latest begun by then; none where it is left to negotiation.
- * Refused where the agreement sets no terms for the form or the tier, the production doesn't say what its tier turns
- * on, no minimum is known by the date, or its figures aren't known (told).
+ * WGA's for the form; a market's for the form, kind and tier, the latest begun by then; none where it is left to
+ * negotiation. Refused where the agreement sets no terms for the form, the kind or the tier, the production doesn't say
+ * what its tier turns on, the script isn't named where a minimum turns on it, no minimum is known by the date, or its
+ * figures aren't known (told).
  */
-export function minimumOf(o: Terms, form: Form, date: string): { minimum: Money | null; held: Money | null } {
+export function minimumOf(o: Terms, form: Form, date: string, work: Work | null = null): { minimum: Money | null; held: Money | null } {
   const a = marketOf(o.agreement);
   if (a === null) return { minimum: FEES[form], held: null };
   if (a.unknown) throw new Error(aboutMarket(o.agreement) as string);
   if (!a.forms.includes(form)) throw new Error(`${o.agreement} sets no terms for a ${form}`);
   if (a.none) return { minimum: null, held: null };
-  const fit = a.fees.filter((f) => f.forms.includes(form) && holds(f, o, form));
+  const kind = (): Kind => {
+    if (work === null) throw new Error(`a ${form} under ${o.agreement} names its genre`);
+    return kindOf(work.genre);
+  };
+  const fit = a.fees.filter((f) => f.forms.includes(form) && (f.kind === null || f.kind === kind()) && holds(f, o, form));
   if (fit.length === 0) throw new Error(`${o.agreement} sets no minimum for that ${form}`);
   const fee = fit.findLast((f) => f.from <= date);
   if (fee === undefined) throw new Error(`no minimum under ${o.agreement} is known before ${(fit[0] as Fee).from}`);
   if (fee.amount === null) return { minimum: null, held: null };
   const currency = a.currency as CurrencyCode;
-  const minimum = amountOf(currency, fee, o, form);
+  const minimum = amountOf(currency, fee, o, form, work);
   if (fee.held === null) return { minimum, held: null };
   return { minimum, held: 'share' in fee.held ? multiply(minimum, fee.held.share) : fromMajor(currency, fee.held.amount) };
 }
 
 /** What a sale pays when it is made: the minimum, less what waits for photography. */
-export function paidOf(o: Terms, form: Form, date: string): Money | null {
-  const { minimum, held } = minimumOf(o, form, date);
+export function paidOf(o: Terms, form: Form, date: string, work: Work | null = null): Money | null {
+  const { minimum, held } = minimumOf(o, form, date, work);
   // Only a minimum holds anything back.
   return held === null ? minimum : subtract(minimum as Money, held);
 }
@@ -260,8 +298,8 @@ export function paidOf(o: Terms, form: Form, date: string): Money | null {
 export const OPTION_YEARS = 1;
 
 /** An option's price for a year: its share of the script's minimum or of the base its agreement names; none where negotiated. Refused where the agreement sets no option. */
-export function optionOf(o: Terms, form: Form, date: string): Money | null {
-  const { minimum } = minimumOf(o, form, date);
+export function optionOf(o: Terms, form: Form, date: string, work: Work | null = null): Money | null {
+  const { minimum } = minimumOf(o, form, date, work);
   const a = marketOf(o.agreement);
   if (a === null) throw new Error("the WGA's option terms aren't kept by the game");
   if (a.option === null) throw new Error((MARKETS[a.country] as Market).unknown.includes('option') ? (aboutMarket(o.agreement) as string) : `${o.agreement} sets no option`);
@@ -405,6 +443,8 @@ export interface OfferArgs {
   [key: string]: string | number;
   script: number;
   agreement: string;
+  /** The country it is sold in, where it isn't the agreement's own: one whose market follows the agreement's terms. */
+  country?: string;
   /** The production's budget, in the agreement's currency, where its minimums turn on it. */
   budget?: number;
   /** The script's running time, where its minimums turn on it. */
@@ -417,22 +457,26 @@ const whole = (n: number | undefined, what: string, least: number): number | nul
   return n;
 };
 
-/** Offers a script in a market: under an agreement, in its language, for a production its minimums can price. */
+/** Offers a script in a market: under an agreement sold there, in one of its languages, for a production its minimums can price. */
 function offer(s: Career & { identity: IdentitySlice }, a: OfferArgs, c: Context): void {
   const { script } = onTheMarket(s, a.script, c.now);
   const terms: Terms = { agreement: a.agreement, budget: whole(a.budget, 'a budget', 1), minutes: whole(a.minutes, 'a running time', 1) };
-  minimumOf(terms, script.form, dateOf(c.now));
-  const language = languageOf(a.agreement);
+  // @slate:consumer script.write
+  minimumOf(terms, script.form, dateOf(c.now), script);
+  const country = a.country ?? countryOf(a.agreement);
+  if (!soldIn(a.agreement, country)) throw new Error(aboutCountry(country) ?? `a script isn't sold under ${a.agreement} in ${country}`);
+  const languages = languagesOf(a.agreement);
   // @slate:consumer identity.make
-  if (!speaks(personOf(s.identity), language, WRITES_IN)) throw new Error(`a script under ${a.agreement} is written in ${language}, which the writer doesn't write well enough`);
-  s.career.offered[String(a.script)] = { ...terms, options: s.career.offered[String(a.script)]?.options ?? [] };
+  if (!languages.some((l) => speaks(personOf(s.identity), l, WRITES_IN))) throw new Error(`a script under ${a.agreement} is written in ${languages.join(' or ')}, which the writer doesn't write well enough`);
+  const options = s.career.offered[String(a.script)]?.options ?? [];
+  s.career.offered[String(a.script)] = country === countryOf(a.agreement) ? { ...terms, options } : { ...terms, country: country as CountryCode, options };
 }
 
 /** The days a sale takes where it is made: the meeting's (for the permit, which reads where the work is and for how long). */
 export const MEETING_DAYS = 1;
 
 /** Where a script is sold and the days its sale takes there. */
-export const saleIn = (s: CareerSlice, script: number): { country: CountryCode; days: number } => ({ country: countryOf(s.offered[String(script)]?.agreement ?? KEPT), days: MEETING_DAYS });
+export const saleIn = (s: CareerSlice, script: number): { country: CountryCode; days: number } => ({ country: s.offered[String(script)]?.country ?? countryOf(s.offered[String(script)]?.agreement ?? KEPT), days: MEETING_DAYS });
 
 export const DEALS = ['sale', 'option'] as const;
 export type Deal = (typeof DEALS)[number];
@@ -464,7 +508,9 @@ function pitch(s: Pitching, a: ScriptArgs, c: Context): void {
   // @slate:consumer script.offer
   const terms: Terms = s.career.offered[String(a.script)] ?? { agreement: KEPT, budget: null, minutes: null };
   const date = dateOf(c.now);
-  const fee = deal === 'sale' ? paidOf(terms, script.form, date) : optionOf(terms, script.form, date);
+  // @slate:consumer script.write
+  // @slate:consumer script.revise
+  const fee = deal === 'sale' ? paidOf(terms, script.form, date, script) : optionOf(terms, script.form, date, script);
   // A price known is paid into an account held: refused before the meeting where none is named or held.
   if (fee !== null) heldOf(s.accounts, String(a.account));
   out.requests -= 1;

@@ -1,0 +1,471 @@
+{
+ "topic": "tax.PF",
+ "read": "2026-11-01",
+ "note": "Read 2026-11-01 at the owner's word (\"Build those first 3 starting with ledger first\"; of the 21 countries read first: \"It should cover across every country\"; \"Retry the blocked tax facts once all countries land\"): the tax on a screen worker's pay in French Polynesia: a resident's income tax, social contributions, what is withheld at source, a non-resident artiste's withholding, an author's treatment, VAT and the tax year. Research and retry subagents (workbench/briefs/BRIEF-tax.md, BRIEF-tax-retry.md), every quote checked by the lead against its saved page.",
+ "figures": [
+  {
+   "item": "residents",
+   "finding": "French Polynesia has no general income tax on all of a person's income; a resident's pay bears instead the territorial solidarity contribution on wages (CST-S), charged on gross monthly pay at progressive rates from 0.5% on the first XPF 150,000 to 28% above XPF 2,500,000.",
+   "value": {
+    "currency": "XPF",
+    "generalIncomeTax": null,
+    "cstS_monthly": [
+     {
+      "from": 0,
+      "to": 150000,
+      "rate": 0.005
+     },
+     {
+      "from": 150000,
+      "to": 250000,
+      "rate": 0.03
+     },
+     {
+      "from": 250000,
+      "to": 400000,
+      "rate": 0.05
+     },
+     {
+      "from": 400000,
+      "to": 700000,
+      "rate": 0.09
+     },
+     {
+      "from": 700000,
+      "to": 1000000,
+      "rate": 0.11
+     },
+     {
+      "from": 1000000,
+      "to": 1250000,
+      "rate": 0.15
+     },
+     {
+      "from": 1250000,
+      "to": 1500000,
+      "rate": 0.18
+     },
+     {
+      "from": 1500000,
+      "to": 1750000,
+      "rate": 0.21
+     },
+     {
+      "from": 1750000,
+      "to": 2000000,
+      "rate": 0.24
+     },
+     {
+      "from": 2000000,
+      "to": 2500000,
+      "rate": 0.26
+     },
+     {
+      "from": 2500000,
+      "to": null,
+      "rate": 0.28
+     }
+    ],
+    "notWithheldBelowXPF": 150000,
+    "base": "gross pay, benefits in kind included",
+    "follows": null
+   },
+   "applies": "Persons domiciled in French Polynesia on wages, pensions and allowances; the rate table is the DICP leaflet's (PDF dated June 2024, posted 2025); a change for 2026 was not found on the DICP site.",
+   "sources": [
+    {
+     "src": 0,
+     "said": "Il n’existe pas en Polynésie française d’impôt général sur l’ensemble des revenus."
+    },
+    {
+     "src": 1,
+     "said": "Toutes les personnes physiques domiciliées(1) en Polynésie française sont assujetties à la Contribution de Solidarité Territoriale sur les traitements, salaires, pensions, rentes viagères et indemnités diverses (CST-S)"
+    },
+    {
+     "src": 1,
+     "said": "0,5 % à la fraction de revenus qui n’excède pas 150 000 F CFP 3% à la fraction de revenus compris entre 150 001 et 250 000 F CFP 5% à la fraction de revenus compris entre 250 001 et 400 000 F CFP 9% à la fraction de revenus compris entre 400 001 et 700 000 F CFP 11 % à la fraction de revenus compris entre 700 001 et 1 000 000 de F CFP 15 % à la fraction de revenus compris entre 1 000 001 et 1 250 000 de F CFP 18 % à la fraction de revenus compris entre 1 250 001 et 1 500 000 de F CFP 21 % à la fraction de revenus compris entre 1 500 001 et 1 750 000 de F CFP 24 % à la fraction de revenus compris entre 1 750 001 et 2 000 000 de F CFP 26 % à la fraction de revenus compris entre 2 000 001 et 2 500 000 de F CFP 28 % à la fraction de revenus supérieurs à 2 500 000 de F CFP"
+    },
+    {
+     "src": 1,
+     "said": "Lorsque le montant de la contribution est inférieur à 750 F CFP, soit pour tout revenu inférieur à 150 000 F CFP, elle n’est pas précomptée sur le salaire ou le revenu de remplacement."
+    }
+   ]
+  },
+  {
+   "item": "withholding",
+   "finding": "The employer withholds the CST-S from each payment of pay and remits it monthly by the 15th of the following month.",
+   "value": {
+    "scheme": "CST-S précompte",
+    "remit": "monthly, by the 15th of the next month"
+   },
+   "applies": "Employers and pension bodies in French Polynesia.",
+   "sources": [
+    {
+     "src": 1,
+     "said": "Les employeurs et organismes de retraite ou de protection sociale doivent déclarer et reverser mensuellement la CST-S auprès de la recette des impôts de la DICP. La déclaration doit être déposée, accompagnée du règlement correspondant, au plus tard le 15 du mois suivant celui du versement des sommes"
+    },
+    {
+     "src": 2,
+     "said": "Le montant de la contribution est calculé en appliquant des taux progressifs par tranches sur le montant brut des sommes versées."
+    }
+   ]
+  },
+  {
+   "item": "social",
+   "finding": "Pay bears the CPS general scheme contributions from 1 January 2026: in film production (branch 10), retirement tranche A 23.53% (employer 15.69%, employee 7.84%) up to XPF 269,000 a month, tranche B 17.43% (11.62%/5.81%) from XPF 269,000 to 525,000, health 14.94% (9.96%/4.98%) to XPF 5,000,000, family benefits 4.16% to 750,000, work accidents 0.77% to 3,000,000, the exceptional FSR 1% (floor 100,000, ceiling 486,000) and 0.5% vocational training. A non-salaried person subject to the transactions tax pays the CST on non-salaried activities (CST-NS) at 0.75% to 5% (service providers and liberal professions), on the same base as the transactions tax.",
+   "value": {
+    "currency": "XPF",
+    "period": "month",
+    "branch": "10 Entreprises de production cinématographique",
+    "lines": [
+     {
+      "name": "Retraite Tranche A",
+      "total": 0.2353,
+      "employer": 0.1569,
+      "employee": 0.0784,
+      "ceiling": 269000
+     },
+     {
+      "name": "Retraite Tranche B",
+      "total": 0.1743,
+      "employer": 0.1162,
+      "employee": 0.0581,
+      "floor": 269000,
+      "ceiling": 525000
+     },
+     {
+      "name": "Assurance maladie",
+      "total": 0.1494,
+      "employer": 0.0996,
+      "employee": 0.0498,
+      "ceiling": 5000000
+     },
+     {
+      "name": "Prestations familiales",
+      "total": 0.0416,
+      "ceiling": 750000,
+      "split": "not stated in the table"
+     },
+     {
+      "name": "Accidents du travail",
+      "total": 0.0077,
+      "ceiling": 3000000,
+      "split": "not stated in the table"
+     },
+     {
+      "name": "FSR exceptionnel",
+      "total": 0.01,
+      "floor": 100000,
+      "ceiling": 486000,
+      "split": "not stated in the table"
+     },
+     {
+      "name": "A.V.T.S.",
+      "total": 0,
+      "ceiling": 195000
+     },
+     {
+      "name": "Fonds Social Retraite",
+      "total": 0,
+      "ceiling": 269000
+     },
+     {
+      "name": "Formation professionnelle continue",
+      "total": 0.005,
+      "payer": "employer",
+      "ceiling": 5000000
+     }
+    ],
+    "cstNS": {
+     "servicesAndLiberalProfessions": {
+      "min": 0.0075,
+      "max": 0.05
+     },
+     "traders": {
+      "min": 0.004,
+      "max": 0.0325
+     },
+     "base": "transactions-tax return"
+    }
+   },
+   "applies": "Salaried workers in the CPS general scheme (RGS), from 1 January 2026; the self-employed (RNS) scheme was not read.",
+   "sources": [
+    {
+     "src": 3,
+     "said": "TABLEAU DES PLANCHERS ET PLAFONDS MENSUELS DE REMUNERATIONS SOUMISES A COTISATIONS ET DES TAUX DE COTISATIONS A COMPTER DU 1er Janvier 2026"
+    },
+    {
+     "src": 3,
+     "said": "PLAFONDS MENSUELS 486 000F CFP 750 000 F CFP 195 000 F CFP 3 000 000 F CFP 269 000 F CFP 269 000 F CFP 525 000 F CFP 5 000 000 5 000 000"
+    },
+    {
+     "src": 3,
+     "said": "Entreprises de production 10 1% 4,16% 0% 0,77% 23,53% 0% 17,43% 14,94% 0,5% cinématographique"
+    },
+    {
+     "src": 3,
+     "said": "Retraite Tranche A 15,69% 7,84% 23,53%"
+    },
+    {
+     "src": 3,
+     "said": "Retraite Tranche B 11,62% 5,81% 17,43%"
+    },
+    {
+     "src": 3,
+     "said": "Assurance Maladie 9,96% 4,98% 14,94%"
+    },
+    {
+     "src": 4,
+     "said": "de 0,75% à 5% pour les prestataires de services et les professions libérales ; – de 0,4% à 3,25% pour les commerçants."
+    },
+    {
+     "src": 5,
+     "said": "Sont soumises à la contribution de solidarité territoriale sur les professions et activités non salariées (CST-NS) les personnes physiques ou morales assujetties à l’impôt sur les transactions. L’ensemble des dispositions relatives à l’impôt sur les transactions s’applique à la CST-NS à l’exclusion des taux."
+    }
+   ]
+  },
+  {
+   "item": "nonResident",
+   "finding": "A fee paid to a supplier outside French Polynesia for services of any kind supplied or used there (a visiting performer's, writer's or director's included) bears a 10% withholding at source (Code des impôts art. LP. 197-1), declared and paid by the payer.",
+   "value": {
+    "rate": 0.1,
+    "base": "sums paid for services of any kind supplied or used in French Polynesia",
+    "law": "Code des impôts art. LP. 197-1",
+    "final": "not stated"
+   },
+   "applies": "Payments by Polynesian payers to recipients with an address outside French Polynesia; the RAS return falls due monthly (15 January 2026, etc.).",
+   "sources": [
+    {
+     "src": 6,
+     "said": "des produits aux fournisseurs extérieurs à reverser à la recette ( * voir en bas de page) ou prestations des impôts (10 %)"
+    },
+    {
+     "src": 6,
+     "said": "Nature des produits ou des prestations taxables à la retenue à la source (voir art. LP. 197-1 du code des impôts)"
+    },
+    {
+     "src": 6,
+     "said": "d) sommes payées en rémunération de prestations de toute nature fournies ou utilisées en Polynésie française ;"
+    },
+    {
+     "src": 7,
+     "said": "15 janv. RAS - Retenue à la source sur les revenus des non-résidents"
+    }
+   ]
+  },
+  {
+   "item": "vat",
+   "finding": "VAT has three rates: 5% (food, passenger transport, electricity, hotels), 13% on services not at the reduced rate (a freelancer's fee) and 16% on goods; a freelancer below the franchise threshold charges no VAT: DICP's VAT page puts it at XPF 10 million of annual turnover, its older risk sheet at XPF 5 million (see the blocker). Individuals with turnover up to XPF 10,000,000 may use the TPE flat regime instead of the business licence tax, the transactions tax and the CST on non-salaried activity (XPF 25,000 to 200,000 a year by band).",
+   "value": {
+    "currency": "XPF",
+    "franchiseThreshold": 10000000,
+    "tpe": [
+     {
+      "upTo": 2000000,
+      "annual": 25000
+     },
+     {
+      "from": 2000000,
+      "to": 5000000,
+      "annual": 45000
+     },
+     {
+      "from": 5000000,
+      "to": 7500000,
+      "annual": 110000
+     },
+     {
+      "from": 7500000,
+      "to": 10000000,
+      "annual": 200000
+     }
+    ],
+    "standardRate": 0.16,
+    "servicesRate": 0.13,
+    "reducedRate": 0.05,
+    "franchiseThresholdOlderReading": 5000000
+   },
+   "applies": "Taxable persons in French Polynesia; the calendar year is the turnover year; the franchise threshold follows the later-dated DICP page (August 2025) over the March 2025 sheet.",
+   "sources": [
+    {
+     "src": 8,
+     "said": "le taux réduit de 5 % s’applique notamment aux produits alimentaires, aux prestations de services relatives au transport de voyageurs, à la fourniture d’électricité, à l’hébergement dans les établissements hôteliers. le taux intermédiaire 13 % s’applique à toutes les prestations de services non soumises au taux réduit ou non expressément exonérées. le taux normal de 16 % s’applique à tous les produits"
+    },
+    {
+     "src": 9,
+     "said": "Le régime de la franchise en base Il s’applique aux assujettis dont le chiffre d’affaires annuel est inférieur à 10 millions de F CFP. Ce régime vous permet d’être dispensé de l’obligation de facturer la TVA à vos clients."
+    },
+    {
+     "src": 9,
+     "said": "En cas de dépassement du seuil en cours d’année, la TVA doit être facturée à compter du 1er jour du mois qui suit celui au cours duquel intervient ce dépassement."
+    },
+    {
+     "src": 10,
+     "said": "Lorsqu’ils réalisent un chiffre d’affaires inférieur ou égal à 5 000 000 F CFP, les assujettis bénéficient de droit d’une franchise en base qui les dispense du paiement de la TVA."
+    },
+    {
+     "src": 11,
+     "said": "TPE 1: de 25 000 FCFP pour les personnes physiques réalisant un CA inférieur ou égal à 2 millions de FCFP ; TPE 2: de 45 000 FCFP pour les personnes physiques réalisant un chiffre d’affaires supérieur à 2 et inférieur ou égal à 5 millions de FCFP; TPE 3: de 110 000 FCFP pour les personnes physiques réalisant un chiffre d’affaires supérieur à 5 et inférieur ou égal à 7,5 millions de FCFP; TPE 4: de 200 000 FCFP pour les personnes physiques réalisant un chiffre d’affaires supérieur à 7,5 et inférieur ou égal à 10 millions de FCFP;"
+    },
+    {
+     "src": 11,
+     "said": "du paiement de la contribution des patentes (à l’exclusion de la contribution des licences), de l’impôt sur les transactions ou l’impôt qui viendrait s’y substituer et de la CST sur les activités non salariées."
+    }
+   ]
+  },
+  {
+   "item": "year",
+   "finding": "The fiscal calendar runs on the calendar year 2026; CST-S and VAT returns are monthly or quarterly by the 15th.",
+   "value": {
+    "taxYear": {
+     "from": "2026-01-01",
+     "to": "2026-12-31"
+    },
+    "currency": "XPF"
+   },
+   "applies": "French Polynesia.",
+   "sources": [
+    {
+     "src": 7,
+     "said": "15 janv. TVA - mensuelle Janvier 15 janv. CSTS - mensuelle"
+    },
+    {
+     "src": 11,
+     "said": "par année civile (soit du 1er janvier au 31 décembre)"
+    }
+   ]
+  }
+ ],
+ "country": "PF",
+ "sources": [
+  {
+   "url": "https://www.service-public.pf/dicp/faq-items/existe-t-il-un-impot-sur-le-revenu/",
+   "title": "Existe-t-il un impôt sur le revenu ? (DICP FAQ)",
+   "read": "2026-11-01",
+   "kind": "primary",
+   "said": "Il n’existe pas en Polynésie française d’impôt général sur l’ensemble des revenus."
+  },
+  {
+   "url": "https://www.service-public.pf/dicp/wp-content/uploads/sites/59/2025/06/06_CST-SALARIES_WEB.pdf",
+   "title": "Les obligations des entreprises et organismes de retraite en matière de CST sur les traitements, salaires... (DICP leaflet)",
+   "read": "2026-11-01",
+   "kind": "primary",
+   "said": "Toutes les personnes physiques domiciliées(1) en Polynésie française sont assujetties à la Contribution de Solidarité Territoriale sur les traitements, salaires, pensions, rentes viagères et indemnités diverses (CST-S) … 0,5 % à la fraction de revenus qui n’excède pas 150 000 F CFP 3% à la fraction de revenus compris entre 150 001 et 250 000 F CFP 5% à la fraction de revenus compris entre 250 001 et 400 000 F CFP 9% à la fraction de revenus compris entre 400 001 et 700 000 F CFP 11 % à la fraction de revenus compris entre 700 001 et 1 000 000 de F CFP 15 % à la fraction de revenus compris entre 1 000 001 et 1 250 000 de F CFP 18 % à la fraction de revenus compris entre 1 250 001 et 1 500 000 de F CFP 21 % à la fraction de revenus compris entre 1 500 001 et 1 750 000 de F CFP 24 % à la fraction de revenus compris entre 1 750 001 et 2 000 000 de F CFP 26 % à la fraction de revenus compris entre 2 000 001 et 2 500 000 de F CFP 28 % à la fraction de revenus supérieurs à 2 500 000 de F CFP … Lorsque le montant de la contribution est inférieur à 750 F CFP, soit pour tout revenu inférieur à 150 000 F CFP, elle n’est pas précomptée sur le salaire ou le revenu de remplacement. … Les employeurs et organismes de retraite ou de protection sociale doivent déclarer et reverser mensuellement la CST-S auprès de la recette des impôts de la DICP. La déclaration doit être déposée, accompagnée du règlement correspondant, au plus tard le 15 du mois suivant celui du versement des sommes"
+  },
+  {
+   "url": "https://www.service-public.pf/dicp/professionnels/vos-impots/contribution-de-solidarite-territoriale-sur-les-traitements-salaires-pensions/",
+   "title": "La contribution de solidarité territoriale sur les traitements, salaires, pensions... (DICP)",
+   "read": "2026-11-01",
+   "kind": "primary",
+   "said": "Le montant de la contribution est calculé en appliquant des taux progressifs par tranches sur le montant brut des sommes versées."
+  },
+  {
+   "url": "https://www.service-public.pf/trav/wp-content/uploads/sites/23/2026/02/CPS_Taux-de-cotisations_2026.pdf",
+   "title": "Tableau des planchers et plafonds mensuels de rémunérations soumises à cotisations et des taux de cotisations à compter du 1er janvier 2026 (JOPF n° 2025-300 du 22 décembre 2025)",
+   "read": "2026-11-01",
+   "kind": "primary",
+   "said": "TABLEAU DES PLANCHERS ET PLAFONDS MENSUELS DE REMUNERATIONS SOUMISES A COTISATIONS ET DES TAUX DE COTISATIONS A COMPTER DU 1er Janvier 2026 … PLAFONDS MENSUELS 486 000F CFP 750 000 F CFP 195 000 F CFP 3 000 000 F CFP 269 000 F CFP 269 000 F CFP 525 000 F CFP 5 000 000 5 000 000 … Entreprises de production 10 1% 4,16% 0% 0,77% 23,53% 0% 17,43% 14,94% 0,5% cinématographique … Retraite Tranche A 15,69% 7,84% 23,53% … Retraite Tranche B 11,62% 5,81% 17,43% … Assurance Maladie 9,96% 4,98% 14,94%"
+  },
+  {
+   "url": "https://www.service-public.pf/dicp/faq-items/taux-de-la-contribution-de-solidarite-territoriale-sur-les-professions-et-activites-non-salariees-2/",
+   "title": "DICP, Taux de la contribution de solidarité territoriale sur les professions et activités non salariées",
+   "read": "2026-11-01",
+   "kind": "primary",
+   "said": "de 0,75% à 5% pour les prestataires de services et les professions libérales ; – de 0,4% à 3,25% pour les commerçants."
+  },
+  {
+   "url": "https://www.service-public.pf/dicp/professionnels/vos-impots/contribution-de-solidarite-territoriale-sur-les-professions-et-activites-non-salariees/",
+   "title": "DICP, La contribution de solidarité territoriale sur les professions et activités non salariées",
+   "read": "2026-11-01",
+   "kind": "primary",
+   "said": "Sont soumises à la contribution de solidarité territoriale sur les professions et activités non salariées (CST-NS) les personnes physiques ou morales assujetties à l’impôt sur les transactions. L’ensemble des dispositions relatives à l’impôt sur les transactions s’applique à la CST-NS à l’exclusion des taux."
+  },
+  {
+   "url": "https://www.service-public.pf/dicp/wp-content/uploads/sites/59/2025/09/Annexe-Modele-type-de-la-declaration-a-effectuer-en-matiere-de-retenue-a-la-source.pdf",
+   "title": "Annexe – Modèle type de la déclaration à effectuer en matière de retenue à la source (DICP)",
+   "read": "2026-11-01",
+   "kind": "primary",
+   "said": "des produits aux fournisseurs extérieurs à reverser à la recette ( * voir en bas de page) ou prestations des impôts (10 %) … Nature des produits ou des prestations taxables à la retenue à la source (voir art. LP. 197-1 du code des impôts) … d) sommes payées en rémunération de prestations de toute nature fournies ou utilisées en Polynésie française ;"
+  },
+  {
+   "url": "https://www.service-public.pf/dicp/calendrier-fiscal-polynesie-2026/",
+   "title": "Calendrier fiscal Polynésie 2026 (DICP)",
+   "read": "2026-11-01",
+   "kind": "primary",
+   "said": "15 janv. RAS - Retenue à la source sur les revenus des non-résidents … 15 janv. TVA - mensuelle Janvier 15 janv. CSTS - mensuelle"
+  },
+  {
+   "url": "https://www.service-public.pf/dicp/faq-items/quels-sont-les-principaux-taux-de-tva/",
+   "title": "DICP, Quels sont les principaux taux de TVA ?",
+   "read": "2026-11-01",
+   "kind": "primary",
+   "said": "le taux réduit de 5 % s’applique notamment aux produits alimentaires, aux prestations de services relatives au transport de voyageurs, à la fourniture d’électricité, à l’hébergement dans les établissements hôteliers. le taux intermédiaire 13 % s’applique à toutes les prestations de services non soumises au taux réduit ou non expressément exonérées. le taux normal de 16 % s’applique à tous les produits"
+  },
+  {
+   "url": "https://www.service-public.pf/dicp/professionnels/vos-impots/taxe-sur-la-valeur-ajoutee/",
+   "title": "DICP, La taxe sur la valeur ajoutée (block \"Pour quel régime de TVA opter ?\", updated 2025-08-13)",
+   "read": "2026-11-01",
+   "kind": "primary",
+   "said": "Le régime de la franchise en base Il s’applique aux assujettis dont le chiffre d’affaires annuel est inférieur à 10 millions de F CFP. Ce régime vous permet d’être dispensé de l’obligation de facturer la TVA à vos clients. … En cas de dépassement du seuil en cours d’année, la TVA doit être facturée à compter du 1er jour du mois qui suit celui au cours duquel intervient ce dépassement."
+  },
+  {
+   "url": "https://www.service-public.pf/dicp/le-controle-fiscal-et-la-lutte-contre-la-fraude/fiches-prevention-des-risques/depassement-du-seuil-de-la-franchise-en-base-de-tva/",
+   "title": "Dépassement du seuil de la franchise en base de TVA (DICP)",
+   "read": "2026-11-01",
+   "kind": "primary",
+   "said": "Lorsqu’ils réalisent un chiffre d’affaires inférieur ou égal à 5 000 000 F CFP, les assujettis bénéficient de droit d’une franchise en base qui les dispense du paiement de la TVA."
+  },
+  {
+   "url": "https://www.service-public.pf/dicp/professionnels/vos-impots/regime-fiscal-simplifie-des-tres-petites-entreprises/",
+   "title": "Le régime fiscal simplifié des très petites entreprises (DICP)",
+   "read": "2026-11-01",
+   "kind": "primary",
+   "said": "TPE 1: de 25 000 FCFP pour les personnes physiques réalisant un CA inférieur ou égal à 2 millions de FCFP ; TPE 2: de 45 000 FCFP pour les personnes physiques réalisant un chiffre d’affaires supérieur à 2 et inférieur ou égal à 5 millions de FCFP; TPE 3: de 110 000 FCFP pour les personnes physiques réalisant un chiffre d’affaires supérieur à 5 et inférieur ou égal à 7,5 millions de FCFP; TPE 4: de 200 000 FCFP pour les personnes physiques réalisant un chiffre d’affaires supérieur à 7,5 et inférieur ou égal à 10 millions de FCFP; … du paiement de la contribution des patentes (à l’exclusion de la contribution des licences), de l’impôt sur les transactions ou l’impôt qui viendrait s’y substituer et de la CST sur les activités non salariées. … par année civile (soit du 1er janvier au 31 décembre)"
+  }
+ ],
+ "blockers": [
+  {
+   "item": "vat-threshold",
+   "sought": "Which VAT franchise threshold is in force in 2026: DICP's VAT page (updated 2025-08-13) says under XPF 10 million of annual turnover; its risk-prevention sheet (dated 2025-03-25) says XPF 5,000,000 or less; the Code des impôts (lexpol) would settle it",
+   "tried": {
+    "institution": "service-public.pf/dicp searched by its WordPress search API 2026-11-01 ('retenue a la source', 'franchise TVA', 'impot sur le revenu', 'droits d\\'auteur'); no rate page found among results || retry 2026-11-01 (world round): service-public.pf/dicp searched by its WordPress API ('taux TVA', 'TVA'): the VAT rates FAQ and the VAT page saved (PF-dicp-faq-taux-tva.html, PF-dicp-tva.html): rates settled (5/13/16%); the two thresholds conflict as stated",
+    "official-register": "JOPF and lexpol.cloud.pf: lexpol not reachable (curl 000) 2026-11-01 || retry 2026-11-01 (world round): lexpol.cloud.pf does not answer (curl 000) again; the Code des impôts text not reached",
+    "web-search": "WebSearch 'Polynésie française contribution de solidarité territoriale CST ... barème 2026' || retry 2026-11-01 (world round): WebSearch refused 2026-11-01 (the turn's shared 200-search budget exhausted)",
+    "trade-press": "Bloomberg Tax note on CST-S rates seen in results, paywalled, no primary link || retry 2026-11-01 (world round): none read this round",
+    "archive": "web.archive.org not reachable (curl 000) 2026-11-01 || retry 2026-11-01 (world round): web.archive.org and archive.ph reset the connection; arquivo.pt 403"
+   }
+  },
+  {
+   "item": "social",
+   "sought": "The CPS contributions of a self-employed person (RNS) for 2026, and the CST-NS band table within its 0.75%-5% range",
+   "tried": {
+    "institution": "service-public.pf/dicp searched by its WordPress search API 2026-11-01 ('retenue a la source', 'franchise TVA', 'impot sur le revenu', 'droits d\\'auteur'); only the Arrêté 2787 CM of 2021 (BDO-hosted copy) appeared for RNS rates || retry 2026-11-01 (world round): cps.pf/assures/rns fetched (PF-cps-rns.html): the page is built by script and carries no rates in its HTML; DICP CST-NS FAQ and page read and used (range 0.75%-5%, no band table)",
+    "official-register": "JOPF and lexpol.cloud.pf: lexpol not reachable (curl 000) 2026-11-01 || retry 2026-11-01 (world round): lexpol.cloud.pf does not answer (curl 000) again; JOPF not reached",
+    "web-search": "WebSearch 'Polynésie française contribution de solidarité territoriale CST ... barème 2026' || retry 2026-11-01 (world round): WebSearch refused 2026-11-01 (the turn's shared 200-search budget exhausted)",
+    "trade-press": "Bloomberg Tax note on CST-S rates seen in results, paywalled, no primary link || retry 2026-11-01 (world round): none read this round",
+    "archive": "web.archive.org not reachable (curl 000) 2026-11-01 || retry 2026-11-01 (world round): web.archive.org and archive.ph reset the connection; arquivo.pt 403"
+   }
+  },
+  {
+   "item": "authors",
+   "sought": "Any special treatment of authors' fees and royalties under the Code des impôts",
+   "tried": {
+    "institution": "service-public.pf/dicp searched by its WordPress search API 2026-11-01 ('retenue a la source', 'franchise TVA', 'impot sur le revenu', 'droits d\\'auteur'); only the Annexe D form (honoraires... droits d\\'auteur) found; no rule || retry 2026-11-01 (world round): DICP WordPress search for 'droits d'auteur' returns only the Annexe D form and the legal notice; no rule",
+    "official-register": "JOPF and lexpol.cloud.pf: lexpol not reachable (curl 000) 2026-11-01 || retry 2026-11-01 (world round): lexpol.cloud.pf does not answer (curl 000) again",
+    "web-search": "WebSearch 'Polynésie française contribution de solidarité territoriale CST ... barème 2026' || retry 2026-11-01 (world round): WebSearch refused 2026-11-01 (the turn's shared 200-search budget exhausted)",
+    "trade-press": "Bloomberg Tax note on CST-S rates seen in results, paywalled, no primary link || retry 2026-11-01 (world round): none read this round",
+    "archive": "web.archive.org not reachable (curl 000) 2026-11-01 || retry 2026-11-01 (world round): web.archive.org and archive.ph reset the connection; arquivo.pt 403"
+   }
+  },
+  {
+   "item": "residents",
+   "sought": "Whether the CST-S rate table changed for 2026 (the leaflet read is dated June 2024)",
+   "tried": {
+    "institution": "service-public.pf/dicp searched by its WordPress search API 2026-11-01 ('retenue a la source', 'franchise TVA', 'impot sur le revenu', 'droits d\\'auteur'); no 2026 note found || retry 2026-11-01 (world round): DICP CST-S page (PF-dicp-cst-salaires.html) read: says progressive rates by band on gross pay, no 2026 table on it; DICP WordPress search for 'contribution de solidarité' lists no 2026 notice",
+    "official-register": "JOPF and lexpol.cloud.pf: lexpol not reachable (curl 000) 2026-11-01 || retry 2026-11-01 (world round): lexpol.cloud.pf does not answer (curl 000) again",
+    "web-search": "WebSearch 'Polynésie française contribution de solidarité territoriale CST ... barème 2026' || retry 2026-11-01 (world round): WebSearch refused 2026-11-01 (the turn's shared 200-search budget exhausted)",
+    "trade-press": "Bloomberg Tax note on CST-S rates seen in results, paywalled, no primary link || retry 2026-11-01 (world round): none read this round",
+    "archive": "web.archive.org not reachable (curl 000) 2026-11-01 || retry 2026-11-01 (world round): web.archive.org and archive.ph reset the connection; arquivo.pt 403"
+   }
+  }
+ ]
+}

@@ -1,0 +1,227 @@
+{
+ "topic": "tax.SC",
+ "read": "2026-11-01",
+ "note": "Read 2026-11-01 at the owner's word (\"Build those first 3 starting with ledger first\"; of the 21 countries read first: \"It should cover across every country\"; \"Retry the blocked tax facts once all countries land\"): the tax on a screen worker's pay in Seychelles: a resident's income tax, social contributions, what is withheld at source, a non-resident artiste's withholding, an author's treatment, VAT and the tax year. Research and retry subagents (workbench/briefs/BRIEF-tax.md, BRIEF-tax-retry.md), every quote checked by the lead against its saved page.",
+ "figures": [
+  {
+   "item": "residents",
+   "finding": "An employee's monthly pay is taxed at 0% to SCR 8,555.50 for a citizen (15% for a non-citizen), 15% to 10,000, 20% to 83,333 and 30% above; a sole trader's business income above SCR 1 million turnover is taxed at 0% on the first SCR 102,666, 15% to 1 million and 25% above, and below SCR 1 million turnover a presumptive 1.5% of turnover applies.",
+   "value": {
+    "currency": "SCR",
+    "period": "monthly",
+    "brackets": [
+     {
+      "from": 0,
+      "to": 8555.5,
+      "rate": 0
+     },
+     {
+      "from": 8555.5,
+      "to": 10000,
+      "rate": 0.15
+     },
+     {
+      "from": 10000,
+      "to": 83333,
+      "rate": 0.2
+     },
+     {
+      "from": 83333,
+      "to": null,
+      "rate": 0.3
+     }
+    ],
+    "nonCitizenFirstBand": 0.15,
+    "soleTrader": [
+     {
+      "from": 0,
+      "to": 102666,
+      "rate": 0
+     },
+     {
+      "from": 102666,
+      "to": 1000000,
+      "rate": 0.15
+     },
+     {
+      "from": 1000000,
+      "to": null,
+      "rate": 0.25
+     }
+    ],
+    "presumptive": {
+     "rate": 0.015,
+     "turnoverBelow": 1000000
+    }
+   },
+   "applies": "Employee rates effective 1 June 2018, still published by SRC in November 2026.",
+   "sources": [
+    {
+     "src": 0,
+     "said": "BRACKET GROSS MONTHLY INCOME (SCR) RATES FROM TO CITIZEN NON-CITIZEN Bracket 1 SCR 0 SCR 8,555.50 0% 15% Bracket 2 SCR 8,555.51 SCR 10,000.00 15% of the amount in excess of SCR 8,555.50 15% of the amount not exceeding SCR 10,000.00 Bracket 3 SCR 10,000.01 SCR 83,333.00 SCR 216 plus 20% of the amount in excess of SCR 10,000.00 SCR 1,500 plus 20% of the amount in excess of SCR 10,000.00 Bracket 4 > 83,333 SCR 14,883.28 + 30% of the amount in excess of SCR 83,333.00"
+    },
+    {
+     "src": 1,
+     "said": "Sole Trader and Partnership 0% on the first SCR 102, 666.‎ ‎15% between SCR 102,666.01 up to SCR 1 million.‎ 25% above SCR 1 million."
+    },
+    {
+     "src": 1,
+     "said": "for small businesses with an annual turnover below SCR 1 million. Tax Rate Applicable at a flat rate of 1.5% on the annual business turnover"
+    }
+   ]
+  },
+  {
+   "item": "year",
+   "finding": "The tax year is the calendar year; a business tax return is due by 31 March after it.",
+   "value": {
+    "start": "01-01",
+    "end": "12-31",
+    "businessReturnDue": "03-31"
+   },
+   "applies": "Business taxpayers; employees are taxed by monthly withholding.",
+   "sources": [
+    {
+     "src": 1,
+     "said": "All business tax return must be submitted to SRC no later than 31 March of every tax year,"
+    }
+   ]
+  },
+  {
+   "item": "withholding",
+   "finding": "The employer withholds income tax from emoluments monthly and pays it to SRC within 21 days of the following month.",
+   "value": {
+    "remitWithinDays": 21
+   },
+   "applies": "Employees.",
+   "sources": [
+    {
+     "src": 0,
+     "said": "Income tax is usually withheld on the emoluments of employees by the employer and is remitted to the Seychelles Revenue Commission (SRC) on a monthly basis using the Business Activity Statement (BAS)."
+    },
+    {
+     "src": 0,
+     "said": "Pay the tax withheld to SRC within 21 days of the following applicable month using the BAS."
+    }
+   ]
+  },
+  {
+   "item": "nonResident",
+   "finding": "A promoter or agent paying a non-resident entertainer for a performance in Seychelles withholds 5%, final; royalties to a non-resident bear 15%.",
+   "value": {
+    "entertainer": 0.05,
+    "royalties": 0.15,
+    "final": true
+   },
+   "applies": "Non-residents (Business Tax Act withholding).",
+   "sources": [
+    {
+     "src": 1,
+     "said": "In respect of a promoter, agent, or similar person paying ‎remuneration to a non-resident entertainer or sports person in ‎respect of a performance or sporting event in Seychelles.‎ ‎5%"
+    },
+    {
+     "src": 1,
+     "said": "Dividend, interest, royalty, natural resource amount, or technical ‎services fee paid to a non-resident.‎ 15%"
+    },
+    {
+     "src": 1,
+     "said": "As withholding tax is a final tax"
+    }
+   ]
+  },
+  {
+   "item": "vat",
+   "finding": "VAT is 15% on most supplies (0% on exports); a person must register once taxable supplies reach SCR 2,000,000 in 12 months and may register voluntarily from SCR 100,000 (from 1 January 2025).",
+   "value": {
+    "standard": 0.15,
+    "registrationThreshold": 2000000,
+    "voluntaryThreshold": 100000,
+    "currency": "SCR"
+   },
+   "applies": "VAT Act 2010.",
+   "sources": [
+    {
+     "src": 1,
+     "said": "The 15% standard rate applied on most imported goods or services sold in Seychelles."
+    },
+    {
+     "src": 2,
+     "said": "shall come into operation on the 1st January, 2025. … Registration threshold (a) The registration threshold for the purposes of section 7 is SCR2,000,000. (b) The registration threshold for the purposes of section 9 of the Value Added Tax Act is SCR100,000."
+    }
+   ]
+  },
+  {
+   "item": "social",
+   "finding": "An employee pays 5% of pay to the Seychelles Pension Fund and the employer 5%, and a self-employed worker 10%, from 1 January 2023 (still in force in 2026; a three-month deferral of the employer share in 2026 covered only tourism, wholesale and retail employers).",
+   "value": {
+    "currency": "SCR",
+    "employee": 0.05,
+    "employer": 0.05,
+    "selfEmployed": 0.1,
+    "from": "2023-01-01",
+    "ceiling": null
+   },
+   "applies": "2026",
+   "sources": [
+    {
+     "src": 3,
+     "said": "mandatory contribution rates will be increased effective 1st of January, 2023; as follows: For employees, the increase in contribution rate will be from 4% to 5% For employers, the contribution rate will remain at 5%. Pension contribution for self-employed will increase from 9% to 10%."
+    },
+    {
+     "src": 4,
+     "said": "SPF shall introduce a deferred contribution option for employers only, for a period of 3 months, starting from March 2026 contributions due on 21st April 2026 until May 2026. … The proposal shall be applicable to all employers within the tourism industry, wholesaler and retail businesses only"
+    }
+   ]
+  }
+ ],
+ "country": "SC",
+ "sources": [
+  {
+   "url": "https://src.gov.sc/income-and-non-monetary-benefits-tax/",
+   "title": "Seychelles Revenue Commission: Income and Non-Monetary Benefits Tax",
+   "read": "2026-11-01",
+   "kind": "primary",
+   "said": "BRACKET GROSS MONTHLY INCOME (SCR) RATES FROM TO CITIZEN NON-CITIZEN Bracket 1 SCR 0 SCR 8,555.50 0% 15% Bracket 2 SCR 8,555.51 SCR 10,000.00 15% of the amount in excess of SCR 8,555.50 15% of the amount not exceeding SCR 10,000.00 Bracket 3 SCR 10,000.01 SCR 83,333.00 SCR 216 plus 20% of the amount in excess of SCR 10,000.00 SCR 1,500 plus 20% of the amount in excess of SCR 10,000.00 Bracket 4 > 83,333 SCR 14,883.28 + 30% of the amount in excess of SCR 83,333.00 … Income tax is usually withheld on the emoluments of employees by the employer and is remitted to the Seychelles Revenue Commission (SRC) on a monthly basis using the Business Activity Statement (BAS). … Pay the tax withheld to SRC within 21 days of the following applicable month using the BAS."
+  },
+  {
+   "url": "https://src.gov.sc/seychelles-tax-system/",
+   "title": "Seychelles Revenue Commission: Seychelles Tax System (domestic tax)",
+   "read": "2026-11-01",
+   "kind": "primary",
+   "said": "Sole Trader and Partnership 0% on the first SCR 102, 666.‎ ‎15% between SCR 102,666.01 up to SCR 1 million.‎ 25% above SCR 1 million. … for small businesses with an annual turnover below SCR 1 million. Tax Rate Applicable at a flat rate of 1.5% on the annual business turnover … All business tax return must be submitted to SRC no later than 31 March of every tax year, … In respect of a promoter, agent, or similar person paying ‎remuneration to a non-resident entertainer or sports person in ‎respect of a performance or sporting event in Seychelles.‎ ‎5% … Dividend, interest, royalty, natural resource amount, or technical ‎services fee paid to a non-resident.‎ 15% … As withholding tax is a final tax … The 15% standard rate applied on most imported goods or services sold in Seychelles."
+  },
+  {
+   "url": "https://staging.src.gov.sc/wp-content/uploads/2024/12/SI-97-2024-Value-Added-Tax-Amendment-of-Fourth-Schedule-Regulations-2024.pdf",
+   "title": "S.I. 97 of 2024, Value Added Tax (Amendment of Fourth Schedule) Regulations, 2024 (Official Gazette supplement, 2 December 2024; SRC copy)",
+   "read": "2026-11-01",
+   "kind": "primary",
+   "said": "shall come into operation on the 1st January, 2025. … Registration threshold (a) The registration threshold for the purposes of section 7 is SCR2,000,000. (b) The registration threshold for the purposes of section 9 of the Value Added Tax Act is SCR100,000."
+  },
+  {
+   "url": "https://pensionfund.sc/changes-to-the-rates-of-contribution-towards-spf/",
+   "title": "Seychelles Pension Fund, Changes to the rates of contribution towards SPF (08/12/2022)",
+   "read": "2026-11-01",
+   "kind": "primary",
+   "said": "mandatory contribution rates will be increased effective 1st of January, 2023; as follows: For employees, the increase in contribution rate will be from 4% to 5% For employers, the contribution rate will remain at 5%. Pension contribution for self-employed will increase from 9% to 10%."
+  },
+  {
+   "url": "https://pensionfund.sc/2026/04/deferred-employer-contribution-due-to-the-middle-east-conflict/",
+   "title": "Seychelles Pension Fund, Deferred employer contribution due to the Middle East conflict (13/04/2026)",
+   "read": "2026-11-01",
+   "kind": "primary",
+   "said": "SPF shall introduce a deferred contribution option for employers only, for a period of 3 months, starting from March 2026 contributions due on 21st April 2026 until May 2026. … The proposal shall be applicable to all employers within the tourism industry, wholesaler and retail businesses only"
+  }
+ ],
+ "blockers": [
+  {
+   "item": "authors",
+   "sought": "Any special treatment of authors' fees",
+   "tried": {
+    "institution": "src.gov.sc tax pages read; no pension or VAT-threshold figure on them || retry 2026-11-01: src.gov.sc WordPress page search (wp-json) lists Income and Non-Monetary Benefits Tax, Tax System, FAQ, Publications: none names a rule for authors' fees or royalties beyond the 15% on royalties to non-residents",
+    "official-register": "not read || retry 2026-11-01: src.gov.sc/legislation lists the Business Tax Act 2009 and its amendments, the VAT Act and SIs; no author-specific provision among the titles (the Acts' texts not searched for one)",
+    "web-search": "not run || retry 2026-11-01: refused by the search tool on 2026-11-01: the turn's shared limit of 200 searches was reached; not worked around",
+    "trade-press": "none || retry 2026-11-01: no PwC Seychelles summary (404, as before)",
+    "archive": "web.archive.org resets the connection from this environment (2026-11-01). || retry 2026-11-01: web.archive.org: connection reset again 2026-11-01"
+   }
+  }
+ ]
+}

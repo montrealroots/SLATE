@@ -1,0 +1,223 @@
+{
+ "topic": "tax.DJ",
+ "read": "2026-11-01",
+ "note": "Read 2026-11-01 at the owner's word (\"Build those first 3 starting with ledger first\"; of the 21 countries read first: \"It should cover across every country\"; \"Retry the blocked tax facts once all countries land\"): the tax on a screen worker's pay in Djibouti: a resident's income tax, social contributions, what is withheld at source, a non-resident artiste's withholding, an author's treatment, VAT and the tax year. Research and retry subagents (workbench/briefs/BRIEF-tax.md, BRIEF-tax-retry.md), every quote checked by the lead against its saved page.",
+ "figures": [
+  {
+   "item": "residents",
+   "finding": "Pay for work in Djibouti bears the tax on wages and salaries, levied monthly on each band: 2% below DJF 30,000, 15% to 50,000, 18% to 150,000, 20% to 600,000 and 30% above (per the 2011 code); pension and social security deductions are excluded from the base.",
+   "value": {
+    "currency": "DJF",
+    "period": "monthly",
+    "brackets": [
+     {
+      "from": 0,
+      "to": 30000,
+      "rate": 0.02
+     },
+     {
+      "from": 30000,
+      "to": 50000,
+      "rate": 0.15
+     },
+     {
+      "from": 50000,
+      "to": 150000,
+      "rate": 0.18
+     },
+     {
+      "from": 150000,
+      "to": 600000,
+      "rate": 0.2
+     },
+     {
+      "from": 600000,
+      "to": null,
+      "rate": 0.3
+     }
+    ],
+    "regional": null
+   },
+   "applies": "CGI 2011 edition, the latest text on the ministry's site; whether later finance laws changed it was not confirmed",
+   "sources": [
+    {
+     "src": 0,
+     "said": "• pour la fraction de revenu inférieure à 30.000 FD : 2 % • pour la fraction de revenu comprise entre 30.000 FD et 50.000 FD : 15 % • pour la fraction de revenu comprise entre 50.000 FD et 150.000 FD : 18 % • pour la fraction de revenu comprise entre 150.000 FD et 600.000 FD : 20 % • au-delà de 600.000 FD : 30 %"
+    },
+    {
+     "src": 0,
+     "said": "Sont soumises à l’impôt sur les traitements et salaires les rémunérations perçues par les personnes physiques à l’occasion d’un travail exercé dans le territoire de la République de Djibouti."
+    }
+   ]
+  },
+  {
+   "item": "withholding",
+   "finding": "The tax on wages is assessed monthly and withheld by the employer; a person employed for less than a calendar month bears a minimum flat 15% on the whole month's pay; the month's tax is paid to the Treasury before the 10th of the next month (2024 finance law).",
+   "value": {
+    "employee": "monthly employer withholding",
+    "shortEngagement": {
+     "rate": 0.15,
+     "lessThan": "one calendar month"
+    }
+   },
+   "applies": "CGI 2011 edition, the latest text on the ministry's site; whether later finance laws changed it was not confirmed",
+   "sources": [
+    {
+     "src": 0,
+     "said": "L’impôt sur les traitements et salaires donne lieu à l’application d’une retenue prélevée par l’employeur."
+    },
+    {
+     "src": 0,
+     "said": "Art.16.- L’impôt sur les traitements et salaires afférent aux rémunérations versées à des personnes employées pour une durée inférieure à un mois civil est déterminé d’après un taux forfaitaire minimal de 15 % applicable sur la totalité de la rémunération versée au cours du mois."
+    },
+    {
+     "src": 1,
+     "said": "L’article 287 alinéa 1 du CGI est reformulé comme suit : “L’impôt sur les traitements et salaires afférent à un mois déterminé doit être versé avant le dix du mois suivant, à la caisse de la Trésorerie générale”."
+    }
+   ]
+  },
+  {
+   "item": "nonResident",
+   "finding": "Pay for work performed in Djibouti is taxed whatever the worker's residence, so a visiting performer engaged for under a month bears the 15% minimum flat rate on the month's pay; the withholding on a non-resident's fee as an independent was not found.",
+   "value": {
+    "rate": 0.15,
+    "base": "whole pay for an engagement under one month",
+    "independentFee": null
+   },
+   "applies": "CGI 2011 edition, the latest text on the ministry's site; whether later finance laws changed it was not confirmed",
+   "sources": [
+    {
+     "src": 0,
+     "said": "Art.16.- L’impôt sur les traitements et salaires afférent aux rémunérations versées à des personnes employées pour une durée inférieure à un mois civil est déterminé d’après un taux forfaitaire minimal de 15 % applicable sur la totalité de la rémunération versée au cours du mois."
+    }
+   ]
+  },
+  {
+   "item": "vat",
+   "finding": "VAT (normal rate 7% in the 2011 code) applies to persons whose annual turnover is DJF 80 million or more (immediately above 120 million); below that their operations are outside VAT; but since the 2024 finance law a person in a liberal profession is liable to VAT whatever his turnover, and that law's vehicle table charges VAT at 10%.",
+   "value": {
+    "currency": "DJF",
+    "standard": 0.07,
+    "threshold": 80000000,
+    "immediateAbove": 120000000,
+    "liberalProfessionsAnyTurnover": true
+   },
+   "applies": "CGI 2011 edition, the latest text on the ministry's site; whether later finance laws changed it was not confirmed The 2024 finance law (art. 20) brings liberal professions into VAT regardless of turnover.",
+   "sources": [
+    {
+     "src": 0,
+     "said": "1) Le taux normal de 7 % est applicable à toutes les opérations taxables."
+    },
+    {
+     "src": 0,
+     "said": "Art.174.- Sont assujetties à la TVA les personnes physiques ou morales qui réalisent des livraisons de biens ou des prestations de service, dès lors que leur chiffre d’affaires annuel est supérieur ou égal à 80.000.000 FD. En deçà de cette limite, leurs opérations ne sont pas assujetties à la TVA."
+    },
+    {
+     "src": 1,
+     "said": "L’article 174 est complété comme suit : “Art. 174 alinéa 2 : “sont assujetties à la TVA les personnes physiques et morales exerçant une profession libérale sans distinction de chiffre d’affaires”. … Véhicule de tourisme d’une puissance inférieure ou éqale à 9 CV 10% 10% 10% 10%"
+    }
+   ]
+  },
+  {
+   "item": "social",
+   "finding": "The employer pays 15.7% of pay to the National Social Security Fund (5.5% family benefits, 1.2% work accidents, 4% retirement, 5% health insurance) and the employee 6% (4% retirement, 2% health insurance), withheld by the employer; an independent worker pays 7% for health insurance; pay counts uncapped for retirement and up to DJF 400,000 a month for the other schemes.",
+   "value": {
+    "currency": "DJF",
+    "employer": {
+     "familyBenefits": 0.055,
+     "workAccidents": 0.012,
+     "retirement": 0.04,
+     "healthInsurance": 0.05,
+     "total": 0.157
+    },
+    "employee": {
+     "retirement": 0.04,
+     "healthInsurance": 0.02,
+     "total": 0.06
+    },
+    "independent": {
+     "healthInsurance": 0.07
+    },
+    "monthlyCeilingNonRetirement": 400000,
+    "retirementCeiling": null
+   },
+   "applies": "Rates from 11 August 2020 (Décret 2020-208) and the ceiling from Arrêté 2015-605; no later text on either was found in the Journal officiel's search.",
+   "sources": [
+    {
+     "src": 2,
+     "said": "L’employeur doit prélever d’office sur les salaires les cotisations des travailleurs et les verser à la Caisse Nationale de Sécurité Sociale … Régime Général Régime Zone Franche Régime Indépendant Catégorie de prestation Tx Part Patronale Tx Part Salariale Total Tx Part Patronale Tx Part Salariale Total Tx Part Patronale Tx Part Salariale Total 1-Prestation familiale 5.5% 5.5% 5.5% 5.5% 2-Accident de travail 1.2% 1.2% 1.2% 1.2% 3-Retraite 4% 4% 8% 4% 4% 8% 4-Assurance maladie obligatoire (soins) 5% 2% 7% 5% 2% 7% 7% 7% Total taux de cotisation 15.7% 6% 21.7% 15.7% 6% 21.7% 7% 7%"
+    },
+    {
+     "src": 3,
+     "said": "Les rémunérations mensuelles entrant en compte pour la détermination de l’assiette des cotisations dues à la Caisse Nationale de Sécurité Sociale, sont déplafonnées en ce qui concerne les régimes de retraites. Elles sont plafonnées à 400.000 FDJ pour les autres régimes."
+    }
+   ]
+  }
+ ],
+ "country": "DJ",
+ "sources": [
+  {
+   "url": "http://www.ministere-finances.dj/TVA/CGI%20%202010.pdf",
+   "title": "République de Djibouti, Code général des impôts 2011 (Ministère de l'Économie et des Finances)",
+   "read": "2026-11-01",
+   "kind": "primary",
+   "said": "• pour la fraction de revenu inférieure à 30.000 FD : 2 % • pour la fraction de revenu comprise entre 30.000 FD et 50.000 FD : 15 % • pour la fraction de revenu comprise entre 50.000 FD et 150.000 FD : 18 % • pour la fraction de revenu comprise entre 150.000 FD et 600.000 FD : 20 % • au-delà de 600.000 FD : 30 % … Sont soumises à l’impôt sur les traitements et salaires les rémunérations perçues par les personnes physiques à l’occasion d’un travail exercé dans le territoire de la République de Djibouti. … L’impôt sur les traitements et salaires donne lieu à l’application d’une retenue prélevée par l’employeur. … Art.16.- L’impôt sur les traitements et salaires afférent aux rémunérations versées à des personnes employées pour une durée inférieure à un mois civil est déterminé d’après un taux forfaitaire minimal de 15 % applicable sur la totalité de la rémunération versée au cours du mois. … 1) Le taux normal de 7 % est applicable à toutes les opérations taxables. … Art.174.- Sont assujetties à la TVA les personnes physiques ou morales qui réalisent des livraisons de biens ou des prestations de service, dès lors que leur chiffre d’affaires annuel est supérieur ou égal à 80.000.000 FD. En deçà de cette limite, leurs opérations ne sont pas assujetties à la TVA."
+  },
+  {
+   "url": "https://www.journalofficiel.dj/texte-juridique/loi-de-finances-n-64-an-23-9eme-l-portant-budget-initial-de-letat-pour-lexercice-2024/",
+   "title": "Loi de Finances n° 64/AN/23/9ème L portant Budget Initial de l’Etat pour l’exercice 2024 (Journal officiel, eJO)",
+   "read": "2026-11-01",
+   "kind": "primary",
+   "said": "L’article 287 alinéa 1 du CGI est reformulé comme suit : “L’impôt sur les traitements et salaires afférent à un mois déterminé doit être versé avant le dix du mois suivant, à la caisse de la Trésorerie générale”. … L’article 174 est complété comme suit : “Art. 174 alinéa 2 : “sont assujetties à la TVA les personnes physiques et morales exerçant une profession libérale sans distinction de chiffre d’affaires”. … Véhicule de tourisme d’une puissance inférieure ou éqale à 9 CV 10% 10% 10% 10%"
+  },
+  {
+   "url": "https://www.journalofficiel.dj/texte-juridique/decret-n2020-208-pr-mtra-determinant-la-quotite-des-fractions-du-salaire-soumise-a-prelevements-progressifs-et-les-taux-y-afferents-au-titre-de-la-cotisation-aux-institutions-obligatoires-de-la/",
+   "title": "Décret n° 2020-208/PR/MTRA (Journal officiel n° 15 du 13/08/2020, eJO)",
+   "read": "2026-11-01",
+   "kind": "primary",
+   "said": "L’employeur doit prélever d’office sur les salaires les cotisations des travailleurs et les verser à la Caisse Nationale de Sécurité Sociale … Régime Général Régime Zone Franche Régime Indépendant Catégorie de prestation Tx Part Patronale Tx Part Salariale Total Tx Part Patronale Tx Part Salariale Total Tx Part Patronale Tx Part Salariale Total 1-Prestation familiale 5.5% 5.5% 5.5% 5.5% 2-Accident de travail 1.2% 1.2% 1.2% 1.2% 3-Retraite 4% 4% 8% 4% 4% 8% 4-Assurance maladie obligatoire (soins) 5% 2% 7% 5% 2% 7% 7% 7% Total taux de cotisation 15.7% 6% 21.7% 15.7% 6% 21.7% 7% 7%"
+  },
+  {
+   "url": "https://www.journalofficiel.dj/texte-juridique/arrete-n2015-605-pr-mtra-portant-modification-du-plafonnement-des-remunerations-entrant-en-compte-pour-la-determination-de-lassiette-des-cotisations-dues-a-la-cnss-et-revalorisation-du-bareme/",
+   "title": "Arrêté n° 2015-605/PR/MTRA (Journal officiel n° 19 du 15/10/2015, eJO)",
+   "read": "2026-11-01",
+   "kind": "primary",
+   "said": "Les rémunérations mensuelles entrant en compte pour la détermination de l’assiette des cotisations dues à la Caisse Nationale de Sécurité Sociale, sont déplafonnées en ce qui concerne les régimes de retraites. Elles sont plafonnées à 400.000 FDJ pour les autres régimes."
+  }
+ ],
+ "blockers": [
+  {
+   "item": "residents",
+   "sought": "The wage-tax scale in force for 2026 confirmed by a text later than the 2011 code (none of the 2024-2026 finance laws changes it), the return calendar and the self-employed regime; the VAT rate (10% in the 2024 finance law's vehicle table, 7% in the 2011 code) from the VAT article itself",
+   "tried": {
+    "institution": "impots.dj unreachable (connection failed, 2026-11-01); ministere-finances.dj reached: its CGI is the 2011 edition || retry 2026-11-01: impots.dj and cnss.dj: proxy 502 / no connection again 2026-11-01; ministere-finances.dj home re-read: its CGI link is the 2010 edition",
+    "official-register": "Journal officiel de Djibouti (finance laws 2012-2026) not reached online || retry 2026-11-01: journalofficiel.dj (eJO) searched by its WordPress search API for \"barème ITS\", \"impôt sur les traitements et salaires barème\", \"retenue à la source non résidents\", \"droits d'auteur\", \"loi de finances rectificative 2026\", \"portant modification du Code Général des Impôts\": finance laws 2024 (saved DJ-jo-lf-2024.html), 2025 (DJ-jo-lf-2025.html) and 2026 (DJ-jo-lf-2026.html) and Loi 190/AN/17 read: none changes the wage-tax scale, none sets a withholding on a non-resident's fee or treats authors' royalties; the latest ITS scale texts in the register are of 1994-1996 (the 2011 code's scale stands)",
+    "web-search": "not run: the session's shared web-search budget was used up on 2026-11-01 before this country || retry 2026-11-01: refused by the search tool on 2026-11-01: the turn's shared limit of 200 searches was reached (the session's search was spent when this country was reached); not worked around",
+    "trade-press": "none found without search || retry 2026-11-01: no PwC or Deloitte summary for Djibouti reached (as before)",
+    "archive": "web.archive.org resets the connection from this environment (2026-11-01) || retry 2026-11-01: web.archive.org: connection reset again 2026-11-01"
+   }
+  },
+  {
+   "item": "nonResident",
+   "sought": "Withholding on a non-resident's independent fee or royalties",
+   "tried": {
+    "institution": "impots.dj unreachable (connection failed, 2026-11-01); ministere-finances.dj reached: its CGI is the 2011 edition || retry 2026-11-01: impots.dj and cnss.dj: proxy 502 / no connection again 2026-11-01; ministere-finances.dj home re-read: its CGI link is the 2010 edition",
+    "official-register": "Journal officiel de Djibouti (finance laws 2012-2026) not reached online || retry 2026-11-01: journalofficiel.dj (eJO) searched by its WordPress search API for \"barème ITS\", \"impôt sur les traitements et salaires barème\", \"retenue à la source non résidents\", \"droits d'auteur\", \"loi de finances rectificative 2026\", \"portant modification du Code Général des Impôts\": finance laws 2024 (saved DJ-jo-lf-2024.html), 2025 (DJ-jo-lf-2025.html) and 2026 (DJ-jo-lf-2026.html) and Loi 190/AN/17 read: none changes the wage-tax scale, none sets a withholding on a non-resident's fee or treats authors' royalties; the latest ITS scale texts in the register are of 1994-1996 (the 2011 code's scale stands)",
+    "web-search": "not run: the session's shared web-search budget was used up on 2026-11-01 before this country || retry 2026-11-01: refused by the search tool on 2026-11-01: the turn's shared limit of 200 searches was reached (the session's search was spent when this country was reached); not worked around",
+    "trade-press": "none found without search || retry 2026-11-01: no PwC or Deloitte summary for Djibouti reached (as before)",
+    "archive": "web.archive.org resets the connection from this environment (2026-11-01) || retry 2026-11-01: web.archive.org: connection reset again 2026-11-01"
+   }
+  },
+  {
+   "item": "authors",
+   "sought": "Any special treatment of authors' royalties",
+   "tried": {
+    "institution": "impots.dj unreachable (connection failed, 2026-11-01); ministere-finances.dj reached: its CGI is the 2011 edition || retry 2026-11-01: impots.dj and cnss.dj: proxy 502 / no connection again 2026-11-01; ministere-finances.dj home re-read: its CGI link is the 2010 edition",
+    "official-register": "Journal officiel de Djibouti (finance laws 2012-2026) not reached online || retry 2026-11-01: journalofficiel.dj (eJO) searched by its WordPress search API for \"barème ITS\", \"impôt sur les traitements et salaires barème\", \"retenue à la source non résidents\", \"droits d'auteur\", \"loi de finances rectificative 2026\", \"portant modification du Code Général des Impôts\": finance laws 2024 (saved DJ-jo-lf-2024.html), 2025 (DJ-jo-lf-2025.html) and 2026 (DJ-jo-lf-2026.html) and Loi 190/AN/17 read: none changes the wage-tax scale, none sets a withholding on a non-resident's fee or treats authors' royalties; the latest ITS scale texts in the register are of 1994-1996 (the 2011 code's scale stands)",
+    "web-search": "not run: the session's shared web-search budget was used up on 2026-11-01 before this country || retry 2026-11-01: refused by the search tool on 2026-11-01: the turn's shared limit of 200 searches was reached (the session's search was spent when this country was reached); not worked around",
+    "trade-press": "none found without search || retry 2026-11-01: no PwC or Deloitte summary for Djibouti reached (as before)",
+    "archive": "web.archive.org resets the connection from this environment (2026-11-01) || retry 2026-11-01: web.archive.org: connection reset again 2026-11-01"
+   }
+  }
+ ]
+}

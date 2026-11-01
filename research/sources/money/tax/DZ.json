@@ -1,0 +1,195 @@
+{
+ "topic": "tax.DZ",
+ "read": "2026-11-01",
+ "note": "Read 2026-11-01 at the owner's word (\"Build those first 3 starting with ledger first\"; of the 21 countries read first: \"It should cover across every country\"; \"Retry the blocked tax facts once all countries land\"): the tax on a screen worker's pay in Algeria: a resident's income tax, social contributions, what is withheld at source, a non-resident artiste's withholding, an author's treatment, VAT and the tax year. Research and retry subagents (workbench/briefs/BRIEF-tax.md, BRIEF-tax-retry.md), every quote checked by the lead against its saved page.",
+ "figures": [
+  {
+   "item": "residents",
+   "finding": "Global income tax (IRG) is levied on annual net income at 0% to DZD 240,000, 23% to 480,000, 27% to 960,000, 30% to 1,920,000, 33% to 3,840,000 and 35% above; on salaries, taxable pay up to DZD 30,000 a month is exempt and a 40% abatement (DZD 1,000 to 1,500 a month) reduces the tax above it.",
+   "value": {
+    "currency": "DZD",
+    "brackets": [
+     {
+      "from": 0,
+      "to": 240000,
+      "rate": 0
+     },
+     {
+      "from": 240000,
+      "to": 480000,
+      "rate": 0.23
+     },
+     {
+      "from": 480000,
+      "to": 960000,
+      "rate": 0.27
+     },
+     {
+      "from": 960000,
+      "to": 1920000,
+      "rate": 0.3
+     },
+     {
+      "from": 1920000,
+      "to": 3840000,
+      "rate": 0.33
+     },
+     {
+      "from": 3840000,
+      "to": null,
+      "rate": 0.35
+     }
+    ],
+    "salaryExemptMonthly": 30000,
+    "salaryAbatement": {
+     "rate": 0.4,
+     "minMonthly": 1000,
+     "maxMonthly": 1500
+    },
+    "regional": null
+   },
+   "applies": "Scale of CIDTA art. 104 as set by the 2022 finance law; unchanged for salaries by the 2026 finance law (per the DGI as reported).",
+   "sources": [
+    {
+     "src": 0,
+     "said": "Le revenu net annuel tel que déterminé par les dispositions de l’article 85 du présent code est soumis à l’impôt sur le revenu global au lieu du domicile fiscal, suivant le barème progressif ci-après : FRACTION DU REVENU IMPOSABLE EN DINARS TAUX D’IMPOSITION N’excédant pas 240.000 DA de 240.001 DA à 480.000 DA de 480.001 DA à 960.000 DA de 960.001 DA à 1.920.000 DA de 1.920.001 DA à 3.840.000 DA Supérieure à 3.840.000 DA 0% 23% 27% 30% 33% 35%"
+    },
+    {
+     "src": 1,
+     "said": "La loi de finances 2026 n’a modifié l’article 104 que pour les revenus des capitaux mobiliers. La partie consacrée aux salaires reste inchangée,"
+    },
+    {
+     "src": 1,
+     "said": "Les revenus imposables qui n’excèdent pas 30 000 DA par mois bénéficient d’une exonération totale, selon la DGI."
+    },
+    {
+     "src": 1,
+     "said": "Elle applique ensuite un abattement de 40 % sur le montant obtenu. Cet abattement ne peut être inférieur à 1 000 DA ni supérieur à 1 500 DA par mois."
+    }
+   ]
+  },
+  {
+   "item": "withholding",
+   "finding": "IRG on salaries is withheld at source on taxable pay after social-security contributions, using the monthly equivalents of the annual scale.",
+   "value": {
+    "base": "taxable pay after social security",
+    "monthlyBands": [
+     20000,
+     40000,
+     80000,
+     160000,
+     320000
+    ]
+   },
+   "applies": "Employees.",
+   "sources": [
+    {
+     "src": 1,
+     "said": "Il porte sur le revenu imposable, c’est-à-dire après déduction des cotisations de sécurité sociale."
+    },
+    {
+     "src": 1,
+     "said": "jusqu’à 240 000 DA par an (20 000 DA par mois) : 0 % ;"
+    }
+   ]
+  },
+  {
+   "item": "vat",
+   "finding": "The 2026 finance law sets Algeria's reduced TVA rate at 9%; the standard rate and the franchise threshold for a freelancer were not found (see blockers).",
+   "value": {
+    "reducedRate": 0.09,
+    "standardRate": null,
+    "franchiseThreshold": null
+   },
+   "applies": "From 1 January 2026 (Loi n° 25-17 du 14 décembre 2025 portant loi de finances pour 2026, art. 53, amending art. 23 of the Code des taxes sur le chiffre d'affaires).",
+   "sources": [
+    {
+     "src": 2,
+     "said": "Art. 53. — Les dispositions de l’article 23 du code des taxes sur le chiffre d’affaires, sont modifiées et … rédigées comme suit : … « Art. 23. — Le taux réduit de la taxe sur la valeur ajoutée est fixé à 9%."
+    }
+   ]
+  }
+ ],
+ "country": "DZ",
+ "sources": [
+  {
+   "url": "https://www.sipri.org/sites/default/files/2023-05/20211230_mof_alg_loi_de_finance_2022.pdf",
+   "title": "Loi n° 21-16 du 30 décembre 2021 portant loi de finances pour 2022, Journal officiel de la République algérienne n° 100 (copy held by SIPRI)",
+   "read": "2026-11-01",
+   "kind": "primary",
+   "said": "Le revenu net annuel tel que déterminé par les dispositions de l’article 85 du présent code est soumis à l’impôt sur le revenu global au lieu du domicile fiscal, suivant le barème progressif ci-après : FRACTION DU REVENU IMPOSABLE EN DINARS TAUX D’IMPOSITION N’excédant pas 240.000 DA de 240.001 DA à 480.000 DA de 480.001 DA à 960.000 DA de 960.001 DA à 1.920.000 DA de 1.920.001 DA à 3.840.000 DA Supérieure à 3.840.000 DA 0% 23% 27% 30% 33% 35%"
+  },
+  {
+   "url": "https://www.algerie360.com/irg-salaires-exoneration-30000-da-abattements/",
+   "title": "Algérie 360°, 16 October 2026: IRG sur les salaires, exonération jusqu'à 30 000 DA et abattements (quoting the DGI)",
+   "read": "2026-11-01",
+   "kind": "secondary",
+   "quotes": "https://www.mfdgi.gov.dz/",
+   "said": "La loi de finances 2026 n’a modifié l’article 104 que pour les revenus des capitaux mobiliers. La partie consacrée aux salaires reste inchangée, … Les revenus imposables qui n’excèdent pas 30 000 DA par mois bénéficient d’une exonération totale, selon la DGI. … Elle applique ensuite un abattement de 40 % sur le montant obtenu. Cet abattement ne peut être inférieur à 1 000 DA ni supérieur à 1 500 DA par mois. … Il porte sur le revenu imposable, c’est-à-dire après déduction des cotisations de sécurité sociale. … jusqu’à 240 000 DA par an (20 000 DA par mois) : 0 % ;"
+  },
+  {
+   "url": "https://www.joradp.dz/FTP/jo-francais/2025/F2025088.pdf",
+   "title": "Journal officiel de la République algérienne n° 88 du 31 décembre 2025: Loi n° 25-17 portant loi de finances pour 2026",
+   "read": "2026-11-01",
+   "kind": "primary",
+   "said": "Art. 53. — Les dispositions de l’article 23 du code des taxes sur le chiffre d’affaires, sont modifiées et … rédigées comme suit : … « Art. 23. — Le taux réduit de la taxe sur la valeur ajoutée est fixé à 9%."
+  }
+ ],
+ "blockers": [
+  {
+   "item": "year",
+   "sought": "Algeria's tax year and return date",
+   "tried": {
+    "institution": "mfdgi.gov.dz and mf.gov.dz reset the connection from this environment (2026-11-01); joradp.dz home page reachable but the 2026 finance law not located || 2026-11-01 retry: mfdgi.gov.dz, mf.gov.dz, cnas.dz and casnos.com.dz reset the connection (curl 000)",
+    "official-register": "JORA 2026 finance law not read || 2026-11-01 retry: joradp.dz now reachable: JO n° 88 of 31 December 2025 read (saved DZ-jo-2025-088-lf2026.pdf), the Loi n° 25-17 portant loi de finances pour 2026; it amends CIDTA art. 104 (dividends 10%) and sets the reduced TVA rate at 9%, but does not restate this item",
+    "web-search": "'Algérie barème IRG salaires 2026 ... article 104 code des impôts directs mfdgi' (2026-11-01): found the 2022 finance law copy and Algérie 360° (used) || 2026-11-01 retry: refused by the tool on 2026-11-01: 'this turn's web search budget is used up (limit: 200 WebSearch calls per turn, shared by every agent)'; queries sent and refused this turn: 'Налоговый кодекс Республики Беларусь статья 199 ставки подоходного налога 2026 13 25 процентов' and 'Eswatini Revenue Service PAYE tax tables 1 July 2026'; no search engine was queried any other way",
+    "trade-press": "Algérie 360° quoting the DGI (used) || 2026-11-01 retry: Algérie 360° (already used); nothing further",
+    "archive": "web.archive.org resets the connection from this environment (2026-11-01). || 2026-11-01 retry: archive.org's availability API now answers (snapshots of the institution's site exist), but web.archive.org snapshot pages return HTTP 403 over http and reset over https from this environment (2026-11-01)"
+   }
+  },
+  {
+   "item": "social",
+   "sought": "CNAS contributions (employee and employer) and the self-employed CASNOS rate",
+   "tried": {
+    "institution": "mfdgi.gov.dz and mf.gov.dz reset the connection from this environment (2026-11-01); joradp.dz home page reachable but the 2026 finance law not located || 2026-11-01 retry: mfdgi.gov.dz, mf.gov.dz, cnas.dz and casnos.com.dz reset the connection (curl 000)",
+    "official-register": "JORA 2026 finance law not read || 2026-11-01 retry: joradp.dz now reachable: JO n° 88 of 31 December 2025 read (saved DZ-jo-2025-088-lf2026.pdf), the Loi n° 25-17 portant loi de finances pour 2026; it amends CIDTA art. 104 (dividends 10%) and sets the reduced TVA rate at 9%, but does not restate this item",
+    "web-search": "'Algérie barème IRG salaires 2026 ... article 104 code des impôts directs mfdgi' (2026-11-01): found the 2022 finance law copy and Algérie 360° (used) || 2026-11-01 retry: refused by the tool on 2026-11-01: 'this turn's web search budget is used up (limit: 200 WebSearch calls per turn, shared by every agent)'; queries sent and refused this turn: 'Налоговый кодекс Республики Беларусь статья 199 ставки подоходного налога 2026 13 25 процентов' and 'Eswatini Revenue Service PAYE tax tables 1 July 2026'; no search engine was queried any other way",
+    "trade-press": "Algérie 360° quoting the DGI (used) || 2026-11-01 retry: Algérie 360° (already used); nothing further",
+    "archive": "web.archive.org resets the connection from this environment (2026-11-01). || 2026-11-01 retry: archive.org's availability API now answers (snapshots of the institution's site exist), but web.archive.org snapshot pages return HTTP 403 over http and reset over https from this environment (2026-11-01)"
+   }
+  },
+  {
+   "item": "nonResident",
+   "sought": "The withholding on a non-resident performer's or director's fee (CIDTA art. 108) and whether final",
+   "tried": {
+    "institution": "mfdgi.gov.dz and mf.gov.dz reset the connection from this environment (2026-11-01); joradp.dz home page reachable but the 2026 finance law not located || 2026-11-01 retry: mfdgi.gov.dz, mf.gov.dz, cnas.dz and casnos.com.dz reset the connection (curl 000)",
+    "official-register": "JORA 2026 finance law not read || 2026-11-01 retry: joradp.dz now reachable: JO n° 88 of 31 December 2025 read (saved DZ-jo-2025-088-lf2026.pdf), the Loi n° 25-17 portant loi de finances pour 2026; it amends CIDTA art. 104 (dividends 10%) and sets the reduced TVA rate at 9%, but does not restate this item",
+    "web-search": "'Algérie barème IRG salaires 2026 ... article 104 code des impôts directs mfdgi' (2026-11-01): found the 2022 finance law copy and Algérie 360° (used) || 2026-11-01 retry: refused by the tool on 2026-11-01: 'this turn's web search budget is used up (limit: 200 WebSearch calls per turn, shared by every agent)'; queries sent and refused this turn: 'Налоговый кодекс Республики Беларусь статья 199 ставки подоходного налога 2026 13 25 процентов' and 'Eswatini Revenue Service PAYE tax tables 1 July 2026'; no search engine was queried any other way",
+    "trade-press": "Algérie 360° quoting the DGI (used) || 2026-11-01 retry: Algérie 360° (already used); nothing further",
+    "archive": "web.archive.org resets the connection from this environment (2026-11-01). || 2026-11-01 retry: archive.org's availability API now answers (snapshots of the institution's site exist), but web.archive.org snapshot pages return HTTP 403 over http and reset over https from this environment (2026-11-01)"
+   }
+  },
+  {
+   "item": "vat",
+   "sought": "The standard TVA rate and the franchise threshold for a freelancer (the reduced rate of 9% is now found in the 2026 finance law).",
+   "tried": {
+    "institution": "mfdgi.gov.dz and mf.gov.dz reset the connection from this environment (2026-11-01); joradp.dz home page reachable but the 2026 finance law not located || 2026-11-01 retry: mfdgi.gov.dz, mf.gov.dz, cnas.dz and casnos.com.dz reset the connection (curl 000)",
+    "official-register": "JORA 2026 finance law not read || 2026-11-01 retry: joradp.dz now reachable: JO n° 88 of 31 December 2025 read (saved DZ-jo-2025-088-lf2026.pdf), the Loi n° 25-17 portant loi de finances pour 2026; it amends CIDTA art. 104 (dividends 10%) and sets the reduced TVA rate at 9%, but does not restate this item",
+    "web-search": "'Algérie barème IRG salaires 2026 ... article 104 code des impôts directs mfdgi' (2026-11-01): found the 2022 finance law copy and Algérie 360° (used) || 2026-11-01 retry: refused by the tool on 2026-11-01: 'this turn's web search budget is used up (limit: 200 WebSearch calls per turn, shared by every agent)'; queries sent and refused this turn: 'Налоговый кодекс Республики Беларусь статья 199 ставки подоходного налога 2026 13 25 процентов' and 'Eswatini Revenue Service PAYE tax tables 1 July 2026'; no search engine was queried any other way",
+    "trade-press": "Algérie 360° quoting the DGI (used) || 2026-11-01 retry: Algérie 360° (already used); nothing further",
+    "archive": "web.archive.org resets the connection from this environment (2026-11-01). || 2026-11-01 retry: archive.org's availability API now answers (snapshots of the institution's site exist), but web.archive.org snapshot pages return HTTP 403 over http and reset over https from this environment (2026-11-01)"
+   }
+  },
+  {
+   "item": "authors",
+   "sought": "The withholding on authors' royalties for residents",
+   "tried": {
+    "institution": "mfdgi.gov.dz and mf.gov.dz reset the connection from this environment (2026-11-01); joradp.dz home page reachable but the 2026 finance law not located || 2026-11-01 retry: mfdgi.gov.dz, mf.gov.dz, cnas.dz and casnos.com.dz reset the connection (curl 000)",
+    "official-register": "JORA 2026 finance law not read || 2026-11-01 retry: joradp.dz now reachable: JO n° 88 of 31 December 2025 read (saved DZ-jo-2025-088-lf2026.pdf), the Loi n° 25-17 portant loi de finances pour 2026; it amends CIDTA art. 104 (dividends 10%) and sets the reduced TVA rate at 9%, but does not restate this item",
+    "web-search": "'Algérie barème IRG salaires 2026 ... article 104 code des impôts directs mfdgi' (2026-11-01): found the 2022 finance law copy and Algérie 360° (used) || 2026-11-01 retry: refused by the tool on 2026-11-01: 'this turn's web search budget is used up (limit: 200 WebSearch calls per turn, shared by every agent)'; queries sent and refused this turn: 'Налоговый кодекс Республики Беларусь статья 199 ставки подоходного налога 2026 13 25 процентов' and 'Eswatini Revenue Service PAYE tax tables 1 July 2026'; no search engine was queried any other way",
+    "trade-press": "Algérie 360° quoting the DGI (used) || 2026-11-01 retry: Algérie 360° (already used); nothing further",
+    "archive": "web.archive.org resets the connection from this environment (2026-11-01). || 2026-11-01 retry: archive.org's availability API now answers (snapshots of the institution's site exist), but web.archive.org snapshot pages return HTTP 403 over http and reset over https from this environment (2026-11-01)"
+   }
+  }
+ ]
+}

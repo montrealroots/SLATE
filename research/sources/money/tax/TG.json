@@ -1,0 +1,117 @@
+{
+ "topic": "tax.TG",
+ "read": "2026-11-01",
+ "note": "Read 2026-11-01 at the owner's word (\"Build those first 3 starting with ledger first\"; of the 21 countries read first: \"It should cover across every country\"; \"Retry the blocked tax facts once all countries land\"): the tax on a screen worker's pay in Togo: a resident's income tax, social contributions, what is withheld at source, a non-resident artiste's withholding, an author's treatment, VAT and the tax year. Research and retry subagents (workbench/briefs/BRIEF-tax.md, BRIEF-tax-retry.md), every quote checked by the lead against its saved page.",
+ "figures": [
+  {
+   "item": "social",
+   "finding": "CNSS contributions are 21.5% of pay: the employer pays 17.5% (family 3%, occupational risks 2%, old-age pension 12.5%) and the employee 4% (pension), on all remuneration including bonuses and benefits in kind, never on less than the minimum wage, paid by the employer by the 15th of the following month; a self-employed worker pays 21.5% of income (on the income declared for IRPP), an informal-economy worker 19.5%.",
+   "value": {
+    "employer": 0.175,
+    "employee": 0.04,
+    "selfEmployed": 0.215,
+    "informal": 0.195,
+    "base": "all remuneration, floor SMIG",
+    "ceiling": "none stated",
+    "due": "15th of next month"
+   },
+   "applies": "2026 (rates set by decree under the Social Security Code, law no. 2011-006, as the CNSS states them); universal health insurance (AMU) contributions are set by décret 2023-096, saved from cnss.tg (TG-cnss-decret-2023-096-taux-cotisations-amu.pdf) but an image scan whose OCR could not finish this turn, so its rates are not recorded.",
+   "sources": [
+    {
+     "src": 0,
+     "said": "Le taux de cotisation sociale est de 21,5%. Ce taux est réparti en fonction de la catégorie d’employeur ou de travailleur. Ainsi : a) pour le travailleur salarié – l’employeur cotise 17,50% du salaire du travailleur, – le travailleur cotise 4% de son salaire, soit au total 21,50% du salaire du travailleur."
+    },
+    {
+     "src": 0,
+     "said": "le travailleur indépendant cotise 21,50% de son revenu. … le travailleur de l’économie informelle cotise 19,50% de son revenu."
+    },
+    {
+     "src": 0,
+     "said": "Pour le travailleur indépendant soumis à l’IRPP (impôt sur le revenu des personnes physiques), les cotisations sociales sont calculées sur la base du revenu déclaré au titre de l’IRPP"
+    },
+    {
+     "src": 0,
+     "said": "La rémunération mensuelle servant de base au calcul des cotisations ne doit pas être inférieure au salaire minimum interprofessionnel garanti (SMIG). … au plus grand tard le 15 du mois suivant le mois auquel l’ADC se rapporte."
+    }
+   ]
+  }
+ ],
+ "country": "TG",
+ "sources": [
+  {
+   "url": "https://cnss.tg/employeurs/cotisations-sociales/",
+   "title": "Cotisations sociales (Caisse Nationale de Sécurité Sociale du Togo)",
+   "read": "2026-11-01",
+   "kind": "primary",
+   "said": "Le taux de cotisation sociale est de 21,5%. Ce taux est réparti en fonction de la catégorie d’employeur ou de travailleur. Ainsi : a) pour le travailleur salarié – l’employeur cotise 17,50% du salaire du travailleur, – le travailleur cotise 4% de son salaire, soit au total 21,50% du salaire du travailleur. … le travailleur indépendant cotise 21,50% de son revenu. … le travailleur de l’économie informelle cotise 19,50% de son revenu. … Pour le travailleur indépendant soumis à l’IRPP (impôt sur le revenu des personnes physiques), les cotisations sociales sont calculées sur la base du revenu déclaré au titre de l’IRPP … La rémunération mensuelle servant de base au calcul des cotisations ne doit pas être inférieure au salaire minimum interprofessionnel garanti (SMIG). … au plus grand tard le 15 du mois suivant le mois auquel l’ADC se rapporte."
+  }
+ ],
+ "blockers": [
+  {
+   "item": "residents",
+   "sought": "Personal income tax brackets, allowance and regional layer for 2026",
+   "tried": {
+    "institution": "otr.tg reached: its tax pages hold only the Cahier fiscal 2026 (a scanned summary of the 2026 finance law's changes, OCR read: no income tax scale, social rate or VAT rate in it) and no Code général des impôts text || 2026-11-01 retry: otr.tg home, /impots and /documentation read again: only the Cahier fiscal 2026 and service pages, no CGI, rate table or guide for residents; cnss.tg read (social only).",
+    "official-register": "Journal officiel de la République togolaise and the CGI not found on otr.tg's documentation page (only six 2026 PDFs listed) || 2026-11-01 retry: no online Journal officiel or CGI consolidation reachable on otr.tg or cnss.tg's 'textes réglementaires'.",
+    "web-search": "not run: the session's shared web-search budget was used up on 2026-11-01 before this country || 2026-11-01 retry: refused: the session's web-search limit (200 calls per turn, shared) was reached before this query ('Togo CGI 2026 IRPP barème residents OTR').",
+    "trade-press": "no firm summary (PwC, Deloitte 2026) exists for this country (Deloitte URL returns 404) || 2026-11-01 retry: taxsummaries.pwc.com/togo returns 404 (checked 2026-11-01).",
+    "archive": "web.archive.org resets the connection from this environment (2026-11-01) || 2026-11-01 retry: web.archive.org connection reset through the proxy (curl 000)."
+   }
+  },
+  {
+   "item": "year",
+   "sought": "Tax year and return due date",
+   "tried": {
+    "institution": "otr.tg reached: its tax pages hold only the Cahier fiscal 2026 (a scanned summary of the 2026 finance law's changes, OCR read: no income tax scale, social rate or VAT rate in it) and no Code général des impôts text || 2026-11-01 retry: otr.tg home, /impots and /documentation read again: only the Cahier fiscal 2026 and service pages, no CGI, rate table or guide for year; cnss.tg read (social only).",
+    "official-register": "Journal officiel de la République togolaise and the CGI not found on otr.tg's documentation page (only six 2026 PDFs listed) || 2026-11-01 retry: no online Journal officiel or CGI consolidation reachable on otr.tg or cnss.tg's 'textes réglementaires'.",
+    "web-search": "not run: the session's shared web-search budget was used up on 2026-11-01 before this country || 2026-11-01 retry: refused: the session's web-search limit (200 calls per turn, shared) was reached before this query ('Togo CGI 2026 IRPP barème year OTR').",
+    "trade-press": "no firm summary (PwC, Deloitte 2026) exists for this country (Deloitte URL returns 404) || 2026-11-01 retry: taxsummaries.pwc.com/togo returns 404 (checked 2026-11-01).",
+    "archive": "web.archive.org resets the connection from this environment (2026-11-01) || 2026-11-01 retry: web.archive.org connection reset through the proxy (curl 000)."
+   }
+  },
+  {
+   "item": "withholding",
+   "sought": "Withholding from pay and from a freelancer's fee",
+   "tried": {
+    "institution": "otr.tg reached: its tax pages hold only the Cahier fiscal 2026 (a scanned summary of the 2026 finance law's changes, OCR read: no income tax scale, social rate or VAT rate in it) and no Code général des impôts text || 2026-11-01 retry: otr.tg home, /impots and /documentation read again: only the Cahier fiscal 2026 and service pages, no CGI, rate table or guide for withholding; cnss.tg read (social only).",
+    "official-register": "Journal officiel de la République togolaise and the CGI not found on otr.tg's documentation page (only six 2026 PDFs listed) || 2026-11-01 retry: no online Journal officiel or CGI consolidation reachable on otr.tg or cnss.tg's 'textes réglementaires'.",
+    "web-search": "not run: the session's shared web-search budget was used up on 2026-11-01 before this country || 2026-11-01 retry: refused: the session's web-search limit (200 calls per turn, shared) was reached before this query ('Togo CGI 2026 IRPP barème withholding OTR').",
+    "trade-press": "no firm summary (PwC, Deloitte 2026) exists for this country (Deloitte URL returns 404) || 2026-11-01 retry: taxsummaries.pwc.com/togo returns 404 (checked 2026-11-01).",
+    "archive": "web.archive.org resets the connection from this environment (2026-11-01) || 2026-11-01 retry: web.archive.org connection reset through the proxy (curl 000)."
+   }
+  },
+  {
+   "item": "nonResident",
+   "sought": "Tax and withholding on a non-resident performer's, writer's or director's fee, and whether final",
+   "tried": {
+    "institution": "otr.tg reached: its tax pages hold only the Cahier fiscal 2026 (a scanned summary of the 2026 finance law's changes, OCR read: no income tax scale, social rate or VAT rate in it) and no Code général des impôts text || 2026-11-01 retry: otr.tg home, /impots and /documentation read again: only the Cahier fiscal 2026 and service pages, no CGI, rate table or guide for nonResident; cnss.tg read (social only).",
+    "official-register": "Journal officiel de la République togolaise and the CGI not found on otr.tg's documentation page (only six 2026 PDFs listed) || 2026-11-01 retry: no online Journal officiel or CGI consolidation reachable on otr.tg or cnss.tg's 'textes réglementaires'.",
+    "web-search": "not run: the session's shared web-search budget was used up on 2026-11-01 before this country || 2026-11-01 retry: refused: the session's web-search limit (200 calls per turn, shared) was reached before this query ('Togo CGI 2026 IRPP barème nonResident OTR').",
+    "trade-press": "no firm summary (PwC, Deloitte 2026) exists for this country (Deloitte URL returns 404) || 2026-11-01 retry: taxsummaries.pwc.com/togo returns 404 (checked 2026-11-01).",
+    "archive": "web.archive.org resets the connection from this environment (2026-11-01) || 2026-11-01 retry: web.archive.org connection reset through the proxy (curl 000)."
+   }
+  },
+  {
+   "item": "authors",
+   "sought": "Special treatment of authors' royalties",
+   "tried": {
+    "institution": "otr.tg reached: its tax pages hold only the Cahier fiscal 2026 (a scanned summary of the 2026 finance law's changes, OCR read: no income tax scale, social rate or VAT rate in it) and no Code général des impôts text || 2026-11-01 retry: otr.tg home, /impots and /documentation read again: only the Cahier fiscal 2026 and service pages, no CGI, rate table or guide for authors; cnss.tg read (social only).",
+    "official-register": "Journal officiel de la République togolaise and the CGI not found on otr.tg's documentation page (only six 2026 PDFs listed) || 2026-11-01 retry: no online Journal officiel or CGI consolidation reachable on otr.tg or cnss.tg's 'textes réglementaires'.",
+    "web-search": "not run: the session's shared web-search budget was used up on 2026-11-01 before this country || 2026-11-01 retry: refused: the session's web-search limit (200 calls per turn, shared) was reached before this query ('Togo CGI 2026 IRPP barème authors OTR').",
+    "trade-press": "no firm summary (PwC, Deloitte 2026) exists for this country (Deloitte URL returns 404) || 2026-11-01 retry: taxsummaries.pwc.com/togo returns 404 (checked 2026-11-01).",
+    "archive": "web.archive.org resets the connection from this environment (2026-11-01) || 2026-11-01 retry: web.archive.org connection reset through the proxy (curl 000)."
+   }
+  },
+  {
+   "item": "vat",
+   "sought": "VAT/GST rate and registration threshold",
+   "tried": {
+    "institution": "otr.tg reached: its tax pages hold only the Cahier fiscal 2026 (a scanned summary of the 2026 finance law's changes, OCR read: no income tax scale, social rate or VAT rate in it) and no Code général des impôts text || 2026-11-01 retry: otr.tg home, /impots and /documentation read again: only the Cahier fiscal 2026 and service pages, no CGI, rate table or guide for vat; cnss.tg read (social only).",
+    "official-register": "Journal officiel de la République togolaise and the CGI not found on otr.tg's documentation page (only six 2026 PDFs listed) || 2026-11-01 retry: no online Journal officiel or CGI consolidation reachable on otr.tg or cnss.tg's 'textes réglementaires'.",
+    "web-search": "not run: the session's shared web-search budget was used up on 2026-11-01 before this country || 2026-11-01 retry: refused: the session's web-search limit (200 calls per turn, shared) was reached before this query ('Togo CGI 2026 IRPP barème vat OTR').",
+    "trade-press": "no firm summary (PwC, Deloitte 2026) exists for this country (Deloitte URL returns 404) || 2026-11-01 retry: taxsummaries.pwc.com/togo returns 404 (checked 2026-11-01).",
+    "archive": "web.archive.org resets the connection from this environment (2026-11-01) || 2026-11-01 retry: web.archive.org connection reset through the proxy (curl 000)."
+   }
+  }
+ ]
+}

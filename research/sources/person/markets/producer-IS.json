@@ -1,0 +1,87 @@
+{
+ "topic": "markets.producer.IS",
+ "read": "2026-11-01",
+ "note": "Read 2026-11-01 at the owner's word (\"Want it done now\", of the markets of every country beyond the 21; then \"Retry the blocked market facts once all countries land\"): the terms a producer works on in Iceland. Research, retry and web-search subagents (workbench/briefs/BRIEF-markets-world.md, -retry.md, -search.md), every quote checked by the lead against its saved page.",
+ "figures": [
+  {
+   "item": "incentive",
+   "finding": "Iceland reimburses 25% of production costs incurred there with no minimum spend and no cap, and 35% for productions spending at least ISK 350 million over 30 working days (10 of them shooting) with 50 or more crew taxed in Iceland, or for children's and youth content; applications go to the Icelandic Film Centre before production starts, and the law runs to 31 December 2028.",
+   "value": {
+    "name": "Reimbursement under Act No. 43/1999",
+    "rate": 0.25,
+    "enhancedRate": 0.35,
+    "enhancedConditions": {
+     "minIcelandicCostISK": 350000000,
+     "minWorkingDays": 30,
+     "minShootingDays": 10,
+     "minCrew": 50,
+     "minCrewDays": 50
+    },
+    "childrenYouthRate": 0.35,
+    "cap": null,
+    "minSpend": null,
+    "base": "costs incurred in Iceland deductible under the Income Tax Act",
+    "validUntil": "2028-12-31"
+   },
+   "applies": "Iceland; feature films, TV series and documentaries; terms as Film in Iceland publishes them on 2026-11-01.",
+   "sources": [
+    {
+     "src": 0,
+     "said": "Every feature film, TV series, and documentary that incurs production costs in Iceland qualifies for a 25% reimbursement. There is no minimum spend requirement and no cap on the total amount. … Production costs incurred in Iceland must be at least ISK 350 million. A minimum of 30 working days in Iceland, either shooting days or defined post-production days, of which at least 10 must be shooting days. At least 50 crew members working directly on the project for a minimum of 50 working days, with all salaries and contractor payments taxed in Iceland. … The current legislation is valid through 31 December 2028."
+    }
+   ]
+  },
+  {
+   "item": "fund",
+   "finding": "The Icelandic Film Fund (Kvikmyndasjóður) gives selective production grants only to Icelandic production companies, with no fixed maximum, after all other financing is closed; the 2027 budget bill gives it ISK 1,296.5 million, about 5% less than in 2026.",
+   "value": {
+    "fund": "Kvikmyndasjóður (Kvikmyndamiðstöð Íslands)",
+    "budgetISK": {
+     "2027bill": 1296500000
+    },
+    "changeVs2026": -0.05,
+    "maxGrant": "depends on the project",
+    "condition": "financing from others fully closed before contract; contract before shooting",
+    "decisionWeeks": "10-12",
+    "regulation": "Reglugerð um Kvikmyndasjóð nr. 229/2003"
+   },
+   "applies": "Iceland; feature films, shorts, documentaries and TV drama; budget bill tabled 8 September 2026.",
+   "sources": [
+    {
+     "src": 1,
+     "said": "Til rekstrarliðar miðstöðvarinnar er áformað að verja 180,7 m.kr. en 1.296,5 m.kr. til Kvikmyndasjóðs. Samanburður við samþykkt fjárlög fyrra árs sýnir um 5% samdrátt í framlagi til Kvikmyndasjóðs milli ára."
+    },
+    {
+     "src": 2,
+     "said": "Tímabundin vilyrði og framleiðslustyrkir eru aðeins veittir íslenskum framleiðslufyrirtækjum sem hafa kvikmyndagerð að meginstarfi. Afgreiðsla sjóðsins tekur að jafnaði allt að 10 - 12 vikur. … Skilyrði fyrir framleiðslustyrk er að fyrir liggi skriflegir samningar eða staðfestingar um að fjármögnun sé að fullu lokið hjá öðrum en Kvikmyndasjóði. … Hámarksupphæð Fer eftir umfangi verkefnis."
+    }
+   ]
+  }
+ ],
+ "country": "IS",
+ "sources": [
+  {
+   "url": "https://filminiceland.com/incentives",
+   "title": "Up to 35% Film and TV Production Refund in Iceland (Film in Iceland) — quoting Act No. 43/1999 on temporary reimbursements in respect of film making in Iceland, published in Stjórnartíðindi (the official gazette); althingi.is/lagas/nuna/1999043.html answered this environment with a bot check",
+   "read": "2026-11-01",
+   "kind": "secondary",
+   "quotes": "https://island.is/stjornartidindi",
+   "said": "Every feature film, TV series, and documentary that incurs production costs in Iceland qualifies for a 25% reimbursement. There is no minimum spend requirement and no cap on the total amount. … Production costs incurred in Iceland must be at least ISK 350 million. A minimum of 30 working days in Iceland, either shooting days or defined post-production days, of which at least 10 must be shooting days. At least 50 crew members working directly on the project for a minimum of 50 working days, with all salaries and contractor payments taxed in Iceland. … The current legislation is valid through 31 December 2028."
+  },
+  {
+   "url": "https://www.kvikmyndamidstod.is/kvikmyndamenning/frettir/fjarheimildir-samkvaemt-fjarlagafrumvarpi-2027",
+   "title": "Fjárheimildir KMÍ samkvæmt fjárlagafrumvarpi 2027 (Kvikmyndamiðstöð Íslands, 08.09.2026)",
+   "read": "2026-11-01",
+   "kind": "primary",
+   "said": "Til rekstrarliðar miðstöðvarinnar er áformað að verja 180,7 m.kr. en 1.296,5 m.kr. til Kvikmyndasjóðs. Samanburður við samþykkt fjárlög fyrra árs sýnir um 5% samdrátt í framlagi til Kvikmyndasjóðs milli ára."
+  },
+  {
+   "url": "https://www.kvikmyndamidstod.is/kvikmyndagerd/styrkir/framleidslustyrkir",
+   "title": "Framleiðslustyrkir (Kvikmyndamiðstöð Íslands)",
+   "read": "2026-11-01",
+   "kind": "primary",
+   "said": "Tímabundin vilyrði og framleiðslustyrkir eru aðeins veittir íslenskum framleiðslufyrirtækjum sem hafa kvikmyndagerð að meginstarfi. Afgreiðsla sjóðsins tekur að jafnaði allt að 10 - 12 vikur. … Skilyrði fyrir framleiðslustyrk er að fyrir liggi skriflegir samningar eða staðfestingar um að fjármögnun sé að fullu lokið hjá öðrum en Kvikmyndasjóði. … Hámarksupphæð Fer eftir umfangi verkefnis."
+  }
+ ],
+ "blockers": []
+}

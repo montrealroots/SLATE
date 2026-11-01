@@ -1,0 +1,220 @@
+{
+ "topic": "tax.MA",
+ "read": "2026-11-01",
+ "note": "Read 2026-11-01 at the owner's word (\"Build those first 3 starting with ledger first\"; of the 21 countries read first: \"It should cover across every country\"; \"Retry the blocked tax facts once all countries land\"): the tax on a screen worker's pay in Morocco: a resident's income tax, social contributions, what is withheld at source, a non-resident artiste's withholding, an author's treatment, VAT and the tax year. Research and retry subagents (workbench/briefs/BRIEF-tax.md, BRIEF-tax-retry.md), every quote checked by the lead against its saved page.",
+ "figures": [
+  {
+   "item": "residents",
+   "finding": "A resident pays no income tax on the first MAD 40,000 a year, then 10%, 20%, 30%, 34% to MAD 180,000 and 37% above; there is no regional income tax.",
+   "value": {
+    "currency": "MAD",
+    "brackets": [
+     {
+      "from": 0,
+      "to": 40000,
+      "rate": 0
+     },
+     {
+      "from": 40000,
+      "to": 60000,
+      "rate": 0.1
+     },
+     {
+      "from": 60000,
+      "to": 80000,
+      "rate": 0.2
+     },
+     {
+      "from": 80000,
+      "to": 100000,
+      "rate": 0.3
+     },
+     {
+      "from": 100000,
+      "to": 180000,
+      "rate": 0.34
+     },
+     {
+      "from": 180000,
+      "to": null,
+      "rate": 0.37
+     }
+    ]
+   },
+   "applies": "2026 (scale of the 2025 Finance Law).",
+   "sources": [
+    {
+     "src": 0,
+     "said": "Annual taxable income (MAD) IIT rate (%) 0 to 40,000 Exempted 40,001 to 60,000 10 60,001 to 80,000 20 80,001 to 100,000 30 100,001 to 180,000 34 More than 180,000 37"
+    }
+   ]
+  },
+  {
+   "item": "year",
+   "finding": "The tax year is the calendar year; a return, where required, is filed online before 1 March of the next year, and an independent professional files before 1 May, paying any tax with the return.",
+   "value": {
+    "start": "01-01",
+    "end": "12-31",
+    "returnDue": {
+     "employees": "before 03-01",
+     "independentProfessionals": "before 05-01"
+    }
+   },
+   "applies": "2026.",
+   "sources": [
+    {
+     "src": 1,
+     "said": "Tax year: The tax year is the calendar year."
+    },
+    {
+     "src": 1,
+     "said": "Filing and payment: Where an income tax return is required, it must be filed online before 1 March of the following year. Independent professionals must file before 1 May. Payment of any tax due must be made at the time of filing."
+    }
+   ]
+  },
+  {
+   "item": "social",
+   "finding": "CNSS contributions on gross pay: the employee pays 4.48% social allocation (on pay up to MAD 6,000 a month) and 2.26% medical care; the employer pays 6.40% family allocation, 8.98% social allocation (to MAD 6,000), 1.60% training and 4.11% medical care.",
+   "value": {
+    "currency": "MAD",
+    "employee": {
+     "social": 0.0448,
+     "medical": 0.0226
+    },
+    "employer": {
+     "family": 0.064,
+     "social": 0.0898,
+     "training": 0.016,
+     "medical": 0.0411
+    },
+    "socialMonthlyCap": 6000
+   },
+   "applies": "2026; self-employed (AMO for independents) terms not read.",
+   "sources": [
+    {
+     "src": 2,
+     "said": "Contribution Employee portion (%) Employer portion (%) Monthly salary limit (MAD) Family allocation - 6.40 - Social allocation 4.48 8.98 6,000 Professional training - 1.60 - Mandatory medical care 2.26 4.11"
+    }
+   ]
+  },
+  {
+   "item": "withholding",
+   "finding": "Tax on pay is withheld by the resident employer; an employee with one Moroccan employer and only pay need not file.",
+   "value": {
+    "employee": "employer withholding"
+   },
+   "applies": "2026.",
+   "sources": [
+    {
+     "src": 3,
+     "said": "IIT on salaries is paid by way of withholdings made by resident employers. For individuals employed by one Moroccan resident entity and earning only employment"
+    }
+   ]
+  },
+  {
+   "item": "nonResident",
+   "finding": "A non-resident is taxed only on Moroccan-source income; under the Code all payments for services by non-residents bear 10% withholding, though treaties confine it to royalties.",
+   "value": {
+    "scope": "Moroccan-source income",
+    "servicesWithholding": 0.1
+   },
+   "applies": "The artistes' fee rule (CGI art. 73-II-G) was not confirmed; see blocker.",
+   "sources": [
+    {
+     "src": 0,
+     "said": "Individuals not having their tax residence in Morocco are subject to tax only on Moroccan-sourced income."
+    },
+    {
+     "src": 4,
+     "said": "According to the Moroccan Tax Code, all payments of all kinds of services rendered by non-resident entities are subject to WHT at the rate of 10%. However, it shall be noted that treaty dispositions limit the scope of application of WHT only to remunerations that constitute royalties."
+    }
+   ]
+  },
+  {
+   "item": "vat",
+   "finding": "VAT is 20% (reduced 10%); every person liable to VAT declares his existence within 30 days of starting.",
+   "value": {
+    "standard": 0.2,
+    "reduced": 0.1
+   },
+   "applies": "No turnover threshold for a freelancer's services was confirmed; see blocker.",
+   "sources": [
+    {
+     "src": 1,
+     "said": "Rates: The standard rate of VAT is 20%, with a reduced rate of 10% applying to certain transactions."
+    },
+    {
+     "src": 1,
+     "said": "Registration: To register for VAT purposes, all persons subject to VAT must make a “declaration of existence” within 30 days of"
+    }
+   ]
+  }
+ ],
+ "country": "MA",
+ "sources": [
+  {
+   "url": "https://taxsummaries.pwc.com/morocco/individual/taxes-on-personal-income",
+   "title": "PwC Worldwide Tax Summaries: morocco Individual - Taxes on personal income",
+   "read": "2026-11-01",
+   "kind": "secondary",
+   "quotes": "https://www.tax.gov.ma/",
+   "said": "Annual taxable income (MAD) IIT rate (%) 0 to 40,000 Exempted 40,001 to 60,000 10 60,001 to 80,000 20 80,001 to 100,000 30 100,001 to 180,000 34 More than 180,000 37 … Individuals not having their tax residence in Morocco are subject to tax only on Moroccan-sourced income."
+  },
+  {
+   "url": "https://www.deloitte.com/content/dam/assets-shared/docs/services/tax/2026/dttl-tax-moroccohighlights-2026.pdf",
+   "title": "Deloitte International Tax: Morocco Highlights 2026",
+   "read": "2026-11-01",
+   "kind": "secondary",
+   "quotes": "https://www.tax.gov.ma/",
+   "said": "Tax year: The tax year is the calendar year. … Filing and payment: Where an income tax return is required, it must be filed online before 1 March of the following year. Independent professionals must file before 1 May. Payment of any tax due must be made at the time of filing. … Rates: The standard rate of VAT is 20%, with a reduced rate of 10% applying to certain transactions. … Registration: To register for VAT purposes, all persons subject to VAT must make a “declaration of existence” within 30 days of"
+  },
+  {
+   "url": "https://taxsummaries.pwc.com/morocco/individual/other-taxes",
+   "title": "PwC Worldwide Tax Summaries: morocco Individual - Other taxes",
+   "read": "2026-11-01",
+   "kind": "secondary",
+   "quotes": "https://www.cnss.ma/",
+   "said": "Contribution Employee portion (%) Employer portion (%) Monthly salary limit (MAD) Family allocation - 6.40 - Social allocation 4.48 8.98 6,000 Professional training - 1.60 - Mandatory medical care 2.26 4.11"
+  },
+  {
+   "url": "https://taxsummaries.pwc.com/morocco/individual/tax-administration",
+   "title": "PwC Worldwide Tax Summaries: morocco Individual - Tax administration",
+   "read": "2026-11-01",
+   "kind": "secondary",
+   "quotes": "https://www.tax.gov.ma/",
+   "said": "IIT on salaries is paid by way of withholdings made by resident employers. For individuals employed by one Moroccan resident entity and earning only employment"
+  },
+  {
+   "url": "https://taxsummaries.pwc.com/morocco/corporate/withholding-taxes",
+   "title": "PwC Worldwide Tax Summaries: morocco Corporate - Withholding taxes",
+   "read": "2026-11-01",
+   "kind": "secondary",
+   "quotes": "https://www.tax.gov.ma/",
+   "said": "According to the Moroccan Tax Code, all payments of all kinds of services rendered by non-resident entities are subject to WHT at the rate of 10%. However, it shall be noted that treaty dispositions limit the scope of application of WHT only to remunerations that constitute royalties."
+  }
+ ],
+ "blockers": [
+  {
+   "item": "authors",
+   "sought": "The withholding on artists' fees (cachets) under CGI art. 73-II-G-4° after the 40% allowance, its 2026 rate and whether final.",
+   "tried": {
+    "institution": "tax.gov.ma returns 403 to this environment (2026-11-01). || 2026-11-01 retry: tax.gov.ma again 403; finances.gov.ma answers and links Arabic finance-law summaries (SLF2026-Ar.pdf), not the CGI text and not read.",
+    "official-register": "The CGI 2026 is published on tax.gov.ma (refused); sgg.gov.ma (Bulletin officiel) not read 2026-11-01. || 2026-11-01 retry: sgg.gov.ma Bulletin officiel page answers (200) but lists no CGI 2026; not searched by article.",
+    "web-search": "'Maroc CGI article 73 cachets artistes retenue à la source 30% libératoire honoraires non salariés' (2026-11-01): La Vie Éco cites the 40% allowance and art. 73-II-G-4° but no rate; sources conflict. || 2026-11-01 retry: refused: the session's web-search limit (200 calls per turn, shared) was reached before this query ('CGI Maroc 2026 article 73 cachets artistes / seuil TVA').",
+    "trade-press": "PwC Worldwide Tax Summaries and Deloitte Morocco Highlights 2026 (2026-11-01): silent. || 2026-11-01 retry: PwC and Deloitte Morocco (already saved): silent, as before.",
+    "archive": "web.archive.org resets the connection from this environment (2026-11-01). || 2026-11-01 retry: web.archive.org connection reset through the proxy (curl 000)."
+   }
+  },
+  {
+   "item": "vat",
+   "sought": "Any turnover below which a freelancer's services are outside VAT in 2026.",
+   "tried": {
+    "institution": "tax.gov.ma returns 403 to this environment (2026-11-01). || 2026-11-01 retry: tax.gov.ma again 403; finances.gov.ma answers and links Arabic finance-law summaries (SLF2026-Ar.pdf), not the CGI text and not read.",
+    "official-register": "The CGI 2026 is published on tax.gov.ma (refused); sgg.gov.ma (Bulletin officiel) not read 2026-11-01. || 2026-11-01 retry: sgg.gov.ma Bulletin officiel page answers (200) but lists no CGI 2026; not searched by article.",
+    "web-search": "Not run separately (2026-11-01). || 2026-11-01 retry: refused: the session's web-search limit (200 calls per turn, shared) was reached before this query ('CGI Maroc 2026 article 73 cachets artistes / seuil TVA').",
+    "trade-press": "PwC and Deloitte Morocco 2026: no threshold stated. || 2026-11-01 retry: PwC and Deloitte Morocco (already saved): silent, as before.",
+    "archive": "web.archive.org resets the connection from this environment (2026-11-01). || 2026-11-01 retry: web.archive.org connection reset through the proxy (curl 000)."
+   }
+  }
+ ]
+}

@@ -1,0 +1,87 @@
+{
+ "topic": "tax.IR",
+ "read": "2026-11-01",
+ "note": "Read 2026-11-01 at the owner's word (\"Build those first 3 starting with ledger first\"; of the 21 countries read first: \"It should cover across every country\"; \"Retry the blocked tax facts once all countries land\"): the tax on a screen worker's pay in Iran: a resident's income tax, social contributions, what is withheld at source, a non-resident artiste's withholding, an author's treatment, VAT and the tax year. Research and retry subagents (workbench/briefs/BRIEF-tax.md, BRIEF-tax-retry.md), every quote checked by the lead against its saved page.",
+ "figures": [],
+ "country": "IR",
+ "sources": [],
+ "blockers": [
+  {
+   "item": "residents",
+   "sought": "Iran's 2026 (1405) salary tax exemption and progressive rates, and the rates on other personal income.",
+   "tried": {
+    "institution": "intamedia.ir (Iranian National Tax Administration) and tax.gov.ir reset the connection from this environment on 2026-11-01. || retry-8 2026-11-01: intamedia.ir, www.intamedia.ir, tax.gov.ir, tamin.ir (Social Security Organization) and mefa.ir fetched again 2026-11-01: no answer (curl 000) from this environment",
+    "official-register": "The 1405 budget law and the INTA circular on the salary exemption not reachable (Iranian hosts, including ekhtebar.ir, reset the connection). || retry-8 2026-11-01: rc.majlis.ir (Majlis Research Center law database), qavanin.ir (official laws portal), rrk.ir (official gazette) and dotic.ir: no answer (curl 000) from this environment",
+    "web-search": "Searched in Persian for the 1405 salary exemption and rates: secondary pages (mohaseban.org, rade.ir) cite a proposed 40 million toman monthly exemption and 10–30% steps from the bill, not the enacted law; both pages reset the connection when fetched. || retry-8 2026-11-01: a Persian-language search (معافیت مالیات حقوق ۱۴۰۵ / نرخ مالیات بر ارزش افزوده ۱۴۰۵) was refused by the search tool (shared per-turn limit of 200 searches reached); the earlier pass's Persian results stand",
+    "trade-press": "No big-four summary covers Iran (no PwC or Deloitte 2026 page); tehrantimes.com unreachable. || retry-8 2026-11-01: US SSA 'Social Security Programs Throughout the World' Iran pages (2018-2019 to 2024-2025) and ISSA country profile answer 403 to this environment; not read another way",
+    "archive": "web.archive.org reset the connection from this environment. || retry-8 2026-11-01: web.archive.org: connection reset and availability API 429 on 2026-11-01"
+   }
+  },
+  {
+   "item": "social",
+   "sought": "Social Security Organization contribution rates (employee and employer) from a primary source.",
+   "tried": {
+    "institution": "intamedia.ir (Iranian National Tax Administration) and tax.gov.ir reset the connection from this environment on 2026-11-01. || retry-8 2026-11-01: intamedia.ir, www.intamedia.ir, tax.gov.ir, tamin.ir (Social Security Organization) and mefa.ir fetched again 2026-11-01: no answer (curl 000) from this environment",
+    "official-register": "The 1405 budget law and the INTA circular on the salary exemption not reachable (Iranian hosts, including ekhtebar.ir, reset the connection). || retry-8 2026-11-01: rc.majlis.ir (Majlis Research Center law database), qavanin.ir (official laws portal), rrk.ir (official gazette) and dotic.ir: no answer (curl 000) from this environment",
+    "web-search": "Searched in Persian for the 1405 salary exemption and rates: secondary pages (mohaseban.org, rade.ir) cite a proposed 40 million toman monthly exemption and 10–30% steps from the bill, not the enacted law; both pages reset the connection when fetched. || retry-8 2026-11-01: a Persian-language search (معافیت مالیات حقوق ۱۴۰۵ / نرخ مالیات بر ارزش افزوده ۱۴۰۵) was refused by the search tool (shared per-turn limit of 200 searches reached); the earlier pass's Persian results stand",
+    "trade-press": "No big-four summary covers Iran (no PwC or Deloitte 2026 page); tehrantimes.com unreachable. || retry-8 2026-11-01: US SSA 'Social Security Programs Throughout the World' Iran pages (2018-2019 to 2024-2025) and ISSA country profile answer 403 to this environment; not read another way",
+    "archive": "web.archive.org reset the connection from this environment. || retry-8 2026-11-01: web.archive.org: connection reset and availability API 429 on 2026-11-01"
+   }
+  },
+  {
+   "item": "withholding",
+   "sought": "The employer's monthly withholding under Direct Taxation Act art. 86.",
+   "tried": {
+    "institution": "intamedia.ir (Iranian National Tax Administration) and tax.gov.ir reset the connection from this environment on 2026-11-01. || retry-8 2026-11-01: intamedia.ir, www.intamedia.ir, tax.gov.ir, tamin.ir (Social Security Organization) and mefa.ir fetched again 2026-11-01: no answer (curl 000) from this environment",
+    "official-register": "The 1405 budget law and the INTA circular on the salary exemption not reachable (Iranian hosts, including ekhtebar.ir, reset the connection). || retry-8 2026-11-01: rc.majlis.ir (Majlis Research Center law database), qavanin.ir (official laws portal), rrk.ir (official gazette) and dotic.ir: no answer (curl 000) from this environment",
+    "web-search": "Searched in Persian for the 1405 salary exemption and rates: secondary pages (mohaseban.org, rade.ir) cite a proposed 40 million toman monthly exemption and 10–30% steps from the bill, not the enacted law; both pages reset the connection when fetched. || retry-8 2026-11-01: a Persian-language search (معافیت مالیات حقوق ۱۴۰۵ / نرخ مالیات بر ارزش افزوده ۱۴۰۵) was refused by the search tool (shared per-turn limit of 200 searches reached); the earlier pass's Persian results stand",
+    "trade-press": "No big-four summary covers Iran (no PwC or Deloitte 2026 page); tehrantimes.com unreachable. || retry-8 2026-11-01: US SSA 'Social Security Programs Throughout the World' Iran pages (2018-2019 to 2024-2025) and ISSA country profile answer 403 to this environment; not read another way",
+    "archive": "web.archive.org reset the connection from this environment. || retry-8 2026-11-01: web.archive.org: connection reset and availability API 429 on 2026-11-01"
+   }
+  },
+  {
+   "item": "nonResident",
+   "sought": "The tax on a non-resident performer's or director's fee in Iran.",
+   "tried": {
+    "institution": "intamedia.ir (Iranian National Tax Administration) and tax.gov.ir reset the connection from this environment on 2026-11-01. || retry-8 2026-11-01: intamedia.ir, www.intamedia.ir, tax.gov.ir, tamin.ir (Social Security Organization) and mefa.ir fetched again 2026-11-01: no answer (curl 000) from this environment",
+    "official-register": "The 1405 budget law and the INTA circular on the salary exemption not reachable (Iranian hosts, including ekhtebar.ir, reset the connection). || retry-8 2026-11-01: rc.majlis.ir (Majlis Research Center law database), qavanin.ir (official laws portal), rrk.ir (official gazette) and dotic.ir: no answer (curl 000) from this environment",
+    "web-search": "Searched in Persian for the 1405 salary exemption and rates: secondary pages (mohaseban.org, rade.ir) cite a proposed 40 million toman monthly exemption and 10–30% steps from the bill, not the enacted law; both pages reset the connection when fetched. || retry-8 2026-11-01: a Persian-language search (معافیت مالیات حقوق ۱۴۰۵ / نرخ مالیات بر ارزش افزوده ۱۴۰۵) was refused by the search tool (shared per-turn limit of 200 searches reached); the earlier pass's Persian results stand",
+    "trade-press": "No big-four summary covers Iran (no PwC or Deloitte 2026 page); tehrantimes.com unreachable. || retry-8 2026-11-01: US SSA 'Social Security Programs Throughout the World' Iran pages (2018-2019 to 2024-2025) and ISSA country profile answer 403 to this environment; not read another way",
+    "archive": "web.archive.org reset the connection from this environment. || retry-8 2026-11-01: web.archive.org: connection reset and availability API 429 on 2026-11-01"
+   }
+  },
+  {
+   "item": "authors",
+   "sought": "Treatment of authors' fees and royalties.",
+   "tried": {
+    "institution": "intamedia.ir (Iranian National Tax Administration) and tax.gov.ir reset the connection from this environment on 2026-11-01. || retry-8 2026-11-01: intamedia.ir, www.intamedia.ir, tax.gov.ir, tamin.ir (Social Security Organization) and mefa.ir fetched again 2026-11-01: no answer (curl 000) from this environment",
+    "official-register": "The 1405 budget law and the INTA circular on the salary exemption not reachable (Iranian hosts, including ekhtebar.ir, reset the connection). || retry-8 2026-11-01: rc.majlis.ir (Majlis Research Center law database), qavanin.ir (official laws portal), rrk.ir (official gazette) and dotic.ir: no answer (curl 000) from this environment",
+    "web-search": "Searched in Persian for the 1405 salary exemption and rates: secondary pages (mohaseban.org, rade.ir) cite a proposed 40 million toman monthly exemption and 10–30% steps from the bill, not the enacted law; both pages reset the connection when fetched. || retry-8 2026-11-01: a Persian-language search (معافیت مالیات حقوق ۱۴۰۵ / نرخ مالیات بر ارزش افزوده ۱۴۰۵) was refused by the search tool (shared per-turn limit of 200 searches reached); the earlier pass's Persian results stand",
+    "trade-press": "No big-four summary covers Iran (no PwC or Deloitte 2026 page); tehrantimes.com unreachable. || retry-8 2026-11-01: US SSA 'Social Security Programs Throughout the World' Iran pages (2018-2019 to 2024-2025) and ISSA country profile answer 403 to this environment; not read another way",
+    "archive": "web.archive.org reset the connection from this environment. || retry-8 2026-11-01: web.archive.org: connection reset and availability API 429 on 2026-11-01"
+   }
+  },
+  {
+   "item": "vat",
+   "sought": "The VAT rate for 1405 and the registration rule.",
+   "tried": {
+    "institution": "intamedia.ir (Iranian National Tax Administration) and tax.gov.ir reset the connection from this environment on 2026-11-01. || retry-8 2026-11-01: intamedia.ir, www.intamedia.ir, tax.gov.ir, tamin.ir (Social Security Organization) and mefa.ir fetched again 2026-11-01: no answer (curl 000) from this environment",
+    "official-register": "The 1405 budget law and the INTA circular on the salary exemption not reachable (Iranian hosts, including ekhtebar.ir, reset the connection). || retry-8 2026-11-01: rc.majlis.ir (Majlis Research Center law database), qavanin.ir (official laws portal), rrk.ir (official gazette) and dotic.ir: no answer (curl 000) from this environment",
+    "web-search": "Searched in Persian for the 1405 salary exemption and rates: secondary pages (mohaseban.org, rade.ir) cite a proposed 40 million toman monthly exemption and 10–30% steps from the bill, not the enacted law; both pages reset the connection when fetched. || retry-8 2026-11-01: a Persian-language search (معافیت مالیات حقوق ۱۴۰۵ / نرخ مالیات بر ارزش افزوده ۱۴۰۵) was refused by the search tool (shared per-turn limit of 200 searches reached); the earlier pass's Persian results stand",
+    "trade-press": "No big-four summary covers Iran (no PwC or Deloitte 2026 page); tehrantimes.com unreachable. || retry-8 2026-11-01: US SSA 'Social Security Programs Throughout the World' Iran pages (2018-2019 to 2024-2025) and ISSA country profile answer 403 to this environment; not read another way",
+    "archive": "web.archive.org reset the connection from this environment. || retry-8 2026-11-01: web.archive.org: connection reset and availability API 429 on 2026-11-01"
+   }
+  },
+  {
+   "item": "year",
+   "sought": "The tax year and the return due date.",
+   "tried": {
+    "institution": "intamedia.ir (Iranian National Tax Administration) and tax.gov.ir reset the connection from this environment on 2026-11-01. || retry-8 2026-11-01: intamedia.ir, www.intamedia.ir, tax.gov.ir, tamin.ir (Social Security Organization) and mefa.ir fetched again 2026-11-01: no answer (curl 000) from this environment",
+    "official-register": "The 1405 budget law and the INTA circular on the salary exemption not reachable (Iranian hosts, including ekhtebar.ir, reset the connection). || retry-8 2026-11-01: rc.majlis.ir (Majlis Research Center law database), qavanin.ir (official laws portal), rrk.ir (official gazette) and dotic.ir: no answer (curl 000) from this environment",
+    "web-search": "Searched in Persian for the 1405 salary exemption and rates: secondary pages (mohaseban.org, rade.ir) cite a proposed 40 million toman monthly exemption and 10–30% steps from the bill, not the enacted law; both pages reset the connection when fetched. || retry-8 2026-11-01: a Persian-language search (معافیت مالیات حقوق ۱۴۰۵ / نرخ مالیات بر ارزش افزوده ۱۴۰۵) was refused by the search tool (shared per-turn limit of 200 searches reached); the earlier pass's Persian results stand",
+    "trade-press": "No big-four summary covers Iran (no PwC or Deloitte 2026 page); tehrantimes.com unreachable. || retry-8 2026-11-01: US SSA 'Social Security Programs Throughout the World' Iran pages (2018-2019 to 2024-2025) and ISSA country profile answer 403 to this environment; not read another way",
+    "archive": "web.archive.org reset the connection from this environment. || retry-8 2026-11-01: web.archive.org: connection reset and availability API 429 on 2026-11-01"
+   }
+  }
+ ]
+}

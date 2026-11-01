@@ -1,0 +1,234 @@
+{
+ "topic": "tax.IM",
+ "read": "2026-11-01",
+ "note": "Read 2026-11-01 at the owner's word (\"Build those first 3 starting with ledger first\"; of the 21 countries read first: \"It should cover across every country\"; \"Retry the blocked tax facts once all countries land\"): the tax on a screen worker's pay in Isle of Man: a resident's income tax, social contributions, what is withheld at source, a non-resident artiste's withholding, an author's treatment, VAT and the tax year. Research and retry subagents (workbench/briefs/BRIEF-tax.md, BRIEF-tax-retry.md), every quote checked by the lead against its saved page.",
+ "figures": [
+  {
+   "item": "residents",
+   "finding": "For 2026/27 a resident gets a personal allowance of £17,000 (reduced by £1 for every £2 of income over £100,000), then pays 10% on the first £6,500 of taxable income and 21% above; a resident may elect to cap the tax at £220,000 a year.",
+   "value": {
+    "currency": "GBP",
+    "year": "2026/27",
+    "allowance": 17000,
+    "allowanceTaper": {
+     "above": 100000,
+     "perPound": 0.5
+    },
+    "brackets": [
+     {
+      "from": 0,
+      "to": 6500,
+      "rate": 0.1
+     },
+     {
+      "from": 6500,
+      "to": null,
+      "rate": 0.21
+     }
+    ],
+    "cap": 220000,
+    "regional": null
+   },
+   "applies": "Tax year 6 April 2026 to 5 April 2027, single person (joint couples: £34,000 allowance, £13,000 band).",
+   "sources": [
+    {
+     "src": 0,
+     "said": "Personal Allowances 2026/27 Single Person Allowance* £17,000 Jointly Assessed Couple Allowance* £34,000"
+    },
+    {
+     "src": 0,
+     "said": "*The Personal Allowance is reduced by £1 for every £2 that your income is in excess of £100,000 or £200,000 for a jointly assessed couple. Personal Income Tax Rates 2026/27 Standard Rate 10% Higher Rate 21% Non-Resident Rate 21% The threshold at which the higher rate becomes payable is £6,500 for an individual and £13,000 for a jointly assessed married couple or civil partners."
+    },
+    {
+     "src": 0,
+     "said": "Annual Income Tax Cap Election Amount 2026/27 Single Person £220,000 Joint Assessed £440,000"
+    }
+   ]
+  },
+  {
+   "item": "year",
+   "finding": "The tax year runs from 6 April to 5 April; the return is due before 6 October after the year; a self-employed person pays on account on 6 January in the year and the balance on 6 January after it.",
+   "value": {
+    "start": "04-06",
+    "end": "04-05",
+    "returnDue": "10-05",
+    "selfEmployedPayments": [
+     "01-06 in the year",
+     "01-06 after the year"
+    ]
+   },
+   "applies": "Individuals.",
+   "sources": [
+    {
+     "src": 0,
+     "said": "The tax year in the Isle of Man runs from 6 April to 5 April"
+    },
+    {
+     "src": 1,
+     "said": "Income tax returns are issued shortly after the end of the tax year and must be filed before the following 6 October"
+    },
+    {
+     "src": 1,
+     "said": "A self-employed individual is required to make a payment on account of their tax and national insurance liability on 6 January in the year of assessment."
+    }
+   ]
+  },
+  {
+   "item": "withholding",
+   "finding": "The employer deducts income tax and national insurance from pay under the Income Tax Instalment Payments (ITIP) system and pays them monthly.",
+   "value": {
+    "employment": "ITIP (PAYE-style), monthly"
+   },
+   "applies": "2026/27.",
+   "sources": [
+    {
+     "src": 1,
+     "said": "An employee’s tax and national insurance contributions are deducted by the employer under the 'Income Tax Instalment Payments' (ITIP) system, with the employer paying the amounts deducted to the Assessor of Taxes each month."
+    }
+   ]
+  },
+  {
+   "item": "nonResident",
+   "finding": "A non-resident pays 21% on Isle of Man-source income with no personal allowance; the Assessor may require tax to be withheld from payments to a non-resident at a rate the Assessor sets.",
+   "value": {
+    "rate": 0.21,
+    "allowance": 0,
+    "withholding": "rate set by the Assessor case by case"
+   },
+   "applies": "2026/27.",
+   "sources": [
+    {
+     "src": 0,
+     "said": "Non-Resident Allowance £0"
+    },
+    {
+     "src": 0,
+     "said": "Non-Resident Rate 21%"
+    },
+    {
+     "src": 2,
+     "said": "The Assessor of Income Tax in the Isle of Man can require the deduction of WHT on certain taxable payments made to non-resident individuals (e.g. payments made to a non-resident sub-contractor). The rate of WHT is determined by the Assessor"
+    }
+   ]
+  },
+  {
+   "item": "social",
+   "finding": "From 6 April 2026 an employee pays Class 1 National Insurance of 11% on earnings between £176 and £1,082 a week and 1% above; the employer pays 12.8% on earnings over £178 a week; a self-employed person pays Class 2 at £6.75 a week on profits over £9,152 and Class 4 at 8% on profits £9,152 to £56,264 and 1% above.",
+   "value": {
+    "currency": "GBP",
+    "employee": [
+     {
+      "from": 176,
+      "to": 1082,
+      "rate": 0.11,
+      "period": "week"
+     },
+     {
+      "from": 1082,
+      "to": null,
+      "rate": 0.01,
+      "period": "week"
+     }
+    ],
+    "employer": {
+     "rate": 0.128,
+     "aboveWeekly": 178
+    },
+    "selfEmployed": {
+     "class2Weekly": 6.75,
+     "class2Above": 9152,
+     "class4": [
+      {
+       "from": 9152,
+       "to": 56264,
+       "rate": 0.08
+      },
+      {
+       "from": 56264,
+       "to": null,
+       "rate": 0.01
+      }
+     ]
+    }
+   },
+   "applies": "Tax year from 6 April 2026.",
+   "sources": [
+    {
+     "src": 3,
+     "said": "Employment income between £176 and £1,082 per week (£763 and £4,689 per month) is subject to national insurance at 11%. Earnings above £1,082 per week (£4,689 per month) are subject to national insurance at 1%."
+    },
+    {
+     "src": 3,
+     "said": "Profits greater than £9,152 are subject to national insurance at a flat-rate contribution of £6.75 per week (£351 per annum). Self-employed individuals are also subject to Class 4 national insurance at a rate of 8% on profits between £9,152 and £56,264, and at 1% on profits over £56,264."
+    },
+    {
+     "src": 4,
+     "said": "The standard rate of secondary contribution is 12.8% on earnings over £178 per week."
+    }
+   ]
+  },
+  {
+   "item": "vat",
+   "finding": "A self-employed person with turnover over £90,000 registers for VAT and charges 20%.",
+   "value": {
+    "currency": "GBP",
+    "standard": 0.2,
+    "threshold": 90000
+   },
+   "applies": "2026.",
+   "sources": [
+    {
+     "src": 3,
+     "said": "It should be noted that self-employed individuals who have a turnover of more that £90,000 are required to register for VAT and charge it to their customers at the relevant rate."
+    },
+    {
+     "src": 3,
+     "said": "The standard rate of VAT is 20% and is applicable on the purchase of most goods and services."
+    }
+   ]
+  }
+ ],
+ "country": "IM",
+ "sources": [
+  {
+   "url": "https://www.gov.im/categories/tax-vat-and-your-money/income-tax-and-national-insurance/individuals/residents/rates-and-allowances/",
+   "title": "Rates and allowances (Isle of Man Government, Income Tax Division)",
+   "read": "2026-11-01",
+   "kind": "primary",
+   "said": "Personal Allowances 2026/27 Single Person Allowance* £17,000 Jointly Assessed Couple Allowance* £34,000 … *The Personal Allowance is reduced by £1 for every £2 that your income is in excess of £100,000 or £200,000 for a jointly assessed couple. Personal Income Tax Rates 2026/27 Standard Rate 10% Higher Rate 21% Non-Resident Rate 21% The threshold at which the higher rate becomes payable is £6,500 for an individual and £13,000 for a jointly assessed married couple or civil partners. … Annual Income Tax Cap Election Amount 2026/27 Single Person £220,000 Joint Assessed £440,000 … The tax year in the Isle of Man runs from 6 April to 5 April … Non-Resident Allowance £0"
+  },
+  {
+   "url": "https://taxsummaries.pwc.com/isle-of-man/individual/tax-administration",
+   "title": "PwC Worldwide Tax Summaries, Isle of Man, Individual - Tax administration (last reviewed 24 September 2026)",
+   "read": "2026-11-01",
+   "kind": "secondary",
+   "quotes": "https://www.gov.im/categories/tax-vat-and-your-money/income-tax-and-national-insurance/individuals/residents/rates-and-allowances/",
+   "said": "Income tax returns are issued shortly after the end of the tax year and must be filed before the following 6 October … A self-employed individual is required to make a payment on account of their tax and national insurance liability on 6 January in the year of assessment. … An employee’s tax and national insurance contributions are deducted by the employer under the 'Income Tax Instalment Payments' (ITIP) system, with the employer paying the amounts deducted to the Assessor of Taxes each month."
+  },
+  {
+   "url": "https://taxsummaries.pwc.com/isle-of-man/individual/taxes-on-personal-income",
+   "title": "PwC Worldwide Tax Summaries, Isle of Man, Individual - Taxes on personal income (last reviewed 24 September 2026)",
+   "read": "2026-11-01",
+   "kind": "secondary",
+   "quotes": "https://www.gov.im/categories/tax-vat-and-your-money/income-tax-and-national-insurance/individuals/residents/rates-and-allowances/",
+   "said": "The Assessor of Income Tax in the Isle of Man can require the deduction of WHT on certain taxable payments made to non-resident individuals (e.g. payments made to a non-resident sub-contractor). The rate of WHT is determined by the Assessor"
+  },
+  {
+   "url": "https://taxsummaries.pwc.com/isle-of-man/individual/other-taxes",
+   "title": "PwC Worldwide Tax Summaries, Isle of Man, Individual - Other taxes (last reviewed 24 September 2026)",
+   "read": "2026-11-01",
+   "kind": "secondary",
+   "quotes": "https://www.gov.im/categories/tax-vat-and-your-money/income-tax-and-national-insurance/individuals/residents/rates-and-allowances/",
+   "said": "Employment income between £176 and £1,082 per week (£763 and £4,689 per month) is subject to national insurance at 11%. Earnings above £1,082 per week (£4,689 per month) are subject to national insurance at 1%. … Profits greater than £9,152 are subject to national insurance at a flat-rate contribution of £6.75 per week (£351 per annum). Self-employed individuals are also subject to Class 4 national insurance at a rate of 8% on profits between £9,152 and £56,264, and at 1% on profits over £56,264. … It should be noted that self-employed individuals who have a turnover of more that £90,000 are required to register for VAT and charge it to their customers at the relevant rate. … The standard rate of VAT is 20% and is applicable on the purchase of most goods and services."
+  },
+  {
+   "url": "https://taxsummaries.pwc.com/isle-of-man/corporate/other-taxes",
+   "title": "PwC Worldwide Tax Summaries, Isle of Man, Corporate - Other taxes (last reviewed 24 September 2026)",
+   "read": "2026-11-01",
+   "kind": "secondary",
+   "quotes": "https://www.gov.im/categories/tax-vat-and-your-money/income-tax-and-national-insurance/individuals/residents/rates-and-allowances/",
+   "said": "The standard rate of secondary contribution is 12.8% on earnings over £178 per week."
+  }
+ ],
+ "blockers": []
+}

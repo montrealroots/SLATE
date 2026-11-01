@@ -1,0 +1,215 @@
+{
+ "topic": "tax.JE",
+ "read": "2026-11-01",
+ "note": "Read 2026-11-01 at the owner's word (\"Build those first 3 starting with ledger first\"; of the 21 countries read first: \"It should cover across every country\"; \"Retry the blocked tax facts once all countries land\"): the tax on a screen worker's pay in Jersey: a resident's income tax, social contributions, what is withheld at source, a non-resident artiste's withholding, an author's treatment, VAT and the tax year. Research and retry subagents (workbench/briefs/BRIEF-tax.md, BRIEF-tax-retry.md), every quote checked by the lead against its saved page.",
+ "figures": [
+  {
+   "item": "residents",
+   "finding": "Jersey levies its own income tax: a resident pays the lower of 20% of income after allowances or 26% of income above his exemption limit (GBP 21,250 for a single person in 2026); there is no parish income tax.",
+   "value": {
+    "currency": "GBP",
+    "standardRate": 0.2,
+    "marginalRate": 0.26,
+    "exemptionLimitSingle2026": 21250,
+    "childAllowance": 3950,
+    "singleParentAllowance": 5900
+   },
+   "applies": "2026.",
+   "sources": [
+    {
+     "src": 0,
+     "said": "Tax is payable at the rate of 20% on net income after allowances."
+    },
+    {
+     "src": 0,
+     "said": "Tax is then computed at the marginal rate of 26%. The taxpayer’s liability is based on the lower of the tax payable at the 20% rate and tax calculated using the marginal rate."
+    },
+    {
+     "src": 1,
+     "said": "Allowances for 2026 are as follows: Allowances GBP Child allowance (per child) 3,950 Single parent allowance 5,900 Exemption limit: Single person 21,250"
+    }
+   ]
+  },
+  {
+   "item": "year",
+   "finding": "The tax year is the calendar year; returns go out in January and are due 31 May on paper or 31 July online.",
+   "value": {
+    "start": "01-01",
+    "end": "12-31",
+    "returnDue": {
+     "paper": "05-31",
+     "online": "07-31"
+    }
+   },
+   "applies": "2026 return filed 2027.",
+   "sources": [
+    {
+     "src": 2,
+     "said": "The Jersey tax year is the calendar year. Tax returns Tax returns are issued in January following the end of the tax year. The filing deadline for these returns is 31 May for paper filing and 31 July for electronic filing."
+    }
+   ]
+  },
+  {
+   "item": "social",
+   "finding": "An employee pays 6% and the employer 6.5% social security on monthly earnings up to GBP 6,062 (2026), the employer adding 2.5% up to GBP 27,632 a month; the self-employed pay 12.5% up to GBP 72,744 a year and 2.5% up to GBP 331,584; everyone pays 1.5% long-term care contribution up to GBP 331,584.",
+   "value": {
+    "currency": "GBP",
+    "employee": 0.06,
+    "employer": 0.065,
+    "monthlyStandardLimit": 6062,
+    "employerAbove": {
+     "rate": 0.025,
+     "monthlyUpper": 27632
+    },
+    "selfEmployed": {
+     "rate": 0.125,
+     "annualStandardLimit": 72744,
+     "above": 0.025,
+     "annualUpper": 331584
+    },
+    "longTermCare": {
+     "rate": 0.015,
+     "annualUpper": 331584
+    }
+   },
+   "applies": "2026.",
+   "sources": [
+    {
+     "src": 3,
+     "said": "Employees are subject to social security contributions at a rate of 6% on their gross earnings, up to the monthly standard earnings limit of GBP 6,062 for 2026 (GBP 5,800 for 2025). The rate of employer contributions is 6.5%, up to the same earnings limit. Employers also have to pay a 2.5% rate of social security on earnings above the monthly standard earnings limit, up to an upper earnings limit of GBP 27,632"
+    },
+    {
+     "src": 3,
+     "said": "Self-employed individuals are required to contribute at a rate of 12.5%, up to the standard earnings limit (GBP 72,744 for 2026) and also 2.5% on their earnings above this up to the upper earnings limit (GBP 331,584 for 2026)."
+    },
+    {
+     "src": 3,
+     "said": "Individuals are subject to long-term care contributions at a rate of 1.5% on their gross earnings up to the upper earning limit for social security (GBP 331,584 for 2026; GBP 317,304 for 2025)."
+    }
+   ]
+  },
+  {
+   "item": "withholding",
+   "finding": "Employers deduct tax under the Income Tax Instalment System (ITIS) at the effective rate Revenue Jersey notifies for each employee, or 22% without a notice.",
+   "value": {
+    "employee": "ITIS effective rate",
+    "defaultRate": 0.22
+   },
+   "applies": "2026.",
+   "sources": [
+    {
+     "src": 4,
+     "said": "Under the Income Tax Instalment System (ITIS), the tax authority issues each employee with an effective rate notice to pass to their employer in"
+    },
+    {
+     "src": 4,
+     "said": "ng the deduction rate. If no such notice is provided, the default rate of deduction applied is 22%."
+    }
+   ]
+  },
+  {
+   "item": "nonResident",
+   "finding": "A non-resident is taxed on Jersey-source income without personal allowances; Jersey levies no withholding on royalties paid abroad.",
+   "value": {
+    "scope": "Jersey-source income",
+    "allowances": false,
+    "royaltyWithholding": 0
+   },
+   "applies": "No artiste-specific rule was found.",
+   "sources": [
+    {
+     "src": 0,
+     "said": "resident in Jersey is liable to Jersey income tax on Jersey-source income, except for some specific exemptions"
+    },
+    {
+     "src": 1,
+     "said": "Non-residents are not entitled to Jersey personal allowances."
+    },
+    {
+     "src": 5,
+     "said": "There are no WHTs on dividends, interest, or royalties paid by Jersey companies to non-residents."
+    }
+   ]
+  },
+  {
+   "item": "vat",
+   "finding": "GST is 5%; registration is required once taxable supplies exceed GBP 300,000 a year.",
+   "value": {
+    "currency": "GBP",
+    "standard": 0.05,
+    "registrationThreshold": 300000
+   },
+   "applies": "2026.",
+   "sources": [
+    {
+     "src": 4,
+     "said": "The standard rate of GST is 5%. Companies with taxable supplies of more than GBP 300,000 per annum are required to register for GST."
+    }
+   ]
+  }
+ ],
+ "country": "JE",
+ "sources": [
+  {
+   "url": "https://taxsummaries.pwc.com/jersey/individual/taxes-on-personal-income",
+   "title": "PwC Worldwide Tax Summaries: jersey Individual - Taxes on personal income",
+   "read": "2026-11-01",
+   "kind": "secondary",
+   "quotes": "https://www.gov.je/TaxesMoney/",
+   "said": "Tax is payable at the rate of 20% on net income after allowances. … Tax is then computed at the marginal rate of 26%. The taxpayer’s liability is based on the lower of the tax payable at the 20% rate and tax calculated using the marginal rate. … resident in Jersey is liable to Jersey income tax on Jersey-source income, except for some specific exemptions"
+  },
+  {
+   "url": "https://taxsummaries.pwc.com/jersey/individual/deductions",
+   "title": "PwC Worldwide Tax Summaries: jersey Individual - Deductions",
+   "read": "2026-11-01",
+   "kind": "secondary",
+   "quotes": "https://www.gov.je/TaxesMoney/",
+   "said": "Allowances for 2026 are as follows: Allowances GBP Child allowance (per child) 3,950 Single parent allowance 5,900 Exemption limit: Single person 21,250 … Non-residents are not entitled to Jersey personal allowances."
+  },
+  {
+   "url": "https://taxsummaries.pwc.com/jersey/individual/tax-administration",
+   "title": "PwC Worldwide Tax Summaries: jersey Individual - Tax administration",
+   "read": "2026-11-01",
+   "kind": "secondary",
+   "quotes": "https://www.gov.je/TaxesMoney/",
+   "said": "The Jersey tax year is the calendar year. Tax returns Tax returns are issued in January following the end of the tax year. The filing deadline for these returns is 31 May for paper filing and 31 July for electronic filing."
+  },
+  {
+   "url": "https://taxsummaries.pwc.com/jersey/individual/other-taxes",
+   "title": "PwC Worldwide Tax Summaries: jersey Individual - Other taxes",
+   "read": "2026-11-01",
+   "kind": "secondary",
+   "quotes": "https://www.gov.je/TaxesMoney/",
+   "said": "Employees are subject to social security contributions at a rate of 6% on their gross earnings, up to the monthly standard earnings limit of GBP 6,062 for 2026 (GBP 5,800 for 2025). The rate of employer contributions is 6.5%, up to the same earnings limit. Employers also have to pay a 2.5% rate of social security on earnings above the monthly standard earnings limit, up to an upper earnings limit of GBP 27,632 … Self-employed individuals are required to contribute at a rate of 12.5%, up to the standard earnings limit (GBP 72,744 for 2026) and also 2.5% on their earnings above this up to the upper earnings limit (GBP 331,584 for 2026). … Individuals are subject to long-term care contributions at a rate of 1.5% on their gross earnings up to the upper earning limit for social security (GBP 331,584 for 2026; GBP 317,304 for 2025)."
+  },
+  {
+   "url": "https://taxsummaries.pwc.com/jersey/corporate/other-taxes",
+   "title": "PwC Worldwide Tax Summaries: jersey Corporate - Other taxes",
+   "read": "2026-11-01",
+   "kind": "secondary",
+   "quotes": "https://www.gov.je/TaxesMoney/",
+   "said": "Under the Income Tax Instalment System (ITIS), the tax authority issues each employee with an effective rate notice to pass to their employer in … ng the deduction rate. If no such notice is provided, the default rate of deduction applied is 22%. … The standard rate of GST is 5%. Companies with taxable supplies of more than GBP 300,000 per annum are required to register for GST."
+  },
+  {
+   "url": "https://taxsummaries.pwc.com/jersey/corporate/withholding-taxes",
+   "title": "PwC Worldwide Tax Summaries: jersey Corporate - Withholding taxes",
+   "read": "2026-11-01",
+   "kind": "secondary",
+   "quotes": "https://www.gov.je/TaxesMoney/",
+   "said": "There are no WHTs on dividends, interest, or royalties paid by Jersey companies to non-residents."
+  }
+ ],
+ "blockers": [
+  {
+   "item": "authors",
+   "sought": "Any special treatment of an author's royalties in Jersey.",
+   "tried": {
+    "institution": "gov.je returns HTTP 500 to this environment (2026-11-01). || 2026-11-01 retry: gov.je/TaxesMoney/IncomeTax again HTTP 500; revenue.je refused (curl 000).",
+    "official-register": "jerseylaw.je (Income Tax (Jersey) Law 1961) not read 2026-11-01. || 2026-11-01 retry: jerseylaw.je/laws/current/l_24_1961 (Income Tax (Jersey) Law 1961) again HTTP 500.",
+    "web-search": "Not run for Jersey (2026-11-01). || 2026-11-01 retry: refused: the session's web-search limit (200 calls per turn, shared) was reached before this query ('Jersey income tax royalties author copyright Revenue Jersey').",
+    "trade-press": "PwC Worldwide Tax Summaries (Jersey): none. || 2026-11-01 retry: taxsummaries.pwc.com/jersey (200) already used: no author rule.",
+    "archive": "web.archive.org resets the connection from this environment (2026-11-01). || 2026-11-01 retry: web.archive.org connection reset through the proxy (curl 000)."
+   }
+  }
+ ]
+}

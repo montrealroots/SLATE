@@ -7,7 +7,11 @@
    "script.pitch (deal: sale or option)",
    "minimumOf / paidOf / optionOf",
    "aboutMarket (writing.unkept)",
-   "saleIn (country and days, for the permit)"
+   "saleIn (country and days, for the permit)",
+   "script.offer (country: a market that follows another's terms)",
+   "minimumOf / paidOf / optionOf (by kind; by the day written)",
+   "aboutCountry (writing.unkept, a country with nothing to sell under)",
+   "the all-countries universe"
   ]
  },
  "rows": [
@@ -62,6 +66,50 @@
    ],
    "tests": [
     "tests/person/work/markets.test.ts::a script sold in a market > is sold where its market is, the meeting a day there"
+   ]
+  },
+  {
+   "key": "script.offer (country: a market that follows another's terms)",
+   "status": "game",
+   "register": [
+    "R-5229"
+   ],
+   "tests": [
+    "tests/person/work/markets.test.ts::a script sold in a market > is sold in a market that follows another's terms under that market's agreements, there; refused in one with none to sell under",
+    "tests/person/work/markets.test.ts::a script sold in a market > script.offer: a script offered under France's TV terms in Saint-Barthélemy is sold there, where the same offer in France is sold in France",
+    "tests/person/work/markets.test.ts::a script sold in a market > is paid and taxed where it is sold: a wage floor by the days written, a followed market in its own country"
+   ]
+  },
+  {
+   "key": "minimumOf / paidOf / optionOf (by kind; by the day written)",
+   "status": "game",
+   "register": [
+    "R-5229"
+   ],
+   "tests": [
+    "tests/person/work/markets.test.ts::a script sold in a market > is paid where a wage floor reaches the writer by the days written, and by the kind of script where an agreement sets it by kind",
+    "tests/person/work/markets.test.ts::the markets > read a script's kind from its genre's BFI group"
+   ]
+  },
+  {
+   "key": "aboutCountry (writing.unkept, a country with nothing to sell under)",
+   "status": "game",
+   "register": [
+    "R-5229"
+   ],
+   "tests": [
+    "tests/person/work/markets.test.ts::a script sold in a market > tells the player what of a market isn't known"
+   ]
+  },
+  {
+   "key": "the all-countries universe",
+   "status": "game",
+   "register": [
+    "R-5229"
+   ],
+   "tests": [
+    "tests/person/work/markets.test.ts::the markets > cover every country on the map: the WGA the US, each other one its research",
+    "tests/tools/markets-writer.test.ts::the screenwriter's markets compile > compiles every country the research holds, the engine reading each"
    ]
   }
  ]

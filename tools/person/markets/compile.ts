@@ -19,14 +19,22 @@ import { fromMajor, isCurrency, type CurrencyCode } from '../../../src/core/mone
  * research says no agreement sets an actor's pay (`none`) leaves it to negotiation, and has no minimums.
  *
  * A market gives the language its parts are cast in (one a person can be made to speak: identity's languages), its
- * city's time zone (one the clock keeps, by its own name or a link), its agreements, and what its research couldn't find (its blockers' items),
- * which the engine tells the player.
+ * city's time zone (one the clock keeps, by its own name or a link; where the research names no city, the zone of the
+ * country's most populous place on the map, the game's reading) and its agreements. A territory whose research says its
+ * work follows another country's terms (Saint-Barthélemy France's, the Cocos Islands Australia's) is engaged under that
+ * country's agreements, each as the territory's own (its id the territory's code before the agreement's), their terms
+ * read from the other's research, never copied into this one's. A country whose research gives nothing the engine can
+ * read has a reading saying why, and no market.
+ *
+ * Every country the research holds, compiled or not, gives what its research couldn't find (its blockers' items, or,
+ * where the register cites only its blockers, the items they name), which the engine tells the player.
  */
 export const SOURCES = 'research/sources/person/markets';
 export const READINGS = 'tools/person/markets/readings.json';
 export const OUTPUT = 'src/person/acting/markets.json';
 export const LANGUAGES = 'src/person/identity/languages.json';
 export const ZONES = 'src/core/time/tzdb.json';
+export const PLACES = 'src/world/gazetteer/places';
 /** The register's facts: a market's research, and its blockers. */
 export const FACT = 'person.markets.';
 export const BLOCKED = 'person.markets.blocked.';
@@ -38,7 +46,7 @@ export const TERMS = ['day', 'week', 'month', 'year', 'session', 'performance', 
 /** What a minimum's tier turns on: the part's budget, lines, seats, an episode's minutes, its length; the actor's years; the unit of the engagement it pays. */
 export const TIERS = ['budget', 'lines', 'seats', 'minutes', 'length', 'years', 'nth'] as const;
 /** What a market's research can leave unknown, as its blockers name it. */
-export const ITEMS = ['agreements', 'rates', 'none', 'union', 'language', 'market'] as const;
+export const ITEMS = ['agreements', 'rates', 'none', 'union', 'language', 'market', 'terms', 'successors'] as const;
 
 export type Medium = (typeof MEDIA)[number];
 export type Term = (typeof TERMS)[number];
@@ -67,18 +75,21 @@ export interface Agreement {
   media: Medium[];
   none: boolean;
   minimums: Minimum[];
+  /** The agreement whose terms a territory's work follows, where it follows another country's. */
+  follows?: string;
 }
 
 export interface Market {
   language: string;
   zone: string;
   agreements: string[];
-  unknown: Item[];
 }
 
 export interface Markets {
   markets: Record<string, Market>;
   agreements: Record<string, Agreement>;
+  /** What each country's research couldn't find, compiled or not. */
+  unknown: Record<string, Item[]>;
 }
 
 interface Figure {
@@ -91,7 +102,7 @@ export interface Research {
   blockers: { item: string }[];
 }
 interface Register {
-  entries: { fact: string; value?: { file?: string; sha256?: string } }[];
+  entries: { fact: string; value?: { file?: string; sha256?: string }; attempts?: { result: string }[] }[];
 }
 
 const record = (v: unknown, what: string): Record<string, unknown> => {
@@ -129,13 +140,13 @@ const overlap = (a: Range, b: Range) => a[0] <= (b[1] ?? Infinity) && b[0] <= (a
 /** Whether two minimums can never both apply to one part: a tier both set, in ranges that don't meet. */
 export const apart = (a: Minimum, b: Minimum): boolean => TIERS.some((k) => a.when[k] !== undefined && b.when[k] !== undefined && !overlap(a.when[k], b.when[k]));
 
-/** Whether a date stands in a figure: written whole, or (the first of a month) as its month. */
-export const dated = (text: string, from: string): boolean => text.includes(from) || (from.endsWith('-01') && text.includes(`"${from.slice(0, 7)}"`));
+/** Whether a date stands in a figure: written whole, or (the first of a month) as its month, no day after it. */
+export const dated = (text: string, from: string): boolean => text.includes(from) || (from.endsWith('-01') && new RegExp(`(?<!\\d)${from.slice(0, 7)}(?!-?\\d)`).test(text));
 
 /** One minimum, read from the research at its place. */
 export function minimumOf(r: Research, reading: unknown, currency: CurrencyCode, media: readonly Medium[]): Minimum {
   const m = record(reading, 'a minimum');
-  for (const k of Object.keys(m)) if (!['medium', 'role', 'per', 'rehearsal', 'with', 'when', 'from', 'fig', 'path'].includes(k)) throw new Error(`a minimum names ${k}, which the game doesn't read`);
+  for (const k of Object.keys(m)) if (!['medium', 'role', 'per', 'rehearsal', 'with', 'when', 'from', 'fig', 'path', 'dated'].includes(k)) throw new Error(`a minimum names ${k}, which the game doesn't read`);
   const figure = figureOf(r, m['fig'], ['rates', 'agreements']);
   const text = JSON.stringify(figure);
   if (!media.includes(m['medium'] as Medium)) throw new Error(`a minimum's medium ${String(m['medium'])} isn't its agreement's`);
@@ -150,7 +161,9 @@ export function minimumOf(r: Research, reading: unknown, currency: CurrencyCode,
     when[k as Tier] = range(v);
   }
   const from = String(m['from']);
-  if (!/^\d{4}-\d{2}-\d{2}$/.test(from) || !dated(text, from)) throw new Error(`${r.country}'s figure ${String(m['fig'])} doesn't date a minimum from ${from}`);
+  // The date stands in the minimum's own figure, or in the one the reading names (an agreement's, where its rates are undated).
+  const since = m['dated'] === undefined ? text : JSON.stringify(figureOf(r, m['dated'], ['rates', 'agreements']));
+  if (!/^\d{4}-\d{2}-\d{2}$/.test(from) || !dated(since, from)) throw new Error(`${r.country}'s figure ${String(m['fig'])} doesn't date a minimum from ${from}`);
   if (!text.includes(currency)) throw new Error(`${r.country}'s figure ${String(m['fig'])} doesn't name ${currency}`);
   const amount = at(figure.value, m['path'] as (string | number)[]);
   if (typeof amount !== 'number' || !(amount > 0)) throw new Error(`${r.country}'s figure ${String(m['fig'])} has no amount at ${(m['path'] as unknown[]).join('.')}`);
@@ -210,8 +223,41 @@ export function unknownOf(blockers: readonly { item: string }[]): Item[] {
   return out;
 }
 
-/** A market: its language (one a person speaks, standing in the research's figure where it has one), its city's zone, its agreements, what isn't known. */
-export function marketOf(r: Research, reading: unknown, names: Readonly<Record<string, string>>, zones: ReadonlySet<string>): { market: Market; agreements: Record<string, Agreement> } {
+/** The zone of a country's most populous place on the map (the first of equals), or none where the map has no places for it. */
+export function placeZone(root: string, cc: string): string | undefined {
+  const file = join(root, PLACES, `${cc}.tsv`);
+  if (!existsSync(file)) return undefined;
+  let best: { population: number; zone: string } | undefined;
+  for (const line of readFileSync(file, 'utf8').split('\n').filter((l) => l !== '')) {
+    const cols = line.split('\t');
+    const population = Number(cols[7]);
+    if (best === undefined || population > best.population) best = { population, zone: cols[6] as string };
+  }
+  return best?.zone;
+}
+
+/** A territory's languages as identity holds them (CLDR 49, R-4618): each with its share of the people and whether it is official. */
+export type Spoken = readonly { lang: string; share: number; official: boolean }[];
+
+/**
+ * The language a country's work is cast in where its research names none: its most spoken official language by CLDR,
+ * where one is most spoken alone and a person can speak it; none (not settled) otherwise.
+ */
+export function spokenOf(territory: Spoken | undefined, names: Readonly<Record<string, string>>): string | undefined {
+  const official = territory?.filter((l) => l.official);
+  if (official === undefined) return undefined;
+  const most = Math.max(...official.map((l) => l.share));
+  const top = official.filter((l) => l.share === most);
+  return top.length === 1 && Object.hasOwn(names, (top[0] as Spoken[number]).lang) ? (top[0] as Spoken[number]).lang : undefined;
+}
+
+/**
+ * A market: its language (one a person speaks, standing in the research's figure where it has one; where it has none,
+ * its most spoken official one by CLDR), its city's zone
+ * (where the research names no city, its most populous place's), and its agreements: its own, or, where its research
+ * says its work follows another country's terms, that country's as compiled (`done`), each as the territory's own.
+ */
+export function marketOf(r: Research, reading: unknown, names: Readonly<Record<string, string>>, zones: ReadonlySet<string>, place: () => string | undefined, done: Pick<Markets, 'markets' | 'agreements'>, spoken: () => string | undefined): { market: Market; agreements: Record<string, Agreement> } {
   const m = record(reading, `the reading of ${r.country}`);
   const lang = record(m['language'], 'a language');
   const code = String(lang['code']);
@@ -219,15 +265,36 @@ export function marketOf(r: Research, reading: unknown, names: Readonly<Record<s
   if (lang['fig'] !== null) {
     const text = JSON.stringify(figureOf(r, lang['fig'], ['language']));
     if (!new RegExp(`\\b${code}\\b`).test(text) && !text.includes(names[code] as string)) throw new Error(`${r.country}'s language figure doesn't name ${code}`);
+  } else {
+    const most = spoken();
+    if (most !== code) throw new Error(`${r.country}'s research names no language, so it is its most spoken official one by CLDR (${String(most)}), not ${code}`);
   }
   const zone = String(m['zone']);
   if (!zones.has(zone)) throw new Error(`${zone} isn't a zone the clock keeps`);
-  const place = record(figureOf(r, m['market'], ['market']).value, 'a market');
-  const named = place['tz'] ?? place['timeZone'];
-  if (named !== undefined && named !== zone) throw new Error(`${r.country}'s market is in ${String(named)}, not ${zone}`);
+  if (m['market'] === null) {
+    const most = place();
+    if (most !== zone) throw new Error(`${r.country}'s research names no city, so its zone is its most populous place's (${String(most)}), not ${zone}`);
+  } else {
+    const city = record(figureOf(r, m['market'], ['market']).value, 'a market');
+    const named = city['tz'] ?? city['timeZone'];
+    if (named !== undefined && named !== zone) throw new Error(`${r.country}'s market is in ${String(named)}, not ${zone}`);
+  }
   const agreements: Record<string, Agreement> = {};
-  for (const [id, a] of Object.entries(record(m['agreements'], 'the agreements'))) agreements[id] = agreementOf(id, r, a);
-  return { market: { language: code, zone, agreements: Object.keys(agreements), unknown: unknownOf(r.blockers) }, agreements };
+  if (m['follows'] === undefined) {
+    for (const [id, a] of Object.entries(record(m['agreements'], 'the agreements'))) agreements[id] = agreementOf(id, r, a);
+  } else {
+    if (m['agreements'] !== undefined) throw new Error(`${r.country} follows another country's agreements, and has none of its own`);
+    const f = record(m['follows'], 'what a market follows');
+    const cc = String(f['market']);
+    if (record(figureOf(r, f['fig'], ['none']).value, 'a none')['follows'] !== cc) throw new Error(`${r.country}'s figure ${String(f['fig'])} doesn't say its work follows ${cc}'s terms`);
+    if (!Object.hasOwn(done.markets, cc)) throw new Error(`${cc} isn't a market to follow`);
+    for (const id of (done.markets[cc] as Market).agreements) {
+      const a = done.agreements[id] as Agreement;
+      if (a.follows !== undefined) throw new Error(`${cc} follows another country's terms itself`);
+      agreements[`${r.country.toLowerCase()}-${id}`] = { ...a, country: r.country, follows: id };
+    }
+  }
+  return { market: { language: code, zone, agreements: Object.keys(agreements) }, agreements };
 }
 
 /** A market's research, checked against the register's SHA-256 before a byte is read, and whether the register holds its blockers. */
@@ -243,23 +310,56 @@ export function readResearch(root: string, register: Register, cc: string): { re
   return { research, blocked: register.entries.some((e) => e.fact === `${BLOCKED}${cc}`) };
 }
 
-/** Every market the research holds, read as the readings say; a file without a reading, or a reading without a file, is refused. */
+/** What a country's register blocker names unknown, where the register cites only that: each attempt's "not found: <item>". */
+export function blockedOf(register: Register, cc: string): Item[] {
+  const entry = register.entries.find((e) => e.fact === `${BLOCKED}${cc}`);
+  if (entry === undefined) throw new Error(`${SOURCES}/${cc}.json isn't cited by the register`);
+  return unknownOf((entry.attempts as { result: string }[]).map((a) => ({ item: /^not found: (\w+)$/.exec(a.result)?.[1] ?? a.result })));
+}
+
+/**
+ * Every market the research holds, read as the readings say (a territory following another's terms after the rest), and
+ * what each country's research couldn't find; a file the register cites without a reading, a reading without a file
+ * the register cites, or a reading that says why it isn't read and something else, is refused.
+ */
 export function readMarkets(root: string): Markets {
   const read = (path: string) => JSON.parse(readFileSync(join(root, path), 'utf8')) as unknown;
   const readings = record(read(READINGS), 'the readings');
   const register = read('research/register.json') as Register;
-  const names = (read(LANGUAGES) as { names: Record<string, string> }).names;
+  const { names, territories } = read(LANGUAGES) as { names: Record<string, string>; territories: Record<string, Spoken> };
   const tz = read(ZONES) as { zones: object; links: object };
   const zones = new Set([...Object.keys(tz.zones), ...Object.keys(tz.links)]);
   // Stryker disable next-line MethodExpression: the directory's order is sorted on the file systems the gate runs on; the sort holds it on any other.
   const files = existsSync(join(root, SOURCES)) ? readdirSync(join(root, SOURCES)).filter((f) => /^[A-Z]{2}\.json$/.test(f)).map((f) => f.slice(0, -5)).sort() : [];
-  const out: Markets = { markets: {}, agreements: {} };
+  const out: Markets = { markets: {}, agreements: {}, unknown: {} };
   for (const cc of Object.keys(readings).filter((c) => !files.includes(c))) throw new Error(`${cc} has a reading and no research`);
+  const researched: [string, Research][] = [];
   for (const cc of files) {
+    if (!register.entries.some((e) => e.fact === `${FACT}${cc}`)) {
+      out.unknown[cc] = blockedOf(register, cc);
+      if (Object.hasOwn(readings, cc)) throw new Error(`${cc} has a reading, and no research the register cites`);
+      continue;
+    }
     if (!Object.hasOwn(readings, cc)) throw new Error(`${SOURCES}/${cc}.json has no reading`);
     const { research, blocked } = readResearch(root, register, cc);
-    const { market, agreements } = marketOf(research, readings[cc], names, zones);
-    if (blocked !== market.unknown.length > 0) throw new Error(blocked ? `the register holds ${cc}'s blockers, which its research doesn't` : `${cc}'s research has blockers the register doesn't hold`);
+    const unknown = unknownOf(research.blockers);
+    if (blocked !== unknown.length > 0) throw new Error(blocked ? `the register holds ${cc}'s blockers, which its research doesn't` : `${cc}'s research has blockers the register doesn't hold`);
+    out.unknown[cc] = unknown;
+    const reading = record(readings[cc], `the reading of ${cc}`);
+    const why = reading['unread'];
+    if (why === undefined) {
+      researched.push([cc, research]);
+      continue;
+    }
+    // An unread reading may name what its research leaves open without a blocker (whether a sovereign's agreements reach a territory), so the player is told.
+    const told = reading['unknown'] ?? [];
+    if (typeof why !== 'string' || why === '' || !Array.isArray(told) || Object.keys(reading).some((k) => k !== 'unread' && k !== 'unknown')) throw new Error(`${cc}'s reading says why it isn't read, what that leaves unknown, and nothing else`);
+    out.unknown[cc] = unknownOf([...research.blockers, ...told.map((item) => ({ item: String(item) }))]);
+  }
+  // Every reading here is an object (checked above), so whether it follows another's is its own key.
+  const follows = ([c]: [string, Research]) => Object.hasOwn(readings[c] as object, 'follows');
+  for (const [cc, research] of [...researched.filter((x) => !follows(x)), ...researched.filter(follows)]) {
+    const { market, agreements } = marketOf(research, readings[cc], names, zones, () => placeZone(root, cc), out, () => spokenOf(territories[cc], names));
     for (const id of market.agreements) if ((KEPT as readonly string[]).includes(id) || Object.hasOwn(out.agreements, id)) throw new Error(`${id} is another agreement's id`);
     out.markets[cc] = market;
     Object.assign(out.agreements, agreements);

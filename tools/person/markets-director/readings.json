@@ -1,4 +1,80 @@
 {
+ "AD": {"agreements": {
+  "ad-artist": {"forms": ["feature", "hour", "half-hour"], "currency": "EUR",
+   "fees": [
+    {"form": "feature", "per": "day", "fig": 0, "steps": [{"from": "2026-07-01", "path": ["floor", "day"]}]},
+    {"form": "hour", "per": "day", "fig": 0, "steps": [{"from": "2026-07-01", "path": ["floor", "day"]}]},
+    {"form": "half-hour", "per": "day", "fig": 0, "steps": [{"from": "2026-07-01", "path": ["floor", "day"]}]}
+   ]}
+ }},
+ "AE": {"agreements": {
+  "ae-screen": {"forms": ["feature", "hour", "half-hour"], "unknown": true}
+ }},
+ "AF": {"agreements": {
+  "af-screen": {"forms": ["feature", "hour", "half-hour"], "unknown": true}
+ }},
+ "AG": {"agreements": {
+  "ag-screen": {"forms": ["feature", "hour", "half-hour"], "unknown": true}
+ }},
+ "AI": {"agreements": {
+  "ai-screen": {"forms": ["feature", "hour", "half-hour"], "unknown": true}
+ }},
+ "AL": {"agreements": {
+  "al-screen": {"forms": ["feature", "hour", "half-hour"], "unknown": true}
+ }},
+ "AM": {"agreements": {
+  "am-screen": {"forms": ["feature", "hour", "half-hour"], "unknown": true}
+ }},
+ "AN": {"agreements": {
+  "an-screen": {"forms": ["feature", "hour", "half-hour"], "none": {"fig": 0}}
+ }},
+ "AO": {"agreements": {
+  "ao-screen": {"forms": ["feature", "hour", "half-hour"], "unknown": true}
+ }},
+ "AQ": {"agreements": {
+  "aq-screen": {"forms": ["feature", "hour", "half-hour"], "none": {"fig": 0}}
+ }},
+ "AR": {"agreements": {
+  "ar-dac": {"forms": ["feature", "hour", "half-hour"], "currency": "ARS",
+   "fees": [
+    {"form": "hour", "per": "job", "when": {"minutes": [0, 20]}, "fig": 0, "steps": [{"from": "2026-03-01", "path": ["episode", "upTo20"]}]},
+    {"form": "hour", "per": "job", "when": {"minutes": [21, 60]}, "fig": 0, "steps": [{"from": "2026-03-01", "path": ["episode", "21to60"]}]},
+    {"form": "hour", "per": "job", "when": {"minutes": [61, 90]}, "fig": 0, "steps": [{"from": "2026-03-01", "path": ["episode", "61to90"]}]},
+    {"form": "half-hour", "per": "job", "when": {"minutes": [0, 20]}, "fig": 0, "steps": [{"from": "2026-03-01", "path": ["episode", "upTo20"]}]},
+    {"form": "half-hour", "per": "job", "when": {"minutes": [21, 60]}, "fig": 0, "steps": [{"from": "2026-03-01", "path": ["episode", "21to60"]}]},
+    {"form": "half-hour", "per": "job", "when": {"minutes": [61, 90]}, "fig": 0, "steps": [{"from": "2026-03-01", "path": ["episode", "61to90"]}]}
+   ],
+   "periods": [
+    {"form": "feature", "part": "prep", "fig": 1, "path": ["feature", "prepDays"], "unit": "day"},
+    {"form": "feature", "part": "cut", "when": {"minutes": [0, 20]}, "fig": 1, "path": ["cutByLength", "<=20"], "unit": "day"},
+    {"form": "feature", "part": "cut", "when": {"minutes": [21, 60]}, "fig": 1, "path": ["cutByLength", "21-60"], "unit": "day"},
+    {"form": "feature", "part": "cut", "when": {"minutes": [61, 90]}, "fig": 1, "path": ["cutByLength", "61-90"], "unit": "day"},
+    {"form": "feature", "part": "cut", "when": {"minutes": [91, null]}, "fig": 1, "path": ["cutByLength", ">=91"], "unit": "day"},
+    {"form": "hour", "part": "prep", "when": {"minutes": [0, 20]}, "fig": 1, "path": ["episode", "upTo20", 0], "unit": "day"},
+    {"form": "hour", "part": "prep", "when": {"minutes": [21, 60]}, "fig": 1, "path": ["episode", "21to60", 0], "unit": "day"},
+    {"form": "hour", "part": "prep", "when": {"minutes": [61, 90]}, "fig": 1, "path": ["episode", "61to90", 0], "unit": "day"},
+    {"form": "half-hour", "part": "prep", "when": {"minutes": [0, 20]}, "fig": 1, "path": ["episode", "upTo20", 0], "unit": "day"},
+    {"form": "half-hour", "part": "prep", "when": {"minutes": [21, 60]}, "fig": 1, "path": ["episode", "21to60", 0], "unit": "day"},
+    {"form": "half-hour", "part": "prep", "when": {"minutes": [61, 90]}, "fig": 1, "path": ["episode", "61to90", 0], "unit": "day"},
+    {"form": "hour", "part": "cut", "when": {"minutes": [0, 20]}, "fig": 1, "path": ["episode", "upTo20", 2], "unit": "day"},
+    {"form": "hour", "part": "cut", "when": {"minutes": [21, 60]}, "fig": 1, "path": ["episode", "21to60", 2], "unit": "day"},
+    {"form": "hour", "part": "cut", "when": {"minutes": [61, 90]}, "fig": 1, "path": ["episode", "61to90", 2], "unit": "day"},
+    {"form": "half-hour", "part": "cut", "when": {"minutes": [0, 20]}, "fig": 1, "path": ["episode", "upTo20", 2], "unit": "day"},
+    {"form": "half-hour", "part": "cut", "when": {"minutes": [21, 60]}, "fig": 1, "path": ["episode", "21to60", 2], "unit": "day"},
+    {"form": "half-hour", "part": "cut", "when": {"minutes": [61, 90]}, "fig": 1, "path": ["episode", "61to90", 2], "unit": "day"}
+   ]}
+ }},
+ "AS": {"agreements": {
+  "as-screen": {"forms": ["feature", "hour", "half-hour"], "currency": "USD",
+   "fees": [
+    {"form": "feature", "per": "hour", "fig": 0, "steps": [{"from": "2024-09-30", "path": ["hourlyUSD", "2024-09-30"]}]},
+    {"form": "hour", "per": "hour", "fig": 0, "steps": [{"from": "2024-09-30", "path": ["hourlyUSD", "2024-09-30"]}]},
+    {"form": "half-hour", "per": "hour", "fig": 0, "steps": [{"from": "2024-09-30", "path": ["hourlyUSD", "2024-09-30"]}]}
+   ]}
+ }},
+ "AT": {"agreements": {
+  "at-screen": {"forms": ["feature", "hour", "half-hour"], "none": {"fig": 0, "path": ["kvMinimum"]}}
+ }},
  "AU": {"agreements": {
   "au-award": {"forms": ["feature", "hour", "half-hour"], "currency": "AUD",
    "fees": [
@@ -6,6 +82,68 @@
     {"form": "hour", "per": "week", "fig": 0, "steps": [{"from": "2026-07-01", "path": ["level9", "weekly"]}]},
     {"form": "half-hour", "per": "week", "fig": 0, "steps": [{"from": "2026-07-01", "path": ["level9", "weekly"]}]}
    ]}
+ }},
+ "AW": {"agreements": {
+  "aw-screen": {"forms": ["feature", "hour", "half-hour"], "unknown": true}
+ }},
+ "AX": {"follows": {"fig": 0, "market": "FI"}},
+ "AZ": {"agreements": {
+  "az-state-order": {"forms": ["feature", "hour", "half-hour"], "currency": "AZN",
+   "fees": [
+    {"form": "feature", "per": "job", "fig": 1, "steps": [{"from": "2025-01-10", "path": ["feature"]}]},
+    {"form": "hour", "per": "job", "fig": 1, "steps": [{"from": "2025-01-10", "path": ["shortOrEpisode"]}]},
+    {"form": "half-hour", "per": "job", "fig": 1, "steps": [{"from": "2025-01-10", "path": ["shortOrEpisode"]}]}
+   ]},
+  "az-screen": {"forms": ["feature", "hour", "half-hour"], "none": {"fig": 0, "path": ["fees"]}}
+ }},
+ "BA": {"agreements": {
+  "ba-screen": {"forms": ["feature", "hour", "half-hour"], "none": {"fig": 0, "path": ["minimumFee"]}}
+ }},
+ "BB": {"agreements": {
+  "bb-screen": {"forms": ["feature", "hour", "half-hour"], "unknown": true}
+ }},
+ "BD": {"agreements": {
+  "bd-screen": {"forms": ["feature", "hour", "half-hour"], "unknown": true}
+ }},
+ "BE": {"agreements": {
+  "be-303-flat": {"forms": ["feature"], "currency": "EUR",
+   "fees": [
+    {"form": "feature", "per": "job", "fig": 0, "steps": [{"from": "2026-06-01", "path": ["featureFlatMinimum", "amount"]}]}
+   ]},
+  "be-303": {"forms": ["feature", "hour", "half-hour"], "currency": "EUR",
+   "fees": [
+    {"form": "feature", "per": "week", "fig": 0, "steps": [{"from": "2026-06-01", "path": ["scale", "fixedTermStartWeeklyEUR"]}]},
+    {"form": "hour", "per": "week", "fig": 0, "steps": [{"from": "2026-06-01", "path": ["scale", "fixedTermStartWeeklyEUR"]}]},
+    {"form": "half-hour", "per": "week", "fig": 0, "steps": [{"from": "2026-06-01", "path": ["scale", "fixedTermStartWeeklyEUR"]}]}
+   ]}
+ }},
+ "BF": {"agreements": {
+  "bf-screen": {"forms": ["feature", "hour", "half-hour"], "unknown": true}
+ }},
+ "BG": {"agreements": {
+  "bg-screen": {"forms": ["feature", "hour", "half-hour"], "unknown": true}
+ }},
+ "BH": {"agreements": {
+  "bh-screen": {"forms": ["feature", "hour", "half-hour"], "unknown": true}
+ }},
+ "BI": {"agreements": {
+  "bi-screen": {"forms": ["feature", "hour", "half-hour"], "unknown": true}
+ }},
+ "BJ": {"agreements": {
+  "bj-screen": {"forms": ["feature", "hour", "half-hour"], "unknown": true}
+ }},
+ "BL": {"follows": {"fig": 0, "market": "FR"}},
+ "BM": {"agreements": {
+  "bm-screen": {"forms": ["feature", "hour", "half-hour"], "unknown": true}
+ }},
+ "BN": {"agreements": {
+  "bn-screen": {"forms": ["feature", "hour", "half-hour"], "unknown": true}
+ }},
+ "BO": {"agreements": {
+  "bo-screen": {"forms": ["feature", "hour", "half-hour"], "unknown": true}
+ }},
+ "BQ": {"agreements": {
+  "bq-screen": {"forms": ["feature", "hour", "half-hour"], "unknown": true}
  }},
  "BR": {"agreements": {
   "br-sp": {"forms": ["feature", "hour", "half-hour"], "currency": "BRL", "fig": 0,
@@ -15,6 +153,24 @@
     {"form": "half-hour", "per": "week", "fig": 1, "steps": [{"from": "2025-05-01", "path": ["tvFilmSeriesNovela", "diretor", 0]}]}
    ]},
   "br-rj": {"forms": ["feature", "hour", "half-hour"], "unknown": true}
+ }},
+ "BS": {"agreements": {
+  "bs-screen": {"forms": ["feature", "hour", "half-hour"], "unknown": true}
+ }},
+ "BT": {"agreements": {
+  "bt-screen": {"forms": ["feature", "hour", "half-hour"], "unknown": true}
+ }},
+ "BV": {"agreements": {
+  "bv-screen": {"forms": ["feature", "hour", "half-hour"], "unknown": true}
+ }},
+ "BW": {"agreements": {
+  "bw-screen": {"forms": ["feature", "hour", "half-hour"], "none": {"fig": 0}}
+ }},
+ "BY": {"agreements": {
+  "by-screen": {"forms": ["feature", "hour", "half-hour"], "unknown": true}
+ }},
+ "BZ": {"agreements": {
+  "bz-screen": {"forms": ["feature", "hour", "half-hour"], "unknown": true}
  }},
  "CA": {"agreements": {
   "cmpa-dgc": {"forms": ["feature", "hour", "half-hour"], "unknown": true},
@@ -94,6 +250,64 @@
     {"form": "feature", "per": "share", "when": {"budget": [1000001, null]}, "fig": 12, "floor": ["over1MFloor"], "steps": [{"from": "2022-01-31", "path": ["dramaShareOfBudget"]}]}
    ]}
  }},
+ "CC": {"follows": {"fig": 0, "market": "AU"}},
+ "CD": {"agreements": {
+  "cd-screen": {"forms": ["feature", "hour", "half-hour"], "unknown": true}
+ }},
+ "CF": {"agreements": {
+  "cf-screen": {"forms": ["feature", "hour", "half-hour"], "unknown": true}
+ }},
+ "CG": {"agreements": {
+  "cg-screen": {"forms": ["feature", "hour", "half-hour"], "unknown": true}
+ }},
+ "CH": {"agreements": {
+  "ch-screen": {"forms": ["feature"], "none": {"fig": 0, "path": ["featureFiction", "agreed"]}}
+ }},
+ "CI": {"agreements": {
+  "ci-screen": {"forms": ["feature", "hour", "half-hour"], "unknown": true}
+ }},
+ "CK": {"agreements": {
+  "ck-screen": {"forms": ["feature", "hour", "half-hour"], "unknown": true}
+ }},
+ "CL": {"agreements": {
+  "cl-screen": {"forms": ["feature", "hour", "half-hour"], "none": {"fig": 0}}
+ }},
+ "CM": {"agreements": {
+  "cm-screen": {"forms": ["feature", "hour", "half-hour"], "unknown": true}
+ }},
+ "CN": {"agreements": {
+  "cn-screen": {"forms": ["feature", "hour", "half-hour"], "unknown": true}
+ }},
+ "CO": {"agreements": {
+  "co-screen": {"forms": ["feature", "hour", "half-hour"], "unknown": true}
+ }},
+ "CR": {"agreements": {
+  "cr-screen": {"forms": ["feature", "hour", "half-hour"], "unknown": true}
+ }},
+ "CS": {"agreements": {
+  "cs-screen": {"forms": ["feature", "hour", "half-hour"], "none": {"fig": 0}}
+ }},
+ "CU": {"agreements": {
+  "cu-icaic": {"forms": ["feature", "hour", "half-hour"], "currency": "CUP",
+   "fees": [
+    {"form": "feature", "per": "month", "fig": 0, "steps": [{"from": "2026-07-01", "path": ["levels", "3", "pay44h"]}]},
+    {"form": "hour", "per": "month", "fig": 0, "steps": [{"from": "2026-07-01", "path": ["levels", "3", "pay44h"]}]},
+    {"form": "half-hour", "per": "month", "fig": 0, "steps": [{"from": "2026-07-01", "path": ["levels", "3", "pay44h"]}]}
+   ]}
+ }},
+ "CV": {"agreements": {
+  "cv-screen": {"forms": ["feature", "hour", "half-hour"], "unknown": true}
+ }},
+ "CW": {"agreements": {
+  "cw-screen": {"forms": ["feature", "hour", "half-hour"], "unknown": true}
+ }},
+ "CX": {"follows": {"fig": 0, "market": "AU"}},
+ "CY": {"agreements": {
+  "cy-screen": {"forms": ["feature", "hour", "half-hour"], "unknown": true}
+ }},
+ "CZ": {"agreements": {
+  "cz-screen": {"forms": ["feature", "hour", "half-hour"], "unknown": true}
+ }},
  "DE": {"agreements": {
   "bvr-cinema": {"forms": ["feature"], "currency": "EUR",
    "fees": [
@@ -118,12 +332,57 @@
     {"form": "hour", "per": "day", "phases": ["shoot"], "when": {"budget": [2700001, null]}, "band": [16, null], "fig": 5, "steps": [{"from": "2025-07-01", "path": ["extraDayEUR", "high"]}]}
    ]}
  }},
+ "DJ": {"agreements": {
+  "dj-screen": {"forms": ["feature", "hour", "half-hour"], "unknown": true}
+ }},
  "DK": {"agreements": {
   "dk-feature": {"forms": ["feature"], "none": {"fig": 4}},
   "dr": {"forms": ["hour", "half-hour"], "unknown": true}
  }},
+ "DM": {"agreements": {
+  "dm-screen": {"forms": ["feature", "hour", "half-hour"], "unknown": true}
+ }},
+ "DO": {"agreements": {
+  "do-screen": {"forms": ["feature", "hour", "half-hour"], "unknown": true}
+ }},
+ "DZ": {"agreements": {
+  "dz-screen": {"forms": ["feature", "hour", "half-hour"], "unknown": true}
+ }},
+ "EC": {"agreements": {
+  "ec-screen": {"forms": ["feature", "hour", "half-hour"], "unknown": true}
+ }},
+ "EE": {"agreements": {
+  "ee-screen": {"forms": ["feature", "hour", "half-hour"], "unknown": true}
+ }},
+ "EG": {"agreements": {
+  "eg-screen": {"forms": ["feature", "hour", "half-hour"], "unknown": true}
+ }},
+ "EH": {"agreements": {
+  "eh-screen": {"forms": ["feature", "hour", "half-hour"], "unknown": true}
+ }},
+ "ER": {"agreements": {
+  "er-screen": {"forms": ["feature", "hour", "half-hour"], "unknown": true}
+ }},
  "ES": {"agreements": {
   "es-screen": {"forms": ["feature", "hour", "half-hour"], "none": {"fig": 0}}
+ }},
+ "ET": {"agreements": {
+  "et-screen": {"forms": ["feature", "hour", "half-hour"], "unknown": true}
+ }},
+ "FI": {"agreements": {
+  "fi-screen": {"forms": ["feature", "hour", "half-hour"], "none": {"fig": 0}}
+ }},
+ "FJ": {"agreements": {
+  "fj-screen": {"forms": ["feature", "hour", "half-hour"], "unknown": true}
+ }},
+ "FK": {"agreements": {
+  "fk-screen": {"forms": ["feature", "hour", "half-hour"], "unknown": true}
+ }},
+ "FM": {"agreements": {
+  "fm-screen": {"forms": ["feature", "hour", "half-hour"], "unknown": true}
+ }},
+ "FO": {"agreements": {
+  "fo-screen": {"forms": ["feature", "hour", "half-hour"], "unknown": true}
  }},
  "FR": {"agreements": {
   "idcc-3097": {"forms": ["feature"], "currency": "EUR",
@@ -133,30 +392,265 @@
    ]},
   "idcc-2642": {"forms": ["hour", "half-hour"], "unknown": true}
  }},
+ "GA": {"agreements": {
+  "ga-screen": {"forms": ["feature", "hour", "half-hour"], "unknown": true}
+ }},
  "GB": {"agreements": {
   "gb-feature": {"forms": ["feature"], "none": {"fig": 1, "path": ["setsFees"]}},
   "pact-duk": {"forms": ["hour", "half-hour"], "unknown": true}
  }},
+ "GD": {"agreements": {
+  "gd-screen": {"forms": ["feature", "hour", "half-hour"], "unknown": true}
+ }},
+ "GE": {"agreements": {
+  "ge-screen": {"forms": ["feature", "hour", "half-hour"], "unknown": true}
+ }},
+ "GF": {"follows": {"fig": 0, "market": "FR"}},
+ "GG": {"agreements": {
+  "gg-screen": {"forms": ["feature", "hour", "half-hour"], "unknown": true}
+ }},
+ "GH": {"agreements": {
+  "gh-screen": {"forms": ["feature", "hour", "half-hour"], "unknown": true}
+ }},
+ "GI": {"agreements": {
+  "gi-screen": {"forms": ["feature", "hour", "half-hour"], "unknown": true}
+ }},
+ "GL": {"agreements": {
+  "gl-screen": {"forms": ["feature", "hour", "half-hour"], "unknown": true}
+ }},
+ "GM": {"agreements": {
+  "gm-screen": {"forms": ["feature", "hour", "half-hour"], "unknown": true}
+ }},
+ "GN": {"agreements": {
+  "gn-screen": {"forms": ["feature", "hour", "half-hour"], "unknown": true}
+ }},
+ "GP": {"follows": {"fig": 0, "market": "FR"}},
+ "GQ": {"agreements": {
+  "gq-screen": {"forms": ["feature", "hour", "half-hour"], "unknown": true}
+ }},
+ "GR": {"agreements": {
+  "gr-ert": {"forms": ["hour", "half-hour"], "unknown": true},
+  "gr-screen": {"forms": ["feature"], "unknown": true}
+ }},
+ "GS": {"agreements": {
+  "gs-screen": {"forms": ["feature", "hour", "half-hour"], "none": {"fig": 0}}
+ }},
+ "GT": {"agreements": {
+  "gt-screen": {"forms": ["feature", "hour", "half-hour"], "unknown": true}
+ }},
+ "GU": {"agreements": {
+  "gu-screen": {"forms": ["feature", "hour", "half-hour"], "unknown": true}
+ }},
+ "GW": {"agreements": {
+  "gw-screen": {"forms": ["feature", "hour", "half-hour"], "unknown": true}
+ }},
+ "GY": {"agreements": {
+  "gy-screen": {"forms": ["feature", "hour", "half-hour"], "unknown": true}
+ }},
+ "HK": {"agreements": {
+  "hk-screen": {"forms": ["feature", "hour", "half-hour"], "none": {"fig": 0, "path": ["fees"]}}
+ }},
+ "HM": {"agreements": {
+  "hm-screen": {"forms": ["feature", "hour", "half-hour"], "none": {"fig": 0}}
+ }},
+ "HN": {"agreements": {
+  "hn-screen": {"forms": ["feature", "hour", "half-hour"], "unknown": true}
+ }},
+ "HR": {"agreements": {"hr-screen": {"forms": ["feature", "hour", "half-hour"], "unknown": true}}},
+ "HT": {"agreements": {
+  "ht-screen": {"forms": ["feature", "hour", "half-hour"], "unknown": true}
+ }},
+ "HU": {"agreements": {"hu-screen": {"forms": ["feature", "hour", "half-hour"], "unknown": true}}},
+ "ID": {"agreements": {
+  "id-screen": {"forms": ["feature", "hour", "half-hour"], "unknown": true}
+ }},
  "IE": {"agreements": {
   "ie-screen": {"forms": ["feature", "hour", "half-hour"], "none": {"fig": 0}}
+ }},
+ "IL": {"agreements": {
+  "il-screen": {"forms": ["feature", "hour", "half-hour"], "unknown": true}
+ }},
+ "IM": {"agreements": {
+  "im-screen": {"forms": ["feature", "hour", "half-hour"], "unknown": true}
  }},
  "IN": {"agreements": {
   "in-screen": {"forms": ["feature", "hour", "half-hour"], "unknown": true}
  }},
+ "IO": {"agreements": {
+  "io-screen": {"forms": ["feature", "hour", "half-hour"], "none": {"fig": 0}}
+ }},
+ "IQ": {"agreements": {
+  "iq-screen": {"forms": ["feature", "hour", "half-hour"], "unknown": true}
+ }},
+ "IR": {"agreements": {
+  "ir-screen": {"forms": ["feature", "hour", "half-hour"], "unknown": true}
+ }},
+ "IS": {"agreements": {
+  "is-screen": {"forms": ["feature", "hour", "half-hour"], "unknown": true}
+ }},
  "IT": {"agreements": {
   "it-screen": {"forms": ["feature", "hour", "half-hour"], "none": {"fig": 0}}
+ }},
+ "JE": {"agreements": {
+  "je-screen": {"forms": ["feature", "hour", "half-hour"], "none": {"fig": 0}}
+ }},
+ "JM": {"agreements": {
+  "jm-screen": {"forms": ["feature", "hour", "half-hour"], "unknown": true}
+ }},
+ "JO": {"agreements": {
+  "jo-screen": {"forms": ["feature", "hour", "half-hour"], "unknown": true}
  }},
  "JP": {"agreements": {
   "dgj-eiren": {"forms": ["feature", "hour", "half-hour"], "unknown": true}
  }},
+ "KE": {"agreements": {
+  "ke-screen": {"forms": ["feature", "hour", "half-hour"], "unknown": true}
+ }},
+ "KG": {"agreements": {
+  "kg-screen": {"forms": ["feature", "hour", "half-hour"], "unknown": true}
+ }},
+ "KH": {"agreements": {
+  "kh-screen": {"forms": ["feature", "hour", "half-hour"], "unknown": true}
+ }},
+ "KI": {"agreements": {
+  "ki-screen": {"forms": ["feature", "hour", "half-hour"], "unknown": true}
+ }},
+ "KM": {"agreements": {
+  "km-screen": {"forms": ["feature", "hour", "half-hour"], "unknown": true}
+ }},
+ "KN": {"agreements": {
+  "kn-screen": {"forms": ["feature", "hour", "half-hour"], "unknown": true}
+ }},
+ "KP": {"agreements": {
+  "kp-screen": {"forms": ["feature", "hour", "half-hour"], "unknown": true}
+ }},
  "KR": {"agreements": {
   "kr-screen": {"forms": ["feature", "hour", "half-hour"], "unknown": true}
+ }},
+ "KW": {"agreements": {
+  "kw-screen": {"forms": ["feature", "hour", "half-hour"], "unknown": true}
+ }},
+ "KY": {"agreements": {
+  "ky-screen": {"forms": ["feature", "hour", "half-hour"], "unknown": true}
+ }},
+ "KZ": {"agreements": {
+  "kz-screen": {"forms": ["feature", "hour", "half-hour"], "unknown": true}
+ }},
+ "LA": {"agreements": {
+  "la-screen": {"forms": ["feature", "hour", "half-hour"], "unknown": true}
+ }},
+ "LB": {"agreements": {
+  "lb-screen": {"forms": ["feature", "hour", "half-hour"], "unknown": true}
+ }},
+ "LC": {"agreements": {
+  "lc-screen": {"forms": ["feature", "hour", "half-hour"], "unknown": true}
+ }},
+ "LI": {"agreements": {
+  "li-screen": {"forms": ["feature", "hour", "half-hour"], "none": {"fig": 0}}
+ }},
+ "LK": {"agreements": {
+  "lk-screen": {"forms": ["feature", "hour", "half-hour"], "unknown": true}
+ }},
+ "LR": {"agreements": {
+  "lr-screen": {"forms": ["feature", "hour", "half-hour"], "unknown": true}
+ }},
+ "LS": {"agreements": {
+  "ls-screen": {"forms": ["feature", "hour", "half-hour"], "unknown": true}
+ }},
+ "LT": {"agreements": {
+  "lt-screen": {"forms": ["feature", "hour", "half-hour"], "unknown": true}
+ }},
+ "LU": {"agreements": {
+  "lu-screen": {"forms": ["feature", "hour", "half-hour"], "unknown": true}
+ }},
+ "LV": {"agreements": {
+  "lv-screen": {"forms": ["feature", "hour", "half-hour"], "none": {"fig": 0, "path": ["fees"]}}
+ }},
+ "LY": {"agreements": {
+  "ly-screen": {"forms": ["feature", "hour", "half-hour"], "unknown": true}
+ }},
+ "MA": {"agreements": {
+  "ma-screen": {"forms": ["feature", "hour", "half-hour"], "unknown": true}
+ }},
+ "MC": {"agreements": {
+  "mc-screen": {"forms": ["feature", "hour", "half-hour"], "unknown": true}
+ }},
+ "MD": {"agreements": {
+  "md-screen": {"forms": ["feature", "hour", "half-hour"], "unknown": true}
+ }},
+ "ME": {"agreements": {
+  "me-screen": {"forms": ["feature", "hour", "half-hour"], "none": {"fig": 0, "path": ["minimumFee"]}}
+ }},
+ "MF": {"follows": {"fig": 0, "market": "FR"}},
+ "MG": {"agreements": {
+  "mg-screen": {"forms": ["feature", "hour", "half-hour"], "unknown": true}
+ }},
+ "MH": {"agreements": {
+  "mh-screen": {"forms": ["feature", "hour", "half-hour"], "unknown": true}
+ }},
+ "MK": {"agreements": {
+  "mk-screen": {"forms": ["feature", "hour", "half-hour"], "unknown": true}
+ }},
+ "ML": {"agreements": {
+  "ml-screen": {"forms": ["feature", "hour", "half-hour"], "unknown": true}
+ }},
+ "MM": {"agreements": {
+  "mm-screen": {"forms": ["feature", "hour", "half-hour"], "unknown": true}
+ }},
+ "MN": {"agreements": {
+  "mn-screen": {"forms": ["feature", "hour", "half-hour"], "unknown": true}
+ }},
+ "MO": {"agreements": {
+  "mo-screen": {"forms": ["feature", "hour", "half-hour"], "unknown": true}
+ }},
+ "MP": {"agreements": {
+  "mp-screen": {"forms": ["feature", "hour", "half-hour"], "unknown": true}
+ }},
+ "MQ": {"agreements": {
+  "mq-screen": {"forms": ["feature", "hour", "half-hour"], "unknown": true}
+ }},
+ "MR": {"agreements": {
+  "mr-screen": {"forms": ["feature", "hour", "half-hour"], "unknown": true}
+ }},
+ "MS": {"agreements": {
+  "ms-screen": {"forms": ["feature", "hour", "half-hour"], "unknown": true}
+ }},
+ "MT": {"agreements": {
+  "mt-screen": {"forms": ["feature", "hour", "half-hour"], "unknown": true}
+ }},
+ "MU": {"agreements": {
+  "mu-screen": {"forms": ["feature", "hour", "half-hour"], "unknown": true}
+ }},
+ "MV": {"agreements": {
+  "mv-screen": {"forms": ["feature", "hour", "half-hour"], "unknown": true}
+ }},
+ "MW": {"agreements": {
+  "mw-screen": {"forms": ["feature", "hour", "half-hour"], "unknown": true}
  }},
  "MX": {"agreements": {
   "mx-screen": {"forms": ["feature", "hour", "half-hour"], "unknown": true}
  }},
+ "MY": {"agreements": {
+  "my-screen": {"forms": ["feature", "hour", "half-hour"], "unknown": true}
+ }},
+ "MZ": {"agreements": {
+  "mz-screen": {"forms": ["feature", "hour", "half-hour"], "unknown": true}
+ }},
+ "NA": {"agreements": {
+  "na-screen": {"forms": ["feature", "hour", "half-hour"], "unknown": true}
+ }},
+ "NC": {"agreements": {
+  "nc-screen": {"forms": ["feature", "hour", "half-hour"], "none": {"fig": 0}}
+ }},
+ "NE": {"agreements": {
+  "ne-screen": {"forms": ["feature", "hour", "half-hour"], "unknown": true}
+ }},
+ "NF": {"follows": {"fig": 0, "market": "AU"}},
  "NG": {"agreements": {
   "ng-screen": {"forms": ["feature", "hour", "half-hour"], "unknown": true}
+ }},
+ "NI": {"agreements": {
+  "ni-screen": {"forms": ["feature", "hour", "half-hour"], "unknown": true}
  }},
  "NL": {"agreements": {
   "nl-fair-pay": {"forms": ["feature", "hour", "half-hour"], "currency": "EUR", "fig": 4,
@@ -199,8 +693,93 @@
     {"form": "half-hour", "per": "month", "phases": ["prep", "cut"], "when": {"years": [10, null]}, "fig": 2, "steps": [{"from": "2025-06-01", "path": ["prep_post", "10y"]}]}
    ]}
  }},
+ "NP": {"agreements": {
+  "np-screen": {"forms": ["feature", "hour", "half-hour"], "unknown": true}
+ }},
+ "NR": {"agreements": {
+  "nr-screen": {"forms": ["feature", "hour", "half-hour"], "unknown": true}
+ }},
+ "NU": {"agreements": {
+  "nu-screen": {"forms": ["feature", "hour", "half-hour"], "unknown": true}
+ }},
  "NZ": {"agreements": {
   "nz-screen": {"forms": ["feature", "hour", "half-hour"], "none": {"fig": 0}}
+ }},
+ "OM": {"agreements": {
+  "om-screen": {"forms": ["feature", "hour", "half-hour"], "unknown": true}
+ }},
+ "PA": {"agreements": {
+  "pa-screen": {"forms": ["feature", "hour", "half-hour"], "none": {"fig": 0, "path": ["minimumFee"]}}
+ }},
+ "PE": {"agreements": {
+  "pe-screen": {"forms": ["feature", "hour", "half-hour"], "unknown": true}
+ }},
+ "PF": {"agreements": {
+  "pf-screen": {"forms": ["feature", "hour", "half-hour"], "unknown": true}
+ }},
+ "PG": {"agreements": {
+  "pg-screen": {"forms": ["feature", "hour", "half-hour"], "unknown": true}
+ }},
+ "PH": {"agreements": {
+  "ph-screen": {"forms": ["feature", "hour", "half-hour"], "currency": "PHP",
+   "fees": [
+    {"form": "feature", "per": "day", "fig": 0, "steps": [{"from": "2026-09-26", "path": ["floorNCR", "day"]}]},
+    {"form": "hour", "per": "day", "fig": 0, "steps": [{"from": "2026-09-26", "path": ["floorNCR", "day"]}]},
+    {"form": "half-hour", "per": "day", "fig": 0, "steps": [{"from": "2026-09-26", "path": ["floorNCR", "day"]}]}
+   ]}
+ }},
+ "PK": {"agreements": {
+  "pk-screen": {"forms": ["feature", "hour", "half-hour"], "unknown": true}
+ }},
+ "PL": {"agreements": {
+  "pl-screen": {"forms": ["feature", "hour", "half-hour"], "unknown": true}
+ }},
+ "PM": {"follows": {"fig": 0, "market": "FR"}},
+ "PN": {"agreements": {
+  "pn-screen": {"forms": ["feature", "hour", "half-hour"], "none": {"fig": 0}}
+ }},
+ "PR": {"agreements": {
+  "pr-screen": {"forms": ["feature", "hour", "half-hour"], "none": {"fig": 0}}
+ }},
+ "PS": {"agreements": {
+  "ps-screen": {"forms": ["feature", "hour", "half-hour"], "unknown": true}
+ }},
+ "PT": {"agreements": {
+  "pt-screen": {"forms": ["feature", "hour", "half-hour"], "unknown": true}
+ }},
+ "PW": {"agreements": {
+  "pw-screen": {"forms": ["feature", "hour", "half-hour"], "unknown": true}
+ }},
+ "PY": {"agreements": {
+  "py-screen": {"forms": ["feature", "hour", "half-hour"], "unknown": true}
+ }},
+ "QA": {"agreements": {
+  "qa-screen": {"forms": ["feature", "hour", "half-hour"], "unknown": true}
+ }},
+ "RE": {"follows": {"fig": 0, "market": "FR"}},
+ "RO": {"agreements": {
+  "ro-screen": {"forms": ["feature", "hour", "half-hour"], "unknown": true}
+ }},
+ "RS": {"agreements": {
+  "rs-screen": {"forms": ["feature", "hour", "half-hour"], "unknown": true}
+ }},
+ "RU": {"agreements": {
+  "ru-screen": {"forms": ["feature", "hour", "half-hour"], "unknown": true}
+ }},
+ "RW": {"agreements": {
+  "rw-screen": {"forms": ["feature", "hour", "half-hour"], "unknown": true}
+ }},
+ "SA": {"agreements": {
+  "sa-screen": {"forms": ["feature", "hour", "half-hour"], "unknown": true}
+ }},
+ "SB": {"agreements": {
+  "sb-screen": {"forms": ["feature", "hour", "half-hour"], "unknown": true}
+ }},
+ "SC": {"agreements": {
+  "sc-screen": {"forms": ["feature", "hour", "half-hour"], "unknown": true}
+ }},
+ "SD": {"agreements": {
+  "sd-screen": {"forms": ["feature", "hour", "half-hour"], "unknown": true}
  }},
  "SE": {"agreements": {
   "medieforetagen": {"forms": ["feature", "hour", "half-hour"], "currency": "SEK", "month": {"fig": 1, "path": ["singleDaysOutsideTerm"], "days": 21},
@@ -225,7 +804,156 @@
     {"form": "half-hour", "per": "month", "when": {"minutes": [15, null]}, "fig": 3, "steps": [{"from": "2024-12-23", "path": ["monthlyWorkFee"]}]}
    ]}
  }},
+ "SG": {"agreements": {
+  "sg-screen": {"forms": ["feature", "hour", "half-hour"], "unknown": true}
+ }},
+ "SH": {"agreements": {
+  "sh-screen": {"forms": ["feature", "hour", "half-hour"], "unknown": true}
+ }},
+ "SI": {"agreements": {
+  "si-screen": {"forms": ["feature", "hour", "half-hour"], "unknown": true}
+ }},
+ "SJ": {"agreements": {
+  "sj-screen": {"forms": ["feature", "hour", "half-hour"], "unknown": true}
+ }},
+ "SK": {"agreements": {
+  "sk-screen": {"forms": ["feature", "hour", "half-hour"], "none": {"fig": 0, "path": ["minimumFee"]}}
+ }},
+ "SL": {"agreements": {
+  "sl-screen": {"forms": ["feature", "hour", "half-hour"], "unknown": true}
+ }},
+ "SM": {"agreements": {
+  "sm-screen": {"forms": ["feature", "hour", "half-hour"], "unknown": true}
+ }},
+ "SN": {"agreements": {
+  "sn-screen": {"forms": ["feature", "hour", "half-hour"], "unknown": true}
+ }},
+ "SO": {"agreements": {
+  "so-screen": {"forms": ["feature", "hour", "half-hour"], "unknown": true}
+ }},
+ "SR": {"agreements": {
+  "sr-screen": {"forms": ["feature", "hour", "half-hour"], "unknown": true}
+ }},
+ "SS": {"agreements": {
+  "ss-screen": {"forms": ["feature", "hour", "half-hour"], "unknown": true}
+ }},
+ "ST": {"agreements": {
+  "st-screen": {"forms": ["feature", "hour", "half-hour"], "unknown": true}
+ }},
+ "SV": {"agreements": {
+  "sv-screen": {"forms": ["feature", "hour", "half-hour"], "unknown": true}
+ }},
+ "SX": {"agreements": {
+  "sx-screen": {"forms": ["feature", "hour", "half-hour"], "unknown": true}
+ }},
+ "SY": {"agreements": {
+  "sy-screen": {"forms": ["feature", "hour", "half-hour"], "unknown": true}
+ }},
+ "SZ": {"agreements": {
+  "sz-screen": {"forms": ["feature", "hour", "half-hour"], "unknown": true}
+ }},
+ "TC": {"agreements": {
+  "tc-screen": {"forms": ["feature", "hour", "half-hour"], "unknown": true}
+ }},
+ "TD": {"agreements": {
+  "td-screen": {"forms": ["feature", "hour", "half-hour"], "unknown": true}
+ }},
+ "TF": {"agreements": {
+  "tf-screen": {"forms": ["feature", "hour", "half-hour"], "unknown": true}
+ }},
+ "TG": {"agreements": {
+  "tg-screen": {"forms": ["feature", "hour", "half-hour"], "unknown": true}
+ }},
+ "TH": {"agreements": {
+  "th-screen": {"forms": ["feature", "hour", "half-hour"], "none": {"fig": 0}}
+ }},
+ "TJ": {"agreements": {
+  "tj-screen": {"forms": ["feature", "hour", "half-hour"], "unknown": true}
+ }},
+ "TK": {"agreements": {
+  "tk-screen": {"forms": ["feature", "hour", "half-hour"], "unknown": true}
+ }},
+ "TL": {"agreements": {
+  "tl-screen": {"forms": ["feature", "hour", "half-hour"], "unknown": true}
+ }},
+ "TM": {"agreements": {
+  "tm-screen": {"forms": ["feature", "hour", "half-hour"], "unknown": true}
+ }},
+ "TN": {"agreements": {
+  "tn-screen": {"forms": ["feature", "hour", "half-hour"], "unknown": true}
+ }},
+ "TO": {"agreements": {
+  "to-screen": {"forms": ["feature", "hour", "half-hour"], "unknown": true}
+ }},
+ "TR": {"agreements": {
+  "tr-screen": {"forms": ["feature", "hour", "half-hour"], "unknown": true}
+ }},
+ "TT": {"agreements": {
+  "tt-screen": {"forms": ["feature", "hour", "half-hour"], "unknown": true}
+ }},
+ "TV": {"agreements": {
+  "tv-screen": {"forms": ["feature", "hour", "half-hour"], "unknown": true}
+ }},
+ "TW": {"agreements": {
+  "tw-screen": {"forms": ["feature", "hour", "half-hour"], "unknown": true}
+ }},
+ "TZ": {"agreements": {"tz-screen": {"forms": ["feature", "hour", "half-hour"], "unknown": true}}},
+ "UA": {"agreements": {
+  "ua-screen": {"forms": ["feature", "hour", "half-hour"], "unknown": true}
+ }},
+ "UG": {"agreements": {
+  "ug-screen": {"forms": ["feature", "hour", "half-hour"], "unknown": true}
+ }},
+ "UM": {"agreements": {
+  "um-screen": {"forms": ["feature", "hour", "half-hour"], "none": {"fig": 0}}
+ }},
+ "UY": {"agreements": {
+  "uy-screen": {"forms": ["feature", "hour", "half-hour"], "unknown": true}
+ }},
+ "UZ": {"agreements": {
+  "uz-screen": {"forms": ["feature", "hour", "half-hour"], "unknown": true}
+ }},
+ "VA": {"agreements": {
+  "va-screen": {"forms": ["feature", "hour", "half-hour"], "none": {"fig": 0}}
+ }},
+ "VC": {"agreements": {
+  "vc-screen": {"forms": ["feature", "hour", "half-hour"], "unknown": true}
+ }},
+ "VE": {"agreements": {
+  "ve-screen": {"forms": ["feature", "hour", "half-hour"], "unknown": true}
+ }},
+ "VG": {"agreements": {
+  "vg-screen": {"forms": ["feature", "hour", "half-hour"], "unknown": true}
+ }},
+ "VI": {"agreements": {
+  "vi-screen": {"forms": ["feature", "hour", "half-hour"], "unknown": true}
+ }},
+ "VN": {"agreements": {
+  "vn-screen": {"forms": ["feature", "hour", "half-hour"], "unknown": true}
+ }},
+ "VU": {"agreements": {
+  "vu-screen": {"forms": ["feature", "hour", "half-hour"], "unknown": true}
+ }},
+ "WF": {"agreements": {
+  "wf-screen": {"forms": ["feature", "hour", "half-hour"], "unknown": true}
+ }},
+ "WS": {"agreements": {
+  "ws-screen": {"forms": ["feature", "hour", "half-hour"], "unknown": true}
+ }},
+ "XK": {"agreements": {
+  "xk-screen": {"forms": ["feature", "hour", "half-hour"], "unknown": true}
+ }},
+ "YE": {"agreements": {
+  "ye-screen": {"forms": ["feature", "hour", "half-hour"], "unknown": true}
+ }},
+ "YT": {"follows": {"fig": 0, "market": "FR"}},
  "ZA": {"agreements": {
   "za-screen": {"forms": ["feature", "hour", "half-hour"], "none": {"fig": 0}}
+ }},
+ "ZM": {"agreements": {
+  "zm-screen": {"forms": ["feature", "hour", "half-hour"], "unknown": true}
+ }},
+ "ZW": {"agreements": {
+  "zw-screen": {"forms": ["feature", "hour", "half-hour"], "unknown": true}
  }}
 }

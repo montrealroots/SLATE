@@ -1,0 +1,176 @@
+{
+ "topic": "tax.FM",
+ "read": "2026-11-01",
+ "note": "Read 2026-11-01 at the owner's word (\"Build those first 3 starting with ledger first\"; of the 21 countries read first: \"It should cover across every country\"; \"Retry the blocked tax facts once all countries land\"): the tax on a screen worker's pay in Micronesia: a resident's income tax, social contributions, what is withheld at source, a non-resident artiste's withholding, an author's treatment, VAT and the tax year. Research and retry subagents (workbench/briefs/BRIEF-tax.md, BRIEF-tax-retry.md), every quote checked by the lead against its saved page.",
+ "figures": [
+  {
+   "item": "residents",
+   "finding": "The national government levies a wage and salary tax (with a tax-free threshold) and a gross receipts tax on business, half of each shared with the states; their rates were not found.",
+   "value": {
+    "currency": "USD",
+    "wageAndSalaryTax": "exists, rates not read",
+    "grossReceiptsTax": "exists, rates not read",
+    "stateShare": 0.5
+   },
+   "applies": "Wage earners and businesses",
+   "sources": [
+    {
+     "src": 0,
+     "said": "the State Governments will maintain its eighty percent (80%)of the fuel tax collected and its original fifty percent (50%)of the wage and salary tax, gross receipts tax, and import duties other than the fuel tax."
+    },
+    {
+     "src": 1,
+     "said": "the proposed transition from the Gross Revenue Tax to a Net Profits Tax. The introduction of a Value Added Tax and a proposed increase to the wage and salary tax threshold were also discussed."
+    }
+   ]
+  },
+  {
+   "item": "vat",
+   "finding": "There is no VAT in force: its introduction was still under discussion by the national tax reform task force in November 2025.",
+   "value": {
+    "rate": 0,
+    "status": "proposed, not enacted (as of 2025-11-26)"
+   },
+   "applies": "Supplies in the FSM",
+   "sources": [
+    {
+     "src": 1,
+     "said": "The introduction of a Value Added Tax and a proposed increase to the wage and salary tax threshold were also discussed."
+    }
+   ]
+  },
+  {
+   "item": "social",
+   "finding": "Social Security tax is 7.5% of taxable wages from the worker and 7.5% from the employer (15% combined), on wages up to $7,000 a quarter; a self-employed person with no employees and over $10,000 of gross revenue reports quarterly wages for himself of 5% of the year's gross revenue and pays the 15% on them (with employees, twice the highest-paid employee's wages).",
+   "value": {
+    "currency": "USD",
+    "employee": 0.075,
+    "employer": 0.075,
+    "combined": 0.15,
+    "quarterlyWageBase": 7000,
+    "selfEmployed": {
+     "grossRevenueOver": 10000,
+     "deemedQuarterlyWages": "5% of annual gross revenue",
+     "withEmployees": "twice the highest-paid employee's wages",
+     "rate": 0.15
+    }
+   },
+   "applies": "From 1 January 2013 (the statutory rise from 7% to 7.5% each); the quarterly base as FSMSSA states it (\"currently\").",
+   "sources": [
+    {
+     "src": 2,
+     "said": "The statutory SS tax rate increase would increase the employee’s share of contributions from 7% to 7.5% of taxable wages and would also increase the employer’s matching contribution by the same rate, for a total of 2% increase in the combined SS tax rate (15%)."
+    },
+    {
+     "src": 2,
+     "said": "Currently the maximum quarterly taxable wage base is $7,000."
+    },
+    {
+     "src": 3,
+     "said": "If gross revenues exceed $10,000, then these self-employed persons must report gross wages for themselves for each calendar quarter equal to 5% of the business’ gross revenues for the calendar year."
+    },
+    {
+     "src": 3,
+     "said": "Quarterly Social Security Tax Due = $800 x 15% = $120.00"
+    },
+    {
+     "src": 3,
+     "said": "Self-employed persons with employees must report gross wages for themselves equal to twice the wages of the highest paid employee reported by them for that quarter."
+    }
+   ]
+  },
+  {
+   "item": "withholding",
+   "finding": "The employer deducts the Wage & Salaries Tax from an employee's pay and remits it to the Customs and Tax Administration; a contractor who is in business (controls the work, risks own money) registers instead for the Gross Revenue Tax and files its returns.",
+   "value": {
+    "employerDeducts": true,
+    "freelancer": "Gross Revenue Tax, own returns",
+    "rates": null
+   },
+   "applies": "FSM national taxes; the rates (Title 54) are not read, see the residents blocker.",
+   "sources": [
+    {
+     "src": 4,
+     "said": "The contractor permits the Department or Agency (employer) to deduct the Wage & Salaries Tax (W&ST) from their payments for services from the commencement of this contract, and pay the amounts deducted to the Customs and Tax Administration (CTA) to be credited against the W&ST payable by the contractor."
+    },
+    {
+     "src": 4,
+     "said": "If the contractor is in business (and therefore should pay the Gross Revenue Tax):"
+    }
+   ]
+  }
+ ],
+ "country": "FM",
+ "sources": [
+  {
+   "url": "https://www.cfsm.gov.fm/congressional-measures-readjust-national-tax-structures/",
+   "title": "Congressional Measures Readjust National Tax Structures (Congress of the FSM)",
+   "read": "2026-11-01",
+   "kind": "primary",
+   "said": "the State Governments will maintain its eighty percent (80%)of the fuel tax collected and its original fifty percent (50%)of the wage and salary tax, gross receipts tax, and import duties other than the fuel tax."
+  },
+  {
+   "url": "https://gov.fm/fsm-national-tax-reform-task-force-conducts-stakeholder-consultation-in-kosrae/",
+   "title": "FSM National Tax Reform Task Force Conducts Stakeholder Consultation in Kosrae (FSM Government, 26 November 2025)",
+   "read": "2026-11-01",
+   "kind": "primary",
+   "said": "the proposed transition from the Gross Revenue Tax to a Net Profits Tax. The introduction of a Value Added Tax and a proposed increase to the wage and salary tax threshold were also discussed."
+  },
+  {
+   "url": "https://www.fsmssa.fm/f-a-q/",
+   "title": "FSM Social Security Administration, F.A.Q.",
+   "read": "2026-11-01",
+   "kind": "primary",
+   "said": "The statutory SS tax rate increase would increase the employee’s share of contributions from 7% to 7.5% of taxable wages and would also increase the employer’s matching contribution by the same rate, for a total of 2% increase in the combined SS tax rate (15%). … Currently the maximum quarterly taxable wage base is $7,000."
+  },
+  {
+   "url": "https://www.fsmssa.fm/employers/",
+   "title": "FSM Social Security Administration, Employers",
+   "read": "2026-11-01",
+   "kind": "primary",
+   "said": "If gross revenues exceed $10,000, then these self-employed persons must report gross wages for themselves for each calendar quarter equal to 5% of the business’ gross revenues for the calendar year. … Quarterly Social Security Tax Due = $800 x 15% = $120.00 … Self-employed persons with employees must report gross wages for themselves equal to twice the wages of the highest paid employee reported by them for that quarter."
+  },
+  {
+   "url": "https://dofa.gov.fm/wp-content/uploads/2025/07/Guideline-on-Tax-Clause-for-Contractors-1.pdf",
+   "title": "FSM Department of Finance and Administration, Guideline for Tax Clause to Insert in Contractors Contract (on FSM Code Title 54)",
+   "read": "2026-11-01",
+   "kind": "primary",
+   "said": "The contractor permits the Department or Agency (employer) to deduct the Wage & Salaries Tax (W&ST) from their payments for services from the commencement of this contract, and pay the amounts deducted to the Customs and Tax Administration (CTA) to be credited against the W&ST payable by the contractor. … If the contractor is in business (and therefore should pay the Gross Revenue Tax):"
+  }
+ ],
+ "blockers": [
+  {
+   "item": "residents",
+   "sought": "Wage and salary tax rates and threshold, gross receipts tax rate, and tax year and return dates (FSM Code Title 54)",
+   "tried": {
+    "institution": "2026-11-01: fsmlaw.org (FSM Code Title 54) returns HTTP 406 to curl's default agent, not read another way; dofa.gov.fm timed out; gov.fm and cfsm.gov.fm read || retry 2026-11-01 (world round): fsmlaw.org answers HTTP 406 again (refusal, not read another way); dofa.gov.fm now answers: its Customs & Tax pages list document types with 0 tax documents; the Guideline on Tax Clause for Contractors (FM-dofa-tax-clause-contractors.pdf) read: names the Wage & Salaries Tax and Gross Revenue Tax, no rates; fsmssa.fm read for social security",
+    "official-register": "2026-11-01: paclii.org FSM legislation returns HTTP 403; cfsm.gov.fm lists public laws by Congress but no consolidated Title 54 || retry 2026-11-01 (world round): paclii.org FSM 403; cfsm.gov.fm public-law lists hold no consolidated Title 54; DoFA's 'Legislation' document type is empty",
+    "web-search": "2026-11-01: refused: the session web-search budget was used up || retry 2026-11-01 (world round): WebSearch refused 2026-11-01 (the turn's shared 200-search budget exhausted)",
+    "trade-press": "2026-11-01: no PwC (taxsummaries 404) or Deloitte highlights (2025, 2026: 404) for this country || retry 2026-11-01 (world round): no PwC or Deloitte page for the FSM (404, as before); DoFA news on the National Tax Reform Task Force consultations (dofa.gov.fm/news/national-tax-reform-task-force-concludes-nationwide-consultations-across-fsm/) listed, no rates",
+    "archive": "2026-11-01: web.archive.org unreachable through the proxy this session || retry 2026-11-01 (world round): web.archive.org and archive.ph reset the connection; arquivo.pt 403"
+   }
+  },
+  {
+   "item": "nonResident",
+   "sought": "Tax on a non-resident performer's FSM-source pay or fee",
+   "tried": {
+    "institution": "2026-11-01: fsmlaw.org (FSM Code Title 54) returns HTTP 406 to curl's default agent, not read another way; dofa.gov.fm timed out; gov.fm and cfsm.gov.fm read || retry 2026-11-01 (world round): fsmlaw.org answers HTTP 406 again (refusal, not read another way); dofa.gov.fm now answers: its Customs & Tax pages list document types with 0 tax documents; the Guideline on Tax Clause for Contractors (FM-dofa-tax-clause-contractors.pdf) read: names the Wage & Salaries Tax and Gross Revenue Tax, no rates; fsmssa.fm read for social security",
+    "official-register": "2026-11-01: paclii.org FSM legislation returns HTTP 403; cfsm.gov.fm lists public laws by Congress but no consolidated Title 54 || retry 2026-11-01 (world round): paclii.org FSM 403; cfsm.gov.fm public-law lists hold no consolidated Title 54; DoFA's 'Legislation' document type is empty",
+    "web-search": "2026-11-01: refused: the session web-search budget was used up || retry 2026-11-01 (world round): WebSearch refused 2026-11-01 (the turn's shared 200-search budget exhausted)",
+    "trade-press": "2026-11-01: no PwC (taxsummaries 404) or Deloitte highlights (2025, 2026: 404) for this country || retry 2026-11-01 (world round): no PwC or Deloitte page for the FSM (404, as before); DoFA news on the National Tax Reform Task Force consultations (dofa.gov.fm/news/national-tax-reform-task-force-concludes-nationwide-consultations-across-fsm/) listed, no rates",
+    "archive": "2026-11-01: web.archive.org unreachable through the proxy this session || retry 2026-11-01 (world round): web.archive.org and archive.ph reset the connection; arquivo.pt 403"
+   }
+  },
+  {
+   "item": "authors",
+   "sought": "Any treatment of authors' fees or royalties",
+   "tried": {
+    "institution": "2026-11-01: fsmlaw.org (FSM Code Title 54) returns HTTP 406 to curl's default agent, not read another way; dofa.gov.fm timed out; gov.fm and cfsm.gov.fm read || retry 2026-11-01 (world round): fsmlaw.org answers HTTP 406 again (refusal, not read another way); dofa.gov.fm now answers: its Customs & Tax pages list document types with 0 tax documents; the Guideline on Tax Clause for Contractors (FM-dofa-tax-clause-contractors.pdf) read: names the Wage & Salaries Tax and Gross Revenue Tax, no rates; fsmssa.fm read for social security",
+    "official-register": "2026-11-01: paclii.org FSM legislation returns HTTP 403; cfsm.gov.fm lists public laws by Congress but no consolidated Title 54 || retry 2026-11-01 (world round): paclii.org FSM 403; cfsm.gov.fm public-law lists hold no consolidated Title 54; DoFA's 'Legislation' document type is empty",
+    "web-search": "2026-11-01: refused: the session web-search budget was used up || retry 2026-11-01 (world round): WebSearch refused 2026-11-01 (the turn's shared 200-search budget exhausted)",
+    "trade-press": "2026-11-01: no PwC (taxsummaries 404) or Deloitte highlights (2025, 2026: 404) for this country || retry 2026-11-01 (world round): no PwC or Deloitte page for the FSM (404, as before); DoFA news on the National Tax Reform Task Force consultations (dofa.gov.fm/news/national-tax-reform-task-force-concludes-nationwide-consultations-across-fsm/) listed, no rates",
+    "archive": "2026-11-01: web.archive.org unreachable through the proxy this session || retry 2026-11-01 (world round): web.archive.org and archive.ph reset the connection; arquivo.pt 403"
+   }
+  }
+ ]
+}

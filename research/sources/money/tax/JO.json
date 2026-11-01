@@ -1,0 +1,306 @@
+{
+ "topic": "tax.JO",
+ "read": "2026-11-01",
+ "note": "Read 2026-11-01 at the owner's word (\"Build those first 3 starting with ledger first\"; of the 21 countries read first: \"It should cover across every country\"; \"Retry the blocked tax facts once all countries land\"): the tax on a screen worker's pay in Jordan: a resident's income tax, social contributions, what is withheld at source, a non-resident artiste's withholding, an author's treatment, VAT and the tax year. Research and retry subagents (workbench/briefs/BRIEF-tax.md, BRIEF-tax-retry.md), every quote checked by the lead against its saved page.",
+ "figures": [
+  {
+   "item": "residents",
+   "finding": "Taxable income is taxed at 5% on the first JOD 5,000, then 10%, 15% and 20% on each next 5,000, 25% to JOD 1 million and 30% above, plus a 1% national contribution on income over JOD 200,000; a taxpayer deducts a personal exemption of JOD 9,000 (a breadwinner another 9,000 for dependants) plus up to JOD 1,000 each for documented medical, education, rent and housing-loan costs, to at most JOD 23,000 for a family.",
+   "value": {
+    "currency": "JOD",
+    "brackets": [
+     {
+      "from": 0,
+      "to": 5000,
+      "rate": 0.05
+     },
+     {
+      "from": 5000,
+      "to": 10000,
+      "rate": 0.1
+     },
+     {
+      "from": 10000,
+      "to": 15000,
+      "rate": 0.15
+     },
+     {
+      "from": 15000,
+      "to": 20000,
+      "rate": 0.2
+     },
+     {
+      "from": 20000,
+      "to": 1000000,
+      "rate": 0.25
+     },
+     {
+      "from": 1000000,
+      "to": null,
+      "rate": 0.3
+     }
+    ],
+    "nationalContribution": {
+     "rate": 0.01,
+     "above": 200000
+    },
+    "allowance": {
+     "personal": 9000,
+     "dependants": 9000,
+     "expenses": "1,000 each for taxpayer, spouse and up to three children",
+     "familyMax": 23000
+    },
+    "regional": null
+   },
+   "applies": "Income Tax Law No. 38 of 2018 (in force from 2019); Jordan taxes income arising in or from Jordan",
+   "sources": [
+    {
+     "src": 0,
+     "said": "Taxable income (JOD*) PIT rate (%) The first 5,000 5 The second 5,000 10 The third 5,000 15 The forth 5,000 20 Over 20,000 and up to 1,000,000 25 The remaining balance 30"
+    },
+    {
+     "src": 0,
+     "said": "Any amount exceeding JOD 200,000 of the annual taxable income for individuals will be subject to 1% as national contribution tax."
+    },
+    {
+     "src": 1,
+     "said": "the total exemptions to which the breadwinner is entitled to the income earned during the year 2021 is (23) thousand dinars, including the personal exemption at the rate of (9) thousand dinars and (9) thousand dinars as a dependency allowance"
+    },
+    {
+     "src": 1,
+     "said": "With regard to the taxpayer who is not a breadwinner , the law granted him 9 thousand dinars as a personal exemption in addition to a thousand dinars in exchange for expenses related to treatment, education, rent, housing loan interest and Murabaha."
+    },
+    {
+     "src": 0,
+     "said": "Any income incurred in or from Jordan, for any person, regardless of the place of payment, shall be subject to tax in Jordan."
+    }
+   ]
+  },
+  {
+   "item": "year",
+   "finding": "The tax year is the calendar year; the return and the tax are due before the end of the fourth month after it (30 April).",
+   "value": {
+    "start": "01-01",
+    "end": "12-31",
+    "returnDue": "04-30",
+    "paymentDue": "04-30"
+   },
+   "applies": "Individuals",
+   "sources": [
+    {
+     "src": 2,
+     "said": "The tax year in Jordan is the calendar year."
+    },
+    {
+     "src": 2,
+     "said": "Taxpayers are obligated to file tax returns before the end of the fourth month following the end of the tax period."
+    }
+   ]
+  },
+  {
+   "item": "social",
+   "finding": "Social security takes 7.5% of salary from the employee and 14.25% from the employer, on monthly salary up to JOD 3,394 (2023 figure).",
+   "value": {
+    "currency": "JOD",
+    "employee": 0.075,
+    "employer": 0.1425,
+    "ceilingMonthly": 3394,
+    "ceilingYear": 2023
+   },
+   "applies": "Employees",
+   "sources": [
+    {
+     "src": 3,
+     "said": "The social security rates are 14.25% as employer contribution and 7.5% as employee contribution."
+    },
+    {
+     "src": 4,
+     "said": "The maximum monthly salary subject to social security contributions is JOD 3,394."
+    }
+   ]
+  },
+  {
+   "item": "withholding",
+   "finding": "The employer withholds income tax from monthly pay at the progressive rates; payers withhold 5% from fees for services of resident individuals (professionals, consultants and the like).",
+   "value": {
+    "employee": "progressive monthly withholding 5% to 30%",
+    "residentServiceFees": 0.05
+   },
+   "applies": "Payments in Jordan",
+   "sources": [
+    {
+     "src": 4,
+     "said": "Individual income tax is withheld by the employer from an employee’s monthly compensation at progressive rates ranging from 5% to 30%."
+    },
+    {
+     "src": 5,
+     "said": "A 5% WHT applies to services provided by resident natural persons or civil companies, including doctors, lawyers, engineers, auditors, consultants, insurance agents, brokers, arbitrators, financial intermediaries, and shipping agents."
+    }
+   ]
+  },
+  {
+   "item": "nonResident",
+   "finding": "A non-resident's Jordanian-source income is taxed; services and royalties paid to a non-resident individual bear 10% withholding plus a 1% national contribution; whether it is final for an individual's performance fee was not confirmed.",
+   "value": {
+    "rate": 0.1,
+    "nationalContribution": 0.01,
+    "base": "gross payment",
+    "final": null
+   },
+   "applies": "Non-resident individuals",
+   "sources": [
+    {
+     "src": 4,
+     "said": "Royalties: The rate of withholding tax on royalties paid to a nonresident company or individual is 10% (plus an additional national contribution tax)."
+    },
+    {
+     "src": 4,
+     "said": "10% (plus national contribution tax at sector rate) 10% (plus 1% national contribution tax)"
+    }
+   ]
+  },
+  {
+   "item": "authors",
+   "finding": "Royalties paid to a resident are withheld at the recipient's income tax rate, and to a non-resident at 10% plus 1%; no special regime for authors was found.",
+   "value": {
+    "residentRoyalties": "recipient's rate",
+    "nonResidentRoyalties": 0.1
+   },
+   "applies": "Royalties",
+   "sources": [
+    {
+     "src": 4,
+     "said": "Tax is withheld from royalties paid to a resident at the company’s or individual’s income tax rate."
+    }
+   ]
+  },
+  {
+   "item": "vat",
+   "finding": "General sales tax (Jordan's VAT) is 16% on goods and services; a business must register once annual taxable turnover exceeds JOD 30,000.",
+   "value": {
+    "currency": "JOD",
+    "standard": 0.16,
+    "threshold": 30000
+   },
+   "applies": "Supplies in Jordan",
+   "sources": [
+    {
+     "src": 3,
+     "said": "A general sales tax similar in operation to a value-added tax (VAT) is imposed at the rate of 16% on the following transactions: Sales of goods or services or both."
+    },
+    {
+     "src": 4,
+     "said": "Registration: Businesses with annual taxable turnover of more than JOD 30,000 must register for sales tax purposes."
+    }
+   ]
+  },
+  {
+   "item": "social",
+   "finding": "The highest wage on which social security contributions are computed is JOD 3,733 for 2026 (JOD 3,668 in 2025), indexed each year to the previous year's inflation (1.77% in 2025).",
+   "value": {
+    "currency": "JOD",
+    "ceiling2026": 3733,
+    "ceiling2025": 3668,
+    "indexation": "previous year's inflation"
+   },
+   "applies": "2026, insured persons under the Social Security Law; the employee 7.5% and employer 14.25% shares are in the figure above.",
+   "sources": [
+    {
+     "src": 6,
+     "said": "أن الحد الأعلى للأجر الذي تُحتسب اشتراكات الضمان على أساسه للعام الحالي 2026 أصبح (3733) ديناراً، في حين كان العام الماضي (3668) ديناراً … كلاهما مرتبطٌ بنسبة التضخُّم، حيث تُؤخذ هذه النسبة المسجَّلة في المملكة عن السنة السابقة، والتي بلغت (1.77%) في عام 2025"
+    }
+   ]
+  },
+  {
+   "item": "nonResident",
+   "finding": "A non-resident's fee for a service is taxable income in Jordan where the work is done in Jordan or its output is used there, so a visiting performer's, writer's or director's fee for work in Jordan falls in the tax.",
+   "value": {
+    "sourceRule": "art. 3(a)(12)"
+   },
+   "applies": "Income Tax Law as published by ISTD; the withholding rate and finality are in the PwC figure above and the blocker.",
+   "sources": [
+    {
+     "src": 7,
+     "said": "بدل الخدمة الذي يجنيه الشخص غير المقيم من المملكة والناشئ عن خدمة قدمها لأي شخص إذا تمت مزاولة العمل أو النشاط المتعلق بذلك البدل في المملكة أو إذا تم استخدام مخرجات هذه الخدمة داخلها"
+    }
+   ]
+  }
+ ],
+ "country": "JO",
+ "sources": [
+  {
+   "url": "https://taxsummaries.pwc.com/jordan/individual/taxes-on-personal-income",
+   "title": "PwC Worldwide Tax Summaries, Jordan, Individual - Taxes on personal income (last reviewed 05 July 2026)",
+   "read": "2026-11-01",
+   "kind": "secondary",
+   "quotes": "https://www.istd.gov.jo/",
+   "said": "Taxable income (JOD*) PIT rate (%) The first 5,000 5 The second 5,000 10 The third 5,000 15 The forth 5,000 20 Over 20,000 and up to 1,000,000 25 The remaining balance 30 … Any amount exceeding JOD 200,000 of the annual taxable income for individuals will be subject to 1% as national contribution tax. … Any income incurred in or from Jordan, for any person, regardless of the place of payment, shall be subject to tax in Jordan."
+  },
+  {
+   "url": "https://www.istd.gov.jo/EN//NewsDetails/Department_Each_family_member_other_than_the_spouses_is_treated_as_an_independent_taxpayer",
+   "title": "Income and Sales Tax Department, 'Each family member other than the spouses is treated as an independent taxpayer' (10 January 2022)",
+   "read": "2026-11-01",
+   "kind": "primary",
+   "said": "the total exemptions to which the breadwinner is entitled to the income earned during the year 2021 is (23) thousand dinars, including the personal exemption at the rate of (9) thousand dinars and (9) thousand dinars as a dependency allowance … With regard to the taxpayer who is not a breadwinner , the law granted him 9 thousand dinars as a personal exemption in addition to a thousand dinars in exchange for expenses related to treatment, education, rent, housing loan interest and Murabaha."
+  },
+  {
+   "url": "https://taxsummaries.pwc.com/jordan/individual/tax-administration",
+   "title": "PwC Worldwide Tax Summaries, Jordan, Individual - Tax administration (last reviewed 05 July 2026)",
+   "read": "2026-11-01",
+   "kind": "secondary",
+   "quotes": "https://www.istd.gov.jo/",
+   "said": "The tax year in Jordan is the calendar year. … Taxpayers are obligated to file tax returns before the end of the fourth month following the end of the tax period."
+  },
+  {
+   "url": "https://taxsummaries.pwc.com/jordan/individual/other-taxes",
+   "title": "PwC Worldwide Tax Summaries, Jordan, Individual - Other taxes (last reviewed 05 July 2026)",
+   "read": "2026-11-01",
+   "kind": "secondary",
+   "quotes": "https://www.ssc.gov.jo/",
+   "said": "The social security rates are 14.25% as employer contribution and 7.5% as employee contribution. … A general sales tax similar in operation to a value-added tax (VAT) is imposed at the rate of 16% on the following transactions: Sales of goods or services or both."
+  },
+  {
+   "url": "https://www.deloitte.com/content/dam/assets-shared/docs/services/consulting/2024/dttl-tax-jordanhighlights-2023.pdf",
+   "title": "Deloitte, Jordan Highlights 2023",
+   "read": "2026-11-01",
+   "kind": "secondary",
+   "quotes": "https://www.ssc.gov.jo/",
+   "said": "The maximum monthly salary subject to social security contributions is JOD 3,394. … Individual income tax is withheld by the employer from an employee’s monthly compensation at progressive rates ranging from 5% to 30%. … Royalties: The rate of withholding tax on royalties paid to a nonresident company or individual is 10% (plus an additional national contribution tax). … 10% (plus national contribution tax at sector rate) 10% (plus 1% national contribution tax) … Tax is withheld from royalties paid to a resident at the company’s or individual’s income tax rate. … Registration: Businesses with annual taxable turnover of more than JOD 30,000 must register for sales tax purposes."
+  },
+  {
+   "url": "https://taxsummaries.pwc.com/jordan/corporate/withholding-taxes",
+   "title": "PwC Worldwide Tax Summaries, Jordan, Corporate - Withholding taxes (last reviewed 05 July 2026)",
+   "read": "2026-11-01",
+   "kind": "secondary",
+   "quotes": "https://www.istd.gov.jo/",
+   "said": "A 5% WHT applies to services provided by resident natural persons or civil companies, including doctors, lawyers, engineers, auditors, consultants, insurance agents, brokers, arbitrators, financial intermediaries, and shipping agents."
+  },
+  {
+   "url": "https://www.ssc.gov.jo/%d8%a7%d9%84%d8%b6%d9%85%d8%a7%d9%86-3733-%d8%af%d9%8a%d9%86%d8%a7%d8%b1%d8%a7%d9%8b-%d8%a7%d9%84%d8%ad%d8%af-%d8%a7%d9%84%d8%a3%d8%b9%d9%84%d9%89-%d9%84%d9%84%d8%a3%d8%ac%d8%b1-%d8%a7%d9%84%d9%85/",
+   "title": "الضمان: (3733) ديناراً الحد الأعلى للأجر المشمول بأحكام القانون الذي تُحتسب الاشتراكات على أساسه … لعام 2026 (Social Security Corporation, 14 May 2026)",
+   "read": "2026-11-01",
+   "kind": "primary",
+   "said": "أن الحد الأعلى للأجر الذي تُحتسب اشتراكات الضمان على أساسه للعام الحالي 2026 أصبح (3733) ديناراً، في حين كان العام الماضي (3668) ديناراً … كلاهما مرتبطٌ بنسبة التضخُّم، حيث تُؤخذ هذه النسبة المسجَّلة في المملكة عن السنة السابقة، والتي بلغت (1.77%) في عام 2025"
+  },
+  {
+   "url": "https://www.istd.gov.jo/AR/List/%D9%82%D8%A7%D9%86%D9%88%D9%86_%D8%B6%D8%B1%D9%8A%D8%A8%D8%A9_%D8%A7%D9%84%D8%AF%D8%AE%D9%84",
+   "title": "قانون ضريبة الدخل (Income Tax Law), Income and Sales Tax Department, arts. 1 to 10",
+   "read": "2026-11-01",
+   "kind": "primary",
+   "said": "بدل الخدمة الذي يجنيه الشخص غير المقيم من المملكة والناشئ عن خدمة قدمها لأي شخص إذا تمت مزاولة العمل أو النشاط المتعلق بذلك البدل في المملكة أو إذا تم استخدام مخرجات هذه الخدمة داخلها"
+  }
+ ],
+ "blockers": [
+  {
+   "item": "nonResident",
+   "sought": "The withholding article of Income Tax Law No. 34 of 2014 as amended by Law No. 38 of 2018 (rate on a non-resident's service fee, and whether it is final), in the law's own text",
+   "tried": {
+    "institution": "istd.gov.jo reached; its English news notice on exemptions read; no page found on non-resident artists' withholding or the current social security ceiling || 2026-11-01 retry: istd.gov.jo read: its Income Tax Law page (https://www.istd.gov.jo/AR/List/قانون_ضريبة_الدخل, saved JO-istd-law.html) shows arts. 1 to 10 only; art. 3(a)(12) makes a non-resident's service fee taxable where the work is done in Jordan (now a figure). The later articles (withholding, art. 12) are on the list's next pages, reached only by the page's form postback, which answered 'Error Page' and then reset the connection; not pressed further",
+    "official-register": "Income Tax Law No. 38 of 2018 text not read (not located on istd.gov.jo this pass) || 2026-11-01 retry: lob.gov.jo (Legislation and Opinion Bureau) connection fails (curl 000); the ISTD law list stands in as the official text",
+    "web-search": "searched 'Jordan Income Tax Law 38 of 2018 personal exemption 9,000 dinars family 9,000 non-resident withholding 10% services ISTD' || 2026-11-01 retry: not run: the tool refused searches this turn, the shared limit of 200 having been reached (2026-11-01)",
+    "trade-press": "PwC (reviewed 05 July 2026) and Deloitte Jordan Highlights 2023 read || 2026-11-01 retry: PwC (reviewed 05 July 2026) already held: 10% plus 1% national contribution on services to non-residents; it does not say whether final for an individual",
+    "archive": "web.archive.org resets the connection from this environment (2026-11-01) || 2026-11-01 retry: archive.org availability API answers, but web.archive.org is refused from this environment (http 'Blocked by egress policy', https connection fails), not read (2026-11-01)"
+   }
+  }
+ ]
+}

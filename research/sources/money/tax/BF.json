@@ -1,0 +1,214 @@
+{
+ "topic": "tax.BF",
+ "read": "2026-11-01",
+ "note": "Read 2026-11-01 at the owner's word (\"Build those first 3 starting with ledger first\"; of the 21 countries read first: \"It should cover across every country\"; \"Retry the blocked tax facts once all countries land\"): the tax on a screen worker's pay in Burkina Faso: a resident's income tax, social contributions, what is withheld at source, a non-resident artiste's withholding, an author's treatment, VAT and the tax year. Research and retry subagents (workbench/briefs/BRIEF-tax.md, BRIEF-tax-retry.md), every quote checked by the lead against its saved page.",
+ "figures": [
+  {
+   "item": "residents",
+   "finding": "Pay bears the single tax on wages (IUTS), withheld monthly on net taxable pay (gross less pension deductions up to 8% of base salary and a 25% allowance on base salary, 20% for senior grades): 0% to XOF 30,000 a month, then 12.10%, 13.90%, 15.70%, 18.40%, 21.70% and 25% above XOF 250,000, less 8% to 14% for one to four dependants. A self-employed professional or artist pays the tax on non-commercial profits at 10% to XOF 500,000, 20% to XOF 1,000,000 and 27.5% above.",
+   "value": {
+    "currency": "XOF",
+    "periodBrackets": "monthly",
+    "brackets": [
+     {
+      "from": 0,
+      "to": 30000,
+      "rate": 0
+     },
+     {
+      "from": 30000,
+      "to": 50000,
+      "rate": 0.121
+     },
+     {
+      "from": 50000,
+      "to": 80000,
+      "rate": 0.139
+     },
+     {
+      "from": 80000,
+      "to": 120000,
+      "rate": 0.157
+     },
+     {
+      "from": 120000,
+      "to": 170000,
+      "rate": 0.184
+     },
+     {
+      "from": 170000,
+      "to": 250000,
+      "rate": 0.217
+     },
+     {
+      "from": 250000,
+      "to": null,
+      "rate": 0.25
+     }
+    ],
+    "professionalAllowance": {
+     "rate": 0.25,
+     "seniorGrades": 0.2,
+     "base": "base salary"
+    },
+    "pensionDeductionCap": 0.08,
+    "familyReduction": {
+     "1": 0.08,
+     "2": 0.1,
+     "3": 0.12,
+     "4": 0.14
+    },
+    "nonCommercialProfits": [
+     {
+      "from": 0,
+      "to": 500000,
+      "rate": 0.1
+     },
+     {
+      "from": 500000,
+      "to": 1000000,
+      "rate": 0.2
+     },
+     {
+      "from": 1000000,
+      "to": null,
+      "rate": 0.275
+     }
+    ]
+   },
+   "applies": "Wage earners (IUTS, CGI art. 111 to 113) and non-commercial professions (art. 39)",
+   "sources": [
+    {
+     "src": 0,
+     "said": "Art.111.- Le montant net du revenu imposable est égal au montant brut des sommes payées et de la valeur des avantages accordés, sous déduction : • des retenues faites par l’employeur en vue de la constitution de pensions ou de retraites dans la limite de 8 % du salaire de base ; • d’un abattement forfaitaire de 25 % du salaire de base pour frais et charges professionnels. Cet abattement est réduit à 20 % pour les catégories supérieures … Les taux applicables au revenu mensuel imposable sont fixés comme suit, pour chaque tranche de revenu : • 0 à 30.000 francs CFA : 0 % • 30.100 à 50.000 francs CFA : 12,10 % • 50.100 à 80.000 francs CFA : 13,90 % • 80.100 à 120.000 francs CFA : 15,70 % … • 120.100 à 170.000 francs CFA : 18,40 % • 170.100 à 250.000 francs CFA : 21,70 % • 250.100 et au-dessus francs CFA : 25 % … • 1 charge : 8 % • 2 charges : 10 % • 3 charges : 12 % • 4 charges : 14 % … Art.39.- (loi n°029-2022/ALT du 24 décembre 2022 art.16) 1) Sur le bénéfice imposable il est fait application des taux progressifs suivants pour chaque tranche de revenu : • de 0 à 500.000 francs CFA : 10 % • de 501.000 à 1.000.000 de francs CFA : 20 % • plus de 1.000.000 de francs CFA : 27,5 %"
+    }
+   ]
+  },
+  {
+   "item": "social",
+   "finding": "Social security (CNSS) is 21.5% of pay up to XOF 800,000 a month: the employer pays 16% (family 6%, occupational risk 1.5%, old age 8.5%) and the worker 5.5% (old age); a voluntary insured person pays 14%.",
+   "value": {
+    "currency": "XOF",
+    "ceilingMonthly": 800000,
+    "employer": {
+     "family": 0.06,
+     "risk": 0.015,
+     "oldAge": 0.085,
+     "total": 0.16
+    },
+    "employee": 0.055,
+    "voluntary": 0.14
+   },
+   "applies": "Employees (and voluntary insured)",
+   "sources": [
+    {
+     "src": 1,
+     "said": "dans la limite d’un plafond fixé à 800 000 FCFA par l’arrêté n°2022-067/MFPTPS/SG/DGPS du 30 aout 2022. … de 21,5 % réparti ainsi qu’il suit : 16% à la charge de l’employeur dont : -6% au titre de la branche des prestations familiales ; -1,5% au titre de la branche risques professionnels ; -8,5% au titre de la branche assurance vieillesse . 5,5% à la charge du travailleur au titre de la branche assurance vieillesse. La participation de l’assuré volontaire est fixée à 14%"
+    }
+   ]
+  },
+  {
+   "item": "withholding",
+   "finding": "The employer calculates and withholds IUTS monthly; a resident provider of services of XOF 50,000 or more paid by an established payer has 5% withheld (25% if not registered with a tax number), remitted by the 15th of the following month.",
+   "value": {
+    "iuts": "monthly by employer",
+    "residentServices": {
+     "rate": 0.05,
+     "noIFU": 0.25,
+     "minimum": 50000
+    },
+    "remitBy": "15th of following month"
+   },
+   "applies": "Employees and resident service providers",
+   "sources": [
+    {
+     "src": 0,
+     "said": "Art.112.- L’impôt unique sur les traitements et salaires est calculé et retenu mensuellement par l’employeur pour le compte du Trésor public. … • 5% du montant hors taxes des sommes versées pour les personnes justifiant d’une immatriculation à l’identifiant financier unique (IFU). … • 25% du montant des sommes versées pour les personnes non salariées ne justifiant pas d’une immatriculation à l’identifiant financier unique (IFU). … doivent être versées au plus tard le 15 du mois suivant"
+    }
+   ]
+  },
+  {
+   "item": "nonResident",
+   "finding": "Fees paid to a non-resident actor, comedian, musician-dancer or other performer appearing in an event organised or produced in Burkina Faso bear 20% withholding on the net sums paid (subject to treaties), which the payer may not bear.",
+   "value": {
+    "rate": 0.2,
+    "base": "net sums paid, including accessory costs",
+    "final": "withheld at source; payer may not bear it"
+   },
+   "applies": "Non-resident performers (CGI art. 210 to 212)",
+   "sources": [
+    {
+     "src": 0,
+     "said": "une retenue à la source est opérée sur les sommes que les personnes physiques ou morales non résidentes au Burkina Faso perçoivent en rémunération de prestations de toute nature fournies ou utilisées au Burkina Faso. … • aux artistes de théâtre et de music- hall, musiciens-danseurs, acteurs, comédiens, modèles et autres artistes de spectacles et de la mode et aux sportifs, non domiciliés au Burkina Faso, qui participent à des manifestations organisées ou produites au Burkina Faso. … Le taux de la retenue à la source est fixé à 20% du montant net des sommes versées aux personnes non établies au Burkina Faso"
+    }
+   ]
+  },
+  {
+   "item": "authors",
+   "finding": "Copyright income received by artists, writers and composers is taxed as non-commercial profit (10% to 27.5%); copyright on literary, artistic or cinematographic works paid to a non-resident bears the 20% withholding.",
+   "value": {
+    "residentAuthors": "non-commercial profits scale",
+    "nonResidentCopyright": 0.2
+   },
+   "applies": "Authors and artists",
+   "sources": [
+    {
+     "src": 0,
+     "said": "• les produits de droits d’auteur perçus par les artistes, les écrivains ou compositeurs ou tous autres bénéficiaires et par leurs héritiers ou légataires ; … • pour l’usage ou la concession de l’usage d’un droit d’auteur sur une œuvre littéraire, artistique ou scien- tifique y compris les productions cinématographiques, télévisuelles, audiovisuelles, radiophoniques, théâtrales et artistiques ;"
+    }
+   ]
+  },
+  {
+   "item": "vat",
+   "finding": "VAT is 18% and is charged by persons under the actual normal regime, that is with annual turnover of XOF 50,000,000 or more.",
+   "value": {
+    "currency": "XOF",
+    "rate": 0.18,
+    "reduced": [
+     0.1
+    ],
+    "threshold": 50000000
+   },
+   "applies": "Taxable persons (régime du réel normal)",
+   "sources": [
+    {
+     "src": 0,
+     "said": "Le taux de la TVA est fixé à 18 %. … Sont assujetties à la TVA, les personnes physiques ou morales qui réalisent des affaires imposables et relevant du régime d’imposition du réel normal, selon les seuils fixés aux articles 527 et suivants. … Art.527.- Sont placés sous le régime du bénéfice réel normal d’imposition, les contribuables personnes physiques ou morales dont le chiffre d’affaires annuel hors taxes est égal ou supérieur à cinquante millions (50.000.000) de francs CFA."
+    }
+   ]
+  },
+  {
+   "item": "year",
+   "finding": "IUTS is withheld month by month; the tax on non-commercial profits is paid by the last day of February each year on the declared result.",
+   "value": {
+    "iuts": "monthly",
+    "nonCommercialProfitsDue": "last day of February"
+   },
+   "applies": "Self-employed professionals",
+   "sources": [
+    {
+     "src": 0,
+     "said": "L’impôt est payable spontanément au plus tard le dernier jour du mois de février de chaque année."
+    }
+   ]
+  }
+ ],
+ "country": "BF",
+ "sources": [
+  {
+   "url": "https://dgi.bf/wp-content/uploads/2026/10/CGI-2026-v2.pdf",
+   "title": "Code général des impôts 2026 (Direction générale des impôts, Burkina Faso)",
+   "read": "2026-11-01",
+   "kind": "primary",
+   "said": "Art.111.- Le montant net du revenu imposable est égal au montant brut des sommes payées et de la valeur des avantages accordés, sous déduction : • des retenues faites par l’employeur en vue de la constitution de pensions ou de retraites dans la limite de 8 % du salaire de base ; • d’un abattement forfaitaire de 25 % du salaire de base pour frais et charges professionnels. Cet abattement est réduit à 20 % pour les catégories supérieures … Les taux applicables au revenu mensuel imposable sont fixés comme suit, pour chaque tranche de revenu : • 0 à 30.000 francs CFA : 0 % • 30.100 à 50.000 francs CFA : 12,10 % • 50.100 à 80.000 francs CFA : 13,90 % • 80.100 à 120.000 francs CFA : 15,70 % … • 120.100 à 170.000 francs CFA : 18,40 % • 170.100 à 250.000 francs CFA : 21,70 % • 250.100 et au-dessus francs CFA : 25 % … • 1 charge : 8 % • 2 charges : 10 % • 3 charges : 12 % • 4 charges : 14 % … Art.39.- (loi n°029-2022/ALT du 24 décembre 2022 art.16) 1) Sur le bénéfice imposable il est fait application des taux progressifs suivants pour chaque tranche de revenu : • de 0 à 500.000 francs CFA : 10 % • de 501.000 à 1.000.000 de francs CFA : 20 % • plus de 1.000.000 de francs CFA : 27,5 % … Art.112.- L’impôt unique sur les traitements et salaires est calculé et retenu mensuellement par l’employeur pour le compte du Trésor public. … • 5% du montant hors taxes des sommes versées pour les personnes justifiant d’une immatriculation à l’identifiant financier unique (IFU). … • 25% du montant des sommes versées pour les personnes non salariées ne justifiant pas d’une immatriculation à l’identifiant financier unique (IFU). … doivent être versées au plus tard le 15 du mois suivant … une retenue à la source est opérée sur les sommes que les personnes physiques ou morales non résidentes au Burkina Faso perçoivent en rémunération de prestations de toute nature fournies ou utilisées au Burkina Faso. … • aux artistes de théâtre et de music- hall, musiciens-danseurs, acteurs, comédiens, modèles et autres artistes de spectacles et de la mode et aux sportifs, non domiciliés au Burkina Faso, qui participent à des manifestations organisées ou produites au Burkina Faso. … Le taux de la retenue à la source est fixé à 20% du montant net des sommes versées aux personnes non établies au Burkina Faso … • les produits de droits d’auteur perçus par les artistes, les écrivains ou compositeurs ou tous autres bénéficiaires et par leurs héritiers ou légataires ; … • pour l’usage ou la concession de l’usage d’un droit d’auteur sur une œuvre littéraire, artistique ou scien- tifique y compris les productions cinématographiques, télévisuelles, audiovisuelles, radiophoniques, théâtrales et artistiques ; … Le taux de la TVA est fixé à 18 %. … Sont assujetties à la TVA, les personnes physiques ou morales qui réalisent des affaires imposables et relevant du régime d’imposition du réel normal, selon les seuils fixés aux articles 527 et suivants. … Art.527.- Sont placés sous le régime du bénéfice réel normal d’imposition, les contribuables personnes physiques ou morales dont le chiffre d’affaires annuel hors taxes est égal ou supérieur à cinquante millions (50.000.000) de francs CFA. … L’impôt est payable spontanément au plus tard le dernier jour du mois de février de chaque année."
+  },
+  {
+   "url": "https://cnssbf.org/cotisations-sociales/",
+   "title": "Cotisations sociales (Caisse nationale de sécurité sociale, Burkina Faso)",
+   "read": "2026-11-01",
+   "kind": "primary",
+   "said": "dans la limite d’un plafond fixé à 800 000 FCFA par l’arrêté n°2022-067/MFPTPS/SG/DGPS du 30 aout 2022. … de 21,5 % réparti ainsi qu’il suit : 16% à la charge de l’employeur dont : -6% au titre de la branche des prestations familiales ; -1,5% au titre de la branche risques professionnels ; -8,5% au titre de la branche assurance vieillesse . 5,5% à la charge du travailleur au titre de la branche assurance vieillesse. La participation de l’assuré volontaire est fixée à 14%"
+  }
+ ],
+ "blockers": []
+}

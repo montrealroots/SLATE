@@ -1,0 +1,160 @@
+{
+ "topic": "tax.TM",
+ "read": "2026-11-01",
+ "note": "Read 2026-11-01 at the owner's word (\"Build those first 3 starting with ledger first\"; of the 21 countries read first: \"It should cover across every country\"; \"Retry the blocked tax facts once all countries land\"): the tax on a screen worker's pay in Turkmenistan: a resident's income tax, social contributions, what is withheld at source, a non-resident artiste's withholding, an author's treatment, VAT and the tax year. Research and retry subagents (workbench/briefs/BRIEF-tax.md, BRIEF-tax-retry.md), every quote checked by the lead against its saved page.",
+ "figures": [
+  {
+   "item": "residents",
+   "finding": "A resident pays a flat 10% income tax on his income from all sources (a non-resident on Turkmen-source income), after a monthly deduction of one base amount set by law for computing taxes (more for the disabled and per dependant); the tax period is the tax year.",
+   "value": {
+    "currency": "TMT",
+    "brackets": [
+     {
+      "from": 0,
+      "to": null,
+      "rate": 0.1
+     }
+    ],
+    "monthlyDeduction": "1 x the base amount (binýatlyk mukdar) set by law",
+    "taxPeriod": "tax year"
+   },
+   "applies": "The Unified Law on Taxes as the Tax Administration posts it (text of 5 December 2022); later amendments not checked.",
+   "sources": [
+    {
+     "src": 0,
+     "said": "Salgyt töleýji tarapyndan alnan şu aşakdaky girdejiler salgyt salynýan binýat diýlip ykrar edilýär: 1) olaryň çeşmelerine bagly bolmazdan – Türkmenistanyň dahyllylary bolup durýan şahsy adamlar üçin; 2) Türkmenistandaky çeşmelerden – Türkmenistanyň dahyllylary bolmadyk şahsy adamlar üçin. … Salgyt döwri diýlip, salgyt ýyly ykrar edilýär. … Şu Bitewi kanunda başgaça bellenilmedik bolsa, salgyt möçberi 10 göterim derejede bellenýär."
+    },
+    {
+     "src": 0,
+     "said": "salgyt töleýjiniň salgyt döwrüniň her aýynda aşakdaky salgyt aýyrmalaryna hukugy bardyr: a) islendik şahsy tarap - Türkmenistanyň kanunçylygy bilen salgytlary we ýygymlary hasaplamak üçin bellenilen binýatlyk mukdaryň bir essesi möçberinde;"
+    }
+   ]
+  },
+  {
+   "item": "year",
+   "finding": "The tax period is the tax year (half-year and year for reporting); a person paid without withholding files by the 25th of the month after the reporting period and pays by the 10th of the second month after it; a foreigner files by 1 April and pays by 15 April of the next year.",
+   "value": {
+    "taxPeriod": "tax year",
+    "reportingPeriods": [
+     "first half-year",
+     "tax year"
+    ],
+    "returnDue": "25th of the month after the reporting period",
+    "paymentDue": "10th of the second month after the reporting period",
+    "foreignersReturnDue": "04-01",
+    "foreignersPaymentDue": "04-15"
+   },
+   "applies": "The Unified Law on Taxes as the Tax Administration posts it (text of 5 December 2022); later amendments not checked.",
+   "sources": [
+    {
+     "src": 0,
+     "said": "Hasabat döwri girdejileriň aýry-aýry görnüşleri boýunça, salgyt ýylynyň dowamynda beýannama bermek talap edilen halatynda, birinji ýarym ýyl we salgyt ýyly hökmünde bellenýär. … salgydyň umumy möçberi hasabat döwründen soňky ikinji aýyň 10-ndan gijä galman, daşary ýurt raýatlary tarapyndan bolsa, geçen salgyt ýylyndan soňky ýylyň aprel aýynyň 15-nden gijä galman tölenýär. … salgyt beýannamasy hasabat döwründen soňky aýyň 25-nden gijä galman salgyt töleýji hökmünde salgyt hasabyna goýlan ýerindäki salgyt edarasyna berilýär. Daşary ýurt raýatlary salgyt beýannamasyny geçen salgyt ýylyndan soňky ýylyň aprel aýynyň 1-nden gijä galman berýärler."
+    }
+   ]
+  },
+  {
+   "item": "withholding",
+   "finding": "A resident legal entity, a non-resident's permanent establishment and a private entrepreneur paying income withhold the 10% from each payment (pay monthly on a cumulative basis) and pay it in when the cash is drawn from the bank; nothing is withheld from payments to private entrepreneurs or under civil-law contracts, whose recipients compute and pay the tax themselves.",
+   "value": {
+    "rate": 0.1,
+    "withheldBy": [
+     "resident legal entities",
+     "permanent establishments of non-residents",
+     "private entrepreneurs"
+    ],
+    "notWithheld": [
+     "payments to private entrepreneurs",
+     "civil-law contracts including professional services"
+    ]
+   },
+   "applies": "The Unified Law on Taxes as the Tax Administration posts it (text of 5 December 2022); later amendments not checked.",
+   "sources": [
+    {
+     "src": 0,
+     "said": "Salgyt ýumuşçysy diýlip şu Bitewi kanunyň 184-nji maddasynyň 1-nji bölüminde görkezilen tölegleri göni töleýän taraplar ykrar edilýär: Türkmenistanyň dahyllylary - edara görnüşli taraplar; … hususy telekeçiler. … Şu madda laýyklykda salgydy hasaplap çykarmak we tölemek salgyt töleýjiniň salgyt ýumuşçysy tarapyndan tölenýän ähli girdejilerinden geçirilýär, muňa hususy telekeçilere tölenýän girdejiler girmeýär. … ç) raýat-hukuk ylalaşyklary boýunça girdeji alýan hususy telekeçiler we şahsy taraplar (şol sanda hünär hyzmatlaryndan), şu girdejiler alnanda salgyt ýumuşçylary tarapyndan salgyt tutulmaly däldir;"
+    }
+   ]
+  },
+  {
+   "item": "nonResident",
+   "finding": "A non-resident pays the 10% income tax on Turkmen-source income, which expressly includes what a theatre, film, radio or television artist or musician earns from his personal activity in Turkmenistan, even when it is paid to someone else, and royalties for the use of copyright; a foreigner leaving within the year files a return within a month of leaving.",
+   "value": {
+    "rate": 0.1,
+    "base": "Turkmen-source income, including a performer's personal activity in Turkmenistan and copyright royalties",
+    "final": false
+   },
+   "applies": "The Unified Law on Taxes as the Tax Administration posts it (text of 5 December 2022); later amendments not checked.",
+   "sources": [
+    {
+     "src": 0,
+     "said": "teatr, kino, radio, telewideniýe artisti ýa-da sazanda ýaly sungat işgäri tarapyndan, şeýle hem türgen tarapyndan onuň Türkmenistanyň çäklerindäki şahsy işinden gazanylan girdejiler, hatda bu girdejiler başga birine hasaplanyp ýazylan hem bolsa; … Türkmenistanyň Raýat kodeksinde kesgitlenen, awtorlyk hukugyny peýdalanmakdan we hukugy peýdalanmaga bermekden … Salgyt ýylynyň dowamynda daşary ýurtly şahsy tarap, şu Bitewi kanunyň 196-njy maddasyna laýyklykda ondan alynýan girdejilere salgyt salynmaga degişli işini togtadan we Türkmenistanyň çäklerinden daşary çykyp giden mahalynda, Türkmenistanyň çäginde bolan wagtynda häzirki hasabat (salgyt) döwründe hakykatdan hem alan girdejileri baradaky salgyt beýannamasy Türkmenistanyň çäginden daşary çykyp gitmeginden bir aýdan gijä galman berilmelidir."
+    }
+   ]
+  },
+  {
+   "item": "authors",
+   "finding": "An author or performer deducts his documented expenses or, without documents, a share of the fee: 20% for literary works (including for theatre, film, variety and circus) and for performing literary and artistic works, 30% for audiovisual works (video, television and film) and for graphic and design works, 40% for sculpture and for theatre and film art, 25% to 40% for music.",
+   "value": {
+    "expenseAllowanceShare": {
+     "literaryWorksIncludingTheatreFilm": 0.2,
+     "performingWorks": 0.2,
+     "audiovisualWorks": 0.3,
+     "graphicAndDesign": 0.3,
+     "theatreAndFilmArt": 0.4,
+     "musicStageAndFilmScores": 0.4,
+     "otherMusic": 0.25
+    }
+   },
+   "applies": "The Unified Law on Taxes as the Tax Administration posts it (text of 5 December 2022); later amendments not checked.",
+   "sources": [
+    {
+     "src": 0,
+     "said": "ç) awtorlyk hakyny ýa-da ylym, edebiýat we sungat eserlerini döredendigi, ýerine ýetirendigi ýa-da başga bir görnüşde ulanandygy üçin, açyşlar, oýlap tapyşlar we senagat nusgalary üçin hak alýan salgyt töleýjiler … Bu çykdajylary resminamalar bilen delillendirmek mümkin bolmadyk ýagdaýynda, salgyt aýyrmalary aşakdaky möçberlerde kabul edilýär: … Edebi eserleri döretmek, şol sanda teatr, kino, estrada we 20 sirk üçin … Auidiowizual eserlerini (wideo-, tele- we kinofilmleri) 30 döretmek … Edebiýat we sungat eserlerini ýerine ýetirmek 20"
+    }
+   ]
+  },
+  {
+   "item": "vat",
+   "finding": "VAT is 15% (0% for listed operations); private entrepreneurs are VAT payers when they make taxable supplies, except for activities under the simplified regime, and privately owned legal entities are not VAT payers; the law sets no turnover threshold.",
+   "value": {
+    "standardRate": 0.15,
+    "payers": "legal entities and private entrepreneurs making taxable supplies",
+    "notPayers": [
+     "privately owned legal entities",
+     "private entrepreneurs for activities under the simplified regime"
+    ],
+    "threshold": null
+   },
+   "applies": "The Unified Law on Taxes as the Tax Administration posts it (text of 5 December 2022); later amendments not checked.",
+   "sources": [
+    {
+     "src": 0,
+     "said": "Edara görnüşli taraplar we şahsy taraplar - hususy telekeçiler, şu Bitewi kanunyň 96-njy maddasynda görkezilen salgyt salynýan amallary geçiren halatlarynda goşulan baha üçin salgydy töleýjiler bolup durýarlar. … hususy eýeçilikdäki edara görnüşli taraplar; hususy telekeçiler, ýönekeýleşdirilen salgyt salmak ulgamy degişli bolan iş boýunça. … beýleki salgyt salynýan amallar babatynda 15 göterim derejesinde bellenýär."
+    }
+   ]
+  }
+ ],
+ "country": "TM",
+ "sources": [
+  {
+   "url": "https://www.tax.gov.tm/pdf/ckeditor_assets/attachments/10/2.pdf",
+   "title": "\"Salgytlar hakynda\" Türkmenistanyň Bitewi kanuny (Unified Law of Turkmenistan on Taxes), text of 05.12.2022 as posted by the Tax Administration of the Ministry of Finance and Economy",
+   "read": "2026-11-01",
+   "kind": "primary",
+   "said": "Salgyt töleýji tarapyndan alnan şu aşakdaky girdejiler salgyt salynýan binýat diýlip ykrar edilýär: 1) olaryň çeşmelerine bagly bolmazdan – Türkmenistanyň dahyllylary bolup durýan şahsy adamlar üçin; 2) Türkmenistandaky çeşmelerden – Türkmenistanyň dahyllylary bolmadyk şahsy adamlar üçin. … Salgyt döwri diýlip, salgyt ýyly ykrar edilýär. … Şu Bitewi kanunda başgaça bellenilmedik bolsa, salgyt möçberi 10 göterim derejede bellenýär. … salgyt töleýjiniň salgyt döwrüniň her aýynda aşakdaky salgyt aýyrmalaryna hukugy bardyr: a) islendik şahsy tarap - Türkmenistanyň kanunçylygy bilen salgytlary we ýygymlary hasaplamak üçin bellenilen binýatlyk mukdaryň bir essesi möçberinde; … Hasabat döwri girdejileriň aýry-aýry görnüşleri boýunça, salgyt ýylynyň dowamynda beýannama bermek talap edilen halatynda, birinji ýarym ýyl we salgyt ýyly hökmünde bellenýär. … salgydyň umumy möçberi hasabat döwründen soňky ikinji aýyň 10-ndan gijä galman, daşary ýurt raýatlary tarapyndan bolsa, geçen salgyt ýylyndan soňky ýylyň aprel aýynyň 15-nden gijä galman tölenýär. … salgyt beýannamasy hasabat döwründen soňky aýyň 25-nden gijä galman salgyt töleýji hökmünde salgyt hasabyna goýlan ýerindäki salgyt edarasyna berilýär. Daşary ýurt raýatlary salgyt beýannamasyny geçen salgyt ýylyndan soňky ýylyň aprel aýynyň 1-nden gijä galman berýärler. … Salgyt ýumuşçysy diýlip şu Bitewi kanunyň 184-nji maddasynyň 1-nji bölüminde görkezilen tölegleri göni töleýän taraplar ykrar edilýär: Türkmenistanyň dahyllylary - edara görnüşli taraplar; … hususy telekeçiler. … Şu madda laýyklykda salgydy hasaplap çykarmak we tölemek salgyt töleýjiniň salgyt ýumuşçysy tarapyndan tölenýän ähli girdejilerinden geçirilýär, muňa hususy telekeçilere tölenýän girdejiler girmeýär. … ç) raýat-hukuk ylalaşyklary boýunça girdeji alýan hususy telekeçiler we şahsy taraplar (şol sanda hünär hyzmatlaryndan), şu girdejiler alnanda salgyt ýumuşçylary tarapyndan salgyt tutulmaly däldir; … teatr, kino, radio, telewideniýe artisti ýa-da sazanda ýaly sungat işgäri tarapyndan, şeýle hem türgen tarapyndan onuň Türkmenistanyň çäklerindäki şahsy işinden gazanylan girdejiler, hatda bu girdejiler başga birine hasaplanyp ýazylan hem bolsa; … Türkmenistanyň Raýat kodeksinde kesgitlenen, awtorlyk hukugyny peýdalanmakdan we hukugy peýdalanmaga bermekden … Salgyt ýylynyň dowamynda daşary ýurtly şahsy tarap, şu Bitewi kanunyň 196-njy maddasyna laýyklykda ondan alynýan girdejilere salgyt salynmaga degişli işini togtadan we Türkmenistanyň çäklerinden daşary çykyp giden mahalynda, Türkmenistanyň çäginde bolan wagtynda häzirki hasabat (salgyt) döwründe hakykatdan hem alan girdejileri baradaky salgyt beýannamasy Türkmenistanyň çäginden daşary çykyp gitmeginden bir aýdan gijä galman berilmelidir. … ç) awtorlyk hakyny ýa-da ylym, edebiýat we sungat eserlerini döredendigi, ýerine ýetirendigi ýa-da başga bir görnüşde ulanandygy üçin, açyşlar, oýlap tapyşlar we senagat nusgalary üçin hak alýan salgyt töleýjiler … Bu çykdajylary resminamalar bilen delillendirmek mümkin bolmadyk ýagdaýynda, salgyt aýyrmalary aşakdaky möçberlerde kabul edilýär: … Edebi eserleri döretmek, şol sanda teatr, kino, estrada we 20 sirk üçin … Auidiowizual eserlerini (wideo-, tele- we kinofilmleri) 30 döretmek … Edebiýat we sungat eserlerini ýerine ýetirmek 20 … Edara görnüşli taraplar we şahsy taraplar - hususy telekeçiler, şu Bitewi kanunyň 96-njy maddasynda görkezilen salgyt salynýan amallary geçiren halatlarynda goşulan baha üçin salgydy töleýjiler bolup durýarlar. … hususy eýeçilikdäki edara görnüşli taraplar; hususy telekeçiler, ýönekeýleşdirilen salgyt salmak ulgamy degişli bolan iş boýunça. … beýleki salgyt salynýan amallar babatynda 15 göterim derejesinde bellenýär."
+  }
+ ],
+ "blockers": [
+  {
+   "item": "social",
+   "sought": "The compulsory pension contribution rates on pay and for the self-employed (the Social Protection Code bases pensions on them but leaves the rate to another act)",
+   "tried": {
+    "institution": "2026-11-01: fineconomic.gov.tm read: legal-acts categories (tax administration, treaties, declaration-form instructions) list no Tax Code text or rates; minfin.gov.tm and salgyt.gov.tm: proxy 502 || retry 2026-11-01: tax.gov.tm (Tax Administration) reached 2026-11-01: its legal-acts list posts the Code on Social Protection (attachment 17/9.pdf, saved TM-tax-ilaty-durmus-goramak-kodeksi.pdf): it bases pensions on compulsory pension contributions but sets no rate",
+    "official-register": "2026-11-01: minjust.gov.tm home read: no Tax Code link found || retry 2026-11-01: The Social Protection Code (Mejlis Maglumatlary 2012, No. 3-4, art. 91) read on tax.gov.tm: no contribution rate; the law fixing the rate not among the tax.gov.tm postings",
+    "web-search": "2026-11-01: refused: the session web-search budget was used up || retry 2026-11-01: refused by the search tool on 2026-11-01: the turn's shared limit of 200 searches was reached; not worked around",
+    "trade-press": "2026-11-01: no PwC (taxsummaries 404) or Deloitte highlights (2025, 2026: 404) for this country || retry 2026-11-01: no PwC or Deloitte summary (as before)",
+    "archive": "2026-11-01: web.archive.org unreachable through the proxy this session || retry 2026-11-01: web.archive.org: connection reset again 2026-11-01"
+   }
+  }
+ ]
+}

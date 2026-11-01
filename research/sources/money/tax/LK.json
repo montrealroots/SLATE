@@ -1,0 +1,299 @@
+{
+ "topic": "tax.LK",
+ "read": "2026-11-01",
+ "note": "Read 2026-11-01 at the owner's word (\"Build those first 3 starting with ledger first\"; of the 21 countries read first: \"It should cover across every country\"; \"Retry the blocked tax facts once all countries land\"): the tax on a screen worker's pay in Sri Lanka: a resident's income tax, social contributions, what is withheld at source, a non-resident artiste's withholding, an author's treatment, VAT and the tax year. Research and retry subagents (workbench/briefs/BRIEF-tax.md, BRIEF-tax-retry.md), every quote checked by the lead against its saved page.",
+ "figures": [
+  {
+   "item": "residents",
+   "finding": "For years of assessment from 1 April 2025 an individual pays 6% on the first LKR 1,000,000 of taxable income, then 18% to 1,500,000, 24% to 2,000,000, 30% to 2,500,000 and 36% above, after a personal relief of LKR 1,800,000 for a resident or a Sri Lankan citizen; the Amendment Act No. 11 of 2026 left these rates in place.",
+   "value": {
+    "currency": "LKR",
+    "brackets": [
+     {
+      "from": 0,
+      "to": 1000000,
+      "rate": 0.06,
+      "taxAtFloor": 0
+     },
+     {
+      "from": 1000000,
+      "to": 1500000,
+      "rate": 0.18,
+      "taxAtFloor": 60000
+     },
+     {
+      "from": 1500000,
+      "to": 2000000,
+      "rate": 0.24,
+      "taxAtFloor": 150000
+     },
+     {
+      "from": 2000000,
+      "to": 2500000,
+      "rate": 0.3,
+      "taxAtFloor": 270000
+     },
+     {
+      "from": 2500000,
+      "to": null,
+      "rate": 0.36,
+      "taxAtFloor": 420000
+     }
+    ],
+    "personalRelief": 1800000,
+    "regionalLayer": null
+   },
+   "applies": "Years of assessment 1 April 2025 - 31 March 2026 and 1 April 2026 - 31 March 2027.",
+   "sources": [
+    {
+     "src": 0,
+     "said": "(1D) Subject to the provisions of subparagraph (2), the taxable income of a resident or non-resident individual for a year of assessment commencing from April 1, 2025 shall be taxed at the following rates: - Taxable income Tax Payable Not exceeding 6% of the Rs. 1,000,000 amount in excess of Rs.0 Exceeding Rs. 60,000 plus Rs. 1,000,000 18% of the but not amount in exceeding excess of Rs. 1,500,000 Rs. 1,000,000 Exceeding Rs. 150,000 plus Rs. 1,500,000 24% of the but not amount in exceeding excess of Rs. 2,000,000 Rs. 1,500,000 Exceeding Rs. 270,000 plus Rs. 2,000,000 30% of the but not amount in exceeding excess of Rs. 2,500,000 Rs. 2,000,000"
+    },
+    {
+     "src": 0,
+     "said": "Exceeding Rs. 420,000 plus Rs. 2,500,000 36% of the amount in excess of Rs. 2,500,000"
+    },
+    {
+     "src": 1,
+     "said": "Rs. 1,800,000, for each year of assessment commencing on or after April 1, 2025"
+    },
+    {
+     "src": 2,
+     "said": "INLAND REVENUE (AMENDMENT) ACT, No. 11 OF 2026 [Certified on 03rd of June, 2026]"
+    }
+   ]
+  },
+  {
+   "item": "nonResident",
+   "finding": "A non-resident individual is taxed on Sri Lankan-source income at the same rates; the LKR 1,800,000 relief is given only to residents and to non-resident Sri Lankan citizens.",
+   "value": {
+    "rates": "as residents",
+    "personalRelief": "none unless a Sri Lankan citizen"
+   },
+   "applies": "Non-resident individuals (a visiting performer, writer or director).",
+   "sources": [
+    {
+     "src": 0,
+     "said": "the taxable income of a resident or non-resident individual for a year of assessment commencing from April 1, 2025 shall be taxed at the following rates"
+    },
+    {
+     "src": 1,
+     "said": "An individual, who is a resident in Sri Lanka for a year of assessment or who is a non- resident in Sri Lanka for a year of assessment, but is a citizen of Sri Lanka , will receive an aggregate relief of;"
+    }
+   ]
+  },
+  {
+   "item": "year",
+   "finding": "The year of assessment runs 1 April to 31 March.",
+   "value": {
+    "taxYear": {
+     "from": "2026-04-01",
+     "to": "2027-03-31"
+    },
+    "currency": "LKR"
+   },
+   "applies": "Sri Lanka.",
+   "sources": [
+    {
+     "src": 0,
+     "said": "for a year of assessment commencing from April 1, 2025"
+    }
+   ]
+  },
+  {
+   "item": "withholding",
+   "finding": "The employer deducts Advance Personal Income Tax monthly from a resident's (or a Sri Lankan citizen non-resident's) primary employment pay under Tax Table 1: nothing up to LKR 150,000 a month, then 6% of monthly pay less 9,000 to 233,333, 18% less 37,000 to 275,000, 24% less 53,500 to 316,667, 30% less 72,500 to 358,333 and 36% less 94,000 above; the tables stand for later years until replaced. From the Inland Revenue (Amendment) Act No. 11 of 2026 the withholding on service fees paid to resident individuals in s. 85(1C)(c) names artists, actors, singers, musicians, writers and similar professions (its rate was not found).",
+   "value": {
+    "currency": "LKR",
+    "period": "month",
+    "table1": [
+     {
+      "from": 0,
+      "to": 150000,
+      "rate": 0,
+      "less": 0
+     },
+     {
+      "from": 150000,
+      "to": 233333,
+      "rate": 0.06,
+      "less": 9000
+     },
+     {
+      "from": 233333,
+      "to": 275000,
+      "rate": 0.18,
+      "less": 37000
+     },
+     {
+      "from": 275000,
+      "to": 316667,
+      "rate": 0.24,
+      "less": 53500
+     },
+     {
+      "from": 316667,
+      "to": 358333,
+      "rate": 0.3,
+      "less": 72500
+     },
+     {
+      "from": 358333,
+      "to": null,
+      "rate": 0.36,
+      "less": 94000
+     }
+    ],
+    "method": "tax = monthly pay x rate - amount",
+    "personalReliefMonthly": 150000,
+    "from": "year of assessment 2025-2026, and later years until new tables",
+    "serviceFeeWHT": {
+     "coveredFrom": "Act No. 11 of 2026",
+     "professions": [
+      "artist",
+      "actor",
+      "dancer",
+      "singer",
+      "musician",
+      "writer",
+      "photographer",
+      "videographer"
+     ],
+     "rate": null
+    }
+   },
+   "applies": "Regular profits from primary employment; service fees to resident individuals",
+   "sources": [
+    {
+     "src": 3,
+     "said": "This table applies to: - All resident employees, and - All non-resident employees who are citizens of Sri Lanka … In preparing this Tax Table, Rs. 150,000.00 per month as personal relief has already been deducted. … 2. Monthly regular profits from employment exceeding 6% of monthly regular profits from Rs. 150,000/- but not exceeding Rs. 233,333/- - employment less Rs. 9,000/- … 6. Monthly regular profits from employment exceeding 36% of monthly regular profits from Rs. 358,333/- - employment less Rs. 94,000/-"
+    },
+    {
+     "src": 4,
+     "said": "I specify such income tax tables for every subsequent years of assessment unless other tables are"
+    },
+    {
+     "src": 2,
+     "said": "13. Section 85 of the principal enactment is hereby amended in paragraph (c) of subsection (1C) of that section, … of the words “academic, auditor, modeller, personal trainer, coach, valuer, artist, actor, dancer, singer, musician, event organizer, photographer, videographer,"
+    }
+   ]
+  },
+  {
+   "item": "social",
+   "finding": "An employee pays at least 8% of total monthly earnings to the Employees' Provident Fund and the employer at least 12% (20% in all), and the employer alone pays 3% of total monthly earnings to the Employees' Trust Fund; there is no ceiling in the rules read.",
+   "value": {
+    "EPF": {
+     "employee": 0.08,
+     "employer": 0.12,
+     "minimum": true
+    },
+    "ETF": {
+     "employer": 0.03
+    },
+    "ceiling": null
+   },
+   "applies": "Employees in Sri Lanka (EPF Act and ETF Act No. 46 of 1980); self-employed may join the ETF voluntarily",
+   "sources": [
+    {
+     "src": 5,
+     "said": "Employee’s Contribution: A minimum of 8% of the total monthly earnings (To be deducted from the employee’s salary/wage) Employer’s Contribution: A minimum amount equivalent to 12% of total monthly earnings of the employee (To be paid totally by the employer) Total Contribution per Employee: 20% of the employee’s total monthly earnings"
+    },
+    {
+     "src": 6,
+     "said": "Employer's Contribution 3% of the total monthly earnings (not to be deducted from the employee’s monthly salary / wages)"
+    }
+   ]
+  },
+  {
+   "item": "vat",
+   "finding": "VAT is 18% from 1 January 2024; registration is required once taxable supplies (other than financial services) exceed LKR 15 million in a quarter or LKR 60 million in twelve months, and anyone making taxable supplies may register voluntarily.",
+   "value": {
+    "currency": "LKR",
+    "standard": 0.18,
+    "from": "2024-01-01",
+    "thresholdQuarter": 15000000,
+    "threshold12Months": 60000000,
+    "voluntary": true
+   },
+   "applies": "Suppliers of goods and services in Sri Lanka",
+   "sources": [
+    {
+     "src": 7,
+     "said": "Registration Threshold Value of taxable supply of goods or services other than financial services by any person including whole sale and retail trade (with effect from 01.01.2024) … exceeds Rs. 15 million for a quarter, exceeds Rs. 60 million for 12 months period … From 01.09.2022 to 31.12.2023 - 15% From 01.01.2024 - 18%"
+    }
+   ]
+  }
+ ],
+ "country": "LK",
+ "sources": [
+  {
+   "url": "https://www.ird.gov.lk/en/publications/Acts_Income%20Tax_2017/IR_Act_No_02-2025_E.pdf",
+   "title": "Inland Revenue (Amendment) Act No. 2 of 2025 (IRD Sri Lanka)",
+   "read": "2026-11-01",
+   "kind": "primary",
+   "said": "(1D) Subject to the provisions of subparagraph (2), the taxable income of a resident or non-resident individual for a year of assessment commencing from April 1, 2025 shall be taxed at the following rates: - Taxable income Tax Payable Not exceeding 6% of the Rs. 1,000,000 amount in excess of Rs.0 Exceeding Rs. 60,000 plus Rs. 1,000,000 18% of the but not amount in exceeding excess of Rs. 1,500,000 Rs. 1,000,000 Exceeding Rs. 150,000 plus Rs. 1,500,000 24% of the but not amount in exceeding excess of Rs. 2,000,000 Rs. 1,500,000 Exceeding Rs. 270,000 plus Rs. 2,000,000 30% of the but not amount in exceeding excess of Rs. 2,500,000 Rs. 2,000,000 … Exceeding Rs. 420,000 plus Rs. 2,500,000 36% of the amount in excess of Rs. 2,500,000"
+  },
+  {
+   "url": "https://www.ird.gov.lk/en/Type%20of%20Taxes/SitePages/Income%20Tax.aspx",
+   "title": "Income Tax (Inland Revenue Department, Sri Lanka)",
+   "read": "2026-11-01",
+   "kind": "primary",
+   "said": "Rs. 1,800,000, for each year of assessment commencing on or after April 1, 2025 … An individual, who is a resident in Sri Lanka for a year of assessment or who is a non- resident in Sri Lanka for a year of assessment, but is a citizen of Sri Lanka , will receive an aggregate relief of;"
+  },
+  {
+   "url": "https://www.ird.gov.lk/en/publications/Acts_Income%20Tax_2017/IR_Act_No_11-2026_E.pdf",
+   "title": "Inland Revenue (Amendment) Act No. 11 of 2026 (certified 3 June 2026)",
+   "read": "2026-11-01",
+   "kind": "primary",
+   "said": "INLAND REVENUE (AMENDMENT) ACT, No. 11 OF 2026 [Certified on 03rd of June, 2026] … 13. Section 85 of the principal enactment is hereby amended in paragraph (c) of subsection (1C) of that section, … of the words “academic, auditor, modeller, personal trainer, coach, valuer, artist, actor, dancer, singer, musician, event organizer, photographer, videographer,"
+  },
+  {
+   "url": "https://www.ird.gov.lk/en/publications/APIT_Tax_Tables/2025-2026/Table%20-%201/02.%20APIT_2526_Table_01_Text.pdf",
+   "title": "APIT Tax Table No. 01, 2025-2026: Monthly Tax Deductions from Regular Profits from Primary Employment, Inland Revenue Department",
+   "read": "2026-11-01",
+   "kind": "primary",
+   "said": "This table applies to: - All resident employees, and - All non-resident employees who are citizens of Sri Lanka … In preparing this Tax Table, Rs. 150,000.00 per month as personal relief has already been deducted. … 2. Monthly regular profits from employment exceeding 6% of monthly regular profits from Rs. 150,000/- but not exceeding Rs. 233,333/- - employment less Rs. 9,000/- … 6. Monthly regular profits from employment exceeding 36% of monthly regular profits from Rs. 358,333/- - employment less Rs. 94,000/-"
+  },
+  {
+   "url": "https://www.ird.gov.lk/en/publications/APIT_Tax_Tables/2025-2026/Index/01.%20APIT_2526_Index.pdf",
+   "title": "Advance Personal Income Tax (A.P.I.T) Tables 2025-2026, index and specification, Inland Revenue Department",
+   "read": "2026-11-01",
+   "kind": "primary",
+   "said": "I specify such income tax tables for every subsequent years of assessment unless other tables are"
+  },
+  {
+   "url": "https://epf.lk/?p=171",
+   "title": "Employers: contributions, Employees' Provident Fund (Central Bank of Sri Lanka)",
+   "read": "2026-11-01",
+   "kind": "primary",
+   "said": "Employee’s Contribution: A minimum of 8% of the total monthly earnings (To be deducted from the employee’s salary/wage) Employer’s Contribution: A minimum amount equivalent to 12% of total monthly earnings of the employee (To be paid totally by the employer) Total Contribution per Employee: 20% of the employee’s total monthly earnings"
+  },
+  {
+   "url": "https://etfb.lk/employer-details/",
+   "title": "Employer details, Employees' Trust Fund Board",
+   "read": "2026-11-01",
+   "kind": "primary",
+   "said": "Employer's Contribution 3% of the total monthly earnings (not to be deducted from the employee’s monthly salary / wages)"
+  },
+  {
+   "url": "https://www.ird.gov.lk/en/Type%20of%20Taxes/SitePages/Value%20Added%20Tax%20(VAT).aspx",
+   "title": "Value Added Tax (VAT), Inland Revenue Department",
+   "read": "2026-11-01",
+   "kind": "primary",
+   "said": "Registration Threshold Value of taxable supply of goods or services other than financial services by any person including whole sale and retail trade (with effect from 01.01.2024) … exceeds Rs. 15 million for a quarter, exceeds Rs. 60 million for 12 months period … From 01.09.2022 to 31.12.2023 - 15% From 01.01.2024 - 18%"
+  }
+ ],
+ "blockers": [
+  {
+   "item": "withholding",
+   "sought": "The rate of withholding on service fees to resident individuals under IR Act s. 85(1C) and on fees to non-resident artistes (the APIT tables and the 2026 widening of s. 85(1C) to artists, actors and writers are found)",
+   "tried": {
+    "institution": "ird.gov.lk read (Income Tax page; IR Amendment Acts 2/2025 and 11/2026); APIT tables, VAT pages and the return deadline not located in this pass || retry-8 2026-11-01: ird.gov.lk APIT tables page read; Table 1 (2025-2026) and the index downloaded and recorded; the IRD Income Tax page carries no WHT rate table",
+    "official-register": "EPF (Central Bank / Labour Department) and ETF Board pages not tried || retry-8 2026-11-01: Inland Revenue (Amendment) Acts No. 2 of 2025 and No. 11 of 2026 read for s. 85: No. 11 of 2026 widens s. 85(1C)(c) to artists, actors, writers; neither states the rate; the principal Act No. 24 of 2017 consolidated not on the IRD pages read; EPF (epf.lk) and ETF Board (etfb.lk) pages read for the social item (recorded)",
+    "web-search": "not searched || retry-8 2026-11-01: a search for 'Sri Lanka withholding tax service fees section 85(1C) rate 2026 artist' was refused by the search tool (shared per-turn limit of 200 searches reached)",
+    "trade-press": "no Deloitte (404) or PwC (404) summary for Sri Lanka || retry-8 2026-11-01: no Deloitte or PwC Sri Lanka summary (404 in the earlier pass); none newer reachable",
+    "archive": "web.archive.org not reachable (curl 000) 2026-11-01 || retry-8 2026-11-01: web.archive.org: connection reset and availability API 429 on 2026-11-01"
+   }
+  }
+ ]
+}

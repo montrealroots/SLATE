@@ -1,0 +1,292 @@
+{
+ "topic": "tax.CO",
+ "read": "2026-11-01",
+ "note": "Read 2026-11-01 at the owner's word (\"Build those first 3 starting with ledger first\"; of the 21 countries read first: \"It should cover across every country\"; \"Retry the blocked tax facts once all countries land\"): the tax on a screen worker's pay in Colombia: a resident's income tax, social contributions, what is withheld at source, a non-resident artiste's withholding, an author's treatment, VAT and the tax year. Research and retry subagents (workbench/briefs/BRIEF-tax.md, BRIEF-tax-retry.md), every quote checked by the lead against its saved page.",
+ "figures": [
+  {
+   "item": "residents",
+   "finding": "A resident's taxable income is taxed in tax value units (UVT, COP 52,374 for 2026): nothing to 1,090 UVT, then 19%, 28% (from 1,700), 33% (from 4,100), 35% (from 8,670), 37% (from 18,970) and 39% above 31,000 UVT; 25% of employment income is exempt up to 790 UVT a year. There is no departmental income tax.",
+   "value": {
+    "currency": "COP",
+    "uvt2026": 52374,
+    "bracketsUVT": [
+     {
+      "from": 0,
+      "to": 1090,
+      "rate": 0
+     },
+     {
+      "from": 1090,
+      "to": 1700,
+      "rate": 0.19
+     },
+     {
+      "from": 1700,
+      "to": 4100,
+      "rate": 0.28
+     },
+     {
+      "from": 4100,
+      "to": 8670,
+      "rate": 0.33
+     },
+     {
+      "from": 8670,
+      "to": 18970,
+      "rate": 0.35
+     },
+     {
+      "from": 18970,
+      "to": 31000,
+      "rate": 0.37
+     },
+     {
+      "from": 31000,
+      "to": null,
+      "rate": 0.39
+     }
+    ],
+    "employmentExemption": {
+     "share": 0.25,
+     "capUVT": 790
+    },
+    "regionalLayer": null
+   },
+   "applies": "Colombian residents, taxable year 2026 (art. 241 ET, as amended by Ley 2010 de 2019; the table itself is an image on the Senate page and is taken from the secondary source).",
+   "sources": [
+    {
+     "src": 0,
+     "said": "ARTICULO 241. TARIFA PARA LAS PERSONAS NATURALES RESIDENTES Y ASIGNACIONES Y DONACIONES MODALES. <Artículo modificado por el artículo 34 de la Ley 2010 de 2019. El nuevo texto es el siguiente:> El impuesto sobre la renta de las personas naturales residentes en el país,"
+    },
+    {
+     "src": 1,
+     "said": "Taxable income (UVT) Rate Up to 1,090 0% 1,091–1,700 19% 1,701–4,100 28% 4,101–8,670 33%"
+    },
+    {
+     "src": 1,
+     "said": "8,671–18,970 35% 18,971–31,000 37% Over 31,000 39%"
+    },
+    {
+     "src": 1,
+     "said": "National tax legislation provides that 25% of total employment income is tax exempt, up to a maximum of 790 UVT per year; the exemption applies after the application of other tax benefits."
+    },
+    {
+     "src": 2,
+     "said": "La Dirección de Impuestos y Aduanas Nacionales (DIAN) expidió el pasado 15 de diciembre de 2025 la Resolución 000238 por medio de la cual fijó en $ 52.374 el valor de la Unidad de Valor Tributario (UVT), aplicable para el año gravable 2026"
+    }
+   ]
+  },
+  {
+   "item": "year",
+   "finding": "The tax year is the calendar year; a resident files between August and October 2027 by the last two digits of the tax ID, unless income or net assets fall below the year's filing limits; employers withhold on wages.",
+   "value": {
+    "taxYear": {
+     "from": "2026-01-01",
+     "to": "2026-12-31"
+    },
+    "returnDue": "August-October 2027 by tax ID digits",
+    "currency": "COP"
+   },
+   "applies": "Colombian individuals.",
+   "sources": [
+    {
+     "src": 1,
+     "said": "Tax year: The tax year is the calendar year."
+    },
+    {
+     "src": 1,
+     "said": "Filing and payment: Tax on wages is withheld by the employer and remitted to the tax authorities. A resident is required to file an income tax return annually on the date set by the tax authorities (between August and October, depending on the last two digits of the individual’s tax ID number), unless the individual’s income or total net assets are below the amount set annually by the government."
+    }
+   ]
+  },
+  {
+   "item": "withholding",
+   "finding": "Tax on wages is withheld by the employer at source and remitted to DIAN.",
+   "value": {
+    "scheme": "retención en la fuente by the employer"
+   },
+   "applies": "Employees in Colombia.",
+   "sources": [
+    {
+     "src": 1,
+     "said": "Tax on wages is withheld by the employer and remitted to the tax authorities."
+    }
+   ]
+  },
+  {
+   "item": "social",
+   "finding": "The employer pays 8.5% health, 12% pension and 0.522%-6.96% labour risk, plus 9% payroll levies (ICBF 3%, SENA 2%, family fund 4%), with health, ICBF and SENA waived for employees under 10 minimum wages; the employee pays 4% health and 4% pension, plus 1%-2% to the Pension Solidarity Fund from 4 minimum wages.",
+   "value": {
+    "employer": {
+     "health": 0.085,
+     "pension": 0.12,
+     "labourRisk": [
+      0.00522,
+      0.0696
+     ],
+     "icbf": 0.03,
+     "sena": 0.02,
+     "familyFund": 0.04,
+     "waiverBelowMinWages": 10
+    },
+    "employee": {
+     "health": 0.04,
+     "pension": 0.04,
+     "solidarityFund": [
+      0.01,
+      0.02
+     ],
+     "solidarityFromMinWages": 4
+    }
+   },
+   "applies": "Employees in Colombia (the independent-worker rules were not read).",
+   "sources": [
+    {
+     "src": 1,
+     "said": "Employers must contribute to the social security system as follows: (i) 8.5% of the contribution base for the health system; (ii) 12% for the pension system; and (iii) a variable rate (from 0.522% to 6.96% depending on the company’s level of risk) for the labor risks system. Employers are exempt from health contributions for employees earning less than 10 times the minimum monthly legal salary. Employees contribute 4% of the contribution base for the health system, 4% for the pension system, and an additional 1% to 2% for the Pension Solidarity Fund (applicable to employees earning at least four times the minimum monthly legal salary)."
+    },
+    {
+     "src": 1,
+     "said": "Payroll taxes Employers must contribute 9% of the monthly payroll, allocated as follows: 3% to the Institute for Family Welfare (ICBF); 2% to the National Apprenticeship Service (SENA); and 4% to the Family Compensation Fund. Employers are exempt from ICBF and SENA contributions for employees earning less than 10 times the minimum monthly legal salary."
+    }
+   ]
+  },
+  {
+   "item": "nonResident",
+   "finding": "A non-resident individual pays a single 35% rate on Colombian-source taxable income (art. 247 ET), a visiting performer's, writer's or director's fee included.",
+   "value": {
+    "rate": 0.35,
+    "base": "Colombian-source taxable income",
+    "law": "art. 247 ET"
+   },
+   "applies": "Individuals without residence in Colombia.",
+   "sources": [
+    {
+     "src": 0,
+     "said": "la tarifa única sobre la renta gravable de fuente nacional, de las personas naturales sin residencia en el país, es del treinta y cinco por ciento (35%)."
+    }
+   ]
+  },
+  {
+   "item": "vat",
+   "finding": "A freelancer's fee for services to a client in Colombia bears VAT at 19% (5% and 0% reduced).",
+   "value": {
+    "standardRate": 0.19,
+    "reduced": [
+     0.05,
+     0
+    ],
+    "threshold": "not read"
+   },
+   "applies": "Services whose beneficiary is in Colombia.",
+   "sources": [
+    {
+     "src": 1,
+     "said": "The standard VAT rate is 19%, with a preferential rate of 0% applying to exports and certain domestic supplies. A reduced rate of 5% applies to certain goods and services."
+    }
+   ]
+  },
+  {
+   "item": "vat",
+   "finding": "A natural person who provides services need not register for VAT while gross income from the activity stays under 3,500 UVT in the year before and the current year (COP 183,309,000 at the 2026 UVT of 52,374), with one place of business, no franchise, no single contract or bank deposits of 3,500 UVT or more.",
+   "value": {
+    "thresholdUVT": 3500,
+    "threshold2026COP": 183309000,
+    "conditions": [
+     "one establishment",
+     "no franchise or intangibles",
+     "not a customs user",
+     "no single contract >= 3,500 UVT",
+     "deposits from taxed activities <= 3,500 UVT"
+    ]
+   },
+   "applies": "Art. 437 par. 3 ET as modified by Ley 2010 de 2019; COP amount from the UVT held under residents.",
+   "sources": [
+    {
+     "src": 3,
+     "said": "Deberán registrarse como responsables del IVA quienes realicen actividades gravadas con el impuesto, con excepción de las personas naturales comerciantes y los artesanos, que sean minoristas o detallistas, los pequeños agricultores y los ganaderos, así como quienes presten servicios, siempre y cuando cumplan la totalidad de las siguientes condiciones: 1. Que en el año anterior o en el año en curso hubieren obtenido ingresos brutos totales provenientes de la actividad, inferiores a 3.500 UVT"
+    }
+   ]
+  },
+  {
+   "item": "withholding",
+   "finding": "Fees, payments for personal services, literary and artistic royalties and film exploitation paid to a non-resident bear 20% withholding on the nominal payment (art. 408 ET); a non-resident whose whole income bore that withholding need not file, so it is final (art. 592 no. 2). A resident natural person's fees bear 10% as the general rule, 11% where the year's contract or payments exceed a set amount.",
+   "value": {
+    "nonResident": {
+     "rate": 0.2,
+     "base": "nominal payment",
+     "final": true
+    },
+    "residentFees": {
+     "general": 0.1,
+     "aboveThreshold": 0.11,
+     "threshold": "not read for 2026"
+    }
+   },
+   "applies": "2026; a treaty may reduce the non-resident rate; the art. 383 table applies to an independent who has not hired two or more workers (art. 383 as modified by Ley 1819 de 2016, editor's note to art. 392).",
+   "sources": [
+    {
+     "src": 3,
+     "said": "En los casos de pagos o abonos en cuenta por concepto de intereses, comisiones, honorarios, regalías, arrendamientos, compensaciones por servicios personales, o explotación de toda especie de propiedad industrial o del know-how, prestación de servicios, beneficios o regalías provenientes de la propiedad literaria, artística y científica, explotación de películas cinematográficas y explotación de software, la tarifa de retención será del veinte por ciento (20%) del valor nominal del pago o abono en cuenta … Las personas naturales o jurídicas, extranjeras, sin residencia o domicilio en el país, cuando la totalidad de sus ingresos hubieren estado sometidos a la retención en la fuente de que tratan los artículos 407 a 411 , inclusive"
+    },
+    {
+     "src": 4,
+     "said": "Por norma general la retención en la fuente por concepto de honorarios y comisiones que perciban las personas naturales es del diez por ciento (10%) sobre el valor del respectivo pago o abono en cuenta. En los siguientes casos se aplicará una tarifa de retención del once por ciento (11%)"
+    }
+   ]
+  }
+ ],
+ "country": "CO",
+ "sources": [
+  {
+   "url": "http://www.secretariasenado.gov.co/senado/basedoc/estatuto_tributario_pr010.html",
+   "title": "Estatuto Tributario, arts. 239-260 (Secretaría General del Senado, base documental)",
+   "read": "2026-11-01",
+   "kind": "primary",
+   "said": "ARTICULO 241. TARIFA PARA LAS PERSONAS NATURALES RESIDENTES Y ASIGNACIONES Y DONACIONES MODALES. <Artículo modificado por el artículo 34 de la Ley 2010 de 2019. El nuevo texto es el siguiente:> El impuesto sobre la renta de las personas naturales residentes en el país, … la tarifa única sobre la renta gravable de fuente nacional, de las personas naturales sin residencia en el país, es del treinta y cinco por ciento (35%)."
+  },
+  {
+   "url": "https://www.deloitte.com/content/dam/assets-shared/docs/services/tax/2026/dttl-tax-colombiahighlights-2026.pdf",
+   "title": "Colombia Highlights 2026 (Deloitte International Tax)",
+   "read": "2026-11-01",
+   "kind": "secondary",
+   "quotes": "https://www.dian.gov.co",
+   "said": "Taxable income (UVT) Rate Up to 1,090 0% 1,091–1,700 19% 1,701–4,100 28% 4,101–8,670 33% … 8,671–18,970 35% 18,971–31,000 37% Over 31,000 39% … National tax legislation provides that 25% of total employment income is tax exempt, up to a maximum of 790 UVT per year; the exemption applies after the application of other tax benefits. … Tax year: The tax year is the calendar year. … Filing and payment: Tax on wages is withheld by the employer and remitted to the tax authorities. A resident is required to file an income tax return annually on the date set by the tax authorities (between August and October, depending on the last two digits of the individual’s tax ID number), unless the individual’s income or total net assets are below the amount set annually by the government. … Employers must contribute to the social security system as follows: (i) 8.5% of the contribution base for the health system; (ii) 12% for the pension system; and (iii) a variable rate (from 0.522% to 6.96% depending on the company’s level of risk) for the labor risks system. Employers are exempt from health contributions for employees earning less than 10 times the minimum monthly legal salary. Employees contribute 4% of the contribution base for the health system, 4% for the pension system, and an additional 1% to 2% for the Pension Solidarity Fund (applicable to employees earning at least four times the minimum monthly legal salary). … Payroll taxes Employers must contribute 9% of the monthly payroll, allocated as follows: 3% to the Institute for Family Welfare (ICBF); 2% to the National Apprenticeship Service (SENA); and 4% to the Family Compensation Fund. Employers are exempt from ICBF and SENA contributions for employees earning less than 10 times the minimum monthly legal salary. … The standard VAT rate is 19%, with a preferential rate of 0% applying to exports and certain domestic supplies. A reduced rate of 5% applies to certain goods and services."
+  },
+  {
+   "url": "https://incp.org.co/agendatributariaincp/noticias/2025/12/dian-fijo-en-52-374-en-valor-de-la-uvt-para-el-ano-gravable-2026/",
+   "title": "DIAN fijó en $ 52.374 en valor de la UVT para el año gravable 2026 (INCP, 18 diciembre 2025)",
+   "read": "2026-11-01",
+   "kind": "secondary",
+   "quotes": "https://normograma.dian.gov.co/dian/compilacion/docs/resolucion_dian_0238_2025.htm",
+   "said": "La Dirección de Impuestos y Aduanas Nacionales (DIAN) expidió el pasado 15 de diciembre de 2025 la Resolución 000238 por medio de la cual fijó en $ 52.374 el valor de la Unidad de Valor Tributario (UVT), aplicable para el año gravable 2026"
+  },
+  {
+   "url": "https://normograma.dian.gov.co/dian/compilacion/docs/estatuto_tributario.htm",
+   "title": "Estatuto Tributario (Decreto 624 de 1989), Compilación Jurídica de la DIAN",
+   "read": "2026-11-01",
+   "kind": "primary",
+   "said": "Deberán registrarse como responsables del IVA quienes realicen actividades gravadas con el impuesto, con excepción de las personas naturales comerciantes y los artesanos, que sean minoristas o detallistas, los pequeños agricultores y los ganaderos, así como quienes presten servicios, siempre y cuando cumplan la totalidad de las siguientes condiciones: 1. Que en el año anterior o en el año en curso hubieren obtenido ingresos brutos totales provenientes de la actividad, inferiores a 3.500 UVT … En los casos de pagos o abonos en cuenta por concepto de intereses, comisiones, honorarios, regalías, arrendamientos, compensaciones por servicios personales, o explotación de toda especie de propiedad industrial o del know-how, prestación de servicios, beneficios o regalías provenientes de la propiedad literaria, artística y científica, explotación de películas cinematográficas y explotación de software, la tarifa de retención será del veinte por ciento (20%) del valor nominal del pago o abono en cuenta … Las personas naturales o jurídicas, extranjeras, sin residencia o domicilio en el país, cuando la totalidad de sus ingresos hubieren estado sometidos a la retención en la fuente de que tratan los artículos 407 a 411 , inclusive"
+  },
+  {
+   "url": "https://normograma.dian.gov.co/dian/compilacion/docs/concepto_dian_c23562.htm",
+   "title": "Concepto DIAN c23562 (Compilación Jurídica de la DIAN)",
+   "read": "2026-11-01",
+   "kind": "primary",
+   "said": "Por norma general la retención en la fuente por concepto de honorarios y comisiones que perciban las personas naturales es del diez por ciento (10%) sobre el valor del respectivo pago o abono en cuenta. En los siguientes casos se aplicará una tarifa de retención del once por ciento (11%)"
+  }
+ ],
+ "blockers": [
+  {
+   "item": "withholding",
+   "sought": "The current threshold (in UVT) above which a resident natural person's fees bear 11% rather than 10% (Decreto 1625 de 2016, art. 1.2.4.3.1), and the 2026 labour withholding table (art. 383 ET, an image on the compilations)",
+   "tried": {
+    "institution": "dian.gov.co reachable (HTTP 200) but normograma.dian.gov.co not reachable (curl 000) 2026-11-01 || 2026-11-01 retry: normograma.dian.gov.co now reachable: Estatuto Tributario arts. 408, 592 and 392 read (the non-resident part is now a figure); DIAN Concepto c23562 read: 10% on a natural person's fees, 11% above a yearly amount given in 2001 pesos ($88,000,000)",
+    "official-register": "secretariasenado.gov.co ET pages read (art. 241 table is an image; arts. 406-408 withholding on payments abroad, 437 VAT thresholds not read) || 2026-11-01 retry: Estatuto Tributario on normograma.dian.gov.co (DIAN's own compilation) in place of secretariasenado.gov.co (connection fails today); Decreto 1625 de 2016 art. 1.2.4.3.1 (the 11% threshold in UVT) not located in the time",
+    "web-search": "WebSearch 'DIAN resolución valor UVT 2026 pesos' || 2026-11-01 retry: 'DIAN tabla de retención en la fuente 2026 honorarios 10% 11% personas naturales pdf' (Spanish): DIAN concept c23562 and blogs (Siigo, Buk, Alegra) citing 3,300 UVT for the 11%; no DIAN 2026 table",
+    "trade-press": "Deloitte Colombia Highlights 2026 and INCP read || 2026-11-01 retry: Siigo and Buk blogs (2026) cite 10% / 11% above 3,300 UVT, naming Decreto 1625 de 2016; not taken as the source",
+    "archive": "web.archive.org not reachable (curl 000) 2026-11-01 || 2026-11-01 retry: archive.org availability API answers; web.archive.org is refused from this environment (http 'Blocked by egress policy', https connection fails), not read (2026-11-01)"
+   }
+  }
+ ]
+}

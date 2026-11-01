@@ -1,0 +1,127 @@
+{
+ "topic": "tax.BY",
+ "read": "2026-11-01",
+ "note": "Read 2026-11-01 at the owner's word (\"Build those first 3 starting with ledger first\"; of the 21 countries read first: \"It should cover across every country\"; \"Retry the blocked tax facts once all countries land\"): the tax on a screen worker's pay in Belarus: a resident's income tax, social contributions, what is withheld at source, a non-resident artiste's withholding, an author's treatment, VAT and the tax year. Research and retry subagents (workbench/briefs/BRIEF-tax.md, BRIEF-tax-retry.md), every quote checked by the lead against its saved page.",
+ "figures": [
+  {
+   "item": "residents",
+   "finding": "From 1 January 2026 income from employment and civil-law contracts is taxed at 13% up to BYN 350,000 a year, 25% on the part from 350,000 to 600,000 and 30% above 600,000 (the higher rates paid in practice from 2027).",
+   "value": {
+    "currency": "BYN",
+    "brackets": [
+     {
+      "from": 0,
+      "to": 350000,
+      "rate": 0.13
+     },
+     {
+      "from": 350000,
+      "to": 600000,
+      "rate": 0.25
+     },
+     {
+      "from": 600000,
+      "to": null,
+      "rate": 0.3
+     }
+    ],
+    "higherRatesCollected": "from 2027 (annual reckoning)",
+    "regional": null
+   },
+   "applies": "Tax Code amendments for 2026, as announced by the Ministry of Finance.",
+   "sources": [
+    {
+     "src": 0,
+     "said": "С 1 января 2026 года максимальную сумму доходов, которые подпадают под налог по ставке 13%, увеличат с 220 000 до 350 000 рублей, сообщает Минфин. Если сумма будет больше 350 тысяч, но меньше 600 тысяч, то сбор составит 25%. Его будут брать с того, что больше 350 тысяч. При этом с доходов, которые превышают 600 000 рублей, станут взимать сбор по ставке 30%."
+    },
+    {
+     "src": 0,
+     "said": "«Фактически уплата налога по новым ставкам начнется в 2027 году», — уточняет ведомство."
+    },
+    {
+     "src": 0,
+     "said": "Речь о доходах от дивидендов, по трудовым договорам, а также по гражданско-правовым договорам."
+    }
+   ]
+  }
+ ],
+ "country": "BY",
+ "sources": [
+  {
+   "url": "https://news.zerkalo.io/economics/116900.html",
+   "title": "Zerkalo, 29 December 2025: officials raise income tax to 30% (quoting the Ministry of Finance of Belarus)",
+   "read": "2026-11-01",
+   "kind": "secondary",
+   "quotes": "https://www.minfin.gov.by/",
+   "said": "С 1 января 2026 года максимальную сумму доходов, которые подпадают под налог по ставке 13%, увеличат с 220 000 до 350 000 рублей, сообщает Минфин. Если сумма будет больше 350 тысяч, но меньше 600 тысяч, то сбор составит 25%. Его будут брать с того, что больше 350 тысяч. При этом с доходов, которые превышают 600 000 рублей, станут взимать сбор по ставке 30%. … «Фактически уплата налога по новым ставкам начнется в 2027 году», — уточняет ведомство. … Речь о доходах от дивидендов, по трудовым договорам, а также по гражданско-правовым договорам."
+  }
+ ],
+ "blockers": [
+  {
+   "item": "year",
+   "sought": "Belarus's tax year and return date",
+   "tried": {
+    "institution": "nalog.gov.by resets the connection; pravo.by and etalonline.by (Tax Code text) return HTTP 403 (2026-11-01); not read another way || 2026-11-01 retry: nalog.gov.by, ssf.gov.by (FSZN), minfin.gov.by and etalonline.by all reset the connection (curl 000); pravo.by and government.by return HTTP 403; not read another way",
+    "official-register": "nalog.gov.by resets the connection; pravo.by and etalonline.by (Tax Code text) return HTTP 403 (2026-11-01); not read another way || 2026-11-01 retry: pravo.by (National Legal Internet Portal) HTTP 403; kodeksy-by.com now serves an unrelated spam site (discarded); normativka.by, ilex.by and bii.by reachable but are paid databases with no free Tax Code text",
+    "web-search": "'Belarus personal income tax 2026 rate 13% 25% threshold Tax Code article 214 non-resident 25% individual' (2026-11-01): found Zerkalo (used), neg.by and myfin.by (HTTP 403/423) || 2026-11-01 retry: refused by the tool on 2026-11-01: 'this turn's web search budget is used up (limit: 200 WebSearch calls per turn, shared by every agent)'; queries sent and refused this turn: 'Налоговый кодекс Республики Беларусь статья 199 ставки подоходного налога 2026 13 25 процентов' and 'Eswatini Revenue Service PAYE tax tables 1 July 2026'; no search engine was queried any other way",
+    "trade-press": "Zerkalo quoting the Ministry of Finance (used for residents); no PwC Belarus summary (HTTP 404) || 2026-11-01 retry: belta.by site search returns unrelated news; zerkalo.io reachable but no article on this item found without search; Sorainen (2021, saved BY-674950.html) is about dividends in 2021 and is not used for 2026",
+    "archive": "web.archive.org resets the connection from this environment (2026-11-01). || 2026-11-01 retry: archive.org's availability API now answers (snapshots of the institution's site exist), but web.archive.org snapshot pages return HTTP 403 over http and reset over https from this environment (2026-11-01)"
+   }
+  },
+  {
+   "item": "social",
+   "sought": "FSZN social contributions (employee 1%, employer share) and the self-employed rate",
+   "tried": {
+    "institution": "nalog.gov.by resets the connection; pravo.by and etalonline.by (Tax Code text) return HTTP 403 (2026-11-01); not read another way || 2026-11-01 retry: nalog.gov.by, ssf.gov.by (FSZN), minfin.gov.by and etalonline.by all reset the connection (curl 000); pravo.by and government.by return HTTP 403; not read another way",
+    "official-register": "nalog.gov.by resets the connection; pravo.by and etalonline.by (Tax Code text) return HTTP 403 (2026-11-01); not read another way || 2026-11-01 retry: pravo.by (National Legal Internet Portal) HTTP 403; kodeksy-by.com now serves an unrelated spam site (discarded); normativka.by, ilex.by and bii.by reachable but are paid databases with no free Tax Code text",
+    "web-search": "'Belarus personal income tax 2026 rate 13% 25% threshold Tax Code article 214 non-resident 25% individual' (2026-11-01): found Zerkalo (used), neg.by and myfin.by (HTTP 403/423) || 2026-11-01 retry: refused by the tool on 2026-11-01: 'this turn's web search budget is used up (limit: 200 WebSearch calls per turn, shared by every agent)'; queries sent and refused this turn: 'Налоговый кодекс Республики Беларусь статья 199 ставки подоходного налога 2026 13 25 процентов' and 'Eswatini Revenue Service PAYE tax tables 1 July 2026'; no search engine was queried any other way",
+    "trade-press": "Zerkalo quoting the Ministry of Finance (used for residents); no PwC Belarus summary (HTTP 404) || 2026-11-01 retry: belta.by site search returns unrelated news; zerkalo.io reachable but no article on this item found without search; Sorainen (2021, saved BY-674950.html) is about dividends in 2021 and is not used for 2026",
+    "archive": "web.archive.org resets the connection from this environment (2026-11-01). || 2026-11-01 retry: archive.org's availability API now answers (snapshots of the institution's site exist), but web.archive.org snapshot pages return HTTP 403 over http and reset over https from this environment (2026-11-01)"
+   }
+  },
+  {
+   "item": "withholding",
+   "sought": "Tax agent withholding on pay and freelance fees",
+   "tried": {
+    "institution": "nalog.gov.by resets the connection; pravo.by and etalonline.by (Tax Code text) return HTTP 403 (2026-11-01); not read another way || 2026-11-01 retry: nalog.gov.by, ssf.gov.by (FSZN), minfin.gov.by and etalonline.by all reset the connection (curl 000); pravo.by and government.by return HTTP 403; not read another way",
+    "official-register": "nalog.gov.by resets the connection; pravo.by and etalonline.by (Tax Code text) return HTTP 403 (2026-11-01); not read another way || 2026-11-01 retry: pravo.by (National Legal Internet Portal) HTTP 403; kodeksy-by.com now serves an unrelated spam site (discarded); normativka.by, ilex.by and bii.by reachable but are paid databases with no free Tax Code text",
+    "web-search": "'Belarus personal income tax 2026 rate 13% 25% threshold Tax Code article 214 non-resident 25% individual' (2026-11-01): found Zerkalo (used), neg.by and myfin.by (HTTP 403/423) || 2026-11-01 retry: refused by the tool on 2026-11-01: 'this turn's web search budget is used up (limit: 200 WebSearch calls per turn, shared by every agent)'; queries sent and refused this turn: 'Налоговый кодекс Республики Беларусь статья 199 ставки подоходного налога 2026 13 25 процентов' and 'Eswatini Revenue Service PAYE tax tables 1 July 2026'; no search engine was queried any other way",
+    "trade-press": "Zerkalo quoting the Ministry of Finance (used for residents); no PwC Belarus summary (HTTP 404) || 2026-11-01 retry: belta.by site search returns unrelated news; zerkalo.io reachable but no article on this item found without search; Sorainen (2021, saved BY-674950.html) is about dividends in 2021 and is not used for 2026",
+    "archive": "web.archive.org resets the connection from this environment (2026-11-01). || 2026-11-01 retry: archive.org's availability API now answers (snapshots of the institution's site exist), but web.archive.org snapshot pages return HTTP 403 over http and reset over https from this environment (2026-11-01)"
+   }
+  },
+  {
+   "item": "nonResident",
+   "sought": "The rate on a non-resident performer's, writer's or director's fee and whether final",
+   "tried": {
+    "institution": "nalog.gov.by resets the connection; pravo.by and etalonline.by (Tax Code text) return HTTP 403 (2026-11-01); not read another way || 2026-11-01 retry: nalog.gov.by, ssf.gov.by (FSZN), minfin.gov.by and etalonline.by all reset the connection (curl 000); pravo.by and government.by return HTTP 403; not read another way",
+    "official-register": "nalog.gov.by resets the connection; pravo.by and etalonline.by (Tax Code text) return HTTP 403 (2026-11-01); not read another way || 2026-11-01 retry: pravo.by (National Legal Internet Portal) HTTP 403; kodeksy-by.com now serves an unrelated spam site (discarded); normativka.by, ilex.by and bii.by reachable but are paid databases with no free Tax Code text",
+    "web-search": "'Belarus personal income tax 2026 rate 13% 25% threshold Tax Code article 214 non-resident 25% individual' (2026-11-01): found Zerkalo (used), neg.by and myfin.by (HTTP 403/423) || 2026-11-01 retry: refused by the tool on 2026-11-01: 'this turn's web search budget is used up (limit: 200 WebSearch calls per turn, shared by every agent)'; queries sent and refused this turn: 'Налоговый кодекс Республики Беларусь статья 199 ставки подоходного налога 2026 13 25 процентов' and 'Eswatini Revenue Service PAYE tax tables 1 July 2026'; no search engine was queried any other way",
+    "trade-press": "Zerkalo quoting the Ministry of Finance (used for residents); no PwC Belarus summary (HTTP 404) || 2026-11-01 retry: belta.by site search returns unrelated news; zerkalo.io reachable but no article on this item found without search; Sorainen (2021, saved BY-674950.html) is about dividends in 2021 and is not used for 2026",
+    "archive": "web.archive.org resets the connection from this environment (2026-11-01). || 2026-11-01 retry: archive.org's availability API now answers (snapshots of the institution's site exist), but web.archive.org snapshot pages return HTTP 403 over http and reset over https from this environment (2026-11-01)"
+   }
+  },
+  {
+   "item": "vat",
+   "sought": "VAT rate and whether an individual's fee bears it",
+   "tried": {
+    "institution": "nalog.gov.by resets the connection; pravo.by and etalonline.by (Tax Code text) return HTTP 403 (2026-11-01); not read another way || 2026-11-01 retry: nalog.gov.by, ssf.gov.by (FSZN), minfin.gov.by and etalonline.by all reset the connection (curl 000); pravo.by and government.by return HTTP 403; not read another way",
+    "official-register": "nalog.gov.by resets the connection; pravo.by and etalonline.by (Tax Code text) return HTTP 403 (2026-11-01); not read another way || 2026-11-01 retry: pravo.by (National Legal Internet Portal) HTTP 403; kodeksy-by.com now serves an unrelated spam site (discarded); normativka.by, ilex.by and bii.by reachable but are paid databases with no free Tax Code text",
+    "web-search": "'Belarus personal income tax 2026 rate 13% 25% threshold Tax Code article 214 non-resident 25% individual' (2026-11-01): found Zerkalo (used), neg.by and myfin.by (HTTP 403/423) || 2026-11-01 retry: refused by the tool on 2026-11-01: 'this turn's web search budget is used up (limit: 200 WebSearch calls per turn, shared by every agent)'; queries sent and refused this turn: 'Налоговый кодекс Республики Беларусь статья 199 ставки подоходного налога 2026 13 25 процентов' and 'Eswatini Revenue Service PAYE tax tables 1 July 2026'; no search engine was queried any other way",
+    "trade-press": "Zerkalo quoting the Ministry of Finance (used for residents); no PwC Belarus summary (HTTP 404) || 2026-11-01 retry: belta.by site search returns unrelated news; zerkalo.io reachable but no article on this item found without search; Sorainen (2021, saved BY-674950.html) is about dividends in 2021 and is not used for 2026",
+    "archive": "web.archive.org resets the connection from this environment (2026-11-01). || 2026-11-01 retry: archive.org's availability API now answers (snapshots of the institution's site exist), but web.archive.org snapshot pages return HTTP 403 over http and reset over https from this environment (2026-11-01)"
+   }
+  },
+  {
+   "item": "authors",
+   "sought": "Any special treatment of authors' royalties",
+   "tried": {
+    "institution": "nalog.gov.by resets the connection; pravo.by and etalonline.by (Tax Code text) return HTTP 403 (2026-11-01); not read another way || 2026-11-01 retry: nalog.gov.by, ssf.gov.by (FSZN), minfin.gov.by and etalonline.by all reset the connection (curl 000); pravo.by and government.by return HTTP 403; not read another way",
+    "official-register": "nalog.gov.by resets the connection; pravo.by and etalonline.by (Tax Code text) return HTTP 403 (2026-11-01); not read another way || 2026-11-01 retry: pravo.by (National Legal Internet Portal) HTTP 403; kodeksy-by.com now serves an unrelated spam site (discarded); normativka.by, ilex.by and bii.by reachable but are paid databases with no free Tax Code text",
+    "web-search": "'Belarus personal income tax 2026 rate 13% 25% threshold Tax Code article 214 non-resident 25% individual' (2026-11-01): found Zerkalo (used), neg.by and myfin.by (HTTP 403/423) || 2026-11-01 retry: refused by the tool on 2026-11-01: 'this turn's web search budget is used up (limit: 200 WebSearch calls per turn, shared by every agent)'; queries sent and refused this turn: 'Налоговый кодекс Республики Беларусь статья 199 ставки подоходного налога 2026 13 25 процентов' and 'Eswatini Revenue Service PAYE tax tables 1 July 2026'; no search engine was queried any other way",
+    "trade-press": "Zerkalo quoting the Ministry of Finance (used for residents); no PwC Belarus summary (HTTP 404) || 2026-11-01 retry: belta.by site search returns unrelated news; zerkalo.io reachable but no article on this item found without search; Sorainen (2021, saved BY-674950.html) is about dividends in 2021 and is not used for 2026",
+    "archive": "web.archive.org resets the connection from this environment (2026-11-01). || 2026-11-01 retry: archive.org's availability API now answers (snapshots of the institution's site exist), but web.archive.org snapshot pages return HTTP 403 over http and reset over https from this environment (2026-11-01)"
+   }
+  }
+ ]
+}

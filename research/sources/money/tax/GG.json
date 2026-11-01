@@ -1,0 +1,248 @@
+{
+ "topic": "tax.GG",
+ "read": "2026-11-01",
+ "note": "Read 2026-11-01 at the owner's word (\"Build those first 3 starting with ledger first\"; of the 21 countries read first: \"It should cover across every country\"; \"Retry the blocked tax facts once all countries land\"): the tax on a screen worker's pay in Guernsey: a resident's income tax, social contributions, what is withheld at source, a non-resident artiste's withholding, an author's treatment, VAT and the tax year. Research and retry subagents (workbench/briefs/BRIEF-tax.md, BRIEF-tax-retry.md), every quote checked by the lead against its saved page.",
+ "figures": [
+  {
+   "item": "residents",
+   "finding": "A resident pays a flat 20% on income after allowances; the 2026 personal allowance is £15,200, withdrawn at £1 for every £5 of income above £85,000.",
+   "value": {
+    "currency": "GBP",
+    "brackets": [
+     {
+      "from": 0,
+      "to": null,
+      "rate": 0.2
+     }
+    ],
+    "allowance": 15200,
+    "allowanceWithdrawal": {
+     "above": 85000,
+     "ratio": "1 per 5"
+    },
+    "regional": null
+   },
+   "applies": "Tax year 2026 (Budget 2026).",
+   "sources": [
+    {
+     "src": 0,
+     "said": "Income tax is 20% of assessable income."
+    },
+    {
+     "src": 0,
+     "said": "The personal allowance will increase to £15,200."
+    },
+    {
+     "src": 0,
+     "said": "The threshold at which personal allowances begin to be withdrawn has been increased to £85,000 in line with inflation."
+    },
+    {
+     "src": 0,
+     "said": "This happens at a rate of £1 for every £5 the income is above the limit."
+    },
+    {
+     "src": 1,
+     "said": "Personal (after allowances and deductions as appropriate) 20% 20% 20% 20% 20% 20% 20%"
+    }
+   ]
+  },
+  {
+   "item": "year",
+   "finding": "The tax year is the calendar year; the return is due by 30 November of the following year (from the 2025 year).",
+   "value": {
+    "start": "01-01",
+    "end": "12-31",
+    "returnDue": "11-30 of the following year"
+   },
+   "applies": "Individuals.",
+   "sources": [
+    {
+     "src": 2,
+     "said": "The deadline for the 2025 tax return is 30 November 2026."
+    },
+    {
+     "src": 3,
+     "said": "The tax year is the calendar year."
+    },
+    {
+     "src": 3,
+     "said": "Tax returns are required to be filed by 30 November following the end of the c alendar year for 2025 onwards."
+    }
+   ]
+  },
+  {
+   "item": "social",
+   "finding": "In 2026 an employee pays 7.5% and the employer 7.1% social security on earnings between £832 and £16,380 a month; a self-employed person pays 12.4% on earnings between £9,984 and £196,560 a year.",
+   "value": {
+    "currency": "GBP",
+    "employee": 0.075,
+    "employer": 0.071,
+    "monthlyLower": 832,
+    "monthlyUpper": 16380,
+    "selfEmployed": {
+     "rate": 0.124,
+     "annualLower": 9984,
+     "annualUpper": 196560,
+     "maxWeekly": 468.72
+    }
+   },
+   "applies": "2026 (Class 1 under pension age, Class 2).",
+   "sources": [
+    {
+     "src": 1,
+     "said": "Employer 7.1% 7.0% 6.9% 6.8% 6.7% 6.6% 6.6% Employee 7.5% 7.4% 7.2% 7.0% 6.8% 6.6% 6.6%"
+    },
+    {
+     "src": 1,
+     "said": "Upper earnings limit (monthly) 16,380 15,717 14,989 14,040 13,117 12,805 12,480"
+    },
+    {
+     "src": 1,
+     "said": "Lower earnings limit (monthly) 832.00 797.33 758.33 706.33 658.67 641.33 624.00"
+    },
+    {
+     "src": 1,
+     "said": "Yearly percentage 12.4% 12.2% 11.9% 11.6% 11.3% 11.0% 11.0% Upper earnings limit (annual) 196,560 188,604 179,868 168,480 157,404 153,660 149,760"
+    },
+    {
+     "src": 1,
+     "said": "Lower earnings limit (annual) 9,984 9,568 9,100 8,476 7,904 7,696 7,488"
+    }
+   ]
+  },
+  {
+   "item": "withholding",
+   "finding": "Tax is deducted from wages under the Employees Tax Instalment (ETI) scheme; a self-employed person pays quarterly interim instalments by 15 April, 15 July, 15 October and 15 January.",
+   "value": {
+    "employee": "ETI by coding notice",
+    "selfEmployed": {
+     "instalments": [
+      "04-15",
+      "07-15",
+      "10-15",
+      "01-15"
+     ]
+    }
+   },
+   "applies": "Individuals.",
+   "sources": [
+    {
+     "src": 3,
+     "said": "Tax, including tax payable on benefits in kind, is deducted from wages under the Employees Tax Instalment (ETI) (Guernsey payroll tax deduction) system."
+    },
+    {
+     "src": 3,
+     "said": "instalment payments due by the 15th day after the end of the relevant quarter in the calendar year (i.e. 15 April, 15 July, 15 October, and 15 January)."
+    }
+   ]
+  },
+  {
+   "item": "nonResident",
+   "finding": "A non-resident public entertainer (stage, film or radio artiste, musician) appearing in Guernsey is taxed at 20% on the fee less expenses, deducted by the Guernsey agent; by concession expenses may be taken as £2,500 or 25% of the gross fee, and fees under £2,500 bear no tax.",
+   "value": {
+    "currency": "GBP",
+    "rate": 0.2,
+    "expenseAllowance": {
+     "fixed": 2500,
+     "orShareOfGross": 0.25
+    },
+    "noTaxBelow": 2500,
+    "collectedBy": "Guernsey agent (Income Tax Law s. 48)"
+   },
+   "applies": "Non-resident entertainers (SoP B7, values confirmed in Monetary Values 2026).",
+   "sources": [
+    {
+     "src": 4,
+     "said": "All public entertainers, such as stage, film or radio artistes, musicians and athletes, who appear in Guernsey and who are not resident in Guernsey for income tax purposes, are liable to income tax in respect of any fees or payments made either directly or indirectly in connection with the appearance."
+    },
+    {
+     "src": 4,
+     "said": "Where a fee of less than £2,500 is received it is accepted that the expenditure, that would be allowable for Guernsey income tax purposes, would in all likelihood either equate to or exceed that sum, so no tax will be due."
+    },
+    {
+     "src": 4,
+     "said": "An expense claim of 25% of the gross fee paid can be made (“alternative expense allowance”), in lieu of a detailed expense claim, and the balance of the income will then be liable to Guernsey income tax at the individual standard rate of 20%,"
+    },
+    {
+     "src": 1,
+     "said": "B7 - Non-resident entertainers Allowable (fixed) sum for expenses 2,500 2,500 2,500 2,500 2,500 2,500 2,500"
+    }
+   ]
+  },
+  {
+   "item": "vat",
+   "finding": "Guernsey has no VAT or GST, so a freelancer's fee bears none (a GST from 2028 was proposed in the 2025 Budget).",
+   "value": {
+    "standard": 0,
+    "threshold": null
+   },
+   "applies": "2026.",
+   "sources": [
+    {
+     "src": 5,
+     "said": "Guernsey does not operate a VAT or goods and services tax (GST). Proposals to implement GST in 2028 were included in the 2025 Budget."
+    }
+   ]
+  }
+ ],
+ "country": "GG",
+ "sources": [
+  {
+   "url": "https://www.gov.gg/RStax-rates-and-allowances",
+   "title": "States of Guernsey Revenue Service: Income tax rates and allowances",
+   "read": "2026-11-01",
+   "kind": "primary",
+   "said": "Income tax is 20% of assessable income. … The personal allowance will increase to £15,200. … The threshold at which personal allowances begin to be withdrawn has been increased to £85,000 in line with inflation. … This happens at a rate of £1 for every £5 the income is above the limit."
+  },
+  {
+   "url": "https://www.gov.gg/CHttpHandler.ashx?id=185595&p=0",
+   "title": "States of Guernsey Revenue Service: Monetary Values 2026 (v2.1)",
+   "read": "2026-11-01",
+   "kind": "primary",
+   "said": "Personal (after allowances and deductions as appropriate) 20% 20% 20% 20% 20% 20% 20% … Employer 7.1% 7.0% 6.9% 6.8% 6.7% 6.6% 6.6% Employee 7.5% 7.4% 7.2% 7.0% 6.8% 6.6% 6.6% … Upper earnings limit (monthly) 16,380 15,717 14,989 14,040 13,117 12,805 12,480 … Lower earnings limit (monthly) 832.00 797.33 758.33 706.33 658.67 641.33 624.00 … Yearly percentage 12.4% 12.2% 11.9% 11.6% 11.3% 11.0% 11.0% Upper earnings limit (annual) 196,560 188,604 179,868 168,480 157,404 153,660 149,760 … Lower earnings limit (annual) 9,984 9,568 9,100 8,476 7,904 7,696 7,488 … B7 - Non-resident entertainers Allowable (fixed) sum for expenses 2,500 2,500 2,500 2,500 2,500 2,500 2,500"
+  },
+  {
+   "url": "https://www.gov.gg/revenueservice",
+   "title": "Revenue Service - States of Guernsey",
+   "read": "2026-11-01",
+   "kind": "primary",
+   "said": "The deadline for the 2025 tax return is 30 November 2026."
+  },
+  {
+   "url": "https://taxsummaries.pwc.com/guernsey/individual/tax-administration",
+   "title": "PwC Worldwide Tax Summaries: Guernsey, Individual - Tax administration (reviewed 21 September 2026)",
+   "read": "2026-11-01",
+   "kind": "secondary",
+   "quotes": "https://www.gov.gg/personal-tax-returns",
+   "said": "The tax year is the calendar year. … Tax returns are required to be filed by 30 November following the end of the c alendar year for 2025 onwards. … Tax, including tax payable on benefits in kind, is deducted from wages under the Employees Tax Instalment (ETI) (Guernsey payroll tax deduction) system. … instalment payments due by the 15th day after the end of the relevant quarter in the calendar year (i.e. 15 April, 15 July, 15 October, and 15 January)."
+  },
+  {
+   "url": "https://www.gov.gg/CHttpHandler.ashx?id=150212&p=0",
+   "title": "States of Guernsey Revenue Service: Statement of Practice B7, Non-Resident Entertainers - Expenses Claims (updated 25 November 2021)",
+   "read": "2026-11-01",
+   "kind": "primary",
+   "said": "All public entertainers, such as stage, film or radio artistes, musicians and athletes, who appear in Guernsey and who are not resident in Guernsey for income tax purposes, are liable to income tax in respect of any fees or payments made either directly or indirectly in connection with the appearance. … Where a fee of less than £2,500 is received it is accepted that the expenditure, that would be allowable for Guernsey income tax purposes, would in all likelihood either equate to or exceed that sum, so no tax will be due. … An expense claim of 25% of the gross fee paid can be made (“alternative expense allowance”), in lieu of a detailed expense claim, and the balance of the income will then be liable to Guernsey income tax at the individual standard rate of 20%,"
+  },
+  {
+   "url": "https://taxsummaries.pwc.com/guernsey/individual/other-taxes",
+   "title": "PwC Worldwide Tax Summaries: Guernsey, Individual - Other taxes (reviewed 21 September 2026)",
+   "read": "2026-11-01",
+   "kind": "secondary",
+   "quotes": "https://www.gov.gg/RStax-rates-and-allowances",
+   "said": "Guernsey does not operate a VAT or goods and services tax (GST). Proposals to implement GST in 2028 were included in the 2025 Budget."
+  }
+ ],
+ "blockers": [
+  {
+   "item": "authors",
+   "sought": "Any special treatment of authors' fees or royalties",
+   "tried": {
+    "institution": "Revenue Service rates page, Monetary Values 2026 and SoP list read: none found || retry-8 2026-11-01: gov.gg Revenue Service home re-read (2026-11-01): no author or royalty rule; it gives the 2025 return deadline (added to the year figure)",
+    "official-register": "Income Tax (Guernsey) Law 1975 on guernseylegalresources.gg not read || retry-8 2026-11-01: guernseylegalresources.gg (Income Tax (Guernsey) Law 1975 consolidated) answers 403 with a Cloudflare 'Just a moment...' challenge to this environment: not read another way",
+    "web-search": "not run separately || retry-8 2026-11-01: a search for Guernsey authors' royalties income tax treatment was refused by the search tool (shared per-turn limit of 200 searches reached)",
+    "trade-press": "PwC Guernsey summary: none || retry-8 2026-11-01: PwC Guernsey summary (re-read in the earlier pass): no author rule",
+    "archive": "web.archive.org resets the connection from this environment (2026-11-01). || retry-8 2026-11-01: web.archive.org: connection reset and availability API 429 on 2026-11-01"
+   }
+  }
+ ]
+}

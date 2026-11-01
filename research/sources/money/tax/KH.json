@@ -1,0 +1,240 @@
+{
+ "topic": "tax.KH",
+ "read": "2026-11-01",
+ "note": "Read 2026-11-01 at the owner's word (\"Build those first 3 starting with ledger first\"; of the 21 countries read first: \"It should cover across every country\"; \"Retry the blocked tax facts once all countries land\"): the tax on a screen worker's pay in Cambodia: a resident's income tax, social contributions, what is withheld at source, a non-resident artiste's withholding, an author's treatment, VAT and the tax year. Research and retry subagents (workbench/briefs/BRIEF-tax.md, BRIEF-tax-retry.md), every quote checked by the lead against its saved page.",
+ "figures": [
+  {
+   "item": "residents",
+   "finding": "Cambodia has no personal income tax as such: a resident's monthly salary is taxed at 0% to KHR 1,500,000, 5% to 2,000,000, 10% to 8,500,000, 15% to 12,500,000 and 20% above; consulting income falls under tax on income instead.",
+   "value": {
+    "currency": "KHR",
+    "period": "monthly",
+    "brackets": [
+     {
+      "from": 0,
+      "to": 1500000,
+      "rate": 0
+     },
+     {
+      "from": 1500000,
+      "to": 2000000,
+      "rate": 0.05
+     },
+     {
+      "from": 2000000,
+      "to": 8500000,
+      "rate": 0.1
+     },
+     {
+      "from": 8500000,
+      "to": 12500000,
+      "rate": 0.15
+     },
+     {
+      "from": 12500000,
+      "to": null,
+      "rate": 0.2
+     }
+    ],
+    "fringeBenefits": 0.2
+   },
+   "applies": "Residents' salary tax, 2026.",
+   "sources": [
+    {
+     "src": 0,
+     "said": "There is no personal income tax, per se , in Cambodia. Instead, a monthly salary tax is imposed on individuals who derive income from employment."
+    },
+    {
+     "src": 0,
+     "said": "0 to 1,500,000 0 1,500,001 to 2,000,000 5 2,000,001 to 8,500,000 10 8,500,001 to 12,500,000 15 Over 12,500,000 20"
+    }
+   ]
+  },
+  {
+   "item": "year",
+   "finding": "Salary tax is monthly: the employer files and pays by the 20th day after the month; employees file no annual return.",
+   "value": {
+    "period": "monthly",
+    "remitWithinDays": 20,
+    "annualReturn": null
+   },
+   "applies": "Employees.",
+   "sources": [
+    {
+     "src": 1,
+     "said": "Employees do not have to file an annual return."
+    },
+    {
+     "src": 1,
+     "said": "The tax withheld must be paid to the tax authorities no later than 20 days after the end of the month in which the salaries were paid."
+    }
+   ]
+  },
+  {
+   "item": "social",
+   "finding": "The employer pays 0.8% occupational risk and 2.6% healthcare to the NSSF; the pension contribution is 4% of the contributory wage in its first five years (2% employer, 2% employee), rising to 8% in years six to ten.",
+   "value": {
+    "employer": {
+     "occupationalRisk": 0.008,
+     "healthcare": 0.026,
+     "pension": 0.02
+    },
+    "employee": {
+     "pension": 0.02
+    },
+    "pensionLater": 0.08
+   },
+   "applies": "NSSF.",
+   "sources": [
+    {
+     "src": 2,
+     "said": "The employer is required to contribute ORC equal to 0.8% of the monthly average wage of an employee to the NSSF’s designated bank account."
+    },
+    {
+     "src": 2,
+     "said": "The healthcare contribution is required from both employers and employees at 1.3% (each) of the monthly average wage of employees. However, from 1 January 2018, the obligation to pay the contribution of healthcare as stated in the above paragraph shall be the full burden (100%) of the employer."
+    },
+    {
+     "src": 2,
+     "said": "In the first five years, the pension contribution rate is 4% of the contributory wage of the worker/employee. The employer contributes 2%, while the other 2% comes from the worker/employee."
+    }
+   ]
+  },
+  {
+   "item": "withholding",
+   "finding": "The employer deducts salary tax by the tax tables (PAYE); a payment for services to a resident not registered with a VAT invoice bears 15% final withholding, and royalties 15%.",
+   "value": {
+    "servicesToUnregisteredResident": 0.15,
+    "royalties": 0.15,
+    "final": true
+   },
+   "applies": "Residents.",
+   "sources": [
+    {
+     "src": 1,
+     "said": "Employers must deduct salary tax from employees' salaries in accordance with the tax tables on a pay-as-you-earn (PAYE) basis."
+    },
+    {
+     "src": 3,
+     "said": "Royalties: 15%. Rental: 10%. Services: 15% (except payments to a registered taxpayer and supported by a valid VAT invoice)."
+    }
+   ]
+  },
+  {
+   "item": "nonResident",
+   "finding": "A non-resident's Cambodian salary is taxed at a flat, final 20%; any other Cambodian-source income paid to a non-resident, including for services performed in Cambodia, bears 14% withholding.",
+   "value": {
+    "salary": 0.2,
+    "otherIncome": 0.14,
+    "final": true
+   },
+   "applies": "Non-residents.",
+   "sources": [
+    {
+     "src": 0,
+     "said": "Non-residents are taxed at a flat rate of 20%, which constitutes a final tax."
+    },
+    {
+     "src": 3,
+     "said": "who pays any Cambodian-source income as defined under Article 33 of the Law on Taxation to a non-resident taxpayer must withhold tax at 14% of the amount paid."
+    },
+    {
+     "src": 3,
+     "said": "Income from services performed in Cambodia."
+    }
+   ]
+  },
+  {
+   "item": "vat",
+   "finding": "VAT is 10% for entities in the self-declaration regime.",
+   "value": {
+    "standard": 0.1
+   },
+   "applies": "2026.",
+   "sources": [
+    {
+     "src": 4,
+     "said": "VAT is applicable to self-declaration regime entities and is charged at 10% on the value of the supply of most goods and services."
+    }
+   ]
+  }
+ ],
+ "country": "KH",
+ "sources": [
+  {
+   "url": "https://taxsummaries.pwc.com/cambodia/individual/taxes-on-personal-income",
+   "title": "PwC Worldwide Tax Summaries: Cambodia, Individual - Taxes on personal income (reviewed 2 April 2026)",
+   "read": "2026-11-01",
+   "kind": "secondary",
+   "quotes": "https://www.tax.gov.kh/",
+   "said": "There is no personal income tax, per se , in Cambodia. Instead, a monthly salary tax is imposed on individuals who derive income from employment. … 0 to 1,500,000 0 1,500,001 to 2,000,000 5 2,000,001 to 8,500,000 10 8,500,001 to 12,500,000 15 Over 12,500,000 20 … Non-residents are taxed at a flat rate of 20%, which constitutes a final tax."
+  },
+  {
+   "url": "https://taxsummaries.pwc.com/cambodia/individual/tax-administration",
+   "title": "PwC Worldwide Tax Summaries: Cambodia, Individual - Tax administration (reviewed 2 April 2026)",
+   "read": "2026-11-01",
+   "kind": "secondary",
+   "quotes": "https://www.tax.gov.kh/",
+   "said": "Employees do not have to file an annual return. … The tax withheld must be paid to the tax authorities no later than 20 days after the end of the month in which the salaries were paid. … Employers must deduct salary tax from employees' salaries in accordance with the tax tables on a pay-as-you-earn (PAYE) basis."
+  },
+  {
+   "url": "https://taxsummaries.pwc.com/cambodia/individual/other-taxes",
+   "title": "PwC Worldwide Tax Summaries: Cambodia, Individual - Other taxes (reviewed 2 April 2026)",
+   "read": "2026-11-01",
+   "kind": "secondary",
+   "quotes": "https://www.tax.gov.kh/",
+   "said": "The employer is required to contribute ORC equal to 0.8% of the monthly average wage of an employee to the NSSF’s designated bank account. … The healthcare contribution is required from both employers and employees at 1.3% (each) of the monthly average wage of employees. However, from 1 January 2018, the obligation to pay the contribution of healthcare as stated in the above paragraph shall be the full burden (100%) of the employer. … In the first five years, the pension contribution rate is 4% of the contributory wage of the worker/employee. The employer contributes 2%, while the other 2% comes from the worker/employee."
+  },
+  {
+   "url": "https://taxsummaries.pwc.com/cambodia/corporate/withholding-taxes",
+   "title": "PwC Worldwide Tax Summaries: Cambodia, Corporate - Withholding taxes (reviewed 2 April 2026)",
+   "read": "2026-11-01",
+   "kind": "secondary",
+   "quotes": "https://www.tax.gov.kh/",
+   "said": "Royalties: 15%. Rental: 10%. Services: 15% (except payments to a registered taxpayer and supported by a valid VAT invoice). … who pays any Cambodian-source income as defined under Article 33 of the Law on Taxation to a non-resident taxpayer must withhold tax at 14% of the amount paid. … Income from services performed in Cambodia."
+  },
+  {
+   "url": "https://taxsummaries.pwc.com/cambodia/corporate/other-taxes",
+   "title": "PwC Worldwide Tax Summaries: Cambodia, Corporate - Other taxes (reviewed 2 April 2026)",
+   "read": "2026-11-01",
+   "kind": "secondary",
+   "quotes": "https://www.tax.gov.kh/",
+   "said": "VAT is applicable to self-declaration regime entities and is charged at 10% on the value of the supply of most goods and services."
+  }
+ ],
+ "blockers": [
+  {
+   "item": "residents",
+   "sought": "GDT's own salary-tax table and allowances for 2026",
+   "tried": {
+    "institution": "tax.gov.kh home page reachable; the Law on Taxation and the salary-tax prakas were not located (2026-11-01) || 2026-11-01 retry: tax.gov.kh/en/law lists the Law on Taxation NS/RKM/0523/004 (16 May 2023); its PDF downloaded (KH-gdt-law-on-taxation-2023.pdf, 84 pages) is an image scan in Khmer, and this machine has no Khmer OCR data (tesseract: eng only); the 'Tax Types Briefly' pages for Tax on Salary and VAT hold only images.",
+    "official-register": "not read || 2026-11-01 retry: the Law on Taxation itself was the register copy read; no English consolidation found on tax.gov.kh.",
+    "web-search": "not run separately || 2026-11-01 retry: refused: the session's web-search limit (200 calls per turn, shared) was reached before this query ('GDT Cambodia residents 2026 prakas').",
+    "trade-press": "PwC Cambodia used || 2026-11-01 retry: PwC Cambodia (already saved) remains the source.",
+    "archive": "web.archive.org resets the connection from this environment (2026-11-01). || 2026-11-01 retry: web.archive.org connection reset through the proxy (curl 000)."
+   }
+  },
+  {
+   "item": "vat",
+   "sought": "The VAT registration threshold for an individual service provider",
+   "tried": {
+    "institution": "tax.gov.kh home page reachable; the Law on Taxation and the salary-tax prakas were not located (2026-11-01) || 2026-11-01 retry: tax.gov.kh/en/law lists the Law on Taxation NS/RKM/0523/004 (16 May 2023); its PDF downloaded (KH-gdt-law-on-taxation-2023.pdf, 84 pages) is an image scan in Khmer, and this machine has no Khmer OCR data (tesseract: eng only); the 'Tax Types Briefly' pages for Tax on Salary and VAT hold only images.",
+    "official-register": "not read || 2026-11-01 retry: the Law on Taxation itself was the register copy read; no English consolidation found on tax.gov.kh.",
+    "web-search": "not run separately || 2026-11-01 retry: refused: the session's web-search limit (200 calls per turn, shared) was reached before this query ('GDT Cambodia vat 2026 prakas').",
+    "trade-press": "PwC Cambodia used || 2026-11-01 retry: PwC Cambodia (already saved) remains the source.",
+    "archive": "web.archive.org resets the connection from this environment (2026-11-01). || 2026-11-01 retry: web.archive.org connection reset through the proxy (curl 000)."
+   }
+  },
+  {
+   "item": "authors",
+   "sought": "Any special treatment of authors' fees",
+   "tried": {
+    "institution": "tax.gov.kh home page reachable; the Law on Taxation and the salary-tax prakas were not located (2026-11-01) || 2026-11-01 retry: tax.gov.kh/en/law lists the Law on Taxation NS/RKM/0523/004 (16 May 2023); its PDF downloaded (KH-gdt-law-on-taxation-2023.pdf, 84 pages) is an image scan in Khmer, and this machine has no Khmer OCR data (tesseract: eng only); the 'Tax Types Briefly' pages for Tax on Salary and VAT hold only images.",
+    "official-register": "not read || 2026-11-01 retry: the Law on Taxation itself was the register copy read; no English consolidation found on tax.gov.kh.",
+    "web-search": "not run separately || 2026-11-01 retry: refused: the session's web-search limit (200 calls per turn, shared) was reached before this query ('GDT Cambodia authors 2026 prakas').",
+    "trade-press": "PwC Cambodia used || 2026-11-01 retry: PwC Cambodia (already saved) remains the source.",
+    "archive": "web.archive.org resets the connection from this environment (2026-11-01). || 2026-11-01 retry: web.archive.org connection reset through the proxy (curl 000)."
+   }
+  }
+ ]
+}

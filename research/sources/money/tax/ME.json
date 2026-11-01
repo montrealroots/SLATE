@@ -1,0 +1,221 @@
+{
+ "topic": "tax.ME",
+ "read": "2026-11-01",
+ "note": "Read 2026-11-01 at the owner's word (\"Build those first 3 starting with ledger first\"; of the 21 countries read first: \"It should cover across every country\"; \"Retry the blocked tax facts once all countries land\"): the tax on a screen worker's pay in Montenegro: a resident's income tax, social contributions, what is withheld at source, a non-resident artiste's withholding, an author's treatment, VAT and the tax year. Research and retry subagents (workbench/briefs/BRIEF-tax.md, BRIEF-tax-retry.md), every quote checked by the lead against its saved page.",
+ "figures": [
+  {
+   "item": "residents",
+   "finding": "A salary is taxed by the gross monthly amount at 0% to €700, 9% from €700.01 to €1,000 and 15% above; entrepreneurial income at 0% to €8,400 a year, 9% to €12,000 and 15% above; other income at 15%. A municipal surtax of 13% of the tax (15% in Podgorica and Cetinje) is added.",
+   "value": {
+    "currency": "EUR",
+    "salaryMonthlyGross": [
+     {
+      "from": 0,
+      "to": 700,
+      "rate": 0
+     },
+     {
+      "from": 700,
+      "to": 1000,
+      "rate": 0.09
+     },
+     {
+      "from": 1000,
+      "to": null,
+      "rate": 0.15
+     }
+    ],
+    "entrepreneurAnnual": [
+     {
+      "from": 0,
+      "to": 8400,
+      "rate": 0
+     },
+     {
+      "from": 8400,
+      "to": 12000,
+      "rate": 0.09
+     },
+     {
+      "from": 12000,
+      "to": null,
+      "rate": 0.15
+     }
+    ],
+    "otherIncome": 0.15,
+    "regional": {
+     "surtaxOnTax": 0.13,
+     "PodgoricaCetinje": 0.15,
+     "setBy": "municipality of domicile"
+    }
+   },
+   "applies": "2026; poreskauprava/gov.me not read in this pass, so PwC is quoted.",
+   "sources": [
+    {
+     "src": 0,
+     "said": "Salaries up to 700 euros (EUR) (gross) are subject to 0% tax. Salaries between EUR 700.01 and EUR 1,000 (gross) are subject to 9% tax. Salaries exceeding EUR 1,000 (gross) are subject to 15% tax."
+    },
+    {
+     "src": 0,
+     "said": "Earnings up to EUR 8,400 are subject to 0% tax. Earnings from EUR 8,400.01 to EUR 12,000 are taxed at 9%. Earnings exceeding EUR 12,000 are taxed at 15%."
+    },
+    {
+     "src": 0,
+     "said": "A surtax rate of 13% applies in all municipalities, except Podgorica and Cetinje, where the rate is 15%. The surtax base is calculated based on the amount of PIT assessed."
+    }
+   ]
+  },
+  {
+   "item": "year",
+   "finding": "The tax year is the calendar year; the annual return is due by the end of April; entrepreneurs pay in 12 monthly instalments.",
+   "value": {
+    "start": "01-01",
+    "end": "12-31",
+    "returnDue": "04-30"
+   },
+   "applies": "Individuals.",
+   "sources": [
+    {
+     "src": 1,
+     "said": "A tax year in Montenegro is the calendar year. Tax returns Generally, taxpayers are obligated to submit an annual tax return by the end of April for income generated in the previous calendar year."
+    }
+   ]
+  },
+  {
+   "item": "withholding",
+   "finding": "The payer withholds tax at source from employment income and royalties, among others; other income is paid with the return.",
+   "value": {
+    "atSource": [
+     "employment income",
+     "income from capital",
+     "property-related income",
+     "royalties"
+    ]
+   },
+   "applies": "2026.",
+   "sources": [
+    {
+     "src": 1,
+     "said": "certain types of income (employment income, income from capital, property-related income, royalties, etc.) are subject to withholding at the source by the payer."
+    }
+   ]
+  },
+  {
+   "item": "nonResident",
+   "finding": "A non-resident performing entertainment, cultural-artistic or similar programmes in Montenegro has 15% withheld by the payer; royalties to non-residents also bear 15%; treaties may reduce it.",
+   "value": {
+    "rate": 0.15,
+    "royalties": 0.15
+   },
+   "applies": "Payments by Montenegrin legal entities, 2026.",
+   "sources": [
+    {
+     "src": 2,
+     "said": "Legal entities are obliged to calculate and pay 15% WHT at the moment of payment of income on the following income categories:"
+    },
+    {
+     "src": 2,
+     "said": "Income earned by non-residents on the basis of performing entertainment, cultural artistic, sports, or similar programmes in Montenegro."
+    }
+   ]
+  },
+  {
+   "item": "social",
+   "finding": "The employee bears the whole 10% pension and disability contribution (capped at €75,453 a year for 2025) and 0.5% unemployment insurance; the employer pays 0.5% unemployment insurance.",
+   "value": {
+    "currency": "EUR",
+    "employee": {
+     "pension": 0.1,
+     "unemployment": 0.005
+    },
+    "employer": {
+     "unemployment": 0.005
+    },
+    "pensionCapAnnual2025": 75453
+   },
+   "applies": "2025 cap; 2026 cap not read.",
+   "sources": [
+    {
+     "src": 3,
+     "said": "For 2025, pension and disability insurance contributions are capped at EUR 75,453 annually. The entire pension and disability insurance, set at a rate of 10%, is borne by the employee. Costs of unemployment insurance are borne by both the employee at a rate of 0.5% and by the employer at a rate of 0.5%."
+    }
+   ]
+  },
+  {
+   "item": "vat",
+   "finding": "VAT is 21%; registration is mandatory above €30,000 turnover in the last 12 months.",
+   "value": {
+    "currency": "EUR",
+    "standard": 0.21,
+    "threshold": 30000
+   },
+   "applies": "2026.",
+   "sources": [
+    {
+     "src": 3,
+     "said": "The general VAT rate is 21%."
+    },
+    {
+     "src": 4,
+     "said": "VAT registration is mandatory for entities whose turnover exceeds the EUR 30,000 threshold within the last 12-month period."
+    }
+   ]
+  }
+ ],
+ "country": "ME",
+ "sources": [
+  {
+   "url": "https://taxsummaries.pwc.com/montenegro/individual/taxes-on-personal-income",
+   "title": "PwC Worldwide Tax Summaries, Montenegro, Individual - Taxes on personal income (last reviewed 7 August 2026)",
+   "read": "2026-11-01",
+   "kind": "secondary",
+   "quotes": "https://www.gov.me/poreska",
+   "said": "Salaries up to 700 euros (EUR) (gross) are subject to 0% tax. Salaries between EUR 700.01 and EUR 1,000 (gross) are subject to 9% tax. Salaries exceeding EUR 1,000 (gross) are subject to 15% tax. … Earnings up to EUR 8,400 are subject to 0% tax. Earnings from EUR 8,400.01 to EUR 12,000 are taxed at 9%. Earnings exceeding EUR 12,000 are taxed at 15%. … A surtax rate of 13% applies in all municipalities, except Podgorica and Cetinje, where the rate is 15%. The surtax base is calculated based on the amount of PIT assessed."
+  },
+  {
+   "url": "https://taxsummaries.pwc.com/montenegro/individual/tax-administration",
+   "title": "PwC Worldwide Tax Summaries, Montenegro, Individual - Tax administration (last reviewed 7 August 2026)",
+   "read": "2026-11-01",
+   "kind": "secondary",
+   "quotes": "https://www.gov.me/poreska",
+   "said": "A tax year in Montenegro is the calendar year. Tax returns Generally, taxpayers are obligated to submit an annual tax return by the end of April for income generated in the previous calendar year. … certain types of income (employment income, income from capital, property-related income, royalties, etc.) are subject to withholding at the source by the payer."
+  },
+  {
+   "url": "https://taxsummaries.pwc.com/montenegro/corporate/withholding-taxes",
+   "title": "PwC Worldwide Tax Summaries, Montenegro, Corporate - Withholding taxes (last reviewed 7 August 2026)",
+   "read": "2026-11-01",
+   "kind": "secondary",
+   "quotes": "https://www.gov.me/poreska",
+   "said": "Legal entities are obliged to calculate and pay 15% WHT at the moment of payment of income on the following income categories: … Income earned by non-residents on the basis of performing entertainment, cultural artistic, sports, or similar programmes in Montenegro."
+  },
+  {
+   "url": "https://taxsummaries.pwc.com/montenegro/individual/other-taxes",
+   "title": "PwC Worldwide Tax Summaries, Montenegro, Individual - Other taxes (last reviewed 7 August 2026)",
+   "read": "2026-11-01",
+   "kind": "secondary",
+   "quotes": "https://www.gov.me/poreska",
+   "said": "For 2025, pension and disability insurance contributions are capped at EUR 75,453 annually. The entire pension and disability insurance, set at a rate of 10%, is borne by the employee. Costs of unemployment insurance are borne by both the employee at a rate of 0.5% and by the employer at a rate of 0.5%. … The general VAT rate is 21%."
+  },
+  {
+   "url": "https://taxsummaries.pwc.com/montenegro/corporate/other-taxes",
+   "title": "PwC Worldwide Tax Summaries, Montenegro, Corporate - Other taxes (last reviewed 7 August 2026)",
+   "read": "2026-11-01",
+   "kind": "secondary",
+   "quotes": "https://www.gov.me/poreska",
+   "said": "VAT registration is mandatory for entities whose turnover exceeds the EUR 30,000 threshold within the last 12-month period."
+  }
+ ],
+ "blockers": [
+  {
+   "item": "residents",
+   "sought": "Montenegro's income-tax law and 2026 contribution ceiling from the Tax Administration or the Official Gazette (Službeni list Crne Gore)",
+   "tried": {
+    "institution": "gov.me/poreska not fetched in this pass (2026-11-01) || retry 2026-11-01: gov.me/poreska, /poreska-uprava, /pur, /upc: HTTP 404; gov.me/uprava-prihoda-i-carina read: links to /poreskauprava/porezi (FAQ, saved ME-pu-porezi-faq.html: lists quarterly answers, no rate table or law text); tax.gov.me and upravaprihoda.gov.me: proxy 502 / no connection; gov.me site search for \"porez na dohodak fizičkih lica\" returns unrelated Ministry of Finance budget documents",
+    "official-register": "Službeni list not reached || retry 2026-11-01: sluzbenilist.me reached: /propisi?searchTerm=porezu na dohodak fizičkih lica ignores the term without the form's CSRF token and lists unrelated acts; the Law on Personal Income Tax and the contributions law not reached",
+    "web-search": "not run || retry 2026-11-01: refused by the search tool on 2026-11-01: the turn's shared limit of 200 searches was reached (the lead had reported search working again; the first query of this pass for Saudi Arabia was refused); not worked around",
+    "trade-press": "PwC Montenegro (quoted) || retry 2026-11-01: PwC Montenegro (quoted) remains the source; no other firm summary reached",
+    "archive": "not tried || retry 2026-11-01: web.archive.org: connection reset again 2026-11-01"
+   }
+  }
+ ]
+}

@@ -1,0 +1,387 @@
+{
+ "topic": "tax.AZ",
+ "read": "2026-11-01",
+ "note": "Read 2026-11-01 at the owner's word (\"Build those first 3 starting with ledger first\"; of the 21 countries read first: \"It should cover across every country\"; \"Retry the blocked tax facts once all countries land\"): the tax on a screen worker's pay in Azerbaijan: a resident's income tax, social contributions, what is withheld at source, a non-resident artiste's withholding, an author's treatment, VAT and the tax year. Research and retry subagents (workbench/briefs/BRIEF-tax.md, BRIEF-tax-retry.md), every quote checked by the lead against its saved page.",
+ "figures": [
+  {
+   "item": "residents",
+   "finding": "From 2026 a private-sector (non-oil, non-government) employee's monthly taxable income is taxed at 3% up to AZN 2,500, AZN 75 plus 10% of the excess to AZN 8,000, and AZN 625 plus 14% above (5% and 7% in the first band in 2027 and 2028); oil, gas and government employees pay 14% to AZN 2,500 and AZN 350 plus 25% above; there is no regional layer.",
+   "value": {
+    "currency": "AZN",
+    "period": "monthly",
+    "privateSector": [
+     {
+      "from": "2026-01-01",
+      "to": "2026-12-31",
+      "brackets": [
+       {
+        "from": 0,
+        "to": 2500,
+        "rate": 0.03
+       },
+       {
+        "from": 2500,
+        "to": 8000,
+        "rate": 0.1
+       },
+       {
+        "from": 8000,
+        "to": null,
+        "rate": 0.14
+       }
+      ]
+     },
+     {
+      "from": "2027-01-01",
+      "to": "2027-12-31",
+      "brackets": [
+       {
+        "from": 0,
+        "to": 2500,
+        "rate": 0.05
+       },
+       {
+        "from": 2500,
+        "to": 8000,
+        "rate": 0.1
+       },
+       {
+        "from": 8000,
+        "to": null,
+        "rate": 0.14
+       }
+      ]
+     },
+     {
+      "from": "2028-01-01",
+      "to": null,
+      "brackets": [
+       {
+        "from": 0,
+        "to": 2500,
+        "rate": 0.07
+       },
+       {
+        "from": 2500,
+        "to": 8000,
+        "rate": 0.1
+       },
+       {
+        "from": 8000,
+        "to": null,
+        "rate": 0.14
+       }
+      ]
+     }
+    ],
+    "oilGasGovernment": [
+     {
+      "from": 0,
+      "to": 2500,
+      "rate": 0.14
+     },
+     {
+      "from": 2500,
+      "to": null,
+      "rate": 0.25
+     }
+    ],
+    "regional": null
+   },
+   "applies": "Employment income of residents; a resident is taxed on worldwide income; the self-employed (independent entrepreneur) rate is not covered by the source read",
+   "sources": [
+    {
+     "src": 0,
+     "said": "From January 1, 2026 to January 1, 2027 Up to 2,500 Azerbaijani manats (AZN) 3% From 2500 AZN to 8000 AZN 75 AZN + 10% of the amount exceeding AZN 2,500 Above AZN 8,000 625 AZN + 14% of the amount exceeding AZN 8,000 From January 1, 2027 to January 1, 2028 Up to 2,500 Azerbaijani manats (AZN) 5%"
+    },
+    {
+     "src": 0,
+     "said": "From January 1, 2028 Up to 2,500 Azerbaijani manats (AZN) 7%"
+    },
+    {
+     "src": 0,
+     "said": "Taxable monthly income Tax rate Up to AZN 2,500 14% Above AZN 2,500 AZN 350 + 25% of the amount exceeding AZN 2,500"
+    },
+    {
+     "src": 1,
+     "said": "Persons actually staying in the territory of Azerbaijan for more than 182 days during a calendar year are considered resident."
+    }
+   ]
+  },
+  {
+   "item": "year",
+   "finding": "The tax year is the calendar year; a return is due by 31 March of the next year from anyone with income not taxed at source, and tax withheld from pay is remitted on the day of payment.",
+   "value": {
+    "start": "01-01",
+    "end": "12-31",
+    "returnDue": "03-31",
+    "paymentDue": "03-31",
+    "entrepreneurAdvances": "15th day of the month after each quarter"
+   },
+   "applies": "Individuals",
+   "sources": [
+    {
+     "src": 2,
+     "said": "The following persons are liable for the filing of the annual PIT return to the tax authorities no later than 31 March of the following year: Residents having taxable income that was not taxed at source or deriving income outside of Azerbaijan."
+    },
+    {
+     "src": 2,
+     "said": "Employers should transfer the withheld taxes on the same day of payment of income to employees."
+    }
+   ]
+  },
+  {
+   "item": "social",
+   "finding": "From 2026 a private-sector employee pays social insurance of 3% to AZN 200 then 10% above, and the employer 22% to AZN 200, 15% to AZN 8,000 and 11% above; each also pays 0.5% unemployment insurance and medical insurance of 2% to AZN 2,500 and 0.5% above; foreign employees pay the same; entrepreneurs' rates vary by activity and region.",
+   "value": {
+    "currency": "AZN",
+    "period": "monthly",
+    "socialInsurance": {
+     "employee": [
+      {
+       "from": 0,
+       "to": 200,
+       "rate": 0.03
+      },
+      {
+       "from": 200,
+       "to": null,
+       "rate": 0.1
+      }
+     ],
+     "employer": [
+      {
+       "from": 0,
+       "to": 200,
+       "rate": 0.22
+      },
+      {
+       "from": 200,
+       "to": 8000,
+       "rate": 0.15
+      },
+      {
+       "from": 8000,
+       "to": null,
+       "rate": 0.11
+      }
+     ]
+    },
+    "oilGasGovernment": {
+     "employee": 0.03,
+     "employer": 0.22
+    },
+    "unemployment": {
+     "employee": 0.005,
+     "employer": 0.005
+    },
+    "medical": {
+     "employee": [
+      {
+       "from": 0,
+       "to": 2500,
+       "rate": 0.02
+      },
+      {
+       "from": 2500,
+       "to": null,
+       "rate": 0.005
+      }
+     ],
+     "employer": [
+      {
+       "from": 0,
+       "to": 2500,
+       "rate": 0.02
+      },
+      {
+       "from": 2500,
+       "to": null,
+       "rate": 0.005
+      }
+     ]
+    },
+    "foreigners": true
+   },
+   "applies": "Employment income, private non-oil sector, from 2026",
+   "sources": [
+    {
+     "src": 3,
+     "said": "Up to AZN 200 3% 22% From AZN 200 to AZN 8,000 AZN 6 + 10% for the amount between AZN 200 and AZN 8,000 AZN 44 + 15% for the amount between AZN 200 and AZN 8,000 Above AZN 8,000 AZN 786 + 10% for the amount above AZN 8,000 AZN 1214 + 11% for the amount above AZN 8,000"
+    },
+    {
+     "src": 3,
+     "said": "All foreign employees are subject to social security contributions at these rates, except persons with diplomatic status and expatriate employees working under PSAs. Entrepreneurs who are physical persons are liable to social security contributions at rates that vary depending on the type of activities and region of operation of such entrepreneurs."
+    },
+    {
+     "src": 3,
+     "said": "each employer and employee will bear 0.5% UIC assessed on the gross monthly salary."
+    },
+    {
+     "src": 3,
+     "said": "Non-oil & gas / non-government (Private Sector) Up to AZN 2,500 2% 2% 4% Portion above AZN 2,500 0.50% 0.50% 1%"
+    }
+   ]
+  },
+  {
+   "item": "withholding",
+   "finding": "The employer withholds income tax monthly at the rates above; a payer of a fee to an individual not registered as an independent entrepreneur withholds at the monthly income tax rates; royalties bear 14% at source.",
+   "value": {
+    "employee": "monthly scale",
+    "unregisteredFreelancer": "monthly income tax rates (source states 14% to 25%)",
+    "royalties": 0.14
+   },
+   "applies": "Payments by Azerbaijani payers",
+   "sources": [
+    {
+     "src": 0,
+     "said": "Payments for goods or services provided by physical persons not registered as independent entrepreneurs (i.e. having no Tax ID): at monthly income tax rates (14% to 25%)."
+    },
+    {
+     "src": 0,
+     "said": "Lease payments for movable and immovable property, and royalties: 14%."
+    }
+   ]
+  },
+  {
+   "item": "nonResident",
+   "finding": "A non-resident performer, writer or director without a permanent establishment has 10% withheld from Azerbaijani-source income (the 'other income' rate; royalties 14%); income paid by a non-resident employer not through a permanent establishment is exempt.",
+   "value": {
+    "rate": 0.1,
+    "royalties": 0.14,
+    "base": "gross Azerbaijani-source income",
+    "final": "withholding mechanism (a return is required only where not taxed by withholding)",
+    "exempt": "pay from a non-resident employer not borne by an Azerbaijani PE"
+   },
+   "applies": "Non-residents without a PE",
+   "sources": [
+    {
+     "src": 0,
+     "said": "Taxes deducted from incomes of non-resident physical persons not attributed to a PE (base) in Azerbaijan: Leasing or insurance payments under risk insurance or reinsurance agreements: 4%. Telecommunication or international transport services: 6%. Other income: 10%."
+    },
+    {
+     "src": 4,
+     "said": "Non-resident’s income paid by an employer who is a non-resident of Azerbaijan, or on the employer’s behalf, which is not paid by a PE of such a non-resident."
+    },
+    {
+     "src": 2,
+     "said": "Non-residents having taxable Azeri-source income not taxed in Azerbaijan through the withholding mechanism."
+    }
+   ]
+  },
+  {
+   "item": "authors",
+   "finding": "Royalties are taxed at source at 14% (resident payee) under the Tax Code as summarised; no other special regime for authors was found.",
+   "value": {
+    "royalties": 0.14
+   },
+   "applies": "Royalties paid by residents",
+   "sources": [
+    {
+     "src": 5,
+     "said": "Royalties: 14%."
+    }
+   ]
+  },
+  {
+   "item": "vat",
+   "finding": "VAT is 18%; registration is mandatory once taxable transactions exceed AZN 200,000 in any month of a consecutive 12-month period (or a single contract exceeds AZN 200,000).",
+   "value": {
+    "currency": "AZN",
+    "standard": 0.18,
+    "threshold": 200000,
+    "period": "any consecutive 12 months"
+   },
+   "applies": "A freelancer's taxable supplies",
+   "sources": [
+    {
+     "src": 6,
+     "said": "The standard rate of VAT is 18%."
+    },
+    {
+     "src": 7,
+     "said": "If the volume of taxable transactions exceeds 200,000 manat in any month of a consecutive 12-month period, it shall take effect on the first day of the following month"
+    }
+   ]
+  }
+ ],
+ "country": "AZ",
+ "sources": [
+  {
+   "url": "https://taxsummaries.pwc.com/azerbaijan/individual/taxes-on-personal-income",
+   "title": "PwC Worldwide Tax Summaries, Azerbaijan, Individual - Taxes on personal income (last reviewed 28 September 2026)",
+   "read": "2026-11-01",
+   "kind": "secondary",
+   "quotes": "https://www.taxes.gov.az/az/page/ar-vergi-mecellesi",
+   "said": "From January 1, 2026 to January 1, 2027 Up to 2,500 Azerbaijani manats (AZN) 3% From 2500 AZN to 8000 AZN 75 AZN + 10% of the amount exceeding AZN 2,500 Above AZN 8,000 625 AZN + 14% of the amount exceeding AZN 8,000 From January 1, 2027 to January 1, 2028 Up to 2,500 Azerbaijani manats (AZN) 5% … From January 1, 2028 Up to 2,500 Azerbaijani manats (AZN) 7% … Taxable monthly income Tax rate Up to AZN 2,500 14% Above AZN 2,500 AZN 350 + 25% of the amount exceeding AZN 2,500 … Payments for goods or services provided by physical persons not registered as independent entrepreneurs (i.e. having no Tax ID): at monthly income tax rates (14% to 25%). … Lease payments for movable and immovable property, and royalties: 14%. … Taxes deducted from incomes of non-resident physical persons not attributed to a PE (base) in Azerbaijan: Leasing or insurance payments under risk insurance or reinsurance agreements: 4%. Telecommunication or international transport services: 6%. Other income: 10%."
+  },
+  {
+   "url": "https://taxsummaries.pwc.com/azerbaijan/individual/residence",
+   "title": "PwC Worldwide Tax Summaries, Azerbaijan, Individual - Residence (last reviewed 28 September 2026)",
+   "read": "2026-11-01",
+   "kind": "secondary",
+   "quotes": "https://www.taxes.gov.az/az/page/ar-vergi-mecellesi",
+   "said": "Persons actually staying in the territory of Azerbaijan for more than 182 days during a calendar year are considered resident."
+  },
+  {
+   "url": "https://taxsummaries.pwc.com/azerbaijan/individual/tax-administration",
+   "title": "PwC Worldwide Tax Summaries, Azerbaijan, Individual - Tax administration (last reviewed 28 September 2026)",
+   "read": "2026-11-01",
+   "kind": "secondary",
+   "quotes": "https://www.taxes.gov.az/az/page/ar-vergi-mecellesi",
+   "said": "The following persons are liable for the filing of the annual PIT return to the tax authorities no later than 31 March of the following year: Residents having taxable income that was not taxed at source or deriving income outside of Azerbaijan. … Employers should transfer the withheld taxes on the same day of payment of income to employees. … Non-residents having taxable Azeri-source income not taxed in Azerbaijan through the withholding mechanism."
+  },
+  {
+   "url": "https://taxsummaries.pwc.com/azerbaijan/individual/other-taxes",
+   "title": "PwC Worldwide Tax Summaries, Azerbaijan, Individual - Other taxes (last reviewed 28 September 2026)",
+   "read": "2026-11-01",
+   "kind": "secondary",
+   "quotes": "https://www.taxes.gov.az/az/page/ar-vergi-mecellesi",
+   "said": "Up to AZN 200 3% 22% From AZN 200 to AZN 8,000 AZN 6 + 10% for the amount between AZN 200 and AZN 8,000 AZN 44 + 15% for the amount between AZN 200 and AZN 8,000 Above AZN 8,000 AZN 786 + 10% for the amount above AZN 8,000 AZN 1214 + 11% for the amount above AZN 8,000 … All foreign employees are subject to social security contributions at these rates, except persons with diplomatic status and expatriate employees working under PSAs. Entrepreneurs who are physical persons are liable to social security contributions at rates that vary depending on the type of activities and region of operation of such entrepreneurs. … each employer and employee will bear 0.5% UIC assessed on the gross monthly salary. … Non-oil & gas / non-government (Private Sector) Up to AZN 2,500 2% 2% 4% Portion above AZN 2,500 0.50% 0.50% 1%"
+  },
+  {
+   "url": "https://taxsummaries.pwc.com/azerbaijan/individual/income-determination",
+   "title": "PwC Worldwide Tax Summaries, Azerbaijan, Individual - Income determination (last reviewed 28 September 2026)",
+   "read": "2026-11-01",
+   "kind": "secondary",
+   "quotes": "https://www.taxes.gov.az/az/page/ar-vergi-mecellesi",
+   "said": "Non-resident’s income paid by an employer who is a non-resident of Azerbaijan, or on the employer’s behalf, which is not paid by a PE of such a non-resident."
+  },
+  {
+   "url": "https://taxsummaries.pwc.com/azerbaijan/corporate/withholding-taxes",
+   "title": "PwC Worldwide Tax Summaries, Azerbaijan, Corporate - Withholding taxes (last reviewed 28 September 2026)",
+   "read": "2026-11-01",
+   "kind": "secondary",
+   "quotes": "https://www.taxes.gov.az/az/page/ar-vergi-mecellesi",
+   "said": "Royalties: 14%."
+  },
+  {
+   "url": "https://taxsummaries.pwc.com/azerbaijan/corporate/other-taxes",
+   "title": "PwC Worldwide Tax Summaries, Azerbaijan, Corporate - Other taxes (last reviewed 28 September 2026)",
+   "read": "2026-11-01",
+   "kind": "secondary",
+   "quotes": "https://www.taxes.gov.az/az/page/ar-vergi-mecellesi",
+   "said": "The standard rate of VAT is 18%."
+  },
+  {
+   "url": "https://www.taxes.gov.az/en/page/38-1",
+   "title": "State Tax Service, Extract from the Tax Code: Article 157. VAT registration",
+   "read": "2026-11-01",
+   "kind": "primary",
+   "said": "If the volume of taxable transactions exceeds 200,000 manat in any month of a consecutive 12-month period, it shall take effect on the first day of the following month"
+  }
+ ],
+ "blockers": [
+  {
+   "item": "residents",
+   "sought": "The income tax rate on an independent entrepreneur's (a self-employed screen worker's) profit for 2026, and the Tax Code's own text of Articles 101 and 123",
+   "tried": {
+    "institution": "taxes.gov.az home page unreachable (connection failed) on 2026-11-01; the Tax Code page and salary-deduction page load but carry no rate text (the latter is an app) || 2026-11-01 retry: www.taxes.gov.az/en and /az/page/vergi-mecellesi again: 000 and 404; no rate page reached.",
+    "official-register": "e-qanun.az not tried (JavaScript); the State Tax Service's Tax Code link https://www.taxes.gov.az/az/page/ar-vergi-mecellesi read without the article text || 2026-11-01 retry: e-qanun.az/framework/46948 (Tax Code) answers 200 but is a Next.js app: 9 characters of text, the article text loads by script and was not read another way.",
+    "web-search": "searched 'Azerbaijan Tax Code article 157 VAT registration threshold 200,000 manats 12 months 2026' || 2026-11-01 retry: refused: the session's web-search limit (200 calls per turn, shared) was reached before this query ('Vergi Məcəlləsi 101 fərdi sahibkar gəlir vergisi dərəcəsi 2026').",
+    "trade-press": "PwC Worldwide Tax Summaries (reviewed 28 September 2026) used; it does not give the entrepreneur rate || 2026-11-01 retry: taxsummaries.pwc.com Azerbaijan (already saved) still gives no entrepreneur rate; no other firm summary fetched.",
+    "archive": "web.archive.org resets the connection from this environment (2026-11-01) || 2026-11-01 retry: web.archive.org connection reset through the proxy (curl 000)."
+   }
+  }
+ ]
+}

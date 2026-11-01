@@ -1,0 +1,175 @@
+{
+ "topic": "tax.AW",
+ "read": "2026-11-01",
+ "note": "Read 2026-11-01 at the owner's word (\"Build those first 3 starting with ledger first\"; of the 21 countries read first: \"It should cover across every country\"; \"Retry the blocked tax facts once all countries land\"): the tax on a screen worker's pay in Aruba: a resident's income tax, social contributions, what is withheld at source, a non-resident artiste's withholding, an author's treatment, VAT and the tax year. Research and retry subagents (workbench/briefs/BRIEF-tax.md, BRIEF-tax-retry.md), every quote checked by the lead against its saved page.",
+ "figures": [
+  {
+   "item": "residents",
+   "finding": "Aruba levies its own income tax: 0% to AWG 34,930, 21% to 63,904, 42% to 135,527 and 52% above, after a tax-free amount of AWG 30,000 for a full-year taxpayer, so no tax is due on taxable income up to AWG 64,930 in 2026.",
+   "value": {
+    "currency": "AWG",
+    "brackets": [
+     {
+      "from": 0,
+      "to": 34930,
+      "rate": 0
+     },
+     {
+      "from": 34930,
+      "to": 63904,
+      "rate": 0.21
+     },
+     {
+      "from": 63904,
+      "to": 135527,
+      "rate": 0.42
+     },
+     {
+      "from": 135527,
+      "to": null,
+      "rate": 0.52
+     }
+    ],
+    "taxFreeAmount": 30000,
+    "effectiveNilUpTo": 64930
+   },
+   "applies": "2026.",
+   "sources": [
+    {
+     "src": 0,
+     "said": "Individual income tax rate Taxable income (AWG) Rate Up to 34,930 0% 34,931–63,904 21% 63,905–135,527 42% Over 135,527 52%"
+    },
+    {
+     "src": 0,
+     "said": "A tax-free amount of AWG 30,000 applies to taxpayers that are qualified as payers of income tax for the entire calendar year. This effectively means that a taxpayer with annual taxable income not exceeding AWG 64,930 will not be subject to income tax for 2026."
+    }
+   ]
+  },
+  {
+   "item": "year",
+   "finding": "The tax year is the calendar year; the return is due within two months after the year end, extendable on request.",
+   "value": {
+    "start": "01-01",
+    "end": "12-31",
+    "returnDue": "within 2 months after year end"
+   },
+   "applies": "2026.",
+   "sources": [
+    {
+     "src": 0,
+     "said": "Tax year: The tax year is the calendar year."
+    },
+    {
+     "src": 0,
+     "said": "The tax return must be filed within two months after the year end. Upon request, an extension to file the tax return is possible."
+    }
+   ]
+  },
+  {
+   "item": "withholding",
+   "finding": "Wage tax is withheld from employment income as a pre-levy of income tax.",
+   "value": {
+    "employee": "wage tax (loonbelasting) as pre-levy"
+   },
+   "applies": "2026.",
+   "sources": [
+    {
+     "src": 0,
+     "said": "Wage tax is levied on the employment income of an individual and is a pre-levy of the individual income tax"
+    }
+   ]
+  },
+  {
+   "item": "social",
+   "finding": "The employer pays pay-related social insurance for employees, and employed and self-employed people pay capped social insurance contributions.",
+   "value": {
+    "rates": null
+   },
+   "applies": "The 2026 AOV/AWW and AZV rates and caps were not found; see blocker.",
+   "sources": [
+    {
+     "src": 0,
+     "said": "Social contributions and payroll taxes: The employer is required to make pay-related social insurance payments on behalf of"
+    }
+   ]
+  },
+  {
+   "item": "nonResident",
+   "finding": "A non-resident is taxed only on Aruba-source income; there is no withholding on royalties or service fees, and turnover tax on a foreign performer's cultural or entertainment services to an Aruban business is paid by the recipient.",
+   "value": {
+    "scope": "Aruba-source income",
+    "royaltyWithholding": 0,
+    "turnoverTaxReverseCharge": true
+   },
+   "applies": "2026.",
+   "sources": [
+    {
+     "src": 0,
+     "said": "Basis: Residents are taxed on their worldwide income; nonresidents are taxed only on Aruba-source income."
+    },
+    {
+     "src": 0,
+     "said": "Royalties: There is no withholding tax on royalties."
+    },
+    {
+     "src": 0,
+     "said": "the transport of people or goods; cultural, artistic, scientific, sport, education, entertainment, or similar activities; loading,"
+    }
+   ]
+  },
+  {
+   "item": "vat",
+   "finding": "There is no VAT; turnover tax (BBO) of 7% falls on services, and anyone making taxable supplies in Aruba must register, with monthly returns.",
+   "value": {
+    "turnoverTax": 0.07,
+    "threshold": null
+   },
+   "applies": "2026.",
+   "sources": [
+    {
+     "src": 0,
+     "said": "Rates: The standard turnover tax rate is 7%."
+    },
+    {
+     "src": 0,
+     "said": "Registration: Residents and nonresidents that make taxable deliveries of goods or services in Aruba must register for turnover"
+    }
+   ]
+  }
+ ],
+ "country": "AW",
+ "sources": [
+  {
+   "url": "https://www.deloitte.com/content/dam/assets-shared/docs/services/tax/2026/dttl-tax-arubahighlights-2026.pdf",
+   "title": "Deloitte International Tax: Aruba Highlights 2026",
+   "read": "2026-11-01",
+   "kind": "secondary",
+   "quotes": "https://www.impuesto.aw/",
+   "said": "Individual income tax rate Taxable income (AWG) Rate Up to 34,930 0% 34,931–63,904 21% 63,905–135,527 42% Over 135,527 52% … A tax-free amount of AWG 30,000 applies to taxpayers that are qualified as payers of income tax for the entire calendar year. This effectively means that a taxpayer with annual taxable income not exceeding AWG 64,930 will not be subject to income tax for 2026. … Tax year: The tax year is the calendar year. … The tax return must be filed within two months after the year end. Upon request, an extension to file the tax return is possible. … Wage tax is levied on the employment income of an individual and is a pre-levy of the individual income tax … Social contributions and payroll taxes: The employer is required to make pay-related social insurance payments on behalf of … Basis: Residents are taxed on their worldwide income; nonresidents are taxed only on Aruba-source income. … Royalties: There is no withholding tax on royalties. … the transport of people or goods; cultural, artistic, scientific, sport, education, entertainment, or similar activities; loading, … Rates: The standard turnover tax rate is 7%. … Registration: Residents and nonresidents that make taxable deliveries of goods or services in Aruba must register for turnover"
+  }
+ ],
+ "blockers": [
+  {
+   "item": "social",
+   "sought": "The 2026 AOV/AWW and AZV contribution rates and income caps (employee, employer, self-employed).",
+   "tried": {
+    "institution": "impuesto.aw answers; its 'Loonbelasting en Premies' page (saved as AW-dimp-loonbelasting-en-premies.html) lists forms but no 2026 rates (2026-11-01). || retry 2026-11-01 (world round): impuesto.aw answers: its AZV levy page (AW-dimp-bestemmingsheffing-azv.html) and the 2026 income/wage tax calculator (AW-dimp-calculator-ib-lb-2026.xlsx) read: no AOV/AWW or AZV premium rates or caps; svb.aw does not answer (curl 000); azv.aw answers 403",
+    "official-register": "cuatro.sim-cdn.nl / overheid.aw legislation not read 2026-11-01. || retry 2026-11-01 (world round): gobierno.aw (ex overheid.aw) answers its home page; no premium regulation located; cuatro.sim-cdn.nl hosts DIMP files only",
+    "web-search": "Not run for Aruba (2026-11-01). || retry 2026-11-01 (world round): WebSearch refused 2026-11-01 (the turn's shared 200-search budget exhausted)",
+    "trade-press": "Deloitte Aruba Highlights 2026: no rates. || retry 2026-11-01 (world round): Deloitte Aruba Highlights 2026 (read before): no rates",
+    "archive": "web.archive.org resets the connection from this environment (2026-11-01). || retry 2026-11-01 (world round): web.archive.org and archive.ph reset the connection; arquivo.pt answers 403"
+   }
+  },
+  {
+   "item": "authors",
+   "sought": "Any special treatment of authors' royalties.",
+   "tried": {
+    "institution": "impuesto.aw answers; its 'Loonbelasting en Premies' page (saved as AW-dimp-loonbelasting-en-premies.html) lists forms but no 2026 rates (2026-11-01). || retry 2026-11-01 (world round): impuesto.aw answers: its AZV levy page (AW-dimp-bestemmingsheffing-azv.html) and the 2026 income/wage tax calculator (AW-dimp-calculator-ib-lb-2026.xlsx) read: no AOV/AWW or AZV premium rates or caps; svb.aw does not answer (curl 000); azv.aw answers 403",
+    "official-register": "cuatro.sim-cdn.nl / overheid.aw legislation not read 2026-11-01. || retry 2026-11-01 (world round): gobierno.aw (ex overheid.aw) answers its home page; no premium regulation located; cuatro.sim-cdn.nl hosts DIMP files only",
+    "web-search": "Not run for Aruba (2026-11-01). || retry 2026-11-01 (world round): WebSearch refused 2026-11-01 (the turn's shared 200-search budget exhausted)",
+    "trade-press": "Deloitte Aruba Highlights 2026: none. || retry 2026-11-01 (world round): Deloitte Aruba Highlights 2026 (read before): no rates",
+    "archive": "web.archive.org resets the connection from this environment (2026-11-01). || retry 2026-11-01 (world round): web.archive.org and archive.ph reset the connection; arquivo.pt answers 403"
+   }
+  }
+ ]
+}

@@ -1,0 +1,107 @@
+{
+ "topic": "tax.BV",
+ "read": "2026-11-01",
+ "note": "Read 2026-11-01 at the owner's word (\"Build those first 3 starting with ledger first\"; of the 21 countries read first: \"It should cover across every country\"; \"Retry the blocked tax facts once all countries land\"): the tax on a screen worker's pay in Bouvet Island: a resident's income tax, social contributions, what is withheld at source, a non-resident artiste's withholding, an author's treatment, VAT and the tax year. Research and retry subagents (workbench/briefs/BRIEF-tax.md, BRIEF-tax-retry.md), every quote checked by the lead against its saved page.",
+ "figures": [
+  {
+   "item": "follows",
+   "finding": "Bouvet Island is an uninhabited Norwegian dependency (biland), outside the Kingdom; it has no tax of its own, and pay for work there is taxed by Norway under the Svalbard tax rules when a single stay passes 30 days.",
+   "value": {
+    "sovereign": "NO",
+    "takesSovereignTax": true,
+    "regime": "Svalbardskatteloven (via the Jan Mayen tax act) for a continuous stay over 30 days",
+    "inhabited": false
+   },
+   "applies": "Anyone working on Bouvet Island, 2026; a stay of 30 days or less is not covered by this rule (the ordinary Norwegian rules in NO then apply as the person's own residence dictates).",
+   "sources": [
+    {
+     "src": 0,
+     "said": "Lønn og andre ytelser for arbeid på Jan Mayen eller i de norske bilandene i Antarktis skattlegges etter reglene i Svalbardskatteloven, hvis det enkelte opphold i forbindelse med arbeidet overstiger 30 døgn."
+    },
+    {
+     "src": 0,
+     "said": "De norske bilandene i Antarktis er Dronning Maud Land, Bouvetøya og Peter I Øy."
+    },
+    {
+     "src": 1,
+     "said": "Statsform Norsk biland Landareal 49 km² Innbyggertall ubebodd"
+    },
+    {
+     "src": 2,
+     "said": "Status som biland innebærer at bilandene er norsk territorium, men ikke er del av «Kongeriket Norge»."
+    }
+   ]
+  },
+  {
+   "item": "withholding",
+   "finding": "Under the Svalbard wage-deduction scheme the employer withholds tax from gross pay with no deductions, and the withholding is in principle the final settlement; the employer's contribution rate on pay taxed under the Svalbard act is 0%.",
+   "value": {
+    "base": "gross pay, no deductions",
+    "final": true,
+    "employerContribution": 0.0,
+    "youthAllowance2026": 100000
+   },
+   "applies": "Pay for a continuous stay over 30 days on Bouvet Island (taxed under the Svalbard rules), 2026.",
+   "sources": [
+    {
+     "src": 3,
+     "said": "Skatt etter lønnstrekkordningen er en ren bruttoskatt. Det gis derfor ingen fradrag i beregningsgrunnlaget for skatt. Arbeidsgiveren skal trekke skatt av lønn/pensjon ved utbetaling til arbeidstakeren/ trygdemottakeren. Skattetrekket er i utgangspunktet endelig oppgjør for skatteforpliktelsen på lønnen/pensjonen."
+    },
+    {
+     "src": 3,
+     "said": "Selv om arbeidsgiver ikke hører hjemme på Svalbard, er satsen for arbeidsgiveravgift 0 prosent på lønn og annen godtgjørelse som blir skattlagt etter svalbardskatteloven."
+    },
+    {
+     "src": 0,
+     "said": "For arbeidsgiveravgiften gjelder samme regler som for Svalbard."
+    }
+   ]
+  }
+ ],
+ "country": "BV",
+ "sources": [
+  {
+   "url": "https://www.skatteetaten.no/bedrift-og-organisasjon/arbeidsgiver/a-meldingen/veiledning/spesielle-grupper/jan-mayen-og-de-norske-bilandene-i-antarktis/",
+   "title": "Jan Mayen og de norske bilandene i Antarktis (Skatteetaten, veiledning til a-meldingen, oppdatert 23.01.2025)",
+   "read": "2026-11-01",
+   "kind": "primary",
+   "said": "Lønn og andre ytelser for arbeid på Jan Mayen eller i de norske bilandene i Antarktis skattlegges etter reglene i Svalbardskatteloven, hvis det enkelte opphold i forbindelse med arbeidet overstiger 30 døgn. … De norske bilandene i Antarktis er Dronning Maud Land, Bouvetøya og Peter I Øy. … For arbeidsgiveravgiften gjelder samme regler som for Svalbard."
+  },
+  {
+   "url": "https://snl.no/Bouvet%C3%B8ya",
+   "title": "Bouvetøya (Store norske leksikon)",
+   "read": "2026-11-01",
+   "kind": "secondary",
+   "quotes": "https://lovdata.no/dokument/NL/lov/1930-02-27-3",
+   "said": "Statsform Norsk biland Landareal 49 km² Innbyggertall ubebodd"
+  },
+  {
+   "url": "https://snl.no/bilandsloven",
+   "title": "bilandsloven (Store norske leksikon)",
+   "read": "2026-11-01",
+   "kind": "secondary",
+   "quotes": "https://lovdata.no/dokument/NL/lov/1930-02-27-3",
+   "said": "Status som biland innebærer at bilandene er norsk territorium, men ikke er del av «Kongeriket Norge»."
+  },
+  {
+   "url": "https://www.skatteetaten.no/person/skatt/hjelp-til-riktig-skatt/svalbard/skatt-lonn/",
+   "title": "Skatt på lønn – Svalbard (Skatteetaten)",
+   "read": "2026-11-01",
+   "kind": "primary",
+   "said": "Skatt etter lønnstrekkordningen er en ren bruttoskatt. Det gis derfor ingen fradrag i beregningsgrunnlaget for skatt. Arbeidsgiveren skal trekke skatt av lønn/pensjon ved utbetaling til arbeidstakeren/ trygdemottakeren. Skattetrekket er i utgangspunktet endelig oppgjør for skatteforpliktelsen på lønnen/pensjonen. … Selv om arbeidsgiver ikke hører hjemme på Svalbard, er satsen for arbeidsgiveravgift 0 prosent på lønn og annen godtgjørelse som blir skattlagt etter svalbardskatteloven."
+  }
+ ],
+ "blockers": [
+  {
+   "item": "residents",
+   "sought": "The 2026 Svalbard wage-tax rates (low rate and the high rate above 12 G, and the trygdeavgift) that apply to pay for work on Bouvet Island",
+   "tried": {
+    "institution": "skatteetaten.no 2026-11-01: Svalbard 'Skatt på lønn' page and a-melding Svalbard guide read and saved: they describe the scheme but print no rate; /satser/skatt-pa-svalbard/ and /satser/svalbard/ HTTP 404; Skatte-ABC J-1 (Jan Mayen og bilandene) page saved but its body is not in the served HTML || retry 2026-11-01: skatteetaten.no 2026-11-01: /satser/ index loads its list by script (no Svalbard entry in the served HTML); eight more guessed Svalbard rate paths (/satser/skatt-pa-lonn-svalbard/, /satser/svalbardskatten/, /satser/trygdeavgift-svalbard/ and others) HTTP 404; /satser/trygdeavgift/ saved (BV-skatteetaten-satser-trygdeavgift.html): 7.6% on pay for 2026 on the mainland, nothing on Svalbard; the saved Svalbard pay page names a high rate above 12 G and a 0% employer rate on Svalbard but no wage-tax rate",
+    "official-register": "lovdata.no (Svalbardskatteloven, bilandsloven) 2026-11-01: HTTP 405 'Request stopped by Varnish IPS', not read another way || retry 2026-11-01: lovdata.no again HTTP 405 (Varnish IPS), not read another way; regjeringen.no HTTP 403, not read another way",
+    "web-search": "2026-11-01 'Bouvetøya skatt skatteloven gjelder ikke biland \"Bouvetøya\" skatteplikt': found the Skatteetaten a-melding page used here; no rate table || retry 2026-11-01: refused by the search tool on 2026-11-01: the turn's shared limit of 200 searches was reached; not worked around",
+    "trade-press": "no trade press found quoting the 2026 Svalbard rates in this search || retry 2026-11-01: none reached (as before)",
+    "archive": "not tried: a refused page is not read another way (the auto-mode classifier also blocked an archive lookup of a refused page on 2026-11-01) || retry 2026-11-01: web.archive.org tried for the Skatteetaten Svalbard rate page (not for the refused Lovdata pages): \"Recv failure: Connection reset by peer\" 2026-11-01"
+   }
+  }
+ ]
+}

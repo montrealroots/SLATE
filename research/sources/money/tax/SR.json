@@ -1,0 +1,253 @@
+{
+ "topic": "tax.SR",
+ "read": "2026-11-01",
+ "note": "Read 2026-11-01 at the owner's word (\"Build those first 3 starting with ledger first\"; of the 21 countries read first: \"It should cover across every country\"; \"Retry the blocked tax facts once all countries land\"): the tax on a screen worker's pay in Suriname: a resident's income tax, social contributions, what is withheld at source, a non-resident artiste's withholding, an author's treatment, VAT and the tax year. Research and retry subagents (workbench/briefs/BRIEF-tax.md, BRIEF-tax-retry.md), every quote checked by the lead against its saved page.",
+ "figures": [
+  {
+   "item": "residents",
+   "finding": "A resident pays nothing on the first SRD 108,000 of net income, then 8% to SRD 150,000, 18% to 192,000, 28% to 234,000 and 38% above (Wet Inkomstenbelasting art. 34); there is no regional income tax.",
+   "value": {
+    "currency": "SRD",
+    "brackets": [
+     {
+      "from": 0,
+      "to": 108000,
+      "rate": 0
+     },
+     {
+      "from": 108000,
+      "to": 150000,
+      "rate": 0.08
+     },
+     {
+      "from": 150000,
+      "to": 192000,
+      "rate": 0.18
+     },
+     {
+      "from": 192000,
+      "to": 234000,
+      "rate": 0.28
+     },
+     {
+      "from": 234000,
+      "to": null,
+      "rate": 0.38
+     }
+    ]
+   },
+   "applies": "The law as consolidated to S.B. 2024 no. 3, the version the tax authority publishes in 2026; a later change was not found.",
+   "sources": [
+    {
+     "src": 0,
+     "said": "over het eerste gehele bedrag van SRD 108.000.- van het zuiver inkomen bedraagt de belasting nihil;"
+    },
+    {
+     "src": 0,
+     "said": "− van het gedeelte van het zuiver inkomen boven SRD 108.000, - tot en met SRD 150.000,- 8% − van het gedeelte van het zuiver inkomen boven SRD 150.000,- tot en met SRD 192.000,- 18% − van het gedeelte van het zuiver inkomen boven SRD 192.000.- tot en met SRD 234.000,- 28% − van het gedeelte van het zuiver inkomen boven SRD 234.000,- 38%"
+    }
+   ]
+  },
+  {
+   "item": "withholding",
+   "finding": "The employer calculates, withholds and pays wage tax and the AOV premium, filing and paying monthly from the 26th to the 10th of the next month.",
+   "value": {
+    "employee": "wage tax + AOV premium, monthly (26th to 10th)"
+   },
+   "applies": "2026.",
+   "sources": [
+    {
+     "src": 1,
+     "said": "De werkgever is inhoudingsplichtige: hij/zij moet de loonbelasting berekenen, inhouden en afdragen aan de Belastingdienst door middel van een aangifte loonbelasting en Premie A.O.V."
+    },
+    {
+     "src": 1,
+     "said": "De LB-aangifte dient maandelijks vanaf de 26ste tot en met de 10de dag van de daaropvolgende maand te worden ingediend."
+    }
+   ]
+  },
+  {
+   "item": "nonResident",
+   "finding": "A non-resident (foreign taxpayer) gets no tax-free amount and is taxed on domestic net income: from employment exercised in Suriname, or from a business only so far as its profit is attributable to a permanent establishment in Suriname; no special artistes' withholding was found in the income tax law.",
+   "value": {
+    "taxFree": 0
+   },
+   "applies": "The non-resident rate and any artiste withholding were not found; see blocker.",
+   "sources": [
+    {
+     "src": 2,
+     "said": "Met uitzondering van de buitenlandse belastingplichtige natuurlijke personen, geldt er voor alle natuurlijke personen een belastingvrije som."
+    },
+    {
+     "src": 0,
+     "said": "Ten aanzien van niet in Suriname wonende natuurlijke personen wordt de belasting geheven naar het binnenlands zuiver inkomen."
+    },
+    {
+     "src": 0,
+     "said": "bedrijf, voor zover de daaruit verkregen winst kan worden toegerekend aan een in Suriname aanwezige vaste inrichting, met behulp waarvan het bedrijf wordt uitgeoefend; … dienstbetrekking, indien en voor zover daaruit opbrengst wordt verkregen ter zake van het vervullen of vervuld zijn van de dienstbetrekking in Suriname;"
+    }
+   ]
+  },
+  {
+   "item": "year",
+   "finding": "Income tax is a return tax: the taxpayer files a provisional and a definitive return, online from 2025.",
+   "value": {
+    "provisionalAndDefinitiveReturns": true
+   },
+   "applies": "Filing dates not found; see blocker.",
+   "sources": [
+    {
+     "src": 2,
+     "said": "De inkomstenbelasting is een aangifte belasting. Dat wil zeggen dat de belastingplichtige zelf moet aangeven wat zijn inkomen is geweest."
+    }
+   ]
+  },
+  {
+   "item": "vat",
+   "finding": "VAT (BTW, from 1 January 2023) is 10% on services in general (rates 0%, 5%, 10%, 25%); registration is required once taxable turnover in a calendar year exceeds SRD 1,000,000.",
+   "value": {
+    "currency": "SRD",
+    "standard": 0.1,
+    "rates": [
+     0,
+     0.05,
+     0.1,
+     0.25
+    ],
+    "registrationThreshold": 1000000
+   },
+   "applies": "2026.",
+   "sources": [
+    {
+     "src": 3,
+     "said": "Het algemene BTW-tarief bedraagt 10%. Dat betekent dat de levering en of invoer van goederen, alsook het verrichten van diensten belast is met 10% BTW."
+    },
+    {
+     "src": 3,
+     "said": "U bent BTW-plichtig indien u gedurende een kalenderjaar een omzet behaalt van meer dan SRD 1.000.000, – door het verrichten van een of meerdere voor de BTW belaste activiteit(en)."
+    }
+   ]
+  },
+  {
+   "item": "social",
+   "finding": "A resident under 60 with profit from a business or profession or with wages pays the AOV old-age premium of 4% of net income (net wage where wage tax is due), withheld from pay with wage tax or assessed with income tax; the AOV law puts no share on the employer.",
+   "value": {
+    "aov": {
+     "rate": 0.04,
+     "base": "net income (Inkomstenbelasting 1922) or net wage (Wet Loonbelasting)",
+     "payers": "residents under 60 with business/profession profit or wages",
+     "employer": 0
+    }
+   },
+   "applies": "2026 on the law as last amended in 2002; other contributions (the general pension scheme, the basic health insurance) are not covered here (see blocker).",
+   "sources": [
+    {
+     "src": 4,
+     "said": "Premieplichtig is de ingezetene van Suriname, al dan niet met de Surinaamse nationaliteit, die ingevolge de bepalingen van de “Inkom-stenbelasting 1922” winst uit bedrijf of beroep of loon uit dienstbe-trekking geniet en de leeftijd van 60 jaar nog niet heeft bereikt."
+    },
+    {
+     "src": 4,
+     "said": "De grondslag van de heffing is het zuiver inkomen in de zin van de “Inkomstenbelasting 1922” en - ingeval loonbelasting verschuldigd is- het zuiver loon in de zin van de Wet Loonbelasting. … De hoogte van de premie bedraagt 4% (vier percent) van de heffings-grondslag. … De heffing van premie geschiedt bij wege van afdracht op aangifte, van aanslag en door inhouding op het loon."
+    }
+   ]
+  },
+  {
+   "item": "year",
+   "finding": "The tax year is the calendar year; a provisional return is due by 15 April of the current year and a definitive return within four months after the year ends (by 30 April).",
+   "value": {
+    "start": "01-01",
+    "end": "12-31",
+    "provisionalReturnDue": "04-15 (current year)",
+    "definitiveReturnDue": "04-30 (next year)"
+   },
+   "applies": "2026 (Inkomstenbelasting 1922 arts. 38, 42a, 43).",
+   "sources": [
+    {
+     "src": 0,
+     "said": "Het belastingjaar begint met 1 januari en eindigt met 31 december."
+    },
+    {
+     "src": 0,
+     "said": "Uiterlijk de 15e april van het lopende belastingjaar dan wel uiterlijk binnen twee en een halve maand na aanvang van het lopend boek-jaar zijn, ook wanneer aan belastingplichtige geen voorlopig aangifte-biljet is uitgereikt, tot het doen van voorlopige aangifte verplicht"
+    },
+    {
+     "src": 0,
+     "said": "Binnen vier maanden na het einde van het belastingjaar of boekjaar dan wel van de belastingplicht, zo dit eerder is, zijn ook wanneer aan belastingplichtige geen aangiftebiljet is uitgereikt, tot het doen van definitieve aangifte verplicht"
+    }
+   ]
+  }
+ ],
+ "country": "SR",
+ "sources": [
+  {
+   "url": "https://belastingdienst.sr/wp-content/uploads/2024/10/Wet-Inkomstenbelasting.pdf",
+   "title": "Wet Inkomstenbelasting 1922, consolidated to S.B. 2024 no. 3 (Belastingdienst Suriname)",
+   "read": "2026-11-01",
+   "kind": "primary",
+   "said": "over het eerste gehele bedrag van SRD 108.000.- van het zuiver inkomen bedraagt de belasting nihil; … − van het gedeelte van het zuiver inkomen boven SRD 108.000, - tot en met SRD 150.000,- 8% − van het gedeelte van het zuiver inkomen boven SRD 150.000,- tot en met SRD 192.000,- 18% − van het gedeelte van het zuiver inkomen boven SRD 192.000.- tot en met SRD 234.000,- 28% − van het gedeelte van het zuiver inkomen boven SRD 234.000,- 38% … Ten aanzien van niet in Suriname wonende natuurlijke personen wordt de belasting geheven naar het binnenlands zuiver inkomen. … bedrijf, voor zover de daaruit verkregen winst kan worden toegerekend aan een in Suriname aanwezige vaste inrichting, met behulp waarvan het bedrijf wordt uitgeoefend; … dienstbetrekking, indien en voor zover daaruit opbrengst wordt verkregen ter zake van het vervullen of vervuld zijn van de dienstbetrekking in Suriname; … Het belastingjaar begint met 1 januari en eindigt met 31 december. … Uiterlijk de 15e april van het lopende belastingjaar dan wel uiterlijk binnen twee en een halve maand na aanvang van het lopend boek-jaar zijn, ook wanneer aan belastingplichtige geen voorlopig aangifte-biljet is uitgereikt, tot het doen van voorlopige aangifte verplicht … Binnen vier maanden na het einde van het belastingjaar of boekjaar dan wel van de belastingplicht, zo dit eerder is, zijn ook wanneer aan belastingplichtige geen aangiftebiljet is uitgereikt, tot het doen van definitieve aangifte verplicht"
+  },
+  {
+   "url": "https://belastingdienst.sr/belastingen/loonbelasting/",
+   "title": "Loonbelasting (Belastingdienst Suriname)",
+   "read": "2026-11-01",
+   "kind": "primary",
+   "said": "De werkgever is inhoudingsplichtige: hij/zij moet de loonbelasting berekenen, inhouden en afdragen aan de Belastingdienst door middel van een aangifte loonbelasting en Premie A.O.V. … De LB-aangifte dient maandelijks vanaf de 26ste tot en met de 10de dag van de daaropvolgende maand te worden ingediend."
+  },
+  {
+   "url": "https://belastingdienst.sr/belastingen/inkomstenbelasting/",
+   "title": "Inkomstenbelasting (Belastingdienst Suriname)",
+   "read": "2026-11-01",
+   "kind": "primary",
+   "said": "Met uitzondering van de buitenlandse belastingplichtige natuurlijke personen, geldt er voor alle natuurlijke personen een belastingvrije som. … De inkomstenbelasting is een aangifte belasting. Dat wil zeggen dat de belastingplichtige zelf moet aangeven wat zijn inkomen is geweest."
+  },
+  {
+   "url": "https://belastingdienst.sr/belastingen/btw/",
+   "title": "BTW (Belastingdienst Suriname)",
+   "read": "2026-11-01",
+   "kind": "primary",
+   "said": "Het algemene BTW-tarief bedraagt 10%. Dat betekent dat de levering en of invoer van goederen, alsook het verrichten van diensten belast is met 10% BTW. … U bent BTW-plichtig indien u gedurende een kalenderjaar een omzet behaalt van meer dan SRD 1.000.000, – door het verrichten van een of meerdere voor de BTW belaste activiteit(en)."
+  },
+  {
+   "url": "https://belastingdienst.sr/wp-content/uploads/2024/10/Wet-AOV.pdf",
+   "title": "Wet Algemeen Oudedagsvoorzieningsfonds (S.B. 1981 no. 30, as last amended by S.B. 2002 no. 96), Belastingdienst Suriname",
+   "read": "2026-11-01",
+   "kind": "primary",
+   "said": "Premieplichtig is de ingezetene van Suriname, al dan niet met de Surinaamse nationaliteit, die ingevolge de bepalingen van de “Inkom-stenbelasting 1922” winst uit bedrijf of beroep of loon uit dienstbe-trekking geniet en de leeftijd van 60 jaar nog niet heeft bereikt. … De grondslag van de heffing is het zuiver inkomen in de zin van de “Inkomstenbelasting 1922” en - ingeval loonbelasting verschuldigd is- het zuiver loon in de zin van de Wet Loonbelasting. … De hoogte van de premie bedraagt 4% (vier percent) van de heffings-grondslag. … De heffing van premie geschiedt bij wege van afdracht op aangifte, van aanslag en door inhouding op het loon."
+  }
+ ],
+ "blockers": [
+  {
+   "item": "social",
+   "sought": "Social contributions on pay in 2026 besides the AOV premium (now recorded): the general pension scheme (Wet Algemeen Pensioen) and basic health insurance (Wet Basiszorgverzekering) rates and who pays them.",
+   "tried": {
+    "institution": "belastingdienst.sr answers; its income-tax, wage-tax and VAT pages and the consolidated income tax law were read (2026-11-01) without this. || 2026-11-01 retry: belastingdienst.sr/wetten/wet-aov/ read: Wet AOV PDF saved (4% premium recorded); the site lists no pension or health-insurance law.",
+    "official-register": "De Nationale Assemblée / Staatsblad not read online 2026-11-01. || 2026-11-01 retry: belastingdienst.sr Wetten page lists only the BTW laws and the AOV law; De Nationale Assemblée (dna.sr) and the Staatsblad were not reached.",
+    "web-search": "Not run for Suriname (2026-11-01). || 2026-11-01 retry: refused: the session's web-search limit (200 calls per turn, shared) was reached before this query ('Suriname social belasting artiest buitenlands belastingplichtige loonbelasting 2026').",
+    "trade-press": "No PwC or Deloitte summary for Suriname (Deloitte 2026 highlights: 404). || 2026-11-01 retry: taxsummaries.pwc.com has no Suriname summary (404, as before); no other firm summary reachable.",
+    "archive": "web.archive.org resets the connection from this environment (2026-11-01). || 2026-11-01 retry: web.archive.org connection reset through the proxy (curl 000)."
+   }
+  },
+  {
+   "item": "nonResident",
+   "sought": "Whether wage tax or any withholding is taken from a non-resident performer's fee in Suriname, and whether it is final (the income tax law's domestic-source rules are now recorded).",
+   "tried": {
+    "institution": "belastingdienst.sr answers; its income-tax, wage-tax and VAT pages and the consolidated income tax law were read (2026-11-01) without this. || 2026-11-01 retry: belastingdienst.sr Wetten page and site search ('?s=AOV') read; no Wet Loonbelasting text published there.",
+    "official-register": "De Nationale Assemblée / Staatsblad not read online 2026-11-01. || 2026-11-01 retry: Inkomstenbelasting 1922 arts. 26-29 read for non-residents; Wet Loonbelasting not found online.",
+    "web-search": "Not run for Suriname (2026-11-01). || 2026-11-01 retry: refused: the session's web-search limit (200 calls per turn, shared) was reached before this query ('Suriname nonResident belasting artiest buitenlands belastingplichtige loonbelasting 2026').",
+    "trade-press": "None. || 2026-11-01 retry: taxsummaries.pwc.com has no Suriname summary (404, as before); no other firm summary reachable.",
+    "archive": "web.archive.org resets the connection from this environment (2026-11-01). || 2026-11-01 retry: web.archive.org connection reset through the proxy (curl 000)."
+   }
+  },
+  {
+   "item": "authors",
+   "sought": "Any special treatment of authors' royalties: the consolidated Inkomstenbelasting 1922 (to S.B. 2024 no. 3) was searched for auteur, royalt, artiest and kunstenaar with no match, so none appears in that law; the Wet Loonbelasting was not available.",
+   "tried": {
+    "institution": "belastingdienst.sr answers; its income-tax, wage-tax and VAT pages and the consolidated income tax law were read (2026-11-01) without this. || 2026-11-01 retry: belastingdienst.sr site search and Wetten page read; no ruling or brochure on royalties.",
+    "official-register": "De Nationale Assemblée / Staatsblad not read online 2026-11-01. || 2026-11-01 retry: Consolidated Inkomstenbelasting 1922 searched in full.",
+    "web-search": "Not run for Suriname (2026-11-01). || 2026-11-01 retry: refused: the session's web-search limit (200 calls per turn, shared) was reached before this query ('Suriname authors belasting artiest buitenlands belastingplichtige loonbelasting 2026').",
+    "trade-press": "None. || 2026-11-01 retry: taxsummaries.pwc.com has no Suriname summary (404, as before); no other firm summary reachable.",
+    "archive": "web.archive.org resets the connection from this environment (2026-11-01). || 2026-11-01 retry: web.archive.org connection reset through the proxy (curl 000)."
+   }
+  }
+ ]
+}

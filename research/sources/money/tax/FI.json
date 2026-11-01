@@ -1,0 +1,1942 @@
+{
+ "topic": "tax.FI",
+ "read": "2026-11-01",
+ "note": "Read 2026-11-01 at the owner's word (\"Build those first 3 starting with ledger first\"; of the 21 countries read first: \"It should cover across every country\"; \"Retry the blocked tax facts once all countries land\"): the tax on a screen worker's pay in Finland: a resident's income tax, social contributions, what is withheld at source, a non-resident artiste's withholding, an author's treatment, VAT and the tax year. Research and retry subagents (workbench/briefs/BRIEF-tax.md, BRIEF-tax-retry.md), every quote checked by the lead against its saved page.",
+ "figures": [
+  {
+   "item": "residents",
+   "finding": "A resident pays the state's progressive tax on earned income, 12.64% from the first euro to €22,000, then 19%, 30.25%, 33.25% and 37.5% above €52,100, plus the flat income tax rate of the home municipality (and of the parish, for church members).",
+   "value": {
+    "currency": "EUR",
+    "year": 2026,
+    "brackets": [
+     {
+      "from": 0,
+      "to": 22000,
+      "rate": 0.1264
+     },
+     {
+      "from": 22000,
+      "to": 32600,
+      "rate": 0.19
+     },
+     {
+      "from": 32600,
+      "to": 40100,
+      "rate": 0.3025
+     },
+     {
+      "from": 40100,
+      "to": 52100,
+      "rate": 0.3325
+     },
+     {
+      "from": 52100,
+      "to": null,
+      "rate": 0.375
+     }
+    ],
+    "allowance": null,
+    "regional": {
+     "kind": "municipal flat rate on taxable earned income, set each year by each municipality (and parish tax for members of the Evangelical Lutheran and Orthodox churches)",
+     "municipalities": {
+      "Akaa": {
+       "municipal": 0.099,
+       "lutheran": 0.017,
+       "orthodox": 0.02
+      },
+      "Alajärvi": {
+       "municipal": 0.091,
+       "lutheran": 0.017,
+       "orthodox": 0.02
+      },
+      "Alavieska": {
+       "municipal": 0.093,
+       "lutheran": 0.018,
+       "orthodox": 0.0225
+      },
+      "Alavus": {
+       "municipal": 0.096,
+       "lutheran": 0.0175,
+       "orthodox": 0.02
+      },
+      "Asikkala": {
+       "municipal": 0.081,
+       "lutheran": 0.0175,
+       "orthodox": 0.018
+      },
+      "Askola": {
+       "municipal": 0.092,
+       "lutheran": 0.0175,
+       "orthodox": 0.018
+      },
+      "Aura": {
+       "municipal": 0.089,
+       "lutheran": 0.013,
+       "orthodox": 0.0175
+      },
+      "Brändö": {
+       "municipal": 0.177,
+       "lutheran": 0.02,
+       "orthodox": 0.0175
+      },
+      "Eckerö": {
+       "municipal": 0.185,
+       "lutheran": 0.018,
+       "orthodox": 0.0175
+      },
+      "Enonkoski": {
+       "municipal": 0.084,
+       "lutheran": 0.016,
+       "orthodox": 0.0195
+      },
+      "Enontekiö": {
+       "municipal": 0.087,
+       "lutheran": 0.017,
+       "orthodox": 0.0225
+      },
+      "Espoo": {
+       "municipal": 0.053,
+       "lutheran": 0.01,
+       "orthodox": 0.018
+      },
+      "Eura": {
+       "municipal": 0.094,
+       "lutheran": 0.0145,
+       "orthodox": 0.0175
+      },
+      "Eurajoki": {
+       "municipal": 0.064,
+       "lutheran": 0.0165,
+       "orthodox": 0.02
+      },
+      "Evijärvi": {
+       "municipal": 0.098,
+       "lutheran": 0.017,
+       "orthodox": 0.02
+      },
+      "Finström": {
+       "municipal": 0.19,
+       "lutheran": 0.0195,
+       "orthodox": 0.0175
+      },
+      "Forssa": {
+       "municipal": 0.085,
+       "lutheran": 0.014,
+       "orthodox": 0.018
+      },
+      "Föglö": {
+       "municipal": 0.185,
+       "lutheran": 0.02,
+       "orthodox": 0.0175
+      },
+      "Geta": {
+       "municipal": 0.185,
+       "lutheran": 0.0195,
+       "orthodox": 0.0175
+      },
+      "Haapajärvi": {
+       "municipal": 0.102,
+       "lutheran": 0.017,
+       "orthodox": 0.02
+      },
+      "Haapavesi": {
+       "municipal": 0.094,
+       "lutheran": 0.018,
+       "orthodox": 0.02
+      },
+      "Hailuoto": {
+       "municipal": 0.089,
+       "lutheran": 0.018,
+       "orthodox": 0.0225
+      },
+      "Halsua": {
+       "municipal": 0.105,
+       "lutheran": 0.0165,
+       "orthodox": 0.02
+      },
+      "Hamina": {
+       "municipal": 0.094,
+       "lutheran": 0.0155,
+       "orthodox": 0.0195
+      },
+      "Hammarland": {
+       "municipal": 0.18,
+       "lutheran": 0.018,
+       "orthodox": 0.0175
+      },
+      "Hankasalmi": {
+       "municipal": 0.094,
+       "lutheran": 0.0195,
+       "orthodox": 0.0195
+      },
+      "Hanko": {
+       "municipal": 0.091,
+       "lutheran": 0.016,
+       "orthodox": 0.018
+      },
+      "Harjavalta": {
+       "municipal": 0.089,
+       "lutheran": 0.017,
+       "orthodox": 0.0175
+      },
+      "Hartola": {
+       "municipal": 0.092,
+       "lutheran": 0.017,
+       "orthodox": 0.0195
+      },
+      "Hattula": {
+       "municipal": 0.084,
+       "lutheran": 0.0145,
+       "orthodox": 0.018
+      },
+      "Hausjärvi": {
+       "municipal": 0.093,
+       "lutheran": 0.0175,
+       "orthodox": 0.018
+      },
+      "Heinola": {
+       "municipal": 0.082,
+       "lutheran": 0.0145,
+       "orthodox": 0.018
+      },
+      "Heinävesi": {
+       "municipal": 0.095,
+       "lutheran": 0.016,
+       "orthodox": 0.0195
+      },
+      "Helsinki": {
+       "municipal": 0.053,
+       "lutheran": 0.01,
+       "orthodox": 0.018
+      },
+      "Hirvensalmi": {
+       "municipal": 0.074,
+       "lutheran": 0.017,
+       "orthodox": 0.0195
+      },
+      "Hollola": {
+       "municipal": 0.083,
+       "lutheran": 0.017,
+       "orthodox": 0.018
+      },
+      "Huittinen": {
+       "municipal": 0.094,
+       "lutheran": 0.0165,
+       "orthodox": 0.0175
+      },
+      "Humppila": {
+       "municipal": 0.098,
+       "lutheran": 0.018,
+       "orthodox": 0.018
+      },
+      "Hyrynsalmi": {
+       "municipal": 0.09,
+       "lutheran": 0.0175,
+       "orthodox": 0.0225
+      },
+      "Hyvinkää": {
+       "municipal": 0.077,
+       "lutheran": 0.0125,
+       "orthodox": 0.018
+      },
+      "Hämeenkyrö": {
+       "municipal": 0.102,
+       "lutheran": 0.017,
+       "orthodox": 0.02
+      },
+      "Hämeenlinna": {
+       "municipal": 0.084,
+       "lutheran": 0.013,
+       "orthodox": 0.018
+      },
+      "Ii": {
+       "municipal": 0.089,
+       "lutheran": 0.015,
+       "orthodox": 0.0225
+      },
+      "Iisalmi": {
+       "municipal": 0.079,
+       "lutheran": 0.0165,
+       "orthodox": 0.02
+      },
+      "Iitti": {
+       "municipal": 0.086,
+       "lutheran": 0.0165,
+       "orthodox": 0.018
+      },
+      "Ikaalinen": {
+       "municipal": 0.099,
+       "lutheran": 0.0185,
+       "orthodox": 0.02
+      },
+      "Ilmajoki": {
+       "municipal": 0.092,
+       "lutheran": 0.017,
+       "orthodox": 0.02
+      },
+      "Ilomantsi": {
+       "municipal": 0.086,
+       "lutheran": 0.016,
+       "orthodox": 0.02
+      },
+      "Imatra": {
+       "municipal": 0.086,
+       "lutheran": 0.0165,
+       "orthodox": 0.0195
+      },
+      "Inari": {
+       "municipal": 0.064,
+       "lutheran": 0.017,
+       "orthodox": 0.0225
+      },
+      "Inkoo": {
+       "municipal": 0.089,
+       "lutheran": 0.0175,
+       "orthodox": 0.018
+      },
+      "Isojoki": {
+       "municipal": 0.098,
+       "lutheran": 0.0175,
+       "orthodox": 0.02
+      },
+      "Isokyrö": {
+       "municipal": 0.095,
+       "lutheran": 0.0175,
+       "orthodox": 0.02
+      },
+      "Janakkala": {
+       "municipal": 0.089,
+       "lutheran": 0.0165,
+       "orthodox": 0.018
+      },
+      "Joensuu": {
+       "municipal": 0.081,
+       "lutheran": 0.015,
+       "orthodox": 0.02
+      },
+      "Jokioinen": {
+       "municipal": 0.09,
+       "lutheran": 0.018,
+       "orthodox": 0.018
+      },
+      "Jomala": {
+       "municipal": 0.175,
+       "lutheran": 0.017,
+       "orthodox": 0.0175
+      },
+      "Joroinen": {
+       "municipal": 0.086,
+       "lutheran": 0.017,
+       "orthodox": 0.0195
+      },
+      "Joutsa": {
+       "municipal": 0.09,
+       "lutheran": 0.0145,
+       "orthodox": 0.0195
+      },
+      "Juuka": {
+       "municipal": 0.085,
+       "lutheran": 0.017,
+       "orthodox": 0.0185
+      },
+      "Juupajoki": {
+       "municipal": 0.084,
+       "lutheran": 0.0175,
+       "orthodox": 0.02
+      },
+      "Juva": {
+       "municipal": 0.091,
+       "lutheran": 0.0165,
+       "orthodox": 0.0195
+      },
+      "Jyväskylä": {
+       "municipal": 0.081,
+       "lutheran": 0.0145,
+       "orthodox": 0.0195
+      },
+      "Jämijärvi": {
+       "municipal": 0.1,
+       "lutheran": 0.018,
+       "orthodox": 0.02
+      },
+      "Jämsä": {
+       "municipal": 0.094,
+       "lutheran": 0.0155,
+       "orthodox": 0.02
+      },
+      "Järvenpää": {
+       "municipal": 0.078,
+       "lutheran": 0.0125,
+       "orthodox": 0.018
+      },
+      "Kaarina": {
+       "municipal": 0.076,
+       "lutheran": 0.012,
+       "orthodox": 0.0175
+      },
+      "Kaavi": {
+       "municipal": 0.099,
+       "lutheran": 0.0145,
+       "orthodox": 0.02
+      },
+      "Kajaani": {
+       "municipal": 0.084,
+       "lutheran": 0.016,
+       "orthodox": 0.0225
+      },
+      "Kalajoki": {
+       "municipal": 0.083,
+       "lutheran": 0.016,
+       "orthodox": 0.0225
+      },
+      "Kangasala": {
+       "municipal": 0.094,
+       "lutheran": 0.0135,
+       "orthodox": 0.02
+      },
+      "Kangasniemi": {
+       "municipal": 0.094,
+       "lutheran": 0.0165,
+       "orthodox": 0.0195
+      },
+      "Kankaanpää": {
+       "municipal": 0.091,
+       "lutheran": 0.018,
+       "orthodox": 0.02
+      },
+      "Kannonkoski": {
+       "municipal": 0.092,
+       "lutheran": 0.0175,
+       "orthodox": 0.0195
+      },
+      "Kannus": {
+       "municipal": 0.097,
+       "lutheran": 0.017,
+       "orthodox": 0.02
+      },
+      "Karijoki": {
+       "municipal": 0.098,
+       "lutheran": 0.018,
+       "orthodox": 0.02
+      },
+      "Karkkila": {
+       "municipal": 0.091,
+       "lutheran": 0.015,
+       "orthodox": 0.018
+      },
+      "Karstula": {
+       "municipal": 0.09,
+       "lutheran": 0.0175,
+       "orthodox": 0.0195
+      },
+      "Karvia": {
+       "municipal": 0.089,
+       "lutheran": 0.018,
+       "orthodox": 0.02
+      },
+      "Kaskinen": {
+       "municipal": 0.103,
+       "lutheran": 0.0185,
+       "orthodox": 0.02
+      },
+      "Kauhajoki": {
+       "municipal": 0.096,
+       "lutheran": 0.018,
+       "orthodox": 0.02
+      },
+      "Kauhava": {
+       "municipal": 0.091,
+       "lutheran": 0.017,
+       "orthodox": 0.02
+      },
+      "Kauniainen": {
+       "municipal": 0.047,
+       "lutheran": 0.01,
+       "orthodox": 0.018
+      },
+      "Kaustinen": {
+       "municipal": 0.099,
+       "lutheran": 0.0165,
+       "orthodox": 0.02
+      },
+      "Keitele": {
+       "municipal": 0.089,
+       "lutheran": 0.0165,
+       "orthodox": 0.02
+      },
+      "Kemi": {
+       "municipal": 0.096,
+       "lutheran": 0.016,
+       "orthodox": 0.0225
+      },
+      "Kemijärvi": {
+       "municipal": 0.089,
+       "lutheran": 0.017,
+       "orthodox": 0.0225
+      },
+      "Keminmaa": {
+       "municipal": 0.086,
+       "lutheran": 0.0135,
+       "orthodox": 0.0225
+      },
+      "Kemiönsaari": {
+       "municipal": 0.071,
+       "lutheran": 0.02,
+       "orthodox": 0.0175
+      },
+      "Kempele": {
+       "municipal": 0.089,
+       "lutheran": 0.0145,
+       "orthodox": 0.0225
+      },
+      "Kerava": {
+       "municipal": 0.073,
+       "lutheran": 0.0125,
+       "orthodox": 0.018
+      },
+      "Keuruu": {
+       "municipal": 0.091,
+       "lutheran": 0.018,
+       "orthodox": 0.0195
+      },
+      "Kihniö": {
+       "municipal": 0.094,
+       "lutheran": 0.019,
+       "orthodox": 0.02
+      },
+      "Kinnula": {
+       "municipal": 0.095,
+       "lutheran": 0.018,
+       "orthodox": 0.0195
+      },
+      "Kirkkonummi": {
+       "municipal": 0.071,
+       "lutheran": 0.0125,
+       "orthodox": 0.018
+      },
+      "Kitee": {
+       "municipal": 0.081,
+       "lutheran": 0.018,
+       "orthodox": 0.02
+      },
+      "Kittilä": {
+       "municipal": 0.073,
+       "lutheran": 0.016,
+       "orthodox": 0.0225
+      },
+      "Kiuruvesi": {
+       "municipal": 0.095,
+       "lutheran": 0.015,
+       "orthodox": 0.02
+      },
+      "Kivijärvi": {
+       "municipal": 0.091,
+       "lutheran": 0.0175,
+       "orthodox": 0.0195
+      },
+      "Kokemäki": {
+       "municipal": 0.092,
+       "lutheran": 0.0185,
+       "orthodox": 0.0175
+      },
+      "Kokkola": {
+       "municipal": 0.092,
+       "lutheran": 0.0165,
+       "orthodox": 0.02
+      },
+      "Kolari": {
+       "municipal": 0.084,
+       "lutheran": 0.018,
+       "orthodox": 0.0225
+      },
+      "Konnevesi": {
+       "municipal": 0.098,
+       "lutheran": 0.0165,
+       "orthodox": 0.0195
+      },
+      "Kontiolahti": {
+       "municipal": 0.088,
+       "lutheran": 0.015,
+       "orthodox": 0.02
+      },
+      "Korsnäs": {
+       "municipal": 0.092,
+       "lutheran": 0.0185,
+       "orthodox": 0.02
+      },
+      "Koski Tl": {
+       "municipal": 0.074,
+       "lutheran": 0.0145,
+       "orthodox": 0.0175
+      },
+      "Kotka": {
+       "municipal": 0.094,
+       "lutheran": 0.015,
+       "orthodox": 0.0195
+      },
+      "Kouvola": {
+       "municipal": 0.089,
+       "lutheran": 0.0155,
+       "orthodox": 0.0195
+      },
+      "Kristiinankaupunki": {
+       "municipal": 0.089,
+       "lutheran": 0.02,
+       "orthodox": 0.02
+      },
+      "Kruunupyy": {
+       "municipal": 0.089,
+       "lutheran": 0.02,
+       "orthodox": 0.02
+      },
+      "Kuhmo": {
+       "municipal": 0.094,
+       "lutheran": 0.0175,
+       "orthodox": 0.0225
+      },
+      "Kuhmoinen": {
+       "municipal": 0.091,
+       "lutheran": 0.017,
+       "orthodox": 0.02
+      },
+      "Kumlinge": {
+       "municipal": 0.193,
+       "lutheran": 0.02,
+       "orthodox": 0.0175
+      },
+      "Kuopio": {
+       "municipal": 0.081,
+       "lutheran": 0.0145,
+       "orthodox": 0.02
+      },
+      "Kuortane": {
+       "municipal": 0.084,
+       "lutheran": 0.0185,
+       "orthodox": 0.02
+      },
+      "Kurikka": {
+       "municipal": 0.084,
+       "lutheran": 0.017,
+       "orthodox": 0.02
+      },
+      "Kustavi": {
+       "municipal": 0.053,
+       "lutheran": 0.018,
+       "orthodox": 0.0175
+      },
+      "Kuusamo": {
+       "municipal": 0.086,
+       "lutheran": 0.0155,
+       "orthodox": 0.0225
+      },
+      "Kyyjärvi": {
+       "municipal": 0.099,
+       "lutheran": 0.0175,
+       "orthodox": 0.0195
+      },
+      "Kärkölä": {
+       "municipal": 0.094,
+       "lutheran": 0.017,
+       "orthodox": 0.018
+      },
+      "Kärsämäki": {
+       "municipal": 0.095,
+       "lutheran": 0.018,
+       "orthodox": 0.02
+      },
+      "Kökar": {
+       "municipal": 0.197,
+       "lutheran": 0.02,
+       "orthodox": 0.0175
+      },
+      "Lahti": {
+       "municipal": 0.086,
+       "lutheran": 0.0145,
+       "orthodox": 0.018
+      },
+      "Laihia": {
+       "municipal": 0.096,
+       "lutheran": 0.015,
+       "orthodox": 0.02
+      },
+      "Laitila": {
+       "municipal": 0.084,
+       "lutheran": 0.016,
+       "orthodox": 0.0175
+      },
+      "Lapinjärvi": {
+       "municipal": 0.089,
+       "lutheran": 0.0165,
+       "orthodox": 0.0195
+      },
+      "Lapinlahti": {
+       "municipal": 0.094,
+       "lutheran": 0.0165,
+       "orthodox": 0.02
+      },
+      "Lappajärvi": {
+       "municipal": 0.094,
+       "lutheran": 0.017,
+       "orthodox": 0.02
+      },
+      "Lappeenranta": {
+       "municipal": 0.083,
+       "lutheran": 0.014,
+       "orthodox": 0.0195
+      },
+      "Lapua": {
+       "municipal": 0.089,
+       "lutheran": 0.0175,
+       "orthodox": 0.02
+      },
+      "Laukaa": {
+       "municipal": 0.099,
+       "lutheran": 0.0165,
+       "orthodox": 0.0195
+      },
+      "Lemi": {
+       "municipal": 0.099,
+       "lutheran": 0.0175,
+       "orthodox": 0.0195
+      },
+      "Lemland": {
+       "municipal": 0.178,
+       "lutheran": 0.017,
+       "orthodox": 0.0175
+      },
+      "Lempäälä": {
+       "municipal": 0.084,
+       "lutheran": 0.0145,
+       "orthodox": 0.02
+      },
+      "Leppävirta": {
+       "municipal": 0.084,
+       "lutheran": 0.016,
+       "orthodox": 0.0195
+      },
+      "Lestijärvi": {
+       "municipal": 0.094,
+       "lutheran": 0.02,
+       "orthodox": 0.02
+      },
+      "Lieksa": {
+       "municipal": 0.084,
+       "lutheran": 0.0155,
+       "orthodox": 0.02
+      },
+      "Lieto": {
+       "municipal": 0.071,
+       "lutheran": 0.013,
+       "orthodox": 0.0175
+      },
+      "Liminka": {
+       "municipal": 0.094,
+       "lutheran": 0.017,
+       "orthodox": 0.0225
+      },
+      "Liperi": {
+       "municipal": 0.095,
+       "lutheran": 0.016,
+       "orthodox": 0.0185
+      },
+      "Lohja": {
+       "municipal": 0.079,
+       "lutheran": 0.015,
+       "orthodox": 0.018
+      },
+      "Loimaa": {
+       "municipal": 0.084,
+       "lutheran": 0.0155,
+       "orthodox": 0.0175
+      },
+      "Loppi": {
+       "municipal": 0.089,
+       "lutheran": 0.0175,
+       "orthodox": 0.018
+      },
+      "Loviisa": {
+       "municipal": 0.081,
+       "lutheran": 0.0165,
+       "orthodox": 0.0195
+      },
+      "Luhanka": {
+       "municipal": 0.059,
+       "lutheran": 0.0145,
+       "orthodox": 0.0195
+      },
+      "Lumijoki": {
+       "municipal": 0.089,
+       "lutheran": 0.0195,
+       "orthodox": 0.0225
+      },
+      "Lumparland": {
+       "municipal": 0.195,
+       "lutheran": 0.017,
+       "orthodox": 0.0175
+      },
+      "Luoto": {
+       "municipal": 0.083,
+       "lutheran": 0.019,
+       "orthodox": 0.02
+      },
+      "Luumäki": {
+       "municipal": 0.093,
+       "lutheran": 0.017,
+       "orthodox": 0.0195
+      },
+      "Maalahti": {
+       "municipal": 0.089,
+       "lutheran": 0.019,
+       "orthodox": 0.02
+      },
+      "Maarianhamina": {
+       "municipal": 0.17,
+       "lutheran": 0.0155,
+       "orthodox": 0.0175
+      },
+      "Marttila": {
+       "municipal": 0.088,
+       "lutheran": 0.0145,
+       "orthodox": 0.0175
+      },
+      "Masku": {
+       "municipal": 0.085,
+       "lutheran": 0.016,
+       "orthodox": 0.0175
+      },
+      "Merijärvi": {
+       "municipal": 0.101,
+       "lutheran": 0.0175,
+       "orthodox": 0.0225
+      },
+      "Merikarvia": {
+       "municipal": 0.089,
+       "lutheran": 0.019,
+       "orthodox": 0.02
+      },
+      "Miehikkälä": {
+       "municipal": 0.101,
+       "lutheran": 0.0155,
+       "orthodox": 0.0195
+      },
+      "Mikkeli": {
+       "municipal": 0.094,
+       "lutheran": 0.0145,
+       "orthodox": 0.0195
+      },
+      "Muhos": {
+       "municipal": 0.094,
+       "lutheran": 0.0165,
+       "orthodox": 0.0225
+      },
+      "Multia": {
+       "municipal": 0.098,
+       "lutheran": 0.018,
+       "orthodox": 0.0195
+      },
+      "Muonio": {
+       "municipal": 0.089,
+       "lutheran": 0.017,
+       "orthodox": 0.0225
+      },
+      "Mustasaari": {
+       "municipal": 0.089,
+       "lutheran": 0.018,
+       "orthodox": 0.02
+      },
+      "Muurame": {
+       "municipal": 0.069,
+       "lutheran": 0.0155,
+       "orthodox": 0.0195
+      },
+      "Mynämäki": {
+       "municipal": 0.091,
+       "lutheran": 0.0165,
+       "orthodox": 0.0175
+      },
+      "Myrskylä": {
+       "municipal": 0.099,
+       "lutheran": 0.0185,
+       "orthodox": 0.0195
+      },
+      "Mäntsälä": {
+       "municipal": 0.083,
+       "lutheran": 0.0125,
+       "orthodox": 0.018
+      },
+      "Mänttä-Vilppula": {
+       "municipal": 0.099,
+       "lutheran": 0.018,
+       "orthodox": 0.02
+      },
+      "Mäntyharju": {
+       "municipal": 0.085,
+       "lutheran": 0.019,
+       "orthodox": 0.0195
+      },
+      "Naantali": {
+       "municipal": 0.064,
+       "lutheran": 0.0135,
+       "orthodox": 0.0175
+      },
+      "Nakkila": {
+       "municipal": 0.091,
+       "lutheran": 0.0175,
+       "orthodox": 0.02
+      },
+      "Nivala": {
+       "municipal": 0.099,
+       "lutheran": 0.0175,
+       "orthodox": 0.02
+      },
+      "Nokia": {
+       "municipal": 0.084,
+       "lutheran": 0.015,
+       "orthodox": 0.02
+      },
+      "Nousiainen": {
+       "municipal": 0.091,
+       "lutheran": 0.0155,
+       "orthodox": 0.0175
+      },
+      "Nurmes": {
+       "municipal": 0.089,
+       "lutheran": 0.017,
+       "orthodox": 0.0185
+      },
+      "Nurmijärvi": {
+       "municipal": 0.079,
+       "lutheran": 0.0145,
+       "orthodox": 0.018
+      },
+      "Närpiö": {
+       "municipal": 0.084,
+       "lutheran": 0.015,
+       "orthodox": 0.02
+      },
+      "Orimattila": {
+       "municipal": 0.087,
+       "lutheran": 0.0175,
+       "orthodox": 0.018
+      },
+      "Oripää": {
+       "municipal": 0.084,
+       "lutheran": 0.0175,
+       "orthodox": 0.0175
+      },
+      "Orivesi": {
+       "municipal": 0.094,
+       "lutheran": 0.0175,
+       "orthodox": 0.02
+      },
+      "Oulainen": {
+       "municipal": 0.1,
+       "lutheran": 0.0175,
+       "orthodox": 0.0225
+      },
+      "Oulu": {
+       "municipal": 0.081,
+       "lutheran": 0.013,
+       "orthodox": 0.0225
+      },
+      "Outokumpu": {
+       "municipal": 0.089,
+       "lutheran": 0.016,
+       "orthodox": 0.0185
+      },
+      "Padasjoki": {
+       "municipal": 0.084,
+       "lutheran": 0.017,
+       "orthodox": 0.018
+      },
+      "Paimio": {
+       "municipal": 0.082,
+       "lutheran": 0.0145,
+       "orthodox": 0.0175
+      },
+      "Paltamo": {
+       "municipal": 0.094,
+       "lutheran": 0.0165,
+       "orthodox": 0.0225
+      },
+      "Parainen": {
+       "municipal": 0.079,
+       "lutheran": 0.016,
+       "orthodox": 0.0175
+      },
+      "Parikkala": {
+       "municipal": 0.095,
+       "lutheran": 0.017,
+       "orthodox": 0.0195
+      },
+      "Parkano": {
+       "municipal": 0.094,
+       "lutheran": 0.017,
+       "orthodox": 0.02
+      },
+      "Pedersören kunta": {
+       "municipal": 0.093,
+       "lutheran": 0.018,
+       "orthodox": 0.02
+      },
+      "Pelkosenniemi": {
+       "municipal": 0.091,
+       "lutheran": 0.0195,
+       "orthodox": 0.0225
+      },
+      "Pello": {
+       "municipal": 0.095,
+       "lutheran": 0.017,
+       "orthodox": 0.0225
+      },
+      "Perho": {
+       "municipal": 0.093,
+       "lutheran": 0.019,
+       "orthodox": 0.02
+      },
+      "Petäjävesi": {
+       "municipal": 0.099,
+       "lutheran": 0.019,
+       "orthodox": 0.0195
+      },
+      "Pieksämäki": {
+       "municipal": 0.094,
+       "lutheran": 0.0145,
+       "orthodox": 0.0195
+      },
+      "Pielavesi": {
+       "municipal": 0.091,
+       "lutheran": 0.0165,
+       "orthodox": 0.02
+      },
+      "Pietarsaari": {
+       "municipal": 0.09,
+       "lutheran": 0.018,
+       "orthodox": 0.02
+      },
+      "Pihtipudas": {
+       "municipal": 0.089,
+       "lutheran": 0.018,
+       "orthodox": 0.0195
+      },
+      "Pirkkala": {
+       "municipal": 0.079,
+       "lutheran": 0.014,
+       "orthodox": 0.02
+      },
+      "Polvijärvi": {
+       "municipal": 0.09,
+       "lutheran": 0.016,
+       "orthodox": 0.0185
+      },
+      "Pomarkku": {
+       "municipal": 0.109,
+       "lutheran": 0.015,
+       "orthodox": 0.02
+      },
+      "Pori": {
+       "municipal": 0.087,
+       "lutheran": 0.015,
+       "orthodox": 0.02
+      },
+      "Pornainen": {
+       "municipal": 0.083,
+       "lutheran": 0.0175,
+       "orthodox": 0.018
+      },
+      "Porvoo": {
+       "municipal": 0.071,
+       "lutheran": 0.014,
+       "orthodox": 0.018
+      },
+      "Posio": {
+       "municipal": 0.091,
+       "lutheran": 0.0175,
+       "orthodox": 0.0225
+      },
+      "Pudasjärvi": {
+       "municipal": 0.095,
+       "lutheran": 0.015,
+       "orthodox": 0.0225
+      },
+      "Pukkila": {
+       "municipal": 0.104,
+       "lutheran": 0.0175,
+       "orthodox": 0.018
+      },
+      "Punkalaidun": {
+       "municipal": 0.094,
+       "lutheran": 0.017,
+       "orthodox": 0.0175
+      },
+      "Puolanka": {
+       "municipal": 0.089,
+       "lutheran": 0.0175,
+       "orthodox": 0.0225
+      },
+      "Puumala": {
+       "municipal": 0.066,
+       "lutheran": 0.0145,
+       "orthodox": 0.0195
+      },
+      "Pyhtää": {
+       "municipal": 0.081,
+       "lutheran": 0.017,
+       "orthodox": 0.0195
+      },
+      "Pyhäjoki": {
+       "municipal": 0.079,
+       "lutheran": 0.0175,
+       "orthodox": 0.0225
+      },
+      "Pyhäjärvi": {
+       "municipal": 0.091,
+       "lutheran": 0.0175,
+       "orthodox": 0.02
+      },
+      "Pyhäntä": {
+       "municipal": 0.08,
+       "lutheran": 0.019,
+       "orthodox": 0.02
+      },
+      "Pyhäranta": {
+       "municipal": 0.091,
+       "lutheran": 0.019,
+       "orthodox": 0.0175
+      },
+      "Pälkäne": {
+       "municipal": 0.089,
+       "lutheran": 0.018,
+       "orthodox": 0.02
+      },
+      "Pöytyä": {
+       "municipal": 0.086,
+       "lutheran": 0.0175,
+       "orthodox": 0.0175
+      },
+      "Raahe": {
+       "municipal": 0.091,
+       "lutheran": 0.019,
+       "orthodox": 0.0225
+      },
+      "Raasepori": {
+       "municipal": 0.093,
+       "lutheran": 0.015,
+       "orthodox": 0.018
+      },
+      "Raisio": {
+       "municipal": 0.076,
+       "lutheran": 0.0115,
+       "orthodox": 0.0175
+      },
+      "Rantasalmi": {
+       "municipal": 0.094,
+       "lutheran": 0.016,
+       "orthodox": 0.0195
+      },
+      "Ranua": {
+       "municipal": 0.081,
+       "lutheran": 0.0175,
+       "orthodox": 0.0225
+      },
+      "Rauma": {
+       "municipal": 0.079,
+       "lutheran": 0.015,
+       "orthodox": 0.0175
+      },
+      "Rautalampi": {
+       "municipal": 0.099,
+       "lutheran": 0.0185,
+       "orthodox": 0.02
+      },
+      "Rautavaara": {
+       "municipal": 0.094,
+       "lutheran": 0.018,
+       "orthodox": 0.0185
+      },
+      "Rautjärvi": {
+       "municipal": 0.085,
+       "lutheran": 0.0175,
+       "orthodox": 0.0195
+      },
+      "Reisjärvi": {
+       "municipal": 0.102,
+       "lutheran": 0.017,
+       "orthodox": 0.02
+      },
+      "Riihimäki": {
+       "municipal": 0.079,
+       "lutheran": 0.013,
+       "orthodox": 0.018
+      },
+      "Ristijärvi": {
+       "municipal": 0.093,
+       "lutheran": 0.0165,
+       "orthodox": 0.0225
+      },
+      "Rovaniemi": {
+       "municipal": 0.089,
+       "lutheran": 0.014,
+       "orthodox": 0.0225
+      },
+      "Ruokolahti": {
+       "municipal": 0.086,
+       "lutheran": 0.0175,
+       "orthodox": 0.0195
+      },
+      "Ruovesi": {
+       "municipal": 0.094,
+       "lutheran": 0.0175,
+       "orthodox": 0.02
+      },
+      "Rusko": {
+       "municipal": 0.073,
+       "lutheran": 0.0145,
+       "orthodox": 0.0175
+      },
+      "Rääkkylä": {
+       "municipal": 0.099,
+       "lutheran": 0.018,
+       "orthodox": 0.02
+      },
+      "Saarijärvi": {
+       "municipal": 0.093,
+       "lutheran": 0.0175,
+       "orthodox": 0.0195
+      },
+      "Salla": {
+       "municipal": 0.089,
+       "lutheran": 0.0185,
+       "orthodox": 0.0225
+      },
+      "Salo": {
+       "municipal": 0.081,
+       "lutheran": 0.0145,
+       "orthodox": 0.0175
+      },
+      "Saltvik": {
+       "municipal": 0.185,
+       "lutheran": 0.0175,
+       "orthodox": 0.0175
+      },
+      "Sastamala": {
+       "municipal": 0.089,
+       "lutheran": 0.0175,
+       "orthodox": 0.02
+      },
+      "Sauvo": {
+       "municipal": 0.088,
+       "lutheran": 0.0145,
+       "orthodox": 0.0175
+      },
+      "Savitaipale": {
+       "municipal": 0.089,
+       "lutheran": 0.0175,
+       "orthodox": 0.0195
+      },
+      "Savonlinna": {
+       "municipal": 0.093,
+       "lutheran": 0.016,
+       "orthodox": 0.0195
+      },
+      "Savukoski": {
+       "municipal": 0.091,
+       "lutheran": 0.0195,
+       "orthodox": 0.0225
+      },
+      "Seinäjoki": {
+       "municipal": 0.092,
+       "lutheran": 0.016,
+       "orthodox": 0.02
+      },
+      "Sievi": {
+       "municipal": 0.096,
+       "lutheran": 0.0185,
+       "orthodox": 0.02
+      },
+      "Siikainen": {
+       "municipal": 0.094,
+       "lutheran": 0.018,
+       "orthodox": 0.02
+      },
+      "Siikajoki": {
+       "municipal": 0.094,
+       "lutheran": 0.019,
+       "orthodox": 0.0225
+      },
+      "Siikalatva": {
+       "municipal": 0.093,
+       "lutheran": 0.019,
+       "orthodox": 0.0225
+      },
+      "Siilinjärvi": {
+       "municipal": 0.094,
+       "lutheran": 0.0135,
+       "orthodox": 0.02
+      },
+      "Simo": {
+       "municipal": 0.094,
+       "lutheran": 0.0175,
+       "orthodox": 0.0225
+      },
+      "Sipoo": {
+       "municipal": 0.068,
+       "lutheran": 0.0135,
+       "orthodox": 0.018
+      },
+      "Siuntio": {
+       "municipal": 0.086,
+       "lutheran": 0.0165,
+       "orthodox": 0.018
+      },
+      "Sodankylä": {
+       "municipal": 0.075,
+       "lutheran": 0.014,
+       "orthodox": 0.0225
+      },
+      "Soini": {
+       "municipal": 0.091,
+       "lutheran": 0.0185,
+       "orthodox": 0.02
+      },
+      "Somero": {
+       "municipal": 0.085,
+       "lutheran": 0.0165,
+       "orthodox": 0.018
+      },
+      "Sonkajärvi": {
+       "municipal": 0.086,
+       "lutheran": 0.0165,
+       "orthodox": 0.02
+      },
+      "Sotkamo": {
+       "municipal": 0.085,
+       "lutheran": 0.016,
+       "orthodox": 0.0225
+      },
+      "Sottunga": {
+       "municipal": 0.18,
+       "lutheran": 0.02,
+       "orthodox": 0.0175
+      },
+      "Sulkava": {
+       "municipal": 0.084,
+       "lutheran": 0.016,
+       "orthodox": 0.0195
+      },
+      "Sund": {
+       "municipal": 0.19,
+       "lutheran": 0.0195,
+       "orthodox": 0.0175
+      },
+      "Suomussalmi": {
+       "municipal": 0.089,
+       "lutheran": 0.017,
+       "orthodox": 0.0225
+      },
+      "Suonenjoki": {
+       "municipal": 0.091,
+       "lutheran": 0.0175,
+       "orthodox": 0.02
+      },
+      "Sysmä": {
+       "municipal": 0.064,
+       "lutheran": 0.017,
+       "orthodox": 0.0195
+      },
+      "Säkylä": {
+       "municipal": 0.089,
+       "lutheran": 0.018,
+       "orthodox": 0.0175
+      },
+      "Taipalsaari": {
+       "municipal": 0.084,
+       "lutheran": 0.0175,
+       "orthodox": 0.0195
+      },
+      "Taivalkoski": {
+       "municipal": 0.085,
+       "lutheran": 0.0165,
+       "orthodox": 0.0225
+      },
+      "Taivassalo": {
+       "municipal": 0.069,
+       "lutheran": 0.017,
+       "orthodox": 0.0175
+      },
+      "Tammela": {
+       "municipal": 0.089,
+       "lutheran": 0.017,
+       "orthodox": 0.018
+      },
+      "Tampere": {
+       "municipal": 0.076,
+       "lutheran": 0.0125,
+       "orthodox": 0.02
+      },
+      "Tervo": {
+       "municipal": 0.099,
+       "lutheran": 0.0185,
+       "orthodox": 0.02
+      },
+      "Tervola": {
+       "municipal": 0.069,
+       "lutheran": 0.0175,
+       "orthodox": 0.0225
+      },
+      "Teuva": {
+       "municipal": 0.096,
+       "lutheran": 0.0175,
+       "orthodox": 0.02
+      },
+      "Tohmajärvi": {
+       "municipal": 0.091,
+       "lutheran": 0.018,
+       "orthodox": 0.02
+      },
+      "Toholampi": {
+       "municipal": 0.099,
+       "lutheran": 0.02,
+       "orthodox": 0.02
+      },
+      "Toivakka": {
+       "municipal": 0.094,
+       "lutheran": 0.0145,
+       "orthodox": 0.0195
+      },
+      "Tornio": {
+       "municipal": 0.087,
+       "lutheran": 0.0145,
+       "orthodox": 0.0225
+      },
+      "Turku": {
+       "municipal": 0.071,
+       "lutheran": 0.012,
+       "orthodox": 0.0175
+      },
+      "Tuusniemi": {
+       "municipal": 0.099,
+       "lutheran": 0.0145,
+       "orthodox": 0.02
+      },
+      "Tuusula": {
+       "municipal": 0.073,
+       "lutheran": 0.0145,
+       "orthodox": 0.018
+      },
+      "Tyrnävä": {
+       "municipal": 0.099,
+       "lutheran": 0.018,
+       "orthodox": 0.0225
+      },
+      "Ulvila": {
+       "municipal": 0.094,
+       "lutheran": 0.0165,
+       "orthodox": 0.02
+      },
+      "Urjala": {
+       "municipal": 0.103,
+       "lutheran": 0.017,
+       "orthodox": 0.018
+      },
+      "Utajärvi": {
+       "municipal": 0.084,
+       "lutheran": 0.0165,
+       "orthodox": 0.0225
+      },
+      "Utsjoki": {
+       "municipal": 0.089,
+       "lutheran": 0.017,
+       "orthodox": 0.0225
+      },
+      "Uurainen": {
+       "municipal": 0.092,
+       "lutheran": 0.0195,
+       "orthodox": 0.0195
+      },
+      "Uusikaarlepyy": {
+       "municipal": 0.086,
+       "lutheran": 0.019,
+       "orthodox": 0.02
+      },
+      "Uusikaupunki": {
+       "municipal": 0.089,
+       "lutheran": 0.015,
+       "orthodox": 0.0175
+      },
+      "Vaala": {
+       "municipal": 0.083,
+       "lutheran": 0.0165,
+       "orthodox": 0.0225
+      },
+      "Vaasa": {
+       "municipal": 0.084,
+       "lutheran": 0.014,
+       "orthodox": 0.02
+      },
+      "Valkeakoski": {
+       "municipal": 0.091,
+       "lutheran": 0.016,
+       "orthodox": 0.02
+      },
+      "Vantaa": {
+       "municipal": 0.064,
+       "lutheran": 0.01,
+       "orthodox": 0.018
+      },
+      "Varkaus": {
+       "municipal": 0.093,
+       "lutheran": 0.0145,
+       "orthodox": 0.0195
+      },
+      "Vehmaa": {
+       "municipal": 0.091,
+       "lutheran": 0.0185,
+       "orthodox": 0.0175
+      },
+      "Vesanto": {
+       "municipal": 0.095,
+       "lutheran": 0.0185,
+       "orthodox": 0.02
+      },
+      "Vesilahti": {
+       "municipal": 0.093,
+       "lutheran": 0.0165,
+       "orthodox": 0.02
+      },
+      "Veteli": {
+       "municipal": 0.098,
+       "lutheran": 0.0185,
+       "orthodox": 0.02
+      },
+      "Vieremä": {
+       "municipal": 0.084,
+       "lutheran": 0.018,
+       "orthodox": 0.02
+      },
+      "Vihti": {
+       "municipal": 0.078,
+       "lutheran": 0.0145,
+       "orthodox": 0.018
+      },
+      "Viitasaari": {
+       "municipal": 0.084,
+       "lutheran": 0.018,
+       "orthodox": 0.0195
+      },
+      "Vimpeli": {
+       "municipal": 0.098,
+       "lutheran": 0.017,
+       "orthodox": 0.02
+      },
+      "Virolahti": {
+       "municipal": 0.101,
+       "lutheran": 0.0155,
+       "orthodox": 0.0195
+      },
+      "Virrat": {
+       "municipal": 0.086,
+       "lutheran": 0.0175,
+       "orthodox": 0.02
+      },
+      "Vårdö": {
+       "municipal": 0.19,
+       "lutheran": 0.0195,
+       "orthodox": 0.0175
+      },
+      "Vöyri": {
+       "municipal": 0.092,
+       "lutheran": 0.0195,
+       "orthodox": 0.02
+      },
+      "Ylitornio": {
+       "municipal": 0.084,
+       "lutheran": 0.017,
+       "orthodox": 0.0225
+      },
+      "Ylivieska": {
+       "municipal": 0.103,
+       "lutheran": 0.0175,
+       "orthodox": 0.02
+      },
+      "Ylöjärvi": {
+       "municipal": 0.092,
+       "lutheran": 0.0165,
+       "orthodox": 0.02
+      },
+      "Ypäjä": {
+       "municipal": 0.093,
+       "lutheran": 0.018,
+       "orthodox": 0.018
+      },
+      "Ähtäri": {
+       "municipal": 0.106,
+       "lutheran": 0.017,
+       "orthodox": 0.02
+      },
+      "Äänekoski": {
+       "municipal": 0.094,
+       "lutheran": 0.016,
+       "orthodox": 0.0195
+      }
+     },
+     "count": 308,
+     "averageForNonResidents": 0.076
+    },
+    "otherLevies": {
+     "healthCareContribution": 0.011,
+     "publicBroadcastingTax": {
+      "rate": 0.025,
+      "above": 15150,
+      "max": 160
+     }
+    }
+   },
+   "applies": "Residents, tax year 2026 (assessment carried out in 2027)",
+   "sources": [
+    {
+     "src": 0,
+     "said": "Vuodelta 2026 toimitettavassa verotuksessa määrätään tuloverolain (1535/1992) perusteella valtiolle ansiotulosta suoritettava tulovero progressiivisen tuloveroasteikon mukaan seuraavasti: Verotettava ansiotulo, euroa Vero alarajan kohdalla, euroa Vero alarajan ylittävästä tulon osasta, % 0–22 000 0,00 12,64 22 000–32 600 2 780,80 19,00 32 600–40 100 4 794,80 30,25 40 100–52 100 7 063,55 33,25 52 100– 11 053,55 37,50"
+    },
+    {
+     "src": 1,
+     "said": "Verohallinto on verotusmenettelystä annetun lain (1558/1995) 91 a §:n 3 momentin nojalla, sellaisena kuin se on laissa 520/2010, antanut seuraavan luettelon varainhoitovuodeksi 2026 vahvistetuista kuntien, evankelis-luterilaisen kirkon ja ortodoksisen kirkkokunnan seurakuntien tuloveroprosenteista."
+    },
+    {
+     "src": 2,
+     "said": "Municipal income tax rate for non-residents (taxpayers living permanently abroad) 7.60% Health care contribution on wage and work income 1.10%"
+    }
+   ]
+  },
+  {
+   "item": "social",
+   "finding": "From an employee's pay are taken 7.30% for the earnings-related pension (TyEL), 0.89% unemployment insurance and the 1.10% health care plus 0.88% daily allowance contribution (none of the latter under €17,255 a year); the employer adds a 1.91% health insurance contribution, an average 17.10% TyEL and 0.31% unemployment insurance.",
+   "value": {
+    "currency": "EUR",
+    "year": 2026,
+    "employee": {
+     "pensionTyEL": 0.073,
+     "unemployment": 0.0089,
+     "healthCare": 0.011,
+     "dailyAllowance": {
+      "rate": 0.0088,
+      "none_below": 17255
+     }
+    },
+    "employer": {
+     "health": 0.0191,
+     "pensionTyELAverage": 0.171,
+     "unemployment": [
+      {
+       "payroll_to": 2509500,
+       "rate": 0.0031
+      },
+      {
+       "payroll_from": 2509500,
+       "rate": 0.0123
+      }
+     ]
+    },
+    "selfEmployed": {
+     "dailyAllowance": {
+      "rate": 0.0111,
+      "at_or_above": 17255,
+      "below": 0.0023
+     }
+    },
+    "tyelLowerLimitMonthly": 71.72,
+    "ceiling": null
+   },
+   "applies": "Employees covered by Finnish social insurance, 2026; employees 17 and over above the TyEL lower limit",
+   "sources": [
+    {
+     "src": 3,
+     "said": "Pay to the Tax Administration 2026 2025 Employers’ health insurance contribution 1.91% 1.87% The health insurance premium of the insured party: The health care contribution on wage income and annual earnings 1.10% 1.06% Daily allowance contribution 0.88% 0.00% for income of less than €17,255 … Pay to your insurance company 2026 2025 Employee's pension insurance contribution ( worker’s ages : less than 53 years , and those who have turned 63) 7.30% 7.15% Employee's pension insurance contribution (worker’s ages 53 to 62) 7.30% 8.65% An employer with an insurance contract: pension insurance contribution (average rate) An employer with an insurance contract is an employer who constantly employs people. 17.10% 17.38% … Employer’s unemployment insurance contribution 0.31%, if paid wages no more than €2,509,500 a year 1.23% for the part of wages exceeding €2,509,500 … Employee's unemployment insurance contribution 0.89% 0.59%"
+    },
+    {
+     "src": 2,
+     "said": "Daily allowance contribution (for 16- to 67-year-olds) 0,00% for wage earners whose annual income is less than €17,255 0,88% for wage earners whose annual income is €17,255 or more 1,11% for self-employed individuals whose annual income is €17,255 or more 0,23% for self-employed individuals whose annual income is less than €17,255"
+    }
+   ]
+  },
+  {
+   "item": "withholding",
+   "finding": "Tax is withheld from a resident's pay at the percentage and income ceiling on the tax card the Tax Administration issues from the last assessment; a person staying under six months is taxed as a non-resident at 35% at source.",
+   "value": {
+    "kind": "tax card percentage (personal withholding rate and income ceiling)",
+    "nonResidentEmployeeRate": 0.35,
+    "examplesHelsinki2026": [
+     {
+      "income": 10000,
+      "rate": 0.0
+     },
+     {
+      "income": 16000,
+      "rate": 0.005
+     },
+     {
+      "income": 20000,
+      "rate": 0.015
+     },
+     {
+      "income": 30000,
+      "rate": 0.085
+     }
+    ]
+   },
+   "applies": "Wages, 2026",
+   "sources": [
+    {
+     "src": 2,
+     "said": "The Tax Administration calculates the tax rate for your tax card and the prepayment amount based on the income and deductions in your latest finalised tax assessment."
+    },
+    {
+     "src": 4,
+     "said": "Examples of tax rates on pay, pensions and benefits Amount of income during the year Tax rate on pay Tax rate on benefits Tax rate on pension €10 000 0,0 % 14,0 % 0,0 % €16 000 0,5% 18,0 % 5,0 % €20 000 1,5 % 20,0 % 12,0 % €30 000 8,5 % 23,0 % 19,0 %"
+    },
+    {
+     "src": 5,
+     "said": "the income is taxed at the flat percentage rate of tax at source of 35%"
+    }
+   ]
+  },
+  {
+   "item": "nonResident",
+   "finding": "A foreign performing artist's fee for a personal performance in Finland bears 15% tax at source with no deductions, though an artist from the EEA may claim progressive taxation after direct expenses; directors and designers are not treated as performing artists.",
+   "value": {
+    "rate": 0.15,
+    "base": "gross fee for personal performance, no deductions",
+    "threshold": null,
+    "final": true,
+    "eeaOption": "progressive tax at source after direct expenses, on a tax-at-source card",
+    "notArtists": [
+     "theatre director",
+     "choreographer",
+     "set designer"
+    ],
+    "residentAfterMonths": 6
+   },
+   "applies": "Non-resident performing artists, staying 6 months or less",
+   "sources": [
+    {
+     "src": 6,
+     "said": "If you are a theatre director, choreographer, set designer, referee or sports coach or the like, you are not treated as a performing artist or athlete in taxation. See the instructions: Coming to work for a Finnish employer . The duration of your stay in Finland affects your taxation When you receive a payment for your personal performance, the payment is subject to 15% of tax at source in Finland. The payment may be wages or other income. Tax at source is withheld even if the payment is routed to an overseas event agency or other foreign organisation. You cannot make tax deductions from the payment."
+    }
+   ]
+  },
+  {
+   "item": "vat",
+   "finding": "VAT is 25.5% generally and 13.5% on a performing artist's fees where the artist is registered for them; performing artists' fees and copyrights are VAT-exempt activities, and registration is compulsory only above €20,000 turnover in a calendar year.",
+   "value": {
+    "currency": "EUR",
+    "standard": 0.255,
+    "performerReducedIfRegistered": 0.135,
+    "threshold": 20000,
+    "exempt": [
+     "certain performing artists’ fees",
+     "copyrights"
+    ]
+   },
+   "applies": "2026",
+   "sources": [
+    {
+     "src": 7,
+     "said": "1. The general VAT rate 25.5% … 2. Reduced VAT rate 13,5% … fees received by a performing artist, athlete or other public performer, if the recipient is registered for VAT for these activities"
+    },
+    {
+     "src": 8,
+     "said": "certain performing artists’ fees copyrights sales and rental of real estate and apartments general postal services certain other goods and services (such as organisation of lotteries). The above activities do not require VAT registration but in some cases you can register for VAT voluntarily"
+    },
+    {
+     "src": 9,
+     "said": "The company is liable to pay VAT and it has to be entered in the VAT register if its turnover exceeds €20,000 in a calendar year."
+    }
+   ]
+  },
+  {
+   "item": "year",
+   "finding": "The tax year is the calendar year; the pre-completed return is checked and corrected by the due date printed on it, which is 1, 14, 21 or 28 April.",
+   "value": {
+    "start": "01-01",
+    "end": "12-31",
+    "returnDue": [
+     "04-01",
+     "04-14",
+     "04-21",
+     "04-28"
+    ],
+    "currency": "EUR"
+   },
+   "applies": "Individuals",
+   "sources": [
+    {
+     "src": 2,
+     "said": "Tax cards 2026 enter into force at the beginning of the year, on 1 January. The income ceiling stated on the tax card is for the full year, i.e. a period of 12 months."
+    },
+    {
+     "src": 10,
+     "said": "Due dates will vary: 1 April, 14 April, 21 April or 28 April . Please check yours on the Pre-completed tax return’s first page"
+    }
+   ]
+  },
+  {
+   "item": "residents",
+   "finding": "For 2026 the Tax Administration grants an earned-income tax credit (työtulovähennys) of 18% of qualifying income up to €3,430 (€4,630 from 65), cut by 2.00% of net earned income above €35,000, and a basic deduction (perusvähennys) of up to €4,265 in state and municipal taxation, cut by 18% of net earned income above €4,265 and gone above €27,959.",
+   "value": {
+    "currency": "EUR",
+    "year": 2026,
+    "workIncomeCredit": {
+     "rate": 0.18,
+     "max": 3430,
+     "max65": 4630,
+     "taperFrom": 35000,
+     "taperRate": 0.02,
+     "taperTo": 50550,
+     "perChild": 105,
+     "from": "state income tax, then municipal, church and health-care contributions pro rata"
+    },
+    "basicDeduction": {
+     "max": 4265,
+     "taperFrom": 4265,
+     "taperRate": 0.18,
+     "noneAbove": 27959,
+     "in": "state and municipal taxation"
+    },
+    "incomeAcquisitionDeduction": {
+     "amount": 750,
+     "on": "wage income"
+    },
+    "earnedIncomeDeduction": null
+   },
+   "applies": "Resident wage earners and self-employed persons, tax year 2026; the earned-income deduction (ansiotulovähennys) no longer exists.",
+   "sources": [
+    {
+     "src": 11,
+     "said": "Vähennyksen määrä vuonna 2026: Työtulovähennys on enintään 3 430 euroa. Jos palkansaaja tai yrittäjä on ennen vuoden 2026 alkua täyttänyt 65 vuotta, työtulovähennys on enintään 4 630 euroa. … Vähennys on 18 % vähennykseen oikeuttavien tulojen määrästä. Vähennyksen määrää pienennetään 2,00 %:lla puhtaan ansiotulon 35 000 euroa ylittävältä osalta aina 50 550 euroon saakka. Jokaisesta huollettavana olevasta alaikäisestä lapsesta myönnetään 105 euron korotus työtulovähennyksen enimmäismäärään. … Vähennyksen määrä vuonna 2026: Vähennys on enintään 4 265 euroa. Jos puhdas ansiotulo on yli 4 265 euroa valtion- ja kunnallisverotuksessa tehtävien vähennysten jälkeen, vähennystä pienennetään 18 %:lla ylimenevän tulon määrästä. Perusvähennystä ei voi saada osittaisenakaan, jos puhdas ansiotulo on edellä mainittujen vähennysten jälkeen yli 27 959 euroa. … Saat tulonhankkimisvähennyksen automaattisesti, jos saat palkkatuloa. Vähennyksen määrä on 750 euroa."
+    }
+   ]
+  },
+  {
+   "item": "authors",
+   "finding": "A royalty for the use of a copyright is earned income, on which the payer has the same duties as on a work fee, unless the right was inherited, bequeathed or bought, when it is capital income.",
+   "value": {
+    "ownWork": "earned income, withheld as a work fee (työkorvaus)",
+    "inheritedOrBought": "capital income"
+   },
+   "applies": "Resident authors (writers, directors and other creators) paid for the use of their copyright.",
+   "sources": [
+    {
+     "src": 12,
+     "said": "Käyttökorvausta on esimerkiksi tekijänoikeuden ja teollisoikeuden käyttämisestä, käyttöoikeudesta tai käyttöoikeuden myynnistä maksettu korvaus. … Jos tekijänoikeus on siirtynyt perintönä tai testamentilla tai se on ostettu, sen käyttämisestä saatu korvaus on veronalaista pääomatuloa . Muussa tapauksessa käyttökorvaus on veronalaista ansiotuloa, josta maksaja huolehtii työnantajavelvollisuudet samalla tavalla kuin työkorvauksista."
+    },
+    {
+     "src": 13,
+     "said": "Tuloverolain (1535/1992, TVL) 52 §:n nojalla aineettomista oikeuksista saatava tulo on joko veronalaista ansiotuloa tai pääomatuloa riippuen oikeuksien saantoperusteesta."
+    }
+   ]
+  }
+ ],
+ "country": "FI",
+ "sources": [
+  {
+   "url": "https://vero.fi/henkiloasiakkaat/verokortti-ja-veroilmoitus/tulot/ansiotulot/",
+   "title": "Ansiotulot (Tuloveroasteikko 2026)",
+   "read": "2026-11-01",
+   "kind": "primary",
+   "said": "Vuodelta 2026 toimitettavassa verotuksessa määrätään tuloverolain (1535/1992) perusteella valtiolle ansiotulosta suoritettava tulovero progressiivisen tuloveroasteikon mukaan seuraavasti: Verotettava ansiotulo, euroa Vero alarajan kohdalla, euroa Vero alarajan ylittävästä tulon osasta, % 0–22 000 0,00 12,64 22 000–32 600 2 780,80 19,00 32 600–40 100 4 794,80 30,25 40 100–52 100 7 063,55 33,25 52 100– 11 053,55 37,50"
+  },
+  {
+   "url": "https://vero.fi/syventavat-vero-ohjeet/paatokset/47465/kuntien-ja-seurakuntien-tuloveroprosentit-vuonna-2026/",
+   "title": "Kuntien ja seurakuntien tuloveroprosentit vuonna 2026 (table of 308 rows: Kunta, Kunnan tuloveroprosentti, Ev.lut. seurakunnan tuloveroprosentti, Ortodoks. seurakunnan tuloveroprosentti)",
+   "read": "2026-11-01",
+   "kind": "primary",
+   "said": "Verohallinto on verotusmenettelystä annetun lain (1558/1995) 91 a §:n 3 momentin nojalla, sellaisena kuin se on laissa 520/2010, antanut seuraavan luettelon varainhoitovuodeksi 2026 vahvistetuista kuntien, evankelis-luterilaisen kirkon ja ortodoksisen kirkkokunnan seurakuntien tuloveroprosenteista."
+  },
+  {
+   "url": "https://vero.fi/en/individuals/tax-cards-and-tax-returns/tax_card/tax-rate-and-income-ceiling/tax-bases/",
+   "title": "Tax bases 2026",
+   "read": "2026-11-01",
+   "kind": "primary",
+   "said": "Municipal income tax rate for non-residents (taxpayers living permanently abroad) 7.60% Health care contribution on wage and work income 1.10% … Daily allowance contribution (for 16- to 67-year-olds) 0,00% for wage earners whose annual income is less than €17,255 0,88% for wage earners whose annual income is €17,255 or more 1,11% for self-employed individuals whose annual income is €17,255 or more 0,23% for self-employed individuals whose annual income is less than €17,255 … The Tax Administration calculates the tax rate for your tax card and the prepayment amount based on the income and deductions in your latest finalised tax assessment. … Tax cards 2026 enter into force at the beginning of the year, on 1 January. The income ceiling stated on the tax card is for the full year, i.e. a period of 12 months."
+  },
+  {
+   "url": "https://vero.fi/en/businesses-and-corporations/taxes-and-charges/being-an-employer/social-insurance-contributions/",
+   "title": "Social insurance contributions",
+   "read": "2026-11-01",
+   "kind": "primary",
+   "said": "Pay to the Tax Administration 2026 2025 Employers’ health insurance contribution 1.91% 1.87% The health insurance premium of the insured party: The health care contribution on wage income and annual earnings 1.10% 1.06% Daily allowance contribution 0.88% 0.00% for income of less than €17,255 … Pay to your insurance company 2026 2025 Employee's pension insurance contribution ( worker’s ages : less than 53 years , and those who have turned 63) 7.30% 7.15% Employee's pension insurance contribution (worker’s ages 53 to 62) 7.30% 8.65% An employer with an insurance contract: pension insurance contribution (average rate) An employer with an insurance contract is an employer who constantly employs people. 17.10% 17.38% … Employer’s unemployment insurance contribution 0.31%, if paid wages no more than €2,509,500 a year 1.23% for the part of wages exceeding €2,509,500 … Employee's unemployment insurance contribution 0.89% 0.59%"
+  },
+  {
+   "url": "https://vero.fi/en/individuals/tax-cards-and-tax-returns/income/earned-income/tax-rates-on-pay-pensions-and-benefits/",
+   "title": "Tax rates on pay, pensions and benefits in 2026",
+   "read": "2026-11-01",
+   "kind": "primary",
+   "said": "Examples of tax rates on pay, pensions and benefits Amount of income during the year Tax rate on pay Tax rate on benefits Tax rate on pension €10 000 0,0 % 14,0 % 0,0 % €16 000 0,5% 18,0 % 5,0 % €20 000 1,5 % 20,0 % 12,0 % €30 000 8,5 % 23,0 % 19,0 %"
+  },
+  {
+   "url": "https://vero.fi/en/detailed-guidance/guidance/334489/taxation-of-income-received-by-nonresidents-natural-persons/",
+   "title": "Taxation of income received by nonresidents (natural persons)",
+   "read": "2026-11-01",
+   "kind": "primary",
+   "said": "the income is taxed at the flat percentage rate of tax at source of 35%"
+  },
+  {
+   "url": "https://vero.fi/en/individuals/tax-cards-and-tax-returns/arriving_in_finland/work_in_finland/specific-instructions-for-different-occupations/performing_artists_sportsmen_and_athlet/",
+   "title": "Performing artists, sportsmen and athletes from other countries",
+   "read": "2026-11-01",
+   "kind": "primary",
+   "said": "If you are a theatre director, choreographer, set designer, referee or sports coach or the like, you are not treated as a performing artist or athlete in taxation. See the instructions: Coming to work for a Finnish employer . The duration of your stay in Finland affects your taxation When you receive a payment for your personal performance, the payment is subject to 15% of tax at source in Finland. The payment may be wages or other income. Tax at source is withheld even if the payment is routed to an overseas event agency or other foreign organisation. You cannot make tax deductions from the payment."
+  },
+  {
+   "url": "https://vero.fi/en/businesses-and-corporations/taxes-and-charges/vat/rates-of-vat/",
+   "title": "Rates of VAT",
+   "read": "2026-11-01",
+   "kind": "primary",
+   "said": "1. The general VAT rate 25.5% … 2. Reduced VAT rate 13,5% … fees received by a performing artist, athlete or other public performer, if the recipient is registered for VAT for these activities"
+  },
+  {
+   "url": "https://vero.fi/en/businesses-and-corporations/taxes-and-charges/vat/rates-of-vat/business-operations-exempt-from-vat/",
+   "title": "Business operations exempt from VAT",
+   "read": "2026-11-01",
+   "kind": "primary",
+   "said": "certain performing artists’ fees copyrights sales and rental of real estate and apartments general postal services certain other goods and services (such as organisation of lotteries). The above activities do not require VAT registration but in some cases you can register for VAT voluntarily"
+  },
+  {
+   "url": "https://vero.fi/en/businesses-and-corporations/taxes-and-charges/vat/vat-for-small-business/",
+   "title": "VAT for small business",
+   "read": "2026-11-01",
+   "kind": "primary",
+   "said": "The company is liable to pay VAT and it has to be entered in the VAT register if its turnover exceeds €20,000 in a calendar year."
+  },
+  {
+   "url": "https://vero.fi/en/individuals/tax-cards-and-tax-returns/your_tax_return_and_tax_assessment_deci/instructions-for-filing/",
+   "title": "Instructions for filing",
+   "read": "2026-11-01",
+   "kind": "primary",
+   "said": "Due dates will vary: 1 April, 14 April, 21 April or 28 April . Please check yours on the Pre-completed tax return’s first page"
+  },
+  {
+   "url": "https://vero.fi/henkiloasiakkaat/vahennykset/mita-voi-vahentaa/verohallinto-laskee-nama-vahennykset-automaattisesti/",
+   "title": "Verohallinto laskee nämä vähennykset automaattisesti (Verohallinto)",
+   "read": "2026-11-01",
+   "kind": "primary",
+   "said": "Vähennyksen määrä vuonna 2026: Työtulovähennys on enintään 3 430 euroa. Jos palkansaaja tai yrittäjä on ennen vuoden 2026 alkua täyttänyt 65 vuotta, työtulovähennys on enintään 4 630 euroa. … Vähennys on 18 % vähennykseen oikeuttavien tulojen määrästä. Vähennyksen määrää pienennetään 2,00 %:lla puhtaan ansiotulon 35 000 euroa ylittävältä osalta aina 50 550 euroon saakka. Jokaisesta huollettavana olevasta alaikäisestä lapsesta myönnetään 105 euron korotus työtulovähennyksen enimmäismäärään. … Vähennyksen määrä vuonna 2026: Vähennys on enintään 4 265 euroa. Jos puhdas ansiotulo on yli 4 265 euroa valtion- ja kunnallisverotuksessa tehtävien vähennysten jälkeen, vähennystä pienennetään 18 %:lla ylimenevän tulon määrästä. Perusvähennystä ei voi saada osittaisenakaan, jos puhdas ansiotulo on edellä mainittujen vähennysten jälkeen yli 27 959 euroa. … Saat tulonhankkimisvähennyksen automaattisesti, jos saat palkkatuloa. Vähennyksen määrä on 750 euroa."
+  },
+  {
+   "url": "https://vero.fi/yritykset-ja-yhteisot/verot-ja-maksut/yritys_tyonantajana/palkkaa-vai-tyokorvausta/kayttokorvaus/",
+   "title": "Käyttökorvaus (Verohallinto)",
+   "read": "2026-11-01",
+   "kind": "primary",
+   "said": "Käyttökorvausta on esimerkiksi tekijänoikeuden ja teollisoikeuden käyttämisestä, käyttöoikeudesta tai käyttöoikeuden myynnistä maksettu korvaus. … Jos tekijänoikeus on siirtynyt perintönä tai testamentilla tai se on ostettu, sen käyttämisestä saatu korvaus on veronalaista pääomatuloa . Muussa tapauksessa käyttökorvaus on veronalaista ansiotuloa, josta maksaja huolehtii työnantajavelvollisuudet samalla tavalla kuin työkorvauksista."
+  },
+  {
+   "url": "https://vero.fi/syventavat-vero-ohjeet/ohje-hakusivu/48945/aineettomista_oikeuksista_saatavien_tul/",
+   "title": "Aineettomista oikeuksista saatavien tulojen verotus (Verohallinto, syventävä vero-ohje, old version of 21.10.2014; read for the law it cites, TVL 52 §)",
+   "read": "2026-11-01",
+   "kind": "primary",
+   "said": "Tuloverolain (1535/1992, TVL) 52 §:n nojalla aineettomista oikeuksista saatava tulo on joko veronalaista ansiotuloa tai pääomatuloa riippuen oikeuksien saantoperusteesta."
+  }
+ ],
+ "blockers": []
+}

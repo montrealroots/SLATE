@@ -1,0 +1,114 @@
+{
+ "topic": "tax.MV",
+ "read": "2026-11-01",
+ "note": "Read 2026-11-01 at the owner's word (\"Build those first 3 starting with ledger first\"; of the 21 countries read first: \"It should cover across every country\"; \"Retry the blocked tax facts once all countries land\"): the tax on a screen worker's pay in Maldives: a resident's income tax, social contributions, what is withheld at source, a non-resident artiste's withholding, an author's treatment, VAT and the tax year. Research and retry subagents (workbench/briefs/BRIEF-tax.md, BRIEF-tax-retry.md), every quote checked by the lead against its saved page.",
+ "figures": [
+  {
+   "item": "social",
+   "finding": "Under the Maldives Retirement Pension Scheme the employer and the employee each pay 7% of the employee's basic salary every month (14% in all).",
+   "value": {
+    "currency": "MVR",
+    "employee": 0.07,
+    "employer": 0.07,
+    "base": "basic salary",
+    "scheme": "MRPS"
+   },
+   "applies": "Employees in the MRPS",
+   "sources": [
+    {
+     "src": 0,
+     "said": "ވަޒީފާދޭ ފަރާތުންނާއި ވަޒީފާއަދާކުރާ ފަރާތުން ޕެންޝަން ކޮންޓްރިބިއުޝަންގެ ގޮތުގައި ކޮންމެ މަހަކު ސްކީމަށް ދައްކަނީ މުވައްޒަފުގެ އަސާސީ މުސާރައިގެ %7 (ދެ ފަރާތުން ޖުމްލަ %14) އެވެ"
+    }
+   ]
+  }
+ ],
+ "country": "MV",
+ "sources": [
+  {
+   "url": "https://www.pension.gov.mv/mrps",
+   "title": "Maldives Pension Administration Office, Maldives Retirement Pension Scheme (MRPS) (in Dhivehi)",
+   "read": "2026-11-01",
+   "kind": "primary",
+   "said": "ވަޒީފާދޭ ފަރާތުންނާއި ވަޒީފާއަދާކުރާ ފަރާތުން ޕެންޝަން ކޮންޓްރިބިއުޝަންގެ ގޮތުގައި ކޮންމެ މަހަކު ސްކީމަށް ދައްކަނީ މުވައްޒަފުގެ އަސާސީ މުސާރައިގެ %7 (ދެ ފަރާތުން ޖުމްލަ %14) އެވެ"
+  }
+ ],
+ "blockers": [
+  {
+   "item": "residents",
+   "sought": "Income tax brackets and allowance for 2026 (Income Tax Act)",
+   "tried": {
+    "institution": "mira.gov.mv (Maldives Inland Revenue Authority) returns HTTP 403 to this environment (2026-11-01) || 2026-11-01 retry: mira.gov.mv returns HTTP 403 (not read another way)",
+    "official-register": "gazette.gov.mv reached (home page, Dhivehi); the Income Tax Act (Law 25/2019) and GST Act not located on it without search || 2026-11-01 retry: gazette.gov.mv home reached; its search is script-driven (a query URL returned the home page); Income Tax Act and GST Act not located",
+    "web-search": "not run: the session's shared web-search budget was used up on 2026-11-01 before this country || 2026-11-01 retry: refused by the tool on 2026-11-01: 'this turn's web search budget is used up (limit: 200 WebSearch calls per turn, shared by every agent)'; queries sent and refused this turn: 'Налоговый кодекс Республики Беларусь статья 199 ставки подоходного налога 2026 13 25 процентов' and 'Eswatini Revenue Service PAYE tax tables 1 July 2026'; no search engine was queried any other way",
+    "trade-press": "no PwC or Deloitte 2026 summary for Maldives (Deloitte URL returns 404) || 2026-11-01 retry: no PwC or Deloitte Maldives page (earlier 404)",
+    "archive": "web.archive.org resets the connection from this environment (2026-11-01) || 2026-11-01 retry: archive.org's availability API now answers (snapshots of the institution's site exist), but web.archive.org snapshot pages return HTTP 403 over http and reset over https from this environment (2026-11-01)"
+   }
+  },
+  {
+   "item": "year",
+   "sought": "Tax year and return due date",
+   "tried": {
+    "institution": "mira.gov.mv (Maldives Inland Revenue Authority) returns HTTP 403 to this environment (2026-11-01) || 2026-11-01 retry: mira.gov.mv returns HTTP 403 (not read another way)",
+    "official-register": "gazette.gov.mv reached (home page, Dhivehi); the Income Tax Act (Law 25/2019) and GST Act not located on it without search || 2026-11-01 retry: gazette.gov.mv home reached; its search is script-driven (a query URL returned the home page); Income Tax Act and GST Act not located",
+    "web-search": "not run: the session's shared web-search budget was used up on 2026-11-01 before this country || 2026-11-01 retry: refused by the tool on 2026-11-01: 'this turn's web search budget is used up (limit: 200 WebSearch calls per turn, shared by every agent)'; queries sent and refused this turn: 'Налоговый кодекс Республики Беларусь статья 199 ставки подоходного налога 2026 13 25 процентов' and 'Eswatini Revenue Service PAYE tax tables 1 July 2026'; no search engine was queried any other way",
+    "trade-press": "no PwC or Deloitte 2026 summary for Maldives (Deloitte URL returns 404) || 2026-11-01 retry: no PwC or Deloitte Maldives page (earlier 404)",
+    "archive": "web.archive.org resets the connection from this environment (2026-11-01) || 2026-11-01 retry: archive.org's availability API now answers (snapshots of the institution's site exist), but web.archive.org snapshot pages return HTTP 403 over http and reset over https from this environment (2026-11-01)"
+   }
+  },
+  {
+   "item": "withholding",
+   "sought": "Withholding from pay and fees",
+   "tried": {
+    "institution": "mira.gov.mv (Maldives Inland Revenue Authority) returns HTTP 403 to this environment (2026-11-01) || 2026-11-01 retry: mira.gov.mv returns HTTP 403 (not read another way)",
+    "official-register": "gazette.gov.mv reached (home page, Dhivehi); the Income Tax Act (Law 25/2019) and GST Act not located on it without search || 2026-11-01 retry: gazette.gov.mv home reached; its search is script-driven (a query URL returned the home page); Income Tax Act and GST Act not located",
+    "web-search": "not run: the session's shared web-search budget was used up on 2026-11-01 before this country || 2026-11-01 retry: refused by the tool on 2026-11-01: 'this turn's web search budget is used up (limit: 200 WebSearch calls per turn, shared by every agent)'; queries sent and refused this turn: 'Налоговый кодекс Республики Беларусь статья 199 ставки подоходного налога 2026 13 25 процентов' and 'Eswatini Revenue Service PAYE tax tables 1 July 2026'; no search engine was queried any other way",
+    "trade-press": "no PwC or Deloitte 2026 summary for Maldives (Deloitte URL returns 404) || 2026-11-01 retry: no PwC or Deloitte Maldives page (earlier 404)",
+    "archive": "web.archive.org resets the connection from this environment (2026-11-01) || 2026-11-01 retry: archive.org's availability API now answers (snapshots of the institution's site exist), but web.archive.org snapshot pages return HTTP 403 over http and reset over https from this environment (2026-11-01)"
+   }
+  },
+  {
+   "item": "nonResident",
+   "sought": "Withholding on a non-resident performer's fee and whether final",
+   "tried": {
+    "institution": "mira.gov.mv (Maldives Inland Revenue Authority) returns HTTP 403 to this environment (2026-11-01) || 2026-11-01 retry: mira.gov.mv returns HTTP 403 (not read another way)",
+    "official-register": "gazette.gov.mv reached (home page, Dhivehi); the Income Tax Act (Law 25/2019) and GST Act not located on it without search || 2026-11-01 retry: gazette.gov.mv home reached; its search is script-driven (a query URL returned the home page); Income Tax Act and GST Act not located",
+    "web-search": "not run: the session's shared web-search budget was used up on 2026-11-01 before this country || 2026-11-01 retry: refused by the tool on 2026-11-01: 'this turn's web search budget is used up (limit: 200 WebSearch calls per turn, shared by every agent)'; queries sent and refused this turn: 'Налоговый кодекс Республики Беларусь статья 199 ставки подоходного налога 2026 13 25 процентов' and 'Eswatini Revenue Service PAYE tax tables 1 July 2026'; no search engine was queried any other way",
+    "trade-press": "no PwC or Deloitte 2026 summary for Maldives (Deloitte URL returns 404) || 2026-11-01 retry: no PwC or Deloitte Maldives page (earlier 404)",
+    "archive": "web.archive.org resets the connection from this environment (2026-11-01) || 2026-11-01 retry: archive.org's availability API now answers (snapshots of the institution's site exist), but web.archive.org snapshot pages return HTTP 403 over http and reset over https from this environment (2026-11-01)"
+   }
+  },
+  {
+   "item": "authors",
+   "sought": "Treatment of authors' royalties",
+   "tried": {
+    "institution": "mira.gov.mv (Maldives Inland Revenue Authority) returns HTTP 403 to this environment (2026-11-01) || 2026-11-01 retry: mira.gov.mv returns HTTP 403 (not read another way)",
+    "official-register": "gazette.gov.mv reached (home page, Dhivehi); the Income Tax Act (Law 25/2019) and GST Act not located on it without search || 2026-11-01 retry: gazette.gov.mv home reached; its search is script-driven (a query URL returned the home page); Income Tax Act and GST Act not located",
+    "web-search": "not run: the session's shared web-search budget was used up on 2026-11-01 before this country || 2026-11-01 retry: refused by the tool on 2026-11-01: 'this turn's web search budget is used up (limit: 200 WebSearch calls per turn, shared by every agent)'; queries sent and refused this turn: 'Налоговый кодекс Республики Беларусь статья 199 ставки подоходного налога 2026 13 25 процентов' and 'Eswatini Revenue Service PAYE tax tables 1 July 2026'; no search engine was queried any other way",
+    "trade-press": "no PwC or Deloitte 2026 summary for Maldives (Deloitte URL returns 404) || 2026-11-01 retry: no PwC or Deloitte Maldives page (earlier 404)",
+    "archive": "web.archive.org resets the connection from this environment (2026-11-01) || 2026-11-01 retry: archive.org's availability API now answers (snapshots of the institution's site exist), but web.archive.org snapshot pages return HTTP 403 over http and reset over https from this environment (2026-11-01)"
+   }
+  },
+  {
+   "item": "vat",
+   "sought": "GST rate and registration threshold for 2026",
+   "tried": {
+    "institution": "mira.gov.mv (Maldives Inland Revenue Authority) returns HTTP 403 to this environment (2026-11-01) || 2026-11-01 retry: mira.gov.mv returns HTTP 403 (not read another way)",
+    "official-register": "gazette.gov.mv reached (home page, Dhivehi); the Income Tax Act (Law 25/2019) and GST Act not located on it without search || 2026-11-01 retry: gazette.gov.mv home reached; its search is script-driven (a query URL returned the home page); Income Tax Act and GST Act not located",
+    "web-search": "not run: the session's shared web-search budget was used up on 2026-11-01 before this country || 2026-11-01 retry: refused by the tool on 2026-11-01: 'this turn's web search budget is used up (limit: 200 WebSearch calls per turn, shared by every agent)'; queries sent and refused this turn: 'Налоговый кодекс Республики Беларусь статья 199 ставки подоходного налога 2026 13 25 процентов' and 'Eswatini Revenue Service PAYE tax tables 1 July 2026'; no search engine was queried any other way",
+    "trade-press": "no PwC or Deloitte 2026 summary for Maldives (Deloitte URL returns 404) || 2026-11-01 retry: no PwC or Deloitte Maldives page (earlier 404)",
+    "archive": "web.archive.org resets the connection from this environment (2026-11-01) || 2026-11-01 retry: archive.org's availability API now answers (snapshots of the institution's site exist), but web.archive.org snapshot pages return HTTP 403 over http and reset over https from this environment (2026-11-01)"
+   }
+  },
+  {
+   "item": "social",
+   "sought": "Whether non-Maldivian employees and the self-employed contribute",
+   "tried": {
+    "institution": "mira.gov.mv (Maldives Inland Revenue Authority) returns HTTP 403 to this environment (2026-11-01) || 2026-11-01 retry: mira.gov.mv returns HTTP 403 (not read another way)",
+    "official-register": "gazette.gov.mv reached (home page, Dhivehi); the Income Tax Act (Law 25/2019) and GST Act not located on it without search || 2026-11-01 retry: gazette.gov.mv home reached; its search is script-driven (a query URL returned the home page); Income Tax Act and GST Act not located",
+    "web-search": "not run: the session's shared web-search budget was used up on 2026-11-01 before this country || 2026-11-01 retry: refused by the tool on 2026-11-01: 'this turn's web search budget is used up (limit: 200 WebSearch calls per turn, shared by every agent)'; queries sent and refused this turn: 'Налоговый кодекс Республики Беларусь статья 199 ставки подоходного налога 2026 13 25 процентов' and 'Eswatini Revenue Service PAYE tax tables 1 July 2026'; no search engine was queried any other way",
+    "trade-press": "no PwC or Deloitte 2026 summary for Maldives (Deloitte URL returns 404) || 2026-11-01 retry: no PwC or Deloitte Maldives page (earlier 404)",
+    "archive": "web.archive.org resets the connection from this environment (2026-11-01) || 2026-11-01 retry: archive.org's availability API now answers (snapshots of the institution's site exist), but web.archive.org snapshot pages return HTTP 403 over http and reset over https from this environment (2026-11-01)"
+   }
+  }
+ ]
+}

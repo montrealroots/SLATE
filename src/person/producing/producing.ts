@@ -5,7 +5,7 @@ import { t, type LineId } from '../../core/text/text.ts';
 import { payCost, type Holding } from '../../money/accounts/accounts.ts';
 import { earn, type Earning } from '../../money/tax/tax.ts';
 import { countryName, type CountryCode } from '../../world/gazetteer/gazetteer.ts';
-import { AGREEMENTS, COUNTRY, MARKET as WORK, type Agreement } from '../acting/acting.ts';
+import { AGREEMENTS, COUNTRY, MARKET as WORK, MARKETS as ACTED } from '../acting/acting.ts';
 import { componentValues, practise, skillOf, type AttributesSlice } from '../attributes/attributes.ts';
 import { FEATURE_SHOOT } from '../directing/directing.ts';
 import { boxOfficeFactor, lovesOrRefuse, type GenresSlice } from '../genres/genres.ts';
@@ -46,13 +46,15 @@ import compiled from './markets.json' with { type: 'json' };
  *
  * The producer works in the UK unless the material is optioned in another market: the UK's every stage has a published
  * figure here (the BFI's funding, option rule, fee line, release and recoupment by budget; the UK's credits). Beyond it,
- * twenty markets (src/person/producing/markets.json, compiled by tools/person/markets-producer from the research,
- * register facts person.markets.producer.<CC>, and Telefilm's, the CNC's and Screen Australia's terms from R-4612):
+ * every country's market the research reads (src/person/producing/markets.json, compiled by tools/person/markets-producer
+ * from the research, register facts person.markets.producer.<CC>, and Telefilm's, the CNC's and Screen Australia's terms
+ * from R-4612; all but a country no producer works in, one dissolved or with no sovereign):
  * the project's budget is in the market's currency, its option runs in the market's city's time (the actor's market
- * there: one model of where the work is), and each stage is the market's where its research sets it, by the budget
- * where it sets it by budget: the fee and overheads at each cap a funder sets (none where it sets none), the credit at
- * the incentive's rate on the share it counts, at most its cap, nothing below its threshold or where the research says
- * there is none, none where it isn't known; the public fund's yes at its rate as the package sells it, an award at the
+ * there: one model of where the work is; where the actor's engine has none, the country's most populous place), and
+ * each stage is the market's where its research sets it, by the budget where it sets it by budget: the fee and
+ * overheads at each cap a funder sets (none where it sets none), the credit at the incentive's rate on the share it
+ * counts, at most its cap, nothing below its threshold or where the research says there is none, none where it isn't
+ * known; the public fund's yes at its rate as the package sells it, an award at the
  * most its terms allow (its share, its cap or its fixed sum, and what the cap on all public aid leaves after the
  * credit), refused where the market's fund isn't known or the budget is outside it; a cinema release at the market's
  * rate, refused where none is known, and earning back nothing the game can tell. The option is the WGA's everywhere,
@@ -89,7 +91,7 @@ export interface Tier {
   readonly sum: number | null;
 }
 /** What a market's research couldn't find, by the item its blockers name. */
-export type Unknown = 'fund' | 'incentive' | 'feecap' | 'outcomes' | 'market' | 'union' | 'language';
+export type Unknown = 'fund' | 'incentive' | 'feecap' | 'outcomes' | 'market' | 'union' | 'language' | 'terms' | 'none' | 'rules' | 'fund.primary';
 /** A market as compiled (tools/person/markets-producer/compile.ts). */
 export interface Market {
   readonly currency: CurrencyCode;
@@ -99,11 +101,21 @@ export interface Market {
   readonly fees: readonly (readonly Tier[])[];
   readonly release: readonly { readonly budget: readonly [number, number | null]; readonly rate: number }[] | null;
   readonly unknown: readonly Unknown[];
+  /** Its most populous place's zone on the map, where the actor's engine keeps no city there; none where the map has none. */
+  readonly zone: string | null;
 }
 export const MARKETS = compiled as unknown as Readonly<Record<string, Market>>;
 
-/** The zone a market's months run in: its city's, as the actor's market there keeps it. */
-export const zoneOf = (market: string): string => WORK[AGREEMENTS.find((a) => COUNTRY[a] === market) as Agreement].zone;
+/**
+ * The zone a market's months run in: its city's, as the actor's market there keeps it (the actor's own three by their
+ * agreements), else its most populous place's on the map; refused where the map has no place there.
+ */
+export function zoneOf(market: string): string {
+  const agreement = AGREEMENTS.find((a) => COUNTRY[a] === market);
+  const zone = Object.hasOwn(ACTED, market) ? (ACTED[market] as { zone: string }).zone : agreement !== undefined ? WORK[agreement].zone : MARKETS[market]?.zone;
+  if (zone === undefined || zone === null) throw new Error(`where the work in ${market} is made isn't known to this game`);
+  return zone;
+}
 
 /** A market's currency. */
 export const currencyOf = (market: string): CurrencyCode => (market === HOME ? 'GBP' : (MARKETS[market] as Market).currency);
@@ -298,6 +310,7 @@ function option(s: Optioning, a: OptionArgs, c: Context): void {
   wholeDays(a.days);
   const market = a.market ?? HOME;
   if (market !== HOME && !Object.hasOwn(MARKETS, market)) throw new Error(`${market} isn't a market a producer works in`);
+  const zone = zoneOf(market);
   // @slate:consumer genres.choose
   lovesOrRefuse(s.genres, a.genre);
   const v = componentValues(s.attributes, 'producer');
@@ -314,7 +327,7 @@ function option(s: Optioning, a: OptionArgs, c: Context): void {
   }
   // The option is paid to the material's owner from the account named (refused where it can't cover it).
   payCost(s, a.account, 'rights holder', OPTION_FEE, 'an option', c.now);
-  s.producing.projects.push({ id, optioned: c.now, genre: a.genre, market, expires: addMonths(zoneOf(market), c.now, OPTION_MONTHS), options: [OPTION_FEE], material: best.worth, plan: null, applied: false, raised: {}, shot: null, release: null });
+  s.producing.projects.push({ id, optioned: c.now, genre: a.genre, market, expires: addMonths(zone, c.now, OPTION_MONTHS), options: [OPTION_FEE], material: best.worth, plan: null, applied: false, raised: {}, shot: null, release: null });
   practise(s.attributes, 'producer', [C.select], a.days);
 }
 
@@ -561,6 +574,10 @@ export const MISSING: Readonly<Record<Unknown, string>> = {
   market: 'where most of the work is',
   union: "the producers' association and what it asks",
   language: 'the language the work is made in',
+  terms: "what fund, incentive or agreement sets a producer's terms",
+  none: 'whether any fund, incentive or agreement exists for a producer at all',
+  rules: 'the rules a production must follow',
+  'fund.primary': "the public fund's own published terms",
 };
 
 /** What the player is told of a market where its research couldn't find all of it: "a, b and c"; nothing where it is known whole. */

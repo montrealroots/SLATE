@@ -108,7 +108,7 @@ describe('a script', () => {
   it('comes out at the top from a writer at 100 throughout, around 50 from one at 50, hardly readable from one at 10', () => {
     const top = first(written(100));
     for (const p of PARTS) for (const x of Object.values(top.facets[p])) expect(x, p).toBeGreaterThanOrEqual(97);
-    expect(top).toMatchObject({ id: 1, form: 'feature', genre: GENRE, started: 0, needed: 56, drafts: 1, reads: [] });
+    expect(top).toMatchObject({ id: 1, form: 'feature', genre: GENRE, started: 0, needed: 56, days: 200, drafts: 1, reads: [] });
     const mid = first(written(50));
     for (const p of PARTS) for (const x of Object.values(mid.facets[p])) expect(Math.abs(x - 50), p).toBeLessThanOrEqual(spread(50));
     const low = first(written(10));
@@ -191,7 +191,7 @@ describe('a reader', () => {
     expect(BLACK_LIST_WEIGHTS).toEqual({ plot: 0.318, characters: 0.234, dialogue: 0.219, premise: 0.13, setting: 0.102 });
     expect(BLACK_LIST_POSITION).toBe(0.38);
     expect(TASTE).toEqual({ lenience: 0.75, criterion: 0.6, residual: 0.4 });
-    const at = (parts: Partial<Record<Part, number>>): Script => ({ id: 9, form: 'feature', genre: GENRE, started: 0, needed: 56, drafts: 1, reads: [], facets: Object.fromEntries(PARTS.map((p) => [p, Object.fromEntries(facetsOf(p).map((f) => [f.id, parts[p] ?? 100]))])) as Record<Part, Record<string, number>> });
+    const at = (parts: Partial<Record<Part, number>>): Script => ({ id: 9, form: 'feature', genre: GENRE, started: 0, needed: 56, days: 56, drafts: 1, reads: [], facets: Object.fromEntries(PARTS.map((p) => [p, Object.fromEntries(facetsOf(p).map((f) => [f.id, parts[p] ?? 100]))])) as Record<Part, Record<string, number>> });
     expect(scoresOf('black-list', at({}), ctx).overall).toBeGreaterThanOrEqual(9);
     const weakPlot = scoresOf('black-list', at({ plot: 30 }), ctx);
     const weakSetting = scoresOf('black-list', at({ setting: 30 }), ctx);
@@ -309,7 +309,7 @@ describe('a revision', () => {
         expect(first(after).facets[p][f.id], `${p} ${f.id}`).toBeCloseTo(was + (target - was) * Math.min(1, reach * share * 3), 10);
       }
     }
-    expect(first(after).drafts).toBe(2);
+    expect([first(after).drafts, first(after).days]).toEqual([2, before.days + 10]);
     const grown = held(after);
     const hb = held(base);
     const raised = new Set(['revision', 'writing', ...notes.map((n) => broadOf('screenwriter', n.part).id)]);
@@ -356,7 +356,7 @@ describe('a revision', () => {
     for (const p of PARTS) for (const f of facetsOf(p)) expect(r[p][f.id]).toBeCloseTo((s.facets[p][f.id] as number) + 20 * (1 - eye / 100) * u('work.read', 'own', 1, 1, p, f.id), 10);
     const base = written(60, 10);
     const after = dispatch(base, reviseScript, { script: 1, kind: 'rewrite', days: 20 });
-    expect(first(after).drafts).toBe(2);
+    expect([first(after).drafts, first(after).days]).toEqual([2, 30]);
     expect(held(after)['revision']).toBeGreaterThan(held(base)['revision'] as number);
     expect(held(after)['discipline']).toBe(held(base)['discipline']);
   });

@@ -1,0 +1,224 @@
+{
+ "topic": "tax.KZ",
+ "read": "2026-11-01",
+ "note": "Read 2026-11-01 at the owner's word (\"Build those first 3 starting with ledger first\"; of the 21 countries read first: \"It should cover across every country\"; \"Retry the blocked tax facts once all countries land\"): the tax on a screen worker's pay in Kazakhstan: a resident's income tax, social contributions, what is withheld at source, a non-resident artiste's withholding, an author's treatment, VAT and the tax year. Research and retry subagents (workbench/briefs/BRIEF-tax.md, BRIEF-tax-retry.md), every quote checked by the lead against its saved page.",
+ "figures": [
+  {
+   "item": "residents",
+   "finding": "Under the Tax Code in force from 2026, an individual's taxable income is taxed at 10% up to 8,500 monthly calculation indices (MCI) a year and 15% on the excess; there is no regional layer. In 2026 one MCI is KZT 4,325, so the 10% band runs to KZT 36,762,500 a year; a resident deducts 30 MCI (KZT 129,750) a month.",
+   "value": {
+    "unit": "MCI",
+    "brackets": [
+     {
+      "from": 0,
+      "to": 8500,
+      "rate": 0.1
+     },
+     {
+      "from": 8500,
+      "to": null,
+      "rate": 0.15
+     }
+    ],
+    "allowance": null,
+    "regional": null,
+    "currency": "KZT",
+    "mci2026": 4325,
+    "band10UpToKZT": 36762500,
+    "standardDeductionMonthlyMCI": 30,
+    "standardDeductionMonthlyKZT": 129750
+   },
+   "applies": "Individuals, 2026 The MCI value and the 30 MCI deduction are Deloitte's, the budget law on adilet.zan.kz serving no text without JavaScript.",
+   "sources": [
+    {
+     "src": 0,
+     "said": "The taxable income of individuals is subject to the following PIT rates: Income up to 8,500 MCI: 10%. Income above 8,500 MCI: 15%. The calculation of the PIT on income over 8,500 MCI in 2026 is as follows: The portion of annual income up to 8,500 MCI is taxed at a rate of 10%, and the amount exceeding 8,500 MCI is taxed at a rate of 15%."
+    },
+    {
+     "src": 1,
+     "said": "* Monthly calculation index. In 2026, 1 MCI = KZT 4,325. … Tax residents are entitled to a standard monthly tax deduction of 30 MCI (KZT 129,750 per month for 2026)."
+    }
+   ]
+  },
+  {
+   "item": "social",
+   "finding": "From the employee are withheld 10% pension (OPC, to 50 minimum wages a month) and 2% medical insurance (to 20 minimum wages); the employer pays 6% social tax, 5% social insurance (capped, deductible from social tax), 3% medical insurance (to 40 minimum wages, KZT 3,400,000) and 3.5% employer pension; the 2026 minimum monthly wage is KZT 85,000; contributions bind citizens, residence-permit holders and EAEU citizens.",
+   "value": {
+    "currency": "KZT",
+    "minimumMonthlyWage2026": 85000,
+    "employee": {
+     "pension": 0.1,
+     "pensionCapMMW": 50,
+     "medical": 0.02,
+     "medicalCapMMW": 20
+    },
+    "employer": {
+     "socialTax": 0.06,
+     "socialInsurance": 0.05,
+     "medical": 0.03,
+     "medicalCapMonthly": 3400000,
+     "pension": 0.035
+    },
+    "coverage": "citizens, residence-permit holders, EAEU citizens"
+   },
+   "applies": "Employees, 2026",
+   "sources": [
+    {
+     "src": 2,
+     "said": "Social tax is payable by employers in respect of employees (both locals and expatriates) at 6% on top of the employee’s gross remuneration. Obligatory social insurance contributions Obligatory social insurance contributions are payable by employers at the rate of 5% to the State Corporation 'Government for Citizens'. … Employer’s OMIC rate in 2026 is 3%. … (in 2026, the calculation of income is not more than 3,400,000 Kazakhstan tenge [KZT]; 2026 minimum monthly wage is KZT 85,000). Employee’s OMIC are withheld at a rate of 2% out of employees' gross income and paid to the State Corporation 'Government for Citizens'. The gross income subject to employee OMIC is capped at 20 times the MMW per employee per month. … OPC are withheld at a rate of 10% out of employees’ gross income and paid to the State Corporation 'Government for Citizens'. The gross income subject to OPC is capped at 50 times the MMW (approximately USD 8,260) per employee per month. … The employer shall pay OPC at the rate of 3.5%."
+    }
+   ]
+  },
+  {
+   "item": "withholding",
+   "finding": "Tax agents withhold income tax no later than the day income is paid and pay it by the 25th of the following month; for income taxed at source the tax period is the month.",
+   "value": {
+    "kind": "tax agent withholding at payment",
+    "remitBy": "25th of following month"
+   },
+   "applies": "Income paid by tax agents",
+   "sources": [
+    {
+     "src": 3,
+     "said": "Tax agents withhold income tax no later than the date of income payment to the individual. Tax is due prior to the 25th day of the month following the month of payment."
+    }
+   ]
+  },
+  {
+   "item": "nonResident",
+   "finding": "A non-resident's income from services provided in Kazakhstan bears 20% withholding, and royalties 15% (non-treaty).",
+   "value": {
+    "rate": 0.2,
+    "royalties": 0.15,
+    "base": "gross income",
+    "threshold": null,
+    "final": null
+   },
+   "applies": "Non-residents without a permanent establishment",
+   "sources": [
+    {
+     "src": 4,
+     "said": "Income of non-residents from provision of services in Kazakhstan is subject to WHT at 20%, including certain types of services (management, financial, consulting, engineering, marketing, auditing, and legal) that are deemed as Kazakhstan-sourced income disregarding the place of their actual performance. … Recipient WHT (%) Dividends Interest Royalties Non-treaty 15 15 15"
+    }
+   ]
+  },
+  {
+   "item": "vat",
+   "finding": "VAT is 16%, and registration is compulsory above 10,000 MCI of turnover in 2026.",
+   "value": {
+    "standard": 0.16,
+    "threshold": {
+     "unit": "MCI",
+     "amount": 10000
+    }
+   },
+   "applies": "2026",
+   "sources": [
+    {
+     "src": 5,
+     "said": "The current VAT rate is 16%. This tax is applicable to the sales value of goods, works, and services, as well as to imports."
+    },
+    {
+     "src": 5,
+     "said": "The obligatory VAT registration threshold in 2026 is set at 10,000 times the Monthly Calculation Index (MCI)."
+    }
+   ]
+  },
+  {
+   "item": "year",
+   "finding": "The tax period is the calendar year (the month for income taxed at source); an individual with income not taxed at source files by 15 September of the next year and pays by 25 September.",
+   "value": {
+    "start": "01-01",
+    "end": "12-31",
+    "returnDue": "09-15",
+    "paymentDue": "09-25"
+   },
+   "applies": "Individuals",
+   "sources": [
+    {
+     "src": 3,
+     "said": "The tax period for the assessment of individual income tax that is non-taxable at source is a calendar year. The tax period for the assessment of individual income tax from income taxable at source is a calendar month."
+    },
+    {
+     "src": 3,
+     "said": "are required to submit an annual declaration on individual income tax by 15 September of the year following the reporting year."
+    }
+   ]
+  }
+ ],
+ "country": "KZ",
+ "sources": [
+  {
+   "url": "https://taxsummaries.pwc.com/kazakhstan/individual/taxes-on-personal-income",
+   "title": "PwC Worldwide Tax Summaries: Kazakhstan, taxes on personal income",
+   "read": "2026-11-01",
+   "kind": "secondary",
+   "quotes": "https://adilet.zan.kz/rus/docs/K2500000214",
+   "said": "The taxable income of individuals is subject to the following PIT rates: Income up to 8,500 MCI: 10%. Income above 8,500 MCI: 15%. The calculation of the PIT on income over 8,500 MCI in 2026 is as follows: The portion of annual income up to 8,500 MCI is taxed at a rate of 10%, and the amount exceeding 8,500 MCI is taxed at a rate of 15%."
+  },
+  {
+   "url": "https://www.deloitte.com/content/dam/assets-shared/docs/services/tax/2026/dttl-tax-kazakhstanhighlights-2026.pdf",
+   "title": "Kazakhstan Highlights 2026 (Deloitte), on the Tax Code and the Law on the Republican Budget for 2026–2028",
+   "read": "2026-11-01",
+   "kind": "secondary",
+   "quotes": "https://kgd.gov.kz/",
+   "said": "* Monthly calculation index. In 2026, 1 MCI = KZT 4,325. … Tax residents are entitled to a standard monthly tax deduction of 30 MCI (KZT 129,750 per month for 2026)."
+  },
+  {
+   "url": "https://taxsummaries.pwc.com/kazakhstan/individual/other-taxes",
+   "title": "PwC Worldwide Tax Summaries: Kazakhstan, other taxes",
+   "read": "2026-11-01",
+   "kind": "secondary",
+   "quotes": "https://adilet.zan.kz/rus/docs/K2500000214",
+   "said": "Social tax is payable by employers in respect of employees (both locals and expatriates) at 6% on top of the employee’s gross remuneration. Obligatory social insurance contributions Obligatory social insurance contributions are payable by employers at the rate of 5% to the State Corporation 'Government for Citizens'. … Employer’s OMIC rate in 2026 is 3%. … (in 2026, the calculation of income is not more than 3,400,000 Kazakhstan tenge [KZT]; 2026 minimum monthly wage is KZT 85,000). Employee’s OMIC are withheld at a rate of 2% out of employees' gross income and paid to the State Corporation 'Government for Citizens'. The gross income subject to employee OMIC is capped at 20 times the MMW per employee per month. … OPC are withheld at a rate of 10% out of employees’ gross income and paid to the State Corporation 'Government for Citizens'. The gross income subject to OPC is capped at 50 times the MMW (approximately USD 8,260) per employee per month. … The employer shall pay OPC at the rate of 3.5%."
+  },
+  {
+   "url": "https://taxsummaries.pwc.com/kazakhstan/individual/tax-administration",
+   "title": "PwC Worldwide Tax Summaries: Kazakhstan, tax administration",
+   "read": "2026-11-01",
+   "kind": "secondary",
+   "quotes": "https://adilet.zan.kz/rus/docs/K2500000214",
+   "said": "Tax agents withhold income tax no later than the date of income payment to the individual. Tax is due prior to the 25th day of the month following the month of payment. … The tax period for the assessment of individual income tax that is non-taxable at source is a calendar year. The tax period for the assessment of individual income tax from income taxable at source is a calendar month. … are required to submit an annual declaration on individual income tax by 15 September of the year following the reporting year."
+  },
+  {
+   "url": "https://taxsummaries.pwc.com/kazakhstan/corporate/withholding-taxes",
+   "title": "PwC Worldwide Tax Summaries: Kazakhstan, Corporate withholding taxes",
+   "read": "2026-11-01",
+   "kind": "secondary",
+   "quotes": "https://adilet.zan.kz/rus/docs/K2500000214",
+   "said": "Income of non-residents from provision of services in Kazakhstan is subject to WHT at 20%, including certain types of services (management, financial, consulting, engineering, marketing, auditing, and legal) that are deemed as Kazakhstan-sourced income disregarding the place of their actual performance. … Recipient WHT (%) Dividends Interest Royalties Non-treaty 15 15 15"
+  },
+  {
+   "url": "https://taxsummaries.pwc.com/kazakhstan/corporate/other-taxes",
+   "title": "PwC Worldwide Tax Summaries: Kazakhstan, Corporate other taxes",
+   "read": "2026-11-01",
+   "kind": "secondary",
+   "quotes": "https://adilet.zan.kz/rus/docs/K2500000214",
+   "said": "The current VAT rate is 16%. This tax is applicable to the sales value of goods, works, and services, as well as to imports. … The obligatory VAT registration threshold in 2026 is set at 10,000 times the Monthly Calculation Index (MCI)."
+  }
+ ],
+ "blockers": [
+  {
+   "item": "nonResident",
+   "sought": "The rate on a non-resident performer's fee specifically, and whether it is final.",
+   "tried": {
+    "institution": "kgd.gov.kz not mined || 2026-11-01 retry: kgd.gov.kz now redirects to portal.kgd.gov.kz (HTTP 200, script-built); gov.kz/org/kgd and egov.kz MCI pages serve shells; nothing on non-resident performers.",
+    "official-register": "adilet.zan.kz needs JavaScript || 2026-11-01 retry: adilet.zan.kz still serves a 1,573-byte JavaScript shell for every document (e.g. /rus/docs/K1700000120); not read another way.",
+    "web-search": "one search; Halyk Finance table unclear || 2026-11-01 retry: WebSearch refused by the tool on 2026-11-01: the turn's shared 200-search limit was reached before this query; no other search route used.",
+    "trade-press": "PwC gives 20% for services only || 2026-11-01 retry: Deloitte Kazakhstan Highlights 2026 read (saved KZ-deloitte-2026.pdf): non-residents 10%/15% on employment income, 15% on royalties, \"otherwise, the rate is 20%\"; no performer-specific rate or finality.",
+    "archive": "web.archive.org unreachable from this environment || 2026-11-01 retry: archive.org/wayback/available answers; web.archive.org snapshots reset https and return 403 on http from this environment (2026-11-01), so none was read."
+   }
+  },
+  {
+   "item": "authors",
+   "sought": "Any special treatment of authors' royalties.",
+   "tried": {
+    "institution": "kgd.gov.kz not mined || 2026-11-01 retry: kgd.gov.kz now redirects to portal.kgd.gov.kz (HTTP 200, script-built); gov.kz/org/kgd and egov.kz MCI pages serve shells; nothing on authors' royalties.",
+    "official-register": "adilet.zan.kz needs JavaScript || 2026-11-01 retry: adilet.zan.kz still serves a 1,573-byte JavaScript shell for every document (e.g. /rus/docs/K1700000120); not read another way.",
+    "web-search": "not searched separately || 2026-11-01 retry: WebSearch refused by the tool on 2026-11-01: the turn's shared 200-search limit was reached before this query; no other search route used.",
+    "trade-press": "not found || 2026-11-01 retry: Deloitte Kazakhstan Highlights 2026 read: royalties paid to a resident individual are withheld at 10%/15%; no author relief stated.",
+    "archive": "web.archive.org unreachable from this environment || 2026-11-01 retry: archive.org/wayback/available answers; web.archive.org snapshots reset https and return 403 on http from this environment (2026-11-01), so none was read."
+   }
+  }
+ ]
+}

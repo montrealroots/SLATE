@@ -1,0 +1,275 @@
+{
+ "topic": "tax.GT",
+ "read": "2026-11-01",
+ "note": "Read 2026-11-01 at the owner's word (\"Build those first 3 starting with ledger first\"; of the 21 countries read first: \"It should cover across every country\"; \"Retry the blocked tax facts once all countries land\"): the tax on a screen worker's pay in Guatemala: a resident's income tax, social contributions, what is withheld at source, a non-resident artiste's withholding, an author's treatment, VAT and the tax year. Research and retry subagents (workbench/briefs/BRIEF-tax.md, BRIEF-tax-retry.md), every quote checked by the lead against its saved page.",
+ "figures": [
+  {
+   "item": "residents",
+   "finding": "An employee resident in Guatemala pays income tax on Guatemalan-source pay at 5% up to Q300,000 of taxable income and Q15,000 plus 7% above, after a standard deduction of Q48,000 and the 4.83% social security contribution.",
+   "value": {
+    "currency": "GTQ",
+    "brackets": [
+     {
+      "from": 0,
+      "to": 300000,
+      "rate": 0.05
+     },
+     {
+      "from": 300000,
+      "to": null,
+      "rate": 0.07
+     }
+    ],
+    "allowance": 48000,
+    "deductible": [
+     "social security 4.83%",
+     "life insurance",
+     "donations"
+    ],
+    "regional": null
+   },
+   "applies": "Employment income (dependence relationship)",
+   "sources": [
+    {
+     "src": 0,
+     "said": "Taxable income (GTQ*) Tax on column 1 (GTQ) Tax on excess (%) Over (column 1) Not over 0 300,000 0 5 300,000 15,000 7"
+    },
+    {
+     "src": 1,
+     "said": "A standard deduction of GTQ 48,000 is provided in addition to the personal deductions described above."
+    }
+   ]
+  },
+  {
+   "item": "residents",
+   "finding": "A self-employed person with lucrative activities chooses either 25% on net income (quarterly payments) or the simplified optional regime of 5% of gross monthly income up to Q30,000 and 7% on the excess, mostly withheld by the payer.",
+   "value": {
+    "currency": "GTQ",
+    "profitRegime": 0.25,
+    "simplified": [
+     {
+      "from": 0,
+      "to": 30000,
+      "rate": 0.05,
+      "period": "month"
+     },
+     {
+      "from": 30000,
+      "to": null,
+      "rate": 0.07
+     }
+    ]
+   },
+   "applies": "Individuals and companies with lucrative (business or professional) activities",
+   "sources": [
+    {
+     "src": 2,
+     "said": "The tax rate is 25% on net income. … The tax rate is 5% on gross income that ranges from 0.01 Guatemalan quetzales (GTQ) to GTQ 30,000 and 7% on the excess."
+    }
+   ]
+  },
+  {
+   "item": "social",
+   "finding": "The employee contributes 4.83% of monthly salary to social security (IGSS) and the employer 12.67% of payroll.",
+   "value": {
+    "employee": 0.0483,
+    "employer": 0.1267,
+    "ceiling": null
+   },
+   "applies": "Employees",
+   "sources": [
+    {
+     "src": 3,
+     "said": "Employees contribute 4.83% of their monthly salary and employers contribute 12.67% of their monthly payroll to social security."
+    }
+   ]
+  },
+  {
+   "item": "withholding",
+   "finding": "Income tax is withheld from salaries, royalties, professional and technical fees and any kind of individual services.",
+   "value": {
+    "withheldFrom": [
+     "salaries",
+     "royalties",
+     "professional fees",
+     "individual services"
+    ]
+   },
+   "applies": "Employees and service providers",
+   "sources": [
+    {
+     "src": 4,
+     "said": "Income tax must be withheld from salaries; rentals; royalties; fees for technical, professional, or scientific activities; or any kind of individual services."
+    }
+   ]
+  },
+  {
+   "item": "nonResident",
+   "finding": "A non-resident without a permanent establishment has tax withheld at source: 15% on salaries, professional fees and royalties, 25% on other Guatemalan-source income.",
+   "value": {
+    "rates": {
+     "salariesFeesRoyalties": 0.15,
+     "other": 0.25
+    },
+    "final": "withheld at source"
+   },
+   "applies": "Non-resident individuals",
+   "sources": [
+    {
+     "src": 5,
+     "said": "Royalties; salaries; commissions; professional fees; professional, technical, economic, or financial assessment 15 Other 25"
+    },
+    {
+     "src": 6,
+     "said": "A non-resident alien's other income from a Guatemalan source is subject to income tax withholding at 25%."
+    }
+   ]
+  },
+  {
+   "item": "authors",
+   "finding": "Royalties paid to a non-resident bear 15% withholding; no special regime for a resident author was read.",
+   "value": {
+    "nonResidentRoyalties": 0.15
+   },
+   "applies": "Authors",
+   "sources": [
+    {
+     "src": 5,
+     "said": "Royalties; salaries; commissions; professional fees; professional, technical, economic, or financial assessment 15"
+    }
+   ]
+  },
+  {
+   "item": "vat",
+   "finding": "A 12% VAT applies to non-personal services rendered in Guatemala.",
+   "value": {
+    "rate": 0.12,
+    "threshold": null
+   },
+   "applies": "Services rendered in Guatemala",
+   "sources": [
+    {
+     "src": 7,
+     "said": "A 12% VAT is levied on the sale or transfer of merchandise and on non-personal services rendered or effected in Guatemala."
+    }
+   ]
+  },
+  {
+   "item": "year",
+   "finding": "The tax year runs from 1 January to 31 December.",
+   "value": {
+    "start": "01-01",
+    "end": "12-31"
+   },
+   "applies": "Individuals",
+   "sources": [
+    {
+     "src": 4,
+     "said": "The tax year for individuals runs from 1 January to 31 December."
+    }
+   ]
+  }
+ ],
+ "country": "GT",
+ "sources": [
+  {
+   "url": "https://taxsummaries.pwc.com/guatemala/individual/taxes-on-personal-income",
+   "title": "Guatemala - Individual - Taxes on personal income (PwC, reviewed 9 June 2026)",
+   "read": "2026-11-01",
+   "kind": "secondary",
+   "quotes": "https://portal.sat.gob.gt/",
+   "said": "Taxable income (GTQ*) Tax on column 1 (GTQ) Tax on excess (%) Over (column 1) Not over 0 300,000 0 5 300,000 15,000 7"
+  },
+  {
+   "url": "https://taxsummaries.pwc.com/guatemala/individual/deductions",
+   "title": "Guatemala - Individual - Deductions (PwC, reviewed 9 June 2026)",
+   "read": "2026-11-01",
+   "kind": "secondary",
+   "quotes": "https://portal.sat.gob.gt/",
+   "said": "A standard deduction of GTQ 48,000 is provided in addition to the personal deductions described above."
+  },
+  {
+   "url": "https://taxsummaries.pwc.com/guatemala/corporate/taxes-on-corporate-income",
+   "title": "Guatemala - Corporate - Taxes on corporate income (PwC, reviewed 9 June 2026)",
+   "read": "2026-11-01",
+   "kind": "secondary",
+   "quotes": "https://portal.sat.gob.gt/",
+   "said": "The tax rate is 25% on net income. … The tax rate is 5% on gross income that ranges from 0.01 Guatemalan quetzales (GTQ) to GTQ 30,000 and 7% on the excess."
+  },
+  {
+   "url": "https://taxsummaries.pwc.com/guatemala/individual/other-taxes",
+   "title": "Guatemala - Individual - Other taxes (PwC, reviewed 9 June 2026)",
+   "read": "2026-11-01",
+   "kind": "secondary",
+   "quotes": "https://portal.sat.gob.gt/",
+   "said": "Employees contribute 4.83% of their monthly salary and employers contribute 12.67% of their monthly payroll to social security."
+  },
+  {
+   "url": "https://taxsummaries.pwc.com/guatemala/individual/tax-administration",
+   "title": "Guatemala - Individual - Tax administration (PwC, reviewed 9 June 2026)",
+   "read": "2026-11-01",
+   "kind": "secondary",
+   "quotes": "https://portal.sat.gob.gt/",
+   "said": "Income tax must be withheld from salaries; rentals; royalties; fees for technical, professional, or scientific activities; or any kind of individual services. … The tax year for individuals runs from 1 January to 31 December."
+  },
+  {
+   "url": "https://taxsummaries.pwc.com/guatemala/corporate/withholding-taxes",
+   "title": "Guatemala - Corporate - Withholding taxes (PwC, reviewed 9 June 2026)",
+   "read": "2026-11-01",
+   "kind": "secondary",
+   "quotes": "https://portal.sat.gob.gt/",
+   "said": "Royalties; salaries; commissions; professional fees; professional, technical, economic, or financial assessment 15 Other 25"
+  },
+  {
+   "url": "https://taxsummaries.pwc.com/guatemala/individual/income-determination",
+   "title": "Guatemala - Individual - Income determination (PwC, reviewed 9 June 2026)",
+   "read": "2026-11-01",
+   "kind": "secondary",
+   "quotes": "https://portal.sat.gob.gt/",
+   "said": "A non-resident alien's other income from a Guatemalan source is subject to income tax withholding at 25%."
+  },
+  {
+   "url": "https://taxsummaries.pwc.com/guatemala/corporate/other-taxes",
+   "title": "Guatemala - Corporate - Other taxes (PwC, reviewed 9 June 2026)",
+   "read": "2026-11-01",
+   "kind": "secondary",
+   "quotes": "https://portal.sat.gob.gt/",
+   "said": "A 12% VAT is levied on the sale or transfer of merchandise and on non-personal services rendered or effected in Guatemala."
+  }
+ ],
+ "blockers": [
+  {
+   "item": "vat",
+   "sought": "The small-taxpayer VAT regime (Pequeño Contribuyente: 5% of gross up to an annual limit) and when a freelancer must charge 12%",
+   "tried": {
+    "institution": "2026-11-01: portal.sat.gob.gt/portal/pequeno-contribuyente/ fetched (saved GT-sat-pequeno.html): JavaScript shell; its WordPress JSON (GT-sat-pequeno-json.html) describes the electronic ledger only; site search lists FAQ pages that the JSON API does not serve (404) || retry 2026-11-01: portal.sat.gob.gt 2026-11-01: WordPress search API for \"ley del impuesto al valor agregado\", \"decreto 10-2012\", \"pequeño contribuyente 150000\" listed procedures; read and saved: Principales Impuestos (GT-sat-principales-impuestos.html: IVA 12% under Decreto 27-92, no small-taxpayer limit), the régimen change procedure (GT-sat-cambio-pc-a-general.html: no limit), Cumplimiento Tributario FAQ (GT-sat-faq-cumplimiento.html: names forms SAT-1411 ISR Anual and SAT-2241 Pequeño Contribuyente, no dates or limits) and the non-resident withholding system page (GT-sat-retenciones-no-residentes.html: withholding on non-residents is final, no rate)",
+    "official-register": "2026-11-01: Decreto 10-2012 and Decreto 27-92 texts not read || retry 2026-11-01: SAT legislation library (leyes-reglamentos-los-impuestos) links Decreto 10-2012 and Decreto 27-92, but both downloads answer \"You can't download unpublished file(s)\" (44 bytes) with and without the .pdf suffix; only the ISR regulation (Acuerdo Gubernativo 213-2013) downloads; congreso.gob.gt answers a 212-byte page",
+    "web-search": "2026-11-01: SAT WordPress search \"pequeño contribuyente 150\" listed related procedures, no rate or limit text || retry 2026-11-01: refused by the search tool on 2026-11-01: the turn's shared limit of 200 searches was reached; not worked around (SAT's own WordPress search used instead, see institution)",
+    "trade-press": "2026-11-01: PwC Guatemala pages read; no figure || retry 2026-11-01: PwC Guatemala pages (read before): no figure",
+    "archive": "2026-11-01: web.archive.org unreachable through the proxy this session || retry 2026-11-01: web.archive.org: connection reset again 2026-11-01"
+   }
+  },
+  {
+   "item": "year",
+   "sought": "The annual return due date for employees and self-employed individuals",
+   "tried": {
+    "institution": "2026-11-01: portal.sat.gob.gt/portal/pequeno-contribuyente/ fetched (saved GT-sat-pequeno.html): JavaScript shell; its WordPress JSON (GT-sat-pequeno-json.html) describes the electronic ledger only; site search lists FAQ pages that the JSON API does not serve (404) || retry 2026-11-01: portal.sat.gob.gt 2026-11-01: WordPress search API for \"ley del impuesto al valor agregado\", \"decreto 10-2012\", \"pequeño contribuyente 150000\" listed procedures; read and saved: Principales Impuestos (GT-sat-principales-impuestos.html: IVA 12% under Decreto 27-92, no small-taxpayer limit), the régimen change procedure (GT-sat-cambio-pc-a-general.html: no limit), Cumplimiento Tributario FAQ (GT-sat-faq-cumplimiento.html: names forms SAT-1411 ISR Anual and SAT-2241 Pequeño Contribuyente, no dates or limits) and the non-resident withholding system page (GT-sat-retenciones-no-residentes.html: withholding on non-residents is final, no rate)",
+    "official-register": "2026-11-01: Decreto 10-2012 and Decreto 27-92 texts not read || retry 2026-11-01: SAT legislation library (leyes-reglamentos-los-impuestos) links Decreto 10-2012 and Decreto 27-92, but both downloads answer \"You can't download unpublished file(s)\" (44 bytes) with and without the .pdf suffix; only the ISR regulation (Acuerdo Gubernativo 213-2013) downloads; congreso.gob.gt answers a 212-byte page",
+    "web-search": "2026-11-01: SAT WordPress search \"pequeño contribuyente 150\" listed related procedures, no rate or limit text || retry 2026-11-01: refused by the search tool on 2026-11-01: the turn's shared limit of 200 searches was reached; not worked around (SAT's own WordPress search used instead, see institution)",
+    "trade-press": "2026-11-01: PwC Guatemala pages read; no figure || retry 2026-11-01: PwC Guatemala pages (read before): no figure",
+    "archive": "2026-11-01: web.archive.org unreachable through the proxy this session || retry 2026-11-01: web.archive.org: connection reset again 2026-11-01"
+   }
+  },
+  {
+   "item": "nonResident",
+   "sought": "Which withholding rate (15% professional fees or 25% other) applies to a non-resident performer's fee",
+   "tried": {
+    "institution": "2026-11-01: portal.sat.gob.gt/portal/pequeno-contribuyente/ fetched (saved GT-sat-pequeno.html): JavaScript shell; its WordPress JSON (GT-sat-pequeno-json.html) describes the electronic ledger only; site search lists FAQ pages that the JSON API does not serve (404) || retry 2026-11-01: portal.sat.gob.gt 2026-11-01: WordPress search API for \"ley del impuesto al valor agregado\", \"decreto 10-2012\", \"pequeño contribuyente 150000\" listed procedures; read and saved: Principales Impuestos (GT-sat-principales-impuestos.html: IVA 12% under Decreto 27-92, no small-taxpayer limit), the régimen change procedure (GT-sat-cambio-pc-a-general.html: no limit), Cumplimiento Tributario FAQ (GT-sat-faq-cumplimiento.html: names forms SAT-1411 ISR Anual and SAT-2241 Pequeño Contribuyente, no dates or limits) and the non-resident withholding system page (GT-sat-retenciones-no-residentes.html: withholding on non-residents is final, no rate)",
+    "official-register": "2026-11-01: Decreto 10-2012 and Decreto 27-92 texts not read || retry 2026-11-01: SAT legislation library (leyes-reglamentos-los-impuestos) links Decreto 10-2012 and Decreto 27-92, but both downloads answer \"You can't download unpublished file(s)\" (44 bytes) with and without the .pdf suffix; only the ISR regulation (Acuerdo Gubernativo 213-2013) downloads; congreso.gob.gt answers a 212-byte page",
+    "web-search": "2026-11-01: SAT WordPress search \"pequeño contribuyente 150\" listed related procedures, no rate or limit text || retry 2026-11-01: refused by the search tool on 2026-11-01: the turn's shared limit of 200 searches was reached; not worked around (SAT's own WordPress search used instead, see institution)",
+    "trade-press": "2026-11-01: PwC Guatemala pages read; no figure || retry 2026-11-01: PwC Guatemala pages (read before): no figure",
+    "archive": "2026-11-01: web.archive.org unreachable through the proxy this session || retry 2026-11-01: web.archive.org: connection reset again 2026-11-01"
+   }
+  }
+ ]
+}

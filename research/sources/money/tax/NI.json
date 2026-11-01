@@ -1,0 +1,218 @@
+{
+ "topic": "tax.NI",
+ "read": "2026-11-01",
+ "note": "Read 2026-11-01 at the owner's word (\"Build those first 3 starting with ledger first\"; of the 21 countries read first: \"It should cover across every country\"; \"Retry the blocked tax facts once all countries land\"): the tax on a screen worker's pay in Nicaragua: a resident's income tax, social contributions, what is withheld at source, a non-resident artiste's withholding, an author's treatment, VAT and the tax year. Research and retry subagents (workbench/briefs/BRIEF-tax.md, BRIEF-tax-retry.md), every quote checked by the lead against its saved page.",
+ "figures": [
+  {
+   "item": "residents",
+   "finding": "A resident's annual taxable income is free to NIO 100,000, then taxed at 15% to 200,000, 20% to 350,000, 25% to 500,000 and 30% above; only Nicaraguan-source income is taxed; there is no regional layer.",
+   "value": {
+    "currency": "NIO",
+    "brackets": [
+     {
+      "from": 0,
+      "to": 100000,
+      "rate": 0
+     },
+     {
+      "from": 100000,
+      "to": 200000,
+      "rate": 0.15
+     },
+     {
+      "from": 200000,
+      "to": 350000,
+      "rate": 0.2
+     },
+     {
+      "from": 350000,
+      "to": 500000,
+      "rate": 0.25
+     },
+     {
+      "from": 500000,
+      "to": null,
+      "rate": 0.3
+     }
+    ],
+    "allowance": 100000,
+    "regional": null
+   },
+   "applies": "Residents (Ley 822, Ley de Concertación Tributaria)",
+   "sources": [
+    {
+     "src": 0,
+     "said": "Taxable income (NIO*) Minimum tax charge (NIO) Tax on excess (%) Over Not over 0 100,000 0 0 100,000 200,000 0 15 200,000 350,000 15,000 20 350,000 500,000 45,000 25 500,000 and above 82,500 30"
+    },
+    {
+     "src": 0,
+     "said": "Nicaragua taxes its citizens and all residents and non-residents on their income originating in Nicaragua."
+    }
+   ]
+  },
+  {
+   "item": "year",
+   "finding": "The tax year is the calendar year; an annual return (IR-106) is due within 90 days of year-end (by 31 March) from those who must file; a single-employer employee need not file.",
+   "value": {
+    "start": "01-01",
+    "end": "12-31",
+    "returnDue": "03-31"
+   },
+   "applies": "Individuals",
+   "sources": [
+    {
+     "src": 1,
+     "said": "The tax year in Nicaragua is the calendar year."
+    },
+    {
+     "src": 1,
+     "said": "The taxpayer should submit the annual income tax return within 90 days after year-end."
+    }
+   ]
+  },
+  {
+   "item": "social",
+   "finding": "Social security (INSS) is 7% of gross pay from the employee and 21.5% from the employer (22.5% with more than 50 employees).",
+   "value": {
+    "employee": 0.07,
+    "employer": {
+     "upTo50Employees": 0.215,
+     "over50Employees": 0.225
+    },
+    "ceiling": null
+   },
+   "applies": "Employees",
+   "sources": [
+    {
+     "src": 2,
+     "said": "Social security contributions exist at 7.00% for employees and 21.50% for employers with 50 or less employees and 22.50% if greater than 50 employees, and are determined on the gross salaries and wages."
+    }
+   ]
+  },
+  {
+   "item": "withholding",
+   "finding": "The employer withholds income tax monthly through payroll; payments for an individual's professional services bear 10% at source, and royalties to residents 15%.",
+   "value": {
+    "employee": "monthly payroll withholding (IR-122)",
+    "professionalServices": 0.1,
+    "royaltiesResident": 0.15
+   },
+   "applies": "Payments in Nicaragua",
+   "sources": [
+    {
+     "src": 1,
+     "said": "The employer, through the payroll, is responsible to withhold and pay the income tax on a monthly basis through withholding income tax return Form IR-122."
+    },
+    {
+     "src": 3,
+     "said": "Professional services provided by an individual are subject to 10% WHT."
+    }
+   ]
+  },
+  {
+   "item": "nonResident",
+   "finding": "A non-resident receiving Nicaraguan-source income pays a definitive 20% withholding (15% on royalties).",
+   "value": {
+    "rate": 0.2,
+    "royalties": 0.15,
+    "final": true,
+    "base": "gross income (as a percentage set by type)"
+   },
+   "applies": "Non-residents",
+   "sources": [
+    {
+     "src": 0,
+     "said": "Non-residents, whether domiciled or not, who receive Nicaraguan-source income are subject to a 20% definitive WHT."
+    }
+   ]
+  },
+  {
+   "item": "authors",
+   "finding": "Royalties bear 15% at source whether paid to a resident or a non-resident; no special regime for authors was found.",
+   "value": {
+    "royalties": 0.15
+   },
+   "applies": "Royalties",
+   "sources": [
+    {
+     "src": 3,
+     "said": "Payments of royalties to resident individuals or corporations are subject to 15% WHT."
+    }
+   ]
+  },
+  {
+   "item": "vat",
+   "finding": "VAT is 15% on services and goods; the registration threshold for a freelancer was not found.",
+   "value": {
+    "standard": 0.15,
+    "threshold": null
+   },
+   "applies": "Supplies in Nicaragua",
+   "sources": [
+    {
+     "src": 2,
+     "said": "VAT is imposed at a 15% rate on the sale of goods, rendering of services, grant of use of assets, and import of goods."
+    }
+   ]
+  }
+ ],
+ "country": "NI",
+ "sources": [
+  {
+   "url": "https://taxsummaries.pwc.com/nicaragua/individual/taxes-on-personal-income",
+   "title": "PwC Worldwide Tax Summaries, Nicaragua, Individual - Taxes on personal income (last reviewed 04 August 2026)",
+   "read": "2026-11-01",
+   "kind": "secondary",
+   "quotes": "https://www.importlicensing.wto.org/sites/default/files/members/108/Ley%20No.822%20-%20Concertaci%C3%B3n%20tributaria_30.11.2012.pdf",
+   "said": "Taxable income (NIO*) Minimum tax charge (NIO) Tax on excess (%) Over Not over 0 100,000 0 0 100,000 200,000 0 15 200,000 350,000 15,000 20 350,000 500,000 45,000 25 500,000 and above 82,500 30 … Nicaragua taxes its citizens and all residents and non-residents on their income originating in Nicaragua. … Non-residents, whether domiciled or not, who receive Nicaraguan-source income are subject to a 20% definitive WHT."
+  },
+  {
+   "url": "https://taxsummaries.pwc.com/nicaragua/individual/tax-administration",
+   "title": "PwC Worldwide Tax Summaries, Nicaragua, Individual - Tax administration (last reviewed 04 August 2026)",
+   "read": "2026-11-01",
+   "kind": "secondary",
+   "quotes": "https://www.importlicensing.wto.org/sites/default/files/members/108/Ley%20No.822%20-%20Concertaci%C3%B3n%20tributaria_30.11.2012.pdf",
+   "said": "The tax year in Nicaragua is the calendar year. … The taxpayer should submit the annual income tax return within 90 days after year-end. … The employer, through the payroll, is responsible to withhold and pay the income tax on a monthly basis through withholding income tax return Form IR-122."
+  },
+  {
+   "url": "https://taxsummaries.pwc.com/nicaragua/individual/other-taxes",
+   "title": "PwC Worldwide Tax Summaries, Nicaragua, Individual - Other taxes (last reviewed 04 August 2026)",
+   "read": "2026-11-01",
+   "kind": "secondary",
+   "quotes": "https://www.inss.gob.ni/",
+   "said": "Social security contributions exist at 7.00% for employees and 21.50% for employers with 50 or less employees and 22.50% if greater than 50 employees, and are determined on the gross salaries and wages. … VAT is imposed at a 15% rate on the sale of goods, rendering of services, grant of use of assets, and import of goods."
+  },
+  {
+   "url": "https://taxsummaries.pwc.com/nicaragua/corporate/withholding-taxes",
+   "title": "PwC Worldwide Tax Summaries, Nicaragua, Corporate - Withholding taxes (last reviewed 04 August 2026)",
+   "read": "2026-11-01",
+   "kind": "secondary",
+   "quotes": "https://www.importlicensing.wto.org/sites/default/files/members/108/Ley%20No.822%20-%20Concertaci%C3%B3n%20tributaria_30.11.2012.pdf",
+   "said": "Professional services provided by an individual are subject to 10% WHT. … Payments of royalties to resident individuals or corporations are subject to 15% WHT."
+  }
+ ],
+ "blockers": [
+  {
+   "item": "vat",
+   "sought": "Whether a freelancer below a turnover threshold is outside VAT, and the simplified (cuota fija) regime's limits",
+   "tried": {
+    "institution": "dgi.gob.ni home page reached; it links only to the DGI online portal and an FAQ (no laws or rate tables found) || 2026-11-01 retry: dgi.gob.ni/Content/leyes answers with a 3 kB stub (no law list); dgi.gob.ni home already read.",
+    "official-register": "Ley 822 copies located (WTO-hosted, UNAN-hosted) but not read this pass; amendments by Leyes 891 and 987 noted || 2026-11-01 retry: legislacion.asamblea.gob.ni returns 403 at its root and a 636-byte shell at normaweb.nsf; asamblea.gob.ni returns 403; Ley 822 not read there.",
+    "web-search": "searched 'Ley 822 Ley de Concertación Tributaria texto consolidado artículo 23 tarifa progresiva' || 2026-11-01 retry: WebSearch refused by the tool on 2026-11-01: the turn's shared 200-search limit was reached before this query; no other search route used.",
+    "trade-press": "PwC (reviewed 04 August 2026) used || 2026-11-01 retry: Deloitte Nicaragua Highlights 2026 read (saved NI-deloitte-2026.pdf): nothing on a VAT threshold or the cuota fija regime.",
+    "archive": "web.archive.org resets the connection from this environment (2026-11-01) || 2026-11-01 retry: archive.org/wayback/available lists a 2026-10-18 snapshot of dgi.gob.ni; web.archive.org itself resets https and returns 403 on http from this environment (2026-11-01), so none was read."
+   }
+  },
+  {
+   "item": "residents",
+   "sought": "The consolidated text of Ley 822 arts. 23 and 25 confirming the 2026 scale",
+   "tried": {
+    "institution": "dgi.gob.ni home page reached; it links only to the DGI online portal and an FAQ (no laws or rate tables found) || 2026-11-01 retry: dgi.gob.ni/Content/leyes answers with a 3 kB stub (no law list); dgi.gob.ni home already read.",
+    "official-register": "Ley 822 copies located (WTO-hosted, UNAN-hosted) but not read this pass; amendments by Leyes 891 and 987 noted || 2026-11-01 retry: legislacion.asamblea.gob.ni returns 403 at its root and a 636-byte shell at normaweb.nsf; asamblea.gob.ni returns 403; Ley 822 not read there.",
+    "web-search": "searched 'Ley 822 Ley de Concertación Tributaria texto consolidado artículo 23 tarifa progresiva' || 2026-11-01 retry: WebSearch refused by the tool on 2026-11-01: the turn's shared 200-search limit was reached before this query; no other search route used.",
+    "trade-press": "PwC (reviewed 04 August 2026) used || 2026-11-01 retry: Deloitte Nicaragua Highlights 2026 read (saved NI-deloitte-2026.pdf): nothing on the art. 23 scale beyond the rates already quoted.",
+    "archive": "web.archive.org resets the connection from this environment (2026-11-01) || 2026-11-01 retry: archive.org/wayback/available lists a 2026-10-18 snapshot of dgi.gob.ni; web.archive.org itself resets https and returns 403 on http from this environment (2026-11-01), so none was read."
+   }
+  }
+ ]
+}

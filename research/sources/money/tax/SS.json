@@ -1,0 +1,224 @@
+{
+ "topic": "tax.SS",
+ "read": "2026-11-01",
+ "note": "Read 2026-11-01 at the owner's word (\"Build those first 3 starting with ledger first\"; of the 21 countries read first: \"It should cover across every country\"; \"Retry the blocked tax facts once all countries land\"): the tax on a screen worker's pay in South Sudan: a resident's income tax, social contributions, what is withheld at source, a non-resident artiste's withholding, an author's treatment, VAT and the tax year. Research and retry subagents (workbench/briefs/BRIEF-tax.md, BRIEF-tax-retry.md), every quote checked by the lead against its saved page.",
+ "figures": [
+  {
+   "item": "residents",
+   "finding": "Personal income tax is charged on the whole of taxable income at the single rate of the band it falls in (not slice by slice): 0% to SSP 20,000, 5% to 40,000, 10% to 57,000, 15% to 90,000 and 20% above; monthly income under SSP 5,000 is exempt.",
+   "value": {
+    "currency": "SSP",
+    "method": "whole income at the band rate",
+    "bands": [
+     {
+      "from": 0,
+      "to": 20000,
+      "rate": 0
+     },
+     {
+      "from": 20000,
+      "to": 40000,
+      "rate": 0.05
+     },
+     {
+      "from": 40000,
+      "to": 57000,
+      "rate": 0.1
+     },
+     {
+      "from": 57000,
+      "to": 90000,
+      "rate": 0.15
+     },
+     {
+      "from": 90000,
+      "to": null,
+      "rate": 0.2
+     }
+    ],
+    "bandPeriod": "not stated in the source",
+    "exemptMonthlyBelow": 5000
+   },
+   "applies": "Residents and non-residents alike; calendar tax year 2026.",
+   "sources": [
+    {
+     "src": 0,
+     "said": "Taxable income (SSP) Rate* Up to 20,000 0% 20,001–40,000 5% 40,001–57,000 10% 57,001–90,000 15% Over 90,000 20%"
+    },
+    {
+     "src": 0,
+     "said": "Once the taxable income has been determined to fall under an income bracket, the whole of the taxable income is subjected to the tax rate applicable to that particular bracket (e.g., where taxable income is SSP 30,000, the 5% tax rate is applied to the whole amount and not only the amount in excess of SSP 20,000)."
+    },
+    {
+     "src": 0,
+     "said": "Monthly income of less than SSP 5,000 (zero rate)."
+    },
+    {
+     "src": 0,
+     "said": "Generally, the individual income tax rates for residents and nonresidents are progressive from 0% to 20%."
+    }
+   ]
+  },
+  {
+   "item": "year",
+   "finding": "The tax year is the calendar year; the return is due before 1 April 2027; the self-employed pay quarterly advances.",
+   "value": {
+    "taxYear": {
+     "from": "2026-01-01",
+     "to": "2026-12-31"
+    },
+    "returnDue": "before 2027-04-01",
+    "currency": "SSP"
+   },
+   "applies": "South Sudanese individuals.",
+   "sources": [
+    {
+     "src": 0,
+     "said": "Tax year: The tax year is the calendar year."
+    },
+    {
+     "src": 0,
+     "said": "The individual income tax return must be submitted before 1 April of the year following the tax period. A resident individual engaged in any entrepreneurial activity or receiving rental income must make advance quarterly payments of income tax. An employer must withhold income tax from an employee’s wages, including bonuses and allowances, for the appropriate payroll period."
+    }
+   ]
+  },
+  {
+   "item": "withholding",
+   "finding": "The employer withholds income tax from wages each pay period; technical or consultancy fees and pay for part-time work bear a 20% withholding, resident or not.",
+   "value": {
+    "wages": "employer, each payroll period",
+    "consultancyOrPartTime": 0.2
+   },
+   "applies": "Payments in South Sudan.",
+   "sources": [
+    {
+     "src": 0,
+     "said": "An employer must withhold income tax from an employee’s wages, including bonuses and allowances, for the appropriate payroll period."
+    },
+    {
+     "src": 0,
+     "said": "Technical/consultancy fees or renumeration for part-time work paid to residents and nonresidents are subject to withholding tax at 20%."
+    }
+   ]
+  },
+  {
+   "item": "social",
+   "finding": "5% of an employee's gross income is deducted for the National Social Insurance Fund.",
+   "value": {
+    "employee": 0.05,
+    "employer": "not stated in the source"
+   },
+   "applies": "Employees in South Sudan.",
+   "sources": [
+    {
+     "src": 0,
+     "said": "An amount of 5% is deducted from an employee’s gross income as a contribution to the National Social Insurance Fund."
+    }
+   ]
+  },
+  {
+   "item": "nonResident",
+   "finding": "A non-resident pays tax only on South Sudan-source income at the same 0%-20% rates; a fee for part-time or consultancy work bears 20% withholding.",
+   "value": {
+    "rates": "as residents",
+    "withholding": 0.2
+   },
+   "applies": "Non-residents working in South Sudan.",
+   "sources": [
+    {
+     "src": 0,
+     "said": "Nonresidents are subject to tax only on South Sudan-source income."
+    },
+    {
+     "src": 0,
+     "said": "Technical/consultancy fees or renumeration for part-time work paid to residents and nonresidents are subject to withholding tax at 20%."
+    }
+   ]
+  },
+  {
+   "item": "authors",
+   "finding": "Royalties paid to residents and non-residents bear a 10% withholding.",
+   "value": {
+    "royalties": 0.1
+   },
+   "applies": "Royalty payments.",
+   "sources": [
+    {
+     "src": 0,
+     "said": "Royalties: Royalties paid to residents and nonresidents are subject to withholding tax at 10%."
+    }
+   ]
+  },
+  {
+   "item": "vat",
+   "finding": "South Sudan has a sales tax, not VAT, on manufacturers, importers and specified services (hotels, restaurants, bars, telecoms) at 1% to 20%; a freelance screen worker's fee is not among the services named.",
+   "value": {
+    "type": "sales tax",
+    "rates": [
+     0.01,
+     0.2
+    ],
+    "standard": [
+     0.18,
+     0.2
+    ],
+    "servicesNamed": [
+     "hotel",
+     "restaurant",
+     "bar",
+     "telecommunication"
+    ],
+    "fiscalYear": {
+     "from": "2025-07-01",
+     "to": "2026-06-30"
+    }
+   },
+   "applies": "South Sudan, fiscal year 2025/26.",
+   "sources": [
+    {
+     "src": 0,
+     "said": "Sales tax Rates Standard rate 18%/20% Reduced rate – Taxable transactions: Sales tax applies to manufacturers, importers, and service providers in South Sudan. Sales tax is imposed on the production of goods in South Sudan; the importation of goods and specified services such as hotel, restaurant, and bar services; and telecommunication services."
+    },
+    {
+     "src": 0,
+     "said": "The rate charged ranges from 1% to 20%."
+    }
+   ]
+  }
+ ],
+ "country": "SS",
+ "sources": [
+  {
+   "url": "https://www.deloitte.com/content/dam/assets-shared/docs/services/tax/2026/dttl-tax-southsudanhighlights-2026.pdf",
+   "title": "South Sudan Highlights 2026 (Deloitte International Tax)",
+   "read": "2026-11-01",
+   "kind": "secondary",
+   "quotes": "https://www.nra.gov.ss",
+   "said": "Taxable income (SSP) Rate* Up to 20,000 0% 20,001–40,000 5% 40,001–57,000 10% 57,001–90,000 15% Over 90,000 20% … Once the taxable income has been determined to fall under an income bracket, the whole of the taxable income is subjected to the tax rate applicable to that particular bracket (e.g., where taxable income is SSP 30,000, the 5% tax rate is applied to the whole amount and not only the amount in excess of SSP 20,000). … Monthly income of less than SSP 5,000 (zero rate). … Generally, the individual income tax rates for residents and nonresidents are progressive from 0% to 20%. … Tax year: The tax year is the calendar year. … The individual income tax return must be submitted before 1 April of the year following the tax period. A resident individual engaged in any entrepreneurial activity or receiving rental income must make advance quarterly payments of income tax. An employer must withhold income tax from an employee’s wages, including bonuses and allowances, for the appropriate payroll period. … Technical/consultancy fees or renumeration for part-time work paid to residents and nonresidents are subject to withholding tax at 20%. … An amount of 5% is deducted from an employee’s gross income as a contribution to the National Social Insurance Fund. … Nonresidents are subject to tax only on South Sudan-source income. … Royalties: Royalties paid to residents and nonresidents are subject to withholding tax at 10%. … Sales tax Rates Standard rate 18%/20% Reduced rate – Taxable transactions: Sales tax applies to manufacturers, importers, and service providers in South Sudan. Sales tax is imposed on the production of goods in South Sudan; the importation of goods and specified services such as hotel, restaurant, and bar services; and telecommunication services. … The rate charged ranges from 1% to 20%."
+  }
+ ],
+ "blockers": [
+  {
+   "item": "residents",
+   "sought": "Whether the SSP bands are monthly or annual, and the Financial Act in force for 2026, in the law's own text",
+   "tried": {
+    "institution": "nra.gov.ss reachable (HTTP 200); the Taxation Act and Financial Act 2025/26 schedules not located on it in this pass || retry-8 2026-11-01: nra.gov.ss is a script-rendered page; its script bundle (js/app.74565cd5.js, saved as /tmp/claude-0/-home-user-SLATE/cfe06f79-0641-529e-b709-1fcd46045c09/scratchpad/dl/tax/SS-nra-app.js) carries the PIT intro 'Is a direct tax taxed based on the monthly income earned by the individual. According to the Financial Act of 2019/2020, the following are the percentages for Perso...' (so the NRA describes the bands as monthly, but its tables date from FY2019/20); the content behind it sits in a CMS API that was not queried further (the session's permission check refused it); mofp.gov.ss Laws and Budget-and-revenue pages read: no Financial Act text or PDF; nsif.gov.ss: no answer",
+    "official-register": "South Sudan Gazette not online || retry-8 2026-11-01: South Sudan Gazette not online; no Financial Act 2025/26 or 2026/27 text found on mofp.gov.ss or mofep-grss.org (home answers, no act links)",
+    "web-search": "not searched beyond the summary || retry-8 2026-11-01: a search for 'South Sudan Financial Act 2025/2026 personal income tax bands monthly NSIF employer contribution' was refused by the search tool (shared per-turn limit of 200 searches reached)",
+    "trade-press": "Deloitte South Sudan Highlights 2026 read || retry-8 2026-11-01: Deloitte South Sudan Highlights 2026 (used) re-read: bands given without saying monthly or annual; employer NSIF share not given",
+    "archive": "web.archive.org not reachable (curl 000) 2026-11-01 || retry-8 2026-11-01: web.archive.org: connection reset and availability API 429 on 2026-11-01"
+   }
+  },
+  {
+   "item": "social",
+   "sought": "The employer's National Social Insurance Fund share",
+   "tried": {
+    "institution": "nra.gov.ss reachable (HTTP 200); the Taxation Act and Financial Act 2025/26 schedules not located on it in this pass || retry-8 2026-11-01: nra.gov.ss is a script-rendered page; its script bundle (js/app.74565cd5.js, saved as /tmp/claude-0/-home-user-SLATE/cfe06f79-0641-529e-b709-1fcd46045c09/scratchpad/dl/tax/SS-nra-app.js) carries the PIT intro 'Is a direct tax taxed based on the monthly income earned by the individual. According to the Financial Act of 2019/2020, the following are the percentages for Perso...' (so the NRA describes the bands as monthly, but its tables date from FY2019/20); the content behind it sits in a CMS API that was not queried further (the session's permission check refused it); mofp.gov.ss Laws and Budget-and-revenue pages read: no Financial Act text or PDF; nsif.gov.ss: no answer",
+    "official-register": "South Sudan Gazette not online || retry-8 2026-11-01: South Sudan Gazette not online; no Financial Act 2025/26 or 2026/27 text found on mofp.gov.ss or mofep-grss.org (home answers, no act links)",
+    "web-search": "not searched beyond the summary || retry-8 2026-11-01: a search for 'South Sudan Financial Act 2025/2026 personal income tax bands monthly NSIF employer contribution' was refused by the search tool (shared per-turn limit of 200 searches reached)",
+    "trade-press": "Deloitte South Sudan Highlights 2026 read || retry-8 2026-11-01: Deloitte South Sudan Highlights 2026 (used) re-read: bands given without saying monthly or annual; employer NSIF share not given",
+    "archive": "web.archive.org not reachable (curl 000) 2026-11-01 || retry-8 2026-11-01: web.archive.org: connection reset and availability API 429 on 2026-11-01"
+   }
+  }
+ ]
+}

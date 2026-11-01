@@ -1,7 +1,7 @@
 {
  "topic": "tax.CA",
  "read": "2026-11-01",
- "note": "Read 2026-11-01 at the owner's word (\"Build those first 3 starting with ledger first\"; \"Retry the blocked tax facts once all countries land\"): the tax on a screen worker's pay in Canada: a resident's income tax, social contributions, what is withheld at source, a non-resident artiste's withholding, any authors' treatment, VAT's threshold, the tax year. Research and retry subagents (workbench/briefs/BRIEF-tax*.md); every quote checked by the lead against its saved page.",
+ "note": "Read 2026-11-01 at the owner's word (\"Build those first 3 starting with ledger first\"; of the 21 countries read first: \"It should cover across every country\"; \"Retry the blocked tax facts once all countries land\"): the tax on a screen worker's pay in Canada: a resident's income tax, social contributions, what is withheld at source, a non-resident artiste's withholding, an author's treatment, VAT and the tax year. Research and retry subagents (workbench/briefs/BRIEF-tax.md, BRIEF-tax-retry.md), every quote checked by the lead against its saved page.",
  "figures": [
   {
    "item": "residents",
@@ -123,23 +123,23 @@
    "sources": [
     {
      "src": 4,
-     "said": "5th income bracket | Greater than $220,000"
+     "said": "5th income bracket … Greater than $220,000"
     },
     {
      "src": 4,
-     "said": "5th income bracket | 0.13159999999999999"
+     "said": "5th income bracket … 0.13159999999999999"
     },
     {
      "src": 4,
-     "said": "Basic Personal Amount | 12989"
+     "said": "Basic Personal Amount … 12989"
     },
     {
      "src": 4,
-     "said": "1st tier basic tax range (rate %) | Greater than $5,818 up to $7,446 (20%)"
+     "said": "1st tier basic tax range (rate %) … Greater than $5,818 up to $7,446 (20%)"
     },
     {
      "src": 4,
-     "said": "2nd tier basic tax range (rate %) | Greater than $7,446 (56%)"
+     "said": "2nd tier basic tax range (rate %) … Greater than $7,446 (56%)"
     }
    ]
   },
@@ -624,7 +624,7 @@
    "title": "Ontario Data Catalogue, Personal income tax rates and credits (2026 file, personal-income-tax-rates-en.xlsx)",
    "read": "2026-11-01",
    "kind": "primary",
-   "said": "5th income bracket | Greater than $220,000 … 5th income bracket | 0.13159999999999999 … Basic Personal Amount | 12989 … 1st tier basic tax range (rate %) | Greater than $5,818 up to $7,446 (20%) … 2nd tier basic tax range (rate %) | Greater than $7,446 (56%)"
+   "said": "5th income bracket … Greater than $220,000 … 5th income bracket … 0.13159999999999999 … Basic Personal Amount … 12989 … 1st tier basic tax range (rate %) … Greater than $5,818 up to $7,446 (20%) … 2nd tier basic tax range (rate %) … Greater than $7,446 (56%)"
   },
   {
    "url": "https://cdn-contenu.quebec.ca/cdn-contenu/adm/min/finances/publications-adm/parametres/AUTFR_RegimeImpot2026.pdf",
@@ -784,11 +784,11 @@
    "item": "withholding",
    "sought": "The text of CRA's T4127 payroll formulas for 2026 (how annual taxable income A and the credits K1 to K4 are figured), read from CRA itself; the rates, constants and credit amounts are found through a vendor citing T4127, and Quebec's formulas are found (TP-1015.F-V)",
    "tried": {
-    "institution": "canada.ca (CRA) refuses this environment (HTTP/2 INTERNAL_ERROR, empty reply over HTTP/1.1, 2026-11-01); revenuquebec.ca returns 403 with an error page; retry 2026-11-01: canada.ca T4127-JAN computer-programs page fetched directly, refused (HTTP/2 INTERNAL_ERROR); Revenu Québec's document path revenuquebec.ca/documents/en/formulaires/tp/TP-1015.F-V(2026-01).pdf read (CAQC-TP1015FV-2026.pdf)",
-    "official-register": "Income Tax Act s.153 read on laws-lois.justice.gc.ca (prescribed rules); the Regulations' tables are not in the Act; retry 2026-11-01: publications.gc.ca basic search for 'Payroll Deductions Formulas' returned only the search form (no listing)",
-    "web-search": "publications.gc.ca searched for T4127 2026-11-01: no 2026 edition returned; retry 2026-11-01: '\"T4127\" \"Payroll Deductions Formulas\" 2026 \"122nd Edition\" OR \"January 1, 2026\"': CRA page titles (122nd edition, effective 1 January 2026), Bloomberg Tax, edsembli and hrreporter.com",
-    "trade-press": "retry 2026-11-01: Bloomberg Tax (20 Nov 2025) and edsembli's 2026 guide read, quoting T4127 rates and constants, not the formula text; hrreporter.com article is from 2011",
-    "archive": "web.archive.org refused this environment (connection reset, 2026-11-01); retry 2026-11-01: archive.org availability API lists a snapshot of the T4127-JAN page (web.archive.org/web/20261004065947/...), but web.archive.org itself refused the fetch (connection reset)"
+    "institution": "canada.ca (CRA) refuses this environment (HTTP/2 INTERNAL_ERROR, empty reply over HTTP/1.1, 2026-11-01); revenuquebec.ca returns 403 with an error page; retry 2026-11-01: canada.ca T4127-JAN computer-programs page fetched directly, refused (HTTP/2 INTERNAL_ERROR); Revenu Québec's document path revenuquebec.ca/documents/en/formulaires/tp/TP-1015.F-V(2026-01).pdf read (CAQC-TP1015FV-2026.pdf) || retry 2026-11-01 (world round): canada.ca (revenue-agency page) does not answer again (curl 000 / HTTP/2 INTERNAL_ERROR)",
+    "official-register": "Income Tax Act s.153 read on laws-lois.justice.gc.ca (prescribed rules); the Regulations' tables are not in the Act; retry 2026-11-01: publications.gc.ca basic search for 'Payroll Deductions Formulas' returned only the search form (no listing) || retry 2026-11-01 (world round): publications.gc.ca answers its home page; its search for 'T4127' returns no publication link (the 2026 edition is not deposited there)",
+    "web-search": "publications.gc.ca searched for T4127 2026-11-01: no 2026 edition returned; retry 2026-11-01: '\"T4127\" \"Payroll Deductions Formulas\" 2026 \"122nd Edition\" OR \"January 1, 2026\"': CRA page titles (122nd edition, effective 1 January 2026), Bloomberg Tax, edsembli and hrreporter.com || retry 2026-11-01 (world round): WebSearch refused 2026-11-01 (the turn's shared 200-search budget exhausted)",
+    "trade-press": "retry 2026-11-01: Bloomberg Tax (20 Nov 2025) and edsembli's 2026 guide read, quoting T4127 rates and constants, not the formula text; hrreporter.com article is from 2011 || retry 2026-11-01 (world round): Bloomberg Tax and edsembli (read before): rates and constants only",
+    "archive": "web.archive.org refused this environment (connection reset, 2026-11-01); retry 2026-11-01: archive.org availability API lists a snapshot of the T4127-JAN page (web.archive.org/web/20261004065947/...), but web.archive.org itself refused the fetch (connection reset) || retry 2026-11-01 (world round): web.archive.org and archive.ph reset the connection; arquivo.pt answers 403"
    }
   }
  ]

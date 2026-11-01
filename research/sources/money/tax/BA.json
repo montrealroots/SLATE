@@ -1,0 +1,303 @@
+{
+ "topic": "tax.BA",
+ "read": "2026-11-01",
+ "note": "Read 2026-11-01 at the owner's word (\"Build those first 3 starting with ledger first\"; of the 21 countries read first: \"It should cover across every country\"; \"Retry the blocked tax facts once all countries land\"): the tax on a screen worker's pay in Bosnia and Herzegovina: a resident's income tax, social contributions, what is withheld at source, a non-resident artiste's withholding, an author's treatment, VAT and the tax year. Research and retry subagents (workbench/briefs/BRIEF-tax.md, BRIEF-tax-retry.md), every quote checked by the lead against its saved page.",
+ "figures": [
+  {
+   "item": "residents",
+   "finding": "Income tax is set by the entity: a flat 10% in the Federation (FBiH), 8% in Republika Srpska (RS) and 10% in Brčko District (BD); the personal allowance is BAM 300 a month in FBiH and BAM 6,000 a year in RS and BD.",
+   "value": {
+    "currency": "BAM",
+    "byEntity": {
+     "FBiH": {
+      "rate": 0.1,
+      "allowanceMonthly": 300
+     },
+     "RS": {
+      "rate": 0.08,
+      "allowanceAnnual": 6000,
+      "smallEntrepreneurOnRevenue": 0.02
+     },
+     "BD": {
+      "rate": 0.1,
+      "allowanceAnnual": 6000
+     }
+    },
+    "regional": "the entity (FBiH, RS, BD) sets the rate",
+    "rsConflict": {
+     "allowancePwC": 6000,
+     "allowanceDeloitte": 12000,
+     "rsSelfEmployedRate": 0.1
+    }
+   },
+   "applies": "2026; the entity of residence decides which column applies. The FBiH rate and BAM 3,600 a year (300 a month) allowance are from the FBiH law as the FBiH Ministry of Finance publishes it (amendments to 65/13); RS and BD figures remain PwC's. Deloitte 2026 gives the RS allowance as BAM 12,000 a year and RS self-employment income 10%: the RS figures are in conflict until the RS law is read (see blocker).",
+   "sources": [
+    {
+     "src": 0,
+     "said": "Porez na dohodak plaća se po stopi od 10%. … ukupan iznos ostvarenog dohotka umanjuje se za osnovni lični odbitak u visini od 3.600,00 KM za porezni period za koji postoji obaveza plaćanja poreza."
+    },
+    {
+     "src": 1,
+     "said": "The PIT rate in the Federation of Bosnia and Herzegovina is a flat rate of 10%. RS PIT rates The PIT rate in Republika Srpska is a flat rate of 8%."
+    },
+    {
+     "src": 1,
+     "said": "The PIT rate in Brčko District is a flat rate of 10%."
+    },
+    {
+     "src": 2,
+     "said": "Allowances Monthly (BAM) Personal allowance 300"
+    },
+    {
+     "src": 2,
+     "said": "RS personal allowances Allowances Annually (BAM) Personal allowance 6,000"
+    },
+    {
+     "src": 2,
+     "said": "BD personal allowances Allowances Annually (BAM) Personal allowance 6,000"
+    },
+    {
+     "src": 3,
+     "said": "In the RS, the standard personal income tax rate on employment income is 8%, a 10% rate applies to income from self-employment (although certain small entrepreneurs pay a 2% tax on total gross revenue), and a 13% rate applies to other income. … In the RS, there is a personal deduction in the amount of BAM 12,000 per calendar year"
+    }
+   ]
+  },
+  {
+   "item": "social",
+   "finding": "In FBiH the employee pays 31% of gross salary (17% pension, 12.5% health, 1.5% unemployment) and the employer 5% (2.5%, 2%, 0.5%); in RS the employee pays 32.8% (18.5% pension, 12% health, 0.6% unemployment, 1.7% child protection) and the employer nothing; in BD health is 12% and pension goes to the chosen entity's fund.",
+   "value": {
+    "FBiH": {
+     "employee": {
+      "pension": 0.17,
+      "health": 0.125,
+      "unemployment": 0.015
+     },
+     "employer": {
+      "pension": 0.025,
+      "health": 0.02,
+      "unemployment": 0.005
+     }
+    },
+    "RS": {
+     "employee": {
+      "pension": 0.185,
+      "health": 0.12,
+      "unemployment": 0.006,
+      "child": 0.017
+     },
+     "employer": 0
+    },
+    "BD": {
+     "health": 0.12,
+     "pension": "FBiH or RS fund by choice"
+    },
+    "base": "gross salary"
+   },
+   "applies": "2026.",
+   "sources": [
+    {
+     "src": 4,
+     "said": "Contribution for pension and invalid insurance 17.0 2.5 Contribution for health insurance 12.5 2.0 Contribution for unemployment insurance 1.5 0.5 The base for calculation of social security contributions is the gross salary."
+    },
+    {
+     "src": 4,
+     "said": "Contribution for pension and invalid insurance 18.5 Contribution for health insurance 12.0 Contribution for unemployment insurance 0.6 Contribution for child protection 1.7"
+    },
+    {
+     "src": 4,
+     "said": "There are no employer’s social security contributions in Republika Srpska."
+    }
+   ]
+  },
+  {
+   "item": "year",
+   "finding": "The tax year is the calendar year; the annual return is due by 31 March in FBiH and RS, and by 28 February in BD where monthly withholding did not settle the tax.",
+   "value": {
+    "start": "01-01",
+    "end": "12-31",
+    "returnDue": {
+     "FBiH": "03-31",
+     "RS": "03-31",
+     "BD": "02-28"
+    }
+   },
+   "applies": "Individuals.",
+   "sources": [
+    {
+     "src": 5,
+     "said": "The deadline for submission of the annual tax return is 31 March of the following year."
+    },
+    {
+     "src": 5,
+     "said": "An annual tax return is not required in the event when the entire PIT due is considered to be calculated and paid through monthly withholdings from income. If this is not the case, annual tax returns have to be submitted by 28 February of the following year."
+    }
+   ]
+  },
+  {
+   "item": "withholding",
+   "finding": "Tax and contributions are withheld monthly with the salary; RS contributions are withheld by the employer as income payer.",
+   "value": {
+    "employment": "monthly withholding with each salary payment"
+   },
+   "applies": "2026.",
+   "sources": [
+    {
+     "src": 5,
+     "said": "In the Federation of Bosnia and Herzegovina, monthly social security contributions have to be paid along with salary payment"
+    },
+    {
+     "src": 4,
+     "said": "In Republika Srpska, mandatory social security contributions are calculated on gross salary and have to be withheld by the employer, as an income payer."
+    }
+   ]
+  },
+  {
+   "item": "nonResident",
+   "finding": "Payments for entertainment, art or sports performances and royalties to non-residents bear 10% withholding in FBiH (as 'other' income), RS and BD, unless a treaty reduces it. In FBiH the law itself sets 10% on the whole fee of a non-resident artist, performer or writer, with no allowance, as a final tax.",
+   "value": {
+    "FBiH": 0.1,
+    "RS": 0.1,
+    "BD": 0.1,
+    "dividendsFBiH": 0.05,
+    "fbihFinal": true
+   },
+   "applies": "Corporate withholding rules (stated for payments to foreign entities in RS), 2026.",
+   "sources": [
+    {
+     "src": 0,
+     "said": "Porez na dohodak od samostalne djelatnosti, koji nerezident ostvari povremenim obavljanjem samostalne djelatnosti (umjetnici, sportisti, književnici i dr.), uključujući i djelatnosti vezane za novinarstvo, radio, televiziju, te organizaciju zabavnih priredbi, plaća se po odbitku od ukupne naknade po stopi od 10% bez prava na priznavanje ličnog odbitka iz člana 24. ovog Zakona. Na ovaj način obračunati i plaćeni porez smatra se konačnom poreznom obavezom"
+    },
+    {
+     "src": 6,
+     "said": "WHT shall be paid at the rate of 5% on dividend payments and 10% for interest, royalties, and other, if not reduced under a"
+    },
+    {
+     "src": 6,
+     "said": "Payment for performance of entertainment, art, or sports program in Republika Srpska."
+    },
+    {
+     "src": 6,
+     "said": "The WHT rate in Republika Srpska is 10%."
+    },
+    {
+     "src": 6,
+     "said": "The WHT rate in Brčko District is 10%."
+    }
+   ]
+  },
+  {
+   "item": "vat",
+   "finding": "VAT is a single state-level 17% with no reduced rate; registration is required above BAM 100,000 of taxable supplies.",
+   "value": {
+    "currency": "BAM",
+    "standard": 0.17,
+    "threshold": 100000
+   },
+   "applies": "2026, whole country.",
+   "sources": [
+    {
+     "src": 7,
+     "said": "Any person making taxable supplies of goods and services that exceeds or is likely to exceed a threshold of 100,000 konvertibilna marka (convertible mark or BAM) is required to register as a VAT payer."
+    },
+    {
+     "src": 4,
+     "said": "The standard VAT rate is 17%, and the VAT regime applies equally throughout the country of Bosnia and Herzegovina. There is no reduced VAT rate in Bosnia and Herzegovina."
+    }
+   ]
+  },
+  {
+   "item": "authors",
+   "finding": "In FBiH an artist, writer or other person earning author's fees deducts 30% of the fee as expenses (or actual expenses) before the 10% tax.",
+   "value": {
+    "deemedExpense": 0.3,
+    "entity": "FBiH"
+   },
+   "applies": "FBiH residents earning authors' fees; RS and BD rules not read (see the residents blocker).",
+   "sources": [
+    {
+     "src": 0,
+     "said": "Licima koja kao naučnici, umjetnici, stručnjaci, novinari i druga lica u okviru djelatnosti iz člana 12. stav (4) tačka 3) ovog Zakona ostvaruju autorske naknade, rashodi se priznaju u visini od 30% ostvarenog prihoda ili u stvarnom iznosu."
+    }
+   ]
+  }
+ ],
+ "country": "BA",
+ "sources": [
+  {
+   "url": "https://fmf.gov.ba/Content/Open/102395?n=Zakon_o_porezu_na_dohodak.pdf",
+   "title": "Zakon o porezu na dohodak FBiH (Službene novine FBiH 10/08, 9/10, 44/11, 7/13, 65/13), as published by the FBiH Ministry of Finance (fmf.gov.ba)",
+   "read": "2026-11-01",
+   "kind": "primary",
+   "said": "Porez na dohodak plaća se po stopi od 10%. … ukupan iznos ostvarenog dohotka umanjuje se za osnovni lični odbitak u visini od 3.600,00 KM za porezni period za koji postoji obaveza plaćanja poreza. … Porez na dohodak od samostalne djelatnosti, koji nerezident ostvari povremenim obavljanjem samostalne djelatnosti (umjetnici, sportisti, književnici i dr.), uključujući i djelatnosti vezane za novinarstvo, radio, televiziju, te organizaciju zabavnih priredbi, plaća se po odbitku od ukupne naknade po stopi od 10% bez prava na priznavanje ličnog odbitka iz člana 24. ovog Zakona. Na ovaj način obračunati i plaćeni porez smatra se konačnom poreznom obavezom … Licima koja kao naučnici, umjetnici, stručnjaci, novinari i druga lica u okviru djelatnosti iz člana 12. stav (4) tačka 3) ovog Zakona ostvaruju autorske naknade, rashodi se priznaju u visini od 30% ostvarenog prihoda ili u stvarnom iznosu."
+  },
+  {
+   "url": "https://taxsummaries.pwc.com/bosnia-and-herzegovina/individual/taxes-on-personal-income",
+   "title": "PwC Worldwide Tax Summaries, Bosnia and Herzegovina, Individual - Taxes on personal income (last reviewed 23 September 2026)",
+   "read": "2026-11-01",
+   "kind": "secondary",
+   "quotes": "https://www.pufbih.ba/",
+   "said": "The PIT rate in the Federation of Bosnia and Herzegovina is a flat rate of 10%. RS PIT rates The PIT rate in Republika Srpska is a flat rate of 8%. … The PIT rate in Brčko District is a flat rate of 10%."
+  },
+  {
+   "url": "https://taxsummaries.pwc.com/bosnia-and-herzegovina/individual/deductions",
+   "title": "PwC Worldwide Tax Summaries, Bosnia and Herzegovina, Individual - Deductions (last reviewed 23 September 2026)",
+   "read": "2026-11-01",
+   "kind": "secondary",
+   "quotes": "https://www.pufbih.ba/",
+   "said": "Allowances Monthly (BAM) Personal allowance 300 … RS personal allowances Allowances Annually (BAM) Personal allowance 6,000 … BD personal allowances Allowances Annually (BAM) Personal allowance 6,000"
+  },
+  {
+   "url": "https://www.deloitte.com/content/dam/assets-shared/docs/services/tax/2026/dttl-tax-bosniaandherzegovinahighlights-2026.pdf",
+   "title": "Bosnia and Herzegovina Highlights 2026 (Deloitte), on the RS Law on Personal Income Tax",
+   "read": "2026-11-01",
+   "kind": "secondary",
+   "quotes": "https://poreskaupravars.org/",
+   "said": "In the RS, the standard personal income tax rate on employment income is 8%, a 10% rate applies to income from self-employment (although certain small entrepreneurs pay a 2% tax on total gross revenue), and a 13% rate applies to other income. … In the RS, there is a personal deduction in the amount of BAM 12,000 per calendar year"
+  },
+  {
+   "url": "https://taxsummaries.pwc.com/bosnia-and-herzegovina/individual/other-taxes",
+   "title": "PwC Worldwide Tax Summaries, Bosnia and Herzegovina, Individual - Other taxes (last reviewed 23 September 2026)",
+   "read": "2026-11-01",
+   "kind": "secondary",
+   "quotes": "https://www.pufbih.ba/",
+   "said": "Contribution for pension and invalid insurance 17.0 2.5 Contribution for health insurance 12.5 2.0 Contribution for unemployment insurance 1.5 0.5 The base for calculation of social security contributions is the gross salary. … Contribution for pension and invalid insurance 18.5 Contribution for health insurance 12.0 Contribution for unemployment insurance 0.6 Contribution for child protection 1.7 … There are no employer’s social security contributions in Republika Srpska. … In Republika Srpska, mandatory social security contributions are calculated on gross salary and have to be withheld by the employer, as an income payer. … The standard VAT rate is 17%, and the VAT regime applies equally throughout the country of Bosnia and Herzegovina. There is no reduced VAT rate in Bosnia and Herzegovina."
+  },
+  {
+   "url": "https://taxsummaries.pwc.com/bosnia-and-herzegovina/individual/tax-administration",
+   "title": "PwC Worldwide Tax Summaries, Bosnia and Herzegovina, Individual - Tax administration (last reviewed 23 September 2026)",
+   "read": "2026-11-01",
+   "kind": "secondary",
+   "quotes": "https://www.pufbih.ba/",
+   "said": "The deadline for submission of the annual tax return is 31 March of the following year. … An annual tax return is not required in the event when the entire PIT due is considered to be calculated and paid through monthly withholdings from income. If this is not the case, annual tax returns have to be submitted by 28 February of the following year. … In the Federation of Bosnia and Herzegovina, monthly social security contributions have to be paid along with salary payment"
+  },
+  {
+   "url": "https://taxsummaries.pwc.com/bosnia-and-herzegovina/corporate/withholding-taxes",
+   "title": "PwC Worldwide Tax Summaries, Bosnia and Herzegovina, Corporate - Withholding taxes (last reviewed 23 September 2026)",
+   "read": "2026-11-01",
+   "kind": "secondary",
+   "quotes": "https://www.pufbih.ba/",
+   "said": "WHT shall be paid at the rate of 5% on dividend payments and 10% for interest, royalties, and other, if not reduced under a … Payment for performance of entertainment, art, or sports program in Republika Srpska. … The WHT rate in Republika Srpska is 10%. … The WHT rate in Brčko District is 10%."
+  },
+  {
+   "url": "https://taxsummaries.pwc.com/bosnia-and-herzegovina/corporate/other-taxes",
+   "title": "PwC Worldwide Tax Summaries, Bosnia and Herzegovina, Corporate - Other taxes (last reviewed 23 September 2026)",
+   "read": "2026-11-01",
+   "kind": "secondary",
+   "quotes": "https://www.uino.gov.ba/",
+   "said": "Any person making taxable supplies of goods and services that exceeds or is likely to exceed a threshold of 100,000 konvertibilna marka (convertible mark or BAM) is required to register as a VAT payer."
+  }
+ ],
+ "blockers": [
+  {
+   "item": "residents",
+   "sought": "The RS and Brčko District income-tax laws (rates, the BAM 6,000 allowance, authors' and non-resident artists' rules) from the RS Tax Administration or the BD Finance Directorate; FBiH is now read from its law. Conflict: the RS personal deduction is BAM 6,000 a year (PwC) or BAM 12,000 (Deloitte 2026); RS self-employment is taxed at 10% per Deloitte.",
+   "tried": {
+    "institution": "not fetched in this pass (2026-11-01) || 2026-11-01 retry: pufbih.ba answers but is a script-only app (no text served); fmf.gov.ba (FBiH Ministry of Finance) Zakoni page read: the FBiH income-tax law PDF saved (BA-fmf-zakon-porez-dohodak.pdf) and now quoted, and the contributions law saved (BA-fmf-zakon-doprinosi.doc); poreskaupravars.org and bdcentral.net do not answer (curl 000); vladars.rs Ministry of Finance page links only to poreskaupravars.org.",
+    "official-register": "Službene novine FBiH / Službeni glasnik RS not reached || 2026-11-01 retry: Službeni glasnik Republike Srpske and Službeni glasnik Brčko distrikta: no reachable host (slglasnik.org, the RS gazette's publisher, answers HTTP 200 but sells the law texts by subscription; not read); parlamentfbih.gov.ba does not answer.",
+    "web-search": "not run || 2026-11-01 retry: WebSearch refused by the tool on 2026-11-01: the turn's shared 200-search limit was reached before this query; no other search route used.",
+    "trade-press": "PwC Bosnia and Herzegovina (quoted) || 2026-11-01 retry: Deloitte Bosnia and Herzegovina Highlights 2026 read (saved BA-deloitte-2026.pdf): RS 8% on employment, 10% on self-employment, 13% on other income, and an RS personal deduction of BAM 12,000 a year, against PwC's BAM 6,000; Brčko not covered. The two firms conflict on the RS allowance and the RS law is needed to settle it.",
+    "archive": "not tried || 2026-11-01 retry: archive.org/wayback/available answers; web.archive.org snapshots reset https and return 403 on http from this environment (2026-11-01)."
+   }
+  }
+ ]
+}

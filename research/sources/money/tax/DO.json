@@ -1,0 +1,291 @@
+{
+ "topic": "tax.DO",
+ "read": "2026-11-01",
+ "note": "Read 2026-11-01 at the owner's word (\"Build those first 3 starting with ledger first\"; of the 21 countries read first: \"It should cover across every country\"; \"Retry the blocked tax facts once all countries land\"): the tax on a screen worker's pay in Dominican Republic: a resident's income tax, social contributions, what is withheld at source, a non-resident artiste's withholding, an author's treatment, VAT and the tax year. Research and retry subagents (workbench/briefs/BRIEF-tax.md, BRIEF-tax-retry.md), every quote checked by the lead against its saved page.",
+ "figures": [
+  {
+   "item": "residents",
+   "finding": "For fiscal year 2026 an individual pays nothing on annual income up to DOP 416,220, then 15%, 20% and 25% above DOP 867,123; from 2027 the exempt amount rises to DOP 480,000 and a 27% band starts at DOP 4,800,000.",
+   "value": {
+    "currency": "DOP",
+    "year": 2026,
+    "allowance": 416220,
+    "brackets": [
+     {
+      "from": 0,
+      "to": 416220,
+      "rate": 0
+     },
+     {
+      "from": 416220,
+      "to": 624329,
+      "rate": 0.15
+     },
+     {
+      "from": 624329,
+      "to": 867123,
+      "rate": 0.2
+     },
+     {
+      "from": 867123,
+      "to": null,
+      "rate": 0.25
+     }
+    ],
+    "from2027": {
+     "allowance": 480000,
+     "brackets": [
+      {
+       "from": 0,
+       "to": 480000,
+       "rate": 0
+      },
+      {
+       "from": 480000,
+       "to": 685000,
+       "rate": 0.15
+      },
+      {
+       "from": 685000,
+       "to": 910000,
+       "rate": 0.2
+      },
+      {
+       "from": 910000,
+       "to": 4800000,
+       "rate": 0.25
+      },
+      {
+       "from": 4800000,
+       "to": null,
+       "rate": 0.27
+      }
+     ]
+    },
+    "regional": null
+   },
+   "applies": "Individuals, fiscal years 2026 and 2027 onward The 2027 scale (exempt to DOP 480,000; 15% to 685,000; 20% to 910,000; 25% to 4,800,000; 27% above) is read from Ley 30-26 art. 296 as amended; the 2026 scale is from PwC (DGII refuses this environment).",
+   "sources": [
+    {
+     "src": 0,
+     "said": "For fiscal year (FY) 2026, individuals pay tax on income in excess of DOP 416,220. Personal income is taxed at the following rates (the scale is based on annual income): Taxable income FY 2026 (DOP) Tax on column 1 (DOP) Tax on excess (%) Over (column 1) Not over 0 416,220 0 0 416,220 624,329 0 15 624,329 867,123 31,216 20 867,123 and above 79,776 25 As of FY 2027, individuals will pay tax on income in excess of DOP 480,000. Personal income is taxed at the following rates (the scale is based on annual income): Taxable income FY 2027 onwards (DOP) Tax on column 1 (DOP) Tax on excess (%) Over (column 1) Not over 0 480,000 0 0 480,000 685,000 0 15 685,000 910,000 30,750 20 910,000 4,800,000 75,750 25 4,800,000 and above 1,048,250 27"
+    },
+    {
+     "src": 1,
+     "said": "A partir del ejercicio fiscal 2027, las personas naturales … residentes o domiciliadas en el pais pagarán sobre la renta neta gravadle del ejercicio fiscal, las sumas que resulten de aplicar en forma progresiva la siguiente escala:"
+    },
+    {
+     "src": 1,
+     "said": "Rentas hasta los RD$480,000.00 Exentas … Rentas desde RD$480,000.01 15% del excedente de … hasta RD$685,000.00 RD$480,000.01 … Rentas desde RD$685,000.01 RD$30,750.00 más el 20 % del … hasta RD$910,000.00 excedente de RD$685,000.01 … Rentas desde RD$910,000.01 RD$75,750.00 más el 25% del … hasta RD$4,800,000.00 excedente de RD$910,000.01 … Rentas desde RD$4,800,000.01 en RD$1,04 8,250.00 más el 27% del … adelante excedente de RD$4,800,000.01"
+    }
+   ]
+  },
+  {
+   "item": "social",
+   "finding": "For pensions the employer pays 7.10% and the employee 2.87% (to 20 minimum wages); for family health the employer pays 7.09% and the employee 3.04% (to 10 minimum wages); the employer adds 1.2% labour-risk insurance (to 4 minimum wages) and 1% of payroll for technical training.",
+   "value": {
+    "employee": {
+     "pension": 0.0287,
+     "health": 0.0304
+    },
+    "employer": {
+     "pension": 0.071,
+     "health": 0.0709,
+     "labourRisk": 0.012,
+     "infotep": 0.01
+    },
+    "ceilings": {
+     "pension": "20 minimum wages",
+     "health": "10 minimum wages",
+     "labourRisk": "4 minimum wages"
+    }
+   },
+   "applies": "Employees",
+   "sources": [
+    {
+     "src": 2,
+     "said": "Employers contribute 7.10% of salaries and withhold 2.87% from employees’ salaries for pensions. The quotable salaries for contribution are 20 minimum wages. … Employers contribute 7.09% of salaries and withhold 3.04% from employees’ salaries for family healthcare. The quotable salaries for contribution are ten minimum wages. … Employers contribute 1.2% of salaries for labour risks insurance. The quotable salaries for contribution are four minimum wages. … The contribution of employers is 1% of total monthly payroll; for employees, it is 0.5% of bonuses received."
+    }
+   ]
+  },
+  {
+   "item": "withholding",
+   "finding": "Employers withhold income tax from pay monthly; an employee files a return only with income other than wages or with pay from outside local payroll. A payer withholds 15% of a freelancer's fees (honorarios) for services not under an employment relationship, as a payment on account (10% before Ley 30-26).",
+   "value": {
+    "kind": "monthly employer withholding on the annual scale",
+    "freelanceFees": {
+     "rate": 0.15,
+     "final": false,
+     "before": 0.1
+    }
+   },
+   "applies": "Employees",
+   "sources": [
+    {
+     "src": 3,
+     "said": "Individuals are required to file a personal tax return only when income from sources different from the salaries, wages, and bonuses (in which the employer makes withholdings) is received. If salaries are paid outside local payroll, individuals shall file a personal tax return. The personal tax return is due 31 March of the year after the tax year-end. Payment of tax Employers are required to withhold income tax from employees’ remuneration on a monthly basis."
+    },
+    {
+     "src": 1,
+     "said": "b) 15% sobre los honorarios, comisiones y demás … remuneraciones y pagos por la prestación de servicios en … general provistos por personas físicas, no ejecutados en … relación de dependencia, cuya provisión requiere la … intervención directa del recurso humano, con carácter de … pago a cuenta."
+    }
+   ]
+  },
+  {
+   "item": "nonResident",
+   "finding": "A payment of Dominican-source income to a non-resident individual (a performer's, writer's or director's fee) bears withholding at the corporate rate of 27% of the gross, as a single and final payment (pago único y definitivo); royalties paid abroad bear 15% final; save under the Canada and Spain treaties.",
+   "value": {
+    "rate": 0.27,
+    "base": "gross",
+    "final": true,
+    "royalties": {
+     "rate": 0.15,
+     "final": true
+    }
+   },
+   "applies": "From Ley 30-26's entry into force (promulgated 18 June 2026).",
+   "sources": [
+    {
+     "src": 1,
+     "said": "Articulo 305.- Pagos al exterior de rentas gravadas. Salvo … que se disponga un tratamiento distinto para una determinada categoria de renta. quienes paguen o acrediten en cuenta rentas gravadas de fuente dominicana a personas fisicas. jurídicas o entidades no residentes o no domiciliadas en el pais, deberán retener e ingresar a la Administración, con carácter de pago único y definitivo del impuesto. la misma tasa establecida en el articulo 297 del presente Código Tributario."
+    },
+    {
+     "src": 1,
+     "said": "A partir del ejercicio fiscal 2026, las personas jurídicas … domiciliadas en el pais pagarán el veintisiete por ciento … (27%) sobre su renta neta gravable."
+    },
+    {
+     "src": 1,
+     "said": "Quienes paguen o acrediten en cuenta regalias o derechos a … personas físicas, jurídicas o entidades no residentes o no … domiciliadas en el país, deberán retener e ingresar a la … Administración Tributaria, con carácter de pago único y … definitivo del impuesto, el 15% del valor bruto"
+    },
+    {
+     "src": 4,
+     "said": "The WHT on payments to foreign corporations, which are not permanently established in the Dominican Republic, are as follows: Recipient WHT (%) Dividends and interest Royalties Technical assistance Other services Non-treaty 10 15 27 27"
+    }
+   ]
+  },
+  {
+   "item": "vat",
+   "finding": "ITBIS, the value-added tax, is 18% on goods and services.",
+   "value": {
+    "standard": 0.18
+   },
+   "applies": "Goods and services",
+   "sources": [
+    {
+     "src": 2,
+     "said": "ITBIS is a value-added tax (VAT) applied to industrialised goods (movable) and services at a rate of 18%"
+    }
+   ]
+  },
+  {
+   "item": "year",
+   "finding": "The tax year ends on 31 December and the return (and tax on non-wage income) is due on 31 March of the next year.",
+   "value": {
+    "start": "01-01",
+    "end": "12-31",
+    "returnDue": "03-31"
+   },
+   "applies": "Individuals",
+   "sources": [
+    {
+     "src": 3,
+     "said": "Taxable period The tax year-end is 31 December. … The personal tax return is due 31 March of the year after the tax year-end."
+    }
+   ]
+  },
+  {
+   "item": "authors",
+   "finding": "Royalties or rights paid to a non-resident author bear 15% of the gross, withheld as a single and final payment; no special treatment of a resident author's royalties was found in the law read.",
+   "value": {
+    "nonResidentRoyalties": {
+     "rate": 0.15,
+     "final": true
+    }
+   },
+   "applies": "From Ley 30-26 (new art. 305-1 of the Código Tributario).",
+   "sources": [
+    {
+     "src": 1,
+     "said": "Articulo 305-1.- Pagos al exterior de regalias o derechos."
+    }
+   ]
+  }
+ ],
+ "country": "DO",
+ "sources": [
+  {
+   "url": "https://taxsummaries.pwc.com/dominican-republic/individual/taxes-on-personal-income",
+   "title": "PwC Worldwide Tax Summaries: Dominican Republic, Taxes on personal income",
+   "read": "2026-11-01",
+   "kind": "secondary",
+   "quotes": "https://dgii.gov.do/",
+   "said": "For fiscal year (FY) 2026, individuals pay tax on income in excess of DOP 416,220. Personal income is taxed at the following rates (the scale is based on annual income): Taxable income FY 2026 (DOP) Tax on column 1 (DOP) Tax on excess (%) Over (column 1) Not over 0 416,220 0 0 416,220 624,329 0 15 624,329 867,123 31,216 20 867,123 and above 79,776 25 As of FY 2027, individuals will pay tax on income in excess of DOP 480,000. Personal income is taxed at the following rates (the scale is based on annual income): Taxable income FY 2027 onwards (DOP) Tax on column 1 (DOP) Tax on excess (%) Over (column 1) Not over 0 480,000 0 0 480,000 685,000 0 15 685,000 910,000 30,750 20 910,000 4,800,000 75,750 25 4,800,000 and above 1,048,250 27"
+  },
+  {
+   "url": "https://presidencia.gob.do/sites/default/files/laws/2026-06/Ley%2030-26.pdf",
+   "title": "Ley núm. 30-26 de medidas pro-crecimiento económico, simplificación fiscal y mitigación de la crisis internacional (promulgated 18 June 2026; Presidencia de la República, presidencia.gob.do/leyes/ley-30-26), amending the Código Tributario (Ley 11-92)",
+   "read": "2026-11-01",
+   "kind": "primary",
+   "said": "A partir del ejercicio fiscal 2027, las personas naturales … residentes o domiciliadas en el pais pagarán sobre la renta neta gravadle del ejercicio fiscal, las sumas que resulten de aplicar en forma progresiva la siguiente escala: … Rentas hasta los RD$480,000.00 Exentas … Rentas desde RD$480,000.01 15% del excedente de … hasta RD$685,000.00 RD$480,000.01 … Rentas desde RD$685,000.01 RD$30,750.00 más el 20 % del … hasta RD$910,000.00 excedente de RD$685,000.01 … Rentas desde RD$910,000.01 RD$75,750.00 más el 25% del … hasta RD$4,800,000.00 excedente de RD$910,000.01 … Rentas desde RD$4,800,000.01 en RD$1,04 8,250.00 más el 27% del … adelante excedente de RD$4,800,000.01 … b) 15% sobre los honorarios, comisiones y demás … remuneraciones y pagos por la prestación de servicios en … general provistos por personas físicas, no ejecutados en … relación de dependencia, cuya provisión requiere la … intervención directa del recurso humano, con carácter de … pago a cuenta. … Articulo 305.- Pagos al exterior de rentas gravadas. Salvo … que se disponga un tratamiento distinto para una determinada categoria de renta. quienes paguen o acrediten en cuenta rentas gravadas de fuente dominicana a personas fisicas. jurídicas o entidades no residentes o no domiciliadas en el pais, deberán retener e ingresar a la Administración, con carácter de pago único y definitivo del impuesto. la misma tasa establecida en el articulo 297 del presente Código Tributario. … A partir del ejercicio fiscal 2026, las personas jurídicas … domiciliadas en el pais pagarán el veintisiete por ciento … (27%) sobre su renta neta gravable. … Quienes paguen o acrediten en cuenta regalias o derechos a … personas físicas, jurídicas o entidades no residentes o no … domiciliadas en el país, deberán retener e ingresar a la … Administración Tributaria, con carácter de pago único y … definitivo del impuesto, el 15% del valor bruto … Articulo 305-1.- Pagos al exterior de regalias o derechos."
+  },
+  {
+   "url": "https://taxsummaries.pwc.com/dominican-republic/individual/other-taxes",
+   "title": "PwC Worldwide Tax Summaries: Dominican Republic, Other taxes, quoting Ley 87-01 del Sistema Dominicano de Seguridad Social (consolidated text, sb.gob.do)",
+   "read": "2026-11-01",
+   "kind": "secondary",
+   "quotes": "https://sb.gob.do/media/qd4piiir/ley_8701_y_sus_modificaciones_actualizado_julio_2020_2.pdf",
+   "said": "Employers contribute 7.10% of salaries and withhold 2.87% from employees’ salaries for pensions. The quotable salaries for contribution are 20 minimum wages. … Employers contribute 7.09% of salaries and withhold 3.04% from employees’ salaries for family healthcare. The quotable salaries for contribution are ten minimum wages. … Employers contribute 1.2% of salaries for labour risks insurance. The quotable salaries for contribution are four minimum wages. … The contribution of employers is 1% of total monthly payroll; for employees, it is 0.5% of bonuses received. … ITBIS is a value-added tax (VAT) applied to industrialised goods (movable) and services at a rate of 18%"
+  },
+  {
+   "url": "https://taxsummaries.pwc.com/dominican-republic/individual/tax-administration",
+   "title": "PwC Worldwide Tax Summaries: Dominican Republic, Tax administration",
+   "read": "2026-11-01",
+   "kind": "secondary",
+   "quotes": "https://dgii.gov.do/",
+   "said": "Individuals are required to file a personal tax return only when income from sources different from the salaries, wages, and bonuses (in which the employer makes withholdings) is received. If salaries are paid outside local payroll, individuals shall file a personal tax return. The personal tax return is due 31 March of the year after the tax year-end. Payment of tax Employers are required to withhold income tax from employees’ remuneration on a monthly basis. … Taxable period The tax year-end is 31 December. … The personal tax return is due 31 March of the year after the tax year-end."
+  },
+  {
+   "url": "https://taxsummaries.pwc.com/dominican-republic/corporate/withholding-taxes",
+   "title": "PwC Worldwide Tax Summaries: Dominican Republic, Withholding taxes",
+   "read": "2026-11-01",
+   "kind": "secondary",
+   "quotes": "https://dgii.gov.do/",
+   "said": "The WHT on payments to foreign corporations, which are not permanently established in the Dominican Republic, are as follows: Recipient WHT (%) Dividends and interest Royalties Technical assistance Other services Non-treaty 10 15 27 27"
+  }
+ ],
+ "blockers": [
+  {
+   "item": "residents",
+   "sought": "The DGII's own 2026 scale (indexed exemption DOP 416,220 per PwC); the 2027 scale is now read from Ley 30-26",
+   "tried": {
+    "institution": "dgii.gov.do refused this environment (HTTP 403 bot check); not read another way || retry 2026-11-01 (world round): dgii.gov.do 403 again (home and its Guía 9 ISR Persona Física PDF path); hacienda.gob.do 403; presidencia.gob.do reachable: Ley 30-26 saved (DO-ley-30-26.pdf), which sets the 2027 scale only",
+    "official-register": "not reached || retry 2026-11-01 (world round): Ley 30-26 read from the Presidency's law page; consultoria.gov.do, camaradediputados.gob.do and senadord.gob.do answer 200 but the 2026 indexed exemption is a DGII figure, not in a law",
+    "web-search": "not run separately for the scale in this pass || retry 2026-11-01 (world round): Spanish 'ley 2026 República Dominicana impuesto sobre la renta personas físicas escala exenta 480,000 27% 4,800,000 Gaceta Oficial número de ley' and '\"Ley 30-26\" medidas pro-crecimiento económico texto pdf ...': found Ley 30-26 and its text; sites (siemprealdia, alegra) say the DGII 2026 scale keeps DOP 416,220",
+    "trade-press": "PwC Worldwide Tax Summaries read (the figure it gives is recorded where it names its primary) || retry 2026-11-01 (world round): PwC Interaméricas Tax & Legal news on Ley 30-26 (DO-pwc-ley-30-26.pdf) read: 2027 scale only",
+    "archive": "web.archive.org unreachable from this environment || retry 2026-11-01 (world round): web.archive.org and archive.ph reset the connection"
+   }
+  },
+  {
+   "item": "vat",
+   "sought": "The turnover above which a freelancer must charge ITBIS.",
+   "tried": {
+    "institution": "dgii.gov.do refused (403) || retry 2026-11-01 (world round): dgii.gov.do 403 again; Ley 30-26 (presidencia.gob.do) read: its ITBIS chapter (arts. 34 ff.) covers import perception and exemptions, no registration threshold",
+    "official-register": "not reached || retry 2026-11-01 (world round): Ley 30-26 read; Código Tributario Title III (ITBIS) consolidated text not reached (consultoria.gov.do home only)",
+    "web-search": "not found || retry 2026-11-01 (world round): WebSearch refused 2026-11-01 (the turn's shared 200-search budget exhausted)",
+    "trade-press": "PwC Worldwide Tax Summaries read (the figure it gives is recorded where it names its primary) || retry 2026-11-01 (world round): PwC Interaméricas note on Ley 30-26 read: RST also applies to ITBIS obligations; no turnover threshold for services",
+    "archive": "web.archive.org unreachable from this environment || retry 2026-11-01 (world round): web.archive.org and archive.ph reset the connection"
+   }
+  },
+  {
+   "item": "authors",
+   "sought": "Any special treatment of a resident author's royalties",
+   "tried": {
+    "institution": "dgii.gov.do refused (403) || retry 2026-11-01 (world round): dgii.gov.do 403 again; presidencia.gob.do: Ley 30-26 read: art. 305-1 (royalties abroad, 15% final) only",
+    "official-register": "not reached || retry 2026-11-01 (world round): Ley 30-26 searched for 'derechos de autor' and 'regalías': only art. 305-1; the Ley 65-00 on copyright not read for tax",
+    "web-search": "not searched separately || retry 2026-11-01 (world round): WebSearch refused 2026-11-01 (the turn's shared 200-search budget exhausted, after the Ley 30-26 searches)",
+    "trade-press": "PwC Worldwide Tax Summaries read (the figure it gives is recorded where it names its primary) || retry 2026-11-01 (world round): PwC Interaméricas note on Ley 30-26 read: art. 305-1 only, nothing for residents",
+    "archive": "web.archive.org unreachable from this environment || retry 2026-11-01 (world round): web.archive.org and archive.ph reset the connection"
+   }
+  }
+ ]
+}

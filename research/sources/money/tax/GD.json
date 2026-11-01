@@ -1,0 +1,203 @@
+{
+ "topic": "tax.GD",
+ "read": "2026-11-01",
+ "note": "Read 2026-11-01 at the owner's word (\"Build those first 3 starting with ledger first\"; of the 21 countries read first: \"It should cover across every country\"; \"Retry the blocked tax facts once all countries land\"): the tax on a screen worker's pay in Grenada: a resident's income tax, social contributions, what is withheld at source, a non-resident artiste's withholding, an author's treatment, VAT and the tax year. Research and retry subagents (workbench/briefs/BRIEF-tax.md, BRIEF-tax-retry.md), every quote checked by the lead against its saved page.",
+ "figures": [
+  {
+   "item": "residents",
+   "finding": "A resident deducts a personal allowance of XCD 36,000 and pays 10% on the first XCD 24,000 of taxable income and 28% above; residents are taxed on Grenada-derived income; there is no regional layer.",
+   "value": {
+    "currency": "XCD",
+    "allowance": 36000,
+    "brackets": [
+     {
+      "from": 0,
+      "to": 24000,
+      "rate": 0.1
+     },
+     {
+      "from": 24000,
+      "to": null,
+      "rate": 0.28
+     }
+    ],
+    "regional": null
+   },
+   "applies": "Individuals (183 days' presence makes a resident)",
+   "sources": [
+    {
+     "src": 0,
+     "said": "The rate is 10% on the first XCD 24,000 and 28% on income exceeding this amount."
+    },
+    {
+     "src": 0,
+     "said": "Deductions and allowances: A personal allowance of XCD 36,000 is granted."
+    },
+    {
+     "src": 0,
+     "said": "Resident individuals are taxed on their income derived from Grenada. Nonresident individuals are taxed on income derived from or sourced in Grenada."
+    }
+   ]
+  },
+  {
+   "item": "year",
+   "finding": "The tax year is the calendar year; returns are due by 31 March of the next year with the balance of tax.",
+   "value": {
+    "start": "01-01",
+    "end": "12-31",
+    "returnDue": "03-31"
+   },
+   "applies": "Individuals",
+   "sources": [
+    {
+     "src": 0,
+     "said": "Tax year: The tax year is the calendar year."
+    },
+    {
+     "src": 0,
+     "said": "Tax returns must be filed by 31 March following the tax year, and the balance of tax is due upon the filing of the return."
+    }
+   ]
+  },
+  {
+   "item": "social",
+   "finding": "National Insurance takes 6.25% of earnings from the employee and 7.25% from the employer, on earnings up to XCD 5,000 a month.",
+   "value": {
+    "currency": "XCD",
+    "employee": 0.0625,
+    "employer": 0.0725,
+    "ceilingMonthly": 5000
+   },
+   "applies": "Employees",
+   "sources": [
+    {
+     "src": 0,
+     "said": "Employers contribute at a rate of 7.25% and employees at a rate of 6.25% of an employee’s earnings. The contribution ceiling is XCD 5,000 per month."
+    }
+   ]
+  },
+  {
+   "item": "withholding",
+   "finding": "Employers deduct income tax from salaries under PAYE; a business also pays a stamp tax on gross income (0% to XCD 36,000, 0.5% to 299,999, 0.7% from 300,000).",
+   "value": {
+    "employee": "PAYE",
+    "stampTaxOnBusinessGross": [
+     {
+      "to": 36000,
+      "rate": 0
+     },
+     {
+      "from": 36000,
+      "to": 300000,
+      "rate": 0.005
+     },
+     {
+      "from": 300000,
+      "rate": 0.007
+     }
+    ]
+   },
+   "applies": "Employees and businesses",
+   "sources": [
+    {
+     "src": 0,
+     "said": "A pay-as-you-earn (PAYE) system is used to deduct tax from the salaries of employees."
+    },
+    {
+     "src": 0,
+     "said": "Stamp tax is paid on the gross income of a business as follows: • 0% on amounts up to and including XCD 36,000; • 0.5% on amounts in excess of XCD 36,000 up to and including XCD 299,999; and • 0.7% on amounts equal to or greater than XCD 300"
+    }
+   ]
+  },
+  {
+   "item": "nonResident",
+   "finding": "A non-resident is taxed on Grenada-sourced income; royalties, technical fees and certain other payments to a non-resident bear 15% withholding; the rule for a performer's fee and its finality were not found.",
+   "value": {
+    "rate": 0.15,
+    "appliesTo": [
+     "royalties",
+     "technical service fees",
+     "other specified payments"
+    ],
+    "performanceFee": null,
+    "final": null
+   },
+   "applies": "Non-residents",
+   "sources": [
+    {
+     "src": 0,
+     "said": "Certain other payments to a nonresident company or individual may be subject to a 15% withholding tax rate, unless the rate is reduced under an applicable tax treaty."
+    }
+   ]
+  },
+  {
+   "item": "authors",
+   "finding": "Royalties bear 15% withholding whether paid to a resident or a non-resident; no special regime for authors was found.",
+   "value": {
+    "royalties": 0.15
+   },
+   "applies": "Royalties",
+   "sources": [
+    {
+     "src": 0,
+     "said": "Royalties paid to a resident or nonresident company or individual are subject to a 15% withholding tax rate, unless the rate is reduced under an applicable tax treaty."
+    }
+   ]
+  },
+  {
+   "item": "vat",
+   "finding": "VAT is 15%; registration is required once supplies reach XCD 300,000 a year.",
+   "value": {
+    "currency": "XCD",
+    "standard": 0.15,
+    "threshold": 300000
+   },
+   "applies": "Supplies in Grenada",
+   "sources": [
+    {
+     "src": 0,
+     "said": "The standard rate is 15%."
+    },
+    {
+     "src": 0,
+     "said": "Registration: The registration threshold is a total value of supplies of at least XCD 300,000 per annum."
+    }
+   ]
+  }
+ ],
+ "country": "GD",
+ "sources": [
+  {
+   "url": "https://www.deloitte.com/content/dam/assets-shared/docs/services/tax/2026/dttl-tax-grenadahighlights-2026.pdf",
+   "title": "Deloitte, Grenada Highlights 2026",
+   "read": "2026-11-01",
+   "kind": "secondary",
+   "quotes": "https://ird.gov.gd/",
+   "said": "The rate is 10% on the first XCD 24,000 and 28% on income exceeding this amount. … Deductions and allowances: A personal allowance of XCD 36,000 is granted. … Resident individuals are taxed on their income derived from Grenada. Nonresident individuals are taxed on income derived from or sourced in Grenada. … Tax year: The tax year is the calendar year. … Tax returns must be filed by 31 March following the tax year, and the balance of tax is due upon the filing of the return. … Employers contribute at a rate of 7.25% and employees at a rate of 6.25% of an employee’s earnings. The contribution ceiling is XCD 5,000 per month. … A pay-as-you-earn (PAYE) system is used to deduct tax from the salaries of employees. … Stamp tax is paid on the gross income of a business as follows: • 0% on amounts up to and including XCD 36,000; • 0.5% on amounts in excess of XCD 36,000 up to and including XCD 299,999; and • 0.7% on amounts equal to or greater than XCD 300 … Certain other payments to a nonresident company or individual may be subject to a 15% withholding tax rate, unless the rate is reduced under an applicable tax treaty. … Royalties paid to a resident or nonresident company or individual are subject to a 15% withholding tax rate, unless the rate is reduced under an applicable tax treaty. … The standard rate is 15%. … Registration: The registration threshold is a total value of supplies of at least XCD 300,000 per annum."
+  }
+ ],
+ "blockers": [
+  {
+   "item": "nonResident",
+   "sought": "Withholding on a non-resident entertainer's fee in Grenada and whether it is final",
+   "tried": {
+    "institution": "ird.gov.gd unreachable from this environment (connection failed, 2026-11-01) || retry 2026-11-01: ird.gov.gd: proxy 502 and, on ird.gov.gd, \"SSL: no alternative certificate subject name matches\" (not read another way); nisgrenada.org: connection reset; gov.gd site search (?s=national insurance) returns no NIS or tax page",
+    "official-register": "Income Tax Act Cap. 150 and Government Gazette not reached online || retry 2026-11-01: gov.gd links laws.gov.gd and gazettes.gov.gd: laws.gov.gd lists chapters by letter, but its chapter pages and document search answer a cookie-setting bot check (HTTP 409, \"humans_\" script), not passed or read another way; the Income Tax Act Cap. 150 and the National Insurance (Contributions) Regulations not read",
+    "web-search": "searched 'Grenada Inland Revenue Division personal income tax threshold EC$36,000 rate 10% 28% NIS contribution rate VAT' || retry 2026-11-01: refused by the search tool on 2026-11-01: the turn's shared limit of 200 searches was reached; not worked around",
+    "trade-press": "Deloitte Grenada Highlights 2026 used || retry 2026-11-01: Deloitte Grenada Highlights 2026 (used) unchanged",
+    "archive": "web.archive.org resets the connection from this environment (2026-11-01) || retry 2026-11-01: web.archive.org: \"Recv failure: Connection reset by peer\" again 2026-11-01"
+   }
+  },
+  {
+   "item": "social",
+   "sought": "The self-employed National Insurance rate",
+   "tried": {
+    "institution": "ird.gov.gd unreachable from this environment (connection failed, 2026-11-01) || retry 2026-11-01: ird.gov.gd: proxy 502 and, on ird.gov.gd, \"SSL: no alternative certificate subject name matches\" (not read another way); nisgrenada.org: connection reset; gov.gd site search (?s=national insurance) returns no NIS or tax page",
+    "official-register": "Income Tax Act Cap. 150 and Government Gazette not reached online || retry 2026-11-01: gov.gd links laws.gov.gd and gazettes.gov.gd: laws.gov.gd lists chapters by letter, but its chapter pages and document search answer a cookie-setting bot check (HTTP 409, \"humans_\" script), not passed or read another way; the Income Tax Act Cap. 150 and the National Insurance (Contributions) Regulations not read",
+    "web-search": "searched 'Grenada Inland Revenue Division personal income tax threshold EC$36,000 rate 10% 28% NIS contribution rate VAT' || retry 2026-11-01: refused by the search tool on 2026-11-01: the turn's shared limit of 200 searches was reached; not worked around",
+    "trade-press": "Deloitte Grenada Highlights 2026 used || retry 2026-11-01: Deloitte Grenada Highlights 2026 (used) unchanged",
+    "archive": "web.archive.org resets the connection from this environment (2026-11-01) || retry 2026-11-01: web.archive.org: \"Recv failure: Connection reset by peer\" again 2026-11-01"
+   }
+  }
+ ]
+}

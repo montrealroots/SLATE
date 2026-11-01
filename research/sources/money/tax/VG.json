@@ -1,0 +1,181 @@
+{
+ "topic": "tax.VG",
+ "read": "2026-11-01",
+ "note": "Read 2026-11-01 at the owner's word (\"Build those first 3 starting with ledger first\"; of the 21 countries read first: \"It should cover across every country\"; \"Retry the blocked tax facts once all countries land\"): the tax on a screen worker's pay in British Virgin Islands: a resident's income tax, social contributions, what is withheld at source, a non-resident artiste's withholding, an author's treatment, VAT and the tax year. Research and retry subagents (workbench/briefs/BRIEF-tax.md, BRIEF-tax-retry.md), every quote checked by the lead against its saved page.",
+ "figures": [
+  {
+   "item": "follows",
+   "finding": "The British Virgin Islands, a British overseas territory, does not take United Kingdom tax and levies no income tax of its own.",
+   "value": {
+    "sovereign": "GB",
+    "takesSovereignTax": false,
+    "levies": "no income tax"
+   },
+   "applies": "The British Virgin Islands",
+   "sources": [
+    {
+     "src": 0,
+     "said": "There is a zero-rated income tax regime for individuals. … Filing status: There is no income tax filing obligation."
+    }
+   ]
+  },
+  {
+   "item": "residents",
+   "finding": "Income tax on individuals in the British Virgin Islands is zero-rated: there is no income tax to pay and no return to file; pay is taxed instead by payroll tax.",
+   "value": {
+    "currency": "USD",
+    "incomeTaxRate": 0
+   },
+   "applies": "All individuals",
+   "sources": [
+    {
+     "src": 0,
+     "said": "There is a zero-rated income tax regime for individuals. … Filing status: There is no income tax filing obligation."
+    },
+    {
+     "src": 1,
+     "said": "The Inland Revenue Department which falls under the Ministry of Finance, is charged with the responsibility of collecting payroll tax, stamp duty, self-drive motor vehicle tax, hotel accommodations tax, land & house tax (property tax), liquor licence, cheque duty, and service charges."
+    }
+   ]
+  },
+  {
+   "item": "withholding",
+   "finding": "Payroll tax: the employee pays 8% of remuneration above $10,000 a year, deducted at source, and the employer 2% (Class 1) or 6% (Class 2).",
+   "value": {
+    "currency": "USD",
+    "employee": 0.08,
+    "employer": {
+     "class1": 0.02,
+     "class2": 0.06
+    },
+    "exemptAnnual": 10000
+   },
+   "applies": "Employees and employers",
+   "sources": [
+    {
+     "src": 0,
+     "said": "Payroll tax is levied on both the employer and the employee. The employer pays 2% or 6% of the gross salary (depending on whether the employer falls within the definition of a “Class 1” or a “Class 2” employer), and the employee 8% (the latter is deducted at source), on remuneration in excess of USD 10,000 per annum."
+    }
+   ]
+  },
+  {
+   "item": "social",
+   "finding": "Social security takes 4% from the employee and 4.5% from the employer, and national health insurance 3.75% from each, all subject to a cap.",
+   "value": {
+    "socialSecurity": {
+     "employee": 0.04,
+     "employer": 0.045,
+     "cap": null
+    },
+    "nationalHealthInsurance": {
+     "employee": 0.0375,
+     "employer": 0.0375,
+     "cap": null
+    }
+   },
+   "applies": "Employees",
+   "sources": [
+    {
+     "src": 0,
+     "said": "The employer must pay 4.5% of the employee’s salary, while 4% is paid by the employee (both are subject to a cap). Both the employer and the employee pay 3.75% of the employee’s salary for national health insurance (subject to a cap)."
+    }
+   ]
+  },
+  {
+   "item": "authors",
+   "finding": "No withholding applies to royalties, and income tax is zero-rated, so authors' royalties bear no tax.",
+   "value": {
+    "royaltiesWithholding": 0
+   },
+   "applies": "Authors",
+   "sources": [
+    {
+     "src": 0,
+     "said": "There is no withholding tax on dividends, interest, royalties, or fees for technical services in the BVI"
+    }
+   ]
+  },
+  {
+   "item": "vat",
+   "finding": "There is no VAT or sales tax on a freelancer's fee.",
+   "value": {
+    "rate": 0
+   },
+   "applies": "Supplies in the BVI",
+   "sources": [
+    {
+     "src": 0,
+     "said": "The BVI does not levy VAT or sales tax."
+    }
+   ]
+  },
+  {
+   "item": "year",
+   "finding": "The tax year is the calendar year.",
+   "value": {
+    "start": "01-01",
+    "end": "12-31"
+   },
+   "applies": "Payroll tax and other taxes",
+   "sources": [
+    {
+     "src": 0,
+     "said": "Tax year: The tax year is the calendar year."
+    }
+   ]
+  }
+ ],
+ "country": "VG",
+ "sources": [
+  {
+   "url": "https://www.deloitte.com/content/dam/assets-shared/docs/services/tax/2025/dttl-tax-britishvirginislandshighlights-2025.pdf",
+   "title": "British Virgin Islands Highlights 2025 (Deloitte, updated January 2025)",
+   "read": "2026-11-01",
+   "kind": "secondary",
+   "quotes": "https://www.bvi.gov.vg/",
+   "said": "There is a zero-rated income tax regime for individuals. … Filing status: There is no income tax filing obligation. … Payroll tax is levied on both the employer and the employee. The employer pays 2% or 6% of the gross salary (depending on whether the employer falls within the definition of a “Class 1” or a “Class 2” employer), and the employee 8% (the latter is deducted at source), on remuneration in excess of USD 10,000 per annum. … The employer must pay 4.5% of the employee’s salary, while 4% is paid by the employee (both are subject to a cap). Both the employer and the employee pay 3.75% of the employee’s salary for national health insurance (subject to a cap). … There is no withholding tax on dividends, interest, royalties, or fees for technical services in the BVI … The BVI does not levy VAT or sales tax. … Tax year: The tax year is the calendar year."
+  },
+  {
+   "url": "https://bvi.gov.vg/inland-revenue-department",
+   "title": "Inland Revenue Department, Government of the Virgin Islands",
+   "read": "2026-11-01",
+   "kind": "primary",
+   "said": "The Inland Revenue Department which falls under the Ministry of Finance, is charged with the responsibility of collecting payroll tax, stamp duty, self-drive motor vehicle tax, hotel accommodations tax, land & house tax (property tax), liquor licence, cheque duty, and service charges."
+  }
+ ],
+ "blockers": [
+  {
+   "item": "residents",
+   "sought": "The law or the Inland Revenue Department stating the 0% income tax and the payroll tax rates, the Class 1 and Class 2 definitions, and how payroll tax applies to a self-employed or non-resident performer",
+   "tried": {
+    "institution": "2026-11-01: ird.gov.vg: connection reset; bvi.gov.vg/departments/inland-revenue: 404; www.bvi.gov.vg returned an empty page || retry-8 2026-11-01: bvi.gov.vg answers now: its Inland Revenue Department page read (lists payroll tax, stamp duty and other taxes collected, no income tax; added to the residents figure) and the Financial and tax information topic page; no payroll tax rate, class or non-resident page (services/payroll-tax and similar paths 404); ird.gov.vg still no answer",
+    "official-register": "2026-11-01: Payroll Taxes Act 2004 text not found on a reachable government host || retry-8 2026-11-01: Payroll Taxes Act 2004 and the Income Tax Act not found on bvi.gov.vg ('Governance, laws and enforcement' topic carries election legislation only)",
+    "web-search": "2026-11-01: \"British Virgin Islands Inland Revenue payroll tax rate 8% employee class 1 class 2 employer first $10,000 exempt\": Deloitte, Rivermate, Expanship, Carey Olsen; no official page || retry-8 2026-11-01: a search for 'BVI Payroll Taxes Act 2004 class 1 class 2 employer non-resident entertainer' was refused by the search tool (shared per-turn limit of 200 searches reached)",
+    "trade-press": "2026-11-01: Deloitte BVI Highlights 2025 read and cited (no 2026 edition at the 2026 path: 404) || retry-8 2026-11-01: Deloitte BVI Highlights 2025 (used); no 2026 edition",
+    "archive": "2026-11-01: web.archive.org unreachable through the proxy this session || retry-8 2026-11-01: web.archive.org: connection reset and availability API 429 on 2026-11-01"
+   }
+  },
+  {
+   "item": "social",
+   "sought": "Social security and NHI caps, and self-employed rates, from the Social Security Board and the NHI",
+   "tried": {
+    "institution": "2026-11-01: bvisocialsecurity.vg, socialsecurity.vg, nhi.vg, bvinhi.vg: self-signed TLS certificates; bvisocialsecurity.com and bvinhi.com: proxy 502; not read another way || retry-8 2026-11-01: bvisocialsecurity.vg, www.bvisocialsecurity.vg, nhi.vg and www.bvinhi.vg rechecked 2026-11-01: no completed TLS connection (curl 000; self-signed certificates in the earlier pass), not read another way; bvi.gov.vg points to the Ministry of Health and Social Development at gov.vg only",
+    "official-register": "2026-11-01: Social Security Act and NHI Act texts not found on a reachable host || retry-8 2026-11-01: Payroll Taxes Act 2004 and the Income Tax Act not found on bvi.gov.vg ('Governance, laws and enforcement' topic carries election legislation only)",
+    "web-search": "2026-11-01: same search; Carey Olsen 2024 gives NHI 7.5% split equally, no cap stated || retry-8 2026-11-01: a search for 'BVI Payroll Taxes Act 2004 class 1 class 2 employer non-resident entertainer' was refused by the search tool (shared per-turn limit of 200 searches reached)",
+    "trade-press": "2026-11-01: Deloitte 2025 says \"subject to a cap\" without the figure || retry-8 2026-11-01: Deloitte BVI Highlights 2025 (used); no 2026 edition",
+    "archive": "2026-11-01: web.archive.org unreachable through the proxy this session || retry-8 2026-11-01: web.archive.org: connection reset and availability API 429 on 2026-11-01"
+   }
+  },
+  {
+   "item": "nonResident",
+   "sought": "Whether payroll tax or any withholding reaches a non-resident performer engaged for a production in the BVI",
+   "tried": {
+    "institution": "2026-11-01: Inland Revenue Department site unreachable (see above) || retry-8 2026-11-01: bvi.gov.vg answers now: its Inland Revenue Department page read (lists payroll tax, stamp duty and other taxes collected, no income tax; added to the residents figure) and the Financial and tax information topic page; no payroll tax rate, class or non-resident page (services/payroll-tax and similar paths 404); ird.gov.vg still no answer",
+    "official-register": "2026-11-01: Payroll Taxes Act not read || retry-8 2026-11-01: Payroll Taxes Act 2004 and the Income Tax Act not found on bvi.gov.vg ('Governance, laws and enforcement' topic carries election legislation only)",
+    "web-search": "2026-11-01: no result on non-resident entertainers in the BVI || retry-8 2026-11-01: a search for 'BVI Payroll Taxes Act 2004 class 1 class 2 employer non-resident entertainer' was refused by the search tool (shared per-turn limit of 200 searches reached)",
+    "trade-press": "2026-11-01: Deloitte 2025 says only that there is no withholding on fees for technical services || retry-8 2026-11-01: Deloitte BVI Highlights 2025 (used); no 2026 edition",
+    "archive": "2026-11-01: web.archive.org unreachable through the proxy this session || retry-8 2026-11-01: web.archive.org: connection reset and availability API 429 on 2026-11-01"
+   }
+  }
+ ]
+}

@@ -1,0 +1,102 @@
+{
+ "topic": "tax.TF",
+ "read": "2026-11-01",
+ "note": "Read 2026-11-01 at the owner's word (\"Build those first 3 starting with ledger first\"; of the 21 countries read first: \"It should cover across every country\"; \"Retry the blocked tax facts once all countries land\"): the tax on a screen worker's pay in French Southern Territories: a resident's income tax, social contributions, what is withheld at source, a non-resident artiste's withholding, an author's treatment, VAT and the tax year. Research and retry subagents (workbench/briefs/BRIEF-tax.md, BRIEF-tax-retry.md), every quote checked by the lead against its saved page.",
+ "figures": [
+  {
+   "item": "residents",
+   "finding": "Anyone working in the TAAF (Terre Adélie included) pays the contribution directe territoriale, a flat 9% of gross pay for the stay (6.3% when the tax home is La Réunion), whatever the length of stay; family benefits, expense allowances and the remoteness allowance are excluded; it is credited against French income tax, and refunded where the French effective rate is lower.",
+   "value": {
+    "rate": 0.09,
+    "rateReunionDomicile": 0.063,
+    "base": "gross pay for the stay, incl. paid leave; excl. family benefits, expense allowances, indemnité d'éloignement",
+    "creditAgainstFrenchTax": true,
+    "exempt": "volontaires de service civique"
+   },
+   "applies": "Professional activity in the TAAF; the rate is as the TAAF guide of September 2019 states it (no later change found).",
+   "sources": [
+    {
+     "src": 0,
+     "said": "La contribution directe territoriale (CDT) est un impôt direct proportionnel prélevé sur les revenus tirés d’une activité professionnelle exercée dans les TAAF, et versé aux TAAF par l’employeur. Elle fait l’objet de l’arrêté territorial n° 2001-29 du 6 août 2001, complété par la décision territoriale n° 2001-94."
+    },
+    {
+     "src": 0,
+     "said": "La contribution directe territoriale est calculée sur la base d’un taux unique de 9% appliqué au montant brut des revenus perçus. Celui-ci est ramené à 6,3 % lorsque le domicile fiscal du contribuable est à La Réunion."
+    },
+    {
+     "src": 0,
+     "said": "Les revenus imposables sont constitués par le montant brut des revenus perçus lors d’un séjour dans les TAAF, à l’exclusion des prestations familiales, des allocations spécifiques destinées à couvrir des frais, et des indemnités d’éloignement."
+    },
+    {
+     "src": 0,
+     "said": "Si votre taux effectif d’imposition en métropole ou à La Réunion est inférieur au taux appliqué par les TAAF, ces dernières remboursent le trop prélevé."
+    },
+    {
+     "src": 1,
+     "said": "les agents de l’État et les personnes relevant d’organismes appelés à intervenir dans les TAAF qui sont envoyés dans ce territoire sont soumis à un impôt local sur le revenu."
+    },
+    {
+     "src": 1,
+     "said": "L'arrêté n° 2001-29 du 6 août 2001 instaurant une contribution directe territoriale sur les revenus perçus dans le territoire des Terres australes et antarctiques françaises pris par l’administrateur supérieur du territoire, institue une contribution directe territoriale prélevée à la source par les employeurs sur les revenus perçus au titre d’une activité professionnelle exercée dans le territoire des TAAF."
+    },
+    {
+     "src": 1,
+     "said": "L’impôt retenu à la source au titre d’une année s’impute sur l’impôt sur le revenu français dû au titre des revenus de cette même année, acquitté l’année suivante."
+    },
+    {
+     "src": 1,
+     "said": "Lorsque les intéressés sont considérés comme fiscalement domiciliés hors de France, les rémunérations perçues à l’occasion de leur activité dans le territoire des TAAF ne sont pas soumises à l’impôt sur le revenu en France."
+    }
+   ]
+  },
+  {
+   "item": "withholding",
+   "finding": "The employer computes, declares and pays the CDT to the TAAF each quarter, and gives the worker a yearly statement of the sums withheld.",
+   "value": {
+    "by": "employer",
+    "remit": "quarterly"
+   },
+   "applies": "As above.",
+   "sources": [
+    {
+     "src": 0,
+     "said": "Le calcul, la déclaration et le versement de la CDT sont effectués par l’employeur qui en adresse son montant chaque trimestre aux TAAF."
+    },
+    {
+     "src": 1,
+     "said": "Les revenus professionnels correspondant à une activité exercée sur le territoire des TAAF sont soumis à une contribution directe territoriale. Cette contribution est retenue à la source par les employeurs et directement payée auprès de l’administration territoriale."
+    }
+   ]
+  }
+ ],
+ "country": "TF",
+ "sources": [
+  {
+   "url": "https://taaf.fr/content/uploads/2019/09/2.-guide_pratique_de_l_hivernant_version_Sept-2019.pdf",
+   "title": "TAAF, Guide pratique de l'hivernant (September 2019), \"Principes généraux du système fiscal des TAAF\" and \"Dix questions ... sur la contribution directe territoriale\" (on arrêté territorial n° 2001-29 of 6 August 2001)",
+   "read": "2026-11-01",
+   "kind": "primary",
+   "said": "La contribution directe territoriale (CDT) est un impôt direct proportionnel prélevé sur les revenus tirés d’une activité professionnelle exercée dans les TAAF, et versé aux TAAF par l’employeur. Elle fait l’objet de l’arrêté territorial n° 2001-29 du 6 août 2001, complété par la décision territoriale n° 2001-94. … La contribution directe territoriale est calculée sur la base d’un taux unique de 9% appliqué au montant brut des revenus perçus. Celui-ci est ramené à 6,3 % lorsque le domicile fiscal du contribuable est à La Réunion. … Les revenus imposables sont constitués par le montant brut des revenus perçus lors d’un séjour dans les TAAF, à l’exclusion des prestations familiales, des allocations spécifiques destinées à couvrir des frais, et des indemnités d’éloignement. … Si votre taux effectif d’imposition en métropole ou à La Réunion est inférieur au taux appliqué par les TAAF, ces dernières remboursent le trop prélevé. … Le calcul, la déclaration et le versement de la CDT sont effectués par l’employeur qui en adresse son montant chaque trimestre aux TAAF."
+  },
+  {
+   "url": "https://bofip.impots.gouv.fr/node/317079",
+   "title": "BOI-RSA-GEO-30-20210506, Agents de l’État envoyés dans le territoire des TAAF et personnes relevant d’organismes appelés à intervenir dans ce territoire (BOFiP-Impôts, DGFiP)",
+   "read": "2026-11-01",
+   "kind": "primary",
+   "said": "les agents de l’État et les personnes relevant d’organismes appelés à intervenir dans les TAAF qui sont envoyés dans ce territoire sont soumis à un impôt local sur le revenu. … L'arrêté n° 2001-29 du 6 août 2001 instaurant une contribution directe territoriale sur les revenus perçus dans le territoire des Terres australes et antarctiques françaises pris par l’administrateur supérieur du territoire, institue une contribution directe territoriale prélevée à la source par les employeurs sur les revenus perçus au titre d’une activité professionnelle exercée dans le territoire des TAAF. … L’impôt retenu à la source au titre d’une année s’impute sur l’impôt sur le revenu français dû au titre des revenus de cette même année, acquitté l’année suivante. … Lorsque les intéressés sont considérés comme fiscalement domiciliés hors de France, les rémunérations perçues à l’occasion de leur activité dans le territoire des TAAF ne sont pas soumises à l’impôt sur le revenu en France. … Les revenus professionnels correspondant à une activité exercée sur le territoire des TAAF sont soumis à une contribution directe territoriale. Cette contribution est retenue à la source par les employeurs et directement payée auprès de l’administration territoriale."
+  }
+ ],
+ "blockers": [
+  {
+   "item": "vat",
+   "sought": "Whether any VAT or turnover tax applies to a fee for work in the TAAF",
+   "tried": {
+    "institution": "taaf.fr not searched successfully for tax pages || retry 2026-11-01 (world round): taaf.fr answers: its site search for 'contribution directe territoriale' (taaf.fr/?s=...) returns only general pages (hivernant guide, district contracts arrêté 2011-09, annual report); its WordPress search API answers 401",
+    "official-register": "Légifrance 403 || retry 2026-11-01 (world round): Légifrance 403 again; the Journal officiel des TAAF is not online",
+    "web-search": "WebSearch on the TAAF tax regime: only a VAT guide by a private firm (mathez-compliance) in results || retry 2026-11-01 (world round): WebSearch refused 2026-11-01 (the turn's shared 200-search budget exhausted)",
+    "trade-press": "mathez-compliance guide not read (no primary named) || retry 2026-11-01 (world round): none quoting the arrêté",
+    "archive": "web.archive.org not reachable (curl 000) || retry 2026-11-01 (world round): web.archive.org and archive.ph reset the connection; arquivo.pt answers 403"
+   }
+  }
+ ]
+}

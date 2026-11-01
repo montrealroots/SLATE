@@ -1,0 +1,292 @@
+{
+ "topic": "tax.CN",
+ "read": "2026-11-01",
+ "note": "Read 2026-11-01 at the owner's word (\"Build those first 3 starting with ledger first\"; of the 21 countries read first: \"It should cover across every country\"; \"Retry the blocked tax facts once all countries land\"): the tax on a screen worker's pay in China: a resident's income tax, social contributions, what is withheld at source, a non-resident artiste's withholding, an author's treatment, VAT and the tax year. Research and retry subagents (workbench/briefs/BRIEF-tax.md, BRIEF-tax-retry.md), every quote checked by the lead against its saved page.",
+ "figures": [
+  {
+   "item": "residents",
+   "finding": "A resident's comprehensive income (pay, labour-service fees, author's remuneration and royalties, combined for the year) is taxed from 3% up to CNY 36,000 to 45% above CNY 960,000, after a standard basic deduction of CNY 60,000 a year and other allowed deductions; there is no provincial or local income tax.",
+   "value": {
+    "currency": "CNY",
+    "brackets": [
+     {
+      "from": 0,
+      "to": 36000,
+      "rate": 0.03
+     },
+     {
+      "from": 36000,
+      "to": 144000,
+      "rate": 0.1
+     },
+     {
+      "from": 144000,
+      "to": 300000,
+      "rate": 0.2
+     },
+     {
+      "from": 300000,
+      "to": 420000,
+      "rate": 0.25
+     },
+     {
+      "from": 420000,
+      "to": 660000,
+      "rate": 0.3
+     },
+     {
+      "from": 660000,
+      "to": 960000,
+      "rate": 0.35
+     },
+     {
+      "from": 960000,
+      "to": null,
+      "rate": 0.45
+     }
+    ],
+    "basicDeduction": 60000
+   },
+   "applies": "2026, residents' annual comprehensive income.",
+   "sources": [
+    {
+     "src": 0,
+     "said": "Table I Annual taxable income (CNY*) (1) Tax rate (%) Quick deduction (CNY) 0 to 36,000 3 0 Over 36,000 to 144,000 10 2,520 Over 144,000 to 300,000 20 16,920 Over 300,000 to 420,000 25 31,920 Over 420,000 to 660,000 30 52,920 Over 660,000 to 960,000 35 85,920 Over 960,000 45 181,920"
+    },
+    {
+     "src": 0,
+     "said": "For residents, employment income, remuneration for labour services, author’s remuneration, and royalties are combined as 'comprehensive income' for aggregate tax calculation purpose on an annual basis."
+    },
+    {
+     "src": 1,
+     "said": "The amount of the standard basic deduction is CNY 60,000 per annum (i.e. CNY 5,000 for monthly tax withholding purpose)."
+    }
+   ]
+  },
+  {
+   "item": "year",
+   "finding": "The tax year is the calendar year; the annual reconciliation return is filed between 1 March and 30 June of the next year.",
+   "value": {
+    "start": "01-01",
+    "end": "12-31",
+    "reconciliation": "03-01/06-30 following year"
+   },
+   "applies": "2026.",
+   "sources": [
+    {
+     "src": 2,
+     "said": "The filing period for the annual reconciliation tax return is between 1 March and 30 June of the following year."
+    }
+   ]
+  },
+  {
+   "item": "social",
+   "finding": "Social insurance is set by local rules: in Shanghai, Beijing and Guangzhou the employee pays about 10.2% to 10.5% (8% pension, 2% medical, unemployment) and the employer about 24% to 28%, on a monthly base capped at CNY 27,549 to CNY 41,112 depending on city and item.",
+   "value": {
+    "currency": "CNY",
+    "Shanghai": {
+     "employee": 0.105,
+     "employer": [
+      0.257,
+      0.274
+     ],
+     "monthlyCap": 37302
+    },
+    "Beijing": {
+     "employee": 0.105,
+     "employer": [
+      0.265,
+      0.282
+     ],
+     "monthlyCap": 35811
+    },
+    "Guangzhou": {
+     "employee": 0.102,
+     "employer": [
+      0.2385,
+      0.2505
+     ],
+     "monthlyCap": {
+      "pension": 27549,
+      "medical": 31170,
+      "unemployment": 41112
+     }
+    }
+   },
+   "applies": "Rates and caps valid as of 30 June 2026; elsewhere the local rules apply. The self-employed and performers' terms were not read.",
+   "sources": [
+    {
+     "src": 3,
+     "said": "Monthly employer and employee social security contribution rates, applicable caps, etc. are governed by local rules, which may vary among the local jurisdictions."
+    },
+    {
+     "src": 3,
+     "said": "Pension 8% 16% 8% 16% 8% 16% Medical (including maternity) 2% 9% 2% 9.8% 2% 6.85% Unemployment 0.5% 0.5% 0.5% 0.5% 0.2% 0.8% Work-related injury 0% 0.2% to 1.9% 0% 0.2% to 1.9% 0% 0.2% to 1.4% Total 10.5% 25.7% to 27.4% 10.5% 26.5% to 28.2% 10.2% 23.85% to 25.05% Ceiling for monthly salary base CNY 37,302 CNY 35,811 CNY 27,549 for pension CNY 31,170 for medical CNY 41,112 for unemployment"
+    }
+   ]
+  },
+  {
+   "item": "withholding",
+   "finding": "The payer withholds provisional tax from a resident's pay, fees, author's remuneration and royalties; for a fee or author's remuneration it deducts CNY 800 (receipt up to CNY 4,000) or 20%, a further 30% for author's remuneration, and withholds 20% on author's remuneration and royalties.",
+   "value": {
+    "deduction": {
+     "upTo4000": 800,
+     "above4000": 0.2
+    },
+    "authorFurtherReduction": 0.3,
+    "authorAndRoyaltyRate": 0.2,
+    "labourServices": "progressive 20%/30%/40%"
+   },
+   "applies": "Provisional; settled in the annual reconciliation.",
+   "sources": [
+    {
+     "src": 2,
+     "said": "If the gross receipt is not more than CNY 4,000, a deduction of CNY 800 is allowed. If the gross receipt exceeds CNY 4,000, a deduction of 20% is allowed. A further reduction of 30% is allowable for author’s remuneration. Provisional tax at a flat rate of 20% should be withheld from the taxable income of author’s remuner"
+    }
+   ]
+  },
+  {
+   "item": "nonResident",
+   "finding": "A non-resident's pay, labour-service fees, author's remuneration and royalties are taxed separately by month or transaction at 3% to 45% (3% to CNY 3,000, 45% above CNY 80,000 a month), withheld by the payer as a final tax.",
+   "value": {
+    "currency": "CNY",
+    "monthly": [
+     {
+      "from": 0,
+      "to": 3000,
+      "rate": 0.03
+     },
+     {
+      "from": 3000,
+      "to": 12000,
+      "rate": 0.1
+     },
+     {
+      "from": 12000,
+      "to": 25000,
+      "rate": 0.2
+     },
+     {
+      "from": 25000,
+      "to": 35000,
+      "rate": 0.25
+     },
+     {
+      "from": 35000,
+      "to": 55000,
+      "rate": 0.3
+     },
+     {
+      "from": 55000,
+      "to": 80000,
+      "rate": 0.35
+     },
+     {
+      "from": 80000,
+      "to": null,
+      "rate": 0.45
+     }
+    ],
+    "final": true
+   },
+   "applies": "China-source income.",
+   "sources": [
+    {
+     "src": 0,
+     "said": "Table II Monthly taxable income (CNY) Tax rate (%) Quick deduction (CNY) 0 to 3,000 3 0 Over 3,000 to 12,000 10 210 Over 12,000 to 25,000 20 1,410 Over 25,000 to 35,000 25 2,660 Over 35,000 to 55,000 30 4,410 Over 55,000 to 80,000 35 7,160 Over 80,000 45 15,"
+    },
+    {
+     "src": 2,
+     "said": "is generally obligated to withhold IIT by each income category on a monthly or transaction basis at the progressive tax rates in Table II ( see Table II in the Taxes on personal income section ). Such tax withholding is considered actual and final."
+    }
+   ]
+  },
+  {
+   "item": "authors",
+   "finding": "Author's remuneration is part of comprehensive income at 3% to 45%, but only 70% of the 80% left after the expense deduction is taxed (a further 30% reduction).",
+   "value": {
+    "taxedShare": "(gross - 20%) x 70%"
+   },
+   "applies": "2026.",
+   "sources": [
+    {
+     "src": 4,
+     "said": "Author's remuneration is subject to the progressive tax rates of 3% to 45% applicable to comprehensive income."
+    },
+    {
+     "src": 2,
+     "said": "A further reduction of 30% is allowable for author’s remuneration."
+    }
+   ]
+  },
+  {
+   "item": "vat",
+   "finding": "An individual providing services is a small-scale VAT payer at 3%, cut to 1% from 1 January 2026 to 31 December 2027, and exempt while monthly sales stay below CNY 100,000 (CNY 300,000 a quarter); general payers charge 6% on most services.",
+   "value": {
+    "currency": "CNY",
+    "smallScale": {
+     "rate": 0.03,
+     "2026-2027": 0.01,
+     "exemptBelowMonthly": 100000,
+     "exemptBelowQuarterly": 300000
+    },
+    "generalServices": 0.06
+   },
+   "applies": "2026-2027 relief.",
+   "sources": [
+    {
+     "src": 3,
+     "said": "An individual is deemed a small-scale VAT payer subject to the VAT rate of 3%."
+    },
+    {
+     "src": 3,
+     "said": "For the period from 1 January 2026 to 31 December 2027, the VAT rate for small-scale VAT payers is reduced from 3% to 1% (not applicable to the sale or lease of immovable properties or transfer of land-use rights). During the same period, small-scale VAT payers are exempt from VAT if the sales amount is below certain thresholds: Monthly sales amount below CNY 100,000 (or quarterly below CNY 300,000, depending on the VAT declaration period adopted)."
+    }
+   ]
+  }
+ ],
+ "country": "CN",
+ "sources": [
+  {
+   "url": "https://taxsummaries.pwc.com/peoples-republic-of-china/individual/taxes-on-personal-income",
+   "title": "PwC Worldwide Tax Summaries: peoples-republic-of-china Individual - Taxes on personal income",
+   "read": "2026-11-01",
+   "kind": "secondary",
+   "quotes": "https://www.chinatax.gov.cn/",
+   "said": "Table I Annual taxable income (CNY*) (1) Tax rate (%) Quick deduction (CNY) 0 to 36,000 3 0 Over 36,000 to 144,000 10 2,520 Over 144,000 to 300,000 20 16,920 Over 300,000 to 420,000 25 31,920 Over 420,000 to 660,000 30 52,920 Over 660,000 to 960,000 35 85,920 Over 960,000 45 181,920 … For residents, employment income, remuneration for labour services, author’s remuneration, and royalties are combined as 'comprehensive income' for aggregate tax calculation purpose on an annual basis. … Table II Monthly taxable income (CNY) Tax rate (%) Quick deduction (CNY) 0 to 3,000 3 0 Over 3,000 to 12,000 10 210 Over 12,000 to 25,000 20 1,410 Over 25,000 to 35,000 25 2,660 Over 35,000 to 55,000 30 4,410 Over 55,000 to 80,000 35 7,160 Over 80,000 45 15,"
+  },
+  {
+   "url": "https://taxsummaries.pwc.com/peoples-republic-of-china/individual/deductions",
+   "title": "PwC Worldwide Tax Summaries: peoples-republic-of-china Individual - Deductions",
+   "read": "2026-11-01",
+   "kind": "secondary",
+   "quotes": "https://www.chinatax.gov.cn/",
+   "said": "The amount of the standard basic deduction is CNY 60,000 per annum (i.e. CNY 5,000 for monthly tax withholding purpose)."
+  },
+  {
+   "url": "https://taxsummaries.pwc.com/peoples-republic-of-china/individual/tax-administration",
+   "title": "PwC Worldwide Tax Summaries: peoples-republic-of-china Individual - Tax administration",
+   "read": "2026-11-01",
+   "kind": "secondary",
+   "quotes": "https://www.chinatax.gov.cn/",
+   "said": "The filing period for the annual reconciliation tax return is between 1 March and 30 June of the following year. … If the gross receipt is not more than CNY 4,000, a deduction of CNY 800 is allowed. If the gross receipt exceeds CNY 4,000, a deduction of 20% is allowed. A further reduction of 30% is allowable for author’s remuneration. Provisional tax at a flat rate of 20% should be withheld from the taxable income of author’s remuner … is generally obligated to withhold IIT by each income category on a monthly or transaction basis at the progressive tax rates in Table II ( see Table II in the Taxes on personal income section ). Such tax withholding is considered actual and final."
+  },
+  {
+   "url": "https://taxsummaries.pwc.com/peoples-republic-of-china/individual/other-taxes",
+   "title": "PwC Worldwide Tax Summaries: peoples-republic-of-china Individual - Other taxes",
+   "read": "2026-11-01",
+   "kind": "secondary",
+   "quotes": "https://www.chinatax.gov.cn/",
+   "said": "Monthly employer and employee social security contribution rates, applicable caps, etc. are governed by local rules, which may vary among the local jurisdictions. … Pension 8% 16% 8% 16% 8% 16% Medical (including maternity) 2% 9% 2% 9.8% 2% 6.85% Unemployment 0.5% 0.5% 0.5% 0.5% 0.2% 0.8% Work-related injury 0% 0.2% to 1.9% 0% 0.2% to 1.9% 0% 0.2% to 1.4% Total 10.5% 25.7% to 27.4% 10.5% 26.5% to 28.2% 10.2% 23.85% to 25.05% Ceiling for monthly salary base CNY 37,302 CNY 35,811 CNY 27,549 for pension CNY 31,170 for medical CNY 41,112 for unemployment … An individual is deemed a small-scale VAT payer subject to the VAT rate of 3%. … For the period from 1 January 2026 to 31 December 2027, the VAT rate for small-scale VAT payers is reduced from 3% to 1% (not applicable to the sale or lease of immovable properties or transfer of land-use rights). During the same period, small-scale VAT payers are exempt from VAT if the sales amount is below certain thresholds: Monthly sales amount below CNY 100,000 (or quarterly below CNY 300,000, depending on the VAT declaration period adopted)."
+  },
+  {
+   "url": "https://taxsummaries.pwc.com/peoples-republic-of-china/individual/income-determination",
+   "title": "PwC Worldwide Tax Summaries: peoples-republic-of-china Individual - Income determination",
+   "read": "2026-11-01",
+   "kind": "secondary",
+   "quotes": "https://www.chinatax.gov.cn/",
+   "said": "Author's remuneration is subject to the progressive tax rates of 3% to 45% applicable to comprehensive income."
+  }
+ ],
+ "blockers": []
+}

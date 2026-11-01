@@ -1,0 +1,109 @@
+{
+ "topic": "tax.GN",
+ "read": "2026-11-01",
+ "note": "Read 2026-11-01 at the owner's word (\"Build those first 3 starting with ledger first\"; of the 21 countries read first: \"It should cover across every country\"; \"Retry the blocked tax facts once all countries land\"): the tax on a screen worker's pay in Guinea: a resident's income tax, social contributions, what is withheld at source, a non-resident artiste's withholding, an author's treatment, VAT and the tax year. Research and retry subagents (workbench/briefs/BRIEF-tax.md, BRIEF-tax-retry.md), every quote checked by the lead against its saved page.",
+ "figures": [
+  {
+   "item": "social",
+   "finding": "Social security contributions are 23% of pay between a floor of GNF 550,000 and a ceiling of GNF 2,500,000 a month: 18% from the employer and 5% from the employee, the employer paying both shares to the CNSS by the 15th after the month or quarter.",
+   "value": {
+    "currency": "GNF",
+    "employer": 0.18,
+    "employee": 0.05,
+    "floorMonthly": 550000,
+    "ceilingMonthly": 2500000,
+    "branches": {
+     "family": 0.06,
+     "workInjury": 0.04,
+     "sickness": 0.065,
+     "pension": 0.065
+    }
+   },
+   "applies": "Salaried workers; the self-employed regime is not stated on this page.",
+   "sources": [
+    {
+     "src": 0,
+     "said": "Le plafond est de 2 500 000 GNF Le plancher est de 550 000 GNF Le taux des cotisations sociales Il représente 23% du salaire soumis à cotisation. Ce taux de financement est reparti ainsi qu’il suit : Employeur 18% Salarié 5% … Prestations familiales 6% Accident du travail et Maladies professionnelles 4% Assurance maladies 6,5% Retraite Vieillesse Invalidité Décès 6,5% … Le versement des cotisations se fait dans les quinze (15) premiers jours qui suivent le mois ou le trimestre échu"
+    }
+   ]
+  }
+ ],
+ "country": "GN",
+ "sources": [
+  {
+   "url": "https://cnss.gov.gn/cotisations-sociales-employeurs/",
+   "title": "Cotisations sociales employeurs (Caisse Nationale de Sécurité Sociale de Guinée)",
+   "read": "2026-11-01",
+   "kind": "primary",
+   "said": "Le plafond est de 2 500 000 GNF Le plancher est de 550 000 GNF Le taux des cotisations sociales Il représente 23% du salaire soumis à cotisation. Ce taux de financement est reparti ainsi qu’il suit : Employeur 18% Salarié 5% … Prestations familiales 6% Accident du travail et Maladies professionnelles 4% Assurance maladies 6,5% Retraite Vieillesse Invalidité Décès 6,5% … Le versement des cotisations se fait dans les quinze (15) premiers jours qui suivent le mois ou le trimestre échu"
+  }
+ ],
+ "blockers": [
+  {
+   "item": "residents",
+   "sought": "Personal income tax brackets, allowance and regional layer for 2026",
+   "tried": {
+    "institution": "dni.gov.gn and impots.gov.gn unreachable (connection failed, 2026-11-01); mef.gov.gn reached: its finance-law page offers only the 2022 finance law; mbudget.gov.gn returns 403 || 2026-11-01 retry: dni.gov.gn and impots.gov.gn still fail (connection, 2026-11-01); mef.gov.gn read again by its own site search ('code general des impots') and media library ('finances 2026'): only 2022 news of the new CGI's roll-out, no text or rates; mbudget.gov.gn 403",
+    "official-register": "Journal officiel de Guinée and the CGI not found online from here || 2026-11-01 retry: sgg.gov.gn (Secrétariat général du Gouvernement) laws list read, pages 1 to 3: no finance law or CGI posted; journal-officiel.sgg.gov.gn answers 403 'Page non trouvée'",
+    "web-search": "not run: the session's shared web-search budget was used up on 2026-11-01 before this country || 2026-11-01 retry: not run: the tool refused searches this turn, the shared limit of 200 having been reached (2026-11-01); the lead's word that search worked again came after the limit was spent",
+    "trade-press": "no firm summary (PwC, Deloitte 2026) exists for this country (Deloitte URL returns 404) || 2026-11-01 retry: No PwC or Deloitte summary exists for Guinea; none read",
+    "archive": "web.archive.org resets the connection from this environment (2026-11-01) || 2026-11-01 retry: archive.org availability API answers, but web.archive.org is refused from this environment (http 'Blocked by egress policy', https connection fails), not read (2026-11-01)"
+   }
+  },
+  {
+   "item": "year",
+   "sought": "Tax year and return due date",
+   "tried": {
+    "institution": "dni.gov.gn and impots.gov.gn unreachable (connection failed, 2026-11-01); mef.gov.gn reached: its finance-law page offers only the 2022 finance law; mbudget.gov.gn returns 403 || 2026-11-01 retry: dni.gov.gn and impots.gov.gn still fail (connection, 2026-11-01); mef.gov.gn read again by its own site search ('code general des impots') and media library ('finances 2026'): only 2022 news of the new CGI's roll-out, no text or rates; mbudget.gov.gn 403",
+    "official-register": "Journal officiel de Guinée and the CGI not found online from here || 2026-11-01 retry: sgg.gov.gn (Secrétariat général du Gouvernement) laws list read, pages 1 to 3: no finance law or CGI posted; journal-officiel.sgg.gov.gn answers 403 'Page non trouvée'",
+    "web-search": "not run: the session's shared web-search budget was used up on 2026-11-01 before this country || 2026-11-01 retry: not run: the tool refused searches this turn, the shared limit of 200 having been reached (2026-11-01); the lead's word that search worked again came after the limit was spent",
+    "trade-press": "no firm summary (PwC, Deloitte 2026) exists for this country (Deloitte URL returns 404) || 2026-11-01 retry: No PwC or Deloitte summary exists for Guinea; none read",
+    "archive": "web.archive.org resets the connection from this environment (2026-11-01) || 2026-11-01 retry: archive.org availability API answers, but web.archive.org is refused from this environment (http 'Blocked by egress policy', https connection fails), not read (2026-11-01)"
+   }
+  },
+  {
+   "item": "withholding",
+   "sought": "Withholding from pay and from a freelancer's fee",
+   "tried": {
+    "institution": "dni.gov.gn and impots.gov.gn unreachable (connection failed, 2026-11-01); mef.gov.gn reached: its finance-law page offers only the 2022 finance law; mbudget.gov.gn returns 403 || 2026-11-01 retry: dni.gov.gn and impots.gov.gn still fail (connection, 2026-11-01); mef.gov.gn read again by its own site search ('code general des impots') and media library ('finances 2026'): only 2022 news of the new CGI's roll-out, no text or rates; mbudget.gov.gn 403",
+    "official-register": "Journal officiel de Guinée and the CGI not found online from here || 2026-11-01 retry: sgg.gov.gn (Secrétariat général du Gouvernement) laws list read, pages 1 to 3: no finance law or CGI posted; journal-officiel.sgg.gov.gn answers 403 'Page non trouvée'",
+    "web-search": "not run: the session's shared web-search budget was used up on 2026-11-01 before this country || 2026-11-01 retry: not run: the tool refused searches this turn, the shared limit of 200 having been reached (2026-11-01); the lead's word that search worked again came after the limit was spent",
+    "trade-press": "no firm summary (PwC, Deloitte 2026) exists for this country (Deloitte URL returns 404) || 2026-11-01 retry: No PwC or Deloitte summary exists for Guinea; none read",
+    "archive": "web.archive.org resets the connection from this environment (2026-11-01) || 2026-11-01 retry: archive.org availability API answers, but web.archive.org is refused from this environment (http 'Blocked by egress policy', https connection fails), not read (2026-11-01)"
+   }
+  },
+  {
+   "item": "nonResident",
+   "sought": "Tax and withholding on a non-resident performer's, writer's or director's fee, and whether final",
+   "tried": {
+    "institution": "dni.gov.gn and impots.gov.gn unreachable (connection failed, 2026-11-01); mef.gov.gn reached: its finance-law page offers only the 2022 finance law; mbudget.gov.gn returns 403 || 2026-11-01 retry: dni.gov.gn and impots.gov.gn still fail (connection, 2026-11-01); mef.gov.gn read again by its own site search ('code general des impots') and media library ('finances 2026'): only 2022 news of the new CGI's roll-out, no text or rates; mbudget.gov.gn 403",
+    "official-register": "Journal officiel de Guinée and the CGI not found online from here || 2026-11-01 retry: sgg.gov.gn (Secrétariat général du Gouvernement) laws list read, pages 1 to 3: no finance law or CGI posted; journal-officiel.sgg.gov.gn answers 403 'Page non trouvée'",
+    "web-search": "not run: the session's shared web-search budget was used up on 2026-11-01 before this country || 2026-11-01 retry: not run: the tool refused searches this turn, the shared limit of 200 having been reached (2026-11-01); the lead's word that search worked again came after the limit was spent",
+    "trade-press": "no firm summary (PwC, Deloitte 2026) exists for this country (Deloitte URL returns 404) || 2026-11-01 retry: No PwC or Deloitte summary exists for Guinea; none read",
+    "archive": "web.archive.org resets the connection from this environment (2026-11-01) || 2026-11-01 retry: archive.org availability API answers, but web.archive.org is refused from this environment (http 'Blocked by egress policy', https connection fails), not read (2026-11-01)"
+   }
+  },
+  {
+   "item": "authors",
+   "sought": "Special treatment of authors' royalties",
+   "tried": {
+    "institution": "dni.gov.gn and impots.gov.gn unreachable (connection failed, 2026-11-01); mef.gov.gn reached: its finance-law page offers only the 2022 finance law; mbudget.gov.gn returns 403 || 2026-11-01 retry: dni.gov.gn and impots.gov.gn still fail (connection, 2026-11-01); mef.gov.gn read again by its own site search ('code general des impots') and media library ('finances 2026'): only 2022 news of the new CGI's roll-out, no text or rates; mbudget.gov.gn 403",
+    "official-register": "Journal officiel de Guinée and the CGI not found online from here || 2026-11-01 retry: sgg.gov.gn (Secrétariat général du Gouvernement) laws list read, pages 1 to 3: no finance law or CGI posted; journal-officiel.sgg.gov.gn answers 403 'Page non trouvée'",
+    "web-search": "not run: the session's shared web-search budget was used up on 2026-11-01 before this country || 2026-11-01 retry: not run: the tool refused searches this turn, the shared limit of 200 having been reached (2026-11-01); the lead's word that search worked again came after the limit was spent",
+    "trade-press": "no firm summary (PwC, Deloitte 2026) exists for this country (Deloitte URL returns 404) || 2026-11-01 retry: No PwC or Deloitte summary exists for Guinea; none read",
+    "archive": "web.archive.org resets the connection from this environment (2026-11-01) || 2026-11-01 retry: archive.org availability API answers, but web.archive.org is refused from this environment (http 'Blocked by egress policy', https connection fails), not read (2026-11-01)"
+   }
+  },
+  {
+   "item": "vat",
+   "sought": "VAT/GST rate and registration threshold",
+   "tried": {
+    "institution": "dni.gov.gn and impots.gov.gn unreachable (connection failed, 2026-11-01); mef.gov.gn reached: its finance-law page offers only the 2022 finance law; mbudget.gov.gn returns 403 || 2026-11-01 retry: dni.gov.gn and impots.gov.gn still fail (connection, 2026-11-01); mef.gov.gn read again by its own site search ('code general des impots') and media library ('finances 2026'): only 2022 news of the new CGI's roll-out, no text or rates; mbudget.gov.gn 403",
+    "official-register": "Journal officiel de Guinée and the CGI not found online from here || 2026-11-01 retry: sgg.gov.gn (Secrétariat général du Gouvernement) laws list read, pages 1 to 3: no finance law or CGI posted; journal-officiel.sgg.gov.gn answers 403 'Page non trouvée'",
+    "web-search": "not run: the session's shared web-search budget was used up on 2026-11-01 before this country || 2026-11-01 retry: not run: the tool refused searches this turn, the shared limit of 200 having been reached (2026-11-01); the lead's word that search worked again came after the limit was spent",
+    "trade-press": "no firm summary (PwC, Deloitte 2026) exists for this country (Deloitte URL returns 404) || 2026-11-01 retry: No PwC or Deloitte summary exists for Guinea; none read",
+    "archive": "web.archive.org resets the connection from this environment (2026-11-01) || 2026-11-01 retry: archive.org availability API answers, but web.archive.org is refused from this environment (http 'Blocked by egress policy', https connection fails), not read (2026-11-01)"
+   }
+  }
+ ]
+}

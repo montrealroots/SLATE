@@ -1,0 +1,320 @@
+{
+ "topic": "tax.GR",
+ "read": "2026-11-01",
+ "note": "Read 2026-11-01 at the owner's word (\"Build those first 3 starting with ledger first\"; of the 21 countries read first: \"It should cover across every country\"; \"Retry the blocked tax facts once all countries land\"): the tax on a screen worker's pay in Greece: a resident's income tax, social contributions, what is withheld at source, a non-resident artiste's withholding, an author's treatment, VAT and the tax year. Research and retry subagents (workbench/briefs/BRIEF-tax.md, BRIEF-tax-retry.md), every quote checked by the lead against its saved page.",
+ "figures": [
+  {
+   "item": "residents",
+   "finding": "From the 2026 tax year, salaries, pensions and business profits are taxed on one scale: 9% to EUR 10,000, 20% to 20,000, 26% to 30,000, 34% to 40,000, 39% to 60,000 and 44% above, with lower rates for taxpayers with children and those under 30; the tax is then reduced by EUR 777 (no children), tapering by EUR 20 per 1,000 of pay above 12,000.",
+   "value": {
+    "currency": "EUR",
+    "brackets": [
+     {
+      "from": 0,
+      "to": 10000,
+      "rate": 0.09
+     },
+     {
+      "from": 10000,
+      "to": 20000,
+      "rate": 0.2
+     },
+     {
+      "from": 20000,
+      "to": 30000,
+      "rate": 0.26
+     },
+     {
+      "from": 30000,
+      "to": 40000,
+      "rate": 0.34
+     },
+     {
+      "from": 40000,
+      "to": 60000,
+      "rate": 0.39
+     },
+     {
+      "from": 60000,
+      "to": null,
+      "rate": 0.44
+     }
+    ],
+    "taxReduction": {
+     "noChildren": 777,
+     "oneChild": 900,
+     "twoChildren": 1120,
+     "taperAbove": 12000,
+     "taperPer1000": 20
+    },
+    "under25FirstTwoBands": 0,
+    "age26to30FirstTwoBands": 0.09,
+    "regional": null
+   },
+   "applies": "Income from 1 January 2026 (Law 5246/2025, FEK A' 198/11.11.2025, art. 3, replacing ITC art. 15(1)); tax reduction ITC art. 16.",
+   "sources": [
+    {
+     "src": 0,
+     "said": "Εισόδημα (Μισθοί, συντάξεις, επιχειρηματική δραστηριότητα) σε ευρώ Φορολογικός Συντελεστής (%) 0-10.000 9% 10.000,01 - 20.000 20% 20.000,01 - 30.000 26% 30.000,01 - 40.000 34% 40.000,01 - 60.000 39% >60.000 44%"
+    },
+    {
+     "src": 0,
+     "said": "εα) μηδέν (0) για φορολογούμενους έως είκοσι πέντε (25) ετών και εβ) εννέα τοις εκατό (9%) για φορολογούμενους από είκοσι έξι (26) έως τριάντα (30) ετών,"
+    },
+    {
+     "src": 1,
+     "said": "Ο φόρος που προκύπτει κατά την εφαρμογή του άρθρου 15 μειώνεται κατά το ποσό των επτακοσίων εβδομήντα επτά (777) ευρώ για τον φορολογούμενο χωρίς εξαρτώμενα τέκνα,"
+    },
+    {
+     "src": 1,
+     "said": "το ποσό της μείωσης μειώνεται κατά είκοσι (20) ευρώ ανά χίλια (1.000) ευρώ του φορολογητέου εισοδήματος από μισθούς και συντάξεις"
+    }
+   ]
+  },
+  {
+   "item": "year",
+   "finding": "The tax year is the calendar year; returns are filed electronically between 15 March and 15 July of the following year.",
+   "value": {
+    "start": "01-01",
+    "end": "12-31",
+    "returnWindow": [
+     "03-15",
+     "07-15"
+    ]
+   },
+   "applies": "Individuals.",
+   "sources": [
+    {
+     "src": 2,
+     "said": "No taxable years other than the calendar year are permitted."
+    },
+    {
+     "src": 2,
+     "said": "The submission of the Greek income tax returns takes place from 15 March to 15 July for each tax year."
+    }
+   ]
+  },
+  {
+   "item": "social",
+   "finding": "From 1 January 2025 an employee's social security contributions are 13.37% and the employer's 21.79% (35.16% in all), on pay up to EUR 7,761.94 a month from 1 January 2026.",
+   "value": {
+    "currency": "EUR",
+    "employee": 0.1337,
+    "employer": 0.2179,
+    "monthlyCap": 7761.94,
+    "selfEmployed": "EFKA flat monthly categories (not read)"
+   },
+   "applies": "Employees in the main fund (EFKA). Deloitte's Greece Highlights 2026 prints 13.77% for the employee against the 13.37% quoted here; e-EFKA's own rate page was not found, so the two readings stand.",
+   "sources": [
+    {
+     "src": 3,
+     "said": "As of 1 January 2025, the social security contributions amount to 13.37% at the level of the employee and 21.79% at the level of the employer, i.e. 35.16% in total. The monthly social security contribution cap for the primary social security fund (EFKA) is set at EUR 7,761.94 from 1 January 2026."
+    }
+   ]
+  },
+  {
+   "item": "withholding",
+   "finding": "The employer withholds income tax monthly: the annual tax on 14 times the monthly pay net of social security is computed on the scale and withheld at one-fourteenth a month (and on the bonuses).",
+   "value": {
+    "method": "annualise x14, withhold 1/14 per month"
+   },
+   "applies": "Employees.",
+   "sources": [
+    {
+     "src": 2,
+     "said": "The WHT on salaries, wages, and pensions is calculated on the amount of monthly salary after being reduced by the employee’s share of social security contributions, multiplied by 14"
+    },
+    {
+     "src": 2,
+     "said": "The employer must withhold 1/14 of this amount each month from the employee’s salary."
+    }
+   ]
+  },
+  {
+   "item": "nonResident",
+   "finding": "Royalties paid to a non-resident are withheld at 20% (lower under treaties); no rule specific to a non-resident performer's fee was found.",
+   "value": {
+    "royalties": 0.2
+   },
+   "applies": "Non-residents, ITC art. 64(1)(c).",
+   "sources": [
+    {
+     "src": 4,
+     "said": "γ) για δικαιώματα (royalties) και λοιπές πληρωμές είκοσι τοις εκατό (20%),"
+    },
+    {
+     "src": 5,
+     "said": "Non-resident individuals and companies: Non-treaty 5 15 20"
+    }
+   ]
+  },
+  {
+   "item": "vat",
+   "finding": "VAT's standard rate is 24% (13% and 6% reduced; 30% lower on five islands).",
+   "value": {
+    "standard": 0.24,
+    "reduced": [
+     0.13,
+     0.06
+    ],
+    "islandsReduced": [
+     0.17,
+     0.09,
+     0.04
+    ]
+   },
+   "applies": "2026.",
+   "sources": [
+    {
+     "src": 3,
+     "said": "The VAT rate is 24%. The reduced rate on basic necessities is 13%. A super reduced rate of 6% is also available for certain items."
+    }
+   ]
+  },
+  {
+   "item": "vat",
+   "finding": "A taxable person whose supplies in the previous year were at most EUR 10,000 (net of VAT) may be exempt from filing and paying VAT, invoicing \"without VAT - small-business exemption\" and losing input-VAT deduction; an exempt person may opt into the normal regime.",
+   "value": {
+    "currency": "EUR",
+    "smallBusinessThreshold": 10000,
+    "basis": "previous tax year"
+   },
+   "applies": "Freelancers, 2026, per the VAT Code (Law 2859/2000) art. 39 as consolidated by TaxHeaven; AADE's own pages refuse this environment.",
+   "sources": [
+    {
+     "src": 6,
+     "said": "Δύνανται να απαλλάσσονται από την υποχρέωση υποβολής δήλωσης και καταβολής του φόρου υποκείμενοι, οι οποίοι, κατά το προηγούμενο φορολογικό έτος, πραγματοποίησαν παραδόσεις αγαθών και παροχές υπηρεσιών κατά την έννοια του άρθρου 2, χωρίς το φόρο προστιθέμενης αξίας, αξίας μέχρι δέκα χιλιάδες (10.000) ευρώ. … αναγράφουν σε αυτά την ένδειξη \"χωρίς φόρο προστιθέμενης αξίας-απαλλαγή μικρών επιχειρήσεων\" και δεν δικαιούνται να εκπέσουν το φόρο των εισροών τους."
+    }
+   ]
+  },
+  {
+   "item": "authors",
+   "finding": "Royalties are income from capital, taxed separately at a flat 20%, and are withheld at 20% when paid to a resident individual; whether an author's own royalties instead count as business income on the scale is not settled here.",
+   "value": {
+    "royaltyRate": 0.2,
+    "withholding": 0.2
+   },
+   "applies": "Resident individuals receiving royalties (Income Tax Code, Law 4172/2013, art. 40(3)); see the authors blocker for the business-income question.",
+   "sources": [
+    {
+     "src": 7,
+     "said": "Φορολογικός συντελεστής για το εισόδημα από κεφάλαιο … 3. Τα δικαιώματα φορολογούνται με συντελεστή είκοσι (20%)."
+    },
+    {
+     "src": 8,
+     "said": "Royalties: Royalties paid to individual residents and to nonresidents are subject to a 20% withholding tax"
+    }
+   ]
+  }
+ ],
+ "country": "GR",
+ "sources": [
+  {
+   "url": "https://www.taxheaven.gr/law/5246/2025/arthro/3",
+   "title": "Ν. 5246/2025 Άρθρο 3 (TaxHeaven codification of the law as published in ΦΕΚ Α' 198/11.11.2025)",
+   "read": "2026-11-01",
+   "kind": "secondary",
+   "quotes": "https://www.hellenicparliament.gr/UserFiles/67715b2c-ec81-4f0c-ad6a-476a34d732bd/13367815.pdf",
+   "said": "Εισόδημα (Μισθοί, συντάξεις, επιχειρηματική δραστηριότητα) σε ευρώ Φορολογικός Συντελεστής (%) 0-10.000 9% 10.000,01 - 20.000 20% 20.000,01 - 30.000 26% 30.000,01 - 40.000 34% 40.000,01 - 60.000 39% >60.000 44% … εα) μηδέν (0) για φορολογούμενους έως είκοσι πέντε (25) ετών και εβ) εννέα τοις εκατό (9%) για φορολογούμενους από είκοσι έξι (26) έως τριάντα (30) ετών,"
+  },
+  {
+   "url": "https://www.taxheaven.gr/law/4172/2013/arthro/16",
+   "title": "Ν. 4172/2013 (Κώδικας Φορολογίας Εισοδήματος) Άρθρο 16, Μείωση φόρου εισοδήματος (TaxHeaven codification, ΦΕΚ Α' 167/23.07.2013 as amended)",
+   "read": "2026-11-01",
+   "kind": "secondary",
+   "quotes": "https://www.et.gr/",
+   "said": "Ο φόρος που προκύπτει κατά την εφαρμογή του άρθρου 15 μειώνεται κατά το ποσό των επτακοσίων εβδομήντα επτά (777) ευρώ για τον φορολογούμενο χωρίς εξαρτώμενα τέκνα, … το ποσό της μείωσης μειώνεται κατά είκοσι (20) ευρώ ανά χίλια (1.000) ευρώ του φορολογητέου εισοδήματος από μισθούς και συντάξεις"
+  },
+  {
+   "url": "https://taxsummaries.pwc.com/greece/individual/tax-administration",
+   "title": "PwC Worldwide Tax Summaries: Greece, Individual - Tax administration (reviewed 8 September 2026)",
+   "read": "2026-11-01",
+   "kind": "secondary",
+   "quotes": "https://www.et.gr/",
+   "said": "No taxable years other than the calendar year are permitted. … The submission of the Greek income tax returns takes place from 15 March to 15 July for each tax year. … The WHT on salaries, wages, and pensions is calculated on the amount of monthly salary after being reduced by the employee’s share of social security contributions, multiplied by 14 … The employer must withhold 1/14 of this amount each month from the employee’s salary."
+  },
+  {
+   "url": "https://taxsummaries.pwc.com/greece/individual/other-taxes",
+   "title": "PwC Worldwide Tax Summaries: Greece, Individual - Other taxes (reviewed 8 September 2026)",
+   "read": "2026-11-01",
+   "kind": "secondary",
+   "quotes": "https://www.efka.gov.gr/",
+   "said": "As of 1 January 2025, the social security contributions amount to 13.37% at the level of the employee and 21.79% at the level of the employer, i.e. 35.16% in total. The monthly social security contribution cap for the primary social security fund (EFKA) is set at EUR 7,761.94 from 1 January 2026. … The VAT rate is 24%. The reduced rate on basic necessities is 13%. A super reduced rate of 6% is also available for certain items."
+  },
+  {
+   "url": "https://www.taxheaven.gr/law/4172/2013/arthro/64",
+   "title": "Ν. 4172/2013 Άρθρο 64, Συντελεστές παρακράτησης φόρου (TaxHeaven codification)",
+   "read": "2026-11-01",
+   "kind": "secondary",
+   "quotes": "https://www.et.gr/",
+   "said": "γ) για δικαιώματα (royalties) και λοιπές πληρωμές είκοσι τοις εκατό (20%),"
+  },
+  {
+   "url": "https://taxsummaries.pwc.com/greece/corporate/withholding-taxes",
+   "title": "PwC Worldwide Tax Summaries: Greece, Corporate - Withholding taxes (reviewed 8 September 2026)",
+   "read": "2026-11-01",
+   "kind": "secondary",
+   "quotes": "https://www.et.gr/",
+   "said": "Non-resident individuals and companies: Non-treaty 5 15 20"
+  },
+  {
+   "url": "https://www.taxheaven.gr/law/2859/2000/arthro/39",
+   "title": "Κώδικας ΦΠΑ (ν. 2859/2000), άρθρο 39 (TaxHeaven consolidation)",
+   "read": "2026-11-01",
+   "kind": "secondary",
+   "quotes": "https://www.aade.gr/",
+   "said": "Δύνανται να απαλλάσσονται από την υποχρέωση υποβολής δήλωσης και καταβολής του φόρου υποκείμενοι, οι οποίοι, κατά το προηγούμενο φορολογικό έτος, πραγματοποίησαν παραδόσεις αγαθών και παροχές υπηρεσιών κατά την έννοια του άρθρου 2, χωρίς το φόρο προστιθέμενης αξίας, αξίας μέχρι δέκα χιλιάδες (10.000) ευρώ. … αναγράφουν σε αυτά την ένδειξη \"χωρίς φόρο προστιθέμενης αξίας-απαλλαγή μικρών επιχειρήσεων\" και δεν δικαιούνται να εκπέσουν το φόρο των εισροών τους."
+  },
+  {
+   "url": "https://www.taxheaven.gr/law/4172/2013/arthro/40",
+   "title": "Κώδικας Φορολογίας Εισοδήματος (ν. 4172/2013), άρθρο 40 (TaxHeaven consolidation)",
+   "read": "2026-11-01",
+   "kind": "secondary",
+   "quotes": "https://www.aade.gr/",
+   "said": "Φορολογικός συντελεστής για το εισόδημα από κεφάλαιο … 3. Τα δικαιώματα φορολογούνται με συντελεστή είκοσι (20%)."
+  },
+  {
+   "url": "https://www.deloitte.com/content/dam/assets-shared/docs/services/tax/2026/dttl-tax-greecehighlights-2026.pdf",
+   "title": "Greece Highlights 2026 (Deloitte), on the Income Tax Code (Law 4172/2013)",
+   "read": "2026-11-01",
+   "kind": "secondary",
+   "quotes": "https://www.aade.gr/",
+   "said": "Royalties: Royalties paid to individual residents and to nonresidents are subject to a 20% withholding tax"
+  }
+ ],
+ "blockers": [
+  {
+   "item": "nonResident",
+   "sought": "The tax on a non-resident performer's, writer's or director's fee for work in Greece, its rate and whether final",
+   "tried": {
+    "institution": "aade.gr and hellenicparliament.gr return HTTP 403 to curl (2026-11-01); not read another way || 2026-11-01 retry: aade.gr still returns HTTP 403 to curl.",
+    "official-register": "ITC arts 62 and 64 on TaxHeaven read: no artiste rule found || 2026-11-01 retry: TaxHeaven ITC art. 40 read: capital-income rates only; no artiste article found.",
+    "web-search": "not run separately || 2026-11-01 retry: WebSearch refused by the tool on 2026-11-01: the turn's shared 200-search limit was reached before this query; no other search route used.",
+    "trade-press": "PwC Greece withholding: none for artistes || 2026-11-01 retry: Deloitte Greece Highlights 2026 read: withholding table covers dividends, interest, royalties; nothing on non-resident performers.",
+    "archive": "web.archive.org resets the connection from this environment (2026-11-01). || 2026-11-01 retry: archive.org/wayback/available lists a 2026-10-17 snapshot of www.aade.gr (none for the e-EFKA circulars list); web.archive.org itself resets https and returns 403 on http from this environment (2026-11-01), so it was not read."
+   }
+  },
+  {
+   "item": "authors",
+   "sought": "Whether a resident author's, screenwriter's or director's royalties from their own work are business income (on the scale) rather than capital income at 20%.",
+   "tried": {
+    "institution": "aade.gr and hellenicparliament.gr return HTTP 403 to curl (2026-11-01); not read another way || 2026-11-01 retry: aade.gr still returns HTTP 403 to curl; not read another way.",
+    "official-register": "not found in ITC arts 15, 16, 64 || 2026-11-01 retry: ITC (ν. 4172/2013) art. 40 read on TaxHeaven (saved GR-taxheaven-4172-40.html, quoted): royalties 20%; art. 12 fetched (no royalty text, discarded); art. 21 (business income) not read.",
+    "web-search": "not run || 2026-11-01 retry: WebSearch refused by the tool on 2026-11-01: the turn's shared 200-search limit was reached before this query; no other search route used.",
+    "trade-press": "none || 2026-11-01 retry: Deloitte Greece Highlights 2026 read (saved GR-deloitte-2026.pdf): royalties taxed at 20% and withheld at 20% for residents; no author rule.",
+    "archive": "web.archive.org resets the connection from this environment (2026-11-01). || 2026-11-01 retry: archive.org/wayback/available lists a 2026-10-17 snapshot of www.aade.gr (none for the e-EFKA circulars list); web.archive.org itself resets https and returns 403 on http from this environment (2026-11-01), so it was not read."
+   }
+  },
+  {
+   "item": "social",
+   "sought": "The self-employed (freelancer) EFKA contribution categories for 2026",
+   "tried": {
+    "institution": "efka.gov.gr not read || 2026-11-01 retry: e-efka.gov.gr (efka.gov.gr redirects there) read: \"Εισφορές Μη Μισθωτών – Υποχρεώσεις Ασφάλισης\" page (saved GR-efka-eisfores-mi-misthoton.html) is a portal description linking circulars 03/2020 and 43/2021 and the 2026 notices; no 2026 category amounts in its text; the circulars list loads by script.",
+    "official-register": "not read || 2026-11-01 retry: Law 4670/2020 art. 39 (freelancer categories) not read: hellenicparliament.gr returns 403, TaxHeaven article URL not located without search.",
+    "web-search": "not run || 2026-11-01 retry: WebSearch refused by the tool on 2026-11-01: the turn's shared 200-search limit was reached before this query; no other search route used.",
+    "trade-press": "PwC Greece: not stated || 2026-11-01 retry: Deloitte Greece Highlights 2026 read: employee 13.77% and employer 21.79% only (note: the file's social figure says 13.37% for the employee, from PwC; Deloitte prints 13.77%); nothing on freelancers.",
+    "archive": "web.archive.org resets the connection from this environment (2026-11-01). || 2026-11-01 retry: archive.org/wayback/available lists a 2026-10-17 snapshot of www.aade.gr (none for the e-EFKA circulars list); web.archive.org itself resets https and returns 403 on http from this environment (2026-11-01), so it was not read."
+   }
+  }
+ ]
+}

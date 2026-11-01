@@ -1,0 +1,194 @@
+{
+ "topic": "tax.SH",
+ "read": "2026-11-01",
+ "note": "Read 2026-11-01 at the owner's word (\"Build those first 3 starting with ledger first\"; of the 21 countries read first: \"It should cover across every country\"; \"Retry the blocked tax facts once all countries land\"): the tax on a screen worker's pay in Saint Helena: a resident's income tax, social contributions, what is withheld at source, a non-resident artiste's withholding, an author's treatment, VAT and the tax year. Research and retry subagents (workbench/briefs/BRIEF-tax.md, BRIEF-tax-retry.md), every quote checked by the lead against its saved page.",
+ "figures": [
+  {
+   "item": "residents",
+   "finding": "St Helena levies its own income tax on income earned in St Helena: an individual pays 26% on the first £18,000 of chargeable income and 31% on the rest, after a personal allowance of £7,000 for residents.",
+   "value": {
+    "currency": "GBP",
+    "territoryCurrency": "SHP (at par)",
+    "brackets": [
+     {
+      "from": 0,
+      "to": 18000,
+      "rate": 0.26
+     },
+     {
+      "from": 18000,
+      "to": null,
+      "rate": 0.31
+     }
+    ],
+    "personalAllowance": 7000,
+    "sourceBasis": "St Helena-source only"
+   },
+   "applies": "Current rates on the government page (2026); the allowance is from the April 2024 guide. Covers St Helena; Ascension and Tristan da Cunha have their own laws, not read.",
+   "sources": [
+    {
+     "src": 0,
+     "said": "in the case of a person other than a company — 26% on the first £18,000 of such chargeable income; and 31% on the remainder of such chargeable income;"
+    },
+    {
+     "src": 1,
+     "said": "The amount of the Personal Allowance is £7,000 per annum."
+    },
+    {
+     "src": 1,
+     "said": "From 1st April 2010, St Helena charged income tax only on income earned in St Helena, whether it is earned by a resident or non-resident."
+    }
+   ]
+  },
+  {
+   "item": "year",
+   "finding": "The tax year runs 1 April to 31 March: the self-employed file by 30 June (three months after year end) and pay by 30 September; employees file by 31 July.",
+   "value": {
+    "start": "04-01",
+    "end": "03-31",
+    "returnDue": {
+     "selfEmployed": "06-30",
+     "employees": "07-31"
+    },
+    "paymentDue": "09-30"
+   },
+   "applies": "Tax year 2026/27. Covers St Helena; Ascension and Tristan da Cunha have their own laws, not read.",
+   "sources": [
+    {
+     "src": 0,
+     "said": "30 JUNE – Submission date for Tax Returns & end of year accounts (three months after the end of the Tax Year) 30 SEPTEMBER – Date for payment of income Tax (three months after the submission of the Tax Return)"
+    },
+    {
+     "src": 0,
+     "said": "Key dates for Employees: 31 JULY – Submission of Tax Return"
+    }
+   ]
+  },
+  {
+   "item": "withholding",
+   "finding": "Employers deduct tax under PAYE using tax codes that include the allowance, with a monthly P6 return within 15 days of each month end.",
+   "value": {
+    "employee": "PAYE by tax code",
+    "monthlyReturn": "P6 within 15 days"
+   },
+   "applies": "2026/27.",
+   "sources": [
+    {
+     "src": 1,
+     "said": "Allowances for employees are normally incorporated into the tax code issued by the"
+    },
+    {
+     "src": 0,
+     "said": "Within 15 days of the end of every month – P6 Form (Employer monthly return)"
+    }
+   ]
+  },
+  {
+   "item": "nonResident",
+   "finding": "A non-resident pays St Helena tax on income earned there but gets no personal allowance; a visitor's income is exempt if the visit is no more than 30 days in the tax year, the services are for a non-resident and a non-resident pays.",
+   "value": {
+    "personalAllowance": 0,
+    "shortVisitExemption": {
+     "maxDays": 30,
+     "servicesFor": "non-resident",
+     "paidBy": "non-resident"
+    }
+   },
+   "applies": "2026/27.",
+   "sources": [
+    {
+     "src": 1,
+     "said": "The allowance is available only to residents; non residents will not be entitled to a personal allowance."
+    },
+    {
+     "src": 2,
+     "said": "income derived in St Helena by a non-resident person (other than a body of persons) during a visit to St Helena, if— (i) the visit does not exceed a total period of 30 days in any tax year; (ii) the services are performed for or on behalf of a non-resident; and (iii) the income is paid by a person who is a non-resident;"
+    }
+   ]
+  },
+  {
+   "item": "vat",
+   "finding": "There is no VAT; besides income tax St Helena charges a service tax only on insurance and telecommunications services, so a freelancer's fee bears none.",
+   "value": {
+    "vat": null,
+    "serviceTaxOn": [
+     "insurance",
+     "telecommunications"
+    ]
+   },
+   "applies": "April 2024 guide. Covers St Helena; Ascension and Tristan da Cunha have their own laws, not read.",
+   "sources": [
+    {
+     "src": 1,
+     "said": "Service Tax - tax will be charged on any insurance service or telecommunications service"
+    }
+   ]
+  },
+  {
+   "item": "social",
+   "finding": "St Helena takes no social insurance contribution from pay: its social security benefits (Basic Island Pension, income-related benefits) are charged on the Consolidated Fund, and the Social Security Ordinance levies no contribution.",
+   "value": {
+    "employee": 0,
+    "employer": 0,
+    "selfEmployed": 0
+   },
+   "applies": "2026 on the Ordinance as consolidated on 8 July 2025; an occupational or private pension scheme was not searched for.",
+   "sources": [
+    {
+     "src": 3,
+     "said": "The benefits provided for in this Ordinance are to be charged on the Consolidated Fund."
+    }
+   ]
+  },
+  {
+   "item": "authors",
+   "finding": "The Income Tax Ordinance gives an author's fees or royalties no special treatment: they are income from self-employment, trade or business taxed at the ordinary rates (royalties are property income only for the use of real property), and the exempt-income list has no entry for them.",
+   "value": {
+    "specialRegime": false
+   },
+   "applies": "2026 on the Ordinance as revised to 1 October 2021.",
+   "sources": [
+    {
+     "src": 2,
+     "said": "The property income of a person taxable under this Chapter comprises the person’s income derived from— (a) interest; (b) rent, royalties, premiums and other payments relating to the use of real property (other than Crown land)."
+    },
+    {
+     "src": 2,
+     "said": "The following are exempt from income tax under section 9 of the Ordinance"
+    }
+   ]
+  }
+ ],
+ "country": "SH",
+ "sources": [
+  {
+   "url": "https://www.sainthelena.gov.sh/public-services/income-tax/",
+   "title": "Income Tax (St Helena Government)",
+   "read": "2026-11-01",
+   "kind": "primary",
+   "said": "in the case of a person other than a company — 26% on the first £18,000 of such chargeable income; and 31% on the remainder of such chargeable income; … 30 JUNE – Submission date for Tax Returns & end of year accounts (three months after the end of the Tax Year) 30 SEPTEMBER – Date for payment of income Tax (three months after the submission of the Tax Return) … Key dates for Employees: 31 JULY – Submission of Tax Return … Within 15 days of the end of every month – P6 Form (Employer monthly return)"
+  },
+  {
+   "url": "https://www.sainthelena.gov.sh/documents/Tax-Guide-No.-12-Questions-on-Taxes-Allowances-on-St-Helena",
+   "title": "Tax Guide No. 12, Questions on Taxes & Allowances on St Helena (April 2024)",
+   "read": "2026-11-01",
+   "kind": "primary",
+   "said": "The amount of the Personal Allowance is £7,000 per annum. … From 1st April 2010, St Helena charged income tax only on income earned in St Helena, whether it is earned by a resident or non-resident. … Allowances for employees are normally incorporated into the tax code issued by the … The allowance is available only to residents; non residents will not be entitled to a personal allowance. … Service Tax - tax will be charged on any insurance service or telecommunications service"
+  },
+  {
+   "url": "https://www.sainthelena.gov.sh/documents/Income-Tax-Ord-Updated-011021",
+   "title": "Income Tax Ordinance, 2012 (revised edition authoritative as at 1 October 2021), St Helena Government",
+   "read": "2026-11-01",
+   "kind": "primary",
+   "said": "income derived in St Helena by a non-resident person (other than a body of persons) during a visit to St Helena, if— (i) the visit does not exceed a total period of 30 days in any tax year; (ii) the services are performed for or on behalf of a non-resident; and (iii) the income is paid by a person who is a non-resident; … The property income of a person taxable under this Chapter comprises the person’s income derived from— (a) interest; (b) rent, royalties, premiums and other payments relating to the use of real property (other than Crown land). … The following are exempt from income tax under section 9 of the Ordinance"
+  },
+  {
+   "url": "https://www.sainthelena.gov.sh/documents/20250708_Social-Security-Ordinance_CONSOLIDATED",
+   "title": "Social Security Ordinance, 2010 (consolidated, 8 July 2025), St Helena Government",
+   "read": "2026-11-01",
+   "kind": "primary",
+   "said": "The benefits provided for in this Ordinance are to be charged on the Consolidated Fund."
+  }
+ ],
+ "blockers": []
+}

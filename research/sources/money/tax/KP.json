@@ -1,0 +1,133 @@
+{
+ "topic": "tax.KP",
+ "read": "2026-11-01",
+ "note": "Read 2026-11-01 at the owner's word (\"Build those first 3 starting with ledger first\"; of the 21 countries read first: \"It should cover across every country\"; \"Retry the blocked tax facts once all countries land\"): the tax on a screen worker's pay in North Korea: a resident's income tax, social contributions, what is withheld at source, a non-resident artiste's withholding, an author's treatment, VAT and the tax year. Research and retry subagents (workbench/briefs/BRIEF-tax.md, BRIEF-tax-retry.md), every quote checked by the lead against its saved page.",
+ "figures": [
+  {
+   "item": "residents",
+   "finding": "A citizen of the DPRK pays no income tax: taxes were abolished by the law of 21 March 1974, and the 2019 constitution says so (Article 25); a 2026 revision reportedly deleted the no-tax article, but no tax law for citizens has been found.",
+   "value": {
+    "incomeTax": null,
+    "since": "1974-04-01",
+    "constitution2019Art25": "taxes have been abolished",
+    "revision2026": "no-tax clause reported deleted; no new tax law found"
+   },
+   "applies": "DPRK citizens on state wages.",
+   "sources": [
+    {
+     "src": 0,
+     "said": "The increasing material wealth of society in our country, where taxes have been abolished, is used entirely to promote the well-being of the working people."
+    },
+    {
+     "src": 1,
+     "said": "Tellingly, the claim in Article 22 of the constitution, that the DPRK levies no tax, has been deleted."
+    }
+   ]
+  },
+  {
+   "item": "nonResident",
+   "finding": "A foreign individual earning income in the DPRK pays personal income tax: labour remuneration (art performance, writing, creation work included) at 5-30%, exempt below 1,000 won a month; royalties from licensing literary and artistic works (film and drama included) at 20%; a foreigner staying over a year is taxed on income from abroad too.",
+   "value": {
+    "currency": "KPW",
+    "labourRemuneration": {
+     "exemptBelowMonthly": 1000,
+     "rateRange": [
+      0.05,
+      0.3
+     ],
+     "brackets": "not stated in the regulations"
+    },
+    "royalties": 0.2,
+    "saleOfProperty": 0.25,
+    "worldwideAfterDays": 365
+   },
+   "applies": "Foreign individuals with income in the DPRK (Law on Foreign-Invested Business and Foreign Individual Tax; 2002 implementing regulations; the 2011 law text was not read).",
+   "sources": [
+    {
+     "src": 2,
+     "said": "Any foreign individual who earns income inside the territory of the DPRK shall pay personal income tax. A foreign individual who stays or resides for more than 1 year inside the DPRK shall pay tax also on his income earned outside the DPRK."
+    },
+    {
+     "src": 2,
+     "said": "Labour remuneration comprises wages, bonus, bounty, allowance and incomes from such work as lecture, address, writing, translation, designing, drawing, installation, embroidery, sculpture, painting, creation work, art performance"
+    },
+    {
+     "src": 2,
+     "said": "incomes 93 from the licensing of literature and art works such as novels, poems, painting, music, dance, film and drama."
+    },
+    {
+     "src": 2,
+     "said": "Tax on the income from remuneration shall be exempted if the monthly amount of income is lower than 1,000 won, and tax rate shall be 5-30 per cent of the amount of income if it exceeds 1,000 won,"
+    },
+    {
+     "src": 2,
+     "said": "royalties from intellectual property rights and technical know- how, and from management-related service, the tax rate shall be 20 per cent of the amount of incomes,"
+    }
+   ]
+  },
+  {
+   "item": "withholding",
+   "finding": "A foreigner's tax on labour remuneration is computed monthly and paid by the withholding body within 5 days of payment, or by the taxpayer within 10 days.",
+   "value": {
+    "byWithholder": "within 5 days of payment",
+    "bySelf": "within 10 days"
+   },
+   "applies": "Foreign individuals in the DPRK.",
+   "sources": [
+    {
+     "src": 2,
+     "said": "Personal income tax on labour remuneration shall either be calculated each month and paid within 5 days after the pay of remuneration by the withholding organ, or be directly paid by the tax payer within 10 days after the day of remuneration,"
+    }
+   ]
+  }
+ ],
+ "country": "KP",
+ "sources": [
+  {
+   "url": "https://manoa.hawaii.edu/koreanstudies/wp-content/uploads/2024/10/DPRK-Constitution-2019-EN.pdf",
+   "title": "Socialist Constitution of the DPRK as amended 2019, English text (University of Hawaii Center for Korean Studies copy)",
+   "read": "2026-11-01",
+   "kind": "primary",
+   "said": "The increasing material wealth of society in our country, where taxes have been abolished, is used entirely to promote the well-being of the working people."
+  },
+  {
+   "url": "https://www.koreajoongangdaily.com/opinion/is-north-korea-becoming-less-strange/12533940",
+   "title": "Is North Korea becoming less strange? (Korea JoongAng Daily, opinion), quoting the revised Constitution of the DPRK (2026), text not found online (naenara.com.kp, the DPRK portal, did not answer this environment)",
+   "read": "2026-11-01",
+   "kind": "secondary",
+   "quotes": "http://www.naenara.com.kp/",
+   "said": "Tellingly, the claim in Article 22 of the constitution, that the DPRK levies no tax, has been deleted."
+  },
+  {
+   "url": "https://www.wipo.int/wipolex/en/text/492182",
+   "title": "Regulations for the Implementation of the Law on Foreign-Invested Business and Foreign Individual Tax, Cabinet Decision No. 39 of 14 June 2002 (WIPO Lex, KP015)",
+   "read": "2026-11-01",
+   "kind": "primary",
+   "said": "Any foreign individual who earns income inside the territory of the DPRK shall pay personal income tax. A foreign individual who stays or resides for more than 1 year inside the DPRK shall pay tax also on his income earned outside the DPRK. … Labour remuneration comprises wages, bonus, bounty, allowance and incomes from such work as lecture, address, writing, translation, designing, drawing, installation, embroidery, sculpture, painting, creation work, art performance … incomes 93 from the licensing of literature and art works such as novels, poems, painting, music, dance, film and drama. … Tax on the income from remuneration shall be exempted if the monthly amount of income is lower than 1,000 won, and tax rate shall be 5-30 per cent of the amount of income if it exceeds 1,000 won, … royalties from intellectual property rights and technical know- how, and from management-related service, the tax rate shall be 20 per cent of the amount of incomes, … Personal income tax on labour remuneration shall either be calculated each month and paid within 5 days after the pay of remuneration by the withholding organ, or be directly paid by the tax payer within 10 days after the day of remuneration,"
+  }
+ ],
+ "blockers": [
+  {
+   "item": "residents",
+   "sought": "The 1974 law \"On Abolishing the Tax System\" and the 2026 revised constitution in their own text",
+   "tried": {
+    "institution": "naenara.com.kp HTTP 503 and kcna.kp unreachable (curl 000) 2026-11-01 || 2026-11-01 retry: naenara.com.kp and kcna.kp: not reachable again this turn",
+    "official-register": "WIPO Lex holds the foreign-individual tax regulations only; constituteproject.org 404 for the 2019 text || 2026-11-01 retry: WIPO Lex foreign-individual tax regulations (2002) remain the only text found; no other legal register reachable",
+    "web-search": "WebSearch 'North Korea law abolition of tax system 1974 ...' and 'DPRK Socialist Constitution text article 25 ...' || 2026-11-01 retry: WebSearch refused by the tool: this turn's shared limit of 200 searches was used up by the agents (2026-11-01)",
+    "trade-press": "nkeconwatch.com (reprinting KCNA) HTTP 403; Korea JoongAng Daily read (secondary) || 2026-11-01 retry: none found this turn",
+    "archive": "web.archive.org not reachable (curl 000) 2026-11-01 || 2026-11-01 retry: web.archive.org resets the connection from this environment (2026-11-01)"
+   }
+  },
+  {
+   "item": "nonResident",
+   "sought": "The bracket schedule inside the 5-30% range, and the 2011 Foreign Country Investment Enterprises and Foreigner Taxation Law text",
+   "tried": {
+    "institution": "naenara/kcna unreachable || 2026-11-01 retry: naenara.com.kp and kcna.kp: not reachable again this turn",
+    "official-register": "WIPO Lex 492182 read (2002 regulations); lawandnorthkorea.com 2011 law page HTTP 404 || 2026-11-01 retry: WIPO Lex foreign-individual tax regulations (2002) remain the only text found; no other legal register reachable",
+    "web-search": "WebSearch 'DPRK Law on Taxation of Foreign-invested Enterprises and Foreigners individual income tax rate' || 2026-11-01 retry: WebSearch refused by the tool: this turn's shared limit of 200 searches was used up by the agents (2026-11-01)",
+    "trade-press": "none with brackets found || 2026-11-01 retry: none found this turn",
+    "archive": "web.archive.org not reachable (curl 000) || 2026-11-01 retry: web.archive.org resets the connection from this environment (2026-11-01)"
+   }
+  }
+ ]
+}

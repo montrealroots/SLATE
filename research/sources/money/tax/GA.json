@@ -1,0 +1,250 @@
+{
+ "topic": "tax.GA",
+ "read": "2026-11-01",
+ "note": "Read 2026-11-01 at the owner's word (\"Build those first 3 starting with ledger first\"; of the 21 countries read first: \"It should cover across every country\"; \"Retry the blocked tax facts once all countries land\"): the tax on a screen worker's pay in Gabon: a resident's income tax, social contributions, what is withheld at source, a non-resident artiste's withholding, an author's treatment, VAT and the tax year. Research and retry subagents (workbench/briefs/BRIEF-tax.md, BRIEF-tax-retry.md), every quote checked by the lead against its saved page.",
+ "figures": [
+  {
+   "item": "residents",
+   "finding": "A resident pays IRPP under a family quotient: annual taxable pay less a 20% allowance is divided by family shares (Q), taxed at 0% to XAF 1,500,000 and then 5% to 35% (above 11 million) by the bracket formulas, times the shares; plus the complementary salary tax (TCTS) of 5% on pay above XAF 150,000 a month.",
+   "value": {
+    "currency": "XAF",
+    "allowance": 0.2,
+    "quotientFormula": "Q = (12 x monthly gross - 20% allowance) / shares",
+    "bracketsPerShare": [
+     {
+      "from": 0,
+      "to": 1500000,
+      "rate": 0,
+      "less": 0
+     },
+     {
+      "from": 1500000,
+      "to": 1920000,
+      "rate": 0.05,
+      "less": 75000
+     },
+     {
+      "from": 1920000,
+      "to": 2700000,
+      "rate": 0.1,
+      "less": 171000
+     },
+     {
+      "from": 2700000,
+      "to": 3600000,
+      "rate": 0.15,
+      "less": 306000
+     },
+     {
+      "from": 3600000,
+      "to": 5160000,
+      "rate": 0.2,
+      "less": 486000
+     },
+     {
+      "from": 5160000,
+      "to": 7500000,
+      "rate": 0.25,
+      "less": 744000
+     },
+     {
+      "from": 7500000,
+      "to": 11000000,
+      "rate": 0.3,
+      "less": 1119000
+     },
+     {
+      "from": 11000000,
+      "to": null,
+      "rate": 0.35,
+      "less": 1669000
+     }
+    ],
+    "shares": {
+     "single": 1,
+     "marriedNoChild": 2,
+     "eachExtraChild": 0.5,
+     "maxChildren": 6
+    },
+    "tcts": {
+     "rate": 0.05,
+     "exemptMonthly": 150000
+    },
+    "regionalLayer": null
+   },
+   "applies": "Persons taxable in Gabon, calendar year 2026.",
+   "sources": [
+    {
+     "src": 0,
+     "said": "Q = [(S x 12) - A] / P (as Q is annual) P = Family quotient (number of shares). S = Monthly taxable gross income. A = 20% allowance."
+    },
+    {
+     "src": 0,
+     "said": "0 1,500,000 0 1,500,001 1,920,000 5% x Q - 75,000 1,920,001 2,700,000 10% x Q - 171,000 2,700,001 3,600,000 15% x Q - 306,000 3,600,001 5,160,000 20% x Q - 486,000 5,160,001 7,500,000 25% x Q - 744,000 7,500,001 11,000,000 30% x Q - 1,119,000 11,000,001 and above 35% x Q - 1,669,000"
+    },
+    {
+     "src": 0,
+     "said": "The TCTS rate is 5% of the salary, indemnities, and emoluments paid to the taxpayer. The part of the revenue up to XAF 150,000 per month is exempted from the TCTS."
+    }
+   ]
+  },
+  {
+   "item": "year",
+   "finding": "The tax year is the calendar year; the individual return is due before 1 March 2027.",
+   "value": {
+    "taxYear": {
+     "from": "2026-01-01",
+     "to": "2026-12-31"
+    },
+    "returnDue": "before 2027-03-01",
+    "currency": "XAF"
+   },
+   "applies": "Gabon.",
+   "sources": [
+    {
+     "src": 1,
+     "said": "The tax year is the calendar year in Gabon."
+    },
+    {
+     "src": 1,
+     "said": "The counterfoil of the individual forms is given to the employees for their personal tax return, which must be filed before 1 March of each year."
+    }
+   ]
+  },
+  {
+   "item": "withholding",
+   "finding": "The employer withholds IRPP and TCTS monthly and pays them to the Treasury before the 15th of the following month.",
+   "value": {
+    "scheme": "monthly employer withholding",
+    "remitBy": "15th of the following month"
+   },
+   "applies": "Employees in Gabon.",
+   "sources": [
+    {
+     "src": 1,
+     "said": "The IRPP and the TCTS are withheld monthly by the employer and paid over (before the 15th day of the following month) to the Public Treasury."
+    }
+   ]
+  },
+  {
+   "item": "social",
+   "finding": "The employee pays 2.5% CNSS and 2% CNAMGS health; the employer 20.1% (family 8%, retirement 5%, injury 3%, health 4.1%); the base is capped at XAF 1.5 million a month.",
+   "value": {
+    "currency": "XAF",
+    "employee": {
+     "cnss": 0.025,
+     "cnamgs": 0.02
+    },
+    "employerTotal": 0.201,
+    "ceilingMonthly": 1500000,
+    "ceilingAnnual": 18000000
+   },
+   "applies": "Employees in Gabon.",
+   "sources": [
+    {
+     "src": 2,
+     "said": "However, there is an annual ceiling of XAF 18 million (or XAF 1.5 million per month)."
+    },
+    {
+     "src": 2,
+     "said": "The employees pay 2.5% for the CNSS and 2% for the National Disease Insurance and Social Guarantee Fund (CNAMGS). The other social security contributions represent 20.1% of the taxable salary."
+    }
+   ]
+  },
+  {
+   "item": "nonResident",
+   "finding": "A fee paid from Gabon to a person without a permanent base there, for an independent profession practised or services used in Gabon, bears a 25% withholding, as do copyright payments.",
+   "value": {
+    "rate": 0.25,
+    "base": "independent professions, services rendered or used in Gabon, copyrights"
+   },
+   "applies": "Non-residents without a permanent professional base in Gabon.",
+   "sources": [
+    {
+     "src": 3,
+     "said": "All amounts paid pursuant to the practice of an 'independent profession' in Gabon. Payments received by inventors, payments relating to copyrights, and all payments relating to intellectual and commercial property as well as assimilated rights. All amounts paid for services materially rendered or effectively used in Gabon."
+    }
+   ]
+  },
+  {
+   "item": "vat",
+   "finding": "A freelancer becomes liable to VAT once turnover reaches XAF 60 million; the standard rate is 18%.",
+   "value": {
+    "currency": "XAF",
+    "threshold": 60000000,
+    "standardRate": 0.18,
+    "reduced": [
+     0.1,
+     0.05
+    ]
+   },
+   "applies": "Gabon.",
+   "sources": [
+    {
+     "src": 4,
+     "said": "The aforesaid persons, subject to CIT or personal income tax (PIT), being registered or not, are liable to VAT should their turnover out of taxes reach XAF 60 million."
+    },
+    {
+     "src": 2,
+     "said": "The standard VAT rate in Gabon is 18%, which applies to all transactions unless otherwise provided for by the law."
+    }
+   ]
+  }
+ ],
+ "country": "GA",
+ "sources": [
+  {
+   "url": "https://taxsummaries.pwc.com/gabon/individual/taxes-on-personal-income",
+   "title": "Gabon – individual/taxes-on-personal-income (PwC Worldwide Tax Summaries, last reviewed 6 August 2026)",
+   "read": "2026-11-01",
+   "kind": "secondary",
+   "quotes": "https://www.dgi.ga",
+   "said": "Q = [(S x 12) - A] / P (as Q is annual) P = Family quotient (number of shares). S = Monthly taxable gross income. A = 20% allowance. … 0 1,500,000 0 1,500,001 1,920,000 5% x Q - 75,000 1,920,001 2,700,000 10% x Q - 171,000 2,700,001 3,600,000 15% x Q - 306,000 3,600,001 5,160,000 20% x Q - 486,000 5,160,001 7,500,000 25% x Q - 744,000 7,500,001 11,000,000 30% x Q - 1,119,000 11,000,001 and above 35% x Q - 1,669,000 … The TCTS rate is 5% of the salary, indemnities, and emoluments paid to the taxpayer. The part of the revenue up to XAF 150,000 per month is exempted from the TCTS."
+  },
+  {
+   "url": "https://taxsummaries.pwc.com/gabon/individual/tax-administration",
+   "title": "Gabon – individual/tax-administration (PwC Worldwide Tax Summaries, last reviewed 6 August 2026)",
+   "read": "2026-11-01",
+   "kind": "secondary",
+   "quotes": "https://www.dgi.ga",
+   "said": "The tax year is the calendar year in Gabon. … The counterfoil of the individual forms is given to the employees for their personal tax return, which must be filed before 1 March of each year. … The IRPP and the TCTS are withheld monthly by the employer and paid over (before the 15th day of the following month) to the Public Treasury."
+  },
+  {
+   "url": "https://taxsummaries.pwc.com/gabon/individual/other-taxes",
+   "title": "Gabon – individual/other-taxes (PwC Worldwide Tax Summaries, last reviewed 6 August 2026)",
+   "read": "2026-11-01",
+   "kind": "secondary",
+   "quotes": "https://www.dgi.ga",
+   "said": "However, there is an annual ceiling of XAF 18 million (or XAF 1.5 million per month). … The employees pay 2.5% for the CNSS and 2% for the National Disease Insurance and Social Guarantee Fund (CNAMGS). The other social security contributions represent 20.1% of the taxable salary. … The standard VAT rate in Gabon is 18%, which applies to all transactions unless otherwise provided for by the law."
+  },
+  {
+   "url": "https://taxsummaries.pwc.com/gabon/corporate/withholding-taxes",
+   "title": "Gabon – corporate/withholding-taxes (PwC Worldwide Tax Summaries, last reviewed 6 August 2026)",
+   "read": "2026-11-01",
+   "kind": "secondary",
+   "quotes": "https://www.dgi.ga",
+   "said": "All amounts paid pursuant to the practice of an 'independent profession' in Gabon. Payments received by inventors, payments relating to copyrights, and all payments relating to intellectual and commercial property as well as assimilated rights. All amounts paid for services materially rendered or effectively used in Gabon."
+  },
+  {
+   "url": "https://taxsummaries.pwc.com/gabon/corporate/other-taxes",
+   "title": "Gabon – corporate/other-taxes (PwC Worldwide Tax Summaries, last reviewed 6 August 2026)",
+   "read": "2026-11-01",
+   "kind": "secondary",
+   "quotes": "https://www.dgi.ga",
+   "said": "The aforesaid persons, subject to CIT or personal income tax (PIT), being registered or not, are liable to VAT should their turnover out of taxes reach XAF 60 million."
+  }
+ ],
+ "blockers": [
+  {
+   "item": "residents",
+   "sought": "The CGI articles on IRPP and TCTS in their own text for 2026",
+   "tried": {
+    "institution": "dgi.ga not reachable (curl 000) 2026-11-01 || 2026-11-01 retry: dgi.ga and economie.gouv.ga refused by the egress proxy (curl 000).",
+    "official-register": "Code Général des Impôts 2026 not found on a reachable official host || 2026-11-01 retry: no Journal officiel or CGI 2026 reachable on another official host.",
+    "web-search": "not searched beyond the summary || 2026-11-01 retry: refused: the session's web-search limit (200 calls per turn, shared) was reached before this query ('Gabon CGI 2026 IRPP barème TCTS').",
+    "trade-press": "PwC Gabon summary read (last reviewed 6 August 2026); no Deloitte highlights (404) || 2026-11-01 retry: PwC Gabon (already saved) remains the only summary; no other fetched.",
+    "archive": "web.archive.org not reachable (curl 000) 2026-11-01 || 2026-11-01 retry: web.archive.org connection reset through the proxy (curl 000)."
+   }
+  }
+ ]
+}

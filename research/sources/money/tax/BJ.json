@@ -1,0 +1,224 @@
+{
+ "topic": "tax.BJ",
+ "read": "2026-11-01",
+ "note": "Read 2026-11-01 at the owner's word (\"Build those first 3 starting with ledger first\"; of the 21 countries read first: \"It should cover across every country\"; \"Retry the blocked tax facts once all countries land\"): the tax on a screen worker's pay in Benin: a resident's income tax, social contributions, what is withheld at source, a non-resident artiste's withholding, an author's treatment, VAT and the tax year. Research and retry subagents (workbench/briefs/BRIEF-tax.md, BRIEF-tax-retry.md), every quote checked by the lead against its saved page.",
+ "figures": [
+  {
+   "item": "social",
+   "finding": "CNSS pension takes 3.6% of gross pay from the employee and 6.4% from the employer; the employer also pays 9% family allowances, 1–4% work injury by risk class and a 4% payroll levy (VPS); tax and contributions are declared monthly on one DISA return.",
+   "value": {
+    "employee": {
+     "pension": 0.036
+    },
+    "employer": {
+     "pension": 0.064,
+     "family": 0.09,
+     "workInjury": "0.01-0.04",
+     "vps": 0.04
+    },
+    "filing": "monthly DISA"
+   },
+   "applies": "2025-26.",
+   "sources": [
+    {
+     "src": 0,
+     "said": "CNSS Pension Employee 3.6% of gross CNSS Pension Employer 6.4% of gross Family Allowances (ER) 9% · employer Work-Injury (ER) 1–4% by risk class Employer VPS Levy 4% on payroll"
+    }
+   ]
+  },
+  {
+   "item": "withholding",
+   "finding": "The employer withholds ITS monthly and files it with social contributions on the single monthly DISA declaration.",
+   "value": {
+    "employment": "monthly ITS withholding, DISA"
+   },
+   "applies": "2025-26.",
+   "sources": [
+    {
+     "src": 0,
+     "said": "DISA Filing Monthly · tax + CNSS"
+    }
+   ]
+  },
+  {
+   "item": "residents",
+   "finding": "The tax on wages and salaries (ITS) is charged monthly at 0% to XOF 60,000, 10% from 60,001 to 150,000, 15% from 150,001 to 250,000, 19% from 250,001 to 500,000 and 30% above 500,000, plus a broadcasting levy of XOF 1,000 in March and 3,000 in June; an artist's pay is left out of the base up to four times the minimum wage.",
+   "value": {
+    "currency": "XOF",
+    "period": "month",
+    "brackets": [
+     {
+      "from": 0,
+      "to": 60000,
+      "rate": 0
+     },
+     {
+      "from": 60000,
+      "to": 150000,
+      "rate": 0.1
+     },
+     {
+      "from": 150000,
+      "to": 250000,
+      "rate": 0.15
+     },
+     {
+      "from": 250000,
+      "to": 500000,
+      "rate": 0.19
+     },
+     {
+      "from": 500000,
+      "to": null,
+      "rate": 0.3
+     }
+    ],
+    "ortbLevy": {
+     "march": 1000,
+     "june": 3000,
+     "exemptBelowFirstBand": "the 3,000"
+    },
+    "artistsExcluded": "pay up to 4 x SMIG",
+    "asOf": "CGI as enacted by Loi n° 2021-15 (in force from 2022); amendments by the finance laws for 2023 to 2026 not read"
+   },
+   "applies": "Employment income in Benin (arts 124 and 125 of the CGI)",
+   "sources": [
+    {
+     "src": 1,
+     "said": "Article 125 : 1) L'impdt est calculé par application a la base d'imposition des taux progressifs suivants : … - 0% pour la tranche inférieure ou égale 4 60 000 francs CFA ; … - 10% pour la tranche comprise entre 60 001 et 150 000 francs CFA ; … 15% pour la tranche comprise entre 150 001 et 250 000 francs CFA ; … 19% pour la tranche comprise entre 250 001 et 500 000 francs CFA ; … 30% pour la tranche supérieure a 500 000 francs CFA. … - mille (1 000) francs CFA sur le salaire du mois de mars ; … - trois mille (3 000) francs CFA sur le salaire du mois de juin."
+    },
+    {
+     "src": 2,
+     "said": "Article 124 : Ne sont pas compris dans la base d'imposition : … sportifs professionnels et aux artistes dans la limite de quatre (4) fois le salaire minimum interprofessionnel garanti."
+    }
+   ]
+  },
+  {
+   "item": "withholding",
+   "finding": "ITS is withheld at source by an employer domiciled in Benin (a resident paid from abroad declares and pays it monthly himself), paid by the 10th of the next month, and the withholding is final.",
+   "value": {
+    "final": true,
+    "dueDay": 10,
+    "selfDeclaredIfEmployerAbroad": true,
+    "asOf": "CGI as enacted by Loi n° 2021-15 (in force from 2022); amendments by the finance laws for 2023 to 2026 not read"
+   },
+   "applies": "Employment income (arts 128 and 129 of the CGI)",
+   "sources": [
+    {
+     "src": 3,
+     "said": "Article 128 : 1) L'impdt est prélevé 4 la source au moment des paiements des … 3) Les retenues opérées sont libératoires."
+    }
+   ]
+  },
+  {
+   "item": "nonResident",
+   "finding": "A payer withholds 10% (12% for a company) from sums due to a non-resident without a permanent establishment for services supplied or used in Benin, including fees for a non-commercial profession and authors' royalties, on the full amount with expenses; a tax treaty can waive or lower it.",
+   "value": {
+    "rate": 0.1,
+    "rateCompany": 0.12,
+    "base": "gross sums due, including expenses",
+    "covers": [
+     "non-commercial profession",
+     "authors' royalties",
+     "services of any kind"
+    ],
+    "treatyRelief": true,
+    "asOf": "CGI as enacted by Loi n° 2021-15 (in force from 2022); amendments by the finance laws for 2023 to 2026 not read"
+   },
+   "applies": "Non-residents without a permanent establishment in Benin (arts 141 and 142 of the CGI)",
+   "sources": [
+    {
+     "src": 4,
+     "said": "Article 141 : Une retenue 4 la source est opérée sur les sommes dues aux personnes physiques ou morales non résidentes en République du Bénin et n'y disposant pas d'établissement stable en rémunération de prestations de toute nature fournies ou utilisées en République du Bénin\". … a) les sommes dues en rémunération d'une activité exercée en Republique du Bénin dans le cadre d'une profession non commerciale ; … b) les produits de droits d'auteurs percus par les écrivains ou compositeurs ou par leurs héritiers ou legataires ; … Article 142 : 1) Le taux de la retenue est fixe 4 10% pour les personnes physiques et a 12% pour les personnes morales."
+    }
+   ]
+  },
+  {
+   "item": "vat",
+   "finding": "VAT is 18%; a person whose annual turnover reaches the threshold set by order of the finance minister is liable (the threshold's amount was not found).",
+   "value": {
+    "standard": 0.18,
+    "threshold": null,
+    "thresholdSetBy": "arrêté of the finance minister",
+    "asOf": "CGI as enacted by Loi n° 2021-15 (in force from 2022); amendments by the finance laws for 2023 to 2026 not read"
+   },
+   "applies": "Arts 228 and 241 of the CGI",
+   "sources": [
+    {
+     "src": 5,
+     "said": "Article 241 : Le taux de la taxe sur la valeur ajoutée est fixé a 18%."
+    },
+    {
+     "src": 6,
+     "said": "Article 228 : Les personnes physiques ou morales dont le chiffre d'affaires ou les recettes annuelles sont au minimum égales au seuil fixé par arrété du ministre en charge des finances sont assujetties a la taxe sur la valeur ajoutée"
+    }
+   ]
+  }
+ ],
+ "country": "BJ",
+ "sources": [
+  {
+   "url": "https://dsr.mercans.com/payroll-dossiers/benin/",
+   "title": "Benin payroll dossier (Mercans, 2025–26 snapshot)",
+   "read": "2026-11-01",
+   "kind": "secondary",
+   "quotes": "https://api.impots.bj/media/6728ab1c677d7_Benin-General%20Tax%20Code-2024%20Official.pdf",
+   "said": "CNSS Pension Employee 3.6% of gross CNSS Pension Employer 6.4% of gross Family Allowances (ER) 9% · employer Work-Injury (ER) 1–4% by risk class Employer VPS Levy 4% on payroll … DISA Filing Monthly · tax + CNSS"
+  },
+  {
+   "url": "https://sgg.gouv.bj/doc/loi-2021-15/download",
+   "title": "Loi n° 2021-15 du 23 décembre 2021 portant code général des impôts de la République du Bénin (scan published by the Secrétariat Général du Gouvernement), page 57",
+   "read": "2026-11-01",
+   "kind": "primary",
+   "said": "Article 125 : 1) L'impdt est calculé par application a la base d'imposition des taux progressifs suivants : … - 0% pour la tranche inférieure ou égale 4 60 000 francs CFA ; … - 10% pour la tranche comprise entre 60 001 et 150 000 francs CFA ; … 15% pour la tranche comprise entre 150 001 et 250 000 francs CFA ; … 19% pour la tranche comprise entre 250 001 et 500 000 francs CFA ; … 30% pour la tranche supérieure a 500 000 francs CFA. … - mille (1 000) francs CFA sur le salaire du mois de mars ; … - trois mille (3 000) francs CFA sur le salaire du mois de juin."
+  },
+  {
+   "url": "https://sgg.gouv.bj/doc/loi-2021-15/download",
+   "title": "Loi n° 2021-15 du 23 décembre 2021 portant code général des impôts de la République du Bénin (scan published by the Secrétariat Général du Gouvernement), page 56",
+   "read": "2026-11-01",
+   "kind": "primary",
+   "said": "Article 124 : Ne sont pas compris dans la base d'imposition : … sportifs professionnels et aux artistes dans la limite de quatre (4) fois le salaire minimum interprofessionnel garanti."
+  },
+  {
+   "url": "https://sgg.gouv.bj/doc/loi-2021-15/download",
+   "title": "Loi n° 2021-15 du 23 décembre 2021 portant code général des impôts de la République du Bénin (scan published by the Secrétariat Général du Gouvernement), page 58",
+   "read": "2026-11-01",
+   "kind": "primary",
+   "said": "Article 128 : 1) L'impdt est prélevé 4 la source au moment des paiements des … 3) Les retenues opérées sont libératoires."
+  },
+  {
+   "url": "https://sgg.gouv.bj/doc/loi-2021-15/download",
+   "title": "Loi n° 2021-15 du 23 décembre 2021 portant code général des impôts de la République du Bénin (scan published by the Secrétariat Général du Gouvernement), page 63",
+   "read": "2026-11-01",
+   "kind": "primary",
+   "said": "Article 141 : Une retenue 4 la source est opérée sur les sommes dues aux personnes physiques ou morales non résidentes en République du Bénin et n'y disposant pas d'établissement stable en rémunération de prestations de toute nature fournies ou utilisées en République du Bénin\". … a) les sommes dues en rémunération d'une activité exercée en Republique du Bénin dans le cadre d'une profession non commerciale ; … b) les produits de droits d'auteurs percus par les écrivains ou compositeurs ou par leurs héritiers ou legataires ; … Article 142 : 1) Le taux de la retenue est fixe 4 10% pour les personnes physiques et a 12% pour les personnes morales."
+  },
+  {
+   "url": "https://sgg.gouv.bj/doc/loi-2021-15/download",
+   "title": "Loi n° 2021-15 du 23 décembre 2021 portant code général des impôts de la République du Bénin (scan published by the Secrétariat Général du Gouvernement), page 108",
+   "read": "2026-11-01",
+   "kind": "primary",
+   "said": "Article 241 : Le taux de la taxe sur la valeur ajoutée est fixé a 18%."
+  },
+  {
+   "url": "https://sgg.gouv.bj/doc/loi-2021-15/download",
+   "title": "Loi n° 2021-15 du 23 décembre 2021 portant code général des impôts de la République du Bénin (scan published by the Secrétariat Général du Gouvernement), page 94",
+   "read": "2026-11-01",
+   "kind": "primary",
+   "said": "Article 228 : Les personnes physiques ou morales dont le chiffre d'affaires ou les recettes annuelles sont au minimum égales au seuil fixé par arrété du ministre en charge des finances sont assujetties a la taxe sur la valeur ajoutée"
+  }
+ ],
+ "blockers": [
+  {
+   "item": "residents",
+   "sought": "The tax year and return dates for individuals, the VAT threshold set by ministerial order, and any change to the 2021 CGI's ITS scale, non-resident withholding or VAT by the finance laws for 2023 to 2026 (the CGI's own scale, withholding, non-resident rate and VAT rate are found)",
+   "tried": {
+    "institution": "impots.bj homepage answered (HTTP 200) but the CGI PDF at api.impots.bj was refused by the egress proxy (connect_rejected, 502) twice on 2026-11-01 || retry-8 2026-11-01: api.impots.bj refused by the egress proxy again (connect_rejected, 502) for the 2024 English CGI; impots.bj home answers (200); cnss.bj answers 500",
+    "official-register": "Journal officiel / Law 2021-015 text not reached || retry-8 2026-11-01: sgg.gouv.bj (Secrétariat Général du Gouvernement): Loi n° 2021-15 du 23 décembre 2021 portant CGI downloaded (scan, 257 pages); pages 56-58, 63, 94 and 108 OCR'd with tesseract: ITS scale, finality, non-resident 10%/12%, VAT 18% and art. 228 found and recorded; the finance laws for 2023-2026 not located by number on sgg.gouv.bj",
+    "web-search": "2026-11-01 'Bénin impôt sur les traitements et salaires barème ITS ... impots.finances.gouv.bj': third-party scales in conflict || retry-8 2026-11-01: 'Code général des impôts Bénin 2026 pdf impôt sur les traitements et salaires barème article': the impots.bj 2024 CGI (refused by the proxy), a Benin Web TV piece on the new ITS scale, EOR sites in conflict",
+    "trade-press": "Mercans dossier read (quoted); PwC has no Benin summary (HTTP 404) || retry-8 2026-11-01: Benin Web TV (beninwebtv.bj) on the CSTB's complaint about the new CGI read in the results: no figures",
+    "archive": "not tried || retry-8 2026-11-01: web.archive.org: connection reset and availability API 429 on 2026-11-01"
+   }
+  }
+ ]
+}

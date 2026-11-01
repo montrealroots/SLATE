@@ -1,0 +1,209 @@
+{
+ "topic": "tax.SA",
+ "read": "2026-11-01",
+ "note": "Read 2026-11-01 at the owner's word (\"Build those first 3 starting with ledger first\"; of the 21 countries read first: \"It should cover across every country\"; \"Retry the blocked tax facts once all countries land\"): the tax on a screen worker's pay in Saudi Arabia: a resident's income tax, social contributions, what is withheld at source, a non-resident artiste's withholding, an author's treatment, VAT and the tax year. Research and retry subagents (workbench/briefs/BRIEF-tax.md, BRIEF-tax-retry.md), every quote checked by the lead against its saved page.",
+ "figures": [
+  {
+   "item": "residents",
+   "finding": "Saudi Arabia levies no income tax on an individual's earnings from employment; non-employment (business) income is taxed as an entity or permanent establishment, and a resident non-Saudi doing temporary work outside employment is taxed at 20%.",
+   "value": {
+    "currency": "SAR",
+    "employmentIncomeTax": null,
+    "businessIncome": "taxed as entity/PE (20% for non-Saudi residents)"
+   },
+   "applies": "2026.",
+   "sources": [
+    {
+     "src": 0,
+     "said": "There is no individual income tax scheme in Saudi Arabia. Income tax is not imposed on an individual's earnings if they are derived only from employment in Saudi Arabia. Non-employment income is taxed as an entity or permanent establishment (PE)."
+    },
+    {
+     "src": 1,
+     "said": "Yes, amounts earned by visiting expatriates performing temporary work in the Kingdom are subject to income tax at 20% or Tax Withholding at 15%, depending on their residency status, unless such amounts arise from an employment relationship governed by applicable labor laws with all employment conditions met."
+    }
+   ]
+  },
+  {
+   "item": "withholding",
+   "finding": "Nothing is withheld from employment pay for tax, since none is levied.",
+   "value": {
+    "employment": null
+   },
+   "applies": "2026.",
+   "sources": [
+    {
+     "src": 2,
+     "said": "There is no individual income tax scheme in Saudi Arabia."
+    }
+   ]
+  },
+  {
+   "item": "nonResident",
+   "finding": "A non-resident performer, writer or director paid by a Saudi resident for work done in the Kingdom (not as an employee) bears withholding: 15% on 'any other payments' and on royalties, 5% on technical and consulting services, 20% on management fees; it is paid by the 10th of the next month.",
+   "value": {
+    "otherPayments": 0.15,
+    "royalties": 0.15,
+    "technicalConsulting": 0.05,
+    "management": 0.2,
+    "due": "first ten days of the following month",
+    "base": "gross amount paid"
+   },
+   "applies": "Payments from a resident or PE to a non-resident without a PE, 2026; treaties may reduce royalties.",
+   "sources": [
+    {
+     "src": 1,
+     "said": "Management fees 20% Royalties 15% Dividends 5% Rent 5% Loan charges (income from debt claims) 5% Insurance/reinsurance 5% Technical and consulting services* 5% Payments for air tickets or air or sea freight 5% International telecommunications services 5% Land transport within the Kingdom 15% Any other payments 15%"
+    },
+    {
+     "src": 1,
+     "said": "Yes, amounts earned by visiting expatriates performing temporary work in the Kingdom are subject to income tax at 20% or Tax Withholding at 15%, depending on their residency status"
+    },
+    {
+     "src": 3,
+     "said": "The WHT should be paid within the first ten days of the month following the month during which the payment was made."
+    }
+   ]
+  },
+  {
+   "item": "authors",
+   "finding": "Payments for the right to use a literary, artistic or film work protected by copyright are royalties, withheld at 15% when paid to a non-resident.",
+   "value": {
+    "royaltiesNonResident": 0.15
+   },
+   "applies": "2026.",
+   "sources": [
+    {
+     "src": 1,
+     "said": "If a person authors a book, song, play, or paints a painting, the resulting work shall be con"
+    },
+    {
+     "src": 1,
+     "said": "Royalties 15%"
+    }
+   ]
+  },
+  {
+   "item": "social",
+   "finding": "Contributions are on monthly basic salary plus housing up to SAR 45,000: a Saudi employee pays 9.75% (9% pension, 0.75% SANED) and the employer 11.75% (adding 2% occupational hazard); for a non-Saudi only the employer's 2% occupational hazard applies.",
+   "value": {
+    "currency": "SAR",
+    "capMonthly": 45000,
+    "saudi": {
+     "employee": 0.0975,
+     "employer": 0.1175
+    },
+    "nonSaudi": {
+     "employer": 0.02,
+     "employee": 0
+    }
+   },
+   "applies": "2026 (rates for new Saudi entrants under the 2024 Social Insurance Law were not read here).",
+   "sources": [
+    {
+     "src": 4,
+     "said": "Social insurance contributions are paid monthly based on the monthly basic salary plus housing (paid or in kind) with an upper limit of SAR 45,000, are computed at 2% for non-Saudi employees (note that this is not social insurance, it is occupational hazard), and are paid by the employer. For Saudi employees, the rate is 21.5% and is paid by both the employee (9.75% = 9% social insurance + 0.75% unemployment insurance [SANED]) and the employer (11.75% = 9% social insurance + 2% occupational hazard + 0.75% unemployment insurance [SANED])."
+    }
+   ]
+  },
+  {
+   "item": "vat",
+   "finding": "VAT is 15% since 1 July 2020; a resident must register within 30 days of a month-end at which his past twelve months' supplies (or the next twelve months' expected) exceed the Mandatory Registration Threshold the GCC Agreement sets (its amount not read).",
+   "value": {
+    "standard": 0.15,
+    "since": "2020-07-01"
+   },
+   "applies": "2026.",
+   "sources": [
+    {
+     "src": 5,
+     "said": "Effective 1 July 2020, the standard VAT rate was increased by the government to 15%."
+    },
+    {
+     "src": 6,
+     "said": "every Resident Person in the Kingdom who is not registered by the Authority must at the end of each month calculate the value of his Supplies made in the Kingdom within the twelve months then ended, in accordance with the requirements set out in the Agreement. In cases where this value exceeds the Mandatory Registration Threshold detailed in the Agreement, the Person must apply to the Authority to register within thirty (30) days of the end of that month"
+    }
+   ]
+  }
+ ],
+ "country": "SA",
+ "sources": [
+  {
+   "url": "https://taxsummaries.pwc.com/saudi-arabia/individual/taxes-on-personal-income",
+   "title": "PwC Worldwide Tax Summaries, Saudi Arabia, Individual - Taxes on personal income (last reviewed 29 July 2026)",
+   "read": "2026-11-01",
+   "kind": "secondary",
+   "quotes": "https://zatca.gov.sa/en/HelpCenter/guidelines/Documents/General-Guideline-for-Withholding-Tax-In-accordance-with-the-provisions-of-the-Income-Tax-Law-and-its-Implementing-Regulations.pdf",
+   "said": "There is no individual income tax scheme in Saudi Arabia. Income tax is not imposed on an individual's earnings if they are derived only from employment in Saudi Arabia. Non-employment income is taxed as an entity or permanent establishment (PE)."
+  },
+  {
+   "url": "https://zatca.gov.sa/en/HelpCenter/guidelines/Documents/General-Guideline-for-Withholding-Tax-In-accordance-with-the-provisions-of-the-Income-Tax-Law-and-its-Implementing-Regulations.pdf",
+   "title": "General Guideline for Withholding Tax in accordance with the Income Tax Law and its Implementing Regulations (ZATCA)",
+   "read": "2026-11-01",
+   "kind": "primary",
+   "said": "Yes, amounts earned by visiting expatriates performing temporary work in the Kingdom are subject to income tax at 20% or Tax Withholding at 15%, depending on their residency status, unless such amounts arise from an employment relationship governed by applicable labor laws with all employment conditions met. … Management fees 20% Royalties 15% Dividends 5% Rent 5% Loan charges (income from debt claims) 5% Insurance/reinsurance 5% Technical and consulting services* 5% Payments for air tickets or air or sea freight 5% International telecommunications services 5% Land transport within the Kingdom 15% Any other payments 15% … If a person authors a book, song, play, or paints a painting, the resulting work shall be con"
+  },
+  {
+   "url": "https://taxsummaries.pwc.com/saudi-arabia/individual/tax-administration",
+   "title": "PwC Worldwide Tax Summaries, Saudi Arabia, Individual - Tax administration (last reviewed 29 July 2026)",
+   "read": "2026-11-01",
+   "kind": "secondary",
+   "quotes": "https://zatca.gov.sa/en/HelpCenter/guidelines/Documents/General-Guideline-for-Withholding-Tax-In-accordance-with-the-provisions-of-the-Income-Tax-Law-and-its-Implementing-Regulations.pdf",
+   "said": "There is no individual income tax scheme in Saudi Arabia."
+  },
+  {
+   "url": "https://taxsummaries.pwc.com/saudi-arabia/corporate/withholding-taxes",
+   "title": "PwC Worldwide Tax Summaries, Saudi Arabia, Corporate - Withholding taxes (last reviewed 29 July 2026)",
+   "read": "2026-11-01",
+   "kind": "secondary",
+   "quotes": "https://zatca.gov.sa/en/HelpCenter/guidelines/Documents/General-Guideline-for-Withholding-Tax-In-accordance-with-the-provisions-of-the-Income-Tax-Law-and-its-Implementing-Regulations.pdf",
+   "said": "The WHT should be paid within the first ten days of the month following the month during which the payment was made."
+  },
+  {
+   "url": "https://taxsummaries.pwc.com/saudi-arabia/individual/other-taxes",
+   "title": "PwC Worldwide Tax Summaries, Saudi Arabia, Individual - Other taxes (last reviewed 29 July 2026)",
+   "read": "2026-11-01",
+   "kind": "secondary",
+   "quotes": "https://www.gosi.gov.sa/",
+   "said": "Social insurance contributions are paid monthly based on the monthly basic salary plus housing (paid or in kind) with an upper limit of SAR 45,000, are computed at 2% for non-Saudi employees (note that this is not social insurance, it is occupational hazard), and are paid by the employer. For Saudi employees, the rate is 21.5% and is paid by both the employee (9.75% = 9% social insurance + 0.75% unemployment insurance [SANED]) and the employer (11.75% = 9% social insurance + 2% occupational hazard + 0.75% unemployment insurance [SANED])."
+  },
+  {
+   "url": "https://taxsummaries.pwc.com/saudi-arabia/corporate/other-taxes",
+   "title": "PwC Worldwide Tax Summaries, Saudi Arabia, Corporate - Other taxes (last reviewed 29 July 2026)",
+   "read": "2026-11-01",
+   "kind": "secondary",
+   "quotes": "https://zatca.gov.sa/",
+   "said": "Effective 1 July 2020, the standard VAT rate was increased by the government to 15%."
+  },
+  {
+   "url": "https://zatca.gov.sa/en/RulesRegulations/Taxes/Documents/Implmenting%20Regulations%20of%20the%20VAT%20Law_EN.pdf",
+   "title": "VAT Implementing Regulations (ZATCA, unofficial English translation, as amended to 04/04/1443H)",
+   "read": "2026-11-01",
+   "kind": "primary",
+   "said": "every Resident Person in the Kingdom who is not registered by the Authority must at the end of each month calculate the value of his Supplies made in the Kingdom within the twelve months then ended, in accordance with the requirements set out in the Agreement. In cases where this value exceeds the Mandatory Registration Threshold detailed in the Agreement, the Person must apply to the Authority to register within thirty (30) days of the end of that month"
+  }
+ ],
+ "blockers": [
+  {
+   "item": "vat",
+   "sought": "The amount of the Mandatory Registration Threshold (understood as SAR 375,000 a year) from ZATCA or the GCC Unified VAT Agreement",
+   "tried": {
+    "institution": "zatca.gov.sa taxes page fetched 2026-11-01 carried no threshold; the WHT guideline read in full on WHT only || retry 2026-11-01: zatca.gov.sa: VAT Implementing Regulations PDF (RulesRegulations/Taxes/Documents/Implmenting Regulations of the VAT Law_EN.pdf) saved and cited: registration refers to the Agreement's threshold, no amount; eServices/Pages/VAT_Registration.aspx returns ZATCA's not-found page; Documents library REST listing HTTP 401 (not read another way); guessed paths for the VAT Law and the GCC Unified Agreement redirect (302) to not-found",
+    "official-register": "VAT Implementing Regulations not fetched in this pass || retry 2026-11-01: GCC Unified VAT Agreement (where the SAR 375,000 sits, art. on mandatory registration) not found on zatca.gov.sa at the paths tried; the Regulations read instead",
+    "web-search": "not run for this item || retry 2026-11-01: refused by the search tool on 2026-11-01 (the turn's shared limit of 200 searches was reached) for \"zatca.gov.sa VAT mandatory registration threshold SAR 375,000 voluntary 187,500 VAT Implementing Regulations\"; not worked around",
+    "trade-press": "PwC Saudi corporate other taxes read: rate only, no threshold || retry 2026-11-01: PwC Saudi corporate and individual other-taxes pages already saved re-read: no threshold amount",
+    "archive": "not tried || retry 2026-11-01: web.archive.org: connection reset again 2026-11-01"
+   }
+  },
+  {
+   "item": "year",
+   "sought": "Whether any return is due from an individual (none for employment income); tax year of a non-Saudi resident's business income",
+   "tried": {
+    "institution": "ZATCA pages not read on this point || retry 2026-11-01: ZATCA WHT guideline re-read: annual withholding statement due within 120 days of the payer's fiscal year end; nothing on an individual's own return; Income Tax Law and Implementing Regulations PDFs at guessed RulesRegulations/Taxes/Documents paths redirect (302) to not-found",
+    "official-register": "not read || retry 2026-11-01: Income Tax Law (Royal Decree M/1 of 15/1/1425H) text not reached at zatca.gov.sa; uqn.gov.sa (Umm al-Qura gazette) home answered 200 with no Income Tax Law link in its served HTML; laws.boe.gov.sa (Bureau of Experts) reset the connection",
+    "web-search": "not run || retry 2026-11-01: refused by the search tool on 2026-11-01 (the turn's shared limit of 200 searches was reached) for this point; not worked around",
+    "trade-press": "PwC: 'There is no individual income tax scheme' || retry 2026-11-01: PwC individual tax-administration page re-read (saved): its body loads by script, no due date in the served HTML",
+    "archive": "not tried || retry 2026-11-01: web.archive.org: connection reset again 2026-11-01"
+   }
+  }
+ ]
+}

@@ -28,7 +28,8 @@ import data from './tax.json' with { type: 'json' };
  * The year's reckoning: at the end of each tax year of the country the person lives in, the year's income from
  * everywhere, at the day's rate of each payment, is taxed at the resident's scale; less what that country withheld,
  * less what was withheld abroad (up to the tax, as a treaty's credit gives it: the game's reading), plus a
- * self-employed worker's contributions on their fees and the VAT collected; the balance is paid or refunded on the
+ * self-employed worker's contributions on their fees, the VAT collected and a tax on their gross receipts where the
+ * country levies one; the balance is paid or refunded on the
  * return's due date, and where the account can't pay it, it is owed and the player told. What the research couldn't find
  * or the game doesn't model isn't charged, and the player is told what (`aboutTax`).
  */
@@ -38,7 +39,7 @@ const DAY = SECONDS_PER_DAY;
 export const WORKS = ['performer', 'director', 'producer', 'author'] as const;
 export type Work = (typeof WORKS)[number];
 /** What a country's tax can leave untold, as the compile names it. */
-export type Unknown = 'residents' | 'credits' | 'regional' | 'social' | 'wages' | 'withholding' | 'nonResident' | 'authors' | 'scheme' | 'vat' | 'year';
+export type Unknown = 'residents' | 'business' | 'credits' | 'regional' | 'social' | 'wages' | 'withholding' | 'nonResident' | 'authors' | 'scheme' | 'vat' | 'year';
 
 export interface Band {
   readonly from: string;
@@ -57,6 +58,8 @@ export interface Layer {
   readonly taper?: { readonly from: string; readonly rate: string };
   readonly minimum?: string;
   readonly surtax?: { readonly rate: string; readonly over?: string; readonly cap?: string };
+  readonly most?: string;
+  readonly or?: Layer;
 }
 export interface Scheme {
   readonly bands: readonly Band[];
@@ -75,6 +78,7 @@ export interface Country {
   readonly withholding: Readonly<Partial<Record<Work, Scheme>>>;
   readonly nonResident: Readonly<Partial<Record<Work, Scheme>>>;
   readonly vat: { readonly rate: string; readonly threshold: string | null; readonly authors?: { readonly rate: string; readonly threshold?: string | null } } | null;
+  readonly turnover?: { readonly rate: string; readonly threshold: string | null };
   readonly unknown: readonly Unknown[];
 }
 
@@ -124,8 +128,12 @@ export function onZones(zones: readonly Zone[], x: Q): Q {
   return max(Z, sub(mul(r(z.rate), x), r(z.minus)));
 }
 
-/** A layer's tax on an income: on what's left after its allowance and the shares it deducts, less its credits, with its surtax. */
+/** A layer's tax on an income: on what's left after its allowance and the shares it deducts, less its credits, with its surtax; or the other reckoning the law allows, where it comes to less. */
 export function onLayer(l: Layer, income: Q): Q {
+  return l.or === undefined ? reckoned(l, income) : min(reckoned(l, income), onLayer(l.or, income));
+}
+
+function reckoned(l: Layer, income: Q): Q {
   if (l.over !== undefined && cmp(income, r(l.over)) <= 0) return Z;
   let base = sub(income, r(l.less ?? '0'));
   for (const s of l.shares ?? []) base = sub(base, s.max === null ? mul(r(s.rate), income) : min(mul(r(s.rate), income), r(s.max)));
@@ -135,6 +143,7 @@ export function onLayer(l: Layer, income: Q): Q {
   if (l.taper !== undefined) credit = max(Z, sub(credit, mul(r(l.taper.rate), max(Z, sub(income, r(l.taper.from))))));
   if (l.minimum !== undefined) credit = plus(credit, onBands(l.bands as readonly Band[], r(l.minimum)));
   tax = max(Z, sub(tax, credit));
+  if (l.most !== undefined) tax = min(tax, mul(r(l.most), base));
   const s = l.surtax;
   if (s === undefined) return tax;
   const over = r(s.over ?? '0');
@@ -143,10 +152,10 @@ export function onLayer(l: Layer, income: Q): Q {
   return plus(tax, s.cap === undefined ? surtax : min(surtax, mul(r(s.cap), sub(tax, over))));
 }
 
-/** The resident's tax on a year's income, at the scale in force from the year's start (the earliest where none was by then). */
+/** The resident's tax on a year's income, at the scale in force from the year's start (the earliest where none was by then); nothing where the research gives no scale (told). */
 export function residentTax(c: Country, income: Money, year: string): Money {
-  const scale = c.residents.findLast((x) => x.from <= year) ?? (c.residents[0] as Country['residents'][number]);
-  return minor(c.currency, scale.layers.reduce((s, l) => plus(s, onLayer(l, major(income))), Z));
+  const scale = c.residents.findLast((x) => x.from <= year) ?? c.residents[0];
+  return minor(c.currency, (scale?.layers ?? []).reduce((s, l) => plus(s, onLayer(l, major(income))), Z));
 }
 
 /** Contributions on a year's pay: each scale's, summed. */
@@ -211,6 +220,8 @@ export interface Return {
   withheld: number;
   credit: number;
   vat: number;
+  /** The tax on the year's gross fees where the country levies one on a self-employed worker's receipts. */
+  turnover: number;
   /** Due above nothing, refunded below. */
   balance: number;
   due: number | null;
@@ -276,10 +287,11 @@ export function earn(s: Earning, a: EarnArgs, c: Context): Paid {
       social = sub(contributions(where.social.employee, plus(before, g)), contributions(where.social.employee, before));
     }
     const v = where.vat;
-    if (resident && v !== null && (a.work === 'producer' || a.work === 'author')) {
+    // A fee is a self-employed worker's: work the country's employees don't do.
+    if (resident && v !== null && !where.employed.includes(a.work)) {
       const own = a.work === 'author' ? v.authors : undefined;
       const threshold = own?.threshold === undefined ? v.threshold : own.threshold;
-      const turnover = plus(major(money(cur as CurrencyCode, sumOf(there.filter((p) => p.home === a.country && (p.work === 'producer' || p.work === 'author')), 'gross'))), g);
+      const turnover = plus(major(money(cur as CurrencyCode, sumOf(there.filter((p) => p.home === a.country && !where.employed.includes(p.work)), 'gross'))), g);
       if (threshold === null || cmp(turnover, r(threshold)) > 0) vat = mul(g, r(own?.rate ?? v.rate));
     }
   }
@@ -327,9 +339,12 @@ export function reckon(s: { tax: TaxSlice }, item: Item, c: Context): void {
   const credit = Math.min(sumOf(list, 'credited') - withheld, tax.minor);
   const social = minor(cur, contributions(where.social.self, major(money(cur, sumOf(list.filter((p) => !where.employed.includes(p.work)), 'counted'))))).minor;
   const vat = sumOf(own, 'vat');
-  const balance = tax.minor - credit - withheld + social + vat;
+  const fees = sumOf(own.filter((p) => !where.employed.includes(p.work)), 'gross');
+  const t = where.turnover;
+  const turnover = t === undefined || (t.threshold !== null && cmp(major(money(cur, fees)), r(t.threshold)) <= 0) ? 0 : minor(cur, mul(major(money(cur, fees)), r(t.rate))).minor;
+  const balance = tax.minor - credit - withheld + social + vat + turnover;
   const due = dueOf(where, year);
-  s.tax.returns.push({ country, year, account: (list.at(-1) as Paid).account, income: income.minor, tax: tax.minor, social, withheld, credit, vat, balance, due, settled: null });
+  s.tax.returns.push({ country, year, account: (list.at(-1) as Paid).account, income: income.minor, tax: tax.minor, social, withheld, credit, vat, turnover, balance, due, settled: null });
   if (due !== null && balance !== 0) c.schedule(SETTLE_KIND, Math.max(due, c.now), { country, year });
 }
 
@@ -365,6 +380,7 @@ export const MODEL_LINE: LineId = 'tax.model';
 /** Each item a country's tax can leave untold, as the player is told it. */
 export const MISSING: Readonly<Record<Unknown, string>> = {
   residents: 'the rates a resident pays this year',
+  business: "the tax on a freelancer's business profits",
   credits: 'some of the allowances and credits',
   regional: "the region's or the town's own tax",
   social: 'some of the social contributions',
@@ -380,7 +396,6 @@ export const MISSING: Readonly<Record<Unknown, string>> = {
 /** What the player is told of a country's tax where the game doesn't know all of it ("a, b and c"): everything where it knows none of it. */
 export function aboutTax(country: CountryCode): string | undefined {
   const unknown = taxOf(country)?.unknown ?? (Object.keys(MISSING) as Unknown[]);
-  // Stryker disable next-line ConditionalExpression: every country read has something untold today (21 of 21); the guard keeps one that hasn't whole.
   if (unknown.length === 0) return undefined;
   const missing = unknown.map((u) => MISSING[u]);
   const list = missing.length > 1 ? `${missing.slice(0, -1).join(', ')} and ${missing.at(-1) as string}` : (missing[0] as string);

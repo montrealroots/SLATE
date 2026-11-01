@@ -1,0 +1,250 @@
+{
+ "topic": "tax.AO",
+ "read": "2026-11-01",
+ "note": "Read 2026-11-01 at the owner's word (\"Build those first 3 starting with ledger first\"; of the 21 countries read first: \"It should cover across every country\"; \"Retry the blocked tax facts once all countries land\"): the tax on a screen worker's pay in Angola: a resident's income tax, social contributions, what is withheld at source, a non-resident artiste's withholding, an author's treatment, VAT and the tax year. Research and retry subagents (workbench/briefs/BRIEF-tax.md, BRIEF-tax-retry.md), every quote checked by the lead against its saved page.",
+ "figures": [
+  {
+   "item": "residents",
+   "finding": "An employee's (Group A) income is exempt to AOA 150,000 and then taxed by a table rising from 16% to 25% above AOA 10 million (each band a fixed amount plus a rate on the excess).",
+   "value": {
+    "currency": "AOA",
+    "table": [
+     {
+      "from": 0,
+      "to": 150000,
+      "fixed": 0,
+      "rate": 0,
+      "over": 0
+     },
+     {
+      "from": 150000,
+      "to": 200000,
+      "fixed": 12500,
+      "rate": 0.16,
+      "over": 150000
+     },
+     {
+      "from": 200000,
+      "to": 300000,
+      "fixed": 31250,
+      "rate": 0.18,
+      "over": 200000
+     },
+     {
+      "from": 300000,
+      "to": 500000,
+      "fixed": 49250,
+      "rate": 0.19,
+      "over": 300000
+     },
+     {
+      "from": 500000,
+      "to": 1000000,
+      "fixed": 87250,
+      "rate": 0.2,
+      "over": 500000
+     },
+     {
+      "from": 1000000,
+      "to": 1500000,
+      "fixed": 187250,
+      "rate": 0.21,
+      "over": 1000000
+     },
+     {
+      "from": 1500000,
+      "to": 2000000,
+      "fixed": 292250,
+      "rate": 0.22,
+      "over": 1500000
+     },
+     {
+      "from": 2000000,
+      "to": 2500000,
+      "fixed": 402250,
+      "rate": 0.23,
+      "over": 2000000
+     },
+     {
+      "from": 2500000,
+      "to": 5000000,
+      "fixed": 517250,
+      "rate": 0.24,
+      "over": 2500000
+     },
+     {
+      "from": 5000000,
+      "to": 10000000,
+      "fixed": 1117250,
+      "rate": 0.245,
+      "over": 5000000
+     },
+     {
+      "from": 10000000,
+      "to": null,
+      "fixed": 2342250,
+      "rate": 0.25,
+      "over": 10000000
+     }
+    ],
+    "period": "not stated in the source (the IRT table is applied to each payment of pay)",
+    "regional": null
+   },
+   "applies": "2026; agt.minfin.gov.ao not read in this pass, so PwC is quoted.",
+   "sources": [
+    {
+     "src": 0,
+     "said": "For Group A, there are progressive income tax rates up to 25%, as follows: Income (AOA) Payable tax (AOA) Up to 150,000 Exempt Between 150,001 and 200,000 12,500 + 16% upon the excess of 150,000"
+    },
+    {
+     "src": 0,
+     "said": "Between 5,000,001 and 10,000,000 1,117,250 + 24.5% upon the excess of 5,000,000 More than 10,000,000 2,342,250 + 25% upon the excess of 10,000,000"
+    }
+   ]
+  },
+  {
+   "item": "residents",
+   "finding": "A self-employed worker (Group B) paid by a company or an accounting payer has 6.5% withheld from the fee; otherwise the profit is taxed at 25%, with up to 30% of expenses deductible where records are kept.",
+   "value": {
+    "groupB": {
+     "withholdingByAccountingPayer": 0.065,
+     "otherwise": 0.25,
+     "expenseDeductionMax": 0.3
+    }
+   },
+   "applies": "2026.",
+   "sources": [
+    {
+     "src": 0,
+     "said": "When the income is paid by companies, or individuals who have a simplified accounting or a general accounting model/organised accounting, the taxable amount corresponds to the value of the service and is subject to WHT at a rate of 6.5%."
+    },
+    {
+     "src": 0,
+     "said": "Taxpayers maintaining accounting books and records, simplified accounting model, or purchase and sale or services provided registration book are allowed to deduct up to 30% of incurred expenses in the computation of taxable income."
+    }
+   ]
+  },
+  {
+   "item": "year",
+   "finding": "The tax year is the calendar year; an employee with only employment income files no return (PAYE is final), a self-employed worker files in March of the next year, and the employer files the annual Modelo 2 by the end of February.",
+   "value": {
+    "start": "01-01",
+    "end": "12-31",
+    "selfEmployedReturn": "March of the following year",
+    "employerReturn": "end of February"
+   },
+   "applies": "Individuals.",
+   "sources": [
+    {
+     "src": 1,
+     "said": "The tax year runs from 1 January to 31 December."
+    },
+    {
+     "src": 1,
+     "said": "Self-employed workers file an annual return disclosing their annual income during March of the following year."
+    }
+   ]
+  },
+  {
+   "item": "withholding",
+   "finding": "Employment income tax is withheld monthly by the employer under PAYE, and no return is needed for it.",
+   "value": {
+    "employment": "monthly PAYE"
+   },
+   "applies": "2026.",
+   "sources": [
+    {
+     "src": 1,
+     "said": "Individuals only deriving employment income are not required to file tax returns, as the PIT is withheld at source by their employer."
+    }
+   ]
+  },
+  {
+   "item": "nonResident",
+   "finding": "A non-resident professional's business and professional income is generally subject to a final 6.5% withholding on the gross amount.",
+   "value": {
+    "rate": 0.065,
+    "base": "gross",
+    "final": true
+   },
+   "applies": "2026.",
+   "sources": [
+    {
+     "src": 0,
+     "said": "Business and professional income derived by non-resident professionals is generally subject to final WHT of 6.5% on the gross amount."
+    }
+   ]
+  },
+  {
+   "item": "social",
+   "finding": "Social security is 3% of gross pay from the employee and 8% from the employer (holiday allowance excluded); a foreigner without a residence permit covered at home may be excluded.",
+   "value": {
+    "employee": 0.03,
+    "employer": 0.08,
+    "retiredEmployee": 0.08
+   },
+   "applies": "2026.",
+   "sources": [
+    {
+     "src": 2,
+     "said": "Individuals are liable to Social security contributions on their gross income at rates of 3% (8%, in case of retired employees) and 8% due by the employee and the employer, respectively."
+    }
+   ]
+  },
+  {
+   "item": "vat",
+   "finding": "VAT is 14% at the standard rate (7% under the simplified regime).",
+   "value": {
+    "standard": 0.14,
+    "simplified": 0.07
+   },
+   "applies": "2026; the turnover threshold for the general regime was not read.",
+   "sources": [
+    {
+     "src": 2,
+     "said": "The standard VAT rate is 14%, and VAT has a broad tax base."
+    }
+   ]
+  }
+ ],
+ "country": "AO",
+ "sources": [
+  {
+   "url": "https://taxsummaries.pwc.com/angola/individual/taxes-on-personal-income",
+   "title": "PwC Worldwide Tax Summaries, Angola, Individual - Taxes on personal income (last reviewed 24 June 2026)",
+   "read": "2026-11-01",
+   "kind": "secondary",
+   "quotes": "https://www.agt.minfin.gov.ao/",
+   "said": "For Group A, there are progressive income tax rates up to 25%, as follows: Income (AOA) Payable tax (AOA) Up to 150,000 Exempt Between 150,001 and 200,000 12,500 + 16% upon the excess of 150,000 … Between 5,000,001 and 10,000,000 1,117,250 + 24.5% upon the excess of 5,000,000 More than 10,000,000 2,342,250 + 25% upon the excess of 10,000,000 … When the income is paid by companies, or individuals who have a simplified accounting or a general accounting model/organised accounting, the taxable amount corresponds to the value of the service and is subject to WHT at a rate of 6.5%. … Taxpayers maintaining accounting books and records, simplified accounting model, or purchase and sale or services provided registration book are allowed to deduct up to 30% of incurred expenses in the computation of taxable income. … Business and professional income derived by non-resident professionals is generally subject to final WHT of 6.5% on the gross amount."
+  },
+  {
+   "url": "https://taxsummaries.pwc.com/angola/individual/tax-administration",
+   "title": "PwC Worldwide Tax Summaries, Angola, Individual - Tax administration (last reviewed 24 June 2026)",
+   "read": "2026-11-01",
+   "kind": "secondary",
+   "quotes": "https://www.agt.minfin.gov.ao/",
+   "said": "The tax year runs from 1 January to 31 December. … Self-employed workers file an annual return disclosing their annual income during March of the following year. … Individuals only deriving employment income are not required to file tax returns, as the PIT is withheld at source by their employer."
+  },
+  {
+   "url": "https://taxsummaries.pwc.com/angola/individual/other-taxes",
+   "title": "PwC Worldwide Tax Summaries, Angola, Individual - Other taxes (last reviewed 24 June 2026)",
+   "read": "2026-11-01",
+   "kind": "secondary",
+   "quotes": "https://www.agt.minfin.gov.ao/",
+   "said": "Individuals are liable to Social security contributions on their gross income at rates of 3% (8%, in case of retired employees) and 8% due by the employee and the employer, respectively. … The standard VAT rate is 14%, and VAT has a broad tax base."
+  }
+ ],
+ "blockers": [
+  {
+   "item": "residents",
+   "sought": "Angola's IRT table period (monthly) and current text from the AGT or the Diário da República; VAT general-regime threshold",
+   "tried": {
+    "institution": "agt.minfin.gov.ao not fetched in this pass (2026-11-01) || retry 2026-11-01: agt.minfin.gov.ao reached 2026-11-01: an AngularJS shell (3 KB) whose content loads by script; its script bundle path answers 404 to curl, so no IRT table or VAT page is readable; minfin.gov.ao home (31 KB) carries no tax-code links; portaldocontribuinte.minfin.gov.ao and inss.gov.ao: no connection",
+    "official-register": "Diário da República not reached || retry 2026-11-01: imprensanacional.gov.ao (Diário da República): no connection through the proxy; parlamento.ao reached (9 KB home, no legislation search in the served HTML)",
+    "web-search": "not run || retry 2026-11-01: refused by the search tool on 2026-11-01: the turn's shared limit of 200 searches was reached; not worked around",
+    "trade-press": "PwC Angola (quoted) || retry 2026-11-01: PwC Angola (quoted) stays the source",
+    "archive": "not tried || retry 2026-11-01: web.archive.org: \"Recv failure: Connection reset by peer\" again 2026-11-01"
+   }
+  }
+ ]
+}

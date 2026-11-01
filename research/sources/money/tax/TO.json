@@ -1,0 +1,126 @@
+{
+ "topic": "tax.TO",
+ "read": "2026-11-01",
+ "note": "Read 2026-11-01 at the owner's word (\"Build those first 3 starting with ledger first\"; of the 21 countries read first: \"It should cover across every country\"; \"Retry the blocked tax facts once all countries land\"): the tax on a screen worker's pay in Tonga: a resident's income tax, social contributions, what is withheld at source, a non-resident artiste's withholding, an author's treatment, VAT and the tax year. Research and retry subagents (workbench/briefs/BRIEF-tax.md, BRIEF-tax-retry.md), every quote checked by the lead against its saved page.",
+ "figures": [
+  {
+   "item": "residents",
+   "finding": "From 1 July 2021 an individual or sole trader pays nothing on the first TOP 12,000 a year, 10% to 30,000, 15% to 50,000, 20% to 70,000 and 25% above, as the Ministry of Revenue and Customs announced; no later change was found.",
+   "value": {
+    "currency": "TOP",
+    "brackets": [
+     {
+      "from": 0,
+      "to": 12000,
+      "rate": 0
+     },
+     {
+      "from": 12000,
+      "to": 30000,
+      "rate": 0.1
+     },
+     {
+      "from": 30000,
+      "to": 50000,
+      "rate": 0.15
+     },
+     {
+      "from": 50000,
+      "to": 70000,
+      "rate": 0.2
+     },
+     {
+      "from": 70000,
+      "to": null,
+      "rate": 0.25
+     }
+    ],
+    "since": "2021-07-01",
+    "regionalLayer": null
+   },
+   "applies": "Individuals and sole traders in Tonga; financial year 1 July - 30 June (2025-26 and 2026-27 touch calendar 2026), on the 2021 schedule.",
+   "sources": [
+    {
+     "src": 0,
+     "said": "The tax-free income level will be raised from the first $10,000 to the first $12,000 pa'anga earned in the new financial year, with further adjustments in tax thresholds easing higher income tax levels."
+    },
+    {
+     "src": 0,
+     "said": "The current 10% income tax will be applied on income between $12,000 and $30,000 per annum. For earnings between $30,001 and $50,000, the rate will be reduced from 20% to 15%. Earnings between $50,0001 and $70,000 are subject to a $20% tax rate. Earnings over $70,001 are subject to a 25% tax rate."
+    },
+    {
+     "src": 0,
+     "said": "Income tax cuts for individuals and sole traders from July 1 means all income taxpayers in Tonga will pay less."
+    }
+   ]
+  }
+ ],
+ "country": "TO",
+ "sources": [
+  {
+   "url": "https://matangitonga.to/print/26625",
+   "title": "Income tax cuts for individuals and sole traders from July 1 (Matangi Tonga, 13 May 2021), quoting the Ministry of Revenue and Customs",
+   "read": "2026-11-01",
+   "kind": "secondary",
+   "quotes": "https://www.revenue.gov.to",
+   "said": "The tax-free income level will be raised from the first $10,000 to the first $12,000 pa'anga earned in the new financial year, with further adjustments in tax thresholds easing higher income tax levels. … The current 10% income tax will be applied on income between $12,000 and $30,000 per annum. For earnings between $30,001 and $50,000, the rate will be reduced from 20% to 15%. Earnings between $50,0001 and $70,000 are subject to a $20% tax rate. Earnings over $70,001 are subject to a 25% tax rate. … Income tax cuts for individuals and sole traders from July 1 means all income taxpayers in Tonga will pay less."
+  }
+ ],
+ "blockers": [
+  {
+   "item": "residents",
+   "sought": "The 2026 schedule in the Income Tax Act or Regulations (confirming no change since July 2021)",
+   "tried": {
+    "institution": "revenue.gov.to not reachable (curl 000) 2026-11-01; ago.gov.to returns a 408-byte shell || 2026-11-01 retry: revenue.gov.to and finance.gov.to still do not answer (curl 000); ago.gov.to returns the same 408-byte shell.",
+    "official-register": "paclii.org HTTP 403; pacliirms.austlii.edu.au reset the connection (Government Gazette 2021/6 and the Income Tax Amendment Acts not read) || 2026-11-01 retry: paclii.org/to/legis/consol_act/ returns HTTP 403 (not read another way).",
+    "web-search": "WebSearch 'Tonga income tax rates individuals employment income threshold TOP 12,000 ...' and 'Tonga \"Income Tax (Amendment) Act 2021\" ...' || 2026-11-01 retry: WebSearch refused by the tool on 2026-11-01: the turn's shared 200-search limit was reached before this query; no other search route used.",
+    "trade-press": "Matangi Tonga 2021 read (quotes the Ministry); payroll vendors (Rivermate, Pebl) seen, not used || 2026-11-01 retry: No Deloitte Tonga 2026 Highlights (HTTP 404); no PwC Tonga summary.",
+    "archive": "web.archive.org not reachable (curl 000) 2026-11-01 || 2026-11-01 retry: archive.org/wayback/available lists a 2026-10-17 snapshot of revenue.gov.to; web.archive.org itself resets https and returns 403 on http from this environment (2026-11-01), so none was read."
+   }
+  },
+  {
+   "item": "social",
+   "sought": "The Retirement Fund / national superannuation contributions on pay",
+   "tried": {
+    "institution": "revenue.gov.to not reachable (curl 000) 2026-11-01; ago.gov.to returns a 408-byte shell || 2026-11-01 retry: revenue.gov.to and finance.gov.to still do not answer (curl 000); ago.gov.to returns the same 408-byte shell.",
+    "official-register": "paclii.org HTTP 403; pacliirms.austlii.edu.au reset the connection (Government Gazette 2021/6 and the Income Tax Amendment Acts not read) || 2026-11-01 retry: paclii.org/to/legis/consol_act/ returns HTTP 403 (not read another way).",
+    "web-search": "WebSearch 'Tonga income tax rates individuals employment income threshold TOP 12,000 ...' and 'Tonga \"Income Tax (Amendment) Act 2021\" ...' || 2026-11-01 retry: WebSearch refused by the tool on 2026-11-01: the turn's shared 200-search limit was reached before this query; no other search route used.",
+    "trade-press": "Matangi Tonga 2021 read (quotes the Ministry); payroll vendors (Rivermate, Pebl) seen, not used || 2026-11-01 retry: No Deloitte Tonga 2026 Highlights (HTTP 404); no PwC Tonga summary.",
+    "archive": "web.archive.org not reachable (curl 000) 2026-11-01 || 2026-11-01 retry: archive.org/wayback/available lists a 2026-10-17 snapshot of revenue.gov.to; web.archive.org itself resets https and returns 403 on http from this environment (2026-11-01), so none was read."
+   }
+  },
+  {
+   "item": "withholding",
+   "sought": "PAYE withholding and the withholding on payments to non-residents (artistes)",
+   "tried": {
+    "institution": "revenue.gov.to not reachable (curl 000) 2026-11-01; ago.gov.to returns a 408-byte shell || 2026-11-01 retry: revenue.gov.to and finance.gov.to still do not answer (curl 000); ago.gov.to returns the same 408-byte shell.",
+    "official-register": "paclii.org HTTP 403; pacliirms.austlii.edu.au reset the connection (Government Gazette 2021/6 and the Income Tax Amendment Acts not read) || 2026-11-01 retry: paclii.org/to/legis/consol_act/ returns HTTP 403 (not read another way).",
+    "web-search": "WebSearch 'Tonga income tax rates individuals employment income threshold TOP 12,000 ...' and 'Tonga \"Income Tax (Amendment) Act 2021\" ...' || 2026-11-01 retry: WebSearch refused by the tool on 2026-11-01: the turn's shared 200-search limit was reached before this query; no other search route used.",
+    "trade-press": "Matangi Tonga 2021 read (quotes the Ministry); payroll vendors (Rivermate, Pebl) seen, not used || 2026-11-01 retry: No Deloitte Tonga 2026 Highlights (HTTP 404); no PwC Tonga summary.",
+    "archive": "web.archive.org not reachable (curl 000) 2026-11-01 || 2026-11-01 retry: archive.org/wayback/available lists a 2026-10-17 snapshot of revenue.gov.to; web.archive.org itself resets https and returns 403 on http from this environment (2026-11-01), so none was read."
+   }
+  },
+  {
+   "item": "nonResident",
+   "sought": "The tax on a non-resident performer's fee",
+   "tried": {
+    "institution": "revenue.gov.to not reachable (curl 000) 2026-11-01; ago.gov.to returns a 408-byte shell || 2026-11-01 retry: revenue.gov.to and finance.gov.to still do not answer (curl 000); ago.gov.to returns the same 408-byte shell.",
+    "official-register": "paclii.org HTTP 403; pacliirms.austlii.edu.au reset the connection (Government Gazette 2021/6 and the Income Tax Amendment Acts not read) || 2026-11-01 retry: paclii.org/to/legis/consol_act/ returns HTTP 403 (not read another way).",
+    "web-search": "WebSearch 'Tonga income tax rates individuals employment income threshold TOP 12,000 ...' and 'Tonga \"Income Tax (Amendment) Act 2021\" ...' || 2026-11-01 retry: WebSearch refused by the tool on 2026-11-01: the turn's shared 200-search limit was reached before this query; no other search route used.",
+    "trade-press": "Matangi Tonga 2021 read (quotes the Ministry); payroll vendors (Rivermate, Pebl) seen, not used || 2026-11-01 retry: No Deloitte Tonga 2026 Highlights (HTTP 404); no PwC Tonga summary.",
+    "archive": "web.archive.org not reachable (curl 000) 2026-11-01 || 2026-11-01 retry: archive.org/wayback/available lists a 2026-10-17 snapshot of revenue.gov.to; web.archive.org itself resets https and returns 403 on http from this environment (2026-11-01), so none was read."
+   }
+  },
+  {
+   "item": "vat",
+   "sought": "Consumption tax rate and registration threshold",
+   "tried": {
+    "institution": "revenue.gov.to not reachable (curl 000) 2026-11-01; ago.gov.to returns a 408-byte shell || 2026-11-01 retry: revenue.gov.to and finance.gov.to still do not answer (curl 000); ago.gov.to returns the same 408-byte shell.",
+    "official-register": "paclii.org HTTP 403; pacliirms.austlii.edu.au reset the connection (Government Gazette 2021/6 and the Income Tax Amendment Acts not read) || 2026-11-01 retry: paclii.org/to/legis/consol_act/ returns HTTP 403 (not read another way).",
+    "web-search": "WebSearch 'Tonga income tax rates individuals employment income threshold TOP 12,000 ...' and 'Tonga \"Income Tax (Amendment) Act 2021\" ...' || 2026-11-01 retry: WebSearch refused by the tool on 2026-11-01: the turn's shared 200-search limit was reached before this query; no other search route used.",
+    "trade-press": "Matangi Tonga 2021 read (quotes the Ministry); payroll vendors (Rivermate, Pebl) seen, not used || 2026-11-01 retry: No Deloitte Tonga 2026 Highlights (HTTP 404); no PwC Tonga summary.",
+    "archive": "web.archive.org not reachable (curl 000) 2026-11-01 || 2026-11-01 retry: archive.org/wayback/available lists a 2026-10-17 snapshot of revenue.gov.to; web.archive.org itself resets https and returns 403 on http from this environment (2026-11-01), so none was read."
+   }
+  }
+ ]
+}

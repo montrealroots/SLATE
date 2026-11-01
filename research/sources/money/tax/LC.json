@@ -1,0 +1,226 @@
+{
+ "topic": "tax.LC",
+ "read": "2026-11-01",
+ "note": "Read 2026-11-01 at the owner's word (\"Build those first 3 starting with ledger first\"; of the 21 countries read first: \"It should cover across every country\"; \"Retry the blocked tax facts once all countries land\"): the tax on a screen worker's pay in Saint Lucia: a resident's income tax, social contributions, what is withheld at source, a non-resident artiste's withholding, an author's treatment, VAT and the tax year. Research and retry subagents (workbench/briefs/BRIEF-tax.md, BRIEF-tax-retry.md), every quote checked by the lead against its saved page.",
+ "figures": [
+  {
+   "item": "residents",
+   "finding": "A resident pays income tax on chargeable income at 15% on the first EC$15,000, 20% on the next EC$15,000 and 30% above EC$30,000, after a personal allowance of EC$25,000 (and other allowances); no local layer.",
+   "value": {
+    "currency": "XCD",
+    "brackets": [
+     {
+      "from": 0,
+      "to": 15000,
+      "rate": 0.15
+     },
+     {
+      "from": 15000,
+      "to": 30000,
+      "rate": 0.2
+     },
+     {
+      "from": 30000,
+      "to": null,
+      "rate": 0.3
+     }
+    ],
+    "allowance": 25000,
+    "regional": null
+   },
+   "applies": "Resident individuals",
+   "sources": [
+    {
+     "src": 0,
+     "said": "Taxable income (XCD*) Tax on column 1 (XCD) Tax on excess (%) Over Not over 0 15,000 2,250 15 15,000 30,000 3,000 20 30,000 and above 9,000 30"
+    },
+    {
+     "src": 1,
+     "said": "Tax On the first 15,000 2,250 On the next 15,000 3,000 On the remaining XCD 62,100 at 30% 18,630 Total tax payable 23,880"
+    },
+    {
+     "src": 2,
+     "said": "Allowances and deductions* XCD Personal allowance 25,000"
+    }
+   ]
+  },
+  {
+   "item": "social",
+   "finding": "The employee pays National Insurance of 5% of gross salary up to EC$250 a month (on salary to EC$5,000), matched by the employer.",
+   "value": {
+    "currency": "XCD",
+    "employee": 0.05,
+    "employer": 0.05,
+    "ceilingMonthly": 5000,
+    "maxMonthly": 250
+   },
+   "applies": "Employees",
+   "sources": [
+    {
+     "src": 3,
+     "said": "The individual's share of National Insurance Corporation (NIC) contributions (for retirement, sickness, and disability benefits) is 5% of gross salary, up to a maximum contribution of XCD 250 per month (i.e. on a monthly salary of XCD 5,000). The employer matches the contribution and files monthly returns."
+    }
+   ]
+  },
+  {
+   "item": "withholding",
+   "finding": "Employers withhold PAYE from salaries by tax code and pay it monthly; self-employed persons pay instalments on 25 March, 25 June and 25 September; resident contractors paid EC$10,000 or more have 10% withheld.",
+   "value": {
+    "paye": true,
+    "selfEmployedInstalments": [
+     "03-25",
+     "06-25",
+     "09-25"
+    ],
+    "residentContractors": {
+     "rate": 0.1,
+     "exemptBelow": 10000
+    }
+   },
+   "applies": "Employees, self-employed and contractors",
+   "sources": [
+    {
+     "src": 4,
+     "said": "There is withholding of tax from salaries (pay-as-you-earn or PAYE) based on tax codes obtained when employees register with the Inland Revenue Department. Tax withheld by employers is paid to the Inland Revenue on a monthly basis. Self-employed persons and individuals in partnerships are required to pay instalments by 25 March, 25 June, and 25 September."
+    },
+    {
+     "src": 5,
+     "said": "Payments to contractors* 10 … * Contracts below XCD 10,000 are exempt from WHT."
+    }
+   ]
+  },
+  {
+   "item": "nonResident",
+   "finding": "A non-resident is taxed on income arising in Saint Lucia; fees and other income payments to non-residents bear 25% withholding (15% for royalties and management fees under the CARICOM agreement).",
+   "value": {
+    "rate": 0.25,
+    "caricom": 0.15,
+    "base": "gross payment",
+    "final": "not stated"
+   },
+   "applies": "Non-residents",
+   "sources": [
+    {
+     "src": 0,
+     "said": "Income arising in Saint Lucia to a non-resident"
+    },
+    {
+     "src": 5,
+     "said": "Commissions or fees (not by way of employment) 25 Income of a trust 25 Premiums, including insurance premiums 25 Any other payment of an income nature 25"
+    }
+   ]
+  },
+  {
+   "item": "authors",
+   "finding": "Royalties paid to a non-resident bear 25% (15% for CARICOM residents); no resident-author regime was read.",
+   "value": {
+    "nonResidentRoyalties": 0.25,
+    "caricom": 0.15
+   },
+   "applies": "Authors",
+   "sources": [
+    {
+     "src": 5,
+     "said": "Royalties 25/15 CARICOM"
+    }
+   ]
+  },
+  {
+   "item": "vat",
+   "finding": "A freelancer's fee bears VAT at 12.5% once annual turnover reaches EC$400,000; below that registration is not mandatory.",
+   "value": {
+    "currency": "XCD",
+    "rate": 0.125,
+    "reduced": [
+     0.1,
+     0.07
+    ],
+    "threshold": 400000
+   },
+   "applies": "Taxable persons",
+   "sources": [
+    {
+     "src": 6,
+     "said": "The standard VAT rate is 12.5%. … The threshold for registered taxpayers is currently set at 400,000 East Caribbean dollars (XCD) per annum . This means that it is not mandatory for businesses earning less than the threshold to register for VAT."
+    }
+   ]
+  },
+  {
+   "item": "year",
+   "finding": "The tax year is the calendar year; anyone with taxable income above EC$25,000 files by 31 March of the following year.",
+   "value": {
+    "start": "01-01",
+    "end": "12-31",
+    "returnDue": "03-31",
+    "filingThreshold": 25000
+   },
+   "applies": "Individuals",
+   "sources": [
+    {
+     "src": 4,
+     "said": "The tax year in Saint Lucia is the calendar year. Tax returns Individuals with taxable income in excess of XCD 25,000 in any calendar year have to file a personal income tax (PIT) return by 31 March in the following year."
+    }
+   ]
+  }
+ ],
+ "country": "LC",
+ "sources": [
+  {
+   "url": "https://taxsummaries.pwc.com/saint-lucia/individual/taxes-on-personal-income",
+   "title": "Saint Lucia - Individual - Taxes on personal income (PwC, reviewed 12 October 2026)",
+   "read": "2026-11-01",
+   "kind": "secondary",
+   "quotes": "https://irdstlucia.gov.lc/",
+   "said": "Taxable income (XCD*) Tax on column 1 (XCD) Tax on excess (%) Over Not over 0 15,000 2,250 15 15,000 30,000 3,000 20 30,000 and above 9,000 30 … Income arising in Saint Lucia to a non-resident"
+  },
+  {
+   "url": "https://taxsummaries.pwc.com/saint-lucia/individual/sample-personal-income-tax-calculation",
+   "title": "Saint Lucia - Individual - Sample personal income tax calculation (PwC, reviewed 12 October 2026)",
+   "read": "2026-11-01",
+   "kind": "secondary",
+   "quotes": "https://irdstlucia.gov.lc/",
+   "said": "Tax On the first 15,000 2,250 On the next 15,000 3,000 On the remaining XCD 62,100 at 30% 18,630 Total tax payable 23,880"
+  },
+  {
+   "url": "https://taxsummaries.pwc.com/saint-lucia/individual/deductions",
+   "title": "Saint Lucia - Individual - Deductions (PwC, reviewed 12 October 2026)",
+   "read": "2026-11-01",
+   "kind": "secondary",
+   "quotes": "https://irdstlucia.gov.lc/",
+   "said": "Allowances and deductions* XCD Personal allowance 25,000"
+  },
+  {
+   "url": "https://taxsummaries.pwc.com/saint-lucia/individual/other-taxes",
+   "title": "Saint Lucia - Individual - Other taxes (PwC, reviewed 12 October 2026)",
+   "read": "2026-11-01",
+   "kind": "secondary",
+   "quotes": "https://irdstlucia.gov.lc/",
+   "said": "The individual's share of National Insurance Corporation (NIC) contributions (for retirement, sickness, and disability benefits) is 5% of gross salary, up to a maximum contribution of XCD 250 per month (i.e. on a monthly salary of XCD 5,000). The employer matches the contribution and files monthly returns."
+  },
+  {
+   "url": "https://taxsummaries.pwc.com/saint-lucia/individual/tax-administration",
+   "title": "Saint Lucia - Individual - Tax administration (PwC, reviewed 12 October 2026)",
+   "read": "2026-11-01",
+   "kind": "secondary",
+   "quotes": "https://irdstlucia.gov.lc/",
+   "said": "There is withholding of tax from salaries (pay-as-you-earn or PAYE) based on tax codes obtained when employees register with the Inland Revenue Department. Tax withheld by employers is paid to the Inland Revenue on a monthly basis. Self-employed persons and individuals in partnerships are required to pay instalments by 25 March, 25 June, and 25 September. … The tax year in Saint Lucia is the calendar year. Tax returns Individuals with taxable income in excess of XCD 25,000 in any calendar year have to file a personal income tax (PIT) return by 31 March in the following year."
+  },
+  {
+   "url": "https://taxsummaries.pwc.com/saint-lucia/corporate/withholding-taxes",
+   "title": "Saint Lucia - Corporate - Withholding taxes (PwC, reviewed 12 October 2026)",
+   "read": "2026-11-01",
+   "kind": "secondary",
+   "quotes": "https://irdstlucia.gov.lc/",
+   "said": "Payments to contractors* 10 … * Contracts below XCD 10,000 are exempt from WHT. … Commissions or fees (not by way of employment) 25 Income of a trust 25 Premiums, including insurance premiums 25 Any other payment of an income nature 25 … Royalties 25/15 CARICOM"
+  },
+  {
+   "url": "https://taxsummaries.pwc.com/saint-lucia/corporate/other-taxes",
+   "title": "Saint Lucia - Corporate - Other taxes (PwC, reviewed 12 October 2026)",
+   "read": "2026-11-01",
+   "kind": "secondary",
+   "quotes": "https://irdstlucia.gov.lc/",
+   "said": "The standard VAT rate is 12.5%. … The threshold for registered taxpayers is currently set at 400,000 East Caribbean dollars (XCD) per annum . This means that it is not mandatory for businesses earning less than the threshold to register for VAT."
+  }
+ ],
+ "blockers": []
+}

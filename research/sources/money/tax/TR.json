@@ -1,0 +1,294 @@
+{
+ "topic": "tax.TR",
+ "read": "2026-11-01",
+ "note": "Read 2026-11-01 at the owner's word (\"Build those first 3 starting with ledger first\"; of the 21 countries read first: \"It should cover across every country\"; \"Retry the blocked tax facts once all countries land\"): the tax on a screen worker's pay in Turkey: a resident's income tax, social contributions, what is withheld at source, a non-resident artiste's withholding, an author's treatment, VAT and the tax year. Research and retry subagents (workbench/briefs/BRIEF-tax.md, BRIEF-tax-retry.md), every quote checked by the lead against its saved page.",
+ "figures": [
+  {
+   "item": "residents",
+   "finding": "For 2026 employment income is taxed at 15% to TRY 190,000, 20% to 400,000, 27% to 1,500,000, 35% to 5,300,000 and 40% above; other income (a freelancer's) has the 27% band end at TRY 1,000,000; there is no local income tax.",
+   "value": {
+    "currency": "TRY",
+    "employment": [
+     {
+      "from": 0,
+      "to": 190000,
+      "rate": 0.15
+     },
+     {
+      "from": 190000,
+      "to": 400000,
+      "rate": 0.2
+     },
+     {
+      "from": 400000,
+      "to": 1500000,
+      "rate": 0.27
+     },
+     {
+      "from": 1500000,
+      "to": 5300000,
+      "rate": 0.35
+     },
+     {
+      "from": 5300000,
+      "to": null,
+      "rate": 0.4
+     }
+    ],
+    "other": [
+     {
+      "from": 0,
+      "to": 190000,
+      "rate": 0.15
+     },
+     {
+      "from": 190000,
+      "to": 400000,
+      "rate": 0.2
+     },
+     {
+      "from": 400000,
+      "to": 1000000,
+      "rate": 0.27
+     },
+     {
+      "from": 1000000,
+      "to": 5300000,
+      "rate": 0.35
+     },
+     {
+      "from": 5300000,
+      "to": null,
+      "rate": 0.4
+     }
+    ],
+    "regional": null
+   },
+   "applies": "Income of 2026 (General Communiqué on Income Tax No. 332, Resmî Gazete 31 December 2025)",
+   "sources": [
+    {
+     "src": 0,
+     "said": "Taxable income (TRY*) Tax on column 1 (TRY) Tax on excess (%) Over Not over 0 190,000 - 15 190,000 400,000 28,500 20 400,000 (1,000,000) 1,500,000 70,500 27 (1,000,000) 1,500,000 5,300,000 (232,500) 367,500 35 5,300,000 ( 1,737,500 ) 1,697,500 40"
+    },
+    {
+     "src": 1,
+     "said": "a) 2026 Yılı Gelirlerine Uygulanan Tarife Gelir Dilimleri Vergi Oranı (%) 190.000 TL’ye kadar 15 400.000 TL’nin 190.000 TL’si için 28.500 TL, fazlası 20 1.000.000 TL’nin 400.000 TL’si için 70.500 TL, (ücret gelirlerinde 1.500.000 TL’nin 400.000 TL’si için 70.500 TL), fazlası 27"
+    },
+    {
+     "src": 1,
+     "said": "Not: 2026 yılı için uygulanacak gelir vergisi tarifesi 332 seri no.lu Gelir Vergisi Genel Tebliği ile duyurulmuştur."
+    },
+    {
+     "src": 0,
+     "said": "There are no local taxes on personal income in Turkey."
+    }
+   ]
+  },
+  {
+   "item": "year",
+   "finding": "The tax year is the calendar year; the annual return is due by 31 March (no extensions) and the tax is paid in two instalments, end of March and end of July; the self-employed pay 15% temporary tax quarterly.",
+   "value": {
+    "start": "01-01",
+    "end": "12-31",
+    "returnDue": "03-31",
+    "payment": [
+     "03-31",
+     "07-31"
+    ],
+    "temporaryTaxSelfEmployed": 0.15
+   },
+   "applies": "Individuals",
+   "sources": [
+    {
+     "src": 2,
+     "said": "The annual tax return for the year has to be filed by 31 March of the following year. No extensions are available."
+    },
+    {
+     "src": 2,
+     "said": "The tax, when a return is filed for any outstanding liability under the aforementioned principles, is paid in two equal instalments; by the end of March and July."
+    },
+    {
+     "src": 2,
+     "said": "Taxpayers filing income tax returns for their commercial or professional income must pay advance income tax (under the title of 'temporary tax'), calculated as 15% of their cumulative income as of the end of each quarter (except the fourth one) during the calendar year."
+    }
+   ]
+  },
+  {
+   "item": "social",
+   "finding": "Social security premiums are paid on monthly pay between TRY 33,030 and 297,270 (from 1 January 2026): generally 14% from the employee and 20.75% from the employer (16.75% with the 4-point incentive), plus unemployment insurance of 1% employee and 2% employer; a foreign national covered at home is exempt for up to three months.",
+   "value": {
+    "currency": "TRY",
+    "period": "monthly",
+    "base": {
+     "min": 33030,
+     "max": 297270
+    },
+    "employee": 0.14,
+    "employer": {
+     "general": 0.2075,
+     "withIncentive": 0.1675
+    },
+    "unemployment": {
+     "employee": 0.01,
+     "employer": 0.02,
+     "state": 0.01
+    }
+   },
+   "applies": "Employees, from 2026-01-01",
+   "sources": [
+    {
+     "src": 3,
+     "said": "Social security premiums, which are calculated on salary limits of a minimum of TRY 33,030.00 and a maximum of TRY 297,270.00 per month as of 1 January 2026, must be paid by the employer and the employee at rates defined according to labour categories. For Turkish nationals, the general rates are 20.75% (if certain conditions are satisfied, it is reduced by 4% to 16.75% (5% for manufacturing sector) for the employer and 14% for the employee."
+    },
+    {
+     "src": 3,
+     "said": "Payer Rate (%) Employee 1 Employer 2 State 1"
+    }
+   ]
+  },
+  {
+   "item": "withholding",
+   "finding": "Income tax is withheld monthly from salaries through Turkish payroll (PAYE); stamp duty of 0.759% is also taken from gross salary.",
+   "value": {
+    "employee": "monthly PAYE",
+    "stampDutyOnSalary": 0.00759
+   },
+   "applies": "Employees",
+   "sources": [
+    {
+     "src": 2,
+     "said": "Income tax is withheld every month from salaries paid through a Turkish payroll under the pay-as-you-earn (PAYE) system."
+    },
+    {
+     "src": 3,
+     "said": "Stamp duty currently applies at the rate of 0.759% over the gross salary for individuals receiving their income from a local payroll."
+    }
+   ]
+  },
+  {
+   "item": "nonResident",
+   "finding": "A non-resident is taxed on pay for work performed in Turkey or paid from Turkey; royalties paid to non-residents bear 20% withholding (often 10% under treaty); a non-resident leaving Turkey settles the liability within 15 days before departure; the withholding rate on a non-resident's performance fee was not found.",
+   "value": {
+    "royalties": 0.2,
+    "performanceFee": null,
+    "final": null
+   },
+   "applies": "Non-residents",
+   "sources": [
+    {
+     "src": 4,
+     "said": "Non-residents are taxable on remuneration for work performed in Turkey or any remuneration paid out from Turkey"
+    },
+    {
+     "src": 5,
+     "said": "In case of royalty payments to non-residents, 20% WHT has to be deducted by the Turkish entity making the payment. The WHT rate may be reduced by the application of DTT provisions (generally to 10%)."
+    },
+    {
+     "src": 2,
+     "said": "Non-residents leaving Turkey have to settle full liability within 15 days before departure."
+    }
+   ]
+  },
+  {
+   "item": "vat",
+   "finding": "VAT is generally 20% (rates from 1% to 20%).",
+   "value": {
+    "standard": 0.2,
+    "threshold": null
+   },
+   "applies": "Supplies in Turkey",
+   "sources": [
+    {
+     "src": 3,
+     "said": "Deliveries of goods and services are subject to VAT at rates varying from 1% to 20%. The general rate is 20%."
+    }
+   ]
+  }
+ ],
+ "country": "TR",
+ "sources": [
+  {
+   "url": "https://taxsummaries.pwc.com/turkey/individual/taxes-on-personal-income",
+   "title": "PwC Worldwide Tax Summaries, Turkey, Individual - Taxes on personal income (last reviewed 09 September 2026)",
+   "read": "2026-11-01",
+   "kind": "secondary",
+   "quotes": "https://www.gib.gov.tr/",
+   "said": "Taxable income (TRY*) Tax on column 1 (TRY) Tax on excess (%) Over Not over 0 190,000 - 15 190,000 400,000 28,500 20 400,000 (1,000,000) 1,500,000 70,500 27 (1,000,000) 1,500,000 5,300,000 (232,500) 367,500 35 5,300,000 ( 1,737,500 ) 1,697,500 40 … There are no local taxes on personal income in Turkey."
+  },
+  {
+   "url": "https://www.pwc.com.tr/tr/hizmetlerimiz/vergi/vergi-portali/pratik-bilgiler/oranlar/gelir-vergisi-tarifesi.html",
+   "title": "PwC Türkiye, 2026 Gelir Vergisi Tarifesi",
+   "read": "2026-11-01",
+   "kind": "secondary",
+   "quotes": "https://www.resmigazete.gov.tr/eskiler/2025/12/20251231M5-1.pdf",
+   "said": "a) 2026 Yılı Gelirlerine Uygulanan Tarife Gelir Dilimleri Vergi Oranı (%) 190.000 TL’ye kadar 15 400.000 TL’nin 190.000 TL’si için 28.500 TL, fazlası 20 1.000.000 TL’nin 400.000 TL’si için 70.500 TL, (ücret gelirlerinde 1.500.000 TL’nin 400.000 TL’si için 70.500 TL), fazlası 27 … Not: 2026 yılı için uygulanacak gelir vergisi tarifesi 332 seri no.lu Gelir Vergisi Genel Tebliği ile duyurulmuştur."
+  },
+  {
+   "url": "https://taxsummaries.pwc.com/turkey/individual/tax-administration",
+   "title": "PwC Worldwide Tax Summaries, Turkey, Individual - Tax administration (last reviewed 09 September 2026)",
+   "read": "2026-11-01",
+   "kind": "secondary",
+   "quotes": "https://www.gib.gov.tr/",
+   "said": "The annual tax return for the year has to be filed by 31 March of the following year. No extensions are available. … The tax, when a return is filed for any outstanding liability under the aforementioned principles, is paid in two equal instalments; by the end of March and July. … Taxpayers filing income tax returns for their commercial or professional income must pay advance income tax (under the title of 'temporary tax'), calculated as 15% of their cumulative income as of the end of each quarter (except the fourth one) during the calendar year. … Income tax is withheld every month from salaries paid through a Turkish payroll under the pay-as-you-earn (PAYE) system. … Non-residents leaving Turkey have to settle full liability within 15 days before departure."
+  },
+  {
+   "url": "https://taxsummaries.pwc.com/turkey/individual/other-taxes",
+   "title": "PwC Worldwide Tax Summaries, Turkey, Individual - Other taxes (last reviewed 09 September 2026)",
+   "read": "2026-11-01",
+   "kind": "secondary",
+   "quotes": "https://www.sgk.gov.tr/",
+   "said": "Social security premiums, which are calculated on salary limits of a minimum of TRY 33,030.00 and a maximum of TRY 297,270.00 per month as of 1 January 2026, must be paid by the employer and the employee at rates defined according to labour categories. For Turkish nationals, the general rates are 20.75% (if certain conditions are satisfied, it is reduced by 4% to 16.75% (5% for manufacturing sector) for the employer and 14% for the employee. … Payer Rate (%) Employee 1 Employer 2 State 1 … Stamp duty currently applies at the rate of 0.759% over the gross salary for individuals receiving their income from a local payroll. … Deliveries of goods and services are subject to VAT at rates varying from 1% to 20%. The general rate is 20%."
+  },
+  {
+   "url": "https://taxsummaries.pwc.com/turkey/individual/income-determination",
+   "title": "PwC Worldwide Tax Summaries, Turkey, Individual - Income determination (last reviewed 09 September 2026)",
+   "read": "2026-11-01",
+   "kind": "secondary",
+   "quotes": "https://www.gib.gov.tr/",
+   "said": "Non-residents are taxable on remuneration for work performed in Turkey or any remuneration paid out from Turkey"
+  },
+  {
+   "url": "https://taxsummaries.pwc.com/turkey/corporate/withholding-taxes",
+   "title": "PwC Worldwide Tax Summaries, Turkey, Corporate - Withholding taxes (last reviewed 09 September 2026)",
+   "read": "2026-11-01",
+   "kind": "secondary",
+   "quotes": "https://www.gib.gov.tr/",
+   "said": "In case of royalty payments to non-residents, 20% WHT has to be deducted by the Turkish entity making the payment. The WHT rate may be reduced by the application of DTT provisions (generally to 10%)."
+  }
+ ],
+ "blockers": [
+  {
+   "item": "authors",
+   "sought": "Income Tax Law art. 18 exemption of authors' copyright income and art. 94 withholding rates on copyright (17%) and professional fees (20%) from the law text",
+   "tried": {
+    "institution": "gib.gov.tr reached (home page); its legislation pages are a script application not read || 2026-11-01 retry: gib.gov.tr legislation URLs (/gelir-vergisi-kanunu, /node/87587) 404; the GİB legislation pages are a script app.",
+    "official-register": "Resmî Gazete 31.12.2025 (5th mükerrer) PDF timed out (60 s) on 2026-11-01 || 2026-11-01 retry: mevzuat.gov.tr and resmigazete.gov.tr time out from this environment (curl 000, 30 s).",
+    "web-search": "searched 'gib.gov.tr 2026 gelir vergisi tarifesi 190.000 400.000 1.500.000 5.300.000 tebliğ' || 2026-11-01 retry: refused: the session's web-search limit (200 calls per turn, shared) was reached before this query ('GVK madde 94 tam mükellef olmayan sanatçı serbest meslek tevkifat 2026').",
+    "trade-press": "PwC (reviewed 09 September 2026) and PwC Türkiye's 2026 tariff page read || 2026-11-01 retry: PwC Türkiye (already saved) remains the source.",
+    "archive": "web.archive.org resets the connection from this environment (2026-11-01) || 2026-11-01 retry: web.archive.org connection reset through the proxy (curl 000)."
+   }
+  },
+  {
+   "item": "nonResident",
+   "sought": "The withholding rate on a non-resident artist's fee for a performance or a professional service in Turkey, and whether it is final",
+   "tried": {
+    "institution": "gib.gov.tr reached (home page); its legislation pages are a script application not read || 2026-11-01 retry: gib.gov.tr legislation URLs (/gelir-vergisi-kanunu, /node/87587) 404; the GİB legislation pages are a script app.",
+    "official-register": "Resmî Gazete 31.12.2025 (5th mükerrer) PDF timed out (60 s) on 2026-11-01 || 2026-11-01 retry: mevzuat.gov.tr and resmigazete.gov.tr time out from this environment (curl 000, 30 s).",
+    "web-search": "searched 'gib.gov.tr 2026 gelir vergisi tarifesi 190.000 400.000 1.500.000 5.300.000 tebliğ' || 2026-11-01 retry: refused: the session's web-search limit (200 calls per turn, shared) was reached before this query ('GVK madde 94 tam mükellef olmayan sanatçı serbest meslek tevkifat 2026').",
+    "trade-press": "PwC (reviewed 09 September 2026) and PwC Türkiye's 2026 tariff page read || 2026-11-01 retry: PwC Türkiye (already saved) remains the source.",
+    "archive": "web.archive.org resets the connection from this environment (2026-11-01) || 2026-11-01 retry: web.archive.org connection reset through the proxy (curl 000)."
+   }
+  },
+  {
+   "item": "vat",
+   "sought": "Whether a small freelancer is outside VAT (no threshold found)",
+   "tried": {
+    "institution": "gib.gov.tr reached (home page); its legislation pages are a script application not read || 2026-11-01 retry: gib.gov.tr legislation URLs (/gelir-vergisi-kanunu, /node/87587) 404; the GİB legislation pages are a script app.",
+    "official-register": "Resmî Gazete 31.12.2025 (5th mükerrer) PDF timed out (60 s) on 2026-11-01 || 2026-11-01 retry: mevzuat.gov.tr and resmigazete.gov.tr time out from this environment (curl 000, 30 s).",
+    "web-search": "searched 'gib.gov.tr 2026 gelir vergisi tarifesi 190.000 400.000 1.500.000 5.300.000 tebliğ' || 2026-11-01 retry: refused: the session's web-search limit (200 calls per turn, shared) was reached before this query ('GVK madde 94 tam mükellef olmayan sanatçı serbest meslek tevkifat 2026').",
+    "trade-press": "PwC (reviewed 09 September 2026) and PwC Türkiye's 2026 tariff page read || 2026-11-01 retry: PwC Türkiye (already saved) remains the source.",
+    "archive": "web.archive.org resets the connection from this environment (2026-11-01) || 2026-11-01 retry: web.archive.org connection reset through the proxy (curl 000)."
+   }
+  }
+ ]
+}

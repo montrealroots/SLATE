@@ -1,0 +1,212 @@
+{
+ "topic": "tax.UA",
+ "read": "2026-11-01",
+ "note": "Read 2026-11-01 at the owner's word (\"Build those first 3 starting with ledger first\"; of the 21 countries read first: \"It should cover across every country\"; \"Retry the blocked tax facts once all countries land\"): the tax on a screen worker's pay in Ukraine: a resident's income tax, social contributions, what is withheld at source, a non-resident artiste's withholding, an author's treatment, VAT and the tax year. Research and retry subagents (workbench/briefs/BRIEF-tax.md, BRIEF-tax-retry.md), every quote checked by the lead against its saved page.",
+ "figures": [
+  {
+   "item": "residents",
+   "finding": "A resident pays personal income tax of 18% on pay and most other income, plus military tax of 5% on the same base since 1 December 2024 (23% in all); there is no tax-free allowance in the sources read and no regional layer.",
+   "value": {
+    "currency": "UAH",
+    "brackets": [
+     {
+      "from": 0,
+      "to": null,
+      "rate": 0.18
+     }
+    ],
+    "militaryTax": 0.05,
+    "combined": 0.23,
+    "allowance": null,
+    "regional": null
+   },
+   "applies": "Residents and non-residents (same rates)",
+   "sources": [
+    {
+     "src": 0,
+     "said": "The standard tax rate of 18% applies to income received as salary and other benefits under employment and civil agreements, foreign income, and other income not covered elsewhere."
+    },
+    {
+     "src": 1,
+     "said": "In accordance with Law 4015-IX, which came into force on 1 December 2024, the military tax rate has been increased or introduced for new categories of taxpayers and is the following: For individuals: Increased from 1.5% to 5%; the tax base is the same as the PIT base."
+    }
+   ]
+  },
+  {
+   "item": "social",
+   "finding": "The employer pays the unified social contribution of 22% of gross pay (also on civil-agreement fees), on a base capped at 15 minimum wages a month (UAH 129,705 from 1 January 2026) and at least 22% of the minimum wage (UAH 1,902.34 a month from 1 January 2026); the employee pays none.",
+   "value": {
+    "currency": "UAH",
+    "year": 2026,
+    "employer": 0.22,
+    "employee": 0,
+    "ceilingMonthly": 129705,
+    "minimumMonthly": 1902.34
+   },
+   "applies": "Employers paying employment income or civil-agreement fees",
+   "sources": [
+    {
+     "src": 2,
+     "said": "The USC basic rate (the contribution of a company that pays employment income/remuneration under civil agreements to individuals) is 22% of the gross remuneration. The taxable base subject to the USC is capped per individual per month. Starting from 2018, the cap is set at 15 times the minimal wage set for the respective month (e.g. UAH 129,705 from 1 January 2026). … 22% of the minimal wage set as of the first day of the month of the salary payment (e.g. UAH 1,902.34 from 1 January 2026)."
+    }
+   ]
+  },
+  {
+   "item": "social",
+   "finding": "A freelancer registered as a private entrepreneur in the third simplified group pays single tax of 5% of revenue (3% if VAT-registered) plus 1% military tax, with revenue up to 1,167 minimum wages (about UAH 10,091,049) in 2026.",
+   "value": {
+    "currency": "UAH",
+    "year": 2026,
+    "singleTax": {
+     "nonVat": 0.05,
+     "vat": 0.03
+    },
+    "militaryTax": 0.01,
+    "revenueLimit": 10091049,
+    "revenueLimitRule": "1,167 minimum wages at 1 January"
+   },
+   "applies": "Private entrepreneurs, simplified group 3",
+   "sources": [
+    {
+     "src": 3,
+     "said": "У 2026 році граничний обсяг доходу для ФОП 3-ї групи становить 1167 розмірів мінімальної заробітної плати , встановленої на 1 січня 2026 року, що дорівнює приблизно 10 091 049 грн на рік . … Ставка єдиного податку залишається: 5% від отриманого доходу — для ФОП, що не є платником ПДВ; 3% від отриманого доходу — для ФОП, що є платником ПДВ. Військовий збір для ФОП 3 групи також становить 1% від фактичного доходу."
+    },
+    {
+     "src": 1,
+     "said": "Introduced for taxpayers registered on the third group of the simplified regime: 1% from the gross taxable income (i.e. revenue)."
+    }
+   ]
+  },
+  {
+   "item": "withholding",
+   "finding": "A Ukrainian employer or other tax agent withholds income tax and military tax at source when it pays employment or other income.",
+   "value": {
+    "rate": 0.23,
+    "when": "at payment"
+   },
+   "applies": "Employees and civil-agreement contractors paid by a tax agent",
+   "sources": [
+    {
+     "src": 4,
+     "said": "Tax in respect of employment or other income paid by a tax agent (i.e. a Ukrainian entity or a representative office of a foreign company in Ukraine) must be withheld at the source. The tax is payable at the time of the income payment."
+    }
+   ]
+  },
+  {
+   "item": "nonResident",
+   "finding": "A non-resident pays the same 18% income tax (and 5% military tax) on Ukrainian-source income, withheld by the Ukrainian payer; no separate artistes' regime was found.",
+   "value": {
+    "rate": 0.18,
+    "militaryTax": 0.05,
+    "final": "withheld by the tax agent"
+   },
+   "applies": "Non-resident individuals",
+   "sources": [
+    {
+     "src": 0,
+     "said": "Income earned by tax non-residents from sources in Ukraine should be subject to tax under the same order and rates as those for tax residents, unless otherwise specified by the Tax Code."
+    }
+   ]
+  },
+  {
+   "item": "authors",
+   "finding": "Royalties are taxed as ordinary income at 18% (the domestic rate for non-resident individuals too); no special author regime was found.",
+   "value": {
+    "royalties": 0.18
+   },
+   "applies": "Authors",
+   "sources": [
+    {
+     "src": 0,
+     "said": "The 18% rate also applies to all passive income (e.g. interest, dividends, royalties, investment profit), unless specified otherwise by a special article"
+    }
+   ]
+  },
+  {
+   "item": "vat",
+   "finding": "A freelancer's fee bears VAT at 20% once taxable supplies exceed UAH 1 million in the past 12 months.",
+   "value": {
+    "currency": "UAH",
+    "rate": 0.2,
+    "threshold": 1000000,
+    "period": "past 12 consecutive months"
+   },
+   "applies": "Taxable persons",
+   "sources": [
+    {
+     "src": 5,
+     "said": "The rate of 20% applies to all transactions subject to VAT except specific transactions subject to 14%, 7%, and 0% VAT. … The current registration threshold is UAH 1 million for the past 12 consecutive months."
+    }
+   ]
+  },
+  {
+   "item": "year",
+   "finding": "The tax year is the calendar year; a return (where one is needed) is due by 30 April and the tax by 31 July of the following year.",
+   "value": {
+    "start": "01-01",
+    "end": "12-31",
+    "returnDue": "04-30",
+    "paymentDue": "07-31"
+   },
+   "applies": "Individuals filing a return",
+   "sources": [
+    {
+     "src": 4,
+     "said": "The reporting period for individuals follows the calendar year. … The standard annual filing deadline is 30 April of the year following the reporting year. … must be paid by the individual on a self-assessment basis by 31 July of the year following the reporting year"
+    }
+   ]
+  }
+ ],
+ "country": "UA",
+ "sources": [
+  {
+   "url": "https://taxsummaries.pwc.com/ukraine/individual/taxes-on-personal-income",
+   "title": "Ukraine - Individual - Taxes on personal income (PwC, reviewed 30 June 2026)",
+   "read": "2026-11-01",
+   "kind": "secondary",
+   "quotes": "https://zakon.rada.gov.ua/laws/show/2755-17",
+   "said": "The standard tax rate of 18% applies to income received as salary and other benefits under employment and civil agreements, foreign income, and other income not covered elsewhere. … Income earned by tax non-residents from sources in Ukraine should be subject to tax under the same order and rates as those for tax residents, unless otherwise specified by the Tax Code. … The 18% rate also applies to all passive income (e.g. interest, dividends, royalties, investment profit), unless specified otherwise by a special article"
+  },
+  {
+   "url": "https://taxsummaries.pwc.com/ukraine/individual/significant-developments",
+   "title": "Ukraine - Individual - Significant developments (PwC, reviewed 30 June 2026)",
+   "read": "2026-11-01",
+   "kind": "secondary",
+   "quotes": "https://zakon.rada.gov.ua/laws/show/2755-17",
+   "said": "In accordance with Law 4015-IX, which came into force on 1 December 2024, the military tax rate has been increased or introduced for new categories of taxpayers and is the following: For individuals: Increased from 1.5% to 5%; the tax base is the same as the PIT base. … Introduced for taxpayers registered on the third group of the simplified regime: 1% from the gross taxable income (i.e. revenue)."
+  },
+  {
+   "url": "https://taxsummaries.pwc.com/ukraine/individual/other-taxes",
+   "title": "Ukraine - Individual - Other taxes (PwC, reviewed 30 June 2026)",
+   "read": "2026-11-01",
+   "kind": "secondary",
+   "quotes": "https://zakon.rada.gov.ua/laws/show/2755-17",
+   "said": "The USC basic rate (the contribution of a company that pays employment income/remuneration under civil agreements to individuals) is 22% of the gross remuneration. The taxable base subject to the USC is capped per individual per month. Starting from 2018, the cap is set at 15 times the minimal wage set for the respective month (e.g. UAH 129,705 from 1 January 2026). … 22% of the minimal wage set as of the first day of the month of the salary payment (e.g. UAH 1,902.34 from 1 January 2026)."
+  },
+  {
+   "url": "https://legalaid.ua/ua/yedynyj-podatok-fop-3-grupy/",
+   "title": "Єдиний податок ФОП 3 групи (legalaid.ua, 3 January 2026)",
+   "read": "2026-11-01",
+   "kind": "secondary",
+   "quotes": "https://zakon.rada.gov.ua/laws/show/2755-17",
+   "said": "У 2026 році граничний обсяг доходу для ФОП 3-ї групи становить 1167 розмірів мінімальної заробітної плати , встановленої на 1 січня 2026 року, що дорівнює приблизно 10 091 049 грн на рік . … Ставка єдиного податку залишається: 5% від отриманого доходу — для ФОП, що не є платником ПДВ; 3% від отриманого доходу — для ФОП, що є платником ПДВ. Військовий збір для ФОП 3 групи також становить 1% від фактичного доходу."
+  },
+  {
+   "url": "https://taxsummaries.pwc.com/ukraine/individual/tax-administration",
+   "title": "Ukraine - Individual - Tax administration (PwC, reviewed 30 June 2026)",
+   "read": "2026-11-01",
+   "kind": "secondary",
+   "quotes": "https://zakon.rada.gov.ua/laws/show/2755-17",
+   "said": "Tax in respect of employment or other income paid by a tax agent (i.e. a Ukrainian entity or a representative office of a foreign company in Ukraine) must be withheld at the source. The tax is payable at the time of the income payment. … The reporting period for individuals follows the calendar year. … The standard annual filing deadline is 30 April of the year following the reporting year. … must be paid by the individual on a self-assessment basis by 31 July of the year following the reporting year"
+  },
+  {
+   "url": "https://taxsummaries.pwc.com/ukraine/corporate/other-taxes",
+   "title": "Ukraine - Corporate - Other taxes (PwC, reviewed 30 June 2026)",
+   "read": "2026-11-01",
+   "kind": "secondary",
+   "quotes": "https://zakon.rada.gov.ua/laws/show/2755-17",
+   "said": "The rate of 20% applies to all transactions subject to VAT except specific transactions subject to 14%, 7%, and 0% VAT. … The current registration threshold is UAH 1 million for the past 12 consecutive months."
+  }
+ ],
+ "blockers": []
+}

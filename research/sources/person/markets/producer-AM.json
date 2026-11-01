@@ -1,0 +1,54 @@
+{
+ "topic": "markets.producer.AM",
+ "read": "2026-11-01",
+ "note": "Read 2026-11-01 at the owner's word (\"Want it done now\", of the markets of every country beyond the 21; then \"Retry the blocked market facts once all countries land\"): the terms a producer works on in Armenia. Research, retry and web-search subagents (workbench/briefs/BRIEF-markets-world.md, -retry.md, -search.md), every quote checked by the lead against its saved page.",
+ "figures": [
+  {
+   "item": "incentive",
+   "finding": "Armenia pays a cash rebate on film production spend in the country: at least 25% of what the filmmaker pays resident taxpaying suppliers for listed goods, services and works, plus up to 5% more for resident filmmakers or 10% for non-resident filmmakers and co-productions on films that popularise Armenia; spend paid from the national film fund doesn't count.",
+   "value": {
+    "rule": "Government Decision No 412-N of 10 April 2025 (under the Law on Cinematography, art. 7)",
+    "rateMin": 0.25,
+    "bonusMax": {
+     "resident": 0.05,
+     "nonResidentOrCoproduction": 0.1
+    },
+    "base": "payments to resident taxpaying organisations and individual entrepreneurs of Armenia for the goods, services and works listed in Annex 2",
+    "excluded": "spend financed by the Fund",
+    "eligible": "filmmakers under activity codes J59.11 or J59.12",
+    "applyTo": "the national body of cinematography",
+    "cap": null
+   },
+   "applies": "Armenia, film production spend from the decision's entry into force (one month after promulgation, April 2025); the earlier claim that no incentive exists is withdrawn.",
+   "sources": [
+    {
+     "src": 0,
+     "said": "DECISION No 412-N of 10 April 2025 … a filmmaker classified under the Classifier of Types of Economic Activity codes J59.11 or J59.12 may receive a cash rebate … The expenses for products, services, and works acquired with financial resources allocated to the given filmmaking from the Fund are not calculated in the expenses subject to cash rebate. 5. The minimum amount of the cash rebate shall be set as no less than 25 (twenty-five) percent of the amount paid by the filmmaker to the suppliers (service providers) specified in point 3 of the Annex … in the case of resident filmmakers of the Republic of Armenia, may not exceed 5 (five) percent of the amount subject to rebate as defined by Law and this Decision, and 10 (ten) percent for non-resident filmmakers or co-productions."
+    }
+   ]
+  }
+ ],
+ "country": "AM",
+ "sources": [
+  {
+   "url": "https://arlis.am/en/acts/207810",
+   "title": "Government of the Republic of Armenia, Decision No 412-N of 10 April 2025 on the cash rebate in the field of filmmaking (ARLIS, official translation)",
+   "read": "2026-11-01",
+   "kind": "primary",
+   "said": "DECISION No 412-N of 10 April 2025 … a filmmaker classified under the Classifier of Types of Economic Activity codes J59.11 or J59.12 may receive a cash rebate … The expenses for products, services, and works acquired with financial resources allocated to the given filmmaking from the Fund are not calculated in the expenses subject to cash rebate. 5. The minimum amount of the cash rebate shall be set as no less than 25 (twenty-five) percent of the amount paid by the filmmaker to the suppliers (service providers) specified in point 3 of the Annex … in the case of resident filmmakers of the Republic of Armenia, may not exceed 5 (five) percent of the amount subject to rebate as defined by Law and this Decision, and 10 (ten) percent for non-resident filmmakers or co-productions."
+  }
+ ],
+ "blockers": [
+  {
+   "item": "fund",
+   "sought": "A national film fund (name, share, cap, selection rate) and films made a year.",
+   "tried": {
+    "institution": "ncca.am and www.ncca.am (National Cinema Centre of Armenia): no connection through the proxy; Emerge country guide read: none mentioned || Retry 2026-11-01: ncca.am (National Cinema Centre of Armenia): https connection reset, http answers a 114-byte stub; escs.am/en (Ministry of Education, Science, Culture and Sport): 334-byte stub; armstat.am read: census index only",
+    "official-register": "none located || Retry 2026-11-01: Constitution of Armenia read: no rule on screen pay or funds; NATLEX: 403 earlier, not retried",
+    "web-search": "not run: the session's web-search budget was used up (2026-11-01) || Retry 2026-11-01: not run again: the session's web-search budget is spent (2026-11-01, retry brief); institutions fetched directly instead || Web search 2026-11-01: queries \"Armenia National Cinema Center film production funding 2025 competition share budget\", \"Հայաստանի ազգային կինոկենտրոն ֆիլմերի արտադրության ֆինանսավորում մրցույթ\" and \"Հայաստանի կինոյի հիմնադրամ պետական դրամաշնորհ 2026 առավելագույն գումար ֆիլմ\": the Cinema Foundation of Armenia's 2026 competition is reported (armenpress.am/hy/article/1257072: a total of over AMD 272 million, 35% to shorts and 65% to features) but armenpress refused this environment (Cloudflare 403, 2026-11-01) and the Foundation's own call wasn't among the results; no share of budget, cap per film or selection rate found.",
+    "trade-press": "none || Retry 2026-11-01: none quoting a primary found",
+    "archive": "not tried || Retry 2026-11-01: archive.org availability API for ncca.am/: 429 Too Many Requests (18:52 UTC, 3 tries)"
+   }
+  }
+ ]
+}

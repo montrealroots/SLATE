@@ -1,0 +1,127 @@
+{
+ "topic": "tax.KI",
+ "read": "2026-11-01",
+ "note": "Read 2026-11-01 at the owner's word (\"Build those first 3 starting with ledger first\"; of the 21 countries read first: \"It should cover across every country\"; \"Retry the blocked tax facts once all countries land\"): the tax on a screen worker's pay in Kiribati: a resident's income tax, social contributions, what is withheld at source, a non-resident artiste's withholding, an author's treatment, VAT and the tax year. Research and retry subagents (workbench/briefs/BRIEF-tax.md, BRIEF-tax-retry.md), every quote checked by the lead against its saved page.",
+ "figures": [
+  {
+   "item": "nonResident",
+   "finding": "A payer in Kiribati must withhold tax at the standard 30% from dividends, interest, royalties, natural resource payments and management charges paid to a non-resident, and pay it within 15 days after the month's end; payments to non-residents for services are also subject to withholding at the applicable rate.",
+   "value": {
+    "royalties": 0.3,
+    "managementCharges": 0.3,
+    "remitWithinDays": 15,
+    "servicesRate": null
+   },
+   "applies": "The rate on a non-resident's fee for services (a performer's) was not stated.",
+   "sources": [
+    {
+     "src": 0,
+     "said": "The payer shall withhold the tax levied on dividend, interest, royalty, natural resource payment and management charge that paid to a non-resident at the standard tax rate of 30%."
+    },
+    {
+     "src": 0,
+     "said": "Every employer, principal or payer, as the case may be, shall pay to the Board the amount of any tax withheld within 15 days after the end of the month in which the tax was so withheld."
+    },
+    {
+     "src": 1,
+     "said": "any person or entity making payments to non-residents for services, interest, royalties, or other income sourced in Kiribati is legally required to withhold tax at the applicable rate and remit it to the Kiribati Tax Office."
+    }
+   ]
+  },
+  {
+   "item": "withholding",
+   "finding": "Every employer or payer remits tax withheld within 15 days after the end of the month and lodges an annual statement within 21 days after the tax year.",
+   "value": {
+    "remitWithinDays": 15,
+    "annualStatementDays": 21
+   },
+   "applies": "2026.",
+   "sources": [
+    {
+     "src": 0,
+     "said": "Every employer, principal or payer, as the case may be, shall pay to the Board the amount of any tax withheld within 15 days after the end of the month in which the tax was so withheld."
+    },
+    {
+     "src": 0,
+     "said": "Every payer who is required to withhold tax shall, within 21 days after the end of each tax year"
+    }
+   ]
+  },
+  {
+   "item": "social",
+   "finding": "An employee pays 7.5% of his total earnings to the Kiribati Provident Fund and the employer matches it (15% in all), remitted monthly by the employer; no ceiling is stated.",
+   "value": {
+    "currency": "AUD",
+    "employee": 0.075,
+    "employer": 0.075,
+    "ceiling": null
+   },
+   "applies": "2026, as the Fund states it.",
+   "sources": [
+    {
+     "src": 2,
+     "said": "Contributions should be calculated in respect of total earnings of the employee such as Salary/Wage for instance in a fortnight pay calculation is as follows. • employee share from Basic Salary/Wage of $120 * 7.5% is equal to $9.00 • employer share for the deduction made is $9.00 • both shares as a compulsory rate of 15% is equivalent to $18.00"
+    }
+   ]
+  }
+ ],
+ "country": "KI",
+ "sources": [
+  {
+   "url": "https://mfed.gov.ki/sites/default/files/2025-06/International%20withholding%20tax%20on%2030_%20fact%20sheet.%20%281%29.pdf",
+   "title": "The payer's tax obligation on international payments (sections 90, 117 and 121 of the Income Tax Act), fact sheet (Ministry of Finance and Economic Development, Kiribati)",
+   "read": "2026-11-01",
+   "kind": "primary",
+   "said": "The payer shall withhold the tax levied on dividend, interest, royalty, natural resource payment and management charge that paid to a non-resident at the standard tax rate of 30%. … Every employer, principal or payer, as the case may be, shall pay to the Board the amount of any tax withheld within 15 days after the end of the month in which the tax was so withheld. … Every payer who is required to withhold tax shall, within 21 days after the end of each tax year"
+  },
+  {
+   "url": "https://mfed.gov.ki/node/115",
+   "title": "The Payer’s Tax Obligation on International Payments (Ministry of Finance and Economic Development, Kiribati)",
+   "read": "2026-11-01",
+   "kind": "primary",
+   "said": "any person or entity making payments to non-residents for services, interest, royalties, or other income sourced in Kiribati is legally required to withhold tax at the applicable rate and remit it to the Kiribati Tax Office."
+  },
+  {
+   "url": "https://www.kpf.com.ki/index.php/fa/faq",
+   "title": "Kiribati Provident Fund, FAQ: How is my Provident Fund contribution calculated?",
+   "read": "2026-11-01",
+   "kind": "primary",
+   "said": "Contributions should be calculated in respect of total earnings of the employee such as Salary/Wage for instance in a fortnight pay calculation is as follows. • employee share from Basic Salary/Wage of $120 * 7.5% is equal to $9.00 • employer share for the deduction made is $9.00 • both shares as a compulsory rate of 15% is equivalent to $18.00"
+  }
+ ],
+ "blockers": [
+  {
+   "item": "residents",
+   "sought": "Kiribati resident income tax bands, rates and any allowance for 2026.",
+   "tried": {
+    "institution": "mfed.gov.ki read: fact sheet on international payments only; the tax website it links was not found. || retry 2026-11-01: mfed.gov.ki/node/43 (Tarawa Tax Office, saved KI-mfed-taxation.html) read: names income tax, business tax and GST but gives no rate, band, threshold or date; tax.gov.ki and kra.gov.ki do not resolve; mfed.gov.ki/tax 404",
+    "official-register": "paclii.org (Income Tax Act 2009 and consolidated Income Tax Ordinance) blocked this environment with a Cloudflare page on 2026-11-01; not read another way. || retry 2026-11-01: parliament.gov.ki Acts page lists 2022-2025 Acts by a broken download widget (no file links in the served HTML); paclii.org again HTTP 403 (not read another way)",
+    "web-search": "Searched \"Kiribati income tax rates PAYE Taxation Division\"; only payroll-firm pages with mutually conflicting bands (Rivermate, Ontop, RemotePeople, 360nations). || retry 2026-11-01: refused by the search tool on 2026-11-01: the turn's shared limit of 200 searches was reached; not worked around",
+    "trade-press": "None quoting a primary source. || retry 2026-11-01: none quoting a primary source (as before)",
+    "archive": "web.archive.org reset the connection. || retry 2026-11-01: web.archive.org: connection reset again 2026-11-01"
+   }
+  },
+  {
+   "item": "vat",
+   "sought": "Kiribati VAT rate and registration threshold.",
+   "tried": {
+    "institution": "mfed.gov.ki: not found. || retry 2026-11-01: mfed.gov.ki/node/43 (Tarawa Tax Office, saved KI-mfed-taxation.html) read: names income tax, business tax and GST but gives no rate, band, threshold or date; tax.gov.ki and kra.gov.ki do not resolve; mfed.gov.ki/tax 404",
+    "official-register": "paclii.org (Income Tax Act 2009 and consolidated Income Tax Ordinance) blocked this environment with a Cloudflare page on 2026-11-01; not read another way. || retry 2026-11-01: parliament.gov.ki Acts page lists 2022-2025 Acts by a broken download widget (no file links in the served HTML); paclii.org again HTTP 403 (not read another way)",
+    "web-search": "Search: 12.5% from 360nations only, not primary. || retry 2026-11-01: refused by the search tool on 2026-11-01: the turn's shared limit of 200 searches was reached; not worked around",
+    "trade-press": "None. || retry 2026-11-01: none quoting a primary source (as before)",
+    "archive": "Archive unreachable. || retry 2026-11-01: web.archive.org: connection reset again 2026-11-01"
+   }
+  },
+  {
+   "item": "year",
+   "sought": "The tax year and the return due date.",
+   "tried": {
+    "institution": "mfed.gov.ki: \"tax year\" used without dates. || retry 2026-11-01: mfed.gov.ki/node/43 (Tarawa Tax Office, saved KI-mfed-taxation.html) read: names income tax, business tax and GST but gives no rate, band, threshold or date; tax.gov.ki and kra.gov.ki do not resolve; mfed.gov.ki/tax 404",
+    "official-register": "paclii.org (Income Tax Act 2009 and consolidated Income Tax Ordinance) blocked this environment with a Cloudflare page on 2026-11-01; not read another way. || retry 2026-11-01: parliament.gov.ki Acts page lists 2022-2025 Acts by a broken download widget (no file links in the served HTML); paclii.org again HTTP 403 (not read another way)",
+    "web-search": "Searched \"Kiribati income tax rates PAYE Taxation Division\"; only payroll-firm pages with mutually conflicting bands (Rivermate, Ontop, RemotePeople, 360nations). || retry 2026-11-01: refused by the search tool on 2026-11-01: the turn's shared limit of 200 searches was reached; not worked around",
+    "trade-press": "None. || retry 2026-11-01: none quoting a primary source (as before)",
+    "archive": "Archive unreachable. || retry 2026-11-01: web.archive.org: connection reset again 2026-11-01"
+   }
+  }
+ ]
+}

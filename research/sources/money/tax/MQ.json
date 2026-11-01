@@ -1,0 +1,123 @@
+{
+ "topic": "tax.MQ",
+ "read": "2026-11-01",
+ "note": "Read 2026-11-01 at the owner's word (\"Build those first 3 starting with ledger first\"; of the 21 countries read first: \"It should cover across every country\"; \"Retry the blocked tax facts once all countries land\"): the tax on a screen worker's pay in Martinique: a resident's income tax, social contributions, what is withheld at source, a non-resident artiste's withholding, an author's treatment, VAT and the tax year. Research and retry subagents (workbench/briefs/BRIEF-tax.md, BRIEF-tax-retry.md), every quote checked by the lead against its saved page.",
+ "figures": [
+  {
+   "item": "follows",
+   "finding": "Martinique is a French overseas department: its residents pay the French income tax (reduced by the DOM réfaction), French social contributions and the French VAT at the DOM rates.",
+   "value": {
+    "follows": "FR",
+    "differs": [
+     "residents: tax reduced by 30%, capped at EUR 2,450",
+     "vat: 8.5% standard, 2.1% reduced"
+    ]
+   },
+   "applies": "Everything in FR applies unless a Martinique figure here says otherwise.",
+   "sources": [
+    {
+     "src": 0,
+     "said": "Le montant de l'impôt sur le revenu est réduit de 30 % dans la limite de 2 450 €, pour les contribuables domiciliés dans les départements de la Guadeloupe, de la Martinique et de la Réunion"
+    },
+    {
+     "src": 1,
+     "said": "Quatre taux de TVA s’appliquent à La Réunion, la Guadeloupe et la Martinique ( BOI-TVA-GEO-20-10 )."
+    }
+   ]
+  },
+  {
+   "item": "residents",
+   "finding": "A taxpayer domiciled in Martinique pays the French income tax computed on the national scale, then reduced by 30%, the reduction capped at EUR 2,450 (since the tax on 2018 income).",
+   "value": {
+    "currency": "EUR",
+    "scale": "FR",
+    "reduction": {
+     "rate": 0.3,
+     "cap": 2450
+    },
+    "since": "2018 income"
+   },
+   "applies": "Taxpayers domiciled in Martinique (CGI art. 197, I-3); cap per tax household.",
+   "sources": [
+    {
+     "src": 0,
+     "said": "Le montant de l'impôt sur le revenu est réduit de 30 % dans la limite de 2 450 €, pour les contribuables domiciliés dans les départements de la Guadeloupe, de la Martinique et de la Réunion"
+    },
+    {
+     "src": 0,
+     "said": "La baisse des plafonds s'applique à compter de l'imposition des revenus de l'année 2018."
+    },
+    {
+     "src": 2,
+     "said": "01/01/2018 2019 30 % 2 450 € 40 % 4 050 € 40 % 4 050 € Article 197 du Code général des impôts Loi n° 2018-1317 du 28 décembre 2018 (LF 2019), art. 2"
+    }
+   ]
+  },
+  {
+   "item": "vat",
+   "finding": "VAT in Martinique is 8.5% at the standard rate and 2.1% where mainland France applies 5.5% or 10%, with 1.05% on the first 140 performances of certain new shows.",
+   "value": {
+    "standard": 0.085,
+    "reduced": 0.021,
+    "firstPerformances": 0.0105,
+    "franchise": "FR"
+   },
+   "applies": "Guadeloupe, Martinique and La Réunion (CGI art. 296 and 296 bis); the franchise thresholds are France's.",
+   "sources": [
+    {
+     "src": 1,
+     "said": "le taux normal : 8,5 % ; le taux réduit : 2,1 % pour tous les produits et services relevant en métropole du taux réduit de 5,5 % ou du taux intermédiaire de 10 % ;"
+    },
+    {
+     "src": 3,
+     "said": "Aux termes de l'article 296 bis-a du CGI , la TVA est perçue, dans les départements de la Guadeloupe, de la Martinique et de la Réunion, au taux de 1,05 % pour les opérations visées à l' article 281 quater de ce code ."
+    }
+   ]
+  }
+ ],
+ "country": "MQ",
+ "sources": [
+  {
+   "url": "https://bofip.impots.gouv.fr/bofip/11667-PGP.html/identifiant%3DACTU-2019-00043",
+   "title": "BOFiP-Impôts, actualité ACTU-2019-00043: IR - baisse des plafonds de la réfaction DOM (CGI, art. 197, I-3)",
+   "read": "2026-11-01",
+   "kind": "primary",
+   "said": "Le montant de l'impôt sur le revenu est réduit de 30 % dans la limite de 2 450 €, pour les contribuables domiciliés dans les départements de la Guadeloupe, de la Martinique et de la Réunion … La baisse des plafonds s'applique à compter de l'imposition des revenus de l'année 2018."
+  },
+  {
+   "url": "https://www.impots.gouv.fr/professionnel/questions/quels-sont-les-differents-taux-de-tva-applicables-dans-les-dom",
+   "title": "impots.gouv.fr: Quels sont les différents taux de TVA applicables dans les DOM ? (modifié le 13/10/2026)",
+   "read": "2026-11-01",
+   "kind": "primary",
+   "said": "Quatre taux de TVA s’appliquent à La Réunion, la Guadeloupe et la Martinique ( BOI-TVA-GEO-20-10 ). … le taux normal : 8,5 % ; le taux réduit : 2,1 % pour tous les produits et services relevant en métropole du taux réduit de 5,5 % ou du taux intermédiaire de 10 % ;"
+  },
+  {
+   "url": "https://baremes.ipp.eu/parameters/impot-sur-le-revenu/impot_revenu.calcul_reductions_impots.reduction_domtom/table/",
+   "title": "Institut des politiques publiques, Barèmes IPP: Réduction d'impôt sur le revenu (IR) pour les DOM",
+   "read": "2026-11-01",
+   "kind": "secondary",
+   "quotes": "https://www.legifrance.gouv.fr/affichTexteArticle.do?cidTexte=JORFTEXT000037882341&idArticle=LEGIARTI000037935215&dateTexte=20190607&categorieLien=id#LEGIARTI000037935215",
+   "said": "01/01/2018 2019 30 % 2 450 € 40 % 4 050 € 40 % 4 050 € Article 197 du Code général des impôts Loi n° 2018-1317 du 28 décembre 2018 (LF 2019), art. 2"
+  },
+  {
+   "url": "https://bofip.impots.gouv.fr/bofip/343-PGP.html/identifiant%3DBOI-TVA-GEO-20-10-20120912",
+   "title": "BOFiP-Impôts BOI-TVA-GEO-20-10 (version 12/09/2012): TVA - Taux applicables dans les DOM",
+   "read": "2026-11-01",
+   "kind": "primary",
+   "said": "Aux termes de l'article 296 bis-a du CGI , la TVA est perçue, dans les départements de la Guadeloupe, de la Martinique et de la Réunion, au taux de 1,05 % pour les opérations visées à l' article 281 quater de ce code ."
+  }
+ ],
+ "blockers": [
+  {
+   "item": "social",
+   "sought": "A source stating that the French general social-security contributions apply to pay in Martinique, and any DOM-specific rates",
+   "tried": {
+    "institution": "cgss-martinique.fr returned HTTP 403; urssaf.fr gave an empty reply (2026-11-01) || 2026-11-01 retry: cgss-martinique.fr answers 'NinjaFirewall 403 Forbidden'; www.cgss.mq fails (proxy 502); urssaf.fr gives an empty reply (2026-11-01)",
+    "official-register": "legifrance.gouv.fr (Code de la sécurité sociale, art. L. 751-1) returned HTTP 403 || 2026-11-01 retry: legifrance.gouv.fr answers a 'Just a moment...' bot check (403); not read another way",
+    "web-search": "not run separately; CLEISS France page read (no DOM-specific rate) || 2026-11-01 retry: not run: the tool refused searches this turn, the shared limit of 200 having been reached (2026-11-01)",
+    "trade-press": "none read || 2026-11-01 retry: No firm summary for Martinique exists apart from France's; none read",
+    "archive": "web.archive.org resets the connection from this environment (2026-11-01). || 2026-11-01 retry: archive.org availability API answers, but web.archive.org is refused from this environment (http 'Blocked by egress policy', https connection fails), not read (2026-11-01)"
+   }
+  }
+ ]
+}

@@ -1,0 +1,280 @@
+{
+ "topic": "tax.BB",
+ "read": "2026-11-01",
+ "note": "Read 2026-11-01 at the owner's word (\"Build those first 3 starting with ledger first\"; of the 21 countries read first: \"It should cover across every country\"; \"Retry the blocked tax facts once all countries land\"): the tax on a screen worker's pay in Barbados: a resident's income tax, social contributions, what is withheld at source, a non-resident artiste's withholding, an author's treatment, VAT and the tax year. Research and retry subagents (workbench/briefs/BRIEF-tax.md, BRIEF-tax-retry.md), every quote checked by the lead against its saved page.",
+ "figures": [
+  {
+   "item": "residents",
+   "finding": "From income year 2026 a resident claims a personal allowance of $25,000 and pays 11.5% on the first $50,000 of taxable income and 27.5% above, with no local layer.",
+   "value": {
+    "currency": "BBD",
+    "from": "2026-01-01",
+    "allowance": 25000,
+    "brackets": [
+     {
+      "from": 0,
+      "to": 50000,
+      "rate": 0.115
+     },
+     {
+      "from": 50000,
+      "to": null,
+      "rate": 0.275
+     }
+    ],
+    "regional": null
+   },
+   "applies": "Individuals, income year 2026 onward (brackets on taxable income after the allowance)",
+   "sources": [
+    {
+     "src": 0,
+     "said": "This policy note is intended to inform the public that effective Income Year 2026, the personal income tax rates for individuals have been reduced from 12.5% to 11.5% and from 28.5% to 27.5% respectively. … Above $25,000 but not more than $75,000 11.5% Over $75,000 27.5% … Less: Personal Allowance $25,000.00 Taxable Income: Tax on first $50,000 = ($50,000 x 11.5%) = $5,750 Tax on the remainder ($25,000* $27.5%) =$6,875"
+    }
+   ]
+  },
+  {
+   "item": "social",
+   "finding": "A private-sector employee pays 11.00% of insurable earnings and the employer 12.75% (National Insurance, non-contributory, unemployment, injury, severance, training levy and health service), plus 0.25% each to the Resilience and Regeneration Fund on gross pay; a self-employed person pays 17.00% plus 0.25%; insurable earnings are capped at $5,360 a month in 2026 ($5,450 in 2027).",
+   "value": {
+    "currency": "BBD",
+    "employee": 0.11,
+    "employer": 0.1275,
+    "resilienceFund": {
+     "employee": 0.0025,
+     "employer": 0.0025,
+     "base": "gross earnings"
+    },
+    "selfEmployed": 0.17,
+    "selfEmployedResilience": 0.0025,
+    "ceilingMonthly": [
+     {
+      "from": "2026-01-01",
+      "amount": 5360
+     },
+     {
+      "from": "2027-01-01",
+      "amount": 5450
+     }
+    ],
+    "ceilingWeekly": {
+     "from": "2026-01-05",
+     "amount": 1238
+    }
+   },
+   "applies": "Private sector employees (class R) and self-employed (class S)",
+   "sources": [
+    {
+     "src": 1,
+     "said": "Private Sector Employees – “R” Funds and Levies Employee % Employer % Total% National Insurance 6.75 6.75 13.50 Non-Contributory 2.00 2.00 4.00 Unemployment 0.75 0.75 1.50 Employment Injury 0.00 0.75 0.75 Severance 0.00 0.50 0.50 Training Levy 0.50 0.50 1.00 Health Service Contribution 1.00 1.50 2.50 Total 11.00 12.75 23.75 Funds and Levies Employee % Employer % Total% Resilience & Regeneration 0.25 0.25 0.50 … Self-employed – “S” Funds and Levies 2018 to Present National Insurance 13.50 Non-Contributory 2.00 Training Levy 0.50 Health Service Contribution 1.00 Total 17.00"
+    },
+    {
+     "src": 2,
+     "said": "Effective January 1, 2026 , the maximum insurable earnings ceiling will be as follows: $5,360 for monthly paid workers $1,238 for weekly paid workers (effective January 5, 2026 ) Please note that contribution rates remain unchanged ."
+    }
+   ]
+  },
+  {
+   "item": "withholding",
+   "finding": "Employers deduct income tax under PAYE each pay period from the employee's declared allowances (period by period), and remit it by the 15th of the following month.",
+   "value": {
+    "kind": "PAYE, each pay period separately, allowance pro rata",
+    "remitBy": "15th of following month",
+    "employerRegistrationAbove": {
+     "weekly": 481,
+     "monthly": 2083
+    }
+   },
+   "applies": "Employees",
+   "sources": [
+    {
+     "src": 3,
+     "said": "Based on your allowances, employers will determine the appropriate tax code under which you will be taxed and deduct the requisite taxes for each pay period (weekly or monthly). Each pay period is treated separately, for example, February’s salary will only be taxed in that period."
+    },
+    {
+     "src": 0,
+     "said": "The tax deducted or withheld each month shall be paid to the Revenue Commissioner on or before the 15th day of the following month."
+    }
+   ]
+  },
+  {
+   "item": "nonResident",
+   "finding": "A promoter engaging non-resident performers must withhold 25% of their gross earnings and pay it to the Commissioner as payment in full of the tax on those earnings, so the withholding is final; it is due even if the earnings have not yet been paid.",
+   "value": {
+    "rate": 0.25,
+    "base": "gross income paid",
+    "threshold": null,
+    "final": true
+   },
+   "applies": "Non-resident performers at public entertainment",
+   "sources": [
+    {
+     "src": 4,
+     "said": "Promoters should note that if they are utilising the services of non-resident performers, withholding tax of twenty-five per cent must be paid on the gross income being paid to those individuals."
+    },
+    {
+     "src": 5,
+     "said": "The promoters of entertainment provided by non- resident entertainers shall withhold the prescribed amount from the gross earnings of those entertainers, and shall immediately thereafter or at such other time as the Commissioner prescribes, pay to the Commissioner the amount withheld as payment in full of the tax payable in respect of those earnings."
+    },
+    {
+     "src": 6,
+     "said": "promoters who utilize non-resident performers must be registered for the Withholding Tax obligation."
+    }
+   ]
+  },
+  {
+   "item": "vat",
+   "finding": "VAT is 17.5% on standard supplies; a person with annual income of $200,000 or more must register (raised to $350,000 from 1 October 2026 by the 2026 budget, per KPMG), and promoters of public entertainment must register regardless.",
+   "value": {
+    "currency": "BBD",
+    "standard": 0.175,
+    "threshold": [
+     {
+      "from": "2016-01-01",
+      "amount": 200000
+     },
+     {
+      "from": "2026-10-01",
+      "amount": 350000,
+      "source": "secondary"
+     }
+    ],
+    "promotersAlways": true
+   },
+   "applies": "2026",
+   "sources": [
+    {
+     "src": 7,
+     "said": "17.5% - Rate for standard supplies 22% - VAT on telecommunications services What is the VAT Threshold? Timeline VAT Threshold Commence End Annually Monthly January 1, 2016 Present day $200,000 $16,667"
+    },
+    {
+     "src": 8,
+     "said": "Persons who meet the following criteria must register for VAT: Persons whose annual income is $200,000 or more Persons whose monthly revenue is greater than $16,666.67 Promoters of public entertainment (only for VAT)"
+    },
+    {
+     "src": 9,
+     "said": "Increase in value added tax (VAT) registration threshold from $200,000* to $350,000 effective October 1, 2026"
+    }
+   ]
+  },
+  {
+   "item": "year",
+   "finding": "The income year is the calendar year and the return is filed by 30 April of the following year by every self-employed person and every employee earning above $25,000.",
+   "value": {
+    "start": "01-01",
+    "end": "12-31",
+    "returnDue": "04-30",
+    "fileIf": {
+     "selfEmployed": true,
+     "employeeIncomeAbove": 25000
+    }
+   },
+   "applies": "Individuals",
+   "sources": [
+    {
+     "src": 10,
+     "said": "Who should file a Personal Income Tax (PIT) return? All self-employed persons Employees with an annual income above $25,000 … A Personal Income Tax return is required to be filed once a year by April 30, for the previous calendar year's earnings."
+    }
+   ]
+  },
+  {
+   "item": "authors",
+   "finding": "Half of the royalties an author (as the Copyright Act defines one) receives in Barbados is left out of assessable income; the other half is taxed at the ordinary rates.",
+   "value": {
+    "royaltyExclusion": 0.5
+   },
+   "applies": "2026 on Cap. 73 as revised to L.R.O. 2007 (s. 9(1)(u), from 1986); amendments since 2007 published by the BRA were not each read.",
+   "sources": [
+    {
+     "src": 5,
+     "said": "In calculating the assessable income of a person for an income year, the following amounts shall not be included, namely"
+    },
+    {
+     "src": 5,
+     "said": "half of the amounts received in Barbados as royalties by an author within the meaning of sections 2 and 7 of the Copyright Act;"
+    }
+   ]
+  }
+ ],
+ "country": "BB",
+ "sources": [
+  {
+   "url": "https://bra.gov.bb/attachment?file=Attachments%2fPolicy+Note+2026_Reduction+in+Personal+Income+Tax+Rates_April+2026.pdf&name=Policy+Note+2026_Reduction+in+Personal+Income+Tax+Rates_April+2026",
+   "title": "Policy Note OGC No. 001/2026: Reduction of Personal Income Tax Rates",
+   "read": "2026-11-01",
+   "kind": "primary",
+   "said": "This policy note is intended to inform the public that effective Income Year 2026, the personal income tax rates for individuals have been reduced from 12.5% to 11.5% and from 28.5% to 27.5% respectively. … Above $25,000 but not more than $75,000 11.5% Over $75,000 27.5% … Less: Personal Allowance $25,000.00 Taxable Income: Tax on first $50,000 = ($50,000 x 11.5%) = $5,750 Tax on the remainder ($25,000* $27.5%) =$6,875 … The tax deducted or withheld each month shall be paid to the Revenue Commissioner on or before the 15th day of the following month."
+  },
+  {
+   "url": "https://www.nis.gov.bb/contribution-rates/",
+   "title": "Contribution Rates & Earnings Ceilings - NIS",
+   "read": "2026-11-01",
+   "kind": "primary",
+   "said": "Private Sector Employees – “R” Funds and Levies Employee % Employer % Total% National Insurance 6.75 6.75 13.50 Non-Contributory 2.00 2.00 4.00 Unemployment 0.75 0.75 1.50 Employment Injury 0.00 0.75 0.75 Severance 0.00 0.50 0.50 Training Levy 0.50 0.50 1.00 Health Service Contribution 1.00 1.50 2.50 Total 11.00 12.75 23.75 Funds and Levies Employee % Employer % Total% Resilience & Regeneration 0.25 0.25 0.50 … Self-employed – “S” Funds and Levies 2018 to Present National Insurance 13.50 Non-Contributory 2.00 Training Levy 0.50 Health Service Contribution 1.00 Total 17.00"
+  },
+  {
+   "url": "https://www.nis.gov.bb/increase-in-earnings-ceiling-2026",
+   "title": "Increase in Earnings Ceiling 2026",
+   "read": "2026-11-01",
+   "kind": "primary",
+   "said": "Effective January 1, 2026 , the maximum insurable earnings ceiling will be as follows: $5,360 for monthly paid workers $1,238 for weekly paid workers (effective January 5, 2026 ) Please note that contribution rates remain unchanged ."
+  },
+  {
+   "url": "https://bra.gov.bb/Popular-Topics/Employed-Retired-Persons/PAYE",
+   "title": "PAYE",
+   "read": "2026-11-01",
+   "kind": "primary",
+   "said": "Based on your allowances, employers will determine the appropriate tax code under which you will be taxed and deduct the requisite taxes for each pay period (weekly or monthly). Each pay period is treated separately, for example, February’s salary will only be taxed in that period."
+  },
+  {
+   "url": "https://bra.gov.bb/News/Press-Releases/Permission-Required-for-Promoters",
+   "title": "Permission Required for Promoters",
+   "read": "2026-11-01",
+   "kind": "primary",
+   "said": "Promoters should note that if they are utilising the services of non-resident performers, withholding tax of twenty-five per cent must be paid on the gross income being paid to those individuals."
+  },
+  {
+   "url": "https://bra.gov.bb/attachment?file=Attachments%2fIncome+Tax+Act%2c+Cap.+73.pdf&name=Income+Tax+Act%2c+Cap.+73",
+   "title": "Income Tax Act, Cap. 73 (L.R.O. 2007), Barbados Revenue Authority, Legislation & Regulations",
+   "read": "2026-11-01",
+   "kind": "primary",
+   "said": "The promoters of entertainment provided by non- resident entertainers shall withhold the prescribed amount from the gross earnings of those entertainers, and shall immediately thereafter or at such other time as the Commissioner prescribes, pay to the Commissioner the amount withheld as payment in full of the tax payable in respect of those earnings. … In calculating the assessable income of a person for an income year, the following amounts shall not be included, namely … half of the amounts received in Barbados as royalties by an author within the meaning of sections 2 and 7 of the Copyright Act;"
+  },
+  {
+   "url": "https://bra.gov.bb/Popular-Topics/Public-Entertainment/Frequently-Asked-Questions/Tax-obligations-for-promoters-of-p",
+   "title": "Tax obligations for promoters of public entertainment (Barbados Revenue Authority FAQ)",
+   "read": "2026-11-01",
+   "kind": "primary",
+   "said": "promoters who utilize non-resident performers must be registered for the Withholding Tax obligation."
+  },
+  {
+   "url": "https://bra.gov.bb/Popular-Topics/Value-Added-Tax/VAT-Rates",
+   "title": "VAT Rates",
+   "read": "2026-11-01",
+   "kind": "primary",
+   "said": "17.5% - Rate for standard supplies 22% - VAT on telecommunications services What is the VAT Threshold? Timeline VAT Threshold Commence End Annually Monthly January 1, 2016 Present day $200,000 $16,667"
+  },
+  {
+   "url": "https://bra.gov.bb/Popular-Topics/Value-Added-Tax/Who-Must-Register-for-VAT",
+   "title": "Who Must Register for VAT?",
+   "read": "2026-11-01",
+   "kind": "primary",
+   "said": "Persons who meet the following criteria must register for VAT: Persons whose annual income is $200,000 or more Persons whose monthly revenue is greater than $16,666.67 Promoters of public entertainment (only for VAT)"
+  },
+  {
+   "url": "https://kpmg.com/us/en/taxnewsflash/news/2026/03/tnf-barbados-tax-measures-in-2026-budget.html",
+   "title": "KPMG TaxNewsFlash: Barbados tax measures in 2026 budget",
+   "read": "2026-11-01",
+   "kind": "secondary",
+   "quotes": "https://bra.gov.bb/Popular-Topics/Value-Added-Tax/VAT-Rates",
+   "said": "Increase in value added tax (VAT) registration threshold from $200,000* to $350,000 effective October 1, 2026"
+  },
+  {
+   "url": "https://bra.gov.bb/Popular-Topics/Employed-Retired-Persons/PIT",
+   "title": "Personal Income Tax",
+   "read": "2026-11-01",
+   "kind": "primary",
+   "said": "Who should file a Personal Income Tax (PIT) return? All self-employed persons Employees with an annual income above $25,000 … A Personal Income Tax return is required to be filed once a year by April 30, for the previous calendar year's earnings."
+  }
+ ],
+ "blockers": []
+}

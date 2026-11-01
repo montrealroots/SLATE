@@ -1,0 +1,82 @@
+{
+ "topic": "tax.NF",
+ "read": "2026-11-01",
+ "note": "Read 2026-11-01 at the owner's word (\"Build those first 3 starting with ledger first\"; of the 21 countries read first: \"It should cover across every country\"; \"Retry the blocked tax facts once all countries land\"): the tax on a screen worker's pay in Norfolk Island: a resident's income tax, social contributions, what is withheld at source, a non-resident artiste's withholding, an author's treatment, VAT and the tax year. Research and retry subagents (workbench/briefs/BRIEF-tax.md, BRIEF-tax-retry.md), every quote checked by the lead against its saved page.",
+ "figures": [
+  {
+   "item": "residents",
+   "finding": "Since 1 July 2016 Norfolk Island is part of Australia for income tax: the island's residents' exemption (Division 1A of Part III of the 1936 Act) was repealed and Australian income tax and the Medicare levy apply as on the mainland.",
+   "value": {
+    "follows": "AU",
+    "since": "2016-07-01"
+   },
+   "applies": "Norfolk Island residents and income; every income-tax, social (super guarantee), withholding, non-resident and authors figure is Australia's.",
+   "sources": [
+    {
+     "src": 0,
+     "said": "2 Commencement This Act commences on 1 July 2016."
+    },
+    {
+     "src": 0,
+     "said": "Schedule 1—Income tax (including the Medicare levy) Income Tax Assessment Act 1936 1 Division 1A of Part III Repeal the Division."
+    },
+    {
+     "src": 1,
+     "said": "Australia means the Commonwealth of Australia and, when used in a geographical sense, includes Norfolk Island, the Territory of Christmas Island and the Territory of Cocos (Keeling) Islands, but does not include any other external Territory."
+    }
+   ]
+  },
+  {
+   "item": "vat",
+   "finding": "Australian GST does not reach Norfolk Island: the GST Act's indirect tax zone excludes the external Territories, so a freelancer's fee there bears no GST.",
+   "value": {
+    "gst": null,
+    "reason": "outside the indirect tax zone"
+   },
+   "applies": "Supplies made on Norfolk Island (an external Territory).",
+   "sources": [
+    {
+     "src": 2,
+     "said": "indirect tax zone means Australia (within the meaning of the * ITAA 1997), but does not include any of the following: (a) the external Territories;"
+    }
+   ]
+  }
+ ],
+ "country": "NF",
+ "sources": [
+  {
+   "url": "https://www.legislation.gov.au/C2015A00053/asmade/2015-05-26/text/original/pdf",
+   "title": "Tax and Superannuation Laws Amendment (Norfolk Island Reforms) Act 2015 (No. 53, 2015)",
+   "read": "2026-11-01",
+   "kind": "primary",
+   "said": "2 Commencement This Act commences on 1 July 2016. … Schedule 1—Income tax (including the Medicare levy) Income Tax Assessment Act 1936 1 Division 1A of Part III Repeal the Division."
+  },
+  {
+   "url": "https://www.legislation.gov.au/C1901A00002/2026-03-28/2026-03-28/text/original/epub/OEBPS/document_1/document_1.html",
+   "title": "Acts Interpretation Act 1901, compilation of 28 March 2026, s 2B",
+   "read": "2026-11-01",
+   "kind": "primary",
+   "said": "Australia means the Commonwealth of Australia and, when used in a geographical sense, includes Norfolk Island, the Territory of Christmas Island and the Territory of Cocos (Keeling) Islands, but does not include any other external Territory."
+  },
+  {
+   "url": "https://www.legislation.gov.au/C2004A00446/2026-01-01/2026-01-01/text/original/epub/OEBPS/document_2/document_2.html",
+   "title": "A New Tax System (Goods and Services Tax) Act 1999, compilation of 1 January 2026, s 195-1",
+   "read": "2026-11-01",
+   "kind": "primary",
+   "said": "indirect tax zone means Australia (within the meaning of the * ITAA 1997), but does not include any of the following: (a) the external Territories;"
+  }
+ ],
+ "blockers": [
+  {
+   "item": "vat",
+   "sought": "Whether Norfolk Island levies any territory sales tax or GST of its own in 2026 (the old Norfolk Island GST)",
+   "tried": {
+    "institution": "ato.gov.au/norfolk-island/norfolk-island-tax-and-super HTTP 403 to curl 2026-11-01 (bot-checked, not read another way); aph.gov.au Bills Digest 15bd099 HTTP 403; infrastructure.gov.au connection failed (curl 000) || retry 2026-11-01: norfolkisland.gov.nf (Norfolk Island Regional Council, redirects to nirc.gov.au) reached 2026-11-01: Fees and Charges page and the FY 2026-27 fees and charges report (saved NF-nirc-fees-charges-2026-27.pdf) read: they list legislated fees and levies (e.g. the Business Transactions (Administration) Act 2006 levy on conveyances, the Fuel Levy Act 1987) but no GST or sales tax and do not say whether fees bear GST; ato.gov.au not re-fetched (refused before, not read another way)",
+    "official-register": "legislation.gov.au: C2015A00053 read (income tax and super only); no Norfolk Island enactment on a GST found in the Federal Register || retry 2026-11-01: the council's fees report names the continued Norfolk Island enactments it charges under; none is a goods and services tax act",
+    "web-search": "searched 'Norfolk Island income tax Australian tax system from 1 July 2016 legislation': results point to ATO and aph pages, both refused || retry 2026-11-01: refused by the search tool on 2026-11-01: the turn's shared limit of 200 searches was reached; not worked around",
+    "trade-press": "none quoting a primary Norfolk Island text found || retry 2026-11-01: none quoting a primary text found (as before)",
+    "archive": "web.archive.org not reachable from this environment 2026-11-01 (curl 000) || retry 2026-11-01: web.archive.org: connection reset again 2026-11-01"
+   }
+  }
+ ]
+}

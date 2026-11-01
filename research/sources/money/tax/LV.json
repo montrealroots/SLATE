@@ -1,0 +1,295 @@
+{
+ "topic": "tax.LV",
+ "read": "2026-11-01",
+ "note": "Read 2026-11-01 at the owner's word (\"Build those first 3 starting with ledger first\"; of the 21 countries read first: \"It should cover across every country\"; \"Retry the blocked tax facts once all countries land\"): the tax on a screen worker's pay in Latvia: a resident's income tax, social contributions, what is withheld at source, a non-resident artiste's withholding, an author's treatment, VAT and the tax year. Research and retry subagents (workbench/briefs/BRIEF-tax.md, BRIEF-tax-retry.md), every quote checked by the lead against its saved page.",
+ "figures": [
+  {
+   "item": "residents",
+   "finding": "A Latvian resident pays personal income tax of 25.5% on annual income up to the social-insurance cap (€105,300) and 33% above, plus 3% on total income over €200,000, after a fixed non-taxable minimum of €550 a month in 2026 (€6,600 a year), rising to €570 a month from 2027; there is no municipal income tax.",
+   "value": {
+    "currency": "EUR",
+    "brackets": [
+     {
+      "from": 0,
+      "to": 105300,
+      "rate": 0.255
+     },
+     {
+      "from": 105300,
+      "to": null,
+      "rate": 0.33
+     }
+    ],
+    "additional": {
+     "over": 200000,
+     "rate": 0.03
+    },
+    "allowance": {
+     "monthly": 550,
+     "annual": 6600,
+     "monthlyFrom2027": 570
+    },
+    "dependant": {
+     "monthly": 250
+    }
+   },
+   "applies": "Settled 2026-11-01 from the amending law in Latvijas Vēstnesis: transitional provision 197 sets €550 a month for 2026 (PwC agrees); article 12(1) sets €570, which applies from 2027 (the figure Deloitte gave for 2026). The 105,300 cap is the maximum contribution base of the social insurance law, read from PwC.",
+   "sources": [
+    {
+     "src": 0,
+     "said": "1) 25,5 procenti — gada ienākuma daļai, kas nepārsniedz likumā \"Par valsts sociālo apdrošināšanu\" noteikto obligāto iemaksu objekta maksimālo apmēru; 2) 33 procenti — gada ienākuma daļai, kas pārsniedz"
+    },
+    {
+     "src": 0,
+     "said": "Nodokļa papildu likme, kas jāmaksā rezumējošā kārtībā no kopējā šā panta otrajā daļā noteiktā taksācijas gada ienākumu pārsnieguma virs 200 000 euro , ir trīs procenti."
+    },
+    {
+     "src": 0,
+     "said": "Mēneša neapliekamais minimums ir 570 euro mēnesī."
+    },
+    {
+     "src": 0,
+     "said": "Piemērojot šā likuma 12. panta pirmo daļu, mēneša neapliekamais minimums: 1) 2025. gadā ir 510 euro mēnesī; 2) 2026. gadā ir 550 euro mēnesī."
+    },
+    {
+     "src": 1,
+     "said": "A rate of 25.5% applies to income up to EUR 105,300. Any income over EUR 105,300 attracts a rate of 33%."
+    },
+    {
+     "src": 1,
+     "said": "An additional 3% PIT rate applies to the portion of an individual's total annual income that exceeds EUR 200,000."
+    },
+    {
+     "src": 1,
+     "said": "There are no local taxes on income, such as municipal taxes."
+    },
+    {
+     "src": 2,
+     "said": "The employer is required to apply a fixed personal allowance (FPA) of EUR 550 ( EUR 6,600 per year) , regardless of individual's income level."
+    }
+   ]
+  },
+  {
+   "item": "social",
+   "finding": "An employee pays 10.5% and the employer 23.59% in national social insurance contributions on income up to €105,300 a year; a self-employed person pays 31.07%, and may pay 10% on income below the minimum; above the cap a solidarity tax at the same rates applies (effective 25%).",
+   "value": {
+    "currency": "EUR",
+    "employee": 0.105,
+    "employer": 0.2359,
+    "ceiling": 105300,
+    "selfEmployed": 0.3107,
+    "selfEmployedBelowMinimum": 0.1,
+    "minimumWageMonthly": 780,
+    "solidarityTax": {
+     "over": 105300,
+     "employee": 0.105,
+     "employer": 0.2359,
+     "effective": 0.25
+    },
+    "royaltiesToResidents": 0.1
+   },
+   "applies": "2026. A payer of royalties to a resident individual also pays 10% NSIC.",
+   "sources": [
+    {
+     "src": 3,
+     "said": "Employer 23.59 Employee 10.50"
+    },
+    {
+     "src": 3,
+     "said": "Income on which NSIC is calculated is capped at EUR 105,300."
+    },
+    {
+     "src": 3,
+     "said": "Self-employed 31.07"
+    },
+    {
+     "src": 3,
+     "said": "In addition, 10% NSIC is payable by a payer of royalty to Latvian-resident individuals (living in Latvia)."
+    },
+    {
+     "src": 3,
+     "said": "However, the effective ST rate is 25%."
+    }
+   ]
+  },
+  {
+   "item": "withholding",
+   "finding": "The employer withholds 25.5% from monthly pay up to €8,775 (one twelfth of €105,300); a payer of royalties to an individual not registered as self-employed withholds 25% of the gross.",
+   "value": {
+    "currency": "EUR",
+    "employerMonthly": [
+     {
+      "from": 0,
+      "to": 8775,
+      "rate": 0.255
+     }
+    ],
+    "royaltiesToUnregisteredIndividual": 0.25
+   },
+   "applies": "2026; royalty regime extended to the end of 2027.",
+   "sources": [
+    {
+     "src": 4,
+     "said": "The employer applies a 25.5% PIT on monthly gross income of up to EUR 8,775."
+    },
+    {
+     "src": 5,
+     "said": "Latvian employers are required to withhold income tax on employment income paid to employees and remit the tax to the tax authorities."
+    }
+   ]
+  },
+  {
+   "item": "nonResident",
+   "finding": "A non-resident is taxed on Latvian-source income; royalties paid to a non-resident individual bear 25.5% withholding unless a treaty reduces it.",
+   "value": {
+    "basis": "Latvian-source income",
+    "royalties": 0.255,
+    "final": null
+   },
+   "applies": "No artistes' rule was found; employment income is taxed through the employer as for residents.",
+   "sources": [
+    {
+     "src": 1,
+     "said": "Non-residents are liable to income tax on their Latvian-source income."
+    },
+    {
+     "src": 6,
+     "said": "Royalties paid to nonresident individuals are subject to a 25.5% withholding tax, unless the rate is reduced under an applicable tax treaty."
+    }
+   ]
+  },
+  {
+   "item": "authors",
+   "finding": "Royalties paid to an individual not registered as self-employed are taxed by 25% withholding on the gross with no notional expense deduction (regime extended to the end of 2027), and the payer adds 10% NSIC.",
+   "value": {
+    "royaltyWithholding": 0.25,
+    "payerNSIC": 0.1,
+    "until": "2027-12-31"
+   },
+   "applies": "Writers' and directors' royalties.",
+   "sources": [
+    {
+     "src": 1,
+     "said": "For the individuals who are not registered as self-employed persons and payment is treated as royalties, the payer of royalties must apply 25% tax on the gross royalties via withholding, without applying a notional expense rate."
+    }
+   ]
+  },
+  {
+   "item": "vat",
+   "finding": "VAT is 21%; a person whose taxable supplies exceed €50,000 in a calendar year must register.",
+   "value": {
+    "currency": "EUR",
+    "rate": 0.21,
+    "threshold": 50000
+   },
+   "applies": "2026.",
+   "sources": [
+    {
+     "src": 3,
+     "said": "The standard VAT rate on supplies of goods and services is 21%."
+    },
+    {
+     "src": 6,
+     "said": "Persons whose taxable supplies (excluding imports) exceed EUR 50,000 in a calendar year must register for VAT purposes."
+    }
+   ]
+  },
+  {
+   "item": "year",
+   "finding": "The tax year is the calendar year; the return is filed 1 March to 1 June of the next year (1 April to 1 July above €105,300), with tax due by 23 June (23 July).",
+   "value": {
+    "start": "01-01",
+    "due": {
+     "on": "06-23",
+     "after": 1
+    },
+    "dueHighIncome": {
+     "on": "07-23",
+     "after": 1
+    }
+   },
+   "applies": "2026 income, filed in 2027.",
+   "sources": [
+    {
+     "src": 5,
+     "said": "Income tax returns should be filed individually on a calendar-year basis between 1 March and 1 June in the year following the year of assessment."
+    },
+    {
+     "src": 5,
+     "said": "Additional tax not exceeding EUR 640 is payable by 23 June or 23 July, depending on the annual tax return filing deadline."
+    }
+   ]
+  }
+ ],
+ "country": "LV",
+ "sources": [
+  {
+   "url": "https://www.vestnesis.lv/op/2024/240.1",
+   "title": "Latvijas Vēstnesis 2024/240.1: Grozījumi likumā \"Par iedzīvotāju ienākuma nodokli\" (adopted 4 December 2024, in force 11 December 2024)",
+   "read": "2026-11-01",
+   "kind": "primary",
+   "said": "1) 25,5 procenti — gada ienākuma daļai, kas nepārsniedz likumā \"Par valsts sociālo apdrošināšanu\" noteikto obligāto iemaksu objekta maksimālo apmēru; 2) 33 procenti — gada ienākuma daļai, kas pārsniedz … Nodokļa papildu likme, kas jāmaksā rezumējošā kārtībā no kopējā šā panta otrajā daļā noteiktā taksācijas gada ienākumu pārsnieguma virs 200 000 euro , ir trīs procenti. … Mēneša neapliekamais minimums ir 570 euro mēnesī. … Piemērojot šā likuma 12. panta pirmo daļu, mēneša neapliekamais minimums: 1) 2025. gadā ir 510 euro mēnesī; 2) 2026. gadā ir 550 euro mēnesī."
+  },
+  {
+   "url": "https://taxsummaries.pwc.com/latvia/individual/taxes-on-personal-income",
+   "title": "Latvia: individual/taxes-on-personal-income (PwC Worldwide Tax Summaries, reviewed 30 June 2026)",
+   "read": "2026-11-01",
+   "kind": "secondary",
+   "quotes": "https://likumi.lv/ta/id/56880-par-iedzivotaju-ienakuma-nodokli",
+   "said": "A rate of 25.5% applies to income up to EUR 105,300. Any income over EUR 105,300 attracts a rate of 33%. … An additional 3% PIT rate applies to the portion of an individual's total annual income that exceeds EUR 200,000. … There are no local taxes on income, such as municipal taxes. … Non-residents are liable to income tax on their Latvian-source income. … For the individuals who are not registered as self-employed persons and payment is treated as royalties, the payer of royalties must apply 25% tax on the gross royalties via withholding, without applying a notional expense rate."
+  },
+  {
+   "url": "https://taxsummaries.pwc.com/latvia/individual/deductions",
+   "title": "Latvia: individual/deductions (PwC Worldwide Tax Summaries, reviewed 30 June 2026)",
+   "read": "2026-11-01",
+   "kind": "secondary",
+   "quotes": "https://likumi.lv/ta/id/56880-par-iedzivotaju-ienakuma-nodokli",
+   "said": "The employer is required to apply a fixed personal allowance (FPA) of EUR 550 ( EUR 6,600 per year) , regardless of individual's income level."
+  },
+  {
+   "url": "https://taxsummaries.pwc.com/latvia/individual/other-taxes",
+   "title": "Latvia: individual/other-taxes (PwC Worldwide Tax Summaries, reviewed 30 June 2026)",
+   "read": "2026-11-01",
+   "kind": "secondary",
+   "quotes": "https://www.vid.gov.lv/",
+   "said": "Employer 23.59 Employee 10.50 … Income on which NSIC is calculated is capped at EUR 105,300. … Self-employed 31.07 … In addition, 10% NSIC is payable by a payer of royalty to Latvian-resident individuals (living in Latvia). … However, the effective ST rate is 25%. … The standard VAT rate on supplies of goods and services is 21%."
+  },
+  {
+   "url": "https://taxsummaries.pwc.com/latvia/individual/income-determination",
+   "title": "Latvia: individual/income-determination (PwC Worldwide Tax Summaries, reviewed 30 June 2026)",
+   "read": "2026-11-01",
+   "kind": "secondary",
+   "quotes": "https://likumi.lv/ta/id/56880-par-iedzivotaju-ienakuma-nodokli",
+   "said": "The employer applies a 25.5% PIT on monthly gross income of up to EUR 8,775."
+  },
+  {
+   "url": "https://taxsummaries.pwc.com/latvia/individual/tax-administration",
+   "title": "Latvia: individual/tax-administration (PwC Worldwide Tax Summaries, reviewed 30 June 2026)",
+   "read": "2026-11-01",
+   "kind": "secondary",
+   "quotes": "https://likumi.lv/ta/id/56880-par-iedzivotaju-ienakuma-nodokli",
+   "said": "Latvian employers are required to withhold income tax on employment income paid to employees and remit the tax to the tax authorities. … Income tax returns should be filed individually on a calendar-year basis between 1 March and 1 June in the year following the year of assessment. … Additional tax not exceeding EUR 640 is payable by 23 June or 23 July, depending on the annual tax return filing deadline."
+  },
+  {
+   "url": "https://www.deloitte.com/content/dam/assets-shared/docs/services/tax/2026/dttl-tax-latviahighlights-2026.pdf",
+   "title": "Latvia Highlights 2026 (Deloitte)",
+   "read": "2026-11-01",
+   "kind": "secondary",
+   "quotes": "https://likumi.lv/ta/id/56880-par-iedzivotaju-ienakuma-nodokli",
+   "said": "Royalties paid to nonresident individuals are subject to a 25.5% withholding tax, unless the rate is reduced under an applicable tax treaty. … Persons whose taxable supplies (excluding imports) exceed EUR 50,000 in a calendar year must register for VAT purposes."
+  }
+ ],
+ "blockers": [
+  {
+   "item": "nonResident",
+   "sought": "A withholding rule specific to a non-resident performer's or director's fee, its rate and finality.",
+   "tried": {
+    "institution": "vid.gov.lv unreachable. || retry 2026-11-01 (world round): www.vid.gov.lv/lv refused again (HTTP/2 INTERNAL_ERROR); fm.gov.lv/lv and mk.gov.lv refused the same way",
+    "official-register": "likumi.lv unreachable. || retry 2026-11-01 (world round): likumi.lv and m.likumi.lv (id 56880) reset the connection; the amending law in Latvijas Vēstnesis 2024/240.1 (vestnesis.lv/op/2024/240.1, saved LV-vestnesis-op-2024-240.1.html) read: it raises the rate in article 17 parts 17 and 19 from 23 to 25.5 but does not state what those parts tax; no performer rule in it",
+    "web-search": "Not resolved. || retry 2026-11-01 (world round): Latvian query 'likums \"Par iedzīvotāju ienākuma nodokli\" 17. pants nerezidents mākslinieks sportists ienākuma nodokļa likme izmaksas vietā': only old amending acts on likumi.lv (artists' income in Latvia is Latvian-source) with no current rate",
+    "trade-press": "PwC and Deloitte give none for performers. || retry 2026-11-01 (world round): KPMG Latvia (kpmg.com/lv, December 2024 note on the adopted amendments) listed in search; it covers residents; no performer withholding",
+    "archive": "Archive unreachable. || retry 2026-11-01 (world round): web.archive.org and archive.ph reset the connection; arquivo.pt answers 403"
+   }
+  }
+ ]
+}

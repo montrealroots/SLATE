@@ -1,0 +1,159 @@
+{
+ "topic": "tax.FK",
+ "read": "2026-11-01",
+ "note": "Read 2026-11-01 at the owner's word (\"Build those first 3 starting with ledger first\"; of the 21 countries read first: \"It should cover across every country\"; \"Retry the blocked tax facts once all countries land\"): the tax on a screen worker's pay in Falkland Islands: a resident's income tax, social contributions, what is withheld at source, a non-resident artiste's withholding, an author's treatment, VAT and the tax year. Research and retry subagents (workbench/briefs/BRIEF-tax.md, BRIEF-tax-retry.md), every quote checked by the lead against its saved page.",
+ "figures": [
+  {
+   "item": "residents",
+   "finding": "For 2026 a resident has a personal allowance of GBP 16,860; the first GBP 18,000 above the allowance and other deductions is taxed at 21% and the rest at 26%; a resident (183 days or more in the year) is taxed on worldwide income.",
+   "value": {
+    "currency": "FKP",
+    "personalAllowance": 16860,
+    "brackets": [
+     {
+      "from": 0,
+      "to": 18000,
+      "rate": 0.21
+     },
+     {
+      "from": 18000,
+      "to": null,
+      "rate": 0.26
+     }
+    ],
+    "bracketsApplyAfterAllowance": true,
+    "residenceDays": 183
+   },
+   "applies": "2026",
+   "sources": [
+    {
+     "src": 0,
+     "said": "For 2026, the personal allowance remains at £16,860, depending on an individual’s tax residency status. The first £18,000 after the personal allowance and other allowable deductions will be taxed at 21% with any remaining amount being taxed at 26%. … A Tax Resident is someone who has been physically present in the Islands for 183 days or more during the relevant tax year."
+    }
+   ]
+  },
+  {
+   "item": "year",
+   "finding": "The tax year runs from 1 January to 31 December; individual returns are issued in March and due by 31 July (or 60 days from issue, if later), and tax is payable by 1 October (or 30 days from assessment, if later).",
+   "value": {
+    "taxYear": {
+     "from": "01-01",
+     "to": "12-31"
+    },
+    "returnDue": "07-31",
+    "paymentDue": "10-01"
+   },
+   "applies": "2026",
+   "sources": [
+    {
+     "src": 0,
+     "said": "The tax year in the Falkland Islands runs from 1 st January to 31 st December. Tax returns for individuals are issued in March following the tax year and have a submission deadline of 31 st July or 60 days from the date of issue, whichever is later. Payment of tax liabilities is 1 st October or 30 days from the date of assessment, whichever is later."
+    }
+   ]
+  },
+  {
+   "item": "withholding",
+   "finding": "Employers deduct Payment On Account of Tax (POAT) from pay, allowing the personal allowance in the main employment and a straight 21% in any other, and pay each month's POAT by the 14th of the next month; a self-employed person's tax is assessed after the year.",
+   "value": {
+    "secondaryEmploymentRate": 0.21,
+    "due": "14th of the following month"
+   },
+   "applies": "2026",
+   "sources": [
+    {
+     "src": 1,
+     "said": "Payment On Account of Tax (POAT) should be applied by employers to their employees’ remuneration. The employer will take into account the personal allowance when deducting tax, however if an employee has more than one employer, only the main or full time employer should account for the personal allowance and each additional employer should strictly deduct tax a straight 21% tax from the employees gross wages. … An employer is required to submit a POAT return for each calendar month by the 14 th of the following month together with the payment for that month’s POAT."
+    },
+    {
+     "src": 2,
+     "said": "Any further Income Tax due from the individual e.g. on self-employed profits, is collected through assessment after the end of the relevant tax year."
+    }
+   ]
+  },
+  {
+   "item": "nonResident",
+   "finding": "A non-resident (under 183 days) is taxed only on Falklands income and duties performed there; as an employee he has a flat 21% POAT deducted, which he may accept as final or file a return to get the personal allowance pro rata to his days present (income above it taxed at 21% then 26%).",
+   "value": {
+    "flatRate": 0.21,
+    "optionalFinal": true,
+    "allowance": "personal allowance pro rata to days present"
+   },
+   "applies": "2026; the rule for a non-resident's self-employed fee is not stated beyond assessment on Falklands income.",
+   "sources": [
+    {
+     "src": 1,
+     "said": "Non-resident employees are required to have a flat rate POAT deduction from their gross wages. The employee can either accept this as their final liability to Falklands Tax or alternatively submit a tax return to receive an assessment."
+    },
+    {
+     "src": 2,
+     "said": "Not resident and not ordinarily resident - assessed on income from within FI and/or for duties performed in FI. Entitled to a proportion of the PA according to the number of days present in FI during the relevant tax year … Non-resident employees should have tax deducted at a straight 21% (POAT for Income Tax)."
+    }
+   ]
+  },
+  {
+   "item": "vat",
+   "finding": "The Falkland Islands have no sales tax or VAT, so a freelancer's fee bears none.",
+   "value": {
+    "vat": null
+   },
+   "applies": "2026 (guide of 11 April 2024, still the one posted).",
+   "sources": [
+    {
+     "src": 2,
+     "said": "The main taxes are Income Tax, Medical Services Tax and Corporation Tax. The FI does not have any wealth taxes, death duties, sales tax, VAT or stamp duties."
+    }
+   ]
+  },
+  {
+   "item": "social",
+   "finding": "Medical Services Tax has been 0% for individuals and employers since 1 January 2018; Retirement Pension Contributions are deductible from income for tax and are administered by the Pensions Office (their rates are in the blocker).",
+   "value": {
+    "medicalServicesTax": 0
+   },
+   "applies": "2026",
+   "sources": [
+    {
+     "src": 2,
+     "said": "MST has been set at a rate of 0% since 1st January 2018 for both individuals and employers."
+    }
+   ]
+  }
+ ],
+ "country": "FK",
+ "sources": [
+  {
+   "url": "https://www.gov.fk/taxation/individuals-employees/individual-information/",
+   "title": "Falkland Islands Government Taxation Office, Individual Information",
+   "read": "2026-11-01",
+   "kind": "primary",
+   "said": "For 2026, the personal allowance remains at £16,860, depending on an individual’s tax residency status. The first £18,000 after the personal allowance and other allowable deductions will be taxed at 21% with any remaining amount being taxed at 26%. … A Tax Resident is someone who has been physically present in the Islands for 183 days or more during the relevant tax year. … The tax year in the Falkland Islands runs from 1 st January to 31 st December. Tax returns for individuals are issued in March following the tax year and have a submission deadline of 31 st July or 60 days from the date of issue, whichever is later. Payment of tax liabilities is 1 st October or 30 days from the date of assessment, whichever is later."
+  },
+  {
+   "url": "https://www.gov.fk/taxation/employers/employer-information/",
+   "title": "FIG Taxation Office, Employer Information",
+   "read": "2026-11-01",
+   "kind": "primary",
+   "said": "Payment On Account of Tax (POAT) should be applied by employers to their employees’ remuneration. The employer will take into account the personal allowance when deducting tax, however if an employee has more than one employer, only the main or full time employer should account for the personal allowance and each additional employer should strictly deduct tax a straight 21% tax from the employees gross wages. … An employer is required to submit a POAT return for each calendar month by the 14 th of the following month together with the payment for that month’s POAT. … Non-resident employees are required to have a flat rate POAT deduction from their gross wages. The employee can either accept this as their final liability to Falklands Tax or alternatively submit a tax return to receive an assessment."
+  },
+  {
+   "url": "https://www.gov.fk/taxation/wp-content/uploads/sites/25/2026/02/General_Tax_Guide_Individuals_2024_onwards.pdf",
+   "title": "FIG Taxation Office, A General Guide to Falkland Islands Tax for Individuals (11/04/24)",
+   "read": "2026-11-01",
+   "kind": "primary",
+   "said": "Any further Income Tax due from the individual e.g. on self-employed profits, is collected through assessment after the end of the relevant tax year. … Not resident and not ordinarily resident - assessed on income from within FI and/or for duties performed in FI. Entitled to a proportion of the PA according to the number of days present in FI during the relevant tax year … Non-resident employees should have tax deducted at a straight 21% (POAT for Income Tax). … The main taxes are Income Tax, Medical Services Tax and Corporation Tax. The FI does not have any wealth taxes, death duties, sales tax, VAT or stamp duties. … MST has been set at a rate of 0% since 1st January 2018 for both individuals and employers."
+  }
+ ],
+ "blockers": [
+  {
+   "item": "social",
+   "sought": "Retirement Pension Contribution rates (employee and employer) on pay; the Medical Services Tax is found (0%).",
+   "tried": {
+    "institution": "falklands.gov.fk (Taxation Office pages /taxation/, /taxation/individuals-employees, and General_Tax_Guide_Individuals_2024_onwards.pdf) refused from this environment on 2026-11-01: \"CONNECT tunnel failed, response 502\" (also with www.), retried three times. || retry 2026-11-01: gov.fk (the Falkland Islands Government's current domain; falklands.gov.fk still 502) reached: Taxation Office pages and guides read and saved; they refer RPC questions to the Pensions Office (FIPS@sec.gov.fk) and give no RPC rate; the MPA guide 2026 notes RPC exemptions only",
+    "official-register": "legislation.gov.fk serves a script-only page; the Taxes Ordinance 1997 text was not readable. || retry 2026-11-01: legislation.gov.fk serves a script-only app whose bundle exposes no document API; the Retirement Pensions Ordinance not read",
+    "web-search": "Web search (2026-11-01) shows the Taxation Office page says the first £12,000 after the personal allowance is taxed at 21% and the rest at 26%, with a personal allowance of £16,860 for 2025 and a reduced allowance for non-residents by days present; not used, since the page could not be saved and quoted. || retry 2026-11-01: refused by the search tool on 2026-11-01: the turn's shared limit of 200 searches was reached; not worked around",
+    "trade-press": "No PwC or Deloitte 2026 summary for the Falkland Islands exists; no trade press quoting the Taxation Office found. || retry 2026-11-01: none (as before)",
+    "archive": "web.archive.org reset the connection (\"Recv failure: Connection reset by peer\"; proxy: tunnel closed after 10s) on every attempt. || retry 2026-11-01: web.archive.org: connection reset again 2026-11-01"
+   }
+  }
+ ]
+}

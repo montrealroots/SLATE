@@ -1,0 +1,122 @@
+{
+ "topic": "markets.LB",
+ "read": "2026-11-01",
+ "note": "Read 2026-11-01 at the owner's word (\"Want it done now\", of the markets of every country beyond the 21; then \"Retry the blocked market facts once all countries land\"): the terms a professional actor is engaged on in Lebanon. Research, retry and web-search subagents (workbench/briefs/BRIEF-markets-world.md, -retry.md, -search.md), every quote checked by the lead against its saved page.",
+ "figures": [
+  {
+   "item": "union",
+   "finding": "Lebanese performers organise in artists' syndicates under Law No. 56/2008 on the organisation of artistic professions: eight syndicates are registered with the Ministry of Culture, each takes applications in its field and files them with the Ministry for approval; members of a syndicate may join the artists' mutual fund (sickness, accident and death allowances, education aid, a retirement pension), funded by members' annual fees, a 2% tax on event tickets, a 10% tax on foreign artists' contracts and a Ministry contribution. No collective agreement or minimum fee was found.",
+   "value": {
+    "law": "Law No. 56/2008 (promulgated 2008-12-27); Decree No. 7535/2012 (mutual fund)",
+    "registeredSyndicates": 8,
+    "join": [
+     "apply to the syndicate of one's field",
+     "syndicate files with the Ministry of Culture (Directorate of National Cooperation and Coordination) for approval"
+    ],
+    "mutualFund": {
+     "requires": "membership of a formal syndicate",
+     "benefits": [
+      "sickness, death and accident allowances",
+      "marriage and birth assistance",
+      "education aid, scholarships and loans",
+      "retirement pension"
+     ],
+     "resources": {
+      "ticketTax": 0.02,
+      "foreignArtistContractTax": 0.1,
+      "memberFees": "annual",
+      "ministryContribution": true
+     }
+    },
+    "minimumPay": null
+   },
+   "applies": "Lebanon, artists, from 2008 (fund from 2012).",
+   "sources": [
+    {
+     "src": 0,
+     "said": "Law No. 56/2008 on the organization of artistic professions was promulgated on 27/12/2008. This law regulates the formation, activity and membership of these syndicates. … Eight artists' syndicates are duly registered in the Ministry of Culture. These syndicates receive membership applications according to their field of work and then file them to the Ministry of Culture - Directorate of National Cooperation and Coordination - for approval after verifying that the required conditions are fulfilled. … This fund accepts memberships after verifying that the required conditions are met, especially that the applicant is a member of a formal syndicate. … Fix a retirement pension for the members. … A tax of two percent on all event tickets (theater, concerts) and all artistic activities … A tax of ten percent on foreign artists contracts collected by the Ministry of Finance and transferred monthly to the fund."
+    }
+   ]
+  },
+  {
+   "item": "rates",
+   "finding": "A foreign artist engaged in Lebanon has 10% of the contract taxed for the Lebanese artists' mutual fund, collected by the Ministry of Finance.",
+   "value": {
+    "foreignArtistContractTax": 0.1,
+    "beneficiary": "artists' mutual fund"
+   },
+   "applies": "Lebanon, from 2008/2012.",
+   "sources": [
+    {
+     "src": 0,
+     "said": "A tax of ten percent on foreign artists contracts collected by the Ministry of Finance and transferred monthly to the fund."
+    }
+   ]
+  },
+  {
+   "item": "language",
+   "finding": "Arabic is the official national language of Lebanon; the use of French is set by law.",
+   "value": {
+    "languages": [
+     "ar"
+    ],
+    "alsoByLaw": [
+     "fr"
+    ]
+   },
+   "applies": "Lebanon.",
+   "sources": [
+    {
+     "src": 1,
+     "said": "Article 11 The Arabic language is the official national language. The conditions under which the French language is to be used are determined by law."
+    }
+   ]
+  },
+  {
+   "item": "market",
+   "finding": "Beirut is Lebanon's capital; no source measuring where most screen work is made was found.",
+   "value": {
+    "city": "Beirut",
+    "tz": "Asia/Beirut",
+    "basis": "capital, not a production count"
+   },
+   "applies": "Lebanon.",
+   "sources": [
+    {
+     "src": 1,
+     "said": "Article 4 The Grand Lebanon is a Republic, whose capital is Beirut."
+    }
+   ]
+  }
+ ],
+ "country": "LB",
+ "sources": [
+  {
+   "url": "https://culture.gov.lb/en/Ministry-Services/88-Artists-Syndicates-and-Mutual-Fund",
+   "title": "Ministry of Culture of Lebanon: Artists Syndicates and Mutual Fund",
+   "read": "2026-11-01",
+   "kind": "primary",
+   "said": "Law No. 56/2008 on the organization of artistic professions was promulgated on 27/12/2008. This law regulates the formation, activity and membership of these syndicates. … Eight artists' syndicates are duly registered in the Ministry of Culture. These syndicates receive membership applications according to their field of work and then file them to the Ministry of Culture - Directorate of National Cooperation and Coordination - for approval after verifying that the required conditions are fulfilled. … This fund accepts memberships after verifying that the required conditions are met, especially that the applicant is a member of a formal syndicate. … Fix a retirement pension for the members. … A tax of two percent on all event tickets (theater, concerts) and all artistic activities … A tax of ten percent on foreign artists contracts collected by the Ministry of Finance and transferred monthly to the fund."
+  },
+  {
+   "url": "https://www.constituteproject.org/constitution/Lebanon_2004?lang=en",
+   "title": "Lebanon's Constitution of 1926 with amendments through 2004 (Constitute Project)",
+   "read": "2026-11-01",
+   "kind": "primary",
+   "said": "Article 11 The Arabic language is the official national language. The conditions under which the French language is to be used are determined by law. … Article 4 The Grand Lebanon is a Republic, whose capital is Beirut."
+  }
+ ],
+ "blockers": [
+  {
+   "item": "rates",
+   "sought": "A collective agreement or minimum fee for actors, writers or directors in Lebanon",
+   "tried": {
+    "institution": "culture.gov.lb read (syndicates and fund only; Law 56/2008 text linked, not read) || retry 2026-11-01: https://culture.gov.lb/ read (home, Agreements page https://culture.gov.lb/ar/Cultural-Agenda/Agreements: co-production agreements, no fund terms); the Laws page returned the home page",
+    "official-register": "Law 56/2008 text not fetched || retry 2026-11-01: WIPO Lex country profile https://www.wipo.int/wipolex/en/members/profile/LB read 2026-11-01 (saved /tmp/claude-0/-home-user-SLATE/cfe06f79-0641-529e-b709-1fcd46045c09/scratchpad/dl/markets-world/LB-wipolex.html): lists copyright and media laws, none setting this: copyright law 75 of 1999 and 2006 decrees; no fee schedule",
+    "web-search": "web-search budget exhausted in this session || retry 2026-11-01: \"Lebanon Ministry of Culture film support fund cinema grant Lebanese films دعم الإنتاج السينمائي وزارة الثقافة\": private Fondation Liban Cinéma fund (EUR 5,000-20,000 grants, reported), AFAC; no state fund or fee || web search 2026-11-01 (second pass): \"نقابة الفنانين المحترفين في لبنان الحد الأدنى لأجر الممثل عقد عمل الدراما\" and \"Lebanon actors syndicate minimum wage actors law 2008 professional artists syndicates law 56 mutual fund artists\": a result snippet says the Syndicate of Actors' page lebaneseactors.net/page-2/establishment published minimum per-episode fees in four categories (highest USD 500 a full episode) from 1 March 2018 and barred hiring non-members without its permit; that URL now answers 404/405 and the syndicate's new site (lebaneseactors.com/en/about, /for-production-companies, /membership-path, read 2026-11-01) shows no rate table, so the figures are not read from a saved page; a third phrasing (the syndicate's Arabic name with the per-episode minimum) was refused: the turn's shared web-search budget ran out at 19:18 UTC",
+    "trade-press": "none || retry 2026-11-01: L'Orient Today on the FLC fund (quotes FLC; not a state fund, not used)",
+    "archive": "web.archive.org unreachable || retry 2026-11-01: archive.org availability API answered 429 Too Many Requests and web.archive.org/web/2025/https://culture.gov.lb/ reset the connection (curl 35), 2026-11-01; no snapshot read"
+   }
+  }
+ ]
+}

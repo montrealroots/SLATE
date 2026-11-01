@@ -1,0 +1,119 @@
+{
+ "topic": "markets.producer.FI",
+ "read": "2026-11-01",
+ "note": "Read 2026-11-01 at the owner's word (\"Want it done now\", of the markets of every country beyond the 21; then \"Retry the blocked market facts once all countries land\"): the terms a producer works on in Finland. Research, retry and web-search subagents (workbench/briefs/BRIEF-markets-world.md, -retry.md, -search.md), every quote checked by the lead against its saved page.",
+ "figures": [
+  {
+   "item": "fund",
+   "finding": "The Finnish Film Foundation's production support is at most €1,200,000 a film and up to 90% of approved costs; in 2025 it funded 55 of 261 production applications (€11.1 million granted of €62.4 million sought).",
+   "value": {
+    "fund": "Suomen elokuvasäätiö (Finnish Film Foundation)",
+    "capEUR": 1200000,
+    "maxShare": 0.9,
+    "year": 2025,
+    "applications": 261,
+    "granted": 55,
+    "soughtEUR": 62426195,
+    "grantedEUR": 11075200
+   },
+   "applies": "Finland, film production companies registered in Finland (not broadcasters or streamers), 2025-2026.",
+   "sources": [
+    {
+     "src": 0,
+     "said": "The maximum amount of production support is €1,200,000. Support can cover up to 90% of the costs approved by the Finnish Film Foundation."
+    },
+    {
+     "src": 1,
+     "said": "Production support 261 55 62 426 195 11 075 200"
+    }
+   ]
+  },
+  {
+   "item": "feecap",
+   "finding": "The Foundation accepts at most 5% of actual production costs as the company's fixed overheads (administrative costs).",
+   "value": {
+    "overheadCap": 0.05,
+    "base": "actualised production costs"
+   },
+   "applies": "Finland, films with Finnish Film Foundation production support.",
+   "sources": [
+    {
+     "src": 0,
+     "said": "Administrative costs 5% of the actualised production costs may be fixed overheads and considered as administrative costs."
+    }
+   ]
+  },
+  {
+   "item": "incentive",
+   "finding": "Business Finland's audiovisual production incentive is a cash rebate of up to 25% of production costs in Finland, for feature films, documentaries, serial fiction and animation; eligible Finnish costs may be at most 80% of the budget, public funding of the Finnish costs at most 50%, at least 25% of financing must come from abroad, and the 2026 budget is €10 million.",
+   "value": {
+    "rate": 0.25,
+    "base": "eligible production costs incurred in Finland",
+    "eligibleCostCap": "80% of total production budget",
+    "foreignFinancingMin": 0.25,
+    "publicFundingMaxOfFinnishCosts": 0.5,
+    "annualBudgetEUR": 10000000,
+    "year": 2026,
+    "decree": "Government Decree on the payment of compensation for audiovisual productions 2024-2026"
+   },
+   "applies": "Finland, international and Finnish productions with foreign financing, 2026 call.",
+   "sources": [
+    {
+     "src": 2,
+     "said": "The production incentive in Finland is a maximum of 25% cash rebate for production costs. … The budget for the audiovisual production incentive for 2026 is 10 million euros. … Eligible costs incurred in Finland can be a maximum of 80% of the total production budget … productions in which the share of public funding in costs generated in Finland exceeds 50 percent. … At least 25 % of funding for the overall production budget must come from outside Finland"
+    }
+   ]
+  },
+  {
+   "item": "outcomes",
+   "finding": "Finland had 44 domestic first releases among 216 in cinemas in 2025; domestic films drew 2.0 million of 6.3 million admissions (32%), and of 19 supported feature fiction films premiering, 13 cost €1-2 million, 1 under €1 million, 1 €2-3 million and 4 over €3 million.",
+   "value": {
+    "year": 2025,
+    "firstReleases": 216,
+    "domesticFirstReleases": 44,
+    "admissionsM": 6.3,
+    "domesticAdmissionsM": 2.0,
+    "domesticShare": 0.32,
+    "boxOfficeEURm": 85.8,
+    "supportedFictionByBudgetEUR": {
+     "<1m": 1,
+     "1-2m": 13,
+     "2-3m": 1,
+     ">3m": 4
+    }
+   },
+   "applies": "Finland, cinemas, calendar 2025 (Finnish Film Foundation official statistics).",
+   "sources": [
+    {
+     "src": 1,
+     "said": "6,3 Cinema admissions … 2,0 katsojat (milj.) … 216 First releases in cinemas (no.) … 44 ensi-iltoja (kpl) … 32% … Number of fiction productions by size of budget 19 elokuvaa movies Budjetti (€) Budget (€) Alle miljoona Less than 1 million 1 elokuva production 1–2 miljoonaa 1–2 million 13 elokuvaa productions 2–3 miljoonaa 2–3 million 1 elokuva production Yli 3 miljoonaa More than 3 million 4 elokuvaa productions"
+    }
+   ]
+  }
+ ],
+ "country": "FI",
+ "sources": [
+  {
+   "url": "https://www.ses.fi/en/funding/support-guides/production-support/",
+   "title": "Support guide: Production support (Finnish Film Foundation)",
+   "read": "2026-11-01",
+   "kind": "primary",
+   "said": "The maximum amount of production support is €1,200,000. Support can cover up to 90% of the costs approved by the Finnish Film Foundation. … Administrative costs 5% of the actualised production costs may be fixed overheads and considered as administrative costs."
+  },
+  {
+   "url": "https://www.ses.fi/wp-content/uploads/SES-elokuvavuosi-2025-facts-and-figures.pdf",
+   "title": "Elokuvavuosi 2025 Facts & Figures (Finnish Film Foundation)",
+   "read": "2026-11-01",
+   "kind": "primary",
+   "said": "Production support 261 55 62 426 195 11 075 200 … 6,3 Cinema admissions … 2,0 katsojat (milj.) … 216 First releases in cinemas (no.) … 44 ensi-iltoja (kpl) … 32% … Number of fiction productions by size of budget 19 elokuvaa movies Budjetti (€) Budget (€) Alle miljoona Less than 1 million 1 elokuva production 1–2 miljoonaa 1–2 million 13 elokuvaa productions 2–3 miljoonaa 2–3 million 1 elokuva production Yli 3 miljoonaa More than 3 million 4 elokuvaa productions"
+  },
+  {
+   "url": "https://www.businessfinland.fi/en/services/funding/funding-services/cash-rebate",
+   "title": "Production incentive for the audiovisual industry (Business Finland)",
+   "read": "2026-11-01",
+   "kind": "primary",
+   "said": "The production incentive in Finland is a maximum of 25% cash rebate for production costs. … The budget for the audiovisual production incentive for 2026 is 10 million euros. … Eligible costs incurred in Finland can be a maximum of 80% of the total production budget … productions in which the share of public funding in costs generated in Finland exceeds 50 percent. … At least 25 % of funding for the overall production budget must come from outside Finland"
+  }
+ ],
+ "blockers": []
+}

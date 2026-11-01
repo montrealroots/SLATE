@@ -1,0 +1,182 @@
+{
+ "topic": "tax.CF",
+ "read": "2026-11-01",
+ "note": "Read 2026-11-01 at the owner's word (\"Build those first 3 starting with ledger first\"; of the 21 countries read first: \"It should cover across every country\"; \"Retry the blocked tax facts once all countries land\"): the tax on a screen worker's pay in Central African Republic: a resident's income tax, social contributions, what is withheld at source, a non-resident artiste's withholding, an author's treatment, VAT and the tax year. Research and retry subagents (workbench/briefs/BRIEF-tax.md, BRIEF-tax-retry.md), every quote checked by the lead against its saved page.",
+ "figures": [
+  {
+   "item": "residents",
+   "finding": "A salaried resident's IRPP, in the 2023 official edition of the tax code, is charged on annual net income after social contributions and a flat 30% allowance for expenses: 0% to XAF 378,000, 8% to 1,680,000, 15% to 3,360,000, 28% to 5,040,000 and 40% above. A self-employed person pays 30% of profits, but at least 1.85% of turnover (minimum XAF 1,850,000).",
+   "value": {
+    "currency": "XAF",
+    "professionalAllowance": 0.3,
+    "brackets": [
+     {
+      "from": 0,
+      "to": 378000,
+      "rate": 0
+     },
+     {
+      "from": 378000,
+      "to": 1680000,
+      "rate": 0.08
+     },
+     {
+      "from": 1680000,
+      "to": 3360000,
+      "rate": 0.15
+     },
+     {
+      "from": 3360000,
+      "to": 5040000,
+      "rate": 0.28
+     },
+     {
+      "from": 5040000,
+      "to": null,
+      "rate": 0.4
+     }
+    ],
+    "selfEmployed": {
+     "rate": 0.3,
+     "minimumTurnoverRate": 0.0185,
+     "minimum": 1850000
+    },
+    "edition": "CGI 2017 updated 2023; 2026 finance law changes not read"
+   },
+   "applies": "Persons taxable in the Central African Republic; the scale is that of the code's 2023 edition (the 2026 finance law, adopted 10 December 2025, may change it).",
+   "sources": [
+    {
+     "src": 0,
+     "said": "Article 86.-Sous réserve des conventions internationales, le montant de l’Impôt est déterminé par application du barème annuel ci-dessous au revenu global net, c’est-à-dire déduction faite des cotisations sociales et des allocations familiales ainsi que de l’abattement pour frais professionnels fixé forfaitairement à 30% tels qu’ils sont prévus aux articles 38 et 39 du CGI. Tranches de revenu net annuel Taux 0- 378.0000 0% 378.001-1.680.000 8% 1.680.001-3.360.000 15% 3.360.001-5.040.000 28% Superieur à 5.040.000 40%"
+    },
+    {
+     "src": 0,
+     "said": "Article 81.- Le taux de l’impôt est fixé à 30% pour les personnes physiques qui exercent les activités relevant des catégories des bénéfices artisanaux , industriels et commerciaux , des bénéfices non commerciaux ."
+    },
+    {
+     "src": 0,
+     "said": "b) 1,85% pour les autres activités. Dans tous les cas, le montant minimun de l’impôt sur le revenu des personnes physiques exigible est de : • 300 000 F CFA pour les activités agricoles ; • 1 850 000 F CFA pour les autres activités ."
+    }
+   ]
+  },
+  {
+   "item": "withholding",
+   "finding": "The employer withholds a monthly instalment on net monthly pay by the scale brought to a month and pays it to the tax office by the 15th of each month.",
+   "value": {
+    "scheme": "monthly withholding by employer",
+    "remitBy": "15th of each month"
+   },
+   "applies": "Salaried persons in the CAR.",
+   "sources": [
+    {
+     "src": 0,
+     "said": "Article 110.-L’ Impôt est payé par acompte mensuel dont le montant est déterminé sur la base du salaire mensuel net auquel le barème ramené au mois est appliqué. Il est retenu à la source et reversé à la caisse de l’agent des impôts chargé du recouvrement au plus tard le 15 de chaque mois par l’employeur."
+    }
+   ]
+  },
+  {
+   "item": "year",
+   "finding": "The tax year is the calendar year; the annual IRPP return is due by 30 April of the following year.",
+   "value": {
+    "taxYear": {
+     "from": "2026-01-01",
+     "to": "2026-12-31"
+    },
+    "returnDue": "2027-04-30",
+    "currency": "XAF"
+   },
+   "applies": "CAR taxpayers.",
+   "sources": [
+    {
+     "src": 0,
+     "said": "au plus tard le 30 Avril de l’année fiscale suivant celle de la réalisation des revenus déclarés."
+    }
+   ]
+  },
+  {
+   "item": "nonResident",
+   "finding": "Payments abroad for services bear a 15% withholding that is final for the recipient, subject to treaties.",
+   "value": {
+    "rate": 0.15,
+    "final": true,
+    "base": "remuneration of services paid abroad"
+   },
+   "applies": "Fees paid to non-residents (a visiting performer's, writer's or director's).",
+   "sources": [
+    {
+     "src": 0,
+     "said": "S’agissant des rémunérations des prestations de services versées à l’étranger et sous réserve des conventions internationales, le taux de la retenue est de 15%. Cette retenue constitue pour le redevable un prélèvement libératoire."
+    }
+   ]
+  },
+  {
+   "item": "authors",
+   "finding": "Authors' royalties received by artists, writers or composers are non-commercial profits (BNC), taxed at the self-employed 30% rate.",
+   "value": {
+    "category": "bénéfices non commerciaux",
+    "rate": 0.3
+   },
+   "applies": "Authors' rights income.",
+   "sources": [
+    {
+     "src": 0,
+     "said": "a) les produits des droits d’auteur perçus par les artistes, écrivains ou compositeurs ou tout autre bénéficiaire et par leurs héritiers ou légataires ;"
+    }
+   ]
+  },
+  {
+   "item": "vat",
+   "finding": "The general VAT rate is 19%; a person with turnover under XAF 30 million is under the single global tax (IGU) instead of the business licence.",
+   "value": {
+    "standardRate": 0.19,
+    "reduced": 0.05,
+    "igUThreshold": 30000000
+   },
+   "applies": "CAR.",
+   "sources": [
+    {
+     "src": 0,
+     "said": "Article 257 (LF 2019).-Les taux de la taxe sur la valeur ajoutée sont les suivants : • un taux général : 19% applicable à toutes les opérations taxables"
+    },
+    {
+     "src": 0,
+     "said": "les personnes physiques ou morales qui réalisent un chiffre d’affaires annuel inférieur à 30 000 000 F CFA, et qui sont de ce fait assujetties à l’impôt global unique ;"
+    }
+   ]
+  }
+ ],
+ "country": "CF",
+ "sources": [
+  {
+   "url": "https://finances.gouv.cf/sites/default/files/2023-05/CGI%20RCA%202017%20mise%20%C3%A0%20jour%202023.pdf",
+   "title": "Code Général des Impôts 2017, édition officielle mise à jour 2023 (DGID, Ministère des Finances et du Budget, République Centrafricaine)",
+   "read": "2026-11-01",
+   "kind": "primary",
+   "said": "Article 86.-Sous réserve des conventions internationales, le montant de l’Impôt est déterminé par application du barème annuel ci-dessous au revenu global net, c’est-à-dire déduction faite des cotisations sociales et des allocations familiales ainsi que de l’abattement pour frais professionnels fixé forfaitairement à 30% tels qu’ils sont prévus aux articles 38 et 39 du CGI. Tranches de revenu net annuel Taux 0- 378.0000 0% 378.001-1.680.000 8% 1.680.001-3.360.000 15% 3.360.001-5.040.000 28% Superieur à 5.040.000 40% … Article 81.- Le taux de l’impôt est fixé à 30% pour les personnes physiques qui exercent les activités relevant des catégories des bénéfices artisanaux , industriels et commerciaux , des bénéfices non commerciaux . … b) 1,85% pour les autres activités. Dans tous les cas, le montant minimun de l’impôt sur le revenu des personnes physiques exigible est de : • 300 000 F CFA pour les activités agricoles ; • 1 850 000 F CFA pour les autres activités . … Article 110.-L’ Impôt est payé par acompte mensuel dont le montant est déterminé sur la base du salaire mensuel net auquel le barème ramené au mois est appliqué. Il est retenu à la source et reversé à la caisse de l’agent des impôts chargé du recouvrement au plus tard le 15 de chaque mois par l’employeur. … au plus tard le 30 Avril de l’année fiscale suivant celle de la réalisation des revenus déclarés. … S’agissant des rémunérations des prestations de services versées à l’étranger et sous réserve des conventions internationales, le taux de la retenue est de 15%. Cette retenue constitue pour le redevable un prélèvement libératoire. … a) les produits des droits d’auteur perçus par les artistes, écrivains ou compositeurs ou tout autre bénéficiaire et par leurs héritiers ou légataires ; … Article 257 (LF 2019).-Les taux de la taxe sur la valeur ajoutée sont les suivants : • un taux général : 19% applicable à toutes les opérations taxables … les personnes physiques ou morales qui réalisent un chiffre d’affaires annuel inférieur à 30 000 000 F CFA, et qui sont de ce fait assujetties à l’impôt global unique ;"
+  }
+ ],
+ "blockers": [
+  {
+   "item": "residents",
+   "sought": "The IRPP scale as amended by the finance laws to 2026 (a non-official calculator suggests a 2,400,000 franchise and a 50% top rate)",
+   "tried": {
+    "institution": "finances.gouv.cf reachable; the CGI 2023 edition read; the 2026 finance law text not found on it (only a bond information note citing it) || retry 2026-11-01 (world round): finances.gouv.cf answers: its Lois de Finances page lists the 2026 finance law (sites/default/files/2025-12/LOI%202026%20OK_0.pdf), saved as CF-loi-de-finances-2026.pdf: a 624-page, 137 MB scan with no text layer; OCR was started (tesseract, English data only, no French) but ran about 90 seconds a page on this machine and was stopped, so the IRPP and CNSS provisions in it were not read",
+    "official-register": "Journal officiel de la RCA not online || retry 2026-11-01 (world round): the 2026 finance law found on the Ministry's site (above) is the official text, unread for want of OCR; the Journal officiel de la RCA is not online; cnss-rca.org answers a 995-byte placeholder",
+    "web-search": "WebSearch 'Centrafrique code général des impôts IRPP barème ... loi de finances 2026' and '\"République Centrafricaine\" \"loi de finances\" 2026 pdf IRPP' || retry 2026-11-01 (world round): WebSearch refused 2026-11-01 (the turn's shared 200-search budget exhausted)",
+    "trade-press": "afrotools calculator (franchise XAF 2,400,000, rates 8%-50%) seen, names no text; not used || retry 2026-11-01 (world round): the afrotools calculator (read before) names no text; not used",
+    "archive": "web.archive.org not reachable (curl 000) 2026-11-01 || retry 2026-11-01 (world round): web.archive.org and archive.ph reset the connection; arquivo.pt answers 403"
+   }
+  },
+  {
+   "item": "social",
+   "sought": "CNSS contribution rates and ceiling for 2026",
+   "tried": {
+    "institution": "finances.gouv.cf reachable; the CGI 2023 edition read; the 2026 finance law text not found on it (only a bond information note citing it) || retry 2026-11-01 (world round): finances.gouv.cf answers: its Lois de Finances page lists the 2026 finance law (sites/default/files/2025-12/LOI%202026%20OK_0.pdf), saved as CF-loi-de-finances-2026.pdf: a 624-page, 137 MB scan with no text layer; OCR was started (tesseract, English data only, no French) but ran about 90 seconds a page on this machine and was stopped, so the IRPP and CNSS provisions in it were not read",
+    "official-register": "Journal officiel de la RCA not online || retry 2026-11-01 (world round): the 2026 finance law found on the Ministry's site (above) is the official text, unread for want of OCR; the Journal officiel de la RCA is not online; cnss-rca.org answers a 995-byte placeholder",
+    "web-search": "WebSearch 'Centrafrique code général des impôts IRPP barème ... loi de finances 2026' and '\"République Centrafricaine\" \"loi de finances\" 2026 pdf IRPP' || retry 2026-11-01 (world round): WebSearch refused 2026-11-01 (the turn's shared 200-search budget exhausted)",
+    "trade-press": "afrotools calculator (franchise XAF 2,400,000, rates 8%-50%) seen, names no text; not used || retry 2026-11-01 (world round): the afrotools calculator (read before) names no text; not used",
+    "archive": "web.archive.org not reachable (curl 000) 2026-11-01 || retry 2026-11-01 (world round): web.archive.org and archive.ph reset the connection; arquivo.pt answers 403"
+   }
+  }
+ ]
+}

@@ -1,0 +1,58 @@
+{
+ "topic": "tax.EH",
+ "read": "2026-11-01",
+ "note": "Read 2026-11-01 at the owner's word (\"Build those first 3 starting with ledger first\"; of the 21 countries read first: \"It should cover across every country\"; \"Retry the blocked tax facts once all countries land\"): the tax on a screen worker's pay in Western Sahara: a resident's income tax, social contributions, what is withheld at source, a non-resident artiste's withholding, an author's treatment, VAT and the tax year. Research and retry subagents (workbench/briefs/BRIEF-tax.md, BRIEF-tax-retry.md), every quote checked by the lead against its saved page.",
+ "figures": [
+  {
+   "item": "residents",
+   "finding": "The part of Western Sahara under Moroccan administration (the regions of Laâyoune-Sakia El Hamra and Dakhla-Oued Ed-Dahab) is taxed under Morocco's law, with a long-standing exemption, dating from the 1970s and not written into the tax code, that spares businesses established there corporate tax and income tax; whether it reaches a wage earner's or freelancer's income was not found. The rest of the territory levies no tax that was found.",
+   "value": {
+    "follows": "MA",
+    "southernRegionsBusinessExemption": {
+     "is": true,
+     "ir": true,
+     "basis": "practice since the 1970s, no legal text named"
+    }
+   },
+   "applies": "Moroccan-administered Western Sahara; the game takes Morocco's figures there and says the southern exemption for individuals is not modelled.",
+   "sources": [
+    {
+     "src": 0,
+     "said": "l’exonération fiscale, une décision héritée du règne de Feu Hassan II, continue de prévaloir dans les régions de Laâyoune-Sakia El Hamra et Dakhla- Oued Ed-Dahab."
+    },
+    {
+     "src": 0,
+     "said": "En clair, les entreprises établies à Laâyoune-Sakia El Hamra et Dakhla-Oued Ed-Dahab sont épargnées du paiement, entre autres, de l’IS et l’IR."
+    },
+    {
+     "src": 0,
+     "said": "l’objectif de cette tradition fiscale, qui existant depuis les années 70, est de dynamiser les investissements dans le Sud marocain."
+    }
+   ]
+  }
+ ],
+ "country": "EH",
+ "sources": [
+  {
+   "url": "https://www.fnh.ma/article/actualite-financiere-maroc/fiscalite-un-regime-particulierement-avantageux-pour-les-entreprises",
+   "title": "Fiscalité: un régime particulièrement avantageux pour les entreprises (Finances News Hebdo, 5 septembre 2021)",
+   "read": "2026-11-01",
+   "kind": "secondary",
+   "quotes": "https://www.tax.gov.ma",
+   "said": "l’exonération fiscale, une décision héritée du règne de Feu Hassan II, continue de prévaloir dans les régions de Laâyoune-Sakia El Hamra et Dakhla- Oued Ed-Dahab. … En clair, les entreprises établies à Laâyoune-Sakia El Hamra et Dakhla-Oued Ed-Dahab sont épargnées du paiement, entre autres, de l’IS et l’IR. … l’objectif de cette tradition fiscale, qui existant depuis les années 70, est de dynamiser les investissements dans le Sud marocain."
+  }
+ ],
+ "blockers": [
+  {
+   "item": "residents",
+   "sought": "A primary text (Moroccan CGI 2026, a DGI note, or a decree) on whether the southern regions' exemption covers an individual's salary or fees, and any tax levied in the Polisario-held area",
+   "tried": {
+    "institution": "tax.gov.ma HTTP 403 to curl 2026-11-01 (not read another way) || retry 2026-11-01: tax.gov.ma: HTTP 403 again (not read another way); finances.gov.ma reached: its Arabic synthesis of the 2026 finance law (SLF2026-Ar.pdf, saved EH-mef-ma-slf2026-ar.pdf, 14.6 MB) read by text search: Laâyoune and Dakhla appear 21 times, only in economic and investment figures, never in an income-tax exemption",
+    "official-register": "Bulletin officiel (sgg.gov.ma) not searched successfully; the CGI 2026 PDF not found on a government host in results || retry 2026-11-01: sgg.gov.ma (Bulletin officiel) reached: its home lists the latest BO issues (2026) as PDFs; no search by subject was run through its script interface, and no BO text on a southern-provinces income-tax rule was found among the listed issues",
+    "web-search": "WebSearch 'Code général des impôts 2026 Maroc PDF Laâyoune Dakhla provinces du sud impôt sur le revenu exonération' || retry 2026-11-01: refused by the search tool on 2026-11-01: the turn's shared limit of 200 searches was reached; not worked around",
+    "trade-press": "Finances News Hebdo 2021 read (names no text); Medias24 and Upsilon Consulting on the CGI 2026 seen, no southern rule || retry 2026-11-01: Finances News Hebdo 2021, Medias24 and Upsilon on the CGI 2026 (read before): no southern rule",
+    "archive": "web.archive.org not reachable (curl 000) 2026-11-01 || retry 2026-11-01: web.archive.org: connection reset again 2026-11-01"
+   }
+  }
+ ]
+}

@@ -18,8 +18,10 @@ import {
   KEPT,
   marketOf,
   meet,
+  ofIn,
   numbersIn,
   OUTPUT,
+  PLACES,
   rangeOf,
   rateOf,
   READINGS,
@@ -34,11 +36,14 @@ import {
   unknownOf,
   valueOf,
   written,
+  ZONES,
+  zoneIn,
   type Research,
   type Sources,
   type Tier,
 } from '../../tools/person/markets-producer/compile.ts';
-import { COVERAGE, coverageOf, marketsCoverage, serializeCoverage, TESTS, TOLD } from '../../tools/person/markets-producer/coverage.ts';
+import { COUNTRIES, COVERAGE, coverageOf, marketsCoverage, serializeCoverage, TESTS, TOLD } from '../../tools/person/markets-producer/coverage.ts';
+import countries from '../../src/world/gazetteer/countries.json' with { type: 'json' };
 
 const ROOT = resolve(import.meta.dirname, '../..');
 
@@ -46,7 +51,7 @@ const OWN = {
   country: 'XX',
   figures: [
     { item: 'fund', value: { share: 0.4, most: 1_000_000, rate: 0.25, applied: 8, funded: 2, half: 2.5, one: 1, flag: true, text: '9', zero: 0, neg: -1, big: 1.5, fine: 1.234, low: 500_000, flat: [{ fee: 15_000 }], nested: { n: 7 } }, finding: 'EUR: up to 1.5m, from 2 million, 3bn, 4 billion, 750,000, 40% of it, 0.5m, 1,750, 9,9991, 2,250' },
-    { item: 'fund', value: { rate: 0.3, most: 20 } },
+    { item: 'fund', value: { rate: 0.3, most: 20 }, finding: 'CAD' },
     { item: 'incentive', value: { rebate: false, yes: true, zero: 0 } },
   ],
   blockers: [{ item: 'fund' }, { item: 'union' }, { item: 'fund' }],
@@ -55,6 +60,8 @@ const CAL = { country: 'calibration', figures: [{ item: 'financing', value: { ca
 const S: Sources = { country: 'XX', own: OWN, calibration: CAL };
 const R = { s: S, currency: 'EUR' as const, fig: OWN.figures[0] ?? null };
 const BARE = { s: S, currency: 'EUR' as const, fig: null };
+/** A clock that keeps two zones, one by a link. */
+const CLOCK = { zones: { 'Europe/Paris': [] }, links: { 'Europe/Monaco': 'Europe/Paris' } };
 const tier = (over: Record<string, unknown>) => tierOf(S, 'EUR', { fig: 0, budget: [0, null], ...over });
 const T = (over: Partial<Tier> = {}): Tier => ({ budget: [0, null], bands: [{ from: 0, to: null, rate: 0.4 }], base: 1, net: false, most: null, sum: null, ...over });
 
@@ -70,7 +77,7 @@ describe("the producer's markets compile", () => {
       'person.work.producer.calibration',
       'GB',
     ]);
-    expect(ITEMS).toEqual(['fund', 'incentive', 'feecap', 'outcomes', 'market', 'union', 'language']);
+    expect(ITEMS).toEqual(['fund', 'incentive', 'feecap', 'outcomes', 'market', 'union', 'language', 'terms', 'none', 'rules', 'fund.primary']);
     expect(figureOf(S, { fig: 1 })).toBe(OWN.figures[1]);
     expect(figureOf(S, { fig: 0, in: 'calibration' })).toBe(CAL.figures[0]);
     expect(() => figureOf(S, { fig: 0, in: 'register' })).toThrow("a figure is the market's own or the calibration's, not register's");
@@ -156,6 +163,16 @@ describe("the producer's markets compile", () => {
     expect(() => rangeOf(R, [1_000_000, 500_000])).toThrow("XX's budget runs from 1000000 down to 500000");
     expect(() => rangeOf(R, [600_000, null])).toThrow("XX's budget 600000 doesn't stand in its figure");
     expect(() => rangeOf(R, [0, 600_000])).toThrow("XX's budget 600000 doesn't stand in its figure");
+    // A bound may stand in another figure, where a term ends at another's start.
+    expect(rangeOf(BARE, [0, { fig: 0, bound: 999_999.99 }])).toEqual([0, 999_999.99]);
+    expect(() => rangeOf(R, [1_000_000, { fig: 0, bound: 999_999.99 }])).toThrow("XX's budget runs from 1000000 down to 999999.99");
+    expect(rangeOf({ ...R, currency: 'CAD' }, [{ fig: 0, in: 'calibration', bound: 500_000 }, null])).toEqual([500_000, null]);
+    expect(() => rangeOf(R, [{ fig: 1, bound: 20 }, null])).toThrow("XX's budget stands in a figure that doesn't name EUR");
+    expect(() => rangeOf(R, [0, { fig: 0, bound: 20, at: 1 }])).toThrow("XX's bound names at, which the game doesn't read");
+    expect(() => rangeOf(R, [0, { fig: 0, bound: 600_000 }])).toThrow("XX's budget 600000 doesn't stand in its figure");
+    expect(() => rangeOf(R, [{ fig: 0 }, null])).toThrow("XX's budget undefined isn't a bound");
+    expect(() => rangeOf(R, [null, null])).toThrow("XX's budget null isn't a bound");
+    expect(() => rangeOf(R, [0, [1]])).toThrow("XX's bound is not an object");
   });
 
   it('reads a tier: a sum, or a share or bands of the share counted, at most so much', () => {
@@ -226,12 +243,19 @@ describe("the producer's markets compile", () => {
     for (const of of [[['zero'], ['applied']], [['applied'], ['funded']], [['half'], ['applied']], [['funded'], ['half']], [['funded'], ['text']], [['text'], ['applied']]]) expect(() => rateOf(S, { fig: 0, of }), JSON.stringify(of)).toThrow("XX's rate isn't so many of so many");
     expect(() => rateOf(S, { fig: 0, path: ['rate'], at: 1 })).toThrow("XX's rate names at, which the game doesn't read");
     expect(() => rateOf(S, 'x')).toThrow("XX's rate is not an object");
+    expect(ofIn(S, OWN.figures[0] as never, [['funded'], ['applied']], 'release rate')).toBe(0.25);
+    expect(() => ofIn(S, OWN.figures[0] as never, [['funded']], 'release rate')).toThrow("XX's release rate is so many of so many");
+    expect(() => ofIn(S, OWN.figures[0] as never, [['applied'], ['funded']], 'release rate')).toThrow("XX's release rate isn't so many of so many");
 
     const fund = { rate: { fig: 0, path: ['rate'] }, tiers: [{ fig: 0, budget: [0, null], share: ['share'] }] };
     expect(fundOf(S, 'EUR', null, [])).toBeNull();
     expect(fundOf(S, 'EUR', fund, [])).toEqual({ rate: 0.25, tiers: [T()] });
     expect(fundOf(S, 'EUR', { ...fund, tiers: [{ budget: [0, null] }] }, [T()])).toEqual({ rate: 0.25, tiers: [T({ bands: [] })] });
     expect(() => fundOf(S, 'EUR', { ...fund, tiers: [{ budget: [0, null] }] }, [])).toThrow("XX's tier gives nothing");
+    // An award up to so much gives that much, with no cap on all public aid; so does a fixed sum.
+    expect(fundOf(S, 'EUR', { ...fund, tiers: [{ fig: 0, budget: [0, null], most: ['most'] }] }, [])).toEqual({ rate: 0.25, tiers: [T({ bands: [], most: 1_000_000 })] });
+    expect(fundOf(S, 'EUR', { ...fund, tiers: [{ fig: 0, budget: [0, null], sum: ['most'] }] }, [])?.tiers[0]?.sum).toBe(1_000_000);
+    expect(() => fundOf(S, 'EUR', { ...fund, tiers: [{ fig: 0, budget: [0, 1_000_000], most: ['most'] }, { fig: 0, budget: [1_000_000.01, null] }] }, [])).toThrow("XX's tier gives nothing");
     expect(() => fundOf(S, 'EUR', { ...fund, cap: 1 }, [])).toThrow("XX's fund names cap, which the game doesn't read");
     expect(() => fundOf(S, 'EUR', 'x', [])).toThrow("XX's fund is not an object");
     expect(() => fundOf(S, 'EUR', { ...fund, tiers: 'x' }, [])).toThrow("XX's fund is a list of tiers");
@@ -242,6 +266,10 @@ describe("the producer's markets compile", () => {
     expect(creditOf(S, 'EUR', { none: { fig: 0, in: 'calibration', path: ['rebate'] } })).toEqual([]);
     expect(() => creditOf(S, 'EUR', [{ fig: 0, budget: [0, null], share: ['share'] }, { fig: 0, budget: [0, null], share: ['share'] }])).toThrow("XX's incentive has two tiers for one budget");
     for (const path of [['yes'], ['zero']]) expect(() => creditOf(S, 'EUR', { none: { fig: 2, path } }), path.join()).toThrow("XX's research doesn't say it has no incentive");
+    // None (null) where the place names the incentive: a rebate, an incentive, cash; not where it names anything else.
+    const nulls = { ...S, own: { ...OWN, figures: [{ item: 'incentive', value: { cashRebate: null, productionIncentive: null, cash: null, cap: null, cashier: null, pettycash: null, rebate: 'none', list: [null] } }] } } as Sources;
+    for (const key of ['cashRebate', 'productionIncentive', 'cash']) expect(creditOf(nulls, 'EUR', { none: { fig: 0, path: [key] } }), key).toEqual([]);
+    for (const path of [['cap'], ['cashier'], ['pettycash'], ['rebate'], ['list', 0]]) expect(() => creditOf(nulls, 'EUR', { none: { fig: 0, path } }), path.join()).toThrow("XX's research doesn't say it has no incentive");
     expect(() => creditOf(S, 'EUR', { none: { fig: 2, path: ['rebate'] }, rate: 1 })).toThrow("XX's incentive names rate, which the game doesn't read");
     expect(() => creditOf(S, 'EUR', { none: { fig: 2, path: ['rebate'], at: 1 } })).toThrow("XX's none names at, which the game doesn't read");
     expect(() => creditOf(S, 'EUR', { none: 2 })).toThrow("XX's none is not an object");
@@ -258,6 +286,12 @@ describe("the producer's markets compile", () => {
     expect(releaseOf(S, 'EUR', [{ fig: 0, in: 'calibration', budget: [0, null], rate: ['cap'] }])).toEqual([{ budget: [0, null], rate: 0.49 }]);
     expect(() => releaseOf(S, 'EUR', [{ ...half, rate: ['big'] }])).toThrow("XX's release rate 1.5 isn't a rate");
     expect(() => releaseOf(S, 'EUR', [{ budget: [0, null], rate: ['share'] }])).toThrow('XX has no figure undefined');
+    // A release's rate may be so many released of so many made.
+    expect(releaseOf(S, 'EUR', [{ fig: 0, budget: [0, null], rate: { of: [['funded'], ['applied']] } }])).toEqual([{ budget: [0, null], rate: 0.25 }]);
+    expect(() => releaseOf(S, 'EUR', [{ fig: 0, budget: [0, null], rate: { of: [['funded'], ['applied']], path: ['share'] } }])).toThrow("XX's release rate names path, which the game doesn't read");
+    expect(() => releaseOf(S, 'EUR', [{ fig: 0, budget: [0, null], rate: { of: [['applied'], ['funded']] } }])).toThrow("XX's release rate isn't so many of so many");
+    expect(() => releaseOf(S, 'EUR', [{ fig: 0, budget: [0, null], rate: { fig: 0, path: ['big'] } }])).toThrow("XX's release rate 1.5 isn't a rate");
+    expect(() => releaseOf(S, 'EUR', [{ fig: 0, budget: [0, null], rate: null }])).toThrow("XX's release rate is not an object");
   });
 
   it("reads a market: its currency, its terms and what isn't known", () => {
@@ -283,6 +317,13 @@ describe("the producer's markets compile", () => {
     expect(() => marketOf(S, { ...reading, currency: 'EURO' })).toThrow("XX pays in EURO, which isn't a currency");
     expect(() => marketOf(S, { currency: 'EUR', zone: 'Europe/Paris' })).toThrow("the reading of XX names zone, which the game doesn't read");
     expect(() => marketOf(S, 'x')).toThrow('the reading of XX is not an object');
+    // A market's currency is its country's, unless its reading names another its research's terms are given in.
+    expect(marketOf({ ...S, country: 'JP' }, {}).currency).toBe('JPY');
+    expect(marketOf({ ...S, country: 'JP' }, { currency: 'JPY' }).currency).toBe('JPY');
+    expect(marketOf({ ...S, country: 'JP' }, { currency: 'CAD' }).currency).toBe('CAD');
+    expect(() => marketOf({ ...S, country: 'JP' }, { currency: 'USD' })).toThrow("JP's research gives no term in USD, which isn't its country's");
+    expect(() => marketOf(S, {})).toThrow("XX pays in undefined, which isn't a currency");
+    expect(() => marketOf({ ...S, country: 'AQ' }, {})).toThrow("AQ pays in , which isn't a currency");
   });
 
   it('reads each market as the register cites it, with the calibration, and refuses a file or a reading without the other', () => {
@@ -298,6 +339,7 @@ describe("the producer's markets compile", () => {
     const aa = file('AA');
     const bb = file('BB', [{ item: 'fund' }]);
     put(CALIBRATION, cal);
+    put(ZONES, CLOCK);
     put(`${SOURCES}/producer-AA.json`, aa);
     put(`${SOURCES}/producer-BB.json`, bb);
     // The actor's markets, and anything else, aren't the producer's.
@@ -313,7 +355,7 @@ describe("the producer's markets compile", () => {
     put(READINGS, { AA: reading, BB: { currency: 'EUR' } });
     const out = readMarkets(root);
     expect(Object.keys(out)).toEqual(['AA', 'BB']);
-    expect(out['AA']).toEqual({ currency: 'CAD', fund: { rate: 0.111, tiers: [T({ bands: [{ from: 0, to: null, rate: 0.49 }], most: 500_000 })] }, aid: [], credit: null, fees: [], release: null, unknown: [] });
+    expect(out['AA']).toEqual({ currency: 'CAD', fund: { rate: 0.111, tiers: [T({ bands: [{ from: 0, to: null, rate: 0.49 }], most: 500_000 })] }, aid: [], credit: null, fees: [], release: null, unknown: [], zone: null });
     expect(out['BB']?.unknown).toEqual(['fund']);
     expect(serialize(out)).toBe(`${JSON.stringify(out, null, 1)}\n`);
     expect(cited(root, { entries: all as never }, CALIBRATED, CALIBRATION)).toEqual(CAL);
@@ -335,6 +377,67 @@ describe("the producer's markets compile", () => {
     expect(() => readMarkets(root)).toThrow(`${CALIBRATION} isn't cited by the register`);
   });
 
+  it("dates a market's work in its most populous place's zone on the map, one the clock keeps", () => {
+    const root = mkdtempSync(join(tmpdir(), 'markets-producer-'));
+    mkdirSync(join(root, PLACES), { recursive: true });
+    const zones = new Set(['Europe/Paris', 'Europe/Monaco']);
+    expect([PLACES, ZONES]).toEqual(['src/world/gazetteer/places', 'src/core/time/tzdb.json']);
+    expect(zoneIn(root, 'AA', zones)).toBeNull();
+    const row = (zone: string, population: number) => ['1', 'A', '', 'AA.01', '0', '0', zone, String(population), ''].join('\t');
+    // The most populous, the first of two alike; a line without its nine cells, or the file's last empty line, isn't a place.
+    writeFileSync(join(root, PLACES, 'AA.tsv'), [row('Europe/Paris', 10), row('Europe/Monaco', 30), row('Europe/Paris', 30), ['1', 'B', '', 'AA.01', '0', '0', 'Europe/Paris', '99'].join('\t'), ''].join('\n'));
+    expect(zoneIn(root, 'AA', zones)).toBe('Europe/Monaco');
+    writeFileSync(join(root, PLACES, 'AA.tsv'), [row('Europe/Paris', 0), ''].join('\n'));
+    expect(zoneIn(root, 'AA', zones)).toBe('Europe/Paris');
+    writeFileSync(join(root, PLACES, 'AA.tsv'), [row('Europe/Paris', 10), row('Mars/Olympus', 20)].join('\n'));
+    expect(() => zoneIn(root, 'AA', zones)).toThrow("AA's most populous place is in Mars/Olympus, which isn't a zone the clock keeps");
+    writeFileSync(join(root, PLACES, 'AA.tsv'), '');
+    expect(() => zoneIn(root, 'AA', zones)).toThrow("AA's most populous place is in , which isn't a zone the clock keeps");
+  });
+
+  it("reads a country whose research found nothing from its blockers, and a country no producer works in as none", () => {
+    const root = mkdtempSync(join(tmpdir(), 'markets-producer-'));
+    const put = (path: string, body: unknown) => {
+      mkdirSync(join(root, path, '..'), { recursive: true });
+      writeFileSync(join(root, path), typeof body === 'string' ? body : JSON.stringify(body));
+    };
+    const sha = (text: string) => createHash('sha256').update(text).digest('hex');
+    const cal = JSON.stringify(CAL);
+    const aa = JSON.stringify({ ...OWN, country: 'AA', blockers: [] });
+    put(CALIBRATION, cal);
+    put(ZONES, CLOCK);
+    put(`${SOURCES}/producer-AA.json`, aa);
+    // The file of a country cited by its blockers alone isn't read: what wasn't found is the register's.
+    put(`${SOURCES}/producer-BB.json`, 'not read');
+    const tried = (item: string) => ({ method: 'institution', result: `not found: ${item}` });
+    const blocked = { fact: `${BLOCKED}BB`, attempts: [tried('fund'), tried('none'), tried('fund')] };
+    const entries = [{ fact: CALIBRATED, value: { file: CALIBRATION, sha256: sha(cal) } }, { fact: `${FACT}AA`, value: { file: `${SOURCES}/producer-AA.json`, sha256: sha(aa) } }, blocked];
+    put('research/register.json', { entries });
+    put(READINGS, { AA: null, BB: {} });
+    expect(readResearch(root, { entries } as never, 'BB')).toEqual({ research: { country: 'BB', figures: [], blockers: [{ item: 'fund' }, { item: 'none' }, { item: 'fund' }] }, blocked: true });
+    // Barbados: its country's currency.
+    put(`${PLACES}/BB.tsv`, '1\tBridgetown\t\tBB.08\t13.1\t-59.6\tEurope/Monaco\t98511\t\n');
+    expect(readMarkets(root)).toEqual({ BB: { currency: 'BBD', fund: null, aid: [], credit: null, fees: [], release: null, unknown: ['fund', 'none'], zone: 'Europe/Monaco' } });
+    // Its blockers are all it holds: a reading can point at no figure of it.
+    put(READINGS, { AA: null, BB: { credit: [{ fig: 0, budget: [0, null], share: ['share'] }] } });
+    expect(() => readMarkets(root)).toThrow('BB has no figure 0');
+    put('research/register.json', { entries: [...entries.slice(0, 2), { ...blocked, attempts: [{ result: 'not found: pay' }] }] });
+    put(READINGS, { AA: null, BB: {} });
+    expect(() => readMarkets(root)).toThrow("a blocker names pay, which isn't a fact the research seeks");
+    put('research/register.json', { entries: [...entries.slice(0, 2), { ...blocked, attempts: [{ result: 'then not found: fund' }] }] });
+    expect(() => readMarkets(root)).toThrow("a blocker names then not found: fund, which isn't a fact the research seeks");
+    put('research/register.json', { entries: [...entries.slice(0, 2), { fact: `${BLOCKED}BB` }] });
+    expect(() => readMarkets(root)).toThrow("the register holds BB's blockers, which its research doesn't");
+    // No market is no market's: none of it may be untold.
+    const ab = JSON.stringify({ ...OWN, country: 'AA', blockers: [{ item: 'fund' }] });
+    put(`${SOURCES}/producer-AA.json`, ab);
+    put('research/register.json', { entries: [entries[0], { fact: `${FACT}AA`, value: { file: `${SOURCES}/producer-AA.json`, sha256: sha(ab) } }, blocked] });
+    expect(() => readMarkets(root)).toThrow("AA is no market, so what of it isn't known can't be told");
+    put(`${SOURCES}/producer-AA.json`, aa);
+    put('research/register.json', { entries: [entries[0], { fact: `${FACT}AA`, value: { file: `${SOURCES}/producer-AA.json`, sha256: sha(aa) } }, { fact: `${BLOCKED}AA` }, blocked] });
+    expect(() => readMarkets(root)).toThrow("AA is no market, so what of it isn't known can't be told");
+  });
+
   it("refuses a market whose blockers the register and the research hold apart, or the UK's", () => {
     const root = mkdtempSync(join(tmpdir(), 'markets-producer-'));
     const put = (path: string, body: unknown) => {
@@ -344,6 +447,7 @@ describe("the producer's markets compile", () => {
     const sha = (text: string) => createHash('sha256').update(text).digest('hex');
     const cal = JSON.stringify(CAL);
     put(CALIBRATION, cal);
+    put(ZONES, CLOCK);
     const set = (files: Record<string, { item: string }[]>, blocked: string[]) => {
       const entries: unknown[] = [{ fact: CALIBRATED, value: { file: CALIBRATION, sha256: sha(cal) } }, ...blocked.map((cc) => ({ fact: `${BLOCKED}${cc}` }))];
       for (const [cc, blockers] of Object.entries(files)) {
@@ -372,6 +476,7 @@ describe("the producer's markets compile", () => {
     };
     const cal = JSON.stringify(CAL);
     put(CALIBRATION, cal);
+    put(ZONES, JSON.stringify(CLOCK));
     put('research/register.json', JSON.stringify({ entries: [{ fact: CALIBRATED, value: { file: CALIBRATION, sha256: createHash('sha256').update(cal).digest('hex') } }] }));
     put(READINGS, '{}');
     expect(readMarkets(root)).toEqual({});
@@ -379,9 +484,10 @@ describe("the producer's markets compile", () => {
     expect(() => readMarkets(root)).toThrow('the readings is not an object');
   });
 
-  it("compiles the twenty markets the producer's engine reads", () => {
+  it("compiles every market the producer's engine reads", () => {
     const markets = readMarkets(ROOT);
-    expect(Object.keys(markets)).toEqual(['AU', 'BR', 'CA', 'DE', 'DK', 'ES', 'FR', 'IE', 'IN', 'IT', 'JP', 'KR', 'MX', 'NG', 'NL', 'NO', 'NZ', 'SE', 'US', 'ZA']);
+    // Every country of the map but the UK, kept by the engine, and the three no producer works in.
+    expect(Object.keys(markets)).toEqual(Object.keys(countries).filter((cc) => !['GB', 'AN', 'AQ', 'CS'].includes(cc)));
     expect(markets).toEqual(JSON.parse(readFileSync(join(ROOT, OUTPUT), 'utf8')));
   });
 
@@ -397,17 +503,20 @@ describe("the producer's markets coverage", () => {
       ['person.markets.producer.BB', 'R-2'],
       ['person.markets.producer.blocked.BB', 'R-3'],
       ['person.markets.producer.blocked.CC', 'R-4'],
+      ['person.work.producer.calibration', 'R-5'],
     ]);
-    const rows = marketsCoverage(['AA', 'BB', 'CC', 'DD'], facts);
+    const rows = marketsCoverage(['AA', 'BB', 'CC', 'DD', 'GB'], facts);
     expect(rows).toEqual([
       { key: 'AA', status: 'researched', register: ['R-1'], tests: TESTS },
       { key: 'BB', status: 'blocked', register: ['R-3', 'R-2'], tests: [...TESTS, TOLD] },
       { key: 'CC', status: 'blocked', register: ['R-4'], tests: [...TESTS, TOLD] },
       { key: 'DD', status: 'pending' },
+      { key: 'GB', status: 'researched', register: ['R-5'], tests: TESTS },
     ]);
+    expect(marketsCoverage(['GB'], new Map([['person.markets.producer.GB', 'R-6']]))).toEqual([{ key: 'GB', status: 'pending' }]);
     expect(TESTS).toEqual(["tests/person/producing/markets.test.ts::the markets > are each country's own, every term as the research gives it", "tests/person/producing/markets.test.ts::a market's project > is planned, funded and released on its market's terms"]);
     expect(TOLD).toBe("tests/person/producing/markets.test.ts::a market's project > tells the player what of a market isn't known");
-    expect(serializeCoverage(rows.slice(0, 2))).toBe(`${JSON.stringify({ engine: 'person.producing', axis: 'market', universe: { keys: ['AA', 'BB'] }, rows: rows.slice(0, 2) }, null, 1)}\n`);
+    expect(serializeCoverage(rows.slice(0, 2))).toBe(`${JSON.stringify({ engine: 'person.producing', axis: 'country', rows: rows.slice(0, 2) }, null, 1)}\n`);
   });
 
   it('is built from the compiled markets and the register', () => {
@@ -416,9 +525,9 @@ describe("the producer's markets coverage", () => {
       mkdirSync(join(root, path, '..'), { recursive: true });
       writeFileSync(join(root, path), JSON.stringify(body));
     };
-    put(OUTPUT, { AA: {}, BB: {} });
+    put(COUNTRIES, { AA: {}, BB: {} });
     put('research/register.json', { entries: [{ id: 'R-1', fact: 'person.markets.producer.AA' }, { id: 'R-2', fact: 'person.markets.producer.blocked.BB' }] });
-    expect(COVERAGE).toBe('coverage/markets-producer-countries.json');
+    expect([COVERAGE, COUNTRIES]).toEqual(['coverage/markets-producer-countries.json', 'src/world/gazetteer/countries.json']);
     expect(coverageOf(root)).toBe(serializeCoverage([{ key: 'AA', status: 'researched', register: ['R-1'], tests: TESTS }, { key: 'BB', status: 'blocked', register: ['R-2'], tests: [...TESTS, TOLD] }]));
   });
 

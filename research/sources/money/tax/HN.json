@@ -1,0 +1,285 @@
+{
+ "topic": "tax.HN",
+ "read": "2026-11-01",
+ "note": "Read 2026-11-01 at the owner's word (\"Build those first 3 starting with ledger first\"; of the 21 countries read first: \"It should cover across every country\"; \"Retry the blocked tax facts once all countries land\"): the tax on a screen worker's pay in Honduras: a resident's income tax, social contributions, what is withheld at source, a non-resident artiste's withholding, an author's treatment, VAT and the tax year. Research and retry subagents (workbench/briefs/BRIEF-tax.md, BRIEF-tax-retry.md), every quote checked by the lead against its saved page.",
+ "figures": [
+  {
+   "item": "residents",
+   "finding": "A resident's Honduran-source income is exempt up to HNL 228,324.32 a year, then taxed at 15% to 348,154.10, 20% to 809,660.75 and 25% above; a municipal personal tax of HNL 1.50 to 5.25 per thousand of income is withheld once a year by employers with five or more staff.",
+   "value": {
+    "currency": "HNL",
+    "brackets": [
+     {
+      "from": 0,
+      "to": 228324.32,
+      "rate": 0
+     },
+     {
+      "from": 228324.32,
+      "to": 348154.1,
+      "rate": 0.15
+     },
+     {
+      "from": 348154.1,
+      "to": 809660.75,
+      "rate": 0.2
+     },
+     {
+      "from": 809660.75,
+      "to": null,
+      "rate": 0.25
+     }
+    ],
+    "municipal": {
+     "perThousand": [
+      1.5,
+      5.25
+     ],
+     "collectedBy": "employer, yearly"
+    }
+   },
+   "applies": "2026.",
+   "sources": [
+    {
+     "src": 0,
+     "said": "0.01 228,324.32 Exempt 228,324.33 348,154.10 15 348,154.11 809,660.75 20 809,660.76 and over 25"
+    },
+    {
+     "src": 0,
+     "said": "Companies who have five or more employees have to withhold this tax once every year as follows:"
+    }
+   ]
+  },
+  {
+   "item": "year",
+   "finding": "The tax period is the calendar year; only self-employed people paid fees, commissions or royalties (and those with interest or rent) file returns.",
+   "value": {
+    "start": "01-01",
+    "end": "12-31"
+   },
+   "applies": "Individuals.",
+   "sources": [
+    {
+     "src": 1,
+     "said": "The tax period in Honduras is the 12-month period ended on 31 December."
+    },
+    {
+     "src": 1,
+     "said": "Only self-employed individuals who receive commissions, fees, royalties, or other forms of income for services rendered and those who receive interest or rental income must file a tax return."
+    }
+   ]
+  },
+  {
+   "item": "social",
+   "finding": "The employee pays 2.5% for sickness and maternity and 1% for invalidity, old age and death on pay up to HNL 11,903.13 a month; the employer pays 1% to INFOP.",
+   "value": {
+    "currency": "HNL",
+    "employee": {
+     "sickness": 0.025,
+     "ivm": 0.01,
+     "ceiling": 11903.13
+    },
+    "employerINFOP": 0.01
+   },
+   "applies": "2026; employer IHSS shares not stated by the source.",
+   "sources": [
+    {
+     "src": 2,
+     "said": "Sickness and maternity: 2.5% for employees on income up to a maximum ceiling of HNL 11,903.13 Invalidity, old age, and death: 1% from employees on income up to a maximum ceiling of HNL 11,903.13"
+    },
+    {
+     "src": 2,
+     "said": "INFOP contributions are assessed at a rate of 1% for employers."
+    }
+   ]
+  },
+  {
+   "item": "withholding",
+   "finding": "The employer withholds income tax monthly from salaries.",
+   "value": {
+    "employee": "monthly payroll withholding"
+   },
+   "applies": "Employees.",
+   "sources": [
+    {
+     "src": 1,
+     "said": "Employees who receive salaries and other similar or complementary remunerations or benefits must pay a monthly income tax that is withheld by the employer from the monthly payroll."
+    }
+   ]
+  },
+  {
+   "item": "nonResident",
+   "finding": "A non-resident's pay or other remuneration for services, and royalties, from Honduran sources bear 25% withholding by the payer.",
+   "value": {
+    "servicesAndSalaries": 0.25,
+    "royalties": 0.25,
+    "final": true
+   },
+   "applies": "Non-residents.",
+   "sources": [
+    {
+     "src": 3,
+     "said": "Salaries paid for services and other remuneration for rendering of services within national territory or abroad 25"
+    },
+    {
+     "src": 0,
+     "said": "the tax on any type of income paid to a non-resident must be withheld by the payer."
+    }
+   ]
+  },
+  {
+   "item": "vat",
+   "finding": "Sales tax is 15% (18% on some premium services).",
+   "value": {
+    "standard": 0.15,
+    "higher": 0.18
+   },
+   "applies": "2026.",
+   "sources": [
+    {
+     "src": 2,
+     "said": "The general sales tax rate is 15% (18% for some specific premium services)."
+    }
+   ]
+  },
+  {
+   "item": "residents",
+   "finding": "SAR's 2026 table, indexed by 2025 inflation of 4.98%: net taxable income to L228,324.32 a year (L22,360.36 a month) is exempt, then 15% to L348,154.10, 20% to L809,660.75 and 25% above.",
+   "value": {
+    "currency": "HNL",
+    "brackets": [
+     {
+      "from": 0,
+      "to": 228324.32,
+      "rate": 0
+     },
+     {
+      "from": 228324.32,
+      "to": 348154.1,
+      "rate": 0.15
+     },
+     {
+      "from": 348154.1,
+      "to": 809660.75,
+      "rate": 0.2
+     },
+     {
+      "from": 809660.75,
+      "to": null,
+      "rate": 0.25
+     }
+    ],
+    "exemptMonthly": 22360.36
+   },
+   "applies": "Natural persons, tax year 2026; read by OCR of SAR's own notice image (digits checked against PwC's held figures).",
+   "sources": [
+    {
+     "src": 4,
+     "said": "ACTUALIZACION TABLA PROGRESIVA 2026 … calculada con base en Ia inflacién interanual del 4.98% … 15% 228,324.33 L348,154.10 … 25% L809,660.76 en adelante"
+    }
+   ]
+  },
+  {
+   "item": "nonResident",
+   "finding": "Honduran-source income of a non-resident bears a final rate by kind: 25% on pay or any compensation for services, on public shows, on films and TV rights and on copyright royalties; 10% on most other income.",
+   "value": {
+    "services": 0.25,
+    "publicShows": 0.25,
+    "filmAndTvRights": 0.25,
+    "copyrightRoyalties": 0.25,
+    "other": 0.1
+   },
+   "applies": "Art. 5 of the Ley del Impuesto sobre la Renta as SAR states it.",
+   "sources": [
+    {
+     "src": 5,
+     "said": "Sueldos, salarios, comisiones o cualquier otra compensación por servicios prestados ya sea dentro del territorio nacional o fuera de él, excluidas las remesas. 25% … Regalías y otras sumas pagadas por el uso de patentes, diseño, procedimientos y formulas secretas, marcas de fábrica y derechos de autor, excepto los consignados en el numeral 12. 25% … Ingresos derivados de espectáculos públicos. 25% Las películas y videotape para cines, televisión, club de video y derechos para televisión por cable. 25% Cualquier otro ingreso no mencionado en los numerales anteriores. 10%"
+    }
+   ]
+  }
+ ],
+ "country": "HN",
+ "sources": [
+  {
+   "url": "https://taxsummaries.pwc.com/honduras/individual/taxes-on-personal-income",
+   "title": "PwC Worldwide Tax Summaries: Honduras, Individual - Taxes on personal income (reviewed 10 August 2026)",
+   "read": "2026-11-01",
+   "kind": "secondary",
+   "quotes": "https://www.sar.gob.hn/",
+   "said": "0.01 228,324.32 Exempt 228,324.33 348,154.10 15 348,154.11 809,660.75 20 809,660.76 and over 25 … Companies who have five or more employees have to withhold this tax once every year as follows: … the tax on any type of income paid to a non-resident must be withheld by the payer."
+  },
+  {
+   "url": "https://taxsummaries.pwc.com/honduras/individual/tax-administration",
+   "title": "PwC Worldwide Tax Summaries: Honduras, Individual - Tax administration (reviewed 10 August 2026)",
+   "read": "2026-11-01",
+   "kind": "secondary",
+   "quotes": "https://www.sar.gob.hn/",
+   "said": "The tax period in Honduras is the 12-month period ended on 31 December. … Only self-employed individuals who receive commissions, fees, royalties, or other forms of income for services rendered and those who receive interest or rental income must file a tax return. … Employees who receive salaries and other similar or complementary remunerations or benefits must pay a monthly income tax that is withheld by the employer from the monthly payroll."
+  },
+  {
+   "url": "https://taxsummaries.pwc.com/honduras/individual/other-taxes",
+   "title": "PwC Worldwide Tax Summaries: Honduras, Individual - Other taxes (reviewed 10 August 2026)",
+   "read": "2026-11-01",
+   "kind": "secondary",
+   "quotes": "https://www.sar.gob.hn/",
+   "said": "Sickness and maternity: 2.5% for employees on income up to a maximum ceiling of HNL 11,903.13 Invalidity, old age, and death: 1% from employees on income up to a maximum ceiling of HNL 11,903.13 … INFOP contributions are assessed at a rate of 1% for employers. … The general sales tax rate is 15% (18% for some specific premium services)."
+  },
+  {
+   "url": "https://taxsummaries.pwc.com/honduras/corporate/withholding-taxes",
+   "title": "PwC Worldwide Tax Summaries: Honduras, Corporate - Withholding taxes (reviewed 10 August 2026)",
+   "read": "2026-11-01",
+   "kind": "secondary",
+   "quotes": "https://www.sar.gob.hn/",
+   "said": "Salaries paid for services and other remuneration for rendering of services within national territory or abroad 25"
+  },
+  {
+   "url": "https://www.sar.gob.hn/wp-content/uploads/2026/01/Comunicado-02-2026_TABLA-PROGRESIVA-SAR_01.png",
+   "title": "Actualización Tabla Progresiva 2026, Comunicado 02-2026 (Servicio de Administración de Rentas), image on https://www.sar.gob.hn/2026/01/actualizacion-de-la-tabla-progresiva-2026/",
+   "read": "2026-11-01",
+   "kind": "primary",
+   "said": "ACTUALIZACION TABLA PROGRESIVA 2026 … calculada con base en Ia inflacién interanual del 4.98% … 15% 228,324.33 L348,154.10 … 25% L809,660.76 en adelante"
+  },
+  {
+   "url": "https://www.sar.gob.hn/helpie_faq/cual-es-la-tasa-que-se-aplica-por-concepto-de-impuesto-sobre-la-renta-a-las-personas-naturales-y-juridicas-no-domiciliadas-y-o-no-residentes-que-obtienen-ingresos-de-fuente-hondurena/",
+   "title": "¿Cuál es la tasa que se aplica … a las personas naturales y jurídicas no domiciliadas y/o no residentes …? (SAR, preguntas frecuentes; base legal art. 5 Ley del ISR)",
+   "read": "2026-11-01",
+   "kind": "primary",
+   "said": "Sueldos, salarios, comisiones o cualquier otra compensación por servicios prestados ya sea dentro del territorio nacional o fuera de él, excluidas las remesas. 25% … Regalías y otras sumas pagadas por el uso de patentes, diseño, procedimientos y formulas secretas, marcas de fábrica y derechos de autor, excepto los consignados en el numeral 12. 25% … Ingresos derivados de espectáculos públicos. 25% Las películas y videotape para cines, televisión, club de video y derechos para televisión por cable. 25% Cualquier otro ingreso no mencionado en los numerales anteriores. 10%"
+  }
+ ],
+ "blockers": [
+  {
+   "item": "social",
+   "sought": "The employer's IHSS shares",
+   "tried": {
+    "institution": "sar.gob.hn home page reachable; its rate table and the Ley del Impuesto sobre la Renta were not located (2026-11-01) || 2026-11-01 retry: sar.gob.hn read by its own site search ('tabla progresiva', 'servicios profesionales', 'regimen simplificado', 'derechos de autor', 'IHSS'): no IHSS rate page; ihss.hn answers 403 to curl (2026-11-01), not read another way",
+    "official-register": "La Gaceta not read || 2026-11-01 retry: La Gaceta (enag.gob.hn) answers but its search was not reached in the time; congresonacional.hn fails (connection)",
+    "web-search": "not run separately || 2026-11-01 retry: not run: the tool refused searches this turn, the shared limit of 200 having been reached (2026-11-01)",
+    "trade-press": "PwC Honduras used || 2026-11-01 retry: PwC Honduras already held",
+    "archive": "web.archive.org resets the connection from this environment (2026-11-01). || 2026-11-01 retry: archive.org availability API answers, but web.archive.org is refused from this environment (http 'Blocked by egress policy', https connection fails), not read (2026-11-01)"
+   }
+  },
+  {
+   "item": "vat",
+   "sought": "Whether a freelancer's fee bears sales tax and above what turnover",
+   "tried": {
+    "institution": "sar.gob.hn home page reachable; its rate table and the Ley del Impuesto sobre la Renta were not located (2026-11-01) || 2026-11-01 retry: sar.gob.hn read by its own site search ('tabla progresiva', 'servicios profesionales', 'regimen simplificado', 'derechos de autor', 'IHSS'): the 2026 note on the simplified sales-tax regime (sar.gob.hn/2026/01/regimen-simplificado-del-impuesto-sobre-ventas/) carries its text in images; no threshold read",
+    "official-register": "La Gaceta not read || 2026-11-01 retry: La Gaceta (enag.gob.hn) answers but the Ley del Impuesto sobre Ventas was not reached in the time",
+    "web-search": "not run separately || 2026-11-01 retry: not run: the tool refused searches this turn, the shared limit of 200 having been reached (2026-11-01)",
+    "trade-press": "PwC Honduras used || 2026-11-01 retry: PwC Honduras already held: 15% and 18%",
+    "archive": "web.archive.org resets the connection from this environment (2026-11-01). || 2026-11-01 retry: archive.org availability API answers, but web.archive.org is refused from this environment (http 'Blocked by egress policy', https connection fails), not read (2026-11-01)"
+   }
+  },
+  {
+   "item": "authors",
+   "sought": "Any special treatment of a resident author's fees or royalties (the non-resident 25% is held)",
+   "tried": {
+    "institution": "sar.gob.hn home page reachable; its rate table and the Ley del Impuesto sobre la Renta were not located (2026-11-01) || 2026-11-01 retry: sar.gob.hn read by its own site search ('tabla progresiva', 'servicios profesionales', 'regimen simplificado', 'derechos de autor', 'IHSS'): the non-residents' rate list gives 25% on copyright royalties and on film and TV rights paid abroad (now in the non-resident figure); nothing on a resident author",
+    "official-register": "La Gaceta not read || 2026-11-01 retry: La Gaceta not reached in the time",
+    "web-search": "not run separately || 2026-11-01 retry: not run: the tool refused searches this turn, the shared limit of 200 having been reached (2026-11-01)",
+    "trade-press": "PwC Honduras used || 2026-11-01 retry: PwC Honduras already held",
+    "archive": "web.archive.org resets the connection from this environment (2026-11-01). || 2026-11-01 retry: archive.org availability API answers, but web.archive.org is refused from this environment (http 'Blocked by egress policy', https connection fails), not read (2026-11-01)"
+   }
+  }
+ ]
+}

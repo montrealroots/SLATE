@@ -15,13 +15,14 @@ import { at, dated, figureOf, range, type Range, type Research } from '../market
  * and the periods it guarantees. A fee is paid by the job, as a share of the budget, by the minute of the film, or by
  * the day, half-day, week, month or hour of the engagement's prep, shoot or cut; it holds in a tier (the budget, the
  * director's years, the film's minutes, the engagement's days) and may pay only some units of its count (the 61st minute
- * on); its amounts step by date. A period is the prep and shoot together, or the cut, in days. Every amount, share,
+ * on); its amounts step by date. A period is the prep and shoot together, the cut, or the prep alone, in days. Every amount, share,
  * date and tier edge is read from the research or checked to stand in it, never written here alone. An agreement whose
  * research says none sets the pay (`none`) leaves it to negotiation; one whose terms the research couldn't find
  * (`unknown`, a blocker standing for it) has none the game can pay. Neither has fees.
  *
  * A market gives its agreements and what its research couldn't find (its blockers' items), which the engine tells the
- * player.
+ * player. A territory whose research says a director's work there follows its sovereign's terms takes the sovereign's
+ * market as compiled.
  */
 export const SOURCES = 'research/sources/person/markets';
 export const PREFIX = 'director-';
@@ -40,10 +41,15 @@ export const PHASES = ['prep', 'shoot', 'cut'] as const;
 export const TIERS = ['budget', 'years', 'minutes', 'days'] as const;
 /** The tiers whose edges the research writes as figures. */
 export const EDGED = ['budget', 'minutes'] as const;
-export const PERIODS = ['prep-shoot', 'cut'] as const;
+/** The prep and shoot together, the cut, or the prep alone (where an agreement guarantees prep apart from the shoot). */
+export const PERIODS = ['prep-shoot', 'cut', 'prep'] as const;
 /** What a market's research can leave unknown, as its blockers name it; the items that leave an agreement's terms unknown. */
-export const ITEMS = ['agreement', 'fees', 'periods', 'union', 'language', 'none'] as const;
-export const UNKNOWING = ['agreement', 'fees', 'union', 'none'] as const;
+export const ITEMS = ['agreement', 'fees', 'periods', 'union', 'language', 'none', 'terms'] as const;
+export const UNKNOWING = ['agreement', 'fees', 'union', 'none', 'terms'] as const;
+/** The figures a fee may stand in: a market's fees, its agreement, its periods, or a statutory floor of a director's pay (rates). */
+export const PRICED = ['fees', 'agreement', 'periods', 'rates'] as const;
+/** The figures whose value may say, at a place, that nothing sets a director's pay. */
+export const SAYING = ['none', 'agreement', 'fees', 'union', 'rules', 'rates'] as const;
 /** A week of the engagement is five of its days, as the actor's engine counts them. */
 export const WEEK = 5;
 
@@ -100,7 +106,7 @@ export interface Markets {
 }
 
 interface Register {
-  entries: { fact: string; value?: { file?: string; sha256?: string } }[];
+  entries: { fact: string; value?: { file?: string; sha256?: string }; attempts?: { result?: string }[] }[];
 }
 
 const record = (v: unknown, what: string): Record<string, unknown> => {
@@ -172,7 +178,7 @@ const texts = (e: Evidence, fig: number): string => JSON.stringify([e.research.f
 export function feeOf(e: Evidence, reading: unknown): Fee {
   const f = record(reading, 'a fee');
   only(f, ['form', 'per', 'phases', 'when', 'band', 'floor', 'first', 'fig', 'steps'], 'a fee');
-  const figure = figureOf(e.research, f['fig'], ['fees', 'agreement', 'periods']);
+  const figure = figureOf(e.research, f['fig'], PRICED);
   const fig = f['fig'] as number;
   const text = texts(e, fig);
   if (!e.forms.includes(f['form'] as Form)) throw new Error(`a fee's form ${String(f['form'])} isn't its agreement's`);
@@ -214,7 +220,7 @@ export function periodOf(e: Evidence, reading: unknown): Period {
   only(p, ['form', 'part', 'when', 'fig', 'path', 'unit'], 'a period');
   const figure = figureOf(e.research, p['fig'], ['fees', 'periods', 'cut']);
   if (!e.forms.includes(p['form'] as Form)) throw new Error(`a period's form ${String(p['form'])} isn't its agreement's`);
-  if (!PERIODS.includes(p['part'] as Period['part'])) throw new Error(`a period is the prep and shoot or the cut, not ${String(p['part'])}`);
+  if (!PERIODS.includes(p['part'] as Period['part'])) throw new Error(`a period is the prep and shoot, the cut or the prep, not ${String(p['part'])}`);
   const days = daysOf(at(figure.value, p['path'] as (string | number)[]), p['unit']);
   return { form: p['form'] as Form, part: p['part'] as Period['part'], when: tiersOf(p['when'], numbers(texts(e, p['fig'] as number))), days };
 }
@@ -228,8 +234,10 @@ export function agreementOf(id: string, r: Research, reading: unknown): Agreemen
   const bare = { country: r.country, forms: forms as Form[], currency: null, month: null, short: null, fees: [], periods: [] };
   if (a['none'] !== undefined) {
     const none = record(a['none'], 'none');
-    const figure = figureOf(r, none['fig'], none['path'] === undefined ? ['none'] : ['none', 'agreement']);
-    if (none['path'] !== undefined && ![null, false].includes(at(figure.value, none['path'] as (string | number)[]) as null)) throw new Error(`${r.country}'s figure ${String(none['fig'])} doesn't say nothing sets the pay`);
+    const figure = figureOf(r, none['fig'], none['path'] === undefined ? ['none'] : SAYING);
+    // At its place the research writes no agreement or minimum (null, false), or a fee left free in its own word ("freie Vereinbarung (none)").
+    const v = none['path'] === undefined ? null : at(figure.value, none['path'] as (string | number)[]);
+    if (!(v === null || v === false || (typeof v === 'string' && v.endsWith('(none)')))) throw new Error(`${r.country}'s figure ${String(none['fig'])} doesn't say nothing sets the pay`);
     return { ...bare, none: true };
   }
   if (a['unknown'] !== undefined) {
@@ -243,6 +251,7 @@ export function agreementOf(id: string, r: Research, reading: unknown): Agreemen
   if (!Array.isArray(a['fees']) || a['fees'].length === 0) throw new Error(`${id} sets no fees`);
   const fees = a['fees'].map((f) => feeOf(e, f));
   const periods = ((a['periods'] ?? []) as unknown[]).map((p) => periodOf(e, p));
+  for (const form of forms as Form[]) if (periods.some((p) => p.form === form && p.part === 'prep') && periods.some((p) => p.form === form && p.part === 'prep-shoot')) throw new Error(`${id} guarantees a ${form}'s prep both alone and with its shoot`);
   let month: number | null = null;
   if (a['month'] !== undefined) {
     const m = record(a['month'], 'a month');
@@ -265,27 +274,62 @@ export function unknownOf(blockers: readonly { item: string }[]): Item[] {
   return out;
 }
 
-/** A market: its agreements, one at least, and what isn't known. */
-export function marketOf(r: Research, reading: unknown): { market: Market; agreements: Record<string, Agreement> } {
+/**
+ * A market: its agreements, one at least, and what isn't known; or, where its research says a director's work there
+ * follows another country's terms (a territory's sovereign's), that country's agreements as compiled (`done`), each as
+ * the territory's own, and what isn't known of them with what isn't known of its own.
+ */
+export function marketOf(r: Research, reading: unknown, done: Markets = { markets: {}, agreements: {} }): { market: Market; agreements: Record<string, Agreement> } {
   const m = record(reading, `the reading of ${r.country}`);
-  only(m, ['agreements'], `the reading of ${r.country}`);
   const agreements: Record<string, Agreement> = {};
+  const unknown = unknownOf(r.blockers);
+  if (m['follows'] !== undefined) {
+    only(m, ['follows'], `the reading of ${r.country}`);
+    const f = record(m['follows'], 'what a market follows');
+    const cc = String(f['market']);
+    if (record(figureOf(r, f['fig'], ['follows', 'none']).value, 'a figure')['follows'] !== cc) throw new Error(`${r.country}'s figure ${String(f['fig'])} doesn't say a director's work there follows ${cc}'s terms`);
+    // Only a market read on its own is followed: one that follows another isn't in `done`.
+    if (!Object.hasOwn(done.markets, cc)) throw new Error(`${cc} isn't a market to follow`);
+    const followed = done.markets[cc] as Market;
+    for (const id of followed.agreements) agreements[`${r.country.toLowerCase()}-${id}`] = { ...(done.agreements[id] as Agreement), country: r.country };
+    for (const u of followed.unknown) if (!unknown.includes(u)) unknown.push(u);
+    return { market: { agreements: Object.keys(agreements), unknown }, agreements };
+  }
+  only(m, ['agreements'], `the reading of ${r.country}`);
   for (const [id, a] of Object.entries(record(m['agreements'], 'the agreements'))) agreements[id] = agreementOf(id, r, a);
   if (Object.keys(agreements).length === 0) throw new Error(`${r.country} has no agreements`);
-  return { market: { agreements: Object.keys(agreements), unknown: unknownOf(r.blockers) }, agreements };
+  return { market: { agreements: Object.keys(agreements), unknown }, agreements };
 }
 
-/** A market's research, checked against the register's SHA-256 before a byte is read, and whether the register holds its blockers. */
+/** What a blocker in the register couldn't find, as each of its attempts names it ("not found: fees, terms"), each once. */
+export function blockedItems(entry: Register['entries'][number]): { item: string }[] {
+  const items: string[] = [];
+  for (const { result } of entry.attempts ?? []) {
+    const m = /^not found: (.+)$/.exec(String(result));
+    if (m === null) throw new Error(`${entry.fact} has an attempt whose result names nothing not found`);
+    for (const item of (m[1] as string).split(', ')) if (!items.includes(item)) items.push(item);
+  }
+  if (items.length === 0) throw new Error(`${entry.fact} names nothing not found`);
+  return items.map((item) => ({ item }));
+}
+
+/**
+ * A market's research, checked against the register's SHA-256 before a byte is read, and whether the register holds its
+ * blockers. Where the research found nothing, the register cites no file and holds the blocker alone: the market is
+ * read from it, what isn't known as its attempts name it, and the file beside it isn't read.
+ */
 export function readResearch(root: string, register: Register, cc: string): { research: Research; blocked: boolean } {
   const file = `${SOURCES}/${PREFIX}${cc}.json`;
   // Stryker disable next-line OptionalChaining: the entry found names the file, so it has a value.
   const sha = register.entries.find((e) => e.fact === `${FACT}${cc}` && e.value?.file === file)?.value?.sha256;
+  const blocker = register.entries.find((e) => e.fact === `${BLOCKED}${cc}`);
+  if (blocker !== undefined && !register.entries.some((e) => e.fact === `${FACT}${cc}`)) return { research: { country: cc, figures: [], blockers: blockedItems(blocker) }, blocked: true };
   if (sha === undefined) throw new Error(`${file} isn't cited by the register`);
   const bytes = readFileSync(join(root, file));
   if (createHash('sha256').update(bytes).digest('hex') !== sha) throw new Error(`${file} isn't the file the register cites`);
   const research = JSON.parse(bytes.toString('utf8')) as Research;
   if (research.country !== cc) throw new Error(`${file} is ${research.country}'s`);
-  return { research, blocked: register.entries.some((e) => e.fact === `${BLOCKED}${cc}`) };
+  return { research, blocked: blocker !== undefined };
 }
 
 /** Every director's market the research holds, read as the readings say; a file without a reading, or a reading without a file, is refused. */
@@ -297,16 +341,20 @@ export function readMarkets(root: string): Markets {
   const files = existsSync(join(root, SOURCES)) ? readdirSync(join(root, SOURCES)).filter((f) => f.startsWith(PREFIX) && f.endsWith('.json')).map((f) => f.slice(PREFIX.length, -5)).sort() : [];
   const out: Markets = { markets: {}, agreements: {} };
   for (const cc of Object.keys(readings).filter((c) => !files.includes(c))) throw new Error(`${cc} has a reading and no research`);
-  for (const cc of files) {
-    if (!Object.hasOwn(readings, cc)) throw new Error(`${SOURCES}/${PREFIX}${cc}.json has no reading`);
+  for (const cc of files) if (!Object.hasOwn(readings, cc)) throw new Error(`${SOURCES}/${PREFIX}${cc}.json has no reading`);
+  // The markets read on their own first, so a territory follows its sovereign's as compiled; then all in the countries' order.
+  const follows = (cc: string) => Object.hasOwn(record(readings[cc], `the reading of ${cc}`), 'follows');
+  const own: Markets = { markets: {}, agreements: out.agreements };
+  for (const cc of [...files.filter((c) => !follows(c)), ...files.filter(follows)]) {
     const { research, blocked } = readResearch(root, register, cc);
-    const { market, agreements } = marketOf(research, readings[cc]);
-    if (blocked !== market.unknown.length > 0) throw new Error(blocked ? `the register holds ${cc}'s blockers, which its research doesn't` : `${cc}'s research has blockers the register doesn't hold`);
+    const { market, agreements } = marketOf(research, readings[cc], own);
+    if (blocked !== research.blockers.length > 0) throw new Error(blocked ? `the register holds ${cc}'s blockers, which its research doesn't` : `${cc}'s research has blockers the register doesn't hold`);
     for (const id of market.agreements) if (id === KEPT || Object.hasOwn(out.agreements, id)) throw new Error(`${id} is another agreement's id`);
+    if (!follows(cc)) own.markets[cc] = market;
     out.markets[cc] = market;
     Object.assign(out.agreements, agreements);
   }
-  return out;
+  return { markets: Object.fromEntries(files.map((cc) => [cc, out.markets[cc] as Market])), agreements: out.agreements };
 }
 
 export const serialize = (m: Markets) => `${JSON.stringify(m, null, 1)}\n`;
