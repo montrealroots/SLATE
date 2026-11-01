@@ -2177,3 +2177,9 @@ real terms in eighteen more markets (France, Germany, Australia, Ireland, New Ze
 South Korea, Mexico, Brazil, South Africa, Nigeria, Sweden, Denmark, Norway, the Netherlands): each collective
 agreement or rate card, its minimums by role and tier, the union, the language parts are cast in, the market's city.
 The acting engine takes them as agreements when they land, so a part can be booked in each and its permit reached.
+Owner, 2026-11-01, asked whether writers, directors and producers should get markets too, and told why it fits
+(each role's own guild or fund in each country; permits reached through every role; one law across the four): "Whenever
+we're done with the ones that are processing i'll let you know." Held: the other three roles' markets wait for the
+owner's word, after the actor's eighteen markets and the permit gaps land. When given, the same countries as the
+actor's (and the UK and Canada for writers and directors), each guild's or fund's own terms, the producer starting
+from R-4612's CNC, Telefilm and Screen Australia figures.
