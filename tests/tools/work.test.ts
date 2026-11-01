@@ -3,7 +3,7 @@ import { mkdirSync, mkdtempSync, readFileSync, writeFileSync } from 'node:fs';
 import { tmpdir } from 'node:os';
 import { join, resolve } from 'node:path';
 import { describe, expect, it } from 'vitest';
-import { compileCountry, compileGroup, GROUPS, named, OUTPUT, readWork, RIGHTS, rule, serialize, SOURCES } from '../../tools/papers/work/compile.ts';
+import { compileCountry, compileGroup, GROUPS, named, ONLY, OUTPUT, readWork, RIGHTS, rule, serialize, SOURCES } from '../../tools/papers/work/compile.ts';
 import { COVERAGE, coverageOf, serializeCoverage, TESTS, TOLD, workCoverage } from '../../tools/papers/work/coverage.ts';
 import { NO_PLACES } from '../../tools/papers/passports/coverage.ts';
 
@@ -18,12 +18,23 @@ describe('the work rules compile', () => {
     expect(rule({ right: 'permit', route: 'R', days: 30 }, 'r')).toStrictEqual({ right: 'permit', route: 'R', days: 30 });
     expect(rule({ right: 'permit', route: 'R', days: 90, within: 365 }, 'r')).toStrictEqual({ right: 'permit', route: 'R', days: 90, within: 365 });
     expect(rule({ right: 'permit', route: 'R', days: 1, within: 2 }, 'r')).toStrictEqual({ right: 'permit', route: 'R', days: 1, within: 2 });
+    // The days from a law's first day, and for whom it gives them.
+    expect(rule({ right: 'permit', route: 'R', days: 90, within: 365, from: '2026-12-05' }, 'r')).toStrictEqual({ right: 'permit', route: 'R', days: 90, within: 365, from: '2026-12-05' });
+    expect(rule({ right: 'permit', route: 'R', days: 21, only: 'renowned' }, 'r')).toStrictEqual({ right: 'permit', route: 'R', days: 21, only: 'renowned' });
+    expect(rule({ right: 'permit', route: 'R', days: 8, only: 'engaged-abroad' }, 'r')).toStrictEqual({ right: 'permit', route: 'R', days: 8, only: 'engaged-abroad' });
+    expect(ONLY).toEqual(['renowned', 'engaged-abroad']);
   });
 
   it('refuses a rule that is not one', () => {
     for (const r of [null, 'free', 7]) expect(() => rule(r, 'r'), String(r)).toThrow('r is not an object');
     for (const right of ['none', undefined, 'Free']) expect(() => rule({ right }, 'r'), String(right)).toThrow(`r is free or a permit, not ${String(right)}`);
-    for (const extra of [{ route: 'R' }, { days: 30 }, { within: 60 }]) expect(() => rule({ right: 'free', ...extra }, 'r'), JSON.stringify(extra)).toThrow('r is free, so it names no route and no days');
+    for (const extra of [{ route: 'R' }, { days: 30 }, { within: 60 }, { from: '2026-12-05' }, { only: 'renowned' }]) expect(() => rule({ right: 'free', ...extra }, 'r'), JSON.stringify(extra)).toThrow('r is free, so it names no route and no days');
+    for (const extra of [{ from: '2026-12-05' }, { only: 'renowned' }]) expect(() => rule({ right: 'permit', route: 'R', ...extra }, 'r'), JSON.stringify(extra)).toThrow('r names no days, so none start on a day or are for anyone');
+    for (const from of ['2026-13-01', '2026-12-32', '2026-00-10', '2026-1-05', ' 2026-12-05', '2026-12-05 ', 20261205, null]) {
+      expect(() => rule({ right: 'permit', route: 'R', days: 9, from }, 'r'), String(from)).toThrow(`r's days start on a day written YYYY-MM-DD, not ${String(from)}`);
+    }
+    for (const d of ['2026-01-01', '2026-09-30', '2026-10-31', '2026-12-19', '2026-12-20', '2026-12-29']) expect(rule({ right: 'permit', route: 'R', days: 9, from: d }, 'r').from).toBe(d);
+    for (const only of ['famous', '', null]) expect(() => rule({ right: 'permit', route: 'R', days: 9, only }, 'r'), String(only)).toThrow(`r's days are for renowned artists or work engaged from abroad, not ${String(only)}`);
     for (const route of [undefined, '', ' R', 'R ', 7]) expect(() => rule({ right: 'permit', route }, 'r'), String(route)).toThrow('r names the route a performer takes');
     for (const days of [0, -1, 2.5, '90', null]) expect(() => rule({ right: 'permit', route: 'R', days }, 'r'), String(days)).toThrow("r's days are a whole number above 0");
     for (const within of [90, 89, 180.5, '180', null]) expect(() => rule({ right: 'permit', route: 'R', days: 90, within }, 'r'), String(within)).toThrow("r's days are counted within a whole number of days above them");

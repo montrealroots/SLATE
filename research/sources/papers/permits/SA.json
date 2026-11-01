@@ -1,8 +1,8 @@
 {
  "country": "SA",
  "read": "2026-11-01",
- "route": null,
- "routeChanged": false,
+ "route": "Work permit (Labor Law, art. 33; Ministry of Human Resources and Social Development)",
+ "routeChanged": true,
  "permit": {
   "applies": null,
   "first": null,
@@ -24,20 +24,19 @@
    "fields": [
     "country"
    ]
+  },
+  {
+   "url": "https://hrsd.gov.sa/en/node/5575987",
+   "title": "Ministry of Human Resources and Social Development, Employment of Non-Saudis (Labor Law, arts. 32–38)",
+   "read": "2026-11-01",
+   "said": "Article 32: Recruitment for the purpose of employment shall not be permitted except after the approval of the Ministry. Article 33: Non-Saudis may not practice any work, nor shall they be permitted to do so, except after obtaining a work permit from the Ministry according to the form prepared for this purpose.",
+   "kind": "primary",
+   "fields": [
+    "route"
+   ]
   }
  ],
  "blockers": [
-  {
-   "field": "country",
-   "sought": "The permit a foreign performer needs to be engaged in Saudi Arabia (the General Entertainment Authority's licensing, the work visa, or an event visa)",
-   "tried": {
-    "institution": "gea.gov.sa answers 'Access Unavailable' (403) to this client; enter.sa loads by script; visa.mofa.gov.sa's platform (saved) serves a log-in page with no category list; hrsd.gov.sa answers but its service pages weren't located; mol.gov.sa doesn't answer (2026-11-01). Retry 2026-11-01: gea.gov.sa and my.gov.sa answer 403; laws.boe.gov.sa and boe.gov.sa (the Bureau of Experts' legislation) reset the connection; qiwa.sa serves a 246-byte script shell; hrsd.gov.sa and visa.mofa.gov.sa answer but carry no performer or work-visa category readable without log-in; enter.sa now belongs to a telecom company. First pass: gea.gov.sa 403, visa platform log-in only, mol.gov.sa no answer.",
-    "official-register": "No regulation text on foreign performers' licensing reached (the GEA's regulations pages are behind the same 403). Retry 2026-11-01: the Bureau of Experts' legislation database (laws.boe.gov.sa) resets the connection, so the Labour Law's foreign-worker articles and the GEA's licensing regulations weren't read.",
-    "web-search": "The session's shared web-search budget was used up on 2026-11-01 before this country; no search could be run. 'Saudi Arabia work visa foreign artist performer entertainment visa General Entertainment Authority' (2026-11-01): Wikipedia, setupinsaudi, Gulf News (event-visa counts, GEA 22% of event visas in 2023), a contract-template site; no primary naming the procedure, fee, time or term. Further searches couldn't run (the session's budget ran out).",
-    "trade-press": "Layer 3 found Arabian Business refusing (403) and Al Tamimi answering 406; not retried after the search budget ran out. Gulf News (2023 event-visa figures) and Arabian Business (performer numbers) give no procedure; Al Tamimi answered 406 in layer 3.",
-    "archive": "web.archive.org resets the connection from this environment (2026-11-01). web.archive.org resets the connection from this environment (2026-11-01)."
-   }
-  },
   {
    "field": "applies",
    "sought": "The applies of the permit a foreign performer needs in Saudi Arabia (see the country blocker)",
@@ -138,5 +137,5 @@
    }
   }
  ],
- "note": "Saudi Arabia: layer 3 holds it blocked (register R-1545) and it stays so: what a foreign performer must hold couldn't be read from the authorities today."
+ "note": "Saudi Arabia: layer 3 holds it blocked (register R-1545) and it stays so: what a foreign performer must hold couldn't be read from the authorities today. Closing retry 2026-11-01: the Ministry of Human Resources and Social Development’s page on the employment of non-Saudis (read) gives the route, the Labor Law’s work permit, needed by every non-Saudi; who files it, its fees, time and term remain unread."
 }

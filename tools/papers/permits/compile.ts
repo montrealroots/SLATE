@@ -42,9 +42,20 @@ export type By = 'engager' | 'worker';
 /** When a fee is asked: at the first grant, at a renewal, or at both. */
 export type When = 'grant' | 'renewal' | 'both';
 
+/** A fee set on the worker's pay: months of the gross pay (fewer for a citizen of a country named), less an abatement. */
+export interface Salary {
+  currency: string;
+  months: string;
+  monthsAfrican: string;
+  abatement: string;
+  african: string[];
+}
+
 export interface Fee {
   what: string;
-  money: Money;
+  /** The amount; none where it is set on the pay (`salary`), which the engine prices from the engagement's. */
+  money: Money | null;
+  salary?: Salary;
   premium: boolean;
   when: When;
 }
@@ -140,11 +151,12 @@ const DECIMAL = /^\d+(\.\d+)?$/;
  */
 export function fee(v: unknown): Fee {
   const f = record(v);
-  only(f, ['what', 'amount', 'currency', 'units', 'unitValue', 'maximum']);
+  only(f, ['what', 'amount', 'currency', 'units', 'unitValue', 'maximum', 'salary']);
   const what = text(f['what']);
   if (what === null) throw new Error('names no fee');
   const currency = String(f['currency']);
   if (!isCurrency(currency)) throw new Error(`is in ${currency}, which isn't a currency of ISO 4217's list`);
+  if ('salary' in f) return { what, money: null, salary: salary(f['salary'], currency, 'amount' in f), premium: PREMIUM.test(what), when: whenAsked(what) };
   const amount = String(f['amount']);
   if (!DECIMAL.test(amount)) throw new Error(`"${amount}" is not an amount`);
   if ('maximum' in f && f['maximum'] !== true) throw new Error(`says maximum ${String(f['maximum'])}, not true`);
@@ -160,13 +172,26 @@ export function fee(v: unknown): Fee {
 }
 
 /**
- * The fees, none known where the research gives none, or one is by a formula on the worker's pay (Cameroon's contract
- * visa: months of the gross salary by the worker's continent), which the game can't reckon (its blocker says so).
+ * A fee set on the pay (Cameroon's contract visa: two months' gross pay, one for an African worker, less half): the months
+ * and the abatement as amounts, the abatement below 1, the countries whose citizens pay the fewer months; it has no amount.
  */
+export function salary(v: unknown, currency: string, amount: boolean): Salary {
+  const o = record(v);
+  only(o, ['months', 'monthsAfrican', 'abatement', 'african']);
+  if (amount) throw new Error('is set on the pay, so it names no amount');
+  const [months, monthsAfrican, abatement] = [o['months'], o['monthsAfrican'], o['abatement']].map(String) as [string, string, string];
+  if (![months, monthsAfrican, abatement].every((x) => DECIMAL.test(x))) throw new Error(`gives ${months} months, ${monthsAfrican} for an African worker, less ${abatement}, not three amounts`);
+  const cut = rational(abatement);
+  if (cut.num >= cut.den) throw new Error(`takes off ${abatement} of the fee, not less than all of it`);
+  const african = o['african'];
+  if (!Array.isArray(african) || african.length === 0 || african.some((c) => !Object.hasOwn(countries, String(c)))) throw new Error('names its African countries by codes on the map');
+  return { currency, months, monthsAfrican, abatement, african: african as string[] };
+}
+
+/** The fees; none known where the research gives none. */
 export function fees(v: unknown): Fee[] | null {
   if (v === null) return null;
   if (!Array.isArray(v)) throw new Error('is not a list');
-  if (v.some((f) => typeof f === 'object' && f !== null && 'formula' in f)) return null;
   return v.map((f, i) => {
     try {
       return fee(f);

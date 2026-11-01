@@ -9,14 +9,73 @@
   "fees": [
    {
     "what": "Contract visa fee (Finance Law 2025): two months' gross salary for a non-African worker, one month's for an African worker, less a 50% abatement",
-    "amount": null,
     "currency": "XAF",
-    "formula": {
-     "monthsOfGrossSalary": {
-      "nonAfrican": 2,
-      "african": 1
-     },
-     "abatement": 0.5
+    "salary": {
+     "months": "2",
+     "monthsAfrican": "1",
+     "abatement": "0.5",
+     "african": [
+      "AO",
+      "BF",
+      "BI",
+      "BJ",
+      "BW",
+      "CD",
+      "CF",
+      "CG",
+      "CI",
+      "CM",
+      "CV",
+      "DJ",
+      "DZ",
+      "EG",
+      "EH",
+      "ER",
+      "ET",
+      "GA",
+      "GH",
+      "GM",
+      "GN",
+      "GQ",
+      "GW",
+      "IO",
+      "KE",
+      "KM",
+      "LR",
+      "LS",
+      "LY",
+      "MA",
+      "MG",
+      "ML",
+      "MR",
+      "MU",
+      "MW",
+      "MZ",
+      "NA",
+      "NE",
+      "NG",
+      "RE",
+      "RW",
+      "SC",
+      "SD",
+      "SH",
+      "SL",
+      "SN",
+      "SO",
+      "SS",
+      "ST",
+      "SZ",
+      "TD",
+      "TF",
+      "TG",
+      "TN",
+      "TZ",
+      "UG",
+      "YT",
+      "ZA",
+      "ZM",
+      "ZW"
+     ]
     }
    }
   ],
@@ -32,7 +91,8 @@
   "union": null,
   "eligibility": null,
   "pay": null,
-  "exempt": null
+  "exempt": null,
+  "feesNote": "Priced by the game from the engagement's pay: a month's gross pay read as the pay for the days worked scaled to a month of five-day weeks (65/3 days), in francs CFA at the day's rate; 'African' read as a citizen of a country in the United Nations' M49 region Africa."
  },
  "sources": [
   {
@@ -59,20 +119,19 @@
    "fields": [
     "first"
    ]
+  },
+  {
+   "url": "https://unstats.un.org/unsd/methodology/m49/overview/",
+   "title": "United Nations Statistics Division, Standard country or area codes for statistical use (M49): overview",
+   "read": "2026-11-01",
+   "said": "Global Code Global Name Region Code Region Name Sub-region Code Sub-region Name Intermediate Region Code Intermediate Region Name Country or Area M49 Code ISO-alpha2 Code ISO-alpha3 Code … 001 World 002 Africa 202 Sub-Saharan Africa 017 Middle Africa Cameroon 120 CM CMR",
+   "kind": "primary",
+   "fields": [
+    "fees"
+   ]
   }
  ],
  "blockers": [
-  {
-   "field": "fees",
-   "sought": "the fee as the Finance Law 2025 states it (read here only as the state daily reports it)",
-   "tried": {
-    "institution": "minefop.gov.cm not reached; no fee page found",
-    "official-register": "Code du travail and Finance Law 2023 texts not read",
-    "web-search": "run 2026-11-01 in French (Cameroun visa de contrat MINEFOP frais artiste): a blog and Africarrières cite XAF 150,000 'à vérifier', not quoting the law",
-    "trade-press": "Cameroon Tribune: no amount",
-    "archive": "not tried"
-   }
-  },
   {
    "field": "processing",
    "sought": "decision time",

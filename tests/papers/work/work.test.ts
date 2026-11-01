@@ -92,7 +92,20 @@ describe('work', () => {
     // thirteen, St Helena's 182 days in a year, Austria's eight weeks of a production; and Botswana, the Central African
     // Republic and Libya, whose rules it found, ask every foreign worker for their permit.
     expect([work('US', 'FI'), work('US', 'NL'), work('US', 'SH'), work('US', 'AT')]).toMatchObject([{ days: 90, within: 180 }, { days: 42, within: 91 }, { days: 182, within: 365 }, { days: 56 }]);
-    expect([keepsWork('BW'), keepsWork('CF'), keepsWork('LY'), keepsWork('SA'), keepsWork('TG')]).toEqual([true, true, true, false, false]);
+    expect([keepsWork('BW'), keepsWork('CF'), keepsWork('LY'), keepsWork('SA'), keepsWork('TG')]).toEqual([true, true, true, true, true]);
+    // Saudi Arabia's Labor Law asks every non-Saudi for its work permit; Togo keeps ECOWAS's free movement before its own visa.
+    expect([work('US', 'SA'), work('GH', 'TG'), work('US', 'TG')]).toStrictEqual([
+      { right: 'permit', route: 'Work permit (Labor Law, art. 33; Ministry of Human Resources and Social Development)' },
+      { right: 'free' },
+      { right: 'permit', route: 'Autorisation d’embauchage et visa du contrat de travail (directeur général du travail; Code du travail, loi n° 2021-012, arts. 52–53)' },
+    ]);
+    // Belgium's 21 days a quarter for artists of renown, Switzerland's 8 a year for work engaged from abroad, Vietnam's 90 a
+    // year from Decree 393/2026's first day.
+    expect([work('US', 'BE'), work('US', 'CH'), work('US', 'VN')]).toMatchObject([
+      { days: 21, within: 91, only: 'renowned' },
+      { days: 8, within: 365, only: 'engaged-abroad' },
+      { days: 90, within: 365, from: '2026-12-05' },
+    ]);
     expect([work('US', 'BW'), work('FR', 'CF'), work('EG', 'LY')]).toStrictEqual([
       { right: 'permit', route: 'Work permit (Employment of Non-Citizens Act), with the residence permit' },
       { right: 'permit', route: "Visa du contrat de travail (the Minister in charge of Employment's visa on the contract or letter of engagement of a non-Central African worker; Code du travail, loi n° 09.004, art. 100)" },

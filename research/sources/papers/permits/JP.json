@@ -33,7 +33,14 @@
     "currency": "JPY"
    }
   ],
-  "processing": null,
+  "processing": {
+   "standard": {
+    "n": 18,
+    "unit": "days"
+   },
+   "premium": null,
+   "note": "The Immigration Services Agency’s 31-month average for a Certificate of Eligibility as an Entertainer (興行), new applications: 18.0 days (15.6 in July 2026)."
+  },
   "validity": {
    "n": 3,
    "unit": "years",
@@ -78,20 +85,20 @@
    "fields": [
     "fees"
    ]
+  },
+  {
+   "url": "https://japan-visa.com/coe/time",
+   "title": "Japan-Visa.com, Japan COE Processing Time 2026 — MOJ Data by Visa Type (quoting the Immigration Services Agency’s processing-time statistics) — Immigration Services Agency of Japan (出入国在留管理庁), 在留審査処理期間 (processing periods of residence examinations), July 2026",
+   "read": "2026-11-01",
+   "said": "Official MOJ statistics: days to issue a COE, plus visa renewal, change of status and permanent residence processing times by residence status — with 31-month trends. … Entertainer 興行 15.6 days 32.4 days 15.5 days New 18.0 Renew 30.2 Change 24.0",
+   "kind": "secondary",
+   "quotes": "https://www.moj.go.jp/isa/",
+   "fields": [
+    "processing"
+   ]
   }
  ],
  "blockers": [
-  {
-   "field": "processing",
-   "sought": "ISA's standard processing period for the Certificate of Eligibility (Entertainer)",
-   "tried": {
-    "institution": "Immigration Services Agency (moj.go.jp/isa/applications/status/entertainer.html and _en) and MOFA (mofa.go.jp/j_info/visit/visa) answer this client HTTP 403. Retry 2026-11-01: moj.go.jp/isa (entertainer page and the standard processing periods page processing_index.html), isa.go.jp, mofa.go.jp's visa pages and the embassies in the US, UK, Canada, Australia, India and the Philippines (*.emb-japan.go.jp) all answer 403 to this client.",
-    "official-register": "e-Gov law API read for the Act, the landing criteria ordinance, the Enforcement Regulation and the Cabinet Order: none sets a decision time or the visa fee (set by MOFA notice). Retry 2026-11-01: e-Gov's Enforcement Regulation (saved) re-read: it fixes who applies (art. 6-2, Appended Table IV) but no decision time; the visa fee is set by MOFA notice, not in e-Gov's law data.",
-    "web-search": "Not searched further in this pass beyond the institution and the law database; ISA's standard processing periods page is under the same refused host. Retry 2026-11-01: No search could run: the session's shared web-search budget ran out (2026-11-01).",
-    "trade-press": "None used.",
-    "archive": "web.archive.org tried for the authority's page: the connection resets from this environment (curl: (35) Recv failure: Connection reset by peer, 2026-11-01); no snapshot read. Retry 2026-11-01: web.archive.org still resets the connection."
-   }
-  },
   {
    "field": "fees",
    "sought": "The visa issuance fee at a Japanese mission",

@@ -1607,7 +1607,82 @@
   },
   "CM": {
    "by": "engager",
-   "fees": null,
+   "fees": [
+    {
+     "what": "Contract visa fee (Finance Law 2025): two months' gross salary for a non-African worker, one month's for an African worker, less a 50% abatement",
+     "money": null,
+     "salary": {
+      "currency": "XAF",
+      "months": "2",
+      "monthsAfrican": "1",
+      "abatement": "0.5",
+      "african": [
+       "AO",
+       "BF",
+       "BI",
+       "BJ",
+       "BW",
+       "CD",
+       "CF",
+       "CG",
+       "CI",
+       "CM",
+       "CV",
+       "DJ",
+       "DZ",
+       "EG",
+       "EH",
+       "ER",
+       "ET",
+       "GA",
+       "GH",
+       "GM",
+       "GN",
+       "GQ",
+       "GW",
+       "IO",
+       "KE",
+       "KM",
+       "LR",
+       "LS",
+       "LY",
+       "MA",
+       "MG",
+       "ML",
+       "MR",
+       "MU",
+       "MW",
+       "MZ",
+       "NA",
+       "NE",
+       "NG",
+       "RE",
+       "RW",
+       "SC",
+       "SD",
+       "SH",
+       "SL",
+       "SN",
+       "SO",
+       "SS",
+       "ST",
+       "SZ",
+       "TD",
+       "TF",
+       "TG",
+       "TN",
+       "TZ",
+       "UG",
+       "YT",
+       "ZA",
+       "ZM",
+       "ZW"
+      ]
+     },
+     "premium": false,
+     "when": "grant"
+    }
+   ],
    "standard": null,
    "premium": null,
    "term": null,
@@ -1617,7 +1692,6 @@
    "eligibility": null,
    "pay": null,
    "unknown": [
-    "fees",
     "processing",
     "validity",
     "union",
@@ -1634,7 +1708,7 @@
     "unit": "days"
    },
    "premium": null,
-   "term": null,
+   "term": "engagement",
    "renews": null,
    "renewal": null,
    "union": null,
@@ -1642,7 +1716,6 @@
    "pay": null,
    "unknown": [
     "fees",
-    "validity",
     "union",
     "eligibility",
     "pay",
@@ -3472,7 +3545,10 @@
      "when": "grant"
     }
    ],
-   "standard": null,
+   "standard": {
+    "n": 1,
+    "unit": "weeks"
+   },
    "premium": null,
    "term": {
     "n": 1,
@@ -3484,7 +3560,6 @@
    "eligibility": "Foreign artistes engaged to conduct regular performances for the duration of the employment contract given by Hotels, Clubs, other organizations",
    "pay": "The Employment Visa's salary floor (gross more than Rs. 16.25 lakhs a year) doesn't apply to foreign artistes engaged to conduct regular performances for hotels, clubs and other organisations.",
    "unknown": [
-    "processing",
     "union",
     "exempt"
    ]
@@ -3830,7 +3905,10 @@
      "when": "both"
     }
    ],
-   "standard": null,
+   "standard": {
+    "n": 18,
+    "unit": "days"
+   },
    "premium": null,
    "term": {
     "n": 3,
@@ -3842,7 +3920,6 @@
    "eligibility": "申請人が演劇等の興行に係る活動以外の興行に係る活動に従事しようとする場合は、日本人が従事する場合に受ける報酬と同等額以上の報酬を受けて従事すること。",
    "pay": "For film, broadcast, advertising, commercial photography and recording work, and for performances other than theatre, music and dance: at least the pay a Japanese person would receive for the same work. For theatre, music and dance under criterion (c), a contract obliging the organisation to pay at least 200,000 yen a month.",
    "unknown": [
-    "processing",
     "fees",
     "union",
     "exempt"
@@ -5483,7 +5560,7 @@
    "standard": null,
    "premium": null,
    "term": {
-    "n": 90,
+    "n": 30,
     "unit": "days"
    },
    "renews": null,
@@ -6324,6 +6401,29 @@
     "exempt"
    ]
   },
+  "SA": {
+   "by": null,
+   "fees": [],
+   "standard": null,
+   "premium": null,
+   "term": null,
+   "renews": null,
+   "renewal": null,
+   "union": null,
+   "eligibility": null,
+   "pay": null,
+   "unknown": [
+    "applies",
+    "first",
+    "processing",
+    "validity",
+    "union",
+    "eligibility",
+    "pay",
+    "exempt",
+    "fees"
+   ]
+  },
   "SB": {
    "by": "worker",
    "fees": [
@@ -6897,6 +6997,31 @@
     "fees",
     "processing",
     "validity",
+    "union",
+    "eligibility",
+    "pay",
+    "exempt"
+   ]
+  },
+  "TG": {
+   "by": "engager",
+   "fees": null,
+   "standard": {
+    "n": 15,
+    "unit": "business-days"
+   },
+   "premium": null,
+   "term": {
+    "n": 2,
+    "unit": "years"
+   },
+   "renews": true,
+   "renewal": null,
+   "union": null,
+   "eligibility": null,
+   "pay": null,
+   "unknown": [
+    "fees",
     "union",
     "eligibility",
     "pay",

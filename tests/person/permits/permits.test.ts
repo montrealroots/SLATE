@@ -1,9 +1,10 @@
 import { describe, expect, it } from 'vitest';
 import { begin, commandIndex, dispatch, pass, type Life } from '../../../src/core/frame/frame.ts';
-import { fromMajor } from '../../../src/core/money/money.ts';
+import { CURRENCY_CODES, fromMajor, money, roundHalfEven } from '../../../src/core/money/money.ts';
+import { exchangeOn, knowsRate } from '../../../src/money/rates/rates.ts';
 import { t } from '../../../src/core/text/text.ts';
 import { daysFromCivil, SECONDS_PER_DAY } from '../../../src/core/time/calendar.ts';
-import { ACTING_START, type ActingSlice, type Agreement, type Audition, type Part } from '../../../src/person/acting/acting.ts';
+import { ACTING_START, WEEK_DAYS, type ActingSlice, type Agreement, type Audition, type Part } from '../../../src/person/acting/acting.ts';
 import type { IdentitySlice, Person } from '../../../src/person/identity/identity.ts';
 import { COUNTRY_CODES } from '../../../src/world/gazetteer/gazetteer.ts';
 import { keepsWork, work } from '../../../src/papers/work/work.ts';
@@ -13,6 +14,8 @@ import {
   after,
   applyForPermit,
   MISSING,
+  MONTH_DAYS,
+  priced,
   UNKEPT_LINE,
   daysWorkedIn,
   DECISION_KIND,
@@ -339,6 +342,56 @@ describe('permits.renew', () => {
         return permitted(l.slices, 'GB', day(2027, 6, 1), 40);
       },
     });
+  });
+});
+
+describe('a fee set on the pay', () => {
+  const cm = permitOf('CM')?.fees?.[0] as NonNullable<NonNullable<ReturnType<typeof permitOf>>['fees']>[number];
+  const date = '2026-11-02';
+  // ACTRA's principal day in 2026, three days.
+  const actra = part('actra');
+  const inFrancs = exchangeOn(fromMajor('CAD', '2918.25'), 'XAF', date)?.money as ReturnType<typeof money>;
+  const expected = (months: bigint) => money('XAF', Number(roundHalfEven(BigInt(inFrancs.minor) * 260n * months, 12n * 3n * 2n)));
+
+  it("is Cameroon's contract visa: two months' gross pay, one for an African worker, less half, priced from the part's pay", () => {
+    expect(MONTH_DAYS).toEqual({ num: 52n * BigInt(WEEK_DAYS), den: 12n });
+    expect([cm.money, cm.salary?.currency, cm.salary?.months, cm.salary?.monthsAfrican, cm.salary?.abatement, cm.salary?.african.includes('NG'), cm.salary?.african.includes('US')]).toEqual([null, 'XAF', '2', '1', '0.5', true, false]);
+    expect(priced(cm, identity().person as Person, actra, date)).toStrictEqual(expected(2n));
+    expect(priced(cm, identity({ citizenship: ['US', 'NG'] }).person as Person, actra, date)).toStrictEqual(expected(1n));
+    // A week's engagement: the pay for its five days, scaled to the month the same way.
+    const week = { ...part('actra'), term: 'week' as const, length: 1 };
+    const weekly = exchangeOn(fromMajor('CAD', '4133.50'), 'XAF', date)?.money as ReturnType<typeof money>;
+    expect(priced(cm, identity().person as Person, week, date)).toStrictEqual(money('XAF', Number(roundHalfEven(BigInt(weekly.minor) * 260n * 2n, 12n * 5n * 2n))));
+  });
+
+  it('comes to nothing known where the part sets no pay or no rate is known; another fee is its amount', () => {
+    const p = identity().person as Person;
+    expect(priced(cm, p, { ...part('sag-aftra'), budget: 15_000 }, date)).toBeNull();
+    const unknown = CURRENCY_CODES.find((c) => !knowsRate(c)) as (typeof CURRENCY_CODES)[number];
+    expect(priced({ ...cm, salary: { ...(cm.salary as NonNullable<typeof cm.salary>), currency: unknown } }, p, actra, date)).toBeNull();
+    const gb = permitOf('GB')?.fees?.[0] as typeof cm;
+    expect(priced(gb, p, actra, date)).toStrictEqual(gbp('340'));
+    // Months in a fraction: a month and a half.
+    expect(priced({ ...cm, salary: { ...(cm.salary as NonNullable<typeof cm.salary>), months: '1.5' } }, p, actra, date)).toStrictEqual(money('XAF', Number(roundHalfEven(BigInt(inFrancs.minor) * 260n * 15n, 12n * 3n * 10n * 2n))));
+    // No abatement: the whole months.
+    expect(priced({ ...cm, salary: { ...(cm.salary as NonNullable<typeof cm.salary>), abatement: '0' } }, p, actra, date)).toStrictEqual(money('XAF', Number(roundHalfEven(BigInt(inFrancs.minor) * 260n * 2n, 12n * 3n))));
+  });
+});
+
+describe("a short engagement's days, for whom and from when the law gives them", () => {
+  const s = (parts: Audition[] = []) => life(parts).slices;
+  const renowned = [played('actra', 0, 80), played('actra', 0, 40), played('actra', 0, 40)];
+
+  it("are Belgium's for artists of renown, read as the O-1's distinction", () => {
+    expect([permitted(s(), 'BE', NOW, 21), permitted(s(renowned), 'BE', NOW, 21), permitted(s(renowned), 'BE', NOW, 22)]).toEqual([false, true, false]);
+  });
+
+  it("are Switzerland's for work engaged from abroad, which no engagement the game books is", () => {
+    expect([permitted(s(), 'CH', NOW, 1), permitted(s(renowned), 'CH', NOW, 1)]).toEqual([false, false]);
+  });
+
+  it("are Vietnam's from Decree 393/2026's first day, 5 December 2026", () => {
+    expect([permitted(s(), 'VN', day(2026, 12, 4) + 86_399, 90), permitted(s(), 'VN', day(2026, 12, 5), 90), permitted(s(), 'VN', day(2026, 12, 5), 91)]).toEqual([false, true, false]);
   });
 });
 

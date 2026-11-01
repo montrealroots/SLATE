@@ -23,7 +23,14 @@
     "currency": "USD"
    }
   ],
-  "processing": null,
+  "processing": {
+   "standard": {
+    "n": 1,
+    "unit": "weeks"
+   },
+   "premium": null,
+   "note": "Up to a week in normal cases (the Embassy of India in The Hague); applicants from Afghanistan or China, or of Pakistani origin, two months ahead."
+  },
   "validity": {
    "n": 1,
    "unit": "years",
@@ -68,20 +75,19 @@
    "fields": [
     "fees"
    ]
+  },
+  {
+   "url": "https://www.indianembassynetherlands.gov.in/page/employment-visa",
+   "title": "Embassy of India, The Hague, Employment visa",
+   "read": "2026-11-01",
+   "said": "Time taken Processing of Employment visa may take upto a week in normal cases if all documents are in order. Applicants from Afghanistan, China, or of Pakistani origin are advised to apply two months in advance.",
+   "kind": "primary",
+   "fields": [
+    "processing"
+   ]
   }
  ],
  "blockers": [
-  {
-   "field": "processing",
-   "sought": "Decision time",
-   "tried": {
-    "institution": "The San Francisco consulate's page names none. | Retry 2026-11-01: The High Commission in Freetown's 2026 fee schedule (saved) states no decision time; the Embassy in Athens' employment-visa page answers 504.",
-    "official-register": "The Ministry of Home Affairs' and Bureau of Immigration's own pages refuse this client (layer 3); indianvisaonline.gov.in answers but its fee tables weren't located in this pass. | Retry 2026-11-01: indianvisaonline.gov.in and the MHA's visa manual pages not reached (MHA refuses this client, layer 3).",
-    "web-search": "Same search. | Retry 2026-11-01: 'indianvisaonline.gov.in regular visa fee employment visa US citizens fee table': mission fee schedules (Freetown, Medan, Kuala Lumpur), none with a processing time for an employment visa.",
-    "trade-press": "None found. | Retry 2026-11-01: BLS International's Hong Kong employment-visa page in the results, not read; none quoting a primary time.",
-    "archive": "web.archive.org resets the connection from this environment (2026-11-01). | Retry 2026-11-01: web.archive.org resets (2026-11-01)."
-   }
-  },
   {
    "field": "union",
    "sought": "Any union consultation",

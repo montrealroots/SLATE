@@ -22,6 +22,10 @@ export interface Work {
   /** The days a performer may work there without the permit, within a period of `within` days where the law counts them so. */
   readonly days?: number;
   readonly within?: number;
+  /** The first day those days apply (YYYY-MM-DD), where the law that gives them comes later. */
+  readonly from?: string;
+  /** Whom they are for, where the law limits them: artists of renown, or work engaged from abroad. */
+  readonly only?: 'renowned' | 'engaged-abroad';
 }
 
 interface List {

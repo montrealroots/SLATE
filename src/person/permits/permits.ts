@@ -1,12 +1,13 @@
 import { defineCommand, defineKind, type Context, type Item } from '../../core/frame/frame.ts';
-import type { Money } from '../../core/money/money.ts';
+import { money, rational, roundHalfEven, type CurrencyCode, type Money } from '../../core/money/money.ts';
+import { exchangeOn } from '../../money/rates/rates.ts';
 import { SECONDS_PER_DAY, weekdayFromDays } from '../../core/time/calendar.ts';
 import { addMonths } from '../../core/time/dates.ts';
 import { t, type LineId } from '../../core/text/text.ts';
 import { countryName, type CountryCode } from '../../world/gazetteer/gazetteer.ts';
 import { holidayOn } from '../../world/holidays/holidays.ts';
-import { auditionOf, COUNTRY, credit, daysWorked, type ActingSlice } from '../acting/acting.ts';
-import { ageOf, personOf, speaks, type IdentitySlice, type Level } from '../identity/identity.ts';
+import { auditionOf, COUNTRY, credit, dateOf, daysWorked, pay, type ActingSlice, type Part } from '../acting/acting.ts';
+import { ageOf, personOf, speaks, type IdentitySlice, type Level, type Person } from '../identity/identity.ts';
 import { mayWorkIn } from '../unions/unions.ts';
 import { aboutWork, keepsWork, work, type Work } from '../../papers/work/work.ts';
 import kept from '../../papers/work/work.json' with { type: 'json' };
@@ -36,11 +37,48 @@ export interface Span {
 }
 export type By = 'engager' | 'worker';
 
+/**
+ * A fee the law sets on the worker's pay (Cameroon's contract visa): so many months of the gross pay, fewer for a
+ * citizen of a country named (the African), less an abatement, in a currency.
+ */
+export interface Salary {
+  readonly currency: CurrencyCode;
+  readonly months: string;
+  readonly monthsAfrican: string;
+  readonly abatement: string;
+  readonly african: readonly CountryCode[];
+}
+
 export interface Fee {
   readonly what: string;
-  readonly money: Money;
+  /** The amount; none where the law sets it on the worker's pay (`salary`). */
+  readonly money: Money | null;
+  readonly salary?: Salary;
   readonly premium: boolean;
   readonly when: 'grant' | 'renewal' | 'both';
+}
+
+/** A month of five-day weeks, in working days (52 weeks a year), as acting counts days worked: the game's own (papers.permits.model). */
+// Five days a week (acting's WEEK_DAYS, which this module can't read as it loads: acting imports it) for 52 weeks.
+export const MONTH_DAYS = { num: 260n, den: 12n } as const;
+
+/**
+ * What a fee comes to for an engagement: its amount, or, set on the pay, the part's pay for the days it works scaled to
+ * a month, so many months of it by the worker's citizenship, less the abatement, in the fee's currency at the day's
+ * rate (half to even); none where the part's agreement sets no pay or no rate is known that day.
+ */
+export function priced(f: Fee, p: Person, part: Part, date: string): Money | null {
+  if (f.salary === undefined) return f.money;
+  const earned = pay(part, date);
+  const local = earned === null ? undefined : exchangeOn(earned, f.salary.currency, date)?.money;
+  if (local === undefined) return null;
+  const sal = f.salary;
+  // @slate:consumer identity.make
+  const months = rational(p.citizenship.some((c) => sal.african.includes(c)) ? sal.monthsAfrican : sal.months);
+  const cut = rational(sal.abatement);
+  const num = BigInt(local.minor) * MONTH_DAYS.num * months.num * (cut.den - cut.num);
+  const den = MONTH_DAYS.den * BigInt(daysWorked(part)) * months.den * cut.den;
+  return money(sal.currency, Number(roundHalfEven(num, den)));
 }
 
 export interface Permit {
@@ -124,7 +162,8 @@ export interface Application {
   readonly by: By;
   readonly premium: boolean;
   /** The government's fees for it, as the research names them; none where they aren't known. */
-  readonly fees: { what: string; money: Money }[] | null;
+  /** Each fee's amount is none where it is set on the pay and can't be reckoned. */
+  readonly fees: { what: string; money: Money | null }[] | null;
   decided: Decision | null;
 }
 
@@ -225,16 +264,19 @@ export function permitFor(s: Pick<Lives, 'identity'>, country: CountryCode, prem
 function lodge(s: Lives, c: Context, country: CountryCode, audition: number, renews: number | null, premium: boolean, permit: Permit): void {
   const id = s.permits.applications.length + 1;
   const when = renews === null ? 'grant' : 'renewal';
-  const fees = permit.fees === null ? null : chosen(permit.fees, when, premium);
+  // @slate:consumer acting.audition
+  const part = auditionOf(s.acting, audition).part;
+  const price = (f: Fee) => priced(f, personOf(s.identity), part, dateOf(c.now));
+  const fees = permit.fees === null ? null : chosen(permit.fees, when, premium, price);
   s.permits.applications.push({ id, at: c.now, country, audition, renews, by: permit.by as By, premium, fees, decided: null });
   c.schedule(DECISION_KIND, after(c.now, (premium ? permit.premium : permit.standard) as Span, country), { application: id });
 }
 
 /** The fees asked at a grant or a renewal, the premium service's first beside them; none known where the research names none for it. */
-function chosen(all: readonly Fee[], when: 'grant' | 'renewal', premium: boolean): { what: string; money: Money }[] | null {
+function chosen(all: readonly Fee[], when: 'grant' | 'renewal', premium: boolean, price: (f: Fee) => Money | null): { what: string; money: Money | null }[] | null {
   const asked = all.filter((f) => !f.premium && (f.when === when || f.when === 'both'));
   if (asked.length === 0) return null;
-  return [...asked, ...(premium ? all.filter((f) => f.premium).slice(0, 1) : [])].map(({ what, money }) => ({ what, money }));
+  return [...asked, ...(premium ? all.filter((f) => f.premium).slice(0, 1) : [])].map((f) => ({ what: f.what, money: price(f) }));
 }
 
 /** Whether a permit applied for is pending or granted and in force: another isn't applied for beside it. */
@@ -304,6 +346,17 @@ export function daysWorkedIn(s: ActingSlice, country: CountryCode, now: number, 
 }
 
 /**
+ * Whether a short engagement's days are the person's: from the day the law gives them, and for whom it gives them. An
+ * artist of renown is read as the O-1's distinction is (papers.permits.model); no engagement the game books is engaged
+ * from abroad (each agreement is the country's own producers'), so days for that work are no one's here.
+ */
+function shortEngagement(s: Pick<Lives, 'acting'>, w: Work, now: number): boolean {
+  if (w.from !== undefined && dateOf(now) < w.from) return false;
+  if (w.only === 'engaged-abroad') return false;
+  return w.only === undefined || recognised(s as Pick<Lives, 'identity' | 'acting'>, now) === null;
+}
+
+/**
  * Whether the person may work in a country, for an engagement of so many days: by a citizenship (their own country,
  * or free movement, papers.work), by a permit granted and in force on the day, or because the engagement, with the
  * days worked there in the period the law counts, is within the days papers.work lets a short engagement be worked
@@ -317,11 +370,12 @@ export function permitted(s: Lives, country: CountryCode, now: number, days: num
   // @slate:consumer identity.make
   return p.citizenship.some((c) => {
     const w = work(c, country) as Work | undefined;
+    if (w?.days === undefined || !shortEngagement(s, w, now)) return false;
     // Where the law counts no period, the engagement is counted alone. No engagement can be booked yet where the law
     // counts one (acting's agreements are the US's, the UK's and Canada's, none of which does), so the days there are
     // none either way; daysWorkedIn's own test holds the counting.
     // Stryker disable next-line ConditionalExpression,EqualityOperator: as said.
-    return w?.days !== undefined && (w.within === undefined ? 0 : daysWorkedIn(s.acting, country, now, w.within)) + days <= w.days;
+    return (w.within === undefined ? 0 : daysWorkedIn(s.acting, country, now, w.within)) + days <= w.days;
   });
 }
 

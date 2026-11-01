@@ -2183,3 +2183,14 @@ we're done with the ones that are processing i'll let you know." Held: the other
 owner's word, after the actor's eighteen markets and the permit gaps land. When given, the same countries as the
 actor's (and the UK and Canada for writers and directors), each guild's or fund's own terms, the producer starting
 from R-4612's CNC, Telefilm and Screen Australia figures.
+Owner, 2026-11-01, on the actor's markets: "Retry the blocked rates once all markets land." Once the last of the six
+market subagents reports, every blocked rate (Ireland's screen and stage, Australia's industry agreements and union,
+Korea's grade tables, Mexico's ANDA scales, Japan's TV drama, Italy's signatory copy, Brazil's later tables, Spain's
+union and Madrid's 2026 tables, New Zealand's theatre successors, Sweden's SVT, Nigeria's AGN fee) is retried, each
+method a different way, before the markets are built into the acting engine.
+Done 2026-11-01, the permit gaps the owner asked closed: Saudi Arabia's route (Labor Law art. 33) and Togo's (the
+2021 Code: the employer, 15 working days, 2 years) now in papers.work, their layer 3 blockers removed; Belgium's,
+Switzerland's and Vietnam's routes landed (Vietnam's Decree 393/2026 from 5 December 2026); Cameroon's fee priced from
+the part's pay; Japan's processing (18 days, from the Immigration Services Agency's statistics read in a copy), India's
+week, China's engagement-long term, Nigeria's 30 days. Still blocked, attempts dated: Laos's currency, some of Brazil's,
+Italy's, Korea's and Nigeria's fields, Saudi Arabia's other permit facts. 227 countries in papers.work, 210 permits.

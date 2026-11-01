@@ -20,6 +20,7 @@ import {
   RENEWAL,
   serialize,
   SOURCES,
+  salary,
   span,
   TERMS,
   UNITS,
@@ -130,8 +131,22 @@ describe('the permits compile', () => {
     expect(fees([])).toStrictEqual([]);
     expect(() => fees({})).toThrow('is not a list');
     expect(() => fees([{ what: 'P', amount: '5', currency: 'USD' }, 'x'])).toThrow('fee 1 is not an object');
-    // A fee by a formula on the worker's pay can't be reckoned: the fees aren't known.
-    expect(fees([{ what: 'P', amount: '5', currency: 'USD' }, { what: 'Two months', amount: null, currency: 'XAF', formula: {} }])).toBeNull();
+    // A fee set on the worker's pay: no amount, its rule kept for the engine to price.
+    const pay = { months: '2', monthsAfrican: '1', abatement: '0.5', african: ['CM', 'NG'] };
+    expect(fee({ what: 'Contract visa', currency: 'XAF', salary: pay })).toStrictEqual({ what: 'Contract visa', money: null, salary: { currency: 'XAF', ...pay }, premium: false, when: 'grant' });
+    expect(fees([{ what: 'Contract visa', currency: 'XAF', salary: pay }])?.[0]?.salary?.african).toEqual(['CM', 'NG']);
+    expect(salary({ ...pay, abatement: '0' }, 'XAF', false).abatement).toBe('0');
+    expect(() => fee({ what: 'P', currency: 'XAF', amount: '5', salary: pay })).toThrow('is set on the pay, so it names no amount');
+    expect(() => fee({ what: 'P', currency: 'BRV', salary: pay })).toThrow("is in BRV, which isn't a currency of ISO 4217's list");
+    expect(() => salary({ ...pay, rate: 1 }, 'XAF', false)).toThrow("names rate, which the game doesn't read");
+    expect(() => salary('x', 'XAF', false)).toThrow('is not an object');
+    for (const [k, v] of [['months', 'two'], ['monthsAfrican', undefined], ['abatement', '-0.5']] as const) {
+      const bad = { ...pay, [k]: v };
+      expect(() => salary(bad, 'XAF', false), k).toThrow(`gives ${String(bad.months)} months, ${String(bad.monthsAfrican)} for an African worker, less ${String(bad.abatement)}, not three amounts`);
+    }
+    for (const a of ['1', '1.5']) expect(() => salary({ ...pay, abatement: a }, 'XAF', false), a).toThrow(`takes off ${a} of the fee, not less than all of it`);
+    expect(salary({ ...pay, abatement: '0.99' }, 'XAF', false).abatement).toBe('0.99');
+    for (const african of [undefined, [], ['XX'], ['CM', 'XX'], 'CM', [7]]) expect(() => salary({ ...pay, african }, 'XAF', false), JSON.stringify(african)).toThrow('names its African countries by codes on the map');
     expect(() => fees([null])).toThrow('fee 0 is not an object');
     expect(() => fees(['x'])).toThrow(expect.objectContaining({ cause: new Error('is not an object') }));
   });
