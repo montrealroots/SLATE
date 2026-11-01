@@ -2309,3 +2309,8 @@ now." Eight subagents (workbench/briefs/BRIEF-markets-world.md) research every o
 once: any agreement, rate card or rule that sets a performer's, a writer's or a director's pay, the producer's fund,
 incentive and caps, the language and the market's city; where nothing sets it, a source saying so is a finding (pay
 negotiated), and a territory that follows its sovereign says so.
+Owner, 2026-11-01: "Retry the blocked market facts once all countries land." When the last of the eight world-market
+subagents reports, every blocked market fact is retried, each method a different way and every "not tried" method
+run, and every finding that rests only on an inference (a territory said to follow its sovereign from its status
+alone, a "none" from a production-services company or a Factbook copy) is held to a source that says it or turned
+back into a blocker.
