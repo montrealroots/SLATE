@@ -2270,3 +2270,5 @@ count every role's work in that country. A writer writes at home and travels onl
 visit: the pitch reads papers.visits and is refused where every passport needs a visa applied for beforehand (the game
 holds none). Routes whose research names whom they cover (Kazakhstan, Armenia, Japan, Sweden, Egypt) refuse the other
 roles and say so. The permit line reads for any role now ("someone from abroad").
+Owner, 2026-11-01: "Retry the blocked tax facts once all countries land." When the last of the three tax subagents
+reports, every blocked tax fact is retried, each method a different way, before the ledger takes the tax.
