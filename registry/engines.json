@@ -297,7 +297,8 @@
   "dir": "src/person/acting",
   "readsPlace": false,
   "matrices": [
-   "coverage/acting-operations.json"
+   "coverage/acting-operations.json",
+   "coverage/casting-operations.json"
   ]
  },
  "person.producing": {
@@ -306,6 +307,32 @@
   "readsPlace": false,
   "matrices": [
    "coverage/producing-operations.json"
+  ]
+ },
+ "person.identity": {
+  "layer": 4,
+  "dir": "src/person/identity",
+  "readsPlace": false,
+  "matrices": [
+   "coverage/identity-fields.json",
+   "coverage/identity-operations.json"
+  ]
+ },
+ "person.unions": {
+  "layer": 4,
+  "dir": "src/person/unions",
+  "readsPlace": false,
+  "matrices": [
+   "coverage/unions-operations.json"
+  ]
+ },
+ "person.genres": {
+  "layer": 4,
+  "dir": "src/person/genres",
+  "readsPlace": false,
+  "matrices": [
+   "coverage/genres-genres.json",
+   "coverage/genres-operations.json"
   ]
  }
 }

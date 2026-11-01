@@ -1,0 +1,2 @@
+import base from '../../stryker.config.mjs';
+export default { ...base, mutate: ['src/person/genres/**/*.ts', 'tools/person/genres/compile.ts', 'src/person/work/work.ts', 'src/person/producing/producing.ts'], reporters: ['clear-text', 'json'], jsonReporter: { fileName: 'reports/mutation/genres.json' }, ignorePatterns: ['.stryker-tmp*', 'reports', 'graphify-out'], tempDirName: '.stryker-tmp-genres', vitest: { configFile: 'workbench/configs/vitest.genres.config.mjs' } };

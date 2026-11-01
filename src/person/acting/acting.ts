@@ -2,7 +2,10 @@ import { defineCommand, type Context, type Json } from '../../core/frame/frame.t
 import { add, fromMajor, multiply, type CurrencyCode, type Money } from '../../core/money/money.ts';
 import { civilFromDays, SECONDS_PER_DAY } from '../../core/time/calendar.ts';
 import type { LineId } from '../../core/text/text.ts';
+import type { CountryCode } from '../../world/gazetteer/gazetteer.ts';
 import { componentOf, componentValues, practise, skillOf, type AttributesSlice } from '../attributes/attributes.ts';
+import { identifiesAs, personOf, playingAge, speaks, type Ethnicity, type IdentitySlice, type Level, type Person } from '../identity/identity.ts';
+import { mayTakeUnionWork, mayWorkIn, type UnionsSlice } from '../unions/unions.ts';
 import { spread } from '../work/work.ts';
 
 /**
@@ -27,6 +30,13 @@ import { spread } from '../work/work.ts';
  * Agreement for UK features of £3 million and over; UK Theatre/Equity's commercial theatre weeks by the venue's seats,
  * rehearsal weeks at the rehearsal rate; ACTRA's Independent Production Agreement, a principal by the day or week and a
  * part of five lines or fewer by the day.
+ *
+ * Casting puts a part out as a breakdown (R-4620): written for men, women, either or a non-binary performer at the
+ * shares of Sowa's count of 3,714 SAG-AFTRA television breakdowns (2017); naming an ethnicity, open to all, or silent
+ * at the same count's shares; for an age range by the ages of major characters in the top US films of 2025; in the
+ * market's language. An actor is seen only for a breakdown they fit, and every submission goes out under a headshot
+ * (R-4622: every submission on the casting platforms carries a profile photo). A named ethnicity is read only as the
+ * breakdown writes it, never as an ability, a judgment of the work, a pay rate or a chance (KEEP entry 4).
  */
 
 /** The line that tells the player these figures are the game's own (person.acting.model). */
@@ -63,9 +73,29 @@ export interface Work {
   readonly pay: Money | null;
 }
 
+/** Who a breakdown is written for: men, women, either (open), or a non-binary performer. */
+export type Gender = 'men' | 'women' | 'open' | 'non-binary';
+/** The ethnicity a breakdown names, or open to every ethnicity, or silent on it. */
+export type Named = 'open' | 'silent' | Ethnicity;
+
+/** A part put out by casting, and who it is written for. */
+export interface Breakdown {
+  readonly id: number;
+  readonly at: number;
+  readonly part: Part;
+  readonly gender: Gender;
+  readonly ethnicity: Named;
+  /** The ages the part is written for, from and to. */
+  readonly ages: readonly [number, number];
+  /** BCP 47: the language it is played in. */
+  readonly language: string;
+}
+
 export interface Audition {
   readonly id: number;
   readonly at: number;
+  /** The breakdown it answered. */
+  readonly breakdown: number;
   readonly part: Part;
   /** Self-taped, or held in the room. */
   readonly taped: boolean;
@@ -76,13 +106,14 @@ export interface Audition {
 }
 
 export interface ActingSlice {
+  breakdowns: Breakdown[];
   auditions: Audition[];
 }
 
-export const ACTING_START: ActingSlice = { auditions: [] };
+export const ACTING_START: ActingSlice = { breakdowns: [], auditions: [] };
 
 type Values = Readonly<Record<string, number>>;
-type Acting = { attributes: AttributesSlice; acting: ActingSlice };
+type Acting = { attributes: AttributesSlice; acting: ActingSlice; identity: IdentitySlice };
 
 const clamp = (n: number, lo: number, hi: number) => Math.min(hi, Math.max(lo, n));
 const mean = (xs: readonly number[]) => xs.reduce((t, x) => t + x, 0) / xs.length;
@@ -260,26 +291,130 @@ export function partOf(a: Part): Part {
   return a;
 }
 
+/** The shares of a breakdown's gender: Sowa's count of 3,714 SAG-AFTRA television breakdowns, January to August 2017 (R-4620). */
+export const GENDER: readonly (readonly [Gender, number])[] = [['men', 57.6], ['women', 37.9], ['open', 4.4], ['non-binary', 0.1]];
+
+/**
+ * The shares of the ethnicity a breakdown names, open or silent, from the same count (R-4620). The published shares
+ * sum to 105.7, which the paper doesn't explain; they are drawn as weights, each in proportion to the others.
+ */
+export const ETHNICITY: readonly (readonly [Named, number])[] = [
+  ['open', 33.9], ['silent', 30], ['white', 15.5], ['black', 8.5], ['latino', 8.3], ['asian', 3.8], ['middle-eastern', 1.6], ['south-asian', 1.5], ['mixed', 1.4], ['pacific-islander', 0.7], ['native-american', 0.5],
+];
+
+/** The shares of major characters in the top 100 US films of 2025 in their 30s, their 40s, 40 or older and 60 or older, by gender (R-4620). */
+export const MAJOR_AGES = { women: { thirties: 32, forties: 15, over40: 28, over60: 2 }, men: { thirties: 22, forties: 29, over40: 59, over60: 8 } } as const;
+
+/**
+ * The age ranges a breakdown is written for, the game's own (person.acting.model): a child's, a teenager's, an adult's
+ * under 30, then each decade, and 60 to 75; a part under 30 is a child's a tenth of the time and a teenager's a tenth.
+ */
+export const BANDS: readonly (readonly [number, number])[] = [[6, 12], [13, 17], [18, 29], [30, 39], [40, 49], [50, 59], [60, 75]];
+export const YOUNG = { child: 0.1, teen: 0.1 } as const;
+
+/** The weight of each band for a breakdown's gender; a part open to either, or non-binary, weighs men's and women's equally (the game's). */
+export function ageWeights(g: Gender): number[] {
+  if (g === 'open' || g === 'non-binary') {
+    const [m, w] = [ageWeights('men'), ageWeights('women')];
+    return m.map((x, i) => (x + (w[i] as number)) / 2);
+  }
+  const a = MAJOR_AGES[g];
+  const young = 100 - a.thirties - a.over40;
+  return [young * YOUNG.child, young * YOUNG.teen, young * (1 - YOUNG.child - YOUNG.teen), a.thirties, a.forties, a.over40 - a.forties - a.over60, a.over60];
+}
+
+/**
+ * Each agreement's market: the language its breakdowns are written in (R-4620: the US breakdowns are English; the
+ * game's for the UK's and Canada's English-language agreements) and where casting reckons the actor's age.
+ */
+export const MARKET: Readonly<Record<Agreement, { readonly language: string; readonly zone: string }>> = {
+  'sag-aftra': { language: 'en', zone: 'America/Los_Angeles' },
+  'pact-equity': { language: 'en', zone: 'Europe/London' },
+  'uk-theatre': { language: 'en', zone: 'Europe/London' },
+  actra: { language: 'en', zone: 'America/Toronto' },
+};
+
+/** How well an actor must speak a part's language to be seen for it, the game's own (person.acting.model). */
+export const FLUENT: Level = 'C1';
+
+/** One of a table's entries, in proportion to its weight, for a draw in [0, 1). */
+export function weighted<T>(table: readonly (readonly [T, number])[], u: number): T {
+  let left = u * table.reduce((t, [, w]) => t + w, 0);
+  // Stryker disable next-line MethodExpression: the last entry takes what is left, whether the loop reaches it or not.
+  for (const [x, w] of table.slice(0, -1)) {
+    // Stryker disable next-line EqualityOperator: a draw is continuous, so it lands on a boundary with no probability.
+    if (left < w) return x;
+    left -= w;
+  }
+  return (table.at(-1) as readonly [T, number])[0];
+}
+
+/** Posts the next breakdown for a part: who it is written for, drawn at the trade's shares. */
+function post(s: { acting: ActingSlice }, a: Part, c: Context): void {
+  const part = partOf(a);
+  const id = s.acting.breakdowns.length + 1;
+  const d = c.draws('acting.work', 'breakdown', id);
+  const gender = weighted(GENDER, d.float());
+  const ethnicity = weighted(ETHNICITY, d.float());
+  const ages = weighted(BANDS.map((b, i) => [b, ageWeights(gender)[i] as number] as const), d.float());
+  s.acting.breakdowns.push({ id, at: c.now, part, gender, ethnicity, ages, language: MARKET[part.agreement].language });
+}
+
+export function breakdownOf(s: ActingSlice, id: number): Breakdown {
+  const found = s.breakdowns.find((x) => x.id === id);
+  if (found === undefined) throw new Error(`there's no breakdown ${id}`);
+  return found;
+}
+
+/** Why the person isn't seen for a breakdown, or null where they fit it. */
+export function misfit(p: Person, b: Breakdown, now: number): string | null {
+  // @slate:consumer identity.make
+  // A part for men is an actor's, one for women an actress's: casting reads what the person is billed as (the owner,
+  // 2026-11-01: "Remember there's an 'Actor' and 'Actress'").
+  if (b.gender === 'men' && p.billedAs !== 'actor') return 'the part is written for an actor';
+  if (b.gender === 'women' && p.billedAs !== 'actress') return 'the part is written for an actress';
+  if (b.gender === 'non-binary' && p.pronouns !== 'they') return 'the part is written for a non-binary performer';
+  const [from, to] = playingAge(p, now, MARKET[b.part.agreement].zone);
+  if (to < b.ages[0] || from > b.ages[1]) return `the part is for ${b.ages[0]} to ${b.ages[1]}, and you play ${from} to ${to}`;
+  if (b.ethnicity !== 'open' && b.ethnicity !== 'silent' && !identifiesAs(p, b.ethnicity)) return `the breakdown names an ethnicity you don't give (${b.ethnicity})`;
+  if (!speaks(p, b.language, FLUENT)) return `the part is played in ${b.language}, at ${FLUENT} or better`;
+  return null;
+}
+
 export function auditionOf(s: ActingSlice, id: number): Audition {
   const found = s.auditions.find((x) => x.id === id);
   if (found === undefined) throw new Error(`there's no audition ${id}`);
   return found;
 }
 
-/** Auditions for a part: on tape or in the room, and booked or not. */
-function audition(s: Acting, a: Part, c: Context): void {
-  const part = partOf(a);
+export interface AuditionArgs {
+  [key: string]: number;
+  breakdown: number;
+}
+
+/** Auditions for a part a breakdown puts out, where the person fits it: on tape or in the room, and booked or not. */
+function audition(s: Acting, a: AuditionArgs, c: Context): void {
+  // @slate:consumer acting.breakdown
+  const b = breakdownOf(s.acting, a.breakdown);
+  if (s.acting.auditions.some((x) => x.breakdown === b.id)) throw new Error(`you've auditioned for breakdown ${b.id}`);
+  const p = personOf(s.identity);
+  const why = misfit(p, b, c.now);
+  if (why !== null) throw new Error(why);
+  const part = b.part;
   // @slate:consumer attributes.choose
   const values = componentValues(s.attributes, 'actor');
   const id = s.acting.auditions.length + 1;
   const d = c.draws('acting.work', 'audition', id);
   // Stryker disable next-line EqualityOperator: a draw is continuous, so it equals the share with no probability.
   const taped = d.float() < TAPED;
+  // @slate:consumer identity.make
+  // @slate:consumer identity.headshot
+  if (p.headshot === null) throw new Error("a submission goes out under a headshot, and you haven't one");
   const k = auditionSkill(values, part, taped);
   const score = clamp(k + spread(k) * (2 * d.float() - 1), 0, 100);
   // Stryker disable next-line EqualityOperator: as above.
   const booked = d.float() < bookingChance(score, credit(s.acting));
-  s.acting.auditions.push({ id, at: c.now, part, taped, score, booked, work: null });
+  s.acting.auditions.push({ id, at: c.now, breakdown: b.id, part, taped, score, booked, work: null });
   practise(s.attributes, 'actor', [...demands(part), ...ROOM, ...(taped ? ['self-taping'] : [])], 1);
 }
 
@@ -289,11 +424,19 @@ export interface PlayArgs {
 }
 
 /** Plays a part booked: how well, as the actor is in what it asks, and what it pays. */
-function play(s: Acting, a: PlayArgs, c: Context): void {
+/** The country each agreement's work is in: SAG-AFTRA's the US, Pact/Equity's and UK Theatre's the UK, ACTRA's Canada. */
+export const COUNTRY: Readonly<Record<Agreement, CountryCode>> = { 'sag-aftra': 'US', 'pact-equity': 'GB', 'uk-theatre': 'GB', actra: 'CA' };
+
+function play(s: Acting & { unions: UnionsSlice }, a: PlayArgs, c: Context): void {
   const job = auditionOf(s.acting, a.audition);
   // @slate:consumer acting.audition
   if (!job.booked) throw new Error(`audition ${a.audition} didn't book the part`);
   if (job.work !== null) throw new Error(`the part from audition ${a.audition} is played`);
+  const where = COUNTRY[job.part.agreement];
+  // @slate:consumer identity.make
+  if (!mayWorkIn(personOf(s.identity), where)) throw new Error(`the person may not work in ${where} without a permit`);
+  // @slate:consumer unions.join
+  if (!mayTakeUnionWork(s, job.part.agreement, c.now)) throw new Error(`a part under ${job.part.agreement} past the thirtieth day of union work is a member's`);
   // @slate:consumer attributes.choose
   const k = partSkill(componentValues(s.attributes, 'actor'), job.part);
   const quality = clamp(k + spread(k) * (2 * c.draws('acting.work', 'perform', job.id).float() - 1), 0, 100);
@@ -304,5 +447,6 @@ function play(s: Acting, a: PlayArgs, c: Context): void {
 // Stryker disable all: a mutant of a declaration made as the module loads changes its shape, so the module loaded
 // again for it is refused as declared twice (as the accounts' and the cards' say). The declarations are held by the
 // test that lists each command with what it reads and writes; what each does is mutated above.
-export const auditionForPart = defineCommand<Acting, Part>({ id: 'acting.audition', reads: [], writes: ['attributes', 'acting'], run: audition });
-export const playPart = defineCommand<Acting, PlayArgs>({ id: 'acting.perform', reads: [], writes: ['attributes', 'acting'], run: play });
+export const postBreakdown = defineCommand<{ acting: ActingSlice }, Part>({ id: 'acting.breakdown', reads: [], writes: ['acting'], run: post });
+export const auditionForPart = defineCommand<Acting, AuditionArgs>({ id: 'acting.audition', reads: ['identity'], writes: ['attributes', 'acting'], run: audition });
+export const playPart = defineCommand<Acting & { unions: UnionsSlice }, PlayArgs>({ id: 'acting.perform', reads: ['identity', 'unions'], writes: ['attributes', 'acting'], run: play });

@@ -29,9 +29,12 @@ import {
   type Out,
 } from '../../../src/person/work/career.ts';
 import { PARTS, partScore, readScript, SCRIPTS_START, spread, writeScript, type Form, type Script, type ScriptsSlice } from '../../../src/person/work/work.ts';
+import type { GenresSlice } from '../../../src/person/genres/genres.ts';
+import { FAMILY, type Family, type IdentitySlice } from '../../../src/person/identity/identity.ts';
 import { falsifyAny } from '../../support/falsify-core.ts';
+import { identity } from '../../support/person.ts';
 
-type Career = { attributes: AttributesSlice; scripts: ScriptsSlice; career: CareerSlice };
+type Career = { attributes: AttributesSlice; scripts: ScriptsSlice; career: CareerSlice; identity: IdentitySlice; genres: GenresSlice };
 const SEED = '0123456789abcdef';
 const u = (...keys: (string | number)[]) => draws(seedFromText(SEED), 'work.career', ...keys);
 const clamp = (n: number) => Math.min(100, Math.max(0, n));
@@ -41,13 +44,14 @@ const of = (v: Record<string, number>, id: string) => skillOf(v, 'screenwriter',
 /** Levels set by component, held by the broad attribute that covers each (a later one wins where two share it). */
 const toBroad = (each: Record<string, number>): Record<string, number> => Object.fromEntries(Object.entries(each).map(([id, n]) => [broadOf('screenwriter', id).id, n]));
 const made = (all: number, each: Record<string, number> = {}, at = 0): Life<Career> =>
-  dispatch(begin(SEED, at, { attributes: structuredClone(ATTRIBUTES_START), scripts: structuredClone(SCRIPTS_START), career: structuredClone(CAREER_START) }), chooseAttributes, { role: 'screenwriter', all, each: toBroad(each) });
-const withScript = (all: number, form: Form = 'feature', each: Record<string, number> = {}) => dispatch(made(all, each), writeScript, { form, days: 200 });
+  dispatch(begin(SEED, at, { attributes: structuredClone(ATTRIBUTES_START), scripts: structuredClone(SCRIPTS_START), career: structuredClone(CAREER_START), identity: identity(), genres: { loved: ['drama'] } }), chooseAttributes, { role: 'screenwriter', all, each: toBroad(each) });
+const withScript = (all: number, form: Form = 'feature', each: Record<string, number> = {}) => dispatch(made(all, each), writeScript, { form, genre: 'drama', days: 200 });
 const v = (l: Life<Career>) => componentValues(l.slices.attributes, 'screenwriter');
 const out = (l: Life<Career>, id = 1) => l.slices.career.out[String(id)];
 const script = (l: Life<Career>, id = 1) => l.slices.scripts.written[id - 1] as Script;
 const withCareer = (l: Life<Career>, career: Partial<CareerSlice>): Life<Career> => ({ ...l, slices: { ...l.slices, career: { ...l.slices.career, ...career } } });
 const contacts = (l: Life<Career>, n: number) => withCareer(l, { contacts: n });
+const withFamily = (l: Life<Career>, family: Family): Life<Career> => ({ ...l, slices: { ...l.slices, identity: identity({ family }) } });
 const requested = (l: Life<Career>, n: number, documents: Record<string, number> = {}) => withCareer(l, { out: { '1': { documents, requests: n, sold: null } } });
 const emptyOut: Out = { documents: {}, requests: 0, sold: null };
 
@@ -146,6 +150,43 @@ describe('sending a script out', () => {
     expect(() => dispatch(base, promoteScript, { script: 1, days: 0 })).toThrow(RangeError);
   });
 
+  it('counts a family in the business as a contact from the first day, whatever its trade', () => {
+    const base = dispatch(withScript(70), summariseScript, { script: 1, document: 'logline', days: 3 });
+    const warm = requestChance(v(base), out(base) as Out, quality(script(base)));
+    const cold = coldChance(v(base), out(base) as Out);
+    const expected = (n: number, known: number) => {
+      const d = u('promote', 1, 0);
+      let e = 0;
+      for (let i = 0; i < n; i += 1) if (d.float() < (i < known ? warm : cold)) e += 1;
+      return e;
+    };
+    for (const trade of FAMILY) {
+      for (const [have, n] of [
+        [0, 1],
+        [0, 30],
+        [3, 30],
+        [3, 2],
+      ] as const) {
+        const l = withFamily(contacts(base, have), trade);
+        const known = Math.min(n, have + (trade === 'outside' ? 0 : 1));
+        expect(out(dispatch(l, promoteScript, { script: 1, days: n }))?.requests, `${trade} ${have} ${n}`).toBe(expected(n, known));
+      }
+    }
+    expect(withFamily(base, 'producing').slices.career.contacts).toBe(0);
+    expect(() => dispatch({ ...base, slices: { ...base.slices, identity: { person: null, sessions: [] } } }, promoteScript, { script: 1, days: 1 })).toThrow('the person is not made yet');
+  });
+
+  it('identity.make: a writer whose family is in the business gets reads from the first day', () => {
+    const asked = (family: Family) => {
+      let l = made(60);
+      for (let i = 0; i < 12; i += 1) l = dispatch(l, writeScript, { form: 'episode', genre: 'drama', days: 200 });
+      l = withFamily(l, family);
+      for (let id = 1; id <= 12; id += 1) l = dispatch(l, promoteScript, { script: id, days: 1 });
+      return Object.values(l.slices.career.out).reduce((t, o) => t + o.requests, 0);
+    };
+    falsifyAny({ feature: 'identity.make', claim: 'bites', says: "a dozen scripts sent out for a day each draw more requests from a writer whose family produces than from one whose family is outside the business", base: 'outside' as Family, twin: 'producing' as Family, outcome: asked });
+  });
+
   it('script.promote: a better promoter gets more requests', () => {
     falsifyAny({ feature: 'script.promote', claim: 'bites', says: 'a writer at 100 in Promotion gets more requests from 30 contacts than one at 0', base: 0, twin: 100, outcome: (n) => out(dispatch(contacts(withScript(80, 'feature', { promotion: n }), 30), promoteScript, { script: 1, days: 30 }))?.requests });
   });
@@ -166,7 +207,7 @@ describe('a pitch', () => {
 
   it('sells by the meeting draw on each script, a dozen over, and grows Pitching, Speaking and Persuasion', () => {
     let l = made(65);
-    for (let i = 0; i < 12; i += 1) l = dispatch(l, writeScript, { form: 'episode', days: 200 });
+    for (let i = 0; i < 12; i += 1) l = dispatch(l, writeScript, { form: 'episode', genre: 'drama', days: 200 });
     l = withCareer(l, { out: Object.fromEntries(Array.from({ length: 12 }, (_, i) => [String(i + 1), { documents: { 'pitch-document': 50 }, requests: 1, sold: null }])) });
     const before = v(l);
     for (let id = 1; id <= 12; id += 1) {
@@ -196,7 +237,7 @@ describe('a pitch', () => {
   it('script.pitch: a better script sells where a weak one does not', () => {
     const sales = (n: number) => {
       let l = made(n);
-      for (let i = 0; i < 12; i += 1) l = dispatch(l, writeScript, { form: 'episode', days: 200 });
+      for (let i = 0; i < 12; i += 1) l = dispatch(l, writeScript, { form: 'episode', genre: 'drama', days: 200 });
       l = withCareer(l, { out: Object.fromEntries(Array.from({ length: 12 }, (_, i) => [String(i + 1), { documents: { 'pitch-document': 100 }, requests: 1, sold: null }])) });
       for (let id = 1; id <= 12; id += 1) l = dispatch(l, pitchScript, { script: id });
       return Object.values(l.slices.career.out).filter((o) => o.sold !== null).length;
@@ -212,7 +253,7 @@ describe('the solo writer', () => {
     expect(commandIndex().filter((x) => ['script.summarise', 'network.meet', 'script.promote', 'script.pitch'].includes(x.id))).toEqual([
       { id: 'script.summarise', reads: ['scripts'], writes: ['attributes', 'career'] },
       { id: 'network.meet', reads: [], writes: ['attributes', 'career'] },
-      { id: 'script.promote', reads: ['scripts'], writes: ['attributes', 'career'] },
+      { id: 'script.promote', reads: ['scripts', 'identity'], writes: ['attributes', 'career'] },
       { id: 'script.pitch', reads: ['scripts'], writes: ['attributes', 'career'] },
     ]);
   });

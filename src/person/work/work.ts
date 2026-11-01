@@ -1,6 +1,7 @@
 import { defineCommand, type Context } from '../../core/frame/frame.ts';
 import type { LineId } from '../../core/text/text.ts';
 import { componentOf, componentValues, practise, skillOf, type AttributesSlice, type Facet } from '../attributes/attributes.ts';
+import { lovesOrRefuse, type GenresSlice } from '../genres/genres.ts';
 
 /**
  * The screenwriter's work and how good it comes out (BUILD-ORDER layer 4; the owner, 2026-10-31: "I want my attributes
@@ -30,6 +31,9 @@ import { componentOf, componentValues, practise, skillOf, type AttributesSlice, 
  * to the strongest, almost never outside them), each reader's taste a spread fitted to how far two of its readers differ
  * on the same script (the same score 30% of the time, a point apart 44%, two 19%); PAGE International's ten criteria.
  * A reader's notes name the three weakest facets it grades, and the next revision works on them.
+ *
+ * A script is written in a genre, and the writer writes in the genres they love (the game's reading of the Genres page,
+ * person.genres.model): a genre not loved is refused. Its genre is what the market reads of it (src/person/genres).
  *
  * The model's own figures (the shares, the spreads at 0 and 100, how far a revision carries) are the game's until the
  * owner balances them (person.work.model); the figures named above are the sources' (R-4607, R-4608).
@@ -75,6 +79,8 @@ export interface Read {
 export interface Script {
   readonly id: number;
   readonly form: Form;
+  /** The genre it is written in, by id. */
+  readonly genre: string;
   readonly started: number;
   /** The days the first draft needed from this writer. */
   readonly needed: number;
@@ -92,6 +98,7 @@ export const SCRIPTS_START: ScriptsSlice = { written: [] };
 
 type Values = Readonly<Record<string, number>>;
 type Working = { attributes: AttributesSlice; scripts: ScriptsSlice };
+type Writing = Working & { genres: GenresSlice };
 
 const clamp = (n: number, lo: number, hi: number) => Math.min(hi, Math.max(lo, n));
 const mean = (xs: readonly number[]) => xs.reduce((t, x) => t + x, 0) / xs.length;
@@ -142,6 +149,8 @@ const DRAFTING = [...PARTS, 'writing', 'time-management', 'perseverance', ...SOU
 export interface WriteArgs {
   [key: string]: string | number;
   form: Form;
+  /** The genre, by id: one the writer loves. */
+  genre: string;
   /** The days given to the first draft. */
   days: number;
 }
@@ -151,9 +160,11 @@ const wholeDays = (days: number) => {
 };
 
 /** Writes a script's first draft. */
-function write(s: Working, a: WriteArgs, c: Context): void {
+function write(s: Writing, a: WriteArgs, c: Context): void {
   if (!(a.form in DAYS)) throw new Error(`there's no form ${String(a.form)}`);
   wholeDays(a.days);
+  // @slate:consumer genres.choose
+  lovesOrRefuse(s.genres, a.genre);
   const values = componentValues(s.attributes, 'screenwriter');
   const id = s.scripts.written.length + 1;
   const needed = daysNeeded(values, a.form);
@@ -167,7 +178,7 @@ function write(s: Working, a: WriteArgs, c: Context): void {
       facets[p][facet.id] = clamp(k * f + spread(k) * (2 * c.draws('work.draft', id, 1, p, facet.id).float() - 1), 0, 100);
     }
   }
-  s.scripts.written.push({ id, form: a.form, started: c.now, needed, drafts: 1, facets, reads: [] });
+  s.scripts.written.push({ id, form: a.form, genre: a.genre, started: c.now, needed, drafts: 1, facets, reads: [] });
   practise(s.attributes, 'screenwriter', DRAFTING, a.days);
 }
 
@@ -342,6 +353,6 @@ function read(s: { scripts: ScriptsSlice }, a: ReadArgs, c: Context): void {
 // Stryker disable all: a mutant of a declaration made as the module loads changes its shape, so the module loaded
 // again for it is refused as declared twice (as the accounts' and the cards' say). The declarations are held by the
 // test that lists each command with what it reads and writes; what each does is mutated above.
-export const writeScript = defineCommand<Working, WriteArgs>({ id: 'script.write', reads: [], writes: ['attributes', 'scripts'], run: write });
+export const writeScript = defineCommand<Writing, WriteArgs>({ id: 'script.write', reads: ['genres'], writes: ['attributes', 'scripts'], run: write });
 export const reviseScript = defineCommand<Working, ReviseArgs>({ id: 'script.revise', reads: [], writes: ['attributes', 'scripts'], run: revise });
 export const readScript = defineCommand<{ scripts: ScriptsSlice }, ReadArgs>({ id: 'script.read', reads: [], writes: ['scripts'], run: read });

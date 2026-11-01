@@ -33,9 +33,12 @@ import {
   type Script,
   type ScriptsSlice,
 } from '../../../src/person/work/work.ts';
+import { chooseGenres, GENRES_START, type GenresSlice } from '../../../src/person/genres/genres.ts';
 import { falsifyAny } from '../../support/falsify-core.ts';
 
-type Working = { attributes: AttributesSlice; scripts: ScriptsSlice };
+type Working = { attributes: AttributesSlice; scripts: ScriptsSlice; genres: GenresSlice };
+/** The genre these tests' scripts are written in, one the writer loves. */
+const GENRE = 'drama';
 const SEED = '0123456789abcdef';
 const u = (decider: 'work.draft' | 'work.read', ...keys: (string | number)[]) => 2 * draws(seedFromText(SEED), decider, ...keys).float() - 1;
 const ctx = { draws: (decider: 'work.read', ...keys: (string | number)[]) => draws(seedFromText(SEED), decider, ...keys) };
@@ -44,8 +47,8 @@ const clamp = (n: number) => Math.min(100, Math.max(0, n));
 /** Levels set by component, held by the broad attribute that covers each (a later one wins where two share it). */
 const toBroad = (each: Record<string, number>): Record<string, number> => Object.fromEntries(Object.entries(each).map(([id, n]) => [broadOf('screenwriter', id).id, n]));
 const made = (all: number, each: Record<string, number> = {}, seed = SEED): Life<Working> =>
-  dispatch(begin(seed, 0, { attributes: structuredClone(ATTRIBUTES_START), scripts: structuredClone(SCRIPTS_START) }), chooseAttributes, { role: 'screenwriter', all, each: toBroad(each) });
-const written = (all: number, days = 200, each: Record<string, number> = {}, seed = SEED, form: 'feature' | 'episode' = 'feature') => dispatch(made(all, each, seed), writeScript, { form, days });
+  dispatch(dispatch(begin(seed, 0, { attributes: structuredClone(ATTRIBUTES_START), scripts: structuredClone(SCRIPTS_START), genres: structuredClone(GENRES_START) }), chooseGenres, { loved: [GENRE, 'horror'] }), chooseAttributes, { role: 'screenwriter', all, each: toBroad(each) });
+const written = (all: number, days = 200, each: Record<string, number> = {}, seed = SEED, form: 'feature' | 'episode' = 'feature') => dispatch(made(all, each, seed), writeScript, { form, genre: GENRE, days });
 const first = (l: Life<Working>): Script => l.slices.scripts.written[0] as Script;
 const v = (l: Life<Working>) => componentValues(l.slices.attributes, 'screenwriter');
 const held = (l: Life<Working>) => l.slices.attributes['screenwriter'] as Record<string, number>;
@@ -105,7 +108,7 @@ describe('a script', () => {
   it('comes out at the top from a writer at 100 throughout, around 50 from one at 50, hardly readable from one at 10', () => {
     const top = first(written(100));
     for (const p of PARTS) for (const x of Object.values(top.facets[p])) expect(x, p).toBeGreaterThanOrEqual(97);
-    expect(top).toMatchObject({ id: 1, form: 'feature', started: 0, needed: 56, drafts: 1, reads: [] });
+    expect(top).toMatchObject({ id: 1, form: 'feature', genre: GENRE, started: 0, needed: 56, drafts: 1, reads: [] });
     const mid = first(written(50));
     for (const p of PARTS) for (const x of Object.values(mid.facets[p])) expect(Math.abs(x - 50), p).toBeLessThanOrEqual(spread(50));
     const low = first(written(10));
@@ -154,12 +157,12 @@ describe('a script', () => {
   });
 
   it('is refused in a form there is not, for days that are not whole, or before the attributes are chosen', () => {
-    expect(() => dispatch(made(50), writeScript, { form: 'novel' as 'feature', days: 10 })).toThrow("there's no form novel");
-    expect(() => dispatch(made(50), writeScript, { form: 'short', days: 0 })).toThrow(RangeError);
-    expect(() => dispatch(made(50), writeScript, { form: 'short', days: 1.5 })).toThrow('the days given are a whole number of at least 1 (1.5)');
-    expect(first(dispatch(made(50), writeScript, { form: 'short', days: 1 })).needed).toBe(daysNeeded(values(50), 'short'));
-    const bare = begin(SEED, 0, { attributes: structuredClone(ATTRIBUTES_START), scripts: structuredClone(SCRIPTS_START) });
-    expect(() => dispatch(bare, writeScript, { form: 'short', days: 5 })).toThrow("the screenwriter's attributes haven't been chosen");
+    expect(() => dispatch(made(50), writeScript, { form: 'novel' as 'feature', genre: GENRE, days: 10 })).toThrow("there's no form novel");
+    expect(() => dispatch(made(50), writeScript, { form: 'short', genre: GENRE, days: 0 })).toThrow(RangeError);
+    expect(() => dispatch(made(50), writeScript, { form: 'short', genre: GENRE, days: 1.5 })).toThrow('the days given are a whole number of at least 1 (1.5)');
+    expect(first(dispatch(made(50), writeScript, { form: 'short', genre: GENRE, days: 1 })).needed).toBe(daysNeeded(values(50), 'short'));
+    const bare = begin(SEED, 0, { attributes: structuredClone(ATTRIBUTES_START), scripts: structuredClone(SCRIPTS_START), genres: { loved: [GENRE] } });
+    expect(() => dispatch(bare, writeScript, { form: 'short', genre: GENRE, days: 5 })).toThrow("the screenwriter's attributes haven't been chosen");
     expect(() => scriptOf(SCRIPTS_START, 1)).toThrow("there's no script 1");
   });
 
@@ -188,7 +191,7 @@ describe('a reader', () => {
     expect(BLACK_LIST_WEIGHTS).toEqual({ plot: 0.318, characters: 0.234, dialogue: 0.219, premise: 0.13, setting: 0.102 });
     expect(BLACK_LIST_POSITION).toBe(0.38);
     expect(TASTE).toEqual({ lenience: 0.75, criterion: 0.6, residual: 0.4 });
-    const at = (parts: Partial<Record<Part, number>>): Script => ({ id: 9, form: 'feature', started: 0, needed: 56, drafts: 1, reads: [], facets: Object.fromEntries(PARTS.map((p) => [p, Object.fromEntries(facetsOf(p).map((f) => [f.id, parts[p] ?? 100]))])) as Record<Part, Record<string, number>> });
+    const at = (parts: Partial<Record<Part, number>>): Script => ({ id: 9, form: 'feature', genre: GENRE, started: 0, needed: 56, drafts: 1, reads: [], facets: Object.fromEntries(PARTS.map((p) => [p, Object.fromEntries(facetsOf(p).map((f) => [f.id, parts[p] ?? 100]))])) as Record<Part, Record<string, number>> });
     expect(scoresOf('black-list', at({}), ctx).overall).toBeGreaterThanOrEqual(9);
     const weakPlot = scoresOf('black-list', at({ plot: 30 }), ctx);
     const weakSetting = scoresOf('black-list', at({ setting: 30 }), ctx);
@@ -380,7 +383,7 @@ describe('a revision', () => {
   });
 
   it('finds the script asked for among several', () => {
-    const two = dispatch(dispatch(written(50, 60), writeScript, { form: 'short', days: 5 }), readScript, { script: 2, reader: 'page' });
+    const two = dispatch(dispatch(written(50, 60), writeScript, { form: 'short', genre: GENRE, days: 5 }), readScript, { script: 2, reader: 'page' });
     expect(two.slices.scripts.written.map((x) => [x.id, x.form, x.reads.length])).toEqual([
       [1, 'feature', 0],
       [2, 'short', 1],
@@ -390,7 +393,7 @@ describe('a revision', () => {
 
   it('is run through the frame, each command declaring what it reads and writes', () => {
     expect(commandIndex().filter((x) => x.id.startsWith('script.') && ['script.write', 'script.revise', 'script.read'].includes(x.id))).toEqual([
-      { id: 'script.write', reads: [], writes: ['attributes', 'scripts'] },
+      { id: 'script.write', reads: ['genres'], writes: ['attributes', 'scripts'] },
       { id: 'script.revise', reads: [], writes: ['attributes', 'scripts'] },
       { id: 'script.read', reads: [], writes: ['scripts'] },
     ]);

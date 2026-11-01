@@ -1,0 +1,43 @@
+{
+ "engine": "person.identity",
+ "axis": "identity-operation",
+ "universe": {
+  "keys": [
+   "identity.make",
+   "identity.headshot"
+  ]
+ },
+ "rows": [
+  {
+   "key": "identity.make",
+   "status": "game",
+   "register": [
+    "R-4618",
+    "R-4620",
+    "R-4622",
+    "R-4623"
+   ],
+   "tests": [
+    "tests/person/identity/identity.test.ts::identity.make > makes the person from what the player gives, trimmed, with the headshot their photo is",
+    "tests/person/identity/identity.test.ts::identity.make > is made once",
+    "tests/person/identity/identity.test.ts::identity.make > bites: the birth date it holds is the playing age casting reads",
+    "tests/person/identity/identity.test.ts::the person > declares each command with what it reads and writes"
+   ]
+  },
+  {
+   "key": "identity.headshot",
+   "status": "game",
+   "register": [
+    "R-4618",
+    "R-4620",
+    "R-4622",
+    "R-4623"
+   ],
+   "tests": [
+    "tests/person/identity/identity.test.ts::identity.headshot > takes a new headshot, at the price a survey gives where it gives one",
+    "tests/person/identity/identity.test.ts::identity.headshot > bites: the session's market is the price the life pays",
+    "tests/person/identity/identity.test.ts::the person > declares each command with what it reads and writes"
+   ]
+  }
+ ]
+}

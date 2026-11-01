@@ -25,6 +25,7 @@ import {
   partSkill,
   pay,
   playPart,
+  COUNTRY,
   rateAt,
   ROOM,
   SAG,
@@ -36,14 +37,31 @@ import {
   WEEK_DAYS,
   type ActingSlice,
   type Audition,
+  type Breakdown,
   type Part,
   MODEL_LINE,
+  postBreakdown,
+  breakdownOf,
+  GENDER,
+  ETHNICITY,
+  MAJOR_AGES,
+  BANDS,
+  YOUNG,
+  ageWeights,
+  MARKET,
+  FLUENT,
+  weighted,
+  misfit,
 } from '../../../src/person/acting/acting.ts';
+import type { IdentitySlice } from '../../../src/person/identity/identity.ts';
+import { identity, person } from '../../support/person.ts';
+import { UNIONS_START, type UnionsSlice } from '../../../src/person/unions/unions.ts';
+import { personOf } from '../../../src/person/identity/identity.ts';
 import { spread } from '../../../src/person/work/work.ts';
 import { t } from '../../../src/core/text/text.ts';
 import { falsifyAny } from '../../support/falsify-core.ts';
 
-type Acting = { attributes: AttributesSlice; acting: ActingSlice };
+type Acting = { attributes: AttributesSlice; acting: ActingSlice; identity: IdentitySlice; unions: UnionsSlice };
 const SEED = '0123456789abcdef';
 const OTHER = 'fedcba9876543210';
 const day = (y: number, m: number, d: number) => daysFromCivil(y, m, d) * SECONDS_PER_DAY;
@@ -56,14 +74,22 @@ const gbp = (n: string) => fromMajor('GBP', n);
 const cad = (n: string) => fromMajor('CAD', n);
 
 /** Levels by broad attribute over one level for all. */
-const made = (all: number, each: Record<string, number> = {}, seed = SEED, now = AUGUST): Life<Acting> =>
-  dispatch(begin(seed, now, { attributes: structuredClone(ATTRIBUTES_START), acting: structuredClone(ACTING_START) }), chooseAttributes, { role: 'actor', all, each });
+const made = (all: number, each: Record<string, number> = {}, seed = SEED, now = AUGUST, who: IdentitySlice = identity()): Life<Acting> =>
+  dispatch(begin(seed, now, { attributes: structuredClone(ATTRIBUTES_START), acting: structuredClone(ACTING_START), identity: who, unions: structuredClone(UNIONS_START) }), chooseAttributes, { role: 'actor', all, each });
 const part = (p: Partial<Part> = {}): Part => ({ agreement: 'sag-aftra', budget: 5_000_000, seats: 0, lines: 20, term: 'day', length: 3, rehearsal: 0, asks: [], ...p });
 const v = (l: Life<Acting>) => componentValues(l.slices.attributes, 'actor');
 const held = (l: Life<Acting>) => l.slices.attributes['actor'] as Record<string, number>;
 const auditions = (l: Life<Acting>) => l.slices.acting.auditions;
-const withAuditions = (l: Life<Acting>, list: Audition[]): Life<Acting> => ({ ...l, slices: { ...l.slices, acting: { auditions: list } } });
-const booked = (p: Part, id = 1, quality: number | null = null): Audition => ({ id, at: 0, part: p, taped: true, score: 50, booked: true, work: quality === null ? null : { at: 0, quality, pay: null } });
+const withAuditions = (l: Life<Acting>, list: Audition[]): Life<Acting> => ({ ...l, slices: { ...l.slices, acting: { breakdowns: l.slices.acting.breakdowns, auditions: list } } });
+const booked = (p: Part, id = 1, quality: number | null = null): Audition => ({ id, at: 0, breakdown: 0, part: p, taped: true, score: 50, booked: true, work: quality === null ? null : { at: 0, quality, pay: null } });
+/** A breakdown open to anyone: either gender, any ethnicity, every age, in English. */
+const open = (p: Part, id = 1, over: Partial<Breakdown> = {}): Breakdown => ({ id, at: 0, part: p, gender: 'open', ethnicity: 'open', ages: [0, 120], language: 'en', ...over });
+const withBreakdown = (l: Life<Acting>, b: Breakdown): Life<Acting> => ({ ...l, slices: { ...l.slices, acting: { breakdowns: [...l.slices.acting.breakdowns, b], auditions: l.slices.acting.auditions } } });
+/** Auditions for a part, posted as a breakdown open to anyone. */
+const audit = (l: Life<Acting>, p: Part): Life<Acting> => {
+  const id = l.slices.acting.breakdowns.length + 1;
+  return dispatch(withBreakdown(l, open(p, id)), auditionForPart, { breakdown: id });
+};
 const broadIds = ATTRIBUTES.actor.map((a) => a.id);
 
 describe('a part', () => {
@@ -214,12 +240,12 @@ describe('an audition', () => {
       const base = made(all, { camera: 100 - all }, seed);
       const w = v(base);
       const p = part({ asks: ['singing'] });
-      const l = dispatch(base, auditionForPart, p);
+      const l = audit(base, p);
       const d = draws(seedFromText(seed), 'acting.work', 'audition', 1);
       const taped = d.float() < 0.92;
       const k = auditionSkill(w, p, taped);
       const score = clamp(k + spread(k) * (2 * d.float() - 1));
-      expect(auditions(l), seed).toEqual([{ id: 1, at: AUGUST, part: p, taped, score, booked: d.float() < bookingChance(score, 0), work: null }]);
+      expect(auditions(l), seed).toEqual([{ id: 1, at: AUGUST, breakdown: 1, part: p, taped, score, booked: d.float() < bookingChance(score, 0), work: null }]);
     }
   });
 
@@ -243,10 +269,10 @@ describe('an audition', () => {
   it('weighs the best work casting has seen, none counting where a part is not yet played', () => {
     expect(credit(ACTING_START)).toBe(0);
     const p = part();
-    expect(credit({ auditions: [booked(p, 1, 40), booked(p, 2), booked(p, 3, 75), { ...booked(p, 4), booked: false }] })).toBe(75);
-    expect(credit({ auditions: [booked(p, 1)] })).toBe(0);
+    expect(credit({ breakdowns: [], auditions: [booked(p, 1, 40), booked(p, 2), booked(p, 3, 75), { ...booked(p, 4), booked: false }] })).toBe(75);
+    expect(credit({ breakdowns: [], auditions: [booked(p, 1)] })).toBe(0);
     const base = withAuditions(made(55), [booked(p, 1, 90), booked(p, 2)]);
-    const l = dispatch(base, auditionForPart, p);
+    const l = audit(base, p);
     const d = draws(seedFromText(SEED), 'acting.work', 'audition', 3);
     const taped = d.float() < 0.92;
     const k = auditionSkill(v(base), p, taped);
@@ -256,25 +282,25 @@ describe('an audition', () => {
 
   it('teaches what it used, for a day: the part, the audition craft, and on tape Camera', () => {
     const base = made(50);
-    const l = dispatch(base, auditionForPart, part());
+    const l = audit(base, part());
     const after = held(l);
     for (const id of ['acting', 'memorization', 'camera', 'direction', 'auditioning']) expect(after[id], id).toBeCloseTo(grown(50, 1), 10);
     for (const id of ['voice', 'physicality']) expect(after[id], id).toBe(50);
-    const onStage = dispatch(base, auditionForPart, part({ agreement: 'uk-theatre', term: 'week', lines: 0 }));
+    const onStage = audit(base, part({ agreement: 'uk-theatre', term: 'week', lines: 0 }));
     const stage = held(onStage);
     expect(stage['voice']).toBeCloseTo(grown(50, 1), 10);
     expect(stage['physicality']).toBeCloseTo(grown(50, 1), 10);
     // A stage part asks nothing of the camera: only a self-tape teaches it.
     expect(auditions(onStage)[0]?.taped).toBe(true);
     expect(stage['camera']).toBeCloseTo(grown(50, 1), 10);
-    const inTheRoom = Array.from({ length: 200 }, (_, i) => made(50, {}, (i + 1).toString(16).padStart(16, '0'))).map((l) => dispatch(l, auditionForPart, part({ agreement: 'uk-theatre', term: 'week', lines: 0 }))).find((l) => auditions(l)[0]?.taped === false) as Life<Acting>;
+    const inTheRoom = Array.from({ length: 200 }, (_, i) => made(50, {}, (i + 1).toString(16).padStart(16, '0'))).map((l) => audit(l, part({ agreement: 'uk-theatre', term: 'week', lines: 0 }))).find((l) => auditions(l)[0]?.taped === false) as Life<Acting>;
     expect(held(inTheRoom)['camera']).toBe(50);
   });
 
   it('is self-taped about 92% of the time, books near three in ten at the top, seldom near the bottom', () => {
     const run = (all: number, n: number) => {
       let l = made(all);
-      for (let i = 0; i < n; i += 1) l = dispatch(l, auditionForPart, part());
+      for (let i = 0; i < n; i += 1) l = audit(l, part());
       return auditions(l);
     };
     const top = run(100, 300);
@@ -287,16 +313,16 @@ describe('an audition', () => {
   });
 
   it('is refused for a part that cannot be, or before the attributes are chosen', () => {
-    expect(() => dispatch(made(50), auditionForPart, part({ length: 0 }))).toThrow(RangeError);
-    const bare = begin(SEED, AUGUST, { attributes: structuredClone(ATTRIBUTES_START), acting: structuredClone(ACTING_START) });
-    expect(() => dispatch(bare, auditionForPart, part())).toThrow("the actor's attributes haven't been chosen");
+    expect(() => dispatch(made(50), postBreakdown, part({ length: 0 }))).toThrow(RangeError);
+    const bare = withBreakdown(begin(SEED, AUGUST, { attributes: structuredClone(ATTRIBUTES_START), acting: structuredClone(ACTING_START), identity: identity(), unions: structuredClone(UNIONS_START) }), open(part()));
+    expect(() => dispatch(bare, auditionForPart, { breakdown: 1 })).toThrow("the actor's attributes haven't been chosen");
     expect(() => auditionOf(ACTING_START, 1)).toThrow("there's no audition 1");
   });
 
   it('is the same for the same life and differs for another', () => {
     const many = (seed: string) => {
       let l = made(50, {}, seed);
-      for (let i = 0; i < 8; i += 1) l = dispatch(l, auditionForPart, part());
+      for (let i = 0; i < 8; i += 1) l = audit(l, part());
       return auditions(l).map((a) => [a.taped, a.score, a.booked]);
     };
     expect(many(SEED)).toEqual(many(SEED));
@@ -306,10 +332,176 @@ describe('an audition', () => {
   it('acting.audition: a better auditioner books more parts', () => {
     const bookings = (n: number) => {
       let l = made(50, { auditioning: n, acting: n });
-      for (let i = 0; i < 60; i += 1) l = dispatch(l, auditionForPart, part());
+      for (let i = 0; i < 60; i += 1) l = audit(l, part());
       return auditions(l).filter((a) => a.booked).length;
     };
     falsifyAny({ feature: 'acting.audition', claim: 'bites', says: 'an actor at 100 in Acting and Auditioning books more of 60 auditions than one at 10', base: 10, twin: 100, outcome: bookings });
+  });
+});
+
+describe('a breakdown', () => {
+  it("is written for men, women, either or a non-binary performer at SAG-AFTRA's 2017 television shares, an ethnicity at the same count's", () => {
+    expect(GENDER).toEqual([['men', 57.6], ['women', 37.9], ['open', 4.4], ['non-binary', 0.1]]);
+    expect(ETHNICITY).toEqual([['open', 33.9], ['silent', 30], ['white', 15.5], ['black', 8.5], ['latino', 8.3], ['asian', 3.8], ['middle-eastern', 1.6], ['south-asian', 1.5], ['mixed', 1.4], ['pacific-islander', 0.7], ['native-american', 0.5]]);
+    expect(MAJOR_AGES).toEqual({ women: { thirties: 32, forties: 15, over40: 28, over60: 2 }, men: { thirties: 22, forties: 29, over40: 59, over60: 8 } });
+    expect(BANDS).toEqual([[6, 12], [13, 17], [18, 29], [30, 39], [40, 49], [50, 59], [60, 75]]);
+    expect(YOUNG).toEqual({ child: 0.1, teen: 0.1 });
+    expect(MARKET).toEqual({ 'sag-aftra': { language: 'en', zone: 'America/Los_Angeles' }, 'pact-equity': { language: 'en', zone: 'Europe/London' }, 'uk-theatre': { language: 'en', zone: 'Europe/London' }, actra: { language: 'en', zone: 'America/Toronto' } });
+    expect(FLUENT).toBe('C1');
+  });
+
+  it("weighs its age bands by the ages of 2025's major film characters, an open or non-binary part by men's and women's equally", () => {
+    const near = (xs: number[], ys: number[]) => xs.forEach((x, i) => expect(x, String(i)).toBeCloseTo(ys[i] as number, 10));
+    near(ageWeights('women'), [4, 4, 32, 32, 15, 11, 2]);
+    near(ageWeights('men'), [1.9, 1.9, 15.2, 22, 29, 22, 8]);
+    near(ageWeights('open'), [2.95, 2.95, 23.6, 27, 22, 16.5, 5]);
+    near(ageWeights('non-binary'), ageWeights('open'));
+    expect(ageWeights('men')).toHaveLength(7);
+    expect(ageWeights('open')).toHaveLength(7);
+  });
+
+  it('draws an entry in proportion to its weight', () => {
+    const t = [['a', 1], ['b', 3]] as const;
+    expect(weighted(t, 0)).toBe('a');
+    expect(weighted(t, 0.2499)).toBe('a');
+    expect(weighted(t, 0.25)).toBe('b');
+    expect(weighted(t, 0.3)).toBe('b');
+    expect(weighted(t, 0.9999)).toBe('b');
+    expect(weighted([['a', 1], ['b', 1], ['c', 1]], 0.5)).toBe('b');
+    expect(weighted([['a', 1], ['b', 1], ['c', 1]], 0.7)).toBe('c');
+    expect(weighted([['x', 5]], 0.9)).toBe('x');
+  });
+
+  it("is posted exactly as the draws give it, in the market's language", () => {
+    for (const [i, agreement] of (['sag-aftra', 'pact-equity', 'uk-theatre', 'actra'] as const).entries()) {
+      const seed = (i + 3).toString(16).padStart(16, '0');
+      const p = part({ agreement, budget: 5_000_000, term: 'week', length: 2 });
+      const l = dispatch(dispatch(made(50, {}, seed), postBreakdown, p), postBreakdown, p);
+      for (const id of [1, 2]) {
+        const d = draws(seedFromText(seed), 'acting.work', 'breakdown', id);
+        const gender = weighted(GENDER, d.float());
+        const ethnicity = weighted(ETHNICITY, d.float());
+        const ages = weighted(BANDS.map((b, j) => [b, ageWeights(gender)[j] as number] as const), d.float());
+        expect(breakdownOf(l.slices.acting, id), seed).toEqual({ id, at: AUGUST, part: p, gender, ethnicity, ages, language: 'en' });
+      }
+    }
+    expect(() => breakdownOf(ACTING_START, 1)).toThrow("there's no breakdown 1");
+  });
+
+  it('comes out at the shares: men near 58 in 100, an ethnicity open or silent near 6 in 10, a woman\'s part in her 30s near a third', () => {
+    let l = made(50);
+    for (let i = 0; i < 1000; i += 1) l = dispatch(l, postBreakdown, part());
+    const all = l.slices.acting.breakdowns;
+    const share = (f: (b: Breakdown) => boolean, of = all) => of.filter(f).length / of.length;
+    expect(share((b) => b.gender === 'men')).toBeCloseTo(0.576, 1);
+    expect(share((b) => b.gender === 'women')).toBeCloseTo(0.379, 1);
+    expect(share((b) => b.ethnicity === 'open' || b.ethnicity === 'silent')).toBeCloseTo(63.9 / 105.7, 1);
+    const women = all.filter((b) => b.gender === 'women');
+    expect(share((b) => b.ages[0] === 30, women)).toBeCloseTo(0.32, 1);
+    expect(share((b) => b.ages[0] >= 40, all.filter((b) => b.gender === 'men'))).toBeCloseTo(0.59, 1);
+  });
+
+  it('acting.breakdown: an actor auditions only for a part casting has posted', () => {
+    const tried = (posted: number) => {
+      let l = made(50, {}, SEED, AUGUST, identity({ ethnicity: ['latino'], billedAs: 'actress', pronouns: 'they' }));
+      for (let i = 0; i < posted; i += 1) l = dispatch(l, postBreakdown, part());
+      let seen = 0;
+      for (const b of l.slices.acting.breakdowns) {
+        try {
+          seen = auditions(dispatch(l, auditionForPart, { breakdown: b.id })).length + seen;
+        } catch {
+          // not seen for it
+        }
+      }
+      return seen;
+    };
+    falsifyAny({ feature: 'acting.breakdown', claim: 'bites', says: 'casting posting breakdowns opens auditions the actor fits; none posted, none held', base: 0, twin: 20, outcome: tried });
+  });
+});
+
+describe("a breakdown's fit", () => {
+  // Ada Reyes, an actress born 14 June 2000: 26 on 1 August 2026, playing 21 to 31.
+  const b = (over: Partial<Breakdown>) => open(part(), 1, over);
+  const fit = (over: Partial<Breakdown>, who: Parameters<typeof person>[0] = {}, now = AUGUST) => misfit(person(who), b(over), now);
+
+  it('reads Billed As: a part for men is an actor\'s, one for women an actress\'s; an open part is anyone\'s', () => {
+    expect(fit({ gender: 'men' })).toBe('the part is written for an actor');
+    expect(fit({ gender: 'men' }, { billedAs: 'actor' })).toBeNull();
+    expect(fit({ gender: 'women' })).toBeNull();
+    expect(fit({ gender: 'women' }, { billedAs: 'actor' })).toBe('the part is written for an actress');
+    expect(fit({ gender: 'open' }, { billedAs: 'actor' })).toBeNull();
+    expect(fit({ gender: 'open' })).toBeNull();
+  });
+
+  it('reads the pronouns for a part written for a non-binary performer', () => {
+    expect(fit({ gender: 'non-binary' })).toBe('the part is written for a non-binary performer');
+    expect(fit({ gender: 'non-binary' }, { pronouns: 'they' })).toBeNull();
+  });
+
+  it('reads the playing age: the part must overlap it at either end', () => {
+    expect(fit({ ages: [32, 39] })).toBe('the part is for 32 to 39, and you play 21 to 31');
+    expect(fit({ ages: [31, 40] })).toBeNull();
+    expect(fit({ ages: [10, 21] })).toBeNull();
+    expect(fit({ ages: [10, 20] })).toBe('the part is for 10 to 20, and you play 21 to 31');
+    expect(fit({ ages: [6, 12] }, { born: { date: '2012-01-01', country: 'US', region: '' } })).toBe('the part is for 6 to 12, and you play 13 to 15');
+    expect(fit({ ages: [6, 12] }, { born: { date: '2013-12-01', country: 'US', region: '' } })).toBeNull();
+  });
+
+  it("reckons the age where the market casts: Los Angeles, London or Toronto", () => {
+    // 03:00 UTC on 14 June 2026: Ada's 26th birthday in London, still the 13th in Los Angeles and Toronto.
+    const at = Date.UTC(2026, 5, 14, 3) / 1000;
+    const where = (agreement: Part['agreement']) => misfit(person(), open(part({ agreement, term: 'week' }), 1, { ages: [31, 40] }), at);
+    expect(where('sag-aftra')).toBe('the part is for 31 to 40, and you play 20 to 30');
+    expect(where('actra')).toBe('the part is for 31 to 40, and you play 20 to 30');
+    expect(where('pact-equity')).toBeNull();
+    expect(where('uk-theatre')).toBeNull();
+  });
+
+  it('reads an ethnicity only where the breakdown names one', () => {
+    expect(fit({ ethnicity: 'black' })).toBe("the breakdown names an ethnicity you don't give (black)");
+    expect(fit({ ethnicity: 'black' }, { ethnicity: ['white', 'black'] })).toBeNull();
+    expect(fit({ ethnicity: 'open' })).toBeNull();
+    expect(fit({ ethnicity: 'silent' })).toBeNull();
+    expect(fit({ ethnicity: 'silent' }, { ethnicity: ['asian'] })).toBeNull();
+  });
+
+  it("reads the languages: the part's at C1 or better", () => {
+    expect(fit({}, { languages: [{ lang: 'en', level: 'B2' }] })).toBe('the part is played in en, at C1 or better');
+    expect(fit({}, { languages: [{ lang: 'en', level: 'C1' }] })).toBeNull();
+    expect(fit({}, { languages: [{ lang: 'fr', level: 'C2' }] })).toBe('the part is played in en, at C1 or better');
+    expect(fit({ language: 'fr' }, { languages: [{ lang: 'en', level: 'C2' }, { lang: 'fr-CA', level: 'C1' }] })).toBeNull();
+  });
+
+  it("refuses an audition where the person doesn't fit, for a breakdown not posted or answered, or before the person is made", () => {
+    const base = withBreakdown(made(50), open(part(), 1, { gender: 'men' }));
+    expect(() => dispatch(base, auditionForPart, { breakdown: 1 })).toThrow('the part is written for an actor');
+    expect(() => dispatch(base, auditionForPart, { breakdown: 2 })).toThrow("there's no breakdown 2");
+    const once = audit(made(50), part());
+    expect(() => dispatch(once, auditionForPart, { breakdown: 1 })).toThrow("you've auditioned for breakdown 1");
+    expect(auditions(audit(once, part())).map((a) => a.breakdown)).toEqual([1, 2]);
+    const nobody = withBreakdown(made(50, {}, SEED, AUGUST, { person: null, sessions: [] }), open(part()));
+    expect(() => dispatch(nobody, auditionForPart, { breakdown: 1 })).toThrow('the person is not made yet');
+  });
+
+  it('refuses every submission without a headshot, on tape or for the room (R-4622: a submission goes out under the profile photo)', () => {
+    const seeds = Array.from({ length: 200 }, (_, i) => (i + 1).toString(16).padStart(16, '0'));
+    const taped = (seed: string) => draws(seedFromText(seed), 'acting.work', 'audition', 1).float() < TAPED;
+    const tape = seeds.find(taped) as string;
+    const room = seeds.find((x) => !taped(x)) as string;
+    const life = (seed: string, headshot: number | null) => withBreakdown(made(50, {}, seed, AUGUST, identity({ headshot })), open(part()));
+    expect(() => dispatch(life(tape, null), auditionForPart, { breakdown: 1 })).toThrow("a submission goes out under a headshot, and you haven't one");
+    expect(() => dispatch(life(room, null), auditionForPart, { breakdown: 1 })).toThrow("a submission goes out under a headshot, and you haven't one");
+    expect(auditions(dispatch(life(tape, 0), auditionForPart, { breakdown: 1 }))[0]?.taped).toBe(true);
+    expect(auditions(dispatch(life(room, 0), auditionForPart, { breakdown: 1 }))[0]?.taped).toBe(false);
+  });
+
+  it('identity.make: the person made decides which breakdowns they are seen for', () => {
+    const seen = (who: IdentitySlice) => {
+      let l = made(50, {}, SEED, AUGUST, who);
+      for (let i = 0; i < 40; i += 1) l = dispatch(l, postBreakdown, part());
+      return l.slices.acting.breakdowns.filter((x) => misfit(personOf(l.slices.identity), x, AUGUST) === null).map((x) => x.id);
+    };
+    falsifyAny({ feature: 'identity.make', claim: 'bites', says: 'an actor and an actress are seen for different breakdowns', base: identity(), twin: identity({ billedAs: 'actor', pronouns: 'he' }), outcome: seen });
   });
 });
 
@@ -329,7 +521,7 @@ describe('playing a part', () => {
 
   it('works a weekly or stage engagement five days a week, rehearsals too, and pays nothing where no minimum is set', () => {
     const p = part({ agreement: 'uk-theatre', term: 'week', seats: 600, rehearsal: 2, length: 4 });
-    const base = withAuditions(made(40, {}, SEED, day(2025, 9, 1)), [booked(p), booked(part({ budget: 15_000 }), 2)]);
+    const base = withAuditions(made(40, {}, SEED, day(2025, 9, 1), identity({ citizenship: ['US', 'GB'] })), [booked(p), booked(part({ budget: 15_000 }), 2)]);
     const l = dispatch(dispatch(base, playPart, { audition: 1 }), playPart, { audition: 2 });
     expect(auditions(l)[0]?.work?.pay).toEqual(gbp(String((2 * 54558 + 4 * 56914) / 100)));
     expect(auditions(l)[1]?.work?.pay).toBeNull();
@@ -344,6 +536,30 @@ describe('playing a part', () => {
     for (const s of seeds) expect(played(10, s)).toBeLessThanOrEqual(10 + spread(10));
   });
 
+  it("is refused where the person may not work: a country whose work takes a permit their citizenship doesn't spare (papers.work), as the I-9 and the UK's right-to-work check ask (R-4621)", () => {
+    const uk = part({ agreement: 'pact-equity', budget: 5_000_000 });
+    const american = withAuditions(made(50), [booked(uk)]);
+    expect(() => dispatch(american, playPart, { audition: 1 })).toThrow('the person may not work in GB without a permit');
+    const irish = withAuditions(made(50, {}, SEED, AUGUST, identity({ citizenship: ['IE'] })), [booked(uk)]);
+    expect(auditions(dispatch(irish, playPart, { audition: 1 }))[0]?.work).not.toBeNull();
+    expect(COUNTRY).toEqual({ 'sag-aftra': 'US', 'pact-equity': 'GB', 'uk-theatre': 'GB', actra: 'CA' });
+    const canadian = withAuditions(made(50, {}, SEED, AUGUST, identity({ citizenship: ['CA'] })), [booked(part({ agreement: 'actra' })), booked(part(), 2)]);
+    expect(auditions(dispatch(canadian, playPart, { audition: 1 }))[0]?.work).not.toBeNull();
+    expect(() => dispatch(canadian, playPart, { audition: 2 })).toThrow('the person may not work in US without a permit');
+  });
+
+  it("is refused a SAG-AFTRA part past the thirtieth day after the person's first, unless they joined (Taft-Hartley and union security, R-4621)", () => {
+    const first: Audition = { ...booked(part(), 1, 60), work: { at: AUGUST, quality: 60, pay: null } };
+    const at = (days: number) => withAuditions(made(50, {}, SEED, AUGUST + days * SECONDS_PER_DAY), [first, booked(part(), 2)]);
+    expect(auditions(dispatch(at(29), playPart, { audition: 2 }))[1]?.work).not.toBeNull();
+    expect(() => dispatch(at(30), playPart, { audition: 2 })).toThrow("a part under sag-aftra past the thirtieth day of union work is a member's");
+    const member = (l: Life<Acting>): Life<Acting> => ({ ...l, slices: { ...l.slices, unions: { joined: [{ union: 'sag-aftra', at: AUGUST, standing: 'full', name: 'Ada Reyes', initiation: null, dues: null }] } } });
+    expect(auditions(dispatch(member(at(30)), playPart, { audition: 2 }))[1]?.work).not.toBeNull();
+    const uk = { ...booked(part({ agreement: 'uk-theatre', term: 'week', seats: 100, length: 1 }), 2) };
+    const brit = withAuditions(made(50, {}, SEED, AUGUST + 40 * SECONDS_PER_DAY, identity({ citizenship: ['GB'] })), [first, uk]);
+    expect(auditions(dispatch(brit, playPart, { audition: 2 }))[1]?.work).not.toBeNull();
+  });
+
   it('is refused where the audition did not book, where the part is played, or where there is no such audition', () => {
     const p = part();
     const base = withAuditions(made(50), [{ ...booked(p), booked: false }, booked(p, 2, 60)]);
@@ -356,7 +572,7 @@ describe('playing a part', () => {
 
   it('finds the audition asked for among several, and an audition booked leads to a part played', () => {
     let l = made(100);
-    for (let i = 0; i < 12; i += 1) l = dispatch(l, auditionForPart, part());
+    for (let i = 0; i < 12; i += 1) l = audit(l, part());
     const first = auditions(l).find((a) => a.booked) as Audition;
     expect(first).toBeDefined();
     const after = dispatch(l, playPart, { audition: first.id });
@@ -375,10 +591,11 @@ describe('playing a part', () => {
 
   it('is run through the frame, each command declaring what it reads and writes', () => {
     expect(commandIndex().filter((x) => x.id.startsWith('acting.'))).toEqual([
-      { id: 'acting.audition', reads: [], writes: ['attributes', 'acting'] },
-      { id: 'acting.perform', reads: [], writes: ['attributes', 'acting'] },
+      { id: 'acting.breakdown', reads: [], writes: ['acting'] },
+      { id: 'acting.audition', reads: ['identity'], writes: ['attributes', 'acting'] },
+      { id: 'acting.perform', reads: ['identity', 'unions'], writes: ['attributes', 'acting'] },
     ]);
-    expect(ACTING_START).toEqual({ auditions: [] });
+    expect(ACTING_START).toEqual({ breakdowns: [], auditions: [] });
     expect(broadOf('actor', 'acting-for-the-camera').id).toBe('camera');
   });
 });

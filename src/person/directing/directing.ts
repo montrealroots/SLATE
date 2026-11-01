@@ -2,6 +2,7 @@ import { defineCommand, type Context, type Json } from '../../core/frame/frame.t
 import { money, type Money } from '../../core/money/money.ts';
 import type { LineId } from '../../core/text/text.ts';
 import { ATTRIBUTES, componentValues, practise, skillOf, type AttributesSlice } from '../attributes/attributes.ts';
+import { inTheBusiness, personOf, type IdentitySlice } from '../identity/identity.ts';
 import { spread } from '../work/work.ts';
 
 /**
@@ -21,7 +22,8 @@ import { spread } from '../work/work.ts';
  * whichever is longer, above $11 million; the sideletter's periods below; four days for an hour episode, a day and up to
  * one more for a half-hour); a feature's 32 shooting days (the CNC's mean, 2024); each festival's selection rate, as
  * its own counts give it; a debut director's chance of a second feature within five years (25.3%; 45% where the debut
- * found an audience; Stephen Follows's count of 146,603 debuts).
+ * found an audience; Stephen Follows's count of 146,603 debuts), moved by a family in the business as Follows's debut
+ * directors were (72% of those with family in film or TV went on to a second feature against 66% of everyone else; R-4622).
  *
  * The model's own figures (the spreads, how far a short schedule or a short cut carries, what the set takes from a
  * director's plan, a festival's pool and steepness, what a festival's selection says of an audience, what a pitch adds)
@@ -91,6 +93,18 @@ export const STEEP = 5;
 /** A debut director's chance of a second feature within five years; where the debut found an audience (R-4613). */
 export const SECOND = { debut: 0.253, audience: 0.45 } as const;
 
+/**
+ * Follows's 1,804 directors whose debut since 2000 found a meaningful audience: 72% of those with family in film or TV
+ * made a second feature against 66% of everyone else; and 26% of the top films' directors had family in it (R-4622).
+ */
+export const KIN = { share: 0.26, family: 0.72, other: 0.66 } as const;
+
+/**
+ * What a family in the business does to the chance of a second: its side's rate over the directors' mean, so the two sides
+ * average back to the sourced rate of all debuts (the game's reading of "another roll of the dice when a film disappoints").
+ */
+export const kinship = (family: boolean): number => (family ? KIN.family : KIN.other) / (KIN.share * KIN.family + (1 - KIN.share) * KIN.other);
+
 export interface Film {
   readonly id: number;
   readonly form: Form;
@@ -126,6 +140,7 @@ export const DIRECTING_START: DirectingSlice = { films: [], second: null };
 
 type Values = Readonly<Record<string, number>>;
 type Directing = { attributes: AttributesSlice; directing: DirectingSlice };
+type Pursuing = Directing & { identity: IdentitySlice };
 
 const clamp = (n: number, lo: number, hi: number) => Math.min(hi, Math.max(lo, n));
 const mean = (xs: readonly number[]) => xs.reduce((t, x) => t + x, 0) / xs.length;
@@ -170,8 +185,8 @@ export const selectionChance = (festival: Festival, quality: number): number => 
 /** How a director pitches the next film, 0 to 100: pitching and presenting it, Persuasion, promoting the last. */
 export const pitchSkill = (v: Values): number => mean(['pitching-and-presenting-the-project', 'persuasion', 'promote-productions-through-interviews-and-public-appearance'].map((id) => of(v, id)));
 
-/** The chance the debut leads to a second feature within five years: the sourced rate, as the pitch carries it. */
-export const secondChance = (v: Values, audience: boolean): number => (audience ? SECOND.audience : SECOND.debut) * (0.5 + pitchSkill(v) / 100);
+/** The chance the debut leads to a second feature within five years: the sourced rate, as a family and the pitch carry it. */
+export const secondChance = (v: Values, audience: boolean, family: boolean): number => (audience ? SECOND.audience : SECOND.debut) * kinship(family) * (0.5 + pitchSkill(v) / 100);
 
 const wholeAtLeast = (n: unknown, lo: number, what: string) => {
   if (!Number.isInteger(n) || (n as number) < lo) throw new RangeError(`${what} is a whole number of at least ${lo} (${String(n)})`);
@@ -296,17 +311,21 @@ function submit(s: { directing: DirectingSlice }, a: SubmitArgs, c: Context): vo
 }
 
 /** The debut's chance taken: whether it leads to a second feature within five years. */
-function pursue(s: Directing, _a: Record<string, never>, c: Context): void {
+function pursue(s: Pursuing, _a: Record<string, never>, c: Context): void {
   const debut = s.directing.films.find((f) => f.form === 'feature');
   if (debut === undefined) throw new Error('there is no debut feature');
   finishedFeature(s.directing, debut.id);
   if (s.directing.second !== null) throw new Error("the debut's chance is taken");
   const values = componentValues(s.attributes, 'director');
+  // @slate:consumer identity.make
+  // Follows counts family in film or TV (R-4622): a family in music is outside his split.
+  const trade = inTheBusiness(personOf(s.identity));
+  const family = trade !== null && trade !== 'music';
   // A debut chosen by a festival is read as one that found an audience (the game's reading of Follows's 1,000 votes).
   // @slate:consumer directing.submit
   const audience = Object.values(debut.festivals).includes(true);
   // Stryker disable next-line EqualityOperator: a draw is continuous, so it equals the chance with no probability.
-  s.directing.second = c.draws('directing.work', 'second', debut.id).float() < secondChance(values, audience);
+  s.directing.second = c.draws('directing.work', 'second', debut.id).float() < secondChance(values, audience, family);
   practise(s.attributes, 'director', componentsOf('communication'), 1);
 }
 
@@ -317,4 +336,4 @@ export const prepFilm = defineCommand<Directing, PrepArgs>({ id: 'directing.prep
 export const shootFilm = defineCommand<Directing, FilmArgs>({ id: 'directing.shoot', reads: [], writes: ['attributes', 'directing'], run: shoot });
 export const cutFilm = defineCommand<Directing, FilmArgs>({ id: 'directing.cut', reads: [], writes: ['attributes', 'directing'], run: cut });
 export const submitFilm = defineCommand<{ directing: DirectingSlice }, SubmitArgs>({ id: 'directing.submit', reads: [], writes: ['directing'], run: submit });
-export const pursueSecond = defineCommand<Directing, Record<string, never>>({ id: 'directing.pursue', reads: [], writes: ['attributes', 'directing'], run: pursue });
+export const pursueSecond = defineCommand<Pursuing, Record<string, never>>({ id: 'directing.pursue', reads: ['identity'], writes: ['attributes', 'directing'], run: pursue });

@@ -11,6 +11,8 @@ import {
   FEATURE_SHOOT,
   FESTIVALS,
   filmOf,
+  KIN,
+  kinship,
   finish,
   LEVELS,
   levelOf,
@@ -38,9 +40,11 @@ import {
 } from '../../../src/person/directing/directing.ts';
 import { spread } from '../../../src/person/work/work.ts';
 import { t } from '../../../src/core/text/text.ts';
+import { FAMILY, type Family, type IdentitySlice } from '../../../src/person/identity/identity.ts';
+import { identity } from '../../support/person.ts';
 import { falsifyAny } from '../../support/falsify-core.ts';
 
-type D = { attributes: AttributesSlice; directing: DirectingSlice };
+type D = { attributes: AttributesSlice; directing: DirectingSlice; identity: IdentitySlice };
 const SEED = '0123456789abcdef';
 const seedOf = (i: number) => i.toString(16).padStart(16, '0');
 const u = (seed: string, ...keys: (string | number)[]) => draws(seedFromText(seed), 'directing.work', ...keys).float();
@@ -53,7 +57,7 @@ const of = (v: Record<string, number>, id: string) => skillOf(v, 'director', id)
 
 const STUDIO: PrepArgs = { form: 'feature', budget: 20_000_000, shoot: 40 };
 const made = (all: number, each: Record<string, number> = {}, seed = SEED): Life<D> =>
-  dispatch(begin(seed, 0, { attributes: structuredClone(ATTRIBUTES_START), directing: structuredClone(DIRECTING_START) }), chooseAttributes, { role: 'director', all, each });
+  dispatch(begin(seed, 0, { attributes: structuredClone(ATTRIBUTES_START), directing: structuredClone(DIRECTING_START), identity: identity() }), chooseAttributes, { role: 'director', all, each });
 const prepped = (all: number, args: PrepArgs = STUDIO, each: Record<string, number> = {}, seed = SEED) => dispatch(made(all, each, seed), prepFilm, args);
 const shot = (all: number, args: PrepArgs = STUDIO, each: Record<string, number> = {}, seed = SEED) => dispatch(prepped(all, args, each, seed), shootFilm, { film: 1 });
 const cutOf = (all: number, args: PrepArgs = STUDIO, each: Record<string, number> = {}, seed = SEED) => dispatch(shot(all, args, each, seed), cutFilm, { film: 1 });
@@ -62,6 +66,7 @@ const v = (l: Life<D>) => componentValues(l.slices.attributes, 'director');
 const held = (l: Life<D>) => l.slices.attributes['director'] as Record<string, number>;
 const values = (all: number, each: Record<string, number> = {}) => v(made(all, each));
 const withDirecting = (l: Life<D>, d: Partial<DirectingSlice>): Life<D> => ({ ...l, slices: { ...l.slices, directing: { ...l.slices.directing, ...d } } });
+const withFamily = (l: Life<D>, family: Family): Life<D> => ({ ...l, slices: { ...l.slices, identity: identity({ family }) } });
 
 describe("a film's parts", () => {
   it('come from the broad attributes the owner names: the story from Vision and Script Sense, performances, images, the cut', () => {
@@ -167,7 +172,7 @@ describe('prep', () => {
     expect(() => prepped(50, { form: 'feature', budget: 1 })).toThrow(RangeError);
     expect(() => prepped(50, { form: 'hour', budget: 5 })).toThrow("an episode's budget and schedule are the show's");
     expect(() => prepped(50, { form: 'hour', shoot: 5 })).toThrow("an episode's budget and schedule are the show's");
-    const bare = begin(SEED, 0, { attributes: structuredClone(ATTRIBUTES_START), directing: structuredClone(DIRECTING_START) });
+    const bare = begin(SEED, 0, { attributes: structuredClone(ATTRIBUTES_START), directing: structuredClone(DIRECTING_START), identity: identity() });
     expect(() => dispatch(bare, prepFilm, { form: 'hour' })).toThrow("the director's attributes haven't been chosen");
     expect(() => filmOf(DIRECTING_START, 1)).toThrow("there's no film 1");
   });
@@ -363,10 +368,11 @@ describe('festivals', () => {
 describe('a second feature', () => {
   it("comes a quarter of the time within five years, nearly half where the debut found an audience, as the pitch carries it", () => {
     expect(SECOND).toEqual({ debut: 0.253, audience: 0.45 });
-    expect(secondChance(values(50), false)).toBeCloseTo(0.253, 12);
-    expect(secondChance(values(50), true)).toBeCloseTo(0.45, 12);
-    expect(secondChance(values(100), true)).toBeCloseTo(0.675, 12);
-    expect(secondChance(values(0), false)).toBeCloseTo(0.1265, 12);
+    const other = 0.66 / 0.6756;
+    expect(secondChance(values(50), false, false)).toBeCloseTo(0.253 * other, 12);
+    expect(secondChance(values(50), true, false)).toBeCloseTo(0.45 * other, 12);
+    expect(secondChance(values(100), true, false)).toBeCloseTo(0.675 * other, 12);
+    expect(secondChance(values(0), false, false)).toBeCloseTo(0.1265 * other, 12);
     const w = values(40, { communication: 90 });
     expect(pitchSkill(w)).toBeCloseTo(mean(['pitching-and-presenting-the-project', 'persuasion', 'promote-productions-through-interviews-and-public-appearance'].map((id) => of(w, id))), 10);
     expect(pitchSkill(w)).toBeGreaterThan(pitchSkill(values(40)));
@@ -380,7 +386,7 @@ describe('a second feature', () => {
       const audience = Object.values(film(l).festivals).includes(true);
       const before = v(l);
       const after = dispatch(l, pursueSecond, {});
-      expect(after.slices.directing.second, seed).toBe(u(seed, 'second', 1) < secondChance(before, audience));
+      expect(after.slices.directing.second, seed).toBe(u(seed, 'second', 1) < secondChance(before, audience, false));
       expect(held(after)['communication']).toBeCloseTo(grown(held(l)['communication'] as number, 1), 10);
       expect(held(after)['editing']).toBe(held(l)['editing']);
     }
@@ -402,6 +408,8 @@ describe('a second feature', () => {
     expect(() => dispatch(cutOf(50, { form: 'hour' }), pursueSecond, {})).toThrow('there is no debut feature');
     expect(() => dispatch(shot(50), pursueSecond, {})).toThrow("film 1 isn't cut");
     expect(() => dispatch(dispatch(cutOf(50), pursueSecond, {}), pursueSecond, {})).toThrow("the debut's chance is taken");
+    const unmade = cutOf(50);
+    expect(() => dispatch({ ...unmade, slices: { ...unmade.slices, identity: { person: null, sessions: [] } } }, pursueSecond, {})).toThrow('the person is not made yet');
   });
 
   it('directing.pursue: a better pitcher gets the second feature more often', () => {
@@ -410,11 +418,53 @@ describe('a second feature', () => {
   });
 });
 
+describe('a family in the business', () => {
+  it("moves the chance of a second as Follows's debut directors were moved, 72% against 66%, averaging back to the sourced rate", () => {
+    expect(KIN).toEqual({ share: 0.26, family: 0.72, other: 0.66 });
+    expect(kinship(true)).toBeCloseTo(0.72 / 0.6756, 12);
+    expect(kinship(false)).toBeCloseTo(0.66 / 0.6756, 12);
+    expect(0.26 * kinship(true) + 0.74 * kinship(false)).toBeCloseTo(1, 12);
+    expect(kinship(true) / kinship(false)).toBeCloseTo(0.72 / 0.66, 12);
+    expect(secondChance(values(50), false, true)).toBeCloseTo((0.253 * 0.72) / 0.6756, 12);
+    expect(secondChance(values(50), true, true)).toBeCloseTo((0.45 * 0.72) / 0.6756, 12);
+    expect(secondChance(values(100), true, true)).toBeCloseTo((0.675 * 0.72) / 0.6756, 12);
+  });
+
+  it('is any trade in film or TV the family was in, not music (Follows counts film and TV), read when the debut is pursued, and changes nothing of the film', () => {
+    for (let i = 1; i <= 16; i += 1) {
+      const seed = seedOf(i);
+      const trade = FAMILY[i % FAMILY.length] as Family;
+      const l = withFamily(dispatch(cutOf(i % 2 === 0 ? 95 : 55, STUDIO, {}, seed), submitFilm, { film: 1, festival: 'cannes' }), trade);
+      const audience = film(l).festivals['cannes'] === true;
+      const after = dispatch(l, pursueSecond, {});
+      expect(after.slices.directing.second, `${seed} ${trade}`).toBe(u(seed, 'second', 1) < secondChance(v(l), audience, trade !== 'outside' && trade !== 'music'));
+      expect(film(after)).toEqual(film(l));
+    }
+  });
+
+  it('reads a family in music as outside the business, as Follows counts film and TV only', () => {
+    const debut = (i: number) => cutOf(50, STUDIO, {}, seedOf(i));
+    // A debut whose draw falls between the two sides' chances, so the family decides it.
+    const i = Array.from({ length: 400 }, (_, k) => k + 1).find((k) => {
+      const w = v(debut(k));
+      const x = u(seedOf(k), 'second', 1);
+      return x >= secondChance(w, false, false) && x < secondChance(w, false, true);
+    }) as number;
+    const second = (family: Family) => dispatch(withFamily(debut(i), family), pursueSecond, {}).slices.directing.second;
+    expect([second('outside'), second('music'), second('acting'), second('directing')]).toEqual([false, false, true, true]);
+  });
+
+  it('identity.make: a director whose family is in the business gets a second feature more often', () => {
+    const backed = (family: Family) => Array.from({ length: 200 }, (_, i) => dispatch(withFamily(cutOf(50, STUDIO, {}, seedOf(i + 1)), family), pursueSecond, {}).slices.directing.second).filter(Boolean).length;
+    falsifyAny({ feature: 'identity.make', claim: 'bites', says: 'two hundred debuts by a director whose family directs lead to more second features than by one whose family is outside the business', base: 'outside' as Family, twin: 'directing' as Family, outcome: backed });
+  });
+});
+
 describe('the director', () => {
   it('reads every broad attribute somewhere in the work', () => {
     const outcome = (each: Record<string, number>) => {
       const l = dispatch(cutOf(50, STUDIO, each), submitFilm, { film: 1, festival: 'cannes' });
-      return { f: film(l), second: secondChance(v(l), false) };
+      return { f: film(l), second: secondChance(v(l), false, false) };
     };
     const base = outcome({});
     for (const id of BROAD) expect(outcome({ [id]: 90 }), id).not.toEqual(base);
@@ -436,7 +486,7 @@ describe('the director', () => {
       { id: 'directing.shoot', reads: [], writes: ['attributes', 'directing'] },
       { id: 'directing.cut', reads: [], writes: ['attributes', 'directing'] },
       { id: 'directing.submit', reads: [], writes: ['directing'] },
-      { id: 'directing.pursue', reads: [], writes: ['attributes', 'directing'] },
+      { id: 'directing.pursue', reads: ['identity'], writes: ['attributes', 'directing'] },
     ]);
   });
 });

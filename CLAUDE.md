@@ -9,6 +9,19 @@ first SLATE. Then read `HANDOFF.md`, which says where the build stands and what 
 
 The rules in one place:
 
+- **The main law (the owner, 2026-11-01, over everything else, for all that is built and all to come).** "I asked for
+  continuity, uniqueness, and freshness to everything this game produces. None should be or feel repetitive, the
+  same, and decoration. Everything should 100% perfectly flow cohesively and logically covering every single basis
+  and leaving no stone unturned." Every engine, line, draw and screen is held to it: what the game makes (a part, a
+  note, a reader's grade, a notice, a line of text) comes from the life's own state and draws, so no two lives and no
+  two moments read alike, and nothing repeats that the real thing wouldn't; each thing follows from what came before
+  and is read by what comes after; and every basis the research names is covered or named as not modeled. A test
+  holds it where it can be held (no two outputs alike for different lives or moments, no line said twice in a row).
+  It applies again to what is built already: each engine is checked against it, and what falls short is fixed.
+  And with it (the owner, the same day): "everything will be tested like crazy and will be until we get the perfect
+  formula for how the backbone of this game operates." Every engine is tested past its unit tests: whole lives run
+  through it over many seeds and levels, its outcomes held against the research's real distributions, and each
+  formula kept under test and retuned until the owner calls it right; no formula is final before then.
 - **Read, bite, downstream.** Every feature on every page reads real state, changes real state, and is read by
   something that changes an outcome the player meets. A feature that fails any of the three is not built. The proof
   is a feature-to-effect matrix with a consumer at a file and line for every feature, and the falsifiability test

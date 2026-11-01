@@ -2091,3 +2091,64 @@ professional-name, credit-name, joining and work-authorisation rules; every terr
 scale; the 149 genres' definitions, re-researched to the source in two halves (the first SLATE's repository was not
 reachable from this session); the genres' market figures, a family in the business, wealth by occupation, headshots
 and the writing programmes. Each result is checked by the lead before it lands.
+Ruled 2026-11-01, the owner, on the five genres left without a definition and on Revenge's: "Keep those five and find
+definitions for them, and find actual definition of revenge film." Action Comedy, Buddy Comedy, Holiday, Hood Film and
+Psychological Horror stay on the Genres page; a fourth research subagent looks for their definitions and for a
+definition of the revenge film itself (not of revenge), through routes the first three did not take.
+Ruled 2026-11-01, the owner, told that a part for men was open to anyone male or billed as an actor, and that the
+game held no work permits: "Remember there's an 'Actor' and 'Actress' and we didn't do work permits in layers 0-3 if
+not stay true to the factual and realism and cover that across the game's world map." So casting reads Billed As: a
+part written for men is an actor's, one for women an actress's, whatever the sex field (which the papers and awards
+read); a part for a non-binary performer reads they/them. And the work permit is built: layer 3 held each country's
+performer route (src/papers/work) but not the permit itself; eight research subagents (workbench/briefs/
+BRIEF-permits.md) read, for every country the map's work matrix covers (222 researched and the 24 blocked), who
+applies and what comes first, each fee, the processing time, the term and renewal, any union consultation, the
+eligibility, minimum pay and a short engagement's exemption. The permit engine reads them when they land.
+Decided 2026-11-01 by the lead, from the research's own limits: a genre's effect on a spec's sale is not modeled (the
+trackers count deals by genre, but no source counts the specs written by genre, so no odds follow: the spec-sale
+factor first built assumed them equal and is removed); a BFI genre group with fewer than 30 releases in the year
+counts as the average release (Family's two releases gave 26.8 times the average; the threshold is the game's).
+Ruled 2026-11-01, the owner: "Also if it wasn't obvious Actor (Male) Actress (Female) and for They/Them it could be
+either or." Billed As is the sex: an actor is male and an actress female, wherever a rule reads sex (the papers'
+military service and descent, casting, the acting awards); he/him bills an actor, she/her an actress, and they/them
+leaves the choice of either to the player. The separate Sex field of the same day is folded into it, so the fact is
+held once (`sexOf(person)` reads it from Billed As).
+Ruled 2026-11-01, the owner, as the main law over everything else: "Also I asked for continuity, uniqueness, and
+freshness to everything this game produces. None should be or feel repetitive, the same, and decoration. Everything
+should 100% perfectly flow cohesively and logically covering every single basis and leaving no stone unturned. This
+is the main law and should be engraved in what I want from this build with everything else. This applies to all thats
+has been done and all that is to come." Engraved at the head of CLAUDE.md's rules (the owner documents re-locked for
+it). Owed from it: every engine built so far is checked against it (what it produces repeats only where the real thing
+does; each output follows from the life's state and is read downstream), with a test holding it where it can be held;
+the layer isn't proven until that audit is done.
+Ruled 2026-11-01, the owner, with the main law: "Also attached to that everything will be tested like crazy and will
+be until we get the perfect formula for how the backbone of this game operates." Added to the law in CLAUDE.md (re-
+locked). Owed: beyond each engine's unit and mutation tests, simulation tests that run whole lives through the engines
+over many seeds and attribute levels and hold the outcomes against the research's real distributions (a reader's
+score spread, the share of specs that sell, booking rates, festival odds, second features), each formula kept under
+test and retuned until the owner calls it right.
+Built 2026-11-01, layer 4's person and its readers (five subagents at once, workbench/briefs/BRIEF-identity-readers.md;
+each checked and corrected by the lead before it landed):
+- The person (`person.identity`, src/person/identity; commands identity.make, identity.headshot): the legal and
+  preferred names, the pronouns, Billed As (the sex: `sexOf`), the birth date and place, the citizenships, the
+  languages with their CEFR level, race or ethnicity in the breakdowns' own categories (Sowa 2017), where one grew up,
+  the family's trade, the headshot. Languages from CLDR 49 (tools/person/identity compiles them, SHA-checked); the
+  birthplace and where one grew up suggest them (a tenth of the people, the game's line) and the citizenship.
+- Casting (`person.acting`): acting.breakdown posts parts at the SAG-AFTRA breakdowns' 2017 shares (57.6% for men,
+  37.9% for women, 4.4% open; 33.9% open ethnicity, 30% silent, then each named) and 2025's ages of major characters;
+  acting.audition sees only a part the person fits: Billed As (men's parts an actor's, women's an actress's), they/them
+  for a non-binary part, playing age (Spotlight's five years either way), a named ethnicity they give, the language at
+  C1 (the game's), a headshot for every submission; acting.perform refuses a part in a country the person may not work
+  in and a SAG-AFTRA part from the thirtieth day after the first to a non-member.
+- The unions (`person.unions`, src/person/unions; unions.join): SAG-AFTRA, Equity UK, ACTRA, Canadian Actors' Equity,
+  Actors' Equity Association, the WGA West (24 units; a feature 24, an hour's teleplay 8, from the WGA's chart) and the
+  DGA, each by its own route from the life's work, the card in the preferred name, fees and dues recorded.
+- The genres (`person.genres`, src/person/genres; genres.choose): all 149 with their cited definitions; the work is in
+  the genres one loves (script.write, producing.option); a film's chance of earning twice its budget moves by its BFI
+  group's gross per release (groups under 30 releases count as average).
+- A family in the business: a director's second feature at Follows's 72% against 66% (film and TV trades only), and a
+  writer's first contact from the first day.
+The game's own figures are R-4623 to R-4627, told by the lines identity.model, acting.model, unions.model and
+genres.model. Not built yet: the work permit (research under way, eight subagents), the portrait's image itself (the
+headshot is held as when it was taken), the acting awards' categories (no awards engine yet), papers.ages' readers
+(military service, majority), and the main law's audit of every engine built so far.

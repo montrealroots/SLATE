@@ -1,0 +1,198 @@
+{
+ "engine": "person.identity",
+ "axis": "identity-field",
+ "universe": {
+  "keys": [
+   "legal",
+   "preferred",
+   "pronouns",
+   "billedAs",
+   "born",
+   "citizenship",
+   "languages",
+   "ethnicity",
+   "grewUp",
+   "family",
+   "headshot"
+  ]
+ },
+ "rows": [
+  {
+   "key": "legal",
+   "status": "game",
+   "register": [
+    "R-4621",
+    "R-4623",
+    "R-4625"
+   ],
+   "tests": [
+    "tests/person/identity/identity.test.ts::identity.make > makes the person from what the player gives, trimmed, with the headshot their photo is",
+    "tests/person/identity/identity.test.ts::identity.make > needs every name but the middle one"
+   ]
+  },
+  {
+   "key": "preferred",
+   "status": "game",
+   "register": [
+    "R-4621",
+    "R-4625"
+   ],
+   "tests": [
+    "tests/person/identity/identity.test.ts::identity.make > makes the person from what the player gives, trimmed, with the headshot their photo is",
+    "tests/person/identity/identity.test.ts::identity.make > needs every name but the middle one",
+    "tests/person/unions/unions.test.ts::SAG-AFTRA > takes a principal day on a SAG-AFTRA film above Ultra Low Budget, and records its card in the name the person goes by",
+    "tests/person/unions/unions.test.ts::Equity (UK) > may not take a single initial for a forename or a surname"
+   ]
+  },
+  {
+   "key": "pronouns",
+   "status": "game",
+   "register": [
+    "R-4620",
+    "R-4624"
+   ],
+   "tests": [
+    "tests/person/identity/identity.test.ts::identity.make > makes the person from what the player gives, trimmed, with the headshot their photo is",
+    "tests/person/identity/identity.test.ts::identity.make > lets the pronouns settle Billed As, and leaves it to the player under they/them",
+    "tests/person/identity/identity.test.ts::what the person's fields give > suggests the citizenship the birthplace gives, and the title the pronouns settle",
+    "tests/person/acting/acting.test.ts::a breakdown's fit > reads the pronouns for a part written for a non-binary performer"
+   ]
+  },
+  {
+   "key": "billedAs",
+   "status": "game",
+   "register": [
+    "R-4620",
+    "R-4624"
+   ],
+   "tests": [
+    "tests/person/identity/identity.test.ts::identity.make > makes the person from what the player gives, trimmed, with the headshot their photo is",
+    "tests/person/identity/identity.test.ts::identity.make > lets the pronouns settle Billed As, and leaves it to the player under they/them",
+    "tests/person/identity/identity.test.ts::what the person's fields give > suggests the citizenship the birthplace gives, and the title the pronouns settle",
+    "tests/person/acting/acting.test.ts::a breakdown's fit > reads Billed As: a part for men is an actor's, one for women an actress's; an open part is anyone's",
+    "tests/person/acting/acting.test.ts::a breakdown's fit > identity.make: the person made decides which breakdowns they are seen for"
+   ]
+  },
+  {
+   "key": "born",
+   "status": "game",
+   "register": [
+    "R-4620",
+    "R-4623",
+    "R-4624"
+   ],
+   "tests": [
+    "tests/person/identity/identity.test.ts::identity.make > makes the person from what the player gives, trimmed, with the headshot their photo is",
+    "tests/person/identity/identity.test.ts::identity.make > holds the places to the map, and each region to its country",
+    "tests/person/identity/identity.test.ts::identity.make > takes a birth date on the calendar, today's at the latest",
+    "tests/person/identity/identity.test.ts::identity.make > bites: the birth date it holds is the playing age casting reads",
+    "tests/person/identity/identity.test.ts::what the person's fields give > gives the age on a day where the person is, a year more from the birthday on",
+    "tests/person/identity/identity.test.ts::what the person's fields give > gives the playing age: five years either way, one under 18, never below nothing",
+    "tests/person/identity/identity.test.ts::what the person's fields give > suggests the languages a tenth or more speak where one grew up, then where one was born, each once",
+    "tests/person/identity/identity.test.ts::what the person's fields give > suggests the citizenship the birthplace gives, and the title the pronouns settle",
+    "tests/person/acting/acting.test.ts::a breakdown's fit > reads the playing age: the part must overlap it at either end",
+    "tests/person/acting/acting.test.ts::a breakdown's fit > reckons the age where the market casts: Los Angeles, London or Toronto",
+    "tests/person/unions/unions.test.ts::Equity (UK) > halves it for the subsidised ages, 10 to 17 and 66 on, under £40,000"
+   ]
+  },
+  {
+   "key": "citizenship",
+   "status": "game",
+   "register": [
+    "R-4621",
+    "R-4624",
+    "R-4625"
+   ],
+   "tests": [
+    "tests/person/identity/identity.test.ts::identity.make > makes the person from what the player gives, trimmed, with the headshot their photo is",
+    "tests/person/identity/identity.test.ts::identity.make > holds the places to the map, and each region to its country",
+    "tests/person/identity/identity.test.ts::identity.make > takes each citizenship, language and ethnicity once",
+    "tests/person/unions/unions.test.ts::ACTRA > takes a Canadian citizen with a part on a permit as an Apprentice, with three as a Full member",
+    "tests/person/unions/unions.test.ts::working in a country > is open where a citizenship gives the right, and closed where it takes a permit or the rules are not kept"
+   ]
+  },
+  {
+   "key": "languages",
+   "status": "game",
+   "register": [
+    "R-4618",
+    "R-4620",
+    "R-4623",
+    "R-4624"
+   ],
+   "tests": [
+    "tests/person/identity/identity.test.ts::identity.make > makes the person from what the player gives, trimmed, with the headshot their photo is",
+    "tests/person/identity/identity.test.ts::identity.make > takes each citizenship, language and ethnicity once",
+    "tests/person/identity/identity.test.ts::identity.make > takes a language CLDR names, at a CEFR level",
+    "tests/person/identity/identity.test.ts::what the person's fields give > reads a language by its base subtag, at a level or better",
+    "tests/person/identity/identity.test.ts::what the person's fields give > gives a place's languages most spoken first, and none where CLDR has none",
+    "tests/person/identity/compile.test.ts::the languages compile > keeps each territory's languages in CLDR's order, official or not, and the names of the languages spoken",
+    "tests/person/identity/compile.test.ts::the languages compile > refuses a language with no name, and research without its figures",
+    "tests/person/identity/compile.test.ts::the languages compile > reads only the file the register cites, at the hash it cites",
+    "tests/person/identity/compile.test.ts::the languages compile > is the languages the engine reads, from the research the register cites",
+    "tests/person/acting/acting.test.ts::a breakdown's fit > reads the languages: the part's at C1 or better"
+   ]
+  },
+  {
+   "key": "ethnicity",
+   "status": "game",
+   "register": [
+    "R-4620",
+    "R-4624"
+   ],
+   "tests": [
+    "tests/person/identity/identity.test.ts::identity.make > makes the person from what the player gives, trimmed, with the headshot their photo is",
+    "tests/person/identity/identity.test.ts::identity.make > takes each citizenship, language and ethnicity once",
+    "tests/person/identity/identity.test.ts::what the person's fields give > reads an ethnicity the person gives, and a family in the business",
+    "tests/person/acting/acting.test.ts::a breakdown's fit > reads an ethnicity only where the breakdown names one"
+   ]
+  },
+  {
+   "key": "grewUp",
+   "status": "game",
+   "register": [
+    "R-4618",
+    "R-4623"
+   ],
+   "tests": [
+    "tests/person/identity/identity.test.ts::identity.make > makes the person from what the player gives, trimmed, with the headshot their photo is",
+    "tests/person/identity/identity.test.ts::identity.make > holds the places to the map, and each region to its country",
+    "tests/person/identity/identity.test.ts::what the person's fields give > suggests the languages a tenth or more speak where one grew up, then where one was born, each once"
+   ]
+  },
+  {
+   "key": "family",
+   "status": "game",
+   "register": [
+    "R-4622",
+    "R-4627"
+   ],
+   "tests": [
+    "tests/person/identity/identity.test.ts::identity.make > makes the person from what the player gives, trimmed, with the headshot their photo is",
+    "tests/person/identity/identity.test.ts::identity.make > takes each citizenship, language and ethnicity once",
+    "tests/person/identity/identity.test.ts::what the person's fields give > reads an ethnicity the person gives, and a family in the business",
+    "tests/person/directing/directing.test.ts::a family in the business > moves the chance of a second as Follows's debut directors were moved, 72% against 66%, averaging back to the sourced rate",
+    "tests/person/directing/directing.test.ts::a family in the business > is any trade in film or TV the family was in, not music (Follows counts film and TV), read when the debut is pursued, and changes nothing of the film",
+    "tests/person/directing/directing.test.ts::a family in the business > reads a family in music as outside the business, as Follows counts film and TV only",
+    "tests/person/directing/directing.test.ts::a family in the business > identity.make: a director whose family is in the business gets a second feature more often",
+    "tests/person/work/career.test.ts::sending a script out > counts a family in the business as a contact from the first day, whatever its trade",
+    "tests/person/work/career.test.ts::sending a script out > identity.make: a writer whose family is in the business gets reads from the first day"
+   ]
+  },
+  {
+   "key": "headshot",
+   "status": "game",
+   "register": [
+    "R-4622",
+    "R-4623",
+    "R-4624"
+   ],
+   "tests": [
+    "tests/person/identity/identity.test.ts::identity.make > makes the person from what the player gives, trimmed, with the headshot their photo is",
+    "tests/person/identity/identity.test.ts::identity.headshot > takes a new headshot, at the price a survey gives where it gives one",
+    "tests/person/identity/identity.test.ts::identity.headshot > bites: the session's market is the price the life pays",
+    "tests/person/acting/acting.test.ts::a breakdown's fit > refuses every submission without a headshot, on tape or for the room (R-4622: a submission goes out under the profile photo)"
+   ]
+  }
+ ]
+}

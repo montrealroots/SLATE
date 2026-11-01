@@ -1,0 +1,2 @@
+import base from '../../stryker.config.mjs';
+export default { ...base, mutate: ['src/person/identity/identity.ts', 'tools/person/identity/compile.ts'], reporters: ['clear-text', 'json'], jsonReporter: { fileName: 'reports/mutation/identity.json' }, ignorePatterns: ['.stryker-tmp*', 'reports', 'graphify-out'], tempDirName: '.stryker-tmp-identity', vitest: { configFile: 'workbench/configs/vitest.identity.config.mjs' } };

@@ -1,0 +1,125 @@
+{
+ "engine": "person.unions",
+ "axis": "union-operation",
+ "universe": {
+  "keys": [
+   "sag-aftra",
+   "equity-uk",
+   "actra",
+   "caea",
+   "aea",
+   "wga-west",
+   "dga",
+   "mayTakeUnionWork",
+   "mayWorkIn"
+  ]
+ },
+ "rows": [
+  {
+   "key": "sag-aftra",
+   "status": "game",
+   "register": [
+    "R-4621",
+    "R-4625"
+   ],
+   "tests": [
+    "tests/person/unions/unions.test.ts::SAG-AFTRA > takes a principal day on a SAG-AFTRA film above Ultra Low Budget, and records its card in the name the person goes by",
+    "tests/person/unions/unions.test.ts::SAG-AFTRA > takes a paid-up year in ACTRA and a part played under it",
+    "tests/person/unions/unions.test.ts::joining > bites: the life's work decides whether the card is given"
+   ]
+  },
+  {
+   "key": "equity-uk",
+   "status": "game",
+   "register": [
+    "R-4621",
+    "R-4625"
+   ],
+   "tests": [
+    "tests/person/unions/unions.test.ts::Equity (UK) > takes a part on an Equity contract, with no joining fee",
+    "tests/person/unions/unions.test.ts::Equity (UK) > takes £750 earned from the work, in pounds as estimated the day it was paid",
+    "tests/person/unions/unions.test.ts::Equity (UK) > charges the band of the three tax years' average income before this one",
+    "tests/person/unions/unions.test.ts::Equity (UK) > halves it for the subsidised ages, 10 to 17 and 66 on, under £40,000"
+   ]
+  },
+  {
+   "key": "actra",
+   "status": "game",
+   "register": [
+    "R-4621",
+    "R-4625"
+   ],
+   "tests": [
+    "tests/person/unions/unions.test.ts::ACTRA > takes a Canadian citizen with a part on a permit as an Apprentice, with three as a Full member"
+   ]
+  },
+  {
+   "key": "caea",
+   "status": "game",
+   "register": [
+    "R-4621",
+    "R-4625"
+   ],
+   "tests": [
+    "tests/person/unions/unions.test.ts::Canadian Actors' Equity > takes three years' paid professional experience, and its dues rise on 1 May 2028"
+   ]
+  },
+  {
+   "key": "aea",
+   "status": "game",
+   "register": [
+    "R-4621",
+    "R-4625"
+   ],
+   "tests": [
+    "tests/person/unions/unions.test.ts::Actors' Equity Association > takes a year in SAG-AFTRA, its sibling, and a part played under it"
+   ]
+  },
+  {
+   "key": "wga-west",
+   "status": "game",
+   "register": [
+    "R-4621",
+    "R-4625"
+   ],
+   "tests": [
+    "tests/person/unions/unions.test.ts::the WGA West > counts the units of sales to signatories in the three years before: 24 for Current, fewer for Associate"
+   ]
+  },
+  {
+   "key": "dga",
+   "status": "game",
+   "register": [
+    "R-4621",
+    "R-4625"
+   ],
+   "tests": [
+    "tests/person/unions/unions.test.ts::the DGA > takes employment by a signatory, at the latest job's category's fee"
+   ]
+  },
+  {
+   "key": "mayTakeUnionWork",
+   "status": "game",
+   "register": [
+    "R-4621",
+    "R-4625"
+   ],
+   "tests": [
+    "tests/person/unions/unions.test.ts::union work > lets a non-member take SAG-AFTRA work until the thirtieth day after their first SAG-AFTRA job, then only a member",
+    "tests/person/unions/unions.test.ts::union work > never bars a non-member from Equity's UK work or ACTRA's",
+    "tests/person/unions/unions.test.ts::joining > is read downstream: a SAG-AFTRA card lets the person take SAG-AFTRA work past the Taft-Hartley days"
+   ]
+  },
+  {
+   "key": "mayWorkIn",
+   "status": "game",
+   "register": [
+    "R-4621",
+    "R-4625"
+   ],
+   "tests": [
+    "tests/person/unions/unions.test.ts::working in a country > is open where a citizenship gives the right, and closed where it takes a permit or the rules are not kept"
+   ]
+  }
+ ]
+}

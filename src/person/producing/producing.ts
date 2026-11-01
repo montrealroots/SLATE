@@ -4,6 +4,7 @@ import { addMonths } from '../../core/time/dates.ts';
 import type { LineId } from '../../core/text/text.ts';
 import { componentValues, practise, skillOf, type AttributesSlice } from '../attributes/attributes.ts';
 import { FEATURE_SHOOT } from '../directing/directing.ts';
+import { boxOfficeFactor, lovesOrRefuse, type GenresSlice } from '../genres/genres.ts';
 import { spread } from '../work/work.ts';
 
 /**
@@ -28,8 +29,11 @@ import { spread } from '../work/work.ts';
  *   the budget's day rate, and the producer's fee is deferred against the overrun first.
  * - The release (Marketing, the film's quality): a cinema release at the BFI's rate for the budget (11.6% under £0.5m
  *   to 83.3% above £10m), and earning back twice the budget at its rate for those released (3.3% to 14.8%), as the film
- *   and its campaign sell it. A producer's films released in the last seven years (the PGA's window for its two
- *   features) count toward how financiers take the next.
+ *   and its campaign sell it, the second in the film's genre as the BFI's gross per release of its group (2023) stands
+ *   against all films' (src/person/genres; R-4622). A producer's films released in the last seven years (the PGA's
+ *   window for its two features) count toward how financiers take the next.
+ *
+ * The producer options material in the genres they love (the game's reading of the Genres page, person.genres.model).
  *
  * The producer works in the UK, the one market whose every stage has a published figure here (the BFI's funding,
  * option rule, fee line, release and recoupment by budget; the UK's credits). shortcut: the CNC's, Telefilm's and
@@ -138,6 +142,8 @@ export interface Shoot {
 export interface Project {
   readonly id: number;
   readonly optioned: number;
+  /** The genre of the material, by id. */
+  readonly genre: string;
   expires: number;
   /** Each option payment, the first and each renewal's, credited against the purchase price. */
   options: Money[];
@@ -159,6 +165,7 @@ export const PRODUCING_START: ProducingSlice = { projects: [] };
 
 type Values = Readonly<Record<string, number>>;
 type Producing = { attributes: AttributesSlice; producing: ProducingSlice };
+type Optioning = Producing & { genres: GenresSlice };
 
 const clamp = (n: number, lo: number, hi: number) => Math.min(hi, Math.max(lo, n));
 const of = (v: Values, id: string) => skillOf(v, 'producer', id);
@@ -223,8 +230,10 @@ export interface DaysArgs {
  * Options a script: a script read a day, each at its own worth (any from 0 to 100, as the market's are), judged by the
  * producer's eye, the one judged best optioned.
  */
-function option(s: Producing, a: DaysArgs, c: Context): void {
+function option(s: Optioning, a: OptionArgs, c: Context): void {
   wholeDays(a.days);
+  // @slate:consumer genres.choose
+  lovesOrRefuse(s.genres, a.genre);
   const v = componentValues(s.attributes, 'producer');
   const id = s.producing.projects.length + 1;
   const off = MODEL.misjudged * (1 - eye(v) / 100);
@@ -237,8 +246,15 @@ function option(s: Producing, a: DaysArgs, c: Context): void {
     // Stryker disable next-line EqualityOperator: a draw is continuous, so two judge alike with no probability.
     if (judged > best.judged) best = { worth, judged };
   }
-  s.producing.projects.push({ id, optioned: c.now, expires: addMonths(ZONE, c.now, OPTION_MONTHS), options: [OPTION_FEE], material: best.worth, plan: null, applied: false, raised: {}, shot: null, release: null });
+  s.producing.projects.push({ id, optioned: c.now, genre: a.genre, expires: addMonths(ZONE, c.now, OPTION_MONTHS), options: [OPTION_FEE], material: best.worth, plan: null, applied: false, raised: {}, shot: null, release: null });
   practise(s.attributes, 'producer', [C.select], a.days);
+}
+
+export interface OptionArgs {
+  [key: string]: number | string;
+  days: number;
+  /** The genre read in, by id: one the producer loves. */
+  genre: string;
 }
 
 export interface ProjectArgs {
@@ -382,15 +398,17 @@ function release(s: Producing, a: ProjectArgs, c: Context): void {
   const { budget } = planOf(p);
   // Stryker disable next-line EqualityOperator: a draw is continuous, so it equals the chance with no probability.
   const cinema = d.float() < rateFor(RELEASE, budget) * f;
+  // @slate:consumer producing.option
+  const earns = rateFor(RECOUP, budget) * f * boxOfficeFactor(p.genre);
   // Stryker disable next-line EqualityOperator: as above.
-  p.release = { at: c.now, cinema, doubled: cinema && d.float() < rateFor(RECOUP, budget) * f };
+  p.release = { at: c.now, cinema, doubled: cinema && d.float() < earns };
   practise(s.attributes, 'producer', [C.marketing], 1);
 }
 
 // Stryker disable all: a mutant of a declaration made as the module loads changes its shape, so the module loaded
 // again for it is refused as declared twice (as the accounts' and the cards' say). The declarations are held by the
 // test that lists each command with what it reads and writes; what each does is mutated above.
-export const optionMaterial = defineCommand<Producing, DaysArgs>({ id: 'producing.option', reads: [], writes: ['attributes', 'producing'], run: option });
+export const optionMaterial = defineCommand<Optioning, OptionArgs>({ id: 'producing.option', reads: ['genres'], writes: ['attributes', 'producing'], run: option });
 export const renewOption = defineCommand<{ producing: ProducingSlice }, ProjectArgs>({ id: 'producing.renew', reads: [], writes: ['producing'], run: renew });
 export const planProject = defineCommand<Producing, PlanArgs>({ id: 'producing.plan', reads: [], writes: ['attributes', 'producing'], run: plan });
 export const applyToFunder = defineCommand<Producing, ProjectArgs>({ id: 'producing.apply', reads: [], writes: ['attributes', 'producing'], run: apply });

@@ -1,6 +1,7 @@
 import { defineCommand, type Context } from '../../core/frame/frame.ts';
 import { fromMajor, type Money } from '../../core/money/money.ts';
 import { componentOf, componentValues, facetSkill, practise, skillOf, type AttributesSlice } from '../attributes/attributes.ts';
+import { inTheBusiness, personOf, type IdentitySlice } from '../identity/identity.ts';
 import { partScore, PARTS, scriptOf, spread, type Form, type Script, type ScriptsSlice } from './work.ts';
 
 /**
@@ -10,7 +11,9 @@ import { partScore, PARTS, scriptOf, spread, type Form, type Script, type Script
  *
  * - A script's documents (Synopsis): the ten the sources name, logline to scriptment, each written on its own.
  * - Networking (Networking, Speaking, Social Perceptiveness): the contacts days among the trade make. The studios read
- *   nothing unsolicited (Netflix's and Disney's own terms), so every meeting comes through a contact.
+ *   nothing unsolicited (Netflix's and Disney's own terms), so every meeting comes through a contact. A family in the
+ *   business brings one from the first day: someone it knows who sponsors the writer (the game's reading of Gorji,
+ *   Carney and Prakash's network sponsorship in show-business families, R-4622); the trade is the family's.
  * - Sending a script out (Promotion, the query documents, the script's grade): a contact approached may ask to read it;
  *   a stranger queried cold asks about once in sixty-six times (query services' 1 to 2%).
  * - A pitch on a request (Pitching, Speaking, Persuasion, the pitch documents): a third of the specs agents took out sold
@@ -82,6 +85,7 @@ export const CAREER_START: CareerSlice = { contacts: 0, out: {} };
 
 type Values = Readonly<Record<string, number>>;
 type Career = { attributes: AttributesSlice; scripts: ScriptsSlice; career: CareerSlice };
+type Promoting = Career & { identity: IdentitySlice };
 
 const clamp = (n: number, lo: number, hi: number) => Math.min(hi, Math.max(lo, n));
 const of = (v: Values, id: string) => skillOf(v, 'screenwriter', id);
@@ -172,14 +176,15 @@ export interface ScriptDaysArgs {
   days: number;
 }
 
-/** Sends a script out: a contact approached each day while there are contacts, a stranger queried cold each day after. */
-function promote(s: Career, a: ScriptDaysArgs, c: Context): void {
+/** Sends a script out: a contact approached each day while there are contacts (the family's among them), a stranger queried cold each day after. */
+function promote(s: Promoting, a: ScriptDaysArgs, c: Context): void {
   wholeDays(a.days);
   const values = componentValues(s.attributes, 'screenwriter');
   const { script, out } = onTheMarket(s, a.script);
   // @slate:consumer network.meet
   // @slate:consumer script.pitch
-  const known = Math.min(a.days, s.career.contacts);
+  // @slate:consumer identity.make
+  const known = Math.min(a.days, s.career.contacts + (inTheBusiness(personOf(s.identity)) === null ? 0 : 1));
   // @slate:consumer script.summarise
   const warm = requestChance(values, out, quality(script));
   const cold = coldChance(values, out);
@@ -229,5 +234,5 @@ function pitch(s: Career, a: ScriptArgs, c: Context): void {
 // test that lists each command with what it reads and writes; what each does is mutated above.
 export const summariseScript = defineCommand<Career, DocumentArgs>({ id: 'script.summarise', reads: ['scripts'], writes: ['attributes', 'career'], run: summarise });
 export const meetPeople = defineCommand<Career, DaysArgs>({ id: 'network.meet', reads: [], writes: ['attributes', 'career'], run: network });
-export const promoteScript = defineCommand<Career, ScriptDaysArgs>({ id: 'script.promote', reads: ['scripts'], writes: ['attributes', 'career'], run: promote });
+export const promoteScript = defineCommand<Promoting, ScriptDaysArgs>({ id: 'script.promote', reads: ['scripts', 'identity'], writes: ['attributes', 'career'], run: promote });
 export const pitchScript = defineCommand<Career, ScriptArgs>({ id: 'script.pitch', reads: ['scripts'], writes: ['attributes', 'career'], run: pitch });
