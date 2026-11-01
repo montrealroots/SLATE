@@ -1,0 +1,98 @@
+{
+ "country": "HU",
+ "read": "2026-11-01",
+ "route": "Magyar Kártya (előadóművész)",
+ "routeChanged": false,
+ "permit": {
+  "applies": "The performer applies to the immigration authority (abroad, at a consulate, for the residence permit and the visa to collect it), in the single combined procedure for residence and work.",
+  "first": "A preliminary agreement to establish employment, or a document proving the employment, with the Hungarian employer (for a performing artist no higher-education qualification is asked).",
+  "fees": [
+   {
+    "what": "Residence permit and visa to collect it, applied for abroad",
+    "amount": "110.00",
+    "currency": "EUR"
+   },
+   {
+    "what": "Residence permit, applied for in Hungary through the electronic system",
+    "amount": "26000",
+    "currency": "HUF"
+   }
+  ],
+  "processing": {
+   "standard": {
+    "n": 70,
+    "unit": "days"
+   },
+   "premium": null
+  },
+  "validity": {
+   "n": 3,
+   "unit": "years",
+   "renewable": true
+  },
+  "union": null,
+  "eligibility": "« c) előadóművész » (Act XC of 2023, § 36 (5): the Card is open to a third-country national who is a performing artist)",
+  "pay": null,
+  "exempt": null
+ },
+ "sources": [
+  {
+   "url": "https://net.jogtar.hu/jogszabaly?docid=A2300090.tv",
+   "title": "Nemzeti Jogszabálytár, 2023. évi XC. törvény (hatály: 2026. X. 1. – 2026. XII. 31.), § 36 and § 173",
+   "read": "2026-11-01",
+   "said": "A Magyar Kártya olyan tartózkodási engedély … b) hivatásos sportoló vagy hivatásos edző, c) előadóművész, vagy d) … A Magyar Kártya érvényességi ideje legfeljebb három év, amely alkalmanként legfeljebb három évvel meghosszabbítható.",
+   "kind": "primary",
+   "fields": [
+    "route",
+    "eligibility",
+    "validity"
+   ]
+  },
+  {
+   "url": "https://net.jogtar.hu/jogszabaly?docid=A2400035.KOR",
+   "title": "Nemzeti Jogszabálytár, 35/2024. (II. 29.) Korm. rendelet, §§ 23 and 185",
+   "read": "2026-11-01",
+   "said": "Ha a Magyar kártya kérelmezésére a Tv. 36. § (5) bekezdés b)–d) pontjában foglalt harmadik országbeli állampolgár részére kerül sor, a beutazás és tartózkodás célja a foglalkoztatási jogviszony létesítésére irányuló előzetes megállapodással vagy a foglalkoztatási jogviszonyt igazoló okirattal igazolható. … Ha a tartózkodási engedély kiadása és meghosszabbítása összevont kérelmezési eljárás keretében történik, az eljáró hatóság az érdemi döntést … a kérelem benyújtásától számított hetven napon belül hozza meg.",
+   "kind": "primary",
+   "fields": [
+    "first",
+    "processing",
+    "applies"
+   ]
+  },
+  {
+   "url": "https://njt.jog.gov.hu/jogszabaly/2024-10-20-0A",
+   "title": "Nemzeti Jogszabálytár (njt.jog.gov.hu), 10/2024. (II. 29.) BM rendelet, 1. melléklet: Az egyes eljárások díja",
+   "read": "2026-11-01",
+   "said": "Tartózkodási engedély kiadására és a tartózkodási engedély átvételére jogosító vízum kiadására irányuló eljárás díja 110 EUR … Az idegenrendészeti hatóság elektronikus információs rendszerén keresztül igényelt tartózkodási engedély kiadására irányuló eljárás díja belföldi kérelmezés esetén 26 000 Ft",
+   "kind": "primary",
+   "fields": [
+    "fees"
+   ]
+  }
+ ],
+ "blockers": [
+  {
+   "field": "pay",
+   "sought": "Any minimum pay a performing artist's Hungarian Card asks",
+   "tried": {
+    "institution": "oif.gov.hu: no Magyar Kártya page found by search (2026-11-01)",
+    "official-register": "Act XC of 2023 § 36 and Decree 35/2024 § 23 read in full on net.jogtar.hu: no pay threshold for the Card (one is set only for the EU Blue Card, § 24)",
+    "web-search": "'oif.gov.hu Magyar Kártya kérelem díja ügyintézési határidő előadóművész' (2026-11-01)",
+    "trade-press": "None found",
+    "archive": "web.archive.org resets the connection from this environment (2026-11-01)"
+   }
+  },
+  {
+   "field": "exempt",
+   "sought": "Days a performer may work in Hungary without the Card",
+   "tried": {
+    "institution": "oif.gov.hu: none found",
+    "official-register": "Act XC of 2023 and Decree 35/2024 read: no performers' exemption",
+    "web-search": "Same search (2026-11-01)",
+    "trade-press": "None",
+    "archive": "web.archive.org resets the connection from this environment (2026-11-01)"
+   }
+  }
+ ]
+}

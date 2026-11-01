@@ -1,0 +1,95 @@
+{
+ "country": "PY",
+ "read": "2026-11-01",
+ "route": "Residencia Espontánea u Ocasional",
+ "routeChanged": false,
+ "permit": {
+  "applies": "The foreigner applies to the Dirección Nacional de Migraciones after entry, on a sworn declaration of the profession or activity to be carried out and the temporary address.",
+  "first": "Entry to Paraguay (with a consular visa where required, verified by the Foreign Ministry) and the proof of entry.",
+  "fees": [],
+  "processing": null,
+  "validity": {
+   "n": 90,
+   "unit": "days",
+   "renewable": true
+  },
+  "validityNote": "Up to 90 days, extendable by the same period within the year (art. 45); longer work is Temporary Residence, up to two years, extendable (art. 46).",
+  "union": null,
+  "eligibility": "aquellos extranjeros cuyas labores estacionales u ocasionales, como integrantes de espectáculos públicos, o como invitados por entes públicos o privados en razón de su arte y/o profesión, obliguen a permanecer en el país, por no más de 90 (noventa) días.",
+  "pay": null,
+  "exempt": null
+ },
+ "sources": [
+  {
+   "url": "https://www.bacn.gov.py/leyes-paraguayas/10973/ley-n-6984-de-migraciones",
+   "title": "Biblioteca y Archivo Central del Congreso Nacional, Ley N° 6984 de Migraciones (2022), arts. 45, 49, 56",
+   "read": "2026-11-01",
+   "said": "Artículo 45.- Residencia Espontánea u Ocasional. La Residencia Espontánea u Ocasional es la autorización que otorga la Dirección Nacional de Migraciones, a aquellos extranjeros que ingresan al país, con ánimo de desarrollar actividades ocasionales lícitas bajo las condiciones que establezcan la presente Ley y su reglamentación. Será otorgado por un plazo de hasta 90 (noventa) días prorrogables por el mismo período en el año, … Artículo 49.- Requisitos para obtener la Residencia Espontánea u Ocasional. A fin de obtener la Residencia Espontánea u Ocasional, el extranjero que desee residir en el país, deberá presentar las siguientes documentaciones: 1. Pasaporte o documento de identidad vigente. 2. Visa consular y su verificación por el Ministerio de Relaciones Exteriores, en los casos que se requieran. 3. Constancia de ingreso al país. 4. Declaración Jurada ante la Dirección Nacional de Migraciones de su profesión, actividad u oficio que desarrollará en el país y del domicilio temporal fijado en el territorio nacional. 5. Pago del arancel correspondiente. … Artículo 56.- Carnet de Residencia Espontánea u Ocasional. La Dirección Nacional de Migraciones otorgará un carnet de Residencia Espontánea u Ocasional para aquellos extranjeros cuyas labores estacionales u ocasionales, como integrantes de espectáculos públicos, o como invitados por entes públicos o privados en razón de su arte y/o profesión, obliguen a permanecer en el país, por no más de 90 (noventa) días.",
+   "kind": "primary",
+   "fields": [
+    "route",
+    "applies",
+    "first",
+    "validity",
+    "eligibility"
+   ]
+  }
+ ],
+ "blockers": [
+  {
+   "field": "fees",
+   "sought": "The DNM's fee (arancel) for Residencia Espontánea u Ocasional",
+   "tried": {
+    "institution": "migraciones.gov.py (home and aranceles page): curl: (35) Recv failure: Connection reset by peer. The Paraguayan embassy in Berlin's 'Temporary stay' page names no fee. || Retry 2026-11-01: migraciones.gov.py resets the connection again (2026-11-01); the embassy in Berlin's page (read earlier) names no fee.",
+    "official-register": "Ley 6984/2022 read: the fee is 'el arancel correspondiente', set outside the law; the DNM's tariff resolution wasn't found. || Retry 2026-11-01: Ley 6984/2022 (OAS copy of the earlier law surfaced); the DNM's tariff resolution not found; Agencia IP note on temporary residence requirements surfaced, no fee.",
+    "web-search": "'Dirección Nacional de Migraciones Paraguay arancel residencia espontánea ocasional 2026 jornales costo': a comparison site's Gs. 892,016 (2025 schedule) and a press note of a new scale from 1 July 2026 for Mercosur residence; neither the DNM's own figure. || Retry 2026-11-01: WebSearch 'Paraguay Migraciones \"radicación temporaria\" artistas \"trabajadores\" tasa jornales 2026 resolución aranceles Dirección General de Migraciones plazo': Última Hora (July 2026, Resolution 407 on solvency), abogados.com.ar, La Política Online; no fee, time, union or pay rule.",
+    "trade-press": "Prensa Mercosur (3 September 2026) gives the July 2026 scale's Mercosur temporary residence fee only. || Retry 2026-11-01: Última Hora and La Nación on 2026 changes; no fee schedule quoted.",
+    "archive": "web.archive.org tried for the authority's page: the connection resets from this environment (curl: (35) Recv failure: Connection reset by peer, 2026-11-01); no snapshot read. || Retry 2026-11-01: archive.org's availability API (archive.org/wayback/available) answers this client, but every web.archive.org snapshot URL resets the connection (curl: (35) Recv failure: Connection reset by peer, retried 2026-11-01)."
+   }
+  },
+  {
+   "field": "processing",
+   "sought": "The DNM's decision time",
+   "tried": {
+    "institution": "migraciones.gov.py (home and aranceles page): curl: (35) Recv failure: Connection reset by peer. The Paraguayan embassy in Berlin's 'Temporary stay' page names no fee. || Retry 2026-11-01: migraciones.gov.py resets the connection again (2026-11-01); the embassy in Berlin's page (read earlier) names no fee.",
+    "official-register": "Ley 6984/2022 read: the fee is 'el arancel correspondiente', set outside the law; the DNM's tariff resolution wasn't found. || Retry 2026-11-01: Ley 6984/2022 (OAS copy of the earlier law surfaced); the DNM's tariff resolution not found; Agencia IP note on temporary residence requirements surfaced, no fee.",
+    "web-search": "'Dirección Nacional de Migraciones Paraguay arancel residencia espontánea ocasional 2026 jornales costo': a comparison site's Gs. 892,016 (2025 schedule) and a press note of a new scale from 1 July 2026 for Mercosur residence; neither the DNM's own figure. || Retry 2026-11-01: WebSearch 'Paraguay Migraciones \"radicación temporaria\" artistas \"trabajadores\" tasa jornales 2026 resolución aranceles Dirección General de Migraciones plazo': Última Hora (July 2026, Resolution 407 on solvency), abogados.com.ar, La Política Online; no fee, time, union or pay rule.",
+    "trade-press": "None. || Retry 2026-11-01: Última Hora and La Nación on 2026 changes; no fee schedule quoted.",
+    "archive": "web.archive.org tried for the authority's page: the connection resets from this environment (curl: (35) Recv failure: Connection reset by peer, 2026-11-01); no snapshot read. || Retry 2026-11-01: archive.org's availability API (archive.org/wayback/available) answers this client, but every web.archive.org snapshot URL resets the connection (curl: (35) Recv failure: Connection reset by peer, retried 2026-11-01)."
+   }
+  },
+  {
+   "field": "union",
+   "sought": "A union or guild step",
+   "tried": {
+    "institution": "Retry 2026-11-01: migraciones.gov.py resets the connection again (2026-11-01); the embassy in Berlin's page (read earlier) names no fee.",
+    "official-register": "Retry 2026-11-01: Ley 6984/2022 (OAS copy of the earlier law surfaced); the DNM's tariff resolution not found; Agencia IP note on temporary residence requirements surfaced, no fee.",
+    "web-search": "Retry 2026-11-01: WebSearch 'Paraguay Migraciones \"radicación temporaria\" artistas \"trabajadores\" tasa jornales 2026 resolución aranceles Dirección General de Migraciones plazo': Última Hora (July 2026, Resolution 407 on solvency), abogados.com.ar, La Política Online; no fee, time, union or pay rule.",
+    "trade-press": "Retry 2026-11-01: Última Hora and La Nación on 2026 changes; no fee schedule quoted.",
+    "archive": "Retry 2026-11-01: archive.org's availability API (archive.org/wayback/available) answers this client, but every web.archive.org snapshot URL resets the connection (curl: (35) Recv failure: Connection reset by peer, retried 2026-11-01)."
+   }
+  },
+  {
+   "field": "pay",
+   "sought": "A minimum or market pay rule",
+   "tried": {
+    "institution": "Retry 2026-11-01: migraciones.gov.py resets the connection again (2026-11-01); the embassy in Berlin's page (read earlier) names no fee.",
+    "official-register": "Retry 2026-11-01: Ley 6984/2022 (OAS copy of the earlier law surfaced); the DNM's tariff resolution not found; Agencia IP note on temporary residence requirements surfaced, no fee.",
+    "web-search": "Retry 2026-11-01: WebSearch 'Paraguay Migraciones \"radicación temporaria\" artistas \"trabajadores\" tasa jornales 2026 resolución aranceles Dirección General de Migraciones plazo': Última Hora (July 2026, Resolution 407 on solvency), abogados.com.ar, La Política Online; no fee, time, union or pay rule.",
+    "trade-press": "Retry 2026-11-01: Última Hora and La Nación on 2026 changes; no fee schedule quoted.",
+    "archive": "Retry 2026-11-01: archive.org's availability API (archive.org/wayback/available) answers this client, but every web.archive.org snapshot URL resets the connection (curl: (35) Recv failure: Connection reset by peer, retried 2026-11-01)."
+   }
+  },
+  {
+   "field": "exempt",
+   "sought": "A short engagement needing no permit",
+   "tried": {
+    "institution": "Retry 2026-11-01: migraciones.gov.py resets the connection again (2026-11-01); the embassy in Berlin's page (read earlier) names no fee.",
+    "official-register": "Retry 2026-11-01: Ley 6984/2022 (OAS copy of the earlier law surfaced); the DNM's tariff resolution not found; Agencia IP note on temporary residence requirements surfaced, no fee.",
+    "web-search": "Retry 2026-11-01: WebSearch 'Paraguay Migraciones \"radicación temporaria\" artistas \"trabajadores\" tasa jornales 2026 resolución aranceles Dirección General de Migraciones plazo': Última Hora (July 2026, Resolution 407 on solvency), abogados.com.ar, La Política Online; no fee, time, union or pay rule.",
+    "trade-press": "Retry 2026-11-01: Última Hora and La Nación on 2026 changes; no fee schedule quoted.",
+    "archive": "Retry 2026-11-01: archive.org's availability API (archive.org/wayback/available) answers this client, but every web.archive.org snapshot URL resets the connection (curl: (35) Recv failure: Connection reset by peer, retried 2026-11-01)."
+   }
+  }
+ ]
+}

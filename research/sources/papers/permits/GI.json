@@ -1,0 +1,119 @@
+{
+ "country": "GI",
+ "read": "2026-11-01",
+ "route": "Work Permit",
+ "routeChanged": false,
+ "permit": {
+  "applies": "The employer applies to the Department of Employment for a work permit for a specific post before the work begins, after registering the vacancy; the Notice of Terms of Engagement may not start before the permit is issued.",
+  "first": "A Notification of Vacancy registered with the Department of Employment before seeking to engage the worker.",
+  "fees": [
+   {
+    "what": "Application for a Work Permit (as at 1 August 2026)",
+    "amount": "70.00",
+    "currency": "GBP"
+   },
+   {
+    "what": "Renewal of a Work Permit (as at 1 August 2026)",
+    "amount": "36.00",
+    "currency": "GBP"
+   },
+   {
+    "what": "Notification of Vacancy, per position (as at 1 August 2026; employers with 10 employees or fewer exempt)",
+    "amount": "10.00",
+    "currency": "GBP"
+   }
+  ],
+  "processing": null,
+  "validity": {
+   "n": 12,
+   "unit": "months",
+   "renewable": true
+  },
+  "union": null,
+  "eligibility": null,
+  "pay": "Remuneration cannot be less than the Minimum Wage set in the Conditions of Employment (Standard Minimum Wage) Order.",
+  "exempt": null
+ },
+ "sources": [
+  {
+   "url": "https://www.gibraltar.gov.gi/department-employment/employment-service-registration-explained",
+   "title": "HM Government of Gibraltar, Department of Employment: Employment Service Registration Explained",
+   "read": "2026-11-01",
+   "said": "Persons who are not entitled to work in Gibraltar (e.g. non-EEA nationals, see notes below) will require an employer to request a Work Permit before commencement of employment. A work permit is issued to an employer for a specific post and for a period not exceeding 12 months. … Notice of Terms of Engagement (The start date on the Terms of Engagement CANNOT be prior to the date of issue of the Work Permit) … If a work permit is due to expire an application to renew must be completed before 14 days of expiry. … A Notification of Vacancy form must be completed and ALL vacancies must be registered with the Department of Employment before seeking to engage a person as a worker. … Remuneration CANNOT be less that the Minimum Wage as set out in the Conditions of Employment (Standard Minimum Wage) Order.",
+   "kind": "primary",
+   "fields": [
+    "route",
+    "applies",
+    "first",
+    "validity",
+    "pay"
+   ]
+  },
+  {
+   "url": "https://www.gibraltar.gov.gi/department-employment/fees",
+   "title": "HM Government of Gibraltar, Department of Employment: Table of Fees (Employment Regulations, 1994), current and as at 1 August 2026",
+   "read": "2026-11-01",
+   "said": "Employment Regulations, 1994 Current Fee As at 1 August 2026 Notification of Vacancy made in accordance with Regulation 4(1) (per position)* £9.50 £10.00 … Application for a Work Permit £68.50 £70.00 Renewal of a Work Permit £35.00 £36.00",
+   "kind": "primary",
+   "fields": [
+    "fees"
+   ]
+  },
+  {
+   "url": "https://www.gibraltar.gov.gi/uploads/documents/employment/Department%20of%20Employment%20Information%20Leaflet-2025.pdf",
+   "title": "HM Government of Gibraltar, Department of Employment Information Leaflet 2025",
+   "read": "2026-11-01",
+   "said": "Vacancies must be registered with the Department of … Employment at least 10 days prior to the … commencement date of that worker.",
+   "kind": "primary",
+   "fields": [
+    "first"
+   ]
+  }
+ ],
+ "blockers": [
+  {
+   "field": "processing",
+   "sought": "The Department of Employment's stated decision time for a work permit",
+   "tried": {
+    "institution": "gibraltar.gov.gi registration and fees pages read 2026-11-01: none stated || Retry 2026-11-01: gibraltar.gov.gi's Department of Employment Information Leaflet 2025 read: vacancy notice 10 days ahead, fees for vacancies, the employer to apply for the permit before the start; no decision time, criterion, union step or exemption.",
+    "official-register": "Employment Regulations 1994 not read (gibraltarlaws.gov.gi not tried beyond the department's pages) || Retry 2026-11-01: The Employment Regulations 1994 on gibraltarlaws.gov.gi not fetched in this pass.",
+    "web-search": "Not found in the searches made for the brief || Retry 2026-11-01: WebSearch 'Gibraltar Employment Service work permit non-EU national how long to process \"work permit\" gibraltar.gov.gi': Rivermate and Express Global (4-8 weeks), ExpatFocus (2-8 weeks), Chambers (12 months at a time), none quoting the department's stated time.",
+    "trade-press": "None || Retry 2026-11-01: Chambers Employment 2025 (Gibraltar chapter) names the 12-month permit, no decision time.",
+    "archive": "web.archive.org resets the connection from this environment (2026-11-01) || Retry 2026-11-01: archive.org's availability API (archive.org/wayback/available) answers this client, but every web.archive.org snapshot URL resets the connection (curl: (35) Recv failure: Connection reset by peer, retried 2026-11-01)."
+   }
+  },
+  {
+   "field": "eligibility",
+   "sought": "A criterion for a performer's work permit",
+   "tried": {
+    "institution": "The department's pages name only documents (qualifications, experience, a certificate of good conduct) || Retry 2026-11-01: gibraltar.gov.gi's Department of Employment Information Leaflet 2025 read: vacancy notice 10 days ahead, fees for vacancies, the employer to apply for the permit before the start; no decision time, criterion, union step or exemption.",
+    "official-register": "Not read || Retry 2026-11-01: The Employment Regulations 1994 on gibraltarlaws.gov.gi not fetched in this pass.",
+    "web-search": "None found || Retry 2026-11-01: WebSearch 'Gibraltar Employment Service work permit non-EU national how long to process \"work permit\" gibraltar.gov.gi': Rivermate and Express Global (4-8 weeks), ExpatFocus (2-8 weeks), Chambers (12 months at a time), none quoting the department's stated time.",
+    "trade-press": "None || Retry 2026-11-01: Chambers Employment 2025 (Gibraltar chapter) names the 12-month permit, no decision time.",
+    "archive": "web.archive.org resets the connection from this environment (2026-11-01) || Retry 2026-11-01: archive.org's availability API (archive.org/wayback/available) answers this client, but every web.archive.org snapshot URL resets the connection (curl: (35) Recv failure: Connection reset by peer, retried 2026-11-01)."
+   }
+  },
+  {
+   "field": "exempt",
+   "sought": "Days a performer may work without a permit",
+   "tried": {
+    "institution": "None named; every engagement is registered || Retry 2026-11-01: gibraltar.gov.gi's Department of Employment Information Leaflet 2025 read: vacancy notice 10 days ahead, fees for vacancies, the employer to apply for the permit before the start; no decision time, criterion, union step or exemption.",
+    "official-register": "Not read || Retry 2026-11-01: The Employment Regulations 1994 on gibraltarlaws.gov.gi not fetched in this pass.",
+    "web-search": "None found || Retry 2026-11-01: WebSearch 'Gibraltar Employment Service work permit non-EU national how long to process \"work permit\" gibraltar.gov.gi': Rivermate and Express Global (4-8 weeks), ExpatFocus (2-8 weeks), Chambers (12 months at a time), none quoting the department's stated time.",
+    "trade-press": "None || Retry 2026-11-01: Chambers Employment 2025 (Gibraltar chapter) names the 12-month permit, no decision time.",
+    "archive": "web.archive.org resets the connection from this environment (2026-11-01) || Retry 2026-11-01: archive.org's availability API (archive.org/wayback/available) answers this client, but every web.archive.org snapshot URL resets the connection (curl: (35) Recv failure: Connection reset by peer, retried 2026-11-01)."
+   }
+  },
+  {
+   "field": "union",
+   "sought": "A union or guild step",
+   "tried": {
+    "institution": "Retry 2026-11-01: gibraltar.gov.gi's Department of Employment Information Leaflet 2025 read: vacancy notice 10 days ahead, fees for vacancies, the employer to apply for the permit before the start; no decision time, criterion, union step or exemption.",
+    "official-register": "Retry 2026-11-01: The Employment Regulations 1994 on gibraltarlaws.gov.gi not fetched in this pass.",
+    "web-search": "Retry 2026-11-01: WebSearch 'Gibraltar Employment Service work permit non-EU national how long to process \"work permit\" gibraltar.gov.gi': Rivermate and Express Global (4-8 weeks), ExpatFocus (2-8 weeks), Chambers (12 months at a time), none quoting the department's stated time.",
+    "trade-press": "Retry 2026-11-01: Chambers Employment 2025 (Gibraltar chapter) names the 12-month permit, no decision time.",
+    "archive": "Retry 2026-11-01: archive.org's availability API (archive.org/wayback/available) answers this client, but every web.archive.org snapshot URL resets the connection (curl: (35) Recv failure: Connection reset by peer, retried 2026-11-01)."
+   }
+  }
+ ]
+}

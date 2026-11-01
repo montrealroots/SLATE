@@ -1,0 +1,72 @@
+{
+ "country": "PA",
+ "read": "2026-11-01",
+ "route": "Visa para trabajadores transeúntes o trabajadores eventuales – artistas",
+ "routeChanged": false,
+ "permit": {
+  "applies": "the hiring company (through a notarised power of attorney)",
+  "first": "the Ministry of Labour's work permit for the artist, the company's tax and social security clearances, and income tax paid on the contract's value",
+  "fees": [
+   {
+    "what": "certified cheque to the National Treasury, per artist",
+    "amount": "100.00",
+    "currency": "PAB"
+   }
+  ],
+  "processing": null,
+  "validity": {
+   "n": 1,
+   "unit": "years",
+   "renewable": true
+  },
+  "union": null,
+  "eligibility": "técnico del campo cultural, artístico, musical, deportivo, profesional, educativo o científico, específicamente para una obra o un proyecto determinado",
+  "pay": null,
+  "exempt": null
+ },
+ "sources": [
+  {
+   "url": "https://www.migracion.gob.pa/wp-content/uploads/2026/04/PM10.pdf",
+   "title": "Servicio Nacional de Migración (Panamá), PM10, Requisitos para solicitar visa para trabajadores transeúntes o trabajadores eventuales – artistas",
+   "read": "2026-11-01",
+   "said": "“Para solicitar la visa de Transeúntes o trabajadores eventuales, la empresa podrá contratar a un extranjero, que de manera temporal ingrese al territorio, para realizar un trabajo de mano de no obra calificada o trabajo eventual, o técnico del campo cultural, artístico, musical, deportivo, profesional, educativo o científico, específicamente para una obra o un proyecto determinado, por un término de un (1) año, prorrogables anualmente hasta por cinco (5) veces, siempre que la empresa y el extranjero cumplan con los requisitos y las responsabilidades que exija el Servicio Nacional de Migración y el Ministerio de Trabajo y Desarrollo Laboral”. … 4. Certificación de permiso de trabajo. 5. Permiso de trabajo del artista. … 12.Recibo de pago de impuesto sobre la renta, correspondiente al valor del contrato de trabajo. 13.Cheque certificado de depósito de garantía por el monto de B/.100.00 a favor del Servicio Nacional de Migración (por cada artista). 14.Cheque certificado al Tesoro nacional por la suma de B/.100.00 al Tesoro Nacional (por cada artista). … 16.Nota de dirigida al director general del Servicio Nacional de Migración con máximo de diez (10) días de anticipación a la fecha del evento",
+   "kind": "primary",
+   "fields": [
+    "route",
+    "applies",
+    "first",
+    "fees",
+    "validity",
+    "eligibility",
+    "union",
+    "pay",
+    "exempt"
+   ]
+  }
+ ],
+ "blockers": [
+  {
+   "field": "fees",
+   "sought": "the Ministry of Labour's (MITRADEL) fee for an artist's work permit",
+   "tried": {
+    "institution": "mitradel.gob.pa not reached in this pass Retry (2026-11-01): mitradel.gob.pa 'Presentacion-Permisos-de-Trabajo-de-Artistas-2023.pdf' loops on redirects (curl: Maximum (50) redirects); micultura.gob.pa 'Requisitos para trámites migratorios en OCT' (2026) read: free cultural events only, filed 30 days ahead, no decision time.",
+    "official-register": "PM10 names the permit, not its fee Retry (2026-11-01): Not found.",
+    "web-search": "not separately searched in this pass Retry (2026-11-01): 'Dirección General de Migración ... permiso artistas ... requisitos costo resolución' (2026-11-01): the MITRADEL and MiCultura documents above.",
+    "trade-press": "not tried Retry (2026-11-01): None.",
+    "archive": "not tried Retry (2026-11-01): web.archive.org resets the connection from this environment (retried 2026-11-01)."
+   }
+  },
+  {
+   "field": "processing",
+   "sought": "the SNM's decision time",
+   "tried": {
+    "institution": "PM10 states none Retry (2026-11-01): mitradel.gob.pa 'Presentacion-Permisos-de-Trabajo-de-Artistas-2023.pdf' loops on redirects (curl: Maximum (50) redirects); micultura.gob.pa 'Requisitos para trámites migratorios en OCT' (2026) read: free cultural events only, filed 30 days ahead, no decision time.",
+    "official-register": "Decree 320 of 2008 not read Retry (2026-11-01): Not found.",
+    "web-search": "not separately searched Retry (2026-11-01): 'Dirección General de Migración ... permiso artistas ... requisitos costo resolución' (2026-11-01): the MITRADEL and MiCultura documents above.",
+    "trade-press": "not tried Retry (2026-11-01): None.",
+    "archive": "not tried Retry (2026-11-01): web.archive.org resets the connection from this environment (retried 2026-11-01)."
+   }
+  }
+ ],
+ "note": "The Servicio Nacional de Migración's requirements sheet PM10 (art. 39 of Executive Decree 320 of 2008 as amended by Decree 547 of 2013): a company may hire a foreigner entering temporarily for cultural, artistic or musical work on a specific project, for a year, extendable yearly up to five times, with the Labour Ministry's work permit; per artist a B/.100 guarantee deposit to the SNM (refundable, not a fee) and B/.100 to the National Treasury; income tax on the contract's value paid first; the SNM's director notified at most ten days before the event. The Labour Ministry's work permit fee and the decision time weren't found."
+}

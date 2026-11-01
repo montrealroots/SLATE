@@ -1,0 +1,57 @@
+{
+ "engine": "papers.permits",
+ "axis": "permit-operation",
+ "universe": {
+  "keys": [
+   "permits.apply",
+   "permits.renew",
+   "permits.decision",
+   "permitted"
+  ]
+ },
+ "rows": [
+  {
+   "key": "permits.apply",
+   "status": "game",
+   "register": [
+    "R-5079"
+   ],
+   "tests": [
+    "tests/person/permits/permits.test.ts::permits.apply > permits.apply bites: an engagement booked in another country is applied for there",
+    "tests/person/permits/permits.test.ts::permits.apply > is refused where nothing is booked, where the person needs no permit, or the permit isn't known well enough to apply for"
+   ]
+  },
+  {
+   "key": "permits.renew",
+   "status": "game",
+   "register": [
+    "R-5079"
+   ],
+   "tests": [
+    "tests/person/permits/permits.test.ts::permits.renew > permits.renew bites: a permit renewed is in force past the first term",
+    "tests/person/permits/permits.test.ts::permits.renew > lodges a renewal of a permit in force: the renewal's fees, none known where the research names none, and a new decision"
+   ]
+  },
+  {
+   "key": "permits.decision",
+   "status": "game",
+   "register": [
+    "R-5079"
+   ],
+   "tests": [
+    "tests/person/permits/permits.test.ts::the decision > permits.decision bites: a permit granted lets the person work where the refused one does not"
+   ]
+  },
+  {
+   "key": "permitted",
+   "status": "game",
+   "register": [
+    "R-5079"
+   ],
+   "tests": [
+    "tests/person/permits/permits.test.ts::working in a country > is open by citizenship, by a permit in force on the day, or within the days a short engagement is worked without one",
+    "tests/person/acting/acting.test.ts::playing a part > is refused where the person may not work: a country whose work takes a permit their citizenship doesn't spare (papers.work), as the I-9 and the UK's right-to-work check ask (R-4621)"
+   ]
+  }
+ ]
+}

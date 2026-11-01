@@ -1,0 +1,120 @@
+{
+ "country": "NL",
+ "read": "2026-11-01",
+ "route": "Gecombineerde vergunning voor verblijf en arbeid (GVVA); up to 90 days a tewerkstellingsvergunning (TWV) from UWV",
+ "routeChanged": false,
+ "permit": {
+  "applies": "The employer (the referent) applies: for a TWV to UWV when the performer works up to 90 days, for a GVVA to the IND beyond 90 days (the IND asks UWV's advice on the labour market); the performer may also apply for the GVVA at an embassy.",
+  "first": "The vacancy first opened to Dutch jobseekers through UWV (not for top artists), the function on UWV's list of top-segment professions in the arts at its minimum income, and an mvv (provisional residence visa) where required.",
+  "fees": [
+   {
+    "what": "GVVA application (IND)",
+    "amount": "423.00",
+    "currency": "EUR"
+   }
+  ],
+  "processing": {
+   "standard": {
+    "n": 90,
+    "unit": "days"
+   },
+   "premium": null
+  },
+  "validity": {
+   "n": 3,
+   "unit": "years",
+   "renewable": null
+  },
+  "union": null,
+  "eligibility": "\"U werkt in de dans, klassieke muziek, opera, musical, theater of toneel. U gaat werken in een beroep in het topsegment van de lijst met functies.\"",
+  "pay": "Minimum gross monthly pay by function on UWV's Beroepenlijst artiest en inkomen: actor (acteur) EUR 4,233, director (regisseur) EUR 4,233; pay must also meet the collective agreement for the function.",
+  "exempt": {
+   "days": 42,
+   "within": 91
+  }
+ },
+ "sources": [
+  {
+   "url": "https://www.uwv.nl/nl/werkvergunning/musicus-artiest",
+   "title": "UWV, Werkvergunning musicus of artiest",
+   "read": "2026-11-01",
+   "said": "De werkvergunning is maximaal 3 jaar geldig. De werkgever vraagt een TWV aan als de werknemer maximaal 90 dagen in Nederland werkt. Als de werknemer langer dan 90 dagen in Nederland werkt vraagt de werkgever een GVVA aan. … Acteur € 4.233 … Regisseur € 4.233 … De musicus of artiest werkt in de dans, klassieke muziek, opera, musical, het theater of toneel. Er geldt een minimum inkomen dat per beroep verschilt.",
+   "kind": "primary",
+   "fields": [
+    "applies",
+    "validity",
+    "pay",
+    "eligibility"
+   ]
+  },
+  {
+   "url": "https://ind.nl/nl/verblijfsvergunningen/werken/arbeid-in-loondienst-gecombineerde-vergunning-verblijf-en-arbeid-gvva",
+   "title": "IND, Arbeid in loondienst – Gecombineerde vergunning verblijf en arbeid (GVVA)",
+   "read": "2026-11-01",
+   "said": "Uw werkgever vraagt de GVVA aan bij de IND. … De aanvraag kost € 423,00. … De IND moet binnen een beslistermijn van 90 dagen een beslissing nemen. … UWV heeft voor de adviesprocedure een wettelijke termijn van 5 weken. … Extra voorwaarden werknemer in kunst en cultuur U werkt in de dans, klassieke muziek, opera, musical, theater of toneel. U gaat werken in een beroep in het topsegment van de lijst met functies. U voldoet aan de inkomenseisen . Uw loon voldoet aan de cao voor de functie.",
+   "kind": "primary",
+   "fields": [
+    "fees",
+    "processing",
+    "eligibility",
+    "pay",
+    "applies"
+   ]
+  },
+  {
+   "url": "https://www.rijksoverheid.nl/onderwerpen/buitenlandse-werknemers/vraag-en-antwoord/wanneer-mag-een-buitenlandse-topartiest-in-nederland-werken",
+   "title": "Rijksoverheid, Wanneer mag een buitenlandse topartiest in Nederland werken?",
+   "read": "2026-11-01",
+   "said": "De werkgever moet de vacature wel eerst openstellen voor Nederlandse werkzoekenden. Dit gaat via UWV . Zijn er geen geschikte Nederlandse kandidaten? Pas dan kan de referent een buitenlandse artiest naar Nederland halen. Snellere procedure voor topartiesten Topartiesten krijgen sneller een werkvergunning. De werkgever hoeft niet eerst de vacature bij UWV te melden.",
+   "kind": "primary",
+   "fields": [
+    "first"
+   ]
+  },
+  {
+   "url": "https://www.uwv.nl/nl/werkvergunning/wanneer-geen-werkvergunning",
+   "title": "UWV, Wanneer geen werkvergunning",
+   "read": "2026-11-01",
+   "said": "Een artiest die naar Nederland komt om op te treden of een sporter die naar Nederland komt om deel te nemen aan een wedstrijd heeft geen werkvergunning nodig in de volgende situatie: De artiest of sporter werkt in een periode van 13 weken maximaal 6 weken achter elkaar in Nederland.",
+   "kind": "primary",
+   "fields": [
+    "exempt"
+   ]
+  }
+ ],
+ "blockers": [
+  {
+   "field": "union",
+   "sought": "A union consultation for a foreign performer's TWV or GVVA",
+   "tried": {
+    "institution": "UWV and IND pages read: none named",
+    "official-register": "Wet arbeid vreemdelingen not read (wetten.overheid.nl refused this client in layer 3)",
+    "web-search": "WebSearch (Dutch) on TWV for artists: none named",
+    "trade-press": "DutchCulture page in the results: none quoted",
+    "archive": "web.archive.org refuses this environment (2026-11-01)"
+   }
+  },
+  {
+   "field": "fees",
+   "sought": "UWV's fee for a TWV (if any)",
+   "tried": {
+    "institution": "uwv.nl English work-permits page read: no fee stated; the TWV application page answers 404",
+    "official-register": "Not found",
+    "web-search": "WebSearch on IND leges/TWV: none for the TWV",
+    "trade-press": "None",
+    "archive": "web.archive.org refuses this environment (connection reset, 2026-11-01); no snapshot read."
+   }
+  },
+  {
+   "field": "validity",
+   "sought": "Whether the GVVA for a performer may be extended",
+   "tried": {
+    "institution": "IND GVVA page read: renewal for this function not stated",
+    "official-register": "Not found",
+    "web-search": "WebSearch: an IND newsletter on extension fees, not specific",
+    "trade-press": "None",
+    "archive": "web.archive.org refuses this environment (connection reset, 2026-11-01); no snapshot read."
+   }
+  }
+ ]
+}

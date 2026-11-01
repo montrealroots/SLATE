@@ -1,0 +1,2 @@
+import base from '../../stryker.config.mjs';
+export default { ...base, mutate: ['src/person/permits/**/*.ts', 'tools/papers/permits/compile.ts', 'tools/papers/permits/coverage.ts', 'src/person/acting/acting.ts', 'src/person/unions/unions.ts'], reporters: ['clear-text', 'json'], jsonReporter: { fileName: 'reports/mutation/permits.json' }, ignorePatterns: ['.stryker-tmp*', 'reports', 'graphify-out'], tempDirName: '.stryker-tmp-permits', vitest: { configFile: 'workbench/configs/vitest.permits.config.mjs' } };

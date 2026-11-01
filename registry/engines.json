@@ -334,5 +334,15 @@
    "coverage/genres-genres.json",
    "coverage/genres-operations.json"
   ]
+ },
+ "papers.permits": {
+  "layer": 4,
+  "dir": "src/person/permits",
+  "readsPlace": true,
+  "matrices": [
+   "coverage/permits-countries.json",
+   "coverage/permits-operations.json"
+  ],
+  "allPlacesTest": "tests/person/permits/permits.places.test.ts::the permits > for every place on the map"
  }
 }

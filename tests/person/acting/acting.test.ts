@@ -56,12 +56,13 @@ import {
 import type { IdentitySlice } from '../../../src/person/identity/identity.ts';
 import { identity, person } from '../../support/person.ts';
 import { UNIONS_START, type UnionsSlice } from '../../../src/person/unions/unions.ts';
+import { PERMITS_START, type PermitsSlice } from '../../../src/person/permits/permits.ts';
 import { personOf } from '../../../src/person/identity/identity.ts';
 import { spread } from '../../../src/person/work/work.ts';
 import { t } from '../../../src/core/text/text.ts';
 import { falsifyAny } from '../../support/falsify-core.ts';
 
-type Acting = { attributes: AttributesSlice; acting: ActingSlice; identity: IdentitySlice; unions: UnionsSlice };
+type Acting = { attributes: AttributesSlice; acting: ActingSlice; identity: IdentitySlice; unions: UnionsSlice; permits: PermitsSlice };
 const SEED = '0123456789abcdef';
 const OTHER = 'fedcba9876543210';
 const day = (y: number, m: number, d: number) => daysFromCivil(y, m, d) * SECONDS_PER_DAY;
@@ -75,7 +76,7 @@ const cad = (n: string) => fromMajor('CAD', n);
 
 /** Levels by broad attribute over one level for all. */
 const made = (all: number, each: Record<string, number> = {}, seed = SEED, now = AUGUST, who: IdentitySlice = identity()): Life<Acting> =>
-  dispatch(begin(seed, now, { attributes: structuredClone(ATTRIBUTES_START), acting: structuredClone(ACTING_START), identity: who, unions: structuredClone(UNIONS_START) }), chooseAttributes, { role: 'actor', all, each });
+  dispatch(begin(seed, now, { attributes: structuredClone(ATTRIBUTES_START), acting: structuredClone(ACTING_START), identity: who, unions: structuredClone(UNIONS_START), permits: structuredClone(PERMITS_START) }), chooseAttributes, { role: 'actor', all, each });
 const part = (p: Partial<Part> = {}): Part => ({ agreement: 'sag-aftra', budget: 5_000_000, seats: 0, lines: 20, term: 'day', length: 3, rehearsal: 0, asks: [], ...p });
 const v = (l: Life<Acting>) => componentValues(l.slices.attributes, 'actor');
 const held = (l: Life<Acting>) => l.slices.attributes['actor'] as Record<string, number>;
@@ -314,7 +315,7 @@ describe('an audition', () => {
 
   it('is refused for a part that cannot be, or before the attributes are chosen', () => {
     expect(() => dispatch(made(50), postBreakdown, part({ length: 0 }))).toThrow(RangeError);
-    const bare = withBreakdown(begin(SEED, AUGUST, { attributes: structuredClone(ATTRIBUTES_START), acting: structuredClone(ACTING_START), identity: identity(), unions: structuredClone(UNIONS_START) }), open(part()));
+    const bare = withBreakdown(begin(SEED, AUGUST, { attributes: structuredClone(ATTRIBUTES_START), acting: structuredClone(ACTING_START), identity: identity(), unions: structuredClone(UNIONS_START), permits: structuredClone(PERMITS_START) }), open(part()));
     expect(() => dispatch(bare, auditionForPart, { breakdown: 1 })).toThrow("the actor's attributes haven't been chosen");
     expect(() => auditionOf(ACTING_START, 1)).toThrow("there's no audition 1");
   });
@@ -537,9 +538,15 @@ describe('playing a part', () => {
   });
 
   it("is refused where the person may not work: a country whose work takes a permit their citizenship doesn't spare (papers.work), as the I-9 and the UK's right-to-work check ask (R-4621)", () => {
-    const uk = part({ agreement: 'pact-equity', budget: 5_000_000 });
-    const american = withAuditions(made(50), [booked(uk)]);
+    // Past the 30 days the UK lets a short engagement be worked without the Creative Worker visa; within them, played.
+    const uk = part({ agreement: 'pact-equity', budget: 5_000_000, length: 31 });
+    const american = withAuditions(made(50), [booked(uk), booked(part({ agreement: 'pact-equity', length: 30 }), 2)]);
     expect(() => dispatch(american, playPart, { audition: 1 })).toThrow('the person may not work in GB without a permit');
+    expect(auditions(dispatch(american, playPart, { audition: 2 }))[1]?.work).not.toBeNull();
+    // With the permit granted and in force, the long one is played.
+    const visa = { id: 1, at: 0, country: 'GB' as const, audition: 1, renews: null, by: 'worker' as const, premium: false, fees: null, decided: { at: 0, until: AUGUST + 1 } };
+    const holding = { ...american, slices: { ...american.slices, permits: { applications: [visa] } } };
+    expect(auditions(dispatch(holding, playPart, { audition: 1 }))[0]?.work).not.toBeNull();
     const irish = withAuditions(made(50, {}, SEED, AUGUST, identity({ citizenship: ['IE'] })), [booked(uk)]);
     expect(auditions(dispatch(irish, playPart, { audition: 1 }))[0]?.work).not.toBeNull();
     expect(COUNTRY).toEqual({ 'sag-aftra': 'US', 'pact-equity': 'GB', 'uk-theatre': 'GB', actra: 'CA' });
@@ -593,7 +600,7 @@ describe('playing a part', () => {
     expect(commandIndex().filter((x) => x.id.startsWith('acting.'))).toEqual([
       { id: 'acting.breakdown', reads: [], writes: ['acting'] },
       { id: 'acting.audition', reads: ['identity'], writes: ['attributes', 'acting'] },
-      { id: 'acting.perform', reads: ['identity', 'unions'], writes: ['attributes', 'acting'] },
+      { id: 'acting.perform', reads: ['identity', 'unions', 'permits'], writes: ['attributes', 'acting'] },
     ]);
     expect(ACTING_START).toEqual({ breakdowns: [], auditions: [] });
     expect(broadOf('actor', 'acting-for-the-camera').id).toBe('camera');

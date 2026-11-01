@@ -1,0 +1,123 @@
+{
+ "country": "RU",
+ "read": "2026-11-01",
+ "route": "Разрешение на работу (visa nationals, on the employer's разрешение на привлечение и использование иностранных работников) или патент (visa-free nationals)",
+ "routeChanged": false,
+ "permit": {
+  "applies": "The employer or customer of works obtains a permit to engage and use foreign workers; the foreign national, aged 18 or over, then holds a work permit or a patent.",
+  "first": "The employer's (or customer's) permit to engage and use foreign workers (разрешение на привлечение и использование иностранных работников).",
+  "fees": [
+   {
+    "what": "State duty, permit to engage and use foreign workers, per foreign worker (Tax Code art. 333.28(1)(23))",
+    "amount": "15000",
+    "currency": "RUB"
+   },
+   {
+    "what": "State duty, issue of a work permit to a foreign national (art. 333.28(1)(24))",
+    "amount": "5000",
+    "currency": "RUB"
+   },
+   {
+    "what": "State duty, extension of a work permit (art. 333.28(1)(24.1))",
+    "amount": "4200",
+    "currency": "RUB"
+   },
+   {
+    "what": "State duty, invitation to enter Russia, per person invited (art. 333.28(1)(17))",
+    "amount": "8000",
+    "currency": "RUB"
+   }
+  ],
+  "processing": null,
+  "validity": null,
+  "union": null,
+  "eligibility": null,
+  "pay": null,
+  "exempt": {
+   "days": 30,
+   "within": null
+  }
+ },
+ "sources": [
+  {
+   "url": "https://www.consultant.ru/document/cons_doc_LAW_37868/c137c6f66afe76bc2b195f1d1743662a5fc3d372/",
+   "title": "Federal Law 115-FZ 'On the legal status of foreign citizens', art. 13 (ConsultantPlus, ed. of 26.07.2026)",
+   "read": "2026-11-01",
+   "said": "Работодатель и заказчик работ (услуг) имеют право привлекать и использовать иностранных работников при наличии разрешения на привлечение и использование иностранных работников, а иностранный гражданин имеет право осуществлять трудовую деятельность в случае, если он достиг возраста восемнадцати лет, при наличии разрешения на работу или патента. … прибывших в Российскую Федерацию не более чем на тридцать суток для осуществления гастрольной деятельности (организации и проведения на основании гражданско-правовых договоров на возмездной и (или) безвозмездной основе мероприятий, в ходе которых иностранный гражданин, являющийся творческим работником, осуществляет публичное исполнение произведений литературы, искусства или народного творчества)",
+   "kind": "primary",
+   "fields": [
+    "applies",
+    "first",
+    "exempt"
+   ]
+  },
+  {
+   "url": "https://www.consultant.ru/document/cons_doc_LAW_28165/2c9d3e23bb4c55026a2d6869494e63db3d3d339a/",
+   "title": "Tax Code of the Russian Federation, art. 333.28 (ConsultantPlus, ed. of 04.08.2026)",
+   "read": "2026-11-01",
+   "said": "за выдачу разрешения на работу иностранному гражданину или лицу без гражданства - 5000 рублей; … за выдачу разрешений на привлечение и использование иностранных работников - 15 000 рублей за каждого привлекаемого иностранного работника; … за продление срока действия разрешения на работу иностранного гражданина или лица без гражданства - 4200 рублей; … за выдачу приглашения на въезд в Российскую Федерацию иностранным гражданам или лицам без гражданства - 8000 рублей за каждого приглашенного;",
+   "kind": "primary",
+   "fields": [
+    "fees"
+   ]
+  }
+ ],
+ "blockers": [
+  {
+   "field": "processing",
+   "sought": "The stated decision time for the employer's permit and the work permit",
+   "tried": {
+    "institution": "The Interior Ministry (мвд.рф, GUVM) resets the connection from this environment (2026-11-01). Retry (2026-11-01): МВД's own pages (мвд.рф) not reached in this pass.",
+    "official-register": "115-FZ art. 13 and Tax Code art. 333.28 read; the term of a work permit and the decision time are in other articles (13.2-13.4) and the Ministry's administrative regulation, not read. Retry (2026-11-01): Federal Law 115-FZ read again on consultant.ru: art. 5 (temporary stay follows the work permit, no term stated for an ordinary visa worker), art. 13, and art. 18 (saved dl/permits/RU-115fz18.html: 'Разрешение на привлечение и использование иностранных работников выдается сроком на один год' (the employer's permit, not the worker's); the worker's work-permit term and the decision time aren't stated in arts. 5, 13 or 18; they sit in the МВД's administrative regulation, not found).",
+    "web-search": "'Налоговый кодекс статья 333.28 государственная пошлина разрешение на работу ... 2026': accountancy press (buh.ru, ppt.ru, 1C) on the 26 July 2026 duties; nothing on time, term or pay for performers. Retry (2026-11-01): Not repeated with new phrasing beyond the articles; consultant.ru's table of contents read for the articles on work permits (13, 13.2-13.7, 18, 18.1). Retry (2026-11-01): 'административный регламент МВД выдача разрешения на работу иностранным гражданам срок предоставления государственной услуги рабочих дней приказ' (2026-11-01): the current regulation is МВД order No. 541 of 01.08.2020; a new one (order No. 343 of 29.05.2026, 79 calendar days at most) takes effect on 21.12.2026, reported by ppt.ru only; base.spinform.ru's copy (rgn=127283) shows the table of contents without the time (demo access).",
+    "trade-press": "buh.ru, ppt.ru, nalog-nalog.ru (secondary, citing 190-FZ), used only to find the primary. Retry (2026-11-01): None naming a primary.",
+    "archive": "web.archive.org resets the connection from this environment (tried 2026-11-01). Retry (2026-11-01): web.archive.org resets the connection (2026-11-01)."
+   }
+  },
+  {
+   "field": "validity",
+   "sought": "How long a work permit is issued for and its extension",
+   "tried": {
+    "institution": "The Interior Ministry (мвд.рф, GUVM) resets the connection from this environment (2026-11-01). Retry (2026-11-01): МВД's own pages (мвд.рф) not reached in this pass.",
+    "official-register": "115-FZ art. 13 and Tax Code art. 333.28 read; the term of a work permit and the decision time are in other articles (13.2-13.4) and the Ministry's administrative regulation, not read. Retry (2026-11-01): Federal Law 115-FZ read again on consultant.ru: art. 5 (temporary stay follows the work permit, no term stated for an ordinary visa worker), art. 13, and art. 18 (saved dl/permits/RU-115fz18.html: 'Разрешение на привлечение и использование иностранных работников выдается сроком на один год' (the employer's permit, not the worker's); the worker's work-permit term and the decision time aren't stated in arts. 5, 13 or 18; they sit in the МВД's administrative regulation, not found).",
+    "web-search": "'Налоговый кодекс статья 333.28 государственная пошлина разрешение на работу ... 2026': accountancy press (buh.ru, ppt.ru, 1C) on the 26 July 2026 duties; nothing on time, term or pay for performers. Retry (2026-11-01): Not repeated with new phrasing beyond the articles; consultant.ru's table of contents read for the articles on work permits (13, 13.2-13.7, 18, 18.1). Retry (2026-11-01): Same search (2026-11-01); the regulation's text with the permit's term not reached.",
+    "trade-press": "buh.ru, ppt.ru, nalog-nalog.ru (secondary, citing 190-FZ), used only to find the primary. Retry (2026-11-01): None naming a primary.",
+    "archive": "web.archive.org resets the connection from this environment (tried 2026-11-01). Retry (2026-11-01): web.archive.org resets the connection (2026-11-01)."
+   }
+  },
+  {
+   "field": "union",
+   "sought": "Any union consultation",
+   "tried": {
+    "institution": "The Interior Ministry (мвд.рф, GUVM) resets the connection from this environment (2026-11-01). Retry (2026-11-01): МВД's own pages (мвд.рф) not reached in this pass.",
+    "official-register": "115-FZ art. 13 and Tax Code art. 333.28 read; the term of a work permit and the decision time are in other articles (13.2-13.4) and the Ministry's administrative regulation, not read. Retry (2026-11-01): Federal Law 115-FZ read again on consultant.ru: art. 5 (temporary stay follows the work permit, no term stated for an ordinary visa worker), art. 13, and art. 18 (saved dl/permits/RU-115fz18.html: 'Разрешение на привлечение и использование иностранных работников выдается сроком на один год' (the employer's permit, not the worker's); the worker's work-permit term and the decision time aren't stated in arts. 5, 13 or 18; they sit in the МВД's administrative regulation, not found).",
+    "web-search": "'Налоговый кодекс статья 333.28 государственная пошлина разрешение на работу ... 2026': accountancy press (buh.ru, ppt.ru, 1C) on the 26 July 2026 duties; nothing on time, term or pay for performers. Retry (2026-11-01): Not repeated with new phrasing beyond the articles; consultant.ru's table of contents read for the articles on work permits (13, 13.2-13.7, 18, 18.1).",
+    "trade-press": "buh.ru, ppt.ru, nalog-nalog.ru (secondary, citing 190-FZ), used only to find the primary. Retry (2026-11-01): None naming a primary.",
+    "archive": "web.archive.org resets the connection from this environment (tried 2026-11-01). Retry (2026-11-01): web.archive.org resets the connection (2026-11-01)."
+   }
+  },
+  {
+   "field": "eligibility",
+   "sought": "Criteria a performer must meet",
+   "tried": {
+    "institution": "The Interior Ministry (мвд.рф, GUVM) resets the connection from this environment (2026-11-01). Retry (2026-11-01): МВД's own pages (мвд.рф) not reached in this pass.",
+    "official-register": "115-FZ art. 13 and Tax Code art. 333.28 read; the term of a work permit and the decision time are in other articles (13.2-13.4) and the Ministry's administrative regulation, not read. Retry (2026-11-01): Federal Law 115-FZ read again on consultant.ru: art. 5 (temporary stay follows the work permit, no term stated for an ordinary visa worker), art. 13, and art. 18 (saved dl/permits/RU-115fz18.html: 'Разрешение на привлечение и использование иностранных работников выдается сроком на один год' (the employer's permit, not the worker's); the worker's work-permit term and the decision time aren't stated in arts. 5, 13 or 18; they sit in the МВД's administrative regulation, not found).",
+    "web-search": "'Налоговый кодекс статья 333.28 государственная пошлина разрешение на работу ... 2026': accountancy press (buh.ru, ppt.ru, 1C) on the 26 July 2026 duties; nothing on time, term or pay for performers. Retry (2026-11-01): Not repeated with new phrasing beyond the articles; consultant.ru's table of contents read for the articles on work permits (13, 13.2-13.7, 18, 18.1).",
+    "trade-press": "buh.ru, ppt.ru, nalog-nalog.ru (secondary, citing 190-FZ), used only to find the primary. Retry (2026-11-01): None naming a primary.",
+    "archive": "web.archive.org resets the connection from this environment (tried 2026-11-01). Retry (2026-11-01): web.archive.org resets the connection (2026-11-01)."
+   }
+  },
+  {
+   "field": "pay",
+   "sought": "Any minimum pay rule (e.g. for highly qualified specialists)",
+   "tried": {
+    "institution": "The Interior Ministry (мвд.рф, GUVM) resets the connection from this environment (2026-11-01). Retry (2026-11-01): МВД's own pages (мвд.рф) not reached in this pass.",
+    "official-register": "115-FZ art. 13 and Tax Code art. 333.28 read; the term of a work permit and the decision time are in other articles (13.2-13.4) and the Ministry's administrative regulation, not read. Retry (2026-11-01): Federal Law 115-FZ read again on consultant.ru: art. 5 (temporary stay follows the work permit, no term stated for an ordinary visa worker), art. 13, and art. 18 (saved dl/permits/RU-115fz18.html: 'Разрешение на привлечение и использование иностранных работников выдается сроком на один год' (the employer's permit, not the worker's); the worker's work-permit term and the decision time aren't stated in arts. 5, 13 or 18; they sit in the МВД's administrative regulation, not found).",
+    "web-search": "'Налоговый кодекс статья 333.28 государственная пошлина разрешение на работу ... 2026': accountancy press (buh.ru, ppt.ru, 1C) on the 26 July 2026 duties; nothing on time, term or pay for performers. Retry (2026-11-01): Not repeated with new phrasing beyond the articles; consultant.ru's table of contents read for the articles on work permits (13, 13.2-13.7, 18, 18.1).",
+    "trade-press": "buh.ru, ppt.ru, nalog-nalog.ru (secondary, citing 190-FZ), used only to find the primary. Retry (2026-11-01): None naming a primary.",
+    "archive": "web.archive.org resets the connection from this environment (tried 2026-11-01). Retry (2026-11-01): web.archive.org resets the connection (2026-11-01)."
+   }
+  }
+ ],
+ "note": "Not needed by a creative worker arriving for no more than thirty days on tour, publicly performing works of literature, art or folk art under civil-law contracts, or invited by a state cultural institution for creative work (115-FZ art. 13(4)(8.2), as amended to 26 July 2026); the law counts thirty days per arrival, with no period named, so 'within' is null. EAEU citizens work without a permit (layer 3). State duties as amended by Federal Law 190-FZ of 26 June 2026 (Tax Code edition of 4 August 2026)."
+}

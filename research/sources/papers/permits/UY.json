@@ -1,0 +1,135 @@
+{
+ "country": "UY",
+ "read": "2026-11-01",
+ "route": "Residencia temporaria (Hoja de Identidad Provisoria)",
+ "routeChanged": false,
+ "permit": {
+  "applies": "The foreigner, online at tramites.gub.uy, then in person at the hearing with the original documents; a representative may be named once the procedure starts.",
+  "first": "Proof of the activity that gives rise to the request and of when it ends.",
+  "fees": [
+   {
+    "what": "Trámite de Residencia (temporary residence) (UI 557.30 at UYU 6.4237, the indexed unit on 1 January 2026)",
+    "amount": "3579.93",
+    "currency": "UYU",
+    "units": "557.30",
+    "unitValue": "6.4237"
+   },
+   {
+    "what": "Certificado migratorio (for the identity card once granted) (UI 55.70 at UYU 6.4237, the indexed unit on 1 January 2026)",
+    "amount": "357.80",
+    "currency": "UYU",
+    "units": "55.70",
+    "unitValue": "6.4237"
+   },
+   {
+    "what": "Re-entry permit, each exit while the residence is pending (UI 225.60 at UYU 6.4237, the indexed unit on 1 January 2026)",
+    "amount": "1449.19",
+    "currency": "UYU",
+    "units": "225.60",
+    "unitValue": "6.4237"
+   }
+  ],
+  "processing": null,
+  "validity": {
+   "n": 180,
+   "unit": "days",
+   "renewable": true
+  },
+  "union": null,
+  "eligibility": "Se considera residente temporario la persona extranjera que ingresa al país a desarrollar una actividad por un plazo determinado. ... H) Artistas.",
+  "pay": null,
+  "exempt": null
+ },
+ "sources": [
+  {
+   "url": "https://impo.com.uy/bases/decretos/394-2009",
+   "title": "IMPO, Decreto N° 394/009: Reglamentación de la Ley N° 18.250 (texto actualizado), art. 8 as worded by Decreto 238/022",
+   "read": "2026-11-01",
+   "said": "El extranjero que gestione ante la Dirección Nacional de Migración la residencia temporaria por un plazo inferior a ciento ochenta (180) días, obtendrá la Hoja de Identidad Provisoria cuando acredite: A) la actividad que da origen a su solicitud y fecha de cese de la misma. … En ambos casos, la Hoja de Identidad Provisoria podrá ser renovada, por única vez, por otros cientos ochenta (180) días.",
+   "kind": "primary",
+   "fields": [
+    "route",
+    "first",
+    "validity"
+   ]
+  },
+  {
+   "url": "https://www.impo.com.uy/bases/leyes/18250-2008",
+   "title": "IMPO, Ley N° 18.250 de Migración (texto actualizado), art. 34",
+   "read": "2026-11-01",
+   "said": "Se considera residente temporario la persona extranjera que ingresa al país a desarrollar una actividad por un plazo determinado. … H) Artistas.",
+   "kind": "primary",
+   "fields": [
+    "eligibility"
+   ]
+  },
+  {
+   "url": "https://www.gub.uy/tramites/sites/catalogo-tramites/files/2023-02/REQUISITOS%20TEMPORARIAS%202023.pdf",
+   "title": "Dirección Nacional de Migración, Residencia Temporaria: requisitos (2023)",
+   "read": "2026-11-01",
+   "said": "A través de la página web www.tramites.gub.uy, para todas las oficinas del país. … El día de la audiencia, se debe comparecer en forma personal, con los originales de documentación requerida. Una vez iniciado el trámite podrá designarse un representante para consultas y posterior continuación del mismo. Costos • Trámite de Residencia 557,30 UI • Certificado migratorio 55,70 UI para la obtención de cédula de identidad una vez concedida la misma. … abonar un permiso de reingreso cada vez que salga del país, siendo su costo 225,60 U.I.",
+   "kind": "primary",
+   "fields": [
+    "applies",
+    "fees"
+   ]
+  },
+  {
+   "url": "https://www.gub.uy/direccion-general-impositiva/datos-y-estadisticas/datos/unidad-indexada",
+   "title": "Dirección General Impositiva, Unidad Indexada: tablas con los valores desde 2006",
+   "read": "2026-11-01",
+   "said": "ENERO 2026 Fecha Valor UI Fecha Valor UI 01/01/2026 6,4237",
+   "kind": "primary",
+   "fields": [
+    "fees"
+   ]
+  }
+ ],
+ "blockers": [
+  {
+   "field": "processing",
+   "sought": "Decision time",
+   "tried": {
+    "institution": "Neither the DNM's sheet nor gub.uy's residence page states one. | Retry 2026-11-01: gub.uy (Ministry of Foreign Affairs portal) answers but no residence decision time found on the pages already read; migracion.minterior.gub.uy: no connection (HTTP 000).",
+    "official-register": "Ley 18.250 and Decreto 394/009 set none for this. | Retry 2026-11-01: impo.com.uy answers; Ley 18.250 and Decreto 394/009 (saved) re-read: no decision time, union step, pay rule or exempt engagement.",
+    "web-search": "'gub.uy trámite residencia temporaria Dirección Nacional de Migración costo plazo artistas Hoja de Identidad Provisoria': none. | Retry 2026-11-01: No new search possible: the shared web-search budget for this turn was exhausted (tool refusal, 2026-11-01).",
+    "trade-press": "None found. | Retry 2026-11-01: None reachable without search.",
+    "archive": "web.archive.org resets the connection from this environment (2026-11-01). | Retry 2026-11-01: web.archive.org: no connection from this environment (HTTP 000, 2026-11-01)."
+   }
+  },
+  {
+   "field": "union",
+   "sought": "Any union consultation",
+   "tried": {
+    "institution": "None named. | Retry 2026-11-01: gub.uy (Ministry of Foreign Affairs portal) answers but no residence decision time found on the pages already read; migracion.minterior.gub.uy: no connection (HTTP 000).",
+    "official-register": "None in Ley 18.250 or Decreto 394/009. | Retry 2026-11-01: impo.com.uy answers; Ley 18.250 and Decreto 394/009 (saved) re-read: no decision time, union step, pay rule or exempt engagement.",
+    "web-search": "Same search. | Retry 2026-11-01: No new search possible: the shared web-search budget for this turn was exhausted (tool refusal, 2026-11-01).",
+    "trade-press": "None found. | Retry 2026-11-01: None reachable without search.",
+    "archive": "web.archive.org resets the connection from this environment (2026-11-01). | Retry 2026-11-01: web.archive.org: no connection from this environment (HTTP 000, 2026-11-01)."
+   }
+  },
+  {
+   "field": "pay",
+   "sought": "A minimum pay rule",
+   "tried": {
+    "institution": "None named; Ley 18.250 art. 21 asks employers to apply labour law as to nationals, not a pay floor. | Retry 2026-11-01: gub.uy (Ministry of Foreign Affairs portal) answers but no residence decision time found on the pages already read; migracion.minterior.gub.uy: no connection (HTTP 000).",
+    "official-register": "Same. | Retry 2026-11-01: impo.com.uy answers; Ley 18.250 and Decreto 394/009 (saved) re-read: no decision time, union step, pay rule or exempt engagement.",
+    "web-search": "Same search. | Retry 2026-11-01: No new search possible: the shared web-search budget for this turn was exhausted (tool refusal, 2026-11-01).",
+    "trade-press": "None found. | Retry 2026-11-01: None reachable without search.",
+    "archive": "web.archive.org resets the connection from this environment (2026-11-01). | Retry 2026-11-01: web.archive.org: no connection from this environment (HTTP 000, 2026-11-01)."
+   }
+  },
+  {
+   "field": "exempt",
+   "sought": "An engagement short enough to need no permit",
+   "tried": {
+    "institution": "No exemption for paid work named; even under 180 days the Provisional Identity Sheet is asked. | Retry 2026-11-01: gub.uy (Ministry of Foreign Affairs portal) answers but no residence decision time found on the pages already read; migracion.minterior.gub.uy: no connection (HTTP 000).",
+    "official-register": "Ley 18.250 art. 20: non-residents may do no work outside their category's. | Retry 2026-11-01: impo.com.uy answers; Ley 18.250 and Decreto 394/009 (saved) re-read: no decision time, union step, pay rule or exempt engagement.",
+    "web-search": "Same search. | Retry 2026-11-01: No new search possible: the shared web-search budget for this turn was exhausted (tool refusal, 2026-11-01).",
+    "trade-press": "None found. | Retry 2026-11-01: None reachable without search.",
+    "archive": "web.archive.org resets the connection from this environment (2026-11-01). | Retry 2026-11-01: web.archive.org: no connection from this environment (HTTP 000, 2026-11-01)."
+   }
+  }
+ ],
+ "note": "Under 180 days the National Migration Directorate gives a Provisional Identity Sheet on proof of the activity and its end date (Decreto 394/009 art. 8); from 180 days to two years, the temporary residence itself, whose fees are below (the DNM's 2023 requirements sheet; amounts in indexed units, UI, readjusted every six months). Whether the Provisional Identity Sheet carries the same fee isn't stated."
+}

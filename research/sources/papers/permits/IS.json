@@ -1,0 +1,108 @@
+{
+ "country": "IS",
+ "read": "2026-11-01",
+ "route": "Work permit and residence permit",
+ "routeChanged": false,
+ "permit": {
+  "applies": "the worker, on a job offer (paper application to the Directorate of Immigration, which forwards the work permit application to the Directorate of Labour)",
+  "first": "a job offer on the Icelandic labour market (for a shortage-of-labour permit, the Directorate of Labour's check that no worker is available)",
+  "fees": [
+   {
+    "what": "application fee, residence permit based on work",
+    "amount": "80000",
+    "currency": "ISK"
+   }
+  ],
+  "processing": {
+   "standard": {
+    "n": 2,
+    "unit": "months"
+   },
+   "premium": null
+  },
+  "validity": {
+   "n": 1,
+   "unit": "years",
+   "renewable": true
+  },
+  "union": null,
+  "eligibility": null,
+  "pay": null,
+  "exempt": {
+   "days": 90,
+   "within": 365
+  }
+ },
+ "sources": [
+  {
+   "url": "https://island.is/en/permit-based-on-work",
+   "title": "Ísland.is (Directorate of Immigration), Residence permit based on work",
+   "read": "2026-11-01",
+   "said": "Residence permits based on work are for individuals that want to reside in Iceland because they have received a job offer on the Icelandic labour market. You can apply for a residence permits based on work For work requiring expert knowledge Due to a shortage of labour For athletes On the basis of a collaboration or service contract … Processing fee The fee for an application is 80.000 ISK . It is no longer possible to pay a service fee for expedited processing.",
+   "kind": "primary",
+   "fields": [
+    "route",
+    "applies",
+    "first",
+    "fees"
+   ]
+  },
+  {
+   "url": "https://island.is/en/short-term-residence-permit/rights-and-obligations",
+   "title": "Ísland.is (Directorate of Immigration), Short-term residence permit, rights and obligations",
+   "read": "2026-11-01",
+   "said": "The following foreign nationals are exempt from the requirement to obtain a work permit for employment in Iceland for up to 90 days per calendar year: … Artists, with the exception of musicians employed to perform in restaurants.",
+   "kind": "primary",
+   "fields": [
+    "exempt"
+   ]
+  },
+  {
+   "url": "https://island.is/reglugerdir/nr/0339-2005",
+   "title": "Ísland.is, Reglugerð nr. 339/2005 um atvinnuréttindi útlendinga (as published on Ísland.is, printed 3 August 2026)",
+   "read": "2026-11-01",
+   "said": "Atvinnuleyfi sem veitt er í fyrsta skipti skal eigi veitt til lengri tíma en til eins árs en þó aldrei til lengri tíma en sem nemur ráðningartímanum samkvæmt ráðningarsamningi. … Heimilt er að framlengja gildistíma atvinnuleyfis að uppfylltum skilyrðum a–c-liðar 1. mgr. 7. gr. laga um atvinnuréttindi útlendinga um allt að tvö ár í senn … Vinnumálastofnun skal taka ákvörðun um veitingu atvinnuleyfa svo fljótt sem verða má og eigi síðar en tveimur mánuðum eftir að umsókn berst stofnuninni.",
+   "kind": "primary",
+   "fields": [
+    "validity",
+    "processing"
+   ]
+  }
+ ],
+ "blockers": [
+  {
+   "field": "eligibility",
+   "sought": "which of the four kinds a performer takes and its criteria",
+   "tried": {
+    "institution": "island.is names the kinds, not a performer's || Retry 2026-11-01: island.is's work-permit pages (saekja-um-atvinnuleyfi) and the Directorate of Labour's notice that work permits move to the Directorate of Immigration (8 July 2026) read: no performer-specific rule.",
+    "official-register": "althingi.is refuses || Retry 2026-11-01: Regulation 339/2005 on Ísland.is read in full: art. 4 exempts for four weeks a year only artists engaged at restaurants (musicians excepted), sets no union step, no performer criterion and no pay floor beyond Icelandic terms.",
+    "web-search": "as above: no artist-specific rule found || Retry 2026-11-01: WebSearch 'Útlendingastofnun dvalarleyfi atvinnuleyfi listamenn tímabundið atvinnuleyfi gildistími afgreiðslutími Vinnumálastofnun' (in Icelandic): official news items, nothing on artists.",
+    "trade-press": "none || Retry 2026-11-01: Stjórnarráðið working-group report on foreigners' work rights listed; not a rule for performers.",
+    "archive": "not tried || Retry 2026-11-01: archive.org's availability API (archive.org/wayback/available) answers this client, but every web.archive.org snapshot URL resets the connection (curl: (35) Recv failure: Connection reset by peer, retried 2026-11-01)."
+   }
+  },
+  {
+   "field": "union",
+   "sought": "Any union consultation",
+   "tried": {
+    "institution": "Retry 2026-11-01: island.is's work-permit pages (saekja-um-atvinnuleyfi) and the Directorate of Labour's notice that work permits move to the Directorate of Immigration (8 July 2026) read: no performer-specific rule.",
+    "official-register": "Retry 2026-11-01: Regulation 339/2005 on Ísland.is read in full: art. 4 exempts for four weeks a year only artists engaged at restaurants (musicians excepted), sets no union step, no performer criterion and no pay floor beyond Icelandic terms.",
+    "web-search": "Retry 2026-11-01: WebSearch 'Útlendingastofnun dvalarleyfi atvinnuleyfi listamenn tímabundið atvinnuleyfi gildistími afgreiðslutími Vinnumálastofnun' (in Icelandic): official news items, nothing on artists.",
+    "trade-press": "Retry 2026-11-01: Stjórnarráðið working-group report on foreigners' work rights listed; not a rule for performers.",
+    "archive": "Retry 2026-11-01: archive.org's availability API (archive.org/wayback/available) answers this client, but every web.archive.org snapshot URL resets the connection (curl: (35) Recv failure: Connection reset by peer, retried 2026-11-01)."
+   }
+  },
+  {
+   "field": "pay",
+   "sought": "A minimum pay rule",
+   "tried": {
+    "institution": "Retry 2026-11-01: island.is's work-permit pages (saekja-um-atvinnuleyfi) and the Directorate of Labour's notice that work permits move to the Directorate of Immigration (8 July 2026) read: no performer-specific rule.",
+    "official-register": "Retry 2026-11-01: Regulation 339/2005 on Ísland.is read in full: art. 4 exempts for four weeks a year only artists engaged at restaurants (musicians excepted), sets no union step, no performer criterion and no pay floor beyond Icelandic terms.",
+    "web-search": "Retry 2026-11-01: WebSearch 'Útlendingastofnun dvalarleyfi atvinnuleyfi listamenn tímabundið atvinnuleyfi gildistími afgreiðslutími Vinnumálastofnun' (in Icelandic): official news items, nothing on artists.",
+    "trade-press": "Retry 2026-11-01: Stjórnarráðið working-group report on foreigners' work rights listed; not a rule for performers.",
+    "archive": "Retry 2026-11-01: archive.org's availability API (archive.org/wayback/available) answers this client, but every web.archive.org snapshot URL resets the connection (curl: (35) Recv failure: Connection reset by peer, retried 2026-11-01)."
+   }
+  }
+ ],
+ "note": "Iceland's residence permits based on work (Directorate of Immigration, with the work permit from the Directorate of Labour) come in four kinds: work requiring expert knowledge, shortage of labour, athletes, and a collaboration or service contract; none is named for performers, and which a performer takes isn't stated, so the kind isn't modelled apart. The application fee is 80,000 ISK; expedited processing is no longer sold. Artists (except musicians employed to perform in restaurants) need no work permit for up to 90 days per calendar year, taken as 90 within 365. vinnumalastofnun.is's temporary work permit page returns 404 to this client. Regulation 339/2005 gives the Directorate of Labour (Vinnumálastofnun) the decision, within two months at most; from 8 July 2026 the Directorate of Immigration (Útlendingastofnun) issues temporary work permits, and the regulation as published has not been re-issued for that change. A first permit runs at most a year (never past the contract) and may be extended up to two years at a time."
+}

@@ -1,0 +1,163 @@
+{
+ "country": "TH",
+ "read": "2026-11-01",
+ "route": "Work permit",
+ "routeChanged": false,
+ "permit": {
+  "applies": null,
+  "first": null,
+  "fees": [
+   {
+    "what": "Work permit application fee, per form (as stated for the ASEAN skilled-labour procedure)",
+    "amount": "100",
+    "currency": "THB"
+   },
+   {
+    "what": "Work permit valid up to 3 months",
+    "amount": "750",
+    "currency": "THB"
+   },
+   {
+    "what": "Work permit valid over 3 up to 6 months",
+    "amount": "1500",
+    "currency": "THB"
+   },
+   {
+    "what": "Work permit valid over 6 months up to 1 year",
+    "amount": "3000",
+    "currency": "THB"
+   }
+  ],
+  "processing": null,
+  "validity": null,
+  "union": null,
+  "eligibility": null,
+  "pay": null,
+  "exempt": null
+ },
+ "sources": [
+  {
+   "url": "https://www.thailand.go.th/issue-focus-detail/001_03_376",
+   "title": "Thailand.go.th (Digital Government Development Agency), Procedure for Obtaining a Work Permit for Foreigners under ASEAN Free Skilled Labor Mobility (updated 17 June 2023)",
+   "read": "2026-11-01",
+   "said": "Application fee is 100 Baht per form. Work permit fee: Work permit valid for no more than 3 months is 750 Baht per permit. Work permit valid for more than 3 months but not exceeding 6 months is 1,500 Baht per permit. Work permit valid for more than 6 months but not exceeding 1 year is 3,000 Baht per permit. For a permit that is valid for more than 1 year, the fee increases according to the rates in items 1), 2), or 3). Service Channels for obtaining a work permit for foreigners under ASEAN Free Skilled Labor Mobility: Foreign Labor Management Office, Department of Employment",
+   "kind": "primary",
+   "fields": [
+    "fees"
+   ]
+  },
+  {
+   "url": "https://www.envoyglobal.com/news-alert/thailand-updates-for-the-urgent-work-permit-category/",
+   "title": "Envoy Global, Thailand: Updates for the Urgent Work Permit Category",
+   "read": "2026-11-01",
+   "said": "Item (13) Work supported by government agencies: (a) Mega event organization or international festival (b) International music festival or concert",
+   "kind": "secondary",
+   "quotes": "https://www.doe.go.th/",
+   "fields": [
+    "exempt"
+   ]
+  }
+ ],
+ "blockers": [
+  {
+   "field": "applies",
+   "sought": "Who applies for a foreign performer's work permit and on what (employer, Non-Immigrant B visa)",
+   "tried": {
+    "institution": "doe.go.th (Department of Employment) not fetched in this pass; layer 3 found its urgent-work list only through Envoy Global. || Retry 2026-11-01: doe.go.th times out from this client (2026-11-01, 25 s with no bytes).",
+    "official-register": "Royal Decree on Managing the Work of Foreigners B.E. 2560 (2017) and the Ministerial Regulation on fees not read in the Royal Gazette. || Retry 2026-11-01: Royal Decree B.E. 2560 and its 2018 amendment surfaced only through Tilleke & Gibbins' note; the Royal Gazette (ratchakitcha.soc.go.th) not reached.",
+    "web-search": "'Department of Employment Thailand work permit fee 750 baht 3 months 1500 3000 ministerial regulation fees foreign worker doe.go.th': the government portal's ASEAN page (used) and law-firm guides (Tilleke, terms.law). || Retry 2026-11-01: WebSearch 'Thailand Department of Employment work permit \"artist\" performing foreigners Royal Decree 2017 section urgent work 15 days notification fee 100 baht work permit fee 750 1500 3000 baht': only Tilleke's 2018 note (15-day notice, fines) and conventuslaw.",
+    "trade-press": "Khaosod English (2023) on lower fees for Cambodian, Lao, Myanmar and Vietnamese workers only. || Retry 2026-11-01: Tilleke & Gibbins (May 2018) on the Royal Decree No. 2: no decision time, term or performer rule.",
+    "archive": "web.archive.org tried for the authority's page: the connection resets from this environment (curl: (35) Recv failure: Connection reset by peer, 2026-11-01); no snapshot read. || Retry 2026-11-01: archive.org's availability API (archive.org/wayback/available) answers this client, but every web.archive.org snapshot URL resets the connection (curl: (35) Recv failure: Connection reset by peer, retried 2026-11-01)."
+   }
+  },
+  {
+   "field": "first",
+   "sought": "What must come first (job offer, visa, Film Office approval for a foreign shoot)",
+   "tried": {
+    "institution": "doe.go.th (Department of Employment) not fetched in this pass; layer 3 found its urgent-work list only through Envoy Global.",
+    "official-register": "Royal Decree on Managing the Work of Foreigners B.E. 2560 (2017) and the Ministerial Regulation on fees not read in the Royal Gazette.",
+    "web-search": "'Department of Employment Thailand work permit fee 750 baht 3 months 1500 3000 ministerial regulation fees foreign worker doe.go.th': the government portal's ASEAN page (used) and law-firm guides (Tilleke, terms.law).",
+    "trade-press": "Khaosod English (2023) on lower fees for Cambodian, Lao, Myanmar and Vietnamese workers only.",
+    "archive": "web.archive.org tried for the authority's page: the connection resets from this environment (curl: (35) Recv failure: Connection reset by peer, 2026-11-01); no snapshot read."
+   }
+  },
+  {
+   "field": "processing",
+   "sought": "The Department of Employment's decision time",
+   "tried": {
+    "institution": "doe.go.th (Department of Employment) not fetched in this pass; layer 3 found its urgent-work list only through Envoy Global. || Retry 2026-11-01: doe.go.th times out from this client (2026-11-01, 25 s with no bytes).",
+    "official-register": "Royal Decree on Managing the Work of Foreigners B.E. 2560 (2017) and the Ministerial Regulation on fees not read in the Royal Gazette. || Retry 2026-11-01: Royal Decree B.E. 2560 and its 2018 amendment surfaced only through Tilleke & Gibbins' note; the Royal Gazette (ratchakitcha.soc.go.th) not reached.",
+    "web-search": "'Department of Employment Thailand work permit fee 750 baht 3 months 1500 3000 ministerial regulation fees foreign worker doe.go.th': the government portal's ASEAN page (used) and law-firm guides (Tilleke, terms.law). || Retry 2026-11-01: WebSearch 'Thailand Department of Employment work permit \"artist\" performing foreigners Royal Decree 2017 section urgent work 15 days notification fee 100 baht work permit fee 750 1500 3000 baht': only Tilleke's 2018 note (15-day notice, fines) and conventuslaw.",
+    "trade-press": "Khaosod English (2023) on lower fees for Cambodian, Lao, Myanmar and Vietnamese workers only. || Retry 2026-11-01: Tilleke & Gibbins (May 2018) on the Royal Decree No. 2: no decision time, term or performer rule.",
+    "archive": "web.archive.org tried for the authority's page: the connection resets from this environment (curl: (35) Recv failure: Connection reset by peer, 2026-11-01); no snapshot read. || Retry 2026-11-01: archive.org's availability API (archive.org/wayback/available) answers this client, but every web.archive.org snapshot URL resets the connection (curl: (35) Recv failure: Connection reset by peer, retried 2026-11-01)."
+   }
+  },
+  {
+   "field": "validity",
+   "sought": "The longest a work permit is granted for and renewal",
+   "tried": {
+    "institution": "doe.go.th (Department of Employment) not fetched in this pass; layer 3 found its urgent-work list only through Envoy Global. || Retry 2026-11-01: doe.go.th times out from this client (2026-11-01, 25 s with no bytes).",
+    "official-register": "Royal Decree on Managing the Work of Foreigners B.E. 2560 (2017) and the Ministerial Regulation on fees not read in the Royal Gazette. || Retry 2026-11-01: Royal Decree B.E. 2560 and its 2018 amendment surfaced only through Tilleke & Gibbins' note; the Royal Gazette (ratchakitcha.soc.go.th) not reached.",
+    "web-search": "'Department of Employment Thailand work permit fee 750 baht 3 months 1500 3000 ministerial regulation fees foreign worker doe.go.th': the government portal's ASEAN page (used) and law-firm guides (Tilleke, terms.law). || Retry 2026-11-01: WebSearch 'Thailand Department of Employment work permit \"artist\" performing foreigners Royal Decree 2017 section urgent work 15 days notification fee 100 baht work permit fee 750 1500 3000 baht': only Tilleke's 2018 note (15-day notice, fines) and conventuslaw.",
+    "trade-press": "Khaosod English (2023) on lower fees for Cambodian, Lao, Myanmar and Vietnamese workers only. || Retry 2026-11-01: Tilleke & Gibbins (May 2018) on the Royal Decree No. 2: no decision time, term or performer rule.",
+    "archive": "web.archive.org tried for the authority's page: the connection resets from this environment (curl: (35) Recv failure: Connection reset by peer, 2026-11-01); no snapshot read. || Retry 2026-11-01: archive.org's availability API (archive.org/wayback/available) answers this client, but every web.archive.org snapshot URL resets the connection (curl: (35) Recv failure: Connection reset by peer, retried 2026-11-01)."
+   }
+  },
+  {
+   "field": "union",
+   "sought": "Any union step",
+   "tried": {
+    "institution": "doe.go.th (Department of Employment) not fetched in this pass; layer 3 found its urgent-work list only through Envoy Global. || Retry 2026-11-01: doe.go.th times out from this client (2026-11-01, 25 s with no bytes).",
+    "official-register": "Royal Decree on Managing the Work of Foreigners B.E. 2560 (2017) and the Ministerial Regulation on fees not read in the Royal Gazette. || Retry 2026-11-01: Royal Decree B.E. 2560 and its 2018 amendment surfaced only through Tilleke & Gibbins' note; the Royal Gazette (ratchakitcha.soc.go.th) not reached.",
+    "web-search": "'Department of Employment Thailand work permit fee 750 baht 3 months 1500 3000 ministerial regulation fees foreign worker doe.go.th': the government portal's ASEAN page (used) and law-firm guides (Tilleke, terms.law). || Retry 2026-11-01: WebSearch 'Thailand Department of Employment work permit \"artist\" performing foreigners Royal Decree 2017 section urgent work 15 days notification fee 100 baht work permit fee 750 1500 3000 baht': only Tilleke's 2018 note (15-day notice, fines) and conventuslaw.",
+    "trade-press": "Khaosod English (2023) on lower fees for Cambodian, Lao, Myanmar and Vietnamese workers only. || Retry 2026-11-01: Tilleke & Gibbins (May 2018) on the Royal Decree No. 2: no decision time, term or performer rule.",
+    "archive": "web.archive.org tried for the authority's page: the connection resets from this environment (curl: (35) Recv failure: Connection reset by peer, 2026-11-01); no snapshot read. || Retry 2026-11-01: archive.org's availability API (archive.org/wayback/available) answers this client, but every web.archive.org snapshot URL resets the connection (curl: (35) Recv failure: Connection reset by peer, retried 2026-11-01)."
+   }
+  },
+  {
+   "field": "pay",
+   "sought": "Any pay rule",
+   "tried": {
+    "institution": "doe.go.th (Department of Employment) not fetched in this pass; layer 3 found its urgent-work list only through Envoy Global. || Retry 2026-11-01: doe.go.th times out from this client (2026-11-01, 25 s with no bytes).",
+    "official-register": "Royal Decree on Managing the Work of Foreigners B.E. 2560 (2017) and the Ministerial Regulation on fees not read in the Royal Gazette. || Retry 2026-11-01: Royal Decree B.E. 2560 and its 2018 amendment surfaced only through Tilleke & Gibbins' note; the Royal Gazette (ratchakitcha.soc.go.th) not reached.",
+    "web-search": "'Department of Employment Thailand work permit fee 750 baht 3 months 1500 3000 ministerial regulation fees foreign worker doe.go.th': the government portal's ASEAN page (used) and law-firm guides (Tilleke, terms.law). || Retry 2026-11-01: WebSearch 'Thailand Department of Employment work permit \"artist\" performing foreigners Royal Decree 2017 section urgent work 15 days notification fee 100 baht work permit fee 750 1500 3000 baht': only Tilleke's 2018 note (15-day notice, fines) and conventuslaw.",
+    "trade-press": "Khaosod English (2023) on lower fees for Cambodian, Lao, Myanmar and Vietnamese workers only. || Retry 2026-11-01: Tilleke & Gibbins (May 2018) on the Royal Decree No. 2: no decision time, term or performer rule.",
+    "archive": "web.archive.org tried for the authority's page: the connection resets from this environment (curl: (35) Recv failure: Connection reset by peer, 2026-11-01); no snapshot read. || Retry 2026-11-01: archive.org's availability API (archive.org/wayback/available) answers this client, but every web.archive.org snapshot URL resets the connection (curl: (35) Recv failure: Connection reset by peer, retried 2026-11-01)."
+   }
+  },
+  {
+   "field": "eligibility",
+   "sought": "Criteria for a performer",
+   "tried": {
+    "institution": "doe.go.th (Department of Employment) not fetched in this pass; layer 3 found its urgent-work list only through Envoy Global. || Retry 2026-11-01: doe.go.th times out from this client (2026-11-01, 25 s with no bytes).",
+    "official-register": "Royal Decree on Managing the Work of Foreigners B.E. 2560 (2017) and the Ministerial Regulation on fees not read in the Royal Gazette. || Retry 2026-11-01: Royal Decree B.E. 2560 and its 2018 amendment surfaced only through Tilleke & Gibbins' note; the Royal Gazette (ratchakitcha.soc.go.th) not reached.",
+    "web-search": "'Department of Employment Thailand work permit fee 750 baht 3 months 1500 3000 ministerial regulation fees foreign worker doe.go.th': the government portal's ASEAN page (used) and law-firm guides (Tilleke, terms.law). || Retry 2026-11-01: WebSearch 'Thailand Department of Employment work permit \"artist\" performing foreigners Royal Decree 2017 section urgent work 15 days notification fee 100 baht work permit fee 750 1500 3000 baht': only Tilleke's 2018 note (15-day notice, fines) and conventuslaw.",
+    "trade-press": "Khaosod English (2023) on lower fees for Cambodian, Lao, Myanmar and Vietnamese workers only. || Retry 2026-11-01: Tilleke & Gibbins (May 2018) on the Royal Decree No. 2: no decision time, term or performer rule.",
+    "archive": "web.archive.org tried for the authority's page: the connection resets from this environment (curl: (35) Recv failure: Connection reset by peer, 2026-11-01); no snapshot read. || Retry 2026-11-01: archive.org's availability API (archive.org/wayback/available) answers this client, but every web.archive.org snapshot URL resets the connection (curl: (35) Recv failure: Connection reset by peer, retried 2026-11-01)."
+   }
+  },
+  {
+   "field": "fees",
+   "sought": "Whether the fee tiers stated for the ASEAN procedure are the general schedule for every foreigner",
+   "tried": {
+    "institution": "doe.go.th (Department of Employment) not fetched in this pass; layer 3 found its urgent-work list only through Envoy Global.",
+    "official-register": "Royal Decree on Managing the Work of Foreigners B.E. 2560 (2017) and the Ministerial Regulation on fees not read in the Royal Gazette.",
+    "web-search": "'Department of Employment Thailand work permit fee 750 baht 3 months 1500 3000 ministerial regulation fees foreign worker doe.go.th': the government portal's ASEAN page (used) and law-firm guides (Tilleke, terms.law).",
+    "trade-press": "Khaosod English (2023) on lower fees for Cambodian, Lao, Myanmar and Vietnamese workers only.",
+    "archive": "web.archive.org tried for the authority's page: the connection resets from this environment (curl: (35) Recv failure: Connection reset by peer, 2026-11-01); no snapshot read."
+   }
+  },
+  {
+   "field": "exempt",
+   "sought": "A short engagement needing no permit",
+   "tried": {
+    "institution": "Retry 2026-11-01: doe.go.th times out from this client (2026-11-01, 25 s with no bytes).",
+    "official-register": "Retry 2026-11-01: Royal Decree B.E. 2560 and its 2018 amendment surfaced only through Tilleke & Gibbins' note; the Royal Gazette (ratchakitcha.soc.go.th) not reached.",
+    "web-search": "Retry 2026-11-01: WebSearch 'Thailand Department of Employment work permit \"artist\" performing foreigners Royal Decree 2017 section urgent work 15 days notification fee 100 baht work permit fee 750 1500 3000 baht': only Tilleke's 2018 note (15-day notice, fines) and conventuslaw.",
+    "trade-press": "Retry 2026-11-01: Tilleke & Gibbins (May 2018) on the Royal Decree No. 2: no decision time, term or performer rule.",
+    "archive": "Retry 2026-11-01: archive.org's availability API (archive.org/wayback/available) answers this client, but every web.archive.org snapshot URL resets the connection (curl: (35) Recv failure: Connection reset by peer, retried 2026-11-01)."
+   }
+  }
+ ],
+ "note": "Urgent and necessary work, notified to the registrar, is allowed for up to 15 days extendable by 15 (Tilleke & Gibbins, layer 3); the urgent list now includes an international music festival or concert supported by government agencies, open only to such events and so not modelled as days a performer may work without a permit."
+}

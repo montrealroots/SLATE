@@ -1,0 +1,106 @@
+{
+ "country": "IE",
+ "read": "2026-11-01",
+ "route": "Atypical Working Scheme permission (beyond 90 days, an Employment Permit)",
+ "routeChanged": false,
+ "permit": {
+  "applies": "The worker (or a representative under a signed letter of authorisation) applies online to the Atypical Working Scheme Unit from outside the State; a visa-required national then applies for the employment visa on the AWS approval letter.",
+  "first": "A contract signed and dated by the worker and employer (salary, job description, duration) and a letter from the Irish host body confirming the offer.",
+  "fees": [
+   {
+    "what": "Atypical Working Scheme processing fee, each application",
+    "amount": "250.00",
+    "currency": "EUR"
+   },
+   {
+    "what": "Visa, single entry short stay 'C' (visa-required nationals)",
+    "amount": "60.00",
+    "currency": "EUR"
+   },
+   {
+    "what": "Visa, multiple entry short stay 'C' (visa-required nationals)",
+    "amount": "100.00",
+    "currency": "EUR"
+   }
+  ],
+  "processing": {
+   "standard": {
+    "n": 20,
+    "unit": "business-days"
+   },
+   "premium": null
+  },
+  "validity": {
+   "n": 90,
+   "unit": "days",
+   "renewable": false
+  },
+  "union": null,
+  "eligibility": null,
+  "pay": "Unless stated otherwise for a specific category, all salaries paid to any person under the Atypical Working Scheme must meet the salary threshold of the General Employment Permit, and must comply with the National Minimum Wage.",
+  "exempt": null
+ },
+ "sources": [
+  {
+   "url": "https://www.irishimmigration.ie/coming-to-work-in-ireland/atypical-working-scheme/",
+   "title": "Irish Immigration Service Delivery, Atypical Working Scheme",
+   "read": "2026-11-01",
+   "said": "pay the €250 application fee by credit card when submitting the form … You must allow a minimum of 20 working days for your application to be processed from the date we receive all required documentation and information relating to your application. … Permission under the Scheme is granted for a maximum period of 90 days The 90 days of permission under the Scheme can be used to support intermittent travel into and out of the State to a maximum of 90 days over a 6 month period A cooling-off period of one month will apply from the end of the 6 month period before any new entry to the State under a subsequent AWS permission can occur … unless stated otherwise for a specific application category, all salaries paid to any person under the Atypical Working Scheme must meet the salary threshold of the General Employment Permit . … the “general” category of applications for permission under the Scheme (including the entertainment industry, biotech, pharmaceutical, and technology sectors) … A contract, signed and dated by the applicant and their employer outlining the terms of employment for the period in the State, including salary",
+   "kind": "primary",
+   "fields": [
+    "fees",
+    "processing",
+    "validity",
+    "pay",
+    "applies",
+    "first"
+   ]
+  },
+  {
+   "url": "https://www.irishimmigration.ie/coming-to-work-in-ireland/what-are-my-work-visa-options/visa-options-for-working-in-ireland-for-less-than-90-days/employment-visa-aws-less-than-90-days/",
+   "title": "Irish Immigration Service Delivery, Employment visa – AWS less than 90 days",
+   "read": "2026-11-01",
+   "said": "You can apply for an employment visa (Atypical Working Scheme) once you have an approval letter from the Atypical Working Scheme Division of t … €60 : Single entry – Short stay ‘C’ visa €100 : Multiple entry – Short stay ‘C’ visa",
+   "kind": "primary",
+   "fields": [
+    "fees",
+    "applies"
+   ]
+  }
+ ],
+ "blockers": [
+  {
+   "field": "union",
+   "sought": "A union consultation for a performer's AWS permission or Employment Permit",
+   "tried": {
+    "institution": "irishimmigration.ie AWS page read: none named",
+    "official-register": "enterprise.gov.ie employment permit eligibility page read: none named",
+    "web-search": "WebSearch 'irishimmigration.ie Atypical Working Scheme fee processing entertainment industry 90 days': none",
+    "trade-press": "BAL, KPMG and Fragomen notes on the 2023 changes in the same results: none",
+    "archive": "web.archive.org refuses this environment (connection reset, 2026-11-01); no snapshot read."
+   }
+  },
+  {
+   "field": "eligibility",
+   "sought": "A stated standard for a performer under the Scheme (e.g. renown)",
+   "tried": {
+    "institution": "AWS page read: the general category names the entertainment industry and no further standard",
+    "official-register": "Not found",
+    "web-search": "Same search",
+    "trade-press": "Same results",
+    "archive": "web.archive.org refuses this environment (connection reset, 2026-11-01); no snapshot read."
+   }
+  },
+  {
+   "field": "exempt",
+   "sought": "A short engagement (under 15 days) a performer may work with no AWS permission",
+   "tried": {
+    "institution": "AWS page read: its categories start at 15 days; nothing said of shorter work",
+    "official-register": "Employment Permits Acts not read (irishstatutebook not tried in this pass)",
+    "web-search": "Same search: none",
+    "trade-press": "None",
+    "archive": "web.archive.org refuses this environment (connection reset, 2026-11-01); no snapshot read."
+   }
+  }
+ ]
+}

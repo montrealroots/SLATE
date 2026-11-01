@@ -1,0 +1,110 @@
+{
+ "country": "BQ",
+ "read": "2026-11-01",
+ "route": "Tewerkstellingsvergunning (Wet arbeid vreemdelingen BES)",
+ "routeChanged": false,
+ "permit": {
+  "applies": "The employer applies to the Minister of Social Affairs and Employment (the RCN-unit SZW)",
+  "first": "The vacancy notified to the island's executive council at least five weeks before the application (a labour-market test; zero weeks for listed Bonaire occupations since 1 July 2021)",
+  "fees": [],
+  "processing": {
+   "standard": null,
+   "premium": null
+  },
+  "validity": {
+   "n": null,
+   "unit": null,
+   "renewable": null
+  },
+  "union": null,
+  "eligibility": null,
+  "pay": "Pay must be at market rate (marktconform) and at least the minimum wage.",
+  "exempt": {
+   "days": 28,
+   "within": 91
+  }
+ },
+ "sources": [
+  {
+   "url": "https://zoek.officielebekendmakingen.nl/stb-2010-371.pdf",
+   "title": "Staatsblad 2010, 371: Besluit uitvoering Wet arbeid vreemdelingen BES, arts. 2, 3 and 8",
+   "read": "2026-11-01",
+   "said": "Een aanvraag om een tewerkstellingsvergunning wordt ingediend bij Onze Minister van Sociale Zaken en Werkgelegenheid. … verklaring van het openbaar lichaam waaruit blijkt dat de beschik- baarheid van de te vervullen arbeidsplaats ten minste vijf weken voor het indienen van de aanvraag is gemeld aan het bestuurscollege … die zijn hoofdverblijf heeft buiten de openbare lichamen en gedurende maximaal 4 aaneengesloten weken in een periode van 13 weken incidentele arbeid verricht uitsluitend bestaande uit: … 3°. het werkzaam zijn als artiest, musicus of beeldend kunstenaar;",
+   "kind": "primary",
+   "fields": [
+    "applies",
+    "first",
+    "exempt"
+   ]
+  },
+  {
+   "url": "https://zoek.officielebekendmakingen.nl/stcrt-2021-30060.html",
+   "title": "Staatscourant 2021, 30060: Beleidsregel RCN-unit SZW (in force 1 July 2021)",
+   "read": "2026-11-01",
+   "said": "door te borgen dat arbeidsmigranten marktconform beloond worden en ten minste het minimumloon ontvangen. … de eis dat een tewerkstellingsvergunning pas kan worden aangevraagd nadat ten minste vijf weken na melding van de vacature bij het openbaar lichaam waar de arbeid uitsluitend of in hoofdzaak wordt of zal worden verricht, zijn verstreken.",
+   "kind": "primary",
+   "fields": [
+    "pay",
+    "first",
+    "applies"
+   ]
+  }
+ ],
+ "blockers": [
+  {
+   "field": "fees",
+   "sought": "any government fee for a TWV",
+   "tried": {
+    "institution": "RCN work permit page: HTTP 404; the RCN employers' brochure (2022) URL: HTTP 404 to this client | Retry 2026-11-01: rijksdienstcn.com: the SZW work-permit brochure (2022-02-22 PDF) and the IND fee schedules for the BES (2024 and 2025 PDFs) and an English fees page all answer 404 at the addresses search gives; ind.nl's Caribbean Netherlands work page answers 404.",
+    "official-register": "Stb 2010-371 and Stcrt 2021-30060 read: no fee named; wetten.overheid.nl refuses this client (layer 3) | Retry 2026-11-01: Wet arbeid vreemdelingen BES (Stb. 2010, 371, saved) and Stcrt. 2021, 30060 (saved) re-read: no fee for a tewerkstellingsvergunning, no union step, no performer criterion beyond the 'artiest, musicus' provision.",
+    "web-search": "run 2026-11-01 in Dutch twice (tewerkstellingsvergunning BES kosten leges): none found | Retry 2026-11-01: 'tewerkstellingsvergunning BES Unit Werk en Inkomen leges kosten aanvraag Bonaire 2026' and 'IND Caribisch Nederland verblijfsvergunning arbeid in loondienst leges USD Bonaire tarieven 2026' (2026-11-01): fee schedules exist for IND residence permits in USD, none for the TWV; the PDFs found answer 404.",
+    "trade-press": "none quoting a primary | Retry 2026-11-01: Rivermate's BES guide names no primary; not used.",
+    "archive": "archive.org availability API answered 429 Too Many Requests | Retry 2026-11-01: web.archive.org resets (2026-11-01)."
+   }
+  },
+  {
+   "field": "processing",
+   "sought": "decision time (the decree gives only a receipt within two weeks)",
+   "tried": {
+    "institution": "RCN pages 404 | Retry 2026-11-01: rijksdienstcn.com's SZW work-permit brochure (2022) and IND BES fee and information pages answer 404 at the addresses search gives (2026-11-01).",
+    "official-register": "Stb 2010-371 read | Retry 2026-11-01: Wet arbeid vreemdelingen BES (Stb. 2010, 371) and Stcrt. 2021, 30060 (saved) re-read: no decision period beyond the receipt and no maximum term.",
+    "web-search": "run in Dutch: none | Retry 2026-11-01: 'tewerkstellingsvergunning BES Unit Werk en Inkomen leges kosten aanvraag Bonaire 2026' (2026-11-01): nothing on time or term from a primary.",
+    "trade-press": "none | Retry 2026-11-01: Rivermate's BES guide names no primary; VANEPS's Guide to Doing Business (BES) not read.",
+    "archive": "429 | Retry 2026-11-01: web.archive.org resets (2026-11-01)."
+   }
+  },
+  {
+   "field": "validity",
+   "sought": "how long a TWV is granted for",
+   "tried": {
+    "institution": "RCN 404 | Retry 2026-11-01: rijksdienstcn.com's SZW work-permit brochure (2022) and IND BES fee and information pages answer 404 at the addresses search gives (2026-11-01).",
+    "official-register": "Wav BES not readable (wetten.overheid.nl refuses this client) | Retry 2026-11-01: Wet arbeid vreemdelingen BES (Stb. 2010, 371) and Stcrt. 2021, 30060 (saved) re-read: no decision period beyond the receipt and no maximum term.",
+    "web-search": "run: a court decision quoted by a third party says at most three years; not read | Retry 2026-11-01: 'tewerkstellingsvergunning BES Unit Werk en Inkomen leges kosten aanvraag Bonaire 2026' (2026-11-01): nothing on time or term from a primary.",
+    "trade-press": "none | Retry 2026-11-01: Rivermate's BES guide names no primary; VANEPS's Guide to Doing Business (BES) not read.",
+    "archive": "429 | Retry 2026-11-01: web.archive.org resets (2026-11-01)."
+   }
+  },
+  {
+   "field": "union",
+   "sought": "union consultation",
+   "tried": {
+    "institution": "none | Retry 2026-11-01: rijksdienstcn.com: the SZW work-permit brochure (2022-02-22 PDF) and the IND fee schedules for the BES (2024 and 2025 PDFs) and an English fees page all answer 404 at the addresses search gives; ind.nl's Caribbean Netherlands work page answers 404.",
+    "official-register": "decree: none | Retry 2026-11-01: Wet arbeid vreemdelingen BES (Stb. 2010, 371, saved) and Stcrt. 2021, 30060 (saved) re-read: no fee for a tewerkstellingsvergunning, no union step, no performer criterion beyond the 'artiest, musicus' provision.",
+    "web-search": "run: none | Retry 2026-11-01: 'tewerkstellingsvergunning BES Unit Werk en Inkomen leges kosten aanvraag Bonaire 2026' and 'IND Caribisch Nederland verblijfsvergunning arbeid in loondienst leges USD Bonaire tarieven 2026' (2026-11-01): fee schedules exist for IND residence permits in USD, none for the TWV; the PDFs found answer 404.",
+    "trade-press": "none | Retry 2026-11-01: Rivermate's BES guide names no primary; not used.",
+    "archive": "none | Retry 2026-11-01: web.archive.org resets (2026-11-01)."
+   }
+  },
+  {
+   "field": "eligibility",
+   "sought": "criteria for a performer",
+   "tried": {
+    "institution": "none | Retry 2026-11-01: rijksdienstcn.com: the SZW work-permit brochure (2022-02-22 PDF) and the IND fee schedules for the BES (2024 and 2025 PDFs) and an English fees page all answer 404 at the addresses search gives; ind.nl's Caribbean Netherlands work page answers 404.",
+    "official-register": "decree: none beyond the labour-market test | Retry 2026-11-01: Wet arbeid vreemdelingen BES (Stb. 2010, 371, saved) and Stcrt. 2021, 30060 (saved) re-read: no fee for a tewerkstellingsvergunning, no union step, no performer criterion beyond the 'artiest, musicus' provision.",
+    "web-search": "run: none | Retry 2026-11-01: 'tewerkstellingsvergunning BES Unit Werk en Inkomen leges kosten aanvraag Bonaire 2026' and 'IND Caribisch Nederland verblijfsvergunning arbeid in loondienst leges USD Bonaire tarieven 2026' (2026-11-01): fee schedules exist for IND residence permits in USD, none for the TWV; the PDFs found answer 404.",
+    "trade-press": "none | Retry 2026-11-01: Rivermate's BES guide names no primary; not used.",
+    "archive": "none | Retry 2026-11-01: web.archive.org resets (2026-11-01)."
+   }
+  }
+ ]
+}

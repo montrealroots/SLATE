@@ -1,0 +1,32 @@
+{
+ "country": "SZ",
+ "read": "2026-11-01",
+ "route": null,
+ "routeChanged": false,
+ "permit": {
+  "applies": null,
+  "first": null,
+  "fees": [],
+  "processing": null,
+  "validity": null,
+  "union": null,
+  "eligibility": null,
+  "pay": null,
+  "exempt": null
+ },
+ "sources": [],
+ "blockers": [
+  {
+   "field": "country",
+   "sought": "the permit a foreign film, television or stage performer must hold to be engaged in Eswatini (route, fees, processing, term)",
+   "tried": {
+    "institution": "gov.sz (the Ministry of Home Affairs and its Immigration Department) does not answer this client (connection failure, 2026-11-01; reset on 2026-10-29) | 2026-11-01 retry: gov.sz/index.php/services-sp-22242747/visa (the Ministry of Home Affairs' visa page, which search snippets say sends work to a Temporary Residence Permit) resets the connection (curl: (35), 2026-11-01).",
+    "official-register": "eswatinilii.org answers 403 for the Immigration Act 1982 (akn/sz/act/1982/17); its search page loads but its documents refuse | 2026-11-01 retry: eswatinilii.org documents refuse (403) as before; no other register holds the Immigration Act 1982 as text reachable here.",
+    "web-search": "'Eswatini work permit Temporary Residence Permit Immigration Department requirements fee E foreign artist performer permit Ministry of Home Affairs' (2026-11-01): only employer-of-record and aggregator pages (Playroll, G-P, Visa Atlas, africarrieres), none quoting a primary; a second search was refused because the session's web-search budget was spent | 2026-11-01 retry: 'Eswatini Immigration Act 1982 temporary residence permit work fee Emalangeni Ministry of Home Affairs gov.sz requirements' (2026-11-01): Playroll, Visa Atlas, Rivermate, Velocity Global, G-P, africarrieres only; no primary, no fee.",
+    "trade-press": "the gov.uk 'Living in Eswatini' guidance (read 2026-11-01) says nothing on permits beyond 'contact your destination country's immigration authority'; not saved since it holds no fact | 2026-11-01 retry: gov.uk 'Living in Eswatini' fetched and saved (SZ-govuk.html): no permit fact; aggregators name Form 3 and a committee decision without a primary.",
+    "archive": "not reached in this pass | 2026-11-01 retry: web.archive.org: connection reset from this environment (2026-11-01)."
+   }
+  }
+ ],
+ "note": "Eswatini is a blocker for the country, as in layer 3 (register R-1660): no published rule on what a foreign performer must hold was reached. Employer-of-record guides speak of a temporary residence permit for an employee on Form 3 at the Ministry of Home Affairs, without a primary source, so nothing is modelled."
+}

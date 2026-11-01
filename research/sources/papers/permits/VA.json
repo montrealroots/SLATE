@@ -1,0 +1,32 @@
+{
+ "country": "VA",
+ "read": "2026-11-01",
+ "route": null,
+ "routeChanged": false,
+ "permit": {
+  "applies": null,
+  "first": null,
+  "fees": null,
+  "processing": null,
+  "validity": null,
+  "union": null,
+  "eligibility": null,
+  "pay": null,
+  "exempt": null
+ },
+ "sources": [],
+ "blockers": [
+  {
+   "field": "country",
+   "sought": "What Vatican City asks of a performer from elsewhere to work there (layer 3 R-1650)",
+   "tried": {
+    "institution": "vaticanstate.va and ulsa.va answer with nothing on foreign workers or performers (layer 3). 2026-11-01: vaticanstate.va/it/ answers; no labour or foreigners' work page linked. || Retry 2026-11-01: vatican.va's Labour Office (ULSA) index answers; its regulations concern the Holy See's own staff, nothing on a foreign performer's engagement.",
+    "official-register": "The Governorate's legislation lists (fundamental law of 31 July 2026, 2011 law on citizenship, residence and access): nothing on a performer's right to work (layer 3). || Retry 2026-11-01: WIPO Lex and the Governorate's norms: the 2011 law on citizenship, residence and access only; vaticanstate.va's norms page answers 404.",
+    "web-search": "2026-11-01: web search unavailable (the session's shared WebSearch budget was used up), so no new search was run; layer 3 found recruiters' pages and the 2011 access law only. || Retry 2026-11-01: WebSearch 'Stato della Città del Vaticano legge lavoro dipendenti stranieri permesso di soggiorno lavoro Governatorato norme accesso' (in Italian): Il Post, Linkiesta and money.it on Vatican employees, ULSA regulations; no permit for outside performers.",
+    "trade-press": "Vatican News, L'Osservatore Romano (layer 3): nothing. || Retry 2026-11-01: Il Post (May 2025) and Linkiesta on Vatican employment: no work permit regime described.",
+    "archive": "web.archive.org refuses this environment; the live sites were read instead. || Retry 2026-11-01: archive.org's availability API (archive.org/wayback/available) answers this client, but every web.archive.org snapshot URL resets the connection (curl: (35) Recv failure: Connection reset by peer, retried 2026-11-01)."
+   }
+  }
+ ],
+ "note": "No published rule reached for this country: a blocker for the country, as at layer 3 (register R-1650). The game should say a performer's permission to work here isn't modelled."
+}

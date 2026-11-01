@@ -1,0 +1,73 @@
+{
+ "country": "BJ",
+ "read": "2026-11-01",
+ "route": "Permis de travail (ministre chargé du travail)",
+ "routeChanged": false,
+ "permit": {
+  "applies": "The application is made online on service-public.bj (procedure PS00403); the Labour Code does not say whether by the employer or the worker.",
+  "first": "A fixed-term employment contract, which the labour administration endorses (visa du contrat) on the work permit.",
+  "fees": [
+   {
+    "what": "Work permit (service-public.bj PS00403, as reported in 2021)",
+    "amount": "50000",
+    "currency": "XOF"
+   }
+  ],
+  "processing": {
+   "standard": {
+    "n": 30,
+    "unit": "days"
+   },
+   "premium": null
+  },
+  "validity": {
+   "n": 12,
+   "unit": "months",
+   "renewable": true
+  },
+  "union": null,
+  "eligibility": null,
+  "pay": null,
+  "exempt": null
+ },
+ "sources": [
+  {
+   "url": "https://sgg.gouv.bj/doc/loi-98-004/download",
+   "title": "Loi n° 98-004 du 27 janvier 1998 portant Code du travail (Secrétariat général du Gouvernement)",
+   "read": "2026-11-01",
+   "said": "Article 27 : Le visa du contrat du travailleur étranger ou immigrant est subordonné à la présentation d'un permis de travail délivré par le ministre chargé du travail. Article 28 : Le permis de travail est temporaire. n est délivré pour une durée de douze mois; il peut être renouvelé plusieurs fois",
+   "kind": "primary",
+   "fields": [
+    "first",
+    "validity"
+   ]
+  },
+  {
+   "url": "https://beninwebtv.bj/benin-le-permis-de-travail-delivre-en-ligne-aux-travailleurs-etrangers/",
+   "title": "Benin Web TV, Bénin: le permis de travail délivré en ligne aux travailleurs étrangers (2021)",
+   "read": "2026-11-01",
+   "said": "La demande pour l’obtention du permis de travail en République du Bénin se fait sur la plateforme ci-après: https://service-public.bj/public/services/service/PS00403 … La durée de l’obtention estimée est de 30 jours et le coût du service : 50 000 FCFA.",
+   "kind": "secondary",
+   "quotes": "https://service-public.bj/public/services/service/PS00403",
+   "fields": [
+    "applies",
+    "fees",
+    "processing"
+   ]
+  }
+ ],
+ "blockers": [
+  {
+   "field": "eligibility",
+   "sought": "Criteria a performer must meet",
+   "tried": {
+    "institution": "service-public.bj PS00403 renders by script (empty to this client); Labour Code gives only the economy's-needs refusal ground.",
+    "official-register": "Labour Code read; no implementing decree read.",
+    "web-search": "'Bénin permis de travail étranger coût FCFA visa contrat de travail ministère du travail délai service-public.bj': guides only.",
+    "trade-press": "Benin Web TV 2021 (procedure, no criteria).",
+    "archive": "Not tried."
+   }
+  }
+ ],
+ "note": "Labour Code (Law 98-004), arts. 26–29, read in the Government Secretariat's scanned text (its OCR errors are quoted as they stand): the contract of a foreign worker is endorsed only on a work permit the Minister of Labour issues, for twelve months, renewable several times, which the Minister may refuse where the qualification does not meet the economy's needs; in the first two years a foreigner works only on fixed-term contracts. The fee (50,000 FCFA) and the 30-day estimate are from a 2021 press report quoting the service-public.bj procedure PS00403, whose page renders by script and shows nothing to this client. ECOWAS citizens work as nationals do (layer 3's ecowas list)."
+}

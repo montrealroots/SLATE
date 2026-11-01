@@ -1,0 +1,121 @@
+{
+ "country": "FK",
+ "read": "2026-11-01",
+ "route": "Work permit",
+ "routeChanged": false,
+ "permit": {
+  "applies": "The worker applies (Form 3, by email to Customs & Immigration) from outside the Islands; the prospective employer sponsors and answers for full repatriation costs.",
+  "first": "The vacancy advertised in the Falkland Islands for at least 7 days, and Customs & Immigration satisfied that no Falkland Islands Status or Permanent Residence Permit holder is suitable and available.",
+  "fees": [],
+  "processing": {
+   "standard": {
+    "n": 8,
+    "unit": "business-days"
+   },
+   "premium": null
+  },
+  "validity": {
+   "n": 4,
+   "unit": "years",
+   "renewable": true
+  },
+  "union": null,
+  "eligibility": null,
+  "pay": null,
+  "exempt": null
+ },
+ "sources": [
+  {
+   "url": "https://www.gov.fk/customs/work-permit/",
+   "title": "Falkland Islands Government, Customs & Immigration: Work Permit",
+   "read": "2026-11-01",
+   "said": "A work permit is ordinarily valid for the length of the individual’s contract and is job and employer specific. The period of validity of a work permit may be extended but must not exceed four years in total. … The employment vacancy to have been advertised sufficiently well in the Falkland Islands (in any case for at least 7 days). To satisfy the Customs & Immigration Service that there are no ‘Falkland Islands Status holders’ or ‘Falkland Islands Permanent Residence Permit holders’ suitable and available to fill such vacancy. Be prepared and to signify sponsorship and responsibility for full repatriation costs of the individual",
+   "kind": "primary",
+   "fields": [
+    "first",
+    "validity",
+    "applies"
+   ]
+  },
+  {
+   "url": "https://www.gov.fk/customs/wp-content/uploads/sites/8/2025/09/Form-3-Work-Permit-1.pdf",
+   "title": "Falkland Islands Customs & Immigration, Form 3: Application for Work Permit (September 2025)",
+   "read": "2026-11-01",
+   "said": "An application fee is payable. A fee will be charged for an extension of an existing permit. All applications should be submitted via email to permits@customs.gov.fk … We aim to process complete applications within eight working days.",
+   "kind": "primary",
+   "fields": [
+    "processing",
+    "applies",
+    "fees"
+   ]
+  },
+  {
+   "url": "https://www.gov.fk/customs/faq/",
+   "title": "Falkland Islands Government, Customs and Immigration: FAQ & General Information",
+   "read": "2026-11-01",
+   "said": "Ordinarily no, in the first instance work permits must be applied for from outside of the Falklands. Visitors cannot apply for work permits from within the Falklands. However, where it is obvious that there are no permanent residents available to fill a vacancy, the Principal Immigration Officer may authorise a visitor to work under the authority of a “short term work permission”. Current rules only allow a visitor to work in the Islands for a maximum of three months in aggregate in any period of twelve months.",
+   "kind": "primary",
+   "fields": [
+    "exempt"
+   ]
+  }
+ ],
+ "blockers": [
+  {
+   "field": "fees",
+   "sought": "The work permit fee in pounds",
+   "tried": {
+    "institution": "Form 3 says 'An application fee is payable' without the amount; the permits pages (gov.fk/customs/permits/, ?p=331) carry no amount in the page served to this client (the search engine's summary shows £40 an application and £20 an extension, not found in the saved pages, so not used). || Retry 2026-11-01: gov.fk/customs/?p=331, ?p=446, ?p=460, /permits/ and the work permit page re-fetched: the fee table shown in search snippets (£40 an application, £20 an extension) is not in the pages served to this client; Form 3 (v1.5, September 2025) states only that a fee is payable.",
+    "official-register": "The Immigration Ordinance and regulations on the FIG legislation site not reached in this pass. || Retry 2026-11-01: The Immigration Ordinance 1999 and its regulations on the FIG legislation site not reached; EXCO's February 2026 forward plan surfaced, no fee text.",
+    "web-search": "'Falkland Islands work permit application fee £ Immigration Regulations fees schedule processing time'. || Retry 2026-11-01: WebSearch 'Falkland Islands Immigration (Fees) Regulations work permit fee £ gov.fk legislation' and '\"Falkland Islands\" \"work permit\" fee \"£\" application extension Customs Immigration 2025 2026 permit fees page': gov.fk pages and wheretoemigrate.io (GBP 80 from 1 July 2026, unconfirmed).",
+    "trade-press": "wheretoemigrate.io (aggregator, quotes no primary): not used. || Retry 2026-11-01: Fragomen's Falklands page (vacancies advertised first); FITV 'Falklands in Focus'; no fee with a primary.",
+    "archive": "web.archive.org resets the connection from this environment (2026-11-01). || Retry 2026-11-01: archive.org's availability API (archive.org/wayback/available) answers this client, but every web.archive.org snapshot URL resets the connection (curl: (35) Recv failure: Connection reset by peer, retried 2026-11-01)."
+   }
+  },
+  {
+   "field": "union",
+   "sought": "Any union consultation",
+   "tried": {
+    "institution": "None named on the work permit page or Form 3. || Retry 2026-11-01: gov.fk/customs/?p=331, ?p=446, ?p=460, /permits/ and the work permit page re-fetched: the fee table shown in search snippets (£40 an application, £20 an extension) is not in the pages served to this client; Form 3 (v1.5, September 2025) states only that a fee is payable.",
+    "official-register": "Not found. || Retry 2026-11-01: The Immigration Ordinance 1999 and its regulations on the FIG legislation site not reached; EXCO's February 2026 forward plan surfaced, no fee text.",
+    "web-search": "Same search. || Retry 2026-11-01: WebSearch 'Falkland Islands Immigration (Fees) Regulations work permit fee £ gov.fk legislation' and '\"Falkland Islands\" \"work permit\" fee \"£\" application extension Customs Immigration 2025 2026 permit fees page': gov.fk pages and wheretoemigrate.io (GBP 80 from 1 July 2026, unconfirmed).",
+    "trade-press": "None found. || Retry 2026-11-01: Fragomen's Falklands page (vacancies advertised first); FITV 'Falklands in Focus'; no fee with a primary.",
+    "archive": "web.archive.org resets the connection from this environment (2026-11-01). || Retry 2026-11-01: archive.org's availability API (archive.org/wayback/available) answers this client, but every web.archive.org snapshot URL resets the connection (curl: (35) Recv failure: Connection reset by peer, retried 2026-11-01)."
+   }
+  },
+  {
+   "field": "eligibility",
+   "sought": "The performer's criteria",
+   "tried": {
+    "institution": "The page lists only general requirements (form, accommodation, criminal record, medical); nothing for performers. || Retry 2026-11-01: gov.fk/customs/?p=331, ?p=446, ?p=460, /permits/ and the work permit page re-fetched: the fee table shown in search snippets (£40 an application, £20 an extension) is not in the pages served to this client; Form 3 (v1.5, September 2025) states only that a fee is payable.",
+    "official-register": "Not found. || Retry 2026-11-01: The Immigration Ordinance 1999 and its regulations on the FIG legislation site not reached; EXCO's February 2026 forward plan surfaced, no fee text.",
+    "web-search": "Same search. || Retry 2026-11-01: WebSearch 'Falkland Islands Immigration (Fees) Regulations work permit fee £ gov.fk legislation' and '\"Falkland Islands\" \"work permit\" fee \"£\" application extension Customs Immigration 2025 2026 permit fees page': gov.fk pages and wheretoemigrate.io (GBP 80 from 1 July 2026, unconfirmed).",
+    "trade-press": "None found. || Retry 2026-11-01: Fragomen's Falklands page (vacancies advertised first); FITV 'Falklands in Focus'; no fee with a primary.",
+    "archive": "web.archive.org resets the connection from this environment (2026-11-01). || Retry 2026-11-01: archive.org's availability API (archive.org/wayback/available) answers this client, but every web.archive.org snapshot URL resets the connection (curl: (35) Recv failure: Connection reset by peer, retried 2026-11-01)."
+   }
+  },
+  {
+   "field": "pay",
+   "sought": "A minimum pay rule",
+   "tried": {
+    "institution": "None named. || Retry 2026-11-01: gov.fk/customs/?p=331, ?p=446, ?p=460, /permits/ and the work permit page re-fetched: the fee table shown in search snippets (£40 an application, £20 an extension) is not in the pages served to this client; Form 3 (v1.5, September 2025) states only that a fee is payable.",
+    "official-register": "Not found. || Retry 2026-11-01: The Immigration Ordinance 1999 and its regulations on the FIG legislation site not reached; EXCO's February 2026 forward plan surfaced, no fee text.",
+    "web-search": "Same search. || Retry 2026-11-01: WebSearch 'Falkland Islands Immigration (Fees) Regulations work permit fee £ gov.fk legislation' and '\"Falkland Islands\" \"work permit\" fee \"£\" application extension Customs Immigration 2025 2026 permit fees page': gov.fk pages and wheretoemigrate.io (GBP 80 from 1 July 2026, unconfirmed).",
+    "trade-press": "None found. || Retry 2026-11-01: Fragomen's Falklands page (vacancies advertised first); FITV 'Falklands in Focus'; no fee with a primary.",
+    "archive": "web.archive.org resets the connection from this environment (2026-11-01). || Retry 2026-11-01: archive.org's availability API (archive.org/wayback/available) answers this client, but every web.archive.org snapshot URL resets the connection (curl: (35) Recv failure: Connection reset by peer, retried 2026-11-01)."
+   }
+  },
+  {
+   "field": "exempt",
+   "sought": "An engagement short enough to need no permit",
+   "tried": {
+    "institution": "The FAQ's short term work permission is itself authorised by the Principal Immigration Officer: no days free of asking. || Retry 2026-11-01: gov.fk/customs/?p=331, ?p=446, ?p=460, /permits/ and the work permit page re-fetched: the fee table shown in search snippets (£40 an application, £20 an extension) is not in the pages served to this client; Form 3 (v1.5, September 2025) states only that a fee is payable.",
+    "official-register": "Not found. || Retry 2026-11-01: The Immigration Ordinance 1999 and its regulations on the FIG legislation site not reached; EXCO's February 2026 forward plan surfaced, no fee text.",
+    "web-search": "Same search. || Retry 2026-11-01: WebSearch 'Falkland Islands Immigration (Fees) Regulations work permit fee £ gov.fk legislation' and '\"Falkland Islands\" \"work permit\" fee \"£\" application extension Customs Immigration 2025 2026 permit fees page': gov.fk pages and wheretoemigrate.io (GBP 80 from 1 July 2026, unconfirmed).",
+    "trade-press": "None found. || Retry 2026-11-01: Fragomen's Falklands page (vacancies advertised first); FITV 'Falklands in Focus'; no fee with a primary.",
+    "archive": "web.archive.org resets the connection from this environment (2026-11-01). || Retry 2026-11-01: archive.org's availability API (archive.org/wayback/available) answers this client, but every web.archive.org snapshot URL resets the connection (curl: (35) Recv failure: Connection reset by peer, retried 2026-11-01)."
+   }
+  }
+ ],
+ "note": "A visitor already in the Islands may be let work on a short term work permission (at most three months in twelve) where no resident can fill the vacancy; it is a permission the Principal Immigration Officer gives, so no days are free of asking."
+}

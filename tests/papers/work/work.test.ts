@@ -57,7 +57,7 @@ describe('work', () => {
     // Saint-Pierre-et-Miquelon asks even the EU's citizens for a work authorisation, a performer's three months excepted;
     // the French are home. The TAAF ask the French too.
     expect([work('DE', 'PM'), work('FR', 'PM'), work('RE', 'TF')]).toStrictEqual([
-      { right: 'permit', route: 'Autorisation de travail', days: 90 },
+      { right: 'permit', route: 'Autorisation provisoire de travail (emploi direct)', days: 90 },
       'home',
       { right: 'permit', route: 'Autorisation du préfet, administrateur supérieur des TAAF' },
     ]);
@@ -67,7 +67,7 @@ describe('work', () => {
       { right: 'free' },
       { right: 'free' },
       { right: 'free' },
-      { right: 'permit', route: 'Leje unike' },
+      { right: 'permit', route: 'Leje unike për kategori të veçanta' },
     ]);
     expect([work('US', 'RS'), work('RU', 'BY'), work('DE', 'UA')]).toStrictEqual([
       { right: 'permit', route: 'Jedinstvena dozvola', days: 90, within: 180 },
@@ -88,6 +88,16 @@ describe('work', () => {
     // that state's passport (France's, in the eea list); and in a territory of their own state that the list doesn't name.
     expect([work('DE', 'DE'), work('GP', 'FR'), work('JE', 'JE'), work('GP', 'GP'), work('GU', 'US'), work('US', 'GU'), work('PR', 'GU')]).toEqual(['home', 'home', 'home', 'home', 'home', 'home', 'home']);
     expect(work('US', 'AQ')).toBeUndefined();
+    // Corrected from the permit research (2026-11-01): Finland's artists' 90 days in 180, the Netherlands' six weeks in
+    // thirteen, St Helena's 182 days in a year, Austria's eight weeks of a production; and Botswana, the Central African
+    // Republic and Libya, whose rules it found, ask every foreign worker for their permit.
+    expect([work('US', 'FI'), work('US', 'NL'), work('US', 'SH'), work('US', 'AT')]).toMatchObject([{ days: 90, within: 180 }, { days: 42, within: 91 }, { days: 182, within: 365 }, { days: 56 }]);
+    expect([keepsWork('BW'), keepsWork('CF'), keepsWork('LY'), keepsWork('SA'), keepsWork('TG')]).toEqual([true, true, true, false, false]);
+    expect([work('US', 'BW'), work('FR', 'CF'), work('EG', 'LY')]).toStrictEqual([
+      { right: 'permit', route: 'Work permit (Employment of Non-Citizens Act), with the residence permit' },
+      { right: 'permit', route: "Visa du contrat de travail (the Minister in charge of Employment's visa on the contract or letter of engagement of a non-Central African worker; Code du travail, loi n° 09.004, art. 100)" },
+      { right: 'permit', route: 'Permit for recruiting foreign labour (Ministry of Labour and Rehabilitation), then an entry visa for residence and work (Decree No. 212 of 2009; Labour Relations Law No. 12 of 2010)' },
+    ]);
   });
 
   it("tell the player what the game doesn't know", () => {

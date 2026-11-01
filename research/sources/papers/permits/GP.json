@@ -1,0 +1,113 @@
+{
+ "country": "GP",
+ "read": "2026-11-01",
+ "route": "Carte de séjour pluriannuelle « talent – profession artistique et culturelle » (France's, which applies in Guadeloupe)",
+ "routeChanged": false,
+ "permit": {
+  "applies": "The performer applies: from abroad, to the French consulate for a long-stay visa marked « talent », validated online (ANEF); in France, online on ANEF; the prefecture issues the card. The employer needs no work authorisation and pays no employer tax",
+  "first": "One or more employment contracts totalling 3 months or more in 12, with businesses whose main activity is creating or exploiting works of the mind",
+  "fees": [
+   {
+    "what": "Droit de timbre on issue of the card",
+    "amount": "50.00",
+    "currency": "EUR"
+   },
+   {
+    "what": "Taxe on issue of the card",
+    "amount": "300.00",
+    "currency": "EUR"
+   }
+  ],
+  "processing": {
+   "standard": null,
+   "premium": null
+  },
+  "validity": {
+   "n": 4,
+   "unit": "years",
+   "renewable": true
+  },
+  "union": null,
+  "eligibility": "\"si vous êtes artiste-interprète ou auteur d'œuvre littéraire ou artistique\"",
+  "pay": "Resources of at least 70% of the full-time gross SMIC per month of stay (EUR 1,306.91), at least 51% of it from the artistic activity.",
+  "exempt": {
+   "days": 90,
+   "within": null
+  }
+ },
+ "sources": [
+  {
+   "url": "https://www.service-public.gouv.fr/particuliers/vosdroits/F16922",
+   "title": "Service-Public.fr, Carte talent : carte de séjour pluriannuelle d'un étranger en France (vérifié le 1er juin 2026)",
+   "read": "2026-11-01",
+   "said": "La carte de séjour « talent-profession artistique et culturelle » vous autorise à séjourner en France. Elle vous autorise à exercer une activité professionnelle salariée et/ou non salariée. Dans le cadre de votre activité salariée, votre employeur n'a pas à demander d'autorisation de travail et est exonéré du paiement de la taxe pour l’emploi d’un ressortissant étranger. … Vous pouvez obtenir une carte de séjour «talent-profession artistique et culturelle» si vous êtes artiste-interprète ou auteur d'œuvre littéraire ou artistique et si vous remplissez les conditions suivantes : Justifier de ressources au moins égales à 70 % du SMIC brut à temps plein par mois de séjour en France, soit 1 306,91 € dont au moins 51 % provenant de votre activité d'artiste-interprète ou d'auteur d'une œuvre littéraire ou artistique Si vous exercez une activité salariée : justifier d’1 ou plusieurs contrats de travail pour une durée totale cumulée de 3 mois ou plus sur une période de 12 mois, conclus avec 1 ou plusieurs entreprises ou établissements dont l’activité principale est la création ou l’exploitation d’œuvres de l’esprit. … Si la carte de séjour vous est attribuée, vous devez régler 350 € (droit de timbre de 50 € + taxe de 300 € ) par timbres fiscaux . … La carte est valable pour une durée identique à celle du contrat de travail dans la limite d'une durée maximale de 4 ans. … Vous devez déposer votre demande de titre de séjour sur internet au plus tôt 4 mois et au plus tard 2 mois avant la fin de validité de votre document de séjour",
+   "kind": "primary",
+   "fields": [
+    "route",
+    "applies",
+    "first",
+    "eligibility",
+    "pay",
+    "fees",
+    "validity"
+   ]
+  },
+  {
+   "url": "https://entreprendre.service-public.gouv.fr/vosdroits/F2728",
+   "title": "Service-Public.fr (Entreprendre), Autorisation de travail d'un salarié étranger en France (vérifié le 18 juin 2026)",
+   "read": "2026-11-01",
+   "said": "Séjour en France pour une durée inférieure ou égale à 3 mois Les règles sont différentes selon le motif du court séjour : Manifestations sportives, culturelles, artistiques et scientifiques L'étranger peut travailler. L'employeur est dispensé de demander une autorisation de travail. … Production et diffusion cinématographiques, audiovisuelles, du spectacle et de l'édition phonographique, en tant qu'artiste ou personnel technique L'étranger peut travailler. L'employeur est dispensé de demander une autorisation de travail.",
+   "kind": "primary",
+   "fields": [
+    "exempt"
+   ]
+  }
+ ],
+ "blockers": [
+  {
+   "field": "processing",
+   "sought": "the prefecture's decision time (the page gives only a 4-month implied refusal)",
+   "tried": {
+    "institution": "F16922 read",
+    "official-register": "CESEDA not read",
+    "web-search": "not run",
+    "trade-press": "none",
+    "archive": "none"
+   }
+  },
+  {
+   "field": "validity",
+   "sought": "the artistic card's own maximum (the 4-year sentence sits in the talent page's shared steps; not separable with certainty for this mention)",
+   "tried": {
+    "institution": "F16922 read",
+    "official-register": "CESEDA L. 421-20 not read",
+    "web-search": "not run",
+    "trade-press": "none",
+    "archive": "none"
+   }
+  },
+  {
+   "field": "union",
+   "sought": "union consultation",
+   "tried": {
+    "institution": "none named",
+    "official-register": "not read",
+    "web-search": "not run",
+    "trade-press": "none",
+    "archive": "none"
+   }
+  },
+  {
+   "field": "exempt.within",
+   "sought": "a period for the 3-month short stay",
+   "tried": {
+    "institution": "F2728: a stay of 3 months or less",
+    "official-register": "Code du travail D. 5221-2-1 not read",
+    "web-search": "not run",
+    "trade-press": "none",
+    "archive": "none"
+   }
+  }
+ ],
+ "note": "Read from France's service-public pages; layer 3 holds that the French entry and residence code applies in Guadeloupe. EEA and Swiss nationals work freely."
+}

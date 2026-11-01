@@ -1,0 +1,112 @@
+{
+ "country": "BI",
+ "read": "2026-11-01",
+ "route": "Visa d'établissement ordinaire",
+ "routeChanged": false,
+ "permit": {
+  "applies": "The foreigner applies to the Commissaire Général des Migrations, by a letter of request the Commissariat approves.",
+  "first": "An employment contract, a service certificate and the deed of engagement (for an employee), or a tax number and trade registration (for any profit-making activity), and at least six months already spent in Burundi.",
+  "fees": [
+   {
+    "what": "Visa d'établissement ordinaire",
+    "amount": "500.00",
+    "currency": "USD"
+   }
+  ],
+  "processing": null,
+  "validity": {
+   "n": 2,
+   "unit": "years",
+   "renewable": null
+  },
+  "union": null,
+  "eligibility": null,
+  "pay": null,
+  "exempt": null
+ },
+ "sources": [
+  {
+   "url": "https://migration.gov.bi/Services",
+   "title": "Commissariat Général des Migrations (Burundi), Services: types de visa octroyés",
+   "read": "2026-11-01",
+   "said": "Visa d'établissement ordinaire Documents exigés: Lettre de demande adressée au Commissaire Général des Migrations approuvée Photocopie du passeport Photocopie du visa en cours Photo passeport Avoir passé au moins 6 mois sur le sol burundais Contrat de travail, Attestation de service et Acte … Tarif: 500 USD Validité: 2 ans",
+   "kind": "primary",
+   "fields": [
+    "route",
+    "applies",
+    "first",
+    "fees",
+    "validity"
+   ]
+  }
+ ],
+ "blockers": [
+  {
+   "field": "processing",
+   "sought": "How long the Commissariat or the Labour Ministry takes to decide",
+   "tried": {
+    "institution": "migration.gov.bi Services page: no time stated. | Retry 2026-11-01: migration.gov.bi/Services re-read: the establishment visa line gives fee and two-year validity only; no decision time, renewal rule, performer criteria, pay rule or exemption.",
+    "official-register": "Code du travail 2020 (Loi n° 1/11 du 24 novembre 2020) not reached as an official text; NATLEX entries found give metadata only. | Retry 2026-11-01: natlex.ilo.org (records 97070, 110662, 53736 surfaced by search) answers 403 to this client; assemblee.bi surfaced only the 2020 Code de la protection sociale, not the labour code; no official text of the Code du travail's foreign-worker articles reached.",
+    "web-search": "'Burundi permis de travail travailleur étranger ministère de la fonction publique travail emploi code du travail 2020 article'; commercial guides (AfriCarrières, Atlas HXM) only, which cite no article. | Retry 2026-11-01: '\"Loi n°1/11 du 24 novembre 2020\" code du travail Burundi pdf \"permis de travail\" étranger'; 'code du travail Burundi 2020 texte intégral pdf \"travailleurs étrangers\" article \"carte de travail\" OR \"permis de travail\" site:bi': commercial guides only (Atlas HXM: two years, renew a month before expiry; AfriCarrières: a temporary category up to 12 months), neither citing an article.",
+    "trade-press": "La Base Lextenso's 2021 note on the Code (abstract only) gives no procedure. | Retry 2026-11-01: Bulletin de Justice No 81 (May 2025, sostortureburundi.org) cites a 'Loi N°1/11 du 24 novembre 2024' revising the 1993 decree-law, conflicting with the 2020 date; no permit procedure.",
+    "archive": "web.archive.org tried for the authority's page: the connection resets from this environment (curl: (35) Recv failure: Connection reset by peer, 2026-11-01); no snapshot read. | Retry 2026-11-01: web.archive.org: no connection from this environment (HTTP 000, 2026-11-01)."
+   }
+  },
+  {
+   "field": "validity",
+   "sought": "Whether the establishment visa is renewable",
+   "tried": {
+    "institution": "migration.gov.bi: gives 'Validité: 2 ans' and a transfer procedure, not renewal. | Retry 2026-11-01: migration.gov.bi/Services re-read: the establishment visa line gives fee and two-year validity only; no decision time, renewal rule, performer criteria, pay rule or exemption.",
+    "official-register": "As above. | Retry 2026-11-01: natlex.ilo.org (records 97070, 110662, 53736 surfaced by search) answers 403 to this client; assemblee.bi surfaced only the 2020 Code de la protection sociale, not the labour code; no official text of the Code du travail's foreign-worker articles reached.",
+    "web-search": "'Burundi permis de travail travailleur étranger ministère de la fonction publique travail emploi code du travail 2020 article'; commercial guides (AfriCarrières, Atlas HXM) only, which cite no article. | Retry 2026-11-01: '\"Loi n°1/11 du 24 novembre 2020\" code du travail Burundi pdf \"permis de travail\" étranger'; 'code du travail Burundi 2020 texte intégral pdf \"travailleurs étrangers\" article \"carte de travail\" OR \"permis de travail\" site:bi': commercial guides only (Atlas HXM: two years, renew a month before expiry; AfriCarrières: a temporary category up to 12 months), neither citing an article.",
+    "trade-press": "None. | Retry 2026-11-01: Bulletin de Justice No 81 (May 2025, sostortureburundi.org) cites a 'Loi N°1/11 du 24 novembre 2024' revising the 1993 decree-law, conflicting with the 2020 date; no permit procedure.",
+    "archive": "web.archive.org tried for the authority's page: the connection resets from this environment (curl: (35) Recv failure: Connection reset by peer, 2026-11-01); no snapshot read. | Retry 2026-11-01: web.archive.org: no connection from this environment (HTTP 000, 2026-11-01)."
+   }
+  },
+  {
+   "field": "union",
+   "sought": "Any union or arts-body step for a foreign performer",
+   "tried": {
+    "institution": "migration.gov.bi: none listed. | Retry 2026-11-01: migration.gov.bi/Services re-read: the establishment visa line gives fee and two-year validity only; no decision time, renewal rule, performer criteria, pay rule or exemption.",
+    "official-register": "Code du travail 2020 not read. | Retry 2026-11-01: natlex.ilo.org (records 97070, 110662, 53736 surfaced by search) answers 403 to this client; assemblee.bi surfaced only the 2020 Code de la protection sociale, not the labour code; no official text of the Code du travail's foreign-worker articles reached.",
+    "web-search": "'Burundi permis de travail travailleur étranger ministère de la fonction publique travail emploi code du travail 2020 article'; commercial guides (AfriCarrières, Atlas HXM) only, which cite no article. | Retry 2026-11-01: '\"Loi n°1/11 du 24 novembre 2020\" code du travail Burundi pdf \"permis de travail\" étranger'; 'code du travail Burundi 2020 texte intégral pdf \"travailleurs étrangers\" article \"carte de travail\" OR \"permis de travail\" site:bi': commercial guides only (Atlas HXM: two years, renew a month before expiry; AfriCarrières: a temporary category up to 12 months), neither citing an article.",
+    "trade-press": "None. | Retry 2026-11-01: Bulletin de Justice No 81 (May 2025, sostortureburundi.org) cites a 'Loi N°1/11 du 24 novembre 2024' revising the 1993 decree-law, conflicting with the 2020 date; no permit procedure.",
+    "archive": "web.archive.org tried for the authority's page: the connection resets from this environment (curl: (35) Recv failure: Connection reset by peer, 2026-11-01); no snapshot read. | Retry 2026-11-01: web.archive.org: no connection from this environment (HTTP 000, 2026-11-01)."
+   }
+  },
+  {
+   "field": "exempt",
+   "sought": "A short engagement needing no permit (a commercial site mentions a special authorisation under 90 days, citing no text)",
+   "tried": {
+    "institution": "migration.gov.bi: none listed. | Retry 2026-11-01: migration.gov.bi/Services re-read: the establishment visa line gives fee and two-year validity only; no decision time, renewal rule, performer criteria, pay rule or exemption.",
+    "official-register": "Code du travail 2020 and its decrees not read. | Retry 2026-11-01: natlex.ilo.org (records 97070, 110662, 53736 surfaced by search) answers 403 to this client; assemblee.bi surfaced only the 2020 Code de la protection sociale, not the labour code; no official text of the Code du travail's foreign-worker articles reached.",
+    "web-search": "'Burundi permis de travail travailleur étranger ministère de la fonction publique travail emploi code du travail 2020 article'; commercial guides (AfriCarrières, Atlas HXM) only, which cite no article. wheretoemigrate.io's 'special work authorisation up to 90 days' cites no source. | Retry 2026-11-01: '\"Loi n°1/11 du 24 novembre 2020\" code du travail Burundi pdf \"permis de travail\" étranger'; 'code du travail Burundi 2020 texte intégral pdf \"travailleurs étrangers\" article \"carte de travail\" OR \"permis de travail\" site:bi': commercial guides only (Atlas HXM: two years, renew a month before expiry; AfriCarrières: a temporary category up to 12 months), neither citing an article.",
+    "trade-press": "None. | Retry 2026-11-01: Bulletin de Justice No 81 (May 2025, sostortureburundi.org) cites a 'Loi N°1/11 du 24 novembre 2024' revising the 1993 decree-law, conflicting with the 2020 date; no permit procedure.",
+    "archive": "web.archive.org tried for the authority's page: the connection resets from this environment (curl: (35) Recv failure: Connection reset by peer, 2026-11-01); no snapshot read. | Retry 2026-11-01: web.archive.org: no connection from this environment (HTTP 000, 2026-11-01)."
+   }
+  },
+  {
+   "field": "pay",
+   "sought": "A minimum pay rule for foreign workers",
+   "tried": {
+    "institution": "migration.gov.bi: none. | Retry 2026-11-01: migration.gov.bi/Services re-read: the establishment visa line gives fee and two-year validity only; no decision time, renewal rule, performer criteria, pay rule or exemption.",
+    "official-register": "Code du travail 2020 not read. | Retry 2026-11-01: natlex.ilo.org (records 97070, 110662, 53736 surfaced by search) answers 403 to this client; assemblee.bi surfaced only the 2020 Code de la protection sociale, not the labour code; no official text of the Code du travail's foreign-worker articles reached.",
+    "web-search": "'Burundi permis de travail travailleur étranger ministère de la fonction publique travail emploi code du travail 2020 article'; commercial guides (AfriCarrières, Atlas HXM) only, which cite no article. | Retry 2026-11-01: '\"Loi n°1/11 du 24 novembre 2020\" code du travail Burundi pdf \"permis de travail\" étranger'; 'code du travail Burundi 2020 texte intégral pdf \"travailleurs étrangers\" article \"carte de travail\" OR \"permis de travail\" site:bi': commercial guides only (Atlas HXM: two years, renew a month before expiry; AfriCarrières: a temporary category up to 12 months), neither citing an article.",
+    "trade-press": "None. | Retry 2026-11-01: Bulletin de Justice No 81 (May 2025, sostortureburundi.org) cites a 'Loi N°1/11 du 24 novembre 2024' revising the 1993 decree-law, conflicting with the 2020 date; no permit procedure.",
+    "archive": "web.archive.org tried for the authority's page: the connection resets from this environment (curl: (35) Recv failure: Connection reset by peer, 2026-11-01); no snapshot read. | Retry 2026-11-01: web.archive.org: no connection from this environment (HTTP 000, 2026-11-01)."
+   }
+  },
+  {
+   "field": "eligibility",
+   "sought": "Criteria for a performer",
+   "tried": {
+    "institution": "Retry 2026-11-01: migration.gov.bi/Services re-read: the establishment visa line gives fee and two-year validity only; no decision time, renewal rule, performer criteria, pay rule or exemption.",
+    "official-register": "Retry 2026-11-01: natlex.ilo.org (records 97070, 110662, 53736 surfaced by search) answers 403 to this client; assemblee.bi surfaced only the 2020 Code de la protection sociale, not the labour code; no official text of the Code du travail's foreign-worker articles reached.",
+    "web-search": "Retry 2026-11-01: '\"Loi n°1/11 du 24 novembre 2020\" code du travail Burundi pdf \"permis de travail\" étranger'; 'code du travail Burundi 2020 texte intégral pdf \"travailleurs étrangers\" article \"carte de travail\" OR \"permis de travail\" site:bi': commercial guides only (Atlas HXM: two years, renew a month before expiry; AfriCarrières: a temporary category up to 12 months), neither citing an article.",
+    "trade-press": "Retry 2026-11-01: Bulletin de Justice No 81 (May 2025, sostortureburundi.org) cites a 'Loi N°1/11 du 24 novembre 2024' revising the 1993 decree-law, conflicting with the 2020 date; no permit procedure.",
+    "archive": "Retry 2026-11-01: web.archive.org: no connection from this environment (HTTP 000, 2026-11-01)."
+   }
+  }
+ ],
+ "note": "The Commissariat's establishment visa is the one its list ties to work; the Labour Ministry's own work permit, which commercial guides say the employer obtains before the worker starts, wasn't found in an official text. No route for a short paid engagement is listed."
+}

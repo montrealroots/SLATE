@@ -1,0 +1,161 @@
+{
+ "country": "CA",
+ "read": "2026-11-01",
+ "route": "Work permit (employer-specific, on a Labour Market Impact Assessment or an LMIA exemption such as significant benefit)",
+ "routeChanged": false,
+ "permit": {
+  "applies": "The performer applies to IRCC for the work permit on the Canadian employer's offer of employment; the employer either obtains a Labour Market Impact Assessment from Employment and Social Development Canada or, for LMIA-exempt work, pays the employer compliance fee and submits the offer first.",
+  "first": "A positive or neutral LMIA (requested by the employer) or an LMIA exemption, e.g. work that would create or maintain significant social, cultural or economic benefits for Canadians (s. 205(a)).",
+  "fees": [
+   {
+    "what": "Work permit processing fee (IRPR s. 299(1))",
+    "amount": "155",
+    "currency": "CAD"
+   },
+   {
+    "what": "Work permit fees for a group of three or more performing artists and staff applying together, total (s. 299(3))",
+    "amount": "465",
+    "currency": "CAD"
+   },
+   {
+    "what": "Labour Market Impact Assessment, per offer of employment, paid by the employer (s. 315.2)",
+    "amount": "1000",
+    "currency": "CAD"
+   },
+   {
+    "what": "Employer compliance fee for LMIA-exempt offers (s. 303.1); CAD 690 in total for a group of three or more performing artists and staff",
+    "amount": "230",
+    "currency": "CAD"
+   }
+  ],
+  "processing": null,
+  "validity": {
+   "n": null,
+   "unit": "engagement",
+   "renewable": null,
+   "note": "No set maximum: the term follows the employer's job offer, the period on the LMIA where one was needed, and the passport's validity. Read as the engagement's own term: there is no set maximum."
+  },
+  "union": null,
+  "eligibility": "would create or maintain significant social, cultural or economic benefits or opportunities for Canadian citizens or permanent residents;",
+  "pay": "On an LMIA, employment is unlikely to have a positive or neutral effect on the labour market if the wages offered are not consistent with the prevailing wage rate for the occupation.",
+  "exempt": null
+ },
+ "sources": [
+  {
+   "url": "https://laws-lois.justice.gc.ca/eng/regulations/SOR-2002-227/section-299.html",
+   "title": "Justice Laws, IRPR s. 299 (current to 2026-09-30)",
+   "read": "2026-11-01",
+   "said": "A fee of $155 is payable for processing an application for a work permit. … If three or more persons who are part of the same group of performing artists and those artists’ staff make their applications for a work permit at the same time, the total amount of fees payable under subsection (1) is $465 for all applications together.",
+   "kind": "primary",
+   "fields": [
+    "fees"
+   ]
+  },
+  {
+   "url": "https://laws-lois.justice.gc.ca/eng/regulations/SOR-2002-227/section-315.2.html",
+   "title": "Justice Laws, IRPR s. 315.2 (current to 2026-09-30)",
+   "read": "2026-11-01",
+   "said": "A fee of $1,000 is payable for the provision of services in relation to an assessment from the Department of Employment and Social Development that is requested by an employer or group of employers under subsection 203(2) for each offer of employment in respect of which the request is made.",
+   "kind": "primary",
+   "fields": [
+    "fees",
+    "applies"
+   ]
+  },
+  {
+   "url": "https://laws-lois.justice.gc.ca/eng/regulations/SOR-2002-227/section-303.1.html",
+   "title": "Justice Laws, IRPR s. 303.1 (current to 2026-09-30)",
+   "read": "2026-11-01",
+   "said": "A fee of $230 is payable by an employer who has made an offer of employment to … The total amount of fees payable under subsection (1) by an employer who has made offers of employment to a group of three or more foreign nationals, consisting of performing artists and their staff, is $690, if those offers are made at the same time.",
+   "kind": "primary",
+   "fields": [
+    "fees",
+    "applies"
+   ]
+  },
+  {
+   "url": "https://laws-lois.justice.gc.ca/eng/regulations/SOR-2002-227/section-205.html",
+   "title": "Justice Laws, IRPR s. 205 (current to 2026-09-30)",
+   "read": "2026-11-01",
+   "said": "would create or maintain significant social, cultural or economic benefits or opportunities for Canadian citizens or permanent residents;",
+   "kind": "primary",
+   "fields": [
+    "eligibility",
+    "first"
+   ]
+  },
+  {
+   "url": "https://laws-lois.justice.gc.ca/eng/regulations/SOR-2002-227/section-203.html",
+   "title": "Justice Laws, IRPR s. 203 (current to 2026-09-30)",
+   "read": "2026-11-01",
+   "said": "the wages set out in the offer of employment are not consistent with the prevailing wage rate for the occupation; or",
+   "kind": "primary",
+   "fields": [
+    "pay"
+   ]
+  },
+  {
+   "url": "https://laws-lois.justice.gc.ca/eng/regulations/SOR-2002-227/section-186.html",
+   "title": "Justice Laws, IRPR s. 186 (current to 2026-09-30)",
+   "read": "2026-11-01",
+   "said": "as a performing artist appearing alone or in a group in an artistic performance — other than a performance that is primarily for a film production or a television or radio broadcast —",
+   "kind": "primary",
+   "fields": [
+    "exempt"
+   ]
+  },
+  {
+   "url": "https://ircc.canada.ca/english/helpcentre/answer.asp?qnum=742&top=17",
+   "title": "IRCC Help Centre, How long can I work in Canada as a temporary worker?",
+   "read": "2026-11-01",
+   "said": "There is no set maximum amount of time you can work in Canada as a temporary worker. The length of time you can work depends on: the job offer from your employer the length of time listed on your Labour Market Impact Assessment, if your employer needed to get one to hire you how long your passport is valid for",
+   "kind": "primary",
+   "fields": [
+    "validity"
+   ]
+  },
+  {
+   "url": "https://ircc.canada.ca/english/helpcentre/answer.asp?qnum=170&top=17",
+   "title": "IRCC Help Centre, How long will it take to process my work permit application?",
+   "read": "2026-11-01",
+   "said": "Processing times vary, depending on the type of application you submit. Information on processing times is available online for applications submitted inside and outside of Canada. This information is updated frequently, so check often.",
+   "kind": "primary"
+  }
+ ],
+ "blockers": [
+  {
+   "field": "processing",
+   "sought": "IRCC's stated processing time for an employer-specific work permit",
+   "tried": {
+    "institution": "canada.ca refuses this client: the C14 instructions page returns an HTTP/2 stream error, and an empty reply over HTTP/1.1 (2026-11-01); IRCC's processing times are an interactive tool. Retry (2026-11-01): IRCC Help Centre (ircc.canada.ca/english/helpcentre, readable here) answers qnum 742 (no set maximum term, read) and qnum 170 (processing times vary and are published only in the online tool); the tool's data (canada.ca/content/dam/ircc/documents/json/data-ptime-en.json) gets an empty reply (2026-11-01).",
+    "official-register": "IRPR ss. 186, 196, 200, 203, 205, 299, 303.1 and 315.2 read (Justice Laws, current to 2026-09-30): no stated decision time, no maximum work-permit term (it follows the offer and the LMIA), no union step and no day count. Retry (2026-11-01): IRPR read in the earlier pass states no decision time.",
+    "web-search": "'IRCC exemption code C14 television and film production workers union guild letter work permit performers canada.ca': the canada.ca C14 page (excerpts only) and law firms (BLG, Blaney, Meurrens) describing a union or guild letter; not quotable from a saved primary. Retry (2026-11-01): No new search: IRCC states no fixed time; its published times are live estimates in the tool.",
+    "trade-press": "CIC News and immigration2canada summaries of the C14 guild letter (December 2025 update), secondary and not naming a saved primary text. Retry (2026-11-01): Not used: law firms quote the tool's changing estimates.",
+    "archive": "web.archive.org resets the connection from this environment (tried 2026-11-01). Retry (2026-11-01): web.archive.org resets the connection (2026-11-01)."
+   }
+  },
+  {
+   "field": "union",
+   "sought": "The union or guild letter IRCC's C14 instructions ask for film and television workers",
+   "tried": {
+    "institution": "canada.ca refuses this client: the C14 instructions page returns an HTTP/2 stream error, and an empty reply over HTTP/1.1 (2026-11-01); IRCC's processing times are an interactive tool. Retry (2026-11-01): IRCC Help Centre (ircc.canada.ca/english/helpcentre, readable here) answers qnum 742 (no set maximum term, read) and qnum 170 (processing times vary and are published only in the online tool); the tool's data (canada.ca/content/dam/ircc/documents/json/data-ptime-en.json) gets an empty reply (2026-11-01).",
+    "official-register": "IRPR ss. 186, 196, 200, 203, 205, 299, 303.1 and 315.2 read (Justice Laws, current to 2026-09-30): no stated decision time, no maximum work-permit term (it follows the offer and the LMIA), no union step and no day count. Retry (2026-11-01): IRPR read in the earlier pass states no decision time.",
+    "web-search": "'IRCC exemption code C14 television and film production workers union guild letter work permit performers canada.ca': the canada.ca C14 page (excerpts only) and law firms (BLG, Blaney, Meurrens) describing a union or guild letter; not quotable from a saved primary. Retry (2026-11-01): No new search: IRCC states no fixed time; its published times are live estimates in the tool.",
+    "trade-press": "CIC News and immigration2canada summaries of the C14 guild letter (December 2025 update), secondary and not naming a saved primary text. Retry (2026-11-01): Not used: law firms quote the tool's changing estimates.",
+    "archive": "web.archive.org resets the connection from this environment (tried 2026-11-01). Retry (2026-11-01): web.archive.org resets the connection (2026-11-01)."
+   }
+  },
+  {
+   "field": "exempt",
+   "sought": "A day count for the s. 186(g) performing-artist exemption",
+   "tried": {
+    "institution": "canada.ca refuses this client: the C14 instructions page returns an HTTP/2 stream error, and an empty reply over HTTP/1.1 (2026-11-01); IRCC's processing times are an interactive tool. Retry (2026-11-01): IRCC Help Centre (ircc.canada.ca/english/helpcentre, readable here) answers qnum 742 (no set maximum term, read) and qnum 170 (processing times vary and are published only in the online tool); the tool's data (canada.ca/content/dam/ircc/documents/json/data-ptime-en.json) gets an empty reply (2026-11-01).",
+    "official-register": "IRPR ss. 186, 196, 200, 203, 205, 299, 303.1 and 315.2 read (Justice Laws, current to 2026-09-30): no stated decision time, no maximum work-permit term (it follows the offer and the LMIA), no union step and no day count. Section 186(g) names a time-limited engagement but no days. Retry (2026-11-01): IRPR read in the earlier pass states no decision time.",
+    "web-search": "'IRCC exemption code C14 television and film production workers union guild letter work permit performers canada.ca': the canada.ca C14 page (excerpts only) and law firms (BLG, Blaney, Meurrens) describing a union or guild letter; not quotable from a saved primary. Retry (2026-11-01): No new search: IRCC states no fixed time; its published times are live estimates in the tool.",
+    "trade-press": "CIC News and immigration2canada summaries of the C14 guild letter (December 2025 update), secondary and not naming a saved primary text. Retry (2026-11-01): Not used: law firms quote the tool's changing estimates.",
+    "archive": "web.archive.org resets the connection from this environment (tried 2026-11-01). Retry (2026-11-01): web.archive.org resets the connection (2026-11-01)."
+   }
+  }
+ ],
+ "note": "Performing artists in a time-limited engagement with a foreign production, or as guest artists not employed by the Canadian organisation, need no work permit unless the performance is primarily for film, television or radio (IRPR s. 186(g), layer 3); it names no day count, so none is modelled. Film and television performers usually come under IRCC's C14 exemption (television and film production workers, significant benefit), which by IRCC's guidance asks a letter from the relevant Canadian union or guild; that page refused this client, so the letter isn't modelled as a field."
+}

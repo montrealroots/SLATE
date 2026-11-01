@@ -5,7 +5,8 @@ import type { LineId } from '../../core/text/text.ts';
 import type { CountryCode } from '../../world/gazetteer/gazetteer.ts';
 import { componentOf, componentValues, practise, skillOf, type AttributesSlice } from '../attributes/attributes.ts';
 import { identifiesAs, personOf, playingAge, speaks, type Ethnicity, type IdentitySlice, type Level, type Person } from '../identity/identity.ts';
-import { mayTakeUnionWork, mayWorkIn, type UnionsSlice } from '../unions/unions.ts';
+import { permitted, type PermitsSlice } from '../permits/permits.ts';
+import { mayTakeUnionWork, type UnionsSlice } from '../unions/unions.ts';
 import { spread } from '../work/work.ts';
 
 /**
@@ -427,14 +428,14 @@ export interface PlayArgs {
 /** The country each agreement's work is in: SAG-AFTRA's the US, Pact/Equity's and UK Theatre's the UK, ACTRA's Canada. */
 export const COUNTRY: Readonly<Record<Agreement, CountryCode>> = { 'sag-aftra': 'US', 'pact-equity': 'GB', 'uk-theatre': 'GB', actra: 'CA' };
 
-function play(s: Acting & { unions: UnionsSlice }, a: PlayArgs, c: Context): void {
+function play(s: Acting & { unions: UnionsSlice; permits: PermitsSlice }, a: PlayArgs, c: Context): void {
   const job = auditionOf(s.acting, a.audition);
   // @slate:consumer acting.audition
   if (!job.booked) throw new Error(`audition ${a.audition} didn't book the part`);
   if (job.work !== null) throw new Error(`the part from audition ${a.audition} is played`);
   const where = COUNTRY[job.part.agreement];
-  // @slate:consumer identity.make
-  if (!mayWorkIn(personOf(s.identity), where)) throw new Error(`the person may not work in ${where} without a permit`);
+  // @slate:consumer permits.decision
+  if (!permitted(s, where, c.now, daysWorked(job.part))) throw new Error(`the person may not work in ${where} without a permit`);
   // @slate:consumer unions.join
   if (!mayTakeUnionWork(s, job.part.agreement, c.now)) throw new Error(`a part under ${job.part.agreement} past the thirtieth day of union work is a member's`);
   // @slate:consumer attributes.choose
@@ -449,4 +450,4 @@ function play(s: Acting & { unions: UnionsSlice }, a: PlayArgs, c: Context): voi
 // test that lists each command with what it reads and writes; what each does is mutated above.
 export const postBreakdown = defineCommand<{ acting: ActingSlice }, Part>({ id: 'acting.breakdown', reads: [], writes: ['acting'], run: post });
 export const auditionForPart = defineCommand<Acting, AuditionArgs>({ id: 'acting.audition', reads: ['identity'], writes: ['attributes', 'acting'], run: audition });
-export const playPart = defineCommand<Acting & { unions: UnionsSlice }, PlayArgs>({ id: 'acting.perform', reads: ['identity', 'unions'], writes: ['attributes', 'acting'], run: play });
+export const playPart = defineCommand<Acting & { unions: UnionsSlice; permits: PermitsSlice }, PlayArgs>({ id: 'acting.perform', reads: ['identity', 'unions', 'permits'], writes: ['attributes', 'acting'], run: play });

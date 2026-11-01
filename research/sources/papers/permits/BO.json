@@ -1,0 +1,115 @@
+{
+ "country": "BO",
+ "read": "2026-11-01",
+ "route": "Visa de objeto determinado",
+ "routeChanged": false,
+ "permit": {
+  "applies": "The performer applies (declaration form, at the Dirección General de Migración, the consular directorate or a consulate), with the inviting entity's or company's letter.",
+  "first": "Documentation of the activity to be carried out in Bolivia and/or a letter of invitation from the entity or company, a criminal-record certificate and a sworn statement of economic means.",
+  "fees": [],
+  "processing": null,
+  "validity": {
+   "n": 180,
+   "unit": "days",
+   "renewable": null,
+   "note": "Visa de objeto determinado, trabajo transitorio: up to 180 calendar days for paid work; the work visa (trabajo) proper is issued for 30 days and leads to a transitory or temporary stay (permanencia) granted by the Dirección General de Migración (DS 1923 art. 9)."
+  },
+  "union": null,
+  "eligibility": null,
+  "pay": null,
+  "exempt": null
+ },
+ "sources": [
+  {
+   "url": "https://visas.cancilleria.gob.bo/REQUISITOS_PARA_LA_EMISI%C3%93N_DE_VISAS.pdf",
+   "title": "Ministerio de Relaciones Exteriores, Requisitos para la emisión de visas (DS 1923/2014, regulating Ley 370 de Migración)",
+   "read": "2026-11-01",
+   "said": "Documentación que acredite la actividad que desarrollará en el territorio del Estado Plurinacional de Bolivia y/o carta de invitación de la entidad o empresa con documentación de respaldo en los casos que corresponda; … Constancia de pago del costo del trámite correspondiente, excepto las otorgadas en virtud de acuerdos o convenios estatales. … Solvencia económica acreditada mediante declaración jurada respaldada documentalmente, según corresponda.",
+   "kind": "primary",
+   "fields": [
+    "applies",
+    "first"
+   ]
+  },
+  {
+   "url": "https://www.lexivox.org/norms/BO-DS-N1923.html",
+   "title": "Decreto Supremo N° 1923 of 12/13 March 2014, regulating Ley 370 de Migración, art. 9 (visa de objeto determinado), as reproduced by Lexivox from the Gaceta Oficial de Bolivia 625NEC (the Gaceta's own copy, gacetaoficialdebolivia.gob.bo/normas/verGratis/151773, answers a PHP error over http and fails TLS over https from this environment, 2026-11-01). DS 4828 (2022) amends arts 10-12 but not art. 9's visa terms.",
+   "read": "2026-11-01",
+   "said": "Visa de objeto determinado: Es otorgada por motivos de: Trabajo, es otorgada por treinta (30) días calendario, para desarrollar actividades remuneradas o lucrativas, con o sin relación de dependencia, en el territorio boliviano y habilita a tramitar la permanencia transitoria por objeto determinado o permanencia temporal ante la Dirección General de Migración; Trabajo Transitorio, es otorgada hasta por ciento ochenta (180) días calendario, para desarrollar actividades remuneradas o lucrativas por cuenta propia o en relación de dependencia",
+   "kind": "secondary",
+   "quotes": "http://www.gacetaoficialdebolivia.gob.bo/normas/verGratis/151773",
+   "fields": [
+    "validity"
+   ]
+  }
+ ],
+ "blockers": [
+  {
+   "field": "fees",
+   "sought": "The visa's cost (DS 1923 art. 6: the Dirección General de Migración sets the fees in UFV, approved by Ministerial Resolution; that resolution not found)",
+   "tried": {
+    "institution": "migracion.gob.bo (www. fails TLS name check; the bare domain serves a script-only app, saved BO-migracion2.html) and visas.cancilleria.gob.bo (script-only, saved BO-cancilleria-visas.html) give no readable fee, time or term. | 2026-11-01 retry: Bolivian embassies abroad: embajada-bolivia.at visas page redirects to its home page; embassyofbolivia.nl/en/?p=302 answers 404; bolivianembassy.ca/?p=25473 (saved BO-emb-ca.html) lists the specific-purpose visa's requirements and 'Cost Consular fee' with no amount in the page text, and says its validity 'varies depending on the reason for the stay'.",
+    "official-register": "The requirements extract of DS 1923/2014 read; the decree and Ley 370 in full and the fee schedule (arancel) weren't found as readable official text. | 2026-11-01 retry: DS 1923 (Lexivox copy, saved BO-ds1923.html) read: art. 6 leaves fees to a Ministerial Resolution in UFV; art. 9 gives the visa terms (filled); no decision time, union, criteria or pay rule; Ley 370 (Lexivox, saved BO-ley370.html) and DS 4828 (saved BO-ds4828.html) read for the same: nothing. gacetaoficialdebolivia.gob.bo fails (PHP error / TLS).",
+    "web-search": "'Bolivia visa de objeto determinado artistas espectáculos costo Bs días permanencia Dirección General de Migración arancel' couldn't run: this session's shared web-search budget was used up (2026-11-01). | 2026-11-01 retry: 'Bolivia \"visa de objeto determinado\" costo bolivianos días consulado requisitos 2025' and '\"Decreto Supremo 1923\" reglamento Ley 370 migración \"objeto determinado\" vigencia días permanencia temporal artistas' (2026-11-01): a USD 85 figure in a search snippet of the Netherlands embassy's page, which answers 404 when fetched, so not used.",
+    "trade-press": "Not reached for the same reason. | 2026-11-01 retry: armenian-lawyer.com and wheretoemigrate.io (no primary quoted; a '10-30 days' claim with no source): not used.",
+    "archive": "web.archive.org resets the connection from this environment (tried 2026-11-01). | 2026-11-01 retry: web.archive.org: connection reset from this environment (2026-11-01); archive.org availability API reachable but no snapshot fetched since snapshots load from web.archive.org."
+   }
+  },
+  {
+   "field": "processing",
+   "sought": "The stated decision time",
+   "tried": {
+    "institution": "migracion.gob.bo (www. fails TLS name check; the bare domain serves a script-only app, saved BO-migracion2.html) and visas.cancilleria.gob.bo (script-only, saved BO-cancilleria-visas.html) give no readable fee, time or term. | 2026-11-01 retry: Bolivian embassies abroad: embajada-bolivia.at visas page redirects to its home page; embassyofbolivia.nl/en/?p=302 answers 404; bolivianembassy.ca/?p=25473 (saved BO-emb-ca.html) lists the specific-purpose visa's requirements and 'Cost Consular fee' with no amount in the page text, and says its validity 'varies depending on the reason for the stay'.",
+    "official-register": "The requirements extract of DS 1923/2014 read; the decree and Ley 370 in full and the fee schedule (arancel) weren't found as readable official text. | 2026-11-01 retry: DS 1923 (Lexivox copy, saved BO-ds1923.html) read: art. 6 leaves fees to a Ministerial Resolution in UFV; art. 9 gives the visa terms (filled); no decision time, union, criteria or pay rule; Ley 370 (Lexivox, saved BO-ley370.html) and DS 4828 (saved BO-ds4828.html) read for the same: nothing. gacetaoficialdebolivia.gob.bo fails (PHP error / TLS).",
+    "web-search": "'Bolivia visa de objeto determinado artistas espectáculos costo Bs días permanencia Dirección General de Migración arancel' couldn't run: this session's shared web-search budget was used up (2026-11-01). | 2026-11-01 retry: 'Bolivia \"visa de objeto determinado\" costo bolivianos días consulado requisitos 2025' and '\"Decreto Supremo 1923\" reglamento Ley 370 migración \"objeto determinado\" vigencia días permanencia temporal artistas' (2026-11-01): a USD 85 figure in a search snippet of the Netherlands embassy's page, which answers 404 when fetched, so not used.",
+    "trade-press": "Not reached for the same reason. | 2026-11-01 retry: armenian-lawyer.com and wheretoemigrate.io (no primary quoted; a '10-30 days' claim with no source): not used.",
+    "archive": "web.archive.org resets the connection from this environment (tried 2026-11-01). | 2026-11-01 retry: web.archive.org: connection reset from this environment (2026-11-01); archive.org availability API reachable but no snapshot fetched since snapshots load from web.archive.org."
+   }
+  },
+  {
+   "field": "union",
+   "sought": "Any union or arts body step",
+   "tried": {
+    "institution": "migracion.gob.bo (www. fails TLS name check; the bare domain serves a script-only app, saved BO-migracion2.html) and visas.cancilleria.gob.bo (script-only, saved BO-cancilleria-visas.html) give no readable fee, time or term. | 2026-11-01 retry: Bolivian embassies abroad: embajada-bolivia.at visas page redirects to its home page; embassyofbolivia.nl/en/?p=302 answers 404; bolivianembassy.ca/?p=25473 (saved BO-emb-ca.html) lists the specific-purpose visa's requirements and 'Cost Consular fee' with no amount in the page text, and says its validity 'varies depending on the reason for the stay'.",
+    "official-register": "The requirements extract of DS 1923/2014 read; the decree and Ley 370 in full and the fee schedule (arancel) weren't found as readable official text. | 2026-11-01 retry: DS 1923 (Lexivox copy, saved BO-ds1923.html) read: art. 6 leaves fees to a Ministerial Resolution in UFV; art. 9 gives the visa terms (filled); no decision time, union, criteria or pay rule; Ley 370 (Lexivox, saved BO-ley370.html) and DS 4828 (saved BO-ds4828.html) read for the same: nothing. gacetaoficialdebolivia.gob.bo fails (PHP error / TLS).",
+    "web-search": "'Bolivia visa de objeto determinado artistas espectáculos costo Bs días permanencia Dirección General de Migración arancel' couldn't run: this session's shared web-search budget was used up (2026-11-01). | 2026-11-01 retry: 'Bolivia \"visa de objeto determinado\" costo bolivianos días consulado requisitos 2025' and '\"Decreto Supremo 1923\" reglamento Ley 370 migración \"objeto determinado\" vigencia días permanencia temporal artistas' (2026-11-01): a USD 85 figure in a search snippet of the Netherlands embassy's page, which answers 404 when fetched, so not used.",
+    "trade-press": "Not reached for the same reason. | 2026-11-01 retry: armenian-lawyer.com and wheretoemigrate.io (no primary quoted; a '10-30 days' claim with no source): not used.",
+    "archive": "web.archive.org resets the connection from this environment (tried 2026-11-01). | 2026-11-01 retry: web.archive.org: connection reset from this environment (2026-11-01); archive.org availability API reachable but no snapshot fetched since snapshots load from web.archive.org."
+   }
+  },
+  {
+   "field": "eligibility",
+   "sought": "Criteria a performer must meet",
+   "tried": {
+    "institution": "migracion.gob.bo (www. fails TLS name check; the bare domain serves a script-only app, saved BO-migracion2.html) and visas.cancilleria.gob.bo (script-only, saved BO-cancilleria-visas.html) give no readable fee, time or term. | 2026-11-01 retry: Bolivian embassies abroad: embajada-bolivia.at visas page redirects to its home page; embassyofbolivia.nl/en/?p=302 answers 404; bolivianembassy.ca/?p=25473 (saved BO-emb-ca.html) lists the specific-purpose visa's requirements and 'Cost Consular fee' with no amount in the page text, and says its validity 'varies depending on the reason for the stay'.",
+    "official-register": "The requirements extract of DS 1923/2014 read; the decree and Ley 370 in full and the fee schedule (arancel) weren't found as readable official text. | 2026-11-01 retry: DS 1923 (Lexivox copy, saved BO-ds1923.html) read: art. 6 leaves fees to a Ministerial Resolution in UFV; art. 9 gives the visa terms (filled); no decision time, union, criteria or pay rule; Ley 370 (Lexivox, saved BO-ley370.html) and DS 4828 (saved BO-ds4828.html) read for the same: nothing. gacetaoficialdebolivia.gob.bo fails (PHP error / TLS).",
+    "web-search": "'Bolivia visa de objeto determinado artistas espectáculos costo Bs días permanencia Dirección General de Migración arancel' couldn't run: this session's shared web-search budget was used up (2026-11-01). | 2026-11-01 retry: 'Bolivia \"visa de objeto determinado\" costo bolivianos días consulado requisitos 2025' and '\"Decreto Supremo 1923\" reglamento Ley 370 migración \"objeto determinado\" vigencia días permanencia temporal artistas' (2026-11-01): a USD 85 figure in a search snippet of the Netherlands embassy's page, which answers 404 when fetched, so not used.",
+    "trade-press": "Not reached for the same reason. | 2026-11-01 retry: armenian-lawyer.com and wheretoemigrate.io (no primary quoted; a '10-30 days' claim with no source): not used.",
+    "archive": "web.archive.org resets the connection from this environment (tried 2026-11-01). | 2026-11-01 retry: web.archive.org: connection reset from this environment (2026-11-01); archive.org availability API reachable but no snapshot fetched since snapshots load from web.archive.org."
+   }
+  },
+  {
+   "field": "pay",
+   "sought": "Any minimum pay rule",
+   "tried": {
+    "institution": "migracion.gob.bo (www. fails TLS name check; the bare domain serves a script-only app, saved BO-migracion2.html) and visas.cancilleria.gob.bo (script-only, saved BO-cancilleria-visas.html) give no readable fee, time or term. | 2026-11-01 retry: Bolivian embassies abroad: embajada-bolivia.at visas page redirects to its home page; embassyofbolivia.nl/en/?p=302 answers 404; bolivianembassy.ca/?p=25473 (saved BO-emb-ca.html) lists the specific-purpose visa's requirements and 'Cost Consular fee' with no amount in the page text, and says its validity 'varies depending on the reason for the stay'.",
+    "official-register": "The requirements extract of DS 1923/2014 read; the decree and Ley 370 in full and the fee schedule (arancel) weren't found as readable official text. | 2026-11-01 retry: DS 1923 (Lexivox copy, saved BO-ds1923.html) read: art. 6 leaves fees to a Ministerial Resolution in UFV; art. 9 gives the visa terms (filled); no decision time, union, criteria or pay rule; Ley 370 (Lexivox, saved BO-ley370.html) and DS 4828 (saved BO-ds4828.html) read for the same: nothing. gacetaoficialdebolivia.gob.bo fails (PHP error / TLS).",
+    "web-search": "'Bolivia visa de objeto determinado artistas espectáculos costo Bs días permanencia Dirección General de Migración arancel' couldn't run: this session's shared web-search budget was used up (2026-11-01). | 2026-11-01 retry: 'Bolivia \"visa de objeto determinado\" costo bolivianos días consulado requisitos 2025' and '\"Decreto Supremo 1923\" reglamento Ley 370 migración \"objeto determinado\" vigencia días permanencia temporal artistas' (2026-11-01): a USD 85 figure in a search snippet of the Netherlands embassy's page, which answers 404 when fetched, so not used.",
+    "trade-press": "Not reached for the same reason. | 2026-11-01 retry: armenian-lawyer.com and wheretoemigrate.io (no primary quoted; a '10-30 days' claim with no source): not used.",
+    "archive": "web.archive.org resets the connection from this environment (tried 2026-11-01). | 2026-11-01 retry: web.archive.org: connection reset from this environment (2026-11-01); archive.org availability API reachable but no snapshot fetched since snapshots load from web.archive.org."
+   }
+  },
+  {
+   "field": "exempt",
+   "sought": "A short engagement needing no visa",
+   "tried": {
+    "institution": "migracion.gob.bo (www. fails TLS name check; the bare domain serves a script-only app, saved BO-migracion2.html) and visas.cancilleria.gob.bo (script-only, saved BO-cancilleria-visas.html) give no readable fee, time or term. | 2026-11-01 retry: Bolivian embassies abroad: embajada-bolivia.at visas page redirects to its home page; embassyofbolivia.nl/en/?p=302 answers 404; bolivianembassy.ca/?p=25473 (saved BO-emb-ca.html) lists the specific-purpose visa's requirements and 'Cost Consular fee' with no amount in the page text, and says its validity 'varies depending on the reason for the stay'.",
+    "official-register": "The requirements extract of DS 1923/2014 read; the decree and Ley 370 in full and the fee schedule (arancel) weren't found as readable official text. | 2026-11-01 retry: DS 1923 (Lexivox copy, saved BO-ds1923.html) read: art. 6 leaves fees to a Ministerial Resolution in UFV; art. 9 gives the visa terms (filled); no decision time, union, criteria or pay rule; Ley 370 (Lexivox, saved BO-ley370.html) and DS 4828 (saved BO-ds4828.html) read for the same: nothing. gacetaoficialdebolivia.gob.bo fails (PHP error / TLS).",
+    "web-search": "'Bolivia visa de objeto determinado artistas espectáculos costo Bs días permanencia Dirección General de Migración arancel' couldn't run: this session's shared web-search budget was used up (2026-11-01). | 2026-11-01 retry: 'Bolivia \"visa de objeto determinado\" costo bolivianos días consulado requisitos 2025' and '\"Decreto Supremo 1923\" reglamento Ley 370 migración \"objeto determinado\" vigencia días permanencia temporal artistas' (2026-11-01): a USD 85 figure in a search snippet of the Netherlands embassy's page, which answers 404 when fetched, so not used.",
+    "trade-press": "Not reached for the same reason. | 2026-11-01 retry: armenian-lawyer.com and wheretoemigrate.io (no primary quoted; a '10-30 days' claim with no source): not used.",
+    "archive": "web.archive.org resets the connection from this environment (tried 2026-11-01). | 2026-11-01 retry: web.archive.org: connection reset from this environment (2026-11-01); archive.org availability API reachable but no snapshot fetched since snapshots load from web.archive.org."
+   }
+  }
+ ],
+ "note": "The fee is 'el costo del trámite correspondiente', not stated in the requirements; the Dirección General de Migración's and the Foreign Ministry's visa sites are script-only applications this client can't read."
+}

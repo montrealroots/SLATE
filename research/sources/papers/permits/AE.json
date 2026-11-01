@@ -1,0 +1,68 @@
+{
+ "country": "AE",
+ "read": "2026-11-01",
+ "route": "Mission work permit",
+ "routeChanged": false,
+ "permit": {
+  "applies": "the employer (an establishment registered with MOHRE, through its authorised signatory)",
+  "first": "an approved employment contract signed by both parties and the establishment's e-quota",
+  "fees": [
+   {
+    "what": "MOHRE federal fee, mission work permit (establishments of all categories)",
+    "amount": "50.00",
+    "currency": "AED"
+   }
+  ],
+  "processing": {
+   "standard": {
+    "n": 2,
+    "unit": "business-days"
+   },
+   "premium": null
+  },
+  "validity": {
+   "n": 3,
+   "unit": "months",
+   "renewable": true
+  },
+  "union": null,
+  "eligibility": "According to the terms of service, individuals of all skill levels and professions are eligible to obtain this type of permit",
+  "pay": null,
+  "exempt": null
+ },
+ "sources": [
+  {
+   "url": "https://gulfmigration.grc.net/wp-content/uploads/2023/01/Administrative-Resolution-No.38-of-2022-Concerning-the-Guidelines-for-Implementing-Ministerial-Resolution-No.46-of-2022-Regarding-Work-Permits-and-Offer-Letters-and-Employment-Contract-Forms.pdf",
+   "title": "MOHRE, Administrative Resolution No. (38) of 2022 concerning the guidelines for implementing Ministerial Resolution No. (46) of 2022 regarding work permits, offer letters and employment contract forms (MOHRE's English text, copy held by the Gulf Research Center's GLMM)",
+   "read": "2026-11-01",
+   "said": "MISSION WORK PERMIT: Service Description Permit granted to an establishment registered with the Ministry for the purpose of recruiting a worker from abroad for temporary or fixed-term work. Permit Duration Three months, renewable once for a similar period … Payment of Federal fees, bank guarantee or insurance upon approval. … Approved employment contract issued by the Ministry, which includes both the employer's and the employee's signatures. … Work Permit applications must be submitted by the establishment's authorized signatory … E- quota is required to obtain mission work permit. 8. According to the terms of service, individuals of all skill levels and professions are eligible to obtain this type of permit Service Response Time Two working days … Federal fee for establishments of all categories : 50 dirhams",
+   "kind": "primary",
+   "fields": [
+    "route",
+    "applies",
+    "first",
+    "fees",
+    "processing",
+    "validity",
+    "eligibility",
+    "union",
+    "pay",
+    "exempt"
+   ]
+  }
+ ],
+ "blockers": [
+  {
+   "field": "fees",
+   "sought": "the ICP's fees for the entry permit issued on a mission work permit (application, issue, guarantee)",
+   "tried": {
+    "institution": "icp.gov.ae/en/service/issue-entry-permit returned HTTP 500 with a 'We are coming back soon!' page (2026-11-01); mohre.gov.ae resets this client's connection",
+    "official-register": "uaelegislation.gov.ae surfaced in search but holds the cabinet fee resolutions in Arabic downloads not reached in this pass",
+    "web-search": "searched 'ICP mission entry permit fees dirhams', 'UAE mission work permit 90 days fee' (2026-11-01): only consultancy pages with conflicting figures",
+    "trade-press": "Gulf Today and Economy Middle East give figures but don't quote the current ICP schedule verbatim; Khaleej Times' Dh600 is from 2005",
+    "archive": "web.archive.org has no snapshot of the ICP page; the MOHRE page's snapshot of 2026-03-25 resets the connection"
+   }
+  }
+ ],
+ "note": "MOHRE's guidelines (Administrative Resolution No. 38 of 2022) name no union notice, minimum pay or exempt days for the mission work permit, so those are null; each emirate's performance permit for an event (Dubai, Abu Dhabi) isn't modelled. The entry permit the ICP issues on the mission permit has fees of its own, not read."
+}

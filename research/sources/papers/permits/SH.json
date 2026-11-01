@@ -1,0 +1,145 @@
+{
+ "country": "SH",
+ "read": "2026-11-01",
+ "route": "Long Term Entry Permit, on the employer's Immigrant Employment Certificate",
+ "routeChanged": false,
+ "permit": {
+  "applies": "The employer (any person engaged in a trade, profession or vocation in St Helena) applies to the Immigration Control Board for the Immigrant Employment Certificate; each immigrant employee holds a Long Term Entry Permit.",
+  "first": "The Board's regard to the local labour market and the specialist skills sought, and the employer's arrangements for accommodation, health, welfare and repatriation.",
+  "fees": [
+   {
+    "what": "Short Term Entry Permit, on arrival (for a stay under 183 days)",
+    "amount": "20",
+    "currency": "GBP"
+   }
+  ],
+  "processing": null,
+  "validity": {
+   "n": 5,
+   "unit": "years",
+   "renewable": null
+  },
+  "union": null,
+  "eligibility": null,
+  "pay": null,
+  "exempt": {
+   "days": 182,
+   "within": 365
+  }
+ },
+ "sources": [
+  {
+   "url": "https://www.sainthelena.gov.sh/immigration-ord-updated-010421",
+   "title": "Immigration Ordinance 2011, consolidated to 1 April 2021 (St Helena Government)",
+   "read": "2026-11-01",
+   "said": "who has been present in St Helena for less than 183 days in the period of one year preceding the day on which the work is done. … An application for an immigrant employment certificate may be made by any person engaged in any trade, profession or vocation in St Helena who wishes to employ one or more immigrants in that business, and must be made to the Board in the approved form. … the name of the employer and the period (which must not exceed 5 years) of its operation;",
+   "kind": "primary",
+   "fields": [
+    "exempt",
+    "applies",
+    "first",
+    "validity"
+   ]
+  },
+  {
+   "url": "https://www.sainthelena.gov.sh/st-helena/government/portfolios/safety-security-and-home-affairs/immigration/immigrant-employment-certificate/",
+   "title": "St Helena Government, Immigrant Employment Certificate",
+   "read": "2026-11-01",
+   "said": "An Immigrant Employment Certificate is required by an employer to employ immigrants in St Helena and can be valid for a period of one to five years. … Each immigrant employee must hold a Long Term Entry Permit and pass Points Based System",
+   "kind": "primary",
+   "fields": [
+    "applies",
+    "validity"
+   ]
+  },
+  {
+   "url": "https://www.sainthelena.gov.sh/st-helena/government/portfolios/safety-security-and-home-affairs/immigration/long-term-entry-permit/",
+   "title": "St Helena Government, Long Term Entry Permit",
+   "read": "2026-11-01",
+   "said": "The Long-term Entry Permit is issuable for a period not exceeding five years.",
+   "kind": "primary",
+   "fields": [
+    "validity"
+   ]
+  },
+  {
+   "url": "https://www.sainthelena.gov.sh/st-helena/government/portfolios/safety-security-and-home-affairs/immigration/short-term-entry-permit/",
+   "title": "St Helena Government, Requirements for Short Term Entry Permits",
+   "read": "2026-11-01",
+   "said": "An entry fee of GBP £20.00 is chargeable … applies on arrival, for permission to enter St Helena for a period not exceeding 183 days",
+   "kind": "primary",
+   "fields": [
+    "fees",
+    "exempt"
+   ]
+  },
+  {
+   "url": "https://www.sainthelena.gov.sh/app/uploads/2026/08/ORD-4-Immigration-Amendment-Ordinance-2026.pdf",
+   "title": "Immigration (Amendment) Ordinance 2026, No. 4 of 2026",
+   "read": "2026-11-01",
+   "said": "This Ordinance comes into force on a date fixed by the Governor by Order. … may lawfully work in St Helena unless they hold a valid permission to stay and work permit.",
+   "kind": "primary",
+   "fields": [
+    "route"
+   ]
+  }
+ ],
+ "blockers": [
+  {
+   "field": "fees",
+   "sought": "The fees for the Immigrant Employment Certificate and the Long Term Entry Permit",
+   "tried": {
+    "institution": "sainthelena.gov.sh pages read (certificate, work permit, short- and long-term entry permit, exemptions): the certificate page says a fee is chargeable but not how much; no decision time.",
+    "official-register": "Immigration Ordinance 2011 (consolidated 2021) read; the Immigration Regulations 2012 Schedule II found only through its amendments (LN 6 of 2013 and LN 15 of 2018, short-term permit and landing fees), not the certificate or long-term permit items.",
+    "web-search": "'St Helena Immigrant Employment Certificate fee Long Term Entry Permit fee Immigration Control Board'; '\"Immigration Regulations, 2012\" St Helena Schedule II fees ...'; 'St Helena \"Immigration (Amendment) Ordinance, 2026\" commencement order': no fee table, no decision time, no commencement order.",
+    "trade-press": "visaatlas.org and stampednomad.com (no primary quoted for fees).",
+    "archive": "web.archive.org resets the connection from this environment (tried 2026-11-01)."
+   }
+  },
+  {
+   "field": "processing",
+   "sought": "How long the Board takes to decide",
+   "tried": {
+    "institution": "sainthelena.gov.sh pages read (certificate, work permit, short- and long-term entry permit, exemptions): the certificate page says a fee is chargeable but not how much; no decision time. | Retry 2026-11-01: sainthelena.gov.sh: the long-term entry permit and work-permit pages (saved) re-read, no decision time; the 'SHG Announces Key Changes To Immigration Ordinance' page (?p=68592) answers 404.",
+    "official-register": "Immigration Ordinance 2011 (consolidated 2021) read; the Immigration Regulations 2012 Schedule II found only through its amendments (LN 6 of 2013 and LN 15 of 2018, short-term permit and landing fees), not the certificate or long-term permit items. | Retry 2026-11-01: Immigration Ordinance 2011 and the 2026 amendment ordinance (saved) re-read: no decision period, union step, performer criterion or pay rule; no commencement Order found.",
+    "web-search": "'St Helena Immigrant Employment Certificate fee Long Term Entry Permit fee Immigration Control Board'; '\"Immigration Regulations, 2012\" St Helena Schedule II fees ...'; 'St Helena \"Immigration (Amendment) Ordinance, 2026\" commencement order': no fee table, no decision time, no commencement order. | Retry 2026-11-01: 'St Helena Government Immigration long term entry permit application processing time weeks Immigration Office' (2026-11-01): the government's pages and visaatlas, which says no time is stated.",
+    "trade-press": "visaatlas.org and stampednomad.com (no primary quoted for fees). | Retry 2026-11-01: visaatlas.org only, naming the government page; no time.",
+    "archive": "web.archive.org resets the connection from this environment (tried 2026-11-01). | Retry 2026-11-01: web.archive.org resets (2026-11-01)."
+   }
+  },
+  {
+   "field": "union",
+   "sought": "Any union or arts body consultation",
+   "tried": {
+    "institution": "sainthelena.gov.sh pages read (certificate, work permit, short- and long-term entry permit, exemptions): the certificate page says a fee is chargeable but not how much; no decision time. | Retry 2026-11-01: sainthelena.gov.sh: the long-term entry permit and work-permit pages (saved) re-read, no decision time; the 'SHG Announces Key Changes To Immigration Ordinance' page (?p=68592) answers 404.",
+    "official-register": "The Ordinance names none. | Retry 2026-11-01: Immigration Ordinance 2011 and the 2026 amendment ordinance (saved) re-read: no decision period, union step, performer criterion or pay rule; no commencement Order found.",
+    "web-search": "'St Helena Immigrant Employment Certificate fee Long Term Entry Permit fee Immigration Control Board'; '\"Immigration Regulations, 2012\" St Helena Schedule II fees ...'; 'St Helena \"Immigration (Amendment) Ordinance, 2026\" commencement order': no fee table, no decision time, no commencement order. | Retry 2026-11-01: 'St Helena Government Immigration long term entry permit application processing time weeks Immigration Office' (2026-11-01): the government's pages and visaatlas, which says no time is stated.",
+    "trade-press": "visaatlas.org and stampednomad.com (no primary quoted for fees). | Retry 2026-11-01: visaatlas.org only, naming the government page; no time.",
+    "archive": "web.archive.org resets the connection from this environment (tried 2026-11-01). | Retry 2026-11-01: web.archive.org resets (2026-11-01)."
+   }
+  },
+  {
+   "field": "eligibility",
+   "sought": "Criteria the performer must meet, beyond the employer's certificate",
+   "tried": {
+    "institution": "Points Based System named on the certificate page but not set out there. | Retry 2026-11-01: sainthelena.gov.sh: the long-term entry permit and work-permit pages (saved) re-read, no decision time; the 'SHG Announces Key Changes To Immigration Ordinance' page (?p=68592) answers 404.",
+    "official-register": "Immigration Ordinance 2011 (consolidated 2021) read; the Immigration Regulations 2012 Schedule II found only through its amendments (LN 6 of 2013 and LN 15 of 2018, short-term permit and landing fees), not the certificate or long-term permit items. | Retry 2026-11-01: Immigration Ordinance 2011 and the 2026 amendment ordinance (saved) re-read: no decision period, union step, performer criterion or pay rule; no commencement Order found.",
+    "web-search": "'St Helena Immigrant Employment Certificate fee Long Term Entry Permit fee Immigration Control Board'; '\"Immigration Regulations, 2012\" St Helena Schedule II fees ...'; 'St Helena \"Immigration (Amendment) Ordinance, 2026\" commencement order': no fee table, no decision time, no commencement order. | Retry 2026-11-01: 'St Helena Government Immigration long term entry permit application processing time weeks Immigration Office' (2026-11-01): the government's pages and visaatlas, which says no time is stated.",
+    "trade-press": "visaatlas.org and stampednomad.com (no primary quoted for fees). | Retry 2026-11-01: visaatlas.org only, naming the government page; no time.",
+    "archive": "web.archive.org resets the connection from this environment (tried 2026-11-01). | Retry 2026-11-01: web.archive.org resets (2026-11-01)."
+   }
+  },
+  {
+   "field": "pay",
+   "sought": "Any minimum pay rule",
+   "tried": {
+    "institution": "sainthelena.gov.sh pages read (certificate, work permit, short- and long-term entry permit, exemptions): the certificate page says a fee is chargeable but not how much; no decision time. | Retry 2026-11-01: sainthelena.gov.sh: the long-term entry permit and work-permit pages (saved) re-read, no decision time; the 'SHG Announces Key Changes To Immigration Ordinance' page (?p=68592) answers 404.",
+    "official-register": "The Ordinance names none. | Retry 2026-11-01: Immigration Ordinance 2011 and the 2026 amendment ordinance (saved) re-read: no decision period, union step, performer criterion or pay rule; no commencement Order found.",
+    "web-search": "'St Helena Immigrant Employment Certificate fee Long Term Entry Permit fee Immigration Control Board'; '\"Immigration Regulations, 2012\" St Helena Schedule II fees ...'; 'St Helena \"Immigration (Amendment) Ordinance, 2026\" commencement order': no fee table, no decision time, no commencement order. | Retry 2026-11-01: 'St Helena Government Immigration long term entry permit application processing time weeks Immigration Office' (2026-11-01): the government's pages and visaatlas, which says no time is stated.",
+    "trade-press": "visaatlas.org and stampednomad.com (no primary quoted for fees). | Retry 2026-11-01: visaatlas.org only, naming the government page; no time.",
+    "archive": "web.archive.org resets the connection from this environment (tried 2026-11-01). | Retry 2026-11-01: web.archive.org resets (2026-11-01)."
+   }
+  }
+ ],
+ "note": "Under the Immigration Ordinance 2011 (s. 23(1)(c)), 'employment' doesn't include work done by a person present in St Helena for less than 183 days in the year before the day the work is done, so a performer staying under 183 days works on the Short Term Entry Permit alone (taken as 182 in 365). The certificate runs one to five years and the Long Term Entry Permit up to five. The Immigration (Amendment) Ordinance 2026 (No. 4, gazetted 3 August 2026) would remove that exclusion and the certificate, replacing both with a 'permission to stay and work permit', but it comes into force only on a date the Governor fixes by Order, and no such Order was found (2026-11-01)."
+}

@@ -2152,3 +2152,21 @@ The game's own figures are R-4623 to R-4627, told by the lines identity.model, a
 genres.model. Not built yet: the work permit (research under way, eight subagents), the portrait's image itself (the
 headshot is held as when it was taken), the acting awards' categories (no awards engine yet), papers.ages' readers
 (military service, majority), and the main law's audit of every engine built so far.
+Built 2026-11-01, at the owner's word on work permits ("stay true to the factual and realism and cover that across the
+game's world map"): the work permit (`papers.permits`, src/person/permits, as it reads the person; compiled by
+tools/papers/permits from research/sources/papers/permits/<CC>.json, register papers.permits.<CC> and
+papers.permits.blocked.<CC>). Eight research subagents, six retries and a quote fixer (workbench/briefs/
+BRIEF-permits*.md); every quote checked by the lead against its saved page (507 sources). Of the 246 working countries:
+who applies is known for 204, fees for 147 (index-unit fees priced at their 1 January 2026 values: Belarus, Colombia,
+Tajikistan, Uruguay, Uzbekistan), the term for 164, processing for 119; 208 compile. permits.apply lodges an
+application for a part booked abroad (the engager or the worker, as each country's law says), records its fees and
+schedules its decision at the processing time (premium where offered); permits.decision grants it for its term (the
+engagement's own where the law says so), or refuses it where the life fails a test its records answer (the US O-1's
+distinction, the game's three parts and a best of 75; Turks and Caicos' English; Laos's age 20); permits.renew where
+it renews; acting.perform asks permitted(): a citizenship, a permit in force, or a short engagement inside the
+country's exemption. What isn't known is told (permits.unkept); the game's readings are R-5079 (permits.model).
+Layer 3 corrected from it: 21 routes and 8 exemptions in papers.work, Botswana, the Central African Republic and Libya
+added (their layer 3 blockers removed). Still open: Laos's and Cameroon's fees, Saudi Arabia's and Togo's routes,
+the routes of Belgium, Switzerland and Vietnam not yet landed in papers.work; coverage counts a country blocked where
+any field (a union rule, a pay floor) is, so 231 of 252 rows are blocked though most core facts are found. Parts are
+booked only under the US, UK and Canadian agreements yet, so permits elsewhere wait for those markets.

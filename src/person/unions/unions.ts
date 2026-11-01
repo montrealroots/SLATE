@@ -32,8 +32,9 @@ import type { LineId } from '../../core/text/text.ts';
  *   low-budget feature ($11 million or less); dues of $50 a quarter.
  *
  * The card carries the name the person goes by. What else membership changes is exported for the role engines:
- * whether a SAG-AFTRA part may be taken (its union security, after the Taft-Hartley days), and whether the person may
- * work in a country at all (their citizenship, through papers.work).
+ * whether a SAG-AFTRA part may be taken (its union security, after the Taft-Hartley days), and whether the person's
+ * citizenship lets them work in a country (through papers.work; papers.permits' `permitted` adds a permit held and a
+ * short engagement's days).
  */
 
 /** The line that tells the player these figures are the game's own (person.unions.model). */
@@ -230,8 +231,9 @@ export function mayTakeUnionWork(s: { unions: UnionsSlice; acting: ActingSlice }
 }
 
 /**
- * Whether the person may work in a country: one of their citizenships gives the right (it's their own, or free movement
- * covers it). Where it takes a permit, they may not: the game holds no work permits yet.
+ * Whether the person's citizenship lets them work in a country: one of their citizenships gives the right (it's their
+ * own, or free movement covers it). Where it takes a permit, it doesn't: papers.permits' `permitted` reads this, then
+ * the permits held and a short engagement's days.
  */
 export function mayWorkIn(p: Person, country: CountryCode): boolean {
   // @slate:consumer identity.make
