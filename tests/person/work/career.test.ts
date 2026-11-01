@@ -11,8 +11,6 @@ import {
   DOCUMENT_DAYS,
   documentSkill,
   FEES,
-  joinRoom,
-  LADDER,
   MARKET_LEVEL,
   MARKET_SHARE,
   meetPeople,
@@ -25,13 +23,7 @@ import {
   QUERY,
   requestChance,
   saleChance,
-  SEASON_WEEKS,
-  seasonOutcome,
-  staffingSkill,
-  standingOf,
   summariseScript,
-  weeklyMinimum,
-  workSeason,
   type CareerSlice,
   type Document,
   type Out,
@@ -211,82 +203,15 @@ describe('a pitch', () => {
   });
 });
 
-describe('a writers room', () => {
-  const staffed = (all: number, each: Record<string, number> = {}) => dispatch(contacts(withScript(all, 'pilot', each), 1), joinRoom, { script: 1 });
-
-  it('staffs a writer through a contact on a pilot or episode sample, as the sample and the meeting make likely', () => {
-    const w = v(made(50, { speaking: 90 }));
-    expect(staffingSkill(w)).toBeCloseTo(0.4 * of(w, 'speaking') + 0.3 * of(w, 'social-perceptiveness') + 0.3 * of(w, 'persuasion'), 10);
-    expect(staffed(100).slices.career.room).toEqual({ level: 0, seasons: 0, standing: null, episodes: 0, paid: null });
-    for (let k = 0; k < 12; k += 1) {
-      const at = k * 86_400;
-      const l1 = withCareer(dispatch(made(70, {}, at), writeScript, { form: 'episode', days: 200 }), { contacts: 1 });
-      const chance = saleChance(quality(script(l1)), staffingSkill(v(l1)));
-      const l2 = dispatch(l1, joinRoom, { script: 1 });
-      expect(l2.slices.career.room !== null, String(k)).toBe(u('staff', 1, at).float() < chance);
-      expect(v(l2)['speaking']).toBeCloseTo(grown(v(l1)['speaking'] as number, 1), 10);
-    }
-    expect(() => dispatch(contacts(withScript(100), 1), joinRoom, { script: 1 })).toThrow('a staffing sample is a pilot or an episode, not a feature');
-    expect(() => dispatch(withScript(100, 'pilot'), joinRoom, { script: 1 })).toThrow('a staffing meeting comes through a contact, and the writer has none');
-    expect(() => dispatch(staffed(100), joinRoom, { script: 1 })).toThrow('the writer is already in a room');
-  });
-
-  it("turns a standing into its season at the exact marks: 80, 70, 50, 40", () => {
-    expect(seasonOutcome(80)).toEqual({ episodes: 2, kept: true, up: true });
-    expect(seasonOutcome(79.9)).toEqual({ episodes: 1, kept: true, up: true });
-    expect(seasonOutcome(70)).toEqual({ episodes: 1, kept: true, up: true });
-    expect(seasonOutcome(69.9)).toEqual({ episodes: 1, kept: true, up: false });
-    expect(seasonOutcome(50)).toEqual({ episodes: 1, kept: true, up: false });
-    expect(seasonOutcome(49.9)).toEqual({ episodes: 0, kept: true, up: false });
-    expect(seasonOutcome(40)).toEqual({ episodes: 0, kept: true, up: false });
-    expect(seasonOutcome(39.9)).toEqual({ episodes: 0, kept: false, up: false });
-  });
-
-  it("pays a season of twenty weeks at the rung's MBA minimum, and steps the writer up the WGA's ladder", () => {
-    expect(LADDER).toEqual(['Staff Writer', 'Story Editor', 'Executive Story Editor', 'Co-Producer', 'Producer', 'Supervising Producer', 'Consulting Producer', 'Co-Executive Producer', 'Executive Producer', 'Showrunner']);
-    expect(SEASON_WEEKS).toBe(20);
-    expect([0, 1, 2, 3, 9].map((n) => weeklyMinimum(n).minor)).toEqual([516_400, 842_100, 842_100, 922_300, 922_300]);
-    let l = staffed(100);
-    const paid: number[] = [];
-    for (let i = 0; i < 12; i += 1) {
-      l = dispatch(l, workSeason, {});
-      paid.push(l.slices.career.room?.paid?.minor ?? 0);
-    }
-    expect(l.slices.career.room).toMatchObject({ level: 9, seasons: 12, episodes: 2 });
-    expect(paid.slice(0, 4)).toEqual([516_400 * 20, 842_100 * 20, 842_100 * 20, 922_300 * 20]);
-  });
-
-  it('gives a season its standing from the writer, within the spread, and teaches over its twenty weeks', () => {
-    expect(standingOf(v(made(100)))).toBe(100);
-    for (const all of [20, 45, 60, 75, 90]) {
-      const s = staffed(100, Object.fromEntries(['social-perceptiveness', 'speaking', 'persuasion'].map((id) => [id, all])));
-      const vb = v(s);
-      const base = standingOf(vb);
-      const standing = clamp(base + spread(base) * (2 * u('season', 0, 0).float() - 1));
-      const after = dispatch(s, workSeason, {});
-      if (standing < 40) expect(after.slices.career.room, String(all)).toBeNull();
-      else expect(after.slices.career.room, String(all)).toEqual({ level: standing >= 70 ? 1 : 0, seasons: 1, standing, episodes: standing >= 80 ? 2 : standing >= 50 ? 1 : 0, paid: { currency: 'USD', minor: 516_400 * 20 } });
-      expect(v(after)['social-perceptiveness']).toBeCloseTo(grown(vb['social-perceptiveness'] as number, 140), 10);
-    }
-    expect(() => dispatch(withScript(50), workSeason, {})).toThrow('the writer is in no room');
-  });
-
-  it('room.join: a better sample and meeting staff the writer where weak ones do not', () => {
-    falsifyAny({ feature: 'room.join', claim: 'bites', says: 'a writer at 100 is staffed where one at 5 is not', base: 5, twin: 100, outcome: (n) => staffed(n).slices.career.room !== null });
-  });
-
-  it('room.season: a writer the room values is kept, one it does not is let go', () => {
-    falsifyAny({ feature: 'room.season', claim: 'bites', says: 'a writer at 100 with people is kept where one at 0 is let go', base: 0, twin: 100, outcome: (n) => dispatch(staffed(100, { 'social-perceptiveness': n, speaking: n, persuasion: n }), workSeason, {}).slices.career.room !== null });
-  });
-
-  it('is run through the frame, each command declaring what it reads and writes', () => {
-    expect(commandIndex().filter((x) => ['script.summarise', 'network.meet', 'script.promote', 'script.pitch', 'room.join', 'room.season'].includes(x.id))).toEqual([
+describe('the solo writer', () => {
+  it('works alone, with no room, run through the frame, each command declaring what it reads and writes', () => {
+    expect(commandIndex().filter((x) => x.id.startsWith('room.'))).toEqual([]);
+    expect(CAREER_START).toEqual({ contacts: 0, out: {} });
+    expect(commandIndex().filter((x) => ['script.summarise', 'network.meet', 'script.promote', 'script.pitch'].includes(x.id))).toEqual([
       { id: 'script.summarise', reads: ['scripts'], writes: ['attributes', 'career'] },
       { id: 'network.meet', reads: [], writes: ['attributes', 'career'] },
       { id: 'script.promote', reads: ['scripts'], writes: ['attributes', 'career'] },
       { id: 'script.pitch', reads: ['scripts'], writes: ['attributes', 'career'] },
-      { id: 'room.join', reads: ['scripts'], writes: ['attributes', 'career'] },
-      { id: 'room.season', reads: [], writes: ['attributes', 'career'] },
     ]);
   });
 });

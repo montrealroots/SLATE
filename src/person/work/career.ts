@@ -1,5 +1,5 @@
 import { defineCommand, type Context } from '../../core/frame/frame.ts';
-import { fromMajor, money, type Money } from '../../core/money/money.ts';
+import { fromMajor, type Money } from '../../core/money/money.ts';
 import { attributeOf, facetSkill, practise, skillOf, valuesOf, type AttributesSlice } from '../attributes/attributes.ts';
 import { partScore, PARTS, scriptOf, spread, type Form, type Script, type ScriptsSlice } from './work.ts';
 
@@ -16,17 +16,12 @@ import { partScore, PARTS, scriptOf, spread, type Form, type Script, type Script
  * - A pitch on a request (Pitching, Speaking, Persuasion, the pitch documents): a third of the specs agents took out sold
  *   in 2012 (the Scoggins Report), the share for a script at the market's level, better scripts and meetings selling
  *   more. A script sold pays the WGA's minimum for its form (R-4241), goes off the market, and leaves its buyer a contact.
- * - A writers' room (Speaking, Social Perceptiveness, Persuasion): staffed through a contact on a pilot or episode
- *   sample; a season is twenty weeks (the median staff writer's and story editor's on a streaming series), paid at the
- *   MBA's 2026 weekly minimum for the rung (98% of staff writers are paid it); the standing decides the episodes
- *   assigned, being kept on, and the step up the WGA's ladder.
- *
- * What the trade doesn't publish (how likely a contact is made in a day, or asks to read, or a room keeps a writer at a
- * level) is the game's own until the owner balances it (person.career.model).
- */
 
-/** The WGA's titles for television writers, in its own order (R-4241). */
-export const LADDER = ['Staff Writer', 'Story Editor', 'Executive Story Editor', 'Co-Producer', 'Producer', 'Supervising Producer', 'Consulting Producer', 'Co-Executive Producer', 'Executive Producer', 'Showrunner'] as const;
+ * The writer works alone (the owner, 2026-11-01: "just get rid of all the team stuff because I will be a solo writer"):
+ * no writers' room, staffing or ladder of titles; a pilot or an episode is written and sold as a spec.
+ *
+ * What the trade doesn't publish (how likely a contact is made in a day, or asks to read) is the game's own until the owner balances it (person.career.model).
+ */
 
 /**
  * What the buyer pays for a script of each form, at the 2026 MBA's first-year minimum (R-4241): a feature as an
@@ -78,25 +73,12 @@ export interface Out {
   sold: { at: number; fee: Money | null } | null;
 }
 
-export interface Room {
-  /** The rung on the ladder, from 0 (Staff Writer). */
-  level: number;
-  seasons: number;
-  /** The last season's standing, 0 to 100 (none before the first). */
-  standing: number | null;
-  /** Episodes assigned in the last season. */
-  episodes: number;
-  /** What the last season paid, at the rung's minimum. */
-  paid: Money | null;
-}
-
 export interface CareerSlice {
   contacts: number;
   out: { [script: string]: Out };
-  room: Room | null;
 }
 
-export const CAREER_START: CareerSlice = { contacts: 0, out: {}, room: null };
+export const CAREER_START: CareerSlice = { contacts: 0, out: {} };
 
 type Values = Readonly<Record<string, number>>;
 type Career = { attributes: AttributesSlice; scripts: ScriptsSlice; career: CareerSlice };
@@ -246,66 +228,6 @@ function pitch(s: Career, a: ScriptArgs, c: Context): void {
   s.attributes['screenwriter'] = values;
 }
 
-/** How a writer comes across in a staffing meeting, 0 to 100. */
-export const staffingSkill = (v: Values): number => 0.4 * of(v, 'speaking') + 0.3 * of(v, 'social-perceptiveness') + 0.3 * of(v, 'persuasion');
-
-/** A staffing meeting, through a contact, on a spec sample: a pilot or an episode. */
-function join(s: Career, a: ScriptArgs, c: Context): void {
-  const values = { ...valuesOf(s.attributes, 'screenwriter') };
-  const script = scriptOf(s.scripts, a.script);
-  if (script.form !== 'pilot' && script.form !== 'episode') throw new Error(`a staffing sample is a pilot or an episode, not a ${script.form}`);
-  // @slate:consumer room.season
-  if (s.career.room !== null) throw new Error('the writer is already in a room');
-  if (s.career.contacts < 1) throw new Error('a staffing meeting comes through a contact, and the writer has none');
-  // Stryker disable next-line EqualityOperator: a draw is continuous, so it equals the chance with no probability.
-  if (c.draws('work.career', 'staff', script.id, c.now).float() < saleChance(quality(script), staffingSkill(values))) s.career.room = { level: 0, seasons: 0, standing: null, episodes: 0, paid: null };
-  practise(values, ['speaking', 'social-perceptiveness', 'persuasion'], 1);
-  s.attributes['screenwriter'] = values;
-}
-
-/** A writer's standing in the room over a season, before the season's turns: Social Perceptiveness counting most. */
-export const standingOf = (v: Values): number => 0.5 * of(v, 'social-perceptiveness') + 0.25 * of(v, 'speaking') + 0.25 * of(v, 'persuasion');
-
-/** What a season's standing gives: the episodes assigned, whether the writer is kept on, and whether they step up. */
-export function seasonOutcome(standing: number): { episodes: number; kept: boolean; up: boolean } {
-  return { episodes: standing >= 80 ? 2 : standing >= 50 ? 1 : 0, kept: standing >= 40, up: standing >= 70 };
-}
-
-/** A season's weeks: the median staff writer's and story editor's on a streaming series, 2021-22 (R-4608). */
-export const SEASON_WEEKS = 20;
-
-/**
- * The MBA's weekly minimum from 2 May 2026 for a season of 20 weeks or more, by rung (R-4608): a staff writer on a
- * 20-of-26 guarantee, a story editor or executive story editor, and a writer-producer (co-producer and above).
- */
-export function weeklyMinimum(level: number): Money {
-  return money('USD', level === 0 ? 516_400 : level <= 2 ? 842_100 : 922_300);
-}
-
-/**
- * A season in the room. The standing (moved by the season's turns, within the writer's spread) gives two episodes at 80
- * or more, one at 50 or more, none below; at 40 or more the writer is kept for the next season, and at 70 or more steps
- * up a rung; below 40 the writer is let go. The season pays twenty weeks at the rung's minimum.
- */
-function season(s: Career, _a: Record<string, never>, c: Context): void {
-  const values = { ...valuesOf(s.attributes, 'screenwriter') };
-  // @slate:consumer room.join
-  const room = s.career.room;
-  if (room === null) throw new Error('the writer is in no room');
-  const base = standingOf(values);
-  const standing = clamp(base + spread(base) * (2 * c.draws('work.career', 'season', room.seasons, c.now).float() - 1), 0, 100);
-  const turn = seasonOutcome(standing);
-  room.paid = money('USD', weeklyMinimum(room.level).minor * SEASON_WEEKS);
-  room.seasons += 1;
-  room.standing = standing;
-  room.episodes = turn.episodes;
-  // @slate:consumer room.season
-  if (turn.up) room.level = Math.min(LADDER.length - 1, room.level + 1);
-  if (!turn.kept) s.career.room = null;
-  practise(values, ['social-perceptiveness', 'speaking', 'persuasion', 'writing'], SEASON_WEEKS * 7);
-  s.attributes['screenwriter'] = values;
-}
-
 // Stryker disable all: a mutant of a declaration made as the module loads changes its shape, so the module loaded
 // again for it is refused as declared twice (as the accounts' and the cards' say). The declarations are held by the
 // test that lists each command with what it reads and writes; what each does is mutated above.
@@ -313,5 +235,3 @@ export const summariseScript = defineCommand<Career, DocumentArgs>({ id: 'script
 export const meetPeople = defineCommand<Career, DaysArgs>({ id: 'network.meet', reads: [], writes: ['attributes', 'career'], run: network });
 export const promoteScript = defineCommand<Career, ScriptDaysArgs>({ id: 'script.promote', reads: ['scripts'], writes: ['attributes', 'career'], run: promote });
 export const pitchScript = defineCommand<Career, ScriptArgs>({ id: 'script.pitch', reads: ['scripts'], writes: ['attributes', 'career'], run: pitch });
-export const joinRoom = defineCommand<Career, ScriptArgs>({ id: 'room.join', reads: ['scripts'], writes: ['attributes', 'career'], run: join });
-export const workSeason = defineCommand<Career, Record<string, never>>({ id: 'room.season', reads: [], writes: ['attributes', 'career'], run: season });

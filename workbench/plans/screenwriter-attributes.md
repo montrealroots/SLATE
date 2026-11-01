@@ -134,3 +134,6 @@ Each line: the attribute as shown, what reads it, what it changes, and the insti
   trade, where you grew up), and what raises them: the research names what schools teach and what work builds, which
   `work.*` and the schools' courses would read.
 - The order the engines are built in; the balance of every weight, which the owner has put later.
+
+
+2026-11-01: the owner made the writer solo ("get rid of all the team stuff"); the writers' room engine is removed.

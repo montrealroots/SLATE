@@ -1994,4 +1994,11 @@ level; a room's season is twenty weeks paid at the MBA's 2026 minimum for the ru
 what no source gives. 58 tests; the three files at 100% mutation score (684 mutants). Still the game's: the shares, the
 spreads at 0 and 100, a pilot's and a short's days, how far a revision carries, the chances of a contact, a warm
 request, a staffing and a room's marks; each blocker in R-4608 says what was tried.
+Ruled 2026-11-01, the owner: "Actually just get rid of all the team stuff because I will be a solo writer." The writers'
+room is gone from the build: room.join and room.season, the WGA's ladder of titles, a season's weeks and pay by rung
+(src/person/work/career.ts; registry/effects.json; the room row of coverage/work-operations.json). The writer writes,
+revises, has scripts read, writes their documents, networks, sends scripts out and pitches alone; a pilot or an
+episode is written and sold as a spec. Speaking, Persuasion and Social Perceptiveness keep their readers in networking
+and the pitch; their room-only facets (the staffing pitch, speaking up in the room, reading the showrunner) stay in
+the sourced meanings but act through no engine now. The room's research stays in R-4608 for the record.
 
