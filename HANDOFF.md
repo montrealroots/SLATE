@@ -2079,3 +2079,15 @@ directing.model, acting.model).
   2023), and the director reads the screenwriter's spread, so one figure stands in one place.
 - Money is recorded, not yet paid into the ledger, in all three, as the screenwriter's fees are.
 Next: the rest of layer 4 (identity, background, genres, the portrait), then prove the layer.
+Ruled 2026-11-01, the owner, asked what the game reads for a person's legal sex (the Identity page had Pronouns and
+Billed As only): "Add a Sex field." Identity gets Sex (Female, Male) beside Pronouns, read by the papers (military
+service by sex, citizenship by descent from the father only, a passport's sex marker), by casting and by the acting
+awards' categories; Pronouns and Billed As stay their own choices, pronouns still settling Billed As where they can.
+Begun 2026-11-01, at the owner's word ("Continue on to the rest of layer 4"): identity, background, the genres and the
+portrait, planned in workbench/plans/layer4-identity.md (each field with the reader that changes an outcome for the
+player and the research it needs). Six research subagents (workbench/briefs/BRIEF-identity-research.md): casting by
+gender, age, ethnicity, language and accent, and the acting awards' categories; the unions' and guilds'
+professional-name, credit-name, joining and work-authorisation rules; every territory's languages (CLDR) and a level
+scale; the 149 genres' definitions, re-researched to the source in two halves (the first SLATE's repository was not
+reachable from this session); the genres' market figures, a family in the business, wealth by occupation, headshots
+and the writing programmes. Each result is checked by the lead before it lands.
