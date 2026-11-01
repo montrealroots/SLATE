@@ -2036,4 +2036,11 @@ Direction, Auditioning). The six attributes no institution judges fold in rather
 the owner's example screen, is the record of work done, not a skill set at creation. Next on attributes: re-key the
 screenwriter's engines to its 7 (the parts and facets stay underneath, each part read through the broad attribute that
 covers it), then the other roles' engines on theirs.
+Done 2026-11-01, at the owner's word ("Yes"): the screenwriter's engines re-keyed to its seven broad attributes. The
+player holds Story, Characters, Voice, Writing, Revision, Discipline and Pitching (src/person/attributes/attributes.json:
+each with what it covers, its 27 components keeping their sourced definitions and 158 facets); a component reads the
+level of the broad attribute that covers it (`componentValues`), so a part's facets are scored as before through it;
+work raises each broad attribute whose components it used, once (`practise`). Writing a draft now also raises Pitching,
+since the owner's map puts Film Production Process there; a revision raises Revision whole (Taking Notes, Story Critique
+and Critical Thinking are in it). The attributes' matrix has the seven as its rows. 54 tests; mutation 100% (573).
 

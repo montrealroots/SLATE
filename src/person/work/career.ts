@@ -1,6 +1,6 @@
 import { defineCommand, type Context } from '../../core/frame/frame.ts';
 import { fromMajor, type Money } from '../../core/money/money.ts';
-import { attributeOf, facetSkill, practise, skillOf, valuesOf, type AttributesSlice } from '../attributes/attributes.ts';
+import { componentOf, componentValues, facetSkill, practise, skillOf, type AttributesSlice } from '../attributes/attributes.ts';
 import { partScore, PARTS, scriptOf, spread, type Form, type Script, type ScriptsSlice } from './work.ts';
 
 /**
@@ -115,7 +115,7 @@ export interface DocumentArgs {
 
 /** What a writer can do in a document: the Synopsis facet it is (with what a source ties to it), and Writing. */
 export function documentSkill(values: Values, document: Document): number {
-  const facet = attributeOf('screenwriter', 'synopsis').facets.find((f) => f.id === document);
+  const facet = componentOf('screenwriter', 'synopsis').facets.find((f) => f.id === document);
   if (facet === undefined) throw new Error(`there's no document ${document}`);
   return 0.7 * facetSkill(values, facet, 'synopsis') + 0.3 * of(values, 'writing');
 }
@@ -123,15 +123,14 @@ export function documentSkill(values: Values, document: Document): number {
 /** Writes one of a script's documents. */
 function summarise(s: Career, a: DocumentArgs, c: Context): void {
   wholeDays(a.days);
-  const values = { ...valuesOf(s.attributes, 'screenwriter') };
+  const values = componentValues(s.attributes, 'screenwriter');
   const k = documentSkill(values, a.document);
   const { script, out } = onTheMarket(s, a.script);
   const needed = Math.ceil(DOCUMENT_DAYS[a.document] / (0.5 + (0.5 * (0.6 * of(values, 'writing') + 0.4 * of(values, 'time-management'))) / 100));
   const effort = Math.min(1, a.days / needed);
   // @slate:consumer script.write
   out.documents[a.document] = clamp(k * (0.5 + 0.5 * effort) + spread(k) * (2 * c.draws('work.career', 'document', script.id, a.document, c.now).float() - 1), 0, 100);
-  practise(values, ['synopsis', 'writing'], a.days);
-  s.attributes['screenwriter'] = values;
+  practise(s.attributes, 'screenwriter', ['synopsis', 'writing'], a.days);
 }
 
 export interface DaysArgs {
@@ -145,15 +144,14 @@ export const contactChance = (v: Values): number => 0.05 + (0.45 * (0.6 * of(v, 
 /** Days spent among the trade: festivals, panels, the people a writer already knows. */
 function network(s: Career, a: DaysArgs, c: Context): void {
   wholeDays(a.days);
-  const values = { ...valuesOf(s.attributes, 'screenwriter') };
+  const values = componentValues(s.attributes, 'screenwriter');
   const p = contactChance(values);
   const d = c.draws('work.career', 'network', c.now);
   for (let day = 0; day < a.days; day += 1) {
     // Stryker disable next-line EqualityOperator: a draw is continuous, so it equals the chance with no probability.
     if (d.float() < p) s.career.contacts += 1;
   }
-  practise(values, ['networking', 'speaking', 'social-perceptiveness'], a.days);
-  s.attributes['screenwriter'] = values;
+  practise(s.attributes, 'screenwriter', ['networking', 'speaking', 'social-perceptiveness'], a.days);
 }
 
 /** How well the query sells the script, 0.5 to 1.5: Promotion and the best query document. */
@@ -177,7 +175,7 @@ export interface ScriptDaysArgs {
 /** Sends a script out: a contact approached each day while there are contacts, a stranger queried cold each day after. */
 function promote(s: Career, a: ScriptDaysArgs, c: Context): void {
   wholeDays(a.days);
-  const values = { ...valuesOf(s.attributes, 'screenwriter') };
+  const values = componentValues(s.attributes, 'screenwriter');
   const { script, out } = onTheMarket(s, a.script);
   // @slate:consumer network.meet
   // @slate:consumer script.pitch
@@ -190,8 +188,7 @@ function promote(s: Career, a: ScriptDaysArgs, c: Context): void {
     // Stryker disable next-line EqualityOperator: a draw is continuous, so it equals the chance with no probability.
     if (d.float() < (i < known ? warm : cold)) out.requests += 1;
   }
-  practise(values, ['promotion'], a.days);
-  s.attributes['screenwriter'] = values;
+  practise(s.attributes, 'screenwriter', ['promotion'], a.days);
 }
 
 /** How a writer does in a meeting, 0 to 100: Pitching, Speaking and Persuasion, and the best pitch document. */
@@ -213,7 +210,7 @@ export interface ScriptArgs {
 
 /** A pitch meeting with someone who asked to read the script. */
 function pitch(s: Career, a: ScriptArgs, c: Context): void {
-  const values = { ...valuesOf(s.attributes, 'screenwriter') };
+  const values = componentValues(s.attributes, 'screenwriter');
   const { script, out } = onTheMarket(s, a.script);
   // @slate:consumer script.promote
   if (out.requests < 1) throw new Error(`no one has asked to read script ${a.script}`);
@@ -224,8 +221,7 @@ function pitch(s: Career, a: ScriptArgs, c: Context): void {
     out.sold = { at: c.now, fee: FEES[script.form] };
     s.career.contacts += 1;
   }
-  practise(values, ['pitching', 'speaking', 'persuasion'], 1);
-  s.attributes['screenwriter'] = values;
+  practise(s.attributes, 'screenwriter', ['pitching', 'speaking', 'persuasion'], 1);
 }
 
 // Stryker disable all: a mutant of a declaration made as the module loads changes its shape, so the module loaded

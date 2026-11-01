@@ -1,1804 +1,1853 @@
 {
  "screenwriter": [
   {
+   "id": "story",
+   "name": "Story",
+   "definition": "Plot, structure, premise, theme and setting.",
+   "covers": [
+    {
+     "id": "plot",
+     "name": "Plot",
+     "research": "plot",
+     "definition": "What happens: the actions, events, conflicts and turning points that propel the story forward in cause and effect, unfolding in ways the reader does not predict.",
+     "facets": [
+      {
+       "id": "cause-and-effect",
+       "name": "Cause And Effect",
+       "meaning": "The actions and events of the story follow from one another, each turning point caused, so the chain leads to the ending.",
+       "draws": [
+        "characters",
+        "structure"
+       ],
+       "readers": [
+        "black-list",
+        "nicholl",
+        "page",
+        "wga-credits"
+       ]
+      },
+      {
+       "id": "conflict",
+       "name": "Conflict That Propels",
+       "meaning": "Forces in opposition, external or internal, give the story urgency and push it forward.",
+       "draws": [
+        "characters",
+        "dialogue"
+       ],
+       "readers": [
+        "austin",
+        "black-list",
+        "nicholl",
+        "page"
+       ]
+      },
+      {
+       "id": "escalations-revelations-reversals",
+       "name": "Escalations, Revelations And Reversals",
+       "meaning": "The turning points that progress the story: problems that raise the stakes, new information that shifts a goal, and reversals of direction and power.",
+       "draws": [
+        "characters"
+       ],
+       "readers": [
+        "black-list",
+        "page"
+       ]
+      },
+      {
+       "id": "unpredictable-unfolding",
+       "name": "Unpredictable Unfolding",
+       "meaning": "How the story unfolds surprises the reader: original, not predictable, not the standard formula.",
+       "draws": [
+        "distinctive-voice"
+       ],
+       "readers": [
+        "black-list",
+        "nicholl",
+        "page"
+       ]
+      },
+      {
+       "id": "dramatic-question",
+       "name": "The Pull Of The Story",
+       "meaning": "The plot raises a dramatic question that makes the reader want to know what happens next and keep reading, taken on a journey.",
+       "draws": [
+        "characters",
+        "theme"
+       ],
+       "readers": [
+        "austin",
+        "bbc",
+        "black-list",
+        "nicholl"
+       ]
+      },
+      {
+       "id": "goals-and-stakes",
+       "name": "Goals And Stakes",
+       "meaning": "What the characters want and what is at risk if they fail, which gives the events their weight.",
+       "draws": [
+        "characters"
+       ],
+       "readers": [
+        "black-list"
+       ]
+      },
+      {
+       "id": "storylines-across-a-series",
+       "name": "Storylines Across A Series",
+       "meaning": "In series work, how the plot progresses over a season in arcs and episode storylines, and how storylines are restructured or added.",
+       "draws": [
+        "characters"
+       ],
+       "readers": [
+        "black-list"
+       ]
+      }
+     ]
+    },
+    {
+     "id": "structure",
+     "name": "Structure",
+     "research": "STRUCTURE",
+     "definition": "The framework of the story: how its acts, sequences and scenes are built and ordered so the story progresses from a beginning that starts on time to the climax and ending it builds to.",
+     "facets": [
+      {
+       "id": "story-framework",
+       "name": "The Story's Framework",
+       "meaning": "The frame the story is built on, three acts or another progression, used so the story advances effectively.",
+       "draws": [],
+       "readers": [
+        "bbc",
+        "big-break",
+        "page",
+        "wga-credits"
+       ]
+      },
+      {
+       "id": "beginning-middle-and-end",
+       "name": "Beginning, Middle And End",
+       "meaning": "The story holds together as a whole: a strong beginning, middle and end, coherent even when told out of order.",
+       "draws": [
+        "characters"
+       ],
+       "readers": [
+        "bbc",
+        "big-break",
+        "nicholl",
+        "wga-credits"
+       ]
+      },
+      {
+       "id": "starting-on-time",
+       "name": "Starting On Time",
+       "meaning": "The story gets into motion early, reaching its inciting incident before setup buries it, and hooks the reader in the opening pages.",
+       "draws": [
+        "plot"
+       ],
+       "readers": [
+        "austin",
+        "bbc",
+        "big-break",
+        "wga-credits"
+       ]
+      },
+      {
+       "id": "climax-and-ending",
+       "name": "Climax And Ending",
+       "meaning": "The story builds to a climax and a satisfying ending that brings it full circle, not one that feels rushed.",
+       "draws": [
+        "characters",
+        "theme"
+       ],
+       "readers": [
+        "austin",
+        "bbc",
+        "big-break",
+        "wga-credits"
+       ]
+      },
+      {
+       "id": "scenes-that-earn-their-place",
+       "name": "Scenes That Earn Their Place",
+       "meaning": "Each scene and sequence is built to move the story to the next, entering late and leaving early, with no superfluous scenes.",
+       "draws": [],
+       "readers": [
+        "austin",
+        "bbc",
+        "big-break",
+        "wga-credits"
+       ]
+      },
+      {
+       "id": "pace",
+       "name": "Pace",
+       "meaning": "The timing of the action, of what is revealed and of character development, so the story neither drags nor rushes.",
+       "draws": [
+        "characters",
+        "plot"
+       ],
+       "readers": [
+        "bbc",
+        "big-break",
+        "page",
+        "wga-credits"
+       ]
+      },
+      {
+       "id": "built-for-its-form",
+       "name": "Built For Its Form",
+       "meaning": "The story is shaped for what it is: a feature, a pilot or episode, or a short; for a series, a framework meant to repeat each episode.",
+       "draws": [
+        "characters"
+       ],
+       "readers": [
+        "bbc",
+        "big-break",
+        "wga-credits"
+       ]
+      }
+     ]
+    },
+    {
+     "id": "premise",
+     "name": "Premise",
+     "research": "premise",
+     "definition": "The idea behind the story, what it is about and its hook: a specific dramatic problem, original and strong enough to start the story forward and to hold up when developed.",
+     "facets": [
+      {
+       "id": "the-hook",
+       "name": "The Hook",
+       "meaning": "The idea behind the story, what it is about, strong enough to make someone want to read it and to start the movie forward by itself.",
+       "draws": [],
+       "readers": [
+        "black-list",
+        "nicholl",
+        "page"
+       ]
+      },
+      {
+       "id": "original-premise",
+       "name": "Original Premise",
+       "meaning": "The premise is new, or an original take on a familiar story, set against what has already been made.",
+       "draws": [
+        "distinctive-voice"
+       ],
+       "readers": [
+        "bbc",
+        "black-list",
+        "nicholl"
+       ]
+      },
+      {
+       "id": "dramatic-problem",
+       "name": "A Dramatic Problem",
+       "meaning": "The premise sets out a specific problem: when something happens, someone has to do something, or else.",
+       "draws": [
+        "characters",
+        "plot"
+       ],
+       "readers": [
+        "black-list"
+       ]
+      },
+      {
+       "id": "dramatically-viable",
+       "name": "Tested And Dramatically Viable",
+       "meaning": "The core concept has dramatic potential and holds up when developed; a flawed concept no amount of drafting fixes, and execution must deliver on it.",
+       "draws": [
+        "plot"
+       ],
+       "readers": [
+        "black-list"
+       ]
+      },
+      {
+       "id": "series-engine",
+       "name": "A Premise That Sustains A Series",
+       "meaning": "For a series, a premise or general story line distinct from any one episode's story, able to generate many episodes.",
+       "draws": [
+        "plot",
+        "setting"
+       ],
+       "readers": [
+        "black-list",
+        "wga-credits"
+       ]
+      }
+     ]
+    },
+    {
+     "id": "theme",
+     "name": "Theme",
+     "research": "theme",
+     "definition": "What the story is about beneath its events: an underlying message revealed through plot, dialogue and image, clear and rich, and about something worth discussing.",
+     "facets": [
+      {
+       "id": "underlying-message",
+       "name": "Underlying Message",
+       "meaning": "What the story is about beneath its events, revealed through its plot, its dialogue and its images.",
+       "draws": [
+        "dialogue",
+        "plot",
+        "visual-storytelling"
+       ],
+       "readers": [
+        "page",
+        "wga-credits"
+       ]
+      },
+      {
+       "id": "about-something",
+       "name": "About Something",
+       "meaning": "The themes provoke thought, in any genre: the story is about something that might spark discussion.",
+       "draws": [],
+       "readers": [
+        "nicholl"
+       ]
+      },
+      {
+       "id": "clear-and-rich",
+       "name": "Clear And Rich",
+       "meaning": "The theme is clear and rich, centred on meanings that engage the writer, and it is where an audience's deeper investment comes from.",
+       "draws": [
+        "premise"
+       ],
+       "readers": []
+      },
+      {
+       "id": "dramatised-through-character",
+       "name": "Dramatised Through Character",
+       "meaning": "The theme is carried by what the characters go through, not stated: the characters embody the subject and their trajectory dramatises it.",
+       "draws": [
+        "characters",
+        "structure"
+       ],
+       "readers": []
+      },
+      {
+       "id": "thematic-unity",
+       "name": "Thematic Unity",
+       "meaning": "The world, the structure and the ending hold to one set of meanings, the ending bringing the theme full circle.",
+       "draws": [
+        "setting",
+        "structure"
+       ],
+       "readers": [
+        "austin"
+       ]
+      }
+     ]
+    },
+    {
+     "id": "setting",
+     "name": "Setting",
+     "research": "setting",
+     "definition": "Where and when the story happens and the world it builds: its place and time, its rules and pressures, brought to life authentically and with texture.",
+     "facets": [
+      {
+       "id": "place-and-time",
+       "name": "Place And Time",
+       "meaning": "Where and when the story takes place: its locale and period, and the sense of place it gives.",
+       "draws": [
+        "premise"
+       ],
+       "readers": [
+        "black-list",
+        "wga-credits"
+       ]
+      },
+      {
+       "id": "a-world-with-rules",
+       "name": "A World With Rules And Pressures",
+       "meaning": "The storyworld is defined: its rules, what can and can't happen, its groups and beliefs, and the pressures it puts on every character.",
+       "draws": [
+        "characters",
+        "plot",
+        "structure",
+        "theme"
+       ],
+       "readers": [
+        "black-list"
+       ]
+      },
+      {
+       "id": "authentically-brought-to-life",
+       "name": "Authentically Brought To Life",
+       "meaning": "The world is rendered realistically and credibly, true to the people and places it represents.",
+       "draws": [
+        "characters",
+        "research"
+       ],
+       "readers": [
+        "bbc",
+        "black-list"
+       ]
+      },
+      {
+       "id": "pulls-the-audience-in",
+       "name": "Pulls The Audience In",
+       "meaning": "The world draws an audience in and holds them there.",
+       "draws": [],
+       "readers": [
+        "bbc",
+        "black-list"
+       ]
+      },
+      {
+       "id": "texture-and-atmosphere",
+       "name": "Texture And Atmosphere",
+       "meaning": "The feel of the world on the page: its texture, atmosphere and tone, and speech that fits it.",
+       "draws": [
+        "dialogue",
+        "distinctive-voice"
+       ],
+       "readers": [
+        "austin",
+        "black-list",
+        "nicholl"
+       ]
+      },
+      {
+       "id": "a-world-that-sustains-a-series",
+       "name": "A World That Sustains A Series",
+       "meaning": "In series work the world is the returnable element, the engine of many stories, and must be dramatically or comedically sustainable.",
+       "draws": [
+        "premise"
+       ],
+       "readers": [
+        "black-list"
+       ]
+      }
+     ]
+    }
+   ]
+  },
+  {
    "id": "characters",
    "name": "Characters",
-   "research": "characters",
-   "definition": "The people of the story: distinctive, many-layered personalities with clear goals they act on, who change over the story and whose relationships convince.",
-   "facets": [
+   "definition": "Characters and dialogue.",
+   "covers": [
     {
-     "id": "distinctive-and-vivid",
-     "name": "Distinctive And Vivid",
-     "meaning": "Characters stand out as individuals, each unlike the others and unlike a type, rather than stereotypes or tropes.",
-     "draws": [
-      "dialogue",
-      "setting"
-     ],
-     "readers": [
-      "austin",
-      "bbc",
-      "black-list",
-      "nicholl",
-      "page",
-      "wga-credits"
+     "id": "characters",
+     "name": "Characters",
+     "research": "characters",
+     "definition": "The people of the story: distinctive, many-layered personalities with clear goals they act on, who change over the story and whose relationships convince.",
+     "facets": [
+      {
+       "id": "distinctive-and-vivid",
+       "name": "Distinctive And Vivid",
+       "meaning": "Characters stand out as individuals, each unlike the others and unlike a type, rather than stereotypes or tropes.",
+       "draws": [
+        "dialogue",
+        "setting"
+       ],
+       "readers": [
+        "austin",
+        "bbc",
+        "black-list",
+        "nicholl",
+        "page",
+        "wga-credits"
+       ]
+      },
+      {
+       "id": "depth-and-emotional-core",
+       "name": "Depth And Emotional Core",
+       "meaning": "Characters are rounded and many-layered, with emotional complexity, contradictions and an emotional core a reader recognises as human.",
+       "draws": [
+        "theme"
+       ],
+       "readers": [
+        "bbc",
+        "black-list",
+        "nicholl",
+        "page"
+       ]
+      },
+      {
+       "id": "goals-stakes-and-action",
+       "name": "Goals, Stakes And Action",
+       "meaning": "Main characters want something clearly, have something at stake, and act on it, so they drive the story instead of being carried by it.",
+       "draws": [
+        "plot"
+       ],
+       "readers": [
+        "bbc",
+        "black-list",
+        "nicholl",
+        "page"
+       ]
+      },
+      {
+       "id": "consistent-and-credible",
+       "name": "Consistent And Credible",
+       "meaning": "Characters behave in keeping with who they are, scene to scene and episode to episode, so what they do is believable rather than convenient.",
+       "draws": [
+        "plot"
+       ],
+       "readers": [
+        "bbc",
+        "black-list",
+        "nicholl"
+       ]
+      },
+      {
+       "id": "change-over-the-story",
+       "name": "Change Over The Story",
+       "meaning": "The central character (or several, in an ensemble) changes over the story, at a pace the story sets, through milestones the outline can name.",
+       "draws": [
+        "plot",
+        "structure",
+        "theme"
+       ],
+       "readers": [
+        "black-list",
+        "nicholl",
+        "page",
+        "wga-credits"
+       ]
+      },
+      {
+       "id": "relationships",
+       "name": "Relationships Between Characters",
+       "meaning": "How characters bear on one another: convincing relationships, their interplay, and how those relationships develop.",
+       "draws": [],
+       "readers": [
+        "bbc",
+        "black-list",
+        "wga-credits"
+       ]
+      }
      ]
     },
     {
-     "id": "depth-and-emotional-core",
-     "name": "Depth And Emotional Core",
-     "meaning": "Characters are rounded and many-layered, with emotional complexity, contradictions and an emotional core a reader recognises as human.",
-     "draws": [
-      "theme"
-     ],
-     "readers": [
-      "bbc",
-      "black-list",
-      "nicholl",
-      "page"
-     ]
-    },
-    {
-     "id": "goals-stakes-and-action",
-     "name": "Goals, Stakes And Action",
-     "meaning": "Main characters want something clearly, have something at stake, and act on it, so they drive the story instead of being carried by it.",
-     "draws": [
-      "plot"
-     ],
-     "readers": [
-      "bbc",
-      "black-list",
-      "nicholl",
-      "page"
-     ]
-    },
-    {
-     "id": "consistent-and-credible",
-     "name": "Consistent And Credible",
-     "meaning": "Characters behave in keeping with who they are, scene to scene and episode to episode, so what they do is believable rather than convenient.",
-     "draws": [
-      "plot"
-     ],
-     "readers": [
-      "bbc",
-      "black-list",
-      "nicholl"
-     ]
-    },
-    {
-     "id": "change-over-the-story",
-     "name": "Change Over The Story",
-     "meaning": "The central character (or several, in an ensemble) changes over the story, at a pace the story sets, through milestones the outline can name.",
-     "draws": [
-      "plot",
-      "structure",
-      "theme"
-     ],
-     "readers": [
-      "black-list",
-      "nicholl",
-      "page",
-      "wga-credits"
-     ]
-    },
-    {
-     "id": "relationships",
-     "name": "Relationships Between Characters",
-     "meaning": "How characters bear on one another: convincing relationships, their interplay, and how those relationships develop.",
-     "draws": [],
-     "readers": [
-      "bbc",
-      "black-list",
-      "wga-credits"
-     ]
-    }
-   ]
-  },
-  {
-   "id": "dialogue",
-   "name": "Dialogue",
-   "research": "dialogue",
-   "definition": "The words characters speak: natural and believable, in a voice each character owns, saying little, showing who they are and moving the story.",
-   "facets": [
-    {
-     "id": "natural-and-believable",
-     "name": "Natural And Believable",
-     "meaning": "Lines sound like real people talking and behaving, so a reader believes them.",
-     "draws": [],
-     "readers": [
-      "austin",
-      "bbc",
-      "big-break",
-      "black-list",
-      "page",
-      "wga-credits"
-     ]
-    },
-    {
-     "id": "a-voice-for-each-character",
-     "name": "A Voice For Each Character",
-     "meaning": "Each character speaks in a way of their own, so who is talking is plain without the name.",
-     "draws": [
-      "characters"
-     ],
-     "readers": [
-      "big-break",
-      "black-list",
-      "nicholl",
-      "page",
-      "wga-credits"
-     ]
-    },
-    {
-     "id": "reveals-character",
-     "name": "Reveals Character",
-     "meaning": "What people say, and how, shows who they are.",
-     "draws": [
-      "characters"
-     ],
-     "readers": [
-      "big-break",
-      "black-list",
-      "page",
-      "wga-credits"
-     ]
-    },
-    {
-     "id": "moves-the-story",
-     "name": "Moves The Story",
-     "meaning": "Dialogue does dramatic work, building the plot and creating tension, conflict or comedy, with no talk that has no purpose in the story.",
-     "draws": [
-      "plot"
-     ],
-     "readers": [
-      "austin",
-      "big-break",
-      "black-list",
-      "nicholl",
-      "page",
-      "wga-credits"
-     ]
-    },
-    {
-     "id": "succinct",
-     "name": "Succinct",
-     "meaning": "Lines say what they must in few words.",
-     "draws": [],
-     "readers": [
-      "big-break",
-      "black-list",
-      "page",
-      "wga-credits"
-     ]
-    },
-    {
-     "id": "subtext",
-     "name": "Subtext Over Statement",
-     "meaning": "Characters do not announce what they feel; feeling comes through action and what lies beneath the line, built on what the characters want and what the story is about.",
-     "draws": [
-      "characters",
-      "theme",
-      "visual-storytelling"
-     ],
-     "readers": [
-      "austin",
-      "big-break",
-      "black-list",
-      "wga-credits"
-     ]
-    },
-    {
-     "id": "fits-tone-and-setting",
-     "name": "Fits The Tone And World",
-     "meaning": "The way people speak suits the story's tone and setting and stays consistent from scene to scene.",
-     "draws": [
-      "setting"
-     ],
-     "readers": [
-      "big-break",
-      "black-list",
-      "nicholl",
-      "wga-credits"
-     ]
-    }
-   ]
-  },
-  {
-   "id": "structure",
-   "name": "Structure",
-   "research": "STRUCTURE",
-   "definition": "The framework of the story: how its acts, sequences and scenes are built and ordered so the story progresses from a beginning that starts on time to the climax and ending it builds to.",
-   "facets": [
-    {
-     "id": "story-framework",
-     "name": "The Story's Framework",
-     "meaning": "The frame the story is built on, three acts or another progression, used so the story advances effectively.",
-     "draws": [],
-     "readers": [
-      "bbc",
-      "big-break",
-      "page",
-      "wga-credits"
-     ]
-    },
-    {
-     "id": "beginning-middle-and-end",
-     "name": "Beginning, Middle And End",
-     "meaning": "The story holds together as a whole: a strong beginning, middle and end, coherent even when told out of order.",
-     "draws": [
-      "characters"
-     ],
-     "readers": [
-      "bbc",
-      "big-break",
-      "nicholl",
-      "wga-credits"
-     ]
-    },
-    {
-     "id": "starting-on-time",
-     "name": "Starting On Time",
-     "meaning": "The story gets into motion early, reaching its inciting incident before setup buries it, and hooks the reader in the opening pages.",
-     "draws": [
-      "plot"
-     ],
-     "readers": [
-      "austin",
-      "bbc",
-      "big-break",
-      "wga-credits"
-     ]
-    },
-    {
-     "id": "climax-and-ending",
-     "name": "Climax And Ending",
-     "meaning": "The story builds to a climax and a satisfying ending that brings it full circle, not one that feels rushed.",
-     "draws": [
-      "characters",
-      "theme"
-     ],
-     "readers": [
-      "austin",
-      "bbc",
-      "big-break",
-      "wga-credits"
-     ]
-    },
-    {
-     "id": "scenes-that-earn-their-place",
-     "name": "Scenes That Earn Their Place",
-     "meaning": "Each scene and sequence is built to move the story to the next, entering late and leaving early, with no superfluous scenes.",
-     "draws": [],
-     "readers": [
-      "austin",
-      "bbc",
-      "big-break",
-      "wga-credits"
-     ]
-    },
-    {
-     "id": "pace",
-     "name": "Pace",
-     "meaning": "The timing of the action, of what is revealed and of character development, so the story neither drags nor rushes.",
-     "draws": [
-      "characters",
-      "plot"
-     ],
-     "readers": [
-      "bbc",
-      "big-break",
-      "page",
-      "wga-credits"
-     ]
-    },
-    {
-     "id": "built-for-its-form",
-     "name": "Built For Its Form",
-     "meaning": "The story is shaped for what it is: a feature, a pilot or episode, or a short; for a series, a framework meant to repeat each episode.",
-     "draws": [
-      "characters"
-     ],
-     "readers": [
-      "bbc",
-      "big-break",
-      "wga-credits"
+     "id": "dialogue",
+     "name": "Dialogue",
+     "research": "dialogue",
+     "definition": "The words characters speak: natural and believable, in a voice each character owns, saying little, showing who they are and moving the story.",
+     "facets": [
+      {
+       "id": "natural-and-believable",
+       "name": "Natural And Believable",
+       "meaning": "Lines sound like real people talking and behaving, so a reader believes them.",
+       "draws": [],
+       "readers": [
+        "austin",
+        "bbc",
+        "big-break",
+        "black-list",
+        "page",
+        "wga-credits"
+       ]
+      },
+      {
+       "id": "a-voice-for-each-character",
+       "name": "A Voice For Each Character",
+       "meaning": "Each character speaks in a way of their own, so who is talking is plain without the name.",
+       "draws": [
+        "characters"
+       ],
+       "readers": [
+        "big-break",
+        "black-list",
+        "nicholl",
+        "page",
+        "wga-credits"
+       ]
+      },
+      {
+       "id": "reveals-character",
+       "name": "Reveals Character",
+       "meaning": "What people say, and how, shows who they are.",
+       "draws": [
+        "characters"
+       ],
+       "readers": [
+        "big-break",
+        "black-list",
+        "page",
+        "wga-credits"
+       ]
+      },
+      {
+       "id": "moves-the-story",
+       "name": "Moves The Story",
+       "meaning": "Dialogue does dramatic work, building the plot and creating tension, conflict or comedy, with no talk that has no purpose in the story.",
+       "draws": [
+        "plot"
+       ],
+       "readers": [
+        "austin",
+        "big-break",
+        "black-list",
+        "nicholl",
+        "page",
+        "wga-credits"
+       ]
+      },
+      {
+       "id": "succinct",
+       "name": "Succinct",
+       "meaning": "Lines say what they must in few words.",
+       "draws": [],
+       "readers": [
+        "big-break",
+        "black-list",
+        "page",
+        "wga-credits"
+       ]
+      },
+      {
+       "id": "subtext",
+       "name": "Subtext Over Statement",
+       "meaning": "Characters do not announce what they feel; feeling comes through action and what lies beneath the line, built on what the characters want and what the story is about.",
+       "draws": [
+        "characters",
+        "theme",
+        "visual-storytelling"
+       ],
+       "readers": [
+        "austin",
+        "big-break",
+        "black-list",
+        "wga-credits"
+       ]
+      },
+      {
+       "id": "fits-tone-and-setting",
+       "name": "Fits The Tone And World",
+       "meaning": "The way people speak suits the story's tone and setting and stays consistent from scene to scene.",
+       "draws": [
+        "setting"
+       ],
+       "readers": [
+        "big-break",
+        "black-list",
+        "nicholl",
+        "wga-credits"
+       ]
+      }
      ]
     }
    ]
   },
   {
-   "id": "plot",
-   "name": "Plot",
-   "research": "plot",
-   "definition": "What happens: the actions, events, conflicts and turning points that propel the story forward in cause and effect, unfolding in ways the reader does not predict.",
-   "facets": [
+   "id": "voice",
+   "name": "Voice",
+   "definition": "Distinctive voice, innovation and visual storytelling.",
+   "covers": [
     {
-     "id": "cause-and-effect",
-     "name": "Cause And Effect",
-     "meaning": "The actions and events of the story follow from one another, each turning point caused, so the chain leads to the ending.",
-     "draws": [
-      "characters",
-      "structure"
-     ],
-     "readers": [
-      "black-list",
-      "nicholl",
-      "page",
-      "wga-credits"
+     "id": "distinctive-voice",
+     "name": "Distinctive Voice",
+     "research": "distinctive voice",
+     "definition": "The writer's own way of seeing and telling, original and recognisably theirs, with something to say, so the script does not feel already read or seen.",
+     "facets": [
+      {
+       "id": "original-not-already-seen",
+       "name": "Original, Not Already Seen",
+       "meaning": "The script does not feel like something already read or seen: it rises above its genre and the standard formula.",
+       "draws": [
+        "characters",
+        "plot",
+        "premise",
+        "structure"
+       ],
+       "readers": [
+        "austin",
+        "bbc",
+        "big-break",
+        "nicholl"
+       ]
+      },
+      {
+       "id": "a-distinct-point-of-view",
+       "name": "A Distinct Point Of View",
+       "meaning": "The story is told from the writer's own perspective, a singular angle on something human and truthful.",
+       "draws": [
+        "theme"
+       ],
+       "readers": [
+        "bbc"
+       ]
+      },
+      {
+       "id": "something-to-say",
+       "name": "Something To Say",
+       "meaning": "The writer has something to say and an artistic intention, a personal connection to the material that lets the voice reach an audience.",
+       "draws": [],
+       "readers": []
+      },
+      {
+       "id": "voice-in-the-storytelling",
+       "name": "Voice In The Storytelling",
+       "meaning": "The voice is on the page, in how the story is told: the scene description, the dialogue, the characters and the tone.",
+       "draws": [
+        "characters",
+        "dialogue",
+        "setting"
+       ],
+       "readers": [
+        "austin",
+        "bbc",
+        "page"
+       ]
+      },
+      {
+       "id": "developed-and-confident",
+       "name": "Developed And Confident",
+       "meaning": "A voice is cultivated over time, honed through scripts and held with confidence.",
+       "draws": [],
+       "readers": []
+      }
      ]
     },
     {
-     "id": "conflict",
-     "name": "Conflict That Propels",
-     "meaning": "Forces in opposition, external or internal, give the story urgency and push it forward.",
-     "draws": [
-      "characters",
-      "dialogue"
-     ],
-     "readers": [
-      "austin",
-      "black-list",
-      "nicholl",
-      "page"
+     "id": "innovation",
+     "name": "Innovation",
+     "research": "Innovation",
+     "definition": "A tendency to be inventive, imaginative and to adopt new perspectives: coming up with unusual or clever ideas and new plots, characters and ways of doing things.",
+     "facets": [
+      {
+       "id": "inventiveness",
+       "name": "Inventiveness",
+       "meaning": "Being inventive and imaginative, coming up with new ways of doing things.",
+       "draws": [],
+       "readers": []
+      },
+      {
+       "id": "original-ideas",
+       "name": "Original Ideas",
+       "meaning": "Unusual or clever ideas, and new and interesting plots, characters and stories, with unpredictable turns.",
+       "draws": [
+        "characters",
+        "plot"
+       ],
+       "readers": [
+        "page"
+       ]
+      },
+      {
+       "id": "fund-of-ideas",
+       "name": "Fund Of Ideas",
+       "meaning": "Having many ideas to hand, the number counting more than their quality.",
+       "draws": [],
+       "readers": []
+      },
+      {
+       "id": "beyond-the-formula",
+       "name": "Beyond The Formula",
+       "meaning": "Rising above the genre and the standard formula, so the script presents a unique perspective rather than a cookie-cutter one.",
+       "draws": [
+        "distinctive-voice"
+       ],
+       "readers": [
+        "austin"
+       ]
+      },
+      {
+       "id": "creative-risk",
+       "name": "Creative Risk",
+       "meaning": "Taking risks in form and narrative approach, experimenting, and risking failure to succeed.",
+       "draws": [],
+       "readers": []
+      }
      ]
     },
     {
-     "id": "escalations-revelations-reversals",
-     "name": "Escalations, Revelations And Reversals",
-     "meaning": "The turning points that progress the story: problems that raise the stakes, new information that shifts a goal, and reversals of direction and power.",
-     "draws": [
-      "characters"
-     ],
-     "readers": [
-      "black-list",
-      "page"
+     "id": "visual-storytelling",
+     "name": "Visual Storytelling",
+     "research": "An ability to tell a story using images and sounds",
+     "definition": "Telling the story in images and sounds: writing what can be seen and heard, showing rather than telling, so a director and crew can picture the film.",
+     "facets": [
+      {
+       "id": "images-and-sounds",
+       "name": "Images And Sounds",
+       "meaning": "The story is conceived and written in the language of the screen, as images and sounds, with its scenes built from actions described that way.",
+       "draws": [],
+       "readers": []
+      },
+      {
+       "id": "showing-not-telling",
+       "name": "Showing, Not Telling",
+       "meaning": "Feeling and character come through action, description, image and behaviour rather than being stated.",
+       "draws": [
+        "characters",
+        "dialogue"
+       ],
+       "readers": [
+        "austin"
+       ]
+      },
+      {
+       "id": "filmable",
+       "name": "Filmable On The Page",
+       "meaning": "The script gives the director and production team something tangible to shoot, precise enough that they can picture the film, instead of reading like a novel.",
+       "draws": [
+        "film-production-process"
+       ],
+       "readers": [
+        "austin"
+       ]
+      },
+      {
+       "id": "cinematic-narrative",
+       "name": "Cinematic Narrative",
+       "meaning": "The writing reads as cinema: a narrative that is distinct and cinematic and conveys the mood and feel of the film.",
+       "draws": [
+        "distinctive-voice",
+        "theme"
+       ],
+       "readers": [
+        "page"
+       ]
+      },
+      {
+       "id": "look-and-feel",
+       "name": "Look And Feel",
+       "meaning": "The intended visual style and visual world of the project, expressed in the treatment and the bible as well as the script.",
+       "draws": [
+        "setting"
+       ],
+       "readers": []
+      }
      ]
-    },
-    {
-     "id": "unpredictable-unfolding",
-     "name": "Unpredictable Unfolding",
-     "meaning": "How the story unfolds surprises the reader: original, not predictable, not the standard formula.",
-     "draws": [
-      "distinctive-voice"
-     ],
-     "readers": [
-      "black-list",
-      "nicholl",
-      "page"
-     ]
-    },
-    {
-     "id": "dramatic-question",
-     "name": "The Pull Of The Story",
-     "meaning": "The plot raises a dramatic question that makes the reader want to know what happens next and keep reading, taken on a journey.",
-     "draws": [
-      "characters",
-      "theme"
-     ],
-     "readers": [
-      "austin",
-      "bbc",
-      "black-list",
-      "nicholl"
-     ]
-    },
-    {
-     "id": "goals-and-stakes",
-     "name": "Goals And Stakes",
-     "meaning": "What the characters want and what is at risk if they fail, which gives the events their weight.",
-     "draws": [
-      "characters"
-     ],
-     "readers": [
-      "black-list"
-     ]
-    },
-    {
-     "id": "storylines-across-a-series",
-     "name": "Storylines Across A Series",
-     "meaning": "In series work, how the plot progresses over a season in arcs and episode storylines, and how storylines are restructured or added.",
-     "draws": [
-      "characters"
-     ],
-     "readers": [
-      "black-list"
-     ]
-    }
-   ]
-  },
-  {
-   "id": "theme",
-   "name": "Theme",
-   "research": "theme",
-   "definition": "What the story is about beneath its events: an underlying message revealed through plot, dialogue and image, clear and rich, and about something worth discussing.",
-   "facets": [
-    {
-     "id": "underlying-message",
-     "name": "Underlying Message",
-     "meaning": "What the story is about beneath its events, revealed through its plot, its dialogue and its images.",
-     "draws": [
-      "dialogue",
-      "plot",
-      "visual-storytelling"
-     ],
-     "readers": [
-      "page",
-      "wga-credits"
-     ]
-    },
-    {
-     "id": "about-something",
-     "name": "About Something",
-     "meaning": "The themes provoke thought, in any genre: the story is about something that might spark discussion.",
-     "draws": [],
-     "readers": [
-      "nicholl"
-     ]
-    },
-    {
-     "id": "clear-and-rich",
-     "name": "Clear And Rich",
-     "meaning": "The theme is clear and rich, centred on meanings that engage the writer, and it is where an audience's deeper investment comes from.",
-     "draws": [
-      "premise"
-     ],
-     "readers": []
-    },
-    {
-     "id": "dramatised-through-character",
-     "name": "Dramatised Through Character",
-     "meaning": "The theme is carried by what the characters go through, not stated: the characters embody the subject and their trajectory dramatises it.",
-     "draws": [
-      "characters",
-      "structure"
-     ],
-     "readers": []
-    },
-    {
-     "id": "thematic-unity",
-     "name": "Thematic Unity",
-     "meaning": "The world, the structure and the ending hold to one set of meanings, the ending bringing the theme full circle.",
-     "draws": [
-      "setting",
-      "structure"
-     ],
-     "readers": [
-      "austin"
-     ]
-    }
-   ]
-  },
-  {
-   "id": "premise",
-   "name": "Premise",
-   "research": "premise",
-   "definition": "The idea behind the story, what it is about and its hook: a specific dramatic problem, original and strong enough to start the story forward and to hold up when developed.",
-   "facets": [
-    {
-     "id": "the-hook",
-     "name": "The Hook",
-     "meaning": "The idea behind the story, what it is about, strong enough to make someone want to read it and to start the movie forward by itself.",
-     "draws": [],
-     "readers": [
-      "black-list",
-      "nicholl",
-      "page"
-     ]
-    },
-    {
-     "id": "original-premise",
-     "name": "Original Premise",
-     "meaning": "The premise is new, or an original take on a familiar story, set against what has already been made.",
-     "draws": [
-      "distinctive-voice"
-     ],
-     "readers": [
-      "bbc",
-      "black-list",
-      "nicholl"
-     ]
-    },
-    {
-     "id": "dramatic-problem",
-     "name": "A Dramatic Problem",
-     "meaning": "The premise sets out a specific problem: when something happens, someone has to do something, or else.",
-     "draws": [
-      "characters",
-      "plot"
-     ],
-     "readers": [
-      "black-list"
-     ]
-    },
-    {
-     "id": "dramatically-viable",
-     "name": "Tested And Dramatically Viable",
-     "meaning": "The core concept has dramatic potential and holds up when developed; a flawed concept no amount of drafting fixes, and execution must deliver on it.",
-     "draws": [
-      "plot"
-     ],
-     "readers": [
-      "black-list"
-     ]
-    },
-    {
-     "id": "series-engine",
-     "name": "A Premise That Sustains A Series",
-     "meaning": "For a series, a premise or general story line distinct from any one episode's story, able to generate many episodes.",
-     "draws": [
-      "plot",
-      "setting"
-     ],
-     "readers": [
-      "black-list",
-      "wga-credits"
-     ]
-    }
-   ]
-  },
-  {
-   "id": "setting",
-   "name": "Setting",
-   "research": "setting",
-   "definition": "Where and when the story happens and the world it builds: its place and time, its rules and pressures, brought to life authentically and with texture.",
-   "facets": [
-    {
-     "id": "place-and-time",
-     "name": "Place And Time",
-     "meaning": "Where and when the story takes place: its locale and period, and the sense of place it gives.",
-     "draws": [
-      "premise"
-     ],
-     "readers": [
-      "black-list",
-      "wga-credits"
-     ]
-    },
-    {
-     "id": "a-world-with-rules",
-     "name": "A World With Rules And Pressures",
-     "meaning": "The storyworld is defined: its rules, what can and can't happen, its groups and beliefs, and the pressures it puts on every character.",
-     "draws": [
-      "characters",
-      "plot",
-      "structure",
-      "theme"
-     ],
-     "readers": [
-      "black-list"
-     ]
-    },
-    {
-     "id": "authentically-brought-to-life",
-     "name": "Authentically Brought To Life",
-     "meaning": "The world is rendered realistically and credibly, true to the people and places it represents.",
-     "draws": [
-      "characters",
-      "research"
-     ],
-     "readers": [
-      "bbc",
-      "black-list"
-     ]
-    },
-    {
-     "id": "pulls-the-audience-in",
-     "name": "Pulls The Audience In",
-     "meaning": "The world draws an audience in and holds them there.",
-     "draws": [],
-     "readers": [
-      "bbc",
-      "black-list"
-     ]
-    },
-    {
-     "id": "texture-and-atmosphere",
-     "name": "Texture And Atmosphere",
-     "meaning": "The feel of the world on the page: its texture, atmosphere and tone, and speech that fits it.",
-     "draws": [
-      "dialogue",
-      "distinctive-voice"
-     ],
-     "readers": [
-      "austin",
-      "black-list",
-      "nicholl"
-     ]
-    },
-    {
-     "id": "a-world-that-sustains-a-series",
-     "name": "A World That Sustains A Series",
-     "meaning": "In series work the world is the returnable element, the engine of many stories, and must be dramatically or comedically sustainable.",
-     "draws": [
-      "premise"
-     ],
-     "readers": [
-      "black-list"
-     ]
-    }
-   ]
-  },
-  {
-   "id": "visual-storytelling",
-   "name": "Visual Storytelling",
-   "research": "An ability to tell a story using images and sounds",
-   "definition": "Telling the story in images and sounds: writing what can be seen and heard, showing rather than telling, so a director and crew can picture the film.",
-   "facets": [
-    {
-     "id": "images-and-sounds",
-     "name": "Images And Sounds",
-     "meaning": "The story is conceived and written in the language of the screen, as images and sounds, with its scenes built from actions described that way.",
-     "draws": [],
-     "readers": []
-    },
-    {
-     "id": "showing-not-telling",
-     "name": "Showing, Not Telling",
-     "meaning": "Feeling and character come through action, description, image and behaviour rather than being stated.",
-     "draws": [
-      "characters",
-      "dialogue"
-     ],
-     "readers": [
-      "austin"
-     ]
-    },
-    {
-     "id": "filmable",
-     "name": "Filmable On The Page",
-     "meaning": "The script gives the director and production team something tangible to shoot, precise enough that they can picture the film, instead of reading like a novel.",
-     "draws": [
-      "film-production-process"
-     ],
-     "readers": [
-      "austin"
-     ]
-    },
-    {
-     "id": "cinematic-narrative",
-     "name": "Cinematic Narrative",
-     "meaning": "The writing reads as cinema: a narrative that is distinct and cinematic and conveys the mood and feel of the film.",
-     "draws": [
-      "distinctive-voice",
-      "theme"
-     ],
-     "readers": [
-      "page"
-     ]
-    },
-    {
-     "id": "look-and-feel",
-     "name": "Look And Feel",
-     "meaning": "The intended visual style and visual world of the project, expressed in the treatment and the bible as well as the script.",
-     "draws": [
-      "setting"
-     ],
-     "readers": []
-    }
-   ]
-  },
-  {
-   "id": "distinctive-voice",
-   "name": "Distinctive Voice",
-   "research": "distinctive voice",
-   "definition": "The writer's own way of seeing and telling, original and recognisably theirs, with something to say, so the script does not feel already read or seen.",
-   "facets": [
-    {
-     "id": "original-not-already-seen",
-     "name": "Original, Not Already Seen",
-     "meaning": "The script does not feel like something already read or seen: it rises above its genre and the standard formula.",
-     "draws": [
-      "characters",
-      "plot",
-      "premise",
-      "structure"
-     ],
-     "readers": [
-      "austin",
-      "bbc",
-      "big-break",
-      "nicholl"
-     ]
-    },
-    {
-     "id": "a-distinct-point-of-view",
-     "name": "A Distinct Point Of View",
-     "meaning": "The story is told from the writer's own perspective, a singular angle on something human and truthful.",
-     "draws": [
-      "theme"
-     ],
-     "readers": [
-      "bbc"
-     ]
-    },
-    {
-     "id": "something-to-say",
-     "name": "Something To Say",
-     "meaning": "The writer has something to say and an artistic intention, a personal connection to the material that lets the voice reach an audience.",
-     "draws": [],
-     "readers": []
-    },
-    {
-     "id": "voice-in-the-storytelling",
-     "name": "Voice In The Storytelling",
-     "meaning": "The voice is on the page, in how the story is told: the scene description, the dialogue, the characters and the tone.",
-     "draws": [
-      "characters",
-      "dialogue",
-      "setting"
-     ],
-     "readers": [
-      "austin",
-      "bbc",
-      "page"
-     ]
-    },
-    {
-     "id": "developed-and-confident",
-     "name": "Developed And Confident",
-     "meaning": "A voice is cultivated over time, honed through scripts and held with confidence.",
-     "draws": [],
-     "readers": []
-    }
-   ]
-  },
-  {
-   "id": "research",
-   "name": "Research",
-   "research": "Conduct research to obtain factual information and authentic detail",
-   "definition": "Conducting research to obtain factual information and authentic detail, using sources such as newspaper accounts, diaries, interviews, books and field observation, before and while writing.",
-   "facets": [
-    {
-     "id": "documentary-research",
-     "name": "Documentary Research",
-     "meaning": "Reading books, articles, journals and records to gather the facts a subject needs.",
-     "draws": [],
-     "readers": []
-    },
-    {
-     "id": "research-method",
-     "name": "Research Method",
-     "meaning": "Choosing the research method a project needs and ranking the possible sources by how useful they are.",
-     "draws": [],
-     "readers": []
-    },
-    {
-     "id": "interviews-and-fieldwork",
-     "name": "Interviews And Fieldwork",
-     "meaning": "Interviewing people, scouting places and observing milieus so a world can be rendered realistically.",
-     "draws": [
-      "setting"
-     ],
-     "readers": []
-    },
-    {
-     "id": "films-books-and-images",
-     "name": "Films, Books And Images",
-     "meaning": "Gathering reading, films and images that define the story's visual and sound world and enrich its characters.",
-     "draws": [
-      "characters",
-      "visual-storytelling"
-     ],
-     "readers": []
-    },
-    {
-     "id": "authenticity",
-     "name": "Authenticity",
-     "meaning": "Getting the people and the world right, so a reader can tell the writer knows what they are writing about.",
-     "draws": [
-      "characters",
-      "setting"
-     ],
-     "readers": []
-    },
-    {
-     "id": "what-already-exists",
-     "name": "What Already Exists",
-     "meaning": "Knowing the films, series and other works on the same theme, so the script stays original and nothing is lifted from a classic.",
-     "draws": [
-      "innovation"
-     ],
-     "readers": []
-    }
-   ]
-  },
-  {
-   "id": "screenplay-format",
-   "name": "Screenplay Format",
-   "research": "standard screenplay format",
-   "definition": "Laying out a script in the standard, agreed format: scene headings, action, character cues and dialogue on the page, 12-point Courier with correct margins, at a page count readers accept.",
-   "facets": [
-    {
-     "id": "scene-headings-and-action",
-     "name": "Scene Headings And Action",
-     "meaning": "Scene headings in capitals naming interior or exterior, place and day or night, and action that shows only what is on screen.",
-     "draws": [
-      "visual-storytelling"
-     ],
-     "readers": [
-      "austin"
-     ]
-    },
-    {
-     "id": "character-cues-and-dialogue",
-     "name": "Character Cues And Dialogue",
-     "meaning": "Character names in capitals set toward the middle of the page, dialogue beneath them, parentheticals on their own line, and speeches broken across pages correctly.",
-     "draws": [],
-     "readers": []
-    },
-    {
-     "id": "font-margins-and-spacing",
-     "name": "Font, Margins And Spacing",
-     "meaning": "12-point Courier, correct margins and line spacing, with no cheating of margins to fit more pages.",
-     "draws": [],
-     "readers": [
-      "austin",
-      "nicholl",
-      "page"
-     ]
-    },
-    {
-     "id": "page-count",
-     "name": "Page Count",
-     "meaning": "Keeping a script to the length its form and its readers accept: a feature roughly 80 to 125 pages, an hour of television roughly 40 to 70, a half hour 20 to 35.",
-     "draws": [],
-     "readers": [
-      "bbc",
-      "big-break",
-      "nicholl"
-     ]
-    },
-    {
-     "id": "spec-not-shooting-script",
-     "name": "Spec Script, Not Shooting Script",
-     "meaning": "Leaving scene numbers, camera directions and most transitions out of a spec script; they belong to the shooting script made for production.",
-     "draws": [],
-     "readers": []
-    },
-    {
-     "id": "title-page-and-submission",
-     "name": "Title Page And Submission",
-     "meaning": "Preparing the submission copy: a title page with one contact address, numbered pages, a single PDF, and no name anywhere when a contest reads anonymously.",
-     "draws": [],
-     "readers": [
-      "big-break",
-      "nicholl"
-     ]
-    },
-    {
-     "id": "spelling-and-proofreading",
-     "name": "Spelling And Proofreading",
-     "meaning": "Clean spelling, punctuation, grammar and usage, proofread before the script goes out.",
-     "draws": [],
-     "readers": [
-      "bbc",
-      "page"
-     ]
-    },
-    {
-     "id": "format-for-the-medium",
-     "name": "Format For The Medium",
-     "meaning": "Using the format the medium dictates (film, filmed or taped TV drama, studio sitcom, radio, stage) and sending what each form asks for.",
-     "draws": [
-      "revision"
-     ],
-     "readers": []
     }
    ]
   },
   {
    "id": "writing",
    "name": "Writing",
-   "research": "Writing",
-   "definition": "Communicating effectively in writing as appropriate for the needs of the audience: clear, engaging and concise, conveying feeling and emotion.",
-   "facets": [
+   "definition": "Writing, screenplay format, synopsis and research.",
+   "covers": [
     {
-     "id": "clarity",
-     "name": "Clarity",
-     "meaning": "Writing so others will understand: clear, concise, unambiguous.",
-     "draws": [],
-     "readers": []
-    },
-    {
-     "id": "economy-of-words",
-     "name": "Economy Of Words",
-     "meaning": "Saying it in as few words as it takes, developing characters, relationships and several storylines in a concise format.",
-     "draws": [
-      "characters"
-     ],
-     "readers": []
-    },
-    {
-     "id": "conveying-feeling",
-     "name": "Conveying Feeling",
-     "meaning": "Using description and dialogue to create suspense, tension, drama, comedy and conflict, so the reader feels it.",
-     "draws": [
-      "dialogue"
-     ],
-     "readers": [
-      "nicholl"
+     "id": "writing",
+     "name": "Writing",
+     "research": "Writing",
+     "definition": "Communicating effectively in writing as appropriate for the needs of the audience: clear, engaging and concise, conveying feeling and emotion.",
+     "facets": [
+      {
+       "id": "clarity",
+       "name": "Clarity",
+       "meaning": "Writing so others will understand: clear, concise, unambiguous.",
+       "draws": [],
+       "readers": []
+      },
+      {
+       "id": "economy-of-words",
+       "name": "Economy Of Words",
+       "meaning": "Saying it in as few words as it takes, developing characters, relationships and several storylines in a concise format.",
+       "draws": [
+        "characters"
+       ],
+       "readers": []
+      },
+      {
+       "id": "conveying-feeling",
+       "name": "Conveying Feeling",
+       "meaning": "Using description and dialogue to create suspense, tension, drama, comedy and conflict, so the reader feels it.",
+       "draws": [
+        "dialogue"
+       ],
+       "readers": [
+        "nicholl"
+       ]
+      },
+      {
+       "id": "showing-not-telling",
+       "name": "Showing, Not Telling",
+       "meaning": "Showing feeling through action and description the camera can film, not stating it, and not writing like a novel.",
+       "draws": [
+        "visual-storytelling"
+       ],
+       "readers": [
+        "austin"
+       ]
+      },
+      {
+       "id": "texture-of-description",
+       "name": "Texture Of Description",
+       "meaning": "Scene description written with a rich texture of its own.",
+       "draws": [
+        "distinctive-voice"
+       ],
+       "readers": [
+        "austin"
+       ]
+      },
+      {
+       "id": "quality-of-writing",
+       "name": "Quality Of Writing",
+       "meaning": "The overall strength of the writing on the page, judged apart from commercial potential.",
+       "draws": [],
+       "readers": [
+        "austin",
+        "bbc",
+        "nicholl",
+        "page"
+       ]
+      },
+      {
+       "id": "audience-and-house-style",
+       "name": "Audience And House Style",
+       "meaning": "Fitting the writing to its reader and, on a running show, to the show's house style.",
+       "draws": [],
+       "readers": []
+      }
      ]
     },
     {
-     "id": "showing-not-telling",
-     "name": "Showing, Not Telling",
-     "meaning": "Showing feeling through action and description the camera can film, not stating it, and not writing like a novel.",
-     "draws": [
-      "visual-storytelling"
-     ],
-     "readers": [
-      "austin"
+     "id": "screenplay-format",
+     "name": "Screenplay Format",
+     "research": "standard screenplay format",
+     "definition": "Laying out a script in the standard, agreed format: scene headings, action, character cues and dialogue on the page, 12-point Courier with correct margins, at a page count readers accept.",
+     "facets": [
+      {
+       "id": "scene-headings-and-action",
+       "name": "Scene Headings And Action",
+       "meaning": "Scene headings in capitals naming interior or exterior, place and day or night, and action that shows only what is on screen.",
+       "draws": [
+        "visual-storytelling"
+       ],
+       "readers": [
+        "austin"
+       ]
+      },
+      {
+       "id": "character-cues-and-dialogue",
+       "name": "Character Cues And Dialogue",
+       "meaning": "Character names in capitals set toward the middle of the page, dialogue beneath them, parentheticals on their own line, and speeches broken across pages correctly.",
+       "draws": [],
+       "readers": []
+      },
+      {
+       "id": "font-margins-and-spacing",
+       "name": "Font, Margins And Spacing",
+       "meaning": "12-point Courier, correct margins and line spacing, with no cheating of margins to fit more pages.",
+       "draws": [],
+       "readers": [
+        "austin",
+        "nicholl",
+        "page"
+       ]
+      },
+      {
+       "id": "page-count",
+       "name": "Page Count",
+       "meaning": "Keeping a script to the length its form and its readers accept: a feature roughly 80 to 125 pages, an hour of television roughly 40 to 70, a half hour 20 to 35.",
+       "draws": [],
+       "readers": [
+        "bbc",
+        "big-break",
+        "nicholl"
+       ]
+      },
+      {
+       "id": "spec-not-shooting-script",
+       "name": "Spec Script, Not Shooting Script",
+       "meaning": "Leaving scene numbers, camera directions and most transitions out of a spec script; they belong to the shooting script made for production.",
+       "draws": [],
+       "readers": []
+      },
+      {
+       "id": "title-page-and-submission",
+       "name": "Title Page And Submission",
+       "meaning": "Preparing the submission copy: a title page with one contact address, numbered pages, a single PDF, and no name anywhere when a contest reads anonymously.",
+       "draws": [],
+       "readers": [
+        "big-break",
+        "nicholl"
+       ]
+      },
+      {
+       "id": "spelling-and-proofreading",
+       "name": "Spelling And Proofreading",
+       "meaning": "Clean spelling, punctuation, grammar and usage, proofread before the script goes out.",
+       "draws": [],
+       "readers": [
+        "bbc",
+        "page"
+       ]
+      },
+      {
+       "id": "format-for-the-medium",
+       "name": "Format For The Medium",
+       "meaning": "Using the format the medium dictates (film, filmed or taped TV drama, studio sitcom, radio, stage) and sending what each form asks for.",
+       "draws": [
+        "revision"
+       ],
+       "readers": []
+      }
      ]
     },
     {
-     "id": "texture-of-description",
-     "name": "Texture Of Description",
-     "meaning": "Scene description written with a rich texture of its own.",
-     "draws": [
-      "distinctive-voice"
-     ],
-     "readers": [
-      "austin"
+     "id": "synopsis",
+     "name": "Synopsis",
+     "research": "summarise stories",
+     "definition": "Summarising a story briefly to give a broad idea of the creative concept, in the short documents that carry it outside the screenplay: logline, synopsis, outline, treatment, scene breakdown, bible and pitch document.",
+     "facets": [
+      {
+       "id": "logline",
+       "name": "Logline",
+       "meaning": "One sentence, sometimes two, that holds the story's dramatic problem: when something happens, someone has to do something or else.",
+       "draws": [
+        "premise"
+       ],
+       "readers": [
+        "bbc",
+        "nicholl"
+       ]
+      },
+      {
+       "id": "short-synopsis",
+       "name": "Short Synopsis",
+       "meaning": "A paragraph giving genre and themes, the forces in opposition, goals and stakes, and the inciting incident.",
+       "draws": [],
+       "readers": []
+      },
+      {
+       "id": "one-page-synopsis",
+       "name": "One-Page Synopsis",
+       "meaning": "The one-pager: the main pitch document, fleshing the dramatic question into characters, escalation, dilemmas and stakes, and for a feature the structure through to the ending.",
+       "draws": [],
+       "readers": []
+      },
+      {
+       "id": "outline",
+       "name": "Outline",
+       "meaning": "A longer document (generally 4 to 12 pages) carrying the major plot and character turning points as escalations, revelations and reversals, in cause and effect.",
+       "draws": [
+        "structure"
+       ],
+       "readers": [
+        "bbc"
+       ]
+      },
+      {
+       "id": "treatment",
+       "name": "Treatment",
+       "meaning": "A 10 to 20 page present-tense telling of the film, scene by scene in order, confined to what a viewer would see and hear, conveying mood and tone.",
+       "draws": [
+        "visual-storytelling"
+       ],
+       "readers": []
+      },
+      {
+       "id": "scene-breakdown",
+       "name": "Scene Breakdown",
+       "meaning": "A scene-by-scene prose outline of the whole script without dialogue (the step outline or séquencier), checking every scene earns its keep.",
+       "draws": [
+        "structure"
+       ],
+       "readers": []
+      },
+      {
+       "id": "series-bible",
+       "name": "Series Bible",
+       "meaning": "The master document of a series: logline, one-pager, concept and themes, storyworld, format, characters, episode summaries, look and feel, about 10 to 15 pages.",
+       "draws": [],
+       "readers": []
+      },
+      {
+       "id": "pitch-document",
+       "name": "Pitch Document",
+       "meaning": "A short written presentation of a project's concept and nature, used to sell it; once asked for in writing, the WGA counts it as a treatment, story or format.",
+       "draws": [
+        "pitching"
+       ],
+       "readers": []
+      },
+      {
+       "id": "statement-of-intent",
+       "name": "Statement Of Intent",
+       "meaning": "The note that argues for the project and the writer's connection to it, for producers, directors, broadcasters and funding panels.",
+       "draws": [],
+       "readers": []
+      },
+      {
+       "id": "scriptment",
+       "name": "Scriptment",
+       "meaning": "A hybrid of treatment and script: prose summary with the key dialogue scenes written out in screenplay form.",
+       "draws": [],
+       "readers": []
+      }
      ]
     },
     {
-     "id": "quality-of-writing",
-     "name": "Quality Of Writing",
-     "meaning": "The overall strength of the writing on the page, judged apart from commercial potential.",
-     "draws": [],
-     "readers": [
-      "austin",
-      "bbc",
-      "nicholl",
-      "page"
+     "id": "research",
+     "name": "Research",
+     "research": "Conduct research to obtain factual information and authentic detail",
+     "definition": "Conducting research to obtain factual information and authentic detail, using sources such as newspaper accounts, diaries, interviews, books and field observation, before and while writing.",
+     "facets": [
+      {
+       "id": "documentary-research",
+       "name": "Documentary Research",
+       "meaning": "Reading books, articles, journals and records to gather the facts a subject needs.",
+       "draws": [],
+       "readers": []
+      },
+      {
+       "id": "research-method",
+       "name": "Research Method",
+       "meaning": "Choosing the research method a project needs and ranking the possible sources by how useful they are.",
+       "draws": [],
+       "readers": []
+      },
+      {
+       "id": "interviews-and-fieldwork",
+       "name": "Interviews And Fieldwork",
+       "meaning": "Interviewing people, scouting places and observing milieus so a world can be rendered realistically.",
+       "draws": [
+        "setting"
+       ],
+       "readers": []
+      },
+      {
+       "id": "films-books-and-images",
+       "name": "Films, Books And Images",
+       "meaning": "Gathering reading, films and images that define the story's visual and sound world and enrich its characters.",
+       "draws": [
+        "characters",
+        "visual-storytelling"
+       ],
+       "readers": []
+      },
+      {
+       "id": "authenticity",
+       "name": "Authenticity",
+       "meaning": "Getting the people and the world right, so a reader can tell the writer knows what they are writing about.",
+       "draws": [
+        "characters",
+        "setting"
+       ],
+       "readers": []
+      },
+      {
+       "id": "what-already-exists",
+       "name": "What Already Exists",
+       "meaning": "Knowing the films, series and other works on the same theme, so the script stays original and nothing is lifted from a classic.",
+       "draws": [
+        "innovation"
+       ],
+       "readers": []
+      }
      ]
-    },
-    {
-     "id": "audience-and-house-style",
-     "name": "Audience And House Style",
-     "meaning": "Fitting the writing to its reader and, on a running show, to the show's house style.",
-     "draws": [],
-     "readers": []
-    }
-   ]
-  },
-  {
-   "id": "synopsis",
-   "name": "Synopsis",
-   "research": "summarise stories",
-   "definition": "Summarising a story briefly to give a broad idea of the creative concept, in the short documents that carry it outside the screenplay: logline, synopsis, outline, treatment, scene breakdown, bible and pitch document.",
-   "facets": [
-    {
-     "id": "logline",
-     "name": "Logline",
-     "meaning": "One sentence, sometimes two, that holds the story's dramatic problem: when something happens, someone has to do something or else.",
-     "draws": [
-      "premise"
-     ],
-     "readers": [
-      "bbc",
-      "nicholl"
-     ]
-    },
-    {
-     "id": "short-synopsis",
-     "name": "Short Synopsis",
-     "meaning": "A paragraph giving genre and themes, the forces in opposition, goals and stakes, and the inciting incident.",
-     "draws": [],
-     "readers": []
-    },
-    {
-     "id": "one-page-synopsis",
-     "name": "One-Page Synopsis",
-     "meaning": "The one-pager: the main pitch document, fleshing the dramatic question into characters, escalation, dilemmas and stakes, and for a feature the structure through to the ending.",
-     "draws": [],
-     "readers": []
-    },
-    {
-     "id": "outline",
-     "name": "Outline",
-     "meaning": "A longer document (generally 4 to 12 pages) carrying the major plot and character turning points as escalations, revelations and reversals, in cause and effect.",
-     "draws": [
-      "structure"
-     ],
-     "readers": [
-      "bbc"
-     ]
-    },
-    {
-     "id": "treatment",
-     "name": "Treatment",
-     "meaning": "A 10 to 20 page present-tense telling of the film, scene by scene in order, confined to what a viewer would see and hear, conveying mood and tone.",
-     "draws": [
-      "visual-storytelling"
-     ],
-     "readers": []
-    },
-    {
-     "id": "scene-breakdown",
-     "name": "Scene Breakdown",
-     "meaning": "A scene-by-scene prose outline of the whole script without dialogue (the step outline or séquencier), checking every scene earns its keep.",
-     "draws": [
-      "structure"
-     ],
-     "readers": []
-    },
-    {
-     "id": "series-bible",
-     "name": "Series Bible",
-     "meaning": "The master document of a series: logline, one-pager, concept and themes, storyworld, format, characters, episode summaries, look and feel, about 10 to 15 pages.",
-     "draws": [],
-     "readers": []
-    },
-    {
-     "id": "pitch-document",
-     "name": "Pitch Document",
-     "meaning": "A short written presentation of a project's concept and nature, used to sell it; once asked for in writing, the WGA counts it as a treatment, story or format.",
-     "draws": [
-      "pitching"
-     ],
-     "readers": []
-    },
-    {
-     "id": "statement-of-intent",
-     "name": "Statement Of Intent",
-     "meaning": "The note that argues for the project and the writer's connection to it, for producers, directors, broadcasters and funding panels.",
-     "draws": [],
-     "readers": []
-    },
-    {
-     "id": "scriptment",
-     "name": "Scriptment",
-     "meaning": "A hybrid of treatment and script: prose summary with the key dialogue scenes written out in screenplay form.",
-     "draws": [],
-     "readers": []
     }
    ]
   },
   {
    "id": "revision",
    "name": "Revision",
-   "research": "Revise written material",
-   "definition": "Revising written material, rewriting scripts often several times before a final version, to meet one's own standards and the needs of producers and directors while keeping the project's coherence.",
-   "facets": [
+   "definition": "Revision, taking notes, story critique and critical thinking.",
+   "covers": [
     {
-     "id": "rewrite",
-     "name": "Rewrite",
-     "meaning": "Significant changes in plot, story line or the relationships of characters, going to the root of the drama.",
-     "draws": [
-      "characters",
-      "plot"
-     ],
-     "readers": [
-      "wga-credits"
+     "id": "revision",
+     "name": "Revision",
+     "research": "Revise written material",
+     "definition": "Revising written material, rewriting scripts often several times before a final version, to meet one's own standards and the needs of producers and directors while keeping the project's coherence.",
+     "facets": [
+      {
+       "id": "rewrite",
+       "name": "Rewrite",
+       "meaning": "Significant changes in plot, story line or the relationships of characters, going to the root of the drama.",
+       "draws": [
+        "characters",
+        "plot"
+       ],
+       "readers": [
+        "wga-credits"
+       ]
+      },
+      {
+       "id": "polish",
+       "name": "Polish",
+       "meaning": "Changes in dialogue, narration or action that stop short of a rewrite.",
+       "draws": [
+        "dialogue"
+       ],
+       "readers": [
+        "wga-credits"
+       ]
+      },
+      {
+       "id": "finding-what-to-rewrite",
+       "name": "Finding What To Rewrite",
+       "meaning": "Analysing one's own draft to find the lines of rewriting, through to the shooting version.",
+       "draws": [
+        "critical-thinking"
+       ],
+       "readers": [
+        "austin"
+       ]
+      },
+      {
+       "id": "revising-from-notes",
+       "name": "Revising From Notes",
+       "meaning": "Rewriting in response to artistic, budget and technical notes, judged on the quality of the revised script.",
+       "draws": [
+        "taking-notes"
+       ],
+       "readers": []
+      },
+      {
+       "id": "keeping-coherence",
+       "name": "Keeping Coherence",
+       "meaning": "Producing a new version that keeps the original project's singularity and coherence, without superficial changes for their own sake.",
+       "draws": [],
+       "readers": []
+      },
+      {
+       "id": "drafts-on-deadline",
+       "name": "Drafts On Deadline",
+       "meaning": "Turning drafts around quickly and creatively, a first, second and third draft to agreed deadlines.",
+       "draws": [
+        "time-management"
+       ],
+       "readers": []
+      },
+      {
+       "id": "production-rewrites",
+       "name": "Production Rewrites",
+       "meaning": "Revising the script in response to budget and casting decisions and solving script problems during the shoot.",
+       "draws": [
+        "film-production-process"
+       ],
+       "readers": []
+      },
+      {
+       "id": "knowing-when-a-draft-is-done",
+       "name": "Knowing When A Draft Is Done",
+       "meaning": "The writer decides when a draft is finished and delivers it, rather than revising on and on for free.",
+       "draws": [],
+       "readers": []
+      }
      ]
     },
     {
-     "id": "polish",
-     "name": "Polish",
-     "meaning": "Changes in dialogue, narration or action that stop short of a rewrite.",
-     "draws": [
-      "dialogue"
-     ],
-     "readers": [
-      "wga-credits"
+     "id": "taking-notes",
+     "name": "Taking Notes",
+     "research": "taking notes",
+     "definition": "Taking feedback from producers, script editors and peers constructively and without defensiveness, finding the problem behind each note, and answering it with comprehensive solutions in the next draft.",
+     "facets": [
+      {
+       "id": "listening-and-clarifying",
+       "name": "Listening And Clarifying",
+       "meaning": "Listening, asking for clarification, and answering a set of notes by saying which are clear and which need more.",
+       "draws": [],
+       "readers": []
+      },
+      {
+       "id": "openness-without-defensiveness",
+       "name": "Openness Without Defensiveness",
+       "meaning": "Welcoming positive and negative feedback and responding constructively, clearly and respectfully.",
+       "draws": [],
+       "readers": []
+      },
+      {
+       "id": "diagnosing-the-note",
+       "name": "Diagnosing The Note",
+       "meaning": "Finding what is really causing the problem a note points at, and how best to treat it.",
+       "draws": [],
+       "readers": []
+      },
+      {
+       "id": "holding-your-take",
+       "name": "Holding Your Take",
+       "meaning": "Not saying yes to every note: explaining why one doesn't work and arguing for creative decisions.",
+       "draws": [],
+       "readers": []
+      },
+      {
+       "id": "addressing-notes",
+       "name": "Addressing Notes",
+       "meaning": "Acting on the notes: reconsidering the approach and carrying the answers into the next version.",
+       "draws": [
+        "revision"
+       ],
+       "readers": []
+      },
+      {
+       "id": "seeking-feedback",
+       "name": "Seeking Feedback",
+       "meaning": "Getting feedback from producers, script editors, actors and everyone in the room, whatever their title.",
+       "draws": [],
+       "readers": []
+      }
      ]
     },
     {
-     "id": "finding-what-to-rewrite",
-     "name": "Finding What To Rewrite",
-     "meaning": "Analysing one's own draft to find the lines of rewriting, through to the shooting version.",
-     "draws": [
-      "critical-thinking"
-     ],
-     "readers": [
-      "austin"
+     "id": "story-critique",
+     "name": "Story Critique",
+     "research": "story critique",
+     "definition": "Reading a script, synopsizing it and evaluating its strengths and weaknesses (its story, characters, dialogue and world), then critiquing it constructively with ways to improve it.",
+     "facets": [
+      {
+       "id": "synopsizing",
+       "name": "Synopsizing",
+       "meaning": "Summarising the material at the head of coverage: a thumbnail sketch of the story.",
+       "draws": [
+        "synopsis"
+       ],
+       "readers": []
+      },
+      {
+       "id": "strengths-and-weaknesses",
+       "name": "Strengths And Weaknesses",
+       "meaning": "Weighing the pros and cons of the subject, story, characters, dialogue and visual and sound world.",
+       "draws": [
+        "characters",
+        "dialogue"
+       ],
+       "readers": []
+      },
+      {
+       "id": "dramaturgical-analysis",
+       "name": "Dramaturgical Analysis",
+       "meaning": "Checking the story's coherence against the author's intention: acts, point of view, character construction, the audience's place.",
+       "draws": [
+        "critical-thinking",
+        "structure"
+       ],
+       "readers": []
+      },
+      {
+       "id": "judging-potential",
+       "name": "Judging Potential",
+       "meaning": "Estimating whether the material is worth developing or acquiring: its format, genre, audience and possible funders.",
+       "draws": [],
+       "readers": [
+        "black-list"
+       ]
+      },
+      {
+       "id": "constructive-notes",
+       "name": "Constructive Notes",
+       "meaning": "Turning the analysis into clear, respectful creative and structural notes with ways forward.",
+       "draws": [],
+       "readers": [
+        "austin"
+       ]
+      },
+      {
+       "id": "tracking-drafts",
+       "name": "Tracking Drafts",
+       "meaning": "Once a project is in development, comparing drafts to track changes, note improvements and suggest next steps.",
+       "draws": [],
+       "readers": []
+      },
+      {
+       "id": "breadth-of-reference",
+       "name": "Breadth Of Reference",
+       "meaning": "Knowing films and scripts of every genre and period, bad ones included, to see how the page becomes the screen.",
+       "draws": [],
+       "readers": []
+      }
      ]
     },
     {
-     "id": "revising-from-notes",
-     "name": "Revising From Notes",
-     "meaning": "Rewriting in response to artistic, budget and technical notes, judged on the quality of the revised script.",
-     "draws": [
-      "taking-notes"
-     ],
-     "readers": []
-    },
-    {
-     "id": "keeping-coherence",
-     "name": "Keeping Coherence",
-     "meaning": "Producing a new version that keeps the original project's singularity and coherence, without superficial changes for their own sake.",
-     "draws": [],
-     "readers": []
-    },
-    {
-     "id": "drafts-on-deadline",
-     "name": "Drafts On Deadline",
-     "meaning": "Turning drafts around quickly and creatively, a first, second and third draft to agreed deadlines.",
-     "draws": [
-      "time-management"
-     ],
-     "readers": []
-    },
-    {
-     "id": "production-rewrites",
-     "name": "Production Rewrites",
-     "meaning": "Revising the script in response to budget and casting decisions and solving script problems during the shoot.",
-     "draws": [
-      "film-production-process"
-     ],
-     "readers": []
-    },
-    {
-     "id": "knowing-when-a-draft-is-done",
-     "name": "Knowing When A Draft Is Done",
-     "meaning": "The writer decides when a draft is finished and delivers it, rather than revising on and on for free.",
-     "draws": [],
-     "readers": []
+     "id": "critical-thinking",
+     "name": "Critical Thinking",
+     "research": "Critical Thinking",
+     "definition": "Using logic and reasoning to identify the strengths and weaknesses of alternative solutions, conclusions or approaches to problems, and thinking through new concepts well enough to convey them in writing.",
+     "facets": [
+      {
+       "id": "weighing-alternatives",
+       "name": "Weighing Alternatives",
+       "meaning": "Identifying the strengths and weaknesses of the possible approaches and choosing the most appropriate.",
+       "draws": [],
+       "readers": []
+      },
+      {
+       "id": "solving-complex-problems",
+       "name": "Solving Complex Problems",
+       "meaning": "Identifying a complex problem, reviewing what bears on it, and developing and evaluating options.",
+       "draws": [],
+       "readers": []
+      },
+      {
+       "id": "grasping-new-concepts",
+       "name": "Grasping New Concepts",
+       "meaning": "Thinking through or understanding new concepts, and conveying them through writing.",
+       "draws": [
+        "writing"
+       ],
+       "readers": []
+      },
+      {
+       "id": "evaluating-own-and-others-work",
+       "name": "Evaluating Own And Others' Work",
+       "meaning": "Judging the aims, success or failure of one's own scripts and others'.",
+       "draws": [
+        "story-critique"
+       ],
+       "readers": []
+      },
+      {
+       "id": "analytical-ability",
+       "name": "Analytical Ability",
+       "meaning": "Analytical ability with an awareness of structure, and a gift for observation and reflection.",
+       "draws": [
+        "structure"
+       ],
+       "readers": []
+      }
+     ]
     }
    ]
   },
   {
-   "id": "story-critique",
-   "name": "Story Critique",
-   "research": "story critique",
-   "definition": "Reading a script, synopsizing it and evaluating its strengths and weaknesses (its story, characters, dialogue and world), then critiquing it constructively with ways to improve it.",
-   "facets": [
+   "id": "discipline",
+   "name": "Discipline",
+   "definition": "Time management and perseverance.",
+   "covers": [
     {
-     "id": "synopsizing",
-     "name": "Synopsizing",
-     "meaning": "Summarising the material at the head of coverage: a thumbnail sketch of the story.",
-     "draws": [
-      "synopsis"
-     ],
-     "readers": []
-    },
-    {
-     "id": "strengths-and-weaknesses",
-     "name": "Strengths And Weaknesses",
-     "meaning": "Weighing the pros and cons of the subject, story, characters, dialogue and visual and sound world.",
-     "draws": [
-      "characters",
-      "dialogue"
-     ],
-     "readers": []
-    },
-    {
-     "id": "dramaturgical-analysis",
-     "name": "Dramaturgical Analysis",
-     "meaning": "Checking the story's coherence against the author's intention: acts, point of view, character construction, the audience's place.",
-     "draws": [
-      "critical-thinking",
-      "structure"
-     ],
-     "readers": []
-    },
-    {
-     "id": "judging-potential",
-     "name": "Judging Potential",
-     "meaning": "Estimating whether the material is worth developing or acquiring: its format, genre, audience and possible funders.",
-     "draws": [],
-     "readers": [
-      "black-list"
+     "id": "time-management",
+     "name": "Time Management",
+     "research": "Time Management",
+     "definition": "Managing one's own time and the time of others, following a work schedule so drafts and story documents are delivered on agreed deadlines.",
+     "facets": [
+      {
+       "id": "meeting-deadlines",
+       "name": "Meeting Deadlines",
+       "meaning": "Delivering drafts, rewrites and story documents on the dates agreed.",
+       "draws": [],
+       "readers": []
+      },
+      {
+       "id": "planning-the-writing",
+       "name": "Planning The Writing",
+       "meaning": "Organising a commission's stages (synopsis, treatment, step outline, script) and the writing schedule with rigour.",
+       "draws": [
+        "synopsis"
+       ],
+       "readers": []
+      },
+      {
+       "id": "realistic-timelines",
+       "name": "Realistic Timelines",
+       "meaning": "Setting timelines one can keep and keeping producers and executives updated along the way.",
+       "draws": [],
+       "readers": []
+      },
+      {
+       "id": "several-projects-at-once",
+       "name": "Several Projects At Once",
+       "meaning": "Working on several projects simultaneously, on long film timescales and shorter television ones.",
+       "draws": [],
+       "readers": []
+      },
+      {
+       "id": "prolific-output",
+       "name": "Prolific Output",
+       "meaning": "Producing a high volume of pages.",
+       "draws": [],
+       "readers": []
+      }
      ]
     },
     {
-     "id": "constructive-notes",
-     "name": "Constructive Notes",
-     "meaning": "Turning the analysis into clear, respectful creative and structural notes with ways forward.",
-     "draws": [],
-     "readers": [
-      "austin"
+     "id": "perseverance",
+     "name": "Perseverance",
+     "research": "Perseverance",
+     "definition": "Determination and resolve to complete tasks in the face of difficult circumstances, on projects that can take years, holding up when problems come.",
+     "facets": [
+      {
+       "id": "determination",
+       "name": "Determination",
+       "meaning": "Persisting and staying determined through obstacles.",
+       "draws": [],
+       "readers": []
+      },
+      {
+       "id": "seeing-long-projects-through",
+       "name": "Seeing Long Projects Through",
+       "meaning": "Completing complex projects that can take years.",
+       "draws": [
+        "time-management"
+       ],
+       "readers": []
+      },
+      {
+       "id": "resilience",
+       "name": "Resilience",
+       "meaning": "Holding up when problems and difficulties come.",
+       "draws": [],
+       "readers": []
+      },
+      {
+       "id": "self-discipline",
+       "name": "Self-Discipline",
+       "meaning": "Driving one's own work with self-discipline and personal motivation.",
+       "draws": [],
+       "readers": []
+      }
      ]
-    },
-    {
-     "id": "tracking-drafts",
-     "name": "Tracking Drafts",
-     "meaning": "Once a project is in development, comparing drafts to track changes, note improvements and suggest next steps.",
-     "draws": [],
-     "readers": []
-    },
-    {
-     "id": "breadth-of-reference",
-     "name": "Breadth Of Reference",
-     "meaning": "Knowing films and scripts of every genre and period, bad ones included, to see how the page becomes the screen.",
-     "draws": [],
-     "readers": []
-    }
-   ]
-  },
-  {
-   "id": "critical-thinking",
-   "name": "Critical Thinking",
-   "research": "Critical Thinking",
-   "definition": "Using logic and reasoning to identify the strengths and weaknesses of alternative solutions, conclusions or approaches to problems, and thinking through new concepts well enough to convey them in writing.",
-   "facets": [
-    {
-     "id": "weighing-alternatives",
-     "name": "Weighing Alternatives",
-     "meaning": "Identifying the strengths and weaknesses of the possible approaches and choosing the most appropriate.",
-     "draws": [],
-     "readers": []
-    },
-    {
-     "id": "solving-complex-problems",
-     "name": "Solving Complex Problems",
-     "meaning": "Identifying a complex problem, reviewing what bears on it, and developing and evaluating options.",
-     "draws": [],
-     "readers": []
-    },
-    {
-     "id": "grasping-new-concepts",
-     "name": "Grasping New Concepts",
-     "meaning": "Thinking through or understanding new concepts, and conveying them through writing.",
-     "draws": [
-      "writing"
-     ],
-     "readers": []
-    },
-    {
-     "id": "evaluating-own-and-others-work",
-     "name": "Evaluating Own And Others' Work",
-     "meaning": "Judging the aims, success or failure of one's own scripts and others'.",
-     "draws": [
-      "story-critique"
-     ],
-     "readers": []
-    },
-    {
-     "id": "analytical-ability",
-     "name": "Analytical Ability",
-     "meaning": "Analytical ability with an awareness of structure, and a gift for observation and reflection.",
-     "draws": [
-      "structure"
-     ],
-     "readers": []
-    }
-   ]
-  },
-  {
-   "id": "innovation",
-   "name": "Innovation",
-   "research": "Innovation",
-   "definition": "A tendency to be inventive, imaginative and to adopt new perspectives: coming up with unusual or clever ideas and new plots, characters and ways of doing things.",
-   "facets": [
-    {
-     "id": "inventiveness",
-     "name": "Inventiveness",
-     "meaning": "Being inventive and imaginative, coming up with new ways of doing things.",
-     "draws": [],
-     "readers": []
-    },
-    {
-     "id": "original-ideas",
-     "name": "Original Ideas",
-     "meaning": "Unusual or clever ideas, and new and interesting plots, characters and stories, with unpredictable turns.",
-     "draws": [
-      "characters",
-      "plot"
-     ],
-     "readers": [
-      "page"
-     ]
-    },
-    {
-     "id": "fund-of-ideas",
-     "name": "Fund Of Ideas",
-     "meaning": "Having many ideas to hand, the number counting more than their quality.",
-     "draws": [],
-     "readers": []
-    },
-    {
-     "id": "beyond-the-formula",
-     "name": "Beyond The Formula",
-     "meaning": "Rising above the genre and the standard formula, so the script presents a unique perspective rather than a cookie-cutter one.",
-     "draws": [
-      "distinctive-voice"
-     ],
-     "readers": [
-      "austin"
-     ]
-    },
-    {
-     "id": "creative-risk",
-     "name": "Creative Risk",
-     "meaning": "Taking risks in form and narrative approach, experimenting, and risking failure to succeed.",
-     "draws": [],
-     "readers": []
-    }
-   ]
-  },
-  {
-   "id": "time-management",
-   "name": "Time Management",
-   "research": "Time Management",
-   "definition": "Managing one's own time and the time of others, following a work schedule so drafts and story documents are delivered on agreed deadlines.",
-   "facets": [
-    {
-     "id": "meeting-deadlines",
-     "name": "Meeting Deadlines",
-     "meaning": "Delivering drafts, rewrites and story documents on the dates agreed.",
-     "draws": [],
-     "readers": []
-    },
-    {
-     "id": "planning-the-writing",
-     "name": "Planning The Writing",
-     "meaning": "Organising a commission's stages (synopsis, treatment, step outline, script) and the writing schedule with rigour.",
-     "draws": [
-      "synopsis"
-     ],
-     "readers": []
-    },
-    {
-     "id": "realistic-timelines",
-     "name": "Realistic Timelines",
-     "meaning": "Setting timelines one can keep and keeping producers and executives updated along the way.",
-     "draws": [],
-     "readers": []
-    },
-    {
-     "id": "several-projects-at-once",
-     "name": "Several Projects At Once",
-     "meaning": "Working on several projects simultaneously, on long film timescales and shorter television ones.",
-     "draws": [],
-     "readers": []
-    },
-    {
-     "id": "prolific-output",
-     "name": "Prolific Output",
-     "meaning": "Producing a high volume of pages.",
-     "draws": [],
-     "readers": []
-    }
-   ]
-  },
-  {
-   "id": "perseverance",
-   "name": "Perseverance",
-   "research": "Perseverance",
-   "definition": "Determination and resolve to complete tasks in the face of difficult circumstances, on projects that can take years, holding up when problems come.",
-   "facets": [
-    {
-     "id": "determination",
-     "name": "Determination",
-     "meaning": "Persisting and staying determined through obstacles.",
-     "draws": [],
-     "readers": []
-    },
-    {
-     "id": "seeing-long-projects-through",
-     "name": "Seeing Long Projects Through",
-     "meaning": "Completing complex projects that can take years.",
-     "draws": [
-      "time-management"
-     ],
-     "readers": []
-    },
-    {
-     "id": "resilience",
-     "name": "Resilience",
-     "meaning": "Holding up when problems and difficulties come.",
-     "draws": [],
-     "readers": []
-    },
-    {
-     "id": "self-discipline",
-     "name": "Self-Discipline",
-     "meaning": "Driving one's own work with self-discipline and personal motivation.",
-     "draws": [],
-     "readers": []
-    }
-   ]
-  },
-  {
-   "id": "taking-notes",
-   "name": "Taking Notes",
-   "research": "taking notes",
-   "definition": "Taking feedback from producers, script editors and peers constructively and without defensiveness, finding the problem behind each note, and answering it with comprehensive solutions in the next draft.",
-   "facets": [
-    {
-     "id": "listening-and-clarifying",
-     "name": "Listening And Clarifying",
-     "meaning": "Listening, asking for clarification, and answering a set of notes by saying which are clear and which need more.",
-     "draws": [],
-     "readers": []
-    },
-    {
-     "id": "openness-without-defensiveness",
-     "name": "Openness Without Defensiveness",
-     "meaning": "Welcoming positive and negative feedback and responding constructively, clearly and respectfully.",
-     "draws": [],
-     "readers": []
-    },
-    {
-     "id": "diagnosing-the-note",
-     "name": "Diagnosing The Note",
-     "meaning": "Finding what is really causing the problem a note points at, and how best to treat it.",
-     "draws": [],
-     "readers": []
-    },
-    {
-     "id": "holding-your-take",
-     "name": "Holding Your Take",
-     "meaning": "Not saying yes to every note: explaining why one doesn't work and arguing for creative decisions.",
-     "draws": [],
-     "readers": []
-    },
-    {
-     "id": "addressing-notes",
-     "name": "Addressing Notes",
-     "meaning": "Acting on the notes: reconsidering the approach and carrying the answers into the next version.",
-     "draws": [
-      "revision"
-     ],
-     "readers": []
-    },
-    {
-     "id": "seeking-feedback",
-     "name": "Seeking Feedback",
-     "meaning": "Getting feedback from producers, script editors, actors and everyone in the room, whatever their title.",
-     "draws": [],
-     "readers": []
     }
    ]
   },
   {
    "id": "pitching",
    "name": "Pitching",
-   "research": "pitching",
-   "definition": "Presenting your story ideas and screenplays to buyers (producers, film and television executives, agents and managers), aloud and in pitch documents, to win their interest.",
-   "facets": [
+   "definition": "Pitching, promotion, persuasion, speaking, networking, social perceptiveness and film production process.",
+   "covers": [
     {
-     "id": "preparing-the-pitch",
-     "name": "Preparing The Pitch",
-     "meaning": "Doing the homework before the room: learning the project's history, the competition and what the buyers want, reading the material, and rehearsing the pitch aloud against the clock.",
-     "draws": [
-      "research",
-      "social-perceptiveness"
-     ],
-     "readers": []
-    },
-    {
-     "id": "presenting-the-story-aloud",
-     "name": "Presenting The Story Aloud",
-     "meaning": "Telling the story and its intentions out loud, briefly and in order, bringing out its strengths and what makes it singular, so the listener grasps it at once.",
-     "draws": [
-      "characters",
-      "persuasion",
-      "premise",
-      "speaking"
-     ],
-     "readers": [
-      "austin-pitch"
+     "id": "pitching",
+     "name": "Pitching",
+     "research": "pitching",
+     "definition": "Presenting your story ideas and screenplays to buyers (producers, film and television executives, agents and managers), aloud and in pitch documents, to win their interest.",
+     "facets": [
+      {
+       "id": "preparing-the-pitch",
+       "name": "Preparing The Pitch",
+       "meaning": "Doing the homework before the room: learning the project's history, the competition and what the buyers want, reading the material, and rehearsing the pitch aloud against the clock.",
+       "draws": [
+        "research",
+        "social-perceptiveness"
+       ],
+       "readers": []
+      },
+      {
+       "id": "presenting-the-story-aloud",
+       "name": "Presenting The Story Aloud",
+       "meaning": "Telling the story and its intentions out loud, briefly and in order, bringing out its strengths and what makes it singular, so the listener grasps it at once.",
+       "draws": [
+        "characters",
+        "persuasion",
+        "premise",
+        "speaking"
+       ],
+       "readers": [
+        "austin-pitch"
+       ]
+      },
+      {
+       "id": "the-take",
+       "name": "The Take",
+       "meaning": "Finding what the story is really about, its core way in, and shaping a take that meets the buyers' expectations while feeling uniquely your own.",
+       "draws": [
+        "distinctive-voice",
+        "theme"
+       ],
+       "readers": []
+      },
+      {
+       "id": "why-you",
+       "name": "Why You",
+       "meaning": "Showing what connects you to the material, so the buyer believes you are the writer for it.",
+       "draws": [],
+       "readers": [
+        "austin-pitch"
+       ]
+      },
+      {
+       "id": "pitch-documents",
+       "name": "Pitch Documents",
+       "meaning": "The written side of a pitch: the pitch outline or document, the deck, the series bible and the statement of intent, and knowing that leaving such material behind unpaid is free work the MBA prohibits.",
+       "draws": [
+        "synopsis",
+        "visual-storytelling"
+       ],
+       "readers": [
+        "wga-credits"
+       ]
+      },
+      {
+       "id": "feedback-on-the-pitch",
+       "name": "Feedback On The Pitch",
+       "meaning": "Taking the listeners' feedback and questions on a pitch and working their notes into it rather than ignoring them.",
+       "draws": [
+        "taking-notes"
+       ],
+       "readers": [
+        "austin-pitch"
+       ]
+      }
      ]
     },
     {
-     "id": "the-take",
-     "name": "The Take",
-     "meaning": "Finding what the story is really about, its core way in, and shaping a take that meets the buyers' expectations while feeling uniquely your own.",
-     "draws": [
-      "distinctive-voice",
-      "theme"
-     ],
-     "readers": []
-    },
-    {
-     "id": "why-you",
-     "name": "Why You",
-     "meaning": "Showing what connects you to the material, so the buyer believes you are the writer for it.",
-     "draws": [],
-     "readers": [
-      "austin-pitch"
+     "id": "promotion",
+     "name": "Promotion",
+     "research": "promote your writings",
+     "definition": "Promoting your work and yourself as a writer to professionals and the public: getting scripts to producers and directors, talking about the work at events, festivals and readings, and finding new clients.",
+     "facets": [
+      {
+       "id": "getting-the-script-out",
+       "name": "Getting The Script Out",
+       "meaning": "Promoting an original screenplay to producers and directors and seeking backers and financial partners for it.",
+       "draws": [
+        "pitching"
+       ],
+       "readers": []
+      },
+      {
+       "id": "talking-about-the-work",
+       "name": "Talking About The Work",
+       "meaning": "Talking about your work in public: at meetings, workshops and debates, in readings and speeches.",
+       "draws": [
+        "speaking"
+       ],
+       "readers": []
+      },
+      {
+       "id": "festivals",
+       "name": "Festivals",
+       "meaning": "Taking part in film festivals to promote projects.",
+       "draws": [
+        "networking"
+       ],
+       "readers": []
+      },
+      {
+       "id": "publicity-for-the-film",
+       "name": "Publicity For The Film",
+       "meaning": "Taking part in the publicity of a produced film: the press junket, the press kit and the premiere, which the MBA gives the writer a right to.",
+       "draws": [],
+       "readers": [
+        "wga-credits"
+       ]
+      },
+      {
+       "id": "getting-noticed",
+       "name": "Getting Noticed",
+       "meaning": "Getting yourself noticed and finding new clients and readers: through competitions, social media and other writers and industry professionals, and by citing competition placements.",
+       "draws": [
+        "networking"
+       ],
+       "readers": []
+      },
+      {
+       "id": "promotional-documents",
+       "name": "Promotional Documents",
+       "meaning": "Writing the documents that sell a project to partners: the series bible as a promotion document, the pitch and the statement of intent.",
+       "draws": [
+        "characters"
+       ],
+       "readers": []
+      }
      ]
     },
     {
-     "id": "pitch-documents",
-     "name": "Pitch Documents",
-     "meaning": "The written side of a pitch: the pitch outline or document, the deck, the series bible and the statement of intent, and knowing that leaving such material behind unpaid is free work the MBA prohibits.",
-     "draws": [
-      "synopsis",
-      "visual-storytelling"
-     ],
-     "readers": [
-      "wga-credits"
+     "id": "persuasion",
+     "name": "Persuasion",
+     "research": "Persuasion",
+     "definition": "Persuading others to change their minds or behavior: arguing a creative point, influencing and winning people over, resolving differences in professional opinions and negotiating.",
+     "facets": [
+      {
+       "id": "changing-minds",
+       "name": "Changing Minds",
+       "meaning": "Persuading others to change their minds or behavior, and convincing listeners to buy into an idea.",
+       "draws": [
+        "pitching"
+       ],
+       "readers": []
+      },
+      {
+       "id": "arguing-a-creative-point",
+       "name": "Arguing A Creative Point",
+       "meaning": "Standing up for your creative choices: explaining respectfully why a note doesn't work, saying what matters most to you, and pitching what you think is best rather than what you think they want to hear.",
+       "draws": [
+        "taking-notes"
+       ],
+       "readers": []
+      },
+      {
+       "id": "winning-people-over",
+       "name": "Winning People Over",
+       "meaning": "Influencing the people in the room, buyers and fellow writers alike, so they come on board with your idea and with you.",
+       "draws": [
+        "pitching"
+       ],
+       "readers": []
+      },
+      {
+       "id": "reaching-common-ground",
+       "name": "Reaching Common Ground",
+       "meaning": "Bringing differing opinions together, as in a story meeting, and reconciling them into a common ground.",
+       "draws": [
+        "social-perceptiveness"
+       ],
+       "readers": []
+      },
+      {
+       "id": "negotiating-the-deal",
+       "name": "Negotiating The Deal",
+       "meaning": "Negotiating your own deal, with your representatives, above the guild minimums: compensation, bonuses and other deal points.",
+       "draws": [],
+       "readers": [
+        "wga-credits"
+       ]
+      }
      ]
     },
     {
-     "id": "feedback-on-the-pitch",
-     "name": "Feedback On The Pitch",
-     "meaning": "Taking the listeners' feedback and questions on a pitch and working their notes into it rather than ignoring them.",
-     "draws": [
-      "taking-notes"
-     ],
-     "readers": [
-      "austin-pitch"
-     ]
-    }
-   ]
-  },
-  {
-   "id": "networking",
-   "name": "Networking",
-   "research": "develop professional network",
-   "definition": "Reaching out to and meeting people in the industry, above all agents and producers, and building and keeping those relationships for mutual benefit.",
-   "facets": [
-    {
-     "id": "meeting-agents-and-producers",
-     "name": "Meeting Agents And Producers",
-     "meaning": "Getting in front of the people who commission writing (agents, producers, directors, showrunners, broadcasters) in meetings, including the general meeting.",
-     "draws": [
-      "pitching"
-     ],
-     "readers": []
-    },
-    {
-     "id": "keeping-in-touch",
-     "name": "Keeping In Touch",
-     "meaning": "Maintaining contacts over time: following up when invited to, keeping track of what people are doing, leaving every meeting with an open line, and not burning bridges.",
-     "draws": [],
-     "readers": []
-    },
-    {
-     "id": "fellow-writers",
-     "name": "Fellow Writers",
-     "meaning": "A network among fellow writers and peers at the same level, met in rooms, roundtables and programmes, who lean on and recommend each other.",
-     "draws": [],
-     "readers": [
-      "wga-credits"
+     "id": "speaking",
+     "name": "Speaking",
+     "research": "Speaking",
+     "definition": "Talking to others to convey information effectively, expressing ideas in speech, clearly, so others will understand.",
+     "facets": [
+      {
+       "id": "getting-ideas-across",
+       "name": "Getting Ideas Across",
+       "meaning": "Communicating information and ideas in speech so others understand them.",
+       "draws": [],
+       "readers": []
+      },
+      {
+       "id": "speaking-clearly",
+       "name": "Speaking Clearly",
+       "meaning": "Speaking clearly enough that others can understand you.",
+       "draws": [],
+       "readers": []
+      },
+      {
+       "id": "in-meetings",
+       "name": "In Meetings",
+       "meaning": "Speaking for yourself and your work with producers, executives, directors and your reps: presenting yourself and your projects, giving a coherent account of your intentions, and keeping communication open.",
+       "draws": [
+        "pitching"
+       ],
+       "readers": []
+      },
+      {
+       "id": "speaking-to-an-audience",
+       "name": "Speaking To An Audience",
+       "meaning": "Giving a talk or presentation in which a piece of work or an idea is shown and explained to an audience, from a reading to a pitch on a stage.",
+       "draws": [
+        "promotion"
+       ],
+       "readers": []
+      }
      ]
     },
     {
-     "id": "everyone-in-the-room",
-     "name": "Everyone In The Room",
-     "meaning": "Treating everyone you meet, whatever their title, as part of your network, since today's assistants become tomorrow's buyers.",
-     "draws": [],
-     "readers": []
-    },
-    {
-     "id": "festivals-and-events",
-     "name": "Festivals And Events",
-     "meaning": "Going to festivals, conferences and their events to meet the industry and put projects in front of it.",
-     "draws": [
-      "promotion"
-     ],
-     "readers": []
-    },
-    {
-     "id": "working-your-reps",
-     "name": "Working Your Reps",
-     "meaning": "Using your agent or manager actively: telling them what you need, asking for introductions to their other clients and for submissions on projects.",
-     "draws": [
-      "speaking"
-     ],
-     "readers": []
-    }
-   ]
-  },
-  {
-   "id": "promotion",
-   "name": "Promotion",
-   "research": "promote your writings",
-   "definition": "Promoting your work and yourself as a writer to professionals and the public: getting scripts to producers and directors, talking about the work at events, festivals and readings, and finding new clients.",
-   "facets": [
-    {
-     "id": "getting-the-script-out",
-     "name": "Getting The Script Out",
-     "meaning": "Promoting an original screenplay to producers and directors and seeking backers and financial partners for it.",
-     "draws": [
-      "pitching"
-     ],
-     "readers": []
-    },
-    {
-     "id": "talking-about-the-work",
-     "name": "Talking About The Work",
-     "meaning": "Talking about your work in public: at meetings, workshops and debates, in readings and speeches.",
-     "draws": [
-      "speaking"
-     ],
-     "readers": []
-    },
-    {
-     "id": "festivals",
-     "name": "Festivals",
-     "meaning": "Taking part in film festivals to promote projects.",
-     "draws": [
-      "networking"
-     ],
-     "readers": []
-    },
-    {
-     "id": "publicity-for-the-film",
-     "name": "Publicity For The Film",
-     "meaning": "Taking part in the publicity of a produced film: the press junket, the press kit and the premiere, which the MBA gives the writer a right to.",
-     "draws": [],
-     "readers": [
-      "wga-credits"
+     "id": "networking",
+     "name": "Networking",
+     "research": "develop professional network",
+     "definition": "Reaching out to and meeting people in the industry, above all agents and producers, and building and keeping those relationships for mutual benefit.",
+     "facets": [
+      {
+       "id": "meeting-agents-and-producers",
+       "name": "Meeting Agents And Producers",
+       "meaning": "Getting in front of the people who commission writing (agents, producers, directors, showrunners, broadcasters) in meetings, including the general meeting.",
+       "draws": [
+        "pitching"
+       ],
+       "readers": []
+      },
+      {
+       "id": "keeping-in-touch",
+       "name": "Keeping In Touch",
+       "meaning": "Maintaining contacts over time: following up when invited to, keeping track of what people are doing, leaving every meeting with an open line, and not burning bridges.",
+       "draws": [],
+       "readers": []
+      },
+      {
+       "id": "fellow-writers",
+       "name": "Fellow Writers",
+       "meaning": "A network among fellow writers and peers at the same level, met in rooms, roundtables and programmes, who lean on and recommend each other.",
+       "draws": [],
+       "readers": [
+        "wga-credits"
+       ]
+      },
+      {
+       "id": "everyone-in-the-room",
+       "name": "Everyone In The Room",
+       "meaning": "Treating everyone you meet, whatever their title, as part of your network, since today's assistants become tomorrow's buyers.",
+       "draws": [],
+       "readers": []
+      },
+      {
+       "id": "festivals-and-events",
+       "name": "Festivals And Events",
+       "meaning": "Going to festivals, conferences and their events to meet the industry and put projects in front of it.",
+       "draws": [
+        "promotion"
+       ],
+       "readers": []
+      },
+      {
+       "id": "working-your-reps",
+       "name": "Working Your Reps",
+       "meaning": "Using your agent or manager actively: telling them what you need, asking for introductions to their other clients and for submissions on projects.",
+       "draws": [
+        "speaking"
+       ],
+       "readers": []
+      }
      ]
     },
     {
-     "id": "getting-noticed",
-     "name": "Getting Noticed",
-     "meaning": "Getting yourself noticed and finding new clients and readers: through competitions, social media and other writers and industry professionals, and by citing competition placements.",
-     "draws": [
-      "networking"
-     ],
-     "readers": []
-    },
-    {
-     "id": "promotional-documents",
-     "name": "Promotional Documents",
-     "meaning": "Writing the documents that sell a project to partners: the series bible as a promotion document, the pitch and the statement of intent.",
-     "draws": [
-      "characters"
-     ],
-     "readers": []
-    }
-   ]
-  },
-  {
-   "id": "persuasion",
-   "name": "Persuasion",
-   "research": "Persuasion",
-   "definition": "Persuading others to change their minds or behavior: arguing a creative point, influencing and winning people over, resolving differences in professional opinions and negotiating.",
-   "facets": [
-    {
-     "id": "changing-minds",
-     "name": "Changing Minds",
-     "meaning": "Persuading others to change their minds or behavior, and convincing listeners to buy into an idea.",
-     "draws": [
-      "pitching"
-     ],
-     "readers": []
-    },
-    {
-     "id": "arguing-a-creative-point",
-     "name": "Arguing A Creative Point",
-     "meaning": "Standing up for your creative choices: explaining respectfully why a note doesn't work, saying what matters most to you, and pitching what you think is best rather than what you think they want to hear.",
-     "draws": [
-      "taking-notes"
-     ],
-     "readers": []
-    },
-    {
-     "id": "winning-people-over",
-     "name": "Winning People Over",
-     "meaning": "Influencing the people in the room, buyers and fellow writers alike, so they come on board with your idea and with you.",
-     "draws": [
-      "pitching"
-     ],
-     "readers": []
-    },
-    {
-     "id": "reaching-common-ground",
-     "name": "Reaching Common Ground",
-     "meaning": "Bringing differing opinions together, as in a story meeting, and reconciling them into a common ground.",
-     "draws": [
-      "social-perceptiveness"
-     ],
-     "readers": []
-    },
-    {
-     "id": "negotiating-the-deal",
-     "name": "Negotiating The Deal",
-     "meaning": "Negotiating your own deal, with your representatives, above the guild minimums: compensation, bonuses and other deal points.",
-     "draws": [],
-     "readers": [
-      "wga-credits"
+     "id": "social-perceptiveness",
+     "name": "Social Perceptiveness",
+     "research": "Social Perceptiveness",
+     "definition": "Being aware of others' reactions and understanding why they react as they do.",
+     "facets": [
+      {
+       "id": "reading-reactions",
+       "name": "Reading Reactions",
+       "meaning": "Noticing how others react and understanding why they react as they do.",
+       "draws": [],
+       "readers": []
+      },
+      {
+       "id": "reading-buyers",
+       "name": "Reading Buyers",
+       "meaning": "Understanding why producers and executives want what they want, what pressures they are under, and what lies behind their notes.",
+       "draws": [
+        "taking-notes"
+       ],
+       "readers": []
+      },
+      {
+       "id": "reading-the-audience",
+       "name": "Reading The Audience",
+       "meaning": "Understanding how an audience, from readers to a pitch panel, reacts to certain ideas, so as to connect with it.",
+       "draws": [
+        "pitching"
+       ],
+       "readers": [
+        "austin-pitch"
+       ]
+      }
      ]
-    }
-   ]
-  },
-  {
-   "id": "speaking",
-   "name": "Speaking",
-   "research": "Speaking",
-   "definition": "Talking to others to convey information effectively, expressing ideas in speech, clearly, so others will understand.",
-   "facets": [
-    {
-     "id": "getting-ideas-across",
-     "name": "Getting Ideas Across",
-     "meaning": "Communicating information and ideas in speech so others understand them.",
-     "draws": [],
-     "readers": []
     },
     {
-     "id": "speaking-clearly",
-     "name": "Speaking Clearly",
-     "meaning": "Speaking clearly enough that others can understand you.",
-     "draws": [],
-     "readers": []
-    },
-    {
-     "id": "in-meetings",
-     "name": "In Meetings",
-     "meaning": "Speaking for yourself and your work with producers, executives, directors and your reps: presenting yourself and your projects, giving a coherent account of your intentions, and keeping communication open.",
-     "draws": [
-      "pitching"
-     ],
-     "readers": []
-    },
-    {
-     "id": "speaking-to-an-audience",
-     "name": "Speaking To An Audience",
-     "meaning": "Giving a talk or presentation in which a piece of work or an idea is shown and explained to an audience, from a reading to a pitch on a stage.",
-     "draws": [
-      "promotion"
-     ],
-     "readers": []
-    }
-   ]
-  },
-  {
-   "id": "social-perceptiveness",
-   "name": "Social Perceptiveness",
-   "research": "Social Perceptiveness",
-   "definition": "Being aware of others' reactions and understanding why they react as they do.",
-   "facets": [
-    {
-     "id": "reading-reactions",
-     "name": "Reading Reactions",
-     "meaning": "Noticing how others react and understanding why they react as they do.",
-     "draws": [],
-     "readers": []
-    },
-    {
-     "id": "reading-buyers",
-     "name": "Reading Buyers",
-     "meaning": "Understanding why producers and executives want what they want, what pressures they are under, and what lies behind their notes.",
-     "draws": [
-      "taking-notes"
-     ],
-     "readers": []
-    },
-    {
-     "id": "reading-the-audience",
-     "name": "Reading The Audience",
-     "meaning": "Understanding how an audience, from readers to a pitch panel, reacts to certain ideas, so as to connect with it.",
-     "draws": [
-      "pitching"
-     ],
-     "readers": [
-      "austin-pitch"
+     "id": "film-production-process",
+     "name": "Film Production Process",
+     "research": "film production process",
+     "definition": "Knowing the stages of making a film or programme (scriptwriting, financing, shooting, editing and distribution), the trades the script passes through, and what it costs.",
+     "facets": [
+      {
+       "id": "stages-of-production",
+       "name": "Stages Of Production",
+       "meaning": "The development stages from script through financing, shooting and editing to distribution.",
+       "draws": [],
+       "readers": []
+      },
+      {
+       "id": "production-departments",
+       "name": "Production Departments",
+       "meaning": "Camera, directing, design, costume, lighting, editing and sound, and how each trade meets the writer's job.",
+       "draws": [],
+       "readers": []
+      },
+      {
+       "id": "what-a-script-costs",
+       "name": "What A Script Costs",
+       "meaning": "Knowing the financial impact of storylines, cast and effects, and estimating a budget to check the project is feasible.",
+       "draws": [],
+       "readers": []
+      },
+      {
+       "id": "the-writer-in-production",
+       "name": "The Writer In Production",
+       "meaning": "Where the writer comes in once the script is made: meeting the director, the cast reading, the set, the cuts.",
+       "draws": [
+        "revision"
+       ],
+       "readers": []
+      }
      ]
-    }
-   ]
-  },
-  {
-   "id": "film-production-process",
-   "name": "Film Production Process",
-   "research": "film production process",
-   "definition": "Knowing the stages of making a film or programme (scriptwriting, financing, shooting, editing and distribution), the trades the script passes through, and what it costs.",
-   "facets": [
-    {
-     "id": "stages-of-production",
-     "name": "Stages Of Production",
-     "meaning": "The development stages from script through financing, shooting and editing to distribution.",
-     "draws": [],
-     "readers": []
-    },
-    {
-     "id": "production-departments",
-     "name": "Production Departments",
-     "meaning": "Camera, directing, design, costume, lighting, editing and sound, and how each trade meets the writer's job.",
-     "draws": [],
-     "readers": []
-    },
-    {
-     "id": "what-a-script-costs",
-     "name": "What A Script Costs",
-     "meaning": "Knowing the financial impact of storylines, cast and effects, and estimating a budget to check the project is feasible.",
-     "draws": [],
-     "readers": []
-    },
-    {
-     "id": "the-writer-in-production",
-     "name": "The Writer In Production",
-     "meaning": "Where the writer comes in once the script is made: meeting the director, the cast reading, the set, the cuts.",
-     "draws": [
-      "revision"
-     ],
-     "readers": []
     }
    ]
   }

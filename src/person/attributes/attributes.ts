@@ -3,10 +3,11 @@ import data from './attributes.json';
 
 /**
  * The person's attributes (BUILD-ORDER layer 4; the owner's rulings of 2026-10-31: attributes return for all four
- * roles, each role keeping its most-backed set, shown as a number, "Dialogue - 92", with an engine behind each). The
- * screenwriter's are the 27 named by at least four independent institutions in the research
- * (research/sources/person/attributes/screenwriter.json, R-4601; workbench/plans/screenwriter-attributes.md), each
- * tied to the research group it stands for.
+ * roles, shown as a number with an engine behind each; and of 2026-11-01, the lists too bloated: "We gotta map some
+ * out"). Each role holds a handful of broad attributes (workbench/plans/attribute-map.json): the screenwriter's seven,
+ * Story, Characters, Voice, Writing, Revision, Discipline and Pitching. Each covers the researched attributes it is made
+ * of, its components: the 27 named by at least four independent institutions (R-4601), each tied to its research group,
+ * with its sourced definition and facets. A component reads the level of the broad attribute that covers it.
  *
  * Each is a number from 0 to 100, 100 the most. The player sets where each starts when the life is made (the owner:
  * "there should be an option to pick how good I want to be"), each on its own or all at one level; and doing the work
@@ -21,7 +22,6 @@ import data from './attributes.json';
  */
 
 export type Role = keyof typeof data;
-export type ScreenwriterAttribute = (typeof data.screenwriter)[number]['id'];
 
 /** One part of what an attribute is, as the sources name it. */
 export interface Facet {
@@ -35,7 +35,8 @@ export interface Facet {
   readonly readers: readonly string[];
 }
 
-export interface Attribute {
+/** A researched attribute, one of what a broad attribute is made of. */
+export interface Component {
   readonly id: string;
   /** As the player reads it. */
   readonly name: string;
@@ -44,6 +45,15 @@ export interface Attribute {
   /** What it is, in the sources' words, as the player reads it. */
   readonly definition: string;
   readonly facets: readonly Facet[];
+}
+
+/** A broad attribute: what the player holds, and the components it covers. */
+export interface Attribute {
+  readonly id: string;
+  readonly name: string;
+  /** What it covers, as the player reads it. */
+  readonly definition: string;
+  readonly covers: readonly Component[];
 }
 
 export const ROLES = Object.keys(data) as Role[];
@@ -60,7 +70,7 @@ export const ATTRIBUTES_START: AttributesSlice = {};
 /** An attribute's value as the player reads it: whole, rounded down, so 100 shows only once it's reached. */
 export const shown = (value: number): number => Math.floor(value);
 
-/** "Dialogue - 92". */
+/** "Story - 92". */
 export function label(role: Role, id: string, value: number): string {
   return `${attributeOf(role, id).name} - ${shown(value)}`;
 }
@@ -71,11 +81,28 @@ export function attributeOf(role: Role, id: string): Attribute {
   return found;
 }
 
+/** The broad attribute that covers a component. */
+export function broadOf(role: Role, component: string): Attribute {
+  const found = (ATTRIBUTES[role] as readonly Attribute[] | undefined)?.find((a) => a.covers.some((c) => c.id === component));
+  if (found === undefined) throw new Error(`${role} has no component ${component}`);
+  return found;
+}
+
+export function componentOf(role: Role, id: string): Component {
+  return broadOf(role, id).covers.find((c) => c.id === id) as Component;
+}
+
 /** A role's values, as chosen; refused where the role's values haven't been chosen. */
 export function valuesOf(s: AttributesSlice, role: Role): Readonly<Record<string, number>> {
   const v = s[role];
   if (v === undefined) throw new Error(`the ${role}'s attributes haven't been chosen`);
   return v;
+}
+
+/** Each component's level: its broad attribute's, as held. */
+export function componentValues(s: AttributesSlice, role: Role): Record<string, number> {
+  const held = valuesOf(s, role);
+  return Object.fromEntries(ATTRIBUTES[role].flatMap((a) => a.covers.map((c) => [c.id, held[a.id] as number])));
 }
 
 /** One value, held to the scale. */
@@ -131,9 +158,9 @@ export function facetSkill(values: Readonly<Record<string, number>>, facet: Face
   return 0.75 * v + (0.25 * facet.draws.reduce((t, id) => t + (values[id] as number), 0)) / facet.draws.length;
 }
 
-/** What an attribute comes to through all its facets: their mean. */
+/** What a component comes to through all its facets: their mean. */
 export function skillOf(values: Readonly<Record<string, number>>, role: Role, id: string): number {
-  const { facets } = attributeOf(role, id);
+  const { facets } = componentOf(role, id);
   return facets.reduce((t, f) => t + facetSkill(values, f, id), 0) / facets.length;
 }
 
@@ -143,11 +170,8 @@ export function skillOf(values: Readonly<Record<string, number>>, role: Role, id
  */
 export const DAILY = 1 - (20 / 90) ** (1 / (20 * 365));
 
-/** Days of work raise each attribute they used, the nearer 100 the less, never past it. */
-export function practise(values: Record<string, number>, ids: readonly string[], days: number): void {
-  for (const id of ids) {
-    const v = values[id];
-    if (v === undefined) throw new Error(`there's no attribute ${id} to raise`);
-    values[id] = MAX - (MAX - v) * (1 - DAILY) ** Math.max(0, days);
-  }
+/** Days of work raise each broad attribute whose components they used, once each, the nearer 100 the less, never past it. */
+export function practise(s: AttributesSlice, role: Role, components: readonly string[], days: number): void {
+  const held = s[role] as Record<string, number>;
+  for (const id of new Set(components.map((c) => broadOf(role, c).id))) held[id] = MAX - (MAX - (held[id] as number)) * (1 - DAILY) ** Math.max(0, days);
 }

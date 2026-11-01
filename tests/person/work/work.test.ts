@@ -1,7 +1,7 @@
 import { describe, expect, it } from 'vitest';
 import { begin, commandIndex, dispatch, type Life } from '../../../src/core/frame/frame.ts';
 import { draws, seedFromText } from '../../../src/core/rng/rng.ts';
-import { ATTRIBUTES_START, chooseAttributes, DAILY, skillOf, type AttributesSlice } from '../../../src/person/attributes/attributes.ts';
+import { ATTRIBUTES_START, broadOf, chooseAttributes, componentValues, DAILY, skillOf, type AttributesSlice } from '../../../src/person/attributes/attributes.ts';
 import {
   BLACK_LIST_POSITION,
   BLACK_LIST_WEIGHTS,
@@ -41,11 +41,14 @@ const u = (decider: 'work.draft' | 'work.read', ...keys: (string | number)[]) =>
 const ctx = { draws: (decider: 'work.read', ...keys: (string | number)[]) => draws(seedFromText(SEED), decider, ...keys) };
 const clamp = (n: number) => Math.min(100, Math.max(0, n));
 
+/** Levels set by component, held by the broad attribute that covers each (a later one wins where two share it). */
+const toBroad = (each: Record<string, number>): Record<string, number> => Object.fromEntries(Object.entries(each).map(([id, n]) => [broadOf('screenwriter', id).id, n]));
 const made = (all: number, each: Record<string, number> = {}, seed = SEED): Life<Working> =>
-  dispatch(begin(seed, 0, { attributes: structuredClone(ATTRIBUTES_START), scripts: structuredClone(SCRIPTS_START) }), chooseAttributes, { role: 'screenwriter', all, each });
+  dispatch(begin(seed, 0, { attributes: structuredClone(ATTRIBUTES_START), scripts: structuredClone(SCRIPTS_START) }), chooseAttributes, { role: 'screenwriter', all, each: toBroad(each) });
 const written = (all: number, days = 200, each: Record<string, number> = {}, seed = SEED, form: 'feature' | 'episode' = 'feature') => dispatch(made(all, each, seed), writeScript, { form, days });
 const first = (l: Life<Working>): Script => l.slices.scripts.written[0] as Script;
-const v = (l: Life<Working>) => l.slices.attributes['screenwriter'] as Record<string, number>;
+const v = (l: Life<Working>) => componentValues(l.slices.attributes, 'screenwriter');
+const held = (l: Life<Working>) => l.slices.attributes['screenwriter'] as Record<string, number>;
 const values = (all: number, each: Record<string, number> = {}) => v(made(all, each));
 const only = (reads: readonly Read[]): Read => {
   expect(reads).toHaveLength(1);
@@ -70,7 +73,7 @@ describe('a script', () => {
     expect(voice?.draws).toContain('characters');
     expect(tiedTo('dialogue', voice!)).toEqual(['characters']); // eslint-disable-line @typescript-eslint/no-non-null-assertion
     expect(tiedTo('dialogue', natural!)).toEqual([]); // eslint-disable-line @typescript-eslint/no-non-null-assertion
-    const w = values(50, { dialogue: 90, writing: 10, characters: 30 });
+    const w = { ...values(50), dialogue: 90, writing: 10, characters: 30 };
     expect(skill(w, 'dialogue', voice!)).toBeCloseTo(0.6 * 90 + 0.25 * 10 + 0.15 * 30, 10); // eslint-disable-line @typescript-eslint/no-non-null-assertion
     expect(skill(w, 'dialogue', natural!)).toBeCloseTo(0.7 * 90 + 0.3 * 10, 10); // eslint-disable-line @typescript-eslint/no-non-null-assertion
   });
@@ -143,11 +146,11 @@ describe('a script', () => {
 
   it('teaches the attributes its writing used, a day at a time, at the pace of two decades to professional', () => {
     expect((1 - DAILY) ** (20 * 365)).toBeCloseTo(20 / 90, 10);
-    const after = v(written(50, 56));
-    for (const id of ['dialogue', 'writing', 'premise', 'research', 'innovation', 'screenplay-format', 'film-production-process', 'time-management', 'perseverance']) expect(after[id], id).toBeCloseTo(100 - 50 * (1 - DAILY) ** 56, 10);
-    expect(after['pitching']).toBe(50);
+    const after = held(written(50, 56));
+    // Drafting uses every part (Film Production Process among them, which the owner's map puts in Pitching), Writing and Discipline; not Revision.
+    for (const id of ['story', 'characters', 'voice', 'writing', 'discipline', 'pitching']) expect(after[id], id).toBeCloseTo(100 - 50 * (1 - DAILY) ** 56, 10);
     expect(after['revision']).toBe(50);
-    expect(Object.values(v(written(100))).every((x) => x === 100)).toBe(true);
+    expect(Object.values(held(written(100))).every((x) => x === 100)).toBe(true);
   });
 
   it('is refused in a form there is not, for days that are not whole, or before the attributes are chosen', () => {
@@ -304,9 +307,11 @@ describe('a revision', () => {
       }
     }
     expect(first(after).drafts).toBe(2);
-    const grown = v(after);
-    for (const id of ['revision', 'taking-notes', 'writing', ...new Set(notes.map((n) => n.part))]) expect(grown[id], id).toBeCloseTo(100 - (100 - (vb[id] as number)) * (1 - DAILY) ** 10, 10);
-    expect(grown['story-critique']).toBe(vb['story-critique']);
+    const grown = held(after);
+    const hb = held(base);
+    const raised = new Set(['revision', 'writing', ...notes.map((n) => broadOf('screenwriter', n.part).id)]);
+    for (const id of Object.keys(hb)) expect(grown[id], id).toBeCloseTo(raised.has(id) ? 100 - (100 - (hb[id] as number)) * (1 - DAILY) ** 10 : (hb[id] as number), 10);
+    expect(raised.has('discipline')).toBe(false);
   });
 
   it('polishes only what a polish may change, its notes on other parts set aside', () => {
@@ -349,9 +354,8 @@ describe('a revision', () => {
     const base = written(60, 10);
     const after = dispatch(base, reviseScript, { script: 1, kind: 'rewrite', days: 20 });
     expect(first(after).drafts).toBe(2);
-    expect(v(after)['story-critique']).toBeGreaterThan(60);
-    expect(v(after)['critical-thinking']).toBeGreaterThan(60);
-    expect(v(after)['taking-notes']).toBe(60);
+    expect(held(after)['revision']).toBeGreaterThan(held(base)['revision'] as number);
+    expect(held(after)['discipline']).toBe(held(base)['discipline']);
   });
 
   it("revises without notes exactly on the three facets the writer's own read finds weakest", () => {

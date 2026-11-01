@@ -3,36 +3,36 @@
  "axis": "screenwriter-attribute",
  "universe": {
   "keys": [
+   "story",
    "characters",
-   "dialogue",
-   "structure",
-   "plot",
-   "theme",
-   "premise",
-   "setting",
-   "visual-storytelling",
-   "distinctive-voice",
-   "research",
-   "screenplay-format",
+   "voice",
    "writing",
-   "synopsis",
    "revision",
-   "story-critique",
-   "critical-thinking",
-   "innovation",
-   "time-management",
-   "perseverance",
-   "taking-notes",
-   "pitching",
-   "networking",
-   "promotion",
-   "persuasion",
-   "speaking",
-   "social-perceptiveness",
-   "film-production-process"
+   "discipline",
+   "pitching"
   ]
  },
  "rows": [
+  {
+   "key": "story",
+   "status": "game",
+   "register": [
+    "R-4601",
+    "R-4607",
+    "R-4608",
+    "R-4605"
+   ],
+   "tests": [
+    "tests/person/work/work.test.ts::a script > is moved in each facet by every attribute that writes it",
+    "tests/person/work/work.test.ts::a script > brings in Innovation and Research where their own facets name the part's matter",
+    "tests/person/attributes/attributes.test.ts::the screenwriter attributes > are the owner's seven broad attributes, covering the 27 researched ones as the map says",
+    "tests/person/attributes/attributes.test.ts::the screenwriter attributes > give each component its broad attribute's level",
+    "tests/person/attributes/attributes.test.ts::the screenwriter attributes > rise with each day of work, once per broad attribute, faster from low, never past 100: twenty years of daily work take a writer from 10 to 80",
+    "tests/person/attributes/attributes.test.ts::the screenwriter attributes > carry the sources' definitions and facets in their components, each facet with its ties and the readers that grade it",
+    "tests/person/attributes/attributes.test.ts::the screenwriter attributes > act through their facets: a facet a source ties to other components draws on them for a quarter",
+    "tests/person/attributes/attributes.test.ts::the screenwriter attributes > attributes.choose: the level chosen is the level held"
+   ]
+  },
   {
    "key": "characters",
    "status": "game",
@@ -45,49 +45,16 @@
    "tests": [
     "tests/person/work/work.test.ts::a script > scores a facet from the part's attribute, Writing, and the attributes a source ties to it",
     "tests/person/work/work.test.ts::a script > is moved in each facet by every attribute that writes it",
-    "tests/person/attributes/attributes.test.ts::the screenwriter attributes > carry the sources' definitions and facets, each facet with its ties and the readers that grade it",
-    "tests/person/attributes/attributes.test.ts::the screenwriter attributes > act through their facets: a facet a source ties to other attributes draws on them for a quarter",
-    "tests/person/attributes/attributes.test.ts::the screenwriter attributes > rise with each day of work, faster from low, never past 100: twenty years of daily work take a writer from 10 to 80",
+    "tests/person/attributes/attributes.test.ts::the screenwriter attributes > are the owner's seven broad attributes, covering the 27 researched ones as the map says",
+    "tests/person/attributes/attributes.test.ts::the screenwriter attributes > give each component its broad attribute's level",
+    "tests/person/attributes/attributes.test.ts::the screenwriter attributes > rise with each day of work, once per broad attribute, faster from low, never past 100: twenty years of daily work take a writer from 10 to 80",
+    "tests/person/attributes/attributes.test.ts::the screenwriter attributes > carry the sources' definitions and facets in their components, each facet with its ties and the readers that grade it",
+    "tests/person/attributes/attributes.test.ts::the screenwriter attributes > act through their facets: a facet a source ties to other components draws on them for a quarter",
     "tests/person/attributes/attributes.test.ts::the screenwriter attributes > attributes.choose: the level chosen is the level held"
    ]
   },
   {
-   "key": "dialogue",
-   "status": "game",
-   "register": [
-    "R-4601",
-    "R-4607",
-    "R-4608",
-    "R-4605"
-   ],
-   "tests": [
-    "tests/person/work/work.test.ts::a script > scores a facet from the part's attribute, Writing, and the attributes a source ties to it",
-    "tests/person/work/work.test.ts::a script > is moved in each facet by every attribute that writes it",
-    "tests/person/attributes/attributes.test.ts::the screenwriter attributes > carry the sources' definitions and facets, each facet with its ties and the readers that grade it",
-    "tests/person/attributes/attributes.test.ts::the screenwriter attributes > act through their facets: a facet a source ties to other attributes draws on them for a quarter",
-    "tests/person/attributes/attributes.test.ts::the screenwriter attributes > rise with each day of work, faster from low, never past 100: twenty years of daily work take a writer from 10 to 80",
-    "tests/person/attributes/attributes.test.ts::the screenwriter attributes > attributes.choose: the level chosen is the level held"
-   ]
-  },
-  {
-   "key": "structure",
-   "status": "game",
-   "register": [
-    "R-4601",
-    "R-4607",
-    "R-4608",
-    "R-4605"
-   ],
-   "tests": [
-    "tests/person/work/work.test.ts::a script > is moved in each facet by every attribute that writes it",
-    "tests/person/attributes/attributes.test.ts::the screenwriter attributes > carry the sources' definitions and facets, each facet with its ties and the readers that grade it",
-    "tests/person/attributes/attributes.test.ts::the screenwriter attributes > act through their facets: a facet a source ties to other attributes draws on them for a quarter",
-    "tests/person/attributes/attributes.test.ts::the screenwriter attributes > rise with each day of work, faster from low, never past 100: twenty years of daily work take a writer from 10 to 80",
-    "tests/person/attributes/attributes.test.ts::the screenwriter attributes > attributes.choose: the level chosen is the level held"
-   ]
-  },
-  {
-   "key": "plot",
+   "key": "voice",
    "status": "game",
    "register": [
     "R-4601",
@@ -98,131 +65,12 @@
    "tests": [
     "tests/person/work/work.test.ts::a script > is moved in each facet by every attribute that writes it",
     "tests/person/work/work.test.ts::a script > brings in Innovation and Research where their own facets name the part's matter",
-    "tests/person/attributes/attributes.test.ts::the screenwriter attributes > carry the sources' definitions and facets, each facet with its ties and the readers that grade it",
-    "tests/person/attributes/attributes.test.ts::the screenwriter attributes > act through their facets: a facet a source ties to other attributes draws on them for a quarter",
-    "tests/person/attributes/attributes.test.ts::the screenwriter attributes > rise with each day of work, faster from low, never past 100: twenty years of daily work take a writer from 10 to 80",
-    "tests/person/attributes/attributes.test.ts::the screenwriter attributes > attributes.choose: the level chosen is the level held"
-   ]
-  },
-  {
-   "key": "theme",
-   "status": "game",
-   "register": [
-    "R-4601",
-    "R-4607",
-    "R-4608",
-    "R-4605"
-   ],
-   "tests": [
-    "tests/person/work/work.test.ts::a script > is moved in each facet by every attribute that writes it",
-    "tests/person/attributes/attributes.test.ts::the screenwriter attributes > carry the sources' definitions and facets, each facet with its ties and the readers that grade it",
-    "tests/person/attributes/attributes.test.ts::the screenwriter attributes > act through their facets: a facet a source ties to other attributes draws on them for a quarter",
-    "tests/person/attributes/attributes.test.ts::the screenwriter attributes > rise with each day of work, faster from low, never past 100: twenty years of daily work take a writer from 10 to 80",
-    "tests/person/attributes/attributes.test.ts::the screenwriter attributes > attributes.choose: the level chosen is the level held"
-   ]
-  },
-  {
-   "key": "premise",
-   "status": "game",
-   "register": [
-    "R-4601",
-    "R-4607",
-    "R-4608",
-    "R-4605"
-   ],
-   "tests": [
-    "tests/person/work/work.test.ts::a script > is moved in each facet by every attribute that writes it",
-    "tests/person/attributes/attributes.test.ts::the screenwriter attributes > carry the sources' definitions and facets, each facet with its ties and the readers that grade it",
-    "tests/person/attributes/attributes.test.ts::the screenwriter attributes > act through their facets: a facet a source ties to other attributes draws on them for a quarter",
-    "tests/person/attributes/attributes.test.ts::the screenwriter attributes > rise with each day of work, faster from low, never past 100: twenty years of daily work take a writer from 10 to 80",
-    "tests/person/attributes/attributes.test.ts::the screenwriter attributes > attributes.choose: the level chosen is the level held"
-   ]
-  },
-  {
-   "key": "setting",
-   "status": "game",
-   "register": [
-    "R-4601",
-    "R-4607",
-    "R-4608",
-    "R-4605"
-   ],
-   "tests": [
-    "tests/person/work/work.test.ts::a script > is moved in each facet by every attribute that writes it",
-    "tests/person/work/work.test.ts::a script > brings in Innovation and Research where their own facets name the part's matter",
-    "tests/person/attributes/attributes.test.ts::the screenwriter attributes > carry the sources' definitions and facets, each facet with its ties and the readers that grade it",
-    "tests/person/attributes/attributes.test.ts::the screenwriter attributes > act through their facets: a facet a source ties to other attributes draws on them for a quarter",
-    "tests/person/attributes/attributes.test.ts::the screenwriter attributes > rise with each day of work, faster from low, never past 100: twenty years of daily work take a writer from 10 to 80",
-    "tests/person/attributes/attributes.test.ts::the screenwriter attributes > attributes.choose: the level chosen is the level held"
-   ]
-  },
-  {
-   "key": "visual-storytelling",
-   "status": "game",
-   "register": [
-    "R-4601",
-    "R-4607",
-    "R-4608",
-    "R-4605"
-   ],
-   "tests": [
-    "tests/person/work/work.test.ts::a script > is moved in each facet by every attribute that writes it",
     "tests/person/work/work.test.ts::a revision > does what the MBA says each kind is, in its share of a draft's time",
-    "tests/person/attributes/attributes.test.ts::the screenwriter attributes > carry the sources' definitions and facets, each facet with its ties and the readers that grade it",
-    "tests/person/attributes/attributes.test.ts::the screenwriter attributes > act through their facets: a facet a source ties to other attributes draws on them for a quarter",
-    "tests/person/attributes/attributes.test.ts::the screenwriter attributes > rise with each day of work, faster from low, never past 100: twenty years of daily work take a writer from 10 to 80",
-    "tests/person/attributes/attributes.test.ts::the screenwriter attributes > attributes.choose: the level chosen is the level held"
-   ]
-  },
-  {
-   "key": "distinctive-voice",
-   "status": "game",
-   "register": [
-    "R-4601",
-    "R-4607",
-    "R-4608",
-    "R-4605"
-   ],
-   "tests": [
-    "tests/person/work/work.test.ts::a script > is moved in each facet by every attribute that writes it",
-    "tests/person/attributes/attributes.test.ts::the screenwriter attributes > carry the sources' definitions and facets, each facet with its ties and the readers that grade it",
-    "tests/person/attributes/attributes.test.ts::the screenwriter attributes > act through their facets: a facet a source ties to other attributes draws on them for a quarter",
-    "tests/person/attributes/attributes.test.ts::the screenwriter attributes > rise with each day of work, faster from low, never past 100: twenty years of daily work take a writer from 10 to 80",
-    "tests/person/attributes/attributes.test.ts::the screenwriter attributes > attributes.choose: the level chosen is the level held"
-   ]
-  },
-  {
-   "key": "research",
-   "status": "game",
-   "register": [
-    "R-4601",
-    "R-4607",
-    "R-4608",
-    "R-4605"
-   ],
-   "tests": [
-    "tests/person/work/work.test.ts::a script > brings in Innovation and Research where their own facets name the part's matter",
-    "tests/person/attributes/attributes.test.ts::the screenwriter attributes > carry the sources' definitions and facets, each facet with its ties and the readers that grade it",
-    "tests/person/attributes/attributes.test.ts::the screenwriter attributes > act through their facets: a facet a source ties to other attributes draws on them for a quarter",
-    "tests/person/attributes/attributes.test.ts::the screenwriter attributes > rise with each day of work, faster from low, never past 100: twenty years of daily work take a writer from 10 to 80",
-    "tests/person/attributes/attributes.test.ts::the screenwriter attributes > attributes.choose: the level chosen is the level held"
-   ]
-  },
-  {
-   "key": "screenplay-format",
-   "status": "game",
-   "register": [
-    "R-4601",
-    "R-4607",
-    "R-4608",
-    "R-4605"
-   ],
-   "tests": [
-    "tests/person/work/work.test.ts::a script > is moved in each facet by every attribute that writes it",
-    "tests/person/work/work.test.ts::a revision > does what the MBA says each kind is, in its share of a draft's time",
-    "tests/person/attributes/attributes.test.ts::the screenwriter attributes > carry the sources' definitions and facets, each facet with its ties and the readers that grade it",
-    "tests/person/attributes/attributes.test.ts::the screenwriter attributes > act through their facets: a facet a source ties to other attributes draws on them for a quarter",
-    "tests/person/attributes/attributes.test.ts::the screenwriter attributes > rise with each day of work, faster from low, never past 100: twenty years of daily work take a writer from 10 to 80",
+    "tests/person/attributes/attributes.test.ts::the screenwriter attributes > are the owner's seven broad attributes, covering the 27 researched ones as the map says",
+    "tests/person/attributes/attributes.test.ts::the screenwriter attributes > give each component its broad attribute's level",
+    "tests/person/attributes/attributes.test.ts::the screenwriter attributes > rise with each day of work, once per broad attribute, faster from low, never past 100: twenty years of daily work take a writer from 10 to 80",
+    "tests/person/attributes/attributes.test.ts::the screenwriter attributes > carry the sources' definitions and facets in their components, each facet with its ties and the readers that grade it",
+    "tests/person/attributes/attributes.test.ts::the screenwriter attributes > act through their facets: a facet a source ties to other components draws on them for a quarter",
     "tests/person/attributes/attributes.test.ts::the screenwriter attributes > attributes.choose: the level chosen is the level held"
    ]
   },
@@ -233,33 +81,19 @@
     "R-4601",
     "R-4607",
     "R-4608",
-    "R-4605"
+    "R-4605",
+    "R-4606"
    ],
    "tests": [
     "tests/person/work/work.test.ts::a script > scores a facet from the part's attribute, Writing, and the attributes a source ties to it",
     "tests/person/work/work.test.ts::a script > is moved in each facet by every attribute that writes it",
     "tests/person/work/work.test.ts::a script > needs the trade's time: a feature in eight weeks at the top, an episode within the MBA's 2.4 weeks",
-    "tests/person/attributes/attributes.test.ts::the screenwriter attributes > carry the sources' definitions and facets, each facet with its ties and the readers that grade it",
-    "tests/person/attributes/attributes.test.ts::the screenwriter attributes > act through their facets: a facet a source ties to other attributes draws on them for a quarter",
-    "tests/person/attributes/attributes.test.ts::the screenwriter attributes > rise with each day of work, faster from low, never past 100: twenty years of daily work take a writer from 10 to 80",
-    "tests/person/attributes/attributes.test.ts::the screenwriter attributes > attributes.choose: the level chosen is the level held"
-   ]
-  },
-  {
-   "key": "synopsis",
-   "status": "game",
-   "register": [
-    "R-4601",
-    "R-4607",
-    "R-4608",
-    "R-4606"
-   ],
-   "tests": [
     "tests/person/work/career.test.ts::a script's documents > are the ten the sources name, each its own facet of Synopsis, written in its own time",
-    "tests/person/work/career.test.ts::a script's documents > come out as the writer is, worth half when rushed to nothing, within the spread",
-    "tests/person/attributes/attributes.test.ts::the screenwriter attributes > carry the sources' definitions and facets, each facet with its ties and the readers that grade it",
-    "tests/person/attributes/attributes.test.ts::the screenwriter attributes > act through their facets: a facet a source ties to other attributes draws on them for a quarter",
-    "tests/person/attributes/attributes.test.ts::the screenwriter attributes > rise with each day of work, faster from low, never past 100: twenty years of daily work take a writer from 10 to 80",
+    "tests/person/attributes/attributes.test.ts::the screenwriter attributes > are the owner's seven broad attributes, covering the 27 researched ones as the map says",
+    "tests/person/attributes/attributes.test.ts::the screenwriter attributes > give each component its broad attribute's level",
+    "tests/person/attributes/attributes.test.ts::the screenwriter attributes > rise with each day of work, once per broad attribute, faster from low, never past 100: twenty years of daily work take a writer from 10 to 80",
+    "tests/person/attributes/attributes.test.ts::the screenwriter attributes > carry the sources' definitions and facets in their components, each facet with its ties and the readers that grade it",
+    "tests/person/attributes/attributes.test.ts::the screenwriter attributes > act through their facets: a facet a source ties to other components draws on them for a quarter",
     "tests/person/attributes/attributes.test.ts::the screenwriter attributes > attributes.choose: the level chosen is the level held"
    ]
   },
@@ -275,65 +109,17 @@
    "tests": [
     "tests/person/work/work.test.ts::a revision > moves each facet toward the writer, by the days, Revision, and the share of the work Taking Notes keeps on the notes",
     "tests/person/work/work.test.ts::a revision > keeps more of the work on the noted facets with better Taking Notes, and carries further with better Revision",
-    "tests/person/attributes/attributes.test.ts::the screenwriter attributes > carry the sources' definitions and facets, each facet with its ties and the readers that grade it",
-    "tests/person/attributes/attributes.test.ts::the screenwriter attributes > act through their facets: a facet a source ties to other attributes draws on them for a quarter",
-    "tests/person/attributes/attributes.test.ts::the screenwriter attributes > rise with each day of work, faster from low, never past 100: twenty years of daily work take a writer from 10 to 80",
-    "tests/person/attributes/attributes.test.ts::the screenwriter attributes > attributes.choose: the level chosen is the level held"
-   ]
-  },
-  {
-   "key": "story-critique",
-   "status": "game",
-   "register": [
-    "R-4601",
-    "R-4607",
-    "R-4608",
-    "R-4605"
-   ],
-   "tests": [
     "tests/person/work/work.test.ts::a revision > works where no reader has noted on what the writer's own read thinks weakest, read truer with a better eye",
-    "tests/person/attributes/attributes.test.ts::the screenwriter attributes > carry the sources' definitions and facets, each facet with its ties and the readers that grade it",
-    "tests/person/attributes/attributes.test.ts::the screenwriter attributes > act through their facets: a facet a source ties to other attributes draws on them for a quarter",
-    "tests/person/attributes/attributes.test.ts::the screenwriter attributes > rise with each day of work, faster from low, never past 100: twenty years of daily work take a writer from 10 to 80",
+    "tests/person/attributes/attributes.test.ts::the screenwriter attributes > are the owner's seven broad attributes, covering the 27 researched ones as the map says",
+    "tests/person/attributes/attributes.test.ts::the screenwriter attributes > give each component its broad attribute's level",
+    "tests/person/attributes/attributes.test.ts::the screenwriter attributes > rise with each day of work, once per broad attribute, faster from low, never past 100: twenty years of daily work take a writer from 10 to 80",
+    "tests/person/attributes/attributes.test.ts::the screenwriter attributes > carry the sources' definitions and facets in their components, each facet with its ties and the readers that grade it",
+    "tests/person/attributes/attributes.test.ts::the screenwriter attributes > act through their facets: a facet a source ties to other components draws on them for a quarter",
     "tests/person/attributes/attributes.test.ts::the screenwriter attributes > attributes.choose: the level chosen is the level held"
    ]
   },
   {
-   "key": "critical-thinking",
-   "status": "game",
-   "register": [
-    "R-4601",
-    "R-4607",
-    "R-4608",
-    "R-4605"
-   ],
-   "tests": [
-    "tests/person/work/work.test.ts::a revision > works where no reader has noted on what the writer's own read thinks weakest, read truer with a better eye",
-    "tests/person/attributes/attributes.test.ts::the screenwriter attributes > carry the sources' definitions and facets, each facet with its ties and the readers that grade it",
-    "tests/person/attributes/attributes.test.ts::the screenwriter attributes > act through their facets: a facet a source ties to other attributes draws on them for a quarter",
-    "tests/person/attributes/attributes.test.ts::the screenwriter attributes > rise with each day of work, faster from low, never past 100: twenty years of daily work take a writer from 10 to 80",
-    "tests/person/attributes/attributes.test.ts::the screenwriter attributes > attributes.choose: the level chosen is the level held"
-   ]
-  },
-  {
-   "key": "innovation",
-   "status": "game",
-   "register": [
-    "R-4601",
-    "R-4607",
-    "R-4608",
-    "R-4605"
-   ],
-   "tests": [
-    "tests/person/work/work.test.ts::a script > brings in Innovation and Research where their own facets name the part's matter",
-    "tests/person/attributes/attributes.test.ts::the screenwriter attributes > carry the sources' definitions and facets, each facet with its ties and the readers that grade it",
-    "tests/person/attributes/attributes.test.ts::the screenwriter attributes > act through their facets: a facet a source ties to other attributes draws on them for a quarter",
-    "tests/person/attributes/attributes.test.ts::the screenwriter attributes > rise with each day of work, faster from low, never past 100: twenty years of daily work take a writer from 10 to 80",
-    "tests/person/attributes/attributes.test.ts::the screenwriter attributes > attributes.choose: the level chosen is the level held"
-   ]
-  },
-  {
-   "key": "time-management",
+   "key": "discipline",
    "status": "game",
    "register": [
     "R-4601",
@@ -343,44 +129,11 @@
    ],
    "tests": [
     "tests/person/work/work.test.ts::a script > needs the trade's time: a feature in eight weeks at the top, an episode within the MBA's 2.4 weeks",
-    "tests/person/attributes/attributes.test.ts::the screenwriter attributes > carry the sources' definitions and facets, each facet with its ties and the readers that grade it",
-    "tests/person/attributes/attributes.test.ts::the screenwriter attributes > act through their facets: a facet a source ties to other attributes draws on them for a quarter",
-    "tests/person/attributes/attributes.test.ts::the screenwriter attributes > rise with each day of work, faster from low, never past 100: twenty years of daily work take a writer from 10 to 80",
-    "tests/person/attributes/attributes.test.ts::the screenwriter attributes > attributes.choose: the level chosen is the level held"
-   ]
-  },
-  {
-   "key": "perseverance",
-   "status": "game",
-   "register": [
-    "R-4601",
-    "R-4607",
-    "R-4608",
-    "R-4605"
-   ],
-   "tests": [
-    "tests/person/work/work.test.ts::a script > needs the trade's time: a feature in eight weeks at the top, an episode within the MBA's 2.4 weeks",
-    "tests/person/attributes/attributes.test.ts::the screenwriter attributes > carry the sources' definitions and facets, each facet with its ties and the readers that grade it",
-    "tests/person/attributes/attributes.test.ts::the screenwriter attributes > act through their facets: a facet a source ties to other attributes draws on them for a quarter",
-    "tests/person/attributes/attributes.test.ts::the screenwriter attributes > rise with each day of work, faster from low, never past 100: twenty years of daily work take a writer from 10 to 80",
-    "tests/person/attributes/attributes.test.ts::the screenwriter attributes > attributes.choose: the level chosen is the level held"
-   ]
-  },
-  {
-   "key": "taking-notes",
-   "status": "game",
-   "register": [
-    "R-4601",
-    "R-4607",
-    "R-4608",
-    "R-4605"
-   ],
-   "tests": [
-    "tests/person/work/work.test.ts::a revision > moves each facet toward the writer, by the days, Revision, and the share of the work Taking Notes keeps on the notes",
-    "tests/person/work/work.test.ts::a revision > keeps more of the work on the noted facets with better Taking Notes, and carries further with better Revision",
-    "tests/person/attributes/attributes.test.ts::the screenwriter attributes > carry the sources' definitions and facets, each facet with its ties and the readers that grade it",
-    "tests/person/attributes/attributes.test.ts::the screenwriter attributes > act through their facets: a facet a source ties to other attributes draws on them for a quarter",
-    "tests/person/attributes/attributes.test.ts::the screenwriter attributes > rise with each day of work, faster from low, never past 100: twenty years of daily work take a writer from 10 to 80",
+    "tests/person/attributes/attributes.test.ts::the screenwriter attributes > are the owner's seven broad attributes, covering the 27 researched ones as the map says",
+    "tests/person/attributes/attributes.test.ts::the screenwriter attributes > give each component its broad attribute's level",
+    "tests/person/attributes/attributes.test.ts::the screenwriter attributes > rise with each day of work, once per broad attribute, faster from low, never past 100: twenty years of daily work take a writer from 10 to 80",
+    "tests/person/attributes/attributes.test.ts::the screenwriter attributes > carry the sources' definitions and facets in their components, each facet with its ties and the readers that grade it",
+    "tests/person/attributes/attributes.test.ts::the screenwriter attributes > act through their facets: a facet a source ties to other components draws on them for a quarter",
     "tests/person/attributes/attributes.test.ts::the screenwriter attributes > attributes.choose: the level chosen is the level held"
    ]
   },
@@ -394,117 +147,15 @@
     "R-4606"
    ],
    "tests": [
-    "tests/person/work/career.test.ts::a pitch > sells a third of the time for a script at the market level and a middling meeting, more for better, 88% at best",
-    "tests/person/work/career.test.ts::a pitch > sells by the meeting draw on each script, a dozen over, and grows Pitching, Speaking and Persuasion",
-    "tests/person/attributes/attributes.test.ts::the screenwriter attributes > carry the sources' definitions and facets, each facet with its ties and the readers that grade it",
-    "tests/person/attributes/attributes.test.ts::the screenwriter attributes > act through their facets: a facet a source ties to other attributes draws on them for a quarter",
-    "tests/person/attributes/attributes.test.ts::the screenwriter attributes > rise with each day of work, faster from low, never past 100: twenty years of daily work take a writer from 10 to 80",
-    "tests/person/attributes/attributes.test.ts::the screenwriter attributes > attributes.choose: the level chosen is the level held"
-   ]
-  },
-  {
-   "key": "networking",
-   "status": "game",
-   "register": [
-    "R-4601",
-    "R-4607",
-    "R-4608",
-    "R-4606"
-   ],
-   "tests": [
     "tests/person/work/career.test.ts::networking > makes a contact a day as often as Networking, Speaking and Social Perceptiveness make it likely",
-    "tests/person/attributes/attributes.test.ts::the screenwriter attributes > carry the sources' definitions and facets, each facet with its ties and the readers that grade it",
-    "tests/person/attributes/attributes.test.ts::the screenwriter attributes > act through their facets: a facet a source ties to other attributes draws on them for a quarter",
-    "tests/person/attributes/attributes.test.ts::the screenwriter attributes > rise with each day of work, faster from low, never past 100: twenty years of daily work take a writer from 10 to 80",
-    "tests/person/attributes/attributes.test.ts::the screenwriter attributes > attributes.choose: the level chosen is the level held"
-   ]
-  },
-  {
-   "key": "promotion",
-   "status": "game",
-   "register": [
-    "R-4601",
-    "R-4607",
-    "R-4608",
-    "R-4606"
-   ],
-   "tests": [
     "tests/person/work/career.test.ts::sending a script out > asks a contact or, after them, a stranger: a cold query is answered one time in sixty-six, the query services' 1 to 2%",
-    "tests/person/attributes/attributes.test.ts::the screenwriter attributes > carry the sources' definitions and facets, each facet with its ties and the readers that grade it",
-    "tests/person/attributes/attributes.test.ts::the screenwriter attributes > act through their facets: a facet a source ties to other attributes draws on them for a quarter",
-    "tests/person/attributes/attributes.test.ts::the screenwriter attributes > rise with each day of work, faster from low, never past 100: twenty years of daily work take a writer from 10 to 80",
-    "tests/person/attributes/attributes.test.ts::the screenwriter attributes > attributes.choose: the level chosen is the level held"
-   ]
-  },
-  {
-   "key": "persuasion",
-   "status": "game",
-   "register": [
-    "R-4601",
-    "R-4607",
-    "R-4608",
-    "R-4606"
-   ],
-   "tests": [
     "tests/person/work/career.test.ts::a pitch > sells a third of the time for a script at the market level and a middling meeting, more for better, 88% at best",
-    "tests/person/work/career.test.ts::a pitch > sells by the meeting draw on each script, a dozen over, and grows Pitching, Speaking and Persuasion",
-    "tests/person/attributes/attributes.test.ts::the screenwriter attributes > carry the sources' definitions and facets, each facet with its ties and the readers that grade it",
-    "tests/person/attributes/attributes.test.ts::the screenwriter attributes > act through their facets: a facet a source ties to other attributes draws on them for a quarter",
-    "tests/person/attributes/attributes.test.ts::the screenwriter attributes > rise with each day of work, faster from low, never past 100: twenty years of daily work take a writer from 10 to 80",
-    "tests/person/attributes/attributes.test.ts::the screenwriter attributes > attributes.choose: the level chosen is the level held"
-   ]
-  },
-  {
-   "key": "speaking",
-   "status": "game",
-   "register": [
-    "R-4601",
-    "R-4607",
-    "R-4608",
-    "R-4606"
-   ],
-   "tests": [
-    "tests/person/work/career.test.ts::networking > makes a contact a day as often as Networking, Speaking and Social Perceptiveness make it likely",
-    "tests/person/work/career.test.ts::a pitch > sells a third of the time for a script at the market level and a middling meeting, more for better, 88% at best",
-    "tests/person/work/career.test.ts::a pitch > sells by the meeting draw on each script, a dozen over, and grows Pitching, Speaking and Persuasion",
-    "tests/person/attributes/attributes.test.ts::the screenwriter attributes > carry the sources' definitions and facets, each facet with its ties and the readers that grade it",
-    "tests/person/attributes/attributes.test.ts::the screenwriter attributes > act through their facets: a facet a source ties to other attributes draws on them for a quarter",
-    "tests/person/attributes/attributes.test.ts::the screenwriter attributes > rise with each day of work, faster from low, never past 100: twenty years of daily work take a writer from 10 to 80",
-    "tests/person/attributes/attributes.test.ts::the screenwriter attributes > attributes.choose: the level chosen is the level held"
-   ]
-  },
-  {
-   "key": "social-perceptiveness",
-   "status": "game",
-   "register": [
-    "R-4601",
-    "R-4607",
-    "R-4608",
-    "R-4606"
-   ],
-   "tests": [
-    "tests/person/work/career.test.ts::networking > makes a contact a day as often as Networking, Speaking and Social Perceptiveness make it likely",
-    "tests/person/work/career.test.ts::networking > network.meet: a better networker meets more people",
-    "tests/person/attributes/attributes.test.ts::the screenwriter attributes > carry the sources' definitions and facets, each facet with its ties and the readers that grade it",
-    "tests/person/attributes/attributes.test.ts::the screenwriter attributes > act through their facets: a facet a source ties to other attributes draws on them for a quarter",
-    "tests/person/attributes/attributes.test.ts::the screenwriter attributes > rise with each day of work, faster from low, never past 100: twenty years of daily work take a writer from 10 to 80",
-    "tests/person/attributes/attributes.test.ts::the screenwriter attributes > attributes.choose: the level chosen is the level held"
-   ]
-  },
-  {
-   "key": "film-production-process",
-   "status": "game",
-   "register": [
-    "R-4601",
-    "R-4607",
-    "R-4608",
-    "R-4605"
-   ],
-   "tests": [
     "tests/person/work/work.test.ts::a script > is moved in each facet by every attribute that writes it",
-    "tests/person/attributes/attributes.test.ts::the screenwriter attributes > carry the sources' definitions and facets, each facet with its ties and the readers that grade it",
-    "tests/person/attributes/attributes.test.ts::the screenwriter attributes > act through their facets: a facet a source ties to other attributes draws on them for a quarter",
-    "tests/person/attributes/attributes.test.ts::the screenwriter attributes > rise with each day of work, faster from low, never past 100: twenty years of daily work take a writer from 10 to 80",
+    "tests/person/attributes/attributes.test.ts::the screenwriter attributes > are the owner's seven broad attributes, covering the 27 researched ones as the map says",
+    "tests/person/attributes/attributes.test.ts::the screenwriter attributes > give each component its broad attribute's level",
+    "tests/person/attributes/attributes.test.ts::the screenwriter attributes > rise with each day of work, once per broad attribute, faster from low, never past 100: twenty years of daily work take a writer from 10 to 80",
+    "tests/person/attributes/attributes.test.ts::the screenwriter attributes > carry the sources' definitions and facets in their components, each facet with its ties and the readers that grade it",
+    "tests/person/attributes/attributes.test.ts::the screenwriter attributes > act through their facets: a facet a source ties to other components draws on them for a quarter",
     "tests/person/attributes/attributes.test.ts::the screenwriter attributes > attributes.choose: the level chosen is the level held"
    ]
   }

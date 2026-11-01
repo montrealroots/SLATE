@@ -1,6 +1,6 @@
 import { defineCommand, type Context } from '../../core/frame/frame.ts';
 import type { LineId } from '../../core/text/text.ts';
-import { attributeOf, practise, skillOf, valuesOf, type AttributesSlice, type Facet } from '../attributes/attributes.ts';
+import { componentOf, componentValues, practise, skillOf, type AttributesSlice, type Facet } from '../attributes/attributes.ts';
 
 /**
  * The screenwriter's work and how good it comes out (BUILD-ORDER layer 4; the owner, 2026-10-31: "I want my attributes
@@ -8,7 +8,8 @@ import { attributeOf, practise, skillOf, valuesOf, type AttributesSlice, type Fa
  * the attributes' meanings: "I want those meanings to mean something and actually reflect on the work").
  *
  * A script is written as a draft, revised, and read, facet by facet. Each part a reader grades is one of the
- * screenwriter's craft attributes (Characters, Dialogue ...), and each part is made of the facets the sources name
+ * screenwriter's craft components (Characters, Dialogue ...; each read at the level of the broad attribute that covers
+ * it, Story, Characters, Voice, Writing, Pitching), and each part is made of the facets the sources name
  * (R-4607: Dialogue is natural and believable, a voice for each character, revealing character, moving the story,
  * succinct, subtext over statement, fitting the tone and world). A facet's score comes from the writer's attribute
  * (60%), Writing behind every page (25%), and the attributes a source ties to the facet (15%): where Innovation's or
@@ -95,7 +96,7 @@ type Working = { attributes: AttributesSlice; scripts: ScriptsSlice };
 const clamp = (n: number, lo: number, hi: number) => Math.min(hi, Math.max(lo, n));
 const mean = (xs: readonly number[]) => xs.reduce((t, x) => t + x, 0) / xs.length;
 
-export const facetsOf = (part: Part): readonly Facet[] => attributeOf('screenwriter', part).facets;
+export const facetsOf = (part: Part): readonly Facet[] => componentOf('screenwriter', part).facets;
 
 /**
  * The attributes that count toward a facet besides its own and Writing: those a source ties to it (no part's facet is
@@ -104,7 +105,7 @@ export const facetsOf = (part: Part): readonly Facet[] => attributeOf('screenwri
  */
 export function tiedTo(part: Part, facet: Facet): string[] {
   const out = new Set(facet.draws);
-  for (const id of SOURCES_OF_MATTER) if (attributeOf('screenwriter', id).facets.some((f) => f.draws.includes(part))) out.add(id);
+  for (const id of SOURCES_OF_MATTER) if (componentOf('screenwriter', id).facets.some((f) => f.draws.includes(part))) out.add(id);
   return [...out];
 }
 
@@ -153,7 +154,7 @@ const wholeDays = (days: number) => {
 function write(s: Working, a: WriteArgs, c: Context): void {
   if (!(a.form in DAYS)) throw new Error(`there's no form ${String(a.form)}`);
   wholeDays(a.days);
-  const values = { ...valuesOf(s.attributes, 'screenwriter') };
+  const values = componentValues(s.attributes, 'screenwriter');
   const id = s.scripts.written.length + 1;
   const needed = daysNeeded(values, a.form);
   const f = finish(values, a.days, needed);
@@ -167,8 +168,7 @@ function write(s: Working, a: WriteArgs, c: Context): void {
     }
   }
   s.scripts.written.push({ id, form: a.form, started: c.now, needed, drafts: 1, facets, reads: [] });
-  practise(values, DRAFTING, a.days);
-  s.attributes['screenwriter'] = values;
+  practise(s.attributes, 'screenwriter', DRAFTING, a.days);
 }
 
 export function scriptOf(s: ScriptsSlice, id: number): Script {
@@ -231,7 +231,7 @@ export interface ReviseArgs {
 function revise(s: Working, a: ReviseArgs, c: Context): void {
   if (!(a.kind in REVISIONS)) throw new Error(`there's no revision ${String(a.kind)}`);
   wholeDays(a.days);
-  const values = { ...valuesOf(s.attributes, 'screenwriter') };
+  const values = componentValues(s.attributes, 'screenwriter');
   const script = scriptOf(s.scripts, a.script);
   const kind = REVISIONS[a.kind];
   const open = allNotes().filter((n) => kind.parts.includes(n.part));
@@ -250,8 +250,8 @@ function revise(s: Working, a: ReviseArgs, c: Context): void {
     script.facets[n.part][n.facet] = clamp(now + (target - now) * Math.min(1, reach * share * 3), 0, 100);
   }
   script.drafts += 1;
-  practise(values, [...new Set([...focus.map((n) => n.part), 'revision', 'writing', ...(last === undefined ? ['story-critique', 'critical-thinking'] : ['taking-notes'])])], a.days);
-  s.attributes['screenwriter'] = values;
+  // Revision covers Taking Notes, Story Critique and Critical Thinking: a revision teaches all of it at once.
+  practise(s.attributes, 'screenwriter', [...focus.map((n) => n.part), 'revision', 'writing'], a.days);
 }
 
 /** A reader's criteria and the parts each reads (PAGE's named as its judging page names them). */

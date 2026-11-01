@@ -1,7 +1,7 @@
 import { describe, expect, it } from 'vitest';
 import { begin, commandIndex, dispatch, type Life } from '../../../src/core/frame/frame.ts';
 import { draws, seedFromText } from '../../../src/core/rng/rng.ts';
-import { ATTRIBUTES_START, attributeOf, chooseAttributes, DAILY, facetSkill, skillOf, type AttributesSlice } from '../../../src/person/attributes/attributes.ts';
+import { ATTRIBUTES_START, broadOf, chooseAttributes, componentOf, componentValues, DAILY, facetSkill, skillOf, type AttributesSlice } from '../../../src/person/attributes/attributes.ts';
 import {
   bestOf,
   CAREER_START,
@@ -38,10 +38,12 @@ const clamp = (n: number) => Math.min(100, Math.max(0, n));
 const grown = (from: number, days: number) => 100 - (100 - from) * (1 - DAILY) ** days;
 const of = (v: Record<string, number>, id: string) => skillOf(v, 'screenwriter', id);
 
+/** Levels set by component, held by the broad attribute that covers each (a later one wins where two share it). */
+const toBroad = (each: Record<string, number>): Record<string, number> => Object.fromEntries(Object.entries(each).map(([id, n]) => [broadOf('screenwriter', id).id, n]));
 const made = (all: number, each: Record<string, number> = {}, at = 0): Life<Career> =>
-  dispatch(begin(SEED, at, { attributes: structuredClone(ATTRIBUTES_START), scripts: structuredClone(SCRIPTS_START), career: structuredClone(CAREER_START) }), chooseAttributes, { role: 'screenwriter', all, each });
+  dispatch(begin(SEED, at, { attributes: structuredClone(ATTRIBUTES_START), scripts: structuredClone(SCRIPTS_START), career: structuredClone(CAREER_START) }), chooseAttributes, { role: 'screenwriter', all, each: toBroad(each) });
 const withScript = (all: number, form: Form = 'feature', each: Record<string, number> = {}) => dispatch(made(all, each), writeScript, { form, days: 200 });
-const v = (l: Life<Career>) => l.slices.attributes['screenwriter'] as Record<string, number>;
+const v = (l: Life<Career>) => componentValues(l.slices.attributes, 'screenwriter');
 const out = (l: Life<Career>, id = 1) => l.slices.career.out[String(id)];
 const script = (l: Life<Career>, id = 1) => l.slices.scripts.written[id - 1] as Script;
 const withCareer = (l: Life<Career>, career: Partial<CareerSlice>): Life<Career> => ({ ...l, slices: { ...l.slices, career: { ...l.slices.career, ...career } } });
@@ -51,12 +53,12 @@ const emptyOut: Out = { documents: {}, requests: 0, sold: null };
 
 describe("a script's documents", () => {
   it('are the ten the sources name, each its own facet of Synopsis, written in its own time', () => {
-    expect(Object.keys(DOCUMENT_DAYS)).toEqual(attributeOf('screenwriter', 'synopsis').facets.map((f) => f.id));
+    expect(Object.keys(DOCUMENT_DAYS)).toEqual(componentOf('screenwriter', 'synopsis').facets.map((f) => f.id));
     expect(DOCUMENT_DAYS.treatment).toBe(21.5);
     expect(QUERY).toEqual(['logline', 'short-synopsis', 'one-page-synopsis']);
     expect(PITCH).toEqual(['pitch-document', 'one-page-synopsis', 'treatment']);
     const w = v(made(60, { synopsis: 90, premise: 20 }));
-    const logline = attributeOf('screenwriter', 'synopsis').facets.find((f) => f.id === 'logline');
+    const logline = componentOf('screenwriter', 'synopsis').facets.find((f) => f.id === 'logline');
     expect(logline?.draws).toEqual(['premise']);
     expect(documentSkill(w, 'logline')).toBeCloseTo(0.7 * (0.75 * 90 + 0.25 * 20) + 0.3 * of(w, 'writing'), 10);
     expect(documentSkill(w, 'statement-of-intent')).toBeCloseTo(0.7 * 90 + 0.3 * of(w, 'writing'), 10);
