@@ -2014,4 +2014,15 @@ tests that are outcomes, not attributes: producer 40, director 41, actor 37; wor
 each attribute's facets from the sources (two subagents a role, workbench/briefs/BRIEF-role-facets.md), and the real
 figures each role's work runs on (one subagent a role, workbench/briefs/BRIEF-role-calibration.md). They land as
 research files and register entries like R-4607 and R-4608.
+Done 2026-11-01: the next three roles' research, to the screenwriter's depth. Facets (R-4609 producer, 40 attributes,
+178 facets; R-4610 director, 41 and 207, four facets left out as the researcher's own mapping; R-4611 actor, 37 and
+179) and real figures (R-4612 producer, 28 figures: option terms, financing shares, incentive rates, funders'
+acceptance rates and fee caps, release and recoupment rates; R-4613 director, 18: the DGA's director's cut, minimums
+and episodic days, the CNC's shooting days, festival selection rates of 2 to 3%, a quarter of debut directors making a
+second feature within five years; R-4614 actor, 25: SAG-AFTRA's, Pact/Equity's, UK Theatre's and ACTRA's minimums,
+auditions and self-taping, earnings, training, career length). Every quote checked by the lead. Pages read through a
+second fetcher after this environment was refused (canada.ca's CPTC, Georgia's incentives, some Telefilm releases, the
+Academy's 2024 Nicholl press release) are left out under the rule against getting around a bot check: three figures
+become blockers, and R-4608 loses that one source. Next, when the owner returns to it: each role's cut for approval,
+then its engines, as the screenwriter's.
 
