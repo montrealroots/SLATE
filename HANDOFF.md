@@ -2170,3 +2170,10 @@ added (their layer 3 blockers removed). Still open: Laos's and Cameroon's fees, 
 the routes of Belgium, Switzerland and Vietnam not yet landed in papers.work; coverage counts a country blocked where
 any field (a union rule, a pay floor) is, so 231 of 252 rows are blocked though most core facts are found. Parts are
 booked only under the US, UK and Canadian agreements yet, so permits elsewhere wait for those markets.
+Owner, 2026-11-01: "Close the open permit gaps and add more markets." The permit builder closes Laos's and Cameroon's
+fees, Saudi Arabia's and Togo's routes, Belgium's, Switzerland's and Vietnam's route corrections, and the core facts
+still missing in the large film markets. Six research subagents (workbench/briefs/BRIEF-markets.md) read the actor's
+real terms in eighteen more markets (France, Germany, Australia, Ireland, New Zealand, Spain, Italy, India, Japan,
+South Korea, Mexico, Brazil, South Africa, Nigeria, Sweden, Denmark, Norway, the Netherlands): each collective
+agreement or rate card, its minimums by role and tier, the union, the language parts are cast in, the market's city.
+The acting engine takes them as agreements when they land, so a part can be booked in each and its permit reached.
