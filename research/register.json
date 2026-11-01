@@ -171669,6 +171669,109 @@
     "zone": "the option's months counted in Europe/London"
    },
    "sources": []
+  },
+  {
+   "id": "R-4618",
+   "fact": "person.identity.languages",
+   "sought": "The languages spoken in each of the map's 252 countries and territories, each with its share of the population and official status, their English names, and a scale of how well a language is spoken",
+   "status": "found",
+   "value": {
+    "file": "research/sources/person/identity/languages.json",
+    "sha256": "a9e976eda82f2322d86ce02030249666e2dbde4e0b3c9abcd2ca5a619b9612e1",
+    "territories": 250,
+    "blocked": [
+     "AN",
+     "CS"
+    ]
+   },
+   "sources": [
+    {
+     "kind": "primary",
+     "url": "https://cldr.unicode.org/index/downloads",
+     "title": "CLDR Releases/Downloads (Unicode CLDR)",
+     "read": "2026-11-01",
+     "said": "Each release of the Unicode CLDR is a stable release and may be used as reference material or cited as a normative reference by other specifications."
+    },
+    {
+     "kind": "primary",
+     "url": "https://www.unicode.org/Public/cldr/49/",
+     "title": "Index of /Public/cldr/49 (unicode.org)",
+     "read": "2026-11-01",
+     "said": "cldr-common-*.zip  contains the common production data (from cldr/common)."
+    },
+    {
+     "kind": "primary",
+     "url": "https://unicode.org/Public/cldr/49/cldr-common-49.zip#common/supplemental/supplementalData.xml",
+     "title": "CLDR 49 supplementalData.xml, territoryInfo",
+     "read": "2026-11-01",
+     "said": "<languagePopulation type=\"fr\" populationPercent=\"29\" officialStatus=\"official\" references=\"R1341\"/> \u2026 <territory type=\"AQ\" gdp=\"21640000\" literacyPercent=\"99\" population=\"300\">"
+    },
+    {
+     "kind": "primary",
+     "url": "https://www.unicode.org/reports/tr35/tr35-info.html",
+     "title": "UTS #35 LDML Part 6: Supplemental, Version 49",
+     "read": "2026-11-01",
+     "said": "language population percent \u2014 an estimate of the number of people who are functional in that language in that country, including both first and second language speakers. The level of fluency is that necessary to use a UI on a computer, smartphone, or similar devices, rather than complete fluency. \u2026 The percentages may add up to more than 100% due to multilingual populations, or may be less than 100% due to illiteracy or because the data has not yet been gathered or processed. Languages with smaller populations might not be included. \u2026 official language \u2014 as used in CLDR, a language that can generally be used in all communications with a central government. \u2026 official regional language \u2014 a language that is official ( de jure or de facto ) in a major region within a country, but does not qualify as an official language of the country as a whole."
+    },
+    {
+     "kind": "primary",
+     "url": "https://www.unicode.org/Public/cldr/1.8.0/",
+     "title": "Index of /Public/cldr/1.8.0 (unicode.org)",
+     "read": "2026-11-01",
+     "said": "2010-03-26 12:21"
+    },
+    {
+     "kind": "primary",
+     "url": "https://www.unicode.org/Public/cldr/1.8.0/core.zip#common/supplemental/supplementalData.xml",
+     "title": "CLDR 1.8.0 supplementalData.xml (core.zip dated 2010-03-26)",
+     "read": "2026-11-01",
+     "said": "<languagePopulation type=\"pap\" populationPercent=\"81\" officialStatus=\"de_facto_official\"/>"
+    },
+    {
+     "kind": "primary",
+     "url": "https://unicode.org/Public/cldr/49/cldr-common-49.zip#common/supplemental/supplementalMetadata.xml",
+     "title": "CLDR 49 supplementalMetadata.xml, territoryAlias",
+     "read": "2026-11-01",
+     "said": "<territoryAlias type=\"AN\" replacement=\"CW SX BQ\" reason=\"deprecated\"/>"
+    },
+    {
+     "kind": "primary",
+     "url": "https://unicode.org/Public/cldr/49/cldr-common-49.zip#common/main/en.xml",
+     "title": "CLDR 49 en.xml localeDisplayNames",
+     "read": "2026-11-01",
+     "said": "<language type=\"pap\">Papiamento</language> \u2026 <localePattern>{0} ({1})</localePattern>"
+    },
+    {
+     "kind": "primary",
+     "url": "https://www.iana.org/assignments/language-subtag-registry/language-subtag-registry",
+     "title": "IANA Language Subtag Registry (File-Date 2026-09-17)",
+     "read": "2026-11-01",
+     "said": "Subtag: mwk\nDescription: Kita Maninkakan"
+    },
+    {
+     "kind": "secondary",
+     "url": "https://www.uhr.se/globalassets/_uhr.se/internationellt/tjanstemannautbyte/global-scale_language.pdf",
+     "title": "Global Scale (Swedish Council for Higher Education, UHR; reproduces CEFR Table 1)",
+     "read": "2026-11-01",
+     "said": "C2 Can understand with ease virtually everything heard or read.",
+     "quotes": "https://www.coe.int/en/web/common-european-framework-reference-languages/table-1-cefr-3.3-common-reference-levels-global-scale"
+    },
+    {
+     "kind": "secondary",
+     "url": "https://www.daad.de/en/studying-in-germany/living-in-germany/cefr/",
+     "title": "Common European Framework of Reference for Languages (DAAD)",
+     "read": "2026-11-01",
+     "said": "A1 \u2013 Breakthrough Can understand and use familiar everyday expressions and very basic phrases aimed at the satisfaction of needs of a concrete type. \u2026 The Common European Framework of Reference for Languages (CEFR) was developed by the Council of Europe. \u2026 C1 \u2013 Effective Operational Proficiency Can understand a wide range of demanding, longer texts, and recognize implicit meaning. \u2026 C2 \u2013 Mastery Can understand with ease virtually everything heard or read.",
+     "quotes": "https://www.coe.int/en/web/common-european-framework-reference-languages/table-1-cefr-3.3-common-reference-levels-global-scale"
+    },
+    {
+     "kind": "primary",
+     "url": "https://www.govtilr.org/Skills/ILRscale2.htm",
+     "title": "Interagency Language Roundtable Language Skill Level Descriptions - Speaking",
+     "read": "2026-11-01",
+     "said": "Speaking 0 (No Proficiency) Unable to function in the spoken language. \u2026 Speaking 1 (Elementary Proficiency) Able to satisfy minimum courtesy requirements and maintain very simple face-to-face conversations on familiar topics. \u2026 Speaking 2 (Limited Working Proficiency) Able to satisfy routine social demands and limited work requirements. \u2026 Speaking 3 (General Professional Proficiency) Able to speak the language with sufficient structural accuracy and vocabulary to participate effectively in most formal and informal conversations in practical, social and professional topics. \u2026 Speaking 4 (Advanced Professional Proficiency) Able to use the language fluently and accurately on all levels normally pertinent to professional needs. \u2026 Speaking 5 (Functionally Native Proficiency) Speaking proficiency is functionally equivalent to that of a highly articulate well-educated native speaker and reflects the cultural standards of the country where the language is natively spoken. \u2026 The \"plus level\" designation (coded 06, 16, 26, etc.) will be assigned when proficiency substantially exceeds one base skill level and does not fully meet the criteria for the next \"base level.\""
+    }
+   ]
   }
  ]
 }
