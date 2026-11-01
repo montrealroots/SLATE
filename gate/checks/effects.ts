@@ -90,7 +90,8 @@ export function checkEffects(repo: Repo, falsifiers: readonly FalsifierRecord[],
     const proofs = accepted.filter((f) => f.feature === d.id);
     if (d.sort !== 'notice' && proofs.length === 0) r.red(`no passing test falsifies the ${d.sort} ${d.id} (falsifyAny with claim 'bites')`, at);
     const readCell = read.map((c) => `\`${c.file}:${c.line}\``).join('<br>') || `awaits: ${String(awaits)}`;
-    const proofCell = proofs.map((p) => `${p.file} › ${p.test}`).join('<br>') || (d.sort === 'notice' ? 'left for its reader' : '**missing**');
+    // In file and test order, not the order the parallel run finished them in, so the matrix is the same every run.
+    const proofCell = proofs.map((p) => `${p.file} › ${p.test}`).sort().join('<br>') || (d.sort === 'notice' ? 'left for its reader' : '**missing**');
     rows.push(`| \`${d.id}\` | ${d.sort} | \`${at}\` | ${String(entry['what'])} | ${readCell} | ${proofCell} |`);
   }
   r.generate(

@@ -3,7 +3,7 @@ import { defineConfig } from 'vitest/config';
 export default defineConfig({
   test: {
     include: ['gate/**/*.test.ts', 'tests/**/*.test.ts', 'tests/**/*.test.tsx'],
-    exclude: ['**/node_modules/**', '.stryker-tmp/**'],
+    exclude: ['**/node_modules/**', '.stryker-tmp*/**'],
     environment: 'node',
     // The tests' temporary files go under one directory of the run's, removed when it ends.
     globalSetup: ['tests/tmp-setup.ts'],
