@@ -2007,4 +2007,11 @@ pitch and pitching in the room, Speaking's speaking up in the room, Social Perce
 the showrunner, Research's storyline research. Kept, as not team work by their meanings: Networking's everyone in the
 room (everyone one meets), Taking Notes' seeking feedback, Writing's audience and house style. The test holding the data
 to R-4607 names the six; the research file keeps them, as the sources' meanings.
+Owner, 2026-11-01: "We'll get back to this later, just get the research on all of the next 3." The screenwriter's
+engines wait for the owner. The producer's, the director's and the actor's research is under way, to the
+screenwriter's depth: each role's proposed cut (attributes named by at least four institutions, less award or credit
+tests that are outcomes, not attributes: producer 40, director 41, actor 37; workbench/briefs/roles/cut-<role>.json),
+each attribute's facets from the sources (two subagents a role, workbench/briefs/BRIEF-role-facets.md), and the real
+figures each role's work runs on (one subagent a role, workbench/briefs/BRIEF-role-calibration.md). They land as
+research files and register entries like R-4607 and R-4608.
 
