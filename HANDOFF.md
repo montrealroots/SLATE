@@ -2227,3 +2227,8 @@ twenty markets, researched (60 files, research/sources/person/markets/<role>-<CC
 The game's readings are R-5229 to R-5231. Each engine exports where and how long its work is (saleIn, engagement,
 engagementOf); wiring those into the permit, so a director or producer working abroad needs one as the actor does,
 is next.
+Owner, 2026-11-01: "Let's do that next step then." The permit builder wires every role's work abroad into the work
+permit: permits.apply takes a directing, producing or acting engagement by its own country and days; directing's and
+producing's shoots ask permitted() as acting.perform does; a writer's sale meeting reads papers.visits (a business
+visit where the passport allows it), and a permit only where the research says writing there needs one; a route that
+doesn't cover the role (the research names whom it covers) can't be used, and the player is told.
