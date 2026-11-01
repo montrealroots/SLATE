@@ -2001,4 +2001,10 @@ revises, has scripts read, writes their documents, networks, sends scripts out a
 episode is written and sold as a spec. Speaking, Persuasion and Social Perceptiveness keep their readers in networking
 and the pitch; their room-only facets (the staffing pitch, speaking up in the room, reading the showrunner) stay in
 the sourced meanings but act through no engine now. The room's research stays in R-4608 for the record.
+Ruled 2026-11-01, the owner: "Remove the team facets too." Left out of the game's attributes (src/person/attributes/
+attributes.json; 158 facets of the research's 164), the writers'-room and running-show facets: Pitching's staffing
+pitch and pitching in the room, Speaking's speaking up in the room, Social Perceptiveness's reading the room and reading
+the showrunner, Research's storyline research. Kept, as not team work by their meanings: Networking's everyone in the
+room (everyone one meets), Taking Notes' seeking feedback, Writing's audience and house style. The test holding the data
+to R-4607 names the six; the research file keeps them, as the sources' meanings.
 

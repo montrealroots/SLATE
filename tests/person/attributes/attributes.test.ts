@@ -74,18 +74,22 @@ describe('the screenwriter attributes', () => {
   });
 
   it("carry the sources' definitions and facets, each facet with its ties and the readers that grade it", () => {
+    // The owner, 2026-11-01: the writer works alone, so the facets that are writers'-room or running-show work are left out.
+    const SOLO: Record<string, string[]> = { pitching: ['staffing-pitch', 'pitching-in-the-room'], speaking: ['speaking-up-in-the-room'], 'social-perceptiveness': ['reading-the-room', 'reading-the-showrunner'], research: ['storyline-research'] };
     for (const a of ATTRIBUTES.screenwriter) {
       const r = facetResearch.attributes.find((x) => x.attribute === a.id);
       expect(r, a.id).toBeDefined();
       expect(a.definition).toBe(r?.definition);
-      expect(a.facets.map((f) => [f.id, f.name, f.meaning])).toEqual(r?.facets.map((f) => [f.id, f.name, f.meaning]));
+      const kept = r?.facets.filter((f) => !(SOLO[a.id] ?? []).includes(f.id));
+      expect(a.facets.map((f) => [f.id, f.name, f.meaning])).toEqual(kept?.map((f) => [f.id, f.name, f.meaning]));
       for (const [i, f] of a.facets.entries()) {
-        const rf = r?.facets[i];
+        const rf = kept?.[i];
         expect(f.draws, `${a.id} ${f.id}`).toEqual([...new Set(rf?.alsoDrawsOn.map((x) => x.attribute))].sort());
         expect(f.readers, `${a.id} ${f.id}`).toEqual([...new Set(rf?.readBy.flatMap((x) => (x.game === null ? [] : [x.game])))].sort());
       }
     }
-    expect(ATTRIBUTES.screenwriter.reduce((t, a) => t + a.facets.length, 0)).toBe(164);
+    expect(ATTRIBUTES.screenwriter.reduce((t, a) => t + a.facets.length, 0)).toBe(158);
+    expect(Object.values(SOLO).flat()).toHaveLength(6);
     expect(attributeOf('screenwriter', 'dialogue').definition).toBe('The words characters speak: natural and believable, in a voice each character owns, saying little, showing who they are and moving the story.');
   });
 
