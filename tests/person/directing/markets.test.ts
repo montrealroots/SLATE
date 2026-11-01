@@ -35,14 +35,20 @@ import { PRODUCING_START, type ProducingSlice } from '../../../src/person/produc
 import type { PermitsSlice } from '../../../src/person/permits/permits.ts';
 import { permitsEverywhere } from '../../support/permits.ts';
 import { identity } from '../../support/person.ts';
+import { ACCOUNT, purse } from '../../support/purse.ts';
+import { currencyOf, isCountry, type CountryCode } from '../../../src/world/gazetteer/gazetteer.ts';
 
-type D = { attributes: AttributesSlice; directing: DirectingSlice; identity: IdentitySlice; acting: ActingSlice; producing: ProducingSlice; permits: PermitsSlice };
+type D = { attributes: AttributesSlice; directing: DirectingSlice; identity: IdentitySlice; acting: ActingSlice; producing: ProducingSlice; permits: PermitsSlice } & ReturnType<typeof purse>;
 const day = (y: number, m: number, d: number) => daysFromCivil(y, m, d) * SECONDS_PER_DAY;
 const NOW = day(2026, 7, 1);
 const made = (now = NOW, directing: DirectingSlice = DIRECTING_START): Life<D> =>
-  dispatch(begin('0123456789abcdef', now, { attributes: structuredClone(ATTRIBUTES_START), directing: structuredClone(directing), identity: identity(), acting: structuredClone(ACTING_START), producing: structuredClone(PRODUCING_START), permits: permitsEverywhere() }), chooseAttributes, { role: 'director', all: 50, each: {} });
+  dispatch(begin('0123456789abcdef', now, { attributes: structuredClone(ATTRIBUTES_START), directing: structuredClone(directing), identity: identity(), acting: structuredClone(ACTING_START), producing: structuredClone(PRODUCING_START), permits: permitsEverywhere(), ...purse() }), chooseAttributes, { role: 'director', all: 50, each: {} });
+/** A film prepped by a director living in its country, paid into an account in its currency (no rate asked of the day). */
 const job = (args: PrepArgs, now = NOW, directing: DirectingSlice = DIRECTING_START): Film => {
-  const l = dispatch(made(now, directing), prepFilm, args);
+  const where = (args.country ?? 'US') as CountryCode;
+  const base = made(now, directing);
+  const local = { ...base, slices: { ...base.slices, identity: identity({ citizenship: [where] }), ...purse(isCountry(where) ? currencyOf(where) : 'USD') } };
+  const l = dispatch(local, prepFilm, { account: ACCOUNT, ...args });
   return filmOf(l.slices.directing, l.slices.directing.films.length);
 };
 const fee = (args: PrepArgs, now = NOW, directing?: DirectingSlice) => job(args, now, directing).fee;
@@ -287,7 +293,7 @@ describe('a film in a market', () => {
     expect(experience(s, day(2026, 6, 2))).toBe(2);
     expect(experience(s, day(2026, 8, 1))).toBe(3);
     // The director's years and the first job read from the slice, the earlier film kept.
-    const l = dispatch(made(NOW, s), prepFilm, { form: 'feature', country: 'NO', prep: 10, shoot: 20, cut: 10 });
+    const l = dispatch(made(NOW, s), prepFilm, { account: ACCOUNT, form: 'feature', country: 'NO', prep: 10, shoot: 20, cut: 10 });
     expect(l.slices.directing.films.map((x) => x.fee)).toEqual([s.films[0]?.fee, m('NOK', '173780')]);
   });
 
@@ -351,17 +357,17 @@ describe('a film in a market', () => {
 describe('a film directed abroad', () => {
   it("is shot and cut only where the person may work: a permit in force, else refused; prep books it", () => {
     const none = (l: Life<D>): Life<D> => ({ ...l, slices: { ...l.slices, permits: { applications: [] } } });
-    const prepped = none(dispatch(made(), prepFilm, { form: 'feature', country: 'NO', prep: 10, shoot: 20, cut: 10 }));
+    const prepped = none(dispatch(made(), prepFilm, { account: ACCOUNT, form: 'feature', country: 'NO', prep: 10, shoot: 20, cut: 10 }));
     expect(prepped.slices.directing.films).toHaveLength(1);
-    expect(() => dispatch(prepped, shootFilm, { film: 1 })).toThrow('the person may not work in NO without a permit');
-    const shot = dispatch(dispatch(made(), prepFilm, { form: 'feature', country: 'NO', prep: 10, shoot: 20, cut: 10 }), shootFilm, { film: 1 });
-    expect(() => dispatch(none(shot), cutFilm, { film: 1 })).toThrow('the person may not work in NO without a permit');
-    expect(dispatch(shot, cutFilm, { film: 1 }).slices.directing.films[0]?.cut).not.toBeNull();
+    expect(() => dispatch(prepped, shootFilm, { film: 1, account: ACCOUNT })).toThrow('the person may not work in NO without a permit');
+    const shot = dispatch(dispatch(made(), prepFilm, { account: ACCOUNT, form: 'feature', country: 'NO', prep: 10, shoot: 20, cut: 10 }), shootFilm, { film: 1, account: ACCOUNT });
+    expect(() => dispatch(none(shot), cutFilm, { film: 1, account: ACCOUNT })).toThrow('the person may not work in NO without a permit');
+    expect(dispatch(shot, cutFilm, { film: 1, account: ACCOUNT }).slices.directing.films[0]?.cut).not.toBeNull();
     // Kazakhstan's freedom covers a director's work (Decree 1041, item 11), so a film there is shot with no permit.
     const kz = (l: Life<D>): Life<D> => ({ ...l, slices: { ...l.slices, directing: { ...l.slices.directing, films: l.slices.directing.films.map((f) => ({ ...f, country: 'KZ' })) } } });
-    expect(dispatch(kz(prepped), shootFilm, { film: 1 }).slices.directing.films[0]?.shot).not.toBeNull();
+    expect(dispatch(kz(prepped), shootFilm, { film: 1, account: ACCOUNT }).slices.directing.films[0]?.shot).not.toBeNull();
     // At home, no permit is asked.
-    const home = none(dispatch(made(), prepFilm, { form: 'feature', budget: 5_000_000, shoot: 30 }));
-    expect(dispatch(home, shootFilm, { film: 1 }).slices.directing.films[0]?.shot).not.toBeNull();
+    const home = none(dispatch(made(), prepFilm, { account: ACCOUNT, form: 'feature', budget: 5_000_000, shoot: 30 }));
+    expect(dispatch(home, shootFilm, { film: 1, account: ACCOUNT }).slices.directing.films[0]?.shot).not.toBeNull();
   });
 });

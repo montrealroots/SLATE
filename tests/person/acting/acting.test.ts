@@ -63,8 +63,9 @@ import { personOf } from '../../../src/person/identity/identity.ts';
 import { spread } from '../../../src/person/work/work.ts';
 import { t } from '../../../src/core/text/text.ts';
 import { falsifyAny } from '../../support/falsify-core.ts';
+import { ACCOUNT, minorIn, purse } from '../../support/purse.ts';
 
-type Acting = { attributes: AttributesSlice; acting: ActingSlice; identity: IdentitySlice; unions: UnionsSlice; permits: PermitsSlice; directing: DirectingSlice; producing: ProducingSlice };
+type Acting = { attributes: AttributesSlice; acting: ActingSlice; identity: IdentitySlice; unions: UnionsSlice; permits: PermitsSlice; directing: DirectingSlice; producing: ProducingSlice } & ReturnType<typeof purse>;
 const SEED = '0123456789abcdef';
 const OTHER = 'fedcba9876543210';
 const day = (y: number, m: number, d: number) => daysFromCivil(y, m, d) * SECONDS_PER_DAY;
@@ -78,7 +79,7 @@ const cad = (n: string) => fromMajor('CAD', n);
 
 /** Levels by broad attribute over one level for all. */
 const made = (all: number, each: Record<string, number> = {}, seed = SEED, now = AUGUST, who: IdentitySlice = identity()): Life<Acting> =>
-  dispatch(begin(seed, now, { attributes: structuredClone(ATTRIBUTES_START), acting: structuredClone(ACTING_START), identity: who, unions: structuredClone(UNIONS_START), permits: structuredClone(PERMITS_START), directing: structuredClone(DIRECTING_START), producing: structuredClone(PRODUCING_START) }), chooseAttributes, { role: 'actor', all, each });
+  dispatch(begin(seed, now, { attributes: structuredClone(ATTRIBUTES_START), acting: structuredClone(ACTING_START), identity: who, unions: structuredClone(UNIONS_START), permits: structuredClone(PERMITS_START), directing: structuredClone(DIRECTING_START), producing: structuredClone(PRODUCING_START), ...purse() }), chooseAttributes, { role: 'actor', all, each });
 const part = (p: Partial<Part> = {}): Part => ({ agreement: 'sag-aftra', budget: 5_000_000, seats: 0, lines: 20, term: 'day', length: 3, rehearsal: 0, asks: [], ...p });
 const v = (l: Life<Acting>) => componentValues(l.slices.attributes, 'actor');
 const held = (l: Life<Acting>) => l.slices.attributes['actor'] as Record<string, number>;
@@ -320,7 +321,7 @@ describe('an audition', () => {
 
   it('is refused for a part that cannot be, or before the attributes are chosen', () => {
     expect(() => dispatch(made(50), postBreakdown, part({ length: 0 }))).toThrow(RangeError);
-    const bare = withBreakdown(begin(SEED, AUGUST, { attributes: structuredClone(ATTRIBUTES_START), acting: structuredClone(ACTING_START), identity: identity(), unions: structuredClone(UNIONS_START), permits: structuredClone(PERMITS_START), directing: structuredClone(DIRECTING_START), producing: structuredClone(PRODUCING_START) }), open(part()));
+    const bare = withBreakdown(begin(SEED, AUGUST, { attributes: structuredClone(ATTRIBUTES_START), acting: structuredClone(ACTING_START), identity: identity(), unions: structuredClone(UNIONS_START), permits: structuredClone(PERMITS_START), directing: structuredClone(DIRECTING_START), producing: structuredClone(PRODUCING_START), ...purse() }), open(part()));
     expect(() => dispatch(bare, auditionForPart, { breakdown: 1 })).toThrow("the actor's attributes haven't been chosen");
     expect(() => auditionOf(ACTING_START, 1)).toThrow("there's no audition 1");
   });
@@ -518,7 +519,7 @@ describe('playing a part', () => {
       const p = part({ asks: ['dance'], length: 2 });
       const base = withAuditions(made(all, { physicality: 100 - all }, seed), [booked(p)]);
       const k = partSkill(v(base), p);
-      const l = dispatch(base, playPart, { audition: 1 });
+      const l = dispatch(base, playPart, { audition: 1, account: ACCOUNT });
       const quality = clamp(k + spread(k) * (2 * draws(seedFromText(seed), 'acting.work', 'perform', 1).float() - 1));
       expect(auditions(l)[0]?.work, seed).toEqual({ at: AUGUST, quality, pay: usd('2566') });
       for (const id of broadIds) expect(held(l)[id], id).toBeCloseTo(id === 'voice' || id === 'auditioning' ? (held(base)[id] as number) : grown(held(base)[id] as number, 2), 10);
@@ -527,15 +528,19 @@ describe('playing a part', () => {
 
   it('works a weekly or stage engagement five days a week, rehearsals too, and pays nothing where no minimum is set', () => {
     const p = part({ agreement: 'uk-theatre', term: 'week', seats: 600, rehearsal: 2, length: 4 });
-    const base = withAuditions(made(40, {}, SEED, day(2025, 9, 1), identity({ citizenship: ['US', 'GB'] })), [booked(p), booked(part({ budget: 15_000 }), 2)]);
-    const l = dispatch(dispatch(base, playPart, { audition: 1 }), playPart, { audition: 2 });
+    const made40 = made(40, {}, SEED, day(2025, 9, 1), identity({ citizenship: ['GB', 'US'] }));
+    const base = withAuditions({ ...made40, slices: { ...made40.slices, ...purse('GBP') } }, [booked(p), booked(part({ budget: 15_000 }), 2)]);
+    const l = dispatch(dispatch(base, playPart, { audition: 1, account: ACCOUNT }), playPart, { audition: 2, account: ACCOUNT });
     expect(auditions(l)[0]?.work?.pay).toEqual(gbp(String((2 * 54558 + 4 * 56914) / 100)));
     expect(auditions(l)[1]?.work?.pay).toBeNull();
-    expect(held(dispatch(base, playPart, { audition: 1 }))['voice']).toBeCloseTo(grown(40, 30), 10);
+    // Paid into the account whole (below the year's National Insurance threshold); a part with no minimum pays nothing.
+    expect(minorIn(l.slices.ledger, ACCOUNT)).toBe(100_000_000 + 2 * 54558 + 4 * 56914);
+    expect(l.slices.tax.paid.map((x) => [x.work, x.country, x.gross])).toEqual([['performer', 'GB', 2 * 54558 + 4 * 56914]]);
+    expect(held(dispatch(base, playPart, { audition: 1, account: ACCOUNT }))['voice']).toBeCloseTo(grown(40, 30), 10);
   });
 
   it('comes out at the top from an actor at 100 throughout, near 50 from one at 50, poor from one at 10', () => {
-    const played = (all: number, seed: string) => auditions(dispatch(withAuditions(made(all, {}, seed), [booked(part())]), playPart, { audition: 1 }))[0]?.work?.quality as number;
+    const played = (all: number, seed: string) => auditions(dispatch(withAuditions(made(all, {}, seed), [booked(part())]), playPart, { audition: 1, account: ACCOUNT }))[0]?.work?.quality as number;
     const seeds = Array.from({ length: 30 }, (_, i) => (i + 1).toString(16).padStart(16, '0'));
     for (const s of seeds) expect(played(100, s)).toBeGreaterThanOrEqual(97);
     for (const s of seeds) expect(Math.abs(played(50, s) - 50)).toBeLessThanOrEqual(spread(50));
@@ -546,40 +551,40 @@ describe('playing a part', () => {
     // Past the 30 days the UK lets a short engagement be worked without the Creative Worker visa; within them, played.
     const uk = part({ agreement: 'pact-equity', budget: 5_000_000, length: 31 });
     const american = withAuditions(made(50), [booked(uk), booked(part({ agreement: 'pact-equity', length: 30 }), 2)]);
-    expect(() => dispatch(american, playPart, { audition: 1 })).toThrow('the person may not work in GB without a permit');
-    expect(auditions(dispatch(american, playPart, { audition: 2 }))[1]?.work).not.toBeNull();
+    expect(() => dispatch(american, playPart, { audition: 1, account: ACCOUNT })).toThrow('the person may not work in GB without a permit');
+    expect(auditions(dispatch(american, playPart, { audition: 2, account: ACCOUNT }))[1]?.work).not.toBeNull();
     // With the permit granted and in force, the long one is played.
     const visa = { id: 1, at: 0, country: 'GB' as const, role: 'actor' as const, engagement: 1, renews: null, by: 'worker' as const, premium: false, fees: null, decided: { at: 0, until: AUGUST + 1 } };
     const holding = { ...american, slices: { ...american.slices, permits: { applications: [visa] } } };
-    expect(auditions(dispatch(holding, playPart, { audition: 1 }))[0]?.work).not.toBeNull();
+    expect(auditions(dispatch(holding, playPart, { audition: 1, account: ACCOUNT }))[0]?.work).not.toBeNull();
     const irish = withAuditions(made(50, {}, SEED, AUGUST, identity({ citizenship: ['IE'] })), [booked(uk)]);
-    expect(auditions(dispatch(irish, playPart, { audition: 1 }))[0]?.work).not.toBeNull();
+    expect(auditions(dispatch(irish, playPart, { audition: 1, account: ACCOUNT }))[0]?.work).not.toBeNull();
     expect(COUNTRY).toMatchObject({ 'sag-aftra': 'US', 'pact-equity': 'GB', 'uk-theatre': 'GB', actra: 'CA' });
     const canadian = withAuditions(made(50, {}, SEED, AUGUST, identity({ citizenship: ['CA'] })), [booked(part({ agreement: 'actra' })), booked(part(), 2)]);
-    expect(auditions(dispatch(canadian, playPart, { audition: 1 }))[0]?.work).not.toBeNull();
-    expect(() => dispatch(canadian, playPart, { audition: 2 })).toThrow('the person may not work in US without a permit');
+    expect(auditions(dispatch(canadian, playPart, { audition: 1, account: ACCOUNT }))[0]?.work).not.toBeNull();
+    expect(() => dispatch(canadian, playPart, { audition: 2, account: ACCOUNT })).toThrow('the person may not work in US without a permit');
   });
 
   it("is refused a SAG-AFTRA part past the thirtieth day after the person's first, unless they joined (Taft-Hartley and union security, R-4621)", () => {
     const first: Audition = { ...booked(part(), 1, 60), work: { at: AUGUST, quality: 60, pay: null } };
     const at = (days: number) => withAuditions(made(50, {}, SEED, AUGUST + days * SECONDS_PER_DAY), [first, booked(part(), 2)]);
-    expect(auditions(dispatch(at(29), playPart, { audition: 2 }))[1]?.work).not.toBeNull();
-    expect(() => dispatch(at(30), playPart, { audition: 2 })).toThrow("a part under sag-aftra past the thirtieth day of union work is a member's");
+    expect(auditions(dispatch(at(29), playPart, { audition: 2, account: ACCOUNT }))[1]?.work).not.toBeNull();
+    expect(() => dispatch(at(30), playPart, { audition: 2, account: ACCOUNT })).toThrow("a part under sag-aftra past the thirtieth day of union work is a member's");
     const member = (l: Life<Acting>): Life<Acting> => ({ ...l, slices: { ...l.slices, unions: { joined: [{ union: 'sag-aftra', at: AUGUST, standing: 'full', name: 'Ada Reyes', initiation: null, dues: null }] } } });
-    expect(auditions(dispatch(member(at(30)), playPart, { audition: 2 }))[1]?.work).not.toBeNull();
+    expect(auditions(dispatch(member(at(30)), playPart, { audition: 2, account: ACCOUNT }))[1]?.work).not.toBeNull();
     const uk = { ...booked(part({ agreement: 'uk-theatre', term: 'week', seats: 100, length: 1 }), 2) };
     const brit = withAuditions(made(50, {}, SEED, AUGUST + 40 * SECONDS_PER_DAY, identity({ citizenship: ['GB'] })), [first, uk]);
-    expect(auditions(dispatch(brit, playPart, { audition: 2 }))[1]?.work).not.toBeNull();
+    expect(auditions(dispatch(brit, playPart, { audition: 2, account: ACCOUNT }))[1]?.work).not.toBeNull();
   });
 
   it('is refused where the audition did not book, where the part is played, or where there is no such audition', () => {
     const p = part();
     const base = withAuditions(made(50), [{ ...booked(p), booked: false }, booked(p, 2, 60)]);
-    expect(() => dispatch(base, playPart, { audition: 1 })).toThrow("audition 1 didn't book the part");
-    expect(() => dispatch(base, playPart, { audition: 2 })).toThrow('the part from audition 2 is played');
-    expect(() => dispatch(base, playPart, { audition: 3 })).toThrow("there's no audition 3");
+    expect(() => dispatch(base, playPart, { audition: 1, account: ACCOUNT })).toThrow("audition 1 didn't book the part");
+    expect(() => dispatch(base, playPart, { audition: 2, account: ACCOUNT })).toThrow('the part from audition 2 is played');
+    expect(() => dispatch(base, playPart, { audition: 3, account: ACCOUNT })).toThrow("there's no audition 3");
     const early = withAuditions(made(50, {}, SEED, day(2025, 6, 30)), [booked(p)]);
-    expect(() => dispatch(early, playPart, { audition: 1 })).toThrow('no minimum is known before 2025-07-01');
+    expect(() => dispatch(early, playPart, { audition: 1, account: ACCOUNT })).toThrow('no minimum is known before 2025-07-01');
   });
 
   it('finds the audition asked for among several, and an audition booked leads to a part played', () => {
@@ -587,13 +592,18 @@ describe('playing a part', () => {
     for (let i = 0; i < 12; i += 1) l = audit(l, part());
     const first = auditions(l).find((a) => a.booked) as Audition;
     expect(first).toBeDefined();
-    const after = dispatch(l, playPart, { audition: first.id });
+    const after = dispatch(l, playPart, { audition: first.id, account: ACCOUNT });
     expect(auditionOf(after.slices.acting, first.id).work?.pay).toEqual(usd('3849'));
+    // Paid by the production into the account named, less the employee's Social Security and Medicare (7.65%).
+    expect([minorIn(after.slices.ledger, ACCOUNT), minorIn(after.slices.ledger, 'world:production:USD'), minorIn(after.slices.ledger, 'world:social:US:USD')]).toEqual([100_000_000 + 384900 - 29445, -384900, 29445]);
+    expect(after.frame.schedule.map((i) => i.kind)).toEqual(['tax.reckon']);
+    expect(after.slices.ledger.accounts.find((x) => x.id === ACCOUNT)?.postings.map((x) => x.what)).toEqual(['the family', 'pay']);
+    expect(() => dispatch(l, playPart, { audition: first.id, account: 'everyday:9' })).toThrow('no account everyday:9 is held at a bank');
     expect(auditions(after).filter((a) => a.work !== null).map((a) => a.id)).toEqual([first.id]);
   });
 
   it('acting.perform: a better actor plays the part better', () => {
-    falsifyAny({ feature: 'acting.perform', claim: 'bites', says: 'an actor at 90 in Acting plays a part better than one at 30', base: 30, twin: 90, outcome: (n) => auditions(dispatch(withAuditions(made(50, { acting: n }), [booked(part())]), playPart, { audition: 1 }))[0]?.work?.quality });
+    falsifyAny({ feature: 'acting.perform', claim: 'bites', says: 'an actor at 90 in Acting plays a part better than one at 30', base: 30, twin: 90, outcome: (n) => auditions(dispatch(withAuditions(made(50, { acting: n }), [booked(part())]), playPart, { audition: 1, account: ACCOUNT }))[0]?.work?.quality });
   });
 
   it("tells the player its own figures are the game's", () => {
@@ -605,7 +615,7 @@ describe('playing a part', () => {
     expect(commandIndex().filter((x) => x.id.startsWith('acting.'))).toEqual([
       { id: 'acting.breakdown', reads: [], writes: ['acting'] },
       { id: 'acting.audition', reads: ['identity'], writes: ['attributes', 'acting'] },
-      { id: 'acting.perform', reads: ['identity', 'unions', 'permits', 'directing', 'producing'], writes: ['attributes', 'acting'] },
+      { id: 'acting.perform', reads: ['identity', 'unions', 'permits', 'directing', 'producing'], writes: ['attributes', 'acting', 'accounts', 'ledger', 'tax', 'schedule'] },
     ]);
     expect(ACTING_START).toEqual({ breakdowns: [], auditions: [] });
     expect(broadOf('actor', 'acting-for-the-camera').id).toBe('camera');

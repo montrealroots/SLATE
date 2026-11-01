@@ -1,0 +1,378 @@
+{
+ "topic": "tax.KR",
+ "read": "2026-11-01",
+ "note": "Read 2026-11-01 at the owner's word (\"Build those first 3 starting with ledger first\"; \"Retry the blocked tax facts once all countries land\"): the tax on a screen worker's pay in South Korea: a resident's income tax, social contributions, what is withheld at source, a non-resident artiste's withholding, any authors' treatment, VAT's threshold, the tax year. Research and retry subagents (workbench/briefs/BRIEF-tax*.md); every quote checked by the lead against its saved page.",
+ "figures": [
+  {
+   "item": "residents",
+   "finding": "Comprehensive income is taxed at 6% to ₩14 million, 15% to ₩50 million, 24% to ₩88 million, 35% to ₩150 million, 38% to ₩300 million, 40% to ₩500 million, 42% to ₩1 billion and 45% above; local income tax adds a standard tenth of those rates (0.6% to 4.5%), which each local government may vary by up to 50%; a basic deduction of ₩1.5 million a person comes off income first.",
+   "value": {
+    "currency": "KRW",
+    "brackets": [
+     {
+      "from": 0,
+      "to": 14000000,
+      "rate": 0.06
+     },
+     {
+      "from": 14000000,
+      "to": 50000000,
+      "rate": 0.15
+     },
+     {
+      "from": 50000000,
+      "to": 88000000,
+      "rate": 0.24
+     },
+     {
+      "from": 88000000,
+      "to": 150000000,
+      "rate": 0.35
+     },
+     {
+      "from": 150000000,
+      "to": 300000000,
+      "rate": 0.38
+     },
+     {
+      "from": 300000000,
+      "to": 500000000,
+      "rate": 0.4
+     },
+     {
+      "from": 500000000,
+      "to": 1000000000,
+      "rate": 0.42
+     },
+     {
+      "from": 1000000000,
+      "to": null,
+      "rate": 0.45
+     }
+    ],
+    "localIncomeTax": {
+     "standard": "rates x 1/10 (0.6% to 4.5%)",
+     "variance": "±50% by ordinance"
+    },
+    "allowance": {
+     "basicPerPerson": 1500000,
+     "note": "₩1.5 million a year for the taxpayer and each qualifying dependant"
+    }
+   },
+   "applies": "Residents, 2026",
+   "sources": [
+    {
+     "src": 0,
+     "said": "1명당 연 150만원을 곱하여 계산한 금액"
+    },
+    {
+     "src": 1,
+     "said": "1,400만원 이하 과세표준의 6퍼센트 1,400만원 초과 5,000만원 이하 @@LATEX@@84만원 + \\left(1,400만원을초과하는금액의15퍼센트\\right)@@/LATEX@@ 5,000만원 초과 8,800만원 이하 @@LATEX@@624만원 + \\left(5,000만원을초과하는금액의24퍼센트\\right)@@/LATEX@@ 8,800만원 초과 1억5천만원 이하 @@LATEX@@1,536만원 + \\left(8,800만원을초과하는금액의35퍼센트\\right)@@/LATEX@@ 1억5천만원 초과 3억원 이하 @@LATEX@@3,706만원 + \\left(1억5천만원을초과하는금액의38퍼센트\\right)@@/LATEX@@ 3억원 초과 5억원 이하 @@LATEX@@9,406만원 + \\left(3억원을초과하는금액의40퍼센트\\right)@@/LATEX@@ 5억원 초과 10억원 이하 @@LATEX@@1억7,406만원 + \\left(5억원을초과하는금액의42퍼센트\\right)@@/LATEX@@ 10억원 초과 @@LATEX@@10억원을 초과하는 금액의 45퍼센트@@/LATEX@@ … 소득세법 [시행 2026. 1. 1.]"
+    },
+    {
+     "src": 2,
+     "said": "거주자의 종합소득에 대한 개인지방소득세의 표준세율은 다음 표와 같다. … 1천400만원 이하 과세표준의 1천분의 6 … 10억원을초과하는금액의1천분의45 … 지방자치단체의 장은 조례 로 정하는 바에 따라 종합소득에 대한 개인지방소득세의 세율을 제1항에 따른 표준세율의 100분의 50의 범위에서 가감할 수 있다."
+    }
+   ]
+  },
+  {
+   "item": "year",
+   "finding": "The tax year is the calendar year; the comprehensive income return is filed from 1 to 31 May of the following year.",
+   "value": {
+    "currency": "KRW",
+    "start": "01-01",
+    "end": "12-31",
+    "returnWindow": {
+     "from": "05-01",
+     "to": "05-31"
+    }
+   },
+   "applies": "Residents",
+   "sources": [
+    {
+     "src": 3,
+     "said": "소득세의 과세기간은 1월 1일부터 12월 31일까지 1년으로 한다."
+    },
+    {
+     "src": 4,
+     "said": "그 종합소득 과세표준을 그 과세기간의 다음 연도 5월 1일부터 5월 31일까지"
+    }
+   ]
+  },
+  {
+   "item": "social",
+   "finding": "Health insurance is 7.19% of pay for employees (and the same rate for regional members); unemployment-benefit insurance is 1.8% of pay; National Pension in 2026 is 4.75% each for employee and employer (9.5% in all; 9.5% for a regional, i.e. self-employed, member), rising 0.5 point a year to 13% (6.5% each) from 2033, on standard monthly income between KRW 410,000 and KRW 6,590,000 from July 2026 (KRW 400,000 to 6,370,000 before).",
+   "value": {
+    "health": 0.0719,
+    "unemploymentBenefitTotal": 0.018,
+    "employerOnlyStabilisation": {
+     "under150": 0.0025
+    },
+    "pensionStatutoryEach": 0.065,
+    "pension2026": {
+     "employee": 0.0475,
+     "employer": 0.0475,
+     "regionalMember": 0.095
+    },
+    "pensionSchedule": {
+     "2027": 0.1,
+     "2028": 0.105,
+     "2029": 0.11,
+     "2030": 0.115,
+     "2031": 0.12,
+     "2032": 0.125,
+     "2033+": 0.13
+    },
+    "pensionIncomeBand": {
+     "currency": "KRW",
+     "from2026-07": {
+      "min": 410000,
+      "max": 6590000
+     },
+     "2025-07to2026-06": {
+      "min": 400000,
+      "max": 6370000
+     }
+    }
+   },
+   "applies": "Employees and regional members, 2026 (National Pension Act as amended by Act No. 20903 of 2 April 2025, in force 1 January 2026, addendum art. 4); for artists the employment-insurance rate under the artists' scheme was not read.",
+   "sources": [
+    {
+     "src": 5,
+     "said": "직장가입자의 보험료율 및 같은 조 제3항 에 따른 지역가입자의 보험료율은 각각 1만분의 719로 한다."
+    },
+    {
+     "src": 6,
+     "said": "2. 실업급여의 보험료율: 1천분의 18 … 가. 상시근로자수가 150명 미만인 사업주의 사업: 1만분의 25"
+    },
+    {
+     "src": 7,
+     "said": "사업장가입자의 연금보험료 중 기여금은 사업장가입자 본인이, 부담금은 사용자가 각각 부담하되, 그 금액은 각각 기준소득월액의 1천분의 65에 해당하는 금액으로 한다. <개정 2009. 5. 21., 2025. 4. 2.>"
+    },
+    {
+     "src": 8,
+     "said": "제4조(연금보험료에 관한 특례) ① 사업장가입자의 연금보험료 중 사업장가입자의 기여금 및 사용자의 부담금은 각각 제88조제3항의 개정규정에도 불구하고 2026년부터 2032년까지는 기준소득월액에 다음 각 호의 해당 연도의 비율을 곱한 금액으로 한다. 1. 2026년은 1만분의 475 … ② 지역가입자, 임의가입자 및 임의계속가입자의 연금보험료는 각각 제88조제4항의 개정규정에도 불구하고 2026년부터 2032년까지는 기준소득월액에 다음 각 호의 해당 연도의 비율을 곱한 금액으로 한다. 1. 2026년은 1천분의 95"
+    },
+    {
+     "src": 9,
+     "said": "최저 41만원에서 최고 659만원까지의 범위로 결정하게 됩니다. … 2025.7.1.~2026.6.30. (최저) 40만원 / (최고) 637만원 … 2026년부터는 매년 0.5%p씩 보험료율을 8년간 인상하여 2033년부터는 13%의 보험료율이 적용됩니다."
+    },
+    {
+     "src": 10,
+     "said": "2026년도 기준소득월액 상한액은 637만 원에서 659만 원으로, 하한액은 40만 원에서 41만 원으로 각각 변경된다."
+    }
+   ]
+  },
+  {
+   "item": "withholding",
+   "finding": "A payer withholds 3% of a resident's business-income fees (freelance actors, writers and directors) and 20% of other income such as manuscript fees and royalties received as the original author, after a deemed 60% expense deduction for those.",
+   "value": {
+    "businessIncome": 0.03,
+    "otherIncome": 0.2,
+    "otherIncomeDeemedExpense": 0.6,
+    "localSurcharge": "one tenth of the withholding (not read here)"
+   },
+   "applies": "Residents, 2026",
+   "sources": [
+    {
+     "src": 11,
+     "said": "3. 원천징수대상 사업소득에 대해서는 100분의 3. … 라. 그 밖의 기타소득에 대해서는 100분의 20"
+    },
+    {
+     "src": 12,
+     "said": "1의2. 법 제21조 제1항 제7호 ㆍ제8호의2ㆍ제9호ㆍ제15호 및 제19호의 기타소득에 대해서는 거주자가 받은 금액의 100분의 60에 상당하는 금액을 필요경비로 한다"
+    }
+   ]
+  },
+  {
+   "item": "nonResident",
+   "finding": "Korean-source income from personal services paid to a non-resident is withheld at 20% of the payment (3% in a treaty case for services performed abroad); royalties are withheld at 20%; withholding applies even where the non-resident has a place of business.",
+   "value": {
+    "personalServices": 0.2,
+    "royalties": 0.2,
+    "base": "payment amount",
+    "final": "not stated on the article read"
+   },
+   "applies": "Non-resident performers, writers and directors, 2026",
+   "sources": [
+    {
+     "src": 13,
+     "said": "4. 제119조 제6호 에 따른 국내원천 인적용역소득: 지급금액의 100분의 20. … 10호 에 따른 국내원천 사용료소득: 지급금액의 100분의 20 … 비거주자가 국내사업장을 가지고 있는 경우에도 제1항에 따른 원천징수를 하여야 한다."
+    }
+   ]
+  },
+  {
+   "item": "authors",
+   "finding": "An original author's manuscript fees and royalties are other income, of which 60% is deemed expense before tax and 20% withholding.",
+   "value": {
+    "deemedExpense": 0.6,
+    "withholdingOnNet": 0.2
+   },
+   "applies": "Authors not carrying on a business",
+   "sources": [
+    {
+     "src": 14,
+     "said": "대한 원작자로서 받는 소득으로서 다음 각 목의 어느 하나에 해당하는 것 가. 원고료 나. 저작권사용료인 인세(印稅)"
+    },
+    {
+     "src": 12,
+     "said": "거주자가 받은 금액의 100분의 60에 상당하는 금액을 필요경비로 한다"
+    }
+   ]
+  },
+  {
+   "item": "vat",
+   "finding": "VAT is 10%, but personal services supplied independently by an individual without physical facilities or employees, including writing, acting, voice acting, directing, adaptation, cinematography and lighting for entertainment, are exempt.",
+   "value": {
+    "rate": 0.1,
+    "exemptIndividualServices": true,
+    "conditions": "individual, no prescribed physical facilities, no employees, independent capacity"
+   },
+   "applies": "Freelancers, 2026",
+   "sources": [
+    {
+     "src": 15,
+     "said": "부가가치세의 세율은 10퍼센트로 한다."
+    },
+    {
+     "src": 16,
+     "said": "15. 저술가ㆍ작곡가나 그 밖의 자가 직업상 제공하는 인적(人的) 용역으로서 대통령령 으로 정하는 것"
+    },
+    {
+     "src": 17,
+     "said": "물적 시설 없이 근로자를 고용 … 가. 저술ㆍ서화ㆍ도안ㆍ조각ㆍ작곡ㆍ음악ㆍ무용ㆍ만화ㆍ삽화ㆍ만담ㆍ배우ㆍ성우ㆍ가수 또는 이와 유사한 용역 나. 연예에 관한 감독ㆍ각색ㆍ연출ㆍ촬영ㆍ녹음ㆍ장치ㆍ조명 또는 이와 유사한 용역"
+    }
+   ]
+  }
+ ],
+ "country": "KR",
+ "sources": [
+  {
+   "url": "https://www.law.go.kr/LSW//lsSideInfoP.do?lsiSeq=280405&joNo=0050&joBrNo=00&docCls=jo&urlMode=lsScJoRltInfoR",
+   "title": "국가법령정보센터 (law.go.kr), 소득세법 [시행 2026. 1. 1.] 제50조(기본공제)",
+   "read": "2026-11-01",
+   "kind": "primary",
+   "said": "1명당 연 150만원을 곱하여 계산한 금액"
+  },
+  {
+   "url": "https://www.law.go.kr/LSW//lsSideInfoP.do?lsiSeq=280405&joNo=0055&joBrNo=00&docCls=jo&urlMode=lsScJoRltInfoR",
+   "title": "국가법령정보센터 (law.go.kr), 소득세법 [시행 2026. 1. 1.] 제55조(세율)",
+   "read": "2026-11-01",
+   "kind": "primary",
+   "said": "1,400만원 이하 과세표준의 6퍼센트 1,400만원 초과 5,000만원 이하 @@LATEX@@84만원 + \\left(1,400만원을초과하는금액의15퍼센트\\right)@@/LATEX@@ 5,000만원 초과 8,800만원 이하 @@LATEX@@624만원 + \\left(5,000만원을초과하는금액의24퍼센트\\right)@@/LATEX@@ 8,800만원 초과 1억5천만원 이하 @@LATEX@@1,536만원 + \\left(8,800만원을초과하는금액의35퍼센트\\right)@@/LATEX@@ 1억5천만원 초과 3억원 이하 @@LATEX@@3,706만원 + \\left(1억5천만원을초과하는금액의38퍼센트\\right)@@/LATEX@@ 3억원 초과 5억원 이하 @@LATEX@@9,406만원 + \\left(3억원을초과하는금액의40퍼센트\\right)@@/LATEX@@ 5억원 초과 10억원 이하 @@LATEX@@1억7,406만원 + \\left(5억원을초과하는금액의42퍼센트\\right)@@/LATEX@@ 10억원 초과 @@LATEX@@10억원을 초과하는 금액의 45퍼센트@@/LATEX@@ … 소득세법 [시행 2026. 1. 1.]"
+  },
+  {
+   "url": "https://www.law.go.kr/LSW//lsSideInfoP.do?lsiSeq=282559&joNo=0092&joBrNo=00&docCls=jo&urlMode=lsScJoRltInfoR",
+   "title": "국가법령정보센터, 지방세법 [시행 2026. 1. 1.] 제92조(세율)",
+   "read": "2026-11-01",
+   "kind": "primary",
+   "said": "거주자의 종합소득에 대한 개인지방소득세의 표준세율은 다음 표와 같다. … 1천400만원 이하 과세표준의 1천분의 6 … 10억원을초과하는금액의1천분의45 … 지방자치단체의 장은 조례 로 정하는 바에 따라 종합소득에 대한 개인지방소득세의 세율을 제1항에 따른 표준세율의 100분의 50의 범위에서 가감할 수 있다."
+  },
+  {
+   "url": "https://www.law.go.kr/LSW//lsSideInfoP.do?lsiSeq=280405&joNo=0005&joBrNo=00&docCls=jo&urlMode=lsScJoRltInfoR",
+   "title": "국가법령정보센터 (law.go.kr), 소득세법 [시행 2026. 1. 1.] 제5조(과세기간)",
+   "read": "2026-11-01",
+   "kind": "primary",
+   "said": "소득세의 과세기간은 1월 1일부터 12월 31일까지 1년으로 한다."
+  },
+  {
+   "url": "https://www.law.go.kr/LSW//lsSideInfoP.do?lsiSeq=280405&joNo=0070&joBrNo=00&docCls=jo&urlMode=lsScJoRltInfoR",
+   "title": "국가법령정보센터 (law.go.kr), 소득세법 [시행 2026. 1. 1.] 제70조(종합소득과세표준 확정신고)",
+   "read": "2026-11-01",
+   "kind": "primary",
+   "said": "그 종합소득 과세표준을 그 과세기간의 다음 연도 5월 1일부터 5월 31일까지"
+  },
+  {
+   "url": "https://www.law.go.kr/LSW//lsSideInfoP.do?lsiSeq=289701&joNo=0044&joBrNo=00&docCls=jo&urlMode=lsScJoRltInfoR",
+   "title": "국가법령정보센터, 국민건강보험법 시행령 제44조",
+   "read": "2026-11-01",
+   "kind": "primary",
+   "said": "직장가입자의 보험료율 및 같은 조 제3항 에 따른 지역가입자의 보험료율은 각각 1만분의 719로 한다."
+  },
+  {
+   "url": "https://www.law.go.kr/LSW//lsSideInfoP.do?lsiSeq=280527&joNo=0012&joBrNo=00&docCls=jo&urlMode=lsScJoRltInfoR",
+   "title": "국가법령정보센터, 고용보험 및 산업재해보상보험의 보험료징수 등에 관한 법률 시행령 제12조(고용보험료율)",
+   "read": "2026-11-01",
+   "kind": "primary",
+   "said": "2. 실업급여의 보험료율: 1천분의 18 … 가. 상시근로자수가 150명 미만인 사업주의 사업: 1만분의 25"
+  },
+  {
+   "url": "https://www.law.go.kr/LSW//lsSideInfoP.do?lsiSeq=291347&joNo=0088&joBrNo=00&docCls=jo&urlMode=lsScJoRltInfoR",
+   "title": "국가법령정보센터, 국민연금법 제88조",
+   "read": "2026-11-01",
+   "kind": "primary",
+   "said": "사업장가입자의 연금보험료 중 기여금은 사업장가입자 본인이, 부담금은 사용자가 각각 부담하되, 그 금액은 각각 기준소득월액의 1천분의 65에 해당하는 금액으로 한다. <개정 2009. 5. 21., 2025. 4. 2.>"
+  },
+  {
+   "url": "https://www.law.go.kr/nwRvsLsInfoR.do?lsiSeq=270511",
+   "title": "국민연금법 일부개정 법률 제20903호 (2025. 4. 2. 공포, 2026. 1. 1. 시행) 개정문·부칙 (국가법령정보센터)",
+   "read": "2026-11-01",
+   "kind": "primary",
+   "said": "제4조(연금보험료에 관한 특례) ① 사업장가입자의 연금보험료 중 사업장가입자의 기여금 및 사용자의 부담금은 각각 제88조제3항의 개정규정에도 불구하고 2026년부터 2032년까지는 기준소득월액에 다음 각 호의 해당 연도의 비율을 곱한 금액으로 한다. 1. 2026년은 1만분의 475 … ② 지역가입자, 임의가입자 및 임의계속가입자의 연금보험료는 각각 제88조제4항의 개정규정에도 불구하고 2026년부터 2032년까지는 기준소득월액에 다음 각 호의 해당 연도의 비율을 곱한 금액으로 한다. 1. 2026년은 1천분의 95"
+  },
+  {
+   "url": "https://www.nps.or.kr/pnsinfo/ntpsklg/getOHAF0038M0.do",
+   "title": "국민연금공단: 연금보험료 (알기쉬운 국민연금)",
+   "read": "2026-11-01",
+   "kind": "primary",
+   "said": "최저 41만원에서 최고 659만원까지의 범위로 결정하게 됩니다. … 2025.7.1.~2026.6.30. (최저) 40만원 / (최고) 637만원 … 2026년부터는 매년 0.5%p씩 보험료율을 8년간 인상하여 2033년부터는 13%의 보험료율이 적용됩니다."
+  },
+  {
+   "url": "https://www.mohw.go.kr/board.es?mid=a10503000000&bid=0027&list_no=1488572&act=view",
+   "title": "보건복지부 보도자료: 국민연금 · 기초연금 급여 올해 2.1% 인상 확정",
+   "read": "2026-11-01",
+   "kind": "primary",
+   "said": "2026년도 기준소득월액 상한액은 637만 원에서 659만 원으로, 하한액은 40만 원에서 41만 원으로 각각 변경된다."
+  },
+  {
+   "url": "https://www.law.go.kr/LSW//lsSideInfoP.do?lsiSeq=280405&joNo=0129&joBrNo=00&docCls=jo&urlMode=lsScJoRltInfoR",
+   "title": "국가법령정보센터 (law.go.kr), 소득세법 [시행 2026. 1. 1.] 제129조(원천징수세율)",
+   "read": "2026-11-01",
+   "kind": "primary",
+   "said": "3. 원천징수대상 사업소득에 대해서는 100분의 3. … 라. 그 밖의 기타소득에 대해서는 100분의 20"
+  },
+  {
+   "url": "https://www.law.go.kr/LSW//lsSideInfoP.do?lsiSeq=290841&joNo=0087&joBrNo=00&docCls=jo&urlMode=lsScJoRltInfoR",
+   "title": "국가법령정보센터, 소득세법 시행령 [시행 2026. 10. 1.] 제87조(기타소득의 필요경비계산)",
+   "read": "2026-11-01",
+   "kind": "primary",
+   "said": "1의2. 법 제21조 제1항 제7호 ㆍ제8호의2ㆍ제9호ㆍ제15호 및 제19호의 기타소득에 대해서는 거주자가 받은 금액의 100분의 60에 상당하는 금액을 필요경비로 한다"
+  },
+  {
+   "url": "https://www.law.go.kr/LSW//lsSideInfoP.do?lsiSeq=280405&joNo=0156&joBrNo=00&docCls=jo&urlMode=lsScJoRltInfoR",
+   "title": "국가법령정보센터 (law.go.kr), 소득세법 [시행 2026. 1. 1.] 제156조(비거주자의 국내원천소득에 대한 원천징수의 특례)",
+   "read": "2026-11-01",
+   "kind": "primary",
+   "said": "4. 제119조 제6호 에 따른 국내원천 인적용역소득: 지급금액의 100분의 20. … 10호 에 따른 국내원천 사용료소득: 지급금액의 100분의 20 … 비거주자가 국내사업장을 가지고 있는 경우에도 제1항에 따른 원천징수를 하여야 한다."
+  },
+  {
+   "url": "https://www.law.go.kr/LSW//lsSideInfoP.do?lsiSeq=280405&joNo=0021&joBrNo=00&docCls=jo&urlMode=lsScJoRltInfoR",
+   "title": "국가법령정보센터 (law.go.kr), 소득세법 [시행 2026. 1. 1.] 제21조(기타소득)",
+   "read": "2026-11-01",
+   "kind": "primary",
+   "said": "대한 원작자로서 받는 소득으로서 다음 각 목의 어느 하나에 해당하는 것 가. 원고료 나. 저작권사용료인 인세(印稅)"
+  },
+  {
+   "url": "https://www.law.go.kr/LSW//lsSideInfoP.do?lsiSeq=276117&joNo=0030&joBrNo=00&docCls=jo&urlMode=lsScJoRltInfoR",
+   "title": "국가법령정보센터, 부가가치세법 제30조(세율)",
+   "read": "2026-11-01",
+   "kind": "primary",
+   "said": "부가가치세의 세율은 10퍼센트로 한다."
+  },
+  {
+   "url": "https://www.law.go.kr/LSW//lsSideInfoP.do?lsiSeq=276117&joNo=0026&joBrNo=00&docCls=jo&urlMode=lsScJoRltInfoR",
+   "title": "국가법령정보센터, 부가가치세법 제26조",
+   "read": "2026-11-01",
+   "kind": "primary",
+   "said": "15. 저술가ㆍ작곡가나 그 밖의 자가 직업상 제공하는 인적(人的) 용역으로서 대통령령 으로 정하는 것"
+  },
+  {
+   "url": "https://www.law.go.kr/LSW//lsSideInfoP.do?lsiSeq=283641&joNo=0042&joBrNo=00&docCls=jo&urlMode=lsScJoRltInfoR",
+   "title": "국가법령정보센터, 부가가치세법 시행령 [시행 2026. 2. 27.] 제42조",
+   "read": "2026-11-01",
+   "kind": "primary",
+   "said": "물적 시설 없이 근로자를 고용 … 가. 저술ㆍ서화ㆍ도안ㆍ조각ㆍ작곡ㆍ음악ㆍ무용ㆍ만화ㆍ삽화ㆍ만담ㆍ배우ㆍ성우ㆍ가수 또는 이와 유사한 용역 나. 연예에 관한 감독ㆍ각색ㆍ연출ㆍ촬영ㆍ녹음ㆍ장치ㆍ조명 또는 이와 유사한 용역"
+  }
+ ],
+ "blockers": []
+}

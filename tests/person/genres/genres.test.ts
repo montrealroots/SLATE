@@ -16,6 +16,7 @@ import type { IdentitySlice } from '../../../src/person/identity/identity.ts';
 import type { PermitsSlice } from '../../../src/person/permits/permits.ts';
 import { permitsEverywhere } from '../../support/permits.ts';
 import { identity } from '../../support/person.ts';
+import { ACCOUNT, purse } from '../../support/purse.ts';
 
 const ROOT = resolve(import.meta.dirname, '../../..');
 const SEED = '0123456789abcdef';
@@ -197,19 +198,20 @@ describe('the genres a person loves', () => {
   });
 
   it("genres.choose: the producer's film earns as its loved genre's market does", () => {
-    type Producing = { attributes: AttributesSlice; producing: ProducingSlice; genres: GenresSlice; identity: IdentitySlice; acting: ActingSlice; directing: DirectingSlice; permits: PermitsSlice };
+    type Producing = { attributes: AttributesSlice; producing: ProducingSlice; genres: GenresSlice; identity: IdentitySlice; acting: ActingSlice; directing: DirectingSlice; permits: PermitsSlice } & ReturnType<typeof purse>;
     const doubled = (genre: string) => {
       let l: Life<Producing> = dispatch(
-        dispatch(begin(SEED, 0, { attributes: structuredClone(ATTRIBUTES_START), producing: structuredClone(PRODUCING_START), genres: structuredClone(GENRES_START), identity: identity(), acting: structuredClone(ACTING_START), directing: structuredClone(DIRECTING_START), permits: permitsEverywhere() }), chooseGenres, { loved: [genre] }),
+        // A British producer paid in pounds, in 2026 (the option's dollars carried at the day's rate).
+        dispatch(begin(SEED, Date.UTC(2026, 6, 1) / 1000, { attributes: structuredClone(ATTRIBUTES_START), producing: structuredClone(PRODUCING_START), genres: structuredClone(GENRES_START), identity: identity({ citizenship: ['GB'] }), acting: structuredClone(ACTING_START), directing: structuredClone(DIRECTING_START), permits: permitsEverywhere(), ...purse('GBP') }), chooseGenres, { loved: [genre] }),
         chooseAttributes,
         { role: 'producer', all: 70, each: {} },
       );
       for (let id = 1; id <= 30; id += 1) {
-        l = dispatch(dispatch(l, optionMaterial, { days: 5, genre }), planProject, { project: id, budget: '20000000' });
+        l = dispatch(dispatch(l, optionMaterial, { account: ACCOUNT, days: 5, genre }), planProject, { project: id, budget: '20000000' });
         const producing = structuredClone(l.slices.producing);
         const p = projectOf(producing, id);
         p.raised['equity'] = { currency: 'GBP', minor: target(p) - raised(p) };
-        l = dispatch(dispatch({ ...l, slices: { ...l.slices, producing } }, shootProject, { project: id }), releaseFilm, { project: id });
+        l = dispatch(dispatch({ ...l, slices: { ...l.slices, producing } }, shootProject, { project: id, account: ACCOUNT }), releaseFilm, { project: id });
       }
       return l.slices.producing.projects.filter((p) => p.release?.doubled === true).length;
     };

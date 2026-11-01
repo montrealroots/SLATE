@@ -1,5 +1,6 @@
 import { defineCommand, defineKind, type Context, type Item } from '../../core/frame/frame.ts';
 import { money, rational, roundHalfEven, type CurrencyCode, type Money } from '../../core/money/money.ts';
+import { payCost, type Holding } from '../../money/accounts/accounts.ts';
 import { exchangeOn } from '../../money/rates/rates.ts';
 import { SECONDS_PER_DAY, weekdayFromDays } from '../../core/time/calendar.ts';
 import { addMonths } from '../../core/time/dates.ts';
@@ -25,8 +26,9 @@ import data from './permits.json' with { type: 'json' };
  * by the same route.
  *
  * An application is made for an engagement booked there (an acting part booked, whose agreement's country is the
- * permit's), by the engager where the research says the employer applies; its fees are recorded, as the role engines
- * record pay, not paid into the ledger; its decision comes at the processing time. A permit is granted for its term
+ * permit's), by the engager where the research says the employer applies; its fees are recorded, and paid from the
+ * account the person names where the worker applies (the engager pays its own); its decision comes at the processing
+ * time. A permit is granted for its term
  * from the day of the decision, refused where the country's eligibility is a test the life's own records answer and
  * they don't meet it (the game's readings, papers.permits.model): the United States' O-1 (and its territories') a
  * distinction read from the parts played, the Turks and Caicos Islands' proficiency in English, Laos's age over 20.
@@ -352,15 +354,22 @@ export function permitFor(s: Pick<Lives, 'identity'>, country: CountryCode, prem
  * the research names for a renewal. shortcut: where the research lists several premium
  * services (the UK's priority and super priority), the first is taken as the premium processing's.
  */
-function lodge(s: Lives, c: Context, country: CountryCode, role: Role, engaged: number, renews: number | null, premium: boolean, permit: Permit): void {
+function lodge(s: Lives & Holding, c: Context, country: CountryCode, role: Role, engaged: number, renews: number | null, premium: boolean, permit: Permit, account: string): void {
   const id = s.permits.applications.length + 1;
   const when = renews === null ? 'grant' : 'renewal';
   const job = engagedIn(s, role, engaged);
   const price = (f: Fee) => priced(f, personOf(s.identity), job, dateOf(c.now));
   const fees = permit.fees === null ? null : chosen(permit.fees, when, premium, price);
+  // The worker pays the fees they apply with, but those the research names as the employer's or the sponsor's; an
+  // engager's application is the engager's to pay.
+  // Stryker disable next-line ConditionalExpression: the one fee priced on the pay today (Cameroon's, where nothing known can come of it) is in an engager's application.
+  if (permit.by === 'worker') for (const f of fees ?? []) if (f.money !== null && !ENGAGERS.test(f.what)) payCost(s, account, `government:${country}`, f.money, f.what, c.now);
   s.permits.applications.push({ id, at: c.now, country, role, engagement: engaged, renews, by: permit.by as By, premium, fees, decided: null });
   c.schedule(DECISION_KIND, after(c.now, (premium ? permit.premium : permit.standard) as Span, country), { application: id });
 }
+
+/** A fee the research names as the employer's or the sponsor's to pay (the UK's certificate of sponsorship, Spain's tasa 3.2.1). */
+export const ENGAGERS = /\bpaid (?:in advance )?by the (?:employer|sponsor)\b|^Employer/i;
 
 /** The fees asked at a grant or a renewal, the premium service's first beside them; none known where the research names none for it. */
 function chosen(all: readonly Fee[], when: 'grant' | 'renewal', premium: boolean, price: (f: Fee) => Money | null): { what: string; money: Money | null }[] | null {
@@ -384,29 +393,33 @@ export interface ApplyArgs {
   role: string;
   engagement: number;
   premium: boolean;
+  /** The account the fees are paid from, where the worker applies. */
+  account: string;
 }
 
 const DONE: Readonly<Record<Role, string>> = { actor: 'the part from audition {id} is played', director: 'film {id} is cut', producer: 'project {id} is shot' };
 
 /** Applies for the permit an engagement abroad needs, in its own country, as the research says who applies. */
-function apply(s: Lives, a: ApplyArgs, c: Context): void {
+function apply(s: Lives & Holding, a: ApplyArgs, c: Context): void {
   const role = a.role as Role;
   const job = engagedIn(s, role, a.engagement);
   if (job.done) throw new Error(DONE[role].replace('{id}', String(a.engagement)));
   const permit = permitFor(s, job.country, a.premium, role);
   const same = (x: Application) => x.role === role && x.engagement === a.engagement && x.renews === null;
   if (s.permits.applications.some((x) => same(x) && live(x, s, c.now))) throw new Error(`a permit is applied for already for that engagement`);
-  lodge(s, c, job.country, role, a.engagement, null, a.premium, permit);
+  lodge(s, c, job.country, role, a.engagement, null, a.premium, permit, a.account);
 }
 
 export interface RenewArgs {
-  [key: string]: number | boolean;
+  [key: string]: number | boolean | string;
   application: number;
   premium: boolean;
+  /** The account the fees are paid from, where the worker applies. */
+  account: string;
 }
 
 /** Renews a permit in force, where the research says it renews. */
-function renew(s: Lives, a: RenewArgs, c: Context): void {
+function renew(s: Lives & Holding, a: RenewArgs, c: Context): void {
   const held = s.permits.applications.find((x) => x.id === a.application);
   if (held === undefined) throw new Error(`there's no application ${a.application}`);
   if (held.decided === null || !('until' in held.decided)) throw new Error(`application ${a.application} wasn't granted`);
@@ -415,7 +428,7 @@ function renew(s: Lives, a: RenewArgs, c: Context): void {
   if (permit.renews === false) throw new Error(`${held.country}'s permit doesn't renew`);
   if (permit.renews === null) throw new Error(untold(held.country, ['whether it renews']));
   if (s.permits.applications.some((x) => x.renews === held.id && live(x, s, c.now))) throw new Error(`the permit from application ${held.id} is renewed already`);
-  lodge(s, c, held.country, held.role, held.engagement, held.id, a.premium, permit);
+  lodge(s, c, held.country, held.role, held.engagement, held.id, a.premium, permit, a.account);
 }
 
 /** The decision on an application: granted for the term from that day, or refused by the eligibility the life's records answer. */
@@ -451,6 +464,7 @@ export function daysWorkedIn(s: Work3, country: CountryCode, now: number, within
  * from abroad (each agreement is the country's own producers'), so days for that work are no one's here.
  */
 function shortEngagement(s: Pick<Lives, 'acting'>, w: Work, now: number): boolean {
+  // Stryker disable next-line ConditionalExpression: a day is never before no day, so the guard says plainly what the comparison does.
   if (w.from !== undefined && dateOf(now) < w.from) return false;
   if (w.only === 'engaged-abroad') return false;
   return w.only === undefined || recognised(s as Pick<Lives, 'identity' | 'acting'>, now) === null;
@@ -481,6 +495,6 @@ export function permitted(s: Lives, country: CountryCode, now: number, days: num
 // Stryker disable all: a mutant of a declaration made as the module loads changes its shape, so the module loaded
 // again for it is refused as declared twice (as the accounts' and the cards' say). The declarations are held by the
 // test that lists each command with what it reads and writes; what each does is mutated above.
-export const applyForPermit = defineCommand<Lives, ApplyArgs>({ id: 'permits.apply', reads: ['identity', 'acting', 'directing', 'producing'], writes: ['permits', 'schedule'], run: apply });
-export const renewPermit = defineCommand<Lives, RenewArgs>({ id: 'permits.renew', reads: ['identity', 'acting', 'directing', 'producing'], writes: ['permits', 'schedule'], run: renew });
+export const applyForPermit = defineCommand<Lives & Holding, ApplyArgs>({ id: 'permits.apply', reads: ['identity', 'acting', 'directing', 'producing'], writes: ['permits', 'schedule', 'accounts', 'ledger'], run: apply });
+export const renewPermit = defineCommand<Lives & Holding, RenewArgs>({ id: 'permits.renew', reads: ['identity', 'acting', 'directing', 'producing'], writes: ['permits', 'schedule', 'accounts', 'ledger'], run: renew });
 export const decision = defineKind<Lives>({ kind: DECISION_KIND, wants: false, reads: ['identity', 'acting'], writes: ['permits'], happen: decide });

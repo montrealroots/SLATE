@@ -1,7 +1,9 @@
-import { defineCommand, type Context } from '../../core/frame/frame.ts';
+import { defineCommand, type Context, type Json } from '../../core/frame/frame.ts';
 import { fromMajor, minorUnits, money, type CurrencyCode, type Money } from '../../core/money/money.ts';
 import { addMonths } from '../../core/time/dates.ts';
 import { t, type LineId } from '../../core/text/text.ts';
+import { payCost, type Holding } from '../../money/accounts/accounts.ts';
+import { earn, type Earning } from '../../money/tax/tax.ts';
 import { countryName, type CountryCode } from '../../world/gazetteer/gazetteer.ts';
 import { AGREEMENTS, COUNTRY, MARKET as WORK, type Agreement } from '../acting/acting.ts';
 import { componentValues, practise, skillOf, type AttributesSlice } from '../attributes/attributes.ts';
@@ -10,7 +12,7 @@ import { boxOfficeFactor, lovesOrRefuse, type GenresSlice } from '../genres/genr
 import { spread } from '../work/work.ts';
 import type { ActingSlice } from '../acting/acting.ts';
 import type { DirectingSlice } from '../directing/directing.ts';
-import type { IdentitySlice } from '../identity/identity.ts';
+import { personOf, residenceOf, type IdentitySlice } from '../identity/identity.ts';
 import { permitted, type PermitsSlice } from '../permits/permits.ts';
 import compiled from './markets.json' with { type: 'json' };
 
@@ -225,9 +227,9 @@ export const PRODUCING_START: ProducingSlice = { projects: [] };
 
 type Values = Readonly<Record<string, number>>;
 type Producing = { attributes: AttributesSlice; producing: ProducingSlice };
-type Optioning = Producing & { genres: GenresSlice };
+type Optioning = Producing & Holding & { genres: GenresSlice };
 /** A project shot: where the producer works, so whether they may work there reads the person, every role's days and the permits. */
-type Shooting = Producing & { identity: IdentitySlice; acting: ActingSlice; directing: DirectingSlice; permits: PermitsSlice };
+type Shooting = Producing & Earning & { identity: IdentitySlice; acting: ActingSlice; directing: DirectingSlice; permits: PermitsSlice };
 
 const clamp = (n: number, lo: number, hi: number) => Math.min(hi, Math.max(lo, n));
 const of = (v: Values, id: string) => skillOf(v, 'producer', id);
@@ -310,6 +312,8 @@ function option(s: Optioning, a: OptionArgs, c: Context): void {
     // Stryker disable next-line EqualityOperator: a draw is continuous, so two judge alike with no probability.
     if (judged > best.judged) best = { worth, judged };
   }
+  // The option is paid to the material's owner from the account named (refused where it can't cover it).
+  payCost(s, a.account, 'rights holder', OPTION_FEE, 'an option', c.now);
   s.producing.projects.push({ id, optioned: c.now, genre: a.genre, market, expires: addMonths(zoneOf(market), c.now, OPTION_MONTHS), options: [OPTION_FEE], material: best.worth, plan: null, applied: false, raised: {}, shot: null, release: null });
   practise(s.attributes, 'producer', [C.select], a.days);
 }
@@ -321,6 +325,8 @@ export interface OptionArgs {
   genre: string;
   /** The market the material is optioned in, by country: the UK where none is given. */
   market?: string;
+  /** The account the option is paid from. */
+  account: string;
 }
 
 export interface ProjectArgs {
@@ -328,11 +334,19 @@ export interface ProjectArgs {
   project: number;
 }
 
-/** Renews a running option for another 18 months, from when it would have lapsed, at another 10%. */
-function renew(s: { producing: ProducingSlice }, a: ProjectArgs, c: Context): void {
+export interface PayingArgs {
+  [key: string]: Json;
+  project: number;
+  /** The account paid from, or into. */
+  account: string;
+}
+
+/** Renews a running option for another 18 months, from when it would have lapsed, at another 10%, paid from the account named. */
+function renew(s: { producing: ProducingSlice } & Holding, a: PayingArgs, c: Context): void {
   const p = projectOf(s.producing, a.project);
   if (p.shot !== null) throw new Error(`project ${p.id}'s rights are bought`);
   running(p, c.now, 0);
+  payCost(s, a.account, 'rights holder', OPTION_FEE, 'an option renewed', c.now);
   p.expires = addMonths(zoneOf(p.market), p.expires, OPTION_MONTHS);
   p.options.push(OPTION_FEE);
 }
@@ -481,7 +495,7 @@ export const leadSkill = (v: Values): number => 0.4 * of(v, C.lead) + 0.2 * of(v
 export const team = (v: Values): number => (crewSkill(v) + leadSkill(v)) / 2;
 
 /** Shoots a financed project: the days it takes, what the days past the schedule cost, the fee left, and the film. */
-function shoot(s: Shooting, a: ProjectArgs, c: Context): void {
+function shoot(s: Shooting, a: PayingArgs, c: Context): void {
   const v = componentValues(s.attributes, 'producer');
   const p = projectOf(s.producing, a.project);
   // @slate:consumer producing.raise
@@ -499,6 +513,9 @@ function shoot(s: Shooting, a: ProjectArgs, c: Context): void {
   const overrun = (Math.max(0, days - scheduled) * budget.minor) / scheduled;
   const quality = clamp(0.5 * p.material + 0.5 * t + spread(t) * (2 * d.float() - 1), 0, 100);
   p.shot = { at: c.now, days, overrun: amount(budget.currency, overrun), fee: fee === null ? null : amount(budget.currency, Math.max(0, fee.minor - overrun)), quality };
+  // The fee left after the overrun is paid into the account named, less what the market's country withholds (money.tax).
+  // @slate:consumer identity.make
+  if (p.shot.fee !== null && p.shot.fee.minor > 0) earn(s, { account: a.account, payer: 'production', country: e.country, home: residenceOf(personOf(s.identity)), work: 'producer', gross: p.shot.fee, what: "producer's fee" }, c);
   practise(s.attributes, 'producer', [C.hire, C.lead], days);
 }
 
@@ -560,10 +577,10 @@ export const engagementOf = (p: Project): { country: CountryCode; days: number }
 // Stryker disable all: a mutant of a declaration made as the module loads changes its shape, so the module loaded
 // again for it is refused as declared twice (as the accounts' and the cards' say). The declarations are held by the
 // test that lists each command with what it reads and writes; what each does is mutated above.
-export const optionMaterial = defineCommand<Optioning, OptionArgs>({ id: 'producing.option', reads: ['genres'], writes: ['attributes', 'producing'], run: option });
-export const renewOption = defineCommand<{ producing: ProducingSlice }, ProjectArgs>({ id: 'producing.renew', reads: [], writes: ['producing'], run: renew });
+export const optionMaterial = defineCommand<Optioning, OptionArgs>({ id: 'producing.option', reads: ['genres'], writes: ['attributes', 'producing', 'accounts', 'ledger'], run: option });
+export const renewOption = defineCommand<{ producing: ProducingSlice } & Holding, PayingArgs>({ id: 'producing.renew', reads: [], writes: ['producing', 'accounts', 'ledger'], run: renew });
 export const planProject = defineCommand<Producing, PlanArgs>({ id: 'producing.plan', reads: [], writes: ['attributes', 'producing'], run: plan });
 export const applyToFunder = defineCommand<Producing, ProjectArgs>({ id: 'producing.apply', reads: [], writes: ['attributes', 'producing'], run: apply });
 export const raiseMoney = defineCommand<Producing, DaysArgs & ProjectArgs>({ id: 'producing.raise', reads: [], writes: ['attributes', 'producing'], run: raise });
-export const shootProject = defineCommand<Shooting, ProjectArgs>({ id: 'producing.shoot', reads: ['identity', 'acting', 'directing', 'permits'], writes: ['attributes', 'producing'], run: shoot });
+export const shootProject = defineCommand<Shooting, PayingArgs>({ id: 'producing.shoot', reads: ['identity', 'acting', 'directing', 'permits'], writes: ['attributes', 'producing', 'accounts', 'ledger', 'tax', 'schedule'], run: shoot });
 export const releaseFilm = defineCommand<Producing, ProjectArgs>({ id: 'producing.release', reads: [], writes: ['attributes', 'producing'], run: release });

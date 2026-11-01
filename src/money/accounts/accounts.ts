@@ -154,6 +154,7 @@ export function month(s: Holding, item: Item, c: Context): void {
   const rate = interestOf(h);
   // @slate:consumer account.pay
   // @slate:consumer means.first-morning
+  // @slate:consumer tax.settle
   const { average, lowest } = standing(ledger, start, c.now);
   if (rate !== undefined) {
     const over = rate.over ?? zero;
@@ -200,6 +201,12 @@ export function costOf(terms: Bank, how: PayArgs['how'], amount: Money): Money {
   return zero;
 }
 
+/** Whether a payment that leaves the balance so is refused: past nothing, where the account can't be overdrawn or its overdraft isn't published, or past the overdraft's limit. */
+export function refuses(h: Pick<Opened, 'terms'>, after: Money): boolean {
+  const od = h.terms.overdraft;
+  return after.minor < 0 && (od === undefined || od === false || (od.limit !== undefined && after.minor < -od.limit.minor));
+}
+
 /**
  * Pays from an account: past the balance, where the account can't be overdrawn or its overdraft isn't published, the
  * payment is refused and the returned-payment fee charged; where it can, it's paid with the overdraft's fee for an
@@ -214,7 +221,7 @@ export function pay(s: Holding, a: PayArgs, c: Context): void {
   const after = subtract(subtract(balance(accountOf(s.ledger, h.id)), amount), cost);
   const od = h.terms.overdraft;
   const bank = `${WORLD}${h.bank}`;
-  if (after.minor < 0 && (od === undefined || od === false || (od.limit !== undefined && after.minor < -od.limit.minor))) {
+  if (refuses(h, after)) {
     const returned = h.terms.returned;
     if (returned !== undefined && returned.minor > 0) move(s.ledger, c.now, 'returned payment', [{ account: h.id, amount: money(cur, -returned.minor) }, { account: bank, amount: returned }]);
     c.notify(RETURNED, { account: h.id, amount: amount.minor, fee: returned?.minor ?? 0 });
@@ -227,6 +234,48 @@ export function pay(s: Holding, a: PayArgs, c: Context): void {
   const itemFee = after.minor < 0 ? (od as Overdraft).fee : undefined;
   if (itemFee !== undefined) fees = add(fees, itemFee);
   if (fees.minor > 0) move(s.ledger, c.now, 'fees', [{ account: h.id, amount: money(cur, -fees.minor) }, { account: bank, amount: fees }]);
+}
+
+/**
+ * A sum in another currency carried into an account's: at the day's rate, and the bank's share on it where its card
+ * states one for spending in another currency (the game's reading of the bank's price for a conversion,
+ * money.tax.model). Refused where the rate isn't known.
+ */
+export function converted(h: Pick<Opened, 'currency' | 'terms'>, m: Money, day: string): { amount: Money; fee: Money } {
+  const amount = exchangeOn(m, h.currency as CurrencyCode, day)?.money;
+  if (amount === undefined) throw new Error(`the rate between ${m.currency} and ${h.currency} isn't known to this game`);
+  return { amount, fee: charged({ percent: h.terms.debit?.fx ?? '0' }, amount) };
+}
+
+/**
+ * Pays a cost from an account at a moment (a union's fee, a permit's, a session's, the tax): carried into the account's
+ * currency where it's in another, and paid with the overdraft's fee for an item where it takes the account past its
+ * balance; refused where the account can't cover it, and then nothing is paid. Whether it was paid.
+ */
+export function charge(s: Holding, id: string, to: string, amount: Money, what: string, at: number): boolean {
+  const h = heldOf(s.accounts, id);
+  const cur = h.currency as CurrencyCode;
+  const same = amount.currency === cur;
+  const { amount: out, fee } = same ? { amount, fee: money(cur, 0) } : converted(h, amount, dateOf(at));
+  const after = subtract(subtract(balance(accountOf(s.ledger, h.id)), out), fee);
+  if (refuses(h, after)) return false;
+  const bank = `${WORLD}${h.bank}`;
+  const payee = to.startsWith(WORLD) ? to : `${WORLD}${to}`;
+  if (same) move(s.ledger, at, what, [{ account: h.id, amount: money(cur, -out.minor) }, { account: payee, amount }]);
+  else {
+    move(s.ledger, at, what, [{ account: h.id, amount: money(cur, -out.minor) }, { account: bank, amount: out }]);
+    move(s.ledger, at, what, [{ account: bank, amount: money(amount.currency as CurrencyCode, -amount.minor) }, { account: payee, amount }]);
+  }
+  // Past the balance here, the account has an overdraft: a refused payment came back above.
+  const itemFee = after.minor < 0 ? (h.terms.overdraft as Overdraft).fee : undefined;
+  const fees = itemFee === undefined ? fee : add(fee, itemFee);
+  if (fees.minor > 0) move(s.ledger, at, 'fees', [{ account: h.id, amount: money(cur, -fees.minor) }, { account: bank, amount: fees }]);
+  return true;
+}
+
+/** Pays a cost from an account, as `charge` does; refused where the account can't cover it. */
+export function payCost(s: Holding, id: string, to: string, amount: Money, what: string, at: number): void {
+  if (!charge(s, id, to, amount, what, at)) throw new Error(`${id} can't cover ${what}`);
 }
 
 export interface FirstMorningArgs extends Holder {

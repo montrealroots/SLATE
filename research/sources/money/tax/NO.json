@@ -1,0 +1,394 @@
+{
+ "topic": "tax.NO",
+ "read": "2026-11-01",
+ "note": "Read 2026-11-01 at the owner's word (\"Build those first 3 starting with ledger first\"; \"Retry the blocked tax facts once all countries land\"): the tax on a screen worker's pay in Norway: a resident's income tax, social contributions, what is withheld at source, a non-resident artiste's withholding, any authors' treatment, VAT's threshold, the tax year. Research and retry subagents (workbench/briefs/BRIEF-tax*.md); every quote checked by the lead against its saved page.",
+ "figures": [
+  {
+   "item": "residents",
+   "finding": "A resident pays 22% tax on ordinary income (net income after deductions, 18.5% in the Troms and Finnmark action zone) plus a five-step bracket tax (trinnskatt) on gross personal income, from 1.7% above NOK 226,100 to 17.8% above NOK 1,467,200.",
+   "value": {
+    "currency": "NOK",
+    "ordinaryIncome": {
+     "rate": 0.22,
+     "trnmsFinnmarkZone": 0.185,
+     "base": "alminnelig inntekt (net)"
+    },
+    "trinnskatt": [
+     {
+      "from": 0,
+      "to": 226100,
+      "rate": 0
+     },
+     {
+      "from": 226100,
+      "to": 318300,
+      "rate": 0.017
+     },
+     {
+      "from": 318300,
+      "to": 725050,
+      "rate": 0.04
+     },
+     {
+      "from": 725050,
+      "to": 980100,
+      "rate": 0.137
+     },
+     {
+      "from": 980100,
+      "to": 1467200,
+      "rate": 0.168
+     },
+     {
+      "from": 1467200,
+      "to": null,
+      "rate": 0.178
+     }
+    ],
+    "trinnskattBase": "personinntekt (gross pay)"
+   },
+   "applies": "Income year 2026 (page shows 2026 selected). The 22% is one nationally set rate; no separate municipal rate is set by the taxpayer's municipality.",
+   "sources": [
+    {
+     "src": 0,
+     "said": "Personer 22,0 prosent Personer i Troms og Finnmark (tiltakssonen) 18,5 prosent"
+    },
+    {
+     "src": 1,
+     "said": "For de første 226 100 kronene av personinntekten din, skal du ikke betale trinnskatt."
+    },
+    {
+     "src": 1,
+     "said": "Trinn 1 Inntekten mellom 226 101 – 318 300 kroner 1,7 % trinnskatt Trinn 2 Inntekten mellom 318 301 – 725 050 kroner 4,0 % trinnskatt Trinn 3 Inntekten mellom 725 051 – 980 100 kroner 13,7 % trinnskatt Trinn 4 Inntekten mellom 980 101 – 1 467 200 kroner 16,8 % trinnskatt Trinn 5 Inntekten fra og med 1 467 201 kroner 17,8 % trinnskatt"
+    }
+   ]
+  },
+  {
+   "item": "residents",
+   "finding": "Every personal taxpayer gets a personal allowance of NOK 114,540 against ordinary income, and employees a standard deduction (minstefradrag) of 46% of pay up to NOK 95,700.",
+   "value": {
+    "currency": "NOK",
+    "personfradrag": 114540,
+    "minstefradrag": {
+     "rate": 0.46,
+     "max": 95700
+    }
+   },
+   "applies": "Income year 2026; both are reduced pro rata for part-year residence; the minstefradrag replaces actual employment costs unless these are higher.",
+   "sources": [
+    {
+     "src": 2,
+     "said": "Klasse 1 114 540 kroner"
+    },
+    {
+     "src": 3,
+     "said": "Lønnsinntekt Sats 46 % Øvre grense * 95 700 kr"
+    }
+   ]
+  },
+  {
+   "item": "year",
+   "finding": "The income year is the calendar year; the return deadline is 30 April for employees and pensioners and 31 May for sole traders (1 June in 2026 because 31 May fell on a Sunday), extendable to 30 June.",
+   "value": {
+    "start": "2026-01-01",
+    "end": "2026-12-31",
+    "employeeDeadline": "30 April",
+    "selfEmployedDeadline": "31 May",
+    "extendedTo": "30 June"
+   },
+   "applies": "Applies to the return for the income year, filed the following spring; the calendar year and the deadlines are in skatteforvaltningsforskriften §§ 8-2-2 and 8-2-3, quoted by Skatteetaten's Skatteforvaltningshåndboken 2025.",
+   "sources": [
+    {
+     "src": 4,
+     "said": "Frist for person: 30. april Denne fristen gjelder for lønnstakere pensjonister Frist for bedrift: 31. mai"
+    },
+    {
+     "src": 4,
+     "said": "Hvis ektefellen din er næringsdrivende, har du også leveringsfrist 31. mai."
+    },
+    {
+     "src": 5,
+     "said": "Skatteforvaltningsforskriften § 8-2-2 Skattleggingsperiode (1) Skattemeldingen skal omfatte opplysninger om den skattepliktiges formue per 1. januar i skattefastsettingsåret og inntekts- og fradragsposter fra foregående kalenderår. … Skatteforvaltningsforskriften § 8-2-3 Leveringsfrist (1) Skattemelding skal leveres a) innen utgangen av mai i året etter skattleggingsperioden for selskap mv. som nevnt i skatteloven § 2‑2 første ledd, for selskap som skal levere selskapsmelding mv. etter skatteforvaltningsloven § 8‑9 og for eier av enkeltpersonforetak, b) innen utgangen av april i året etter skattleggingsperioden for andre skattepliktige"
+    }
+   ]
+  },
+  {
+   "item": "social",
+   "finding": "A worker pays national insurance contributions (trygdeavgift) of 7.6% on pay and a self-employed person 10.8% on business income, above a floor of NOK 99,650 and never above 25% of the excess; the employer pays employer's contribution of 14.1% in zone I (0 to 10.6% elsewhere).",
+   "value": {
+    "currency": "NOK",
+    "employee": 0.076,
+    "selfEmployed": 0.108,
+    "pension": 0.051,
+    "under17over69": 0.051,
+    "floor": 99650,
+    "cap": "25% of income above the floor",
+    "employer": {
+     "I": 0.141,
+     "Ia": 0.141,
+     "II": 0.106,
+     "III": 0.064,
+     "IV": 0.051,
+     "IVa": 0.079,
+     "V": 0
+    },
+    "zoneIaAllowance": 850000
+   },
+   "applies": "Income year 2026; no special scheme for performers or authors was found; employer contribution zone depends on the municipality.",
+   "sources": [
+    {
+     "src": 6,
+     "said": "Lønnsinntekt, sykepenger osv. (personer i alderen 17 til 69 år i inntektsåret) 7,6 %"
+    },
+    {
+     "src": 6,
+     "said": "Annen næringsinntekt 10,8 %"
+    },
+    {
+     "src": 6,
+     "said": "Avgiften utgjør aldri mer enn 25 prosent av den delen av personinntekten/grunnlaget som overstiger 99 650 kr"
+    },
+    {
+     "src": 7,
+     "said": "Sone Ordinære næringer Landbruk og fiske I 14,1 % 14,1 % Ia* 14,1 % 10,6 % II 10,6 % 10,6 % III 6,4 % 6,4 % IV 5,1 % 5,1 % IVa 7,9 % 5,1 % V 0 0"
+    }
+   ]
+  },
+  {
+   "item": "withholding",
+   "finding": "Tax is withheld from pay under the person's tax card; a self-employed person with no employer pays advance tax (forskuddsskatt) in four instalments, due 15 March, 15 June, 15 September and 15 December.",
+   "value": {
+    "employee": "withholding per tax card (skattekort)",
+    "selfEmployed": {
+     "instalments": [
+      "03-15",
+      "06-15",
+      "09-15",
+      "12-15"
+     ],
+     "singleInvoiceBelowNOK": 2000
+    }
+   },
+   "applies": "Income year 2026.",
+   "sources": [
+    {
+     "src": 8,
+     "said": "Hvis trekkprosenten fra inntekten din blir veldig høy, eller hvis du ikke har en arbeidsgiver, må du betale forskuddsskatt."
+    },
+    {
+     "src": 8,
+     "said": "Fristene for å betale forskuddsskatt er: • 15. mars • 15. juni • 15. september • 15. desember"
+    },
+    {
+     "src": 8,
+     "said": "Dersom du er selvstendig næringsdrivende og går med overskudd, skal du også betale forskuddsskatt."
+    }
+   ]
+  },
+  {
+   "item": "nonResident",
+   "finding": "A non-resident performer appearing in Norway pays artist tax of 15% of gross income from the performance, withheld by the Norwegian payer, and files no return; directors, choreographers and camera crew are outside the artist tax.",
+   "value": {
+    "rate": 0.15,
+    "base": "gross income for the performance in Norway",
+    "final": true,
+    "excluded": [
+     "road crew",
+     "riggers",
+     "camera crew",
+     "film instructors",
+     "choreographers",
+     "directors",
+     "standby artists without performance",
+     "models"
+    ]
+   },
+   "applies": "2026 ('for tiden 15 prosent').",
+   "sources": [
+    {
+     "src": 9,
+     "said": "Satsen på artistskatt er for tiden 15 prosent."
+    },
+    {
+     "src": 9,
+     "said": "Artistskatten beregnes av artistens bruttoinntekt for opptredenen i Norge."
+    },
+    {
+     "src": 9,
+     "said": "Administrativt og teknisk personell («road crew», riggere, kamerafolk, filminstruktører, koreografer, regissører, trener, jurymedlem)"
+    },
+    {
+     "src": 9,
+     "said": "har ikke plikt til å levere skattemelding får ikke et vanlig skatteoppgjør"
+    }
+   ]
+  },
+  {
+   "item": "nonResident",
+   "finding": "A foreign worker on a short stay (and a non-performer such as a director) may be taxed under the PAYE scheme (kildeskatt på lønn) at a flat 25% of pay withheld by the employer (17.4% if exempt from national insurance), final, for income under NOK 725,050.",
+   "value": {
+    "currency": "NOK",
+    "rate": 0.25,
+    "rateIfNoTrygdeavgift": 0.174,
+    "incomeCeiling": 725050,
+    "final": true
+   },
+   "applies": "Income year 2026; voluntary; stays under 183 days in 12 months or 270 in 36, or the first year of residence.",
+   "sources": [
+    {
+     "src": 10,
+     "said": "Hvis du er i kildeskatt på lønn-ordningen, betaler du 25% av lønnen din i skatt. Har du fritak fra å betale trygdeavgift i Norge , betaler du 17,4 % i skatt i 2026."
+    },
+    {
+     "src": 10,
+     "said": "Du kan ikke være med i ordningen når du tjener mer enn 725 050 kroner i året (gjelder inntektsåret 2026)."
+    }
+   ]
+  },
+  {
+   "item": "authors",
+   "finding": "An author's own sale of copyright in his literary and artistic works is outside VAT; no special income-tax rate for authors was found.",
+   "value": {
+    "vat": "exempt (merverdiavgiftsloven § 3-7 (4))"
+   },
+   "applies": "VAT; applies to the author (opphaver) himself or an intermediary in his name.",
+   "sources": [
+    {
+     "src": 11,
+     "said": "(4) Opphaverens omsetning av egne kunstverk og opphavsrett til egne litterære og kunstneriske verk er unntatt fra loven. Det samme gjelder slik omsetning ved mellommann i opphaverens navn."
+    }
+   ]
+  },
+  {
+   "item": "vat",
+   "finding": "A freelancer's fee bears VAT at 25% once taxable turnover passes NOK 50,000 in twelve months; an artistic performance of a work is exempt.",
+   "value": {
+    "currency": "NOK",
+    "standard": 0.25,
+    "reduced": [
+     0.15,
+     0.12
+    ],
+    "registrationThreshold": 50000,
+    "artisticPerformance": "exempt (§ 3-7 (2))"
+   },
+   "applies": "2026 rates; threshold per merverdiavgiftsloven § 2-1.",
+   "sources": [
+    {
+     "src": 12,
+     "said": "Alminnelig sats 25 % Næringsmidler 15 %"
+    },
+    {
+     "src": 13,
+     "said": "Næringsdrivende og offentlig virksomhet skal registreres i Merverdiavgiftsregisteret når omsetning og uttak som er omfattet av loven til sammen har oversteget 50 000 kroner i en periode på tolv måneder."
+    },
+    {
+     "src": 11,
+     "said": "(2) Omsetning og formidling av tjenester i form av kunstnerisk framføring av åndsverk er unntatt fra loven."
+    }
+   ]
+  }
+ ],
+ "country": "NO",
+ "sources": [
+  {
+   "url": "https://www.skatteetaten.no/satser/alminnelig-inntekt/",
+   "title": "Skatteetaten – Satser: Alminnelig inntekt",
+   "read": "2026-11-01",
+   "kind": "primary",
+   "said": "Personer 22,0 prosent Personer i Troms og Finnmark (tiltakssonen) 18,5 prosent"
+  },
+  {
+   "url": "https://www.skatteetaten.no/satser/trinnskatt/",
+   "title": "Skatteetaten – Satser: Trinnskatt",
+   "read": "2026-11-01",
+   "kind": "primary",
+   "said": "For de første 226 100 kronene av personinntekten din, skal du ikke betale trinnskatt. … Trinn 1 Inntekten mellom 226 101 – 318 300 kroner 1,7 % trinnskatt Trinn 2 Inntekten mellom 318 301 – 725 050 kroner 4,0 % trinnskatt Trinn 3 Inntekten mellom 725 051 – 980 100 kroner 13,7 % trinnskatt Trinn 4 Inntekten mellom 980 101 – 1 467 200 kroner 16,8 % trinnskatt Trinn 5 Inntekten fra og med 1 467 201 kroner 17,8 % trinnskatt"
+  },
+  {
+   "url": "https://www.skatteetaten.no/satser/personfradrag/",
+   "title": "Skatteetaten – Satser: Personfradrag",
+   "read": "2026-11-01",
+   "kind": "primary",
+   "said": "Klasse 1 114 540 kroner"
+  },
+  {
+   "url": "https://www.skatteetaten.no/satser/minstefradrag/",
+   "title": "Skatteetaten – Satser: Minstefradrag",
+   "read": "2026-11-01",
+   "kind": "primary",
+   "said": "Lønnsinntekt Sats 46 % Øvre grense * 95 700 kr"
+  },
+  {
+   "url": "https://www.skatteetaten.no/person/skatt/skattemelding/utsattfrist/",
+   "title": "Søk om utsatt leveringsfrist for skattemeldingen (Skatteetaten)",
+   "read": "2026-11-01",
+   "kind": "primary",
+   "said": "Frist for person: 30. april Denne fristen gjelder for lønnstakere pensjonister Frist for bedrift: 31. mai … Hvis ektefellen din er næringsdrivende, har du også leveringsfrist 31. mai."
+  },
+  {
+   "url": "https://www.skatteetaten.no/rettskilder/type/handboker/skatteforvaltningshandboken/gjeldende/kapittel-8-opplysningsplikt-for-skattepliktige-trekkpliktige-mv/ID-8-2.001/ID-8-2.024/",
+   "title": "Skatteforvaltningshåndboken 2025 (Skatteetaten): Skattleggingsperioder og leveringsfrister, quoting skatteforvaltningsforskriften §§ 8-2-2 and 8-2-3",
+   "read": "2026-11-01",
+   "kind": "primary",
+   "said": "Skatteforvaltningsforskriften § 8-2-2 Skattleggingsperiode (1) Skattemeldingen skal omfatte opplysninger om den skattepliktiges formue per 1. januar i skattefastsettingsåret og inntekts- og fradragsposter fra foregående kalenderår. … Skatteforvaltningsforskriften § 8-2-3 Leveringsfrist (1) Skattemelding skal leveres a) innen utgangen av mai i året etter skattleggingsperioden for selskap mv. som nevnt i skatteloven § 2‑2 første ledd, for selskap som skal levere selskapsmelding mv. etter skatteforvaltningsloven § 8‑9 og for eier av enkeltpersonforetak, b) innen utgangen av april i året etter skattleggingsperioden for andre skattepliktige"
+  },
+  {
+   "url": "https://www.skatteetaten.no/satser/trygdeavgift/",
+   "title": "Skatteetaten – Satser: Trygdeavgift",
+   "read": "2026-11-01",
+   "kind": "primary",
+   "said": "Lønnsinntekt, sykepenger osv. (personer i alderen 17 til 69 år i inntektsåret) 7,6 % … Annen næringsinntekt 10,8 % … Avgiften utgjør aldri mer enn 25 prosent av den delen av personinntekten/grunnlaget som overstiger 99 650 kr"
+  },
+  {
+   "url": "https://www.skatteetaten.no/satser/arbeidsgiveravgift/",
+   "title": "Skatteetaten – Satser: Arbeidsgiveravgift",
+   "read": "2026-11-01",
+   "kind": "primary",
+   "said": "Sone Ordinære næringer Landbruk og fiske I 14,1 % 14,1 % Ia* 14,1 % 10,6 % II 10,6 % 10,6 % III 6,4 % 6,4 % IV 5,1 % 5,1 % IVa 7,9 % 5,1 % V 0 0"
+  },
+  {
+   "url": "https://www.skatteetaten.no/person/skatt/skattekort/forskuddsskatt/",
+   "title": "Forskuddsskatt for privatpersoner (Skatteetaten)",
+   "read": "2026-11-01",
+   "kind": "primary",
+   "said": "Hvis trekkprosenten fra inntekten din blir veldig høy, eller hvis du ikke har en arbeidsgiver, må du betale forskuddsskatt. … Fristene for å betale forskuddsskatt er: • 15. mars • 15. juni • 15. september • 15. desember … Dersom du er selvstendig næringsdrivende og går med overskudd, skal du også betale forskuddsskatt."
+  },
+  {
+   "url": "https://www.skatteetaten.no/bedrift-og-organisasjon/utenlandsk/utenlandske-artister-og-idrettsutovere/",
+   "title": "Utenlandske artister og idrettsutøvere (Skatteetaten)",
+   "read": "2026-11-01",
+   "kind": "primary",
+   "said": "Satsen på artistskatt er for tiden 15 prosent. … Artistskatten beregnes av artistens bruttoinntekt for opptredenen i Norge. … Administrativt og teknisk personell («road crew», riggere, kamerafolk, filminstruktører, koreografer, regissører, trener, jurymedlem) … har ikke plikt til å levere skattemelding får ikke et vanlig skatteoppgjør"
+  },
+  {
+   "url": "https://www.skatteetaten.no/person/til-fra-norge/til/jobbe/skattekort/kildeskatt-pa-lonn/",
+   "title": "Kildeskatt på lønn for utenlandske arbeidstakere (Skatteetaten)",
+   "read": "2026-11-01",
+   "kind": "primary",
+   "said": "Hvis du er i kildeskatt på lønn-ordningen, betaler du 25% av lønnen din i skatt. Har du fritak fra å betale trygdeavgift i Norge , betaler du 17,4 % i skatt i 2026. … Du kan ikke være med i ordningen når du tjener mer enn 725 050 kroner i året (gjelder inntektsåret 2026)."
+  },
+  {
+   "url": "https://www.skatteetaten.no/rettskilder/type/handboker/merverdiavgiftshandboken/gjeldende/M-3/M-3-7/",
+   "title": "Merverdiavgiftshåndboken 2025, § 3-7 Kunst og kultur mv. (Skatteetaten, quoting merverdiavgiftsloven)",
+   "read": "2026-11-01",
+   "kind": "primary",
+   "said": "(4) Opphaverens omsetning av egne kunstverk og opphavsrett til egne litterære og kunstneriske verk er unntatt fra loven. Det samme gjelder slik omsetning ved mellommann i opphaverens navn. … (2) Omsetning og formidling av tjenester i form av kunstnerisk framføring av åndsverk er unntatt fra loven."
+  },
+  {
+   "url": "https://www.skatteetaten.no/satser/merverdiavgift/",
+   "title": "Skatteetaten – Satser: Merverdiavgift",
+   "read": "2026-11-01",
+   "kind": "primary",
+   "said": "Alminnelig sats 25 % Næringsmidler 15 %"
+  },
+  {
+   "url": "https://www.skatteetaten.no/rettskilder/type/handboker/merverdiavgiftshandboken/gjeldende/M-2/M-2-1/",
+   "title": "Merverdiavgiftshåndboken 2025, § 2-1 Registreringsplikt (Skatteetaten)",
+   "read": "2026-11-01",
+   "kind": "primary",
+   "said": "Næringsdrivende og offentlig virksomhet skal registreres i Merverdiavgiftsregisteret når omsetning og uttak som er omfattet av loven til sammen har oversteget 50 000 kroner i en periode på tolv måneder."
+  }
+ ],
+ "blockers": []
+}

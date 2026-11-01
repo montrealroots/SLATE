@@ -6,6 +6,8 @@ import { addMonths } from '../../../src/core/time/dates.ts';
 import {
   ACCOUNTS_START,
   bankOf,
+  charge,
+  converted,
   costOf,
   feesOf,
   firstMorning,
@@ -16,7 +18,9 @@ import {
   openAccount,
   openOn,
   pay,
+  payCost,
   payFromAccount,
+  refuses,
   RETURNED,
   startTheMorning,
   sum,
@@ -271,6 +275,44 @@ describe('an account at a bank', () => {
     // North Korea's won has a rate only from 15 January 2026.
     expect(() => firstMorning(fresh(), { ...holder, country: 'US', family: 'modest', bank: 'B', account: 'A' }, { ...plain, currency: 'KPW' }, ctx(at(2026, 1, 14)).c)).toThrow("the rate between USD and KPW isn't known to this game");
     expect(() => firstMorning(fresh(), { ...holder, country: 'VA', family: 'modest', bank: 'B', account: 'A' }, plain, ctx(T0).c)).toThrow("what a family in VA has to give isn't known to this game");
+  });
+
+  it('carries a sum in another currency at the day\'s rate with the bank\'s share, and pays a cost within what the account allows', () => {
+    const day = '2026-08-01';
+    const pounds = exchangeOn(money('GBP', 10_000), 'USD', day)?.money as ReturnType<typeof usd>;
+    expect(converted({ currency: 'USD', terms: plain }, money('GBP', 10_000), day)).toStrictEqual({ amount: pounds, fee: usd(0) });
+    expect(converted({ currency: 'USD', terms: { ...plain, debit: { fx: '3' } } }, money('GBP', 10_000), day)).toStrictEqual({ amount: pounds, fee: usd(Math.round(pounds.minor * 0.03)) });
+    expect(() => converted({ currency: 'USD', terms: plain }, money('GBP', 1), '2025-01-01')).toThrow("the rate between GBP and USD isn't known to this game");
+    expect([refuses({ terms: plain }, usd(0)), refuses({ terms: plain }, usd(-1)), refuses({ terms: { ...plain, overdraft: false } }, usd(-1))]).toEqual([false, true, true]);
+    expect([refuses({ terms: { ...plain, overdraft: {} } }, usd(-1)), refuses({ terms: { ...plain, overdraft: { limit: usd(5) } } }, usd(-5)), refuses({ terms: { ...plain, overdraft: { limit: usd(5) } } }, usd(-6))]).toEqual([false, false, true]);
+    const when = at(2026, 8, 1);
+    const s = fresh();
+    const id = openOn(s, args(), { ...plain, debit: { fx: '3' }, overdraft: { fee: usd(500), limit: usd(10_000) } }, ctx(T0).c);
+    fund(s, id, 20_000, T0 + DAY);
+    // In the account's currency: to the payee's world account.
+    expect(charge(s, id, 'union', usd(5_000), 'dues', when)).toBe(true);
+    expect([bal(s, id), bal(s, 'world:union:USD')]).toEqual([15_000, 5_000]);
+    expect(s.ledger.accounts.map((a) => a.id)).not.toContain('world:B:USD');
+    expect(accountOf(s.ledger, id).postings.map((p) => p.what)).toEqual(['pay', 'dues']);
+    // In another: the bank carries it, its share charged beside.
+    expect(charge(s, id, 'world:government:GB', money('GBP', 10_000), 'a visa', when)).toBe(true);
+    expect([bal(s, id), bal(s, 'world:government:GB:GBP'), bal(s, 'world:B:GBP'), bal(s, 'world:B:USD')]).toEqual([15_000 - pounds.minor - Math.round(pounds.minor * 0.03), 10_000, -10_000, pounds.minor + Math.round(pounds.minor * 0.03)]);
+    // Into the overdraft with its fee for an item; refused past its limit, and nothing paid.
+    const left = bal(s, id);
+    expect(charge(s, id, 'union', usd(left + 1_000), 'dues', when)).toBe(true);
+    expect(bal(s, id)).toBe(-1_000 - 500);
+    expect(charge(s, id, 'union', usd(9_000), 'dues', when)).toBe(false);
+    expect(bal(s, id)).toBe(-1_500);
+    expect(() => payCost(s, id, 'union', usd(9_000), 'dues', when)).toThrow(`${id} can't cover dues`);
+    expect(() => payCost(s, id, 'union', usd(1), 'dues', when)).not.toThrow();
+    expect(bal(s, id)).toBe(-1_501 - 500);
+    expect(accountOf(s.ledger, id).postings.map((p) => p.what)).toEqual(['pay', 'dues', 'a visa', 'fees', 'dues', 'fees', 'dues', 'fees']);
+    // To nothing exactly: not into the overdraft, so no fee for an item.
+    const z = fresh();
+    const zid = openOn(z, args(), { ...plain, overdraft: { fee: usd(500) } }, ctx(T0).c);
+    fund(z, zid, 1_000, T0 + DAY);
+    expect(charge(z, zid, 'union', usd(1_000), 'dues', when)).toBe(true);
+    expect([bal(z, zid), accountOf(z.ledger, zid).postings.map((p) => p.what)]).toEqual([0, ['pay', 'dues']]);
   });
 
   it('is run through the frame, each command and kind declaring what it reads and writes', () => {

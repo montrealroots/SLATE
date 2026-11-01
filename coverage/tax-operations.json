@@ -1,0 +1,108 @@
+{
+ "engine": "money.tax",
+ "axis": "tax-operation",
+ "universe": {
+  "keys": [
+   "resident-scale",
+   "contributions",
+   "withholding",
+   "tax-year",
+   "pay",
+   "conversion",
+   "vat",
+   "reckoning",
+   "settlement",
+   "costs",
+   "told"
+  ]
+ },
+ "rows": [
+  {
+   "key": "resident-scale",
+   "status": "proven",
+   "tests": [
+    "tests/money/tax/tax.test.ts::a country's tax > is each country's own, every figure as the research gives it",
+    "tests/money/tax/tax.test.ts::the arithmetic > takes each band on the part it spans, a zone by its formula, a layer after its allowances and less its credits"
+   ]
+  },
+  {
+   "key": "contributions",
+   "status": "proven",
+   "tests": [
+    "tests/money/tax/tax.test.ts::the arithmetic > sums the contributions of every scale, and withholds a scheme above its threshold, on its share, with its surtax",
+    "tests/money/tax/tax.test.ts::pay > is paid into the ledger less what the work's country withholds"
+   ]
+  },
+  {
+   "key": "withholding",
+   "status": "proven",
+   "tests": [
+    "tests/money/tax/tax.test.ts::pay > withholds by each country's scheme: by the payment, by the year, on a share, with a surtax",
+    "tests/money/tax/tax.test.ts::pay > withholds a non-resident's at the artistes' rate, and carries the rest into the account's currency with the bank's share"
+   ]
+  },
+  {
+   "key": "tax-year",
+   "status": "proven",
+   "tests": [
+    "tests/money/tax/tax.test.ts::the arithmetic > keeps the year each country keeps, and its return's due date"
+   ]
+  },
+  {
+   "key": "pay",
+   "status": "proven",
+   "tests": [
+    "tests/money/tax/tax.test.ts::pay > is paid into the ledger less what the work's country withholds",
+    "tests/money/tax/tax.test.ts::pay > pays in the country's currency, at the day's rate, where the agreement pays in another",
+    "tests/money/tax/tax.test.ts::pay > is refused where no account is held, nothing is paid, or the rate isn't known"
+   ]
+  },
+  {
+   "key": "conversion",
+   "status": "proven",
+   "tests": [
+    "tests/money/tax/tax.test.ts::pay > withholds a non-resident's at the artistes' rate, and carries the rest into the account's currency with the bank's share",
+    "tests/money/accounts/accounts.test.ts::an account at a bank > carries a sum in another currency at the day's rate with the bank's share, and pays a cost within what the account allows"
+   ]
+  },
+  {
+   "key": "vat",
+   "status": "proven",
+   "tests": [
+    "tests/money/tax/tax.test.ts::pay > charges VAT on a resident freelancer's fee once the year's fees pass the threshold, an author's at its own rate"
+   ]
+  },
+  {
+   "key": "reckoning",
+   "status": "proven",
+   "tests": [
+    "tests/money/tax/tax.test.ts::the year's reckoning > taxes the year's income at the resident's scale less what was withheld",
+    "tests/money/tax/tax.test.ts::the year's reckoning > credits tax withheld abroad up to the tax at home, and refunds what was withheld past it",
+    "tests/money/tax/tax.test.ts::the year's reckoning > tax.reckon: more income in the year is more tax due"
+   ]
+  },
+  {
+   "key": "settlement",
+   "status": "proven",
+   "tests": [
+    "tests/money/tax/tax.test.ts::the year's reckoning > is owed, and the player told, where the account can't pay it; refunded into an account in another currency",
+    "tests/money/tax/tax.test.ts::the year's reckoning > runs through the frame as declared: the reckoning at the year's end, the balance on its due date",
+    "tests/money/tax/tax.test.ts::the year's reckoning > tax.settle: the balance due leaves the account on the due date"
+   ]
+  },
+  {
+   "key": "costs",
+   "status": "proven",
+   "tests": [
+    "tests/money/accounts/accounts.test.ts::an account at a bank > carries a sum in another currency at the day's rate with the bank's share, and pays a cost within what the account allows"
+   ]
+  },
+  {
+   "key": "told",
+   "status": "proven",
+   "tests": [
+    "tests/money/tax/tax.test.ts::a country's tax > tells the player what of it isn't known"
+   ]
+  }
+ ]
+}

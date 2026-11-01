@@ -2,9 +2,10 @@ import { defineCommand, type Context, type Json } from '../../core/frame/frame.t
 import { add, fromMajor, multiply, type CurrencyCode, type Money } from '../../core/money/money.ts';
 import { civilFromDays, SECONDS_PER_DAY } from '../../core/time/calendar.ts';
 import { t, type LineId } from '../../core/text/text.ts';
+import { earn, type Earning } from '../../money/tax/tax.ts';
 import { countryName, type CountryCode } from '../../world/gazetteer/gazetteer.ts';
 import { componentOf, componentValues, practise, skillOf, type AttributesSlice } from '../attributes/attributes.ts';
-import { identifiesAs, personOf, playingAge, speaks, type Ethnicity, type IdentitySlice, type Level, type Person } from '../identity/identity.ts';
+import { identifiesAs, personOf, playingAge, residenceOf, speaks, type Ethnicity, type IdentitySlice, type Level, type Person } from '../identity/identity.ts';
 import { permitted, type PermitsSlice } from '../permits/permits.ts';
 import type { DirectingSlice } from '../directing/directing.ts';
 import type { ProducingSlice } from '../producing/producing.ts';
@@ -579,8 +580,10 @@ function audition(s: Acting, a: AuditionArgs, c: Context): void {
 }
 
 export interface PlayArgs {
-  [key: string]: number;
+  [key: string]: Json;
   audition: number;
+  /** The account the part is paid into. */
+  account: string;
 }
 
 /** Plays a part booked: how well, as the actor is in what it asks, and what it pays. */
@@ -615,8 +618,8 @@ export function aboutMarket(agreement: Agreement): string | undefined {
   return t(UNKEPT_LINE, { country: countryName(a.country), missing: list });
 }
 
-/** The slices a part played reads besides its own: whether the person may work there reads every role's days and permits. */
-type Playing = Acting & { unions: UnionsSlice; permits: PermitsSlice; directing: DirectingSlice; producing: ProducingSlice };
+/** The slices a part played reads besides its own: whether the person may work there reads every role's days and permits; its pay goes into an account, taxed. */
+type Playing = Acting & Earning & { unions: UnionsSlice; permits: PermitsSlice; directing: DirectingSlice; producing: ProducingSlice };
 
 function play(s: Playing, a: PlayArgs, c: Context): void {
   const job = auditionOf(s.acting, a.audition);
@@ -631,7 +634,10 @@ function play(s: Playing, a: PlayArgs, c: Context): void {
   // @slate:consumer attributes.choose
   const k = partSkill(componentValues(s.attributes, 'actor'), job.part);
   const quality = clamp(k + spread(k) * (2 * c.draws('acting.work', 'perform', job.id).float() - 1), 0, 100);
-  job.work = { at: c.now, quality, pay: pay(job.part, dateOf(c.now), experience(s.acting, c.now)) };
+  const paid = pay(job.part, dateOf(c.now), experience(s.acting, c.now));
+  job.work = { at: c.now, quality, pay: paid };
+  // The production pays the part into the account named, less what the country withholds (money.tax).
+  if (paid !== null) earn(s, { account: a.account, payer: 'production', country: where, home: residenceOf(personOf(s.identity)), work: 'performer', gross: paid, what: 'pay' }, c);
   practise(s.attributes, 'actor', demands(job.part), daysWorked(job.part));
 }
 
@@ -640,4 +646,4 @@ function play(s: Playing, a: PlayArgs, c: Context): void {
 // test that lists each command with what it reads and writes; what each does is mutated above.
 export const postBreakdown = defineCommand<{ acting: ActingSlice }, Part>({ id: 'acting.breakdown', reads: [], writes: ['acting'], run: post });
 export const auditionForPart = defineCommand<Acting, AuditionArgs>({ id: 'acting.audition', reads: ['identity'], writes: ['attributes', 'acting'], run: audition });
-export const playPart = defineCommand<Playing, PlayArgs>({ id: 'acting.perform', reads: ['identity', 'unions', 'permits', 'directing', 'producing'], writes: ['attributes', 'acting'], run: play });
+export const playPart = defineCommand<Playing, PlayArgs>({ id: 'acting.perform', reads: ['identity', 'unions', 'permits', 'directing', 'producing'], writes: ['attributes', 'acting', 'accounts', 'ledger', 'tax', 'schedule'], run: play });

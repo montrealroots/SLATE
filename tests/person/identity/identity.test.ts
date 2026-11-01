@@ -28,8 +28,9 @@ import {
 } from '../../../src/person/identity/identity.ts';
 import { person } from '../../support/person.ts';
 import { falsifyAny } from '../../support/falsify-core.ts';
+import { ACCOUNT, minorIn, purse } from '../../support/purse.ts';
 
-type Identity = { identity: IdentitySlice };
+type Identity = { identity: IdentitySlice } & ReturnType<typeof purse>;
 const SEED = '0123456789abcdef';
 const day = (y: number, m: number, d: number) => daysFromCivil(y, m, d) * SECONDS_PER_DAY;
 const NOW = day(2026, 11, 1) + 12 * 3600;
@@ -53,7 +54,7 @@ const ARGS: MakeArgs = {
   portrait: true,
 };
 
-const life = (now = NOW): Life<Identity> => begin(SEED, now, { identity: structuredClone(IDENTITY_START) });
+const life = (now = NOW): Life<Identity> => begin(SEED, now, { identity: structuredClone(IDENTITY_START), ...purse() });
 const make = (over: Partial<MakeArgs> = {}, now = NOW) => dispatch(life(now), makePerson, { ...ARGS, ...over } as MakeArgs);
 const made = (over: Partial<MakeArgs> = {}, now = NOW) => personOf(make(over, now).slices.identity);
 const refused = (over: Partial<MakeArgs>, error: string, now = NOW) => expect(() => make(over, now), JSON.stringify(over)).toThrow(error);
@@ -72,7 +73,7 @@ describe('the person', () => {
     const index = commandIndex().filter((c) => c.id.startsWith('identity.'));
     expect(index).toEqual([
       { id: 'identity.make', reads: [], writes: ['identity'] },
-      { id: 'identity.headshot', reads: [], writes: ['identity'] },
+      { id: 'identity.headshot', reads: [], writes: ['identity', 'accounts', 'ledger'] },
     ]);
   });
 });
@@ -184,18 +185,22 @@ describe('identity.make', () => {
 describe('identity.headshot', () => {
   const taken = (country: string, at = NOW + 3600) => {
     const l = make({ portrait: false });
-    return dispatch({ ...l, frame: { ...l.frame, now: at } }, takeHeadshot, { country });
+    return dispatch({ ...l, frame: { ...l.frame, now: at } }, takeHeadshot, { account: ACCOUNT, country });
   };
 
   it('takes a new headshot, at the price a survey gives where it gives one', () => {
     const us = taken('US');
     expect(us.slices.identity.sessions).toStrictEqual([{ at: NOW + 3600, price: fromMajor('USD', '304') }]);
     expect(personOf(us.slices.identity).headshot).toBe(NOW + 3600);
-    const gb = dispatch({ ...us, frame: { ...us.frame, now: NOW + 7200 } }, takeHeadshot, { country: 'GB' });
+    const gb = dispatch({ ...us, frame: { ...us.frame, now: NOW + 7200 } }, takeHeadshot, { account: ACCOUNT, country: 'GB' });
     expect(gb.slices.identity.sessions).toStrictEqual([{ at: NOW + 3600, price: fromMajor('USD', '304') }, { at: NOW + 7200, price: null }]);
     expect(personOf(gb.slices.identity).headshot).toBe(NOW + 7200);
+    // The session is paid from the account named where its price is known; nothing where it isn't.
+    expect([minorIn(us.slices.ledger, ACCOUNT), minorIn(gb.slices.ledger, ACCOUNT), minorIn(gb.slices.ledger, 'world:photographer:USD')]).toEqual([100_000_000 - 30_400, 100_000_000 - 30_400, 30_400]);
+    const broke = make({ portrait: false });
+    expect(() => dispatch({ ...broke, frame: { ...broke.frame, now: NOW + 3600 }, slices: { ...broke.slices, ...purse('USD', 30_399) } }, takeHeadshot, { account: ACCOUNT, country: 'US' })).toThrow("everyday:1 can't cover a headshot session");
     expect(() => taken('XX')).toThrow("there's no country XX for the session");
-    expect(() => dispatch(life(), takeHeadshot, { country: 'US' })).toThrow('the person is not made yet');
+    expect(() => dispatch(life(), takeHeadshot, { account: ACCOUNT, country: 'US' })).toThrow('the person is not made yet');
   });
 
   it("bites: the session's market is the price the life pays", () => {

@@ -1,0 +1,485 @@
+{
+ "topic": "tax.JP",
+ "read": "2026-11-01",
+ "note": "Read 2026-11-01 at the owner's word (\"Build those first 3 starting with ledger first\"; \"Retry the blocked tax facts once all countries land\"): the tax on a screen worker's pay in Japan: a resident's income tax, social contributions, what is withheld at source, a non-resident artiste's withholding, any authors' treatment, VAT's threshold, the tax year. Research and retry subagents (workbench/briefs/BRIEF-tax*.md); every quote checked by the lead against its saved page.",
+ "figures": [
+  {
+   "item": "residents",
+   "finding": "National income tax runs from 5% to 45% in seven bands on taxable income, plus a 2.1% reconstruction surtax on the tax through 2037 (from 2027 split into a defence surtax and a lower reconstruction surtax at the same combined rate); the prefectural and municipal inhabitant tax adds a flat 10% (4% prefectural, 6% municipal) on the previous year's income plus a ¥4,000 per-capita levy; the basic deduction depends on income (¥1,040,000 at total income up to ¥1.32 million for 2026).",
+   "value": {
+    "currency": "JPY",
+    "brackets": [
+     {
+      "from": 0,
+      "to": 1950000,
+      "rate": 0.05
+     },
+     {
+      "from": 1950000,
+      "to": 3300000,
+      "rate": 0.1
+     },
+     {
+      "from": 3300000,
+      "to": 6950000,
+      "rate": 0.2
+     },
+     {
+      "from": 6950000,
+      "to": 9000000,
+      "rate": 0.23
+     },
+     {
+      "from": 9000000,
+      "to": 18000000,
+      "rate": 0.33
+     },
+     {
+      "from": 18000000,
+      "to": 40000000,
+      "rate": 0.4
+     },
+     {
+      "from": 40000000,
+      "to": null,
+      "rate": 0.45
+     }
+    ],
+    "surtax": {
+     "rate": 0.021,
+     "on": "income tax",
+     "years": "2013-2037"
+    },
+    "residentTax": {
+     "rate": 0.1,
+     "prefectural": 0.04,
+     "municipal": 0.06,
+     "perCapita": 4000,
+     "base": "previous calendar year's income",
+     "designatedCities": "prefectural 2%, city 8%"
+    },
+    "basicDeduction2026": "income-tiered; ¥1,040,000 at total income ≤ ¥1.32m; ¥480,000 at ¥23.5m–24m, ¥320,000 at ¥24m–24.5m, ¥160,000 at ¥24.5m–25m, nil above ¥25m (2026 rule in force from 1 Dec 2026)"
+   },
+   "applies": "Residents, 2026 (法令 as of 1 April 2026)",
+   "sources": [
+    {
+     "src": 0,
+     "said": "1,000円 から 1,949,000円まで 5％ 0円 1,950,000円 から 3,299,000円まで 10％ 97,500円 3,300,000円 から 6,949,000円まで 20％ 427,500円 6,950,000円 から 8,999,000円まで 23％ 636,000円 9,000,000円 から 17,999,000円まで 33％ 1,536,000円 18,000,000円 から 39,999,000円まで 40％ 2,796,000円 40,000,000円 以上 45％ 4,796,000円 … 平成25年から令和29年までの各年分の確定申告においては、所得税と復興特別所得税（原則としてその年分の基準所得税額の2.1パーセント）を併せて申告・納付することとなります。 … 令和8年度税制改正により、防衛特別所得税の創設ならびに復興特別所得税の税率の引下げおよび課税期間の延長が行われ、令和9年以後に適用されます（改正前と改正後とで、防衛特別所得税及び復興特別所得税の合計税率に変更はありません。）。"
+    },
+    {
+     "src": 1,
+     "said": "所得割の税率は、所得に対して10％（道府県民税が4％、市町村民税が6％）※1※2とされており、前年の1月1日から12月31日までの所得で算定されます。 均等割は、個人住民税は「地域社会の会費」的なものであるとして負担を求める個人住民税の性格を反映したもので、その税額は4,000円（道府県民税が1,000円、市町村民税が3,000円）"
+    },
+    {
+     "src": 2,
+     "said": "納税者本人の合計所得金額 控除額 令和6年分 以前 令和7年分 令和8年分 令和9年分 以後 令和10年分以後 132万円以下 48万円 95万円 104万円 99万円 … 2,350万円超2,400万円以下 48万円 48万円 48万円 2,400万円超2,450万円以下 32万円 32万円 32万円 32万円 2,450万円超2,500万円以下 16万円 16万円 16万円 16万円 2,500万円超 ０円 ０円 ０円 ０円 … 令和8年分の上記規定は、令和8年12月1日に施行されます。"
+    }
+   ]
+  },
+  {
+   "item": "year",
+   "finding": "The tax year is the calendar year; the final return is filed from 16 February to 15 March of the following year, which is also the payment deadline.",
+   "value": {
+    "currency": "JPY",
+    "start": "01-01",
+    "end": "12-31",
+    "returnWindow": {
+     "from": "02-16",
+     "to": "03-15"
+    },
+    "paymentDue": "03-15"
+   },
+   "applies": "Individuals filing a final return (確定申告)",
+   "sources": [
+    {
+     "src": 3,
+     "said": "原則として、その年の翌年2月16日から3月15日までです。 申告等の期限 申告および納付の期限は、原則として、その年の翌年3月15日です。"
+    }
+   ]
+  },
+  {
+   "item": "social",
+   "finding": "An employee pays half of employees' pension insurance at 18.3% on a standard monthly remuneration capped at ¥650,000 (grade 32), half of health insurance (Kyokai Kenpo Tokyo 9.85% for FY2026, by prefecture; plus 1.62% care insurance at ages 40-64 and 0.23% child-support levy from April 2026) and employment insurance of 5/1,000 (employer 8.5/1,000); a self-employed worker pays the national pension premium of ¥17,920 a month for FY2026.",
+   "value": {
+    "currency": "JPY",
+    "pension": {
+     "rate": 0.183,
+     "split": "half each",
+     "ceilingMonthly": 650000,
+     "bonusCeiling": 1500000
+    },
+    "healthTokyoFY2026": 0.0985,
+    "care40to64": 0.0162,
+    "childSupportFromApr2026": 0.0023,
+    "employment": {
+     "employee": 0.005,
+     "employer": 0.0085,
+     "period": "2026-04-01 to 2027-03-31"
+    },
+    "nationalPensionMonthlyFY2026": 17920
+   },
+   "applies": "Employees in Kyokai Kenpo (Tokyo branch rates) and self-employed (national pension); national health insurance for the self-employed is set by each municipality (not read)",
+   "sources": [
+    {
+     "src": 4,
+     "said": "厚生年金保険の保険料は、毎月の給与（標準報酬月額）と賞与（標準賞与額）に共通の保険料率をかけて計算され、事業主と被保険者とが半分ずつ負担します。 … 現在の標準報酬月額は、1等級（8万8千円）から32等級（65万円）までの32等級に分かれています。 … 150万円が上限となります。"
+    },
+    {
+     "src": 5,
+     "said": "平成29年9月を最後に引上げが終了し、厚生年金保険料率は18.3％で固定されています。"
+    },
+    {
+     "src": 6,
+     "said": "東京都 ９．９１％ ↓ ９．８５％ … 令和8年4月分（5月納付分）からは、これに全国一律の子ども・子育て支援金（0.23％）が加わります。 … 全国一律の介護保険料率（1.62％）が加わります。"
+    },
+    {
+     "src": 7,
+     "said": "失業等給付等の保険料率は、労働者負担・事業主負担ともに5/1,000に変更に … 一般の事業 5/1,000 8.5/1,000 5/1,000 3.5/1,000 13.5/1,000"
+    },
+    {
+     "src": 8,
+     "said": "国民年金保険料の金額は、1カ月あたり17,920円です（令和8年度）。"
+    }
+   ]
+  },
+  {
+   "item": "withholding",
+   "finding": "A payer withholds 10.21% (income tax plus surtax) from a resident's fees for film, stage and broadcast appearances, directing (including film and stage production, cinematography and editing), manuscripts and screenplays, and 20.42% on any part of a single payment above ¥1 million; employees' pay is withheld by the monthly tables.",
+   "value": {
+    "rate": 0.1021,
+    "above1m": 0.2042,
+    "threshold": 1000000,
+    "perPayment": true,
+    "covers": [
+     "film, stage, music performance",
+     "radio/TV appearance, direction or planning",
+     "direction incl. film/stage production, filming, editing",
+     "manuscripts, screenplays"
+    ]
+   },
+   "applies": "Residents receiving 報酬・料金 (fees), 2026",
+   "sources": [
+    {
+     "src": 9,
+     "said": "映画、演劇、音楽、音曲、 舞踊、講談、落語、浪曲、 漫談、漫才、腹話術、歌 唱、奇術、曲芸や物まね 又はラジオ放送やテレビ ジョン放送の出演や演出 又は企画の報酬・料金 左の報酬・料金 の額×10.21％ ただし、同一人 に対し１回に支払 われる金額が100 万円を超える場合 には、その超える 部分については、 20.42％ … 「演出の報酬・料金」には、指揮、監督、映画や演劇の製作、"
+    },
+    {
+     "src": 10,
+     "said": "支払金額（＝A） 税額 100万円以下 A×10.21％ 100万円超 （A-100万円）×20.42％＋102,100円"
+    }
+   ]
+  },
+  {
+   "item": "nonResident",
+   "finding": "Payments to a non-resident for personal services performed in Japan, film actors and other entertainers included, bear 20.42% withholding.",
+   "value": {
+    "rate": 0.2042,
+    "base": "gross payment",
+    "threshold": null,
+    "final": "not stated on the pages read"
+   },
+   "applies": "Non-residents and foreign companies supplying personal services in Japan",
+   "sources": [
+    {
+     "src": 11,
+     "said": "（4） 国内で行う人的役務の提供を事業とする者の、その人的役務の提供に係る対価 例えば、映画俳優、音楽家等の芸能人、職業運動家、弁護士、公認会計士等の自由職業者"
+    },
+    {
+     "src": 12,
+     "said": "（3） 人的役務の提供事業の対価：20.42パーセント … （9） 給与その他人的役務の提供に対する報酬、退職手当等：20.42パーセント … （8） 工業所有権、著作権等の使用料等：20.42パーセント"
+    }
+   ]
+  },
+  {
+   "item": "authors",
+   "finding": "Income from manuscript and composition fees and from copyright royalties counts as fluctuating income, which may be taxed by averaging under article 90 of the Income Tax Act.",
+   "value": {
+    "regime": "変動所得の平均課税 (Income Tax Act art. 90)",
+    "covers": [
+     "原稿の報酬",
+     "作曲の報酬",
+     "著作権の使用料"
+    ]
+   },
+   "applies": "Resident writers and composers (the conditions of art. 90 not read)",
+   "sources": [
+    {
+     "src": 13,
+     "said": "原稿又は作曲の報酬に係る所得及び著作権の使用料に係る所得の金額の合計額をいい"
+    }
+   ]
+  },
+  {
+   "item": "vat",
+   "finding": "Consumption tax is 10% (7.8% national, 2.2% local); a sole trader is exempt where taxable sales in the base period (two years earlier) were ¥10 million or less, unless registered as a qualified invoice issuer.",
+   "value": {
+    "currency": "JPY",
+    "rate": 0.1,
+    "national": 0.078,
+    "local": 0.022,
+    "threshold": 10000000,
+    "basePeriod": "calendar year two years before",
+    "invoiceRegistrationEndsExemption": true
+   },
+   "applies": "Sole traders, 2026",
+   "sources": [
+    {
+     "src": 14,
+     "said": "標準税率10パーセントと軽減税率8パーセントの複数税率になっています。"
+    },
+    {
+     "src": 15,
+     "said": "課税期間の基準期間（個人事業者の場合はその年の前々年、事業年度が1年である法人の場合はその事業年度の前々事業年度）における課税売上高が1,000万円以下である場合には、原則として、納税義務が免除されます。 … 適格請求書発行事業者の登録を受けている場合には、納税義務は免除されません。"
+    }
+   ]
+  },
+  {
+   "item": "social",
+   "finding": "A self-employed worker pays national health insurance set by the municipality on last year's income less the ¥430,000 residents' basic deduction, in four parts each capped by national order (medical ¥670,000, elderly support ¥260,000, care at 40-64 ¥170,000, child support ¥30,000 a household for FY2026); Tokyo's special wards charge 7.51% + ¥47,600 a member, 2.80% + ¥17,600, 2.43% + ¥17,800 and 0.27% + ¥1,873.",
+   "value": {
+    "currency": "JPY",
+    "fiscalYear": "2026-04 to 2027-03",
+    "base": "previous year's income − 430,000",
+    "nationalCaps": {
+     "medical": 670000,
+     "elderlySupport": 260000,
+     "care40to64": 170000,
+     "childSupport": 30000
+    },
+    "tokyoSpecialWards": {
+     "medical": {
+      "incomeRate": 0.0751,
+      "perMember": 47600
+     },
+     "elderlySupport": {
+      "incomeRate": 0.028,
+      "perMember": 17600
+     },
+     "care40to64": {
+      "incomeRate": 0.0243,
+      "perMember": 17800
+     },
+     "childSupport": {
+      "incomeRate": 0.0027,
+      "perMemberAged18Plus": 1873
+     },
+     "wardsRead": [
+      "Setagaya",
+      "Minato"
+     ]
+    }
+   },
+   "applies": "National health insurance, FY2026; rates for Tokyo's special wards (Setagaya and Minato read, identical); other municipalities set their own (see blockers).",
+   "sources": [
+    {
+     "src": 16,
+     "said": "九第三号の基礎賦課額は、六十七万円を超えることができないものであること。 … 八第三号の後期高齢者支援金等賦課額は、二十六万円を超えることができないものであること。 … 八第三号の介護納付金賦課額は、十七万円を超えることができないものであること。 … 十第三号の子ども・子育て支援納付金賦課額は、三万円を超えることができないものであること。"
+    },
+    {
+     "src": 17,
+     "said": "基礎分 （医療分） 加入者全員の賦課基準額の合計額 ×7.51%×加入月数÷12 加入者数 ×47,600円×加入月数÷12 67万円 後期高齢者 支援金分 加入者全員の賦課基準額の合計額 ×2.80%×加入月数÷12 加入者数 ×17,600円×加入月数÷12 26万円 介護分 40～64歳の方の賦課基準額の合計額 ×2.43%×該当月数÷12 40～64歳の方の加入者数 ×17,800円×該当月数÷12 17万円 … 国民健康保険料賦課基準額＝前年の所得額（注釈1）-住民税基礎控除43万円（注釈2）"
+    },
+    {
+     "src": 18,
+     "said": "子ども・子育て支援金分保険料率 所得割率：0.27パーセント 均等割額：1,873円（※） 最高限度額：3万円 … 基礎分（医療分）保険料率 所得割率：7.51パーセント 均等割額：4万7,600円（未就学児は5割軽減） 最高限度額：67万円"
+    }
+   ]
+  },
+  {
+   "item": "nonResident",
+   "finding": "A non-resident individual without a permanent establishment in Japan is taxed on a fee for personal services performed in Japan (an entertainer's included) separately from other income, at 20% (20.42% with the reconstruction surtax) of the amount paid, withheld at source, which settles the tax; where a treaty exempts the fee, the performer files a treaty notice (form 7) through the payer before the first payment.",
+   "value": {
+    "rate": 0.2,
+    "withSurtax": 0.2042,
+    "final": true,
+    "basis": "Income Tax Act arts. 161(1)(xii)(a), 164(2)(ii), 169, 170",
+    "treatyExemptionForm": "様式7, to the payer before the first payment"
+   },
+   "applies": "A non-resident performer, writer or director paid personally for services in Japan with no permanent establishment, 2026; a company paid for supplying performers falls under art. 161(1)(vi) instead.",
+   "sources": [
+    {
+     "src": 19,
+     "said": "十二次に掲げる給与、報酬又は年金イ俸給、給料、賃金、歳費、賞与又はこれらの性質を有する給与その他人的役務の提供に対する報酬のうち、国内において行う勤務その他の人的役務の提供 … 二恒久的施設を有しない非居住者第百六十一条第一項第八号から第十六号までに掲げる国内源泉所得 … 第百六十九条第百六十四条第二項各号（非居住者に対する課税の方法）に掲げる非居住者の当該各号に定める国内源泉所得については、他の所得と区分して所得税を課するものとし、 … 第百七十条前条に規定する所得税の額は、同条に規定する国内源泉所得の金額に百分の二十"
+    },
+    {
+     "src": 20,
+     "said": "租税条約の相手国の居住者である自由職業者、芸能人若しくは職業運動家 … が、その支払を受ける所得税法第161条第1項第12号イに掲げる報酬又は給与について、租税条約の規定に基づき源泉徴収税額の免除を受けるために行う手続です。 … 入国の日以後最初にその報酬又は給与の支払を受ける日の前日までに提出してください。"
+    }
+   ]
+  }
+ ],
+ "country": "JP",
+ "sources": [
+  {
+   "url": "https://www.nta.go.jp/taxes/shiraberu/taxanswer/shotoku/2260.htm",
+   "title": "国税庁 No.2260 所得税の税率",
+   "read": "2026-11-01",
+   "kind": "primary",
+   "said": "1,000円 から 1,949,000円まで 5％ 0円 1,950,000円 から 3,299,000円まで 10％ 97,500円 3,300,000円 から 6,949,000円まで 20％ 427,500円 6,950,000円 から 8,999,000円まで 23％ 636,000円 9,000,000円 から 17,999,000円まで 33％ 1,536,000円 18,000,000円 から 39,999,000円まで 40％ 2,796,000円 40,000,000円 以上 45％ 4,796,000円 … 平成25年から令和29年までの各年分の確定申告においては、所得税と復興特別所得税（原則としてその年分の基準所得税額の2.1パーセント）を併せて申告・納付することとなります。 … 令和8年度税制改正により、防衛特別所得税の創設ならびに復興特別所得税の税率の引下げおよび課税期間の延長が行われ、令和9年以後に適用されます（改正前と改正後とで、防衛特別所得税及び復興特別所得税の合計税率に変更はありません。）。"
+  },
+  {
+   "url": "https://www.soumu.go.jp/main_sosiki/jichi_zeisei/czaisei/czaisei_seido/150790_06.html",
+   "title": "総務省 個人住民税 (page saved as served in Shift_JIS, converted to UTF-8)",
+   "read": "2026-11-01",
+   "kind": "primary",
+   "said": "所得割の税率は、所得に対して10％（道府県民税が4％、市町村民税が6％）※1※2とされており、前年の1月1日から12月31日までの所得で算定されます。 均等割は、個人住民税は「地域社会の会費」的なものであるとして負担を求める個人住民税の性格を反映したもので、その税額は4,000円（道府県民税が1,000円、市町村民税が3,000円）"
+  },
+  {
+   "url": "https://www.nta.go.jp/taxes/shiraberu/taxanswer/shotoku/1199.htm",
+   "title": "国税庁 No.1199 基礎控除",
+   "read": "2026-11-01",
+   "kind": "primary",
+   "said": "納税者本人の合計所得金額 控除額 令和6年分 以前 令和7年分 令和8年分 令和9年分 以後 令和10年分以後 132万円以下 48万円 95万円 104万円 99万円 … 2,350万円超2,400万円以下 48万円 48万円 48万円 2,400万円超2,450万円以下 32万円 32万円 32万円 32万円 2,450万円超2,500万円以下 16万円 16万円 16万円 16万円 2,500万円超 ０円 ０円 ０円 ０円 … 令和8年分の上記規定は、令和8年12月1日に施行されます。"
+  },
+  {
+   "url": "https://www.nta.go.jp/taxes/shiraberu/taxanswer/shotoku/2020.htm",
+   "title": "国税庁 No.2020 確定申告",
+   "read": "2026-11-01",
+   "kind": "primary",
+   "said": "原則として、その年の翌年2月16日から3月15日までです。 申告等の期限 申告および納付の期限は、原則として、その年の翌年3月15日です。"
+  },
+  {
+   "url": "https://www.nenkin.go.jp/service/kounen/hokenryo/hoshu/20150515-01.html",
+   "title": "日本年金機構 厚生年金保険の保険料",
+   "read": "2026-11-01",
+   "kind": "primary",
+   "said": "厚生年金保険の保険料は、毎月の給与（標準報酬月額）と賞与（標準賞与額）に共通の保険料率をかけて計算され、事業主と被保険者とが半分ずつ負担します。 … 現在の標準報酬月額は、1等級（8万8千円）から32等級（65万円）までの32等級に分かれています。 … 150万円が上限となります。"
+  },
+  {
+   "url": "https://www.nenkin.go.jp/service/kounen/hokenryo/ryogaku/ryogakuhyo/index.html",
+   "title": "日本年金機構 厚生年金保険料額表",
+   "read": "2026-11-01",
+   "kind": "primary",
+   "said": "平成29年9月を最後に引上げが終了し、厚生年金保険料率は18.3％で固定されています。"
+  },
+  {
+   "url": "https://www.kyoukaikenpo.or.jp/about/business/insurance_rate/rate_prefectures/r08",
+   "title": "全国健康保険協会 令和8年度 都道府県単位保険料率",
+   "read": "2026-11-01",
+   "kind": "primary",
+   "said": "東京都 ９．９１％ ↓ ９．８５％ … 令和8年4月分（5月納付分）からは、これに全国一律の子ども・子育て支援金（0.23％）が加わります。 … 全国一律の介護保険料率（1.62％）が加わります。"
+  },
+  {
+   "url": "https://www.mhlw.go.jp/content/001692566.pdf",
+   "title": "厚生労働省 令和8（2026）年度 雇用保険料率のご案内",
+   "read": "2026-11-01",
+   "kind": "primary",
+   "said": "失業等給付等の保険料率は、労働者負担・事業主負担ともに5/1,000に変更に … 一般の事業 5/1,000 8.5/1,000 5/1,000 3.5/1,000 13.5/1,000"
+  },
+  {
+   "url": "https://www.nenkin.go.jp/service/kokunen/hokenryo/hokenryo.html",
+   "title": "日本年金機構 国民年金保険料",
+   "read": "2026-11-01",
+   "kind": "primary",
+   "said": "国民年金保険料の金額は、1カ月あたり17,920円です（令和8年度）。"
+  },
+  {
+   "url": "https://www.nta.go.jp/publication/pamph/gensen/aramashi2026/pdf/07.pdf",
+   "title": "国税庁 令和8年版 源泉徴収のあらまし 第5 報酬・料金等の源泉徴収事務",
+   "read": "2026-11-01",
+   "kind": "primary",
+   "said": "映画、演劇、音楽、音曲、 舞踊、講談、落語、浪曲、 漫談、漫才、腹話術、歌 唱、奇術、曲芸や物まね 又はラジオ放送やテレビ ジョン放送の出演や演出 又は企画の報酬・料金 左の報酬・料金 の額×10.21％ ただし、同一人 に対し１回に支払 われる金額が100 万円を超える場合 には、その超える 部分については、 20.42％ … 「演出の報酬・料金」には、指揮、監督、映画や演劇の製作、"
+  },
+  {
+   "url": "https://www.nta.go.jp/taxes/shiraberu/taxanswer/gensen/2795.htm",
+   "title": "国税庁 No.2795 原稿料や講演料等を支払ったとき",
+   "read": "2026-11-01",
+   "kind": "primary",
+   "said": "支払金額（＝A） 税額 100万円以下 A×10.21％ 100万円超 （A-100万円）×20.42％＋102,100円"
+  },
+  {
+   "url": "https://www.nta.go.jp/taxes/shiraberu/taxanswer/gensen/2878.htm",
+   "title": "国税庁 No.2878 国内源泉所得の範囲",
+   "read": "2026-11-01",
+   "kind": "primary",
+   "said": "（4） 国内で行う人的役務の提供を事業とする者の、その人的役務の提供に係る対価 例えば、映画俳優、音楽家等の芸能人、職業運動家、弁護士、公認会計士等の自由職業者"
+  },
+  {
+   "url": "https://www.nta.go.jp/taxes/shiraberu/taxanswer/gensen/2884.htm",
+   "title": "国税庁 No.2884 非居住者等に対する源泉徴収・源泉徴収の税率",
+   "read": "2026-11-01",
+   "kind": "primary",
+   "said": "（3） 人的役務の提供事業の対価：20.42パーセント … （9） 給与その他人的役務の提供に対する報酬、退職手当等：20.42パーセント … （8） 工業所有権、著作権等の使用料等：20.42パーセント"
+  },
+  {
+   "url": "https://www.nta.go.jp/law/tsutatsu/kihon/shotoku/17/01.htm",
+   "title": "国税庁 所得税基本通達 第90条《変動所得及び臨時所得の平均課税》関係 (Shift_JIS page converted to UTF-8)",
+   "read": "2026-11-01",
+   "kind": "primary",
+   "said": "原稿又は作曲の報酬に係る所得及び著作権の使用料に係る所得の金額の合計額をいい"
+  },
+  {
+   "url": "https://www.nta.go.jp/taxes/shiraberu/taxanswer/shohi/6303.htm",
+   "title": "国税庁 No.6303 消費税および地方消費税の税率",
+   "read": "2026-11-01",
+   "kind": "primary",
+   "said": "標準税率10パーセントと軽減税率8パーセントの複数税率になっています。"
+  },
+  {
+   "url": "https://www.nta.go.jp/taxes/shiraberu/taxanswer/shohi/6501.htm",
+   "title": "国税庁 No.6501 納税義務の免除",
+   "read": "2026-11-01",
+   "kind": "primary",
+   "said": "課税期間の基準期間（個人事業者の場合はその年の前々年、事業年度が1年である法人の場合はその事業年度の前々事業年度）における課税売上高が1,000万円以下である場合には、原則として、納税義務が免除されます。 … 適格請求書発行事業者の登録を受けている場合には、納税義務は免除されません。"
+  },
+  {
+   "url": "https://laws.e-gov.go.jp/law/333CO0000000362",
+   "title": "国民健康保険法施行令 第二十九条の七 (e-Gov 法令API, revision 333CO0000000362_20260801_508CO0000000240)",
+   "read": "2026-11-01",
+   "kind": "primary",
+   "said": "九第三号の基礎賦課額は、六十七万円を超えることができないものであること。 … 八第三号の後期高齢者支援金等賦課額は、二十六万円を超えることができないものであること。 … 八第三号の介護納付金賦課額は、十七万円を超えることができないものであること。 … 十第三号の子ども・子育て支援納付金賦課額は、三万円を超えることができないものであること。"
+  },
+  {
+   "url": "https://www.city.setagaya.lg.jp/02060/297.html",
+   "title": "世田谷区 保険料の計算方法 (最終更新日 2026年3月30日)",
+   "read": "2026-11-01",
+   "kind": "primary",
+   "said": "基礎分 （医療分） 加入者全員の賦課基準額の合計額 ×7.51%×加入月数÷12 加入者数 ×47,600円×加入月数÷12 67万円 後期高齢者 支援金分 加入者全員の賦課基準額の合計額 ×2.80%×加入月数÷12 加入者数 ×17,600円×加入月数÷12 26万円 介護分 40～64歳の方の賦課基準額の合計額 ×2.43%×該当月数÷12 40～64歳の方の加入者数 ×17,800円×該当月数÷12 17万円 … 国民健康保険料賦課基準額＝前年の所得額（注釈1）-住民税基礎控除43万円（注釈2）"
+  },
+  {
+   "url": "https://www.city.minato.tokyo.jp/kouhou/kuse/koho/minato2026/202604/20260415top/04.html",
+   "title": "港区 広報みなと2026年4月15日号 令和8年度の保険料率",
+   "read": "2026-11-01",
+   "kind": "primary",
+   "said": "子ども・子育て支援金分保険料率 所得割率：0.27パーセント 均等割額：1,873円（※） 最高限度額：3万円 … 基礎分（医療分）保険料率 所得割率：7.51パーセント 均等割額：4万7,600円（未就学児は5割軽減） 最高限度額：67万円"
+  },
+  {
+   "url": "https://laws.e-gov.go.jp/law/340AC0000000033",
+   "title": "所得税法 (e-Gov 法令API, as in force 2026-10-01) 第百六十一条第一項第十二号イ, 第百六十四条第二項, 第百六十九条, 第百七十条",
+   "read": "2026-11-01",
+   "kind": "primary",
+   "said": "十二次に掲げる給与、報酬又は年金イ俸給、給料、賃金、歳費、賞与又はこれらの性質を有する給与その他人的役務の提供に対する報酬のうち、国内において行う勤務その他の人的役務の提供 … 二恒久的施設を有しない非居住者第百六十一条第一項第八号から第十六号までに掲げる国内源泉所得 … 第百六十九条第百六十四条第二項各号（非居住者に対する課税の方法）に掲げる非居住者の当該各号に定める国内源泉所得については、他の所得と区分して所得税を課するものとし、 … 第百七十条前条に規定する所得税の額は、同条に規定する国内源泉所得の金額に百分の二十"
+  },
+  {
+   "url": "https://www.nta.go.jp/taxes/tetsuzuki/shinsei/annai/joyaku/annai/1648_45.htm",
+   "title": "国税庁 A3-9 租税条約に関する届出（自由職業者・芸能人・運動家・短期滞在者の報酬・給与に対する所得税及び復興特別所得税の免除）［様式7］",
+   "read": "2026-11-01",
+   "kind": "primary",
+   "said": "租税条約の相手国の居住者である自由職業者、芸能人若しくは職業運動家 … が、その支払を受ける所得税法第161条第1項第12号イに掲げる報酬又は給与について、租税条約の規定に基づき源泉徴収税額の免除を受けるために行う手続です。 … 入国の日以後最初にその報酬又は給与の支払を受ける日の前日までに提出してください。"
+  }
+ ],
+ "blockers": [
+  {
+   "item": "social",
+   "sought": "National health insurance rates of every municipality other than Tokyo's special wards (each municipality sets its own; the national caps and the special wards' rates are found)",
+   "tried": {
+    "institution": "Not reached: municipal pages vary; mhlw.go.jp national-ceiling page not located this pass; retry 2026-11-01: Setagaya (city.setagaya.lg.jp/02060/297.html) and Minato (広報みなと 2026-04-15) read; no national table of municipal rates exists on mhlw.go.jp",
+    "official-register": "retry 2026-11-01: 国民健康保険法施行令 art. 29-7 read through the e-Gov 法令API (law_data/333CO0000000362): caps only, rates left to each municipality",
+    "web-search": "retry 2026-11-01: '令和8年度 国民健康保険料 賦課限度額 … 政令 厚生労働省' and '令和8年度 国民健康保険料率 特別区 所得割 均等割 …': ward and city pages (Toshima, Minato, Setagaya, Chiba, Okayama, Yokohama R7); no national compilation",
+    "trade-press": "2026-11-01: psrn.jp and kaiketsu-j.com report the FY2026 caps (67/26/17/3万円) from 令和8年政令第2号; not a source of municipal rates",
+    "archive": "2026-11-01: not useful (no national compilation exists to archive); web.archive.org refuses this environment"
+   }
+  },
+  {
+   "item": "nonResident",
+   "sought": "The exemption terms for non-resident entertainers and individuals' service fees in each of Japan's tax treaties (finality and the form-7 procedure are found)",
+   "tried": {
+    "institution": "NTA No.2884, No.2885, No.2878 read 2026-11-01: rates given, finality not stated in text extracted; retry 2026-11-01: NTA treaty procedures index (joyaku/mokuji2.htm) and A3-9 form 7 page read: it refers to each treaty ('各租税条約を確認してください')",
+    "official-register": "源泉徴収のあらまし 第12 (pdf/12.pdf) saved but its text extracts with missing CJK glyphs (fonts not embedded); OCR not run; retry 2026-11-01: 所得税法 arts. 161, 164, 169, 170 read through the e-Gov 法令API (finality found); the treaties themselves (mof.go.jp) not read",
+    "web-search": "2026-11-01 '国税庁 非居住者 芸能人 人的役務の提供 20.42% 源泉分離課税 申告不要': results confirm 20.42% and a 15.315% rate for exempt entertainment corporations (nta.go.jp joyaku 1648_33), finality for an individual entertainer without PE not stated on an NTA page; retry 2026-11-01: '国税庁 租税条約 芸能人 免税 芸能人等の役務提供 非居住者 個人 条約 第17条 届出書 様式9': NTA form pages and Q&A sites only",
+    "trade-press": "zeiken.co.jp Q&A cites Income Tax Act art. 161(1)(xii)(a) as the source rule; finality not stated; retry 2026-11-01: zeiri4.com Q&A results cite no treaty text",
+    "archive": "2026-11-01: web.archive.org refuses this environment (connection reset; archive.org availability API reachable)"
+   }
+  }
+ ]
+}

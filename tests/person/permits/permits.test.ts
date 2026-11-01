@@ -26,6 +26,7 @@ import {
   UNKEPT_LINE,
   daysWorkedIn,
   DECISION_KIND,
+  ENGAGERS,
   ELIGIBILITY,
   LAO_AGE,
   permitFor,
@@ -40,8 +41,9 @@ import {
 } from '../../../src/person/permits/permits.ts';
 import { falsifyAny } from '../../support/falsify-core.ts';
 import { identity } from '../../support/person.ts';
+import { ACCOUNT, minorIn, purse } from '../../support/purse.ts';
 
-type Lives = { identity: IdentitySlice; acting: ActingSlice; directing: DirectingSlice; producing: ProducingSlice; permits: PermitsSlice };
+type Lives = { identity: IdentitySlice; acting: ActingSlice; directing: DirectingSlice; producing: ProducingSlice; permits: PermitsSlice } & ReturnType<typeof purse>;
 
 const SEED = '0123456789abcdef';
 const day = (y: number, m: number, d: number) => daysFromCivil(y, m, d) * SECONDS_PER_DAY;
@@ -55,7 +57,7 @@ const booked = (agreement: Agreement, length = 3): Audition => ({ id: 0, at: 0, 
 const played = (agreement: Agreement, at: number, quality = 50, length = 3): Audition => ({ ...booked(agreement, length), work: { at, quality, pay: null } });
 
 function life(parts: Audition[], who: Partial<Person> = {}, applications: Application[] = [], now = NOW): Life<Lives> {
-  return begin(SEED, now, { identity: identity(who), acting: { ...structuredClone(ACTING_START), auditions: parts.map((a, i) => ({ ...a, id: i + 1 })) }, directing: structuredClone(DIRECTING_START), producing: structuredClone(PRODUCING_START), permits: { applications } });
+  return begin(SEED, now, { identity: identity(who), acting: { ...structuredClone(ACTING_START), auditions: parts.map((a, i) => ({ ...a, id: i + 1 })) }, directing: structuredClone(DIRECTING_START), producing: structuredClone(PRODUCING_START), permits: { applications }, ...purse() });
 }
 const apps = (l: Life<Lives>) => l.slices.permits.applications;
 const granted = (country: Application['country'], until: number, id = 1, engagement = 1): Application => ({ id, at: 0, country, role: 'actor', engagement, renews: null, by: 'worker', premium: false, fees: null, decided: { at: 0, until } });
@@ -118,7 +120,7 @@ describe('a span of time', () => {
 
 describe('permits.apply', () => {
   it('lodges an application for an engagement booked abroad: who applies, the fees, the decision at the standard processing time', () => {
-    const l = dispatch(life([booked('pact-equity')]), applyForPermit, { role: 'actor', engagement: 1, premium: false });
+    const l = dispatch(life([booked('pact-equity')]), applyForPermit, { account: ACCOUNT, role: 'actor', engagement: 1, premium: false });
     expect(apps(l)).toEqual([
       {
         id: 1,
@@ -138,39 +140,50 @@ describe('permits.apply', () => {
       },
     ]);
     expect(l.frame.schedule).toEqual([{ id: 1, at: day(2026, 11, 23), kind: DECISION_KIND, data: { application: 1 } }]);
+    // The worker pays the fees from the account named, carried from pounds at the day's rate; the sponsor pays its own.
+    const dollars = (n: string) => exchangeOn(gbp(n), 'USD', '2026-11-01')?.money.minor as number;
+    expect(minorIn(l.slices.ledger, ACCOUNT)).toBe(100_000_000 - dollars('340') - dollars('1035'));
+    expect(minorIn(l.slices.ledger, 'world:government:GB:GBP')).toBe(34_000 + 103_500);
+    expect(ENGAGERS.test('Certificate of sponsorship, Temporary Worker (paid by the sponsor)')).toBe(true);
+    expect(['Employer compliance fee', 'Work permit grant (paid by the employer; British workers)', 'Workplace fee, paid in advance by the employer'].every((w) => ENGAGERS.test(w))).toBe(true);
+    expect(['Visa application fee, each person', 'Change of employer, per application'].some((w) => ENGAGERS.test(w))).toBe(false);
+    const broke = life([booked('pact-equity')]);
+    expect(() => dispatch({ ...broke, slices: { ...broke.slices, ...purse('USD', 0) } }, applyForPermit, { account: ACCOUNT, role: 'actor', engagement: 1, premium: false })).toThrow("everyday:1 can't cover Visa application fee, each person");
   });
 
   it("takes the premium service where it is asked and offered, its first fee with the others; the engager applies where the research says", () => {
-    const gb = dispatch(life([booked('pact-equity')]), applyForPermit, { role: 'actor', engagement: 1, premium: true });
+    const gb = dispatch(life([booked('pact-equity')]), applyForPermit, { account: ACCOUNT, role: 'actor', engagement: 1, premium: true });
     expect(apps(gb)[0]?.fees?.map((f) => f.money)).toEqual([gbp('340'), gbp('55'), gbp('1035'), gbp('500')]);
     expect([apps(gb)[0]?.premium, gb.frame.schedule[0]?.at]).toEqual([true, day(2026, 11, 9)]);
-    const us = dispatch(life([booked('sag-aftra')], { citizenship: ['CA'] }), applyForPermit, { role: 'actor', engagement: 1, premium: true });
+    const us = dispatch(life([booked('sag-aftra')], { citizenship: ['CA'] }), applyForPermit, { account: ACCOUNT, role: 'actor', engagement: 1, premium: true });
     expect([apps(us)[0]?.country, apps(us)[0]?.by, us.frame.schedule[0]?.at]).toEqual(['US', 'engager', day(2026, 11, 24)]);
     expect(apps(us)[0]?.fees?.map((f) => f.money)).toEqual([usd('1055'), usd('600'), usd('205'), usd('2965')]);
+    // The engager's application is the engager's to pay.
+    expect(minorIn(us.slices.ledger, ACCOUNT)).toBe(100_000_000);
   });
 
   it("is refused where nothing is booked, where the person needs no permit, or the permit isn't known well enough to apply for", () => {
     const l = life([{ ...booked('pact-equity'), booked: false }, played('pact-equity', 0), booked('pact-equity'), booked('sag-aftra'), booked('actra')], { citizenship: ['CA'] });
-    expect(() => dispatch(l, applyForPermit, { role: 'actor', engagement: 9, premium: false })).toThrow("there's no audition 9");
-    expect(() => dispatch(l, applyForPermit, { role: 'actor', engagement: 1, premium: false })).toThrow("audition 1 didn't book a part");
-    expect(() => dispatch(l, applyForPermit, { role: 'actor', engagement: 2, premium: false })).toThrow('the part from audition 2 is played');
-    expect(() => dispatch(l, applyForPermit, { role: 'actor', engagement: 4, premium: false })).toThrow("Some of what United States asks of someone from abroad for a work permit isn't known to this game yet: how long a decision takes.");
-    expect(() => dispatch(l, applyForPermit, { role: 'actor', engagement: 5, premium: false })).toThrow('you need no permit to work in CA');
-    expect(() => dispatch(life([booked('pact-equity')], { citizenship: ['IE'] }), applyForPermit, { role: 'actor', engagement: 1, premium: false })).toThrow('you need no permit to work in GB');
-    expect(() => dispatch(life([booked('actra')]), applyForPermit, { role: 'actor', engagement: 1, premium: true })).toThrow("Some of what Canada asks of someone from abroad for a work permit isn't known to this game yet: how long a premium decision takes.");
+    expect(() => dispatch(l, applyForPermit, { account: ACCOUNT, role: 'actor', engagement: 9, premium: false })).toThrow("there's no audition 9");
+    expect(() => dispatch(l, applyForPermit, { account: ACCOUNT, role: 'actor', engagement: 1, premium: false })).toThrow("audition 1 didn't book a part");
+    expect(() => dispatch(l, applyForPermit, { account: ACCOUNT, role: 'actor', engagement: 2, premium: false })).toThrow('the part from audition 2 is played');
+    expect(() => dispatch(l, applyForPermit, { account: ACCOUNT, role: 'actor', engagement: 4, premium: false })).toThrow("Some of what United States asks of someone from abroad for a work permit isn't known to this game yet: how long a decision takes.");
+    expect(() => dispatch(l, applyForPermit, { account: ACCOUNT, role: 'actor', engagement: 5, premium: false })).toThrow('you need no permit to work in CA');
+    expect(() => dispatch(life([booked('pact-equity')], { citizenship: ['IE'] }), applyForPermit, { account: ACCOUNT, role: 'actor', engagement: 1, premium: false })).toThrow('you need no permit to work in GB');
+    expect(() => dispatch(life([booked('actra')]), applyForPermit, { account: ACCOUNT, role: 'actor', engagement: 1, premium: true })).toThrow("Some of what Canada asks of someone from abroad for a work permit isn't known to this game yet: how long a premium decision takes.");
     // One application at a time for an engagement: pending, or granted and in force; a refused one may be made again.
-    const once = dispatch(l, applyForPermit, { role: 'actor', engagement: 3, premium: false });
-    expect(() => dispatch(once, applyForPermit, { role: 'actor', engagement: 3, premium: true })).toThrow('a permit is applied for already for that engagement');
+    const once = dispatch(l, applyForPermit, { account: ACCOUNT, role: 'actor', engagement: 3, premium: false });
+    expect(() => dispatch(once, applyForPermit, { account: ACCOUNT, role: 'actor', engagement: 3, premium: true })).toThrow('a permit is applied for already for that engagement');
     const refused: Application = { ...granted('GB', 0, 1, 3), decided: { at: 0, refused: 'no' } };
-    expect(apps(dispatch(life(l.slices.acting.auditions, { citizenship: ['CA'] }, [refused]), applyForPermit, { role: 'actor', engagement: 3, premium: false }))).toHaveLength(2);
+    expect(apps(dispatch(life(l.slices.acting.auditions, { citizenship: ['CA'] }, [refused]), applyForPermit, { account: ACCOUNT, role: 'actor', engagement: 3, premium: false }))).toHaveLength(2);
     const lapsed = granted('GB', NOW, 1, 3);
-    expect(apps(dispatch(life(l.slices.acting.auditions, { citizenship: ['CA'] }, [lapsed]), applyForPermit, { role: 'actor', engagement: 3, premium: false }))).toHaveLength(2);
-    expect(() => dispatch(life(l.slices.acting.auditions, { citizenship: ['CA'] }, [granted('GB', NOW + 1, 1, 3)]), applyForPermit, { role: 'actor', engagement: 3, premium: false })).toThrow('a permit is applied for already for that engagement');
+    expect(apps(dispatch(life(l.slices.acting.auditions, { citizenship: ['CA'] }, [lapsed]), applyForPermit, { account: ACCOUNT, role: 'actor', engagement: 3, premium: false }))).toHaveLength(2);
+    expect(() => dispatch(life(l.slices.acting.auditions, { citizenship: ['CA'] }, [granted('GB', NOW + 1, 1, 3)]), applyForPermit, { account: ACCOUNT, role: 'actor', engagement: 3, premium: false })).toThrow('a permit is applied for already for that engagement');
     // Another engagement's application doesn't stand for this one's.
-    expect(apps(dispatch(life(l.slices.acting.auditions, { citizenship: ['CA'] }, [granted('GB', NOW + 1, 1, 9)]), applyForPermit, { role: 'actor', engagement: 3, premium: false }))).toHaveLength(2);
+    expect(apps(dispatch(life(l.slices.acting.auditions, { citizenship: ['CA'] }, [granted('GB', NOW + 1, 1, 9)]), applyForPermit, { account: ACCOUNT, role: 'actor', engagement: 3, premium: false }))).toHaveLength(2);
     // A renewal of the engagement's permit doesn't stand for a first grant.
     const renewal: Application = { ...granted('GB', NOW + 1, 1, 3), renews: 7 };
-    expect(apps(dispatch(life(l.slices.acting.auditions, { citizenship: ['CA'] }, [renewal]), applyForPermit, { role: 'actor', engagement: 3, premium: false }))).toHaveLength(2);
+    expect(apps(dispatch(life(l.slices.acting.auditions, { citizenship: ['CA'] }, [renewal]), applyForPermit, { account: ACCOUNT, role: 'actor', engagement: 3, premium: false }))).toHaveLength(2);
   });
 
   it("names what the permit lacks, and refuses a passport whose permit isn't the one researched, or a country whose rules aren't kept", () => {
@@ -195,7 +208,7 @@ describe('permits.apply', () => {
       base: 'pact-equity' as Agreement,
       twin: 'sag-aftra' as Agreement,
       outcome: (a) => {
-        const l = dispatch(life([booked(a)], { citizenship: ['CA'] }), applyForPermit, { role: 'actor', engagement: 1, premium: true });
+        const l = dispatch(life([booked(a)], { citizenship: ['CA'] }), applyForPermit, { account: ACCOUNT, role: 'actor', engagement: 1, premium: true });
         return [apps(l)[0]?.country, l.frame.schedule[0]?.at];
       },
     });
@@ -204,14 +217,14 @@ describe('permits.apply', () => {
 
 describe('the decision', () => {
   it('grants the permit for its term from the day of the decision, where nothing the records answer stands against it', () => {
-    const l = pass(dispatch(life([booked('pact-equity')]), applyForPermit, { role: 'actor', engagement: 1, premium: false }), day(2026, 12, 1)).life;
+    const l = pass(dispatch(life([booked('pact-equity')]), applyForPermit, { account: ACCOUNT, role: 'actor', engagement: 1, premium: false }), day(2026, 12, 1)).life;
     expect(apps(l)[0]?.decided).toEqual({ at: day(2026, 11, 23), until: day(2027, 11, 23) });
     expect(l.frame.schedule).toEqual([]);
   });
 
   it("refuses the O-1 where the parts played show no distinction: the best 75 or better, and three played", () => {
     expect(RECOGNITION).toEqual({ best: 75, parts: 3 });
-    const decided = (parts: Audition[]) => apps(pass(dispatch(life([booked('sag-aftra'), ...parts], { citizenship: ['CA'] }), applyForPermit, { role: 'actor', engagement: 1, premium: true }), day(2027, 1, 1)).life)[0]?.decided;
+    const decided = (parts: Audition[]) => apps(pass(dispatch(life([booked('sag-aftra'), ...parts], { citizenship: ['CA'] }), applyForPermit, { account: ACCOUNT, role: 'actor', engagement: 1, premium: true }), day(2027, 1, 1)).life)[0]?.decided;
     const refused = { at: day(2026, 11, 24), refused: 'the petition shows no distinction yet: the work recognised as substantially above the ordinary' };
     expect(decided([played('actra', 0, 75), played('actra', 0, 40)])).toEqual(refused);
     expect(decided([played('actra', 0, 74), played('actra', 0, 40), played('actra', 0, 40)])).toEqual(refused);
@@ -244,7 +257,7 @@ describe('the decision', () => {
       base: 40,
       twin: 90,
       outcome: (best) => {
-        const l = pass(dispatch(life([booked('sag-aftra'), played('actra', 0, best), played('actra', 0, 40), played('actra', 0, 40)], { citizenship: ['CA'] }), applyForPermit, { role: 'actor', engagement: 1, premium: true }), day(2027, 1, 1)).life;
+        const l = pass(dispatch(life([booked('sag-aftra'), played('actra', 0, best), played('actra', 0, 40), played('actra', 0, 40)], { citizenship: ['CA'] }), applyForPermit, { account: ACCOUNT, role: 'actor', engagement: 1, premium: true }), day(2027, 1, 1)).life;
         return [apps(l)[0]?.decided, permitted(l.slices, 'US', day(2027, 1, 1), 3)];
       },
     });
@@ -269,6 +282,9 @@ describe('a permit for its engagement', () => {
     expect(permitted(done, 'NZ', NOW, 40)).toBe(false);
     // Another engagement's permit doesn't stand for it, nor this one in force for another country.
     expect(permitted(l.slices, 'AU', NOW, 400)).toBe(false);
+    // A citizen of the country works there free, whatever other citizenship is held beside it.
+    // (Kazakhstan's freedom isn't a producer's, but a Kazakh producer works at home.)
+    expect(['actor', 'director', 'producer'].map((role) => permitted(life([], { citizenship: ['KZ', 'US'] }).slices, 'KZ', NOW, 400, role as 'actor'))).toEqual([true, true, true]);
   });
 
   it("is renewed for the renewal's term where the research gives one apart from the first grant's", () => {
@@ -279,11 +295,11 @@ describe('a permit for its engagement', () => {
 
   it('is renewed while its engagement is unplayed, and has lapsed once it is played', () => {
     const held: Application = { ...granted('NZ', 0), decided: { at: 0, until: null } };
-    const renewed = dispatch(life([booked('actra')], {}, [held]), renewPermit, { application: 1, premium: false });
+    const renewed = dispatch(life([booked('actra')], {}, [held]), renewPermit, { account: ACCOUNT, application: 1, premium: false });
     expect([apps(renewed)[1]?.renews, renewed.frame.schedule[0]?.kind]).toEqual([1, DECISION_KIND]);
-    expect(() => dispatch(life([played('actra', 0)], {}, [held]), renewPermit, { application: 1, premium: false })).toThrow('the permit from application 1 has lapsed');
+    expect(() => dispatch(life([played('actra', 0)], {}, [held]), renewPermit, { account: ACCOUNT, application: 1, premium: false })).toThrow('the permit from application 1 has lapsed');
     // While it is in force, the engagement isn't applied for again.
-    expect(() => dispatch(life([booked('pact-equity')], {}, [{ ...held, country: 'GB' }]), applyForPermit, { role: 'actor', engagement: 1, premium: false })).toThrow('a permit is applied for already for that engagement');
+    expect(() => dispatch(life([booked('pact-equity')], {}, [{ ...held, country: 'GB' }]), applyForPermit, { account: ACCOUNT, role: 'actor', engagement: 1, premium: false })).toThrow('a permit is applied for already for that engagement');
   });
 });
 
@@ -291,7 +307,7 @@ describe('permits.renew', () => {
   const held = (decided: Application['decided'], country: Application['country'] = 'GB'): Application => ({ ...granted(country, 0), decided });
 
   it("lodges a renewal of a permit in force: the renewal's fees, none known where the research names none, and a new decision", () => {
-    const gb = dispatch(life([booked('pact-equity')], {}, [held({ at: 0, until: NOW + 1 })]), renewPermit, { application: 1, premium: false });
+    const gb = dispatch(life([booked('pact-equity')], {}, [held({ at: 0, until: NOW + 1 })]), renewPermit, { account: ACCOUNT, application: 1, premium: false });
     expect(apps(gb)[1]).toEqual({ id: 2, at: NOW, country: 'GB', role: 'actor', engagement: 1, renews: 1, by: 'worker', premium: false, fees: null, decided: null });
     expect(gb.frame.schedule).toEqual([{ id: 1, at: day(2026, 11, 23), kind: DECISION_KIND, data: { application: 2 } }]);
     // Japan's fee is a change of status's or an extension's, so asked at both.
@@ -302,28 +318,28 @@ describe('permits.renew', () => {
   });
 
   it("is refused where there's no such application, it wasn't granted, it has lapsed, it doesn't renew, or it's renewed already", () => {
-    const at = (a: Application, who: Partial<Person> = {}) => () => dispatch(life([booked('pact-equity')], who, [a]), renewPermit, { application: 1, premium: false });
-    expect(() => dispatch(life([]), renewPermit, { application: 1, premium: false })).toThrow("there's no application 1");
+    const at = (a: Application, who: Partial<Person> = {}) => () => dispatch(life([booked('pact-equity')], who, [a]), renewPermit, { account: ACCOUNT, application: 1, premium: false });
+    expect(() => dispatch(life([]), renewPermit, { account: ACCOUNT, application: 1, premium: false })).toThrow("there's no application 1");
     expect(at(held(null))).toThrow("application 1 wasn't granted");
     expect(at(held({ at: 0, refused: 'no' }))).toThrow("application 1 wasn't granted");
     expect(at(held({ at: 0, until: NOW }))).toThrow('the permit from application 1 has lapsed');
     expect(at(held({ at: 0, until: NOW + 1 }, 'AU'))).toThrow("AU's permit doesn't renew");
     expect(at(held({ at: 0, until: NOW + 1 }, 'CZ'))).toThrow("Some of what Czechia asks of someone from abroad for a work permit isn't known to this game yet: whether it renews.");
     expect(at(held({ at: 0, until: NOW + 1 }), { citizenship: ['IE'] })).toThrow('you need no permit to work in GB');
-    const once = dispatch(life([booked('pact-equity')], {}, [held({ at: 0, until: NOW + 1 })]), renewPermit, { application: 1, premium: true });
+    const once = dispatch(life([booked('pact-equity')], {}, [held({ at: 0, until: NOW + 1 })]), renewPermit, { account: ACCOUNT, application: 1, premium: true });
     expect(apps(once)[1]?.fees).toBeNull();
-    expect(() => dispatch(once, renewPermit, { application: 1, premium: false })).toThrow('the permit from application 1 is renewed already');
+    expect(() => dispatch(once, renewPermit, { account: ACCOUNT, application: 1, premium: false })).toThrow('the permit from application 1 is renewed already');
     const refusedRenewal: Application = { ...held({ at: 0, refused: 'no' }), id: 2, renews: 1 };
     const again = life([booked('pact-equity')], {}, [held({ at: 0, until: NOW + 1 }), refusedRenewal]);
-    expect(apps(dispatch(again, renewPermit, { application: 1, premium: false }))).toHaveLength(3);
+    expect(apps(dispatch(again, renewPermit, { account: ACCOUNT, application: 1, premium: false }))).toHaveLength(3);
     // Another application's renewal doesn't stand for this one's.
     const other = life([booked('pact-equity')], {}, [held({ at: 0, until: NOW + 1 }), { ...held(null), id: 2, renews: 5 }]);
-    expect(apps(dispatch(other, renewPermit, { application: 1, premium: false }))).toHaveLength(3);
+    expect(apps(dispatch(other, renewPermit, { account: ACCOUNT, application: 1, premium: false }))).toHaveLength(3);
   });
 
   it("renews the application asked for, among several, with the fees the research names for a renewal, or none known", () => {
     const two = (country: Application['country']) => life([booked('pact-equity')], {}, [held({ at: 0, until: NOW + 1 }), { ...held({ at: 0, until: NOW + 1 }, country), id: 2 }]);
-    const fees = (country: Application['country'], premium = false) => apps(dispatch(two(country), renewPermit, { application: 2, premium }))[2];
+    const fees = (country: Application['country'], premium = false) => apps(dispatch(two(country), renewPermit, { account: ACCOUNT, application: 2, premium }))[2];
     expect([fees('GE')?.country, fees('GE')?.renews, fees('GE')?.fees]).toEqual(['GE', 2, [{ what: 'Renewal', money: fromMajor('GEL', '200') }]]);
     expect(fees('GE', true)?.fees?.map((f) => f.money)).toEqual([fromMajor('GEL', '200'), fromMajor('GEL', '400')]);
     // Taiwan's review fee is asked at both; Laos's fees aren't known.
@@ -332,7 +348,7 @@ describe('permits.renew', () => {
   });
 
   it('records the fees the research names for a renewal, with the premium service', () => {
-    const us = dispatch(life([booked('sag-aftra')], { citizenship: ['CA'] }, [held({ at: 0, until: NOW + 1 }, 'US')]), renewPermit, { application: 1, premium: true });
+    const us = dispatch(life([booked('sag-aftra')], { citizenship: ['CA'] }, [held({ at: 0, until: NOW + 1 }, 'US')]), renewPermit, { account: ACCOUNT, application: 1, premium: true });
     // The United States names no renewal fee apart from the first grant's.
     expect([apps(us)[1]?.fees, apps(us)[1]?.by, us.frame.schedule[0]?.at]).toEqual([null, 'engager', day(2026, 11, 24)]);
   });
@@ -346,7 +362,7 @@ describe('permits.renew', () => {
       twin: true,
       outcome: (renewing) => {
         const first = life([booked('pact-equity', 40)], {}, [held({ at: 0, until: day(2026, 12, 1) })]);
-        const l = pass(renewing ? dispatch(first, renewPermit, { application: 1, premium: false }) : first, day(2027, 6, 1)).life;
+        const l = pass(renewing ? dispatch(first, renewPermit, { account: ACCOUNT, application: 1, premium: false }) : first, day(2027, 6, 1)).life;
         return permitted(l.slices, 'GB', day(2027, 6, 1), 40);
       },
     });
@@ -454,14 +470,14 @@ describe('working in a country', () => {
 describe('the frame', () => {
   it('runs each command and the decision as declared, reading and writing what they say', () => {
     expect(commandIndex().filter((x) => x.id.startsWith('permits.'))).toEqual([
-      { id: 'permits.apply', reads: ['identity', 'acting', 'directing', 'producing'], writes: ['permits', 'schedule'] },
-      { id: 'permits.renew', reads: ['identity', 'acting', 'directing', 'producing'], writes: ['permits', 'schedule'] },
+      { id: 'permits.apply', reads: ['identity', 'acting', 'directing', 'producing'], writes: ['permits', 'schedule', 'accounts', 'ledger'] },
+      { id: 'permits.renew', reads: ['identity', 'acting', 'directing', 'producing'], writes: ['permits', 'schedule', 'accounts', 'ledger'] },
     ]);
     expect([DECISION_KIND, PERMITS_START]).toEqual(['permits.decision', { applications: [] }]);
   });
 
   it('is the same twice over', () => {
-    const run = () => pass(dispatch(life([booked('pact-equity')]), applyForPermit, { role: 'actor', engagement: 1, premium: true }), day(2027, 1, 1)).life;
+    const run = () => pass(dispatch(life([booked('pact-equity')]), applyForPermit, { account: ACCOUNT, role: 'actor', engagement: 1, premium: true }), day(2027, 1, 1)).life;
     expect(run()).toEqual(run());
   });
 });
@@ -497,15 +513,15 @@ describe('an engagement in another role', () => {
   });
 
   it('is applied for there, the engager or the worker as the research says, and refused once done', () => {
-    const l = dispatch(roles([film()], [project()]), applyForPermit, { role: 'director', engagement: 1, premium: false });
+    const l = dispatch(roles([film()], [project()]), applyForPermit, { account: ACCOUNT, role: 'director', engagement: 1, premium: false });
     expect([apps(l)[0]?.country, apps(l)[0]?.role, apps(l)[0]?.engagement, apps(l)[0]?.by]).toEqual(['NO', 'director', 1, permitOf('NO')?.by]);
-    const p = dispatch(roles([film()], [project({ market: 'DE' })]), applyForPermit, { role: 'producer', engagement: 1, premium: false });
+    const p = dispatch(roles([film()], [project({ market: 'DE' })]), applyForPermit, { account: ACCOUNT, role: 'producer', engagement: 1, premium: false });
     expect([apps(p)[0]?.country, apps(p)[0]?.role]).toEqual(['DE', 'producer']);
-    expect(() => dispatch(roles([film({ cut: 70 })]), applyForPermit, { role: 'director', engagement: 1, premium: false })).toThrow('film 1 is cut');
-    expect(() => dispatch(roles([], [project({ shot: { at: 0, days: 25 } })]), applyForPermit, { role: 'producer', engagement: 1, premium: false })).toThrow('project 1 is shot');
+    expect(() => dispatch(roles([film({ cut: 70 })]), applyForPermit, { account: ACCOUNT, role: 'director', engagement: 1, premium: false })).toThrow('film 1 is cut');
+    expect(() => dispatch(roles([], [project({ shot: { at: 0, days: 25 } })]), applyForPermit, { account: ACCOUNT, role: 'producer', engagement: 1, premium: false })).toThrow('project 1 is shot');
     // The same engagement in another role is another application.
-    expect(() => dispatch(l, applyForPermit, { role: 'director', engagement: 1, premium: false })).toThrow('a permit is applied for already for that engagement');
-    expect(apps(dispatch({ ...l, slices: { ...l.slices, producing: { projects: [project({ market: 'DE' })] } } }, applyForPermit, { role: 'producer', engagement: 1, premium: false }))).toHaveLength(2);
+    expect(() => dispatch(l, applyForPermit, { account: ACCOUNT, role: 'director', engagement: 1, premium: false })).toThrow('a permit is applied for already for that engagement');
+    expect(apps(dispatch({ ...l, slices: { ...l.slices, producing: { projects: [project({ market: 'DE' })] } } }, applyForPermit, { account: ACCOUNT, role: 'producer', engagement: 1, premium: false }))).toHaveLength(2);
     // A permit for an engagement's term is in force until that engagement is done.
     const held: Application = { ...granted('NO', 0), role: 'director', decided: { at: 0, until: null } };
     expect([permitted(roles([film()], [], {}, [held]).slices, 'NO', NOW, 400, 'director'), permitted(roles([film({ cut: 70 })], [], {}, [held]).slices, 'NO', NOW, 400, 'director')]).toEqual([true, false]);

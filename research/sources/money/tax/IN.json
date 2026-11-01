@@ -1,0 +1,321 @@
+{
+ "topic": "tax.IN",
+ "read": "2026-11-01",
+ "note": "Read 2026-11-01 at the owner's word (\"Build those first 3 starting with ledger first\"; \"Retry the blocked tax facts once all countries land\"): the tax on a screen worker's pay in India: a resident's income tax, social contributions, what is withheld at source, a non-resident artiste's withholding, any authors' treatment, VAT's threshold, the tax year. Research and retry subagents (workbench/briefs/BRIEF-tax*.md); every quote checked by the lead against its saved page.",
+ "figures": [
+  {
+   "item": "residents",
+   "finding": "For tax year 2026-27 (the first under the Income-tax Act, 2025) the default regime taxes total income at nil to ₹4 lakh, then 5%, 10%, 15%, 20% and 25% in ₹4 lakh steps to ₹24 lakh and 30% above, plus surcharge from ₹50 lakh and 4% health and education cess; a resident gets a rebate wiping out the tax up to ₹12 lakh of income (up to ₹60,000). There is no state income tax.",
+   "value": {
+    "currency": "INR",
+    "brackets": [
+     {
+      "from": 0,
+      "to": 400000,
+      "rate": 0
+     },
+     {
+      "from": 400000,
+      "to": 800000,
+      "rate": 0.05
+     },
+     {
+      "from": 800000,
+      "to": 1200000,
+      "rate": 0.1
+     },
+     {
+      "from": 1200000,
+      "to": 1600000,
+      "rate": 0.15
+     },
+     {
+      "from": 1600000,
+      "to": 2000000,
+      "rate": 0.2
+     },
+     {
+      "from": 2000000,
+      "to": 2400000,
+      "rate": 0.25
+     },
+     {
+      "from": 2400000,
+      "to": null,
+      "rate": 0.3
+     }
+    ],
+    "rebate": {
+     "incomeUpTo": 1200000,
+     "max": 60000,
+     "marginalRelief": true
+    },
+    "surcharge": [
+     {
+      "over": 5000000,
+      "rate": 0.1
+     },
+     {
+      "over": 10000000,
+      "rate": 0.15
+     },
+     {
+      "over": 20000000,
+      "rate": 0.25
+     }
+    ],
+    "cess": 0.04,
+    "oldRegime": "optional under s.202(4): nil to 2.5 lakh, 5% to 5 lakh, 20% to 10 lakh, 30% above (rebate up to ₹12,500 to ₹5 lakh)",
+    "regional": null
+   },
+   "applies": "Individuals, default regime (s.202), tax year 2026-27; the same slabs applied for AY 2026-27 under s.115BAC of the 1961 Act",
+   "sources": [
+    {
+     "src": 0,
+     "said": "There is no change proposed in tax rates either in these specific sections or in the First … 1. Upto ₹ 4,00,000 Nil … 5. From ₹ 16,00,001 to ₹ 20,00,000 20% … 6. From ₹ 20,00,001 to ₹ 24,00,000 25% … 7. Above ₹ 24,00,000 30% … exceeding fifty lakh rupees but not exceeding one crore rupees, at the rate of 10% of such income-tax; … For tax year 2026-27, “Health and Education Cess on income-tax” is to be levied at the rate of 4% on the amount of income-tax so computed, inclusive of surcharge wherever applicable, in all cases."
+    },
+    {
+     "src": 1,
+     "said": "(a) the income does not exceed twelve lakh rupees, 100% of the income-tax payable or ₹ 60000, whichever is less;"
+    },
+    {
+     "src": 2,
+     "said": "Up to ₹ 4,00,000 Nil ₹ 2,50,001 - ₹ 5,00,000** 5% above ₹ 2,50,000 ₹ 4,00,001 - ₹ 8,00,000 5% above ₹ 4,00,000"
+    }
+   ]
+  },
+  {
+   "item": "year",
+   "finding": "The tax year is the financial year from 1 April to 31 March; a return is due by 31 July after it for most individuals, the Finance Bill 2026 proposing 31 August for a professional whose accounts need no audit, and 31 October where they are audited.",
+   "value": {
+    "currency": "INR",
+    "start": "04-01",
+    "end": "03-31",
+    "returnDue": {
+     "default": "07-31",
+     "professionNoAudit": "08-31 (Finance Bill 2026 proposal)",
+     "audited": "10-31"
+    }
+   },
+   "applies": "Individuals, from tax year 2026-27",
+   "sources": [
+    {
+     "src": 1,
+     "said": "3. (1) For the purposes of this Act, “tax year” means the twelve months period of the financial year commencing on the 1st April. … 5. Any other assessee. 31st July. … Sl. No. 1). 31st October."
+    },
+    {
+     "src": 0,
+     "said": "As above 31st August. … 5. It is proposed that the amendments made in Income-tax Act, 2025 shall come into force from the 1st day of April, 2026 for tax year 2026-27 and subsequent tax years."
+    }
+   ]
+  },
+  {
+   "item": "withholding",
+   "finding": "A payer (a specified person) deducts 10% from fees for professional services and royalty above ₹50,000, but 2% from royalty for the sale, distribution or exhibition of films; salary is taxed at source at the slab rates.",
+   "value": {
+    "currency": "INR",
+    "professionalFees": 0.1,
+    "royalty": 0.1,
+    "filmRoyalty": 0.02,
+    "threshold": 50000,
+    "salary": "average slab rate (section 392)"
+   },
+   "applies": "Residents, from 1 April 2026 (s.393(1) Table Sl. No. 6(iii)); whether an actor or director is a notified profession was not read",
+   "sources": [
+    {
+     "src": 1,
+     "said": "(ii) royalty in the nature of consideration for sale, distribution or exhibition of cinematographic films; … (b) 10% of such sum in cases other than (a). … Threshold limit: (i) for (a), (b), (d) and (e) of Col. B: ₹ 50,000. … (28) “professional services” means services rendered by a person in the course of carrying on legal, medical, engineering or architectural profession or the profession of accountancy or technical consultancy or interior decoration or advertising or such other profession as may be notified by the Board"
+    }
+   ]
+  },
+  {
+   "item": "nonResident",
+   "finding": "A non-resident entertainer who is not an Indian citizen pays 20% on gross income from performing in India, with no deduction for expenses, withheld at 20% by any payer; no return is needed if that was the only income and tax was deducted.",
+   "value": {
+    "rate": 0.2,
+    "base": "gross income from performance in India",
+    "deductions": false,
+    "withholding": 0.2,
+    "final": true,
+    "threshold": null,
+    "plusSurchargeAndCess": true
+   },
+   "applies": "Non-resident, non-citizen entertainers, tax year 2026-27 (s.211; formerly s.115BBA/194E)",
+   "sources": [
+    {
+     "src": 1,
+     "said": "(c) being an entertainer, who is not a citizen of India and is a non-resident, includes any income received or receivable from his performance in India, … or (c). 20% … (2) No deduction in respect of any expenditure or allowance shall be allowed … (3) It shall not be necessary for the assessee to furnish a return of his income … citizen of India; or (b) a non-resident sports association or institution. Any person. 20%"
+    }
+   ]
+  },
+  {
+   "item": "authors",
+   "finding": "A resident author of a book (not a textbook) may deduct royalty or copyright income up to ₹3 lakh, but only under the optional old regime; the default regime excludes Chapter VIII deductions. No deduction for screenplays was found.",
+   "value": {
+    "currency": "INR",
+    "bookRoyaltyDeductionMax": 300000,
+    "defaultRegime": false
+   },
+   "applies": "Resident authors of books, tax year 2026-27",
+   "sources": [
+    {
+     "src": 1,
+     "said": "151. (1) Where, in the case of an individual, being an author resident in India, … (2) The deduction under this section shall be equal to the whole of such income referred to in sub-section (1), or an amount of ₹ 300000, whichever is less. … (xii) Chapter VIII other than the provisions of sections 124(1) and"
+    }
+   ]
+  },
+  {
+   "item": "vat",
+   "finding": "A supplier of services must register for GST once aggregate turnover in a financial year exceeds ₹20 lakh (₹10 lakh in a special category State, which the Government may raise up to ₹20 lakh at that State's request); the GST rate on a screen worker's services is not established here.",
+   "value": {
+    "currency": "INR",
+    "registrationThreshold": 2000000,
+    "specialCategoryStates": 1000000,
+    "specialCategoryMaxIfEnhanced": 2000000,
+    "rate": "not read (blocker)"
+   },
+   "applies": "CGST Act, 2017 s. 22(1) as enacted, with the second proviso inserted by the CGST (Amendment) Act, 2018 (copies hosted by the GST Council); later amendments for goods-only suppliers not read.",
+   "sources": [
+    {
+     "src": 3,
+     "said": "22. (1) Every supplier shall be liable to be registered under this Act in the State or Union territory, other than special category States, from where he makes a taxable supply of goods or services or both, if his aggregate turnover in a financial year exceeds twenty lakh rupees: Provided that where such person makes taxable supplies of goods or services or both from any of the special category States, he shall be liable to be registered if his aggregate turnover in a financial year exceeds ten lakh rupees."
+    },
+    {
+     "src": 4,
+     "said": "11. In section 22 of the principal Act,–– (a) in sub-section (1), after the proviso, the following proviso shall be inserted, namely:— “Provided further that the Government may, at the request of a special category State and on the recommendations of the Council, enhance the aggregate turnover referred to in the first proviso from ten lakh rupees to such amount, not exceeding twenty lakh rupees and subject to such conditions and limitations, as may be so notified.\";"
+    }
+   ]
+  },
+  {
+   "item": "social",
+   "finding": "Under the Code on Social Security, 2020 the employer pays 10% of wages to the provident fund (12% in establishments the Government notifies) and the employee the same, of which up to 8.33% goes to the pension fund; the wage ceiling for mandatory EPFO coverage and contributions rose from ₹15,000 to ₹25,000 a month on 17 September 2026. Under ESI the employer pays 3.25% and the employee 0.75% of wages (from 1 July 2019).",
+   "value": {
+    "currency": "INR",
+    "providentFund": {
+     "employer": 0.1,
+     "employerNotifiedEstablishments": 0.12,
+     "employeeEqualToEmployer": true,
+     "pensionShareMax": 0.0833
+    },
+    "epfWageCeilingMonthly": {
+     "until2026-09-16": 15000,
+     "from2026-09-17": 25000
+    },
+    "ESI": {
+     "employer": 0.0325,
+     "employee": 0.0075,
+     "from": "2019-07-01"
+    }
+   },
+   "applies": "Employees of covered establishments; a self-employed screen worker is outside EPF and ESI. Which establishments are notified for 12% and the ESI wage limit were not read from a primary source; no change to the ESI rates after 2019 was found.",
+   "sources": [
+    {
+     "src": 5,
+     "said": "16. (1) The Central Government may, for the purposes of— (a) the Provident Fund Scheme, establish a Provident Fund where the contributions paid by the employer to the fund shall be ten per cent. of the wages for the time being payable to each of the employees … and the employee's contribution shall be equal to the contribution payable by the employer in respect of him … for the words \"ten per cent.\" at both the places where they occur, the words \"twelve per cent.\" shall be substituted: … such sums from the employer's contribution under clause (a) not exceeding eight and one-third per cent. of the wages"
+    },
+    {
+     "src": 6,
+     "said": "revision of the statutory wage ceiling from Rs.15,000 to Rs.25,000 per month, effective September 17, 2026. The revision follows the Union cabinet decision and Gazette Notification S.O. 5109(E) issued by the ministry of labour and employment. … the maximum employer pension contribution at 8.33% will rise from Rs.1,250 to Rs.2,083 per month"
+    },
+    {
+     "src": 7,
+     "said": "from 4.75% to 3.25% … from 1.75% to 0.75% … Reduced rates will be effective from 01.07.2019"
+    }
+   ]
+  }
+ ],
+ "country": "IN",
+ "sources": [
+  {
+   "url": "https://www.indiabudget.gov.in/doc/memo.pdf",
+   "title": "Memorandum explaining the provisions in the Finance Bill, 2026 (Ministry of Finance, indiabudget.gov.in)",
+   "read": "2026-11-01",
+   "kind": "primary",
+   "said": "There is no change proposed in tax rates either in these specific sections or in the First … 1. Upto ₹ 4,00,000 Nil … 5. From ₹ 16,00,001 to ₹ 20,00,000 20% … 6. From ₹ 20,00,001 to ₹ 24,00,000 25% … 7. Above ₹ 24,00,000 30% … exceeding fifty lakh rupees but not exceeding one crore rupees, at the rate of 10% of such income-tax; … For tax year 2026-27, “Health and Education Cess on income-tax” is to be levied at the rate of 4% on the amount of income-tax so computed, inclusive of surcharge wherever applicable, in all cases. … As above 31st August. … 5. It is proposed that the amendments made in Income-tax Act, 2025 shall come into force from the 1st day of April, 2026 for tax year 2026-27 and subsequent tax years."
+  },
+  {
+   "url": "https://sansad.in/getFile/BillsTexts/LSBillTexts/Asintroduced/income%20tax%202811202521448PM.pdf?source=legislation",
+   "title": "The Income-tax (No.2) Bill, 2025, Bill No. 104 of 2025, as introduced in Lok Sabha (enacted as the Income-tax Act, 2025, Act No. 30 of 2025; the gazette copy was not reachable)",
+   "read": "2026-11-01",
+   "kind": "primary",
+   "said": "(a) the income does not exceed twelve lakh rupees, 100% of the income-tax payable or ₹ 60000, whichever is less; … 3. (1) For the purposes of this Act, “tax year” means the twelve months period of the financial year commencing on the 1st April. … 5. Any other assessee. 31st July. … Sl. No. 1). 31st October. … (ii) royalty in the nature of consideration for sale, distribution or exhibition of cinematographic films; … (b) 10% of such sum in cases other than (a). … Threshold limit: (i) for (a), (b), (d) and (e) of Col. B: ₹ 50,000. … (28) “professional services” means services rendered by a person in the course of carrying on legal, medical, engineering or architectural profession or the profession of accountancy or technical consultancy or interior decoration or advertising or such other profession as may be notified by the Board … (c) being an entertainer, who is not a citizen of India and is a non-resident, includes any income received or receivable from his performance in India, … or (c). 20% … (2) No deduction in respect of any expenditure or allowance shall be allowed … (3) It shall not be necessary for the assessee to furnish a return of his income … citizen of India; or (b) a non-resident sports association or institution. Any person. 20% … 151. (1) Where, in the case of an individual, being an author resident in India, … (2) The deduction under this section shall be equal to the whole of such income referred to in sub-section (1), or an amount of ₹ 300000, whichever is less. … (xii) Chapter VIII other than the provisions of sections 124(1) and"
+  },
+  {
+   "url": "https://www.incometax.gov.in/iec/foportal/help/individual-business-profession",
+   "title": "Income Tax Department e-filing portal: Individual having Income from Business / Profession for AY 2026-2027",
+   "read": "2026-11-01",
+   "kind": "primary",
+   "said": "Up to ₹ 4,00,000 Nil ₹ 2,50,001 - ₹ 5,00,000** 5% above ₹ 2,50,000 ₹ 4,00,001 - ₹ 8,00,000 5% above ₹ 4,00,000"
+  },
+  {
+   "url": "https://gstcouncil.gov.in/sites/default/files/2024-04/annexure-3_cgst-act_2017.pdf",
+   "title": "The Central Goods and Services Tax Act, 2017 (Act No. 12 of 2017), GST Council copy",
+   "read": "2026-11-01",
+   "kind": "primary",
+   "said": "22. (1) Every supplier shall be liable to be registered under this Act in the State or Union territory, other than special category States, from where he makes a taxable supply of goods or services or both, if his aggregate turnover in a financial year exceeds twenty lakh rupees: Provided that where such person makes taxable supplies of goods or services or both from any of the special category States, he shall be liable to be registered if his aggregate turnover in a financial year exceeds ten lakh rupees."
+  },
+  {
+   "url": "https://gstcouncil.gov.in/sites/default/files/2024-03/annexure-3_cgst-amendment-act_2018.pdf",
+   "title": "The Central Goods and Services Tax (Amendment) Act, 2018, GST Council copy",
+   "read": "2026-11-01",
+   "kind": "primary",
+   "said": "11. In section 22 of the principal Act,–– (a) in sub-section (1), after the proviso, the following proviso shall be inserted, namely:— “Provided further that the Government may, at the request of a special category State and on the recommendations of the Council, enhance the aggregate turnover referred to in the first proviso from ten lakh rupees to such amount, not exceeding twenty lakh rupees and subject to such conditions and limitations, as may be so notified.\";"
+  },
+  {
+   "url": "https://www.labour.gov.in/static/uploads/2025/07/b0620548445580767b5c0d18c95c26f7.pdf",
+   "title": "The Code on Social Security, 2020 (No. 36 of 2020), Gazette of India copy hosted by the Ministry of Labour & Employment",
+   "read": "2026-11-01",
+   "kind": "primary",
+   "said": "16. (1) The Central Government may, for the purposes of— (a) the Provident Fund Scheme, establish a Provident Fund where the contributions paid by the employer to the fund shall be ten per cent. of the wages for the time being payable to each of the employees … and the employee's contribution shall be equal to the contribution payable by the employer in respect of him … for the words \"ten per cent.\" at both the places where they occur, the words \"twelve per cent.\" shall be substituted: … such sums from the employer's contribution under clause (a) not exceeding eight and one-third per cent. of the wages"
+  },
+  {
+   "url": "https://www.pib.gov.in/PressReleasePage.aspx?PRID=2313829&reg=48&lang=2",
+   "title": "PIB (Ministry of Labour & Employment), 23 September 2026: EPFO Raises Wage Ceiling from Rs. 15,000 to Rs. 25,000",
+   "read": "2026-11-01",
+   "kind": "primary",
+   "said": "revision of the statutory wage ceiling from Rs.15,000 to Rs.25,000 per month, effective September 17, 2026. The revision follows the Union cabinet decision and Gazette Notification S.O. 5109(E) issued by the ministry of labour and employment. … the maximum employer pension contribution at 8.33% will rise from Rs.1,250 to Rs.2,083 per month"
+  },
+  {
+   "url": "https://www.pib.gov.in/newsite/PrintRelease.aspx?relid=190452&reg=48&lang=2",
+   "title": "PIB (Ministry of Labour & Employment), 13 June 2019: Government Reduces the Rate of ESI Contribution from 6.5% to 4%",
+   "read": "2026-11-01",
+   "kind": "primary",
+   "said": "from 4.75% to 3.25% … from 1.75% to 0.75% … Reduced rates will be effective from 01.07.2019"
+  }
+ ],
+ "blockers": [
+  {
+   "item": "vat",
+   "sought": "GST rate on a freelance screen worker's services in 2026 (Notification No. 11/2017-Central Tax (Rate) as amended, including No. 15/2025 from 22 September 2025)",
+   "tried": {
+    "institution": "taxinformation.cbic.gov.in section 22 page and www.gst.gov.in, 2026-11-01: connection reset by the proxy; cbic-gst.gov.in home read, Act pages not linked in static HTML || retry 2026-11-01: gstcouncil.gov.in read: CGST Act 2017 and 2018 amendment saved (threshold now a figure); its CGST rate-notification list stops at 08/2025-CT(Rate) of January 2025, No. 15/2025 not listed; guessed paths /sites/default/files/2025-09/ctr15-2025.pdf etc. HTTP 404; cbic-gst.gov.in/hindi/central-tax-rate.html lists notifications only to 2022",
+    "official-register": "egazette.gov.in: TLS chain not verifiable (curl 60), not bypassed || retry 2026-11-01: indiacode.gov.in DSpace API (/server/api/discover/search/objects) searched: Notification 11/2017-CT(Rate) item found (last modified 2019), no consolidated 2025 version; egazette.gov.in still unreachable (connection reset)",
+    "web-search": "2026-11-01 'cbic-gst.gov.in CGST Act section 22 ... twenty lakh': secondary pages only (state replicas, commentary) || retry 2026-11-01: 'notification 15/2025-Central Tax (Rate) services rate rationalisation 22 September 2025 \"other services\" 9 per cent heading 9999 pdf': taxheal, gstgyaan, taxo.online copies only",
+    "trade-press": "taxguru, gstzen commentary seen in results; not used as they do not quote a dated primary URL readable here || retry 2026-11-01: gstgyaan.com and taxheal.com describe 15/2025-CTR (G.S.R. 663(E)) but the actor/performer entry rate is not quoted with a readable government URL",
+    "archive": "web.archive.org blocked by egress policy for these fetches (403 'Blocked by egress policy') || retry 2026-11-01: web.archive.org reset the connection (curl 35) on every request 2026-11-01; archive.org availability API reachable"
+   }
+  },
+  {
+   "item": "social",
+   "sought": "Which establishments are notified for the 12% provident-fund rate, the ESI wage limit for 2026, and any scheme for film workers (Cine Workers Welfare Fund)",
+   "tried": {
+    "institution": "epfindia.gov.in Contribution_Rates page, 2026-11-01: HTTP 403 (not read another way) || retry 2026-11-01: epfindia.gov.in redirects to epfo.gov.in: HTTP 403 (CloudFront); esic.gov.in connection reset; labour.gov.in read (Code on Social Security PDF, Cabinet release PDF saved); cinewelfare.gov.in unreachable",
+    "official-register": "egazette.gov.in unreachable (TLS) || retry 2026-11-01: labour.gov.in static PDF of the Code on Social Security, 2020 read (s. 16 rates now a figure); indiacode.gov.in DSpace API reachable but EPF Scheme, 2026 not located",
+    "web-search": "2026-11-01 'EPFO employee employer contribution 12% wage ceiling 15000 official epfindia 2026': secondary reports say 12% each and a wage ceiling raised from Rs 15,000 to Rs 25,000 from 17 September 2026 under an EPF Scheme 2026; no EPFO page or gazette notification reached || retry 2026-11-01: 'pib.gov.in EPF wage ceiling 25,000 Employees\\' Provident Fund Scheme 2026 notification contribution 12 per cent' and 'ESIC contribution rate employer 3.25 per cent employee 0.75 per cent wage limit 21,000' (allowed domains pib.gov.in, labour.gov.in, esic.gov.in): PIB releases 2313829, 2313790, 2314111, 190452 read and saved",
+    "trade-press": "livelaw.in, moneylife.in, and an EPFO FAQ copy on staffnews.in seen in results; none quotes a readable primary URL, not used || retry 2026-11-01: azbpartners, corporateprofessionals, taxaj describe EPF Scheme 2026 (G.S.R. 525(E)) at 12% each; not used, no readable government copy",
+    "archive": "web.archive.org blocked by egress policy || retry 2026-11-01: web.archive.org reset the connection (curl 35) on every request 2026-11-01; archive.org availability API reachable"
+   }
+  },
+  {
+   "item": "residents",
+   "sought": "The enacted Income-tax Act, 2025 text (gazette, Act No. 30 of 2025) to confirm the Bill clauses quoted",
+   "tried": {
+    "institution": "incometaxindia.gov.in section pages: HTTP 403 || retry 2026-11-01: incometaxindia.gov.in/w/section-1-1 and /w/section-1-269: HTTP 403 Access Denied (Akamai); incometax.gov.in reachable but no Act text at /iec/foportal/income-tax-act-2025 (404)",
+    "official-register": "egazette.gov.in/WriteReadData/2025/265620.pdf: TLS verification failure, not bypassed || retry 2026-11-01: indiacode.gov.in DSpace API searched for \"Income-tax Act, 2025\" and act_number 30 / act_year 2025: only the Income-tax Act, 1961 (marked repealed by Act 30 of 2025) and the Income-tax (Amendment) Ordinance, 2026 returned; legislative.gov.in is a JavaScript shell",
+    "web-search": "2026-11-01: found the gazette and sansad URLs; the Bill as introduced was read || retry 2026-11-01: '\"Income-tax Act, 2025\" \"No. 30 of 2025\" pdf full text': ITD section pages (403 here), taxheal, taxmann, eirc-icai, RSM",
+    "trade-press": "not used || retry 2026-11-01: eirc-icai.org overview and RSM India publication seen; not read as they are not the enacted text",
+    "archive": "Wayback snapshot 20260324194009 exists; fetch blocked by egress policy || retry 2026-11-01: web.archive.org reset the connection (curl 35) on every request 2026-11-01; archive.org availability API reachable"
+   }
+  }
+ ]
+}

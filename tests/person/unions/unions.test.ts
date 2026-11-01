@@ -32,8 +32,9 @@ import {
 } from '../../../src/person/unions/unions.ts';
 import { falsifyAny } from '../../support/falsify-core.ts';
 import { identity, person } from '../../support/person.ts';
+import { ACCOUNT, minorIn, purse } from '../../support/purse.ts';
 
-type Lives = { identity: IdentitySlice; acting: ActingSlice; career: CareerSlice; scripts: ScriptsSlice; directing: DirectingSlice; unions: UnionsSlice };
+type Lives = { identity: IdentitySlice; acting: ActingSlice; career: CareerSlice; scripts: ScriptsSlice; directing: DirectingSlice; unions: UnionsSlice } & ReturnType<typeof purse>;
 
 const SEED = '0123456789abcdef';
 const day = (y: number, m: number, d: number) => daysFromCivil(y, m, d) * SECONDS_PER_DAY;
@@ -58,6 +59,8 @@ interface Given {
   films?: Film[];
   joined?: Membership[];
   now?: number;
+  /** The money slices: an account in dollars holding a million, where none is given. */
+  purse?: ReturnType<typeof purse>;
 }
 
 function life(g: Given = {}): Life<Lives> {
@@ -76,10 +79,11 @@ function life(g: Given = {}): Life<Lives> {
     scripts,
     directing: { ...structuredClone(DIRECTING_START), films: (g.films ?? []).map((f, i) => ({ ...f, id: i + 1 })) },
     unions: { joined: g.joined ?? [] },
+    ...(g.purse ?? purse()),
   });
 }
 
-const join = (g: Given, union: string) => dispatch(life(g), joinUnion, { union }).slices.unions.joined;
+const join = (g: Given, union: string) => dispatch(life(g), joinUnion, { account: ACCOUNT, union }).slices.unions.joined;
 const joined = (g: Given, union: string) => join(g, union).at(-1);
 const offer = (g: Given, union: Union) => terms(life(g).slices, union, g.now ?? NOW);
 
@@ -109,7 +113,7 @@ describe("the unions' figures", () => {
   });
 
   it('declare what joining reads and writes', () => {
-    expect(commandIndex().filter((x) => x.id.startsWith('unions.'))).toEqual([{ id: 'unions.join', reads: ['identity', 'acting', 'career', 'scripts', 'directing'], writes: ['unions'] }]);
+    expect(commandIndex().filter((x) => x.id.startsWith('unions.'))).toEqual([{ id: 'unions.join', reads: ['identity', 'acting', 'career', 'scripts', 'directing'], writes: ['unions', 'accounts', 'ledger'] }]);
     expect(UNIONS_START).toEqual({ joined: [] });
   });
 });
@@ -124,6 +128,14 @@ describe('SAG-AFTRA', () => {
     const g = { person: { legal: { first: 'Adelaide', middle: 'June', last: 'Reyes' }, preferred: 'June Reyes' }, parts: [played('sag-aftra', 0, 300_001)] };
     expect(join(g, 'sag-aftra')).toEqual([{ union: 'sag-aftra', at: NOW, standing: 'full', name: 'June Reyes', initiation: usd('3121'), dues: usd('246.14') }]);
     expect(() => join({ ...g, joined: [card('sag-aftra', 0)] }, 'sag-aftra')).toThrow('the person is a member of sag-aftra already');
+    // The fee and the year's dues are paid from the account named, to the union; refused where it can't cover them.
+    const paid = dispatch(life(g), joinUnion, { account: ACCOUNT, union: 'sag-aftra' }).slices.ledger;
+    expect([minorIn(paid, ACCOUNT), minorIn(paid, 'world:sag-aftra:USD')]).toEqual([100_000_000 - 312_100 - 24_614, 312_100 + 24_614]);
+    expect(() => join({ ...g, purse: purse('USD', 312_099) }, 'sag-aftra')).toThrow("everyday:1 can't cover an initiation fee");
+    expect(() => join({ ...g, purse: purse('USD', 312_100 + 24_613) }, 'sag-aftra')).toThrow("everyday:1 can't cover dues");
+    // Equity's first year has no initiation fee: its subscription alone, carried from pounds.
+    const equity = dispatch(life({ parts: [played('pact-equity', 0, 5_000_000, null)], purse: purse('GBP') }), joinUnion, { account: ACCOUNT, union: 'equity-uk' }).slices.ledger;
+    expect(minorIn(equity, ACCOUNT)).toBe(100_000_000 - 19_800);
   });
 
   it('takes a paid-up year in ACTRA and a part played under it', () => {

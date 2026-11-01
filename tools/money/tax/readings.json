@@ -1,0 +1,443 @@
+{
+ "AU": {
+  "currency": {"fig": 0, "path": ["currency"]},
+  "year": {"start": {"fig": 6, "path": ["years", 1, "start"]}, "end": {"fig": 6, "path": ["years", 0, "end"]}, "due": {"fig": 6, "path": ["returnDue", "2025-26"]}},
+  "residents": [
+   {"from": {"fig": 6, "path": ["years", 0, "start"]}, "layers": [
+    {"bands": {"fig": 0, "path": ["brackets2025_26"]}},
+    {"over": {"fig": 0, "path": ["medicareLevy", "noLevyAtOrBelow"]}, "bands": [{"from": 0, "to": null, "rate": {"fig": 0, "path": ["medicareLevy", "rate"]}}]}
+   ]},
+   {"from": {"fig": 6, "path": ["years", 1, "start"]}, "layers": [
+    {"bands": {"fig": 0, "path": ["brackets2026_27"]}},
+    {"over": {"fig": 0, "path": ["medicareLevy", "noLevyAtOrBelow"]}, "bands": [{"from": 0, "to": null, "rate": {"fig": 0, "path": ["medicareLevy", "rate"]}}]}
+   ]}
+  ],
+  "social": {"employee": [], "self": []},
+  "withholding": {},
+  "nonResident": {"performer": {"bands": {"fig": 3, "path": ["individualRates"]}, "final": {"fig": 8, "path": ["final"]}}},
+  "vat": {"rate": {"fig": 5, "path": ["rate"]}, "threshold": {"fig": 5, "path": ["registrationThreshold"]}},
+  "unmodeled": ["credits", "authors"]
+ },
+ "BR": {
+  "currency": {"fig": 0, "path": ["currency"]},
+  "year": {"start": {"fig": 2, "path": ["start"]}, "due": {"fig": 2, "path": ["2025ReturnWindow"], "part": 1}, "after": 1},
+  "residents": [{"layers": [{"bands": {"fig": 0, "path": ["annual"]}}]}],
+  "social": {
+   "employee": [{"fig": 3, "path": ["employee"], "months": true}],
+   "self": [[{"from": 0, "to": {"fig": 3, "path": ["contribuinteIndividual", "to"], "months": true}, "rate": {"fig": 3, "path": ["contribuinteIndividual", "rate"]}}]]
+  },
+  "withholding": {
+   "performer": {"bands": {"fig": 1, "path": ["monthly"]}},
+   "director": {"bands": {"fig": 1, "path": ["monthly"]}},
+   "producer": {"bands": {"fig": 1, "path": ["monthly"]}},
+   "author": {"bands": {"fig": 1, "path": ["monthly"]}}
+  },
+  "nonResident": {
+   "performer": {"bands": [{"from": 0, "to": null, "rate": {"fig": 4, "path": ["rate"]}}]},
+   "director": {"bands": [{"from": 0, "to": null, "rate": {"fig": 4, "path": ["rate"]}}]},
+   "producer": {"bands": [{"from": 0, "to": null, "rate": {"fig": 4, "path": ["rate"]}}]},
+   "author": {"bands": [{"from": 0, "to": null, "rate": {"fig": 4, "path": ["rate"]}}]}
+  },
+  "vat": null,
+  "unmodeled": ["credits", "regional"]
+ },
+ "CA": {
+  "currency": {"fig": 0, "path": ["currency"]},
+  "year": {"start": {"fig": 9, "path": ["start"]}, "end": {"fig": 9, "path": ["end"]}, "due": {"fig": 9, "path": ["returnDue"]}},
+  "residents": [{"layers": [{"bands": {"fig": 0, "path": ["brackets"]}, "minimum": {"fig": 0, "path": ["basicPersonalAmount"]}}]}],
+  "social": {
+   "employee": [
+    [{"from": {"fig": 4, "path": ["CPP", "basicExemption"]}, "to": {"fig": 4, "path": ["CPP", "YMPE"]}, "rate": {"fig": 4, "path": ["CPP", "rateEach"]}}],
+    [{"from": {"fig": 4, "path": ["CPP", "YMPE"]}, "to": {"fig": 4, "path": ["CPP", "YAMPE"]}, "rate": {"fig": 4, "path": ["CPP", "cpp2RateEach"]}}],
+    [{"from": 0, "to": {"fig": 4, "path": ["EI", "maxInsurableEarnings"]}, "rate": {"fig": 4, "path": ["EI", "employeeRate"]}}]
+   ],
+   "self": [
+    [{"from": {"fig": 4, "path": ["CPP", "basicExemption"]}, "to": {"fig": 4, "path": ["CPP", "YMPE"]}, "rate": {"fig": 4, "path": ["CPP", "rateEach"], "twice": true}}],
+    [{"from": {"fig": 4, "path": ["CPP", "YMPE"]}, "to": {"fig": 4, "path": ["CPP", "YAMPE"]}, "rate": {"fig": 4, "path": ["CPP", "cpp2RateEach"], "twice": true}}]
+   ]
+  },
+  "withholding": {},
+  "nonResident": {
+   "performer": {"bands": [{"from": 0, "to": null, "rate": {"fig": 6, "path": ["actorFilmVideo", "rate"]}}], "final": {"fig": 6, "path": ["actorFilmVideo", "final"]}},
+   "director": {"bands": [{"from": 0, "to": null, "rate": {"fig": 6, "path": ["otherServices", "rate"]}}], "final": {"fig": 6, "path": ["otherServices", "final"]}},
+   "producer": {"bands": [{"from": 0, "to": null, "rate": {"fig": 6, "path": ["otherServices", "rate"]}}], "final": {"fig": 6, "path": ["otherServices", "final"]}}
+  },
+  "vat": {"rate": {"fig": 8, "path": ["GST"]}, "threshold": {"fig": 8, "path": ["smallSupplierThreshold"]}},
+  "unmodeled": ["regional", "credits"]
+ },
+ "DE": {
+  "currency": {"fig": 0, "path": ["currency"]},
+  "year": {"start": {"fig": 6, "path": ["start"]}, "end": {"fig": 6, "path": ["end"]}, "due": {"fig": 6, "path": ["returnDue"]}},
+  "residents": [{"layers": [{"zones": {"fig": 0, "path": ["zones"]}, "surtax": {"rate": {"fig": 0, "path": ["solidaritySurcharge", "rate"]}, "over": {"fig": 0, "path": ["solidaritySurcharge", "freigrenzeSingle"]}, "cap": {"fig": 0, "path": ["solidaritySurcharge", "cap"], "percent": true}}}]}],
+  "social": {
+   "employee": [
+    [{"from": 0, "to": {"fig": 1, "path": ["ceilings", "pensionUnemploymentAnnual"]}, "rate": {"fig": 1, "path": ["employeeShare", "pension"]}}],
+    [{"from": 0, "to": {"fig": 1, "path": ["ceilings", "pensionUnemploymentAnnual"]}, "rate": {"fig": 1, "path": ["employeeShare", "unemployment"]}}],
+    [{"from": 0, "to": {"fig": 1, "path": ["ceilings", "healthCareAnnual"]}, "rate": {"fig": 1, "path": ["employeeShare", "health"]}}],
+    [{"from": 0, "to": {"fig": 1, "path": ["ceilings", "healthCareAnnual"]}, "rate": {"fig": 1, "path": ["employeeShare", "healthAdditionalAverageHalf"]}}],
+    [{"from": 0, "to": {"fig": 1, "path": ["ceilings", "healthCareAnnual"]}, "rate": {"fig": 1, "path": ["employeeShare", "care"]}}],
+    [{"from": 0, "to": {"fig": 1, "path": ["ceilings", "healthCareAnnual"]}, "rate": {"fig": 1, "path": ["employeeShare", "careChildlessExtra"]}}]
+   ],
+   "self": [
+    [{"from": 0, "to": {"fig": 1, "path": ["ceilings", "pensionUnemploymentAnnual"]}, "rate": {"fig": 1, "path": ["employeeShare", "pension"]}}],
+    [{"from": 0, "to": {"fig": 1, "path": ["ceilings", "healthCareAnnual"]}, "rate": {"fig": 1, "path": ["employeeShare", "health"]}}],
+    [{"from": 0, "to": {"fig": 1, "path": ["ceilings", "healthCareAnnual"]}, "rate": {"fig": 1, "path": ["employeeShare", "healthAdditionalAverageHalf"]}}],
+    [{"from": 0, "to": {"fig": 1, "path": ["ceilings", "healthCareAnnual"]}, "rate": {"fig": 1, "path": ["employeeShare", "care"]}}],
+    [{"from": 0, "to": {"fig": 1, "path": ["ceilings", "healthCareAnnual"]}, "rate": {"fig": 1, "path": ["employeeShare", "careChildlessExtra"]}}]
+   ]
+  },
+  "withholding": {},
+  "nonResident": {
+   "performer": {"bands": [{"from": 0, "to": null, "rate": {"fig": 3, "path": ["rate"]}}], "over": {"fig": 3, "path": ["thresholdPerPerformance"]}, "surtax": {"fig": 3, "path": ["plusSolidaritySurcharge"]}, "final": {"fig": 3, "path": ["final"]}},
+   "director": {"bands": [{"from": 0, "to": null, "rate": {"fig": 3, "path": ["rate"]}}], "over": {"fig": 3, "path": ["thresholdPerPerformance"]}, "surtax": {"fig": 3, "path": ["plusSolidaritySurcharge"]}, "final": {"fig": 3, "path": ["final"]}},
+   "author": {"bands": [{"from": 0, "to": null, "rate": {"fig": 3, "path": ["royalties", "rate"]}}], "surtax": {"fig": 3, "path": ["plusSolidaritySurcharge"]}, "final": {"fig": 3, "path": ["final"]}}
+  },
+  "vat": {"rate": {"fig": 5, "path": ["standard"]}, "threshold": {"fig": 5, "path": ["smallBusiness", "previousYear"]}, "authors": {"rate": {"fig": 4, "path": ["vatOnCopyrightRights"]}}},
+  "unmodeled": ["authors"]
+ },
+ "DK": {
+  "currency": {"fig": 0, "path": ["currency"]},
+  "year": {"start": {"fig": 2, "path": ["start"]}, "due": {"fig": 2, "path": ["restskatWithoutSurcharge"]}, "after": 1},
+  "residents": [{"layers": [
+   {"bands": {"fig": 0, "path": ["state"]}, "shares": [{"rate": {"fig": 3, "path": ["amBidrag"]}}], "minimum": {"fig": 1, "path": ["personfradrag"]}},
+   {"bands": [{"from": 0, "to": null, "rate": {"fig": 0, "path": ["municipal", "example", "København"]}}], "shares": [{"rate": {"fig": 3, "path": ["amBidrag"]}}, {"rate": {"fig": 1, "path": ["beskaeftigelsesfradrag", "rate"]}, "max": {"fig": 1, "path": ["beskaeftigelsesfradrag", "max"]}}], "minimum": {"fig": 1, "path": ["personfradrag"]}}
+  ]}],
+  "social": {
+   "employee": [[{"from": 0, "to": null, "rate": {"fig": 3, "path": ["amBidrag"]}}]],
+   "self": [[{"from": 0, "to": null, "rate": {"fig": 3, "path": ["amBidrag"]}}]]
+  },
+  "withholding": {},
+  "nonResident": {},
+  "vat": {"rate": {"fig": 7, "path": ["standard"]}, "threshold": {"fig": 7, "path": ["registrationThreshold"]}, "authors": {"exempt": {"fig": 6, "path": ["vat"]}}},
+  "unmodeled": ["regional", "credits", "nonResident"]
+ },
+ "ES": {
+  "currency": {"fig": 0, "path": ["currency"]},
+  "year": {"start": {"fig": 1, "path": ["start"]}, "due": {"fig": 1, "path": ["returnWindow2025", "to"]}, "after": 1},
+  "residents": [{"layers": [{"bands": {"fig": 0, "path": ["stateBrackets"]}, "minimum": {"fig": 0, "path": ["personalMinimum"]}}]}],
+  "social": {
+   "employee": [
+    [{"from": 0, "to": {"fig": 2, "path": ["ceilingMonthly"], "months": true}, "rate": {"fig": 2, "path": ["rates", 0, "employee"]}}],
+    [{"from": 0, "to": {"fig": 2, "path": ["ceilingMonthly"], "months": true}, "rate": {"fig": 2, "path": ["rates", 2, "employee"]}}],
+    [{"from": 0, "to": {"fig": 2, "path": ["ceilingMonthly"], "months": true}, "rate": {"fig": 2, "path": ["rates", 4, "employee"]}}],
+    [{"from": 0, "to": {"fig": 2, "path": ["ceilingMonthly"], "months": true}, "rate": {"fig": 2, "path": ["rates", 5, "employee"]}}]
+   ],
+   "self": []
+  },
+  "withholding": {
+   "performer": {"bands": [{"from": 0, "to": null, "rate": {"fig": 5, "path": ["artistEmployeeMinimum"]}}]},
+   "director": {"bands": [{"from": 0, "to": null, "rate": {"fig": 5, "path": ["artistEmployeeMinimum"]}}]},
+   "producer": {"bands": [{"from": 0, "to": null, "rate": {"fig": 5, "path": ["professional"]}}]},
+   "author": {"bands": [{"from": 0, "to": null, "rate": {"fig": 7, "path": ["intellectualProperty"]}}]}
+  },
+  "nonResident": {
+   "performer": {"bands": [{"from": 0, "to": null, "rate": {"fig": 6, "path": ["rate"]}}], "final": {"fig": 6, "path": ["final"]}},
+   "director": {"bands": [{"from": 0, "to": null, "rate": {"fig": 6, "path": ["rate"]}}], "final": {"fig": 6, "path": ["final"]}},
+   "producer": {"bands": [{"from": 0, "to": null, "rate": {"fig": 6, "path": ["rate"]}}], "final": {"fig": 6, "path": ["final"]}},
+   "author": {"bands": [{"from": 0, "to": null, "rate": {"fig": 6, "path": ["rate"]}}], "final": {"fig": 6, "path": ["final"]}}
+  },
+  "vat": {"rate": {"fig": 8, "path": ["general"]}, "threshold": {"fig": 8, "path": ["threshold"]}, "authors": {"exempt": {"fig": 8, "path": ["exemptAuthors"]}}},
+  "unmodeled": ["regional", "social", "wages"]
+ },
+ "FR": {
+  "currency": {"fig": 0, "path": ["currency"]},
+  "year": {"start": {"fig": 6, "path": ["start"]}, "end": {"fig": 6, "path": ["end"]}, "due": {"fig": 6, "path": ["returnDue"]}},
+  "residents": [{"from": {"fig": 0, "path": ["incomeYear"]}, "layers": [{"bands": {"fig": 0, "path": ["brackets"]}}]}],
+  "social": {
+   "employee": [
+    [{"from": 0, "to": {"fig": 1, "path": ["PASSannual"]}, "rate": {"fig": 1, "path": ["employee", "oldAgeCapped"]}}],
+    [{"from": 0, "to": null, "rate": {"fig": 1, "path": ["employee", "oldAgeUncapped"]}}],
+    [{"from": 0, "to": null, "rate": {"fig": 1, "path": ["employee", "CSG", "rate"], "of": {"fig": 1, "path": ["employee", "CSG", "base"]}}}],
+    [{"from": 0, "to": null, "rate": {"fig": 1, "path": ["employee", "CRDS", "rate"], "of": {"fig": 1, "path": ["employee", "CRDS", "base"]}}}],
+    [{"from": 0, "to": {"fig": 1, "path": ["PASSannual"]}, "rate": {"fig": 1, "path": ["employee", "agircArrcoT1"]}}],
+    [{"from": 0, "to": {"fig": 1, "path": ["PASSannual"]}, "rate": {"fig": 1, "path": ["employee", "cegT1"]}}],
+    [{"from": {"fig": 1, "path": ["PASSannual"]}, "to": null, "rate": {"fig": 1, "path": ["employee", "agircArrcoT2"]}}],
+    [{"from": {"fig": 1, "path": ["PASSannual"]}, "to": null, "rate": {"fig": 1, "path": ["employee", "cegT2"]}}],
+    [{"from": 0, "to": {"fig": 8, "path": ["unemploymentIntermittents", "ceilingMonthly"], "months": true}, "rate": {"fig": 8, "path": ["unemploymentIntermittents", "employee"]}}]
+   ],
+   "self": [
+    [{"from": 0, "to": {"fig": 1, "path": ["artistesAuteurs", "oldAgeCapped", "ceiling"]}, "rate": {"fig": 1, "path": ["artistesAuteurs", "oldAgeCapped", "net"]}}],
+    [{"from": 0, "to": null, "rate": {"fig": 1, "path": ["artistesAuteurs", "CSG"]}}],
+    [{"from": 0, "to": null, "rate": {"fig": 1, "path": ["artistesAuteurs", "CRDS"]}}],
+    [{"from": 0, "to": null, "rate": {"fig": 1, "path": ["artistesAuteurs", "CFP"]}}]
+   ]
+  },
+  "withholding": {},
+  "nonResident": {"performer": {"bands": [{"from": 0, "to": null, "rate": {"fig": 3, "path": ["rate"]}}], "deduct": {"fig": 3, "path": ["base"], "percent": true}, "final": {"fig": 3, "path": ["final"]}}},
+  "vat": {"rate": {"fig": 9, "path": ["serviceFeeNormalRate"]}, "threshold": {"fig": 5, "path": ["services", "previousYear"]}, "authors": {"rate": {"fig": 9, "path": ["rightsAssignmentAuthorsAndPerformers"]}, "threshold": {"fig": 5, "path": ["authorsPerformersWorksAndRights", "previousYear"]}}},
+  "unmodeled": ["credits", "social", "authors"]
+ },
+ "GB": {
+  "currency": {"fig": 0, "path": ["currency"]},
+  "year": {"start": {"fig": 6, "path": ["start"]}, "end": {"fig": 6, "path": ["end"]}, "due": {"fig": 6, "path": ["returnDueOnline"]}},
+  "residents": [{"layers": [{"bands": {"fig": 0, "path": ["brackets"]}}]}],
+  "social": {
+   "employee": [[
+    {"from": {"fig": 1, "path": ["employee", "primaryThreshold"]}, "to": {"fig": 1, "path": ["employee", "upperEarningsLimit"]}, "rate": {"fig": 1, "path": ["employee", "rateMain"]}},
+    {"from": {"fig": 1, "path": ["employee", "upperEarningsLimit"]}, "to": null, "rate": {"fig": 1, "path": ["employee", "rateAbove"]}}
+   ]],
+   "self": [{"fig": 1, "path": ["selfEmployed", "class4"]}]
+  },
+  "withholding": {},
+  "nonResident": {"performer": {"bands": [{"from": 0, "to": null, "rate": {"fig": 3, "path": ["rate"]}}], "over": {"fig": 0, "path": ["personalAllowance"]}, "yearly": true, "final": {"fig": 3, "path": ["final"]}}},
+  "vat": {"rate": {"fig": 5, "path": ["standardRate"]}, "threshold": {"fig": 5, "path": ["registrationThreshold"]}},
+  "unmodeled": ["regional", "credits", "authors"]
+ },
+ "IE": {
+  "currency": {"fig": 0, "path": ["currency"]},
+  "year": {"start": {"fig": 6, "path": ["start"]}, "due": {"fig": 6, "path": ["returnDue2025"]}, "after": 1},
+  "residents": [{"layers": [
+   {"bands": {"fig": 0, "path": ["single"]}, "credit": [{"fig": 0, "path": ["credits", "single"]}, {"fig": 0, "path": ["credits", "PAYE"]}]},
+   {"bands": {"fig": 0, "path": ["USC"]}}
+  ]}],
+  "social": {
+   "employee": [[{"from": 0, "to": null, "rate": {"fig": 1, "path": ["classA", "toSep2026", "employee"]}}]],
+   "self": [[{"from": 0, "to": null, "rate": {"fig": 7, "path": ["classS", "rateTo2026-09-30"]}}]]
+  },
+  "withholding": {},
+  "nonResident": {"performer": {"bands": [{"from": 0, "to": null, "rate": {"fig": 3, "path": ["rate"]}}], "final": {"fig": 3, "path": ["final"]}}},
+  "vat": null,
+  "unmodeled": ["social", "authors", "vat"]
+ },
+ "IN": {
+  "currency": {"fig": 0, "path": ["currency"]},
+  "year": {"start": {"fig": 1, "path": ["start"]}, "due": {"fig": 1, "path": ["returnDue", "default"]}, "after": 0},
+  "residents": [{"layers": [{"bands": {"fig": 0, "path": ["brackets"]}, "credit": [{"fig": 0, "path": ["rebate", "max"]}], "creditUpTo": {"fig": 0, "path": ["rebate", "incomeUpTo"]}, "surtax": {"rate": {"fig": 0, "path": ["cess"]}}}]}],
+  "employed": [],
+  "social": {"employee": [], "self": []},
+  "withholding": {
+   "performer": {"bands": [{"from": 0, "to": null, "rate": {"fig": 2, "path": ["professionalFees"]}}], "over": {"fig": 2, "path": ["threshold"]}, "yearly": true},
+   "director": {"bands": [{"from": 0, "to": null, "rate": {"fig": 2, "path": ["professionalFees"]}}], "over": {"fig": 2, "path": ["threshold"]}, "yearly": true},
+   "producer": {"bands": [{"from": 0, "to": null, "rate": {"fig": 2, "path": ["professionalFees"]}}], "over": {"fig": 2, "path": ["threshold"]}, "yearly": true},
+   "author": {"bands": [{"from": 0, "to": null, "rate": {"fig": 2, "path": ["royalty"]}}], "over": {"fig": 2, "path": ["threshold"]}, "yearly": true}
+  },
+  "nonResident": {"performer": {"bands": [{"from": 0, "to": null, "rate": {"fig": 3, "path": ["withholding"]}}], "surtax": {"fig": 0, "path": ["cess"]}, "final": {"fig": 3, "path": ["final"]}}},
+  "vat": null,
+  "unmodeled": ["credits"]
+ },
+ "IT": {
+  "currency": {"fig": 0, "path": ["currency"]},
+  "year": {"start": {"fig": 1, "path": ["start"]}, "due": {"fig": 1, "path": ["returnDue2025", "RedditiPF"]}, "after": 1},
+  "residents": [{"layers": [
+   {"bands": {"fig": 0, "path": ["brackets"]}},
+   {"bands": [{"from": 0, "to": null, "rate": {"fig": 0, "path": ["regional", "baseRate"]}}]}
+  ]}],
+  "social": {
+   "employee": [
+    [{"from": 0, "to": {"fig": 2, "path": ["annualCeiling2026"]}, "rate": {"fig": 2, "path": ["pension", "employee"]}}],
+    [{"from": {"fig": 2, "path": ["additional1pct", "aboveAnnual"]}, "to": null, "rate": {"fig": 2, "path": ["additional1pct", "employee"]}}]
+   ],
+   "self": [[{"from": 0, "to": {"fig": 2, "path": ["gestioneSeparata2026", "maxIncome"]}, "rate": {"fig": 2, "path": ["gestioneSeparata2026", "professionalNoOtherScheme"]}}]]
+  },
+  "withholding": {
+   "producer": {"bands": [{"from": 0, "to": null, "rate": {"fig": 3, "path": ["freelance"]}}]},
+   "author": {"bands": [{"from": 0, "to": null, "rate": {"fig": 3, "path": ["freelance"]}}], "deduct": {"fig": 5, "path": ["flatDeduction"]}}
+  },
+  "nonResident": {
+   "performer": {"bands": [{"from": 0, "to": null, "rate": {"fig": 4, "path": ["rate"]}}], "final": {"fig": 4, "path": ["final"]}},
+   "director": {"bands": [{"from": 0, "to": null, "rate": {"fig": 4, "path": ["rate"]}}], "final": {"fig": 4, "path": ["final"]}},
+   "producer": {"bands": [{"from": 0, "to": null, "rate": {"fig": 4, "path": ["rate"]}}], "final": {"fig": 4, "path": ["final"]}},
+   "author": {"bands": [{"from": 0, "to": null, "rate": {"fig": 4, "path": ["rate"]}}], "deduct": {"fig": 5, "path": ["flatDeduction"]}, "final": {"fig": 4, "path": ["final"]}}
+  },
+  "vat": {"rate": {"fig": 6, "path": ["rate"]}, "threshold": {"fig": 6, "path": ["flatRegime", "thresholdPriorYear"]}},
+  "unmodeled": ["credits", "regional", "scheme"]
+ },
+ "JP": {
+  "currency": {"fig": 0, "path": ["currency"]},
+  "year": {"start": {"fig": 1, "path": ["start"]}, "due": {"fig": 1, "path": ["paymentDue"]}, "after": 1},
+  "residents": [{"layers": [
+   {"bands": {"fig": 0, "path": ["brackets"]}, "surtax": {"rate": {"fig": 0, "path": ["surtax", "rate"]}}},
+   {"bands": [{"from": 0, "to": null, "rate": {"fig": 0, "path": ["residentTax", "rate"]}}]}
+  ]}],
+  "employed": [],
+  "social": {"employee": [], "self": []},
+  "withholding": {
+   "performer": {"bands": [{"from": 0, "to": {"fig": 3, "path": ["threshold"]}, "rate": {"fig": 3, "path": ["rate"]}}, {"from": {"fig": 3, "path": ["threshold"]}, "to": null, "rate": {"fig": 3, "path": ["above1m"]}}]},
+   "director": {"bands": [{"from": 0, "to": {"fig": 3, "path": ["threshold"]}, "rate": {"fig": 3, "path": ["rate"]}}, {"from": {"fig": 3, "path": ["threshold"]}, "to": null, "rate": {"fig": 3, "path": ["above1m"]}}]},
+   "producer": {"bands": [{"from": 0, "to": {"fig": 3, "path": ["threshold"]}, "rate": {"fig": 3, "path": ["rate"]}}, {"from": {"fig": 3, "path": ["threshold"]}, "to": null, "rate": {"fig": 3, "path": ["above1m"]}}]},
+   "author": {"bands": [{"from": 0, "to": {"fig": 3, "path": ["threshold"]}, "rate": {"fig": 3, "path": ["rate"]}}, {"from": {"fig": 3, "path": ["threshold"]}, "to": null, "rate": {"fig": 3, "path": ["above1m"]}}]}
+  },
+  "nonResident": {
+   "performer": {"bands": [{"from": 0, "to": null, "rate": {"fig": 8, "path": ["withSurtax"]}}], "final": {"fig": 8, "path": ["final"]}},
+   "director": {"bands": [{"from": 0, "to": null, "rate": {"fig": 8, "path": ["withSurtax"]}}], "final": {"fig": 8, "path": ["final"]}},
+   "producer": {"bands": [{"from": 0, "to": null, "rate": {"fig": 8, "path": ["withSurtax"]}}], "final": {"fig": 8, "path": ["final"]}},
+   "author": {"bands": [{"from": 0, "to": null, "rate": {"fig": 8, "path": ["withSurtax"]}}], "final": {"fig": 8, "path": ["final"]}}
+  },
+  "vat": {"rate": {"fig": 6, "path": ["rate"]}, "threshold": {"fig": 6, "path": ["threshold"]}},
+  "unmodeled": ["credits", "social", "authors"]
+ },
+ "KR": {
+  "currency": {"fig": 0, "path": ["currency"]},
+  "year": {"start": {"fig": 1, "path": ["start"]}, "due": {"fig": 1, "path": ["returnWindow", "to"]}, "after": 1},
+  "residents": [{"layers": [{"bands": {"fig": 0, "path": ["brackets"]}, "less": {"fig": 0, "path": ["allowance", "basicPerPerson"]}, "surtax": {"rate": {"fig": 0, "path": ["localIncomeTax", "standard"], "fraction": true}}}]}],
+  "employed": [],
+  "social": {"employee": [], "self": [[{"from": 0, "to": {"fig": 2, "path": ["pensionIncomeBand", "from2026-07", "max"], "months": true}, "rate": {"fig": 2, "path": ["pension2026", "regionalMember"]}}]]},
+  "withholding": {
+   "performer": {"bands": [{"from": 0, "to": null, "rate": {"fig": 3, "path": ["businessIncome"]}}]},
+   "director": {"bands": [{"from": 0, "to": null, "rate": {"fig": 3, "path": ["businessIncome"]}}]},
+   "producer": {"bands": [{"from": 0, "to": null, "rate": {"fig": 3, "path": ["businessIncome"]}}]},
+   "author": {"bands": [{"from": 0, "to": null, "rate": {"fig": 3, "path": ["otherIncome"]}}], "deduct": {"fig": 3, "path": ["otherIncomeDeemedExpense"]}}
+  },
+  "nonResident": {
+   "performer": {"bands": [{"from": 0, "to": null, "rate": {"fig": 4, "path": ["personalServices"]}}], "final": {"fig": 4, "path": ["final"]}},
+   "director": {"bands": [{"from": 0, "to": null, "rate": {"fig": 4, "path": ["personalServices"]}}], "final": {"fig": 4, "path": ["final"]}},
+   "producer": {"bands": [{"from": 0, "to": null, "rate": {"fig": 4, "path": ["personalServices"]}}], "final": {"fig": 4, "path": ["final"]}},
+   "author": {"bands": [{"from": 0, "to": null, "rate": {"fig": 4, "path": ["royalties"]}}], "final": {"fig": 4, "path": ["final"]}}
+  },
+  "vat": null,
+  "unmodeled": ["credits", "social"]
+ },
+ "MX": {
+  "currency": {"fig": 0, "path": ["currency"]},
+  "year": {"start": {"fig": 1, "path": ["start"]}, "due": {"fig": 1, "path": ["returnMonth"]}, "after": 1},
+  "residents": [{"layers": [{"bands": {"fig": 0, "path": ["brackets"]}}]}],
+  "social": {
+   "employee": [
+    [{"from": 0, "to": null, "rate": {"fig": 6, "path": ["employee", "invalidezVida"]}}],
+    [{"from": 0, "to": null, "rate": {"fig": 6, "path": ["employee", "cesantiaVejez"]}}],
+    [{"from": 0, "to": null, "rate": {"fig": 6, "path": ["employee", "gastosMedicosPensionados"]}}],
+    [{"from": 0, "to": null, "rate": {"fig": 6, "path": ["employee", "enfermedadMaternidadDinero"]}}]
+   ],
+   "self": []
+  },
+  "withholding": {
+   "producer": {"bands": [{"from": 0, "to": null, "rate": {"fig": 2, "path": ["professionalFeesByCompany"]}}]},
+   "author": {"bands": [{"from": 0, "to": null, "rate": {"fig": 2, "path": ["professionalFeesByCompany"]}}]}
+  },
+  "nonResident": {
+   "performer": {"bands": [{"from": 0, "to": null, "rate": {"fig": 3, "path": ["rate"]}}], "final": {"fig": 3, "path": ["final"]}},
+   "director": {"bands": [{"from": 0, "to": null, "rate": {"fig": 3, "path": ["rate"]}}], "final": {"fig": 3, "path": ["final"]}},
+   "producer": {"bands": [{"from": 0, "to": null, "rate": {"fig": 3, "path": ["rate"]}}], "final": {"fig": 3, "path": ["final"]}},
+   "author": {"bands": [{"from": 0, "to": null, "rate": {"fig": 3, "path": ["rate"]}}], "final": {"fig": 3, "path": ["final"]}}
+  },
+  "vat": {"rate": {"fig": 5, "path": ["rate"]}, "threshold": {"fig": 5, "path": ["threshold"]}, "authors": {"exempt": {"fig": 4, "path": ["vatExempt"]}}},
+  "unmodeled": ["social", "authors"]
+ },
+ "NG": {
+  "currency": {"fig": 0, "path": ["currency"]},
+  "year": {"start": {"fig": 2, "path": ["start"]}, "due": {"fig": 2, "path": ["individualReturn"]}, "after": 1},
+  "residents": [{"layers": [{"bands": {"fig": 0, "path": ["brackets"]}}]}],
+  "social": {"employee": [[{"from": 0, "to": null, "rate": {"fig": 3, "path": ["pension", "employee"]}}]], "self": []},
+  "withholding": {
+   "producer": {"bands": [{"from": 0, "to": null, "rate": {"fig": 4, "path": ["fees", "residentIndividual"]}}]},
+   "author": {"bands": [{"from": 0, "to": null, "rate": {"fig": 6, "path": ["royaltyWHT", "individualResident"]}}]}
+  },
+  "nonResident": {
+   "performer": {"bands": [{"from": 0, "to": null, "rate": {"fig": 5, "path": ["rate"]}}], "final": {"fig": 5, "path": ["final"]}},
+   "director": {"bands": [{"from": 0, "to": null, "rate": {"fig": 5, "path": ["rate"]}}], "final": {"fig": 5, "path": ["final"]}},
+   "producer": {"bands": [{"from": 0, "to": null, "rate": {"fig": 5, "path": ["rate"]}}], "final": {"fig": 5, "path": ["final"]}},
+   "author": {"bands": [{"from": 0, "to": null, "rate": {"fig": 6, "path": ["royaltyWHT", "individualNonResident"]}}]}
+  },
+  "vat": {"rate": {"fig": 7, "path": ["standard"]}, "threshold": {"fig": 7, "path": ["smallBusiness", "turnoverMax"]}},
+  "unmodeled": ["credits"]
+ },
+ "NL": {
+  "currency": {"fig": 0, "path": ["currency"]},
+  "year": {"start": {"fig": 2, "path": ["start"]}, "end": {"fig": 2, "path": ["end"]}, "due": {"fig": 2, "path": ["returnDue"]}},
+  "residents": [{"layers": [{"bands": {"fig": 0, "path": ["brackets"]}, "credit": [{"fig": 1, "path": ["algemeneHeffingskorting", "max"]}], "taper": {"from": {"fig": 1, "path": ["algemeneHeffingskorting", "phaseOutFrom"]}, "rate": {"fig": 1, "path": ["algemeneHeffingskorting", "phaseOutRate"]}}}]}],
+  "social": {"employee": [], "self": [[{"from": 0, "to": {"fig": 3, "path": ["selfEmployed", "maxContributionIncome"]}, "rate": {"fig": 3, "path": ["selfEmployed", "ZvwContributionOnIncome"]}}]]},
+  "withholding": {"performer": {"bands": [{"from": 0, "to": null, "rate": {"fig": 4, "path": ["residentArtistScheme", "rate"]}}]}},
+  "nonResident": {"performer": {"bands": [{"from": 0, "to": null, "rate": {"fig": 5, "path": ["rate"]}}]}},
+  "vat": {"rate": {"fig": 7, "path": ["standard"]}, "threshold": {"fig": 7, "path": ["smallBusinessThreshold"]}, "authors": {"exempt": {"fig": 6, "path": ["vat"]}}},
+  "unmodeled": ["credits"]
+ },
+ "NO": {
+  "currency": {"fig": 0, "path": ["currency"]},
+  "year": {"start": {"fig": 2, "path": ["start"]}, "due": {"fig": 2, "path": ["employeeDeadline"]}, "after": 1},
+  "residents": [{"layers": [
+   {"bands": [{"from": 0, "to": null, "rate": {"fig": 0, "path": ["ordinaryIncome", "rate"]}}], "shares": [{"rate": {"fig": 1, "path": ["minstefradrag", "rate"]}, "max": {"fig": 1, "path": ["minstefradrag", "max"]}}], "less": {"fig": 1, "path": ["personfradrag"]}},
+   {"bands": {"fig": 0, "path": ["trinnskatt"]}}
+  ]}],
+  "social": {
+   "employee": [[{"from": 0, "to": null, "rate": {"fig": 3, "path": ["employee"]}}]],
+   "self": [[{"from": 0, "to": null, "rate": {"fig": 3, "path": ["selfEmployed"]}}]]
+  },
+  "withholding": {},
+  "nonResident": {
+   "performer": {"bands": [{"from": 0, "to": null, "rate": {"fig": 5, "path": ["rate"]}}], "final": {"fig": 5, "path": ["final"]}},
+   "director": {"bands": [{"from": 0, "to": null, "rate": {"fig": 6, "path": ["rate"]}}], "final": {"fig": 6, "path": ["final"]}}
+  },
+  "vat": {"rate": {"fig": 8, "path": ["standard"]}, "threshold": {"fig": 8, "path": ["registrationThreshold"]}, "authors": {"exempt": {"fig": 7, "path": ["vat"]}}},
+  "unmodeled": ["social"]
+ },
+ "NZ": {
+  "currency": {"fig": 0, "path": ["currency"]},
+  "year": {"start": {"fig": 1, "path": ["start"]}, "due": {"fig": 1, "path": ["paymentDue"]}, "after": 1},
+  "residents": [{"from": {"fig": 0, "path": ["from"]}, "layers": [{"bands": {"fig": 0, "path": ["brackets"]}}]}],
+  "employed": [],
+  "social": {"employee": [], "self": [[{"from": 0, "to": {"fig": 2, "path": ["earnersLevy", 0, "ceiling"]}, "rate": {"fig": 2, "path": ["earnersLevy", 0, "rate"]}}]]},
+  "withholding": {
+   "performer": {"bands": [{"from": 0, "to": null, "rate": {"fig": 4, "path": ["schedular", 0, "rate"]}}]},
+   "director": {"bands": [{"from": 0, "to": null, "rate": {"fig": 4, "path": ["schedular", 1, "rate"]}}]},
+   "producer": {"bands": [{"from": 0, "to": null, "rate": {"fig": 4, "path": ["schedular", 1, "rate"]}}]},
+   "author": {"bands": [{"from": 0, "to": null, "rate": {"fig": 4, "path": ["schedular", 2, "rate"]}}]}
+  },
+  "nonResident": {
+   "performer": {"bands": [{"from": 0, "to": null, "rate": {"fig": 5, "path": ["rate"]}}], "final": {"fig": 5, "path": ["final"]}},
+   "director": {"bands": [{"from": 0, "to": null, "rate": {"fig": 5, "path": ["nonResidentContractor"]}}]},
+   "producer": {"bands": [{"from": 0, "to": null, "rate": {"fig": 5, "path": ["nonResidentContractor"]}}]},
+   "author": {"bands": [{"from": 0, "to": null, "rate": {"fig": 6, "path": ["nonResidentRoyaltiesNoDTA"]}}]}
+  },
+  "vat": {"rate": {"fig": 7, "path": ["rate"]}, "threshold": {"fig": 7, "path": ["threshold"]}},
+  "unmodeled": []
+ },
+ "SE": {
+  "currency": {"fig": 0, "path": ["currency"]},
+  "year": {"start": {"fig": 2, "path": ["start"]}, "end": {"fig": 2, "path": ["end"]}, "due": {"fig": 2, "path": ["returnDue"]}},
+  "residents": [{"layers": [
+   {"bands": [{"from": 0, "to": null, "rate": {"fig": 0, "path": ["municipalAverage"]}}]},
+   {"bands": {"fig": 0, "path": ["national"]}}
+  ]}],
+  "social": {"employee": [], "self": [[{"from": 0, "to": null, "rate": {"fig": 4, "path": ["rate"]}}]]},
+  "withholding": {
+   "performer": {"bands": [{"from": 0, "to": null, "rate": {"fig": 5, "path": ["flat"]}}]},
+   "director": {"bands": [{"from": 0, "to": null, "rate": {"fig": 5, "path": ["flat"]}}]}
+  },
+  "nonResident": {
+   "performer": {"bands": [{"from": 0, "to": null, "rate": {"fig": 6, "path": ["aSink", "rate"]}}]},
+   "director": {"bands": [{"from": 0, "to": null, "rate": {"fig": 6, "path": ["sink", "rate2026"]}}], "final": {"fig": 6, "path": ["sink", "final"]}}
+  },
+  "vat": {"rate": {"fig": 8, "path": ["standard"]}, "threshold": {"fig": 8, "path": ["smallBusinessThreshold"]}, "authors": {"rate": {"fig": 7, "path": ["vatRateOnCopyright"]}}},
+  "unmodeled": ["credits"]
+ },
+ "US": {
+  "currency": {"fig": 0, "path": ["currency"]},
+  "year": {"start": {"fig": 6, "path": ["start"]}, "end": {"fig": 6, "path": ["end"]}, "due": {"fig": 6, "path": ["returnDue"]}},
+  "residents": [{"layers": [{"bands": {"fig": 0, "path": ["brackets"]}, "less": {"fig": 0, "path": ["standardDeduction"]}}]}],
+  "social": {
+   "employee": [
+    [{"from": 0, "to": {"fig": 1, "path": ["socialSecurityWageBase"]}, "rate": {"fig": 1, "path": ["employee", "socialSecurity"]}}],
+    [{"from": 0, "to": null, "rate": {"fig": 1, "path": ["employee", "medicare"]}}],
+    [{"from": {"fig": 1, "path": ["employee", "additionalMedicare", "over"]}, "to": null, "rate": {"fig": 1, "path": ["employee", "additionalMedicare", "rate"]}}]
+   ],
+   "self": [
+    [{"from": 0, "to": {"fig": 1, "path": ["socialSecurityWageBase"]}, "rate": {"fig": 1, "path": ["selfEmployed", "socialSecurity"]}}],
+    [{"from": 0, "to": null, "rate": {"fig": 1, "path": ["selfEmployed", "medicare"]}}],
+    [{"from": {"fig": 1, "path": ["selfEmployed", "additionalMedicareThresholdSingle"]}, "to": null, "rate": {"fig": 1, "path": ["employee", "additionalMedicare", "rate"]}}]
+   ]
+  },
+  "withholding": {},
+  "nonResident": {
+   "producer": {"bands": [{"from": 0, "to": null, "rate": {"fig": 3, "path": ["rateIndependent"]}}], "final": {"fig": 3, "path": ["final"]}},
+   "author": {"bands": [{"from": 0, "to": null, "rate": {"fig": 3, "path": ["rateIndependent"]}}], "final": {"fig": 3, "path": ["final"]}}
+  },
+  "vat": null,
+  "unmodeled": ["regional", "social"]
+ },
+ "ZA": {
+  "currency": {"fig": 0, "path": ["currency"]},
+  "year": {"start": {"fig": 1, "path": ["start"]}, "due": {"fig": 1, "path": ["2026FilingSeason", "nonProvisional"], "part": 1}, "after": 0},
+  "residents": [
+   {"from": "2025-03-01", "layers": [{"bands": {"fig": 0, "path": ["2026", "brackets"]}, "credit": [{"fig": 0, "path": ["2026", "rebates", "primary"]}]}]},
+   {"from": "2026-03-01", "layers": [{"bands": {"fig": 0, "path": ["2027", "brackets"]}, "credit": [{"fig": 0, "path": ["2027", "rebates", "primary"]}]}]}
+  ],
+  "social": {"employee": [[{"from": 0, "to": {"fig": 2, "path": ["UIF", "ceilingAnnual"]}, "rate": {"fig": 2, "path": ["UIF", "employee"]}}]], "self": []},
+  "withholding": {},
+  "nonResident": {
+   "performer": {"bands": [{"from": 0, "to": null, "rate": {"fig": 4, "path": ["rate"]}}], "final": {"fig": 4, "path": ["final"]}},
+   "author": {"bands": [{"from": 0, "to": null, "rate": {"fig": 5, "path": ["nonResidentRoyalty", "rate"]}}], "final": {"fig": 5, "path": ["nonResidentRoyalty", "final"]}}
+  },
+  "vat": {"rate": {"fig": 6, "path": ["standard"]}, "threshold": {"fig": 6, "path": ["compulsory", "from2026-04-01"]}},
+  "unmodeled": []
+ }
+}

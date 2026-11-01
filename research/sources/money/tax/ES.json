@@ -1,0 +1,453 @@
+{
+ "topic": "tax.ES",
+ "read": "2026-11-01",
+ "note": "Read 2026-11-01 at the owner's word (\"Build those first 3 starting with ledger first\"; \"Retry the blocked tax facts once all countries land\"): the tax on a screen worker's pay in Spain: a resident's income tax, social contributions, what is withheld at source, a non-resident artiste's withholding, any authors' treatment, VAT's threshold, the tax year. Research and retry subagents (workbench/briefs/BRIEF-tax*.md); every quote checked by the lead against its saved page.",
+ "figures": [
+  {
+   "item": "residents",
+   "finding": "A resident's general taxable base is taxed by the state scale of 9.5% to €12,450, 12% to €20,200, 15% to €35,200, 18.5% to €60,000, 22.5% to €300,000 and 24.5% above, plus the scale each autonomous community approves; the personal minimum of €5,550 is taxed at zero by deducting the scale applied to it.",
+   "value": {
+    "currency": "EUR",
+    "stateBrackets": [
+     {
+      "from": 0,
+      "to": 12450,
+      "rate": 0.095
+     },
+     {
+      "from": 12450,
+      "to": 20200,
+      "rate": 0.12
+     },
+     {
+      "from": 20200,
+      "to": 35200,
+      "rate": 0.15
+     },
+     {
+      "from": 35200,
+      "to": 60000,
+      "rate": 0.185
+     },
+     {
+      "from": 60000,
+      "to": 300000,
+      "rate": 0.225
+     },
+     {
+      "from": 300000,
+      "to": null,
+      "rate": 0.245
+     }
+    ],
+    "personalMinimum": 5550,
+    "over65": 1150,
+    "over75extra": 1400,
+    "regional": "each autonomous community approves its own scale (art. 74 LIRPF, Ley 22/2009), applied to the same base"
+   },
+   "applies": "Residents, from 1 January 2021 and in force for 2026 (common-regime communities; the Basque Country and Navarre have their own tax law)",
+   "sources": [
+    {
+     "src": 0,
+     "said": "Base liquidable – Hasta euros Cuota íntegra – Euros Resto base liquidable – Hasta euros Tipo aplicable – Porcentaje 0,00 0,00 12.450,00 9,50 12.450,00 1.182,75 7.750,00 12,00 20.200,00 2.112,75 15.000,00 15,00 35.200,00 4.362,75 24.800,00 18,50 60.000,00 8.950,75 240.000,00 22,50 300.000,00 62.950,75 En adelante 24,50 … 1. El mínimo del contribuyente será, con carácter general, de 5.550 euros anuales. … 1.º A la base liquidable general se le aplicarán los tipos de la escala autonómica del Impuesto que, conforme a lo previsto en la Ley 22/2009 , por el que se regula el sistema de financiación de las Comunidades Autónomas de régimen común y Ciudades con Estatuto de Autonomía, hayan sido aprobadas por la Comunidad Autónoma."
+    }
+   ]
+  },
+  {
+   "item": "year",
+   "finding": "The tax year is the calendar year, the tax falling due on 31 December; the return for 2025 was filed between 8 April and 30 June 2026 (25 June where paid by direct debit).",
+   "value": {
+    "currency": "EUR",
+    "start": "01-01",
+    "end": "12-31",
+    "returnWindow2025": {
+     "from": "2026-04-08",
+     "to": "2026-06-30",
+     "directDebitBy": "2026-06-25"
+    }
+   },
+   "applies": "Residents (IRPF); the window is set each year by ministerial order",
+   "sources": [
+    {
+     "src": 0,
+     "said": "Artículo 12. Regla general. 1. El período impositivo será el año natural. 2. El Impuesto se devengará el 31 de diciembre de cada año"
+    },
+    {
+     "src": 1,
+     "said": "1. El plazo de presentación del borrador de declaración y de las declaraciones del Impuesto sobre la Renta de las Personas Físicas, cualquiera que sea su resultado, será el comprendido entre los días 8 de abril y 30 de junio de 2026, ambos inclusive."
+    },
+    {
+     "src": 2,
+     "said": "En caso de domiciliación, el plazo finaliza el 25 de junio."
+    }
+   ]
+  },
+  {
+   "item": "social",
+   "finding": "An employee's pay bears common-contingency contributions of 28.30% (23.60% employer, 4.70% employee), unemployment 7.05% on open-ended contracts (5.50/1.55) or 8.30% on fixed-term ones (6.70/1.60), FOGASA 0.20% (employer), training 0.70% (0.60/0.10) and the intergenerational equity mechanism 0.90% (0.75/0.15), on a monthly base up to €5,101.20, with a solidarity contribution of 1.15% to 1.46% on pay above it.",
+   "value": {
+    "currency": "EUR",
+    "ceilingMonthly": 5101.2,
+    "minimumGroup1Monthly": 1989.3,
+    "minimumGroups4to7Monthly": 1424.4,
+    "rates": [
+     {
+      "what": "contingencias comunes",
+      "employer": 0.236,
+      "employee": 0.047
+     },
+     {
+      "what": "desempleo, indefinido",
+      "employer": 0.055,
+      "employee": 0.0155
+     },
+     {
+      "what": "desempleo, duración determinada",
+      "employer": 0.067,
+      "employee": 0.016
+     },
+     {
+      "what": "FOGASA",
+      "employer": 0.002,
+      "employee": 0
+     },
+     {
+      "what": "formación profesional",
+      "employer": 0.006,
+      "employee": 0.001
+     },
+     {
+      "what": "MEI",
+      "employer": 0.0075,
+      "employee": 0.0015
+     },
+     {
+      "what": "accidentes de trabajo",
+      "employer": "tarifa de primas by activity",
+      "employee": 0
+     }
+    ],
+    "solidarity": [
+     {
+      "from": 5101.21,
+      "to": 5611.32,
+      "employer": 0.0096,
+      "employee": 0.0019
+     },
+     {
+      "from": 5611.33,
+      "to": 7651.8,
+      "employer": 0.0104,
+      "employee": 0.0021
+     },
+     {
+      "from": 7651.8,
+      "to": null,
+      "employer": 0.0122,
+      "employee": 0.0024
+     }
+    ]
+   },
+   "applies": "Employees in the Régimen General from 1 January 2026, artists included",
+   "sources": [
+    {
+     "src": 3,
+     "said": "1. El tope máximo de la base de cotización al Régimen General de la Seguridad Social será, desde el 1 de enero de 2026, de 5.101,20 euros mensuales … a) Para las contingencias comunes, el 28,30 por ciento, del que el 23,60 por ciento será a cargo de la empresa y el 4,70 por ciento, a cargo de la persona trabajadora. … 7,05 por ciento, del que el 5,5 por ciento será a cargo de la empresa y el 1,55 por ciento, a cargo de la persona trabajadora. … 8,30 por ciento, del que el 6,70 por ciento será a cargo del empresario y el 1,60 por ciento, a cargo de la persona trabajadora. … b) Fondo de Garantía Salarial: el 0,20 por ciento, a cargo de la empresa. c) Formación profesional: el 0,70 por ciento, del que el 0,60 por ciento será a cargo de la empresa y el 0,10 por ciento, a cargo de la persona trabajadora. … aplicando el tipo del 0,90 por ciento sobre la base de cotización por contingencias comunes, del que el 0,75 por ciento será a cargo del empleador y el 0,15 por ciento, a cargo de la persona trabajadora. … a) El 1,15 por ciento a la parte de la retribución comprendida entre 5.101,21 euros y 5.611,32 euros, siendo el 0,96 por ciento a cargo de la empresa y el 0,19 por ciento a cargo de la persona trabajadora. … c) El 1,46 por ciento a la parte de la retribución que supere los 7.651,80 euros, siendo el 1,22 por ciento a cargo de la empresa y el 0,24 por ciento a cargo de la persona trabajadora. … 1 Ingenieros y Licenciados. Personal de alta dirección no incluido en el artículo 1.3.c) del Estatuto de los Trabajadores . 1.989,30 5.101,20"
+    }
+   ]
+  },
+  {
+   "item": "social",
+   "finding": "Artists employed in the Régimen General contribute on provisional daily bases by daily pay band (€340 to €678.60 a day), regularised against an annual ceiling of twelve times €5,101.20; between engagements an artist who stays registered pays 11.50% on the group 7 minimum base.",
+   "value": {
+    "currency": "EUR",
+    "provisionalDailyBases": [
+     {
+      "payUpTo": 577.0,
+      "base": 340.0
+     },
+     {
+      "payFrom": 577.01,
+      "payUpTo": 1038.0,
+      "base": 428.0
+     },
+     {
+      "payFrom": 1038.01,
+      "payUpTo": 1737.0,
+      "base": 511.0
+     },
+     {
+      "payFrom": 1737.01,
+      "payUpTo": null,
+      "base": 678.6
+     }
+    ],
+    "annualCeiling": "5,101.20 x 12",
+    "inactivityRate": 0.115,
+    "inactivityBase": "group 7 minimum (1,424.40 a month)"
+   },
+   "applies": "Artists in public performances, audiovisual and music (art. 32.3 Reglamento General de Cotización), 2026",
+   "sources": [
+    {
+     "src": 3,
+     "said": "El tope máximo de las bases de cotización en razón de las actividades realizadas por un artista, para una o varias empresas, tendrá carácter anual y se determinará por la elevación a cómputo anual de la base mensual máxima señalada. … Retribuciones íntegras Euros/día Hasta 577,00 euros. 340,00 Entre 577,01 y 1.038,00 euros. 428,00 Entre 1.038,01 y 1.737,00 euros. 511,00 Mayor o igual a 1.737,01 euros. 678,60 … El tipo de cotización aplicable será el 11,50 por ciento."
+    }
+   ]
+  },
+  {
+   "item": "social",
+   "finding": "A self-employed screen worker (RETA) chooses a monthly base inside the band for expected net income, from €653.59 (net up to €670) to €5,101.20, and pays 28.30% common contingencies, 1.30% occupational, 0.90% cessation of activity and 0.90% intergenerational equity on it.",
+   "value": {
+    "currency": "EUR",
+    "bands": [
+     {
+      "netTo": 670,
+      "minBase": 653.59,
+      "maxBase": 718.94
+     },
+     {
+      "netFrom": 670,
+      "netTo": 900,
+      "minBase": 718.95,
+      "maxBase": 900.0
+     },
+     {
+      "netFrom": 900,
+      "netTo": 1166.7,
+      "minBase": 849.67,
+      "maxBase": 1166.7
+     },
+     {
+      "netFrom": 1166.7,
+      "netTo": 1300,
+      "minBase": 950.98,
+      "maxBase": 1300.0
+     },
+     {
+      "netFrom": 1300,
+      "netTo": 1500,
+      "minBase": 960.78,
+      "maxBase": 1500.0
+     },
+     {
+      "netFrom": 1500,
+      "netTo": 1700,
+      "minBase": 960.78,
+      "maxBase": 1700.0
+     },
+     {
+      "netFrom": 1700,
+      "netTo": 1850,
+      "minBase": 1143.79,
+      "maxBase": 1850.0
+     },
+     {
+      "netFrom": 1850,
+      "netTo": 2030,
+      "minBase": 1209.15,
+      "maxBase": 2030.0
+     },
+     {
+      "netFrom": 2030,
+      "netTo": 2330,
+      "minBase": 1274.51,
+      "maxBase": 2330.0
+     },
+     {
+      "netFrom": 2330,
+      "netTo": 2760,
+      "minBase": 1356.21,
+      "maxBase": 2760.0
+     },
+     {
+      "netFrom": 2760,
+      "netTo": 3190,
+      "minBase": 1437.91,
+      "maxBase": 3190.0
+     },
+     {
+      "netFrom": 3190,
+      "netTo": 3620,
+      "minBase": 1519.61,
+      "maxBase": 3620.0
+     },
+     {
+      "netFrom": 3620,
+      "netTo": 4050,
+      "minBase": 1601.31,
+      "maxBase": 4050.0
+     },
+     {
+      "netFrom": 4050,
+      "netTo": 6000,
+      "minBase": 1732.03,
+      "maxBase": 5101.2
+     },
+     {
+      "netFrom": 6000,
+      "netTo": null,
+      "minBase": 1928.1,
+      "maxBase": 5101.2
+     }
+    ],
+    "rates": {
+     "comunes": 0.283,
+     "profesionales": 0.013,
+     "ceseActividad": 0.009,
+     "MEI": 0.009
+    }
+   },
+   "applies": "Self-employed (Régimen Especial de Trabajadores Autónomos), 2026, monthly net income bands",
+   "sources": [
+    {
+     "src": 3,
+     "said": "la base máxima de cotización será de 5.101,20 euros mensuales. … Tabla reducida. Tramo 1 ≤ 670 653,59 718,94 … Tramo 12 > 6.000 1.928,10 5.101,20 … 2. Tipos de cotización: a) Para las contingencias comunes, el 28,30 por ciento. … Desde el 1 de enero de 2026, el 1,30 por ciento, del que el 0,66 por ciento corresponde a la contingencia de incapacidad temporal … c) Para el mecanismo de equidad intergeneracional, se aplicará el tipo del 0,90 por ciento sobre la base de cotización de contingencias comunes a cargo de la persona trabajadora autónoma. … a) En el Régimen Especial de la Seguridad Social de los Trabajadores por Cuenta Propia o Autónomos y en el Régimen Especial de la Seguridad Social de los Trabajadores del Mar, el 0,90 por ciento"
+    }
+   ]
+  },
+  {
+   "item": "withholding",
+   "finding": "An employee's withholding rate comes from the regulation's procedure, but for artists under the special artists' employment relation it may not fall below 2%; a freelance professional has 15% withheld on gross fees (7% in the first three years, or for artists and their technicians whose previous-year such income was under €15,000 and over 75% of their income).",
+   "value": {
+    "employee": "rate by the procedure of art. 86 RIRPF",
+    "artistEmployeeMinimum": 0.02,
+    "otherSpecialRelationsMinimum": 0.15,
+    "professional": 0.15,
+    "professionalNew": 0.07,
+    "artistProfessionalLowIncome": {
+     "rate": 0.07,
+     "priorYearIncomeUnder": 15000,
+     "shareOver": 0.75
+    }
+   },
+   "applies": "Residents",
+   "sources": [
+    {
+     "src": 4,
+     "said": "no podrá ser inferior al 2 por ciento cuando se trate de contratos o relaciones de duración inferior al año o deriven de una relación laboral especial de las personas artistas que desarrollan su actividad en las artes escénicas, audiovisuales y musicales … 1. Cuando los rendimientos sean contraprestación de una actividad profesional, se aplicará el tipo de retención del 15 por ciento sobre los ingresos íntegros satisfechos. … el tipo de retención será del 7 por ciento en el período impositivo de inicio de actividades y en los dos siguientes … quedaría incluida en el ámbito de aplicación de la relación laboral especial de las personas artistas que desarrollan su actividad en las artes escénicas, audiovisuales y musicales, así como de las personas que realizan actividades técnicas o auxiliares necesarias para el desarrollo de dicha actividad, siempre que, en cualquiera de los supuestos previstos en esta letra, el volumen de rendimientos íntegros del conjunto de tales actividades correspondiente al ejercicio inmediato anterior sea inferior a 15.000 euros y represente más del 75 por ciento"
+    }
+   ]
+  },
+  {
+   "item": "nonResident",
+   "finding": "A non-resident performer's income from performing in Spain is taxed on its gross amount at 24% (19% for residents of the EU or EEA with tax information exchange), withheld by the Spanish payer; no return is required for income already subject to that withholding.",
+   "value": {
+    "rate": 0.24,
+    "rateEUEEA": 0.19,
+    "base": "gross amount, no deductions",
+    "final": true,
+    "threshold": null
+   },
+   "applies": "Non-residents without a permanent establishment, artists' performances in Spain",
+   "sources": [
+    {
+     "src": 5,
+     "said": "3.º Cuando deriven, directa o indirectamente, de la actuación personal en territorio español de artistas y deportistas, o de cualquier otra actividad relacionada con dicha actuación, aun cuando se perciban por persona o entidad distinta del artista o deportista. … a) Con carácter general el 24 por 100. No obstante, el tipo de gravamen será el 19 por ciento cuando se trate de contribuyentes residentes en otro Estado miembro de la Unión Europea o del Espacio Económico Europeo … la base imponible correspondiente a los rendimientos que los contribuyentes por este impuesto obtengan sin mediación de establecimiento permanente estará constituida por su importe íntegro … No se exigirá a los contribuyentes por este impuesto la presentación de la declaración correspondiente a las rentas respecto de las que se hubiese practicado la retención o efectuado el ingreso a cuenta, a que se refiere el artículo 31"
+    }
+   ]
+  },
+  {
+   "item": "authors",
+   "finding": "Intellectual-property income bears 15% withholding whatever its classification (7% for advances on rights accruing over several years, or for authors whose previous-year such income was under €15,000 and over 75% of their income); an author paid as an employee for a work whose rights are assigned also has 15% (or 7%) withheld; image rights bear 24%.",
+   "value": {
+    "intellectualProperty": 0.15,
+    "multiYearAdvance": 0.07,
+    "lowIncomeAuthor": {
+     "rate": 0.07,
+     "priorYearIncomeUnder": 15000,
+     "shareOver": 0.75
+    },
+    "imageRights": 0.24
+   },
+   "applies": "Residents receiving authors' fees and royalties",
+   "sources": [
+    {
+     "src": 0,
+     "said": "El porcentaje de retención e ingreso a cuenta sobre los rendimientos procedentes de la propiedad intelectual, cualquiera que sea su calificación, será del 15 por ciento¸ salvo cuando resulte de aplicación el tipo del 7 por ciento previsto en los apartados 3 y 5 de este artículo. Igualmente, dicho porcentaje será del 7 por ciento cuando se trate de anticipos a cuenta derivados de la cesión de la explotación de derechos de autor que se vayan a devengar a lo largo de varios años. … o derivados de la elaboración de obras literarias, artísticas o científicas, siempre que se ceda el derecho a su explotación, será del 15 por ciento. … será del 7 por ciento cuando el volumen de tales rendimientos íntegros correspondiente al ejercicio inmediato anterior sea inferior a 15.000 euros y represente más del 75 por ciento … 10. El porcentaje de retención e ingreso a cuenta sobre los rendimientos procedentes de la cesión del derecho a la explotación del derecho de imagen, cualquiera que sea su calificación, será el 24 por ciento."
+    }
+   ]
+  },
+  {
+   "item": "vat",
+   "finding": "VAT is 21% generally; professional services of writers and of authors of the plot, adaptation, screenplay and dialogue of audiovisual works are exempt, and services of performers, artists, directors and technicians (natural persons) to producers of films for cinema and to organisers of plays and concerts bear 10%. Spain applies no small-enterprise VAT franchise: it told the European Commission it does not intend to apply the optional SME exemption of Directive 2020/285, and the consolidated VAT law (BOE, updated 07/10/2026) has none, so a freelancer charges VAT from the first euro.",
+   "value": {
+    "general": 0.21,
+    "exemptAuthors": true,
+    "reducedPerformersToProducers": 0.1,
+    "threshold": null,
+    "smeFranchise": false
+   },
+   "applies": "Freelancers established in Spain; position at 11 March 2026 (Commission) and in the BOE consolidated text updated 07/10/2026.",
+   "sources": [
+    {
+     "src": 6,
+     "said": "Artículo 90. Tipo impositivo general. Uno. El Impuesto se exigirá al tipo del 21 por ciento, salvo lo dispuesto en el artículo siguiente. … 26.º Los servicios profesionales, incluidos aquéllos cuya contraprestación consista en derechos de autor, prestados por artistas plásticos, escritores, colaboradores literarios, gráficos y fotográficos de periódicos y revistas, compositores musicales, autores de obras teatrales y de argumento, adaptación, guión y diálogos de las obras audiovisuales, traductores y adaptadores. … Artículo 91. Tipos impositivos reducidos. Uno. Se aplicará el tipo del 10 por ciento a las operaciones siguientes: … 13.º Los prestados por intérpretes, artistas, directores y técnicos, que sean personas físicas, a los productores de películas cinematográficas susceptibles de ser exhibidas en salas de espectáculos y a los organizadores de obras teatrales y musicales."
+    },
+    {
+     "src": 7,
+     "said": "Spain has indicated that it does not intend to apply the VAT exemption for SMEs as set in the Directive, since applying the exemption is optional for Member States. … It is the only Member State that has failed to do so."
+    }
+   ]
+  }
+ ],
+ "country": "ES",
+ "sources": [
+  {
+   "url": "https://www.boe.es/buscar/act.php?id=BOE-A-2006-20764",
+   "title": "Ley 35/2006 del IRPF, texto consolidado (BOE, última actualización 07/10/2026)",
+   "read": "2026-11-01",
+   "kind": "primary",
+   "said": "Base liquidable – Hasta euros Cuota íntegra – Euros Resto base liquidable – Hasta euros Tipo aplicable – Porcentaje 0,00 0,00 12.450,00 9,50 12.450,00 1.182,75 7.750,00 12,00 20.200,00 2.112,75 15.000,00 15,00 35.200,00 4.362,75 24.800,00 18,50 60.000,00 8.950,75 240.000,00 22,50 300.000,00 62.950,75 En adelante 24,50 … 1. El mínimo del contribuyente será, con carácter general, de 5.550 euros anuales. … 1.º A la base liquidable general se le aplicarán los tipos de la escala autonómica del Impuesto que, conforme a lo previsto en la Ley 22/2009 , por el que se regula el sistema de financiación de las Comunidades Autónomas de régimen común y Ciudades con Estatuto de Autonomía, hayan sido aprobadas por la Comunidad Autónoma. … Artículo 12. Regla general. 1. El período impositivo será el año natural. 2. El Impuesto se devengará el 31 de diciembre de cada año … El porcentaje de retención e ingreso a cuenta sobre los rendimientos procedentes de la propiedad intelectual, cualquiera que sea su calificación, será del 15 por ciento¸ salvo cuando resulte de aplicación el tipo del 7 por ciento previsto en los apartados 3 y 5 de este artículo. Igualmente, dicho porcentaje será del 7 por ciento cuando se trate de anticipos a cuenta derivados de la cesión de la explotación de derechos de autor que se vayan a devengar a lo largo de varios años. … o derivados de la elaboración de obras literarias, artísticas o científicas, siempre que se ceda el derecho a su explotación, será del 15 por ciento. … será del 7 por ciento cuando el volumen de tales rendimientos íntegros correspondiente al ejercicio inmediato anterior sea inferior a 15.000 euros y represente más del 75 por ciento … 10. El porcentaje de retención e ingreso a cuenta sobre los rendimientos procedentes de la cesión del derecho a la explotación del derecho de imagen, cualquiera que sea su calificación, será el 24 por ciento."
+  },
+  {
+   "url": "https://www.boe.es/buscar/doc.php?id=BOE-A-2026-7041",
+   "title": "Orden HAC/277/2026, de 25 de marzo, modelos de declaración del IRPF y del IP, ejercicio 2025 (BOE)",
+   "read": "2026-11-01",
+   "kind": "primary",
+   "said": "1. El plazo de presentación del borrador de declaración y de las declaraciones del Impuesto sobre la Renta de las Personas Físicas, cualquiera que sea su resultado, será el comprendido entre los días 8 de abril y 30 de junio de 2026, ambos inclusive."
+  },
+  {
+   "url": "https://www.hacienda.gob.es/sgt/normativadoctrina/proyectos/26012026-memoria-abreviada-proyecto-om-irpf-2025-informacion-publica.pdf",
+   "title": "Memoria abreviada del proyecto de orden IRPF 2025 (Ministerio de Hacienda)",
+   "read": "2026-11-01",
+   "kind": "primary",
+   "said": "En caso de domiciliación, el plazo finaliza el 25 de junio."
+  },
+  {
+   "url": "https://www.boe.es/buscar/act.php?id=BOE-A-2026-7296",
+   "title": "Orden PJC/297/2026, de 30 de marzo, normas de cotización a la Seguridad Social para 2026 (BOE)",
+   "read": "2026-11-01",
+   "kind": "primary",
+   "said": "1. El tope máximo de la base de cotización al Régimen General de la Seguridad Social será, desde el 1 de enero de 2026, de 5.101,20 euros mensuales … a) Para las contingencias comunes, el 28,30 por ciento, del que el 23,60 por ciento será a cargo de la empresa y el 4,70 por ciento, a cargo de la persona trabajadora. … 7,05 por ciento, del que el 5,5 por ciento será a cargo de la empresa y el 1,55 por ciento, a cargo de la persona trabajadora. … 8,30 por ciento, del que el 6,70 por ciento será a cargo del empresario y el 1,60 por ciento, a cargo de la persona trabajadora. … b) Fondo de Garantía Salarial: el 0,20 por ciento, a cargo de la empresa. c) Formación profesional: el 0,70 por ciento, del que el 0,60 por ciento será a cargo de la empresa y el 0,10 por ciento, a cargo de la persona trabajadora. … aplicando el tipo del 0,90 por ciento sobre la base de cotización por contingencias comunes, del que el 0,75 por ciento será a cargo del empleador y el 0,15 por ciento, a cargo de la persona trabajadora. … a) El 1,15 por ciento a la parte de la retribución comprendida entre 5.101,21 euros y 5.611,32 euros, siendo el 0,96 por ciento a cargo de la empresa y el 0,19 por ciento a cargo de la persona trabajadora. … c) El 1,46 por ciento a la parte de la retribución que supere los 7.651,80 euros, siendo el 1,22 por ciento a cargo de la empresa y el 0,24 por ciento a cargo de la persona trabajadora. … 1 Ingenieros y Licenciados. Personal de alta dirección no incluido en el artículo 1.3.c) del Estatuto de los Trabajadores . 1.989,30 5.101,20 … El tope máximo de las bases de cotización en razón de las actividades realizadas por un artista, para una o varias empresas, tendrá carácter anual y se determinará por la elevación a cómputo anual de la base mensual máxima señalada. … Retribuciones íntegras Euros/día Hasta 577,00 euros. 340,00 Entre 577,01 y 1.038,00 euros. 428,00 Entre 1.038,01 y 1.737,00 euros. 511,00 Mayor o igual a 1.737,01 euros. 678,60 … El tipo de cotización aplicable será el 11,50 por ciento. … la base máxima de cotización será de 5.101,20 euros mensuales. … Tabla reducida. Tramo 1 ≤ 670 653,59 718,94 … Tramo 12 > 6.000 1.928,10 5.101,20 … 2. Tipos de cotización: a) Para las contingencias comunes, el 28,30 por ciento. … Desde el 1 de enero de 2026, el 1,30 por ciento, del que el 0,66 por ciento corresponde a la contingencia de incapacidad temporal … c) Para el mecanismo de equidad intergeneracional, se aplicará el tipo del 0,90 por ciento sobre la base de cotización de contingencias comunes a cargo de la persona trabajadora autónoma. … a) En el Régimen Especial de la Seguridad Social de los Trabajadores por Cuenta Propia o Autónomos y en el Régimen Especial de la Seguridad Social de los Trabajadores del Mar, el 0,90 por ciento"
+  },
+  {
+   "url": "https://www.boe.es/buscar/act.php?id=BOE-A-2007-6820",
+   "title": "Real Decreto 439/2007, Reglamento del IRPF, texto consolidado (BOE, última actualización 07/10/2026)",
+   "read": "2026-11-01",
+   "kind": "primary",
+   "said": "no podrá ser inferior al 2 por ciento cuando se trate de contratos o relaciones de duración inferior al año o deriven de una relación laboral especial de las personas artistas que desarrollan su actividad en las artes escénicas, audiovisuales y musicales … 1. Cuando los rendimientos sean contraprestación de una actividad profesional, se aplicará el tipo de retención del 15 por ciento sobre los ingresos íntegros satisfechos. … el tipo de retención será del 7 por ciento en el período impositivo de inicio de actividades y en los dos siguientes … quedaría incluida en el ámbito de aplicación de la relación laboral especial de las personas artistas que desarrollan su actividad en las artes escénicas, audiovisuales y musicales, así como de las personas que realizan actividades técnicas o auxiliares necesarias para el desarrollo de dicha actividad, siempre que, en cualquiera de los supuestos previstos en esta letra, el volumen de rendimientos íntegros del conjunto de tales actividades correspondiente al ejercicio inmediato anterior sea inferior a 15.000 euros y represente más del 75 por ciento"
+  },
+  {
+   "url": "https://www.boe.es/buscar/act.php?id=BOE-A-2004-4527",
+   "title": "Real Decreto Legislativo 5/2004, Ley del Impuesto sobre la Renta de no Residentes, texto consolidado (BOE, última actualización 25/05/2023)",
+   "read": "2026-11-01",
+   "kind": "primary",
+   "said": "3.º Cuando deriven, directa o indirectamente, de la actuación personal en territorio español de artistas y deportistas, o de cualquier otra actividad relacionada con dicha actuación, aun cuando se perciban por persona o entidad distinta del artista o deportista. … a) Con carácter general el 24 por 100. No obstante, el tipo de gravamen será el 19 por ciento cuando se trate de contribuyentes residentes en otro Estado miembro de la Unión Europea o del Espacio Económico Europeo … la base imponible correspondiente a los rendimientos que los contribuyentes por este impuesto obtengan sin mediación de establecimiento permanente estará constituida por su importe íntegro … No se exigirá a los contribuyentes por este impuesto la presentación de la declaración correspondiente a las rentas respecto de las que se hubiese practicado la retención o efectuado el ingreso a cuenta, a que se refiere el artículo 31"
+  },
+  {
+   "url": "https://www.boe.es/buscar/act.php?id=BOE-A-1992-28740",
+   "title": "Ley 37/1992 del IVA, texto consolidado (BOE, última actualización 07/10/2026)",
+   "read": "2026-11-01",
+   "kind": "primary",
+   "said": "Artículo 90. Tipo impositivo general. Uno. El Impuesto se exigirá al tipo del 21 por ciento, salvo lo dispuesto en el artículo siguiente. … 26.º Los servicios profesionales, incluidos aquéllos cuya contraprestación consista en derechos de autor, prestados por artistas plásticos, escritores, colaboradores literarios, gráficos y fotográficos de periódicos y revistas, compositores musicales, autores de obras teatrales y de argumento, adaptación, guión y diálogos de las obras audiovisuales, traductores y adaptadores. … Artículo 91. Tipos impositivos reducidos. Uno. Se aplicará el tipo del 10 por ciento a las operaciones siguientes: … 13.º Los prestados por intérpretes, artistas, directores y técnicos, que sean personas físicas, a los productores de películas cinematográficas susceptibles de ser exhibidas en salas de espectáculos y a los organizadores de obras teatrales y musicales."
+  },
+  {
+   "url": "https://ec.europa.eu/commission/presscorner/api/documents?reference=IP/26/442&language=en",
+   "title": "European Commission press release IP/26/442, 11 March 2026: Commission decides to refer Spain to the Court of Justice for failing to transpose VAT measures (read via the Press Corner API; page https://ec.europa.eu/commission/presscorner/detail/en/ip_26_442)",
+   "read": "2026-11-01",
+   "kind": "primary",
+   "said": "Spain has indicated that it does not intend to apply the VAT exemption for SMEs as set in the Directive, since applying the exemption is optional for Member States. … It is the only Member State that has failed to do so."
+  }
+ ],
+ "blockers": []
+}

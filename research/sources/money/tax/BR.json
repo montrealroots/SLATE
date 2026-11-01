@@ -1,0 +1,350 @@
+{
+ "topic": "tax.BR",
+ "read": "2026-11-01",
+ "note": "Read 2026-11-01 at the owner's word (\"Build those first 3 starting with ledger first\"; \"Retry the blocked tax facts once all countries land\"): the tax on a screen worker's pay in Brazil: a resident's income tax, social contributions, what is withheld at source, a non-resident artiste's withholding, any authors' treatment, VAT's threshold, the tax year. Research and retry subagents (workbench/briefs/BRIEF-tax*.md); every quote checked by the lead against its saved page.",
+ "figures": [
+  {
+   "item": "residents",
+   "finding": "For calendar year 2026 a resident's taxable income is taxed on the progressive federal table (0% up to BRL 29,145.60 a year, then 7.5%, 15%, 22.5% and 27.5% above BRL 55,976.16), less a new reduction that cuts the tax to zero for income up to BRL 60,000 and tapers to nothing at BRL 88,200; there is no state or municipal income tax.",
+   "value": {
+    "currency": "BRL",
+    "annual": [
+     {
+      "from": 0,
+      "to": 29145.6,
+      "rate": 0,
+      "deduct": 0
+     },
+     {
+      "from": 29145.6,
+      "to": 33919.8,
+      "rate": 0.075,
+      "deduct": 2185.92
+     },
+     {
+      "from": 33919.8,
+      "to": 45012.6,
+      "rate": 0.15,
+      "deduct": 4729.91
+     },
+     {
+      "from": 45012.6,
+      "to": 55976.16,
+      "rate": 0.225,
+      "deduct": 8105.85
+     },
+     {
+      "from": 55976.16,
+      "to": null,
+      "rate": 0.275,
+      "deduct": 10904.66
+     }
+    ],
+    "annualReduction": [
+     {
+      "upTo": 60000,
+      "reduction": "up to 2694.15, so tax is zero"
+     },
+     {
+      "from": 60000,
+      "to": 88200,
+      "reduction": "8429.73 - 0.095575 x taxable income"
+     },
+     {
+      "from": 88200,
+      "reduction": 0
+     }
+    ],
+    "annualDependentDeduction": 2275.08,
+    "annualSimplifiedDiscountLimit": 17640.0
+   },
+   "applies": "Ano-calendário 2026 (exercício 2027); the 'deduct' column is the table's parcela a deduzir (tax = base x rate - deduct).",
+   "sources": [
+    {
+     "src": 0,
+     "said": "Tabela de Incidência Anual A partir do exercício 2027 (ano-calendário 2026). Base de cálculo Alíquota Dedução Até R$ 29.145,60 - - De R$ 29.145,61 até R$ 33.919,80 7,5% R$ 2.185,92 De R$ 33.919,81 até R$ 45.012,60 15,0% R$ 4.729,91 De R$ 45.012,61 até R$ 55.976,16 22,5% R$ 8.105,85 Acima de R$ 55.976,16 27,5% R$ 10.904,66"
+    },
+    {
+     "src": 0,
+     "said": "até R$ 60.000,00 até R$ 2.694,15 de modo que o imposto devido seja zero de R$ 60.000,01 até R$ 88.200,00 R$ 8.429,73 - (0,095575 x rendimentos tributáveis sujeitos ao ajuste anual)"
+    },
+    {
+     "src": 0,
+     "said": "Dedução anual por dependente: R$ 2.275,08 Limite anual de despesa com instrução: R$ 3.561,50 Limite anual de desconto simplificado: R$ 17.640,00"
+    }
+   ]
+  },
+  {
+   "item": "withholding",
+   "finding": "Tax is withheld at source each month on the monthly table (0% up to BRL 2,428.80, 27.5% above BRL 4,664.68, less the parcela), with a monthly reduction that zeroes the tax up to BRL 5,000 and tapers out at BRL 7,350.",
+   "value": {
+    "currency": "BRL",
+    "monthly": [
+     {
+      "from": 0,
+      "to": 2428.8,
+      "rate": 0,
+      "deduct": 0
+     },
+     {
+      "from": 2428.8,
+      "to": 2826.65,
+      "rate": 0.075,
+      "deduct": 182.16
+     },
+     {
+      "from": 2826.65,
+      "to": 3751.05,
+      "rate": 0.15,
+      "deduct": 394.16
+     },
+     {
+      "from": 3751.05,
+      "to": 4664.68,
+      "rate": 0.225,
+      "deduct": 675.49
+     },
+     {
+      "from": 4664.68,
+      "to": null,
+      "rate": 0.275,
+      "deduct": 908.73
+     }
+    ],
+    "monthlyReduction": [
+     {
+      "upTo": 5000,
+      "reduction": "up to 312.89, so tax is zero"
+     },
+     {
+      "from": 5000,
+      "to": 7350,
+      "reduction": "978.62 - 0.133145 x taxable income"
+     }
+    ],
+    "monthlyDependent": 189.59,
+    "monthlySimplifiedDiscount": 607.2
+   },
+   "applies": "From January 2026 (Lei 15.191/2025 and Lei 15.270/2025).",
+   "sources": [
+    {
+     "src": 0,
+     "said": "Tabela de Incidência Mensal A partir de janeiro de 2026. Base de cálculo Alíquota Dedução Até R$ 2.428,80 - - De R$ 2.428,81 até R$ 2.826,65 7,5% R$ 182,16 De R$ 2.826,66 até R$ 3.751,05 15,0% R$ 394,16 De R$ 3.751,06 até R$ 4.664,68 22,5% R$ 675,49 Acima de R$ 4.664,68 27,5% R$ 908,73"
+    },
+    {
+     "src": 0,
+     "said": "Tabela de Redução Mensal A partir janeiro de 2026. Rendimentos Tributáveis Redução do Imposto até R$ 5.000,00 até R$ 312,89 de modo que o imposto devido seja zero de R$ 5.000,01 até R$ 7.350,00 R$ 978,62 - (0,133145 x rendimentos tributáveis sujeitos à incidência mensal)"
+    }
+   ]
+  },
+  {
+   "item": "year",
+   "finding": "The tax year is the calendar year; the 2025 return was due between 23 March and 29 May 2026, so the 2026 return falls due in spring 2027 on a date the Receita sets each year.",
+   "value": {
+    "start": "2026-01-01",
+    "end": "2026-12-31",
+    "2025ReturnWindow": "2026-03-23/2026-05-29"
+   },
+   "applies": "Deadline set annually by Instrução Normativa RFB.",
+   "sources": [
+    {
+     "src": 0,
+     "said": "A partir do exercício 2027 (ano-calendário 2026)."
+    },
+    {
+     "src": 1,
+     "said": "Os contribuintes terão até 29 de maio de 2026, às 23h59min59s (horário de Brasília), para transmitir as informações à Receita Federal."
+    }
+   ]
+  },
+  {
+   "item": "social",
+   "finding": "An employee pays INSS at progressive rates of 7.5%, 9%, 12% and 14% on pay up to the ceiling of BRL 8,475.55 a month; a self-employed contributor (contribuinte individual) pays 20% of earnings between the minimum wage (BRL 1,621) and the ceiling, or 11% on the minimum wage under the simplified plan. The company pays 20% on its employees' pay (plus 1% to 3% for work-accident risk) and 20% on fees it pays to a self-employed contributor; it withholds the contributor's own contribution from the fee, and a contributor serving companies may deduct 45% of the company's contribution, capped at 9% of earnings, so the contribution withheld is 11% (20% - 9%).",
+   "value": {
+    "currency": "BRL",
+    "employee": [
+     {
+      "from": 0,
+      "to": 1621.0,
+      "rate": 0.075
+     },
+     {
+      "from": 1621.0,
+      "to": 2902.84,
+      "rate": 0.09
+     },
+     {
+      "from": 2902.84,
+      "to": 4354.27,
+      "rate": 0.12
+     },
+     {
+      "from": 4354.27,
+      "to": 8475.55,
+      "rate": 0.14
+     }
+    ],
+    "ceilingMonthly": 8475.55,
+    "contribuinteIndividual": {
+     "rate": 0.2,
+     "from": 1621.0,
+     "to": 8475.55,
+     "simplifiedPlan": 0.11,
+     "MEI": 0.05,
+     "withheldByCompany": 0.11
+    },
+    "employer": {
+     "onPay": 0.2,
+     "workAccidentRisk": [
+      0.01,
+      0.02,
+      0.03
+     ],
+     "onFeesToContribuinteIndividual": 0.2
+    }
+   },
+   "applies": "From January 2026 (Portaria Interministerial MPS/MF nº 13 of 9 January 2026); employer share and retention from Lei 8.212/1991 arts. 22 and 30 § 4 and Lei 10.666/2003 art. 4. The 11% is the sum the law produces (20% less the 9% deduction cap).",
+   "sources": [
+    {
+     "src": 2,
+     "said": "Até R$ 1.621,00 7,5% De R$ 1.621,01 a R$ 2.902,84 9% De R$ 2.902,85 até R$ 4.354,27 12% De R$ 4.354,28 até R$ 8.475,55 14%"
+    },
+    {
+     "src": 2,
+     "said": "R$ 1.621,00 11% (**) R$ 178,31 R$ 1.621,00 até R$ 8.475,55 20% Entre R$ 324,20 (salário mínimo) e R$ 1.695,11 (teto)"
+    },
+    {
+     "src": 2,
+     "said": "Os valores das tabelas foram extraídos da PORTARIA INTERMINISTERIAL MPS/MF Nº 13 , de 09/01/2026 e têm aplicação sobre as contribuições a partir da competência janeiro/2026."
+    },
+    {
+     "src": 3,
+     "said": "Art. 21. A alíquota de contribuição dos segurados contribuinte individual e facultativo será de vinte por cento sobre o respectivo salário-de-contribuição. … Art. 22. A contribuição a cargo da empresa, destinada à Seguridade Social, além do disposto no art. 23, é de: I - vinte por cento sobre o total das remunerações pagas, devidas ou creditadas a qualquer título, durante o mês, aos segurados empregados e trabalhadores avulsos … III - vinte por cento sobre o total das remunerações pagas ou creditadas a qualquer título, no decorrer do mês, aos segurados contribuintes individuais que lhe prestem serviços; … § 4º Na hipótese de o contribuinte individual prestar serviço a uma ou mais empresas, poderá deduzir, da sua contribuição mensal, quarenta e cinco por cento da contribuição da empresa, efetivamente recolhida ou declarada, incidente sobre a remuneração que esta lhe tenha pago ou creditado, limitada a dedução a nove por cento do respectivo salário-de-contribuição."
+    },
+    {
+     "src": 4,
+     "said": "Art. 4º Fica a empresa obrigada a arrecadar a contribuição do segurado contribuinte individual a seu serviço, descontando-a da respectiva remuneração, e a recolher o valor arrecadado juntamente com a contribuição a seu cargo até o dia 20 (vinte) do mês seguinte ao da competência"
+    }
+   ]
+  },
+  {
+   "item": "nonResident",
+   "finding": "Pay for work or services paid or remitted to a non-resident (a foreign performer, writer or director) bears 25% income tax at source.",
+   "value": {
+    "rate": 0.25,
+    "base": "rendimentos do trabalho e da prestação de serviços"
+   },
+   "applies": "2026; finality and treaty relief not read.",
+   "sources": [
+    {
+     "src": 0,
+     "said": "Remessas ao exterior Alíquota Tipo 25% rendimentos do trabalho e da prestação de serviços, pagos, creditados, entregues, empregados ou remetidos a não residentes"
+    }
+   ]
+  },
+  {
+   "item": "authors",
+   "finding": "Other Brazilian-source income remitted abroad bears 15%; the table read does not name authors' royalties separately, and no special treatment of a resident author was found.",
+   "value": {
+    "otherRemittances": 0.15
+   },
+   "applies": "Remittances to non-residents; royalties are assumed to fall under 'demais rendimentos', which the source does not state.",
+   "sources": [
+    {
+     "src": 0,
+     "said": "15% demais rendimentos de fontes situadas no Brasil"
+    }
+   ]
+  },
+  {
+   "item": "vat",
+   "finding": "Brazil has no single VAT on a freelancer's fee in 2026: services bear the municipal services tax (ISS) at the rate each municipality sets, between a national minimum of 2% and a maximum of 5%; in 2026 the new CBS (0.9%) and IBS (0.1%) are charged as a test year under LC 214/2025.",
+   "value": {
+    "ISS": {
+     "setBy": "municipality",
+     "min": 0.02,
+     "max": 0.05
+    },
+    "CBS2026": 0.009,
+    "IBS2026": 0.001
+   },
+   "applies": "LC 116/2003 arts. 8 and 8-A and LC 214/2025 arts. 343 and 346, read from the Congress's normas.leg.br compilation; how the 2026 test-year CBS/IBS is offset against PIS/Cofins is not modelled here.",
+   "sources": [
+    {
+     "src": 5,
+     "said": "Art. 8o-A. A alíquota mínima do Imposto sobre Serviços de Qualquer Natureza é de 2% (dois por cento)"
+    },
+    {
+     "src": 6,
+     "said": "Art. 8º As alíquotas máximas do Imposto Sobre Serviços de Qualquer Natureza são as seguintes: I - (VETADO) II - demais serviços, 5% (cinco por cento). Art. 8º-A. A alíquota mínima do Imposto sobre Serviços de Qualquer Natureza é de 2% (dois por cento)."
+    },
+    {
+     "src": 7,
+     "said": "Art. 343. Em relação aos fatos geradores ocorridos de 1º de janeiro a 31 de dezembro de 2026, o IBS será cobrado mediante aplicação da alíquota estadual de 0,1% (um décimo por cento). … Art. 346. Em relação aos fatos geradores ocorridos de 1º de janeiro a 31 de dezembro de 2026, a CBS será cobrada mediante aplicação da alíquota de 0,9% (nove décimos por cento)."
+    }
+   ]
+  }
+ ],
+ "country": "BR",
+ "sources": [
+  {
+   "url": "https://www.gov.br/receitafederal/pt-br/assuntos/meu-imposto-de-renda/tabelas/2026",
+   "title": "Tabelas 2026 – Meu Imposto de Renda (Receita Federal)",
+   "read": "2026-11-01",
+   "kind": "primary",
+   "said": "Tabela de Incidência Anual A partir do exercício 2027 (ano-calendário 2026). Base de cálculo Alíquota Dedução Até R$ 29.145,60 - - De R$ 29.145,61 até R$ 33.919,80 7,5% R$ 2.185,92 De R$ 33.919,81 até R$ 45.012,60 15,0% R$ 4.729,91 De R$ 45.012,61 até R$ 55.976,16 22,5% R$ 8.105,85 Acima de R$ 55.976,16 27,5% R$ 10.904,66 … até R$ 60.000,00 até R$ 2.694,15 de modo que o imposto devido seja zero de R$ 60.000,01 até R$ 88.200,00 R$ 8.429,73 - (0,095575 x rendimentos tributáveis sujeitos ao ajuste anual) … Dedução anual por dependente: R$ 2.275,08 Limite anual de despesa com instrução: R$ 3.561,50 Limite anual de desconto simplificado: R$ 17.640,00 … Tabela de Incidência Mensal A partir de janeiro de 2026. Base de cálculo Alíquota Dedução Até R$ 2.428,80 - - De R$ 2.428,81 até R$ 2.826,65 7,5% R$ 182,16 De R$ 2.826,66 até R$ 3.751,05 15,0% R$ 394,16 De R$ 3.751,06 até R$ 4.664,68 22,5% R$ 675,49 Acima de R$ 4.664,68 27,5% R$ 908,73 … Tabela de Redução Mensal A partir janeiro de 2026. Rendimentos Tributáveis Redução do Imposto até R$ 5.000,00 até R$ 312,89 de modo que o imposto devido seja zero de R$ 5.000,01 até R$ 7.350,00 R$ 978,62 - (0,133145 x rendimentos tributáveis sujeitos à incidência mensal) … Remessas ao exterior Alíquota Tipo 25% rendimentos do trabalho e da prestação de serviços, pagos, creditados, entregues, empregados ou remetidos a não residentes … 15% demais rendimentos de fontes situadas no Brasil"
+  },
+  {
+   "url": "https://www.contabeis.com.br/noticias/75606/irpf-2026-prazo-de-entrega-sera-de-23-de-marco-a-29-de-maio/",
+   "title": "IRPF 2026: prazo de entrega será de 23 de março a 29 de maio (Contábeis)",
+   "read": "2026-11-01",
+   "kind": "secondary",
+   "quotes": "https://www.gov.br/receitafederal/pt-br/assuntos/meu-imposto-de-renda",
+   "said": "Os contribuintes terão até 29 de maio de 2026, às 23h59min59s (horário de Brasília), para transmitir as informações à Receita Federal."
+  },
+  {
+   "url": "https://www.gov.br/inss/pt-br/direitos-e-deveres/inscricao-e-contribuicao/tabela-de-contribuicao-mensal",
+   "title": "Tabela de contribuição mensal (INSS), válida a partir de janeiro de 2026",
+   "read": "2026-11-01",
+   "kind": "primary",
+   "said": "Até R$ 1.621,00 7,5% De R$ 1.621,01 a R$ 2.902,84 9% De R$ 2.902,85 até R$ 4.354,27 12% De R$ 4.354,28 até R$ 8.475,55 14% … R$ 1.621,00 11% (**) R$ 178,31 R$ 1.621,00 até R$ 8.475,55 20% Entre R$ 324,20 (salário mínimo) e R$ 1.695,11 (teto) … Os valores das tabelas foram extraídos da PORTARIA INTERMINISTERIAL MPS/MF Nº 13 , de 09/01/2026 e têm aplicação sobre as contribuições a partir da competência janeiro/2026."
+  },
+  {
+   "url": "https://normas.leg.br/api/public/binario/17b8c031-2d56-4045-ace8-2e1e1b73b934/texto",
+   "title": "Lei nº 8.212, de 24 de julho de 1991 (normas.leg.br (Congresso Nacional), compilação monovigente da Câmara dos Deputados, valor legal não oficial)",
+   "read": "2026-11-01",
+   "kind": "primary",
+   "said": "Art. 21. A alíquota de contribuição dos segurados contribuinte individual e facultativo será de vinte por cento sobre o respectivo salário-de-contribuição. … Art. 22. A contribuição a cargo da empresa, destinada à Seguridade Social, além do disposto no art. 23, é de: I - vinte por cento sobre o total das remunerações pagas, devidas ou creditadas a qualquer título, durante o mês, aos segurados empregados e trabalhadores avulsos … III - vinte por cento sobre o total das remunerações pagas ou creditadas a qualquer título, no decorrer do mês, aos segurados contribuintes individuais que lhe prestem serviços; … § 4º Na hipótese de o contribuinte individual prestar serviço a uma ou mais empresas, poderá deduzir, da sua contribuição mensal, quarenta e cinco por cento da contribuição da empresa, efetivamente recolhida ou declarada, incidente sobre a remuneração que esta lhe tenha pago ou creditado, limitada a dedução a nove por cento do respectivo salário-de-contribuição."
+  },
+  {
+   "url": "https://normas.leg.br/api/public/binario/11d74c48-44e9-4047-8283-89bb5451f293/texto",
+   "title": "Lei nº 10.666, de 8 de maio de 2003 (normas.leg.br (Congresso Nacional), compilação monovigente da Câmara dos Deputados, valor legal não oficial)",
+   "read": "2026-11-01",
+   "kind": "primary",
+   "said": "Art. 4º Fica a empresa obrigada a arrecadar a contribuição do segurado contribuinte individual a seu serviço, descontando-a da respectiva remuneração, e a recolher o valor arrecadado juntamente com a contribuição a seu cargo até o dia 20 (vinte) do mês seguinte ao da competência"
+  },
+  {
+   "url": "https://jundiai.sp.gov.br/financas/wp-content/uploads/sites/12/2018/03/alteracoes-trazidas-pela-lc-157-2016-versao-atualizada.pdf",
+   "title": "Alterações trazidas pela LC 157/2016 (Prefeitura de Jundiaí, Finanças)",
+   "read": "2026-11-01",
+   "kind": "secondary",
+   "quotes": "https://www.planalto.gov.br/ccivil_03/leis/lcp/lcp116.htm",
+   "said": "Art. 8o-A. A alíquota mínima do Imposto sobre Serviços de Qualquer Natureza é de 2% (dois por cento)"
+  },
+  {
+   "url": "https://normas.leg.br/api/public/binario/0678c532-f80c-4d94-93db-30ef1549adcd/texto",
+   "title": "Lei Complementar nº 116, de 31 de julho de 2003 (normas.leg.br (Congresso Nacional), compilação monovigente da Câmara dos Deputados, valor legal não oficial)",
+   "read": "2026-11-01",
+   "kind": "primary",
+   "said": "Art. 8º As alíquotas máximas do Imposto Sobre Serviços de Qualquer Natureza são as seguintes: I - (VETADO) II - demais serviços, 5% (cinco por cento). Art. 8º-A. A alíquota mínima do Imposto sobre Serviços de Qualquer Natureza é de 2% (dois por cento)."
+  },
+  {
+   "url": "https://normas.leg.br/api/public/binario/c239c3ef-2ca5-490f-a0b5-8e70bf971562/texto",
+   "title": "Lei Complementar nº 214, de 16 de janeiro de 2025 (normas.leg.br, publicação original)",
+   "read": "2026-11-01",
+   "kind": "primary",
+   "said": "Art. 343. Em relação aos fatos geradores ocorridos de 1º de janeiro a 31 de dezembro de 2026, o IBS será cobrado mediante aplicação da alíquota estadual de 0,1% (um décimo por cento). … Art. 346. Em relação aos fatos geradores ocorridos de 1º de janeiro a 31 de dezembro de 2026, a CBS será cobrada mediante aplicação da alíquota de 0,9% (nove décimos por cento)."
+  }
+ ],
+ "blockers": []
+}

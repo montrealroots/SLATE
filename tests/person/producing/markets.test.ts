@@ -50,15 +50,16 @@ import type { AttributesSlice } from '../../../src/person/attributes/attributes.
 import type { GenresSlice } from '../../../src/person/genres/genres.ts';
 import compiled from '../../../src/person/producing/markets.json' with { type: 'json' };
 import { falsifyAny } from '../../support/falsify-core.ts';
+import { ACCOUNT, purse } from '../../support/purse.ts';
 
-type Producing = { attributes: AttributesSlice; producing: ProducingSlice; genres: GenresSlice; identity: IdentitySlice; acting: ActingSlice; directing: DirectingSlice; permits: PermitsSlice };
+type Producing = { attributes: AttributesSlice; producing: ProducingSlice; genres: GenresSlice; identity: IdentitySlice; acting: ActingSlice; directing: DirectingSlice; permits: PermitsSlice } & ReturnType<typeof purse>;
 const SEED = '0123456789abcdef';
 const T0 = daysFromCivil(2026, 11, 1) * SECONDS_PER_DAY;
 const GENRE = 'action';
 const made = (all = 50): Life<Producing> =>
-  dispatch(begin(SEED, T0, { attributes: structuredClone(ATTRIBUTES_START), producing: structuredClone(PRODUCING_START), genres: { loved: [GENRE] }, identity: identity(), acting: structuredClone(ACTING_START), directing: structuredClone(DIRECTING_START), permits: permitsEverywhere() }), chooseAttributes, { role: 'producer', all, each: {} });
+  dispatch(begin(SEED, T0, { attributes: structuredClone(ATTRIBUTES_START), producing: structuredClone(PRODUCING_START), genres: { loved: [GENRE] }, identity: identity(), acting: structuredClone(ACTING_START), directing: structuredClone(DIRECTING_START), permits: permitsEverywhere(), ...purse() }), chooseAttributes, { role: 'producer', all, each: {} });
 const project = (l: Life<Producing>, id = l.slices.producing.projects.length) => projectOf(l.slices.producing, id);
-const optioned = (market: string, l = made()) => dispatch(l, optionMaterial, { days: 3, genre: GENRE, market });
+const optioned = (market: string, l = made()) => dispatch(l, optionMaterial, { account: ACCOUNT, days: 3, genre: GENRE, market });
 const planned = (market: string, budget: string, l = made()) => {
   const o = optioned(market, l);
   return dispatch(o, planProject, { project: o.slices.producing.projects.length, budget });
@@ -202,8 +203,8 @@ describe('the markets', () => {
     expect([currencyOf('JP'), currencyOf('FR')]).toEqual(['JPY', 'EUR']);
     const l = optioned('JP');
     expect(project(l)).toMatchObject({ market: 'JP', expires: addMonths('Asia/Tokyo', T0, 18), options: [OPTION_FEE] });
-    expect(project(dispatch(l, renewOption, { project: 1 })).expires).toBe(addMonths('Asia/Tokyo', addMonths('Asia/Tokyo', T0, 18), 18));
-    expect(project(dispatch(made(), optionMaterial, { days: 1, genre: GENRE, market: 'GB' })).market).toBe('GB');
+    expect(project(dispatch(l, renewOption, { project: 1, account: ACCOUNT })).expires).toBe(addMonths('Asia/Tokyo', addMonths('Asia/Tokyo', T0, 18), 18));
+    expect(project(dispatch(made(), optionMaterial, { account: ACCOUNT, days: 1, genre: GENRE, market: 'GB' })).market).toBe('GB');
     expect(() => optioned('XX')).toThrow("XX isn't a market a producer works in");
     expect(() => optioned('toString')).toThrow("toString isn't a market a producer works in");
     expect(project(planned('JP', '50000000')).plan?.budget).toEqual(money('JPY', 50_000_000));
@@ -316,12 +317,12 @@ describe("a market's project", () => {
     const raisedIn = project(dispatch(planned('FR', '2000000', made(80)), raiseMoney, { project: 1, days: 400 })).raised;
     expect(Object.values(raisedIn).map((m) => m.currency)).toEqual(['EUR', 'EUR', 'EUR']);
     expect(raisedIn['broadcaster']).toEqual(of('EUR', '360000'));
-    const shot = project(dispatch(funded(planned('IT', '2000000')), shootProject, { project: 1 })).shot;
+    const shot = project(dispatch(funded(planned('IT', '2000000')), shootProject, { project: 1, account: ACCOUNT })).shot;
     expect(shot?.overrun.currency).toBe('EUR');
     expect(shot?.fee?.currency).toBe('EUR');
-    expect(project(dispatch(funded(planned('AU', '2000000')), shootProject, { project: 1 })).shot?.fee).toBeNull();
+    expect(project(dispatch(funded(planned('AU', '2000000')), shootProject, { project: 1, account: ACCOUNT })).shot?.fee).toBeNull();
     let it_ = made(30);
-    for (let i = 0; i < 12; i += 1) it_ = dispatch(funded(planned('IT', '2000000', it_)), shootProject, { project: i + 1 });
+    for (let i = 0; i < 12; i += 1) it_ = dispatch(funded(planned('IT', '2000000', it_)), shootProject, { project: i + 1, account: ACCOUNT });
     const cinemas: boolean[] = [];
     for (let id = 1; id <= 12; id += 1) {
       const p = project(it_, id);
@@ -333,7 +334,7 @@ describe("a market's project", () => {
     }
     expect(cinemas).toContain(true);
     expect(cinemas).toContain(false);
-    expect(() => dispatch(dispatch(funded(planned('FR', '2000000')), shootProject, { project: 1 }), releaseFilm, { project: 1 })).toThrow("how often a film made in France reaches cinemas isn't known to this game");
+    expect(() => dispatch(dispatch(funded(planned('FR', '2000000')), shootProject, { project: 1, account: ACCOUNT }), releaseFilm, { project: 1 })).toThrow("how often a film made in France reaches cinemas isn't known to this game");
   });
 
   it('reads a tier by its budgets, both counted, and gives its sum or its bands at most its most', () => {
@@ -397,10 +398,10 @@ describe("a market's project", () => {
 describe('a project shot abroad', () => {
   it('is shot only where the person may work: a permit in force, else refused', () => {
     const none = (l: Life<Producing>): Life<Producing> => ({ ...l, slices: { ...l.slices, permits: { applications: [] } } });
-    expect(() => dispatch(none(funded(planned('IT', '2000000'))), shootProject, { project: 1 })).toThrow('the person may not work in IT without a permit');
-    expect(project(dispatch(funded(planned('IT', '2000000')), shootProject, { project: 1 })).shot).not.toBeNull();
+    expect(() => dispatch(none(funded(planned('IT', '2000000'))), shootProject, { project: 1, account: ACCOUNT })).toThrow('the person may not work in IT without a permit');
+    expect(project(dispatch(funded(planned('IT', '2000000')), shootProject, { project: 1, account: ACCOUNT })).shot).not.toBeNull();
     // A British citizen shoots in the UK with none.
     const brit = (l: Life<Producing>): Life<Producing> => ({ ...none(l), slices: { ...none(l).slices, identity: identity({ citizenship: ['GB'] }) } });
-    expect(project(dispatch(brit(funded(planned('GB', '2000000'))), shootProject, { project: 1 })).shot).not.toBeNull();
+    expect(project(dispatch(brit(funded(planned('GB', '2000000'))), shootProject, { project: 1, account: ACCOUNT })).shot).not.toBeNull();
   });
 });

@@ -42,8 +42,9 @@ import { PRODUCING_START, type ProducingSlice } from '../../../src/person/produc
 import { UNIONS_START, type UnionsSlice } from '../../../src/person/unions/unions.ts';
 import compiled from '../../../src/person/acting/markets.json' with { type: 'json' };
 import { identity, person } from '../../support/person.ts';
+import { ACCOUNT, purse } from '../../support/purse.ts';
 
-type Acting = { attributes: AttributesSlice; acting: ActingSlice; identity: IdentitySlice; unions: UnionsSlice; permits: PermitsSlice; directing: DirectingSlice; producing: ProducingSlice };
+type Acting = { attributes: AttributesSlice; acting: ActingSlice; identity: IdentitySlice; unions: UnionsSlice; permits: PermitsSlice; directing: DirectingSlice; producing: ProducingSlice } & ReturnType<typeof purse>;
 const day = (y: number, m: number, d: number) => daysFromCivil(y, m, d) * SECONDS_PER_DAY;
 const part = (agreement: Agreement, p: Partial<Part> = {}): Part => ({ agreement, budget: 5_000_000, seats: 0, lines: 20, term: 'day', length: 1, rehearsal: 0, asks: [], ...p });
 const money = (c: CurrencyCode, n: string) => fromMajor(c, n);
@@ -685,7 +686,7 @@ describe("a market's part", () => {
 
 describe("a market's part, played", () => {
   const made = (now: number, who: IdentitySlice, auditions: Audition[]): Life<Acting> =>
-    dispatch(begin('0123456789abcdef', now, { attributes: structuredClone(ATTRIBUTES_START), acting: { breakdowns: [], auditions }, identity: who, unions: structuredClone(UNIONS_START), permits: structuredClone(PERMITS_START), directing: structuredClone(DIRECTING_START), producing: structuredClone(PRODUCING_START) }), chooseAttributes, { role: 'actor', all: 50, each: {} });
+    dispatch(begin('0123456789abcdef', now, { attributes: structuredClone(ATTRIBUTES_START), acting: { breakdowns: [], auditions }, identity: who, unions: structuredClone(UNIONS_START), permits: structuredClone(PERMITS_START), directing: structuredClone(DIRECTING_START), producing: structuredClone(PRODUCING_START), ...purse() }), chooseAttributes, { role: 'actor', all: 50, each: {} });
   const booked = (p: Part, id = 1, work: Audition['work'] = null): Audition => ({ id, at: 0, breakdown: 0, part: p, taped: true, score: 50, booked: true, work });
   const NOW = day(2026, 7, 1);
 
@@ -693,13 +694,13 @@ describe("a market's part, played", () => {
     const p = part('au-screen', { medium: 'film', length: 2 });
     const first = booked(part('sag-aftra'), 1, { at: day(2021, 7, 1), quality: 50, pay: null });
     const aussie = identity({ citizenship: ['AU'] });
-    const play = (l: Life<Acting>) => dispatch(l, playPart, { audition: 2 }).slices.acting.auditions[1]?.work?.pay;
+    const play = (l: Life<Acting>) => dispatch(l, playPart, { audition: 2, account: ACCOUNT }).slices.acting.auditions[1]?.work?.pay;
     expect(play(made(NOW, aussie, [first, booked(p, 2)]))).toEqual(money('AUD', '718.60'));
     expect(() => play(made(NOW - SECONDS_PER_DAY, aussie, [first, booked(p, 2)]))).toThrow('no minimum is known before 2026-07-01');
     expect(play(made(NOW, aussie, [{ ...first, work: { at: day(2021, 7, 2), quality: 50, pay: null } }, booked(p, 2)]))).toEqual(money('AUD', '683.96'));
-    expect(() => dispatch(made(NOW, identity(), [first, booked(p, 2)]), playPart, { audition: 2 })).toThrow('the person may not work in AU without a permit');
+    expect(() => dispatch(made(NOW, identity(), [first, booked(p, 2)]), playPart, { audition: 2, account: ACCOUNT })).toThrow('the person may not work in AU without a permit');
     const none = made(NOW, identity({ citizenship: ['ZA'] }), [booked(part('za-all', { medium: 'stage', term: 'week', length: 2 }))]);
-    expect(dispatch(none, playPart, { audition: 1 }).slices.acting.auditions[0]?.work?.pay).toBeNull();
+    expect(dispatch(none, playPart, { audition: 1, account: ACCOUNT }).slices.acting.auditions[0]?.work?.pay).toBeNull();
   });
 
   it("is cast in the market's language, the age reckoned in its city", () => {

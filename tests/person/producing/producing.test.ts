@@ -6,7 +6,7 @@ import { permitsEverywhere } from '../../support/permits.ts';
 import { identity } from '../../support/person.ts';
 import { describe, expect, it } from 'vitest';
 import { begin, commandIndex, dispatch, pass, type Life } from '../../../src/core/frame/frame.ts';
-import { money } from '../../../src/core/money/money.ts';
+import { money, type Money } from '../../../src/core/money/money.ts';
 import { draws, seedFromText } from '../../../src/core/rng/rng.ts';
 import { daysFromCivil, SECONDS_PER_DAY } from '../../../src/core/time/calendar.ts';
 import { addMonths } from '../../../src/core/time/dates.ts';
@@ -58,8 +58,10 @@ import { boxOfficeFactor, type GenresSlice } from '../../../src/person/genres/ge
 import { spread } from '../../../src/person/work/work.ts';
 import { t } from '../../../src/core/text/text.ts';
 import { falsifyAny } from '../../support/falsify-core.ts';
+import { ACCOUNT, minorIn, purse } from '../../support/purse.ts';
+import { exchangeOn } from '../../../src/money/rates/rates.ts';
 
-type Producing = { attributes: AttributesSlice; producing: ProducingSlice; genres: GenresSlice; identity: IdentitySlice; acting: ActingSlice; directing: DirectingSlice; permits: PermitsSlice };
+type Producing = { attributes: AttributesSlice; producing: ProducingSlice; genres: GenresSlice; identity: IdentitySlice; acting: ActingSlice; directing: DirectingSlice; permits: PermitsSlice } & ReturnType<typeof purse>;
 /** The genres the producer loves in these tests, and the one their material is in. */
 const LOVED = { loved: ['action', 'documentary', 'family'] };
 const GENRE = 'action';
@@ -77,7 +79,7 @@ const grown = (from: number, days: number) => 100 - (100 - from) * (1 - DAILY) *
 const gbp = (pounds: number) => money('GBP', Math.round(pounds * 100));
 
 const made = (all: number, each: Partial<Record<Broad, number>> = {}, seed = SEED, at = T0): Life<Producing> =>
-  dispatch(begin(seed, at, { attributes: structuredClone(ATTRIBUTES_START), producing: structuredClone(PRODUCING_START), genres: structuredClone(LOVED), identity: identity(), acting: structuredClone(ACTING_START), directing: structuredClone(DIRECTING_START), permits: permitsEverywhere() }), chooseAttributes, { role: 'producer', all, each });
+  dispatch(begin(seed, at, { attributes: structuredClone(ATTRIBUTES_START), producing: structuredClone(PRODUCING_START), genres: structuredClone(LOVED), identity: identity(), acting: structuredClone(ACTING_START), directing: structuredClone(DIRECTING_START), permits: permitsEverywhere(), ...purse() }), chooseAttributes, { role: 'producer', all, each });
 const v = (l: Life<Producing>) => componentValues(l.slices.attributes, 'producer');
 const held = (l: Life<Producing>) => l.slices.attributes['producer'] as Record<string, number>;
 const of = (w: Record<string, number>, id: string) => skillOf(w, 'producer', id);
@@ -89,7 +91,7 @@ const edit = (l: Life<Producing>, f: (s: ProducingSlice) => void): Life<Producin
   f(producing);
   return { ...l, slices: { ...l.slices, producing } };
 };
-const optioned = (all: number, each: Partial<Record<Broad, number>> = {}, days = 30, seed = SEED) => dispatch(made(all, each, seed), optionMaterial, { days, genre: GENRE });
+const optioned = (all: number, each: Partial<Record<Broad, number>> = {}, days = 30, seed = SEED) => dispatch(made(all, each, seed), optionMaterial, { account: ACCOUNT, days, genre: GENRE });
 const planned = (l: Life<Producing>, budget = '2000000', id = l.slices.producing.projects.length) => dispatch(l, planProject, { project: id, budget });
 /** Financed by hand: equity closing what the project still needs. */
 const funded = (l: Life<Producing>, id = l.slices.producing.projects.length) =>
@@ -97,9 +99,9 @@ const funded = (l: Life<Producing>, id = l.slices.producing.projects.length) =>
     const p = projectOf(s, id);
     p.raised['equity'] = money('GBP', target(p) - raised(p));
   });
-const shot = (l: Life<Producing>, id = l.slices.producing.projects.length) => dispatch(funded(l, id), shootProject, { project: id });
+const shot = (l: Life<Producing>, id = l.slices.producing.projects.length) => dispatch(funded(l, id), shootProject, { project: id, account: ACCOUNT });
 /** A film taken to the shoot: optioned, planned and financed. */
-const film = (l: Life<Producing>, budget = '2000000') => shot(planned(dispatch(l, optionMaterial, { days: 10, genre: GENRE }), budget));
+const film = (l: Life<Producing>, budget = '2000000') => shot(planned(dispatch(l, optionMaterial, { account: ACCOUNT, days: 10, genre: GENRE }), budget));
 
 /** The script optioned, as the producer's eye picks it from a day's reading each. */
 function picked(eyeLevel: number, days: number, id: number, when = T0, seed = SEED): number {
@@ -145,22 +147,25 @@ describe('optioning material', () => {
   });
 
   it('numbers each project and is refused for days that are not whole', () => {
-    const two = dispatch(optioned(50), optionMaterial, { days: 3, genre: GENRE });
+    const two = dispatch(optioned(50), optionMaterial, { account: ACCOUNT, days: 3, genre: GENRE });
     expect(project(two, 2).material).toBe(picked(eye(v(two)), 3, 2));
     expect(two.slices.producing.projects.map((p) => p.id)).toEqual([1, 2]);
     let ones = made(30);
-    for (let i = 0; i < 12; i += 1) ones = dispatch(ones, optionMaterial, { days: 1, genre: GENRE });
+    for (let i = 0; i < 12; i += 1) ones = dispatch(ones, optionMaterial, { account: ACCOUNT, days: 1, genre: GENRE });
     expect(ones.slices.producing.projects.map((p) => p.material)).toEqual(Array.from({ length: 12 }, (_, i) => picked(eye(v(made(30))), 1, i + 1)));
     expect(() => project(two, 3)).toThrow("there's no project 3");
-    expect(() => dispatch(made(50), optionMaterial, { days: 0, genre: GENRE })).toThrow('the days given are a whole number of at least 1 (0)');
-    expect(() => dispatch(made(50), optionMaterial, { days: 1.5, genre: GENRE })).toThrow(RangeError);
-    expect(() => dispatch(made(50), optionMaterial, { days: 3, genre: 'western' })).toThrow("Western isn't a genre the person loves");
+    expect(() => dispatch(made(50), optionMaterial, { account: ACCOUNT, days: 0, genre: GENRE })).toThrow('the days given are a whole number of at least 1 (0)');
+    const broke = made(50);
+    expect(() => dispatch({ ...broke, slices: { ...broke.slices, ...purse('USD', 922_679) } }, optionMaterial, { account: ACCOUNT, days: 1, genre: GENRE })).toThrow("everyday:1 can't cover an option");
+    expect(minorIn(optioned(50).slices.ledger, ACCOUNT)).toBe(100_000_000 - 922_680);
+    expect(() => dispatch(made(50), optionMaterial, { account: ACCOUNT, days: 1.5, genre: GENRE })).toThrow(RangeError);
+    expect(() => dispatch(made(50), optionMaterial, { account: ACCOUNT, days: 3, genre: 'western' })).toThrow("Western isn't a genre the person loves");
   });
 
   it('producing.option: a better eye options a better script', () => {
     const total = (n: number) => {
       let l = made(50, { development: n });
-      for (let i = 0; i < 12; i += 1) l = dispatch(l, optionMaterial, { days: 5, genre: GENRE });
+      for (let i = 0; i < 12; i += 1) l = dispatch(l, optionMaterial, { account: ACCOUNT, days: 5, genre: GENRE });
       return l.slices.producing.projects.reduce((t, p) => t + p.material, 0);
     };
     falsifyAny({ feature: 'producing.option', claim: 'bites', says: 'a producer at 100 in Development options better scripts, a dozen from five days of reading each, than one at 0', base: 0, twin: 100, outcome: total });
@@ -171,17 +176,21 @@ describe('renewing an option', () => {
   it('adds 18 months from when it would lapse, at another 10%, while it runs', () => {
     const l = optioned(50);
     const expires = project(l).expires;
-    const renewed = dispatch(at(l, expires), renewOption, { project: 1 });
+    const renewed = dispatch(at(l, expires), renewOption, { project: 1, account: ACCOUNT });
     expect(project(renewed).expires).toBe(addMonths(ZONE, expires, 18));
     expect(project(renewed).options).toEqual([OPTION_FEE, OPTION_FEE]);
+    // Each payment from the account named, to the material's owner.
+    expect([minorIn(renewed.slices.ledger, ACCOUNT), minorIn(renewed.slices.ledger, 'world:rights holder:USD')]).toEqual([100_000_000 - 2 * 922_680, 2 * 922_680]);
+    const short = { ...l, slices: { ...l.slices, ...purse('USD', 0) } };
+    expect(() => dispatch(at(short, expires), renewOption, { project: 1, account: ACCOUNT })).toThrow('everyday:1 can\'t cover an option renewed');
     expect(renewed.slices.attributes).toEqual(l.slices.attributes);
-    expect(() => dispatch(at(l, expires + 1), renewOption, { project: 1 })).toThrow("project 1's option has lapsed");
-    expect(() => dispatch(film(made(50)), renewOption, { project: 1 })).toThrow("project 1's rights are bought");
-    expect(() => dispatch(l, renewOption, { project: 2 })).toThrow("there's no project 2");
+    expect(() => dispatch(at(l, expires + 1), renewOption, { project: 1, account: ACCOUNT })).toThrow("project 1's option has lapsed");
+    expect(() => dispatch(film(made(50)), renewOption, { project: 1, account: ACCOUNT })).toThrow("project 1's rights are bought");
+    expect(() => dispatch(l, renewOption, { project: 2, account: ACCOUNT })).toThrow("there's no project 2");
   });
 
   it('producing.renew: a renewed option runs longer', () => {
-    falsifyAny({ feature: 'producing.renew', claim: 'bites', says: 'an option renewed once runs 18 months past one never renewed', base: 0, twin: 1, outcome: (n) => project(n === 0 ? optioned(50) : dispatch(optioned(50), renewOption, { project: 1 })).expires });
+    falsifyAny({ feature: 'producing.renew', claim: 'bites', says: 'an option renewed once runs 18 months past one never renewed', base: 0, twin: 1, outcome: (n) => project(n === 0 ? optioned(50) : dispatch(optioned(50), renewOption, { project: 1, account: ACCOUNT })).expires });
   });
 });
 
@@ -233,7 +242,7 @@ describe('budgeting and scheduling', () => {
   it('producing.plan: a better plan schedules nearer the need', () => {
     const gap = (n: number) => {
       let l = made(50, { production: n, financing: n });
-      for (let i = 0; i < 12; i += 1) l = planned(dispatch(l, optionMaterial, { days: 1, genre: GENRE }));
+      for (let i = 0; i < 12; i += 1) l = planned(dispatch(l, optionMaterial, { account: ACCOUNT, days: 1, genre: GENRE }));
       return l.slices.producing.projects.reduce((t, p) => t + Math.abs((p.plan?.scheduled ?? 0) - (p.plan?.needed ?? 0)), 0);
     };
     falsifyAny({ feature: 'producing.plan', claim: 'bites', says: 'a producer at 0 in Production and Financing schedules a dozen projects off their need; one at 100 schedules each to it', base: 0, twin: 100, outcome: gap });
@@ -263,7 +272,7 @@ describe('financing', () => {
     expect(BFI).toEqual({ rate: 0.13, share: 0.22, most: 1_250_000 });
     let l = made(90);
     const budgets = ['2000000', '10000000'];
-    for (let i = 0; i < 40; i += 1) l = planned(dispatch(l, optionMaterial, { days: 5, genre: GENRE }), budgets[i % 2]);
+    for (let i = 0; i < 40; i += 1) l = planned(dispatch(l, optionMaterial, { account: ACCOUNT, days: 5, genre: GENRE }), budgets[i % 2]);
     const awards: (number | undefined)[] = [];
     for (let id = 1; id <= 40; id += 1) {
       const p = project(l, id);
@@ -348,7 +357,7 @@ describe('financing', () => {
   it('producing.apply: a better package is funded more often', () => {
     const yeses = (n: number) => {
       let l = made(50, { dealmaking: n, development: n });
-      for (let i = 0; i < 40; i += 1) l = planned(dispatch(l, optionMaterial, { days: 5, genre: GENRE }));
+      for (let i = 0; i < 40; i += 1) l = planned(dispatch(l, optionMaterial, { account: ACCOUNT, days: 5, genre: GENRE }));
       for (let id = 1; id <= 40; id += 1) l = dispatch(l, applyToFunder, { project: id });
       return l.slices.producing.projects.filter((p) => 'bfi' in p.raised).length;
     };
@@ -358,7 +367,7 @@ describe('financing', () => {
   it('producing.raise: a better financier closes more of the market in a season', () => {
     const closed = (n: number) => {
       let l = made(50, { financing: n, dealmaking: n });
-      for (let i = 0; i < 12; i += 1) l = planned(dispatch(l, optionMaterial, { days: 1, genre: GENRE }));
+      for (let i = 0; i < 12; i += 1) l = planned(dispatch(l, optionMaterial, { account: ACCOUNT, days: 1, genre: GENRE }));
       for (let id = 1; id <= 12; id += 1) l = dispatch(l, raiseMoney, { project: id, days: 60 });
       return l.slices.producing.projects.reduce((t, p) => t + Object.keys(p.raised).length, 0);
     };
@@ -383,7 +392,7 @@ describe('the shoot', () => {
       const days = Math.ceil((p.plan?.needed ?? 0) * (1 + 0.5 * (1 - k / 100) * d.float()));
       const overrun = (Math.max(0, days - scheduled) * 200_000_000) / scheduled;
       const quality = clamp(0.5 * p.material + 0.5 * k + spread(k) * u(d));
-      const l = dispatch(ready, shootProject, { project: 1 });
+      const l = dispatch(ready, shootProject, { project: 1, account: ACCOUNT });
       const fee = p.plan?.fee?.minor ?? 0;
       expect(project(l).shot, `${all} ${scheduled}`).toEqual({ at: T0, days, overrun: money('GBP', Math.round(overrun)), fee: money('GBP', Math.round(Math.max(0, fee - overrun))), quality });
       expect(held(l)['production']).toBeCloseTo(grown(held(ready)['production'] as number, days), 10);
@@ -393,14 +402,20 @@ describe('the shoot', () => {
     expect(top.shot?.days).toBe(top.plan?.needed);
     expect(top.shot?.overrun).toEqual(gbp(0));
     expect(top.shot?.fee).toEqual(top.plan?.fee);
+    // The fee is paid into the account named, carried from pounds at the day's rate: a US producer in the UK has nothing withheld.
+    const paid = shot(planned(optioned(100)));
+    const pounds = top.shot?.fee as Money;
+    expect(paid.slices.tax.paid.map((x) => [x.what, x.work, x.country, x.gross, x.tax, x.social])).toEqual([["producer's fee", 'producer', 'GB', pounds.minor, 0, 0]]);
+    expect(minorIn(paid.slices.ledger, 'world:production:GBP')).toBe(-pounds.minor);
+    expect(minorIn(paid.slices.ledger, ACCOUNT)).toBe(100_000_000 - 922_680 + (exchangeOn(pounds, 'USD', '2026-11-01')?.money.minor as number));
   });
 
   it('is refused before it is financed or once the option lapses', () => {
     const l = planned(optioned(50));
-    expect(() => dispatch(l, shootProject, { project: 1 })).toThrow("project 1 isn't financed");
-    expect(() => dispatch(optioned(50), shootProject, { project: 1 })).toThrow('project 1 has no budget');
-    expect(() => dispatch(at(funded(l), project(l).expires + 1), shootProject, { project: 1 })).toThrow("project 1's option has lapsed");
-    expect(project(dispatch(at(funded(l), project(l).expires), shootProject, { project: 1 })).shot).not.toBeNull();
+    expect(() => dispatch(l, shootProject, { project: 1, account: ACCOUNT })).toThrow("project 1 isn't financed");
+    expect(() => dispatch(optioned(50), shootProject, { project: 1, account: ACCOUNT })).toThrow('project 1 has no budget');
+    expect(() => dispatch(at(funded(l), project(l).expires + 1), shootProject, { project: 1, account: ACCOUNT })).toThrow("project 1's option has lapsed");
+    expect(project(dispatch(at(funded(l), project(l).expires), shootProject, { project: 1, account: ACCOUNT })).shot).not.toBeNull();
   });
 
   it('producing.shoot: a better team keeps the shoot to its days', () => {
@@ -455,7 +470,7 @@ describe('the release', () => {
     for (let i = 0; i < 6; i += 1) l = dispatch(film(l, '20000000'), releaseFilm, { project: i + 1 });
     const n = l.slices.producing.projects.filter((p) => p.release?.cinema === true).length;
     expect(n).toBeGreaterThanOrEqual(2);
-    const next = dispatch(l, optionMaterial, { days: 5, genre: GENRE });
+    const next = dispatch(l, optionMaterial, { account: ACCOUNT, days: 5, genre: GENRE });
     const p = project(next, 7);
     expect(factor(next.slices.producing, v(next), p, T0)).toBeCloseTo(0.7 + (0.5 * p.material + 0.5 * pitchSkill(v(next))) / 100, 12);
   });
@@ -504,7 +519,7 @@ describe('the producer', () => {
       let l = planned(optioned(50, {}, 30, seed));
       l = dispatch(l, applyToFunder, { project: 1 });
       l = dispatch(l, raiseMoney, { project: 1, days: 200 });
-      l = dispatch(l, shootProject, { project: 1 });
+      l = dispatch(l, shootProject, { project: 1, account: ACCOUNT });
       return project(dispatch(l, releaseFilm, { project: 1 }));
     };
     expect(run(SEED)).toEqual(run(SEED));
@@ -520,15 +535,15 @@ describe('the producer', () => {
   it('is run through the frame, each command declaring what it reads and writes', () => {
     expect(PRODUCING_START).toEqual({ projects: [] });
     expect(commandIndex().filter((x) => x.id.startsWith('producing.'))).toEqual([
-      { id: 'producing.option', reads: ['genres'], writes: ['attributes', 'producing'] },
-      { id: 'producing.renew', reads: [], writes: ['producing'] },
+      { id: 'producing.option', reads: ['genres'], writes: ['attributes', 'producing', 'accounts', 'ledger'] },
+      { id: 'producing.renew', reads: [], writes: ['producing', 'accounts', 'ledger'] },
       { id: 'producing.plan', reads: [], writes: ['attributes', 'producing'] },
       { id: 'producing.apply', reads: [], writes: ['attributes', 'producing'] },
       { id: 'producing.raise', reads: [], writes: ['attributes', 'producing'] },
-      { id: 'producing.shoot', reads: ['identity', 'acting', 'directing', 'permits'], writes: ['attributes', 'producing'] },
+      { id: 'producing.shoot', reads: ['identity', 'acting', 'directing', 'permits'], writes: ['attributes', 'producing', 'accounts', 'ledger', 'tax', 'schedule'] },
       { id: 'producing.release', reads: [], writes: ['attributes', 'producing'] },
     ]);
-    const bare = begin(SEED, T0, { attributes: structuredClone(ATTRIBUTES_START), producing: structuredClone(PRODUCING_START), genres: structuredClone(LOVED), identity: identity(), acting: structuredClone(ACTING_START), directing: structuredClone(DIRECTING_START), permits: permitsEverywhere() });
-    expect(() => dispatch(bare, optionMaterial, { days: 3, genre: GENRE })).toThrow("the producer's attributes haven't been chosen");
+    const bare = begin(SEED, T0, { attributes: structuredClone(ATTRIBUTES_START), producing: structuredClone(PRODUCING_START), genres: structuredClone(LOVED), identity: identity(), acting: structuredClone(ACTING_START), directing: structuredClone(DIRECTING_START), permits: permitsEverywhere(), ...purse() });
+    expect(() => dispatch(bare, optionMaterial, { account: ACCOUNT, days: 3, genre: GENRE })).toThrow("the producer's attributes haven't been chosen");
   });
 });

@@ -1,0 +1,504 @@
+{
+ "topic": "tax.AU",
+ "read": "2026-11-01",
+ "note": "Read 2026-11-01 at the owner's word (\"Build those first 3 starting with ledger first\"; \"Retry the blocked tax facts once all countries land\"): the tax on a screen worker's pay in Australia: a resident's income tax, social contributions, what is withheld at source, a non-resident artiste's withholding, any authors' treatment, VAT's threshold, the tax year. Research and retry subagents (workbench/briefs/BRIEF-tax*.md); every quote checked by the lead against its saved page.",
+ "figures": [
+  {
+   "item": "residents",
+   "finding": "A resident pays nothing on the first $18,200, then 16% to $45,000, 30% to $135,000, 37% to $190,000 and 45% above in 2025-26; the first rate falls to 15% for 2026-27 and 14% from 2027-28. A 2% Medicare levy is added on taxable income (none at or below $28,011).",
+   "value": {
+    "currency": "AUD",
+    "taxFreeThreshold": 18200,
+    "brackets2025_26": [
+     {
+      "from": 0,
+      "to": 18200,
+      "rate": 0
+     },
+     {
+      "from": 18200,
+      "to": 45000,
+      "rate": 0.16
+     },
+     {
+      "from": 45000,
+      "to": 135000,
+      "rate": 0.3
+     },
+     {
+      "from": 135000,
+      "to": 190000,
+      "rate": 0.37
+     },
+     {
+      "from": 190000,
+      "to": null,
+      "rate": 0.45
+     }
+    ],
+    "brackets2026_27": [
+     {
+      "from": 0,
+      "to": 18200,
+      "rate": 0
+     },
+     {
+      "from": 18200,
+      "to": 45000,
+      "rate": 0.15
+     },
+     {
+      "from": 45000,
+      "to": 135000,
+      "rate": 0.3
+     },
+     {
+      "from": 135000,
+      "to": 190000,
+      "rate": 0.37
+     },
+     {
+      "from": 190000,
+      "to": null,
+      "rate": 0.45
+     }
+    ],
+    "brackets2027_28on": {
+     "firstRate": 0.14
+    },
+    "medicareLevy": {
+     "rate": 0.02,
+     "noLevyAtOrBelow": 28011,
+     "phaseIn": "shading-in above the threshold not read"
+    },
+    "regionalLayer": null
+   },
+   "applies": "Australian residents; income years 1 July to 30 June (2025-26 and 2026-27 both touch calendar 2026).",
+   "sources": [
+    {
+     "src": 0,
+     "said": "tax-free threshold means $18,200."
+    },
+    {
+     "src": 0,
+     "said": "Tax rates for resident taxpayers for the 2024-25 or 2025-26 year of income"
+    },
+    {
+     "src": 0,
+     "said": "1 exceeds the tax-free threshold but does not exceed $45,000 16%"
+    },
+    {
+     "src": 0,
+     "said": "Tax rates for resident taxpayers for the 2026-27 year of income Item For the part of the ordinary taxable income of the taxpayer that: The rate is: 1 exceeds the tax-free threshold but does not exceed $45,000 15%"
+    },
+    {
+     "src": 0,
+     "said": "4 exceeds $190,000 45%"
+    },
+    {
+     "src": 1,
+     "said": "(1) The rate of levy payable by a person upon a taxable income is 2%."
+    },
+    {
+     "src": 1,
+     "said": "(c) in any other case—$28,011."
+    }
+   ]
+  },
+  {
+   "item": "social",
+   "finding": "Australia has no employee social-security contribution; the employer pays superannuation guarantee of 12% of ordinary-time earnings, and anyone paid to perform in or work on a film or broadcast counts as an employee for it even when engaged as a contractor.",
+   "value": {
+    "currency": "AUD",
+    "employee": null,
+    "employerSuperGuarantee": 0.12,
+    "performersAreEmployeesForSG": true
+   },
+   "applies": "2026; Medicare is funded by the levy in the residents row.",
+   "sources": [
+    {
+     "src": 2,
+     "said": "charge percentage means 12."
+    },
+    {
+     "src": 2,
+     "said": "(c) a person who is paid to perform services in, or in connection with, the making of any film, tape or disc or of any television or radio broadcast is an employee of the person liable to make the payment"
+    }
+   ]
+  },
+  {
+   "item": "withholding",
+   "finding": "Employers withhold PAYG from wages by the ATO's tax tables (not read); a payment to a contractor who does not quote an ABN has the top rate withheld.",
+   "value": {
+    "currency": "AUD",
+    "wages": "ATO PAYG withholding schedules (not read: ato.gov.au refuses this environment)",
+    "noABN": "top rate (45%) × payment"
+   },
+   "applies": "2026.",
+   "sources": [
+    {
+     "src": 3,
+     "said": "The amount to be withheld from the payment is an amount equal to the product of the top rate and the amount of the payment."
+    }
+   ]
+  },
+  {
+   "item": "nonResident",
+   "finding": "A payment to a foreign-resident performer (or support staff) for an entertainment activity, a film or broadcast appearance included, has tax withheld as if the payment were the performer's taxable income at the non-resident rates: 30% to $135,000, 37% to $190,000 and 45% above, with no tax-free threshold.",
+   "value": {
+    "currency": "AUD",
+    "base": "each payment treated as taxable income",
+    "individualRates": [
+     {
+      "from": 0,
+      "to": 135000,
+      "rate": 0.3
+     },
+     {
+      "from": 135000,
+      "to": 190000,
+      "rate": 0.37
+     },
+     {
+      "from": 190000,
+      "to": null,
+      "rate": 0.45
+     }
+    ],
+    "companyRate": "rates in ITRA s.23",
+    "final": "not stated in the regulation (see blockers)"
+   },
+   "applies": "Foreign residents performing in Australia, 2025-26 and 2026-27.",
+   "sources": [
+    {
+     "src": 3,
+     "said": "a payment to an entity for entertainment or sports activities is prescribed."
+    },
+    {
+     "src": 3,
+     "said": "(a) a performing artist or a sportsperson; or (b) support staff relating to the activity."
+    },
+    {
+     "src": 3,
+     "said": "(b) if the payment is made to an individual—the amount worked out by applying to the payment, as if the amount of the payment was the taxable income of the individual, the rates mentioned in Part II of Schedule 7 of the Income Tax Rates Act 1986."
+    },
+    {
+     "src": 0,
+     "said": "1 does not exceed $135,000 The second resident personal tax rate"
+    },
+    {
+     "src": 0,
+     "said": "2 exceeds $135,000 but does not exceed $190,000 The third resident personal tax rate 3 exceeds $190,000 45%"
+    }
+   ]
+  },
+  {
+   "item": "authors",
+   "finding": "Authors of literary, dramatic, musical or artistic works, performing artists (on film and broadcast too) and production associates such as directors may have above-average special professional income taxed at special averaged rates, to soften fluctuating incomes.",
+   "value": {
+    "scheme": "ITAA 1997 Division 405 income averaging for special professionals",
+    "covers": [
+     "authors",
+     "performing artists, including film, television and radio",
+     "production associates (art director, choreographer, costume designer, director, and others)"
+    ]
+   },
+   "applies": "Residents, income years 2025-26 and 2026-27; the averaging arithmetic (405-15 onward) is not transcribed.",
+   "sources": [
+    {
+     "src": 4,
+     "said": "To lessen the impact of these fluctuations on your marginal tax rates, special tax rates apply if your professional income is above your average."
+    },
+    {
+     "src": 4,
+     "said": "(a) the author of a literary, dramatic, musical or artistic work; or"
+    },
+    {
+     "src": 4,
+     "said": "(3) You are also a performing artist if you perform or appear in or on a *film, tape, disc or television or radio broadcast."
+    },
+    {
+     "src": 4,
+     "said": "(iv) a director; or"
+    }
+   ]
+  },
+  {
+   "item": "vat",
+   "finding": "A freelancer must register for GST, and then charges 10%, once turnover reaches the $75,000 registration threshold.",
+   "value": {
+    "currency": "AUD",
+    "rate": 0.1,
+    "registrationThreshold": 75000
+   },
+   "applies": "2026.",
+   "sources": [
+    {
+     "src": 5,
+     "said": "The amount of GST on a *taxable supply is 10% of the *value of the taxable supply."
+    },
+    {
+     "src": 6,
+     "said": "For the purposes of paragraph 23-15(1)(b) of the Act, the amount of $75,000 is specified."
+    }
+   ]
+  },
+  {
+   "item": "year",
+   "finding": "The Australian income year runs 1 July to 30 June; a return for the 2026 year (ended 30 June 2026) is due 31 October 2026, and 2026-27 runs to 30 June 2027.",
+   "value": {
+    "currency": "AUD",
+    "years": [
+     {
+      "start": "2025-07-01",
+      "end": "2026-06-30"
+     },
+     {
+      "start": "2026-07-01",
+      "end": "2027-06-30"
+     }
+    ],
+    "returnDue": {
+     "2025-26": "2026-10-31"
+    }
+   },
+   "applies": "Individuals lodging themselves; registered agents' lodgment programs differ (not read).",
+   "sources": [
+    {
+     "src": 0,
+     "said": "Tax rates for resident taxpayers for the 2026-27 year of income"
+    },
+    {
+     "src": 7,
+     "said": "every person that is required to lodge a return for the 2026 year must lodge the return by 31 October 2026, unless they have a substituted accounting period."
+    }
+   ]
+  },
+  {
+   "item": "withholding",
+   "finding": "An employer withholds PAYG from a resident's weekly pay by the Commissioner's formula y = ax − b on weekly earnings x (whole dollars plus 99 cents), rounded to the dollar; for a payee claiming the tax-free threshold (scale 2) from 1 July 2026 nothing is withheld below $362 a week, then a runs from 0.15 to 0.47 (2025-26, from 24 September 2025: from 0.16, nothing below $361).",
+   "value": {
+    "currency": "AUD",
+    "formula": "y = ax − b, weekly; x = whole dollars of weekly earnings + 0.99; rounded to the nearest dollar",
+    "scale2From2026-07-01": [
+     {
+      "lessThan": 362,
+      "a": 0,
+      "b": 0
+     },
+     {
+      "lessThan": 538,
+      "a": 0.15,
+      "b": 54.3462
+     },
+     {
+      "lessThan": 673,
+      "a": 0.25,
+      "b": 108.2135
+     },
+     {
+      "lessThan": 721,
+      "a": 0.17,
+      "b": 54.3473
+     },
+     {
+      "lessThan": 865,
+      "a": 0.179,
+      "b": 60.8377
+     },
+     {
+      "lessThan": 1282,
+      "a": 0.3227,
+      "b": 185.1935
+     },
+     {
+      "lessThan": 2596,
+      "a": 0.32,
+      "b": 181.7319
+     },
+     {
+      "lessThan": 3653,
+      "a": 0.39,
+      "b": 363.4627
+     },
+     {
+      "lessThan": null,
+      "a": 0.47,
+      "b": 655.7704
+     }
+    ],
+    "scale2From2025-09-24To2026-06-30": [
+     {
+      "lessThan": 361,
+      "a": 0,
+      "b": 0
+     },
+     {
+      "lessThan": 500,
+      "a": 0.16,
+      "b": 57.8462
+     },
+     {
+      "lessThan": 625,
+      "a": 0.26,
+      "b": 107.8462
+     },
+     {
+      "lessThan": 721,
+      "a": 0.18,
+      "b": 57.8462
+     },
+     {
+      "lessThan": 865,
+      "a": 0.189,
+      "b": 64.3365
+     },
+     {
+      "lessThan": 1282,
+      "a": 0.3227,
+      "b": 180.0385
+     },
+     {
+      "lessThan": 2596,
+      "a": 0.32,
+      "b": 176.5769
+     },
+     {
+      "lessThan": 3653,
+      "a": 0.39,
+      "b": 358.3077
+     },
+     {
+      "lessThan": null,
+      "a": 0.47,
+      "b": 650.6154
+     }
+    ],
+    "scale3ForeignResidentsBoth": [
+     {
+      "lessThan": 2596,
+      "a": 0.3,
+      "b": 0.3
+     },
+     {
+      "lessThan": 3653,
+      "a": 0.37,
+      "b": 181.7308
+     },
+     {
+      "lessThan": null,
+      "a": 0.45,
+      "b": 474.0385
+     }
+    ]
+   },
+   "applies": "Employees paid weekly (fortnightly and monthly pay are converted to the weekly equivalent per the instrument), before tax offsets and Medicare levy adjustments.",
+   "sources": [
+    {
+     "src": 8,
+     "said": "1. The whole of this instrument 1 July 2026. … Less than 362 – – Less than 538 0.1500 54.3462 … Less than 673 0.2500 108.2135 Less than 721 0.1700 54.3473 Less than 865 0.1790 60.8377 Less than 1,282 0.3227 185.1935 Less than 2,596 0.3200 181.7319 Less than 3,653 0.3900 363.4627 3,653 & over 0.4700 655.7704 Foreign residents – Scale 3 … Less than 2,596 0.3000 0.3000 Less than 3,653 0.3700 181.7308 3,653 & over 0.4500 474.0385 … The formulas comprise linear equations of the form y = ax − b, where: … x is the number of whole dollars in the weekly earnings plus 99 cents"
+    },
+    {
+     "src": 9,
+     "said": "1. The whole of this instrument 24 September 2025. … 361 – – 500 0.1600 57.8462 625 0.2600 107.8462 721 0.1800 57.8462 865 0.1890 64.3365 1,282 0.3227 180.0385 2,596 0.3200 176.5769 3,653 0.3900 358.3077 3,653 & over 0.4700 650.6154"
+    }
+   ]
+  },
+  {
+   "item": "nonResident",
+   "finding": "The amount withheld from a foreign-resident entertainer's payment is not a final tax: the entertainer is entitled to a credit for it once the year's income tax is assessed, so the year's tax is settled on assessment.",
+   "value": {
+    "final": false,
+    "mechanism": "credit on assessment (TAA 1953 Sch 1 s18-15)"
+   },
+   "applies": "Payments to foreign residents withheld under TAA 1953 Sch 1 s12-315 (entertainment and sports activities among the regulated kinds), 2026.",
+   "sources": [
+    {
+     "src": 10,
+     "said": "A payment (of a kind set out in the regulations) to a foreign resident … 18‑15 Tax credit for recipient of withholding payments (1) An entity is entitled to a credit equal to the total of the *amounts withheld from *withholding payments made to the entity during an income year if an assessment has been made of the income tax payable, or an assessment has been made that no income tax is payable, by the entity for the income year."
+    }
+   ]
+  }
+ ],
+ "country": "AU",
+ "sources": [
+  {
+   "url": "https://www.legislation.gov.au/C2004A03348/latest/text",
+   "title": "Income Tax Rates Act 1986, Compilation No. 66 (C2026C00300, from 1 July 2026)",
+   "read": "2026-11-01",
+   "kind": "primary",
+   "said": "tax-free threshold means $18,200. … Tax rates for resident taxpayers for the 2024-25 or 2025-26 year of income … 1 exceeds the tax-free threshold but does not exceed $45,000 16% … Tax rates for resident taxpayers for the 2026-27 year of income Item For the part of the ordinary taxable income of the taxpayer that: The rate is: 1 exceeds the tax-free threshold but does not exceed $45,000 15% … 4 exceeds $190,000 45% … 1 does not exceed $135,000 The second resident personal tax rate … 2 exceeds $135,000 but does not exceed $190,000 The third resident personal tax rate 3 exceeds $190,000 45%"
+  },
+  {
+   "url": "https://www.legislation.gov.au/C2004A03351/latest/text",
+   "title": "Medicare Levy Act 1986, Compilation No. 53 (from 1 July 2026)",
+   "read": "2026-11-01",
+   "kind": "primary",
+   "said": "(1) The rate of levy payable by a person upon a taxable income is 2%. … (c) in any other case—$28,011."
+  },
+  {
+   "url": "https://www.legislation.gov.au/C2004A04402/latest/text",
+   "title": "Superannuation Guarantee (Administration) Act 1992 (C2026C00272, from 1 July 2026)",
+   "read": "2026-11-01",
+   "kind": "primary",
+   "said": "charge percentage means 12. … (c) a person who is paid to perform services in, or in connection with, the making of any film, tape or disc or of any television or radio broadcast is an employee of the person liable to make the payment"
+  },
+  {
+   "url": "https://www.legislation.gov.au/F2017L01227/latest/text",
+   "title": "Taxation Administration Regulations 2017, Compilation No. 17 (F2026C00849, from 27 August 2026)",
+   "read": "2026-11-01",
+   "kind": "primary",
+   "said": "The amount to be withheld from the payment is an amount equal to the product of the top rate and the amount of the payment. … a payment to an entity for entertainment or sports activities is prescribed. … (a) a performing artist or a sportsperson; or (b) support staff relating to the activity. … (b) if the payment is made to an individual—the amount worked out by applying to the payment, as if the amount of the payment was the taxable income of the individual, the rates mentioned in Part II of Schedule 7 of the Income Tax Rates Act 1986."
+  },
+  {
+   "url": "https://www.legislation.gov.au/C2004A05138/latest/text",
+   "title": "Income Tax Assessment Act 1997, Volume 7 (Compilation No. 268, from 1 October 2026), Division 405",
+   "read": "2026-11-01",
+   "kind": "primary",
+   "said": "To lessen the impact of these fluctuations on your marginal tax rates, special tax rates apply if your professional income is above your average. … (a) the author of a literary, dramatic, musical or artistic work; or … (3) You are also a performing artist if you perform or appear in or on a *film, tape, disc or television or radio broadcast. … (iv) a director; or"
+  },
+  {
+   "url": "https://www.legislation.gov.au/C2004A00446/latest/text",
+   "title": "A New Tax System (Goods and Services Tax) Act 1999, Volume 1 (C2026C00081)",
+   "read": "2026-11-01",
+   "kind": "primary",
+   "said": "The amount of GST on a *taxable supply is 10% of the *value of the taxable supply."
+  },
+  {
+   "url": "https://www.legislation.gov.au/F2019L00417/latest/text",
+   "title": "A New Tax System (Goods and Services Tax) Regulations 2019 (F2025C01015)",
+   "read": "2026-11-01",
+   "kind": "primary",
+   "said": "For the purposes of paragraph 23-15(1)(b) of the Act, the amount of $75,000 is specified."
+  },
+  {
+   "url": "https://www.legislation.gov.au/F2026L00618",
+   "title": "Taxation Laws (Requirement to Lodge a Return for the 2026 Year) Instrument 2026 (F2026L00618)",
+   "read": "2026-11-01",
+   "kind": "primary",
+   "said": "every person that is required to lodge a return for the 2026 year must lodge the return by 31 October 2026, unless they have a substituted accounting period."
+  },
+  {
+   "url": "https://www.legislation.gov.au/F2026L00716/asmade/2026-06-12/text/original/pdf",
+   "title": "Taxation Administration (Withholding Schedules) Instrument 2026 (F2026L00716), Schedule 1",
+   "read": "2026-11-01",
+   "kind": "primary",
+   "said": "1. The whole of this instrument 1 July 2026. … Less than 362 – – Less than 538 0.1500 54.3462 … Less than 673 0.2500 108.2135 Less than 721 0.1700 54.3473 Less than 865 0.1790 60.8377 Less than 1,282 0.3227 185.1935 Less than 2,596 0.3200 181.7319 Less than 3,653 0.3900 363.4627 3,653 & over 0.4700 655.7704 Foreign residents – Scale 3 … Less than 2,596 0.3000 0.3000 Less than 3,653 0.3700 181.7308 3,653 & over 0.4500 474.0385 … The formulas comprise linear equations of the form y = ax − b, where: … x is the number of whole dollars in the weekly earnings plus 99 cents"
+  },
+  {
+   "url": "https://www.legislation.gov.au/F2025L01016/asmade/2025-09-01/text/original/pdf",
+   "title": "Taxation Administration (Withholding Schedules) Instrument (No. 2) 2025 (F2025L01016), Schedule 1",
+   "read": "2026-11-01",
+   "kind": "primary",
+   "said": "1. The whole of this instrument 24 September 2025. … 361 – – 500 0.1600 57.8462 625 0.2600 107.8462 721 0.1800 57.8462 865 0.1890 64.3365 1,282 0.3227 180.0385 2,596 0.3200 176.5769 3,653 0.3900 358.3077 3,653 & over 0.4700 650.6154"
+  },
+  {
+   "url": "https://www.legislation.gov.au/C1953A00001/2026-10-01/2026-10-01/text/original/epub/OEBPS/document_1/document_1.html",
+   "title": "Taxation Administration Act 1953, Compilation No. 227 (1 October 2026), Schedule 1 ss10-5, 12-315 and 18-15",
+   "read": "2026-11-01",
+   "kind": "primary",
+   "said": "A payment (of a kind set out in the regulations) to a foreign resident … 18‑15 Tax credit for recipient of withholding payments (1) An entity is entitled to a credit equal to the total of the *amounts withheld from *withholding payments made to the entity during an income year if an assessment has been made of the income tax payable, or an assessment has been made that no income tax is payable, by the entity for the income year."
+  }
+ ],
+ "blockers": []
+}

@@ -1,0 +1,914 @@
+{
+ "topic": "tax.US",
+ "read": "2026-11-01",
+ "note": "Read 2026-11-01 at the owner's word (\"Build those first 3 starting with ledger first\"; \"Retry the blocked tax facts once all countries land\"): the tax on a screen worker's pay in United States: a resident's income tax, social contributions, what is withheld at source, a non-resident artiste's withholding, any authors' treatment, VAT's threshold, the tax year. Research and retry subagents (workbench/briefs/BRIEF-tax*.md); every quote checked by the lead against its saved page.",
+ "figures": [
+  {
+   "item": "residents",
+   "finding": "Federal income tax for 2026 runs from 10% to 37% on taxable income after a standard deduction of $16,100 for a single filer; the brackets below are for single filers.",
+   "value": {
+    "jurisdiction": "US federal",
+    "currency": "USD",
+    "filing": "single",
+    "standardDeduction": 16100,
+    "standardDeductionJoint": 32200,
+    "standardDeductionHeadOfHousehold": 24150,
+    "personalExemption": 0,
+    "brackets": [
+     {
+      "from": 0,
+      "to": 12400,
+      "rate": 0.1
+     },
+     {
+      "from": 12400,
+      "to": 50400,
+      "rate": 0.12
+     },
+     {
+      "from": 50400,
+      "to": 105700,
+      "rate": 0.22
+     },
+     {
+      "from": 105700,
+      "to": 201775,
+      "rate": 0.24
+     },
+     {
+      "from": 201775,
+      "to": 256225,
+      "rate": 0.32
+     },
+     {
+      "from": 256225,
+      "to": 640600,
+      "rate": 0.35
+     },
+     {
+      "from": 640600,
+      "to": null,
+      "rate": 0.37
+     }
+    ],
+    "bracketsJointTop": {
+     "12%": 24800,
+     "22%": 100800,
+     "24%": 211400,
+     "32%": 403550,
+     "35%": 512450,
+     "37%": 768700
+    }
+   },
+   "applies": "Tax year 2026 (calendar year), federal; state and city income tax is added on top (California and New York rows).",
+   "sources": [
+    {
+     "src": 0,
+     "said": "For tax year 2026, the top tax rate remains 37% for individual single taxpayers with incomes greater than $640,600 ($768,700 for married couples filing jointly). The other rates are: 35% for incomes over $256,225 ($512,450 for married couples filing jointly); 32% for incomes over $201,775 ($403,550 for married couples filing jointly); 24% for incomes over $105,700 ($211,400 for married couples filing jointly); 22% for incomes over $50,400 ($100,800 for married couples filing jointly); 12% for incomes over $12,400 ($24,800 for married couples filing jointly). The lowest rate is 10% for incomes of single individuals with incomes of $12,400 or less ($24,800 for married couples filing jointly)"
+    },
+    {
+     "src": 0,
+     "said": "For single taxpayers and married individuals filing separately, the standard deduction rises to $16,100 for tax year 2026, and for heads of households, the standard deduction will be $24,150."
+    },
+    {
+     "src": 0,
+     "said": "For tax year 2026, personal exemptions remain at 0, as in tax year 2025."
+    },
+    {
+     "src": 1,
+     "said": "Not over $12,400 10% of the taxable income"
+    }
+   ]
+  },
+  {
+   "item": "social",
+   "finding": "An employee and the employer each pay 6.2% Social Security on wages up to $184,500 and 1.45% Medicare on all wages, with 0.9% more withheld from the employee above $200,000; a self-employed worker pays both halves, 15.3%, on net earnings.",
+   "value": {
+    "currency": "USD",
+    "employee": {
+     "socialSecurity": 0.062,
+     "medicare": 0.0145,
+     "additionalMedicare": {
+      "rate": 0.009,
+      "over": 200000,
+      "employeeOnly": true
+     }
+    },
+    "employer": {
+     "socialSecurity": 0.062,
+     "medicare": 0.0145
+    },
+    "socialSecurityWageBase": 184500,
+    "selfEmployed": {
+     "socialSecurity": 0.124,
+     "medicare": 0.029,
+     "additionalMedicareThresholdSingle": 200000,
+     "additionalMedicareThresholdJoint": 250000
+    },
+    "unemployment": {
+     "note": "Federal and state unemployment taxes are employer-only; California's are in the US-CA row."
+    }
+   },
+   "applies": "Wages and net self-employment earnings in 2026; screen workers on a production's payroll are employees for these purposes; a freelancer pays self-employment tax with the return.",
+   "sources": [
+    {
+     "src": 2,
+     "said": "For 2026, the social security tax rate is 6.2% (amount withheld) each for the employer and employee"
+    },
+    {
+     "src": 2,
+     "said": "The social security wage base limit is $184,500."
+    },
+    {
+     "src": 2,
+     "said": "There is no wage base limit for Medicare tax; all covered wages are subject to Medicare tax."
+    },
+    {
+     "src": 2,
+     "said": "0.9% Additional Medicare Tax from wages you pay to an employee in excess of $200,000 in a calendar year."
+    },
+    {
+     "src": 3,
+     "said": "This rate consists of 12.4% for Social Security and 2.9% for Medicare taxes."
+    }
+   ]
+  },
+  {
+   "item": "withholding",
+   "finding": "An employer withholds federal income tax from wages by the Publication 15-T tables from the employee's Form W-4, with 22% on supplemental pay (37% above $1 million); a freelancer's fee has nothing withheld unless backup withholding at 24% applies, and the freelancer pays estimated tax quarterly.",
+   "value": {
+    "currency": "USD",
+    "wages": "Publication 15-T (2026) tables from Form W-4",
+    "supplementalFlat": 0.22,
+    "supplementalOverOneMillion": 0.37,
+    "freelanceFee": {
+     "withholding": 0,
+     "backupWithholding": 0.24,
+     "estimatedTax": "quarterly, where at least $1,000 is expected to be owed"
+    }
+   },
+   "applies": "2026 wages and 1099 fees paid in the United States.",
+   "sources": [
+    {
+     "src": 4,
+     "said": "For use in 2026"
+    },
+    {
+     "src": 2,
+     "said": "rate on supplemental wages remains 22% (37% if supple-"
+    },
+    {
+     "src": 5,
+     "said": "There are situations when the payer is required to withhold at the current rate of 24 percent."
+    },
+    {
+     "src": 6,
+     "said": "You expect to owe at least $1,000 in tax for the current tax year after subtracting your withholding and refundable credits"
+    }
+   ]
+  },
+  {
+   "item": "nonResident",
+   "finding": "A nonresident alien performer paid as an independent contractor has 30% withheld from the gross; one paid as an employee has graduated-rate withholding; a Central Withholding Agreement can lower it to the expected liability, and the tax is not final: income from performing in the US is taxed at the graduated rates on a return.",
+   "value": {
+    "currency": "USD",
+    "rateIndependent": 0.3,
+    "rateEmployee": "graduated (wage withholding)",
+    "base": "gross payment",
+    "reducedBy": "Central Withholding Agreement (Form 13930, filed 45 days before the first event)",
+    "treatyExemption": "many treaties exempt a performer whose receipts do not exceed $10,000 or $20,000 in the year",
+    "final": false,
+    "returnRequired": "Form 1040-NR at graduated rates on effectively connected income"
+   },
+   "applies": "Nonresident aliens performing in the US, including film and television artists; whether a director or writer counts as an 'artist' for the treaty article is not stated in these pages.",
+   "sources": [
+    {
+     "src": 7,
+     "said": "payments made for performances by public entertainers (such as theater, motion picture, radio, or tel"
+    },
+    {
+     "src": 7,
+     "said": "You must withhold tax at graduated rates on pay-"
+    },
+    {
+     "src": 8,
+     "said": "An NRA artist or athlete performing independent personal services at a U.S. event will usually have 30% withheld from the gross income earned."
+    },
+    {
+     "src": 8,
+     "said": "These include a requirement to timely file a federal income tax return for the year covered by the CWA."
+    },
+    {
+     "src": 9,
+     "said": "Income that is not ef- fectively connected is taxed at a flat 30% (or lower treaty) rate."
+    }
+   ]
+  },
+  {
+   "item": "authors",
+   "finding": "Federal law gives a writer's royalties no special rate: a self-employed writer reports royalties as business income on Schedule C, where they bear income and self-employment tax.",
+   "value": {
+    "specialRate": null,
+    "report": "Schedule C (self-employed writer) or Schedule E (royalties outside a business)"
+   },
+   "applies": "US federal, 2026.",
+   "sources": [
+    {
+     "src": 10,
+     "said": "If you are in business as a self-employed writer, inventor, artist, etc., report your royalty income and expenses on Schedule C, not on Schedule E."
+    }
+   ]
+  },
+  {
+   "item": "vat",
+   "finding": "The United States has no federal VAT; the general consumption tax is a state and local retail sales tax.",
+   "value": {
+    "federalVAT": null,
+    "stateSalesTax": "state and local; its reach over a performer's or writer's fee is not modeled (see blockers)"
+   },
+   "applies": "US, 2026.",
+   "sources": [
+    {
+     "src": 11,
+     "said": "The United States is the only OECD country that employs a retail sales tax rather than a value added tax (VAT)"
+    },
+    {
+     "src": 12,
+     "said": "Subtitle A—Income Taxes (§§ 1 – 1564) Subtitle B—Estate and Gift Taxes (§§ 2001 – 2801) Subtitle C—Employment Taxes (§§ 3101 – 3512) Subtitle D—Miscellaneous Excise Taxes (§§ 4001 – 5000D) Subtitle E—Alcohol, Tobacco, and Certain Other Excise Taxes (§§ 5001 – 5891)"
+    }
+   ]
+  },
+  {
+   "item": "year",
+   "finding": "The federal tax year is the calendar year and the return is due on 15 April of the next year (15 April 2027 for 2026).",
+   "value": {
+    "currency": "USD",
+    "start": "2026-01-01",
+    "end": "2026-12-31",
+    "returnDue": "2027-04-15"
+   },
+   "applies": "Calendar-year individuals.",
+   "sources": [
+    {
+     "src": 13,
+     "said": "Calendar year filers (most common) File on: April 15, 2026"
+    }
+   ]
+  },
+  {
+   "item": "residents",
+   "finding": "California taxes a resident's 2026 taxable income at nine rates from 1% to 12.3% (single brackets below), plus a 1% Behavioral Health Services Tax on taxable income over $1,000,000.",
+   "value": {
+    "jurisdiction": "US-CA",
+    "currency": "USD",
+    "filing": "single",
+    "brackets": [
+     {
+      "from": 0,
+      "to": 11456,
+      "rate": 0.01
+     },
+     {
+      "from": 11456,
+      "to": 27157,
+      "rate": 0.02
+     },
+     {
+      "from": 27157,
+      "to": 42861,
+      "rate": 0.04
+     },
+     {
+      "from": 42861,
+      "to": 59498,
+      "rate": 0.06
+     },
+     {
+      "from": 59498,
+      "to": 75197,
+      "rate": 0.08
+     },
+     {
+      "from": 75197,
+      "to": 384109,
+      "rate": 0.093
+     },
+     {
+      "from": 384109,
+      "to": 460927,
+      "rate": 0.103
+     },
+     {
+      "from": 460927,
+      "to": 768213,
+      "rate": 0.113
+     },
+     {
+      "from": 768213,
+      "to": null,
+      "rate": 0.123
+     }
+    ],
+    "surcharge": {
+     "name": "Behavioral Health Services Tax",
+     "rate": 0.01,
+     "over": 1000000
+    },
+    "allowance": "standard deduction and exemption credit; the 2026 return amounts were not read (the 2026 withholding schedule uses $5,706 and $168.30 per allowance)"
+   },
+   "applies": "California residents on all income; nonresidents on California-source income, tax year 2026.",
+   "sources": [
+    {
+     "src": 14,
+     "said": "Schedule X – Use if your filing status is Single or Married/RDP Filing Separately"
+    },
+    {
+     "src": 14,
+     "said": "768,213 AND OVER 74,675.27 + 12.30% 768,213"
+    },
+    {
+     "src": 15,
+     "said": "If your taxable income is more than $1,000,000, compute the Behavioral Health Services Tax using whole dollars only:"
+    }
+   ]
+  },
+  {
+   "item": "social",
+   "finding": "California withholds 1.3% State Disability Insurance (which also funds Paid Family Leave) from all of an employee's wages with no ceiling; the employer pays unemployment insurance (3.4% for a new employer) and 0.1% training tax on the first $7,000.",
+   "value": {
+    "jurisdiction": "US-CA",
+    "currency": "USD",
+    "employee": {
+     "SDI": 0.013,
+     "ceiling": null
+    },
+    "employer": {
+     "UInewEmployer": 0.034,
+     "ETT": 0.001,
+     "wageBase": 7000
+    }
+   },
+   "applies": "Wages paid in California in 2026; a self-employed worker is outside SDI unless electing coverage (not read).",
+   "sources": [
+    {
+     "src": 16,
+     "said": "The 2026 SDI withholding rate is 1.3 percent (.013), which provides for both State Disability Insurance (SDI)"
+    },
+    {
+     "src": 16,
+     "said": "There is no SDI taxable wage limit beginning January 1, 2024."
+    },
+    {
+     "src": 16,
+     "said": "The UI tax rate for new employers is 3.4 percent (.034) for a period of two to three years."
+    },
+    {
+     "src": 16,
+     "said": "The 2026 ETT rate is 0.1 percent (.001) on the first $7,000 of each employee’s wages."
+    }
+   ]
+  },
+  {
+   "item": "withholding",
+   "finding": "California employers withhold personal income tax by the EDD's 2026 schedules (Method A wage-bracket or Method B exact calculation), with flat rates of 6.6% on supplemental wages and 10.23% on bonuses and stock options.",
+   "value": {
+    "jurisdiction": "US-CA",
+    "currency": "USD",
+    "methods": [
+     "Method A wage bracket",
+     "Method B exact calculation"
+    ],
+    "methodBAnnualSingleFirst": [
+     {
+      "from": 0,
+      "to": 11079,
+      "rate": 0.011
+     },
+     {
+      "from": 11079,
+      "to": 26264,
+      "rate": 0.022
+     },
+     {
+      "from": 26264,
+      "to": 41452,
+      "rate": 0.044
+     },
+     {
+      "from": 41452,
+      "to": 57542,
+      "rate": 0.066
+     },
+     {
+      "from": 57542,
+      "to": 72724,
+      "rate": 0.088
+     }
+    ],
+    "supplemental": 0.066,
+    "bonusesAndStockOptions": 0.1023,
+    "standardDeductionAnnualSingle": 5706,
+    "exemptionCreditPerAllowanceAnnual": 168.3
+   },
+   "applies": "Wages paid in 2026; the upper Method B rows were not transcribed.",
+   "sources": [
+    {
+     "src": 16,
+     "said": "Bonuses and stock options 10.23 percent (.1023)"
+    },
+    {
+     "src": 16,
+     "said": "6.6 percent (.066)"
+    },
+    {
+     "src": 16,
+     "said": "Annual $5,706 $5,706 $11,412 $11,412"
+    },
+    {
+     "src": 16,
+     "said": "$0 $11,079 1.100% $0 $0.00"
+    }
+   ]
+  },
+  {
+   "item": "nonResident",
+   "finding": "A payer withholds 7% of payments to a nonresident of California (actors among them) for services performed in California once the year's payments pass $1,500; the payee files a California nonresident return.",
+   "value": {
+    "jurisdiction": "US-CA",
+    "currency": "USD",
+    "rate": 0.07,
+    "threshold": 1500,
+    "base": "nonwage payments of California-source income",
+    "final": false
+   },
+   "applies": "Nonresidents of California, including other US states' residents and foreign performers, 2026.",
+   "sources": [
+    {
+     "src": 17,
+     "said": "Withholding agents are required to withhold 7% on payments or distributions to nonresident payees when the total payments or distributions of CA source income exceeds $1,500 for the calendar year."
+    },
+    {
+     "src": 17,
+     "said": "Payments made to nonresident entertainers for performing in California, like: Actors Athletes Singers"
+    }
+   ]
+  },
+  {
+   "item": "vat",
+   "finding": "California's sales tax does not reach a charge for rendering a service: a service business is the consumer of property it uses incidentally.",
+   "value": {
+    "jurisdiction": "US-CA",
+    "feeBearsSalesTax": false
+   },
+   "applies": "A screen worker's fee for services, 2026.",
+   "sources": [
+    {
+     "src": 18,
+     "said": "Persons engaged in the business of rendering service are consumers, not retailers, of the tangible personal property which they use incidentally in rendering the service."
+    }
+   ]
+  },
+  {
+   "item": "year",
+   "finding": "California's tax year is the calendar year; the return and payment are due 15 April (with an automatic extension to file to 15 October).",
+   "value": {
+    "jurisdiction": "US-CA",
+    "start": "2026-01-01",
+    "end": "2026-12-31",
+    "returnDue": "2027-04-15"
+   },
+   "applies": "Calendar-year individuals.",
+   "sources": [
+    {
+     "src": 19,
+     "said": "The due date to file your California state tax return and pay any balance due is April 15, 2026."
+    }
+   ]
+  },
+  {
+   "item": "residents",
+   "finding": "New York State taxes a resident's 2026 taxable income from 3.9% to 10.9% after an $8,000 standard deduction (single), with recapture of the lower brackets above $107,650 of income; New York City residents add 3.078% to 3.876%.",
+   "value": {
+    "jurisdiction": "US-NY",
+    "currency": "USD",
+    "filing": "single",
+    "standardDeduction": 8000,
+    "brackets": [
+     {
+      "from": 0,
+      "to": 8500,
+      "rate": 0.039
+     },
+     {
+      "from": 8500,
+      "to": 11700,
+      "rate": 0.044
+     },
+     {
+      "from": 11700,
+      "to": 13900,
+      "rate": 0.0515
+     },
+     {
+      "from": 13900,
+      "to": 80650,
+      "rate": 0.054
+     },
+     {
+      "from": 80650,
+      "to": 215400,
+      "rate": 0.059
+     },
+     {
+      "from": 215400,
+      "to": 1077550,
+      "rate": 0.0685
+     },
+     {
+      "from": 1077550,
+      "to": 5000000,
+      "rate": 0.0965
+     },
+     {
+      "from": 5000000,
+      "to": 25000000,
+      "rate": 0.103
+     },
+     {
+      "from": 25000000,
+      "to": null,
+      "rate": 0.109
+     }
+    ],
+    "recapture": "tax computation worksheets in IT-2105-I apply above NYAGI thresholds; flat 10.9% on all taxable income where NYAGI exceeds $25,000,000",
+    "municipal": {
+     "jurisdiction": "New York City (residents only)",
+     "brackets": [
+      {
+       "from": 0,
+       "to": 12000,
+       "rate": 0.03078
+      },
+      {
+       "from": 12000,
+       "to": 25000,
+       "rate": 0.03762
+      },
+      {
+       "from": 25000,
+       "to": 50000,
+       "rate": 0.03819
+      },
+      {
+       "from": 50000,
+       "to": null,
+       "rate": 0.03876
+      }
+     ]
+    }
+   },
+   "applies": "New York residents, tax year 2026 (rates cut by Chapter 59 of the Laws of 2025, Part A); the recapture worksheets' lower thresholds were not transcribed.",
+   "sources": [
+    {
+     "src": 20,
+     "said": "$ 0 $8,500 3.90% of line 5"
+    },
+    {
+     "src": 20,
+     "said": "25,000,000 .................. 2,509,714 plus 10.9% “ “ “ “ 25,000,000"
+    },
+    {
+     "src": 20,
+     "said": "dependent on another taxpayer’s federal return ........................ 8,000"
+    },
+    {
+     "src": 20,
+     "said": "$ 0 $12,000 3.078% of line 7"
+    },
+    {
+     "src": 20,
+     "said": "50,000 ................ 1,813 plus 3.876% “ “ “ 50,000"
+    },
+    {
+     "src": 20,
+     "said": "Multiply line 1 by 10.9% (0.109)."
+    },
+    {
+     "src": 21,
+     "said": "The 2026 New York State personal income tax rate schedules have been revised to reflect certain income tax rate reductions enacted under Chapter 59 of the Laws of 2025 (Part A)."
+    }
+   ]
+  },
+  {
+   "item": "social",
+   "finding": "New York employees pay 0.432% of wages for Paid Family Leave (up to $411.91 a year) and 0.5% of wages, at most 60 cents a week, for disability benefits.",
+   "value": {
+    "jurisdiction": "US-NY",
+    "currency": "USD",
+    "employee": {
+     "paidFamilyLeave": {
+      "rate": 0.00432,
+      "annualMax": 411.91
+     },
+     "disability": {
+      "rate": 0.005,
+      "weeklyMax": 0.6
+     }
+    }
+   },
+   "applies": "Wages paid in New York in 2026.",
+   "sources": [
+    {
+     "src": 22,
+     "said": "If you are paid weekly, the payroll contribution is 0.432% of your gross weekly wages and is capped at an annual maximum of $411.91."
+    },
+    {
+     "src": 23,
+     "said": "Your contribution is calculated at the rate of one half of one percent of your wages, but no more than 60 cents a week (WCL §209)."
+    }
+   ]
+  },
+  {
+   "item": "withholding",
+   "finding": "New York employers withhold state (and city) tax by the NYS-50-T-NYS tables effective 1 January 2026, or at an 11.70% flat rate on supplemental wages paid separately.",
+   "value": {
+    "jurisdiction": "US-NY",
+    "tables": "NYS-50-T-NYS (1/26)",
+    "supplemental": 0.117
+   },
+   "applies": "Wages paid in 2026.",
+   "sources": [
+    {
+     "src": 21,
+     "said": "Withhold at the New York State supplemental rate of 11.70% (0.1170)."
+    }
+   ]
+  },
+  {
+   "item": "nonResident",
+   "finding": "A nonresident of New York pays New York tax on New York-source income: the tax is figured as if a full-year resident and then allocated by the share of income from New York; a nonresident is not liable for New York City tax.",
+   "value": {
+    "jurisdiction": "US-NY",
+    "method": "resident tax × (New York-source income ÷ federal income)",
+    "return": "IT-203",
+    "nycTax": false
+   },
+   "applies": "Nonresidents with New York-source income, 2026.",
+   "sources": [
+    {
+     "src": 24,
+     "said": "To compute tax, you first calculate your tax as if you were a full year resident, then determine how much to allocate to New York by an income percentage based on your New York source income and your federal income."
+    }
+   ]
+  },
+  {
+   "item": "vat",
+   "finding": "New York sales tax reaches only the services its Tax Law §1105(c) lists (information, fabrication, installation, maintenance, storage, parking, interior design, protective services, telephone-delivered entertainment and transport among them); performing, writing and directing are not among them.",
+   "value": {
+    "jurisdiction": "US-NY",
+    "feeBearsSalesTax": false
+   },
+   "applies": "A screen worker's fee for services, 2026.",
+   "sources": [
+    {
+     "src": 25,
+     "said": "(c) The receipts from every sale, except for resale, of the following services:"
+    }
+   ]
+  },
+  {
+   "item": "year",
+   "finding": "New York's tax year is the calendar year and the individual return (IT-201 or IT-203) is due 15 April, extendable six months.",
+   "value": {
+    "jurisdiction": "US-NY",
+    "start": "2026-01-01",
+    "end": "2026-12-31",
+    "returnDue": "2027-04-15"
+   },
+   "applies": "Calendar-year individuals.",
+   "sources": [
+    {
+     "src": 26,
+     "said": "Individual Form IT-201, IT-203, or IT-203-GR April 15, 2026 6 months October 15, 2026"
+    }
+   ]
+  },
+  {
+   "item": "nonResident",
+   "finding": "New York law requires withholding only from wages and the payments it lists (annuities on request, lottery and gambling winnings, certain plan deductions); from any other payment, such as a nonresident's independent fee, tax is withheld only where payer and payee agree to it, so the nonresident pays on the New York return.",
+   "value": {
+    "jurisdiction": "US-NY",
+    "withholdingOnIndependentFee": "none unless payer and payee agree",
+    "wages": "withheld by NYS-50-T-NYS"
+   },
+   "applies": "A nonresident performer, writer or director paid a fee (not wages) for work in New York, 2026.",
+   "sources": [
+    {
+     "src": 27,
+     "said": "(1) Every employer maintaining an office or transacting business within this state and making payment of any wages taxable under this article shall deduct and withhold from such wages for each payroll period a tax … (B) from any other type of payment, with respect to which the tax commission finds that withholding would be appropriate under the provisions of this article, if the employer and the employee, or in the case of any other type of payment the person making and the person receiving the payment, agree to such withholding."
+    }
+   ]
+  }
+ ],
+ "country": "US",
+ "sources": [
+  {
+   "url": "https://www.irs.gov/newsroom/irs-releases-tax-inflation-adjustments-for-tax-year-2026-including-amendments-from-the-one-big-beautiful-bill",
+   "title": "IRS releases tax inflation adjustments for tax year 2026, including amendments from the One, Big, Beautiful Bill",
+   "read": "2026-11-01",
+   "kind": "primary",
+   "said": "For tax year 2026, the top tax rate remains 37% for individual single taxpayers with incomes greater than $640,600 ($768,700 for married couples filing jointly). The other rates are: 35% for incomes over $256,225 ($512,450 for married couples filing jointly); 32% for incomes over $201,775 ($403,550 for married couples filing jointly); 24% for incomes over $105,700 ($211,400 for married couples filing jointly); 22% for incomes over $50,400 ($100,800 for married couples filing jointly); 12% for incomes over $12,400 ($24,800 for married couples filing jointly). The lowest rate is 10% for incomes of single individuals with incomes of $12,400 or less ($24,800 for married couples filing jointly) … For single taxpayers and married individuals filing separately, the standard deduction rises to $16,100 for tax year 2026, and for heads of households, the standard deduction will be $24,150. … For tax year 2026, personal exemptions remain at 0, as in tax year 2025."
+  },
+  {
+   "url": "https://www.irs.gov/pub/irs-drop/rp-25-32.pdf",
+   "title": "Revenue Procedure 2025-32",
+   "read": "2026-11-01",
+   "kind": "primary",
+   "said": "Not over $12,400 10% of the taxable income"
+  },
+  {
+   "url": "https://www.irs.gov/pub/irs-pdf/p15.pdf",
+   "title": "Publication 15 (2026), (Circular E), Employer's Tax Guide",
+   "read": "2026-11-01",
+   "kind": "primary",
+   "said": "For 2026, the social security tax rate is 6.2% (amount withheld) each for the employer and employee … The social security wage base limit is $184,500. … There is no wage base limit for Medicare tax; all covered wages are subject to Medicare tax. … 0.9% Additional Medicare Tax from wages you pay to an employee in excess of $200,000 in a calendar year. … rate on supplemental wages remains 22% (37% if supple-"
+  },
+  {
+   "url": "https://www.irs.gov/taxtopics/tc554",
+   "title": "Topic no. 554, Self-employment tax",
+   "read": "2026-11-01",
+   "kind": "primary",
+   "said": "This rate consists of 12.4% for Social Security and 2.9% for Medicare taxes."
+  },
+  {
+   "url": "https://www.irs.gov/pub/irs-pdf/p15t.pdf",
+   "title": "Publication 15-T (2026), Federal Income Tax Withholding Methods",
+   "read": "2026-11-01",
+   "kind": "primary",
+   "said": "For use in 2026"
+  },
+  {
+   "url": "https://www.irs.gov/businesses/small-businesses-self-employed/backup-withholding",
+   "title": "Backup withholding",
+   "read": "2026-11-01",
+   "kind": "primary",
+   "said": "There are situations when the payer is required to withhold at the current rate of 24 percent."
+  },
+  {
+   "url": "https://www.irs.gov/faqs/estimated-tax",
+   "title": "Estimated tax (FAQ)",
+   "read": "2026-11-01",
+   "kind": "primary",
+   "said": "You expect to owe at least $1,000 in tax for the current tax year after subtracting your withholding and refundable credits"
+  },
+  {
+   "url": "https://www.irs.gov/pub/irs-pdf/p515.pdf",
+   "title": "Publication 515 (2026), Withholding of Tax on Nonresident Aliens and Foreign Entities",
+   "read": "2026-11-01",
+   "kind": "primary",
+   "said": "payments made for performances by public entertainers (such as theater, motion picture, radio, or tel … You must withhold tax at graduated rates on pay-"
+  },
+  {
+   "url": "https://www.irs.gov/individuals/international-taxpayers/central-withholding-agreements",
+   "title": "Overview of the Central Withholding Agreement program",
+   "read": "2026-11-01",
+   "kind": "primary",
+   "said": "An NRA artist or athlete performing independent personal services at a U.S. event will usually have 30% withheld from the gross income earned. … These include a requirement to timely file a federal income tax return for the year covered by the CWA."
+  },
+  {
+   "url": "https://www.irs.gov/pub/irs-pdf/p519.pdf",
+   "title": "Publication 519 (2025), U.S. Tax Guide for Aliens",
+   "read": "2026-11-01",
+   "kind": "primary",
+   "said": "Income that is not ef- fectively connected is taxed at a flat 30% (or lower treaty) rate."
+  },
+  {
+   "url": "https://www.irs.gov/pub/irs-pdf/i1040se.pdf",
+   "title": "2025 Instructions for Schedule E (Form 1040)",
+   "read": "2026-11-01",
+   "kind": "primary",
+   "said": "If you are in business as a self-employed writer, inventor, artist, etc., report your royalty income and expenses on Schedule C, not on Schedule E."
+  },
+  {
+   "url": "https://www.oecd.org/tax/consumption/consumption-tax-trends-united-states.pdf",
+   "title": "OECD Consumption Tax Trends 2024 – United States",
+   "read": "2026-11-01",
+   "kind": "secondary",
+   "quotes": "https://www.law.cornell.edu/uscode/text/26",
+   "said": "The United States is the only OECD country that employs a retail sales tax rather than a value added tax (VAT)"
+  },
+  {
+   "url": "https://www.law.cornell.edu/uscode/text/26",
+   "title": "U.S. Code Title 26, Internal Revenue Code: its subtitles (Legal Information Institute consolidation of the Code)",
+   "read": "2026-11-01",
+   "kind": "primary",
+   "said": "Subtitle A—Income Taxes (§§ 1 – 1564) Subtitle B—Estate and Gift Taxes (§§ 2001 – 2801) Subtitle C—Employment Taxes (§§ 3101 – 3512) Subtitle D—Miscellaneous Excise Taxes (§§ 4001 – 5000D) Subtitle E—Alcohol, Tobacco, and Certain Other Excise Taxes (§§ 5001 – 5891)"
+  },
+  {
+   "url": "https://www.irs.gov/filing/individuals/when-to-file",
+   "title": "When to file",
+   "read": "2026-11-01",
+   "kind": "primary",
+   "said": "Calendar year filers (most common) File on: April 15, 2026"
+  },
+  {
+   "url": "https://www.ftb.ca.gov/forms/2026/2026-540-tax-rate-schedules.pdf",
+   "title": "2026 California Tax Rate Schedules",
+   "read": "2026-11-01",
+   "kind": "primary",
+   "said": "Schedule X – Use if your filing status is Single or Married/RDP Filing Separately … 768,213 AND OVER 74,675.27 + 12.30% 768,213"
+  },
+  {
+   "url": "https://www.ftb.ca.gov/forms/2025/2025-540-booklet.pdf",
+   "title": "2025 California Resident Income Tax Return Form 540 booklet",
+   "read": "2026-11-01",
+   "kind": "primary",
+   "said": "If your taxable income is more than $1,000,000, compute the Behavioral Health Services Tax using whole dollars only:"
+  },
+  {
+   "url": "https://edd.ca.gov/siteassets/files/pdf_pub_ctr/de44.pdf",
+   "title": "California Employer's Guide 2026 (DE 44)",
+   "read": "2026-11-01",
+   "kind": "primary",
+   "said": "The 2026 SDI withholding rate is 1.3 percent (.013), which provides for both State Disability Insurance (SDI) … There is no SDI taxable wage limit beginning January 1, 2024. … The UI tax rate for new employers is 3.4 percent (.034) for a period of two to three years. … The 2026 ETT rate is 0.1 percent (.001) on the first $7,000 of each employee’s wages. … Bonuses and stock options 10.23 percent (.1023) … 6.6 percent (.066) … Annual $5,706 $5,706 $11,412 $11,412 … $0 $11,079 1.100% $0 $0.00"
+  },
+  {
+   "url": "https://www.ftb.ca.gov/pay/withholding/withholding-on-nonresidents.html",
+   "title": "Withholding on nonresidents",
+   "read": "2026-11-01",
+   "kind": "primary",
+   "said": "Withholding agents are required to withhold 7% on payments or distributions to nonresident payees when the total payments or distributions of CA source income exceeds $1,500 for the calendar year. … Payments made to nonresident entertainers for performing in California, like: Actors Athletes Singers"
+  },
+  {
+   "url": "https://www.cdtfa.ca.gov/lawguides/vol1/sutr/1501.html",
+   "title": "Regulation 1501. Service Enterprises Generally",
+   "read": "2026-11-01",
+   "kind": "primary",
+   "said": "Persons engaged in the business of rendering service are consumers, not retailers, of the tangible personal property which they use incidentally in rendering the service."
+  },
+  {
+   "url": "https://www.ftb.ca.gov/file/when-to-file/due-dates-personal.html",
+   "title": "Due dates: Personal",
+   "read": "2026-11-01",
+   "kind": "primary",
+   "said": "The due date to file your California state tax return and pay any balance due is April 15, 2026."
+  },
+  {
+   "url": "https://www.tax.ny.gov/pdf/current_forms/it/it2105i.pdf",
+   "title": "Instructions for Form IT-2105, Estimated Tax Payment Voucher for Individuals (2026)",
+   "read": "2026-11-01",
+   "kind": "primary",
+   "said": "$ 0 $8,500 3.90% of line 5 … 25,000,000 .................. 2,509,714 plus 10.9% “ “ “ “ 25,000,000 … dependent on another taxpayer’s federal return ........................ 8,000 … $ 0 $12,000 3.078% of line 7 … 50,000 ................ 1,813 plus 3.876% “ “ “ 50,000 … Multiply line 1 by 10.9% (0.109)."
+  },
+  {
+   "url": "https://www.tax.ny.gov/pdf/publications/withholding/nys50_t_nys.pdf",
+   "title": "NYS-50-T-NYS (1/26), New York State Withholding Tax Tables and Methods, effective January 1, 2026",
+   "read": "2026-11-01",
+   "kind": "primary",
+   "said": "The 2026 New York State personal income tax rate schedules have been revised to reflect certain income tax rate reductions enacted under Chapter 59 of the Laws of 2025 (Part A). … Withhold at the New York State supplemental rate of 11.70% (0.1170)."
+  },
+  {
+   "url": "https://paidfamilyleave.ny.gov/2026",
+   "title": "Paid Family Leave: Updates for 2026",
+   "read": "2026-11-01",
+   "kind": "primary",
+   "said": "If you are paid weekly, the payroll contribution is 0.432% of your gross weekly wages and is capped at an annual maximum of $411.91."
+  },
+  {
+   "url": "https://apps.wcb.ny.gov/content/main/DisabilityBenefits/employee-disability-benefits.jsp",
+   "title": "Disability Benefits: Employee",
+   "read": "2026-11-01",
+   "kind": "primary",
+   "said": "Your contribution is calculated at the rate of one half of one percent of your wages, but no more than 60 cents a week (WCL §209)."
+  },
+  {
+   "url": "https://www.tax.ny.gov/pit/file/nonresident-faqs.htm",
+   "title": "Nonresidents and part-year residents (FAQ)",
+   "read": "2026-11-01",
+   "kind": "primary",
+   "said": "To compute tax, you first calculate your tax as if you were a full year resident, then determine how much to allocate to New York by an income percentage based on your New York source income and your federal income."
+  },
+  {
+   "url": "https://www.nysenate.gov/legislation/laws/TAX/1105",
+   "title": "New York Tax Law §1105, Imposition of sales tax",
+   "read": "2026-11-01",
+   "kind": "primary",
+   "said": "(c) The receipts from every sale, except for resale, of the following services:"
+  },
+  {
+   "url": "https://www.tax.ny.gov/pit/file/ext.htm",
+   "title": "Apply for a personal income tax extension",
+   "read": "2026-11-01",
+   "kind": "primary",
+   "said": "Individual Form IT-201, IT-203, or IT-203-GR April 15, 2026 6 months October 15, 2026"
+  },
+  {
+   "url": "https://www.nysenate.gov/legislation/laws/TAX/671",
+   "title": "New York Tax Law §671, Requirement of withholding tax from wages",
+   "read": "2026-11-01",
+   "kind": "primary",
+   "said": "(1) Every employer maintaining an office or transacting business within this state and making payment of any wages taxable under this article shall deduct and withhold from such wages for each payroll period a tax … (B) from any other type of payment, with respect to which the tax commission finds that withholding would be appropriate under the provisions of this article, if the employer and the employee, or in the case of any other type of payment the person making and the person receiving the payment, agree to such withholding."
+  }
+ ],
+ "blockers": []
+}

@@ -1,5 +1,6 @@
 import { defineCommand, type Context } from '../../core/frame/frame.ts';
 import { fromMajor, multiply, type Money } from '../../core/money/money.ts';
+import { payCost, type Holding } from '../../money/accounts/accounts.ts';
 import { SECONDS_PER_DAY } from '../../core/time/calendar.ts';
 import { exchangeOn } from '../../money/rates/rates.ts';
 import { work } from '../../papers/work/work.ts';
@@ -15,7 +16,8 @@ import type { LineId } from '../../core/text/text.ts';
  * The unions and guilds a person can join, and what membership changes (BUILD-ORDER layer 4; R-4621, read 2026-11-01).
  * Each union is joined by its own route, read from the life's own work where the engines record it: the parts played
  * (src/person/acting), the scripts sold (src/person/work/career.ts), the films directed (src/person/directing). Its
- * initiation fee and yearly dues are recorded on the card, as the role engines record pay, not paid into the ledger.
+ * initiation fee and the year's dues are paid from the account the person names when they join (money.accounts), and
+ * recorded on the card; the dues of the years after aren't charged yet (the renewal isn't modeled, money.tax.model).
  *
  * - SAG-AFTRA: one day as a principal on a SAG-AFTRA film above the Ultra Low Budget tier (Ultra Low Budget, Student
  *   and Short Films don't count), or a paid-up year in ACTRA and a part played under ACTRA; $3,121, $246.14 a year.
@@ -245,11 +247,20 @@ export function mayWorkIn(p: Person, country: CountryCode): boolean {
   });
 }
 
-/** Joins a union by its own route: the card in the name the person goes by, the fee and dues recorded. */
-function join(s: Lives, a: { [key: string]: string; union: string }, c: Context): void {
+export interface JoinArgs {
+  [key: string]: string;
+  union: string;
+  /** The account the initiation fee and the year's dues are paid from. */
+  account: string;
+}
+
+/** Joins a union by its own route: the card in the name the person goes by, the fee and the year's dues paid from the account named. */
+function join(s: Lives & Holding, a: JoinArgs, c: Context): void {
   const t = terms(s, a.union as Union, c.now);
   const held = memberOf(s.unions, a.union as Union);
   if (held !== undefined && (held.standing === 'full' || held.standing === t.standing)) throw new Error(`the person is a member of ${a.union} already`);
+  if (t.initiation !== null) payCost(s, a.account, a.union, t.initiation, 'an initiation fee', c.now);
+  if (t.dues !== null) payCost(s, a.account, a.union, t.dues, 'dues', c.now);
   // @slate:consumer identity.make
   s.unions.joined.push({ union: a.union as Union, at: c.now, standing: t.standing, name: personOf(s.identity).preferred, initiation: t.initiation, dues: t.dues });
 }
@@ -257,4 +268,4 @@ function join(s: Lives, a: { [key: string]: string; union: string }, c: Context)
 // Stryker disable all: a mutant of a declaration made as the module loads changes its shape, so the module loaded
 // again for it is refused as declared twice (as the accounts' and the cards' say). The declarations are held by the
 // test that lists each command with what it reads and writes; what each does is mutated above.
-export const joinUnion = defineCommand<Lives, { [key: string]: string; union: string }>({ id: 'unions.join', reads: ['identity', 'acting', 'career', 'scripts', 'directing'], writes: ['unions'], run: join });
+export const joinUnion = defineCommand<Lives & Holding, JoinArgs>({ id: 'unions.join', reads: ['identity', 'acting', 'career', 'scripts', 'directing'], writes: ['unions', 'accounts', 'ledger'], run: join });

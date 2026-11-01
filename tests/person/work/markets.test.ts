@@ -1,6 +1,6 @@
 import { describe, expect, it } from 'vitest';
 import { begin, dispatch, type Life } from '../../../src/core/frame/frame.ts';
-import { fromMajor, type CurrencyCode } from '../../../src/core/money/money.ts';
+import { fromMajor, type CurrencyCode, type Money } from '../../../src/core/money/money.ts';
 import { t } from '../../../src/core/text/text.ts';
 import { daysFromCivil, SECONDS_PER_DAY } from '../../../src/core/time/calendar.ts';
 import { ATTRIBUTES_START, chooseAttributes, type AttributesSlice } from '../../../src/person/attributes/attributes.ts';
@@ -37,8 +37,9 @@ import type { GenresSlice } from '../../../src/person/genres/genres.ts';
 import compiled from '../../../src/person/work/markets.json' with { type: 'json' };
 import { falsifyAny } from '../../support/falsify-core.ts';
 import { identity } from '../../support/person.ts';
+import { ACCOUNT, minorIn, purse } from '../../support/purse.ts';
 
-type Career = { attributes: AttributesSlice; scripts: ScriptsSlice; career: CareerSlice; identity: IdentitySlice; genres: GenresSlice };
+type Career = { attributes: AttributesSlice; scripts: ScriptsSlice; career: CareerSlice; identity: IdentitySlice; genres: GenresSlice } & ReturnType<typeof purse>;
 const SEED = '0123456789abcdef';
 const day = (y: number, m: number, d: number) => daysFromCivil(y, m, d) * SECONDS_PER_DAY;
 const NOW = day(2026, 11, 1);
@@ -162,7 +163,7 @@ const line = (f: Fee) =>
 type Lives = Career;
 const writer = (over: Partial<Person> = {}, at = NOW): Life<Lives> =>
   dispatch(
-    dispatch(begin(SEED, at, { attributes: structuredClone(ATTRIBUTES_START), scripts: structuredClone(SCRIPTS_START), career: structuredClone(CAREER_START), identity: identity(over), genres: { loved: ['drama'] } }), chooseAttributes, { role: 'screenwriter', all: 100, each: {} }),
+    dispatch(begin(SEED, at, { attributes: structuredClone(ATTRIBUTES_START), scripts: structuredClone(SCRIPTS_START), career: structuredClone(CAREER_START), identity: identity(over), genres: { loved: ['drama'] }, ...purse() }), chooseAttributes, { role: 'screenwriter', all: 100, each: {} }),
     writeScript,
     { form: 'episode', genre: 'drama', days: 200 },
   );
@@ -366,11 +367,15 @@ describe('a script sold in a market', () => {
     const pitched = (l: Life<Lives>, deal?: 'sale' | 'option'): Life<Lives> => {
       let x = l;
       const before = l.slices.career.offered['1']?.options.length ?? 0;
-      while ((x.slices.career.out['1']?.requests ?? 0) > 0 && x.slices.career.out['1']?.sold === null && (x.slices.career.offered['1']?.options.length ?? 0) === before) x = dispatch(x, pitchScript, deal === undefined ? { script: 1 } : { script: 1, deal });
+      while ((x.slices.career.out['1']?.requests ?? 0) > 0 && x.slices.career.out['1']?.sold === null && (x.slices.career.offered['1']?.options.length ?? 0) === before) x = dispatch(x, pitchScript, deal === undefined ? { script: 1, account: ACCOUNT } : { script: 1, deal, account: ACCOUNT });
       return x;
     };
     const sold = (l: Life<Lives>) => l.slices.career.out['1']?.sold;
     expect(sold(pitched(asked(writer(), 9)))).toEqual({ at: NOW, fee: FEES.episode });
+    // The buyer pays the sale into the account named: a US writer's fee at home, nothing withheld at source.
+    const wga = pitched(asked(writer(), 9));
+    expect([minorIn(wga.slices.ledger, ACCOUNT), minorIn(wga.slices.ledger, 'world:buyer:USD')]).toEqual([100_000_000 + (FEES.episode as Money).minor, -(FEES.episode as Money).minor]);
+    expect(wga.slices.tax.paid.map((p) => [p.what, p.work, p.country])).toEqual([['sale', 'author', 'US']]);
     expect(sold(pitched(asked(dispatch(writer(), offerScript, { script: 1, agreement: 'gb-bbc', minutes: 45 }), 9)))).toEqual({ at: NOW, fee: money('GBP', '9900') });
     const german = writer({ languages: [{ lang: 'de', level: 'C1' }] });
     expect(sold(pitched(asked(dispatch(german, offerScript, { script: 1, agreement: 'de-rtl', budget: 700_000, minutes: 20 }), 9)))).toEqual({ at: NOW, fee: money('EUR', '10500') });
@@ -383,7 +388,7 @@ describe('a script sold in a market', () => {
     expect(optioned.slices.career.contacts).toBe(1);
     expect(optioned.slices.career.out['1']?.requests).toBeLessThan(9);
     const later = (y: number, m: number, d: number) => at(optioned, day(y, m, d));
-    for (const [what, args] of [[pitchScript, { script: 1 }], [promoteScript, { script: 1, days: 1 }], [offerScript, { script: 1, agreement: 'wga' }], [summariseScript, { script: 1, document: 'logline', days: 1 }]] as const) {
+    for (const [what, args] of [[pitchScript, { script: 1, account: ACCOUNT }], [promoteScript, { script: 1, days: 1 }], [offerScript, { script: 1, agreement: 'wga' }], [summariseScript, { script: 1, document: 'logline', days: 1 }]] as const) {
       expect(() => dispatch(later(2027, 10, 31), what as never, args as never)).toThrow('script 1 is under option until 2027-11-01');
     }
     const back = dispatch(later(2027, 11, 1), offerScript, { script: 1, agreement: 'ca-ipa', minutes: 30 });
@@ -393,11 +398,11 @@ describe('a script sold in a market', () => {
     expect(offered(again).options[1]).toMatchObject({ until: '2028-11-01', fee: money('CAD', '1054.60') });
     expect(dispatch(later(2027, 11, 1), promoteScript, { script: 1, days: 1 }).slices.career.out['1']?.requests).toBeGreaterThanOrEqual(optioned.slices.career.out['1']?.requests as number);
     // Refused before a request is spent.
-    expect(() => dispatch(asked(writer()), pitchScript, { script: 1, deal: 'option' })).toThrow("the WGA's option terms aren't kept by the game");
-    expect(() => dispatch(asked(writer()), pitchScript, { script: 1, deal: 'loan' as 'sale' })).toThrow("there's no deal loan");
-    expect(() => dispatch(writer(), pitchScript, { script: 1, deal: 'option' })).toThrow('no one has asked to read script 1');
+    expect(() => dispatch(asked(writer()), pitchScript, { script: 1, deal: 'option', account: ACCOUNT })).toThrow("the WGA's option terms aren't kept by the game");
+    expect(() => dispatch(asked(writer()), pitchScript, { script: 1, deal: 'loan' as 'sale', account: ACCOUNT })).toThrow("there's no deal loan");
+    expect(() => dispatch(writer(), pitchScript, { script: 1, deal: 'option', account: ACCOUNT })).toThrow('no one has asked to read script 1');
     const danish = asked(dispatch(writer({ languages: [{ lang: 'da', level: 'C2' }] }), writeScript, { form: 'feature', genre: 'drama', days: 200 }));
-    expect(() => dispatch(asked(dispatch(danish, offerScript, { script: 1, agreement: 'dk-dr' })), pitchScript, { script: 1, deal: 'option' })).toThrow('dk-dr sets no option');
+    expect(() => dispatch(asked(dispatch(danish, offerScript, { script: 1, agreement: 'dk-dr' })), pitchScript, { script: 1, deal: 'option', account: ACCOUNT })).toThrow('dk-dr sets no option');
   });
 
   it('is sold where its market is, the meeting a day there', () => {
@@ -409,7 +414,7 @@ describe('a script sold in a market', () => {
   it("script.offer: a script offered under the BBC's terms sells for pounds a minute, where the WGA's pays its dollars", () => {
     const sale = (agreement: string | null) => {
       let l = asked(agreement === null ? writer() : dispatch(writer(), offerScript, { script: 1, agreement, minutes: 45 }), 9);
-      while (l.slices.career.out['1']?.sold === null && (l.slices.career.out['1']?.requests as number) > 0) l = dispatch(l, pitchScript, { script: 1 });
+      while (l.slices.career.out['1']?.sold === null && (l.slices.career.out['1']?.requests as number) > 0) l = dispatch(l, pitchScript, { script: 1, account: ACCOUNT });
       return l.slices.career.out['1']?.sold;
     };
     falsifyAny({ feature: 'script.offer', claim: 'bites', says: 'an episode offered under the BBC agreement sells at its minimum a minute, not the WGA minimum', base: null, twin: 'gb-bbc', outcome: sale });
@@ -419,8 +424,8 @@ describe('a script sold in a market', () => {
 describe("a sale meeting abroad", () => {
   it("is a visit, not work there: open where the person's passport visits the market's country without a visa applied for beforehand", () => {
     // The WGA's market, the US: a British writer enters on the electronic travel authorisation; an Indian passport needs a visa first.
-    expect(dispatch(asked(writer({ citizenship: ['GB'] })), pitchScript, { script: 1 }).slices.career.out['1']?.requests).toBe(0);
-    expect(() => dispatch(asked(writer({ citizenship: ['IN'] })), pitchScript, { script: 1 })).toThrow("a visit to US takes a visa applied for beforehand, which the game doesn't hold");
-    expect(dispatch(asked(writer({ citizenship: ['IN', 'GB'] })), pitchScript, { script: 1 }).slices.career.out['1']?.requests).toBe(0);
+    expect(dispatch(asked(writer({ citizenship: ['GB'] })), pitchScript, { script: 1, account: ACCOUNT }).slices.career.out['1']?.requests).toBe(0);
+    expect(() => dispatch(asked(writer({ citizenship: ['IN'] })), pitchScript, { script: 1, account: ACCOUNT })).toThrow("a visit to US takes a visa applied for beforehand, which the game doesn't hold");
+    expect(dispatch(asked(writer({ citizenship: ['IN', 'GB'] })), pitchScript, { script: 1, account: ACCOUNT }).slices.career.out['1']?.requests).toBe(0);
   });
 });

@@ -1,0 +1,347 @@
+{
+ "topic": "tax.ZA",
+ "read": "2026-11-01",
+ "note": "Read 2026-11-01 at the owner's word (\"Build those first 3 starting with ledger first\"; \"Retry the blocked tax facts once all countries land\"): the tax on a screen worker's pay in South Africa: a resident's income tax, social contributions, what is withheld at source, a non-resident artiste's withholding, any authors' treatment, VAT's threshold, the tax year. Research and retry subagents (workbench/briefs/BRIEF-tax*.md); every quote checked by the lead against its saved page.",
+ "figures": [
+  {
+   "item": "residents",
+   "finding": "For the 2027 tax year (1 March 2026 to 28 February 2027) a resident pays national income tax from 18% up to R245,100 to 45% above R1,878,600, reduced by a primary rebate of R17,820, so nothing is due below R99,000 (under 65); the 2026 year (to 28 February 2026) used brackets from R237,100 and a R17,235 rebate. There is no provincial or municipal income tax.",
+   "value": {
+    "currency": "ZAR",
+    "2027": {
+     "brackets": [
+      {
+       "from": 0,
+       "to": 245100,
+       "rate": 0.18
+      },
+      {
+       "from": 245100,
+       "to": 383100,
+       "rate": 0.26
+      },
+      {
+       "from": 383100,
+       "to": 530200,
+       "rate": 0.31
+      },
+      {
+       "from": 530200,
+       "to": 695800,
+       "rate": 0.36
+      },
+      {
+       "from": 695800,
+       "to": 887000,
+       "rate": 0.39
+      },
+      {
+       "from": 887000,
+       "to": 1878600,
+       "rate": 0.41
+      },
+      {
+       "from": 1878600,
+       "to": null,
+       "rate": 0.45
+      }
+     ],
+     "rebates": {
+      "primary": 17820,
+      "secondary65": 9765,
+      "tertiary75": 3249
+     },
+     "thresholds": {
+      "under65": 99000,
+      "65plus": 153250,
+      "75plus": 171300
+     }
+    },
+    "2026": {
+     "brackets": [
+      {
+       "from": 0,
+       "to": 237100,
+       "rate": 0.18
+      },
+      {
+       "from": 237100,
+       "to": 370500,
+       "rate": 0.26
+      },
+      {
+       "from": 370500,
+       "to": 512800,
+       "rate": 0.31
+      },
+      {
+       "from": 512800,
+       "to": 673000,
+       "rate": 0.36
+      },
+      {
+       "from": 673000,
+       "to": 857900,
+       "rate": 0.39
+      },
+      {
+       "from": 857900,
+       "to": 1817000,
+       "rate": 0.41
+      },
+      {
+       "from": 1817000,
+       "to": null,
+       "rate": 0.45
+      }
+     ],
+     "rebates": {
+      "primary": 17235,
+      "secondary65": 9444,
+      "tertiary75": 3145
+     },
+     "thresholds": {
+      "under65": 95750
+     }
+    }
+   },
+   "applies": "Tax years 2026 and 2027 (the 2026 year carried the 2024 table unchanged).",
+   "sources": [
+    {
+     "src": 0,
+     "said": "2027 tax year (1 March 2026 – 28 February 2027) 25 February 2026 – See changes: Taxable income (R) Rates of tax (R) Not exceeding R245 100 18% of taxable income"
+    },
+    {
+     "src": 0,
+     "said": "887 001 – 1 878 600 259 783 + 41% of taxable income above 887 000 1 878 601 and above 666 339 + 45% of taxable income above 1 878 600"
+    },
+    {
+     "src": 0,
+     "said": "2026 tax year (1 March 2025 – 28 February 2026) 12 March 2025 – No changes 2025 tax year (1 March 2024 – 28 February 2025) 21 February 2024 – No changes from last year"
+    },
+    {
+     "src": 0,
+     "said": "857 901 – 1 817 000 251 258 + 41% of taxable income above 857 900 1 817 001 and above 644 489 + 45% of taxable income above 1 817 000"
+    },
+    {
+     "src": 0,
+     "said": "Tax Rebate 2027 2026 2025 2024 2023 Primary R17 820 R17 235 R17 235 R17 235 R16 425"
+    },
+    {
+     "src": 0,
+     "said": "Under 65 R99 000 R95 750 R95 750 R95 750 R91 250"
+    }
+   ]
+  },
+  {
+   "item": "year",
+   "finding": "The tax year runs 1 March to the end of February; for the year ended 28 February 2026, non-provisional individuals file 13 July to 23 October 2026 and provisional taxpayers by 22 January 2027.",
+   "value": {
+    "start": "03-01",
+    "end": "02-28/29",
+    "2026FilingSeason": {
+     "nonProvisional": "2026-07-13/2026-10-23",
+     "provisional": "2026-07-13/2027-01-22",
+     "autoAssessment": "2026-07-01/2026-07-12"
+    }
+   },
+   "applies": "Filing dates are set each year by SARS notice.",
+   "sources": [
+    {
+     "src": 0,
+     "said": "2027 tax year (1 March 2026 – 28 February 2027)"
+    },
+    {
+     "src": 1,
+     "said": "Non-provisional individuals: 13 July to 23 October 2026 Provisional taxpayers: 13 July 2026 to 22 January 2027"
+    }
+   ]
+  },
+  {
+   "item": "social",
+   "finding": "The employee and employer each pay 1% of pay to the Unemployment Insurance Fund, on pay up to R17,712 a month (R177.12 maximum each); the employer also pays a 1% skills development levy on payroll unless total payroll stays under R500,000 a year.",
+   "value": {
+    "currency": "ZAR",
+    "UIF": {
+     "employee": 0.01,
+     "employer": 0.01,
+     "ceilingMonthly": 17712,
+     "ceilingAnnual": 212544
+    },
+    "SDL": {
+     "employer": 0.01,
+     "exemptBelowAnnualPayroll": 500000
+    }
+   },
+   "applies": "2026; no contributions for the self-employed or a performers' scheme were found.",
+   "sources": [
+    {
+     "src": 2,
+     "said": "The employer must pay a total contribution of 2% (1% contributed by the employee and 1% contributed by the employer) within the prescribed period."
+    },
+    {
+     "src": 2,
+     "said": "As from 1 June 2021, the maximum earnings ceiling is R17 712 per month or R212 544 annually."
+    },
+    {
+     "src": 3,
+     "said": "1% of the total amount paid in salaries to employees (including wages, overtime payments, leave pay, bonuses, fees, commissions and lump sum payments)."
+    },
+    {
+     "src": 3,
+     "said": "paid/due to all its employees over the next 12 month period won’t exceed R500 000."
+    }
+   ]
+  },
+  {
+   "item": "withholding",
+   "finding": "The employer withholds PAYE by SARS's tax deduction tables; a freelancer pays provisional tax himself, the first payment within six months of the start of the year (31 August) and the second by the last working day of the year (end February).",
+   "value": {
+    "employee": "PAYE per SARS employer tax deduction tables",
+    "freelancer": {
+     "provisional": [
+      "08-31",
+      "last working day of February"
+     ],
+     "optionalThird": "last business day of September"
+    }
+   },
+   "applies": "Tax year from March.",
+   "sources": [
+    {
+     "src": 4,
+     "said": "The first provisional tax payment must be made within six months of the start of the year of assessment. For years of assessment starting March, this will be 31 August, if it is a business day, or the last business day before that date if it falls on a Saturday, Sunday or public holiday. The second payment must be made no later than the last working day of the year of assessment."
+    }
+   ]
+  },
+  {
+   "item": "nonResident",
+   "finding": "A non-resident entertainer paid for activities in South Africa has 15% withheld by the resident payer (promoter, producer); it is a final tax with no expenses deducted.",
+   "value": {
+    "rate": 0.15,
+    "base": "gross payment",
+    "final": true,
+    "withheldBy": "resident payer; else the entertainer pays"
+   },
+   "applies": "2026 (Income Tax Act s 47B as described by SARS).",
+   "sources": [
+    {
+     "src": 5,
+     "said": "Any payment to non-resident entertainers and sportspersons, for specific activities taking place in South Africa, is subject to a withholding tax of 15%."
+    },
+    {
+     "src": 5,
+     "said": "The 15% withholding tax is a final tax and no expenses or allowance may be deducted."
+    }
+   ]
+  },
+  {
+   "item": "authors",
+   "finding": "A royalty from South Africa paid to a foreign author (for the use of intellectual property) bears a final 15% withholding tax; no special treatment of a resident author's fees was found.",
+   "value": {
+    "nonResidentRoyalty": {
+     "rate": 0.15,
+     "final": true
+    }
+   },
+   "applies": "Royalties to foreign persons.",
+   "sources": [
+    {
+     "src": 6,
+     "said": "Royalties paid is taxed at a final withholding tax rate of 15%."
+    },
+    {
+     "src": 6,
+     "said": "The use, right of use or permission to use any intellectual property"
+    }
+   ]
+  },
+  {
+   "item": "vat",
+   "finding": "VAT is 15%; a freelancer must register once taxable supplies exceed R2.3 million a year from 1 April 2026 (R1 million before), and may register voluntarily above R120,000 (R50,000 before).",
+   "value": {
+    "currency": "ZAR",
+    "standard": 0.15,
+    "compulsory": {
+     "before2026-04-01": 1000000,
+     "from2026-04-01": 2300000
+    },
+    "voluntary": {
+     "before2026-04-01": 50000,
+     "from2026-04-01": 120000
+    }
+   },
+   "applies": "2026.",
+   "sources": [
+    {
+     "src": 7,
+     "said": "The compulsory registration threshold is increased from R1 million to R2.3 million. The voluntary registration threshold is increased from R50 000 to R120 000. The effective date for the increase is 1 April 2026."
+    },
+    {
+     "src": 7,
+     "said": "VAT is levied at the standard rate of 15% on the supply of goods and services by registered vendors."
+    }
+   ]
+  }
+ ],
+ "country": "ZA",
+ "sources": [
+  {
+   "url": "https://www.sars.gov.za/tax-rates/income-tax/rates-of-tax-for-individuals/",
+   "title": "Rates of Tax for Individuals (SARS)",
+   "read": "2026-11-01",
+   "kind": "primary",
+   "said": "2027 tax year (1 March 2026 – 28 February 2027) 25 February 2026 – See changes: Taxable income (R) Rates of tax (R) Not exceeding R245 100 18% of taxable income … 887 001 – 1 878 600 259 783 + 41% of taxable income above 887 000 1 878 601 and above 666 339 + 45% of taxable income above 1 878 600 … 2026 tax year (1 March 2025 – 28 February 2026) 12 March 2025 – No changes 2025 tax year (1 March 2024 – 28 February 2025) 21 February 2024 – No changes from last year … 857 901 – 1 817 000 251 258 + 41% of taxable income above 857 900 1 817 001 and above 644 489 + 45% of taxable income above 1 817 000 … Tax Rebate 2027 2026 2025 2024 2023 Primary R17 820 R17 235 R17 235 R17 235 R16 425 … Under 65 R99 000 R95 750 R95 750 R95 750 R91 250"
+  },
+  {
+   "url": "https://www.sars.gov.za/types-of-tax/personal-income-tax/filing-season/",
+   "title": "Filing Season (SARS)",
+   "read": "2026-11-01",
+   "kind": "primary",
+   "said": "Non-provisional individuals: 13 July to 23 October 2026 Provisional taxpayers: 13 July 2026 to 22 January 2027"
+  },
+  {
+   "url": "https://www.sars.gov.za/types-of-tax/unemployment-insurance-fund/",
+   "title": "Unemployment Insurance Fund (SARS)",
+   "read": "2026-11-01",
+   "kind": "primary",
+   "said": "The employer must pay a total contribution of 2% (1% contributed by the employee and 1% contributed by the employer) within the prescribed period. … As from 1 June 2021, the maximum earnings ceiling is R17 712 per month or R212 544 annually."
+  },
+  {
+   "url": "https://www.sars.gov.za/types-of-tax/skills-development-levy/",
+   "title": "Skills Development Levy (SARS)",
+   "read": "2026-11-01",
+   "kind": "primary",
+   "said": "1% of the total amount paid in salaries to employees (including wages, overtime payments, leave pay, bonuses, fees, commissions and lump sum payments). … paid/due to all its employees over the next 12 month period won’t exceed R500 000."
+  },
+  {
+   "url": "https://www.sars.gov.za/types-of-tax/provisional-tax/",
+   "title": "Provisional Tax (SARS)",
+   "read": "2026-11-01",
+   "kind": "primary",
+   "said": "The first provisional tax payment must be made within six months of the start of the year of assessment. For years of assessment starting March, this will be 31 August, if it is a business day, or the last business day before that date if it falls on a Saturday, Sunday or public holiday. The second payment must be made no later than the last working day of the year of assessment."
+  },
+  {
+   "url": "https://www.sars.gov.za/individuals/tax-during-all-life-stages-and-events/tax-and-non-residents/withholding-tax-for-non-resident-entertainers-and-sportspersons/",
+   "title": "Withholding tax for non-resident entertainers and sportspersons (SARS)",
+   "read": "2026-11-01",
+   "kind": "primary",
+   "said": "Any payment to non-resident entertainers and sportspersons, for specific activities taking place in South Africa, is subject to a withholding tax of 15%. … The 15% withholding tax is a final tax and no expenses or allowance may be deducted."
+  },
+  {
+   "url": "https://www.sars.gov.za/types-of-tax/withholding-tax-on-royalties/",
+   "title": "Withholding Tax on Royalties (SARS)",
+   "read": "2026-11-01",
+   "kind": "primary",
+   "said": "Royalties paid is taxed at a final withholding tax rate of 15%. … The use, right of use or permission to use any intellectual property"
+  },
+  {
+   "url": "https://www.sars.gov.za/types-of-tax/value-added-tax/",
+   "title": "Value-Added Tax (SARS)",
+   "read": "2026-11-01",
+   "kind": "primary",
+   "said": "The compulsory registration threshold is increased from R1 million to R2.3 million. The voluntary registration threshold is increased from R50 000 to R120 000. The effective date for the increase is 1 April 2026. … VAT is levied at the standard rate of 15% on the supply of goods and services by registered vendors."
+  }
+ ],
+ "blockers": []
+}

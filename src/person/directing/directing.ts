@@ -1,10 +1,11 @@
 import { defineCommand, type Context, type Json } from '../../core/frame/frame.ts';
-import { add, compare, fromMajor, money, multiply, rational, roundHalfEven, type CurrencyCode, type Money } from '../../core/money/money.ts';
+import { add, allocate, compare, fromMajor, money, multiply, rational, roundHalfEven, type CurrencyCode, type Money } from '../../core/money/money.ts';
 import { t, type LineId } from '../../core/text/text.ts';
+import { earn, type Earning } from '../../money/tax/tax.ts';
 import { countryName, type CountryCode } from '../../world/gazetteer/gazetteer.ts';
 import { dateOf, UNIT_DAYS, WEEK_DAYS } from '../acting/acting.ts';
 import { ATTRIBUTES, componentValues, practise, skillOf, type AttributesSlice } from '../attributes/attributes.ts';
-import { inTheBusiness, personOf, type IdentitySlice } from '../identity/identity.ts';
+import { inTheBusiness, personOf, residenceOf, type IdentitySlice } from '../identity/identity.ts';
 import { spread } from '../work/work.ts';
 import type { ActingSlice } from '../acting/acting.ts';
 import { permitted, type PermitsSlice } from '../permits/permits.ts';
@@ -158,7 +159,9 @@ type Values = Readonly<Record<string, number>>;
 type Directing = { attributes: AttributesSlice; directing: DirectingSlice };
 type Pursuing = Directing & { identity: IdentitySlice };
 /** A film shot or cut: where the director works, so whether they may work there reads the person, every role's days and the permits. */
-type Working = Directing & { identity: IdentitySlice; acting: ActingSlice; producing: ProducingSlice; permits: PermitsSlice };
+type Working = Directing & Earning & { identity: IdentitySlice; acting: ActingSlice; producing: ProducingSlice; permits: PermitsSlice };
+/** Prep is paid: its share of the fee into an account, taxed where the person lives. */
+type Prepping = Directing & Earning & { identity: IdentitySlice };
 
 /** Refuses the work where the person may not work in the film's country for its days (papers.permits); prep books it, as an audition books a part. */
 function mayWorkOn(s: Working, film: Film, now: number): void {
@@ -236,6 +239,8 @@ export interface PrepArgs {
   prep?: number;
   cut?: number;
   minutes?: number;
+  /** The account prep's share of the fee is paid into, where the fee is known. */
+  account?: string;
 }
 
 type Terms = Pick<Film, 'country' | 'agreement' | 'budget' | 'minutes' | 'prepDays' | 'shootDays' | 'cutDays' | 'fee'>;
@@ -434,8 +439,27 @@ function mayDirectFeature(s: DirectingSlice): void {
   if (features === 1 && s.second !== true) throw new Error('a second feature needs the debut to lead to one');
 }
 
+export const STAGES: readonly Stage[] = ['prep', 'shoot', 'cut'];
+
+/**
+ * What a stage of the work pays of a film's fee: its days' share of it, prep, shoot and cut, the periods the
+ * agreement guarantees (the game's reading of a fee paid as the work is done, money.tax.model); none where the fee is
+ * left to negotiation.
+ */
+export function stagePay(film: Pick<Film, 'fee' | 'prepDays' | 'shootDays' | 'cutDays'>, stage: Stage): Money | null {
+  // In hundredths of a day: the Director's Cut can run to half a day (75.5 for a 151-day shoot).
+  return film.fee === null ? null : (allocate(film.fee, [film.prepDays, film.shootDays, film.cutDays].map((d) => Math.round(d * 100)))[STAGES.indexOf(stage)] as Money);
+}
+
+/** Pays a stage's share of the fee into the account named, less what the film's country withholds (money.tax). */
+function paidFor(s: Prepping, film: Film, stage: Stage, account: string, c: Context): void {
+  const part = stagePay(film, stage);
+  // @slate:consumer identity.make
+  if (part !== null && part.minor > 0) earn(s, { account, payer: 'production', country: film.country, home: residenceOf(personOf(s.identity)), work: 'director', gross: part, what: stage }, c);
+}
+
 /** Preps a film or an episode: casts it, plans its shots and its story, in the prep its agreement guarantees or its contract gives. */
-function prep(s: Directing, a: PrepArgs, c: Context): void {
+function prep(s: Prepping, a: PrepArgs, c: Context): void {
   const t = terms(a, s.directing, c.now);
   if (a.form === 'feature') mayDirectFeature(s.directing);
   // @slate:consumer attributes.choose
@@ -447,12 +471,15 @@ function prep(s: Directing, a: PrepArgs, c: Context): void {
     plan[p] = clamp(k + spread(k) * (2 * c.draws('directing.work', 'plan', id, p).float() - 1), 0, 100);
   }
   s.directing.films.push({ id, form: a.form, started: c.now, ...t, plan, needed: null, shot: null, cut: null, quality: null, festivals: {} });
+  paidFor(s, s.directing.films.at(-1) as Film, 'prep', String(a.account), c);
   practise(s.attributes, 'director', [...used('story'), ...used('performances'), ...used('images')], t.prepDays);
 }
 
 export interface FilmArgs {
-  [key: string]: number;
+  [key: string]: Json;
   film: number;
+  /** The account the stage's share of the fee is paid into. */
+  account: string;
 }
 
 /** Shoots it: what prep planned, as far as the schedule and the set carry it. */
@@ -468,6 +495,7 @@ function shoot(s: Working, a: FilmArgs, c: Context): void {
   for (const p of PLANNED) shot[p] = film.plan[p] * carried;
   film.needed = needed;
   film.shot = shot;
+  paidFor(s, film, 'shoot', a.account, c);
   practise(s.attributes, 'director', [...used('performances'), ...used('images'), ...componentsOf('leadership'), ...componentsOf('communication')], film.shootDays);
 }
 
@@ -491,6 +519,7 @@ function cut(s: Working, a: FilmArgs, c: Context): void {
   const f = finish(values, film.cutDays, cutNeeded(values, film.shootDays));
   film.cut = clamp(k * f + spread(k) * (2 * c.draws('directing.work', 'cut', film.id).float() - 1), 0, 100);
   film.quality = finished(film, film.cut);
+  paidFor(s, film, 'cut', a.account, c);
   practise(s.attributes, 'director', used('cut'), film.cutDays);
 }
 
@@ -540,8 +569,8 @@ function pursue(s: Pursuing, _a: Record<string, never>, c: Context): void {
 // Stryker disable all: a mutant of a declaration made as the module loads changes its shape, so the module loaded
 // again for it is refused as declared twice (as the accounts' and the cards' say). The declarations are held by the
 // test that lists each command with what it reads and writes; what each does is mutated above.
-export const prepFilm = defineCommand<Directing, PrepArgs>({ id: 'directing.prep', reads: [], writes: ['attributes', 'directing'], run: prep });
-export const shootFilm = defineCommand<Working, FilmArgs>({ id: 'directing.shoot', reads: ['identity', 'acting', 'producing', 'permits'], writes: ['attributes', 'directing'], run: shoot });
-export const cutFilm = defineCommand<Working, FilmArgs>({ id: 'directing.cut', reads: ['identity', 'acting', 'producing', 'permits'], writes: ['attributes', 'directing'], run: cut });
+export const prepFilm = defineCommand<Prepping, PrepArgs>({ id: 'directing.prep', reads: ['identity'], writes: ['attributes', 'directing', 'accounts', 'ledger', 'tax', 'schedule'], run: prep });
+export const shootFilm = defineCommand<Working, FilmArgs>({ id: 'directing.shoot', reads: ['identity', 'acting', 'producing', 'permits'], writes: ['attributes', 'directing', 'accounts', 'ledger', 'tax', 'schedule'], run: shoot });
+export const cutFilm = defineCommand<Working, FilmArgs>({ id: 'directing.cut', reads: ['identity', 'acting', 'producing', 'permits'], writes: ['attributes', 'directing', 'accounts', 'ledger', 'tax', 'schedule'], run: cut });
 export const submitFilm = defineCommand<{ directing: DirectingSlice }, SubmitArgs>({ id: 'directing.submit', reads: [], writes: ['directing'], run: submit });
 export const pursueSecond = defineCommand<Pursuing, Record<string, never>>({ id: 'directing.pursue', reads: ['identity'], writes: ['attributes', 'directing'], run: pursue });

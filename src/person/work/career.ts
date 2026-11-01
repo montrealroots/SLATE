@@ -1,10 +1,12 @@
 import { defineCommand, type Context } from '../../core/frame/frame.ts';
 import { compare, fromMajor, money, multiply, roundHalfEven, subtract, type CurrencyCode, type Money } from '../../core/money/money.ts';
 import { t, type LineId } from '../../core/text/text.ts';
+import { heldOf } from '../../money/accounts/accounts.ts';
+import { earn, type Earning } from '../../money/tax/tax.ts';
 import { countryName, type CountryCode } from '../../world/gazetteer/gazetteer.ts';
 import { dateOf } from '../acting/acting.ts';
 import { componentOf, componentValues, facetSkill, practise, skillOf, type AttributesSlice } from '../attributes/attributes.ts';
-import { inTheBusiness, personOf, speaks, type IdentitySlice, type Level } from '../identity/identity.ts';
+import { inTheBusiness, personOf, residenceOf, speaks, type IdentitySlice, type Level } from '../identity/identity.ts';
 import compiled from './markets.json' with { type: 'json' };
 import { mayVisit, whyNoVisit } from '../permits/permits.ts';
 import { partScore, PARTS, scriptOf, spread, type Form, type Script, type ScriptsSlice } from './work.ts';
@@ -272,6 +274,8 @@ export function optionOf(o: Terms, form: Form, date: string): Money | null {
 type Values = Readonly<Record<string, number>>;
 type Career = { attributes: AttributesSlice; scripts: ScriptsSlice; career: CareerSlice };
 type Promoting = Career & { identity: IdentitySlice };
+/** A pitch's sale or option is paid into an account, taxed. */
+type Pitching = Promoting & Earning;
 
 const clamp = (n: number, lo: number, hi: number) => Math.min(hi, Math.max(lo, n));
 const of = (v: Values, id: string) => skillOf(v, 'screenwriter', id);
@@ -438,12 +442,14 @@ export interface ScriptArgs {
   script: number;
   /** A sale (the default), or an option for a year where the agreement sets its price. */
   deal?: Deal;
+  /** The account a sale or an option is paid into, where its price is known. */
+  account?: string;
 }
 
 const yearsOn = (date: string, by: number) => `${Number(date.slice(0, 4)) + by}${date.slice(4)}`;
 
 /** A pitch meeting with someone who asked to read the script: a sale or an option, at the terms of the market it is offered in. */
-function pitch(s: Promoting, a: ScriptArgs, c: Context): void {
+function pitch(s: Pitching, a: ScriptArgs, c: Context): void {
   const deal = a.deal ?? 'sale';
   if (!DEALS.includes(deal)) throw new Error(`there's no deal ${String(deal)}`);
   const values = componentValues(s.attributes, 'screenwriter');
@@ -459,6 +465,8 @@ function pitch(s: Promoting, a: ScriptArgs, c: Context): void {
   const terms: Terms = s.career.offered[String(a.script)] ?? { agreement: KEPT, budget: null, minutes: null };
   const date = dateOf(c.now);
   const fee = deal === 'sale' ? paidOf(terms, script.form, date) : optionOf(terms, script.form, date);
+  // A price known is paid into an account held: refused before the meeting where none is named or held.
+  if (fee !== null) heldOf(s.accounts, String(a.account));
   out.requests -= 1;
   const chance = saleChance(quality(script), pitchSkill(values, out));
   // Stryker disable next-line EqualityOperator: a draw is continuous, so it equals the chance with no probability.
@@ -466,6 +474,8 @@ function pitch(s: Promoting, a: ScriptArgs, c: Context): void {
     if (deal === 'sale') out.sold = { at: c.now, fee };
     // An option is priced only under a market's agreement, so the script is offered.
     else (s.career.offered[String(a.script)] as Offer).options.push({ at: c.now, until: yearsOn(date, OPTION_YEARS), fee });
+    // The buyer pays the sale or the option into the account named, less what the market's country withholds (money.tax).
+    if (fee !== null) earn(s, { account: a.account as string, payer: 'buyer', country: where, home: residenceOf(personOf(s.identity)), work: 'author', gross: fee, what: deal }, c);
     s.career.contacts += 1;
   }
   practise(s.attributes, 'screenwriter', ['pitching', 'speaking', 'persuasion'], MEETING_DAYS);
@@ -478,4 +488,4 @@ export const summariseScript = defineCommand<Career, DocumentArgs>({ id: 'script
 export const meetPeople = defineCommand<Career, DaysArgs>({ id: 'network.meet', reads: [], writes: ['attributes', 'career'], run: network });
 export const offerScript = defineCommand<Career & { identity: IdentitySlice }, OfferArgs>({ id: 'script.offer', reads: ['scripts', 'identity'], writes: ['career'], run: offer });
 export const promoteScript = defineCommand<Promoting, ScriptDaysArgs>({ id: 'script.promote', reads: ['scripts', 'identity'], writes: ['attributes', 'career'], run: promote });
-export const pitchScript = defineCommand<Promoting, ScriptArgs>({ id: 'script.pitch', reads: ['scripts', 'identity'], writes: ['attributes', 'career'], run: pitch });
+export const pitchScript = defineCommand<Pitching, ScriptArgs>({ id: 'script.pitch', reads: ['scripts', 'identity'], writes: ['attributes', 'career', 'accounts', 'ledger', 'tax', 'schedule'], run: pitch });

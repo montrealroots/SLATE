@@ -2277,3 +2277,25 @@ engine from the 21 countries' research; every money the person engines record pa
 spent, less what the work's country withholds at source (resident or non-resident), converted at the day's rate with
 the bank's fee; each tax year reckoned where the person is resident, the balance due or refunded on the return's date.
 It starts when the second tax retry reports and the research lands.
+Owner, 2026-11-01: "Start the age readers once the ledger lands." Briefed (workbench/briefs/BRIEF-ages-roles.md): for
+the 21 markets, a minor's contract for creative work (approval, the earnings set aside, whether it reaches writing,
+directing and producing as well as performing), a child performer's permit, hours and schooling, the general working
+age and majority where layer 3 left them blocked (California's majority among them), each union's age rules, funds'
+applicant ages and the age to form a company; then the readers in every role's engine. It launches when the ledger
+lands.
+Built 2026-11-01, at the owner's word ("Build those first 3 starting with ledger first"): the ledger pays. A tax engine
+(`money.tax`, src/money/tax; compiled by tools/money/tax from research/sources/money/tax/<CC>.json, money.tax.<CC>
+R-5232..R-5252, blocked R-5253..R-5258) holds 21 countries' resident scales (bands, Germany's zones, allowances,
+credits, surtaxes), employee and self-employed contributions, withholding by kind of work for residents and
+non-residents, VAT and the tax years with their due dates. Every money a person engine records now moves: earned
+(acting.perform, script.pitch, directing's prep, shoot and cut by days, producing.shoot) from the payer's world
+account into the person's account, less what the work's country withholds and its social contributions, at the day's
+rate with the bank's share; spent (producing's option and renewal, unions.join's initiation and first year's dues, a
+permit's fees where the worker pays, a headshot) from the account, refused where it can't cover. tax.reckon at each
+tax year's end where the person lives (the year's income at the resident's scale, less what was withheld, with credit
+for tax withheld abroad up to the tax at home) and tax.settle on the return's due date (paid, refunded, or owed and
+told). The game's readings are R-5259 (tax.model): residence is the first citizenship's country until a residence is
+held; a performer's and a director's pay are wages, a writer's and a producer's fees. Not modeled and told
+(tax.unkept): employers' wage-withholding tables, regional and municipal taxes beyond a rate that applies everywhere,
+formula-written credits. Owed: the tax matrix covers the map's 252 countries and 21 are researched, so 231 rows are
+pending until a tax wave researches the rest, as the owner's coverage law asks; the layer isn't proven until then.

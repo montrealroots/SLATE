@@ -1,0 +1,459 @@
+{
+ "topic": "tax.SE",
+ "read": "2026-11-01",
+ "note": "Read 2026-11-01 at the owner's word (\"Build those first 3 starting with ledger first\"; \"Retry the blocked tax facts once all countries land\"): the tax on a screen worker's pay in Sweden: a resident's income tax, social contributions, what is withheld at source, a non-resident artiste's withholding, any authors' treatment, VAT's threshold, the tax year. Research and retry subagents (workbench/briefs/BRIEF-tax*.md); every quote checked by the lead against its saved page.",
+ "figures": [
+  {
+   "item": "residents",
+   "finding": "A resident pays municipal income tax at the rate set by the municipality and region where registered (2026 average 32.38%) on taxable earned income, plus 20% state income tax on taxable earned income above SEK 643,000.",
+   "value": {
+    "currency": "SEK",
+    "national": [
+     {
+      "from": 0,
+      "to": 643000,
+      "rate": 0
+     },
+     {
+      "from": 643000,
+      "to": null,
+      "rate": 0.2
+     }
+    ],
+    "municipalAverage": 0.3238,
+    "base": "taxable earned income (fastställd förvärvsinkomst minus grundavdrag)",
+    "breakpointBeforeBasicAllowance": {
+     "under66": 660400,
+     "66plus": 760500
+    }
+   },
+   "applies": "Income year 2026, persons who have not turned 66 at the start of the year unless noted; the municipal rate varies by municipality (set locally), funeral fee 0.292% (Stockholm 0.07%, Tranås 0.285%) and church fee for members are on top.",
+   "sources": [
+    {
+     "src": 0,
+     "said": "Skiktgränsen för 2026 är 643 000 kronor."
+    },
+    {
+     "src": 0,
+     "said": "På den beskattningsbara förvärvsinkomsten som överstiger 643 000 kronor är den statliga inkomstskatten 20 procent."
+    },
+    {
+     "src": 0,
+     "said": "Den genomsnittliga kommunala skattesatsen för 2026 är 32,38 procent."
+    },
+    {
+     "src": 0,
+     "said": "Brytpunkten är 660 400 kronor för dig som inte fyllt 66 år vid inkomstårets ingång."
+    },
+    {
+     "src": 0,
+     "said": "Begravningsavgiften är 0,292 procent."
+    }
+   ]
+  },
+  {
+   "item": "residents",
+   "finding": "Every resident gets a basic allowance (grundavdrag) that varies with income: SEK 17,400 to 45,600 under 66 (SEK 25,100 at low incomes), and 65,800 to 179,100 from 66.",
+   "value": {
+    "currency": "SEK",
+    "under66": {
+     "lowIncome": 25100,
+     "max": 45600,
+     "minHighIncome": 17400
+    },
+    "66plus": {
+     "lowIncome": 65800,
+     "max": 179100,
+     "minHighIncome": 117500
+    },
+    "taxFreeAnnualIncome": 25041,
+    "priceBaseAmount": 59200
+   },
+   "applies": "Income year 2026; the allowance curve is a function of the prisbasbelopp; an earned income tax credit (jobbskatteavdrag) also applies.",
+   "sources": [
+    {
+     "src": 0,
+     "said": "Grundavdragets storlek för dig som inte fyllt 66 år vid inkomstårets ingång är: 25 100 vid låga inkomster som högst 45 600 kronor som lägst 17 400 kronor vid höga inkomster."
+    },
+    {
+     "src": 0,
+     "said": "Skattefri årsinkomst för 2026 är 25 041 kronor."
+    },
+    {
+     "src": 0,
+     "said": "Prisbasbeloppet inkomstår 2026: 59 200 kronor"
+    }
+   ]
+  },
+  {
+   "item": "year",
+   "finding": "The income year is the calendar year; individuals file their return by 2 May of the following year (4 May in 2026 because 2 May fell on a weekend).",
+   "value": {
+    "start": "2026-01-01",
+    "end": "2026-12-31",
+    "returnDue": "2027-05-02",
+    "returnDueRule": "2 May of the following year"
+   },
+   "applies": "Individuals.",
+   "sources": [
+    {
+     "src": 1,
+     "said": "Fysiska personer och dödsbon ska lämna inkomstdeklaration senast den 2 maj året efter utgången av beskattningsåret."
+    },
+    {
+     "src": 2,
+     "said": "Sista dagen att deklarera för dig som inte har anstånd är 4 maj."
+    }
+   ]
+  },
+  {
+   "item": "social",
+   "finding": "An employer pays 31.42% employer contributions on pay (born 1959 to 2002); the employee pays a 7% general pension contribution capped at SEK 47,100, fully offset by a tax reduction.",
+   "value": {
+    "employer": {
+     "rate": 0.3142,
+     "bornRange": "1959-2002",
+     "components": {
+      "sjukforsakring": 0.0355,
+      "foraldraforsakring": 0.02,
+      "alderspension": 0.1021,
+      "efterlevandepension": 0.003,
+      "arbetsmarknad": 0.0264,
+      "arbetsskada": 0.001,
+      "allmanLoneavgift": 0.1262
+     },
+     "noCeiling": true
+    },
+    "employee": {
+     "generalPensionContribution": 0.07,
+     "maxSEK": 47100,
+     "offsetByTaxReduction": 1.0
+    },
+    "reduced": {
+     "born1938to1958": 0.1021,
+     "born2003to2007": {
+      "rate": 0.2081,
+      "upToMonthlySEK": 25000,
+      "period": "2026-04-01/2027-09-30"
+     }
+    }
+   },
+   "applies": "Income year 2026; no ceiling on employer contributions was stated.",
+   "sources": [
+    {
+     "src": 0,
+     "said": "Allmän löneavgift 12,62 procent Summa 31,42 procent"
+    },
+    {
+     "src": 0,
+     "said": "Född 1959 till 2002 Arbetsgivaren betalar arbetsgivaravgift med 31,42 procent."
+    },
+    {
+     "src": 0,
+     "said": "7 procent av förvärvsinkomsten men högst 47 100 kronor. Alla skattskyldiga som betalar allmän pensionsavgift får en skattereduktion med 100 procent av avgiften."
+    }
+   ]
+  },
+  {
+   "item": "social",
+   "finding": "A self-employed screen worker (active business, born 1959 or later) pays self-employment contributions (egenavgifter) of 28.97% and deducts a flat 25% for them in advance.",
+   "value": {
+    "rate": 0.2897,
+    "provisionalDeduction": 0.25,
+    "passiveBusinessSpecialPayrollTax": 0.2426
+   },
+   "applies": "Income year 2026, active business (aktiv näringsverksamhet), holder of F-skatt.",
+   "sources": [
+    {
+     "src": 0,
+     "said": "Är du född 1959 eller senare och bedriver aktiv näringsverksamhet betalar du normalt full egenavgift, det vill säga 28,97 procent."
+    },
+    {
+     "src": 0,
+     "said": "Är du född 1959 eller senare får du göra ett schablonavdrag för beräknade egenavgifter med 25 procent."
+    }
+   ]
+  },
+  {
+   "item": "withholding",
+   "finding": "The main employer withholds by the municipal tax table; a payer withholds a flat 30% from one-off payments, work shorter than a week, and fees to legal persons without F-skatt approval; a holder of F-skatt pays preliminary tax himself.",
+   "value": {
+    "mainIncome": "Skatteverket tax tables (skattetabeller) by municipal rate",
+    "flat": 0.3,
+    "flatCases": [
+     "one-off payments with no regular income from work",
+     "work meant to last less than a week",
+     "legal persons not approved for F-skatt",
+     "payments after employment ends"
+    ]
+   },
+   "applies": "2026.",
+   "sources": [
+    {
+     "src": 3,
+     "said": "Du drar av 30 procent av beloppet i skatt om det saknas en tidsbestämd eller regelbunden inkomst av arbete. Arbete under kortare tid Du drar av 30 procent i skatt från ersättning för arbete som är avsett att pågå kortare tid än en vecka."
+    },
+    {
+     "src": 3,
+     "said": "I vissa fall ska du göra skatteavdrag från ersättningen med 30 % istället för enligt skattetabell eller jämkningsbeslut från Skatteverket."
+    },
+    {
+     "src": 3,
+     "said": "Du drar av 30 procent i skatt från arbetsersättning till juridiska personer som inte är godkända för F-skatt"
+    }
+   ]
+  },
+  {
+   "item": "nonResident",
+   "finding": "A non-resident performer appearing before an audience in Sweden (staying no more than six months in twelve) pays the artistes' tax A-SINK of 15% on taxable income, withheld by the payer; other non-residents may elect SINK at 22.5% for 2026 (20% from 2027), which is final with no return.",
+   "value": {
+    "aSink": {
+     "rate": 0.15,
+     "base": "taxable income",
+     "withheldByPayer": true,
+     "conditions": [
+      "performs something artistic before an audience",
+      "resident abroad",
+      "not in Sweden more than six months in a twelve-month period"
+     ]
+    },
+    "sink": {
+     "rate2026": 0.225,
+     "rate2027": 0.2,
+     "final": true
+    }
+   },
+   "applies": "2026; A-SINK covers performance before an audience; a film actor not before an audience falls under SINK or ordinary rules (not confirmed here).",
+   "sources": [
+    {
+     "src": 4,
+     "said": "Om villkoren är uppfyllda ska personen eller företaget som omfattas av artistskatten betala 15 procent i skatt på sin skattepliktiga inkomst. Du som arbetsgivare ska göra det skatteavdraget."
+    },
+    {
+     "src": 4,
+     "said": "inte vistas i Sverige mer än sex månader under en tolvmånadersperiod"
+    },
+    {
+     "src": 0,
+     "said": "Vid beskattning enligt SINK betalar du för inkomståret 2026 särskild inkomstskatt med 22,5 procent förutom för sjöinkomst där skatten är 15 procent."
+    },
+    {
+     "src": 5,
+     "said": "I beslutet ingår också att den särskilda inkomstskatten sänks till 20 procent från och med 1 januari 2027."
+    },
+    {
+     "src": 5,
+     "said": "Har du fått ett beslut om att betala särskild inkomstskatt på inkomsten behöver du inte lämna någon inkomstdeklaration."
+    }
+   ]
+  },
+  {
+   "item": "authors",
+   "finding": "Granting or transferring the copyright in a literary or artistic work (a script, a film) bears VAT at the reduced 6%, as do a performer's fees for the right to record a performance; no special income-tax rate for authors was found.",
+   "value": {
+    "vatRateOnCopyright": 0.06,
+    "performerRecordingRights": 0.06
+   },
+   "applies": "VAT on author's and performer's rights; income tax follows the ordinary rules.",
+   "sources": [
+    {
+     "src": 6,
+     "said": "Du ska ta ut 6 procent moms om du upplåter eller överlåter upphovsrätten till litterära eller konstnärliga verk."
+    },
+    {
+     "src": 6,
+     "said": "Du ska därför ta ut 6 procent moms på ersättningar från skiv-, film-, radio- och tv-bolag för rätten att mångfaldiga en inspelning."
+    }
+   ]
+  },
+  {
+   "item": "vat",
+   "finding": "A freelancer's fee bears 25% VAT, except a performing artist's own fee for a live performance before an audience (exempt) and rights in works (6%); a business with turnover of at most SEK 120,000 a year is exempt from registering.",
+   "value": {
+    "currency": "SEK",
+    "standard": 0.25,
+    "reduced": [
+     0.12,
+     0.06
+    ],
+    "liveArtistPerformance": "exempt",
+    "smallBusinessThreshold": 120000
+   },
+   "applies": "2026; the threshold applies to a business seated in Sweden, current and two preceding calendar years.",
+   "sources": [
+    {
+     "src": 0,
+     "said": "25 procent (20 procent av priset) den generella skattesatsen för moms."
+    },
+    {
+     "src": 6,
+     "said": "Den ersättning du får som artist för ditt framträdande inför publik är momsfri. Momsfriheten gäller bara om du som artist själv säljer framträdandet."
+    },
+    {
+     "src": 7,
+     "said": "Företagets årsomsättning är högst 120 000 kronor under det aktuella kalenderåret (januari–december)."
+    }
+   ]
+  },
+  {
+   "item": "residents",
+   "finding": "The basic allowance for 2026 (under 66) is a function of assessed earned income (FFI) in price base amounts (PBB = SEK 59,200), rounded up to the nearest SEK 100 and never above the income.",
+   "value": {
+    "currency": "SEK",
+    "PBB": 59200,
+    "rule": [
+     {
+      "from": 0,
+      "to": 58608,
+      "allowance": "0.423 PBB"
+     },
+     {
+      "from": 58608,
+      "to": 161024,
+      "allowance": "0.423 PBB + 0.20*(FFI-0.99 PBB)"
+     },
+     {
+      "from": 161024,
+      "to": 184112,
+      "allowance": "0.77 PBB"
+     },
+     {
+      "from": 184112,
+      "to": 466496,
+      "allowance": "0.77 PBB - 0.10*(FFI-3.11 PBB)"
+     },
+     {
+      "from": 466496,
+      "to": null,
+      "allowance": "0.293 PBB"
+     }
+    ],
+    "rounding": "up to whole hundred"
+   },
+   "applies": "Income year 2026, under 66 at the start of the year.",
+   "sources": [
+    {
+     "src": 8,
+     "said": "Överstiger inte 0,99 prisbasbelopp, dvs. 58 608 0,423 prisbasbelopp, dvs. 25 041,60"
+    },
+    {
+     "src": 8,
+     "said": "överstiger 7,88 prisbasbelopp, dvs. 466 496 0,293 prisbasbelopp, dvs. 17 345,60 0,293 PBB Grundavdraget får inte överstiga den fastställda förvärvsinkomsten"
+    }
+   ]
+  },
+  {
+   "item": "residents",
+   "finding": "The earned income tax credit (jobbskatteavdrag) for 2026, set only against municipal tax, is a function of work income (AI), the basic allowance (GA) and the municipal rate excluding 1.16 points (KI): for under-66s it rises to (3.027 PBB - GA)*KI above SEK 478,336.",
+   "value": {
+    "currency": "SEK",
+    "under66": [
+     {
+      "from": 0,
+      "to": 53872,
+      "credit": "(AI-GA)*KI"
+     },
+     {
+      "from": 53872,
+      "to": 191808,
+      "credit": "(0.91 PBB+0.3874*(AI-0.91 PBB)-GA)*KI"
+     },
+     {
+      "from": 191808,
+      "to": 478336,
+      "credit": "(1.813 PBB+0.251*(AI-3.24 PBB)-GA)*KI"
+     },
+     {
+      "from": 478336,
+      "to": null,
+      "credit": "(3.027 PBB-GA)*KI"
+     }
+    ],
+    "KI": "municipal rate minus 1.16 percentage points",
+    "rounding": "work income down to whole hundred; credit down to whole krona"
+   },
+   "applies": "Income year 2026, under 66; the tax tables assume an average rate of 34 percent.",
+   "sources": [
+    {
+     "src": 8,
+     "said": "Skattereduktionen för arbetsinkomst ska endast räknas av mot kommunal inkomstskatt."
+    },
+    {
+     "src": 8,
+     "said": "Överstiger 8,08 PBB, dvs. 478 336 3,027 PBB (179 198,40) minskat med grundavdraget, multiplicerat med skattesatsen för kommunal inkomstskatt (exkl. 1,16 procentenheter för begravningsavgift och avgift till trossamfund) (3,027 PBB-GA)*KI"
+    },
+    {
+     "src": 8,
+     "said": "((1,813 PBB+0,251*(AI-3,24 PBB)-GA)*KI"
+    }
+   ]
+  }
+ ],
+ "country": "SE",
+ "sources": [
+  {
+   "url": "https://www.skatteverket.se/privat/skatter/beloppochprocent/2026.4.1522bf3f19aea8075ba21.html",
+   "title": "Belopp och procent – inkomstår 2026 (Skatteverket)",
+   "read": "2026-11-01",
+   "kind": "primary",
+   "said": "Skiktgränsen för 2026 är 643 000 kronor. … På den beskattningsbara förvärvsinkomsten som överstiger 643 000 kronor är den statliga inkomstskatten 20 procent. … Den genomsnittliga kommunala skattesatsen för 2026 är 32,38 procent. … Brytpunkten är 660 400 kronor för dig som inte fyllt 66 år vid inkomstårets ingång. … Begravningsavgiften är 0,292 procent. … Grundavdragets storlek för dig som inte fyllt 66 år vid inkomstårets ingång är: 25 100 vid låga inkomster som högst 45 600 kronor som lägst 17 400 kronor vid höga inkomster. … Skattefri årsinkomst för 2026 är 25 041 kronor. … Prisbasbeloppet inkomstår 2026: 59 200 kronor … Allmän löneavgift 12,62 procent Summa 31,42 procent … Född 1959 till 2002 Arbetsgivaren betalar arbetsgivaravgift med 31,42 procent. … 7 procent av förvärvsinkomsten men högst 47 100 kronor. Alla skattskyldiga som betalar allmän pensionsavgift får en skattereduktion med 100 procent av avgiften. … Är du född 1959 eller senare och bedriver aktiv näringsverksamhet betalar du normalt full egenavgift, det vill säga 28,97 procent. … Är du född 1959 eller senare får du göra ett schablonavdrag för beräknade egenavgifter med 25 procent. … Vid beskattning enligt SINK betalar du för inkomståret 2026 särskild inkomstskatt med 22,5 procent förutom för sjöinkomst där skatten är 15 procent. … 25 procent (20 procent av priset) den generella skattesatsen för moms."
+  },
+  {
+   "url": "https://www.riksdagen.se/sv/dokument-och-lagar/dokument/svensk-forfattningssamling/skatteforfarandelag-20111244_sfs-2011-1244/",
+   "title": "Skatteförfarandelag (2011:1244), 32 kap. 1 §",
+   "read": "2026-11-01",
+   "kind": "primary",
+   "said": "Fysiska personer och dödsbon ska lämna inkomstdeklaration senast den 2 maj året efter utgången av beskattningsåret."
+  },
+  {
+   "url": "https://www.skatteverket.se/privat/deklaration.4.2b543913a42158acf800013508.html",
+   "title": "Deklaration (Skatteverket)",
+   "read": "2026-11-01",
+   "kind": "primary",
+   "said": "Sista dagen att deklarera för dig som inte har anstånd är 4 maj."
+  },
+  {
+   "url": "https://www.skatteverket.se/foretag/arbetsgivare/arbetsgivaravgifterochskatteavdrag/skatteavdrag/skatteavdragmed30procent.4.5c1163881590be297b511bc9.html",
+   "title": "Skatteavdrag med 30 procent (Skatteverket)",
+   "read": "2026-11-01",
+   "kind": "primary",
+   "said": "Du drar av 30 procent av beloppet i skatt om det saknas en tidsbestämd eller regelbunden inkomst av arbete. Arbete under kortare tid Du drar av 30 procent i skatt från ersättning för arbete som är avsett att pågå kortare tid än en vecka. … I vissa fall ska du göra skatteavdrag från ersättningen med 30 % istället för enligt skattetabell eller jämkningsbeslut från Skatteverket. … Du drar av 30 procent i skatt från arbetsersättning till juridiska personer som inte är godkända för F-skatt"
+  },
+  {
+   "url": "https://www.skatteverket.se/foretag/internationellt/utomlandsbosattaartisterartistskatt.4.71004e4c133e23bf6db800028935.html",
+   "title": "Utomlands bosatta artister – artistskatt (Skatteverket)",
+   "read": "2026-11-01",
+   "kind": "primary",
+   "said": "Om villkoren är uppfyllda ska personen eller företaget som omfattas av artistskatten betala 15 procent i skatt på sin skattepliktiga inkomst. Du som arbetsgivare ska göra det skatteavdraget. … inte vistas i Sverige mer än sex månader under en tolvmånadersperiod"
+  },
+  {
+   "url": "https://www.skatteverket.se/privat/internationellt/bosattutomlands/sinksarskildinkomstskattforutomlandsbosatta.4.6fdde64a12cc4eee23080002583.html",
+   "title": "SINK – särskild inkomstskatt för utomlands bosatta (Skatteverket)",
+   "read": "2026-11-01",
+   "kind": "primary",
+   "said": "I beslutet ingår också att den särskilda inkomstskatten sänks till 20 procent från och med 1 januari 2027. … Har du fått ett beslut om att betala särskild inkomstskatt på inkomsten behöver du inte lämna någon inkomstdeklaration."
+  },
+  {
+   "url": "https://www.skatteverket.se/foretag/moms/saljavarorochtjanster/momssatserochundantagfranmoms.4.58d555751259e4d66168000409.html",
+   "title": "Momssatser och undantag från moms (Skatteverket)",
+   "read": "2026-11-01",
+   "kind": "primary",
+   "said": "Du ska ta ut 6 procent moms om du upplåter eller överlåter upphovsrätten till litterära eller konstnärliga verk. … Du ska därför ta ut 6 procent moms på ersättningar från skiv-, film-, radio- och tv-bolag för rätten att mångfaldiga en inspelning. … Den ersättning du får som artist för ditt framträdande inför publik är momsfri. Momsfriheten gäller bara om du som artist själv säljer framträdandet."
+  },
+  {
+   "url": "https://www.skatteverket.se/momsbefrielse",
+   "title": "I vissa fall behöver du inte registrera ditt företag för moms (Skatteverket)",
+   "read": "2026-11-01",
+   "kind": "primary",
+   "said": "Företagets årsomsättning är högst 120 000 kronor under det aktuella kalenderåret (januari–december)."
+  },
+  {
+   "url": "https://skatteverket.se/download/18.1522bf3f19aea8075ba55c/1766385913260/teknisk-beskrivning-skv-433-2026-utgava-36.pdf",
+   "title": "Teknisk beskrivning SKV 433 2026, utgåva 36 (Skatteverket, 2025-12-10)",
+   "read": "2026-11-01",
+   "kind": "primary",
+   "said": "Överstiger inte 0,99 prisbasbelopp, dvs. 58 608 0,423 prisbasbelopp, dvs. 25 041,60 … överstiger 7,88 prisbasbelopp, dvs. 466 496 0,293 prisbasbelopp, dvs. 17 345,60 0,293 PBB Grundavdraget får inte överstiga den fastställda förvärvsinkomsten … Skattereduktionen för arbetsinkomst ska endast räknas av mot kommunal inkomstskatt. … Överstiger 8,08 PBB, dvs. 478 336 3,027 PBB (179 198,40) minskat med grundavdraget, multiplicerat med skattesatsen för kommunal inkomstskatt (exkl. 1,16 procentenheter för begravningsavgift och avgift till trossamfund) (3,027 PBB-GA)*KI … ((1,813 PBB+0,251*(AI-3,24 PBB)-GA)*KI"
+  }
+ ],
+ "blockers": []
+}

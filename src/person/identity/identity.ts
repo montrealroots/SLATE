@@ -3,6 +3,7 @@ import { fromMajor, type Money } from '../../core/money/money.ts';
 import { daysInMonth } from '../../core/time/calendar.ts';
 import { ageOn } from '../../core/time/dates.ts';
 import { localTime } from '../../core/time/time.ts';
+import { payCost, type Holding } from '../../money/accounts/accounts.ts';
 import { nationality } from '../../papers/citizenship/citizenship.ts';
 import type { Sex } from '../../papers/ages/ages.ts';
 import { isCountry, regionsOf, type CountryCode } from '../../world/gazetteer/gazetteer.ts';
@@ -136,6 +137,9 @@ export const identifiesAs = (p: Person, ethnicity: Ethnicity): boolean => p.ethn
 /** Whether the person's family was in the business, and in which trade. */
 export const inTheBusiness = (p: Person): Family | null => (p.family === 'outside' ? null : p.family);
 
+/** Where the person lives, for tax: until a residence is held, the country of their first citizenship (money.tax.model). */
+export const residenceOf = (p: Person): CountryCode => p.citizenship[0] as CountryCode;
+
 /** The languages a place speaks, most spoken first (CLDR 49); none where CLDR doesn't list it. */
 export const languagesOf = (country: CountryCode) => TERRITORIES[country] ?? [];
 
@@ -250,16 +254,25 @@ function make(s: { identity: IdentitySlice }, a: MakeArgs, c: Context): void {
   };
 }
 
-/** A headshot session where the person lives: a new headshot, at the market's price where a survey gives one. */
-function headshot(s: { identity: IdentitySlice }, a: { [key: string]: string; country: string }, c: Context): void {
+export interface HeadshotArgs {
+  [key: string]: string;
+  country: string;
+  /** The account the session is paid from, where its price is known. */
+  account: string;
+}
+
+/** A headshot session where the person lives: a new headshot, at the market's price where a survey gives one, paid from the account named. */
+function headshot(s: { identity: IdentitySlice } & Holding, a: HeadshotArgs, c: Context): void {
   const p = personOf(s.identity);
   const where = country(a.country, 'the session');
+  const price = HEADSHOT_PRICE[where] ?? null;
+  if (price !== null) payCost(s, a.account, 'photographer', price, 'a headshot session', c.now);
   p.headshot = c.now;
-  s.identity.sessions.push({ at: c.now, price: HEADSHOT_PRICE[where] ?? null });
+  s.identity.sessions.push({ at: c.now, price });
 }
 
 // Stryker disable all: a mutant of a declaration made as the module loads changes its shape, so the module loaded
 // again for it is refused as declared twice (as the accounts' and the cards' say). The declarations are held by the
 // test that lists each command with what it reads and writes; what each does is mutated above.
 export const makePerson = defineCommand<{ identity: IdentitySlice }, MakeArgs>({ id: 'identity.make', reads: [], writes: ['identity'], run: make });
-export const takeHeadshot = defineCommand<{ identity: IdentitySlice }, { [key: string]: string; country: string }>({ id: 'identity.headshot', reads: [], writes: ['identity'], run: headshot });
+export const takeHeadshot = defineCommand<{ identity: IdentitySlice } & Holding, HeadshotArgs>({ id: 'identity.headshot', reads: [], writes: ['identity', 'accounts', 'ledger'], run: headshot });

@@ -1,0 +1,795 @@
+{
+ "topic": "tax.CA",
+ "read": "2026-11-01",
+ "note": "Read 2026-11-01 at the owner's word (\"Build those first 3 starting with ledger first\"; \"Retry the blocked tax facts once all countries land\"): the tax on a screen worker's pay in Canada: a resident's income tax, social contributions, what is withheld at source, a non-resident artiste's withholding, any authors' treatment, VAT's threshold, the tax year. Research and retry subagents (workbench/briefs/BRIEF-tax*.md); every quote checked by the lead against its saved page.",
+ "figures": [
+  {
+   "item": "residents",
+   "finding": "Federal income tax for 2026 runs from 14% to 33% across five brackets indexed by 2.0%; the basic personal amount is $16,452, credited at 14%.",
+   "value": {
+    "jurisdiction": "CA federal",
+    "currency": "CAD",
+    "brackets": [
+     {
+      "from": 0,
+      "to": 58523,
+      "rate": 0.14
+     },
+     {
+      "from": 58523,
+      "to": 117045,
+      "rate": 0.205
+     },
+     {
+      "from": 117045,
+      "to": 181440,
+      "rate": 0.26
+     },
+     {
+      "from": 181440,
+      "to": 258482,
+      "rate": 0.29
+     },
+     {
+      "from": 258482,
+      "to": null,
+      "rate": 0.33
+     }
+    ],
+    "basicPersonalAmount": 16452,
+    "creditRate": 0.14,
+    "indexation2026": 0.02,
+    "statutoryBase": "ITA s.117(2) sets the rates on base thresholds $57,375 / $114,750 / $177,882 / $253,414, indexed under s.117.1"
+   },
+   "applies": "Residents of Canada, taxation year 2026; provincial tax is added (Ontario, Quebec and British Columbia rows). In Quebec the federal tax is cut by the Quebec abatement (not read).",
+   "sources": [
+    {
+     "src": 0,
+     "said": "Federal1 14.00% Up to $58,523"
+    },
+    {
+     "src": 0,
+     "said": "The federal inflation factor is 2.0% for 2026."
+    },
+    {
+     "src": 0,
+     "said": "15% to 14.5% for 2025 and to 14% for the 2026 and later taxation years."
+    },
+    {
+     "src": 1,
+     "said": "(a) 14% of the amount taxable, if the amount taxable is equal to or less than the amount determined for the taxation year in respect of $57,375;"
+    },
+    {
+     "src": 1,
+     "said": "plus 33% of the amount by which the amount taxable exceeds $253,414 for the year."
+    },
+    {
+     "src": 2,
+     "said": "Crédit de base = 16 452 $"
+    },
+    {
+     "src": 3,
+     "said": "Basic personal3 $16,452"
+    }
+   ]
+  },
+  {
+   "item": "residents",
+   "finding": "Ontario taxes 2026 income at 5.05% to 13.16% in five brackets, plus a surtax of 20% of Ontario tax over $5,818 and a further 36% over $7,446; the basic personal amount is $12,989.",
+   "value": {
+    "jurisdiction": "CA-ON",
+    "currency": "CAD",
+    "brackets": [
+     {
+      "from": 0,
+      "to": 53891,
+      "rate": 0.0505
+     },
+     {
+      "from": 53891,
+      "to": 107785,
+      "rate": 0.0915
+     },
+     {
+      "from": 107785,
+      "to": 150000,
+      "rate": 0.1116
+     },
+     {
+      "from": 150000,
+      "to": 220000,
+      "rate": 0.1216
+     },
+     {
+      "from": 220000,
+      "to": null,
+      "rate": 0.1316
+     }
+    ],
+    "basicPersonalAmount": 12989,
+    "surtax": [
+     {
+      "onOntarioTaxOver": 5818,
+      "rate": 0.2
+     },
+     {
+      "onOntarioTaxOver": 7446,
+      "rate": 0.36
+     }
+    ],
+    "taxReductionBasic": 300
+   },
+   "applies": "Ontario residents on 31 December 2026; the Ontario Health Premium is not read.",
+   "sources": [
+    {
+     "src": 4,
+     "said": "5th income bracket | Greater than $220,000"
+    },
+    {
+     "src": 4,
+     "said": "5th income bracket | 0.13159999999999999"
+    },
+    {
+     "src": 4,
+     "said": "Basic Personal Amount | 12989"
+    },
+    {
+     "src": 4,
+     "said": "1st tier basic tax range (rate %) | Greater than $5,818 up to $7,446 (20%)"
+    },
+    {
+     "src": 4,
+     "said": "2nd tier basic tax range (rate %) | Greater than $7,446 (56%)"
+    }
+   ]
+  },
+  {
+   "item": "residents",
+   "finding": "Quebec taxes 2026 income at 14%, 19%, 24% and 25.75%, with brackets indexed by 2.05% to $54,345, $108,680 and $132,245, and a basic personal amount of $18,952.",
+   "value": {
+    "jurisdiction": "CA-QC",
+    "currency": "CAD",
+    "brackets": [
+     {
+      "from": 0,
+      "to": 54345,
+      "rate": 0.14
+     },
+     {
+      "from": 54345,
+      "to": 108680,
+      "rate": 0.19
+     },
+     {
+      "from": 108680,
+      "to": 132245,
+      "rate": 0.24
+     },
+     {
+      "from": 132245,
+      "to": null,
+      "rate": 0.2575
+     }
+    ],
+    "basicPersonalAmount": 18952,
+    "indexation2026": 0.0205,
+    "collectedBy": "Revenu Québec, on its own return (TP-1)"
+   },
+   "applies": "Quebec residents on 31 December 2026; the Health Services Fund contribution is not read.",
+   "sources": [
+    {
+     "src": 5,
+     "said": "– Seuil maximal de la première tranche de revenu imposable 53 255 54 345"
+    },
+    {
+     "src": 5,
+     "said": "– Seuil maximal de la troisième tranche de revenu imposable 129 590 132 245"
+    },
+    {
+     "src": 5,
+     "said": "– Montant personnel de base 18 571 18 952"
+    },
+    {
+     "src": 0,
+     "said": "Quebec7 14.00% Up to $54,345"
+    },
+    {
+     "src": 0,
+     "said": "132,246 and over"
+    }
+   ]
+  },
+  {
+   "item": "residents",
+   "finding": "British Columbia taxes 2026 income at 5.60% to 20.50% in seven brackets indexed by 2.2% (with the lowest rate raised from 5.06% by Budget 2026); the basic personal amount is $13,216.",
+   "value": {
+    "jurisdiction": "CA-BC",
+    "currency": "CAD",
+    "brackets": [
+     {
+      "from": 0,
+      "to": 50363,
+      "rate": 0.056
+     },
+     {
+      "from": 50363,
+      "to": 100728,
+      "rate": 0.077
+     },
+     {
+      "from": 100728,
+      "to": 115648,
+      "rate": 0.105
+     },
+     {
+      "from": 115648,
+      "to": 140430,
+      "rate": 0.1229
+     },
+     {
+      "from": 140430,
+      "to": 190405,
+      "rate": 0.147
+     },
+     {
+      "from": 190405,
+      "to": 265545,
+      "rate": 0.168
+     },
+     {
+      "from": 265545,
+      "to": null,
+      "rate": 0.205
+     }
+    ],
+    "basicPersonalAmount": 13216,
+    "indexationPaused": "2027 to 2030"
+   },
+   "applies": "BC residents on 31 December 2026.",
+   "sources": [
+    {
+     "src": 6,
+     "said": "$0 to $50,363 5.60% $50,363.01 to $100,728 7.70% $100,728.01 to $115,648 10.50% $115,648.01 to $140,430 12.29% $140,430.01 to $190,405 14.70% $190,405.01 to $265,545 16.80% Over $265,545 20.50%"
+    },
+    {
+     "src": 7,
+     "said": "Basic personal amount $13,216 $12,932 Yes"
+    }
+   ]
+  },
+  {
+   "item": "social",
+   "finding": "Outside Quebec an employee and the employer each pay CPP of 5.95% on earnings from $3,500 to $74,600 and 4% from $74,600 to $85,000, and EI of 1.63% (employer 1.4 times) on up to $68,900; a self-employed person pays both CPP shares. In Quebec the QPP is 6.30% each to $74,600 and 4% to $85,000, EI is 1.30% (employer 1.82%), and QPIP is 0.430% (employer 0.602%, self-employed 0.764%) on up to $103,000.",
+   "value": {
+    "currency": "CAD",
+    "CPP": {
+     "basicExemption": 3500,
+     "YMPE": 74600,
+     "YAMPE": 85000,
+     "rateEach": 0.0595,
+     "cpp2RateEach": 0.04,
+     "employeeMax": 4646.45,
+     "selfEmployed": "pays employee and employer shares"
+    },
+    "EI": {
+     "employeeRate": 0.0163,
+     "employerMultiplier": 1.4,
+     "maxInsurableEarnings": 68900,
+     "quebecEmployeeRate": 0.013,
+     "quebecEmployerRate": 0.0182,
+     "selfEmployed": "outside EI unless opting in to special benefits"
+    },
+    "QPP": {
+     "rateEach": 0.063,
+     "MGA": 74600,
+     "exemption": 3500,
+     "qpp2RateEach": 0.04,
+     "ceiling2": 85000
+    },
+    "QPIP": {
+     "employee": 0.0043,
+     "employer": 0.00602,
+     "selfEmployed": 0.00764,
+     "maxInsurable": 103000
+    }
+   },
+   "applies": "2026 earnings; a film worker hired as an employee pays these through payroll.",
+   "sources": [
+    {
+     "src": 8,
+     "said": "2026 $74,600 5.95% $4,230.45 $10,400 4.00% $416.00 $85,000 $4,646.45"
+    },
+    {
+     "src": 3,
+     "said": "(13)Self-employed individuals are subject to a higher Canada Pension Plan contribution rate"
+    },
+    {
+     "src": 9,
+     "said": "Insurance Commission set the 2026 premium rate at $1.63 per $100 of insurable earnings. The employer rate is $2.28 per $100 of insurable earnings, or 1.4 times the employee rate."
+    },
+    {
+     "src": 9,
+     "said": "premium rates for employees in Quebec is set at $1.30 per $100 of insurable earnings while their employers will pay $1.82 per $100 of insurable earnings."
+    },
+    {
+     "src": 10,
+     "said": "the 2026 MIE is $68,900"
+    },
+    {
+     "src": 2,
+     "said": "Taux de cotisation = 6,30 % (soit 5,3 % pour le régime de base et 1,0 % pour"
+    },
+    {
+     "src": 2,
+     "said": "Plafond du salaire admissible = 85 000 $"
+    },
+    {
+     "src": 2,
+     "said": "Maximum des gains admissibles (MGA) = 74 600 $"
+    },
+    {
+     "src": 11,
+     "said": "Taux de cotisation : 0,430 % Cotisations maximales : 442,90 $ Employeurs Taux de cotisation : 0,692 % Cotisations maximales : 678,16 $ Taux de cotisation : 0,602 %"
+    },
+    {
+     "src": 11,
+     "said": "Travailleurs autonomes Taux de cotisation : 0,878 % Cotisations maximales : 860,44 $ Taux de cotisation : 0,764 %"
+    },
+    {
+     "src": 2,
+     "said": "Maximum assurable = 103 000 $"
+    }
+   ]
+  },
+  {
+   "item": "withholding",
+   "finding": "An employer deducts income tax from salary and wages by the prescribed rules (CRA's payroll formulas, not read) and remits it; a resident freelancer's fee has nothing withheld and the tax is paid with the return and instalments.",
+   "value": {
+    "currency": "CAD",
+    "wages": "prescribed rules (Income Tax Regulations Part I, CRA T4127 formulas; not read: canada.ca refused this environment)",
+    "freelanceFee": {
+     "withholding": 0
+    }
+   },
+   "applies": "2026.",
+   "sources": [
+    {
+     "src": 12,
+     "said": "deduct or withhold from the payment the amount determined in accordance with prescribed rules and must, at the prescribed time, remit that amount to the Receiver General on account of the payee’s tax"
+    }
+   ]
+  },
+  {
+   "item": "nonResident",
+   "finding": "A non-resident actor in a film or video production made in Canada pays 23% on the gross amount, final unless the actor elects to file a Canadian return; other non-residents paid for services in Canada have 15% withheld (Regulation 105), and in Quebec the payer withholds a further 9% for Quebec.",
+   "value": {
+    "currency": "CAD",
+    "actorFilmVideo": {
+     "rate": 0.23,
+     "base": "every amount paid or credited for acting services in Canada in a film or video production",
+     "final": "yes, unless elected under s.216.1 to file a Part I return"
+    },
+    "otherServices": {
+     "rate": 0.15,
+     "base": "fee for services rendered in Canada",
+     "final": false
+    },
+    "quebecExtra": {
+     "rate": 0.09,
+     "base": "payment for services (other than employment) rendered in Quebec by a non-resident of Canada",
+     "waiver": "available from Revenu Québec"
+    }
+   },
+   "applies": "Non-resident performers, writers and directors working in Canada, 2026.",
+   "sources": [
+    {
+     "src": 13,
+     "said": "every person who is either a non-resident individual who is an actor or that is a corporation related to such an individual shall pay an income tax of 23% on every amount paid or credited, or provided as a benefit, to or on behalf of the person for the provision in Canada of the acting services of the actor in a film or video production."
+    },
+    {
+     "src": 14,
+     "said": "No tax is payable under this Part on any amount described in subsection 212(5.1) that is paid, credited or provided to a non-resident person in a taxation year if the person (a) files with the Minister, on or before the person’s filing-due date for the year, a return of income under Part I for the year; and (b) elects in the return to have this section apply for the year."
+    },
+    {
+     "src": 15,
+     "said": "Every person paying to a non-resident person a fee, commission or other amount in respect of services rendered in Canada, of any nature whatever, shall deduct or withhold 15 per cent of such payment."
+    },
+    {
+     "src": 16,
+     "said": "a person who makes a payment for services (other than employment) rendered in Quebec by a non-resident of Canada must deduct 9% from that payment (in addition to the 15% federal withholding tax) and remit the amount deducted to Revenu Quebec, unless the non-resident has obtained a waiver from Revenu Quebec."
+    }
+   ]
+  },
+  {
+   "item": "authors",
+   "finding": "Federal law gives authors no special rate; Quebec lets a creator who is the first owner of the copyright deduct copyright income of up to $15,000, the deduction shrinking as such income rises from $15,000 and gone at $60,000.",
+   "value": {
+    "jurisdiction": "CA-QC",
+    "currency": "CAD",
+    "deductionFull": 15000,
+    "phaseOutFrom": 15000,
+    "phaseOutTo": 60000,
+    "line": "TP-1 line 297, code 16"
+   },
+   "applies": "Quebec residents with copyright income as first copyright holder, 2026; the phase-out formula is not read.",
+   "sources": [
+    {
+     "src": 17,
+     "said": "At the provincial level, you can take advantage of a tax deduction of up to $15,000 on your copyright income for any content where you’re the primary copyright owner."
+    },
+    {
+     "src": 17,
+     "said": "If your copyright income was $15,000 or over, your eligible deduction progressively decreases until your income reaches $60,000 or more."
+    }
+   ]
+  },
+  {
+   "item": "vat",
+   "finding": "A freelancer's fee bears 5% GST, plus Ontario's 8% provincial part as HST in Ontario and 9.975% QST in Quebec, once the freelancer stops being a small supplier: total taxable supplies over $30,000 in four consecutive calendar quarters. British Columbia's 7% PST taxes only listed services (legal, telecommunication, software, online marketplace and related services), not a screen worker's fee.",
+   "value": {
+    "currency": "CAD",
+    "GST": 0.05,
+    "HSTprovincialPart": {
+     "CA-ON": 0.08
+    },
+    "QST": {
+     "CA-QC": 0.09975
+    },
+    "smallSupplierThreshold": 30000,
+    "BC": "PST (7%) reaches goods, software, legal, online marketplace, telecommunication and related services; a performer's, writer's or director's fee is not among them"
+   },
+   "applies": "2026.",
+   "sources": [
+    {
+     "src": 18,
+     "said": "every recipient of a taxable supply made in Canada shall pay to Her Majesty in right of Canada tax in respect of the supply calculated at the rate of 5% on the value of the consideration for the supply."
+    },
+    {
+     "src": 19,
+     "said": "SCHEDULE VIII (Subsection 123(1)) Participating Provinces and Applicable Tax Rates Participating Province Tax Rate 1 Ontario 8%"
+    },
+    {
+     "src": 20,
+     "said": "$30,000 or, where the person is a public service body, $50,000"
+    },
+    {
+     "src": 16,
+     "said": "All purchasers of taxable supplies must pay QST at a rate of 9.975% on the value of the consideration paid or payable in respect of the supply, excluding GST."
+    },
+    {
+     "src": 21,
+     "said": "Goods including cannabis products, soda beverages and tobacco (except goods listed below), software, legal services, online marketplace services, telecommunication services and related services 7%"
+    }
+   ]
+  },
+  {
+   "item": "year",
+   "finding": "The Canadian tax year is the calendar year; the return is due 30 April of the next year, or 15 June for an individual who carried on a business in the year.",
+   "value": {
+    "currency": "CAD",
+    "start": "2026-01-01",
+    "end": "2026-12-31",
+    "returnDue": "2027-04-30",
+    "returnDueSelfEmployed": "2027-06-15"
+   },
+   "applies": "Individuals; Quebec's TP-1 deadline is not read.",
+   "sources": [
+    {
+     "src": 22,
+     "said": "the following April 30 by that person"
+    },
+    {
+     "src": 22,
+     "said": "(ii) the following June 15 by that person"
+    }
+   ]
+  },
+  {
+   "item": "withholding",
+   "finding": "For 2026 federal payroll tax is figured on annualised pay with the T4127 table: 14% to $58,523, 20.5% to $117,045, 26% to $181,440, 29% to $258,482 and 33% above, less constants of $0, $3,804, $10,241, $15,685 and $26,024 and the credits (basic personal amount $16,452, Canada employment amount $1,501).",
+   "value": {
+    "currency": "CAD",
+    "federalTable": [
+     {
+      "from": 0,
+      "to": 58523,
+      "rate": 0.14,
+      "K": 0
+     },
+     {
+      "from": 58523,
+      "to": 117045,
+      "rate": 0.205,
+      "K": 3804
+     },
+     {
+      "from": 117045,
+      "to": 181440,
+      "rate": 0.26,
+      "K": 10241
+     },
+     {
+      "from": 181440,
+      "to": 258482,
+      "rate": 0.29,
+      "K": 15685
+     },
+     {
+      "from": 258482,
+      "to": null,
+      "rate": 0.33,
+      "K": 26024
+     }
+    ],
+    "basicPersonalAmount": 16452,
+    "canadaEmploymentAmount": 1501,
+    "edition": "T4127 122nd edition, effective 2026-01-01"
+   },
+   "applies": "Employees outside Quebec (federal part), from 1 January 2026; the formula text itself was not read (see blockers).",
+   "sources": [
+    {
+     "src": 23,
+     "said": "Federal 16,452.00 1.020 … Canada Employment Credit (CEA) = $1,501.00 … Federal A 0 58,523 117,045 181,440 258,482 R 0.1400 0.2050 0.2600 0.2900 0.3300 K 0 3,804 10,241 15,685 26,024"
+    },
+    {
+     "src": 24,
+     "said": "Canada’s 2026 Payroll Deductions Formulas, including rates and thresholds for federal income tax, social taxes, and jurisdictional income taxes, were released Nov. 20 by the Canada Revenue Agency. … These are a decrease in the lowest federal income tax rate to 14%, instead of 15%"
+    }
+   ]
+  },
+  {
+   "item": "withholding",
+   "finding": "In Quebec the employer withholds Quebec income tax per pay as the year's tax on annualised pay, by Revenu Québec's 2026 formulas: annual taxable income I = P × (G − F − H − CSA) − J − J1, tax Y = (T × I) − K − K1 − 0.14 × E − ..., and each pay's withholding A = Y ÷ P + L, with the 2026 rates of 14%, 19%, 24% and 25.75% and constants of $0, $2,717, $8,151 and $10,465.",
+   "value": {
+    "currency": "CAD",
+    "jurisdiction": "CA-QC",
+    "annualTaxableIncome": "I = P × (G – F – H – CSA) – J – J1",
+    "annualTax": "Y = (T × I) – K – K1 – (0.14 × E) – (0.15 × P × Q) – (0.15 × P × Q1)",
+    "perPay": "A = (Y ÷ P) + L",
+    "table": [
+     {
+      "from": 0,
+      "to": 54345,
+      "rate": 0.14,
+      "K": 0
+     },
+     {
+      "from": 54345,
+      "to": 108680,
+      "rate": 0.19,
+      "K": 2717
+     },
+     {
+      "from": 108680,
+      "to": 132245,
+      "rate": 0.24,
+      "K": 8151
+     },
+     {
+      "from": 132245,
+      "to": null,
+      "rate": 0.2575,
+      "K": 10465
+     }
+    ],
+    "deductionForWorkers": {
+     "rate": 0.06,
+     "maxAnnual": 1450
+    },
+    "basicPersonalAmount": 18952
+   },
+   "applies": "Employees working in Quebec, regular pay, 2026 (gratuities and retroactive pay use section 2.1.2).",
+   "sources": [
+    {
+     "src": 25,
+     "said": "= P × (G – F – H – CSA) – J – J1 … = (0.06 × D), up to a maximum of $1,450 ÷ P … = (T × I) – K – K1 – (0.14 × E) – (0.15 × P × Q) – (0.15 × P × Q1) … More than $132,245 25.75% $10,465 … = (Y ÷ P) + L"
+    }
+   ]
+  }
+ ],
+ "country": "CA",
+ "sources": [
+  {
+   "url": "https://assets.kpmg.com/content/dam/kpmgsites/ca/pdf/services/tax/personal-tables/ca-federal-and-provincial-territorial-income-tax-rates-and-brackets-for-2026.pdf.coredownload.inline.pdf",
+   "title": "KPMG, Federal and Provincial/Territorial Income Tax Rates and Brackets for 2026 (current as of September 30, 2026)",
+   "read": "2026-11-01",
+   "kind": "secondary",
+   "quotes": "https://www.canada.ca/en/revenue-agency/services/tax/individuals/frequently-asked-questions-individuals/canadian-income-tax-rates-individuals-current-previous-years.html",
+   "said": "Federal1 14.00% Up to $58,523 … The federal inflation factor is 2.0% for 2026. … 15% to 14.5% for 2025 and to 14% for the 2026 and later taxation years. … Quebec7 14.00% Up to $54,345 … 132,246 and over"
+  },
+  {
+   "url": "https://laws-lois.justice.gc.ca/eng/acts/I-3.3/section-117.html",
+   "title": "Income Tax Act (R.S.C. 1985, c. 1 (5th Supp.)), section 117",
+   "read": "2026-11-01",
+   "kind": "primary",
+   "said": "(a) 14% of the amount taxable, if the amount taxable is equal to or less than the amount determined for the taxation year in respect of $57,375; … plus 33% of the amount by which the amount taxable exceeds $253,414 for the year."
+  },
+  {
+   "url": "https://cdn-contenu.quebec.ca/cdn-contenu/gouvernement/travailler/Services_employes_Etat/Remuneration/Deductions_base_2026.pdf",
+   "title": "Gouvernement du Québec, Déductions de base, 1er janvier 2026",
+   "read": "2026-11-01",
+   "kind": "primary",
+   "said": "Crédit de base = 16 452 $ … Taux de cotisation = 6,30 % (soit 5,3 % pour le régime de base et 1,0 % pour … Plafond du salaire admissible = 85 000 $ … Maximum des gains admissibles (MGA) = 74 600 $ … Maximum assurable = 103 000 $"
+  },
+  {
+   "url": "https://assets.kpmg.com/content/dam/kpmgsites/ca/pdf/services/tax/personal-tables/ca-federal-and-provincial-territorial-non-refundable-tax-credit-rates-and-amounts-2026.pdf.coredownload.inline.pdf",
+   "title": "KPMG, Federal and Provincial/Territorial Non-Refundable Tax Credit Rates and Amounts for 2026",
+   "read": "2026-11-01",
+   "kind": "secondary",
+   "quotes": "https://www.canada.ca/en/revenue-agency/services/tax/individuals/frequently-asked-questions-individuals/canadian-income-tax-rates-individuals-current-previous-years.html",
+   "said": "Basic personal3 $16,452 … (13)Self-employed individuals are subject to a higher Canada Pension Plan contribution rate"
+  },
+  {
+   "url": "https://data.ontario.ca/dataset/personal-income-tax-rates-and-credits",
+   "title": "Ontario Data Catalogue, Personal income tax rates and credits (2026 file, personal-income-tax-rates-en.xlsx)",
+   "read": "2026-11-01",
+   "kind": "primary",
+   "said": "5th income bracket | Greater than $220,000 … 5th income bracket | 0.13159999999999999 … Basic Personal Amount | 12989 … 1st tier basic tax range (rate %) | Greater than $5,818 up to $7,446 (20%) … 2nd tier basic tax range (rate %) | Greater than $7,446 (56%)"
+  },
+  {
+   "url": "https://cdn-contenu.quebec.ca/cdn-contenu/adm/min/finances/publications-adm/parametres/AUTFR_RegimeImpot2026.pdf",
+   "title": "Ministère des Finances du Québec, Paramètres du régime d'imposition des particuliers pour l'année d'imposition 2026",
+   "read": "2026-11-01",
+   "kind": "primary",
+   "said": "– Seuil maximal de la première tranche de revenu imposable 53 255 54 345 … – Seuil maximal de la troisième tranche de revenu imposable 129 590 132 245 … – Montant personnel de base 18 571 18 952"
+  },
+  {
+   "url": "https://www2.gov.bc.ca/gov/content/taxes/income-taxes/personal/tax-rates",
+   "title": "B.C. personal income tax rates",
+   "read": "2026-11-01",
+   "kind": "primary",
+   "said": "$0 to $50,363 5.60% $50,363.01 to $100,728 7.70% $100,728.01 to $115,648 10.50% $115,648.01 to $140,430 12.29% $140,430.01 to $190,405 14.70% $190,405.01 to $265,545 16.80% Over $265,545 20.50%"
+  },
+  {
+   "url": "https://www2.gov.bc.ca/gov/content/taxes/income-taxes/personal/credits/basic",
+   "title": "B.C. basic personal income tax credits",
+   "read": "2026-11-01",
+   "kind": "primary",
+   "said": "Basic personal amount $13,216 $12,932 Yes"
+  },
+  {
+   "url": "https://www.mun.ca/hr/media/production/memorial/administrative/human-resources/media-library/services/Enhancement-to-the-Canada-Pension-Plan-Program-2026.pdf",
+   "title": "Memorial University HR, Enhancement to the Canada Pension Plan Program, 2026 Update",
+   "read": "2026-11-01",
+   "kind": "secondary",
+   "quotes": "https://www.canada.ca/en/revenue-agency/services/tax/businesses/topics/payroll/payroll-deductions-contributions/canada-pension-plan-cpp/cpp-contribution-rates-maximums-exemptions.html",
+   "said": "2026 $74,600 5.95% $4,230.45 $10,400 4.00% $416.00 $85,000 $4,646.45"
+  },
+  {
+   "url": "https://search.open.canada.ca/qpnotes/record/esdc-edsc,EF_054_20260105",
+   "title": "ESDC Question Period Note: 2026 Employment Insurance (EI) premium rate",
+   "read": "2026-11-01",
+   "kind": "primary",
+   "said": "Insurance Commission set the 2026 premium rate at $1.63 per $100 of insurable earnings. The employer rate is $2.28 per $100 of insurable earnings, or 1.4 times the employee rate. … premium rates for employees in Quebec is set at $1.30 per $100 of insurable earnings while their employers will pay $1.82 per $100 of insurable earnings."
+  },
+  {
+   "url": "https://www.osfi-bsif.gc.ca/en/oca/actuarial-reports/2026-actuarial-report-employment-insurance-premium-rate",
+   "title": "Office of the Chief Actuary, 2026 Actuarial report on the Employment Insurance premium rate",
+   "read": "2026-11-01",
+   "kind": "primary",
+   "said": "the 2026 MIE is $68,900"
+  },
+  {
+   "url": "https://www.rqap.gouv.qc.ca/en/about-the-plan/general-information/premiums-and-maximum-insurable-earnings",
+   "title": "RQAP, Taux de cotisation et maximum de revenus assurables",
+   "read": "2026-11-01",
+   "kind": "primary",
+   "said": "Taux de cotisation : 0,430 % Cotisations maximales : 442,90 $ Employeurs Taux de cotisation : 0,692 % Cotisations maximales : 678,16 $ Taux de cotisation : 0,602 % … Travailleurs autonomes Taux de cotisation : 0,878 % Cotisations maximales : 860,44 $ Taux de cotisation : 0,764 %"
+  },
+  {
+   "url": "https://laws-lois.justice.gc.ca/eng/acts/I-3.3/section-153.html",
+   "title": "Income Tax Act (R.S.C. 1985, c. 1 (5th Supp.)), section 153",
+   "read": "2026-11-01",
+   "kind": "primary",
+   "said": "deduct or withhold from the payment the amount determined in accordance with prescribed rules and must, at the prescribed time, remit that amount to the Receiver General on account of the payee’s tax"
+  },
+  {
+   "url": "https://laws-lois.justice.gc.ca/eng/acts/I-3.3/section-212.html",
+   "title": "Income Tax Act (R.S.C. 1985, c. 1 (5th Supp.)), section 212",
+   "read": "2026-11-01",
+   "kind": "primary",
+   "said": "every person who is either a non-resident individual who is an actor or that is a corporation related to such an individual shall pay an income tax of 23% on every amount paid or credited, or provided as a benefit, to or on behalf of the person for the provision in Canada of the acting services of the actor in a film or video production."
+  },
+  {
+   "url": "https://laws-lois.justice.gc.ca/eng/acts/I-3.3/section-216.1.html",
+   "title": "Income Tax Act (R.S.C. 1985, c. 1 (5th Supp.)), section 216.1",
+   "read": "2026-11-01",
+   "kind": "primary",
+   "said": "No tax is payable under this Part on any amount described in subsection 212(5.1) that is paid, credited or provided to a non-resident person in a taxation year if the person (a) files with the Minister, on or before the person’s filing-due date for the year, a return of income under Part I for the year; and (b) elects in the return to have this section apply for the year."
+  },
+  {
+   "url": "https://laws-lois.justice.gc.ca/eng/regulations/C.R.C.,_c._945/section-105.html",
+   "title": "Income Tax Regulations (C.R.C., c. 945), section 105",
+   "read": "2026-11-01",
+   "kind": "primary",
+   "said": "Every person paying to a non-resident person a fee, commission or other amount in respect of services rendered in Canada, of any nature whatever, shall deduct or withhold 15 per cent of such payment."
+  },
+  {
+   "url": "https://www.nortonrosefulbright.com/en/knowledge/publications/10323538/doing-business-in-quebec-tax-considerations",
+   "title": "Norton Rose Fulbright, Doing business in Quebec: Tax considerations",
+   "read": "2026-11-01",
+   "kind": "secondary",
+   "quotes": "https://www.revenuquebec.ca/fr/entreprises/retenues-a-la-source-et-cotisations-de-lemployeur/calcul-des-retenues-et-des-cotisations/particularites-calcul-des-retenues-et-des-cotisations/personne-qui-ne-reside-pas-au-quebec/paiement-fait-a-une-personne-qui-ne-reside-pas-au-canada-et-qui-vous-rend-des-services-au-quebec/",
+   "said": "a person who makes a payment for services (other than employment) rendered in Quebec by a non-resident of Canada must deduct 9% from that payment (in addition to the 15% federal withholding tax) and remit the amount deducted to Revenu Quebec, unless the non-resident has obtained a waiver from Revenu Quebec. … All purchasers of taxable supplies must pay QST at a rate of 9.975% on the value of the consideration paid or payable in respect of the supply, excluding GST."
+  },
+  {
+   "url": "https://www.copibec.ca/en/nouvelle/360/how-to-report-copyright-income-on-your-tax-returns",
+   "title": "Copibec, How to report copyright income on your tax returns",
+   "read": "2026-11-01",
+   "kind": "secondary",
+   "quotes": "https://www.revenuquebec.ca/en/citizens/income-tax-return/completing-your-income-tax-return/how-to-complete-your-income-tax-return/line-by-line-help/276-to-297-taxable-income/line-297/point-16",
+   "said": "At the provincial level, you can take advantage of a tax deduction of up to $15,000 on your copyright income for any content where you’re the primary copyright owner. … If your copyright income was $15,000 or over, your eligible deduction progressively decreases until your income reaches $60,000 or more."
+  },
+  {
+   "url": "https://laws-lois.justice.gc.ca/eng/acts/E-15/section-165.html",
+   "title": "Excise Tax Act, section 165",
+   "read": "2026-11-01",
+   "kind": "primary",
+   "said": "every recipient of a taxable supply made in Canada shall pay to Her Majesty in right of Canada tax in respect of the supply calculated at the rate of 5% on the value of the consideration for the supply."
+  },
+  {
+   "url": "https://laws-lois.justice.gc.ca/eng/acts/E-15/FullText.html",
+   "title": "Excise Tax Act, Schedule VIII",
+   "read": "2026-11-01",
+   "kind": "primary",
+   "said": "SCHEDULE VIII (Subsection 123(1)) Participating Provinces and Applicable Tax Rates Participating Province Tax Rate 1 Ontario 8%"
+  },
+  {
+   "url": "https://laws-lois.justice.gc.ca/eng/acts/E-15/section-148.html",
+   "title": "Excise Tax Act, section 148",
+   "read": "2026-11-01",
+   "kind": "primary",
+   "said": "$30,000 or, where the person is a public service body, $50,000"
+  },
+  {
+   "url": "https://www2.gov.bc.ca/gov/content/taxes/sales-taxes/pst/publications/small-business-guide",
+   "title": "Small business guide to PST (Government of B.C.)",
+   "read": "2026-11-01",
+   "kind": "primary",
+   "said": "Goods including cannabis products, soda beverages and tobacco (except goods listed below), software, legal services, online marketplace services, telecommunication services and related services 7%"
+  },
+  {
+   "url": "https://laws-lois.justice.gc.ca/eng/acts/I-3.3/section-150.html",
+   "title": "Income Tax Act (R.S.C. 1985, c. 1 (5th Supp.)), section 150",
+   "read": "2026-11-01",
+   "kind": "primary",
+   "said": "the following April 30 by that person … (ii) the following June 15 by that person"
+  },
+  {
+   "url": "https://support.edsembli.com/en/support/solutions/articles/8000125715-2026-statutory-deduction-rates-process-guide",
+   "title": "edsembli, 2026 Statutory Deduction Rates Process Guide (payroll vendor, citing CRA T4127-26e tables 8.1 and 8.2)",
+   "read": "2026-11-01",
+   "kind": "secondary",
+   "quotes": "https://www.canada.ca/en/revenue-agency/services/forms-publications/payroll/t4127-payroll-deductions-formulas/t4127-jan/t4127-jan-payroll-deductions-formulas-computer-programs.html",
+   "said": "Federal 16,452.00 1.020 … Canada Employment Credit (CEA) = $1,501.00 … Federal A 0 58,523 117,045 181,440 258,482 R 0.1400 0.2050 0.2600 0.2900 0.3300 K 0 3,804 10,241 15,685 26,024"
+  },
+  {
+   "url": "https://news.bloombergtax.com/payroll/12canada-releases-2026-payroll-deductions-formulas",
+   "title": "Bloomberg Tax, Canada Releases 2026 Payroll Deductions Formulas (20 November 2025, on CRA Guide T4127)",
+   "read": "2026-11-01",
+   "kind": "secondary",
+   "quotes": "https://www.canada.ca/en/revenue-agency/services/forms-publications/payroll/t4127-payroll-deductions-formulas/t4127-jan/t4127-jan-payroll-deductions-formulas-computer-programs.html",
+   "said": "Canada’s 2026 Payroll Deductions Formulas, including rates and thresholds for federal income tax, social taxes, and jurisdictional income taxes, were released Nov. 20 by the Canada Revenue Agency. … These are a decrease in the lowest federal income tax rate to 14%, instead of 15%"
+  },
+  {
+   "url": "https://www.revenuquebec.ca/documents/en/formulaires/tp/TP-1015.F-V%282026-01%29.pdf",
+   "title": "Revenu Québec, TP-1015.F-V (2026-01), Formulas to Calculate Source Deductions and Contributions, 2026",
+   "read": "2026-11-01",
+   "kind": "primary",
+   "said": "= P × (G – F – H – CSA) – J – J1 … = (0.06 × D), up to a maximum of $1,450 ÷ P … = (T × I) – K – K1 – (0.14 × E) – (0.15 × P × Q) – (0.15 × P × Q1) … More than $132,245 25.75% $10,465 … = (Y ÷ P) + L"
+  }
+ ],
+ "blockers": [
+  {
+   "item": "withholding",
+   "sought": "The text of CRA's T4127 payroll formulas for 2026 (how annual taxable income A and the credits K1 to K4 are figured), read from CRA itself; the rates, constants and credit amounts are found through a vendor citing T4127, and Quebec's formulas are found (TP-1015.F-V)",
+   "tried": {
+    "institution": "canada.ca (CRA) refuses this environment (HTTP/2 INTERNAL_ERROR, empty reply over HTTP/1.1, 2026-11-01); revenuquebec.ca returns 403 with an error page; retry 2026-11-01: canada.ca T4127-JAN computer-programs page fetched directly, refused (HTTP/2 INTERNAL_ERROR); Revenu Québec's document path revenuquebec.ca/documents/en/formulaires/tp/TP-1015.F-V(2026-01).pdf read (CAQC-TP1015FV-2026.pdf)",
+    "official-register": "Income Tax Act s.153 read on laws-lois.justice.gc.ca (prescribed rules); the Regulations' tables are not in the Act; retry 2026-11-01: publications.gc.ca basic search for 'Payroll Deductions Formulas' returned only the search form (no listing)",
+    "web-search": "publications.gc.ca searched for T4127 2026-11-01: no 2026 edition returned; retry 2026-11-01: '\"T4127\" \"Payroll Deductions Formulas\" 2026 \"122nd Edition\" OR \"January 1, 2026\"': CRA page titles (122nd edition, effective 1 January 2026), Bloomberg Tax, edsembli and hrreporter.com",
+    "trade-press": "retry 2026-11-01: Bloomberg Tax (20 Nov 2025) and edsembli's 2026 guide read, quoting T4127 rates and constants, not the formula text; hrreporter.com article is from 2011",
+    "archive": "web.archive.org refused this environment (connection reset, 2026-11-01); retry 2026-11-01: archive.org availability API lists a snapshot of the T4127-JAN page (web.archive.org/web/20261004065947/...), but web.archive.org itself refused the fetch (connection reset)"
+   }
+  }
+ ]
+}

@@ -33,8 +33,9 @@ import type { GenresSlice } from '../../../src/person/genres/genres.ts';
 import { FAMILY, type Family, type IdentitySlice } from '../../../src/person/identity/identity.ts';
 import { falsifyAny } from '../../support/falsify-core.ts';
 import { identity } from '../../support/person.ts';
+import { ACCOUNT, minorIn, purse } from '../../support/purse.ts';
 
-type Career = { attributes: AttributesSlice; scripts: ScriptsSlice; career: CareerSlice; identity: IdentitySlice; genres: GenresSlice };
+type Career = { attributes: AttributesSlice; scripts: ScriptsSlice; career: CareerSlice; identity: IdentitySlice; genres: GenresSlice } & ReturnType<typeof purse>;
 const SEED = '0123456789abcdef';
 const u = (...keys: (string | number)[]) => draws(seedFromText(SEED), 'work.career', ...keys);
 const clamp = (n: number) => Math.min(100, Math.max(0, n));
@@ -44,7 +45,7 @@ const of = (v: Record<string, number>, id: string) => skillOf(v, 'screenwriter',
 /** Levels set by component, held by the broad attribute that covers each (a later one wins where two share it). */
 const toBroad = (each: Record<string, number>): Record<string, number> => Object.fromEntries(Object.entries(each).map(([id, n]) => [broadOf('screenwriter', id).id, n]));
 const made = (all: number, each: Record<string, number> = {}, at = 0): Life<Career> =>
-  dispatch(begin(SEED, at, { attributes: structuredClone(ATTRIBUTES_START), scripts: structuredClone(SCRIPTS_START), career: structuredClone(CAREER_START), identity: identity(), genres: { loved: ['drama'] } }), chooseAttributes, { role: 'screenwriter', all, each: toBroad(each) });
+  dispatch(begin(SEED, at, { attributes: structuredClone(ATTRIBUTES_START), scripts: structuredClone(SCRIPTS_START), career: structuredClone(CAREER_START), identity: identity(), genres: { loved: ['drama'] }, ...purse() }), chooseAttributes, { role: 'screenwriter', all, each: toBroad(each) });
 const withScript = (all: number, form: Form = 'feature', each: Record<string, number> = {}) => dispatch(made(all, each), writeScript, { form, genre: 'drama', days: 200 });
 const v = (l: Life<Career>) => componentValues(l.slices.attributes, 'screenwriter');
 const out = (l: Life<Career>, id = 1) => l.slices.career.out[String(id)];
@@ -213,7 +214,7 @@ describe('a pitch', () => {
     for (let id = 1; id <= 12; id += 1) {
       const chance = saleChance(quality(script(l, id)), pitchSkill(v(l), out(l, id) as Out));
       const sold = u('pitch', id, 0, 0).float() < chance;
-      l = dispatch(l, pitchScript, { script: id });
+      l = dispatch(l, pitchScript, { script: id, account: ACCOUNT });
       expect(out(l, id)?.sold !== null, String(id)).toBe(sold);
       expect(out(l, id)?.requests).toBe(0);
     }
@@ -225,13 +226,20 @@ describe('a pitch', () => {
     expect(FEES.pilot).toEqual({ currency: 'USD', minor: 7_119_000 });
     expect(FEES.episode).toEqual({ currency: 'USD', minor: 4_746_000 });
     expect(FEES.short).toBeNull();
+    // A short's price is negotiated: nothing is paid, and no account is asked.
     const sold = dispatch(requested(withScript(100, 'short'), 2, { 'pitch-document': 100 }), pitchScript, { script: 1 });
     expect(out(sold)?.sold).toEqual({ at: 0, fee: null });
+    expect([minorIn(sold.slices.ledger, ACCOUNT), sold.slices.tax.paid]).toEqual([100_000_000, []]);
+    // A price known is paid into an account held, refused before the meeting where none is.
+    // A poor script doesn't sell: the meeting is still refused first.
+    const episode = requested(withScript(5, 'episode'), 2);
+    expect(() => dispatch(episode, pitchScript, { script: 1, account: 'everyday:9' })).toThrow('no account everyday:9 is held at a bank');
+    expect(() => dispatch(episode, pitchScript, { script: 1 })).toThrow('no account undefined is held at a bank');
     expect(sold.slices.career.contacts).toBe(1);
-    expect(() => dispatch(sold, pitchScript, { script: 1 })).toThrow('script 1 is sold');
+    expect(() => dispatch(sold, pitchScript, { script: 1, account: ACCOUNT })).toThrow('script 1 is sold');
     expect(() => dispatch(sold, promoteScript, { script: 1, days: 3 })).toThrow('script 1 is sold');
     expect(() => dispatch(sold, summariseScript, { script: 1, document: 'logline', days: 3 })).toThrow('script 1 is sold');
-    expect(() => dispatch(withScript(100), pitchScript, { script: 1 })).toThrow('no one has asked to read script 1');
+    expect(() => dispatch(withScript(100), pitchScript, { script: 1, account: ACCOUNT })).toThrow('no one has asked to read script 1');
   });
 
   it('script.pitch: a better script sells where a weak one does not', () => {
@@ -239,7 +247,7 @@ describe('a pitch', () => {
       let l = made(n);
       for (let i = 0; i < 12; i += 1) l = dispatch(l, writeScript, { form: 'episode', genre: 'drama', days: 200 });
       l = withCareer(l, { out: Object.fromEntries(Array.from({ length: 12 }, (_, i) => [String(i + 1), { documents: { 'pitch-document': 100 }, requests: 1, sold: null }])) });
-      for (let id = 1; id <= 12; id += 1) l = dispatch(l, pitchScript, { script: id });
+      for (let id = 1; id <= 12; id += 1) l = dispatch(l, pitchScript, { script: id, account: ACCOUNT });
       return Object.values(l.slices.career.out).filter((o) => o.sold !== null).length;
     };
     falsifyAny({ feature: 'script.pitch', claim: 'bites', says: 'a writer at 100 sells more of a dozen scripts on a pitch than one at 5', base: 5, twin: 100, outcome: sales });
@@ -255,7 +263,7 @@ describe('the solo writer', () => {
       { id: 'network.meet', reads: [], writes: ['attributes', 'career'] },
       { id: 'script.offer', reads: ['scripts', 'identity'], writes: ['career'] },
       { id: 'script.promote', reads: ['scripts', 'identity'], writes: ['attributes', 'career'] },
-      { id: 'script.pitch', reads: ['scripts', 'identity'], writes: ['attributes', 'career'] },
+      { id: 'script.pitch', reads: ['scripts', 'identity'], writes: ['attributes', 'career', 'accounts', 'ledger', 'tax', 'schedule'] },
     ]);
   });
 });
