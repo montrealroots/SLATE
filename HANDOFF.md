@@ -2299,3 +2299,8 @@ held; a performer's and a director's pay are wages, a writer's and a producer's 
 (tax.unkept): employers' wage-withholding tables, regional and municipal taxes beyond a rate that applies everywhere,
 formula-written credits. Owed: the tax matrix covers the map's 252 countries and 21 are researched, so 231 rows are
 pending until a tax wave researches the rest, as the owner's coverage law asks; the layer isn't proven until then.
+Owner, 2026-11-01, told the tax matrix covered 21 of the 252 countries: "It should cover across every country so I
+have no clue what stopped that from happening." The lead's own scoping: the tax research was briefed for the 21
+markets where work is paid, against the coverage law (an engine that reads a place covers all 252). Corrected: eight
+subagents research the other 231 under BRIEF-tax.md (a territory that takes its sovereign's tax, or none, says so from
+a source), then their retry. The age research, briefed for the 21 too, goes to every country the same way.
