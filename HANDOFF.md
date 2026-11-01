@@ -2025,4 +2025,15 @@ second fetcher after this environment was refused (canada.ca's CPTC, Georgia's i
 Academy's 2024 Nicholl press release) are left out under the rule against getting around a bot check: three figures
 become blockers, and R-4608 loses that one source. Next, when the owner returns to it: each role's cut for approval,
 then its engines, as the screenwriter's.
+Ruled 2026-11-01, the owner, on the attributes: "these attributes wayyyy too bloated. We gotta map some out", shown a
+screen of six broad skills; then, of the proposed map, "Perfect! This more like it", and of the director's editing,
+"Give it that 7th attribute." Each role now holds a handful of broad attributes, 0 to 100, each made of the researched
+attributes it covers (workbench/plans/attribute-map.json, checked to cover every attribute of each role's cut exactly
+once): screenwriter 7 (Story, Characters, Voice, Writing, Revision, Discipline, Pitching), producer 6 (Development,
+Financing, Production, Leadership, Dealmaking, Marketing), director 7 (Vision, Working With Actors, Visual Craft,
+Editing, Script Sense, Leadership, Communication), actor 7 (Acting, Memorization, Voice, Physicality, Camera,
+Direction, Auditioning). The six attributes no institution judges fold in rather than stand alone. Experience, as in
+the owner's example screen, is the record of work done, not a skill set at creation. Next on attributes: re-key the
+screenwriter's engines to its 7 (the parts and facets stay underneath, each part read through the broad attribute that
+covers it), then the other roles' engines on theirs.
 
