@@ -1,0 +1,400 @@
+{
+ "topic": "markets.JP",
+ "read": "2026-11-01",
+ "note": "Read 2026-11-01 at the owner's word (\"add more markets\"; then \"Retry the blocked rates once all markets land\"): the terms a professional actor is engaged on in Japan for film, television and the stage (the agreements and their minimums, the union, the language parts are cast in, where the work is). Research and retry subagents (workbench/briefs/BRIEF-markets*.md); every quote checked by the lead against its saved page; a scan read by OCR is marked so and its figures checked against the image.",
+ "figures": [
+  {
+   "item": "agreements",
+   "finding": "The Japan Actors Union (Nippairen) holds collective agreements under the SME Cooperatives Act on actors' appearance terms with NHK and the commercial TV stations of Tokyo, Nagoya (Chukyo) and Osaka, and a separate agreement for voice work with the Japan Audio Producers' Association, run through its rate-and-practice table for dubbing and animation (latest edition 1 April 2017).",
+   "value": {
+    "union": "協同組合日本俳優連合 (Japan Actors Union)",
+    "legalBasis": "中小企業等協同組合法 (collective bargaining right of a cooperative)",
+    "counterparties": {
+     "television": [
+      "NHK",
+      "民放在京TV各社 (Tokyo commercial stations)",
+      "中京TV各社 (Chukyo)",
+      "大阪TV各社 (Osaka)"
+     ],
+     "voice": [
+      "一般社団法人日本音声製作者連盟 (Japan Audio Producers' Association)"
+     ]
+    },
+    "voiceTable": {
+     "name": "外画動画出演実務運用表",
+     "edition": "2017-04-01"
+    },
+    "published": "television terms not published; voice table published by the union"
+   },
+   "applies": "Japan, television (NHK and commercial stations) and dubbing/animation voice work; the terms cover union members.",
+   "sources": [
+    {
+     "src": 0,
+     "said": "協同組合日本俳優連合は、日本放送協会、民放在京TV各社、中京TV各社、大阪TV各社と協議、俳優たちの出演条件や出演環境の整備に関して、中小企業等協同組合法による団体協約を交わしています。また、声の出演に関しても、一般社団法人日本音声製作者連盟と団体協約を交わし"
+    },
+    {
+     "src": 0,
+     "said": "外画動画出演実務運用表(最新版[2017年4月1日])"
+    },
+    {
+     "src": 1,
+     "said": "「日俳連」は、協同組合法で認められている団体交渉権を生かして、NHK、民放、製作会社との間で出演条件や安全対策等の団体協約を締結しています。"
+    }
+   ]
+  },
+  {
+   "item": "rates",
+   "finding": "For voice work in dubbing and animation, the union's table pays by rank per episode: a performer in the first three years at an agency is on the junior rank at a flat ¥15,000 for a 30-minute TV anime episode whatever the role, ranks then run from 15 (¥15,000) up ¥1,000 a step to 45 (¥45,000), and above them a 'no rank' performer negotiates.",
+   "value": {
+    "unit": "JPY per episode (30-minute TV animation slot)",
+    "juniorRank": {
+     "years": "first 3 years at an agency",
+     "fee": 15000,
+     "sameForLeadAndCrowd": true
+    },
+    "rankScale": {
+     "from": {
+      "rank": 15,
+      "fee": 15000
+     },
+     "step": 1000,
+     "to": {
+      "rank": 45,
+      "fee": 45000
+     }
+    },
+    "noRank": "negotiated",
+    "extras": "re-use (転用) fees added on top",
+    "dateOfTable": "2017-04-01 (latest edition the union lists)"
+   },
+   "applies": "Japan, voice performers in dubbed foreign films (外画) and animation (動画) with agencies under the union's table; reported 2021 and 2023.",
+   "sources": [
+    {
+     "src": 2,
+     "said": "「日本俳優連合に加盟している事務所の場合は、事務所に所属して3年めまでは『ジュニアランク』。ギャラは固定で1本1万5000円。たとえ主役級に抜擢されても、拘束時間などは問わず、モブ役（群衆として扱われる通行人など）と同じ一律1万5000円です。"
+    },
+    {
+     "src": 2,
+     "said": "4年め以降は個人の人気や能力によって事務所や自身の査定が入り、いちばん低いのが『ランク15』で1万5000円。『ランク16』で1万6000円、『ランク17』で1万7000円とランクアップごとに1000円ずつ上がり、最高で『ランク45』の4万5000円となり、さらにその上にランクを持たない『ノーランク』があります。"
+    },
+    {
+     "src": 3,
+     "said": "声優として仕事を始めてから数年間は「ジュニアランク」。30分枠のテレビアニメ1話当たりのギャランティーは1万5千円です。以降は経験年数とともに自動的にランクが上がり、最終的に「Aランク」になると1本当たりの出演料は4万5千円になります（実際はここに転用費など加わりますので、数字は変わります）。"
+    },
+    {
+     "src": 3,
+     "said": "すごく人気のある声優になれば、交渉によってギャランティーを決めることもできなくはありません。こうした「ノーランク」と呼ばれる声優もいますが、極めて例外的です。"
+    }
+   ]
+  },
+  {
+   "item": "none",
+   "finding": "For live-action film and the stage no agreement or minimum sets an actor's fee: the Agency for Cultural Affairs' 2022 guideline finds contracts in the arts are mostly oral and asks that the fee be settled by the two parties in full discussion, according to the work and expertise.",
+   "value": {
+    "minimumFee": null,
+    "basis": "fee agreed between the parties per engagement",
+    "contracts": "mostly oral"
+   },
+   "applies": "Japan, individual artists including performers engaged for appearances (実演家の出演に関する業務委託契約), from the guideline of 27 July 2022.",
+   "sources": [
+    {
+     "src": 4,
+     "said": "関係者間の信頼関係や従来の慣習等により、口頭による契約が多い"
+    },
+    {
+     "src": 4,
+     "said": "業務内容や専門性等に応じた適正な金額となるよう双方で十分に協議、諸経費も明確に"
+    },
+    {
+     "src": 4,
+     "said": "スタッフの制作や技術等に関する業務委託契約、実演家の出演に関する業務委託契約を対象として、契約書のひな型"
+    }
+   ]
+  },
+  {
+   "item": "union",
+   "finding": "The Japan Actors Union (about 2,600 actors, Shinjuku, Tokyo) is a cooperative: joining costs a ¥2,000 share (returned on leaving), a ¥1,000 handling fee and dues from ¥1,500 a month, paid four months (¥6,000) at a time three times a year; the agreements' minimum terms are stated as protecting members, even without a contract of their own.",
+   "value": {
+    "union": "協同組合日本俳優連合",
+    "members": 2600,
+    "seat": "東京都新宿区西新宿6-12-30 芸能花伝舎",
+    "currency": "JPY",
+    "shareCapital": 2000,
+    "shareRefundedOnExit": true,
+    "handlingFee": 1000,
+    "duesPerMonthFrom": 1500,
+    "duesInstalment": {
+     "months": 4,
+     "amount": 6000,
+     "perYear": 3
+    },
+    "minimumTermsProtect": "members"
+   },
+   "applies": "Japan, actors and voice actors joining the union, fees as published 2026.",
+   "sources": [
+    {
+     "src": 1,
+     "said": "協同組合日本俳優連合は、「日俳連（にっぱいれん）」と呼ばれ約2,600名の俳優が加入しています。"
+    },
+    {
+     "src": 1,
+     "said": "東京都新宿区西新宿　6-12-30　芸能花伝舎"
+    },
+    {
+     "src": 5,
+     "said": "日俳連は協同組合であるため、加入時に出資金（一口2,000円）が必要となります。また、加入事務手数料1,000円と賦課金（組合費、1ヶ月1,500円～）も併せてお支払い頂きます。前払いで頂く賦課金の総額については、加入月によって変動がございます。そして加入後は、4か月分の賦課金（6,000円）を1年に3回お支払い頂きます。"
+    },
+    {
+     "src": 5,
+     "said": "※出資金は、退会時に返却いたします。"
+    },
+    {
+     "src": 5,
+     "said": "日俳連が団体協約を締結している仕事先(NHK、民放、音声制作会社など)での仕事は、あなたが個別に契約を交わさなくても、団体協約の出演条件が最低限守られます。"
+    }
+   ]
+  },
+  {
+   "item": "market",
+   "finding": "Japan's broadcast production is concentrated around Tokyo: 533 of the 1,193 programme production companies in the ministry's 2024 survey are in the Kanto bureau's area, and Tokyo has the most broadcasters of any prefecture (79 of 520 surveyed).",
+   "value": {
+    "city": "Tokyo",
+    "region": "Kanto",
+    "productionCompanies": {
+     "kanto": 533,
+     "total": 1193
+    },
+    "broadcasters": {
+     "tokyo": 79,
+     "total": 520,
+     "share": 0.152
+    }
+   },
+   "applies": "Japan, broadcast content production, survey period 1 January to 31 December 2024 (published May 2025).",
+   "sources": [
+    {
+     "src": 6,
+     "said": "対象社数 53 106 533 31 147 39 108 26 19 121 10 1193"
+    },
+    {
+     "src": 6,
+     "said": "２．番組製作会社からの回答状況（地域別）"
+    },
+    {
+     "src": 6,
+     "said": "東京都 79"
+    },
+    {
+     "src": 6,
+     "said": "15.2%"
+    }
+   ]
+  },
+  {
+   "item": "rates",
+   "finding": "NHK pays every actor at least its minimum standard appearance fee, 21,000 yen for television (since April 2014) and 18,000 yen for radio (since April 2018), unchanged for 2026; above it each actor has an individual standard fee (a rank) that NHK revises each 1 April on the actor's record, the TV rank applies to drama, voice-only work on TV is paid at the radio rate, and NHK can agree a programme-specific fee by negotiation.",
+   "value": {
+    "currency": "JPY",
+    "minimumStandardFee": {
+     "tv": 21000,
+     "tvSince": "2014-04",
+     "radio": 18000,
+     "radioSince": "2018-04",
+     "status2026": "unchanged (NHK reply of 17 Dec 2025)"
+    },
+    "individualRanks": {
+     "revised": "each 1 April, by appearance record",
+     "2025": "1,805 of 27,584 registered drama-category performers (6.5%) revised",
+     "nextRevision": "2026-04-01"
+    },
+    "tvRankAppliesTo": "drama",
+    "voiceOnlyOnTv": "radio standard fee",
+    "specialFee": "a programme-specific fee may be set by negotiation",
+    "unit": "per appearance (standard fee)"
+   },
+   "applies": "NHK productions, drama category (演劇種別), 2026; NHK-commissioned productions estimate fees on the NHK standard but the producer decides.",
+   "sources": [
+    {
+     "src": 7,
+     "said": "最低基準出演料は、現状、テレビ 21,000 円（2014 年 4 月実施）、ラジオ 18,000 円（2018 年 4 月"
+    },
+    {
+     "src": 7,
+     "said": "別の基準出演料の改定につきましては、これまでと同じく出演実績に応じて改定の有無を丁寧に検討さ"
+    },
+    {
+     "src": 7,
+     "said": "2025 年度、演劇種別で登録のある 27,584 名のうち 1,805 名・6.5％の方について個別に基準出演料を"
+    },
+    {
+     "src": 7,
+     "said": "ＮＨＫには出演料について、交渉によってその番組に限り、基準出演料にはよらない特定料金を設定す"
+    },
+    {
+     "src": 8,
+     "said": "基準出演料の適用については、ドラマにご出演の場合、演劇種別の基準料金を適用し、その他の分野"
+    },
+    {
+     "src": 8,
+     "said": "など声だけのご出演の場合は、演劇種別のラジオ基準料金が適用されます。"
+    },
+    {
+     "src": 8,
+     "said": "出演料の見積もりはＮＨＫの基準をもとに算出しています。しかし、制作委託費を実際どのように運用"
+    }
+   ]
+  },
+  {
+   "item": "rates",
+   "finding": "For dubbing and animation the union's agreement pays each member by a rank the member registers, any whole number from 15 to 45 thousand yen, or NR above 45,000 yen; taking work below one's own rank is forbidden by the agreement, and the rank is multiplied by time and usage rates (for example rank 15 in a 60-minute anime under the C method: 15,000 x 1.5 x 220% = 49,500 yen).",
+   "value": {
+    "currency": "JPY",
+    "rankRange": {
+     "min": 15000,
+     "max": 45000,
+     "step": 1000,
+     "above": "NR (over 45,000)"
+    },
+    "rule": "no work below the member's registered rank",
+    "example": {
+     "rank": 15,
+     "work": "60-minute animation, 一括処理C方式",
+     "timeMultiplier": 1.5,
+     "usageRate": 2.2,
+     "fee": 49500
+    },
+    "rankList": "published each April and distributed to members of the Japan Voice Producers' Federation",
+    "newcomers": "a separate 新人登録制度 for performers starting voice work at agencies of マネ協/声事協"
+   },
+   "applies": "Japan Actors Union members in foreign-film dubbing (外画) and animation (動画), 2025.",
+   "sources": [
+    {
+     "src": 9,
+     "said": "外画（外国映画の吹替え版）と動画（アニメーション）の出演時に適用されるラ ンク（報酬基準）のことです。"
+    },
+    {
+     "src": 9,
+     "said": "ランクは、15～45 までの任意の数字、あるいは 45 超となる場合はＮＲ（ノーラ ンク）を、日俳連事務局へご申請いただきます。"
+    },
+    {
+     "src": 9,
+     "said": "ご自身で定めたランクを下回る報酬で仕事を受けることは、団体協約で禁止され ております。"
+    },
+    {
+     "src": 9,
+     "said": "基本ランク 15,000 円×時間割増率 1.5×利用料率 220％＝49,500 円"
+    }
+   ]
+  }
+ ],
+ "country": "JP",
+ "sources": [
+  {
+   "url": "https://www.nippairen.com/about/active.html",
+   "title": "協同組合日本俳優連合（Japan Actors Union）: 活動内容",
+   "read": "2026-11-01",
+   "kind": "primary",
+   "said": "協同組合日本俳優連合は、日本放送協会、民放在京TV各社、中京TV各社、大阪TV各社と協議、俳優たちの出演条件や出演環境の整備に関して、中小企業等協同組合法による団体協約を交わしています。また、声の出演に関しても、一般社団法人日本音声製作者連盟と団体協約を交わし … 外画動画出演実務運用表(最新版[2017年4月1日])"
+  },
+  {
+   "url": "https://www.nippairen.com/about/organization.html",
+   "title": "協同組合日本俳優連合（Japan Actors Union）: 組織概要",
+   "read": "2026-11-01",
+   "kind": "primary",
+   "said": "「日俳連」は、協同組合法で認められている団体交渉権を生かして、NHK、民放、製作会社との間で出演条件や安全対策等の団体協約を締結しています。 … 協同組合日本俳優連合は、「日俳連（にっぱいれん）」と呼ばれ約2,600名の俳優が加入しています。 … 東京都新宿区西新宿　6-12-30　芸能花伝舎"
+  },
+  {
+   "url": "https://news.livedoor.com/article/detail/19966950/",
+   "title": "ライブドアニュース（FLASH 2021年4月13日号）: 『鬼滅の刃』花江夏樹、鬼頭明里も…ギャラ「推定8万6250円」 (4 April 2021) (quoting: an anime producer, and the Japan Actors Union's 外画動画出演実務運用表)",
+   "read": "2026-11-01",
+   "kind": "secondary",
+   "quotes": "https://nippairen.com/wp-content/uploads/2017/12/20170401unyohyo.pdf",
+   "said": "「日本俳優連合に加盟している事務所の場合は、事務所に所属して3年めまでは『ジュニアランク』。ギャラは固定で1本1万5000円。たとえ主役級に抜擢されても、拘束時間などは問わず、モブ役（群衆として扱われる通行人など）と同じ一律1万5000円です。 … 4年め以降は個人の人気や能力によって事務所や自身の査定が入り、いちばん低いのが『ランク15』で1万5000円。『ランク16』で1万6000円、『ランク17』で1万7000円とランクアップごとに1000円ずつ上がり、最高で『ランク45』の4万5000円となり、さらにその上にランクを持たない『ノーランク』があります。"
+  },
+  {
+   "url": "https://bunshun.jp/articles/-/67008?page=3",
+   "title": "文春オンライン: 「ギャラ配分は声優が8割、事務所が2割」それでも新人声優が「食っていく」のが難しすぎるワケ, p.3 (23 November 2023) (quoting: the voice-performance rank system under the Japan Actors Union's 外画動画出演実務運用表)",
+   "read": "2026-11-01",
+   "kind": "secondary",
+   "quotes": "https://nippairen.com/wp-content/uploads/2017/12/20170401unyohyo.pdf",
+   "said": "声優として仕事を始めてから数年間は「ジュニアランク」。30分枠のテレビアニメ1話当たりのギャランティーは1万5千円です。以降は経験年数とともに自動的にランクが上がり、最終的に「Aランク」になると1本当たりの出演料は4万5千円になります（実際はここに転用費など加わりますので、数字は変わります）。 … すごく人気のある声優になれば、交渉によってギャランティーを決めることもできなくはありません。こうした「ノーランク」と呼ばれる声優もいますが、極めて例外的です。"
+  },
+  {
+   "url": "https://www.bunka.go.jp/koho_hodo_oshirase/hodohappyo/pdf/93744101_02.pdf",
+   "title": "文化庁 文化芸術分野の適正な契約関係構築に向けた検討会議: 文化芸術分野の適正な契約関係構築に向けたガイドライン（検討のまとめ）概要 (27 July 2022)",
+   "read": "2026-11-01",
+   "kind": "primary",
+   "said": "関係者間の信頼関係や従来の慣習等により、口頭による契約が多い … 業務内容や専門性等に応じた適正な金額となるよう双方で十分に協議、諸経費も明確に … スタッフの制作や技術等に関する業務委託契約、実演家の出演に関する業務委託契約を対象として、契約書のひな型"
+  },
+  {
+   "url": "https://www.nippairen.com/introduction",
+   "title": "協同組合日本俳優連合（Japan Actors Union）: 加入案内",
+   "read": "2026-11-01",
+   "kind": "primary",
+   "said": "日俳連は協同組合であるため、加入時に出資金（一口2,000円）が必要となります。また、加入事務手数料1,000円と賦課金（組合費、1ヶ月1,500円～）も併せてお支払い頂きます。前払いで頂く賦課金の総額については、加入月によって変動がございます。そして加入後は、4か月分の賦課金（6,000円）を1年に3回お支払い頂きます。 … ※出資金は、退会時に返却いたします。 … 日俳連が団体協約を締結している仕事先(NHK、民放、音声制作会社など)での仕事は、あなたが個別に契約を交わさなくても、団体協約の出演条件が最低限守られます。"
+  },
+  {
+   "url": "https://www.soumu.go.jp/main_content/001011411.pdf",
+   "title": "総務省 情報流通行政局: 令和６年度放送コンテンツ製作取引実態調査結果 別紙２ 調査結果（詳細） (May 2025)",
+   "read": "2026-11-01",
+   "kind": "primary",
+   "said": "対象社数 53 106 533 31 147 39 108 26 19 121 10 1193 … ２．番組製作会社からの回答状況（地域別） … 東京都 79 … 15.2%"
+  },
+  {
+   "url": "https://www.nippairen.com/wp-content/uploads/2026/01/34476dea88d12f00bc064c48b864798c-1.pdf",
+   "title": "NHK, 「2026年度 演劇分野の出演に関するお申し入れに対する回答」 (17 Dec 2025), NHK's written reply to the actors' bodies, published by the Japan Actors Union",
+   "read": "2026-11-01",
+   "kind": "primary",
+   "said": "最低基準出演料は、現状、テレビ 21,000 円（2014 年 4 月実施）、ラジオ 18,000 円（2018 年 4 月 … 別の基準出演料の改定につきましては、これまでと同じく出演実績に応じて改定の有無を丁寧に検討さ … 2025 年度、演劇種別で登録のある 27,584 名のうち 1,805 名・6.5％の方について個別に基準出演料を … ＮＨＫには出演料について、交渉によってその番組に限り、基準出演料にはよらない特定料金を設定す"
+  },
+  {
+   "url": "https://www.nippairen.com/wp-content/uploads/2023/02/46f09fadeb91a1967547d7ebe8e088cb.pdf",
+   "title": "NHK 知財センター 著作権・契約部, 「2023年度 演劇三団体 お申し入れに対する回答」 (16 Dec 2022), published by the Japan Actors Union",
+   "read": "2026-11-01",
+   "kind": "primary",
+   "said": "基準出演料の適用については、ドラマにご出演の場合、演劇種別の基準料金を適用し、その他の分野 … など声だけのご出演の場合は、演劇種別のラジオ基準料金が適用されます。 … 出演料の見積もりはＮＨＫの基準をもとに算出しています。しかし、制作委託費を実際どのように運用"
+  },
+  {
+   "url": "https://www.nippairen.com/wp-content/uploads/2025/08/94daf28d44e092c1534acf4057e4723b.pdf",
+   "title": "Japan Actors Union, 「音声業界におけるランク」のご案内 (rank application notice, 2025)",
+   "read": "2026-11-01",
+   "kind": "primary",
+   "said": "外画（外国映画の吹替え版）と動画（アニメーション）の出演時に適用されるラ ンク（報酬基準）のことです。 … ランクは、15～45 までの任意の数字、あるいは 45 超となる場合はＮＲ（ノーラ ンク）を、日俳連事務局へご申請いただきます。 … ご自身で定めたランクを下回る報酬で仕事を受けることは、団体協約で禁止され ております。 … 基本ランク 15,000 円×時間割増率 1.5×利用料率 220％＝49,500 円"
+  }
+ ],
+ "blockers": [
+  {
+   "item": "rates",
+   "sought": "The minimum appearance fees for live-action TV drama under the union's agreements with the commercial stations of Tokyo, Nagoya and Osaka (NHK's now found, see rates figure).",
+   "tried": {
+    "institution": "nippairen.com's organization, activity and joining pages say the agreements exist and protect members but publish no fee table; NHK and the stations were not found to publish one. | Retry 2026-11-01 (second pass): nippairen.com media library listed via its WordPress API (wp-json/wp/v2/media, all PDFs): NHK replies and an NHK agreement report found and used; no commercial-station fee document.",
+    "official-register": "No public register of cooperative collective agreements found. | Retry 2026-11-01 (second pass): None (cooperative agreements are not registered publicly). The JFTC's 2024 report and 2025 guideline on performers' contracts answered 403 to this environment and were not read another way.",
+    "web-search": "'日本俳優連合 出演料 協定 NHK 民放連 ランク': results are weekly-press pieces quoting insiders on NHK's internal fee ranks, no agreement text or fee table. | Retry 2026-11-01 (second pass): \"日本俳優連合 NHK 民放 団体協約 出演料 最低 ドラマ 俳優 ランク 協定書\": only weekly-press insider accounts.",
+    "trade-press": "Search results point to gendai.media, Jisin and Tokyo Sports pieces quoting insiders; not read as sources since none quotes the agreement. | Retry 2026-11-01 (second pass): gendai.media 112265, Tokyo Sports 181607, Jisin 2199343 (search results): insider accounts, no agreement quoted.",
+    "archive": "Not reachable: web.archive.org reset the connection (curl 35) from this egress on 2026-11-01. | Retry 2026-11-01 (second pass): web.archive.org resets the connection (curl 000, 2026-11-01)."
+   }
+  },
+  {
+   "item": "rates",
+   "sought": "The full 外画動画出演実務運用表 (time-multiplier and usage-rate tables), to complete the rank rule now held from the union's 2025 notice.",
+   "tried": {
+    "institution": "The PDF link on nippairen.com (http://nippairen.com/wp-content/uploads/2017/12/20170401unyohyo.pdf, and the https www form) returns an HTML page, not the PDF. | Retry 2026-11-01 (second pass): The PDF URL redirects to the home page (301 to https://www.nippairen.com); the media library API search for 運用 and unyohyo returns nothing; the 2025 rank notice (used above) says the details are in the 音声業界ハンドブック given only to applicants.",
+    "official-register": "None (a cooperative's own table). | Retry 2026-11-01 (second pass): None.",
+    "web-search": "'外画動画出演実務運用表 ランク 出演料 アニメ 30分 15,000円 45,000円 日俳連 新人': secondary accounts only (livedoor/FLASH 2021, Bunshun 2023), used above. | Retry 2026-11-01 (second pass): \"外画動画出演実務運用表 pdf\", \"日俳連 外画・動画出演実務運用表 改定 2024 OR 2025 ランク 出演料\": no copy.",
+    "trade-press": "Used above (secondary). | Retry 2026-11-01 (second pass): No new source.",
+    "archive": "web.archive.org lists a snapshot (20250418122847) but the https fetch reset the connection (curl 35) five times and the http form is blocked by the egress policy, 2026-11-01. | Retry 2026-11-01 (second pass): archive.org availability API lists snapshot 20250418122847, but web.archive.org and wayback.archive.org reset the connection (curl 000) on 2026-11-01."
+   }
+  },
+  {
+   "item": "language",
+   "sought": "A source stating the language Japanese film and television parts are cast in.",
+   "tried": {
+    "institution": "Japan Actors Union pages (its dialect-in-drama study group is in Japanese dialects) state no casting language; Agency for Cultural Affairs film support call for 2027 (日本映画製作支援事業 募集案内) has no language requirement for the film. | Retry 2026-11-01 (second pass): Agency for Cultural Affairs 令和9年度 日本映画製作支援事業 募集案内 (saved /tmp/claude-0/-home-user-SLATE/cfe06f79-0641-529e-b709-1fcd46045c09/scratchpad/dl/markets/JP-bunka-94453001_01.pdf) and its FAQ (saved /tmp/claude-0/-home-user-SLATE/cfe06f79-0641-529e-b709-1fcd46045c09/scratchpad/dl/markets/JP-bunka-eiga-seisaku-shien-faq.html): 日本映画 is defined by the producer's nationality, with no language requirement.",
+    "official-register": "Not found: no statute or register read states a casting or production language. | Retry 2026-11-01 (second pass): No statute names a casting language.",
+    "web-search": "'日本映画 定義 助成 要件 日本語 文化庁 映画製作への支援', 'Japan Film Commission location guide productions Japanese language crew interpreters Japanese actors casting': nothing stating it. | Retry 2026-11-01 (second pass): \"日本映画 定義 \\\"日本語\\\" 台詞 主として 助成 要件 映画\": nothing stating it.",
+    "trade-press": "Screen Global Production pieces speak of crew bilingualism only. | Retry 2026-11-01 (second pass): None found.",
+    "archive": "Not reachable: web.archive.org reset the connection from this egress on 2026-11-01. | Retry 2026-11-01 (second pass): web.archive.org resets the connection (2026-11-01)."
+   }
+  }
+ ]
+}

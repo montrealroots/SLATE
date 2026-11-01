@@ -1,13 +1,14 @@
 import { defineCommand, type Context, type Json } from '../../core/frame/frame.ts';
 import { add, fromMajor, multiply, type CurrencyCode, type Money } from '../../core/money/money.ts';
 import { civilFromDays, SECONDS_PER_DAY } from '../../core/time/calendar.ts';
-import type { LineId } from '../../core/text/text.ts';
-import type { CountryCode } from '../../world/gazetteer/gazetteer.ts';
+import { t, type LineId } from '../../core/text/text.ts';
+import { countryName, type CountryCode } from '../../world/gazetteer/gazetteer.ts';
 import { componentOf, componentValues, practise, skillOf, type AttributesSlice } from '../attributes/attributes.ts';
 import { identifiesAs, personOf, playingAge, speaks, type Ethnicity, type IdentitySlice, type Level, type Person } from '../identity/identity.ts';
 import { permitted, type PermitsSlice } from '../permits/permits.ts';
 import { mayTakeUnionWork, type UnionsSlice } from '../unions/unions.ts';
 import { spread } from '../work/work.ts';
+import compiled from './markets.json' with { type: 'json' };
 
 /**
  * The actor's work (BUILD-ORDER layer 4; the owner, 2026-10-31: "I want my attributes to effect the quality of my work
@@ -32,6 +33,15 @@ import { spread } from '../work/work.ts';
  * rehearsal weeks at the rehearsal rate; ACTRA's Independent Production Agreement, a principal by the day or week and a
  * part of five lines or fewer by the day.
  *
+ * Beyond them, eighteen markets (src/person/acting/markets.json, compiled by tools/person/markets from the research,
+ * register facts person.markets.<CC>): each agreement a part can be engaged under in the market's city, its minimums
+ * by medium (film, television, the stage), by role where it names roles, by the term it pays (a day, a week, a month, a
+ * year, a session, a performance or an episode) and by the tier it sets (the budget, the lines, the seats, an
+ * episode's minutes, the engagement's length, the actor's years in the work, the day or performance of the engagement),
+ * each from the date it applies, in the agreement's currency. Where the research says no agreement sets an actor's
+ * pay, it is left to negotiation, as under the Micro-Budget agreement. The actor's years are the whole years since the
+ * first part they played, the game's reading (person.markets.model); what a market's research couldn't find is told.
+ *
  * Casting puts a part out as a breakdown (R-4620): written for men, women, either or a non-binary performer at the
  * shares of Sowa's count of 3,714 SAG-AFTRA television breakdowns (2017); naming an ethnicity, open to all, or silent
  * at the same count's shares; for an age range by the ages of major characters in the top US films of 2025; in the
@@ -43,9 +53,19 @@ import { spread } from '../work/work.ts';
 /** The line that tells the player these figures are the game's own (person.acting.model). */
 export const MODEL_LINE: LineId = 'acting.model';
 
+/** The agreements the eighteen markets engage parts under, as markets.json compiles them (a test holds the two lists one). */
+export const MARKET_AGREEMENTS = [
+  'au-screen', 'au-stage', 'br-rj-tv', 'br-sp-screen', 'br-rj-stage', 'de-screen', 'de-stage', 'de-guest', 'dk-film', 'dk-tv', 'dk-soejle-a', 'dk-copenhagen-stage', 'es-screen', 'es-madrid-stage', 'fr-film',
+  'fr-tv', 'fr-subsidised-stage', 'fr-private-stage', 'ie-stage', 'in-screen', 'it-screen', 'it-stage', 'jp-nhk', 'jp-live', 'kr-kbs', 'kr-mbc-sbs', 'mx-televisa', 'mx-azteca', 'mx-other', 'ng-screen',
+  'nl-stage', 'nl-screen', 'no-film', 'no-tv', 'no-nrk', 'no-stage', 'nz-screen', 'nz-court', 'nz-atc', 'se-screen', 'se-stage', 'se-private-stage', 'se-free-stage', 'za-all',
+] as const;
 /** The agreement a part is engaged under. */
-export type Agreement = 'sag-aftra' | 'pact-equity' | 'uk-theatre' | 'actra';
-export type Term = 'day' | 'week';
+export type Agreement = 'sag-aftra' | 'pact-equity' | 'uk-theatre' | 'actra' | (typeof MARKET_AGREEMENTS)[number];
+export const AGREEMENTS: readonly Agreement[] = ['sag-aftra', 'pact-equity', 'uk-theatre', 'actra', ...MARKET_AGREEMENTS];
+export const TERMS = ['day', 'week', 'month', 'year', 'session', 'performance', 'episode'] as const;
+export type Term = (typeof TERMS)[number];
+export const MEDIA = ['film', 'television', 'stage'] as const;
+export type Medium = (typeof MEDIA)[number];
 
 /** A part as casting puts it out. */
 export interface Part {
@@ -64,6 +84,12 @@ export interface Part {
   rehearsal: number;
   /** What else the part calls for, by the actor's components (singing, accents-and-dialects ...). */
   asks: string[];
+  /** A market's part: its medium, where its agreement covers more than one. */
+  medium?: Medium;
+  /** A market's part: its role, where its agreement sets its minimums by role. */
+  role?: string;
+  /** A market's part: an episode's running time, where its agreement's minimums turn on it. */
+  minutes?: number;
 }
 
 export interface Work {
@@ -128,11 +154,14 @@ export const MEDIUM = { screen: ['acting-for-the-camera'], stage: ['appropriatio
 
 export const STAGE: readonly Agreement[] = ['uk-theatre'];
 
+/** Whether a part is played on stage: UK Theatre's, or a market's part whose medium is the stage. */
+export const onStage = (part: Part): boolean => STAGE.includes(part.agreement) || (marketOf(part.agreement) !== undefined && mediumOf(part) === 'stage');
+
 /** Every component a part asks for. */
 export function demands(part: Part): string[] {
   const out = new Set<string>(CRAFT);
   if (part.lines > 0) out.add('memorise-lines');
-  for (const id of MEDIUM[STAGE.includes(part.agreement) ? 'stage' : 'screen']) out.add(id);
+  for (const id of MEDIUM[onStage(part) ? 'stage' : 'screen']) out.add(id);
   for (const id of part.asks) out.add(componentOf('actor', id).id);
   return [...out];
 }
@@ -173,8 +202,92 @@ interface Scale {
   readonly currency: CurrencyCode;
   readonly day?: Table;
   readonly week?: Table;
-  /** A rehearsal week's, on stage. */
+  /** A rehearsal week's, on stage; a market's part's rehearsal unit's. */
   readonly rehearsal?: Table;
+  /** A market's part: the minimums for its term, each paying the engagement's units from one to another (to none: the rest). */
+  readonly bands?: readonly Band[];
+}
+
+export interface Band {
+  readonly from: number;
+  readonly to: number | null;
+  readonly table: Table;
+}
+
+/** A market's minimum as compiled (tools/person/markets/compile.ts). */
+type Tier = 'budget' | 'lines' | 'seats' | 'minutes' | 'length' | 'years' | 'nth';
+export interface Minimum {
+  readonly medium: Medium;
+  readonly role: string | null;
+  readonly per: Term;
+  readonly rehearsal: boolean;
+  readonly with: readonly Term[] | null;
+  readonly when: Readonly<Partial<Record<Tier, readonly [number, number | null]>>>;
+  readonly from: string;
+  readonly amount: string;
+}
+export interface MarketAgreement {
+  readonly country: CountryCode;
+  readonly currency: CurrencyCode | null;
+  readonly media: readonly Medium[];
+  readonly none: boolean;
+  readonly minimums: readonly Minimum[];
+}
+/** What a market's research couldn't find, by the item its blockers name. */
+export type Unknown = 'agreements' | 'rates' | 'none' | 'union' | 'language' | 'market';
+export interface Market {
+  readonly language: string;
+  readonly zone: string;
+  readonly agreements: readonly Agreement[];
+  readonly unknown: readonly Unknown[];
+}
+export const MARKETS = (compiled as unknown as { markets: Readonly<Record<string, Market>> }).markets;
+const COMPILED = (compiled as unknown as { agreements: Readonly<Record<string, MarketAgreement>> }).agreements;
+
+/** A market's agreement as compiled; none for the four this engine keeps itself. */
+export const marketOf = (a: Agreement): MarketAgreement | undefined => (Object.hasOwn(COMPILED, a) ? COMPILED[a] : undefined);
+
+/** A market's part's medium: as the part names it, or its agreement's only one. */
+export function mediumOf(part: Part): Medium {
+  const a = marketOf(part.agreement) as MarketAgreement;
+  const medium = part.medium ?? (a.media.length === 1 ? a.media[0] : undefined);
+  if (medium === undefined) throw new Error(`a part under ${part.agreement} names its medium: ${a.media.join(', ')}`);
+  if (!a.media.includes(medium)) throw new Error(`${part.agreement} sets no terms for ${medium}`);
+  return medium;
+}
+
+/** Whether a minimum's tiers hold for a part and the actor's years (the unit it pays, `nth`, is a band's, not a test). */
+function holds(m: Minimum, part: Part, years: number): boolean {
+  const value: Record<Exclude<Tier, 'nth'>, number> = { budget: part.budget, lines: part.lines, seats: part.seats, minutes: part.minutes ?? 0, length: part.length, years };
+  return (Object.entries(m.when) as [Tier, readonly [number, number | null]][]).every(([k, [lo, hi]]) => k === 'nth' || (value[k] >= lo && (hi === null || value[k] <= hi)));
+}
+
+/** A slot's minimums as a table of steps: the compile writes each agreement's minimums by date. */
+const tableOf = (ms: readonly Minimum[]): Table => ms.map((m) => [m.from, m.amount] as const);
+
+/** A market's part's scale: its term's minimums, band by band, and its rehearsal's; none where no agreement sets the pay. */
+function marketScale(part: Part, a: MarketAgreement, years: number): Scale | null {
+  const medium = mediumOf(part);
+  if (a.none) return null;
+  const own = a.minimums.filter((m) => m.medium === medium);
+  const roles = [...new Set(own.map((m) => m.role))];
+  const role = part.role ?? null;
+  if (!roles.includes(role)) throw new Error(roles.includes(null) ? `${part.agreement} sets no minimum by role` : `a part under ${part.agreement} is one of its roles: ${roles.join(', ')}`);
+  const fit = own.filter((m) => m.role === role && holds(m, part, years));
+  const bands = new Map<string, Minimum[]>();
+  for (const m of fit.filter((x) => !x.rehearsal && x.per === part.term)) {
+    const key = JSON.stringify(m.when.nth ?? [1, null]);
+    bands.set(key, [...(bands.get(key) ?? []), m]);
+  }
+  const rehearsal = fit.filter((m) => m.rehearsal && (m.with === null || m.with.includes(part.term)));
+  return {
+    currency: a.currency as CurrencyCode,
+    bands: [...bands.entries()].map(([key, ms]) => {
+      const [from, to] = JSON.parse(key) as [number, number | null];
+      return { from, to, table: tableOf(ms) };
+    }),
+    ...(rehearsal.length > 0 ? { rehearsal: tableOf(rehearsal) } : {}),
+  };
 }
 
 const SAG_YEARS = ['2025-07-01', '2026-07-01', '2027-07-01', '2028-07-01', '2029-07-01'];
@@ -218,8 +331,10 @@ export const ACTRA = {
 } as const satisfies Record<string, Scale>;
 export const ACTRA_FEW_LINES = 5;
 
-/** The scale a part is paid on; none where its agreement sets no minimum. */
-export function scaleOf(part: Part): Scale | null {
+/** The scale a part is paid on, for an actor of so many years in the work; none where its agreement sets no minimum. */
+export function scaleOf(part: Part, years = 0): Scale | null {
+  const market = marketOf(part.agreement);
+  if (market !== undefined) return marketScale(part, market, years);
   switch (part.agreement) {
     case 'sag-aftra':
       if (part.budget <= SAG_TIERS.micro) return null;
@@ -232,7 +347,7 @@ export function scaleOf(part: Part): Scale | null {
       return PACT;
     case 'uk-theatre':
       return UK_THEATRE.findLast((t) => part.seats >= t.seats) as Scale;
-    case 'actra':
+    default:
       return part.lines <= ACTRA_FEW_LINES ? ACTRA.few : ACTRA.principal;
   }
 }
@@ -254,21 +369,53 @@ export function rateAt(currency: CurrencyCode, table: Table, date: string): Mone
 }
 
 /**
- * What the engagement pays, at the minimums in force the day the work starts. shortcut: an engagement spanning a new
- * year's rates is paid all of it at the first day's; overtime and use fees aren't modeled.
+ * What the engagement pays, at the minimums in force the day the work starts, to an actor of so many years in the work.
+ * A market's minimums by the unit pay each unit of the engagement at its own (the first five days at one, the rest at
+ * another), and its rehearsal units at the rehearsal's. shortcut: an engagement spanning a new year's rates is paid all
+ * of it at the first day's; overtime and use fees aren't modeled.
  */
-export function pay(part: Part, date: string): Money | null {
-  const scale = scaleOf(part);
+export function pay(part: Part, date: string, years = 0): Money | null {
+  const scale = scaleOf(part, years);
   if (scale === null) return null;
-  const table = scale[part.term];
+  if (scale.bands !== undefined) return marketPay(part, scale as Scale & { bands: readonly Band[] }, date);
+  const table = scale[part.term as 'day' | 'week'];
   if (table === undefined) throw new Error(`there's no ${part.term} minimum for that part`);
   const performed = multiply(rateAt(scale.currency, table, date), String(part.length));
   return scale.rehearsal === undefined ? performed : add(performed, multiply(rateAt(scale.currency, scale.rehearsal, date), String(part.rehearsal)));
 }
 
-/** The days an engagement works: a week is five (SAG-AFTRA's five-day studio week; the game's for the others). */
+function marketPay(part: Part, scale: Scale & { bands: readonly Band[] }, date: string): Money {
+  if (scale.bands.length === 0) throw new Error(`there's no ${part.term} minimum for that part`);
+  let total = fromMajor(scale.currency, '0');
+  for (const b of scale.bands) {
+    if (part.length >= b.from) total = add(total, multiply(rateAt(scale.currency, b.table, date), String(Math.min(part.length, b.to ?? part.length) - b.from + 1)));
+  }
+  if (part.rehearsal === 0) return total;
+  if (scale.rehearsal === undefined) throw new Error("there's no rehearsal minimum for that part");
+  return add(total, multiply(rateAt(scale.currency, scale.rehearsal, date), String(part.rehearsal)));
+}
+
+/**
+ * The days an engagement works: a week is five (SAG-AFTRA's five-day studio week; the game's for the others); a month
+ * 21 and a year 220 (the Virke TV-drama agreement's basis, read for every agreement: person.markets.model); a session,
+ * a performance and an episode a day each. A market's rehearsal units are counted by its rehearsal's term (weeks where
+ * it sets none).
+ */
 export const WEEK_DAYS = 5;
-export const daysWorked = (part: Part): number => (part.term === 'day' ? part.length : WEEK_DAYS * (part.length + part.rehearsal));
+export const UNIT_DAYS: Readonly<Record<Term, number>> = { day: 1, week: WEEK_DAYS, month: 21, year: 220, session: 1, performance: 1, episode: 1 };
+export function daysWorked(part: Part): number {
+  const rehearsal = marketOf(part.agreement)?.minimums.find((m) => m.rehearsal)?.per ?? 'week';
+  return UNIT_DAYS[part.term] * part.length + UNIT_DAYS[rehearsal] * part.rehearsal;
+}
+
+/** The actor's whole years in the work on a day: since the first part they played, none before it (person.markets.model). */
+export function experience(s: ActingSlice, now: number): number {
+  // @slate:consumer acting.perform
+  const first = Math.min(...s.auditions.flatMap((a) => (a.work === null ? [] : [a.work.at])));
+  if (first === Infinity) return 0;
+  const [since, today] = [dateOf(first), dateOf(now)];
+  return Number(today.slice(0, 4)) - Number(since.slice(0, 4)) - (today.slice(5) < since.slice(5) ? 1 : 0);
+}
 
 const whole = (n: unknown, what: string, least: number): void => {
   if (!Number.isSafeInteger(n) || (n as number) < least) throw new RangeError(`${what} must be a whole number of at least ${least} (${String(n)})`);
@@ -276,19 +423,27 @@ const whole = (n: unknown, what: string, least: number): void => {
 
 /** A part as given, held to what an engagement can be. */
 export function partOf(a: Part): Part {
-  if (!['sag-aftra', 'pact-equity', 'uk-theatre', 'actra'].includes(a.agreement)) throw new Error(`there's no agreement ${String(a.agreement)}`);
-  if (!['day', 'week'].includes(a.term)) throw new Error(`there's no term ${String(a.term)}`);
+  if (!AGREEMENTS.includes(a.agreement)) throw new Error(`there's no agreement ${String(a.agreement)}`);
+  if (!TERMS.includes(a.term)) throw new Error(`there's no term ${String(a.term)}`);
   whole(a.budget, 'the budget', 0);
   whole(a.seats, 'the seats', 0);
   whole(a.lines, 'the lines', 0);
   whole(a.length, 'the length', 1);
   whole(a.rehearsal, 'the rehearsal', 0);
-  const stage = STAGE.includes(a.agreement);
-  if (stage && a.term === 'day') throw new Error('a stage engagement is by the week');
-  if (!stage && a.rehearsal > 0) throw new Error("rehearsal weeks are a stage engagement's");
+  if (a.minutes !== undefined) whole(a.minutes, 'the minutes', 1);
+  if (a.medium !== undefined && !MEDIA.includes(a.medium)) throw new Error(`there's no medium ${String(a.medium)}`);
+  const market = marketOf(a.agreement);
+  if (market === undefined) {
+    if (a.medium !== undefined || a.role !== undefined || a.minutes !== undefined) throw new Error(`${a.agreement} sets no terms by medium, role or minutes`);
+    if (a.term !== 'day' && a.term !== 'week') throw new Error(`there's no ${a.term} minimum for that part`);
+    const stage = STAGE.includes(a.agreement);
+    if (stage && a.term === 'day') throw new Error('a stage engagement is by the week');
+    if (!stage && a.rehearsal > 0) throw new Error("rehearsal weeks are a stage engagement's");
+  }
   demands(a);
   const scale = scaleOf(a);
-  if (scale !== null && scale[a.term] === undefined) throw new Error(`there's no ${a.term} minimum for that part`);
+  if (scale !== null && (scale.bands === undefined ? scale[a.term as 'day' | 'week'] === undefined : scale.bands.length === 0)) throw new Error(`there's no ${a.term} minimum for that part`);
+  if (scale?.bands !== undefined && a.rehearsal > 0 && scale.rehearsal === undefined) throw new Error("there's no rehearsal minimum for that part");
   return a;
 }
 
@@ -326,13 +481,15 @@ export function ageWeights(g: Gender): number[] {
 
 /**
  * Each agreement's market: the language its breakdowns are written in (R-4620: the US breakdowns are English; the
- * game's for the UK's and Canada's English-language agreements) and where casting reckons the actor's age.
+ * game's for the UK's and Canada's English-language agreements; each of the eighteen markets' own, as compiled) and
+ * where casting reckons the actor's age (the market's city's zone).
  */
 export const MARKET: Readonly<Record<Agreement, { readonly language: string; readonly zone: string }>> = {
   'sag-aftra': { language: 'en', zone: 'America/Los_Angeles' },
   'pact-equity': { language: 'en', zone: 'Europe/London' },
   'uk-theatre': { language: 'en', zone: 'Europe/London' },
   actra: { language: 'en', zone: 'America/Toronto' },
+  ...(Object.fromEntries(Object.values(MARKETS).flatMap((m) => m.agreements.map((id) => [id, { language: m.language, zone: m.zone }]))) as Record<(typeof MARKET_AGREEMENTS)[number], { language: string; zone: string }>),
 };
 
 /** How well an actor must speak a part's language to be seen for it, the game's own (person.acting.model). */
@@ -425,8 +582,36 @@ export interface PlayArgs {
 }
 
 /** Plays a part booked: how well, as the actor is in what it asks, and what it pays. */
-/** The country each agreement's work is in: SAG-AFTRA's the US, Pact/Equity's and UK Theatre's the UK, ACTRA's Canada. */
-export const COUNTRY: Readonly<Record<Agreement, CountryCode>> = { 'sag-aftra': 'US', 'pact-equity': 'GB', 'uk-theatre': 'GB', actra: 'CA' };
+/** The country each agreement's work is in: SAG-AFTRA's the US, Pact/Equity's and UK Theatre's the UK, ACTRA's Canada, a market's its own. */
+export const COUNTRY: Readonly<Record<Agreement, CountryCode>> = {
+  'sag-aftra': 'US',
+  'pact-equity': 'GB',
+  'uk-theatre': 'GB',
+  actra: 'CA',
+  ...(Object.fromEntries(MARKET_AGREEMENTS.map((id) => [id, (COMPILED[id] as MarketAgreement).country])) as Record<(typeof MARKET_AGREEMENTS)[number], CountryCode>),
+};
+
+/** The line that tells the player what of a market isn't known. */
+export const UNKEPT_LINE: LineId = 'acting.unkept';
+/** Each item a market's research couldn't find, as the player is told it. */
+export const MISSING: Readonly<Record<Unknown, string>> = {
+  agreements: 'some of the agreements parts are engaged under',
+  rates: 'some of the minimums parts are paid',
+  none: 'whether anything sets the pay where no agreement does',
+  union: "the union's fees or whether a part needs it",
+  language: 'the language parts are cast in',
+  market: 'where most of the work is',
+};
+
+/** What the player is told of an agreement's market where its research couldn't find all of it: "a, b and c"; nothing where it is known whole. */
+export function aboutMarket(agreement: Agreement): string | undefined {
+  const a = marketOf(agreement);
+  if (a === undefined) return undefined;
+  const missing = (MARKETS[a.country] as Market).unknown.map((u) => MISSING[u]);
+  if (missing.length === 0) return undefined;
+  const list = missing.length > 1 ? `${missing.slice(0, -1).join(', ')} and ${missing.at(-1) as string}` : (missing[0] as string);
+  return t(UNKEPT_LINE, { country: countryName(a.country), missing: list });
+}
 
 function play(s: Acting & { unions: UnionsSlice; permits: PermitsSlice }, a: PlayArgs, c: Context): void {
   const job = auditionOf(s.acting, a.audition);
@@ -441,7 +626,7 @@ function play(s: Acting & { unions: UnionsSlice; permits: PermitsSlice }, a: Pla
   // @slate:consumer attributes.choose
   const k = partSkill(componentValues(s.attributes, 'actor'), job.part);
   const quality = clamp(k + spread(k) * (2 * c.draws('acting.work', 'perform', job.id).float() - 1), 0, 100);
-  job.work = { at: c.now, quality, pay: pay(job.part, dateOf(c.now)) };
+  job.work = { at: c.now, quality, pay: pay(job.part, dateOf(c.now), experience(s.acting, c.now)) };
   practise(s.attributes, 'actor', demands(job.part), daysWorked(job.part));
 }
 

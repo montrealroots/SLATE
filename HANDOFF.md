@@ -2194,3 +2194,19 @@ Switzerland's and Vietnam's routes landed (Vietnam's Decree 393/2026 from 5 Dece
 the part's pay; Japan's processing (18 days, from the Immigration Services Agency's statistics read in a copy), India's
 week, China's engagement-long term, Nigeria's 30 days. Still blocked, attempts dated: Laos's currency, some of Brazil's,
 Italy's, Korea's and Nigeria's fields, Saudi Arabia's other permit facts. 227 countries in papers.work, 210 permits.
+Owner, 2026-11-01: "Now add markets for writers, directors and producers." Nine research subagents (workbench/briefs/
+BRIEF-roles-markets.md), three a role: the writer's and the director's guild agreements, minimums, periods, rights
+and joining in the UK, Canada and the actor's eighteen markets; the producer's funds, incentives, fee caps and
+outcomes in the US, Canada and the eighteen (the UK's BFI already built; R-4612's CNC, Telefilm and Screen Australia
+figures re-read, not repeated). Each lands as research files and register entries, then each role's engine takes its
+markets as the actor's do.
+Built 2026-11-01, the actor's eighteen more markets (person.acting; research/sources/person/markets/<CC>.json,
+person.markets.<CC> and .blocked.<CC>; compiled by tools/person/markets to src/person/acting/markets.json): 44
+agreements and 321 minimums in Australia, Brazil, Denmark, France, Germany, Ireland, India, Italy, Japan, Korea,
+Mexico, Nigeria, the Netherlands, Norway, New Zealand, Spain, Sweden and South Africa, by medium (film, television,
+stage), role, tier and term (day, week, month, year, session, performance, episode), each with its language and its
+market's zone; where no agreement sets an actor's pay (South Africa, Nigeria, India, Japan's live action, Mexico
+beyond its broadcasters, New Zealand's and the Netherlands' screen) pay is left to negotiation, never a made-up
+figure. What isn't known is told (acting.unkept). The game's readings (an actor's years in the work, a month's and a
+year's working days) are R-5114. A part abroad now reaches the permit engine; Germany's, the Netherlands', Norway's
+and Sweden's exemptions count the days worked there within their periods, tested.

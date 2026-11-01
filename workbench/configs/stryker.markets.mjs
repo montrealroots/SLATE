@@ -1,0 +1,2 @@
+import base from '../../stryker.config.mjs';
+export default { ...base, mutate: ['src/person/acting/acting.ts', 'tools/person/markets/compile.ts', 'tools/person/markets/coverage.ts'], reporters: ['clear-text', 'json'], jsonReporter: { fileName: 'reports/mutation/markets.json' }, ignorePatterns: ['.stryker-tmp*', 'reports', 'graphify-out'], tempDirName: '.stryker-tmp-markets', vitest: { configFile: 'workbench/configs/vitest.markets.config.mjs' } };

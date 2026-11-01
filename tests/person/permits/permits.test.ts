@@ -420,6 +420,16 @@ describe('working in a country', () => {
     expect(permitted(s({}), 'AF', NOW, 1)).toBe(false);
   });
 
+  it("adds the days worked there within the law's period to the engagement's, where the law counts one (Germany's 90 in a year)", () => {
+    const s = (parts: Audition[]) => life(parts).slices;
+    const before = (daysAgo: number, length: number) => played('de-screen', NOW - daysAgo * SECONDS_PER_DAY, 50, length);
+    expect([permitted(s([before(60, 60)]), 'DE', NOW, 30), permitted(s([before(60, 60)]), 'DE', NOW, 31)]).toEqual([true, false]);
+    // A part played longer ago than the year counts nothing.
+    expect(permitted(s([before(366, 60)]), 'DE', NOW, 90)).toBe(true);
+    // The UK counts no period: a part played the day before doesn't count against the next.
+    expect(permitted(s([played('pact-equity', NOW - SECONDS_PER_DAY, 50, 30)]), 'GB', NOW, 30)).toBe(true);
+  });
+
   it("counts the days worked there within the law's period, by the parts played there", () => {
     const acting = (parts: Audition[]) => ({ ...structuredClone(ACTING_START), auditions: parts });
     const parts = [played('pact-equity', NOW - 10 * SECONDS_PER_DAY, 50, 4), played('uk-theatre', NOW - 100 * SECONDS_PER_DAY), played('sag-aftra', NOW - SECONDS_PER_DAY), booked('pact-equity')];

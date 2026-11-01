@@ -1,0 +1,80 @@
+{
+ "engine": "person.acting",
+ "axis": "market-operation",
+ "universe": {
+  "keys": [
+   "markets",
+   "pay",
+   "part",
+   "experience",
+   "aboutMarket",
+   "casting"
+  ]
+ },
+ "rows": [
+  {
+   "key": "markets",
+   "status": "game",
+   "register": [
+    "R-5114"
+   ],
+   "tests": [
+    "tests/person/acting/markets.test.ts::the markets > are each country's own, every minimum as the research gives it",
+    "tests/tools/markets.test.ts::the markets compile > compiles the eighteen markets the engine reads"
+   ]
+  },
+  {
+   "key": "pay",
+   "status": "game",
+   "register": [
+    "R-5114"
+   ],
+   "tests": [
+    "tests/person/acting/markets.test.ts::a market's part > is paid at its agreement's minimum, by medium, role, term and tier",
+    "tests/person/acting/markets.test.ts::a market's part, played > pays the minimum for the actor's years, where the person may work in the market's country"
+   ]
+  },
+  {
+   "key": "part",
+   "status": "game",
+   "register": [
+    "R-5114"
+   ],
+   "tests": [
+    "tests/person/acting/markets.test.ts::a market's part > is refused a medium, a role, a term or a rehearsal its agreement does not set",
+    "tests/person/acting/acting.test.ts::a part > is held to what an engagement can be",
+    "tests/person/acting/markets.test.ts::a market's part > is played on stage where its medium is, and works its days by the term"
+   ]
+  },
+  {
+   "key": "experience",
+   "status": "game",
+   "register": [
+    "R-5114"
+   ],
+   "tests": [
+    "tests/person/acting/markets.test.ts::a market's part > reckons the actor's years in the work from the first part played"
+   ]
+  },
+  {
+   "key": "aboutMarket",
+   "status": "game",
+   "register": [
+    "R-5114"
+   ],
+   "tests": [
+    "tests/person/acting/markets.test.ts::a market's part > tells the player what of a market isn't known"
+   ]
+  },
+  {
+   "key": "casting",
+   "status": "game",
+   "register": [
+    "R-5114"
+   ],
+   "tests": [
+    "tests/person/acting/markets.test.ts::a market's part, played > is cast in the market's language, the age reckoned in its city"
+   ]
+  }
+ ]
+}

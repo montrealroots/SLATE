@@ -371,10 +371,8 @@ export function permitted(s: Lives, country: CountryCode, now: number, days: num
   return p.citizenship.some((c) => {
     const w = work(c, country) as Work | undefined;
     if (w?.days === undefined || !shortEngagement(s, w, now)) return false;
-    // Where the law counts no period, the engagement is counted alone. No engagement can be booked yet where the law
-    // counts one (acting's agreements are the US's, the UK's and Canada's, none of which does), so the days there are
-    // none either way; daysWorkedIn's own test holds the counting.
-    // Stryker disable next-line ConditionalExpression,EqualityOperator: as said.
+    // Where the law counts no period (the UK), the engagement is counted alone; where it counts one (Germany's 90 days
+    // in a year, the Netherlands' 42 in 91, Norway's and Sweden's 14 in a year), the days worked there within it too.
     return (w.within === undefined ? 0 : daysWorkedIn(s.acting, country, now, w.within)) + days <= w.days;
   });
 }

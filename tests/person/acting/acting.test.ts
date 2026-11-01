@@ -122,7 +122,10 @@ describe('a part', () => {
   it('is held to what an engagement can be', () => {
     expect(partOf(part())).toEqual(part());
     expect(() => partOf(part({ agreement: 'wga' as 'actra' }))).toThrow("there's no agreement wga");
-    expect(() => partOf(part({ term: 'month' as 'day' }))).toThrow("there's no term month");
+    expect(() => partOf(part({ term: 'fortnight' as 'day' }))).toThrow("there's no term fortnight");
+    // SAG-AFTRA, Pact/Equity, UK Theatre and ACTRA pay by the day or the week, even where no minimum is set.
+    for (const term of ['month', 'session'] as const) expect(() => partOf(part({ term, budget: 0 })), term).toThrow(`there's no ${term} minimum for that part`);
+    for (const over of [{ medium: 'film' as const }, { role: 'lead' }, { minutes: 30 }]) expect(() => partOf(part(over)), JSON.stringify(over)).toThrow('sag-aftra sets no terms by medium, role or minutes');
     expect(() => partOf(part({ budget: -1 }))).toThrow('the budget must be a whole number of at least 0 (-1)');
     expect(() => partOf(part({ budget: 1.5 }))).toThrow(RangeError);
     expect(() => partOf(part({ seats: -1 }))).toThrow('the seats must be a whole number of at least 0 (-1)');
@@ -347,7 +350,7 @@ describe('a breakdown', () => {
     expect(MAJOR_AGES).toEqual({ women: { thirties: 32, forties: 15, over40: 28, over60: 2 }, men: { thirties: 22, forties: 29, over40: 59, over60: 8 } });
     expect(BANDS).toEqual([[6, 12], [13, 17], [18, 29], [30, 39], [40, 49], [50, 59], [60, 75]]);
     expect(YOUNG).toEqual({ child: 0.1, teen: 0.1 });
-    expect(MARKET).toEqual({ 'sag-aftra': { language: 'en', zone: 'America/Los_Angeles' }, 'pact-equity': { language: 'en', zone: 'Europe/London' }, 'uk-theatre': { language: 'en', zone: 'Europe/London' }, actra: { language: 'en', zone: 'America/Toronto' } });
+    expect(MARKET).toMatchObject({ 'sag-aftra': { language: 'en', zone: 'America/Los_Angeles' }, 'pact-equity': { language: 'en', zone: 'Europe/London' }, 'uk-theatre': { language: 'en', zone: 'Europe/London' }, actra: { language: 'en', zone: 'America/Toronto' } });
     expect(FLUENT).toBe('C1');
   });
 
@@ -549,7 +552,7 @@ describe('playing a part', () => {
     expect(auditions(dispatch(holding, playPart, { audition: 1 }))[0]?.work).not.toBeNull();
     const irish = withAuditions(made(50, {}, SEED, AUGUST, identity({ citizenship: ['IE'] })), [booked(uk)]);
     expect(auditions(dispatch(irish, playPart, { audition: 1 }))[0]?.work).not.toBeNull();
-    expect(COUNTRY).toEqual({ 'sag-aftra': 'US', 'pact-equity': 'GB', 'uk-theatre': 'GB', actra: 'CA' });
+    expect(COUNTRY).toMatchObject({ 'sag-aftra': 'US', 'pact-equity': 'GB', 'uk-theatre': 'GB', actra: 'CA' });
     const canadian = withAuditions(made(50, {}, SEED, AUGUST, identity({ citizenship: ['CA'] })), [booked(part({ agreement: 'actra' })), booked(part(), 2)]);
     expect(auditions(dispatch(canadian, playPart, { audition: 1 }))[0]?.work).not.toBeNull();
     expect(() => dispatch(canadian, playPart, { audition: 2 })).toThrow('the person may not work in US without a permit');
