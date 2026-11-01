@@ -175,16 +175,16 @@ describe('permits.apply', () => {
 
   it("names what the permit lacks, and refuses a passport whose permit isn't the one researched, or a country whose rules aren't kept", () => {
     const who = (citizenship: string[]) => ({ identity: identity({ citizenship: citizenship as Person['citizenship'] }) });
-    expect(permitFor(who(['US']), 'GB', false)).toBe(permitOf('GB'));
-    expect(() => permitFor(who(['US']), 'AF', false)).toThrow("What Afghanistan asks of a performer from abroad isn't known to this game yet.");
-    expect(() => permitFor(who(['US']), 'BT', false)).toThrow(aboutPermit('BT') as string);
-    expect(() => permitFor(who(['IN']), 'AS', false)).toThrow("Some of what American Samoa asks of someone from abroad for a work permit isn't known to this game yet: how long a decision takes and how long it is granted for.");
-    expect(() => permitFor(who(['US']), 'BJ', false)).toThrow(t(UNKEPT_LINE, { country: 'Benin', missing: 'who applies' }));
-    expect(() => permitFor(who(['US']), 'AI', false)).toThrow("Some of what Anguilla asks of someone from abroad for a work permit isn't known to this game yet: how long a decision takes.");
+    expect(permitFor(who(['US']), 'GB', false, 'actor')).toBe(permitOf('GB'));
+    expect(() => permitFor(who(['US']), 'AF', false, 'actor')).toThrow("What Afghanistan asks of a performer from abroad isn't known to this game yet.");
+    expect(() => permitFor(who(['US']), 'BT', false, 'actor')).toThrow(aboutPermit('BT') as string);
+    expect(() => permitFor(who(['IN']), 'AS', false, 'actor')).toThrow("Some of what American Samoa asks of someone from abroad for a work permit isn't known to this game yet: how long a decision takes and how long it is granted for.");
+    expect(() => permitFor(who(['US']), 'BJ', false, 'actor')).toThrow(t(UNKEPT_LINE, { country: 'Benin', missing: 'who applies' }));
+    expect(() => permitFor(who(['US']), 'AI', false, 'actor')).toThrow("Some of what Anguilla asks of someone from abroad for a work permit isn't known to this game yet: how long a decision takes.");
     // Liechtenstein asks the EEA's citizens for another permit than the one researched; Jamaica's citizens take the CSME's in Grenada.
-    expect(() => permitFor(who(['DE']), 'LI', false)).toThrow("the permit your passport takes in LI isn't known");
-    expect(permitFor(who(['DE', 'IN']), 'LI', false)).toBe(permitOf('LI'));
-    expect(() => permitFor(who(['JM']), 'GD', false)).toThrow("the permit your passport takes in GD isn't known");
+    expect(() => permitFor(who(['DE']), 'LI', false, 'actor')).toThrow("the permit your passport takes in LI isn't known");
+    expect(permitFor(who(['DE', 'IN']), 'LI', false, 'actor')).toBe(permitOf('LI'));
+    expect(() => permitFor(who(['JM']), 'GD', false, 'actor')).toThrow("the permit your passport takes in GD isn't known");
   });
 
   it('permits.apply bites: an engagement booked in another country is applied for there', () => {
@@ -491,6 +491,9 @@ describe('an engagement in another role', () => {
     const done = roles([film({ cut: 70 })], [project({ shot: { at: 0, days: 25 } })]).slices;
     expect([engagedIn(done, 'director', 1).done, engagedIn(done, 'producer', 1).done]).toEqual([true, true]);
     expect(() => engagedIn(s, 'writer' as 'actor', 1)).toThrow("there's no role writer a permit is applied for in");
+    // An actor's engagement is paid at the part's minimum on the day.
+    const actor = life([booked('pact-equity')]).slices;
+    expect(engagedIn({ ...actor, directing: s.directing, producing: s.producing }, 'actor', 1).earned('2024-05-01')).toStrictEqual(pay(part('pact-equity'), '2024-05-01'));
   });
 
   it('is applied for there, the engager or the worker as the research says, and refused once done', () => {
@@ -509,6 +512,7 @@ describe('an engagement in another role', () => {
   });
 
   it("is refused where the route doesn't cover the role, and the player is told", () => {
+    for (const rule of Object.values(COVERS)) for (const roles of [rule.free, rule.permit]) if (roles !== undefined) expect(roles).toContain('actor');
     expect(COVERS).toEqual({ KZ: { free: ['actor', 'director'] }, AM: { free: ['actor'] }, JP: { permit: ['actor'] }, SE: { permit: ['actor', 'director'] }, EG: { permit: ['actor', 'director'] } });
     const who = { identity: identity() };
     expect(() => permitFor(who, 'JP', false, 'director')).toThrow(t(UNKEPT_LINE, { country: 'Japan', missing: 'the permit a director takes' }));
@@ -520,6 +524,8 @@ describe('an engagement in another role', () => {
     expect(() => permitFor(who, 'AM', false, 'director')).toThrow(t(UNKEPT_LINE, { country: 'Armenia', missing: 'the permit a director takes' }));
     const s = roles().slices;
     expect([permitted(s, 'KZ', NOW, 400, 'actor'), permitted(s, 'KZ', NOW, 400, 'director'), permitted(s, 'KZ', NOW, 400, 'producer'), permitted(s, 'KZ', NOW, 400)]).toEqual([true, true, false, true]);
+    // Sweden names whom its permit covers, not whom free movement does: an EEA citizen works there in any role.
+    expect(permitted(roles([], [], { citizenship: ['DE'] }).slices, 'SE', NOW, 400, 'producer')).toBe(true);
     // At home every role is free.
     expect(permitted(roles([], [], { citizenship: ['KZ'] }).slices, 'KZ', NOW, 400, 'producer')).toBe(true);
     expect(() => permitFor({ identity: identity({ citizenship: ['KZ'] }) }, 'KZ', false, 'producer')).toThrow('you need no permit to work in KZ');
@@ -534,6 +540,9 @@ describe('an engagement in another role', () => {
     expect(daysWorkedIn(s, 'GB', NOW, 15)).toBe(4 + 7);
     expect(daysWorkedIn(s, 'GB', NOW, 20)).toBe(4 + 7);
     expect(daysWorkedIn(s, 'IT', NOW, 100)).toBe(9);
+    // A project shot before the period, or exactly at its start, isn't counted.
+    const edge = roles([], [project({ market: 'FR', shot: { at: NOW - 100 * SECONDS_PER_DAY, days: 7 } }), project({ id: 2, market: 'FR', shot: { at: NOW - 101 * SECONDS_PER_DAY, days: 5 } }), project({ id: 3, market: 'FR', shot: { at: NOW - 99 * SECONDS_PER_DAY, days: 3 } })]).slices;
+    expect(daysWorkedIn(edge, 'FR', NOW, 100)).toBe(3);
   });
 });
 

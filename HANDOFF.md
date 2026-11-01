@@ -2272,3 +2272,8 @@ holds none). Routes whose research names whom they cover (Kazakhstan, Armenia, J
 roles and say so. The permit line reads for any role now ("someone from abroad").
 Owner, 2026-11-01: "Retry the blocked tax facts once all countries land." When the last of the three tax subagents
 reports, every blocked tax fact is retried, each method a different way, before the ledger takes the tax.
+Owner, 2026-11-01: "Start the ledger once the tax retry lands." Briefed (workbench/briefs/BRIEF-ledger.md): a tax
+engine from the 21 countries' research; every money the person engines record paid through the ledger when earned or
+spent, less what the work's country withholds at source (resident or non-resident), converted at the day's rate with
+the bank's fee; each tax year reckoned where the person is resident, the balance due or refunded on the return's date.
+It starts when the second tax retry reports and the research lands.

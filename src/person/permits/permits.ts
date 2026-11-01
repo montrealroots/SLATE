@@ -186,7 +186,8 @@ type Work3 = Pick<Lives, 'acting' | 'directing' | 'producing'>;
 /** The roles whose work abroad takes a permit: a writer's sale is a meeting, a visit (mayVisit). */
 export const ROLES = ['actor', 'director', 'producer'] as const;
 export type Role = (typeof ROLES)[number];
-const A_ROLE: Readonly<Record<Role, string>> = { actor: 'an actor', director: 'a director', producer: 'a producer' };
+// Every rule the research names whom it covers covers an actor (COVERS), so only the other roles are ever told apart.
+const A_ROLE: Readonly<Record<Exclude<Role, 'actor'>, string>> = { director: 'a director', producer: 'a producer' };
 
 /**
  * Whom a country's rule covers, where the research names them (the game's reading of its words, papers.permits.model):
@@ -258,7 +259,8 @@ export function mayVisit(p: Person, country: CountryCode): boolean {
   // @slate:consumer identity.make
   return p.citizenship.some((c) => {
     const v = visit(c, country);
-    return v === 'home' || (v !== undefined && v.entry !== 'visa');
+    // At home there is no entry to ask, so never a visa.
+    return v !== undefined && (v as { entry?: string }).entry !== 'visa';
   });
 }
 
@@ -325,12 +327,12 @@ export const ELIGIBILITY: Readonly<Partial<Record<CountryCode, Test>>> = {
 };
 
 /** The permit a person may apply for in a country: refused where they need none, or the permit their passport takes isn't known well enough. */
-export function permitFor(s: Pick<Lives, 'identity'>, country: CountryCode, premium: boolean, role: Role = 'actor'): Permit {
+export function permitFor(s: Pick<Lives, 'identity'>, country: CountryCode, premium: boolean, role: Role): Permit {
   if (!keepsWork(country)) throw new Error(aboutWork(country));
   const p = personOf(s.identity);
   if (freeIn(p, country, role)) throw new Error(`you need no permit to work in ${country}`);
   const permit = permitOf(country);
-  const theirs = `the permit ${A_ROLE[role]} takes`;
+  const theirs = `the permit ${A_ROLE[role as Exclude<Role, 'actor'>]} takes`;
   if (permit === undefined) throw new Error(aboutPermit(country) ?? untold(country, [theirs]));
   if (!covers(country, 'permit', role)) throw new Error(untold(country, [theirs]));
   const route = (KEPT[country] as { others: { route?: string } }).others.route;
@@ -471,6 +473,7 @@ export function permitted(s: Lives, country: CountryCode, now: number, days: num
     if (w?.days === undefined || !shortEngagement(s, w, now)) return false;
     // Where the law counts no period (the UK), the engagement is counted alone; where it counts one (Germany's 90 days
     // in a year, the Netherlands' 42 in 91, Norway's and Sweden's 14 in a year), the days worked there within it too.
+    // Stryker disable next-line ConditionalExpression: with no period, the window's start is NaN and no day falls after it, so the count is 0 either way; the guard says so plainly.
     return (w.within === undefined ? 0 : daysWorkedIn(s, country, now, w.within)) + days <= w.days;
   });
 }
