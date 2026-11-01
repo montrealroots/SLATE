@@ -1,0 +1,83 @@
+{
+ "engine": "person.acting",
+ "axis": "actor-operation",
+ "universe": {
+  "keys": [
+   "audition",
+   "part",
+   "perform",
+   "pay"
+  ]
+ },
+ "rows": [
+  {
+   "key": "audition",
+   "status": "game",
+   "register": [
+    "R-4604",
+    "R-4611",
+    "R-4614",
+    "R-4616"
+   ],
+   "tests": [
+    "tests/person/acting/acting.test.ts::an audition > is taped or held in the room, scored and booked exactly as the draws and the actor give it",
+    "tests/person/acting/acting.test.ts::an audition > shows the scene three fifths and the audition craft two, a self-tape reading Camera too",
+    "tests/person/acting/acting.test.ts::an audition > books 1 in 50 at the weakest to 3 in 10 at the best, up to half again for the best work seen",
+    "tests/person/acting/acting.test.ts::an audition > weighs the best work casting has seen, none counting where a part is not yet played",
+    "tests/person/acting/acting.test.ts::an audition > teaches what it used, for a day: the part, the audition craft, and on tape Camera",
+    "tests/person/acting/acting.test.ts::an audition > is self-taped about 92% of the time, books near three in ten at the top, seldom near the bottom",
+    "tests/person/acting/acting.test.ts::an audition > is refused for a part that cannot be, or before the attributes are chosen",
+    "tests/person/acting/acting.test.ts::an audition > acting.audition: a better auditioner books more parts"
+   ]
+  },
+  {
+   "key": "part",
+   "status": "game",
+   "register": [
+    "R-4604",
+    "R-4611",
+    "R-4614",
+    "R-4616"
+   ],
+   "tests": [
+    "tests/person/acting/acting.test.ts::a part > asks the craft every role uses, its medium, its lines, and what else it calls for",
+    "tests/person/acting/acting.test.ts::a part > is played as well as the actor is in each component it asks, equally",
+    "tests/person/acting/acting.test.ts::a part > is held to what an engagement can be"
+   ]
+  },
+  {
+   "key": "perform",
+   "status": "game",
+   "register": [
+    "R-4604",
+    "R-4611",
+    "R-4614",
+    "R-4616"
+   ],
+   "tests": [
+    "tests/person/acting/acting.test.ts::playing a part > plays it as the actor is in what it asks, within the spread, and pays the minimum for the day it starts",
+    "tests/person/acting/acting.test.ts::playing a part > comes out at the top from an actor at 100 throughout, near 50 from one at 50, poor from one at 10",
+    "tests/person/acting/acting.test.ts::playing a part > is refused where the audition did not book, where the part is played, or where there is no such audition",
+    "tests/person/acting/acting.test.ts::playing a part > finds the audition asked for among several, and an audition booked leads to a part played",
+    "tests/person/acting/acting.test.ts::playing a part > acting.perform: a better actor plays the part better",
+    "tests/person/acting/acting.test.ts::playing a part > is run through the frame, each command declaring what it reads and writes"
+   ]
+  },
+  {
+   "key": "pay",
+   "status": "researched",
+   "register": [
+    "R-4614"
+   ],
+   "tests": [
+    "tests/person/acting/acting.test.ts::a part's pay > writes dates as the tables do, and counts the days worked: five to a week",
+    "tests/person/acting/acting.test.ts::a part's pay > is SAG-AFTRA's day or week minimum for the date, refused before the tables, the last kept after",
+    "tests/person/acting/acting.test.ts::a part's pay > follows SAG-AFTRA's tiers by the budget: none set to $20,000, then Ultra Low, Moderate Low, Low and the basic agreement",
+    "tests/person/acting/acting.test.ts::a part's pay > is Pact/Equity's for a UK feature of £3 million and over, refused under it",
+    "tests/person/acting/acting.test.ts::a part's pay > is UK Theatre's commercial week by the venue's seats, rehearsal weeks at the rehearsal rate",
+    "tests/person/acting/acting.test.ts::a part's pay > is ACTRA's principal by the day or week, a part of five lines or fewer by the day",
+    "tests/person/acting/acting.test.ts::playing a part > works a weekly or stage engagement five days a week, rehearsals too, and pays nothing where no minimum is set"
+   ]
+  }
+ ]
+}

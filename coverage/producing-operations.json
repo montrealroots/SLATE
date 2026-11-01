@@ -1,0 +1,208 @@
+{
+ "engine": "person.producing",
+ "axis": "producer-operation",
+ "universe": {
+  "keys": [
+   "option",
+   "renew",
+   "plan",
+   "credit",
+   "apply",
+   "financed",
+   "raise",
+   "shoot",
+   "release",
+   "record",
+   "quality-by-level",
+   "refusals",
+   "declarations"
+  ]
+ },
+ "rows": [
+  {
+   "key": "option",
+   "status": "game",
+   "register": [
+    "R-4603",
+    "R-4609",
+    "R-4612",
+    "R-4617"
+   ],
+   "tests": [
+    "tests/person/producing/producing.test.ts::optioning material > reads a script a day and options the one the eye judges best, on the WGA's terms",
+    "tests/person/producing/producing.test.ts::optioning material > judges with the eye of choosing the material: blind at 0, true at 100",
+    "tests/person/producing/producing.test.ts::optioning material > numbers each project and is refused for days that are not whole",
+    "tests/person/producing/producing.test.ts::optioning material > producing.option: a better eye options a better script"
+   ]
+  },
+  {
+   "key": "renew",
+   "status": "researched",
+   "register": [
+    "R-4612"
+   ],
+   "tests": [
+    "tests/person/producing/producing.test.ts::renewing an option > adds 18 months from when it would lapse, at another 10%, while it runs",
+    "tests/person/producing/producing.test.ts::renewing an option > producing.renew: a renewed option runs longer"
+   ]
+  },
+  {
+   "key": "plan",
+   "status": "game",
+   "register": [
+    "R-4603",
+    "R-4609",
+    "R-4612",
+    "R-4613",
+    "R-4617"
+   ],
+   "tests": [
+    "tests/person/producing/producing.test.ts::budgeting and scheduling > schedules the days the script needs, around the CNC's 32, nearer the need with a better plan",
+    "tests/person/producing/producing.test.ts::budgeting and scheduling > carries the producer's fee at the BFI's 7.5% of direct costs, and the UK's credit",
+    "tests/person/producing/producing.test.ts::budgeting and scheduling > producing.plan: a better plan schedules nearer the need"
+   ]
+  },
+  {
+   "key": "credit",
+   "status": "researched",
+   "register": [
+    "R-4612"
+   ],
+   "tests": [
+    "tests/person/producing/producing.test.ts::budgeting and scheduling > credits 53% of 80% to £15m (the IFTC, at most £6.36m) and 34% of 80% above (the AVEC)"
+   ]
+  },
+  {
+   "key": "apply",
+   "status": "game",
+   "register": [
+    "R-4603",
+    "R-4609",
+    "R-4612",
+    "R-4617"
+   ],
+   "tests": [
+    "tests/person/producing/producing.test.ts::financing > takes a project by its script, the pitch and the record of films released in the PGA's seven years",
+    "tests/person/producing/producing.test.ts::financing > asks the BFI once: a yes at its 13% as the package sells it, an award of 22% of the budget up to £1.25m",
+    "tests/person/producing/producing.test.ts::financing > producing.apply: a better package is funded more often"
+   ]
+  },
+  {
+   "key": "financed",
+   "status": "game",
+   "register": [
+    "R-4603",
+    "R-4609",
+    "R-4612",
+    "R-4617"
+   ],
+   "tests": [
+    "tests/person/producing/producing.test.ts::financing > is financed when the sources close all but the producer's own 18%: the credit, the BFI, broadcasters, pre-sales, equity"
+   ]
+  },
+  {
+   "key": "raise",
+   "status": "game",
+   "register": [
+    "R-4603",
+    "R-4609",
+    "R-4612",
+    "R-4617"
+   ],
+   "tests": [
+    "tests/person/producing/producing.test.ts::financing > raises the rest from the market, a source a day at a time as the package sells it, until financed",
+    "tests/person/producing/producing.test.ts::financing > producing.raise: a better financier closes more of the market in a season"
+   ]
+  },
+  {
+   "key": "shoot",
+   "status": "game",
+   "register": [
+    "R-4603",
+    "R-4609",
+    "R-4612",
+    "R-4613",
+    "R-4617"
+   ],
+   "tests": [
+    "tests/person/producing/producing.test.ts::the shoot > slips where the team falters, the days past the schedule at the budget's day rate, taken from the fee first",
+    "tests/person/producing/producing.test.ts::the shoot > producing.shoot: a better team keeps the shoot to its days"
+   ]
+  },
+  {
+   "key": "release",
+   "status": "game",
+   "register": [
+    "R-4603",
+    "R-4609",
+    "R-4612",
+    "R-4617"
+   ],
+   "tests": [
+    "tests/person/producing/producing.test.ts::the release > is at the BFI's rates by budget: a cinema release 11.6% under £0.5m to 83.3% above £10m, twice the budget back 3.3% to 14.8%",
+    "tests/person/producing/producing.test.ts::the release > releases as the film and its campaign sell it, and teaches Marketing",
+    "tests/person/producing/producing.test.ts::the release > producing.release: a better campaign gets more films into cinemas"
+   ]
+  },
+  {
+   "key": "record",
+   "status": "game",
+   "register": [
+    "R-4603",
+    "R-4609",
+    "R-4612",
+    "R-4617"
+   ],
+   "tests": [
+    "tests/person/producing/producing.test.ts::financing > takes a project by its script, the pitch and the record of films released in the PGA's seven years",
+    "tests/person/producing/producing.test.ts::the release > counts toward how financiers take the next project"
+   ]
+  },
+  {
+   "key": "quality-by-level",
+   "status": "game",
+   "register": [
+    "R-4603",
+    "R-4609",
+    "R-4612",
+    "R-4613",
+    "R-4617"
+   ],
+   "tests": [
+    "tests/person/producing/producing.test.ts::the producer > at 100 throughout gets the top of what is real; at 50 the trade's own rates; at 10 worse"
+   ]
+  },
+  {
+   "key": "refusals",
+   "status": "game",
+   "register": [
+    "R-4603",
+    "R-4609",
+    "R-4612",
+    "R-4617"
+   ],
+   "tests": [
+    "tests/person/producing/producing.test.ts::optioning material > numbers each project and is refused for days that are not whole",
+    "tests/person/producing/producing.test.ts::renewing an option > adds 18 months from when it would lapse, at another 10%, while it runs",
+    "tests/person/producing/producing.test.ts::budgeting and scheduling > is refused twice, under £1, or for an amount that is not one",
+    "tests/person/producing/producing.test.ts::financing > is refused twice, before a budget, with under ten months on the option, or once financed",
+    "tests/person/producing/producing.test.ts::financing > raises the rest from the market, a source a day at a time as the package sells it, until financed",
+    "tests/person/producing/producing.test.ts::the shoot > is refused before it is financed or once the option lapses",
+    "tests/person/producing/producing.test.ts::the release > is refused before the shoot, or twice"
+   ]
+  },
+  {
+   "key": "declarations",
+   "status": "game",
+   "register": [
+    "R-4603",
+    "R-4609",
+    "R-4612",
+    "R-4617"
+   ],
+   "tests": [
+    "tests/person/producing/producing.test.ts::the producer > is run through the frame, each command declaring what it reads and writes"
+   ]
+  }
+ ]
+}

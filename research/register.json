@@ -171502,6 +171502,173 @@
      "said": "we find that the percentage of such cases is extremely high (around 69% for males and 68% for females) \u2026 one-hit wonders, i.e., actors whose career spans only a single year, are the norm rather than the exception. Long career lengths and high activity are found to be exponentially rare"
     }
    ]
+  },
+  {
+   "id": "R-4615",
+   "fact": "person.directing.model",
+   "sought": "The figures the director's engine needs that no source gives: how a director's attributes turn into a film's parts, how short schedules and cuts cost, how far a festival's rate moves with quality, what reads as a debut finding an audience, how a pitch moves a second feature's odds.",
+   "status": "game",
+   "why": "R-4613 gives the DGA's terms, the CNC's shooting days, festivals' counts and the second-feature rates; it gives no pages-per-day or set-ups rate, no casting or rehearsal period, no third-feature rate, no SXSW submission count, no 2026 Basic Agreement text (its blockers). The game reckons the rest, and tells the player these are its own until the owner balances them.",
+   "playerLabel": "directing.model",
+   "value": {
+    "partSkill": "a part's skill is the plain mean of its broad attributes' components, each read through its facets (facetSkill: 75% own, 25% tied components)",
+    "parts": {
+     "story": [
+      "vision",
+      "script-sense"
+     ],
+     "performances": [
+      "working-with-actors"
+     ],
+     "images": [
+      "visual-craft"
+     ],
+     "cut": [
+      "editing"
+     ]
+    },
+    "quality": "the finished film is the plain mean of story, performances, images (as shot) and the cut",
+    "spread": {
+     "at100": 3,
+     "at0": 18,
+     "form": "3 + 15 * (1 - skill/100), either side, uniform draw"
+    },
+    "finish": {
+     "lossAtAdaptability0": 0.6,
+     "lossAtAdaptability100": 0.3,
+     "form": "1 - (1 - min(1, days/needed)) * (0.6 - 0.3 * adaptability/100)"
+    },
+    "shootNeeded": {
+     "atPace50": "the trade's schedule (32 days a feature, the DGA's guaranteed shooting days an episode)",
+     "atPace100": 0.75,
+     "atPace0": 1.25,
+     "pace": {
+      "time-management": 0.6,
+      "plan-each-shot": 0.4
+     }
+    },
+    "featureShootAppliedToEveryBudget": "the CNC's 32-day mean (French fiction features, mean budget EUR 5.66M) is the base for a feature of any budget",
+    "onSet": {
+     "at0": 0.8,
+     "at100": 1,
+     "components": [
+      "lead-cast-and-crew",
+      "coordination",
+      "speech-clarity",
+      "active-listening"
+     ],
+     "weights": "equal"
+    },
+    "cutNeeded": {
+     "daysPerShootDayAtEditing0": 1,
+     "daysPerShootDayAtEditing100": 0.5,
+     "reading": "the sideletter's and the Basic Agreement's own ratios read as the footage's need, the game's reading"
+    },
+    "halfHourCutDays": "2: one day and the up to one more the BA allows, read at its most",
+    "daysPerWeek": 7,
+    "festivalSelection": {
+     "pool": 50,
+     "steepness": 5,
+     "form": "min(1, rate * (quality/50)^5)"
+    },
+    "audience": "a debut chosen by any festival modeled is read as one that found an audience (Follows's 1,000+ IMDb votes)",
+    "secondPitch": {
+     "form": "rate * (0.5 + pitch/100)",
+     "pitch": [
+      "pitching-and-presenting-the-project",
+      "persuasion",
+      "promote-productions-through-interviews-and-public-appearance"
+     ],
+     "weights": "equal"
+    },
+    "practise": {
+     "prep": "its prep days",
+     "shoot": "its shooting days",
+     "cut": "its Director's Cut days",
+     "pursue": 1
+    },
+    "laterFeatures": "a third feature and after need no backing: no source gives a third feature's odds (shortcut until one is found)",
+    "notModeled": "non-network and High Budget SVOD episodes, pilots, episodic hiring (series-affiliated against career-track), SXSW (no submission count), Sundance's episodic section, a feature's pay at $3M or less (left to negotiation: no fee), deals above scale, payment into the ledger (recorded only, as the screenwriter's sale)"
+   },
+   "sources": []
+  },
+  {
+   "id": "R-4616",
+   "fact": "person.acting.model",
+   "sought": "The figures the actor's model needs that no source gives: an audition-to-booking ratio, how a part's quality and an audition's are made of the actor's components, what a credit adds, the working days in a non-SAG-AFTRA week, and the rate in force past an agreement's term.",
+   "status": "game",
+   "why": "R-4614's blocker: SAG-AFTRA's 2022 survey, ACTRA Toronto's 2025 survey, Equity UK, casting platforms and the trade press publish no audition-to-booking ratio (agents' columns say 1 in 6 to 1 in 50, without data); no source weighs an actor's skills into a performance; the agreements' next rates are not yet read. The game reckons them until the owner balances them, and says so (proposed line acting.model).",
+   "playerLabel": "acting.model",
+   "value": {
+    "bookingFloor": 0.02,
+    "bookingTop": 0.3,
+    "bookingCurve": "floor + (top - floor) * (audition / 100)^2",
+    "creditBoost": 0.5,
+    "creditIs": "the best quality among parts played, 0 to 100; booking chance times (1 + 0.5 * credit / 100)",
+    "auditionShares": {
+     "partScene": 0.6,
+     "auditionCraft": 0.4
+    },
+    "auditionCraft": [
+     "prepare-for-and-go-to-auditions",
+     "audition-technique",
+     "self-taping (on tape only)"
+    ],
+    "craftEveryPartAsks": [
+     "acting-techniques",
+     "understanding-character-and-situation",
+     "text-analysis",
+     "own-interpretation",
+     "research-roles",
+     "study-roles-from-scripts",
+     "ability-to-take-direction",
+     "konzentrationsf-higkeit"
+    ],
+    "mediumAsks": {
+     "screen": [
+      "acting-for-the-camera"
+     ],
+     "stage": [
+      "appropriation-d-espace-sc-nique",
+      "speaking"
+     ]
+    },
+    "linesAsk": "memorise-lines where the part has any lines",
+    "componentWeights": "every component a part asks counts equally",
+    "spread": "the screenwriter's: 3 points either side at 100, 18 at 0 (person.work.model, reused, not copied)",
+    "practiseDays": "an audition teaches one day; a part teaches the days it works",
+    "weekDaysOutsideSagAftra": 5,
+    "selfTapeShareOutsideUS": "SAG-AFTRA's 0.92 applied to every agreement (ACTRA Toronto: 'most' first rounds; Equity UK: no share published)",
+    "rateAfterTerm": "the last agreed rate is kept past an agreement's term or its last read year (Pact/Equity after 2025-04-05, UK Theatre after its 2025-26 year, ACTRA after 2027, SAG-AFTRA after 2030-06-30)",
+    "rateAcrossAStep": "an engagement is paid all at the rate in force the day it starts",
+    "dateIsUT": "the day a rate applies is read in UT, not the place's zone"
+   },
+   "sources": []
+  },
+  {
+   "id": "R-4617",
+   "fact": "person.producing.model",
+   "sought": "How a producer's attributes decide the material optioned, how near the need a schedule comes, how financiers and the market take a package, how far a shoot slips, and how far a film and its campaign move the published release and recoupment rates",
+   "status": "game",
+   "why": "What stands on sources is theirs (R-4612): the WGA's option terms, the CNC's 32 shooting days (2024, R-4613, shared with the director), the BFI's fee line, funding rate, award share and most, its ten months left on an option, the UK's credits, the EAO's financing shares, the BFI's release and recoupment rates by budget, the PGA's two features in seven years; the components and facets read (R-4609). No source gives how well a producer's eye reads a script, how far a script's need sits from the average or a plan from the need, how far a shoot slips where the team falters, how often the market closes a deal, how much a package, a record or a campaign moves a published rate, or who covers what the named sources leave: the game reckons those, balanced later at the owner's word, so that a producer at 100 throughout gets the top of what's real and lower levels correspondingly worse, and the player is told the reckoning is the game's own.",
+   "playerLabel": "producing.model",
+   "value": {
+    "material": "a script read a day, each worth 0 to 100 uniformly; the producer's judgement off by up to 100 points either side at 0 in choosing the material, none at 100; the one judged best optioned",
+    "need": "a script's shooting days the CNC's 32 within 25% either side",
+    "plan": "the plan's days off the need by up to 30% either side at 0, none at 100 (detailed plan 50%, production costs 50%)",
+    "directCosts": "the BFI's 7 to 8% read as 7.5%, of a budget taken as direct costs plus the fee alone",
+    "coreSpend": "all of a budget counted as UK core spend for the credit",
+    "bfiAward": "the 22% average award share held as every award's, up to the Impact fund's \u00a31.25m; no debut rate, no Discovery band",
+    "pitch": "30% the pitch, 20% arranging finance, 10% the financing strategy, 20% the network, 10% communication, 10% negotiation",
+    "factor": "0.5 + (half the material, half the pitch)/100, plus 0.1 for each film released in cinemas in the PGA's seven years, up to its two: 0.5 to 1.7, multiplying the BFI's 13% and the market's daily chance",
+    "market": "a chance a day of closing the next source, 1 in 30 times the factor; broadcasters and pre-sales at the EAO's 18% and 14% of budget, equity closing the rest; the producer's own investment the EAO's 18%, carried last, the project financed when the rest is closed",
+    "shoot": "the needed days slipping by up to 50% at 0 (team: crew and lead equally; crew 40% hiring, 20% each coordination, time, detail; lead 40% leading the team, 20% each stress, problems, change), none at 100; the days past the schedule at the budget over the scheduled days; the overrun taken from the producer's fee first",
+    "quality": "the film half the material, half the team, within the screenwriter's spread (3 at 100, 18 at 0)",
+    "release": "the BFI's rate for the budget times 0.5 + (half the film, half the campaign: 70% marketing plans, 30% communications and media)/100; recoupment the same factor on the BFI's rate for those released",
+    "practice": "option the days read (Development); plan one day (Production, Financing); the BFI one day (Development, Financing, Dealmaking); raising its days (Financing, Dealmaking); the shoot its days (Production, Leadership); the release one day (Marketing)",
+    "zone": "the option's months counted in Europe/London"
+   },
+   "sources": []
   }
  ]
 }

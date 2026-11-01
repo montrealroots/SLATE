@@ -1,0 +1,123 @@
+{
+ "engine": "person.attributes",
+ "axis": "director-attribute",
+ "universe": {
+  "keys": [
+   "vision",
+   "script-sense",
+   "working-with-actors",
+   "visual-craft",
+   "editing",
+   "leadership",
+   "communication"
+  ]
+ },
+ "rows": [
+  {
+   "key": "vision",
+   "status": "game",
+   "register": [
+    "R-4602",
+    "R-4610",
+    "R-4613",
+    "R-4615"
+   ],
+   "tests": [
+    "tests/person/directing/directing.test.ts::a film's parts > are moved by every broad attribute of the part, and by none of the others but through a facet a source ties",
+    "tests/person/directing/directing.test.ts::prep > directing.prep: a director with more Vision plans a better story",
+    "tests/person/directing/directing.test.ts::the director > reads every broad attribute somewhere in the work"
+   ]
+  },
+  {
+   "key": "script-sense",
+   "status": "game",
+   "register": [
+    "R-4602",
+    "R-4610",
+    "R-4613",
+    "R-4615"
+   ],
+   "tests": [
+    "tests/person/directing/directing.test.ts::a film's parts > are moved by every broad attribute of the part, and by none of the others but through a facet a source ties",
+    "tests/person/directing/directing.test.ts::prep > plans each part at what the director can do in it, within the spread",
+    "tests/person/directing/directing.test.ts::the director > reads every broad attribute somewhere in the work"
+   ]
+  },
+  {
+   "key": "working-with-actors",
+   "status": "game",
+   "register": [
+    "R-4602",
+    "R-4610",
+    "R-4613",
+    "R-4615"
+   ],
+   "tests": [
+    "tests/person/directing/directing.test.ts::a film's parts > are moved by every broad attribute of the part, and by none of the others but through a facet a source ties",
+    "tests/person/directing/directing.test.ts::prep > plans each part at what the director can do in it, within the spread",
+    "tests/person/directing/directing.test.ts::the director > reads every broad attribute somewhere in the work"
+   ]
+  },
+  {
+   "key": "visual-craft",
+   "status": "game",
+   "register": [
+    "R-4602",
+    "R-4610",
+    "R-4613",
+    "R-4615"
+   ],
+   "tests": [
+    "tests/person/directing/directing.test.ts::a film's parts > are moved by every broad attribute of the part, and by none of the others but through a facet a source ties",
+    "tests/person/directing/directing.test.ts::the shoot > needs the trade's schedule from a director at 50 in holding it, a quarter less at 100, a quarter more at 0",
+    "tests/person/directing/directing.test.ts::the director > reads every broad attribute somewhere in the work"
+   ]
+  },
+  {
+   "key": "editing",
+   "status": "game",
+   "register": [
+    "R-4602",
+    "R-4610",
+    "R-4613",
+    "R-4615"
+   ],
+   "tests": [
+    "tests/person/directing/directing.test.ts::the cut > needs a day for each shooting day from a director at 0 in Editing, a day for every two at 100",
+    "tests/person/directing/directing.test.ts::the cut > directing.cut: a better editor cuts better",
+    "tests/person/directing/directing.test.ts::the director > reads every broad attribute somewhere in the work"
+   ]
+  },
+  {
+   "key": "leadership",
+   "status": "game",
+   "register": [
+    "R-4602",
+    "R-4610",
+    "R-4613",
+    "R-4615"
+   ],
+   "tests": [
+    "tests/person/directing/directing.test.ts::the shoot > needs the trade's schedule from a director at 50 in holding it, a quarter less at 100, a quarter more at 0",
+    "tests/person/directing/directing.test.ts::the shoot > is carried by the set: 0.8 of the plan from a director at 0 in leading and talking to it, all of it at 100",
+    "tests/person/directing/directing.test.ts::the shoot > loses what a short schedule leaves undone, Adaptability carrying more of it",
+    "tests/person/directing/directing.test.ts::the director > reads every broad attribute somewhere in the work"
+   ]
+  },
+  {
+   "key": "communication",
+   "status": "game",
+   "register": [
+    "R-4602",
+    "R-4610",
+    "R-4613",
+    "R-4615"
+   ],
+   "tests": [
+    "tests/person/directing/directing.test.ts::the shoot > is carried by the set: 0.8 of the plan from a director at 0 in leading and talking to it, all of it at 100",
+    "tests/person/directing/directing.test.ts::a second feature > directing.pursue: a better pitcher gets the second feature more often",
+    "tests/person/directing/directing.test.ts::the director > reads every broad attribute somewhere in the work"
+   ]
+  }
+ ]
+}

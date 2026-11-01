@@ -270,7 +270,10 @@
   "dir": "src/person/attributes",
   "readsPlace": false,
   "matrices": [
-   "coverage/attributes-screenwriter.json"
+   "coverage/attributes-screenwriter.json",
+   "coverage/attributes-director.json",
+   "coverage/attributes-actor.json",
+   "coverage/attributes-producer.json"
   ]
  },
  "person.work": {
@@ -279,6 +282,30 @@
   "readsPlace": false,
   "matrices": [
    "coverage/work-operations.json"
+  ]
+ },
+ "person.directing": {
+  "layer": 4,
+  "dir": "src/person/directing",
+  "readsPlace": false,
+  "matrices": [
+   "coverage/directing-operations.json"
+  ]
+ },
+ "person.acting": {
+  "layer": 4,
+  "dir": "src/person/acting",
+  "readsPlace": false,
+  "matrices": [
+   "coverage/acting-operations.json"
+  ]
+ },
+ "person.producing": {
+  "layer": 4,
+  "dir": "src/person/producing",
+  "readsPlace": false,
+  "matrices": [
+   "coverage/producing-operations.json"
   ]
  }
 }

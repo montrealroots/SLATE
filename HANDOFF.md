@@ -2044,3 +2044,38 @@ work raises each broad attribute whose components it used, once (`practise`). Wr
 since the owner's map puts Film Production Process there; a revision raises Revision whole (Taking Notes, Story Critique
 and Critical Thinking are in it). The attributes' matrix has the seven as its rows. 54 tests; mutation 100% (573).
 
+Done 2026-11-01, at the owner's word ("Build them."): the producer's, the director's and the actor's engines, to the
+screenwriter's standard, built by three subagents at once (workbench/briefs/BRIEF-role-engines.md), each checked by the
+lead against its research before it landed. Each reads every one of its role's broad attributes through their
+components and facets; each command has its consumer and a falsifier; each file is at 100% mutation score
+(workbench/configs/stryker.{producing,directing,acting}.mjs). The trade's figures are the research's; what no source
+gives is the game's own, named in the register and told to the player (placeholder lines producing.model,
+directing.model, acting.model).
+- The director (src/person/directing, R-4615 person.directing.model): directing.prep, .shoot, .cut, .submit, .pursue.
+  A film's story comes from Vision and Script Sense, its performances from Working With Actors, its images from Visual
+  Craft, its cut from Editing; Leadership holds the schedule and carries a short one, Leadership and Communication bring
+  the plan to the set, Communication pitches the next film. The DGA's 2026-27 minimums, guaranteed periods and Low Budget
+  Sideletter levels, the Director's Cut (ten weeks or a day for every two shooting days; four days an hour episode, a day
+  and up to one more a half-hour), the CNC's 32 shooting days (2024), Sundance's, Cannes's, the Berlinale's and TIFF's
+  own counts, and Follows's 25.3% (45% with an audience) for a second feature within five years. Not modeled: SVOD and
+  non-network episodes, pilots, SXSW (no submission count), the odds of a third feature (a third needs no backing until
+  a source gives them).
+- The actor (src/person/acting, R-4616 person.acting.model): acting.audition, .perform. An audition is self-taped 92% of
+  the time (SAG-AFTRA's 2022 survey), scored three fifths from the part's demands and two from audition craft; booking
+  is the game's (2% to 30%, up to half again for the best work played), since no source gives the ratio. A performance
+  reads the craft every part uses (Acting, Direction, Memorization's concentration), the lines where it has any, Camera
+  on screen, Physicality's space and Voice's speaking on stage, and whatever else the part asks. Pay is the agreement's
+  minimum on the first day: SAG-AFTRA's day and weekly rates 2025-2029 and its low-budget tiers (none under $20,000),
+  Pact/Equity's Cinema Films Agreement (£3m and over; a UK film under £3m is refused until Equity's low-budget rates are
+  read), UK Theatre's commercial weeks by seats, ACTRA's IPA. Not modeled: overtime, background and stand-ins,
+  subsidised theatre (its 2025 rate needs a CPI figure not read), the West End.
+- The producer (src/person/producing, R-4617 person.producing.model): producing.option, .renew, .plan, .apply, .raise,
+  .shoot, .release. The WGA's 18-month option at 10% of the 2026 low-budget minimum ($9,226.80), renewals the same; the
+  BFI's ten months left, 13% funded, awards 22% of the budget to £1.25m, fees and overheads 7.5% of direct costs; the
+  UK's IFTC 53% (to £15m) or AVEC 34% on 80% of costs; the EAO's financing shares; the BFI's release and twice-the-
+  budget rates by budget band; the PGA's two features in seven years. UK only for now: it is the one market with a
+  figure at every stage. The option is always the low-budget price (the high-budget one needs the budget in dollars).
+  The producer's schedule reads the director's FEATURE_SHOOT (the CNC's 32 of 2024), not a second copy (the CNC's 33 of
+  2023), and the director reads the screenwriter's spread, so one figure stands in one place.
+- Money is recorded, not yet paid into the ledger, in all three, as the screenwriter's fees are.
+Next: the rest of layer 4 (identity, background, genres, the portrait), then prove the layer.

@@ -7,10 +7,31 @@
  },
  "rows": [
   {
+   "key": "acting.work",
+   "status": "proven",
+   "tests": [
+    "tests/person/acting/acting.test.ts::an audition > is the same for the same life and differs for another"
+   ]
+  },
+  {
+   "key": "directing.work",
+   "status": "proven",
+   "tests": [
+    "tests/person/directing/directing.test.ts::the director > is the same for the same life and differs for another"
+   ]
+  },
+  {
    "key": "money.account",
    "status": "proven",
    "tests": [
     "tests/money/formats/formats.test.ts::account numbers > are the same for the same seed and bank, and differ otherwise"
+   ]
+  },
+  {
+   "key": "producing.work",
+   "status": "proven",
+   "tests": [
+    "tests/person/producing/producing.test.ts::the producer > is the same for the same life and differs for another"
    ]
   },
   {
