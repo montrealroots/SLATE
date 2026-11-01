@@ -4,6 +4,9 @@ import { ATTRIBUTES, ATTRIBUTES_START, attributeOf, broadOf, chooseAttributes, c
 import map from '../../../workbench/plans/attribute-map.json';
 import facetResearch from '../../../research/sources/person/attributes/screenwriter-facets.json';
 import research from '../../../research/sources/person/attributes/screenwriter.json';
+import producerFacets from '../../../research/sources/person/attributes/producer-facets.json';
+import directorFacets from '../../../research/sources/person/attributes/director-facets.json';
+import actorFacets from '../../../research/sources/person/attributes/actor-facets.json';
 import { falsifyAny } from '../../support/falsify-core.ts';
 
 const ids = ATTRIBUTES.screenwriter.map((a) => a.id);
@@ -12,7 +15,7 @@ const life = () => begin('0123456789abcdef', 0, { attributes: structuredClone(AT
 
 describe('the screenwriter attributes', () => {
   it("are the owner's seven broad attributes, covering the 27 researched ones as the map says", () => {
-    expect(ROLES).toEqual(['screenwriter']);
+    expect(ROLES).toEqual(['screenwriter', 'producer', 'director', 'actor']);
     expect(ids).toEqual(['story', 'characters', 'voice', 'writing', 'revision', 'discipline', 'pitching']);
     expect(ATTRIBUTES.screenwriter.map((a) => a.name)).toEqual(['Story', 'Characters', 'Voice', 'Writing', 'Revision', 'Discipline', 'Pitching']);
     expect(ATTRIBUTES.screenwriter.map((a) => [a.id, a.name, a.covers.map((c) => c.id)])).toEqual(map.roles.screenwriter.map((g) => [g.id, g.name, g.covers]));
@@ -25,6 +28,23 @@ describe('the screenwriter attributes', () => {
     expect(() => attributeOf('stuntman' as 'screenwriter', 'stamina')).toThrow('stuntman has no attribute stamina');
     expect(() => broadOf('screenwriter', 'stamina')).toThrow('screenwriter has no component stamina');
     expect(() => broadOf('stuntman' as 'screenwriter', 'dialogue')).toThrow('stuntman has no component dialogue');
+  });
+
+  it("give the producer, the director and the actor the owner's map, each component and facet as its research has it", () => {
+    expect(ATTRIBUTES.producer.map((a) => a.name)).toEqual(['Development', 'Financing', 'Production', 'Leadership', 'Dealmaking', 'Marketing']);
+    expect(ATTRIBUTES.director.map((a) => a.name)).toEqual(['Vision', 'Working With Actors', 'Visual Craft', 'Editing', 'Script Sense', 'Leadership', 'Communication']);
+    expect(ATTRIBUTES.actor.map((a) => a.name)).toEqual(['Acting', 'Memorization', 'Voice', 'Physicality', 'Camera', 'Direction', 'Auditioning']);
+    for (const [role, research] of [['producer', producerFacets], ['director', directorFacets], ['actor', actorFacets]] as const) {
+      expect(ATTRIBUTES[role].map((a) => [a.id, a.name, a.covers.map((c) => c.research)]), role).toEqual(map.roles[role].map((g) => [g.id, g.name, g.covers]));
+      const ids = new Map(research.attributes.map((x) => [x.name, x.attribute]));
+      for (const c of ATTRIBUTES[role].flatMap((a) => a.covers)) {
+        const r = research.attributes.find((x) => x.name === c.research);
+        expect(c.id, c.research).toBe(r?.attribute);
+        expect(c.definition).toBe(r?.definition);
+        expect(c.facets.map((f) => [f.id, f.name, f.meaning, f.judges])).toEqual(r?.facets.map((f) => [f.id, f.name, f.meaning, [...new Set(f.readBy.map((x) => x.reader))].sort()]));
+        for (const [i, f] of c.facets.entries()) expect(f.draws, `${role} ${c.id} ${f.id}`).toEqual([...new Set((r?.facets[i]?.alsoDrawsOn ?? []).map((x) => ids.get(x.attribute)).filter((x) => x !== undefined && x !== c.id))].sort());
+      }
+    }
   });
 
   it('cover components each a research group named by at least four institutions', () => {

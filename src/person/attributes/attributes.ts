@@ -33,6 +33,8 @@ export interface Facet {
   readonly draws: readonly string[];
   /** The readers the game models whose own criteria grade it. */
   readonly readers: readonly string[];
+  /** Who judges or rewards it in the trade, as the research names them (the producer's, director's and actor's facets). */
+  readonly judges?: readonly string[];
 }
 
 /** A researched attribute, one of what a broad attribute is made of. */
