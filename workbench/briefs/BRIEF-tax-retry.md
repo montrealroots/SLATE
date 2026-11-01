@@ -21,3 +21,17 @@ For each country in your prompt:
 
 Write only your countries' files in $S/tax/out/ and files under $S/dl/tax/. No subagents, no repo edits. Check every
 quote of every file you touched is in its saved page (whitespace-normalised). Report back in under 120 words.
+
+## The world round (2026-11-01, after all 252 countries landed)
+The same brief, for the 231 countries researched under `BRIEF-tax.md`'s world round, and the quote misses of the 21.
+Your prompt names `$S/tax/retry-<n>.txt`; its countries are yours. Besides every blocker and every method left "not
+run", "not tried" or "budget exhausted" in its last attempt:
+- `$S/tax/retry-misses.txt` lists, per country, the quotes the lead's check didn't find in their saved page (text
+  normalised: NFKC, whitespace dropped, line-end hyphens joined; xlsx and docx read from their XML; PDFs through
+  pdftotext in layout, plain and raw modes). For each of yours: re-quote it exactly as the saved page has it, or save
+  the page that does say it, or drop the fact to a blocker. A quote stitched from cells (`a | b`) is quoted as cells
+  that appear in the page, each a part joined by " … ".
+- Conflicts the landing found: Latvia's non-taxable minimum (€550 or €570 for 2026: the State Revenue Service's own
+  page decides), the Caribbean Netherlands' band edges, Palau's wage tax bands. Settle each from the authority's own
+  page, or record both readings in a blocker.
+- A secondary source that the authority's own page can replace is replaced; one that can't keeps `quotes`.
