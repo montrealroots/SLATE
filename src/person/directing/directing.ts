@@ -293,6 +293,8 @@ export interface MarketAgreement {
   readonly short: { readonly upTo: number; readonly share: string } | null;
   readonly fees: readonly Fee[];
   readonly periods: readonly { readonly form: Form; readonly part: 'prep-shoot' | 'cut' | 'prep'; readonly when: When; readonly days: number }[];
+  /** Where the market's minimum is another's raised by a share (Monaco's: Nice's, plus 5%), that share. */
+  readonly uplift?: string;
 }
 export interface Market {
   readonly agreements: readonly string[];
@@ -362,12 +364,14 @@ export function feePays(a: MarketAgreement, f: Fee, job: Job, date: string): Mon
   return f.first !== null && job.first ? multiply(pays, f.first) : pays;
 }
 
-/** A job's minimum under a market's agreement: every fee whose tiers hold for it, added; none where none holds. */
+/** A job's minimum under a market's agreement: every fee whose tiers hold for it, added, raised by the market's share where it has one; none where none holds. */
 export function marketFee(a: MarketAgreement, form: Form, job: Job, date: string): Money | null {
   const total = job.days.prep + job.days.shoot + job.days.cut;
   const values = { budget: job.budget, minutes: job.minutes, years: job.years, days: total };
   const fees = a.fees.filter((f) => f.form === form && holds(f.when, values));
-  return fees.length === 0 ? null : fees.map((f) => feePays(a, f, job, date)).reduce(add);
+  if (fees.length === 0) return null;
+  const sum = fees.map((f) => feePays(a, f, job, date)).reduce(add);
+  return a.uplift === undefined ? sum : add(sum, multiply(sum, a.uplift));
 }
 
 /** The schedule and the pay of a job in a market: its agreement's periods (or the contract's) and its minimum on the day prep starts. */

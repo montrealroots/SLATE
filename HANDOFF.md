@@ -722,6 +722,20 @@ What layer 0 holds:
 
 ## Next step
 
+**The depth round's web search, turn 2 (2026-11-02).** At the owner's word ("Run the tax and markets web searches
+now"), six agents (`BRIEF-tm-search.md`) searched about 240 of the 710 tax and market blockers never searched (two
+phrasings, English and the country's own languages) and found about 54, each quote checked against its saved page,
+every secondary naming its primary's URL; the turn's 200 searches were spent. Landed and read: tax 87 researched, 165
+blocked (Cuba's Ley 113, Algeria's CNAS rates and 15% on non-resident artists, Cape Verde's and Grenada's final 20% and
+15%, Egypt's, Ethiopia's, Ecuador's, the Faroes', Saint-Barthélemy's, Djibouti's ...); actor 24 / 228 (Jamaica's market
+on negotiated pay; Monaco at France's agreements plus 5%, its wage law Loi 739 and Arrêté 63-131, read the same by the
+director); director 46 / 206; producer 72 / 180 (Estonia's 30% from €1m, the Czech fund's 50% share and 7 of 27 funded);
+writer 39 / 213; blockers closed by their research removed from the register. The youth wiring's untested lines in the
+four role engines are now killed by tests (each engine's own config at 100%). Resume points, each list's next blocker:
+tax and markets list 1 KG social, 2 EE producer.fund, 3 MQ social, 4 JP social and nonResident, 5 JO nonResident, 6 IQ
+writer.fees; ages list 1 IL unions, 2 IR childPerformers, 3 IM majority, 4 KM minimumWorkAge. web.archive.org answers
+again: every blocker whose archive method says it was unreachable is to be retried there.
+
 **The age readers (2026-11-02, session 01XFR5Ut6sxu4Q37Ha2jKNLQ).** At the owner's word ("Start the age readers once
 this lands"), the age research of all 252 countries landed (`research/sources/person/ages/<CC>.json`, register
 `person.ages.<CC>` and `person.ages.blocked.<CC>`, notModeled `youth.unkept`), every quote checked against its saved

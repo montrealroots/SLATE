@@ -41,6 +41,38 @@
      "said": "Decree of the Minister of Culture No 25 “Conditions and procedure for supporting the development, production and distribution of film art” 31.12.2018 (amended 07.03.2026)"
     }
    ]
+  },
+  {
+   "item": "incentive",
+   "finding": "Film Estonia's own guidelines (2026) give a cash rebate of up to 40% of eligible Estonian production costs, open at any time with processing in up to 40 days, for feature films budgeted at EUR 1 million or more, feature and short animation at EUR 150,000, animation series at EUR 500,000, scripted TV drama at EUR 100,000 an episode, feature documentaries at EUR 200,000, and their post-production; the 40% intensity applies where at least two creative employees are Estonian tax residents.",
+   "value": {
+    "name": "Film Estonia cash rebate",
+    "rate": {
+     "max": 0.4,
+     "levels": [
+      0.3,
+      0.4
+     ]
+    },
+    "minimumBudgetEUR": {
+     "featureFilm": 1000000,
+     "animationFeatureOrShort": 150000,
+     "animationSeries": 500000,
+     "scriptedTvDramaPerEpisode": 100000,
+     "featureDocumentary": 200000
+    },
+    "creativeStaffRule": "40% if at least 2 creative employees are tax residents of Estonia",
+    "applicationWindow": "open all year",
+    "processingDays": 40,
+    "capPerProject": null,
+    "annualBudget2026": null
+   },
+   "sources": [
+    {
+     "src": 2,
+     "said": "An application can be made for international production service or co-production to receive a cash rebate up to 40% on eligible production costs. … feature films with a budget of at least € 1 million; feature and short animation with a budget of at least € 150 000; animation series with overall budget of at least € 500 000; scripted TV-drama with a budget of at least € 100 000 per single episode; feature documentary with a budget at least € 200 000; post-production of all the above mentioned works. … multiplied by 30% or 40%. … 40% if at least 2 creative employees are tax residents of Estonia"
+    }
+   ]
   }
  ],
  "country": "EE",
@@ -59,16 +91,23 @@
    "read": "2026-11-01",
    "kind": "primary",
    "said": "Decree of the Minister of Culture No 25 “Conditions and procedure for supporting the development, production and distribution of film art” 31.12.2018 (amended 07.03.2026)"
+  },
+  {
+   "url": "https://filmestonia.eu/film-estonia-funding/guidelines-and-how-to-apply/",
+   "title": "Film Estonia (Estonian Film Institute): Guidelines and how to apply",
+   "read": "2026-11-02",
+   "kind": "primary",
+   "said": "An application can be made for international production service or co-production to receive a cash rebate up to 40% on eligible production costs. … feature films with a budget of at least € 1 million; feature and short animation with a budget of at least € 150 000; animation series with overall budget of at least € 500 000; scripted TV-drama with a budget of at least € 100 000 per single episode; feature documentary with a budget at least € 200 000; post-production of all the above mentioned works. … multiplied by 30% or 40%. … 40% if at least 2 creative employees are tax residents of Estonia"
   }
  ],
  "blockers": [
   {
    "item": "incentive",
-   "sought": "The Film Estonia regulation's own text: cap per project, minimum spend, annual budget for 2026.",
+   "sought": "The 2026 annual budget, any cap per project and the minimum Estonian spend for each rate level, from Film Estonia or the regulation (the 40% rate and minimum budgets by form are now a figure)",
    "tried": {
     "institution": "filmestonia.eu, filmestonia.ee and the 2025 guidelines .docx: connection reset from this environment (three attempts) || Retry 2026-11-01: filmi.ee and filmestonia.eu: connection reset again (tunnel closed mid-exchange, 2026-11-01); enl.ee (Eesti Näitlejate Liit): 301, not reached",
     "official-register": "Riigi Teataja not reached in this pass || Retry 2026-11-01: Constitution of Estonia read (§6 official language Estonian; no capital clause); riigiteataja.ee search for \"filmi\": JavaScript-only page (126 characters), the regulations' texts not reached",
-    "web-search": "'Estonia film cash rebate Film Estonia 2026 rate cap' gave a 2026 budget of EUR 9.2 million only from a production company's page (exitfilm.ee), not read || Retry 2026-11-01: not run again: the session's web-search budget is spent (2026-11-01, retry brief); institutions fetched directly instead || Web search 2026-11-01: not run: the search pass of 2026-11-01 reached this country after the turn's shared web-search budget (200 calls, shared by every agent) was used up again (about 19:20 UTC, after 27 searches for AD to CK); no result returned.",
+    "web-search": "'Estonia film cash rebate Film Estonia 2026 rate cap' gave a 2026 budget of EUR 9.2 million only from a production company's page (exitfilm.ee), not read || Retry 2026-11-01: not run again: the session's web-search budget is spent (2026-11-01, retry brief); institutions fetched directly instead || Web search 2026-11-01: not run: the search pass of 2026-11-01 reached this country after the turn's shared web-search budget (200 calls, shared by every agent) was used up again (about 19:20 UTC, after 27 searches for AD to CK); no result returned. || Web search 2026-11-02: query \"Film Estonia cash rebate 2026 30% maximum per project minimum spend annual budget regulation\" returned filmestonia.eu's guidelines page (?p=3548, now reachable: read and saved /tmp/claude-0/-home-user-SLATE/cfe06f79-0641-529e-b709-1fcd46045c09/scratchpad/dl/markets-world/EE-filmestonia-guidelines-2026.html, its 40% rate and minimum budgets by form are now a figure), the 2025 short guidelines .docx (read: budget 2025 EUR 6,293,574, 20% to 30% tiers by Estonian spend of EUR 200,000/400,000/500,000 for a feature, superseded by the 2026 page), filmneweurope.com's March 2026 report of the rise to 40%, nafta.ee, investinestonia.com, saturation.io and lineproducersindia.in summaries. Per the search, filmestonia.eu states an annual budget of EUR 9,200,000 for 2026, but the page holding it (film-estonia-funding/) reset the connection on three fetches (2026-11-02), so it is not taken; no cap per project and no 2026 minimum Estonian spend for the 40% level found; the regulation on Riigi Teataja still unread.",
     "trade-press": "FNE 08-03-2026 read (rate only) || Retry 2026-11-01: none quoting a primary found among pages read",
     "archive": "not tried || Retry 2026-11-01: archive.org availability API for filmi.ee/: 429 Too Many Requests (19:02 UTC, 3 tries)"
    }
@@ -79,7 +118,7 @@
    "tried": {
     "institution": "EFI regulation page lists the decree; decree text on Riigi Teataja not read || Retry 2026-11-01: filmi.ee and filmestonia.eu: connection reset again (tunnel closed mid-exchange, 2026-11-01); enl.ee (Eesti Näitlejate Liit): 301, not reached",
     "official-register": "Riigi Teataja not reached || Retry 2026-11-01: Constitution of Estonia read (§6 official language Estonian; no capital clause); riigiteataja.ee search for \"filmi\": JavaScript-only page (126 characters), the regulations' texts not reached",
-    "web-search": "not run || Retry 2026-11-01: not run again: the session's web-search budget is spent (2026-11-01, retry brief); institutions fetched directly instead || Web search 2026-11-01: not run: the search pass of 2026-11-01 reached this country after the turn's shared web-search budget (200 calls, shared by every agent) was used up again (about 19:20 UTC, after 27 searches for AD to CK); no result returned.",
+    "web-search": "not run || Retry 2026-11-01: not run again: the session's web-search budget is spent (2026-11-01, retry brief); institutions fetched directly instead || Web search 2026-11-01: not run: the search pass of 2026-11-01 reached this country after the turn's shared web-search budget (200 calls, shared by every agent) was used up again (about 19:20 UTC, after 27 searches for AD to CK); no result returned. || Web search 2026-11-02: query \"Costa Rica IVA servicios profesionales independientes umbral inscripción Ley 9635 régimen de tributación simplificada monto exento\" returned VAT guides (trykintsugi.com, avalara.com, taxdo.com: no general registration threshold, a secondary not naming the article), PwC's note on Decreto 45209-H reforming the simplified regime from 13 October 2025 (no professional-services threshold in it), qupos.com's 2019 rate list and siemprealdia.co's IVA and exemptions guides; none from Hacienda or Ley 9635's text states a turnover below which a freelancer's fee is outside IVA.",
     "trade-press": "none || Retry 2026-11-01: none quoting a primary found among pages read",
     "archive": "not tried || Retry 2026-11-01: archive.org availability API for filmi.ee/: 429 Too Many Requests (19:02 UTC, 3 tries)"
    }

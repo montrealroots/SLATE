@@ -33,6 +33,42 @@
    ]
   },
   {
+   "item": "residents",
+   "finding": "Pay for work on Bouvet Island taxed under the Svalbard rules bears 8% up to 12 times the National Insurance basic amount (G) and 22% on the excess, plus the national insurance contribution of 7.6% on pay (5.1% on pensions), for 2026.",
+   "value": {
+    "year": 2026,
+    "currency": "NOK",
+    "brackets": [
+     {
+      "from": 0,
+      "to": "12 G",
+      "rate": 0.08
+     },
+     {
+      "from": "12 G",
+      "to": null,
+      "rate": 0.22
+     }
+    ],
+    "nationalInsurance": {
+     "pay": 0.076,
+     "pensions": 0.051
+    },
+    "base": "gross pay (Svalbard wage-deduction scheme)"
+   },
+   "applies": "Pay for a stay over 30 days in Norway's dependencies in the Antarctic (Bouvet Island among them), income year 2026; the rate page (year 2026 selected) says the Jan Mayen and dependencies rates are the same as Svalbard's.",
+   "sources": [
+    {
+     "src": 3,
+     "said": "Employment income taxable under the Jan Mayen Taxation Act is taxed at the same rates as for Svalbard. The rate for national insurance contributions is also the same as for Svalbard. … Use the following rates for deductions from salary payments on Jan Mayen and the Norwegian dependencies in the Antarctic: Low rate: 8 percent. High rate: 22 percent. Calculate tax with the low rate for income up to 12 times the National Insurance Scheme’s basic amount , and with the high rate for surplus income. The national insurance contributions related to salary, etc. is 7,6 percent. The national insurance contributions related to pensions, etc. is 5.1 percent."
+    },
+    {
+     "src": 4,
+     "said": "Use the following rates for deductions from salary payments on Svalbard: Low rate: 8 percent High rate: 22 percent Calculate tax with the low rate for income up until 12 times the National Insurance Scheme’s basic amount , and with the high rate for surplus income. The national insurance contributions related to salary, etc. is 7.6 percent."
+    }
+   ]
+  },
+  {
    "item": "withholding",
    "finding": "Under the Svalbard wage-deduction scheme the employer withholds tax from gross pay with no deductions, and the withholding is in principle the final settlement; the employer's contribution rate on pay taxed under the Svalbard act is 0%.",
    "value": {
@@ -44,11 +80,11 @@
    "applies": "Pay for a continuous stay over 30 days on Bouvet Island (taxed under the Svalbard rules), 2026.",
    "sources": [
     {
-     "src": 3,
+     "src": 5,
      "said": "Skatt etter lønnstrekkordningen er en ren bruttoskatt. Det gis derfor ingen fradrag i beregningsgrunnlaget for skatt. Arbeidsgiveren skal trekke skatt av lønn/pensjon ved utbetaling til arbeidstakeren/ trygdemottakeren. Skattetrekket er i utgangspunktet endelig oppgjør for skatteforpliktelsen på lønnen/pensjonen."
     },
     {
-     "src": 3,
+     "src": 5,
      "said": "Selv om arbeidsgiver ikke hører hjemme på Svalbard, er satsen for arbeidsgiveravgift 0 prosent på lønn og annen godtgjørelse som blir skattlagt etter svalbardskatteloven."
     },
     {
@@ -84,6 +120,20 @@
    "said": "Status som biland innebærer at bilandene er norsk territorium, men ikke er del av «Kongeriket Norge»."
   },
   {
+   "url": "https://www.skatteetaten.no/en/rates/tax-rates-for-jan-mayen-and-the-norwegian-dependencies-in-the-antarctic",
+   "title": "Tax rates for Jan Mayen and the Norwegian dependencies in the Antarctic, 2026 (The Norwegian Tax Administration)",
+   "read": "2026-11-02",
+   "kind": "primary",
+   "said": "Employment income taxable under the Jan Mayen Taxation Act is taxed at the same rates as for Svalbard. The rate for national insurance contributions is also the same as for Svalbard. … Use the following rates for deductions from salary payments on Jan Mayen and the Norwegian dependencies in the Antarctic: Low rate: 8 percent. High rate: 22 percent. Calculate tax with the low rate for income up to 12 times the National Insurance Scheme’s basic amount , and with the high rate for surplus income. The national insurance contributions related to salary, etc. is 7,6 percent. The national insurance contributions related to pensions, etc. is 5.1 percent."
+  },
+  {
+   "url": "https://www.skatteetaten.no/en/rates/tax-rates-on-svalbard",
+   "title": "Tax rates on Svalbard, 2026 (The Norwegian Tax Administration)",
+   "read": "2026-11-02",
+   "kind": "primary",
+   "said": "Use the following rates for deductions from salary payments on Svalbard: Low rate: 8 percent High rate: 22 percent Calculate tax with the low rate for income up until 12 times the National Insurance Scheme’s basic amount , and with the high rate for surplus income. The national insurance contributions related to salary, etc. is 7.6 percent."
+  },
+  {
    "url": "https://www.skatteetaten.no/person/skatt/hjelp-til-riktig-skatt/svalbard/skatt-lonn/",
    "title": "Skatt på lønn – Svalbard (Skatteetaten)",
    "read": "2026-11-01",
@@ -91,17 +141,5 @@
    "said": "Skatt etter lønnstrekkordningen er en ren bruttoskatt. Det gis derfor ingen fradrag i beregningsgrunnlaget for skatt. Arbeidsgiveren skal trekke skatt av lønn/pensjon ved utbetaling til arbeidstakeren/ trygdemottakeren. Skattetrekket er i utgangspunktet endelig oppgjør for skatteforpliktelsen på lønnen/pensjonen. … Selv om arbeidsgiver ikke hører hjemme på Svalbard, er satsen for arbeidsgiveravgift 0 prosent på lønn og annen godtgjørelse som blir skattlagt etter svalbardskatteloven."
   }
  ],
- "blockers": [
-  {
-   "item": "residents",
-   "sought": "The 2026 Svalbard wage-tax rates (low rate and the high rate above 12 G, and the trygdeavgift) that apply to pay for work on Bouvet Island",
-   "tried": {
-    "institution": "skatteetaten.no 2026-11-01: Svalbard 'Skatt på lønn' page and a-melding Svalbard guide read and saved: they describe the scheme but print no rate; /satser/skatt-pa-svalbard/ and /satser/svalbard/ HTTP 404; Skatte-ABC J-1 (Jan Mayen og bilandene) page saved but its body is not in the served HTML || retry 2026-11-01: skatteetaten.no 2026-11-01: /satser/ index loads its list by script (no Svalbard entry in the served HTML); eight more guessed Svalbard rate paths (/satser/skatt-pa-lonn-svalbard/, /satser/svalbardskatten/, /satser/trygdeavgift-svalbard/ and others) HTTP 404; /satser/trygdeavgift/ saved (BV-skatteetaten-satser-trygdeavgift.html): 7.6% on pay for 2026 on the mainland, nothing on Svalbard; the saved Svalbard pay page names a high rate above 12 G and a 0% employer rate on Svalbard but no wage-tax rate",
-    "official-register": "lovdata.no (Svalbardskatteloven, bilandsloven) 2026-11-01: HTTP 405 'Request stopped by Varnish IPS', not read another way || retry 2026-11-01: lovdata.no again HTTP 405 (Varnish IPS), not read another way; regjeringen.no HTTP 403, not read another way",
-    "web-search": "2026-11-01 'Bouvetøya skatt skatteloven gjelder ikke biland \"Bouvetøya\" skatteplikt': found the Skatteetaten a-melding page used here; no rate table || retry 2026-11-01: refused by the search tool on 2026-11-01: the turn's shared limit of 200 searches was reached; not worked around",
-    "trade-press": "no trade press found quoting the 2026 Svalbard rates in this search || retry 2026-11-01: none reached (as before)",
-    "archive": "not tried: a refused page is not read another way (the auto-mode classifier also blocked an archive lookup of a refused page on 2026-11-01) || retry 2026-11-01: web.archive.org tried for the Skatteetaten Svalbard rate page (not for the refused Lovdata pages): \"Recv failure: Connection reset by peer\" 2026-11-01"
-   }
-  }
- ]
+ "blockers": []
 }

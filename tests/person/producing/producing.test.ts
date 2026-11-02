@@ -59,7 +59,7 @@ import { spread } from '../../../src/person/work/work.ts';
 import { t } from '../../../src/core/text/text.ts';
 import { falsifyAny } from '../../support/falsify-core.ts';
 import { ACCOUNT, minorIn, purse } from '../../support/purse.ts';
-import { YOUTH_START, type YouthSlice } from '../../../src/person/youth/youth.ts';
+import { authoriseWork, YOUTH_START, type YouthSlice } from '../../../src/person/youth/youth.ts';
 import { exchangeOn } from '../../../src/money/rates/rates.ts';
 
 type Producing = { attributes: AttributesSlice; producing: ProducingSlice; genres: GenresSlice; identity: IdentitySlice; acting: ActingSlice; directing: DirectingSlice; permits: PermitsSlice; youth: YouthSlice } & ReturnType<typeof purse>;
@@ -546,5 +546,32 @@ describe('the producer', () => {
     ]);
     const bare = begin(SEED, T0, { attributes: structuredClone(ATTRIBUTES_START), producing: structuredClone(PRODUCING_START), genres: structuredClone(LOVED), identity: identity(), acting: structuredClone(ACTING_START), directing: structuredClone(DIRECTING_START), permits: permitsEverywhere(), youth: structuredClone(YOUTH_START), ...purse() });
     expect(() => dispatch(bare, optionMaterial, { account: ACCOUNT, days: 3, genre: GENRE })).toThrow("the producer's attributes haven't been chosen");
+  });
+});
+
+describe('a young producer', () => {
+  /** The life's person made a citizen of a country, born on a date. */
+  const young = (l: Life<Producing>, date: string, country: string): Life<Producing> => ({ ...l, slices: { ...l.slices, identity: identity({ born: { date, country: country as never, region: '' }, citizenship: [country as never], grewUp: { country: country as never, region: '' } }) } });
+  it("is refused by a fund below the age it takes an applicant from (person.youth)", () => {
+    const l = planned(optioned(50));
+    expect(() => dispatch(young(l, '2010-03-10', 'GB'), applyToFunder, { project: 1 })).toThrow("United Kingdom's public fund takes no applicant under 18");
+    expect(project(dispatch(young(l, '2008-10-31', 'GB'), applyToFunder, { project: 1 })).applied).toBe(true);
+  });
+
+  it("shoots only with what the law of the shoot's country needs first, the grant used once (person.youth)", () => {
+    let l = young(made(90), '2011-03-10', 'FR');
+    l = dispatch(l, optionMaterial, { account: ACCOUNT, days: 10, genre: GENRE, market: 'FR' });
+    l = planned(l);
+    l = edit(l, (s) => {
+      const p = projectOf(s, 1);
+      p.raised['equity'] = money('EUR', target(p) - raised(p));
+    });
+    expect(() => dispatch(l, shootProject, { project: 1, account: ACCOUNT })).toThrow('that work in France needs permit first');
+    const shotYoung = dispatch(dispatch(l, authoriseWork, { country: 'FR', role: 'producer' }), shootProject, { project: 1, account: ACCOUNT });
+    expect(shotYoung.slices.youth.granted).toMatchObject([{ country: 'FR', role: 'producer', needs: ['permit'], used: true }]);
+    expect(project(shotYoung).shot?.fee?.minor).toBeGreaterThan(0);
+    expect(shotYoung.slices.youth.held.map((h) => [h.engagement, h.into])).toEqual([['producing:1', 'Caisse des dépôts et consignations']]);
+    const days = (project(shotYoung).shot as { days: number }).days;
+    expect(held(shotYoung)['leadership']).toBeCloseTo(grown(held(l)['leadership'] as number, days * (35 / 40)), 10);
   });
 });

@@ -40,7 +40,8 @@ import compiled from './markets.json' with { type: 'json' };
  * Beyond them, every market the research gives terms for (src/person/acting/markets.json, compiled by
  * tools/person/markets from the research, register facts person.markets.<CC>): each agreement a part can be engaged
  * under in the market's city, a territory whose work follows another country's terms engaged under that country's
- * agreements as its own (Saint-Barthélemy under France's, the Cocos Islands under Australia's), its minimums
+ * agreements as its own (Saint-Barthélemy under France's, the Cocos Islands under Australia's; Monaco under France's
+ * raised 5%, as its wage law owes Nice's minimum plus an allowance), its minimums
  * by medium (film, television, the stage), by role where it names roles, by the term it pays (a day, a week, a month, a
  * year, a session, a performance or an episode) and by the tier it sets (the budget, the lines, the seats, an
  * episode's minutes, the engagement's length, the actor's years in the work, the day or performance of the engagement),
@@ -64,13 +65,13 @@ export const MODEL_LINE: LineId = 'acting.model';
 export const MARKET_AGREEMENTS = [
   'ad-artists', 'ai-all', 'ar-film', 'ar-tv', 'ar-stage', 'at-screen', 'au-screen', 'au-stage', 'be-screen', 'bg-foreign-film', 'bn-screen', 'br-rj-tv', 'br-sp-screen', 'br-rj-stage', 'bw-screen',
   'cl-screen', 'co-all', 'cu-stage', 'de-screen', 'de-stage', 'de-guest', 'dk-film', 'dk-tv', 'dk-soejle-a', 'dk-copenhagen-stage', 'es-screen', 'es-madrid-stage', 'fi-stage', 'fi-guest',
-  'fi-screen', 'fr-film', 'fr-tv', 'fr-subsidised-stage', 'fr-private-stage', 'gi-all', 'gr-private-stage', 'hk-film', 'ie-stage', 'il-screen', 'in-screen', 'it-screen', 'it-stage', 'jp-nhk',
-  'jp-live', 'kr-kbs', 'kr-mbc-sbs', 'li-film', 'ms-all', 'mx-televisa', 'mx-azteca', 'mx-other', 'nc-all', 'ng-screen', 'nl-stage', 'nl-screen', 'no-film', 'no-tv', 'no-nrk', 'no-stage',
+  'fi-screen', 'fr-film', 'fr-tv', 'fr-subsidised-stage', 'fr-private-stage', 'gi-all', 'gr-private-stage', 'hk-film', 'ie-stage', 'il-screen', 'in-screen', 'it-screen', 'it-stage', 'jm-all',
+  'jp-nhk', 'jp-live', 'kr-kbs', 'kr-mbc-sbs', 'li-film', 'ms-all', 'mx-televisa', 'mx-azteca', 'mx-other', 'nc-all', 'ng-screen', 'nl-stage', 'nl-screen', 'no-film', 'no-tv', 'no-nrk', 'no-stage',
   'nz-screen', 'nz-court', 'nz-atc', 'ph-screen', 'pn-all', 'se-screen', 'se-stage', 'se-private-stage', 'se-free-stage', 'sh-all', 'th-screen', 'tr-screen', 'va-screen', 'vg-all', 'za-all',
   'ax-fi-stage', 'ax-fi-guest', 'ax-fi-screen', 'bl-fr-film', 'bl-fr-tv', 'bl-fr-subsidised-stage', 'bl-fr-private-stage', 'cc-au-screen', 'cc-au-stage', 'cx-au-screen', 'cx-au-stage', 'gf-fr-film',
-  'gf-fr-tv', 'gf-fr-subsidised-stage', 'gf-fr-private-stage', 'gp-fr-film', 'gp-fr-tv', 'gp-fr-subsidised-stage', 'gp-fr-private-stage', 'mf-fr-film', 'mf-fr-tv', 'mf-fr-subsidised-stage',
-  'mf-fr-private-stage', 'nf-au-screen', 'nf-au-stage', 'pm-fr-film', 'pm-fr-tv', 'pm-fr-subsidised-stage', 'pm-fr-private-stage', 're-fr-film', 're-fr-tv', 're-fr-subsidised-stage',
-  're-fr-private-stage', 'yt-fr-film', 'yt-fr-tv', 'yt-fr-subsidised-stage', 'yt-fr-private-stage',
+  'gf-fr-tv', 'gf-fr-subsidised-stage', 'gf-fr-private-stage', 'gp-fr-film', 'gp-fr-tv', 'gp-fr-subsidised-stage', 'gp-fr-private-stage', 'mc-fr-film', 'mc-fr-tv', 'mc-fr-subsidised-stage',
+  'mc-fr-private-stage', 'mf-fr-film', 'mf-fr-tv', 'mf-fr-subsidised-stage', 'mf-fr-private-stage', 'nf-au-screen', 'nf-au-stage', 'pm-fr-film', 'pm-fr-tv', 'pm-fr-subsidised-stage',
+  'pm-fr-private-stage', 're-fr-film', 're-fr-tv', 're-fr-subsidised-stage', 're-fr-private-stage', 'yt-fr-film', 'yt-fr-tv', 'yt-fr-subsidised-stage', 'yt-fr-private-stage',
 ] as const;
 /** The agreement a part is engaged under. */
 export type Agreement = 'sag-aftra' | 'pact-equity' | 'uk-theatre' | 'actra' | (typeof MARKET_AGREEMENTS)[number];
@@ -247,6 +248,8 @@ export interface MarketAgreement {
   readonly minimums: readonly Minimum[];
   /** The agreement whose terms a territory's work follows. */
   readonly follows?: Agreement;
+  /** Where the minimum is the followed one raised by a share (Monaco's: Nice's, plus 5%), that share. */
+  readonly uplift?: string;
 }
 /** What a market's research couldn't find, by the item its blockers name. */
 export type Unknown = 'agreements' | 'rates' | 'none' | 'union' | 'language' | 'market' | 'terms' | 'successors';
@@ -393,7 +396,11 @@ export function rateAt(currency: CurrencyCode, table: Table, date: string): Mone
 export function pay(part: Part, date: string, years = 0): Money | null {
   const scale = scaleOf(part, years);
   if (scale === null) return null;
-  if (scale.bands !== undefined) return marketPay(part, scale as Scale & { bands: readonly Band[] }, date);
+  if (scale.bands !== undefined) {
+    const sum = marketPay(part, scale as Scale & { bands: readonly Band[] }, date);
+    const share = (marketOf(part.agreement) as MarketAgreement).uplift;
+    return share === undefined ? sum : add(sum, multiply(sum, share));
+  }
   const table = scale[part.term as 'day' | 'week'];
   if (table === undefined) throw new Error(`there's no ${part.term} minimum for that part`);
   const performed = multiply(rateAt(scale.currency, table, date), String(part.length));

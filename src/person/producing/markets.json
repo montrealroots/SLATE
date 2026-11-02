@@ -124,9 +124,7 @@
   "credit": null,
   "fees": [],
   "release": null,
-  "unknown": [
-   "incentive"
-  ],
+  "unknown": [],
   "zone": "Africa/Luanda"
  },
  "AR": {
@@ -463,9 +461,7 @@
   "credit": null,
   "fees": [],
   "release": null,
-  "unknown": [
-   "fund"
-  ],
+  "unknown": [],
   "zone": "Atlantic/Bermuda"
  },
  "BN": {
@@ -811,7 +807,6 @@
   "fees": [],
   "release": null,
   "unknown": [
-   "fund",
    "none"
   ],
   "zone": "Africa/Douala"
@@ -929,14 +924,33 @@
  },
  "CZ": {
   "currency": "CZK",
-  "fund": null,
+  "fund": {
+   "rate": 0.25925925925925924,
+   "tiers": [
+    {
+     "budget": [
+      0,
+      null
+     ],
+     "bands": [
+      {
+       "from": 0,
+       "to": null,
+       "rate": 0.5
+      }
+     ],
+     "base": 1,
+     "net": false,
+     "most": null,
+     "sum": null
+    }
+   ]
+  },
   "aid": [],
   "credit": null,
   "fees": [],
   "release": null,
-  "unknown": [
-   "fund"
-  ],
+  "unknown": [],
   "zone": "Europe/Prague"
  },
  "DE": {
@@ -1115,12 +1129,10 @@
   "currency": "XCD",
   "fund": null,
   "aid": [],
-  "credit": null,
+  "credit": [],
   "fees": [],
   "release": null,
-  "unknown": [
-   "incentive"
-  ],
+  "unknown": [],
   "zone": "America/Dominica"
  },
  "DO": {
@@ -1178,14 +1190,14 @@
   "credit": [
    {
     "budget": [
-     0,
+     1000000,
      null
     ],
     "bands": [
      {
       "from": 0,
       "to": null,
-      "rate": 0.4
+      "rate": 0.3
      }
     ],
     "base": 1,
@@ -1918,9 +1930,7 @@
   "credit": null,
   "fees": [],
   "release": null,
-  "unknown": [
-   "fund"
-  ],
+  "unknown": [],
   "zone": "America/Tegucigalpa"
  },
  "HR": {
@@ -2359,12 +2369,10 @@
   "currency": "JMD",
   "fund": null,
   "aid": [],
-  "credit": [],
+  "credit": null,
   "fees": [],
   "release": null,
-  "unknown": [
-   "none"
-  ],
+  "unknown": [],
   "zone": "America/Jamaica"
  },
  "JO": {

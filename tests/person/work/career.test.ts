@@ -1,4 +1,5 @@
 import { describe, expect, it } from 'vitest';
+import { daysFromCivil, SECONDS_PER_DAY } from '../../../src/core/time/calendar.ts';
 import { begin, commandIndex, dispatch, type Life } from '../../../src/core/frame/frame.ts';
 import { draws, seedFromText } from '../../../src/core/rng/rng.ts';
 import { ATTRIBUTES_START, broadOf, chooseAttributes, componentOf, componentValues, DAILY, facetSkill, skillOf, type AttributesSlice } from '../../../src/person/attributes/attributes.ts';
@@ -15,6 +16,7 @@ import {
   MARKET_SHARE,
   meetPeople,
   PITCH,
+  offerScript,
   pitchScript,
   pitchSkill,
   promoteScript,
@@ -34,7 +36,7 @@ import { FAMILY, type Family, type IdentitySlice } from '../../../src/person/ide
 import { falsifyAny } from '../../support/falsify-core.ts';
 import { identity } from '../../support/person.ts';
 import { ACCOUNT, minorIn, purse } from '../../support/purse.ts';
-import { YOUTH_START, type YouthSlice } from '../../../src/person/youth/youth.ts';
+import { authoriseWork, YOUTH_START, type YouthSlice } from '../../../src/person/youth/youth.ts';
 
 type Career = { attributes: AttributesSlice; scripts: ScriptsSlice; career: CareerSlice; identity: IdentitySlice; genres: GenresSlice; youth: YouthSlice } & ReturnType<typeof purse>;
 const SEED = '0123456789abcdef';
@@ -268,5 +270,28 @@ describe('the solo writer', () => {
       { id: 'script.promote', reads: ['scripts', 'identity'], writes: ['attributes', 'career'] },
       { id: 'script.pitch', reads: ['scripts', 'identity'], writes: ['attributes', 'career', 'accounts', 'ledger', 'tax', 'schedule', 'youth'] },
     ]);
+  });
+});
+
+describe("a minor writer's sale (person.youth)", () => {
+  const NOW = daysFromCivil(2026, 11, 2) * SECONDS_PER_DAY;
+  const writer = (date: string): Life<Career> => {
+    const who = identity({ born: { date, country: 'FR', region: '' }, citizenship: ['FR'], grewUp: { country: 'FR', region: '' }, languages: [{ lang: 'fr', level: 'C2' }] });
+    const l = dispatch(dispatch(begin(SEED, NOW, { attributes: structuredClone(ATTRIBUTES_START), scripts: structuredClone(SCRIPTS_START), career: structuredClone(CAREER_START), identity: who, genres: { loved: ['drama'] }, youth: structuredClone(YOUTH_START), ...purse('EUR') }), chooseAttributes, { role: 'screenwriter', all: 100, each: {} }), writeScript, { form: 'episode', genre: 'drama', days: 200 });
+    return dispatch(withCareer(l, { out: { '1': { documents: { 'pitch-document': 100 }, requests: 40, sold: null } } }), offerScript, { script: 1, agreement: 'fr-tv', country: 'FR', budget: 1_000_000, minutes: 52 });
+  };
+  const sell = (l: Life<Career>) => {
+    let at = l;
+    for (let i = 0; i < 40 && at.slices.career.out['1']?.sold === null; i += 1) at = dispatch({ ...at, frame: { ...at.frame, now: at.frame.now + 3600 } }, pitchScript, { script: 1, account: ACCOUNT });
+    return at;
+  };
+  it("is signed only with what France's law needs first, the grant used at the sale, its pécule held", () => {
+    expect(() => dispatch(writer('2014-03-10'), pitchScript, { script: 1, account: ACCOUNT })).toThrow('that work in France needs permit first');
+    const granted = dispatch(writer('2014-03-10'), authoriseWork, { country: 'FR', role: 'author' });
+    const sold = sell(granted);
+    expect(sold.slices.youth.granted[0]?.used).toBe(true);
+    expect(sold.slices.youth.held.map((h) => h.engagement)).toEqual(['script:1']);
+    // The buyer pays it: the world's buyer account in the sale's currency.
+    expect(minorIn(sold.slices.ledger, 'world:buyer:EUR')).toBe(-(sold.slices.tax.paid[0]?.gross as number) - (sold.slices.tax.paid[0]?.vat as number));
   });
 });

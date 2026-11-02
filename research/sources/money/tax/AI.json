@@ -48,14 +48,14 @@
   },
   {
    "item": "social",
-   "finding": "From 1 January 2026 social security is 11.5% of wages, 5.75% deducted from the employee and 5.75% from the employer, up to a ceiling (EC$7,000 a month per Deloitte; the Board says to enquire); a self-employed person pays 8% of a weekly income chosen from categories (EC$200 to EC$1,250 in the Board's example).",
+   "finding": "From 1 January 2026 social security is 11.5% of wages, 5.75% deducted from the employee and 5.75% from the employer, up to the Board's contribution ceiling of EC$1,617 a week or EC$7,000 a month; a self-employed person pays 8% of a weekly income chosen from categories (EC$200 to EC$1,250 in the Board's example).",
    "value": {
     "currency": "XCD",
     "from": "2026-01-01",
     "employee": 0.0575,
     "employer": 0.0575,
     "ceilingMonthly": 7000,
-    "ceilingWeekly": null,
+    "ceilingWeekly": 1617,
     "selfEmployed": {
      "rate": 0.08,
      "base": "elected weekly income category",
@@ -82,10 +82,14 @@
     },
     {
      "src": 4,
-     "said": "The amount of contribution payable by the self-employed person for each contributory week in respect of his employment shall be 8% of the weekly income elected by him/her … Category Weekly Income EC$ Weekly Contritbution EC$ A 1250.00 100.00 B 1000.00 80.00 C 800.00 64.00 D 600.00 48.00 E 400.00 32.00 F 200.00 16.00"
+     "said": "The contribution ceiling is EC$1617.00 for weekly workers and EC$7000.00 for monthly."
     },
     {
      "src": 5,
+     "said": "The amount of contribution payable by the self-employed person for each contributory week in respect of his employment shall be 8% of the weekly income elected by him/her … Category Weekly Income EC$ Weekly Contritbution EC$ A 1250.00 100.00 B 1000.00 80.00 C 800.00 64.00 D 600.00 48.00 E 400.00 32.00 F 200.00 16.00"
+    },
+    {
+     "src": 6,
      "said": "On or after January 1st, 2027: Employees will contribute 6% and employers will contribute 6%, a combined total contribution of 12%."
     },
     {
@@ -116,7 +120,7 @@
    "applies": "Employees, employers and self-employed persons",
    "sources": [
     {
-     "src": 6,
+     "src": 7,
      "said": "The Universal Social Levy (FKA Interim Stabilization Levy) also referred to as USL is a 3% levy on the gross salary or wages of all employees earning over EC$2,000.00 per month. The employer shall match the levy of 3% on the employee’s amount of remuneration or payment not exceeding EC$12,000.00 of an employee’s salary per month. Self-employed persons are required to pay 6% on their gross earnings once it exceeds EC$2,000.00 per month."
     }
    ]
@@ -182,11 +186,11 @@
    "applies": "Services supplied in Anguilla",
    "sources": [
     {
-     "src": 7,
+     "src": 8,
      "said": "The General Services Tax is a tax on services. … General Services Tax came into force on August 1st 2025."
     },
     {
-     "src": 8,
+     "src": 9,
      "said": "there shall be levied and paid a tax known as the General Services Tax, at a positive rate of 13% on the value of … made taxable supplies the total value of which equals or exceeds the amount of EC$300,000"
     },
     {
@@ -226,6 +230,13 @@
    "read": "2026-11-01",
    "kind": "primary",
    "said": "Effective January 1 st 2026 , Employers are entitled to deduct 5.75% of an employees earnings and match with their own portion of 5.75% up to the relevant contribution ceiling stipulated by law."
+  },
+  {
+   "url": "https://ssbai.com/",
+   "title": "Anguilla Social Security Board (home page)",
+   "read": "2026-11-02",
+   "kind": "primary",
+   "said": "The contribution ceiling is EC$1617.00 for weekly workers and EC$7000.00 for monthly."
   },
   {
    "url": "https://ssbai.com/contributions.php?type=self",
@@ -270,19 +281,8 @@
    "tried": {
     "institution": "2026-11-01: ird.gov.ai home and FAQ read; the FAQ page renders no answers to curl; the Taxes & Laws list names no income tax || retry 2026-11-01: ird.gov.ai MediaCenter/Documents and Brochures lists read: acts and guides for General Services Tax, Goods Tax, Universal Social Levy, Property Tax, Accommodation Tax, licences and levies, none for income tax; the 2026 Tax Calendar (saved AI-ird-2026-tax-calendar.pdf, cited) schedules business licences, USL, GST and property tax and no income tax; no sentence saying there is none",
     "official-register": "2026-11-01: no Income Tax Act among the IRD laws page links; gov.ai Residency by Investment presentation (2019) read: no statement || retry 2026-11-01: the IRD document list (the laws it administers, incl. Act 26 Universal Social Levy Act 2021, Act 8 General Services Tax Act 2025, Act 9 Goods Tax Act 2025) has no income tax act",
-    "web-search": "2026-11-01: \"gov.ai Anguilla \\\"no income tax\\\" government official investment\": only Deloitte, Mondaq, Chambers (secondary) || retry 2026-11-01: refused by the search tool on 2026-11-01: the turn's shared limit of 200 searches was reached; not worked around",
+    "web-search": "2026-11-01: \"gov.ai Anguilla \\\"no income tax\\\" government official investment\": only Deloitte, Mondaq, Chambers (secondary) || retry 2026-11-01: refused by the search tool on 2026-11-01: the turn's shared limit of 200 searches was reached; not worked around || search 2026-11-02: \"Anguilla Inland Revenue Department \\\"no income tax\\\" individuals\": Deloitte Anguilla Highlights 2026/2025, Mondaq, Rivermate, expanship blogs (secondary, none naming a primary sentence), ird.gov.ai/Home/about (says the IRD collects domestic tax revenues, no statement on income tax); \"gov.ai Anguilla personal income tax none residents official\": Healy Consultants, expanship, DDTC (secondary), gov.ai A064 Anguilla Economic Residence Act (fetched, saved dl/tax/AI-economic-residence-act.pdf: provides Annual Lump Sum Tax Payments for tax residence, says nothing of an income tax), IRD ISL and GST brochures. No primary sentence that individuals pay no income tax; blocker stands",
     "trade-press": "2026-11-01: Deloitte Anguilla Highlights 2026 read and cited || retry 2026-11-01: Deloitte Anguilla Highlights 2026 (cited) stays the only explicit statement",
-    "archive": "2026-11-01: not reached (web.archive.org connections reset through the proxy this session) || retry 2026-11-01: web.archive.org: connection reset again 2026-11-01"
-   }
-  },
-  {
-   "item": "social",
-   "sought": "The 2026 social security contribution ceiling from the Board or the Contributions Regulations",
-   "tried": {
-    "institution": "2026-11-01: ssbai.com contributions pages say \"Please enquire for current ceilings\"; ssb.ai certificate does not match its host || retry 2026-11-01: ssbai.com 2026-11-01: contributions pages (employee, employer, self-employed) and documents list re-read: no 2026 ceiling (the Board's pages still say to enquire); its 2020 actuarial review is the latest document and predates 2026; ssb.ai: no connection",
-    "official-register": "2026-11-01: Contributions (Amendment) Regulations not found on gov.ai || retry 2026-11-01: gov.ai and the IRD document list carry no Social Security (Contributions) (Amendment) Regulations",
-    "web-search": "2026-11-01: \"Anguilla Social Security Board contribution rate 5.75% ... maximum insurable earnings\": a summary named EC$7,000 monthly and EC$1,617 weekly on the SSB site, page not located || retry 2026-11-01: refused by the search tool on 2026-11-01: the turn's shared limit of 200 searches was reached; not worked around",
-    "trade-press": "2026-11-01: Deloitte 2026 gives XCD 7,000 a month (cited); Anguilla Focus 08/12/2025 gives the rate only || retry 2026-11-01: Deloitte 2026 (XCD 7,000 a month, cited) unchanged",
     "archive": "2026-11-01: not reached (web.archive.org connections reset through the proxy this session) || retry 2026-11-01: web.archive.org: connection reset again 2026-11-01"
    }
   }

@@ -137,6 +137,18 @@ describe("the world's shapes", () => {
   });
 });
 
+describe("the depth round's figures", () => {
+  it('reads Cuba from Ley 113, the solidarity bands of Bolivia, the artists\' rates of Algeria, Egypt, Ethiopia and The Gambia', () => {
+    // Cuba: 15% to 50% after the CUP 39,120 exempt minimum; 15% final from a non-resident; 5% on account; the 10% services tax on a provider's receipts.
+    expect([tax('CU', '100000', '2026-01-01'), of('CU').turnover, pay('CU', { work: 'producer' }).p.tax, pay('CU', { home: 'US' }).p.tax]).toEqual([m('CUP', '19940'), { rate: '0.1', threshold: null }, 50_000, 150_000]);
+    // Bolivia's national solidarity contribution, each band's rate on the pay above its threshold.
+    expect(pay('BO', { gross: m('BOB', '500000') }).p.social).toBe(Math.round((500000 * 0.1271 + (500000 - 156000) * 0.0115 + (500000 - 300000) * 0.0574 + (500000 - 420000) * 0.1148) * 100));
+    // A non-resident artist: 15% in Algeria, 20% in Egypt, 15% in Ethiopia and The Gambia, 20% final in Cabo Verde, 15% final in Grenada.
+    expect(['DZ', 'EG', 'ET', 'GM', 'CV', 'GD'].map((cc) => of(cc).nonResident.performer?.bands[0]?.rate)).toEqual(['0.15', '0.2', '0.15', '0.15', '0.2', '0.15']);
+    expect([of('CV').nonResident.performer?.final, of('GD').nonResident.performer?.final]).toEqual([true, true]);
+  });
+});
+
 describe('pay and the reckoning, around the world', () => {
   it('in a country with no income tax: nothing withheld, nothing due', () => {
     const { s, p } = pay('AE', { gross: m('AED', '100000') });

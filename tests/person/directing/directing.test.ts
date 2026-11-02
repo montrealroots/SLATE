@@ -1,6 +1,7 @@
 import { describe, expect, it } from 'vitest';
 import { allocate, money, type Money } from '../../../src/core/money/money.ts';
 import { begin, commandIndex, dispatch, type Life } from '../../../src/core/frame/frame.ts';
+import { daysFromCivil, SECONDS_PER_DAY } from '../../../src/core/time/calendar.ts';
 import { draws, seedFromText } from '../../../src/core/rng/rng.ts';
 import { ATTRIBUTES, ATTRIBUTES_START, chooseAttributes, componentValues, DAILY, skillOf, type AttributesSlice } from '../../../src/person/attributes/attributes.ts';
 import {
@@ -50,7 +51,7 @@ import { permitsEverywhere } from '../../support/permits.ts';
 import { identity } from '../../support/person.ts';
 import { falsifyAny } from '../../support/falsify-core.ts';
 import { ACCOUNT, minorIn, purse } from '../../support/purse.ts';
-import { YOUTH_START, type YouthSlice } from '../../../src/person/youth/youth.ts';
+import { authoriseWork, YOUTH_START, type YouthSlice } from '../../../src/person/youth/youth.ts';
 
 type D = { attributes: AttributesSlice; directing: DirectingSlice; identity: IdentitySlice; acting: ActingSlice; producing: ProducingSlice; permits: PermitsSlice; youth: YouthSlice } & ReturnType<typeof purse>;
 const SEED = '0123456789abcdef';
@@ -527,5 +528,27 @@ describe('the director', () => {
       { id: 'directing.submit', reads: [], writes: ['directing'] },
       { id: 'directing.pursue', reads: ['identity'], writes: ['attributes', 'directing'] },
     ]);
+  });
+});
+
+describe('a minor director (person.youth)', () => {
+  const NOW = daysFromCivil(2026, 11, 2) * SECONDS_PER_DAY;
+  const teen = (): Life<D> =>
+    dispatch(begin(SEED, NOW, { attributes: structuredClone(ATTRIBUTES_START), directing: structuredClone(DIRECTING_START), identity: identity({ born: { date: '2011-03-10', country: 'FR', region: '' }, citizenship: ['FR'], grewUp: { country: 'FR', region: '' } }), acting: structuredClone(ACTING_START), producing: structuredClone(PRODUCING_START), permits: permitsEverywhere(), youth: structuredClone(YOUTH_START), ...purse('EUR') }), chooseAttributes, { role: 'director', all: 50, each: {} });
+  const ARGS = { account: ACCOUNT, form: 'feature', country: 'FR', agreement: 'idcc-3097', prep: 10, shoot: 20, cut: 10 } as const;
+  it("is engaged at prep only with what France's law needs first, each stage's pécule held, the days at the young worker's hours", () => {
+    expect(() => dispatch(teen(), prepFilm, ARGS)).toThrow('that work in France needs permit first');
+    const p = dispatch(dispatch(teen(), authoriseWork, { country: 'FR', role: 'director' }), prepFilm, ARGS);
+    expect(p.slices.youth.granted).toMatchObject([{ role: 'director', used: true }]);
+    expect(p.slices.attributes['director']?.['vision']).toBeCloseTo(grown(50, 10 * (35 / 40)), 10);
+    const s = dispatch(p, shootFilm, { film: 1, account: ACCOUNT });
+    const v = componentValues(p.slices.attributes, 'director');
+    const film = s.slices.directing.films[0];
+    expect(film?.shot?.['story']).toBeCloseTo((film?.plan['story'] as number) * finish(v, 20 * (35 / 40), shootNeeded(v, { form: 'feature' })) * onSet(v), 10);
+    expect(s.slices.attributes['director']?.['leadership']).toBeCloseTo(grown(p.slices.attributes['director']?.['leadership'] as number, 20 * (35 / 40)), 10);
+    const c = dispatch(s, cutFilm, { film: 1, account: ACCOUNT });
+    expect(c.slices.attributes['director']?.['editing']).toBeCloseTo(grown(s.slices.attributes['director']?.['editing'] as number, 10 * (35 / 40)), 10);
+    expect(c.slices.directing.films[0]?.cut).toBeCloseTo(Math.min(100, Math.max(0, partSkill(componentValues(s.slices.attributes, 'director'), 'cut') * finish(componentValues(s.slices.attributes, 'director'), 10 * (35 / 40), cutNeeded(componentValues(s.slices.attributes, 'director'), 20)) + spread(partSkill(componentValues(s.slices.attributes, 'director'), 'cut')) * (2 * u(SEED, 'cut', 1) - 1))), 10);
+    expect(c.slices.youth.held.map((h) => h.engagement)).toEqual(['directing:1', 'directing:1', 'directing:1']);
   });
 });

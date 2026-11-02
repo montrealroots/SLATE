@@ -167,7 +167,9 @@ const BY_HAND: Record<string, Record<string, 'fees' | 'none' | 'unknown'>> = {
   AD: { 'ad-artist': 'fees' }, AR: { 'ar-dac': 'fees' }, AS: { 'as-screen': 'fees' }, AT: { 'at-screen': 'none' }, AZ: { 'az-state-order': 'fees', 'az-screen': 'none' }, BA: { 'ba-screen': 'none' }, BE: { 'be-303-flat': 'fees', 'be-303': 'fees' }, CH: { 'ch-screen': 'none' }, CU: { 'cu-icaic': 'fees' }, GR: { 'gr-ert': 'unknown', 'gr-screen': 'unknown' }, HK: { 'hk-screen': 'none' }, LV: { 'lv-screen': 'none' }, ME: { 'me-screen': 'none' }, PA: { 'pa-screen': 'none' }, PH: { 'ph-screen': 'fees' }, SK: { 'sk-screen': 'none' },
 };
 /** The territories whose research says a director's work there follows its sovereign's terms: the sovereign's agreements, as the territory's own. */
-const FOLLOWS: Record<string, string> = { AX: 'FI', BL: 'FR', CC: 'AU', CX: 'AU', GF: 'FR', GP: 'FR', MF: 'FR', NF: 'AU', PM: 'FR', RE: 'FR', YT: 'FR' };
+const FOLLOWS: Record<string, string> = { AX: 'FI', BL: 'FR', CC: 'AU', CX: 'AU', GF: 'FR', GP: 'FR', MC: 'FR', MF: 'FR', NF: 'AU', PM: 'FR', RE: 'FR', YT: 'FR' };
+/** Monaco's wage law: at least what the same profession is owed in Nice, raised by 5% (Loi n° 739; Arrêté ministériel n° 63-131). */
+const UPLIFT: Record<string, string> = { MC: '0.05' };
 const kind = (a: MarketAgreement) => (a.fees.length > 0 ? 'fees' : a.none ? 'none' : 'unknown');
 /** The agreements read from each market's own research: a territory's copies of its sovereign's are held beside them below. */
 const OWN = () => Object.entries(AGREEMENTS).filter(([, a]) => !Object.hasOwn(FOLLOWS, a.country));
@@ -216,7 +218,7 @@ describe("the director's markets", () => {
       if (sovereign !== undefined) {
         const own = MARKETS[sovereign] as { agreements: readonly string[]; unknown: readonly string[] };
         expect([market.unknown, market.agreements], cc).toEqual([[...new Set([...items, ...own.unknown])], own.agreements.map((id) => `${cc.toLowerCase()}-${id}`)]);
-        for (const id of own.agreements) expect(AGREEMENTS[`${cc.toLowerCase()}-${id}`], id).toEqual({ ...AGREEMENTS[id], country: cc });
+        for (const id of own.agreements) expect(AGREEMENTS[`${cc.toLowerCase()}-${id}`], id).toEqual({ ...AGREEMENTS[id], country: cc, ...(UPLIFT[cc] === undefined ? {} : { uplift: UPLIFT[cc] }) });
         continue;
       }
       expect(market.unknown, cc).toEqual(items);
@@ -330,6 +332,9 @@ describe('a film in a market', () => {
     // A territory following its sovereign is paid the sovereign's minimum (France's film agreement in Guadeloupe and La Réunion, Australia's award on Christmas Island).
     for (const cc of ['GP', 'RE']) expect(fee({ form: 'feature', country: cc, agreement: `${cc.toLowerCase()}-idcc-3097`, prep: 34, shoot: 40, cut: 30 }), cc).toEqual(m('EUR', '62717.62'));
     expect(fee({ form: 'hour', country: 'CX', prep: 5, shoot: 8, cut: 4 })).toEqual(m('AUD', '5265.92'));
+    // Monaco: France's film agreement (Nice's), raised by 5%.
+    expect(fee({ form: 'feature', country: 'MC', agreement: 'mc-idcc-3097', prep: 34, shoot: 40, cut: 30 })).toEqual(m('EUR', '65853.50'));
+    expect(fee({ form: 'hour', country: 'MC', agreement: 'mc-idcc-2642', prep: 5, shoot: 8, cut: 4 })).toBeNull();
     expect(fee({ form: 'feature', country: 'AX', ...forty })).toBeNull();
     // The world's markets whose research says nothing sets the pay, or can't find what does.
     for (const cc of ['FI', 'HU', 'AT', 'HK', 'AE', 'PL', 'RU', 'HR', 'TZ']) expect(fee({ form: 'feature', country: cc, ...forty }), cc).toBeNull();

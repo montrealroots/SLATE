@@ -112,6 +112,32 @@
    ]
   },
   {
+   "item": "withholding",
+   "finding": "From 1 March 2026 a withholding agent keeps back 10% of the fees paid to a resident individual for intellectual services, of fees and royalties paid to residents (artists among them) for the use of their image or renown, and of royalties for intellectual property; a payment with no specific rate bears 3%.",
+   "value": {
+    "from": "2026-03-01",
+    "law": "SRI Resolución NAC-DGERCGC26-00000009 (Registro Oficial, Cuarto Suplemento 233, 27 Feb 2026), repealing NAC-DGERCGC24-00000008",
+    "rates": {
+     "intellectualServicesIndividual": 0.1,
+     "imageOrRenownIncludingArtists": 0.1,
+     "intellectualPropertyRoyalties": 0.1,
+     "general": 0.03
+    },
+    "final": false
+   },
+   "applies": "Fees paid by a withholding agent to a resident freelancer (an actor's, writer's or director's fee for intellectual work, an artist's fee for image or renown, royalties), from 1 March 2026; the withholding is credited against the annual income tax.",
+   "sources": [
+    {
+     "src": 3,
+     "said": "Mediante la Resolución NAC-DGERCGC26-00000009, de 27 de febrero de 2026, el Servicio de Rentas Internas expidió el régimen actualizado de porcentajes de retención en la fuente del Impuesto a la Renta, aplicable a partir del 1 de marzo de 2026 … 10 % a) Honorarios, comisiones y demás pagos realizados a personas naturales residentes en el país que presten servicios en los que prevalezca el intelecto sobre la mano de obra, indistintamente de que el prestador del servicio posea o no título profesional o la relación del título con la actividad realizada. b) Honorarios, comisiones, regalías y demás pagos realizados a personas naturales y sociedades, nacionales o extranjeras, residentes en el Ecuador, por el ejercicio de actividades relacionadas directa o indirectamente con la utilización o aprovechamiento de su imagen o renombre, incluidos artistas … Se añade una regla general del 3% para pagos no contemplados en porcentajes específicos"
+    },
+    {
+     "src": 4,
+     "said": "Mediante Registro Oficial - Cuarto Suplemento Nro. 233, de fecha 27 de febrero de 2026, el Servicio de Rentas Internas, emite la resolución Nro. NAC-DGERCGC26-00000009, a través de la cual entró en vigencia un nuevo esquema de retenciones en la fuente del Impuesto a la Renta."
+    }
+   ]
+  },
+  {
    "item": "nonResident",
    "finding": "A non-resident pays 25% income tax, withheld at source, on Ecuador-source income; payments to a non-resident occasionally working in Ecuador not charged to an Ecuadorian company or branch give rise to no tax.",
    "value": {
@@ -191,19 +217,23 @@
    "kind": "secondary",
    "quotes": "https://www.sri.gob.ec/impuesto-renta",
    "said": "In the case of employees, there is mandatory monthly withholding by the employer as long as the total annual net income exceeds the non-taxable base of USD 12,208. … The employer's annual withholding return is considered the employee's income tax return. … The fiscal year is the calendar year. … Other individuals must file their income tax return in March of the following year."
+  },
+  {
+   "url": "https://nmslaw.com.ec/blog/2026/03/02/sri-nuevos-porcentajes-retencion-fuente-impuesto-renta/",
+   "title": "El SRI expide nuevos porcentajes de retención en la fuente de Impuesto a la Renta (NMS Law, 2 March 2026), reproducing SRI Resolution NAC-DGERCGC26-00000009",
+   "read": "2026-11-02",
+   "kind": "secondary",
+   "quotes": "https://www.registroficial.gob.ec/",
+   "said": "Mediante la Resolución NAC-DGERCGC26-00000009, de 27 de febrero de 2026, el Servicio de Rentas Internas expidió el régimen actualizado de porcentajes de retención en la fuente del Impuesto a la Renta, aplicable a partir del 1 de marzo de 2026 … 10 % a) Honorarios, comisiones y demás pagos realizados a personas naturales residentes en el país que presten servicios en los que prevalezca el intelecto sobre la mano de obra, indistintamente de que el prestador del servicio posea o no título profesional o la relación del título con la actividad realizada. b) Honorarios, comisiones, regalías y demás pagos realizados a personas naturales y sociedades, nacionales o extranjeras, residentes en el Ecuador, por el ejercicio de actividades relacionadas directa o indirectamente con la utilización o aprovechamiento de su imagen o renombre, incluidos artistas … Se añade una regla general del 3% para pagos no contemplados en porcentajes específicos"
+  },
+  {
+   "url": "https://procuraduria.utpl.edu.ec/Boletines/BOLET%C3%8DN_08-2026.pdf",
+   "title": "Boletín informativo 08-2026: Resolución SRI NAC-DGERCGC26-00000009 (Procuraduría, Universidad Técnica Particular de Loja, 25 March 2026)",
+   "read": "2026-11-02",
+   "kind": "secondary",
+   "quotes": "https://www.registroficial.gob.ec/",
+   "said": "Mediante Registro Oficial - Cuarto Suplemento Nro. 233, de fecha 27 de febrero de 2026, el Servicio de Rentas Internas, emite la resolución Nro. NAC-DGERCGC26-00000009, a través de la cual entró en vigencia un nuevo esquema de retenciones en la fuente del Impuesto a la Renta."
   }
  ],
- "blockers": [
-  {
-   "item": "withholding",
-   "sought": "The withholding rate on a resident freelancer's professional fees (honorarios).",
-   "tried": {
-    "institution": "sri.gob.ec not reached in the time. || 2026-11-01 retry: sri.gob.ec resets the connection (curl 000); iess.gob.ec, finanzas.gob.ec and ces.gob.ec reachable but none publishes the SRI withholding percentages",
-    "official-register": "Registro Oficial not reached. || 2026-11-01 retry: registroficial.gob.ec home reachable; the SRI withholding resolution was not located without its number",
-    "web-search": "Not searched. || 2026-11-01 retry: refused by the tool on 2026-11-01: 'this turn's web search budget is used up (limit: 200 WebSearch calls per turn, shared by every agent)'; queries sent and refused this turn: 'Налоговый кодекс Республики Беларусь статья 199 ставки подоходного налога 2026 13 25 процентов' and 'Eswatini Revenue Service PAYE tax tables 1 July 2026'; no search engine was queried any other way",
-    "trade-press": "PwC: not stated. || 2026-11-01 retry: PwC Ecuador (already read): not stated",
-    "archive": "Archive unreachable. || 2026-11-01 retry: archive.org's availability API now answers (snapshots of the institution's site exist), but web.archive.org snapshot pages return HTTP 403 over http and reset over https from this environment (2026-11-01)"
-   }
-  }
- ]
+ "blockers": []
 }

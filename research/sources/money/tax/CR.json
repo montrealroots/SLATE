@@ -237,6 +237,30 @@
      "said": "The standard applicable VAT rate is 13%;"
     }
    ]
+  },
+  {
+   "item": "authors",
+   "finding": "A payment to a non-domiciled beneficiary for the use of films, television films, recordings and like means of spreading images or sounds bears a single and definitive 20% of the gross amount under article 59 (e) of Ley 7092, radio and television serials (telenovelas) 50% under (f); no special rule for a resident author's royalties was found.",
+   "value": {
+    "currency": "CRC",
+    "base": "gross amount paid or credited",
+    "final": true,
+    "rates": {
+     "filmsTelevisionRecordings": 0.2,
+     "radioAndTelevisionSerials": 0.5
+    }
+   },
+   "applies": "remittances abroad for the use of a film, a television film or a recording; a resident's royalties are ordinary income (no special rule found)",
+   "sources": [
+    {
+     "src": 8,
+     "said": "el pagador retendrá, como impuesto único y definitivo, las sumas del impuesto que correspondan … e) Por la utilización de películas cinematográficas, películas para televisión, grabaciones, discos fonográficos, historietas y, en general, cualquier medio de difusión similar de imágenes o sonidos, así como por la utilización de noticias internacionales se pagará una tarifa del 20%. … f) Por radionovelas y telenovelas se pagará una tarifa del 50%."
+    },
+    {
+     "src": 9,
+     "said": "Películas, grabaciones, discos, historietas, noticias internacionales y medios similares de imágenes o sonidos 20% Monto bruto pagado o acreditado … Radionovelas y telenovelas 50% Monto bruto pagado o acreditado"
+    }
+   ]
   }
  ],
  "country": "CR",
@@ -303,6 +327,22 @@
    "kind": "secondary",
    "quotes": "https://www.hacienda.go.cr/",
    "said": "The standard applicable VAT rate is 13%;"
+  },
+  {
+   "url": "https://www.tec.ac.cr/sites/default/files/media/doc/retenciones_por_remesas_al_exterior_0.pdf",
+   "title": "Instituto Tecnológico de Costa Rica: Retenciones por remesas al exterior (reproducing article 59 of Ley 7092, Ley del Impuesto sobre la Renta; PDF of 1 March 2017)",
+   "read": "2026-11-02",
+   "kind": "secondary",
+   "quotes": "http://www.pgrweb.go.cr/scij/Busqueda/Normativa/Normas/nrm_texto_completo.aspx?nValor1=1&nValor2=10969",
+   "said": "el pagador retendrá, como impuesto único y definitivo, las sumas del impuesto que correspondan … e) Por la utilización de películas cinematográficas, películas para televisión, grabaciones, discos fonográficos, historietas y, en general, cualquier medio de difusión similar de imágenes o sonidos, así como por la utilización de noticias internacionales se pagará una tarifa del 20%. … f) Por radionovelas y telenovelas se pagará una tarifa del 50%."
+  },
+  {
+   "url": "https://siemprealdia.co/costa-rica/impuestos/retencion-a-no-domiciliados-en-costa-rica/",
+   "title": "Siempre al Día (Alegra): Retención a no domiciliados en Costa Rica 2026 (updated 15 July 2026)",
+   "read": "2026-11-02",
+   "kind": "secondary",
+   "quotes": "http://www.pgrweb.go.cr/scij/Busqueda/Normativa/Normas/nrm_texto_completo.aspx?nValor1=1&nValor2=10969",
+   "said": "Películas, grabaciones, discos, historietas, noticias internacionales y medios similares de imágenes o sonidos 20% Monto bruto pagado o acreditado … Radionovelas y telenovelas 50% Monto bruto pagado o acreditado"
   }
  ],
  "blockers": [
@@ -312,7 +352,7 @@
    "tried": {
     "institution": "hacienda.go.cr home page reached (2026-11-01); no page found there giving the item || 2026-11-01 retry: hacienda.go.cr home page re-read: no IVA, renta or CCSS pages linked (notices only); ccss.sa.cr and www.ccss.sa.cr reset the connection (curl 000)",
     "official-register": "La Gaceta 229 (5 Dec 2025) read for the 2026 brackets; SCIJ (pgrweb.go.cr) not read || 2026-11-01 retry: pgrweb.go.cr/scij now redirects to sinalevi.go.cr, which returns HTTP 403 (not read another way); imprentanacional.go.cr (La Gaceta) reachable but no issue number to fetch",
-    "web-search": "searched 'Hacienda Costa Rica decreto tramos impuesto sobre la renta 2026' and 'CCSS cuotas obrero patronales 2026' || 2026-11-01 retry: refused by the tool on 2026-11-01: 'this turn's web search budget is used up (limit: 200 WebSearch calls per turn, shared by every agent)'; queries sent and refused this turn: 'Налоговый кодекс Республики Беларусь статья 199 ставки подоходного налога 2026 13 25 процентов' and 'Eswatini Revenue Service PAYE tax tables 1 July 2026'; no search engine was queried any other way",
+    "web-search": "searched 'Hacienda Costa Rica decreto tramos impuesto sobre la renta 2026' and 'CCSS cuotas obrero patronales 2026' || 2026-11-01 retry: refused by the tool on 2026-11-01: 'this turn's web search budget is used up (limit: 200 WebSearch calls per turn, shared by every agent)'; queries sent and refused this turn: 'Налоговый кодекс Республики Беларусь статья 199 ставки подоходного налога 2026 13 25 процентов' and 'Eswatini Revenue Service PAYE tax tables 1 July 2026'; no search engine was queried any other way || Web search 2026-11-02: query \"Costa Rica IVA servicios profesionales independientes umbral inscripción Ley 9635 régimen de tributación simplificada monto exento\" returned VAT guides (trykintsugi.com, avalara.com, taxdo.com: no general registration threshold, a secondary not naming the article), PwC's note on Decreto 45209-H reforming the simplified regime from 13 October 2025 (no professional-services threshold in it), qupos.com's 2019 rate list and siemprealdia.co's IVA and exemptions guides; none from Hacienda or Ley 9635's text states a turnover below which a freelancer's fee is outside IVA.",
     "trade-press": "PwC (reviewed 30 June 2026), EY, ECIJA and KPMG Costa Rica read || 2026-11-01 retry: PwC, EY, KPMG and ECIJA (already read) say nothing more",
     "archive": "web.archive.org resets the connection from this environment (2026-11-01) || 2026-11-01 retry: archive.org's availability API now answers (snapshots of the institution's site exist), but web.archive.org snapshot pages return HTTP 403 over http and reset over https from this environment (2026-11-01)"
    }
@@ -323,18 +363,18 @@
    "tried": {
     "institution": "hacienda.go.cr home page reached (2026-11-01); no page found there giving the item || 2026-11-01 retry: hacienda.go.cr home page re-read: no IVA, renta or CCSS pages linked (notices only); ccss.sa.cr and www.ccss.sa.cr reset the connection (curl 000)",
     "official-register": "La Gaceta 229 (5 Dec 2025) read for the 2026 brackets; SCIJ (pgrweb.go.cr) not read || 2026-11-01 retry: pgrweb.go.cr/scij now redirects to sinalevi.go.cr, which returns HTTP 403 (not read another way); imprentanacional.go.cr (La Gaceta) reachable but no issue number to fetch",
-    "web-search": "searched 'Hacienda Costa Rica decreto tramos impuesto sobre la renta 2026' and 'CCSS cuotas obrero patronales 2026' || 2026-11-01 retry: refused by the tool on 2026-11-01: 'this turn's web search budget is used up (limit: 200 WebSearch calls per turn, shared by every agent)'; queries sent and refused this turn: 'Налоговый кодекс Республики Беларусь статья 199 ставки подоходного налога 2026 13 25 процентов' and 'Eswatini Revenue Service PAYE tax tables 1 July 2026'; no search engine was queried any other way",
+    "web-search": "searched 'Hacienda Costa Rica decreto tramos impuesto sobre la renta 2026' and 'CCSS cuotas obrero patronales 2026' || 2026-11-01 retry: refused by the tool on 2026-11-01: 'this turn's web search budget is used up (limit: 200 WebSearch calls per turn, shared by every agent)'; queries sent and refused this turn: 'Налоговый кодекс Республики Беларусь статья 199 ставки подоходного налога 2026 13 25 процентов' and 'Eswatini Revenue Service PAYE tax tables 1 July 2026'; no search engine was queried any other way || Web search 2026-11-02: query \"CCSS trabajador independiente escala contributiva 2026 porcentaje SEM IVM cotización\" returned press and firm notes only (delfino.cr on the Sala IV ruling of February 2025, crhoy.com, nacion.com, observador.cr on a proposed cap of 12%, blog.alegra.com, siemprealdia.co, EY's alert and ECIJA's PDF on the 2026 employee and employer rates already used): per the search the Reglamento para el Aseguramiento Contributivo de los Trabajadores Independientes sets the self-employed's share by reference-income level, SEM 2.89% to 10.69% and IVM 4.16% to 8.42%, undated and quoting no CCSS table; the CCSS's own scale was not among the results (ccss.sa.cr resets this environment). Not a finding.",
     "trade-press": "PwC (reviewed 30 June 2026), EY, ECIJA and KPMG Costa Rica read || 2026-11-01 retry: ECIJA CCSS note (already saved) gives employee/employer only",
     "archive": "web.archive.org resets the connection from this environment (2026-11-01) || 2026-11-01 retry: archive.org's availability API now answers (snapshots of the institution's site exist), but web.archive.org snapshot pages return HTTP 403 over http and reset over https from this environment (2026-11-01)"
    }
   },
   {
    "item": "authors",
-   "sought": "The Ley 7092 art. 59 text on remittances for films, television and recordings, and any special rule for authors' royalties",
+   "sought": "Any special rule for a resident author's (a writer's, a director's) royalties, and article 59 of Ley 7092 read in SCIJ's own consolidation (the remittance rates on films and recordings now rest on two secondaries)",
    "tried": {
     "institution": "hacienda.go.cr home page reached (2026-11-01); no page found there giving the item || 2026-11-01 retry: hacienda.go.cr home page re-read: no IVA, renta or CCSS pages linked (notices only); ccss.sa.cr and www.ccss.sa.cr reset the connection (curl 000)",
     "official-register": "La Gaceta 229 (5 Dec 2025) read for the 2026 brackets; SCIJ (pgrweb.go.cr) not read || 2026-11-01 retry: pgrweb.go.cr/scij now redirects to sinalevi.go.cr, which returns HTTP 403 (not read another way); imprentanacional.go.cr (La Gaceta) reachable but no issue number to fetch",
-    "web-search": "searched 'Hacienda Costa Rica decreto tramos impuesto sobre la renta 2026' and 'CCSS cuotas obrero patronales 2026' || 2026-11-01 retry: refused by the tool on 2026-11-01: 'this turn's web search budget is used up (limit: 200 WebSearch calls per turn, shared by every agent)'; queries sent and refused this turn: 'Налоговый кодекс Республики Беларусь статья 199 ставки подоходного налога 2026 13 25 процентов' and 'Eswatini Revenue Service PAYE tax tables 1 July 2026'; no search engine was queried any other way",
+    "web-search": "searched 'Hacienda Costa Rica decreto tramos impuesto sobre la renta 2026' and 'CCSS cuotas obrero patronales 2026' || 2026-11-01 retry: refused by the tool on 2026-11-01: 'this turn's web search budget is used up (limit: 200 WebSearch calls per turn, shared by every agent)'; queries sent and refused this turn: 'Налоговый кодекс Республики Беларусь статья 199 ставки подоходного налога 2026 13 25 процентов' and 'Eswatini Revenue Service PAYE tax tables 1 July 2026'; no search engine was queried any other way || Web search 2026-11-02: query \"Ley 7092 artículo 59 remesas al exterior películas cinematográficas televisión derechos de autor 20% 25% impuesto Costa Rica\" returned the TEC's copy of art. 59 (saved /tmp/claude-0/-home-user-SLATE/cfe06f79-0641-529e-b709-1fcd46045c09/scratchpad/dl/tax/CR-tec-remesas-art59.pdf) and Siempre al Día's 2026 guide (saved /tmp/claude-0/-home-user-SLATE/cfe06f79-0641-529e-b709-1fcd46045c09/scratchpad/dl/tax/CR-siemprealdia-remesas-2026.html), which set the films and recordings remittance rate (now a figure, secondary, quoting SCIJ's Ley 7092); Asamblea bills 22369, 22801 and 22304 (proyectos.conare.ac.cr) amending art. 59; delfino.cr on Ley 10381 (2024); bufetedecostarica.com's copy of Ley 10071 on film investment; nothing on a resident author's royalties. The guide's own text gives honorarios both 15% (summary) and 25% (table).",
     "trade-press": "PwC (reviewed 30 June 2026), EY, ECIJA and KPMG Costa Rica read || 2026-11-01 retry: PwC and KPMG (already read): no Ley 7092 art. 59 text",
     "archive": "web.archive.org resets the connection from this environment (2026-11-01) || 2026-11-01 retry: archive.org's availability API now answers (snapshots of the institution's site exist), but web.archive.org snapshot pages return HTTP 403 over http and reset over https from this environment (2026-11-01)"
    }

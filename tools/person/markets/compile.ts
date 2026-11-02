@@ -35,6 +35,7 @@ export const OUTPUT = 'src/person/acting/markets.json';
 export const LANGUAGES = 'src/person/identity/languages.json';
 export const ZONES = 'src/core/time/tzdb.json';
 export const PLACES = 'src/world/gazetteer/places';
+export const COUNTRIES = 'src/world/gazetteer/countries.json';
 /** The register's facts: a market's research, and its blockers. */
 export const FACT = 'person.markets.';
 export const BLOCKED = 'person.markets.blocked.';
@@ -77,6 +78,8 @@ export interface Agreement {
   minimums: Minimum[];
   /** The agreement whose terms a territory's work follows, where it follows another country's. */
   follows?: string;
+  /** Where the territory's minimum is the followed one raised by a share (Monaco's: Nice's, plus 5%), that share. */
+  uplift?: string;
 }
 
 export interface Market {
@@ -257,7 +260,7 @@ export function spokenOf(territory: Spoken | undefined, names: Readonly<Record<s
  * (where the research names no city, its most populous place's), and its agreements: its own, or, where its research
  * says its work follows another country's terms, that country's as compiled (`done`), each as the territory's own.
  */
-export function marketOf(r: Research, reading: unknown, names: Readonly<Record<string, string>>, zones: ReadonlySet<string>, place: () => string | undefined, done: Pick<Markets, 'markets' | 'agreements'>, spoken: () => string | undefined): { market: Market; agreements: Record<string, Agreement> } {
+export function marketOf(r: Research, reading: unknown, names: Readonly<Record<string, string>>, zones: ReadonlySet<string>, place: () => string | undefined, done: Pick<Markets, 'markets' | 'agreements'>, spoken: () => string | undefined, countries: Readonly<Record<string, string>>): { market: Market; agreements: Record<string, Agreement> } {
   const m = record(reading, `the reading of ${r.country}`);
   const lang = record(m['language'], 'a language');
   const code = String(lang['code']);
@@ -286,12 +289,17 @@ export function marketOf(r: Research, reading: unknown, names: Readonly<Record<s
     if (m['agreements'] !== undefined) throw new Error(`${r.country} follows another country's agreements, and has none of its own`);
     const f = record(m['follows'], 'what a market follows');
     const cc = String(f['market']);
-    if (record(figureOf(r, f['fig'], ['none']).value, 'a none')['follows'] !== cc) throw new Error(`${r.country}'s figure ${String(f['fig'])} doesn't say its work follows ${cc}'s terms`);
+    // A territory's figure names the country it follows; a wage law's, the place in it whose minimum it owes (Monaco's: Nice, France), as the map names the country.
+    const value = record(figureOf(r, f['fig'], f['place'] === undefined ? ['none'] : ['rates']).value, 'a none');
+    const says = f['place'] === undefined ? value['follows'] === cc : String(at(value, f['place'] as (string | number)[])).includes(String(countries[cc]));
+    if (!says) throw new Error(`${r.country}'s figure ${String(f['fig'])} doesn't say its work follows ${cc}'s terms`);
+    const share = f['uplift'] === undefined ? undefined : at(value, f['uplift'] as (string | number)[]);
+    if (share !== undefined && !(typeof share === 'number' && share > 0 && share < 1)) throw new Error(`${r.country}'s figure ${String(f['fig'])} raises the minimum by no share`);
     if (!Object.hasOwn(done.markets, cc)) throw new Error(`${cc} isn't a market to follow`);
     for (const id of (done.markets[cc] as Market).agreements) {
       const a = done.agreements[id] as Agreement;
       if (a.follows !== undefined) throw new Error(`${cc} follows another country's terms itself`);
-      agreements[`${r.country.toLowerCase()}-${id}`] = { ...a, country: r.country, follows: id };
+      agreements[`${r.country.toLowerCase()}-${id}`] = { ...a, country: r.country, follows: id, ...(share === undefined ? {} : { uplift: String(share) }) };
     }
   }
   return { market: { language: code, zone, agreements: Object.keys(agreements) }, agreements };
@@ -329,6 +337,7 @@ export function readMarkets(root: string): Markets {
   const { names, territories } = read(LANGUAGES) as { names: Record<string, string>; territories: Record<string, Spoken> };
   const tz = read(ZONES) as { zones: object; links: object };
   const zones = new Set([...Object.keys(tz.zones), ...Object.keys(tz.links)]);
+  const countries = Object.fromEntries(Object.entries(read(COUNTRIES) as Record<string, { name: string }>).map(([cc, c]) => [cc, c.name]));
   // Stryker disable next-line MethodExpression: the directory's order is sorted on the file systems the gate runs on; the sort holds it on any other.
   const files = existsSync(join(root, SOURCES)) ? readdirSync(join(root, SOURCES)).filter((f) => /^[A-Z]{2}\.json$/.test(f)).map((f) => f.slice(0, -5)).sort() : [];
   const out: Markets = { markets: {}, agreements: {}, unknown: {} };
@@ -359,7 +368,7 @@ export function readMarkets(root: string): Markets {
   // Every reading here is an object (checked above), so whether it follows another's is its own key.
   const follows = ([c]: [string, Research]) => Object.hasOwn(readings[c] as object, 'follows');
   for (const [cc, research] of [...researched.filter((x) => !follows(x)), ...researched.filter(follows)]) {
-    const { market, agreements } = marketOf(research, readings[cc], names, zones, () => placeZone(root, cc), out, () => spokenOf(territories[cc], names));
+    const { market, agreements } = marketOf(research, readings[cc], names, zones, () => placeZone(root, cc), out, () => spokenOf(territories[cc], names), countries);
     for (const id of market.agreements) if ((KEPT as readonly string[]).includes(id) || Object.hasOwn(out.agreements, id)) throw new Error(`${id} is another agreement's id`);
     out.markets[cc] = market;
     Object.assign(out.agreements, agreements);

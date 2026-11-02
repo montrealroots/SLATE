@@ -78,17 +78,26 @@
   },
   {
    "item": "nonResident",
-   "finding": "Pay for work performed in Djibouti is taxed whatever the worker's residence, so a visiting performer engaged for under a month bears the 15% minimum flat rate on the month's pay; the withholding on a non-resident's fee as an independent was not found.",
+   "finding": "Pay for work performed in Djibouti is taxed whatever the worker's residence, so a visiting performer engaged for under a month bears the 15% minimum flat rate on the month's pay; a fee paid by a payer established in Djibouti to a non-domiciled person for services of any kind supplied or used in Djibouti, or for author's rights, bears a separate tax withheld at source of 10% of the gross amount excluding VAT (CGI arts. 70 to 75).",
    "value": {
     "rate": 0.15,
     "base": "whole pay for an engagement under one month",
-    "independentFee": null
+    "independentFee": {
+     "rate": 0.1,
+     "base": "gross remuneration excluding VAT, fractions under DJF 1,000 ignored",
+     "withheldBy": "the paying party established in Djibouti",
+     "articles": "CGI 70-76"
+    }
    },
    "applies": "CGI 2011 edition, the latest text on the ministry's site; whether later finance laws changed it was not confirmed",
    "sources": [
     {
      "src": 0,
      "said": "Art.16.- L’impôt sur les traitements et salaires afférent aux rémunérations versées à des personnes employées pour une durée inférieure à un mois civil est déterminé d’après un taux forfaitaire minimal de 15 % applicable sur la totalité de la rémunération versée au cours du mois."
+    },
+    {
+     "src": 2,
+     "said": "Art.70.- Il est institué un impôt perçu par la voie de retenue à la source, sur les rémunérations versées à des personnes physiques ou morales non domiciliées à Djibouti. … les sommes versées en rémunération de prestations de service de toute nature fournies ou utilisées sur le territoire de la République de Djibouti ; … Art.74.- La base d’imposition est constituée par le montant brut hors TVA des rémunérations versées. … Le taux d’imposition applicable sur la base ci-dessus est fixé à 10 %."
     }
    ]
   },
@@ -144,12 +153,28 @@
    "applies": "Rates from 11 August 2020 (Décret 2020-208) and the ceiling from Arrêté 2015-605; no later text on either was found in the Journal officiel's search.",
    "sources": [
     {
-     "src": 2,
+     "src": 3,
      "said": "L’employeur doit prélever d’office sur les salaires les cotisations des travailleurs et les verser à la Caisse Nationale de Sécurité Sociale … Régime Général Régime Zone Franche Régime Indépendant Catégorie de prestation Tx Part Patronale Tx Part Salariale Total Tx Part Patronale Tx Part Salariale Total Tx Part Patronale Tx Part Salariale Total 1-Prestation familiale 5.5% 5.5% 5.5% 5.5% 2-Accident de travail 1.2% 1.2% 1.2% 1.2% 3-Retraite 4% 4% 8% 4% 4% 8% 4-Assurance maladie obligatoire (soins) 5% 2% 7% 5% 2% 7% 7% 7% Total taux de cotisation 15.7% 6% 21.7% 15.7% 6% 21.7% 7% 7%"
     },
     {
-     "src": 3,
+     "src": 4,
      "said": "Les rémunérations mensuelles entrant en compte pour la détermination de l’assiette des cotisations dues à la Caisse Nationale de Sécurité Sociale, sont déplafonnées en ce qui concerne les régimes de retraites. Elles sont plafonnées à 400.000 FDJ pour les autres régimes."
+    }
+   ]
+  },
+  {
+   "item": "authors",
+   "finding": "Sums received as author's rights by a person not domiciled in Djibouti, paid by a payer established there, bear the 10% tax withheld at source on the gross amount excluding VAT (CGI arts. 72 and 75); no special rule for a resident author's royalties was found in the code.",
+   "value": {
+    "nonResidentRate": 0.1,
+    "base": "gross excluding VAT",
+    "residentRule": null
+   },
+   "applies": "CGI 2011 edition, the latest text on the ministry's site; the 2024 to 2026 finance laws read do not change arts. 70 to 75",
+   "sources": [
+    {
+     "src": 2,
+     "said": "les sommes perçues à titre de droit d’auteur, les produits tirés de la propriété industrielle, commerciale ou assimilée. … Le taux d’imposition applicable sur la base ci-dessus est fixé à 10 %."
     }
    ]
   }
@@ -169,6 +194,13 @@
    "read": "2026-11-01",
    "kind": "primary",
    "said": "L’article 287 alinéa 1 du CGI est reformulé comme suit : “L’impôt sur les traitements et salaires afférent à un mois déterminé doit être versé avant le dix du mois suivant, à la caisse de la Trésorerie générale”. … L’article 174 est complété comme suit : “Art. 174 alinéa 2 : “sont assujetties à la TVA les personnes physiques et morales exerçant une profession libérale sans distinction de chiffre d’affaires”. … Véhicule de tourisme d’une puissance inférieure ou éqale à 9 CV 10% 10% 10% 10%"
+  },
+  {
+   "url": "http://www.ministere-finances.dj/TVA/CGI%20%202010.pdf",
+   "title": "République de Djibouti, Code général des impôts 2011 (Ministère de l'Économie et des Finances)",
+   "read": "2026-11-02",
+   "kind": "primary",
+   "said": "Art.70.- Il est institué un impôt perçu par la voie de retenue à la source, sur les rémunérations versées à des personnes physiques ou morales non domiciliées à Djibouti. … les sommes versées en rémunération de prestations de service de toute nature fournies ou utilisées sur le territoire de la République de Djibouti ; … Art.74.- La base d’imposition est constituée par le montant brut hors TVA des rémunérations versées. … Le taux d’imposition applicable sur la base ci-dessus est fixé à 10 %. … les sommes perçues à titre de droit d’auteur, les produits tirés de la propriété industrielle, commerciale ou assimilée. … Le taux d’imposition applicable sur la base ci-dessus est fixé à 10 %."
   },
   {
    "url": "https://www.journalofficiel.dj/texte-juridique/decret-n2020-208-pr-mtra-determinant-la-quotite-des-fractions-du-salaire-soumise-a-prelevements-progressifs-et-les-taux-y-afferents-au-titre-de-la-cotisation-aux-institutions-obligatoires-de-la/",
@@ -192,29 +224,18 @@
    "tried": {
     "institution": "impots.dj unreachable (connection failed, 2026-11-01); ministere-finances.dj reached: its CGI is the 2011 edition || retry 2026-11-01: impots.dj and cnss.dj: proxy 502 / no connection again 2026-11-01; ministere-finances.dj home re-read: its CGI link is the 2010 edition",
     "official-register": "Journal officiel de Djibouti (finance laws 2012-2026) not reached online || retry 2026-11-01: journalofficiel.dj (eJO) searched by its WordPress search API for \"barème ITS\", \"impôt sur les traitements et salaires barème\", \"retenue à la source non résidents\", \"droits d'auteur\", \"loi de finances rectificative 2026\", \"portant modification du Code Général des Impôts\": finance laws 2024 (saved DJ-jo-lf-2024.html), 2025 (DJ-jo-lf-2025.html) and 2026 (DJ-jo-lf-2026.html) and Loi 190/AN/17 read: none changes the wage-tax scale, none sets a withholding on a non-resident's fee or treats authors' royalties; the latest ITS scale texts in the register are of 1994-1996 (the 2011 code's scale stands)",
-    "web-search": "not run: the session's shared web-search budget was used up on 2026-11-01 before this country || retry 2026-11-01: refused by the search tool on 2026-11-01: the turn's shared limit of 200 searches was reached (the session's search was spent when this country was reached); not worked around",
-    "trade-press": "none found without search || retry 2026-11-01: no PwC or Deloitte summary for Djibouti reached (as before)",
-    "archive": "web.archive.org resets the connection from this environment (2026-11-01) || retry 2026-11-01: web.archive.org: connection reset again 2026-11-01"
-   }
-  },
-  {
-   "item": "nonResident",
-   "sought": "Withholding on a non-resident's independent fee or royalties",
-   "tried": {
-    "institution": "impots.dj unreachable (connection failed, 2026-11-01); ministere-finances.dj reached: its CGI is the 2011 edition || retry 2026-11-01: impots.dj and cnss.dj: proxy 502 / no connection again 2026-11-01; ministere-finances.dj home re-read: its CGI link is the 2010 edition",
-    "official-register": "Journal officiel de Djibouti (finance laws 2012-2026) not reached online || retry 2026-11-01: journalofficiel.dj (eJO) searched by its WordPress search API for \"barème ITS\", \"impôt sur les traitements et salaires barème\", \"retenue à la source non résidents\", \"droits d'auteur\", \"loi de finances rectificative 2026\", \"portant modification du Code Général des Impôts\": finance laws 2024 (saved DJ-jo-lf-2024.html), 2025 (DJ-jo-lf-2025.html) and 2026 (DJ-jo-lf-2026.html) and Loi 190/AN/17 read: none changes the wage-tax scale, none sets a withholding on a non-resident's fee or treats authors' royalties; the latest ITS scale texts in the register are of 1994-1996 (the 2011 code's scale stands)",
-    "web-search": "not run: the session's shared web-search budget was used up on 2026-11-01 before this country || retry 2026-11-01: refused by the search tool on 2026-11-01: the turn's shared limit of 200 searches was reached (the session's search was spent when this country was reached); not worked around",
+    "web-search": "not run: the session's shared web-search budget was used up on 2026-11-01 before this country || retry 2026-11-01: refused by the search tool on 2026-11-01: the turn's shared limit of 200 searches was reached (the session's search was spent when this country was reached); not worked around || Web search 2026-11-02: queries \"Djibouti Code général des impôts retenue à la source non-résidents prestations de services redevances droits d'auteur taux\" and \"Djibouti withholding tax non-resident service fees royalties rate impôt sur les bénéfices professionnels\" returned no text later than the 2011 code giving the wage-tax scale (KPMG's 2017-2018 guide, Oxford Business Group's 2016 and 2018 tax guides, Rivermate's and beancount.io's 2026 guides, Orbitax's finance-law note, ccd.dj's copy of the 2012 initial finance law); not confirmed.",
     "trade-press": "none found without search || retry 2026-11-01: no PwC or Deloitte summary for Djibouti reached (as before)",
     "archive": "web.archive.org resets the connection from this environment (2026-11-01) || retry 2026-11-01: web.archive.org: connection reset again 2026-11-01"
    }
   },
   {
    "item": "authors",
-   "sought": "Any special treatment of authors' royalties",
+   "sought": "Any special treatment of a resident author's royalties (the non-resident's 10% is now a figure)",
    "tried": {
     "institution": "impots.dj unreachable (connection failed, 2026-11-01); ministere-finances.dj reached: its CGI is the 2011 edition || retry 2026-11-01: impots.dj and cnss.dj: proxy 502 / no connection again 2026-11-01; ministere-finances.dj home re-read: its CGI link is the 2010 edition",
     "official-register": "Journal officiel de Djibouti (finance laws 2012-2026) not reached online || retry 2026-11-01: journalofficiel.dj (eJO) searched by its WordPress search API for \"barème ITS\", \"impôt sur les traitements et salaires barème\", \"retenue à la source non résidents\", \"droits d'auteur\", \"loi de finances rectificative 2026\", \"portant modification du Code Général des Impôts\": finance laws 2024 (saved DJ-jo-lf-2024.html), 2025 (DJ-jo-lf-2025.html) and 2026 (DJ-jo-lf-2026.html) and Loi 190/AN/17 read: none changes the wage-tax scale, none sets a withholding on a non-resident's fee or treats authors' royalties; the latest ITS scale texts in the register are of 1994-1996 (the 2011 code's scale stands)",
-    "web-search": "not run: the session's shared web-search budget was used up on 2026-11-01 before this country || retry 2026-11-01: refused by the search tool on 2026-11-01: the turn's shared limit of 200 searches was reached (the session's search was spent when this country was reached); not worked around",
+    "web-search": "not run: the session's shared web-search budget was used up on 2026-11-01 before this country || retry 2026-11-01: refused by the search tool on 2026-11-01: the turn's shared limit of 200 searches was reached (the session's search was spent when this country was reached); not worked around || Web search 2026-11-02: queries \"Djibouti Code général des impôts retenue à la source non-résidents prestations de services redevances droits d'auteur taux\" (returned expatriate guides cyriljarnias.com and africarrieres.com, the BnF's catalogue entry for the CGI and BODID, and other countries' codes) and \"Djibouti withholding tax non-resident service fees royalties rate impôt sur les bénéfices professionnels\" (returned KPMG's Djibouti Fiscal Guide 2017-2018 citing arts. 71 to 74, Oxford Business Group's 15% for foreign suppliers without a tax number, Rivermate's 10%, and Orbitax's note of a finance law repealing the art. 73 exemption for financial and insurance services). Led back to the saved CGI 2011, whose arts. 70 to 75 set the non-resident withholding at 10% of the gross (now a figure under nonResident and authors).",
     "trade-press": "none found without search || retry 2026-11-01: no PwC or Deloitte summary for Djibouti reached (as before)",
     "archive": "web.archive.org resets the connection from this environment (2026-11-01) || retry 2026-11-01: web.archive.org: connection reset again 2026-11-01"
    }

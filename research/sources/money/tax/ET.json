@@ -174,6 +174,23 @@
      "said": "A person who, in the course of business, has supplied or expects to supply taxable goods or services whose value is ETB 2 million or more in a period of 12 months should register for VAT."
     }
    ]
+  },
+  {
+   "item": "nonResident",
+   "finding": "Since the 2025 amendment a non-resident entertainer performing in Ethiopia pays 15% income tax on the total gross earnings from the event, with no deduction for performance expenses (10% before it).",
+   "value": {
+    "rate": 0.15,
+    "previousRate": 0.1,
+    "base": "total gross earnings from the event, no deductions",
+    "final": null
+   },
+   "applies": "Income Tax Proclamation 979/2016 as amended by Proclamation 1395/2025 (enacted 17 July 2025), art. 55 (old art. 53); whether the tax is final is not stated in the source read.",
+   "sources": [
+    {
+     "src": 5,
+     "said": "Article 55 (Old Article 53): Tax Obligation for Non- … Resident Entertainers … Entertainers who are not residents of Ethiopia and earn income from … performing within the country are subject to a 15% income tax on their total … gross earnings from the event. This tax is applied without allowing any … deductions for expenses related to the performance. … Non-resident entertainer 10% 15%"
+    }
+   ]
   }
  ],
  "country": "ET",
@@ -217,19 +234,15 @@
    "kind": "secondary",
    "quotes": "https://www.mor.gov.et/",
    "said": "A person who, in the course of business, has supplied or expects to supply taxable goods or services whose value is ETB 2 million or more in a period of 12 months should register for VAT."
+  },
+  {
+   "url": "https://www.grantthornton.co.za/contentassets/ce5090787a8a45cd8a75112a822e8350/new-income-tax-amendment.pdf",
+   "title": "Brief analysis on: Income Tax Proclamation No. 1395-2025 (Amendment), Grant Thornton Ethiopia",
+   "read": "2026-11-02",
+   "kind": "secondary",
+   "quotes": "https://www.mor.gov.et/",
+   "said": "Article 55 (Old Article 53): Tax Obligation for Non- … Resident Entertainers … Entertainers who are not residents of Ethiopia and earn income from … performing within the country are subject to a 15% income tax on their total … gross earnings from the event. This tax is applied without allowing any … deductions for expenses related to the performance. … Non-resident entertainer 10% 15%"
   }
  ],
- "blockers": [
-  {
-   "item": "nonResident",
-   "sought": "Ethiopia's withholding on a non-resident entertainer's fee (Income Tax Proclamation 979/2016, Schedule E / art. 54) and the amended 2025 brackets from the Ministry of Revenues",
-   "tried": {
-    "institution": "mor.gov.et not fetched in this pass (2026-11-01) || retry 2026-11-01 (world round): mor.gov.et, mor.gov.et/en, mof.gov.et and mofed.gov.et do not answer this environment (curl 000)",
-    "official-register": "Federal Negarit Gazeta not reached || retry 2026-11-01 (world round): negaritgazette.gov.et does not answer (curl 000)",
-    "web-search": "not run || retry 2026-11-01 (world round): WebSearch refused 2026-11-01 (the turn's shared 200-search budget exhausted)",
-    "trade-press": "PwC Ethiopia (quoted): no entertainer line || retry 2026-11-01 (world round): PwC Ethiopia (read before): no entertainer line",
-    "archive": "not tried || retry 2026-11-01 (world round): web.archive.org and archive.ph reset the connection; arquivo.pt answers 403"
-   }
-  }
- ]
+ "blockers": []
 }

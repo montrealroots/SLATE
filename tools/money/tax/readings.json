@@ -822,7 +822,12 @@
   "year": null,
   "residents": [{"none":{"fig":0,"path":["none"]}}],
   "social": {
-   "employee": [],
+   "employee": [
+    [{"from":0,"to":{"fig":2,"path":["ceiling","year"]},"rate":{"fig":2,"path":["employee",0,"rate"]}}],
+    [{"from":0,"to":null,"rate":{"fig":2,"path":["employee",1,"rate"]}}],
+    [{"from":0,"to":null,"rate":{"fig":2,"path":["employee",2,"rate"],"of":{"fig":2,"path":["employee",2,"base"]}}}],
+    [{"from":0,"to":null,"rate":{"fig":2,"path":["employee",3,"rate"],"of":{"fig":2,"path":["employee",2,"base"]}}}]
+   ],
    "self": []
   },
   "withholding": {
@@ -833,7 +838,7 @@
   },
   "nonResident": {},
   "vat": null,
-  "unmodeled": ["nonResident"]
+  "unmodeled": ["nonResident","social"]
  },
  "BM": {
   "year": {"start":{"fig":1,"path":["start"]},"end":{"fig":1,"path":["end"]},"due":null},
@@ -890,7 +895,12 @@
    }
   ],
   "social": {
-   "employee": [[{"from":0,"to":null,"rate":{"fig":1,"path":["employee","pension"]}}]],
+   "employee": [
+    [{"from":0,"to":null,"rate":{"fig":1,"path":["employee","pension"]}}],
+    [{"from":{"fig":1,"path":["employee","solidarity","bands",0,"above"],"months":true},"to":null,"rate":{"fig":1,"path":["employee","solidarity","bands",0,"rate"]}}],
+    [{"from":{"fig":1,"path":["employee","solidarity","bands",1,"above"],"months":true},"to":null,"rate":{"fig":1,"path":["employee","solidarity","bands",1,"rate"]}}],
+    [{"from":{"fig":1,"path":["employee","solidarity","bands",2,"above"],"months":true},"to":null,"rate":{"fig":1,"path":["employee","solidarity","bands",2,"rate"]}}]
+   ],
    "self": []
   },
   "withholding": {
@@ -1044,13 +1054,13 @@
   "year": null,
   "residents": [],
   "social": {
-   "employee": [],
+   "employee": [[{"from":0,"to":null,"rate":{"fig":1,"path":["nationalInsurance","pay"]}}]],
    "self": []
   },
   "withholding": {},
   "nonResident": {},
   "vat": null,
-  "unmodeled": ["nonResident","vat","social"]
+  "unmodeled": ["residents","nonResident","vat"]
  },
  "BW": {
   "year": {"start":{"fig":5,"path":["start"]},"end":{"fig":5,"path":["end"]},"due":{"fig":5,"path":["returnDue"]},"after":0},
@@ -1082,7 +1092,7 @@
   "currency": {"fig":0,"path":["currency"]}
  },
  "BY": {
-  "year": null,
+  "year": {"start":{"fig":1,"path":["taxYear"]},"due":{"fig":1,"path":["paymentDue"]},"after":1},
   "residents": [
    {
     "layers": [{"bands":{"fig":0,"path":["brackets"]}}]
@@ -1518,8 +1528,8 @@
     "final": {"fig":5,"path":["final"]}
    },
    "author": {
-    "bands": [{"from":0,"to":null,"rate":{"fig":5,"path":["royalties"]}}],
-    "final": {"fig":5,"path":["final"]}
+    "bands": [{"from":0,"to":null,"rate":{"fig":7,"path":["rates","filmsTelevisionRecordings"]}}],
+    "final": {"fig":7,"path":["final"]}
    }
   },
   "vat": null,
@@ -1542,6 +1552,54 @@
    "items": ["residents","year","social","withholding","nonResident","authors","vat"]
   }
  },
+ "CU": {
+  "year": {"start":{"fig":3,"path":["start"]},"end":{"fig":3,"path":["end"]},"due":{"fig":3,"path":["returnBy"]},"after":1},
+  "residents": [
+   {
+    "layers": [{"bands":{"fig":0,"path":["brackets"]},"less":{"fig":0,"path":["exemptMinimum"]}}]
+   }
+  ],
+  "social": {
+   "employee": [],
+   "self": []
+  },
+  "withholding": {
+   "performer": {
+    "bands": [{"from":0,"to":null,"rate":{"fig":2,"path":["rate"]}}]
+   },
+   "director": {
+    "bands": [{"from":0,"to":null,"rate":{"fig":2,"path":["rate"]}}]
+   },
+   "producer": {
+    "bands": [{"from":0,"to":null,"rate":{"fig":2,"path":["rate"]}}]
+   },
+   "author": {
+    "bands": [{"from":0,"to":null,"rate":{"fig":2,"path":["rate"]}}]
+   }
+  },
+  "nonResident": {
+   "performer": {
+    "bands": [{"from":0,"to":null,"rate":{"fig":1,"path":["rate"]}}],
+    "final": {"fig":1,"path":["final"]}
+   },
+   "director": {
+    "bands": [{"from":0,"to":null,"rate":{"fig":1,"path":["rate"]}}],
+    "final": {"fig":1,"path":["final"]}
+   },
+   "producer": {
+    "bands": [{"from":0,"to":null,"rate":{"fig":1,"path":["rate"]}}],
+    "final": {"fig":1,"path":["final"]}
+   },
+   "author": {
+    "bands": [{"from":0,"to":null,"rate":{"fig":1,"path":["rate"]}}],
+    "final": {"fig":1,"path":["final"]}
+   }
+  },
+  "vat": null,
+  "unmodeled": ["credits"],
+  "currency": {"fig":0,"path":["currency"]},
+  "turnover": {"rate":{"fig":4,"path":["rate"]},"threshold":{"fig":4,"path":["threshold"]}}
+ },
  "CV": {
   "year": {"start":{"fig":1,"path":["start"]},"end":{"fig":1,"path":["end"]},"due":{"fig":1,"path":["paymentDue"]},"after":1},
   "residents": [
@@ -1562,8 +1620,21 @@
    }
   },
   "nonResident": {
+   "performer": {
+    "bands": [{"from":0,"to":null,"rate":{"fig":5,"path":["rate"]}}],
+    "final": {"fig":5,"path":["final"]}
+   },
+   "director": {
+    "bands": [{"from":0,"to":null,"rate":{"fig":5,"path":["rate"]}}],
+    "final": {"fig":5,"path":["final"]}
+   },
+   "producer": {
+    "bands": [{"from":0,"to":null,"rate":{"fig":5,"path":["rate"]}}],
+    "final": {"fig":5,"path":["final"]}
+   },
    "author": {
-    "bands": [{"from":0,"to":null,"rate":{"fig":4,"path":["royalties"]}}]
+    "bands": [{"from":0,"to":null,"rate":{"fig":5,"path":["earlier","royalties"]}}],
+    "final": {"fig":5,"path":["final"]}
    }
   },
   "vat": null,
@@ -1754,6 +1825,15 @@
   "nonResident": {
    "performer": {
     "bands": [{"from":0,"to":null,"rate":{"fig":2,"path":["rate"]}}]
+   },
+   "director": {
+    "bands": [{"from":0,"to":null,"rate":{"fig":2,"path":["independentFee","rate"]}}]
+   },
+   "producer": {
+    "bands": [{"from":0,"to":null,"rate":{"fig":2,"path":["independentFee","rate"]}}]
+   },
+   "author": {
+    "bands": [{"from":0,"to":null,"rate":{"fig":5,"path":["nonResidentRate"]}}]
    }
   },
   "vat": null,
@@ -1877,17 +1957,34 @@
    }
   ],
   "social": {
-   "employee": [],
+   "employee": [[{"from":0,"to":null,"rate":{"fig":3,"path":["employee"]}}]],
    "self": []
   },
   "withholding": {},
-  "nonResident": {},
+  "nonResident": {
+   "performer": {
+    "bands": [{"from":0,"to":null,"rate":{"fig":4,"path":["artists","rate"]}}],
+    "final": {"fig":4,"path":["final"]}
+   },
+   "author": {
+    "bands": [{"from":0,"to":null,"rate":{"fig":4,"path":["artists","rate"]}}],
+    "final": {"fig":4,"path":["final"]}
+   },
+   "director": {
+    "bands": [{"from":0,"to":null,"rate":{"fig":4,"path":["otherArt33Income","rate"]}}],
+    "final": {"fig":4,"path":["final"]}
+   },
+   "producer": {
+    "bands": [{"from":0,"to":null,"rate":{"fig":4,"path":["otherArt33Income","rate"]}}],
+    "final": {"fig":4,"path":["final"]}
+   }
+  },
   "vat": null,
   "unmodeled": ["credits"],
   "currency": {"fig":0,"path":["currency"]}
  },
  "EC": {
-  "year": {"start":{"fig":5,"path":["start"]},"due":{"fig":5,"path":["due","on"]},"after":1},
+  "year": {"start":{"fig":6,"path":["start"]},"due":{"fig":6,"path":["due","on"]},"after":1},
   "residents": [
    {
     "layers": [{"bands":{"fig":0,"path":["brackets"]}}]
@@ -1897,26 +1994,35 @@
    "employee": [[{"from":0,"to":null,"rate":{"fig":1,"path":["employee"]}}]],
    "self": []
   },
-  "withholding": {},
-  "nonResident": {
-   "performer": {
-    "bands": [{"from":0,"to":null,"rate":{"fig":3,"path":["rate"]}}],
-    "final": {"fig":3,"path":["final"]}
-   },
-   "director": {
-    "bands": [{"from":0,"to":null,"rate":{"fig":3,"path":["rate"]}}],
-    "final": {"fig":3,"path":["final"]}
-   },
+  "withholding": {
    "producer": {
-    "bands": [{"from":0,"to":null,"rate":{"fig":3,"path":["rate"]}}],
+    "bands": [{"from":0,"to":null,"rate":{"fig":3,"path":["rates","intellectualServicesIndividual"]}}],
     "final": {"fig":3,"path":["final"]}
    },
    "author": {
-    "bands": [{"from":0,"to":null,"rate":{"fig":3,"path":["rate"]}}],
+    "bands": [{"from":0,"to":null,"rate":{"fig":3,"path":["rates","intellectualPropertyRoyalties"]}}],
     "final": {"fig":3,"path":["final"]}
    }
   },
-  "vat": {"rate":{"fig":4,"path":["rate"]},"threshold":{"fig":4,"path":["threshold"]}},
+  "nonResident": {
+   "performer": {
+    "bands": [{"from":0,"to":null,"rate":{"fig":4,"path":["rate"]}}],
+    "final": {"fig":4,"path":["final"]}
+   },
+   "director": {
+    "bands": [{"from":0,"to":null,"rate":{"fig":4,"path":["rate"]}}],
+    "final": {"fig":4,"path":["final"]}
+   },
+   "producer": {
+    "bands": [{"from":0,"to":null,"rate":{"fig":4,"path":["rate"]}}],
+    "final": {"fig":4,"path":["final"]}
+   },
+   "author": {
+    "bands": [{"from":0,"to":null,"rate":{"fig":4,"path":["rate"]}}],
+    "final": {"fig":4,"path":["final"]}
+   }
+  },
+  "vat": {"rate":{"fig":5,"path":["rate"]},"threshold":{"fig":5,"path":["threshold"]}},
   "unmodeled": [],
   "currency": {"fig":0,"path":["currency"]}
  },
@@ -1972,7 +2078,8 @@
   "withholding": {},
   "nonResident": {
    "performer": {
-    "bands": [{"from":0,"to":null,"rate":{"fig":4,"path":["servicesWithholding"]}}]
+    "bands": [{"from":0,"to":null,"rate":{"fig":7,"path":["rate"]}}],
+    "final": {"fig":7,"path":["final"]}
    },
    "director": {
     "bands": [{"from":0,"to":null,"rate":{"fig":4,"path":["servicesWithholding"]}}]
@@ -1985,7 +2092,7 @@
    }
   },
   "vat": {"rate":{"fig":6,"path":["standard"]},"threshold":{"fig":6,"path":["registrationThreshold"]}},
-  "unmodeled": ["credits"],
+  "unmodeled": ["credits","social"],
   "currency": {"fig":0,"path":["currency"]}
  },
  "EH": {
@@ -2083,6 +2190,10 @@
    }
   },
   "nonResident": {
+   "performer": {
+    "bands": [{"from":0,"to":null,"rate":{"fig":7,"path":["rate"]}}],
+    "final": {"fig":7,"path":["final"]}
+   },
    "author": {
     "bands": [{"from":0,"to":null,"rate":{"fig":3,"path":["royalties"]}}]
    }
@@ -2199,13 +2310,32 @@
   "year": null,
   "residents": [],
   "social": {
-   "employee": [],
+   "employee": [
+    [{"from":0,"to":null,"rate":{"fig":6,"path":["employee",0,"rate"]}}],
+    [{"from":0,"to":null,"rate":{"fig":6,"path":["employee",1,"rate"]}}],
+    [{"from":0,"to":null,"rate":{"fig":6,"path":["employee",2,"rate"]}}],
+    [{"from":0,"to":null,"rate":{"fig":6,"path":["employee",3,"rate"]}}],
+    [{"from":0,"to":null,"rate":{"fig":6,"path":["mandatoryPension"]}}]
+   ],
    "self": []
   },
   "withholding": {},
-  "nonResident": {},
-  "vat": null,
-  "unmodeled": [],
+  "nonResident": {
+   "performer": {
+    "bands": [{"from":0,"to":null,"rate":{"fig":5,"path":["rate"]}}],
+    "final": {"fig":5,"path":["final"]}
+   },
+   "director": {
+    "bands": [{"from":0,"to":null,"rate":{"fig":5,"path":["rate"]}}],
+    "final": {"fig":5,"path":["final"]}
+   },
+   "producer": {
+    "bands": [{"from":0,"to":null,"rate":{"fig":5,"path":["rate"]}}],
+    "final": {"fig":5,"path":["final"]}
+   }
+  },
+  "vat": {"rate":{"fig":4,"path":["rate"]},"threshold":{"fig":4,"path":["threshold"]}},
+  "unmodeled": ["social","wages"],
   "currency": {"fig":0,"path":["currency"]}
  },
  "FR": {
@@ -2332,6 +2462,18 @@
    }
   },
   "nonResident": {
+   "performer": {
+    "bands": [{"from":0,"to":null,"rate":{"fig":4,"path":["rate"]}}],
+    "final": {"fig":4,"path":["final"]}
+   },
+   "director": {
+    "bands": [{"from":0,"to":null,"rate":{"fig":4,"path":["rate"]}}],
+    "final": {"fig":4,"path":["final"]}
+   },
+   "producer": {
+    "bands": [{"from":0,"to":null,"rate":{"fig":4,"path":["rate"]}}],
+    "final": {"fig":4,"path":["final"]}
+   },
    "author": {
     "bands": [{"from":0,"to":null,"rate":{"fig":4,"path":["rate"]}}],
     "final": {"fig":4,"path":["final"]}
@@ -2496,12 +2638,19 @@
    "self": []
   },
   "withholding": {
+   "performer": {
+    "bands": [{"from":0,"to":null,"rate":{"fig":5,"path":["localArtist","rate"]}}]
+   },
    "producer": {
     "bands": [{"from":0,"to":null,"rate":{"fig":3,"path":["contractsResident"]}}],
     "final": {"fig":3,"path":["final"]}
    }
   },
   "nonResident": {
+   "performer": {
+    "bands": [{"from":0,"to":null,"rate":{"fig":5,"path":["foreignArtist","rate"]}}],
+    "final": {"fig":5,"path":["final"]}
+   },
    "producer": {
     "bands": [{"from":0,"to":null,"rate":{"fig":3,"path":["contractsNonResident"]}}],
     "final": {"fig":3,"path":["final"]}
@@ -2519,7 +2668,24 @@
    "self": []
   },
   "withholding": {},
-  "nonResident": {},
+  "nonResident": {
+   "performer": {
+    "bands": [{"from":0,"to":null,"rate":{"fig":1,"path":["rate"]}}],
+    "final": {"fig":1,"path":["final"]}
+   },
+   "director": {
+    "bands": [{"from":0,"to":null,"rate":{"fig":1,"path":["rate"]}}],
+    "final": {"fig":1,"path":["final"]}
+   },
+   "producer": {
+    "bands": [{"from":0,"to":null,"rate":{"fig":1,"path":["rate"]}}],
+    "final": {"fig":1,"path":["final"]}
+   },
+   "author": {
+    "bands": [{"from":0,"to":null,"rate":{"fig":1,"path":["rate"]}}],
+    "final": {"fig":1,"path":["final"]}
+   }
+  },
   "vat": null,
   "unmodeled": [],
   "currency": {"fig":0,"path":["currency"]}
@@ -2576,16 +2742,16 @@
   },
   "withholding": {
    "author": {
-    "bands": [{"from":0,"to":null,"rate":{"fig":7,"path":["withholding"]}}]
+    "bands": [{"from":0,"to":null,"rate":{"fig":8,"path":["withholding"]}}]
    }
   },
   "nonResident": {
    "author": {
-    "bands": [{"from":0,"to":null,"rate":{"fig":4,"path":["royalties"]}}]
+    "bands": [{"from":0,"to":null,"rate":{"fig":5,"path":["royalties"]}}]
    }
   },
-  "vat": {"rate":{"fig":5,"path":["standard"]},"threshold":{"fig":6,"path":["smallBusinessThreshold"]}},
-  "unmodeled": ["credits"],
+  "vat": {"rate":{"fig":6,"path":["standard"]},"threshold":{"fig":7,"path":["smallBusinessThreshold"]}},
+  "unmodeled": ["credits","social"],
   "currency": {"fig":0,"path":["currency"]}
  },
  "GS": {
@@ -2822,8 +2988,8 @@
   ],
   "social": {
    "employee": [
-    [{"from":0,"to":{"fig":2,"path":["employee","ceiling"],"months":true},"rate":{"fig":2,"path":["employee","sickness"]}}],
-    [{"from":0,"to":{"fig":2,"path":["employee","ceiling"],"months":true},"rate":{"fig":2,"path":["employee","ivm"]}}]
+    [{"from":0,"to":{"fig":2,"path":["ceilingMonthly",2025,"IVM"],"months":true},"rate":{"fig":2,"path":["IVM","employee"]}}],
+    [{"from":0,"to":{"fig":2,"path":["ceilingMonthly",2025,"EM"],"months":true},"rate":{"fig":2,"path":["EM","employee"]}}]
    ],
    "self": []
   },
@@ -2847,7 +3013,7 @@
    }
   },
   "vat": null,
-  "unmodeled": ["regional"],
+  "unmodeled": ["regional","social"],
   "currency": {"fig":6,"path":["currency"]}
  },
  "HR": {

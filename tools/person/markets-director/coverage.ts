@@ -1,6 +1,6 @@
 import { readFileSync } from 'node:fs';
 import { join } from 'node:path';
-import { BLOCKED, FACT, OUTPUT, type Markets } from './compile.ts';
+import { BLOCKED, COUNTRIES, FACT, OUTPUT, type Markets } from './compile.ts';
 
 /**
  * The director's markets' coverage matrix (coverage/markets-director-countries.json), a row for every country and
@@ -10,7 +10,7 @@ import { BLOCKED, FACT, OUTPUT, type Markets } from './compile.ts';
  * isn't known; a country with neither, or with no market compiled, is pending.
  */
 export const COVERAGE = 'coverage/markets-director-countries.json';
-export const COUNTRIES = 'src/world/gazetteer/countries.json';
+export { COUNTRIES };
 /** The US's terms: the DGA's, which the engine keeps (R-4613), held by its own tests. */
 export const HOME = 'US';
 export const DGA = 'person.work.director.calibration';

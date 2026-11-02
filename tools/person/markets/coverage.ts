@@ -1,6 +1,8 @@
 import { readFileSync } from 'node:fs';
 import { join } from 'node:path';
-import { BLOCKED, FACT } from './compile.ts';
+import { BLOCKED, COUNTRIES, FACT } from './compile.ts';
+
+export { COUNTRIES };
 
 /**
  * The markets' coverage matrix (coverage/markets-countries.json), a row for every country and territory of the map:
@@ -10,7 +12,6 @@ import { BLOCKED, FACT } from './compile.ts';
  * the player told what isn't known; one with neither is pending.
  */
 export const COVERAGE = 'coverage/markets-countries.json';
-export const COUNTRIES = 'src/world/gazetteer/countries.json';
 /** The countries whose agreements the engine keeps itself, and the research they stand on. */
 export const KEPT_COUNTRIES = ['CA', 'GB', 'US'] as const;
 export const KEPT_FACT = 'person.work.actor.calibration';

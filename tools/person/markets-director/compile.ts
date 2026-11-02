@@ -28,6 +28,8 @@ export const SOURCES = 'research/sources/person/markets';
 export const PREFIX = 'director-';
 export const READINGS = 'tools/person/markets-director/readings.json';
 export const OUTPUT = 'src/person/directing/markets.json';
+/** The map's countries, whose names a market's research may name the country it follows by. */
+export const COUNTRIES = 'src/world/gazetteer/countries.json';
 export const FACT = 'person.markets.director.';
 export const BLOCKED = 'person.markets.director.blocked.';
 /** The agreement the director's engine keeps itself (R-4613); a market's may not take its id. */
@@ -93,6 +95,8 @@ export interface Agreement {
   short: { upTo: number; share: string } | null;
   fees: Fee[];
   periods: Period[];
+  /** Where a market's minimum is another's raised by a share (Monaco's: Nice's, plus 5%), that share. */
+  uplift?: string;
 }
 
 export interface Market {
@@ -276,22 +280,29 @@ export function unknownOf(blockers: readonly { item: string }[]): Item[] {
 
 /**
  * A market: its agreements, one at least, and what isn't known; or, where its research says a director's work there
- * follows another country's terms (a territory's sovereign's), that country's agreements as compiled (`done`), each as
- * the territory's own, and what isn't known of them with what isn't known of its own.
+ * follows another country's terms (a territory's sovereign's; or, as Monaco's wage law has it, the minimum the same
+ * profession is owed in a named place of another country, raised by a share), that country's agreements as compiled
+ * (`done`), each as the market's own, with the share, and what isn't known of them with what isn't known of its own.
+ * The place is the research's own words, which name the country as the map does (`names`).
  */
-export function marketOf(r: Research, reading: unknown, done: Markets = { markets: {}, agreements: {} }): { market: Market; agreements: Record<string, Agreement> } {
+export function marketOf(r: Research, reading: unknown, done: Markets = { markets: {}, agreements: {} }, names: Readonly<Record<string, string>> = {}): { market: Market; agreements: Record<string, Agreement> } {
   const m = record(reading, `the reading of ${r.country}`);
   const agreements: Record<string, Agreement> = {};
   const unknown = unknownOf(r.blockers);
   if (m['follows'] !== undefined) {
     only(m, ['follows'], `the reading of ${r.country}`);
     const f = record(m['follows'], 'what a market follows');
+    only(f, ['fig', 'market', 'place', 'uplift'], 'what a market follows');
     const cc = String(f['market']);
-    if (record(figureOf(r, f['fig'], ['follows', 'none']).value, 'a figure')['follows'] !== cc) throw new Error(`${r.country}'s figure ${String(f['fig'])} doesn't say a director's work there follows ${cc}'s terms`);
+    const value = record(figureOf(r, f['fig'], ['follows', 'none', 'fees']).value, 'a figure');
+    const says = f['place'] === undefined ? value['follows'] === cc : Object.hasOwn(names, cc) && String(at(value, f['place'] as (string | number)[])).includes(names[cc] as string);
+    if (!says) throw new Error(`${r.country}'s figure ${String(f['fig'])} doesn't say a director's work there follows ${cc}'s terms`);
+    const share = f['uplift'] === undefined ? undefined : at(value, f['uplift'] as (string | number)[]);
+    if (share !== undefined && !(typeof share === 'number' && share > 0 && share < 1)) throw new Error(`${r.country}'s figure ${String(f['fig'])} raises the minimum by no share`);
     // Only a market read on its own is followed: one that follows another isn't in `done`.
     if (!Object.hasOwn(done.markets, cc)) throw new Error(`${cc} isn't a market to follow`);
     const followed = done.markets[cc] as Market;
-    for (const id of followed.agreements) agreements[`${r.country.toLowerCase()}-${id}`] = { ...(done.agreements[id] as Agreement), country: r.country };
+    for (const id of followed.agreements) agreements[`${r.country.toLowerCase()}-${id}`] = { ...(done.agreements[id] as Agreement), country: r.country, ...(share === undefined ? {} : { uplift: String(share) }) };
     for (const u of followed.unknown) if (!unknown.includes(u)) unknown.push(u);
     return { market: { agreements: Object.keys(agreements), unknown }, agreements };
   }
@@ -337,6 +348,7 @@ export function readMarkets(root: string): Markets {
   const read = (path: string) => JSON.parse(readFileSync(join(root, path), 'utf8')) as unknown;
   const readings = record(read(READINGS), 'the readings');
   const register = read('research/register.json') as Register;
+  const names = Object.fromEntries(Object.entries(record(read(COUNTRIES), 'the map\'s countries')).map(([cc, c]) => [cc, String(record(c, cc)['name'])]));
   // Stryker disable next-line MethodExpression: the directory's order is sorted on the file systems the gate runs on; the sort holds it on any other.
   const files = existsSync(join(root, SOURCES)) ? readdirSync(join(root, SOURCES)).filter((f) => f.startsWith(PREFIX) && f.endsWith('.json')).map((f) => f.slice(PREFIX.length, -5)).sort() : [];
   const out: Markets = { markets: {}, agreements: {} };
@@ -347,7 +359,7 @@ export function readMarkets(root: string): Markets {
   const own: Markets = { markets: {}, agreements: out.agreements };
   for (const cc of [...files.filter((c) => !follows(c)), ...files.filter(follows)]) {
     const { research, blocked } = readResearch(root, register, cc);
-    const { market, agreements } = marketOf(research, readings[cc], own);
+    const { market, agreements } = marketOf(research, readings[cc], own, names);
     if (blocked !== research.blockers.length > 0) throw new Error(blocked ? `the register holds ${cc}'s blockers, which its research doesn't` : `${cc}'s research has blockers the register doesn't hold`);
     for (const id of market.agreements) if (id === KEPT || Object.hasOwn(out.agreements, id)) throw new Error(`${id} is another agreement's id`);
     if (!follows(cc)) own.markets[cc] = market;

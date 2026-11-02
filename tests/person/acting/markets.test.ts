@@ -553,6 +553,7 @@ const EXPECTED: Record<string, string[]> = {
 'fi-screen': [],
 'gi-all': [],
 'gr-private-stage': [],
+'jm-all': [],
 'hk-film': [],
 'li-film': [],
 'ms-all': [],
@@ -609,6 +610,7 @@ describe('the markets', () => {
       GR: ['el', 'Europe/Athens', 'gr-private-stage'],
       HK: ['zh', 'Asia/Hong_Kong', 'hk-film'],
       IL: ['he', 'Asia/Jerusalem', 'il-screen'],
+      JM: ['en', 'America/Jamaica', 'jm-all'],
       LI: ['de', 'Europe/Vaduz', 'li-film'],
       MS: ['en', 'America/Montserrat', 'ms-all'],
       NC: ['fr', 'Pacific/Noumea', 'nc-all'],
@@ -626,6 +628,7 @@ describe('the markets', () => {
       GF: ['fr', 'America/Cayenne', 'gf-fr-film gf-fr-tv gf-fr-subsidised-stage gf-fr-private-stage'],
       GP: ['fr', 'America/Guadeloupe', 'gp-fr-film gp-fr-tv gp-fr-subsidised-stage gp-fr-private-stage'],
       RE: ['fr', 'Indian/Reunion', 're-fr-film re-fr-tv re-fr-subsidised-stage re-fr-private-stage'],
+      MC: ['fr', 'Europe/Monaco', 'mc-fr-film mc-fr-tv mc-fr-subsidised-stage mc-fr-private-stage'],
       MF: ['fr', 'America/Marigot', 'mf-fr-film mf-fr-tv mf-fr-subsidised-stage mf-fr-private-stage'],
       NF: ['en', 'Pacific/Norfolk', 'nf-au-screen nf-au-stage'],
       PM: ['fr', 'America/Miquelon', 'pm-fr-film pm-fr-tv pm-fr-subsidised-stage pm-fr-private-stage'],
@@ -641,12 +644,13 @@ describe('the markets', () => {
     expect(Object.fromEntries(own.map((id) => [id, (marketOf(id) as NonNullable<ReturnType<typeof marketOf>>).minimums.map(line)]))).toEqual(EXPECTED);
     // A territory whose work follows another country's terms is engaged under that country's agreements, as its own.
     const followers = MARKET_AGREEMENTS.filter((id) => !own.includes(id));
-    expect(followers).toHaveLength(37);
+    expect(followers).toHaveLength(41);
     for (const id of followers) {
       const a = marketOf(id) as NonNullable<ReturnType<typeof marketOf>>;
       const followed = marketOf(a.follows as Agreement) as NonNullable<ReturnType<typeof marketOf>>;
       expect(id).toBe(`${a.country.toLowerCase()}-${a.follows as string}`);
-      expect({ ...a, country: followed.country, follows: undefined }, id).toEqual(followed);
+      expect({ ...a, country: followed.country, follows: undefined, uplift: undefined }, id).toEqual(followed);
+      expect(a.uplift, id).toBe(a.country === 'MC' ? '0.05' : undefined);
     }
     expect(Object.fromEntries(['ax-fi-guest', 'bl-fr-film', 'cc-au-stage', 'nf-au-screen', 'yt-fr-private-stage'].map((id) => [id, [COUNTRY[id as Agreement], marketOf(id as Agreement)?.follows]]))).toEqual({
       'ax-fi-guest': ['AX', 'fi-guest'],
@@ -657,7 +661,7 @@ describe('the markets', () => {
     });
     // Where the research says no agreement sets an actor's pay, none is set: it is negotiated.
     const none = own.filter((id) => marketOf(id)?.none);
-    expect(none).toEqual(['ai-all', 'at-screen', 'be-screen', 'bn-screen', 'bw-screen', 'cl-screen', 'co-all', 'fi-screen', 'gi-all', 'gr-private-stage', 'hk-film', 'in-screen', 'jp-live', 'li-film', 'ms-all', 'mx-other', 'nc-all', 'ng-screen', 'nl-screen', 'nz-screen', 'pn-all', 'sh-all', 'th-screen', 'tr-screen', 'va-screen', 'vg-all', 'za-all']);
+    expect(none).toEqual(['ai-all', 'at-screen', 'be-screen', 'bn-screen', 'bw-screen', 'cl-screen', 'co-all', 'fi-screen', 'gi-all', 'gr-private-stage', 'hk-film', 'in-screen', 'jm-all', 'jp-live', 'li-film', 'ms-all', 'mx-other', 'nc-all', 'ng-screen', 'nl-screen', 'nz-screen', 'pn-all', 'sh-all', 'th-screen', 'tr-screen', 'va-screen', 'vg-all', 'za-all']);
     for (const id of none) expect(marketOf(id)?.currency, id).toBeNull();
     expect(Object.fromEntries(MARKET_AGREEMENTS.filter((id) => !none.includes(id)).map((id) => [id, marketOf(id)?.currency]))).toMatchObject({ 'au-screen': 'AUD', 'br-rj-tv': 'BRL', 'de-screen': 'EUR', 'dk-film': 'DKK', 'jp-nhk': 'JPY', 'kr-kbs': 'KRW', 'mx-televisa': 'MXN', 'no-film': 'NOK', 'nz-court': 'NZD', 'se-screen': 'SEK', 'ie-stage': 'EUR', 'ad-artists': 'EUR', 'ar-stage': 'ARS', 'bg-foreign-film': 'EUR', 'cu-stage': 'CUP', 'fi-guest': 'EUR', 'il-screen': 'ILS', 'ph-screen': 'PHP', 'gf-fr-tv': 'EUR', 'cx-au-stage': 'AUD' });
     expect(marketOf('sag-aftra')).toBeUndefined();
@@ -676,7 +680,7 @@ describe('the markets', () => {
       const how = Object.hasOwn(MARKETS, cc) ? 'market' : unread.includes(cc) ? 'unread' : cited.includes(cc) ? 'neither' : (UNKNOWN[cc] as readonly string[]).length > 0 ? 'blocked' : 'neither';
       expect(how, cc).not.toBe('neither');
     }
-    expect([Object.keys(MARKETS).length, unread.length, Object.keys(UNKNOWN).length - cited.length]).toEqual([55, 169, 25]);
+    expect([Object.keys(MARKETS).length, unread.length, Object.keys(UNKNOWN).length - cited.length]).toEqual([57, 169, 23]);
     expect(Object.keys(MARKETS).filter((cc) => unread.includes(cc))).toEqual([]);
     expect(readings['CH']?.unread).toBe("the screen fees are the actors' associations' recommendations, which bind no one, and the stage agreements' monthly minimums are by the house, which no part names");
   });
@@ -824,6 +828,10 @@ describe("a market's part", () => {
     expect(at('bl-fr-tv', {}, '2025-01-01')).toEqual(at('fr-tv', {}, '2025-01-01'));
     expect(at('cc-au-screen', { medium: 'film', length: 2 }, '2026-07-01', 5)).toEqual(money('AUD', '718.60'));
     expect(at('ax-fi-guest', { role: 'a-role', term: 'performance' }, '2026-06-01')).toEqual(money('EUR', '216.80'));
+    // Monaco: France's minimum raised 5% (304.99 and 15.25), its rehearsals too (508.65 and 25.43).
+    expect(at('mc-fr-tv', {}, '2025-01-01')).toEqual(money('EUR', '320.24'));
+    expect(at('mc-fr-subsidised-stage', { term: 'performance', length: 2, rehearsal: 3 }, '2026-08-01')).toEqual(money('EUR', '534.08'));
+    expect(COUNTRY['mc-fr-tv']).toBe('MC');
     expect(() => partOf(part('hk-film', { medium: 'stage' }))).toThrow('hk-film sets no terms for stage');
     // Where no agreement sets the pay, it is the parties' to agree.
     for (const [a, medium] of [['in-screen', 'film'], ['jp-live', 'stage'], ['mx-other', 'film'], ['ng-screen', 'television'], ['nl-screen', 'film'], ['nz-screen', 'television'], ['za-all', 'stage'], ['at-screen', 'film'], ['co-all', 'stage'], ['gr-private-stage', 'stage'], ['ax-fi-screen', 'television'], ['hk-film', 'film']] as const) {
@@ -910,12 +918,13 @@ describe("a market's part", () => {
     expect(aboutMarket('bl-fr-film')).toBe(t(UNKEPT_LINE, { country: 'Saint Barthelemy', missing: 'some of the agreements parts are engaged under' }));
     expect(aboutMarket('re-fr-tv')).toBe(t(UNKEPT_LINE, { country: 'Reunion', missing: 'where most of the work is and some of the agreements parts are engaged under' }));
     expect(aboutMarket('GP')).toBeUndefined();
+    expect(aboutMarket('mc-fr-film')).toBe(t(UNKEPT_LINE, { country: 'Monaco', missing: 'where most of the work is and some of the agreements parts are engaged under' }));
     expect(aboutMarket('ax-fi-guest')).toBe(t(UNKEPT_LINE, { country: 'Aland Islands', missing: 'the language parts are cast in' }));
     // Every country the register holds blockers for tells the player; none other does.
     const told = Object.keys(UNKNOWN).filter((cc) => aboutMarket(cc as CountryCode) !== undefined);
     expect(told).toEqual(Object.keys(UNKNOWN).filter((cc) => (UNKNOWN[cc] as readonly string[]).length > 0));
     expect(told).toHaveLength(228);
-    expect(told.filter((cc) => Object.hasOwn(MARKETS, cc))).toEqual(['AI', 'AT', 'AU', 'BG', 'BN', 'BR', 'BW', 'CL', 'CO', 'CU', 'DE', 'FI', 'FR', 'GF', 'GI', 'GR', 'HK', 'IE', 'IL', 'IN', 'JP', 'KR', 'MS', 'MX', 'NC', 'NF', 'NG', 'NO', 'NZ', 'PH', 'PM', 'PN', 'RE', 'SE', 'SH', 'TH', 'TR', 'VG', 'YT', 'ZA']);
+    expect(told.filter((cc) => Object.hasOwn(MARKETS, cc))).toEqual(['AI', 'AT', 'AU', 'BG', 'BN', 'BR', 'BW', 'CL', 'CO', 'CU', 'DE', 'FI', 'FR', 'GF', 'GI', 'GR', 'HK', 'IE', 'IL', 'IN', 'JM', 'JP', 'KR', 'MC', 'MS', 'MX', 'NC', 'NF', 'NG', 'NO', 'NZ', 'PH', 'PM', 'PN', 'RE', 'SE', 'SH', 'TH', 'TR', 'VG', 'YT', 'ZA']);
   });
 });
 

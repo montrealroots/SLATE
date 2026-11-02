@@ -180,6 +180,43 @@
      "said": "the standard VAT rate is 14% (previously 13%)"
     }
    ]
+  },
+  {
+   "item": "nonResident",
+   "finding": "Egypt taxes the fee for a non-resident performer's activity (an artist's or a sportsperson's, paid to him directly or through any body) at 20% of the gross, withheld by the resident payer and paid to the Tax Authority the next working day; the law does not say the tax is final.",
+   "value": {
+    "rate": 0.2,
+    "base": "gross, no costs deducted",
+    "withheldBy": "resident sole proprietorships and legal persons, and non-residents with a permanent establishment in Egypt",
+    "remitBy": "first working day after the withholding",
+    "final": null
+   },
+   "applies": "Income Tax Law 91 of 2005, art. 56(4) (last amended, per the consolidation read, by Law 101 of 2012); a tax treaty may lower it. Later amendments (Law 30 of 2023 and after) not checked against this article.",
+   "sources": [
+    {
+     "src": 5,
+     "said": "المادة 56 تخضع للضريبة بسعر 20% المبالغ التي يدفعها أصحاب المنشآت الفردية والأشخاص الاعتبارية المقيمة في مصر والجهات غير المقيمة التي لها منشأة دائمة في مصر لغير المقيمين في مصر وذلك دون خصم أي تكاليف منها. وتشمل هذه المبالغ ما يأتي: … 4- مقابل نشاط الرياضي أو الفنان سواء دفع له مباشرةً أو من خلال أي جهة. … بحجز مقدار الضريبة المستحقة وتوريدها إلى المصلحة في أول يوم عمل تال لليوم الذي تم فيه حجز الضريبة. التعديل الأخير بموجب القانون رقم 101 لسنة 2012"
+    }
+   ]
+  },
+  {
+   "item": "social",
+   "finding": "Egypt's Social Insurance and Pensions Law counts writers and artists (الأدباء والفنانين) among the self-employed (employers and those treated as such), who pay old-age, disability and death insurance at 21% of a monthly contribution income they choose from the table annexed to the executive regulations; the rates rise by 1 point every seven years from the law's entry into force, to no more than 26%.",
+   "value": {
+    "category": "ثانيا: أصحاب الأعمال ومن في حكمهم, item 15: الأدباء والفنانين",
+    "rate": 0.21,
+    "base": "monthly contribution income chosen from the executive regulations' table",
+    "employeeRateOldAge": 0.09,
+    "employerRateOldAge": 0.12,
+    "stepUp": "+1 point every 7 years from entry into force, total capped at 26%"
+   },
+   "applies": "Law 148 of 2019, arts. 2 and 19, as consolidated by the site read (\"وفقاً لآخر تعديل\"); the contribution-income table of the executive regulations (Prime Minister's Decree 2437 of 2021) was not read.",
+   "sources": [
+    {
+     "src": 6,
+     "said": "ثانيا- أصحاب الأعمال، ومن في حكمهم: 1- الأفراد الذين يزاولون لحساب … 15- الأدباء والفنانين. … (أ) الحصة التي يلتزم بها صاحب العمل بواقع (12%) من أجور المؤمن عليهم العاملين لديه شهريا. (ب) الحصة التي يلتزم بها المؤمن عليه بواقع (9%) من أجره شهريا. 2- بالنسبة للفئات المشار إليها بالبندين ثانيا وثالثا بواقع (21%) من دخل الاشتراك الشهري الذي يختاره المؤمن عليه من الجدول المرفق باللائحة التنفيذية لهذا القانون. … وتزاد نسبة الاشتراكات كل سبع سنوات اعتبارا من تاريخ العمل بهذا القانون بنسبة (1%) وتقسم مناصفة بين صاحب العمل والمؤمن عليه، على ألا تتجاوز إجمالي نسبة الاشتراكات 26%."
+    }
+   ]
   }
  ],
  "country": "EG",
@@ -223,30 +260,23 @@
    "kind": "secondary",
    "quotes": "https://www.eta.gov.eg/",
    "said": "VAT registration is mandatory for any person whose annual taxable turnover exceeds EGP 500,000, in accordance with the provisions of the VAT law. … the standard VAT rate is 14% (previously 13%)"
-  }
- ],
- "blockers": [
-  {
-   "item": "nonResident",
-   "sought": "A rate or exemption for a non-resident performer's fee and whether it is final.",
-   "tried": {
-    "institution": "eta.gov.eg answers; its pages for this were not located in this pass (2026-11-01). || 2026-11-01 retry: eta.gov.eg/ar/content/qwanyn-aldrybt-ly-aldkhl lists the income tax laws; Law 91/2005 (eta.gov.eg/sites/default/files/2024-03/law_no.91-2005.pdf, saved /tmp/claude-0/-home-user-SLATE/cfe06f79-0641-529e-b709-1fcd46045c09/scratchpad/dl/tax/EG-law-91-2005.pdf) downloaded: a 71-page scan with no text layer, and this environment's OCR has no Arabic language data, so its articles on non-residents could not be read",
-    "official-register": "Not read (the Official Gazette is not online in a searchable form reachable here), 2026-11-01. || 2026-11-01 retry: the amending laws (e.g. law_no.30-2023.pdf, law_no.7-2024.pdf, law_no.175-2023.pdf) are listed on the same ETA page; not read for this item (scans)",
-    "web-search": "Not run for Egypt (2026-11-01). || 2026-11-01 retry: WebSearch refused by the tool: this turn's shared limit of 200 searches was used up by the agents (2026-11-01)",
-    "trade-press": "PwC Worldwide Tax Summaries (Egypt) read 2026-11-01: service and royalty withholding only. || 2026-11-01 retry: no new tax-firm text found this turn; PwC Egypt withholding page from the first pass stands",
-    "archive": "web.archive.org resets the connection from this environment (2026-11-01). || 2026-11-01 retry: web.archive.org resets the connection from this environment"
-   }
   },
   {
-   "item": "social",
-   "sought": "Social insurance terms for a self-employed or freelance screen worker.",
-   "tried": {
-    "institution": "eta.gov.eg answers; its pages for this were not located in this pass (2026-11-01). || 2026-11-01 retry: nosi.gov.eg (National Organization for Social Insurance) returns HTTP 503 (2026-11-01); eta.gov.eg carries tax laws only",
-    "official-register": "Not read (the Official Gazette is not online in a searchable form reachable here), 2026-11-01. || 2026-11-01 retry: Social Insurance and Pensions Law 148/2019 text not found on a reachable government site",
-    "web-search": "Not run for Egypt (2026-11-01). || 2026-11-01 retry: WebSearch refused by the tool: this turn's shared limit of 200 searches was used up by the agents (2026-11-01)",
-    "trade-press": "PwC Worldwide Tax Summaries (Egypt, other taxes) read 2026-11-01: employees only. || 2026-11-01 retry: no new source this turn; PwC Egypt (employees only) stands",
-    "archive": "web.archive.org resets the connection from this environment (2026-11-01). || 2026-11-01 retry: web.archive.org resets the connection from this environment"
-   }
+   "url": "https://manshurat.org/node/63715",
+   "title": "قانون الضريبة على الدخل رقم 91 لسنة 2005 (Income Tax Law 91 of 2005, consolidated), manshurat.org",
+   "read": "2026-11-02",
+   "kind": "secondary",
+   "quotes": "https://eta.gov.eg/sites/default/files/2024-03/law_no.91-2005.pdf",
+   "said": "المادة 56 تخضع للضريبة بسعر 20% المبالغ التي يدفعها أصحاب المنشآت الفردية والأشخاص الاعتبارية المقيمة في مصر والجهات غير المقيمة التي لها منشأة دائمة في مصر لغير المقيمين في مصر وذلك دون خصم أي تكاليف منها. وتشمل هذه المبالغ ما يأتي: … 4- مقابل نشاط الرياضي أو الفنان سواء دفع له مباشرةً أو من خلال أي جهة. … بحجز مقدار الضريبة المستحقة وتوريدها إلى المصلحة في أول يوم عمل تال لليوم الذي تم فيه حجز الضريبة. التعديل الأخير بموجب القانون رقم 101 لسنة 2012"
+  },
+  {
+   "url": "https://alberonsy.com/?p=2950",
+   "title": "قانون رقم 148 لسنة 2019 بإصدار قانون التأمينات الإجتماعية والمعاشات وفقاً لآخر تعديل (Social Insurance and Pensions Law 148 of 2019, consolidated), Alber Onsy law office",
+   "read": "2026-11-02",
+   "kind": "secondary",
+   "quotes": "https://natlex.ilo.org/dyn/natlex2/r/natlex/fe/details?p3_isn=115545",
+   "said": "ثانيا- أصحاب الأعمال، ومن في حكمهم: 1- الأفراد الذين يزاولون لحساب … 15- الأدباء والفنانين. … (أ) الحصة التي يلتزم بها صاحب العمل بواقع (12%) من أجور المؤمن عليهم العاملين لديه شهريا. (ب) الحصة التي يلتزم بها المؤمن عليه بواقع (9%) من أجره شهريا. 2- بالنسبة للفئات المشار إليها بالبندين ثانيا وثالثا بواقع (21%) من دخل الاشتراك الشهري الذي يختاره المؤمن عليه من الجدول المرفق باللائحة التنفيذية لهذا القانون. … وتزاد نسبة الاشتراكات كل سبع سنوات اعتبارا من تاريخ العمل بهذا القانون بنسبة (1%) وتقسم مناصفة بين صاحب العمل والمؤمن عليه، على ألا تتجاوز إجمالي نسبة الاشتراكات 26%."
   }
- ]
+ ],
+ "blockers": []
 }

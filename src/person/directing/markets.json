@@ -1101,10 +1101,12 @@
   },
   "MC": {
    "agreements": [
-    "mc-screen"
+    "mc-idcc-3097",
+    "mc-idcc-2642"
    ],
    "unknown": [
-    "fees"
+    "fees",
+    "periods"
    ]
   },
   "MD": {
@@ -6159,20 +6161,6 @@
    "periods": [],
    "none": false
   },
-  "mc-screen": {
-   "country": "MC",
-   "forms": [
-    "feature",
-    "hour",
-    "half-hour"
-   ],
-   "currency": null,
-   "month": null,
-   "short": null,
-   "fees": [],
-   "periods": [],
-   "none": false
-  },
   "md-screen": {
    "country": "MD",
    "forms": [
@@ -9137,6 +9125,82 @@
    "fees": [],
    "periods": [],
    "none": false
+  },
+  "mc-idcc-3097": {
+   "country": "MC",
+   "forms": [
+    "feature"
+   ],
+   "currency": "EUR",
+   "none": false,
+   "month": null,
+   "short": null,
+   "fees": [
+    {
+     "form": "feature",
+     "per": "week",
+     "phases": [
+      "prep",
+      "shoot",
+      "cut"
+     ],
+     "when": {
+      "days": [
+       0,
+       104
+      ]
+     },
+     "band": null,
+     "floor": null,
+     "first": null,
+     "steps": [
+      [
+       "2024-03-01",
+       "3015.27"
+      ]
+     ]
+    },
+    {
+     "form": "feature",
+     "per": "month",
+     "phases": [
+      "prep",
+      "shoot",
+      "cut"
+     ],
+     "when": {
+      "days": [
+       105,
+       null
+      ]
+     },
+     "band": null,
+     "floor": null,
+     "first": null,
+     "steps": [
+      [
+       "2024-03-01",
+       "8563.37"
+      ]
+     ]
+    }
+   ],
+   "periods": [],
+   "uplift": "0.05"
+  },
+  "mc-idcc-2642": {
+   "country": "MC",
+   "forms": [
+    "hour",
+    "half-hour"
+   ],
+   "currency": null,
+   "month": null,
+   "short": null,
+   "fees": [],
+   "periods": [],
+   "none": false,
+   "uplift": "0.05"
   },
   "mf-idcc-3097": {
    "country": "MF",

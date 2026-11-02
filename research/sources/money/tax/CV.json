@@ -122,25 +122,10 @@
     {
      "src": 3,
      "said": "Business and professional income earned by individual entrepreneurs under standard organised accounting are subject to WHT at the rate of 20% as an advance payment on account of the final annual income tax liability."
-    }
-   ]
-  },
-  {
-   "item": "nonResident",
-   "finding": "A non-resident is taxed only on Cabo Verde-source income at flat rates equal to residents', and cannot file a return; royalties bear 20% withholding.",
-   "value": {
-    "royalties": 0.2,
-    "canFile": false
-   },
-   "applies": "Non-residents.",
-   "sources": [
-    {
-     "src": 0,
-     "said": "Non-resident individuals are subject to PIT only on Cabo Verdean-source income at flat tax rates that are the same as those applicable for resident taxpayers."
     },
     {
      "src": 4,
-     "said": "Royalty payments are subject to WHT at the rate of 20%."
+     "said": "Estão sujeitos a retenção na fonte à taxa de 20% (vinte por cento), por conta do imposto devido a final, os rendimentos empresariais e profissionais relativos à prestação de serviços"
     }
    ]
   },
@@ -155,6 +140,38 @@
     {
      "src": 2,
      "said": "The VAT system in Cabo Verde closely follows the European Union (EU) VAT system and is assessed at the standard rate of 15%."
+    }
+   ]
+  },
+  {
+   "item": "nonResident",
+   "finding": "A non-resident with no permanent establishment in Cabo Verde has tax withheld on Cabo Verde income at the same rates as residents, always as a final tax with no option to file: a performer's, writer's or director's fee for services, paid by a business or public body that keeps organised accounts, bears 20% of the gross fee before VAT. A non-resident is taxed only on Cabo Verde-source income at flat rates equal to residents', and cannot file a return; royalties bear 20% withholding.",
+   "value": {
+    "rate": 0.2,
+    "base": "gross fee for services, before VAT",
+    "final": true,
+    "withheldBy": "payers that keep or must keep organised accounts, including public bodies and international and non-governmental organisations",
+    "otherwise": "return and aggregation under art. 43 of the IRPS Code where no withholding rate applies",
+    "treaty": "no withholding, or a limited one, where a double-tax convention gives Cabo Verde no or limited taxing right (art. 18)",
+    "earlier": {
+     "royalties": 0.2,
+     "canFile": false
+    }
+   },
+   "applies": "Cabo Verde, from Decreto-Lei 6/2015 (23 January 2015); a later amendment of these rates was not found in the sources read.",
+   "searched": "Web search 2026-11-02: 'Cabo Verde Código do IRPS taxas escalões 2026 não residentes retenção na fonte taxa liberatória artistas' returned rivermate, PwC's 2026 budget flashes, occ.pt (Portugal) and the Boletim Oficial download of Decreto-Lei 6/2015 (read: this finding).",
+   "sources": [
+    {
+     "src": 4,
+     "said": "Artigo 8.º Rendimentos da categoria B 1. Estão sujeitos a retenção na fonte à taxa de 20% (vinte por cento), por conta do imposto devido a final, os rendimentos empresariais e profissionais relativos à prestação de serviços, obtidos em território nacional, pagos ou colocados à disposição por entidades que disponham ou devam dispor de contabilidade organizada … 3. A taxa é aplicada ao rendimento ilíquido sujeito a retenção, antes da liquidação do Imposto Sobre Valor Acrescentado (IVA) a que haja lugar. … Artigo 13.º Rendimentos de não residentes 1. Os rendimentos obtidos em território nacional por não residentes, que não sejam imputáveis a estabelecimento estável nele situado, estão sujeitos a retenção na fonte, através da aplicação das taxas referidas nos artigos anteriores, que revestirão sempre caráter liberatório, sem opção de englobamento."
+    },
+    {
+     "src": 0,
+     "said": "Non-resident individuals are subject to PIT only on Cabo Verdean-source income at flat tax rates that are the same as those applicable for resident taxpayers."
+    },
+    {
+     "src": 5,
+     "said": "Royalty payments are subject to WHT at the rate of 20%."
     }
    ]
   }
@@ -194,6 +211,13 @@
    "said": "1 0 80,000 15 5,500 2 80,000 150,000 21 10,300 3 150,000 25 16,300 … Business and professional income earned by individual entrepreneurs under standard organised accounting are subject to WHT at the rate of 20% as an advance payment on account of the final annual income tax liability."
   },
   {
+   "url": "https://boe.incv.cv/Bulletins/Download/1966",
+   "title": "Boletim Oficial I Série n.º 7, 23 January 2015: Decreto-Lei n.º 6/2015 (withholding regime)",
+   "read": "2026-11-02",
+   "kind": "primary",
+   "said": "Estão sujeitos a retenção na fonte à taxa de 20% (vinte por cento), por conta do imposto devido a final, os rendimentos empresariais e profissionais relativos à prestação de serviços … Artigo 8.º Rendimentos da categoria B 1. Estão sujeitos a retenção na fonte à taxa de 20% (vinte por cento), por conta do imposto devido a final, os rendimentos empresariais e profissionais relativos à prestação de serviços, obtidos em território nacional, pagos ou colocados à disposição por entidades que disponham ou devam dispor de contabilidade organizada … 3. A taxa é aplicada ao rendimento ilíquido sujeito a retenção, antes da liquidação do Imposto Sobre Valor Acrescentado (IVA) a que haja lugar. … Artigo 13.º Rendimentos de não residentes 1. Os rendimentos obtidos em território nacional por não residentes, que não sejam imputáveis a estabelecimento estável nele situado, estão sujeitos a retenção na fonte, através da aplicação das taxas referidas nos artigos anteriores, que revestirão sempre caráter liberatório, sem opção de englobamento."
+  },
+  {
    "url": "https://taxsummaries.pwc.com/cabo-verde/corporate/withholding-taxes",
    "title": "PwC Worldwide Tax Summaries: Cabo Verde, Corporate - Withholding taxes (reviewed 29 May 2026)",
    "read": "2026-11-01",
@@ -209,18 +233,7 @@
    "tried": {
     "institution": "mf.gov.cv home page reachable but its tax pages and the PIT Code were not located (2026-11-01) || 2026-11-01 retry: mf.gov.cv/web/dnre and /web/dnre/legislacao read: the document list loads by script and carries no code text; the DNRE brochure 'Principais Alterações Códigos Tributários 2020' read (saved CV-dnre-alteracoes-2020.pdf): REMPE rules only, nothing on this item; dnre.cv resets",
     "official-register": "Boletim Oficial not read || 2026-11-01 retry: boe.incv.cv (Boletim Oficial) reachable but its texts sit behind an account (Login/Register); not read",
-    "web-search": "not run separately || 2026-11-01 retry: refused by the tool on 2026-11-01: 'this turn's web search budget is used up (limit: 200 WebSearch calls per turn, shared by every agent)'; queries sent and refused this turn: 'Налоговый кодекс Республики Беларусь статья 199 ставки подоходного налога 2026 13 25 процентов' and 'Eswatini Revenue Service PAYE tax tables 1 July 2026'; no search engine was queried any other way",
-    "trade-press": "PwC Cabo Verde used || 2026-11-01 retry: PwC Cabo Verde (already used); nothing further",
-    "archive": "web.archive.org resets the connection from this environment (2026-11-01). || 2026-11-01 retry: archive.org's availability API now answers (snapshots of the institution's site exist), but web.archive.org snapshot pages return HTTP 403 over http and reset over https from this environment (2026-11-01)"
-   }
-  },
-  {
-   "item": "nonResident",
-   "sought": "The flat rate on a non-resident performer's or director's fee and whether final",
-   "tried": {
-    "institution": "mf.gov.cv home page reachable but its tax pages and the PIT Code were not located (2026-11-01) || 2026-11-01 retry: mf.gov.cv/web/dnre and /web/dnre/legislacao read: the document list loads by script and carries no code text; the DNRE brochure 'Principais Alterações Códigos Tributários 2020' read (saved CV-dnre-alteracoes-2020.pdf): REMPE rules only, nothing on this item; dnre.cv resets",
-    "official-register": "Boletim Oficial not read || 2026-11-01 retry: boe.incv.cv (Boletim Oficial) reachable but its texts sit behind an account (Login/Register); not read",
-    "web-search": "not run separately || 2026-11-01 retry: refused by the tool on 2026-11-01: 'this turn's web search budget is used up (limit: 200 WebSearch calls per turn, shared by every agent)'; queries sent and refused this turn: 'Налоговый кодекс Республики Беларусь статья 199 ставки подоходного налога 2026 13 25 процентов' and 'Eswatini Revenue Service PAYE tax tables 1 July 2026'; no search engine was queried any other way",
+    "web-search": "not run separately || 2026-11-01 retry: refused by the tool on 2026-11-01: 'this turn's web search budget is used up (limit: 200 WebSearch calls per turn, shared by every agent)'; queries sent and refused this turn: 'Налоговый кодекс Республики Беларусь статья 199 ставки подоходного налога 2026 13 25 процентов' and 'Eswatini Revenue Service PAYE tax tables 1 July 2026'; no search engine was queried any other way || Web search 2026-11-02 (depth round): \"Cabo Verde Código do IRPS taxas escalões 2026 não residentes retenção na fonte taxa liberatória artistas\" returned rivermate.com guides (no rate), PwC Portugal's flashes on the 2026 State Budget proposal and law (IRPC 20%, a new non-habitual-resident heading), occ.pt and Portuguese law (not Cabo Verde) and boe.incv.cv Bulletin 1966, which downloads without an account: Decreto-Lei 6/2015 (read and saved CV-bo-1966.pdf: withholding rates; the non-resident rule is now a finding; royalties as capital income bear 20% final, art. 11, with a 10% rate for two sub-items of IRPS Code art. 14(2) not identified); \"Cabo Verde IVA regime especial pequenos contribuintes limite volume de negócios REMPE direitos de autor IRPS\" returned Portuguese VAT pages (art. 53 CIVA, not Cabo Verde), payproglobal (digital-services VAT, Lei 4/X/2021) and Boletim Oficial bulletins 12360 (2003 VAT decrees: exports for humanitarian bodies, cash registers) and 3489 (2020: VAT on farm water and power, e-invoicing), both downloaded and read: no threshold, no authors' rule, no IRPS Code text.",
     "trade-press": "PwC Cabo Verde used || 2026-11-01 retry: PwC Cabo Verde (already used); nothing further",
     "archive": "web.archive.org resets the connection from this environment (2026-11-01). || 2026-11-01 retry: archive.org's availability API now answers (snapshots of the institution's site exist), but web.archive.org snapshot pages return HTTP 403 over http and reset over https from this environment (2026-11-01)"
    }
@@ -231,7 +244,7 @@
    "tried": {
     "institution": "mf.gov.cv home page reachable but its tax pages and the PIT Code were not located (2026-11-01) || 2026-11-01 retry: mf.gov.cv/web/dnre and /web/dnre/legislacao read: the document list loads by script and carries no code text; the DNRE brochure 'Principais Alterações Códigos Tributários 2020' read (saved CV-dnre-alteracoes-2020.pdf): REMPE rules only, nothing on this item; dnre.cv resets",
     "official-register": "Boletim Oficial not read || 2026-11-01 retry: boe.incv.cv (Boletim Oficial) reachable but its texts sit behind an account (Login/Register); not read",
-    "web-search": "not run separately || 2026-11-01 retry: refused by the tool on 2026-11-01: 'this turn's web search budget is used up (limit: 200 WebSearch calls per turn, shared by every agent)'; queries sent and refused this turn: 'Налоговый кодекс Республики Беларусь статья 199 ставки подоходного налога 2026 13 25 процентов' and 'Eswatini Revenue Service PAYE tax tables 1 July 2026'; no search engine was queried any other way",
+    "web-search": "not run separately || 2026-11-01 retry: refused by the tool on 2026-11-01: 'this turn's web search budget is used up (limit: 200 WebSearch calls per turn, shared by every agent)'; queries sent and refused this turn: 'Налоговый кодекс Республики Беларусь статья 199 ставки подоходного налога 2026 13 25 процентов' and 'Eswatini Revenue Service PAYE tax tables 1 July 2026'; no search engine was queried any other way || Web search 2026-11-02 (depth round): \"Cabo Verde Código do IRPS taxas escalões 2026 não residentes retenção na fonte taxa liberatória artistas\" returned rivermate.com guides (no rate), PwC Portugal's flashes on the 2026 State Budget proposal and law (IRPC 20%, a new non-habitual-resident heading), occ.pt and Portuguese law (not Cabo Verde) and boe.incv.cv Bulletin 1966, which downloads without an account: Decreto-Lei 6/2015 (read and saved CV-bo-1966.pdf: withholding rates; the non-resident rule is now a finding; royalties as capital income bear 20% final, art. 11, with a 10% rate for two sub-items of IRPS Code art. 14(2) not identified); \"Cabo Verde IVA regime especial pequenos contribuintes limite volume de negócios REMPE direitos de autor IRPS\" returned Portuguese VAT pages (art. 53 CIVA, not Cabo Verde), payproglobal (digital-services VAT, Lei 4/X/2021) and Boletim Oficial bulletins 12360 (2003 VAT decrees: exports for humanitarian bodies, cash registers) and 3489 (2020: VAT on farm water and power, e-invoicing), both downloaded and read: no threshold, no authors' rule, no IRPS Code text.",
     "trade-press": "PwC Cabo Verde used || 2026-11-01 retry: PwC Cabo Verde (already used); nothing further",
     "archive": "web.archive.org resets the connection from this environment (2026-11-01). || 2026-11-01 retry: archive.org's availability API now answers (snapshots of the institution's site exist), but web.archive.org snapshot pages return HTTP 403 over http and reset over https from this environment (2026-11-01)"
    }
@@ -242,7 +255,7 @@
    "tried": {
     "institution": "mf.gov.cv home page reachable but its tax pages and the PIT Code were not located (2026-11-01) || 2026-11-01 retry: mf.gov.cv/web/dnre and /web/dnre/legislacao read: the document list loads by script and carries no code text; the DNRE brochure 'Principais Alterações Códigos Tributários 2020' read (saved CV-dnre-alteracoes-2020.pdf): REMPE rules only, nothing on this item; dnre.cv resets",
     "official-register": "Boletim Oficial not read || 2026-11-01 retry: boe.incv.cv (Boletim Oficial) reachable but its texts sit behind an account (Login/Register); not read",
-    "web-search": "not run separately || 2026-11-01 retry: refused by the tool on 2026-11-01: 'this turn's web search budget is used up (limit: 200 WebSearch calls per turn, shared by every agent)'; queries sent and refused this turn: 'Налоговый кодекс Республики Беларусь статья 199 ставки подоходного налога 2026 13 25 процентов' and 'Eswatini Revenue Service PAYE tax tables 1 July 2026'; no search engine was queried any other way",
+    "web-search": "not run separately || 2026-11-01 retry: refused by the tool on 2026-11-01: 'this turn's web search budget is used up (limit: 200 WebSearch calls per turn, shared by every agent)'; queries sent and refused this turn: 'Налоговый кодекс Республики Беларусь статья 199 ставки подоходного налога 2026 13 25 процентов' and 'Eswatini Revenue Service PAYE tax tables 1 July 2026'; no search engine was queried any other way || Web search 2026-11-02 (depth round): \"Cabo Verde Código do IRPS taxas escalões 2026 não residentes retenção na fonte taxa liberatória artistas\" returned rivermate.com guides (no rate), PwC Portugal's flashes on the 2026 State Budget proposal and law (IRPC 20%, a new non-habitual-resident heading), occ.pt and Portuguese law (not Cabo Verde) and boe.incv.cv Bulletin 1966, which downloads without an account: Decreto-Lei 6/2015 (read and saved CV-bo-1966.pdf: withholding rates; the non-resident rule is now a finding; royalties as capital income bear 20% final, art. 11, with a 10% rate for two sub-items of IRPS Code art. 14(2) not identified); \"Cabo Verde IVA regime especial pequenos contribuintes limite volume de negócios REMPE direitos de autor IRPS\" returned Portuguese VAT pages (art. 53 CIVA, not Cabo Verde), payproglobal (digital-services VAT, Lei 4/X/2021) and Boletim Oficial bulletins 12360 (2003 VAT decrees: exports for humanitarian bodies, cash registers) and 3489 (2020: VAT on farm water and power, e-invoicing), both downloaded and read: no threshold, no authors' rule, no IRPS Code text.",
     "trade-press": "PwC Cabo Verde used || 2026-11-01 retry: PwC Cabo Verde (already used); nothing further",
     "archive": "web.archive.org resets the connection from this environment (2026-11-01). || 2026-11-01 retry: archive.org's availability API now answers (snapshots of the institution's site exist), but web.archive.org snapshot pages return HTTP 403 over http and reset over https from this environment (2026-11-01)"
    }

@@ -43,7 +43,7 @@
   },
   {
    "item": "social",
-   "finding": "The employee pays 12.71% of gross salary to the pension system (to 60 minimum salaries a month), plus a solidarity contribution of 1.15% to 11.48% on pay above BOB 13,000; the employer pays 15.21% of pay (17.21% in mining), including 2% to the National Housing Fund.",
+   "finding": "The employee pays 12.71% of gross salary to the pension system (to 60 minimum salaries a month), plus the national solidarity contribution of 1.15% of pay above BOB 13,000, 5.74% above BOB 25,000 and 11.48% above BOB 35,000; the employer pays 15.21% of pay (17.21% in mining), of which 3.5% is the employer's solidarity contribution set by Ley 1582, plus 2% to the National Housing Fund.",
    "value": {
     "currency": "BOB",
     "employee": {
@@ -54,16 +54,33 @@
       "range": [
        0.0115,
        0.1148
-      ]
+      ],
+      "bands": [
+       {
+        "above": 13000,
+        "rate": 0.0115
+       },
+       {
+        "above": 25000,
+        "rate": 0.0574
+       },
+       {
+        "above": 35000,
+        "rate": 0.1148
+       }
+      ],
+      "base": "each band's rate on the Total Solidario above that amount (Ley 1582)"
      }
     },
     "employer": {
      "total": 0.1521,
      "mining": 0.1721,
-     "housingFund": 0.02
+     "housingFund": 0.02,
+     "solidarity": 0.035,
+     "solidarityLaw": "Ley 065 art. 87 c), as amended by Ley 1582 of 1 October 2024"
     }
    },
-   "applies": "Employees. The earlier reading that only the employee contributes (PwC's pension paragraph) is corrected by Deloitte's employer 15.21%; the split of that 15.21% (health, professional risk, solidarity, housing) is not stated (see blocker).",
+   "applies": "Employees. The earlier reading that only the employee contributes (PwC's pension paragraph) is corrected by Deloitte's employer 15.21%; of that 15.21%, the 3.5% employer solidarity contribution is set by Ley 1582 (2024); the health and professional-risk parts are not stated by a source read (see blocker).",
    "sources": [
     {
      "src": 3,
@@ -72,6 +89,10 @@
     {
      "src": 2,
      "said": "The employer must contribute 15.21% (17.21% for mining companies) of the employee’s income, and the employee must contribute 12.71%. … The employer also must contribute 2% to the National Housing Fund."
+    },
+    {
+     "src": 4,
+     "said": "“c) El tres coma cinco por ciento (3,5%) sobre el Total Ganado de los Asegurados Dependientes, en calidad de Aporte Patronal Solidario a cargo de los Empleadores. … i. El once coma cuarenta y ocho por ciento (11,48%) de la diferencia entre su Total Solidario menos Bs35.000.- … ii. El cinco coma setenta y cuatro por ciento (5,74%) de la diferencia entre su Total Solidario menos Bs25.000.- … iii. El uno coma quince por ciento (1,15%) de la diferencia entre su Total Solidario menos Bs13.000.-"
     }
    ]
   },
@@ -86,7 +107,7 @@
    "applies": "Employees and other RC-IVA payers",
    "sources": [
     {
-     "src": 4,
+     "src": 5,
      "said": "The employer submits a consolidated tax return on a monthly basis and withholds the tax (RC-IVA) on employee's income. … Individuals working as employees are not required to submit an annual tax return. … Individuals who are not employees and are subject to RC-IVA need to submit a tax return on a quarterly basis."
     }
    ]
@@ -105,7 +126,7 @@
    "applies": "Non-domiciled individuals working in Bolivia",
    "sources": [
     {
-     "src": 5,
+     "src": 6,
      "said": "Payments to non-domiciled individuals for their activities performed within Bolivian territory are subject to a WHT at a rate of 16%, such rate refers to transaction tax at rate of 3% and personal income tax ( Regimen Complementario del Impuesto al Valor Agregado or RC-IVA) at a rate of 13%."
     }
    ]
@@ -120,7 +141,7 @@
    "applies": "Authors and rights holders abroad",
    "sources": [
     {
-     "src": 5,
+     "src": 6,
      "said": "Dividend payments, distributions of profits to the head office by Bolivian branches, interest payments, royalty payments, and fees paid for any type of services made to non-residents are subject to a WHT of 12.5%. … Activities considered partially performed within Bolivian territory (e.g. telecommunication services, insurance, transportation, production/distribution of cinematographic films … by non-residents are subject to a reduced WHT of 2.5%."
     }
    ]
@@ -140,7 +161,7 @@
      "said": "VAT is levied on the sale of movable goods and provision of services carried out within Bolivian territory at a standard rate of 13%"
     },
     {
-     "src": 6,
+     "src": 7,
      "said": "The tax on gross income (also known as transaction tax) generally taxes gross income arising from the performance of any economic or commercial activity (including non-profitable activities) at a rate of 3% on a monthly basis."
     }
    ]
@@ -195,6 +216,14 @@
    "said": "Pension funds are administered privately, and only employees contribute toward their retirement pension. The contribution rate is 12.71% calculated on gross salary with a threshold of 60 minimum national salaries per month (i.e. approximately 28,450 United States dollars [USD]). … employees who earn more than 13,000 bolivianos (BOB) per month are subject to a supportive social contribution determined on a scale system from 1.15% up to 11.48% over the gross salary. … VAT is levied on the sale of movable goods and provision of services carried out within Bolivian territory at a standard rate of 13%"
   },
   {
+   "url": "https://www.lexivox.org/norms/BO-L-N1582.html",
+   "title": "Ley Nº 1582 de 01 de octubre de 2024, Modificación de la Ley de Pensiones (LexiVox, from Gaceta Oficial de Bolivia 1807NEC)",
+   "read": "2026-11-02",
+   "kind": "secondary",
+   "quotes": "http://gacetaoficialdebolivia.gob.bo/normas/descargar/280468",
+   "said": "“c) El tres coma cinco por ciento (3,5%) sobre el Total Ganado de los Asegurados Dependientes, en calidad de Aporte Patronal Solidario a cargo de los Empleadores. … i. El once coma cuarenta y ocho por ciento (11,48%) de la diferencia entre su Total Solidario menos Bs35.000.- … ii. El cinco coma setenta y cuatro por ciento (5,74%) de la diferencia entre su Total Solidario menos Bs25.000.- … iii. El uno coma quince por ciento (1,15%) de la diferencia entre su Total Solidario menos Bs13.000.-"
+  },
+  {
    "url": "https://taxsummaries.pwc.com/bolivia/individual/tax-administration",
    "title": "Bolivia - Individual - Tax administration (PwC, reviewed 21 July 2026)",
    "read": "2026-11-01",
@@ -222,11 +251,11 @@
  "blockers": [
   {
    "item": "social",
-   "sought": "The split of the employer's 15.21% (Caja Nacional de Salud 10%, professional risk, employer solidarity, housing 2%) from the APS, the Ministry of Labour or the law.",
+   "sought": "The health (Caja Nacional de Salud) and professional-risk shares of the employer's 15.21% from the law or a regulation (the 3.5% employer solidarity share is found: Ley 1582)",
    "tried": {
     "institution": "2026-11-01: impuestos.gob.bo home read (saved BO-sin.html): institutional menu only; its WordPress search for \"profesionales independientes IUE\": connection reset || 2026-11-01 retry: impuestos.gob.bo answers this time: RC-IVA Profesionales Independientes page (saved BO-sin-rciva-independientes.html) carries its content as an image only; Leyes page read and Ley 1448 saved (BO-sin-ley1448.pdf); a file named LEY843.pdf there is a 2016 loan law, discarded; aps.gob.bo and mintrabajo.gob.bo answer (HTTP 200) but their rate pages were not located without search.",
     "official-register": "2026-11-01: Ley 843 text not read || 2026-11-01 retry: gacetaoficialdebolivia.gob.bo does not answer (curl 000); Ley 065 (pensions) not read.",
-    "web-search": "2026-11-01: not found in PwC Bolivia pages read || 2026-11-01 retry: WebSearch refused by the tool on 2026-11-01: the turn's shared 200-search limit was reached before this query; no other search route used.",
+    "web-search": "2026-11-01: not found in PwC Bolivia pages read || 2026-11-01 retry: WebSearch refused by the tool on 2026-11-01: the turn's shared 200-search limit was reached before this query; no other search route used. || search 2026-11-02: \"Bolivia aportes patronales Caja Nacional de Salud 10% riesgo profesional 1,71% aporte patronal solidario 3% vivienda 2% total 16,71%\": Rivermate, toptrabajos, getontop, Playroll, remote.com, boliviaimpuestos.com blog on Ley 1582 (3% to 3.5%), LexiVox DS 4589 and DS 27206; followed LexiVox Ley 1582 (saved BO-lexivox-ley1582.html, cited: employer solidarity 3.5%, employee solidarity bands) and Ley 065 (saved BO-lexivox-ley065.html: art. 83 names the Prima por Riesgo Profesional at the employer's charge but gives no rate); the Gaceta origin URL it names answered 404. \"Bolivia employer social security contribution 2026 breakdown health fund professional risk solidarity housing\": hivedesk, Rivermate, Playroll, asanify, remotepeople, Trading Economics (vendors, no primary named): 10% health, 1.71% risk, 2% housing. The 10% CNS and 1.71% professional-risk rates still lack a primary",
     "trade-press": "2026-11-01: PwC Bolivia (cited) || 2026-11-01 retry: Deloitte Bolivia Highlights 2026 read (saved BO-deloitte-2026.pdf, quoted): employer 15.21%, housing 2%; no split.",
     "archive": "2026-11-01: web.archive.org unreachable through the proxy this session || 2026-11-01 retry: archive.org/wayback/available answers; web.archive.org snapshots reset https and return 403 on http from this environment (2026-11-01), so none was read."
    }

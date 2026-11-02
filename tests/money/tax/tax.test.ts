@@ -75,9 +75,9 @@ describe("a country's tax", () => {
     // The compiled figures are the research's, read where the readings place them, from the files the register cites.
     const read = readTax(root);
     expect(TAX).toEqual(read.countries);
-    // Every place of the map but the two with no taxing state and the six whose research found nothing (their register entries blockers).
-    expect([Object.keys(TAX).length, read.noState]).toEqual([244, ['AN', 'AQ']]);
-    for (const cc of ['CU', 'ER', 'IR', 'ST', 'SY', 'TJ', 'AN', 'AQ']) expect(taxOf(cc), cc).toBeUndefined();
+    // Every place of the map but the two with no taxing state and the five whose research found nothing (their register entries blockers).
+    expect([Object.keys(TAX).length, read.noState]).toEqual([245, ['AN', 'AQ']]);
+    for (const cc of ['ER', 'IR', 'ST', 'SY', 'TJ', 'AN', 'AQ']) expect(taxOf(cc), cc).toBeUndefined();
     // Every scale read whole from the research: each band's from, to and rate, exactly.
     const gb = research('GB').figures[0]?.value['brackets'] as { from: number; to: number | null; rate: number }[];
     expect(of('GB').residents[0]?.layers[0]?.bands).toEqual(gb.map((b) => ({ from: String(b.from), to: b.to === null ? null : String(b.to), rate: String(b.rate) })));
@@ -153,8 +153,8 @@ describe("a country's tax", () => {
     expect(of('FR').unknown).toEqual(['residents', 'credits', 'social', 'wages', 'nonResident', 'authors', 'year']);
     expect(of('IN').unknown).toContain('vat');
     // A country whose research found nothing: all of it.
-    expect(aboutTax('CU')).toBe(t(UNKEPT_LINE, { country: 'Cuba', missing: `${Object.values(MISSING).slice(0, -1).join(', ')} and ${MISSING.year}` }));
-    expect([taxOf('CU'), taxOf('toString'), taxOf('US')?.currency]).toEqual([undefined, undefined, 'USD']);
+    expect(aboutTax('ER')).toBe(t(UNKEPT_LINE, { country: 'Eritrea', missing: `${Object.values(MISSING).slice(0, -1).join(', ')} and ${MISSING.year}` }));
+    expect([taxOf('ER'), taxOf('toString'), taxOf('US')?.currency]).toEqual([undefined, undefined, 'USD']);
     // A country whose tax is all known: nothing to tell.
     expect([of('KY').unknown, aboutTax('KY')]).toEqual([[], undefined]);
   });
@@ -254,7 +254,7 @@ describe('pay', () => {
     expect(plain.ledger.accounts.find((a) => a.id === ACCOUNT)?.postings.map((x) => x.what)).toEqual(['pay']);
     expect(s.ledger.accounts.find((a) => a.id === ACCOUNT)?.postings.map((x) => x.what)).toEqual(['pay', 'fees']);
     // Withheld abroad while living where the research hasn't read: nothing to credit at home.
-    expect(earn(life(), args({ country: 'CA', home: 'CU', gross: m('CAD', '1000') }), ctx(AUGUST).c)).toMatchObject({ tax: 23_000, counted: 0, credited: 0 });
+    expect(earn(life(), args({ country: 'CA', home: 'ER', gross: m('CAD', '1000') }), ctx(AUGUST).c)).toMatchObject({ tax: 23_000, counted: 0, credited: 0 });
   });
 
   it('pays in the country\'s currency, at the day\'s rate, where the agreement pays in another', () => {
@@ -290,11 +290,11 @@ describe('pay', () => {
     earn(us, args({ home: 'GB', gross: m('USD', '184500') }), ctx(AUGUST).c);
     expect(earn(us, args({ gross: m('USD', '1000') }), ctx(AUGUST).c).social).toBe(7_650);
     // A country the research hasn't read withholds nothing, its pay counted at home at the day's rate.
-    const cuba = earn(life(), args({ country: 'CU', gross: m('CUP', '100000') }), ctx(AUGUST).c);
-    expect(cuba).toMatchObject({ currency: 'CUP', tax: 0, social: 0, counted: exchangeOn(m('CUP', '100000'), 'USD', '2026-08-01')?.money.minor });
+    const eritrea = earn(life(), args({ country: 'ER', gross: m('ERN', '100000') }), ctx(AUGUST).c);
+    expect(eritrea).toMatchObject({ currency: 'ERN', tax: 0, social: 0, counted: exchangeOn(m('ERN', '100000'), 'USD', '2026-08-01')?.money.minor });
     // Living where the research hasn't read: nothing counted, no reckoning.
     const away = ctx(AUGUST);
-    expect(earn(life(), args({ home: 'CU' }), away.c)).toMatchObject({ tax: 0, social: 0, counted: 0, credited: 0 });
+    expect(earn(life(), args({ home: 'ER' }), away.c)).toMatchObject({ tax: 0, social: 0, counted: 0, credited: 0 });
     expect(away.scheduled).toEqual([]);
   });
 

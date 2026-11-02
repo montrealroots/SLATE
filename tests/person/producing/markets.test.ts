@@ -92,7 +92,7 @@ const list = (xs: readonly string[]): string => (xs.length > 1 ? `${xs.slice(0, 
 const blockers = (cc: string): string => [...new Set((JSON.parse(readFileSync(join(ROOT, `research/sources/person/markets/producer-${cc}.json`), 'utf8')) as { blockers: { item: string }[] }).blockers.map((b) => b.item))].join(' ');
 /** A market of which the engine can read nothing: its country's currency, and what wasn't found. */
 const bare = (cc: string) => ({ currency: (countries as Record<string, { currency: string }>)[cc]?.currency, fund: null, aid: [], credit: null, fees: [], release: null, unknown: blockers(cc) });
-const REST = 'AD AF AG AI AL AO AW AX AZ BD BE BF BH BI BJ BL BM BN BO BQ BS BT BV BW BY CC CD CF CG CI CK CM CN CU CV CX CY CZ DJ DM DZ EC EG EH ER ET FK FM GA GD GG GH GI GM GN GP GQ GT GW HK HM HN HT ID IL IM IO IQ IR KE KG KI KM KN KP KW KY LA LB LC LI LK LR LS LU LV LY MF MG MH ML MM MO MP MQ MR MS MV MW MZ NC NE NF NI NP NR NU OM PE PF PG PM PN PR PS PW PY QA RE RU RW SA SB SC SD SG SJ SM SO SR SS ST SV SX SY SZ TC TD TF TG TJ TK TL TM TN TO TV TW UA UG UZ VA VC VE VU WF WS YE YT ZM ZW'.split(' ');
+const REST = 'AD AF AG AI AL AO AW AX AZ BD BE BF BH BI BJ BL BM BN BO BQ BS BT BV BW BY CC CD CF CG CI CK CM CN CU CV CX CY DJ DZ EC EG EH ER ET FK FM GA GD GG GH GI GM GN GP GQ GT GW HK HM HN HT ID IL IM IO IQ IR JM KE KG KI KM KN KP KW KY LA LB LC LI LK LR LS LU LV LY MF MG MH ML MM MO MP MQ MR MS MV MW MZ NC NE NF NI NP NR NU OM PE PF PG PM PN PR PS PW PY QA RE RU RW SA SB SC SD SG SJ SM SO SR SS ST SV SX SY SZ TC TD TF TG TJ TK TL TM TN TO TV TW UA UG UZ VA VC VE VU WF WS YE YT ZM ZW'.split(' ');
 
 /** A tier as a line: its budgets, then its sum, or its bands (from-to: rate), base, net and most. */
 const line = (x: Tier) =>
@@ -225,7 +225,11 @@ describe('the markets', () => {
       CR: { currency: 'CRC', fund: null, aid: [], credit: [], fees: [], release: null, unknown: '' },
       CW: { currency: 'XCG', fund: null, aid: [], credit: [], fees: [], release: null, unknown: 'terms' },
       DO: { currency: 'USD', fund: null, aid: [], credit: ['500000- 0-:0.25'], fees: [], release: null, unknown: '' },
-      EE: { currency: 'EUR', fund: null, aid: [], credit: ['0- 0-:0.4'], fees: [], release: null, unknown: 'incentive fund' },
+      // Film Estonia: 30% from a €1m feature (40% with two Estonian creative staff, not modeled); the SFA: 50%, 7 of 27 funded.
+      EE: { currency: 'EUR', fund: null, aid: [], credit: ['1000000- 0-:0.3'], fees: [], release: null, unknown: 'incentive fund' },
+      CZ: { currency: 'CZK', fund: [`rate ${7 / 27}`, '0- 0-:0.5'], aid: [], credit: null, fees: [], release: null, unknown: '' },
+      // Dominica: no cash rebate, only duty exemptions.
+      DM: { currency: 'XCD', fund: null, aid: [], credit: [], fees: [], release: null, unknown: '' },
       FI: { currency: 'EUR', fund: [`rate ${55 / 261}`, '0- 0-:0.9 most 1200000'], aid: [], credit: null, fees: [['0- 0-:0.05']], release: null, unknown: '' },
       FJ: { currency: 'FJD', fund: null, aid: [], credit: ['250000- 0-:0.2 most 4000000'], fees: [], release: null, unknown: 'fund' },
       FO: { currency: 'DKK', fund: null, aid: [], credit: ['0- 0-:0.25 most 5000000'], fees: [], release: null, unknown: '' },
@@ -240,7 +244,6 @@ describe('the markets', () => {
       HU: { currency: 'HUF', fund: null, aid: [], credit: ['0- 0-:0.3'], fees: [], release: null, unknown: 'fund' },
       IS: { currency: 'ISK', fund: null, aid: [], credit: ['0- 0-:0.25'], fees: [], release: null, unknown: '' },
       JE: { currency: 'GBP', fund: null, aid: [], credit: [], fees: [], release: null, unknown: 'incentive' },
-      JM: { currency: 'JMD', fund: null, aid: [], credit: [], fees: [], release: null, unknown: 'none' },
       JO: { currency: 'USD', fund: null, aid: [], credit: ['250000-999999.99 0-:0.25 most 5250000', '1000000-10000000 0-:0.3 most 5250000', '10000000.01- 0-:0.35 most 5250000'], fees: [], release: null, unknown: '' },
       KH: { currency: 'KHR', fund: null, aid: [], credit: [], fees: [], release: null, unknown: 'fund' },
       KZ: { currency: 'KZT', fund: null, aid: [], credit: ['0- 0-:0.3'], fees: [], release: null, unknown: 'incentive' },
@@ -452,7 +455,7 @@ describe("a market's project", () => {
       ['AE', '1000000', '350000'], ['AE', '100000000', '10000000'], ['AM', '1000000', '250000'], ['AR', '100000000', '20000000'], ['AR', '1000000000', '75000000'],
       ['AT', '1000000', '300000'], ['AT', '20000000', '5000000'], ['BG', '1000000', '250000'], ['BG', '40000000', '5000000'],
       ['CH', '1199999.99', '0'], ['CH', '1200000', '240000'], ['CH', '10000000', '600000'], ['CL', '1000000', '300000'], ['CO', '3151628999.99', '0'], ['CO', '3151629000', '1103070150'],
-      ['DO', '499999.99', '0'], ['DO', '500000', '125000'], ['EE', '1000000', '400000'], ['FJ', '249999.99', '0'], ['FJ', '250000', '50000'], ['FJ', '30000000', '4000000'],
+      ['DO', '499999.99', '0'], ['DO', '500000', '125000'], ['EE', '999999.99', '0'], ['EE', '1000000', '300000'], ['FJ', '249999.99', '0'], ['FJ', '250000', '50000'], ['FJ', '30000000', '4000000'],
       ['FO', '1000000', '250000'], ['FO', '40000000', '5000000'], ['GE', '499999.99', '0'], ['GE', '500000', '100000'], ['GF', '1000000', '300000'], ['GL', '1000000', '250000'],
       ['GR', '199999.99', '0'], ['GR', '200000', '64000'], ['GR', '1000000', '320000'], ['GR', '50000000', '8000000'], ['HR', '249999.99', '0'], ['HR', '250000', '62500'],
       ['HU', '1000000', '300000'], ['IS', '1000000', '250000'],
@@ -471,7 +474,7 @@ describe("a market's project", () => {
     ];
     for (const [cc, budget, credit] of credits) expect(plan(cc, budget)?.credit, `${cc} ${budget}`).toEqual(of(currencyOf(cc), credit));
     // The research says there's none: nothing; it doesn't say: none carried.
-    for (const cc of ['AS', 'BB', 'BZ', 'CR', 'CW', 'GS', 'GU', 'GY', 'JE', 'JM', 'KH', 'MC', 'NA', 'PK', 'SH', 'SL', 'TZ', 'VG', 'VN']) expect(plan(cc, '1000000')?.credit, cc).toEqual(of(currencyOf(cc), '0'));
+    for (const cc of ['AS', 'BB', 'BZ', 'CR', 'CW', 'GS', 'GU', 'GY', 'DM', 'JE', 'KH', 'MC', 'NA', 'PK', 'SH', 'SL', 'TZ', 'VG', 'VN']) expect(plan(cc, '1000000')?.credit, cc).toEqual(of(currencyOf(cc), '0'));
     for (const cc of ['AD', 'BE', 'CZ', 'FI', 'SI', 'UA']) expect(plan(cc, '1000000')?.credit, cc).toBeNull();
     // The fee caps: Austria's 5% and 7.5% from €2.5m, to €250,000 and €375,000; Sarajevo's 10%, Finland's 5%, Uruguay's 9%.
     expect([plan('AT', '2499999.99')?.fee, plan('AT', '2500000')?.fee, plan('AT', '4000000')?.fee, plan('AT', '10000000')?.fee]).toEqual([null, of('EUR', '312500'), of('EUR', '500000'), of('EUR', '625000')]);
@@ -479,6 +482,8 @@ describe("a market's project", () => {
     // The funds: Finland's 90% to €1.2m, 55 of 261; Slovenia's €1m held to the 50% of all public aid, 14 of 37; Senegal's FOPICA, CFA 150m, 49 of 213.
     expect([award('FI', '1000000'), award('FI', '2000000'), award('SI', '1000000'), award('SI', '4000000'), award('SN', '100000000')]).toEqual([90_000_000, 120_000_000, 50_000_000, 100_000_000, 150_000_000]);
     expect([fundFor(project(planned('FI', '1000000'))).rate, fundFor(project(planned('SI', '1000000'))).rate, fundFor(project(planned('SN', '1000000'))).rate]).toEqual([55 / 261, 14 / 37, 49 / 213]);
+    expect([award('CZ', '20000000'), fundFor(project(planned('CZ', '20000000'))).rate]).toEqual([1_000_000_000, 7 / 27]);
+    expect(plan('JM', '1000000')?.credit).toBeNull();
     for (const cc of ['AD', 'AL', 'HK', 'LV', 'PY']) expect(() => award(cc, '1000000'), cc).toThrow(/^what a public fund in .+ gives a producer's film isn't known to this game$/);
     // Moldova's release: 50 of the 62 films finished from 2017 to 2024.
     let md = made(30);
@@ -551,7 +556,7 @@ describe("a market's project", () => {
     // Every market the register holds blockers for tells the player; none other does.
     const register = JSON.parse(readFileSync(join(ROOT, 'research/register.json'), 'utf8')) as { entries: { fact: string }[] };
     const blocked = Object.keys(MARKETS).filter((cc) => register.entries.some((e) => e.fact === `person.markets.producer.blocked.${cc}`));
-    expect(blocked.length).toBe(186);
+    expect(blocked.length).toBe(180);
     expect(Object.keys(MARKETS).filter((cc) => aboutMarket(cc) !== undefined)).toEqual(blocked);
     for (const cc of blocked) expect(aboutMarket(cc), cc).toBe(t(UNKEPT_LINE, { country: countries[cc as keyof typeof countries].name, missing: list(blockers(cc).split(' ').map((u) => MISSING[u as keyof typeof MISSING])) }));
   });

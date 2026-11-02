@@ -64,7 +64,7 @@ import { spread } from '../../../src/person/work/work.ts';
 import { t } from '../../../src/core/text/text.ts';
 import { falsifyAny } from '../../support/falsify-core.ts';
 import { ACCOUNT, minorIn, purse } from '../../support/purse.ts';
-import { YOUTH_START, type YouthSlice } from '../../../src/person/youth/youth.ts';
+import { authoriseWork, YOUTH_START, type YouthSlice } from '../../../src/person/youth/youth.ts';
 
 type Acting = { attributes: AttributesSlice; acting: ActingSlice; identity: IdentitySlice; unions: UnionsSlice; permits: PermitsSlice; directing: DirectingSlice; producing: ProducingSlice; youth: YouthSlice } & ReturnType<typeof purse>;
 const SEED = '0123456789abcdef';
@@ -620,5 +620,22 @@ describe('playing a part', () => {
     ]);
     expect(ACTING_START).toEqual({ breakdowns: [], auditions: [] });
     expect(broadOf('actor', 'acting-for-the-camera').id).toBe('camera');
+  });
+});
+
+describe("a minor's part (person.youth)", () => {
+  const citizen = (date: string, country: string, over: Parameters<typeof identity>[0] = {}) => identity({ born: { date, country: country as never, region: '' }, citizenship: [country as never], grewUp: { country: country as never, region: '' }, ...over });
+  it("is played only with what the work's country's law needs first, the grant used, its days at the hours the law allows", () => {
+    const l = withAuditions(made(50, {}, SEED, AUGUST, citizen('2016-03-10', 'GB')), [booked(part({ agreement: 'pact-equity', length: 3 }))]);
+    expect(() => dispatch(l, playPart, { audition: 1, account: ACCOUNT })).toThrow('that work in United Kingdom needs permit first');
+    const p = dispatch(dispatch(l, authoriseWork, { country: 'GB', role: 'performer' }), playPart, { audition: 1, account: ACCOUNT });
+    expect(p.slices.youth.granted).toMatchObject([{ country: 'GB', role: 'performer', needs: ['permit'], used: true }]);
+    expect(held(p)['acting']).toBeCloseTo(grown(50, 3 * (5 / 8)), 10);
+  });
+
+  it("has the share the work's country sets aside of a minor's pay held for the part", () => {
+    const l = withAuditions(made(50, {}, SEED, AUGUST, citizen('2014-05-20', 'FR', { billedAs: 'actor', pronouns: 'he' })), [booked(part({ agreement: 'fr-film', length: 2 }))]);
+    const p = dispatch(dispatch(l, authoriseWork, { country: 'FR', role: 'performer' }), playPart, { audition: 1, account: ACCOUNT });
+    expect(p.slices.youth.held.map((h) => [h.engagement, h.into])).toEqual([['acting:1', 'Caisse des dépôts et consignations']]);
   });
 });

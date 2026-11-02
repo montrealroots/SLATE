@@ -9,6 +9,7 @@ import {
   BANDED,
   BLOCKED,
   blockedItems,
+  COUNTRIES as MAP,
   cutTo,
   daysOf,
   edged,
@@ -71,6 +72,7 @@ const lay = () => {
     mkdirSync(join(root, path, '..'), { recursive: true });
     writeFileSync(join(root, path), typeof body === 'string' ? body : JSON.stringify(body));
   };
+  put(MAP, { SV: { name: 'Sovereignty' } });
   return { root, put };
 };
 const sha = (text: string) => createHash('sha256').update(text).digest('hex');
@@ -248,9 +250,25 @@ describe("the director's markets compile", () => {
     expect(() => territory({ fig: 0, market: 'XX' }, [{ item: 'follows', value: { follows: 'XX' } }])).toThrow("XX isn't a market to follow");
     expect(() => territory({ fig: 0, market: 'toString' }, [{ item: 'follows', value: { follows: 'toString' } }])).toThrow("toString isn't a market to follow");
     expect(() => territory({ fig: 0, market: 'SV' }, [{ item: 'follows', value: { follows: 'FR' } }])).toThrow("TT's figure 0 doesn't say a director's work there follows SV's terms");
-    expect(() => territory({ fig: 0, market: 'SV' }, [{ item: 'union', value: { follows: 'SV' } }])).toThrow("TT's figure 0 isn't one of its follows or none");
+    expect(() => territory({ fig: 0, market: 'SV' }, [{ item: 'union', value: { follows: 'SV' } }])).toThrow("TT's figure 0 isn't one of its follows or none or fees");
     expect(() => territory({ fig: 0, market: 'SV' }, [{ item: 'none', value: 'SV' }])).toThrow('a figure is not an object');
     expect(() => territory(5)).toThrow('what a market follows is not an object');
+    // A market whose research names the place of another country its minimum is owed as, raised by a share (Monaco's Nice, plus 5%).
+    const names = { SV: 'Sovereignty' };
+    const near = (follows: Record<string, unknown>, value: Record<string, unknown> = { reference: 'Its capital (Sovereignty)', uplift: 0.05 }, n: Record<string, string> = names) => marketOf({ country: 'TT', figures: [{ item: 'fees', value }], blockers: [] }, { follows: { fig: 0, market: 'SV', place: ['reference'], ...follows } }, done, n);
+    expect(near({ uplift: ['uplift'] })).toEqual({
+      market: { agreements: ['tt-sv-a', 'tt-sv-b'], unknown: ['fees', 'periods'] },
+      agreements: { 'tt-sv-a': { ...sovereign.agreements['sv-a'], country: 'TT', uplift: '0.05' }, 'tt-sv-b': { ...sovereign.agreements['sv-b'], country: 'TT', uplift: '0.05' } },
+    });
+    expect(near({}).agreements['tt-sv-a']).toEqual({ ...sovereign.agreements['sv-a'], country: 'TT' });
+    expect(() => near({}, { reference: 'Its capital (Elsewhere)' })).toThrow("TT's figure 0 doesn't say a director's work there follows SV's terms");
+    expect(() => near({}, undefined, {})).toThrow("TT's figure 0 doesn't say a director's work there follows SV's terms");
+    expect(() => near({}, undefined, { SV: 'Elsewhere' })).toThrow("TT's figure 0 doesn't say a director's work there follows SV's terms");
+    expect(() => near({ place: ['nowhere'] })).toThrow('has nothing at nowhere');
+    for (const uplift of [0, 1, -0.1, '0.05']) expect(() => near({ uplift: ['uplift'] }, { reference: '(Sovereignty)', uplift }), String(uplift)).toThrow("TT's figure 0 raises the minimum by no share");
+    expect(near({ uplift: ['uplift'] }, { reference: '(Sovereignty)', uplift: 0.999 }).agreements['tt-sv-a']?.uplift).toBe('0.999');
+    expect(() => near({ note: 1 })).toThrow("what a market follows names note, which the game doesn't read");
+    expect(() => territory({ fig: 0, market: 'SV' }, [{ item: 'fees', value: { follows: 'SV' } }])).not.toThrow();
     expect(() => marketOf({ country: 'TT', figures: [{ item: 'follows', value: { follows: 'SV' } }], blockers: [] }, { follows: { fig: 0, market: 'SV' } })).toThrow("SV isn't a market to follow");
     expect(() => marketOf(RESEARCH, { follows: { fig: 0, market: 'SV' }, agreements: {} }, done)).toThrow("the reading of XX names agreements, which the game doesn't read");
     expect(() => marketOf(RESEARCH, { agreements: [] })).toThrow('the agreements is not an object');
@@ -370,6 +388,9 @@ describe("the director's markets compile", () => {
     expect(readMarkets(root)).toEqual({ markets: {}, agreements: {} });
     put(READINGS, []);
     expect(() => readMarkets(root)).toThrow('the readings is not an object');
+    put(READINGS, {});
+    put(MAP, []);
+    expect(() => readMarkets(root)).toThrow("the map's countries is not an object");
   });
 
   it("compiles every market the director's engine reads", () => {

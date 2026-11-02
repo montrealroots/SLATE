@@ -162,6 +162,37 @@
      "said": "The PIT year-end date is 31 December."
     }
    ]
+  },
+  {
+   "item": "social",
+   "finding": "The employer's 11.2% to the CNPS splits as 7% family benefits and 4.2% pension (the worker pays a matching 4.2%), both on pay capped at 750,000 francs a month; a musician or other self-employed person may join the CNPS's voluntary insurance at 8.4% of average monthly income, between the minimum wage and the same cap.",
+   "value": {
+    "currency": "XAF",
+    "employer": {
+     "familyBenefits": 0.07,
+     "pension": 0.042,
+     "ceilingMonthly": 750000,
+     "familyBenefitsAgricultural": 0.0565,
+     "familyBenefitsPrivateEducation": 0.037
+    },
+    "employee": {
+     "pension": 0.042,
+     "ceilingMonthly": 750000
+    },
+    "voluntary": {
+     "rate": 0.084,
+     "base": "average monthly income, not below the SMIG nor above 750,000",
+     "open": "informal-sector workers, liberal professions, students, sportspeople, musicians, anyone over 18"
+    },
+    "dated": "rates at 1 January 2024 (CLEISS)"
+   },
+   "applies": "CM. Rates as CLEISS states them at 1 January 2024; the CNPS's own pages refuse this environment, so no 2026 restatement was read. Covers pension, invalidity and death only for the voluntary scheme.",
+   "sources": [
+    {
+     "src": 6,
+     "said": "Cotisations au 1 er janvier 2024 … Prestations familiales 7 % pour les travailleurs relevant du régime général, y compris les domestiques et les gens de maison … 750 000 F CFA … Assurance pension 4,20 % 4,20 % 750 000 F CFA … les travailleurs des professions libérales (avocats, médecins du privés, ingénieurs, notaires...), les étudiants, les sportifs, les musiciens, toute personne de plus de 18 ans. Le montant de la cotisation représente 8,40 % du revenu mensuel moyen sans que ce revenu ne soit inférieur au SMIG, ni supérieur au plafond des rémunérations en vigueur (750 000 F CFA)."
+    }
+   ]
   }
  ],
  "country": "CM",
@@ -213,19 +244,15 @@
    "kind": "secondary",
    "quotes": "https://www.impots.cm/",
    "said": "taxable income, the taxpayer has the right to choose between a fixed amount of 30% of the revenue or the actual costs based on supporting documentation."
+  },
+  {
+   "url": "https://www.cleiss.fr/docs/cotisations/cameroun.html",
+   "title": "Les cotisations au Cameroun 2024 (CLEISS, Centre des Liaisons Européennes et Internationales de Sécurité Sociale), on the Caisse Nationale de la Prévoyance Sociale's rates",
+   "read": "2026-11-02",
+   "kind": "secondary",
+   "quotes": "https://www.cnps.cm/",
+   "said": "Cotisations au 1 er janvier 2024 … Prestations familiales 7 % pour les travailleurs relevant du régime général, y compris les domestiques et les gens de maison … 750 000 F CFA … Assurance pension 4,20 % 4,20 % 750 000 F CFA … les travailleurs des professions libérales (avocats, médecins du privés, ingénieurs, notaires...), les étudiants, les sportifs, les musiciens, toute personne de plus de 18 ans. Le montant de la cotisation représente 8,40 % du revenu mensuel moyen sans que ce revenu ne soit inférieur au SMIG, ni supérieur au plafond des rémunérations en vigueur (750 000 F CFA)."
   }
  ],
- "blockers": [
-  {
-   "item": "social",
-   "sought": "The CNPS's own split of the employer's 11.2% (pension, family allowances), and any scheme for self-employed artists; the employer total and the accident rates are now quoted from PwC.",
-   "tried": {
-    "institution": "2026-11-01: www.cnps.cm returns HTTP 403 to this environment, not read another way; www.impots.cm home read (tax law only, links the LF 2026 circular) || 2026-11-01 retry: cnps.cm: https does not answer (curl 000), http returns 503; minfi.gov.cm home read: links to the Lois de finances only; mintss.gov.cm does not answer.",
-    "official-register": "2026-11-01: Code de prévoyance sociale text not found on a reachable host || 2026-11-01 retry: Code de prévoyance sociale: not found on minfi.gov.cm or spm.gov.cm (2,893-byte shell).",
-    "web-search": "2026-11-01: search for the CNPS employer rates refused: the session web-search budget was used up || 2026-11-01 retry: WebSearch refused by the tool on 2026-11-01: the turn's shared 200-search limit was reached before this query; no other search route used.",
-    "trade-press": "2026-11-01: PwC Cameroon (cited) gives the employee pension share only || 2026-11-01 retry: PwC Cameroon corporate other taxes (saved earlier as CM-pwc-corporate-other-taxes.html) re-read: employer 11.2% and employee 4.2% on XAF 750,000 a month, accidents 1.75%/2.5%/5%; now quoted. Deloitte has no Cameroon 2026 Highlights (HTTP 404).",
-    "archive": "2026-11-01: web.archive.org unreachable through the proxy this session || 2026-11-01 retry: archive.org/wayback/available: no snapshot of cnps.cm/index.php/fr/cotisations; web.archive.org resets https and returns 403 on http from this environment (2026-11-01)."
-   }
-  }
- ]
+ "blockers": []
 }

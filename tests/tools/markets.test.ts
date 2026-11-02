@@ -9,6 +9,7 @@ import {
   at,
   BLOCKED,
   blockedOf,
+  COUNTRIES as LAND_FILE,
   checkAgreement,
   dated,
   FACT,
@@ -61,6 +62,7 @@ const NAMES = { fr: 'French', en: 'English' };
 const NOWHERE = () => undefined;
 const NOTHING = { markets: {}, agreements: {} };
 const EN = () => 'en';
+const LANDS = { BB: 'Bebe', XX: 'Exland' };
 const ZONE_SET = new Set(['Europe/Paris', 'Europe/Berlin']);
 const read = (m: Record<string, unknown>) => minimumOf(RESEARCH, { medium: 'film', per: 'day', from: '2026-01-01', fig: 1, path: ['day', 'lead'], ...m }, 'EUR', ['film', 'stage']);
 const min = (over: Partial<Minimum> = {}): Minimum => ({ medium: 'film', role: null, per: 'day', rehearsal: false, with: null, when: {}, from: '2026-01-01', amount: '1', ...over });
@@ -176,14 +178,14 @@ describe('the markets compile', () => {
     expect(unknownOf(RESEARCH.blockers)).toEqual(['rates', 'union']);
     expect(unknownOf([])).toEqual([]);
     expect(() => unknownOf([{ item: 'pay' }])).toThrow("a blocker names pay, which isn't a fact the research seeks");
-    expect(marketOf(RESEARCH, reading, NAMES, ZONE_SET, NOWHERE, NOTHING, EN)).toEqual({ market: { language: 'fr', zone: 'Europe/Paris', agreements: ['xx-none'] }, agreements: { 'xx-none': { country: 'XX', currency: null, media: ['film'], none: true, minimums: [] } } });
-    expect(marketOf(RESEARCH, { ...reading, language: { code: 'fr', fig: 5 } }, NAMES, ZONE_SET, NOWHERE, NOTHING, EN).market.language).toBe('fr');
-    expect(marketOf(RESEARCH, { ...reading, language: { code: 'en', fig: null }, market: 6, zone: 'Europe/Berlin' }, NAMES, ZONE_SET, NOWHERE, NOTHING, EN).market).toMatchObject({ language: 'en', zone: 'Europe/Berlin' });
-    expect(marketOf({ ...RESEARCH, figures: [...RESEARCH.figures, { item: 'market', value: { timeZone: 'Europe/Berlin' } }] }, { ...reading, market: 9, zone: 'Europe/Berlin' }, NAMES, ZONE_SET, NOWHERE, NOTHING, EN).market.zone).toBe('Europe/Berlin');
-    expect(() => marketOf({ ...RESEARCH, figures: [...RESEARCH.figures, { item: 'market', value: { timeZone: 'Europe/Paris' } }] }, { ...reading, market: 9, zone: 'Europe/Berlin' }, NAMES, ZONE_SET, NOWHERE, NOTHING, EN)).toThrow("XX's market is in Europe/Paris, not Europe/Berlin");
+    expect(marketOf(RESEARCH, reading, NAMES, ZONE_SET, NOWHERE, NOTHING, EN, LANDS)).toEqual({ market: { language: 'fr', zone: 'Europe/Paris', agreements: ['xx-none'] }, agreements: { 'xx-none': { country: 'XX', currency: null, media: ['film'], none: true, minimums: [] } } });
+    expect(marketOf(RESEARCH, { ...reading, language: { code: 'fr', fig: 5 } }, NAMES, ZONE_SET, NOWHERE, NOTHING, EN, LANDS).market.language).toBe('fr');
+    expect(marketOf(RESEARCH, { ...reading, language: { code: 'en', fig: null }, market: 6, zone: 'Europe/Berlin' }, NAMES, ZONE_SET, NOWHERE, NOTHING, EN, LANDS).market).toMatchObject({ language: 'en', zone: 'Europe/Berlin' });
+    expect(marketOf({ ...RESEARCH, figures: [...RESEARCH.figures, { item: 'market', value: { timeZone: 'Europe/Berlin' } }] }, { ...reading, market: 9, zone: 'Europe/Berlin' }, NAMES, ZONE_SET, NOWHERE, NOTHING, EN, LANDS).market.zone).toBe('Europe/Berlin');
+    expect(() => marketOf({ ...RESEARCH, figures: [...RESEARCH.figures, { item: 'market', value: { timeZone: 'Europe/Paris' } }] }, { ...reading, market: 9, zone: 'Europe/Berlin' }, NAMES, ZONE_SET, NOWHERE, NOTHING, EN, LANDS)).toThrow("XX's market is in Europe/Paris, not Europe/Berlin");
     // Where the research names no language, it is the most spoken official one by CLDR, or none is settled.
-    expect(() => marketOf(RESEARCH, { ...reading, language: { code: 'fr', fig: null } }, NAMES, ZONE_SET, NOWHERE, NOTHING, EN)).toThrow("XX's research names no language, so it is its most spoken official one by CLDR (en), not fr");
-    expect(() => marketOf(RESEARCH, { ...reading, language: { code: 'fr', fig: null } }, NAMES, ZONE_SET, NOWHERE, NOTHING, NOWHERE)).toThrow("XX's research names no language, so it is its most spoken official one by CLDR (undefined), not fr");
+    expect(() => marketOf(RESEARCH, { ...reading, language: { code: 'fr', fig: null } }, NAMES, ZONE_SET, NOWHERE, NOTHING, EN, LANDS)).toThrow("XX's research names no language, so it is its most spoken official one by CLDR (en), not fr");
+    expect(() => marketOf(RESEARCH, { ...reading, language: { code: 'fr', fig: null } }, NAMES, ZONE_SET, NOWHERE, NOTHING, NOWHERE, LANDS)).toThrow("XX's research names no language, so it is its most spoken official one by CLDR (undefined), not fr");
     const spoken = (lang: string, share: number, official = true) => ({ lang, share, official });
     expect(spokenOf([spoken('en', 64), spoken('fr', 90, false), spoken('fr', 60)], NAMES)).toBe('en');
     expect(spokenOf([spoken('fr', 60), spoken('en', 64)], NAMES)).toBe('en');
@@ -191,37 +193,47 @@ describe('the markets compile', () => {
     expect(spokenOf([spoken('xx', 99), spoken('en', 10)], NAMES)).toBeUndefined();
     expect(spokenOf([spoken('en', 99, false)], NAMES)).toBeUndefined();
     expect(spokenOf(undefined, NAMES)).toBeUndefined();
-    expect(() => marketOf(RESEARCH, { ...reading, language: { code: 'xx', fig: null } }, NAMES, ZONE_SET, NOWHERE, NOTHING, EN)).toThrow("XX casts in xx, which a person can't speak");
-    expect(() => marketOf(RESEARCH, { ...reading, language: { code: 'en', fig: 3 } }, NAMES, ZONE_SET, NOWHERE, NOTHING, EN)).toThrow("XX's language figure doesn't name en");
-    expect(() => marketOf(RESEARCH, { ...reading, language: { code: 'fr', fig: 4 } }, NAMES, ZONE_SET, NOWHERE, NOTHING, EN)).toThrow("XX's figure 4 isn't one of its language");
-    expect(() => marketOf(RESEARCH, { ...reading, language: 'fr' }, NAMES, ZONE_SET, NOWHERE, NOTHING, EN)).toThrow('a language is not an object');
-    expect(() => marketOf(RESEARCH, { ...reading, zone: 'Mars/Olympus' }, NAMES, ZONE_SET, NOWHERE, NOTHING, EN)).toThrow("Mars/Olympus isn't a zone the clock keeps");
-    expect(() => marketOf(RESEARCH, { ...reading, zone: 'Europe/Berlin' }, NAMES, ZONE_SET, NOWHERE, NOTHING, EN)).toThrow("XX's market is in Europe/Paris, not Europe/Berlin");
-    expect(() => marketOf(RESEARCH, { ...reading, market: 3 }, NAMES, ZONE_SET, NOWHERE, NOTHING, EN)).toThrow("XX's figure 3 isn't one of its market");
-    expect(() => marketOf({ ...RESEARCH, figures: [{ item: 'market', value: 'Paris' }, ...RESEARCH.figures.slice(1)] }, { ...reading, market: 0 }, NAMES, ZONE_SET, NOWHERE, NOTHING, EN)).toThrow('a market is not an object');
-    expect(() => marketOf(RESEARCH, { ...reading, agreements: [] }, NAMES, ZONE_SET, NOWHERE, NOTHING, EN)).toThrow('the agreements is not an object');
-    expect(() => marketOf(RESEARCH, 'x', NAMES, ZONE_SET, NOWHERE, NOTHING, EN)).toThrow('the reading of XX is not an object');
+    expect(() => marketOf(RESEARCH, { ...reading, language: { code: 'xx', fig: null } }, NAMES, ZONE_SET, NOWHERE, NOTHING, EN, LANDS)).toThrow("XX casts in xx, which a person can't speak");
+    expect(() => marketOf(RESEARCH, { ...reading, language: { code: 'en', fig: 3 } }, NAMES, ZONE_SET, NOWHERE, NOTHING, EN, LANDS)).toThrow("XX's language figure doesn't name en");
+    expect(() => marketOf(RESEARCH, { ...reading, language: { code: 'fr', fig: 4 } }, NAMES, ZONE_SET, NOWHERE, NOTHING, EN, LANDS)).toThrow("XX's figure 4 isn't one of its language");
+    expect(() => marketOf(RESEARCH, { ...reading, language: 'fr' }, NAMES, ZONE_SET, NOWHERE, NOTHING, EN, LANDS)).toThrow('a language is not an object');
+    expect(() => marketOf(RESEARCH, { ...reading, zone: 'Mars/Olympus' }, NAMES, ZONE_SET, NOWHERE, NOTHING, EN, LANDS)).toThrow("Mars/Olympus isn't a zone the clock keeps");
+    expect(() => marketOf(RESEARCH, { ...reading, zone: 'Europe/Berlin' }, NAMES, ZONE_SET, NOWHERE, NOTHING, EN, LANDS)).toThrow("XX's market is in Europe/Paris, not Europe/Berlin");
+    expect(() => marketOf(RESEARCH, { ...reading, market: 3 }, NAMES, ZONE_SET, NOWHERE, NOTHING, EN, LANDS)).toThrow("XX's figure 3 isn't one of its market");
+    expect(() => marketOf({ ...RESEARCH, figures: [{ item: 'market', value: 'Paris' }, ...RESEARCH.figures.slice(1)] }, { ...reading, market: 0 }, NAMES, ZONE_SET, NOWHERE, NOTHING, EN, LANDS)).toThrow('a market is not an object');
+    expect(() => marketOf(RESEARCH, { ...reading, agreements: [] }, NAMES, ZONE_SET, NOWHERE, NOTHING, EN, LANDS)).toThrow('the agreements is not an object');
+    expect(() => marketOf(RESEARCH, 'x', NAMES, ZONE_SET, NOWHERE, NOTHING, EN, LANDS)).toThrow('the reading of XX is not an object');
     // Where the research names no city, the zone is the country's most populous place's.
-    expect(marketOf(RESEARCH, { ...reading, market: null }, NAMES, ZONE_SET, () => 'Europe/Paris', NOTHING, EN).market.zone).toBe('Europe/Paris');
-    expect(() => marketOf(RESEARCH, { ...reading, market: null }, NAMES, ZONE_SET, () => 'Europe/Berlin', NOTHING, EN)).toThrow("XX's research names no city, so its zone is its most populous place's (Europe/Berlin), not Europe/Paris");
-    expect(() => marketOf(RESEARCH, { ...reading, market: null }, NAMES, ZONE_SET, NOWHERE, NOTHING, EN)).toThrow("XX's research names no city, so its zone is its most populous place's (undefined), not Europe/Paris");
+    expect(marketOf(RESEARCH, { ...reading, market: null }, NAMES, ZONE_SET, () => 'Europe/Paris', NOTHING, EN, LANDS).market.zone).toBe('Europe/Paris');
+    expect(() => marketOf(RESEARCH, { ...reading, market: null }, NAMES, ZONE_SET, () => 'Europe/Berlin', NOTHING, EN, LANDS)).toThrow("XX's research names no city, so its zone is its most populous place's (Europe/Berlin), not Europe/Paris");
+    expect(() => marketOf(RESEARCH, { ...reading, market: null }, NAMES, ZONE_SET, NOWHERE, NOTHING, EN, LANDS)).toThrow("XX's research names no city, so its zone is its most populous place's (undefined), not Europe/Paris");
   });
 
   it("reads a territory that follows another country's terms under that country's agreements, as its own", () => {
     const fr: Agreement = { country: 'BB', currency: 'EUR', media: ['film'], none: false, minimums: [min()] };
     const done: Pick<Markets, 'markets' | 'agreements'> & { agreements: Record<'bb-film' | 'bb-none', Agreement> } = { markets: { BB: { language: 'fr', zone: 'Europe/Paris', agreements: ['bb-film', 'bb-none'] } }, agreements: { 'bb-film': fr, 'bb-none': { ...fr, currency: null, none: true, minimums: [] } } };
     const reading = { market: 4, zone: 'Europe/Paris', language: { code: 'fr', fig: 3 }, follows: { fig: 8, market: 'BB' } };
-    expect(marketOf(RESEARCH, reading, NAMES, ZONE_SET, NOWHERE, done, EN)).toEqual({
+    expect(marketOf(RESEARCH, reading, NAMES, ZONE_SET, NOWHERE, done, EN, LANDS)).toEqual({
       market: { language: 'fr', zone: 'Europe/Paris', agreements: ['xx-bb-film', 'xx-bb-none'] },
       agreements: { 'xx-bb-film': { ...fr, country: 'XX', follows: 'bb-film' }, 'xx-bb-none': { ...done.agreements['bb-none'], country: 'XX', follows: 'bb-none' } },
     });
-    expect(() => marketOf(RESEARCH, { ...reading, agreements: {} }, NAMES, ZONE_SET, NOWHERE, done, EN)).toThrow("XX follows another country's agreements, and has none of its own");
-    expect(() => marketOf(RESEARCH, { ...reading, follows: 'BB' }, NAMES, ZONE_SET, NOWHERE, done, EN)).toThrow('what a market follows is not an object');
-    expect(() => marketOf(RESEARCH, { ...reading, follows: { fig: 2, market: 'BB' } }, NAMES, ZONE_SET, NOWHERE, done, EN)).toThrow("XX's figure 2 doesn't say its work follows BB's terms");
-    expect(() => marketOf(RESEARCH, { ...reading, follows: { fig: 1, market: 'BB' } }, NAMES, ZONE_SET, NOWHERE, done, EN)).toThrow("XX's figure 1 isn't one of its none");
-    expect(() => marketOf({ ...RESEARCH, figures: [...RESEARCH.figures, { item: 'none', value: 'BB' }] }, { ...reading, follows: { fig: 9, market: 'BB' } }, NAMES, ZONE_SET, NOWHERE, done, EN)).toThrow('a none is not an object');
-    expect(() => marketOf(RESEARCH, reading, NAMES, ZONE_SET, NOWHERE, NOTHING, EN)).toThrow("BB isn't a market to follow");
-    expect(() => marketOf(RESEARCH, reading, NAMES, ZONE_SET, NOWHERE, { ...done, agreements: { ...done.agreements, 'bb-none': { ...done.agreements['bb-none'], follows: 'zz-none' } } }, EN)).toThrow("BB follows another country's terms itself");
+    expect(() => marketOf(RESEARCH, { ...reading, agreements: {} }, NAMES, ZONE_SET, NOWHERE, done, EN, LANDS)).toThrow("XX follows another country's agreements, and has none of its own");
+    expect(() => marketOf(RESEARCH, { ...reading, follows: 'BB' }, NAMES, ZONE_SET, NOWHERE, done, EN, LANDS)).toThrow('what a market follows is not an object');
+    expect(() => marketOf(RESEARCH, { ...reading, follows: { fig: 2, market: 'BB' } }, NAMES, ZONE_SET, NOWHERE, done, EN, LANDS)).toThrow("XX's figure 2 doesn't say its work follows BB's terms");
+    expect(() => marketOf(RESEARCH, { ...reading, follows: { fig: 1, market: 'BB' } }, NAMES, ZONE_SET, NOWHERE, done, EN, LANDS)).toThrow("XX's figure 1 isn't one of its none");
+    expect(() => marketOf({ ...RESEARCH, figures: [...RESEARCH.figures, { item: 'none', value: 'BB' }] }, { ...reading, follows: { fig: 9, market: 'BB' } }, NAMES, ZONE_SET, NOWHERE, done, EN, LANDS)).toThrow('a none is not an object');
+    expect(() => marketOf(RESEARCH, reading, NAMES, ZONE_SET, NOWHERE, NOTHING, EN, LANDS)).toThrow("BB isn't a market to follow");
+    // A wage law owing a named place's minimum in another country, raised by a share: that country's agreements, with the share.
+    const law: Research = { ...RESEARCH, figures: [...RESEARCH.figures, { item: 'rates', value: { reference: 'Nice (Bebe)', uplift: 0.05, none: 0, whole: 1, text: '0.5' } }] };
+    const owed = { ...reading, follows: { fig: 9, market: 'BB', place: ['reference'], uplift: ['uplift'] } };
+    expect(marketOf(law, owed, NAMES, ZONE_SET, NOWHERE, done, EN, LANDS).agreements['xx-bb-film']).toEqual({ ...fr, country: 'XX', follows: 'bb-film', uplift: '0.05' });
+    expect(marketOf(law, { ...owed, follows: { fig: 9, market: 'BB', place: ['reference'] } }, NAMES, ZONE_SET, NOWHERE, done, EN, LANDS).agreements['xx-bb-film']).toEqual({ ...fr, country: 'XX', follows: 'bb-film' });
+    expect(() => marketOf(law, owed, NAMES, ZONE_SET, NOWHERE, done, EN, { BB: 'Elsewhere' })).toThrow("XX's figure 9 doesn't say its work follows BB's terms");
+    expect(() => marketOf(law, owed, NAMES, ZONE_SET, NOWHERE, done, EN, {})).toThrow("XX's figure 9 doesn't say its work follows BB's terms");
+    expect(() => marketOf(law, { ...owed, follows: { ...owed.follows, fig: 8 } }, NAMES, ZONE_SET, NOWHERE, done, EN, LANDS)).toThrow("XX's figure 8 isn't one of its rates");
+    for (const at of ['none', 'whole', 'text']) expect(() => marketOf(law, { ...owed, follows: { ...owed.follows, uplift: [at] } }, NAMES, ZONE_SET, NOWHERE, done, EN, LANDS), at).toThrow("XX's figure 9 raises the minimum by no share");
+    expect(marketOf(law, { ...owed, follows: { ...owed.follows, uplift: ['uplift'] } }, NAMES, ZONE_SET, NOWHERE, done, EN, LANDS).agreements['xx-bb-none']?.uplift).toBe('0.05');
+    expect(() => marketOf(RESEARCH, reading, NAMES, ZONE_SET, NOWHERE, { ...done, agreements: { ...done.agreements, 'bb-none': { ...done.agreements['bb-none'], follows: 'zz-none' } } }, EN, LANDS)).toThrow("BB follows another country's terms itself");
   });
 
   it('reads each market as the register cites it, and refuses a file or a reading without the other', () => {
@@ -235,6 +247,7 @@ describe('the markets compile', () => {
     const reading = (id: string) => ({ market: 4, zone: 'Europe/Paris', language: { code: 'fr', fig: 3 }, agreements: { [id]: { media: ['film'], currency: 'EUR', minimums: [{ medium: 'film', per: 'day', from: '2026-01-01', fig: 1, path: ['day', 'lead'] }] } } });
     put(LANGUAGES, { names: NAMES, territories: { AA: [{ lang: 'fr', share: 80, official: true }] } });
     put(ZONES, { zones: { 'Europe/Paris': [] }, links: { 'Europe/Monaco': 'Europe/Paris' } });
+    put(LAND_FILE, { BB: { name: 'Bebe' } });
     const aa = file('AA');
     const bb = file('BB', [{ item: 'rates' }]);
     put(`${SOURCES}/AA.json`, aa);
@@ -284,6 +297,7 @@ describe('the markets compile', () => {
     const reading = (id: string) => ({ market: 4, zone: 'Europe/Paris', language: { code: 'fr', fig: 3 }, agreements: { [id]: { media: ['film'], none: { fig: 2 } } } });
     put(LANGUAGES, { names: NAMES, territories: { AA: [{ lang: 'fr', share: 80, official: true }] } });
     put(ZONES, { zones: { 'Europe/Paris': [] }, links: {} });
+    put(LAND_FILE, { BB: { name: 'Bebe' } });
     const set = (files: Record<string, { item: string }[]>, blocked: string[], readings: Record<string, string>) => {
       const entries: unknown[] = blocked.map((cc) => ({ fact: `${BLOCKED}${cc}` }));
       for (const [cc, blockers] of Object.entries(files)) {
@@ -315,6 +329,7 @@ describe('the markets compile', () => {
     const sha = (text: string) => createHash('sha256').update(text).digest('hex');
     put(LANGUAGES, { names: NAMES, territories: { AA: [{ lang: 'fr', share: 80, official: true }] } });
     put(ZONES, { zones: { 'Europe/Paris': [], 'Europe/Berlin': [] }, links: {} });
+    put(LAND_FILE, { BB: { name: 'Bebe' } });
     put(`${PLACES}/AA.tsv`, '\n1\tSmall\t\tAA.01\t0\t0\tEurope/Berlin\t100\t\n2\tBig\t\tAA.02\t0\t0\tEurope/Paris\t900\t\n3\tAlsoBig\t\tAA.02\t0\t0\tEurope/Berlin\t900\t\n');
     const text = (cc: string, blockers: { item: string }[] = []) => JSON.stringify({ ...RESEARCH, country: cc, blockers });
     const files: Record<string, string> = { AA: text('AA'), BB: text('BB'), CC: text('CC'), DD: text('DD', [{ item: 'rates' }]) };
@@ -372,6 +387,7 @@ describe('the markets compile', () => {
     };
     put(LANGUAGES, { names: {}, territories: {} });
     put(ZONES, { zones: {}, links: {} });
+    put(LAND_FILE, { BB: { name: 'Bebe' } });
     put('research/register.json', { entries: [] });
     put(READINGS, {});
     expect(readMarkets(root)).toEqual({ markets: {}, agreements: {}, unknown: {} });
